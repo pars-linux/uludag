@@ -1,3 +1,7 @@
+2008-11-17 Faik Uygur <faik@pardus.org.tr>
+        * Remove auto start searching feature when text changed and add a button
+        to start search or press enter.
+
 2008-09-30 Ozan Çağlayan <ozan@pardus.org.tr>
 	* src/Icons.py (getIconSize): Use KIcon.SizeLarge
 	instead of reading the DesktopIcons/Size property
@@ -17,4 +21,3 @@
 
 2008-06-27 Faik Uygur <faik@pardus.org.tr>
 	* Fix for upgradable packages when a replaced package exists.
-
