@@ -19,7 +19,7 @@
       <string>System Services</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2" >
-      <item row="0" column="0" colspan="4" >
+      <item row="0" column="0" colspan="2" >
        <layout class="QHBoxLayout" name="horizontalLayout" >
         <item>
          <widget class="KLineEdit" name="lineSearch" >
@@ -46,7 +46,7 @@
         </item>
        </layout>
       </item>
-      <item row="1" column="0" colspan="4" >
+      <item row="1" column="0" colspan="2" >
        <widget class="QListWidget" name="listServices" >
         <property name="font" >
          <font>
@@ -68,64 +68,13 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="0" >
+      <item row="2" column="0" colspan="2" >
        <widget class="QCheckBox" name="checkRunOnStartup" >
         <property name="enabled" >
          <bool>false</bool>
         </property>
         <property name="text" >
          <string>Run on startup</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1" >
-       <widget class="QPushButton" name="buttonRun" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text" >
-         <string>&amp;Run</string>
-        </property>
-        <property name="icon" >
-         <iconset resource="data.qrc" >
-          <normaloff>:/data/icons/start.png</normaloff>:/data/icons/start.png</iconset>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2" >
-       <widget class="QPushButton" name="buttonStop" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text" >
-         <string>&amp;Stop</string>
-        </property>
-        <property name="icon" >
-         <iconset resource="data.qrc" >
-          <normaloff>:/data/icons/stop.png</normaloff>:/data/icons/stop.png</iconset>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="3" >
-       <widget class="QPushButton" name="buttonReload" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text" >
-         <string>R&amp;eload</string>
-        </property>
-        <property name="icon" >
-         <iconset resource="data.qrc" >
-          <normaloff>:/data/icons/reload.png</normaloff>:/data/icons/reload.png</iconset>
         </property>
        </widget>
       </item>
