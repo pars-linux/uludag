@@ -15,9 +15,9 @@
 from PyKDE4.kdecore import *
 
 # Application Data
-appName     = "services"
+appName     = "service-manager"
 catalog     = ""
-programName = ki18n("Service manager")
+programName = ki18n("Service Manager")
 version     = "0.1"
 description = ki18n("Service Manager")
 license     = KAboutData.License_GPL

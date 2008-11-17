@@ -50,12 +50,27 @@ class MainManager(QtGui.QWidget):
     def handleServices(self, package, exception, results):
         # Handle request and fill the listServices in the ui
         if not exception:
-            serviceName, serviceDesc, serviceState = results
-            self.ui.listServices.addItem("%s - %s - %s - %s" % (package, serviceName, serviceDesc, serviceState))
+            ServiceItem(self.ui.listServices, results, package)
 
     def getServices(self):
         # Get service list from comar link
         self.link.System.Service.info(async=self.handleServices)
+
+class ServiceItem(QtGui.QListWidgetItem):
+
+    def __init__(self, parent, data, package):
+        serviceType, serviceDesc, serviceState = data
+        text = '%s\n%s' % (package, serviceDesc)
+        QtGui.QListWidgetItem.__init__(self, text, parent)
+
+        if serviceState in ('on', 'started', 'conditional_started'):
+            icon = 'running'
+        else:
+            icon = 'notrunning'
+        if not serviceType == "server":
+            self.setHidden(True)
+        self.setIcon(QtGui.QIcon(':data/icons/%s.png' % icon))
+        self.package = package
 
 class Manager(KMainWindow):
     def __init__ (self, *args):

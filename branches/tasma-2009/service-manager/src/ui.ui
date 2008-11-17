@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>540</width>
-    <height>410</height>
+    <width>577</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -20,16 +20,65 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_2" >
       <item row="0" column="0" colspan="4" >
-       <widget class="QListWidget" name="listServices" />
+       <layout class="QHBoxLayout" name="horizontalLayout" >
+        <item>
+         <widget class="KLineEdit" name="lineSearch" >
+          <property name="urlDropsEnabled" >
+           <bool>false</bool>
+          </property>
+          <property name="clickMessage" >
+           <string>type service name to search...</string>
+          </property>
+          <property name="showClearButton" stdset="0" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkShowServers" >
+          <property name="text" >
+           <string>Just show servers</string>
+          </property>
+          <property name="checked" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item row="1" column="0" >
-       <widget class="QLabel" name="labelStatus" >
-        <property name="text" >
-         <string/>
+      <item row="1" column="0" colspan="4" >
+       <widget class="QListWidget" name="listServices" >
+        <property name="font" >
+         <font>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="editTriggers" >
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="iconSize" >
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="verticalScrollMode" >
+         <enum>QAbstractItemView::ScrollPerPixel</enum>
         </property>
        </widget>
       </item>
-      <item row="1" column="1" >
+      <item row="2" column="0" >
+       <widget class="QCheckBox" name="checkRunOnStartup" >
+        <property name="enabled" >
+         <bool>false</bool>
+        </property>
+        <property name="text" >
+         <string>Run on startup</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" >
        <widget class="QPushButton" name="buttonRun" >
         <property name="sizePolicy" >
          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
@@ -40,9 +89,13 @@
         <property name="text" >
          <string>&amp;Run</string>
         </property>
+        <property name="icon" >
+         <iconset resource="data.qrc" >
+          <normaloff>:/data/icons/start.png</normaloff>:/data/icons/start.png</iconset>
+        </property>
        </widget>
       </item>
-      <item row="1" column="2" >
+      <item row="2" column="2" >
        <widget class="QPushButton" name="buttonStop" >
         <property name="sizePolicy" >
          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
@@ -53,9 +106,13 @@
         <property name="text" >
          <string>&amp;Stop</string>
         </property>
+        <property name="icon" >
+         <iconset resource="data.qrc" >
+          <normaloff>:/data/icons/stop.png</normaloff>:/data/icons/stop.png</iconset>
+        </property>
        </widget>
       </item>
-      <item row="1" column="3" >
+      <item row="2" column="3" >
        <widget class="QPushButton" name="buttonReload" >
         <property name="sizePolicy" >
          <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
@@ -66,6 +123,10 @@
         <property name="text" >
          <string>R&amp;eload</string>
         </property>
+        <property name="icon" >
+         <iconset resource="data.qrc" >
+          <normaloff>:/data/icons/reload.png</normaloff>:/data/icons/reload.png</iconset>
+        </property>
        </widget>
       </item>
      </layout>
@@ -73,6 +134,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="data.qrc" />
  </resources>

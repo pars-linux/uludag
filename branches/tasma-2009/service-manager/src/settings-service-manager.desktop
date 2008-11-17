@@ -14,5 +14,5 @@ X-KDE-Weight=70
 Name=Service Manager
 Name[x-test]=xxService Managerxx
 Name[tr]=Servis Yöneticisi
-Comment=service manager
+Comment=Service Manager
 X-KDE-Keywords=python service managers
