@@ -393,6 +393,21 @@ def setState(name, state):
                         profile.save()
                         # Notify clients
                         notify("Network.Link", "stateChanged", (name, "up", address[0]))
+                        # Set Network Stack
+                        name_mode = profile.info.get("name_mode", "default")
+                        name_servers = []
+                        name_domain = ""
+                        if name_mode == "auto":
+                            name_servers = []
+                            for server in iface.autoNameServers():
+                                name_servers.append(server)
+                            name_domain = iface.autoNameSearch()
+                        elif name_mode == "custom":
+                            name_servers = []
+                            for server in profile.info.get("name_server", ",").split():
+                                if server.strip():
+                                    name_servers.append(server.strip())
+                        call("baselayout", "Network.Stack", "useNameServers", (name_servers, name_domain))
                     else:
                         iface.down()
                         # Save state to profile database
@@ -430,12 +445,7 @@ def setState(name, state):
                 name_mode = profile.info.get("name_mode", "default")
                 name_servers = []
                 name_domain = ""
-                if name_mode == "auto":
-                    name_servers = []
-                    for server in iface.autoNameServers():
-                        name_servers.append(server)
-                    name_domain = info.autoNameSearch()
-                elif name_mode == "custom":
+                if name_mode == "custom":
                     name_servers = []
                     for server in profile.info.get("name_server", ",").split():
                         if server.strip():
