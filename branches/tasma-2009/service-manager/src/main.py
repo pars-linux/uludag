@@ -31,12 +31,15 @@ from ui import Ui_mainManager
 from dbus.mainloop.qt import DBusQtMainLoop
 
 class MainManager(QtGui.QWidget):
-    def __init__(self, *args):
-        QtGui.QWidget.__init__(self, None)
+    def __init__(self, parent, standAlone=True):
+        QtGui.QWidget.__init__(self, parent)
 
         # Create the ui
         self.ui = Ui_mainManager()
-        self.ui.setupUi(self)
+        if standAlone:
+            self.ui.setupUi(self)
+        else:
+            self.ui.setupUi(parent)
 
         # Call Comar
         self.link = comar.Link()
@@ -45,14 +48,12 @@ class MainManager(QtGui.QWidget):
         self.getServices()
 
     def handleServices(self, package, exception, results):
-
         # Handle request and fill the listServices in the ui
         if not exception:
             serviceName, serviceDesc, serviceState = results
             self.ui.listServices.addItem("%s - %s - %s - %s" % (package, serviceName, serviceDesc, serviceState))
 
     def getServices(self):
-
         # Get service list from comar link
         self.link.System.Service.info(async=self.handleServices)
 
@@ -61,6 +62,17 @@ class Manager(KMainWindow):
         KMainWindow.__init__(self)
         self.resize (640, 480)
         self.setCentralWidget(MainManager(self))
+
+class ServiceManager(KCModule):
+    def __init__(self, component_data, parent):
+        KCModule.__init__(self, component_data, parent)
+
+        # DBUS MainLoop
+        DBusQtMainLoop(set_as_default = True)
+        self = MainManager(self, standAlone=False)
+
+def CreatePlugin(widget_parent, parent, component_data):
+    return ServiceManager(component_data, parent)
 
 if __name__ == '__main__':
 
@@ -74,11 +86,11 @@ if __name__ == '__main__':
     DBusQtMainLoop(set_as_default = True)
 
     # Create Main Widget
-    mainWindow = Manager(None, "service-manager")
+    mainWindow = Manager(None, 'service-manager')
     mainWindow.show()
 
     # Create connection for lastWindowClosed signal to quit app
-    app.connect(app, SIGNAL("lastWindowClosed()"), app.quit)
+    app.connect(app, SIGNAL('lastWindowClosed()'), app.quit)
 
     # Run the application
     app.exec_()

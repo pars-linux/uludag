@@ -1,0 +1,18 @@
+[Desktop Entry]
+Exec=kcmshell4 service-manager
+Icon=preferences-desktop
+Type=Service
+X-KDE-ServiceTypes=KCModule
+
+X-KDE-Library=kpythonpluginfactory
+X-KDE-ParentApp=kcontrol
+X-KDE-PluginKeyword=service-manager/service-manager
+
+X-KDE-System-Settings-Parent-Category=computer-administration
+X-KDE-Weight=70
+
+Name=Service Manager
+Name[x-test]=xxService Managerxx
+Name[tr]=Servis Yöneticisi
+Comment=service manager
+X-KDE-Keywords=python service managers

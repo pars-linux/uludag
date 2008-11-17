@@ -16,7 +16,7 @@
    <item row="0" column="0" >
     <widget class="QGroupBox" name="groupBox" >
      <property name="title" >
-      <string>Services</string>
+      <string>System Services</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2" >
       <item row="0" column="0" colspan="4" >
@@ -38,7 +38,7 @@
          </sizepolicy>
         </property>
         <property name="text" >
-         <string>Run</string>
+         <string>&amp;Run</string>
         </property>
        </widget>
       </item>
@@ -51,7 +51,7 @@
          </sizepolicy>
         </property>
         <property name="text" >
-         <string>Stop</string>
+         <string>&amp;Stop</string>
         </property>
        </widget>
       </item>
@@ -64,7 +64,7 @@
          </sizepolicy>
         </property>
         <property name="text" >
-         <string>Reload</string>
+         <string>R&amp;eload</string>
         </property>
        </widget>
       </item>
@@ -73,6 +73,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="data.qrc" />
+ </resources>
  <connections/>
 </ui>
