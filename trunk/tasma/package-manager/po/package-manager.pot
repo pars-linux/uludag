@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 12:37+0300\n"
+"POT-Creation-Date: 2008-11-17 11:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,146 +16,51 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/Notifier.py:45
-msgid "Show Updates"
+#: src/ProgressDialog.py:127
+msgid "Progress"
 msgstr ""
 
-#: src/Notifier.py:45
-msgid "Ignore"
+#: src/ProgressDialog.py:129
+msgid "Alt+C"
 msgstr ""
 
-#: src/RepoDialog.py:72
-msgid "Repository Dialog"
+#: src/ProgressDialog.py:130
+msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 msgstr ""
 
-#: src/RepoDialog.py:73
-msgid "&Ok"
+#: src/ProgressDialog.py:131
+msgid "<h3>Preparing PiSi...</h3>"
 msgstr ""
 
-#: src/RepoDialog.py:75
-msgid "Repository &Address"
+#: src/ProgressDialog.py:133
+msgid "amsn"
 msgstr ""
 
-#: src/RepoDialog.py:76
-msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+#: src/ProgressDialog.py:134
+msgid "Time remaining:"
 msgstr ""
 
-#: src/RepoDialog.py:79
-msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
+#: src/ProgressDialog.py:135
+msgid "2 / 20 packages installed."
 msgstr ""
 
-#: src/RepoDialog.py:80
-msgid "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+#: src/ProgressDialog.py:136
+msgid "01:29"
 msgstr ""
 
-#: src/RepoDialog.py:81
-msgid "Repository &Name"
+#: src/ProgressDialog.py:137
+msgid "Operation:"
 msgstr ""
 
-#: src/RepoDialog.py:82
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr ""
-
-#: src/Commander.py:64 src/ComarIface.py:64 src/ComarIface.py:72
-msgid "You are not authorized for this operation."
-msgstr ""
-
-#: src/BasketDialog.py:51 src/BasketDialog.py:56
-msgid "Basket"
-msgstr ""
-
-#: src/BasketDialog.py:64
-msgid "Selected package(s) for removal:"
-msgstr ""
-
-#: src/BasketDialog.py:65
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr ""
-
-#: src/BasketDialog.py:67
-msgid "Selected package(s) for install:"
-msgstr ""
-
-#: src/BasketDialog.py:68
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr ""
-
-#: src/BasketDialog.py:70
-msgid "Selected package(s) for upgrade:"
-msgstr ""
-
-#: src/BasketDialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
-msgstr ""
-
-#: src/BasketDialog.py:79
-msgid "Total Size:"
-msgstr ""
-
-#: src/BasketDialog.py:86
-msgid "Update Basket"
-msgstr ""
-
-#: src/BasketDialog.py:164
-msgid "Total Size: <b>%1</b>"
-msgstr ""
-
-#: src/BasketDialog.py:212 src/BasketDialog.py:214
-msgid "Size: "
-msgstr ""
-
-#: src/pm-install.py:33
-msgid "PiSi package to install"
-msgstr ""
-
-#: src/pm-install.py:50
-msgid "You have selected a package to install. Do you want to continue?"
-msgstr ""
-
-#: src/pm-install.py:51
-msgid "Install Package"
-msgstr ""
-
-#: src/SpecialList.py:100 src/CustomEventListener.py:37
-#: src/CustomEventListener.py:41
-msgid "Select all packages in this category"
-msgstr ""
-
-#: src/SpecialList.py:102 src/CustomEventListener.py:38
-msgid "Reverse package selections"
-msgstr ""
-
-#: src/SpecialList.py:163
-msgid "Description: "
-msgstr ""
-
-#: src/SpecialList.py:164
-msgid "Version: "
-msgstr ""
-
-#: src/SpecialList.py:165
-msgid "Repository: "
-msgstr ""
-
-#: src/SpecialList.py:166
-msgid "Package Size: "
-msgstr ""
-
-#: src/SpecialList.py:167
-msgid "Homepage: "
+#: src/ProgressDialog.py:138
+msgid "Status:"
 msgstr ""
 
 #: src/Tray.py:38
 msgid "Update"
 msgstr ""
 
-#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:576
+#: src/Tray.py:43 src/MainWidget.py:292 src/MainWidget.py:579
 msgid "All"
 msgstr ""
 
@@ -165,6 +70,211 @@ msgstr ""
 
 #: src/Tray.py:67
 msgid "Updates Available!"
+msgstr ""
+
+#: src/ComarIface.py:38
+msgid "Unable to connect to DBus."
+msgstr ""
+
+#: src/ComarIface.py:38
+msgid "DBus Error"
+msgstr ""
+
+#: src/ComarIface.py:52
+msgid "D-Bus Error"
+msgstr ""
+
+#: src/ComarIface.py:57
+msgid "COMAR Auth Error"
+msgstr ""
+
+#: src/ComarIface.py:62
+msgid "Network error. Please check your network connections and try again."
+msgstr ""
+
+#: src/ComarIface.py:62 src/ComarIface.py:67
+msgid "COMAR Error"
+msgstr ""
+
+#: src/ComarIface.py:64 src/ComarIface.py:72 src/Commander.py:64
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: src/MainWidget.py:74
+msgid "Loading Package List..."
+msgstr ""
+
+#: src/MainWidget.py:104
+msgid "Search: "
+msgstr ""
+
+#: src/MainWidget.py:108
+msgid "Search"
+msgstr ""
+
+#: src/MainWidget.py:112
+msgid "Show basket"
+msgstr ""
+
+#: src/MainWidget.py:117 src/MainWidget.py:216
+msgid "Install Package(s)"
+msgstr ""
+
+#: src/MainWidget.py:126
+msgid "Components"
+msgstr ""
+
+#: src/MainWidget.py:176
+msgid ""
+"Package-manager needs to update package database. You need a network "
+"connection to update."
+msgstr ""
+
+#: src/MainWidget.py:177
+msgid "Package database is empty"
+msgstr ""
+
+#: src/MainWidget.py:245
+msgid "Remove Package(s)"
+msgstr ""
+
+#: src/MainWidget.py:261 src/MainWidget.py:659
+msgid "<b>Updating Repository</b>"
+msgstr ""
+
+#: src/MainWidget.py:290
+msgid "Upgrade Package(s)"
+msgstr ""
+
+#: src/MainWidget.py:308 src/MainWidget.py:587
+msgid "Search Results"
+msgstr ""
+
+#: src/MainWidget.py:340
+msgid "Currently your basket is empty."
+msgstr ""
+
+#: src/MainWidget.py:343 src/MainWidget.py:351
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+
+#: src/MainWidget.py:346
+msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
+msgstr ""
+
+#: src/MainWidget.py:348 src/MainWidget.py:356
+msgid "in your basket."
+msgstr ""
+
+#: src/MainWidget.py:354
+msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
+msgstr ""
+
+#: src/MainWidget.py:385
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+
+#: src/MainWidget.py:386 src/MainWidget.py:396
+msgid "Conflict Error"
+msgstr ""
+
+#: src/MainWidget.py:392
+msgid "The following packages conflicts:\n"
+msgstr ""
+
+#: src/MainWidget.py:394
+msgid "%1 conflicts with: [%2]\n"
+msgstr ""
+
+#: src/MainWidget.py:395
+msgid ""
+"\n"
+"Remove the conflicting packages from the system?"
+msgstr ""
+
+#: src/MainWidget.py:410 src/MainWidget.py:469 src/MainWidget.py:611
+msgid "<b>Installing Package(s)</b>"
+msgstr ""
+
+#: src/MainWidget.py:419
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
+msgstr ""
+
+#: src/MainWidget.py:422
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>installed</b>."
+msgstr ""
+
+#: src/MainWidget.py:423
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
+msgstr ""
+
+#: src/MainWidget.py:426
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
+msgstr ""
+
+#: src/MainWidget.py:429
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>upgraded</b>."
+msgstr ""
+
+#: src/MainWidget.py:430
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
+msgstr ""
+
+#: src/MainWidget.py:433
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
+msgstr ""
+
+#: src/MainWidget.py:436
+msgid ""
+" Selected packages have reverse dependencies. Because the reverse "
+"dependencies of the selected packages needs those packages to work; by "
+"removing the selected packages; <b>%1</b> reverse dependencies are also "
+"going to be <b>removed</b>. Please check your basket and make sure those are "
+"the packages you want to remove. Accidentally removing some reverse "
+"dependencies may break the system stability."
+msgstr ""
+
+#: src/MainWidget.py:438
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
+msgstr ""
+
+#: src/MainWidget.py:440
+msgid "<br>Do you want to continue?</qt>"
+msgstr ""
+
+#: src/MainWidget.py:461
+msgid "<b>Removing Package(s)</b>"
+msgstr ""
+
+#: src/MainWidget.py:478 src/MainWidget.py:613
+msgid "<b>Upgrading Package(s)</b>"
+msgstr ""
+
+#: src/MainWidget.py:571
+msgid "Others"
+msgstr ""
+
+#: src/MainWidget.py:615 src/CommonText.py:15
+msgid "downloading"
+msgstr ""
+
+#: src/MainWidget.py:656 src/Preferences.py:349
+msgid "<b>Applying Repository Changes</b>"
+msgstr ""
+
+#: src/MainWidget.py:660
+msgid "Downloading package list of %1"
+msgstr ""
+
+#: src/MainWidget.py:676
+msgid "Confirm"
 msgstr ""
 
 #: src/package-manager.py:33
@@ -234,217 +344,70 @@ msgstr ""
 msgid "Package Manager is already running!"
 msgstr ""
 
-#: src/ProgressDialog.py:127
-msgid "Progress"
+#: src/BasketDialog.py:51 src/BasketDialog.py:56
+msgid "Basket"
 msgstr ""
 
-#: src/ProgressDialog.py:129
-msgid "Alt+C"
+#: src/BasketDialog.py:64
+msgid "Selected package(s) for removal:"
 msgstr ""
 
-#: src/ProgressDialog.py:130
-msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-msgstr ""
-
-#: src/ProgressDialog.py:131
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr ""
-
-#: src/ProgressDialog.py:133
-msgid "amsn"
-msgstr ""
-
-#: src/ProgressDialog.py:134
-msgid "Time remaining:"
-msgstr ""
-
-#: src/ProgressDialog.py:135
-msgid "2 / 20 packages installed."
-msgstr ""
-
-#: src/ProgressDialog.py:136
-msgid "01:29"
-msgstr ""
-
-#: src/ProgressDialog.py:137
-msgid "Operation:"
-msgstr ""
-
-#: src/ProgressDialog.py:138
-msgid "Status:"
-msgstr ""
-
-#: src/MainWidget.py:75
-msgid "Loading Package List..."
-msgstr ""
-
-#: src/MainWidget.py:105
-msgid "Search: "
-msgstr ""
-
-#: src/MainWidget.py:109
-msgid "Show basket"
-msgstr ""
-
-#: src/MainWidget.py:114 src/MainWidget.py:213
-msgid "Install Package(s)"
-msgstr ""
-
-#: src/MainWidget.py:123
-msgid "Components"
-msgstr ""
-
-#: src/MainWidget.py:173
+#: src/BasketDialog.py:65
 msgid ""
-"Package-manager needs to update package database. You need a network "
-"connection to update."
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
 msgstr ""
 
-#: src/MainWidget.py:174
-msgid "Package database is empty"
+#: src/BasketDialog.py:67
+msgid "Selected package(s) for install:"
 msgstr ""
 
-#: src/MainWidget.py:242
-msgid "Remove Package(s)"
-msgstr ""
-
-#: src/MainWidget.py:258 src/MainWidget.py:656
-msgid "<b>Updating Repository</b>"
-msgstr ""
-
-#: src/MainWidget.py:287
-msgid "Upgrade Package(s)"
-msgstr ""
-
-#: src/MainWidget.py:305 src/MainWidget.py:584
-msgid "Search Results"
-msgstr ""
-
-#: src/MainWidget.py:337
-msgid "Currently your basket is empty."
-msgstr ""
-
-#: src/MainWidget.py:340 src/MainWidget.py:348
+#: src/BasketDialog.py:68
 msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
 msgstr ""
 
-#: src/MainWidget.py:343
-msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
+#: src/BasketDialog.py:70
+msgid "Selected package(s) for upgrade:"
 msgstr ""
 
-#: src/MainWidget.py:345 src/MainWidget.py:353
-msgid "in your basket."
-msgstr ""
-
-#: src/MainWidget.py:351
-msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
-msgstr ""
-
-#: src/MainWidget.py:382
+#: src/BasketDialog.py:71
 msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
 msgstr ""
 
-#: src/MainWidget.py:383 src/MainWidget.py:393
-msgid "Conflict Error"
+#: src/BasketDialog.py:79
+msgid "Total Size:"
 msgstr ""
 
-#: src/MainWidget.py:389
-msgid "The following packages conflicts:\n"
+#: src/BasketDialog.py:86
+msgid "Update Basket"
 msgstr ""
 
-#: src/MainWidget.py:391
-msgid "%1 conflicts with: [%2]\n"
+#: src/BasketDialog.py:164
+msgid "Total Size: <b>%1</b>"
 msgstr ""
 
-#: src/MainWidget.py:392
-msgid ""
-"\n"
-"Remove the conflicting packages from the system?"
+#: src/BasketDialog.py:212 src/BasketDialog.py:214
+msgid "Size: "
 msgstr ""
 
-#: src/MainWidget.py:407 src/MainWidget.py:466 src/MainWidget.py:608
-msgid "<b>Installing Package(s)</b>"
+#: src/CommonText.py:15
+msgid "extracting"
 msgstr ""
 
-#: src/MainWidget.py:416
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
+#: src/CommonText.py:15
+msgid "configuring"
 msgstr ""
 
-#: src/MainWidget.py:419
-msgid ""
-" With the selected packages; <b>%1</b> extra dependencies are also going to "
-"be <b>installed</b>."
+#: src/CommonText.py:15
+msgid "removing"
 msgstr ""
 
-#: src/MainWidget.py:420
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
-msgstr ""
-
-#: src/MainWidget.py:423
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr ""
-
-#: src/MainWidget.py:426
-msgid ""
-" With the selected packages; <b>%1</b> extra dependencies are also going to "
-"be <b>upgraded</b>."
-msgstr ""
-
-#: src/MainWidget.py:427
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr ""
-
-#: src/MainWidget.py:430
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
-msgstr ""
-
-#: src/MainWidget.py:433
-msgid ""
-" Selected packages have reverse dependencies. Because the reverse "
-"dependencies of the selected packages needs those packages to work; by "
-"removing the selected packages; <b>%1</b> reverse dependencies are also "
-"going to be <b>removed</b>. Please check your basket and make sure those are "
-"the packages you want to remove. Accidentally removing some reverse "
-"dependencies may break the system stability."
-msgstr ""
-
-#: src/MainWidget.py:435
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
-msgstr ""
-
-#: src/MainWidget.py:437
-msgid "<br>Do you want to continue?</qt>"
-msgstr ""
-
-#: src/MainWidget.py:458
-msgid "<b>Removing Package(s)</b>"
-msgstr ""
-
-#: src/MainWidget.py:475 src/MainWidget.py:610
-msgid "<b>Upgrading Package(s)</b>"
-msgstr ""
-
-#: src/MainWidget.py:568
-msgid "Others"
-msgstr ""
-
-#: src/MainWidget.py:612 src/CommonText.py:15
-msgid "downloading"
-msgstr ""
-
-#: src/MainWidget.py:653 src/Preferences.py:349
-msgid "<b>Applying Repository Changes</b>"
-msgstr ""
-
-#: src/MainWidget.py:657
-msgid "Downloading package list of %1"
-msgstr ""
-
-#: src/MainWidget.py:673
-msgid "Confirm"
+#: src/CommonText.py:15
+msgid "installing"
 msgstr ""
 
 #: src/Preferences.py:234
@@ -467,6 +430,47 @@ msgstr ""
 
 #: src/Preferences.py:382
 msgid "All the cached packages will be deleted. Are you sure? "
+msgstr ""
+
+#: src/RepoDialog.py:72
+msgid "Repository Dialog"
+msgstr ""
+
+#: src/RepoDialog.py:73
+msgid "&Ok"
+msgstr ""
+
+#: src/RepoDialog.py:75
+msgid "Repository &Address"
+msgstr ""
+
+#: src/RepoDialog.py:76
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr ""
+
+#: src/RepoDialog.py:79
+msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
+msgstr ""
+
+#: src/RepoDialog.py:80
+msgid "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+msgstr ""
+
+#: src/RepoDialog.py:81
+msgid "Repository &Name"
+msgstr ""
+
+#: src/RepoDialog.py:82
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr ""
+
+#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
+#: src/SpecialList.py:100
+msgid "Select all packages in this category"
+msgstr ""
+
+#: src/CustomEventListener.py:38 src/SpecialList.py:102
+msgid "Reverse package selections"
 msgstr ""
 
 #: src/PreferencesDialog.py:179 src/PreferencesDialog.py:378
@@ -661,20 +665,36 @@ msgstr ""
 msgid "Proxy"
 msgstr ""
 
-#: src/CommonText.py:15
-msgid "extracting"
+#: src/pm-install.py:33
+msgid "PiSi package to install"
 msgstr ""
 
-#: src/CommonText.py:15
-msgid "configuring"
+#: src/pm-install.py:50
+msgid "You have selected a package to install. Do you want to continue?"
 msgstr ""
 
-#: src/CommonText.py:15
-msgid "removing"
+#: src/pm-install.py:51
+msgid "Install Package"
 msgstr ""
 
-#: src/CommonText.py:15
-msgid "installing"
+#: src/SpecialList.py:165
+msgid "Description: "
+msgstr ""
+
+#: src/SpecialList.py:166
+msgid "Version: "
+msgstr ""
+
+#: src/SpecialList.py:167
+msgid "Repository: "
+msgstr ""
+
+#: src/SpecialList.py:168
+msgid "Package Size: "
+msgstr ""
+
+#: src/SpecialList.py:169
+msgid "Homepage: "
 msgstr ""
 
 #: src/Progress.py:64
@@ -717,26 +737,10 @@ msgstr ""
 msgid "%1 / %2 package %3"
 msgstr ""
 
-#: src/ComarIface.py:38
-msgid "Unable to connect to DBus."
+#: src/Notifier.py:45
+msgid "Show Updates"
 msgstr ""
 
-#: src/ComarIface.py:38
-msgid "DBus Error"
-msgstr ""
-
-#: src/ComarIface.py:52
-msgid "D-Bus Error"
-msgstr ""
-
-#: src/ComarIface.py:57
-msgid "COMAR Auth Error"
-msgstr ""
-
-#: src/ComarIface.py:62
-msgid "Network error. Please check your network connections and try again."
-msgstr ""
-
-#: src/ComarIface.py:62 src/ComarIface.py:67
-msgid "COMAR Error"
+#: src/Notifier.py:45
+msgid "Ignore"
 msgstr ""

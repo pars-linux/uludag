@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 12:37+0300\n"
-"PO-Revision-Date: 2008-06-25 16:08+0300\n"
+"POT-Creation-Date: 2008-11-17 11:04+0200\n"
+"PO-Revision-Date: 2008-11-17 11:05+0200\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,146 +24,51 @@ msgstr ""
 "Plural-Forms:  nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/Notifier.py:45
-msgid "Show Updates"
-msgstr "Güncellemeleri Göster"
+#: src/ProgressDialog.py:127
+msgid "Progress"
+msgstr "İşlem"
 
-#: src/Notifier.py:45
-msgid "Ignore"
-msgstr "Yoksay"
+#: src/ProgressDialog.py:129
+msgid "Alt+C"
+msgstr "Alt+C"
 
-#: src/RepoDialog.py:72
-msgid "Repository Dialog"
-msgstr "Depo Penceresi"
+#: src/ProgressDialog.py:130
+msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 
-#: src/RepoDialog.py:73
-msgid "&Ok"
-msgstr "&Tamam"
+#: src/ProgressDialog.py:131
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>PiSi hazırlanıyor...</h3>"
 
-#: src/RepoDialog.py:75
-msgid "Repository &Address"
-msgstr "D&epo Adresi"
+#: src/ProgressDialog.py:133
+msgid "amsn"
+msgstr "amsn"
 
-#: src/RepoDialog.py:76
-msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
-msgstr "Deponun adresi, örneğin <b>http://foo.bar.com/pisi-index.xml</b>"
+#: src/ProgressDialog.py:134
+msgid "Time remaining:"
+msgstr "Kalan zaman:"
 
-#: src/RepoDialog.py:79
-msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
+#: src/ProgressDialog.py:135
+msgid "2 / 20 packages installed."
+msgstr "2 / 20 paket kuruldu."
 
-#: src/RepoDialog.py:80
-msgid "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+#: src/ProgressDialog.py:136
+msgid "01:29"
+msgstr "01:29"
 
-#: src/RepoDialog.py:81
-msgid "Repository &Name"
-msgstr "&Depo Adı"
+#: src/ProgressDialog.py:137
+msgid "Operation:"
+msgstr "İşlem: "
 
-#: src/RepoDialog.py:82
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Deponun adı, örneğin <b>pardus-devel</b>"
-
-#: src/Commander.py:64 src/ComarIface.py:64 src/ComarIface.py:72
-msgid "You are not authorized for this operation."
-msgstr "Bu işlemi gerçekleştirmek için yetkiniz yok."
-
-#: src/BasketDialog.py:51 src/BasketDialog.py:56
-msgid "Basket"
-msgstr "Sepet"
-
-#: src/BasketDialog.py:64
-msgid "Selected package(s) for removal:"
-msgstr "Kaldırılmak üzere seçilmiş paket(ler):"
-
-#: src/BasketDialog.py:65
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr "Seçili paketlerin ayrıca kaldırılacak olan ters bağımlılıkları:"
-
-#: src/BasketDialog.py:67
-msgid "Selected package(s) for install:"
-msgstr "Kurulmak üzere seçilmiş paket(ler):"
-
-#: src/BasketDialog.py:68
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
-
-#: src/BasketDialog.py:70
-msgid "Selected package(s) for upgrade:"
-msgstr "Güncellenmek üzere seçilmiş paket(ler):"
-
-#: src/BasketDialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
-msgstr "Seçili paketlerin ayrıca güncellenecek olan ek bağımlılıkları:"
-
-#: src/BasketDialog.py:79
-msgid "Total Size:"
-msgstr "Toplam Boyut:"
-
-#: src/BasketDialog.py:86
-msgid "Update Basket"
-msgstr "Sepeti Güncelle"
-
-#: src/BasketDialog.py:164
-msgid "Total Size: <b>%1</b>"
-msgstr "Toplam Boyut: <b>%1</b>"
-
-#: src/BasketDialog.py:212 src/BasketDialog.py:214
-msgid "Size: "
-msgstr "Boyut: "
-
-#: src/pm-install.py:33
-msgid "PiSi package to install"
-msgstr "Kurulacak PiSi paketi ismi"
-
-#: src/pm-install.py:50
-msgid "You have selected a package to install. Do you want to continue?"
-msgstr "Kurmak üzere bir paket seçtiniz. Devam etmek istiyor musunuz?"
-
-#: src/pm-install.py:51
-msgid "Install Package"
-msgstr "Paket Kur"
-
-#: src/SpecialList.py:100 src/CustomEventListener.py:37
-#: src/CustomEventListener.py:41
-msgid "Select all packages in this category"
-msgstr "Bu kategorideki tüm paketleri seç"
-
-#: src/SpecialList.py:102 src/CustomEventListener.py:38
-msgid "Reverse package selections"
-msgstr "Paket seçimlerini ters çevir"
-
-#: src/SpecialList.py:163
-msgid "Description: "
-msgstr "Açıklama: "
-
-#: src/SpecialList.py:164
-msgid "Version: "
-msgstr "Sürüm: "
-
-#: src/SpecialList.py:165
-msgid "Repository: "
-msgstr "Depo: "
-
-#: src/SpecialList.py:166
-msgid "Package Size: "
-msgstr "Paket Boyutu: "
-
-#: src/SpecialList.py:167
-msgid "Homepage: "
-msgstr "Web sayfası: "
+#: src/ProgressDialog.py:138
+msgid "Status:"
+msgstr "Durum:"
 
 #: src/Tray.py:38
 msgid "Update"
 msgstr "Güncelle"
 
-#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:576
+#: src/Tray.py:43 src/MainWidget.py:292 src/MainWidget.py:579
 msgid "All"
 msgstr "Tümü"
 
@@ -174,6 +79,224 @@ msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
 #: src/Tray.py:67
 msgid "Updates Available!"
 msgstr "Güncellemeler Mevcut!"
+
+#: src/ComarIface.py:38
+msgid "Unable to connect to DBus."
+msgstr "DBus'a bağlanılamadı."
+
+#: src/ComarIface.py:38
+msgid "DBus Error"
+msgstr "DBus Hatası"
+
+#: src/ComarIface.py:52
+msgid "D-Bus Error"
+msgstr "D-Bus Hatası"
+
+#: src/ComarIface.py:57
+msgid "COMAR Auth Error"
+msgstr "Comar Yetki Hatası"
+
+#: src/ComarIface.py:62
+msgid "Network error. Please check your network connections and try again."
+msgstr "Ağ hatası. Lütfen ağ bağlantılarınızı kontrol edin ve tekrar deneyin."
+
+#: src/ComarIface.py:62 src/ComarIface.py:67
+msgid "COMAR Error"
+msgstr "Comar Hatası"
+
+#: src/ComarIface.py:64 src/ComarIface.py:72 src/Commander.py:64
+msgid "You are not authorized for this operation."
+msgstr "Bu işlemi gerçekleştirmek için yetkiniz yok."
+
+#: src/MainWidget.py:74
+msgid "Loading Package List..."
+msgstr "Paket listesi yükleniyor"
+
+#: src/MainWidget.py:104
+msgid "Search: "
+msgstr "Ara: "
+
+#: src/MainWidget.py:108
+msgid "Search"
+msgstr "Ara"
+
+#: src/MainWidget.py:112
+msgid "Show basket"
+msgstr "Sepeti göster"
+
+#: src/MainWidget.py:117 src/MainWidget.py:216
+msgid "Install Package(s)"
+msgstr "Paket(ler)i Kur"
+
+#: src/MainWidget.py:126
+msgid "Components"
+msgstr "Bileşenler"
+
+#: src/MainWidget.py:176
+msgid ""
+"Package-manager needs to update package database. You need a network "
+"connection to update."
+msgstr ""
+"Paket-yöneticisi'nin paket veri tabanını güncellemesi gerekiyor. Güncellemek "
+"için bir ağ bağlantısına ihtiyacınız var."
+
+#: src/MainWidget.py:177
+msgid "Package database is empty"
+msgstr "Paket veritabanı boş"
+
+#: src/MainWidget.py:245
+msgid "Remove Package(s)"
+msgstr "Paket(ler)i Kaldır"
+
+#: src/MainWidget.py:261 src/MainWidget.py:659
+msgid "<b>Updating Repository</b>"
+msgstr "<b>Depo Güncelleniyor</b>"
+
+#: src/MainWidget.py:290
+msgid "Upgrade Package(s)"
+msgstr "Paket(ler)i Güncelle"
+
+#: src/MainWidget.py:308 src/MainWidget.py:587
+msgid "Search Results"
+msgstr "Arama Sonuçları"
+
+#: src/MainWidget.py:340
+msgid "Currently your basket is empty."
+msgstr "Şu anda sepetiniz boş."
+
+#: src/MainWidget.py:343 src/MainWidget.py:351
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
+
+#: src/MainWidget.py:346
+msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
+msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ek bağımlılık "
+
+#: src/MainWidget.py:348 src/MainWidget.py:356
+msgid "in your basket."
+msgstr "bulunuyor."
+
+#: src/MainWidget.py:354
+msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
+msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ters bağımlılık "
+
+#: src/MainWidget.py:385
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
+
+#: src/MainWidget.py:386 src/MainWidget.py:396
+msgid "Conflict Error"
+msgstr "Çakışma Hatası"
+
+#: src/MainWidget.py:392
+msgid "The following packages conflicts:\n"
+msgstr "Aşağıdaki paketler çakışıyor:\n"
+
+#: src/MainWidget.py:394
+msgid "%1 conflicts with: [%2]\n"
+msgstr "%1: [%2] ile çakışıyor\n"
+
+#: src/MainWidget.py:395
+msgid ""
+"\n"
+"Remove the conflicting packages from the system?"
+msgstr ""
+"\n"
+"Çakışan paketler sistemden kaldırılsın mı?"
+
+#: src/MainWidget.py:410 src/MainWidget.py:469 src/MainWidget.py:611
+msgid "<b>Installing Package(s)</b>"
+msgstr "<b>Paket(ler) Kuruluyor</b>"
+
+#: src/MainWidget.py:419
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
+msgstr "<qt><b>Kurmak</b> üzere <b>%1</b> paket seçtiniz."
+
+#: src/MainWidget.py:422
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>installed</b>."
+msgstr ""
+" Seçili paketler ile birlikte ayrıca <b>%1</b> ek bağımlılık da "
+"<b>kurulacak</b>."
+
+#: src/MainWidget.py:423
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
+msgstr "<br><br>Toplam olarak <b>%1</b> paket <b>kurulacak</b>."
+
+#: src/MainWidget.py:426
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
+msgstr "<qt><b>Güncellemek</b> üzere <b>%1</b> paket seçtiniz."
+
+#: src/MainWidget.py:429
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>upgraded</b>."
+msgstr ""
+" Seçili paketler ile birlikte ayrıca <b>%1</b> ek bağımlılık da "
+"<b>güncellenecek</b>."
+
+#: src/MainWidget.py:430
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
+msgstr "<br><br>Toplam olarak <b>%1</b> paket <b>güncellenecek</b>."
+
+#: src/MainWidget.py:433
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
+msgstr "<qt><b>Kaldırmak</b> üzere <b>%1</b> paket seçtiniz."
+
+#: src/MainWidget.py:436
+msgid ""
+" Selected packages have reverse dependencies. Because the reverse "
+"dependencies of the selected packages needs those packages to work; by "
+"removing the selected packages; <b>%1</b> reverse dependencies are also "
+"going to be <b>removed</b>. Please check your basket and make sure those are "
+"the packages you want to remove. Accidentally removing some reverse "
+"dependencies may break the system stability."
+msgstr ""
+" Seçili paketlerin ters bağımlılıkları var. Ters bağımlılıklar, çalışabilmek "
+"için bu paketlere ihtiyaç duyduğundan; seçili paketler ile birlikte ayrıca "
+"<b>%1</b> ters bağımlılık da <b>kaldırılacak</b>. Lütfen sepetinizi kontrol "
+"edin ve kaldırmak istediğiniz paketlerin bu paketler olduğuna emin olun. "
+"Ters bağımlı olan bazı paketlerin kaldırılması sistem kararlılığını "
+"bozabilir."
+
+#: src/MainWidget.py:438
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
+msgstr "<br><br>Toplam olarak <b>%1</b> paket <b>kaldırılacak</b>."
+
+#: src/MainWidget.py:440
+msgid "<br>Do you want to continue?</qt>"
+msgstr "<br>Devam etmek istiyor musunuz?</qt>"
+
+#: src/MainWidget.py:461
+msgid "<b>Removing Package(s)</b>"
+msgstr "<b>Paket(ler) Kaldırılıyor</b>"
+
+#: src/MainWidget.py:478 src/MainWidget.py:613
+msgid "<b>Upgrading Package(s)</b>"
+msgstr "<b>Paket(ler) Güncelleniyor</b>"
+
+#: src/MainWidget.py:571
+msgid "Others"
+msgstr "Diğerleri"
+
+#: src/MainWidget.py:615 src/CommonText.py:15
+msgid "downloading"
+msgstr "indiriliyor"
+
+#: src/MainWidget.py:656 src/Preferences.py:349
+msgid "<b>Applying Repository Changes</b>"
+msgstr "<b>Depo Değişiklikleri Uygulanıyor</b>"
+
+#: src/MainWidget.py:660
+msgid "Downloading package list of %1"
+msgstr "%1 paket listesi indiriliyor"
+
+#: src/MainWidget.py:676
+msgid "Confirm"
+msgstr "Onay"
 
 #: src/package-manager.py:33
 msgid "GUI for PiSi package manager"
@@ -242,234 +365,71 @@ msgstr "Debug çıktısını göster"
 msgid "Package Manager is already running!"
 msgstr "Paket Yöneticisi başka bir yerde çalışıyor."
 
-#: src/ProgressDialog.py:127
-msgid "Progress"
-msgstr "İşlem"
+#: src/BasketDialog.py:51 src/BasketDialog.py:56
+msgid "Basket"
+msgstr "Sepet"
 
-#: src/ProgressDialog.py:129
-msgid "Alt+C"
-msgstr "Alt+C"
+#: src/BasketDialog.py:64
+msgid "Selected package(s) for removal:"
+msgstr "Kaldırılmak üzere seçilmiş paket(ler):"
 
-#: src/ProgressDialog.py:130
-msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-
-#: src/ProgressDialog.py:131
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>PiSi hazırlanıyor...</h3>"
-
-#: src/ProgressDialog.py:133
-msgid "amsn"
-msgstr "amsn"
-
-#: src/ProgressDialog.py:134
-msgid "Time remaining:"
-msgstr "Kalan zaman:"
-
-#: src/ProgressDialog.py:135
-msgid "2 / 20 packages installed."
-msgstr "2 / 20 paket kuruldu."
-
-#: src/ProgressDialog.py:136
-msgid "01:29"
-msgstr "01:29"
-
-#: src/ProgressDialog.py:137
-msgid "Operation:"
-msgstr "İşlem: "
-
-#: src/ProgressDialog.py:138
-msgid "Status:"
-msgstr "Durum:"
-
-#: src/MainWidget.py:75
-msgid "Loading Package List..."
-msgstr "Paket listesi yükleniyor"
-
-#: src/MainWidget.py:105
-msgid "Search: "
-msgstr "Ara: "
-
-#: src/MainWidget.py:109
-msgid "Show basket"
-msgstr "Sepeti göster"
-
-#: src/MainWidget.py:114 src/MainWidget.py:213
-msgid "Install Package(s)"
-msgstr "Paket(ler)i Kur"
-
-#: src/MainWidget.py:123
-msgid "Components"
-msgstr "Bileşenler"
-
-#: src/MainWidget.py:173
+#: src/BasketDialog.py:65
 msgid ""
-"Package-manager needs to update package database. You need a network "
-"connection to update."
-msgstr ""
-"Paket-yöneticisi'nin paket veri tabanını güncellemesi gerekiyor. Güncellemek "
-"için bir ağ bağlantısına ihtiyacınız var."
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr "Seçili paketlerin ayrıca kaldırılacak olan ters bağımlılıkları:"
 
-#: src/MainWidget.py:174
-msgid "Package database is empty"
-msgstr "Paket veritabanı boş"
+#: src/BasketDialog.py:67
+msgid "Selected package(s) for install:"
+msgstr "Kurulmak üzere seçilmiş paket(ler):"
 
-#: src/MainWidget.py:242
-msgid "Remove Package(s)"
-msgstr "Paket(ler)i Kaldır"
-
-#: src/MainWidget.py:258 src/MainWidget.py:656
-msgid "<b>Updating Repository</b>"
-msgstr "<b>Depo Güncelleniyor</b>"
-
-#: src/MainWidget.py:287
-msgid "Upgrade Package(s)"
-msgstr "Paket(ler)i Güncelle"
-
-#: src/MainWidget.py:305 src/MainWidget.py:584
-msgid "Search Results"
-msgstr "Arama Sonuçları"
-
-#: src/MainWidget.py:337
-msgid "Currently your basket is empty."
-msgstr "Şu anda sepetiniz boş."
-
-#: src/MainWidget.py:340 src/MainWidget.py:348
+#: src/BasketDialog.py:68
 msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
 
-#: src/MainWidget.py:343
-msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ek bağımlılık "
+#: src/BasketDialog.py:70
+msgid "Selected package(s) for upgrade:"
+msgstr "Güncellenmek üzere seçilmiş paket(ler):"
 
-#: src/MainWidget.py:345 src/MainWidget.py:353
-msgid "in your basket."
-msgstr "bulunuyor."
-
-#: src/MainWidget.py:351
-msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
-msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ters bağımlılık "
-
-#: src/MainWidget.py:382
+#: src/BasketDialog.py:71
 msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
-msgstr ""
-"Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr "Seçili paketlerin ayrıca güncellenecek olan ek bağımlılıkları:"
 
-#: src/MainWidget.py:383 src/MainWidget.py:393
-msgid "Conflict Error"
-msgstr "Çakışma Hatası"
+#: src/BasketDialog.py:79
+msgid "Total Size:"
+msgstr "Toplam Boyut:"
 
-#: src/MainWidget.py:389
-msgid "The following packages conflicts:\n"
-msgstr "Aşağıdaki paketler çakışıyor:\n"
+#: src/BasketDialog.py:86
+msgid "Update Basket"
+msgstr "Sepeti Güncelle"
 
-#: src/MainWidget.py:391
-msgid "%1 conflicts with: [%2]\n"
-msgstr "%1: [%2] ile çakışıyor\n"
+#: src/BasketDialog.py:164
+msgid "Total Size: <b>%1</b>"
+msgstr "Toplam Boyut: <b>%1</b>"
 
-#: src/MainWidget.py:392
-msgid ""
-"\n"
-"Remove the conflicting packages from the system?"
-msgstr ""
-"\n"
-"Çakışan paketler sistemden kaldırılsın mı?"
+#: src/BasketDialog.py:212 src/BasketDialog.py:214
+msgid "Size: "
+msgstr "Boyut: "
 
-#: src/MainWidget.py:407 src/MainWidget.py:466 src/MainWidget.py:608
-msgid "<b>Installing Package(s)</b>"
-msgstr "<b>Paket(ler) Kuruluyor</b>"
+#: src/CommonText.py:15
+msgid "extracting"
+msgstr "açılıyor"
 
-#: src/MainWidget.py:416
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
-msgstr "<qt><b>Kurmak</b> üzere <b>%1</b> paket seçtiniz."
+#: src/CommonText.py:15
+msgid "configuring"
+msgstr "ayarlanıyor"
 
-#: src/MainWidget.py:419
-msgid ""
-" With the selected packages; <b>%1</b> extra dependencies are also going to "
-"be <b>installed</b>."
-msgstr ""
-" Seçili paketler ile birlikte ayrıca <b>%1</b> ek bağımlılık da "
-"<b>kurulacak</b>."
+#: src/CommonText.py:15
+msgid "removing"
+msgstr "kaldırılıyor"
 
-#: src/MainWidget.py:420
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
-msgstr "<br><br>Toplam olarak <b>%1</b> paket <b>kurulacak</b>."
-
-#: src/MainWidget.py:423
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr "<qt><b>Güncellemek</b> üzere <b>%1</b> paket seçtiniz."
-
-#: src/MainWidget.py:426
-msgid ""
-" With the selected packages; <b>%1</b> extra dependencies are also going to "
-"be <b>upgraded</b>."
-msgstr ""
-" Seçili paketler ile birlikte ayrıca <b>%1</b> ek bağımlılık da "
-"<b>güncellenecek</b>."
-
-#: src/MainWidget.py:427
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr "<br><br>Toplam olarak <b>%1</b> paket <b>güncellenecek</b>."
-
-#: src/MainWidget.py:430
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
-msgstr "<qt><b>Kaldırmak</b> üzere <b>%1</b> paket seçtiniz."
-
-#: src/MainWidget.py:433
-msgid ""
-" Selected packages have reverse dependencies. Because the reverse "
-"dependencies of the selected packages needs those packages to work; by "
-"removing the selected packages; <b>%1</b> reverse dependencies are also "
-"going to be <b>removed</b>. Please check your basket and make sure those are "
-"the packages you want to remove. Accidentally removing some reverse "
-"dependencies may break the system stability."
-msgstr ""
-" Seçili paketlerin ters bağımlılıkları var. Ters bağımlılıklar, çalışabilmek "
-"için bu paketlere ihtiyaç duyduğundan; seçili paketler ile birlikte ayrıca "
-"<b>%1</b> ters bağımlılık da <b>kaldırılacak</b>. Lütfen sepetinizi kontrol "
-"edin ve kaldırmak istediğiniz paketlerin bu paketler olduğuna emin olun. "
-"Ters bağımlı olan bazı paketlerin kaldırılması sistem kararlılığını "
-"bozabilir."
-
-#: src/MainWidget.py:435
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
-msgstr "<br><br>Toplam olarak <b>%1</b> paket <b>kaldırılacak</b>."
-
-#: src/MainWidget.py:437
-msgid "<br>Do you want to continue?</qt>"
-msgstr "<br>Devam etmek istiyor musunuz?</qt>"
-
-#: src/MainWidget.py:458
-msgid "<b>Removing Package(s)</b>"
-msgstr "<b>Paket(ler) Kaldırılıyor</b>"
-
-#: src/MainWidget.py:475 src/MainWidget.py:610
-msgid "<b>Upgrading Package(s)</b>"
-msgstr "<b>Paket(ler) Güncelleniyor</b>"
-
-#: src/MainWidget.py:568
-msgid "Others"
-msgstr "Diğerleri"
-
-#: src/MainWidget.py:612 src/CommonText.py:15
-msgid "downloading"
-msgstr "indiriliyor"
-
-#: src/MainWidget.py:653 src/Preferences.py:349
-msgid "<b>Applying Repository Changes</b>"
-msgstr "<b>Depo Değişiklikleri Uygulanıyor</b>"
-
-#: src/MainWidget.py:657
-msgid "Downloading package list of %1"
-msgstr "%1 paket listesi indiriliyor"
-
-#: src/MainWidget.py:673
-msgid "Confirm"
-msgstr "Onay"
+#: src/CommonText.py:15
+msgid "installing"
+msgstr "kuruluyor"
 
 #: src/Preferences.py:234
 msgid "Add New Repository"
@@ -494,6 +454,47 @@ msgstr "Pisi Hatası"
 #: src/Preferences.py:382
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Önbellekteki tüm paketler silinecek. Emin misiniz?"
+
+#: src/RepoDialog.py:72
+msgid "Repository Dialog"
+msgstr "Depo Penceresi"
+
+#: src/RepoDialog.py:73
+msgid "&Ok"
+msgstr "&Tamam"
+
+#: src/RepoDialog.py:75
+msgid "Repository &Address"
+msgstr "D&epo Adresi"
+
+#: src/RepoDialog.py:76
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr "Deponun adresi, örneğin <b>http://foo.bar.com/pisi-index.xml</b>"
+
+#: src/RepoDialog.py:79
+msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
+
+#: src/RepoDialog.py:80
+msgid "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+
+#: src/RepoDialog.py:81
+msgid "Repository &Name"
+msgstr "&Depo Adı"
+
+#: src/RepoDialog.py:82
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Deponun adı, örneğin <b>pardus-devel</b>"
+
+#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
+#: src/SpecialList.py:100
+msgid "Select all packages in this category"
+msgstr "Bu kategorideki tüm paketleri seç"
+
+#: src/CustomEventListener.py:38 src/SpecialList.py:102
+msgid "Reverse package selections"
+msgstr "Paket seçimlerini ters çevir"
 
 #: src/PreferencesDialog.py:179 src/PreferencesDialog.py:378
 msgid "Repository Name"
@@ -609,8 +610,7 @@ msgid "C&ache"
 msgstr "&Önbellek"
 
 #: src/PreferencesDialog.py:380
-msgid ""
-"You can see current software repositories and corresponding addresses here"
+msgid "You can see current software repositories and corresponding addresses here"
 msgstr "Yazılım depolarını ve karşılık gelen adresleri burada görebilirsiniz"
 
 #: src/PreferencesDialog.py:381
@@ -690,21 +690,37 @@ msgstr "Vekil sunucu kullan"
 msgid "Proxy"
 msgstr "Vekil sunucu"
 
-#: src/CommonText.py:15
-msgid "extracting"
-msgstr "açılıyor"
+#: src/pm-install.py:33
+msgid "PiSi package to install"
+msgstr "Kurulacak PiSi paketi ismi"
 
-#: src/CommonText.py:15
-msgid "configuring"
-msgstr "ayarlanıyor"
+#: src/pm-install.py:50
+msgid "You have selected a package to install. Do you want to continue?"
+msgstr "Kurmak üzere bir paket seçtiniz. Devam etmek istiyor musunuz?"
 
-#: src/CommonText.py:15
-msgid "removing"
-msgstr "kaldırılıyor"
+#: src/pm-install.py:51
+msgid "Install Package"
+msgstr "Paket Kur"
 
-#: src/CommonText.py:15
-msgid "installing"
-msgstr "kuruluyor"
+#: src/SpecialList.py:165
+msgid "Description: "
+msgstr "Açıklama: "
+
+#: src/SpecialList.py:166
+msgid "Version: "
+msgstr "Sürüm: "
+
+#: src/SpecialList.py:167
+msgid "Repository: "
+msgstr "Depo: "
+
+#: src/SpecialList.py:168
+msgid "Package Size: "
+msgstr "Paket Boyutu: "
+
+#: src/SpecialList.py:169
+msgid "Homepage: "
+msgstr "Web sayfası: "
 
 #: src/Progress.py:64
 msgid "<p align='center'>%1 / %2, %3</p>"
@@ -746,29 +762,11 @@ msgstr "güncellendi"
 msgid "%1 / %2 package %3"
 msgstr "%1 / %2 paket %3"
 
-#: src/ComarIface.py:38
-msgid "Unable to connect to DBus."
-msgstr "DBus'a bağlanılamadı."
+#: src/Notifier.py:45
+msgid "Show Updates"
+msgstr "Güncellemeleri Göster"
 
-#: src/ComarIface.py:38
-msgid "DBus Error"
-msgstr "DBus Hatası"
+#: src/Notifier.py:45
+msgid "Ignore"
+msgstr "Yoksay"
 
-#: src/ComarIface.py:52
-msgid "D-Bus Error"
-msgstr "D-Bus Hatası"
-
-#: src/ComarIface.py:57
-msgid "COMAR Auth Error"
-msgstr "Comar Yetki Hatası"
-
-#: src/ComarIface.py:62
-msgid "Network error. Please check your network connections and try again."
-msgstr "Ağ hatası. Lütfen ağ bağlantılarınızı kontrol edin ve tekrar deneyin."
-
-#: src/ComarIface.py:62 src/ComarIface.py:67
-msgid "COMAR Error"
-msgstr "Comar Hatası"
-
-#~ msgid "PiSi Authors"
-#~ msgstr "PiSi Yazarları"

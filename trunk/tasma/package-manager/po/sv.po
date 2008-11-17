@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-31 12:37+0300\n"
+"POT-Creation-Date: 2008-11-17 11:04+0200\n"
 "PO-Revision-Date: 2008-08-25 21:22+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Svenska <sv@li.org>\n"
@@ -17,146 +17,51 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/Notifier.py:45
-msgid "Show Updates"
-msgstr "Visa uppdateringar"
+#: src/ProgressDialog.py:127
+msgid "Progress"
+msgstr "Förlopp"
 
-#: src/Notifier.py:45
-msgid "Ignore"
-msgstr "Avbryt"
+#: src/ProgressDialog.py:129
+msgid "Alt+C"
+msgstr "Alt+C"
 
-#: src/RepoDialog.py:72
-msgid "Repository Dialog"
-msgstr "Förrådsdialog"
+#: src/ProgressDialog.py:130
+msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 
-#: src/RepoDialog.py:73
-msgid "&Ok"
-msgstr "&Ok"
+#: src/ProgressDialog.py:131
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Förbereder PiSi...</h3>"
 
-#: src/RepoDialog.py:75
-msgid "Repository &Address"
-msgstr "Förråds&adress"
+#: src/ProgressDialog.py:133
+msgid "amsn"
+msgstr "amsn"
 
-#: src/RepoDialog.py:76
-msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
-msgstr "Förrådsadress, tex. <b>http://foo.bar.com/pisi-index.xml</b>"
+#: src/ProgressDialog.py:134
+msgid "Time remaining:"
+msgstr "Återstående tid:"
 
-#: src/RepoDialog.py:79
-msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
+#: src/ProgressDialog.py:135
+msgid "2 / 20 packages installed."
+msgstr "2 / 20 paket installerade."
 
-#: src/RepoDialog.py:80
-msgid "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+#: src/ProgressDialog.py:136
+msgid "01:29"
+msgstr "01:29"
 
-#: src/RepoDialog.py:81
-msgid "Repository &Name"
-msgstr "Förråds&namn"
+#: src/ProgressDialog.py:137
+msgid "Operation:"
+msgstr "Åtgärd:"
 
-#: src/RepoDialog.py:82
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Förrådets namn, tex. <b>pardus-devel</b>"
-
-#: src/Commander.py:64 src/ComarIface.py:64 src/ComarIface.py:72
-msgid "You are not authorized for this operation."
-msgstr "Du saknar behörighet för denna åtgärd."
-
-#: src/BasketDialog.py:51 src/BasketDialog.py:56
-msgid "Basket"
-msgstr "Korg"
-
-#: src/BasketDialog.py:64
-msgid "Selected package(s) for removal:"
-msgstr "Paket valda för borttagning:"
-
-#: src/BasketDialog.py:65
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr "Omvända beroenden för valda paket kommer också att tas bort:"
-
-#: src/BasketDialog.py:67
-msgid "Selected package(s) for install:"
-msgstr "Paket valda för installation:"
-
-#: src/BasketDialog.py:68
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr "Extra beroenden för valda paket som också kommer att installeras:"
-
-#: src/BasketDialog.py:70
-msgid "Selected package(s) for upgrade:"
-msgstr "Paket valda för uppdatering:"
-
-#: src/BasketDialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
-msgstr "Extra beroenden för valda paket som också kommer att uppdateras:"
-
-#: src/BasketDialog.py:79
-msgid "Total Size:"
-msgstr "Sammanlagd storlek:"
-
-#: src/BasketDialog.py:86
-msgid "Update Basket"
-msgstr "Uppdatera korg"
-
-#: src/BasketDialog.py:164
-msgid "Total Size: <b>%1</b>"
-msgstr "Sammanlagd storlek: <b>%1</b>"
-
-#: src/BasketDialog.py:212 src/BasketDialog.py:214
-msgid "Size: "
-msgstr "Sorlek:"
-
-#: src/pm-install.py:33
-msgid "PiSi package to install"
-msgstr "PiSi-paket att installera"
-
-#: src/pm-install.py:50
-msgid "You have selected a package to install. Do you want to continue?"
-msgstr "Du har valt ett paket för installation. Vill du fortsätta?"
-
-#: src/pm-install.py:51
-msgid "Install Package"
-msgstr "Installera paket"
-
-#: src/SpecialList.py:100 src/CustomEventListener.py:37
-#: src/CustomEventListener.py:41
-msgid "Select all packages in this category"
-msgstr "Välj alla paket i den här kategorin"
-
-#: src/SpecialList.py:102 src/CustomEventListener.py:38
-msgid "Reverse package selections"
-msgstr "Invertera paketmarkering"
-
-#: src/SpecialList.py:163
-msgid "Description: "
-msgstr "Beskrivning: "
-
-#: src/SpecialList.py:164
-msgid "Version: "
-msgstr "Version: "
-
-#: src/SpecialList.py:165
-msgid "Repository: "
-msgstr "Förråd: "
-
-#: src/SpecialList.py:166
-msgid "Package Size: "
-msgstr "Paketstorlek: "
-
-#: src/SpecialList.py:167
-msgid "Homepage: "
-msgstr "Webbplats: "
+#: src/ProgressDialog.py:138
+msgid "Status:"
+msgstr "Status:"
 
 #: src/Tray.py:38
 msgid "Update"
 msgstr "Uppdatering"
 
-#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:576
+#: src/Tray.py:43 src/MainWidget.py:292 src/MainWidget.py:579
 msgid "All"
 msgstr "Alla"
 
@@ -167,6 +72,226 @@ msgstr "Det finns <b>%1</b> uppdateringar tillgängliga!"
 #: src/Tray.py:67
 msgid "Updates Available!"
 msgstr "Uppdateringar tillgängliga!"
+
+#: src/ComarIface.py:38
+msgid "Unable to connect to DBus."
+msgstr "Kan inte ansluta till DBus"
+
+#: src/ComarIface.py:38
+msgid "DBus Error"
+msgstr "DBus-fel"
+
+#: src/ComarIface.py:52
+msgid "D-Bus Error"
+msgstr "D-Bus-fel"
+
+#: src/ComarIface.py:57
+msgid "COMAR Auth Error"
+msgstr "COMAR Auth-fel"
+
+#: src/ComarIface.py:62
+msgid "Network error. Please check your network connections and try again."
+msgstr "Nätverksproblem. Kontrollera din nätverksanslutning och försök igen."
+
+#: src/ComarIface.py:62 src/ComarIface.py:67
+msgid "COMAR Error"
+msgstr "COMAR-fel"
+
+#: src/ComarIface.py:64 src/ComarIface.py:72 src/Commander.py:64
+msgid "You are not authorized for this operation."
+msgstr "Du saknar behörighet för denna åtgärd."
+
+#: src/MainWidget.py:74
+msgid "Loading Package List..."
+msgstr "Laddar paketlista..."
+
+#: src/MainWidget.py:104
+msgid "Search: "
+msgstr "Sök:"
+
+#: src/MainWidget.py:108
+#, fuzzy
+msgid "Search"
+msgstr "Sök:"
+
+#: src/MainWidget.py:112
+msgid "Show basket"
+msgstr "Visa korg"
+
+#: src/MainWidget.py:117 src/MainWidget.py:216
+msgid "Install Package(s)"
+msgstr "Installera paket"
+
+#: src/MainWidget.py:126
+msgid "Components"
+msgstr "Kategorier"
+
+#: src/MainWidget.py:176
+msgid ""
+"Package-manager needs to update package database. You need a network "
+"connection to update."
+msgstr ""
+"Pakethanteraren behöver uppdatera paketdatabasen. Du behöver en "
+"nätverksanslutning för att uppdatera."
+
+#: src/MainWidget.py:177
+msgid "Package database is empty"
+msgstr "Paketdatabasen är tom"
+
+#: src/MainWidget.py:245
+msgid "Remove Package(s)"
+msgstr "Ta bort paket"
+
+#: src/MainWidget.py:261 src/MainWidget.py:659
+msgid "<b>Updating Repository</b>"
+msgstr "<b>Uppdaterar förråd</b>"
+
+#: src/MainWidget.py:290
+msgid "Upgrade Package(s)"
+msgstr "Uppdatera paket"
+
+#: src/MainWidget.py:308 src/MainWidget.py:587
+msgid "Search Results"
+msgstr "Sökresultat"
+
+#: src/MainWidget.py:340
+msgid "Currently your basket is empty."
+msgstr "För närvarande är din korg tom."
+
+#: src/MainWidget.py:343 src/MainWidget.py:351
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "För närvarande är <b>%1</b> paket valda om <b>%2</b> "
+
+#: src/MainWidget.py:346
+msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
+msgstr "med <b>%3</b> extra beroenden om <b>%4</b> "
+
+#: src/MainWidget.py:348 src/MainWidget.py:356
+msgid "in your basket."
+msgstr "i din korg."
+
+#: src/MainWidget.py:354
+msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
+msgstr "med <b>%3</b> omvända beroenden om <b>%4</b> "
+
+#: src/MainWidget.py:385
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+"Valda paket [%1] står i konflikt med varandra. Dessa paket kan inte "
+"installeras tillsammans."
+
+#: src/MainWidget.py:386 src/MainWidget.py:396
+msgid "Conflict Error"
+msgstr "Konfliktfel"
+
+#: src/MainWidget.py:392
+msgid "The following packages conflicts:\n"
+msgstr "Följande paket står i konflikt:\n"
+
+#: src/MainWidget.py:394
+msgid "%1 conflicts with: [%2]\n"
+msgstr "%1 i konflikt med: [%2]\n"
+
+#: src/MainWidget.py:395
+msgid ""
+"\n"
+"Remove the conflicting packages from the system?"
+msgstr ""
+"\n"
+"Ta bort paket i konflikt från systemet?"
+
+#: src/MainWidget.py:410 src/MainWidget.py:469 src/MainWidget.py:611
+msgid "<b>Installing Package(s)</b>"
+msgstr "<b>Installerar paket</b>"
+
+#: src/MainWidget.py:419
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
+msgstr "<qt>Du har valt <b>%1</b> paket för <b>installation</b>."
+
+#: src/MainWidget.py:422
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>installed</b>."
+msgstr " Med dessa kommer <b>%1</b> extra beroenden att <b>installeras</b>."
+
+#: src/MainWidget.py:423
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
+msgstr "<br><br>Sammanlagt <b>%1</b> paket kommer att <b>installeras</b>."
+
+#: src/MainWidget.py:426
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
+msgstr "<qt>Du har valt <b>%1</b> paket för <b>uppdatering</b>. "
+
+#: src/MainWidget.py:429
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>upgraded</b>."
+msgstr ""
+" Med de valda paketen; <b>%1</b> kommer extra beroenden också <b>uppdateras</"
+"b>."
+
+#: src/MainWidget.py:430
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
+msgstr "<br><br>Totalt <b>%1</b> paket kommer att <b>uppdateras</b>."
+
+#: src/MainWidget.py:433
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
+msgstr "<qt>Du har valt <b>%1</b> paket för <b>borttagning</b>."
+
+#: src/MainWidget.py:436
+msgid ""
+" Selected packages have reverse dependencies. Because the reverse "
+"dependencies of the selected packages needs those packages to work; by "
+"removing the selected packages; <b>%1</b> reverse dependencies are also "
+"going to be <b>removed</b>. Please check your basket and make sure those are "
+"the packages you want to remove. Accidentally removing some reverse "
+"dependencies may break the system stability."
+msgstr ""
+" Valda paket har omvända beroenden. Eftersom de omvända beroenden av de "
+"valda paketen behöver dessa paket för att fungera. Genom att ta bort de "
+"markerade paketen; <b>%1</b> kommer även omvända beroenden att <b>tas bort</"
+"b>. Kontrollera din korg och se till att dessa är de paket som du vill ta "
+"bort. Att av misstag ta bort några omvända beroenden kan påverka systemets "
+"stabilitet."
+
+#: src/MainWidget.py:438
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
+msgstr "<br><br>Sammanlagt <b>%1</b> paket kommer att <b>tas bort</b>."
+
+#: src/MainWidget.py:440
+msgid "<br>Do you want to continue?</qt>"
+msgstr "<br>Vill du fortsätta?</qt>"
+
+#: src/MainWidget.py:461
+msgid "<b>Removing Package(s)</b>"
+msgstr "<b>Tar bort paket</b>"
+
+#: src/MainWidget.py:478 src/MainWidget.py:613
+msgid "<b>Upgrading Package(s)</b>"
+msgstr "<b>Uppdaterar paket</b>"
+
+#: src/MainWidget.py:571
+msgid "Others"
+msgstr "Andra"
+
+#: src/MainWidget.py:615 src/CommonText.py:15
+msgid "downloading"
+msgstr "hämtas"
+
+#: src/MainWidget.py:656 src/Preferences.py:349
+msgid "<b>Applying Repository Changes</b>"
+msgstr "<b>Tillämpar förrådsändringar</b>"
+
+#: src/MainWidget.py:660
+msgid "Downloading package list of %1"
+msgstr "Hämtar paketlista för %1"
+
+#: src/MainWidget.py:676
+msgid "Confirm"
+msgstr "Bekräfta"
 
 #: src/package-manager.py:33
 msgid "GUI for PiSi package manager"
@@ -235,232 +360,71 @@ msgstr "Visa felsökningsinformation"
 msgid "Package Manager is already running!"
 msgstr "Pakethanteraren körs redan!"
 
-#: src/ProgressDialog.py:127
-msgid "Progress"
-msgstr "Förlopp"
+#: src/BasketDialog.py:51 src/BasketDialog.py:56
+msgid "Basket"
+msgstr "Korg"
 
-#: src/ProgressDialog.py:129
-msgid "Alt+C"
-msgstr "Alt+C"
+#: src/BasketDialog.py:64
+msgid "Selected package(s) for removal:"
+msgstr "Paket valda för borttagning:"
 
-#: src/ProgressDialog.py:130
-msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-
-#: src/ProgressDialog.py:131
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Förbereder PiSi...</h3>"
-
-#: src/ProgressDialog.py:133
-msgid "amsn"
-msgstr "amsn"
-
-#: src/ProgressDialog.py:134
-msgid "Time remaining:"
-msgstr "Återstående tid:"
-
-#: src/ProgressDialog.py:135
-msgid "2 / 20 packages installed."
-msgstr "2 / 20 paket installerade."
-
-#: src/ProgressDialog.py:136
-msgid "01:29"
-msgstr "01:29"
-
-#: src/ProgressDialog.py:137
-msgid "Operation:"
-msgstr "Åtgärd:"
-
-#: src/ProgressDialog.py:138
-msgid "Status:"
-msgstr "Status:"
-
-#: src/MainWidget.py:75
-msgid "Loading Package List..."
-msgstr "Laddar paketlista..."
-
-#: src/MainWidget.py:105
-msgid "Search: "
-msgstr "Sök:"
-
-#: src/MainWidget.py:109
-msgid "Show basket"
-msgstr "Visa korg"
-
-#: src/MainWidget.py:114 src/MainWidget.py:213
-msgid "Install Package(s)"
-msgstr "Installera paket"
-
-#: src/MainWidget.py:123
-msgid "Components"
-msgstr "Kategorier"
-
-#: src/MainWidget.py:173
+#: src/BasketDialog.py:65
 msgid ""
-"Package-manager needs to update package database. You need a network "
-"connection to update."
-msgstr ""
-"Pakethanteraren behöver uppdatera paketdatabasen. Du behöver en "
-"nätverksanslutning för att uppdatera."
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr "Omvända beroenden för valda paket kommer också att tas bort:"
 
-#: src/MainWidget.py:174
-msgid "Package database is empty"
-msgstr "Paketdatabasen är tom"
+#: src/BasketDialog.py:67
+msgid "Selected package(s) for install:"
+msgstr "Paket valda för installation:"
 
-#: src/MainWidget.py:242
-msgid "Remove Package(s)"
-msgstr "Ta bort paket"
-
-#: src/MainWidget.py:258 src/MainWidget.py:656
-msgid "<b>Updating Repository</b>"
-msgstr "<b>Uppdaterar förråd</b>"
-
-#: src/MainWidget.py:287
-msgid "Upgrade Package(s)"
-msgstr "Uppdatera paket"
-
-#: src/MainWidget.py:305 src/MainWidget.py:584
-msgid "Search Results"
-msgstr "Sökresultat"
-
-#: src/MainWidget.py:337
-msgid "Currently your basket is empty."
-msgstr "För närvarande är din korg tom."
-
-#: src/MainWidget.py:340 src/MainWidget.py:348
+#: src/BasketDialog.py:68
 msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "För närvarande är <b>%1</b> paket valda om <b>%2</b> "
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr "Extra beroenden för valda paket som också kommer att installeras:"
 
-#: src/MainWidget.py:343
-msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr "med <b>%3</b> extra beroenden om <b>%4</b> "
+#: src/BasketDialog.py:70
+msgid "Selected package(s) for upgrade:"
+msgstr "Paket valda för uppdatering:"
 
-#: src/MainWidget.py:345 src/MainWidget.py:353
-msgid "in your basket."
-msgstr "i din korg."
-
-#: src/MainWidget.py:351
-msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
-msgstr "med <b>%3</b> omvända beroenden om <b>%4</b> "
-
-#: src/MainWidget.py:382
+#: src/BasketDialog.py:71
 msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
-msgstr ""
-"Valda paket [%1] står i konflikt med varandra. Dessa paket kan inte "
-"installeras tillsammans."
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr "Extra beroenden för valda paket som också kommer att uppdateras:"
 
-#: src/MainWidget.py:383 src/MainWidget.py:393
-msgid "Conflict Error"
-msgstr "Konfliktfel"
+#: src/BasketDialog.py:79
+msgid "Total Size:"
+msgstr "Sammanlagd storlek:"
 
-#: src/MainWidget.py:389
-msgid "The following packages conflicts:\n"
-msgstr "Följande paket står i konflikt:\n"
+#: src/BasketDialog.py:86
+msgid "Update Basket"
+msgstr "Uppdatera korg"
 
-#: src/MainWidget.py:391
-msgid "%1 conflicts with: [%2]\n"
-msgstr "%1 i konflikt med: [%2]\n"
+#: src/BasketDialog.py:164
+msgid "Total Size: <b>%1</b>"
+msgstr "Sammanlagd storlek: <b>%1</b>"
 
-#: src/MainWidget.py:392
-msgid ""
-"\n"
-"Remove the conflicting packages from the system?"
-msgstr ""
-"\n"
-"Ta bort paket i konflikt från systemet?"
+#: src/BasketDialog.py:212 src/BasketDialog.py:214
+msgid "Size: "
+msgstr "Sorlek:"
 
-#: src/MainWidget.py:407 src/MainWidget.py:466 src/MainWidget.py:608
-msgid "<b>Installing Package(s)</b>"
-msgstr "<b>Installerar paket</b>"
+#: src/CommonText.py:15
+msgid "extracting"
+msgstr "packas upp"
 
-#: src/MainWidget.py:416
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
-msgstr "<qt>Du har valt <b>%1</b> paket för <b>installation</b>."
+#: src/CommonText.py:15
+msgid "configuring"
+msgstr "konfigureras"
 
-#: src/MainWidget.py:419
-msgid ""
-" With the selected packages; <b>%1</b> extra dependencies are also going to "
-"be <b>installed</b>."
-msgstr " Med dessa kommer <b>%1</b> extra beroenden att <b>installeras</b>."
+#: src/CommonText.py:15
+msgid "removing"
+msgstr "tas bort"
 
-#: src/MainWidget.py:420
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
-msgstr "<br><br>Sammanlagt <b>%1</b> paket kommer att <b>installeras</b>."
-
-#: src/MainWidget.py:423
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr "<qt>Du har valt <b>%1</b> paket för <b>uppdatering</b>. "
-
-#: src/MainWidget.py:426
-msgid ""
-" With the selected packages; <b>%1</b> extra dependencies are also going to "
-"be <b>upgraded</b>."
-msgstr ""
-" Med de valda paketen; <b>%1</b> kommer extra beroenden också <b>uppdateras</"
-"b>."
-
-#: src/MainWidget.py:427
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr "<br><br>Totalt <b>%1</b> paket kommer att <b>uppdateras</b>."
-
-#: src/MainWidget.py:430
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
-msgstr "<qt>Du har valt <b>%1</b> paket för <b>borttagning</b>."
-
-#: src/MainWidget.py:433
-msgid ""
-" Selected packages have reverse dependencies. Because the reverse "
-"dependencies of the selected packages needs those packages to work; by "
-"removing the selected packages; <b>%1</b> reverse dependencies are also "
-"going to be <b>removed</b>. Please check your basket and make sure those are "
-"the packages you want to remove. Accidentally removing some reverse "
-"dependencies may break the system stability."
-msgstr ""
-" Valda paket har omvända beroenden. Eftersom de omvända beroenden av de "
-"valda paketen behöver dessa paket för att fungera. Genom att ta bort de "
-"markerade paketen; <b>%1</b> kommer även omvända beroenden att <b>tas bort</"
-"b>. Kontrollera din korg och se till att dessa är de paket som du vill ta "
-"bort. Att av misstag ta bort några omvända beroenden kan påverka systemets "
-"stabilitet."
-
-#: src/MainWidget.py:435
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
-msgstr "<br><br>Sammanlagt <b>%1</b> paket kommer att <b>tas bort</b>."
-
-#: src/MainWidget.py:437
-msgid "<br>Do you want to continue?</qt>"
-msgstr "<br>Vill du fortsätta?</qt>"
-
-#: src/MainWidget.py:458
-msgid "<b>Removing Package(s)</b>"
-msgstr "<b>Tar bort paket</b>"
-
-#: src/MainWidget.py:475 src/MainWidget.py:610
-msgid "<b>Upgrading Package(s)</b>"
-msgstr "<b>Uppdaterar paket</b>"
-
-#: src/MainWidget.py:568
-msgid "Others"
-msgstr "Andra"
-
-#: src/MainWidget.py:612 src/CommonText.py:15
-msgid "downloading"
-msgstr "hämtas"
-
-#: src/MainWidget.py:653 src/Preferences.py:349
-msgid "<b>Applying Repository Changes</b>"
-msgstr "<b>Tillämpar förrådsändringar</b>"
-
-#: src/MainWidget.py:657
-msgid "Downloading package list of %1"
-msgstr "Hämtar paketlista för %1"
-
-#: src/MainWidget.py:673
-msgid "Confirm"
-msgstr "Bekräfta"
+#: src/CommonText.py:15
+msgid "installing"
+msgstr "installerar"
 
 #: src/Preferences.py:234
 msgid "Add New Repository"
@@ -484,6 +448,47 @@ msgstr "Pisi-fel"
 #: src/Preferences.py:382
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Alla cachade kopior kommer att raderas. Är du säker?"
+
+#: src/RepoDialog.py:72
+msgid "Repository Dialog"
+msgstr "Förrådsdialog"
+
+#: src/RepoDialog.py:73
+msgid "&Ok"
+msgstr "&Ok"
+
+#: src/RepoDialog.py:75
+msgid "Repository &Address"
+msgstr "Förråds&adress"
+
+#: src/RepoDialog.py:76
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr "Förrådsadress, tex. <b>http://foo.bar.com/pisi-index.xml</b>"
+
+#: src/RepoDialog.py:79
+msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
+
+#: src/RepoDialog.py:80
+msgid "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+
+#: src/RepoDialog.py:81
+msgid "Repository &Name"
+msgstr "Förråds&namn"
+
+#: src/RepoDialog.py:82
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Förrådets namn, tex. <b>pardus-devel</b>"
+
+#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
+#: src/SpecialList.py:100
+msgid "Select all packages in this category"
+msgstr "Välj alla paket i den här kategorin"
+
+#: src/CustomEventListener.py:38 src/SpecialList.py:102
+msgid "Reverse package selections"
+msgstr "Invertera paketmarkering"
 
 #: src/PreferencesDialog.py:179 src/PreferencesDialog.py:378
 msgid "Repository Name"
@@ -679,21 +684,37 @@ msgstr "Använd proxyserver"
 msgid "Proxy"
 msgstr "Proxy"
 
-#: src/CommonText.py:15
-msgid "extracting"
-msgstr "packas upp"
+#: src/pm-install.py:33
+msgid "PiSi package to install"
+msgstr "PiSi-paket att installera"
 
-#: src/CommonText.py:15
-msgid "configuring"
-msgstr "konfigureras"
+#: src/pm-install.py:50
+msgid "You have selected a package to install. Do you want to continue?"
+msgstr "Du har valt ett paket för installation. Vill du fortsätta?"
 
-#: src/CommonText.py:15
-msgid "removing"
-msgstr "tas bort"
+#: src/pm-install.py:51
+msgid "Install Package"
+msgstr "Installera paket"
 
-#: src/CommonText.py:15
-msgid "installing"
-msgstr "installerar"
+#: src/SpecialList.py:165
+msgid "Description: "
+msgstr "Beskrivning: "
+
+#: src/SpecialList.py:166
+msgid "Version: "
+msgstr "Version: "
+
+#: src/SpecialList.py:167
+msgid "Repository: "
+msgstr "Förråd: "
+
+#: src/SpecialList.py:168
+msgid "Package Size: "
+msgstr "Paketstorlek: "
+
+#: src/SpecialList.py:169
+msgid "Homepage: "
+msgstr "Webbplats: "
 
 #: src/Progress.py:64
 msgid "<p align='center'>%1 / %2, %3</p>"
@@ -735,29 +756,13 @@ msgstr "uppdaterade"
 msgid "%1 / %2 package %3"
 msgstr "%1 / %2 paket %3"
 
-#: src/ComarIface.py:38
-msgid "Unable to connect to DBus."
-msgstr "Kan inte ansluta till DBus"
+#: src/Notifier.py:45
+msgid "Show Updates"
+msgstr "Visa uppdateringar"
 
-#: src/ComarIface.py:38
-msgid "DBus Error"
-msgstr "DBus-fel"
-
-#: src/ComarIface.py:52
-msgid "D-Bus Error"
-msgstr "D-Bus-fel"
-
-#: src/ComarIface.py:57
-msgid "COMAR Auth Error"
-msgstr "COMAR Auth-fel"
-
-#: src/ComarIface.py:62
-msgid "Network error. Please check your network connections and try again."
-msgstr "Nätverksproblem. Kontrollera din nätverksanslutning och försök igen."
-
-#: src/ComarIface.py:62 src/ComarIface.py:67
-msgid "COMAR Error"
-msgstr "COMAR-fel"
+#: src/Notifier.py:45
+msgid "Ignore"
+msgstr "Avbryt"
 
 #~ msgid "PiSi Authors"
 #~ msgstr "PiSi-utvecklare"
