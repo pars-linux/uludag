@@ -62,7 +62,6 @@ class MainApplicationWidget(QWidget):
         self.settings = Settings.Settings(Globals.config())
 
         # set up timers
-        self.timer = QTimer(self)
         self.delayTimer = QTimer(self)
 
         self.setupInterface()
@@ -105,6 +104,10 @@ class MainApplicationWidget(QWidget):
         self.searchLabel = QLabel(i18n("Search: "), self.rightTopLayout)
         self.searchLine = KLineEdit(self.rightTopLayout)
 
+        self.searchAction = KPushButton(self.rightTopLayout)
+        self.searchAction.setText(i18n("Search"))
+        self.searchAction.setIconSet(loadIconSet("find"))
+
         self.basketAction = KPushButton(self.rightTopLayout)
         self.basketAction.setText(i18n("Show basket"))
         self.basketAction.setIconSet(loadIconSet("package"))
@@ -134,9 +137,9 @@ class MainApplicationWidget(QWidget):
 
     def setupConnections(self):
         self.connect(self.componentsList,SIGNAL("selectionChanged(QListViewItem *)"),self.refreshComponentList)
-        self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
-        self.connect(self.timer, SIGNAL("timeout()"), self.searchPackage)
         self.connect(self.clearButton, SIGNAL("clicked()"),self.searchLine, SLOT("clear()"))
+        self.connect(self.searchAction, SIGNAL("clicked()"), self.searchPackage)
+        self.connect(self.searchLine, SIGNAL("returnPressed()"), self.searchPackage)
         self.connect(self.basketAction, SIGNAL("clicked()"),self.showBasket)
         self.connect(self.operateAction, SIGNAL("clicked()"),self.takeAction)
         self.connect(self.specialList, PYSIGNAL("checkboxClicked"), self.packageClicked)
@@ -711,11 +714,6 @@ class MainApplicationWidget(QWidget):
 
         self.parent.tray.updateTrayIcon()
 
-    def searchStringChanged(self):
-        if (self.timer.isActive()):
-            self.timer.stop()
-        self.timer.start(500, True)
-
     def searchPackage(self):
         query = unicode(self.searchLine.text())
         terms = query.split()
@@ -728,7 +726,6 @@ class MainApplicationWidget(QWidget):
                 result = PisiIface.search_in_upgradables(terms)
             self.createSearchResults(result)
         else:
-            self.timer.stop()
             self.refreshState(reset=False)
 
     def showPreferences(self):
