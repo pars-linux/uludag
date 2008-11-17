@@ -31,7 +31,7 @@ def getNameServers():
     return servers
 
 def setNameServers(nameservers, searchdomain):
-    f = file("/etc/resolv.default.conf")
+    f = file("/etc/resolv.default.conf", "w")
     f.write(HEADER_DEFAULT)
 
     for server in nameservers:
@@ -46,7 +46,7 @@ def useNameServers(nameservers, searchdomain):
     # Append default name servers
     nameservers.extend(getNameServers())
 
-    f = file("/etc/resolv.conf")
+    f = file("/etc/resolv.conf", "w")
     f.write(HEADER_DYNAMIC)
 
     for server in nameservers[:MAX_SERVERS]:
