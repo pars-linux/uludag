@@ -310,11 +310,10 @@ li.secili a {
     margin-bottom: 20px;
     margin-top: 20px;
     padding-right: 9px;
-    background: url('../resim/altgriarka.png') no-repeat;
 }
 
 .alt_sutun {
-    width: 293px;
+    width: 221px;
     height: 77px;
     float: left;
     cursor: pointer;
@@ -328,12 +327,14 @@ li.secili a {
 .alt_sutun a {
     font-size: 10px;
     text-decoration: none;
-    color: #FFF;
+    color: #58797C;
 }
 
 .tubitakuekae span { left: 99px; }
 .iletisim span { left: 103px; }
-.markapolitikasi span { left: 102px; }
+.yasal span { left: 102px; }
+.kariyer span { left: 102px; }
 .tubitakuekae { background: url('../resim/alttubitakuekae.png') no-repeat 15px 10px; }
 .iletisim { background: url('../resim/altiletisim.png') no-repeat center left; }
-.markapolitikasi { background: url('../resim/altmarkapolitikasi.png') no-repeat center left; }
+.yasal { background: url('../resim/altmarkapolitikasi.png') no-repeat center left; }
+.kariyer { background: url('../resim/altmarkapolitikasi.png') no-repeat center left; }
