@@ -54,8 +54,14 @@
           <bold>false</bold>
          </font>
         </property>
-        <property name="editTriggers" >
-         <set>QAbstractItemView::NoEditTriggers</set>
+        <property name="styleSheet" >
+         <string notr="true" />
+        </property>
+        <property name="alternatingRowColors" >
+         <bool>true</bool>
+        </property>
+        <property name="selectionMode" >
+         <enum>QAbstractItemView::SingleSelection</enum>
         </property>
         <property name="iconSize" >
          <size>
@@ -64,17 +70,7 @@
          </size>
         </property>
         <property name="verticalScrollMode" >
-         <enum>QAbstractItemView::ScrollPerPixel</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" colspan="2" >
-       <widget class="QCheckBox" name="checkRunOnStartup" >
-        <property name="enabled" >
-         <bool>false</bool>
-        </property>
-        <property name="text" >
-         <string>Run on startup</string>
+         <enum>QAbstractItemView::ScrollPerItem</enum>
         </property>
        </widget>
       </item>

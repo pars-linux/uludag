@@ -56,7 +56,7 @@ class MainManager(QtGui.QWidget):
             item = ServiceItem(self.ui.listServices, results, package)
             self.widgets[package] = ServiceItemWidget(results, package, self)
             self.ui.listServices.setItemWidget(item, self.widgets[package])
-            item.setSizeHint(QSize(38,38))
+            item.setSizeHint(QSize(38,48))
 
     def getServices(self):
         self.link.listenSignals("System.Service", self.handler)
@@ -64,38 +64,51 @@ class MainManager(QtGui.QWidget):
         self.link.System.Service.info(async=self.handleServices)
 
     def handler(self, package, signal, args):
-        print args, signal, package
+        self.widgets[package].setState(args[1])
+        # print args, signal, package
 
 class ServiceItem(QtGui.QListWidgetItem):
 
     def __init__(self, parent, data, package):
-        serviceType, serviceDesc, serviceState = data
         QtGui.QListWidgetItem.__init__(self, parent)
+
+        serviceType, serviceDesc, serviceState = data
+
         if not serviceType == "server":
             self.setHidden(True)
+
         self.package = package
 
 class ServiceItemWidget(QtGui.QWidget):
 
     def __init__(self, data, package, parent):
         QtGui.QWidget.__init__(self, None)
+
         self.ui = Ui_ServiceItemWidget()
         self.ui.setupUi(self)
-        self.ui.labelName.setText(package)
+
         serviceType, serviceDesc, serviceState = data
-        if serviceState in ('on', 'started', 'conditional_started'):
+
+        self.setState(serviceState)
+        self.ui.labelDesc.setText(serviceDesc)
+        self.ui.labelName.setText(package)
+
+        self.toggleButtons()
+
+        self.toggled = False
+        self.rootWidget = parent
+        self.package = package
+
+        self.connect(self.ui.buttonStart, SIGNAL("clicked()"), self.setService)
+        self.connect(self.ui.buttonStop, SIGNAL("clicked()"), self.setService)
+        self.connect(self.ui.buttonReload, SIGNAL("clicked()"), self.setService)
+
+    def setState(self, state):
+        if state in ('on', 'started', 'conditional_started'):
             icon = 'running'
         else:
             icon = 'notrunning'
         self.ui.labelStatus.setPixmap(QtGui.QPixmap(':data/icons/%s.png' % icon))
-        self.ui.labelDesc.setText(serviceDesc)
-        self.toggleButtons()
-        self.toggled = False
-        self.rootWidget = parent
-        self.package = package
-        self.connect(self.ui.buttonStart, SIGNAL("clicked()"), self.setService)
-        self.connect(self.ui.buttonStop, SIGNAL("clicked()"), self.setService)
-        self.connect(self.ui.buttonReload, SIGNAL("clicked()"), self.setService)
 
     def setService(self):
         try:
@@ -105,8 +118,8 @@ class ServiceItemWidget(QtGui.QWidget):
                 self.rootWidget.link.System.Service[self.package].stop()
             elif self.sender() == self.ui.buttonReload:
                 self.rootWidget.link.System.Service[self.package].reload()
-        except:
-            pass
+        except Exception, e:
+            print e
 
     def enterEvent(self, event):
         if not self.toggled:
@@ -122,6 +135,7 @@ class ServiceItemWidget(QtGui.QWidget):
         self.ui.buttonStart.setVisible(toggle)
         self.ui.buttonReload.setVisible(toggle)
         self.ui.buttonStop.setVisible(toggle)
+        #self.ui.runOnStart.setVisible(toggle)
 
 class Manager(KMainWindow):
     def __init__ (self, *args):
