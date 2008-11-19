@@ -1,4 +1,4 @@
-# translation of sv.po to Svenska
+# translation of sv.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-17 11:04+0200\n"
-"PO-Revision-Date: 2008-08-25 21:22+0200\n"
+"PO-Revision-Date: 2008-11-19 21:32+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
-"Language-Team: Svenska <sv@li.org>\n"
+"Language-Team:  <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -110,9 +110,8 @@ msgid "Search: "
 msgstr "Sök:"
 
 #: src/MainWidget.py:108
-#, fuzzy
 msgid "Search"
-msgstr "Sök:"
+msgstr "Sök"
 
 #: src/MainWidget.py:112
 msgid "Show basket"
@@ -159,8 +158,7 @@ msgid "Currently your basket is empty."
 msgstr "För närvarande är din korg tom."
 
 #: src/MainWidget.py:343 src/MainWidget.py:351
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "För närvarande är <b>%1</b> paket valda om <b>%2</b> "
 
 #: src/MainWidget.py:346
@@ -438,8 +436,7 @@ msgstr "Redigera förråd"
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
-msgstr ""
-"<qt>Förrådsadresser ska sluta med xml eller xml.bz2.<p>Försök igen.</qt>"
+msgstr "<qt>Förrådsadresser ska sluta med xml eller xml.bz2.<p>Försök igen.</qt>"
 
 #: src/Preferences.py:287 src/Preferences.py:303
 msgid "Pisi Error"
@@ -603,8 +600,7 @@ msgid "C&ache"
 msgstr "C&ache"
 
 #: src/PreferencesDialog.py:380
-msgid ""
-"You can see current software repositories and corresponding addresses here"
+msgid "You can see current software repositories and corresponding addresses here"
 msgstr "Du kan se aktuella förråd och deras adresser här"
 
 #: src/PreferencesDialog.py:381
@@ -764,5 +760,3 @@ msgstr "Visa uppdateringar"
 msgid "Ignore"
 msgstr "Avbryt"
 
-#~ msgid "PiSi Authors"
-#~ msgstr "PiSi-utvecklare"
