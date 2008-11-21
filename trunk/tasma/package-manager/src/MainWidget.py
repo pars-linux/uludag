@@ -647,10 +647,7 @@ class MainApplicationWidget(QWidget):
 
             self.progressDialog.packageNo += 1
             self.progressDialog.updateStatusInfo()
-
-            # installed does not affect progress because the real progress is the "download" in install state
-            if operation != "installed":
-                self.progressDialog.updatePackageProgress()
+            self.progressDialog.updatePackageProgress()
 
         elif operation in ["savingrepos"]:
             self.progressDialog.setCurrentOperation(i18n("<b>Applying Repository Changes</b>"))
