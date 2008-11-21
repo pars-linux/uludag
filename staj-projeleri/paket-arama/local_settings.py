@@ -1,5 +1,5 @@
 # Can add/remove a version support here
-versions = [2008] #2007,2008
+versions = ['2008', 'contrib-2008'] #2007, 2008, contrib-2008
 
 # Paths
 WEB_URL = 'http://paketler.pardus.org.tr/search'

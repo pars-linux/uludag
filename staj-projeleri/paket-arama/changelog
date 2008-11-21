@@ -1,3 +1,9 @@
+2008-11-21  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
+
+	* Contrib-2008 support added.
+	* Versions are strings from now on: '2008' or 'contrib-2008'
+	* sqlgen supports --contrib parameter.
+
 2008-11-14  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
 	* Fixed type conversion bug (int(version))

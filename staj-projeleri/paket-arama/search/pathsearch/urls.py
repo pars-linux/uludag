@@ -2,11 +2,11 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('search.pathsearch.views',
     (r'^$', 'index'),
-    (r'^(?P<version>[0-9]+)/$', 'index'),
-    (r'^(?P<version>[0-9]+)/package/(?P<package_name>[-_.0-9A-Za-z]+)/list/$', 'list_package_contents'),
-    (r'^(?P<version>[0-9]+)/package/(?P<package_name>[-_.0-9A-Za-z]+)/(?P<term>[-/_.0-9A-Za-z]+)', 'search_in_package'),
-    (r'^(?P<version>[0-9]+)/package/(?P<package_name>[-_.0-9A-Za-z]+)/$', 'search_for_package'),
-    (r'^(?P<version>[0-9]+)/(?P<term>[-_.0-9A-Za-z]+)/$', 'search_in_all_packages'),
+    (r'^(?P<version>[-0-9A-Za-z]+)/$', 'index'),
+    (r'^(?P<version>[-0-9A-Za-z]+)/package/(?P<package_name>[-_.0-9A-Za-z]+)/list/$', 'list_package_contents'),
+    (r'^(?P<version>[-0-9A-Za-z]+)/package/(?P<package_name>[-_.0-9A-Za-z]+)/(?P<term>[-/_.0-9A-Za-z]+)', 'search_in_package'),
+    (r'^(?P<version>[-0-9A-Za-z]+)/package/(?P<package_name>[-_.0-9A-Za-z]+)/$', 'search_for_package'),
+    (r'^(?P<version>[-0-9A-Za-z]+)/(?P<term>[-_.0-9A-Za-z]+)/$', 'search_in_all_packages'),
     
 )
 
