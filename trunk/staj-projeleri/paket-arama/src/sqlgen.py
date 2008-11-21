@@ -1,3 +1,5 @@
+#ifndef SQLGEN_PY
+#define SQLGEN_PY
 """
 Generates INSERT SQL Statements for each package-file statement and
 appends these statements at every 50 package into a file.
@@ -28,7 +30,9 @@ except:
     
     
 debug = False
-file_name = 'arama%s.sql' % version
+contrib = False # This is not a contrib buildfarm, unless otherwise specified.
+
+
 
 
 if len(sys.argv) > 1:
@@ -36,7 +40,12 @@ if len(sys.argv) > 1:
         debug = True
     else:
         debug = False
-    
+
+    contrib_parameters = ['--contrib', '-c']
+    if sys.argv[1] in contrib_parameters or sys.argv[2] in contrib_parameters:
+        contrib = True
+        version += 'contrib'
+
     if sys.argv[1] in ['--help', '-h']:
         print """Usage: python sqlgen.py [option]
         Options:
@@ -45,10 +54,14 @@ if len(sys.argv) > 1:
         
         -d        Debugging
         --debug
-        -v"""
+        -v
+        
+        -c        Contrib Repo
+        --contrib"""
         sys.exit()
 
 
+file_name = 'arama%s.sql' % version
 
 if os.path.exists('./%s.bz2' % file_name):
     os.rename('./%s.bz2' % file_name, './%s-old.bz2' %  file_name)
@@ -70,10 +83,16 @@ if debug: print "Written drop/create table statements."
 if debug: print "Fetching package information from pisi."
 
 statements = ""
-if version == '2008':
+if version[:4] == '2008':
     pi = pisi.db.installdb.InstallDB()
     installed_packages = pi.list_installed()
-elif version == '2007':
+
+    # If this is a contrib build-farm, then find out the contrib packages.
+    if contrib:
+        packagedb = pisi.db.packagedb.PackageDB()
+        contrib_packages = set(installed_packages).intersection(packagedb.list_packages("contrib-2008"))
+
+elif version[:4] == '2007':
     pisi.api.init()
     pi = pisi.installdb.init()
     installed_packages = pi.list_installed()        
@@ -84,12 +103,17 @@ counter = 0
 index = 1
 
 if debug: print "Writing package information starting..."
+
+# If this is a contrib buildfarm, only scan the contrib packages...
+if contrib:
+    installed_packages = contrib_packages
+
 for package in installed_packages:
     if debug: print "Package: %s" % package 
     # Get the file list for a package
-    if version == '2007':
+    if version[:4] == '2007':
         files = [file.path for file in pi.files(package).list]
-    elif version == '2008':
+    elif version[:4] == '2008':
         files = [file.path for file in pi.get_files(package).list]
     #else:
         # for pisi api changes...
@@ -112,7 +136,7 @@ for package in installed_packages:
 if counter != 0:
     append_to_file(file_name, statements)
         
-if version == '2007':
+if version[0:4] == '2007':
     pisi.installdb.finalize()
     pisi.api.finalize()
     
@@ -125,3 +149,4 @@ if debug: print 'Compressing...'
 # os.system('tar -czf arama.tar.gz arama.sql')
 os.system('bzip2 -z %s' % file_name)
 if debug: print 'Finished...'
+#endif // SQLGEN_PY
