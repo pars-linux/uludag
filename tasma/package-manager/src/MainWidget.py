@@ -137,13 +137,17 @@ class MainApplicationWidget(QWidget):
 
     def setupConnections(self):
         self.connect(self.componentsList,SIGNAL("selectionChanged(QListViewItem *)"),self.refreshComponentList)
-        self.connect(self.clearButton, SIGNAL("clicked()"),self.searchLine, SLOT("clear()"))
+        self.connect(self.clearButton, SIGNAL("clicked()"), self.searchClear)
         self.connect(self.searchAction, SIGNAL("clicked()"), self.searchPackage)
         self.connect(self.searchLine, SIGNAL("returnPressed()"), self.searchPackage)
         self.connect(self.basketAction, SIGNAL("clicked()"),self.showBasket)
         self.connect(self.operateAction, SIGNAL("clicked()"),self.takeAction)
         self.connect(self.specialList, PYSIGNAL("checkboxClicked"), self.packageClicked)
         self.connect(self.delayTimer, SIGNAL("timeout()"), self.lazyLoadComponentList)
+
+    def searchClear(self):
+        self.searchLine.clear()
+        self.refreshState(False)
 
     def lazyLoadComponentList(self):
 
