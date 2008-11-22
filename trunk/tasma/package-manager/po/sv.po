@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-17 11:04+0200\n"
-"PO-Revision-Date: 2008-11-19 21:32+0100\n"
+"PO-Revision-Date: 2008-11-22 22:46+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -422,7 +422,7 @@ msgstr "tas bort"
 
 #: src/CommonText.py:15
 msgid "installing"
-msgstr "installerar"
+msgstr "installeras"
 
 #: src/Preferences.py:234
 msgid "Add New Repository"
