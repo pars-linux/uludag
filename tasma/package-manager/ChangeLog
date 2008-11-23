@@ -1,3 +1,7 @@
+2008-11-23 Gökçen Eraslan <gokcen@pardus.org.tr>
+        * Fix cursor problems, add forgotten paranthesis to KCursor related
+		code.
+
 2008-11-17 Faik Uygur <faik@pardus.org.tr>
         * Remove auto start searching feature when text changed and add a button
         to start search or press enter.
