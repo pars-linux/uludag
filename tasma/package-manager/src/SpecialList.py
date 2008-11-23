@@ -89,21 +89,24 @@ class SpecialList(QObject):
         self.disabled = disabled
 
         Globals.setWaitCursor()
-        part.view().setContentsPos(0, 0)
-        part.begin()
-        part.write(head)
-        part.write("<style type=\"text/css\">%s</style>" % self.css)
-        part.write("<script language=\"JavaScript\">%s</script>" % self.javascript)
-        part.write("</head><body>")
+        try:
+            part.view().setContentsPos(0, 0)
+            part.begin()
+            part.write(head)
+            part.write("<style type=\"text/css\">%s</style>" % self.css)
+            part.write("<script language=\"JavaScript\">%s</script>" % self.javascript)
+            part.write("</head><body>")
 
-        if set(packages) - set(selected):
-            part.write('''<font size="-2"><a href="#selectall">'''+i18n("Select all packages in this category")+'''</a></font>''')
-        else:
-            part.write('''<font size="-2"><a href="#selectall">'''+i18n("Reverse package selections")+'''</a></font>''')
+            if set(packages) - set(selected):
+                part.write('''<font size="-2"><a href="#selectall">'''+i18n("Select all packages in this category")+'''</a></font>''')
+            else:
+                part.write('''<font size="-2"><a href="#selectall">'''+i18n("Reverse package selections")+'''</a></font>''')
 
-        part.write(self.createListForPackages(packages))
-        part.end()
-        Globals.setNormalCursor()
+            part.write(self.createListForPackages(packages))
+            part.end()
+
+        finally:
+            Globals.setNormalCursor()
 
     def createListForPackages(self, packages):
         result = ""

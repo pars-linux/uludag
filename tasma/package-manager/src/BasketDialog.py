@@ -138,8 +138,10 @@ class BasketDialog(KDialog):
 
     def updateTotals(self):
         Globals.setWaitCursor()
-        self.createExtraPackagesList()
-        Globals.setNormalCursor()
+        try:
+            self.createExtraPackagesList()
+        finally:
+            Globals.setNormalCursor()
 
     def createSelectedPackagesList(self):
         self.createHTML(self.basket.packages, self.pkgHtmlPart, True)

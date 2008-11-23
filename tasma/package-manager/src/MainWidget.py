@@ -197,62 +197,67 @@ class MainApplicationWidget(QWidget):
         # set mouse to waiting icon
         Globals.setWaitCursor()
 
-        # uncheck buttons, clear search line, empty cache
-        if reset:
-            self.resetState()
-
-        # check the "Show New Packages" button
-        self.parent.showNewAction.setChecked(True)
-        self.processEvents()
-
         try:
-            packages = self.command.listNewPackages()
-        except PisiIface.RepoError:
+            # uncheck buttons, clear search line, empty cache
+            if reset:
+                self.resetState()
+
+            # check the "Show New Packages" button
+            self.parent.showNewAction.setChecked(True)
+            self.processEvents()
+
+            try:
+                packages = self.command.listNewPackages()
+            except PisiIface.RepoError:
+                Globals.setNormalCursor()
+                self.repoNotReady()
+                return
+
+            self.state = install_state
+
+            # prepare components' listview on the left side
+            self.createComponentList(packages)
+
+            self.operateAction.setText(i18n("Install Package(s)"))
+            self.operateAction.setIconSet(loadIconSet("ok"))
+            self.basket.setState(self.state)
+
+            # set last selected component and so, trigger SpecialList to create right side (packages)
+            # (selects first component if it is the first time)
+            self.setLastSelected()
+
+            self.updateStatusBar()
+
+        finally:
             Globals.setNormalCursor()
-            self.repoNotReady()
-            return
-
-        self.state = install_state
-
-        # prepare components' listview on the left side
-        self.createComponentList(packages)
-
-        self.operateAction.setText(i18n("Install Package(s)"))
-        self.operateAction.setIconSet(loadIconSet("ok"))
-        self.basket.setState(self.state)
-
-        # set last selected component and so, trigger SpecialList to create right side (packages)
-        # (selects first component if it is the first time)
-        self.setLastSelected()
-
-        self.updateStatusBar()
-        Globals.setNormalCursor()
 
     # Executed when 'Show Installed Packages' is clicked
     def removeState(self, reset=True):
         Globals.setWaitCursor()
 
-        if reset:
-            self.resetState()
-        self.parent.showInstalledAction.setChecked(True)
-        self.processEvents()
-
         try:
-            packages = self.command.listPackages()
-        except PisiIface.RepoError:
+            if reset:
+                self.resetState()
+            self.parent.showInstalledAction.setChecked(True)
+            self.processEvents()
+
+            try:
+                packages = self.command.listPackages()
+            except PisiIface.RepoError:
+                Globals.setNormalCursor()
+                self.repoNotReady()
+                return
+
+            self.state = remove_state
+            self.createComponentList(packages)
+            self.operateAction.setText(i18n("Remove Package(s)"))
+            self.operateAction.setIconSet(loadIconSet("no"))
+            self.basket.setState(self.state)
+            self.setLastSelected()
+            self.updateStatusBar()
+
+        finally:
             Globals.setNormalCursor()
-            self.repoNotReady()
-            return
-
-        self.state = remove_state
-        self.createComponentList(packages)
-        self.operateAction.setText(i18n("Remove Package(s)"))
-        self.operateAction.setIconSet(loadIconSet("no"))
-        self.basket.setState(self.state)
-        self.setLastSelected()
-        self.updateStatusBar()
-
-        Globals.setNormalCursor()
 
     # Executed when 'Show Upgradable Packages' is clicked
     def updateCheck(self):
@@ -269,36 +274,39 @@ class MainApplicationWidget(QWidget):
     def upgradeState(self):
         Globals.setWaitCursor()
 
-        # TODO:
-        # If package-manager is opened while tray is updating-repo; progress dialog is
-        # shown. And when it ends, pm switches to upgradeState but without checking
-        # operation buttons. If pm is not opened while this is done, no change state happens
-        # in pm, and when it is opened it will be seen in which state it was left.
-        #
-        # Later this background update may be done with a widget like kmail's small progress 
-        # and any operation button will be disabled when tray is caught while updating. For 
-        # now we show progress dialog and change pm state and button states manually.
-        self.parent.showUpgradeAction.setChecked(True)
-        self.parent.showNewAction.setChecked(False)
-        self.parent.showInstalledAction.setChecked(False)
-        ##
-
         try:
-            upgradables = PisiIface.get_upgradable_packages()
-        except PisiIface.RepoError:
+            # TODO:
+            # If package-manager is opened while tray is updating-repo; progress dialog is
+            # shown. And when it ends, pm switches to upgradeState but without checking
+            # operation buttons. If pm is not opened while this is done, no change state happens
+            # in pm, and when it is opened it will be seen in which state it was left.
+            #
+            # Later this background update may be done with a widget like kmail's small progress 
+            # and any operation button will be disabled when tray is caught while updating. For 
+            # now we show progress dialog and change pm state and button states manually.
+            self.parent.showUpgradeAction.setChecked(True)
+            self.parent.showNewAction.setChecked(False)
+            self.parent.showInstalledAction.setChecked(False)
+            ##
+
+            try:
+                upgradables = PisiIface.get_upgradable_packages()
+            except PisiIface.RepoError:
+                Globals.setNormalCursor()
+                self.repoNotReady()
+                return
+
+            self.createComponentList(upgradables, True)
+            self.operateAction.setText(i18n("Upgrade Package(s)"))
+            self.operateAction.setIconSet(loadIconSet("reload"))
+            self.lastSelectedComponent = i18n("All")
+            self.setLastSelected()
+
+            self.basket.setState(self.state)
+            self.updateStatusBar()
+
+        finally:
             Globals.setNormalCursor()
-            self.repoNotReady()
-            return
-
-        self.createComponentList(upgradables, True)
-        self.operateAction.setText(i18n("Upgrade Package(s)"))
-        self.operateAction.setIconSet(loadIconSet("reload"))
-        self.lastSelectedComponent = i18n("All")
-        self.setLastSelected()
-
-        self.basket.setState(self.state)
-        self.updateStatusBar()
-        Globals.setNormalCursor()
 
     def setLastSelected(self):
         item = self.componentsList.firstChild()
@@ -333,12 +341,15 @@ class MainApplicationWidget(QWidget):
         # initialization and search state listview items are not components
         except KeyError:
             pass
-        Globals.setNormalCursor()
+        finally:
+            Globals.setNormalCursor()
 
     def updateStatusBar(self):
         Globals.setWaitCursor()
-        self.basket.update()
-        Globals.setNormalCursor()
+        try:
+            self.basket.update()
+        finally:
+            Globals.setNormalCursor()
 
         if not self.basket.packages:
             text = i18n("Currently your basket is empty.")
