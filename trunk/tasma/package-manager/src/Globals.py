@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from qt import QEventLoop, Qt, QCursor
+from qt import QEventLoop
 from kdeui import KCursor
 import PisiIface
 from Debug import Debug
@@ -24,7 +24,7 @@ def debug(msg):
 
 def setWaitCursor():
     if app:
-        app.setOverrideCursor(QCursor(Qt.WaitCursor))
+        app.setOverrideCursor(KCursor.waitCursor())
 
 def setNormalCursor():
     if app:

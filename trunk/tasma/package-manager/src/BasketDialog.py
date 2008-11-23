@@ -137,9 +137,9 @@ class BasketDialog(KDialog):
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def updateTotals(self):
-        self.setCursor(KCursor.waitCursor)
+        Globals.setWaitCursor()
         self.createExtraPackagesList()
-        self.setCursor(KCursor.arrowCursor)
+        Globals.setNormalCursor()
 
     def createSelectedPackagesList(self):
         self.createHTML(self.basket.packages, self.pkgHtmlPart, True)
