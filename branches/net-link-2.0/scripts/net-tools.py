@@ -230,13 +230,18 @@ def connections():
     return listProfiles()
 
 def connectionInfo(name):
-    # TODO: Expand
     profile = Profile(name)
     device = profile.info["device"]
     return {
         "name": name,
         "device_id": device,
         "device_name": netutils.deviceName(device),
+        "net_mode": profile.info.get("net_mode", "auto"),
+        "net_address": profile.info.get("net_address", ""),
+        "net_mask": profile.info.get("net_mask", ""),
+        "net_gateway": profile.info.get("net_gateway", ""),
+        "name_mode": profile.info.get("name_mode", "default"),
+        "name_server": profile.info.get("name_server", ""),
         "state": profile.info.get("state", "down"),
     }
 
