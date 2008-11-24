@@ -43,6 +43,9 @@ class Widget(Ui_YaliMain):
         # shortcut to open a console
         self.consoleShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F12),self.ui)
 
+        # something funny
+        self.cursorShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F7),self.ui)
+
         # self.ui.setAttribute(Qt.WA_OpaquePaintEvent)
         # move one step at a time
         self.moveInc = 1
@@ -54,6 +57,7 @@ class Widget(Ui_YaliMain):
         # Main Slots
         QObject.connect(self.debugShortCut, SIGNAL("activated()"), self.toggleDebug)
         QObject.connect(self.consoleShortCut, SIGNAL("activated()"), self.toggleConsole)
+        QObject.connect(self.cursorShortCut, SIGNAL("activated()"), self.toggleCursor)
         QObject.connect(self.buttonNext, SIGNAL("clicked()"), self.slotNext)
         QObject.connect(self.buttonBack, SIGNAL("clicked()"), self.slotBack)
         QObject.connect(self.toggleHelp, SIGNAL("clicked()"), self.slotToggleHelp)
@@ -62,6 +66,14 @@ class Widget(Ui_YaliMain):
     def toggleConsole(self):
         import os
         os.system("TERM='xterm' %s/data/consoleq" % ctx.consts.data_dir)
+
+    def toggleCursor(self):
+        if self.ui.cursor().shape() == QtGui.QCursor(Qt.ArrowCursor).shape():
+            raw = QtGui.QPixmap(":/gui/pics/pardusman-icon.png")
+            raw.setMask(raw.mask())
+            self.ui.setCursor(QtGui.QCursor(raw,2,2))
+        else:
+            self.ui.unsetCursor()
 
     # show/hide help text
     def slotToggleHelp(self):
