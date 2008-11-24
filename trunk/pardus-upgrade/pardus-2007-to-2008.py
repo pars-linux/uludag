@@ -109,16 +109,16 @@ def _find_users():
 def delete_users_file(user_file):
     users = _find_users()
     for user in users:
-        user_file = "/home/%s/%s" % (user, user_file)
-        if os.path.exists(user_file):
-            os.unlink(user_file)
+        file_path = "/home/%s/%s" % (user, user_file)
+        if os.path.exists(file_path):
+            os.unlink(file_path)
 
 def delete_users_dir(user_dir):
     users = _find_users()
     for user in users:
-        user_dir = "/home/%s/%s" % (user, user_dir)
-        if os.path.exists(user_dir):
-            shutil.rmtree(user_dir)
+        dir_path = "/home/%s/%s" % (user, user_dir)
+        if os.path.exists(dir_path):
+            shutil.rmtree(dir_path)
 
 def migrate_users_bashrc(bashrc):
     bashrcLinesToAdd = """
