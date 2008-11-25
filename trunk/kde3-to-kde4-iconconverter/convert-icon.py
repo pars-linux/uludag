@@ -24,6 +24,8 @@ for size in sizes:
     for group in groups:
         os.makedirs(os.path.join(newthemedir, size, group))
     for mapline in file(mapfile).readlines():
+        if mapline.strip().startswith("#"):
+            continue
         oldicon = mapline.split()[0].strip()
         newicon = mapline.split()[1].strip()
         try:
