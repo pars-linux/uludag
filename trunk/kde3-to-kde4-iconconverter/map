@@ -8,7 +8,6 @@ actions/2rightarrow.png actions/arrow-right-double.png
 actions/2uparrow.png actions/arrow-up-double.png
 actions/about_kde.png actions/kde.png
 actions/about-kde.png actions/kde.png
-actions/about_kde.png places/start-here-kde.png
 actions/add.png actions/list-add.png
 actions/add_user.png actions/list-add-user.png
 actions/add-user.png actions/list-add-user.png
@@ -289,7 +288,8 @@ actions/window_nofullscreen.png actions/view-restore.png
 actions/window_suppressed.png actions/window-suppressed.png
 apps/go.png apps/kde.png
 apps/go.png places/start-here-branding.png
-apps/go.png places/start-here.png
+#apps/go.png places/start-here.png  - this is the oxygen icon in oxygen theme, not used i think
+apps/go.png places/start-here-kde.png
 apps/package_accessories.png apps/applications-accessories.png
 apps/package_accessories.png categories/applications-accessories.png
 apps/package_development.png apps/applications-development.png
