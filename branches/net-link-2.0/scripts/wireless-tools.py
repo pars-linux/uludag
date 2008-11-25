@@ -407,7 +407,7 @@ def setState(name, state):
                             for server in profile.info.get("name_server", ",").split():
                                 if server.strip():
                                     name_servers.append(server.strip())
-                        call("baselayout", "Network.Stack", "useNameServers", (name_servers, name_domain))
+                        call("baselayout", "Net.Stack", "useNameServers", (name_servers, name_domain))
                     else:
                         iface.down()
                         # Save state to profile database
@@ -450,7 +450,7 @@ def setState(name, state):
                     for server in profile.info.get("name_server", ",").split():
                         if server.strip():
                             name_servers.append(server.strip())
-                call("baselayout", "Network.Stack", "useNameServers", (name_servers, name_domain))
+                call("baselayout", "Net.Stack", "useNameServers", (name_servers, name_domain))
         elif state == "down":
             if profile.info.get("net_mode", "auto") == "auto":
                 iface.stopAuto()
@@ -465,7 +465,7 @@ def setState(name, state):
             # Notify clients
             notify("Network.Link", "stateChanged", (name, "down", ""))
             # Reset Network Stack
-            call("baselayout", "Network.Stack", "useNameServers", ([], ""))
+            call("baselayout", "Net.Stack", "useNameServers", ([], ""))
     elif device_mode == "adhoc":
         # TODO: AdHoc support
         pass
