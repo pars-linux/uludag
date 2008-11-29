@@ -817,6 +817,7 @@ def queryDDC():
             if mon.eisaid == l[2].strip().upper():
                 mon.vendorname = l[0].lstrip()
                 mon.modelname = l[1].lstrip()
+                # FIXME: Some monitor entries do not contain a range.
                 mon.hsync_min, mon.hsync_max = l[3].strip().split("-")
                 mon.vref_min, mon.vref_max = l[4].strip().split("-")
 
