@@ -138,8 +138,10 @@ class SpecialList(QObject):
 
         alternativeColor = KGlobalSettings.alternateBackgroundColor().name()
         baseColor = KGlobalSettings.baseColor().name()
-        selectedBaseColor = "#678DB2"
-        summaryColor = "#303030"
+        #selectedBaseColor = "#678DB2"
+        selectedBaseColor = "#FF0000"
+        #summaryColor = "#303030"
+        summaryColor = "#00FF00"
 
         for app in packages:
             if index % 2 == 0:
