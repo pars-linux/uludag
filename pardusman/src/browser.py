@@ -192,7 +192,6 @@ class SizeLabel(QLabel):
         
         QLabel.drawContents(self, painter)
 
-
 class BrowserWidget(QVBox):
     def __init__(self, parent, repo, mediasize):
         QVBox.__init__(self, parent)
@@ -239,7 +238,6 @@ class BrowserWidget(QVBox):
         self.package_tipper = PackageTipper(self.list.viewport())
         self.package_tipper.list = self.list
         self.search.setListView(self.list)
-        self.search.setSearchColumns([0])
         
         self.label = SizeLabel(self)
         self.label.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))

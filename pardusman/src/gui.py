@@ -336,7 +336,7 @@ class ProjectWindow(KMainWindow):
         else:
             self.project.exparams = None
 
-        self.project.plugin_package = unicode(self.plugin_package.text())
+        self.project.plugin_package = unicode(self.plugin_package.text()) or ""
 
         tmp = unicode(self.work_dir.text())
         if tmp:
@@ -375,7 +375,11 @@ class ProjectWindow(KMainWindow):
         else:
             tmp = ""
         self.exparams.setText(tmp)
-        self.plugin_package.setText(unicode(self.project.plugin_package))
+        if self.project.plugin_package:
+            tmp = unicode(self.project.plugin_package)
+        else:
+            tmp = ""
+        self.plugin_package.setText(tmp)
         if self.project.work_dir:
             tmp = unicode(self.project.work_dir)
         else:
