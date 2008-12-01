@@ -1,4 +1,4 @@
-# translation of sv.po to Svenska
+# translation of sv.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-01 11:59+0200\n"
-"PO-Revision-Date: 2008-09-09 18:50+0200\n"
+"PO-Revision-Date: 2008-12-01 20:46+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
-"Language-Team: Svenska <sv@li.org>\n"
+"Language-Team:  <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -237,8 +237,7 @@ msgstr "Den finns en förfrågan av samma partitionstyp"
 
 #: yali4/gui/DiskWidgets.py:320
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partition <b>%(partition)s</b> kommer att <b>formateras</b> som <b>%(fsType)"
 "s</b>."
@@ -261,18 +260,14 @@ msgstr ""
 "Du måste radera en av de primära partitionerna i din partitionstabell!"
 
 #: yali4/gui/DiskWidgets.py:379
-#, fuzzy
 msgid "Too many primary partitions !"
 msgstr "För många primära partitioner!"
 
 #: yali4/gui/DiskWidgets.py:380
-#, fuzzy
 msgid ""
 "You need to delete one of the primary or extended(if exists) partition from "
 "your disk table !"
-msgstr ""
-"GPT partitionstabeller stöder inte utökade partitioner.\n"
-"Du måste radera en av de primära partitionerna i din partitionstabell!"
+msgstr "Du måste radera en av de primära eller utökade partitionerna (om sådan finnes) i din partitionstabell!"
 
 #: yali4/gui/DiskWidgets.py:397 yali4/gui/ScrSummary.py:160
 #, python-format
@@ -428,18 +423,15 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Caps Lock är aktiverad!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Caps Lock är aktiverad!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Lösenordet är för kort!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Lösenordet är för kort!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:128
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Lösenorden stämmer inte!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Lösenorden stämmer inte!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:133
 msgid ""
@@ -515,8 +507,7 @@ msgstr "Kontrollera ditt media"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr ""
-"Undvik installationsproblem genom att kontrollera cd-skivans integritet..."
+msgstr "Undvik installationsproblem genom att kontrollera cd-skivans integritet..."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -645,8 +636,7 @@ msgstr "Installerar systemet..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr ""
-"Installationen tar uppskattningsvis 30 minuter beroende på din dator..."
+msgstr "Installationen tar uppskattningsvis 30 minuter beroende på din dator..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -709,7 +699,7 @@ msgstr "Konfigurerar paket: %s"
 #: yali4/gui/ScrInstall.py:157
 #, python-format
 msgid "Package install failed : <b>%s</b><br>Do you want to retry ?"
-msgstr ""
+msgstr "Paketinstallation misslyckades: <b>%s</b><br>Vill du försöka igen?"
 
 #: yali4/gui/ScrInstall.py:177
 msgid "Creating baselayout for your system!"
@@ -1061,7 +1051,6 @@ msgid "Create users to use Pardus..."
 msgstr "Skapa användare i Pardus..."
 
 #: yali4/gui/ScrUsers.py:35
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -1089,8 +1078,8 @@ msgstr ""
 "<font size=\"+1\">\n"
 "<p>\n"
 "Pardus 2008 låter flera användare dela på samma dator.\n"
-"Du kan ge administratörs- rättigheter till de användare du skapar; du kan "
-"också anpassa användarnas rättigheter via olika åtgärder i TASMA.\n"
+"Du kan ge administratörs- rättigheter till de användare du skapar; i TASMA kan du "
+"också anpassa användarnas rättigheter för olika åtgärder.\n"
 "</p>\n"
 "<p>\n"
 "För att skapa en ny användare, fyll i formuläret och klicka på knappen\n"
@@ -1122,13 +1111,11 @@ msgstr "<font color=\"#FF6D19\">Lösenordet är för kort!</font>"
 
 #: yali4/gui/ScrUsers.py:178
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Användarnamnet finns redan, välj ett annat!</font>"
+msgstr "<font color=\"#FF6D19\">Användarnamnet finns redan, välj ett annat!</font>"
 
 #: yali4/gui/ScrUsers.py:181
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Användarnamnet innehåller ogiltiga tecken!</font>"
+msgstr "<font color=\"#FF6D19\">Användarnamnet innehåller ogiltiga tecken!</font>"
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
@@ -1237,16 +1224,15 @@ msgstr "Spårning:"
 msgid ""
 "Plugin (%s) not found or error occured while loading switching to normal "
 "installation process."
-msgstr ""
+msgstr "Insticksmodul (%s) kunde inte hittas eller så uppstod ett fel vid återgång till normal installation."
 
 #: yali4/installer.py:143
 msgid "YALI Is Working..."
 msgstr "YALI arbetar..."
 
 #: yali4/installer.py:156
-#, fuzzy
 msgid "Warning !"
-msgstr "Varning"
+msgstr "Varning!"
 
 #: yali4/installer.py:162
 msgid "Starting for CD Check"
@@ -1336,7 +1322,7 @@ msgstr "Installerar starthanteraren..."
 
 #: yali4/installer.py:595
 msgid "Retry"
-msgstr ""
+msgstr "Försök igen"
 
 #: yali4/localedata.py:20
 msgid "Turkish"
@@ -1519,401 +1505,3 @@ msgstr "Arkiveringspartition"
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Användare <b>%s</b>s hemkatalog förbereds..."
 
-#~ msgid "Form"
-#~ msgstr "Form"
-
-#~ msgid ""
-#~ "It seems there is more than one partition for resizing. In this case you "
-#~ "can select a partition from the list below or YALI will select one."
-#~ msgstr ""
-#~ "Det verkar som om det finns mer än en partition för storleksändring. Välj "
-#~ "någon partition ur listan eller låt YALI välja åt dig."
-
-#~ msgid "Choose the best target for resizing (recommended)"
-#~ msgstr "Välj bästa möjliga mål för storleksändring (rekommenderas)"
-
-#~ msgid "I will choose the target"
-#~ msgstr "Jag väljer mål"
-
-#~ msgid "Use Selected"
-#~ msgstr "Använd vald"
-
-#~ msgid "Form1"
-#~ msgstr "Form1"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">1. Select the partitioning method:</span></"
-#~ "p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">1. Välj partitioneringsmetod:</span></p></"
-#~ "body></html>"
-
-#~ msgid ""
-#~ "Here you can choose one of partitioning method, and then you must select "
-#~ "for a device to proceed your choice. <br>Device list will be updated for "
-#~ "selected method."
-#~ msgstr ""
-#~ "Här kan du först välja en av partitioneringsmetoderna, sedan måste du "
-#~ "välja en enhet för att fortsätta med ditt val.<br>Enhetslistan kommer att "
-#~ "uppdateras för vald metod."
-
-#~ msgid "Automatic"
-#~ msgstr "Automatisk"
-
-#~ msgid ""
-#~ "This option will try to find suitable free space or resizable partitions"
-#~ msgstr ""
-#~ "Det här alternativet försöker hitta ett lämpligt ledigt utrymme eller "
-#~ "partitioner för storleksändring"
-
-#~ msgid "Try to use free space or resize current partitions"
-#~ msgstr ""
-#~ "Försök att använda ledigt utrymme eller storleksändra befintliga "
-#~ "partitioner"
-
-#~ msgid ""
-#~ "This option will erase your entire disk. All of your data on disk will be "
-#~ "lost !"
-#~ msgstr ""
-#~ "Det här alternativet kommer att radera hela disken. Alla dina data kommer "
-#~ "att försvinna!"
-
-#~ msgid "Delete all partitions"
-#~ msgstr "Ta bort alla partitioner"
-
-#~ msgid "You can use manual partitioning with this option"
-#~ msgstr "Det här alternativet låter dig partitionera disken för hand"
-
-#~ msgid "No, I'll partition my disk manually."
-#~ msgstr "Nej, jag partitionerar min disk på egen hand."
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">2. Select the disk to apply selected method:"
-#~ "</span></p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">2. Välj enhet att tillämpa vald metod på:</"
-#~ "span></p></body></html>"
-
-#~ msgid "&nbsp;"
-#~ msgstr "&nbsp;"
-
-#~ msgid ""
-#~ "<b>Do you want to write boot loader (GRUB) to your hard disk's master "
-#~ "boot record?</b>\n"
-#~ "\n"
-#~ "<p>You need a boot loader to boot your Pardus system.</p>\n"
-#~ "\n"
-#~ "<p>If you don't install a boot loader or choose to install to root "
-#~ "partition, you will have to configure your other operating system's "
-#~ "loader  (if you have one installed) to start \n"
-#~ "your newly installed Pardus.</p>"
-#~ msgstr ""
-#~ "<b>Vill du installera starthanteraren GRUB till huvudstartsektorn på "
-#~ "hårddisken?</b>\n"
-#~ "\n"
-#~ "<p>Du behöver en starthanterare för att starta ditt Pardussystem.</p>\n"
-#~ "\n"
-#~ "<p>Om du inte installerar en starthanterare eller väljer att installera "
-#~ "till huvudpartitionen måste du konfigurera ditt \n"
-#~ "andra operativsystems (om du har något) starthanterare för att kunna "
-#~ "starta ditt nyinstallerade Pardussystem.</p>"
-
-#~ msgid "Where do you want to install the bootlader ?"
-#~ msgstr "Var vill du installera starthanteraren?"
-
-#~ msgid "Install to first bootable disk (recommended)"
-#~ msgstr "Installera på första startbara disken (rekommenderas)"
-
-#~ msgid "Install to Pardus installed partition"
-#~ msgstr "Installera på samma partition som Pardus"
-
-#~ msgid "Install to selected disk belove"
-#~ msgstr "Installera på vald enhet nedan"
-
-#~ msgid "Select the disk you to install bootloader:"
-#~ msgstr "Välj var du vill installera starthanteraren:"
-
-#~ msgid "Don't install bootloader"
-#~ msgstr "Installera inte starthanterare"
-
-#~ msgid ""
-#~ "You can check the integrity of the packages in installation CD. Although "
-#~ "this is an optional step, we encourage you to do it to avoid any errors "
-#~ "in installation."
-#~ msgstr ""
-#~ "Du kan kontrollera paketens integritet på cd-skivan. Även om det här är "
-#~ "ett frivilligt steg uppmuntras du att göra det för att undvika problem "
-#~ "under installationen."
-
-#~ msgid "The current time"
-#~ msgstr "Aktuell tid"
-
-#~ msgid "The analog clock widget displays the current time."
-#~ msgstr "Den analoga klockan visar aktuell tid."
-
-#~ msgid "HH"
-#~ msgstr "HH"
-
-#~ msgid ":"
-#~ msgstr ":"
-
-#~ msgid "mm"
-#~ msgstr "mm"
-
-#~ msgid "ss"
-#~ msgstr "ss"
-
-#~ msgid "Time Zone"
-#~ msgstr "Tidszon"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "X"
-#~ msgstr "X"
-
-#~ msgid "Form3"
-#~ msgstr "Form3"
-
-#~ msgid "pix"
-#~ msgstr "pix"
-
-#~ msgid "Desc"
-#~ msgstr "Desc"
-
-#~ msgid "Installing Package: "
-#~ msgstr "Installerar paket: "
-
-#~ msgid "Select the keyboard layout of your choice."
-#~ msgstr "Välj önskad tangentbordslayout."
-
-#~ msgid "Test selected keyboard:"
-#~ msgstr "Testa vald tangentbordslayout:"
-
-#~ msgid "Yali4"
-#~ msgstr "Yali4"
-
-#~ msgid "Screen Name"
-#~ msgstr "Skärmnamn"
-
-#~ msgid "Details about the screen"
-#~ msgstr "Detaljer om steget"
-
-#~ msgid "Toggle Help"
-#~ msgstr "Växla hjälp"
-
-#~ msgid "Previous Screen"
-#~ msgstr "Föregående steg"
-
-#~ msgid "Back"
-#~ msgstr "Bakåt"
-
-#~ msgid "Next Screen"
-#~ msgstr "Nästa steg"
-
-#~ msgid "Next"
-#~ msgstr "Nästa"
-
-#~ msgid "Partition 1 on FUJISTU - /dev/sda1"
-#~ msgstr "Partition 1 på FUJISTU - /dev/sda1"
-
-#~ msgid "Device :"
-#~ msgstr "Enhet:"
-
-#~ msgid "/dev/sda1"
-#~ msgstr "/dev/sda1"
-
-#~ msgid "Delete Partition"
-#~ msgstr "Ta bort partition"
-
-#~ msgid "Resize Partition"
-#~ msgstr "Storleksändra partition"
-
-#~ msgid "Use :"
-#~ msgstr "Används :"
-
-#~ msgid "Size :"
-#~ msgstr "Storlek :"
-
-#~ msgid " MB"
-#~ msgstr " MB"
-
-#~ msgid "Format :"
-#~ msgstr "Formatera :"
-
-#~ msgid "Yes, format this partition"
-#~ msgstr "Ja, formatera partitionen"
-
-#~ msgid "File System :"
-#~ msgstr "Filsystem :"
-
-#~ msgid "Ext3"
-#~ msgstr "Ext3"
-
-#~ msgid "NTFS"
-#~ msgstr "NTFS"
-
-#~ msgid "Fat 32"
-#~ msgstr "Fat 32"
-
-#~ msgid "Changes will be applied when you finish.."
-#~ msgstr "Ändringar verkställs när du slutför..."
-
-#~ msgid "Refresh Disks"
-#~ msgstr "Uppdatera enheter"
-
-#~ msgid "Reset All Changes"
-#~ msgstr "Återställ ändringar"
-
-#~ msgid "Apply"
-#~ msgstr "Verkställ"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
-#~ "#ffffff;\">These settings will be applied when you click \"</span><span "
-#~ "style=\" text-decoration: underline; color:#ffffff;\">Resize</span><span "
-#~ "style=\" color:#ffffff;\">\". If you want to go back click \"</span><span "
-#~ "style=\" text-decoration: underline; color:#ffffff;\">Cancel</span><span "
-#~ "style=\" color:#ffffff;\">\".</span></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "color:#ffffff;\"></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span "
-#~ "style=\" font-weight:600; text-decoration: underline;\">Warning:</span> A "
-#~ "resizing operation may corrupt your partition, rendering your data "
-#~ "unreachable. Make sure that you have a backup for this partition.<span "
-#~ "style=\" font-weight:600;\"> </span><span style=\" font-weight:600;"
-#~ "\">Note that this operation cannot be undone</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
-#~ "#ffffff;\">Dessa ändringar verkställs när du klickar \"</span><span style="
-#~ "\" text-decoration: underline; color:#ffffff;\">Ändra storlek</span><span "
-#~ "style=\" color:#ffffff;\">\". Om du vill återgå, klicka \"</span><span "
-#~ "style=\" text-decoration: underline; color:#ffffff;\">Avbryt</span><span "
-#~ "style=\" color:#ffffff;\">\".</span></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "color:#ffffff;\"></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span "
-#~ "style=\" font-weight:600; text-decoration: underline;\">Varning:</span> "
-#~ "En storleksändring kan förstöra din partition och göra dina filer "
-#~ "oåtkomliga. Var säker på att du har en säkerhetskopia av denna partition."
-#~ "<span style=\" font-weight:600;\"> </span><span style=\" font-weight:600;"
-#~ "\">Observera att denna åtgärd inte kan ångras.</span></p></body></html>"
-
-#~ msgid "Resize"
-#~ msgstr "Ändra storlek"
-
-#~ msgid ""
-#~ "<p align=\"left\">System administrator user (root) handles important "
-#~ "system maintanence tasks. Please give password for this special user and "
-#~ "do not forget this password. Note that you shouldn't write this password "
-#~ "elsewhere for privacy reasons.</p>"
-#~ msgstr ""
-#~ "<p align=\"left\">Systemadministratören (root) sköter om viktiga "
-#~ "uppgifter för systemunderhållet. Ange lösenord för den här specielle "
-#~ "användaren och glöm inte bort det här lösenordet. Av säkerhetsskäl ska du "
-#~ "inte skriva ner det här lösenordet.</p>"
-
-#~ msgid "System administrator password:"
-#~ msgstr "Systemadministratörens lösenord:"
-
-#~ msgid "System administrator password (again):"
-#~ msgstr "Systemadministratörens lösenord (upprepa):"
-
-#~ msgid "Hostname:"
-#~ msgstr "Värdnamn:"
-
-#~ msgid "New User"
-#~ msgstr "Ny användare"
-
-#~ msgid "User Name:"
-#~ msgstr "Användarnamn:"
-
-#~ msgid "Real Name:"
-#~ msgstr "Verkligt namn:"
-
-#~ msgid "Password:"
-#~ msgstr "Lösenord:"
-
-#~ msgid "Password (again):"
-#~ msgstr "Lösenord (upprepa):"
-
-#~ msgid "Give administrator privileges to this user"
-#~ msgstr "Ge administratörsrättigheter till den här användaren"
-
-#~ msgid "Users:"
-#~ msgstr "Användare:"
-
-#~ msgid "Delete Selected User"
-#~ msgstr "Ta bort vald användare"
-
-#~ msgid "Auto Login User :"
-#~ msgstr "Logga in användare automatiskt:"
-
-#~ msgid "Auto Login Disabled"
-#~ msgstr "Inaktivera automatisk inloggning"
-
-#~ msgid ""
-#~ "All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
-#~ "software have their corresponding licenses. By installing or using "
-#~ "Pardus, you agree to accept them. Do you want to continue?"
-#~ msgstr ""
-#~ "All programvara utvecklad av TUBITAK/UEKAE publiceras under GNU/GPL. "
-#~ "Andra program har sina licenser. Genom att installera Pardus accepterar "
-#~ "du dem. Vill du fortsätta?"
-
-#~ msgid "Read GPL"
-#~ msgstr "Läs GPL"
-
-#~ msgid "Accept!"
-#~ msgstr "Accepterar!"
-
-#~ msgid "Don't Accept!"
-#~ msgstr "Accepterar inte!"
