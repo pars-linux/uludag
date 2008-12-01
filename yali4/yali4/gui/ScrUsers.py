@@ -41,10 +41,10 @@ You can assign management rights to the users you create; you can also
 configure permissions to users for various operations through TASMA.
 </p>
 <p>
-To create a new user, fill in the form and press the "Add User" button.
+To create a new user, fill in the form and press the "Create User" button.
 If you want a user to be automatically logged in to the system, select
 the user from the list; if you want to delete a user, 
-select his/her username from the list and press "Delete".
+select his/her username from the list and press "Delete Selected User".
 Proceed with the installation after you make your selections.
 </p>
 <p>
