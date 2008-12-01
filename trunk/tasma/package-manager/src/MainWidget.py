@@ -653,6 +653,7 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.updateStatusInfo()
 
         elif operation in ["extracting", "configuring"]:
+            self.progressDialog.disableCancel()
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=args[0])
 
         elif operation in ["removed", "installed", "upgraded"]:
