@@ -42,6 +42,9 @@ class Progress(ProgressDialog):
         self.curPkgDownloaded = 0
         self.reset()
 
+    def disableCancel(self):
+        self.cancelButton.setEnabled(False)
+
     def enableCancel(self):
         self.cancelButton.setEnabled(True)
 
