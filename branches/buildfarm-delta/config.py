@@ -29,3 +29,18 @@ smtpServer       = "mail.pardus.org.tr"
 useSmtpAuth      = True
 smtpUser         = ""
 smtpPassword     = ""
+
+# Blacklist for delta packages. Buildfarm will never build
+# delta packages for them.
+
+blacklist = ["skype",
+             "kernel",
+             "kernel-debug",
+             "openarena-data",
+             "vdrift-data-full",
+             "eclipse-jdt-binary",
+             "nvidia-drivers177",
+             "nvidia-drivers180",
+             "nvidia-drivers173",
+             "nvidia-drivers-new",
+             "nvidia-drivers-old"]

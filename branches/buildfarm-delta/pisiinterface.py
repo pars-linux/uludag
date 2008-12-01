@@ -98,6 +98,10 @@ class PisiApi:
             # Parse the name of the new package
             name = getName(os.path.basename(pl[1]))
 
+            if name in config.blacklist:
+                logger.debug("Skipping %s as it's blacklisted.." % name)
+                continue
+
             # Full path of the new package
             p = os.path.join(config.workDir, pl[1])
 
