@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-01 11:59+0200\n"
+"POT-Creation-Date: 2008-12-02 14:40+0200\n"
 "PO-Revision-Date: 2008-07-03 11:13+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -19,6 +19,533 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: yali4/gui/Ui/autopartquestion.py:64 yali4/gui/Ui/datetimewidget.py:81
+#: yali4/gui/Ui/goodbyewidget.py:46 yali4/gui/Ui/partedit.py:147
+#: yali4/gui/Ui/summarywidget.py:86
+msgid "Form"
+msgstr "Form"
+
+#: yali4/gui/Ui/autopartquestion.py:65
+msgid ""
+"It seems there is more than one partition for resizing. In this case you can "
+"select a partition from the list below or YALI will select one."
+msgstr ""
+"Il semble qu'il existe plusieurs partitions pour le redimensionnement. Vous "
+"pouvez sélectionner une de ces partitions dans la liste ci-dessous ou YALI "
+"choisira une."
+
+#: yali4/gui/Ui/autopartquestion.py:66
+msgid "Choose the best target for resizing (recommended)"
+msgstr ""
+"Choisir la partition cible la plus convenante pour le redimensionnement"
+"(recommandé)"
+
+#: yali4/gui/Ui/autopartquestion.py:67
+msgid "I will choose the target"
+msgstr "Je vais choisir la partition cible moi-même"
+
+#: yali4/gui/Ui/autopartquestion.py:68
+msgid "Use Selected"
+msgstr "Utilise ce qui est choisi"
+
+#: yali4/gui/Ui/autopartwidget.py:133 yali4/gui/Ui/bootloaderwidget.py:75
+#: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
+#: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
+#: yali4/gui/Ui/setupuserswidget.py:153 yali4/gui/Ui/welcomewidget.py:90
+msgid "Form1"
+msgstr "Form1"
+
+#: yali4/gui/Ui/autopartwidget.py:134
+#, fuzzy
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Select the partitioning method:</"
+"span></p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">1. Choisir la méthode de partitionnement:</"
+"span></p></body></html>"
+
+#: yali4/gui/Ui/autopartwidget.py:139
+msgid ""
+"Here you can choose one of partitioning method, and then you must select for "
+"a device to proceed your choice. <br>Device list will be updated for "
+"selected method."
+msgstr ""
+"Ici, vous pouvez sélectionner une des méthodes de partitionnement et le "
+"disque qui va être partitionné.<br>La liste des disques sera mise à jour "
+"selon la méthode choisie."
+
+#: yali4/gui/Ui/autopartwidget.py:140
+msgid "Automatic"
+msgstr ""
+
+#: yali4/gui/Ui/autopartwidget.py:141
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
+msgstr ""
+"Cette option va essayer de trouver un espace disponible convenable ou des "
+"partitions redimensionnables"
+
+#: yali4/gui/Ui/autopartwidget.py:142
+#, fuzzy
+msgid "Try to use free space or resize current partitions"
+msgstr ""
+"Partitionner automatiquement en utilisant l'espace disponible ou en "
+"redimensionnant les partitions courantes."
+
+#: yali4/gui/Ui/autopartwidget.py:143
+msgid ""
+"This option will erase your entire disk. All of your data on disk will be "
+"lost !"
+msgstr ""
+"Cette opération va effacer votre disque. Toutes les données sur le disque "
+"seront perdues!"
+
+#: yali4/gui/Ui/autopartwidget.py:144
+#, fuzzy
+msgid "Delete all partitions"
+msgstr "Supprimer toutes les partitions"
+
+#: yali4/gui/Ui/autopartwidget.py:145
+msgid "You can use manual partitioning with this option"
+msgstr "Cette option vous permet de partitionner votre disque manuellement"
+
+#: yali4/gui/Ui/autopartwidget.py:146
+msgid "No, I'll partition my disk manually."
+msgstr "Je vais partitionner mon disque manuellement"
+
+#: yali4/gui/Ui/autopartwidget.py:147
+#, fuzzy
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Select the disk to apply selected "
+"method:</span></p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">2. Choisir le disque pour appliquer la méthode "
+"sélectionnée:</span></p></body></html>"
+
+#: yali4/gui/Ui/autopartwidget.py:152
+msgid "&nbsp;"
+msgstr "&nbsp;"
+
+#: yali4/gui/Ui/bootloaderwidget.py:76
+msgid ""
+"<b>Do you want to write boot loader (GRUB) to your hard disk's master boot "
+"record?</b>\n"
+"\n"
+"<p>You need a boot loader to boot your Pardus system.</p>\n"
+"\n"
+"<p>If you don't install a boot loader or choose to install to root "
+"partition, you will have to configure your other operating system's loader  "
+"(if you have one installed) to start \n"
+"your newly installed Pardus.</p>"
+msgstr ""
+"<b>Installer le chargeur de démarrage (GRUB) sur le MBR du disque dur?</b>\n"
+"\n"
+"<p>Il faut un chargeur de démarrage pour démarrer votre système Pardus<p>\n"
+"\n"
+"Si aucun chargeur de démarrage n'est trouvé ou si ce dernier est installé "
+"sur votre partition racine, il faudra configurer le chargeur de démarrage de "
+"l'autre système d'exploitation (si vous en avez un) \n"
+"afin de démarrer votre système Pardus.</p>"
+
+#: yali4/gui/Ui/bootloaderwidget.py:82
+msgid "Where do you want to install the bootlader ?"
+msgstr "Où voulez vous installer le chargeur de démarrage ?"
+
+#: yali4/gui/Ui/bootloaderwidget.py:83
+msgid "Install to first bootable disk (recommended)"
+msgstr "Installer sur le premier disque dur démarrable (recommandé)"
+
+#: yali4/gui/Ui/bootloaderwidget.py:84
+msgid "Install to Pardus installed partition"
+msgstr "Installer sur la partition où Pardus est installé."
+
+#: yali4/gui/Ui/bootloaderwidget.py:85
+msgid "Install to selected disk belove"
+msgstr "Installer sur le disque sélectionné ci-dessous"
+
+#: yali4/gui/Ui/bootloaderwidget.py:86
+msgid "Select the disk you to install bootloader:"
+msgstr "Sélectionner le disque pour installer le chargeur de démarrage"
+
+#: yali4/gui/Ui/bootloaderwidget.py:87
+msgid "Don't install bootloader"
+msgstr "Ne pas installer le chargeur de démarrage."
+
+#: yali4/gui/Ui/checkcdwidget.py:73
+msgid ""
+"You can check the integrity of the packages in installation CD. Although "
+"this is an optional step, we encourage you to do it to avoid any errors in "
+"installation."
+msgstr ""
+"Vous pouvez vérifier l'intégrité des paquets du CD d'installation. Même s'il "
+"s'agit d'une opération facultative, nous vous encourageons à le faire afin "
+"d'éviter toute erreur lors de l'installation."
+
+#: yali4/gui/Ui/checkcdwidget.py:74 yali4/gui/ScrCheckCD.py:56
+#: yali4/installer.py:192
+msgid "Check CD Integrity"
+msgstr "Vérifier l'intégrité du CD."
+
+#: yali4/gui/Ui/datetimewidget.py:82
+msgid "The current time"
+msgstr "L'heure actuelle"
+
+#: yali4/gui/Ui/datetimewidget.py:83
+msgid "The analog clock widget displays the current time."
+msgstr ""
+
+#: yali4/gui/Ui/datetimewidget.py:84
+msgid "HH"
+msgstr ""
+
+#: yali4/gui/Ui/datetimewidget.py:85 yali4/gui/Ui/datetimewidget.py:87
+msgid ":"
+msgstr ""
+
+#: yali4/gui/Ui/datetimewidget.py:86
+msgid "mm"
+msgstr ""
+
+#: yali4/gui/Ui/datetimewidget.py:88
+msgid "ss"
+msgstr ""
+
+#: yali4/gui/Ui/datetimewidget.py:89
+msgid "Time Zone"
+msgstr "Fuseau Horaire"
+
+#: yali4/gui/Ui/dialog.py:59
+msgid "TextLabel"
+msgstr ""
+
+#: yali4/gui/Ui/dialog.py:60
+msgid "X"
+msgstr ""
+
+#: yali4/gui/Ui/installwidget.py:64
+msgid "Form3"
+msgstr "Form3"
+
+#: yali4/gui/Ui/installwidget.py:65
+msgid "pix"
+msgstr "pix"
+
+#: yali4/gui/Ui/installwidget.py:66
+msgid "Desc"
+msgstr ""
+
+#: yali4/gui/Ui/installwidget.py:67
+msgid "Installing Package: "
+msgstr "Installation du paquet: "
+
+#: yali4/gui/Ui/keyboardwidget.py:60
+msgid "Select the keyboard layout of your choice."
+msgstr "Sélectionnez le schéma du clavier qui vous convient:"
+
+#: yali4/gui/Ui/keyboardwidget.py:61
+msgid "Test selected keyboard:"
+msgstr "Tester le schéma du clavier choisi:"
+
+#: yali4/gui/Ui/main.py:156
+msgid "Yali4"
+msgstr ""
+
+#: yali4/gui/Ui/main.py:441
+msgid "Screen Name"
+msgstr "Nom de l'écran"
+
+#: yali4/gui/Ui/main.py:443
+msgid "Details about the screen"
+msgstr ""
+
+#: yali4/gui/Ui/main.py:444 yali4/gui/YaliWindow.py:191
+msgid "Release Notes"
+msgstr "Notes de publication"
+
+#: yali4/gui/Ui/main.py:445
+msgid "Toggle Help"
+msgstr "Montrer/Cacher l'aide"
+
+#: yali4/gui/Ui/main.py:446
+msgid "Previous Screen"
+msgstr "Écran Précédente"
+
+#: yali4/gui/Ui/main.py:447
+msgid "Back"
+msgstr "Retour"
+
+#: yali4/gui/Ui/main.py:448
+msgid "Next Screen"
+msgstr "Écran Suivante"
+
+#: yali4/gui/Ui/main.py:449
+msgid "Next"
+msgstr "Suivant"
+
+#: yali4/gui/Ui/partedit.py:148
+msgid "Partition 1 on FUJISTU - /dev/sda1"
+msgstr ""
+
+#: yali4/gui/Ui/partedit.py:149
+msgid "Device :"
+msgstr "Disque :"
+
+#: yali4/gui/Ui/partedit.py:150
+msgid "/dev/sda1"
+msgstr ""
+
+#: yali4/gui/Ui/partedit.py:151
+msgid "Delete Partition"
+msgstr "Supprimer la partition"
+
+#: yali4/gui/Ui/partedit.py:152
+msgid "Resize Partition"
+msgstr "Redimensionner la partition"
+
+#: yali4/gui/Ui/partedit.py:153
+msgid "Use :"
+msgstr "Utiliser comme :"
+
+#: yali4/gui/Ui/partedit.py:154
+msgid "Size :"
+msgstr "Taille : "
+
+#: yali4/gui/Ui/partedit.py:155 yali4/gui/Ui/partresize.py:89
+msgid " MB"
+msgstr ""
+
+#: yali4/gui/Ui/partedit.py:156
+msgid "Format :"
+msgstr "Format :"
+
+#: yali4/gui/Ui/partedit.py:157
+msgid "Yes, format this partition"
+msgstr "Oui, formater cette partition"
+
+#: yali4/gui/Ui/partedit.py:158
+msgid "File System :"
+msgstr "Système de Fichier :"
+
+#: yali4/gui/Ui/partedit.py:159
+msgid "Ext3"
+msgstr ""
+
+#: yali4/gui/Ui/partedit.py:160
+msgid "NTFS"
+msgstr ""
+
+#: yali4/gui/Ui/partedit.py:161
+msgid "Fat 32"
+msgstr ""
+
+#: yali4/gui/Ui/partedit.py:162
+msgid "Changes will be applied when you finish.."
+msgstr "Les modifications seront appliquées à la fin de l'opération.."
+
+#: yali4/gui/Ui/partedit.py:163
+msgid "Refresh Disks"
+msgstr "Rafraîchir les disques"
+
+#: yali4/gui/Ui/partedit.py:164
+msgid "Reset All Changes"
+msgstr "Annuler tous les changements"
+
+#: yali4/gui/Ui/partedit.py:165
+msgid "Apply"
+msgstr "Appliquer"
+
+#: yali4/gui/Ui/partresize.py:82
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
+"#ffffff;\">These settings will be applied when you click \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Resize</span><span "
+"style=\" color:#ffffff;\">\". If you want to go back click \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Cancel</span><span "
+"style=\" color:#ffffff;\">\".</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"color:#ffffff;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
+"\" font-weight:600; text-decoration: underline;\">Warning:</span> A resizing "
+"operation may corrupt your partition, rendering your data unreachable. Make "
+"sure that you have a backup for this partition.<span style=\" font-"
+"weight:600;\"> </span><span style=\" font-weight:600;\">Note that this "
+"operation cannot be undone</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
+"#ffffff;\">Ces réglages seront appliquées quand vous cliquez \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Redimensionner</"
+"span><span style=\" color:#ffffff;\">\"Si vous voulez retourner en arrière "
+"cliquez \"</span><span style=\" text-decoration: underline; color:#ffffff;"
+"\">Annuler</span><span style=\" color:#ffffff;\">\".</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"color:#ffffff;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
+"\" font-weight:600; text-decoration: underline;\">Attention:</span> La "
+"redimensionnement peut endommager votre partition, ce qui va rendre vos "
+"données inaccessibles. Soyez sûr d'avoir une sauvegarde de cette partition."
+"<span style=\" font-weight:600;\"> </span><span style=\" font-weight:600;"
+"\">Notez bien que cette opération est irréversible.</span></p></body></html>"
+
+#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:87
+#: yali4/gui/YaliDialog.py:133
+msgid "Cancel"
+msgstr "Annuler"
+
+#: yali4/gui/Ui/partresize.py:91
+msgid "Resize"
+msgstr "Redimensionner"
+
+#: yali4/gui/Ui/rootpasswidget.py:171
+msgid ""
+"<p align=\"left\">System administrator user (root) handles important system "
+"maintanence tasks. Please give password for this special user and do not "
+"forget this password. Note that you shouldn't write this password elsewhere "
+"for privacy reasons.</p>"
+msgstr ""
+"<p align=\"left\">L'administrateur du système (root) est résponsable des "
+"opérations importantes de maintenance du système. Veuillez choisir un mot de "
+"passe pour cet utilisateur et ne pas l'oublier. Pour des raisons de "
+"sécurité, veuillez ne pas écrire ce mot de passe ailleurs,</p>"
+
+#: yali4/gui/Ui/rootpasswidget.py:172
+msgid "System administrator password:"
+msgstr "Mot de passe pour l'administrateur:"
+
+#: yali4/gui/Ui/rootpasswidget.py:173
+msgid "System administrator password (again):"
+msgstr "Mot de passe pour l'administrateur(seconde fois):"
+
+#: yali4/gui/Ui/rootpasswidget.py:176
+msgid "Hostname:"
+msgstr "Nom d'hôte:"
+
+#: yali4/gui/Ui/setupuserswidget.py:154
+msgid "New User"
+msgstr "Nouvel Utilisateur"
+
+#: yali4/gui/Ui/setupuserswidget.py:155
+msgid "User Name:"
+msgstr "Nom de l'utilisateur:"
+
+#: yali4/gui/Ui/setupuserswidget.py:156
+msgid "Real Name:"
+msgstr "Nom réel:"
+
+#: yali4/gui/Ui/setupuserswidget.py:157
+msgid "Password:"
+msgstr "Mot de passe:"
+
+#: yali4/gui/Ui/setupuserswidget.py:158
+msgid "Password (again):"
+msgstr "Mot de passe (seconde fois):"
+
+#: yali4/gui/Ui/setupuserswidget.py:159 yali4/gui/ScrUsers.py:187
+msgid "Create User"
+msgstr "Ajouter l'utilisateur"
+
+#: yali4/gui/Ui/setupuserswidget.py:160
+msgid "Give administrator privileges to this user"
+msgstr "Donner les privilèges d'administrateur à cet utilisateur"
+
+#: yali4/gui/Ui/setupuserswidget.py:163
+msgid "Users:"
+msgstr "Utilisateurs:"
+
+#: yali4/gui/Ui/setupuserswidget.py:164
+msgid "Delete Selected User"
+msgstr "Supprimer l'utilisateur"
+
+#: yali4/gui/Ui/setupuserswidget.py:165
+msgid "Auto Login User :"
+msgstr "Utilisateur de Login Automatique :"
+
+#: yali4/gui/Ui/setupuserswidget.py:166
+msgid "Auto Login Disabled"
+msgstr "Login Automatique Désactivé."
+
+#: yali4/gui/Ui/summarywidget.py:88 yali4/gui/ScrSummary.py:234
+msgid "Begin Install"
+msgstr "Lancer Installation"
+
+#: yali4/gui/Ui/welcomewidget.py:91
+msgid ""
+"All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
+"software have their corresponding licenses. By installing or using Pardus, "
+"you agree to accept them. Do you want to continue?"
+msgstr ""
+"La totalité des logiciels développés par TUBITAK/UEKAE est couverte par la "
+"licence GNU/GPL. Les autres logiciels ont leurs propres licences. En "
+"installant ou en utilisant Pardus, vous vous engagez à les accepter. Voulez "
+"vous continuer ?"
+
+#: yali4/gui/Ui/welcomewidget.py:92
+msgid "Read GPL"
+msgstr "Lire la GPL"
+
+#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:168
+msgid "Reboot System!"
+msgstr "Redémarrer le système!"
+
+#: yali4/gui/Ui/welcomewidget.py:94
+msgid "Accept!"
+msgstr "J'accepte!"
+
+#: yali4/gui/Ui/welcomewidget.py:95
+msgid "Don't Accept!"
+msgstr "Je n'accepte pas!"
 
 #: yali4/gui/debugger.py:28
 msgid "Debug"
@@ -372,10 +899,6 @@ msgstr "Erreur!"
 msgid "Unhandled error occured!"
 msgstr "Une erreur non gérée est produite!"
 
-#: yali4/gui/runner.py:168
-msgid "Reboot System!"
-msgstr "Redémarrer le système!"
-
 #: yali4/gui/ScrAdmin.py:30
 msgid "Set Administrator"
 msgstr "Configuration d'administrateur"
@@ -556,10 +1079,6 @@ msgstr ""
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
 msgstr "Arrêter la vérification"
-
-#: yali4/gui/ScrCheckCD.py:56 yali4/installer.py:192
-msgid "Check CD Integrity"
-msgstr "Vérifier l'intégrité du CD."
 
 #: yali4/gui/ScrDateTime.py:28
 msgid "Set your timezone"
@@ -1050,10 +1569,6 @@ msgstr ""
 "                   <b>Notez bien que cette opération est irreversible!</b></"
 "p>"
 
-#: yali4/gui/ScrSummary.py:234
-msgid "Begin Install"
-msgstr "Lancer Installation"
-
 #: yali4/gui/ScrSummary.py:257 yali4/gui/ScrSummary.py:265
 #: yali4/gui/ScrSummary.py:279
 msgid "Formatting ..."
@@ -1156,10 +1671,6 @@ msgstr ""
 "<font color=\"#FF6D19\">Le nom réel contient des caractères invalides.!</"
 "font>"
 
-#: yali4/gui/ScrUsers.py:187
-msgid "Create User"
-msgstr "Ajouter l'utilisateur"
-
 #: yali4/gui/ScrUsers.py:241
 msgid "Update User"
 msgstr "Mettre à jour l'utilisateur"
@@ -1217,10 +1728,6 @@ msgstr ""
 "partition sélectionnée.</p>\n"
 "</b>\n"
 
-#: yali4/gui/YaliDialog.py:133
-msgid "Cancel"
-msgstr "Annuler"
-
 #: yali4/gui/YaliDialog.py:136
 msgid "O.K. Go Ahead"
 msgstr "O.K. Continuer"
@@ -1232,10 +1739,6 @@ msgstr "Montrer l'aide"
 #: yali4/gui/YaliWindow.py:85
 msgid "Hide Help"
 msgstr "Cacher l'aide"
-
-#: yali4/gui/YaliWindow.py:191
-msgid "Release Notes"
-msgstr "Notes de publication"
 
 #: yali4/bootloader.py:211 yali4/bootloader.py:216
 msgid "Windows"
@@ -1536,363 +2039,6 @@ msgstr "Partition d'archive"
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Préparation du répertoire de l'utilisateur <b>%s</b>..."
-
-#~ msgid "Form"
-#~ msgstr "Form"
-
-#~ msgid ""
-#~ "It seems there is more than one partition for resizing. In this case you "
-#~ "can select a partition from the list below or YALI will select one."
-#~ msgstr ""
-#~ "Il semble qu'il existe plusieurs partitions pour le redimensionnement. "
-#~ "Vous pouvez sélectionner une de ces partitions dans la liste ci-dessous "
-#~ "ou YALI choisira une."
-
-#~ msgid "Choose the best target for resizing (recommended)"
-#~ msgstr ""
-#~ "Choisir la partition cible la plus convenante pour le redimensionnement"
-#~ "(recommandé)"
-
-#~ msgid "I will choose the target"
-#~ msgstr "Je vais choisir la partition cible moi-même"
-
-#~ msgid "Use Selected"
-#~ msgstr "Utilise ce qui est choisi"
-
-#~ msgid "Form1"
-#~ msgstr "Form1"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">1. Select the partitioning method:</span></"
-#~ "p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">1. Choisir la méthode de partitionnement:</"
-#~ "span></p></body></html>"
-
-#~ msgid ""
-#~ "Here you can choose one of partitioning method, and then you must select "
-#~ "for a device to proceed your choice. <br>Device list will be updated for "
-#~ "selected method."
-#~ msgstr ""
-#~ "Ici, vous pouvez sélectionner une des méthodes de partitionnement et le "
-#~ "disque qui va être partitionné.<br>La liste des disques sera mise à jour "
-#~ "selon la méthode choisie."
-
-#~ msgid ""
-#~ "This option will try to find suitable free space or resizable partitions"
-#~ msgstr ""
-#~ "Cette option va essayer de trouver un espace disponible convenable ou des "
-#~ "partitions redimensionnables"
-
-#, fuzzy
-#~ msgid "Try to use free space or resize current partitions"
-#~ msgstr ""
-#~ "Partitionner automatiquement en utilisant l'espace disponible ou en "
-#~ "redimensionnant les partitions courantes."
-
-#~ msgid ""
-#~ "This option will erase your entire disk. All of your data on disk will be "
-#~ "lost !"
-#~ msgstr ""
-#~ "Cette opération va effacer votre disque. Toutes les données sur le disque "
-#~ "seront perdues!"
-
-#, fuzzy
-#~ msgid "Delete all partitions"
-#~ msgstr "Supprimer toutes les partitions"
-
-#~ msgid "You can use manual partitioning with this option"
-#~ msgstr "Cette option vous permet de partitionner votre disque manuellement"
-
-#~ msgid "No, I'll partition my disk manually."
-#~ msgstr "Je vais partitionner mon disque manuellement"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">2. Select the disk to apply selected method:"
-#~ "</span></p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">2. Choisir le disque pour appliquer la "
-#~ "méthode sélectionnée:</span></p></body></html>"
-
-#~ msgid "&nbsp;"
-#~ msgstr "&nbsp;"
-
-#~ msgid ""
-#~ "<b>Do you want to write boot loader (GRUB) to your hard disk's master "
-#~ "boot record?</b>\n"
-#~ "\n"
-#~ "<p>You need a boot loader to boot your Pardus system.</p>\n"
-#~ "\n"
-#~ "<p>If you don't install a boot loader or choose to install to root "
-#~ "partition, you will have to configure your other operating system's "
-#~ "loader  (if you have one installed) to start \n"
-#~ "your newly installed Pardus.</p>"
-#~ msgstr ""
-#~ "<b>Installer le chargeur de démarrage (GRUB) sur le MBR du disque dur?</"
-#~ "b>\n"
-#~ "\n"
-#~ "<p>Il faut un chargeur de démarrage pour démarrer votre système "
-#~ "Pardus<p>\n"
-#~ "\n"
-#~ "Si aucun chargeur de démarrage n'est trouvé ou si ce dernier est installé "
-#~ "sur votre partition racine, il faudra configurer le chargeur de démarrage "
-#~ "de l'autre système d'exploitation (si vous en avez un) \n"
-#~ "afin de démarrer votre système Pardus.</p>"
-
-#~ msgid "Where do you want to install the bootlader ?"
-#~ msgstr "Où voulez vous installer le chargeur de démarrage ?"
-
-#~ msgid "Install to first bootable disk (recommended)"
-#~ msgstr "Installer sur le premier disque dur démarrable (recommandé)"
-
-#~ msgid "Install to Pardus installed partition"
-#~ msgstr "Installer sur la partition où Pardus est installé."
-
-#~ msgid "Install to selected disk belove"
-#~ msgstr "Installer sur le disque sélectionné ci-dessous"
-
-#~ msgid "Select the disk you to install bootloader:"
-#~ msgstr "Sélectionner le disque pour installer le chargeur de démarrage"
-
-#~ msgid "Don't install bootloader"
-#~ msgstr "Ne pas installer le chargeur de démarrage."
-
-#~ msgid ""
-#~ "You can check the integrity of the packages in installation CD. Although "
-#~ "this is an optional step, we encourage you to do it to avoid any errors "
-#~ "in installation."
-#~ msgstr ""
-#~ "Vous pouvez vérifier l'intégrité des paquets du CD d'installation. Même "
-#~ "s'il s'agit d'une opération facultative, nous vous encourageons à le "
-#~ "faire afin d'éviter toute erreur lors de l'installation."
-
-#~ msgid "The current time"
-#~ msgstr "L'heure actuelle"
-
-#~ msgid "Time Zone"
-#~ msgstr "Fuseau Horaire"
-
-#~ msgid "Form3"
-#~ msgstr "Form3"
-
-#~ msgid "pix"
-#~ msgstr "pix"
-
-#~ msgid "Installing Package: "
-#~ msgstr "Installation du paquet: "
-
-#~ msgid "Select the keyboard layout of your choice."
-#~ msgstr "Sélectionnez le schéma du clavier qui vous convient:"
-
-#~ msgid "Test selected keyboard:"
-#~ msgstr "Tester le schéma du clavier choisi:"
-
-#~ msgid "Screen Name"
-#~ msgstr "Nom de l'écran"
-
-#~ msgid "Toggle Help"
-#~ msgstr "Montrer/Cacher l'aide"
-
-#~ msgid "Previous Screen"
-#~ msgstr "Écran Précédente"
-
-#~ msgid "Back"
-#~ msgstr "Retour"
-
-#~ msgid "Next Screen"
-#~ msgstr "Écran Suivante"
-
-#~ msgid "Next"
-#~ msgstr "Suivant"
-
-#~ msgid "Device :"
-#~ msgstr "Disque :"
-
-#~ msgid "Delete Partition"
-#~ msgstr "Supprimer la partition"
-
-#~ msgid "Resize Partition"
-#~ msgstr "Redimensionner la partition"
-
-#~ msgid "Use :"
-#~ msgstr "Utiliser comme :"
-
-#~ msgid "Size :"
-#~ msgstr "Taille : "
-
-#~ msgid "Format :"
-#~ msgstr "Format :"
-
-#~ msgid "Yes, format this partition"
-#~ msgstr "Oui, formater cette partition"
-
-#~ msgid "File System :"
-#~ msgstr "Système de Fichier :"
-
-#~ msgid "Changes will be applied when you finish.."
-#~ msgstr "Les modifications seront appliquées à la fin de l'opération.."
-
-#~ msgid "Refresh Disks"
-#~ msgstr "Rafraîchir les disques"
-
-#~ msgid "Reset All Changes"
-#~ msgstr "Annuler tous les changements"
-
-#~ msgid "Apply"
-#~ msgstr "Appliquer"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
-#~ "#ffffff;\">These settings will be applied when you click \"</span><span "
-#~ "style=\" text-decoration: underline; color:#ffffff;\">Resize</span><span "
-#~ "style=\" color:#ffffff;\">\". If you want to go back click \"</span><span "
-#~ "style=\" text-decoration: underline; color:#ffffff;\">Cancel</span><span "
-#~ "style=\" color:#ffffff;\">\".</span></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "color:#ffffff;\"></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span "
-#~ "style=\" font-weight:600; text-decoration: underline;\">Warning:</span> A "
-#~ "resizing operation may corrupt your partition, rendering your data "
-#~ "unreachable. Make sure that you have a backup for this partition.<span "
-#~ "style=\" font-weight:600;\"> </span><span style=\" font-weight:600;"
-#~ "\">Note that this operation cannot be undone</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
-#~ "#ffffff;\">Ces réglages seront appliquées quand vous cliquez \"</"
-#~ "span><span style=\" text-decoration: underline; color:#ffffff;"
-#~ "\">Redimensionner</span><span style=\" color:#ffffff;\">\"Si vous voulez "
-#~ "retourner en arrière cliquez \"</span><span style=\" text-decoration: "
-#~ "underline; color:#ffffff;\">Annuler</span><span style=\" color:#ffffff;\">"
-#~ "\".</span></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-#~ "color:#ffffff;\"></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span "
-#~ "style=\" font-weight:600; text-decoration: underline;\">Attention:</span> "
-#~ "La redimensionnement peut endommager votre partition, ce qui va rendre "
-#~ "vos données inaccessibles. Soyez sûr d'avoir une sauvegarde de cette "
-#~ "partition.<span style=\" font-weight:600;\"> </span><span style=\" font-"
-#~ "weight:600;\">Notez bien que cette opération est irréversible.</span></"
-#~ "p></body></html>"
-
-#~ msgid "Resize"
-#~ msgstr "Redimensionner"
-
-#~ msgid ""
-#~ "<p align=\"left\">System administrator user (root) handles important "
-#~ "system maintanence tasks. Please give password for this special user and "
-#~ "do not forget this password. Note that you shouldn't write this password "
-#~ "elsewhere for privacy reasons.</p>"
-#~ msgstr ""
-#~ "<p align=\"left\">L'administrateur du système (root) est résponsable des "
-#~ "opérations importantes de maintenance du système. Veuillez choisir un mot "
-#~ "de passe pour cet utilisateur et ne pas l'oublier. Pour des raisons de "
-#~ "sécurité, veuillez ne pas écrire ce mot de passe ailleurs,</p>"
-
-#~ msgid "System administrator password:"
-#~ msgstr "Mot de passe pour l'administrateur:"
-
-#~ msgid "System administrator password (again):"
-#~ msgstr "Mot de passe pour l'administrateur(seconde fois):"
-
-#~ msgid "Hostname:"
-#~ msgstr "Nom d'hôte:"
-
-#~ msgid "New User"
-#~ msgstr "Nouvel Utilisateur"
-
-#~ msgid "User Name:"
-#~ msgstr "Nom de l'utilisateur:"
-
-#~ msgid "Real Name:"
-#~ msgstr "Nom réel:"
-
-#~ msgid "Password:"
-#~ msgstr "Mot de passe:"
-
-#~ msgid "Password (again):"
-#~ msgstr "Mot de passe (seconde fois):"
-
-#~ msgid "Give administrator privileges to this user"
-#~ msgstr "Donner les privilèges d'administrateur à cet utilisateur"
-
-#~ msgid "Users:"
-#~ msgstr "Utilisateurs:"
-
-#~ msgid "Delete Selected User"
-#~ msgstr "Supprimer l'utilisateur"
-
-#~ msgid "Auto Login User :"
-#~ msgstr "Utilisateur de Login Automatique :"
-
-#~ msgid "Auto Login Disabled"
-#~ msgstr "Login Automatique Désactivé."
-
-#~ msgid ""
-#~ "All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
-#~ "software have their corresponding licenses. By installing or using "
-#~ "Pardus, you agree to accept them. Do you want to continue?"
-#~ msgstr ""
-#~ "La totalité des logiciels développés par TUBITAK/UEKAE est couverte par "
-#~ "la licence GNU/GPL. Les autres logiciels ont leurs propres licences. En "
-#~ "installant ou en utilisant Pardus, vous vous engagez à les accepter. "
-#~ "Voulez vous continuer ?"
-
-#~ msgid "Read GPL"
-#~ msgstr "Lire la GPL"
-
-#~ msgid "Accept!"
-#~ msgstr "J'accepte!"
-
-#~ msgid "Don't Accept!"
-#~ msgstr "Je n'accepte pas!"
 
 #~ msgid "Automatically partition and format selected disk!"
 #~ msgstr "Partitionner et formatter automatiquement le disque choisi"
