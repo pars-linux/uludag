@@ -1,4 +1,7 @@
 2008-12-01 Faik Uygur <faik@pardus.org.tr>
+        * package-manager-1.3.9
+
+2008-12-01 Faik Uygur <faik@pardus.org.tr>
         * Disable cancel button after fetching all the packages and started
         installing.
 
@@ -13,6 +16,9 @@
         * pisi, now fetches all the packages and starts installing them after,
         for the install operation as in the upgrade operation. Progress dialog
         should behave according to this change.
+
+2008-11-17 Faik Uygur <faik@pardus.org.tr>
+        * package-manager-1.3.8
 
 2008-11-17 Faik Uygur <faik@pardus.org.tr>
         * Remove auto start searching feature when text changed and add a button
