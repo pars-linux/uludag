@@ -10,8 +10,8 @@ __trans = gettext.translation("buildfarm", fallback = True)
 _  =  __trans.ugettext
 
 packages = []
-for i in os.listdir("/var/www/localhost/htdocs/pardus-2007-test/"):
-    if not os.path.exists("/var/www/localhost/htdocs/pardus-2007/%s" % i):
+for i in os.listdir("/var/www/localhost/htdocs/pardus-2008-test/"):
+    if not os.path.exists("/var/www/localhost/htdocs/pardus-2008/%s" % i):
         packages.append(i)
 
 packages.sort()
