@@ -1,0 +1,10 @@
+ .tabs ul li a, .tabs ul li.active a{ 
+	padding: 0 8px 0 0;
+}
+
+#right {
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: 72%;
+}
