@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-30 13:06+0200\n"
+"POT-Creation-Date: 2008-12-02 10:13+0200\n"
 "PO-Revision-Date: 2007-05-13 21:14+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -16,6 +16,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: src/ProgressDialog.py:127
+msgid "Progress"
+msgstr "Progrès"
+
+#: src/ProgressDialog.py:129
+msgid "Alt+C"
+msgstr ""
+
+#: src/ProgressDialog.py:130
+msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+msgstr ""
+
+#: src/ProgressDialog.py:131
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Preparació del PiSi...</h3>"
+
+#: src/ProgressDialog.py:133
+msgid "amsn"
+msgstr ""
+
+#: src/ProgressDialog.py:134
+msgid "Time remaining:"
+msgstr ""
+
+#: src/ProgressDialog.py:135
+#, fuzzy
+msgid "2 / 20 packages installed."
+msgstr "Paquet PiSi a instal·lar"
+
+#: src/ProgressDialog.py:136
+msgid "01:29"
+msgstr ""
+
+#: src/ProgressDialog.py:137
+#, fuzzy
+msgid "Operation:"
+msgstr "Versió:"
+
+#: src/ProgressDialog.py:138
+msgid "Status:"
+msgstr ""
 
 #: src/Tray.py:38
 msgid "Update"
@@ -32,184 +74,6 @@ msgstr "Hi ha <b>%1</b> actualitzacions disponibles!"
 #: src/Tray.py:67
 msgid "Updates Available!"
 msgstr ""
-
-#: src/package-manager.py:33
-msgid "GUI for PiSi package manager"
-msgstr "Interfície gràfica del gestor de paquets PiSi"
-
-#: src/package-manager.py:39 src/package-manager.py:64
-msgid "Package Manager"
-msgstr "Gestor de programari"
-
-#: src/package-manager.py:42
-msgid "Developer and Current Maintainer"
-msgstr "Desenvolupador i encarregat actual"
-
-#: src/package-manager.py:43
-msgid "Developer"
-msgstr ""
-
-#: src/package-manager.py:44
-msgid "Original Author"
-msgstr "Autor original"
-
-#: src/package-manager.py:45
-msgid "CSS/JS Meister"
-msgstr "Mestre CSS/JS"
-
-#: src/package-manager.py:46
-msgid "GUI Design & Usability"
-msgstr "Disseny d'interfície gràfica i usabilitat"
-
-#: src/package-manager.py:47 src/package-manager.py:48
-#: src/package-manager.py:49 src/package-manager.py:50
-#: src/package-manager.py:51 src/package-manager.py:52
-#: src/package-manager.py:53 src/package-manager.py:54
-msgid "Authors of PiSi API"
-msgstr "Autors de l'API del PiSi"
-
-#: src/package-manager.py:117
-msgid "Show Installed Packages"
-msgstr "Mostra els paquets instal·lats"
-
-#: src/package-manager.py:120
-msgid "Show New Packages"
-msgstr "Mostra els paquets nous"
-
-#: src/package-manager.py:122
-msgid "Show Upgradable Packages"
-msgstr "Mostra els paquets per què hi haja actualitzacions"
-
-#: src/package-manager.py:144 src/HelpDialog.py:29
-msgid "Package Manager Help"
-msgstr "Ajut per al gestor de programari"
-
-#: src/package-manager.py:157
-msgid "Package to install"
-msgstr "Paquets a instal·lar"
-
-#: src/package-manager.py:158
-msgid "Show main window on startup"
-msgstr "Mostra la finestra principal en engegar"
-
-#: src/package-manager.py:159
-msgid "Show debug output"
-msgstr ""
-
-#: src/package-manager.py:162
-msgid "Package Manager is already running!"
-msgstr "Ho sent. El gestor del programari ja està en marxa."
-
-#: src/Progress.py:64
-msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr ""
-
-#: src/Progress.py:97
-msgid "<b>Preparing PiSi...</b>"
-msgstr "<b>Preparació del PiSi...</b>"
-
-#: src/Progress.py:99
-msgid "<p align='center'>-- / --, -- KB/s</p>"
-msgstr ""
-
-#: src/Progress.py:100
-#, fuzzy
-msgid "-- / --"
-msgstr "-- / --  paquet"
-
-#: src/Progress.py:119
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>L'operació s'està cancel·lant...</b>"
-
-#: src/Progress.py:146 src/Progress.py:150
-msgid "%1 %2"
-msgstr ""
-
-#: src/Progress.py:160
-msgid "installed"
-msgstr "instal·lat"
-
-#: src/Progress.py:162
-msgid "removed"
-msgstr "esborrat"
-
-#: src/Progress.py:164
-msgid "upgraded"
-msgstr "actualitzat"
-
-#: src/Progress.py:166
-#, fuzzy
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 del paquet %3"
-
-#: src/Preferences.py:234
-msgid "Add New Repository"
-msgstr "Afegeix un nou repositori"
-
-#: src/Preferences.py:241
-msgid "Edit Repository"
-msgstr "Edita el repositori"
-
-#: src/Preferences.py:287 src/Preferences.py:303
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>L'adreça del repositori ha de tenir l'extensió xml o xml.bz2.<p>Si et "
-"plau, intenta-ho una altra vegada.</qt>"
-
-#: src/Preferences.py:287 src/Preferences.py:303
-msgid "Pisi Error"
-msgstr "Error de Pisi"
-
-#: src/Preferences.py:349 src/MainWidget.py:668
-msgid "<b>Applying Repository Changes</b>"
-msgstr "<b>Els canvis del repositori s'estan efectuant</b>"
-
-#: src/Preferences.py:382
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Tots els paquets en la memòria cau s'esborraran. Que estàs segur?"
-
-#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
-#: src/SpecialList.py:101
-msgid "Select all packages in this category"
-msgstr "Selecciona tots els paquets d'aquesta categoria"
-
-#: src/CustomEventListener.py:38 src/SpecialList.py:103
-msgid "Reverse package selections"
-msgstr "Inverteix les seleccions de paquets"
-
-#: src/pm-install.py:33
-msgid "PiSi package to install"
-msgstr "Paquet PiSi a instal·lar"
-
-#: src/pm-install.py:50
-msgid "You have selected a package to install. Do you want to continue?"
-msgstr "Has seleccionat un paquet per a instal·lar. Que vols continuar?"
-
-#: src/pm-install.py:51
-msgid "Install Package"
-msgstr "Instal·la el paquet"
-
-#: src/CommonText.py:15 src/MainWidget.py:630
-msgid "downloading"
-msgstr "estic descarregant"
-
-#: src/CommonText.py:15
-msgid "extracting"
-msgstr "estic extraient"
-
-#: src/CommonText.py:15
-msgid "configuring"
-msgstr "estic configurant"
-
-#: src/CommonText.py:15
-msgid "removing"
-msgstr "estic esborrant"
-
-#: src/CommonText.py:15
-msgid "installing"
-msgstr "estic instal·lant"
 
 #: src/ComarIface.py:38
 msgid "Unable to connect to DBus."
@@ -282,7 +146,7 @@ msgstr "La base de dades del programari està buida"
 msgid "Remove Package(s)"
 msgstr "Esborra el(s) paquet(s)"
 
-#: src/MainWidget.py:270 src/MainWidget.py:671
+#: src/MainWidget.py:270 src/MainWidget.py:672
 msgid "<b>Updating Repository</b>"
 msgstr "<b>Actualizació del repositori</b>"
 
@@ -424,55 +288,180 @@ msgstr "<b>Actualitzem el(s) paquet(s)</b>"
 msgid "Others"
 msgstr "D'altres"
 
-#: src/MainWidget.py:672
+#: src/MainWidget.py:630 src/CommonText.py:15
+msgid "downloading"
+msgstr "estic descarregant"
+
+#: src/MainWidget.py:669 src/Preferences.py:349
+msgid "<b>Applying Repository Changes</b>"
+msgstr "<b>Els canvis del repositori s'estan efectuant</b>"
+
+#: src/MainWidget.py:673
 msgid "Downloading package list of %1"
 msgstr "Estic descarregant la llista de paquets de %1"
 
-#: src/MainWidget.py:688
+#: src/MainWidget.py:689
 msgid "Confirm"
 msgstr "Confirma"
 
-#: src/ProgressDialog.py:127
-msgid "Progress"
-msgstr "Progrès"
+#: src/package-manager.py:33
+msgid "GUI for PiSi package manager"
+msgstr "Interfície gràfica del gestor de paquets PiSi"
 
-#: src/ProgressDialog.py:129
-msgid "Alt+C"
+#: src/package-manager.py:39 src/package-manager.py:64
+msgid "Package Manager"
+msgstr "Gestor de programari"
+
+#: src/package-manager.py:42
+msgid "Developer and Current Maintainer"
+msgstr "Desenvolupador i encarregat actual"
+
+#: src/package-manager.py:43
+msgid "Developer"
 msgstr ""
 
-#: src/ProgressDialog.py:130
-msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+#: src/package-manager.py:44
+msgid "Original Author"
+msgstr "Autor original"
+
+#: src/package-manager.py:45
+msgid "CSS/JS Meister"
+msgstr "Mestre CSS/JS"
+
+#: src/package-manager.py:46
+msgid "GUI Design & Usability"
+msgstr "Disseny d'interfície gràfica i usabilitat"
+
+#: src/package-manager.py:47 src/package-manager.py:48
+#: src/package-manager.py:49 src/package-manager.py:50
+#: src/package-manager.py:51 src/package-manager.py:52
+#: src/package-manager.py:53 src/package-manager.py:54
+msgid "Authors of PiSi API"
+msgstr "Autors de l'API del PiSi"
+
+#: src/package-manager.py:117
+msgid "Show Installed Packages"
+msgstr "Mostra els paquets instal·lats"
+
+#: src/package-manager.py:120
+msgid "Show New Packages"
+msgstr "Mostra els paquets nous"
+
+#: src/package-manager.py:122
+msgid "Show Upgradable Packages"
+msgstr "Mostra els paquets per què hi haja actualitzacions"
+
+#: src/package-manager.py:144 src/HelpDialog.py:29
+msgid "Package Manager Help"
+msgstr "Ajut per al gestor de programari"
+
+#: src/package-manager.py:157
+msgid "Package to install"
+msgstr "Paquets a instal·lar"
+
+#: src/package-manager.py:158
+msgid "Show main window on startup"
+msgstr "Mostra la finestra principal en engegar"
+
+#: src/package-manager.py:159
+msgid "Show debug output"
 msgstr ""
 
-#: src/ProgressDialog.py:131
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Preparació del PiSi...</h3>"
+#: src/package-manager.py:162
+msgid "Package Manager is already running!"
+msgstr "Ho sent. El gestor del programari ja està en marxa."
 
-#: src/ProgressDialog.py:133
-msgid "amsn"
+#: src/BasketDialog.py:51 src/BasketDialog.py:56
+msgid "Basket"
+msgstr "Cistell"
+
+#: src/BasketDialog.py:64
+msgid "Selected package(s) for removal:"
+msgstr "Paquet(s) seleccionat(s) per a eliminar:"
+
+#: src/BasketDialog.py:65
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
 msgstr ""
+"Inverteix les dependències del(s) paquet(s) seleccionat(s) que van a ser "
+"eliminades també"
 
-#: src/ProgressDialog.py:134
-msgid "Time remaining:"
+#: src/BasketDialog.py:67
+msgid "Selected package(s) for install:"
+msgstr "Paquet(s) seleccionat(s) per a instal·lar:"
+
+#: src/BasketDialog.py:68
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr "Dependències addicionals del(s) paquet(s) seleccionat(s) a instal·lar:"
+
+#: src/BasketDialog.py:70
+msgid "Selected package(s) for upgrade:"
+msgstr "Paquet(s) seleccionat(s) per a actualitzar:"
+
+#: src/BasketDialog.py:71
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr "Dependències addicionals dels paquet(s) seleccionat(s) a actualitzar:"
+
+#: src/BasketDialog.py:79
+msgid "Total Size:"
+msgstr "Grandària total:"
+
+#: src/BasketDialog.py:86
+msgid "Update Basket"
+msgstr "Actualitza el cistell"
+
+#: src/BasketDialog.py:166
+msgid "Total Size: <b>%1</b>"
+msgstr "Grandària total: <b>%1</b>"
+
+#: src/BasketDialog.py:214 src/BasketDialog.py:216
+msgid "Size: "
+msgstr "Grandària: "
+
+#: src/CommonText.py:15
+msgid "extracting"
+msgstr "estic extraient"
+
+#: src/CommonText.py:15
+msgid "configuring"
+msgstr "estic configurant"
+
+#: src/CommonText.py:15
+msgid "removing"
+msgstr "estic esborrant"
+
+#: src/CommonText.py:15
+msgid "installing"
+msgstr "estic instal·lant"
+
+#: src/Preferences.py:234
+msgid "Add New Repository"
+msgstr "Afegeix un nou repositori"
+
+#: src/Preferences.py:241
+msgid "Edit Repository"
+msgstr "Edita el repositori"
+
+#: src/Preferences.py:287 src/Preferences.py:303
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
 msgstr ""
+"<qt>L'adreça del repositori ha de tenir l'extensió xml o xml.bz2.<p>Si et "
+"plau, intenta-ho una altra vegada.</qt>"
 
-#: src/ProgressDialog.py:135
-#, fuzzy
-msgid "2 / 20 packages installed."
-msgstr "Paquet PiSi a instal·lar"
+#: src/Preferences.py:287 src/Preferences.py:303
+msgid "Pisi Error"
+msgstr "Error de Pisi"
 
-#: src/ProgressDialog.py:136
-msgid "01:29"
-msgstr ""
-
-#: src/ProgressDialog.py:137
-#, fuzzy
-msgid "Operation:"
-msgstr "Versió:"
-
-#: src/ProgressDialog.py:138
-msgid "Status:"
-msgstr ""
+#: src/Preferences.py:382
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr "Tots els paquets en la memòria cau s'esborraran. Que estàs segur?"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -509,34 +498,14 @@ msgstr "Repositori i nom"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Nom del repositori, per exemple <b>pardus-devel</b>"
 
-#: src/Notifier.py:45
-msgid "Show Updates"
-msgstr "Mostra'm les actualitzacions"
+#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
+#: src/SpecialList.py:101
+msgid "Select all packages in this category"
+msgstr "Selecciona tots els paquets d'aquesta categoria"
 
-#: src/Notifier.py:45
-msgid "Ignore"
-msgstr "No faces cas"
-
-#: src/SpecialList.py:170
-msgid "Description: "
-msgstr "Descripció:"
-
-#: src/SpecialList.py:171
-msgid "Version: "
-msgstr "Versió:"
-
-#: src/SpecialList.py:172
-#, fuzzy
-msgid "Repository: "
-msgstr "Nom del repositori"
-
-#: src/SpecialList.py:173
-msgid "Package Size: "
-msgstr "Grandària del paquet:"
-
-#: src/SpecialList.py:174
-msgid "Homepage: "
-msgstr "Plana principal:"
+#: src/CustomEventListener.py:38 src/SpecialList.py:103
+msgid "Reverse package selections"
+msgstr "Inverteix les seleccions de paquets"
 
 #: src/PreferencesDialog.py:179 src/PreferencesDialog.py:378
 msgid "Repository Name"
@@ -739,57 +708,88 @@ msgstr ""
 msgid "Proxy"
 msgstr ""
 
-#: src/BasketDialog.py:51 src/BasketDialog.py:56
-msgid "Basket"
-msgstr "Cistell"
+#: src/pm-install.py:33
+msgid "PiSi package to install"
+msgstr "Paquet PiSi a instal·lar"
 
-#: src/BasketDialog.py:64
-msgid "Selected package(s) for removal:"
-msgstr "Paquet(s) seleccionat(s) per a eliminar:"
+#: src/pm-install.py:50
+msgid "You have selected a package to install. Do you want to continue?"
+msgstr "Has seleccionat un paquet per a instal·lar. Que vols continuar?"
 
-#: src/BasketDialog.py:65
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
+#: src/pm-install.py:51
+msgid "Install Package"
+msgstr "Instal·la el paquet"
+
+#: src/SpecialList.py:168
+msgid "Description: "
+msgstr "Descripció:"
+
+#: src/SpecialList.py:169
+msgid "Version: "
+msgstr "Versió:"
+
+#: src/SpecialList.py:170
+#, fuzzy
+msgid "Repository: "
+msgstr "Nom del repositori"
+
+#: src/SpecialList.py:171
+msgid "Package Size: "
+msgstr "Grandària del paquet:"
+
+#: src/SpecialList.py:172
+msgid "Homepage: "
+msgstr "Plana principal:"
+
+#: src/Progress.py:67
+msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr ""
-"Inverteix les dependències del(s) paquet(s) seleccionat(s) que van a ser "
-"eliminades també"
 
-#: src/BasketDialog.py:67
-msgid "Selected package(s) for install:"
-msgstr "Paquet(s) seleccionat(s) per a instal·lar:"
+#: src/Progress.py:100
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<b>Preparació del PiSi...</b>"
 
-#: src/BasketDialog.py:68
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr "Dependències addicionals del(s) paquet(s) seleccionat(s) a instal·lar:"
+#: src/Progress.py:102
+msgid "<p align='center'>-- / --, -- KB/s</p>"
+msgstr ""
 
-#: src/BasketDialog.py:70
-msgid "Selected package(s) for upgrade:"
-msgstr "Paquet(s) seleccionat(s) per a actualitzar:"
+#: src/Progress.py:103
+#, fuzzy
+msgid "-- / --"
+msgstr "-- / --  paquet"
 
-#: src/BasketDialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
-msgstr "Dependències addicionals dels paquet(s) seleccionat(s) a actualitzar:"
+#: src/Progress.py:122
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>L'operació s'està cancel·lant...</b>"
 
-#: src/BasketDialog.py:79
-msgid "Total Size:"
-msgstr "Grandària total:"
+#: src/Progress.py:149 src/Progress.py:153
+msgid "%1 %2"
+msgstr ""
 
-#: src/BasketDialog.py:86
-msgid "Update Basket"
-msgstr "Actualitza el cistell"
+#: src/Progress.py:163
+msgid "installed"
+msgstr "instal·lat"
 
-#: src/BasketDialog.py:166
-msgid "Total Size: <b>%1</b>"
-msgstr "Grandària total: <b>%1</b>"
+#: src/Progress.py:165
+msgid "removed"
+msgstr "esborrat"
 
-#: src/BasketDialog.py:214 src/BasketDialog.py:216
-msgid "Size: "
-msgstr "Grandària: "
+#: src/Progress.py:167
+msgid "upgraded"
+msgstr "actualitzat"
+
+#: src/Progress.py:169
+#, fuzzy
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 del paquet %3"
+
+#: src/Notifier.py:45
+msgid "Show Updates"
+msgstr "Mostra'm les actualitzacions"
+
+#: src/Notifier.py:45
+msgid "Ignore"
+msgstr "No faces cas"
 
 #~ msgid "PiSi Authors"
 #~ msgstr "Autors del PiSi"
