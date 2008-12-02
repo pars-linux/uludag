@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-30 13:06+0200\n"
+"POT-Creation-Date: 2008-12-02 10:13+0200\n"
 "PO-Revision-Date: 2008-11-22 22:46+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -16,6 +16,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/ProgressDialog.py:127
+msgid "Progress"
+msgstr "Förlopp"
+
+#: src/ProgressDialog.py:129
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: src/ProgressDialog.py:130
+msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+
+#: src/ProgressDialog.py:131
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Förbereder PiSi...</h3>"
+
+#: src/ProgressDialog.py:133
+msgid "amsn"
+msgstr "amsn"
+
+#: src/ProgressDialog.py:134
+msgid "Time remaining:"
+msgstr "Återstående tid:"
+
+#: src/ProgressDialog.py:135
+msgid "2 / 20 packages installed."
+msgstr "2 / 20 paket installerade."
+
+#: src/ProgressDialog.py:136
+msgid "01:29"
+msgstr "01:29"
+
+#: src/ProgressDialog.py:137
+msgid "Operation:"
+msgstr "Åtgärd:"
+
+#: src/ProgressDialog.py:138
+msgid "Status:"
+msgstr "Status:"
 
 #: src/Tray.py:38
 msgid "Update"
@@ -32,181 +72,6 @@ msgstr "Det finns <b>%1</b> uppdateringar tillgängliga!"
 #: src/Tray.py:67
 msgid "Updates Available!"
 msgstr "Uppdateringar tillgängliga!"
-
-#: src/package-manager.py:33
-msgid "GUI for PiSi package manager"
-msgstr "Grafiskt användargränssnitt för pakethanteraren PiSi"
-
-#: src/package-manager.py:39 src/package-manager.py:64
-msgid "Package Manager"
-msgstr "Pakethanteraren"
-
-#: src/package-manager.py:42
-msgid "Developer and Current Maintainer"
-msgstr "utvecklare och nuvarande underhållare"
-
-#: src/package-manager.py:43
-msgid "Developer"
-msgstr "utvecklare"
-
-#: src/package-manager.py:44
-msgid "Original Author"
-msgstr "ursprunglig upphovsman"
-
-#: src/package-manager.py:45
-msgid "CSS/JS Meister"
-msgstr "CSS/JS-mästare"
-
-#: src/package-manager.py:46
-msgid "GUI Design & Usability"
-msgstr "grafisk formgivning och användbarhet"
-
-#: src/package-manager.py:47 src/package-manager.py:48
-#: src/package-manager.py:49 src/package-manager.py:50
-#: src/package-manager.py:51 src/package-manager.py:52
-#: src/package-manager.py:53 src/package-manager.py:54
-msgid "Authors of PiSi API"
-msgstr "utvecklare av PiSi:s API"
-
-#: src/package-manager.py:117
-msgid "Show Installed Packages"
-msgstr "Visa &installerade paket"
-
-#: src/package-manager.py:120
-msgid "Show New Packages"
-msgstr "Visa &nya paket"
-
-#: src/package-manager.py:122
-msgid "Show Upgradable Packages"
-msgstr "Visa paket med &uppdateringar"
-
-#: src/package-manager.py:144 src/HelpDialog.py:29
-msgid "Package Manager Help"
-msgstr "Handbok Pakethanteraren"
-
-#: src/package-manager.py:157
-msgid "Package to install"
-msgstr "Paket för installation"
-
-#: src/package-manager.py:158
-msgid "Show main window on startup"
-msgstr "Visa fönster vid start"
-
-#: src/package-manager.py:159
-msgid "Show debug output"
-msgstr "Visa felsökningsinformation"
-
-#: src/package-manager.py:162
-msgid "Package Manager is already running!"
-msgstr "Pakethanteraren körs redan!"
-
-#: src/Progress.py:64
-msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr "<p align='center'>%1 / %2, %3</p>"
-
-#: src/Progress.py:97
-msgid "<b>Preparing PiSi...</b>"
-msgstr "<b>Förbereder PiSi...</b>"
-
-#: src/Progress.py:99
-msgid "<p align='center'>-- / --, -- KB/s</p>"
-msgstr "<p align='center'>-- / --, -- KB/s</p>"
-
-#: src/Progress.py:100
-msgid "-- / --"
-msgstr "-- / --"
-
-#: src/Progress.py:119
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Avbryter åtgärd...</b>"
-
-#: src/Progress.py:146 src/Progress.py:150
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: src/Progress.py:160
-msgid "installed"
-msgstr "installerade"
-
-#: src/Progress.py:162
-msgid "removed"
-msgstr "borttagna"
-
-#: src/Progress.py:164
-msgid "upgraded"
-msgstr "uppdaterade"
-
-#: src/Progress.py:166
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 paket %3"
-
-#: src/Preferences.py:234
-msgid "Add New Repository"
-msgstr "Lägg till förråd"
-
-#: src/Preferences.py:241
-msgid "Edit Repository"
-msgstr "Redigera förråd"
-
-#: src/Preferences.py:287 src/Preferences.py:303
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>Förrådsadresser ska sluta med xml eller xml.bz2.<p>Försök igen.</qt>"
-
-#: src/Preferences.py:287 src/Preferences.py:303
-msgid "Pisi Error"
-msgstr "Pisi-fel"
-
-#: src/Preferences.py:349 src/MainWidget.py:668
-msgid "<b>Applying Repository Changes</b>"
-msgstr "<b>Tillämpar förrådsändringar</b>"
-
-#: src/Preferences.py:382
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Alla cachade kopior kommer att raderas. Är du säker?"
-
-#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
-#: src/SpecialList.py:101
-msgid "Select all packages in this category"
-msgstr "Välj alla paket i den här kategorin"
-
-#: src/CustomEventListener.py:38 src/SpecialList.py:103
-msgid "Reverse package selections"
-msgstr "Invertera paketmarkering"
-
-#: src/pm-install.py:33
-msgid "PiSi package to install"
-msgstr "PiSi-paket att installera"
-
-#: src/pm-install.py:50
-msgid "You have selected a package to install. Do you want to continue?"
-msgstr "Du har valt ett paket för installation. Vill du fortsätta?"
-
-#: src/pm-install.py:51
-msgid "Install Package"
-msgstr "Installera paket"
-
-#: src/CommonText.py:15 src/MainWidget.py:630
-msgid "downloading"
-msgstr "hämtas"
-
-#: src/CommonText.py:15
-msgid "extracting"
-msgstr "packas upp"
-
-#: src/CommonText.py:15
-msgid "configuring"
-msgstr "konfigureras"
-
-#: src/CommonText.py:15
-msgid "removing"
-msgstr "tas bort"
-
-#: src/CommonText.py:15
-msgid "installing"
-msgstr "installeras"
 
 #: src/ComarIface.py:38
 msgid "Unable to connect to DBus."
@@ -276,7 +141,7 @@ msgstr "Paketdatabasen är tom"
 msgid "Remove Package(s)"
 msgstr "Ta bort paket"
 
-#: src/MainWidget.py:270 src/MainWidget.py:671
+#: src/MainWidget.py:270 src/MainWidget.py:672
 msgid "<b>Updating Repository</b>"
 msgstr "<b>Uppdaterar förråd</b>"
 
@@ -411,53 +276,177 @@ msgstr "<b>Uppdaterar paket</b>"
 msgid "Others"
 msgstr "Andra"
 
-#: src/MainWidget.py:672
+#: src/MainWidget.py:630 src/CommonText.py:15
+msgid "downloading"
+msgstr "hämtas"
+
+#: src/MainWidget.py:669 src/Preferences.py:349
+msgid "<b>Applying Repository Changes</b>"
+msgstr "<b>Tillämpar förrådsändringar</b>"
+
+#: src/MainWidget.py:673
 msgid "Downloading package list of %1"
 msgstr "Hämtar paketlista för %1"
 
-#: src/MainWidget.py:688
+#: src/MainWidget.py:689
 msgid "Confirm"
 msgstr "Bekräfta"
 
-#: src/ProgressDialog.py:127
-msgid "Progress"
-msgstr "Förlopp"
+#: src/package-manager.py:33
+msgid "GUI for PiSi package manager"
+msgstr "Grafiskt användargränssnitt för pakethanteraren PiSi"
 
-#: src/ProgressDialog.py:129
-msgid "Alt+C"
-msgstr "Alt+C"
+#: src/package-manager.py:39 src/package-manager.py:64
+msgid "Package Manager"
+msgstr "Pakethanteraren"
 
-#: src/ProgressDialog.py:130
-msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+#: src/package-manager.py:42
+msgid "Developer and Current Maintainer"
+msgstr "utvecklare och nuvarande underhållare"
 
-#: src/ProgressDialog.py:131
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Förbereder PiSi...</h3>"
+#: src/package-manager.py:43
+msgid "Developer"
+msgstr "utvecklare"
 
-#: src/ProgressDialog.py:133
-msgid "amsn"
-msgstr "amsn"
+#: src/package-manager.py:44
+msgid "Original Author"
+msgstr "ursprunglig upphovsman"
 
-#: src/ProgressDialog.py:134
-msgid "Time remaining:"
-msgstr "Återstående tid:"
+#: src/package-manager.py:45
+msgid "CSS/JS Meister"
+msgstr "CSS/JS-mästare"
 
-#: src/ProgressDialog.py:135
-msgid "2 / 20 packages installed."
-msgstr "2 / 20 paket installerade."
+#: src/package-manager.py:46
+msgid "GUI Design & Usability"
+msgstr "grafisk formgivning och användbarhet"
 
-#: src/ProgressDialog.py:136
-msgid "01:29"
-msgstr "01:29"
+#: src/package-manager.py:47 src/package-manager.py:48
+#: src/package-manager.py:49 src/package-manager.py:50
+#: src/package-manager.py:51 src/package-manager.py:52
+#: src/package-manager.py:53 src/package-manager.py:54
+msgid "Authors of PiSi API"
+msgstr "utvecklare av PiSi:s API"
 
-#: src/ProgressDialog.py:137
-msgid "Operation:"
-msgstr "Åtgärd:"
+#: src/package-manager.py:117
+msgid "Show Installed Packages"
+msgstr "Visa &installerade paket"
 
-#: src/ProgressDialog.py:138
-msgid "Status:"
-msgstr "Status:"
+#: src/package-manager.py:120
+msgid "Show New Packages"
+msgstr "Visa &nya paket"
+
+#: src/package-manager.py:122
+msgid "Show Upgradable Packages"
+msgstr "Visa paket med &uppdateringar"
+
+#: src/package-manager.py:144 src/HelpDialog.py:29
+msgid "Package Manager Help"
+msgstr "Handbok Pakethanteraren"
+
+#: src/package-manager.py:157
+msgid "Package to install"
+msgstr "Paket för installation"
+
+#: src/package-manager.py:158
+msgid "Show main window on startup"
+msgstr "Visa fönster vid start"
+
+#: src/package-manager.py:159
+msgid "Show debug output"
+msgstr "Visa felsökningsinformation"
+
+#: src/package-manager.py:162
+msgid "Package Manager is already running!"
+msgstr "Pakethanteraren körs redan!"
+
+#: src/BasketDialog.py:51 src/BasketDialog.py:56
+msgid "Basket"
+msgstr "Korg"
+
+#: src/BasketDialog.py:64
+msgid "Selected package(s) for removal:"
+msgstr "Paket valda för borttagning:"
+
+#: src/BasketDialog.py:65
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr "Omvända beroenden för valda paket kommer också att tas bort:"
+
+#: src/BasketDialog.py:67
+msgid "Selected package(s) for install:"
+msgstr "Paket valda för installation:"
+
+#: src/BasketDialog.py:68
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr "Extra beroenden för valda paket som också kommer att installeras:"
+
+#: src/BasketDialog.py:70
+msgid "Selected package(s) for upgrade:"
+msgstr "Paket valda för uppdatering:"
+
+#: src/BasketDialog.py:71
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr "Extra beroenden för valda paket som också kommer att uppdateras:"
+
+#: src/BasketDialog.py:79
+msgid "Total Size:"
+msgstr "Sammanlagd storlek:"
+
+#: src/BasketDialog.py:86
+msgid "Update Basket"
+msgstr "Uppdatera korg"
+
+#: src/BasketDialog.py:166
+msgid "Total Size: <b>%1</b>"
+msgstr "Sammanlagd storlek: <b>%1</b>"
+
+#: src/BasketDialog.py:214 src/BasketDialog.py:216
+msgid "Size: "
+msgstr "Sorlek:"
+
+#: src/CommonText.py:15
+msgid "extracting"
+msgstr "packas upp"
+
+#: src/CommonText.py:15
+msgid "configuring"
+msgstr "konfigureras"
+
+#: src/CommonText.py:15
+msgid "removing"
+msgstr "tas bort"
+
+#: src/CommonText.py:15
+msgid "installing"
+msgstr "installeras"
+
+#: src/Preferences.py:234
+msgid "Add New Repository"
+msgstr "Lägg till förråd"
+
+#: src/Preferences.py:241
+msgid "Edit Repository"
+msgstr "Redigera förråd"
+
+#: src/Preferences.py:287 src/Preferences.py:303
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Förrådsadresser ska sluta med xml eller xml.bz2.<p>Försök igen.</qt>"
+
+#: src/Preferences.py:287 src/Preferences.py:303
+msgid "Pisi Error"
+msgstr "Pisi-fel"
+
+#: src/Preferences.py:382
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr "Alla cachade kopior kommer att raderas. Är du säker?"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -491,33 +480,14 @@ msgstr "Förråds&namn"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Förrådets namn, tex. <b>pardus-devel</b>"
 
-#: src/Notifier.py:45
-msgid "Show Updates"
-msgstr "Visa uppdateringar"
+#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
+#: src/SpecialList.py:101
+msgid "Select all packages in this category"
+msgstr "Välj alla paket i den här kategorin"
 
-#: src/Notifier.py:45
-msgid "Ignore"
-msgstr "Avbryt"
-
-#: src/SpecialList.py:170
-msgid "Description: "
-msgstr "Beskrivning: "
-
-#: src/SpecialList.py:171
-msgid "Version: "
-msgstr "Version: "
-
-#: src/SpecialList.py:172
-msgid "Repository: "
-msgstr "Förråd: "
-
-#: src/SpecialList.py:173
-msgid "Package Size: "
-msgstr "Paketstorlek: "
-
-#: src/SpecialList.py:174
-msgid "Homepage: "
-msgstr "Webbplats: "
+#: src/CustomEventListener.py:38 src/SpecialList.py:103
+msgid "Reverse package selections"
+msgstr "Invertera paketmarkering"
 
 #: src/PreferencesDialog.py:179 src/PreferencesDialog.py:378
 msgid "Repository Name"
@@ -713,52 +683,82 @@ msgstr "Använd proxyserver"
 msgid "Proxy"
 msgstr "Proxy"
 
-#: src/BasketDialog.py:51 src/BasketDialog.py:56
-msgid "Basket"
-msgstr "Korg"
+#: src/pm-install.py:33
+msgid "PiSi package to install"
+msgstr "PiSi-paket att installera"
 
-#: src/BasketDialog.py:64
-msgid "Selected package(s) for removal:"
-msgstr "Paket valda för borttagning:"
+#: src/pm-install.py:50
+msgid "You have selected a package to install. Do you want to continue?"
+msgstr "Du har valt ett paket för installation. Vill du fortsätta?"
 
-#: src/BasketDialog.py:65
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr "Omvända beroenden för valda paket kommer också att tas bort:"
+#: src/pm-install.py:51
+msgid "Install Package"
+msgstr "Installera paket"
 
-#: src/BasketDialog.py:67
-msgid "Selected package(s) for install:"
-msgstr "Paket valda för installation:"
+#: src/SpecialList.py:168
+msgid "Description: "
+msgstr "Beskrivning: "
 
-#: src/BasketDialog.py:68
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr "Extra beroenden för valda paket som också kommer att installeras:"
+#: src/SpecialList.py:169
+msgid "Version: "
+msgstr "Version: "
 
-#: src/BasketDialog.py:70
-msgid "Selected package(s) for upgrade:"
-msgstr "Paket valda för uppdatering:"
+#: src/SpecialList.py:170
+msgid "Repository: "
+msgstr "Förråd: "
 
-#: src/BasketDialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
-msgstr "Extra beroenden för valda paket som också kommer att uppdateras:"
+#: src/SpecialList.py:171
+msgid "Package Size: "
+msgstr "Paketstorlek: "
 
-#: src/BasketDialog.py:79
-msgid "Total Size:"
-msgstr "Sammanlagd storlek:"
+#: src/SpecialList.py:172
+msgid "Homepage: "
+msgstr "Webbplats: "
 
-#: src/BasketDialog.py:86
-msgid "Update Basket"
-msgstr "Uppdatera korg"
+#: src/Progress.py:67
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/BasketDialog.py:166
-msgid "Total Size: <b>%1</b>"
-msgstr "Sammanlagd storlek: <b>%1</b>"
+#: src/Progress.py:100
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<b>Förbereder PiSi...</b>"
 
-#: src/BasketDialog.py:214 src/BasketDialog.py:216
-msgid "Size: "
-msgstr "Sorlek:"
+#: src/Progress.py:102
+msgid "<p align='center'>-- / --, -- KB/s</p>"
+msgstr "<p align='center'>-- / --, -- KB/s</p>"
+
+#: src/Progress.py:103
+msgid "-- / --"
+msgstr "-- / --"
+
+#: src/Progress.py:122
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>Avbryter åtgärd...</b>"
+
+#: src/Progress.py:149 src/Progress.py:153
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: src/Progress.py:163
+msgid "installed"
+msgstr "installerade"
+
+#: src/Progress.py:165
+msgid "removed"
+msgstr "borttagna"
+
+#: src/Progress.py:167
+msgid "upgraded"
+msgstr "uppdaterade"
+
+#: src/Progress.py:169
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 paket %3"
+
+#: src/Notifier.py:45
+msgid "Show Updates"
+msgstr "Visa uppdateringar"
+
+#: src/Notifier.py:45
+msgid "Ignore"
+msgstr "Avbryt"

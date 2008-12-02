@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-30 13:06+0200\n"
+"POT-Creation-Date: 2008-12-02 10:13+0200\n"
 "PO-Revision-Date: 2008-06-26 09:47+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
@@ -22,6 +22,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/ProgressDialog.py:127
+msgid "Progress"
+msgstr "Voortgang"
+
+#: src/ProgressDialog.py:129
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: src/ProgressDialog.py:130
+msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+
+#: src/ProgressDialog.py:131
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Voorbereiden PiSi...</h3>"
+
+#: src/ProgressDialog.py:133
+msgid "amsn"
+msgstr "amsn"
+
+#: src/ProgressDialog.py:134
+msgid "Time remaining:"
+msgstr "Nog te gaan:"
+
+#: src/ProgressDialog.py:135
+msgid "2 / 20 packages installed."
+msgstr "2 /20 pakketten geïnstalleerd."
+
+#: src/ProgressDialog.py:136
+msgid "01:29"
+msgstr "01:29"
+
+#: src/ProgressDialog.py:137
+msgid "Operation:"
+msgstr "Handeling:"
+
+#: src/ProgressDialog.py:138
+msgid "Status:"
+msgstr "Status:"
 
 #: src/Tray.py:38
 msgid "Update"
@@ -38,183 +78,6 @@ msgstr "Er zijn <b>%1</b> updates beschikbaar!"
 #: src/Tray.py:67
 msgid "Updates Available!"
 msgstr "Updates verkrijgbaar!"
-
-#: src/package-manager.py:33
-msgid "GUI for PiSi package manager"
-msgstr "Grafische gebruikersinterface voor PiSi pakketbeheer"
-
-#: src/package-manager.py:39 src/package-manager.py:64
-msgid "Package Manager"
-msgstr "Pakketbeheer"
-
-#: src/package-manager.py:42
-msgid "Developer and Current Maintainer"
-msgstr "Ontwikkelaar en huidige handhaver"
-
-#: src/package-manager.py:43
-msgid "Developer"
-msgstr "Ontwikkelaar"
-
-#: src/package-manager.py:44
-msgid "Original Author"
-msgstr "Originele auteur"
-
-#: src/package-manager.py:45
-msgid "CSS/JS Meister"
-msgstr "CSS/JS Meister"
-
-#: src/package-manager.py:46
-msgid "GUI Design & Usability"
-msgstr "Ontwerp en functionaliteit grafische gebruikersinterface"
-
-#: src/package-manager.py:47 src/package-manager.py:48
-#: src/package-manager.py:49 src/package-manager.py:50
-#: src/package-manager.py:51 src/package-manager.py:52
-#: src/package-manager.py:53 src/package-manager.py:54
-msgid "Authors of PiSi API"
-msgstr "Auteurs van PiSi API"
-
-#: src/package-manager.py:117
-msgid "Show Installed Packages"
-msgstr "Toon geïnstalleerde pakketten"
-
-#: src/package-manager.py:120
-msgid "Show New Packages"
-msgstr "Toon nieuwe pakketten"
-
-#: src/package-manager.py:122
-msgid "Show Upgradable Packages"
-msgstr "Toon op te waarderen pakketten"
-
-#: src/package-manager.py:144 src/HelpDialog.py:29
-msgid "Package Manager Help"
-msgstr "Pakketbeheer hulp"
-
-#: src/package-manager.py:157
-msgid "Package to install"
-msgstr "Te installeren pakket"
-
-#: src/package-manager.py:158
-msgid "Show main window on startup"
-msgstr "Toon hoofdvenster bij opstarten"
-
-#: src/package-manager.py:159
-msgid "Show debug output"
-msgstr "Toon debug uitvoer"
-
-#: src/package-manager.py:162
-msgid "Package Manager is already running!"
-msgstr "Pakketbeheer is al opgestart!"
-
-#: src/Progress.py:64
-msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr "<p align='center'>%1 / %2, %3</p>"
-
-#: src/Progress.py:97
-msgid "<b>Preparing PiSi...</b>"
-msgstr "<b>Voorbereiden PiSi...</b>"
-
-#: src/Progress.py:99
-msgid "<p align='center'>-- / --, -- KB/s</p>"
-msgstr "<p align='center'>-- / --, -- KB/s</p>"
-
-#: src/Progress.py:100
-msgid "-- / --"
-msgstr "-- / --"
-
-#: src/Progress.py:119
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Annuleren handeling...</b>"
-
-#: src/Progress.py:146 src/Progress.py:150
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: src/Progress.py:160
-msgid "installed"
-msgstr "geïnstalleerd"
-
-#: src/Progress.py:162
-msgid "removed"
-msgstr "verwijderd"
-
-#: src/Progress.py:164
-msgid "upgraded"
-msgstr "opgewaardeerd"
-
-#: src/Progress.py:166
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 pakket %3"
-
-#: src/Preferences.py:234
-msgid "Add New Repository"
-msgstr "Toevoegen nieuwe repository"
-
-#: src/Preferences.py:241
-msgid "Edit Repository"
-msgstr "Bewerken repository"
-
-#: src/Preferences.py:287 src/Preferences.py:303
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>Repository adres hoort te eindigen op xml of xml.bz2. <p>Probeer opnieuw."
-"</qt>"
-
-#: src/Preferences.py:287 src/Preferences.py:303
-msgid "Pisi Error"
-msgstr "Pisi fout"
-
-#: src/Preferences.py:349 src/MainWidget.py:668
-msgid "<b>Applying Repository Changes</b>"
-msgstr "<b>Toepassen veranderingen repository</b>"
-
-#: src/Preferences.py:382
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-"Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
-
-#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
-#: src/SpecialList.py:101
-msgid "Select all packages in this category"
-msgstr "Selecteer alle pakketten in deze categorie"
-
-#: src/CustomEventListener.py:38 src/SpecialList.py:103
-msgid "Reverse package selections"
-msgstr "Keer pakketselectie om"
-
-#: src/pm-install.py:33
-msgid "PiSi package to install"
-msgstr "Te installeren PiSi pakket"
-
-#: src/pm-install.py:50
-msgid "You have selected a package to install. Do you want to continue?"
-msgstr "U heeft een pakket geselecteerd om te installeren. Wilt u doorgaan?"
-
-#: src/pm-install.py:51
-msgid "Install Package"
-msgstr "Installeer pakket"
-
-#: src/CommonText.py:15 src/MainWidget.py:630
-msgid "downloading"
-msgstr "downloaden"
-
-#: src/CommonText.py:15
-msgid "extracting"
-msgstr "uitpakken"
-
-#: src/CommonText.py:15
-msgid "configuring"
-msgstr "configureren"
-
-#: src/CommonText.py:15
-msgid "removing"
-msgstr "verwijderen"
-
-#: src/CommonText.py:15
-msgid "installing"
-msgstr "installeren"
 
 #: src/ComarIface.py:38
 msgid "Unable to connect to DBus."
@@ -285,7 +148,7 @@ msgstr "Pakketdatabase is leeg"
 msgid "Remove Package(s)"
 msgstr "Verwijder pakket(ten)"
 
-#: src/MainWidget.py:270 src/MainWidget.py:671
+#: src/MainWidget.py:270 src/MainWidget.py:672
 msgid "<b>Updating Repository</b>"
 msgstr "<b>Updaten repository</b>"
 
@@ -434,53 +297,185 @@ msgstr "<b>Opwaarderen pakket(ten)</b>"
 msgid "Others"
 msgstr "Anderen"
 
-#: src/MainWidget.py:672
+#: src/MainWidget.py:630 src/CommonText.py:15
+msgid "downloading"
+msgstr "downloaden"
+
+#: src/MainWidget.py:669 src/Preferences.py:349
+msgid "<b>Applying Repository Changes</b>"
+msgstr "<b>Toepassen veranderingen repository</b>"
+
+#: src/MainWidget.py:673
 msgid "Downloading package list of %1"
 msgstr "Downloaden pakketlijst van %1"
 
-#: src/MainWidget.py:688
+#: src/MainWidget.py:689
 msgid "Confirm"
 msgstr "Bevestig"
 
-#: src/ProgressDialog.py:127
-msgid "Progress"
-msgstr "Voortgang"
+#: src/package-manager.py:33
+msgid "GUI for PiSi package manager"
+msgstr "Grafische gebruikersinterface voor PiSi pakketbeheer"
 
-#: src/ProgressDialog.py:129
-msgid "Alt+C"
-msgstr "Alt+C"
+#: src/package-manager.py:39 src/package-manager.py:64
+msgid "Package Manager"
+msgstr "Pakketbeheer"
 
-#: src/ProgressDialog.py:130
-msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+#: src/package-manager.py:42
+msgid "Developer and Current Maintainer"
+msgstr "Ontwikkelaar en huidige handhaver"
 
-#: src/ProgressDialog.py:131
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Voorbereiden PiSi...</h3>"
+#: src/package-manager.py:43
+msgid "Developer"
+msgstr "Ontwikkelaar"
 
-#: src/ProgressDialog.py:133
-msgid "amsn"
-msgstr "amsn"
+#: src/package-manager.py:44
+msgid "Original Author"
+msgstr "Originele auteur"
 
-#: src/ProgressDialog.py:134
-msgid "Time remaining:"
-msgstr "Nog te gaan:"
+#: src/package-manager.py:45
+msgid "CSS/JS Meister"
+msgstr "CSS/JS Meister"
 
-#: src/ProgressDialog.py:135
-msgid "2 / 20 packages installed."
-msgstr "2 /20 pakketten geïnstalleerd."
+#: src/package-manager.py:46
+msgid "GUI Design & Usability"
+msgstr "Ontwerp en functionaliteit grafische gebruikersinterface"
 
-#: src/ProgressDialog.py:136
-msgid "01:29"
-msgstr "01:29"
+#: src/package-manager.py:47 src/package-manager.py:48
+#: src/package-manager.py:49 src/package-manager.py:50
+#: src/package-manager.py:51 src/package-manager.py:52
+#: src/package-manager.py:53 src/package-manager.py:54
+msgid "Authors of PiSi API"
+msgstr "Auteurs van PiSi API"
 
-#: src/ProgressDialog.py:137
-msgid "Operation:"
-msgstr "Handeling:"
+#: src/package-manager.py:117
+msgid "Show Installed Packages"
+msgstr "Toon geïnstalleerde pakketten"
 
-#: src/ProgressDialog.py:138
-msgid "Status:"
-msgstr "Status:"
+#: src/package-manager.py:120
+msgid "Show New Packages"
+msgstr "Toon nieuwe pakketten"
+
+#: src/package-manager.py:122
+msgid "Show Upgradable Packages"
+msgstr "Toon op te waarderen pakketten"
+
+#: src/package-manager.py:144 src/HelpDialog.py:29
+msgid "Package Manager Help"
+msgstr "Pakketbeheer hulp"
+
+#: src/package-manager.py:157
+msgid "Package to install"
+msgstr "Te installeren pakket"
+
+#: src/package-manager.py:158
+msgid "Show main window on startup"
+msgstr "Toon hoofdvenster bij opstarten"
+
+#: src/package-manager.py:159
+msgid "Show debug output"
+msgstr "Toon debug uitvoer"
+
+#: src/package-manager.py:162
+msgid "Package Manager is already running!"
+msgstr "Pakketbeheer is al opgestart!"
+
+#: src/BasketDialog.py:51 src/BasketDialog.py:56
+msgid "Basket"
+msgstr "Mandje"
+
+#: src/BasketDialog.py:64
+msgid "Selected package(s) for removal:"
+msgstr "Geselecteerde te verwijderen pakket(ten):"
+
+#: src/BasketDialog.py:65
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr ""
+"Keer afhankelijkheden van de geselecteerde pakket(ten) om welk ook "
+"verwijderd zullen worden:"
+
+#: src/BasketDialog.py:67
+msgid "Selected package(s) for install:"
+msgstr "Geselecteerde te installeren pakket(ten):"
+
+#: src/BasketDialog.py:68
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook "
+"geïnstalleerd zullen worden:"
+
+#: src/BasketDialog.py:70
+msgid "Selected package(s) for upgrade:"
+msgstr "Geselecteerde op te waarderen pakket(ten):"
+
+#: src/BasketDialog.py:71
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr ""
+"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook bijgewerkt "
+"zullen worden:"
+
+#: src/BasketDialog.py:79
+msgid "Total Size:"
+msgstr "Totale grootte:"
+
+#: src/BasketDialog.py:86
+msgid "Update Basket"
+msgstr "Mandje bijwerken"
+
+#: src/BasketDialog.py:166
+msgid "Total Size: <b>%1</b>"
+msgstr "Totale grootte: <b>%1</b>"
+
+#: src/BasketDialog.py:214 src/BasketDialog.py:216
+msgid "Size: "
+msgstr "Grootte: "
+
+#: src/CommonText.py:15
+msgid "extracting"
+msgstr "uitpakken"
+
+#: src/CommonText.py:15
+msgid "configuring"
+msgstr "configureren"
+
+#: src/CommonText.py:15
+msgid "removing"
+msgstr "verwijderen"
+
+#: src/CommonText.py:15
+msgid "installing"
+msgstr "installeren"
+
+#: src/Preferences.py:234
+msgid "Add New Repository"
+msgstr "Toevoegen nieuwe repository"
+
+#: src/Preferences.py:241
+msgid "Edit Repository"
+msgstr "Bewerken repository"
+
+#: src/Preferences.py:287 src/Preferences.py:303
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Repository adres hoort te eindigen op xml of xml.bz2. <p>Probeer opnieuw."
+"</qt>"
+
+#: src/Preferences.py:287 src/Preferences.py:303
+msgid "Pisi Error"
+msgstr "Pisi fout"
+
+#: src/Preferences.py:382
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr ""
+"Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -515,33 +510,14 @@ msgstr "Repository &naam"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Naam van de repository, bijv. <b>pardus-devel</b>"
 
-#: src/Notifier.py:45
-msgid "Show Updates"
-msgstr "Toon updates"
+#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
+#: src/SpecialList.py:101
+msgid "Select all packages in this category"
+msgstr "Selecteer alle pakketten in deze categorie"
 
-#: src/Notifier.py:45
-msgid "Ignore"
-msgstr "Negeer"
-
-#: src/SpecialList.py:170
-msgid "Description: "
-msgstr "Beschrijving: "
-
-#: src/SpecialList.py:171
-msgid "Version: "
-msgstr "Versie: "
-
-#: src/SpecialList.py:172
-msgid "Repository: "
-msgstr "Repository:"
-
-#: src/SpecialList.py:173
-msgid "Package Size: "
-msgstr "Pakketgrootte: "
-
-#: src/SpecialList.py:174
-msgid "Homepage: "
-msgstr "Homepage: "
+#: src/CustomEventListener.py:38 src/SpecialList.py:103
+msgid "Reverse package selections"
+msgstr "Keer pakketselectie om"
 
 #: src/PreferencesDialog.py:179 src/PreferencesDialog.py:378
 msgid "Repository Name"
@@ -742,61 +718,85 @@ msgstr "Gebruik proxy server"
 msgid "Proxy"
 msgstr "Proxy"
 
-#: src/BasketDialog.py:51 src/BasketDialog.py:56
-msgid "Basket"
-msgstr "Mandje"
+#: src/pm-install.py:33
+msgid "PiSi package to install"
+msgstr "Te installeren PiSi pakket"
 
-#: src/BasketDialog.py:64
-msgid "Selected package(s) for removal:"
-msgstr "Geselecteerde te verwijderen pakket(ten):"
+#: src/pm-install.py:50
+msgid "You have selected a package to install. Do you want to continue?"
+msgstr "U heeft een pakket geselecteerd om te installeren. Wilt u doorgaan?"
 
-#: src/BasketDialog.py:65
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr ""
-"Keer afhankelijkheden van de geselecteerde pakket(ten) om welk ook "
-"verwijderd zullen worden:"
+#: src/pm-install.py:51
+msgid "Install Package"
+msgstr "Installeer pakket"
 
-#: src/BasketDialog.py:67
-msgid "Selected package(s) for install:"
-msgstr "Geselecteerde te installeren pakket(ten):"
+#: src/SpecialList.py:168
+msgid "Description: "
+msgstr "Beschrijving: "
 
-#: src/BasketDialog.py:68
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr ""
-"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook "
-"geïnstalleerd zullen worden:"
+#: src/SpecialList.py:169
+msgid "Version: "
+msgstr "Versie: "
 
-#: src/BasketDialog.py:70
-msgid "Selected package(s) for upgrade:"
-msgstr "Geselecteerde op te waarderen pakket(ten):"
+#: src/SpecialList.py:170
+msgid "Repository: "
+msgstr "Repository:"
 
-#: src/BasketDialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
-msgstr ""
-"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook bijgewerkt "
-"zullen worden:"
+#: src/SpecialList.py:171
+msgid "Package Size: "
+msgstr "Pakketgrootte: "
 
-#: src/BasketDialog.py:79
-msgid "Total Size:"
-msgstr "Totale grootte:"
+#: src/SpecialList.py:172
+msgid "Homepage: "
+msgstr "Homepage: "
 
-#: src/BasketDialog.py:86
-msgid "Update Basket"
-msgstr "Mandje bijwerken"
+#: src/Progress.py:67
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/BasketDialog.py:166
-msgid "Total Size: <b>%1</b>"
-msgstr "Totale grootte: <b>%1</b>"
+#: src/Progress.py:100
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<b>Voorbereiden PiSi...</b>"
 
-#: src/BasketDialog.py:214 src/BasketDialog.py:216
-msgid "Size: "
-msgstr "Grootte: "
+#: src/Progress.py:102
+msgid "<p align='center'>-- / --, -- KB/s</p>"
+msgstr "<p align='center'>-- / --, -- KB/s</p>"
+
+#: src/Progress.py:103
+msgid "-- / --"
+msgstr "-- / --"
+
+#: src/Progress.py:122
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>Annuleren handeling...</b>"
+
+#: src/Progress.py:149 src/Progress.py:153
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: src/Progress.py:163
+msgid "installed"
+msgstr "geïnstalleerd"
+
+#: src/Progress.py:165
+msgid "removed"
+msgstr "verwijderd"
+
+#: src/Progress.py:167
+msgid "upgraded"
+msgstr "opgewaardeerd"
+
+#: src/Progress.py:169
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 pakket %3"
+
+#: src/Notifier.py:45
+msgid "Show Updates"
+msgstr "Toon updates"
+
+#: src/Notifier.py:45
+msgid "Ignore"
+msgstr "Negeer"
 
 #~ msgid "PiSi Authors"
 #~ msgstr "PiSi auteurs"
