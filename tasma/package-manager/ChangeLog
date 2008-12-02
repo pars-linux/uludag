@@ -1,15 +1,26 @@
+2008-12-01 Faik Uygur <faik@pardus.org.tr>
+        * Disable cancel button after fetching all the packages and started
+        installing.
+
+2008-11-30 Gökçen Eraslan <gokcen@pardus.org.tr>
+        * Fixed translations of search button
+
 2008-11-23 Gökçen Eraslan <gokcen@pardus.org.tr>
         * Fix cursor problems, add forgotten paranthesis to KCursor related
-		code.
+        code.
+
+2008-11-21 Faik Uygur <faik@pardus.org.tr>
+        * pisi, now fetches all the packages and starts installing them after,
+        for the install operation as in the upgrade operation. Progress dialog
+        should behave according to this change.
 
 2008-11-17 Faik Uygur <faik@pardus.org.tr>
         * Remove auto start searching feature when text changed and add a button
         to start search or press enter.
 
 2008-09-30 Ozan Çağlayan <ozan@pardus.org.tr>
-	* src/Icons.py (getIconSize): Use KIcon.SizeLarge
-	instead of reading the DesktopIcons/Size property
-	of kdeglobals file.(Fixes #6015)
+	* src/Icons.py (getIconSize): Use KIcon.SizeLarge instead of reading the
+        DesktopIcons/Size property of kdeglobals file.(Fixes #6015)
 
 2008-08-26 Gökçen Eraslan <gokcen@pardus.org.tr>
 	* Swedish help page added
