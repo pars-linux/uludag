@@ -55,7 +55,6 @@ msgid "Form1"
 msgstr "Form1"
 
 #: yali4/gui/Ui/autopartwidget.py:134
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -76,7 +75,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">1. Disk bölümlendirme yöntemini seçin:</span></"
+"size:12pt; font-weight:600;\">Disk bölümlendirme yöntemini seçin:</span></"
 "p></body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:139
@@ -125,7 +124,6 @@ msgid "No, I'll partition my disk manually."
 msgstr "Hayır, diskimi kendim bölümlendireceğim."
 
 #: yali4/gui/Ui/autopartwidget.py:147
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -146,7 +144,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">2. Yöntemi uygulamak istediğiniz diski seçin:</"
+"size:12pt; font-weight:600;\">Yöntemi uygulamak istediğiniz diski seçin:</"
 "span></p></body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:152
