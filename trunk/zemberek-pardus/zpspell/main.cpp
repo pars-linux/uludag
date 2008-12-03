@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <getopt.h>
+#include <cstring>
 
 #include "zstring.h"
 #include "zsconn.h"
