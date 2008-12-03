@@ -10,7 +10,6 @@
 #
 # Please read the COPYING file.
 
-""" Standart Python Modules """
 import os
 import sys
 import copy
@@ -19,14 +18,15 @@ import traceback
 import cStringIO
 import exceptions
 import cPickle
-import glob
 
-""" BuildFarm Modules """
 import config
 import logger
 import mailer
 import qmanager
 import pisiinterface
+
+from utils import *
+
 
 def buildPackages():
     qmgr = qmanager.QueueManager()
@@ -48,6 +48,12 @@ def buildPackages():
         logger.error("You have to put packages.db in data/ for delta generation.")
         os.unlink("/var/run/buildfarm")
         sys.exit(1)
+
+    # Compiling current workqueue
+
+    # TODO: Determine the packages to be recompiled for ABI compatibility.
+    # We have to parse all pspec.xml's in queue to search for a special <Requires>
+    # tag in "latest" <Update> tags.
 
     logger.raw("QUEUE")
     logger.info("*** Work Queue: %s" % qmgr.workQueue)
@@ -176,7 +182,56 @@ def buildPackages():
     os.unlink("/var/run/buildfarm")
 
 def movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPackages):
-    # normalize files to full paths
+
+    # Some inner methods here..
+
+    def cleanupStaleDeltaPackages(package):
+        # Say that 'package' is kernel-2.6.25.20-114.45.pisi
+        # We can remove delta packages going to any build < 45 from both
+        # packages/ and packages-test/ because we no longer need them.
+        build = getBuild(package)
+        for p in getDeltasNotGoingTo(config.binaryPath, package):
+            logger.info("*** Removing stale delta '%s' from '%s'" % (package, config.binaryPath))
+            remove(join(config.binaryPath, package))
+
+        for p in getDeltasNotGoingTo(config.testPath, package):
+            logger.info("*** Removing stale delta '%s' from '%s'" % (package, config.testPath))
+            remove(join(config.testPath, package))
+
+    def removeOldPackage(package):
+        logger.info("*** Removing old package '%s' from %s" % (package, config.testPath))
+        if exists(join(config.testPath, package)):
+            # If an old build is found in testPath
+            # remove it because the test repo is unique.
+            remove(join(config.testPath, package))
+
+        # Cleanup workDir
+        if exists(join(config.workDir, package)):
+            remove(join(config.workDir, package))
+
+    def moveNewPackage(package):
+        logger.info("*** Moving new package '%s'" % package)
+        if exists(join(config.workDir, package)):
+            copy(join(config.workDir, package), config.binaryPath)
+            copy(join(config.workDir, package), config.testPath)
+            remove(join(config.workDir, package))
+
+    def moveUnchangedPackage(package):
+        logger.info("*** Moving unchanged package %s'" % package)
+        if exists(join(config.workDir, package)):
+            copy(join(config.workDir, package), config.binaryPath)
+            remove(join(config.workDir, package))
+
+    def moveDeltaPackage(package):
+        # Move all delta packages into packages/ and packages-test/
+        # and clean them from workDir.
+        logger.info("*** Moving delta package '%s' to both directories" % package)
+        if exists(join(config.workDir, package)):
+            copy(join(config.workDir, package), config.binaryPath)
+            copy(join(config.workDir, package), config.testPath)
+            remove(join(config.workDir, package))
+
+    # Normalize files to full paths
     try:
         newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
     except AttributeError:
@@ -201,69 +256,32 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPac
     remove = os.remove
     copy   = shutil.copy
 
-    def moveOldPackage(package):
-        logger.info("*** Removing old package '%s' from %s" % (package, config.testPath))
-        if exists(join(config.testPath, package)):
-            # If an old build is found in testPath(/packages-test/)
-            # remove it because the test repo is unique.
-            remove(join(config.testPath, package))
-
-        # Cleanup workDir
-        if exists(join(config.workDir, package)):
-            remove(join(config.workDir, package))
-
-    def moveNewPackage(package):
-        logger.info("*** Moving new package '%s'" % package)
-        if exists(join(config.workDir, package)):
-            # binaryPath : /var/cache/pisi/packages/
-            # testPath : /var/cache/pisi/packages-test/
-            copy(join(config.workDir, package), config.binaryPath)
-            copy(join(config.workDir, package), config.testPath)
-            remove(join(config.workDir, package))
-
-    def moveUnchangedPackage(package):
-        logger.info("*** Moving unchanged package %s'" % package)
-        if exists(join(config.workDir, package)):
-            copy(join(config.workDir, package), config.binaryPath)
-            remove(join(config.workDir, package))
-
-    def moveDeltaPackage(package):
-        # Move all delta packages into binary path and clean them from workDir
-        logger.info("*** Moving delta package '%s' to %s" % (package, config.binaryPath))
-        if exists(join(config.workDir, package)):
-            copy(join(config.workDir, package), config.binaryPath)
-            remove(join(config.workDir, package))
-
-    def moveIncrementalDeltaPackage(package):
-        # Move incremental delta packages to the test repository.
-        # e.g. kernel-88-89-delta.pisi
-        for p in glob.glob1(config.testPath, "%s-[0-9]*-[0-9]*.delta.pisi" % os.path.basename(package).rsplit("-", 2)[0]):
-            logger.info("*** Removing %s from %s" % (p, config.testPath))
-            remove(join(config.testPath, p))
-
-        logger.info("*** Moving incremental delta package '%s' to %s" % (package, config.testPath))
-        if exists(join(config.workDir, package)):
-            copy(join(config.workDir, package), config.testPath)
 
     for package in newPackages:
         if package:
+            # Move the new binary package to packages/ and packages-test/
             moveNewPackage(package)
 
     for package in oldPackages:
         if package:
-            moveOldPackage(package)
+            # Remove old binary package from packages-test/
+            removeOldPackage(package)
 
     for package in unchangedPackages:
         if package:
             moveUnchangedPackage(package)
 
-    for package in deltasToInstall:
-        if package:
-            moveIncrementalDeltaPackage(package)
-
     for package in deltaPackages:
+        # Move all(3) delta packages to packages/ and packages-test/
         if package:
             moveDeltaPackage(package)
+
+    for package in newPackages:
+        # Remove delta packages going to any build != newPackage's build
+        if package:
+            cleanupStaleDeltaPackages(package)
+
+
 
 def removeBinaryPackageFromWorkDir(package):
     join   = os.path.join

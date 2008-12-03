@@ -11,18 +11,20 @@
 # Please read the COPYING file.
 #
 
-""" Standart Python Modules """
 import os
 import glob
 
-""" Pisi API """
 import pisi.api
 from pisi.operations.delta import create_delta_package
 
-""" BuildFarm Modules """
+# Buildfarm modules
 import cli
 import config
 import logger
+
+# utils contains some helper functions like getName(), getBuild(), etc.
+from utils import *
+
 
 class PisiApi:
 
@@ -65,9 +67,6 @@ class PisiApi:
 
     def delta(self, isopackages, oldBinaryPackages, newBinaryPackages):
 
-        def getName(package):
-            return package.rstrip(".pisi").rsplit("-", 3)[0]
-
         logger.debug("delta() -> oldBinaryPackages: %s" % oldBinaryPackages)
         logger.debug("delta() -> newBinaryPackages: %s" % newBinaryPackages)
 
@@ -107,7 +106,7 @@ class PisiApi:
 
             # Look for an old build first
             if pl[0]:
-                # Create a delta between the previous build and the current one
+                # Create a delta between the old build and the new one
                 logger.info("Building delta between %s[previous build] and %s." % (pl[0], pl[1]))
                 deltas_to_install.append(create_delta_package(os.path.join(config.binaryPath, pl[0]), p))
 

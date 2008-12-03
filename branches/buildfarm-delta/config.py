@@ -26,9 +26,7 @@ announceAddr     = "gelistirici@pardus.org.tr"
 ccList           = ["paketler-commits@pardus.org.tr"]
 #ccList           = ["ekin@pardus.org.tr"]
 smtpServer       = "mail.pardus.org.tr"
-useSmtpAuth      = True
-smtpUser         = ""
-smtpPassword     = ""
+useSmtpAuth      = False
 
 # Blacklist for delta packages. Buildfarm will never build
 # delta packages for them.

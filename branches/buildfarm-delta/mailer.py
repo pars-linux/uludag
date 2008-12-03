@@ -23,6 +23,8 @@ import config
 import logger
 import templates as tmpl
 
+import mailauth
+
 class MailerError(Exception):
     pass
 
@@ -36,7 +38,7 @@ def send(message, pspec = "", type = ""):
                        word),
                       message.split(" "))
 
-    if not config.useSmtpAuth and (not config.smtpUser or not config.smtpPassword):
+    if not config.useSmtpAuth and (not mailauth.username or not mailauth.password):
         logger.info("Herhangi bir SMTP kullanıcı ve parolası çifti tanımlanmadığı için e-posta gönderilmiyor.")
         return
 
@@ -74,9 +76,9 @@ def send(message, pspec = "", type = ""):
         logger.error("E-posta gönderimi gerçekleştirilemedi: Sunucuda oturum açılamadı (%s)." % config.smtpServer)
         return
 
-    if config.useSmtpAuth and config.smtpPassword:
+    if config.useSmtpAuth and mailauth.password:
         try:
-            session.login(config.smtpUser, config.smtpPassword)
+            session.login(mailauth.username, mailauth.password)
         except smtplib.SMTPAuthenticationError:
             logger.error("E-posta gönderimi gerçekleştirilemedi: Kimlik doğrulama başarısız.")
             return
