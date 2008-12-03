@@ -1,5 +1,5 @@
 PROJECT_NAME=service-manager
-INSTALL_DIR=$(KDEDIR)/share/apps/$(PROJECT_NAME)
+INSTALL_DIR=/usr/kde/4/share/apps/$(PROJECT_NAME)
 
 all: build
 build:
@@ -17,7 +17,7 @@ install: uninstall
 	install -m 0644 uimain.py $(INSTALL_DIR)
 	install -m 0644 uiitem.py $(INSTALL_DIR)
 	install -m 0644 data_rc.py $(INSTALL_DIR)
-	install -m 0644 settings-service-manager.desktop $(KDEDIR)/share/kde4/services
+	install -m 0644 settings-service-manager.desktop /usr/kde/4/share/kde4/services
 uninstall:
 	rm -rf $(INSTALL_DIR)
-	rm -f $(KDEDIR)/share/kde4/services/settings-service-manager.desktop
+	rm -f /usr/kde/4/share/kde4/services/settings-service-manager.desktop
