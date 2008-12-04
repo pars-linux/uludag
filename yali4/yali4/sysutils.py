@@ -13,6 +13,7 @@
 # sysutils module provides basic system utilities
 
 import os
+import sys
 import subprocess
 from string import ascii_letters
 from string import digits
@@ -22,21 +23,54 @@ from pardus.procutils import run
 from yali4._sysutils import *
 from yali4.constants import consts
 
-##
+_sys_dirs = ['dev', 'proc', 'sys']
+
+def chroot_run(cmd):
+    os.system("chroot %s %s" % (consts.target_dir, cmd))
+
 # run dbus daemon in chroot
 def chroot_dbus():
 
-    # FIXME: use mount module (needs options support)
-    tgt = os.path.join(consts.target_dir, "dev")
-    os.system("mount --bind /dev %s" % tgt)
-    tgt = os.path.join(consts.target_dir, "proc")
-    os.system("mount --bind /proc %s" % tgt)
-    tgt = os.path.join(consts.target_dir, "sys")
-    os.system("mount --bind /sys %s" % tgt)
+    for _dir in _sys_dirs:
+        tgt = os.path.join(consts.target_dir, _dir)
+        os.system("mount --bind /%s %s" % (_dir, tgt))
 
-    os.system("chroot %s /sbin/ldconfig" % consts.target_dir)
-    os.system("chroot %s /sbin/update-environment" % consts.target_dir)
-    os.system("chroot %s /bin/service dbus start" % consts.target_dir)
+    chroot_run("/sbin/ldconfig")
+    chroot_run("/sbin/update-environment")
+    chroot_run("/bin/service dbus start")
+
+def finalize_chroot():
+    # close filesDB if it is still open
+    import pisi
+    filesdb = pisi.db.filesdb.FilesDB()
+    if filesdb.is_initialized():
+        filesdb.close()
+
+    # stop dbus
+    chroot_run("/bin/service dbus stop")
+
+    # kill comar in chroot if any exists
+    chroot_run("/bin/killall comar")
+
+    # unmount sys dirs
+    c = _sys_dirs
+    c.reverse()
+    for _dir in c:
+        tgt = os.path.join(consts.target_dir, _dir)
+        # umount_(tgt)
+
+    # store log content
+    import yali4.gui.context as ctx
+    ctx.debugger.log("Finalize Chroot called this is the last step for logs ..")
+    if ctx.debugEnabled:
+        open(ctx.consts.log_file,"w").write(str(ctx.debugger.traceback.plainLogs))
+
+    # store session log as kahya xml
+    open(ctx.consts.session_file,"w").write(str(ctx.installData.sessionLog))
+    os.chmod(ctx.consts.session_file,0600)
+
+    # umount target dir
+    umount_(consts.target_dir,'-l')
 
 def checkYaliParams(param):
     for i in [x for x in open("/proc/cmdline", "r").read().split()]:
@@ -189,11 +223,13 @@ def is_linux_boot(partition_path, file_system):
     else:
         return False
 
-def umount_(dir):
-    os.system("umount %s" % dir)
+def umount_(dir, param=''):
+    os.system("umount %s %s" % (dir,param))
+
+def classic_reboot():
+    os.system("reboot")
 
 def reboot():
-    print "Rebooting..."
     try:
         umount(consts.target_dir + "/home")
     except:

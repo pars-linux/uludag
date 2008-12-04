@@ -580,7 +580,7 @@ class Yali:
             ctx.debugger.log("GPTSYNC: Command Not Found !")
 
         # finally install it
-        return loader.install_grub(ctx.installData.bootLoaderDev)
+        return loader.install_grub(ctx.installData.bootLoaderDev, _ins_part)
 
     def showError(self, title, message):
         r = ErrorWidget(self)

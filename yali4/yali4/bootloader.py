@@ -133,11 +133,11 @@ class BootLoader:
         # cmd = "/sbin/grub --batch --no-floppy --device-map=%s < %s" % (self.device_map, self.grub_conf)
         # os.system(cmd)
 
-        _grb = self._find_grub_dev(install_root_path)
+        major = self._find_grub_dev(install_root_path)
 
         # grub_root is the device on which we install.
         minor = str(int(filter(lambda u: u.isdigit(), install_root)) -1)
-        grub_root = ",".join([_grb, minor])
+        grub_root = ",".join([major, minor])
 
         def find_boot_kernel():
             """ Returns the installed kernel version """
@@ -220,20 +220,44 @@ class BootLoader:
 
         open(self.grub_conf, "a").write(s)
 
-    def install_grub(self, grub_install_root=None):
+    def install_grub(self, grub_install_root=None, root_path=None):
         """ Install GRUB to the given device or partition """
+
+        major = self._find_grub_dev(root_path)
+        minor = str(int(root_path[-1])-1)
+        root_path = "(%s,%s)" % (major, minor)
 
         if not grub_install_root.startswith("/dev/"):
             grub_install_root = "/dev/%s" % grub_install_root
 
-        cmd = "%s --root-directory=%s %s --no-floppy" % (yali4.sysutils.find_executable("grub-install"),
-                                             consts.target_dir,
-                                             grub_install_root)
+        major = self._find_grub_dev(grub_install_root)
 
-        ctx.debugger.log("IG : cmd: %s " % cmd)
+        ctx.debugger.log("IG: I have found major as '%s'" % major)
+        if ctx.installData.bootLoaderOption == 1:
+            # means it will install to a partition not MBR
+            minor = str(int(grub_install_root[-1])-1)
+            setupto = "(%s,%s)" % (major, minor)
+        else:
+            # means it will install to the MBR
+            setupto = "(%s)" % major
+        ctx.debugger.log("IG: And the last it will install to '%s'" % setupto)
 
+        batch_template = """root %s
+setup %s
+quit
+""" % (root_path, setupto)
+
+        file('/tmp/_grub','w').write(batch_template)
+        ctx.debugger.log("IG: Batch content : %s" % batch_template)
+        cmd = "%s --batch < /tmp/_grub" % yali4.sysutils.find_executable("grub")
+
+        ctx.debugger.log("IG: Chrooted jobs are finalizing.. ")
+        # before installing the bootloader we have to finish chrooted jobs..
+        yali4.sysutils.finalize_chroot()
+
+        ctx.debugger.log("IG: Grub install cmd is %s" % cmd)
         if os.system(cmd) != 0:
-            ctx.debugger.log("IG : Command failed %s - trying again.. " % cmd)
+            ctx.debugger.log("IG: Command failed %s - trying again.. " % cmd)
             time.sleep(2)
             if os.system(cmd) != 0:
                 raise YaliException, "Command failed: %s" % cmd
