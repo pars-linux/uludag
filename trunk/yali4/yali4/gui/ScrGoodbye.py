@@ -82,16 +82,6 @@ don't you?
     def execute(self):
         ctx.mainScreen.disableNext()
 
-        if not ctx.yali.install_type == YALI_FIRSTBOOT:
-            try:
-                ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
-                yali4.sysutils.umount(ctx.consts.target_dir + "/home")
-                ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir))
-                yali4.sysutils.umount(ctx.consts.target_dir)
-            except:
-                ctx.debugger.log("Umount Failed.")
-                pass
-
         w = RebootWidget(self)
 
         ctx.debugger.log("Show reboot dialog.")
@@ -107,17 +97,10 @@ don't you?
 
         ctx.debugger.log("Yali, fastreboot calling..")
 
-        # store log content
-        if ctx.debugEnabled:
-            open(ctx.consts.log_file,"w").write(str(ctx.debugger.traceback.plainLogs))
-
-        # store session log as kahya xml
-        open(ctx.consts.session_file,"w").write(str(ctx.installData.sessionLog))
-        os.chmod(ctx.consts.session_file,0600)
-
         ctx.mainScreen.processEvents()
         time.sleep(4)
-        yali4.sysutils.fastreboot()
+        yali4.sysutils.classic_reboot()
+        #yali4.sysutils.fastreboot()
 
 class RebootWidget(QtGui.QWidget):
 
