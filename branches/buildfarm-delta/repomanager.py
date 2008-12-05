@@ -83,7 +83,7 @@ class RepositoryManager:
 
         for p in pspecs:
             f = os.popen("svn di -r %d:%d %s" % (self.oldRevision, self.getRevision(), p)).read().strip().split("\n")
-            if "<Action>revDepUpdates</Action>" in [l for l in f if l.startswith("+")]:
+            if "<Action>reverseDependencyUpdate</Action>" in [l for l in f if l.startswith("+")]:
                 # Now we have the list of packages which break ABI.
                 # We need to find out the reverse build dependencies of these packages.
                 #(live555 breaks ABI, vlc and mplayer needs live555 during build)
