@@ -57,6 +57,25 @@ chainloader +1
 
 """
 
+def find_grub_dev(dev_path, device_map=None):
+    """ Returns the GRUB device from given dev_path
+        It uses YALI's deviceMap created from EDD"""
+    if not device_map:
+        device_map = os.path.join(consts.target_dir, "boot/grub/device.map")
+    if dev_path.find("cciss") > 0:
+        # HP Smart array controller (something like /dev/cciss/c0d0p1)
+        dev_name = os.path.basename(dev_path)[:-2]
+    else:
+        dev_name = str(filter(lambda u: u.isalpha(),
+                              os.path.basename(dev_path)))
+
+    for l in open(device_map).readlines():
+        if l.find(dev_name) >= 0:
+            l = l.split()
+            d = l[0]
+            # remove paranthesis
+            return d[1:-1]
+    return ''
 
 class BootLoader:
     """ Bootloader Operations 
@@ -64,23 +83,6 @@ class BootLoader:
     def __init__(self):
         self.device_map = os.path.join(consts.target_dir, "boot/grub/device.map")
         self.grub_conf = os.path.join(consts.target_dir, "boot/grub/grub.conf")
-
-    def _find_grub_dev(self, dev_path):
-        """ Returns the GRUB device from given dev_path
-            It uses YALI's deviceMap created from EDD"""
-        if dev_path.find("cciss") > 0:
-            # HP Smart array controller (something like /dev/cciss/c0d0p1)
-            dev_name = os.path.basename(dev_path)[:-2]
-        else:
-            dev_name = str(filter(lambda u: u.isalpha(),
-                                  os.path.basename(dev_path)))
-
-        for l in open(self.device_map).readlines():
-            if l.find(dev_name) >= 0:
-                l = l.split()
-                d = l[0]
-                # remove paranthesis
-                return d[1:-1]
 
     def _find_hd0(self):
         """ Returns first disk from deviceMap """
@@ -133,7 +135,7 @@ class BootLoader:
         # cmd = "/sbin/grub --batch --no-floppy --device-map=%s < %s" % (self.device_map, self.grub_conf)
         # os.system(cmd)
 
-        major = self._find_grub_dev(install_root_path)
+        major = find_grub_dev(install_root_path)
 
         # grub_root is the device on which we install.
         minor = str(int(filter(lambda u: u.isdigit(), install_root)) -1)
@@ -191,7 +193,7 @@ class BootLoader:
 
     def grub_conf_append_win(self, install_dev, win_dev, win_root, win_fs):
         """ Appends Windows Partitions to the GRUB Conf """
-        grub_dev = self._find_grub_dev(win_dev)
+        grub_dev = find_grub_dev(win_dev)
         minor = str(int(filter(lambda u: u.isdigit(), win_root)) -1)
         grub_root = ",".join([grub_dev, minor])
 
@@ -223,14 +225,14 @@ class BootLoader:
     def install_grub(self, grub_install_root=None, root_path=None):
         """ Install GRUB to the given device or partition """
 
-        major = self._find_grub_dev(root_path)
+        major = find_grub_dev(root_path)
         minor = str(int(root_path[-1])-1)
         root_path = "(%s,%s)" % (major, minor)
 
         if not grub_install_root.startswith("/dev/"):
             grub_install_root = "/dev/%s" % grub_install_root
 
-        major = self._find_grub_dev(grub_install_root)
+        major = find_grub_dev(grub_install_root)
 
         ctx.debugger.log("IG: I have found major as '%s'" % major)
         if ctx.installData.bootLoaderOption == 1:
