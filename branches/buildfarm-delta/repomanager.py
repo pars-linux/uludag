@@ -143,7 +143,10 @@ if __name__ == "__main__":
             print "  * %s" % p
 
     if len(updatedpspecfiles + newpspecfiles):
-        queue = open(os.path.join(config.workDir, "workQueue"), "rb").read().strip().split("\n")
+        queue = []
+        if os.path.exists(os.path.join(config.workDir, "workQueue")):
+            queue = open(os.path.join(config.workDir, "workQueue"), "rb").read().strip().split("\n")
+
         queue.extend(updatedpspecfiles + newpspecfiles)
         open(os.path.join(config.workDir, "workQueue"), "wb").write("\n".join(list(set(queue)))+"\n")
 
