@@ -86,7 +86,7 @@ class AutoPiksemel:
             self._autoPiks(doc, errors)
             if len(errors) > 0:
                 raise InvalidDocument("\n".join(errors))
-    
+
     def _autoPiks(self, doc, errors):
         data = None
         tags = {}
@@ -287,7 +287,7 @@ class Source(AutoPiksemel):
     version     =     optional_tag("Version")
     release     =     optional_tag("Release")
     sourceuri   =     optional_tag("SourceURI")
-    
+
     def validate(self, doc, errors):
         valid_isas = (
             "app", "app:console", "app:gui", "app:web",
@@ -305,21 +305,25 @@ class Source(AutoPiksemel):
             "locale:br", "locale:bg", "locale:tg", "locale:ta", "locale:sr@Latn", "locale:af",
             "locale:hr", "locale:cs", "locale:cy", "locale:ca", "locale:uk", "locale:uz"
         )
-        
+
         for isa in self.isa:
             if isa not in valid_isas:
                 piksError(doc, errors, "invalid IsA value '%s'" % isa)
 
+class Action(AutoPiksemel):
+    actionChoice = tag_data()
+
 
 class Update(AutoPiksemel):
-    release =          attribute("release")
-    type    = optional_attribute("type", choices=("security", "bug"))
-    date    =                tag("Date")
-    version =                tag("Version")
-    name    =                tag("Name")
-    email   =                tag("Email")
-    comment =                tag("Comment")
-    
+    release     =             attribute("release")
+    type        =    optional_attribute("type", choices=("security", "bug"))
+    date        =                   tag("Date")
+    version     =                   tag("Version")
+    name        =                   tag("Name")
+    email       =                   tag("Email")
+    comment     =                   tag("Comment")
+    requires    =          optional_tag("Requires", contains=one_or_more_tag("Action", class_=Action))
+
     def validate(self, doc, errors):
         #NOTE: this should be in pisi.version.Version, but situation is
         # a bit hairy there
@@ -333,10 +337,10 @@ class Update(AutoPiksemel):
             self.release = int(self.release)
         except:
             piksError(doc, errors, "bad release number '%s'" % self.release)
-        
+
         if len(self.date) != 10:
             piksError(doc, errors, "invalid date '%s'" % self.date)
-        
+
         try:
             date = time.strptime(self.date, "%Y-%m-%d")
             if date[0] < 2003:
@@ -365,7 +369,7 @@ class Package(AutoPiksemel):
     additionals           =     optional_tag("AdditionalFiles",
                                             contains=one_or_more_tag("AdditionalFile", class_=AdditionalFile))
     history               =     optional_tag("History", contains=one_or_more_tag("Update", class_=Update))
-    
+
     def validate(self, doc, errors):
         valid_name_chars = string.ascii_letters + string.digits + "_-+"
         for c in self.name:
@@ -374,7 +378,7 @@ class Package(AutoPiksemel):
         for part in self.name.split("-")[1:]:
             if part[0] in string.digits:
                 piksError(doc, errors, "package name '%s' has a number after '-'" % self.name)
-        
+
         for additional in self.additionals:
             filename = additional.target
             flag = False
@@ -390,13 +394,13 @@ class SpecFile(AutoPiksemel):
     source   =             tag("Source", class_=Source)
     packages = one_or_more_tag("Package", class_=Package)
     history  =             tag("History", contains=one_or_more_tag("Update", class_=Update))
-    
+
     def all_deps(self):
         deps = self.source.build_deps[:]
         for pak in self.packages:
             deps.extend(pak.packageDependencies)
         return deps
-    
+
     def validate(self, doc, errors):
         prev = None
         prev_date = None
@@ -415,7 +419,7 @@ class SpecFile(AutoPiksemel):
             prev_date = prev_date[0] * 10000 + prev_date[1] * 100 + prev_date[2]
         if prev != 1:
             piksError(doc.getTag("History"), errors, "missing release numbers")
-        
+
         for pak in self.packages:
             deps = map(lambda x: x.package, self.source.build_deps)
             if pak.name in deps:
@@ -443,20 +447,20 @@ class Repository:
         self.binaries = {}
         self.depends = {}
         self.no_errors = True
-    
+
     def error(self, pspec, msg):
         print "----- %s -----" % pspec[len(self.path):]
         print msg
         print
         self.no_errors = False
-    
+
     def validate_pspec(self, pspec):
         try:
             spec = SpecFile(pspec)
         except InvalidDocument, e:
             self.error(pspec, e)
             return
-        
+
         name, email = spec.source.packager.name, spec.source.packager.email
         if self.paker_names.has_key(name):
             if email != self.paker_names[name]:
@@ -470,12 +474,12 @@ class Repository:
                     (email, self.paker_mails[email], name))
         else:
             self.paker_mails[email] = name
-        
+
         if self.sources.has_key(spec.source.name):
             self.error(pspec, "This is a duplicate source package of '%s'" % self.sources[spec.source.name])
         else:
             self.sources[spec.source.name] = pspec
-        
+
         for pak in spec.packages:
             if self.binaries.has_key(pak.name):
                 self.error(pspec, "This source has duplicate binary package '%s' also in '%s'" %
@@ -483,18 +487,18 @@ class Repository:
             else:
                 self.binaries[pak.name] = pspec
             self.depends[pak.name] = "ok"
-        
+
         for dep in spec.all_deps():
             want = self.depends.get(dep.package, [])
             if want != "ok":
                 if not spec.source.name in want:
                     want.append(spec.source.name)
                     self.depends[dep.package] = want
-    
+
     def validate(self):
         for pspec in all_pspecs(self.path):
             self.validate_pspec(pspec)
-        
+
         missing = {}
         for pak in self.depends:
             if self.depends[pak] != "ok":
@@ -504,9 +508,9 @@ class Repository:
             print "----- Missing dependencies -----"
             for pak in missing:
                 print "%s depends on missing package '%s'" % (", ".join(missing[pak]), pak)
-        
+
         return self.no_errors
-    
+
     def validate_another(self, path):
         self.path = path
         return self.validate()
