@@ -99,8 +99,7 @@ don't you?
 
         ctx.mainScreen.processEvents()
         time.sleep(4)
-        yali4.sysutils.classic_reboot()
-        #yali4.sysutils.fastreboot()
+        yali4.sysutils.fastreboot()
 
 class RebootWidget(QtGui.QWidget):
 

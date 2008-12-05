@@ -226,9 +226,6 @@ def is_linux_boot(partition_path, file_system):
 def umount_(dir, param=''):
     os.system("umount %s %s" % (dir,param))
 
-def classic_reboot():
-    os.system("reboot")
-
 def reboot():
     try:
         umount(consts.target_dir + "/home")
