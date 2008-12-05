@@ -57,7 +57,7 @@ def finalize_chroot():
     c.reverse()
     for _dir in c:
         tgt = os.path.join(consts.target_dir, _dir)
-        # umount_(tgt)
+        umount_(tgt)
 
     # store log content
     import yali4.gui.context as ctx
@@ -69,8 +69,12 @@ def finalize_chroot():
     open(ctx.consts.session_file,"w").write(str(ctx.installData.sessionLog))
     os.chmod(ctx.consts.session_file,0600)
 
+    # swap off if it is opened
+    if os.path.exists(consts.swap_file_path):
+        os.system("swapoff %s" % consts.swap_file_path)
+
     # umount target dir
-    umount_(consts.target_dir,'-l')
+    umount_(consts.target_dir)
 
 def checkYaliParams(param):
     for i in [x for x in open("/proc/cmdline", "r").read().split()]:
