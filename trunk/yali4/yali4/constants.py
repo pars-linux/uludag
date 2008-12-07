@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -104,6 +104,9 @@ consts.oemInstallFile = join(consts.data_dir,"data/firstBoot.xml")
 # pisi index files
 consts.pisiIndexFile = join(consts.data_dir,"data/pisi-index.xml.bz2")
 consts.pisiIndexFileSum = join(consts.data_dir,"data/pisi-index.xml.bz2.sha1sum")
+
+# slideshows
+consts.slidepics_dir = join(consts.data_dir, "slideshow")
 
 try:
     consts.lang = locale.getdefaultlocale()[0][:2]

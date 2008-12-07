@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -21,12 +21,7 @@ from yali4.partitionrequest import partrequests
 # lock for format request
 requestsCompleted = False
 
-# bind some constant values
-# There are more values defined in yali/constants.py!
-consts.pics_dir = join(consts.data_dir, "pics")
-consts.slidepics_dir = join(consts.data_dir, "slideshow")
-consts.helps_dir = join(consts.data_dir, "helps")
-
+# debugger variables
 debugger = None
 debugEnabled = False
 
@@ -47,3 +42,6 @@ keydata = None
 
 # Bus
 bus = None
+
+# Selected disk for manual partitioning screen
+selectedDisk = None

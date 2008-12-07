@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -60,6 +60,10 @@ about disk partitioning.
     def shown(self):
         ctx.mainScreen.disableNext()
         self.diskList.checkRootPartRequest()
+
+        # Set current disk if selected in previous screen
+        if not ctx.selectedDisk == None:
+            self.diskList.setCurrent(ctx.selectedDisk)
 
     def update(self):
         self.diskList.updateEnabled = True
