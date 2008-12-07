@@ -80,9 +80,9 @@ about disk partitioning.
 
         self.connect(self.ui.accept_auto_1, SIGNAL("toggled(bool)"),self.slotSelectAutoUseAvail)
         self.connect(self.ui.accept_auto_2, SIGNAL("toggled(bool)"),self.slotSelectAutoEraseAll)
-        self.connect(self.ui.manual, SIGNAL("clicked()"),self.slotSelectManual)
-        self.connect(self.ui.accept_auto, SIGNAL("clicked()"),self.slotSelectAuto)
-        self.connect(self.ui.device_list, SIGNAL("currentItemChanged(QListWidgetItem * ,QListWidgetItem * )"),self.slotDeviceChanged)
+        self.connect(self.ui.manual,        SIGNAL("clicked()"),self.slotSelectManual)
+        self.connect(self.ui.accept_auto,   SIGNAL("clicked()"),self.slotSelectAuto)
+        self.connect(self.ui.device_list,   SIGNAL("currentItemChanged(QListWidgetItem * ,QListWidgetItem * )"),self.slotDeviceChanged)
 
     def fillDeviceList(self,limit=False):
         self.ui.device_list.clear()
@@ -114,9 +114,11 @@ about disk partitioning.
                 self.arp.append(partition)
 
         if len(self.arp) == 0:
-            self.ui.accept_auto_1.setEnabled(False)
+            self.isAutoResizeAvail = False
+            self.ui.accept_auto_1.setEnabled(self.isAutoResizeAvail)
             self.ui.accept_auto_2.toggle()
         elif len(self.arp) == 1:
+            self.isAutoResizeAvail = True
             self.autoPartPartition = self.arp[0]
             self.ui.accept_auto_1.toggle()
 
@@ -197,6 +199,7 @@ about disk partitioning.
         self.updateUI()
 
     def setAutoExclusives(self, val=True):
+        self.ui.accept_auto_1.setEnabled(self.isAutoResizeAvail)
         self.ui.accept_auto_1.setAutoExclusive(val)
         self.ui.accept_auto_2.setAutoExclusive(val)
 
@@ -210,6 +213,7 @@ about disk partitioning.
         widgets = ["manual", "accept_auto", "accept_auto_1", "accept_auto_2"]
         for widget in widgets:
             getattr(self.ui, widget).setEnabled(state)
+        ctx.mainScreen.processEvents()
 
 class DeviceItem(QtGui.QListWidgetItem):
     def __init__(self, parent, dev):
