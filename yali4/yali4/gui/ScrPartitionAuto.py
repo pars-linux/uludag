@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -64,6 +64,7 @@ about disk partitioning.
 
         self.device = None
         self.enable_next = False
+        self.isAutoResizeAvail = False
         self.lastChoice = self.ui.accept_auto_1
 
         # initialize all storage devices
@@ -81,6 +82,7 @@ about disk partitioning.
         self.connect(self.ui.accept_auto_1, SIGNAL("toggled(bool)"),self.slotSelectAutoUseAvail)
         self.connect(self.ui.accept_auto_2, SIGNAL("toggled(bool)"),self.slotSelectAutoEraseAll)
         self.connect(self.ui.manual,        SIGNAL("clicked()"),self.slotSelectManual)
+        self.connect(self.ui.manual,        SIGNAL("toggled(bool)"),self.slotToggleManual)
         self.connect(self.ui.accept_auto,   SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.device_list,   SIGNAL("currentItemChanged(QListWidgetItem * ,QListWidgetItem * )"),self.slotDeviceChanged)
 
@@ -127,7 +129,7 @@ about disk partitioning.
             self.ui.accept_auto_1.toggle()
         if ctx.installData.autoPartMethod == methodEraseAll:
             self.ui.accept_auto_2.toggle()
-        self.updateUI()
+        self.update()
 
     def execute(self):
         ctx.installData.autoPartDev = None
@@ -145,6 +147,7 @@ about disk partitioning.
                 ctx.mainScreen.moveInc = 0
             else:
                 self.execute_()
+        ctx.selectedDisk = self.ui.device_list.currentRow()
         return True
 
     def execute_(self, move=False):
@@ -166,13 +169,13 @@ about disk partitioning.
             self.device = n.getDevice()
             ctx.debugger.log("Install device selected as %s" % self.device.getPath())
 
-    def slotSelectAutoEraseAll(self,state):
+    def slotSelectAutoEraseAll(self, state):
         ctx.installData.autoPartMethod = methodEraseAll
         self.fillDeviceList()
         self.enable_next = state
         self.device = self.ui.device_list.currentItem().getDevice()
         self.lastChoice = self.ui.accept_auto_2
-        self.updateUI()
+        self.update()
 
     def slotSelectAutoUseAvail(self, state):
         ctx.installData.autoPartMethod = methodUseAvail
@@ -180,7 +183,7 @@ about disk partitioning.
         self.enable_next = state
         self.device = self.ui.device_list.currentItem().getDevice()
         self.lastChoice = self.ui.accept_auto_1
-        self.updateUI()
+        self.update()
 
     def slotSelectAuto(self):
         self.ui.accept_auto.setChecked(True)
@@ -192,18 +195,26 @@ about disk partitioning.
         self.ui.manual.setChecked(True)
         self.ui.accept_auto.setChecked(False)
         self.setAutoExclusives(False)
-        self.ui.accept_auto_1.setChecked(False)
-        self.ui.accept_auto_2.setChecked(False)
         ctx.installData.autoPartMethod = methodManual
         self.enable_next = True
-        self.updateUI()
+        self.update()
+
+    def slotToggleManual(self, b=True):
+        self.ui.accept_auto_1.setChecked(False)
+        self.ui.accept_auto_2.setChecked(False)
 
     def setAutoExclusives(self, val=True):
         self.ui.accept_auto_1.setEnabled(self.isAutoResizeAvail)
         self.ui.accept_auto_1.setAutoExclusive(val)
         self.ui.accept_auto_2.setAutoExclusive(val)
+        if not val:
+            self.slotToggleManual()
 
-    def updateUI(self):
+    def update(self):
+        if self.ui.manual.isChecked():
+            self.enable_next = True
+            self.ui.accept_auto_1.setEnabled(False)
+            self.ui.accept_auto_2.setEnabled(False)
         if self.enable_next:
             ctx.mainScreen.enableNext()
         else:

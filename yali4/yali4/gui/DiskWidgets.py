@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -142,6 +142,9 @@ class DiskList(QtGui.QWidget):
         self.tabWidget.setCurrentIndex(_cur)
         self.updatePartEdit()
         self.checkRootPartRequest()
+
+    def setCurrent(self, new):
+        self.tabWidget.setCurrentIndex(new)
 
     def checkRootPartRequest(self):
         try:

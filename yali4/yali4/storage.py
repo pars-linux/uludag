@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright 1999-2008 Gentoo Foundation
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
