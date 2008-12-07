@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-02 23:13+0200\n"
+"POT-Creation-Date: 2008-12-07 18:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,69 +49,73 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">1. Select the partitioning method:</span></p></"
-"body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Select the partitioning method:</"
+"span></p></body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:114
+#: yali4/gui/Ui/autopartwidget.py:115
 msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
 "selected method."
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:115
+#: yali4/gui/Ui/autopartwidget.py:116
 msgid "Automatic"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:116
+#: yali4/gui/Ui/autopartwidget.py:117
 msgid ""
 "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:117
+#: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:118
+#: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
 "This option will erase your entire disk. All of your data on disk will be "
 "lost !"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:119
+#: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:120
+#: yali4/gui/Ui/autopartwidget.py:121
 msgid "You can use manual partitioning with this option"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:121
+#: yali4/gui/Ui/autopartwidget.py:122
 msgid "No, I'll partition my disk manually."
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:122
+#: yali4/gui/Ui/autopartwidget.py:123
 msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">2. Select the disk to apply selected method:</"
-"span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Select the disk to apply selected "
+"method:</span></p></body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:126
+#: yali4/gui/Ui/autopartwidget.py:128
 msgid "&nbsp;"
 msgstr ""
 
@@ -910,19 +914,19 @@ msgstr ""
 msgid "Running post install operations.."
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:102
+#: yali4/gui/ScrGoodbye.py:91
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:133
+#: yali4/gui/ScrGoodbye.py:114
 msgid ""
 "<b>\n"
 "<p>Press Reboot button to restart your system.</p>\n"
 "</b>\n"
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:139 yali4/gui/ScrSummary.py:73
-#: yali4/installer.py:618
+#: yali4/gui/ScrGoodbye.py:120 yali4/gui/ScrSummary.py:73
+#: yali4/installer.py:640
 msgid "Reboot"
 msgstr ""
 
@@ -1348,7 +1352,7 @@ msgstr ""
 msgid "Hide Help"
 msgstr ""
 
-#: yali4/bootloader.py:211 yali4/bootloader.py:216
+#: yali4/bootloader.py:213 yali4/bootloader.py:218
 msgid "Windows"
 msgstr ""
 
@@ -1456,7 +1460,7 @@ msgstr ""
 msgid "Installing BootLoader..."
 msgstr ""
 
-#: yali4/installer.py:595
+#: yali4/installer.py:617
 msgid "Retry"
 msgstr ""
 
