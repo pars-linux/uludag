@@ -1,3 +1,8 @@
+2008-12-08  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
+
+	* Argument count check added
+	* "Raise exception" bug fixed.
+
 2008-11-21  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
 	* Contrib-2008 support added.

@@ -42,7 +42,7 @@ if len(sys.argv) > 1:
         debug = False
 
     contrib_parameters = ['--contrib', '-c']
-    if sys.argv[1] in contrib_parameters or sys.argv[2] in contrib_parameters:
+    if len(sys.argv) > 2 and (sys.argv[1] in contrib_parameters or sys.argv[2] in contrib_parameters):
         contrib = True
         version += 'contrib'
 
@@ -97,7 +97,8 @@ elif version[:4] == '2007':
     pi = pisi.installdb.init()
     installed_packages = pi.list_installed()        
 else:
-    raise Error("Unknown version!")
+    print "Unknown version!"
+    raise
 
 counter = 0
 index = 1
