@@ -90,8 +90,8 @@ if version[:4] == '2008':
     # If this is a contrib build-farm, then find out the contrib packages.
     if contrib:
         packagedb = pisi.db.packagedb.PackageDB()
-        contrib_packages = set(installed_packages).intersection(packagedb.list_packages("contrib-2008"))
-
+#        contrib_packages = set(installed_packages).intersection(packagedb.list_packages("contrib-2008"))
+        contrib_packages = set(installed_packages) - set(packagedb.list_packages("pardus-2008"))
 elif version[:4] == '2007':
     pisi.api.init()
     pi = pisi.installdb.init()

@@ -1,5 +1,10 @@
 2008-12-08  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
+	* Contrib search does not use contrib repo anymore: contrib installed = all installed -
+	pardus-2008 packages.
+
+2008-12-08  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
+
 	* Argument count check added
 	* "Raise exception" bug fixed.
 
