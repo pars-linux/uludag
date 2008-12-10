@@ -1,15 +1,15 @@
 from django.shortcuts import render_to_response
-from search.pathsearch.models import Entry2007, Entry2008, Entry2008Contrib
+from search.pathsearch.models import Pardus2007, Pardus2008, Contrib2008
 from django.db import models
-from search.settings import versions
+from search.settings import versions, default_version
 from django.template import RequestContext
 from django.http import Http404
 
 
-def index(request, version='2008'):
+def index(request, version=default_version):
     """ Index page for pathsearch. """
     if version not in versions:
-        version = '2008'
+        version = default_version
     if request.POST.get('q') or request.GET.get('q'):
         entry = request.POST.get('q')  or request.GET.get('q')
         # A workaround here: should be improved:
@@ -37,9 +37,9 @@ def index(request, version='2008'):
 
 def ENTRY(version):
     match = {
-             '2007' : Entry2007,
-             '2008' : Entry2008,
-             'contrib-2008' : Entry2008Contrib,
+             'pardus-2007' : Pardus2007,
+             'pardus-2008' : Pardus2008,
+             'contrib-2008' : Contrib2008,
              }
     try:
         return match[version]

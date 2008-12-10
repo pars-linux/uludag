@@ -16,9 +16,9 @@
 	<div id='header-bugzilla'>
 		
 		<div style='float:right; margin-right:2em'>
-			<h1>Pardus {{current_version}}</h1>
+			<h1>{{current_version|capfirst}}</h1>
 			{% for v in versions %}
-			| <a href="/search/{{v}}">Pardus {{v}}</a>
+			| <a href="/search/{{v}}">{{ v|capfirst }}</a>
 			{% endfor%}
 		</div>
 	</div>
