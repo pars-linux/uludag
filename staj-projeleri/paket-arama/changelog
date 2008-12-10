@@ -5,6 +5,7 @@
 	Contrib2008. They use table names of pardus_2007, pardus_2008 and
 	contrib_2008.
 	* Run the generator and import the sqls then update the web site.
+	* Updated search engine plugin (2008->pardus-2008)
 
 2008-12-10  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
