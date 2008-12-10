@@ -1,3 +1,10 @@
+2008-12-10  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
+
+	* SQL Generator has been rewritten.
+	* Supports repo, index, output arguments and verbose/help option.
+	* Finds package list from the given index, not from the repodb.
+	* Uniform tablenames: pardus_2008, contrib_2008...
+
 2008-12-08  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
 	* Contrib search does not use contrib repo anymore: contrib installed = all installed -
