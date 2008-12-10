@@ -1,4 +1,6 @@
 """
+SQL Generator for the Package Search system.
+
 Generates INSERT SQL Statements for each package-file statement and
 appends these statements at every 50 package into a file.
 """
@@ -14,31 +16,36 @@ import getopt
 import piksemel
 import string
 import gzip
-#import bz2
 
 def append_to_file(file_name, content):
+    """Appends the given content to the file"""
     f = open(file_name, "a")
     f.write(content)
     f.close()
     
 def underscorize(repo_name):
+    """Replaces -s to _ to comply with MySQL rules"""
     return repo_name.replace("-", "_")
 
-def parse_package_names_from_doc(doc):
-    return dict(map(lambda x: (x.getTagData("Name"), gzip.zlib.compress(x.toString())), doc.tags("Package")))
-
 def remove_bz2(filename):
+    """Get the unzipped filename"""
     if filename.endswith("bz2"):
         filename = filename.split(".bz2")[0]
     return filename
     
+def parse_package_names_from_doc(doc):
+    """Parses package names from the piksemel document."""
+    return dict(map(lambda x: (x.getTagData("Name"), gzip.zlib.compress(x.toString())), doc.tags("Package")))
+    
 def package_list_from_index(index_path):
+    """Returns the package list of a repo, given the repo's index."""
     index_path = remove_bz2(index_path)
     doc = piksemel.parse(index_path)
     x = parse_package_names_from_doc(doc)
     return x.keys()
     
 def usage():
+    """Prints the usage of the script."""
     print """Usage: python sqlgen.py [options] [arguments]
     Options:
     -h        Help
@@ -54,12 +61,16 @@ def usage():
     --repo=REPONAME
     repo=REPO_NAME
     
-    -i REPO_INDEX
-    --index=REPO_INDEX
-    index=REPO_INDEX
+    -i REPO_INDEX_PATH
+    --index=REPO_INDEX_PATH
+    index=REPO_INDEX_PATH
+    
+    -o OUTPUT_PATH
+    --output=OUTPUT_PATH
+    output=OUTPUT_PATH
     """
 
-# -------- ARGUMENT PARSING STARTS--------------
+# -------- ARGUMENT PARSING STARTS---------
 try:
     opts, args = getopt.getopt(sys.argv[1:], "hvr:i:o:", ["help", "repo=", "index=", "output="])
 except getopt.GetoptError, err:
@@ -82,25 +93,35 @@ for o, a in opts:
     elif o in ("-r", "--repo"):
         repo = a
     elif o in ("-i", "--index"):
-        index = a
+        index_path = a
     elif o in ("-o", "--output"):
         output = remove_bz2(a)
     else:
         assert False, "unhandled option"
 
-assert repo!=None
-assert index!=None
-assert output!=None
+try:
+    assert repo!=None
+    assert index_path!=None
+    assert output!=None
+except Exception, e:
+    usage()
+    sys.exit(2)
 
-# -------- ARGUMENT PARSING ENDED--------------
+# -------- ARGUMENT PARSING ENDED---------
+
+# -------- REMOVE OLD FILES --------------
+if os.path.exists(output):
+    os.remove(output)
+if os.path.exists(output+".bz2"):
+    os.remove(output+".bz2")
+# ------- CLEAR!-------------------------
 
 # -------- VERSION DETECTION --------------
 version = filter(lambda x:x in string.digits, repo)
-print repo,index,output,version
 assert len(version)==4
 # -----------------------------------------
 
-
+# -------- SQL HEADER ---------------------
 f = open(output, "w")
 f.write("""BEGIN;
 DROP TABLE IF EXISTS %(repo)s;
@@ -113,12 +134,14 @@ CREATE TABLE `%(repo)s` (
 COMMIT;
 """ % {'repo': underscorize(repo)})
 f.close()
+# ------------------------------------------
+
 if verbose: print "Written drop/create table statements."
 if verbose: print "Fetching package information from pisi."
 
-statements = ""
+# ---------- PACKAGE LIST ------------------
 if version == '2008':
-    installed_packages = package_list_from_index(index) # Assuming all the packages are installed!
+    installed_packages = package_list_from_index(index_path) # Assuming all the packages are installed!
     pi = pisi.db.installdb.InstallDB()
 elif version == '2007':
     pisi.api.init()
@@ -129,52 +152,66 @@ else:
     print "Unknown version!"
     raise
 
-counter = 0
-index = 1
+# ------------------------------------------
+
+# ---------- PACKAGE CONTENTS --------------
+statements = ""
+package_counter = 0
+record_index = 1
+problematic_packages = []
 
 if verbose: print "Writing package information starting..."
 
 for package in installed_packages:
     if verbose: print "Package: %s" % package 
     # Get the file list for a package
-    if version == '2007':
-        files = [file.path for file in pi.files(package).list]
-    elif version == '2008':
-        try:
+    try:
+        if version == '2007':
+            files = [file.path for file in pi.files(package).list]
+        elif version == '2008':
             files = [file.path for file in pi.get_files(package).list]
-        except:
-            if verbose: print "Passing %s..." % package
-            continue
-    #else:
-        # for pisi api changes...
-    #    files = [file.path for file in pi.get_files(package).list]
-    # For each file, generate an INSERT INTO statement and append it
+        #else:
+        # for pisi api changes in the future...
+        #    files = [file.path for file in pi.get_files(package).list]
+    except:
+           problematic_packages.append(package)
+           continue
 
+    # For each file, generate an INSERT INTO statement and append it
     for file in files:
         to_be_added = '''INSERT INTO %s VALUES(%d, "%s", "/%s");
-''' % (underscorize(repo), index, package, file)
-
+''' % (underscorize(repo), record_index, package, file)
         statements += to_be_added
-        index += 1
-    counter+=1
-    if counter == 50:
+        record_index += 1
+    # Package FINISHED!
+    package_counter+=1
+    # Clear at some periods.
+    if package_counter == 50:
         append_to_file(output, statements)
         statements = ""
-        counter = 0
+        package_counter = 0
         if verbose: print "Appended to the file..."
-
-if counter != 0:
+# If there are remaining statements not written yet, write them.
+if package_counter != 0:
     append_to_file(output, statements)
-        
+
+# Finalize the database if it is Pardus 2007.
 if version == '2007':
     pisi.installdb.finalize()
     pisi.api.finalize()
-    
+
+# Add index and make it faster!
 if verbose: print 'Adding index'
 f = open(output, "a")
-f.write('CREATE INDEX package_index USING BTREE on %s;\n' % underscorize(repo))
+f.write('CREATE INDEX package_index USING BTREE on %s(package);\nCOMMIT;\n' % underscorize(repo))
 f.close()
 
+# Compress the SQL file.
 if verbose: print 'Compressing...'
 os.system('bzip2 -z %s' % output)
-if verbose: print 'Finished...'
+
+# Warn if there are any problematic packages...
+if problematic_packages:
+    print "Warning! These packages are not included as they don't seem to be installed on the system:", ",".join(problematic_packages)
+
+print 'Finished...'

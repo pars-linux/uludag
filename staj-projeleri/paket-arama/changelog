@@ -1,5 +1,13 @@
 2008-12-10  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
+	* Cleaned up SQL Generator script.
+	* Package Search Website models are changed: Pardus2007, Pardus2008 and
+	Contrib2008. They use table names of pardus_2007, pardus_2008 and
+	contrib_2008.
+	* Run the generator and import the sqls then update the web site.
+
+2008-12-10  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
+
 	* SQL Generator has been rewritten.
 	* Supports repo, index, output arguments and verbose/help option.
 	* Finds package list from the given index, not from the repodb.

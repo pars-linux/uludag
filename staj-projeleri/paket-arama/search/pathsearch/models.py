@@ -1,49 +1,35 @@
 from django.db import models
 
-'''
-class Entry(models.Model):
+class Pardus2007(models.Model):
     package = models.CharField(max_length=60)
     path    = models.CharField(max_length=200)
     
     class Meta:
-        db_table = 'files'
-        ordering = ['package', 'path']
- 
-    
-    def __unicode__(self):
-        return '%s - %s' % (self.package, self.path)
-''' 
-    
-class Entry2007(models.Model):
-    package = models.CharField(max_length=60)
-    path    = models.CharField(max_length=200)
-    
-    class Meta:
-        db_table = 'files2007'
+        db_table = 'pardus_2007'
         ordering = ['package', 'path']
 
     
     def __unicode__(self):
         return '%s - %s' % (self.package, self.path)
     
-class Entry2008(models.Model):
+class Pardus2008(models.Model):
     package = models.CharField(max_length=60)
     path    = models.CharField(max_length=200)
     
     class Meta:
-        db_table = 'files2008'
+        db_table = 'pardus_2008'
         ordering = ['package', 'path']
 
     
     def __unicode__(self):
         return '%s - %s' % (self.package, self.path)
 
-class Entry2008Contrib(models.Model):
+class Contrib2008(models.Model):
     package = models.CharField(max_length=60)
     path    = models.CharField(max_length=200)
 
     class Meta:
-        db_table = 'files2008contrib'
+        db_table = 'contrib_2008'
         ordering = ['package', 'path']
 
     def __unicode__(self):
