@@ -255,8 +255,9 @@ class BrowserWidget(QVBox):
         self._update_label()
     
     def _bring_detail(self, item):
-        w = DetailWindow(self, item.pak)
-        w.show()
+        if item:
+            w = DetailWindow(self, item.pak)
+            w.show()
     
     def get_selection(self):
         comps = []
