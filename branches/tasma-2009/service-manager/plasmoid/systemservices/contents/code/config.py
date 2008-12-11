@@ -13,7 +13,7 @@ class SystemServicesConfig(QWidget, Ui_ServiceConfig):
         self.setupUi(self)
 
         # Read plasmoid config
-        self.config = config()
+        self.config = config
 
         # Get enabled services from config
         self.enabledServices = str(self.config.readEntry("services", "")).split(',')

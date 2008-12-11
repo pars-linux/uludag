@@ -16,10 +16,7 @@ from PyKDE4.kdeui import *
 from PyKDE4.plasma import Plasma
 
 # We dont have this module in our kdebindings
-try:
-    from PyKDE4 import plasmascript
-except:
-    import plasmascript
+import plasmascript
 
 # Plasmoid Config
 from config import SystemServicesConfig
@@ -90,7 +87,7 @@ class SystemServicesApplet(plasmascript.Applet):
 
     def updateServiceList(self):
         # delete the current layout
-        del self.layout
+        self.applet.removeAssociatedWidget(self.layout)
 
         # and create new one
         self.layout = QGraphicsLinearLayout(Qt.Vertical, self.applet)
@@ -104,7 +101,7 @@ class SystemServicesApplet(plasmascript.Applet):
         self.dialog = KDialog(None)
         self.dialog.setWindowTitle(windowTitle)
 
-        self.config_ui = SystemServicesConfig(self.dialog, self.config)
+        self.config_ui = SystemServicesConfig(self.dialog, self.config())
         self.dialog.setMainWidget(self.config_ui)
 
         self.dialog.setButtons(KDialog.ButtonCodes(KDialog.ButtonCode(KDialog.Ok | KDialog.Cancel | KDialog.Apply)))
@@ -112,6 +109,10 @@ class SystemServicesApplet(plasmascript.Applet):
 
         self.connect(self.dialog, SIGNAL("applyClicked()"), self, SLOT("configAccepted()"))
         self.connect(self.dialog, SIGNAL("okClicked()"), self, SLOT("configAccepted()"))
+
+        if self.config_ui.enabledServices[0] == '':
+            # we need new kdebindings for that
+            self.setConfigurationRequired(True)
 
     def showConfigurationInterface(self):
         self.dialog.show()
@@ -129,13 +130,16 @@ class SystemServicesApplet(plasmascript.Applet):
                 _enabledServices.append(str(item.text()).replace('&',''))
 
         # Write them into the config file
-        cg = self.config()
-        cg.writeEntry("services", QVariant(_enabledServices))
+        self.config_ui.config.writeEntry("services", QVariant(_enabledServices))
+
+        # Update enabled services with current ones
+        self.config_ui.enabledServices = _enabledServices
+
+        # It is very important to sync config before saving !
+        self.config_ui.config.sync()
 
         # Emit const Signal to save config file
         self.emit(SIGNAL("configNeedsSaving()"))
-        # Update enabled services with current ones
-        self.config_ui.enabledServices = _enabledServices
 
 def CreateApplet(parent):
     # DBUS MainLoop
