@@ -41,6 +41,8 @@ def updateDB(path_repo, repo_type):
                     count += 1
         return user
 
+    print 'Looking for new packages on %s...' % (path_repo)
+
     # Get latest builds only
     packages_farm = {}
     for filename in os.listdir(path_repo):
@@ -120,6 +122,8 @@ def updateDB(path_repo, repo_type):
                 bin.save()
 
         index += 1
+
+    print 'Done'
 
 
 def main():
