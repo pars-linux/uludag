@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ binary }}</h1>
+    <h2>Diffrence</h2>
+    <ul>
+        {% for update in binary.get_difference %}
+        <li>
+            <p>{{ update }}</p>
+            <p>{{ update.comment|linebreaks }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

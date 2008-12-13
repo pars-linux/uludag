@@ -1,0 +1,7 @@
+- Pages for:
+    - pending packages on test repo
+    - released packages on stable repo
+    - reverted packages (removed from test)
+- Filter, search, sort support
+- Vote system for pending packages (ack/nack)
+- Better user interface

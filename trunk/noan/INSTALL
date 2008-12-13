@@ -1,0 +1,28 @@
+- Copy sessions-dist.py as settings.py and set these variables:
+    - ADMINS
+    - DATABASE_NAME
+    - MEDIA_ROOT
+    - MEDIA_URL
+    - TEMPLATE_DIRS
+
+- Serve /path_to/noan/noan/
+- Redirect /media/ to /path_to/noan/media
+- Redirect /admin-media/ to /usr/lib/python2.5/site-packages/django/contrib/admin/media
+
+- Init DB:
+    $ ./manage.py syncdb
+    $ chmod -R 0777 /path_to/noan/db/
+
+- Compile translations:
+    $ ./manage.py compilemessages
+
+- Create .htaccess file in project dir:
+    SetHandler python-program
+    PythonHandler django.core.handlers.modpython
+    SetEnv DJANGO_SETTINGS_MODULE noan.settings
+    PythonDebug On
+    PythonPath "['/path_to/noan/'] + sys.path"
+    PythonInterpreter noanDjango
+
+- Populate database:
+    ./update_db.py /path_to/noan/ /path_to/2008-stable/ /path_to/2008-test/

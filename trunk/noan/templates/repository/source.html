@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ source.name }}</h1>
+    <ul>
+        <li><strong>Maintainer:</strong> ...</li>
+    </ul>
+
+    <h2>Packages</h2>
+    <ul>
+        {% for package in source.package_set.all %}
+        <li><a href="{{ package.get_url }}">{{ package.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Updates</h2>
+    <ul>
+        {% for update in source.update_set.all %}
+        <li>
+            <p>{{ update }}</p>
+            <p>{{ update.comment|linebreaks }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

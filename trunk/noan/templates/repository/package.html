@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ package.name }}</h1>
+    <h2>Binaries</h2>
+    <ul>
+        {% for binary in package.binary_set.all %}
+        <li><a href="{{ binary.get_url }}">{{ binary.get_filename }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
