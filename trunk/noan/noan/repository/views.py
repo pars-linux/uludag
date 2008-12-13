@@ -77,6 +77,26 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
     return render_to_response('repository/binary.html', context, context_instance=RequestContext(request))
 
 
+def page_pending(request):
+    binaries = Binary.objects.filter(resolution='pending')
+
+    # Pagination
+    paginator = Paginator(binaries, 25)
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+    try:
+        binaries = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        binaries = paginator.page(paginator.num_pages)
+
+    context = {
+        'binaries': binaries,
+    }
+    return render_to_response('repository/pending.html', context, context_instance=RequestContext(request))
+
+
 """
 def releases(request, maintainer='*', resolution='*', ajax=False):
     if maintainer == '*':
