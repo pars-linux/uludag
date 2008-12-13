@@ -1,6 +1,11 @@
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
+    # Pending
+    (r'^pending/$', 'noan.repository.views.page_pending_index'),
+    (r'^pending/(?P<distName>[^/]+)/$', 'noan.repository.views.page_pending_index'),
+    (r'^pending/(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/$', 'noan.repository.views.page_pending'),
+
     # Index
     (r'^$', 'noan.repository.views.page_index'),
     (r'^(?P<distName>[^/]+)/$', 'noan.repository.views.page_index'),
