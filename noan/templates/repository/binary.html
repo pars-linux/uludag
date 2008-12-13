@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>{{ binary }}</h1>
+    <ul>
+        <li><strong>Distribution:</strong> {{ binary.package.source.distribution }}</li>
+    </ul>
     <h2>Diffrence</h2>
     <ul>
         {% for update in binary.get_difference %}

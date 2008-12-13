@@ -10,7 +10,9 @@ urlpatterns = patterns('',
     (r'^repository/', include('noan.repository.urls')),
 
     # Pending
-    (r'^pending/', 'noan.repository.views.page_pending'),
+    (r'^pending/$', 'noan.repository.views.page_pending_index'),
+    (r'^pending/(?P<distName>[^/]+)/$', 'noan.repository.views.page_pending_index'),
+    (r'^pending/(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/$', 'noan.repository.views.page_pending'),
 
     # Enable the admin interface:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),

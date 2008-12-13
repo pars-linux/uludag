@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>{{ package.name }}</h1>
+    <ul>
+        <li><strong>Distribution:</strong> {{ package.source.distribution }}</li>
+    </ul>
     <h2>Binaries</h2>
     <ul>
         {% for binary in package.binary_set.all %}
