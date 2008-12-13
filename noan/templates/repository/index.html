@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Distributions</h1>
+    <ul>
+        {% for dist in distributions %}
+        <li>
+            <a href="{{ dist.get_url }}">{{ dist }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
