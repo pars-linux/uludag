@@ -5,9 +5,13 @@
     - MEDIA_URL
     - TEMPLATE_DIRS
 
-- Serve /path_to/noan/noan/
-- Redirect /media/ to /path_to/noan/media
-- Redirect /admin-media/ to /usr/lib/python2.5/site-packages/django/contrib/admin/media
+- Redirect /media to /path_to/noan/media
+
+- Link admin-media to Django admin media:
+    $ ln -sf /usr/lib/python2.5/site-packages/django/contrib/admin/media /path_to/noan/admin-media
+- Redirect /admin-media to /usr/lib/python2.5/site-packages/django/contrib/admin/media
+
+- Serve /path_to/noan/noan/ path on web server
 
 - Init DB:
     $ ./manage.py syncdb
