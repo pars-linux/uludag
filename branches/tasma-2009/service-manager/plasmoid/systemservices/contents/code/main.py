@@ -24,6 +24,47 @@ from config import SystemServicesConfig
 # DBUS-QT
 from dbus.mainloop.qt import DBusQtMainLoop
 
+class _WidgetSystemServices(QWidget):
+    def __init__(self, data):
+        QWidget.__init__(self)
+        self.setStyleSheet("background-color: rgba(255, 255, 255, 0);color: rgb(255, 255, 255)")
+        self.horizontalLayout = QHBoxLayout(self)
+        self.horizontalLayout.setMargin(0)
+
+        self.label = QLabel(self)
+        self.label.setText(data)
+        self.horizontalLayout.addWidget(self.label)
+
+        spacerItem = QSpacerItem(130, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem)
+
+        self.start = QPushButton(self)
+        self.start.setText("Start")
+        self.horizontalLayout.addWidget(self.start)
+
+        self.stop = QPushButton(self)
+        self.stop.setText("Stop")
+        self.horizontalLayout.addWidget(self.stop)
+
+class WidgetSystemServices(QGraphicsWidget):
+    def __init__(self, data):
+        QGraphicsWidget.__init__(self)
+        self.layout = QGraphicsLinearLayout(Qt.Horizontal, self)
+        self._data = data
+
+        self.label = Plasma.Label()
+        self.start = Plasma.PushButton()
+        self.start.setText("Start")
+        self.stop = Plasma.PushButton()
+        self.stop.setText("Stop")
+        self.label.setText(data)
+        self.layout.addItem(self.label)
+        self.layout.addItem(self.start)
+        self.layout.addItem(self.stop)
+
+    def getData(self):
+        return self._data
+
 class SystemServicesApplet(plasmascript.Applet):
     """ Our main applet derived from plasmascript.Applet """
 
@@ -60,7 +101,12 @@ class SystemServicesApplet(plasmascript.Applet):
         # Create config dialog
         self.prepareConfigDialog()
 
+        # Our widget stack
+        self._widgets = []
+
+        self.animator = Plasma.Animator.self()
         # Call comar to get all services infos
+        self._just_update = False
         self.getServices()
 
     def handleServices(self, package, exception, results):
@@ -68,10 +114,39 @@ class SystemServicesApplet(plasmascript.Applet):
         if not exception:
             package = str(package)
             if package in self.config_ui.enabledServices:
-                lab = Plasma.Label(self.applet)
-                lab.setText(package)
-                self.layout.addItem(lab)
-            self.config_ui.addItemToList(package)
+                # Qt Based Widget
+                spacer = QGraphicsProxyWidget()
+                widget = _WidgetSystemServices(package)
+                spacer.setWidget(widget)
+                # Plasma based Widget
+                #spacer = WidgetSystemServices(package)
+                self.animator.animateItem(spacer,0)
+                self.layout.addItem(spacer)
+                self._widgets.append(widget)
+                self.constraintsEvent(Plasma.SizeConstraint)
+            if not self._just_update:
+                self.config_ui.addItemToList(package)
+
+    def constraintsEvent(self, constraints):
+        if constraints & Plasma.SizeConstraint:
+            bh = len(self._widgets) * 40
+            resize = False
+            if bh > 0:
+                size = self.size()
+                height = size.height()
+                width = size.width()
+                bw = self._widgets[0].width() + 40
+                if size.height() < bh:
+                    height = bh
+                    resize = True
+                if size.width() < bw:
+                    width = bw
+                    resize = True
+                if resize:
+                    self.resize(width,height)
+                    self.theme.resize(self.size())
+            #self.resize(120,120)
+            #len(self._widgets)
 
     def handler(self, package, signal, args):
         pass
@@ -85,14 +160,24 @@ class SystemServicesApplet(plasmascript.Applet):
         # Get service list from comar link
         self.link.System.Service.info(async=self.handleServices)
 
-    def updateServiceList(self):
-        # delete the current layout
-        self.applet.removeAssociatedWidget(self.layout)
+    def updateList(self):
 
-        # and create new one
+        # call hide for each widget
+        for wi in self._widgets:
+            wi.hide()
+
+        # remove them from layout
+        for i in range(self.layout.count()):
+            self.layout.removeAt(i)
+
+        # and reset the widgets stack
+        self._widgets = []
+
+        # and create a new layout
         self.layout = QGraphicsLinearLayout(Qt.Vertical, self.applet)
 
-        # Get service list from comar link
+        # Get service list from comar link again and again..
+        self._just_update = True
         self.link.System.Service.info(async=self.handleServices)
 
     def prepareConfigDialog(self):
@@ -140,6 +225,13 @@ class SystemServicesApplet(plasmascript.Applet):
 
         # Emit const Signal to save config file
         self.emit(SIGNAL("configNeedsSaving()"))
+
+        # if there is a enabled services we dont need configure button anymore !
+        if len(_enabledServices) > 0:
+            self.setConfigurationRequired(False)
+
+        # and update the widget
+        self.updateList()
 
 def CreateApplet(parent):
     # DBUS MainLoop
