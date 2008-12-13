@@ -30,3 +30,5 @@
 
 - Populate database:
     ./update_db.py /path_to/noan/ /path_to/2008-stable/ /path_to/2008-test/
+
+- Run update_db.py after stable/test repository updates
