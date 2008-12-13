@@ -77,8 +77,22 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
     return render_to_response('repository/binary.html', context, context_instance=RequestContext(request))
 
 
-def page_pending(request):
-    binaries = Binary.objects.filter(resolution='pending')
+def page_pending_index(request, distName=None):
+    if distName:
+        distributions = Distribution.objects.filter(name=distName)
+    else:
+        distributions = Distribution.objects.all()
+
+    context = {
+        'distributions': distributions,
+    }
+    return render_to_response('repository/pending-index.html', context, context_instance=RequestContext(request))
+
+
+def page_pending(request, distName, distRelease):
+    distribution = Distribution.objects.get(name=distName, release=distRelease)
+
+    binaries = Binary.objects.filter(resolution='pending', package__source__distribution=distribution)
 
     # Pagination
     paginator = Paginator(binaries, 25)
