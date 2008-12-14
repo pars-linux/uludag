@@ -5,6 +5,10 @@ urlpatterns = patterns('',
     (r'^pending/$', 'noan.repository.views.page_pending_index'),
     (r'^pending/(?P<distName>[^/]+)-(?P<distRelease>[^/]+)/$', 'noan.repository.views.page_pending'),
 
+    # Users
+    (r'^users/$', 'noan.repository.views.page_users'),
+    (r'^users/(?P<userName>[^/]+)/$', 'noan.repository.views.page_user'),
+
     # Index
     (r'^$', 'noan.repository.views.page_index'),
     # Sources
