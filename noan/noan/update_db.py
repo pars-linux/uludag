@@ -26,10 +26,7 @@ def updateDB(path_repo, repo_type):
         username = email.split('@')[0]
         while not user:
             try:
-                user = User.objects.get(email=email)
-                user.first_name = first_name
-                user.last_name = last_name
-                user.save()
+                user = User.objects.get(first_name=first_name, last_name=last_name)
             except User.DoesNotExist:
                 user = User(email=email, username=username, first_name=first_name, last_name=last_name)
                 user.set_password(username)
@@ -95,12 +92,17 @@ def updateDB(path_repo, repo_type):
             package.save()
 
         for up in pisi_package.history:
-            if Update.objects.filter(no=up.release, source=source).count() == 0:
-                updated_by = createUser(up.email, up.name)
+            updated_by = createUser(up.email, up.name)
+            try:
+                up_prev = Update.objects.get(no=up.release, source=source)
+                up_prev.updated_on = up.date
+                up_prev.updated_by = updated_by
+                # up_prev.version_no = up.version_no
+                up_prev.comment = up.comment
+                up_prev.save()
+            except Update.DoesNotExist:
                 update = Update(no=up.release, source=source, version_no=up.version, updated_by=updated_by, updated_on=up.date, comment=up.comment)
                 update.save()
-            else:
-                break
 
         if repo_type == 'test':
             resolution = 'pending'
