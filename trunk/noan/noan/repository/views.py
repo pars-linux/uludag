@@ -112,7 +112,7 @@ def page_pending(request, distName, distRelease):
 
 
 def page_users(request):
-    users = User.objects.all()
+    users = User.objects.all().order_by('first_name', 'last_name')
 
     # Pagination
     paginator = Paginator(users, 25)
