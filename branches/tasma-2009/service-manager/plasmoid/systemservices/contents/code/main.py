@@ -197,7 +197,7 @@ class SystemServicesApplet(plasmascript.Applet):
 
         if self.config_ui.enabledServices[0] == '':
             # we need new kdebindings for that
-            self.setConfigurationRequired(True)
+            self.setConfigurationRequired(True, "Click configure to select services")
 
     def showConfigurationInterface(self):
         self.dialog.show()
