@@ -7,7 +7,6 @@ from django.utils import simplejson
 from django.template import RequestContext
 from noan.repository.models import *
 
-
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 def page_index(request):
@@ -110,6 +109,37 @@ def page_pending(request, distName, distRelease):
         'binaries': binaries,
     }
     return render_to_response('repository/pending.html', context, context_instance=RequestContext(request))
+
+
+def page_users(request):
+    users = User.objects.all()
+
+    # Pagination
+    paginator = Paginator(users, 25)
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+    try:
+        users = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        users = paginator.page(paginator.num_pages)
+
+    context = {
+        'developers': users,
+    }
+    return render_to_response('repository/users.html', context, context_instance=RequestContext(request))
+
+
+def page_user(request, userName):
+    developer = User.objects.get(username=userName)
+    pending = Binary.objects.filter(resolution='pending', update__updated_by=developer)
+
+    context = {
+        'developer': developer,
+        'pending': pending,
+    }
+    return render_to_response('repository/user.html', context, context_instance=RequestContext(request))
 
 
 """
