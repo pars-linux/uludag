@@ -2,8 +2,17 @@
 {% block content %}
     <h1>{{ package.name }}</h1>
     <ul>
-        <li><strong>Distribution:</strong> {{ package.source.distribution }}</li>
+        <li><strong>Distribution:</strong> <a href="{{ package.source.distribution.get_url }}">{{ package.source.distribution }}</a></li>
+        <li><strong>Source:</strong> <a href="{{ package.source.get_url }}">{{ package.source.name }}</a></li>
     </ul>
+
+    <h2>Checklist</h2>
+    <ul>
+        {% for task in package.task_set.all %}
+        <li>{{ task.get_description }}</li>
+        {% endfor %}
+    </ul>
+
     <h2>Binaries</h2>
     <ul>
         {% for binary in package.binary_set.all %}

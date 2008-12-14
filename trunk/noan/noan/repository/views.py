@@ -10,11 +10,11 @@ from noan.repository.models import *
 
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
-def page_index(request, distName=None):
-    if distName:
-        distributions = Distribution.objects.filter(name=distName)
-    else:
-        distributions = Distribution.objects.all()
+def page_index(request):
+    distributions = Distribution.objects.all()
+
+    if len(distributions) == 1:
+        return HttpResponseRedirect(distributions[0].get_url())
 
     context = {
         'distributions': distributions,
@@ -77,11 +77,12 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
     return render_to_response('repository/binary.html', context, context_instance=RequestContext(request))
 
 
-def page_pending_index(request, distName=None):
-    if distName:
-        distributions = Distribution.objects.filter(name=distName)
-    else:
-        distributions = Distribution.objects.all()
+def page_pending_index(request):
+    distributions = Distribution.objects.all()
+
+    if len(distributions) == 1:
+        dist = '%s-%s' % (distributions[0].name, distributions[0].release)
+        return HttpResponseRedirect('/repository/pending/%s/' % dist)
 
     context = {
         'distributions': distributions,

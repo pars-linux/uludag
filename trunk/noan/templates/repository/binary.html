@@ -2,9 +2,11 @@
 {% block content %}
     <h1>{{ binary }}</h1>
     <ul>
-        <li><strong>Distribution:</strong> {{ binary.package.source.distribution }}</li>
+        <li><strong>Distribution:</strong> <a href="{{ binary.package.source.distribution.get_url }}">{{ binary.package.source.distribution }}</a></li>
+        <li><strong>Source:</strong> <a href="{{ binary.package.source.get_url }}">{{ binary.package.source.name }}</a></li>
+        <li><strong>Package:</strong> <a href="{{ binary.package.get_url }}">{{ binary.package.name }}</a></li>
     </ul>
-    <h2>Diffrence</h2>
+    <h2>Difference</h2>
     <ul>
         {% for update in binary.get_difference %}
         <li>

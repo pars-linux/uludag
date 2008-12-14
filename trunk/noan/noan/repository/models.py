@@ -25,7 +25,7 @@ class Distribution(models.Model):
         return u'%s %s' % (self.name, self.release)
 
     def get_url(self):
-        return '/repository/%s/%s' % (self.name, self.release)
+        return '/repository/%s-%s' % (self.name, self.release)
 
     class Meta:
         verbose_name = _('distribution')
@@ -40,7 +40,7 @@ class Source(models.Model):
     maintained_by = models.ForeignKey(User, verbose_name=_('maintained by'))
 
     def __unicode__(self):
-        return self.name
+        return u'%s (%s)' % (self.name, self.distribution)
 
     def get_url(self):
         return '%s/%s' % (self.distribution.get_url(), self.name)
@@ -57,7 +57,7 @@ class Package(models.Model):
     source = models.ForeignKey(Source, verbose_name=_('source'))
 
     def __unicode__(self):
-        return _('%(package)s (source: %(source)s)') % {'package': self.name, 'source': self.source}
+        return _('%(package)s (source: %(source)s, distro: %(distro)s)') % {'package': self.name, 'source': self.source.name, 'distro': self.source.distribution}
 
     def get_url(self):
         return '%s/%s' % (self.source.get_url(), self.name)
@@ -115,3 +115,49 @@ class Binary(models.Model):
         verbose_name_plural = _('binaries')
         ordering = ['package__name', '-no']
         unique_together = ('no', 'package')
+
+
+class Task(models.Model):
+    package = models.ForeignKey(Package, verbose_name=_('package'))
+    description_en = models.CharField(max_length=256, verbose_name=_('description [en]'))
+
+    def __unicode__(self):
+        return u'[%s] - %s' % (self.package.name, self.get_description())
+
+    def get_description(self):
+        lang = get_current_lang()
+        if lang == 'en':
+            return self.description_en
+        descriptions = self.taskdescription_set.filter(language__code=lang)
+        if len(descriptions) > 0:
+            return descriptions[0].description
+        return self.description_en
+
+    class Meta:
+        verbose_name = _('task')
+        verbose_name_plural = _('tasks')
+
+
+class Language(models.Model):
+    code = models.CharField(max_length=6, verbose_name=_('code'))
+    name = models.CharField(max_length=32, verbose_name=_('name'))
+
+    def __unicode__(self):
+        return u'[%s] %s' % (self.code, self.name)
+
+    class Meta:
+        verbose_name = _('language')
+        verbose_name_plural = _('languages')
+
+
+class TaskDescription(models.Model):
+    task = models.ForeignKey(Task, verbose_name=_('task'))
+    language = models.ForeignKey(Language, verbose_name=_('language'))
+    description = models.CharField(max_length=256, verbose_name=_('description'))
+
+    def __unicode__(self):
+        return self.description
+
+    class Meta:
+        verbose_name = _('task description')
+        verbose_name_plural = _('task descriptions')
