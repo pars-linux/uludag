@@ -55,6 +55,14 @@ MIDDLEWARE_CLASSES = (
     # 'noan.middleware.qcount.SQLLogMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'noan.context_processors.distros',
+)
+
 ROOT_URLCONF = 'noan.urls'
 
 TEMPLATE_DIRS = (
