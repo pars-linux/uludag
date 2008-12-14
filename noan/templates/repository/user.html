@@ -15,4 +15,32 @@
         </li>
         {% endfor %}
     </ul>
+
+    <h2>Sources</h2>
+    <ul>
+        {% for distro in distros %}
+        <li>
+            {{ distro }}
+            <ul>
+                {% for source in developer.source_set.all %}
+                <li><a href="{{ source.get_url }}">{{ source.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Updates</h2>
+    <ul>
+        {% for distro in distros %}
+        <li>
+            {{ distro }}
+            <ul>
+                {% for update in developer.update_set.all %}
+                <li>{{ update.source.name }} - release {{ update.no }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
