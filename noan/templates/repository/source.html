@@ -2,7 +2,7 @@
 {% block content %}
     <h1>{{ source.name }}</h1>
     <ul>
-        <li><strong>Distribution:</strong> {{ source.distribution }}</li>
+        <li><strong>Distribution:</strong> <a href="{{ source.distribution.get_url }}">{{ source.distribution }}</a></li>
     </ul>
 
     <h2>Packages</h2>

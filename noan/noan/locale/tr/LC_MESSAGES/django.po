@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NOAN 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-13 21:58+0200\n"
+"POT-Creation-Date: 2008-12-14 13:51+0200\n"
 "PO-Revision-Date: 2008-12-10 00:25+0200\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
@@ -36,6 +36,7 @@ msgid "Reverted"
 msgstr "Geri Alındı"
 
 #: repository/models.py:21 repository/models.py:38 repository/models.py:56
+#: repository/models.py:143
 msgid "name"
 msgstr "isim"
 
@@ -65,10 +66,10 @@ msgstr "kaynaklar"
 
 #: repository/models.py:60
 #, python-format
-msgid "%(package)s (source: %(source)s)"
-msgstr "%(package)s (kaynak: %(source)s)"
+msgid "%(package)s (source: %(source)s, distro: %(distro)s)"
+msgstr "%(package)s (kaynak: %(source)s, dağıtm: %(distro)s)"
 
-#: repository/models.py:66 repository/models.py:92
+#: repository/models.py:66 repository/models.py:92 repository/models.py:121
 msgid "package"
 msgstr "paket"
 
@@ -126,3 +127,39 @@ msgstr "ikili"
 #: repository/models.py:115
 msgid "binaries"
 msgstr "ikililer"
+
+#: repository/models.py:122
+msgid "description [en]"
+msgstr "tanım [ing]"
+
+#: repository/models.py:137 repository/models.py:154
+msgid "task"
+msgstr "görev"
+
+#: repository/models.py:138
+msgid "tasks"
+msgstr "görevler"
+
+#: repository/models.py:142
+msgid "code"
+msgstr "kod"
+
+#: repository/models.py:149 repository/models.py:155
+msgid "language"
+msgstr "dil"
+
+#: repository/models.py:150
+msgid "languages"
+msgstr "diller"
+
+#: repository/models.py:156
+msgid "description"
+msgstr "tanım"
+
+#: repository/models.py:162
+msgid "task description"
+msgstr "görev tanımı"
+
+#: repository/models.py:163
+msgid "task descriptions"
+msgstr "görev tanımları"
