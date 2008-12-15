@@ -120,14 +120,17 @@ def updateDB(path_source, full_import, newRelease):
         for dir in specDirs:
             importSpec(os.path.join(dir, 'pspec.xml'))
     else:
+        specFiles = []
         def cbNotify(_info):
             action = _info['action']
             path = _info['path']
-            if path.endswith('pspec.xml'):
+            if path.endswith('/pspec.xml'):
                 if action in [pysvn.wc_notify_action.update_add, pysvn.wc_notify_action.update_update]:
-                    importSpec(path)
+                    specFiles.append(path)
         cli.callback_notify = cbNotify
         cli.update(path_source)
+        for specFile in specFiles:
+            importSpec(specFile)
 
 def main():
     usage = "usage: %prog [options] path/to/noan path/to/repo/source"
