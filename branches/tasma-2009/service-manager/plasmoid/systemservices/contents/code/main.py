@@ -24,7 +24,7 @@ from config import SystemServicesConfig
 # DBUS-QT
 from dbus.mainloop.qt import DBusQtMainLoop
 
-class _WidgetSystemServices(QWidget):
+class WidgetSystemServices(QWidget):
     def __init__(self, data):
         QWidget.__init__(self)
         self.setStyleSheet("background-color: rgba(255, 255, 255, 0);color: rgb(255, 255, 255)")
@@ -45,25 +45,6 @@ class _WidgetSystemServices(QWidget):
         self.stop = QPushButton(self)
         self.stop.setText("Stop")
         self.horizontalLayout.addWidget(self.stop)
-
-class WidgetSystemServices(QGraphicsWidget):
-    def __init__(self, data):
-        QGraphicsWidget.__init__(self)
-        self.layout = QGraphicsLinearLayout(Qt.Horizontal, self)
-        self._data = data
-
-        self.label = Plasma.Label()
-        self.start = Plasma.PushButton()
-        self.start.setText("Start")
-        self.stop = Plasma.PushButton()
-        self.stop.setText("Stop")
-        self.label.setText(data)
-        self.layout.addItem(self.label)
-        self.layout.addItem(self.start)
-        self.layout.addItem(self.stop)
-
-    def getData(self):
-        return self._data
 
 class SystemServicesApplet(plasmascript.Applet):
     """ Our main applet derived from plasmascript.Applet """
@@ -102,9 +83,11 @@ class SystemServicesApplet(plasmascript.Applet):
         self.prepareConfigDialog()
 
         # Our widget stack
-        self._widgets = []
+        self._widgets = {}
 
+        # Our animator instance to animate adding/deleting widgets
         self.animator = Plasma.Animator.self()
+
         # Call comar to get all services infos
         self._just_update = False
         self.getServices()
@@ -113,29 +96,45 @@ class SystemServicesApplet(plasmascript.Applet):
         """ Handles comar feedbacks and creates the widgets in applet."""
         if not exception:
             package = str(package)
+
+            # If service is enabled create a proper widget and add it to the plasmoid
             if package in self.config_ui.enabledServices:
-                # Qt Based Widget
-                spacer = QGraphicsProxyWidget()
-                widget = _WidgetSystemServices(package)
-                spacer.setWidget(widget)
-                # Plasma based Widget
-                #spacer = WidgetSystemServices(package)
-                self.animator.animateItem(spacer,0)
-                self.layout.addItem(spacer)
-                self._widgets.append(widget)
+                # We need to use QGraphicsProxy
+                proxy = QGraphicsProxyWidget()
+
+                # Create widget which describes and handles service state
+                widget = WidgetSystemServices(package)
+
+                # Set our widget as QGraphicsWidget
+                proxy.setWidget(widget)
+
+                # Add item to widget
+                self.layout.addItem(proxy)
+
+                # Animate creation of widget
+                self.animator.animateItem(proxy,0)
+
+                # Add widget to our widget stack
+                self._widgets[package] = widget
+
+                # Update the size of Plasmoid
                 self.constraintsEvent(Plasma.SizeConstraint)
+
+            # This method handles all service info request
+            # but in configuration list we don't need to add them again..
             if not self._just_update:
                 self.config_ui.addItemToList(package)
 
     def constraintsEvent(self, constraints):
         if constraints & Plasma.SizeConstraint:
+            # Update plasmoid size according to number of enabled services
             bh = len(self._widgets) * 40
             resize = False
             if bh > 0:
                 size = self.size()
                 height = size.height()
                 width = size.width()
-                bw = self._widgets[0].width() + 40
+                bw = self._widgets.values()[0].width() + 40
                 if size.height() < bh:
                     height = bh
                     resize = True
@@ -145,8 +144,6 @@ class SystemServicesApplet(plasmascript.Applet):
                 if resize:
                     self.resize(width,height)
                     self.theme.resize(self.size())
-            #self.resize(120,120)
-            #len(self._widgets)
 
     def handler(self, package, signal, args):
         pass
@@ -163,7 +160,7 @@ class SystemServicesApplet(plasmascript.Applet):
     def updateList(self):
 
         # call hide for each widget
-        for wi in self._widgets:
+        for wi in self._widgets.values():
             wi.hide()
 
         # remove them from layout
@@ -171,7 +168,7 @@ class SystemServicesApplet(plasmascript.Applet):
             self.layout.removeAt(i)
 
         # and reset the widgets stack
-        self._widgets = []
+        self._widgets = {}
 
         # and create a new layout
         self.layout = QGraphicsLinearLayout(Qt.Vertical, self.applet)
