@@ -35,6 +35,6 @@ def getDeltasNotGoingTo(path, package):
     # build to any build other than 45.
     # return -> ['kernel-41-42-delta.pisi', 'kernel-41-44.delta-pisi', etc]
     name = getName(package)
-    targetbuild = getBuild(package)
+    targetBuild = getBuild(package)
     return list(set(getDeltaPackages(path, name)).difference(getDeltaPackages(path, name, targetBuild)))
 

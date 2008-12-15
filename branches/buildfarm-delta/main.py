@@ -163,6 +163,7 @@ def buildPackages():
     logger.raw()
     logger.raw()
 
+    """
     # Save current path
     current = os.getcwd()
     for dir in [config.binaryPath, config.testPath]:
@@ -177,13 +178,12 @@ def buildPackages():
     # Check packages containing binaries and libraries broken by any package update
     print "\n*** Checking binary consistency with revdep-rebuild.."
     os.system("/usr/bin/revdep-rebuild --force")
+    """
 
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
 
 def movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPackages):
-
-    # Some inner methods here..
 
     def cleanupStaleDeltaPackages(package):
         # Say that 'package' is kernel-2.6.25.20-114.45.pisi
@@ -191,15 +191,15 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPac
         # packages/ and packages-test/ because we no longer need them.
         build = getBuild(package)
         for p in getDeltasNotGoingTo(config.binaryPath, package):
-            logger.info("*** Removing stale delta '%s' from '%s'" % (package, config.binaryPath))
-            remove(join(config.binaryPath, package))
+            logger.info("*** Removing stale delta '%s' from '%s'" % (p, config.binaryPath))
+            remove(join(config.binaryPath, p))
 
         for p in getDeltasNotGoingTo(config.testPath, package):
-            logger.info("*** Removing stale delta '%s' from '%s'" % (package, config.testPath))
-            remove(join(config.testPath, package))
+            logger.info("*** Removing stale delta '%s' from '%s'" % (p, config.testPath))
+            remove(join(config.testPath, p))
 
     def removeOldPackage(package):
-        logger.info("*** Removing old package '%s' from %s" % (package, config.testPath))
+        logger.info("*** Removing old package '%s' from '%s'" % (package, config.testPath))
         if exists(join(config.testPath, package)):
             # If an old build is found in testPath
             # remove it because the test repo is unique.
@@ -276,10 +276,11 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPac
         if package:
             moveDeltaPackage(package)
 
-    for package in newPackages:
-        # Remove delta packages going to any build != newPackage's build
-        if package:
-            cleanupStaleDeltaPackages(package)
+    if deltaPackages:
+        for package in newPackages:
+            # Remove delta packages going to any build != newPackage's build
+            if package:
+                cleanupStaleDeltaPackages(package)
 
 
 
