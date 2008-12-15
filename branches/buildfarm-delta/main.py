@@ -163,7 +163,6 @@ def buildPackages():
     logger.raw()
     logger.raw()
 
-    """
     # Save current path
     current = os.getcwd()
     for dir in [config.binaryPath, config.testPath]:
@@ -178,7 +177,6 @@ def buildPackages():
     # Check packages containing binaries and libraries broken by any package update
     print "\n*** Checking binary consistency with revdep-rebuild.."
     os.system("/usr/bin/revdep-rebuild --force")
-    """
 
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
