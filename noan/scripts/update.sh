@@ -16,7 +16,7 @@ rsync rsync://192.168.3.110/2007-test --recursive --delete-after --update --verb
 
 echo --------------------------
 
-./import_binary.py ${NOAN_PATH} /mnt/sda6/noan/repo/pardus-binary/2007-stable /mnt/sda6/noan/repo/pardus-binary/2007-test
+./import_binary.py ${NOAN_PATH} /mnt/sda6/noan/repo/pardus-binary/2007-stable /mnt/sda6/noan/repo/pardus-binary/2007-test -r 1.1
 
 echo --------------------------
 
