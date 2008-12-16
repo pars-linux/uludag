@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import optparse
 import os
 import sys
 
@@ -16,7 +17,7 @@ def printUsage():
     sys.exit(1)
 
 
-def updateDB(path_repo, repo_type):
+def updateDB(path_repo, repo_type, newRelease):
     from django.contrib.auth.models import User
     from noan.repository.models import Distribution, Source, Package, Binary, Update
 
@@ -52,10 +53,15 @@ def updateDB(path_repo, repo_type):
         pisi_meta = pisi_file.get_metadata()
         pisi_package = pisi_meta.package
 
+        if newRelease:
+            release = newRelease
+        else:
+            release = pisi_package.distributionRelease
+
         try:
-            distribution = Distribution.objects.get(name=pisi_package.distribution, release=pisi_package.distributionRelease)
+            distribution = Distribution.objects.get(name=pisi_package.distribution, release=release)
         except Distribution.DoesNotExist:
-            print  '    No such distribution in database: %s-%s' % (pisi_package.distribution, pisi_package.distributionRelease)
+            print  '    No such distribution in database: %s-%s' % (pisi_package.distribution, release)
             continue
 
         try:
@@ -99,12 +105,16 @@ def updateDB(path_repo, repo_type):
 
 
 def main():
-    try:
-        path_noan = sys.argv[1]
-        path_stable = sys.argv[2]
-        path_test = sys.argv[3]
-    except:
-        printUsage()
+    usage = "usage: %prog [options] path/to/noan path/to/binary/stable /path/to/binary/test"
+    parser = optparse.OptionParser(usage=usage)
+    parser.add_option("-r", "--release", dest="release",
+                      help="use RELEASE as ditro version instead", metavar="RELEASE")
+
+    (options, args) = parser.parse_args()
+    if len(args) != 3:
+        parser.error("Incorrect number of arguments")
+
+    path_noan, path_stable, path_test = args
 
     os.environ['DJANGO_SETTINGS_MODULE'] = 'noan.settings'
     sys.path.insert(0, path_noan)
@@ -113,8 +123,8 @@ def main():
     except ImportError:
         printUsage()
 
-    updateDB(path_stable, 'stable')
-    updateDB(path_test, 'test')
+    updateDB(path_stable, 'stable', options.release)
+    updateDB(path_test, 'test', options.release)
 
 
 if __name__ == '__main__':
