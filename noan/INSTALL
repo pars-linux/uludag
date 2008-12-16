@@ -32,8 +32,12 @@
     ./import_source.py /path_to/noan/ /path_to/repo/pardus/devel/ -r Devel
     ./import_source.py /path_to/noan/ /path_to/repo/pardus/2008/
     ./import_source.py /path_to/noan/ /path_to/repo/pardus/2007/
+    ./import_binary.py /path_to/noan/ /path_to/repo/binary/2008-stable /path_to/repo/binary/2008-test
+    ./import_binary.py /path_to/noan/ /path_to/repo/binary/2007-stable /path_to/repo/binary/2007-test
 
 - Import updated files (runs 'svn up'):
     ./import_source.py -u /path_to/noan/ /path_to/repo/pardus/devel/ -r Devel
     ./import_source.py -u /path_to/noan/ /path_to/repo/pardus/2008/
     ./import_source.py -u /path_to/noan/ /path_to/repo/pardus/2007/
+    ./import_binary.py /path_to/noan/ /path_to/repo/binary/2008-stable /path_to/repo/binary/2008-test
+    ./import_binary.py /path_to/noan/ /path_to/repo/binary/2007-stable /path_to/repo/binary/2007-test

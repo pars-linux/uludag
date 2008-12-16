@@ -1,10 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import datetime
 import os
-import pisi
 import sys
+
+try:
+    import pisi
+except ImportError:
+    print 'Unable to import module "pisi". Not using Pardus?'
+    sys.exit(1)
 
 
 def printUsage():
@@ -19,26 +23,7 @@ def updateDB(path_repo, repo_type):
     if repo_type not in ['stable', 'test']:
         return
 
-    def createUser(email, name):
-        user = None
-        first_name, last_name = name.rsplit(' ', 1)
-        count = 1
-        username = email.split('@')[0]
-        while not user:
-            try:
-                user = User.objects.get(first_name=first_name, last_name=last_name)
-            except User.DoesNotExist:
-                user = User(email=email, username=username, first_name=first_name, last_name=last_name)
-                user.set_password(username)
-                try:
-                    user.save()
-                except:
-                    user = None
-                    username += str(count)
-                    count += 1
-        return user
-
-    print 'Looking for new packages on %s...' % (path_repo)
+    print 'Scanning %s...' % (path_repo)
 
     # Get latest builds only
     packages_farm = {}
@@ -58,63 +43,50 @@ def updateDB(path_repo, repo_type):
     files_db = [x.get_filename() for x in Binary.objects.all()]
     files_new = set(files_farm) - set(files_db)
 
-    total = len(files_new)
-    index = 1
     for filename in files_new:
         fullpath = os.path.join(path_repo, filename)
 
-        print '[%s/%s] %s' % (index, total, fullpath)
+        print '  Importing %s' % fullpath
 
         pisi_file = pisi.package.Package(fullpath)
         pisi_meta = pisi_file.get_metadata()
         pisi_package = pisi_meta.package
 
-        maintained_by = createUser(pisi_package.source.packager.email, pisi_package.source.packager.name)
-
         try:
             distribution = Distribution.objects.get(name=pisi_package.distribution, release=pisi_package.distributionRelease)
         except Distribution.DoesNotExist:
-            distribution = Distribution(name=pisi_package.distribution, release=pisi_package.distributionRelease)
-            distribution.save()
+            print  '    No such distribution in database: %s-%s' % (pisi_package.distribution, pisi_package.distributionRelease)
+            continue
 
         try:
             source = Source.objects.get(name=pisi_package.source.name, distribution=distribution)
-            source.maintained_by = maintained_by
-            source.save()
         except Source.DoesNotExist:
-            source = Source(name=pisi_package.source.name, distribution=distribution, maintained_by=maintained_by)
-            source.save()
+            print  '    No such source in database: %s' % (pisi_package.source.name)
+            continue
 
         try:
             package = Package.objects.get(name=pisi_package.name, source=source)
         except Package.DoesNotExist:
-            package = Package(name=pisi_package.name, source=source)
-            package.save()
-
-        for up in pisi_package.history:
-            updated_by = createUser(up.email, up.name)
-            try:
-                up_prev = Update.objects.get(no=up.release, source=source)
-                up_prev.updated_on = up.date
-                up_prev.updated_by = updated_by
-                # up_prev.version_no = up.version_no
-                up_prev.comment = up.comment
-                up_prev.save()
-            except Update.DoesNotExist:
-                update = Update(no=up.release, source=source, version_no=up.version, updated_by=updated_by, updated_on=up.date, comment=up.comment)
-                update.save()
+            print  '    No such package in database: %s' % (pisi_package.name)
+            continue
 
         if repo_type == 'test':
             resolution = 'pending'
         elif repo_type == 'stable':
             resolution = 'released'
 
-        update = Update.objects.filter(source=source, no=pisi_package.history[0].release)[0]
+        updates = Update.objects.filter(source=source, no=pisi_package.history[0].release)
+        if len(updates) == 0:
+            print  '    No package update in database: %s' % (pisi_package.name)
+            continue
+
+        update = updates[0]
         try:
             binary = Binary.objects.get(no=pisi_package.build, package=package)
         except Binary.DoesNotExist:
             binary = Binary(no=pisi_package.build, package=package, update=update, resolution=resolution)
             binary.save()
+            print '    New binary'
 
         if repo_type == 'test':
             # Mark other 'pending' binaries as 'reverted'
@@ -122,8 +94,6 @@ def updateDB(path_repo, repo_type):
             for bin in binaries:
                 bin.resolution = 'reverted'
                 bin.save()
-
-        index += 1
 
     print 'Done'
 
