@@ -13,6 +13,13 @@
         {% endfor %}
     </ul>
 
+    <h2>Build Dependencies</h2>
+    <ul>
+        {% for dep in source.builddependency_set.all %}
+        <li>{{ dep }}</li>
+        {% endfor %}
+    </ul>
+
     <h2>Updates</h2>
     <ul>
         {% for update in source.update_set.all %}

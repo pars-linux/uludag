@@ -14,6 +14,13 @@
         {% endfor %}
     </ul>
 
+    <h2>Runtime Dependencies</h2>
+    <ul>
+        {% for dep in package.runtimedependency_set.all %}
+        <li>{{ dep }}</li>
+        {% endfor %}
+    </ul>
+
     <h2>Binaries</h2>
     <ul>
         {% for binary in package.binary_set.all %}

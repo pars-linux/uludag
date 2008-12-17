@@ -26,9 +26,19 @@ def findSpecs(folder):
             dirs.remove(".svn")
     return specs
 
+def toString(obj):
+    if not obj:
+        return ''
+    return str(obj)
+
+def toInt(obj):
+    if not obj:
+        return 0
+    return int(obj)
+
 def updateDB(path_source, full_import, newRelease):
     from django.contrib.auth.models import User
-    from noan.repository.models import Distribution, Source, Package, Binary, Update
+    from noan.repository.models import Distribution, Source, Package, Binary, Update, BuildDependency, RuntimeDependency
 
     def createUser(email, name):
         user = None
@@ -65,6 +75,7 @@ def updateDB(path_source, full_import, newRelease):
         distroRelease = newRelease
     print '  Distribution: %s-%s' % (distroName, distroRelease)
 
+    # Add distribution to database
     try:
         distribution = Distribution.objects.get(name=distroName, release=distroRelease)
     except Distribution.DoesNotExist:
@@ -75,8 +86,10 @@ def updateDB(path_source, full_import, newRelease):
         print '  Importing %s' % _spec
         pspec = pisi.specfile.SpecFile(_spec)
 
+        # Add or update developer
         maintained_by = createUser(pspec.source.packager.email, pspec.source.packager.name)
 
+        # Add source or update maintainer
         try:
             source = Source.objects.get(name=pspec.source.name, distribution=distribution)
             source.maintained_by = maintained_by
@@ -86,6 +99,14 @@ def updateDB(path_source, full_import, newRelease):
             source.save()
             print '    New source: %s' % source.name
 
+        # Update build dependencies
+        for dep in BuildDependency.objects.filter(source=source):
+            dep.delete()
+        for dep in pspec.source.buildDependencies:
+            dependency = BuildDependency(source=source, dep_package=dep.package, version=toString(dep.version), version_to=toString(dep.versionTo), version_from=toString(dep.versionFrom), release=toInt(dep.release), release_to=toInt(dep.releaseTo), release_from=toInt(dep.releaseFrom))
+            dependency.save()
+
+        # Add or update package info
         for pack in pspec.packages:
             try:
                 package = Package.objects.get(name=pack.name, source=source)
@@ -94,6 +115,13 @@ def updateDB(path_source, full_import, newRelease):
                 package = Package(name=pack.name, source=source)
                 package.save()
                 print '    New package: %s' % package.name
+
+            # Update runtime dependencies
+            for dep in RuntimeDependency.objects.filter(package=package):
+                dep.delete()
+            for dep in pack.runtimeDependencies():
+                dependency = RuntimeDependency(package=package, dep_package=dep.package, version=toString(dep.version), version_to=toString(dep.versionTo), version_from=toString(dep.versionFrom), release=toInt(dep.release), release_to=toInt(dep.releaseTo), release_from=toInt(dep.releaseFrom))
+                dependency.save()
 
         up_count = 0
         for up in pspec.history:
