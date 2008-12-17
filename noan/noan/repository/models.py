@@ -69,10 +69,74 @@ class Package(models.Model):
         unique_together = ('name', 'source')
 
 
+class BuildDependency(models.Model):
+    source = models.ForeignKey(Source, verbose_name=_('dependent'))
+    dep_package = models.CharField(max_length=64, verbose_name=_('package'))
+    version = models.CharField(max_length=32, verbose_name=_('version'), default='', blank=True)
+    version_from = models.CharField(max_length=32, verbose_name=_('version from'), default='', blank=True)
+    version_to = models.CharField(max_length=32, verbose_name=_('version to'), default='', blank=True)
+    release = models.IntegerField(verbose_name=_('release'), default=0, blank=True)
+    release_from = models.IntegerField(verbose_name=_('release from'), default=0, blank=True)
+    release_to = models.IntegerField(verbose_name=_('release to'), default=0, blank=True)
+
+    def __unicode__(self):
+        if self.release != 0:
+            return u'%s == r%s' % (self.dep_package, self.release)
+        if self.version != '':
+            return u'%s == %s' % (self.dep_package, self.version)
+        dep = []
+        if self.version_from != '':
+            dep.append('<= %s' % self.version_from)
+        if self.version_to != '':
+            dep.append('>= %s' % self.version_to)
+        if self.release_from != 0:
+            dep.append('<= r%s' % self.release_from)
+        if self.release_to != 0:
+            dep.append('>= r%s' % self.release_to)
+        return u'%s %s' % (self.dep_package, ' '.join(dep))
+
+    class Meta:
+        verbose_name = _('build dependency')
+        verbose_name_plural = _('build depencencies')
+        ordering = ['dep_package']
+
+
+class RuntimeDependency(models.Model):
+    package = models.ForeignKey(Package, verbose_name=_('dependent'))
+    dep_package = models.CharField(max_length=64, verbose_name=_('package'))
+    version = models.CharField(max_length=32, verbose_name=_('version'), default='', blank=True)
+    version_from = models.CharField(max_length=32, verbose_name=_('version from'), default='', blank=True)
+    version_to = models.CharField(max_length=32, verbose_name=_('version to'), default='', blank=True)
+    release = models.IntegerField(verbose_name=_('release'), default=0, blank=True)
+    release_from = models.IntegerField(verbose_name=_('release from'), default=0, blank=True)
+    release_to = models.IntegerField(verbose_name=_('release to'), default=0, blank=True)
+
+    def __unicode__(self):
+        if self.release != 0:
+            return u'%s == r%s' % (self.dep_package, self.release)
+        if self.version != '':
+            return u'%s == %s' % (self.dep_package, self.version)
+        dep = []
+        if self.version_from != '':
+            dep.append('<= %s' % self.version_from)
+        if self.version_to != '':
+            dep.append('>= %s' % self.version_to)
+        if self.release_from != 0:
+            dep.append('<= r%s' % self.release_from)
+        if self.release_to != 0:
+            dep.append('>= r%s' % self.release_to)
+        return u'%s %s' % (self.dep_package, ' '.join(dep))
+
+    class Meta:
+        verbose_name = _('runtime dependency')
+        verbose_name_plural = _('runtime depencencies')
+        ordering = ['dep_package']
+
+
 class Update(models.Model):
     no = models.IntegerField(verbose_name=_('release no'))
     source = models.ForeignKey(Source, verbose_name=_('source'))
-    version_no = models.CharField(max_length=16, verbose_name=_('version no'))
+    version_no = models.CharField(max_length=32, verbose_name=_('version no'))
     updated_by = models.ForeignKey(User, verbose_name=_('updated by'))
     updated_on = models.DateField(verbose_name=_('updated on'))
     comment = models.TextField(max_length=512, verbose_name=_('comment'))
