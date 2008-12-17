@@ -88,7 +88,7 @@ class CallHandler:
         if self.ignore_reply:
             method(ignore_reply=self.ignore_reply, *self.args)
         else:
-            method(reply_handler=self.__handleReply, error_handler=self.__handleError, *self.args)
+            method(reply_handler=self.__handleReply, error_handler=self.__handleError, timeout=2**16-1, *self.args)
     
     def __getIface(self):
         try:
