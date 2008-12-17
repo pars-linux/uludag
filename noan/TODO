@@ -1,6 +1,8 @@
 - Pages for:
     - released packages on stable repo
     - reverted packages (removed from test)
+    - pending packages
+        - mark ACK'ed, NACK'ed and "dependencies not ACK'ed" packages
 - Filter, search, sort support
 - Vote system for pending packages (ack/nack)
 - Better user interface
