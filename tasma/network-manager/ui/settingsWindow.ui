@@ -166,42 +166,6 @@
                                 <property name="name">
                                     <cstring>unnamed</cstring>
                                 </property>
-                                <widget class="QLabel" row="1" column="0">
-                                    <property name="name">
-                                        <cstring>auth_key_type_label</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Key Type</string>
-                                    </property>
-                                    <property name="alignment">
-                                        <set>AlignVCenter|AlignRight</set>
-                                    </property>
-                                    <property name="buddy" stdset="0">
-                                        <cstring>auth_key_type_combo</cstring>
-                                    </property>
-                                </widget>
-                                <widget class="QComboBox" row="1" column="1">
-                                    <property name="name">
-                                        <cstring>auth_key_type_combo</cstring>
-                                    </property>
-                                    <property name="duplicatesEnabled">
-                                        <bool>false</bool>
-                                    </property>
-                                </widget>
-                                <widget class="QLabel" row="0" column="0">
-                                    <property name="name">
-                                        <cstring>auth_key_mode_label</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Mod</string>
-                                    </property>
-                                    <property name="alignment">
-                                        <set>AlignVCenter|AlignRight</set>
-                                    </property>
-                                    <property name="buddy" stdset="0">
-                                        <cstring>auth_key_mode_combo</cstring>
-                                    </property>
-                                </widget>
                                 <widget class="QComboBox" row="3" column="1">
                                     <property name="name">
                                         <cstring>auth_inner_combo</cstring>
@@ -227,23 +191,6 @@
                                         </size>
                                     </property>
                                 </spacer>
-                                <widget class="QComboBox" row="0" column="1">
-                                    <property name="name">
-                                        <cstring>auth_key_mode_combo</cstring>
-                                    </property>
-                                    <property name="sizeLimit">
-                                        <number>2</number>
-                                    </property>
-                                    <property name="maxCount">
-                                        <number>2</number>
-                                    </property>
-                                    <property name="insertionPolicy">
-                                        <enum>AtBottom</enum>
-                                    </property>
-                                    <property name="duplicatesEnabled">
-                                        <bool>false</bool>
-                                    </property>
-                                </widget>
                                 <widget class="QLabel" row="3" column="0">
                                     <property name="name">
                                         <cstring>auth_inner_label</cstring>

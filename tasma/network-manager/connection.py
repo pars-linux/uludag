@@ -235,19 +235,14 @@ class Settings(SettingsWindow):
 
         if "auth" in link.modes:
             self.security_mode_combo.insertItem(i18n("No authentication"))
-            self.auth_key_mode_combo.insertItem("restricted")
-            self.auth_key_mode_combo.insertItem("open")
-            self.auth_key_type_combo.insertItem("ascii")
-            self.auth_key_type_combo.insertItem("hex")
 
             for mode in self.link.auth_modes:
                 self.security_mode_combo.insertItem(mode.name)
             for enc in self.auth_dict:
                 self.auth_mode_combo.insertItem(enc)
 
-            self.connect(self.auth_key_type_combo, SIGNAL("activated(int)"), self.slotPasswordCheck)
-            self.connect(self.auth_passphrase_line, SIGNAL("textChanged(const QString &)"), self.slotPasswordCheck)
             self.connect(self.security_mode_combo, SIGNAL("activated(int)"), self.slotSecurityToggle)
+            self.connect(self.auth_passphrase_line, SIGNAL("textChanged(const QString &)"), self.slotPasswordCheck)
             self.connect(self.auth_mode_combo, SIGNAL("activated(int)"), self.slotAuthToggle)
             self.connect(self.auth_ca_cert_but, SIGNAL("clicked()"), self.getCaCert)
             self.connect(self.auth_client_cert_but, SIGNAL("clicked()"), self.getClientCert)
@@ -311,8 +306,6 @@ class Settings(SettingsWindow):
         self.auth_anon_id_label.setText(i18n("Anonymous User :"))
         self.auth_inner_label.setText(i18n("Inner Authentication"))
         self.auth_mode_label.setText(i18n("Authentication"))
-        self.auth_key_type_label.setText(i18n("Key Type"))
-        self.auth_key_mode_label.setText(i18n("Mode"))
         self.auth_client_cert_but.setText(i18n("browse"))
         self.auth_client_cert_but.setIconSet(getIconSet("file", KIcon.Small))
         self.auth_ca_cert_but.setText(i18n("browse"))
@@ -385,11 +378,6 @@ class Settings(SettingsWindow):
                 self.setAuthVisible(False)
                 self.auth_passphrase_label.show()
                 self.auth_passphrase_line.show()
-                if self.link.auth_modes[sec-1].id != "wpa-psk":
-                    self.auth_key_mode_label.show()
-                    self.auth_key_mode_combo.show()
-                    self.auth_key_type_label.show()
-                    self.auth_key_type_combo.show()
 
             elif self.link.auth_modes[sec-1].type == "login":
                 self.setAuthVisible(False)
@@ -400,10 +388,6 @@ class Settings(SettingsWindow):
 
             elif self.link.auth_modes[sec-1].type == "certificate":
                 self.setAuthVisible(True)
-                self.auth_key_mode_label.hide()
-                self.auth_key_mode_combo.hide()
-                self.auth_key_type_label.hide()
-                self.auth_key_type_combo.hide()
                 self.updateStack(None, auth)
 
                 if len(self.auth_dict[str(self.auth_mode_combo.currentText())]) == 0:
@@ -445,10 +429,6 @@ class Settings(SettingsWindow):
         self.auth_private_key_but.setShown(true)
         self.auth_private_key_pass_line.setShown(true)
         self.auth_private_key_pass_label.setShown(true)
-        self.auth_key_mode_label.setShown(true)
-        self.auth_key_mode_combo.setShown(true)
-        self.auth_key_type_label.setShown(true)
-        self.auth_key_type_combo.setShown(true)
 
     def slotPasswordCheck(self, pword=None):
         pword = self.auth_passphrase_line.text()
@@ -459,14 +439,8 @@ class Settings(SettingsWindow):
             self.auth_passphrase_line.setPaletteBackgroundColor(QColor(255, 192, 192))
         # wep
         elif self.security_mode_combo.currentText() == "WEP":
+            pass
             # hex key
-            if self.auth_key_type_combo.currentItem():
-                if not pword.length() in [10, 26]:
-                    self.auth_passphrase_line.setPaletteBackgroundColor(QColor(255, 192, 192))
-            # ascii
-            else:
-                if not pword.length() in[5, 13]:
-                    self.auth_passphrase_line.setPaletteBackgroundColor(QColor(255, 192, 192))
 
     def slotSecurityToggle(self, i=None):
         # security mode changed, like wep, wpa-psk ..
@@ -534,16 +508,7 @@ class Settings(SettingsWindow):
                                 self.security_mode_combo.setCurrentItem(i)
                                 self.slotSecurityToggle(i)
                                 if mode.id == "wep":
-                                    if not self.auth_key_mode_combo.currentText() == unicode(conn.keymode):
-                                        if self.auth_key_mode_combo.currentItem():
-                                            self.auth_key_mode_combo.setCurrentItem(0)
-                                        else:
-                                            self.auth_key_mode_combo.setCurrentItem(1)
-                                    if not self.auth_key_type_combo.currentText() == unicode(conn.keytype):
-                                        if self.auth_key_type_combo.currentItem():
-                                            self.auth_key_type_combo.setCurrentItem(0)
-                                        else:
-                                            self.auth_key_type_combo.setCurrentItem(1)
+                                    pass
                             elif mode.type == "login":
                                 self.auth_user_line.setText(unicode(conn.auth_user))
                                 self.auth_passphrase_line.setText(unicode(conn.auth_pass))
@@ -630,18 +595,16 @@ class Settings(SettingsWindow):
             if "auth" in self.link.modes:
                 i = self.security_mode_combo.currentItem()
                 if i == 0:
-                    comlink.call(self.link.script, "Net.Link", "setAuthentication", name, "none", "", "", "", "", "", "", "", "", "", "", "")
+                    comlink.call(self.link.script, "Net.Link", "setAuthentication", name, "none", "", "", "", "", "", "", "", "", "")
                 else:
                     mode = self.link.auth_modes[i-1]
                     if mode.type == "pass":
                         pw = unicode(self.auth_passphrase_line.text())
-                        am = unicode(self.auth_key_mode_combo.currentText())
-                        at = unicode(self.auth_key_type_combo.currentText())
-                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, "", pw, "", "", "", "", "", "", "", am, at)
+                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, "", pw, "", "", "", "", "", "", "")
                     elif mode.type == "login":
                         u = unicode(self.auth_user_line.text())
                         pw = unicode(self.auth_passphrase_line.text())
-                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "", "", "")
+                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
                     elif mode.type == "certificate":
                         if mode.id == "802.1x":
                             u = unicode(self.auth_user_line.text())
@@ -650,11 +613,11 @@ class Settings(SettingsWindow):
                             au = unicode(self.auth_mode_combo.currentText())
                             p2 = unicode(self.auth_inner_combo.currentText())
                             comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, au, an, p2,\
-                                str(self.auth_client_cert), str(self.auth_ca_cert), str(self.auth_private_key), str(self.auth_private_key_pass_line.text()), "", "")
+                                str(self.auth_client_cert), str(self.auth_ca_cert), str(self.auth_private_key), str(self.auth_private_key_pass_line.text()))
                         else:
                             u = unicode(self.auth_user_line.text())
                             pw = unicode(self.auth_passphrase_line.text())
-                            comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "", "", "")
+                            comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
             # close dialog
             self.parent().setEnabled(True)
             self.cleanup()

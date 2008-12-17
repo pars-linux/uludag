@@ -91,8 +91,6 @@ class Connection(Hook):
         self.auth_anon = None
         self.auth_auth = None
         self.auth_inner = None
-        self.keymode = "restricted"
-        self.keytype = None
         self.channel = None
         self.device_mode = "Managed"
         self.parse(data)
@@ -113,8 +111,6 @@ class Connection(Hook):
         self.dns_server = data.get("nameserver")
         self.apmac = data.get("apmac")
         self.channel = data.get("channel")
-        self.keymode = data.get("key_mode")
-        self.keytype = data.get("key_type")
         self.device_mode = data.get("device_mode", "Managed")
         state = data.get("state", "unavailable")
         if " " in state:
@@ -321,7 +317,7 @@ class DBusInterface(Hook):
         ch2.call()
 
     def handleConnectionInfo(self, script, info):
-        def handler(conn, mode, username, password, channel, auth, anon, inner, clicert, cacert, prikey, prikeypass, kmode, ktype):
+        def handler(conn, mode, username, password, channel, auth, anon, inner, clicert, cacert, prikey, prikeypass):
             conn.got_auth = True
             conn.auth_mode = mode
             conn.auth_user = username
@@ -334,8 +330,6 @@ class DBusInterface(Hook):
             conn.auth_client_cert = clicert
             conn.auth_private_key = prikey
             conn.auth_private_key_pass = prikeypass
-            conn.keymode = kmode
-            conn.keytype = ktype
 
             if conn.first_time:
                 conn.first_time = False
