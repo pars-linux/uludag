@@ -34,7 +34,10 @@ def toString(obj):
 def toInt(obj):
     if not obj:
         return 0
-    return int(obj)
+    try:
+        return int(obj)
+    except ValueError:
+        return 0
 
 def updateDB(path_source, full_import, newRelease):
     from django.contrib.auth.models import User

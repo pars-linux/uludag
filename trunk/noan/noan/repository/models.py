@@ -86,13 +86,13 @@ class BuildDependency(models.Model):
             return u'%s == %s' % (self.dep_package, self.version)
         dep = []
         if self.version_from != '':
-            dep.append('<= %s' % self.version_from)
+            dep.append('>= %s' % self.version_from)
         if self.version_to != '':
-            dep.append('>= %s' % self.version_to)
+            dep.append('<= %s' % self.version_to)
         if self.release_from != 0:
-            dep.append('<= r%s' % self.release_from)
+            dep.append('>= r%s' % self.release_from)
         if self.release_to != 0:
-            dep.append('>= r%s' % self.release_to)
+            dep.append('<= r%s' % self.release_to)
         return u'%s %s' % (self.dep_package, ' '.join(dep))
 
     class Meta:
@@ -118,13 +118,13 @@ class RuntimeDependency(models.Model):
             return u'%s == %s' % (self.dep_package, self.version)
         dep = []
         if self.version_from != '':
-            dep.append('<= %s' % self.version_from)
+            dep.append('>= %s' % self.version_from)
         if self.version_to != '':
-            dep.append('>= %s' % self.version_to)
+            dep.append('<= %s' % self.version_to)
         if self.release_from != 0:
-            dep.append('<= r%s' % self.release_from)
+            dep.append('>= r%s' % self.release_from)
         if self.release_to != 0:
-            dep.append('>= r%s' % self.release_to)
+            dep.append('<= r%s' % self.release_to)
         return u'%s %s' % (self.dep_package, ' '.join(dep))
 
     class Meta:
