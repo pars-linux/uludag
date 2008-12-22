@@ -144,11 +144,14 @@ if __name__ == "__main__":
     updatedPspecFiles = r.getChanges(type = "U", filter="pspec.xml")
     newPspecFiles = r.getChanges(type = "A", filter="pspec.xml")
 
+    if not updatedPspecFiles or newPspecFiles:
+        print "\nNo new updates concerning source packages.\nExiting."
+        sys.exit(0)
+
     # Print the packages that will be pushed to queue
-    if updatedPspecFiles or newPspecFiles:
-        print "\nThe following packages will be pushed to buildfarm's workqueue:\n%s" % ('-'*60)
-        for p in updatedPspecFiles + newPspecFiles:
-            print "  * %s" % p
+    print "\nThe following packages will be pushed to buildfarm's workqueue:\n%s" % ('-'*60)
+    for p in updatedPspecFiles + newPspecFiles:
+        print "  * %s" % p
 
     # Get 'revDepUpdates' containing package list
     (breaksABI, revDepsToBeRecompiled) = r.getReverseDependencies()
