@@ -98,6 +98,9 @@ class RepositoryManager:
         # We need to find out the reverse build dependencies of these packages.
         # e.g. live555 breaks ABI, vlc and mplayer needs live555 during build
 
+        # Don't forget that we need a source repository added in buildfarm 
+        # to make this revdep support work!
+
         for p in breaksABI:
             for revdep, revdepObject in sdb.get_rev_deps(p):
                 # e.g. (revdep, revdepObject) = ('vlc', <pisi.dependency.Dependency object at 0xa3284cc>)
