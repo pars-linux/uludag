@@ -97,6 +97,9 @@ consts.min_root_size = 3500
 consts.kahyaParam = "kahya"
 consts.defaultKahyaFile = join(consts.data_dir,"data/default.xml")
 
+# style sheet
+consts.stylesheet = join(consts.data_dir, "data/%s.qss" % options.theme)
+
 # oemInstall options
 consts.oemInstallParam = "oeminstall"
 consts.oemInstallFile = join(consts.data_dir,"data/firstBoot.xml")

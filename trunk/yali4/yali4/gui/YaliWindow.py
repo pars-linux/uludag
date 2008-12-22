@@ -46,6 +46,9 @@ class Widget(Ui_YaliMain):
         # something funny
         self.cursorShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F7),self.ui)
 
+        # set style
+        self.ui.setStyleSheet(file(ctx.consts.stylesheet).read())
+
         # self.ui.setAttribute(Qt.WA_OpaquePaintEvent)
         # move one step at a time
         self.moveInc = 1
