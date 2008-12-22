@@ -74,7 +74,9 @@ class PisiApi:
 
         for p in newBinaryPackages:
             if not getName(p) in [getName(pa) for pa in oldBinaryPackages]:
-                brandNewBinaryPackages.append(newBinaryPackages.pop(newBinaryPackages.index(p)))
+                brandNewBinaryPackages.append(p)
+
+        map(newBinaryPackages.remove, brandNewBinaryPackages)
 
         # brandNew contains the possible first builds
         # Just add those to the end of newBinaryPackages for
