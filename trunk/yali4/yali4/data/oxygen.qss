@@ -4,7 +4,7 @@
 #YaliMain {
        background-image:url(':/images/background.svg');
        background-repeat: no-repeat;
-       /* background-position: center; */
+       background-position: center top;
        background-color: rgb(26,26,26);
 }
 
@@ -46,44 +46,6 @@ QLabel {
 
 QGroupBox {
         color: #eeeeee;
-}
-
-QGroupBox {
-        color: #eeeeee;
-        background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                    stop: 0 #000000, stop: 1 #000000);
-        border: 2px solid #6b6b6b;
-        border-radius: 5px;
-        margin-top: 1ex;
-}
-
-QGroupBox::title {
-	subcontrol-origin: margin;
-	subcontrol-position: top center;
-	padding: 0 3px;
-	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-					stop: 0 #000000, stop: 1 #000000);
-}
-
-
-QGroupBox{
-	border-width: 2px;
-	margin: 4px;
-	padding: 2px;
-	border-style: solid;
-	border-color: #6b6b6b;
-	border-radius: 5px;
-	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-					stop: 0 #000000, stop: 1 #000000);
-}
-
-QGroupBox::title{
-	subcontrol-origin: border;
-	padding: 7px;
-	left: 5px;
-	top: -1ex;
-	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-					stop: 0 #000000, stop: 1 #000000);
 }
 
 QPushButton {
@@ -340,6 +302,7 @@ QTextEdit, QListView {
         background-color: #000000;
         border: 1px solid #6b6b6b;
         border-radius: 4px;
+        alternate-background-color: #222222;
 }
 
 QTreeView {
@@ -397,7 +360,6 @@ QProgressBar:chunk {
         border: 2px solid #6193cf;
         border-radius: 2px;
         margin: 2px;
-/*        width: 16px;*/
 }
 
 QScrollBar:vertical {

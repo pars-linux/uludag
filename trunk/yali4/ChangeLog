@@ -1,3 +1,8 @@
+2008-12-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Theme support added to cmd-line options
+         * Oxygen based new theme added
+         * Theme files seperated from UI
+
 2008-12-07 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * Copyright dates are updated
          * Property "help" added to base class ScreenWidget
