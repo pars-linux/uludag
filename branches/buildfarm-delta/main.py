@@ -135,6 +135,9 @@ def buildPackages():
                 except Exception, e:
                     # Transfer source package to wait queue in case of an install error
                     qmgr.transferToWaitQueue(pspec)
+
+                    # FIXME: The packages before packagesToInstall[p] are already installed and therefore need to be
+                    # uninstalled because p can't be installed.
                     errmsg = "Error occured for '%s' in INSTALL process: %s" % (os.path.join(config.workDir, p), e)
                     logger.error(errmsg)
                     mailer.error(errmsg, pspec)
