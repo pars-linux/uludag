@@ -8,7 +8,7 @@ xgettext -L "python" -k__tr -k_ yali4/gui/Ui/*.py yali4/gui/*.py yali4/*.py -o p
 for lang in $LANGUAGES
 do
     msgcat --use-first -o $TEMP $lang po/yali4.pot
-    msgmerge --no-wrap --backup=off -U $TEMP $lang
+    msgmerge -U $lang $TEMP
     #sed -e '/^#~/d' $TEMP > $lang
 done
 rm -f $TEMP
