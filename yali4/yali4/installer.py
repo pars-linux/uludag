@@ -565,13 +565,13 @@ class Yali:
                             # update device order for kernel command if already defined
                             _kernel = entry.getCommand("kernel")
                             if _kernel.value.startswith('('):
-                                _kernel.value = ''.join([_root.value, _kernel.value])
+                                _kernel.value = ''.join([_root.value, _kernel.value.split(')')[1]])
 
                             # update device order for initrd command if already defined
                             _initrd = entry.getCommand("initrd")
                             if _initrd:
                                 if _initrd.value.startswith('('):
-                                    _initrd.value = ''.join([_root.value, _initrd.value])
+                                    _initrd.value = ''.join([_root.value, _initrd.value.split(')')[1]])
 
                             grubConf.addEntry(entry)
                         continue
