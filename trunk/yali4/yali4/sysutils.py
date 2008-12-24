@@ -83,11 +83,11 @@ def checkYaliParams(param):
                 return True
     return False
 
-def checkPlugin():
+def checkYaliOptions(param):
     for i in [x for x in open("/proc/cmdline", "r").read().split(' ')]:
-        if i.startswith("yali4=") and not i.find("plugin:") == -1:
+        if i.startswith("yali4=") and not i.find("%s:" % param) == -1:
             for param in i.split("=")[1].split(","):
-                if param.startswith("plugin:"):
+                if param.startswith("%s:" % param):
                     return str(param.split(':')[1]).strip()
     return None
 

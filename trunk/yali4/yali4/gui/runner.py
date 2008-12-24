@@ -64,7 +64,7 @@ class Runner:
         if yali4.sysutils.checkYaliParams(param=ctx.consts.oemInstallParam):
             install_type = YALI_OEMINSTALL
 
-        install_plugin = yali4.sysutils.checkPlugin() or ctx.options.plugin or None
+        install_plugin = yali4.sysutils.checkYaliOptions("plugin") or ctx.options.plugin or None
         if install_plugin:
             install_type = YALI_PLUGIN
 
