@@ -243,16 +243,16 @@ def execClear(command, argv, stdin = 0, stdout = 1, stderr = 2):
     import yali4.gui.context as ctx
 
     argv = list(argv)
-    if type(stdin) == type("string"):
+    if isinstance(stdin, str):
         if os.access(stdin, os.R_OK):
             stdin = open(stdin)
         else:
             stdin = 0
-    if type(stdout) == type("string"):
+    if isinstance(stdout, str):
         stdout = open(stdout, "w")
-    if type(stderr) == type("string"):
+    if isinstance(stderr, str):
         stderr = open(stderr, "w")
-    if stdout is not None and type(stdout) != int:
+    if stdout is not None and not isinstance(stdout, int):
         ctx.debugger.log("Running CMD : %s" %([command] + argv,))
         stdout.write("Running... %s\n" %([command] + argv,))
 
@@ -310,13 +310,13 @@ def execClear(command, argv, stdin = 0, stdout = 1, stderr = 2):
 def execWithCapture(command, argv, stdin = 0, stderr = 2, root ='/'):
     argv = list(argv)
 
-    if type(stdin) == type("string"):
+    if isinstance(stdin, str):
         if os.access(stdin, os.R_OK):
             stdin = open(stdin)
         else:
             stdin = 0
 
-    if type(stderr) == type("string"):
+    if isinstance(stderr, str):
         stderr = open(stderr, "w")
 
     try:

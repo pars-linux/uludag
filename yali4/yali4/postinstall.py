@@ -149,7 +149,7 @@ def setRootPassword():
 
 def writeConsoleData():
     keymap = ctx.installData.keyData["consolekeymap"]
-    if type(keymap) == list:
+    if isinstance(keymap, list):
         keymap = keymap[1]
     yali4.localeutils.write_keymap(ctx.installData.keyData["consolekeymap"])
     ctx.debugger.log("Keymap stored.")
