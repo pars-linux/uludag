@@ -31,7 +31,7 @@ class RepositoryManager:
 
         def update():
             logger.info("\nUpdating pisi-index* files..")
-            os.popen("/usr/bin/svn up pisi-index*")
+            os.popen("/usr/bin/svn up %s/pisi-index*" % config.localPspecRepo)
             logger.info("\nUpdating local pspec repository '%s'" % (config.localPspecRepo))
             f = os.popen("/usr/bin/svn up %s" % config.localPspecRepo)
 
