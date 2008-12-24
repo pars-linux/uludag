@@ -31,7 +31,7 @@ class RepositoryManager:
 
         def update():
             logger.info("\nUpdating pisi-index* files..")
-            os.popen("/usr/bin/svn up %s/pisi-index*" % config.localPspecRepo)
+            os.system("/usr/bin/svn up %s/pisi-index*" % config.localPspecRepo)
             logger.info("\nUpdating local pspec repository '%s'" % (config.localPspecRepo))
             f = os.popen("/usr/bin/svn up %s" % config.localPspecRepo)
 
@@ -70,7 +70,7 @@ class RepositoryManager:
                 rval = [t for t in [x for x in rval if find(x, filter) > -1] if find(t, exclude[i]) == -1]
             return rval
 
-    def getReverseDependencies(self):
+    def getReverseDependencies(self, pspecList):
         # Needs a source repository added to system.
 
         def getPackageName(pspec):
@@ -85,16 +85,15 @@ class RepositoryManager:
         # Create a diff output of all the repository
         # This is much more efficient that doing 'svn di' for every changed file.
         # difflist is list of tuples: ('kernel/kernel/pspec.xml', commit_diff)
-        print "Calling svn diff. This may take a little while depending on the repository state.."
-        diffoutput = os.popen("/usr/bin/svn di -r %d:%d %s" % (self.oldRevision, self.getRevision(), config.localPspecRepo)).read().strip()
-        print "Parsing svn diff output.."
+        print "\nCalling svn diff. This may take a little while depending on the repository state.."
+        diffoutput = os.popen("/usr/bin/svn di -r %d:%d %s" % (self.oldRevision, self.getRevision(), " ".join(pspecList))).read().strip()
+        print "\nParsing svn diff output.."
         difflist = [(pspec.split("\n")[0], "".join([l for l in pspec.split("\n")[4:] if l.startswith("+")])) \
                     for pspec in diffoutput.split("Index: ")[1:] if pspec.split("\n")[0].endswith("/pspec.xml")]
 
         for pspec, diff in difflist:
             if "<Action>reverseDependencyUpdate</Action>" in diff:
                 breaksABI.append(getPackageName(pspec))
-                print "*** %s breaks ABI." % pspec
 
         # Now we have the list of packages which break ABI.
         # We need to find out the reverse build dependencies of these packages.
@@ -146,7 +145,7 @@ if __name__ == "__main__":
     updatedPspecFiles = r.getChanges(type = "U", filter="pspec.xml")
     newPspecFiles = r.getChanges(type = "A", filter="pspec.xml")
 
-    if not updatedPspecFiles or newPspecFiles:
+    if not updatedPspecFiles or not newPspecFiles:
         print "\nNo new updates concerning source packages.\nExiting."
         sys.exit(0)
 
@@ -155,12 +154,13 @@ if __name__ == "__main__":
     for p in updatedPspecFiles + newPspecFiles:
         print "  * %s" % p
 
-    # Get 'revDepUpdates' containing package list
-    (breaksABI, revDepsToBeRecompiled) = r.getReverseDependencies()
+    # Get 'reverseDepepdencypUpdate' containing package list
+    # A brand new package can't have this property
+    (breaksABI, revDepsToBeRecompiled) = r.getReverseDependencies(updatedPspecFiles)
 
     # Print the revdeps to be recompiled
     if breaksABI:
-        print "\nThese updates broke ABI:\n%s" % ('-'*60)
+        print "\nThese updates broke ABI:\n%s" % ('-'*24)
         for p in breaksABI:
             print "  * %s" % p
 
