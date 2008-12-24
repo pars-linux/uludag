@@ -17,7 +17,7 @@ outputDir        = "/var/cache/pisi/buildlogs/"
 binaryPath       = "/var/cache/pisi/packages/"
 testPath         = "/var/cache/pisi/packages-test/"
 deltaPath        = "/var/cache/pisi/packages-delta/"
-localPspecRepo   = "/root/devel"
+localPspecRepo   = "/root/2008"
 logFile          = "/var/cache/pisi/buildfarm.log"
 
 #information for mailer module.
