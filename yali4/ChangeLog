@@ -1,3 +1,6 @@
+2008-12-24 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Get theme options from cmdline
+
 2008-12-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * Theme support added to cmd-line options
          * Oxygen based new theme added
