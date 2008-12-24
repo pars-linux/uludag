@@ -59,12 +59,6 @@ class Window(NameConf):
         self.cancelBut.setText(i18n("Cancel"))
 
     def accept(self):
-        if self.dns.count() < 2:
-            QMessageBox.warning(self, i18n("Name Server Configuration"),
-                i18n("You should enter at least two name servers."),
-                QMessageBox.Ok, QMessageBox.NoButton)
-            return
-
         host = str(self.host.text())
         dns = []
 
@@ -106,7 +100,7 @@ class Window(NameConf):
             ch.registerError(cancel)
             ch.registerDBusError(cancel)
             ch.registerAuthError(cancel)
-            ch.call(dns)
+            ch.call(dns, False)
         else:
             self.done += 1
 
