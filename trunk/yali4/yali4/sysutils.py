@@ -86,9 +86,9 @@ def checkYaliParams(param):
 def checkYaliOptions(param):
     for i in [x for x in open("/proc/cmdline", "r").read().split(' ')]:
         if i.startswith("yali4=") and not i.find("%s:" % param) == -1:
-            for param in i.split("=")[1].split(","):
-                if param.startswith("%s:" % param):
-                    return str(param.split(':')[1]).strip()
+            for part in i.split("=")[1].split(","):
+                if part.startswith("%s:" % param):
+                    return str(part.split(':')[1]).strip()
     return None
 
 def swap_as_file(filepath, mb_size):
@@ -276,7 +276,7 @@ def execClear(command, argv, stdin = 0, stdout = 1, stderr = 2):
         try:
             s = os.read(p[0], 1)
         except OSError, args:
-            (num, str) = args
+            (num, msg) = args
             if (num != 4):
                 raise IOError, args
 
