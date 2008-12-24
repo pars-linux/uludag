@@ -17,7 +17,6 @@ import locale
 from os.path import join
 from os.path import exists
 from yali4.options import options
-import yali4.sysutils
 
 class _constant:
     """ Constant members implementation """
@@ -97,9 +96,6 @@ consts.min_root_size = 3500
 # kahya options
 consts.kahyaParam = "kahya"
 consts.defaultKahyaFile = join(consts.data_dir,"data/default.xml")
-
-# style sheet
-consts.stylesheet = join(consts.data_dir, "data/%s.qss" % (options.theme or yali4.sysutils.checkYaliOptions("theme")))
 
 # oemInstall options
 consts.oemInstallParam = "oeminstall"

@@ -18,6 +18,10 @@ from yali4.constants import consts
 from yali4.options import options
 from yali4.partitionrequest import partrequests
 
+# style sheet
+import yali4.sysutils
+consts.stylesheet = join(consts.data_dir, "data/%s.qss" % (yali4.sysutils.checkYaliOptions("theme") or options.theme))
+
 # lock for format request
 requestsCompleted = False
 
