@@ -135,7 +135,7 @@ if __name__ == "__main__":
         print "\n".join(open("/var/pisi/workQueue", "rb").read().split("\n"))
 
     print "\nCurrent waitqueue:\n%s" % ('-'*60)
-    if os.path.exists(os.path.join(config.workDir, "workQueue")):
+    if os.path.exists(os.path.join(config.workDir, "waitQueue")):
         print "\n".join(open("/var/pisi/waitQueue", "rb").read().split("\n"))
 
     # Create RepositoryManager
@@ -175,4 +175,4 @@ if __name__ == "__main__":
             queue = open(os.path.join(config.workDir, "workQueue"), "rb").read().strip().split("\n")
 
         queue.extend(updatedPspecFiles + newPspecFiles + revDepsToBeRecompiled)
-        open(os.path.join(config.workDir, "workQueue"), "wb").write("\n".join(list(set(queue)))+"\n")
+        open(os.path.join(config.workDir, "workQueue"), "wb").write("\n".join([l for l in list(set(queue)) if l])+"\n")
