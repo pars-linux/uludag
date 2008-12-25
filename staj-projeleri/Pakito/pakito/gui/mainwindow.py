@@ -227,16 +227,10 @@ class MainWindow(KParts.MainWindow):
             return
         actionspyFile.close()
 
-        #component.xml control...........................................................
-        component=True
-        try: 
-            componentFile = open("component.xml", "r+")
-        except:
+        #component.xml control
+        component = os.path.isfile(os.path.join(packageDir, "..", "component.xml"))
+        if not component:
             KMessageBox.sorry(self, i18n("No component.xml found."), i18n("Error"))
-            component=False
-        if component:
-            componentFile.close()
-        #................................................................................
 
         qApp.setOverrideCursor(KCursor.waitCursor())
 
@@ -266,19 +260,19 @@ class MainWindow(KParts.MainWindow):
             self.closePacket()
             return
 
-        if component:
-            newdir=os.path.realpath("component.xml")
-            shutil.copyfile(newdir,tempDir+"component.xml")
+        #if component:
+        #    newdir=os.path.realpath("component.xml")
+        #    shutil.copyfile(newdir,tempDir+"component.xml")
 
         self.actionsTab = ActionsWidget(self.twTabs, os.path.join(self.newTempDir, "actions.py"))
-        if component:
-            self.componentTab = ComponentWidget(self.twTabs, os.path.join(tempDir, "component.xml"))
+        #if component:
+        #    self.componentTab = ComponentWidget(self.twTabs, os.path.join(tempDir, "component.xml"))
 
         self.tempDir = tempDir + packageName
         self.twTabs.addTab(self.pspecTab, i18n("Specification"))
         self.twTabs.addTab(self.actionsTab, i18n("Actions"))
-        if component:
-            self.twTabs.addTab(self.componentTab, i18n("Component"))
+        #if component:
+        #    self.twTabs.addTab(self.componentTab, i18n("Component"))
         self.twTabs.setCurrentPage(0)
 
         #connections
