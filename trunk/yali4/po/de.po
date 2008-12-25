@@ -13,9 +13,9 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-02 14:40+0200\n"
-"PO-Revision-Date: 2008-09-12 23:43+0200\n"
+"PO-Revision-Date: 2008-12-25 13:33+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
-"Language-Team: Deutsch\n"
+"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -56,7 +56,6 @@ msgid "Form1"
 msgstr "Form1"
 
 #: yali4/gui/Ui/autopartwidget.py:134
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -70,15 +69,17 @@ msgid ""
 "\" font-size:12pt; font-weight:600;\">Select the partitioning method:</"
 "span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">1. Wählen Sie the Partitionierungsmethode aus:"
-"</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Partitionierungsmethode auswählen:</"
+"span></p></body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:139
 msgid ""
@@ -96,8 +97,7 @@ msgstr "Automatisch"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:141
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
 "grössenänderbare Partition zu finden"
@@ -130,7 +130,6 @@ msgid "No, I'll partition my disk manually."
 msgstr "Nein, ich werde meine Festplatte manuell partitionieren."
 
 #: yali4/gui/Ui/autopartwidget.py:147
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -144,14 +143,16 @@ msgid ""
 "\" font-size:12pt; font-weight:600;\">Select the disk to apply selected "
 "method:</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">2. Wählen Sie die Festplatte aus, um die "
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Die Festplatte auswählen, um die "
 "ausgewählte Methode zu übernehmen:</span></p></body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:152
@@ -779,8 +780,7 @@ msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
 #: yali4/gui/DiskWidgets.py:320
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%"
 "(fsType)s</b>."
@@ -804,19 +804,14 @@ msgstr ""
 "löschen!"
 
 #: yali4/gui/DiskWidgets.py:379
-#, fuzzy
 msgid "Too many primary partitions !"
-msgstr "Es existieren zu viele primäre Partitionen!"
+msgstr "Zu viele primäre Partitionen!"
 
 #: yali4/gui/DiskWidgets.py:380
-#, fuzzy
 msgid ""
 "You need to delete one of the primary or extended(if exists) partition from "
 "your disk table !"
-msgstr ""
-"GPT Laufwerktabellen werden für erweiterte Partitionen nicht unterstützt.\n"
-"Sie müssen aus Ihrer Laufwerktabelle einen von Ihrer primären Partition "
-"löschen!"
+msgstr "Sie müssen von Ihrer Laufwerkstabelle eine von den primären oder erweiterten (falls vorhanden) Partition löschen!"
 
 #: yali4/gui/DiskWidgets.py:397 yali4/gui/ScrSummary.py:160
 #, python-format
@@ -989,9 +984,7 @@ msgstr ""
 msgid ""
 "<center><font color=\"#FF6D19\">Don't use your username as password !</"
 "font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Verwenden Sie nicht Ihren Benutzernamen oder "
-"Namen als Passwort!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Verwenden Sie nicht Ihren Benutzernamen oder Namen als Passwort!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:153
 msgid ""
@@ -1087,8 +1080,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
+msgstr "<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1193,8 +1185,7 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr ""
-"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
+msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1258,7 +1249,7 @@ msgstr "Konfiguration des Pakets: %s"
 #: yali4/gui/ScrInstall.py:157
 #, python-format
 msgid "Package install failed : <b>%s</b><br>Do you want to retry ?"
-msgstr ""
+msgstr "Paketinstallation fehlgeschlagen : <b>%s</b><br>Möchten Sie wieder versuchen?"
 
 #: yali4/gui/ScrInstall.py:177
 msgid "Creating baselayout for your system!"
@@ -1560,8 +1551,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:186
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:201
 msgid "Bootloader Settings"
@@ -1615,7 +1605,6 @@ msgid "Create users to use Pardus..."
 msgstr "Legen Sie Benutzer zur Verwendung von Pardus an..."
 
 #: yali4/gui/ScrUsers.py:35
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -1639,20 +1628,19 @@ msgid ""
 "</font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Benutzereinrichtung</font>\n"
+"<font size=\"+2\">Benutzer-Einrichtung</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2008 ermöglicht mehreren Benutzern die gemeinsame Nutzung eines "
-"Computers.\n"
-"Sie können den von Ihnen angelegten Benutzern Verwaltungsrechte zuteilen und "
-"auch die Rechte der Benutzer für diverse Tätigkeiten durch TASMA "
-"konfigurieren.\n"
+"Pardus 2008 ermöglicht mehreren Benutzern die gemeinsame "
+"Nutzung eines Computers.\n"
+"Sie können den von Ihnen angelegten Benutzern Verwaltungsrechte "
+"zuteilen und auch die Rechte der Benutzer für diverse Tätigkeiten "
+"durch TASMA konfigurieren.\n"
 "</p>\n"
 "<p>\n"
-"Um ein neuen  Benutzer zu erstellen, füllen Sie bitte das Forumlar aus und "
+"Um einen neuen  Benutzer zu erstellen, füllen Sie bitte das Forumlar aus und "
 "klicken auf \"Benutzer anlegen\".\n"
-"Wenn Sie möchten, dass sich ein Benutzer automatisch am System anmeldet, "
-"dann wählen Sie diesen Benutzer aus der Liste aus. Falls Sie \n"
+"Wenn Sie möchten, dass sich ein Benutzer automatisch am System anmeldet, dann wählen Sie diesen Benutzer aus der Liste aus. Falls Sie \n"
 "ein Benutzer löschen möchten, dann wählen Sie den Benutzernamen von der "
 "Liste und klicken auf \"Gewählten Benutzer löschen\".\n"
 "Fahren Sie mit der Installation fort, nachdem Sie Ihre Auswahl getroffen "
@@ -1784,16 +1772,15 @@ msgstr "Ablaufverfolgung:"
 msgid ""
 "Plugin (%s) not found or error occured while loading switching to normal "
 "installation process."
-msgstr ""
+msgstr "Plugin (%s) nicht gefunden oder ein Fehler ist beim Laden der Umstelltung auf normalen Installationsprozess aufgetreten."
 
 #: yali4/installer.py:143
 msgid "YALI Is Working..."
 msgstr "YALI ist am arbeiten..."
 
 #: yali4/installer.py:156
-#, fuzzy
 msgid "Warning !"
-msgstr "Warnung"
+msgstr "Warnung!"
 
 #: yali4/installer.py:162
 msgid "Starting for CD Check"
@@ -1883,7 +1870,7 @@ msgstr "Boot-Loader wird installiert..."
 
 #: yali4/installer.py:595
 msgid "Retry"
-msgstr ""
+msgstr "Wiederholen"
 
 #: yali4/localedata.py:20
 msgid "Turkish"
@@ -2067,7 +2054,6 @@ msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis wird erstellt.."
 
 #: yali4/gui/Ui/autopartwidget.py:110
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -2081,18 +2067,19 @@ msgid ""
 "\" font-size:12pt; font-weight:600;\">Select the partitioning method:</"
 "span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">1. Wählen Sie the Partitionierungsmethode aus:"
-"</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Partitionierungsmethode auswählen:</"
+"span></p></body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:123
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -2106,12 +2093,15 @@ msgid ""
 "\" font-size:12pt; font-weight:600;\">Select the disk to apply selected "
 "method:</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">2. Wählen Sie die Festplatte aus, um die "
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Die Festplatte auswählen, um die "
 "ausgewählte Methode zu übernehmen:</span></p></body></html>"
+
