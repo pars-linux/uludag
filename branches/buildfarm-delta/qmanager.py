@@ -29,8 +29,9 @@ class QueueManager:
         self.__deserialize(self.workQueue, "workQueue")
         self.__deserialize(self.waitQueue, "waitQueue")
 
-        self.workQueue = list(set(self.workQueue))
-        self.waitQueue = list(set(self.waitQueue))
+        # Ignore empty lines
+        self.workQueue = list(set([s for s in self.workQueue if s]))
+        self.waitQueue = list(set([s for s in self.waitQueue if s]))
 
         if len(self.waitQueue):
             self.workQueue += self.waitQueue
