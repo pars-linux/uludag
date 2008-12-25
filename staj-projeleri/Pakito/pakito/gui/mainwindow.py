@@ -238,7 +238,7 @@ class MainWindow(KParts.MainWindow):
             componentFile.close()
         #................................................................................
 
-        qApp.setOverrideCursor(KCursor.waitCursor)
+        qApp.setOverrideCursor(KCursor.waitCursor())
 
         # cleaning
         self.closePacket()
@@ -361,7 +361,7 @@ class MainWindow(KParts.MainWindow):
         shutil.copyfile(self.tempDir+"/actions.py", self.realDir+"/actions.py")
 
     def exit(self):
-        qApp.setOverrideCursor(KCursor.waitCursor)
+        qApp.setOverrideCursor(KCursor.waitCursor())
 
         self.closePacket()
         if self.tempDir:
