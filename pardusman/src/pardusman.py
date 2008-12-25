@@ -46,8 +46,8 @@ def usage(app):
     print "Commands:"
     print "  make-repo  : Make local repos"
     print "  check-repo : Check repo files"
-    print "  make-live  : Install image & make squasfs"
-    print "  pack-live  : Make squasfs"
+    print "  make-live  : Install image & make squashfs"
+    print "  pack-live  : Make squashfs"
     print "  make-iso   : Make ISO"
     print "  make       : Make all!"
 
