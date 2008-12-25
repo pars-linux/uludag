@@ -157,7 +157,6 @@
         <SelectedPackage>lib-compat</SelectedPackage>
         <SelectedPackage>libassuan</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
-        <SelectedPackage>libflashsupport</SelectedPackage>
         <SelectedPackage>libsoup</SelectedPackage>
         <SelectedPackage>libsvg-cairo</SelectedPackage>
         <SelectedPackage>libtool</SelectedPackage>
@@ -604,7 +603,6 @@
         <Package>libevent</Package>
         <Package>libexif</Package>
         <Package>libfame</Package>
-        <Package>libflashsupport</Package>
         <Package>libfontenc</Package>
         <Package>libgcc</Package>
         <Package>libgcrypt</Package>

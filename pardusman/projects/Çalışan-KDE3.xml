@@ -126,7 +126,6 @@
         <SelectedPackage>kradio</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
-        <SelectedPackage>libflashsupport</SelectedPackage>
         <SelectedPackage>linux-uvc</SelectedPackage>
         <SelectedPackage>lipstik</SelectedPackage>
         <SelectedPackage>lmpcm_usb</SelectedPackage>
@@ -545,7 +544,6 @@
         <Package>libevent</Package>
         <Package>libexif</Package>
         <Package>libfame</Package>
-        <Package>libflashsupport</Package>
         <Package>libfontenc</Package>
         <Package>libgcc</Package>
         <Package>libgcrypt</Package>
