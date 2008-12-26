@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-02 10:13+0200\n"
-"PO-Revision-Date: 2008-10-15 20:58-0400\n"
+"PO-Revision-Date: 2008-12-25 22:37-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
 "Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -96,8 +96,7 @@ msgstr "Error de autenticación COMAR"
 
 #: src/ComarIface.py:62
 msgid "Network error. Please check your network connections and try again."
-msgstr ""
-"Error de red. Por favor verifique la conexión de red e intente de nuevo."
+msgstr "Error de red. Por favor verifique la conexión de red e intente de nuevo."
 
 #: src/ComarIface.py:62 src/ComarIface.py:67
 msgid "COMAR Error"
@@ -120,6 +119,7 @@ msgid "Search"
 msgstr "Buscar"
 
 #: src/MainWidget.py:112
+# translated as "basket" - similar as "shopping basket"..
 msgid "Show basket"
 msgstr "Mostrar carrito"
 
@@ -164,45 +164,19 @@ msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
 #: src/MainWidget.py:358 src/MainWidget.py:366
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Actualmente están seleccionados <b>%1</b> paquetes con un tamaño total de <b>"
-"%2</b>"
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Actualmente se seleccionaron <b>%1</b> paquetes con un tamaño total de <b>%2</b>"
 
 # ...requeridas...
 #: src/MainWidget.py:361
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr ""
-" y <b>%3</b> dependencias requeridas con un tamaño adicional de <b>%4</b>"
+msgstr " y <b>%3</b> dependencias requeridas con un tamaño adicional de <b>%4</b>"
 
 #: src/MainWidget.py:363 src/MainWidget.py:371
 msgid "in your basket."
 msgstr " en el carrito."
 
 # should this be the same as src/package-manager.py:416 ??
-#  if different, i am not sure what "reverse" means here (i haven't seen it running..)
-# A requiere B
-# C requiere B
-# implica
-# A depende de B
-# C depende de B
-# luego
-# B es requerido por A
-# B es requerido por C
-# a B lo requieren 2 paquetes
-# entonces
-# de B dependen 2 paquetes
-# B es requerido por 2 paquetes
-# me parece que sería así:
-# requeridos por %3 paquetes con un tamaño total de %4
-# no Christian, lo entiendo asi:
-# B requiere A
-# C requiere B
-# ahora se selecciono B para actualizar - pero esto implica que tambien C se debe actualizar
-# C sería la dependencia "reversa" de B
-# en este caso podría haber varios paquetes tipo "C" dependiendo de uno o varios de los del tipo B
-# hay un mensaje --90-- mas adelante con una explicacion
 #: src/MainWidget.py:369
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr "y <b>%3</b> dependencias reversas con un tamaño total de <b>%4</b>"
@@ -211,8 +185,7 @@ msgstr "y <b>%3</b> dependencias reversas con un tamaño total de <b>%4</b>"
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr ""
-"Hay [%1] paquetes conflictivos. Estos paquetes no se pueden instalar juntos."
+msgstr "Hay [%1] paquetes conflictivos. Estos paquetes no se pueden instalar juntos."
 
 #: src/MainWidget.py:401 src/MainWidget.py:411
 msgid "Conflict Error"
@@ -242,7 +215,6 @@ msgstr "<b>Instalando Paquete(s)</b>"
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
 msgstr "<qt><b>%1</b> paquetes seleccionados para <b>instalar</b>."
 
-#  Con los paquetes seleccionados, también se instalarán <b>%1</b> paquetes adicionales requeridos.
 #: src/MainWidget.py:437
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
@@ -262,7 +234,6 @@ msgstr "<br><br>un total de <b>%1</b> paquetes se <b>instalarán</b>."
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
 msgstr "<qt><b>%1</b> paquetes seleccionados para <b>actualizar</b>."
 
-# Con los paquetes seleccionados, también se actualizarán <b>%1</b> paquetes adicionales requeridos.
 #: src/MainWidget.py:444
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
@@ -279,7 +250,6 @@ msgstr "<br><br>Un total de <b>%1</b> paquetes se <b>actualizarán</b>."
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
 msgstr "<qt><b>%1</b> paquetes seleccionados para <b>remover</b>."
 
-# Los paquetes seleccionados son requeridos por otros. Al remover los paquetes seleccionados tambien se <b>removerán %1</b> paquetes dependendientes. Favor verifique el carrito y asegurese que realmente contiene los paquetes que desea remover. Remover accidentalmente algunos paquetes requeridos puede perjudicar gravemente la estabilidad del sistema.
 #: src/MainWidget.py:451
 msgid ""
 " Selected packages have reverse dependencies. Because the reverse "
@@ -290,8 +260,7 @@ msgid ""
 "dependencies may break the system stability."
 msgstr ""
 " Los paquetes seleccionados son requeridos por otros (dependencias "
-"reversas). Al remover los paquetes seleccionados tambien se <b>removerán %1</"
-"b> dependencias reversas. Favor verifique el carrito y asegurese que "
+"reversas). Al remover los paquetes seleccionados tambien se <b>removerán %1</b> las dependencias reversas. Favor verifique el carrito y asegurese que "
 "realmente contiene los paquetes que desea remover. Remover accidentalmente "
 "algunas dependencias reversas importantes puede perjudicar gravemente la "
 "estabilidad del sistema."
@@ -412,8 +381,7 @@ msgstr "Paquetes seleccionados para remover:"
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr ""
-"Dependencias reversas de los paquetes seleccionados que tambien se removerán:"
+msgstr "Dependencias reversas de los paquetes seleccionados que tambien se removerán:"
 
 #: src/BasketDialog.py:67
 msgid "Selected package(s) for install:"
@@ -491,7 +459,6 @@ msgstr ""
 msgid "Pisi Error"
 msgstr "Pisi Error"
 
-# ...guardados en el cache...
 #: src/Preferences.py:382
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Se eliminarán todos los paquetes guardados en el cache. Está seguro ?"
@@ -535,7 +502,7 @@ msgstr "Selecccionar todos los paquetes de esta categoría"
 
 #: src/CustomEventListener.py:38 src/SpecialList.py:103
 msgid "Reverse package selections"
-msgstr "Invertir las marcas de selección de paquetes"
+msgstr "Invertir las marcas de selección"
 
 #: src/PreferencesDialog.py:179 src/PreferencesDialog.py:378
 msgid "Repository Name"
@@ -622,8 +589,7 @@ msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
 msgstr ""
-"Al vaciar el cache en disco, se eliminarán todos los paquetes de software "
-"descargados. \n"
+"Al vaciar el cache en disco, se eliminarán todos los paquetes (instaladores) de software descargados. \n"
 "Esto no afectará los software instalados, ni la estabilidad del sistema."
 
 #: src/PreferencesDialog.py:372
@@ -640,8 +606,7 @@ msgstr "&Usar cache en disco rígido para software descargado"
 
 #: src/PreferencesDialog.py:375
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr ""
-"Si marcado, se conservarán los archivos descargados en el cache del disco"
+msgstr "Si marcado, se conservarán los archivos descargados en el cache del disco"
 
 #: src/PreferencesDialog.py:376
 msgid "Mb <i>(use 0 for no limit)</i>"
@@ -652,16 +617,13 @@ msgid "C&ache"
 msgstr "C&ache"
 
 #: src/PreferencesDialog.py:380
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr ""
-"Aqui se pueden ver los repositorios actuales de software con sus direcciones"
+msgid "You can see current software repositories and corresponding addresses here"
+msgstr "Aqui se pueden ver los repositorios actuales de software con sus direcciones"
 
 #: src/PreferencesDialog.py:381
 msgid "&Add New Repository"
 msgstr "&Agregar Nuevo Repositorio"
 
-# Pinche/Presione
 #: src/PreferencesDialog.py:382
 msgid "Click here to add a new software repository"
 msgstr "Presione aquí para agregar un nuevo repositorio de software"
@@ -672,8 +634,7 @@ msgstr "&Editar Repositorio"
 
 #: src/PreferencesDialog.py:384
 msgid "Click here to modify the name or address of a repository"
-msgstr ""
-"Presione aquí para modificar el nombre o la dirección de un repositorio"
+msgstr "Presione aquí para modificar el nombre o la dirección de un repositorio"
 
 #: src/PreferencesDialog.py:385
 msgid "&Remove Repository"
@@ -809,9 +770,11 @@ msgstr "actualizado"
 
 # this is for: 10/23 package installed
 # in download progres window: status indicator
+# en espaniol: paquete 10/23 instalado
+# cambiado desde: %3 paquete %1 / %2 
 #: src/Progress.py:169
 msgid "%1 / %2 package %3"
-msgstr "%3 paquete %1 / %2"
+msgstr "paquete %1 / %2 %3"
 
 #: src/Notifier.py:45
 msgid "Show Updates"
@@ -820,3 +783,4 @@ msgstr "Mostrar Actualizaciones"
 #: src/Notifier.py:45
 msgid "Ignore"
 msgstr "Ignorar"
+
