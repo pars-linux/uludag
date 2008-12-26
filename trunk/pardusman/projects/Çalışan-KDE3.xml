@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.1-KDE3</Title>
+    <Title>Pardus Calisan 2008-KDE3_26122008</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <PackageSelection repo_uri="file:///home/ekin/packages/release/pisi-index.xml.bz2">
@@ -151,7 +151,6 @@
         <SelectedPackage>openvpn</SelectedPackage>
         <SelectedPackage>ov511</SelectedPackage>
         <SelectedPackage>ov51x-jpeg</SelectedPackage>
-        <SelectedPackage>pmovie</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
@@ -593,6 +592,7 @@
         <Package>libsmbios</Package>
         <Package>libsndfile</Package>
         <Package>libsoup</Package>
+        <Package>libssh2</Package>
         <Package>libstdc++</Package>
         <Package>libsvg</Package>
         <Package>libsvg-cairo</Package>
@@ -696,7 +696,6 @@
         <Package>pisi</Package>
         <Package>pixman</Package>
         <Package>pm-utils</Package>
-        <Package>pmovie</Package>
         <Package>pnm2ppa</Package>
         <Package>poppler</Package>
         <Package>poppler-glib</Package>

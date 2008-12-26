@@ -1,9 +1,9 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1 [Int]</Title>
+    <Title>Pardus 2008.1-Int_26122008</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
-    <PackageSelection repo_uri="file:///home/ekin/packages/release/pisi-index.xml.bz2">
+    <PackageSelection repo_uri="file:///home/ekin/packages/test/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>DirectFB</SelectedPackage>
         <SelectedPackage>PolicyKit-kde</SelectedPackage>
@@ -37,6 +37,7 @@
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
+        <SelectedPackage>ccid</SelectedPackage>
         <SelectedPackage>cdparanoia</SelectedPackage>
         <SelectedPackage>cdrtools</SelectedPackage>
         <SelectedPackage>chmlib</SelectedPackage>
@@ -103,6 +104,7 @@
         <SelectedPackage>gwenview-i18n-sv</SelectedPackage>
         <SelectedPackage>gwenview-i18n-tr</SelectedPackage>
         <SelectedPackage>hal-cups-utils</SelectedPackage>
+        <SelectedPackage>hcfpcimodem</SelectedPackage>
         <SelectedPackage>history-manager</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>imposter</SelectedPackage>
@@ -189,6 +191,8 @@
         <SelectedPackage>package-manager</SelectedPackage>
         <SelectedPackage>paprefs</SelectedPackage>
         <SelectedPackage>pavucontrol</SelectedPackage>
+        <SelectedPackage>pcsc-lite</SelectedPackage>
+        <SelectedPackage>pcsc-tools</SelectedPackage>
         <SelectedPackage>poppler</SelectedPackage>
         <SelectedPackage>portmap</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
@@ -239,7 +243,6 @@
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zpspell</SelectedPackage>
         <Package>ConsoleKit</Package>
-        <Package>DevIL</Package>
         <Package>DirectFB</Package>
         <Package>PolicyKit</Package>
         <Package>PolicyKit-kde</Package>
@@ -260,7 +263,6 @@
         <Package>acx100-firmware</Package>
         <Package>agg</Package>
         <Package>akode</Package>
-        <Package>allegro</Package>
         <Package>alsa-driver</Package>
         <Package>alsa-firmware</Package>
         <Package>alsa-headers</Package>
@@ -287,6 +289,7 @@
         <Package>avahi</Package>
         <Package>avahi-qt</Package>
         <Package>b43-firmware</Package>
+        <Package>babl</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
         <Package>bc</Package>
@@ -304,6 +307,7 @@
         <Package>cabextract</Package>
         <Package>cairo</Package>
         <Package>cairomm</Package>
+        <Package>ccid</Package>
         <Package>cdparanoia</Package>
         <Package>cdrdao</Package>
         <Package>cdrtools</Package>
@@ -387,6 +391,7 @@
         <Package>gd</Package>
         <Package>gdbm</Package>
         <Package>gecko-mediaplayer</Package>
+        <Package>gegl</Package>
         <Package>gettext</Package>
         <Package>gfxtheme-pardus-boot</Package>
         <Package>gfxtheme-pardus-install</Package>
@@ -463,6 +468,7 @@
         <Package>hal</Package>
         <Package>hal-cups-utils</Package>
         <Package>hal-info</Package>
+        <Package>hcfpcimodem</Package>
         <Package>hdparm</Package>
         <Package>history-manager</Package>
         <Package>hplip</Package>
@@ -643,6 +649,7 @@
         <Package>libogg</Package>
         <Package>liboil</Package>
         <Package>liboldX</Package>
+        <Package>libopenraw</Package>
         <Package>libopensync</Package>
         <Package>libpaper</Package>
         <Package>libpcap</Package>
@@ -654,10 +661,12 @@
         <Package>libsamplerate</Package>
         <Package>libsdl</Package>
         <Package>libsexy</Package>
+        <Package>libshout</Package>
         <Package>libsigc++</Package>
         <Package>libsmbios</Package>
         <Package>libsndfile</Package>
         <Package>libsoup</Package>
+        <Package>libssh2</Package>
         <Package>libstdc++</Package>
         <Package>libsvg</Package>
         <Package>libsvg-cairo</Package>
@@ -689,6 +698,7 @@
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
         <Package>ltrace</Package>
+        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>madplay</Package>
@@ -699,6 +709,7 @@
         <Package>mdadm</Package>
         <Package>memtest86</Package>
         <Package>microcode-ctl</Package>
+        <Package>microcode-data</Package>
         <Package>microdia</Package>
         <Package>migration</Package>
         <Package>mingetty</Package>
@@ -747,6 +758,7 @@
         <Package>orbit2</Package>
         <Package>ov511</Package>
         <Package>ov51x-jpeg</Package>
+        <Package>p7zip</Package>
         <Package>package-manager</Package>
         <Package>pam</Package>
         <Package>pango</Package>
@@ -757,10 +769,13 @@
         <Package>pavucontrol</Package>
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
+        <Package>pcsc-lite</Package>
+        <Package>pcsc-tools</Package>
         <Package>perl</Package>
         <Package>perl-IO-Socket-SSL</Package>
         <Package>perl-Net-SSLeay</Package>
         <Package>perl-XML-Parser</Package>
+        <Package>perl-pcsc</Package>
         <Package>piksemel</Package>
         <Package>pilot-link</Package>
         <Package>pinentry</Package>
