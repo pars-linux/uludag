@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-02 14:40+0200\n"
-"PO-Revision-Date: 2008-12-26 14:15+0100\n"
+"PO-Revision-Date: 2008-12-26 19:29+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: yali4/gui/Ui/goodbyewidget.py:46 yali4/gui/Ui/partedit.py:147
 #: yali4/gui/Ui/summarywidget.py:86
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: yali4/gui/Ui/autopartquestion.py:65
 msgid ""
@@ -162,38 +162,44 @@ msgid ""
 "(if you have one installed) to start \n"
 "your newly installed Pardus.</p>"
 msgstr ""
+"<b>Wilt u de bootlader (GRUB) naar het master boot record van uw harde schijf schrijven?</b>\n"
+"\n"
+"<p>U heeft een bootlader nodig om uw Pardus systeem op te starten.</p>\n"
+"\n"
+"<p>Indien u geen bootlader installeert of ervoor kiest deze in de root partitie te installeren, dan zult u de lader van uw andere besturingssysteem "
+"(indien u deze hebt geïnstalleerd) dienen te configureren om \n"
+"uw nieuw geïnstalleerde Pardus op te starten.</p>"
 
 #: yali4/gui/Ui/bootloaderwidget.py:82
 msgid "Where do you want to install the bootlader ?"
-msgstr ""
+msgstr "Waar wilt u de bootlader installeren ?"
 
 #: yali4/gui/Ui/bootloaderwidget.py:83
 msgid "Install to first bootable disk (recommended)"
-msgstr ""
+msgstr "Installeer op de eerste te booten schijf (aangeraden)"
 
 #: yali4/gui/Ui/bootloaderwidget.py:84
 msgid "Install to Pardus installed partition"
-msgstr ""
+msgstr "Installeer op partitie waarop Pardus is geïnstalleerd"
 
 #: yali4/gui/Ui/bootloaderwidget.py:85
 msgid "Install to selected disk belove"
-msgstr ""
+msgstr "Installeer op onderstaand geselecteerde schijf"
 
 #: yali4/gui/Ui/bootloaderwidget.py:86
 msgid "Select the disk you to install bootloader:"
-msgstr ""
+msgstr "Selecteer de schijf waarop u de bootlader wilt installeren:"
 
 #: yali4/gui/Ui/bootloaderwidget.py:87
-#, fuzzy
 msgid "Don't install bootloader"
-msgstr "Installeren bootlader..."
+msgstr "Bootlader niet installeren"
 
 #: yali4/gui/Ui/checkcdwidget.py:73
 msgid ""
 "You can check the integrity of the packages in installation CD. Although "
 "this is an optional step, we encourage you to do it to avoid any errors in "
 "installation."
-msgstr ""
+msgstr "U kunt de integriteit van de pakketten op uw installatie CD controleren. Ondanks dat dit een optionele stap is, kunnen wij dit alleen maar aanraden om fouten bij de installatie te voorkomen."
 
 #: yali4/gui/Ui/checkcdwidget.py:74 yali4/gui/ScrCheckCD.py:56
 #: yali4/installer.py:192
@@ -202,177 +208,171 @@ msgstr "Test CD integriteit"
 
 #: yali4/gui/Ui/datetimewidget.py:82
 msgid "The current time"
-msgstr ""
+msgstr "De huidige tijd"
 
 #: yali4/gui/Ui/datetimewidget.py:83
 msgid "The analog clock widget displays the current time."
-msgstr ""
+msgstr "De analoge klok widget toont de huidige tijd."
 
 #: yali4/gui/Ui/datetimewidget.py:84
 msgid "HH"
-msgstr ""
+msgstr "HH"
 
 #: yali4/gui/Ui/datetimewidget.py:85 yali4/gui/Ui/datetimewidget.py:87
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: yali4/gui/Ui/datetimewidget.py:86
 msgid "mm"
-msgstr ""
+msgstr "mm"
 
 #: yali4/gui/Ui/datetimewidget.py:88
 msgid "ss"
-msgstr ""
+msgstr "ss"
 
 #: yali4/gui/Ui/datetimewidget.py:89
 msgid "Time Zone"
-msgstr ""
+msgstr "Tijdszone"
 
 #: yali4/gui/Ui/dialog.py:59
 msgid "TextLabel"
-msgstr ""
+msgstr "TextLabel"
 
 #: yali4/gui/Ui/dialog.py:60
 msgid "X"
-msgstr ""
+msgstr "X"
 
 #: yali4/gui/Ui/installwidget.py:64
 msgid "Form3"
-msgstr ""
+msgstr "Form3"
 
 #: yali4/gui/Ui/installwidget.py:65
 msgid "pix"
-msgstr ""
+msgstr "pix"
 
 #: yali4/gui/Ui/installwidget.py:66
 msgid "Desc"
-msgstr ""
+msgstr "Desc"
 
 #: yali4/gui/Ui/installwidget.py:67
-#, fuzzy
 msgid "Installing Package: "
-msgstr "Configureren pakket: %s"
+msgstr "Installeren pakket: "
 
 #: yali4/gui/Ui/keyboardwidget.py:60
-#, fuzzy
 msgid "Select the keyboard layout of your choice."
-msgstr "Geselecteerde toetenbordindeling is <b>%s</b>"
+msgstr "Kies de toetsenbordindeling van uw keuze."
 
 #: yali4/gui/Ui/keyboardwidget.py:61
 msgid "Test selected keyboard:"
-msgstr ""
+msgstr "Test geselecteerd toetsenbord:"
 
 #: yali4/gui/Ui/main.py:156
 msgid "Yali4"
-msgstr ""
+msgstr "Yali4"
 
 #: yali4/gui/Ui/main.py:441
 msgid "Screen Name"
-msgstr ""
+msgstr "Schermnaam"
 
 #: yali4/gui/Ui/main.py:443
 msgid "Details about the screen"
-msgstr ""
+msgstr "Details over het scherm"
 
 #: yali4/gui/Ui/main.py:444 yali4/gui/YaliWindow.py:191
 msgid "Release Notes"
 msgstr "Uitgavenotities"
 
 #: yali4/gui/Ui/main.py:445
-#, fuzzy
 msgid "Toggle Help"
 msgstr "Toon hulp"
 
 #: yali4/gui/Ui/main.py:446
 msgid "Previous Screen"
-msgstr ""
+msgstr "Vorig scherm"
 
 #: yali4/gui/Ui/main.py:447
 msgid "Back"
-msgstr ""
+msgstr "Terug"
 
 #: yali4/gui/Ui/main.py:448
 msgid "Next Screen"
-msgstr ""
+msgstr "Volgend scherm"
 
 #: yali4/gui/Ui/main.py:449
 msgid "Next"
-msgstr ""
+msgstr "Volgende"
 
 #: yali4/gui/Ui/partedit.py:148
 msgid "Partition 1 on FUJISTU - /dev/sda1"
-msgstr ""
+msgstr "Partitie 1 op FUJISTU - /dev/sda1"
 
 #: yali4/gui/Ui/partedit.py:149
 msgid "Device :"
-msgstr ""
+msgstr "Apparaat:"
 
 #: yali4/gui/Ui/partedit.py:150
 msgid "/dev/sda1"
-msgstr ""
+msgstr "/dev/sda1"
 
 #: yali4/gui/Ui/partedit.py:151
-#, fuzzy
 msgid "Delete Partition"
-msgstr "Verwijder alle partities"
+msgstr "Verwijder partitie"
 
 #: yali4/gui/Ui/partedit.py:152
-#, fuzzy
 msgid "Resize Partition"
-msgstr "Archiveer partitie"
+msgstr "Verander grootte partitie"
 
 #: yali4/gui/Ui/partedit.py:153
 msgid "Use :"
-msgstr ""
+msgstr "Gebruiker:"
 
 #: yali4/gui/Ui/partedit.py:154
 msgid "Size :"
-msgstr ""
+msgstr "Grootte:"
 
 #: yali4/gui/Ui/partedit.py:155 yali4/gui/Ui/partresize.py:89
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #: yali4/gui/Ui/partedit.py:156
-#, fuzzy
 msgid "Format :"
-msgstr "Formatteren ..."
+msgstr "Formaat:"
 
 #: yali4/gui/Ui/partedit.py:157
 msgid "Yes, format this partition"
-msgstr ""
+msgstr "Ja, formateer deze partitie"
 
 #: yali4/gui/Ui/partedit.py:158
 msgid "File System :"
-msgstr ""
+msgstr "Bestandssysteem:"
 
 #: yali4/gui/Ui/partedit.py:159
 msgid "Ext3"
-msgstr ""
+msgstr "Ext3"
 
 #: yali4/gui/Ui/partedit.py:160
 msgid "NTFS"
-msgstr ""
+msgstr "NTFS"
 
 #: yali4/gui/Ui/partedit.py:161
 msgid "Fat 32"
-msgstr ""
+msgstr "Fat 32"
 
 #: yali4/gui/Ui/partedit.py:162
 msgid "Changes will be applied when you finish.."
-msgstr ""
+msgstr "Verdanderingen zullen toegepast worden als u klaar bent.."
 
 #: yali4/gui/Ui/partedit.py:163
 msgid "Refresh Disks"
-msgstr ""
+msgstr "Ververs schijven"
 
 #: yali4/gui/Ui/partedit.py:164
 msgid "Reset All Changes"
-msgstr ""
+msgstr "Maak alle veranderingen ongedaan"
 
 #: yali4/gui/Ui/partedit.py:165
 msgid "Apply"
-msgstr ""
+msgstr "Toepassen"
 
 #: yali4/gui/Ui/partresize.py:82
 msgid ""
