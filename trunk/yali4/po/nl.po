@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-02 14:40+0200\n"
-"PO-Revision-Date: 2008-12-01 18:11+0100\n"
+"PO-Revision-Date: 2008-12-26 14:08+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,25 +31,27 @@ msgid ""
 "It seems there is more than one partition for resizing. In this case you can "
 "select a partition from the list below or YALI will select one."
 msgstr ""
+"Het lijk erop dat er meer dan één partitie in grootte moet worden aangepast. In dit geval "
+"kunt u een partitie in de onderstaande lijst selecteren anders zal YALI het doen."
 
 #: yali4/gui/Ui/autopartquestion.py:66
 msgid "Choose the best target for resizing (recommended)"
-msgstr ""
+msgstr "Kies het beste doel voor de aan te passen grootte (aangeraden)"
 
 #: yali4/gui/Ui/autopartquestion.py:67
 msgid "I will choose the target"
-msgstr ""
+msgstr "Ik zal het doel kiezen"
 
 #: yali4/gui/Ui/autopartquestion.py:68
 msgid "Use Selected"
-msgstr ""
+msgstr "Gebruik geselecteerde"
 
 #: yali4/gui/Ui/autopartwidget.py:133 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
 #: yali4/gui/Ui/setupuserswidget.py:153 yali4/gui/Ui/welcomewidget.py:90
 msgid "Form1"
-msgstr ""
+msgstr "Form1"
 
 #: yali4/gui/Ui/autopartwidget.py:134
 msgid ""
@@ -78,8 +80,7 @@ msgid "Automatic"
 msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:141
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:142
@@ -707,8 +708,7 @@ msgstr "Er is een verzoek voor hetzelfde partitietype."
 
 #: yali4/gui/DiskWidgets.py:320
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)"
 "s</b>."
@@ -1307,8 +1307,7 @@ msgstr ""
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
 "installation."
-msgstr ""
-"U heeft niet voldoende schijfruimte (min. %s) om Pardus te installeren."
+msgstr "U heeft niet voldoende schijfruimte (min. %s) om Pardus te installeren."
 
 #: yali4/gui/ScrPartitionManual.py:31
 msgid "Manual Partitioning"
@@ -1470,8 +1469,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:186
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:201
 msgid "Bootloader Settings"
@@ -1575,8 +1573,7 @@ msgstr ""
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
-msgstr ""
-"<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
+msgstr "<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
 
 #: yali4/gui/ScrUsers.py:148
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
@@ -1600,8 +1597,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
+msgstr "<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
 
 #: yali4/gui/ScrUsers.py:241
 msgid "Update User"
@@ -2003,3 +1999,4 @@ msgid ""
 "\" font-size:12pt; font-weight:600;\">Select the disk to apply selected "
 "method:</span></p></body></html>"
 msgstr ""
+
