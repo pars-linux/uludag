@@ -54,8 +54,6 @@ def getRevision():
         return ""
 
 def getVersion():
-#    rev = getRevision()
-#    return "-r".join([YALI_VERSION, rev])
     # don't use svn revision...
     return YALI_VERSION
 
