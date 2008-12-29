@@ -71,17 +71,17 @@ div.clearer {
 }
 
 div.footer {
-    color: #777;
+    color: #AAA;
     text-align: center;
     font-size: 75%;
     background: url("foot.png") repeat-x;
-    height:30px;
-    padding-top:20px;
+    height:20px;
+    padding-top:2px;
     padding-bottom:0px;
     width: 100%;
     clear:both;
-    position:absolute;
-    bottom:0px
+    position:fixed;
+    bottom:0px;
 }
 
 div.footer a {
