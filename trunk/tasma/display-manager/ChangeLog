@@ -1,3 +1,8 @@
+2008-12-30 Fatih Aşıcı <fatih@pardus.org.tr>
+	* src/displayconfig.py:
+		Ignore user's color depth selection if driver is fglrx.
+		It only supports 24 bit.
+
 2008-11-01 Fatih Aşıcı <fatih@pardus.org.tr>
 	* src/hwdata.py:
 		nvidia-drivers-new renamed to nvidia-drivers173.

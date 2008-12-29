@@ -257,7 +257,7 @@ class DisplayConfig:
                         self.modes[output].append(mode)
 
     def apply(self):
-        if self.true_color:
+        if self.true_color or self._info.driver == "fglrx":
             depth = "24"
         else:
             depth = "16"
