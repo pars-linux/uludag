@@ -212,10 +212,19 @@ class DBusInterface(Hook):
     def error(self, exception):
         if "Access denied" in exception.message:
             message = i18n("You are not authorized for this operation.")
+        elif "No such device" in exception.message:
+            message = i18n("Network Manager was not able to communicate with your network device. If it's\n"
+                           "a wireless interface, make sure that its radio switch is turned on. This is usually\n"
+                           "done through a switch or Fn keys in modern notebooks.")
+
+        elif "DHCP failed" in exception.message:
+            message = i18n("The DHCP service was not able to assign an IP address to your network interface.\n"
+                           "Make sure that the network you're trying to connect is able to assign IP addresses\n"
+                           "through its DHCP service. Otherwise, you have to manually assign an IP address.")
         else:
             message = str(exception)
 
-        msg = QMessageBox(i18n("Network Manager"), message, QMessageBox.Warning, QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton, self.window, "err", True)
+        msg = QMessageBox(i18n("Network Manager - Error"), message, QMessageBox.Warning, QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton, self.window, "err", True)
         msg.setTextFormat(Qt.RichText)
         msg.show()
 
