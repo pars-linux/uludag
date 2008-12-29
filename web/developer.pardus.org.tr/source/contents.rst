@@ -1,6 +1,7 @@
 Full Content
 ===================================
 
+All of contents in Developer Base listed below.
 
 .. toctree::
 
@@ -11,3 +12,4 @@ Full Content
     managers/index.rst
     kaptan/index.rst
     bugs/index.rst
+    howto/index.rst
