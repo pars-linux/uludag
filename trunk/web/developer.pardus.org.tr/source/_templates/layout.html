@@ -9,11 +9,12 @@
       <h3>{{ _('Navigation') }}</h3>
       <ul>
         {%- block rootrellink %}
-        <li><a href="{{ pathto("index") }}">Welcome !</a></li>
+        <li><a href="{{ pathto("index") }}">Home</a> {{ reldelim2 }} </li>
         {%- endblock %}
         {%- for parent in parents %}
           <li>{{ reldelim1 }}&nbsp;<a href="{{ parent.link|e }}" accesskey="U">{{ parent.title }}</a></li>
         {%- endfor %}
+          <li>{{ reldelim1 }}&nbsp;<a href="{{ page.link|e }}" accesskey="U">{{ title }}</a></li>
         {%- block relbaritems %} {% endblock %}
       </ul>
     </div>
