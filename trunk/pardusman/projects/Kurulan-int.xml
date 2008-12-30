@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1-Int_26122008</Title>
+    <Title>Pardus 2008.2-Int Alpha</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
