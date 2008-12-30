@@ -13,27 +13,37 @@ from qt import *
 from kdecore import *
 
 import connection
+import widgets
 from icons import icons, getIconSet
 from comariface import comlink
 
-from newConn import NewConn
 
-class Window(NewConn):
+class Window(QDialog):
     def __init__(self, parent):
-        NewConn.__init__(self, parent)
-
-        self.links.header().hide()
-        self.fillLabels()
-
+        QDialog.__init__(self, parent)
+        self.setMinimumSize(340, 340)
+        self.resize(340, 340)
+        self.setCaption(i18n("Create a new connection"))
+        vb = QVBoxLayout(self)
+        vb.setSpacing(6)
+        vb.setMargin(12)
+        
+        lab = QLabel(i18n("Select device:"), self)
+        vb.addWidget(lab)
+        
+        self.links = QListView(self)
         self.connect(self.links, SIGNAL("doubleClicked(QListViewItem *, const QPoint &, int)"), self.slotDouble)
         self.connect(self.links, SIGNAL("selectionChanged()"), self.slotSelection)
         self.connect(self.links, SIGNAL("collapsed(QListViewItem *)"), self.slotCollapse)
-
+        self.links.setAllColumnsShowFocus(True)
+        vb.addWidget(self.links)
+        self.links.addColumn("")
+        self.links.addColumn("")
+        self.links.header().hide()
         links = comlink.links.values()
         links.sort(key=lambda x: x.name)
-
+        
         comlink.device_hook.append(self.slotDevices)
-
         for link in links:
             item = QListViewItem(self.links)
             item.setSelectable(False)
@@ -42,48 +52,49 @@ class Window(NewConn):
             item.setText(2, link.script)
             item.setOpen(True)
             comlink.queryDevices(link.script)
-
-        self.connect(self.createBut, SIGNAL("clicked()"), self.accept)
-        self.connect(self.cancelBut, SIGNAL("clicked()"), self.reject)
-
+        
+        hb = QHBox(self)
+        hb.setSpacing(6)
+        but = QPushButton(getIconSet("add", KIcon.Small), i18n("Create"), hb)
+        but.setEnabled(False)
+        self.connect(but, SIGNAL("clicked()"), self.accept)
+        but.setDefault(True)
+        self.but = but
+        
+        but = QPushButton(getIconSet("cancel", KIcon.Small), i18n("Cancel"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.reject)
+        
+        vb.addWidget(hb)
         self.show()
-
-    def fillLabels(self):
-        self.setCaption(i18n("Create a new connection"))
-        self.deviceLabel.setText(i18n("Select device:"))
-        self.createBut.setIconSet(getIconSet("add", KIcon.Small))
-        self.createBut.setText(i18n("Create"))
-        self.cancelBut.setIconSet(getIconSet("cancel", KIcon.Small))
-        self.cancelBut.setText(i18n("Cancel"))
-
+    
     def reject(self):
         comlink.device_hook.remove(self.slotDevices)
         QDialog.reject(self)
-
+    
     def accept(self):
         comlink.device_hook.remove(self.slotDevices)
         item = self.links.selectedItem()
         if item:
             link = comlink.links[str(item.parent().text(2))]
-            connection.Settings(self.parent(), None, link, (str(item.text(2)), str(item.text(1))))
+            connection.Window(self.parent(), None, link, (str(item.text(2)), str(item.text(1))))
         QDialog.accept(self)
-
+    
     def slotDouble(self, item, point, col):
         if item and self.links.selectedItem() != None:
             self.links.setSelected(item, True)
             self.accept()
-
+    
     def slotCollapse(self, item):
         item.setOpen(True)
         child = item.firstChild()
         if child:
             self.links.setCurrentItem(child)
             child.setSelected(True)
-
+    
     def slotSelection(self):
         item = self.links.selectedItem()
-        self.createBut.setEnabled(item != None)
-
+        self.but.setEnabled(item != None)
+    
     def slotDevices(self, script, devices):
         item = self.links.firstChild()
         parent = None
@@ -100,7 +111,7 @@ class Window(NewConn):
         else:
             item = QListViewItem(parent, "", i18n("No suitable device found"))
             item.setSelectable(False)
-
+    
     def closeEvent(self, event):
         QDialog.closeEvent(self, event)
 

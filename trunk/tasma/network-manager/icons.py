@@ -17,12 +17,11 @@ def getIconSet(name, group=KIcon.Toolbar):
 
 
 class Icons:
-    def _pix(self, name, scale=True):
+    def _pix(self, name):
         img = QImage(locate("data", "network-manager/" + name))
-        if scale:
-            img = img.smoothScale(32, 32)
+        img = img.smoothScale(32, 32)
         return QPixmap(img)
-
+    
     def load_icons(self):
         self.nets = {
             "up": self._pix("ethernet-online.png"),

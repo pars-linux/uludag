@@ -40,16 +40,17 @@ def AboutData():
         "bugs@pardus.org.tr"
     )
 
-def attachMainWidget(win):
+def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
     icons.load_icons()
     # Import module after setting DBus mainloop
     # This module makes async. calls on startup
     import browser
-    win.mainwidget = browser.Widget(win)
-    toplayout = QVBoxLayout(win, 0, KDialog.spacingHint())
-    toplayout.addWidget(win.mainwidget)
-    win.aboutus = KAboutApplication(win)
+    self.mainwidget = browser.Widget(self)
+    toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
+    toplayout.addWidget(self.mainwidget)
+    self.aboutus = KAboutApplication(self)
+
 
 class Module(KCModule):
     def __init__(self, parent, name):
@@ -59,7 +60,7 @@ class Module(KCModule):
         self.setButtons(0)
         self.aboutdata = AboutData()
         attachMainWidget(self)
-
+    
     def aboutData(self):
         return self.aboutdata
 
@@ -67,7 +68,8 @@ class Module(KCModule):
 # KCModule factory
 def create_network_manager(parent, name):
     global kapp
-    kapp = KUniqueApplication.kApplication()
+    
+    kapp = KApplication.kApplication()
     if not dbus.get_default_main_loop():
         DBusQtMainLoop(set_as_default=True)
     return Module(parent, name)
@@ -75,15 +77,14 @@ def create_network_manager(parent, name):
 # Standalone
 def main():
     global kapp
-
+    
     about = AboutData()
     KCmdLineArgs.init(sys.argv, about)
     KCmdLineArgs.addCmdLineOptions ([("auto-connect", I18N_NOOP("Just try to connect automatically"))])
     KUniqueApplication.addCmdLineOptions()
-
-    """
     args = KCmdLineArgs.parsedArgs()
-
+    
+    """
     if args.isSet("auto-connect"):
         # Import module after setting DBus mainloop
         # This module makes async. calls on startup
@@ -92,20 +93,20 @@ def main():
         autoSwitch.scanAndConnect(force=True)
         sys.exit()
     """
-
+    
     if not KUniqueApplication.start():
         print i18n("Network manager module is already started!")
         return
-
+    
     kapp = KUniqueApplication(True, True, True)
     win = QDialog()
-
+    
     DBusQtMainLoop(set_as_default=True)
-
+    
     # PolicyKit Agent requires window ID
     from comariface import comlink
     comlink.winID = win.winId()
-
+    
     win.setCaption(i18n("Network Manager"))
     win.setMinimumSize(500, 440)
     win.resize(620, 440)
@@ -114,6 +115,6 @@ def main():
     kapp.setMainWidget(win)
     sys.exit(win.exec_loop())
 
+
 if __name__ == "__main__":
     main()
-

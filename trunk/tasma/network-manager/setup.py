@@ -17,13 +17,11 @@ import glob
 import shutil
 import kdedistutils
 
-version = "2.1.5"
+version = "2.1.4"
 
 distfiles = """
     README
     *.py
-    ui/*.ui
-    ui/*.py
     *.desktop
     images/*.png
     help/*.css
@@ -61,21 +59,13 @@ app_data = [
     'browser.py',
     'autoswitch.py',
     'handler.py',
+    'connection.py',
     'widgets.py',
+    'newconn.py',
     'icons.py',
     'comariface.py',
-    'connection.py',
-    'ui/settingsWindow.py',
-    'ui/settingsWindow.ui',
-    'newconn.py',
-    'ui/newConn.ui',
-    'ui/newConn.py',
     'nameconf.py',
-    'ui/nameConf.ui',
-    'ui/nameConf.py',
     'connsharing.py',
-    'ui/connSharing.ui',
-    'ui/connSharing.py',
     ('/usr/share/autostart/', ['network-applet.desktop']),
     ('/usr/kde/3.5/share/applications/kde/', ['network-applet.desktop']),
     'images/wireless-online.png',
