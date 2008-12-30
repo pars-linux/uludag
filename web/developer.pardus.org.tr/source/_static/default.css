@@ -18,7 +18,7 @@ body {
     background: url("logo.png") 0 7px no-repeat;
 }
 #searchbar {
-    margin-top: 28px;
+    margin-top: 30px;
     float: right;
 }
 #searchbar input {
@@ -267,6 +267,7 @@ table.contentstable p.biglink {
 }
 
 a.biglink {
+    font-weight: normal;
     font-size: 1.3em;
 }
 
@@ -324,6 +325,7 @@ p.subhead {
 a {
     color: #355f7c;
     text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover {
