@@ -19,9 +19,10 @@ import kdedistutils
 version = '0.3.6'
 
 distfiles = """
-    README
     AUTHORS
+    ChangeLog
     COPYING
+    README
     TODO
     *.py
     src/*.ui
