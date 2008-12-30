@@ -23,7 +23,7 @@ from dbus.mainloop.qt3 import DBusQtMainLoop
 def I18N_NOOP(x):
     return x
 
-mod_version = "1.15.3"
+mod_version = "2.1.6"
 mod_app = "network-manager"
 
 
