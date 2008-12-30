@@ -169,12 +169,14 @@
         <SelectedPackage>sn9c1xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
+        <SelectedPackage>squashfs-tools</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
+        <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
         <SelectedPackage>tulliana2</SelectedPackage>
@@ -768,6 +770,7 @@
         <Package>spidermonkey</Package>
         <Package>splix</Package>
         <Package>sqlite</Package>
+        <Package>squashfs-tools</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
         <Package>strace</Package>
@@ -788,6 +791,7 @@
         <Package>tcl</Package>
         <Package>tcltk</Package>
         <Package>tcp-wrappers</Package>
+        <Package>tcpdump</Package>
         <Package>telnet-bsd</Package>
         <Package>texinfo</Package>
         <Package>tiff</Package>
