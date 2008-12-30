@@ -18,8 +18,6 @@ import widgets
 from icons import getIconSet, icons
 from comariface import comlink
 
-from settingsWindow import SettingsWindow
-
 class WirelessTipper(QToolTip):
     def maybeTip(self, point):
         item = self.list.itemAt(point)
@@ -182,15 +180,10 @@ class Scanner(QPopupMenu):
         else:
             ScanItem(self.view, None)
 
-class Settings(SettingsWindow):
-    def __init__(self, parent, conn, link=None, new_conn=None):
-        SettingsWindow.__init__(self, parent)
 
-        if not link:
-            link = comlink.links[conn.script]
-
-        self.connect(self.applyBut, SIGNAL("clicked()"), self.useValues)
-        self.connect(self.cancelBut, SIGNAL("clicked()"), self.slotCancel)
+class Settings(QWidget):
+    def __init__(self, parent, link, conn, new_conn=None):
+        QWidget.__init__(self, parent)
 
         self.scanpop = None
         self.link = link
@@ -198,21 +191,52 @@ class Settings(SettingsWindow):
         self.new_conn = new_conn
         self.channel = None
         self.auth_dict = {"TLS":[], "TTLS":["PAP","MSCHAPV2"], "PEAP":["MSCHAPV2", "MD5"]}
-        self.apmac = ''
-        self.auth_client_cert = ""
-        self.auth_ca_cert = ""
-        self.auth_private_key = ""
-        self.auth_private_key_pass = ""
 
-        self.fillLabels()
+        self.apmac = ''
+        lay = QVBoxLayout(self, 3, 3, "mainVertLayout")
+
+        # Identification
+        grid = QGridLayout(1, 2, 6)
+        lay.addLayout(grid)
+        lab = QLabel(i18n("Connection name:"), self)
+        grid.addWidget(lab, 0, 0, Qt.AlignRight)
+        self.name = widgets.Edit(self)
+        self.name.edit.setMaxLength(48)
+        grid.addWidget(self.name, 0, 1)
+
+        # Connection
+        line = widgets.HLine(i18n("Connection"), self, "irkick")
+        lay.addSpacing(6)
+        lay.addWidget(line)
+
+        grid = QGridLayout(None, 1, 1, 11, 6)
+
+        lab = QLabel(i18n("Device:"), self)
+        grid.addWidget(lab, 0, 0, Qt.AlignRight)
+        self.device = QLabel("", self)
+        grid.addMultiCellWidget(self.device, 0, 0, 1, 2)
+
+        self.devices_but = QPushButton(i18n("Select"), self)
+        self.devices_but.setEnabled(False)
+        self.devices_but.setFlat(1)
+        grid.addWidget(self.devices_but, 0, 3)
 
         self.devices = QPopupMenu()
         self.connect(self.devices, SIGNAL("activated(int)"), self.slotDeviceSelect)
         self.devices_but.setPopup(self.devices)
 
-        self.address.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.address))
-        self.netmask.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.netmask))
-        self.gateway.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.gateway))
+        self.selected_device_mode = QComboBox(False, self)
+        grid.addWidget(self.selected_device_mode, 1, 2)
+
+        self.ssidLabel = QLabel(unicode(link.remote_name), self)
+        grid.addWidget(self.ssidLabel, 1, 0, Qt.AlignRight)
+
+        self.remote = QLineEdit(self)
+        grid.addWidget(self.remote, 1, 1)
+
+        self.scanBut = QPushButton(getIconSet("find", KIcon.Small), i18n("Scan"), self)
+        self.scanBut.setFlat(1)
+        grid.addWidget(self.scanBut, 1, 3)
 
         if "remote" in link.modes:
             if "scan" in link.modes:
@@ -233,8 +257,91 @@ class Settings(SettingsWindow):
             self.selected_device_mode.hide()
             self.ssidLabel.hide()
 
+        lay.addLayout(grid)
+
+        # Authentication
         if "auth" in link.modes:
+            self.auth_client_cert = ""
+            self.auth_ca_cert = ""
+            self.auth_private_key = ""
+            self.auth_private_key_pass = ""
+
+            line = widgets.HLine(i18n("Authentication"), self, "kgpg_key1")
+            lay.addSpacing(6)
+            lay.addWidget(line)
+
+            grid = QGridLayout(lay, 1, 1, 6, "mainAuthGrid")
+
+            layoutLeft = QGridLayout(None, 1, 1, 0, 6, "layoutLeft")
+
+            self.security_mode_label = QLabel(i18n("Security:"), self)
+            self.security_mode_combo = QComboBox(0, self)
+            self.security_mode_combo.setWFlags(Qt.WStyle_NoBorder)
             self.security_mode_combo.insertItem(i18n("No authentication"))
+            layoutLeft.addWidget(self.security_mode_label, 0, 0, Qt.AlignRight)
+            layoutLeft.addWidget(self.security_mode_combo, 0, 1)
+
+            self.auth_mode_label = QLabel(i18n("Authentication:"), self)
+            self.auth_mode_combo = QComboBox(0, self)
+            self.auth_mode_combo.setWFlags(Qt.WStyle_NoBorder)
+            layoutLeft.addWidget(self.auth_mode_label, 1, 0, Qt.AlignRight)
+            layoutLeft.addWidget(self.auth_mode_combo, 1, 1)
+
+            self.auth_inner_label = QLabel(i18n("Inner Authentication:"), self)
+            self.auth_inner_combo = QComboBox(0, self)
+            self.auth_inner_combo.setWFlags(Qt.WStyle_NoBorder)
+            layoutLeft.addWidget(self.auth_inner_label, 2, 0, Qt.AlignRight)
+            layoutLeft.addWidget(self.auth_inner_combo, 2, 1)
+
+            grid.addLayout(layoutLeft, 0, 0)
+            spacer1 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            grid.addItem(spacer1, 1, 0)
+
+            layoutRight = QGridLayout(None, 1, 1, 0, 6, "layoutRight")
+
+            self.auth_anon_id_label = QLabel(i18n("Anonymous Identity:"), self)
+            self.auth_anon_id_line = QLineEdit(self)
+            layoutRight.addWidget(self.auth_anon_id_label, 0, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_anon_id_line, 0, 1)
+
+            self.auth_user_label = QLabel(i18n("User/Identity"), self)
+            self.auth_user_line = QLineEdit(self)
+            layoutRight.addWidget(self.auth_user_label, 1, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_user_line, 1, 1)
+
+            self.auth_passphrase_label = QLabel(i18n("Password:"), self)
+            self.auth_passphrase_line = QLineEdit(self)
+            self.auth_passphrase_line.setEchoMode(QLineEdit.Password)
+            layoutRight.addWidget(self.auth_passphrase_label, 2, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_passphrase_line, 2, 1)
+
+            self.auth_client_cert_label = QLabel(i18n("Client Certificate:"), self)
+            self.auth_client_cert_but = QPushButton(getIconSet("file", KIcon.Small), i18n("browse"),  self)
+            self.auth_client_cert_but.setFlat(1)
+            layoutRight.addWidget(self.auth_client_cert_label, 3, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_client_cert_but, 3, 1)
+
+            self.auth_ca_cert_label = QLabel(i18n("CA Certificate:"), self)
+            self.auth_ca_cert_but = QPushButton(getIconSet("file", KIcon.Small), i18n("browse"), self)
+            self.auth_ca_cert_but.setFlat(1)
+            layoutRight.addWidget(self.auth_ca_cert_label, 4, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_ca_cert_but, 4, 1)
+
+            self.auth_private_key_label = QLabel(i18n("Private Key File:"), self)
+            self.auth_private_key_but = QPushButton(getIconSet("file", KIcon.Small), i18n("browse"), self)
+            self.auth_private_key_but.setFlat(1)
+            layoutRight.addWidget(self.auth_private_key_label, 5, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_private_key_but, 5, 1)
+
+            self.auth_private_key_pass_label = QLabel(i18n("Private Key Password:"), self)
+            self.auth_private_key_pass_line = QLineEdit(self)
+            self.auth_private_key_pass_line.setEchoMode(QLineEdit.Password)
+            layoutRight.addWidget(self.auth_private_key_pass_label, 6, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_private_key_pass_line, 6, 1)
+
+            grid.addMultiCellLayout(layoutRight, 0, 1, 1, 1)
+            spacer2 = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            grid.addItem(spacer2, 2, 1)
 
             for mode in self.link.auth_modes:
                 self.security_mode_combo.insertItem(mode.name)
@@ -242,80 +349,21 @@ class Settings(SettingsWindow):
                 self.auth_mode_combo.insertItem(enc)
 
             self.connect(self.security_mode_combo, SIGNAL("activated(int)"), self.slotSecurityToggle)
-            self.connect(self.auth_passphrase_line, SIGNAL("textChanged(const QString &)"), self.slotPasswordCheck)
             self.connect(self.auth_mode_combo, SIGNAL("activated(int)"), self.slotAuthToggle)
             self.connect(self.auth_ca_cert_but, SIGNAL("clicked()"), self.getCaCert)
             self.connect(self.auth_client_cert_but, SIGNAL("clicked()"), self.getClientCert)
             self.connect(self.auth_private_key_but, SIGNAL("clicked()"), self.getPrivateKey)
 
             self.slotSecurityToggle()
-        else:
-            self.authenticationGroupBox.hide()
 
+        # Communication
         if "net" in link.modes:
-            self.connect(self.dhcpButtonGroup, SIGNAL("clicked(int)"), self.slotNetToggle)
-            if not self.conn:
-                self.connect(self.address, SIGNAL("textChanged(const QString &)"), self.slotAddr)
-
-            self.connect(self.auto_addr, SIGNAL("clicked()"), self.slotFields)
-
-            for msk in ["255.0.0.0", "255.255.0.0", "255.255.255.0"]:
-                self.netmask.insertItem(msk)
-
-            self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
-            self.connect(self.dns_group, SIGNAL("clicked(int)"), self.slotNetToggle)
-        else:
-            self.addressGroupBox.hide()
-            self.dnsGroupBox.hide()
+            self.initNet(lay)
 
         self.setValues()
-        self.slotPasswordCheck()
-        self.adjustSize()
 
         comlink.device_hook.append(self.slotDevices)
         comlink.queryDevices(link.script)
-
-        self.show()
-
-    def fillLabels(self):
-        self.setCaption(i18n("Configure network connection"))
-        self.connectionGroupBox.setTitle(i18n("Connection"))
-        self.addressGroupBox.setTitle(i18n("Address Settings"))
-        self.dnsGroupBox.setTitle(i18n("Name Server Settings"))
-        self.nameLabel.setText(i18n("Name"))
-        self.deviceLabel.setText(i18n("Device"))
-        self.devices_but.setText(i18n("Select"))
-        self.ssidLabel.setText(unicode(self.link.remote_name))
-        self.r1.setText(i18n("Automatic query (DHCP)"))
-        self.r2.setText(i18n("Manual"))
-        self.addressLabel.setText(i18n("Address :"))
-        self.auto_addr.setText(i18n("Custom"))
-        self.netmaskLabel.setText(i18n("Net mask :"))
-        self.gatewayLabel.setText(i18n("Gateway :"))
-        self.auto_gate.setText(i18n("Custom"))
-        self.dns1.setText(i18n("Default"))
-        self.dns2.setText(i18n("Automatic"))
-        self.dns3.setText(i18n("Custom"))
-        self.security_mode_label.setText(i18n("Security"))
-        self.auth_private_key_label.setText(i18n("Private Key File :"))
-        self.auth_private_key_pass_label.setText(i18n("Private Key Password :"))
-        self.auth_ca_cert_label.setText(i18n("CA Certificate :"))
-        self.auth_client_cert_label.setText(i18n("Client Certificate :"))
-        self.auth_passphrase_label.setText(i18n("Password :"))
-        self.auth_user_label.setText(i18n("User/Identity :"))
-        self.auth_anon_id_label.setText(i18n("Anonymous User :"))
-        self.auth_inner_label.setText(i18n("Inner Authentication"))
-        self.auth_mode_label.setText(i18n("Authentication"))
-        self.auth_client_cert_but.setText(i18n("browse"))
-        self.auth_client_cert_but.setIconSet(getIconSet("file", KIcon.Small))
-        self.auth_ca_cert_but.setText(i18n("browse"))
-        self.auth_ca_cert_but.setIconSet(getIconSet("file", KIcon.Small))
-        self.auth_private_key_but.setText(i18n("browse"))
-        self.auth_private_key_but.setIconSet(getIconSet("file", KIcon.Small))
-        self.applyBut.setIconSet(getIconSet("apply", KIcon.Small))
-        self.applyBut.setText(i18n("Apply"))
-        self.cancelBut.setIconSet(getIconSet("cancel", KIcon.Small))
-        self.cancelBut.setText(i18n("Cancel"))
 
     def getCaCert(self, parent=None):
         i = KFileDialog.getOpenFileName("", i18n("*|Certificates"), parent, i18n("Select CA Certificate File"))
@@ -359,7 +407,6 @@ class Settings(SettingsWindow):
                         self.auth_inner_combo.show()
                         for j in self.auth_dict[i]:
                             self.auth_inner_combo.insertItem(j)
-            self.adjustSize()
             return
 
         if sec != None and auth == None:
@@ -368,7 +415,7 @@ class Settings(SettingsWindow):
             else:
                 self.setAuthVisible(True)
                 self.auth_mode_combo.setCurrentItem(0)
-                self.updateStack(self.security_mode_combo.currentItem(), 0)
+                self.slotAuthToggle(0)
 
         if sec != None and auth != None:
             if sec == 0:
@@ -408,8 +455,6 @@ class Settings(SettingsWindow):
                     self.auth_private_key_pass_line.hide()
                     self.auth_private_key_pass_label.hide()
 
-        self.adjustSize()
-
     def setAuthVisible(self, true):
         self.auth_mode_label.setShown(true)
         self.auth_mode_combo.setShown(true)
@@ -430,34 +475,89 @@ class Settings(SettingsWindow):
         self.auth_private_key_pass_line.setShown(true)
         self.auth_private_key_pass_label.setShown(true)
 
-    def slotPasswordCheck(self, pword=None):
-        pword = self.auth_passphrase_line.text()
-
-        self.auth_passphrase_line.setPaletteBackgroundColor(QColor(208, 255, 192))
-
-        if pword.isEmpty():
-            self.auth_passphrase_line.setPaletteBackgroundColor(QColor(255, 192, 192))
-        # wep
-        elif self.security_mode_combo.currentText() == "WEP":
-            pass
-            # hex key
-
     def slotSecurityToggle(self, i=None):
-        # security mode changed, like wep, wpa-psk ..
         if i != None:
             self.updateStack(i, self.auth_mode_combo.currentItem())
         else:
             self.updateStack(self.security_mode_combo.currentItem())
-        self.slotPasswordCheck()
 
     def slotAuthToggle(self, i):
         self.updateStack(self.security_mode_combo.currentItem(), i)
+
+    def initNet(self, lay):
+        line = widgets.HLine(i18n("Network settings"), self, "network")
+        lay.addSpacing(12)
+        lay.addWidget(line)
+
+        grid = QGridLayout(3, 4, 6)
+        lay.addLayout(grid)
+        row = 0
+
+        self.group = QButtonGroup()
+        self.connect(self.group, SIGNAL("clicked(int)"), self.slotNetToggle)
+        self.r1 = QRadioButton(i18n("Automatic query (DHCP)"), self)
+        self.group.insert(self.r1, 1)
+        grid.addMultiCellWidget(self.r1, row, row, 0, 2)
+        row += 1
+
+        self.r2 = QRadioButton(i18n("Manual"), self)
+        grid.addWidget(self.r2, row, 0, Qt.AlignTop)
+        self.group.insert(self.r2, 0)
+
+        lab = QLabel(i18n("Address:"), self)
+        grid.addWidget(lab, row, 1, Qt.AlignRight)
+        self.address = QLineEdit(self)
+        self.address.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.address))
+        if not self.conn:
+            self.connect(self.address, SIGNAL("textChanged(const QString &)"), self.slotAddr)
+        grid.addWidget(self.address, row, 2)
+        self.auto_addr = QCheckBox(i18n("Custom"), self)
+        self.connect(self.auto_addr, SIGNAL("clicked()"), self.slotFields)
+        grid.addWidget(self.auto_addr, row, 3)
+        row += 1
+
+        lab = QLabel(i18n("Net mask:"), self)
+        grid.addWidget(lab, row, 1, Qt.AlignRight)
+        self.netmask = QComboBox(True, self)
+        self.netmask.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.netmask))
+        self.netmask.insertItem("255.0.0.0")
+        self.netmask.insertItem("255.255.0.0")
+        self.netmask.insertItem("255.255.255.0")
+        self.netmask.setCurrentText("")
+        grid.addWidget(self.netmask, row, 2)
+        row += 1
+
+        lab = QLabel(i18n("Gateway:"), self)
+        grid.addWidget(lab, row, 1, Qt.AlignRight)
+        self.gateway = QLineEdit(self)
+        self.gateway.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.gateway))
+        grid.addWidget(self.gateway, row, 2)
+        self.auto_gate = QCheckBox(i18n("Custom"), self)
+        self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
+        grid.addWidget(self.auto_gate, row, 3)
+
+        line = widgets.HLine(i18n("Name servers"), self, "kaddressbook")
+        lay.addSpacing(12)
+        lay.addWidget(line)
+
+        hb = QHBox(self)
+        lay.addWidget(hb)
+        self.dns_group = QButtonGroup()
+        self.dns1 = QRadioButton(i18n("Default"), hb)
+        self.dns_group.insert(self.dns1, 0)
+        self.dns2 = QRadioButton(i18n("Automatic"), hb)
+        self.dns_group.insert(self.dns2, 1)
+        self.dns3 = QRadioButton(i18n("Custom"), hb)
+        self.dns_group.insert(self.dns3, 2)
+        self.connect(self.dns_group, SIGNAL("clicked(int)"), self.slotNetToggle)
+
+        self.dns_text = QLineEdit(hb)
 
     def setValues(self):
         conn = self.conn
         self.device_items = []
         if conn:
-            self.nameLineEdit.setText(unicode(conn.name))
+            self.name.edit.setText(unicode(conn.name))
             if conn.devname:
                 self.device.setText(conn.devname)
             self.device_uid = self.conn.devid
@@ -507,8 +607,6 @@ class Settings(SettingsWindow):
                                 self.auth_passphrase_line.setText(unicode(conn.auth_pass))
                                 self.security_mode_combo.setCurrentItem(i)
                                 self.slotSecurityToggle(i)
-                                if mode.id == "wep":
-                                    pass
                             elif mode.type == "login":
                                 self.auth_user_line.setText(unicode(conn.auth_user))
                                 self.auth_passphrase_line.setText(unicode(conn.auth_pass))
@@ -525,12 +623,9 @@ class Settings(SettingsWindow):
                                 self.auth_user_line.setText(unicode(conn.auth_user))
                                 self.auth_passphrase_line.setText(unicode(conn.auth_pass))
                                 self.auth_anon_id_line.setText(unicode(conn.auth_anon))
-                                if conn.auth_ca_cert:
-                                    self.auth_ca_cert_but.setText(unicode(conn.auth_ca_cert).split('/')[-1])
-                                if conn.auth_client_cert:
-                                    self.auth_client_cert_but.setText(unicode(conn.auth_client_cert).split('/')[-1])
-                                if conn.auth_private_key:
-                                    self.auth_private_key_but.setText(unicode(conn.auth_private_key).split('/')[-1])
+                                self.auth_ca_cert_but.setText(unicode(conn.auth_ca_cert).split('/')[-1])
+                                self.auth_client_cert_but.setText(unicode(conn.auth_client_cert).split('/')[-1])
+                                self.auth_private_key_but.setText(unicode(conn.auth_private_key).split('/')[-1])
                                 self.auth_private_key_pass_line.setText(unicode(conn.auth_private_key_pass))
                                 for j in self.auth_dict:
                                     if conn.auth_auth == j:
@@ -541,7 +636,7 @@ class Settings(SettingsWindow):
                             break
                         i += 1
         else:
-            self.nameLineEdit.setText(unicode(comlink.uniqueName()))
+            self.name.edit.setText(unicode(comlink.uniqueName()))
             self.device_uid = self.new_conn[0]
             self.device.setText(self.new_conn[1])
             if "net" in self.link.modes:
@@ -551,7 +646,7 @@ class Settings(SettingsWindow):
             self.slotFields()
 
     def useValues(self):
-        name = str(self.nameLineEdit.text())
+        name = str(self.name.edit.text())
         conn = self.conn
 
         def saveConnection(set_conn):
@@ -621,7 +716,7 @@ class Settings(SettingsWindow):
             # close dialog
             self.parent().setEnabled(True)
             self.cleanup()
-            self.close()
+            self.parent().parent().close(True)
 
         def error(exception):
             self.parent().setEnabled(True)
@@ -666,9 +761,9 @@ class Settings(SettingsWindow):
         item = self.device_items[id]
         self.device_uid = item[0]
         self.device.setText(item[1])
-
+    
     def slotFields(self):
-        auto = self.dhcpButtonGroup.selectedId()
+        auto = self.group.selectedId()
         addr = self.auto_addr.isChecked()
         gate = self.auto_gate.isChecked()
         self.address.setEnabled(not auto or (auto and addr))
@@ -678,10 +773,10 @@ class Settings(SettingsWindow):
         self.auto_gate.setEnabled(auto)
         self.dns2.setEnabled(auto)
         self.dns_text.setEnabled(self.dns_group.selectedId() == 2)
-
+    
     def slotNetToggle(self, id):
         self.slotFields()
-
+    
     def maskOK(self, mask):
         if mask == "":
             return True
@@ -697,7 +792,7 @@ class Settings(SettingsWindow):
         if m[3] != "255" and m[3] != "0":
             return False
         return True
-
+    
     def slotAddr(self, addr):
         addr = unicode(addr)
         mask = self.netmask
@@ -716,7 +811,38 @@ class Settings(SettingsWindow):
             elif cl > 191 and cl < 224:
                 mask.setCurrentText("255.255.255.0")
 
-    def slotCancel(self):
-        self.cleanup()
-        self.close()
 
+class Window(QMainWindow):
+    def __init__(self, parent, conn, link=None, new_conn=None):
+        QMainWindow.__init__(self, parent, " ", Qt.WType_Dialog)
+        
+        self.setCaption(i18n("Configure network connection"))
+        #self.setMinimumSize(580, 380)
+        
+        vb = QVBox(self)
+        vb.setMargin(6)
+        vb.setSpacing(12)
+        self.setCentralWidget(vb)
+        
+        if not link:
+            link = comlink.links[conn.script]
+        self.settings = Settings(vb, link, conn, new_conn)
+        
+        hb = QHBox(vb)
+        hb.setSpacing(12)
+        lab = QLabel("", hb)
+        but = QPushButton(getIconSet("apply", KIcon.Small), i18n("Apply"), hb)
+        but.setFlat(1)
+        self.connect(but, SIGNAL("clicked()"), self.slotAccept)
+        but = QPushButton(getIconSet("cancel", KIcon.Small), i18n("Cancel"), hb)
+        but.setFlat(1)
+        self.connect(but, SIGNAL("clicked()"), self.slotCancel)
+        
+        self.show()
+    
+    def slotAccept(self):
+        self.settings.useValues()
+    
+    def slotCancel(self):
+        self.settings.cleanup()
+        self.close(True)

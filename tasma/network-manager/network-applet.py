@@ -293,8 +293,8 @@ class DBusInterface:
         ch.call()
 
     def getConn(self, script, name):
-        myhash = Connection.hash(script, name)
-        return self.connections.get(myhash, None)
+        hash = Connection.hash(script, name)
+        return self.connections.get(hash, None)
 
     def getConnById(self, mid):
         for dev in self.devices.values():
@@ -329,14 +329,14 @@ class Icons:
     def get_state(self, script, state):
         link = comlink.links.get(script, None)
         if link:
-            mytype = link.type
+            type = link.type
         else:
-            mytype = "net"
+            type = "net"
         if not type in ("net", "wifi", "dialup"):
-            mytype = "net"
+            type = "net"
         if not state in ("up", "connecting", "down"):
             state = "down"
-        return self.iconmap.get("%s-%s" % (mytype, state))
+        return self.iconmap.get("%s-%s" % (type, state))
 
     def getPath(self,icon):
         return KGlobal.iconLoader().iconPath(icon, KIcon.Desktop, True)
@@ -682,6 +682,7 @@ class NetTray(KSystemTray):
             KSystemTray.mousePressEvent(self, event)
 
     def slotSelect(self, mid):
+        menu = self.contextMenu()
         conn = comlink.getConnById(mid)
         if conn.state in ("up", "connecting", "inaccessible"):
             state = "down"

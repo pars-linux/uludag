@@ -37,19 +37,15 @@ class IconButton(QPushButton):
 
 
 class ConnectionTipper(QToolTip):
-    def __init__(self, parent):
-        QToolTip.__init__(self, parent)
-        self.parent = parent
-
     def maybeTip(self, point):
         conn = self.parent
-
+        
         rect = conn.rect()
         rect.setWidth(rect.width() - conn.del_but.myWidth - conn.edit_but.myWidth - 6 - 6 - 4)
         rect.setX(rect.x() + conn.pix_start)
         if not rect.contains(point):
             return
-
+        
         conn = conn.conn
         link = comlink.links[conn.script]
         tip = "<nobr>"
@@ -76,7 +72,7 @@ class ConnectionTipper(QToolTip):
             tip += i18n("Mod:")
             tip += " %s" % capitalize(conn.device_mode)
             tip += "</nobr>"
-
+        
         self.tip(rect, tip)
 
 
@@ -91,12 +87,12 @@ class Connection(QWidget):
         self.tipper = ConnectionTipper(self)
         self.tipper.parent = self
         dev.connections.append(self)
-
+        
         self.view = view
         self.conn = conn
-
+        
         self.edit = None
-
+        
         self.mypix = icons.get_state(comlink.links[conn.script].type, conn.state)
         if self.conn.state in ("inaccessible", "unavailable"):
             self.mypix = KIconEffect().apply(self.mypix, KIconEffect.ToGray, 1, QColor(), False)
@@ -106,44 +102,45 @@ class Connection(QWidget):
         self.check.setGeometry(6, 3, 16, 16)
         self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
         self.check.setAutoMask(True)
-
+        
         w = self.check.width()
         self.pix_start = 6 + w + 3
         w = self.mypix.width()
         self.text_start = self.pix_start + w + 6
-
+        
         view.connections[conn.hash] = self
-
+        
         self.edit_but = IconButton("configure", self)
         QToolTip.add(self.edit_but, i18n("Configure connection"))
         self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
         self.del_but = IconButton("cancel", self)
         QToolTip.add(self.del_but, i18n("Delete connection"))
         self.connect(self.del_but, SIGNAL("clicked()"), self.slotDelete)
-
+        
         self.show()
-
+        
         self.ignore_signal = False
-
+    
     def slotToggle(self, on):
         if self.ignore_signal:
             return
+        dev = self.parent()
         state = "down"
         if on:
             state = "up"
-
+        
         self.view.setEnabled(False)
         ch = comlink.callHandler(self.conn.script, "Net.Link", "setState", "tr.org.pardus.comar.net.link.setstate")
         ch.call(self.conn.name, state)
         self.view.setEnabled(True)
-
+    
     def slotDelete(self):
         conn = self.conn
         m = i18n("Should I delete the\n'%s'\nconnection?")
         if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % conn.name, i18n("Delete connection?")):
             ch = comlink.callHandler(self.conn.script, "Net.Link", "deleteConnection", "tr.org.pardus.comar.net.link.set")
             ch.call(conn.name)
-
+    
     def slotEdit(self):
         if self.edit:
             try:
@@ -152,11 +149,11 @@ class Connection(QWidget):
                     return
             except RuntimeError:
                 pass
-        self.edit = connection.Settings(self.parent().parent(), self.conn)
-
+        self.edit = connection.Window(self.view.parent(), self.conn)
+    
     def mouseDoubleClickEvent(self, event):
         self.slotEdit()
-
+    
     def updateState(self):
         self.ignore_signal = True
         self.check.setChecked(self.conn.state in ("up", "connecting", "inaccessible"))
@@ -165,7 +162,7 @@ class Connection(QWidget):
         if self.conn.state in ("inaccessible", "unavailable"):
             self.mypix = KIconEffect().apply(self.mypix, KIconEffect.ToGray, 1, QColor(), False)
         self.update()
-
+    
     def addressText(self):
         text = ""
         if self.conn.state == "up":
@@ -176,7 +173,7 @@ class Connection(QWidget):
             if self.conn.message:
                 text = unicode(self.conn.message)
         return text
-
+    
     def paintEvent(self, event):
         paint = QPainter(self)
         col = KGlobalSettings.baseColor()
@@ -197,7 +194,7 @@ class Connection(QWidget):
         paint.restore()
         fm = self.fontMetrics()
         paint.drawText(self.text_start, 5 + fark + 3 + fm.ascent(), self.addressText())
-
+    
     def resizeEvent(self, event):
         w = event.size().width()
         h = event.size().height()
@@ -207,7 +204,7 @@ class Connection(QWidget):
         self.del_but.setGeometry(w - self.del_but.myWidth - 6 - 6, dip, self.del_but.myWidth, self.del_but.myHeight)
         self.edit_but.setGeometry(w - self.del_but.myWidth - 6 - 6 - self.edit_but.myWidth - 3, dip, self.edit_but.myWidth, self.edit_but.myHeight)
         return QWidget.resizeEvent(self, event)
-
+    
     def sizeHint(self):
         f = QFont(self.font())
         f.setPointSize(f.pointSize() + 2)
@@ -245,6 +242,7 @@ class Device(QWidget):
         return rect.height() + 7
 
     def paintEvent(self, event):
+        cg = self.colorGroup()
         QWidget.paintEvent(self, event)
         paint = QPainter(self)
         paint.fillRect(QRect(0, 0, self.width(), self.myHeight()), QBrush(KGlobalSettings.buttonBackground(), Qt.Dense3Pattern))
