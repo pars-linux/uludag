@@ -14,7 +14,9 @@ YALI is Yet Another Linux Installer. It is the installer that sets up the system
 Getting source
 --------------
 
-You can grab the source from uludag repository with the following::
+You can grab the source from uludag repository with the following
+
+.. code-block:: bash
 
     $ svn checkout https://svn.pardus.org.tr/uludag/trunk/yali4
 
