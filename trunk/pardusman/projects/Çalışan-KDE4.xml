@@ -1,12 +1,11 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008-KDE4_26122008</Title>
+    <Title>Pardus Calisan 2008-KDE4 Alpha</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <PackageSelection repo_uri="file:///home/ekin/packages/test/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>Bitstream-Vera-fonts</SelectedPackage>
         <SelectedPackage>QtCurve-KDE3</SelectedPackage>
-        <SelectedPackage>QtCurve-KDE4</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acerhk</SelectedPackage>
         <SelectedPackage>acpi</SelectedPackage>
@@ -49,16 +48,6 @@
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
-        <SelectedPackage>gimp</SelectedPackage>
-        <SelectedPackage>gimp-i18n-ca</SelectedPackage>
-        <SelectedPackage>gimp-i18n-de</SelectedPackage>
-        <SelectedPackage>gimp-i18n-es</SelectedPackage>
-        <SelectedPackage>gimp-i18n-fr</SelectedPackage>
-        <SelectedPackage>gimp-i18n-it</SelectedPackage>
-        <SelectedPackage>gimp-i18n-nl</SelectedPackage>
-        <SelectedPackage>gimp-i18n-pl</SelectedPackage>
-        <SelectedPackage>gimp-i18n-pt_BR</SelectedPackage>
-        <SelectedPackage>gimp-i18n-sv</SelectedPackage>
         <SelectedPackage>glibc-locales-ca</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
@@ -107,10 +96,8 @@
         <SelectedPackage>kdeartwork4-screensavers</SelectedPackage>
         <SelectedPackage>kdeartwork4-sounds</SelectedPackage>
         <SelectedPackage>kdeartwork4-styles</SelectedPackage>
-        <SelectedPackage>kdeartwork4-wallpapers</SelectedPackage>
         <SelectedPackage>kdebase4</SelectedPackage>
         <SelectedPackage>kdebase4-runtime</SelectedPackage>
-        <SelectedPackage>kdegames4</SelectedPackage>
         <SelectedPackage>kdegraphics4</SelectedPackage>
         <SelectedPackage>kdemultimedia4</SelectedPackage>
         <SelectedPackage>kdenetwork4</SelectedPackage>
@@ -121,7 +108,6 @@
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kftpgrabber</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
-        <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>kradio</SelectedPackage>
         <SelectedPackage>krename-kde4</SelectedPackage>
         <SelectedPackage>ksplash-pardus-theme-kde4</SelectedPackage>
@@ -184,7 +170,6 @@
         <SelectedPackage>tn5250</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
         <SelectedPackage>tulliana2</SelectedPackage>
-        <SelectedPackage>ufraw</SelectedPackage>
         <SelectedPackage>uhinv</SelectedPackage>
         <SelectedPackage>unarj</SelectedPackage>
         <SelectedPackage>unionfs</SelectedPackage>
@@ -200,6 +185,7 @@
         <SelectedPackage>x11-ssh-askpass</SelectedPackage>
         <SelectedPackage>x2x</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
+        <SelectedPackage>yakuake4</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
@@ -215,14 +201,12 @@
         <Package>PyQt</Package>
         <Package>QtCurve-Gtk2</Package>
         <Package>QtCurve-KDE3</Package>
-        <Package>QtCurve-KDE4</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
         <Package>accessrunner-firmware</Package>
         <Package>acerhk</Package>
         <Package>acl</Package>
         <Package>acpi</Package>
-        <Package>acpid</Package>
         <Package>acx100</Package>
         <Package>acx100-firmware</Package>
         <Package>akonadi</Package>
@@ -250,7 +234,6 @@
         <Package>avahi-qt</Package>
         <Package>avahi-qt4</Package>
         <Package>b43-firmware</Package>
-        <Package>babl</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
         <Package>bash-completion</Package>
@@ -292,7 +275,6 @@
         <Package>dbus-glib</Package>
         <Package>dbus-pyqt3-mainloop</Package>
         <Package>dbus-python</Package>
-        <Package>dbus-qt3</Package>
         <Package>decibel</Package>
         <Package>dejavu-fonts</Package>
         <Package>device-mapper</Package>
@@ -349,22 +331,10 @@
         <Package>gd</Package>
         <Package>gdbm</Package>
         <Package>gecko-mediaplayer</Package>
-        <Package>gegl</Package>
         <Package>gettext</Package>
         <Package>gfxtheme-pardus-install</Package>
-        <Package>ggz-client-libs</Package>
         <Package>ghostscript</Package>
         <Package>giflib</Package>
-        <Package>gimp</Package>
-        <Package>gimp-i18n-ca</Package>
-        <Package>gimp-i18n-de</Package>
-        <Package>gimp-i18n-es</Package>
-        <Package>gimp-i18n-fr</Package>
-        <Package>gimp-i18n-it</Package>
-        <Package>gimp-i18n-nl</Package>
-        <Package>gimp-i18n-pl</Package>
-        <Package>gimp-i18n-pt_BR</Package>
-        <Package>gimp-i18n-sv</Package>
         <Package>gle</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
@@ -453,11 +423,9 @@
         <Package>kdeartwork4-screensavers</Package>
         <Package>kdeartwork4-sounds</Package>
         <Package>kdeartwork4-styles</Package>
-        <Package>kdeartwork4-wallpapers</Package>
         <Package>kdebase4</Package>
         <Package>kdebase4-runtime</Package>
         <Package>kdebase4-workspace</Package>
-        <Package>kdegames4</Package>
         <Package>kdegraphics4</Package>
         <Package>kdelibs</Package>
         <Package>kdelibs4</Package>
@@ -473,7 +441,6 @@
         <Package>kftpgrabber</Package>
         <Package>klibc</Package>
         <Package>konversation</Package>
-        <Package>kpowersave</Package>
         <Package>kradio</Package>
         <Package>krename-kde4</Package>
         <Package>ksplash-pardus-theme-kde4</Package>
@@ -546,7 +513,6 @@
         <Package>libfontenc</Package>
         <Package>libgcc</Package>
         <Package>libgcrypt</Package>
-        <Package>libggz</Package>
         <Package>libglade2</Package>
         <Package>libgomp</Package>
         <Package>libgpg-error</Package>
@@ -560,7 +526,6 @@
         <Package>libieee1284</Package>
         <Package>libksba</Package>
         <Package>liblazy</Package>
-        <Package>liblzf</Package>
         <Package>libmad</Package>
         <Package>libmal</Package>
         <Package>libmatroska</Package>
@@ -577,7 +542,6 @@
         <Package>libogg</Package>
         <Package>liboil</Package>
         <Package>liboldX</Package>
-        <Package>libopenraw</Package>
         <Package>libotr</Package>
         <Package>libpaper</Package>
         <Package>libpcap</Package>
@@ -700,7 +664,6 @@
         <Package>pm-utils</Package>
         <Package>pnm2ppa</Package>
         <Package>poppler</Package>
-        <Package>poppler-glib</Package>
         <Package>poppler-qt4</Package>
         <Package>popt</Package>
         <Package>portmap</Package>
@@ -744,7 +707,6 @@
         <Package>reiserfsprogs</Package>
         <Package>reportlab</Package>
         <Package>rp-pppoe</Package>
-        <Package>ruby</Package>
         <Package>samba</Package>
         <Package>sane-backends</Package>
         <Package>schroedinger</Package>
@@ -773,7 +735,6 @@
         <Package>strigi</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
-        <Package>suspend</Package>
         <Package>swig</Package>
         <Package>synaptics</Package>
         <Package>syntekdriver</Package>
@@ -801,7 +762,6 @@
         <Package>tunepimp</Package>
         <Package>twolame</Package>
         <Package>udev</Package>
-        <Package>ufraw</Package>
         <Package>uhinv</Package>
         <Package>unarj</Package>
         <Package>ungrab-winmodem</Package>
@@ -844,6 +804,7 @@
         <Package>xorg-video</Package>
         <Package>xscreensaver</Package>
         <Package>xvid</Package>
+        <Package>yakuake4</Package>
         <Package>zd1201-firmware</Package>
         <Package>zd1211-firmware</Package>
         <Package>zemberek-server</Package>
