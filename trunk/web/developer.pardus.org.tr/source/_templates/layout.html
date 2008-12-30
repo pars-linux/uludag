@@ -4,17 +4,20 @@
 {%- endblock %}
 {%- set reldelim1 = reldelim1 is not defined and ' &raquo;' or reldelim1 %}
 {%- set reldelim2 = reldelim2 is not defined and ' |' or reldelim2 %}
+{%- set homepage = 'Home' %}
 {%- macro relbar %}
     <div class="related">
       <h3>{{ _('Navigation') }}</h3>
       <ul>
         {%- block rootrellink %}
-        <li><a href="{{ pathto("index") }}">Home</a> {{ reldelim2 }} </li>
+        <li><a href="{{ pathto("index") }}">{{ homepage }}</a></li>
         {%- endblock %}
         {%- for parent in parents %}
           <li>{{ reldelim1 }}&nbsp;<a href="{{ parent.link|e }}" accesskey="U">{{ parent.title }}</a></li>
-        {%- endfor %}
-          <li>{{ reldelim1 }}&nbsp;<a href="{{ page.link|e }}" accesskey="U">{{ title }}</a></li>
+          {%- endfor %}
+        {%- if title not in ['Pardus Developer Base'] %}
+         <li>{{ reldelim1 }}&nbsp;<a href="{{ page.link|e }}" accesskey="U">{{ title }}</a></li>
+        {%- endif %}
         {%- block relbaritems %} {% endblock %}
       </ul>
     </div>
