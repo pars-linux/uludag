@@ -1,8 +1,8 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008-KDE3_26122008</Title>
+    <Title>Pardus Calisan 2008-KDE3 Alpha</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
-    <PackageSelection repo_uri="file:///home/ekin/packages/release/pisi-index.xml.bz2">
+    <PackageSelection repo_uri="file:///home/ekin/packages/test/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>Bitstream-Vera-fonts</SelectedPackage>
         <SelectedPackage>QtCurve-KDE3</SelectedPackage>
@@ -205,7 +205,6 @@
         <SelectedPackage>zpspell</SelectedPackage>
         <Package>Bitstream-Vera-fonts</Package>
         <Package>ConsoleKit</Package>
-        <Package>DevIL</Package>
         <Package>DirectFB</Package>
         <Package>PolicyKit</Package>
         <Package>PolicyKit-kde</Package>
@@ -225,7 +224,6 @@
         <Package>acx100-firmware</Package>
         <Package>agg</Package>
         <Package>akode</Package>
-        <Package>allegro</Package>
         <Package>alsa-driver</Package>
         <Package>alsa-firmware</Package>
         <Package>alsa-lib</Package>
@@ -251,6 +249,7 @@
         <Package>avahi</Package>
         <Package>avahi-qt</Package>
         <Package>b43-firmware</Package>
+        <Package>babl</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
         <Package>bash-completion</Package>
@@ -343,6 +342,7 @@
         <Package>gd</Package>
         <Package>gdbm</Package>
         <Package>gecko-mediaplayer</Package>
+        <Package>gegl</Package>
         <Package>gettext</Package>
         <Package>gfxtheme-pardus-install</Package>
         <Package>ghostscript</Package>
@@ -577,6 +577,7 @@
         <Package>libogg</Package>
         <Package>liboil</Package>
         <Package>liboldX</Package>
+        <Package>libopenraw</Package>
         <Package>libopensync</Package>
         <Package>libpaper</Package>
         <Package>libpcap</Package>
@@ -588,6 +589,7 @@
         <Package>libsamplerate</Package>
         <Package>libsdl</Package>
         <Package>libsexy</Package>
+        <Package>libshout</Package>
         <Package>libsigc++</Package>
         <Package>libsmbios</Package>
         <Package>libsndfile</Package>
@@ -623,6 +625,7 @@
         <Package>lsof</Package>
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
+        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>madwifi-ng</Package>
@@ -631,6 +634,7 @@
         <Package>mc</Package>
         <Package>memtest86</Package>
         <Package>microcode-ctl</Package>
+        <Package>microcode-data</Package>
         <Package>microdia</Package>
         <Package>mingetty</Package>
         <Package>minicom</Package>
@@ -678,6 +682,7 @@
         <Package>orbit2</Package>
         <Package>ov511</Package>
         <Package>ov51x-jpeg</Package>
+        <Package>p7zip</Package>
         <Package>package-manager</Package>
         <Package>pam</Package>
         <Package>pango</Package>
