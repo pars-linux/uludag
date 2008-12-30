@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008 [26.12.2008]</Title>
+    <Title>Pardus 2008.1 Alpha</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
@@ -110,7 +110,6 @@
         <SelectedPackage>kipi-plugins</SelectedPackage>
         <SelectedPackage>kmplayer</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
-        <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>lame</SelectedPackage>
         <SelectedPackage>lib-compat</SelectedPackage>
@@ -453,7 +452,6 @@
         <Package>klibc</Package>
         <Package>kmplayer</Package>
         <Package>knazar</Package>
-        <Package>konversation</Package>
         <Package>kpowersave</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
