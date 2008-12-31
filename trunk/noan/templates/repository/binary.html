@@ -7,6 +7,14 @@
         <li><strong>Package:</strong> <a href="{{ binary.package.get_url }}">{{ binary.package.name }}</a></li>
         <li><strong>Updated By:</strong> <a href="/repository/users/{{ binary.update.updated_by.username }}/">{{ binary.update.updated_by.get_full_name }}</a></li>
     </ul>
+
+    <h2>Runtime Dependencies</h2>
+    <ul>
+        {% for dep in binary.package.runtimedependency_set.all %}
+        <li>{{ dep }}</li>
+        {% endfor %}
+    </ul>
+
     <h2>Difference</h2>
     <ul>
         {% for update in binary.get_difference %}
