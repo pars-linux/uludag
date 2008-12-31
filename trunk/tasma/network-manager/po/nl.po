@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-29 09:56+0200\n"
-"PO-Revision-Date: 2008-09-10 20:22+0200\n"
+"PO-Revision-Date: 2008-12-31 02:07+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: settingsWindow.py:447 settingsWindow.py:450
 msgid "SettingsWindow"
-msgstr ""
+msgstr "SettingsWindow"
 
 #: comariface.py:214
 msgid "You are not authorized for this operation."
@@ -36,6 +36,11 @@ msgid ""
 "usually\n"
 "done through a switch or Fn keys in modern notebooks."
 msgstr ""
+"Netwerkbeheer was niet in staat om met uw netwerkapparaat te communiceren. Als "
+"het een\n"
+"draadloze interface betreft, zorg dan dat hiervan de radio aan staat. Dit doet u "
+"normaal gesproken\n"
+"door een schakelaar of met Fn toetsen op moderne notebooks."
 
 #: comariface.py:221
 msgid ""
@@ -46,11 +51,15 @@ msgid ""
 "through its DHCP service. Otherwise, you have to manually assign an IP "
 "address."
 msgstr ""
+"De DHCP dienst was niet in staat een IP adres toe te wijzen aan uw netwerk "
+"interface.\n"
+"Controlleer of het netwerk waarmee u probeert te verbinden in staat is om IP "
+"adressen toe te wijzen\n"
+"via haar DHCP dienst. Anders dient u handmatig een IP adres toe te wijzen."
 
 #: comariface.py:227
-#, fuzzy
 msgid "Network Manager - Error"
-msgstr "Netwerkbeheer"
+msgstr "Netwerkbeheer - fout"
 
 #: comariface.py:235 network-applet.py:176
 msgid "Waiting DBus..."
@@ -254,22 +263,19 @@ msgstr "Verbinding"
 
 #: connection.py:283
 msgid "Address Settings"
-msgstr ""
+msgstr "Adres instellingen"
 
 #: connection.py:284
-#, fuzzy
 msgid "Name Server Settings"
-msgstr "Naam dienst instellingen"
+msgstr "Naam server instellingen"
 
 #: connection.py:285
-#, fuzzy
 msgid "Name"
-msgstr "Naam:"
+msgstr "Naam"
 
 #: connection.py:286
-#, fuzzy
 msgid "Device"
-msgstr "Apparaat:"
+msgstr "Apparaat"
 
 #: connection.py:287
 msgid "Select"
@@ -284,7 +290,6 @@ msgid "Manual"
 msgstr "Handmatig"
 
 #: connection.py:291
-#, fuzzy
 msgid "Address :"
 msgstr "Adres:"
 
@@ -293,59 +298,48 @@ msgid "Custom"
 msgstr "Eigen"
 
 #: connection.py:293
-#, fuzzy
 msgid "Net mask :"
 msgstr "Netmasker:"
 
 #: connection.py:294
-#, fuzzy
 msgid "Gateway :"
 msgstr "Poort:"
 
 #: connection.py:299
-#, fuzzy
 msgid "Security"
-msgstr "Beveiliging:"
+msgstr "Beveiliging"
 
 #: connection.py:300
-#, fuzzy
 msgid "Private Key File :"
 msgstr "Privé sleutelbestand:"
 
 #: connection.py:301
-#, fuzzy
 msgid "Private Key Password :"
 msgstr "Privé sleutelwachtwoord:"
 
 #: connection.py:302
-#, fuzzy
 msgid "CA Certificate :"
 msgstr "CA certificaat:"
 
 #: connection.py:303
-#, fuzzy
 msgid "Client Certificate :"
 msgstr "Cliënt certificaat:"
 
 #: connection.py:304
-#, fuzzy
 msgid "Password :"
 msgstr "Wachtwoord:"
 
 #: connection.py:305
-#, fuzzy
 msgid "User/Identity :"
-msgstr "Gebruiker/identiteit"
+msgstr "Gebruiker/identiteit:"
 
 #: connection.py:306
-#, fuzzy
 msgid "Anonymous User :"
-msgstr "Anonieme identiteit:"
+msgstr "Anonieme gebruiker:"
 
 #: connection.py:307
-#, fuzzy
 msgid "Inner Authentication"
-msgstr "Binnen autorisatie:"
+msgstr "Innerlijke autorisatie"
 
 #: connection.py:309 connection.py:311 connection.py:313
 msgid "browse"
@@ -369,7 +363,7 @@ msgstr "Selecteer privé sleutelbestand"
 
 #: newConn.py:63
 msgid "NewConn"
-msgstr ""
+msgstr "NewConn"
 
 #: nameconf.py:45
 msgid "Host name:"
@@ -399,9 +393,8 @@ msgid "Name server:"
 msgstr "Naamserver:"
 
 #: nameConf.py:104
-#, fuzzy
 msgid "NameConf"
-msgstr "Naam:"
+msgstr "NameConf"
 
 #: connsharing.py:52
 msgid "Internet Connection Sharing"
@@ -433,29 +426,31 @@ msgstr "Veranderende statussen van interface mislukt"
 
 #: connsharing.py:83
 msgid "DHCP Server Error"
-msgstr ""
+msgstr "DHCP serverfout"
 
 #: connsharing.py:110
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
 msgstr ""
+"De interfaces die u geselecteerd hebt dienen te verschillen om de internet verbinding "
+"te delen"
 
 #: connsharing.py:110
 msgid "Check Selected Interfaces"
-msgstr ""
+msgstr "Controlleer geselecteerde interfaces"
 
 #: connsharing.py:120
 msgid "The sharing of your connection has been successfully done."
-msgstr ""
+msgstr "Het delen van uw verbinding is succesvol verlopen."
 
 #: connsharing.py:120
 msgid "Sharing is OK"
-msgstr ""
+msgstr "Delen is OK"
 
 #: connsharing.py:221
 msgid "You do not have an ip address for the interface that goes to internet"
-msgstr ""
+msgstr "U hebt geen IP adres voor de interface welk op internet gaat"
 
 #: connsharing.py:221
 msgid "IP address not found"
@@ -517,32 +512,3 @@ msgstr "U bent nu offline"
 msgid "Network Applet"
 msgstr "Netwerk-applet"
 
-# naamservers
-#, fuzzy
-#~ msgid "Name Server"
-#~ msgstr "Naamservers"
-
-#, fuzzy
-#~ msgid "Name :"
-#~ msgstr "Naam:"
-
-#~ msgid "Computer"
-#~ msgstr "Computer"
-
-#~ msgid "Connection name:"
-#~ msgstr "Naam verbinding:"
-
-#~ msgid "Device Mode"
-#~ msgstr "Apparaat modus"
-
-#~ msgid "Mode:"
-#~ msgstr "Modus:"
-
-#~ msgid "Scan"
-#~ msgstr "Scan"
-
-#~ msgid "Authentication:"
-#~ msgstr "Autorisatie:"
-
-#~ msgid "Network settings"
-#~ msgstr "Netwerkinstellingen"
