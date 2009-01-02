@@ -1,4 +1,7 @@
 2009-01-02 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * If KDE is not installed dont try to set AutoLogin choices
+
+2009-01-02 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * New bugfix release 2.0.7
          * If not found a proper grub.conf umount foreign partition correctly
          * If entry "root" not found in foreign grub.conf skip them
