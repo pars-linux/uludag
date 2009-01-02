@@ -95,9 +95,15 @@ class User:
     # KDE AutoLogin
     def setAutoLogin(self,state=True):
         """ Sets the KDE's Autologin feature's state """
+        confFile = os.path.join(consts.target_dir, 'etc/X11/kdm/kdmrc')
+
+        if not os.path.exists(confFile):
+            import yali4.gui.context as ctx
+            ctx.debugger.log("SAL: Failed, kdmrc not found; possibly KDE is not installed !")
+            return False
+
         import ConfigParser
         section = 'X-:0-Core'
-        confFile = os.path.join(consts.target_dir, 'etc/X11/kdm/kdmrc')
         kdmrc = ConfigParser.ConfigParser()
         kdmrc.optionxform = str
         kdmrc.readfp(open(confFile))
