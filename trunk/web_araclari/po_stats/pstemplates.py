@@ -9,6 +9,8 @@
 # any later version.
 #
 
+import time
+
 """
 
    There must be three template variable for every language. Here is an example for "en":
@@ -107,7 +109,7 @@ htmlHeaderTemplate["en"] = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Trans
         <div id="mainpage">
 
 
-<p><img src="../../../images/bullet6.png" alt="nokta" align="top"><span class="baslik"> Po stats for -<b>%s</b>-</span>
+<p><img src="../../../images/bullet6.png" alt="nokta" align="top"><span class="baslik"> Translation statistics for <b>%s</b></span>
 
 <p><center><table style="width: 90%%;">
 <tr>
@@ -121,7 +123,7 @@ htmlHeaderTemplate["en"] = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Trans
 
 htmlFooterTemplate["en"] = '''
 </table></center>
-<br>
+<br /><div align="center"><em>Last updated on '''+time.asctime()+'''</em></div><br />
         <div id="footnote">
             <p>
               Information and documents on Pardus web pages can be used freely anywhere with original source credit.<br />
@@ -129,7 +131,6 @@ htmlFooterTemplate["en"] = '''
               <em>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</em>
            </p>
         </div>
-
 </td>
 </tr>
 </table>
@@ -201,7 +202,7 @@ htmlHeaderTemplate["tr"] = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Trans
 
 <br>
 
-<p><img src="../../../images/bullet6.png" alt="nokta" align="top"><span class="baslik"> -<b>%s</b>- için son durum</span>
+<p><img src="../../../images/bullet6.png" alt="nokta" align="top"><span class="baslik"> %s çeviri istatistikleri</span>
 <p><center><table style="width: 90%%;">
 <tr>
     <td class="tdh">Dosya</td>
