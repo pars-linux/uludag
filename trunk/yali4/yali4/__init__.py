@@ -10,7 +10,7 @@
 # Please read the COPYING file.
 #
 
-__version__ = "2.0.6"
+__version__ = "2.0.7"
 
 import sys
 import exceptions

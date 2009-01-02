@@ -49,8 +49,8 @@ chainloader +1
 
 win_part_tmp_multiple_disks = """
 title %(title)s (%(fs)s) - %(root)s
-map (hd0) (hd1)
-map (hd1) (hd0)
+map (hd0) (%(grub_dev)s)
+map (%(grub_dev)s) (hd0)
 rootnoverify (%(grub_root)s)
 makeactive
 chainloader +1
@@ -217,6 +217,7 @@ class BootLoader:
         else:
             s = win_part_tmp_multiple_disks % {"title": _("Windows"),
                                                "grub_root": grub_root,
+                                               "grub_dev": grub_dev,
                                                "root": win_root,
                                                "fs": win_fs}
 

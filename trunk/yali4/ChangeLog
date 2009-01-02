@@ -1,3 +1,13 @@
+2009-01-02 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * New bugfix release 2.0.7
+         * If not found a proper grub.conf umount foreign partition correctly
+         * If entry "root" not found in foreign grub.conf skip them
+         * Use correct win device with map definition in grub.conf
+         * Bug fixed at http://bugs.pardus.org.tr/8947
+
+2008-12-26 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * New release 2.0.6
+
 2008-12-24 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * Get theme options from cmdline
 

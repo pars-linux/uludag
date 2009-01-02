@@ -176,10 +176,18 @@ def mount(source, target, fs, needs_mtab=False):
                           stdout="/tmp/mount.log",
                           stderr="/tmp/mount.log")
 
+def umount_(dir='/tmp/pcheck', params=''):
+    param = [dir, params]
+    umount_res = execClear("umount",
+                           param,
+                           stdout="/tmp/umount.log",
+                           stderr="/tmp/umount.log")
+
 def is_windows_boot(partition_path, file_system):
     m_dir = "/tmp/pcheck"
     if not os.path.isdir(m_dir):
         os.makedirs(m_dir)
+    umount(m_dir)
     try:
         if file_system == "fat32":
             mount(partition_path, m_dir, "vfat")
@@ -191,18 +199,19 @@ def is_windows_boot(partition_path, file_system):
     exist = lambda f: os.path.exists(os.path.join(m_dir, f))
 
     if exist("boot.ini") or exist("command.com") or exist("bootmgr"):
-        umount(m_dir)
+        umount_(m_dir)
         return True
     else:
-        umount(m_dir)
+        umount_(m_dir)
         return False
 
 def is_linux_boot(partition_path, file_system):
     import yali4.gui.context as ctx
+    result = False
     m_dir = "/tmp/pcheck"
     if not os.path.isdir(m_dir):
         os.makedirs(m_dir)
-    umount(m_dir)
+    umount_(m_dir)
 
     ctx.debugger.log("Mounting %s to /tmp/pcheck" % partition_path)
 
@@ -219,16 +228,12 @@ def is_linux_boot(partition_path, file_system):
         grubCnf = os.path.join(m_dir,"boot/grub/grub.conf")
         if os.path.islink(menuLst):
             ctx.debugger.log("grub.conf found on device %s" % partition_path)
-            return grubCnf
+            result = grubCnf
         else:
             ctx.debugger.log("menu.lst found on device %s" % partition_path)
-            return menuLst
-        return False
-    else:
-        return False
+            result = menuLst
 
-def umount_(dir, param=''):
-    os.system("umount %s %s" % (dir,param))
+    return result
 
 def reboot():
     try:
