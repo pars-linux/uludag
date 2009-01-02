@@ -87,9 +87,10 @@ class RepositoryManager:
         # difflist is list of tuples: ('kernel/kernel/pspec.xml', commit_diff)
         print "\nCalling svn diff. This may take a little while depending on the repository state.."
         diffoutput = os.popen("/usr/bin/svn di -r %d:%d %s" % (self.oldRevision, self.getRevision(), " ".join(pspecList))).read().strip()
-        print "\nParsing svn diff output.."
+        print "Parsing svn diff output..",
         difflist = [(pspec.split("\n")[0], "".join([l for l in pspec.split("\n")[4:] if l.startswith("+")])) \
-                    for pspec in diffoutput.split("Index: ")[1:] if pspec.split("\n")[0].endswith("/pspec.xml")]
+                    for pspec in diffoutput.split("Index: ")[1:]]
+        print "Done"
 
         for pspec, diff in difflist:
             if "<Action>reverseDependencyUpdate</Action>" in diff:
@@ -145,7 +146,7 @@ if __name__ == "__main__":
     updatedPspecFiles = r.getChanges(type = "U", filter="pspec.xml")
     newPspecFiles = r.getChanges(type = "A", filter="pspec.xml")
 
-    if not updatedPspecFiles or not newPspecFiles:
+    if not (updatedPspecFiles or newPspecFiles):
         print "\nNo new updates concerning source packages.\nExiting."
         sys.exit(0)
 
