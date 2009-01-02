@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-24 22:26+0200\n"
+"POT-Creation-Date: 2009-01-02 12:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -926,7 +926,7 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:120 yali4/gui/ScrSummary.py:73
-#: yali4/installer.py:640
+#: yali4/installer.py:644
 msgid "Reboot"
 msgstr ""
 
@@ -1460,7 +1460,7 @@ msgstr ""
 msgid "Installing BootLoader..."
 msgstr ""
 
-#: yali4/installer.py:617
+#: yali4/installer.py:621
 msgid "Retry"
 msgstr ""
 

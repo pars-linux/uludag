@@ -553,28 +553,32 @@ class Yali:
                         guestGrubConf = pardus.grubutils.grubConf()
                         guestGrubConf.parseConf(guest_grub_conf)
                         for entry in guestGrubConf.entries:
-                            entry.title = entry.title + " [ %s ]" % p.getName()
+                            # if entry has root value we can use it in our grub.conf
+                            if entry.getCommand("root"):
+                                entry.title = entry.title + " [ %s ]" % p.getName()
 
-                            # if device order changed we should update device order in foreign grub.conf
-                            _grub_dev = yali4.bootloader.find_grub_dev(p.getPath())
+                                # if device order changed we should update device order in foreign grub.conf
+                                _grub_dev = yali4.bootloader.find_grub_dev(p.getPath())
 
-                            # update device order for root command
-                            _root = entry.getCommand("root")
-                            _root.value = _update_dev(_root.value, _grub_dev)
+                                # update device order for root command
+                                _root = entry.getCommand("root")
+                                _root.value = _update_dev(_root.value, _grub_dev)
 
-                            # update device order for kernel command if already defined
-                            _kernel = entry.getCommand("kernel")
-                            if _kernel.value.startswith('('):
-                                _kernel.value = ''.join([_root.value, _kernel.value.split(')')[1]])
+                                # update device order for kernel command if already defined
+                                _kernel = entry.getCommand("kernel")
+                                if _kernel.value.startswith('('):
+                                    _kernel.value = ''.join([_root.value, _kernel.value.split(')')[1]])
 
-                            # update device order for initrd command if already defined
-                            _initrd = entry.getCommand("initrd")
-                            if _initrd:
-                                if _initrd.value.startswith('('):
-                                    _initrd.value = ''.join([_root.value, _initrd.value.split(')')[1]])
+                                # update device order for initrd command if already defined
+                                _initrd = entry.getCommand("initrd")
+                                if _initrd:
+                                    if _initrd.value.startswith('('):
+                                        _initrd.value = ''.join([_root.value, _initrd.value.split(')')[1]])
 
-                            grubConf.addEntry(entry)
-                        continue
+                                grubConf.addEntry(entry)
+                    else:
+                        # If not a proper grub.conf found umount the partition
+                        yali4.sysutils.umount_()
 
         # write the new grub.conf
         grubConf.write(grubConfPath)
