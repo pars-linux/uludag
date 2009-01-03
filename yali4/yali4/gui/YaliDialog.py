@@ -47,27 +47,18 @@ class windowTitle(QtGui.QFrame):
 
             self.hboxlayout.addWidget(self.pushButton)
 
-        self.move = 0
+        self.dragPosition = None
         self.mainwidget = self.parent()
 
     def mousePressEvent(self, event):
-        self.move = 1
-        self.start_x = event.globalPos().x()
-        self.start_y = event.globalPos().y()
-        wpos = self.mainwidget.mapToGlobal(QPoint(0,0))
-        self.w_x = wpos.x()
-        self.w_y = wpos.y()
-
-    def mouseReleaseEvent(self, event):
-        self.move = 0
+        if event.button() == Qt.LeftButton:
+            self.dragPosition = event.globalPos() - self.mainwidget.frameGeometry().topLeft()
+            event.accept()
 
     def mouseMoveEvent(self, event):
-        if self.move:
-            pos = event.globalPos()
-            newpos = QPoint()
-            newpos.setX(self.w_x + pos.x() - self.start_x)
-            newpos.setY(self.w_y + pos.y() - self.start_y)
-            self.mainwidget.move(newpos)
+        if event.buttons() & Qt.LeftButton:
+            self.mainwidget.move(event.globalPos() - self.dragPosition)
+            event.accept()
 
 class Dialog(QtGui.QDialog):
     def __init__(self, t, w, parent=None, closeButton = True):
