@@ -15,5 +15,5 @@ from yali4.exception import *
 class GUIError(YaliError):
     pass
 
-class GUIException(YaliException):
+class GUIException(YaliExceptionInfo):
     pass
