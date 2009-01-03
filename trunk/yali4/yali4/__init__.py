@@ -39,20 +39,15 @@ exception_normal, exception_fatal, \
 def exception_handler(exception, value, tb):
     """ YALI exception handler for showing exceptions in GUI """
 
-    exception_type = exception_unknown
+    knownExceptions = {YaliError:           exception_fatal,
+                       YaliException:       exception_normal,
+                       YaliExceptionInfo:   exception_informational,
+                       pisi.Error:          exception_pisi}
 
-    if isinstance(value, YaliError):
-        exception_type = exception_fatal
-
-    elif isinstance(value, pisi.Error):
-        exception_type = exception_pisi
-
-    elif isinstance(value, YaliException):
-        exception_type = exception_normal
-
-    elif isinstance(value, YaliExceptionInfo):
-        exception_type = exception_informational
-
+    try:
+        exception_type = knownExceptions[filter(lambda x: isinstance(value, x), knownExceptions.keys())[0]]
+    except IndexError:
+        exception_type = exception_unknown
 
     sio = cStringIO.StringIO()
 
