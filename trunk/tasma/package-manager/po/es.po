@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-02 10:13+0200\n"
-"PO-Revision-Date: 2008-12-25 22:37-0300\n"
+"PO-Revision-Date: 2008-12-28 16:00-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
 "Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -758,23 +758,23 @@ msgstr "%2 %1 "
 
 #: src/Progress.py:163
 msgid "installed"
-msgstr "instalado"
+msgstr "instalados"
 
 #: src/Progress.py:165
 msgid "removed"
-msgstr "removido"
+msgstr "removidos"
 
 #: src/Progress.py:167
 msgid "upgraded"
-msgstr "actualizado"
+msgstr "actualizados"
 
 # this is for: 10/23 package installed
 # in download progres window: status indicator
 # en espaniol: paquete 10/23 instalado
-# cambiado desde: %3 paquete %1 / %2 
+# cambiado desde: %3 paquete %1 / %2
 #: src/Progress.py:169
 msgid "%1 / %2 package %3"
-msgstr "paquete %1 / %2 %3"
+msgstr "%1 / %2 paquetes %3"
 
 #: src/Notifier.py:45
 msgid "Show Updates"

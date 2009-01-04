@@ -8,13 +8,13 @@
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 # Klemens Haeckel <click3d at linuxmail dot org>, 2008.
 # Klemens Häckel <click3d at linuxmail dot org>, 2008.
-# Klemens Häckel <click3d at linuxmail dot com>, 2008.
+# Klemens Häckel <click3d at linuxmail dot com>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-29 09:56+0200\n"
-"PO-Revision-Date: 2008-11-02 09:09-0300\n"
+"PO-Revision-Date: 2009-01-04 14:46-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
 "Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: settingsWindow.py:447 settingsWindow.py:450
 msgid "SettingsWindow"
-msgstr ""
+msgstr "Formulario de Configuración"
 
 #: comariface.py:214
 msgid "You are not authorized for this operation."
@@ -38,6 +38,9 @@ msgid ""
 "usually\n"
 "done through a switch or Fn keys in modern notebooks."
 msgstr ""
+"Administrador de Red no se pudo comunicar con el dispositivo de red. Si es una\n"
+"interfaz inalambrica, asegúrese que esté encendido. Generalmente \n"
+"existe para esto un pequeño interruptor o una combinación de teclas con Fn en notebooks modernos."
 
 #: comariface.py:221
 msgid ""
@@ -48,11 +51,13 @@ msgid ""
 "through its DHCP service. Otherwise, you have to manually assign an IP "
 "address."
 msgstr ""
+"El servicio DHCP no pudo asignar una dirección IP en su interfaz de red.\n"
+"Asegúrese que en su red hay un servicio DHCP activo en su red para la asignación de direcciones IP.\n"
+"En otro caso debería asignar manualmente una dirección IP."
 
 #: comariface.py:227
-#, fuzzy
 msgid "Network Manager - Error"
-msgstr "Administrador de Red"
+msgstr "Error de Administrador de Red"
 
 #: comariface.py:235 network-applet.py:176
 msgid "Waiting DBus..."
@@ -295,7 +300,7 @@ msgstr "Puerta de enlace (GW) :"
 
 #: connection.py:299
 msgid "Security"
-msgstr ""
+msgstr "Seguridad"
 
 #: connection.py:300
 msgid "Private Key File :"
@@ -379,9 +384,8 @@ msgid "Name server:"
 msgstr "Servidor de nombres:"
 
 #: nameConf.py:104
-#, fuzzy
 msgid "NameConf"
-msgstr "Nombre"
+msgstr ""
 
 #: connsharing.py:52
 msgid "Internet Connection Sharing"
@@ -419,8 +423,7 @@ msgstr "Error de servidor DHCP"
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
-msgstr ""
-"Debe seleccionar interfaces diferentes para compartir la conexión a internet"
+msgstr "Debe seleccionar interfaces diferentes para compartir la conexión a internet"
 
 #: connsharing.py:110
 msgid "Check Selected Interfaces"
@@ -476,8 +479,7 @@ msgstr "Ícono único"
 # Icono de la barra de tareas?
 #: network-applet.py:477
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
+msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
 #: network-applet.py:592
 msgid "Connecting to <b>%1</b> ..."
@@ -506,5 +508,3 @@ msgstr "Ud. se encuentra ahora fuera de línea"
 msgid "Network Applet"
 msgstr "Applet de Red"
 
-#~ msgid "Key Type"
-#~ msgstr "Tipo de clave"
