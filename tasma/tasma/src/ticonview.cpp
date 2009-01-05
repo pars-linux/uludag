@@ -57,9 +57,12 @@ TIconView::TIconView( QWidget *parent, const char* name )
   toolTip = 0;
 
   connect( this, SIGNAL( executed( QIconViewItem* ) ), SLOT( slotItemSelected( QIconViewItem* ) ) );
+
+  /* comment those signals due to bug#7761
   connect( this, SIGNAL( executed( QIconViewItem* ) ), SLOT( removeToolTip()) );
-  //connect( this, SIGNAL( onItem( QIconViewItem* ) ), SLOT( showToolTip( QIconViewItem* ) ) );
-  //connect( this, SIGNAL( onViewport() ),  SLOT( removeToolTip() ) );
+  connect( this, SIGNAL( onItem( QIconViewItem* ) ), SLOT( showToolTip( QIconViewItem* ) ) );
+  connect( this, SIGNAL( onViewport() ),  SLOT( removeToolTip() ) );
+  */
 
 }
 
