@@ -71,6 +71,14 @@ int main( int argc, char *argv[] )
   aboutData.addCredit(I18N_NOOP("Gökmen Göksel"), I18N_NOOP("Module Developers"), "gokmen@pardus.org.tr");
   aboutData.addCredit(I18N_NOOP("İşbaran Akçayır"), I18N_NOOP("Module Developers"), "isbaran@gmail.com");
   aboutData.addCredit(I18N_NOOP("KDE"), I18N_NOOP("Module Developers"), "kde-devel@kde.org");
+  aboutData.addCredit(I18N_NOOP("Andrea Decorte"), I18N_NOOP("Italian Translation"), "adecorte@gmail.com");
+  aboutData.addCredit(I18N_NOOP("Amine Chadly"), I18N_NOOP("French Translation"), "amine.chadly@gmail.com");
+  aboutData.addCredit(I18N_NOOP("Jaume Villalba"), I18N_NOOP("Catalan Translation"), "javs@tinet.cat");
+  aboutData.addCredit(I18N_NOOP("Klemens Haeckel"), I18N_NOOP("Spanish Translation"), "click3d@linuxmail.org");
+  aboutData.addCredit(I18N_NOOP("Mustafa Ölcerman"), I18N_NOOP("German Translation"), "m.oelcerman@pardus-linux.de");
+  aboutData.addCredit(I18N_NOOP("Piotr Maliński"), I18N_NOOP("Polish Translation"), "riklaunim@gmail.com");
+  aboutData.addCredit(I18N_NOOP("Pedro Leite"), I18N_NOOP("Brazilian Portuguese Translation"), "pedro.leite@gmail.com");
+  aboutData.addCredit(I18N_NOOP("Willem Gielen"), I18N_NOOP("Dutch Translation"), "w.gielen@gmail.com");
   aboutData.setTranslator( "Barış Metin", "baris@pardus.org.tr" );
 
   KCmdLineArgs::init( argc, argv, &aboutData );
