@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <spacer row="3" column="0">
+        <spacer row="4" column="1">
             <property name="name">
                 <cstring>spacer48</cstring>
             </property>
@@ -36,7 +36,7 @@
                 </size>
             </property>
         </spacer>
-        <spacer row="0" column="0">
+        <spacer row="0" column="1">
             <property name="name">
                 <cstring>spacer47</cstring>
             </property>
@@ -49,11 +49,11 @@
             <property name="sizeHint">
                 <size>
                     <width>20</width>
-                    <height>18</height>
+                    <height>16</height>
                 </size>
             </property>
         </spacer>
-        <widget class="QGroupBox" row="2" column="0">
+        <widget class="QGroupBox" row="3" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>styleSettingsGroup</cstring>
             </property>
@@ -197,93 +197,83 @@
                 </property>
             </widget>
         </widget>
-        <widget class="QLayoutWidget" row="1" column="0">
+        <widget class="QLabel" row="1" column="1">
             <property name="name">
-                <cstring>layout7</cstring>
+                <cstring>styleLabel</cstring>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignTop</set>
+            </property>
+        </widget>
+        <spacer row="1" column="2">
+            <property name="name">
+                <cstring>spacer8</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Fixed</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>60</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="1" column="0">
+            <property name="name">
+                <cstring>spacer7</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Fixed</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>60</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLayoutWidget" row="2" column="1">
+            <property name="name">
+                <cstring>layout2</cstring>
             </property>
             <grid>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel" row="0" column="1">
+                <widget class="QPushButton" row="0" column="1">
                     <property name="name">
-                        <cstring>styleLabel</cstring>
+                        <cstring>styleButton</cstring>
                     </property>
-                    <property name="backgroundOrigin">
-                        <enum>ParentOrigin</enum>
+                    <property name="maximumSize">
+                        <size>
+                            <width>136</width>
+                            <height>25</height>
+                        </size>
                     </property>
-                    <property name="alignment">
-                        <set>WordBreak|AlignTop</set>
+                    <property name="text">
+                        <string></string>
                     </property>
                 </widget>
-                <spacer row="0" column="2">
+                <widget class="QComboBox" row="0" column="0">
                     <property name="name">
-                        <cstring>spacer8</cstring>
+                        <cstring>styleBox</cstring>
                     </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Fixed</enum>
-                    </property>
-                    <property name="sizeHint">
+                    <property name="maximumSize">
                         <size>
-                            <width>60</width>
-                            <height>20</height>
+                            <width>350</width>
+                            <height>200</height>
                         </size>
                     </property>
-                </spacer>
-                <spacer row="0" column="0">
-                    <property name="name">
-                        <cstring>spacer7</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Fixed</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>60</width>
-                            <height>20</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QLayoutWidget" row="1" column="1">
-                    <property name="name">
-                        <cstring>layout65</cstring>
-                    </property>
-                    <hbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QComboBox">
-                            <property name="name">
-                                <cstring>styleBox</cstring>
-                            </property>
-                            <property name="maximumSize">
-                                <size>
-                                    <width>350</width>
-                                    <height>200</height>
-                                </size>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>styleButton</cstring>
-                            </property>
-                            <property name="maximumSize">
-                                <size>
-                                    <width>100</width>
-                                    <height>25</height>
-                                </size>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                    </hbox>
                 </widget>
             </grid>
         </widget>
