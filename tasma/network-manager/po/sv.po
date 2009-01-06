@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Patrik Karlsson <patrik@pardus.nu>, 2008.
+# Patrik Karlsson <patrik@pardus.nu>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-06 08:20+0200\n"
-"PO-Revision-Date: 2008-12-31 14:58+0100\n"
+"PO-Revision-Date: 2009-01-06 11:04+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -57,8 +57,7 @@ msgstr "Väntar på D-Bus..."
 
 #: comariface.py:235 network-applet.py:176
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
-"Anslutningen till D-Bus avslutades oväntat, försöker att återansluta..."
+msgstr "Anslutningen till D-Bus avslutades oväntat, försöker att återansluta..."
 
 #: comariface.py:251 network-applet.py:192
 msgid ""
@@ -230,16 +229,14 @@ msgid "Use"
 msgstr "Använd"
 
 #: connection.py:201
-#, fuzzy
 msgid "Connection name:"
-msgstr "Anslutning"
+msgstr "Anslutning:"
 
 #: connection.py:208
 msgid "Connection"
 msgstr "Anslutning"
 
 #: connection.py:214
-#, fuzzy
 msgid "Device:"
 msgstr "Enhet:"
 
@@ -249,10 +246,9 @@ msgstr "Välj"
 
 #: connection.py:237
 msgid "Scan"
-msgstr ""
+msgstr "Skanna"
 
 #: connection.py:277
-#, fuzzy
 msgid "Security:"
 msgstr "Säkerhet:"
 
@@ -261,32 +257,26 @@ msgid "No authentication"
 msgstr "Ingen autentisering"
 
 #: connection.py:284
-#, fuzzy
 msgid "Authentication:"
 msgstr "Autentisering"
 
 #: connection.py:290
-#, fuzzy
 msgid "Inner Authentication:"
 msgstr "Inre autentisering"
 
 #: connection.py:302
-#, fuzzy
 msgid "Anonymous Identity:"
 msgstr "Anonym identitet"
 
 #: connection.py:307
-#, fuzzy
 msgid "User/Identity"
 msgstr "Användare/identitet"
 
 #: connection.py:312
-#, fuzzy
 msgid "Password:"
 msgstr "Lösenord:"
 
 #: connection.py:318
-#, fuzzy
 msgid "Client Certificate:"
 msgstr "Klientcertifikat:"
 
@@ -295,17 +285,14 @@ msgid "browse"
 msgstr "bläddra"
 
 #: connection.py:324
-#, fuzzy
 msgid "CA Certificate:"
 msgstr "CA-certifikat:"
 
 #: connection.py:330
-#, fuzzy
 msgid "Private Key File:"
 msgstr "Privat nyckelfil:"
 
 #: connection.py:336
-#, fuzzy
 msgid "Private Key Password:"
 msgstr "Privat lösenordsnyckel:"
 
@@ -326,9 +313,8 @@ msgid "Select Private Key File"
 msgstr "Välj privat nyckelfil"
 
 #: connection.py:488
-#, fuzzy
 msgid "Network settings"
-msgstr "Nätverksminiprogram"
+msgstr "Nätverksinställningar"
 
 #: connection.py:498
 msgid "Automatic query (DHCP)"
@@ -343,12 +329,10 @@ msgid "Custom"
 msgstr "Anpassad"
 
 #: connection.py:519
-#, fuzzy
 msgid "Net mask:"
 msgstr "Nätmask:"
 
 #: connection.py:530
-#, fuzzy
 msgid "Gateway:"
 msgstr "Förmedlingsnod:"
 
@@ -362,7 +346,7 @@ msgstr "Anpasa nätverksanslutning"
 
 #: nameconf.py:35
 msgid "Computer"
-msgstr ""
+msgstr "Dator"
 
 #: nameconf.py:41
 msgid "Host name:"
@@ -436,8 +420,7 @@ msgstr "Delning är ok"
 
 #: connsharing.py:267
 msgid "You do not have an ip address for the interface that goes to internet"
-msgstr ""
-"Du har inte någon IP-adress för gränssnittet som är anslutet till Internet"
+msgstr "Du har inte någon IP-adress för gränssnittet som är anslutet till Internet"
 
 #: connsharing.py:267
 msgid "IP address not found"
@@ -499,23 +482,3 @@ msgstr "Du är nu frånkopplad"
 msgid "Network Applet"
 msgstr "Nätverksminiprogram"
 
-#~ msgid "SettingsWindow"
-#~ msgstr "Inställningsfönster"
-
-#~ msgid "Address Settings"
-#~ msgstr "Adressinställningar"
-
-#~ msgid "Name Server Settings"
-#~ msgstr "Namninställningar"
-
-#~ msgid "Name"
-#~ msgstr "Namn:"
-
-#~ msgid "Address :"
-#~ msgstr "Adress:"
-
-#~ msgid "NewConn"
-#~ msgstr "Ny anslutning"
-
-#~ msgid "NameConf"
-#~ msgstr "Namn:"
