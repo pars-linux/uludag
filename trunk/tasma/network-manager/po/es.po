@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-06 08:20+0200\n"
-"PO-Revision-Date: 2009-01-04 14:46-0300\n"
+"PO-Revision-Date: 2009-01-06 19:33-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
 "Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -242,18 +242,16 @@ msgid "Use"
 msgstr "Usar"
 
 #: connection.py:201
-#, fuzzy
 msgid "Connection name:"
-msgstr "Conexión"
+msgstr "Nombre de conexión:"
 
 #: connection.py:208
 msgid "Connection"
 msgstr "Conexión"
 
 #: connection.py:214
-#, fuzzy
 msgid "Device:"
-msgstr "Dispositivo"
+msgstr "Dispositivo:"
 
 #: connection.py:219
 msgid "Select"
@@ -261,46 +259,39 @@ msgstr "Seleccionar"
 
 #: connection.py:237
 msgid "Scan"
-msgstr ""
+msgstr "Buscar"
 
 #: connection.py:277
-#, fuzzy
 msgid "Security:"
-msgstr "Seguridad"
+msgstr "Seguridad:"
 
 #: connection.py:280
 msgid "No authentication"
 msgstr "Sin autenticación"
 
 #: connection.py:284
-#, fuzzy
 msgid "Authentication:"
-msgstr "Autenticación"
+msgstr "Autenticación:"
 
 #: connection.py:290
-#, fuzzy
 msgid "Inner Authentication:"
-msgstr "Autenticación interna"
+msgstr "Autenticación interna:"
 
 #: connection.py:302
-#, fuzzy
 msgid "Anonymous Identity:"
-msgstr "Usuario anónimo :"
+msgstr "Usuario anónimo:"
 
 #: connection.py:307
-#, fuzzy
 msgid "User/Identity"
-msgstr "Usuario/Identidad :"
+msgstr "Usuario/Identidad"
 
 #: connection.py:312
-#, fuzzy
 msgid "Password:"
-msgstr "Contraseña :"
+msgstr "Contraseña:"
 
 #: connection.py:318
-#, fuzzy
 msgid "Client Certificate:"
-msgstr "Certificado de cliente :"
+msgstr "Certificado de cliente:"
 
 # podria ser tambien explorar, buscar - navegar, depende del contexto, favor revisar
 #: connection.py:319 connection.py:325 connection.py:331
@@ -308,19 +299,16 @@ msgid "browse"
 msgstr "explorar"
 
 #: connection.py:324
-#, fuzzy
 msgid "CA Certificate:"
-msgstr "Certificado CA :"
+msgstr "Certificado CA:"
 
 #: connection.py:330
-#, fuzzy
 msgid "Private Key File:"
-msgstr "Archivo de clave privada :"
+msgstr "Archivo de clave privada:"
 
 #: connection.py:336
-#, fuzzy
 msgid "Private Key Password:"
-msgstr "Contraseña de clave privada :"
+msgstr "Contraseña de clave privada:"
 
 #: connection.py:369 connection.py:375 connection.py:381
 msgid "*|Certificates"
@@ -338,12 +326,9 @@ msgstr "Seleccione Archivo de certificado de cliente"
 msgid "Select Private Key File"
 msgstr "Seleccionar archivo de clave privada"
 
-# Icono de la barra de tareas?
-# Icono de acceso rápido?
 #: connection.py:488
-#, fuzzy
 msgid "Network settings"
-msgstr "Applet de Red"
+msgstr "Configuración de Red"
 
 #: connection.py:498
 msgid "Automatic query (DHCP)"
@@ -358,14 +343,12 @@ msgid "Custom"
 msgstr "Personalizado"
 
 #: connection.py:519
-#, fuzzy
 msgid "Net mask:"
-msgstr "Mascara de Red :"
+msgstr "Máscara de Red:"
 
 #: connection.py:530
-#, fuzzy
 msgid "Gateway:"
-msgstr "Puerta de enlace (GW) :"
+msgstr "Puerta de enlace (GW):"
 
 #: connection.py:539 nameconf.py:45
 msgid "Name servers"
@@ -377,7 +360,7 @@ msgstr "Configurar conexiones de Red"
 
 #: nameconf.py:35
 msgid "Computer"
-msgstr ""
+msgstr "Computadora"
 
 #: nameconf.py:41
 msgid "Host name:"
@@ -435,8 +418,7 @@ msgstr "Error de servidor DHCP"
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
-msgstr ""
-"Debe seleccionar interfaces diferentes para compartir la conexión a internet"
+msgstr "Debe seleccionar interfaces diferentes para compartir la conexión a internet"
 
 #: connsharing.py:156
 msgid "Check Selected Interfaces"
@@ -492,8 +474,7 @@ msgstr "Ícono único"
 # Icono de la barra de tareas?
 #: network-applet.py:477
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
+msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
 #: network-applet.py:592
 msgid "Connecting to <b>%1</b> ..."
@@ -522,17 +503,3 @@ msgstr "Ud. se encuentra ahora fuera de línea"
 msgid "Network Applet"
 msgstr "Applet de Red"
 
-#~ msgid "SettingsWindow"
-#~ msgstr "Formulario de Configuración"
-
-#~ msgid "Address Settings"
-#~ msgstr "Dirección IP"
-
-#~ msgid "Name Server Settings"
-#~ msgstr "Servidores de nombres (DNS)"
-
-#~ msgid "Name"
-#~ msgstr "Nombre"
-
-#~ msgid "Address :"
-#~ msgstr "Dirección :"
