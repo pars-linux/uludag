@@ -8,3 +8,5 @@
     - Also review/refactor them
 - Put AdHoc support back into wireless-tools
 - Port UI'fied Network Manager
+- Start DHCP after associating to AP
+    - When WEP authorization selected, try both hex and ASCII password
