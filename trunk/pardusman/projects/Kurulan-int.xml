@@ -24,7 +24,6 @@
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
         <SelectedPackage>apmd</SelectedPackage>
-        <SelectedPackage>artwork-pardus-release</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>atl1e</SelectedPackage>
         <SelectedPackage>atl2</SelectedPackage>
@@ -277,7 +276,6 @@
         <Package>apmd</Package>
         <Package>arts</Package>
         <Package>artwork</Package>
-        <Package>artwork-pardus-release</Package>
         <Package>aspell</Package>
         <Package>aspell-en</Package>
         <Package>atk</Package>
