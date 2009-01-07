@@ -154,7 +154,6 @@
         <SelectedPackage>kdetv</SelectedPackage>
         <SelectedPackage>kipi-plugins</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
-        <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>lame</SelectedPackage>
         <SelectedPackage>lib-compat</SelectedPackage>
@@ -543,7 +542,6 @@
         <Package>kipi-plugins</Package>
         <Package>klibc</Package>
         <Package>knazar</Package>
-        <Package>konversation</Package>
         <Package>kpowersave</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
