@@ -16,7 +16,6 @@
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok-kde4</SelectedPackage>
         <SelectedPackage>aria2</SelectedPackage>
-        <SelectedPackage>artwork-pardus-release</SelectedPackage>
         <SelectedPackage>atl1e</SelectedPackage>
         <SelectedPackage>atl2</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
@@ -223,7 +222,6 @@
         <Package>amrwb</Package>
         <Package>aria2</Package>
         <Package>arts</Package>
-        <Package>artwork-pardus-release</Package>
         <Package>aspell</Package>
         <Package>atk</Package>
         <Package>atl1e</Package>
