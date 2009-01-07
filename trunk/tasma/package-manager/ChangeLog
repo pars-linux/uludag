@@ -1,3 +1,6 @@
+2009-01-07 Faik Uygur <faik@pardus.org.tr>
+        * package-manager-1.4.0
+
 2009-01-06 Ozan Çağlayan <ozan@pardus.org.tr>
 	* (data/*.desktop): Remove the final semicolon from MimeType entries
 	because it breaks pm-install (Fixes #8915).
