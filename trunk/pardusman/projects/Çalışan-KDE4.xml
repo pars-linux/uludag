@@ -1,8 +1,9 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.2-KDE4 Alpha</Title>
+    <Title>Pardus Calisan 2008.2-KDE4 Beta</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <PackageSelection repo_uri="file:///home/ekin/packages/test/pisi-index.xml.bz2">
+        <SelectedComponent>kernel.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>Bitstream-Vera-fonts</SelectedPackage>
         <SelectedPackage>QtCurve-KDE3</SelectedPackage>
@@ -148,6 +149,7 @@
         <SelectedPackage>r5u870</SelectedPackage>
         <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
+        <SelectedPackage>rtl8187se</SelectedPackage>
         <SelectedPackage>screen</SelectedPackage>
         <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>sdricoh_cs</SelectedPackage>
@@ -400,6 +402,7 @@
         <Package>irqbalance</Package>
         <Package>iwlwifi3945-ucode</Package>
         <Package>iwlwifi4965-ucode</Package>
+        <Package>iwlwifi5000-ucode</Package>
         <Package>jack-audio-connection-kit</Package>
         <Package>jasper</Package>
         <Package>jbigkit</Package>
@@ -707,6 +710,7 @@
         <Package>reiserfsprogs</Package>
         <Package>reportlab</Package>
         <Package>rp-pppoe</Package>
+        <Package>rtl8187se</Package>
         <Package>samba</Package>
         <Package>sane-backends</Package>
         <Package>schroedinger</Package>
