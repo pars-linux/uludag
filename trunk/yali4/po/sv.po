@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Patrik Karlsson <patrik@pardus.nu>, 2008.
+# Patrik Karlsson <patrik@pardus.nu>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-02 14:40+0200\n"
-"PO-Revision-Date: 2008-12-31 20:31+0100\n"
+"PO-Revision-Date: 2009-01-07 20:46+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -501,7 +501,7 @@ msgstr "Ta bort vald användare"
 
 #: yali4/gui/Ui/setupuserswidget.py:165
 msgid "Auto Login User :"
-msgstr "Logga in användare automatiskt:"
+msgstr "Automatisk inloggning av användare:"
 
 #: yali4/gui/Ui/setupuserswidget.py:166
 msgid "Auto Login Disabled"
