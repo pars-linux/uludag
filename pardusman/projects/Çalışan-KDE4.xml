@@ -82,6 +82,16 @@
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
         <SelectedPackage>kaffeine-kde4</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
+        <SelectedPackage>kde-i18n-ca</SelectedPackage>
+        <SelectedPackage>kde-i18n-de</SelectedPackage>
+        <SelectedPackage>kde-i18n-es</SelectedPackage>
+        <SelectedPackage>kde-i18n-fr</SelectedPackage>
+        <SelectedPackage>kde-i18n-it</SelectedPackage>
+        <SelectedPackage>kde-i18n-nl</SelectedPackage>
+        <SelectedPackage>kde-i18n-pl</SelectedPackage>
+        <SelectedPackage>kde-i18n-pt_BR</SelectedPackage>
+        <SelectedPackage>kde-i18n-sv</SelectedPackage>
+        <SelectedPackage>kde-i18n-tr</SelectedPackage>
         <SelectedPackage>kde4-i18n-ca</SelectedPackage>
         <SelectedPackage>kde4-i18n-de</SelectedPackage>
         <SelectedPackage>kde4-i18n-es</SelectedPackage>
@@ -410,6 +420,16 @@
         <Package>kaffeine-kde4</Package>
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
+        <Package>kde-i18n-ca</Package>
+        <Package>kde-i18n-de</Package>
+        <Package>kde-i18n-es</Package>
+        <Package>kde-i18n-fr</Package>
+        <Package>kde-i18n-it</Package>
+        <Package>kde-i18n-nl</Package>
+        <Package>kde-i18n-pl</Package>
+        <Package>kde-i18n-pt_BR</Package>
+        <Package>kde-i18n-sv</Package>
+        <Package>kde-i18n-tr</Package>
         <Package>kde4-i18n-ca</Package>
         <Package>kde4-i18n-de</Package>
         <Package>kde4-i18n-es</Package>
