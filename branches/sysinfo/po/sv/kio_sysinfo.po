@@ -1,16 +1,16 @@
-# translation of sv.po to Svenska
+# translation of kio_sysinfo.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Patrik Karlsson <patrik@pardus.nu>, 2008.
+# Patrik Karlsson <patrik@pardus.nu>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: sv\n"
+"Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-16 15:17+0300\n"
-"PO-Revision-Date: 2008-09-06 23:15+0200\n"
+"POT-Creation-Date: 2008-05-30 13:46+0300\n"
+"PO-Revision-Date: 2009-01-08 17:47+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
-"Language-Team: Svenska <sv@li.org>\n"
+"Language-Team:  <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,195 +21,131 @@ msgstr ""
 msgid "KSysinfo"
 msgstr "KSysinfo"
 
-#: sysinfo/sysinfo.cpp:68
+#: sysinfo/sysinfo.cpp:67
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: sysinfo/sysinfo.cpp:70
+#: sysinfo/sysinfo.cpp:69
 msgid "%1 MB"
 msgstr "%1 MB"
 
-#: sysinfo/sysinfo.cpp:72
+#: sysinfo/sysinfo.cpp:71
 msgid "%1 KB"
 msgstr "%1 KB"
 
-#: sysinfo/sysinfo.cpp:90
+#: sysinfo/sysinfo.cpp:136
 msgid "Not Available"
 msgstr "Inte tillgänglig"
 
-#: sysinfo/sysinfo.cpp:104
+#: sysinfo/sysinfo.cpp:150
 msgid "Looking for hardware information..."
-msgstr "Söker efter hårdvaruinformation..."
+msgstr "Söker efter information om hårdvaran..."
 
-#: sysinfo/sysinfo.cpp:107 sysinfo/sysinfo.cpp:111
+#: sysinfo/sysinfo.cpp:153
 msgid "My Computer"
 msgstr "Min dator"
 
-#: sysinfo/sysinfo.cpp:112
+#: sysinfo/sysinfo.cpp:155
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
 msgstr "Kataloger, hårddiskar, flyttbara enheter, systeminformation med mera..."
 
-#: sysinfo/sysinfo.cpp:120
+#: sysinfo/sysinfo.cpp:163
 msgid "Common Folders"
 msgstr "Vanliga kataloger"
 
-#: sysinfo/sysinfo.cpp:124
+#: sysinfo/sysinfo.cpp:164
 msgid "My Home Folder"
 msgstr "Min hemkatalog"
 
-#: sysinfo/sysinfo.cpp:125
+#: sysinfo/sysinfo.cpp:165
 msgid "Root Folder"
 msgstr "Rotkatalog"
 
-#: sysinfo/sysinfo.cpp:126
+#: sysinfo/sysinfo.cpp:166
 msgid "Network Folders"
 msgstr "Nätverkskataloger"
 
-#: sysinfo/sysinfo.cpp:133
-msgid "Network Status"
-msgstr "Nätverksstatus"
+#: sysinfo/sysinfo.cpp:172
+msgid "Network"
+msgstr "Nätverk"
 
-#: sysinfo/sysinfo.cpp:143
-msgid "CPU Information"
-msgstr "CPU-information"
+#: sysinfo/sysinfo.cpp:180
+msgid "Memory"
+msgstr "Minne"
 
-#: sysinfo/sysinfo.cpp:145
-msgid "Processor (CPU):"
-msgstr "Processor (CPU):"
+#: sysinfo/sysinfo.cpp:181 sysinfo/sysinfo.cpp:323
+msgid "%1 free of %2"
+msgstr "%1 ledigt av %2"
 
-#: sysinfo/sysinfo.cpp:146
-msgid "Speed:"
-msgstr "Hastighet:"
+#: sysinfo/sysinfo.cpp:189
+msgid "Disks"
+msgstr "Lagringsmedia"
 
-#: sysinfo/sysinfo.cpp:147
+#: sysinfo/sysinfo.cpp:196
+msgid "Operating System"
+msgstr "Operativsystem"
+
+#: sysinfo/sysinfo.cpp:198
+msgid "Kde <b>%1</b> on <b>%2</b>"
+msgstr "<b>%2</b> med KDE <b>%1</b>"
+
+#: sysinfo/sysinfo.cpp:209
+msgid "Processor"
+msgstr "Processor"
+
+#: sysinfo/sysinfo.cpp:211
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo/sysinfo.cpp:148
-msgid "Number of Core :"
-msgstr "Antal kärnor :"
+#: sysinfo/sysinfo.cpp:212
+msgid " core"
+msgstr " kärnor"
 
-#: sysinfo/sysinfo.cpp:154
-msgid "Memory Information"
-msgstr "Minnesinformation"
+#: sysinfo/sysinfo.cpp:223
+msgid "Display"
+msgstr "Grafik"
 
-#: sysinfo/sysinfo.cpp:156
-msgid "Total memory (RAM):"
-msgstr "Sammanlagt minne (RAM):"
+#: sysinfo/sysinfo.cpp:226
+msgid "Driver: "
+msgstr "Drivrutin: "
 
-#: sysinfo/sysinfo.cpp:157
-msgid "Free memory:"
-msgstr "Ledigt minne:"
+#: sysinfo/sysinfo.cpp:318
+msgid "Mounted on %1"
+msgstr "Monterad på %1"
 
-#: sysinfo/sysinfo.cpp:158
-msgid "Used Memory"
-msgstr "Använt minne"
+#: sysinfo/sysinfo.cpp:318
+msgid "Not mounted"
+msgstr "Inte monterad"
 
-#: sysinfo/sysinfo.cpp:159
-msgid "Total swap:"
-msgstr "Sammanlagt växlingsutrymme:"
-
-#: sysinfo/sysinfo.cpp:160
-msgid "Free swap:"
-msgstr "Ledigt växlingsutrymme:"
-
-#: sysinfo/sysinfo.cpp:167
-msgid "Hardware Information"
-msgstr "Hårdvaruinformation"
-
-#: sysinfo/sysinfo.cpp:169
-msgid "Type:"
-msgstr "Typ:"
-
-#: sysinfo/sysinfo.cpp:170 sysinfo/sysinfo.cpp:198
-msgid "Vendor:"
-msgstr "Tillverkare:"
-
-#: sysinfo/sysinfo.cpp:171 sysinfo/sysinfo.cpp:199
-msgid "Model:"
-msgstr "Modell:"
-
-#: sysinfo/sysinfo.cpp:172
-msgid "Bios Vendor:"
-msgstr "BIOS-tillverkare:"
-
-#: sysinfo/sysinfo.cpp:173
-msgid "Bios Version:"
-msgstr "BIOS-version:"
-
-#: sysinfo/sysinfo.cpp:180
-msgid "Disk Information"
-msgstr "Diskinformation"
-
-#: sysinfo/sysinfo.cpp:185
-msgid "OS Information"
-msgstr "OS-information"
-
-#: sysinfo/sysinfo.cpp:187
-msgid "OS:"
-msgstr "OS:"
-
-#: sysinfo/sysinfo.cpp:188
-msgid "Current user:"
-msgstr "Aktuell användare:"
-
-#: sysinfo/sysinfo.cpp:189
-msgid "System:"
-msgstr "System:"
-
-#: sysinfo/sysinfo.cpp:190
-msgid "KDE:"
-msgstr "KDE:"
-
-#: sysinfo/sysinfo.cpp:196
-msgid "Display Info"
-msgstr "Grafikinformation"
-
-#: sysinfo/sysinfo.cpp:201
-msgid "Driver:"
-msgstr "Drivrutin:"
-
-#: sysinfo/sysinfo.cpp:266
-msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ %2 Cachar)"
-
-#: sysinfo/sysinfo.cpp:326
-msgid "Total"
-msgstr "Sammanlagt"
-
-#: sysinfo/sysinfo.cpp:326
-msgid "Available"
-msgstr "Ledigt"
-
-#: sysinfo/sysinfo.cpp:453
+#: sysinfo/sysinfo.cpp:487
 msgid "%1 (3D Support)"
 msgstr "%1 (3D-stöd)"
 
-#: sysinfo/sysinfo.cpp:455
+#: sysinfo/sysinfo.cpp:489
 msgid "%1 (No 3D Support)"
-msgstr "%1 (Inget 3D-stöd)"
+msgstr "%1 (inget 3D-stöd)"
 
-#: sysinfo/sysinfo.cpp:465
+#: sysinfo/sysinfo.cpp:499
 msgid "Network is <strong>unreachable</strong>"
 msgstr "Nätverket är <strong>otillgängligt</strong>"
 
-#: sysinfo/sysinfo.cpp:467
+#: sysinfo/sysinfo.cpp:501
 msgid "You are <strong>offline</strong>"
 msgstr "Du är <strong>nerkopplad</strong>"
 
-#: sysinfo/sysinfo.cpp:469
+#: sysinfo/sysinfo.cpp:503
 msgid "Network is <strong>shutting down</strong>"
 msgstr "Nätverket <strong>kopplas ur</strong>"
 
-#: sysinfo/sysinfo.cpp:471
+#: sysinfo/sysinfo.cpp:505
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "<strong>Etablerar</strong> nätverksanslutning"
 
-#: sysinfo/sysinfo.cpp:473
+#: sysinfo/sysinfo.cpp:507
 msgid "You are <strong>online</strong>"
-msgstr "Du är <strong>uppkopplad</strong>"
+msgstr "Du är <strong>ansluten</strong>"
 
-#: sysinfo/sysinfo.cpp:475
+#: sysinfo/sysinfo.cpp:509
 msgid "Unknown network status"
 msgstr "Okänd nätverksstatus"
 
