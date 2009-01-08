@@ -117,11 +117,8 @@
         <SelectedPackage>kdm-pardus-theme-kde4</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kftpgrabber</SelectedPackage>
-        <SelectedPackage>konversation</SelectedPackage>
-        <SelectedPackage>kradio</SelectedPackage>
         <SelectedPackage>krename-kde4</SelectedPackage>
         <SelectedPackage>ksplash-pardus-theme-kde4</SelectedPackage>
-        <SelectedPackage>kvirc-kde4</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
         <SelectedPackage>linux-uvc</SelectedPackage>
         <SelectedPackage>lipstik</SelectedPackage>
@@ -461,11 +458,8 @@
         <Package>kernel-headers</Package>
         <Package>kftpgrabber</Package>
         <Package>klibc</Package>
-        <Package>konversation</Package>
-        <Package>kradio</Package>
         <Package>krename-kde4</Package>
         <Package>ksplash-pardus-theme-kde4</Package>
-        <Package>kvirc-kde4</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lcms</Package>
