@@ -58,7 +58,9 @@
         <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>iksemel</SelectedPackage>
         <SelectedPackage>imposter</SelectedPackage>
+        <SelectedPackage>iproute2</SelectedPackage>
         <SelectedPackage>iptables</SelectedPackage>
+        <SelectedPackage>iptraf</SelectedPackage>
         <SelectedPackage>ipw2100-firmware</SelectedPackage>
         <SelectedPackage>ipw2200-firmware</SelectedPackage>
         <SelectedPackage>irda-utils</SelectedPackage>
@@ -112,12 +114,15 @@
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
         <SelectedPackage>microdia</SelectedPackage>
+        <SelectedPackage>minicom</SelectedPackage>
         <SelectedPackage>mpg123</SelectedPackage>
         <SelectedPackage>mplayer</SelectedPackage>
         <SelectedPackage>mtools</SelectedPackage>
+        <SelectedPackage>ncftp</SelectedPackage>
         <SelectedPackage>ndiswrapper</SelectedPackage>
         <SelectedPackage>network-manager</SelectedPackage>
         <SelectedPackage>nfs-utils</SelectedPackage>
+        <SelectedPackage>nmap</SelectedPackage>
         <SelectedPackage>ntfs_3g</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>ov511</SelectedPackage>
@@ -139,11 +144,13 @@
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
+        <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>synaptics</SelectedPackage>
         <SelectedPackage>syntekdriver</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>system-config-printer</SelectedPackage>
+        <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
         <SelectedPackage>testdisk</SelectedPackage>
         <SelectedPackage>tn5250</SelectedPackage>
@@ -157,6 +164,7 @@
         <SelectedPackage>vbetool</SelectedPackage>
         <SelectedPackage>vim</SelectedPackage>
         <SelectedPackage>vloopback</SelectedPackage>
+        <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>whois</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
         <SelectedPackage>x11-ssh-askpass</SelectedPackage>
@@ -352,7 +360,9 @@
         <Package>imagemagick</Package>
         <Package>imlib2</Package>
         <Package>imposter</Package>
+        <Package>iproute2</Package>
         <Package>iptables</Package>
+        <Package>iptraf</Package>
         <Package>iputils</Package>
         <Package>ipw2100-firmware</Package>
         <Package>ipw2200-firmware</Package>
@@ -546,6 +556,7 @@
         <Package>lsof</Package>
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
+        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>madwifi-ng</Package>
@@ -558,6 +569,7 @@
         <Package>microcode-data</Package>
         <Package>microdia</Package>
         <Package>mingetty</Package>
+        <Package>minicom</Package>
         <Package>miscfiles</Package>
         <Package>mit-kerberos</Package>
         <Package>mkinitramfs</Package>
@@ -574,6 +586,7 @@
         <Package>mysql-lib</Package>
         <Package>mysql-server</Package>
         <Package>nano</Package>
+        <Package>ncftp</Package>
         <Package>ncompress</Package>
         <Package>ncurses</Package>
         <Package>ndiswrapper</Package>
@@ -581,6 +594,7 @@
         <Package>net-tools</Package>
         <Package>network-manager</Package>
         <Package>nfs-utils</Package>
+        <Package>nmap</Package>
         <Package>notification-daemon</Package>
         <Package>notify-python</Package>
         <Package>nspr</Package>
@@ -667,6 +681,7 @@
         <Package>sdricoh_cs</Package>
         <Package>sed</Package>
         <Package>service-manager</Package>
+        <Package>setserial</Package>
         <Package>sg3_utils</Package>
         <Package>shadow</Package>
         <Package>shared-mime-info</Package>
@@ -681,6 +696,7 @@
         <Package>sqlite</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
+        <Package>strace</Package>
         <Package>strigi</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
@@ -698,6 +714,7 @@
         <Package>tcl</Package>
         <Package>tcltk</Package>
         <Package>tcp-wrappers</Package>
+        <Package>tcpdump</Package>
         <Package>telepathy-qt</Package>
         <Package>telnet-bsd</Package>
         <Package>testdisk</Package>
@@ -728,6 +745,7 @@
         <Package>vorbis-tools</Package>
         <Package>wavpack</Package>
         <Package>webkitkde</Package>
+        <Package>wget</Package>
         <Package>which</Package>
         <Package>whois</Package>
         <Package>wireless-tools</Package>
