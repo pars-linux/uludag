@@ -15,14 +15,12 @@
         <SelectedPackage>alsa-firmware</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok-kde4</SelectedPackage>
-        <SelectedPackage>aria2</SelectedPackage>
         <SelectedPackage>atl1e</SelectedPackage>
         <SelectedPackage>atl2</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
         <SelectedPackage>b43-firmware</SelectedPackage>
         <SelectedPackage>bash-completion</SelectedPackage>
         <SelectedPackage>bash-completion-config</SelectedPackage>
-        <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>bluez-libs</SelectedPackage>
         <SelectedPackage>bluez-utils</SelectedPackage>
@@ -30,15 +28,12 @@
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
-        <SelectedPackage>dhcp</SelectedPackage>
         <SelectedPackage>disktype</SelectedPackage>
         <SelectedPackage>display-manager</SelectedPackage>
         <SelectedPackage>dosfstools</SelectedPackage>
         <SelectedPackage>dstat</SelectedPackage>
-        <SelectedPackage>dvgrab</SelectedPackage>
         <SelectedPackage>eagle-firmware</SelectedPackage>
         <SelectedPackage>eciadsl</SelectedPackage>
-        <SelectedPackage>ed</SelectedPackage>
         <SelectedPackage>et131x</SelectedPackage>
         <SelectedPackage>ethtool</SelectedPackage>
         <SelectedPackage>fbset</SelectedPackage>
@@ -57,8 +52,6 @@
         <SelectedPackage>glibc-locales-pl</SelectedPackage>
         <SelectedPackage>glibc-locales-pt</SelectedPackage>
         <SelectedPackage>glibc-locales-sv</SelectedPackage>
-        <SelectedPackage>gnuchess</SelectedPackage>
-        <SelectedPackage>gparted</SelectedPackage>
         <SelectedPackage>gspca</SelectedPackage>
         <SelectedPackage>gst-ffmpeg</SelectedPackage>
         <SelectedPackage>gutenprint</SelectedPackage>
@@ -69,8 +62,6 @@
         <SelectedPackage>hsfmodem</SelectedPackage>
         <SelectedPackage>iksemel</SelectedPackage>
         <SelectedPackage>imposter</SelectedPackage>
-        <SelectedPackage>iproute2</SelectedPackage>
-        <SelectedPackage>iptraf</SelectedPackage>
         <SelectedPackage>ipw2100-firmware</SelectedPackage>
         <SelectedPackage>ipw2200-firmware</SelectedPackage>
         <SelectedPackage>irda-utils</SelectedPackage>
@@ -78,10 +69,8 @@
         <SelectedPackage>iwlwifi3945-ucode</SelectedPackage>
         <SelectedPackage>iwlwifi4965-ucode</SelectedPackage>
         <SelectedPackage>jack-audio-connection-kit</SelectedPackage>
-        <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
         <SelectedPackage>kaffeine-kde4</SelectedPackage>
-        <SelectedPackage>kchmviewer</SelectedPackage>
         <SelectedPackage>kde-i18n-ca</SelectedPackage>
         <SelectedPackage>kde-i18n-de</SelectedPackage>
         <SelectedPackage>kde-i18n-es</SelectedPackage>
@@ -103,7 +92,6 @@
         <SelectedPackage>kde4-i18n-tr</SelectedPackage>
         <SelectedPackage>kdeartwork4-colorschemes</SelectedPackage>
         <SelectedPackage>kdeartwork4-emoticons</SelectedPackage>
-        <SelectedPackage>kdeartwork4-screensavers</SelectedPackage>
         <SelectedPackage>kdeartwork4-sounds</SelectedPackage>
         <SelectedPackage>kdeartwork4-styles</SelectedPackage>
         <SelectedPackage>kdebase4</SelectedPackage>
@@ -116,12 +104,11 @@
         <SelectedPackage>kdm-pardus-theme</SelectedPackage>
         <SelectedPackage>kdm-pardus-theme-kde4</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
-        <SelectedPackage>kftpgrabber</SelectedPackage>
+        <SelectedPackage>kmplayer-kde4</SelectedPackage>
         <SelectedPackage>krename-kde4</SelectedPackage>
         <SelectedPackage>ksplash-pardus-theme-kde4</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
         <SelectedPackage>linux-uvc</SelectedPackage>
-        <SelectedPackage>lipstik</SelectedPackage>
         <SelectedPackage>lmpcm_usb</SelectedPackage>
         <SelectedPackage>lsof</SelectedPackage>
         <SelectedPackage>lsscsi</SelectedPackage>
@@ -130,19 +117,14 @@
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
         <SelectedPackage>microdia</SelectedPackage>
-        <SelectedPackage>minicom</SelectedPackage>
         <SelectedPackage>mpg123</SelectedPackage>
         <SelectedPackage>mplayer</SelectedPackage>
         <SelectedPackage>mtools</SelectedPackage>
-        <SelectedPackage>ncftp</SelectedPackage>
         <SelectedPackage>ndiswrapper</SelectedPackage>
-        <SelectedPackage>netcat</SelectedPackage>
         <SelectedPackage>network-manager</SelectedPackage>
         <SelectedPackage>nfs-utils</SelectedPackage>
-        <SelectedPackage>nmap</SelectedPackage>
         <SelectedPackage>ntfs_3g</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
-        <SelectedPackage>openvpn</SelectedPackage>
         <SelectedPackage>ov511</SelectedPackage>
         <SelectedPackage>ov51x-jpeg</SelectedPackage>
         <SelectedPackage>package-manager</SelectedPackage>
@@ -156,29 +138,23 @@
         <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>rtl8187se</SelectedPackage>
-        <SelectedPackage>screen</SelectedPackage>
-        <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>sdricoh_cs</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
-        <SelectedPackage>sg3_utils</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
         <SelectedPackage>sn9c1xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
-        <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>synaptics</SelectedPackage>
         <SelectedPackage>syntekdriver</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>system-config-printer</SelectedPackage>
-        <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
         <SelectedPackage>testdisk</SelectedPackage>
         <SelectedPackage>tn5250</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
         <SelectedPackage>tulliana2</SelectedPackage>
-        <SelectedPackage>uhinv</SelectedPackage>
         <SelectedPackage>unarj</SelectedPackage>
         <SelectedPackage>unionfs</SelectedPackage>
         <SelectedPackage>unrar</SelectedPackage>
@@ -187,7 +163,6 @@
         <SelectedPackage>vbetool</SelectedPackage>
         <SelectedPackage>vim</SelectedPackage>
         <SelectedPackage>vloopback</SelectedPackage>
-        <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>whois</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
         <SelectedPackage>x11-ssh-askpass</SelectedPackage>
@@ -227,7 +202,6 @@
         <Package>amarok-kde4</Package>
         <Package>amrnb</Package>
         <Package>amrwb</Package>
-        <Package>aria2</Package>
         <Package>arts</Package>
         <Package>aspell</Package>
         <Package>atk</Package>
@@ -246,7 +220,6 @@
         <Package>bash-completion</Package>
         <Package>bash-completion-config</Package>
         <Package>bc</Package>
-        <Package>bind-tools</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
         <Package>bluez-utils</Package>
@@ -258,10 +231,8 @@
         <Package>br2684ctl</Package>
         <Package>bridge-utils</Package>
         <Package>bzip2</Package>
-        <Package>c-ares</Package>
         <Package>cabextract</Package>
         <Package>cairo</Package>
-        <Package>cairomm</Package>
         <Package>capseo</Package>
         <Package>cdparanoia</Package>
         <Package>chmlib</Package>
@@ -297,12 +268,10 @@
         <Package>dmidecode</Package>
         <Package>dosfstools</Package>
         <Package>dstat</Package>
-        <Package>dvgrab</Package>
         <Package>e2fsprogs</Package>
         <Package>eagle-firmware</Package>
         <Package>ebook-tools</Package>
         <Package>eciadsl</Package>
-        <Package>ed</Package>
         <Package>eet</Package>
         <Package>eina</Package>
         <Package>enchant</Package>
@@ -355,18 +324,15 @@
         <Package>glibc-locales-pt</Package>
         <Package>glibc-locales-sv</Package>
         <Package>glibc-zoneinfo</Package>
-        <Package>glibmm</Package>
         <Package>glitz</Package>
         <Package>glut</Package>
         <Package>gmp</Package>
         <Package>gnokii</Package>
         <Package>gnome-mplayer</Package>
         <Package>gnu-gs-fonts-std</Package>
-        <Package>gnuchess</Package>
         <Package>gnupg</Package>
         <Package>gnutls</Package>
         <Package>gpac</Package>
-        <Package>gparted</Package>
         <Package>gpgme</Package>
         <Package>gpm</Package>
         <Package>graphviz</Package>
@@ -379,7 +345,6 @@
         <Package>gst-plugins-base</Package>
         <Package>gstreamer</Package>
         <Package>gtk2</Package>
-        <Package>gtkmm</Package>
         <Package>guile</Package>
         <Package>gutenprint</Package>
         <Package>gzip</Package>
@@ -397,9 +362,6 @@
         <Package>imagemagick</Package>
         <Package>imlib2</Package>
         <Package>imposter</Package>
-        <Package>iproute2</Package>
-        <Package>iptables</Package>
-        <Package>iptraf</Package>
         <Package>iputils</Package>
         <Package>ipw2100-firmware</Package>
         <Package>ipw2200-firmware</Package>
@@ -411,12 +373,10 @@
         <Package>jack-audio-connection-kit</Package>
         <Package>jasper</Package>
         <Package>jbigkit</Package>
-        <Package>jfsutils</Package>
         <Package>jimmac-xcursor</Package>
         <Package>jpeg</Package>
         <Package>kaffeine-kde4</Package>
         <Package>kbd</Package>
-        <Package>kchmviewer</Package>
         <Package>kde-i18n-ca</Package>
         <Package>kde-i18n-de</Package>
         <Package>kde-i18n-es</Package>
@@ -438,7 +398,6 @@
         <Package>kde4-i18n-tr</Package>
         <Package>kdeartwork4-colorschemes</Package>
         <Package>kdeartwork4-emoticons</Package>
-        <Package>kdeartwork4-screensavers</Package>
         <Package>kdeartwork4-sounds</Package>
         <Package>kdeartwork4-styles</Package>
         <Package>kdebase4</Package>
@@ -456,8 +415,8 @@
         <Package>kdm-pardus-theme-kde4</Package>
         <Package>kernel</Package>
         <Package>kernel-headers</Package>
-        <Package>kftpgrabber</Package>
         <Package>klibc</Package>
+        <Package>kmplayer-kde4</Package>
         <Package>krename-kde4</Package>
         <Package>ksplash-pardus-theme-kde4</Package>
         <Package>ladspa-sdk</Package>
@@ -505,7 +464,6 @@
         <Package>libart_lgpl</Package>
         <Package>libassuan</Package>
         <Package>libatomic_ops</Package>
-        <Package>libavc1394</Package>
         <Package>libcaca</Package>
         <Package>libcap</Package>
         <Package>libcaptury</Package>
@@ -537,7 +495,6 @@
         <Package>libical</Package>
         <Package>libid3tag</Package>
         <Package>libidn</Package>
-        <Package>libiec61883</Package>
         <Package>libieee1284</Package>
         <Package>libksba</Package>
         <Package>liblazy</Package>
@@ -562,13 +519,11 @@
         <Package>libpcap</Package>
         <Package>libpcre</Package>
         <Package>libpng</Package>
-        <Package>libquicktime</Package>
         <Package>libraw1394</Package>
         <Package>librsvg</Package>
         <Package>libsamplerate</Package>
         <Package>libsdl</Package>
         <Package>libsexy</Package>
-        <Package>libsigc++</Package>
         <Package>libsmbios</Package>
         <Package>libsndfile</Package>
         <Package>libspectre</Package>
@@ -594,7 +549,6 @@
         <Package>libzip</Package>
         <Package>linux-atm</Package>
         <Package>linux-uvc</Package>
-        <Package>lipstik</Package>
         <Package>lirc</Package>
         <Package>lirc-drivers</Package>
         <Package>live555</Package>
@@ -602,7 +556,6 @@
         <Package>lsof</Package>
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
-        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>madwifi-ng</Package>
@@ -615,7 +568,6 @@
         <Package>microcode-data</Package>
         <Package>microdia</Package>
         <Package>mingetty</Package>
-        <Package>minicom</Package>
         <Package>miscfiles</Package>
         <Package>mit-kerberos</Package>
         <Package>mkinitramfs</Package>
@@ -632,16 +584,13 @@
         <Package>mysql-lib</Package>
         <Package>mysql-server</Package>
         <Package>nano</Package>
-        <Package>ncftp</Package>
         <Package>ncompress</Package>
         <Package>ncurses</Package>
         <Package>ndiswrapper</Package>
         <Package>net-snmp</Package>
         <Package>net-tools</Package>
-        <Package>netcat</Package>
         <Package>network-manager</Package>
         <Package>nfs-utils</Package>
-        <Package>nmap</Package>
         <Package>notification-daemon</Package>
         <Package>notify-python</Package>
         <Package>nspr</Package>
@@ -655,7 +604,6 @@
         <Package>openslp</Package>
         <Package>openssh</Package>
         <Package>openssl</Package>
-        <Package>openvpn</Package>
         <Package>orbit2</Package>
         <Package>ortp</Package>
         <Package>ov511</Package>
@@ -726,12 +674,9 @@
         <Package>samba</Package>
         <Package>sane-backends</Package>
         <Package>schroedinger</Package>
-        <Package>screen</Package>
-        <Package>sdparm</Package>
         <Package>sdricoh_cs</Package>
         <Package>sed</Package>
         <Package>service-manager</Package>
-        <Package>setserial</Package>
         <Package>sg3_utils</Package>
         <Package>shadow</Package>
         <Package>shared-mime-info</Package>
@@ -747,7 +692,6 @@
         <Package>sqlite</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
-        <Package>strace</Package>
         <Package>strigi</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
@@ -765,7 +709,6 @@
         <Package>tcl</Package>
         <Package>tcltk</Package>
         <Package>tcp-wrappers</Package>
-        <Package>tcpdump</Package>
         <Package>telepathy-qt</Package>
         <Package>telnet-bsd</Package>
         <Package>testdisk</Package>
@@ -778,7 +721,6 @@
         <Package>tunepimp</Package>
         <Package>twolame</Package>
         <Package>udev</Package>
-        <Package>uhinv</Package>
         <Package>unarj</Package>
         <Package>ungrab-winmodem</Package>
         <Package>unionfs</Package>
@@ -798,7 +740,6 @@
         <Package>vorbis-tools</Package>
         <Package>wavpack</Package>
         <Package>webkitkde</Package>
-        <Package>wget</Package>
         <Package>which</Package>
         <Package>whois</Package>
         <Package>wireless-tools</Package>
@@ -809,7 +750,6 @@
         <Package>xbitmaps</Package>
         <Package>xcb-proto</Package>
         <Package>xcb-util</Package>
-        <Package>xfsdump</Package>
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
         <Package>xkeyboard-config</Package>
