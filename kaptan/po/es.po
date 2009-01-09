@@ -1,4 +1,4 @@
-# translation of es.po to Spanish
+# translation of es.po to español
 # translation of es.po to
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
@@ -6,14 +6,15 @@
 #
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 # Klemens Häckel <click3d_at_linuxmail_org>, 2008.
+# Klemens Häckel <click3d at linuxmail dot com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-27 20:48+0300\n"
-"PO-Revision-Date: 2008-08-30 19:21-0400\n"
-"Last-Translator: \n"
-"Language-Team: Spanish <es@li.org>\n"
+"PO-Revision-Date: 2009-01-08 22:22-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
+"Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +22,7 @@ msgstr ""
 
 #: src/kaptan.py:93 src/screens/ScrWelcome.py:24
 msgid "Welcome to Kaptan Wizard :)"
-msgstr "Bienvenido al Asistene Kaptan :)"
+msgstr "Bienvenido al Asistente Kaptan :)"
 
 #: src/kaptan.py:95
 msgid "&Back"
@@ -78,11 +79,11 @@ msgstr "Bienvenido"
 
 #: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:132
 msgid "Thumbnails"
-msgstr "Thumbnails"
+msgstr "Imágenes en miniatura"
 
 #: src/screens/wallpaperdlg.py:131
 msgid "Wallpaper"
-msgstr "Fondo de escritorio"
+msgstr "Imagen de Fondo"
 
 #: src/screens/wallpaperdlg.py:133
 msgid "toolTip"
@@ -100,8 +101,8 @@ msgstr "Escritorios Multiples"
 msgid "Configure virtual desktops.."
 msgstr "Configurar escritorios virtuales.."
 
-# i think in english this should say: multiple desktops
 #: src/screens/ScrMultiple.py:60 src/screens/multipledlg.py:135
+# will check this again, verificar, traducir como Cantidad ??
 msgid "Multiple"
 msgstr "Escritorios"
 
@@ -147,7 +148,7 @@ msgstr "Ratón"
 
 #: src/screens/ScrMouse.py:40
 msgid "Reverse scroll"
-msgstr "Scroll reverso"
+msgstr "Deslizamiento inverso"
 
 #: src/screens/ScrMouse.py:41
 msgid ""
@@ -158,7 +159,7 @@ msgid ""
 msgstr ""
 "<p align=\"left\">Si es zurdo podría preferir intercambiar las funciones de "
 "los botones derecho e izquierdo de su ratón eligiendo la opción \"Zurdo\" "
-"abajo. Tambien puede especificar el comportamiento de clic por defecto.</p>"
+"abajo. También puede especificar el comportamiento de clic por defecto.</p>"
 
 #: src/screens/ScrMouse.py:42
 msgid "Button Order"
@@ -235,7 +236,7 @@ msgstr "Administrador de Paquetes"
 
 #: src/screens/ScrPackage.py:31
 msgid "Configure package manager settings..."
-msgstr "Configurar administrador de paquetes"
+msgstr "Configurar administrador de paquetes..."
 
 # favor verificar
 #: src/screens/ScrPackage.py:50
@@ -245,10 +246,8 @@ msgid ""
 "upgrades of the programs periodically  from the system tray with package "
 "manager."
 msgstr ""
-"<b>Administrador de Paquetes</b> es la interfáz gráfica de <b>PiSi</b>. "
-"Le permite instalar fácilmente nuevos programas y actualizar su sistema, además "
-"puede observar la disponibilidad de actualizaciones en un ícono en la barra de "
-"tareas."
+"<b>Administrador de Paquetes</b> es la interfaz gráfica de <b>PiSi</b>. "
+"Le permite instalar fácilmente nuevos programas y actualizar su sistema, además puede observar la disponibilidad de actualizaciones en un icono en la barra de tareas."
 
 #: src/screens/ScrPackage.py:52
 msgid "Updates"
@@ -260,7 +259,7 @@ msgstr "Mostrar en la barra de tareas"
 
 #: src/screens/ScrPackage.py:54
 msgid "Check updates automatically for every"
-msgstr "Comprobar actualizaciones automaticamente cada"
+msgstr "Comprobar actualizaciones automáticamente cada"
 
 #: src/screens/ScrPackage.py:55
 msgid " hours"
@@ -291,17 +290,18 @@ msgid "Configure your panel !"
 msgstr "Configure su panel !"
 
 #: src/screens/ScrPanel.py:32
+# i translated: select the one You like MOST
 msgid "Select the one you like..."
-msgstr "Seleccione uno que le guste..."
+msgstr "Seleccione uno que más le guste..."
 
-# favor verificar
+# favor verificar (i replaced "eye candy" for "standard"..)
 #: src/screens/ScrPanel.py:42
 msgid ""
 "Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
 "some eye candy styles for you."
 msgstr ""
-"Aqui puede elegir un <b>estilo </b>para su escritorio. <b>Pardus</b> le "
-"provee algunos estilos vistosos para Usted."
+"Aquí puede elegir un <b>estilo </b>para su escritorio. <b>Pardus</b> le "
+"provee algunos estilos predeterminados para Usted."
 
 #: src/screens/ScrPanel.py:44
 msgid "Preview"
@@ -309,7 +309,7 @@ msgstr "Vista previa"
 
 #: src/screens/ScrPanel.py:45
 msgid "Use enhanced Kickoff style menu"
-msgstr "Usar menu de estilo Kickoff"
+msgstr "Usar menú de estilo Kickoff"
 
 #: src/screens/ScrGoodbye.py:29
 msgid "Enjoy with Pardus..."
@@ -318,7 +318,7 @@ msgstr "Disfrute Pardus..."
 # o deberia poner simplemente: FIN ? Adios suena muy "popular"
 #: src/screens/goodbyedlg.py:191
 msgid "Goodbye"
-msgstr "Adios"
+msgstr "Finalizar"
 
 #: src/screens/goodbyedlg.py:192
 msgid "Tasma"
@@ -375,7 +375,7 @@ msgid ""
 msgstr ""
 "<p><p>Su resolución de pantalla está muy baja. Esto puede sera a causa de "
 "una configuración equivocada. Puede elegir otra resolución usando el "
-"<b>Administrador de Display</b>.</p></p>"
+"<b>Administrador de Pantallas</b>.</p></p>"
 
 #: src/screens/summarydlg.py:64
 msgid "SummaryWidget"
@@ -391,7 +391,7 @@ msgstr "Captura"
 
 #: src/screens/photodlg.py:68
 msgid "Put my photo to:"
-msgstr "Colocar mi foto a:"
+msgstr "Colocar mi foto en:"
 
 #: src/screens/photodlg.py:69
 msgid "E-mail clients"
