@@ -39,7 +39,6 @@
         <SelectedPackage>fbset</SelectedPackage>
         <SelectedPackage>flashplugin</SelectedPackage>
         <SelectedPackage>fnfx</SelectedPackage>
-        <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
@@ -54,14 +53,12 @@
         <SelectedPackage>glibc-locales-sv</SelectedPackage>
         <SelectedPackage>gspca</SelectedPackage>
         <SelectedPackage>gst-ffmpeg</SelectedPackage>
-        <SelectedPackage>gutenprint</SelectedPackage>
         <SelectedPackage>hal-cups-utils</SelectedPackage>
-        <SelectedPackage>hcfpcimodem</SelectedPackage>
         <SelectedPackage>history-manager</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
-        <SelectedPackage>hsfmodem</SelectedPackage>
         <SelectedPackage>iksemel</SelectedPackage>
         <SelectedPackage>imposter</SelectedPackage>
+        <SelectedPackage>iptables</SelectedPackage>
         <SelectedPackage>ipw2100-firmware</SelectedPackage>
         <SelectedPackage>ipw2200-firmware</SelectedPackage>
         <SelectedPackage>irda-utils</SelectedPackage>
@@ -97,11 +94,9 @@
         <SelectedPackage>kdebase4</SelectedPackage>
         <SelectedPackage>kdebase4-runtime</SelectedPackage>
         <SelectedPackage>kdegraphics4</SelectedPackage>
-        <SelectedPackage>kdemultimedia4</SelectedPackage>
         <SelectedPackage>kdenetwork4</SelectedPackage>
         <SelectedPackage>kdepim4</SelectedPackage>
         <SelectedPackage>kdeplasma-addons</SelectedPackage>
-        <SelectedPackage>kdm-pardus-theme</SelectedPackage>
         <SelectedPackage>kdm-pardus-theme-kde4</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kmplayer-kde4</SelectedPackage>
@@ -140,7 +135,6 @@
         <SelectedPackage>rtl8187se</SelectedPackage>
         <SelectedPackage>sdricoh_cs</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
-        <SelectedPackage>slmodem</SelectedPackage>
         <SelectedPackage>sn9c1xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
@@ -224,7 +218,6 @@
         <Package>bluez-libs</Package>
         <Package>bluez-utils</Package>
         <Package>boost</Package>
-        <Package>boost-devel</Package>
         <Package>boot-manager</Package>
         <Package>bootsplash</Package>
         <Package>bootsplash-theme-pardus</Package>
@@ -346,22 +339,20 @@
         <Package>gstreamer</Package>
         <Package>gtk2</Package>
         <Package>guile</Package>
-        <Package>gutenprint</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
         <Package>hal-cups-utils</Package>
         <Package>hal-info</Package>
-        <Package>hcfpcimodem</Package>
         <Package>hdparm</Package>
         <Package>history-manager</Package>
         <Package>hplip</Package>
-        <Package>hsfmodem</Package>
         <Package>icu4c</Package>
         <Package>iksemel</Package>
         <Package>ilmbase</Package>
         <Package>imagemagick</Package>
         <Package>imlib2</Package>
         <Package>imposter</Package>
+        <Package>iptables</Package>
         <Package>iputils</Package>
         <Package>ipw2100-firmware</Package>
         <Package>ipw2200-firmware</Package>
@@ -411,7 +402,6 @@
         <Package>kdepim4</Package>
         <Package>kdepimlibs</Package>
         <Package>kdeplasma-addons</Package>
-        <Package>kdm-pardus-theme</Package>
         <Package>kdm-pardus-theme-kde4</Package>
         <Package>kernel</Package>
         <Package>kernel-headers</Package>
@@ -682,7 +672,6 @@
         <Package>shared-mime-info</Package>
         <Package>sip</Package>
         <Package>slang</Package>
-        <Package>slmodem</Package>
         <Package>sn9c1xx</Package>
         <Package>soprano</Package>
         <Package>speedtouch-firmware</Package>
@@ -722,7 +711,6 @@
         <Package>twolame</Package>
         <Package>udev</Package>
         <Package>unarj</Package>
-        <Package>ungrab-winmodem</Package>
         <Package>unionfs</Package>
         <Package>unixODBC</Package>
         <Package>unrar</Package>
