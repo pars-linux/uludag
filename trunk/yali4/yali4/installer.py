@@ -562,12 +562,14 @@ class Yali:
 
                                 # update device order for root command
                                 _root = entry.getCommand("root")
-                                _root.value = _update_dev(_root.value, _grub_dev)
+                                if not _root.value == '':
+                                    _root.value = _update_dev(_root.value, _grub_dev)
 
                                 # update device order for kernel command if already defined
                                 _kernel = entry.getCommand("kernel")
-                                if _kernel.value.startswith('('):
-                                    _kernel.value = ''.join([_root.value, _kernel.value.split(')')[1]])
+                                if _kernel:
+                                    if _kernel.value.startswith('('):
+                                        _kernel.value = ''.join([_root.value, _kernel.value.split(')')[1]])
 
                                 # update device order for initrd command if already defined
                                 _initrd = entry.getCommand("initrd")
