@@ -539,7 +539,13 @@ class Yali:
         grubConf.parseConf(grubConfPath)
 
         def _update_dev(old, new):
-            return "(%s," % new + old.split(',')[1]
+            # If it fails 
+            try:
+                return "(%s," % new + old.split(',')[1]
+            except:
+                ctx.debugger.log("UD: Failed, new: %s -- old: %s" % (new, old))
+                ctx.debugger.log("UD: Failed, using old: %s" % old)
+                return old
 
         ctx.debugger.log("Checking for Other Distros (Linux) ...")
         for d in yali4.storage.devices:
