@@ -5,13 +5,13 @@
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
-# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-13 15:46+0200\n"
-"PO-Revision-Date: 2008-06-12 18:28+0200\n"
+"PO-Revision-Date: 2009-01-13 23:38+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -49,8 +49,7 @@ msgstr "Mein Computer"
 
 #: sysinfo/sysinfo.cpp:155
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr ""
-"Ordner, Festplatten, Wechseldatenträger, System-Informationen und mehr..."
+msgstr "Ordner, Festplatten, Wechseldatenträger, System-Informationen und mehr..."
 
 #: sysinfo/sysinfo.cpp:163
 msgid "Common Folders"
@@ -62,42 +61,39 @@ msgstr "Persönlicher Ordner"
 
 #: sysinfo/sysinfo.cpp:165
 msgid "Root Folder"
-msgstr "Wurzel-Ordner"
+msgstr "Wurzel(Root)-Ordner"
 
 #: sysinfo/sysinfo.cpp:166
 msgid "Network Folders"
 msgstr "Netzwerk-Ordner"
 
 #: sysinfo/sysinfo.cpp:172
-#, fuzzy
 msgid "Network"
-msgstr "Netzwerk-Status"
+msgstr "Netzwerk"
 
 #: sysinfo/sysinfo.cpp:180
-#, fuzzy
 msgid "Memory"
-msgstr "Verwendetet Arbeitsspeicher:"
+msgstr "Arbeitsspeicher"
 
 #: sysinfo/sysinfo.cpp:181 sysinfo/sysinfo.cpp:323
 msgid "%1 free of %2"
-msgstr ""
+msgstr "%1 frei von %2"
 
 #: sysinfo/sysinfo.cpp:189
 msgid "Disks"
-msgstr ""
+msgstr "Festplatten"
 
 #: sysinfo/sysinfo.cpp:196
 msgid "Operating System"
-msgstr ""
+msgstr "Betriebssystem"
 
 #: sysinfo/sysinfo.cpp:198
 msgid "Kde <b>%1</b> on <b>%2</b>"
-msgstr ""
+msgstr "Kde <b>%1</b> auf <b>%2</b>"
 
 #: sysinfo/sysinfo.cpp:209
-#, fuzzy
 msgid "Processor"
-msgstr "Prozessor (CPU):"
+msgstr "Prozessor"
 
 #: sysinfo/sysinfo.cpp:211
 msgid "%1 MHz"
@@ -105,25 +101,23 @@ msgstr "%1 MHz"
 
 #: sysinfo/sysinfo.cpp:212
 msgid " core"
-msgstr ""
+msgstr "Kern"
 
 #: sysinfo/sysinfo.cpp:223
-#, fuzzy
 msgid "Display"
-msgstr "Anzeige-Informationen"
+msgstr "Anzeige"
 
 #: sysinfo/sysinfo.cpp:226
-#, fuzzy
 msgid "Driver: "
-msgstr "Treiber:"
+msgstr "Treiber: "
 
 #: sysinfo/sysinfo.cpp:318
 msgid "Mounted on %1"
-msgstr ""
+msgstr "Gebunden auf %1"
 
 #: sysinfo/sysinfo.cpp:318
 msgid "Not mounted"
-msgstr ""
+msgstr "Nicht gebunden"
 
 #: sysinfo/sysinfo.cpp:462
 msgid "%1 (3D Support)"
@@ -157,71 +151,3 @@ msgstr "Sie sind <strong>online</strong>"
 msgid "Unknown network status"
 msgstr "Unbekannter Netzwerkstatus"
 
-#~ msgid "CPU Information"
-#~ msgstr "CPU-Informationen"
-
-#~ msgid "Speed:"
-#~ msgstr "Geschwindigkeit:"
-
-#~ msgid "Number of Core :"
-#~ msgstr "Anzahl der Kerne:"
-
-#~ msgid "Memory Information"
-#~ msgstr "Speicher-Informationen"
-
-#~ msgid "Total memory (RAM):"
-#~ msgstr "Gesamter Arbeitsspeicher (RAM):"
-
-#~ msgid "Free memory:"
-#~ msgstr "Verfügbarer Arbeitsspeicher:"
-
-#~ msgid "Total swap:"
-#~ msgstr "Gesamter SWAP:"
-
-#~ msgid "Free swap:"
-#~ msgstr "Verfügbarer SWAP:"
-
-#~ msgid "Hardware Information"
-#~ msgstr "Hardware-Informationen"
-
-#~ msgid "Type:"
-#~ msgstr "Typ:"
-
-#~ msgid "Vendor:"
-#~ msgstr "Hersteller:"
-
-#~ msgid "Model:"
-#~ msgstr "Modell:"
-
-#~ msgid "Bios Vendor:"
-#~ msgstr "BIOS-Hersteller:"
-
-#~ msgid "Bios Version:"
-#~ msgstr "BIOS-Version:"
-
-#~ msgid "Disk Information"
-#~ msgstr "Laufwerk-Informationen"
-
-#~ msgid "OS Information"
-#~ msgstr "Betriebssystem-Informationen"
-
-#~ msgid "OS:"
-#~ msgstr "BS:"
-
-#~ msgid "Current user:"
-#~ msgstr "Aktueller Benutzer:"
-
-#~ msgid "System:"
-#~ msgstr "System:"
-
-#~ msgid "KDE:"
-#~ msgstr "KDE:"
-
-#~ msgid "%1 (+ %2 Caches)"
-#~ msgstr "%1 (+ %2 Caches)"
-
-#~ msgid "Total"
-#~ msgstr "Gesamt:"
-
-#~ msgid "Available"
-#~ msgstr "Verfügbar"
