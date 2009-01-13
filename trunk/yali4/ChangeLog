@@ -1,3 +1,7 @@
+2009-01-12 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Check if exists kernel entry before updating foreign grub.conf
+         * Bug fixed at http://bugs.pardus.org.tr/9014
+
 2009-01-02 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * If KDE is not installed dont try to set AutoLogin choices
 
