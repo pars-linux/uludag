@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LANGS='ca de es fr it nl pl pt_BR tr'
+LANGS='ca de es fr it nl pl pt_BR tr sv'
 
 xgettext sysinfo/*.cpp -o po/kio_sysinfo.pot -ki18n -ktr2i18n -kI18N_NOOP -ktranslate -kaliasLocale
 

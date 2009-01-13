@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-30 13:46+0300\n"
+"POT-Creation-Date: 2009-01-13 15:46+0200\n"
 "PO-Revision-Date: 2007-07-11 20:45+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -124,35 +124,35 @@ msgstr ""
 msgid "Not mounted"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:487
+#: sysinfo/sysinfo.cpp:462
 msgid "%1 (3D Support)"
 msgstr "%1 (con supporto 3D)"
 
-#: sysinfo/sysinfo.cpp:489
+#: sysinfo/sysinfo.cpp:464
 msgid "%1 (No 3D Support)"
 msgstr "%1 (senza supporto 3D)"
 
-#: sysinfo/sysinfo.cpp:499
+#: sysinfo/sysinfo.cpp:474
 msgid "Network is <strong>unreachable</strong>"
 msgstr "La rete <strong>non è raggiungibile</strong>"
 
-#: sysinfo/sysinfo.cpp:501
+#: sysinfo/sysinfo.cpp:476
 msgid "You are <strong>offline</strong>"
 msgstr "<strong>Non sei connesso</strong>"
 
-#: sysinfo/sysinfo.cpp:503
+#: sysinfo/sysinfo.cpp:478
 msgid "Network is <strong>shutting down</strong>"
 msgstr "La rete è <strong>in fase di chiusura</strong>"
 
-#: sysinfo/sysinfo.cpp:505
+#: sysinfo/sysinfo.cpp:480
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "Connessione alla rete <strong>in corso</strong>"
 
-#: sysinfo/sysinfo.cpp:507
+#: sysinfo/sysinfo.cpp:482
 msgid "You are <strong>online</strong>"
 msgstr "<strong>Sei connesso</strong>"
 
-#: sysinfo/sysinfo.cpp:509
+#: sysinfo/sysinfo.cpp:484
 msgid "Unknown network status"
 msgstr "Stato della rete sconosciuto"
 

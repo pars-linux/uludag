@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-30 13:46+0300\n"
+"POT-Creation-Date: 2009-01-13 15:46+0200\n"
 "PO-Revision-Date: 2007-03-27 18:15+0200\n"
 "Last-Translator: Jaume Villalba <javs@tinet.cat>\n"
 "Language-Team: català <Ubuntu Catalan Translators <ubuntu-l10n-ca@lists."
@@ -127,35 +127,35 @@ msgstr ""
 msgid "Not mounted"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:487
+#: sysinfo/sysinfo.cpp:462
 msgid "%1 (3D Support)"
 msgstr "%1 (Suport de 3D)"
 
-#: sysinfo/sysinfo.cpp:489
+#: sysinfo/sysinfo.cpp:464
 msgid "%1 (No 3D Support)"
 msgstr "%1 (Sense suport de 3D)"
 
-#: sysinfo/sysinfo.cpp:499
+#: sysinfo/sysinfo.cpp:474
 msgid "Network is <strong>unreachable</strong>"
 msgstr "<strong>No s'ha pogut accedir</strong> a la xarxa"
 
-#: sysinfo/sysinfo.cpp:501
+#: sysinfo/sysinfo.cpp:476
 msgid "You are <strong>offline</strong>"
 msgstr "Esteu <strong>fora de línia</strong>"
 
-#: sysinfo/sysinfo.cpp:503
+#: sysinfo/sysinfo.cpp:478
 msgid "Network is <strong>shutting down</strong>"
 msgstr "<strong>S'està desconnectant</strong> la xarxa"
 
-#: sysinfo/sysinfo.cpp:505
+#: sysinfo/sysinfo.cpp:480
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "<strong>S'està establint</strong> la connexió amb la xarxa"
 
-#: sysinfo/sysinfo.cpp:507
+#: sysinfo/sysinfo.cpp:482
 msgid "You are <strong>online</strong>"
 msgstr "Esteu <strong>en línia</strong>"
 
-#: sysinfo/sysinfo.cpp:509
+#: sysinfo/sysinfo.cpp:484
 msgid "Unknown network status"
 msgstr "Estat de la xarxa desconegut"
 
