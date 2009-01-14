@@ -22,22 +22,64 @@ from config import SystemServicesConfig
 # DBUS-QT
 from dbus.mainloop.qt import DBusQtMainLoop
 
+state_icons = {"off"                :"flag-red",
+               "stopped"            :"flag-red",
+               "on"                 :"flag-green",
+               "started"            :"flag-green",
+               "conditional_started":"flag-green",
+               "conditional_stopped":"flag-yellow"}
+
+# Our Comar Link
+link = comar.Link()
+
 class WidgetSystemServices(QGraphicsWidget):
-    def __init__(self, parent, name, state=None):
+    def __init__(self, parent, name):
         QGraphicsWidget.__init__(self, parent)
-        self.name = name
+
+        self._name = name
+        self._parent = parent
+
         self.layout = QGraphicsLinearLayout(Qt.Horizontal, self)
 
-        self.label = Plasma.Label(self)
-        self.label.setText(name)
-        self.layout.addItem(self.label)
+        self.service_icon = Plasma.IconWidget(self)
+        self.layout.addItem(self.service_icon)
+
+        self.getState()
+
+        self.label_layout = QGraphicsLinearLayout(Qt.Vertical, self.layout)
+        self.layout.addItem(self.label_layout)
+
+        self.service_name = Plasma.Label(self)
+        self.service_name.setText(name.capitalize())
+        self.service_name.setStyleSheet("font-weight:bold")
+        self.label_layout.addItem(self.service_name)
+
+        self.service_desc = Plasma.Label(self)
+        self.service_desc.setText(self._desc)
+        self.label_layout.addItem(self.service_desc)
 
         self.layout.addStretch()
 
         self.switcher = Plasma.TabBar(self)
         self.switcher.addTab("Start")
         self.switcher.addTab("Stop")
+        if not self._state in ["on", "started", "conditional_started"]:
+            self.switcher.setCurrentIndex(1)
         self.layout.addItem(self.switcher)
+
+        self.connect(self.switcher, SIGNAL("currentChanged(int)"), self.setService)
+
+    def setService(self):
+        if self.switcher.currentIndex() == 0 and self._state not in ["on", "started", "conditional_started"]:
+            link.System.Service[self._name].start()
+        elif self._state in ["on", "started", "conditional_started"]:
+            link.System.Service[self._name].stop()
+        self.getState()
+
+    def getState(self):
+        info = link.System.Service[self._name].info()
+        self._type, self._desc, self._state = map(lambda x: unicode(x), info)
+        self.service_icon.setIcon(state_icons[self._state])
 
 class WidgetStack(QGraphicsWidget):
     def __init__(self, parent):
@@ -53,7 +95,7 @@ class WidgetStack(QGraphicsWidget):
         self.animator.animateItem(widget, 0)
         self.layout.addItem(widget)
 
-        self._widgets[widget.name] = widget
+        self._widgets[widget._name] = widget
 
 class SystemServicesApplet(plasmascript.Applet):
     """ Our main applet derived from plasmascript.Applet """
@@ -61,11 +103,8 @@ class SystemServicesApplet(plasmascript.Applet):
     def __init__(self, parent, args=None):
         plasmascript.Applet.__init__(self, parent)
 
-        # Our Comar Link
-        self.link = comar.Link()
-
         # Available services
-        self._services = list(self.link.System.Service)
+        self._services = list(link.System.Service)
 
     def init(self):
         """ Const method for initializing the applet """
@@ -135,9 +174,11 @@ class SystemServicesApplet(plasmascript.Applet):
         self.layout.addItem(self.mainWidget)
 
         for package in self._services:
+
             # If service is enabled create a proper widget and add it to the plasmoid
             if package in self.config_ui.enabledServices:
-                # Create widget which describes and handles service state
+
+                # Get service info from comar link and then create a proper widget
                 widget = WidgetSystemServices(self.applet, package)
 
                 # Add widget to mainWidget
