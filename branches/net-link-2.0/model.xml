@@ -108,4 +108,36 @@
             <arg name="device_name" type="s"/>
         </signal>
     </interface>
+    <interface name="Network.Stack">
+      <method name="getNameServers" access_label="get">
+        <arg name="servers" type="as" direction="out"/>
+      </method>
+      <method name="setNameServers" access_label="set">
+        <arg name="nameservers" type="as" direction="in"/>
+        <arg name="searchdomain" type="s" direction="in"/>
+        <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      </method>
+      <method name="registerNameServers" access_label="set">
+        <arg name="ifname" type="s" direction="in"/>
+        <arg name="nameservers" type="as" direction="in"/>
+        <arg name="searchdomain" type="s" direction="in"/>
+        <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      </method>
+      <method name="unregisterNameServers" access_label="set">
+        <arg name="ifname" type="s" direction="in"/>
+        <arg name="nameservers" type="as" direction="in"/>
+        <arg name="searchdomain" type="s" direction="in"/>
+        <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      </method>
+      <method name="flushNameCache" access_label="set">
+        <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      </method>
+      <method name="getHostName" access_label="get">
+        <arg name="hostname" type="s" direction="out"/>
+      </method>
+      <method name="setHostName" access_label="set">
+        <arg name="hostname" type="s" direction="in"/>
+        <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      </method>
+    </interface>
 </comarModel>
