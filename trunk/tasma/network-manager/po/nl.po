@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the net-kga package.
 #
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
-# Willem Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007, 2008, 2009.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-06 08:20+0200\n"
-"PO-Revision-Date: 2008-12-31 02:07+0100\n"
+"PO-Revision-Date: 2009-01-14 18:37+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -245,18 +245,16 @@ msgid "Use"
 msgstr "Gebruik"
 
 #: connection.py:201
-#, fuzzy
 msgid "Connection name:"
-msgstr "Verbinding"
+msgstr "Naam verbinding:"
 
 #: connection.py:208
 msgid "Connection"
 msgstr "Verbinding"
 
 #: connection.py:214
-#, fuzzy
 msgid "Device:"
-msgstr "Apparaat"
+msgstr "Apparaat:"
 
 #: connection.py:219
 msgid "Select"
@@ -264,63 +262,53 @@ msgstr "Selecteer"
 
 #: connection.py:237
 msgid "Scan"
-msgstr ""
+msgstr "Scan"
 
 #: connection.py:277
-#, fuzzy
 msgid "Security:"
-msgstr "Beveiliging"
+msgstr "Beveiliging:"
 
 #: connection.py:280
 msgid "No authentication"
 msgstr "Geen identificatie"
 
 #: connection.py:284
-#, fuzzy
 msgid "Authentication:"
-msgstr "Identificatie"
+msgstr "Identificatie:"
 
 #: connection.py:290
-#, fuzzy
 msgid "Inner Authentication:"
-msgstr "Innerlijke autorisatie"
+msgstr "Innerlijke autorisatie:"
 
 #: connection.py:302
-#, fuzzy
 msgid "Anonymous Identity:"
-msgstr "Anonieme gebruiker:"
+msgstr "Anonieme identiteit:"
 
 #: connection.py:307
-#, fuzzy
 msgid "User/Identity"
-msgstr "Gebruiker/identiteit:"
+msgstr "Gebruiker/identiteit"
 
 #: connection.py:312
-#, fuzzy
 msgid "Password:"
 msgstr "Wachtwoord:"
 
 #: connection.py:318
-#, fuzzy
 msgid "Client Certificate:"
-msgstr "Cliënt certificaat:"
+msgstr "Certificaat cliënt:"
 
 #: connection.py:319 connection.py:325 connection.py:331
 msgid "browse"
 msgstr "Blader"
 
 #: connection.py:324
-#, fuzzy
 msgid "CA Certificate:"
 msgstr "CA certificaat:"
 
 #: connection.py:330
-#, fuzzy
 msgid "Private Key File:"
 msgstr "Privé sleutelbestand:"
 
 #: connection.py:336
-#, fuzzy
 msgid "Private Key Password:"
 msgstr "Privé sleutelwachtwoord:"
 
@@ -341,9 +329,8 @@ msgid "Select Private Key File"
 msgstr "Selecteer privé sleutelbestand"
 
 #: connection.py:488
-#, fuzzy
 msgid "Network settings"
-msgstr "Netwerk-applet"
+msgstr "Netwerk instellingen"
 
 #: connection.py:498
 msgid "Automatic query (DHCP)"
@@ -358,14 +345,12 @@ msgid "Custom"
 msgstr "Eigen"
 
 #: connection.py:519
-#, fuzzy
 msgid "Net mask:"
 msgstr "Netmasker:"
 
 #: connection.py:530
-#, fuzzy
 msgid "Gateway:"
-msgstr "Poort:"
+msgstr "Gateway:"
 
 # naamservers
 #: connection.py:539 nameconf.py:45
@@ -379,7 +364,7 @@ msgstr "Configureer netwerkverbinding"
 
 #: nameconf.py:35
 msgid "Computer"
-msgstr ""
+msgstr "Computer"
 
 #: nameconf.py:41
 msgid "Host name:"
@@ -519,23 +504,3 @@ msgstr "U bent nu offline"
 msgid "Network Applet"
 msgstr "Netwerk-applet"
 
-#~ msgid "SettingsWindow"
-#~ msgstr "SettingsWindow"
-
-#~ msgid "Address Settings"
-#~ msgstr "Adres instellingen"
-
-#~ msgid "Name Server Settings"
-#~ msgstr "Naam server instellingen"
-
-#~ msgid "Name"
-#~ msgstr "Naam"
-
-#~ msgid "Address :"
-#~ msgstr "Adres:"
-
-#~ msgid "NewConn"
-#~ msgstr "NewConn"
-
-#~ msgid "NameConf"
-#~ msgstr "NameConf"
