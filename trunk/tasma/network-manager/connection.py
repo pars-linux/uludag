@@ -772,6 +772,11 @@ class Settings(QWidget):
         self.auto_addr.setEnabled(auto)
         self.auto_gate.setEnabled(auto)
         self.dns2.setEnabled(auto)
+        
+        # Switching to manual mode causes dns mode left in automatic dns mode
+        if not auto and self.dns2.isChecked():
+            self.dns1.setChecked(True)
+
         self.dns_text.setEnabled(self.dns_group.selectedId() == 2)
     
     def slotNetToggle(self, id):
