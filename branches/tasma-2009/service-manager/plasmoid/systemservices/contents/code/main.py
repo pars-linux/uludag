@@ -50,7 +50,7 @@ class WidgetSystemServices(QGraphicsWidget):
         self.layout.addItem(self.label_layout)
 
         self.service_name = Plasma.Label(self)
-        self.service_name.setText(name.capitalize())
+        self.service_name.setText(name.capitalize().replace('_',' '))
         self.service_name.setStyleSheet("font-weight:bold")
         self.label_layout.addItem(self.service_name)
 
