@@ -357,6 +357,8 @@ class MainApplication(programbase):
                 chk.close(True)
             self.advanced = []
             for custom_rule in set(self.rules['filter']) - set(rules_processed):
+                if "--dports" not in custom_rule:
+                    continue
                 chk = AdvancedRuleCheckBox(mainwidget.frameAdvanced, rule=custom_rule)
                 chk.setChecked(True)
                 mainwidget.frameAdvancedLayout.addWidget(chk)
