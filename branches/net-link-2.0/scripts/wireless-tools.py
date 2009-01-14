@@ -245,6 +245,25 @@ def stopSameDevice(name):
         if pro.info["device"] == device:
             setState(pn, "down")
 
+def registerNameServers(profile, iface):
+    name_mode = profile.info.get("name_mode", "default")
+    name_servers = []
+    name_domain = ""
+    if name_mode == "auto":
+        for server in iface.autoNameServers():
+            name_servers.append(server)
+        name_domain = iface.autoNameSearch()
+    elif name_mode == "custom":
+        for server in profile.info.get("name_server", ",").split():
+           if server.strip():
+               name_servers.append(server.strip())
+    elif name_mode == "default":
+        name_servers = call("dnsmasq", "Network.Stack", "getNameServers")
+    call("dnsmasq", "Network.Stack", "registerNameServers", (iface.name, name_servers, name_domain))
+
+def unregisterNameServers(iface):
+    call("dnsmasq", "Network.Stack", "unregisterNameServers", (iface.name, [], ""))
+
 # Network.Link methods
 
 def linkInfo():
@@ -385,36 +404,15 @@ def setState(name, state):
             if profile.info.get("net_mode", "auto") == "auto":
                 # Start DHCP client
                 ret = iface.startAuto()
-                if ret == 0 and iface.isUp():
+                if ret == 0 and iface.isUp() and iface.getAddress():
                     address = iface.getAddress()
-                    if address:
-                        # Save state to profile database
-                        profile.info["state"] = "up " + address[0]
-                        profile.save()
-                        # Notify clients
-                        notify("Network.Link", "stateChanged", (name, "up", address[0]))
-                        # Set Network Stack
-                        name_mode = profile.info.get("name_mode", "default")
-                        name_servers = []
-                        name_domain = ""
-                        if name_mode == "auto":
-                            name_servers = []
-                            for server in iface.autoNameServers():
-                                name_servers.append(server)
-                            name_domain = iface.autoNameSearch()
-                        elif name_mode == "custom":
-                            name_servers = []
-                            for server in profile.info.get("name_server", ",").split():
-                                if server.strip():
-                                    name_servers.append(server.strip())
-                        call("baselayout", "Net.Stack", "useNameServers", (name_servers, name_domain))
-                    else:
-                        iface.down()
-                        # Save state to profile database
-                        profile.info["state"] = "down"
-                        profile.save()
-                        # Notify clients
-                        notify("Network.Link", "stateChanged", (name, "inaccesible", _(MSG_DHCP_FAILED)))
+                    # Set nameservers
+                    registerNameServers(profile, iface)
+                    # Save state to profile database
+                    profile.info["state"] = "up " + address[0]
+                    profile.save()
+                    # Notify clients
+                    notify("Network.Link", "stateChanged", (name, "up", address[0]))
                 else:
                     iface.down()
                     # Save state to profile database
@@ -436,27 +434,21 @@ def setState(name, state):
                 # Set default gateway
                 route = netutils.Route()
                 route.setDefault(net_gateway)
+                # Set nameservers
+                registerNameServers(profile, iface)
                 # Save state to profile database
                 profile.info["state"] = "up " + net_address
                 profile.save()
                 # Notify clients
                 notify("Network.Link", "stateChanged", (name, "up", net_address))
-                # Set Network Stack
-                name_mode = profile.info.get("name_mode", "default")
-                name_servers = []
-                name_domain = ""
-                if name_mode == "custom":
-                    name_servers = []
-                    for server in profile.info.get("name_server", ",").split():
-                        if server.strip():
-                            name_servers.append(server.strip())
-                call("baselayout", "Net.Stack", "useNameServers", (name_servers, name_domain))
         elif state == "down":
             if profile.info.get("net_mode", "auto") == "auto":
                 iface.stopAuto()
             # Set encryption to none
             wifi = Wireless(iface)
             wifi.setEncryption(None, None)
+            # Reset Network Stack
+            unregisterNameServers(iface)
             # Bring down interface
             iface.down()
             # Save state to profile database
@@ -464,8 +456,6 @@ def setState(name, state):
             profile.save()
             # Notify clients
             notify("Network.Link", "stateChanged", (name, "down", ""))
-            # Reset Network Stack
-            call("baselayout", "Net.Stack", "useNameServers", ([], ""))
     elif device_mode == "adhoc":
         # TODO: AdHoc support
         pass
