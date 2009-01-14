@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>dnsmasq</Name>
+        <Summary xml:lang="tr">Hafif, kolay ayarlanabilir DNS ve DHCP sunucusu</Summary>
+    </Source>
+</PISI>

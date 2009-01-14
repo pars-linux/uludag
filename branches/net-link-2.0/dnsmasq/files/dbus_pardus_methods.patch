@@ -1,0 +1,193 @@
+--- src/dbus.c.old	2008-11-03 18:26:46.000000000 +0200
++++ src/dbus.c	2009-01-13 22:49:37.000000000 +0200
+@@ -62,20 +62,122 @@
+   w = data; /* no warning */
+ }
+ 
++static void remove_marked_servers()
++{
++    struct server *serv, *tmp, **up;
++
++    /* unlink and free anything still marked. */
++    for (serv = daemon->servers, up = &daemon->servers; serv; serv = tmp) 
++    {
++        tmp = serv->next;
++        if (serv->flags & SERV_MARK)
++        {
++            server_gone(serv);
++            *up = serv->next;
++            free(serv);
++        }
++        else
++            up = &serv->next;
++    }
++}
++
++static void dbus_register_server(DBusMessage *message)
++{
++    DBusMessageIter args;
++    char* iface = "";
++    u32 nameserver;
++    struct server *serv;
++    union  mysockaddr addr, source_addr;
++
++    if (!dbus_message_iter_init(message, &args))
++        return;
++
++    if (dbus_message_iter_get_arg_type(&args) != DBUS_TYPE_STRING)
++        return;
++
++    // Get iface name
++    dbus_message_iter_get_basic(&args, &iface);
++    dbus_message_iter_next (&args);
++
++    if (dbus_message_iter_get_arg_type(&args) != DBUS_TYPE_UINT32)
++        return;
++
++    dbus_message_iter_get_basic(&args, &nameserver);
++    nameserver = ntohl(nameserver);
++
++    for (serv = daemon->servers; serv; serv = serv->next)
++    {
++        if (serv->addr.in.sin_addr.s_addr == nameserver &&
++            strcmp(serv->interface, iface) == 0)
++            return;
++    }
++
++#ifdef HAVE_SOCKADDR_SA_LEN
++    source_addr.in.sin_len = addr.in.sin_len = sizeof(struct sockaddr_in);
++#endif
++    addr.in.sin_addr.s_addr = nameserver;
++    source_addr.in.sin_family = addr.in.sin_family = AF_INET;
++    addr.in.sin_port = htons(NAMESERVER_PORT);
++    source_addr.in.sin_addr.s_addr = INADDR_ANY;
++    source_addr.in.sin_port = htons(daemon->query_port);
++
++    if ((serv = whine_malloc(sizeof(struct server))))
++    {
++        memset(serv, 0, sizeof(struct server));
++        serv->flags = SERV_FROM_DBUS;
++        serv->addr = addr;
++        serv->source_addr = source_addr;
++        strncpy(serv->interface, iface, IF_NAMESIZE);
++        serv->next = daemon->servers;
++        daemon->servers = serv;
++    }
++
++    my_syslog(LOG_INFO, "Interface: %s", serv->interface);
++}
++
++static void dbus_unregister_servers(DBusMessage *message)
++{
++    struct server *serv;
++
++    DBusMessageIter args;
++    char* iface = "";
++
++    if (!dbus_message_iter_init(message, &args))
++        return;
++
++    if (dbus_message_iter_get_arg_type(&args) != DBUS_TYPE_STRING)
++        return;
++
++    // Get iface name
++    dbus_message_iter_get_basic(&args, &iface);
++
++    for (serv = daemon->servers; serv; serv = serv->next)
++    {
++        if (serv->flags & SERV_FROM_DBUS && strcmp(serv->interface, iface) == 0)
++        {
++            my_syslog(LOG_INFO, "Removing interface server");
++            serv->flags |= SERV_MARK;
++        }
++    }
++    remove_marked_servers();
++}
++
+ static void dbus_read_servers(DBusMessage *message)
+ {
+-  struct server *serv, *tmp, **up;
++  struct server *serv;
+   DBusMessageIter iter;
+   union  mysockaddr addr, source_addr;
+   char *domain;
+-  
++
+   dbus_message_iter_init(message, &iter);
+-  
++
+   /* mark everything from DBUS */
+   for (serv = daemon->servers; serv; serv = serv->next)
+-    if (serv->flags & SERV_FROM_DBUS)
+-      serv->flags |= SERV_MARK;
+-  
++  {
++      if (serv->flags & SERV_FROM_DBUS)
++          serv->flags |= SERV_MARK;
++  }
++
+   while (1)
+     {
+       int skip = 0;
+@@ -207,20 +309,7 @@
+ 	} while (dbus_message_iter_get_arg_type(&iter) == DBUS_TYPE_STRING);
+     }
+   
+-  /* unlink and free anything still marked. */
+-  for (serv = daemon->servers, up = &daemon->servers; serv; serv = tmp) 
+-    {
+-      tmp = serv->next;
+-      if (serv->flags & SERV_MARK)
+-	{
+-	  server_gone(serv);
+-	  *up = serv->next;
+-	  free(serv);
+-	}
+-      else 
+-	up = &serv->next;
+-    }
+-
++    remove_marked_servers();
+ }
+ 
+ DBusHandlerResult message_handler(DBusConnection *connection, 
+@@ -233,7 +322,7 @@
+     {
+       char *v = VERSION;
+       DBusMessage *reply = dbus_message_new_method_return(message);
+-      
++
+       dbus_message_append_args(reply, DBUS_TYPE_STRING, &v, DBUS_TYPE_INVALID);
+       dbus_connection_send (connection, reply, NULL);
+       dbus_message_unref (reply);
+@@ -245,16 +334,27 @@
+       check_servers();
+     }
+   else if (strcmp(method, "ClearCache") == 0)
+-    clear_cache_and_reload(dnsmasq_time());
++    {
++        my_syslog(LOG_INFO, _("clearing caches from DBus"));
++        clear_cache_and_reload(dnsmasq_time());
++    }
++  else if (strcmp(method, "RegisterServer") == 0)
++    {
++        dbus_register_server(message);
++        check_servers();
++    }
++  else if (strcmp(method, "UnregisterServers") == 0)
++    {
++        dbus_unregister_servers(message);
++        check_servers();
++    }
+   else
+     return (DBUS_HANDLER_RESULT_NOT_YET_HANDLED);
+   
+   method = user_data; /* no warning */
+ 
+   return (DBUS_HANDLER_RESULT_HANDLED);
+- 
+ }
+- 
+ 
+ /* returns NULL or error message, may fail silently if dbus daemon not yet up. */
+ char *dbus_init(void)
