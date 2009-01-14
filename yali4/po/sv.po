@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-02 14:40+0200\n"
+"POT-Creation-Date: 2009-01-14 11:57+0200\n"
 "PO-Revision-Date: 2009-01-07 20:46+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -43,21 +43,21 @@ msgstr "Jag väljer mål"
 msgid "Use Selected"
 msgstr "Använd vald"
 
-#: yali4/gui/Ui/autopartwidget.py:133 yali4/gui/Ui/bootloaderwidget.py:75
+#: yali4/gui/Ui/autopartwidget.py:109 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
 #: yali4/gui/Ui/setupuserswidget.py:153 yali4/gui/Ui/welcomewidget.py:90
 msgid "Form1"
 msgstr "Form1"
 
-#: yali4/gui/Ui/autopartwidget.py:134
+#: yali4/gui/Ui/autopartwidget.py:110
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
@@ -69,14 +69,14 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Välj partitioneringsmetod:</"
-"span></p></body></html>"
+"\" font-size:12pt; font-weight:600;\">Välj partitioneringsmetod:</span></p></"
+"body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:139
+#: yali4/gui/Ui/autopartwidget.py:115
 msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
@@ -86,21 +86,23 @@ msgstr ""
 "en enhet för att fortsätta med ditt val.<br>Enhetslistan kommer att "
 "uppdateras för vald metod."
 
-#: yali4/gui/Ui/autopartwidget.py:140
+#: yali4/gui/Ui/autopartwidget.py:116
 msgid "Automatic"
 msgstr "Automatisk"
 
-#: yali4/gui/Ui/autopartwidget.py:141
-msgid "This option will try to find suitable free space or resizable partitions"
+#: yali4/gui/Ui/autopartwidget.py:117
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Det här alternativet försöker hitta ett lämpligt ledigt utrymme eller "
 "partitioner för storleksändring"
 
-#: yali4/gui/Ui/autopartwidget.py:142
+#: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
-msgstr "Försök att använda ledigt utrymme eller storleksändra befintliga partitioner"
+msgstr ""
+"Försök att använda ledigt utrymme eller storleksändra befintliga partitioner"
 
-#: yali4/gui/Ui/autopartwidget.py:143
+#: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
 "This option will erase your entire disk. All of your data on disk will be "
 "lost !"
@@ -108,26 +110,26 @@ msgstr ""
 "Det här alternativet kommer att radera hela disken. Alla dina data kommer "
 "att försvinna!"
 
-#: yali4/gui/Ui/autopartwidget.py:144
+#: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
 msgstr "Ta bort alla partitioner"
 
-#: yali4/gui/Ui/autopartwidget.py:145
+#: yali4/gui/Ui/autopartwidget.py:121
 msgid "You can use manual partitioning with this option"
 msgstr "Det här alternativet låter dig partitionera disken för hand"
 
-#: yali4/gui/Ui/autopartwidget.py:146
+#: yali4/gui/Ui/autopartwidget.py:122
 msgid "No, I'll partition my disk manually."
 msgstr "Nej, jag partitionerar min disk på egen hand."
 
-#: yali4/gui/Ui/autopartwidget.py:147
+#: yali4/gui/Ui/autopartwidget.py:123
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
@@ -139,13 +141,14 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Välj enhet att tillämpa vald metod på:</span></p></body></html>"
+"\" font-size:12pt; font-weight:600;\">Välj enhet att tillämpa vald metod på:"
+"</span></p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:152
+#: yali4/gui/Ui/autopartwidget.py:128
 msgid "&nbsp;"
 msgstr "&nbsp;"
 
@@ -274,35 +277,35 @@ msgstr "Testa vald tangentbordslayout:"
 msgid "Yali4"
 msgstr "Yali4"
 
-#: yali4/gui/Ui/main.py:441
+#: yali4/gui/Ui/main.py:158
 msgid "Screen Name"
 msgstr "Skärmnamn"
 
-#: yali4/gui/Ui/main.py:443
+#: yali4/gui/Ui/main.py:160
 msgid "Details about the screen"
 msgstr "Detaljer om steget"
 
-#: yali4/gui/Ui/main.py:444 yali4/gui/YaliWindow.py:191
+#: yali4/gui/Ui/main.py:161 yali4/gui/YaliWindow.py:194
 msgid "Release Notes"
 msgstr "Versionsfakta"
 
-#: yali4/gui/Ui/main.py:445
+#: yali4/gui/Ui/main.py:162
 msgid "Toggle Help"
 msgstr "Växla hjälp"
 
-#: yali4/gui/Ui/main.py:446
+#: yali4/gui/Ui/main.py:163
 msgid "Previous Screen"
 msgstr "Föregående steg"
 
-#: yali4/gui/Ui/main.py:447
+#: yali4/gui/Ui/main.py:164
 msgid "Back"
 msgstr "Bakåt"
 
-#: yali4/gui/Ui/main.py:448
+#: yali4/gui/Ui/main.py:165
 msgid "Next Screen"
 msgstr "Nästa steg"
 
-#: yali4/gui/Ui/main.py:449
+#: yali4/gui/Ui/main.py:166
 msgid "Next"
 msgstr "Nästa"
 
@@ -431,7 +434,7 @@ msgstr ""
 "denna åtgärd inte kan ångras.</span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:87
-#: yali4/gui/YaliDialog.py:133
+#: yali4/gui/YaliDialog.py:124
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -713,36 +716,36 @@ msgstr "till lagringsutrymme"
 msgid "Manuel Partitioning selected."
 msgstr "Manuell partitionering vald."
 
-#: yali4/gui/DiskWidgets.py:166
+#: yali4/gui/DiskWidgets.py:169
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
 msgstr "'Systempartitionen' måste vara på minst %s MB."
 
-#: yali4/gui/DiskWidgets.py:201 yali4/gui/ScrBootloader.py:67
-#: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:71
+#: yali4/gui/DiskWidgets.py:204 yali4/gui/ScrBootloader.py:67
+#: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:72
 msgid "Can't find a storage device!"
 msgstr "Kan inte hitta lagringsutrymme!"
 
-#: yali4/gui/DiskWidgets.py:217
+#: yali4/gui/DiskWidgets.py:220
 #, python-format
 msgid "%0.1f GB free"
 msgstr "%0.1f GB ledigt"
 
-#: yali4/gui/DiskWidgets.py:219
+#: yali4/gui/DiskWidgets.py:222
 #, python-format
 msgid "%d MB free"
 msgstr "%d MB ledigt"
 
-#: yali4/gui/DiskWidgets.py:239 yali4/gui/GUIAdditional.py:146
+#: yali4/gui/DiskWidgets.py:242 yali4/gui/GUIAdditional.py:146
 #, python-format
 msgid "Partition %d"
 msgstr "Partition %d"
 
-#: yali4/gui/DiskWidgets.py:246
+#: yali4/gui/DiskWidgets.py:249
 msgid "Free Space"
 msgstr "Ledigt utrymme"
 
-#: yali4/gui/DiskWidgets.py:266
+#: yali4/gui/DiskWidgets.py:269
 #, python-format
 msgid ""
 "Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%"
@@ -751,27 +754,28 @@ msgstr ""
 "Partition <b>%(partition)s (%(size)s)</b> <b>borttagen/b> från enhet <b>%"
 "(device)s</b>."
 
-#: yali4/gui/DiskWidgets.py:301 yali4/partitionrequest.py:181
+#: yali4/gui/DiskWidgets.py:304 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
 msgstr "Den finns en förfrågan av samma partitionstyp"
 
-#: yali4/gui/DiskWidgets.py:320
+#: yali4/gui/DiskWidgets.py:323
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partition <b>%(partition)s</b> kommer att <b>formateras</b> som <b>%(fsType)"
 "s</b>."
 
-#: yali4/gui/DiskWidgets.py:335 yali4/gui/ScrSummary.py:161
+#: yali4/gui/DiskWidgets.py:338 yali4/gui/ScrSummary.py:161
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr "Partition <b>%(partition)s</b> <b>vald</b> som <b>%(type)s</b>."
 
-#: yali4/gui/DiskWidgets.py:354
+#: yali4/gui/DiskWidgets.py:357
 msgid "Too many primary partition !"
 msgstr "För många primära partitioner!"
 
-#: yali4/gui/DiskWidgets.py:355
+#: yali4/gui/DiskWidgets.py:358
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
@@ -779,17 +783,19 @@ msgstr ""
 "GPT partitionstabeller stöder inte utökade partitioner.\n"
 "Du måste radera en av de primära partitionerna i din partitionstabell!"
 
-#: yali4/gui/DiskWidgets.py:379
+#: yali4/gui/DiskWidgets.py:382
 msgid "Too many primary partitions !"
 msgstr "För många primära partitioner!"
 
-#: yali4/gui/DiskWidgets.py:380
+#: yali4/gui/DiskWidgets.py:383
 msgid ""
 "You need to delete one of the primary or extended(if exists) partition from "
 "your disk table !"
-msgstr "Du måste radera en av de primära eller utökade partitionerna i din partitionstabell!"
+msgstr ""
+"Du måste radera en av de primära eller utökade partitionerna i din "
+"partitionstabell!"
 
-#: yali4/gui/DiskWidgets.py:397 yali4/gui/ScrSummary.py:160
+#: yali4/gui/DiskWidgets.py:400 yali4/gui/ScrSummary.py:160
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -798,27 +804,27 @@ msgstr ""
 "Partition <b>%(partition)s</b> <b>skapad</b> på enhet <b>%(device)s</b> med "
 "<b>%(size)s MB</b> som <b>%(fs)s</b>."
 
-#: yali4/gui/DiskWidgets.py:423
+#: yali4/gui/DiskWidgets.py:426
 msgid "Delete All Partitions"
 msgstr "Ta bort alla partitioner"
 
-#: yali4/gui/DiskWidgets.py:491
+#: yali4/gui/DiskWidgets.py:494
 msgid "Pardus will install here"
 msgstr "Pardus installeras här"
 
-#: yali4/gui/DiskWidgets.py:494
+#: yali4/gui/DiskWidgets.py:497
 msgid "User files will store here"
 msgstr "Användarfiler lagras här"
 
-#: yali4/gui/DiskWidgets.py:497
+#: yali4/gui/DiskWidgets.py:500
 msgid "Swap will be here"
 msgstr "Växlingsutrymmet är här"
 
-#: yali4/gui/DiskWidgets.py:500
+#: yali4/gui/DiskWidgets.py:503
 msgid "Backup or archive files will store here"
 msgstr "Säkerhetskopia eller arkiv lagras här"
 
-#: yali4/gui/DiskWidgets.py:521
+#: yali4/gui/DiskWidgets.py:524
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -829,7 +835,7 @@ msgstr ""
 "                                  <b>Storlek:</b> %s<br>\n"
 "                                  <b>Filsystem:</b> %s%s"
 
-#: yali4/gui/DiskWidgets.py:551 yali4/gui/ScrSummary.py:159
+#: yali4/gui/DiskWidgets.py:554 yali4/gui/ScrSummary.py:159
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Alla partitioner på enhet <b>%(device)s</b> har tagits bort."
@@ -939,15 +945,18 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Caps Lock är aktiverad!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Caps Lock är aktiverad!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Lösenordet är för kort!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Lösenordet är för kort!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:128
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Lösenorden stämmer inte!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Lösenorden stämmer inte!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:133
 msgid ""
@@ -1023,7 +1032,8 @@ msgstr "Kontrollera ditt media"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr "Undvik installationsproblem genom att kontrollera cd-skivans integritet..."
+msgstr ""
+"Undvik installationsproblem genom att kontrollera cd-skivans integritet..."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1123,11 +1133,11 @@ msgstr ""
 msgid "Running post install operations.."
 msgstr "Kör efterbehandlingsåtgärder..."
 
-#: yali4/gui/ScrGoodbye.py:101
+#: yali4/gui/ScrGoodbye.py:91
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Startar om systemet. Vänta!</b>"
 
-#: yali4/gui/ScrGoodbye.py:132
+#: yali4/gui/ScrGoodbye.py:114
 msgid ""
 "<b>\n"
 "<p>Press Reboot button to restart your system.</p>\n"
@@ -1137,8 +1147,8 @@ msgstr ""
 "<p>Klicka på knappen Starta om för att starta om datorn.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrGoodbye.py:138 yali4/gui/ScrSummary.py:73
-#: yali4/installer.py:618
+#: yali4/gui/ScrGoodbye.py:120 yali4/gui/ScrSummary.py:73
+#: yali4/installer.py:652
 msgid "Reboot"
 msgstr "Starta om"
 
@@ -1148,7 +1158,8 @@ msgstr "Installerar systemet..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr "Installationen tar uppskattningsvis 30 minuter beroende på din dator..."
+msgstr ""
+"Installationen tar uppskattningsvis 30 minuter beroende på din dator..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1337,7 +1348,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrPartitionAuto.py:79
+#: yali4/gui/ScrPartitionAuto.py:80
 #, python-format
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
@@ -1619,11 +1630,13 @@ msgstr "<font color=\"#FF6D19\">Lösenordet är för kort!</font>"
 
 #: yali4/gui/ScrUsers.py:178
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
-msgstr "<font color=\"#FF6D19\">Användarnamnet finns redan, välj ett annat!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Användarnamnet finns redan, välj ett annat!</font>"
 
 #: yali4/gui/ScrUsers.py:181
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
-msgstr "<font color=\"#FF6D19\">Användarnamnet innehåller ogiltiga tecken!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Användarnamnet innehåller ogiltiga tecken!</font>"
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
@@ -1673,11 +1686,11 @@ msgstr ""
 "klicka på knappen Nästa.</p>\n"
 "</font>\n"
 
-#: yali4/gui/YaliDialog.py:102
+#: yali4/gui/YaliDialog.py:93
 msgid "Warning"
 msgstr "Varning"
 
-#: yali4/gui/YaliDialog.py:126
+#: yali4/gui/YaliDialog.py:117
 msgid ""
 "<b>\n"
 "<p>This action will start installing Pardus on<br>\n"
@@ -1689,19 +1702,19 @@ msgstr ""
 "på ditt system och formatera valda partitioner.</p>\n"
 "</b>\n"
 
-#: yali4/gui/YaliDialog.py:136
+#: yali4/gui/YaliDialog.py:127
 msgid "O.K. Go Ahead"
 msgstr "Ok, fortsätt"
 
-#: yali4/gui/YaliWindow.py:55 yali4/gui/YaliWindow.py:82
+#: yali4/gui/YaliWindow.py:58 yali4/gui/YaliWindow.py:85
 msgid "Show Help"
 msgstr "Visa hjälp"
 
-#: yali4/gui/YaliWindow.py:85
+#: yali4/gui/YaliWindow.py:88
 msgid "Hide Help"
 msgstr "Dölj hjälp"
 
-#: yali4/bootloader.py:211 yali4/bootloader.py:216
+#: yali4/bootloader.py:213 yali4/bootloader.py:218
 msgid "Windows"
 msgstr "Windows"
 
@@ -1711,16 +1724,18 @@ msgstr ""
 "Partitionen är inte klar för storleksändring. Kontrollera den före "
 "installation."
 
-#: yali4/__init__.py:67
+#: yali4/__init__.py:62
 msgid "Backtrace:"
 msgstr "Spårning:"
 
 #: yali4/installer.py:137
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"Plugin (%s) not found or error occured while loading switching to normal "
+"Plugin (%s) not found or error occurred while loading. Switching to normal "
 "installation process."
-msgstr "Hittade inte insticksprogrammet (%s), eller så uppstod ett fel vid laddning. Återgår till normal installationsprocess."
+msgstr ""
+"Hittade inte insticksprogrammet (%s), eller så uppstod ett fel vid laddning. "
+"Återgår till normal installationsprocess."
 
 #: yali4/installer.py:143
 msgid "YALI Is Working..."
@@ -1816,7 +1831,7 @@ msgstr "Sparar diverse paketkonfigureringar..."
 msgid "Installing BootLoader..."
 msgstr "Installerar starthanteraren..."
 
-#: yali4/installer.py:595
+#: yali4/installer.py:629
 msgid "Retry"
 msgstr "Försök igen"
 
@@ -2001,54 +2016,52 @@ msgstr "Arkiveringspartition"
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Användare <b>%s</b>s hemkatalog förbereds..."
 
-#: yali4/gui/Ui/autopartwidget.py:110
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Select the partitioning method:</"
-"span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Välj partitioneringsmetod:</"
-"span></p></body></html>"
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span "
+#~ "style=\" font-size:12pt; font-weight:600;\">Select the partitioning "
+#~ "method:</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span "
+#~ "style=\" font-size:12pt; font-weight:600;\">Välj partitioneringsmetod:</"
+#~ "span></p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:123
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Select the disk to apply selected "
-"method:</span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Välj enhet att tillämpa vald metod på:</span></p></body></html>"
-
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span "
+#~ "style=\" font-size:12pt; font-weight:600;\">Select the disk to apply "
+#~ "selected method:</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span "
+#~ "style=\" font-size:12pt; font-weight:600;\">Välj enhet att tillämpa vald "
+#~ "metod på:</span></p></body></html>"

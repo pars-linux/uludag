@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-02 14:40+0200\n"
+"POT-Creation-Date: 2009-01-14 11:57+0200\n"
 "PO-Revision-Date: 2007-02-19 22:25-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -43,21 +43,21 @@ msgstr ""
 msgid "Use Selected"
 msgstr "Deletar Usuário Selecionado"
 
-#: yali4/gui/Ui/autopartwidget.py:133 yali4/gui/Ui/bootloaderwidget.py:75
+#: yali4/gui/Ui/autopartwidget.py:109 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
 #: yali4/gui/Ui/setupuserswidget.py:153 yali4/gui/Ui/welcomewidget.py:90
 msgid "Form1"
 msgstr "Form1"
 
-#: yali4/gui/Ui/autopartwidget.py:134
+#: yali4/gui/Ui/autopartwidget.py:110
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
@@ -65,27 +65,27 @@ msgid ""
 "span></p></body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:139
+#: yali4/gui/Ui/autopartwidget.py:115
 msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
 "selected method."
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:140
+#: yali4/gui/Ui/autopartwidget.py:116
 msgid "Automatic"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:141
+#: yali4/gui/Ui/autopartwidget.py:117
 msgid ""
 "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:142
+#: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:143
+#: yali4/gui/Ui/autopartwidget.py:119
 #, fuzzy
 msgid ""
 "This option will erase your entire disk. All of your data on disk will be "
@@ -99,27 +99,27 @@ msgstr ""
 "uma forma segura e fácil de instalar o Pardus.</p>\n"
 "</b>\n"
 
-#: yali4/gui/Ui/autopartwidget.py:144
+#: yali4/gui/Ui/autopartwidget.py:120
 #, fuzzy
 msgid "Delete all partitions"
 msgstr "Deletar Todas as Partições"
 
-#: yali4/gui/Ui/autopartwidget.py:145
+#: yali4/gui/Ui/autopartwidget.py:121
 msgid "You can use manual partitioning with this option"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:146
+#: yali4/gui/Ui/autopartwidget.py:122
 msgid "No, I'll partition my disk manually."
 msgstr "Não, eu particionarei meu disco manualmente."
 
-#: yali4/gui/Ui/autopartwidget.py:147
+#: yali4/gui/Ui/autopartwidget.py:123
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
@@ -127,7 +127,7 @@ msgid ""
 "method:</span></p></body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:152
+#: yali4/gui/Ui/autopartwidget.py:128
 msgid "&nbsp;"
 msgstr "&nbsp;"
 
@@ -258,35 +258,35 @@ msgstr "Testar teclado selecionado:"
 msgid "Yali4"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:441
+#: yali4/gui/Ui/main.py:158
 msgid "Screen Name"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:443
+#: yali4/gui/Ui/main.py:160
 msgid "Details about the screen"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:444 yali4/gui/YaliWindow.py:191
+#: yali4/gui/Ui/main.py:161 yali4/gui/YaliWindow.py:194
 msgid "Release Notes"
 msgstr "Notas do Release"
 
-#: yali4/gui/Ui/main.py:445
+#: yali4/gui/Ui/main.py:162
 msgid "Toggle Help"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:446
+#: yali4/gui/Ui/main.py:163
 msgid "Previous Screen"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:447
+#: yali4/gui/Ui/main.py:164
 msgid "Back"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:448
+#: yali4/gui/Ui/main.py:165
 msgid "Next Screen"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:449
+#: yali4/gui/Ui/main.py:166
 msgid "Next"
 msgstr ""
 
@@ -397,7 +397,7 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:87
-#: yali4/gui/YaliDialog.py:133
+#: yali4/gui/YaliDialog.py:124
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -637,108 +637,108 @@ msgstr ""
 msgid "Manuel Partitioning selected."
 msgstr "Criar Partição"
 
-#: yali4/gui/DiskWidgets.py:166
+#: yali4/gui/DiskWidgets.py:169
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
 msgstr "O tamanho do 'Instalar Raiz' deve ser maior que %s MB."
 
-#: yali4/gui/DiskWidgets.py:201 yali4/gui/ScrBootloader.py:67
-#: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:71
+#: yali4/gui/DiskWidgets.py:204 yali4/gui/ScrBootloader.py:67
+#: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:72
 msgid "Can't find a storage device!"
 msgstr "Não é possível achar um dispositivo de armazenamento!"
 
-#: yali4/gui/DiskWidgets.py:217
+#: yali4/gui/DiskWidgets.py:220
 #, python-format
 msgid "%0.1f GB free"
 msgstr "%0.1f GB livre(s)"
 
-#: yali4/gui/DiskWidgets.py:219
+#: yali4/gui/DiskWidgets.py:222
 #, python-format
 msgid "%d MB free"
 msgstr "%d MB livre(s)"
 
-#: yali4/gui/DiskWidgets.py:239 yali4/gui/GUIAdditional.py:146
+#: yali4/gui/DiskWidgets.py:242 yali4/gui/GUIAdditional.py:146
 #, python-format
 msgid "Partition %d"
 msgstr "Partição %d"
 
-#: yali4/gui/DiskWidgets.py:246
+#: yali4/gui/DiskWidgets.py:249
 #, fuzzy
 msgid "Free Space"
 msgstr "espaço livre"
 
-#: yali4/gui/DiskWidgets.py:266
+#: yali4/gui/DiskWidgets.py:269
 #, python-format
 msgid ""
 "Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%"
 "(device)s</b>."
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:301 yali4/partitionrequest.py:181
+#: yali4/gui/DiskWidgets.py:304 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:320
+#: yali4/gui/DiskWidgets.py:323
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:335 yali4/gui/ScrSummary.py:161
+#: yali4/gui/DiskWidgets.py:338 yali4/gui/ScrSummary.py:161
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:354
+#: yali4/gui/DiskWidgets.py:357
 #, fuzzy
 msgid "Too many primary partition !"
 msgstr "Formatar esta partição"
 
-#: yali4/gui/DiskWidgets.py:355
+#: yali4/gui/DiskWidgets.py:358
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:379
+#: yali4/gui/DiskWidgets.py:382
 #, fuzzy
 msgid "Too many primary partitions !"
 msgstr "Formatar esta partição"
 
-#: yali4/gui/DiskWidgets.py:380
+#: yali4/gui/DiskWidgets.py:383
 msgid ""
 "You need to delete one of the primary or extended(if exists) partition from "
 "your disk table !"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:397 yali4/gui/ScrSummary.py:160
+#: yali4/gui/DiskWidgets.py:400 yali4/gui/ScrSummary.py:160
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:423
+#: yali4/gui/DiskWidgets.py:426
 msgid "Delete All Partitions"
 msgstr "Deletar Todas as Partições"
 
-#: yali4/gui/DiskWidgets.py:491
+#: yali4/gui/DiskWidgets.py:494
 msgid "Pardus will install here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:494
+#: yali4/gui/DiskWidgets.py:497
 msgid "User files will store here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:497
+#: yali4/gui/DiskWidgets.py:500
 msgid "Swap will be here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:500
+#: yali4/gui/DiskWidgets.py:503
 msgid "Backup or archive files will store here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:521
+#: yali4/gui/DiskWidgets.py:524
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -746,7 +746,7 @@ msgid ""
 "                                  <b>FileSystem:</b> %s%s"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:551 yali4/gui/ScrSummary.py:159
+#: yali4/gui/DiskWidgets.py:554 yali4/gui/ScrSummary.py:159
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr ""
@@ -1018,22 +1018,22 @@ msgstr ""
 msgid "Running post install operations.."
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:101
+#: yali4/gui/ScrGoodbye.py:91
 #, fuzzy
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr ""
 "<b><font size=\"+2\" color=\"#FF6D19\">Reiniciando sistema. Por favor espere!"
 "</font></b>"
 
-#: yali4/gui/ScrGoodbye.py:132
+#: yali4/gui/ScrGoodbye.py:114
 msgid ""
 "<b>\n"
 "<p>Press Reboot button to restart your system.</p>\n"
 "</b>\n"
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:138 yali4/gui/ScrSummary.py:73
-#: yali4/installer.py:618
+#: yali4/gui/ScrGoodbye.py:120 yali4/gui/ScrSummary.py:73
+#: yali4/installer.py:652
 msgid "Reboot"
 msgstr "Reiniciar"
 
@@ -1235,7 +1235,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrPartitionAuto.py:79
+#: yali4/gui/ScrPartitionAuto.py:80
 #, python-format
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
@@ -1518,11 +1518,11 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/YaliDialog.py:102
+#: yali4/gui/YaliDialog.py:93
 msgid "Warning"
 msgstr "Alerta"
 
-#: yali4/gui/YaliDialog.py:126
+#: yali4/gui/YaliDialog.py:117
 #, fuzzy
 msgid ""
 "<b>\n"
@@ -1535,19 +1535,19 @@ msgstr ""
 "seu sistema, formatando a partição selecionada.</p>\n"
 "</b>\n"
 
-#: yali4/gui/YaliDialog.py:136
+#: yali4/gui/YaliDialog.py:127
 msgid "O.K. Go Ahead"
 msgstr "O.K. Seguir Adiante"
 
-#: yali4/gui/YaliWindow.py:55 yali4/gui/YaliWindow.py:82
+#: yali4/gui/YaliWindow.py:58 yali4/gui/YaliWindow.py:85
 msgid "Show Help"
 msgstr ""
 
-#: yali4/gui/YaliWindow.py:85
+#: yali4/gui/YaliWindow.py:88
 msgid "Hide Help"
 msgstr ""
 
-#: yali4/bootloader.py:211 yali4/bootloader.py:216
+#: yali4/bootloader.py:213 yali4/bootloader.py:218
 msgid "Windows"
 msgstr "Janelas"
 
@@ -1555,14 +1555,14 @@ msgstr "Janelas"
 msgid "Partition is not ready for resizing. Check it before installation."
 msgstr ""
 
-#: yali4/__init__.py:67
+#: yali4/__init__.py:62
 msgid "Backtrace:"
 msgstr "Pilha de execução:"
 
 #: yali4/installer.py:137
 #, python-format
 msgid ""
-"Plugin (%s) not found or error occured while loading switching to normal "
+"Plugin (%s) not found or error occurred while loading. Switching to normal "
 "installation process."
 msgstr ""
 
@@ -1666,7 +1666,7 @@ msgstr ""
 msgid "Installing BootLoader..."
 msgstr "Não instalar carregador de boot"
 
-#: yali4/installer.py:595
+#: yali4/installer.py:629
 msgid "Retry"
 msgstr ""
 
@@ -1851,36 +1851,6 @@ msgstr "Criar Partição"
 #: yali4/postinstall.py:133
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
-msgstr ""
-
-#: yali4/gui/Ui/autopartwidget.py:110
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Select the partitioning method:</"
-"span></p></body></html>"
-msgstr ""
-
-#: yali4/gui/Ui/autopartwidget.py:123
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Select the disk to apply selected "
-"method:</span></p></body></html>"
 msgstr ""
 
 #, fuzzy
