@@ -134,7 +134,7 @@ class Yali:
                 self.plugin.config.setup()
             else:
                 install_type = YALI_INSTALL
-                self.showFail(_("Plugin (%s) not found or error occured while loading switching to normal installation process." % install_plugin))
+                self.showFail(_("Plugin (%s) not found or error occurred while loading. Switching to normal installation process." % install_plugin))
 
         if not self.plugin:
             self.screens = self._screens[install_type]

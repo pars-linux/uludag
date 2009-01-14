@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-02 12:56+0200\n"
+"POT-Creation-Date: 2009-01-14 11:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -365,7 +365,7 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:87
-#: yali4/gui/YaliDialog.py:133
+#: yali4/gui/YaliDialog.py:124
 msgid "Cancel"
 msgstr ""
 
@@ -926,7 +926,7 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:120 yali4/gui/ScrSummary.py:73
-#: yali4/installer.py:644
+#: yali4/installer.py:652
 msgid "Reboot"
 msgstr ""
 
@@ -1328,11 +1328,11 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/YaliDialog.py:102
+#: yali4/gui/YaliDialog.py:93
 msgid "Warning"
 msgstr ""
 
-#: yali4/gui/YaliDialog.py:126
+#: yali4/gui/YaliDialog.py:117
 msgid ""
 "<b>\n"
 "<p>This action will start installing Pardus on<br>\n"
@@ -1340,7 +1340,7 @@ msgid ""
 "</b>\n"
 msgstr ""
 
-#: yali4/gui/YaliDialog.py:136
+#: yali4/gui/YaliDialog.py:127
 msgid "O.K. Go Ahead"
 msgstr ""
 
@@ -1360,14 +1360,14 @@ msgstr ""
 msgid "Partition is not ready for resizing. Check it before installation."
 msgstr ""
 
-#: yali4/__init__.py:67
+#: yali4/__init__.py:62
 msgid "Backtrace:"
 msgstr ""
 
 #: yali4/installer.py:137
 #, python-format
 msgid ""
-"Plugin (%s) not found or error occured while loading switching to normal "
+"Plugin (%s) not found or error occurred while loading. Switching to normal "
 "installation process."
 msgstr ""
 
@@ -1460,7 +1460,7 @@ msgstr ""
 msgid "Installing BootLoader..."
 msgstr ""
 
-#: yali4/installer.py:621
+#: yali4/installer.py:629
 msgid "Retry"
 msgstr ""
 
