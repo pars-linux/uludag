@@ -148,7 +148,6 @@
         <SelectedPackage>paprefs</SelectedPackage>
         <SelectedPackage>pavucontrol</SelectedPackage>
         <SelectedPackage>pcsc-lite</SelectedPackage>
-        <SelectedPackage>pcsc-tools</SelectedPackage>
         <SelectedPackage>poppler</SelectedPackage>
         <SelectedPackage>portmap</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
@@ -685,7 +684,6 @@
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>pcsc-lite</Package>
-        <Package>pcsc-tools</Package>
         <Package>perl</Package>
         <Package>perl-IO-Socket-SSL</Package>
         <Package>perl-Locale-gettext</Package>
@@ -693,7 +691,6 @@
         <Package>perl-SDL</Package>
         <Package>perl-XML-Parser</Package>
         <Package>perl-YAML</Package>
-        <Package>perl-pcsc</Package>
         <Package>physfs</Package>
         <Package>piksemel</Package>
         <Package>pilot-link</Package>
