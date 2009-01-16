@@ -1,7 +1,7 @@
 <PardusmanProject type="live" media="cd">
     <Title>Pardus Calisan 2008.2-KDE4 RC1</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
-    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
+    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.2/</ReleaseFiles>
     <PackageSelection repo_uri="file:///home/ekin/packages/test/pisi-index.xml.bz2">
         <SelectedComponent>kernel.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>

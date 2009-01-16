@@ -1,7 +1,7 @@
 <PardusmanProject type="install" media="cd">
     <Title>Pardus 2008.2 RC1</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
-    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
+    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.2/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
     <PackageSelection repo_uri="file:///home/ekin/packages/test/pisi-index.xml.bz2">
         <SelectedComponent>kernel.firmware</SelectedComponent>
