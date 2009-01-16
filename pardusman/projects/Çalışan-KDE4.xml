@@ -111,6 +111,7 @@
         <SelectedPackage>lsof</SelectedPackage>
         <SelectedPackage>lsscsi</SelectedPackage>
         <SelectedPackage>ltmodem</SelectedPackage>
+        <SelectedPackage>m5602</SelectedPackage>
         <SelectedPackage>madwifi-ng</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
@@ -561,6 +562,7 @@
         <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
+        <Package>m5602</Package>
         <Package>madwifi-ng</Package>
         <Package>man</Package>
         <Package>man-pages</Package>
