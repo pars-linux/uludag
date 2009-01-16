@@ -128,7 +128,6 @@
         <SelectedPackage>lsscsi</SelectedPackage>
         <SelectedPackage>ltmodem</SelectedPackage>
         <SelectedPackage>ltrace</SelectedPackage>
-        <SelectedPackage>m5602</SelectedPackage>
         <SelectedPackage>madwifi-ng</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>mdadm</SelectedPackage>
@@ -165,6 +164,7 @@
         <SelectedPackage>rp-pppoe</SelectedPackage>
         <SelectedPackage>rtl8187se</SelectedPackage>
         <SelectedPackage>sdparm</SelectedPackage>
+        <SelectedPackage>sdricoh_cs</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>setserial</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
@@ -175,6 +175,7 @@
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
+        <SelectedPackage>syntekdriver</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
@@ -618,7 +619,6 @@
         <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
-        <Package>m5602</Package>
         <Package>madplay</Package>
         <Package>madwifi-ng</Package>
         <Package>man</Package>
@@ -756,6 +756,7 @@
         <Package>sdl-sound</Package>
         <Package>sdl-ttf</Package>
         <Package>sdparm</Package>
+        <Package>sdricoh_cs</Package>
         <Package>sed</Package>
         <Package>service-manager</Package>
         <Package>setserial</Package>
@@ -782,6 +783,7 @@
         <Package>suspend</Package>
         <Package>swig</Package>
         <Package>synaptics</Package>
+        <Package>syntekdriver</Package>
         <Package>sysfsutils</Package>
         <Package>sysinfo</Package>
         <Package>sysklogd</Package>
