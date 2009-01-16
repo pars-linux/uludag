@@ -124,7 +124,6 @@
         <SelectedPackage>ndiswrapper</SelectedPackage>
         <SelectedPackage>network-manager</SelectedPackage>
         <SelectedPackage>nfs-utils</SelectedPackage>
-        <SelectedPackage>nmap</SelectedPackage>
         <SelectedPackage>ntfs_3g</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>ov511</SelectedPackage>
@@ -559,7 +558,6 @@
         <Package>lsof</Package>
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
-        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>m5602</Package>
@@ -598,7 +596,6 @@
         <Package>net-tools</Package>
         <Package>network-manager</Package>
         <Package>nfs-utils</Package>
-        <Package>nmap</Package>
         <Package>notification-daemon</Package>
         <Package>notify-python</Package>
         <Package>nspr</Package>
