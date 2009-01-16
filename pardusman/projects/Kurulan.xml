@@ -35,6 +35,7 @@
         <SelectedPackage>boot-manager</SelectedPackage>
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
+        <SelectedPackage>broadcom-wl</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
         <SelectedPackage>ccid</SelectedPackage>
         <SelectedPackage>cdparanoia</SelectedPackage>
@@ -127,6 +128,7 @@
         <SelectedPackage>lsscsi</SelectedPackage>
         <SelectedPackage>ltmodem</SelectedPackage>
         <SelectedPackage>ltrace</SelectedPackage>
+        <SelectedPackage>m5602</SelectedPackage>
         <SelectedPackage>madwifi-ng</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>mdadm</SelectedPackage>
@@ -258,6 +260,7 @@
         <Package>bootsplash-theme-pardus</Package>
         <Package>br2684ctl</Package>
         <Package>bridge-utils</Package>
+        <Package>broadcom-wl</Package>
         <Package>bzip2</Package>
         <Package>cabextract</Package>
         <Package>cairo</Package>
@@ -615,6 +618,7 @@
         <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
+        <Package>m5602</Package>
         <Package>madplay</Package>
         <Package>madwifi-ng</Package>
         <Package>man</Package>
