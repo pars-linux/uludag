@@ -139,6 +139,8 @@ def buildPackages():
                     # FIXME: The packages before packagesToInstall[p] are already installed and therefore need to be
                     # uninstalled because p can't be installed.
                     errmsg = "Error occured for '%s' in INSTALL process: %s" % (os.path.join(config.workDir, p), e)
+                    if isdelta(p):
+                        logger.info("*** Probably %s was not installed on the system and the delta installation failed." % getName(p))
                     logger.error(errmsg)
                     mailer.error(errmsg, pspec)
 

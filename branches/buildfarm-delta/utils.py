@@ -20,6 +20,9 @@ def getBuild(p):
 def getName(p):
     return p.rstrip(".pisi").rsplit("-", 3)[0]
 
+def isdelta(p):
+    return p.endswith(".delta.pisi")
+
 def getDeltaPackages(path, name, target=None):
     if target and isinstance(target, int):
         # Return delta packages goint to target
