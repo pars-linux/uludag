@@ -36,6 +36,7 @@
         <SelectedPackage>boot-manager</SelectedPackage>
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
+        <SelectedPackage>broadcom-wl</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
         <SelectedPackage>ccid</SelectedPackage>
         <SelectedPackage>cdparanoia</SelectedPackage>
@@ -206,6 +207,7 @@
         <SelectedPackage>rp-pppoe</SelectedPackage>
         <SelectedPackage>rtl8187se</SelectedPackage>
         <SelectedPackage>sdparm</SelectedPackage>
+        <SelectedPackage>sdricoh_cs</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>setserial</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
@@ -216,6 +218,7 @@
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
+        <SelectedPackage>syntekdriver</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
@@ -301,6 +304,7 @@
         <Package>bootsplash-theme-pardus</Package>
         <Package>br2684ctl</Package>
         <Package>bridge-utils</Package>
+        <Package>broadcom-wl</Package>
         <Package>bzip2</Package>
         <Package>cabextract</Package>
         <Package>cairo</Package>
@@ -826,6 +830,7 @@
         <Package>schroedinger</Package>
         <Package>sdl-gfx</Package>
         <Package>sdparm</Package>
+        <Package>sdricoh_cs</Package>
         <Package>sed</Package>
         <Package>service-manager</Package>
         <Package>setserial</Package>
@@ -851,6 +856,7 @@
         <Package>suspend</Package>
         <Package>swig</Package>
         <Package>synaptics</Package>
+        <Package>syntekdriver</Package>
         <Package>sysfsutils</Package>
         <Package>sysinfo</Package>
         <Package>sysklogd</Package>
