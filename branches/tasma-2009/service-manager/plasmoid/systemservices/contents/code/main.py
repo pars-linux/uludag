@@ -21,6 +21,7 @@ from config import SystemServicesConfig
 
 # DBUS-QT
 from dbus.mainloop.qt import DBusQtMainLoop
+from dbus import DBusException
 
 state_icons = {"off"                :"flag-red",
                "stopped"            :"flag-red",
@@ -28,6 +29,9 @@ state_icons = {"off"                :"flag-red",
                "started"            :"flag-green",
                "conditional_started":"flag-green",
                "conditional_stopped":"flag-yellow"}
+
+# DBUS MainLoop
+DBusQtMainLoop(set_as_default = True)
 
 # Our Comar Link
 link = comar.Link()
@@ -44,7 +48,9 @@ class WidgetSystemServices(QGraphicsWidget):
         self.service_icon = Plasma.IconWidget(self)
         self.layout.addItem(self.service_icon)
 
-        self.getState()
+        info = link.System.Service[self._name].info()
+        self._type, self._desc, self._state = map(lambda x: unicode(x), info)
+        self.service_icon.setIcon(state_icons[self._state])
 
         self.label_layout = QGraphicsLinearLayout(Qt.Vertical, self.layout)
         self.layout.addItem(self.label_layout)
@@ -61,25 +67,48 @@ class WidgetSystemServices(QGraphicsWidget):
         self.layout.addStretch()
 
         self.switcher = Plasma.TabBar(self)
-        self.switcher.addTab("Start")
-        self.switcher.addTab("Stop")
-        if not self._state in ["on", "started", "conditional_started"]:
+        self.switcher_locked = False
+        self.initSwitcher()
+        if not self.isServiceRunning():
             self.switcher.setCurrentIndex(1)
         self.layout.addItem(self.switcher)
 
         self.connect(self.switcher, SIGNAL("currentChanged(int)"), self.setService)
 
-    def setService(self):
-        if self.switcher.currentIndex() == 0 and self._state not in ["on", "started", "conditional_started"]:
-            link.System.Service[self._name].start()
-        elif self._state in ["on", "started", "conditional_started"]:
-            link.System.Service[self._name].stop()
-        self.getState()
+    def isServiceRunning(self):
+        return self._state in ["on", "started", "conditional_started"]
 
-    def getState(self):
-        info = link.System.Service[self._name].info()
-        self._type, self._desc, self._state = map(lambda x: unicode(x), info)
+    def initSwitcher(self):
+        self.switcher.addTab("Start")
+        self.switcher.addTab("Stop")
+
+    def setService(self, index):
+        if (index == 0 and self.isServiceRunning()) or \
+                (index == 1 and not self.isServiceRunning()):
+            return
+        try:
+            if index == 0:
+                link.System.Service[self._name].start()
+            else:
+                link.System.Service[self._name].stop()
+        except DBusException:
+            self.switcher.setCurrentIndex(index^1)
+
+    def updateState(self, state=None):
+        if not state:
+            info = link.System.Service[self._name].info()
+            self._type, self._desc, self._state = map(lambda x: unicode(x), info)
+        else:
+            self._state = state
+
         self.service_icon.setIcon(state_icons[self._state])
+
+        self.disconnect(self.switcher, SIGNAL("currentChanged(int)"), self.setService)
+        if self.isServiceRunning():
+            self.switcher.setCurrentIndex(0)
+        else:
+            self.switcher.setCurrentIndex(1)
+        self.connect(self.switcher, SIGNAL("currentChanged(int)"), self.setService)
 
 class WidgetStack(QGraphicsWidget):
     def __init__(self, parent):
@@ -124,12 +153,16 @@ class SystemServicesApplet(plasmascript.Applet):
         # Resize current theme as applet size
         self.theme.resize(self.size())
 
+        self.widgets = {}
         self.mainWidget = None
         self.layout = None
 
         # Create config dialog
         if self.prepareConfigDialog():
             self.initPlasmoid()
+
+        # It listens System.Service signals and route them to handler method
+        link.listenSignals("System.Service", self.handler)
 
     def prepareConfigDialog(self):
         windowTitle = str(self.applet.name()) + " Settings"
@@ -170,6 +203,7 @@ class SystemServicesApplet(plasmascript.Applet):
             self.layout.removeAt(0)
             del self.mainWidget
 
+        self.widgets = {}
         self.mainWidget = WidgetStack(self.applet)
         self.layout.addItem(self.mainWidget)
 
@@ -184,6 +218,9 @@ class SystemServicesApplet(plasmascript.Applet):
                 # Add widget to mainWidget
                 self.mainWidget.addItem(widget)
 
+                # Add widget to widgetStack
+                self.widgets[package] = widget
+
                 # Update the size of Plasmoid
                 self.constraintsEvent(Plasma.SizeConstraint)
 
@@ -193,8 +230,8 @@ class SystemServicesApplet(plasmascript.Applet):
             self.theme.resize(self.size())
 
     def handler(self, package, signal, args):
-        import os
-        os.system("notify bibi bibi ...")
+        print "handling.."
+        self.widgets[package].updateState(args[1])
 
     def showConfigurationInterface(self):
         self.dialog.show()
@@ -235,4 +272,3 @@ class SystemServicesApplet(plasmascript.Applet):
 def CreateApplet(parent):
     applet = SystemServicesApplet(parent)
     return applet
-
