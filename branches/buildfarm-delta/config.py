@@ -9,24 +9,47 @@
 # (at your option) any later version.
 #
 # Please read the COPYING file.
+
 import os
 
-#Some configuration info for other modules..
+# Basic buildfarm configuration.
+#
+# Workdir
 workDir          = "/var/pisi/"
-outputDir        = "/var/cache/pisi/buildlogs/"
-binaryPath       = "/var/cache/pisi/packages/"
-testPath         = "/var/cache/pisi/packages-test/"
-deltaPath        = "/var/cache/pisi/packages-delta/"
+# Local source repo
 localPspecRepo   = "/root/2008"
+# Main buildfarm log
 logFile          = "/var/cache/pisi/buildfarm.log"
+# All package logs are kept in this directory as
+# package_name-log.
+outputDir        = "/var/cache/pisi/buildlogs/"
+# This repo contains all binaries and deltas built
+binaryPath       = "/var/cache/pisi/packages/"
+# This repo contains latest binaries and 3 deltas -
+# one delta from iso release to latest binary, two deltas
+# from previus releases.
+testPath         = "/var/cache/pisi/packages-test/"
+# This repo contains only the latest binaries and deltas.
+deltaPath        = "/var/cache/pisi/packages-delta/"
 
-#information for mailer module.
+# Information for mailer module.
+#
+# Edit templates.py for the  structure of mails.
+#
+# Default from adress
 mailFrom         = "buildfarm@pardus.org.tr"
+# This adress is used for automated reports
 announceAddr     = "gelistirici@pardus.org.tr"
-ccList           = ["paketler-commits@pardus.org.tr"]
-#ccList           = ["ekin@pardus.org.tr"]
+# This is the default CC adress for all info and error mails
+# Error mails are sent to package maintainer and CC'ed to this adress,
+# info mails have no 'TO' adress, only this one as a 'CC'.
+ccList           = ["buildfarm@pardus.org.tr"]
+# Server for sending mail.
 smtpServer       = "mail.pardus.org.tr"
+# Create and edit mailauth.py for authentication if needed
+# Set this to 'False' for turning mail sending off.
 useSmtpAuth      = False
+
 
 # Blacklist for delta packages. Buildfarm will never build
 # delta packages for them.
