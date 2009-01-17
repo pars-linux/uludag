@@ -27,6 +27,7 @@ state_icons = {"off"                :"flag-red",
                "stopped"            :"flag-red",
                "on"                 :"flag-green",
                "started"            :"flag-green",
+               "conditional"        :"flag-yellow",
                "conditional_started":"flag-green",
                "conditional_stopped":"flag-yellow"}
 
@@ -134,6 +135,7 @@ class SystemServicesApplet(plasmascript.Applet):
 
         # Available services
         self._services = list(link.System.Service)
+        self._services.sort()
 
     def init(self):
         """ Const method for initializing the applet """
@@ -153,7 +155,6 @@ class SystemServicesApplet(plasmascript.Applet):
         # Resize current theme as applet size
         self.theme.resize(self.size())
 
-        self.widgets = {}
         self.mainWidget = None
         self.layout = None
 
@@ -193,7 +194,8 @@ class SystemServicesApplet(plasmascript.Applet):
         if not self.layout:
             self.layout = QGraphicsLinearLayout(Qt.Vertical, self.applet)
             self.layout.setContentsMargins(0,0,0,0)
-            self.layout.setSizePolicy(QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding))
+            self.layout.setSpacing(0)
+            self.layout.setSizePolicy(QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding))
 
             self.setLayout(self.layout)
             self.constraintsEvent(Plasma.SizeConstraint)
@@ -218,20 +220,18 @@ class SystemServicesApplet(plasmascript.Applet):
                 # Add widget to mainWidget
                 self.mainWidget.addItem(widget)
 
-                # Add widget to widgetStack
-                self.widgets[package] = widget
-
-                # Update the size of Plasmoid
-                self.constraintsEvent(Plasma.SizeConstraint)
+        # Update the size of Plasmoid
+        self.constraintsEvent(Plasma.SizeConstraint)
 
     def constraintsEvent(self, constraints):
         if constraints & Plasma.SizeConstraint:
             self.layout.updateGeometry()
             self.theme.resize(self.size())
+            if self.mainWidget:
+                self.applet.setMinimumSize(self.mainWidget.minimumSize())# * len(self.mainWidget._widgets))
 
     def handler(self, package, signal, args):
-        print "handling.."
-        self.widgets[package].updateState(args[1])
+        self.mainWidget._widgets[package].updateState(args[1])
 
     def showConfigurationInterface(self):
         self.dialog.show()
