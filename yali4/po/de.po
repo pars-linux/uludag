@@ -6,14 +6,14 @@
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
-# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008, 2009.
 # Klemens Häckel <click3d_at_linuxmail_org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-14 11:57+0200\n"
-"PO-Revision-Date: 2008-12-25 13:33+0100\n"
+"PO-Revision-Date: 2009-01-19 01:54+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -97,8 +97,7 @@ msgstr "Automatisch"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:117
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
 "grössenänderbare Partition zu finden"
@@ -298,7 +297,7 @@ msgstr "Details über den Bildschirm"
 
 #: yali4/gui/Ui/main.py:161 yali4/gui/YaliWindow.py:194
 msgid "Release Notes"
-msgstr "Release-Informationen"
+msgstr "Versionshinweise"
 
 #: yali4/gui/Ui/main.py:162
 msgid "Toggle Help"
@@ -566,10 +565,10 @@ msgid ""
 "Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
 msgstr ""
-"Willkommen! Unser verbessertes Setup-tool YALI wird Ihnen mit der "
+"Willkommen! Unser verbessertes Installations-Tool YALI wird Ihnen bei der "
 "Installation von Pardus 2008 helfen. Mit YALI können Sie Pardus 2008 schnell "
-"und einfach installieren, nachdem sie die Festplatte(n) mit dem integrierten "
-"intelligenten Partitionstool vorbereitet haban.\n"
+"und einfach installieren, nachdem Sie die Festplatte(n) mit dem integrierten "
+"intelligenten Partitions-Tool vorbereitet haben.\n"
 
 #: yali4/gui/descSlide.py:20
 msgid ""
@@ -589,7 +588,7 @@ msgid ""
 "printer, monitor) to the system, management of visual settings ranging from "
 "desktop icons to fonts are all brought together under Tasma's interface.\n"
 msgstr ""
-"Tasma ist das Management- und Konfigurations-Zentrum von Pardus. Sie können "
+"Tasma ist das Management- und Konfigurationscenter von Pardus. Sie können "
 "Konfigurationen vornehmen, wie das Hinzufügen von neuen Benutzern oder von "
 "Hardware (z.B. Drucker, Monitor) zum Sytem, Management von optischen "
 "Einstellungen wie Desktop-Ikonen bishin zum Schriftarten- all das und "
@@ -601,7 +600,7 @@ msgid ""
 "install, remove or update those packages and programs with just two clicks "
 "using the Package Manager!\n"
 msgstr ""
-"Es gibt tausende von Paketen in den Pardus Software-Depos. Sie können mit "
+"Es gibt tausende von Paketen in den Pardus Software-Depots. Sie können mit "
 "dem Paket-Manager mit nur zwei Klicks Programme installieren, deinstallieren "
 "oder aktualisieren!\n"
 
@@ -612,9 +611,9 @@ msgid ""
 "reconnect to cable or wireless connections used before, remembering the "
 "settings used.\n"
 msgstr ""
-"Netzwerk-Applet hilft sich auf einfache und sichere Weise, mit dem lokelen "
+"Netzwerk-Applet hilft sich auf einfache und sichere Weise, mit dem lokalen "
 "Netzwerk oder Internet zu verbinden. Es können Profile gespeichert werden, "
-"die es einfacher machen, sich wieder mit vorher benutzten Netzen zu "
+"die es einfacher machen, sich wieder mit zuvor benutzten Netzen zu "
 "verbinden.\n"
 
 #: yali4/gui/descSlide.py:28
@@ -623,9 +622,9 @@ msgid ""
 "features, will help securely surf the Internet. Pardus 2008 includes Mozilla "
 "Firefox 3.0, and you can enrich Firefox with thousands of extensions.\n"
 msgstr ""
-"Mozilla Firefox, mit seiner Schnelligkeit, konstanten Entwicklung und "
-"vielenneuen Features wird Ihnen helfen im Internet sich zu surfen. Sie "
-"können im Pardus 2008 beinhalteten Mozilla Firefox 3.0 mit tausenden von "
+"Mozilla Firefox, mit seiner Schnelligkeit, ständigen Entwicklung und "
+"vielen neuen Features wird Ihnen helfen im Internet sicher zu surfen. Sie "
+"können in Pardus 2008 beinhalteten Mozilla Firefox 3.0 mit tausenden von "
 "Erweiterungen anreichern.\n"
 
 #: yali4/gui/descSlide.py:30
@@ -635,9 +634,9 @@ msgid ""
 "Kontact, with its Groupware feature, will be your best friend at work.\n"
 msgstr ""
 "Kontact, KDE Persönliches Informations-Manager, hilft Ihnen bei der "
-"Verwaltung Ihrer E-Mail-Nachrichten, RSS-Abos, Aufgaben-Listen und "
+"Verwaltung Ihrer E-Mail-Nachrichten, RSS-Abos, Aufgaben(TODO)-Listen und "
 "Blogeinträgen in einer kombinierten Benutzerschnittstelle. Kontact wird mit "
-"Ihrer Groupware-Feature Ihr bester Freund auf der Arbeit.\n"
+"ihrer Groupware-Feature Ihr bester Freund auf der Arbeit.\n"
 
 #: yali4/gui/descSlide.py:32
 msgid ""
@@ -660,7 +659,7 @@ msgid ""
 msgstr ""
 "Gimp ist ein leistungsstarkes Bildbearbeitungsprogramm und ist im Pardus "
 "2008 vorinstalliert. Gimp ermöglicht die Bearbeitung aller gängigen "
-"Bildformate und deckt die Anforderungen professioneller Künstler und "
+"Bildformate und erfüllt die Anforderungen professioneller Künstler und "
 "Designer durch seine umfassenden Fähigkeiten.\n"
 
 #: yali4/gui/descSlide.py:36
@@ -692,8 +691,7 @@ msgid ""
 "MSN, Yahoo!, ICQ, AIM, GTalk and Jabber, and can talk to your friends in "
 "different networks using Kopete.\n"
 msgstr ""
-"Sie können mit mehreren Konten von verschiedenen Instant Messenger-Diensten, "
-"wie MSN, Yahoo!, ICQ, AIM, GTalk und Jabber, via Kopete mit Ihren Freunden "
+"Sie können via Kopete gleichzeitg mit mehreren Konten von verschiedenen Instant Messenger-Diensten, wie MSN, Yahoo!, ICQ, AIM, GTalk und Jabber, mit Ihren Freunden "
 "unterhalten.\n"
 
 #: yali4/gui/descSlide.py:42
@@ -702,8 +700,8 @@ msgid ""
 "burning CD/DVD images to discs are just a few of the things you can do with "
 "K3b.\n"
 msgstr ""
-"Kopieren von CDs (oder DVDs), erstellen von Daten- oder Audio-CDs, erstellen "
-"von ISO-Imagen und brennen von CD/DVD-Imagen auf Discs .\n"
+"Kopieren Sie CDs (oder DVDs), erstellen Sie Daten- oder Audio-CDs, erstellen und brennen"
+"Sie ISO-Image- und CD/DVD-Image-Dateien auf Discs .\n"
 
 #: yali4/gui/descSlide.py:44
 msgid ""
@@ -781,8 +779,7 @@ msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
 #: yali4/gui/DiskWidgets.py:323
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%"
 "(fsType)s</b>."
@@ -895,7 +892,7 @@ msgstr "Die Lizenzdatei konnte nicht geöffnet werden!"
 
 #: yali4/gui/GUIRelNotes.py:49
 msgid "Can't open Release Notes!"
-msgstr "Release-Informationen können nicht geöffnet werden!"
+msgstr "Versionshinweise können nicht geöffnet werden!"
 
 #: yali4/gui/runner.py:129
 msgid "Error!"
@@ -1086,8 +1083,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
+msgstr "<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1192,8 +1188,7 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr ""
-"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
+msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1257,8 +1252,7 @@ msgstr "Konfiguration des Pakets: %s"
 #: yali4/gui/ScrInstall.py:157
 #, python-format
 msgid "Package install failed : <b>%s</b><br>Do you want to retry ?"
-msgstr ""
-"Paketinstallation fehlgeschlagen : <b>%s</b><br>Möchten Sie wieder versuchen?"
+msgstr "Paketinstallation fehlgeschlagen : <b>%s</b><br>Möchten Sie wieder versuchen?"
 
 #: yali4/gui/ScrInstall.py:177
 msgid "Creating baselayout for your system!"
@@ -1560,8 +1554,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:186
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:201
 msgid "Bootloader Settings"
@@ -1779,13 +1772,11 @@ msgid "Backtrace:"
 msgstr "Ablaufverfolgung:"
 
 #: yali4/installer.py:137
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Plugin (%s) not found or error occurred while loading. Switching to normal "
 "installation process."
-msgstr ""
-"Plugin (%s) nicht gefunden oder ein Fehler ist beim Laden der Umstelltung "
-"auf normalen Installationsprozess aufgetreten."
+msgstr "Plugin (%s) nicht gefunden oder ein Fehler ist beim Laden aufgetreten. Stelle auf normalen Installationsprozess um."
 
 #: yali4/installer.py:143
 msgid "YALI Is Working..."
@@ -2066,52 +2057,3 @@ msgstr "Archiv-Partition"
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis wird erstellt.."
 
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span "
-#~ "style=\" font-size:12pt; font-weight:600;\">Select the partitioning "
-#~ "method:</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span "
-#~ "style=\" font-size:12pt; font-weight:600;\">Partitionierungsmethode "
-#~ "auswählen:</span></p></body></html>"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span "
-#~ "style=\" font-size:12pt; font-weight:600;\">Select the disk to apply "
-#~ "selected method:</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span "
-#~ "style=\" font-size:12pt; font-weight:600;\">Die Festplatte auswählen, um "
-#~ "die ausgewählte Methode zu übernehmen:</span></p></body></html>"
