@@ -4,13 +4,13 @@
 #
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
-# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-04 16:45+0200\n"
-"PO-Revision-Date: 2008-06-27 14:05+0200\n"
+"PO-Revision-Date: 2009-01-19 01:36+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -67,7 +67,7 @@ msgstr "Erweiterungen"
 
 #: src/aboutview.cpp:68
 msgid "Configuration Center"
-msgstr "Konfigurationszentrum"
+msgstr "Konfigurationscenter"
 
 #: modules/tasmatv/tasmatv.cpp:44 src/main.cpp:65
 msgid "Current Maintainer"
@@ -145,7 +145,7 @@ msgstr "Andere"
 
 #: src/main.cpp:63
 msgid "Pardus Configuration Center"
-msgstr "Pardus-Konfigurationszentrum"
+msgstr "Pardus Konfigurationscenter"
 
 #: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:45
 #, no-c-format
@@ -172,7 +172,7 @@ msgstr "Grösse"
 
 #: src/main.cpp:62
 msgid "TASMA - Pardus Configuration Center"
-msgstr "TASMA - Pardus-Konfigurationszentrum"
+msgstr "TASMA - Pardus-Konfigurationscenter"
 
 #: modules/tasmatv/tasmatv.cpp:39 modules/tasmatv/tasmatv.cpp:40
 msgid "TASMA Tv Card Configuration Module"
@@ -214,15 +214,11 @@ msgstr "Willkommen zu TASMA"
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr ""
-"_:EMAIL VON DEN ÜBERSETZERN\n"
-"m.oelcerman@pardus-linux.de"
+msgstr "m.oelcerman@pardus-linux.de"
 
 #: _translatorinfo.cpp:1
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr ""
-"_:NAMEN VON DEN ÜBERSETZERN\n"
-"Mustafa Ölcerman"
+msgstr "Mustafa Ölcerman"
 
