@@ -7,14 +7,14 @@
 # Faik Uygur <faik@pardus.org.tr>, 2007.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
-# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008, 2009.
 # Klemens Häckel <click3d_at_linuxmail_org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-07 14:06+0200\n"
-"PO-Revision-Date: 2008-06-27 04:16+0200\n"
+"PO-Revision-Date: 2009-01-19 02:10+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Alt+C"
 
 #: src/ProgressDialog.py:130
 msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+msgstr "<p align=\"center\"><b>490.35 KB/12.83 MB, 38.2 KB/s</b></p>"
 
 #: src/ProgressDialog.py:131
 msgid "<h3>Preparing PiSi...</h3>"
@@ -48,7 +48,7 @@ msgstr "Verbleibende Zeit:"
 
 #: src/ProgressDialog.py:135
 msgid "2 / 20 packages installed."
-msgstr "2 / 20 Pakete installiert."
+msgstr "2/20 Pakete installiert."
 
 #: src/ProgressDialog.py:136
 msgid "01:29"
@@ -165,10 +165,8 @@ msgid "Currently your basket is empty."
 msgstr "Momentan ist Ihr Korb leer."
 
 #: src/MainWidget.py:358 src/MainWidget.py:366
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Momentan ausgewählte Pakete:<b>%1</b> mit einer Gesamtgrösse von <b>%2</b> "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Momentan ausgewählte Pakete:<b>%1</b> mit einer Gesamtgrösse von <b>%2</b> "
 
 #: src/MainWidget.py:361
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
@@ -232,8 +230,7 @@ msgstr "<br><br>Insgesamt <b>%1</b> Pakete werden <b>installiert</b>."
 
 #: src/MainWidget.py:441
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr ""
-"<qt>Sie haben <b>%1</b> Paket(e) für den <b>Upgrade</b>-Vorgang ausgewählt."
+msgstr "<qt>Sie haben <b>%1</b> Paket(e) für den <b>Upgrade</b>-Vorgang ausgewählt."
 
 #: src/MainWidget.py:444
 msgid ""
@@ -245,8 +242,7 @@ msgstr ""
 
 #: src/MainWidget.py:445
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr ""
-"<br><br>Insgesamt für <b>%1</b> Pakete werden <b>Upgrades</b> durchgeführt."
+msgstr "<br><br>Insgesamt für <b>%1</b> Pakete werden <b>Upgrades</b> durchgeführt."
 
 #: src/MainWidget.py:448
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
@@ -384,8 +380,7 @@ msgstr "Zum Entfernen ausgewählte(s) Paket(e):"
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr ""
-"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch entfernt werden:"
+msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch entfernt werden:"
 
 #: src/BasketDialog.py:67
 msgid "Selected package(s) for install:"
@@ -395,8 +390,7 @@ msgstr "Ausgewählte(s) Paket(e) für die Installation:"
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
-msgstr ""
-"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
+msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
 
 #: src/BasketDialog.py:70
 msgid "Selected package(s) for upgrade:"
@@ -464,8 +458,7 @@ msgstr "PiSi Fehler"
 
 #: src/Preferences.py:382
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-"Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
+msgstr "Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -534,8 +527,7 @@ msgstr "Alt+S"
 
 #: src/PreferencesDialog.py:355
 msgid "If checked, then pisi will only show desktop applications"
-msgstr ""
-"Wenn diese Auswahl getroffen ist, wird PiSi nur Desktop-Anwendungen anzeigen"
+msgstr "Wenn diese Auswahl getroffen ist, wird PiSi nur Desktop-Anwendungen anzeigen"
 
 #: src/PreferencesDialog.py:356
 msgid "&Enable system tray icon"
@@ -626,10 +618,8 @@ msgid "C&ache"
 msgstr "C&ache"
 
 #: src/PreferencesDialog.py:380
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr ""
-"Sie können hier die Software-Depots und die dazugehörigen Adressen ansehen"
+msgid "You can see current software repositories and corresponding addresses here"
+msgstr "Sie können hier die Software-Depots und die dazugehörigen Adressen ansehen"
 
 #: src/PreferencesDialog.py:381
 msgid "&Add New Repository"
@@ -742,7 +732,7 @@ msgstr "Homepage: "
 
 #: src/Progress.py:67
 msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr "<p align='center'>%1 / %2, %3</p>"
+msgstr "<p align='center'>%1/%2, %3</p>"
 
 #: src/Progress.py:100
 msgid "<b>Preparing PiSi...</b>"
@@ -750,11 +740,11 @@ msgstr "<b>PiSi wird vorbereitet...</b>"
 
 #: src/Progress.py:102
 msgid "<p align='center'>-- / --, -- KB/s</p>"
-msgstr "<p align='center'>-- / --, -- KB/s</p>"
+msgstr "<p align='center'>--/--, -- KB/s</p>"
 
 #: src/Progress.py:103
 msgid "-- / --"
-msgstr "-- / --"
+msgstr "--/--"
 
 #: src/Progress.py:122
 msgid "<b>Cancelling operation...</b>"
@@ -778,7 +768,7 @@ msgstr "Upgrade durchgeführt"
 
 #: src/Progress.py:169
 msgid "%1 / %2 package %3"
-msgstr "%1 / %2 Paket %3"
+msgstr "%1/%2 Paket %3"
 
 #: src/Notifier.py:45
 msgid "Show Updates"
@@ -788,5 +778,3 @@ msgstr "Updates anzeigen"
 msgid "Ignore"
 msgstr "Ignorieren"
 
-#~ msgid "PiSi Authors"
-#~ msgstr "PiSi Autoren"
