@@ -38,7 +38,7 @@ DBusQtMainLoop(set_as_default = True)
 link = comar.Link()
 
 class WidgetSystemServices(QGraphicsWidget):
-    def __init__(self, parent, name):
+    def __init__(self, parent, name, isdescenabled=True):
         QGraphicsWidget.__init__(self, parent)
 
         self._name = name
@@ -61,9 +61,10 @@ class WidgetSystemServices(QGraphicsWidget):
         self.service_name.setStyleSheet("font-weight:bold")
         self.label_layout.addItem(self.service_name)
 
-        self.service_desc = Plasma.Label(self)
-        self.service_desc.setText(self._desc)
-        self.label_layout.addItem(self.service_desc)
+        if isdescenabled:
+            self.service_desc = Plasma.Label(self)
+            self.service_desc.setText(self._desc)
+            self.label_layout.addItem(self.service_desc)
 
         self.layout.addStretch()
 
@@ -209,13 +210,14 @@ class SystemServicesApplet(plasmascript.Applet):
         self.mainWidget = WidgetStack(self.applet)
         self.layout.addItem(self.mainWidget)
 
+        isDescEnabled = self.config().readEntry("showdesc", QVariant(True)).toBool()
         for package in self._services:
 
             # If service is enabled create a proper widget and add it to the plasmoid
             if package in self.config_ui.enabledServices:
 
                 # Get service info from comar link and then create a proper widget
-                widget = WidgetSystemServices(self.applet, package)
+                widget = WidgetSystemServices(self.applet, package, isDescEnabled)
 
                 # Add widget to mainWidget
                 self.mainWidget.addItem(widget)
@@ -225,13 +227,12 @@ class SystemServicesApplet(plasmascript.Applet):
 
     def constraintsEvent(self, constraints):
         if constraints & Plasma.SizeConstraint:
-            self.layout.updateGeometry()
             self.theme.resize(self.size())
             if self.mainWidget:
                 self.applet.setMinimumSize(self.mainWidget.minimumSize())# * len(self.mainWidget._widgets))
 
     def handler(self, package, signal, args):
-        self.mainWidget._widgets[package].updateState(args[1])
+        self.mainWidget._widgets[str(package)].updateState(args[1])
 
     def showConfigurationInterface(self):
         self.dialog.show()
@@ -250,6 +251,8 @@ class SystemServicesApplet(plasmascript.Applet):
 
         # Write them into the config file
         self.config_ui.config.writeEntry("services", QVariant(_enabledServices))
+        self.config_ui.config.writeEntry("showdesc", QVariant(self.config_ui.showDesc.isChecked()))
+
 
         # Update enabled services with current ones
         self.config_ui.enabledServices = _enabledServices
