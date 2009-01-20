@@ -1,0 +1,121 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>SummaryWidget</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>SummaryWidget</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>528</width>
+            <height>397</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>SummaryWidget</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>summaryTextLabel</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>0</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="backgroundMode">
+                <enum>PaletteHighlightedText</enum>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>AncestorOrigin</enum>
+            </property>
+        </widget>
+        <widget class="KListView">
+            <column>
+                <property name="text">
+                    <string></string>
+                </property>
+                <property name="clickable">
+                    <bool>false</bool>
+                </property>
+                <property name="resizable">
+                    <bool>false</bool>
+                </property>
+            </column>
+            <property name="name">
+                <cstring>listSummary</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="minimumSize">
+                <size>
+                    <width>100</width>
+                    <height>100</height>
+                </size>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>AncestorOrigin</enum>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+            <property name="cursor">
+                <cursor>0</cursor>
+            </property>
+            <property name="mouseTracking">
+                <bool>false</bool>
+            </property>
+            <property name="focusPolicy">
+                <enum>NoFocus</enum>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="lineWidth">
+                <number>0</number>
+            </property>
+            <property name="margin">
+                <number>0</number>
+            </property>
+            <property name="dragAutoScroll">
+                <bool>false</bool>
+            </property>
+            <property name="selectionMode" stdset="0">
+                <enum>NoSelection</enum>
+            </property>
+            <property name="itemMargin">
+                <number>5</number>
+            </property>
+            <property name="fullWidth">
+                <bool>true</bool>
+            </property>
+            <property name="itemsMovable">
+                <bool>false</bool>
+            </property>
+        </widget>
+    </vbox>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>klistview.h</includehint>
+</includehints>
+</UI>

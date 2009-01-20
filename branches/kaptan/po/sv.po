@@ -1,0 +1,396 @@
+# translation of sv.po to Svenska
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: sv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-27 20:48+0300\n"
+"PO-Revision-Date: 2008-09-10 16:37+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"Language-Team: Svenska <sv@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/kaptan.py:93 src/screens/ScrWelcome.py:24
+msgid "Welcome to Kaptan Wizard :)"
+msgstr "Välkommen till Kaptan Lots :)"
+
+#: src/kaptan.py:95
+msgid "&Back"
+msgstr "&Bakåt"
+
+#: src/kaptan.py:96
+msgid "&Next"
+msgstr "&Nästa"
+
+#: src/kaptan.py:97
+msgid "Finish"
+msgstr "Slutför"
+
+#: src/kaptan.py:236
+msgid "Kaptan is already running!"
+msgstr "Kaptan körs redan!"
+
+#: src/kaptan.py:246
+msgid "Kaptan Welcome Wizard"
+msgstr "Kaptan Lots"
+
+#: src/screens/keyboarddlg.py:653 src/screens/keyboarddlg.py:669
+msgid "Keyboard Layouts"
+msgstr "Tangentbordslayout"
+
+#: src/screens/keyboarddlg.py:665 src/screens/ScrKeyboard.py:37
+msgid "Keyboard"
+msgstr "Tangentbord"
+
+#: src/screens/keyboarddlg.py:668
+msgid "Try:"
+msgstr "Testa:"
+
+#: src/screens/paneldlg.py:87 src/screens/ScrPanel.py:41
+msgid "Panel"
+msgstr "Panel"
+
+#: src/screens/ScrKeyboard.py:26
+msgid "Keyboard Settings"
+msgstr "Tangentbordsinställningar"
+
+#: src/screens/ScrKeyboard.py:27
+msgid "Configure your keyboard"
+msgstr "Anpassa tangentbordet"
+
+#: src/screens/ScrKeyboard.py:38
+msgid "<p align=\"left\">You can configure your keyboard from here.</p>"
+msgstr "<p align=\"left\">Här kan du anpassa ditt tangentbord.</p>"
+
+#: src/screens/welcomedlg.py:60 src/screens/ScrWelcome.py:23
+#: src/screens/ScrWelcome.py:32
+msgid "Welcome"
+msgstr "Välkommen"
+
+#: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:132
+msgid "Thumbnails"
+msgstr "Minibild"
+
+#: src/screens/wallpaperdlg.py:131
+msgid "Wallpaper"
+msgstr "Bakgrundsbild"
+
+#: src/screens/wallpaperdlg.py:133
+msgid "toolTip"
+msgstr "toolTip"
+
+#: src/screens/wallpaperdlg.py:135
+msgid "Choose Wallpaper"
+msgstr "Välj bakgrundsbild"
+
+#: src/screens/ScrMultiple.py:26
+msgid "Multiple Desktops"
+msgstr "Flera skrivbord"
+
+#: src/screens/ScrMultiple.py:27
+msgid "Configure virtual desktops.."
+msgstr "Anpassa flera skrivbord"
+
+#: src/screens/ScrMultiple.py:60 src/screens/multipledlg.py:135
+msgid "Multiple"
+msgstr "Flera skrivbord"
+
+#: src/screens/ScrMultiple.py:61
+msgid "<p>In this module, you can configure how many virtual desktops you want.</p>"
+msgstr "<p>Här kan du välja hur många skrivbord du vill ha.</p>"
+
+#: src/screens/ScrMultiple.py:62
+msgid "Mouse wheel over desktop background switches desktop."
+msgstr "Mushjul över skrivbordets bakgrund byter skrivbord"
+
+#: src/screens/ScrMultiple.py:63
+msgid " Desktop(s)"
+msgstr " skrivbord"
+
+#: src/screens/ScrWallpaper.py:46
+msgid "Enjoy with wonderful backgrounds..."
+msgstr "Njut av underbara bakgrundsbilder..."
+
+#: src/screens/ScrWallpaper.py:53
+msgid "Show all resolutions."
+msgstr "Visa alla upplösningar"
+
+#: src/screens/ScrWallpaper.py:54
+msgid "Old Wallpaper"
+msgstr "Gamla bilder"
+
+#: src/screens/ScrWallpaper.py:55
+msgid "No Wallpaper"
+msgstr "Ingen bild"
+
+#: src/screens/ScrMouse.py:27
+msgid "Mouse Settings"
+msgstr "Musinställningar"
+
+#: src/screens/ScrMouse.py:28
+msgid "Configure your mouse"
+msgstr "Anpassa musen"
+
+#: src/screens/ScrMouse.py:39 src/screens/mousedlg.py:104
+msgid "Mouse"
+msgstr "Mus"
+
+#: src/screens/ScrMouse.py:40
+msgid "Reverse scroll"
+msgstr "Omvänd rullningsriktning"
+
+#: src/screens/ScrMouse.py:41
+msgid ""
+"<p align=\"left\">If you are left-handed, you may prefer to swap the "
+"functions on the left and right buttons on your pointing device by choosing "
+"the \"Left handed\" option below. You can also select default click "
+"behaviour.</p>"
+msgstr ""
+"<p align=\"left\">Om du är vänsterhänt kanske du föredrar att växla "
+"musknapparnas funktion genom att välja \"Vänsterhänt\" nedan. Du kan också "
+"välja beteende vid musklick.</p>"
+
+#: src/screens/ScrMouse.py:42
+msgid "Button Order"
+msgstr "Knappordning"
+
+#: src/screens/ScrMouse.py:43
+msgid "Left Hand"
+msgstr "Vänsterhänt"
+
+#: src/screens/ScrMouse.py:44
+msgid "Right Hand"
+msgstr "Högerhänt"
+
+#: src/screens/ScrMouse.py:45
+msgid "Click behaviour"
+msgstr "Ikoner"
+
+#: src/screens/ScrMouse.py:46
+msgid "&Single-click to open files and folders"
+msgstr "&Enkelklicka för att öppna filer och kataloger"
+
+#: src/screens/ScrMouse.py:47
+msgid "Dou&ble-click to open files and folders"
+msgstr "&Dubbelklicka för att öppna filer och kataloger"
+
+#: src/screens/ScrNetwork.py:25
+msgid "Configure network settings..."
+msgstr "Anpassa nätverket"
+
+#: src/screens/ScrNetwork.py:37
+msgid "<big>Loading...</big>"
+msgstr "<big>Laddar...</big>"
+
+#: src/screens/ScrWelcome.py:33
+msgid ""
+"This application, called <b>Kaptan Desktop</b>, will help you with your "
+"basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
+"Please click <b>Next</b> to personalize your desktop. :)"
+msgstr ""
+"Detta program, <b>Kaptan Lots</b>, hjälper dig på ett enkelt sätt med de "
+"grundläggande men tillräckliga inställningarna för ditt <b> Pardusskrivbord</"
+"b>. Klicka på <b> Nästa </b> för att anpassa skrivbordet. :)"
+
+#: src/screens/ScrWelcome.py:34
+msgid ""
+"<b>Pardus</b> is a GNU/Linux distribution, targeting at computer literate "
+"users' basic desktop needs; helps you connect to internet, read e-mails, "
+"work with office documents and more!"
+msgstr ""
+"<b>Pardus</b> är en GNU/Linux- distribution med inriktning på "
+"datoranvändarens grundläggande behov, du kan bland annat ansluta till "
+"Internet, läsa e-post och arbeta med Office-dokument!"
+
+#: src/screens/networkdlg.py:46
+msgid "Network"
+msgstr "Nätverk"
+
+#: src/screens/packagedlg.py:107 src/screens/ScrPackage.py:49
+msgid "Package"
+msgstr "Paket"
+
+#: src/screens/packagedlg.py:112 src/screens/ScrPackage.py:51
+msgid "tooltipPisiPopup"
+msgstr "tooltipPisiPopup"
+
+#: src/screens/kaptanMain.py:102
+msgid "KaptanUi"
+msgstr "KaptanUi"
+
+#: src/screens/ScrPackage.py:30
+msgid "Package Manager"
+msgstr "Pakethanteraren"
+
+#: src/screens/ScrPackage.py:31
+msgid "Configure package manager settings..."
+msgstr "Anpassa Pakethanteraren"
+
+#: src/screens/ScrPackage.py:50
+msgid ""
+"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
+"easily install new programs and upgrade your system and also can see new "
+"upgrades of the programs periodically  from the system tray with package "
+"manager."
+msgstr ""
+"<b>Pakethanteraren</b> är den grafiska framänden till <b>PiSi</b>. Du kan "
+"enkelt installera nya program och uppdatera ditt system. Du kan också se "
+"resultatet av den automatiska uppdateringskontrollen i systembrickan med "
+"Pakethanteraren."
+
+#: src/screens/ScrPackage.py:52
+msgid "Updates"
+msgstr "Uppdateringar"
+
+#: src/screens/ScrPackage.py:53
+msgid "Show in system tray"
+msgstr "Aktivera systembrickan"
+
+#: src/screens/ScrPackage.py:54
+msgid "Check updates automatically for every"
+msgstr "Sök automatiskt efter uppdateringar varje"
+
+#: src/screens/ScrPackage.py:55
+msgid " hours"
+msgstr " timmar"
+
+#: src/screens/ScrPackage.py:56
+msgid "Repo"
+msgstr "Förråd"
+
+#: src/screens/ScrPackage.py:57
+msgid "Contrib repo includes extra packages."
+msgstr "Contrib-förrådet innehåller extra paket."
+
+#: src/screens/ScrPackage.py:58
+msgid "Add contrib repo"
+msgstr "Lägg till contrib-förrådet"
+
+#: src/screens/ScrPackage.py:93
+msgid "You are not authorized for this operation."
+msgstr "Du saknar behörighet för denna åtgärd."
+
+#: src/screens/ScrPackage.py:94
+msgid "Authentication Error!"
+msgstr "Autentiseringsfel!"
+
+#: src/screens/ScrPanel.py:31
+msgid "Configure your panel !"
+msgstr "Anpassa din panel !"
+
+#: src/screens/ScrPanel.py:32
+msgid "Select the one you like..."
+msgstr "Välj den som passar dig..."
+
+#: src/screens/ScrPanel.py:42
+msgid ""
+"Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
+"some eye candy styles for you."
+msgstr ""
+"Här kan du välja <b>stil</b> för ditt skrivbord. <b>Pardus</b> erbjuder dig "
+"lite ögongodis."
+
+#: src/screens/ScrPanel.py:44
+msgid "Preview"
+msgstr "Förhandsgranskning"
+
+#: src/screens/ScrPanel.py:45
+msgid "Use enhanced Kickoff style menu"
+msgstr "Använd utökad Kickoff-meny"
+
+#: src/screens/ScrGoodbye.py:29
+msgid "Enjoy with Pardus..."
+msgstr "Njut av Pardus..."
+
+#: src/screens/goodbyedlg.py:191
+msgid "Goodbye"
+msgstr "Farväl"
+
+#: src/screens/goodbyedlg.py:192
+msgid "Tasma"
+msgstr "Tasma"
+
+#: src/screens/goodbyedlg.py:193
+msgid "<p>TASMA is a configuration application for Pardus Operating System. </p>"
+msgstr "<p>TASMA är ett anpassningsprogram för ditt Pardus operativsystem. </p>"
+
+#: src/screens/goodbyedlg.py:194 src/screens/goodbyedlg.py:196
+#: src/screens/goodbyedlg.py:199 src/screens/goodbyedlg.py:203
+msgid "Start"
+msgstr "Starta"
+
+#: src/screens/goodbyedlg.py:195
+msgid "User Groups and Help Pages"
+msgstr "Användargrupper och hjälpsidor"
+
+#: src/screens/goodbyedlg.py:197
+msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
+msgstr "<p>Pardus gemenskap, användarförteckning, IRC-kanaler, wiki med mera.</p>"
+
+#: src/screens/goodbyedlg.py:198
+msgid "Migration Tool"
+msgstr "Migreringsverktyg"
+
+#: src/screens/goodbyedlg.py:200
+msgid ""
+"<p>A wizard to transfer files and settings from existing operating systems "
+"(e.g. Windows) to Pardus.</p>"
+msgstr ""
+"<p>En guide för att överföra filer och inställningar från andra "
+"operativsystem (tex Windows) till Pardus.</p>"
+
+#: src/screens/goodbyedlg.py:201
+msgid ""
+"<p>Congratulations! You have finished all steps. You can now continue using "
+"Pardus and try applications below.</p>"
+msgstr ""
+"<p>Grattis! Nu har du gått igenom alla steg. Du kan fortsätta använda Pardus "
+"och prova programmen nedan.</p>"
+
+#: src/screens/goodbyedlg.py:202
+msgid "Screen Resolution"
+msgstr "Bildskärmsupplösning"
+
+#: src/screens/goodbyedlg.py:204
+msgid ""
+"<p><p>Your screen resolution is very low. It may be wrong. You can change "
+"your resolution bye using <b>Display Manager</b>.</p></p>"
+msgstr ""
+"<p><p>Din bildskärmsupplösning är mycket låg, den kan vara felaktig. Du kan "
+"ändra upplösning med <b>Bildskärmshanteraren</b>.</p></p>"
+
+#: src/screens/summarydlg.py:64
+msgid "SummaryWidget"
+msgstr "Sammanställning"
+
+#: src/screens/photodlg.py:66
+msgid "Photo"
+msgstr "Foto"
+
+#: src/screens/photodlg.py:67
+msgid "Shot"
+msgstr "Ta"
+
+#: src/screens/photodlg.py:68
+msgid "Put my photo to:"
+msgstr "Lägg min bild i:"
+
+#: src/screens/photodlg.py:69
+msgid "E-mail clients"
+msgstr "Epostklient"
+
+#: src/screens/photodlg.py:70
+msgid "Instant messengers"
+msgstr "Direktmeddelandeklienter"
+
+#: src/screens/photodlg.py:71
+msgid "Login Screen (KDM)"
+msgstr "Startskärm (KDM)"
+

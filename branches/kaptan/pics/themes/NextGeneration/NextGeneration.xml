@@ -1,0 +1,11 @@
+<!DOCTYPE ktheme>
+<ktheme version="1">
+    <kicker>
+        <Transparent value="true" />
+        <SizePercentage value="80" />
+        <Position value="2" />
+        <Alignment value="1" />
+        <CustomSize value="48" />
+    </kicker>
+</ktheme>
+

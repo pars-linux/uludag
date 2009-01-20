@@ -1,0 +1,18 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kaptan
+Icon=kaptan
+Type=Application
+DocPath=kaptan/index.html
+X-KDE-StartupNotify=true
+X-KDE-autostart-after=kdesktop
+X-KDE-autostart-condition=kaptanrc:General:RunOnStart:true
+
+Name=Kaptan Desktop
+Name[de]=Kaptan-Desktop
+Name[tr]=Kaptan Masaüstü
+Name[pt_BR]=Kaptan Desktop
+Name[nl]=Kaptan Desktop
+Name[sv]=Kaptan Lots
+
+Categories=Qt;KDE;Core
