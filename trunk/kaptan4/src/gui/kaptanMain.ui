@@ -120,5 +120,38 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonCancel</sender>
+   <signal>clicked()</signal>
+   <receiver>kaptanUI</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>60</x>
+     <y>434</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>329</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonFinish</sender>
+   <signal>clicked()</signal>
+   <receiver>kaptanUI</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>610</x>
+     <y>434</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>329</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
