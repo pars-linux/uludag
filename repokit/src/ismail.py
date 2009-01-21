@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2007, TUBITAK/UEKAE
+# Copyright (C) 2006-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -77,7 +77,7 @@ class AutoPiksemel:
         doc = None
         if path:
             if xmlstring:
-                raise TypeError("Dont use both path and xmlstring in AutoPiksemel()")
+                raise TypeError("Don't use both path and xmlstring in AutoPiksemel()")
             doc = piksemel.parse(path)
         elif xmlstring:
             doc = piksemel.parseString(xmlstring)
@@ -111,20 +111,20 @@ class AutoPiksemel:
                 raise TypeError("Class %s defined both tag_data() and tag()s" % self.__class__)
             node = doc.firstChild()
             if node.type() != piksemel.DATA or node.next() != None:
-                piksError(doc, errors, "this tag should only contain character data")
+                piksError(doc, errors, "This tag should only contain character data")
             else:
                 setattr(self, data.varname, node.data())
         # Check attributes
         for key in doc.attributes():
             if not attributes.has_key(key):
-                piksError(doc, errors, "unknown attribute '%s'" % key)
+                piksError(doc, errors, "Unknown attribute '%s'" % key)
         for key in attributes:
             obj = attributes[key]
             value = doc.getAttribute(key)
             if obj.is_mandatory and value == None:
-                piksError(doc, errors, "required attribute '%s' is missing" % key)
+                piksError(doc, errors, "Required attribute '%s' is missing" % key)
             if value and obj.choices and not value in obj.choices:
-                piksError(doc, errors, "keyword '%s' is not accepted for attribute '%s'" % (value, key))
+                piksError(doc, errors, "Keyword '%s' is not accepted for attribute '%s'" % (value, key))
             setattr(self, obj.varname, value)
         # Check tags
         counts = {}
@@ -134,7 +134,7 @@ class AutoPiksemel:
             if obj:
                 counts[name] = counts.get(name, 0) + 1
                 if not obj.is_multiple and counts[name] > 1:
-                    piksError(doc, errors, "tag <%s> should not appear more than once" % name)
+                    piksError(doc, errors, "Tag <%s> should not appear more than once" % name)
                     # No need to examine or collect unwanted tags
                     continue
                 if obj.contains:
@@ -142,7 +142,7 @@ class AutoPiksemel:
                     temp = []
                     for subtag in tag.tags():
                         if subtag.name() != subobj.name:
-                            piksError(tag, errors, "this is a collection of <%s> tags, not <%s>" % (subobj.name, subtag.name()))
+                            piksError(tag, errors, "This is a collection of <%s> tags, not <%s>" % (subobj.name, subtag.name()))
                         if subobj.class_:
                             c = subobj.class_()
                             c._autoPiks(subtag, errors)
@@ -150,10 +150,10 @@ class AutoPiksemel:
                         else:
                             node = subtag.firstChild()
                             if node.type() != piksemel.DATA or node.next() != None:
-                                piksError(doc, errors, "this tag should only contain character data")
+                                piksError(doc, errors, "This tag should only contain character data")
                             temp.append(node.data())
                     if subobj.is_mandatory and len(temp) == 0:
-                        piksError(tag, errors, "should have at least one <%s> child" % subobj.name)
+                        piksError(tag, errors, "Should have at least one <%s> child" % subobj.name)
                     setattr(self, obj.varname, temp)
                 elif obj.class_:
                     c = obj.class_()
@@ -167,7 +167,7 @@ class AutoPiksemel:
                 else:
                     node = tag.firstChild()
                     if node.type() != piksemel.DATA or node.next() != None:
-                        piksError(doc, errors, "this tag should only contain character data")
+                        piksError(doc, errors, "This tag should only contain character data")
                     if obj.is_multiple:
                         tmp = getattr(self, obj.varname)
                         tmp.append(node.data())
@@ -175,12 +175,12 @@ class AutoPiksemel:
                     else:
                         setattr(self, obj.varname, node.data())
             else:
-                piksError(doc, errors, "unknown tag <%s>" % name)
+                piksError(doc, errors, "Unknown tag <%s>" % name)
         for name in tags:
             obj = tags[name]
             count = counts.get(name, 0)
             if obj.is_mandatory and count == 0:
-                piksError(doc, errors, "missing tag <%s>" % name)
+                piksError(doc, errors, "Missing tag <%s>" % name)
         # Custom validation
         if len(errors) == 0:
             # Since validater functions access members without checking
@@ -213,14 +213,14 @@ class Packager(AutoPiksemel):
 
 
 class Patch(AutoPiksemel):
-    filename    =           tag_data()
+    filename    = tag_data()
     compression = optional_attribute("compressionType")
     level       = optional_attribute("level", default="0")
     target      = optional_attribute("target")
 
 
 class Dependency(AutoPiksemel):
-    package     =           tag_data()
+    package     = tag_data()
     version     = optional_attribute("version")
     versionFrom = optional_attribute("versionFrom")
     versionTo   = optional_attribute("versionTo")
@@ -230,7 +230,7 @@ class Dependency(AutoPiksemel):
 
 
 class Archive(AutoPiksemel):
-    uri     =  tag_data()
+    uri     = tag_data()
     type    = attribute("type")
     sha1sum = attribute("sha1sum")
 
@@ -247,21 +247,21 @@ class Path(AutoPiksemel):
         "localedata",
         "header",
     )
-    path      =           tag_data()
-    filetype  =          attribute("fileType", choices=filetypes)
+    path      = tag_data()
+    filetype  = attribute("fileType", choices=filetypes)
     permanent = optional_attribute("permanent", choices=("true", "false"))
 
 
 class AdditionalFile(AutoPiksemel):
-    filename   =           tag_data()
-    target     =          attribute("target")
+    filename   = tag_data()
+    target     = attribute("target")
     owner      = optional_attribute("owner")
     group      = optional_attribute("group")
     permission = optional_attribute("permission")
 
 
 class ComarProvide(AutoPiksemel):
-    om     =  tag_data()
+    om     = tag_data()
     script = attribute("script")
 
 
@@ -270,130 +270,131 @@ class Component(AutoPiksemel):
 
 
 class Source(AutoPiksemel):
-    name        =              tag("Name")
-    homepage    =              tag("Homepage")
-    packager    =              tag("Packager", class_=Packager)
-    summary     =  one_or_more_tag("Summary")
+    name        = tag("Name")
+    homepage    = tag("Homepage")
+    packager    = tag("Packager", class_=Packager)
+    summary     = one_or_more_tag("Summary")
     description = zero_or_more_tag("Description")
     isa         = zero_or_more_tag("IsA")
-    partof      =     optional_tag("PartOf")
-    icon        =     optional_tag("Icon")
-    license     =  one_or_more_tag("License")
-    archive     =              tag("Archive", class_=Archive)
-    patches     =     optional_tag("Patches", contains=one_or_more_tag("Patch", class_=Patch))
-    build_deps  =     optional_tag("BuildDependencies",
+    partof      = optional_tag("PartOf")
+    icon        = optional_tag("Icon")
+    license     = one_or_more_tag("License")
+    archive     = tag("Archive", class_=Archive)
+    patches     = optional_tag("Patches", contains=one_or_more_tag("Patch", class_=Patch))
+    build_deps  = optional_tag("BuildDependencies",
                                   contains=one_or_more_tag("Dependency", class_=Dependency))
     # Following are found in the index, not in pspecs
-    version     =     optional_tag("Version")
-    release     =     optional_tag("Release")
-    sourceuri   =     optional_tag("SourceURI")
+    version     = optional_tag("Version")
+    release     = optional_tag("Release")
+    sourceuri   = optional_tag("SourceURI")
 
     def validate(self, doc, errors):
         valid_isas = (
             "app", "app:console", "app:gui", "app:web",
             "library", "service", "kernel", "driver",
-            "data", "data:doc", "data:font",
-            "locale", "locale:tr", "locale:en", "locale:es", "locale:nl",
+            "data", "data:doc", "data:font", "locale",
+            "locale:tr", "locale:en", "locale:es", "locale:nl",
             "locale:de", "locale:it", "locale:fr", "locale:sv", "locale:pt", "locale:pt_BR",
-            "locale:da", "locale:vi", "locale:nds", "locale:et", "locale:eu", "locale:el",
+            "locale:da", "locale:vi", "locale:el", "locale:et", "locale:eu", "locale:nds",
             "locale:eo", "locale:fa", "locale:bn", "locale:fi", "locale:fy", "locale:pl",
             "locale:gl", "locale:ga", "locale:he", "locale:hi", "locale:hu", "locale:is",
             "locale:ja", "locale:nb", "locale:nn", "locale:kk", "locale:ko", "locale:km",
             "locale:ru", "locale:lt", "locale:pt", "locale:lv", "locale:ms", "locale:mn"
             "locale:mk", "locale:pa", "locale:ro", "locale:rw", "locale:az", "locale:ar",
             "locale:se", "locale:sk", "locale:sl", "locale:sr", "locale:ss", "locale:bs",
-            "locale:br", "locale:bg", "locale:tg", "locale:ta", "locale:sr@Latn", "locale:af",
+            "locale:br", "locale:bg", "locale:tg", "locale:ta", "locale:af", "locale:sr@Latn",
             "locale:hr", "locale:cs", "locale:cy", "locale:ca", "locale:uk", "locale:uz"
         )
 
         for isa in self.isa:
             if isa not in valid_isas:
-                piksError(doc, errors, "invalid IsA value '%s'" % isa)
+                piksError(doc, errors, "Invalid IsA value '%s'" % isa)
 
 class Action(AutoPiksemel):
     actionChoice = tag_data()
 
 
 class Update(AutoPiksemel):
-    release     =             attribute("release")
-    type        =    optional_attribute("type", choices=("security", "bug"))
-    date        =                   tag("Date")
-    version     =                   tag("Version")
-    name        =                   tag("Name")
-    email       =                   tag("Email")
-    comment     =                   tag("Comment")
-    requires    =          optional_tag("Requires", contains=one_or_more_tag("Action", class_=Action))
+    release     = attribute("release")
+    type        = optional_attribute("type", choices=("security", "bug"))
+    date        = tag("Date")
+    version     = tag("Version")
+    name        = tag("Name")
+    email       = tag("Email")
+    comment     = tag("Comment")
+    requires    = optional_tag("Requires", contains=one_or_more_tag("Action", class_=Action))
 
     def validate(self, doc, errors):
         #NOTE: this should be in pisi.version.Version, but situation is
         # a bit hairy there
         if "-" in self.version:
-            piksError(doc, errors, "invalid version '%s': no '-' allowed" % self.version)
+            piksError(doc, errors, "Invalid version '%s': no '-' allowed" % self.version)
         try:
             pisi.version.Version(self.version)
         except Exception, e:
-            piksError(doc, errors, "invalid version '%s': %s" % (self.version, e))
+            piksError(doc, errors, "Invalid version '%s': %s" % (self.version, e))
         try:
             self.release = int(self.release)
         except:
-            piksError(doc, errors, "bad release number '%s'" % self.release)
+            piksError(doc, errors, "Bad release number '%s'" % self.release)
 
         if len(self.date) != 10:
-            piksError(doc, errors, "invalid date '%s'" % self.date)
+            piksError(doc, errors, "Invalid date '%s'" % self.date)
 
         try:
             date = time.strptime(self.date, "%Y-%m-%d")
             if date[0] < 2003:
-                piksError(doc, errors, "invalid date '%s'" % self.date)
+                piksError(doc, errors, "Invalid date '%s'" % self.date)
         except Exception, e:
-            piksError(doc, errors, "invalid date '%s': %s" % (self.date, e))
+            piksError(doc, errors, "Invalid date '%s': %s" % (self.date, e))
 
 
 class Package(AutoPiksemel):
-    name                  =              tag("Name")
+    name                  = tag("Name")
     summary               = zero_or_more_tag("Summary")
     description           = zero_or_more_tag("Description")
     isa                   = zero_or_more_tag("IsA")
-    partof                =     optional_tag("PartOf")
-    icon                  =     optional_tag("Icon")
+    partof                = optional_tag("PartOf")
+    icon                  = optional_tag("Icon")
     license               = zero_or_more_tag("License")
-    packageDependencies   =     optional_tag("RuntimeDependencies",
-                                            contains=one_or_more_tag("Dependency", class_=Dependency))
-    componentDependencies =     optional_tag("RuntimeDependencies",
-                                            contains=one_or_more_tag("Component", class_=Component))
-    files                 =              tag("Files", contains=one_or_more_tag("Path", class_=Path))
-    conflicts             =     optional_tag("Conflicts", contains=one_or_more_tag("Package"))
-    replaces              =     optional_tag("Replaces", contains=one_or_more_tag("Package"))
-    provides              =     optional_tag("Provides",
-                                            contains=one_or_more_tag("COMAR", class_=ComarProvide))
-    additionals           =     optional_tag("AdditionalFiles",
-                                            contains=one_or_more_tag("AdditionalFile", class_=AdditionalFile))
-    history               =     optional_tag("History", contains=one_or_more_tag("Update", class_=Update))
+    packageDependencies   = optional_tag("RuntimeDependencies",
+                                        contains=one_or_more_tag("Dependency", class_=Dependency))
+    componentDependencies = optional_tag("RuntimeDependencies",
+                                        contains=one_or_more_tag("Component", class_=Component))
+    files                 = tag("Files", contains=one_or_more_tag("Path", class_=Path))
+    conflicts             = optional_tag("Conflicts", contains=one_or_more_tag("Package"))
+    replaces              = optional_tag("Replaces", contains=one_or_more_tag("Package"))
+    provides              = optional_tag("Provides",
+                                        contains=one_or_more_tag("COMAR", class_=ComarProvide))
+    additionals           = optional_tag("AdditionalFiles",
+                                        contains=one_or_more_tag("AdditionalFile", class_=AdditionalFile))
+    history               = optional_tag("History", contains=one_or_more_tag("Update", class_=Update))
 
     def validate(self, doc, errors):
         valid_name_chars = string.ascii_letters + string.digits + "_-+"
         for c in self.name:
             if not c in valid_name_chars:
-                piksError(doc, errors, "package name '%s' has invalid char '%s'" % (self.name, c))
+                piksError(doc, errors, "Package name '%s' has invalid char '%s'" % (self.name, c))
         for part in self.name.split("-")[1:]:
             if part[0] in string.digits:
-                piksError(doc, errors, "package name '%s' has a number after '-'" % self.name)
+                piksError(doc, errors, "Package name '%s' has a number after '-'" % self.name)
 
         for additional in self.additionals:
-            filename = additional.target
+            filename = additional.filename
+            targetname = additional.target
             flag = False
             for path in self.files:
-                if filename.startswith(path.path) or fnmatch.fnmatch(filename, path.path):
+                if targetname.startswith(path.path) or fnmatch.fnmatch(targetname, path.path):
                     flag = True
                     break
             if not flag:
-                piksError(doc, errors, "additional file '%s' not included in package %s" % (filename, self.name))
+                piksError(doc, errors, "Additional file '%s' doesn't have a corresponding <Path> entry in package %s" % (filename, self.name))
 
 
 class SpecFile(AutoPiksemel):
-    source   =             tag("Source", class_=Source)
+    source   = tag("Source", class_=Source)
     packages = one_or_more_tag("Package", class_=Package)
-    history  =             tag("History", contains=one_or_more_tag("Update", class_=Update))
+    history  = tag("History", contains=one_or_more_tag("Update", class_=Update))
 
     def all_deps(self):
         deps = self.source.build_deps[:]
@@ -409,24 +410,24 @@ class SpecFile(AutoPiksemel):
                 date = map(int, update.date.split("-"))
                 date = date[0] * 10000 + date[1] * 100 + date[2]
                 if prev_date < date:
-                    piksError(doc.getTag("History"), errors, "out of order date at release %d" % update.release)
+                    piksError(doc.getTag("History"), errors, "Out of order date at release %d" % update.release)
             if prev:
                 prev -= 1
                 if update.release != prev:
-                    piksError(doc.getTag("History"), errors, "out of order release numbers")
+                    piksError(doc.getTag("History"), errors, "Out of order release numbers")
             prev = update.release
             prev_date = map(int, update.date.split("-"))
             prev_date = prev_date[0] * 10000 + prev_date[1] * 100 + prev_date[2]
         if prev != 1:
-            piksError(doc.getTag("History"), errors, "missing release numbers")
+            piksError(doc.getTag("History"), errors, "Missing release numbers")
 
         for pak in self.packages:
             deps = map(lambda x: x.package, self.source.build_deps)
             if pak.name in deps:
-                piksError(doc, errors, "package name '%s' is in source '%s' build dependencies" % (pak.name, self.source.name))
+                piksError(doc, errors, "Package name '%s' is in source '%s' build dependencies" % (pak.name, self.source.name))
             deps = map(lambda x: x.package, pak.packageDependencies)
             if pak.name in deps:
-                piksError(doc, errors, "package name '%s' is in self dependencies" % pak.name)
+                piksError(doc, errors, "Package name '%s' is in self dependencies" % pak.name)
 
 
 def all_pspecs(path):
