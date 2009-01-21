@@ -11,11 +11,10 @@
 
 #
 # TODO:
-# * component tanımları, component.xml check
-# * class_ çirkin duruyor
+# * component.xml check
 # * default attr çalışsın
 # * objeden xml çıktıyı vermeyi de ekle
-# * başka?
+# * FIXME: Non validated pspec's are reported as missing dependencies
 #
 
 import piksemel
@@ -27,14 +26,14 @@ class InvalidDocument(Exception):
 
 
 class AutoPiksemelType:
-    def __init__(self, type, name, is_multiple, is_mandatory, class_, default, choices, contains):
-        if class_ and contains:
-            raise TypeError("Using both class_ and contains is not supported")
+    def __init__(self, type, name, is_multiple, is_mandatory, t_class, default, choices, contains):
+        if t_class and contains:
+            raise TypeError("Using both t_class and contains is not supported")
         self.type = type
         self.name = name
         self.is_multiple = is_multiple
         self.is_mandatory = is_mandatory
-        self.class_ = class_
+        self.t_class = t_class
         self.default = default
         self.choices = choices
         self.contains = contains
@@ -51,17 +50,17 @@ def attribute(name, default=None, choices=None):
 def optional_attribute(name, default=None, choices=None):
     return AutoPiksemelType("attr", name, None, False, None, default, choices, None)
 
-def tag(name, class_=None, contains=None):
-    return AutoPiksemelType("tag", name, False, True, class_, None, None, contains)
+def tag(name, t_class=None, contains=None):
+    return AutoPiksemelType("tag", name, False, True, t_class, None, None, contains)
 
-def optional_tag(name, class_=None, contains=None):
-    return AutoPiksemelType("tag", name, False, False, class_, None, None, contains)
+def optional_tag(name, t_class=None, contains=None):
+    return AutoPiksemelType("tag", name, False, False, t_class, None, None, contains)
 
-def zero_or_more_tag(name, class_=None):
-    return AutoPiksemelType("tag", name, True, False, class_, None, None, None)
+def zero_or_more_tag(name, t_class=None):
+    return AutoPiksemelType("tag", name, True, False, t_class, None, None, None)
 
-def one_or_more_tag(name, class_=None):
-    return AutoPiksemelType("tag", name, True, True, class_, None, None, None)
+def one_or_more_tag(name, t_class=None):
+    return AutoPiksemelType("tag", name, True, True, t_class, None, None, None)
 
 def piksError(doc, errors, msg):
     path = []
@@ -108,7 +107,7 @@ class AutoPiksemel:
         # Check character data
         if data:
             if len(tags) > 0:
-                raise TypeError("Class %s defined both tag_data() and tag()s" % self.__class__)
+                raise TypeError("Class %s defined both tag_data() and tag()s" % self.__t_class_)
             node = doc.firstChild()
             if node.type() != piksemel.DATA or node.next() != None:
                 piksError(doc, errors, "This tag should only contain character data")
@@ -143,8 +142,8 @@ class AutoPiksemel:
                     for subtag in tag.tags():
                         if subtag.name() != subobj.name:
                             piksError(tag, errors, "This is a collection of <%s> tags, not <%s>" % (subobj.name, subtag.name()))
-                        if subobj.class_:
-                            c = subobj.class_()
+                        if subobj.t_class:
+                            c = subobj.t_class()
                             c._autoPiks(subtag, errors)
                             temp.append(c)
                         else:
@@ -155,8 +154,8 @@ class AutoPiksemel:
                     if subobj.is_mandatory and len(temp) == 0:
                         piksError(tag, errors, "Should have at least one <%s> child" % subobj.name)
                     setattr(self, obj.varname, temp)
-                elif obj.class_:
-                    c = obj.class_()
+                elif obj.t_class:
+                    c = obj.t_class()
                     c._autoPiks(tag, errors)
                     if obj.is_multiple:
                         tmp = getattr(self, obj.varname)
@@ -272,17 +271,17 @@ class Component(AutoPiksemel):
 class Source(AutoPiksemel):
     name        = tag("Name")
     homepage    = tag("Homepage")
-    packager    = tag("Packager", class_=Packager)
+    packager    = tag("Packager", t_class=Packager)
     summary     = one_or_more_tag("Summary")
     description = zero_or_more_tag("Description")
     isa         = zero_or_more_tag("IsA")
     partof      = optional_tag("PartOf")
     icon        = optional_tag("Icon")
     license     = one_or_more_tag("License")
-    archive     = tag("Archive", class_=Archive)
-    patches     = optional_tag("Patches", contains=one_or_more_tag("Patch", class_=Patch))
+    archive     = tag("Archive", t_class=Archive)
+    patches     = optional_tag("Patches", contains=one_or_more_tag("Patch", t_class=Patch))
     build_deps  = optional_tag("BuildDependencies",
-                                  contains=one_or_more_tag("Dependency", class_=Dependency))
+                                  contains=one_or_more_tag("Dependency", t_class=Dependency))
     # Following are found in the index, not in pspecs
     version     = optional_tag("Version")
     release     = optional_tag("Release")
@@ -322,7 +321,7 @@ class Update(AutoPiksemel):
     name        = tag("Name")
     email       = tag("Email")
     comment     = tag("Comment")
-    requires    = optional_tag("Requires", contains=one_or_more_tag("Action", class_=Action))
+    requires    = optional_tag("Requires", contains=one_or_more_tag("Action", t_class=Action))
 
     def validate(self, doc, errors):
         #NOTE: this should be in pisi.version.Version, but situation is
@@ -358,17 +357,17 @@ class Package(AutoPiksemel):
     icon                  = optional_tag("Icon")
     license               = zero_or_more_tag("License")
     packageDependencies   = optional_tag("RuntimeDependencies",
-                                        contains=one_or_more_tag("Dependency", class_=Dependency))
+                                        contains=one_or_more_tag("Dependency", t_class=Dependency))
     componentDependencies = optional_tag("RuntimeDependencies",
-                                        contains=one_or_more_tag("Component", class_=Component))
-    files                 = tag("Files", contains=one_or_more_tag("Path", class_=Path))
+                                        contains=one_or_more_tag("Component", t_class=Component))
+    files                 = tag("Files", contains=one_or_more_tag("Path", t_class=Path))
     conflicts             = optional_tag("Conflicts", contains=one_or_more_tag("Package"))
     replaces              = optional_tag("Replaces", contains=one_or_more_tag("Package"))
     provides              = optional_tag("Provides",
-                                        contains=one_or_more_tag("COMAR", class_=ComarProvide))
+                                        contains=one_or_more_tag("COMAR", t_class=ComarProvide))
     additionals           = optional_tag("AdditionalFiles",
-                                        contains=one_or_more_tag("AdditionalFile", class_=AdditionalFile))
-    history               = optional_tag("History", contains=one_or_more_tag("Update", class_=Update))
+                                        contains=one_or_more_tag("AdditionalFile", t_class=AdditionalFile))
+    history               = optional_tag("History", contains=one_or_more_tag("Update", t_class=Update))
 
     def validate(self, doc, errors):
         valid_name_chars = string.ascii_letters + string.digits + "_-+"
@@ -392,9 +391,9 @@ class Package(AutoPiksemel):
 
 
 class SpecFile(AutoPiksemel):
-    source   = tag("Source", class_=Source)
-    packages = one_or_more_tag("Package", class_=Package)
-    history  = tag("History", contains=one_or_more_tag("Update", class_=Update))
+    source   = tag("Source", t_class=Source)
+    packages = one_or_more_tag("Package", t_class=Package)
+    history  = tag("History", contains=one_or_more_tag("Update", t_class=Update))
 
     def all_deps(self):
         deps = self.source.build_deps[:]
