@@ -69,7 +69,6 @@
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
-        <SelectedPackage>glibc-locales-ca</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
         <SelectedPackage>grounation-xcursors</SelectedPackage>
         <SelectedPackage>gsl</SelectedPackage>
@@ -361,7 +360,6 @@
         <Package>gle</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
-        <Package>glibc-locales-ca</Package>
         <Package>glibc-zoneinfo</Package>
         <Package>glibmm</Package>
         <Package>glitz</Package>
