@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-17 01:36+0300\n"
-"PO-Revision-Date: 2008-01-11 20:16+0200\n"
+"PO-Revision-Date: 2009-01-22 23:52+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -154,7 +154,7 @@ msgstr "Alle Operationen fertiggestellt. Sie können den Assistenten schliessen.
 
 #: migration/migration.py:26
 msgid "Migration Tool"
-msgstr "Migration-Tool"
+msgstr "Migrations-Tool"
 
 #: migration/migration.py:28
 msgid "A wizard to transfer files and settings from existing operating systems"
@@ -166,7 +166,7 @@ msgstr "Entwickler und aktueller Betreuer"
 
 #: migration/wizard.py:41
 msgid "Pardus Migration Tool"
-msgstr "Pardus Migration-Tool"
+msgstr "Pardus Migrations-Tool"
 
 #: migration/wizard.py:50
 msgid "Next"
@@ -194,7 +194,7 @@ msgstr "Änderungen Übernehmen"
 
 #: migration/wizard.py:73
 msgid "Migration Tool Help"
-msgstr "Migration-Tools Hilfe"
+msgstr "Migrations-Tools Hilfe"
 
 #: migration/wizard.py:133
 msgid "Step"
@@ -205,7 +205,7 @@ msgid ""
 "Migration tool couldn't find any old users in your computer. You can't use "
 "this aplication."
 msgstr ""
-"Migration-Tool konnte keine alten Benutzer auf Ihrem Computer finden. Sie können "
+"Migrations-Tool konnte keine alten Benutzer auf Ihrem Computer finden. Sie können "
 "diese Applikation nicht benutzen."
 
 #: migration/wizard.py:142
@@ -293,7 +293,7 @@ msgid ""
 "Welcome to Pardus Migration Tool. You can transfer files and settings from "
 "your existing operating systems to Pardus with this application."
 msgstr ""
-"Willkommen zum Pardus Migration-Tool. Sie können mit dieser Anwendung Dateien "
+"Willkommen zum Pardus Migrations-Tool. Sie können mit dieser Anwendung Dateien "
 " und Einstellungen von Ihrem existierenden Betriebssystemen nach Pardus übertragen."
 
 #: migration/gui/userpage.py:30
@@ -401,7 +401,7 @@ msgstr "Migrierter Ordner"
 
 #: migration/utility/account.py:348
 msgid "This messagebox is migrated using Pardus Migration Tool"
-msgstr "Diese Messagebox ist unter Verwendung von Pardus Migration-Tool migriert worden"
+msgstr "Diese Messagebox ist unter Verwendung von Pardus Migrations-Tool migriert worden"
 
 #: migration/utility/account.py:381 migration/utility/account.py:400
 #, python-format
