@@ -1,0 +1,114 @@
+<ui version="4.0" >
+ <class>mouseWidget</class>
+ <widget class="QWidget" name="mouseWidget" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>563</width>
+    <height>375</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="labelMouseDesc" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>301</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&lt;p align="left">If you are left-handed, you may prefer to swap the functions on the left and right buttons on your pointing device by choosing the "Left handed"option below. You can also select default click behaviour.&lt;/p></string>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pixMouseIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>370</x>
+     <y>30</y>
+     <width>141</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>mouse icon</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBoxClickBehaviour" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>140</y>
+     <width>411</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground" >
+    <bool>false</bool>
+   </property>
+   <property name="title" >
+    <string>Click Behaviour</string>
+   </property>
+   <property name="flat" >
+    <bool>false</bool>
+   </property>
+   <property name="checkable" >
+    <bool>false</bool>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" >
+    <item row="0" column="0" >
+     <widget class="QRadioButton" name="radioButton" >
+      <property name="text" >
+       <string>Dou&amp;ble-click to open files and folders</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" >
+     <widget class="QRadioButton" name="radioButton_2" >
+      <property name="text" >
+       <string>Single-click to open files and folders</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBoxButtonOrder" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>250</y>
+     <width>281</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string>Button Order</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2" >
+    <item row="0" column="0" >
+     <widget class="QRadioButton" name="radioButtonRightHand" >
+      <property name="text" >
+       <string>Right Hand</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" >
+     <widget class="QRadioButton" name="radioButtonLeftHand" >
+      <property name="text" >
+       <string>Left Hand</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
