@@ -1,0 +1,49 @@
+<ui version="4.0" >
+ <class>welcomeWidget</class>
+ <widget class="QWidget" name="welcomeWidget" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>563</width>
+    <height>375</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="labelKaptanIntro" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>70</y>
+     <width>251</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>This application, called Kaptan Desktop, will help you with your basic but sufficient setup for your Pardus desktop in a quick manner. Please click Next to personalize your desktop. :)
+
+Pardus is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; helps you connect to internet, read e-mails, work with office documents and more!</string>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pixKaptanLogo" >
+   <property name="geometry" >
+    <rect>
+     <x>350</x>
+     <y>110</y>
+     <width>181</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>kaptan logo</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
