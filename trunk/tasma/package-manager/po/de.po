@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-07 14:06+0200\n"
-"PO-Revision-Date: 2009-01-19 02:10+0100\n"
+"PO-Revision-Date: 2009-01-22 20:47+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -291,7 +291,7 @@ msgstr "wird heruntergeladen"
 
 #: src/MainWidget.py:669 src/Preferences.py:349
 msgid "<b>Applying Repository Changes</b>"
-msgstr "<b>Depot-Anderungen werden vorgenommen</b>"
+msgstr "<b>Depot-Änderungen werden vorgenommen</b>"
 
 #: src/MainWidget.py:673
 msgid "Downloading package list of %1"
@@ -346,7 +346,7 @@ msgstr "Neue Pakete anzeigen"
 
 #: src/package-manager.py:122
 msgid "Show Upgradable Packages"
-msgstr "Paket-Upgrades anzeigen"
+msgstr "Upgrades anzeigen"
 
 #: src/package-manager.py:144 src/HelpDialog.py:29
 msgid "Package Manager Help"
@@ -543,7 +543,7 @@ msgstr "Überprüfugsintervall:"
 
 #: src/PreferencesDialog.py:359
 msgid "Enable &periodic update check"
-msgstr "&Intervall für die Überprüfung der Updated aktivieren"
+msgstr "&Intervall für die Überprüfung der Updates aktivieren"
 
 #: src/PreferencesDialog.py:360
 msgid "Alt+P"
