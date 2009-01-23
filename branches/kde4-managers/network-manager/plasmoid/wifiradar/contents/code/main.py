@@ -19,8 +19,8 @@ from PyKDE4 import plasmascript
 # Our Comar Link
 link = comar.Link()
 
-class WifiItem(QWidget):
-    def __init__(self, data):
+class WifiItem_Qt(QWidget):
+    def __init__(self, parent, data):
         QWidget.__init__(self)
         self.setStyleSheet("background-color: transparent;color: white")
         self.layout = QHBoxLayout(self)
@@ -38,15 +38,35 @@ class WifiItem(QWidget):
         self.layout.addWidget(self.quality)
         self.quality.setValue(int(data['quality']))
 
+
+class WifiItem_Plasma(QGraphicsWidget):
+    def __init__(self, parent, data):
+        QGraphicsWidget.__init__(self, parent)
+        self.layout = QGraphicsLinearLayout(Qt.Horizontal, self)
+
+        self.label = Plasma.Label(self)
+        self.label.setText(data['remote'])
+        self.layout.addItem(self.label)
+
+        self.layout.addStretch()
+
+        self.meter = Plasma.Meter(self)
+        self.meter.setMeterType(Plasma.Meter.BarMeterHorizontal)
+        self.meter.setValue(int(data['quality']))
+        self.layout.addItem(self.meter)
+
 class WidgetStack(QGraphicsWidget):
     def __init__(self, parent):
         QGraphicsWidget.__init__(self, parent)
         self.layout = QGraphicsLinearLayout(Qt.Vertical, self)
 
     def addItem(self, widget):
-        proxy = QGraphicsProxyWidget()
-        proxy.setWidget(widget)
-        self.layout.addItem(proxy)
+        try:
+            self.layout.addItem(widget)
+        except TypeError:
+            proxy = QGraphicsProxyWidget()
+            proxy.setWidget(widget)
+            self.layout.addItem(proxy)
 
 class WifiRadarApplet(plasmascript.Applet):
     """ Our main applet derived from plasmascript.Applet """
@@ -115,7 +135,7 @@ class WifiRadarApplet(plasmascript.Applet):
             self.mainWidget.addItem(label)
         else:
             for spot in hotspots[1]:
-                self.mainWidget.addItem(WifiItem(spot))
+                self.mainWidget.addItem(WifiItem_Plasma(self.mainWidget, spot))
 
         # Update the size of Plasmoid
         self.constraintsEvent(Plasma.SizeConstraint)
