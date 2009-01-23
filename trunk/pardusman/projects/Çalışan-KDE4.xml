@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.2-KDE4 RC1</Title>
+    <Title>Pardus Calisan 2008.2-KDE4 RC2</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.2/</ReleaseFiles>
     <PackageSelection repo_uri="file:///home/ekin/packages/test/pisi-index.xml.bz2">
@@ -622,6 +622,10 @@
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>perl</Package>
+        <Package>perl-Crypt-PasswdMD5</Package>
+        <Package>perl-Digest-Base</Package>
+        <Package>perl-Digest-SHA1</Package>
+        <Package>perl-MIME-Base64</Package>
         <Package>perl-XML-Parser</Package>
         <Package>phonon</Package>
         <Package>piksemel</Package>
