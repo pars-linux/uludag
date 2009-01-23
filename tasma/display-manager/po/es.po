@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-18 01:05+0300\n"
+"POT-Creation-Date: 2009-01-23 22:09+0200\n"
 "PO-Revision-Date: 2008-06-17 18:50-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -19,25 +19,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/driverdialog.py:43 src/driverdialog.py:64
-msgid "Driver Name"
-msgstr "Nombre de controlador"
+#: src/monitordialog.py:86
+msgid "Choose Monitor"
+msgstr "Seleccionar Monitor"
 
-#: src/driverdialog.py:44 src/driverdialog.py:65
-msgid "Description"
-msgstr "Descripción"
+#: src/monitordialog.py:87
+msgid "Plug And Play Monitor"
+msgstr "Monitor Plug And Play"
 
-#: src/driverdialog.py:58 src/dm_mainview.py:268
-msgid "Video Card"
-msgstr "Tarjeta de video"
-
-#: src/driverdialog.py:59
-msgid "Show all drivers"
-msgstr "Mostrar todos los controladores"
-
-#: src/driverdialog.py:60 src/monitordialog.py:89
+#: src/monitordialog.py:89 src/driverdialog.py:60
 msgid "Ok"
 msgstr "Ok"
+
+#: src/monitordialog.py:94
+msgid "Details"
+msgstr "Detalles"
+
+#: src/monitordialog.py:95
+msgid "<p>Horizontal Range:</p>"
+msgstr "<p>Rango Horizontal:</p>"
+
+#: src/monitordialog.py:96
+msgid "<p>Vertical Range:</p>"
+msgstr "<p>Rango Vertical:</p>"
 
 #: src/display-manager.py:40 src/display-manager.py:621 src/dm_mainview.py:248
 msgid "Display Manager"
@@ -119,153 +123,43 @@ msgstr ""
 msgid "Display Manager is already started!"
 msgstr "Administrador de pantallas ya se está ejecutando!"
 
-#: src/dm_mainview.py:249
-msgid "Identify Displays"
-msgstr "Identificar pantallas"
+#: src/driverdialog.py:43 src/driverdialog.py:64
+msgid "Driver Name"
+msgstr "Nombre de controlador"
 
-#: src/dm_mainview.py:251
-msgid "Output"
-msgstr "Salida"
+#: src/driverdialog.py:44 src/driverdialog.py:65
+msgid "Description"
+msgstr "Descripción"
 
-#: src/dm_mainview.py:252
-msgid "Resolution"
-msgstr "Resolución"
+#: src/driverdialog.py:58 src/dm_mainview.py:268
+msgid "Video Card"
+msgstr "Tarjeta de video"
 
-#: src/dm_mainview.py:254
-msgid "Configuration file is not ready."
-msgstr "Archivo de configuración no está listo."
-
-#: src/dm_mainview.py:256
-msgid "1"
-msgstr "1"
-
-#: src/dm_mainview.py:259
-msgid "2"
-msgstr "2"
-
-#: src/dm_mainview.py:261
-msgid "True Color"
-msgstr "Color verdadero"
-
-#: src/dm_mainview.py:262
-msgid "Dual Screen"
-msgstr "Doble Pantalla"
-
-#: src/dm_mainview.py:264
-msgid "Cloned Mode"
-msgstr "Modo clonado"
-
-#: src/dm_mainview.py:265
-msgid "Extended Mode"
-msgstr "Modo extendido"
-
-#: src/dm_mainview.py:266
-msgid "Detect Displays"
-msgstr "Descubrir Monitores"
-
-#: src/dm_mainview.py:267
-msgid "Screens"
-msgstr "Pantallas"
-
-#: src/dm_mainview.py:269 src/dm_mainview.py:271 src/dm_mainview.py:273
-msgid "Configure..."
-msgstr "Configurar..."
-
-#: src/dm_mainview.py:274
-msgid "Devices"
-msgstr "Dispositivos"
-
-#: src/monitordialog.py:86
-msgid "Choose Monitor"
-msgstr "Seleccionar Monitor"
-
-#: src/monitordialog.py:87
-msgid "Plug And Play Monitor"
-msgstr "Monitor Plug And Play"
-
-#: src/monitordialog.py:94
-msgid "Details"
-msgstr "Detalles"
-
-#: src/monitordialog.py:95
-msgid "<p>Horizontal Range:</p>"
-msgstr "<p>Rango Horizontal:</p>"
-
-#: src/monitordialog.py:96
-msgid "<p>Vertical Range:</p>"
-msgstr "<p>Rango Vertical:</p>"
-
-#: src/displayconfig.py:68
-msgid "You are not authorized for this operation."
-msgstr "No está autorizado para esta operación."
-
-#: src/displayconfig.py:97
-msgid "COMAR Error"
-msgstr "Error COMAR"
-
-#: src/displayconfig.py:102
-msgid "Waiting DBus..."
-msgstr "Esperando DBus..."
-
-#: src/displayconfig.py:102
-msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
-"Conexión con DBus interrumpida inesperadamente, intentando conectar de "
-"nuevo..."
-
-#: src/displayconfig.py:118
-msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
-msgstr ""
-"No posible conectar con DBus! Si no está corriendo lo debería iniciar con el "
-"comando 'service dbus start' desde una consola de root."
-
-#: src/displayconfig.py:146
-msgid ""
-"Display manager cannot get configuration information. Configuration file may "
-"be corrupted or modified by another tool. If you want to use display manager "
-"to configure your video hardware, you must create a new configuration file.\n"
-"Would you like to create a new configuration at the next boot?"
-msgstr ""
-"Administrador de Pantallas no logra obtener información de configuración. El "
-"archivo de configuración podría estar dañado o fue modificado por otra "
-"herramienta. Si desea usar el administrador de pantallas para configurar los "
-"dispositivos de video, debe crear un nuevo archivo de configuración.\n"
-"Desea crear un nuevo archivo de configuración durante el próximo arranque "
-"del sistema ?"
-
-#: src/displayconfig.py:379
-msgid ""
-"Configuration has been saved. Some changes may take effect after restarting "
-"your computer."
-msgstr ""
-"Configuración guardada con éxito. Puede que algunos de los cambios se "
-"aplican al reiniciar la computadora."
-
-# favor revisar, free translation, but i think the idea is ok
-# duda: probed - creo que detectares la idea, "comprobar" para mi que no es
-#: src/displayconfig.py:382
-msgid "Your hardware will be probed after restarting your computer."
-msgstr "Se detectarán sus dispositivos durante el próximo arranque del sistema."
+#: src/driverdialog.py:59
+msgid "Show all drivers"
+msgstr "Mostrar todos los controladores"
 
 #: src/utility.py:26
 msgid "Default Output"
 msgstr "Salida preestablecida"
 
-#: src/utility.py:29
+#: src/utility.py:28
+msgid "Automatic"
+msgstr ""
+
+#: src/utility.py:31
 msgid "Laptop Panel (%1)"
 msgstr "Laptop Panel (%1)"
 
-#: src/utility.py:30
+#: src/utility.py:32
 msgid "Analog Output (%1)"
 msgstr "Salida Análoga (%1)"
 
-#: src/utility.py:31
+#: src/utility.py:33
 msgid "Digital Output (%1)"
 msgstr "Salida Digital (%1)"
 
-#: src/utility.py:32
+#: src/utility.py:34
 msgid "TV Output (%1)"
 msgstr "Salida TV (%1)"
 
@@ -327,3 +221,113 @@ msgstr ""
 msgid "<p><b><h3>Display Manager </h3></b></p>"
 msgstr "<p><b><h3>Administrador de Pantllas </h3></b></p>"
 
+#: src/dm_mainview.py:249
+msgid "Identify Displays"
+msgstr "Identificar pantallas"
+
+#: src/dm_mainview.py:251
+msgid "Output"
+msgstr "Salida"
+
+#: src/dm_mainview.py:252
+msgid "Resolution"
+msgstr "Resolución"
+
+#: src/dm_mainview.py:254
+msgid "Configuration file is not ready."
+msgstr "Archivo de configuración no está listo."
+
+#: src/dm_mainview.py:256
+msgid "1"
+msgstr "1"
+
+#: src/dm_mainview.py:259
+msgid "2"
+msgstr "2"
+
+#: src/dm_mainview.py:261
+msgid "True Color"
+msgstr "Color verdadero"
+
+#: src/dm_mainview.py:262
+msgid "Dual Screen"
+msgstr "Doble Pantalla"
+
+#: src/dm_mainview.py:264
+msgid "Cloned Mode"
+msgstr "Modo clonado"
+
+#: src/dm_mainview.py:265
+msgid "Extended Mode"
+msgstr "Modo extendido"
+
+#: src/dm_mainview.py:266
+msgid "Detect Displays"
+msgstr "Descubrir Monitores"
+
+#: src/dm_mainview.py:267
+msgid "Screens"
+msgstr "Pantallas"
+
+#: src/dm_mainview.py:269 src/dm_mainview.py:271 src/dm_mainview.py:273
+msgid "Configure..."
+msgstr "Configurar..."
+
+#: src/dm_mainview.py:274
+msgid "Devices"
+msgstr "Dispositivos"
+
+#: src/displayconfig.py:73 src/displayconfig.py:103
+msgid "You are not authorized for this operation."
+msgstr "No está autorizado para esta operación."
+
+#: src/displayconfig.py:106
+msgid "COMAR Error"
+msgstr "Error COMAR"
+
+#: src/displayconfig.py:111
+msgid "Waiting DBus..."
+msgstr "Esperando DBus..."
+
+#: src/displayconfig.py:111
+msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+msgstr ""
+"Conexión con DBus interrumpida inesperadamente, intentando conectar de "
+"nuevo..."
+
+#: src/displayconfig.py:127
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr ""
+"No posible conectar con DBus! Si no está corriendo lo debería iniciar con el "
+"comando 'service dbus start' desde una consola de root."
+
+#: src/displayconfig.py:155
+msgid ""
+"Display manager cannot get configuration information. Configuration file may "
+"be corrupted or modified by another tool. If you want to use display manager "
+"to configure your video hardware, you must create a new configuration file.\n"
+"Would you like to create a new configuration at the next boot?"
+msgstr ""
+"Administrador de Pantallas no logra obtener información de configuración. El "
+"archivo de configuración podría estar dañado o fue modificado por otra "
+"herramienta. Si desea usar el administrador de pantallas para configurar los "
+"dispositivos de video, debe crear un nuevo archivo de configuración.\n"
+"Desea crear un nuevo archivo de configuración durante el próximo arranque "
+"del sistema ?"
+
+#: src/displayconfig.py:388
+msgid ""
+"Configuration has been saved. Some changes may take effect after restarting "
+"your computer."
+msgstr ""
+"Configuración guardada con éxito. Puede que algunos de los cambios se "
+"aplican al reiniciar la computadora."
+
+# favor revisar, free translation, but i think the idea is ok
+# duda: probed - creo que detectares la idea, "comprobar" para mi que no es
+#: src/displayconfig.py:391
+msgid "Your hardware will be probed after restarting your computer."
+msgstr ""
+"Se detectarán sus dispositivos durante el próximo arranque del sistema."
