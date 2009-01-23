@@ -24,6 +24,8 @@ def getIconSet(name, group=KIcon.Toolbar):
 def getOutputName(output):
     if output == "default":
         return i18n("Default Output")
+    elif output == "auto":
+        return i18n("Automatic")
 
     outputNames = (
             (i18n("Laptop Panel (%1)"),     ["lvds"]),

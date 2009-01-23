@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2008, TUBITAK/UEKAE
+# Copyright (C) 2008-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -16,7 +16,7 @@ import shutil
 from distutils.core import Extension
 import kdedistutils
 
-version = '0.3.6'
+version = '0.3.7'
 
 distfiles = """
     AUTHORS
