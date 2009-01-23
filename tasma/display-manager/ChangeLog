@@ -1,3 +1,7 @@
+2009-01-23 Fatih Aşıcı <fatih@pardus.org.tr>
+	* src/displayconfig.py:
+		Add 1600x1200 to the resolution list (#9018).
+
 2008-12-30 Fatih Aşıcı <fatih@pardus.org.tr>
 	* src/displayconfig.py:
 		Ignore user's color depth selection if driver is fglrx.
