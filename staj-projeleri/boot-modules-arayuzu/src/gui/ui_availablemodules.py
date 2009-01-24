@@ -17,7 +17,7 @@ class Ui_availableModulesDlg(object):
         availableModulesDlg.setWindowIcon(QtGui.QIcon("tt:/program-icon.png"))
 
         font = QtGui.QFont()
-        font.setPointSize(9)
+        font.setPointSize(10)
 
 
         self.cmbListType = QtGui.QComboBox(availableModulesDlg)
