@@ -1,8 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Dbus
+# Dbus & Comar
 import dbus
+import comar
+
+import time
 
 # Qt Libs
 from PyQt4.QtCore import *
@@ -16,9 +19,46 @@ from PyKDE4.kdeui import *
 from PyKDE4.plasma import Plasma
 from PyKDE4 import plasmascript
 
-systemBus = dbus.SystemBus()
-zpProxy = systemBus.get_object('net.zemberekserver.server.dbus', '/net/zemberekserver/server/dbus/ZemberekDbus')
-zpInterface = dbus.Interface(zpProxy, 'net.zemberekserver.server.dbus.ZemberekDbusInterface')
+# DBUS-QT
+from dbus.mainloop.qt import DBusQtMainLoop
+from dbus import DBusException
+
+zpInterface = None
+
+# DBUS MainLoop
+DBusQtMainLoop(set_as_default = True)
+link = comar.Link()
+
+def connectDbus():
+    global zpInterface
+    try:
+        time.sleep(1)
+        systemBus = dbus.SystemBus()
+        zpProxy = systemBus.get_object('net.zemberekserver.server.dbus', '/net/zemberekserver/server/dbus/ZemberekDbus')
+        zpInterface = dbus.Interface(zpProxy, 'net.zemberekserver.server.dbus.ZemberekDbusInterface')
+    except dbus.exceptions.DBusException:
+        zpInterface = None
+
+class FailedWidget(QGraphicsWidget):
+    def __init__(self, parent):
+        QGraphicsWidget.__init__(self, parent)
+        self.layout = QGraphicsLinearLayout(Qt.Vertical, self)
+        self.layout.setContentsMargins(0,0,0,0)
+        self.layout.setSpacing(0)
+        self.layout.setSizePolicy(QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding))
+
+        label = Plasma.Label(self)
+        label.setText("Zemberek-server doesn't work..")
+        self.layout.addItem(label)
+
+        button = Plasma.PushButton(self)
+        button.setText("Click to start service")
+        self.layout.addItem(button)
+
+        self.connect(button, SIGNAL("clicked()"), self.startService)
+
+    def startService(self):
+        link.System.Service['zemberek-server'].start()
 
 class ZpSpellApplet(plasmascript.Applet):
     """ Our main applet derived from plasmascript.Applet """
@@ -28,6 +68,9 @@ class ZpSpellApplet(plasmascript.Applet):
 
     def init(self):
         """ Const method for initializing the applet """
+
+        # Try to connect dbus
+        connectDbus()
 
         # Configuration interface support comes with plasma
         self.setHasConfigurationInterface(False)
@@ -48,6 +91,23 @@ class ZpSpellApplet(plasmascript.Applet):
         self.layout.setContentsMargins(0,0,0,0)
         self.layout.setSpacing(0)
         self.layout.setSizePolicy(QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding))
+
+        if not zpInterface:
+            self.failWidget = FailedWidget(self.applet)
+            self.layout.addItem(self.failWidget,0,0)
+            link.listenSignals("System.Service", self.handler)
+        else:
+            self.initPlasmoid()
+
+    def handler(self, package, signal, args):
+        if package == 'zemberek_server':
+            if args[1] in ['on','started','conditional_started']:
+                connectDbus()
+                self.failWidget.hide()
+                self.layout.removeAt(0)
+                self.initPlasmoid()
+
+    def initPlasmoid(self):
 
         self.line_edit = Plasma.LineEdit(self.applet)
         self.layout.addItem(self.line_edit,0,0)
