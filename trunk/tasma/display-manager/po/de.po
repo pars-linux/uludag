@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-23 22:09+0200\n"
-"PO-Revision-Date: 2009-01-18 23:31+0100\n"
+"PO-Revision-Date: 2009-01-24 13:20+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -143,7 +143,7 @@ msgstr "Standard Ausgabe"
 
 #: src/utility.py:28
 msgid "Automatic"
-msgstr ""
+msgstr "Automatisch"
 
 #: src/utility.py:31
 msgid "Laptop Panel (%1)"
@@ -327,3 +327,4 @@ msgstr ""
 #: src/displayconfig.py:391
 msgid "Your hardware will be probed after restarting your computer."
 msgstr "Ihre Hardware wird nach dem Neustart Ihres Computers überprüft."
+
