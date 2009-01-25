@@ -9,6 +9,7 @@ gettext.textdomain('network-manager')
 i18n = gettext.gettext
 
 FAIL, SUCCESS = pynotify.URGENCY_CRITICAL,pynotify.URGENCY_NORMAL
+RFKILL_STATE_HARD_BLOCKED = 2
 
 class autoSwitch:
     def __init__(self, comlink, notifier=True):
@@ -41,6 +42,17 @@ class autoSwitch:
             _notify.set_timeout(timeout)
         _notify.show()
 
+    def checkKillSwitch(self, deviceList):
+        result = False
+        from pardus import netutils
+        for device in deviceList:
+            interface = netutils.findInterface(device)
+            rfkillstate = interface.sysValue("device/rf_kill")
+            if rfkillstate and int(rfkillstate) <> RFKILL_STATE_HARD_BLOCKED:
+                result = True
+                break
+        return result
+
     def scanAndConnect(self, force=True):
         # Get wireless devices & profiles
         devices = []
@@ -53,6 +65,10 @@ class autoSwitch:
 
         # If there is no wi-fi device, go on
         if not profiles or not devices:
+            return
+
+        if not self.checkKillSwitch(devices):
+            self.notify(i18n("Your wireless interface has been disabled by kill switch. Please activate it first."), FAIL)
             return
 
         # If already connected, go on
