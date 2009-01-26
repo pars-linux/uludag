@@ -32,6 +32,7 @@
 
 #include "config.h"
 #include "iksemel.h"
+#include "script.h"
 #include "log.h"
 #include "utils.h"
 
@@ -198,13 +199,18 @@ db_load_model(iks *xml, PyObject **py_models)
                 }
             }
 
-            // Third argument is input arguments
-            PyTuple_SetItem(py_tuple, 2, py_args_in);
 
-            // Fourth argument is output arguments
             if (noreply) {
                 py_args_out = PyString_FromString("");
             }
+
+            // Split signatures
+            py_args_in = script_signature_each(PyString_AsString(py_args_in));
+            py_args_out = script_signature_each(PyString_AsString(py_args_out));
+
+            // Third argument is input arguments
+            PyTuple_SetItem(py_tuple, 2, py_args_in);
+            // Fourth argument is output arguments
             PyTuple_SetItem(py_tuple, 3, py_args_out);
 
             PyDict_SetItemString(py_methods, iks_find_attrib(met, "name"), py_tuple);

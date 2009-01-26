@@ -6,7 +6,7 @@ import shutil
 
 def listModelApplications(model):
     apps = []
-    scriptDir = os.path.join(datapath(), "scripts", model)
+    scriptDir = os.path.join(config_datapath(), "scripts", model)
     if not os.path.exists(scriptDir):
         return apps
     for i in os.listdir(scriptDir):
@@ -16,7 +16,7 @@ def listModelApplications(model):
 
 def listApplicationModels(app):
     models = []
-    scriptDir = os.path.join(datapath(), "scripts_apps", app)
+    scriptDir = os.path.join(config_datapath(), "scripts_apps", app)
     if not os.path.exists(scriptDir):
         return models
     for i in os.listdir(scriptDir):
@@ -25,7 +25,7 @@ def listApplicationModels(app):
     return models
 
 def register(app, model, filename):
-    scriptDir = os.path.join(datapath(), "scripts", model)
+    scriptDir = os.path.join(config_datapath(), "scripts", model)
     scriptFile = os.path.join(scriptDir, "%s.py" % app)
     try:
         os.mkdir(scriptDir)
@@ -33,7 +33,7 @@ def register(app, model, filename):
         pass
     shutil.copy(filename, scriptFile)
 
-    scriptDir = os.path.join(datapath(), "scripts_apps", app)
+    scriptDir = os.path.join(config_datapath(), "scripts_apps", app)
     scriptFile = os.path.join(scriptDir, model)
     try:
         os.mkdir(scriptDir)
@@ -47,10 +47,10 @@ def register(app, model, filename):
     return True
 
 def remove(app):
-    scriptDir = os.path.join(datapath(), "scripts_apps", app)
+    scriptDir = os.path.join(config_datapath(), "scripts_apps", app)
     for i in os.listdir(scriptDir):
         if not i.startswith("."):
-            scriptFile = os.path.join(datapath(), "scripts", i, "%s.py" % app)
+            scriptFile = os.path.join(config_datapath(), "scripts", i, "%s.py" % app)
             try:
                 os.unlink(scriptFile)
             except:
@@ -58,9 +58,12 @@ def remove(app):
     shutil.rmtree(scriptDir)
 
 def model_xml(modelName):
-    xml = '<interface name="%s">' % modelName
-    for _name, (_type, _action_id, _sig_in, _sig_out) in modelbase()[modelName].iteritems():
-        print _name, _type, _action_id, _sig_in, _sig_out
+    if modelName == "Core":
+        xml = '<interface name="%s">' % config_interface()
+    else:
+        xml = '<interface name="%s.%s">' % (config_interface(), modelName)
+    for _name, (_type, _action_id, _sig_in, _sig_out) in config_modelbase()[modelName].iteritems():
+        # print _name, _type, _action_id, _sig_in, _sig_out
         if _type == 0:
             xml += '<method name="%s">' % _name
         else:
@@ -84,7 +87,7 @@ def introspect():
         xml += model_xml("Core")
         xml += '<node name="package"/>'
     elif path == '/package':
-        scriptDir = os.path.join(datapath(), "scripts_apps")
+        scriptDir = os.path.join(config_datapath(), "scripts_apps")
         for i in os.listdir(scriptDir):
             if not i.startswith("."):
                 xml += '<node name="%s"/>' % i

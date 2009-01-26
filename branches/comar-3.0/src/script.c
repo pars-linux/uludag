@@ -105,13 +105,19 @@ script_signature(const char *model, const char *member, int direction)
     PyObject *py_models = PyDict_GetItemString(py_core, "models");
     PyObject *py_model = PyDict_GetItemString(py_models, model);
     PyObject *py_method = PyDict_GetItemString(py_model, member);
-    PyObject *py_str;
+    PyObject *py_str = PyString_FromString("");
+    PyObject *py_list;
 
     if (direction == 0) {
-        py_str = PyTuple_GetItem(py_method, 2);
+        py_list = PyTuple_GetItem(py_method, 2);
     }
     else {
-        py_str = PyTuple_GetItem(py_method, 3);
+        py_list = PyTuple_GetItem(py_method, 3);
+    }
+
+    int i;
+    for (i = 0; i < PyList_Size(py_list); i++) {
+        PyString_Concat(&py_str, PyList_GetItem(py_list, i));
     }
 
     return PyString_AsString(py_str);
@@ -449,16 +455,23 @@ c_fail(PyObject *self, PyObject *args)
 
 //! Returns data path, used in scripts
 static PyObject *
-c_datapath(PyObject *self, PyObject *args)
+c_cfg_datapath(PyObject *self, PyObject *args)
 {
     return PyString_FromString(config_dir_data);
 }
 
 //! Returns model database, used in scripts
 static PyObject *
-c_modelbase(PyObject *self, PyObject *args)
+c_cfg_modelbase(PyObject *self, PyObject *args)
 {
     return PyDict_GetItemString(py_core, "models");
+}
+
+//! Returns default interface
+static PyObject *
+c_cfg_interface(PyObject *self, PyObject *args)
+{
+    return PyString_FromString(config_interface);
 }
 
 //! Methods usable in scripts
@@ -471,8 +484,9 @@ static PyMethodDef methods[] = {
     { "call", (PyCFunction) c_call, METH_VARARGS|METH_KEYWORDS, "Call COMAR method" },
     { "fail", c_fail, METH_VARARGS, "Abort script" },
     // Configuration
-    { "datapath", c_datapath, METH_NOARGS, "Return data path" },
-    { "modelbase", c_modelbase, METH_NOARGS, "Return model database" },
+    { "config_datapath", c_cfg_datapath, METH_NOARGS, "Return data path" },
+    { "config_interface", c_cfg_interface, METH_NOARGS, "Returns default interface" },
+    { "config_modelbase", c_cfg_modelbase, METH_NOARGS, "Return model database" },
     // DBus message
     { "bus_path", c_bus_path, METH_NOARGS, "Return DBus message path" },
     { "bus_interface", c_bus_interface, METH_NOARGS, "Return DBus message interface" },
