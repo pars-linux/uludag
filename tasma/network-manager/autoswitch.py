@@ -48,7 +48,7 @@ class autoSwitch:
         for device in deviceList:
             interface = netutils.findInterface(device)
             rfkillstate = interface.sysValue("device/rf_kill")
-            if rfkillstate and int(rfkillstate) <> RFKILL_STATE_HARD_BLOCKED:
+            if rfkillstate and int(rfkillstate) != RFKILL_STATE_HARD_BLOCKED:
                 result = True
                 break
         return result
