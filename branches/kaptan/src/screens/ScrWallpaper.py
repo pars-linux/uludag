@@ -70,6 +70,7 @@ class Widget(WallpaperWidget, ScreenWidget):
         self.wallpaperList = {}
         self.ultimateList = []
         self.wideList = {}
+        self.topList = {}
         lst = {}
 
         # create temp directory for wallpaper thumbnails
@@ -100,6 +101,11 @@ class Widget(WallpaperWidget, ScreenWidget):
                     resolution = False
 
                 try:
+                    isOnTop = parser.get_locale('Wallpaper', 'OnTop', '')
+                except ConfigParser.NoOptionError:
+                    isOnTop = False
+
+                try:
                     try:
                         wallpaperTitle = parser.get_locale('Wallpaper', 'Name[%s]'%self.catLang, '')
                     except:
@@ -112,6 +118,10 @@ class Widget(WallpaperWidget, ScreenWidget):
                     # get wide wallpapers
                     if resolution == "Wide":
                         self.wideList[wallpaperFile] = wallpaperTitle
+
+                    # list the exclusive wallpapers
+                    if isOnTop:
+                        self.topList[wallpaperFile] = wallpaperTitle
 
                     # get normal size wallpapers
                     self.wallpaperList[wallpaperFile] = wallpaperTitle
@@ -226,6 +236,19 @@ class Widget(WallpaperWidget, ScreenWidget):
         vals = wallDict.values()
         vals.sort()
         vals.reverse()
+
+        # put the exclusive wallpapers on the top of the list
+        tmpList = []
+
+        for i in vals:
+            for each in self.topList.values():
+                if i == each:
+                    vals.remove(each)
+                    tmpList.append(each)
+
+        for i in tmpList:
+            vals.append(i)
+
         return vals
 
     def shown(self):
