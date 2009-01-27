@@ -54,7 +54,7 @@ class Widget(MultipleWidget, ScreenWidget):
         else:
             self.pixMultiple.setPixmap(QPixmap(locate("data", "kaptan/pics/multiple_en.png")))
 
-        self.numInput.setRange(1, self.maxDesktops , 1, True)
+        self.numInput.setRange(2, self.maxDesktops , 1, True)
 
         # set texts
         self.setCaption(i18n("Multiple"))
