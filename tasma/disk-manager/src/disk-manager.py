@@ -93,9 +93,9 @@ class diskForm(mainForm):
         self.frame_detail.hide()
 
         self.knownFS = [
-            ('ext3', 'Ext3'),
-            ('ext2', 'Ext2'),
-            ('reiserfs', 'ReiserFS'),
+            ('ext3', 'Extended 3'),
+            ('ext2', 'Extended 2'),
+            ('reiserfs', 'Reiser FS'),
             ('xfs', 'XFS'),
             ('ntfs-3g', 'NTFS'),
             ('vfat', 'Fat 16/32'),
@@ -177,14 +177,11 @@ class diskForm(mainForm):
                             continue
                     label = "%s\n%s" % (part, self.getEntryInfo(part))
                     pixie = loadIcon('DiskAdded', size=32)
-                    check = QCheckListItem.On
                 else:
                     label = "%s\n%s" % (part, "")
                     pixie = loadIcon('DiskNotAdded', size=32)
-                    check = QCheckListItem.Off
                 listItem.setVisible(True)
-                disk_part = QCheckListItem(listItem, label, QCheckListItem.CheckBox)
-                disk_part.setState(check)
+                disk_part = QListViewItem(listItem, label)
                 disk_part.setMultiLinesEnabled(True)
                 disk_part.setPixmap(0, pixie)
                 self.items[disk_part] = part
@@ -239,6 +236,9 @@ class diskForm(mainForm):
         self.helpwin = HelpDialog(self)
         self.helpwin.show()
 
+    def slotQuit(self):
+        self.frame_detail.hide()
+
 
 class Module(KCModule):
     def __init__(self, parent, name):
@@ -267,6 +267,7 @@ def main():
         return
     app = KUniqueApplication(True, True, True)
 
+
     DBusQtMainLoop(set_as_default=True)
 
     win = QDialog()
@@ -277,6 +278,8 @@ def main():
     toplayout.addWidget(widget)
 
     app.setMainWidget(win)
+    app.connect(app, SIGNAL("lastWindowClosed()"), widget.slotQuit)
+
     sys.exit(win.exec_loop())
 
 if __name__ == '__main__':
