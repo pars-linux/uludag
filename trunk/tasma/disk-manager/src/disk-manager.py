@@ -79,7 +79,6 @@ class diskForm(mainForm):
         # Connections
         """
         self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
-        self.connect(self.btn_autoFind, SIGNAL('clicked()'), self.slotAutoFind)
         self.connect(self.btn_defaultOpts, SIGNAL('clicked()'),self.getDefaultOptions)
         self.connect(self.line_opts, SIGNAL('lostFocus()'), self.saveSession)
         self.connect(self.line_mountpoint, SIGNAL('lostFocus()'), self.saveSession)
@@ -88,11 +87,48 @@ class diskForm(mainForm):
         """
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
         self.connect(self.check_allPart, SIGNAL('clicked()'), self.slotSystem)
+        self.connect(self.btn_reset, SIGNAL('clicked()'), self.slotReset)
 
         self.list_main.header().hide()
         self.frame_detail.hide()
 
+        self.knownFS = [
+            ('ext3', 'Ext3'),
+            ('ext2', 'Ext2'),
+            ('reiserfs', 'ReiserFS'),
+            ('xfs', 'XFS'),
+            ('ntfs-3g', 'NTFS'),
+            ('vfat', 'Fat 16/32'),
+        ]
+        self.fsOptions = {
+            "vfat": "quiet,shortname=mixed,dmask=007,fmask=117,utf8,gid=6",
+            "ext2": "noatime",
+            "ext3": "noatime",
+            "ntfs-3g": "dmask=007,fmask=117,locale=tr_TR.UTF-8,gid=6",
+            "reiserfs": "noatime",
+            "xfs": "noatime",
+        }
+
+        for name, label in self.knownFS:
+            self.combo_fs.insertItem(label)
+
         self.initialize()
+
+    def getFSName(self):
+        for name, label in self.knownFS:
+            if label == self.combo_fs.currentText():
+                return name
+        return None
+
+    def setFSName(self, fsname):
+        for name, label in self.knownFS:
+            if fsname == name:
+                self.combo_fs.setCurrentText(label)
+                return
+        # Unknown FS type, add to list
+        self.knownFS.append((fsname, fsname))
+        self.combo_fs.insertItem(fsname)
+        self.combo_fs.setCurrentText(fsname)
 
     def initialize(self):
         # Package
@@ -136,8 +172,9 @@ class diskForm(mainForm):
         if not exception:
             for part in result[0]:
                 if part in self.entries:
-                    if not self.check_allPart.isChecked() and self.entries[part][0] in ['/', '/home']:
-                        continue
+                    if not self.check_allPart.isChecked():
+                        if self.entries[part][0] in ['/', '/home'] or self.entries[part][1] == 'swap':
+                            continue
                     label = "%s\n%s" % (part, self.getEntryInfo(part))
                     pixie = loadIcon('DiskAdded', size=32)
                     check = QCheckListItem.On
@@ -153,11 +190,7 @@ class diskForm(mainForm):
                 self.items[disk_part] = part
 
     def getEntryInfo(self, device):
-        try:
-            info = self.link.Disk.Manager[self.package].getEntry(device)
-        except dbus.DBusException:
-            device = "LABEL=%s" % self.labels[device]
-            info = self.link.Disk.Manager[self.package].getEntry(device)
+        info = self.entries[device]
         return "%s" % (info[0])
 
     def getDeviceByLabel(self, label):
@@ -173,10 +206,31 @@ class diskForm(mainForm):
 
     def slotList(self):
         item = self.list_main.selectedItem()
-        if item in self.items:
-            self.frame_detail.show()
-        else:
+        if item not in self.items:
             self.frame_detail.hide()
+            return
+        device = str(self.items[item])
+        if device not in self.entries:
+            self.line_mountpoint.setText("")
+            self.line_opts.setText("")
+        else:
+            options = []
+            for key, value in self.entries[device][2].iteritems():
+                if value:
+                    options.append("%s=%s" % (key, value))
+                else:
+                    options.append(key)
+            self.line_mountpoint.setText(self.entries[device][0])
+            self.line_opts.setText(",".join(options))
+            self.setFSName(self.entries[device][1])
+        self.frame_detail.show()
+
+    def slotReset(self):
+        name = self.getFSName()
+        if name in self.fsOptions:
+            self.line_opts.setText(self.fsOptions[name])
+        else:
+            self.line_opts.setText("")
 
     def slotSystem(self):
         self.initialize()
