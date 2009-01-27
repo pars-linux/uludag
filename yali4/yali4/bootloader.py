@@ -77,6 +77,9 @@ def find_grub_dev(dev_path, device_map=None):
             return d[1:-1]
     return ''
 
+def get_minor(dev_path):
+    return str(int(filter(lambda d: d.isdigit(), dev_path)) -1)
+
 class BootLoader:
     """ Bootloader Operations 
         Default bootlader is GRUB """
@@ -138,7 +141,7 @@ class BootLoader:
         major = find_grub_dev(install_root_path)
 
         # grub_root is the device on which we install.
-        minor = str(int(filter(lambda u: u.isdigit(), install_root)) -1)
+        minor = get_minor(install_root)
         grub_root = ",".join([major, minor])
 
         def find_boot_kernel():
@@ -194,7 +197,7 @@ class BootLoader:
     def grub_conf_append_win(self, install_dev, win_dev, win_root, win_fs):
         """ Appends Windows Partitions to the GRUB Conf """
         grub_dev = find_grub_dev(win_dev)
-        minor = str(int(filter(lambda u: u.isdigit(), win_root)) -1)
+        minor = get_minor(win_root)
         grub_root = ",".join([grub_dev, minor])
 
         ctx.debugger.log("GCAW : win_dev : %s , win_root : %s " % (win_dev, win_root))
@@ -227,7 +230,7 @@ class BootLoader:
         """ Install GRUB to the given device or partition """
 
         major = find_grub_dev(root_path)
-        minor = str(int(root_path[-1])-1)
+        minor = get_minor(root_path)
         root_path = "(%s,%s)" % (major, minor)
 
         if not grub_install_root.startswith("/dev/"):
@@ -238,7 +241,7 @@ class BootLoader:
         ctx.debugger.log("IG: I have found major as '%s'" % major)
         if ctx.installData.bootLoaderOption == 1:
             # means it will install to a partition not MBR
-            minor = str(int(grub_install_root[-1])-1)
+            minor = get_minor(grub_install_root)
             setupto = "(%s,%s)" % (major, minor)
         else:
             # means it will install to the MBR

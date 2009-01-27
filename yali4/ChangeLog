@@ -1,3 +1,6 @@
+2009-01-27 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Use global get_minor method, it causes some problems in grub.conf
+
 2009-01-12 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * Check if exists kernel entry before updating foreign grub.conf
          * Bug fixed at http://bugs.pardus.org.tr/9014
