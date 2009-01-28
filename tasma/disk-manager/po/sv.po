@@ -1,0 +1,72 @@
+# translation of sv.po to
+# translation of disk-manager.po to
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: sv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-28 20:33+0200\n"
+"PO-Revision-Date: 2009-01-28 20:19+0100\n"
+"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"Language-Team:  <sv@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/diskform.py:41 src/diskform.py:119
+msgid "Disks"
+msgstr "Hårddiskar"
+
+#: src/diskform.py:42 src/diskform.py:120
+msgid "Partitions"
+msgstr "Partitioner"
+
+#: src/diskform.py:116 src/disk-manager.py:62 src/disk-manager.py:310
+msgid "Disk Manager"
+msgstr "Hårddiskhanteraren"
+
+#: src/diskform.py:117
+msgid "Add Missing Disks Automatically"
+msgstr "Lägg till saknade hårddiskar automatiskt"
+
+#: src/diskform.py:118
+msgid "Show System Partitions"
+msgstr "Visa systempartitioner"
+
+#: src/diskform.py:122
+msgid "Mount Automatically"
+msgstr "Montera automatiskt"
+
+#: src/diskform.py:123
+msgid "File System Type :"
+msgstr "Filsystem:"
+
+#: src/diskform.py:124
+msgid "Mount Point :"
+msgstr "Monteringspunkt:"
+
+#: src/diskform.py:125
+msgid "Reset"
+msgstr "Återställ"
+
+#: src/diskform.py:126
+msgid "Additional Options :"
+msgstr "Extra alternativ:"
+
+#: src/disk-manager.py:251
+msgid "Mount point is missing"
+msgstr "Monteringspunkt saknas"
+
+#: src/disk-manager.py:254
+msgid "Mount point is does not exist"
+msgstr "Monteringspunkten finns inte"
+
+#: src/disk-manager.py:302
+msgid "Disk Manager is already running!"
+msgstr "Hårddiskhanteraren körs redan!"
+
