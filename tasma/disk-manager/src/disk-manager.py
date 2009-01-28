@@ -78,7 +78,6 @@ class diskForm(mainForm):
 
         # Connections
         """
-        self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
         self.connect(self.btn_defaultOpts, SIGNAL('clicked()'),self.getDefaultOptions)
         self.connect(self.line_opts, SIGNAL('lostFocus()'), self.saveSession)
         self.connect(self.line_mountpoint, SIGNAL('lostFocus()'), self.saveSession)
@@ -88,6 +87,7 @@ class diskForm(mainForm):
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
         self.connect(self.check_allPart, SIGNAL('clicked()'), self.slotSystem)
         self.connect(self.btn_reset, SIGNAL('clicked()'), self.slotReset)
+        self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
 
         self.list_main.header().hide()
         self.frame_detail.hide()
@@ -210,6 +210,8 @@ class diskForm(mainForm):
         if device not in self.entries:
             self.line_mountpoint.setText("")
             self.line_opts.setText("")
+            self.combo_fs.setCurrentText(self.knownFS[0][1])
+            self.frame_entry.setChecked(False)
         else:
             options = []
             for key, value in self.entries[device][2].iteritems():
@@ -220,7 +222,39 @@ class diskForm(mainForm):
             self.line_mountpoint.setText(self.entries[device][0])
             self.line_opts.setText(",".join(options))
             self.setFSName(self.entries[device][1])
+            self.frame_entry.setChecked(True)
         self.frame_detail.show()
+
+    def slotUpdate(self):
+        item = self.list_main.selectedItem()
+        if item not in self.items:
+            self.frame_detail.hide()
+            return
+        device = str(self.items[item])
+        if device in self.labels:
+            device = "LABEL=%s" % self.labels[device]
+        if self.frame_entry.isChecked():
+            # Path
+            path = str(self.line_mountpoint.text())
+            # FS type
+            fsType = str(self.getFSName())
+            # Options
+            options = {}
+            for opt in str(self.line_opts.text()).split(","):
+                if "=" in opt:
+                    key, value = opt.split("=", 1)
+                    options[key] = value
+                else:
+                    options[opt] = ""
+            if not path:
+                KMessageBox.sorry(self,i18n("Mount point is missing"), i18n("Error"))
+                return
+            if not os.path.exists(path):
+                KMessageBox.sorry(self,i18n("Mount point is does not exist"), i18n("Error"))
+                return
+            self.link.Disk.Manager[self.package].addEntry(device, path, fsType, options)
+        else:
+            self.link.Disk.Manager[self.package].removeEntry(device)
 
     def slotReset(self):
         name = self.getFSName()
@@ -237,6 +271,7 @@ class diskForm(mainForm):
         self.helpwin.show()
 
     def slotQuit(self):
+        self.combo_fs.clear()
         self.frame_detail.hide()
 
 
