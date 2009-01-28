@@ -1,3 +1,4 @@
+# translation of es.po to español
 # translation of es.po to
 # Disk Manager Interface
 # Copyright (C) 2006-2007, TÜBİTAK/UEKAE
@@ -7,14 +8,15 @@
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007, 2008.
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 # klemens <click3d at linuxmail org>, 2007.
+# Klemens Häckel <click3d at linuxmail dot com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-28 20:33+0200\n"
-"PO-Revision-Date: 2008-06-15 08:59-0400\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
-"Language-Team:  <es@li.org>\n"
+"PO-Revision-Date: 2009-01-28 19:48-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
+"Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,18 +35,16 @@ msgid "Disk Manager"
 msgstr "Montaje de Particiones"
 
 #: src/diskform.py:117
-#, fuzzy
 msgid "Add Missing Disks Automatically"
-msgstr "Agregar articiones automaticamente"
+msgstr "Agregar particiones faltantes automáticamente"
 
 #: src/diskform.py:118
 msgid "Show System Partitions"
 msgstr "Mostrar particiones del sistema"
 
 #: src/diskform.py:122
-#, fuzzy
 msgid "Mount Automatically"
-msgstr "Agregar articiones automaticamente"
+msgstr "Montar automáticamente"
 
 #: src/diskform.py:123
 msgid "File System Type :"
@@ -52,52 +52,27 @@ msgstr "Sistema de Archivos:"
 
 #: src/diskform.py:124
 msgid "Mount Point :"
-msgstr "Punto de Montaje:"
+msgstr "Punto de Montaje :"
 
 #: src/diskform.py:125
 msgid "Reset"
-msgstr ""
+msgstr "Resetear"
 
 #: src/diskform.py:126
 msgid "Additional Options :"
 msgstr "Opciones adicionales:"
 
 #: src/disk-manager.py:251
-#, fuzzy
+
 msgid "Mount point is missing"
-msgstr "Punto de Montaje:"
+msgstr "Punto de montaje falta"
 
 #: src/disk-manager.py:254
+# i think this is bad english, should say: "Mount point does not exist" (no "is")
 msgid "Mount point is does not exist"
-msgstr ""
+msgstr "Punto de montaje no existe"
 
 #: src/disk-manager.py:302
 msgid "Disk Manager is already running!"
 msgstr "Administrador de Puntos de Montajes ya se está ejecutando"
 
-#~ msgid "Get Default Options"
-#~ msgstr "Usar opciones predeterminadas"
-
-#~ msgid "To update disk changes the manager must run as root"
-#~ msgstr "Para aplicar cambios se debe ejecutar como usuario root"
-
-#~ msgid "User not in disk group !"
-#~ msgstr "Usuario no pertenece al grupo disk !"
-
-#~ msgid "File /etc/fstab is not correct, please fix it manually."
-#~ msgstr "Archivo /etc/fstab no está correcto, favor corrijalo manualmente"
-
-#~ msgid "Completed"
-#~ msgstr "Completado"
-
-#~ msgid "File /etc/fstab updated !"
-#~ msgstr "Archivo /etc/fstab actualizado !"
-
-#~ msgid "%s for %s failure !!"
-#~ msgstr "%s de %s fallado !!"
-
-#~ msgid "Mount Point"
-#~ msgstr "Punto de Montaje"
-
-#~ msgid "File System Type"
-#~ msgstr "Sistema de Archivos"
