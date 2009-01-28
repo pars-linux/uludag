@@ -21,6 +21,8 @@ version = "2.1.7"
 
 distfiles = """
     README
+    AUTHORS
+    COPYING
     *.py
     *.desktop
     images/*.png
