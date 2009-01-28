@@ -1,6 +1,6 @@
 2009-01-05 Pınar Yanardağ <pinar@pardus.org.tr>
 	* src/main.cpp: Add Credits for translators, update version to 1.5.3
-	* src/ticonview.cpp: Disable tooptip support
+	* src/ticonview.cpp: Disable tooltip support
 
 2008-11-10 Ozan Çağlayan <ozan@pardus.org.tr>
 	* *desktop: Fix all desktop files to make them XDG compliant.
