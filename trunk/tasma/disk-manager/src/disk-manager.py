@@ -85,13 +85,11 @@ class diskForm(mainForm):
         self.connect(self.btn_help, SIGNAL('clicked()'), self.slotHelp)
         """
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
-        self.connect(self.check_allPart, SIGNAL('clicked()'), self.slotSystem)
         self.connect(self.btn_reset, SIGNAL('clicked()'), self.slotReset)
         self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
 
         self.list_main.header().hide()
         self.frame_detail.hide()
-        self.btn_autoFind.hide()
 
         self.knownFS = [
             ('ext3', 'Extended 3'),
@@ -173,9 +171,6 @@ class diskForm(mainForm):
         if not exception:
             for part in result[0]:
                 if part in self.entries:
-                    if not self.check_allPart.isChecked():
-                        if self.entries[part][0] in ['/', '/home'] or self.entries[part][1] == 'swap':
-                            continue
                     label = "%s\n%s" % (part, self.getEntryInfo(part))
                     pixie = loadIcon('DiskAdded', size=32)
                 else:
@@ -263,9 +258,6 @@ class diskForm(mainForm):
             self.line_opts.setText(self.fsOptions[name])
         else:
             self.line_opts.setText("")
-
-    def slotSystem(self):
-        self.initialize()
 
     def slotHelp(self):
         self.helpwin = HelpDialog(self)
