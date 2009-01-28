@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>598</width>
-            <height>480</height>
+            <width>462</width>
+            <height>408</height>
         </rect>
     </property>
     <property name="minimumSize">
@@ -133,38 +133,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel" row="0" column="1">
-                    <property name="name">
-                        <cstring>textLabel3</cstring>
-                    </property>
-                    <property name="text">
-                        <string>File System Type :</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="0">
-                    <property name="name">
-                        <cstring>textLabel2</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Mount Point :</string>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="1" column="0">
-                    <property name="name">
-                        <cstring>line_mountpoint</cstring>
-                    </property>
-                </widget>
-                <widget class="QComboBox" row="1" column="1">
-                    <property name="name">
-                        <cstring>combo_fs</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="3" column="0">
-                    <property name="name">
-                        <cstring>line_opts</cstring>
-                    </property>
-                </widget>
-                <spacer row="4" column="0">
+                <spacer row="1" column="0">
                     <property name="name">
                         <cstring>spacer1</cstring>
                     </property>
@@ -176,34 +145,93 @@
                     </property>
                     <property name="sizeHint">
                         <size>
-                            <width>420</width>
+                            <width>373</width>
                             <height>21</height>
                         </size>
                     </property>
                 </spacer>
-                <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>textLabel4</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Additional Options :</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="3" column="1">
-                    <property name="name">
-                        <cstring>btn_reset</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Reset</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="4" column="1">
+                <widget class="QPushButton" row="1" column="1">
                     <property name="name">
                         <cstring>btn_update</cstring>
                     </property>
                     <property name="text">
                         <string>Save</string>
                     </property>
+                </widget>
+                <widget class="QGroupBox" row="0" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>frame_entry</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Raised</enum>
+                    </property>
+                    <property name="lineWidth">
+                        <number>-2</number>
+                    </property>
+                    <property name="title">
+                        <string>Mount Automatically</string>
+                    </property>
+                    <property name="checkable">
+                        <bool>true</bool>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <widget class="QLabel" row="0" column="1">
+                            <property name="name">
+                                <cstring>textLabel3</cstring>
+                            </property>
+                            <property name="text">
+                                <string>File System Type :</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="0">
+                            <property name="name">
+                                <cstring>textLabel2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Mount Point :</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit" row="1" column="0">
+                            <property name="name">
+                                <cstring>line_mountpoint</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="1">
+                            <property name="name">
+                                <cstring>combo_fs</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit" row="3" column="0">
+                            <property name="name">
+                                <cstring>line_opts</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QPushButton" row="3" column="1">
+                            <property name="name">
+                                <cstring>btn_reset</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Reset</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
+                            <property name="name">
+                                <cstring>textLabel4</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Additional Options :</string>
+                            </property>
+                        </widget>
+                    </grid>
                 </widget>
             </grid>
         </widget>
