@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-14 11:57+0200\n"
+"POT-Creation-Date: 2009-01-28 13:58+0200\n"
 "PO-Revision-Date: 2009-01-15 16:58+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -91,14 +91,16 @@ msgid "Automatic"
 msgstr "Automatisk"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-msgid "This option will try to find suitable free space or resizable partitions"
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Det här alternativet försöker hitta ett lämpligt ledigt utrymme eller "
 "partitioner för storleksändring"
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
-msgstr "Försök att använda ledigt utrymme eller storleksändra befintliga partitioner"
+msgstr ""
+"Försök att använda ledigt utrymme eller storleksändra befintliga partitioner"
 
 #: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
@@ -758,7 +760,8 @@ msgstr "Den finns en förfrågan av samma partitionstyp"
 
 #: yali4/gui/DiskWidgets.py:323
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partition <b>%(partition)s</b> kommer att <b>formateras</b> som <b>%(fsType)"
 "s</b>."
@@ -942,15 +945,18 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Caps Lock är aktiverad!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Caps Lock är aktiverad!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Lösenordet är för kort!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Lösenordet är för kort!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:128
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Lösenorden stämmer inte!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Lösenorden stämmer inte!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:133
 msgid ""
@@ -1026,7 +1032,8 @@ msgstr "Kontrollera ditt media"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr "Undvik installationsproblem genom att kontrollera cd-skivans integritet..."
+msgstr ""
+"Undvik installationsproblem genom att kontrollera cd-skivans integritet..."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1151,7 +1158,8 @@ msgstr "Installerar systemet..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr "Installationen tar uppskattningsvis 30 minuter beroende på din dator..."
+msgstr ""
+"Installationen tar uppskattningsvis 30 minuter beroende på din dator..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1622,11 +1630,13 @@ msgstr "<font color=\"#FF6D19\">Lösenordet är för kort!</font>"
 
 #: yali4/gui/ScrUsers.py:178
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
-msgstr "<font color=\"#FF6D19\">Användarnamnet finns redan, välj ett annat!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Användarnamnet finns redan, välj ett annat!</font>"
 
 #: yali4/gui/ScrUsers.py:181
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
-msgstr "<font color=\"#FF6D19\">Användarnamnet innehåller ogiltiga tecken!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Användarnamnet innehåller ogiltiga tecken!</font>"
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
@@ -1704,7 +1714,7 @@ msgstr "Visa hjälp"
 msgid "Hide Help"
 msgstr "Dölj hjälp"
 
-#: yali4/bootloader.py:213 yali4/bootloader.py:218
+#: yali4/bootloader.py:216 yali4/bootloader.py:221
 msgid "Windows"
 msgstr "Windows"
 
@@ -1723,7 +1733,9 @@ msgstr "Spårning:"
 msgid ""
 "Plugin (%s) not found or error occurred while loading. Switching to normal "
 "installation process."
-msgstr "Hittade inte insticksprogrammet (%s), eller så uppstod ett fel vid laddning. Återgår till normal installationsprocess."
+msgstr ""
+"Hittade inte insticksprogrammet (%s), eller så uppstod ett fel vid laddning. "
+"Återgår till normal installationsprocess."
 
 #: yali4/installer.py:143
 msgid "YALI Is Working..."
@@ -2003,4 +2015,3 @@ msgstr "Arkiveringspartition"
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Användare <b>%s</b>s hemkatalog förbereds..."
-
