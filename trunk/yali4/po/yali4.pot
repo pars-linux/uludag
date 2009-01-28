@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-14 11:57+0200\n"
+"POT-Creation-Date: 2009-01-28 13:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1352,7 +1352,7 @@ msgstr ""
 msgid "Hide Help"
 msgstr ""
 
-#: yali4/bootloader.py:213 yali4/bootloader.py:218
+#: yali4/bootloader.py:216 yali4/bootloader.py:221
 msgid "Windows"
 msgstr ""
 

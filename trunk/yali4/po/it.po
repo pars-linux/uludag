@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-14 11:57+0200\n"
+"POT-Creation-Date: 2009-01-28 13:58+0200\n"
 "PO-Revision-Date: 2007-11-12 20:52+0100\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -1558,7 +1558,7 @@ msgstr ""
 msgid "Hide Help"
 msgstr ""
 
-#: yali4/bootloader.py:213 yali4/bootloader.py:218
+#: yali4/bootloader.py:216 yali4/bootloader.py:221
 msgid "Windows"
 msgstr "Windows"
 

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-14 11:57+0200\n"
+"POT-Creation-Date: 2009-01-28 13:58+0200\n"
 "PO-Revision-Date: 2009-01-19 01:54+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -97,7 +97,8 @@ msgstr "Automatisch"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:117
-msgid "This option will try to find suitable free space or resizable partitions"
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
 "grössenänderbare Partition zu finden"
@@ -622,10 +623,10 @@ msgid ""
 "features, will help securely surf the Internet. Pardus 2008 includes Mozilla "
 "Firefox 3.0, and you can enrich Firefox with thousands of extensions.\n"
 msgstr ""
-"Mozilla Firefox, mit seiner Schnelligkeit, ständigen Entwicklung und "
-"vielen neuen Features wird Ihnen helfen im Internet sicher zu surfen. Sie "
-"können in Pardus 2008 beinhalteten Mozilla Firefox 3.0 mit tausenden von "
-"Erweiterungen anreichern.\n"
+"Mozilla Firefox, mit seiner Schnelligkeit, ständigen Entwicklung und vielen "
+"neuen Features wird Ihnen helfen im Internet sicher zu surfen. Sie können in "
+"Pardus 2008 beinhalteten Mozilla Firefox 3.0 mit tausenden von Erweiterungen "
+"anreichern.\n"
 
 #: yali4/gui/descSlide.py:30
 msgid ""
@@ -691,8 +692,9 @@ msgid ""
 "MSN, Yahoo!, ICQ, AIM, GTalk and Jabber, and can talk to your friends in "
 "different networks using Kopete.\n"
 msgstr ""
-"Sie können via Kopete gleichzeitg mit mehreren Konten von verschiedenen Instant Messenger-Diensten, wie MSN, Yahoo!, ICQ, AIM, GTalk und Jabber, mit Ihren Freunden "
-"unterhalten.\n"
+"Sie können via Kopete gleichzeitg mit mehreren Konten von verschiedenen "
+"Instant Messenger-Diensten, wie MSN, Yahoo!, ICQ, AIM, GTalk und Jabber, mit "
+"Ihren Freunden unterhalten.\n"
 
 #: yali4/gui/descSlide.py:42
 msgid ""
@@ -700,8 +702,8 @@ msgid ""
 "burning CD/DVD images to discs are just a few of the things you can do with "
 "K3b.\n"
 msgstr ""
-"Kopieren Sie CDs (oder DVDs), erstellen Sie Daten- oder Audio-CDs, erstellen und brennen"
-"Sie ISO-Image- und CD/DVD-Image-Dateien auf Discs .\n"
+"Kopieren Sie CDs (oder DVDs), erstellen Sie Daten- oder Audio-CDs, erstellen "
+"und brennenSie ISO-Image- und CD/DVD-Image-Dateien auf Discs .\n"
 
 #: yali4/gui/descSlide.py:44
 msgid ""
@@ -779,7 +781,8 @@ msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
 #: yali4/gui/DiskWidgets.py:323
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%"
 "(fsType)s</b>."
@@ -1083,7 +1086,8 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr "<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
+msgstr ""
+"<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1188,7 +1192,8 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
+msgstr ""
+"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1252,7 +1257,8 @@ msgstr "Konfiguration des Pakets: %s"
 #: yali4/gui/ScrInstall.py:157
 #, python-format
 msgid "Package install failed : <b>%s</b><br>Do you want to retry ?"
-msgstr "Paketinstallation fehlgeschlagen : <b>%s</b><br>Möchten Sie wieder versuchen?"
+msgstr ""
+"Paketinstallation fehlgeschlagen : <b>%s</b><br>Möchten Sie wieder versuchen?"
 
 #: yali4/gui/ScrInstall.py:177
 msgid "Creating baselayout for your system!"
@@ -1554,7 +1560,8 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:186
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr ""
+"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:201
 msgid "Bootloader Settings"
@@ -1757,7 +1764,7 @@ msgstr "Hilfe anzeigen"
 msgid "Hide Help"
 msgstr "Hilfe ausblenden"
 
-#: yali4/bootloader.py:213 yali4/bootloader.py:218
+#: yali4/bootloader.py:216 yali4/bootloader.py:221
 msgid "Windows"
 msgstr "Windows"
 
@@ -1776,7 +1783,9 @@ msgstr "Ablaufverfolgung:"
 msgid ""
 "Plugin (%s) not found or error occurred while loading. Switching to normal "
 "installation process."
-msgstr "Plugin (%s) nicht gefunden oder ein Fehler ist beim Laden aufgetreten. Stelle auf normalen Installationsprozess um."
+msgstr ""
+"Plugin (%s) nicht gefunden oder ein Fehler ist beim Laden aufgetreten. "
+"Stelle auf normalen Installationsprozess um."
 
 #: yali4/installer.py:143
 msgid "YALI Is Working..."
@@ -2056,4 +2065,3 @@ msgstr "Archiv-Partition"
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis wird erstellt.."
-

@@ -1,3 +1,6 @@
+2009-01-28 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * New release 2.0.8
+
 2009-01-27 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * Do not override selected partitioning method
          * Use global get_minor method, it causes some problems in grub.conf

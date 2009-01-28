@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-14 11:57+0200\n"
+"POT-Creation-Date: 2009-01-28 13:58+0200\n"
 "PO-Revision-Date: 2009-01-14 20:32-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
 "Language-Team: español <es@li.org>\n"
@@ -96,7 +96,8 @@ msgid "Automatic"
 msgstr "Automático"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-msgid "This option will try to find suitable free space or resizable partitions"
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Esta opción intentará encontrar espacio adecuado disponible, o particiones "
 "que se puedan redimensionar"
@@ -617,9 +618,9 @@ msgstr ""
 
 # i changed in spanish ".. with thousands of extensions" to "with a variety of extensions"
 # (Firefox might get into big trouble if you apply all extension you find, better only pick the ones you want)
-#: yali4/gui/descSlide.py:28
 # i suggest you should take out the Pardus and Firefox version NUMBERS !!
 # to avoid required changes, when the versions change..
+#: yali4/gui/descSlide.py:28
 msgid ""
 "Mozilla Firefox, with its speed, constant development and many advanced "
 "features, will help securely surf the Internet. Pardus 2008 includes Mozilla "
@@ -672,7 +673,8 @@ msgid ""
 "suggest similar media, bringing even more possibilities.\n"
 msgstr ""
 "Amarok es un reproductor de medios avanzado y práctico. Le posibilita buscar "
-"Tapas de CDs, las letras de las músicas, y gracias al soporte Last.FM puede sugerirle medios similares, y así ofrecerle más alternativas.\n"
+"Tapas de CDs, las letras de las músicas, y gracias al soporte Last.FM puede "
+"sugerirle medios similares, y así ofrecerle más alternativas.\n"
 
 #: yali4/gui/descSlide.py:38
 msgid ""
@@ -703,8 +705,8 @@ msgid ""
 "K3b.\n"
 msgstr ""
 "Copiar CDs (o DVDs), crear CDs de datos o audio, crear imágenes ISO y quemar "
-"imágenes guardadas de CD/DVD a discos, son algunas de las operaciones principales que "
-"se pueden realizar con el programa K3b.\n"
+"imágenes guardadas de CD/DVD a discos, son algunas de las operaciones "
+"principales que se pueden realizar con el programa K3b.\n"
 
 # translators, please add here some additional non-turkish websites/forums..
 #: yali4/gui/descSlide.py:44
@@ -786,18 +788,21 @@ msgstr "Hay una petición para el mismo tipo de partición."
 
 #: yali4/gui/DiskWidgets.py:323
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr "Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr ""
+"Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
 
 # favor verificar contexto,
 # check context, should this say "format as.." instead o "selected as .." ?
 #: yali4/gui/DiskWidgets.py:338 yali4/gui/ScrSummary.py:161
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr ""
+"Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
-#: yali4/gui/DiskWidgets.py:357
 # in english: use plural !! - should say "partitions"
+#: yali4/gui/DiskWidgets.py:357
 msgid "Too many primary partition !"
 msgstr "Demasiadas particiones primarias !"
 
@@ -810,8 +815,8 @@ msgstr ""
 "Usted debería eliminar una de las particiones primarias de su lista de "
 "particiones !"
 
-#: yali4/gui/DiskWidgets.py:382
 # is this a (duplicate) corrected version of string 123 (#: yali4/gui/DiskWidgets.py:357 ??)
+#: yali4/gui/DiskWidgets.py:382
 msgid "Too many primary partitions !"
 msgstr "Demasiadas particiones primarias !"
 
@@ -829,7 +834,9 @@ msgstr ""
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MB</b> as <b>%(fs)s</b>."
-msgstr "Partición <b>%(partition)s</b> <b>agregada</b> a dispositivo <b>%(device)s</b> de <b>%(size)s MB</b> como <b>%(fs)s</b>."
+msgstr ""
+"Partición <b>%(partition)s</b> <b>agregada</b> a dispositivo <b>%(device)s</"
+"b> de <b>%(size)s MB</b> como <b>%(fs)s</b>."
 
 #: yali4/gui/DiskWidgets.py:426
 msgid "Delete All Partitions"
@@ -980,7 +987,8 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
@@ -990,7 +998,8 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:128
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:133
 msgid ""
@@ -1069,7 +1078,8 @@ msgstr "Verifique su CD"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr ""
+"Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1091,7 +1101,8 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr "<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
+msgstr ""
+"<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1526,7 +1537,8 @@ msgstr "Usuario %s (<b>%s</b>) agregado."
 #: yali4/gui/ScrSummary.py:135
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
-msgstr "Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
+msgstr ""
+"Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
 
 #: yali4/gui/ScrSummary.py:141
 msgid "Hostname Settings"
@@ -1572,7 +1584,8 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:186
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr ""
+"Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:201
 msgid "Bootloader Settings"
@@ -1699,7 +1712,8 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr "<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
 
 #: yali4/gui/ScrUsers.py:241
 msgid "Update User"
@@ -1774,7 +1788,7 @@ msgid "Hide Help"
 msgstr "Oultar Ayuda"
 
 # you mean the MS product ? if you wanted to say just "pencereler" the translation should be: "Ventanas"
-#: yali4/bootloader.py:213 yali4/bootloader.py:218
+#: yali4/bootloader.py:216 yali4/bootloader.py:221
 msgid "Windows"
 msgstr "Windows"
 
@@ -1789,14 +1803,16 @@ msgstr ""
 msgid "Backtrace:"
 msgstr "Trazo inverso:"
 
-#: yali4/installer.py:137
-#, python-format
 # translated in spanish: error while loading module xx. etc...
 # i think it should be ok, favor revisar
+#: yali4/installer.py:137
+#, python-format
 msgid ""
 "Plugin (%s) not found or error occurred while loading. Switching to normal "
 "installation process."
-msgstr "Error durante la carga del módulo (%s). Cambiando al proceso de instalación normal."
+msgstr ""
+"Error durante la carga del módulo (%s). Cambiando al proceso de instalación "
+"normal."
 
 #: yali4/installer.py:143
 msgid "YALI Is Working..."
@@ -2079,4 +2095,3 @@ msgstr "Partición de datos"
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Preparando directorio home de usuario <b>%s</b>.."
-

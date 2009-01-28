@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-14 11:57+0200\n"
+"POT-Creation-Date: 2009-01-28 13:58+0200\n"
 "PO-Revision-Date: 2008-07-03 11:13+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -1740,7 +1740,7 @@ msgstr "Montrer l'aide"
 msgid "Hide Help"
 msgstr "Cacher l'aide"
 
-#: yali4/bootloader.py:213 yali4/bootloader.py:218
+#: yali4/bootloader.py:216 yali4/bootloader.py:221
 msgid "Windows"
 msgstr "Windows"
 
