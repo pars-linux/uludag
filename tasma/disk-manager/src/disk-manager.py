@@ -91,6 +91,7 @@ class diskForm(mainForm):
 
         self.list_main.header().hide()
         self.frame_detail.hide()
+        self.btn_autoFind.hide()
 
         self.knownFS = [
             ('ext3', 'Extended 3'),
