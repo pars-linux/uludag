@@ -1,4 +1,4 @@
-SUBDIRS = about
+SUBDIRS = themes
 
 INCLUDES = $(all_includes) `pkg-config --cflags hal`
 

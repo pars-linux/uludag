@@ -57,19 +57,18 @@
 
 #include "sysinfo.h"
 
-
 using namespace KIO;
 #define BR "<br>"
 
-static QString formattedUnit( unsigned long long value, int post=1)
+static QString formattedUnit( unsigned long long value, int post=1 )
 {
-    if (value > (1000 * 1000))
-        if (value > (1000 * 1000 * 1000))
-            return i18n("%1 GB").arg(KGlobal::locale()->formatNumber(value / (1000 * 1000 * (post == 0 ? 1000 : 1000.0)), post));
+    if (value > (1024 * 1024))
+        if (value > (1024 * 1024 * 1024))
+            return i18n("%1 GB").arg(KGlobal::locale()->formatNumber(value / (1024 * 1024 * (post == 0 ? 1024 : 1024.0)), post));
         else
-            return i18n("%1 MB").arg(KGlobal::locale()->formatNumber(value / (1000 * (post == 0 ? 1000 : 1000.0)), post));
+            return i18n("%1 MB").arg(KGlobal::locale()->formatNumber(value / (1024 * (post == 0 ? 1024 : 1024.0)), post));
     else
-        return i18n("%1 KB").arg(KGlobal::locale()->formatNumber(value / (post == 0 ? 1000 : 1000.0), post));
+        return i18n("%1 KB").arg(KGlobal::locale()->formatNumber(value / (post == 0 ? 1024 : 1024.0), post));
 }
 
 kio_sysinfoProtocol::kio_sysinfoProtocol( const QCString & pool_socket, const QCString & app_socket )
@@ -85,7 +84,54 @@ kio_sysinfoProtocol::~kio_sysinfoProtocol()
     delete m_dcopClient;
 }
 
-static QString formatStr( QString st) {
+QString kio_sysinfoProtocol::startStock( const QString title )
+{
+    QString templator = QString ("<table class=\"stock\">"
+                                 "<tr>"
+                                 "     <th colspan=3><h2>%1</h2></th>"
+                                 "</tr>").arg(title);
+    return templator;
+}
+
+QString kio_sysinfoProtocol::addToStock( const QString _icon, const QString text, const QString details, const QString link )
+{
+    QString iconpath = icon(_icon, 22, true);
+    QString templator;
+    QString temp = "";
+
+    if ( link != "" )
+        temp = QString(" onClick=\"location.href='%1'\" ").arg(link);
+
+    templator += QString ("<tr class=\"info\" %1>").arg(temp);
+    templator += QString ("<td><img src=\"%1\"></td><td>%2").arg(iconpath).arg(text);
+
+    if ( details != "" )
+        templator += QString("<span class=\"detail\">[ %1 ]</span>").arg(details);
+
+    templator += "</td><td></td></tr>";
+    return templator;
+}
+
+QString kio_sysinfoProtocol::addProgress( const QString _icon, const unsigned long long size )
+{
+    QString iconpath = icon(_icon, 22, true);
+    QString progress = "file:" + locate( "data", "sysinfo/themes/2008/images/progress.png" );
+    QString templator;
+
+    templator += QString ("<tr class=\"progress\">");
+    templator += QString ("<td><img src=\"%1\"></td>").arg(iconpath);
+    templator += QString ("<td><img src=\"%1\" width=\"%2%\"></td><td></td></tr>").
+                         arg(progress).arg(size);
+    return templator;
+}
+
+QString kio_sysinfoProtocol::finishStock()
+{
+    return QString ("</table>");
+}
+
+static QString formatStr( QString st ) 
+{
     if ( st == "" )
         return i18n("Not Available");
     return st;
@@ -96,116 +142,112 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     mimeType( "application/x-sysinfo" );
 
     // header
-    QString location = locate( "data", "sysinfo/about/my-computer.html" );
+    QString location = locate( "data", "sysinfo/themes/2008/index.html" );
     QFile f( location );
     f.open( IO_ReadOnly );
     QTextStream t( &f );
 
-    infoMessage(i18n("Looking for hardware information..."));
+    infoMessage( i18n( "Looking for hardware information..." ) );
 
     QString content = t.read();
     content = content.arg( i18n( "My Computer" ) ); // <title>
-
-    content = content.arg( "file:" + locate( "data", "sysinfo/about/style.css" ) );
-
-    content = content.arg( i18n( "My Computer" ) ); // <h1>
+    content = content.arg( "file:" + locate( "data", "sysinfo/themes/2008/stil.css" ) );
     content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
 
-    QString sysInfo = "<div id=\"column\">"; // table with 2 cols
+    QString dynamicInfo, staticInfo;
     QString dummy;
 
-    // OS info
+    // Dynamic Info
 
     // common folders
-    sysInfo += "<h2 id=\"dirs\">" + i18n( "Common Folders" ) + "</h2>";
-    sysInfo += "<ul style=\"background-image:url('" + icon( "folder_orange", 48, true) + "');\">";
-    // We don't have a separate Documents directory in Pardus
-    //    sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( KGlobalSettings::documentPath() ) + i18n( "My Documents" ) + "</a></li>";
-    sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( QDir::homeDirPath() ) + i18n( "My Home Folder" ) + "</a></li>";
-    sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( QDir::rootDirPath() ) + i18n( "Root Folder" ) + "</a></li>";
-    sysInfo += "<li><a href=\"remote:/\">" + i18n( "Network Folders" ) + "</a></li>";
-    sysInfo += "</ul>";
+    dynamicInfo += startStock( i18n( "Common Folders" ) );
+    dynamicInfo += addToStock( "folder_home", i18n( "My Home Folder" ), QDir::homeDirPath(), "file:" + QDir::homeDirPath() );
+    dynamicInfo += addToStock( "folder_red", i18n( "Root Folder" ), QDir::rootDirPath(), "file:" + QDir::rootDirPath() );
+    dynamicInfo += addToStock( "network", i18n( "Network Folders" ), "remote:/" , "remote:/" );
+    dynamicInfo += finishStock();
 
     // net info
     int state = netInfo();
-    if (state > 1) { // assume no network manager / networkstatus
-      sysInfo += "<h2 id=\"net\">";
-      sysInfo += i18n( "Network Status" ) + "</h2>";
-      sysInfo += "<ul style=\"background-image:url('" + icon( "network", 48, true) + "');\">";
-      sysInfo += "<li>" + netStatus( state ) + "</li>";
-      sysInfo += "</ul>";
+    if (state >= 1) { // assume no network manager / networkstatus
+        dynamicInfo += startStock( i18n( "Network" ) );
+        dynamicInfo += addToStock( "network", netStatus( state ));
+        dynamicInfo += finishStock();
     }
+
+    // memory info
+    unsigned long int percent = memoryInfo();
+
+    dynamicInfo += startStock( i18n( "Memory" ) );
+    dynamicInfo += addToStock( "memory", i18n( "%1 free of %2" ).arg( m_info[MEM_FREERAM] ).arg( m_info[MEM_TOTALRAM] ), m_info[MEM_USAGE]);
+    dynamicInfo += addProgress( "memory", percent);
+    dynamicInfo += finishStock();
+
+    content = content.arg( dynamicInfo ); // put the dynamicInfo text into the dynamic left box
+
+    // Disk Info
+
+    content = content.arg( i18n( "Disks" ) );
+    content = content.arg(diskInfo()); // put the discInfo text into the disk right box
+
+    // Static Info
+
+    // Os info
+    osInfo();
+    staticInfo += startStock( i18n( "Operating System" ) );
+    staticInfo += addToStock( "system", m_info[OS_SYSNAME] + " <b>" + m_info[OS_RELEASE] + "</b>", m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] );
+    staticInfo += addToStock( "system", i18n( "Kde <b>%1</b> on <b>%2</b>" ).arg(KDE::versionString()).arg( m_info[OS_SYSTEM] ));
+    staticInfo += finishStock();
+
+    // update content..
+    content = content.arg( staticInfo );
+    staticInfo = "";
 
     // CPU info
     cpuInfo();
     if ( !m_info[CPU_MODEL].isNull() )
     {
-        sysInfo += "<h2 id=\"cpu\">" + i18n( "CPU Information" ) + "</h2>";
-        sysInfo += "<ul style=\"background-image:url('" + icon( "kcmprocessor", 48, true) + "');\">";
-        sysInfo += "<li><span class=\"label\">" + i18n( "Processor (CPU):" ) + "</span>" + m_info[CPU_MODEL] + "</li>";
-        sysInfo += "<li><span class=\"label\">" + i18n( "Speed:" ) + "</span> " +
-                   i18n( "%1 MHz" ).arg( KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toFloat(), 2 ) ) + "</li>";
-        sysInfo += "<li><span class=\"label\">" + i18n( "Number of Core :" ) + "</span>" + m_info[CPU_NOFCORE] + "</li>";
-        sysInfo += "</ul>";
+        staticInfo += startStock( i18n( "Processor" ) );
+        staticInfo += addToStock( "kcmprocessor", m_info[CPU_MODEL]);
+        staticInfo += addToStock( "kcmprocessor", i18n( "%1 MHz" ).arg( 
+                    KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toFloat(), 2 )), m_info[CPU_NOFCORE] + i18n( " core" ));
+        staticInfo += finishStock();
     }
 
-    // memory info
-    memoryInfo();
-    sysInfo += "<h2 id=\"memory\">" + i18n( "Memory Information" ) + "</h2>";
-    sysInfo += "<table style=\"background-image:url('" + icon( "memory", 48, true) + "');\">";
-    sysInfo += "<tr><td>" + i18n( "Total memory (RAM):" ) + "</td><td>" + m_info[MEM_TOTALRAM] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Free memory:" ) + "</td><td>" + m_info[MEM_FREERAM] + "</td></tr>";
-    dummy = i18n( "Used Memory" );
-    dummy = "<tr><td>" + i18n( "Total swap:" ) + "</td><td>" + m_info[MEM_TOTALSWAP] + "</td></tr>";
-    dummy = "<tr><td>" + i18n( "Free swap:" ) + "</td><td>" + m_info[MEM_FREESWAP] + "</td></tr>";
-    sysInfo += "</table>";
-
-    // hw info
-    if (!m_info[TYPE].isNull() || !m_info[MANUFACTURER].isNull() || !m_info[PRODUCT].isNull()
-        || !m_info[BIOSVENDOR].isNull() || !m_info[ BIOSVERSION ].isNull())
-    {
-        sysInfo += "<h2 id=\"hwinfo\">" +i18n( "Hardware Information" ) + "</h2>";
-        sysInfo += "<table style=\"background-image:url('" + icon( "laptop", 48, true) + "');\">";
-        sysInfo += "<tr><td>" + i18n( "Type:" ) + "</td><td>" + m_info[ TYPE ] + "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[ MANUFACTURER ] + "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[ PRODUCT ] + "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Bios Vendor:" ) + "</td><td>" + m_info[ BIOSVENDOR ] + "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Bios Version:" ) + "</td><td>" + m_info[ BIOSVERSION ] + "</td></tr>";
-        sysInfo += "</table>";
-    }
-
-    sysInfo += "</div><div id=\"column2\">"; // second column
-
-    // disk info
-    sysInfo += "<h2 id=\"hdds\">" + i18n( "Disk Information" ) + "</h2>";
-    sysInfo += diskInfo();
-
-    // Os info
-    osInfo();
-    sysInfo += "<h2 id=\"sysinfo\">" +i18n( "OS Information" ) + "</h2>";
-    sysInfo += "<table style=\"background-image:url('" + icon( "system", 48, true) + "');\">";
-    sysInfo += "<tr><td>" + i18n( "OS:" ) + "</td><td>" + m_info[OS_SYSNAME] + " " + m_info[OS_RELEASE] + " " + m_info[OS_MACHINE] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Current user:" ) + "</td><td>" + m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "System:" ) +  "</td><td>" + m_info[OS_SYSTEM] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "KDE:" ) + "</td><td>" + KDE::versionString() + "</td></tr>";
-    sysInfo += "</table>";
+    // update content..
+    content = content.arg( staticInfo );
+    staticInfo = "";
 
     // OpenGL info
     if ( glInfo() )
     {
-        sysInfo += "<h2 id=\"display\">" + i18n( "Display Info" ) + "</h2>";
-        sysInfo += "<table style=\"background-image:url('" + icon( "display", 48, true) + "');\">";
-        sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + formatStr(m_info[GFX_VENDOR]) +  "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + formatStr(m_info[GFX_MODEL]) + "</td></tr>";
+        staticInfo += startStock( i18n( "Display" ) );
+        staticInfo += addToStock( "krdc", formatStr(m_info[GFX_MODEL]), formatStr(m_info[GFX_VENDOR]) );
         if (!m_info[GFX_DRIVER].isNull())
-            sysInfo += "<tr><td>" + i18n( "Driver:" ) + "</td><td>" + m_info[GFX_DRIVER] + "</td></tr>";
-        sysInfo += "</table>";
+            staticInfo += addToStock( "x", i18n( "Driver: " ) + m_info[GFX_DRIVER] );
+        staticInfo += finishStock();
     }
 
-    sysInfo += "</div>";
+    // update content
+    content = content.arg( staticInfo );
+    staticInfo = "";
+
+    /*
+    // hw info
+    if (!m_info[TYPE].isNull() || !m_info[MANUFACTURER].isNull() || !m_info[PRODUCT].isNull()
+        || !m_info[BIOSVENDOR].isNull() || !m_info[ BIOSVERSION ].isNull())
+    {
+        staticInfo += "<h2 id=\"hwinfo\">" +i18n( "Hardware Information" ) + "</h2>";
+        staticInfo += "<table style=\"background-image:url('" + icon( "laptop", 48, true) + "');\">";
+        staticInfo += "<tr><td>" + i18n( "Type:" ) + "</td><td>" + m_info[ TYPE ] + "</td></tr>";
+        staticInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[ MANUFACTURER ] + "</td></tr>";
+        staticInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[ PRODUCT ] + "</td></tr>";
+        staticInfo += "<tr><td>" + i18n( "Bios Vendor:" ) + "</td><td>" + m_info[ BIOSVENDOR ] + "</td></tr>";
+        staticInfo += "<tr><td>" + i18n( "Bios Version:" ) + "</td><td>" + m_info[ BIOSVERSION ] + "</td></tr>";
+        staticInfo += "</table>";
+    }
+    */
 
     // Send the data
-    content = content.arg( sysInfo ); // put the sysinfo text into the main box
     data( QCString( content.utf8() ) );
     data( QByteArray() ); // empty array means we're done sending the data
     finished();
@@ -217,40 +259,7 @@ void kio_sysinfoProtocol::mimetype( const KURL & /*url*/ )
     finished();
 }
 
-static unsigned long int scan_one( const char* buff, const char *key )
-{
-    char *b = strstr( buff, key );
-    if ( !b )
-        return 0;
-    unsigned long int val = 0;
-    if ( sscanf( b + strlen( key ), ": %lu", &val ) != 1 )
-        return 0;
-    kdDebug() << "scan_one " << key << " " << val << endl;
-    return val;
-}
-
-static unsigned long int calculateFreeRam()
-{
-    FILE *fd = fopen( "/proc/meminfo", "rt" );
-    if ( !fd )
-        return 0;
-
-    QTextIStream is( fd );
-    QString MemInfoBuf = is.read();
-
-    unsigned long int MemFree = scan_one( MemInfoBuf.latin1(), "MemFree" );
-    unsigned long int Buffers = scan_one( MemInfoBuf.latin1(), "Buffers" );
-    unsigned long int Cached  = scan_one( MemInfoBuf.latin1(), "Cached" );
-    unsigned long int Slab    = scan_one( MemInfoBuf.latin1(), "Slab" );
-    fclose( fd );
-
-    MemFree += Cached + Buffers + Slab;
-    if ( MemFree > 50 * 1024 )
-        MemFree -= 50 * 1024;
-    return MemFree;
-}
-
-void kio_sysinfoProtocol::memoryInfo()
+unsigned long int kio_sysinfoProtocol::memoryInfo()
 {
     struct sysinfo info;
     int retval = sysinfo( &info );
@@ -258,21 +267,21 @@ void kio_sysinfoProtocol::memoryInfo()
     if ( retval !=-1 )
     {
         const int mem_unit = info.mem_unit;
+        unsigned long int usage,percent,peer;
+        usage = ( info.totalram - info.freeram ) * mem_unit;
+        peer = (info.totalram * mem_unit) / 100;
+        peer == 0 ? percent = 0 : percent = usage / peer;
 
-        m_info[MEM_TOTALRAM] = formattedUnit( info.totalram * mem_unit ,0);
-        unsigned long int totalFree = calculateFreeRam() * 1024;
-        kdDebug() << "total " << totalFree << " free " << info.freeram << " unit " << mem_unit << endl;
-        if ( totalFree > info.freeram * info.mem_unit || true )
-            m_info[MEM_FREERAM] = i18n("%1 (+ %2 Caches)").arg(formattedUnit( info.freeram * mem_unit ))
-                                  .arg( formattedUnit( totalFree - info.freeram * mem_unit));
-        else
-            m_info[MEM_FREERAM] = formattedUnit( info.freeram * mem_unit );
-
+        m_info[MEM_TOTALRAM] = formattedUnit( info.totalram * mem_unit );
+        m_info[MEM_FREERAM] = formattedUnit( info.freeram * mem_unit );
+        m_info[MEM_USAGE] = formattedUnit( usage );
         m_info[MEM_TOTALSWAP] = formattedUnit( info.totalswap * mem_unit );
         m_info[MEM_FREESWAP] = formattedUnit( info.freeswap * mem_unit );
 
-        m_info[SYSTEM_UPTIME] = convertSeconds( info.uptime );
+        return percent;
     }
+
+    return 0;
 }
 
 void kio_sysinfoProtocol::cpuInfo()
@@ -298,54 +307,48 @@ void kio_sysinfoProtocol::cpuInfo()
 
 QString kio_sysinfoProtocol::diskInfo()
 {
-    QString result = "<table>";
+    QString result;
     if ( fillMediaDevices() )
     {
         for ( QValueList<DiskInfo>::ConstIterator it = m_devices.constBegin(); it != m_devices.constEnd(); ++it )
         {
             DiskInfo di = ( *it );
-            QString tooltip = i18n( di.model );
-            QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
-            QString pattern, bar;
             unsigned long long usage,percent,peer;
+            QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
+            QString mountState = di.mounted ? i18n( "Mounted on %1" ).arg(di.mountPoint) : i18n( "Not mounted" );
+            QString tooltip = i18n( di.model );
             usage = di.total - di.avail;
             peer = di.total / 100;
             peer == 0 ? percent = 0 : percent = usage / peer;
-            percent > 25 ? pattern = "<div style=\"width: %1%\">%2&nbsp;</div>" : pattern = "<div style=\"width: %1%\">&nbsp;</div>&nbsp;%2";
+            QString sizeStatus = i18n( "%1 free of %2" ).arg( formattedUnit( di.avail,0 ) ).arg( formattedUnit( di.total,0 ) );
 
-            bar = QString(pattern).arg( di.mounted ? percent : 0).
-                                   arg( di.mounted ? formattedUnit( usage ) : QString::null );
+            result +=   QString("<tr class=\"media\">"
+                                "   <td>"
+                                "   <a href=\"media:/%1\" title=\"%2\">"
+                                "       <img src=\"%3\" width=\"48\" height=\"48\" />"
+                                "   </a></td>").
+                                arg( di.name ).
+                                arg( tooltip+" "+di.deviceNode ).
+                                arg( icon( di.iconName, 48, true) );
 
-            result += QString( "<tr>"
-                               "    <td>%1</td>"
-                               "    <td width=\"100%\">"
-                               "        <table width=\"100%\">"
-                               "            <tr>"
-                               "                <td>"
-                               "                    <a href=\"media:/%2\" title=\"%3\">%4</a> [%5]"
-                               "                    " + i18n("Total") + ": <b>%6</b> " + i18n("Available") + ": <b>%7</b>"
-                               "                </td>"
-                               "            </tr>"
-                               "            <tr height=\"10px\">"
-                               "                <td class=\"bar\">"
-                               "                    %8"
-                               "                </td>"
-                               "            </tr>"
-                               "        </table>"
-                               "    </td>"
-                               "</tr>"
-                               "<tr></tr>" ).
-                                arg( icon( di.iconName, 48 ) ).
+            result +=   QString("   <td>"
+                                "       <span class=\"detail\">[ %1 ]<br><span style=\"float:right\">[ %2 ]</span></span>"
+                                "       <a href=\"media:/%3\" title=\"%4\">"
+                                "       %5<br><span class=\"mediaDf\">%6</span><br></a>"
+                                "       <img class=\"diskusage\" src=\"file:%7\" width=\"%8%\">"
+                                "   </td>"
+                                "   <td></td>"
+                                "</tr>").
+                                arg( mountState ).
+                                arg( di.fsType ).
                                 arg( di.name ).
                                 arg( tooltip+" "+di.deviceNode ).
                                 arg( label ).
-                                arg( di.fsType ).
-                                arg( formattedUnit( di.total,0 ) ).
-                                arg( formattedUnit( di.avail,0 ) ).
-                                arg( bar );
+                                arg( sizeStatus ).
+                                arg( locate( "data", "sysinfo/themes/2008/images/progress.png" ) ).
+                                arg( percent );
         }
     }
-    result += "</table>";
     return result;
 }
 
@@ -397,26 +400,32 @@ bool isOpenGlSupported() {
 
     // Open the display with screen#:scr to fiddle with
     dpy = XOpenDisplay (displayname);
-    if (!dpy) return false;
+
+    if (!dpy)
+        return false;
 
     visinfo = glXChooseVisual(dpy, scr, attribSingle);
-    if (!visinfo) {
+    if (!visinfo) 
+    {
         visinfo = glXChooseVisual(dpy, scr, attribDouble);
-        if (!visinfo) {
+        if (!visinfo) 
+        {
             XCloseDisplay (dpy);
             return false;
         }
     }
 
     ctx = glXCreateContext( dpy, visinfo, NULL, allowDirect );
-    if (!ctx) {
+    if (!ctx) 
+    {
        fprintf(stderr, "Error: glXCreateContext failed\n");
        XFree(visinfo);
        XCloseDisplay (dpy);
        return false;
     }
 
-    if(glXIsDirect(dpy, ctx)) isEnabled = true;
+    if(glXIsDirect(dpy, ctx))
+        isEnabled = true;
 
     glXDestroyContext (dpy,ctx);
     XFree(visinfo);
@@ -536,7 +545,6 @@ void kio_sysinfoProtocol::osInfo()
     m_info[ OS_HOSTNAME ] = uts.nodename;
 
     m_info[ OS_USER ] = KUser().loginName();
-
     m_info[ OS_SYSTEM ] = readFromFile( "/etc/pardus-release" );
 }
 
@@ -552,20 +560,21 @@ extern "C"
 {
     int kdemain(int argc, char **argv)
     {
-      // we need KApp to check the display capabilities
-      putenv(strdup("SESSION_MANAGER="));
-      KCmdLineArgs::init(argc, argv, "kio_sysinfo", 0, 0, 0, 0);
-      KCmdLineArgs::addCmdLineOptions( options );
-      KApplication app( false, true );
+        // we need KApp to check the display capabilities
+        putenv(strdup("SESSION_MANAGER="));
+        KCmdLineArgs::init(argc, argv, "kio_sysinfo", 0, 0, 0, 0);
+        KCmdLineArgs::addCmdLineOptions( options );
+        KApplication app( false, true );
 
         kdDebug(7101) << "*** Starting kio_sysinfo " << endl;
 
-        if (argc != 4) {
-            kdDebug(7101) << "Usage: kio_sysinfo  protocol domain-socket1 domain-socket2" << endl;
+        if (argc != 4) 
+        {
+            kdDebug(7101) << "Usage: kio_sysinfo protocol domain-socket1 domain-socket2" << endl;
             exit(-1);
         }
 
-	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+        KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
         kio_sysinfoProtocol slave( args->arg(1), args->arg(2));
         slave.dispatchLoop();
@@ -577,9 +586,11 @@ extern "C"
 
 bool kio_sysinfoProtocol::fillMediaDevices()
 {
+
     DCOPRef nsd( "kded", "mediamanager" );
     nsd.setDCOPClient( m_dcopClient );
     QStringList devices = nsd.call( "fullList" );
+
     if ( devices.isEmpty() )
         return false;
 
@@ -588,32 +599,33 @@ bool kio_sysinfoProtocol::fillMediaDevices()
     m_devices.clear();
 
     LibHalContext  *m_halContext = libhal_ctx_new();
+
     if (!m_halContext)
-      {
-	kdDebug(1219) << "Failed to initialize HAL!" << endl;
-      }
+        kdDebug(1219) << "Failed to initialize HAL!" << endl;
 
     DBusError error;
     dbus_error_init(&error);
     DBusConnection *dbus_connection = dbus_bus_get(DBUS_BUS_SYSTEM, &error);
 
-    if (dbus_error_is_set(&error)) {
-      dbus_error_free(&error);
-      libhal_ctx_free(m_halContext);
-      m_halContext = 0;
+    if (dbus_error_is_set(&error)) 
+    {
+        dbus_error_free(&error);
+        libhal_ctx_free(m_halContext);
+        m_halContext = 0;
     }
 
-    if (m_halContext) {
-      libhal_ctx_set_dbus_connection(m_halContext, dbus_connection);
-      dbus_error_init(&error);
-      if (!libhal_ctx_init(m_halContext, &error))
-	{
-	  printf("error %s %s\n", error.name, error.message);
-	  if (dbus_error_is_set(&error))
-	    dbus_error_free(&error);
-	  libhal_ctx_free(m_halContext);
-	  m_halContext = 0;
-	}
+    if (m_halContext)
+    {
+        libhal_ctx_set_dbus_connection(m_halContext, dbus_connection);
+        dbus_error_init(&error);
+        if (!libhal_ctx_init(m_halContext, &error))
+            {
+                printf("error %s %s\n", error.name, error.message);
+                if (dbus_error_is_set(&error))
+                    dbus_error_free(&error);
+                libhal_ctx_free(m_halContext);
+                m_halContext = 0;
+            }
     }
 
     for ( QStringList::ConstIterator it = devices.constBegin(); it != devices.constEnd(); ++it )
@@ -655,7 +667,7 @@ bool kio_sysinfoProtocol::fillMediaDevices()
                 di.total = 0;
             }
 
-            di.model = libhal_device_get_property_string(  m_halContext, di.id.latin1(  ), "block.storage_device", &error );
+            di.model = libhal_device_get_property_string( m_halContext, di.id.latin1( ), "block.storage_device", &error );
             di.model = libhal_device_get_property_string( m_halContext, di.model.latin1( ), "storage.model", &error );
 
             ++it; // skip separator
