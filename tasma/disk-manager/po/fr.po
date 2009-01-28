@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-20 20:03+0300\n"
+"POT-Creation-Date: 2009-01-28 20:33+0200\n"
 "PO-Revision-Date: 2007-07-02 08:54+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -16,78 +16,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/diskform.py:93 src/diskform.py:140
+#: src/diskform.py:41 src/diskform.py:119
 msgid "Disks"
 msgstr "Disques dur"
 
-#: src/diskform.py:94 src/diskform.py:141
+#: src/diskform.py:42 src/diskform.py:120
 msgid "Partitions"
 msgstr "Partitions"
 
-#: src/diskform.py:133 src/disk-manager.py:89 src/disk-manager.py:392
+#: src/diskform.py:116 src/disk-manager.py:62 src/disk-manager.py:310
 msgid "Disk Manager"
 msgstr "Gestionnaire de disques durs"
 
-#: src/diskform.py:134
-msgid "File System Type :"
-msgstr "Type de système de fichier :"
-
-#: src/diskform.py:135
-msgid "Mount Point :"
-msgstr "Point de montage :"
-
-#: src/diskform.py:136
-msgid "Additional Options :"
-msgstr "Options supplémentaires :"
-
-#: src/diskform.py:137
-msgid "Get Default Options"
-msgstr "Obtenir les options par défaut"
-
-#: src/diskform.py:138
-msgid "Find Disks Automatically"
+#: src/diskform.py:117
+#, fuzzy
+msgid "Add Missing Disks Automatically"
 msgstr "Trouver les disques durs automatiquement"
 
-#: src/diskform.py:139
+#: src/diskform.py:118
 msgid "Show System Partitions"
 msgstr "Montrer les partitions du système"
 
-#: src/diskform.py:142
-msgid "To update disk changes the manager must run as root"
+#: src/diskform.py:122
+#, fuzzy
+msgid "Mount Automatically"
+msgstr "Trouver les disques durs automatiquement"
+
+#: src/diskform.py:123
+msgid "File System Type :"
+msgstr "Type de système de fichier :"
+
+#: src/diskform.py:124
+msgid "Mount Point :"
+msgstr "Point de montage :"
+
+#: src/diskform.py:125
+msgid "Reset"
 msgstr ""
-"Le gestionnaire doit être lancé en tant que root afin de mettre à jours les "
-"changements disques."
 
-#: src/disk-manager.py:121
-msgid "User not in disk group !"
-msgstr "L'utilisateur n'est pas dans le groupe disk !"
+#: src/diskform.py:126
+msgid "Additional Options :"
+msgstr "Options supplémentaires :"
 
-#: src/disk-manager.py:132 src/disk-manager.py:134
-msgid "File /etc/fstab is not correct, please fix it manually."
-msgstr "Le fichier /etc/fstab est incorrect, veuillez le réparer manuellement."
+#: src/disk-manager.py:251
+#, fuzzy
+msgid "Mount point is missing"
+msgstr "Point de montage :"
 
-#: src/disk-manager.py:229 src/disk-manager.py:253
-msgid "Completed"
-msgstr "Terminé"
+#: src/disk-manager.py:254
+msgid "Mount point is does not exist"
+msgstr ""
 
-#: src/disk-manager.py:229 src/disk-manager.py:253
-msgid "File /etc/fstab updated !"
-msgstr "Le fichier /etc/fstab a été mis à jour !"
-
-#: src/disk-manager.py:271
-#, python-format
-msgid "%s for %s failure !!"
-msgstr "%s pour %s échec !!"
-
-#: src/disk-manager.py:307
-msgid "Mount Point"
-msgstr "Point de montage"
-
-#: src/disk-manager.py:308
-msgid "File System Type"
-msgstr "Type de système de fichier"
-
-#: src/disk-manager.py:387
+#: src/disk-manager.py:302
 msgid "Disk Manager is already running!"
 msgstr "Le gestionnaire de disques durs est déjà en cours d'exécution !"
 
+#~ msgid "Get Default Options"
+#~ msgstr "Obtenir les options par défaut"
+
+#~ msgid "To update disk changes the manager must run as root"
+#~ msgstr ""
+#~ "Le gestionnaire doit être lancé en tant que root afin de mettre à jours "
+#~ "les changements disques."
+
+#~ msgid "User not in disk group !"
+#~ msgstr "L'utilisateur n'est pas dans le groupe disk !"
+
+#~ msgid "File /etc/fstab is not correct, please fix it manually."
+#~ msgstr ""
+#~ "Le fichier /etc/fstab est incorrect, veuillez le réparer manuellement."
+
+#~ msgid "Completed"
+#~ msgstr "Terminé"
+
+#~ msgid "File /etc/fstab updated !"
+#~ msgstr "Le fichier /etc/fstab a été mis à jour !"
+
+#~ msgid "%s for %s failure !!"
+#~ msgstr "%s pour %s échec !!"
+
+#~ msgid "Mount Point"
+#~ msgstr "Point de montage"
+
+#~ msgid "File System Type"
+#~ msgstr "Type de système de fichier"

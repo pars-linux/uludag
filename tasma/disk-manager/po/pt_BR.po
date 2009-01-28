@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-20 20:03+0300\n"
+"POT-Creation-Date: 2009-01-28 20:33+0200\n"
 "PO-Revision-Date: 2007-02-19 22:24-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -17,76 +17,83 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/diskform.py:93 src/diskform.py:140
+#: src/diskform.py:41 src/diskform.py:119
 msgid "Disks"
 msgstr "Discos"
 
-#: src/diskform.py:94 src/diskform.py:141
+#: src/diskform.py:42 src/diskform.py:120
 msgid "Partitions"
 msgstr "Partições"
 
-#: src/diskform.py:133 src/disk-manager.py:89 src/disk-manager.py:392
+#: src/diskform.py:116 src/disk-manager.py:62 src/disk-manager.py:310
 msgid "Disk Manager"
 msgstr "Gerenciador de Disco"
 
-#: src/diskform.py:134
-msgid "File System Type :"
-msgstr "Tipo do Sistema de Arquivos:"
-
-#: src/diskform.py:135
-msgid "Mount Point :"
-msgstr "Pontos de Montagem:"
-
-#: src/diskform.py:136
-msgid "Additional Options :"
-msgstr "Opções Adicionais:"
-
-#: src/diskform.py:137
-msgid "Get Default Options"
-msgstr "Obter Opções Padrão"
-
-#: src/diskform.py:138
-msgid "Find Disks Automatically"
+#: src/diskform.py:117
+#, fuzzy
+msgid "Add Missing Disks Automatically"
 msgstr "Encontrar Discos Automaticamente"
 
-#: src/diskform.py:139
+#: src/diskform.py:118
 msgid "Show System Partitions"
 msgstr "Mostrar Partições do Sistema"
 
-#: src/diskform.py:142
-msgid "To update disk changes the manager must run as root"
+#: src/diskform.py:122
+#, fuzzy
+msgid "Mount Automatically"
+msgstr "Encontrar Discos Automaticamente"
+
+#: src/diskform.py:123
+msgid "File System Type :"
+msgstr "Tipo do Sistema de Arquivos:"
+
+#: src/diskform.py:124
+msgid "Mount Point :"
+msgstr "Pontos de Montagem:"
+
+#: src/diskform.py:125
+msgid "Reset"
 msgstr ""
-"Para atualizar mudanças no disco, o gerenciador deve ser executado como root"
 
-#: src/disk-manager.py:121
-msgid "User not in disk group !"
-msgstr "Usuário não pertence ao grupo \"disk\"!"
+#: src/diskform.py:126
+msgid "Additional Options :"
+msgstr "Opções Adicionais:"
 
-#: src/disk-manager.py:132 src/disk-manager.py:134
-msgid "File /etc/fstab is not correct, please fix it manually."
+#: src/disk-manager.py:251
+#, fuzzy
+msgid "Mount point is missing"
+msgstr "Pontos de Montagem:"
+
+#: src/disk-manager.py:254
+msgid "Mount point is does not exist"
 msgstr ""
 
-#: src/disk-manager.py:229 src/disk-manager.py:253
-msgid "Completed"
-msgstr "Completado"
-
-#: src/disk-manager.py:229 src/disk-manager.py:253
-msgid "File /etc/fstab updated !"
-msgstr "Arquivo /ets/fstab atualizado!"
-
-#: src/disk-manager.py:271
-#, python-format
-msgid "%s for %s failure !!"
-msgstr "Falha no %s para %s!"
-
-#: src/disk-manager.py:307
-msgid "Mount Point"
-msgstr "Ponto de Montagem"
-
-#: src/disk-manager.py:308
-msgid "File System Type"
-msgstr "Tipo de Sistema de Arquivos"
-
-#: src/disk-manager.py:387
+#: src/disk-manager.py:302
 msgid "Disk Manager is already running!"
 msgstr "Gerenciador de Discos já está executando!"
+
+#~ msgid "Get Default Options"
+#~ msgstr "Obter Opções Padrão"
+
+#~ msgid "To update disk changes the manager must run as root"
+#~ msgstr ""
+#~ "Para atualizar mudanças no disco, o gerenciador deve ser executado como "
+#~ "root"
+
+#~ msgid "User not in disk group !"
+#~ msgstr "Usuário não pertence ao grupo \"disk\"!"
+
+#~ msgid "Completed"
+#~ msgstr "Completado"
+
+#~ msgid "File /etc/fstab updated !"
+#~ msgstr "Arquivo /ets/fstab atualizado!"
+
+#~ msgid "%s for %s failure !!"
+#~ msgstr "Falha no %s para %s!"
+
+#~ msgid "Mount Point"
+#~ msgstr "Ponto de Montagem"
+
+#~ msgid "File System Type"
+#~ msgstr "Tipo de Sistema de Arquivos"
