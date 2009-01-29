@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: disk-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-28 20:33+0200\n"
+"POT-Creation-Date: 2009-01-29 10:13+0200\n"
 "PO-Revision-Date: 2007-03-23 16:57+0100\n"
 "Last-Translator: Jaume Villalba Sanchez <javs@tinet.cat>\n"
 "Language-Team: Catala <pardus-translation-ca@liste.uludag.org.tr>\n"
@@ -16,60 +16,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/diskform.py:41 src/diskform.py:119
+#: src/diskform.py:83 src/diskform.py:110
 msgid "Disks"
 msgstr "Discs"
 
-#: src/diskform.py:42 src/diskform.py:120
+#: src/diskform.py:84 src/diskform.py:111
 msgid "Partitions"
 msgstr "Particions"
 
-#: src/diskform.py:116 src/disk-manager.py:62 src/disk-manager.py:310
+#: src/diskform.py:103 src/disk-manager.py:62 src/disk-manager.py:302
 msgid "Disk Manager"
 msgstr "Gestor de disc"
 
-#: src/diskform.py:117
-#, fuzzy
-msgid "Add Missing Disks Automatically"
-msgstr "Troba els discs automàticament"
-
-#: src/diskform.py:118
-msgid "Show System Partitions"
-msgstr "Mostra les particions de sistema"
-
-#: src/diskform.py:122
+#: src/diskform.py:105
 #, fuzzy
 msgid "Mount Automatically"
 msgstr "Troba els discs automàticament"
 
-#: src/diskform.py:123
+#: src/diskform.py:106
 msgid "File System Type :"
 msgstr "Tipus de fitxer de sistema:"
 
-#: src/diskform.py:124
+#: src/diskform.py:107
 msgid "Mount Point :"
 msgstr "Punt de muntatge:"
 
-#: src/diskform.py:125
+#: src/diskform.py:108
 msgid "Reset"
 msgstr ""
 
-#: src/diskform.py:126
+#: src/diskform.py:109
 msgid "Additional Options :"
 msgstr "Opcions addicionals:"
 
-#: src/disk-manager.py:251
+#: src/disk-manager.py:246
 #, fuzzy
 msgid "Mount point is missing"
 msgstr "Punt de muntatge:"
 
-#: src/disk-manager.py:254
-msgid "Mount point is does not exist"
-msgstr ""
+#: src/disk-manager.py:249
+#, fuzzy
+msgid "Mount point does not exist"
+msgstr "Punt de muntatge:"
 
-#: src/disk-manager.py:302
+#: src/disk-manager.py:294
 msgid "Disk Manager is already running!"
 msgstr "Ho sent, el gestor de discs ja està en funcionament"
+
+#, fuzzy
+#~ msgid "Add Missing Disks Automatically"
+#~ msgstr "Troba els discs automàticament"
+
+#~ msgid "Show System Partitions"
+#~ msgstr "Mostra les particions de sistema"
 
 #~ msgid "Get Default Options"
 #~ msgstr "Obté les opcions per defecte:"

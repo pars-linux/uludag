@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-28 20:33+0200\n"
+"POT-Creation-Date: 2009-01-29 10:13+0200\n"
 "PO-Revision-Date: 2009-01-28 22:18-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
 "Language-Team: español <es@li.org>\n"
@@ -22,56 +22,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/diskform.py:41 src/diskform.py:119
+#: src/diskform.py:83 src/diskform.py:110
 msgid "Disks"
 msgstr "Discos"
 
-#: src/diskform.py:42 src/diskform.py:120
+#: src/diskform.py:84 src/diskform.py:111
 msgid "Partitions"
 msgstr "Particiones"
 
-#: src/diskform.py:116 src/disk-manager.py:62 src/disk-manager.py:310
+#: src/diskform.py:103 src/disk-manager.py:62 src/disk-manager.py:302
 msgid "Disk Manager"
 msgstr "Administrador de Puntos de Montaje"
 
-#: src/diskform.py:117
-msgid "Add Missing Disks Automatically"
-msgstr "Agregar particiones faltantes automáticamente"
-
-#: src/diskform.py:118
-msgid "Show System Partitions"
-msgstr "Mostrar particiones del sistema"
-
-#: src/diskform.py:122
+#: src/diskform.py:105
 msgid "Mount Automatically"
 msgstr "Montar automáticamente"
 
-#: src/diskform.py:123
+#: src/diskform.py:106
 msgid "File System Type :"
 msgstr "Sistema de Archivos:"
 
-#: src/diskform.py:124
+#: src/diskform.py:107
 msgid "Mount Point :"
 msgstr "Punto de Montaje :"
 
-#: src/diskform.py:125
+#: src/diskform.py:108
 msgid "Reset"
 msgstr "Resetear"
 
-#: src/diskform.py:126
+#: src/diskform.py:109
 msgid "Additional Options :"
 msgstr "Opciones adicionales:"
 
-#: src/disk-manager.py:251
+#: src/disk-manager.py:246
 msgid "Mount point is missing"
 msgstr "Punto de montaje falta"
 
-#: src/disk-manager.py:254
-# i think this is bad english, should say: "Mount point does not exist" (no "is")
-msgid "Mount point is does not exist"
+#: src/disk-manager.py:249
+msgid "Mount point does not exist"
 msgstr "Punto de montaje no existe"
 
-#: src/disk-manager.py:302
+#: src/disk-manager.py:294
 msgid "Disk Manager is already running!"
 msgstr "Administrador de Puntos de Montaje ya se está ejecutando"
 
+#~ msgid "Add Missing Disks Automatically"
+#~ msgstr "Agregar particiones faltantes automáticamente"
+
+#~ msgid "Show System Partitions"
+#~ msgstr "Mostrar particiones del sistema"
