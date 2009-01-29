@@ -89,7 +89,7 @@ class diskForm(mainForm):
         self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
 
         self.list_main.header().hide()
-        self.frame_detail.hide()
+        self.frame_detail.setEnabled(False)
 
         self.knownFS = [
             ('ext3', 'Extended 3'),
@@ -200,7 +200,7 @@ class diskForm(mainForm):
     def slotList(self):
         item = self.list_main.selectedItem()
         if item not in self.items:
-            self.frame_detail.hide()
+            self.frame_detail.setEnabled(False)
             return
         device = str(self.items[item])
         if device not in self.entries:
@@ -219,12 +219,12 @@ class diskForm(mainForm):
             self.line_opts.setText(",".join(options))
             self.setFSName(self.entries[device][1])
             self.frame_entry.setChecked(True)
-        self.frame_detail.show()
+        self.frame_detail.setEnabled(True)
 
     def slotUpdate(self):
         item = self.list_main.selectedItem()
         if item not in self.items:
-            self.frame_detail.hide()
+            self.frame_detail.setEnabled(False)
             return
         device = str(self.items[item])
         if device in self.labels:
@@ -265,7 +265,7 @@ class diskForm(mainForm):
 
     def slotQuit(self):
         self.combo_fs.clear()
-        self.frame_detail.hide()
+        # self.frame_detail.hide()
 
 
 class Module(KCModule):
