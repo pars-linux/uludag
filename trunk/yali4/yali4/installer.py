@@ -559,9 +559,9 @@ class Yali:
                         guestGrubConf = pardus.grubutils.grubConf()
                         guestGrubConf.parseConf(guest_grub_conf)
                         for entry in guestGrubConf.entries:
-                            # if entry has root value we can use it in our grub.conf
+                            # if entry has kernel value we can use it in our grub.conf
                             # some distros uses uuid instead of root
-                            if entry.getCommand("root") or entry.getCommand("uuid"):
+                            if entry.getCommand("kernel"):
                                 entry.title = entry.title + " [ %s ]" % p.getName()
 
                                 # if device order changed we should update device order in foreign grub.conf
