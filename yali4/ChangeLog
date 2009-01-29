@@ -1,6 +1,6 @@
 2009-01-28 Gökmen GÖKSEL <gokmen@pardus.org.tr>
-         * Also check uuid command in foreign grub.conf
          * Fix for overriding selected partitioning method
+         * Just check kernel command in entries, its enough..
 
 2009-01-28 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * New release 2.0.8
