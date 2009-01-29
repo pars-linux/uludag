@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.2 RC2</Title>
+    <Title>Pardus 2008.2 Canis aureus</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.2/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
@@ -24,6 +24,7 @@
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
         <SelectedPackage>apmd</SelectedPackage>
+        <SelectedPackage>artwork-pardus-release</SelectedPackage>
         <SelectedPackage>atl1e</SelectedPackage>
         <SelectedPackage>atl2</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
@@ -176,7 +177,6 @@
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>syntekdriver</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
-        <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
@@ -235,6 +235,7 @@
         <Package>apmd</Package>
         <Package>arts</Package>
         <Package>artwork</Package>
+        <Package>artwork-pardus-release</Package>
         <Package>aspell</Package>
         <Package>atk</Package>
         <Package>atl1e</Package>
@@ -405,6 +406,7 @@
         <Package>history-manager</Package>
         <Package>hplip</Package>
         <Package>hsqldb-lib</Package>
+        <Package>hunspell</Package>
         <Package>icu4c</Package>
         <Package>iksemel</Package>
         <Package>ilmbase</Package>
@@ -687,12 +689,8 @@
         <Package>pcmciautils</Package>
         <Package>pcsc-lite</Package>
         <Package>perl</Package>
-        <Package>perl-Crypt-PasswdMD5</Package>
-        <Package>perl-Digest-Base</Package>
-        <Package>perl-Digest-SHA1</Package>
         <Package>perl-IO-Socket-SSL</Package>
         <Package>perl-Locale-gettext</Package>
-        <Package>perl-MIME-Base64</Package>
         <Package>perl-Net-SSLeay</Package>
         <Package>perl-SDL</Package>
         <Package>perl-XML-Parser</Package>
@@ -789,7 +787,6 @@
         <Package>sysfsutils</Package>
         <Package>sysinfo</Package>
         <Package>sysklogd</Package>
-        <Package>syslinux</Package>
         <Package>system-config-printer</Package>
         <Package>sysvinit</Package>
         <Package>taglib</Package>
