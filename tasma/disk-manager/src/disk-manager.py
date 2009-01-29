@@ -246,7 +246,7 @@ class diskForm(mainForm):
                 KMessageBox.sorry(self,i18n("Mount point is missing"), i18n("Error"))
                 return
             if not os.path.exists(path):
-                KMessageBox.sorry(self,i18n("Mount point is does not exist"), i18n("Error"))
+                KMessageBox.sorry(self,i18n("Mount point does not exist"), i18n("Error"))
                 return
             self.link.Disk.Manager[self.package].addEntry(device, path, fsType, options)
         else:
