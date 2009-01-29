@@ -91,7 +91,7 @@ static struct option longopts[] = {
 };
 
 //! Short options
-static char *shortopts = "b:d:g:l:s:t:phv";
+static char *shortopts = "b:d:gl:s:t:phv";
 
 //! Print help message
 static void

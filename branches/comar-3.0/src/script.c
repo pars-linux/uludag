@@ -283,7 +283,9 @@ static PyObject *
 c_bus_path(PyObject *self, PyObject *args)
 {
     const char *path = dbus_message_get_path(my_proc.bus_msg);
-    return PyString_FromString(path);
+    PyObject *py_str = PyString_FromString(path);
+    Py_INCREF(py_str);
+    return py_str;
 }
 
 //! Returns DBus message interface, used in scripts
@@ -291,7 +293,9 @@ static PyObject *
 c_bus_interface(PyObject *self, PyObject *args)
 {
     const char *iface = dbus_message_get_interface(my_proc.bus_msg);
-    return PyString_FromString(iface);
+    PyObject *py_str = PyString_FromString(iface);
+    Py_INCREF(py_str);
+    return py_str;
 }
 
 //! Returns DBus message member, used in scripts
@@ -299,7 +303,9 @@ static PyObject *
 c_bus_member(PyObject *self, PyObject *args)
 {
     const char *member = dbus_message_get_member(my_proc.bus_msg);
-    return PyString_FromString(member);
+    PyObject *py_str = PyString_FromString(member);
+    Py_INCREF(py_str);
+    return py_str;
 }
 
 //! Returns DBus message sender, used in scripts
@@ -307,7 +313,9 @@ static PyObject *
 c_bus_sender(PyObject *self, PyObject *args)
 {
     const char *sender = dbus_message_get_sender(my_proc.bus_msg);
-    return PyString_FromString(sender);
+    PyObject *py_str = PyString_FromString(sender);
+    Py_INCREF(py_str);
+    return py_str;
 }
 
 //! Returns package name, used in scripts
@@ -380,7 +388,9 @@ c_notify(PyObject *self, PyObject *args)
     snprintf(interface, size, "%s.%s", config_interface, model);
     interface[size - 1] = '\0';
 
-    if (bus_signal(path, interface, signal, py_tuple, script_signature(model, signal, 1)) != 0) {
+    char *signature = script_signature(model, signal, 1);
+
+    if (bus_signal(path, interface, signal, py_tuple, signature) != 0) {
         free(interface);
         return NULL;
     }
@@ -430,8 +440,11 @@ c_call(PyObject *self, PyObject *args, PyObject *keywds)
     // Get language
     const char *lang = sender_language();
 
+    // Get signature
+    char *signature = script_signature(model, method, 0);
+
     // Call method
-    PyObject *ret = bus_call(path, interface, method, py_tuple, timeout, lang, script_signature(model, method, 0));
+    PyObject *ret = bus_call(path, interface, method, py_tuple, timeout, lang, signature);
 
     free(path);
     free(interface);
@@ -457,21 +470,27 @@ c_fail(PyObject *self, PyObject *args)
 static PyObject *
 c_cfg_datapath(PyObject *self, PyObject *args)
 {
-    return PyString_FromString(config_dir_data);
+    PyObject *py_str = PyString_FromString(config_dir_data);
+    Py_INCREF(py_str);
+    return py_str;
 }
 
 //! Returns model database, used in scripts
 static PyObject *
 c_cfg_modelbase(PyObject *self, PyObject *args)
 {
-    return PyDict_GetItemString(py_core, "models");
+    PyObject *py_dict = PyDict_GetItemString(py_core, "models");
+    Py_INCREF(py_dict);
+    return py_dict;
 }
 
 //! Returns default interface
 static PyObject *
 c_cfg_interface(PyObject *self, PyObject *args)
 {
-    return PyString_FromString(config_interface);
+    PyObject *py_str = PyString_FromString(config_interface);
+    Py_INCREF(py_str);
+    return py_str;
 }
 
 //! Methods usable in scripts

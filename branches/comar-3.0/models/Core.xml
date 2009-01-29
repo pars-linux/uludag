@@ -19,7 +19,6 @@
             <arg name="models" type="as" direction="out"/>
         </method>
         <method name="introspect" action_id="">
-            <arg name="path" type="s" direction="in"/>
             <arg name="xml" type="s" direction="out"/>
         </method>
         <method name="cancel" action_id="">

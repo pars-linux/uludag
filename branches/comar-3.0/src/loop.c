@@ -70,6 +70,7 @@ message_execute(DBusMessage *msg, const char *app, const char *model, const char
 
     PyObject *model_def = PyDict_GetItemString(PyDict_GetItemString(py_core, "models"), model);
     PyObject *method_def = PyDict_GetItemString(model_def, method);
+    char *signature = script_signature(model, method, 1);
 
     if (PyDict_GetItemString(model_def, method) != Py_None) {
         const char *action_id = PyString_AsString(PyTuple_GetItem(method_def, 1));
@@ -94,7 +95,7 @@ message_execute(DBusMessage *msg, const char *app, const char *model, const char
     switch (py_execute(app, model, method, py_args, &py_ret)) {
         case 0:
             // Success
-            bus_reply_object(msg, py_ret, script_signature(model, method, 1));
+            bus_reply_object(msg, py_ret, signature);
             break;
         case -1:
             // Missing file
