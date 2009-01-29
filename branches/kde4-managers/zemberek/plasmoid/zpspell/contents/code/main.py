@@ -23,17 +23,17 @@ from PyKDE4 import plasmascript
 from dbus.mainloop.qt import DBusQtMainLoop
 from dbus import DBusException
 
+# Global Zemberek Interface
 zpInterface = None
 
 # DBUS MainLoop
 DBusQtMainLoop(set_as_default = True)
 link = comar.Link()
+systemBus = dbus.SystemBus()
 
-def connectDbus():
+def mkZpInterface():
     global zpInterface
     try:
-        time.sleep(1)
-        systemBus = dbus.SystemBus()
         zpProxy = systemBus.get_object('net.zemberekserver.server.dbus', '/net/zemberekserver/server/dbus/ZemberekDbus')
         zpInterface = dbus.Interface(zpProxy, 'net.zemberekserver.server.dbus.ZemberekDbusInterface')
     except dbus.exceptions.DBusException:
@@ -70,7 +70,7 @@ class ZpSpellApplet(plasmascript.Applet):
         """ Const method for initializing the applet """
 
         # Try to connect dbus
-        connectDbus()
+        mkZpInterface()
 
         # Configuration interface support comes with plasma
         self.setHasConfigurationInterface(False)
@@ -102,10 +102,14 @@ class ZpSpellApplet(plasmascript.Applet):
     def handler(self, package, signal, args):
         if package == 'zemberek_server':
             if args[1] in ['on','started','conditional_started']:
-                connectDbus()
-                self.failWidget.hide()
-                self.layout.removeAt(0)
-                self.initPlasmoid()
+                systemBus.add_signal_receiver(self.dbusHandler, dbus_interface="org.freedesktop.DBus", member_keyword="signal")
+
+    def dbusHandler(self, *args, **kwargs):
+        if kwargs["signal"] == "NameOwnerChanged" and args[0] == "net.zemberekserver.server.dbus":
+            mkZpInterface()
+            self.failWidget.hide()
+            self.layout.removeAt(0)
+            self.initPlasmoid()
 
     def initPlasmoid(self):
 

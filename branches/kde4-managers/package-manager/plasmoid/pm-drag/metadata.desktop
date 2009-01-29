@@ -6,6 +6,7 @@ Name[x-test]=xxDrag & Drop Pisi Installerxx
 Type=Service
 ServiceTypes=Plasma/Applet
 X-Plasma-API=python
+X-Plasma-MainScript=code/main.py
 Icon=package-x-generic
 
 X-KDE-PluginInfo-Author=Gökmen GÖKSEL

@@ -53,7 +53,7 @@ class WidgetSystemServices(QGraphicsWidget):
         self._type, self._desc, self._state = map(lambda x: unicode(x), info)
         self.service_icon.setIcon(state_icons[self._state])
 
-        self.label_layout = QGraphicsLinearLayout(Qt.Vertical, self.layout)
+        self.label_layout = QGraphicsLinearLayout(Qt.Vertical)
         self.layout.addItem(self.label_layout)
 
         self.service_name = Plasma.Label(self)

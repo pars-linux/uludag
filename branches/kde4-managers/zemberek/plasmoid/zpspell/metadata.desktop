@@ -6,6 +6,7 @@ Name[x-test]=xxZemberek Spell Checkerxx
 Type=Service
 ServiceTypes=Plasma/Applet
 X-Plasma-API=python
+X-Plasma-MainScript=code/main.py
 Icon=tools-check-spelling
 
 X-KDE-PluginInfo-Author=Gökmen GÖKSEL

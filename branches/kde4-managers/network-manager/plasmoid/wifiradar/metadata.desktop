@@ -6,6 +6,7 @@ Name[x-test]=xxWifi Radarxx
 Type=Service
 ServiceTypes=Plasma/Applet
 X-Plasma-API=python
+X-Plasma-MainScript=code/main.py
 Icon=wifi
 
 X-KDE-PluginInfo-Author=Gökmen GÖKSEL
