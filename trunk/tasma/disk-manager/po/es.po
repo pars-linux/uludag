@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-28 20:33+0200\n"
-"PO-Revision-Date: 2009-01-28 19:48-0300\n"
+"PO-Revision-Date: 2009-01-28 22:18-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
 "Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Particiones"
 
 #: src/diskform.py:116 src/disk-manager.py:62 src/disk-manager.py:310
 msgid "Disk Manager"
-msgstr "Montaje de Particiones"
+msgstr "Administrador de Puntos de Montaje"
 
 #: src/diskform.py:117
 msgid "Add Missing Disks Automatically"
@@ -63,7 +63,6 @@ msgid "Additional Options :"
 msgstr "Opciones adicionales:"
 
 #: src/disk-manager.py:251
-
 msgid "Mount point is missing"
 msgstr "Punto de montaje falta"
 
@@ -74,5 +73,5 @@ msgstr "Punto de montaje no existe"
 
 #: src/disk-manager.py:302
 msgid "Disk Manager is already running!"
-msgstr "Administrador de Puntos de Montajes ya se está ejecutando"
+msgstr "Administrador de Puntos de Montaje ya se está ejecutando"
 
