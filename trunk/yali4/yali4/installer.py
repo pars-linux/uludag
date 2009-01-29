@@ -560,7 +560,8 @@ class Yali:
                         guestGrubConf.parseConf(guest_grub_conf)
                         for entry in guestGrubConf.entries:
                             # if entry has root value we can use it in our grub.conf
-                            if entry.getCommand("root"):
+                            # some distros uses uuid instead of root
+                            if entry.getCommand("root") or entry.getCommand("uuid"):
                                 entry.title = entry.title + " [ %s ]" % p.getName()
 
                                 # if device order changed we should update device order in foreign grub.conf
@@ -573,13 +574,13 @@ class Yali:
 
                                 # update device order for kernel command if already defined
                                 _kernel = entry.getCommand("kernel")
-                                if _kernel:
+                                if _kernel and _root.value:
                                     if _kernel.value.startswith('('):
                                         _kernel.value = ''.join([_root.value, _kernel.value.split(')')[1]])
 
                                 # update device order for initrd command if already defined
                                 _initrd = entry.getCommand("initrd")
-                                if _initrd:
+                                if _initrd and _root.value:
                                     if _initrd.value.startswith('('):
                                         _initrd.value = ''.join([_root.value, _initrd.value.split(')')[1]])
 

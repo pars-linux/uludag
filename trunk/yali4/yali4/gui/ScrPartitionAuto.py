@@ -130,7 +130,7 @@ about disk partitioning.
         if ctx.installData.autoPartMethod == methodEraseAll:
             self.ui.accept_auto_2.toggle()
         if ctx.installData.autoPartMethod == methodManual:
-            self.ui.manual.toggle()
+            self.slotSelectManual()
         self.update()
 
     def execute(self):
@@ -149,6 +149,8 @@ about disk partitioning.
                 ctx.mainScreen.moveInc = 0
             else:
                 self.execute_()
+        else:
+            ctx.installData.autoPartMethod = methodManual
         ctx.selectedDisk = self.ui.device_list.currentRow()
         return True
 
