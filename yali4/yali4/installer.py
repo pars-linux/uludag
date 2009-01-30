@@ -567,22 +567,23 @@ class Yali:
                                 # if device order changed we should update device order in foreign grub.conf
                                 _grub_dev = yali4.bootloader.find_grub_dev(p.getPath())
 
-                                # update device order for root command
-                                _root = entry.getCommand("root")
-                                if not _root.value == '':
-                                    _root.value = _update_dev(_root.value, _grub_dev)
+                                if entry.getCommand("root"):
+                                    # update device order for root command
+                                    _root = entry.getCommand("root")
+                                    if _root.value != '':
+                                        _root.value = _update_dev(_root.value, _grub_dev)
 
-                                # update device order for kernel command if already defined
-                                _kernel = entry.getCommand("kernel")
-                                if _kernel and _root.value:
-                                    if _kernel.value.startswith('('):
-                                        _kernel.value = ''.join([_root.value, _kernel.value.split(')')[1]])
+                                    # update device order for kernel command if already defined
+                                    _kernel = entry.getCommand("kernel")
+                                    if _kernel and _root.value:
+                                        if _kernel.value.startswith('('):
+                                            _kernel.value = ''.join([_root.value, _kernel.value.split(')')[1]])
 
-                                # update device order for initrd command if already defined
-                                _initrd = entry.getCommand("initrd")
-                                if _initrd and _root.value:
-                                    if _initrd.value.startswith('('):
-                                        _initrd.value = ''.join([_root.value, _initrd.value.split(')')[1]])
+                                    # update device order for initrd command if already defined
+                                    _initrd = entry.getCommand("initrd")
+                                    if _initrd and _root.value:
+                                        if _initrd.value.startswith('('):
+                                            _initrd.value = ''.join([_root.value, _initrd.value.split(')')[1]])
 
                                 grubConf.addEntry(entry)
                     else:
