@@ -7,13 +7,31 @@ msgid ""
 msgstr ""
 "Project-Id-Version: disk-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-29 10:13+0200\n"
+"POT-Creation-Date: 2009-01-30 14:27+0200\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: src/disk-manager.py:62 src/disk-manager.py:304 src/diskform.py:103
+msgid "Disk Manager"
+msgstr "Menedżer Dysków"
+
+#: src/disk-manager.py:246
+#, fuzzy
+msgid "Mount point is missing"
+msgstr "Punkt Montowania :"
+
+#: src/disk-manager.py:249
+#, fuzzy
+msgid "Mount point does not exist"
+msgstr "Punkt Montowania :"
+
+#: src/disk-manager.py:296
+msgid "Disk Manager is already running!"
+msgstr "Menedżer Dysków już działa!"
 
 #: src/diskform.py:83 src/diskform.py:110
 msgid "Disks"
@@ -22,10 +40,6 @@ msgstr "Dyski"
 #: src/diskform.py:84 src/diskform.py:111
 msgid "Partitions"
 msgstr "Partycje"
-
-#: src/diskform.py:103 src/disk-manager.py:62 src/disk-manager.py:302
-msgid "Disk Manager"
-msgstr "Menedżer Dysków"
 
 #: src/diskform.py:105
 #, fuzzy
@@ -47,20 +61,6 @@ msgstr ""
 #: src/diskform.py:109
 msgid "Additional Options :"
 msgstr "Dodatkowe Opcje :"
-
-#: src/disk-manager.py:246
-#, fuzzy
-msgid "Mount point is missing"
-msgstr "Punkt Montowania :"
-
-#: src/disk-manager.py:249
-#, fuzzy
-msgid "Mount point does not exist"
-msgstr "Punkt Montowania :"
-
-#: src/disk-manager.py:294
-msgid "Disk Manager is already running!"
-msgstr "Menedżer Dysków już działa!"
 
 #, fuzzy
 #~ msgid "Add Missing Disks Automatically"
