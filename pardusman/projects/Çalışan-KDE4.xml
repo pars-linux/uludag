@@ -42,7 +42,6 @@
         <SelectedPackage>fnfx</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
-        <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>glibc-locales-ca</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
@@ -149,7 +148,6 @@
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>synaptics</SelectedPackage>
         <SelectedPackage>syntekdriver</SelectedPackage>
-        <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>system-config-printer</SelectedPackage>
         <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
@@ -311,7 +309,6 @@
         <Package>gdbm</Package>
         <Package>gecko-mediaplayer</Package>
         <Package>gettext</Package>
-        <Package>gfxtheme-pardus-install</Package>
         <Package>ghostscript</Package>
         <Package>giflib</Package>
         <Package>gle</Package>
@@ -624,10 +621,6 @@
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>perl</Package>
-        <Package>perl-Crypt-PasswdMD5</Package>
-        <Package>perl-Digest-Base</Package>
-        <Package>perl-Digest-SHA1</Package>
-        <Package>perl-MIME-Base64</Package>
         <Package>perl-XML-Parser</Package>
         <Package>phonon</Package>
         <Package>piksemel</Package>
@@ -712,7 +705,6 @@
         <Package>syntekdriver</Package>
         <Package>sysfsutils</Package>
         <Package>sysklogd</Package>
-        <Package>syslinux</Package>
         <Package>system-config-printer</Package>
         <Package>sysvinit</Package>
         <Package>taglib</Package>
