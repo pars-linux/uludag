@@ -440,7 +440,7 @@ def make_image(project):
             file(fn_config, "w").write(str_conf)
             # Disable Nepomuk in live CDs
             if project.type == "live":
-                os.unlink("/usr/kde/4/share/autostart/nepomukserver.desktop")
+                os.unlink("%s/usr/kde/4/share/autostart/nepomukserver.desktop" % image_dir)
 
         connectToDBus(image_dir)
 
