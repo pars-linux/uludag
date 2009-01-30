@@ -69,7 +69,6 @@
         <SelectedPackage>iwlwifi4965-ucode</SelectedPackage>
         <SelectedPackage>jack-audio-connection-kit</SelectedPackage>
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
-        <SelectedPackage>kaffeine-kde4</SelectedPackage>
         <SelectedPackage>kde-i18n-ca</SelectedPackage>
         <SelectedPackage>kde-i18n-de</SelectedPackage>
         <SelectedPackage>kde-i18n-es</SelectedPackage>
@@ -101,22 +100,17 @@
         <SelectedPackage>kdeplasma-addons</SelectedPackage>
         <SelectedPackage>kdm-pardus-theme-kde4</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
-        <SelectedPackage>kmplayer-kde4</SelectedPackage>
-        <SelectedPackage>krename-kde4</SelectedPackage>
         <SelectedPackage>ksplash-pardus-theme-kde4</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
         <SelectedPackage>linux-uvc</SelectedPackage>
         <SelectedPackage>lmpcm_usb</SelectedPackage>
         <SelectedPackage>lsof</SelectedPackage>
         <SelectedPackage>lsscsi</SelectedPackage>
-        <SelectedPackage>ltmodem</SelectedPackage>
         <SelectedPackage>m5602</SelectedPackage>
         <SelectedPackage>madwifi-ng</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
         <SelectedPackage>microdia</SelectedPackage>
-        <SelectedPackage>minicom</SelectedPackage>
-        <SelectedPackage>mpg123</SelectedPackage>
         <SelectedPackage>mplayer</SelectedPackage>
         <SelectedPackage>mtools</SelectedPackage>
         <SelectedPackage>ncftp</SelectedPackage>
@@ -144,14 +138,11 @@
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
-        <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>synaptics</SelectedPackage>
         <SelectedPackage>syntekdriver</SelectedPackage>
         <SelectedPackage>system-config-printer</SelectedPackage>
-        <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
-        <SelectedPackage>testdisk</SelectedPackage>
         <SelectedPackage>tn5250</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
         <SelectedPackage>tulliana2</SelectedPackage>
@@ -376,7 +367,6 @@
         <Package>jbigkit</Package>
         <Package>jimmac-xcursor</Package>
         <Package>jpeg</Package>
-        <Package>kaffeine-kde4</Package>
         <Package>kbd</Package>
         <Package>kde-i18n-ca</Package>
         <Package>kde-i18n-de</Package>
@@ -417,8 +407,6 @@
         <Package>kernel</Package>
         <Package>kernel-headers</Package>
         <Package>klibc</Package>
-        <Package>kmplayer-kde4</Package>
-        <Package>krename-kde4</Package>
         <Package>ksplash-pardus-theme-kde4</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
@@ -556,7 +544,6 @@
         <Package>lmpcm_usb</Package>
         <Package>lsof</Package>
         <Package>lsscsi</Package>
-        <Package>ltmodem</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>m5602</Package>
@@ -570,7 +557,6 @@
         <Package>microcode-data</Package>
         <Package>microdia</Package>
         <Package>mingetty</Package>
-        <Package>minicom</Package>
         <Package>miscfiles</Package>
         <Package>mit-kerberos</Package>
         <Package>mkinitramfs</Package>
@@ -578,7 +564,6 @@
         <Package>mpeg2vidcodec</Package>
         <Package>mpeg4ip</Package>
         <Package>mpfr</Package>
-        <Package>mpg123</Package>
         <Package>mplayer</Package>
         <Package>mtools</Package>
         <Package>mudur</Package>
@@ -671,7 +656,6 @@
         <Package>rdate</Package>
         <Package>readline</Package>
         <Package>redland</Package>
-        <Package>reiserfsprogs</Package>
         <Package>reportlab</Package>
         <Package>rp-pppoe</Package>
         <Package>rtl8187se</Package>
@@ -681,7 +665,6 @@
         <Package>sdricoh_cs</Package>
         <Package>sed</Package>
         <Package>service-manager</Package>
-        <Package>setserial</Package>
         <Package>sg3_utils</Package>
         <Package>shadow</Package>
         <Package>shared-mime-info</Package>
@@ -696,7 +679,6 @@
         <Package>sqlite</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
-        <Package>strace</Package>
         <Package>strigi</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
@@ -713,10 +695,8 @@
         <Package>tcl</Package>
         <Package>tcltk</Package>
         <Package>tcp-wrappers</Package>
-        <Package>tcpdump</Package>
         <Package>telepathy-qt</Package>
         <Package>telnet-bsd</Package>
-        <Package>testdisk</Package>
         <Package>texinfo</Package>
         <Package>tiff</Package>
         <Package>time</Package>
