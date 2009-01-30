@@ -438,6 +438,9 @@ def make_image(project):
             str_conf = file(fn_config).read()
             str_conf = re.sub("kdebase", "kdebase4_workspace", str_conf)
             file(fn_config, "w").write(str_conf)
+            # Disable Nepomuk in live CDs
+            if project.type == "live":
+                os.unlink("/usr/kde/4/share/autostart/nepomukserver.desktop")
 
         connectToDBus(image_dir)
 
