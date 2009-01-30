@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.2-KDE3 RC2</Title>
+    <Title>Pardus-2008.2-Canis-aureus-CalisanKDE3</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.2/</ReleaseFiles>
     <PackageSelection repo_uri="file:///home/ekin/packages/test/pisi-index.xml.bz2">
@@ -48,7 +48,6 @@
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
-        <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>gimp-i18n-ca</SelectedPackage>
         <SelectedPackage>gimp-i18n-de</SelectedPackage>
@@ -177,7 +176,6 @@
         <SelectedPackage>synaptics</SelectedPackage>
         <SelectedPackage>syntekdriver</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
-        <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>system-config-printer</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>tcpdump</SelectedPackage>
@@ -347,7 +345,6 @@
         <Package>gecko-mediaplayer</Package>
         <Package>gegl</Package>
         <Package>gettext</Package>
-        <Package>gfxtheme-pardus-install</Package>
         <Package>ghostscript</Package>
         <Package>giflib</Package>
         <Package>gimp</Package>
@@ -423,6 +420,7 @@
         <Package>hplip</Package>
         <Package>hsfmodem</Package>
         <Package>hsqldb-lib</Package>
+        <Package>hunspell</Package>
         <Package>icu4c</Package>
         <Package>iksemel</Package>
         <Package>ilmbase</Package>
@@ -697,11 +695,7 @@
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>perl</Package>
-        <Package>perl-Crypt-PasswdMD5</Package>
-        <Package>perl-Digest-Base</Package>
-        <Package>perl-Digest-SHA1</Package>
         <Package>perl-IO-Socket-SSL</Package>
-        <Package>perl-MIME-Base64</Package>
         <Package>perl-Net-SSLeay</Package>
         <Package>perl-XML-Parser</Package>
         <Package>piksemel</Package>
@@ -783,7 +777,6 @@
         <Package>sysfsutils</Package>
         <Package>sysinfo</Package>
         <Package>sysklogd</Package>
-        <Package>syslinux</Package>
         <Package>system-config-printer</Package>
         <Package>sysvinit</Package>
         <Package>taglib</Package>
