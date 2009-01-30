@@ -15,6 +15,7 @@
         <SelectedPackage>alsa-firmware</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
+        <SelectedPackage>artwork-pardus-release</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>aspell-nl</SelectedPackage>
         <SelectedPackage>atl1e</SelectedPackage>
@@ -42,12 +43,11 @@
         <SelectedPackage>ed</SelectedPackage>
         <SelectedPackage>et131x</SelectedPackage>
         <SelectedPackage>ethtool</SelectedPackage>
-        <SelectedPackage>fbset</SelectedPackage>
         <SelectedPackage>flashplugin</SelectedPackage>
-        <SelectedPackage>fnfx</SelectedPackage>
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
+        <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>gimp-i18n-ca</SelectedPackage>
         <SelectedPackage>gimp-i18n-de</SelectedPackage>
@@ -123,7 +123,6 @@
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
-        <SelectedPackage>kradio</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
         <SelectedPackage>linux-uvc</SelectedPackage>
@@ -176,6 +175,7 @@
         <SelectedPackage>synaptics</SelectedPackage>
         <SelectedPackage>syntekdriver</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
+        <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>system-config-printer</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>tcpdump</SelectedPackage>
@@ -192,12 +192,9 @@
         <SelectedPackage>unshield</SelectedPackage>
         <SelectedPackage>vbetool</SelectedPackage>
         <SelectedPackage>vim</SelectedPackage>
-        <SelectedPackage>vloopback</SelectedPackage>
         <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>whois</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
-        <SelectedPackage>x11-ssh-askpass</SelectedPackage>
-        <SelectedPackage>x2x</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
@@ -236,6 +233,7 @@
         <Package>amrwb</Package>
         <Package>arts</Package>
         <Package>artwork</Package>
+        <Package>artwork-pardus-release</Package>
         <Package>aspell</Package>
         <Package>aspell-en</Package>
         <Package>aspell-nl</Package>
@@ -318,7 +316,6 @@
         <Package>expat</Package>
         <Package>faac</Package>
         <Package>faad2</Package>
-        <Package>fbset</Package>
         <Package>ffmpeg</Package>
         <Package>fftw3</Package>
         <Package>file</Package>
@@ -328,7 +325,6 @@
         <Package>flac</Package>
         <Package>flashplugin</Package>
         <Package>flex</Package>
-        <Package>fnfx</Package>
         <Package>font-util</Package>
         <Package>fontconfig</Package>
         <Package>foomatic-db</Package>
@@ -345,6 +341,7 @@
         <Package>gecko-mediaplayer</Package>
         <Package>gegl</Package>
         <Package>gettext</Package>
+        <Package>gfxtheme-pardus-install</Package>
         <Package>ghostscript</Package>
         <Package>giflib</Package>
         <Package>gimp</Package>
@@ -478,7 +475,6 @@
         <Package>knazar</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
-        <Package>kradio</Package>
         <Package>ktorrent</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
@@ -695,7 +691,11 @@
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>perl</Package>
+        <Package>perl-Crypt-PasswdMD5</Package>
+        <Package>perl-Digest-Base</Package>
+        <Package>perl-Digest-SHA1</Package>
         <Package>perl-IO-Socket-SSL</Package>
+        <Package>perl-MIME-Base64</Package>
         <Package>perl-Net-SSLeay</Package>
         <Package>perl-XML-Parser</Package>
         <Package>piksemel</Package>
@@ -777,6 +777,7 @@
         <Package>sysfsutils</Package>
         <Package>sysinfo</Package>
         <Package>sysklogd</Package>
+        <Package>syslinux</Package>
         <Package>system-config-printer</Package>
         <Package>sysvinit</Package>
         <Package>taglib</Package>
@@ -815,7 +816,6 @@
         <Package>vbetool</Package>
         <Package>vim</Package>
         <Package>vixie-cron</Package>
-        <Package>vloopback</Package>
         <Package>vorbis-tools</Package>
         <Package>wavpack</Package>
         <Package>wget</Package>
@@ -823,9 +823,7 @@
         <Package>whois</Package>
         <Package>wireless-tools</Package>
         <Package>wpa_supplicant</Package>
-        <Package>x11-ssh-askpass</Package>
         <Package>x264</Package>
-        <Package>x2x</Package>
         <Package>xbitmaps</Package>
         <Package>xcb-proto</Package>
         <Package>xcb-util</Package>
