@@ -118,7 +118,6 @@
         <SelectedPackage>kdegames</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
         <SelectedPackage>kdenetwork</SelectedPackage>
-        <SelectedPackage>kdetv</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
@@ -465,7 +464,6 @@
         <Package>kdemultimedia</Package>
         <Package>kdenetwork</Package>
         <Package>kdepim</Package>
-        <Package>kdetv</Package>
         <Package>kdeutils</Package>
         <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
@@ -846,6 +844,5 @@
         <Package>zlib</Package>
         <Package>zorg</Package>
         <Package>zpspell</Package>
-        <Package>zvbi</Package>
     </PackageSelection>
 </PardusmanProject>
