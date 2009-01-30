@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.2-KDE4 RC2</Title>
+    <Title>Pardus-2008.2-Canis-aureus-CalisanKDE4</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.2/</ReleaseFiles>
     <PackageSelection repo_uri="file:///home/ekin/packages/test/pisi-index.xml.bz2">
@@ -356,6 +356,7 @@
         <Package>hdparm</Package>
         <Package>history-manager</Package>
         <Package>hplip</Package>
+        <Package>hunspell</Package>
         <Package>icu4c</Package>
         <Package>iksemel</Package>
         <Package>ilmbase</Package>
@@ -409,6 +410,7 @@
         <Package>kdegraphics4</Package>
         <Package>kdelibs</Package>
         <Package>kdelibs4</Package>
+        <Package>kdelibs4-devel</Package>
         <Package>kdemultimedia4</Package>
         <Package>kdenetwork4</Package>
         <Package>kdepim4</Package>
