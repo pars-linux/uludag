@@ -58,7 +58,7 @@
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>frozen-bubble</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
-        <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
+        <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
         <SelectedPackage>grounation-xcursors</SelectedPackage>
@@ -320,7 +320,7 @@
         <Package>gecko-mediaplayer</Package>
         <Package>gegl</Package>
         <Package>gettext</Package>
-        <Package>gfxtheme-pardus-install</Package>
+        <Package>gfxtheme-pardus-boot</Package>
         <Package>ghostscript</Package>
         <Package>giflib</Package>
         <Package>gimp</Package>
