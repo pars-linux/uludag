@@ -285,6 +285,8 @@ class Module(KCModule):
 def create_disk_manager(parent, name):
     global kapp
     kapp = KApplication.kApplication()
+    if not dbus.get_default_main_loop():
+        DBusQtMainLoop(set_as_default=True)
     return Module(parent, name)
 
 def main():
