@@ -225,6 +225,7 @@ class DBusInterface:
                         if len(dev.connections) == 0:
                             del self.devices[dev.devid]
                     map(lambda x: x(), self.state_hook)
+                    del self.connections[conn.hash]
 
     def listenSignals(self):
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Net.Link", member_keyword="signal", path_keyword="path")
