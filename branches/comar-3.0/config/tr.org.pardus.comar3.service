@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=tr.org.pardus.comar3
+Exec=/usr/sbin/comar3 -g
+User=root
