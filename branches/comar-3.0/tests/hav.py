@@ -4,12 +4,15 @@
 import dbus
 import locale
 import sys
+import os
 
 def handleError(exception):
     error = exception.get_dbus_name()
     message = exception.message
-    if error == "Python.Access":
+    if error.endswith("Comar.PolicyKit"):
         print "Access denied. '%s' access required" % message
+    else:
+        print message
     sys.exit(1)
 
 def printUsage():
@@ -61,8 +64,9 @@ def main():
             script = sys.argv[4]
         except IndexError:
             printUsage()
+        path = os.path.realpath(script)
         try:
-            obj.register(app, model, script, dbus_interface='tr.org.pardus.comar3')
+            obj.register(app, model, path, dbus_interface='tr.org.pardus.comar3')
         except dbus.DBusException, e:
             handleError(e)
     elif sys.argv[1] == "remove":
