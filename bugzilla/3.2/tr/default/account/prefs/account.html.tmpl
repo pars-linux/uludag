@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -27,11 +28,11 @@
 <table>
   <tr>
     <td colspan="3">
-      Please enter your existing password to confirm account changes.
+      Hesaptaki değişiklikleri onaylamak için lütfen parolanızı girin.
     </td>
   </tr>
   <tr>
-    <th align="right">Password:</th>
+    <th align="right">Parola:</th>
     <td>
       <input type="hidden" name="Bugzilla_login" 
              value="[% user.login FILTER html %]">
@@ -43,14 +44,14 @@
   </tr>
   [% IF user.authorizer.can_change_password %]
     <tr>
-      <th align="right">New password:</th>
+      <th align="right">Yeni parola:</th>
       <td>
         <input type="password" name="new_password1">
       </td>
     </tr>              
 
     <tr>
-      <th align="right">Confirm new password:</th>
+      <th align="right">Yeni parola (yeniden):</th>
       <td>
         <input type="password" name="new_password2">
       </td>
@@ -58,7 +59,7 @@
   [% END %]
 
   <tr>
-    <th align="right">Your real name (optional, but encouraged):</th>
+    <th align="right">Gerçek adınız (isteğe bağlıdır, fakat girmeniz tavsiye edilir):</th>
     <td>
       <input size="35" name="realname" value="[% realname FILTER html %]">
     </td>
@@ -68,26 +69,26 @@
     [% IF login_change_date %]
       [% IF new_login_name %]
         <tr>
-          <th align="right">Pending email address:</th>
+          <th align="right">Beklemedeki eposta adresi:</th>
           <td>[% new_login_name FILTER html %]</td>
         </tr>
         <tr>
-          <th align="right">Change request expires:</th>
+          <th align="right">Değişiklik isteğinin geçerliliğini yitirme zamanı:</th>
           <td>[% login_change_date FILTER time %]</td>
         </tr>
       [% ELSE %]
         <tr>
-          <th align="right">Confirmed email address:</th>
+          <th align="right">Onaylanmış eposta adresi:</th>
           <td>[% user.login FILTER html %]</td>
         </tr>
         <tr>
-          <th align="right">Completion date:</th>
+          <th align="right">Tamamlanma tarihi:</th>
           <td>[% login_change_date FILTER time %]</td>
         </tr>
       [% END %]
     [% ELSE %]
       <tr>
-        <th align="right">New email address:</th>
+        <th align="right">Yeni eposta adresi:</th>
         <td>
           <input size="35" name="new_login_name">
         </td>
