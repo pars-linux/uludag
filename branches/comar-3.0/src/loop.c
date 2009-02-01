@@ -306,9 +306,16 @@ loop_exec()
     dbus_error_init(&bus_error);
 
     // Connect to D-Bus
-    bus_conn = dbus_bus_get(DBUS_BUS_SYSTEM, &bus_error);
-    if (bus_conn == NULL) {
-        log_error("Error when connecting to the bus: %s\n", bus_error.message);
+    bus_conn = dbus_connection_open_private(config_server_address, &bus_error);
+    if (dbus_error_is_set(&bus_error)) {
+        log_error("Error while connecting to the bus: %s\n", bus_error.message);
+        dbus_error_free(&bus_error);
+        return -1;
+    }
+
+    if (!dbus_bus_register(bus_conn, &bus_error)) {
+        log_error("Error while registering to the bus: %s\n", bus_error.message);
+        dbus_error_free(&bus_error);
         return -1;
     }
 
@@ -336,7 +343,7 @@ loop_exec()
         return -1;
     }
 
-    log_debug("Listening for connections...\n");
+    log_info("Listening for connections...\n");
 
     while (1) {
         struct pollfd fds[MAX_FDS];
@@ -344,6 +351,7 @@ loop_exec()
         int i, j;
         int nr_fds = 0;
         int nr_watches = 0;
+        int poll_result;
 
         // Add D-Bus watch descriptors to the list
         nr_fds = 0;
@@ -373,7 +381,25 @@ loop_exec()
         }
 
         // Poll descriptors
-        if (poll(fds, nr_fds, -1) <= 0) {
+        poll_result = 0;
+
+        if (config_timeout == 0) {
+            // If no timeout defined, wait forever.
+            poll_result = poll(fds, nr_fds, -1);
+        }
+        else {
+            // wait <timeout> seconds
+            poll_result = poll(fds, nr_fds, config_timeout * 1000);
+        }
+
+        if (poll_result == 0) {
+            if (config_timeout != 0 && my_proc.nr_children == 0) {
+                log_info("Service was idle for more than %d second(s), closing daemon...\n", config_timeout);
+                break;
+            }
+            continue;
+        }
+        else if (poll_result < 0) {
             perror("poll");
             return -1;
         }
