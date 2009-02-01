@@ -26,20 +26,63 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+#include <time.h>
 
 #include "config.h"
+#include "process.h"
+
+//! Puts time into file
+void
+timestamp(FILE *f)
+{
+    static char buf[128];
+    time_t t;
+    struct tm *bt;
+
+    time(&t);
+    bt = localtime(&t);
+    strftime(buf, 127, "%F %T ", bt);
+    fputs(buf, f);
+}
+
+//! Prints comar version info and process id to stdout
+void
+pidstamp(FILE *f)
+{
+    if (my_proc.bus_msg) {
+        const char *sender = dbus_message_get_sender(my_proc.bus_msg);
+        fprintf(f, "(%d) [bus%s] ", getpid(), sender);
+    }
+    else {
+        fprintf(f, "(%d) ", getpid());
+    }
+}
+
+//! Logs a message
+void
+log_print(const char *fmt, va_list ap, int error)
+{
+    FILE *f;
+    f = fopen(config_file_log_traceback, "a");
+
+    timestamp(f);
+    pidstamp(f);
+
+    if (error) {
+        fprintf(f, "ERROR: ");
+    }
+
+    vfprintf(f, fmt, ap);
+    fclose(f);
+}
 
 //! Logs an error message
 void log_error(const char *fmt, ...)
 {
-    fprintf(stderr, "ERROR: ");
-
     va_list ap;
 
     va_start(ap, fmt);
-    if (config_debug) {
-        vfprintf(stderr, fmt, ap);
-    }
+    log_print(fmt, ap, 1);
     va_end(ap);
 }
 
@@ -49,7 +92,7 @@ void log_info(const char *fmt, ...)
     va_list ap;
 
     va_start(ap, fmt);
-    vprintf(fmt, ap);
+    log_print(fmt, ap, 0);
     va_end(ap);
 }
 
@@ -60,11 +103,9 @@ void log_debug(const char *fmt, ...)
         return;
     }
 
-    printf("DEBUG: ");
-
     va_list ap;
 
     va_start(ap, fmt);
-    vprintf(fmt, ap);
+    log_print(fmt, ap, 0);
     va_end(ap);
 }

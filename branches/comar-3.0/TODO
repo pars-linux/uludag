@@ -3,7 +3,8 @@
     - model_apps()
 ? Move core methods into script.c
 - Execute onRegister/onRemove methods after registering/removing script
-- Logging to file
+/ Logging to file
+    ? Logging errors and traceback to seperate file
 - Policy files
     - Models use COMAR 2.0 policy action IDs, fix them
 - Script for importing COMAR 2.0 scripts
