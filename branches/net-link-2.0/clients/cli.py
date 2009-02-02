@@ -4,7 +4,7 @@
 import comar
 import sys
 
-link = comar.Link()
+link = comar.Link("3")
 
 def printUsage():
     print "Usage: %s <command>" % sys.argv[0]
