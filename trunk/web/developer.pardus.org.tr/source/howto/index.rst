@@ -2,5 +2,7 @@ Howto Documents
 ===================================
 
 .. toctree::
+   :maxdepth: 2
 
-    howto-rst.rst
+   kde4-programming
+   howto-rst
