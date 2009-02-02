@@ -11,6 +11,8 @@
 # Please read the COPYING file.
 
 import os
+os.environ["LC_ALL"] = "C"
+
 import sys
 import copy
 import shutil
