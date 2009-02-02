@@ -158,6 +158,11 @@ script_signature_each(const char *signature)
                         PyList_Append(py_list, PyString_FromFormat("a{%s}", sub));
                         free(sub);
                         break;
+                    case 'a':
+                        sub = PyString_AsString(PyList_GetItem(script_signature_each(signature + i + 1), 0));
+                        i += strlen(sub) + 1;
+                        PyList_Append(py_list, PyString_FromFormat("a%s", sub));
+                        break;
                     default:
                         PyList_Append(py_list, PyString_FromFormat("a%c", signature[i + 1]));
                         break;
