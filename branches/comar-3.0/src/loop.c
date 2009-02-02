@@ -343,6 +343,9 @@ loop_exec()
         return -1;
     }
 
+    // Catch all method calls
+    dbus_bus_add_match(bus_conn, "type='method_call'", NULL);
+
     log_info("Listening for connections...\n");
 
     while (1) {
