@@ -23,7 +23,11 @@ import config
 import logger
 import templates as tmpl
 
-import mailauth
+try:
+    import mailauth
+except ImportError:
+    print "You have to create a mailauth.py file for defining 'username' and 'password'."
+    sys.exit(1)
 
 class MailerError(Exception):
     pass
