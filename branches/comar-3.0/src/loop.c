@@ -160,7 +160,7 @@ handle_core_message(DBusMessage *bus_msg, const char *path, const char *iface, c
         PyDict_SetItemString(PyDict_GetItemString(py_core, "locales"), sender, PyTuple_GetItem(py_args, 0));
         bus_reply_object(bus_msg, Py_True, "b");
     }
-    else if (strcmp(method, "destroy") == 0) {
+    else if (strcmp(method, "cancel") == 0) {
         // log_debug("Cancel requested: %s\n", PyString_AsString(PyObject_Repr(py_args)));
         int i;
         int total = 0;
@@ -204,8 +204,8 @@ filter_func(DBusConnection *conn, DBusMessage *bus_msg, void *data)
             else {
                 log_debug("Got message '%s.%s' from '%s'\n", iface, method, sender);
                 if (strcmp(config_interface, iface) == 0 && strcmp(path, "/") == 0) {
-                    // setLocale and destroy methods are handled in main process
-                    if (strcmp(method, "setLocale") == 0 || strcmp(method, "destroy") == 0) {
+                    // "setLocale" and "cancel" methods are handled in main process
+                    if (strcmp(method, "setLocale") == 0 || strcmp(method, "cancel") == 0) {
                         handle_core_message(bus_msg, path, iface, method, sender, py_args);
                     }
                     else {
