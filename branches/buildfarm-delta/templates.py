@@ -12,7 +12,7 @@
 #e-mail message templates for mailer module..
 
 error_message = """\
-From: Pardus Buildfarm [2008] <%(mailFrom)s>
+From: Pardus Buildfarm 2008 <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
 Subject: [buildfarm] %(type)s: %(subject)s
@@ -96,7 +96,7 @@ href="http://paketler.pardus.org.tr/logs/2008/%(packagename)s.log">http://paketl
 """
 
 info_message = """\
-From: Pardus Buildfarm [2008] <%(mailFrom)s>
+From: Pardus Buildfarm 2008 <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
 Subject: [buildfarm] %(subject)s
@@ -112,7 +112,7 @@ Happy hacking!
 """
 
 announce_message = """\
-From: Pardus Buildfarm [2008] <%(mailFrom)s>
+From: Pardus Buildfarm 2008 <%(mailFrom)s>
 To: %(announceAddr)s
 Subject: [buildfarm] [REPORT] New packages in -testing repository
 Content-Type: text/plain;
