@@ -7,6 +7,7 @@ import gui
 
 from gui.kaptanMain import Ui_kaptanUI
 import gui.ScrWelcome as welcomeWidget
+import gui.ScrMouse as mouseWidget
 
 class Kaptan(QtGui.QMainWindow):
     def __init__(self, parent=None):
@@ -14,7 +15,7 @@ class Kaptan(QtGui.QMainWindow):
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = [welcomeWidget,welcomeWidget]
+        self.screens = [welcomeWidget,mouseWidget]
         self.screenData = None
         self.moveInc = 1
 
