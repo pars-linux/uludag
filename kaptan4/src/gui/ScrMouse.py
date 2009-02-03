@@ -12,6 +12,7 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
+from PyKDE4.kdecore import ki18n
 
 from gui.ScreenWidget import ScreenWidget
 from gui.mouseWidget import Ui_mouseWidget
@@ -19,8 +20,8 @@ from gui.mouseWidget import Ui_mouseWidget
 class Widget(QtGui.QWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
-    title = "Mouse Settings"
-    desc = "Configure your mouse"
+    title = ki18n("Mouse Settings")
+    desc = ki18n("Configure your mouse")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)

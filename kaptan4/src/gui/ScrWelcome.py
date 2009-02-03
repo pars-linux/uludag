@@ -13,13 +13,14 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
+from PyKDE4.kdecore import ki18n
 
 from gui.ScreenWidget import ScreenWidget
 from gui.welcomeWidget import Ui_welcomeWidget
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = "Welcome"
-    desc = "Welcome to Kaptan Wizard :)"
+    title = ki18n("Welcome")
+    desc = ki18n("Welcome to Kaptan Wizard :)")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
