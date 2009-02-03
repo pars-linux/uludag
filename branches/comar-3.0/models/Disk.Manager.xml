@@ -22,7 +22,7 @@
             <arg name="device" type="s" direction="in"/>
         </method>
         <method name="listEntries" access_label="get">
-            <arg name="devices" type="a(s{ss})" direction="out"/>
+            <arg name="devices" type="as" direction="out"/>
         </method>
         <method name="addEntry" access_label="set">
             <arg name="device" type="s" direction="in"/>
