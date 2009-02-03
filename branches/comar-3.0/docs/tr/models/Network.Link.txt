@@ -263,3 +263,35 @@ Network.Link Modeli
         "inaccessible <Hata mesajı>"
 
         "unavailable"
+
+
+    Sinyaller:
+        connectionChanged: Bağlantı profili değiştirildiğinde gönderilir.
+            Argümanlar:
+                operation: Aşağıdakilerden biri olmalı:
+                    added
+                    changed
+                    deleted
+                profile: Profil adı
+
+        stateChanged: Bağlantı durumu değiştirildiğinde gönderilir.
+            Argümanlar:
+                profile: Profil adı
+                state: Aşağıdakilerden biri olmalı:
+                    connecting
+                    down
+                    up
+                    inaccessible
+                address_or_msg:
+                    state "up" ise, bağlantı adresi.
+                    state "inaccessible" ise, hata mesajı.
+
+        deviceChanged: Bir aygıt çıkarıldığında ya da takıldığında gönderilir.
+            Argümanlar:
+                action: Aşağıdakilerden biri olmalı:
+                    added
+                    new
+                    removed
+                type: linkInfo() içinde tanımlanan tip olmalı
+                device_id: Aygıt No.
+                device_name: Aygıt Adı

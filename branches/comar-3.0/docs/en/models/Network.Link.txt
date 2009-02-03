@@ -262,3 +262,35 @@ Network.Link Model
         "inaccessible <Error message>"
 
         "unavailable"
+
+
+    Signals:
+        connectionChanged: Fired when a connection profile is changed.
+            Arguments:
+                operation: Should be one of these:
+                    added
+                    changed
+                    deleted
+                profile: Profile name
+
+        stateChanged: Fired when state of a connection is changed.
+            Arguments:
+                profile: Profile name
+                state: Should be one of these:
+                    connecting
+                    down
+                    up
+                    inaccessible
+                address_or_msg:
+                    Address, if state is "up"
+                    Error message, if state is "inaccessible"
+
+        deviceChanged: Fired when a device is plugged or unplugged.
+            Arguments:
+                action: Should be one of these:
+                    added
+                    new
+                    removed
+                type: Should be connection type defined in linkInfo()
+                device_id: Device ID
+                device_name: Device name
