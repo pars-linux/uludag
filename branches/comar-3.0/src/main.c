@@ -57,7 +57,7 @@ main(int argc, char *argv[])
     }
 
     // Create directories
-    if (create_dir(config_dir_scripts) != 0 || create_dir(config_dir_scripts_apps) != 0 || create_dir(config_dir_log) != 0) {
+    if (create_dir(config_dir_scripts) != 0 || create_dir(config_dir_apps) != 0 || create_dir(config_dir_log) != 0) {
         exit(1);
     }
 

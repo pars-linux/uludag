@@ -16,7 +16,7 @@ def listModelApplications(model):
 
 def listApplicationModels(app):
     models = []
-    scriptDir = os.path.join(config_datapath(), "scripts_apps", app)
+    scriptDir = os.path.join(config_datapath(), "apps", app)
     if not os.path.exists(scriptDir):
         return models
     for i in os.listdir(scriptDir):
@@ -33,7 +33,7 @@ def register(app, model, filename):
         pass
     shutil.copy(filename, scriptFile)
 
-    scriptDir = os.path.join(config_datapath(), "scripts_apps", app)
+    scriptDir = os.path.join(config_datapath(), "apps", app)
     scriptFile = os.path.join(scriptDir, model)
     try:
         os.mkdir(scriptDir)
@@ -47,7 +47,7 @@ def register(app, model, filename):
     return True
 
 def remove(app):
-    scriptDir = os.path.join(config_datapath(), "scripts_apps", app)
+    scriptDir = os.path.join(config_datapath(), "apps", app)
     for i in os.listdir(scriptDir):
         if not i.startswith("."):
             scriptFile = os.path.join(config_datapath(), "scripts", i, "%s.py" % app)
@@ -63,7 +63,6 @@ def model_xml(modelName):
     else:
         xml = '<interface name="%s.%s">' % (config_interface(), modelName)
     for _name, (_type, _action_id, _sig_in, _sig_out) in config_modelbase()[modelName].iteritems():
-        # print _name, _type, _action_id, _sig_in, _sig_out
         if _type == 0:
             xml += '<method name="%s">' % _name
         else:
@@ -87,7 +86,7 @@ def introspect():
         xml += model_xml("Core")
         xml += '<node name="package"/>'
     elif path == '/package':
-        scriptDir = os.path.join(config_datapath(), "scripts_apps")
+        scriptDir = os.path.join(config_datapath(), "apps")
         for i in os.listdir(scriptDir):
             if not i.startswith("."):
                 xml += '<node name="%s"/>' % i

@@ -76,7 +76,7 @@ extern int config_debug;
 extern char *config_dir_models;
 extern char *config_dir_modules;
 extern char *config_dir_scripts;
-extern char *config_dir_scripts_apps;
+extern char *config_dir_apps;
 extern char *config_file_log_access;
 extern char *config_file_log_traceback;
 

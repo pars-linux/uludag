@@ -20,17 +20,33 @@ bir veritabanı kullanılıyor:
         |   + ...
         |
         + scripts
+        |   |
+        |   + System.Package
+        |   |   |
+        |   |   + apache.py
+        |   |   + baselayout.py
+        |   |   + ...
+        |   |
+        |   + System.Service
+        |   |   |
+        |   |   + apache.py
+        |   |   + kdebase.py
+        |   |   + ...
+        |   |
+        |   + ...
+        |
+        + apps
             |
-            + System.Package
+            + apache
             |   |
-            |   + apache.py
-            |   + baselayout.py
+            |   + System.Service
+            |   + System.Package
             |   + ...
             |
-            + System.Service
+            + baselayout
             |   |
-            |   + apache.py
-            |   + kdebase.py
+            |   + System.Package
+            |   + User.Manager
             |   + ...
             |
             + ...
@@ -42,6 +58,7 @@ Modules
 
 Modules dizini, sadece COMAR betikleri tarafından kullanılabilecek 
 Python modüllerini içermektedir.
+
 
 Models
 ------
@@ -71,7 +88,14 @@ bir XML dosyası bulunmaktadır. Model tanımı aşağıdaki gibidir:
 
 
 Scripts
-=======
+-------
 
 Bu dizinde uygulama betikleri yer almaktadır. Betikler, modellere 
 göre gruplandırılmıştır.
+
+
+Apps
+----
+
+Bu dizinde uygulamaların hangi modelleri sağladığının bir listesi 
+yer almaktadır.

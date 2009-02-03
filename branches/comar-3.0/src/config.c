@@ -60,7 +60,7 @@ char *config_dir_modules;;
 char *config_dir_scripts;
 
 //! Application scripts directory
-char *config_dir_scripts_apps;
+char *config_dir_apps;
 
 //! Log dir
 char *config_dir_log = DIR_LOG;
@@ -213,12 +213,12 @@ config_init(int argc, char *argv[])
     snprintf(config_dir_scripts, size, "%s/scripts", config_dir_data);
     config_dir_scripts[size - 1] = '\0';
 
-    // Build application script
-    size = strlen(config_dir_data) + 1 + strlen("scripts_apps") + 1;
-    config_dir_scripts_apps = malloc(size);
-    if (!config_dir_scripts_apps) oom();
-    snprintf(config_dir_scripts_apps, size, "%s/scripts_apps", config_dir_data);
-    config_dir_scripts_apps[size - 1] = '\0';
+    // Build application dir
+    size = strlen(config_dir_data) + 1 + strlen("apps") + 1;
+    config_dir_apps = malloc(size);
+    if (!config_dir_apps) oom();
+    snprintf(config_dir_apps, size, "%s/apps", config_dir_data);
+    config_dir_apps[size - 1] = '\0';
 
     // Build access.log path
     size = strlen(config_dir_log) + 1 + strlen("access.log") + 1;
