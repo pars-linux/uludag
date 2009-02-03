@@ -1,5 +1,5 @@
-Network.Link Model Draft
-========================
+Network.Link Model
+==================
 
     linkInfo():
         Provides information that application requires to create or manage network connection.
