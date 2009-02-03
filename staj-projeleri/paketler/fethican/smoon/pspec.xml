@@ -21,7 +21,7 @@
         <Name>smoon</Name>
         <RuntimeDependencies>
             <Dependency>TurboGears</Dependency>
-            <Dependency>genshi</Dependency>
+            <Dependency>Genshi</Dependency>
             <Dependency>elixir</Dependency>
             <Dependency>egenix-mx-base</Dependency>
             <Dependency>pycrypto</Dependency>
