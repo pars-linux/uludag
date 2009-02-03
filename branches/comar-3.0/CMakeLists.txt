@@ -87,3 +87,8 @@ INSTALL (FILES
 INSTALL (FILES
          config/tr.org.pardus.comar3.conf
          DESTINATION /etc/dbus-1/system.d)
+
+# Install hav to /usr/bin/hav3
+INSTALL (PROGRAMS tools/hav.py
+         DESTINATION /usr/bin
+         RENAME hav3)
