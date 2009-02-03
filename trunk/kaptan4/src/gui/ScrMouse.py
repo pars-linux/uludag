@@ -17,6 +17,9 @@ from PyKDE4.kdecore import ki18n
 from gui.ScreenWidget import ScreenWidget
 from gui.mouseWidget import Ui_mouseWidget
 
+from Xlib import display
+RIGHT_HANDED, LEFT_HANDED = range(2)
+
 class Widget(QtGui.QWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
@@ -28,8 +31,60 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_mouseWidget()
         self.ui.setupUi(self)
 
-    def setHandedness():
-        pass
+        # set signals
+        self.connect(self.ui.radioButtonRightHand, SIGNAL("toggled(bool)"), self.setHandedness)
+
+    def setHandedness(self, item):
+        mapMouse = {}
+
+        if self.ui.radioButtonRightHand.isChecked():
+            handed = RIGHT_HANDED
+
+        else:
+            handed = LEFT_HANDED
+
+        mapMouse = display.Display().get_pointer_mapping()
+        num_buttons = len(mapMouse)
+
+        if num_buttons == 1:
+            mapMouse[0] = 1
+        elif num_buttons == 2:
+            if handed == RIGHT_HANDED:
+                mapMouse[0], mapMouse[1] = 1, 3
+            else:
+                mapMouse[0], mapMouse[1] = 3, 1
+        else:
+            if handed == RIGHT_HANDED:
+                mapMouse[0], mapMouse[2] = 1, 3
+            else:
+                mapMouse[0], mapMouse[2] = 3, 1
+
+            if num_buttons >= 5:
+                pos = 0
+                for pos in range(num_buttons):
+                    if mapMouse[pos] == 4 or mapMouse[pos] == 5:
+                        break
+
+                if pos < num_buttons -1:
+                    if self.ui.checkReverse.isChecked():
+                        mapMouse[pos], mapMouse[pos + 1] = 5, 4
+                    else:
+                        mapMouse[pos], mapMouse[pos + 1] = 4, 5
+
+        display.Display().set_pointer_mapping(mapMouse)
+
+        config = KConfig("kcminputrc")
+        config.setGroup("Mouse")
+
+        if handed == RIGHT_HANDED:
+            config.writeEntry("MouseButtonMapping", QString("RightHanded"))
+        else:
+            config.writeEntry("MouseButtonMapping", QString("LeftHanded"))
+
+        config.writeEntry("ReverseScrollPolarity", self.ui.checkReverse.isChecked())
+        config.sync()
+
+        KIPC.sendMessageAll(KIPC.SettingsChanged, KApplication.SETTINGS_MOUSE)
 
     def shown(self):
         pass

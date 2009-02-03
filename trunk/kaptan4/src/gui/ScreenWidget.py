@@ -25,4 +25,5 @@ class ScreenWidget:
     def execute(self):
         return True
 
-
+    def backCheck(self):
+        return False
