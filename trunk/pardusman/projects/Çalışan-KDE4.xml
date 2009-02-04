@@ -1,11 +1,13 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus-2008.2-Canis-aureus-CalisanKDE4</Title>
-    <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
-    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.2/</ReleaseFiles>
-    <PackageSelection repo_uri="file:///home/ekin/packages/test/pisi-index.xml.bz2">
+    <Title>Pardus 2008.2 Canis aureus-CalisanKDE4</Title>
+    <WorkDir>/root/temp/</WorkDir>
+    <ReleaseFiles>/root/iso/CD-image/CD-image-version-2008.2/</ReleaseFiles>
+    <PackageSelection repo_uri="file:///root/iso/release/pisi-index.xml.bz2">
         <SelectedComponent>kernel.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>Bitstream-Vera-fonts</SelectedPackage>
+        <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
+        <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>QtCurve-KDE3</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acerhk</SelectedPackage>

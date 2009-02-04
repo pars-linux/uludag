@@ -1,9 +1,9 @@
 <PardusmanProject type="install" media="cd">
     <Title>Pardus 2008.2 Canis aureus</Title>
-    <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
-    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.2/</ReleaseFiles>
+    <WorkDir>/root/temp/</WorkDir>
+    <ReleaseFiles>/root/iso/CD-image/CD-image-version-2008.2/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
-    <PackageSelection repo_uri="file:///home/ekin/packages/test/pisi-index.xml.bz2">
+    <PackageSelection repo_uri="file:///root/iso/release/pisi-index.xml.bz2">
         <SelectedComponent>kernel.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>PolicyKit-kde</SelectedPackage>
@@ -42,7 +42,6 @@
         <SelectedPackage>crystal</SelectedPackage>
         <SelectedPackage>dbus-pyqt3-mainloop</SelectedPackage>
         <SelectedPackage>digikam</SelectedPackage>
-        <SelectedPackage>disk-manager</SelectedPackage>
         <SelectedPackage>display-manager</SelectedPackage>
         <SelectedPackage>dstat</SelectedPackage>
         <SelectedPackage>eagle-firmware</SelectedPackage>
@@ -269,7 +268,6 @@
         <Package>dialog</Package>
         <Package>diffutils</Package>
         <Package>digikam</Package>
-        <Package>disk-manager</Package>
         <Package>disktype</Package>
         <Package>display-manager</Package>
         <Package>djbfft</Package>
