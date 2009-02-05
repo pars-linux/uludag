@@ -3,8 +3,10 @@
 
 import sys
 from PyQt4 import QtCore, QtGui
-import gui
+from PyKDE4 import kdeui
+from PyKDE4.kdecore import ki18n, KAboutData, KCmdLineArgs
 
+import gui
 from gui.kaptanMain import Ui_kaptanUI
 import gui.ScrWelcome as welcomeWidget
 import gui.ScrMouse as mouseWidget
@@ -15,7 +17,7 @@ class Kaptan(QtGui.QMainWindow):
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = [welcomeWidget,mouseWidget]
+        self.screens = [welcomeWidget, mouseWidget]
         self.screenData = None
         self.moveInc = 1
 
@@ -90,8 +92,25 @@ class Kaptan(QtGui.QMainWindow):
 
 
 if __name__ == "__main__":
-    app = QtGui.QApplication(sys.argv)
+    # About data
+    appName     = "Kaptan"
+    catalog     = ""
+    programName = ki18n("Kaptan")
+    version     = "4.0"
+    description = ki18n("Kaptan is a welcome wizard for Pardus")
+    license     = KAboutData.License_GPL
+    copyright   = ki18n("(c) 2009 Pardus")
+    text        = ki18n("none")
+    homePage    = "www.pardus.org.tr"
+    bugEmail    = "pinar@pardus.org.tr"
+
+    aboutData   = KAboutData(appName,catalog, programName, version, description,
+                                license, copyright,text, homePage, bugEmail)
+
+
+    KCmdLineArgs.init(sys.argv, aboutData)
+    app =  kdeui.KApplication()
     kaptan = Kaptan()
     kaptan.show()
-    sys.exit(app.exec_())
+    app.exec_()
 
