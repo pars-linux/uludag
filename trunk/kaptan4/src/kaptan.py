@@ -10,6 +10,7 @@ import gui
 from gui.kaptanMain import Ui_kaptanUI
 import gui.ScrWelcome as welcomeWidget
 import gui.ScrMouse as mouseWidget
+import gui.ScrPackage as packageWidget
 
 class Kaptan(QtGui.QMainWindow):
     def __init__(self, parent=None):
@@ -17,7 +18,7 @@ class Kaptan(QtGui.QMainWindow):
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = [welcomeWidget, mouseWidget]
+        self.screens = [welcomeWidget, mouseWidget, packageWidget]
         self.screenData = None
         self.moveInc = 1
 
@@ -67,7 +68,6 @@ class Kaptan(QtGui.QMainWindow):
         self.ui.mainStack.removeWidget(self.ui.page)
         for screen in screens:
             _scr = screen.Widget()
-            print _scr.title," added."
             self.ui.mainStack.addWidget(_scr)
 
         self.stackMove(0)
@@ -106,7 +106,6 @@ if __name__ == "__main__":
 
     aboutData   = KAboutData(appName,catalog, programName, version, description,
                                 license, copyright,text, homePage, bugEmail)
-
 
     KCmdLineArgs.init(sys.argv, aboutData)
     app =  kdeui.KApplication()
