@@ -181,6 +181,8 @@ script_signature_each(const char *signature)
         i++;
     }
 
+    printf("Signature: %s\n", PyString_AsString(PyObject_Repr(py_list)));
+
     return py_list;
 }
 

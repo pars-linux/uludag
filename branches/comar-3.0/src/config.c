@@ -77,12 +77,19 @@ char *config_file_pid = FILE_PID;
 //! Debug mode
 int config_debug = 0;
 
+//! Print to console
+int config_print = 0;
+
+//! Runlevel (1 after logging enabled)
+int config_runlevel = 0;
+
 //! Command line options
 static struct option longopts[] = {
     { "busname", required_argument, NULL, 'b' },
     { "datadir", required_argument, NULL, 'd' },
     { "debug", 0, NULL, 'g' },
     { "logdir", required_argument, NULL, 'l' },
+    { "print", 0, NULL, 'p' },
     { "socket", required_argument, NULL, 's' },
     { "timeout", required_argument, NULL, 't' },
     { "help", 0, NULL, 'h' },
@@ -91,7 +98,7 @@ static struct option longopts[] = {
 };
 
 //! Short options
-static char *shortopts = "b:d:gl:s:t:phv";
+static char *shortopts = "b:d:gl:ps:t:phv";
 
 //! Print help message
 static void
@@ -113,6 +120,7 @@ print_usage(const char *name)
         "  -g, --debug           Enable debug mode.\n"
         "  -l, --logdir    [DIR] Log storage directory.\n"
         "                        (default is %s)\n"
+        "  -p, --print           Print to console.\n"
         "  -s, --socket   [SOCK] DBus socket address.\n"
         "                        (Default is %s)\n"
         "  -t, --timeout  [SECS] Shutdown after [SECS] seconds with no action.\n"
@@ -173,6 +181,9 @@ config_init(int argc, char *argv[])
             case 'l':
                 config_dir_log = strdup(optarg);
                 if (!config_dir_log) oom();
+                break;
+            case 'p':
+                config_print = 1;
                 break;
             case 's':
                 config_server_address = strdup(optarg);

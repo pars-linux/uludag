@@ -48,9 +48,6 @@ main(int argc, char *argv[])
         exit(1);
     }
 
-    log_debug("Initializing...\n");
-    log_debug("\n");
-
     // Check directories
     if (check_dir(config_dir_data) != 0 || check_dir(config_dir_models) != 0 || check_dir(config_dir_modules) != 0) {
         exit(1);
@@ -60,6 +57,14 @@ main(int argc, char *argv[])
     if (create_dir(config_dir_scripts) != 0 || create_dir(config_dir_apps) != 0 || create_dir(config_dir_log) != 0) {
         exit(1);
     }
+
+    // If "--print" is not used, log to file from this moment
+    if (config_print == 0) {
+        config_runlevel = 1;
+    }
+
+    log_debug("Initializing...\n");
+    log_debug("\n");
 
     log_debug("Modules directory          : %s\n", config_dir_modules);
     log_debug("Models directory           : %s\n", config_dir_models);

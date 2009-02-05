@@ -63,7 +63,13 @@ void
 log_print(const char *fmt, va_list ap, int error)
 {
     FILE *f;
-    f = fopen(config_file_log_traceback, "a");
+
+    if (config_runlevel != 0) {
+        f = fopen(config_file_log_traceback, "a");
+    }
+    else {
+        f = stdout;
+    }
 
     timestamp(f);
     pidstamp(f);
@@ -73,7 +79,10 @@ log_print(const char *fmt, va_list ap, int error)
     }
 
     vfprintf(f, fmt, ap);
-    fclose(f);
+
+    if (config_runlevel != 0) {
+        fclose(f);
+    }
 }
 
 //! Logs an error message
