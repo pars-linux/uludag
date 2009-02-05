@@ -121,6 +121,7 @@ print_usage(const char *name)
         "  -l, --logdir    [DIR] Log storage directory.\n"
         "                        (default is %s)\n"
         "  -p, --print           Print to console.\n"
+        "                        Also disables idle timeout.\n"
         "  -s, --socket   [SOCK] DBus socket address.\n"
         "                        (Default is %s)\n"
         "  -t, --timeout  [SECS] Shutdown after [SECS] seconds with no action.\n"
@@ -184,6 +185,7 @@ config_init(int argc, char *argv[])
                 break;
             case 'p':
                 config_print = 1;
+                config_timeout = 0;
                 break;
             case 's':
                 config_server_address = strdup(optarg);
