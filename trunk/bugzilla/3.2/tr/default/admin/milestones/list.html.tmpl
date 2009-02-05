@@ -17,6 +17,7 @@
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -30,8 +31,7 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = BLOCK %]Select milestone of product
-                   '[% product.name FILTER html %]'[% END %]
+[% title = BLOCK %]'[% product.name FILTER html %]' ürününün aşamasını seçin[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
@@ -47,7 +47,7 @@
 [% columns = [
      { 
        name => "name"
-       heading => "Edit milestone..."
+       heading => "Aşamada değişiklik yap"
        contentlink => edit_contentlink
      },
      { 
@@ -61,7 +61,7 @@
 
   [% columns.push({
        name => "bug_count"
-       heading => "$terms.Bugs"
+       heading => "$terms.Bug sayısı"
        align => "right"
        contentlink => bug_count_contentlink
      })
@@ -71,8 +71,8 @@
 
 [% columns.push({
        name => "action"
-       heading => "Action"
-       content => "Delete"
+       heading => "Eylem"
+       content => "Sil"
        contentlink => delete_contentlink
      })
 %]
@@ -83,7 +83,7 @@
      match_value => product.default_milestone
      match_field => 'name'
      override_content => 1
-     content => "(Default milestone)"
+     content => "(Öntanımlı aşama)"
      override_contentlink => 1
      contentlink => undef
    } ]
@@ -98,7 +98,7 @@
 [% IF ! showbugcounts %]
 
   <p><a href="editmilestones.cgi?product=[% product.name FILTER url_quote %]&amp;showbugcounts=1">
-      Redisplay table with [% terms.bug %] counts (slower)</a></p>
+      Tabloyu [% terms.bug %] sayılarıyla göster (daha yavaştır)</a></p>
 
 [% END %]
 

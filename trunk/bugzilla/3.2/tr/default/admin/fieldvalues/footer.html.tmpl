@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Max Kanat-Alexander <mkanat@bugzilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -30,24 +31,23 @@
 <p>
 
 [% UNLESS no_add_link %]
-  <a title="Add a value for the '[% field.description FILTER html %]' field."
+  Değer <a title="'[% field.description FILTER html %]' alanı için bir değer ekle."
      href="editvalues.cgi?action=add&amp;field=
-          [%- field.name FILTER url_quote %]">Add</a> a value.
+          [%- field.name FILTER url_quote %]">ekle</a>.
 [% END %]
 
 [% IF value && !no_edit_link %]
-  Edit value <a 
-  title="Edit value '[% value FILTER html %]' for the '
-         [%- field.name FILTER html %]' field"
+  <a 
+  title="'[%- field.name FILTER html %]' alanı için '[% value FILTER html %]' değerini değiştir"
   href="editvalues.cgi?action=edit&amp;field=
         [%- field.name FILTER url_quote %]&amp;value=[% value FILTER url_quote %]">
-        '[% value FILTER html %]'</a>.
+        '[% value FILTER html %]'</a> değerini değiştir.
 [% END %]
 
 [% UNLESS no_edit_other_link %]
-  Edit other values for the <a 
+  <a 
   href="editvalues.cgi?field=
-        [%- field.name FILTER url_quote %]">'[% field.description FILTER html %]'</a> field.
+        [%- field.name FILTER url_quote %]">'[% field.description FILTER html %]'</a> alanının diğer değerlerinde değişiklik yap.
 
 [% END %]
 
