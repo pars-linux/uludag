@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -38,30 +39,29 @@
 <p>
 
 [% UNLESS no_add_milestone_link %]
-  <a title="Add a milestone to product '[% product.name FILTER html %]'"
+  Aşama <a title="'[% product.name FILTER html %]' ürününe bir aşama ekle"
      href="editmilestones.cgi?action=add&amp;product=
-          [%- product.name FILTER url_quote %]">Add</a> a milestone. 
+          [%- product.name FILTER url_quote %]">ekle</a>.
 [% END %]
 
 [% IF milestone.name && !no_edit_milestone_link %]
-  Edit milestone <a 
-  title="Edit Milestone '[% milestone.name FILTER html %]' of product '
-         [%- product.name FILTER html %]'"
+  <a 
+  title="'[%- product.name FILTER html %]' ürününün '[% milestone.name FILTER html %]' aşamasında değişiklik yap"
   href="editmilestones.cgi?action=edit&amp;product=
         [%- product.name FILTER url_quote %]&amp;milestone=
         [%- milestone.name FILTER url_quote %]">
-        '[% milestone.name FILTER html %]'</a>.
+        '[% milestone.name FILTER html %]'</a> aşamasını değiştir.
 [% END %]
 
 [% UNLESS no_edit_other_milestones_link %]
-  Edit other milestones of product <a 
+  <a 
   href="editmilestones.cgi?product=
-        [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a>.
+        [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a> ürününün diğer aşamalarında değişiklik yap.
 
 [% END %]
 
-  Edit product <a 
+  <a 
   href="editproducts.cgi?action=edit&amp;product=
-        [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a>.
+        [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a> ürününde değişiklik yap.
 
 </p>
