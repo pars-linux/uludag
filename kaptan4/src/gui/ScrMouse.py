@@ -34,6 +34,15 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # set signals
         self.connect(self.ui.radioButtonRightHand, SIGNAL("toggled(bool)"), self.setHandedness)
+        self.connect(self.ui.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)
+        self.connect(self.ui.singleClick, SIGNAL("toggled(bool)"), self.setClickBehaviour)
+
+    def setClickBehaviour(self):
+        config = KConfig("kdeglobals")
+        group = config.group("KDE")
+        group.writeEntry("SingleClick", QString(str(self.ui.singleClick.isChecked()).lower()))
+        config.sync()
+        KGlobalSettings.self().emitChange(KGlobalSettings.SettingsChanged, KGlobalSettings.SETTINGS_MOUSE)
 
     def setHandedness(self, item):
         mapMouse = {}

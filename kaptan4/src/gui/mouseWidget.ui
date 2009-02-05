@@ -14,28 +14,28 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_3" >
    <item row="0" column="0" >
-    <layout class="QHBoxLayout" name="horizontalLayout" >
-     <item>
-      <widget class="QLabel" name="labelMouseDesc" >
-       <property name="text" >
-        <string>&lt;p align="left">If you are left-handed, you may prefer to swap the functions on the left and right buttons on your pointing device by choosing the "Left handed"option below. You can also select default click behaviour.&lt;/p></string>
-       </property>
-       <property name="wordWrap" >
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="pixMouseIcon" >
-       <property name="text" >
-        <string>mouse icon</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="0" >
     <layout class="QVBoxLayout" name="verticalLayout" >
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout" >
+       <item>
+        <widget class="QLabel" name="labelMouseDesc" >
+         <property name="text" >
+          <string>&lt;p align="left">If you are left-handed, you may prefer to swap the functions on the left and right buttons on your pointing device by choosing the "Left handed"option below. You can also select default click behaviour.&lt;/p></string>
+         </property>
+         <property name="wordWrap" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="pixMouseIcon" >
+         <property name="text" >
+          <string>mouse icon</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
      <item>
       <widget class="QGroupBox" name="groupBoxClickBehaviour" >
        <property name="autoFillBackground" >
@@ -50,65 +50,61 @@
        <property name="checkable" >
         <bool>false</bool>
        </property>
-       <widget class="QRadioButton" name="radioButton" >
-        <property name="geometry" >
-         <rect>
-          <x>9</x>
-          <y>41</y>
-          <width>656</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text" >
-         <string>Dou&amp;ble-click to open files and folders</string>
-        </property>
-       </widget>
-       <widget class="QRadioButton" name="radioButton_2" >
-        <property name="geometry" >
-         <rect>
-          <x>9</x>
-          <y>73</y>
-          <width>656</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text" >
-         <string>Single-click to open files and folders</string>
-        </property>
-       </widget>
+       <layout class="QGridLayout" name="gridLayout" >
+        <item row="1" column="0" >
+         <widget class="QRadioButton" name="DoubleClick" >
+          <property name="text" >
+           <string>Dou&amp;ble-click to open files and folders</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" >
+         <widget class="QRadioButton" name="singleClick" >
+          <property name="text" >
+           <string>Single-click to open files and folders</string>
+          </property>
+          <property name="checked" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBoxButtonOrder" >
+       <property name="title" >
+        <string>Button Order</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2" >
+        <item row="0" column="0" >
+         <widget class="QRadioButton" name="radioButtonRightHand" >
+          <property name="text" >
+           <string>Right Hand</string>
+          </property>
+          <property name="checked" >
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" >
+         <widget class="QRadioButton" name="radioButtonLeftHand" >
+          <property name="text" >
+           <string>Left Hand</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" >
+         <widget class="QCheckBox" name="checkReverse" >
+          <property name="text" >
+           <string>Reverse scrolling</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </item>
     </layout>
-   </item>
-   <item row="2" column="0" >
-    <widget class="QGroupBox" name="groupBoxButtonOrder" >
-     <property name="title" >
-      <string>Button Order</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout" >
-      <item row="0" column="0" >
-       <widget class="QRadioButton" name="radioButtonRightHand" >
-        <property name="text" >
-         <string>Right Hand</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" >
-       <widget class="QRadioButton" name="radioButtonLeftHand" >
-        <property name="text" >
-         <string>Left Hand</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" >
-       <widget class="QCheckBox" name="checkReverse" >
-        <property name="text" >
-         <string>Reverse scrolling</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
    </item>
   </layout>
  </widget>
