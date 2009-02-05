@@ -2,7 +2,7 @@ Servis Aktivasyonu
 ==================
 
 COMAR, çağrı geldiğinde DBus tarafından otomatik çalıştırılan, 
-ve bir süre (varsayılan 60 saniye) boşta kalırsa kapanan, sürekli 
+ve bir süre (öntanımlı 60 saniye) boşta kalırsa kapanan, sürekli 
 çalışmayan, bir servistir.
 
 Servis aktivasyonu, DBus tarafından yapılır ve bunun için COMAR'la 
