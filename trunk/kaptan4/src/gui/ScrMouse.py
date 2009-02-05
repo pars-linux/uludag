@@ -12,7 +12,8 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n
+from PyKDE4.kdecore import ki18n, KConfig
+from PyKDE4.kdeui import KGlobalSettings
 
 from gui.ScreenWidget import ScreenWidget
 from gui.mouseWidget import Ui_mouseWidget
@@ -74,17 +75,17 @@ class Widget(QtGui.QWidget, ScreenWidget):
         display.Display().set_pointer_mapping(mapMouse)
 
         config = KConfig("kcminputrc")
-        config.setGroup("Mouse")
+        group = config.group("Mouse")
 
         if handed == RIGHT_HANDED:
-            config.writeEntry("MouseButtonMapping", QString("RightHanded"))
+            group.writeEntry("MouseButtonMapping", QString("RightHanded"))
         else:
-            config.writeEntry("MouseButtonMapping", QString("LeftHanded"))
+            group.writeEntry("MouseButtonMapping", QString("LeftHanded"))
 
-        config.writeEntry("ReverseScrollPolarity", self.ui.checkReverse.isChecked())
+        group.writeEntry("ReverseScrollPolarity", QString(str(self.ui.checkReverse.isChecked())))
         config.sync()
 
-        KIPC.sendMessageAll(KIPC.SettingsChanged, KApplication.SETTINGS_MOUSE)
+        KGlobalSettings.self().emitChange(KGlobalSettings.SettingsChanged, KGlobalSettings.SETTINGS_MOUSE)
 
     def shown(self):
         pass
