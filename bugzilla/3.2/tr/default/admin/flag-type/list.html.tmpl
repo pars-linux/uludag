@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
@@ -23,45 +24,37 @@
 [% PROCESS "global/js-products.html.tmpl" %]
 
 [% PROCESS global/header.html.tmpl
-  title = 'Administer Flag Types'
+  title = 'Bayrak Türlerini Yönet'
   style = "
     table#flag_types_bugs tr th,
     table#flag_types_attachments tr th { text-align: left; }
     .inactive { color: #787878; }
     .multiplicable { display: block; }
   "
-  onload="var f = document.forms[0]; selectProduct(f.product, f.component, null, null, '__All__');"
+  onload="var f = document.forms[0]; selectProduct(f.product, f.component, null, null, '__Tümü__');"
   javascript_urls=["js/productform.js"]
   doc_section = "flags-overview.html#flag-types"
 %]
 
 <p>
-  Flags are markers that identify whether [% terms.abug %] or attachment has been granted
-  or denied some status.  Flags appear in the UI as a name and a status symbol
-  ("+" for granted, "-" for denied, and "?" for statuses requested by users).
+  Bayraklar [% terms.bug %] veya ekin belirli bir durumda olmasına izin verilip verilmediğini gösteren işaretçilerdir. Bayraklar kullanıcı arayüzünde bir isim ve bir durum simgesi (onaylandı için "+", reddedildi için "-", onay veya reddedilmeyi bekleyenler için "?") olarak görünür.
 </p>
 
 <p>
-  For example, you might define a "review" status for users to request review
-  for their patches.  When a patch writer requests review, the string "review?"
-  will appear in the attachment.  When a patch reviewer reviews the patch,
-  either the string "review+" or the string "review-" will appear in the patch,
-  depending on whether the patch passed or failed review.
+  Örneğin bir "gözdengeçir" bayrağı oluşturarak, bir yama gönderen kullanıcı yamanın gözden geçirilmesi için bu bayrağı isteyebilir. Bir yama yazarı gözden geçirme istediğinde, eklentide "gözden geçir?" katarı görünür. Yamaları gözden geçirmekle görevli birisi bu işlemi gerçekleştirdiğinde, yamanın değerlendirmeden geçip geçmediğine göre yamada "gözden geçir+" veya "gözden geçir-" katarı görünür.
 </p>
 
 <p>
-  You can restrict the list of flag types to those available for a given product
-  and component. If a product is selected with no component, only flag types
-  which are available to at least one component of the product are shown.
+  Bayrak türlerinin listesini belirli ürün ve bileşene sınırlandırabilirsiniz. Eğer ürün seçilmiş ama bileşen seçilmemişse, ürünün tüm bileşenlerindeki bayrak türleri listelenir.
 </p>
 
 <form action="editflagtypes.cgi" method="get">
   <table>
     <tr>
-      <th><label for="product">Product:</label></th>
+      <th><label for="product">Ürün:</label></th>
       <td>
-        <select name="product" onchange="selectProduct(this, this.form.component, null, null, '__Any__');">
-          <option value="">__Any__</option>
+        <select name="product" onchange="selectProduct(this, this.form.component, null, null, '__Herhangi biri__');">
+          <option value="">__Herhangi biri__</option>
           [% FOREACH prod = products %]
             <option value="[% prod.name FILTER html %]"
                     [% " selected" IF selected_product == prod.name %]>
@@ -69,10 +62,10 @@
           [% END %]
         </select>
       </td>
-      <th><label for="component">Component:</label></th>
+      <th><label for="component">Bileşen:</label></th>
       <td>
         <select name="component">
-          <option value="">__Any__</option>
+          <option value="">__Herhangi biri__</option>
           [% FOREACH comp = components %]
             <option value="[% comp FILTER html %]"
                     [% " selected" IF selected_component == comp %]>
@@ -80,25 +73,25 @@
           [% END %]
         </select>
       </td>
-      <td><input type="submit" id="submit" value="Filter"></td>
+      <td><input type="submit" id="submit" value="Süz"></td>
     </tr>
   </table>
 </form>
 
-<h3>Flag Types for [% terms.Bugs %]</h3>
+<h3>[% terms.BugsGen %] Bayrak Türleri</h3>
 
 [% PROCESS display_flag_types types=bug_types types_id='bugs' %]
 
 <p>
-  <a href="editflagtypes.cgi?action=enter&amp;target_type=bug">Create Flag Type for [% terms.Bugs %]</a>
+  <a href="editflagtypes.cgi?action=enter&amp;target_type=bug">[% terms.BugsDat %] Yönelik Bayrak Türü Oluştur</a>
 </p>
 
-<h3>Flag Types for Attachments</h3>
+<h3>Eklere Yönelik Bayrak Türleri</h3>
 
 [% PROCESS display_flag_types types=attachment_types types_id='attachments' %]
 
 <p>
-  <a href="editflagtypes.cgi?action=enter&amp;target_type=attachment">Create Flag Type For Attachments</a>
+  <a href="editflagtypes.cgi?action=enter&amp;target_type=attachment">Eklere Yönelik Bayrak Türü Oluştur</a>
 </p>
 
 [% PROCESS global/footer.html.tmpl %]
@@ -108,13 +101,13 @@
   <table id="flag_types_[% types_id FILTER html %]" cellspacing="0" cellpadding="4" border="1">
 
     <tr>
-      <th>Edit name ...</th>
-      <th>Description</th>
-      <th>Sortkey</th>
-      <th>Properties</th>
-      <th>Grant group</th>
-      <th>Request group</th>
-      <th>Actions</th>
+      <th>İsmini değiştir</th>
+      <th>Açıklama</th>
+      <th>Sıralama anahtarı</th>
+      <th>Özellikler</th>
+      <th>Onay grubu</th>
+      <th>İstek grubu</th>
+      <th>Eylemler</th>
     </tr>
 
     [% FOREACH type = types %]
@@ -125,20 +118,20 @@
         <td align="right">[% type.sortkey FILTER html %]</td>
         <td>
           [% IF type.is_requestable %]
-            <span class="requestable">requestable</span>
+            <span class="requestable">istenebilir</span>
           [% END %]
           [% IF type.is_requestable && type.is_requesteeble %]
-            <span class="requesteeble">(specifically)</span>
+            <span class="requesteeble">(özel olarak)</span>
           [% END %]
           [% IF type.is_multiplicable %]
-            <span class="multiplicable">multiplicable</span>
+            <span class="multiplicable">çoklanabilir</span>
           [% END %]
         </td>
         <td>[% IF type.grant_group %][% type.grant_group.name FILTER html %][% END %]</td>
         <td>[% IF type.request_group %][% type.request_group.name FILTER html %][% END %]</td>
         <td>
-          <a href="editflagtypes.cgi?action=copy&amp;id=[% type.id %]">Copy</a>
-          | <a href="editflagtypes.cgi?action=confirmdelete&amp;id=[% type.id %]">Delete</a>
+          <a href="editflagtypes.cgi?action=copy&amp;id=[% type.id %]">Kopyala</a>
+          | <a href="editflagtypes.cgi?action=confirmdelete&amp;id=[% type.id %]">Sil</a>
         </td>
       </tr>
 

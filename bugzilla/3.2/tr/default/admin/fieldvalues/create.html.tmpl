@@ -12,6 +12,7 @@
   #
   # Contributor(s): Max Kanat-Alexander <mkanat@bugzilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -19,48 +20,47 @@
   #%]
   
 [% title = BLOCK %]
-  Add Value for the '[% field.description FILTER html %]' ([% field.name FILTER html %]) field
+  '[% field.description FILTER html %]' ([% field.name FILTER html %]) alanına Değer Ekle
 [% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
 
 <p>
-  This page allows you to add a new value for the '[% field.description FILTER html %]' field.
+  Bu sayfada '[% field.description FILTER html %]' alanı için yeni bir değer ekleyebilirsiniz.
 </p>
 
 <form method="post" action="editvalues.cgi">
   <table border="0" cellpadding="4" cellspacing="0">
     <tr>
-      <th align="right"><label for="value">Value:</label></th>
+      <th align="right"><label for="value">Değer:</label></th>
       <td><input id="value" size="30" maxlength="60" name="value"
                  value=""></td>
     </tr>
     <tr>
-      <th align="right"><label for="sortkey">Sortkey:</label></th>
+      <th align="right"><label for="sortkey">Sıralama anahtarı:</label></th>
       <td><input id="sortkey" size="10" maxlength="20" name="sortkey"
                  value=""></td>
     </tr>
     [% IF field.name == "bug_status" %]
       <tr>
-        <th align="right"><label for="is_open">Status Type:</label></th>
+        <th align="right"><label for="is_open">Durum Türü:</label></th>
         <td>
           <input type="radio" id="open_status" name="is_open" value="1" checked="checked">
-          <label for="open_status">Open</label><br>
+          <label for="open_status">Açık</label><br>
           <input type="radio" id="closed_status" name="is_open" value="0">
-          <label for="closed_status">Closed (requires a Resolution)</label>
+          <label for="closed_status">Kapalı (bir Karar gerektirir)</label>
         </td>
       </tr>
       <tr>
         <th>&nbsp;</th>
         <td>
-          Note: The open/close attribute can only be set now, when you create
-          the status. It cannot be edited later.
+          Not: Açık/kapalı niteliği sadece şimdi belirlenebilir. Daha sonra değiştirilemez.
         </td>
       </tr>
     [% END %]
   </table>
-  <input type="submit" id="create" value="Add">
+  <input type="submit" id="create" value="Ekle">
   <input type="hidden" name="action" value="new">
   <input type="hidden" name='field' value="[% field.name FILTER html %]">
   <input type="hidden" name="token" value="[% token FILTER html %]">

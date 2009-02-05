@@ -17,6 +17,7 @@
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
   #                 Mark Bickford <markhb@maine.rr.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
@@ -24,20 +25,24 @@
 [% PROCESS "global/js-products.html.tmpl" %]
 
 [% IF type.target_type == "bug" %]
-  [% title = BLOCK %]Create Flag Type for [% terms.Bugs %][% END %]
+  [% title = BLOCK %][% terms.Bugs %] için Bayrak Türü Oluştur[% END %]
   [% typeLabelLowerPlural = BLOCK %][% terms.bugs %][% END %]
+  [% typeLabelLowerPluralGen = BLOCK %][% terms.bugsGen %][% END %]
   [% typeLabelLowerSingular = BLOCK %][% terms.bug %][% END %]
+  [% typeLabelLowerSingularDat = BLOCK %][% terms.bugDat %][% END %]
 [% ELSE %]
-  [% title = "Create Flag Type for Attachments" %]
-  [% typeLabelLowerPlural = BLOCK %]attachments[% END %]
-  [% typeLabelLowerSingular = BLOCK %]attachment[% END %]
+  [% title = "Ekler için Bayrak Türü Oluştur" %]
+  [% typeLabelLowerPlural = BLOCK %]ekler[% END %]
+  [% typeLabelLowerPluralGen = BLOCK %]eklerin[% END %]
+  [% typeLabelLowerSingular = BLOCK %]ek[% END %]
+  [% typeLabelLowerSingularDat = BLOCK %]eke[% END %]
 [% END %]
 
 [% doc_section = "flags-overview.html#flags-create" %]
 [% IF last_action == "copy" %]
-  [% title = BLOCK %]Create Flag Type Based on [% type.name FILTER html %][% END %]
+  [% title = BLOCK %][% type.name FILTER html %] Türünü Temel Alan Bir Bayrak Türü Oluştur[% END %]
 [% ELSIF last_action == "edit" %]
-  [% title = BLOCK %]Edit Flag Type [% type.name FILTER html %][% END %]
+  [% title = BLOCK %][% type.name FILTER html %] Bayrak Türünde Değişiklik Yap[% END %]
   [% doc_section = "flags-overview.html#flags-edit" %]
 [% END %]
 
@@ -47,7 +52,7 @@
     table#form th { text-align: right; vertical-align: baseline; white-space: nowrap; }
     table#form td { text-align: left; vertical-align: baseline; }
   "
-  onload="var f = document.forms[0]; selectProduct(f.product, f.component, null, null, '__Any__');"
+  onload="var f = document.forms[0]; selectProduct(f.product, f.component, null, null, '__Herhangi biri__');"
   javascript_urls=["js/productform.js"]
   doc_section = doc_section
 %]
@@ -66,22 +71,22 @@
 
   [%# Add a hidden button at the top of the form so that the user pressing "return"
     # really submit the form, as expected. %]
-  <input type="submit" id="commit" value="Submit" style="display: none;">
+  <input type="submit" id="commit" value="Gönder" style="display: none;">
 
   <table id="form" cellspacing="0" cellpadding="4" border="0">
     <tr>
-      <th>Name:</th>
+      <th>İsim:</th>
       <td>
-        a short name identifying this type<br>
+        bu türü açıklayan kısa bir isim<br>
         <input type="text" name="name" value="[% type.name FILTER html %]"
                size="50" maxlength="50">
       </td>
     </tr>
 
     <tr>
-      <th>Description:</th>
+      <th>Açıklama:</th>
       <td>
-        a comprehensive description of this type<br>
+        türün detaylı açıklaması<br>
         [% INCLUDE global/textarea.html.tmpl
           name           = 'description'
           minrows        = 4
@@ -92,18 +97,16 @@
     </tr>
 
     <tr>
-      <th>Category:</th>
+      <th>Sınıf:</th>
 
       <td>
-        the products/components to which [% typeLabelLowerPlural %] must
-        (inclusions) or must not (exclusions) belong in order for users
-        to be able to set flags of this type for them
+        kullanıcıların bayrak atayabilmesi için [% typeLabelLowerPluralGen %] dahil edilmesi veya hariç tutulması gereken ürün-bileşenler
         <table>
           <tr>
             <td style="vertical-align: top;">
-              <b>Product/Component:</b><br>
-              <select name="product" onchange="selectProduct(this, this.form.component, null, null, '__Any__');">
-                <option value="">__Any__</option>
+              <b>Ürün-Bileşen:</b><br>
+              <select name="product" onchange="selectProduct(this, this.form.component, null, null, '__Herhangi biri__');">
+                <option value="">__Herhangi biri__</option>
                 [% FOREACH prod = products %]
                   <option value="[% prod.name FILTER html %]" 
                           [% "selected" IF type.product.name == prod.name %]>
@@ -111,25 +114,25 @@
                 [% END %]
               </select><br>
               <select name="component">
-                <option value="">__Any__</option>
+                <option value="">__Herhangi biri__</option>
                 [% FOREACH comp = components %]
                   <option value="[% comp FILTER html %]" 
                           [% "selected" IF type.component.name == comp %]>
                           [% comp FILTER html %]</option>
                 [% END %]
               </select><br>
-              <input type="submit" name="categoryAction-include" value="Include">
-              <input type="submit" name="categoryAction-exclude" value="Exclude">
+              <input type="submit" name="categoryAction-include" value="Dahil et">
+              <input type="submit" name="categoryAction-exclude" value="Hariç tut">
             </td>
             <td style="vertical-align: top;">
-              <b>Inclusions:</b><br>
+              <b>Dahil oldukları:</b><br>
               [% PROCESS "global/select-menu.html.tmpl" name="inclusion_to_remove" multiple="1" size="7" options=type.inclusions %]<br>
-              <input type="submit" name="categoryAction-removeInclusion" value="Remove Inclusion">
+              <input type="submit" name="categoryAction-removeInclusion" value="Dahil Olma Durumunu Kaldır">
             </td>
             <td style="vertical-align: top;">
-              <b>Exclusions:</b><br>
+              <b>Hariç tutuldukları:</b><br>
               [% PROCESS "global/select-menu.html.tmpl" name="exclusion_to_remove" multiple="1" size="7" options=type.exclusions %]<br>
-              <input type="submit" name="categoryAction-removeExclusion" value="Remove Exclusion">
+              <input type="submit" name="categoryAction-removeExclusion" value="Hariç Tutulma Durumunu Kaldır">
             </td>
           </tr>
         </table>
@@ -139,10 +142,7 @@
     <tr>
       <th>Sort Key:</th>
       <td>
-        a number between 1 and 32767 by which this type will be sorted
-        when displayed to users in a list; ignore if you don't care
-        what order the types appear in or if you want them to appear
-        in alphabetical order<br>
+        1 ile 32767 arasında, kullanıcılara gösterim esnasında türün sırasını belirlemekte kullanılacak bir sayı; eğer türlerin nasıl sıralandığını önemsemiyorsanız veya alfabetik sıralanmalarını istiyorsanız gözardı edin<br>
         <input type="text" name="sortkey" value="[% type.sortkey || 1 %]" size="5" maxlength="5">
       </td>
     </tr>
@@ -152,7 +152,7 @@
       <td>
         <input type="checkbox" id="is_active" name="is_active"
                [% " checked" IF type.is_active || !type.is_active.defined %]>
-        <label for="is_active">active (flags of this type appear in the UI and can be set)</label>
+        <label for="is_active">aktif (bu türdeki bayraklar kullanıcı arayüzünde görüntülenir ve kullanıma açıktır)</label>
       </td>
     </tr>
 
@@ -161,20 +161,16 @@
       <td>
         <input type="checkbox" id="is_requestable" name="is_requestable"
                [% " checked" IF type.is_requestable || !type.is_requestable.defined %]>
-        <label for="is_requestable">requestable (users can ask for flags of this type to be set)</label>
+        <label for="is_requestable">istenebilir (kullanıcılar bu tür bayrakların atanmasını isteyebilir)</label>
       </td>
     </tr>
 
     <tr>
       <th>CC List:</th>
       <td>
-        if requestable, who should get carbon copied on email notification of requests.
-        This is a comma-separated list of full e-mail addresses which do not
-        need to be [% terms.Bugzilla %] logins.
+        eğer istenebilir ise, bu isteklere yönelik eposta bildirimi yapıldığında başka kimlere eposta gönderilmesi gerekir. Bu alan virgülle ayrılmış <em>tam</em>eposta adresleri içermelidir ve [% terms.Bugzilla %] hesapları olması gerekmez.
         [% IF Param('emailsuffix') %]
-          Note that the configured emailsuffix
-          <kbd>[% Param('emailsuffix') %]</kbd> will <em>not</em> be appended
-          to these addresses, so you should add it explicitly if so desired.
+          Ayarlanan <kbd>[% Param('emailsuffix') %]</kbd> eposta uzantısı bu adreslere <em>eklenmeyecek</em>tir.
         [% END %]<br>
         <input type="text" name="cc_list" value="[% type.cc_list FILTER html %]" size="80" maxlength="200">
       </td>
@@ -185,8 +181,7 @@
       <td>
         <input type="checkbox" id="is_requesteeble" name="is_requesteeble"
                [% " checked" IF type.is_requesteeble || !type.is_requesteeble.defined %]>
-        <label for="is_requesteeble">specifically requestable (users can ask specific other users
-          to set flags of this type as opposed to just asking the wind)</label>
+        <label for="is_requesteeble">özel olarak istenebilir (kullanıcılar bayrak atanma isteğini genele yazmak yerine doğrudan belirli kullanıcılardan isteyebilir)</label>
       </td>
     </tr>
 
@@ -195,26 +190,25 @@
       <td>
         <input type="checkbox" id="is_multiplicable" name="is_multiplicable"
                [% " checked" IF type.is_multiplicable || !type.is_multiplicable.defined %]>
-        <label for="is_multiplicable">multiplicable (multiple flags of this type can be set on
-          the same [% typeLabelLowerSingular %])</label>
+        <label for="is_multiplicable">çoklanabilir (aynı [% typeLabelLowerSingularDat %] bu türden birden fazla bayrak atanabilir)</label>
       </td>
     </tr>
 
     <tr>
-      <th>Grant Group:</th>
+      <th>İzin Grubu:</th>
       <td>
-        the group allowed to grant/deny flags of this type
-        (to allow all users to grant/deny these flags, select no group)<br>
+        bu türden bayrakları onaylayan, onlara izin veren veya onları reddeden grup
+        (tüm kullanıcıların bu bayrakları onaylayabilmesi veya reddedebilmesi için, "grup yok" seçin)<br>
         [% PROCESS select selname = "grant_group" %]
       </td>
     </tr>
 
     <tr>
-      <th>Request Group:</th>
+      <th>İstek Grubu:</th>
       <td>
-        if flags of this type are requestable, the group allowed to request them
-        (to allow all users to request these flags, select no group)<br>
-        Note that the request group alone has no effect if the grant group is not defined!<br>
+        eğer bu tür bayraklar istenebiliyorsa, istemesine izin verilen grup
+        (tüm kullanıcıların bu bayrakları isteyebilmesi için, grup seçmeyin)<br>
+        Eğer istek grubu tanımlı değilse izin grubunun anlamsız olduğunu hatırlatırız.<br>
         [% PROCESS select selname = "request_group" %]
       </td>
     </tr>
@@ -223,8 +217,8 @@
       <th></th>
       <td>
         <input type="submit" id="save" value="
-          [%- IF (last_action == "enter" || last_action == "copy") %]Create
-          [%- ELSE %]Save Changes
+          [%- IF (last_action == "enter" || last_action == "copy") %]Oluştur
+          [%- ELSE %]Değişikleri Kaydet
           [%- END %]">
       </td>
     </tr>
@@ -242,7 +236,7 @@
 
 [% BLOCK select %]
   <select name="[% selname %]" id="[% selname %]">
-    <option value="">(no group)</option>
+    <option value="">(grup yok)</option>
     [% FOREACH group = groups %]
       <option value="[% group.name FILTER html %]"
         [% " selected" IF (type.${selname} && type.${selname}.name == group.name) %]>

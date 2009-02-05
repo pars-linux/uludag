@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Max Kanat-Alexander <mkanat@bugzilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -28,8 +29,7 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = BLOCK %]Select value for the '[% field.description FILTER html %]'
-                   ([% field.name FILTER html %]) field[% END %]
+[% title = BLOCK %]'[% field.description FILTER html %]' ([% field.name FILTER html %]) alanı için değer seç[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
@@ -43,17 +43,17 @@
 [% columns = [
      { 
        name => "name"
-       heading => "Edit field value..."
+       heading => "Alan değerini değiştir..."
        contentlink => edit_contentlink
      },
      { 
        name => "sortkey"
-       heading => "Sortkey"
+       heading => "Sıralama anahtarı"
      },
      {
        name => "action"
-       heading => "Action"
-       content => "Delete"
+       heading => "Eylem"
+       content => "Sil"
        contentlink => delete_contentlink
      } ]
 %]
@@ -63,7 +63,7 @@
        match_value => "$default"
        match_field => 'name'
        override_content => 1
-       content => "(Default value)"
+       content => "(Öntanımlı değer)"
        override_contentlink => 1
        contentlink => undef
      } ]
@@ -80,7 +80,7 @@
          match_value => "$static_value"
          match_field => 'name'
          override_content => 1
-         content => "(Non-deletable value)"
+         content => "(Silinemez değer)"
          override_contentlink => 1
          contentlink => undef
        })

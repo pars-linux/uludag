@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Max Kanat-Alexander <mkanat@bugzilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -22,8 +23,7 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% title = BLOCK %]
-  Edit Value '[% value FILTER html %]' for the '[% field.description FILTER html %]'
-  ([% field.name FILTER html %]) field
+  [% field.description FILTER html %]' ([% field.name FILTER html %]) alanının '[% value FILTER html %]' değerini değiştir
 [% END %]
 [% PROCESS global/header.html.tmpl
   title = title
@@ -33,7 +33,7 @@
   <table border="0" cellpadding="4" cellspacing="0">
 
     <tr>
-      <th valign="top"><label for="value">Field Value:</label></th>
+      <th valign="top"><label for="value">Alan Değeri:</label></th>
       <td>
         [% IF is_static %]
           <input type="hidden" name="value" value="[% value FILTER html %]">
@@ -45,14 +45,14 @@
       </td>
     </tr>
     <tr>
-      <th align="right"><label for="sortkey">Sortkey:</label></th>
+      <th align="right"><label for="sortkey">Sıralama anahtarı:</label></th>
       <td><input id="sortkey" size="20" maxlength="20" name="sortkey" value="
       [%- sortkey FILTER html %]"></td>
     </tr>
     [% IF field.name == "bug_status" %]
       <tr>
-        <th align="right"><label for="is_open">Status Type:</label></th>
-        <td>[% IF is_open %]Open[% ELSE %]Closed[% END %]</td>
+        <th align="right"><label for="is_open">Durum Türü:</label></th>
+        <td>[% IF is_open %]Açık[% ELSE %]Kapalı[% END %]</td>
       </tr>
     [% END %]
   </table>
@@ -62,7 +62,7 @@
   <input type="hidden" name="action" value="update">
   <input type="hidden" name="field" value="[% field.name FILTER html %]">
   <input type="hidden" name="token" value="[% token FILTER html %]">
-  <input type="submit" id="update" value="Save Changes">
+  <input type="submit" id="update" value="Değişiklikleri Kaydet">
 </form>
 
 [% PROCESS admin/fieldvalues/footer.html.tmpl
