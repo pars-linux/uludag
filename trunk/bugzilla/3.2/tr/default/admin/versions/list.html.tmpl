@@ -43,7 +43,7 @@
 [% columns = [
      { 
        name => "name"
-       heading => "Edit version..."
+       heading => "Sürümü düzenle..."
        contentlink => edit_contentlink
      }
    ]
@@ -53,7 +53,7 @@
 
   [% columns.push({
        name => "bug_count"
-       heading => "$terms.Bugs"
+       heading => "$terms.Bug sayısı"
        align => "right"
        contentlink => bug_count_contentlink
      })
@@ -62,8 +62,8 @@
 [% END %]
 
 [% columns.push({
-       heading => "Action"
-       content => "Delete"
+       heading => "Eylem"
+       content => "Sil"
        contentlink => delete_contentlink
      })
 %]
@@ -76,7 +76,7 @@
 [% IF ! showbugcounts %]
 
   <p><a href="editversions.cgi?product=[% product.name FILTER url_quote %]&amp;showbugcounts=1">
-      Redisplay table with [% terms.bug %] counts (slower)</a></p>
+      Tabloyu [% terms.bug %] sayılarıyla yeni den göster (daha yavaştır)</a></p>
 
 [% END %]
 

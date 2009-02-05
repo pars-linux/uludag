@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -36,30 +37,20 @@
 <p>
 
 [% UNLESS no_add_version_link %]
-  <a title="Add a version to product '[% product.name FILTER html %]'"
+  Sürüm <a title="'[% product.name FILTER html %]' ürününe bir sürüm ekle"
      href="editversions.cgi?action=add&amp;product=
-          [%- product.name FILTER url_quote %]">Add</a> a version. 
+          [%- product.name FILTER url_quote %]">ekle</a>
 [% END %]
 
 [% IF version.name && !no_edit_version_link %]
-  Edit version <a 
-  title="Edit Version '[% version.name FILTER html %]' of product '
-         [%- product.name FILTER html %]'"
-  href="editversions.cgi?action=edit&amp;product=
-        [%- product.name FILTER url_quote %]&amp;version=
-        [%- version.name FILTER url_quote %]">
-        '[% version.name FILTER html %]'</a>.
+  <a title="Ürünün '[% version.name FILTER html %]' sürümünü düzenle" href="editversions.cgi?action=edit&amp;product=[%- product.name FILTER url_quote %]&amp;version=[%- version.name FILTER url_quote %]">'[% version.name FILTER html %]'</a> sürümünü düzenle.
 [% END %]
 
 [% UNLESS no_edit_other_versions_link %]
-  Edit other versions of product <a 
-  href="editversions.cgi?product=
-        [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a>.
+  <a href="editversions.cgi?product=[%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a> ürününün diğer sürümlerini düzenle.
 
 [% END %]
 
-  Edit product <a 
-  href="editproducts.cgi?action=edit&amp;product=
-        [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a>.
+  <a href="editproducts.cgi?action=edit&amp;product=[%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a> ürününü düzenle.
 
 </p>
