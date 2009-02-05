@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>PackageWidget</class>
- <widget class="QWidget" name="PackageWidget" >
+ <class>packageWidget</class>
+ <widget class="QWidget" name="packageWidget" >
   <property name="geometry" >
    <rect>
     <x>0</x>
