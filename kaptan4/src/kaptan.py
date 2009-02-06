@@ -11,6 +11,7 @@ from gui.kaptanMain import Ui_kaptanUI
 import gui.ScrWelcome as welcomeWidget
 import gui.ScrMouse as mouseWidget
 import gui.ScrPackage as packageWidget
+import gui.ScrNetwork as networkWidget
 
 class Kaptan(QtGui.QMainWindow):
     def __init__(self, parent=None):
@@ -18,7 +19,7 @@ class Kaptan(QtGui.QMainWindow):
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = [welcomeWidget, mouseWidget, packageWidget]
+        self.screens = [welcomeWidget, mouseWidget, packageWidget, networkWidget]
         self.screenData = None
         self.moveInc = 1
 
