@@ -12,7 +12,7 @@
             <arg name="parts" type="as" direction="out"/>
         </method>
         <method name="getMounted" access_label="get">
-            <arg name="parts" type="as" direction="out"/>
+            <arg name="parts" type="a(ss)" direction="out"/>
         </method>
         <method name="mount" access_label="mount">
             <arg name="device" type="s" direction="in"/>
