@@ -41,7 +41,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # set repo name and address
         self.repoName = "contrib"
-        self.repoAddress = "http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2"
+        self.repoAddress = "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
 
         # set signals
         self.ui.showTray.connect(self.ui.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
