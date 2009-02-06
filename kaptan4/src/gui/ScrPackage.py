@@ -12,7 +12,7 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n
+from PyKDE4.kdecore import ki18n, KConfig, KProcess
 
 from gui.ScreenWidget import ScreenWidget
 from gui.packageWidget import Ui_packageWidget
@@ -41,9 +41,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # set repo name and address
         self.repoName = "contrib"
-        self.repoAddress = "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+        self.repoAddress = "http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2"
 
-        # add signals here
+        # set signals
+        self.ui.showTray.connect(self.ui.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
+        self.ui.checkUpdate.connect(self.ui.checkUpdate, SIGNAL("toggled(bool)"), self.updateSelected)
+        self.ui.checkBoxContrib.connect(self.ui.checkBoxContrib, SIGNAL("toggled(bool)"), self.slotContribRepo)
 
         # create a db object
         self.repodb = pisi.db.repodb.RepoDB()
@@ -67,21 +70,92 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 self.repoName = tmpRepoName
 
     def slotContribRepo(self):
-        if self.checkBoxContrib.isChecked():
+        if self.ui.checkBoxContrib.isChecked():
             if self.addRepo(self.repoName, self.repoAddress) == False:
                 self.flagRepo = 1
                 self.ui.checkBoxContrib.setChecked(0)
 
-                message = i18n("You are not authorized for this operation.")
+                message = ki18n("You are not authorized for this operation.")
                 KMessageBox.error(self, message, ki18n("Authentication Error!"))
         else:
             if self.flagRepo != 1:
                 self.removeRepo(self.repoName)
 
+    def addRepo(self, r_name, r_address):
+        try:
+            contribrepo.addRepo(r_name, r_address)
+            return True
+        except Exception, e:
+            if e.get_dbus_name().endswith('policy.no'):
+                return False
+            elif e.get_dbus_name().endswith('policy.auth_admin'):
+                authResult = contribrepo.auth("addrepository")
+            elif e.get_dbus_name().endswith('policy.auth_user'):
+                authResult = contribrepo.auth("addrepository")
+            else:
+                return False
+            try:
+                if authResult:
+                    contribrepo.addRepo(r_name, r_address)
+                    return True
+                else:
+                    return False
+            except:
+                return False
+
+    def removeRepo(self, r_name):
+        try:
+            contribrepo.removeRepo(r_name)
+            return True
+        except Exception, e:
+            if e.get_dbus_name().endswith('policy.no'):
+                return False
+            elif e.get_dbus_name().endswith('policy.auth_admin'):
+                authResult = contribrepo.auth("removerepository")
+            elif e.get_dbus_name().endswith('policy.auth_user'):
+                authResult = contribrepo.auth("removerepository")
+            else:
+                return False
+            try:
+                if authResult:
+                    contribrepo.removeRepo(r_name)
+                    return True
+                else:
+                    return False
+            except:
+                return False
+
+    def enableCheckTime(self):
+        if self.ui.showTray.isChecked():
+            self.ui.checkUpdate.setEnabled(True)
+            self.ui.updateInterval.setEnabled(self.ui.checkUpdate.isChecked() and self.ui.showTray.isChecked())
+        else:
+            self.ui.checkUpdate.setEnabled(False)
+            self.ui.updateInterval.setEnabled(False)
+
+    def updateSelected(self):
+        if self.ui.checkUpdate.isChecked():
+            self.ui.updateInterval.setEnabled(True)
+        else:
+            self.ui.updateInterval.setEnabled(False)
+
+    def applySettings(self):
+        # write selected configurations to future package-managerrc
+        config = KConfig("package-managerrc")
+        group = config.group("General")
+        group.writeEntry("SystemTray", str(self.ui.showTray.isChecked()))
+        group.writeEntry("UpdateCheck", str(self.ui.checkUpdate.isChecked()))
+        group.writeEntry("UpdateCheckInterval", str(self.ui.updateInterval.value() * 60))
+        config.sync()
+
+        if self.ui.showTray.isChecked():
+            proc = KProcess()
+            # call package manager
+
     def shown(self):
         pass
 
     def execute(self):
-        return True
+        self.applySettings()
 
 
