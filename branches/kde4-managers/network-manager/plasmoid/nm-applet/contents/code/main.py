@@ -3,6 +3,7 @@
 
 # Pardus Libs
 import comar
+import dbus
 
 # Qt Libs
 from PyQt4.QtCore import *
@@ -20,22 +21,38 @@ from PyKDE4 import plasmascript
 from popup import *
 from item import *
 
-# DBUS-QT
 from dbus.mainloop.qt import DBusQtMainLoop
-
 # DBUS MainLoop
 DBusQtMainLoop(set_as_default = True)
 
 # Our Comar Link
 link = comar.Link()
 
+# Session Bus
+#sessionBus = dbus.SessionBus()
+lastId = -1
+
+def notify(message, timeout=2000):
+    global lastId
+    try:
+        notifierProxy = sessionBus.get_object('org.kde.VisualNotifications', '/VisualNotifications')
+        notifierObj = dbus.Interface(notifierProxy, "org.kde.VisualNotifications")
+        if lastId>0:
+            notifierObj.CloseNotification(lastId)
+        lastId = notifierObj.Notify("NM", 0, "", "applications-internet", "Network Manager", message, [], {}, timeout)
+    except:
+        pass
+
 class ConnectionItem(QWidget):
 
     def __init__(self, parent, package, name, dialog):
         QWidget.__init__(self, parent)
+
         self.ui = Ui_connectionItem()
         self.ui.setupUi(self)
+
         self.ui.connectionSignal.hide()
+
         self.dialog = dialog
         self.name = name
         self.package = package
@@ -48,12 +65,12 @@ class ConnectionItem(QWidget):
     def leaveEvent(self, event):
         self.ui.frame.setFrameShadow(QFrame.Plain)
 
-    def mousePressEvent(self, event):
+    def mouseReleaseEvent(self, event):
+        self.dialog.parent.hide()
         if self.lastState == "down":
             link.Net.Link[self.package].setState(self.name,"up")
         else:
             link.Net.Link[self.package].setState(self.name,"down")
-        self.dialog.hide()
 
     def setText(self, text):
         self.ui.connectionName.setText(text)
@@ -72,11 +89,11 @@ class Popup(QWidget):
 
     def __init__(self, parent):
         QWidget.__init__(self, parent)
+
         self.ui = Ui_Connection()
         self.ui.setupUi(parent)
         self.parent = parent
         self.connections = {"net_tools":{}, "wireless_tools":{}}
-
         self.init()
 
     def init(self):
@@ -84,18 +101,6 @@ class Popup(QWidget):
             connections = list(link.Net.Link[package].connections())
             for connection in connections:
                 self.addConnectionItem(package, str(connection))
-
-        link.listenSignals("Net.Link", self.handler)
-
-    def handler(self, package, signal, args):
-        args = list(args)
-        if (str(args[1]) == "up"):
-            self.setConnectionStatus(package, "Connected, IP: <b>%s</b>" % args[2])
-        elif (str(args[1]) == "connecting"):
-            self.setConnectionStatus(package, "Connecting to <b>%s</b>" % args[0])
-        else:
-            self.setConnectionStatus(package, "Not connected.")
-        self.connections[package][str(args[0])].setState(str(args[1]))
 
     def setConnectionStatus(self, package, message):
         if package == "wireless_tools":
@@ -105,10 +110,10 @@ class Popup(QWidget):
 
     def addConnectionItem(self, package, name):
         if package == "wireless_tools":
-            item = ConnectionItem(self.ui.wirelessConnections, package, name, self.parent)
+            item = ConnectionItem(self.ui.wirelessConnections, package, name, self)
             self.ui.wirelessLayout.addWidget(item)
         elif package == "net_tools":
-            item = ConnectionItem(self.ui.ethernetConnections, package, name, self.parent)
+            item = ConnectionItem(self.ui.ethernetConnections, package, name, self)
             self.ui.ethernetLayout.addWidget(item)
         self.connections[package][name] = item
 
@@ -131,6 +136,9 @@ class NmApplet(plasmascript.Applet):
         self.icon.setIcon("applications-internet")
         self.icon.setToolTip("Click here to show connections..")
 
+        self.layout = QGraphicsLinearLayout(self.applet)
+        self.layout.addItem(self.icon)
+
         self.dialog = Plasma.Dialog()
         self.dialog.setWindowFlags(Qt.Popup)
 
@@ -139,10 +147,23 @@ class NmApplet(plasmascript.Applet):
         self.dialog.resize(self.size().toSize())
         self.dialog.adjustSize()
 
-        self.layout = QGraphicsLinearLayout(self.applet)
-        self.layout.addItem(self.icon)
-
         self.connect(self.icon, SIGNAL("clicked()"), self.showDialog)
+        link.listenSignals("Net.Link", self.handler)
+
+    def handler(self, package, signal, args):
+        args = list(args)
+        if (str(args[1]) == "up"):
+            self.popup.setConnectionStatus(package, "Connected, IP: <b>%s</b>" % args[2])
+            #notify("Connected to <b>%s</b>, IP: <b>%s</b>" % (args[0], args[2]))
+            self.icon.setIcon("preferences-web-browser-shortcuts")
+        elif (str(args[1]) == "connecting"):
+            #notify("Connecting to <b>%s</b>" % args[0], 5000)
+            self.popup.setConnectionStatus(package, "Connecting to <b>%s</b>" % args[0])
+        else:
+            self.icon.setIcon("applications-internet")
+            #notify("Not connected")
+            self.popup.setConnectionStatus(package, "Not connected.")
+        self.popup.connections[package][str(args[0])].setState(str(args[1]))
 
     def showDialog(self):
         if self.dialog.isVisible():
@@ -150,15 +171,6 @@ class NmApplet(plasmascript.Applet):
         else:
             self.dialog.show()
             self.dialog.move(self.popupPosition(self.dialog.sizeHint()))
-
-    def getWifi(self):
-        devices = list(link.Net.Link["wireless_tools"].deviceList())
-        if len(devices) == 0:
-            return (False, 'No wifi device found')
-        hotspots = list(link.Net.Link["wireless_tools"].scanRemote(list(devices)[0]))
-        if len(hotspots) == 0:
-            return (False, 'No hotspot found')
-        return (True, hotspots)
 
 def CreateApplet(parent):
     return NmApplet(parent)
