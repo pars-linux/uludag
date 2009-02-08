@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="data" >
+    <file>icons/edit-delete.png</file>
+    <file>icons/notrunning.png</file>
+    <file>icons/started.png</file>
+    <file>icons/edit-rename.png</file>
+    <file>icons/stopped.png</file>
+    <file>icons/reload.png</file>
+    <file>icons/start.png</file>
+    <file>icons/stop.png</file>
+    <file>icons/running.png</file>
+  </qresource>
+</RCC>

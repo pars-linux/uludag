@@ -1,0 +1,17 @@
+[Desktop Entry]
+Exec=kcmshell4 network-manager
+Icon=preferences-desktop
+Type=Service
+X-KDE-ServiceTypes=KCModule
+
+X-KDE-Library=kpythonpluginfactory
+X-KDE-ParentApp=kcontrol
+X-KDE-PluginKeyword=network-manager/network-manager
+
+X-KDE-System-Settings-Parent-Category=computer-administration
+X-KDE-Weight=70
+
+Name=Network Manager
+Name[tr]=Ağ Yöneticisi
+Comment=Network Manager
+X-KDE-Keywords=python network managers
