@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -36,7 +37,7 @@
      [%- classification.name FILTER url_quote %]
   [% END %]
   [% classification_text = BLOCK %] 
-    of classification '[% classification.name FILTER html %]'
+    '[% classification.name FILTER html %]' sınıflandırmasının
   [% END %]
 [% END %]
 
@@ -44,43 +45,41 @@
 
 <p>
 [% UNLESS no_add_product_link || !user.in_group("editcomponents") %]
-  <a title="Add a product"
-     href="editproducts.cgi?action=add">Add</a> a product[% -%]
+  Bir ürün<a title="Bir ürün ekle"
+     href="editproducts.cgi?action=add">ekle</a>[% -%]
 [%# Strictly speaking, we should not have to check for a
     classification if they are enabled, but I'm just being paranoid %]
   [% IF Param('useclassification') && classification %]
-    (<a title="Add a product to classification '
-               [%- classification.name FILTER html %]'"
+    (<a title="'[%- classification.name FILTER html %]' sınıfına bir ürün ekle"
          href="editproducts.cgi?action=add
-               [%- classification_url_part %]">to
-     classification '[% classification.name FILTER html %]'</a>)
+               [%- classification_url_part %]">'[% classification.name FILTER html %]' sınıfına</a>)
   [% END %].
 [% END %]
 
 [% IF product && !no_edit_product_link %]
-  Edit product <a 
-  title="Edit Product '[% product.name FILTER html %]' 
+  <a 
+  title="'[% product.name FILTER html %]' Ürününde Değişiklik Yap 
          [%- classification_text %]"
   href="editproducts.cgi?action=edit&amp;product=
         [%- product.name FILTER url_quote %]
         [%- classification_url_part %]">
-        '[% product.name FILTER html %]'</a>.
+        '[% product.name FILTER html %]'</a> ürününü değiştir.
 [% END %]
 
 
 [%# Edit other products (in a classification if specified): %]
 [% UNLESS no_edit_other_products_link %]
-  Edit <a 
+  <a 
   href="editproducts.cgi?
-        [%- classification_url_part_start FILTER none %]">other products
-          [% classification_text %]</a>.
+        [%- classification_url_part_start FILTER none %]">Diğer ürünler
+          [% classification_text %]</a>i değiştir.
 
 [% END %]
 
 [% IF Param('useclassification') && classification %]
-  Edit classification <a href="editclassifications.cgi?action=edit
+  <a href="editclassifications.cgi?action=edit
     [%- classification_url_part %]">'
-    [%- classification.name FILTER html %]'</a>.
+    [%- classification.name FILTER html %]'</a> sınıflandırmasını değiştir.
 
 [% END %]
 
