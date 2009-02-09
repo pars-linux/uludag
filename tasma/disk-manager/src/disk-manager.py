@@ -85,8 +85,10 @@ class diskForm(mainForm):
         self.connect(self.btn_help, SIGNAL('clicked()'), self.slotHelp)
         """
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
+        self.connect(self.combo_fs, SIGNAL('activated(const QString&)'), self.slotFS)
         self.connect(self.btn_reset, SIGNAL('clicked()'), self.slotReset)
         self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
+        self.connect(self.frame_entry, SIGNAL('toggled(bool)'), self.slotToggle)
 
         self.list_main.header().hide()
         self.frame_detail.setEnabled(False)
@@ -112,6 +114,9 @@ class diskForm(mainForm):
             self.combo_fs.insertItem(label)
 
         self.initialize()
+
+        # Listen signals
+        self.link.listenSignals("Disk.Manager", self.signalHandler)
 
     def getFSName(self):
         for name, label in self.knownFS:
@@ -142,6 +147,9 @@ class diskForm(mainForm):
         self.items = {}
         # Get entries
         self.link.Disk.Manager.listEntries(async=self.asyncListEntries)
+
+    def signalHandler(self, package, signal, args):
+        self.initialize()
 
     def asyncListEntries(self, package, exception, result):
         if not self.package:
@@ -197,6 +205,15 @@ class diskForm(mainForm):
             return device
         return device
 
+    def slotToggle(self, checked):
+        if checked:
+            self.slotFS()
+
+    def slotFS(self, text=""):
+        fsType = self.getFSName()
+        options = self.fsOptions[fsType]
+        self.line_opts.setText(options)
+
     def slotList(self):
         item = self.list_main.selectedItem()
         if item not in self.items:
@@ -242,13 +259,10 @@ class diskForm(mainForm):
                     options[key] = value
                 else:
                     options[opt] = ""
-            if not path:
-                KMessageBox.sorry(self,i18n("Mount point is missing"), i18n("Error"))
-                return
-            if not os.path.exists(path):
-                KMessageBox.sorry(self,i18n("Mount point does not exist"), i18n("Error"))
-                return
-            self.link.Disk.Manager[self.package].addEntry(device, path, fsType, options)
+            try:
+                self.link.Disk.Manager[self.package].addEntry(device, path, fsType, options)
+            except dbus.DBusException, e:
+                KMessageBox.sorry(self, unicode(e.message))
         else:
             self.link.Disk.Manager[self.package].removeEntry(device)
 
