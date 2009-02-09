@@ -11,7 +11,8 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Marc Schumann <wurblzap@gmail.com>
-  #%]
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
+l  #%]
 
 [%# INTERFACE:
   #
@@ -22,7 +23,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Select user"
+  title = "Kullanıcı seç"
   style_urls = ['skins/standard/editusers.css']
   doc_section = "useradmin.html"
 %]
@@ -35,15 +36,15 @@
 
 [% columns =
   [{name               => 'login_name'
-    heading            => 'Edit user...'
+    heading            => 'Kullanıcı'
     contentlink        => 'editusers.cgi?action=edit&amp;userid=%%userid%%' _
                           listselectionurlparams
    }
    {name               => 'realname'
-    heading            => 'Real name'
+    heading            => 'Gerçek Adı'
    }
-   {heading            => 'Account History'
-    content            => 'View'
+   {heading            => 'Hesap Geçmişi'
+    content            => 'Göster'
     contentlink        => 'editusers.cgi?action=activity' _
                                   '&amp;userid=%%userid%%' _
                                   listselectionurlparams
@@ -52,8 +53,8 @@
 %]
 
 [% IF Param('allowuserdeletion') && editusers %]
-  [% columns.push({heading     => 'Action'
-                   content     => 'Delete'
+  [% columns.push({heading     => 'Eylem'
+                   content     => 'Sil'
                    contentlink => 'editusers.cgi?action=del' _
                                   '&amp;userid=%%userid%%' _
                                   listselectionurlparams
@@ -73,7 +74,7 @@
     [% overrides.realname.push({
         match_value      => "$thisuser.login_name"
         match_field      => 'login_name'
-        content          => "missing"
+        content          => "kayıp"
         override_content => 1
         class            => "$classes"
         override_class   => 1 })
@@ -97,7 +98,7 @@
   [% END %]
 [% END %]
 
-<p>[% users.size %] user[% "s" UNLESS users.size == 1 %] found.</p>
+<p>[% users.size %] kullanıcı bulundu.</p>
 
 [% PROCESS admin/table.html.tmpl
   columns = columns
@@ -106,13 +107,12 @@
 %]
 
 <p>
-  If you do not wish to modify a user account at this time, you can
-  <a href="editusers.cgi">find other users</a>
+  Eğer kullanıcı hesabını şimdi değiştirmek istemiyorsanız
+  <a href="editusers.cgi">başka kullanıcılar arayabilir</a>
   [% IF editusers %]
-    or
-    <a href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">add
-    a new user</a>
-  [% END %].
+    veya
+    <a href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">yeni kullanıcı ekleyebilir</a>
+  [% END %]siniz.
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

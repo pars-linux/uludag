@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Erik Stambaugh <erik@dasbistro.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -34,7 +35,7 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = "Set up whining" %]
+[% title = "Alarmları ayarla" %]
 [% PROCESS global/header.html.tmpl
   title = title
   style_urls = ['skins/standard/admin.css']
@@ -42,47 +43,33 @@
 %]
 
 <p>
-  "Whining" is when [% terms.Bugzilla %] executes a saved query at a regular interval
-  and sends the resulting list of [% terms.bugs %] via email.
+  Alarm, [% terms.BugzillaGen %] kayıtlı bir sorguyu belirli aralıklarla çalıştırıp sonuçta oluşan [% terms.bug %] listesini eposta yoluyla göndermesidir.
 </p>
 
 <p>
-  To set up a new whine event, click "Add a new event."  Enter a subject line
-  for the message that will be sent, along with a block of text that will
-  accompany the [% terms.bug %] list in the body of the message.
+  Yeni bir alarm kurmak için, "Yeni olay ekle."ye tıklayın. Gönderilecek eposta için bir konu satırı ve epostanın gövdesinde [% terms.bug %] listesiyle birlikte yeralacak bir metin girin.
 </p>
 
 <p>
-  Schedules are added to an event by clicking on "Add a new schedule."  A schedule
-  consists of a day, a time of day or interval of times
-  (e.g., every 15 minutes), and a target email address that may or may not be
-  alterable, depending on your privileges.  Events may have more than one schedule
-  in order to run at multiple times or for different users.
+  Olaylara zamanlamalar "Yeni zamanlama ekle." ile eklenir. Zamanlama, bir gün, günün bir saati veya zaman dilimi (örneğin 15 dakikada bir) ve bir eposta adresinden oluşur. İzinlerinize bağlı olarak eposta adresini daha sonra değiştirebilirsiniz (veya değiştiremezsiniz). Olaylara, farklı kullanıcılar düşünülerek veya farklı zamanlarda çalıştırılmak üzere birden fazla zamanlama eklenebilir.
 </p>
 
 <p>
-  Searches come from saved searches, which are created by executing a <a
-  href="query.cgi">search</a>, then telling [% terms.Bugzilla %] to remember
-  the search under a particular name.  Add a query by clicking "Add a new
-  query", and select the desired saved search name under "Search" and add a
-  title for the [% terms.bug %] table.  The optional number entered under
-  "Sort" will determine the execution order (lowest to highest) if multiple
-  queries are listed.  If you check "One message per [% terms.bug %]," each [%
-  terms.bug %] that matches the search will be sent in its own email message.
+  Aramalar kayıtlı arama listesinden seçilir. Bir <a href="query.cgi">arama</a>, o aramaya bir isim verildiğinde kayıtlı arama listesine alınır. "Bir sorgu ekle"yin ve "Arama" altında bu aramaya bir isim verin, [% terms.bug %] tablosuna da bir başlık girin. "Sıralama" altında girilen (tercihe bağlı) numara, eğer birden fazla sorgu listeleniyorsa, çalıştırma sırasını (en düşükten en yükseğe olmak üzere) belirleyecektir. Eğer "Her [% terms.bug %] için ayrı mesaj"ı seçerseniz, sorguya uyan her [% terms.bug %] ayrı bir eposta olarak gönderilir.
 </p>
 
 <p>
   [% IF Param("timezone") %]
-    All times are server local time ([% Param("timezone") FILTER upper %]).
+    Tüm saat ifadeleri sunucunun kendi yerel saatidir ([% Param("timezone") FILTER upper %]).
   [% ELSE %]
-    All times are server local time.
+    Tüm saat ifadeleri sunucunun kendi yerel saatidir.
   [% END %]
 </p>
 
 <form method="post" action="editwhines.cgi">
 [%# This hidden submit button must be here to set default behavior when
     the user presses return on a form input field #%]
-<input type="submit" value="Update / Commit" name="commit"
+<input type="submit" value="Güncelle / Gönder" name="commit"
        style="display: none;" id="commit">
 <input type="hidden" name="update" value="1">
 <input type="hidden" name="token" value="[% token FILTER html %]">
@@ -92,10 +79,10 @@
 <table cellspacing="2" cellpadding="2" style="border: 1px solid;">
   <tr>
     <th align="left">
-      Event:
+      Olay:
     </th>
     <td align="right" colspan="2">
-      <input type="submit" value="Remove Event"
+      <input type="submit" value="Olayı Sil"
              name="remove_event_[% event.key %]"
              id="remove_event_[% event.key %]">
     </td>
@@ -103,7 +90,7 @@
 
   <tr>
     <td valign="top" align="right">
-      Email subject line:
+      Eposta konu satırı:
     </td>
     <td colspan="2">
       <input type="text" name="event_[% event.key %]_subject"
@@ -114,7 +101,7 @@
 
   <tr>
     <td valign="top" align="right">
-      Descriptive text sent within whine message:
+      Alarm mesajı ile gönderilen açıklayıcı metin:
     </td>
     <td colspan="2">
       [% INCLUDE global/textarea.html.tmpl
@@ -132,11 +119,11 @@
 
     <tr>
       <td valign="top" align="right">
-        Schedule:
+        Zamanlama:
       </td>
       <td class="unset" colspan="2">
-        Not scheduled to run<br>
-        <input type="submit" value="Add a new schedule"
+        Zamanlanmamış<br>
+        <input type="submit" value="Yeni zamanlama ekle"
                name="add_schedule_[% event.key %]"
                id="add_schedule_[% event.key %]">
       </td>
@@ -146,18 +133,18 @@
 
     <tr>
       <td valign="top" align="right">
-        Schedule:
+        Zamanlama:
       </td>
       <td class="set" colspan="2">
 
         <table>
           <tr>
             <th>
-              Interval
+              Tekrar
             </th>
             <th>
               [% IF mail_others %]
-                Mail to
+                Alıcı
               [% END %]
             </th>
             <th>
@@ -196,7 +183,7 @@
                 [% END %]
               </td>
               <td align="left">
-                <input type="submit" value="Remove"
+                <input type="submit" value="Kaldır"
                        name="remove_schedule_[% schedule.id %]"
                        id="remove_schedule_[% schedule.id %]">
               </td>
@@ -205,7 +192,7 @@
 
           <tr>
             <td colspan="3">
-              <input type="submit" value="Add a new schedule"
+              <input type="submit" value="Yeni zamanlama ekle"
                      name="add_schedule_[% event.key %]"
                      id="add_schedule_[% event.key %]">
             </td>
@@ -221,16 +208,16 @@
 
     <tr>
       <td valign="top" align="right">
-        Searches:
+        Aramalar:
       </td>
       <td align="left">
-        No searches <br>
-        <input type="submit" value="Add a new query"
+        Arama yok<br>
+        <input type="submit" value="Yeni sorgu ekle"
                name="add_query_[% event.key %]"
                id="add_query_[% event.key %]">
       </td>
       <td align="right" valign="bottom">
-        <input type="submit" value="Update / Commit" name="commit" id="update">
+        <input type="submit" value="Güncelle / Gönder" name="commit" id="update">
       </td>
     </tr>
 
@@ -238,15 +225,15 @@
 
     <tr>
       <td valign="top" align="right">
-        Searches:
+        Aramalar:
       </td>
       <td align="left" colspan="2">
 
         <table>
           <tr>
-            <th>Sort</th>
-            <th>Search</th>
-            <th>Title</th>
+            <th>Sıralama</th>
+            <th>Arama</th>
+            <th>Başlık</th>
             <th></th>
             <th></th>
           </tr>
@@ -278,7 +265,7 @@
                 <input type="checkbox" [% IF query.onemailperbug == 1 %] checked [% END %]
                        id="query_onemailperbug_[% query.id %]"
                        name="query_onemailperbug_[% query.id %]">
-                <label for="query_onemailperbug_[% query.id %]">One message per [% terms.bug %]</label>
+                <label for="query_onemailperbug_[% query.id %]">[% terms.bug %] hata için ayrı mesaj</label>
               </td>
               <td align="right">
                 <input type="submit" value="Remove"
@@ -291,12 +278,12 @@
 
           <tr>
             <td colspan="3">
-              <input type="submit" value="Add a new query"
+              <input type="submit" value="Yeni sorgu ekle"
                      name="add_query_[% event.key %]"
                      id="add_query_[% event.key %]">
             </td>
             <td align="right" colspan="2">
-              <input type="submit" value="Update / Commit" name="commit" id="update">
+              <input type="submit" value="Güncelle / Gönder" name="commit" id="update">
             </td>
           </tr>
         </table>
@@ -311,7 +298,7 @@
 [% END %]
 
 <p align="left">
-  <input type="submit" value="Add a new event" name="add_event" id="add_event">
+  <input type="submit" value="Yeni olay ekle" name="add_event" id="add_event">
 </p>
 
 </form>
@@ -331,7 +318,7 @@
     </select>
 
   [% ELSE %]
-    Please visit the <a href="query.cgi">Search</a> page and save a query
+    Lütfen <a href="query.cgi">Arama</a> sayfasına gidip bir sorgu kaydedin.
   [% END %]
 
 [%+ END %]
@@ -340,47 +327,47 @@
   <select name="day_[% schedule.id %]">
       [%
         options = [
-            ['All',  'Each day',                 ],
-            ['MF',   'Monday through Friday',    ],
-            ['Sun',  'Sunday',                   ],
-            ['Mon',  'Monday',                   ],
-            ['Tue',  'Tuesday',                  ],
-            ['Wed',  'Wednesday',                ],
-            ['Thu',  'Thursday',                 ],
-            ['Fri',  'Friday',                   ],
-            ['Sat',  'Saturday',                 ],
-            ['1',    'On the 1st of the month',  ],
-            ['2',    'On the 2nd of the month',  ],
-            ['3',    'On the 3rd of the month',  ],
-            ['4',    'On the 4th of the month',  ],
-            ['5',    'On the 5th of the month',  ],
-            ['6',    'On the 6th of the month',  ],
-            ['7',    'On the 7th of the month',  ],
-            ['8',    'On the 8th of the month',  ],
-            ['9',    'On the 9th of the month',  ],
-            ['10',   'On the 10th of the month', ],
-            ['11',   'On the 11th of the month', ],
-            ['12',   'On the 12th of the month', ],
-            ['13',   'On the 13th of the month', ],
-            ['14',   'On the 14th of the month', ],
-            ['15',   'On the 15th of the month', ],
-            ['16',   'On the 16th of the month', ],
-            ['17',   'On the 17th of the month', ],
-            ['18',   'On the 18th of the month', ],
-            ['19',   'On the 19th of the month', ],
-            ['20',   'On the 20th of the month', ],
-            ['21',   'On the 21st of the month', ],
-            ['22',   'On the 22nd of the month', ],
-            ['23',   'On the 23rd of the month', ],
-            ['24',   'On the 24th of the month', ],
-            ['25',   'On the 25th of the month', ],
-            ['26',   'On the 26th of the month', ],
-            ['27',   'On the 27th of the month', ],
-            ['28',   'On the 28th of the month', ],
-            ['29',   'On the 29th of the month', ],
-            ['30',   'On the 30th of the month', ],
-            ['31',   'On the 31st of the month', ],
-            ['last', 'Last day of the month',    ],
+            ['Tümü', 'Her gün',                  ],
+            ['P-C',  'Hafta içi',                ],
+            ['Paz',  'Pazar',                    ],
+            ['Pts',  'Pazartesi',                ],
+            ['Sal',  'Salı',                     ],
+            ['Çar',  'Çarşamba',                 ],
+            ['Per',  'Perşembe',                 ],
+            ['Cum',  'Cuma',                     ],
+            ['Cts',  'Saturday',                 ],
+            ['1',    'Ayın 1\'inde',             ],
+            ['2',    'Ayın 2\'sinde',            ],
+            ['3',    'Ayın 3\'ünde',             ],
+            ['4',    'Ayın 4\'ünde',             ],
+            ['5',    'Ayın 5\'inde',             ],
+            ['6',    'Ayın 6\'sında',            ],
+            ['7',    'Ayın 7\'sinde',            ],
+            ['8',    'Ayın 8\'inde',             ],
+            ['9',    'Ayın 9\'unda',             ],
+            ['10',   'Ayın 10\'unda',            ],
+            ['11',   'Ayın 11\'inde',            ],
+            ['12',   'Ayın 12\'sinde',           ],
+            ['13',   'Ayın 13\'ünde',            ],
+            ['14',   'Ayın 14\'ünde',            ],
+            ['15',   'Ayın 15\'inde',            ],
+            ['16',   'Ayın 16\'sında',           ],
+            ['17',   'Ayın 17\'sinde',           ],
+            ['18',   'Ayın 18\'inde',            ],
+            ['19',   'Ayın 19\'unda',            ],
+            ['20',   'Ayın 20\'sinde',           ],
+            ['21',   'Ayın 21\'inde',            ],
+            ['22',   'Ayın 22\'sinde',           ],
+            ['23',   'Ayın 23\'ünde',            ],
+            ['24',   'Ayın 24\'ünde',            ],
+            ['25',   'Ayın 25\'inde',            ],
+            ['26',   'Ayın 26\'sında',           ],
+            ['27',   'Ayın 27\'sinde',           ],
+            ['28',   'Ayın 28\'inde',            ],
+            ['29',   'Ayın 29\'unda',            ],
+            ['30',   'Ayın 30\'unda',            ],
+            ['31',   'Ayın 31\'inde',            ],
+            ['son',  'Ayın son gününde',         ],
         ]
       %]
 
@@ -399,33 +386,33 @@
 
   [%
     options = [
-        [ '0',     'at midnight',      ],
-        [ '1',     'at 01:00',         ],
-        [ '2',     'at 02:00',         ],
-        [ '3',     'at 03:00',         ],
-        [ '4',     'at 04:00',         ],
-        [ '5',     'at 05:00',         ],
-        [ '6',     'at 06:00',         ],
-        [ '7',     'at 07:00',         ],
-        [ '8',     'at 08:00',         ],
-        [ '9',     'at 09:00',         ],
-        [ '10',    'at 10:00',         ],
-        [ '11',    'at 11:00',         ],
-        [ '12',    'at 12:00',         ],
-        [ '13',    'at 13:00',         ],
-        [ '14',    'at 14:00',         ],
-        [ '15',    'at 15:00',         ],
-        [ '16',    'at 16:00',         ],
-        [ '17',    'at 17:00',         ],
-        [ '18',    'at 18:00',         ],
-        [ '19',    'at 19:00',         ],
-        [ '20',    'at 20:00',         ],
-        [ '21',    'at 21:00',         ],
-        [ '22',    'at 22:00',         ],
-        [ '23',    'at 23:00',         ],
-        [ '60min', 'every hour',       ],
-        [ '30min', 'every 30 minutes', ],
-        [ '15min', 'every 15 minutes', ],
+        [ '0',    'geceyarısı',      ],
+        [ '1',    '01:00\'da',       ],
+        [ '2',    '02:00\'da',       ],
+        [ '3',    '03:00\'da',       ],
+        [ '4',    '04:00\'da',       ],
+        [ '5',    '05:00\'da',       ],
+        [ '6',    '06:00\'da',       ],
+        [ '7',    '07:00\'da',       ],
+        [ '8',    '08:00\'da',       ],
+        [ '9',    '09:00\'da',       ],
+        [ '10',   '10:00\'da',       ],
+        [ '11',   '11:00\'da',       ],
+        [ '12',   '12:00\'da',       ],
+        [ '13',   '13:00\'da',       ],
+        [ '14',   '14:00\'da',       ],
+        [ '15',   '15:00\'da',       ],
+        [ '16',   '16:00\'da',       ],
+        [ '17',   '17:00\'da',       ],
+        [ '18',   '18:00\'da',       ],
+        [ '19',   '19:00\'da',       ],
+        [ '20',   '20:00\'da',       ],
+        [ '21',   '21:00\'da',       ],
+        [ '22',   '22:00\'da',       ],
+        [ '23',   '23:00\'da',       ],
+        [ '60dk', 'saate bir',       ],
+        [ '30dk', '30 dakikada bir', ],
+        [ '15dk', '15 dakikada bir', ],
     ]
   %]
 

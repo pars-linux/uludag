@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Marc Schumann <wurblzap@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -42,7 +43,7 @@
   #                           created
   #%]
 
-[% title = BLOCK %]Confirm deletion of user [% otheruser.login FILTER html %][% END %]
+[% title = BLOCK %][% otheruser.login FILTER html %] kullanıcısının silinmesini onayla[% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
@@ -57,15 +58,15 @@
 
 <table class="main">
   <tr>
-    <th>Login name:</th>
+    <th>Oturum açma adı:</th>
     <td>[% otheruser.login FILTER html %]</td>
   </tr>
   <tr>
-    <th>Real name:</th>
+    <th>Gerçek adı:</th>
     <td>[% otheruser.name FILTER html %]</td>
   </tr>
   <tr>
-    <th>Group set:</th>
+    <th>Grup kümesi:</th>
     <td>
       [% IF otheruser.groups.size %]
         <ul>
@@ -74,13 +75,13 @@
           [% END %]
         </ul>
       [% ELSE %]
-        None
+        Yok
       [% END %]
     </td>
   </tr>
   [% IF otheruser.product_responsibilities.size %]
     <tr>
-      <th>Product responsibilities:</th>
+      <th>Ürün sorumlulukları:</th>
       <td>
         [% PROCESS admin/users/responsibilities.html.tmpl otheruser = otheruser %]
       </td>
@@ -90,134 +91,112 @@
 
 [% IF otheruser.product_responsibilities.size %]
   <p>
-    You can't delete this user at this time because
-    [%+ otheruser.login FILTER html %] has got responsibilities for at least
-    one product.
+    [%+ otheruser.login FILTER html %] kullanıcısının en az bir ürünle ilgili sorumlulukları var, o yüzden bu kullanıcıyı silemezsiniz.
   </p>
   <p>
     [% IF user.in_group("editcomponents", component.product_id) %]
-      Change this by clicking the product editing links above,
+      Bunu yukarıdaki ürün düzenleme bağlantılarını kullanarak değiştirin,
     [% ELSE %]
-      For now, you can
+      Şimdilik yapabilirsiniz
     [% END %]
 [% ELSE %]
   [% accept_deletion = 1 %]
 
   [% IF attachments || reporter || bugs_activity || flags.setter || longdescs || profiles_activity %]
     <div class="criticalmessages">
-      <p>The following deletions are <b>unsafe</b> and would generate referential
-      integrity inconsistencies!</p>
+      <p>Aşağıdaki silme işlemleri <b>güvenli değil</b> ve referans bütünlüğünde bozulmalara neden olur!</p>
 
       <ul>
         [% IF attachments %]
           <li>
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?field0-0-0=attachments.submitter&type0-0-0=equals&value0-0-0=
-               [%- otheruser.login FILTER url_quote %]">has submitted
+               [%- otheruser.login FILTER url_quote %]">
+              [%+ attachments %] ek
+            [% END %]</a> göndermiş.
+            Eğer bu kullanıcı hesabını silerseniz, veritabanındaki kayıtlarda uyuşmazlıklar oluşur ve bu
             [% IF attachments == 1 %]
-              one attachment
+              ek
             [% ELSE %]
-              [%+ attachments %] attachments
-            [% END %]</a>.
-            If you delete the user account, the database records will be
-            inconsistent, resulting in
-            [% IF attachments == 1 %]
-              this attachment
-            [% ELSE %]
-              these attachments
+              ekler
             [% END %]
-            not appearing in [% terms.bugs %] any more.
+            [% terms.bug %] kayıtlarında görüntülenemez.
           </li>
         [% END %]
         [% IF reporter %]
           <li>
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailreporter1=1&amp;emailtype1=exact&amp;email1=
-               [%- otheruser.login FILTER url_quote %]">has reported
+               [%- otheruser.login FILTER url_quote %]">
+               [%+ reporter %] [% terms.bug %]
+               </a> bildirmiş.
+            Eğer bu kullanıcı hesabını silerseniz, veritabnındaki kayıtlarda uyuşmazlıklar oluşur ve bu
             [% IF reporter == 1 %]
-              one [% terms.bug %]
+              [% terms.bug %]
             [% ELSE %]
-              [%+ reporter %] [%+ terms.bugs %]
-            [% END %]</a>.
-            If you delete the user account, the database records will be
-            inconsistent, resulting in
-            [% IF reporter == 1 %]
-              this [% terms.bug %]
-            [% ELSE %]
-              these [% terms.bugs %]
+              [% terms.bugs %]
             [% END %]
-            not appearing in [% terms.bug %] lists any more.
+            [% terms.bug %] listelerinde görüntülenemez.
           </li>
         [% END %]
         [% IF bugs_activity %]
           <li>
-            [% otheruser.login FILTER html %] has made
+            [% otheruser.login FILTER html %]
+            [% bugs_activity %]
+            [% terms.bugLoc %]
+            değişiklik yapmış.
+            Eğer bu kullanıcı hesabını silerseniz, veritabanındaki [% terms.bug %] hareketleri tablosunda uyuşmazlıklar oluşur ve bu
             [% IF bugs_activity == 1 %]
-              a change on [% terms.abug %]
+              değişiklik
             [% ELSE %]
-              changes on [% terms.bugs %]
-            [% END %].
-            If you delete the user account, the [% terms.bugs %] activity table in
-            the database will be inconsistent, resulting in
-            [% IF bugs_activity == 1 %]
-              this change
-            [% ELSE %]
-              these changes
+              değişiklikler
             [% END %]
-            not showing up in [% terms.bug %] activity logs any more.
+            [% terms.bug %] hareket günlüklerinde görüntülenemez hale gelir.
           </li>
         [% END %]
         [% IF flags.setter %]
           <li>
-            [% otheruser.login FILTER html %] has
+            [% otheruser.login FILTER html %]
             <a href="buglist.cgi?field0-0-0=setters.login_name&amp;type0-0-0=equals&amp;value0-0-0=
-               [%- otheruser.login FILTER url_quote %]">set
-            or requested
+               [%- otheruser.login FILTER url_quote %]">
+               [% flags.setter %]
+               bayrak değiştirmiş veya istemiş
+            </a>.
+            Eğer bu kullanıcı hesabını silerseniz, veritabanındaki bayrak tablosunda uyuşmazlıklar oluşur ve bu
             [% IF flags.setter == 1 %]
-              a flag
+              bayrak
             [% ELSE %]
-              [%+ flags.setter %] flags
-            [% END %]</a>.
-            If you delete the user account, the flags table in the database
-            will be inconsistent, resulting in
-            [% IF flags.setter == 1 %]
-              this flag
-            [% ELSE %]
-              these flags
+              bayraklar
             [% END %]
-            not displaying correctly any more.
+            düzgün şekilde görüntülenemez hale gelir.
           </li>
         [% END %]
         [% IF longdescs %]
           <li>
-            [% otheruser.login FILTER html %] has
+            [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emaillongdesc1=1&amp;emailtype1=exact&amp;email1=
-               [%- otheruser.login FILTER url_quote %]">commented
+               [%- otheruser.login FILTER url_quote %]">
+               [% terms.bugsLoc %]
+               [%+ longdescs %] kez yorum yapmış
+               </a>.
+            Eğer bu kullanıcı hesabını silerseniz, veritabanındaki yorum tablosunda uyuşmazlıklar oluşur ve bu
             [% IF longdescs == 1 %]
-              once on [% terms.abug %]
+              yorum
             [% ELSE %]
-              [%+ longdescs %] times on [% terms.bugs %]
-            [% END %]</a>.
-            If you delete the user account, the comments table in the database
-            will be inconsistent, resulting in
-            [% IF longdescs == 1 %]
-              this comment
-            [% ELSE %]
-              these comments
+              yorumlar
             [% END %]
-            not being visible any more.
+            görüntülenemez hale gelir.
           </li>
         [% END %]
         [% IF profiles_activity %]
           <li>
-            [% otheruser.login FILTER html %] has made
+            [% otheruser.login FILTER html %]
             [% IF bugs_activity == 1 %]
-              a change on a other user's profile
+              bir kulllanıcının profilinde değişiklik
             [% ELSE %]
-              changes on other users' profiles
-            [% END %].
-            If you delete the user account, the user profiles activity table in
-            the database will be inconsistent.
+              kullanıcıların profillerinde değişiklikler
+            [% END %] yapmış.
+            Eğer bu kullanıcı hesabını silerseniz, veritabanındaki kullanıcı profil hareketleri tablosunda uyuşmazlıklar oluşur.
           </li>
         [% END %]
       </ul>
@@ -229,220 +208,121 @@
         namedqueries || profile_setting || quips || series || votes || watch.watched ||
         watch.watcher || whine_events || whine_schedules %]
     <div class="warningmessages">
-      <p>The following deletions are <b>safe</b> and will not generate
-      referential integrity inconsistencies.</p>
+      <p>Aşağıdaki silme işlemleri <b>güvenli</b> ve referans bütünlüğünde bozulmalara neden olmaz.</p>
 
       <ul>
         [% IF assignee_or_qa %]
           <li>
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailassigned_to1=1&amp;emailqa_contact1=1&amp;emailtype1=exact&amp;email1=
-               [%- otheruser.login FILTER url_quote %]">is
-            the assignee or the QA contact of
-            [% IF assignee_or_qa == 1 %]
-              one [% terms.bug %]
-            [% ELSE %]
-              [%+ assignee_or_qa %] [%+ terms.bugs %]
-            [% END %]</a>.
-            If you delete the user account, these roles will fall back to
-            the default assignee or default QA contact.
+               [%- otheruser.login FILTER url_quote %]">
+               [% assignee_or_qa %] [% terms.bugGen %]
+            </a> sorumlusu ya da kalite güvence görevlisi olarak atanmış.
+            Eğer bu kullanıcı hesabını silerseniz, bu görevler öntanımlı atanması gereken kişiye yüklenir.
           </li>
         [% END %]
         [% IF cc %]
           <li>
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailcc1=1&amp;emailtype1=exact&amp;email1=
-               [%- otheruser.login FILTER url_quote %]">is
-            on the CC list of
-            [% IF cc == 1 %]
-              [%+ terms.abug %]
-            [% ELSE %]
-              [%+ cc %] [%+ terms.bugs %]
-            [% END %]</a>.
-            If you delete the user account, it will be removed from these CC lists.
+               [%- otheruser.login FILTER url_quote %]">
+               [%+ cc %] [%+ terms.bugGen %] haber verilecekler listesinde
+               </a>.
+            Eğer bu kullanıcı hesabını silerseniz, haber verilecekler listesinden de silinir.
           </li>
         [% END %]
         [% IF component_cc %]
           <li>
-            [% otheruser.login FILTER html %] is on the default CC list of
-            [% IF component_cc == 1 %]
-              one component
-            [% ELSE %]
-              [%+ component_cc %] components
-            [% END %]</a>.
-            If you delete the user account, it will be removed from these CC lists.
+            [% otheruser.login FILTER html %]
+               [%+ component_cc %] bileşenin öntanımlı haber verilecekler listesinde.
+            Eğer bu kullanıcı hesabını silerseniz, bu haber verilecekler listelerinden silinir.
           </li>
         [% END %]
         [% IF email_setting %]
           <li>
-            The user's e-mail settings will be deleted along with the user
-            account.
+            Kullanıcının eposta ayarları kullanıcı hesabı ile birlikte silinir.
           </li>
         [% END %]
         [% IF flags.requestee %]
           <li>
-            [% otheruser.login FILTER html %] has been
+            [% otheruser.login FILTER html %] kullanıcısından
             <a href="buglist.cgi?field0-0-0=requestees.login_name&amp;type0-0-0=equals&amp;value0-0-0=
-               [%- otheruser.login FILTER url_quote %]">asked
-            to set
-            [% IF flags.requestee == 1 %]
-              a flag
-            [% ELSE %]
-              [% flags.requestee %] flags
-            [% END %]</a>.
-            If you delete the user account,
-            [% IF flags.requestee == 1 %]
-              this flag
-            [% ELSE %]
-              these flags
-            [% END %]
-            will change to be unspecifically requested.
+               [%- otheruser.login FILTER url_quote %]">
+               [% flags.requestee %] bayrağı ataması
+               istenmiş</a>.
+            Eğer bu kullanıcı hesabını silerseniz, bu bayrak[% IF flags.requestee > 1 %]lar[% END %] sadece "istenmiş" olarak değiştirilir.
           </li>
         [% END %]
         [% IF namedqueries %]
           <li>
-            [% otheruser.login FILTER html %] has
-            [% IF namedqueries == 1 %]
-              a [% 'shared' IF namedquery_group_map %] named search
-            [% ELSE %]
-              [%+ namedqueries FILTER html %] named searches
-            [% END %].
-            [% IF namedqueries == 1 %]
-              This named search
-            [% ELSE %]
-              These named searches
-            [% END %]
-            will be deleted along with the user account.
+            [% otheruser.login FILTER html %] kullanıcısının
+            [%+ namedqueries FILTER html %] [% 'paylaşılan' IF namedquery_group_map %] adlandırılmış araması var.
+            Bu adlandırılmış arama[% IF namedqueries > 1 %]lar[% END %] kullanıcı hesabıyla birlikte silinir.
             [% IF namedquery_group_map %]
               [% IF namedqueries > 1 %]
-                Of these,
+                Bunlardan,
                 [% IF namedquery_group_map > 1 %]
-                  [%+ namedquery_group_map FILTER html %] are
+                  [%+ namedquery_group_map FILTER html %] tanesi
                 [% ELSE %]
-                  one is
+                  biri
                 [% END %]
-                shared.
+                paylaşılıyor.
               [% END %]
-              Other users will not be able to use
+              Bu kullanıcı hesabı silindiğinde, diğer kullanıcılar bu paylaşılan adlandırılmış arama
               [% IF namedquery_group_map > 1 %]
-                these shared named searches
+                ları
               [% ELSE %]
-                this shared named search
+                yı
               [% END %]
-              any more.
+              kullanamayacak.
             [% END %]
           </li>
         [% END %]
         [% IF profile_setting %]
           <li>
-            The user's preference settings will be deleted along with the user
-            account.
+            Kullanıcının tercihleri hesabıyla birlikte silinir.
           </li>
         [% END %]
         [% IF series %]
           <li>
-            [% otheruser.login FILTER html %] has created
-            [% IF series == 1 %]
-              a series
-            [% ELSE %]
-              [%+ series %] series
-            [% END %].
-            [% IF series == 1 %]
-              This series
-            [% ELSE %]
-              These series
-            [% END %]
-            will be deleted along with the user account.
+            [% otheruser.login FILTER html %] 
+            [%+ series %] seri
+            oluşturmuş. Bu seri[% IF series > 1 %]ler[% END %] kullanıcı hesabıyla birlikte silinir.
           </li>
         [% END %]
         [% IF quips %]
           <li>
-            [% otheruser.login FILTER html %] has submitted
-            [% IF quip == 1 %]
-              one quip
-            [% ELSE %]
-              [%+ quips %] quips
-            [% END %].
-            If you delete the user account,
-            [% IF votes == 1 %]
-              this quip
-            [% ELSE %]
-              these quips
-            [% END %]
-            will have no author anymore, but will remain available.
+            [% otheruser.login FILTER html %] [%+ quips %] espri göndermiş. Eğer bu kullanıcı hesabını silerseniz, bu espri[% 'ler' IF votes > 1 %] sahipsiz olacak (fakat silinmeyecek).
           </li>
         [% END %]
         [% IF votes %]
           <li>
-            [% otheruser.login FILTER html %] has voted on
-            [% IF votes == 1 %]
-              [%+ terms.abug %]
-            [% ELSE %]
-              [%+ votes %] [%+ terms.bugs %]
-            [% END %].
-            If you delete the user account,
-            [% IF votes == 1 %]
-              this vote
-            [% ELSE %]
-              these votes
-            [% END %]
-            will be deleted along with the user account.
+            [% otheruser.login FILTER html %] [%+ votes %] [%+ terms.bugLoc %] oy kullanmış. Eğer bu kullanıcı hesabını silerseniz, bu oy[% 'lar' IF votes > 1 %] kullanıcı hesabıyla birlikte silinir.
           </li>
         [% END %]
         [% IF watch.watched || watch.watcher %]
           <li>
             [% otheruser.login FILTER html %]
             [% IF watch.watched %]
-              is being watched by
-              [% IF watch.watched == 1 %]
-                a user
-              [% ELSE %]
-                [%+ watch.watched %] users
-              [% END %]
+              [%+ watch.watched %] kullanıcı tarafından izleniyor
             [% END %]
             [% IF watch.watcher %]
-              [%+ 'and' IF watch.watched %]
-              watches
-              [% IF watch.watcher == 1 %]
-                a user
-              [% ELSE %]
-                [%+ watch.watcher %] users
+              [%+ 've' IF watch.watched %]
+              [%+ watch.watcher %] kullanıcıyı izliyor
               [% END %]
-            [% END %].
-            [% IF watch.watched + watch.watcher == 1 %]
-              This watching
-            [% ELSE %]
-              These watchings
-            [% END %]
-            will cease along with the deletion of the user account.
+            . Bu izleme[% 'ler IF watch.watched + watch.watcher > 1 %] kullanıcı hesabının silinmesiyle kaldırılacak.
           </li>
         [% END %]
         [% IF whine_events %]
           <li>
-            [% otheruser.login FILTER html %] has scheduled
-            [% IF whine_events == 1 %]
-              a whine
-            [% ELSE %]
-              [%+ whine_events %] whines
-            [% END %].
-            [% IF whine_events == 1 %]
-              This whine
-            [% ELSE %]
-              These whines
-            [% END %]
-            will be deleted along with the user account.
+            [% otheruser.login FILTER html %]
+            [%+ whine_events %] alarm kurmuş. Bu alarm[% 'lar' IF whine_events > 1 %] kullanıcı hesabıyla birlikte silinecek.
           </li>
         [% END %]
         [% IF whine_schedules %]
           <li>
-            [% otheruser.login FILTER html %] is on the receiving end of
-            [% IF whine_schedules == 1 %]
-              a whine
-            [% ELSE %]
-              [%+ whine_schedules %] whines
-            [% END %].
-            The corresponding schedules will be deleted along with the user account,
-            but the whines themselves will be left unaltered.
+            [% otheruser.login FILTER html %] [%+ whine_schedules %] alarmın alıcısı olarak ayarlı.
+            Alarmlar silinmeyecek fakat kullanıcı alıcılar listesinden silinecek.
           </li>
         [% END %]
       </ul>
@@ -450,37 +330,34 @@
 
     [% IF accept_deletion %]
       <p class="areyoureallyreallysure">
-        Please be aware of the consequences of this before continuing.
+        Devam etmeden önce yapılacak değişiklikleri tekrar gözden geçirmenizi tavsiye ederiz.
       </p>
-      <p>Do you really want to delete this user account?</p>
+      <p>Gerçekten bu kullanıcı hesabını silmek istiyor musunuz?</p>
 
       <form method="post" action="editusers.cgi">
         <p>
-          <input type="submit" id="delete" value="Yes, delete"/>
+          <input type="submit" id="delete" value="Evet, sil"/>
           <input type="hidden" name="action" value="delete" />
           <input type="hidden" name="userid" value="[% otheruser.id %]" />
           <input type="hidden" name="token" value="[% token FILTER html %]">
           [% INCLUDE listselectionhiddenfields %]
         </p>
       </form>
-      <p>If you do not want to delete the user account at this time,
+      <p>Eğer bu kullanıcı hesabını silmek istemiyorsanız,
     [% ELSE %]
-      <p><b>You cannot delete this user account</b> due to unsafe actions reported above. You can
+      <p>Yukarıda belirtilen nedenlerden dolayı <b>bu kullanıcı hesabını silemezsiniz</b>. Onun yerine,
     [% END %]
 
   [% END %]
 [% END %]
 
   <a href="editusers.cgi?action=edit&amp;userid=[% otheruser.id %]
-           [% INCLUDE listselectionurlparams %]">edit the user</a>,
-  go
- <a href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">back
-  to the user list</a>,
+           [% INCLUDE listselectionurlparams %]">kullanıcı kaydını değiştir</a>in,
+ <a href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">kullanıcı listesine geri dön</a>ün,
   [% IF editusers %]
-    <a href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">add
-    a new user</a>,
+    <a href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">kullanıcı ekle</a>yin,
   [% END %]
-  or <a href="editusers.cgi">find other users</a>.
+  veya <a href="editusers.cgi">başka kullanıcı ara</a>yın.
 </p>
 
 [% PROCESS global/footer.html.tmpl %]
