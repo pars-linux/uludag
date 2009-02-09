@@ -1,9 +1,8 @@
 |-- desktop
 |   |-- gnome
-|   |   |-- library
+|   |   |-- libs
 |   |   |   |-- atk
 |   |   |   |-- cairo
-|   |   |   |-- gtk+extra
 |   |   |   |-- libcroco
 |   |   |   |-- libglade2
 |   |   |   |-- libglademm
@@ -21,26 +20,12 @@
 |   |   |   |-- gconf
 |   |   |   |-- gconfmm
 |   |   |   |-- glibmm
-|   |   |   |-- gtk-engines
-|   |   |   |-- gtk2
-|   |   |   |-- gtk2-demo
-|   |   |   |-- gtk2-docs
-|   |   |   |-- gtkmm
 |   |    `-- extras
-|   |       |-- QtCurve-Gtk2
 |   |       |-- beagle
 |   |       |-- cairomm
 |   |       |-- orbit2
-|   |-- i18n
-|   |   |-- library
-|   |   |   |-- icu4c
-|   |   |-- gimp-i18n-*   
-|   |   |-- gwenview-i18n-*
-|   |   |-- k3b-i18n-*
-|   |   |-- kde-i18n-* 
-|   |   |-- koffice-l10n-*
 |   |-- kde
-|   |   |-- library
+|   |   |-- libs
 |   |   |   |-- akonadi
 |   |   |   |-- kdelibs
 |   |   |   |-- kdelibs-apidox
@@ -118,7 +103,48 @@
 |   |   |   |-- nuvola
 |   |   |   |-- plastique
 |   |   |   |-- polyester
-|   |
+|   |   |
+|   |   |-- toolkit
+|   |   |   |-- qt
+|   |   |   |   |-- qt-assistant
+|   |   |   |   |-- qt-designer
+|   |   |   |   |-- qt-doc
+|   |   |   |   |-- qt-linguist
+|   |   |   |   |-- qt-sql-mysql
+|   |   |   |   |-- qt-sql-postgresql
+|   |   |   |   |-- qt-sql-sqlite
+|   |   |   |   |-- qt4
+|   |   |   |   |-- qt4-designer
+|   |   |   |   |-- qt4-doc
+|   |   |   |   |-- qt4-linguist
+|   |   |   |   |-- qt4-sql-mysql
+|   |   |   |   |-- qt4-sql-odbc
+|   |   |   |   |-- qt4-sql-postgresql
+|   |   |   |   |-- qt4-sql-sqlite
+|   |   |   |   |-- qwt
+|   |   |   |   |-- qwt-doc
+|   |   |   |   |-- qwt-qt3-designer
+|   |   |   |   |-- qwt-qt4
+|   |   |   |   |-- qwt-qt4-designer
+|   |   |   |   |-- qwtplot3d
+|   |   |   |   |-- qwtplot3d-doc
+|   |   |   |   |-- qwtplot3d-qt4
+|   |   |   |-- gtk
+|   |   |   |   |-- gtk-engines
+|   |   |   |   |-- gtk2
+|   |   |   |   |-- gtk2-demo
+|   |   |   |   |-- gtk2-docs
+|   |   |   |   |-- gtkmm
+|   |   |   |   |-- gtk+extra
+|   |   |   |   |-- QtCurve-Gtk2
+|   |   |   |   |-- gtk-sharp
+|   |-- i18n
+|   |   |-- icu4c
+|   |   |-- gimp-i18n-*   
+|   |   |-- gwenview-i18n-*
+|   |   |-- k3b-i18n-*
+|   |   |-- kde-i18n-* 
+|   |   |-- koffice-l10n-*
 |   `-- fonts
 |       |-- Bitstream-Vera-fonts
 |       |-- Charis-fonts
@@ -152,8 +178,34 @@
 |   |   |-- font-util
 |   |   |-- fontconfig
 |   |   |-- ttmkfdir
+|   |-- misc
+|   |   |-- notification-daemon
+|   |   |-- startup-notification
+|   |   |-- shared-mime-info
+|   |   |-- synergy 
+|   |   |-- x2x
+|   |   |-- xdg-utils
+|   |   |-- xosd
+|   |   |-- xscreensaver
+|   |   |-- xscreensaver-demo
+|   |   |-- zorg
+|   |   |-- dbus-qt3
+|   |   |-- rxvt-unicode
+|   |   |-- synaptics
+|   |   |-- grounation-xcursors
+|   |   |-- jimmac-xcursor
+|   |-- libs
+|   |   |-- Xaw3d
+|   |   |-- agg
+|   |   |-- fltk
+|   |   |-- fltk-devel
+|   |   |-- lesstif 
+|   |   |-- libnotify
+|   |   |-- openmotif
+|   |   |-- pixman
+|   |   |-- wxGTK
 |   |-- xorg
-|   |   |-- library 
+|   |   |-- libs
 |   |   |   |-- libFS
 |   |   |   |-- libICE
 |   |   |   |-- libSM
@@ -193,7 +245,7 @@
 |   |   |   |-- libxkbui
 |   |   |   |-- libxklavier
 |   |   |   |-- xcb-util
-|   |   |-- misc
+|   |   |-- utils
 |   |   |   |-- xbitmaps
 |   |   |   |-- xdriinfo
 |   |   |   |-- xkeyboard-config
@@ -206,37 +258,10 @@
 |   |   |   |-- xorg-util
 |   |   |   |-- xorg-video
 |   |   |   |-- xrx
-|   |   |   |-- xvattr (multimedia video)
-|   |   |-- theme
+|   |   |   |-- xvattr
 |   |   |   |-- xcursor-themes
-|   |-- misc
-|   |   |-- notification-daemon
-|   |   |-- startup-notification
-|   |   |-- shared-mime-info
-|   |   |-- synergy (network'te idi)
-|   |   |-- x2x
-|   |   |-- xdg-utils
-|   |   |-- xosd
-|   |   |-- xscreensaver
-|   |   |-- xscreensaver-demo
-|   |   |-- zorg
-|   |   |-- dbus-qt3
-|   |   |-- rxvt-unicode
-|   |   |-- synaptics
-|   |   |-- grounation-xcursors
-|   |   |-- jimmac-xcursor
-|   |-- library
-|   |   |-- Xaw3d
-|   |   |-- agg
-|   |   |-- fltk
-|   |   |-- fltk-devel
-|   |   |-- lesstif 
-|   |   |-- libnotify
-|   |   |-- openmotif
-|   |   |-- pixman
-|   |   |-- wxGTK
 |-- game
-|   |-- library
+|   |-- libs
 |   |   |-- atlas
 |   |   |-- cegui
 |   |   |-- cel
@@ -420,7 +445,7 @@
 |   |   |-- wormux
 |   |
 |-- hardware
-|   |-- library
+|   |-- libs
 |   |   |-- libieee1284
 |   |   |-- libavc1394
 |   |   |-- libraw1394
@@ -431,6 +456,7 @@
 |   |   |-- libfprint
 |   |   |-- libx86
 |   |   |-- intel-tbb
+|   |   |-- avr-libc
 |   |   `-- liblazy 
 |   |-- cdr
 |   |   |-- bchunk
@@ -553,6 +579,22 @@
 |   |   |-- sg3_utils
 |   |   |-- strigi
 |   |-- firmware
+|   |   |-- accessrunner-firmware
+|   |   |-- acx100-firmware
+|   |   |-- alsa-firmware
+|   |   |-- atmel-firmware
+|   |   |-- b43-firmware
+|   |   |-- bluez-firmware
+|   |   |-- eagle-firmware
+|   |   |-- ipw2100-firmware
+|   |   |-- ipw2200-firmware
+|   |   |-- iwlwifi3945-ucode
+|   |   |-- iwlwifi4965-ucode
+|   |   |-- iwlwifi5000-ucode
+|   |   |-- ralink-firmware
+|   |   |-- speedtouch-firmware
+|   |   |-- zd1201-firmware
+|   |   |-- zd1211-firmware
 |   |   |-- fxload
 |   |   `-- b43-fwcutter
 |   |-- misc
@@ -575,7 +617,7 @@
 |       |-- xen-tools
 |
 |-- multimedia
-|   |-- library
+|   |-- libs
 |   |   |-- DevIL
 |   |   |-- FreeImage
 |   |   |-- FusionSound
@@ -842,7 +884,7 @@
 |       `-- flashplugin
 |
 |-- network
-|   |-- library
+|   |-- libs
 |   |   |-- neon
 |   |   |-- libitalc
 |   |   |-- libupnp
@@ -968,7 +1010,7 @@
 |   |   |-- iTest
 |   |   |-- kio-slp
 |   |   |-- kio-to-local
-|   |-- client (bilemedim)
+|   |-- client
 |   |   |-- wpa_supplicant
 |   |   |-- network-manager
 |   |   |-- nicotine
@@ -988,10 +1030,9 @@
 |   |   `-- grsync
 |   |-- connection
 |   |   |-- br2684ctl
-|   |   `-- bridge-utils
-|
+|       `-- bridge-utils
 |-- server
-|   |-- library
+|   |-- libs
 |   |   |-- libiodbc
 |   |   |-- libpqxx
 |   |   |-- unixODBC
@@ -1081,7 +1122,7 @@
 |       |-- hylafax
 |       `-- jhylafax
 |-- programming
-|   |   |-- library
+|   |   |-- libs
 |   |   |   |-- boehm-gc
 |   |   |   |-- cddlib
 |   |   |   |-- cdk
@@ -1124,7 +1165,31 @@
 |   |   |   |-- tre (dependency of multimedia and network ?)
 |   |   |   |-- xmlrpc-epi
 |   |   |   |-- yaz
+|   |   |   |-- libgdiplus
+|   |   |   |-- ntl
+|   |   |   |-- libsigc++
+|   |   |   |-- libstdc++
+|   |   |   |-- pcre++
+|   |   |   |-- boost
+|   |   |   |-- boost-devel
+|   |   |   |-- linbox
+|   |   |   |-- rlog
+|   |   |   |-- stlport
+|   |   |   |-- tolua++
+|   |   |   |-- xerces-c
+|   |   |   |-- yazpp
+|   |   |   |-- clucene
+|   |   |   |-- libxmlpp
+|   |   |   |-- lib-compat
+|   |   |   |-- 4suite
+|   |   |   |-- SOAPpy
+|   |   |   |-- Genshi 
+|   |   |   |-- lxml
+|   |   |   |-- pytz
+|   |   |   |-- urwid
 |   |   |-- tools
+|   |   |   |-- binutils-avr
+|   |   |   |-- ant
 |   |   |   |-- SVK
 |   |   |   |-- astyle
 |   |   |   |-- bk-client
@@ -1162,7 +1227,7 @@
 |   |   |   |-- systemtap
 |   |   |   |-- unsermake
 |   |   |   |-- valgrind
-|   |-- environment
+|   |-- ide
 |   |   |   |-- drscheme
 |   |   |   |-- eclipse
 |   |   |   |   |-- eclipse-binary
@@ -1174,70 +1239,22 @@
 |   |   |   |-- gambas (...)
 |   |   |   |-- kdevelop
 |   |   |   |-- qdevelop
-|   |-- dotnet
-|   |   |-- library
-|   |   |   |-- libgdiplus
-|   |   |-- compiler
-|   |   |   |-- mono
-|   |   |-- gtk-sharp
-|   |-- cpp
-|   |   |-- library
-|   |   |   |-- ntl
-|   |   |   |-- libsigc++
-|   |   |   |-- libstdc++
-|   |   |   |-- pcre++
-|   |   |   |-- boost
-|   |   |   |-- boost-devel
-|   |   |   |-- linbox
-|   |   |   |-- rlog
-|   |   |   |-- stlport
-|   |   |   |-- tolua++
-|   |   |   |-- xerces-c
-|   |   |   |-- yazpp
-|   |   |   |-- clucene
-|   |   |   |-- libxmlpp
-|   |   |   |-- lib-compat
-|   |-- qt 
-|   |   |-- qt
-|   |   |-- qt-assistant
-|   |   |-- qt-designer
-|   |   |-- qt-doc
-|   |   |-- qt-linguist
-|   |   |-- qt-sql-mysql
-|   |   |-- qt-sql-postgresql
-|   |   |-- qt-sql-sqlite
-|   |   |-- qt4
-|   |   |-- qt4-designer
-|   |   |-- qt4-doc
-|   |   |-- qt4-linguist
-|   |   |-- qt4-sql-mysql
-|   |   |-- qt4-sql-odbc
-|   |   |-- qt4-sql-postgresql
-|   |   |-- qt4-sql-sqlite
-|   |   |-- qwt
-|   |   |-- qwt-doc
-|   |   |-- qwt-qt3-designer
-|   |   |-- qwt-qt4
-|   |   |-- qwt-qt4-designer
-|   |   |-- qwtplot3d
-|   |   |-- qwtplot3d-doc
-|   |   |-- qwtplot3d-qt4
-|   |-- haskell
+|   |   |   |-- lazarus
+|   |   |   |-- eric
+|   |   |   |-- idle
+|   |   |   |-- ipython
+|   |-- compilers
+|   |   |-- mono
 |   |   |-- hugs98
+|   |   |-- fpc
+|   |   |-- fpcsrc
+|   |   |-- gcc-avr
 |   |-- lisp
 |   |    |--clisp
 |   |    |--ecl
 |   |    |--guile
 |   |-- lua
-|   |-- pascal
-|   |   |-- compiler
-|   |   |   |-- fpc
-|   |   |   |-- fpcsrc
-|   |   |-- environmet
-|   |   |   |-- lazarus
 |   |-- java
-|   |   |-- tools
-|   |   |   |-- ant
 |   |   |-- bc-crypto-java
 |   |   |-- db4-java
 |   |   |-- hamcrest
@@ -1391,19 +1408,8 @@
 |   |   |-- perl-Net-Daemon/
 |   |   |-- perl-Net-IP/
 |   |   |-- perl-Net-SSLeay/
-|   |   |-- perl-RPC-XML/                                        
+|   |   |-- perl-RPC-XML/
 |   |-- python
-|   |   |-- lib
-|   |   |   |-- 4suite
-|   |   |   |-- SOAPpy
-|   |   |   |-- Genshi 
-|   |   |   |-- lxml
-|   |   |   |-- pytz
-|   |   |   |-- urwid
-|   |   |-- environment
-|   |   |   |-- eric
-|   |   |   |-- idle
-|   |   |   |-- ipython
 |   |   |-- django
 |   |   |   |-- Django
 |   |   |   |-- django-tagging
@@ -1499,12 +1505,7 @@
 |   |   |-- php-common
 |   |   |-- php-mode
 |   |-- ruby
-|   |-- embedded
-|   |   |-- avr-libc
-|   |   |-- binutils-avr
-|   |   |-- gcc-avr
-|   |   |-- erlang
-|   |   |-- nasm
+|   |-- erlang
 |   |-- tcl
 |   |   |-- snack
 |   |   |-- tcl
@@ -1513,7 +1514,7 @@
 |   |-- ocaml
 |
 |-- science
-|   |-- library
+|   |-- libs
 |   |   |-- netcdf
 |   |   |-- cfitsio
 |   |   |-- cln
@@ -1690,6 +1691,7 @@
 |   |   |-- m4
 |   |   |-- make
 |   |   |-- mpfr
+|   |   |-- nasm
 |   |   |-- patch
 |   |   |-- pkgconfig
 |   |   |-- quilt
@@ -1704,7 +1706,7 @@
 |   |   |-- xtrans
 |   |   |-- yacc
 |   |-- filesystem
-|   |   |-- library
+|   |   |-- libs
 |   |   |   |-- fuse
 |   |   |   |-- libgmail
 |   |   |   |-- dmapi
@@ -1738,23 +1740,6 @@
 |   |   |-- kernel
 |   |   |-- kernel-debug
 |   |   |-- kernel-source
-|   |-- firmware
-|   |   |-- accessrunner-firmware
-|   |   |-- acx100-firmware
-|   |   |-- alsa-firmware
-|   |   |-- atmel-firmware
-|   |   |-- b43-firmware
-|   |   |-- bluez-firmware
-|   |   |-- eagle-firmware
-|   |   |-- ipw2100-firmware
-|   |   |-- ipw2200-firmware
-|   |   |-- iwlwifi3945-ucode
-|   |   |-- iwlwifi4965-ucode
-|   |   |-- iwlwifi5000-ucode
-|   |   |-- ralink-firmware
-|   |   |-- speedtouch-firmware
-|   |   |-- zd1201-firmware
-|   |   |-- zd1211-firmware
 |   `-- drivers
 |       |-- virtualisation
 |       |   |-- kqemu
@@ -1805,8 +1790,8 @@
 |           |-- pwc
 |           |-- vloopback
 |
-|-- documentation
-|   |-- library
+|-- publishing
+|   |-- libs
 |   |   |-- docutils
 |   |   |-- ebook-tools
 |   |   |-- libpaper
@@ -1822,17 +1807,19 @@
 |   |   |-- reportlab-docs
 |   |   |-- wv2
 |   |   |-- xalan-c
-|   |-- antiword
-|   |-- barcode
-|   |-- djvu
+|   |-- viewer
+|   |   |-- bookreader
+|   |   |-- kchmviewer
 |   |-- docbook
+|   |   |-- antiword
 |   |   |-- SGMLSpm
 |   |   |-- asciidoc
 |   |   |-- build-docbook-catalog (and the other docbook packages)
+|   |-- barcode
 |   |-- dos2unix
 |   |-- gv
 |   |-- htmldoc
-|   |-- mfttrace
+|   |-- mftrace
 |   |-- recode
 |   |-- t1utils
 |   |-- texi2html
@@ -1844,14 +1831,35 @@
 |   |-- help2man
 |   |-- htmldoc
 |   |-- kbarcode
-|   |-- kchmviewer
-|   |-- bookreader
 |   |-- psutils
 |   |-- semantik
 |   |-- tesseract
 |   |-- tidy
 |   |-- tree
 |   |-- ttf2pt1
+|   |-- office
+|   |    |-- imposter
+|   |    |-- lxsplit
+|   |    |-- koffice
+|   |    |-- koffice-devel
+|   |    |-- koffice-karbon
+|   |    |-- koffice-kchart
+|   |    |-- koffice-kexi
+|   |    |-- koffice-kformula
+|   |    |-- koffice-kivio
+|   |    |-- koffice-kplato
+|   |    |-- koffice-kpresenter
+|   |    |-- koffice-krita
+|   |    |-- koffice-kspread
+|   |    |-- koffice-kugar
+|   |    |-- koffice-kword
+|   |    |-- openoffice
+|   |    |-- openoffice-clipart
+|   |    |-- openoffice-dicts
+|   |    |-- openoffice-help
+|   |    |-- scribus
+|   |    |-- zemberek-openoffice
+|   |
 |   `-- tex
 |       |-- chktex
 |       |-- hevea
@@ -1864,9 +1872,9 @@
 |       |-- tetex
 |       |-- texi2html
 |
-`-- utility
-    |-- archive
-    |   |-- library
+`-- util
+    |-- arch
+    |   |-- libs
     |   |   |-- lzo
     |   |   |-- libarchive
     |   |   |-- liblzf
@@ -1923,7 +1931,7 @@
     |   |-- rdiff-backup
     |   `-- keep
     |-- crypt
-    |   |-- library
+    |   |-- libs
     |   |   |-- gpgme
     |   |   |-- libmcrypt
     |   |   |-- libassuan
@@ -1939,8 +1947,8 @@
     |   |-- qca2-ossl
     |   |-- tpmmanager
     |   |-- trouser
-    |-- dictionary
-    |   |-- library
+    |-- dicts
+    |   |-- libs
     |   |   |-- enchant
     |   |-- spellchecker
     |   |   |-- aspell
@@ -2007,25 +2015,3 @@
     |   |-- screen
     |   |-- command-not-found
     |   |-- freetts
-    `-- office
-        |-- imposter
-        |-- lxsplit
-        |-- koffice
-        |-- koffice-devel
-        |-- koffice-karbon
-        |-- koffice-kchart
-        |-- koffice-kexi
-        |-- koffice-kformula
-        |-- koffice-kivio
-        |-- koffice-kplato
-        |-- koffice-kpresenter
-        |-- koffice-krita
-        |-- koffice-kspread
-        |-- koffice-kugar
-        |-- koffice-kword
-        |-- openoffice
-        |-- openoffice-clipart
-        |-- openoffice-dicts
-        |-- openoffice-help
-        |-- scribus
-        |-- zemberek-openoffice
