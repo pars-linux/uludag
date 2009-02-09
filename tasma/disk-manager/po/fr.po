@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-30 14:27+0200\n"
+"POT-Creation-Date: 2009-02-09 08:43+0200\n"
 "PO-Revision-Date: 2009-01-29 08:54+0200\n"
 "Last-Translator: Ozan Caglayan <ozan@pardus.org.tr>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -17,19 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/disk-manager.py:62 src/disk-manager.py:304 src/diskform.py:103
+#: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
 msgid "Disk Manager"
 msgstr "Gestionnaire des disques durs"
 
-#: src/disk-manager.py:246
-msgid "Mount point is missing"
-msgstr "Le point de montage manque"
-
-#: src/disk-manager.py:249
-msgid "Mount point does not exist"
-msgstr "Le point de montage n'existe pas"
-
-#: src/disk-manager.py:296
+#: src/disk-manager.py:293
 msgid "Disk Manager is already running!"
 msgstr "Le gestionnaire de disques durs est déjà en cours d'exécution!"
 
@@ -60,6 +52,12 @@ msgstr "Réinitialiser"
 #: src/diskform.py:109
 msgid "Additional Options :"
 msgstr "Options supplémentaires :"
+
+#~ msgid "Mount point is missing"
+#~ msgstr "Le point de montage manque"
+
+#~ msgid "Mount point does not exist"
+#~ msgstr "Le point de montage n'existe pas"
 
 #~ msgid "Add Missing Disks Automatically"
 #~ msgstr "Ajouter automatiquement les disques manquants"

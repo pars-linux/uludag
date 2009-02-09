@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-30 14:27+0200\n"
+"POT-Creation-Date: 2009-02-09 08:43+0200\n"
 "PO-Revision-Date: 2009-01-28 20:19+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -18,19 +18,11 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/disk-manager.py:62 src/disk-manager.py:304 src/diskform.py:103
+#: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
 msgid "Disk Manager"
 msgstr "Hårddiskhanteraren"
 
-#: src/disk-manager.py:246
-msgid "Mount point is missing"
-msgstr "Monteringspunkt saknas"
-
-#: src/disk-manager.py:249
-msgid "Mount point does not exist"
-msgstr "Monteringspunkten finns inte"
-
-#: src/disk-manager.py:296
+#: src/disk-manager.py:293
 msgid "Disk Manager is already running!"
 msgstr "Hårddiskhanteraren körs redan!"
 
@@ -61,6 +53,12 @@ msgstr "Återställ"
 #: src/diskform.py:109
 msgid "Additional Options :"
 msgstr "Extra alternativ:"
+
+#~ msgid "Mount point is missing"
+#~ msgstr "Monteringspunkt saknas"
+
+#~ msgid "Mount point does not exist"
+#~ msgstr "Monteringspunkten finns inte"
 
 #~ msgid "Add Missing Disks Automatically"
 #~ msgstr "Lägg till saknade hårddiskar automatiskt"
