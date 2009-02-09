@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-30 14:27+0200\n"
+"POT-Creation-Date: 2009-02-09 08:43+0200\n"
 "PO-Revision-Date: 2006-11-30 22:01+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -17,19 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/disk-manager.py:62 src/disk-manager.py:304 src/diskform.py:103
+#: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
 msgid "Disk Manager"
 msgstr "Disk Yöneticisi"
 
-#: src/disk-manager.py:246
-msgid "Mount point is missing"
-msgstr "Bağlama noktası eksik"
-
-#: src/disk-manager.py:249
-msgid "Mount point does not exist"
-msgstr "Bağlama noktası mevcut değil"
-
-#: src/disk-manager.py:296
+#: src/disk-manager.py:293
 msgid "Disk Manager is already running!"
 msgstr "Disk Yöneticisi zaten çalışıyor!"
 
@@ -60,6 +52,12 @@ msgstr "Sıfırla"
 #: src/diskform.py:109
 msgid "Additional Options :"
 msgstr "Ek Seçenekler :"
+
+#~ msgid "Mount point is missing"
+#~ msgstr "Bağlama noktası eksik"
+
+#~ msgid "Mount point does not exist"
+#~ msgstr "Bağlama noktası mevcut değil"
 
 #~ msgid "Add Missing Disks Automatically"
 #~ msgstr "Diskleri Otomatik Bul"

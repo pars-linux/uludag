@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-30 14:27+0200\n"
+"POT-Creation-Date: 2009-02-09 08:43+0200\n"
 "PO-Revision-Date: 2007-07-11 20:35+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -17,21 +17,11 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/disk-manager.py:62 src/disk-manager.py:304 src/diskform.py:103
+#: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
 msgid "Disk Manager"
 msgstr "Gestore dischi"
 
-#: src/disk-manager.py:246
-#, fuzzy
-msgid "Mount point is missing"
-msgstr "Punto di montaggio :"
-
-#: src/disk-manager.py:249
-#, fuzzy
-msgid "Mount point does not exist"
-msgstr "Punto di montaggio :"
-
-#: src/disk-manager.py:296
+#: src/disk-manager.py:293
 msgid "Disk Manager is already running!"
 msgstr "Il gestore dischi è già in esecuzione!"
 
@@ -63,6 +53,14 @@ msgstr ""
 #: src/diskform.py:109
 msgid "Additional Options :"
 msgstr "Opzioni aggiuntive :"
+
+#, fuzzy
+#~ msgid "Mount point is missing"
+#~ msgstr "Punto di montaggio :"
+
+#, fuzzy
+#~ msgid "Mount point does not exist"
+#~ msgstr "Punto di montaggio :"
 
 #, fuzzy
 #~ msgid "Add Missing Disks Automatically"

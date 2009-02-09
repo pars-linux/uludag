@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-30 14:27+0200\n"
+"POT-Creation-Date: 2009-02-09 08:43+0200\n"
 "PO-Revision-Date: 2007-07-08 18:09+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
@@ -23,21 +23,11 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/disk-manager.py:62 src/disk-manager.py:304 src/diskform.py:103
+#: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
 msgid "Disk Manager"
 msgstr "Schijfbeheer"
 
-#: src/disk-manager.py:246
-#, fuzzy
-msgid "Mount point is missing"
-msgstr "Aankoppelpunt:"
-
-#: src/disk-manager.py:249
-#, fuzzy
-msgid "Mount point does not exist"
-msgstr "Aankoppelpunt:"
-
-#: src/disk-manager.py:296
+#: src/disk-manager.py:293
 msgid "Disk Manager is already running!"
 msgstr "Schijfbeheer is al actief!"
 
@@ -69,6 +59,14 @@ msgstr ""
 #: src/diskform.py:109
 msgid "Additional Options :"
 msgstr "Aanvullende opties:"
+
+#, fuzzy
+#~ msgid "Mount point is missing"
+#~ msgstr "Aankoppelpunt:"
+
+#, fuzzy
+#~ msgid "Mount point does not exist"
+#~ msgstr "Aankoppelpunt:"
 
 #, fuzzy
 #~ msgid "Add Missing Disks Automatically"

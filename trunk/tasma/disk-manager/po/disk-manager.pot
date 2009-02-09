@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-30 14:27+0200\n"
+"POT-Creation-Date: 2009-02-09 08:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,19 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/disk-manager.py:62 src/disk-manager.py:304 src/diskform.py:103
+#: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
 msgid "Disk Manager"
 msgstr ""
 
-#: src/disk-manager.py:246
-msgid "Mount point is missing"
-msgstr ""
-
-#: src/disk-manager.py:249
-msgid "Mount point does not exist"
-msgstr ""
-
-#: src/disk-manager.py:296
+#: src/disk-manager.py:293
 msgid "Disk Manager is already running!"
 msgstr ""
 
