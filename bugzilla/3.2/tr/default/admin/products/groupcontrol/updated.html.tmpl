@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): André Batosti <batosti@async.com.br> 
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #
   #%]
 
@@ -22,7 +23,7 @@
   #%]
 
 [% title = BLOCK %]
-    Update group access controls for [% product.name FILTER html %]
+    [% product.name FILTER html %] ürününün grup erişim kontrollerini güncelle
 [% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -31,21 +32,19 @@
 <p>
 [% IF removed_na.size > 0 %]
   [% FOREACH g = removed_na %]
-    Removing [% terms.bugs %] from group '[% g.name FILTER html %]' which
-    no longer applies to this product<p>
-    [% g.bug_count FILTER html %] [%+ terms.bugs %] removed<p>
+    Artık bu ürün için geçerli olmayan '[% g.name FILTER html %]' grubundan [% terms.bugs %] kaldırılıyor<p>
+    [% g.bug_count FILTER html %] [%+ terms.bug %] kaldırıldı<p>
   [% END %]
 [% END %]
 
 [% IF added_mandatory.size > 0 %]
   [% FOREACH g = added_mandatory %]
-    Adding [% terms.bugs %] to group '[% g.name FILTER html %]' which is 
-    mandatory for this product<p>
-    [% g.bug_count FILTER html %] [%+ terms.bugs %] added<p>
+    [% terms.bugs %] bu ürün için zorunlu olan '[% g.name FILTER html %]' grubuna ekleniyor<p>
+    [% g.bug_count FILTER html %] [%+ terms.bug %] eklendi<p>
   [% END %]
 [% END %]
 
-Group control updates done<p>
+Grup kontrol güncellemeleri tamamlandı<p>
 
 [% PROCESS admin/products/footer.html.tmpl %]
 

@@ -16,12 +16,13 @@
   # Rights Reserved.
   #
   # Contributor(s): Joel Peshkin <bugreport@peshkin.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% title = BLOCK %]
-    Edit Group Controls for [% product.name FILTER html %]
+    [% product.name FILTER html %] Ürününün Grup Kontrollerini Değiştir
 [% END %]
 [% PROCESS global/header.html.tmpl 
    title = title 
@@ -36,14 +37,14 @@
 
   <table id="form" cellspacing="0" cellpadding="4" border="1">
     <tr bgcolor="#6666ff">
-      <th>Group</th>
-      <th>Entry</th>
-      <th>MemberControl</th>
-      <th>OtherControl</th>
-      <th>Canedit</th>
-      <th>editcomponents</th>
-      <th>canconfirm</th>
-      <th>editbugs</th>
+      <th>Grup</th>
+      <th>Girdi</th>
+      <th>Üye Kontrol</th>
+      <th>Diğer Kontrol</th>
+      <th>Değiştirebilir</th>
+      <th>Bileşenlerini Değiştirebilir</th>
+      <th>Onaylayabilir</th>
+      <th>Hata Değiştirebilir</th>
       <th>[% terms.Bugs %]</th>
     </tr>
     [% FOREACH group = groups %]
@@ -53,7 +54,7 @@
             [% group.name FILTER html %]
           </td>
           <td align="center" colspan=7>
-            Disabled
+            Kapalı
           </td>
           <td>
             [% group.bugcount %]
@@ -73,22 +74,22 @@
               <option value=[% const.CONTROLMAPNA %]
                 [% " selected=\"selected\""
                   IF group.membercontrol == const.CONTROLMAPNA %]
-                >NA
+                >Uygulanamaz
               </option>
               <option value=[% const.CONTROLMAPSHOWN %]
                 [% " selected=\"selected\""
                   IF group.membercontrol == const.CONTROLMAPSHOWN %]
-                >Shown
+                >Gösteriliyor
               </option>
               <option value=[% const.CONTROLMAPDEFAULT %]
                 [% " selected=\"selected\""
                   IF group.membercontrol == const.CONTROLMAPDEFAULT %]
-                >Default
+                >Öntanımlı
               </option>
               <option value=[% const.CONTROLMAPMANDATORY %]
                 [% " selected=\"selected\""
                   IF group.membercontrol == const.CONTROLMAPMANDATORY %]
-                >Mandatory
+                >Zorunlu
               </option>
             </select>
           </td>
@@ -97,22 +98,22 @@
               <option value=[% const.CONTROLMAPNA %]
                 [% " selected=\"selected\""
                   IF group.othercontrol == const.CONTROLMAPNA %]
-                >NA
+                >Uygulanamaz
               </option>
               <option value=[% const.CONTROLMAPSHOWN %]
                 [% " selected=\"selected\""
                   IF group.othercontrol == const.CONTROLMAPSHOWN %]
-                >Shown
+                >Gösteriliyor
               </option>
               <option value=[% const.CONTROLMAPDEFAULT %]
                 [% " selected=\"selected\""
                   IF group.othercontrol == const.CONTROLMAPDEFAULT %]
-                >Default
+                >Öntanımlı
               </option>
               <option value=[% const.CONTROLMAPMANDATORY %]
                 [% " selected=\"selected\""
                   IF group.othercontrol == const.CONTROLMAPMANDATORY %]
-                >Mandatory
+                >Zorunlu
               </option>
             </select>
           </td>
@@ -141,187 +142,151 @@
 
   </table>
   <br>
-  <input type=submit name="submit" value="submit">
+  <input type=submit name="submit" value="Gönder">
   <br>
 </form>
 
 
 <p>
-These settings control the relationship of the groups to this
-product.
+Bu ayarlar grupların bu ürünle olan ilişkisini yönetir.
 </p>
 <p>
-If any group has <b>Entry</b> selected, then this product will
-restrict [% terms.bug %] entry to only those users who are members of all the
-groups with entry selected.
+Bir grupta <b>Girdi</b> seçiliyse, bu ürüne [% terms.bug %] girme izni girdi seçili olan grupların tümüne üye olanlara verilir.
 </p>
 <p>
-If any group has <b>Canedit</b> selected, then this product
-will be read-only for any users who are not members of all of
-the groups with Canedit selected. ONLY users who are members of
-all the canedit groups will be able to edit. This is an additional
-restriction that further restricts what can be edited by a user.
+Bir grupta <b>Değiştirebilir</b> seçiliyse, bu üründe değişiklik yapabilmek için Değiştirebilir seçili olan tüm grupların üyesi olmak gerekir, diğer kullanıcılar açısından bu ürün salt-okunur olacaktır. Bu ayar bir kullanıcının neleri değiştirebileceği ile ilgili ek bir kısıtlama getirir.
 </p>
 <p>
-The following settings control let you choose privileges on a <b>per-product basis</b>.
-This is a convenient way to give privileges to some users for some products
-only, without having to give them global privileges which would affect all
-products:
+Aşağıdaki ayarlar <b>ürün bazında</b> ayrıcalık belirlemeye yarar. Bu ayarlar bazı kullanıcılara tüm ürünleri etkileyecek yetkiler vermeden onlara bazı ürünlerde öncelik vermek için uygun bir yoldur:
 </p>
 <p>
-Any group having <b>editcomponents</b> selected allows users who are
-in this group to edit all aspects of this product, including components,
-milestones and versions.
+<b>Bileşenlerini değiştirebilir</b> seçili olan gruplarda, bu gruptaki kullanıcılar ürünün bileşenlerini, aşamalarını ve sürümlerini değiştirebilir.
 </p>
 <p>
-Any group having <b>canconfirm</b> selected allows users who are
-in this group to confirm [% terms.bugs %] in this product.
+<b>Onaylayabilir</b> özelliği açık gruplar bu gruptaki kullanıcılara bu üründeki [% terms.bugsAcc %] izni verir.
 </p>
 <p>
-Any group having <b>editbugs</b> selected allows users who are
-in this group to edit all fields of [% terms.bugs %] in this product.
+<b>Hata Değiştirebilir</b> özelliği açık gruplar bu gruptaki kullanıcılara bu üründeki [% terms.bugsGen %] tüm alanlarını değiştirme olanağı sağlar.
 </p>
 <p>
-The <b>MemberControl</b> and <b>OtherControl</b> fields
-indicate which [% terms.bugs %] will be placed in
-this group according to the following definitions.
+<b>Üye Kontrol</b> ve <b>Diğer Kontrol</b> alanları aşağıdaki tanımlara göre hangi [% terms.bugsGen %] bu gruba yerleştirileceğini belirler.
 </p>
 
 <table border=1>
   <tr>
     <th>
-      MemberControl
+      Üye Kontrol
     </th>
     <th>
-      OtherControl
+      Diğer Kontrol
     </th>
     <th>
-      Interpretation
+      Yorumlama
     </th>
   </tr>
   <tr>
     <td>
-      NA
+      Uygulanamaz
     </td>
     <td>
-      NA
+      Uygulanamaz
     </td>
     <td>
-      [% terms.Bugs %] in this product are never associated with this group.
+      Bu üründeki [% terms.bugs %] bu grupla asla ilişkilendirilmez.
     </td>
   </tr>
   <tr>
     <td>
-      Shown
+      Gösteriliyor
     </td>
     <td>
-      NA
+      Uygulanamaz
     </td>
     <td>
-      [% terms.Bugs %] in this product are permitted to be restricted to this
-      group.  Users who are members of this group will be able to place [% terms.bugs %] in
+      Bu üründeki [% terms.bugs %] bu gruba sınırlandırılabilir. Bu grubun üyesi olan kullanıcılar [% terms.bugsAcc %] bu gruba yerleştirebilir.
       this group.
     </td>
   </tr>
   <tr>
     <td>
-      Shown
+      Gösteriliyor
     </td>
     <td>
-      Shown
+      Gösteriliyor
     </td>
     <td>
-      [% terms.Bugs %] in this product can be placed in this group by anyone
-      with permission to edit the [% terms.bug %] even if they are not a member
-      of this group.
+      Bu üründeki [% terms.bugs %], [% terms.bugAcc %] değiştirme izni olan herkes tarafından, bu grubun üyesi olmasalar bile, bu gruba yerleştirilebilir.
     </td>
   </tr>
   <tr>
     <td>
-      Shown
+      Gösteriliyor
     </td>
     <td>
-      Default
+      Öntanımlı
     </td>
     <td>
-      [% terms.Bugs %] in this product can be placed in this group by anyone
-      with permission to edit the [% terms.bug %] even if they are not a member
-      of this group. Non-members place [% terms.bugs %] in this group by default.
+      Bu üründeki [% terms.bugs %], [% terms.bugAcc %] değiştirme izni olan herkes tarafından, bu grubun üyesi olmasalar bile, bu gruba yerleştirilebilir. Gruba üye olmayanlar [% terms.bugsAcc %] öntanımlı olarak bu gruba yerleştirir.
     </td>
   </tr>
   <tr>
     <td>
-      Shown
+      Gösteriliyor
     </td>
     <td>
-      Mandatory
+      Zorunlu
     </td>
     <td>
-      [% terms.Bugs %] in this product are permitted to be restricted to this
-      group.  Users who are members of this group will be able to place [% terms.bugs %]
-       in this group.  Non-members will be forced to restrict [% terms.bugs %] to
-       this group when they initially enter [% terms.abug %] in this product.
+      Bu üründeki [% terms.bugsAcc %] bu grupla sınırlandırılmasına izin verir. Bu grubun üyesi olan kullanıcılar [% terms.bugsAcc %] bu gruba yerleştirebilir. Gruba üye olmayanlar ise bu ürüne [% terms.abug %] girerken [% terms.bugAcc %] bu grupla sınırlandırmak zorunda kalırlar.
     </td>
   </tr>
   <tr>
     <td>
-      Default
+      Öntanımlı
     </td>
     <td>
-      NA
+      Uygulanamaz
     </td>
     <td>
-      [% terms.Bugs %] in this product are permitted to be restricted to this
-      group and are placed in this group by default.  Users who are members of this
-      group will be able to place [% terms.bugs %] in this group.
+      Bu üründeki [% terms.bugsAcc %] bu grupla sınırlandırılmasına izin verilir ve öntanımlı olarak bu gruba yerleştirilirler. Bu grubun üyesi olan kullanıcılar [% terms.bugsAcc %] bu gruba yerleştirebilir.
     </td>
   </tr>
   <tr>
     <td>
-      Default
+      Öntanımlı
     </td>
     <td>
-      Default
+      Öntanımlı
     </td>
     <td>
-      [% terms.Bugs %] in this product are permitted to be restricted to this
-      group and are placed in this group by default.  Users who are members of this group
-      will be able to place [% terms.bugs %] in this group.  Non-members will be
-      able to restrict [% terms.bugs %] to this group on entry and will do so by default.
+      Bu üründeki [% terms.bugsAcc %] bu grupla sınırlandırılması mümkündür ve öntanımlı olarak da bu gruba yerleştirilirler. Bu grubun üyesi kullanıcılar [% terms.bugsAcc %] bu gruba yerleştirebilir. Grup üyesi olmayanlar [% terms.bug %] girerken bu gruba kısıtlayabilecekler ve öntanımlı davranış da bu şekilde olacak.
     </td>
   </tr>
   <tr>
     <td>
-      Default
+      Öntanımlı
     </td>
     <td>
-      Mandatory
+      Zorunlu
     </td>
     <td>
-      [% terms.Bugs %] in this product are permitted to be restricted to this
-      group and are placed in this group by default.  Users who are members of this group
-      will be able to place [% terms.bugs %] in this group. Non-members will be forced
-      to place [% terms.bugs %] in this group on entry.
+      Bu üründeki [% terms.bugsAcc %] bu grupla sınırlandırılmasına olanak verir ve öntanımlı davranış bu şekildedir. Bu grubun üyesi olan kullanıcılar [% terms.bugsAcc %] bu gruba yerleştirebilir. Grup üyesi olmayan kullanıcılar [% terms.bug %] girerken [% terms.bugsAcc %] bu gruba yerleştirmek zorundadır.
     </td>
   </tr>
   <tr>
     <td>
-      Mandatory
+      Zorunlu
     </td>
     <td>
-      Mandatory
+      Zorunlu
     </td>
     <td>
-      [% terms.Bugs %] in this product are required to be restricted to this
-      group.  Users are not given any option.
+      Bu üründeki [% terms.bugs %] bu grupla sınırlandırılır. Kullanıcılara herhangi bir seçenek verilmez.
     </td>
   </tr>
 </table>
 <p>
-Please note that the above table delineates the only allowable combinations
-for the <b>MemberControl</b> and <b>OtherControl</b> field settings.
-Attempting to submit a combination not listed there (e.g. Mandatory/NA,
-Default/Shown, etc.) will produce an error message.
+Yukarıdaki seçenekler <b>Üye Kontrol</b> ve <b>Diğer Kontrol</b> alanlarına yönelik seçenekleri gösterir. Burada listelenmeyen seçenekler (örneğin Zorunlu/Uygulanamaz, Öntanımlı/Gösteriliyor vd) hata mesajıyla sonlanır.
 </p>
 [% PROCESS global/footer.html.tmpl %]
 
