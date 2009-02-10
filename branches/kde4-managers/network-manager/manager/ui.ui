@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>mainManager</class>
- <widget class="QWidget" name="mainManager" >
+ <class>MainManager</class>
+ <widget class="QWidget" name="MainManager" >
   <property name="geometry" >
    <rect>
     <x>0</x>

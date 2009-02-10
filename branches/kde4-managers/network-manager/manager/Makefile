@@ -5,10 +5,11 @@ all: build
 build:
 	pykde4uic -o uimain.py ui.ui
 	pykde4uic -o uiitem.py ui.item.ui
+	pykde4uic -o uisettings.py settings.ui
 	python fix-pykdeuic uimain.py
 	pyrcc4 data.qrc -o data_rc.py
 clean:
-	-rm *.pyc uimain.py uiitem.py data_rc.py
+	-rm *.pyc uimain.py uiitem.py uisettings.py data_rc.py
 install: uninstall
 	mkdir -p $(INSTALL_DIR)
 	install -m 0755 main.py $(INSTALL_DIR)/$(PROJECT_NAME)
