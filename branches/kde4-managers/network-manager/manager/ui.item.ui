@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>ProfileItem</class>
- <widget class="QWidget" name="ProfileItem" >
+ <class>ProfileWidget</class>
+ <widget class="QWidget" name="ProfileWidget" >
   <property name="geometry" >
    <rect>
     <x>0</x>

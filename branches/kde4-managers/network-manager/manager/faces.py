@@ -21,7 +21,7 @@ from PyKDE4.kdecore import *
 
 # Application Stuff
 from uimain import Ui_MainManager
-from uiitem import Ui_ProfileItem
+from uiitem import Ui_ProfileWidget
 from uisettings import Ui_DialogSettings
 
 # Network Tools
@@ -76,15 +76,15 @@ class MainManager(QtGui.QWidget):
             self.profiles[package] = {}
         if profile in self.profiles[package]:
             # Updated profile
-            item_widget, item = self.profiles[package][profile]
-            item.initialize(profileInfo)
+            widget_item, widget = self.profiles[package][profile]
+            widget.initialize(profileInfo)
         else:
             # New profile
-            item_widget = ProfileWidgetItem(self.ui.listProfiles, package, self.backendInfo[package], profileInfo)
-            item = ProfileItem(self, package, self.backendInfo[package], profileInfo)
-            self.profiles[package][profile] = (item_widget, item)
-            self.ui.listProfiles.setItemWidget(item_widget, item)
-            item_widget.setSizeHint(QSize(100, 48))
+            widget_item = ProfileWidgetItem(self.ui.listProfiles, package, self.backendInfo[package], profileInfo)
+            widget = ProfileWidget(self, package, self.backendInfo[package], profileInfo)
+            self.profiles[package][profile] = (widget_item, widget)
+            self.ui.listProfiles.setItemWidget(widget_item, widget)
+            widget_item.setSizeHint(QSize(100, 48))
 
     def handleConnectionNew(self, package, profile):
         self.iface.getConnectionInfo(package, profile)
@@ -95,14 +95,14 @@ class MainManager(QtGui.QWidget):
     def handleConnectionDel(self, package, profile):
         item_widget, item = self.profiles[package][profile]
         # Lock list here
-        row = self.ui.listProfiles.row(item_widget)
-        self.ui.listProfiles.takeItem(row)
-        del item
+        # row = self.ui.listProfiles.row(item_widget)
+        # self.ui.listProfiles.takeItem(row)
+        # del item
         # Unlock list here
 
     def handleConnectionState(self, package, profile, state, message):
-        item_widget, item = self.profiles[package][profile]
-        item.setState(state, message)
+        widget_item, widget = self.profiles[package][profile]
+        widget.setState(state, message)
 
 
 class Settings(QtGui.QDialog):
@@ -144,11 +144,11 @@ class ProfileWidgetItem(QtGui.QListWidgetItem):
         QtGui.QListWidgetItem.__init__(self, parent)
 
 
-class ProfileItem(QtGui.QWidget):
+class ProfileWidget(QtGui.QWidget):
     def __init__(self, parent, package, backendInfo, profileInfo):
         QtGui.QWidget.__init__(self, None)
 
-        self.ui = Ui_ProfileItem()
+        self.ui = Ui_ProfileWidget()
         self.ui.setupUi(self)
 
         self.toggleButtons()
