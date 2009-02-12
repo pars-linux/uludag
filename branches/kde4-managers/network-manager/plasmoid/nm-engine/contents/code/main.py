@@ -21,7 +21,8 @@ from PyKDE4 import plasmascript
 # it is very important to check if there is an active mainloop
 # before creating a new one, it may cause to crash plasma itself
 if not dbus.get_default_main_loop():
-    dbus.mainloop.qt.DBusQtMainLoop(set_as_default = True)
+    from dbus.mainloop.qt import DBusQtMainLoop
+    DBusQtMainLoop(set_as_default = True)
 
 net_packages = ["net_tools", "wireless_tools"]
 link = comar.Link()
