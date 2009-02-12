@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'nm-applet/contents/ui/item.ui'
 #
-# Created: Thu Feb 12 18:01:12 2009
+# Created: Thu Feb 12 23:20:02 2009
 #      by: PyQt4 UI code generator 4.4.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -34,7 +34,7 @@ class Ui_connectionItem(object):
         self.connectionStatus = QtGui.QLabel(self.frame)
         self.connectionStatus.setMinimumSize(QtCore.QSize(22, 22))
         self.connectionStatus.setMaximumSize(QtCore.QSize(22, 22))
-        self.connectionStatus.setPixmap(QtGui.QPixmap(":/icons/icons/network-wireless_tools.png"))
+        self.connectionStatus.setPixmap(QtGui.QPixmap(":/icons/network-wireless_tools.png"))
         self.connectionStatus.setScaledContents(True)
         self.connectionStatus.setObjectName("connectionStatus")
         self.horizontalLayout.addWidget(self.connectionStatus)

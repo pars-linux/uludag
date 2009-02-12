@@ -78,7 +78,7 @@
            <string/>
           </property>
           <property name="pixmap" >
-           <pixmap resource="../code/data.qrc" >:/icons/icons/network-wireless_tools.png</pixmap>
+              <pixmap resource="../code/icons/data.qrc" >:/icons/network-wireless_tools.png</pixmap>
           </property>
           <property name="scaledContents" >
            <bool>true</bool>

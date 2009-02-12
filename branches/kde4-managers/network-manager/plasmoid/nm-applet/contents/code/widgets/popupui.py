@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'nm-applet/contents/ui/popup.ui'
 #
-# Created: Thu Feb 12 18:01:12 2009
+# Created: Thu Feb 12 23:20:02 2009
 #      by: PyQt4 UI code generator 4.4.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -51,7 +51,7 @@ class Ui_Connection(object):
         self.label_3.setSizePolicy(sizePolicy)
         self.label_3.setMinimumSize(QtCore.QSize(32, 32))
         self.label_3.setMaximumSize(QtCore.QSize(32, 32))
-        self.label_3.setPixmap(QtGui.QPixmap(":/icons/icons/network-net_tools.png"))
+        self.label_3.setPixmap(QtGui.QPixmap(":/icons/network-net_tools.png"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.horizontalLayout.addWidget(self.label_3)
@@ -105,7 +105,7 @@ class Ui_Connection(object):
         self.label_6.setSizePolicy(sizePolicy)
         self.label_6.setMinimumSize(QtCore.QSize(32, 32))
         self.label_6.setMaximumSize(QtCore.QSize(32, 32))
-        self.label_6.setPixmap(QtGui.QPixmap(":/icons/icons/network-wireless_tools.png"))
+        self.label_6.setPixmap(QtGui.QPixmap(":/icons/network-wireless_tools.png"))
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
         self.horizontalLayout_2.addWidget(self.label_6)

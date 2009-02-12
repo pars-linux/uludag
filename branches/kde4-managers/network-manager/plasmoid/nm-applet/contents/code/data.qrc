@@ -1,9 +1,0 @@
-<RCC>
-  <qresource prefix="icons" >
-    <file>icons/working.png</file>
-    <file>icons/network-wireless_tools.png</file>
-    <file>icons/connected.png</file>
-    <file>icons/network-net_tools.png</file>
-    <file>icons/check.png</file>
-  </qresource>
-</RCC>
