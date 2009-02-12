@@ -21,9 +21,10 @@ from PyKDE4 import plasmascript
 from popup import *
 from item import *
 
-from dbus.mainloop.qt import DBusQtMainLoop
-# DBUS MainLoop
-DBusQtMainLoop(set_as_default = True)
+# it is very important to check if there is an active mainloop
+# before creating a new one, it may cause to crash plasma itself
+if not dbus.get_default_main_loop():
+    dbus.mainloop.qt.DBusQtMainLoop(set_as_default=True)
 
 # Our Comar Link
 link = comar.Link()
@@ -57,7 +58,7 @@ class ConnectionItem(QWidget):
         self.name = name
         self.package = package
         self.setText(name)
-        self.setState(False)
+        self.setState()
 
     def enterEvent(self, event):
         self.ui.frame.setFrameShadow(QFrame.Raised)
@@ -76,7 +77,7 @@ class ConnectionItem(QWidget):
         self.ui.connectionName.setText(text)
 
     def setState(self, state="down"):
-        if state == "up":
+        if state.startswith("up"):
             self.ui.connectionStatus.setPixmap(QPixmap(":/icons/icons/check.png"))
         elif state == "connecting":
             self.ui.connectionStatus.setPixmap(QPixmap(":/icons/icons/working.png"))
@@ -101,6 +102,8 @@ class Popup(QWidget):
             connections = list(link.Net.Link[package].connections())
             for connection in connections:
                 self.addConnectionItem(package, str(connection))
+                info = link.Net.Link[package].connectionInfo(str(connection))
+                self.connections[package][connection].setState(str(info['state']))
 
     def setConnectionStatus(self, package, message):
         if package == "wireless_tools":
@@ -125,6 +128,7 @@ class NmApplet(plasmascript.Applet):
 
     def init(self):
         """ Const method for initializing the applet """
+        # self.nm_engine = self.dataEngine("nm-engine")
 
         # Configuration interface support comes with plasma
         self.setHasConfigurationInterface(False)
@@ -148,6 +152,10 @@ class NmApplet(plasmascript.Applet):
         self.dialog.adjustSize()
 
         self.connect(self.icon, SIGNAL("clicked()"), self.showDialog)
+
+        self.connectToEngine()
+
+    def connectToEngine(self):
         link.listenSignals("Net.Link", self.handler)
 
     def handler(self, package, signal, args):

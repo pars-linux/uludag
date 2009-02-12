@@ -149,7 +149,7 @@ class ServiceManager(KCModule):
 
         # DBUS MainLoop
         DBusQtMainLoop(set_as_default = True)
-        MainManager(self, standAlone=False)
+        MainManager(self, standAlone = False)
 
 def CreatePlugin(widget_parent, parent, component_data):
     return ServiceManager(component_data, parent)

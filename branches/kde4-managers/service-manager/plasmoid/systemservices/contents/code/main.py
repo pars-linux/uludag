@@ -3,6 +3,7 @@
 
 # Pardus Libs
 import comar
+import dbus
 
 # Qt Libs
 from PyQt4.QtCore import *
@@ -19,10 +20,6 @@ from PyKDE4 import plasmascript
 # Plasmoid Config
 from config import SystemServicesConfig
 
-# DBUS-QT
-from dbus.mainloop.qt import DBusQtMainLoop
-from dbus import DBusException
-
 state_icons = {"off"                :"flag-red",
                "stopped"            :"flag-red",
                "on"                 :"flag-green",
@@ -31,8 +28,10 @@ state_icons = {"off"                :"flag-red",
                "conditional_started":"flag-green",
                "conditional_stopped":"flag-yellow"}
 
-# DBUS MainLoop
-DBusQtMainLoop(set_as_default = True)
+# it is very important to check if there is an active mainloop
+# before creating a new one, it may cause to crash plasma itself
+if not dbus.get_default_main_loop():
+    dbus.mainloop.qt.DBusQtMainLoop(set_as_default=True)
 
 # Our Comar Link
 link = comar.Link()
@@ -93,7 +92,7 @@ class WidgetSystemServices(QGraphicsWidget):
                 link.System.Service[self._name].start()
             else:
                 link.System.Service[self._name].stop()
-        except DBusException:
+        except dbus.DBusException:
             self.switcher.setCurrentIndex(index^1)
 
     def updateState(self, state=None):
