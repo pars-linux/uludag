@@ -97,6 +97,7 @@ class Popup(QWidget):
 
         self.ui = Ui_Connection()
         self.ui.setupUi(parent)
+
         self.parent = parent
         self.connections = {"net_tools":{}, "wireless_tools":{}}
         self.init()
@@ -148,6 +149,7 @@ class NmApplet(plasmascript.Applet):
 
         self.dialog = Plasma.Dialog()
         self.dialog.setWindowFlags(Qt.Popup)
+        self.updateTheme()
 
         self.popup = Popup(self.dialog)
 
@@ -155,6 +157,7 @@ class NmApplet(plasmascript.Applet):
         self.dialog.adjustSize()
 
         self.connect(self.icon, SIGNAL("clicked()"), self.showDialog)
+        self.connect(Plasma.Theme.defaultTheme(), SIGNAL("themeChanged()"), self.updateTheme)
 
         self.connectToEngine()
 
@@ -175,6 +178,9 @@ class NmApplet(plasmascript.Applet):
             #notify("Not connected")
             self.popup.setConnectionStatus(package, "Not connected.")
         self.popup.connections[package][str(args[0])].setState(str(args[1]))
+
+    def updateTheme(self):
+        self.dialog.setStyleSheet("color: %s;" % Plasma.Theme.defaultTheme().color(Plasma.Theme.TextColor).name())
 
     def showDialog(self):
         if self.dialog.isVisible():

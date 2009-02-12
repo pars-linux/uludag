@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'nm-applet/contents/ui/popup.ui'
 #
-# Created: Fri Feb  6 00:37:27 2009
+# Created: Thu Feb 12 18:01:12 2009
 #      by: PyQt4 UI code generator 4.4.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,9 +13,6 @@ class Ui_Connection(object):
     def setupUi(self, Connection):
         Connection.setObjectName("Connection")
         Connection.resize(253, 163)
-        Connection.setStyleSheet("""QLabel {
-color:white;
-}""")
         self.verticalLayout_5 = QtGui.QVBoxLayout(Connection)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setMargin(0)

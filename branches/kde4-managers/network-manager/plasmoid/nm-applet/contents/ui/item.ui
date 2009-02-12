@@ -24,9 +24,6 @@
   <property name="windowTitle" >
    <string>Form</string>
   </property>
-  <property name="styleSheet" >
-   <string notr="true" >color:white;</string>
-  </property>
   <layout class="QGridLayout" name="gridLayout_2" >
    <property name="margin" >
     <number>0</number>

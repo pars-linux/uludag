@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'nm-applet/contents/ui/item.ui'
 #
-# Created: Thu Feb  5 23:58:55 2009
+# Created: Thu Feb 12 18:01:12 2009
 #      by: PyQt4 UI code generator 4.4.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -15,7 +15,6 @@ class Ui_connectionItem(object):
         connectionItem.resize(228, 32)
         connectionItem.setMinimumSize(QtCore.QSize(0, 32))
         connectionItem.setMaximumSize(QtCore.QSize(16777215, 32))
-        connectionItem.setStyleSheet("color:white;")
         self.gridLayout_2 = QtGui.QGridLayout(connectionItem)
         self.gridLayout_2.setMargin(0)
         self.gridLayout_2.setSpacing(0)
