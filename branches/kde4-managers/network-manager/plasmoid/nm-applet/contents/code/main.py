@@ -70,9 +70,12 @@ class ConnectionItem(QWidget):
     def mouseReleaseEvent(self, event):
         self.dialog.parent.hide()
         if self.lastState == "down":
-            link.Net.Link[self.package].setState(self.name,"up")
+            link.Net.Link[self.package].setState(self.name,"up", async=self.handler)
         else:
-            link.Net.Link[self.package].setState(self.name,"down")
+            link.Net.Link[self.package].setState(self.name,"down", async=self.handler)
+
+    def handler(self, *args):
+        pass
 
     def setText(self, text):
         self.ui.connectionName.setText(text)
@@ -129,7 +132,6 @@ class NmApplet(plasmascript.Applet):
 
     def init(self):
         """ Const method for initializing the applet """
-        # self.nm_engine = self.dataEngine("nm-engine")
 
         # Configuration interface support comes with plasma
         self.setHasConfigurationInterface(False)

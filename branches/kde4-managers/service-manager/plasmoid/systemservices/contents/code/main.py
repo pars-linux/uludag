@@ -90,11 +90,14 @@ class WidgetSystemServices(QGraphicsWidget):
             return
         try:
             if index == 0:
-                link.System.Service[self._name].start()
+                link.System.Service[self._name].start(async=self.handler)
             else:
-                link.System.Service[self._name].stop()
+                link.System.Service[self._name].stop(async=self.handler)
         except dbus.DBusException:
             self.switcher.setCurrentIndex(index^1)
+
+    def handler(self, *args):
+        pass
 
     def updateState(self, state=None):
         if not state:
