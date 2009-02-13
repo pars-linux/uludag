@@ -34,6 +34,7 @@ def buildPackages():
     qmgr = qmanager.QueueManager()
     queue = copy.copy(qmgr.workQueue)
     packageList = []
+    deltaPackageList = []
 
     if len(queue) == 0:
         logger.info("Work Queue is empty...")
@@ -158,6 +159,8 @@ def buildPackages():
                     qmgr.removeFromWorkQueue(pspec)
                     movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPackages)
                     packageList += (map(lambda x: os.path.basename(x), newBinaryPackages))
+                    deltaPackageList += (map(lambda x: os.path.basename(x), deltaPackages))
+
         finally:
             pass
 
@@ -167,7 +170,7 @@ def buildPackages():
         mailer.info("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n\n\nNew binary packages are;\n\n%s\n\nnow in repository" % ("\n".join(qmgr.waitQueue), "\n".join(packageList)))
     else:
         mailer.info("Queue finished without a problem!...\n\n\nNew binary packages are:\n\n%s\n\n"
-                    "New delta packages are:\n\n%s\n\nnow in repository..." % ("\n".join(packageList), "\n".join(deltaPackages))
+                    "New delta packages are:\n\n%s\n\nnow in repository..." % ("\n".join(packageList), "\n".join(deltaPackageList))
     logger.raw()
     logger.raw()
 
