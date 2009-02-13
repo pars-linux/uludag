@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2008 TUBITAK/UEKAE
+# Copyright (C) 2006, TUBITAK/UEKAE
 # 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -12,10 +12,10 @@
 #e-mail message templates for mailer module..
 
 error_message = """\
-From: Pardus Buildfarm 2008 <%(mailFrom)s>
+From: Pardus 2008 Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
-Subject: [buildfarm] %(type)s: %(subject)s
+Subject: [2008] %(type)s: %(subject)s
 MIME-Version: 1.0
 Content-Type: multipart/alternative; boundary="boundary42"
 
@@ -96,10 +96,10 @@ href="http://paketler.pardus.org.tr/logs/2008/%(packagename)s.log">http://paketl
 """
 
 info_message = """\
-From: Pardus Buildfarm 2008 <%(mailFrom)s>
+From: Pardus 2008 Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
-Subject: [buildfarm] %(subject)s
+Subject: [2008] %(subject)s
 Content-Type: text/plain;
             charset="utf-8"
 
@@ -112,9 +112,9 @@ Happy hacking!
 """
 
 announce_message = """\
-From: Pardus Buildfarm 2008 <%(mailFrom)s>
+From: Pardus 2008 Buildfarm <%(mailFrom)s>
 To: %(announceAddr)s
-Subject: [buildfarm] [REPORT] New packages in -testing repository
+Subject: [2008] [REPORT] New packages in -testing repository
 Content-Type: text/plain;
             charset="utf-8"
 

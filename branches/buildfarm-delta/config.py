@@ -39,7 +39,7 @@ deltaPath        = "/var/cache/pisi/packages-delta/"
 # Default from adress
 mailFrom         = "buildfarm@pardus.org.tr"
 # This adress is used for automated reports
-announceAddr     = "gelistirici@pardus.org.tr"
+announceAddr     = "buildfarm@pardus.org.tr"
 # This is the default CC adress for all info and error mails
 # Error mails are sent to package maintainer and CC'ed to this adress,
 # info mails have no 'TO' adress, only this one as a 'CC'.
