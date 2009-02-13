@@ -1,9 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Network Interface
-from backend.pardus import NetworkIface
-
+import dbus
 # Qt Libs
 from PyQt4.QtCore import Qt, SIGNAL
 from PyQt4.QtGui import QWidget, QFrame, QGraphicsLinearLayout, QPixmap
@@ -15,7 +13,11 @@ from PyKDE4 import plasmascript
 # Custom Widgets
 from widgets.popup import Popup
 
+# KDE4 Notifier
+from widgets.notify import Notifier
+
 # Network Interface for operations
+from backend.pardus import NetworkIface
 iface = NetworkIface()
 
 class NmApplet(plasmascript.Applet):
@@ -24,6 +26,7 @@ class NmApplet(plasmascript.Applet):
     def __init__(self, parent):
         plasmascript.Applet.__init__(self, parent)
         self.iface = iface
+        self.notifyface = Notifier(dbus.get_default_main_loop())
 
     def init(self):
         """ Const method for initializing the applet """
@@ -59,16 +62,20 @@ class NmApplet(plasmascript.Applet):
         self.iface.listen(self.handler)
 
     def handler(self, package, signal, args):
-        args = list(args)
+        args = map(lambda x: str(x), list(args))
         if (str(args[1]) == "up"):
-            self.popup.setConnectionStatus(package, "Connected, IP: <b>%s</b>" % args[2])
+            msg = "Connected to <b>%s</b>, IP: <b>%s</b>" % (args[0], args[2])
+            self.popup.setConnectionStatus(package, msg)
             self.icon.setIcon("preferences-web-browser-shortcuts")
         elif (str(args[1]) == "connecting"):
-            self.popup.setConnectionStatus(package, "Connecting to <b>%s</b>" % args[0])
+            msg = "Connecting to <b>%s</b>" % args[0]
+            self.popup.setConnectionStatus(package, msg)
         else:
+            msg = "Disconnected"
+            self.popup.setConnectionStatus(package, msg)
             self.icon.setIcon("applications-internet")
-            self.popup.setConnectionStatus(package, "Not connected.")
         self.popup.connections[package][str(args[0])].setState(str(args[1]))
+        self.notifyface.notify(str(msg))
 
     def updateTheme(self):
         self.dialog.setStyleSheet("color: %s;" % Plasma.Theme.defaultTheme().color(Plasma.Theme.TextColor).name())
