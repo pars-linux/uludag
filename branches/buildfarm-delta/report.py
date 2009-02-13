@@ -5,9 +5,10 @@ import os
 import mailer
 
 packages = []
-for i in os.listdir("/var/www/localhost/htdocs/pardus-2008-test/"):
-    if not os.path.exists("/var/www/localhost/htdocs/pardus-2008/%s" % i):
+for i in os.listdir("/var/cache/pisi/packages-test/"):
+    if not os.path.exists("/var/cache/pisi/packages-stable/%s" % i) and not 'delta.pisi' in i :
         packages.append(i)
 
-packages.sort()
-mailer.announce("New packages in -testing repository:\n\n%s" % "\n".join(packages))
+if (packages):
+    packages.sort()
+    mailer.announce("New packages in -testing repository:\n\n%s" % "\n".join(packages))
