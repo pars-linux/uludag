@@ -48,7 +48,7 @@ ccList           = ["buildfarm@pardus.org.tr"]
 smtpServer       = "mail.pardus.org.tr"
 # Create and edit mailauth.py for authentication if needed
 # Set this to 'False' for turning mail sending off.
-useSmtpAuth      = False
+useSmtpAuth      = True
 
 
 # Blacklist for delta packages. Buildfarm will never build

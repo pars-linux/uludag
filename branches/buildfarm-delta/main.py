@@ -170,7 +170,7 @@ def buildPackages():
         mailer.info("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n\n\nNew binary packages are;\n\n%s\n\nnow in repository" % ("\n".join(qmgr.waitQueue), "\n".join(packageList)))
     else:
         mailer.info("Queue finished without a problem!...\n\n\nNew binary packages are:\n\n%s\n\n"
-                    "New delta packages are:\n\n%s\n\nnow in repository..." % ("\n".join(packageList), "\n".join(deltaPackageList))
+                    "New delta packages are:\n\n%s\n\nnow in repository..." % ("\n".join(packageList), "\n".join(deltaPackageList)))
     logger.raw()
     logger.raw()
 
