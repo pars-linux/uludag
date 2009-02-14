@@ -17,17 +17,19 @@
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [%# Define strings that will serve as the title and header of this page %]
 [% title = BLOCK %]
-  Attachment [% attachment.id %] Details for [% terms.Bug %] [%+ attachment.bug_id %]
+  [% terms.Bug %] [%+ attachment.bug_id %] Ek [% attachment.id %] Detayları
 [% END %]
 [% header = BLOCK %]
   Attachment [% attachment.id %] Details for
   [%+ "$terms.Bug ${attachment.bug_id}" FILTER bug_link(attachment.bug_id) FILTER none %]
+  Ek [% attachment.id %] Detayları
 [% END %]
 [% subheader = BLOCK %][% bugsummary FILTER html %][% END %]
 
@@ -109,7 +111,7 @@
   function switchToMode(mode)
     {
       if (mode == current_mode) {
-        alert('switched to same mode!  This should not happen.');
+        alert('aynı kipe geçildi! Bu olmamalıydı.');
         return;
       }
 
@@ -204,7 +206,7 @@
     <tr>
       <td width="25%">
         <small>
-        <b><label for="description">Description</label>:</b><br>
+        <b><label for="description">Açıklama</label>:</b><br>
           [% INCLUDE global/textarea.html.tmpl
             id             = 'description'
             name           = 'description'
@@ -230,22 +232,22 @@
             <em>deleted</em>
           [% END %]<br>
 
-          <b><label for="contenttypeentry">MIME Type</label>:</b><br>
+          <b><label for="contenttypeentry">MIME Türü</label>:</b><br>
             <input type="text" size="20"
                    id="contenttypeentry" name="contenttypeentry"
                    value="[% attachment.contenttype FILTER html %]"><br>
 
           <input type="checkbox" id="ispatch" name="ispatch" value="1"
                  [%+ 'checked="checked"' IF attachment.ispatch %]>
-          <label for="ispatch">patch</label>
+          <label for="ispatch">yama</label>
         [% END %]
           <input type="checkbox" id="isobsolete" name="isobsolete" value="1"
                  [%+ 'checked="checked"' IF attachment.isobsolete %]>
-          <label for="isobsolete">obsolete</label>
+          <label for="isobsolete">eski</label>
           [% IF (Param("insidergroup") && user.in_group(Param("insidergroup"))) %]
             <input type="checkbox" id="isprivate" name="isprivate" value="1"
                    [% " checked" IF attachment.isprivate %]>
-            <label for="isprivate">private</label><br>
+            <label for="isprivate">gizli</label><br>
           [% END %]
           <br>
         </small>
@@ -256,8 +258,8 @@
         [% END %]
 
         <div id="smallCommentFrame">
-          <b><small><label for="comment">Comment</label> (on the
-          [%+ terms.bug %]):</small></b><br>
+          <b><small><label for="comment">Yorum</label> (
+          [%+ terms.bug %] hakkında):</small></b><br>
             [% INCLUDE global/textarea.html.tmpl
               id      = 'comment'
               name    = 'comment'
@@ -268,20 +270,20 @@
         </div>
 
         <input type="submit" value="Submit" id="update"><br><br>
-        <strong>Actions:</strong>
+        <strong>İşlemler:</strong>
         <a href="attachment.cgi?id=[% attachment.id %]">View</a>
         [% IF attachment.ispatch && patchviewerinstalled %]
-         | <a href="attachment.cgi?id=[% attachment.id %]&amp;action=diff">Diff</a>
+         | <a href="attachment.cgi?id=[% attachment.id %]&amp;action=diff">Fark (Diff)</a>
         [% END %]
         [% IF Param("allow_attachment_deletion")
               && user.groups.admin
               && attachment.datasize > 0 %]
-          | <a href="attachment.cgi?id=[% attachment.id %]&amp;action=delete">Delete</a>
+          | <a href="attachment.cgi?id=[% attachment.id %]&amp;action=delete">Sil</a>
         [% END %]
       </td>
 
       [% IF !attachment.datasize %]
-        <td width="75%"><b>The content of this attachment has been deleted.</b></td>
+        <td width="75%"><b>Ek içeriği silindi.</b></td>
       [% ELSIF attachment.isurl %]
         <td width="75%">
           <a href="[% attachment.data FILTER html %]">
@@ -305,8 +307,8 @@
             wrap    = 'soft'
           %]
           <iframe id="viewFrame" src="attachment.cgi?id=[% attachment.id %]" style="height: 400px; width: 100%;">
-            <b>You cannot view the attachment while viewing its details because your browser does not support IFRAMEs.
-            <a href="attachment.cgi?id=[% attachment.id %]">View the attachment on a separate page</a>.</b>
+            <b>Ekin detayları görüntülenirken ekin içeriğine bakamazsınız çünkü tarayıcınız iç çerçeveleri (IFRAME) desteklemiyor.
+            <a href="attachment.cgi?id=[% attachment.id %]">Eki ayrı bir sayfada görüntüle</a>.</b>
           </iframe>
           <script type="text/javascript">
             <!--
@@ -314,13 +316,13 @@
 [% IF patchviewerinstalled %]
               document.write('<iframe id="viewDiffFrame" style="height: 400px; width: 100%; display: none;"><\/iframe>');
 [% END %]
-              document.write('<button type="button" id="editButton" onclick="editAsComment();">Edit Attachment As Comment<\/button>');
-              document.write('<button type="button" id="undoEditButton" onclick="undoEditAsComment();" style="display: none;">Undo Edit As Comment<\/button>');
-              document.write('<button type="button" id="redoEditButton" onclick="redoEditAsComment();" style="display: none;">Redo Edit As Comment<\/button>');
+              document.write('<button type="button" id="editButton" onclick="editAsComment();">Eki Yorum Haline Getirip Değiştir<\/button>');
+              document.write('<button type="button" id="undoEditButton" onclick="undoEditAsComment();" style="display: none;">Eki Yorum Haline Getirerek Değiştirme İşlemini Geri Al<\/button>');
+              document.write('<button type="button" id="redoEditButton" onclick="redoEditAsComment();" style="display: none;">Eki Yorum Haline Getirerek Değiştirme İşlemini Tekrarla<\/button>');
 [% IF patchviewerinstalled %]
-              document.write('<button type="button" id="viewDiffButton" onclick="viewDiff();">View Attachment As Diff<\/button>');
+              document.write('<button type="button" id="viewDiffButton" onclick="viewDiff();">Eki Fark (Diff) Olarak Göster<\/button>');
 [% END %]
-              document.write('<button type="button" id="viewRawButton" onclick="viewRaw();" style="display: none;">View Attachment As Raw<\/button>');
+              document.write('<button type="button" id="viewRawButton" onclick="viewRaw();" style="display: none;">Eki Ham Halde Göster<\/button>');
             }
             //-->
           </script>
@@ -328,12 +330,11 @@
       [% ELSE %]
         <td id="noview" width="50%">
           <p><b>
-            Attachment is not viewable in your browser because its MIME type 
-            ([% attachment.contenttype FILTER html %]) is not one that your browser is 
-            able to display.
+            Ek tarayıcınızda gösterilemiyor çünkü MIME türü 
+            ([% attachment.contenttype FILTER html %]) tarayıcınızın gösterebildiği bir tür değil.
           </b></p>
           <p><b>
-            <a href="attachment.cgi?id=[% attachment.id %]">Download the attachment</a>.
+            <a href="attachment.cgi?id=[% attachment.id %]">Eki indir</a>.
           </b></p>
         </td>
       [% END %]
@@ -342,7 +343,7 @@
 
   </table>
 
-  Attachments on this [% terms.Bug %]:
+  Bu [% terms.BugLoc %]ki Ekler:
   [% FOREACH a = attachments %]
     [% IF a == attachment.id %]
       [%+ a %]

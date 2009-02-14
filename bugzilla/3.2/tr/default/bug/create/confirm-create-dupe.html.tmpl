@@ -13,6 +13,7 @@
   # The Initial Developer of the Original Code is Olav Vitters.
   #
   # Contributor(s): Olav Vitters <olav@bkor.dhs.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -23,7 +24,7 @@
 [% PROCESS "global/field-descs.none.tmpl" %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Already filed $terms.bug"
+  title = "$terms.Bug zaten gönderildi"
 %]
 
 [% USE Bugzilla %]
@@ -32,25 +33,25 @@
   <tr>
     <td bgcolor="#ff0000">
       <font size="+2">
-        You already used the form to file [% "$terms.bug $bugid" FILTER bug_link(bugid) FILTER none %].
+        Formu zaten [% "$terms.bug $bugid" FILTER bug_link(bugid) FILTER none %] için kullandınız.
       </font>
     </td>
   </tr>
 </table>
 
-<p><font size="big">You are highly encouraged to visit [% "$terms.bug $bugid"
-FILTER bug_link(bugid) FILTER none %].</font></p>
+<p><font size="big">Açın: [% "$terms.bug $bugid"
+FILTER bug_link(bugid) FILTER none %]</font></p>
 
 [% IF allow_override %]
-  <p>If you are sure you used the same form to submit a new [% terms.bug %],
-  click 'File [% terms.bug %] again'.<p>
+  <p>Eğer aynı formu farklı bir [% terms.bug %] için kullandıysanız,
+  '[% terms.bugAcc %] tekrar gönder'e tıklayın.<p>
 
   <form name="create" id="create" method="post" action="post_bug.cgi"
   [%- IF Bugzilla.cgi.param("data") %] enctype="multipart/form-data"[% END %]>
     [% PROCESS "global/hidden-fields.html.tmpl"
                exclude="^(Bugzilla_login|Bugzilla_password|ignore_token)$" %]
     <input type="hidden" name="ignore_token" value="[% bugid FILTER html %]">
-    <input type="submit" value="File [% terms.bug %] again" id="file_bug_again">
+    <input type="submit" value="[% terms.bugAcc %] tekrar gönder" id="file_bug_again">
   </form>
 [% END %]
 
