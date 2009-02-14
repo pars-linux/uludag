@@ -70,9 +70,9 @@
   [% version.bug_count FILTER none %] [%+ terms.bug %] 
   hata var. Bu sürümü silebilmek için önce bu
   [% IF version.bug_count > 1 %]
-     [% terms.bugsDat %] 
+     [% terms.bugsAcc %] 
   [% ELSE %]
-     that [% terms.bugDat %]
+     [% terms.bugAcc %]
   [% END %]
   başka bir sürüme taşımalısınız.
   </p>
@@ -81,7 +81,7 @@
   <p>Bu sürümü gerçekten silmek istiyor musunuz?</p>
   
   <form method="post" action="editversions.cgi">
-    <input type="submit" id="delete" value="Yes, delete">
+    <input type="submit" id="delete" value="Evet, sil">
     <input type="hidden" name="action" value="delete">
     <input type="hidden" name="product" value="[% product.name FILTER html %]">
     <input type="hidden" name="version" value="[% version.name FILTER html %]">

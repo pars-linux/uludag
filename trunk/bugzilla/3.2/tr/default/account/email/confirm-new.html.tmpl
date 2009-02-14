@@ -20,7 +20,7 @@
   # date: creation date of the token.
   #%]
 
-[% title = BLOCK %]'[% email FILTER html %]' eposta adresine yeni bir kullanıcı hesabı oluştur[% END %]
+[% title = BLOCK %]'[% email FILTER html %]' eposta adresiyle yeni bir kullanıcı hesabı oluştur[% END %]
 [% PROCESS "global/header.html.tmpl"
            title = title
            onload = "document.forms['confirm_account_form'].realname.focus();" %]
@@ -62,13 +62,13 @@
 </p>
 
 <p>
-  Eğer bu eposta adresini kullanarak bir hesap oluşturmak istemiyorsanız aşağıdaki <i>hesabı iptal et</i> düğmesine basarsanız hakkınızdaki bilgiler sistemden silinecektir.
+  Eğer bu eposta adresini kullanarak bir hesap oluşturmak istemiyorsanız aşağıdaki <i>Oluşturmayı İptal Et</i> düğmesine basarsanız hakkınızdaki bilgiler sistemden silinecektir.
 </p>
 
 <form id="cancel_account_form" method="post" action="token.cgi">
   <input type="hidden" name="t" value="[% token FILTER html %]">
   <input type="hidden" name="a" value="cancel_new_account">
-  <input type="submit" id="confirm" value="Hesabı İptal Et">
+  <input type="submit" id="confirm" value="Oluşturmayı İptal Et">
 </form>
 
 [% PROCESS global/footer.html.tmpl %]

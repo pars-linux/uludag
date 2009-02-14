@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -28,15 +29,15 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-           title = "Show Votes"
+           title = "Oyları Göster"
            subheader = "$terms.Bug <a href=\"show_bug.cgi?id=$bug_id\">$bug_id</a>"
  %]
 
 [% total = 0 %]
 <table cellspacing="4">
   <tr>
-    <th>Who</th>
-    <th>Number of votes</th>
+    <th>Kişi</th>
+    <th>Oy sayısı</th>
   </tr>
 
   [% FOREACH voter = users %]
@@ -54,6 +55,6 @@
   [% END %]
 </table>
 
-<p>Total votes: [% total %]</p>
+<p>Toplam oy: [% total %]</p>
 
 [% PROCESS global/footer.html.tmpl %]

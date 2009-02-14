@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -25,26 +26,25 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-           title = "Remove your votes?"
+           title = "Oylarınız silinsin mi?"
  %]
 
 <p>
-  You are about to remove all of your [% terms.bug %] votes. Are you sure you wish to
-  remove your vote from every [% terms.bug %] you've voted on?
+  Tüm [% terms.bug %] oylarınız silinmek üzere. Şu ana kadar tüm [% terms.bugsDat %] verdiğiniz bütün oyların silinmesini istiyor musunuz?
 </p>
 
 <form action="votes.cgi" method="post">
     <input type="hidden" name="action" value="vote">
   <p>
     <input type="radio" name="delete_all_votes" value="1">
-    Yes, delete all my votes
+    Evet, tüm oylarımı sil
   </p>
   <p>
     <input type="radio" name="delete_all_votes" value="0" checked="checked">
-    No, go back and review my votes
+    Hayır, geri dön, oylarımı gözden geçirmek istiyorum
   </p>
   <p>
-    <input type="submit" id="vote" value="Submit">
+    <input type="submit" id="vote" value="Gönder">
   </p>
 </form>
 
