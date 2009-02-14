@@ -18,6 +18,7 @@
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 Max Kanat-Alexander <mkanat@bugzilla.org>
   #                 Shane H. W. Travis <travis@sedsystems.ca>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS bug/time.html.tmpl %]
@@ -86,7 +87,7 @@
   function addCollapseLink(count) {
     document.write(' <a href="#" id="comment_link_' + count +
                    '" onclick="toggle_comment_display(this, ' +  count +
-                   '); return false;" title="Collapse the comment.">(-)</a> ');
+                   '); return false;" title="Yorumu kapat.">(-)</a> ');
   }
   //-->
   </script>
@@ -121,8 +122,8 @@
 [% END %]
 
 [% IF mode == "edit" %]
-  <a href="#" onclick="toggle_all_comments('collapse'); return false;">Collapse All Comments</a> -
-  <a href="#" onclick="toggle_all_comments('expand'); return false;">Expand All Comments</a>
+  <a href="#" onclick="toggle_all_comments('collapse'); return false;">Tüm Yorumları Kapat</a> -
+  <a href="#" onclick="toggle_all_comments('expand'); return false;">Tüm Yorumları Aç</a>
   <hr>
 [% END %]
 
@@ -165,7 +166,7 @@
         [% decoration FILTER none %]
         <i>[% comment_label FILTER html %]
         <a name="c[% count %]" href="show_bug.cgi?id=[% bug.bug_id %]#c[% count %]">
-          [% comment_link FILTER html %]</a> From
+          [% comment_link FILTER html %]</a> Yorum Sahibi
         <span class="vcard">
           <a class="fn email" href="mailto:[% comment.author.email FILTER html %]">
             [% (comment.author.name || comment.author.login) FILTER html %]</a>
@@ -197,13 +198,13 @@
                  id="isprivate_[% comment.id %]"
                  onClick="updateCommentPrivacy(this, [% count %])"
                  [% " checked=\"checked\"" IF comment.isprivate %]>
-          <label for="isprivate_[% comment.id %]">Private</label>
+          <label for="isprivate_[% comment.id %]">Gizli</label>
         </i>
       [% END %]
       [% IF user.in_group(Param('timetrackinggroup')) &&
             (comment.work_time > 0 || comment.work_time < 0) %]
          <br>
-         Additional hours worked: 
+         Çalışılan ek saat sayısı: 
          [% PROCESS formattimeunit time_unit=comment.work_time %]
       [% END %]
 
