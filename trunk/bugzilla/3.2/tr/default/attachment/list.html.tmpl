@@ -17,6 +17,7 @@
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 <script type="text/javascript">
@@ -27,13 +28,13 @@
     var originalHeight = table.offsetHeight; // Store current height for scrolling
 
     var toggle;
-    if (link.innerHTML == "Show Obsolete") {
+    if (link.innerHTML == "Eskileri Göster") {
       toggle = ""; // This should be 'table-row', but IE 6 doesn't understand it.
-      link.innerHTML = "Hide Obsolete";
+      link.innerHTML = "Eskileri Gizle";
     }
     else {
       toggle = "none";
-      link.innerHTML = "Show Obsolete";
+      link.innerHTML = "Eskileri Göster";
     }
 
     for (var i = 0; i < rows.length; i++) {
@@ -53,7 +54,7 @@
 <table id="attachment_table" cellspacing="0" cellpadding="4">
   <tr>
     <th colspan="[% show_attachment_flags ? 3 : 2 %]" align="left">
-      <a name="a0" id="a0">Attachments</a>
+      <a name="a0" id="a0">Ekler</a>
     </th>
   </tr>
 
@@ -71,7 +72,7 @@
         <td valign="top">
           [% IF attachment.datasize %]
             <a name="a[% count %]" href="attachment.cgi?id=[% attachment.id %]"
-               title="View the content of the attachment">
+               title="Ekin içeriğine bak">
           [% END %]
           <b>[% attachment.description FILTER html FILTER obsolete(attachment.isobsolete) %]</b>
           [% "</a>" IF attachment.datasize %]
@@ -92,11 +93,11 @@
 
             <br>
             <a href="#attach_[% attachment.id %]"
-               title="Go to the comment associated with the attachment">
+               title="Ek ile ilişkili yoruma git">
               [%- attachment.attached FILTER time %]</a>,
 
             <a href="mailto:[% attachment.attacher.email FILTER html %]"
-               title="Write an email to the creator of the attachment">
+               title="Eki oluşturana bir eposta gönder">
               [% attachment.attacher.name || attachment.attacher.login FILTER html %]
             </a>
           </span>
@@ -105,7 +106,7 @@
         [% IF show_attachment_flags %]
           <td class="bz_attach_flags" valign="top">
             [% IF attachment.flags.size == 0 %]
-              <i>no flags</i>
+              <i>bayrak yok</i>
             [% ELSE %]
               [% FOREACH flag = attachment.flags %]
                 [% flag.setter.nick FILTER html %]:
@@ -119,9 +120,9 @@
         [% END %]
 
         <td valign="top">
-          <a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">Details</a>
+          <a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">Detaylar</a>
           [% IF attachment.ispatch && patchviewerinstalled %]
-            | <a href="attachment.cgi?id=[% attachment.id %]&amp;action=diff">Diff</a>
+            | <a href="attachment.cgi?id=[% attachment.id %]&amp;action=diff">Fark (Diff)</a>
           [% END %]
           [% Hook.process("action") %]
         </td>
@@ -134,13 +135,13 @@
       [% IF attachments.size %]
         <span class="bz_attach_view_hide">
           [% IF obsolete_attachments %]
-            <a href="#a0" onClick="return toggle_display(this);">Hide Obsolete</a> ([% obsolete_attachments %]) |
+            <a href="#a0" onClick="return toggle_display(this);">Eskileri Gizle</a> ([% obsolete_attachments %]) |
           [% END %]
-          <a href="attachment.cgi?bugid=[% bugid %]&amp;action=viewall">View All</a>
+          <a href="attachment.cgi?bugid=[% bugid %]&amp;action=viewall">Tümünü Göster</a>
         </span>
       [% END %]
-      <a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter">Add an attachment</a>
-      (proposed patch, testcase, etc.)
+      <a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter">Yeni bir ek oluştur</a>
+      (yama, test vb)
     </td>
   </tr>
 </table>

@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): A. Karl Kornel <karl@kornel.name>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
@@ -23,21 +24,19 @@
 Content-Type: text/plain
 From: [% Param('mailfrom') %]
 To: [% user.email %]
-Subject: [[% terms.Bugzilla %]] Your account [% user.login -%]
- is being impersonated
+Subject: [[% terms.Bugzilla %]] [% user.login -%] hesabınız taklit ediliyor
 X-Bugzilla-Type: admin
 
-    [%+ sudoer.identity %] has used the 'sudo' feature to access 
-[%+ terms.Bugzilla %] using your account.
+    [%+ sudoer.identity %] [%+ terms.BugzillaDat %] sizin hesabınızla erişmek için 'sudo' özelliğini kullanıyor.
 
 [% IF reason %]
-    [%+ sudoer.identity %] provided the following reason for doing this:
+    [%+ sudoer.identity %] şu gerekçeyi verdi:
 
 [% reason FILTER wrap_comment %]
 [% ELSE %]
-    [%+ sudoer.identity %] did not provide a reason for doing this.
+    [%+ sudoer.identity %] bu işlem için bir gerekçe vermedi.
 [% END %]
 
-    If you feel that this action was inappropriate, please contact 
-[%+ Param("maintainer") %].  For more information on this feature, 
-visit <[% urlbase %]page.cgi?id=sudo.html>.
+    Eğer bu eylemin uygunsuz olduğunu düşünüyorsanız, lütfen
+[%+ Param("maintainer") %] ile iletişime geçin.  Bu özellik hakkında daha fazla bilgiyi
+<[% urlbase %]page.cgi?id=sudo.html> adresinde bulabilirsiniz.

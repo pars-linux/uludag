@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Erik Stambaugh <erik@dasbistro.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -50,10 +51,9 @@
 
     <p align="left">
       [% IF author.login == recipient.login %]
-        <a href="[%+ urlbase FILTER html %]editwhines.cgi">Click
-            here to edit your whine schedule</a>
+        <a href="[%+ urlbase FILTER html %]editwhines.cgi">Alarm zamanlarını değiştirmek için buraya tıklayın</a>
       [% ELSE %]
-        This search was scheduled by [% author.login FILTER html %].
+        Bu aramayı [% author.login FILTER html %] zamanladı.
       [% END %]
     </p>
 
@@ -64,14 +64,14 @@
 
   <table width="100%">
     <tr>
-      <th align="left">ID</th>
-      <th align="left">Sev</th>
-      <th align="left">Pri</th>
-      <th align="left">Plt</th>
-      <th align="left">Assignee</th>
-      <th align="left">Status</th>
-      <th align="left">Resolution</th>
-      <th align="left">Summary</th>
+      <th align="left">Kim</th>
+      <th align="left">Önem</th>
+      <th align="left">Öncelik</th>
+      <th align="left">Platform</th>
+      <th align="left">Atanan</th>
+      <th align="left">Durum</th>
+      <th align="left">Karar</th>
+      <th align="left">Özet</th>
     </tr>
 
     [% FOREACH bug=query.bugs %]

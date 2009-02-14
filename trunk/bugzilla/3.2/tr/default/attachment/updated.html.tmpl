@@ -17,6 +17,7 @@
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
   #                 Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -38,7 +39,7 @@
 [% END %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Changes Submitted to Attachment $attachment.id of $terms.Bug $attachment.bug_id"
+  title = "Değişiklikler Gönderildi ($terms.Bug $attachment.bug_id Ek $attachment.id)"
   header = "$terms.Bug&nbsp;$attachment.bug_id"
   subheader = filtered_desc
   header_addl_info = "Last modified: $filtered_timestamp"
@@ -50,9 +51,10 @@
 %]
 
 <dl>
-  <dt>Changes to
-    <a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">attachment [% attachment.id %]</a>
-    of [% "$terms.bug $attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %] submitted
+  <dt>
+    [% "$terms.bug $attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %]
+    <a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">ek [% attachment.id %]</a>
+    üzerindeki değişiklikler gönderildi
   </dt>
   <dd>
     [% PROCESS "bug/process/bugmail.html.tmpl" mailing_bugid = attachment.bug_id %]

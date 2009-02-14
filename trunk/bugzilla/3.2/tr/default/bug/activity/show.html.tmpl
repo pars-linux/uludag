@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -30,19 +31,19 @@
 
 [% filtered_desc = bug.short_desc FILTER html %]
 [% PROCESS global/header.html.tmpl
-  title = "Changes made to $terms.bug $bug.bug_id"
-  header = "Activity log for $terms.bug $bug.bug_id: $filtered_desc"
+  title = "$terms.bug $bug.bug_id üzerindeki değişiklikler"
+  header = "$terms.bug $bug.bug_id işlem günlüğü: $filtered_desc"
  %]
 
 <p>
-  [% "Back to $terms.bug $bug.bug_id" FILTER bug_link(bug.bug_id) FILTER none %]
+  [% "$terms.bug $bug.bug_id numaralı $terms.bugDat geri dön" FILTER none FILTER bug_link(bug.bug_id) %]
 </p>
 
 [% PROCESS bug/activity/table.html.tmpl %]
 
 [% IF operations.size > 0 %]
   <p>
-    [% "Back to $terms.bug $bug.bug_id" FILTER bug_link(bug.bug_id) FILTER none %]
+    [% "$terms.bug $bug.bug_id numaralı $terms.bugDat geri dön" FILTER none FILTER bug_link(bug.bug_id) %]
   </p>
 [% END %]
 
