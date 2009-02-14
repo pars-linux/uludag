@@ -17,6 +17,7 @@
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -26,8 +27,8 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = BLOCK %]Select version of product
-                   '[% product.name FILTER html %]'[% END %]
+[% title = BLOCK %]
+                   '[% product.name FILTER html %]' ürününün sürümünü seçin[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
