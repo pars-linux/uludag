@@ -27,15 +27,12 @@
 [% WRAPPER search/tabs.html.tmpl %]
 
 <p>
-Find a specific [% terms.bug %] by entering words that describe it.  
-[% terms.Bugzilla %] will search [% terms.bug %] descriptions and comments
-for those words and return a list of matching [% terms.bugs %] sorted
-by relevance.
+Belirli bir [% terms.bug %]yı sorunu tarif eden kelimeler girerek bulabilirsiniz. 
+[% terms.Bugzilla %] belirtmiş olduğunuz kelimeleri [% terms.bug %] açıklamaları ve yorumlar içinde tarayacak ve sonucu size uygunluğa göre sıralanmış bir liste olarak sunacaktır.
 </p>
 
 <p>
-For example, if the [% terms.bug %] you are looking for is a browser crash when you go to a secure web site with an embedded Flash animation, you might search
-for "crash secure SSL flash".
+Örneğin, aradığınız [% terms.bug %] güvenli web sayfalarına gösterilen Flash animasyonlarının tarayıcıyının çöküşüne yol açmasıyla ilgiliyse, kelimeleri "güvenli SSL flash çökme" gibi girebilirsiniz.
 </p>
 
 <form name="queryform" method="get" action="buglist.cgi">
@@ -45,13 +42,13 @@ for "crash secure SSL flash".
 <table>
   <tr>
     <td align="right" valign="baseline">
-      <b><label for="bug_status">Status:</label></b>
+      <b><label for="bug_status">Durum:</label></b>
     </td>
     <td>
       <select name="bug_status" id="bug_status">
-        [% statuses = [ { name = 'open', label = "Open" },
-                        { name = 'closed', label = "Closed" },
-                        { name = 'all', label = "All" } ] %]
+        [% statuses = [ { name = 'open', label = "Açık" },
+                        { name = 'closed', label = "Kapalı" },
+                        { name = 'all', label = "Hepsi" } ] %]
         [% FOREACH status = statuses %]
             <option value="__[% status.name %]__" 
                   [% " selected" IF default.bug_status.0 == "__${status.name}__" %]>
@@ -63,11 +60,11 @@ for "crash secure SSL flash".
   </tr>
   <tr>
     <td align="right" valign="baseline">
-      <b><label for="product">Product:</label></b>
+      <b><label for="product">Ürün:</label></b>
     </td>
     <td>
       <select name="product" id="product">
-        <option value="">All</option>
+        <option value="">Hepsi</option>
         [% IF Param('useclassification') %]
           [% FOREACH c = classification %]
             <optgroup label="[% c.name FILTER html %]">
@@ -94,7 +91,7 @@ for "crash secure SSL flash".
   </tr>
   <tr>
     <td align="right" valign="baseline">
-      <b><label for="content">Words:</label></b>
+      <b><label for="content">Kelimeler:</label></b>
     </td>
     <td>
       <input name="content" size="40" id="content"
@@ -110,12 +107,12 @@ for "crash secure SSL flash".
     <td>
     
       [% IF Param('specific_search_allow_empty_words') %]
-        <input type="submit" id="search" value="Search">
+        <input type="submit" id="search" value="Ara">
       [% ELSE %]
-        <input type="submit" id="search" value="Search"
+        <input type="submit" id="search" value="Ara"
              onclick="if (this.form.content.value == '')
-                      {alert('The Words field cannot be empty. You have to ' +
-                             'enter at least one word in your search criteria.');
+                      {alert('Kelimeler kısmı boş bırakılamaz.Arama kriteri ' +
+                             'olarak en azından bir kelime yazmalısınız.');
                        return false;} return true;">
       [% END %]
     </td>
