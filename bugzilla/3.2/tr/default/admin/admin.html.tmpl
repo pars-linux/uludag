@@ -11,12 +11,13 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% title = BLOCK %]
-  Administer your installation ([% terms.Bugzilla %]
+  Kurulumu Yönet ([% terms.Bugzilla %]
   [%+ constants.BUGZILLA_VERSION FILTER html %])
 [% END %]
 
@@ -26,10 +27,7 @@
 %]
 
 <div>
-  This page is only accessible to empowered users. You can access administrive pages
-  from here (based on your privileges), letting you configure different aspects of
-  this installation. Note: some sections may not be accessible to you and are marked
-  using a lighter color.
+  Bu sayfa sadece yetkili kullanıcılara açıktır. Yetkilerinize bağlı olarak, buradan kurulumun farklı ayarlarını yapabileceğiniz yönetim sayfalarına ulaşabilirsiniz. Not: Bazı bölümler erişiminize açık olmayabilir. O bölümler daha açık bir renkler yazılmıştır.
 </div>
 
 <table>
@@ -37,58 +35,39 @@
     <td class="admin_links">
       <dl>
         [% class = user.groups.tweakparams ? "" : "forbidden" %]
-        <dt class="[% class %]"><a href="editparams.cgi">Parameters</a></dt>
-        <dd class="[% class %]">Set core parameters of the installation. That's the
-        place where you specify the URL to access this installation, determine how
-        users authenticate, choose which [% terms.bug %] fields to display, select
-        the mail transfer agent to send email notifications, choose which group of
-        users can use charts and share queries, and much more.</dd>
+        <dt class="[% class %]"><a href="editparams.cgi">Parametreler</a></dt>
+        <dd class="[% class %]">Kurulumun çekirdek parametrelerini belirlemede kullanılır. Kurulumun erişim adresi, kullanıcıların nasıl oturum açtığı, hangi [% terms.bug %] alanlarının görüntüleneceği, eposta bildirimleri için kullanılacak eposta aktarım aracı, hangi kullanıcı gruplarının çizelgeleri kullanabildiği ve sorguları paylaşabildiği gibi çok sayıda ayar bu bölümden yapılır.</dd>
 
-        <dt class="[% class %]"><a href="editsettings.cgi">Default Preferences</a></dt>
-        <dd class="[% class %]">Set the default user preferences. These are the values
-        which will be used by default for all users. Users will be able to edit their
-        own preferences from the <a href="userprefs.cgi?tab=settings">Preferences</a>.</dd>
+        <dt class="[% class %]"><a href="editsettings.cgi">Öntanımlı Tercihler</a></dt>
+        <dd class="[% class %]">Kullanıcılara yüklenen öntanımlı tercihleri belirlemede kullanılır. Bunlar tüm kullanıcılar için öntanımlı olacak olan değerlerdir. Kullanıcılar kendi tercihlerini <a href="userprefs.cgi?tab=settings">Tercihler</a> sayfasından yapılandırabilirler.</dd>
 
         [% class = user.groups.editcomponents ? "" : "forbidden" %]
-        <dt class="[% class %]"><a href="sanitycheck.cgi">Sanity Check</a></dt>
-        <dd class="[% class %]">Run sanity checks to locate problems in your database.
-        This may take several tens of minutes depending on the size of your installation.
-        You can also automate this check by running <tt>sanitycheck.pl</tt> from a cron job.
-        A notification will be sent per email to the specified user if errors are detected.</dd>
+        <dt class="[% class %]"><a href="sanitycheck.cgi">Doğruluk Kontrolleri</a></dt>
+        <dd class="[% class %]">Veritabanınızdaki problemleri teşhis etmek için doğruluk kontrollerini yapmada kullanılır. Bu işlem yüklemenizin boyutuna göre 30-40 dakikaya kadar sürebilir. Bu süreci <tt>sanitycheck.pl</tt>'yi cron işi şeklinde zamanlayarak da yapabilirsiniz. Eğer hata bulunursa, belirtilen kullanıcıya eposta gönderilir.</dd>
 
         [% class = (user.groups.editusers || user.can_bless) ? "" : "forbidden" %]
-        <dt class="[% class %]"><a href="editusers.cgi">Users</a></dt>
-        <dd class="[% class %]">Create new user accounts or edit existing ones. You can
-        also add and remove users from groups (also known as "user privileges").</dd>
+        <dt class="[% class %]"><a href="editusers.cgi">Kullanıcılar</a></dt>
+        <dd class="[% class %]">Yeni kullanıcı hesapları oluştur veya varolanlarda değişiklikler yap. Ayrıca kullanıcıları gruplara ekleyebilir veya gruplardan çıkarabilirsiniz ("ayrıcalıklar" olarak bilinir).</dd>
 
         [% class = (Param('useclassification') && user.groups.editclassifications) ? "" : "forbidden" %]
-        <dt class="[% class %]"><a href="editclassifications.cgi">Classifications</a></dt>
-        <dd class="[% class %]">If your installation has to manage many products at once,
-        it's a good idea to group these products into distinct categories. This lets users
-        find information more easily when doing searches or when filing new [% terms.bugs %].</dd>
+        <dt class="[% class %]"><a href="editclassifications.cgi">Tasnifler</a></dt>
+        <dd class="[% class %]">Eğer kurulumunuz çok sayıda ürünün [% terms.bug %] yönetimi için kullanılıyorsa, bu ürünleri kategorilere ayırmak işleri kolaylaştıracaktır. Bu işlem kullanıcıların yeni [% terms.bug %] girerken ve arama yaparken bilgi bulmasını kolaylaştırır.</dd>
 
         [% class = (user.groups.editcomponents
                     || user.get_products_by_permission("editcomponents").size) ? "" : "forbidden" %]
-        <dt class="[% class %]"><a href="editproducts.cgi">Products</a></dt>
-        <dd class="[% class %]">Edit all aspects of products, including group restrictions
-        which let you define who can access [% terms.bugs %] being in these products. You
-        can also edit some specific attributes of products such as
-        <a href="editcomponents.cgi">components</a>, <a href="editversions.cgi">versions</a>
-        and <a href="editmilestones.cgi">milestones</a> directly.</dd>
+        <dt class="[% class %]"><a href="editproducts.cgi">Ürünler</a></dt>
+        <dd class="[% class %]">Ürünlerin, erişimi olan kullanıcı grupları dahil tüm detaylarını yapılandırmak için kullanılır. Ayrıca ürünlerin <a href="editcomponents.cgi">bileşenlerini</a>, <a href="editversions.cgi">sürümlerini</a> ve <a href="editmilestones.cgi">aşamalarını</a> da doğrudan buradan yönetebilirsiniz.</dd>
 
         [% class = user.groups.editcomponents ? "" : "forbidden" %]
-        <dt class="[% class %]"><a href="editflagtypes.cgi">Flags</a></dt>
-        <dd class="[% class %]">A flag is a custom 4-states attribute of [% terms.bugs %]
-        and/or attachments. These states are: granted, denied, requested and undefined.
-        You can set as many flags as desired per [% terms.bug %], and define which users
-        are allowed to edit them.</dd>
+        <dt class="[% class %]"><a href="editflagtypes.cgi">Bayraklar</a></dt>
+        <dd class="[% class %]">Bayraklar, [% terms.bugsDat %] ve eklera atanabilen dört durumlu (onaylanmış, reddedilmiş, istenmiş ve atanmamış) niteliklerdir. Her [% terms.bug %] için istediğiniz sayıda bayrak belirtebilirsiniz ve hangi kullanıcıların bayraklarda değişiklik yapabileceğini belirleyebilirsiniz.</dd>
       </dl>
     </td>
 
     <td class="admin_links">
       <dl>
         [% class = user.groups.admin ? "" : "forbidden" %]
-        <dt class="[% class %]"><a href="editfields.cgi">Custom Fields</a></dt>
+        <dt class="[% class %]"><a href="editfields.cgi">Özel Alanlar</a></dt>
         <dd class="[% class %]">[% terms.Bugzilla %] lets you define fields which are
         not implemented by default, based on your local and specific requirements.
         These fields can then be used as any other field, meaning that you can set

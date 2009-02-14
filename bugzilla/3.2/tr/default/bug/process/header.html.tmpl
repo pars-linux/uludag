@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -33,12 +34,12 @@
     [% ELSE %]
       [% terms.Bugs %]
     [% END %]
-    processed
+    işlendi
   [% END %]
 [% ELSIF title_tag == "mid_air" %]
-  [% title = "Mid-air collision!" %]
+  [% title = "Çarpışma!" %]
 [% ELSIF title_tag == "change_votes" %]
-  [% title = "Change Votes" %]
+  [% title = "Oyları Değiştir" %]
 [% END %]
 
 [% PROCESS global/header.html.tmpl

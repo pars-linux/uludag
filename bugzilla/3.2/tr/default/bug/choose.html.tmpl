@@ -21,14 +21,14 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-   title = "Search by $terms.bug number"
+   title = "$terms.bug numarasına göre ara"
  %]
 
 <form method="get" action="show_bug.cgi">
   <p>
-    You may find a single [% terms.bug %] by entering its [% terms.bug %] id here:
+    [% terms.bug %] kimliğini girerek bir [% terms.bugAcc %] bulabilirsiniz:
     <input name="id" size="6">
-    <input type="submit" id="show" value="Show Me This [% terms.Bug %]">
+    <input type="submit" id="show" value="Bana bu [% terms.BugAcc %] göster">
   </p>
 </form>
 

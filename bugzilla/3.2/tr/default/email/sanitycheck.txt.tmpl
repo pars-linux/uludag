@@ -16,21 +16,22 @@
   # Rights Reserved.
   #
   # Contributor(s): Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS "global/variables.none.tmpl" %]
 From: [% Param('mailfrom') %]
 To: [% addressee %]
-Subject: [[% terms.Bugzilla %]] Sanity Check Results
+Subject: [[% terms.Bugzilla %]] Doğruluk Kontrolü Sonuçları
 X-Bugzilla-Type: sanitycheck
 
 [%+ urlbase %]sanitycheck.cgi
 
-Below can you read the sanity check results.
+Veritabanı kontrollerinin sonuçlarını aşağıda görebilirsiniz.
 [% IF error_found %]
-Some errors have been found.
+Bazı hatalar bulundu.
 [% ELSE %]
-No errors have been found.
+Herhangi bir hata bulunmadı.
 [% END %]
 
 [% output FILTER txt %]

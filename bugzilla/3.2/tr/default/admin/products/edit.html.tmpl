@@ -13,6 +13,7 @@
   # Contributor(s): Jack Nerad     <jnerad@bellsouth.net>
   #                 Tiago R. Mello <tiago@async.com.br>
   #                 Gabriel S. Oliveira <gabriel@async.com.br>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -24,17 +25,17 @@
   #                                                  the product is in
   #%]
 
-[% title = BLOCK %]Edit Product '[% product.name FILTER html %]'[% END %]
+[% title = BLOCK %]'[% product.name FILTER html %]' Ürününü Düzenle[% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
   style_urls = ['skins/standard/admin.css']
 %]
 
-[% group_control = {${constants.CONTROLMAPNA}        => 'NA',
-                    ${constants.CONTROLMAPSHOWN}     => 'Shown',
-                    ${constants.CONTROLMAPDEFAULT}   => 'Default',
-                    ${constants.CONTROLMAPMANDATORY} => 'Mandatory'}
+[% group_control = {${constants.CONTROLMAPNA}        => 'Uygulanabilir Değil',
+                    ${constants.CONTROLMAPSHOWN}     => 'Gösteriliyor',
+                    ${constants.CONTROLMAPDEFAULT}   => 'Öntanımlı',
+                    ${constants.CONTROLMAPMANDATORY} => 'Zorunlu'}
  %]
 
 <form method="post" action="editproducts.cgi">
@@ -45,7 +46,7 @@
     <tr>
       <th align="right" valign="top">
         <a href="editcomponents.cgi?product=[% product.name FILTER url_quote %]">
-        Edit components:
+        Bileşenleri düzenle:
         </a>
       </th>
       <td>
@@ -55,19 +56,18 @@
             [% IF component.description %]
               [% component.description FILTER html_light %]
             [% ELSE %]
-              <font color="red">description missing</font>
+              <font color="red">açıklama yok</font>
             [% END %]
             <br>
           [% END %]
         [% ELSE %]
-          <font color="red">missing</font>
+          <font color="red">yok</font>
         [% END %]
       </td>
     </tr>
     <tr>
       <th align="right" valign="top">
-        <a href="editversions.cgi?product=[% product.name FILTER url_quote %]">Edit
-versions:</a>
+        <a href="editversions.cgi?product=[% product.name FILTER url_quote %]">Sürümleri düzenle:</a>
       </th>
       <td>
         [%- IF product.versions.size -%]
@@ -76,7 +76,7 @@ versions:</a>
             <br>
           [% END %]
         [% ELSE %]
-          <font color="red">missing</font>
+          <font color="red">yok</font>
         [% END %]
       </td>
     </tr>
@@ -84,7 +84,7 @@ versions:</a>
       <tr>
         <th align="right" valign="top">
           <a href="editmilestones.cgi?product=[% product.name FILTER url_quote %]">
-          Edit milestones:</a>
+          Aşamaları düzenle:</a>
         </th>
         <td>
           [%- IF product.milestones.size -%]
@@ -93,7 +93,7 @@ versions:</a>
             <br>
             [% END %]
           [% ELSE %]
-            <font color="red">missing</font>
+            <font color="red">yok</font>
           [% END %]
         </td>
       </tr>
@@ -103,7 +103,7 @@ versions:</a>
         <a href="editproducts.cgi?action=editgroupcontrols&product=
           [%- product.name FILTER url_quote %]&classification=
           [%- classification.name FILTER url_quote %]">
-          Edit Group Access Controls:
+          Grup Erişim Kontrolleri'ni Düzenle:
         </a>
       </th>
       <td>
@@ -113,23 +113,23 @@ versions:</a>
             [% IF g.group.isactive %]
               [% group_control.${g.membercontrol} FILTER html %]/
               [% group_control.${g.othercontrol} FILTER html %]
-              [% IF g.entry %], ENTRY[% END %]
-              [% IF g.canedit %], CANEDIT[% END %]
-              [% IF g.editcomponents %], editcomponents[% END %]
-              [% IF g.canconfirm %], canconfirm[% END %]
-              [% IF g.editbugs %], editbugs[% END %]
+              [% IF g.entry %], GİRDİ[% END %]
+              [% IF g.canedit %], DEĞİŞTİREBİLİR[% END %]
+              [% IF g.editcomponents %], bileşenleri değiştirebilir[% END %]
+              [% IF g.canconfirm %], onaylayabilir[% END %]
+              [% IF g.editbugs %], hataları değiştirebilir[% END %]
             [% ELSE %]
               DISABLED
             [% END %]
             <br>
           [% END %]
         [% ELSE %]
-          no groups
+          grup yok
         [% END %]
       </td>
     </tr>
     <tr>
-      <th align="right">[% terms.Bugs %]:</th>
+      <th align="right">[% terms.Bug %] sayısı:</th>
       <td><a href="buglist.cgi?product=[% product.name FILTER url_quote %]">
             [% product.bug_count FILTER html %]</a></td>
     </tr>
@@ -141,7 +141,7 @@ versions:</a>
   <input type="hidden" name="token" value="[% token FILTER html %]">
   <input type="hidden" name="classification"
          value="[% classification.name FILTER html %]">
-  <input type="submit" name="submit" value="Save Changes">
+  <input type="submit" name="submit" value="Değişiklikleri Kaydet">
 </form>
   
 [% PROCESS "admin/products/footer.html.tmpl"

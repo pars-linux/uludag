@@ -16,17 +16,18 @@
   # Rights Reserved.
   #
   # Contributor(s):     John Vandenberg <zeroj@null.net>
+  # Translator(s):      Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
   # token: string. The token to be used in this address change.
   #%]
   
-[% title = "Confirm Change Email" %]
+[% title = "Eposta Adresini Değiştir" %]
 [% PROCESS global/header.html.tmpl %]
 
 <p>
-  To change your email address, please enter the old email address:
+  Eposta adresinizi değiştirmek için, eski eposta adresinizi girin:
 </p>
 
 <form method="post" action="token.cgi">
@@ -34,12 +35,12 @@
   <input type="hidden" name="a" value="chgem">
   <table>
     <tr>
-      <th align="right">Old Email Address:</th>
+      <th align="right">Eski Eposta Adresi:</th>
       <td><input type="text" name="email" size="36"></td>
     </tr>
     <tr>
       <th align="right">&nbsp;</th>
-      <td><input type="submit" id="confirm" value="Submit"></td>
+      <td><input type="submit" id="confirm" value="Gönder"></td>
     </tr>
   </table>
 </form>
