@@ -2,142 +2,112 @@
 |   |-- gnome
 |   |   |-- libs
 |   |   |   |-- atk
-|   |   |   |-- cairo
 |   |   |   |-- libcroco
 |   |   |   |-- libglade2
 |   |   |   |-- libglademm
 |   |   |   |-- libgnomecanvas
 |   |   |   |-- libgnomecanvasmm
+|   |   |   |-- libIDL
 |   |   |   |-- libgsf
 |   |   |   |-- librsvg
 |   |   |   |-- libsexy
-|   |   |   |-- libsvg-cairo
 |   |   |   |-- libwnck
 |   |   |   |-- pango
 |   |   |   |-- vte
-|   |   |-- base
+|   |   |-- misc
 |   |   |   |-- gail
 |   |   |   |-- gconf
 |   |   |   |-- gconfmm
-|   |   |   |-- glibmm
-|   |    `-- extras
-|   |       |-- beagle
-|   |       |-- cairomm
-|   |       |-- orbit2
+|   |   |   |-- orbit2
 |   |-- kde
 |   |   |-- libs
+|   |   |   |-- clucene
+|   |   |   |-- yaz
+|   |   |   |-- yazpp
+|   |   |   |-- libmal
+|   |   |   |-- libical
+|   |   |   |-- facile
+|   |   |   |-- eina
+|   |   |   |-- chmlib
 |   |   |   |-- akonadi
 |   |   |   |-- kdelibs
 |   |   |   |-- kdelibs-apidox
 |   |   |   |-- kdepimlibs
-|   |   |   |-- pardus-support
-|   |   |   |-- qedje
 |   |   |   |-- rasqal 
 |   |   |   |-- redland 
 |   |   |   |-- soprano 
-|   |   |   |-- qzion 
-|   |   |-- extras
-|   |   |   |-- PolicyKit-kde
-|   |   |   |-- QtCurve-KDE3
+|   |   |-- artwork
 |   |   |   |-- artwork-pardus-release
-|   |   |   |-- autostart
-|   |   |   |-- basket
-|   |   |   |-- boot-manager
-|   |   |   |-- crystal
-|   |   |   |-- display-manager
-|   |   |   |-- gtk-qt-engine
-|   |   |   |-- history-manager
-|   |   |   |-- kaptan
-|   |   |   |-- katapult
-|   |   |   |-- kerry
-|   |   |   |-- kio-beagle
-|   |   |   |-- knazar
-|   |   |   |-- kompose
-|   |   |   |-- krename
-|   |   |   |-- kshutdown
-|   |   |   |-- ksystemlog
-|   |   |   |-- metamonitor
-|   |   |   |-- migration
-|   |   |   |-- package-manager
-|   |   |   |-- rsibreak
-|   |   |   |-- sysinfo
-|   |   |   |-- tasma
-|   |   |   |-- tellico
-|   |   |   |-- yakuake
-|   |   |   |-- umbrello
-|   |   |-- base
-|   |   |   |-- PyKDE
-|   |   |   |-- PyKDEeXtensions
 |   |   |   |-- arts
 |   |   |   |-- artwork
-|   |   |   |-- kdeaccessibility
-|   |   |   |-- kdeaddons
-|   |   |   |-- kdeadmin
 |   |   |   |-- kdeartwork-emoticons
 |   |   |   |-- kdeartwork-icons
 |   |   |   |-- kdeartwork-kworldclock-maps
 |   |   |   |-- kdeartwork-screensavers
 |   |   |   |-- kdeartwork-styles
 |   |   |   |-- kdeartwork-wallpapers
+|   |   |-- misc
 |   |   |   |-- kdebase
-|   |   |   |-- kdebase-beagle
+|   |   |   |-- kdeaccessibility
+|   |   |   |-- freetts
+|   |   |   |-- kdeaddons
 |   |   |   |-- kdebindings
 |   |   |   |-- kdeedu
-|   |   |   |-- kdegames
-|   |   |   |-- kdegames-extra
-|   |   |   |-- kdegraphics
-|   |   |   |-- kdemultimedia
-|   |   |   |-- kdenetwork
-|   |   |   |-- kdesdk
-|   |   |   |-- kdepim
 |   |   |   |-- kdetoys
 |   |   |   |-- kdeutils
-|   |   |   |-- kdewebdev
-|   |   |   |-- service-manager
-|   |   |   |-- tulliana
-|   |   |   |-- tulliana2
-|   |   |-- themes
-|   |   |   |-- lipstik
-|   |   |   |-- milky
-|   |   |   |-- kdm-pardus-theme
-|   |   |   |-- nuvola
-|   |   |   |-- plastique
-|   |   |   |-- polyester
+|   |   |   |-- PolicyKit-kde
+|   |-- themes
+|   |   |-- tulliana
+|   |   |-- lipstik
+|   |   |-- milky
+|   |   |-- kdm-pardus-theme
+|   |   |-- nuvola
+|   |   |-- plastique
+|   |   |-- polyester
+|   |   |-- crystal
+|   |   |-- xcursor-themes
 |   |   |
-|   |   |-- toolkit
-|   |   |   |-- qt
-|   |   |   |   |-- qt-assistant
-|   |   |   |   |-- qt-designer
-|   |   |   |   |-- qt-doc
-|   |   |   |   |-- qt-linguist
-|   |   |   |   |-- qt-sql-mysql
-|   |   |   |   |-- qt-sql-postgresql
-|   |   |   |   |-- qt-sql-sqlite
-|   |   |   |   |-- qt4
-|   |   |   |   |-- qt4-designer
-|   |   |   |   |-- qt4-doc
-|   |   |   |   |-- qt4-linguist
-|   |   |   |   |-- qt4-sql-mysql
-|   |   |   |   |-- qt4-sql-odbc
-|   |   |   |   |-- qt4-sql-postgresql
-|   |   |   |   |-- qt4-sql-sqlite
-|   |   |   |   |-- qwt
-|   |   |   |   |-- qwt-doc
-|   |   |   |   |-- qwt-qt3-designer
-|   |   |   |   |-- qwt-qt4
-|   |   |   |   |-- qwt-qt4-designer
-|   |   |   |   |-- qwtplot3d
-|   |   |   |   |-- qwtplot3d-doc
-|   |   |   |   |-- qwtplot3d-qt4
-|   |   |   |-- gtk
-|   |   |   |   |-- gtk-engines
-|   |   |   |   |-- gtk2
-|   |   |   |   |-- gtk2-demo
-|   |   |   |   |-- gtk2-docs
-|   |   |   |   |-- gtkmm
-|   |   |   |   |-- gtk+extra
-|   |   |   |   |-- QtCurve-Gtk2
-|   |   |   |   |-- gtk-sharp
+|   |-- toolkit
+|   |   |-- qt
+|   |   |   |-- qedje
+|   |   |   |-- qzion 
+|   |   |   |-- QtCurve-KDE3
+|   |   |   |-- pardus-support
+|   |   |   |-- qt-assistant
+|   |   |   |-- qt-designer
+|   |   |   |-- qt-doc
+|   |   |   |-- qt-linguist
+|   |   |   |-- qt-sql-mysql
+|   |   |   |-- qt-sql-postgresql
+|   |   |   |-- qt-sql-sqlite
+|   |   |   |-- qt4
+|   |   |   |-- qt4-designer
+|   |   |   |-- qt4-doc
+|   |   |   |-- qt4-linguist
+|   |   |   |-- qt4-sql-mysql
+|   |   |   |-- qt4-sql-odbc
+|   |   |   |-- qt4-sql-postgresql
+|   |   |   |-- qt4-sql-sqlite
+|   |   |   |-- qwt
+|   |   |   |-- qwt-doc
+|   |   |   |-- qwt-qt3-designer
+|   |   |   |-- qwt-qt4
+|   |   |   |-- qwt-qt4-designer
+|   |   |   |-- qwtplot3d
+|   |   |   |-- qwtplot3d-doc
+|   |   |   |-- qwtplot3d-qt4
+|   |   |-- gtk
+|   |   |   |-- libsigc++
+|   |   |   |-- glibmm
+|   |   |   |-- gtk-engines
+|   |   |   |-- gtk2
+|   |   |   |-- gtk2-demo
+|   |   |   |-- gtk2-docs
+|   |   |   |-- gtkmm
+|   |   |   |-- gtk+extra
+|   |   |   |-- QtCurve-Gtk2
+|   |   |   |-- gtk-qt-engine
+|   |   |   |-- gtk-sharp
 |   |-- i18n
 |   |   |-- icu4c
 |   |   |-- gimp-i18n-*   
@@ -146,6 +116,7 @@
 |   |   |-- kde-i18n-* 
 |   |   |-- koffice-l10n-*
 |   `-- fonts
+|       |-- t1utils
 |       |-- Bitstream-Vera-fonts
 |       |-- Charis-fonts
 |       |-- Doulos-fonts
@@ -172,29 +143,32 @@
 |       |-- liberation-fonts
 |       |-- terminus-font
 |       |-- tv-fonts
+|       |-- font-util
+|       |-- fontconfig
+|       |-- ttmkfdir
+|       |-- xorg-font
+|       |-- xorg-font-extra
 |
-|-- freedesktop
-|   |-- fonts
-|   |   |-- font-util
-|   |   |-- fontconfig
-|   |   |-- ttmkfdir
-|   |-- misc
-|   |   |-- notification-daemon
-|   |   |-- startup-notification
-|   |   |-- shared-mime-info
-|   |   |-- synergy 
-|   |   |-- x2x
-|   |   |-- xdg-utils
-|   |   |-- xosd
-|   |   |-- xscreensaver
-|   |   |-- xscreensaver-demo
-|   |   |-- zorg
-|   |   |-- dbus-qt3
-|   |   |-- rxvt-unicode
-|   |   |-- synaptics
-|   |   |-- grounation-xcursors
-|   |   |-- jimmac-xcursor
+|-- pardus-apps
+|   |-- boot-manager
+|   |-- display-manager
+|   |-- history-manager
+|   |-- kaptan
+|   |-- knazar
+|   |-- migration
+|   |-- package-manager
+|   |-- tasma
+|   |-- service-manager
+|   |-- yali4
+|   |-- yali4-firstBoot
+|-- x11
 |   |-- libs
+|   |   |-- cairo
+|   |   |-- libsvg-cairo
+|   |   |-- cairomm
+|   |   |-- startup-notification
+|   |   |-- x2x
+|   |   |-- xosd
 |   |   |-- Xaw3d
 |   |   |-- agg
 |   |   |-- fltk
@@ -204,64 +178,77 @@
 |   |   |-- openmotif
 |   |   |-- pixman
 |   |   |-- wxGTK
-|   |-- xorg
-|   |   |-- libs
-|   |   |   |-- libFS
-|   |   |   |-- libICE
-|   |   |   |-- libSM
-|   |   |   |-- libXScrnSaver
-|   |   |   |-- libXau
-|   |   |   |-- libXaw
-|   |   |   |-- libXcomposite
-|   |   |   |-- libXcursor
-|   |   |   |-- libXdamage
-|   |   |   |-- libXevie
-|   |   |   |-- libXext
-|   |   |   |-- libXfixes
-|   |   |   |-- libXfont
-|   |   |   |-- libXft
-|   |   |   |-- libXi
-|   |   |   |-- libXinerama
-|   |   |   |-- libXmu
-|   |   |   |-- libXp
-|   |   |   |-- libXpm
-|   |   |   |-- libXprintAppUtil
-|   |   |   |-- libXprintUtil
-|   |   |   |-- libXrandr
-|   |   |   |-- libXrender
-|   |   |   |-- libXres
-|   |   |   |-- libXtst
-|   |   |   |-- libXv
-|   |   |   |-- libXvMC
-|   |   |   |-- libXxf86dga
-|   |   |   |-- libXxf86misc
-|   |   |   |-- libXxf86vm
-|   |   |   |-- libdmx
-|   |   |   |-- libdrm
-|   |   |   |-- libfontenc
-|   |   |   |-- liboldX
-|   |   |   |-- libpthread-stubs
-|   |   |   |-- libxkbfile
-|   |   |   |-- libxkbui
-|   |   |   |-- libxklavier
-|   |   |   |-- xcb-util
-|   |   |-- utils
-|   |   |   |-- xbitmaps
-|   |   |   |-- xdriinfo
-|   |   |   |-- xkeyboard-config
-|   |   |   |-- xorg-app
-|   |   |   |-- xorg-doc
-|   |   |   |-- xorg-font
-|   |   |   |-- xorg-font-extra
-|   |   |   |-- xorg-input
-|   |   |   |-- xorg-server
-|   |   |   |-- xorg-util
-|   |   |   |-- xorg-video
-|   |   |   |-- xrx
-|   |   |   |-- xvattr
-|   |   |   |-- xcursor-themes
-|-- game
+|   |   |-- libFS
+|   |   |-- libICE
+|   |   |-- libSM
+|   |   |-- libXScrnSaver
+|   |   |-- libXau
+|   |   |-- libXaw
+|   |   |-- libXcomposite
+|   |   |-- libXcursor
+|   |   |-- libXdamage
+|   |   |-- libXevie
+|   |   |-- libXext
+|   |   |-- libXfixes
+|   |   |-- libXfont
+|   |   |-- libXft
+|   |   |-- libXi
+|   |   |-- libXinerama
+|   |   |-- libXmu
+|   |   |-- libXp
+|   |   |-- libXpm
+|   |   |-- libXprintAppUtil
+|   |   |-- libXprintUtil
+|   |   |-- libXrandr
+|   |   |-- libXrender
+|   |   |-- libXres
+|   |   |-- libXtst
+|   |   |-- libXv
+|   |   |-- libXvMC
+|   |   |-- libXxf86dga
+|   |   |-- libXxf86misc
+|   |   |-- libXxf86vm
+|   |   |-- libdmx
+|   |   |-- libdrm
+|   |   |-- libfontenc
+|   |   |-- liboldX
+|   |   |-- libxkbfile
+|   |   |-- libxkbui
+|   |   |-- libxklavier
+|   |   |-- xcb-util
+|   |-- misc
+|   |   |-- notification-daemon
+|   |   |-- shared-mime-info
+|   |   |-- synergy 
+|   |   |-- xdg-utils
+|   |   |-- xscreensaver
+|   |   |-- xscreensaver-demo
+|   |   |-- zorg
+|   |   |-- dbus-qt3
+|   |   |-- grounation-xcursors
+|   |   |-- jimmac-xcursor
+|   |   |-- xbitmaps
+|   |   |-- xkeyboard-config
+|   |-- drivers
+|   |   |-- synaptics
+|   |-- terms
+|   |   |-- rxvt-unicode
+|   |-- apps
+|   |   |-- xdriinfo
+|   |   |-- xorg-app
+|   |   |-- xorg-doc
+|   |   |-- xorg-input
+|   |   |-- xorg-server
+|   |   |-- xorg-util
+|   |   |-- xorg-video
+|   |   |-- xrx
+|   |   |-- xvattr
+|-- games
 |   |-- libs
+|   |   |-- tolua++
+|   |   |-- xmlrpc-epi
+|   |   |-- minixml
+|   |   |-- iml
 |   |   |-- atlas
 |   |   |-- cegui
 |   |   |-- cel
@@ -443,9 +430,12 @@
 |   |   |-- wesnoth
 |   |   |-- widelands
 |   |   |-- wormux
+|   |-- kdegames
+|   |-- kdegames-extra
 |   |
 |-- hardware
 |   |-- libs
+|   |   |-- newt
 |   |   |-- libieee1284
 |   |   |-- libavc1394
 |   |   |-- libraw1394
@@ -457,16 +447,10 @@
 |   |   |-- libx86
 |   |   |-- intel-tbb
 |   |   |-- avr-libc
+|   |   |-- obexftp
+|   |   |-- wbxml2
+|   |   |-- opensc
 |   |   `-- liblazy 
-|   |-- cdr
-|   |   |-- bchunk
-|   |   |-- ccd2iso
-|   |   |-- cdrdao
-|   |   |-- cdrtools
-|   |   |-- dvd+rw-tools
-|   |   |-- eject
-|   |   |-- k3b
-|   |   |-- nrg2iso
 |   |-- emulator
 |   |   |-- dosbox
 |   |   |-- qemu
@@ -481,6 +465,7 @@
 |   |   |-- kxmame
 |   |   |-- scummvm
 |   |   |-- zsnes
+|   |   |-- interbench
 |   |-- graphics
 |   |   |-- ati-control-center
 |   |   |-- nvidia-settings
@@ -489,6 +474,7 @@
 |   |   |-- sane-backends
 |   |   |-- smartdimmer
 |   |   |-- vbetool
+|   |   |-- gpm
 |   |-- mobile (phone, pda)
 |   |   |-- libopensync
 |   |   |-- libopensync-plugin-file
@@ -506,14 +492,10 @@
 |   |   |-- libsyncml
 |   |   |-- gnokii
 |   |   |-- msynctool
-|   |   |-- obexftp (lib)
-|   |   |-- wbxml2 (lib)
 |   |-- powermanagement
 |   |   |-- acpi
-|   |   |-- acpi4asus
 |   |   |-- acpica
 |   |   |-- acpid
-|   |   |-- apmd
 |   |   |-- kpowersave
 |   |   |-- nut
 |   |   |-- pm-utils
@@ -545,13 +527,10 @@
 |   |   |-- ccid
 |   |   |-- ifd-gempc
 |   |   |-- openct
-|   |   |-- opensc  (lib)
-|   |   |-- pam_p11 ( authentication)
+|   |   |-- pam_p11
 |   |   |-- pcsc-lite
 |   |   |-- pcsc-tools
 |   |-- sound
-|   |   |-- alsa-headers
-|   |   |-- alsa-lib
 |   |   |-- alsa-plugins
 |   |   |-- alsa-tools
 |   |   |-- alsa-tools-gui
@@ -578,6 +557,10 @@
 |   |   |-- cryptsetup-luks
 |   |   |-- sg3_utils
 |   |   |-- strigi
+|   |   |-- hal
+|   |   |-- hal-doc
+|   |   |-- hal-info
+|   |   |-- fnfx
 |   |-- firmware
 |   |   |-- accessrunner-firmware
 |   |   |-- acx100-firmware
@@ -597,19 +580,15 @@
 |   |   |-- zd1211-firmware
 |   |   |-- fxload
 |   |   `-- b43-fwcutter
-|   |-- misc
+|   |-- informers
 |   |   |-- arrayprobe
 |   |   |-- dmidecode
-|   |   |-- fnfx
-|   |   |-- gpm
-|   |   |-- hal
-|   |   |-- hal-doc
-|   |   |-- hal-info
-|   |   |-- interbench
 |   |   |-- lshw
 |   |   |-- setserial
 |   |   |-- uhinv
 |   |   |-- ethtool
+|   |   |-- sysinfo
+|   |   |-- ksystemlog
 |   `-- virtualization
 |       |-- libvirt
 |       |-- kvm
@@ -618,6 +597,18 @@
 |
 |-- multimedia
 |   |-- libs
+|   |   |-- lxml
+|   |   |-- lib-compat
+|   |   |-- libstdc++
+|   |   |-- tre 
+|   |   |-- spidermonkey
+|   |   |-- liboil
+|   |   |-- libgomp
+|   |   |-- libebml
+|   |   |-- libatomic_ops
+|   |   |-- fribidi
+|   |   |-- cdk
+|   |   |-- boehm-gc
 |   |   |-- DevIL
 |   |   |-- FreeImage
 |   |   |-- FusionSound
@@ -645,6 +636,8 @@
 |   |   |-- flac
 |   |   |-- freelut
 |   |   |-- ftgl
+|   |   |-- fftw2
+|   |   |-- fftw3
 |   |   |-- gd
 |   |   |-- gegl
 |   |   |-- gle
@@ -687,7 +680,6 @@
 |   |   |-- libifp
 |   |   |-- libkate
 |   |   |-- libkdcraw
-|   |   |-- libkexif
 |   |   |-- libkexiv2
 |   |   |-- libkipi
 |   |   |-- liblo
@@ -696,7 +688,6 @@
 |   |   |-- libmatroska
 |   |   |-- libmikmod
 |   |   |-- libmimic
-|   |   |-- libmng
 |   |   |-- libmodplug
 |   |   |-- libmp4v2
 |   |   |-- libmpeg2
@@ -754,6 +745,7 @@
 |   |   |-- xvid
 |   |   |-- zvbi
 |   |-- graphics
+|   |   |-- kdegraphics
 |   |   |-- ImageJ
 |   |   |-- asymptote
 |   |   |-- autotrace
@@ -783,6 +775,7 @@
 |   |   |-- lastfm
 |   |   |-- streamtuner
 |   |-- sound
+|   |   |-- kdemultimedia
 |   |   |-- amarok
 |   |   |-- amarok-docs
 |   |   |-- ardour
@@ -808,6 +801,7 @@
 |   |   |-- ogmtools
 |   |   |-- paprefs
 |   |   |-- pavucontrol
+|   |   |-- paprefs
 |   |   |-- phonon
 |   |   |-- pulseaudio
 |   |   |-- pulseaudio-bluetooth
@@ -885,6 +879,8 @@
 |
 |-- network
 |   |-- libs
+|   |   |-- libaio
+|   |   |-- jthread
 |   |   |-- neon
 |   |   |-- libitalc
 |   |   |-- libupnp
@@ -899,7 +895,6 @@
 |   |   |-- librsync
 |   |   |-- libsoup
 |   |   |-- libssh
-|   |   |-- libssh2
 |   |   |-- libjingle
 |   |   |-- libwww
 |   |   |-- libmsn
@@ -937,6 +932,7 @@
 |   |   `-- webkitkde
 |   |-- irc
 |   |   |-- quassel
+|   |   |-- xchat
 |   |   |-- konversation
 |   |   `-- kvirc
 |   |-- analyzer
@@ -961,11 +957,9 @@
 |   |-- security
 |   |   |-- nmap
 |   |   |-- nessus
-|   |   |-- nessus-plugins
 |   |   |-- keychain
 |   |   |-- pam_fprint
 |   |   `-- metasploit
-|   |
 |   |-- dialup
 |   |   |-- ppp
 |   |   |-- rp-pppoe
@@ -982,42 +976,25 @@
 |   |   |-- pidgin
 |   |   |-- amsn-kde
 |   |   `--amsn 
-|   |-- mail
-|   |   |-- client
-|   |   |   |-- alpine
-|   |   |   |-- kbiff
-|   |   |   |-- mutt
-|   |   |   |-- sylpheed
-|   |   |   `-- thunderbird
+|   |-- mail-client
+|   |   |-- alpine
+|   |   |-- kbiff
+|   |   |-- mutt
+|   |   |-- sylpheed
+|   |   |-- thunderbird
 |   |   |-- metamail
-|   |   |-- metalink
-|   |   `-- filter
-|   |       |-- normalizemime
-|   |       |-- procmail
-|   |       |-- spamassassin
-|   |       |-- checkgmail
-|   |       |-- crm114
-|   |       `-- bogofilter
+|   |-- mail-filter
+|   |   |-- normalizemime
+|   |   |-- procmail
+|   |   |-- spamassassin
+|   |   |-- checkgmail
+|   |   |-- crm114
+|   |   `-- bogofilter
 |   |-- vpn
 |   |   |-- kvpnc
 |   |   |-- vpnc
 |   |   |-- openvpn
 |   |   `-- openvpnefax-gtk
-|   |-- misc
-|   |   |-- rdate
-|   |   |-- x11-ssh-askpass
-|   |   |-- canto
-|   |   |-- iTest
-|   |   |-- kio-slp
-|   |   |-- kio-to-local
-|   |-- client
-|   |   |-- wpa_supplicant
-|   |   |-- network-manager
-|   |   |-- nicotine
-|   |   |-- whois
-|   |   |-- knutclient
-|   |   |-- rutilt
-|   |   `-- rdesktop
 |   |-- telnet
 |   |   |-- tn5250
 |   |   |-- telnet-bsd
@@ -1030,9 +1007,25 @@
 |   |   `-- grsync
 |   |-- connection
 |   |   |-- br2684ctl
-|       `-- bridge-utils
+|   |   |-- bridge-utils
+|   |-- misc
+|       |-- rdate
+|       |-- x11-ssh-askpass
+|       |-- canto
+|       |-- iTest
+|       |-- kio-slp
+|       |-- kio-to-local
+|       |-- kdenetwork
+|       |-- wpa_supplicant
+|       |-- network-manager
+|       |-- nicotine
+|       |-- whois
+|       |-- knutclient
+|       |-- rutilt
+|       `-- rdesktop
 |-- server
 |   |-- libs
+|   |   |-- Genshi
 |   |   |-- libiodbc
 |   |   |-- libpqxx
 |   |   |-- unixODBC
@@ -1040,7 +1033,8 @@
 |   |   |-- apr-util
 |   |   |-- geoip
 |   |   |-- libvncserver
-|   |   |-- libidn
+|   |   |-- libevent
+|   |   |-- libmemcache
 |   |-- mta
 |   |   |-- cyrus-sasl
 |   |   |-- devecot
@@ -1063,9 +1057,10 @@
 |   |   `-- kpogre
 |   |-- www
 |   |   |-- apache
-|   |   |   |-- mod_perl
-|   |   |   |-- mod_php
-|   |   |   |-- mod_python
+|   |   |-- mod_perl
+|   |   |-- mod_php
+|   |   |-- mod_python
+|   |   |-- kdewebdev
 |   |   |-- gitweb
 |   |   |-- htdig
 |   |   |-- htdig-web
@@ -1082,16 +1077,14 @@
 |   |   |-- avahi-glib
 |   |   |-- avahi-qt
 |   |   |-- avahi-qt4
-|   |   |-- bind-tools
 |   |   `-- bind
 |   |-- authentication
 |   |   |-- smbldap-tools
 |   |   |-- nss_ldap
 |   |   |-- portmap
-|   |   |-- openldap
-|   |   |   |-- openldap-client
-|   |   |   |-- openldap-server
-|   |   |   `-- openldap-slurp
+|   |   |-- openldap-client
+|   |   |-- openldap-server
+|   |   |-- openldap-slurp
 |   |   |-- mit-kerberos
 |   |   |-- pam-krb5
 |   |   |-- pam_ldap
@@ -1099,9 +1092,6 @@
 |   |   |-- ypbind
 |   |   `-- ypserv
 |   |-- ptsp
-|   |   |-- lbuscd
-|   |   |-- ltspfs
-|   |   |-- ltspfsd
 |   |   |-- ptsp-client
 |   |   `-- ptsp-server
 |   |-- proxy
@@ -1122,127 +1112,82 @@
 |       |-- hylafax
 |       `-- jhylafax
 |-- programming
-|   |   |-- libs
-|   |   |   |-- boehm-gc
-|   |   |   |-- cddlib
-|   |   |   |-- cdk
-|   |   |   |-- chmlib
-|   |   |   |-- dsdp
-|   |   |   |-- eina
-|   |   |   |-- elfutils
-|   |   |   |-- facile
-|   |   |   |-- ffcall
-|   |   |   |-- fftw2
-|   |   |   |-- fftw3
-|   |   |   |-- flint
-|   |   |   |-- fplll
-|   |   |   |-- fribidi
-|   |   |   |-- givaro
-|   |   |   |-- iml
-|   |   |   |-- jthread
-|   |   |   |-- libIDL
-|   |   |   |-- libaio
-|   |   |   |-- libatomic_ops
-|   |   |   |-- libconfig
-|   |   |   |-- libebml
-|   |   |   |-- libevent
-|   |   |   |-- libffi
-|   |   |   |-- libgomp
-|   |   |   |-- libical
-|   |   |   |-- libksba
-|   |   |   |-- libmal
-|   |   |   |-- libmemcache
-|   |   |   |-- liboil
-|   |   |   |-- minixml
-|   |   |   |-- mpfi
-|   |   |   |-- newt
-|   |   |   |-- openmpi
-|   |   |   |-- palp
-|   |   |   |-- quaddouble
-|   |   |   |-- spidermonkey
-|   |   |   |-- symmetrica
-|   |   |   |-- teckit
-|   |   |   |-- tre (dependency of multimedia and network ?)
-|   |   |   |-- xmlrpc-epi
-|   |   |   |-- yaz
-|   |   |   |-- libgdiplus
-|   |   |   |-- ntl
-|   |   |   |-- libsigc++
-|   |   |   |-- libstdc++
-|   |   |   |-- pcre++
-|   |   |   |-- boost
-|   |   |   |-- boost-devel
-|   |   |   |-- linbox
-|   |   |   |-- rlog
-|   |   |   |-- stlport
-|   |   |   |-- tolua++
-|   |   |   |-- xerces-c
-|   |   |   |-- yazpp
-|   |   |   |-- clucene
-|   |   |   |-- libxmlpp
-|   |   |   |-- lib-compat
-|   |   |   |-- 4suite
-|   |   |   |-- SOAPpy
-|   |   |   |-- Genshi 
-|   |   |   |-- lxml
-|   |   |   |-- pytz
-|   |   |   |-- urwid
-|   |   |-- tools
-|   |   |   |-- binutils-avr
-|   |   |   |-- ant
-|   |   |   |-- SVK
-|   |   |   |-- astyle
-|   |   |   |-- bk-client
-|   |   |   |-- cdecl
-|   |   |   |-- cgdb
-|   |   |   |-- cogito
-|   |   |   |-- colorcvs
-|   |   |   |-- colorgcc
-|   |   |   |-- ctags
-|   |   |   |-- cvs
-|   |   |   |-- cvsps
-|   |   |   |-- ddd
-|   |   |   |-- dejagnu
-|   |   |   |-- dialog
-|   |   |   |-- diffstat
-|   |   |   |-- esvn
-|   |   |   |-- gdb
-|   |   |   |-- git
-|   |   |   |-- gperf
-|   |   |   |-- hgforest
-|   |   |   |-- indent
-|   |   |   |-- jam
-|   |   |   |-- kdbg
-|   |   |   |-- ltrace
-|   |   |   |-- mercurial
-|   |   |   |-- oprofile
-|   |   |   |-- patchutils
-|   |   |   |-- pax-utils
-|   |   |   |-- qconf
-|   |   |   |-- qgit
-|   |   |   |-- rcs
-|   |   |   |-- strace
-|   |   |   |-- subversion
-|   |   |   |-- sysprof
-|   |   |   |-- systemtap
-|   |   |   |-- unsermake
-|   |   |   |-- valgrind
+|   |-- libs
+|   |   |-- dsdp
+|   |   |-- elfutils
+|   |   |-- flint
+|   |   |-- fplll
+|   |   |-- givaro
+|   |   |-- libffi
+|   |   |-- mpfi
+|   |   |-- palp
+|   |   |-- quaddouble
+|   |   |-- symmetrica
+|   |   |-- teckit
+|   |   |-- libgdiplus
+|   |   |-- pcre++
+|   |   |-- linbox
+|   |   |-- libxmlpp
+|   |   |-- 4suite
+|   |   |-- pytz
+|   |   |-- urwid
+|   |-- tools
+|   |   |-- autogen
+|   |   |-- binutils-avr
+|   |   |-- ant
+|   |   |-- SVK
+|   |   |-- astyle
+|   |   |-- bk-client
+|   |   |-- cdecl
+|   |   |-- cgdb
+|   |   |-- cogito
+|   |   |-- colorcvs
+|   |   |-- colorgcc
+|   |   |-- ctags
+|   |   |-- cvs
+|   |   |-- cvsps
+|   |   |-- ddd
+|   |   |-- dejagnu
+|   |   |-- dialog
+|   |   |-- diffstat
+|   |   |-- esvn
+|   |   |-- gdb
+|   |   |-- git
+|   |   |-- gperf
+|   |   |-- hgforest
+|   |   |-- indent
+|   |   |-- jam
+|   |   |-- kdbg
+|   |   |-- ltrace
+|   |   |-- mercurial
+|   |   |-- oprofile
+|   |   |-- patchutils
+|   |   |-- pax-utils
+|   |   |-- qconf
+|   |   |-- qgit
+|   |   |-- rcs
+|   |   |-- strace
+|   |   |-- subversion
+|   |   |-- sysprof
+|   |   |-- systemtap
+|   |   |-- unsermake
+|   |   |-- valgrind
 |   |-- ide
-|   |   |   |-- drscheme
-|   |   |   |-- eclipse
-|   |   |   |   |-- eclipse-binary
-|   |   |   |   |-- eclipse-cdt-binary
-|   |   |   |   |-- eclipse-jdt-binary
-|   |   |   |   |-- eclipse-pde-binary
-|   |   |   |   |-- eclipse-pydev
-|   |   |   |   |-- kde-eclipse-binary
-|   |   |   |-- gambas (...)
-|   |   |   |-- kdevelop
-|   |   |   |-- qdevelop
-|   |   |   |-- lazarus
-|   |   |   |-- eric
-|   |   |   |-- idle
-|   |   |   |-- ipython
+|   |   |-- drscheme
+|   |   |-- eclipse
+|   |   |   |-- eclipse-binary
+|   |   |   |-- eclipse-cdt-binary
+|   |   |   |-- eclipse-jdt-binary
+|   |   |   |-- eclipse-pde-binary
+|   |   |   |-- eclipse-pydev
+|   |   |   |-- kde-eclipse-binary
+|   |   |-- gambas (...)
+|   |   |-- kdevelop
+|   |   |-- qdevelop
+|   |   |-- lazarus
+|   |   |-- eric
+|   |   |-- idle
+|   |   |-- ipython
 |   |-- compilers
 |   |   |-- mono
 |   |   |-- hugs98
@@ -1250,9 +1195,9 @@
 |   |   |-- fpcsrc
 |   |   |-- gcc-avr
 |   |-- lisp
-|   |    |--clisp
-|   |    |--ecl
-|   |    |--guile
+|   |   |--clisp
+|   |   |--ecl
+|   |   |--guile
 |   |-- lua
 |   |-- java
 |   |   |-- bc-crypto-java
@@ -1359,7 +1304,6 @@
 |   |   |-- perl-XML-DOM
 |   |   |-- perl-XML-Filter-BufferText
 |   |   |-- perl-XML-NamespaceSupport
-|   |   |-- perl-XML-Parser
 |   |   |-- perl-XML-SAX
 |   |   |-- perl-XML-SAX-Writer
 |   |   |-- perl-XML-Twig
@@ -1410,9 +1354,12 @@
 |   |   |-- perl-Net-SSLeay/
 |   |   |-- perl-RPC-XML/
 |   |-- python
+|   |   |-- PyKDE
+|   |   |-- PyKDEeXtensions
 |   |   |-- django
 |   |   |   |-- Django
 |   |   |   |-- django-tagging
+|   |   |-- SOAPpy
 |   |   |-- FormEncode
 |   |   |-- Jinja 
 |   |   |-- PyICU
@@ -1515,8 +1462,11 @@
 |
 |-- science
 |   |-- libs
+|   |   |-- ntl
+|   |   |-- openmpi
+|   |   |-- ffcall
+|   |   |-- cddlib
 |   |   |-- netcdf
-|   |   |-- cfitsio
 |   |   |-- cln
 |   |   |-- djbfft
 |   |   |-- gmm
@@ -1606,6 +1556,7 @@
 |   |   |-- grep
 |   |   |-- groff
 |   |   |-- grub
+|   |   |-- gzip
 |   |   |-- hdparm
 |   |   |-- iputils
 |   |   |-- jpeg
@@ -1619,17 +1570,21 @@
 |   |   |-- libcap
 |   |   |-- libgcc
 |   |   |-- libgcrypt
+|   |   |-- libidn
 |   |   |-- libgpg-error
 |   |   |-- libpcre
 |   |   |-- libpng
+|   |   |-- libssh2
 |   |   |-- libusb
 |   |   |-- libxcb
 |   |   |-- libxml2
 |   |   |-- libxslt
+|   |   |-- libmng
 |   |   |-- lzma
 |   |   |-- man
 |   |   |-- man-pages
 |   |   |-- memtest86
+|   |   |-- mingetty
 |   |   |-- miscfiles
 |   |   |-- mkinitramfs
 |   |   |-- module-init-tools
@@ -1640,6 +1595,7 @@
 |   |   |-- net-tools
 |   |   |-- nss-mdns
 |   |   |-- openssh
+|   |   |-- openssl
 |   |   |-- pam
 |   |   |-- pardus-python
 |   |   |-- parted
@@ -1661,12 +1617,15 @@
 |   |   |-- sqlite
 |   |   |-- sysfsutils
 |   |   |-- sysklogd
+|   |   |-- sysvinit
 |   |   |-- tar
 |   |   |-- tcp-wrappers
 |   |   |-- tiff
 |   |   |-- time
 |   |   |-- udev
 |   |   |-- usbutils
+|   |   |-- unzip
+|   |   |-- urlgrabber
 |   |   |-- util-linux
 |   |   |-- vixie-cron
 |   |   |-- which
@@ -1676,17 +1635,17 @@
 |   |   |-- zlib
 |   |-- devel
 |   |   |-- autoconf
-|   |   |-- autogen
-|   |   |-- automake
 |   |   |-- binutils
 |   |   |-- bison
 |   |   |-- catbox
 |   |   |-- cmake
+|   |   |-- chrpath
 |   |   |-- gcc
 |   |   |-- gmp
 |   |   |-- icecream
 |   |   |-- icecream-scheduler
 |   |   |-- libsigsegv
+|   |   |-- libpthread-stubs
 |   |   |-- libtool
 |   |   |-- m4
 |   |   |-- make
@@ -1694,25 +1653,25 @@
 |   |   |-- nasm
 |   |   |-- patch
 |   |   |-- pkgconfig
+|   |   |-- perl-XML-Parser
 |   |   |-- quilt
 |   |   |-- scons
 |   |   |-- swig
 |   |   |-- texinfo
 |   |   |-- unifdef
-|   |   |-- unzip
-|   |   |-- urlgrabber
 |   |   |-- util-macros
 |   |   |-- xorg-proto
 |   |   |-- xtrans
 |   |   |-- yacc
 |   |-- filesystem
 |   |   |-- libs
+|   |   |   |-- rlog
 |   |   |   |-- fuse
 |   |   |   |-- libgmail
 |   |   |   |-- dmapi
 |   |   |   |-- inotify-tools
+|   |   |   |-- libconfig
 |   |   |-- fs-tools
-|   |   |   |-- ntfstools
 |   |   |   |-- ntfsprogs
 |   |   |   |-- dosfstools
 |   |   |   |-- jfsutils
@@ -1720,20 +1679,17 @@
 |   |   |   |-- squashfs-tools
 |   |   |   |-- xfsdump
 |   |   |   `-- xfsprogs
-|   |   |-- cramfs
-|   |   |-- nfs-utils
-|   |   |-- encfs
-|   |   |-- gmailfs
+|   |   |-- fs
+|   |   |   |-- cramfs
+|   |   |   |-- nfs-utils
+|   |   |   |-- encfs
+|   |   |   |-- gmailfs
+|   |   |   |-- sshfs
+|   |   |   |-- unionfs
+|   |   |   |-- wdfs
 |   |   |-- misc
 |   |   |   |-- ntfs_3g
 |   |   |   |-- partimage
-|   |   |   |-- jfsutils 
-|   |   |-- sshfs
-|   |   |-- unionfs
-|   |   `-- wdfs
-|   |-- yali4
-|   |-- yali4-firstBoot
-|
 |
 |-- kernel
 |   |-- base
@@ -1792,6 +1748,10 @@
 |
 |-- publishing
 |   |-- libs
+|   |   |-- xerces-c
+|   |   |-- stlport
+|   |   |-- boost
+|   |   |-- boost-devel
 |   |   |-- docutils
 |   |   |-- ebook-tools
 |   |   |-- libpaper
@@ -1807,59 +1767,60 @@
 |   |   |-- reportlab-docs
 |   |   |-- wv2
 |   |   |-- xalan-c
-|   |-- viewer
+|   |-- reader
 |   |   |-- bookreader
 |   |   |-- kchmviewer
+|   |   |-- gv
+|   |   |-- kbarcode
+|   |   |-- tesseract
+|   |   |-- tidy
+|   |   |-- tree
+|   |   |-- mftrace
+|   |   |-- semantik
+|   |   |-- gocr
+|   |   |-- metalink
 |   |-- docbook
 |   |   |-- antiword
 |   |   |-- SGMLSpm
 |   |   |-- asciidoc
+|   |   |-- doxygen
 |   |   |-- build-docbook-catalog (and the other docbook packages)
-|   |-- barcode
-|   |-- dos2unix
-|   |-- gv
-|   |-- htmldoc
-|   |-- mftrace
-|   |-- recode
-|   |-- t1utils
-|   |-- texi2html
-|   |-- wv
-|   |-- yodl
-|   |-- doxygen
-|   |-- enscript
-|   |-- gocr
-|   |-- help2man
-|   |-- htmldoc
-|   |-- kbarcode
-|   |-- psutils
-|   |-- semantik
-|   |-- tesseract
-|   |-- tidy
-|   |-- tree
-|   |-- ttf2pt1
+|   |-- converters
+|   |   |-- dos2unix
+|   |   |-- barcode
+|   |   |-- htmldoc
+|   |   |-- recode
+|   |   |-- texi2html
+|   |   |-- wv
+|   |   |-- yodl
+|   |   |-- enscript
+|   |   |-- help2man
+|   |   |-- htmldoc
+|   |   |-- psutils
+|   |   |-- ttf2pt1
+|   |   |-- texi2html
 |   |-- office
-|   |    |-- imposter
-|   |    |-- lxsplit
-|   |    |-- koffice
-|   |    |-- koffice-devel
-|   |    |-- koffice-karbon
-|   |    |-- koffice-kchart
-|   |    |-- koffice-kexi
-|   |    |-- koffice-kformula
-|   |    |-- koffice-kivio
-|   |    |-- koffice-kplato
-|   |    |-- koffice-kpresenter
-|   |    |-- koffice-krita
-|   |    |-- koffice-kspread
-|   |    |-- koffice-kugar
-|   |    |-- koffice-kword
-|   |    |-- openoffice
-|   |    |-- openoffice-clipart
-|   |    |-- openoffice-dicts
-|   |    |-- openoffice-help
-|   |    |-- scribus
-|   |    |-- zemberek-openoffice
-|   |
+|   |   |-- imposter
+|   |   |-- lxsplit
+|   |   |-- koffice
+|   |   |-- koffice-devel
+|   |   |-- koffice-karbon
+|   |   |-- koffice-kchart
+|   |   |-- koffice-kexi
+|   |   |-- koffice-kformula
+|   |   |-- koffice-kivio
+|   |   |-- koffice-kplato
+|   |   |-- koffice-kpresenter
+|   |   |-- koffice-krita
+|   |   |-- koffice-kspread
+|   |   |-- koffice-kugar
+|   |   |-- koffice-kword
+|   |   |-- openoffice
+|   |   |-- openoffice-clipart
+|   |   |-- openoffice-dicts
+|   |   |-- openoffice-help
+|   |   |-- scribus
+|   |   |-- zemberek-openoffice
 |   `-- tex
 |       |-- chktex
 |       |-- hevea
@@ -1870,8 +1831,6 @@
 |       |-- mftrace
 |       |-- pgf
 |       |-- tetex
-|       |-- texi2html
-|
 `-- util
     |-- arch
     |   |-- libs
@@ -1898,7 +1857,7 @@
     |   |-- xdelta
     |   |-- xdelta3
     |-- admin
-    |   |-- chrpath
+    |   |-- kdeadmin
     |   |-- device-mapper
     |   |-- dstat
     |   |-- gfxboot
@@ -1930,21 +1889,32 @@
     |-- backup
     |   |-- rdiff-backup
     |   `-- keep
+|   |-- cdr
+    |   |-- bchunk
+    |   |-- ccd2iso
+    |   |-- cdrdao
+    |   |-- cdrtools
+    |   |-- dvd+rw-tools
+    |   |-- eject
+    |   |-- k3b
+    |   |-- nrg2iso
     |-- crypt
     |   |-- libs
     |   |   |-- gpgme
     |   |   |-- libmcrypt
     |   |   |-- libassuan
     |   |   |-- pth
+    |   |   |-- libksba
+    |   |   |-- mhash
+    |   |   |-- mcrypt
+    |   |   |-- qca
+    |   |   |-- qca-tls 
+    |   |   |-- qca2 
+    |   |   |-- qca2-apidocs 
+    |   |   |-- qca2-ossl
+    |   |-- gnupg
     |   |-- johntheripper
-    |   |-- mcrypt
-    |   |-- mhash
     |   |-- tpm-tools
-    |   |-- qca
-    |   |-- qca-tls 
-    |   |-- qca2 
-    |   |-- qca2-apidocs 
-    |   |-- qca2-ossl
     |   |-- tpmmanager
     |   |-- trouser
     |-- dicts
@@ -1990,7 +1960,6 @@
     |   |   |-- erlang-emacs
     |   |   |-- git-emacs
     |   |   |-- gnuplot-emacs
-    |   |   |-- gnupg
     |   |   |-- gvim
     |   |   |-- kile
     |   |   |-- mmm-mode
@@ -2005,13 +1974,29 @@
     |   |-- tcsh
     |   |-- zsh
     |-- system
+    |   |-- autostart
+    |   |-- krename
+    |   |-- slocate
+    |   |-- kshutdown
+    |   |-- metamonitor
     |   |-- lsof
     |   |-- schedtool
     |   |-- acct
-    |   |-- slocate
     |   |-- utempter
-    |-- misc
     |   |-- prelink
-    |   |-- screen
     |   |-- command-not-found
-    |   |-- freetts
+    |-- organizer
+    |   |-- basket 
+    |   |-- katapult
+    |   |-- kerry 
+    |   |-- kio-beagle
+    |   |-- beagle
+    |   |-- kdebase-beagle
+    |   |-- kdesdk
+    |   |-- kdepim
+    |   |-- tellico
+    |   |-- rsibreak
+    |   |-- kompose
+    |   |-- umbrello
+    |   |-- yakuake
+    |   |-- screen
