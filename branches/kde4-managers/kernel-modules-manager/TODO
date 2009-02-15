@@ -1,0 +1,17 @@
+TODO
+----
+
+- setup.py will be coded 
+- i18n 
+- help docs will be written
+- list functions will be called again after each operation. (remanining = 50% )
+
+    ps: it will refresh "loaded modules" window when a module is loaded from "all available modules" window
+
+    when we remove it is now refreshing. skip this.
+
+- test, test, test...
+
+- setOptions thing...- 
+
+- refactor organization of the files according to new kde4-managers trend (manager/plasmoid etc...)
