@@ -310,7 +310,7 @@
               [%+ 've' IF watch.watched %]
               [%+ watch.watcher %] kullanıcıyı izliyor
               [% END %]
-            . Bu izleme[% 'ler IF watch.watched + watch.watcher > 1 %] kullanıcı hesabının silinmesiyle kaldırılacak.
+            . Bu izlemeler[% IF watch.watched + watch.watcher > 1 %] kullanıcı hesabının silinmesiyle kaldırılacak.
           </li>
         [% END %]
         [% IF whine_events %]
