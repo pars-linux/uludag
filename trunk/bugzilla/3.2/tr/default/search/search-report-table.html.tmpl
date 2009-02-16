@@ -40,7 +40,7 @@ var queryform = "reportform"
 [% PROCESS "search/search-report-select.html.tmpl" %]
 
 <p>
-  Aks olarak bir yada birden fazla alan seçin ve formun geri kalanını
+  Eksen olarak bir yada birden fazla alan seçin ve formun geri kalanını
   kullanarak [% terms.bugs %] için ayrıntıları belirleyin.
 </p>
 
@@ -53,14 +53,14 @@ var queryform = "reportform"
     <td>
     </td>
     <td align="center">
-      <b>Yatay Aks:</b>
+      <b>Yatay Eksen:</b>
       [% PROCESS select name = 'x_axis_field' %]
     </td>
   </tr>
 
   <tr>
     <td valign="middle" align="center">
-      <b>Dikey Aks:</b><br>
+      <b>Dikey Eksen:</b><br>
       [% PROCESS select name = 'y_axis_field' %]
     </td>
     <td width="150" height="150">
