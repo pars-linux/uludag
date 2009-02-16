@@ -66,6 +66,7 @@
 |   |   |-- polyester
 |   |   |-- crystal
 |   |   |-- xcursor-themes
+|   |   |-- QtCurve-Gtk2
 |   |   |
 |   |-- toolkit
 |   |   |-- qt
@@ -105,9 +106,10 @@
 |   |   |   |-- gtk2-docs
 |   |   |   |-- gtkmm
 |   |   |   |-- gtk+extra
-|   |   |   |-- QtCurve-Gtk2
 |   |   |   |-- gtk-qt-engine
 |   |   |   |-- gtk-sharp
+|   |   |-- fltk
+|   |   |-- fltk-devel
 |   |-- i18n
 |   |   |-- icu4c
 |   |   |-- gimp-i18n-*   
@@ -171,8 +173,6 @@
 |   |   |-- xosd
 |   |   |-- Xaw3d
 |   |   |-- agg
-|   |   |-- fltk
-|   |   |-- fltk-devel
 |   |   |-- lesstif 
 |   |   |-- libnotify
 |   |   |-- openmotif
@@ -187,7 +187,6 @@
 |   |   |-- libXcomposite
 |   |   |-- libXcursor
 |   |   |-- libXdamage
-|   |   |-- libXevie
 |   |   |-- libXext
 |   |   |-- libXfixes
 |   |   |-- libXfont
@@ -195,10 +194,7 @@
 |   |   |-- libXi
 |   |   |-- libXinerama
 |   |   |-- libXmu
-|   |   |-- libXp
 |   |   |-- libXpm
-|   |   |-- libXprintAppUtil
-|   |   |-- libXprintUtil
 |   |   |-- libXrandr
 |   |   |-- libXrender
 |   |   |-- libXres
@@ -206,7 +202,6 @@
 |   |   |-- libXv
 |   |   |-- libXvMC
 |   |   |-- libXxf86dga
-|   |   |-- libXxf86misc
 |   |   |-- libXxf86vm
 |   |   |-- libdmx
 |   |   |-- libdrm
@@ -216,6 +211,7 @@
 |   |   |-- libxkbui
 |   |   |-- libxklavier
 |   |   |-- xcb-util
+|   |   |-- mesa
 |   |-- misc
 |   |   |-- notification-daemon
 |   |   |-- shared-mime-info
@@ -230,17 +226,18 @@
 |   |   |-- xbitmaps
 |   |   |-- xkeyboard-config
 |   |-- drivers
-|   |   |-- synaptics
+|   |   |-- xorg-input-*
+|   |   |-- xorg-video-*
 |   |-- terms
 |   |   |-- rxvt-unicode
+|   |   |-- xterm
 |   |-- apps
+|   |   |-- xdm
 |   |   |-- xdriinfo
 |   |   |-- xorg-app
 |   |   |-- xorg-doc
-|   |   |-- xorg-input
 |   |   |-- xorg-server
 |   |   |-- xorg-util
-|   |   |-- xorg-video
 |   |   |-- xrx
 |   |   |-- xvattr
 |-- games
@@ -1889,7 +1886,7 @@
     |-- backup
     |   |-- rdiff-backup
     |   `-- keep
-|   |-- cdr
+    |-- cdr
     |   |-- bchunk
     |   |-- ccd2iso
     |   |-- cdrdao
