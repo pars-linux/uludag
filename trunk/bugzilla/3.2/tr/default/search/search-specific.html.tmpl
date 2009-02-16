@@ -16,23 +16,24 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl 
-  title = "Find a Specific " _ terms.Bug
+  title = "Belirli Bir " _ terms.Bug _ " Bul"
 %]
 
 [% WRAPPER search/tabs.html.tmpl %]
 
 <p>
-Belirli bir [% terms.bug %]yı sorunu tarif eden kelimeler girerek bulabilirsiniz. 
+Belirli bir [% terms.bugAcc %] sorunu tarif eden kelimeler girerek bulabilirsiniz. 
 [% terms.Bugzilla %] belirtmiş olduğunuz kelimeleri [% terms.bug %] açıklamaları ve yorumlar içinde tarayacak ve sonucu size uygunluğa göre sıralanmış bir liste olarak sunacaktır.
 </p>
 
 <p>
-Örneğin, aradığınız [% terms.bug %] güvenli web sayfalarına gösterilen Flash animasyonlarının tarayıcıyının çöküşüne yol açmasıyla ilgiliyse, kelimeleri "güvenli SSL flash çökme" gibi girebilirsiniz.
+Örneğin, aradığınız [% terms.bug %] güvenli web sayfalarında gösterilen Flash animasyonlarının tarayıcıyının çöküşüne yol açmasıyla ilgiliyse, kelimeleri "güvenli SSL flash çökme" gibi girebilirsiniz.
 </p>
 
 <form name="queryform" method="get" action="buglist.cgi">
@@ -111,7 +112,7 @@ Belirli bir [% terms.bug %]yı sorunu tarif eden kelimeler girerek bulabilirsini
       [% ELSE %]
         <input type="submit" id="search" value="Ara"
              onclick="if (this.form.content.value == '')
-                      {alert('Kelimeler kısmı boş bırakılamaz.Arama kriteri ' +
+                      {alert('Kelimeler kısmı boş bırakılamaz. Arama kriteri ' +
                              'olarak en azından bir kelime yazmalısınız.');
                        return false;} return true;">
       [% END %]
@@ -123,4 +124,3 @@ Belirli bir [% terms.bug %]yı sorunu tarif eden kelimeler girerek bulabilirsini
 [% END %]
 
 [% PROCESS global/footer.html.tmpl %]
-
