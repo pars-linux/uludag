@@ -36,11 +36,11 @@
 #endif
 
 #ifndef DBUS_SERVICE_NAME
-#define DBUS_SERVICE_NAME "tr.org.pardus.comar3"
+#define DBUS_SERVICE_NAME "tr.org.pardus.comar"
 #endif
 
 #ifndef DBUS_INTERFACE_PREFIX
-#define DBUS_INTERFACE_PREFIX "tr.org.pardus.comar3"
+#define DBUS_INTERFACE_PREFIX "tr.org.pardus.comar"
 #endif
 
 #ifndef IDLE_TIMEOUT

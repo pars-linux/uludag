@@ -80,16 +80,28 @@ INSTALL (DIRECTORY
 
 # Install service activation config under /usr/share/dbus-1/system-services/
 INSTALL (FILES
-         config/tr.org.pardus.comar3.service
-         config/tr.org.pardus.comar3.updated.service
+         config/tr.org.pardus.comar.service
+         config/tr.org.pardus.comar2.service
          DESTINATION /usr/share/dbus-1/system-services/)
+
+# Install policies
+# Install PK policies
+INSTALL (DIRECTORY
+         policy
+         DESTINATION /usr/share/PolicyKit
+         PATTERN ".svn" EXCLUDE)
 
 # Install system bus policy under /etc/dbus-1/system.d/
 INSTALL (FILES
-         config/tr.org.pardus.comar3.conf
+         config/tr.org.pardus.comar.conf
          DESTINATION /etc/dbus-1/system.d)
 
-# Install hav to /usr/bin/hav3
+# Install hav to /usr/bin/hav
 INSTALL (PROGRAMS tools/hav.py
          DESTINATION /usr/bin
          RENAME hav3)
+
+# Install hav to /usr/bin/comar2to3
+INSTALL (PROGRAMS tools/comar2to3.py
+         DESTINATION /usr/bin
+         RENAME comar2to3)
