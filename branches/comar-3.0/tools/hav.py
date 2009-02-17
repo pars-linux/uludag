@@ -20,7 +20,7 @@ def main():
     if len(sys.argv) == 1:
         printUsage()
 
-    link = comar.Link("3")
+    link = comar.Link()
     link.setLocale()
 
     if sys.argv[1] == "list-apps":
