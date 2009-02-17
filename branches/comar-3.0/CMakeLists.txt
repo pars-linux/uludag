@@ -81,6 +81,7 @@ INSTALL (DIRECTORY
 # Install service activation config under /usr/share/dbus-1/system-services/
 INSTALL (FILES
          config/tr.org.pardus.comar3.service
+         config/tr.org.pardus.comar3.updated.service
          DESTINATION /usr/share/dbus-1/system-services/)
 
 # Install system bus policy under /etc/dbus-1/system.d/
