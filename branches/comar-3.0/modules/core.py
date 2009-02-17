@@ -48,6 +48,8 @@ def register(app, model, filename):
 
 def remove(app):
     scriptDir = os.path.join(config_datapath(), "apps", app)
+    if not os.path.exists(scriptDir):
+        return
     for i in os.listdir(scriptDir):
         if not i.startswith("."):
             scriptFile = os.path.join(config_datapath(), "scripts", i, "%s.py" % app)
