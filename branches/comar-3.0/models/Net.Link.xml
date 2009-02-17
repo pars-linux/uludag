@@ -72,7 +72,7 @@
             <arg name="name" type="s" direction="in"/>
             <arg name="chan" type="s" direction="in"/>
         </method>
-        <method name="setState" action_id="tr.org.pardus.comar.net.link.set">
+        <method name="setState" action_id="tr.org.pardus.comar.net.link.setstate">
             <arg name="name" type="s" direction="in"/>
             <arg name="state" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
@@ -139,14 +139,7 @@
             <arg name="searchdomain" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
-        <method name="unuseNameServers" action_id="tr.org.pardus.comar.net.stack.set">
-            <arg name="name" type="s" direction="in"/>
-            <arg name="servers" type="as" direction="in"/>
-            <arg name="domain" type="s" direction="in"/>
-            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
-        </method>
-        <method name="useNameServers" access_label="set">
-            <arg name="name" type="s" direction="in"/>
+        <method name="useNameServers" action_id="tr.org.pardus.comar.net.stack.set">
             <arg name="servers" type="as" direction="in"/>
             <arg name="domain" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
