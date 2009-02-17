@@ -98,9 +98,6 @@ message_execute(DBusMessage *msg, const char *app, const char *model, const char
             bus_reply_object(msg, py_ret, signature);
             break;
         case -1:
-            // Missing file
-            bus_reply_unknown_method(msg);
-            break;
         case -2:
             // Python exception raised
             py_catch(&eStr, &vStr, 1);

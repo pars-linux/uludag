@@ -75,7 +75,6 @@ script_init()
     PyDict_SetItemString(py_core, "locales", PyDict_New());
 
     log_debug("Models defined             : %d\n", PyDict_Size(py_models));
-    // log_debug("Models: %s\n", PyString_AsString(PyObject_Repr(py_models)));
     log_debug("\n");
 
     return 0;
@@ -180,8 +179,6 @@ script_signature_each(const char *signature)
         }
         i++;
     }
-
-    printf("Signature: %s\n", PyString_AsString(PyObject_Repr(py_list)));
 
     return py_list;
 }
@@ -437,7 +434,7 @@ c_call(PyObject *self, PyObject *args, PyObject *keywds)
     interface[size - 1] = '\0';
 
     // Build DBus path from application name
-    size = strlen("/package/") + strlen(model) + 1;
+    size = strlen("/package/") + strlen(app) + 1;
     char *path = malloc(size);
     snprintf(path, size, "/package/%s", app);
     path[size - 1] = '\0';
@@ -572,6 +569,8 @@ py_execute(const char *app, const char *model, const char *method, PyObject *py_
 
         // Check script existance
         if (access(fn_script, R_OK) != 0) {
+            log_error("Unable to find script: %s\n", fn_script);
+            PyErr_Format(PyExc_COMAR_Internal, "Unable to find '%s'", fn_script);
             free(fn_script);
             return -1;
         }
