@@ -17,8 +17,8 @@ class Popup(QWidget):
         self.ui.setupUi(parent)
         self.parent = parent
         self.iface = applet.iface
+        self.applet = applet
         self.connections = {"net_tools":{}, "wireless_tools":{}}
-        self.init()
 
     def init(self):
         for package in self.connections.keys():
@@ -26,7 +26,10 @@ class Popup(QWidget):
             for connection in connections:
                 self.addConnectionItem(package, str(connection))
                 info = self.iface.info(package, connection)
-                self.connections[package][connection].setState(str(info['state']))
+                if str(info['state']).startswith('up'):
+                    self.applet.handler(package, 'stateChanged', [connection, 'up', str(info['state']).split()[1]])
+                else:
+                    self.connections[package][connection].setState(str(info['state']))
 
     def setConnectionStatus(self, package, message):
         if package == "wireless_tools":
