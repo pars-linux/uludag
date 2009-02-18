@@ -68,40 +68,26 @@
       <dl>
         [% class = user.groups.admin ? "" : "forbidden" %]
         <dt class="[% class %]"><a href="editfields.cgi">Özel Alanlar</a></dt>
-        <dd class="[% class %]">[% terms.Bugzilla %] lets you define fields which are
-        not implemented by default, based on your local and specific requirements.
-        These fields can then be used as any other field, meaning that you can set
-        them in [% terms.bugs %] and run any search involving them.<br>
-        Before creating new fields, keep in mind that too many fields may make the user
-        interface more complex and harder to use. Be sure you have investigated other ways
-        to satisfy your needs before doing this.</dd>
+        <dd class="[% class %]">[% terms.Bugzilla %] ile normalde kurulu olmayan alanlar oluşturmak mümkündür. İhtiyacınıza göre oluşturabileceğiniz bu alanları daha sonra tüm diğer alanlar gibi aramalarda ve [% terms.bugsLoc%] kullanabilirsiniz.<br>
+        Fakat unutulmamalıdır ki, çok sayıda alan kullanıcı arayüzünü daha karmaşık hale getirir ve kullanmayı zorlaştırır. O yüzden yeni alanlar oluşturmaya başlamadan önce bu ihtiyacı karşılamak için başka yollar olup olmadığını araştırmalısınız.</dd>
 
-        <dt class="[% class %]"><a href="editvalues.cgi">Field Values</a></dt>
-        <dd class="[% class %]">Define legal values for fields whose values must belong
-        to some given list. This is also the place where you define legal values for some
-        types of custom fields.</dd>
+        <dt class="[% class %]"><a href="editvalues.cgi">Alan Değerleri</a></dt>
+        <dd class="[% class %]">Alanlar için değerlerin belirli bir listede bulunması gerekir. Özel alanların değerleri burada belirlenir.</dd>
 
-        <dt class="[% class %]"><a href="editworkflow.cgi">[%terms.Bug %] Status Workflow</a></dt>
-        <dd class="[% class %]">Customize your workflow and choose initial [% terms.bug %]
-        statuses available on [% terms.bug %] creation and allowed [% terms.bug %] status
-        transitions when editing existing [% terms.bugs %].</dd>
+        <dt class="[% class %]"><a href="editworkflow.cgi">[%terms.Bug %] Durum Akışı</a></dt>
+        <dd class="[% class %]">İş akışınızı kişiselleştirin ve başlangıç [% terms.bug %] oluştururken atanacak [% terms.bug %] durumlarını ve varolan [% terms.bugs %] değiştirilirken izin verilen [% terms.bug %] durum değişimlerini belirleyin.</dd>
 
         [% class = user.groups.creategroups ? "" : "forbidden" %]
-        <dt class="[% class %]"><a href="editgroups.cgi">Groups</a></dt>
-        <dd class="[% class %]">Define groups which will be used in the installation.
-        They can either be used to define new user privileges or to restrict the access
-        to some [% terms.bugs %].</dd>
+        <dt class="[% class %]"><a href="editgroups.cgi">Gruplar</a></dt>
+        <dd class="[% class %]">Kurulum sırasında kullanılacak grupları belirleyin. Yeni kullanıcı yetkileri tanımlamada ve belirli [% terms.bugsDat %] erişimi kısıtlamada kullanılabilirler.</dd>
 
         [% class = user.groups.editkeywords ? "" : "forbidden" %]
-        <dt class="[% class %]"><a href="editkeywords.cgi">Keywords</a></dt>
-        <dd class="[% class %]">Set keywords to be used with [% terms.bugs %]. Keywords
-        are an easy way to "tag" [% terms.bugs %] to let you find them more easily later.</dd>
+        <dt class="[% class %]"><a href="editkeywords.cgi">Anahtarlar</a></dt>
+        <dd class="[% class %]">[% terms.BugsLoc %] kullanılacak anahtar ifadeleri atayın. Anahtar ifadeler (anahtarlar) [% terms.bugsAcc %] daha sonra daha kolay bulmak için "etiket"lemeyi kolaylaştırır.</dd>
 
         [% class = user.groups.bz_canusewhines ? "" : "forbidden" %]
-        <dt class="[% class %]"><a href="editwhines.cgi">Whining</a></dt>
-        <dd class="[% class %]">Set queries which will be run at some specified date
-        and time, and get the result of these queries directly per email. This is a
-        good way to create reminders and to keep track of the activity in your installation.</dd>
+        <dt class="[% class %]"><a href="editwhines.cgi">Alarmlar</a></dt>
+        <dd class="[% class %]">Belirli zamanlarda çalıştırılacak ve sonuçları eposta ile gönderilecek sorguları atayın. Bu hatırlatıcılar oluşturmayı ve kurulumunuzdaki hareketleri izlemeyi kolaylaştırır.</dd>
       </dl>
     </td>
   </tr>
