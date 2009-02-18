@@ -35,6 +35,7 @@ class ConnectionItem(QWidget):
 
     def setText(self, text):
         self.ui.connectionName.setText(text)
+        self.updateGeometry()
 
     def setState(self, state="down", ip=''):
         if state.startswith("up"):
