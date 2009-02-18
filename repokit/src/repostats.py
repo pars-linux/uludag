@@ -353,6 +353,7 @@ class Source:
             <p>%s</p>
             <p><a href='%s'>%s</a></p>
             <p>%s: %s</p>
+            <p>%s: %s</p>
             <h3>%s</h3>
             <p><a href="%s">%s</a></p>
             <p><a href="http://bugs.pardus.org.tr/buglist.cgi?product=Paketler&component=%s&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED">%s</a></p>
@@ -371,6 +372,8 @@ class Source:
             source.summary,
             source.homepage,
             source.homepage,
+            _("Packager"),
+            source.packager.name,
             _("License"),
             ", ".join(source.license),
             _("Actions"),
