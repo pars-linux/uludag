@@ -20,6 +20,7 @@
   #                 Jacob Steenhagen <jake@bugzilla.org>
   #                 Vlad Dascalu <jocuri@softhome.net>
   #                 Max Kanat-Alexander <mkanat@bugzilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -30,7 +31,7 @@
   #               available values for each grant.
   #%]
 
-[% title = BLOCK %]Change Group: [% group.name FILTER html %][% END %]
+[% title = BLOCK %][% group.name FILTER html %] Grubunu Değiştir[% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
@@ -53,7 +54,7 @@
 
   <table border="1" cellpadding="4">
     <tr>
-      <th>Group:</th>
+      <th>Gruplar:</th>
       <td>
         [% IF group.is_bug_group %]
           <input type="text" name="name" size="60" 
@@ -65,7 +66,7 @@
     </tr>
 
     <tr>
-      <th>Description:</th>
+      <th>Açıklama:</th>
       <td>
         [% IF group.is_bug_group %]
           <input type="text" name="desc" size="70" 
@@ -77,7 +78,7 @@
     </tr>
 
     <tr>
-      <th>User Regexp:</th>
+      <th>Kullanıcılar (Düzenli İfade):</th>
       <td>
         <input type="text" name="regexp" size="40" 
                value="[% group.user_regexp FILTER html %]">
@@ -86,7 +87,7 @@
 
     <tr>
       <th>
-        Icon URL:
+        Simge Adresi:
         [% IF group.icon_url %]
           <img src="[% group.icon_url FILTER html %]" alt="[% group.name FILTER html %]">
         [% END %]
@@ -99,7 +100,7 @@
 
     [% IF group.is_bug_group %]
       <tr>
-        <th>Use For [% terms.Bugs %]:</th>
+        <th>[% terms.Bugs %] İçin Kullan:</th>
         <td>
           <input type="checkbox" name="isactive" 
                  value="1" [% 'checked="checked"' IF group.is_active %]>
@@ -109,16 +110,16 @@
     [% Hook.process('field') %]
   </table>
 
-  <h4>Group Permissions</h4>
+  <h4>Grup İzinleri</h4>
 
   <table class="grant_table">
     <tr>
-      <th class="one">Groups That Are a Member of This Group<br>
-        (&quot;Users in <var>X</var> are automatically in  
-         [%+ group.name FILTER html %]&quot;)</th>
-      <th>Groups That This Group Is a Member Of<br>
-        (&quot;If you are in [% group.name FILTER html %], you are 
-         automatically also in...&quot;)</th>
+      <th class="one">Bu Grubun Üyesi Olan Gruplar<br>
+        (&quot;<var>X</var>'deki kullanıcılar otomatik olarak 
+         [%+ group.name FILTER html %]&quot;) içinde</th>
+      <th>Bu Grubun Bir Üyesi Olduğu Gruplar<br>
+        (&quot;Eğer [% group.name FILTER html %] içindeyseniz, aynı zamanda otomatik olarak
+         bunların da içindesiniz&quot;)</th>
     </tr>
     <tr>
       <td class="one">
@@ -136,13 +137,13 @@
   <table class="grant_table">
     <tr>
       <th class="one">
-        Groups That Can Grant Membership in This Group<br>
-        (&quot;Users in <var>X</var> can add other users to 
-         [%+ group.name FILTER html %]&quot;)
+        Bu Gruba Üyelik İzni Verebilen Gruplar<br>
+        (&quot;<var>X</var>'deki kullanıcılar diğer kullanıcıları 
+         [%+ group.name FILTER html %] grubuna ekleyebilir&quot;)
 
       </th>
-     <th>Groups That This Group Can Grant Membership In<br>
-       (&quot;Users in [% group.name FILTER html %] can add users to...&quot;)
+     <th>Bu Grubun Üyelik İzni Verebildiği Gruplar<br>
+       (&quot;[% group.name FILTER html %] grubundaki kullanıcılar bu gruplara kullanıcı ekleyebilir&quot;)
      </th>
     </tr>
     <tr>
@@ -162,12 +163,12 @@
     <table class="grant_table">
       <tr>
         <th class="one">
-          Groups That Can See This Group<br>
-          (&quot;Users in <var>X</var> can see users in
-           [%+ group.name FILTER html %]&quot;)
+          Bu Grubu Görebilen Gruplar<br>
+          (&quot;<var>X</var>'deki kullanıcılar 
+           [%+ group.name FILTER html %] grubundaki kullanıcıları görebilir&quot;)
         </th>
-       <th>Groups That This Group Can See<br>
-         (&quot;Users in [% group.name FILTER html %] can see users in...&quot;)
+       <th>Bu Grubun Görebildiği Gruplar<br>
+         (&quot;[% group.name FILTER html %] grubundaki kullanıcılar bu gruplardaki kullanıcıları görebilir&quot;)
        </th>
       </tr>
       <tr>
@@ -184,26 +185,24 @@
     </table>
   [% END %]
 
-  <input type="submit" value="Update Group">
+  <input type="submit" value="Grubu Güncelle">
   <input type="hidden" name="token" value="[% token FILTER html %]">
 </form>
   
-<h4>Mass Remove</h4>
+<h4>Toplu Silme</h4>
 
-<p>You can use this form to do mass-removal of users from groups.
-  This is often very useful if you upgraded from [% terms.Bugzilla %] 
-  2.16.</p>
+<p>Bu formu kullanarak gruplardan kullanıcıları topluca silebilirsiniz.
+  Bu işlev özellikle [% terms.Bugzilla %] 
+  2.16'dan yükselttiyseniz kullanışlıdır.</p>
 
 <table><tr><td>
 <form method="post" action="editgroups.cgi">
   <fieldset>
-    <legend>Remove all explict memberships from users whose login names
-      match the following regular expression:</legend>
+    <legend>Oturum açma adları aşağıdaki düzenli ifadeye uyan kullanıcılardan tüm tanımlanmış üyelikleri ([% terms.Bugzilla %] üyeliği hariç) kaldır:</legend>
     <input type="text" size="20" name="regexp">
-    <input type="submit" value="Remove Memberships">
+    <input type="submit" value="Üyelikleri Kaldır">
 
-    <p>If you leave the field blank, all explicit memberships in 
-      this group will be removed.</p>
+    <p>Eğer bu alanı boş bırakırsanız, bu gruptaki tüm dış üyelikler kaldırılır.</p>
 
     <input type="hidden" name="action" value="confirm_remove">
     <input type="hidden" name="group_id" value="[% group.id FILTER html %]">
@@ -211,17 +210,17 @@
 </form>
 </td></tr></table>
  
-<p>Back to the <a href="editgroups.cgi">group list</a>.</p>
+<p><a href="editgroups.cgi">grup listesi</a>ne geri dön.</p>
 
 [% PROCESS global/footer.html.tmpl %] 
 
 [% BLOCK select_pair %]
   <table class="select_pair">
     <tr>
-      <th><label for="[% "${name}_add" FILTER html %]">Add<br>
-        (select to add)</label></th>
-      <th><label for="[% "${name}_remove" FILTER html %]">Current<br>
-        (select to remove)</label></th>
+      <th><label for="[% "${name}_add" FILTER html %]">Ekle<br>
+        (eklemek için seçin)</label></th>
+      <th><label for="[% "${name}_remove" FILTER html %]">Güncel<br>
+        (silmek için seçin)</label></th>
     </tr>
     <tr>
       <td>
