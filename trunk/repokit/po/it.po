@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-20 20:48+0200\n"
+"POT-Creation-Date: 2009-02-18 22:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,15 +16,15 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/repostats.py:178 src/repostats.py:577
+#: src/repostats.py:178 src/repostats.py:580
 msgid "Information"
 msgstr ""
 
-#: src/repostats.py:179 src/repostats.py:596
+#: src/repostats.py:179 src/repostats.py:599
 msgid "Source Packages"
 msgstr ""
 
-#: src/repostats.py:180 src/repostats.py:601
+#: src/repostats.py:180 src/repostats.py:604
 msgid "Binary Packages"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Release date"
 msgstr ""
 
-#: src/repostats.py:348 src/repostats.py:591
+#: src/repostats.py:348 src/repostats.py:594
 msgid "Version"
 msgstr ""
 
@@ -96,121 +96,121 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
-#: src/repostats.py:374
-msgid "License"
-msgstr ""
-
-#: src/repostats.py:376
-msgid "Actions"
-msgstr ""
-
-#: src/repostats.py:378
-msgid "Build files"
-msgstr ""
-
-#: src/repostats.py:380
-msgid "Bug reports"
-msgstr ""
-
-#: src/repostats.py:381
-msgid "Binary packages"
-msgstr ""
-
-#: src/repostats.py:383
-msgid "Release history"
-msgstr ""
-
-#: src/repostats.py:385
-msgid "Patches"
-msgstr ""
-
-#: src/repostats.py:423 src/repostats.py:580
+#: src/repostats.py:375 src/repostats.py:426 src/repostats.py:583
 msgid "Packager"
 msgstr ""
 
-#: src/repostats.py:430
+#: src/repostats.py:377
+msgid "License"
+msgstr ""
+
+#: src/repostats.py:379
+msgid "Actions"
+msgstr ""
+
+#: src/repostats.py:381
+msgid "Build files"
+msgstr ""
+
+#: src/repostats.py:383
+msgid "Bug reports"
+msgstr ""
+
+#: src/repostats.py:384
+msgid "Binary packages"
+msgstr ""
+
+#: src/repostats.py:386
+msgid "Release history"
+msgstr ""
+
+#: src/repostats.py:388
+msgid "Patches"
+msgstr ""
+
+#: src/repostats.py:433
 msgid "Maintained packages:"
 msgstr ""
 
-#: src/repostats.py:437
+#: src/repostats.py:440
 msgid "Package updates:"
 msgstr ""
 
-#: src/repostats.py:489
+#: src/repostats.py:492
 #, python-format
 msgid ""
 "Cannot parse '%s':\n"
 "%s\n"
 msgstr ""
 
-#: src/repostats.py:534
+#: src/repostats.py:537
 msgid "Number of source packages"
 msgstr ""
 
-#: src/repostats.py:535
+#: src/repostats.py:538
 msgid "Number of binary packages"
 msgstr ""
 
-#: src/repostats.py:536
+#: src/repostats.py:539
 msgid "Number of patches"
 msgstr ""
 
-#: src/repostats.py:537
+#: src/repostats.py:540
 msgid "Number of packagers"
 msgstr ""
 
-#: src/repostats.py:541
+#: src/repostats.py:544
 msgid "Archived size of packages"
 msgstr ""
 
-#: src/repostats.py:542
+#: src/repostats.py:545
 msgid "Installed size of packages"
 msgstr ""
 
-#: src/repostats.py:553
+#: src/repostats.py:556
 msgid "Most patched:"
 msgstr ""
 
-#: src/repostats.py:563
+#: src/repostats.py:566
 msgid "Longest build scripts:"
 msgstr ""
 
-#: src/repostats.py:573
+#: src/repostats.py:576
 msgid "Total file sizes by file type:"
 msgstr ""
 
-#: src/repostats.py:581
+#: src/repostats.py:584
 msgid "Package count"
 msgstr ""
 
-#: src/repostats.py:586
+#: src/repostats.py:589
 msgid "Packagers (by package count)"
 msgstr ""
 
-#: src/repostats.py:589
+#: src/repostats.py:592
 msgid "Packagers (by name)"
 msgstr ""
 
-#: src/repostats.py:591
+#: src/repostats.py:594
 msgid "Package name"
 msgstr ""
 
-#: src/repostats.py:591
+#: src/repostats.py:594
 msgid "Summary"
 msgstr ""
 
-#: src/repostats.py:608
+#: src/repostats.py:611
 msgid "Scanning source repository...\n"
 msgstr ""
 
-#: src/repostats.py:612
+#: src/repostats.py:615
 msgid "Scanning binary packages...\n"
 msgstr ""
 
-#: src/repostats.py:626
+#: src/repostats.py:629
 msgid "Usage: repostats.py [OPTIONS] source-repo-path [binary-repo-path]\n"
 msgstr ""
 
-#: src/repostats.py:627
+#: src/repostats.py:630
 msgid "HTML output directory."
 msgstr ""
