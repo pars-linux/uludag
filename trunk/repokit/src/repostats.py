@@ -352,7 +352,7 @@ class Source:
             <h3>%s <em>%s</em></h3>
             <p>%s</p>
             <p><a href='%s'>%s</a></p>
-            <p>%s: %s</p>
+            <p>%s: <a href="../packager/%s.html">%s</a></p>
             <p>%s: %s</p>
             <h3>%s</h3>
             <p><a href="%s">%s</a></p>
@@ -373,6 +373,7 @@ class Source:
             source.homepage,
             source.homepage,
             _("Packager"),
+            source.packager.name,
             source.packager.name,
             _("License"),
             ", ".join(source.license),
