@@ -36,13 +36,16 @@ class ConnectionItem(QWidget):
     def setText(self, text):
         self.ui.connectionName.setText(text)
 
-    def setState(self, state="down"):
+    def setState(self, state="down", ip=''):
         if state.startswith("up"):
             self.ui.connectionStatus.setPixmap(QPixmap(":/icons/check.png"))
+            self.setText("<b>%s</b> %s" % (self.name, ip))
         elif state == "connecting":
             self.ui.connectionStatus.setPixmap(QPixmap(":/icons/working.png"))
+            self.setText("<b>%s</b>" % self.name)
         else:
             self.ui.connectionStatus.setPixmap(
                     QPixmap(":/icons/network-%s.png" % self.package))
+            self.setText(self.name)
         self.lastState = state
 

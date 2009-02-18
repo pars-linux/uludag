@@ -77,18 +77,20 @@ class NmApplet(plasmascript.Applet):
 
     def handler(self, package, signal, args):
         args = map(lambda x: str(x), list(args))
+        ip = ''
         if (str(args[1]) == "up"):
-            msg = "Connected to <b>%s</b>, IP: <b>%s</b>" % (args[0], args[2])
-            self.popup.setConnectionStatus(package, msg)
+            msg = "Connected to <b>%s</b> IP: %s" % (args[0], args[2])
+            ip = args[2]
+            self.popup.setConnectionStatus(package, "Connected")
             self.icon.setSvg(self.defaultIcon)
         elif (str(args[1]) == "connecting"):
-            msg = "Connecting to <b>%s</b>" % args[0]
-            self.popup.setConnectionStatus(package, msg)
+            msg = "Connecting to <b>%s</b> .." % args[0]
+            self.popup.setConnectionStatus(package, "Connecting..")
         else:
             msg = "Disconnected"
             self.popup.setConnectionStatus(package, msg)
             self.icon.setSvg(self.defaultIcon, "native")
-        self.popup.connections[package][str(args[0])].setState(str(args[1]))
+        self.popup.connections[package][str(args[0])].setState(str(args[1]), ip)
         self.notifyface.notify(str(msg))
 
     def updateTheme(self):

@@ -9,6 +9,8 @@ class Notifier:
     def __init__(self, loop):
         self.bus = dbus.SessionBus(mainloop=loop)
         self.proxy = None
+        self.lastMessage = ''
+        self.lastId = None
         self.init()
 
     def init(self):
@@ -19,12 +21,18 @@ class Notifier:
             self.proxy = None
 
     def handler(self, *args):
-        pass
+        if len(args) > 0:
+            self.lastId = long(args[0])
 
     def notify(self, message, timeout=5000):
+        if self.lastMessage == message:
+            return
+        if self.lastId:
+            self.notifier.CloseNotification(self.lastId, reply_handler=self.handler, error_handler=self.handler)
+            self.lastId = None
         if self.proxy:
             self.notifier.Notify("NM", 0, "", "applications-internet", "Network Manager", message, [], {}, timeout, reply_handler=self.handler, error_handler=self.handler)
         else:
             print "Notifier is not working, message was : %s" % message
             self.init()
-
+        self.lastMessage = message
