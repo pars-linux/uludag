@@ -18,6 +18,9 @@ from widgets.popup import Popup
 # KDE4 Notifier
 from widgets.notify import Notifier
 
+# Solid
+from PyKDE4.solid import Solid
+
 # Network Interface for operations
 from backend.pardus import NetworkIface
 iface = NetworkIface()
@@ -29,6 +32,7 @@ class NmApplet(plasmascript.Applet):
         plasmascript.Applet.__init__(self, parent)
         self.iface = iface
         self.notifyface = Notifier(dbus.get_default_main_loop())
+        self.notifyface.registerNetwork()
 
     def init(self):
         """ Const method for initializing the applet """
@@ -79,23 +83,25 @@ class NmApplet(plasmascript.Applet):
     def handler(self, package, signal, args):
         args = map(lambda x: str(x), list(args))
         ip = ''
-
+        solidState = Solid.Networking.Unknown
         if (str(args[1]) == "up"):
             msg = "Connected to <b>%s</b> IP: %s" % (args[0], args[2])
             ip = args[2]
             self.popup.setConnectionStatus(package, "Connected")
             self.icon.setSvg(self.defaultIcon)
+            solidState = Solid.Networking.Connected
         elif (str(args[1]) == "connecting"):
             msg = "Connecting to <b>%s</b> .." % args[0]
             self.popup.setConnectionStatus(package, "Connecting..")
+            solidState = Solid.Networking.Connecting
         else:
             msg = "Disconnected"
             self.popup.setConnectionStatus(package, msg)
             self.icon.setSvg(self.defaultIcon, "native")
+            solidState = Solid.Networking.Unconnected
 
-        if signal == 'stateChanged':
-            self.popup.connections[package][str(args[0])].setState(str(args[1]), ip)
-            self.notifyface.notify(str(msg))
+        self.popup.connections[package][str(args[0])].setState(str(args[1]), ip)
+        self.notifyface.notify(str(msg), solidState)
 
     def updateTheme(self):
         self.dialog.setStyleSheet("color: %s;" % Plasma.Theme.defaultTheme().color(Plasma.Theme.TextColor).name())
