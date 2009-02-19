@@ -74,13 +74,12 @@ div.footer {
     color: #AAA;
     text-align: center;
     font-size: 75%;
-    background: url("foot.png") repeat-x;
+    /*background: url("foot.png") repeat-x;*/
     height:20px;
-    padding-top:2px;
+    padding-top:10px;
     padding-bottom:0px;
     width: 100%;
     clear:both;
-    position:fixed;
     bottom:0px;
 }
 
@@ -343,7 +342,7 @@ div.body h6 {
     font-weight: normal;
     color: #20435c;
     border-bottom: 1px solid #ccc;
-    margin: 20px -20px 10px -20px;
+    margin: 20px -20px 14px -20px;
     padding: 3px 0 3px 10px;
 }
 
@@ -360,6 +359,15 @@ a.headerlink {
     padding: 0 4px 0 4px;
     text-decoration: none;
     visibility: hidden;
+}
+
+/* Logo for h2 elements */
+img.logo {
+    float: right;
+    z-index: 100;
+    border: 0px;
+    margin-top: -8px;
+    margin-right: -7px;
 }
 
 h1:hover > a.headerlink,
