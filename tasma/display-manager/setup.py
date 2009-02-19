@@ -67,7 +67,6 @@ app_data = [
     'src/driverdialog.ui',
     'src/handler.py',
     'src/helpdialog.ui',
-    'src/hwdata.py',
     'src/monitordialog.ui',
     'src/randriface.py',
     'src/utility.py',
