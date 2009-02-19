@@ -1,0 +1,273 @@
+# French message file for YaST2 (@memory@).
+# Copyright (C) 2005 SUSE Linux Products GmbH.
+# Copyright (C) 2002, 2003 SuSE Linux AG.
+# Copyright (C) 2000, 2001 SuSE GmbH.
+# Patricia Vaz <patricia@suse.de>, 2003.
+# Francoise Lermen <flermen@suse.de>, 2000, 2001, 2002.
+# Karine Nguyen <karine@suse.de>, 2001.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: YaST (@memory@)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-01 12:10+0200\n"
+"PO-Revision-Date: 2007-12-17 18:31+0100\n"
+"Last-Translator: Guillaume GARDET <guillaume.gardet@free.fr>\n"
+"Language-Team: Novell Language <language@novell.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ksysinfopart.cpp:72
+msgid "KSysinfo"
+msgstr "KSysinfo"
+
+# TLABEL x11_2002_01_04_0147__15
+#: sysinfo.cpp:68
+msgid "%1 GB"
+msgstr "%1 Go"
+
+# TLABEL x11_2002_01_04_0147__15
+#: sysinfo.cpp:71
+msgid "%1 MB"
+msgstr "%1 Mo"
+
+# TLABEL x11_2002_01_04_0147__15
+#: sysinfo.cpp:73
+msgid "%1 KB"
+msgstr "%1 Ko"
+
+# TLABEL backup_2002_03_14_2340__99
+#: sysinfo.cpp:129
+msgid "Looking for CPU information..."
+msgstr "Recherche d'informations relatives au processeur..."
+
+# TLABEL rpm-groups_2002_03_14_2340__25
+#: sysinfo.cpp:138
+#: sysinfo.cpp:140
+msgid "My Computer"
+msgstr "Poste de travail"
+
+#: sysinfo.cpp:141
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr "Dossiers, disques durs, périphériques amovibles, informations système, etc."
+
+# TLABEL backup_2002_03_14_2340__99
+#: sysinfo.cpp:147
+msgid "Looking for disk information..."
+msgstr "Recherche des informations relatives au disque..."
+
+#: sysinfo.cpp:148
+msgid "Disk Information"
+msgstr "Informations relatives au disque"
+
+#: sysinfo.cpp:152
+msgid "OS Information"
+msgstr "Informations relatives au SE"
+
+#: sysinfo.cpp:154
+msgid "OS:"
+msgstr "SE :"
+
+# TLABEL nis_server_2002_01_04_0147__18
+#: sysinfo.cpp:156
+msgid "Current user:"
+msgstr "Utilisateur actuel :"
+
+#: sysinfo.cpp:158
+msgid "System:"
+msgstr "Système :"
+
+# TLABEL rpm-groups_2002_01_04_0147__37
+#: sysinfo.cpp:159
+msgid "KDE:"
+msgstr "KDE :"
+
+# TLABEL mail_2002_03_14_2340__41
+#: sysinfo.cpp:165
+msgid "Display Info"
+msgstr "Afficher les infos"
+
+# TLABEL autoinst_2002_08_07_0216__427
+#: sysinfo.cpp:167
+msgid "Vendor:"
+msgstr "Fabricant :"
+
+#: sysinfo.cpp:168
+msgid "Model:"
+msgstr "Modèle :"
+
+#: sysinfo.cpp:170
+msgid "Driver:"
+msgstr "Pilote :"
+
+# TLABEL general_2002_01_04_0147__25
+#: sysinfo.cpp:177
+msgid "Getting OS information...."
+msgstr "Obtention des informations relatives au SE...."
+
+# TLABEL network_2002_03_14_2340__32
+#: sysinfo.cpp:180
+msgid "Common Folders"
+msgstr "Dossiers communs"
+
+# TLABEL packages_2002_01_04_0147__66
+#: sysinfo.cpp:183
+msgid "My Documents"
+msgstr "Mes documents"
+
+#: sysinfo.cpp:184
+msgid "My Home Folder"
+msgstr "Mon dossier privé"
+
+# TLABEL autoinst_2002_08_07_0216__0
+#: sysinfo.cpp:185
+msgid "Root Folder"
+msgstr "Dossier racine"
+
+# TLABEL lan_2002_01_04_0147__264
+#: sysinfo.cpp:186
+msgid "Network Folders"
+msgstr "Dossiers du réseau"
+
+# TLABEL profile-manager_2002_08_07_0216__8
+#: sysinfo.cpp:190
+msgid "Looking up network status..."
+msgstr "Recherche de l'état du réseau..."
+
+# TLABEL autoinst_2002_08_07_0216__312
+#: sysinfo.cpp:193
+msgid "Network Status"
+msgstr "État du réseau"
+
+#: sysinfo.cpp:201
+msgid "CPU Information"
+msgstr "Informations relatives au processeur"
+
+# TLABEL hwinfo_2002_01_04_0147__54
+#: sysinfo.cpp:203
+msgid "Processor (CPU):"
+msgstr "Processeur :"
+
+# TLABEL backup_2002_03_14_2340__76
+#: sysinfo.cpp:204
+msgid "Speed:"
+msgstr "Vitesse :"
+
+# TLABEL x11_2002_01_04_0147__15
+#: sysinfo.cpp:205
+msgid "%1 MHz"
+msgstr "%1 Mhz"
+
+#: sysinfo.cpp:209
+msgid "Cores:"
+msgstr "Coeurs :"
+
+#: sysinfo.cpp:213
+msgid "Temperature:"
+msgstr "Température :"
+
+# TLABEL backup_2002_03_14_2340__99
+#: sysinfo.cpp:220
+msgid "Looking for memory information..."
+msgstr "Recherche d'informations relatives à la mémoire..."
+
+# TLABEL online_update_2002_01_04_0147__18
+#: sysinfo.cpp:222
+msgid "Memory Information"
+msgstr "Informations relatives à la mémoire"
+
+#: sysinfo.cpp:224
+msgid "Total memory (RAM):"
+msgstr "Mémoire totale (RAM) :"
+
+# TLABEL hwinfo_2002_01_04_0147__86
+#: sysinfo.cpp:225
+msgid "Free memory:"
+msgstr "Mémoire disponible :"
+
+# TLABEL hwinfo_2002_01_04_0147__86
+#: sysinfo.cpp:226
+msgid "Used Memory"
+msgstr "Mémoire utilisée :"
+
+# TLABEL packages_2002_01_04_0147__205
+#: sysinfo.cpp:227
+msgid "Total swap:"
+msgstr "Taille totale de l'espace d'échange en mémoire :"
+
+# TLABEL partitioning_2002_03_14_2340__11
+#: sysinfo.cpp:228
+msgid "Free swap:"
+msgstr "Taille de l'espace d'échange disponible :"
+
+#: sysinfo.cpp:292
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 caches)"
+
+#: sysinfo.cpp:334
+msgid "Device"
+msgstr "Périphérique"
+
+# TLABEL rpm-groups_2002_03_14_2340__40
+#: sysinfo.cpp:334
+msgid "Filesystem"
+msgstr "Système de fichiers"
+
+# TLABEL backup_2002_03_14_2340__86
+#: sysinfo.cpp:335
+msgid "Total space"
+msgstr "Espace total"
+
+# TLABEL wizard_2002_03_14_2340__1
+#: sysinfo.cpp:335
+msgid "Available space"
+msgstr "Espace disponible"
+
+#: sysinfo.cpp:341
+msgid "Press the right mouse button for more options like Mount or Eject"
+msgstr "Appuyez sur le bouton droit de la souris pour accéder à d'autres options, telles que Monter ou Éjecter"
+
+#: sysinfo.cpp:577
+msgid "%1 (3D Support)"
+msgstr "%1 (prise en charge 3D)"
+
+#: sysinfo.cpp:581
+msgid "%1 (No 3D Support)"
+msgstr "%1 (pas de prise en charge 3D)"
+
+# #-#-#-#-#  libsusehwhelper.po (libsusehwhelper)  #-#-#-#-#
+# TLABEL autoinst_2002_08_07_0216__168
+#: sysinfo.cpp:587
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: sysinfo.cpp:595
+msgid "Network is <strong>unreachable</strong>"
+msgstr "Le réseau est <strong>hors d'atteinte</strong>"
+
+#: sysinfo.cpp:597
+msgid "You are <strong>offline</strong>"
+msgstr "Vous êtes <strong>hors ligne</strong>"
+
+#: sysinfo.cpp:599
+msgid "Network is <strong>shutting down</strong>"
+msgstr "La connexion au réseau est <strong>en cours de fermeture</strong>"
+
+#: sysinfo.cpp:601
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr "<strong>Établissement</strong> de la connexion au réseau"
+
+#: sysinfo.cpp:603
+msgid "You are <strong>online</strong>"
+msgstr "Vous êtes <strong>en ligne</strong>"
+
+# TLABEL network_2002_03_14_2340__66
+#: sysinfo.cpp:605
+msgid "Unknown network status"
+msgstr "État réseau inconnu"
+
+#~ msgid "unknown"
+#~ msgstr "inconnu"
+

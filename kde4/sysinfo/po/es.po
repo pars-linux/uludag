@@ -1,0 +1,288 @@
+# translation of kio_sysinfo.es.po to
+# Spanish message file for YaST2 (@memory@).
+# Copyright (C) 2005 SUSE Linux Products GmbH.
+# Copyright (C) 2002, 2003 SuSE Linux AG.
+# Copyright (C) 1999, 2000, 2001 SuSE GmbH.
+#
+# Ibán josé García Castillo <Iban.Garcia@alufis35.uv.es>, 2000.
+# Javier Moreno <javier.moreno@alufis35.uv.es>, 2000.
+# Jordi Jaen Pallares <jordi@suse.de>, 1999, 2000, 2001.
+# Pablo Iranzo Gómez <Pablo.Iranzo@uv.es>, 2000.
+# Cesar Sanchez Alonso <csalonso5 'at' gmail.com>, 2007.
+# César Sánchez Alonso <csalinux@gmail.com>, 2007.
+# Carlos E. Robinson <robin.listas@telefonica.net>, 2007.
+# Miguel Angel Alvarez <maacruz@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_sysinfo.es\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-01 12:10+0200\n"
+"PO-Revision-Date: 2007-11-24 20:09+0100\n"
+"Last-Translator: Miguel Angel Alvarez <maacruz@gmail.com>\n"
+"Language-Team:  <opensuse-translation-es@opensuse.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ksysinfopart.cpp:72
+msgid "KSysinfo"
+msgstr "KSysinfo"
+
+# clients/inst_sunfb.ycp:204
+#: sysinfo.cpp:68
+msgid "%1 GB"
+msgstr "%1 GB"
+
+# clients/inst_sunfb.ycp:204
+#: sysinfo.cpp:71
+msgid "%1 MB"
+msgstr "%1 MB"
+
+# clients/inst_sunfb.ycp:204
+#: sysinfo.cpp:73
+msgid "%1 KB"
+msgstr "%1 KB"
+
+# include/nis_server/slaves.ycp:106
+# include/backup/ui.ycp:1253
+#
+#: sysinfo.cpp:129
+msgid "Looking for CPU information..."
+msgstr "Buscando información de CPU..."
+
+#: sysinfo.cpp:138 sysinfo.cpp:140
+msgid "My Computer"
+msgstr "Mi equipo"
+
+#: sysinfo.cpp:141
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr "Carpetas, discos duros, dispositivos extraíbles, información del sistema y más..."
+
+# include/nis_server/slaves.ycp:106
+# include/backup/ui.ycp:1253
+#
+#: sysinfo.cpp:147
+msgid "Looking for disk information..."
+msgstr "Buscando información de disco..."
+
+#: sysinfo.cpp:148
+msgid "Disk Information"
+msgstr "Información de disco"
+
+#: sysinfo.cpp:152
+msgid "OS Information"
+msgstr "Información de sistema operativo"
+
+#: sysinfo.cpp:154
+msgid "OS:"
+msgstr "SO:"
+
+#: sysinfo.cpp:156
+msgid "Current user:"
+msgstr "Usuario actual:"
+
+#: sysinfo.cpp:158
+msgid "System:"
+msgstr "Sistema:"
+
+#: sysinfo.cpp:159
+msgid "KDE:"
+msgstr "KDE:"
+
+# include/mail/ui.ycp:658
+# include/mail/ui.ycp:684
+# include/mail/ui.ycp:756
+# include/mail/ui.ycp:930
+#: sysinfo.cpp:165
+msgid "Display Info"
+msgstr "Información de pantalla"
+
+#: sysinfo.cpp:167
+msgid "Vendor:"
+msgstr "Fabricante:"
+
+#: sysinfo.cpp:168
+msgid "Model:"
+msgstr "Modelo:"
+
+#: sysinfo.cpp:170
+msgid "Driver:"
+msgstr "Controlador:"
+
+#: sysinfo.cpp:177
+msgid "Getting OS information...."
+msgstr "Obteniendo información de sistema operativo...."
+
+#: sysinfo.cpp:180
+msgid "Common Folders"
+msgstr "Carpetas comunes"
+
+#: sysinfo.cpp:183
+msgid "My Documents"
+msgstr "Mis documentos"
+
+#: sysinfo.cpp:184
+msgid "My Home Folder"
+msgstr "Mi carpeta personal"
+
+#: sysinfo.cpp:185
+msgid "Root Folder"
+msgstr "Carpeta raíz"
+
+#
+# include/network/lan/address.ycp:102
+#: sysinfo.cpp:186
+msgid "Network Folders"
+msgstr "Carpetas de red"
+
+#: sysinfo.cpp:190
+msgid "Looking up network status..."
+msgstr "Buscando estado de la red..."
+
+#: sysinfo.cpp:193
+msgid "Network Status"
+msgstr "Estado de la red"
+
+#: sysinfo.cpp:201
+msgid "CPU Information"
+msgstr "Información de CPU"
+
+# classnames.ycp:115 clients/hwinfo.ycp:124
+# classnames.ycp:115 clients/hwinfo.ycp:124
+# classnames.ycp:115 clients/hwinfo.ycp:124
+#: sysinfo.cpp:203
+msgid "Processor (CPU):"
+msgstr "Procesador (CPU):"
+
+# include/newmodule/ui.ycp:991
+#
+# include/backup/ui.ycp:601
+#
+#: sysinfo.cpp:204
+msgid "Speed:"
+msgstr "Velocidad:"
+
+# clients/inst_sunfb.ycp:204
+#: sysinfo.cpp:205
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: sysinfo.cpp:209
+msgid "Cores:"
+msgstr "Núcleos:"
+
+#: sysinfo.cpp:213
+msgid "Temperature:"
+msgstr "Temperatura:"
+
+# include/nis_server/slaves.ycp:106
+# include/backup/ui.ycp:1253
+#
+#: sysinfo.cpp:220
+msgid "Looking for memory information..."
+msgstr "Buscando información de memoria..."
+
+# clients/online_update.ycp:242
+#: sysinfo.cpp:222
+msgid "Memory Information"
+msgstr "Información de memoria"
+
+#: sysinfo.cpp:224
+msgid "Total memory (RAM):"
+msgstr "Memoria total (RAM):"
+
+# classnames.ycp:67
+# classnames.ycp:67
+# classnames.ycp:67
+#: sysinfo.cpp:225
+msgid "Free memory:"
+msgstr "Memoria disponible:"
+
+# classnames.ycp:67
+# classnames.ycp:67
+# classnames.ycp:67
+#: sysinfo.cpp:226
+msgid "Used Memory"
+msgstr "Memoria utilizada"
+
+# modules/SlideShow.ycp:1057
+#: sysinfo.cpp:227
+msgid "Total swap:"
+msgstr "Espacio de intercambio total:"
+
+#: sysinfo.cpp:228
+msgid "Free swap:"
+msgstr "Espacio de intercambio disponible:"
+
+#: sysinfo.cpp:292
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 cachés)"
+
+#: sysinfo.cpp:334
+msgid "Device"
+msgstr "Dispositivo"
+
+#: sysinfo.cpp:334
+msgid "Filesystem"
+msgstr "Sistema de archivos"
+
+# modules/SlideShow.ycp:1057
+# include/backup/ui.ycp:902 include/backup/ui.ycp:984
+# include/backup/ui.ycp:1632 include/backup/ui.ycp:1637
+#
+#: sysinfo.cpp:335
+msgid "Total space"
+msgstr "Espacio total"
+
+# include/ui/wizard_hw.ycp:48
+#
+# modules/Wizard_hw.ycp:50
+#: sysinfo.cpp:335
+msgid "Available space"
+msgstr "Espacio disponible"
+
+#: sysinfo.cpp:341
+msgid "Press the right mouse button for more options like Mount or Eject"
+msgstr "Pulse el botón derecho del ratón para acceder a más opciones, como Montar o Expulsar"
+
+#: sysinfo.cpp:577
+msgid "%1 (3D Support)"
+msgstr "%1 (compatibilidad 3D)"
+
+#: sysinfo.cpp:581
+msgid "%1 (No 3D Support)"
+msgstr "%1 (sin compatibilidad 3D)"
+
+#: sysinfo.cpp:587
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: sysinfo.cpp:595
+msgid "Network is <strong>unreachable</strong>"
+msgstr ""
+""
+"La red <strong>no se encuentra</strong>"
+
+#: sysinfo.cpp:597
+msgid "You are <strong>offline</strong>"
+msgstr "Está <strong>desconectado</strong>"
+
+#: sysinfo.cpp:599
+msgid "Network is <strong>shutting down</strong>"
+msgstr "La red se está <strong>desconectando</strong>"
+
+#: sysinfo.cpp:601
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr "<strong>Estableciendo</strong> la conexión con la red"
+
+#: sysinfo.cpp:603
+msgid "You are <strong>online</strong>"
+msgstr "Está <strong>conectado</strong>"
+
+# include/network/summary.ycp:108
+#: sysinfo.cpp:605
+msgid "Unknown network status"
+msgstr "Estado de red desconocido"
+

@@ -1,0 +1,8 @@
+This is a sysinfo:/ KIO slave for KDE4, which shows basic
+system information often requested by users.
+
+The code is from http://svn.opensuse/org/svn/kio_sysinfo
+
+Patches and feedback greatly appreciated.
+
+Dirk Mueller <dmueller@suse.de>
