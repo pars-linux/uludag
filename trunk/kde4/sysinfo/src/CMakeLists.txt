@@ -1,12 +1,4 @@
-if (WITH_FEDORA)
-    add_subdirectory(about/fedora)
-    set_source_files_properties(
-        sysinfo.cpp
-        COMPILE_FLAGS -DWITH_FEDORA
-    )
-else (WITH_FEDORA)
-    add_subdirectory(about/suse)
-endif (WITH_FEDORA)
+add_subdirectory(about/pardus)
 
 set(kio_sysinfo_SRCS
    sysinfo.cpp
