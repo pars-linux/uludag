@@ -25,7 +25,7 @@ import helpdialog
 import dm_mainview
 import driverdialog
 import monitordialog
-import hwdata
+from zorg import hwdata
 from utility import *
 
 mod_name = 'Display Manager'

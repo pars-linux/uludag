@@ -1,3 +1,7 @@
+2009-02-19 Fatih Aşıcı <fatih@pardus.org.tr>
+	* src/hwdata.py:
+		Remove hwdata module which is moved into zorg.
+
 2009-01-23 Fatih Aşıcı <fatih@pardus.org.tr>
 	* src/displayconfig.py:
 		Add 1600x1200 to the resolution list (#9018).
