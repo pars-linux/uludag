@@ -416,7 +416,8 @@ class Yali:
                 fstab.insert(e)
             elif req_type == request.swapFileRequestType:
                 path = "/" + ctx.consts.swap_file_name
-                mountpoint = "none"
+                # Look bug #9233
+                mountpoint = "swap"
                 fs = "swap"
                 opts = "sw"
                 e = yali4.fstab.FstabEntry(path, mountpoint, fs, opts)
