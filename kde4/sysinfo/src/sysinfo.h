@@ -133,7 +133,7 @@ private:
     /**
      * Map holding the individual info attributes
      */
-    QMap<int, QString> m_info;
+    QMap<int, QVariant> m_info;
 
     QList<DiskInfo> m_devices;
     Solid::Predicate m_predicate;

@@ -63,6 +63,9 @@
 #include <solid/storageaccess.h>
 #include <solid/storagevolume.h>
 #include <solid/block.h>
+#include <solid/devicenotifier.h>
+#include <solid/deviceinterface.h>
+#include <solid/processor.h>
 
 #define SOLID_MEDIALIST_PREDICATE \
     "[[ StorageVolume.usage == 'FileSystem' OR StorageVolume.usage == 'Encrypted' ]" \
@@ -83,9 +86,9 @@ static QString formattedUnit( quint64 value, int post=1 )
         return i18n("%1 KB", KGlobal::locale()->formatNumber(value / 1024.0, post));
 }
 
-static QString htmlQuote(const QString& _s)
+static QString htmlQuote(const QVariant& _s)
 {
-    QString s(_s);
+    QString s(_s.toString());
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
 }
 
@@ -232,14 +235,15 @@ void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
         sysInfo += "<table>";
         sysInfo += "<tr><td>" + i18n( "Processor (CPU):" ) + "</td><td>" + htmlQuote(m_info[CPU_MODEL]) + "</td></tr>";
         sysInfo += "<tr><td>" + i18n( "Speed:" ) + "</td><td>" +
-                   i18n( "%1 MHz" , KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toFloat(), 2 ) ) + "</td></tr>";
-        int core_num = m_info[CPU_CORES].toUInt() + 1;
+                   i18n( "%1 MHz" , KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toDouble(), 2 ) ) + "</td></tr>";
+
+        int core_num = m_info[CPU_CORES].toInt();
         if ( core_num > 1 )
             sysInfo += "<tr><td>" + i18n("Cores:") + QString("</td><td>%1</td></tr>").arg(core_num);
 
-        if (!m_info[CPU_TEMP].isEmpty())
+        if (!m_info[CPU_TEMP].isNull())
         {
-            sysInfo += "<tr><td>" + i18n("Temperature:") + QString("</td><td>%1</td></tr>").arg(m_info[CPU_TEMP]);
+            sysInfo += "<tr><td>" + i18n("Temperature:") + QString("</td><td>%1</td></tr>").arg(m_info[CPU_TEMP].toString());
         }
         sysInfo += "</table>";
     }
@@ -249,11 +253,11 @@ void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
     memoryInfo();
     sysInfo += "<h2 id=\"memory\">" + i18n( "Memory Information" ) + "</h2>";
     sysInfo += "<table>";
-    sysInfo += "<tr><td>" + i18n( "Total memory (RAM):" ) + "</td><td>" + m_info[MEM_TOTALRAM] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Free memory:" ) + "</td><td>" + m_info[MEM_FREERAM] + "</td></tr>";
+    sysInfo += "<tr><td>" + i18n( "Total memory (RAM):" ) + "</td><td>" + m_info[MEM_TOTALRAM].toString() + "</td></tr>";
+    sysInfo += "<tr><td>" + i18n( "Free memory:" ) + "</td><td>" + m_info[MEM_FREERAM].toString() + "</td></tr>";
     dummy = i18n( "Used Memory" );
-    dummy += "<tr><td>" + i18n( "Total swap:" ) + "</td><td>" + m_info[MEM_TOTALSWAP] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Free swap:" ) + "</td><td>" + m_info[MEM_FREESWAP] + "</td></tr>";
+    dummy += "<tr><td>" + i18n( "Total swap:" ) + "</td><td>" + m_info[MEM_TOTALSWAP].toString() + "</td></tr>";
+    sysInfo += "<tr><td>" + i18n( "Free swap:" ) + "</td><td>" + m_info[MEM_FREESWAP].toString() + "</td></tr>";
     sysInfo += "</table>";
 
     sysInfo += "</div>";
@@ -340,22 +344,23 @@ void kio_sysinfoProtocol::cpuInfo()
     if ( speed.endsWith( "MHz", Qt::CaseInsensitive ) )
         speed = speed.left( speed.length() - 3 );
 
-    m_info[CPU_SPEED] = speed;
-    m_info[CPU_CORES] = readFromFile( "/proc/cpuinfo", "processor", ":", true );
+    m_info[CPU_SPEED] = speed.toFloat();
 
     const char* const names[] = { "THM0", "THRM", "THM" };
     for ( unsigned i = 0; i < sizeof(names)/sizeof(*names); ++i )
     {
         m_info[CPU_TEMP] = readFromFile(QString("/proc/acpi/thermal_zone/%1/temperature").arg(names[i]), "temperature", ":");
-        m_info[CPU_TEMP] = m_info[CPU_TEMP].trimmed();
-        m_info[CPU_TEMP].replace(" C",QString::fromUtf8("°C"));
-        if (!m_info[CPU_TEMP].isEmpty())
+        m_info[CPU_TEMP] = m_info[CPU_TEMP].toString().trimmed();
+        m_info[CPU_TEMP] = m_info[CPU_TEMP].toString().replace(" C",QString::fromUtf8("°C"));
+        if (!m_info[CPU_TEMP].isNull())
             break;
     }
 
-    m_info[CPU_MODEL] = readFromFile( "/proc/cpuinfo", "model name", ":" );
-    if ( m_info[CPU_MODEL].isNull() ) // PPC?
-         m_info[CPU_MODEL] = readFromFile( "/proc/cpuinfo", "cpu", ":" );
+    QList<Solid::Device> list = Solid::Device::listFromType(Solid::DeviceInterface::Processor, QString());
+    Solid::Device device = list[0];
+    m_info[CPU_CORES] = list.size();
+    m_info[CPU_MODEL] = device.product();
+
 }
 
 QString kio_sysinfoProtocol::diskInfo()
@@ -619,12 +624,8 @@ void kio_sysinfoProtocol::osInfo()
 
     m_info[ OS_USER ] = KUser().loginName();
 
-#ifdef WITH_FEDORA
-    m_info[ OS_SYSTEM ] = readFromFile( "/etc/fedora-release" );
-#else
-    m_info[ OS_SYSTEM ] = readFromFile( "/etc/SuSE-release" );
-#endif
-    m_info[ OS_SYSTEM ].replace("X86-64", "x86_64");
+    m_info[ OS_SYSTEM ] = readFromFile( "/etc/pardus-release" );
+    m_info[ OS_SYSTEM ].toString().replace("X86-64", "x86_64");
 }
 
 extern "C" int KDE_EXPORT kdemain(int argc, char **argv)
