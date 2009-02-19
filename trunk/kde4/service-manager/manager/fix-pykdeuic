@@ -1,0 +1,23 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import sys
+from PyKDE4 import kdeui, kdecore
+
+if len(sys.argv) == 1:
+    print "Usage :\n  $ %s broken_ui_file_name " % sys.argv[0]
+    sys.exit()
+
+import_tmp = "from %s import %s"
+broken = file(sys.argv[1],"r").read()
+knownwidgets = {'kdeui':dir(kdeui),'kdecore':dir(kdecore)}
+for lib in knownwidgets.keys():
+    for widget in knownwidgets[lib]:
+        if not widget.startswith("_") and not widget=="i18n":
+            if not broken.find(widget) == -1:
+                print "Found widget %s" % widget
+                broken = broken.replace(import_tmp % (widget.lower(), widget), '')
+                broken = broken.replace(widget, '.'.join([lib, widget]))
+                print "Fixed issues about %s" % widget
+
+file(sys.argv[1],"w").write(broken)
