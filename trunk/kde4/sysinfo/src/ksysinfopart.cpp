@@ -37,6 +37,15 @@
 #include <qcursor.h>
 #include <kio/netaccess.h>
 #include <kfileitem.h>
+#include <solid/networking.h>
+#include <solid/device.h>
+#include <solid/storageaccess.h>
+#include <solid/storagevolume.h>
+#include <solid/block.h>
+#include <solid/devicenotifier.h>
+#include <solid/deviceinterface.h>
+#include <solid/processor.h>
+
 
 #include <assert.h>
 
@@ -95,9 +104,10 @@ KSysinfoPart::KSysinfoPart( QWidget * parent )
    setPluginsEnabled(false);
    setMetaRefreshEnabled(false);
 
-#ifdef PORTED
-   connectDCOPSignal("kded", "networkstatus", "statusChange(QString,int)", "rescan()", false);
-#endif
+   connect(Solid::DeviceNotifier::instance(), SIGNAL(deviceAdded(const QString &)),
+            this, SLOT(rescan()));
+   connect(Solid::DeviceNotifier::instance(), SIGNAL(deviceRemoved(const QString &)),
+            this, SLOT(rescan()));
    installEventFilter( this );
 }
 

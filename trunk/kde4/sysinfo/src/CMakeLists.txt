@@ -17,7 +17,7 @@ set(libksysinfopart_SRCS
 )
 
 kde4_add_plugin(libksysinfopart ${libksysinfopart_SRCS})
-target_link_libraries(libksysinfopart ${KDE4_KHTML_LIBS} ${KDE4_KPART_LIBS} )
+target_link_libraries(libksysinfopart ${KDE4_KHTML_LIBS} ${KDE4_KPART_LIBS} ${KDE4_SOLID_LIBS})
 install(TARGETS libksysinfopart DESTINATION ${PLUGIN_INSTALL_DIR})
 
 install( FILES sysinfo.protocol ksysinfopart.desktop DESTINATION  ${SERVICES_INSTALL_DIR} )
