@@ -16,7 +16,7 @@ import shutil
 from distutils.core import Extension
 import kdedistutils
 
-version = '0.3.7'
+version = '0.4'
 
 distfiles = """
     AUTHORS
