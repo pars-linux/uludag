@@ -17,47 +17,33 @@
   #
   # Contributor(s): Dave Miller <justdave@bugzilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 [%
-   title = "$terms.Bug Fields"
-   desc = "Choose fields you want to display"
+   title = "$terms.Bug Alanları"
+   desc = "Görüntülenmesini istediğiniz alanları seçin"
 %]
 
 [% param_descs = {
-  useclassification => "If this is on, $terms.Bugzilla will associate each product with a " _
-                       "specific classification. But you must have 'editclassification' " _
-                       "permissions enabled in order to edit classifications.",
+  useclassification => "Eğer bu açıksa, $terms.Bugzilla her ürünü belirli bir sınıf ile ilişkilendirir. Ama sınıfları düzenleyebilmek için 'sınıfları düzenle' izinlerinin açık olması gerekir",
 
-  showallproducts => "If this is on and useclassification is set, $terms.Bugzilla will add a " _
-                     "'All' link in the 'New $terms.Bug' page to list all available products.",
+  showallproducts => "Eğer bu ve 'sınıflandırma kullan' açıksa, $terms.Bugzilla 'Yeni $terms.Bug' sayfasında tüm kullanılabilir ürünleri listelemek için bir 'Tümü' bağlantısı ekler.",
 
-  usetargetmilestone => "Do you wish to use the Target Milestone field?",
+  usetargetmilestone => "Hedef Aşama alanını kullanmak istiyor musunuz?",
 
-  useqacontact => "Do you wish to use the QA Contact field?",
+  useqacontact => "Kalite Kontrol Kişisi alanını kullanmak istiyor musunuz?",
 
-  usestatuswhiteboard => "Do you wish to use the Status Whiteboard field?",
+  usestatuswhiteboard => "Durum Tahtası alanını kullanmak istiyor musunuz?",
 
-  usevotes => "Do you wish to allow users to vote for ${terms.bugs}? Note that in order " _
-              "for this to be effective, you will have to change the maximum " _
-              "votes allowed in a product to be non-zero in " _
-              "<a href=\"editproducts.cgi\">the product edit page</a>.",
+  usevotes => "Kullanıcıların ${terms.bugsLoc} oy kullanmasına izin vermek istiyor musunuz? Bu seçeneğin etki sahibi olması için, <a href=\"editproducts.cgi\">ürün düzenleme sayfası</a>nda bir üründe kullanılmasına izin verilen en fazla oy sayısının sıfır dışında bir değer olması gerekir.",
 
-  usebugaliases => "Do you wish to use $terms.bug aliases, which allow you to assign " _
-                   "$terms.bugs an easy-to-remember name by which you can refer to them?",
+  usebugaliases => "$terms.BugsDat hatırlaması kolay bir isim atayabilmek istiyor musunuz?",
 
-  defaultpriority => "This is the priority that newly entered $terms.bugs are set to.",
+  defaultpriority => "Bu, yeni girilen $terms.bugsGen öntanımlı önceliğidir.",
 
-  defaultseverity => "This is the severity that newly entered $terms.bugs are set to.",
+  defaultseverity => "Bu, yeni girilen $terms.bugsGen öntanımlı önem derecesidir.",
 
-  defaultplatform => "This is the platform that is preselected on the $terms.bug " _
-                     "entry form.<br> " _
-                     "You can leave this empty: " _
-                     "$terms.Bugzilla will then use the platform that the browser " _
-                     "reports to be running on as the default.",
+  defaultplatform => "Bu, $terms.bug girme sayfasında öntanımlı olarak seçilen platformdur.<br> Bunu boş bırakabilirsiniz: Bu durumda $terms.Bugzilla istemci web tarayıcısının raporladığı platformu kullanır.",
 
-  defaultopsys => "This is the operating system that is preselected on the $terms.bug " _
-                  "entry form.<br> " _
-                  "You can leave this empty: " _
-                  "$terms.Bugzilla will then use the operating system that the browser " _
-                  "reports to be running on as the default." }
+  defaultopsys => "Bu, $terms.bug girme sayfasında öntanımlı olarak seçilen işletim sistemidir.<br> Bunu boş bırakabilirsiniz: Bu durumda $terms.Bugzilla istemci web tarayıcısının raporladığı işletim sistemini kullanır." }
 %]
