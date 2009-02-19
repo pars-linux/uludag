@@ -74,7 +74,6 @@ div.footer {
     color: #AAA;
     text-align: center;
     font-size: 75%;
-    /*background: url("foot.png") repeat-x;*/
     height:20px;
     padding-top:10px;
     padding-bottom:0px;
@@ -274,6 +273,13 @@ span.linkdescr {
     font-style: italic;
     padding-top: 5px;
     font-size: 90%;
+}
+
+span.bulletlinkdescr {
+    font-style: italic;
+    padding-top: 5px;
+    font-size: 90%;
+    margin-left: 25px;
 }
 
 /* :::: INDEX STYLES :::: */
