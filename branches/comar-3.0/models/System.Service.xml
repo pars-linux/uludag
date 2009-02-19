@@ -16,6 +16,9 @@
             <arg name="state" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
+        <method name="registerState" access_label="set">
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
         <method name="info" action_id="">
             <arg name="type" type="s" direction="out"/>
             <arg name="description" type="s" direction="out"/>
