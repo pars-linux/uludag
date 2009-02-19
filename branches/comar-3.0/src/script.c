@@ -42,6 +42,7 @@ PyObject *py_core;
 PyObject *PyExc_COMAR_Internal;
 PyObject *PyExc_COMAR_Invalid;
 PyObject *PyExc_COMAR_Script;
+PyObject *PyExc_COMAR_Missing;
 PyObject *PyExc_DBus;
 PyObject *PyExc_PolicyKit;
 
@@ -55,6 +56,7 @@ script_init()
     PyExc_COMAR_Internal = PyErr_NewException("Comar.Internal", NULL, NULL);
     PyExc_COMAR_Invalid = PyErr_NewException("Comar.Invalid", NULL, NULL);
     PyExc_COMAR_Script = PyErr_NewException("Comar.Script", NULL, NULL);
+    PyExc_COMAR_Missing = PyErr_NewException("Comar.Missing", NULL, NULL);
     PyExc_DBus = PyErr_NewException("Comar.DBus", NULL, NULL);
     PyExc_PolicyKit = PyErr_NewException("Comar.PolicyKit", NULL, NULL);
 
@@ -623,7 +625,7 @@ py_execute(const char *app, const char *model, const char *method, PyObject *py_
 
     // Finally, run method
     if (!py_func) {
-        PyErr_Format(PyExc_COMAR_Script, "Method '%s' is not defined in script", method);
+        PyErr_Format(PyExc_COMAR_Missing, "Method '%s' is not defined in script", method);
         return -2;
     }
     else if (!PyCallable_Check(py_func)) {

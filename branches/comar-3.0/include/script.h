@@ -34,6 +34,7 @@ extern PyObject *py_core;
 extern PyObject *PyExc_COMAR_Internal;
 extern PyObject *PyExc_COMAR_Invalid;
 extern PyObject *PyExc_COMAR_Script;
+extern PyObject *PyExc_COMAR_Missing;
 extern PyObject *PyExc_DBus;
 extern PyObject *PyExc_PolicyKit;
 
