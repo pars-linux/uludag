@@ -19,6 +19,7 @@
   #                 Joel Peshkin <bugreport@peshkin.net>
   #                 Jacob Steenhagen <jake@bugzilla.org>
   #                 Vlad Dascalu <jocuri@softhome.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -32,8 +33,8 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Edit Groups"
-  subheader = "This lets you edit the groups available to put users in."
+  title = "Grupla Düzenle"
+  subheader = "Burada kullanıcıları yerleştirebileceğiniz gruplarda değişiklik yapabilirsiniz."
   doc_section = "groups.html"
 %]
 
@@ -42,26 +43,26 @@
 
 [% columns =
   [{name               => 'name'
-    heading            => 'Name'
+    heading            => 'İsim'
     contentlink        => edit_contentlink
    }
    {name               => 'description'
-    heading            => 'Description'
+    heading            => 'Açıklama'
     allow_html_content => 1
    }
    {name               => 'userregexp'
-    heading            => 'User RegExp'
+    heading            => 'Kullanıcı Düzenli İfadesi'
    }
    {name               => 'is_active_bug_group'
-    heading            => "Use For $terms.Bugs"
+    heading            => "$terms.BugsLoc Kullan"
     align              => 'center'
    }
    {name               => 'type'
-    heading            => 'Type'
+    heading            => 'Tür'
     align              => 'center'
    }
    {name               => 'action'
-    heading            => 'Action'
+    heading            => 'Eylem'
    }
   ]
 %]
@@ -88,31 +89,31 @@
      match_value => Param("chartgroup")
      match_field => 'name'
      override_content => 1
-     content => "(used as the 'chartgroup')"
+     content => "('çizelge grubu' olarak kullanılır)"
    },
    {
      match_value => Param("insidergroup")
      match_field => 'name'
      override_content => 1
-     content => "(used as the 'insidergroup')"
+     content => "('iç grup' olarak kullanılır)"
    },
    {
      match_value => Param("timetrackinggroup")
      match_field => 'name'
      override_content => 1
-     content => "(used as the 'timetrackinggroup')"
+     content => "('zaman takip grubu' olarak kullanılır)"
    },
    {
      match_value => Param("querysharegroup")
      match_field => 'name'
      override_content => 1
-     content => "(used as the 'querysharegroup')"
+     content => "('sorgu paylaşım grubu' olarak kullanılır)"
    },
    {
      match_value => "1"
      match_field => 'isbuggroup'
      override_content => 1
-     content => "Delete"
+     content => "Sil"
      override_contentlink => 1
      contentlink => del_contentlink
    }]
@@ -136,41 +137,26 @@
   overrides = overrides
 %]
 
-<p><a href="editgroups.cgi?action=add">Add Group</a></p>
+<p><a href="editgroups.cgi?action=add">Grup Ekle</a></p>
 
 <p>
-  <b>Name</b> is what is used with the B<!-- blah -->ugzilla->user->in_group()
-function in any customized cgi files you write that use a given group.
-It can also be used by people submitting [% terms.bugs %] by email to
-limit [% terms.abug %] to a certain set of groups.
+  <b>İsim</b> belirli bir grubu kullanan özelleştirilmiş cgi dosyaları yazdığınızda B<!-- blah -->ugzilla->user->in_group() ile kullanılır. Ayrıca eposta yoluyla [% terms.bugs %] gönderen kişiler tarafından [% terms.abugAcc %] belirli bir grup kümesiyle sınırlandırmak için de kullanılabilir.
 </p>
 
 <p>
-  <b>Description</b> is what will be shown in the [% terms.bug %] reports
-to members of the group where they can choose whether the [% terms.bug %]
-will be restricted to others in the same group.
+  <b>Açıklama</b> üyelerin [% terms.bugGen%] aynı gruptaki diğer kullanıcılarla sınırlandırıp sınırlandırılmayacağını belirleyebildikleri [% terms.bug %] raporlarında grup üyelerine gösterilir.
 </p>
 
 <p>
-  <b>User RegExp</b> is optional, and if filled in, will automatically
-grant membership to this group to anyone with an email address
-that matches this perl regular expression. Do not forget
-the trailing '$'.  Example '@mycompany\.com$'
+  <b>Kullanıcı Düzenli İfadesi</b> tercihe bağlıdır. Eğer yazılmışsa, o Perl düzenli ifadesine uyan eposta adresine sahip kullanıcılar otomatik olarak bu grubun üyesi yapılır Sonraki '$' işaretini unutmayın (örneğin '@pardus\.org\.tr$').
 </p>
 
 <p>
-  The <b>Use For [% terms.Bugs %]</b> flag determines whether or not
-the group is eligible to be used for [% terms.bugs %]. If you remove
-this flag, it will no longer be possible for users to add [% terms.bugs %]
-to this group, although [% terms.bugs %] already in the group will remain
-in the group. Doing so is a much less drastic way to stop a group
-from growing than deleting the group as well as a way to maintain
-lists of users without cluttering the lists of groups used
-for [% terms.bug %] restrictions.
+  <b>[% terms.BugsLoc %] Kullan</b> bayrağı grubunun [% terms.bugsLoc %] kullanılabilip kullanılamayacağını belirler. Eğer bu bayrağı işaretlemezseniz, kullanıcılar bu gruba [% terms.bug %] ekleyemez, fakat önceden bu gruba yerleştirilmiş [% terms.bugs %] grupta kalır. Bu işlem grubun büyümesini engellemek için grubu silmekten çok daha kolaydır ve [% terms.bug %] kısıtlamalarında kullanılan grupların listesini bozmadan listeleri yönetme noktasında faydalıdır.
 </p>
 
 <p>
-  The <b>Type</b> field identifies system groups.
+  <b>Tür</b> alanı sistem gruplarını tanımlar.
 </p>
 
 [% PROCESS global/footer.html.tmpl %]
