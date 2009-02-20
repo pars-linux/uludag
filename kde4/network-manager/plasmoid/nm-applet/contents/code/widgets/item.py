@@ -48,7 +48,7 @@ class ConnectionItem(QWidget):
         elif state == "connecting":
             icon = QIcon(QPixmap(":/icons/working.png"))
             self.setText(self.name)
-        elif state == "down":
+        else:
             icon = QIcon(QPixmap(":/icons/network-%s.png" % self.package))
             self.setText(self.name)
         self.ui.button.setIcon(icon)
