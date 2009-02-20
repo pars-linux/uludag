@@ -15,7 +15,7 @@ install( FILES
 )
 
 install (FILES
-   my-computer.html
+   index.html
    style.css
    DESTINATION ${DATA_INSTALL_DIR}/sysinfo/about
 )

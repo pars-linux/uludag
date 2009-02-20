@@ -1,4 +1,5 @@
-add_subdirectory(about/pardus)
+#add_subdirectory(about/pardus)
+add_subdirectory(about/2009)
 
 set(kio_sysinfo_SRCS
    sysinfo.cpp
