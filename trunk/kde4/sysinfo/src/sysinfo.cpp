@@ -207,8 +207,7 @@ QString kio_sysinfoProtocol::finishStock()
 
 void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
 {
-    // mimeType( "application/x-sysinfo" );
-    mimeType( "text/html" );
+    mimeType( "application/x-sysinfo" );
 
     infoMessage( i18n( "Looking for hardware information..." ) );
 
@@ -230,25 +229,25 @@ void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
 
     // common folders
     dynamicInfo += startStock( i18n( "Common Folders" ) );
-    dynamicInfo += addToStock( "folder_home", i18n( "My Home Folder" ), QDir::homePath(), "file:" + QDir::homePath() );
-    dynamicInfo += addToStock( "folder_red", i18n( "Root Folder" ), QDir::rootPath(), "file:" + QDir::rootPath() );
-    dynamicInfo += addToStock( "network", i18n( "Network Folders" ), "remote:/" , "remote:/" );
+    dynamicInfo += addToStock( "folder-home", i18n( "My Home Folder" ), QDir::homePath(), "file:" + QDir::homePath() );
+    dynamicInfo += addToStock( "folder-red", i18n( "Root Folder" ), QDir::rootPath(), "file:" + QDir::rootPath() );
+    dynamicInfo += addToStock( "folder-remote", i18n( "Network Folders" ), "remote:/" , "remote:/" );
     dynamicInfo += finishStock();
 
     // net info
     QString state = netStatus();
     dynamicInfo += startStock( i18n( "Network" ) );
-    dynamicInfo += addToStock( "network", state);
+    dynamicInfo += addToStock( "applications-internet", state);
     dynamicInfo += finishStock();
 
     // memory info
     unsigned long int percent = memoryInfo();
 
     dynamicInfo += startStock( i18n( "Memory" ) );
-    dynamicInfo += addToStock( "memory",
+    dynamicInfo += addToStock( "media-flash",
                                 i18n( "%1 free of %2" ).arg( m_info[MEM_FREERAM].toString() ).arg( m_info[MEM_TOTALRAM].toString() ),
                                 m_info[MEM_USAGE].toString());
-    dynamicInfo += addProgress( "memory", percent);
+    dynamicInfo += addProgress( "media-flash", percent);
     dynamicInfo += finishStock();
 
     content = content.arg( dynamicInfo ); // put the dynamicInfo text into the dynamic left box
@@ -263,10 +262,10 @@ void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
     // Os info
     osInfo();
     staticInfo += startStock( i18n( "Operating System" ) );
-    staticInfo += addToStock( "system", m_info[OS_SYSNAME].toString() + 
+    staticInfo += addToStock( "computer", m_info[OS_SYSNAME].toString() + 
                               " <b>" + m_info[OS_RELEASE].toString() + "</b>", 
                               m_info[OS_USER].toString() + "@" + m_info[OS_HOSTNAME].toString() );
-    staticInfo += addToStock( "system", i18n( "Kde <b>%1</b> on <b>%2</b>" ).arg(KDE::versionString()).arg( m_info[OS_SYSTEM].toString() ));
+    staticInfo += addToStock( "computer", i18n( "Kde <b>%1</b> on <b>%2</b>" ).arg(KDE::versionString()).arg( m_info[OS_SYSTEM].toString() ));
     staticInfo += finishStock();
 
     // update content..
@@ -278,8 +277,8 @@ void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
     if ( !m_info[CPU_MODEL].isNull() )
     {
         staticInfo += startStock( i18n( "Processor" ) );
-        staticInfo += addToStock( "kcmprocessor", m_info[CPU_MODEL].toString());
-        staticInfo += addToStock( "kcmprocessor", i18n( "%1 MHz" ).arg( 
+        staticInfo += addToStock( "cpu", m_info[CPU_MODEL].toString());
+        staticInfo += addToStock( "cpu", i18n( "%1 MHz" ).arg( 
                     KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toDouble(), 2 )), m_info[CPU_CORES].toString() + i18n( " core" ));
         staticInfo += finishStock();
     }
@@ -292,9 +291,9 @@ void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
     if ( glInfo() )
     {
         staticInfo += startStock( i18n( "Display" ) );
-        staticInfo += addToStock( "krdc", formatStr(m_info[GFX_MODEL].toString()), formatStr(m_info[GFX_VENDOR].toString()) );
+        staticInfo += addToStock( "video-display", formatStr(m_info[GFX_MODEL].toString()), formatStr(m_info[GFX_VENDOR].toString()) );
         if (!m_info[GFX_DRIVER].isNull())
-            staticInfo += addToStock( "x", i18n( "Driver: " ) + m_info[GFX_DRIVER].toString() );
+            staticInfo += addToStock( "xorg", i18n( "Driver: " ) + m_info[GFX_DRIVER].toString() );
         staticInfo += finishStock();
     }
 
@@ -451,7 +450,7 @@ QString kio_sysinfoProtocol::diskInfo()
                                 arg( tooltip+" "+di.deviceNode ).
                                 arg( label ).
                                 arg( sizeStatus ).
-                                arg( KStandardDirs::locate( "data", "sysinfo/themes/2008/images/progress.png" ) ).
+                                arg( KStandardDirs::locate( "data", "sysinfo/about/images/progress.png" ) ).
                                 arg( percent );
         }
     }
