@@ -99,7 +99,7 @@ KSysinfoPart::KSysinfoPart( QWidget * parent )
    connect(rescanTimer, SIGNAL(timeout()), SLOT(rescan()));
    rescanTimer->setSingleShot(true);
    rescanTimer->start(20000);
-   setJScriptEnabled(false);
+   setJScriptEnabled(true);
    setJavaEnabled(false);
    setPluginsEnabled(false);
    setMetaRefreshEnabled(false);
