@@ -86,6 +86,14 @@ static QString formattedUnit( quint64 value, int post=1 )
         return i18n("%1 KB", KGlobal::locale()->formatNumber(value / 1024.0, post));
 }
 
+static QString formatStr( QString st ) 
+{
+    if ( st == "" )
+        return i18n("Not Available");
+    return st;
+}
+
+
 static QString htmlQuote(const QVariant& _s)
 {
     QString s(_s.toString());
@@ -151,122 +159,154 @@ kio_sysinfoProtocol::~kio_sysinfoProtocol()
 {
 }
 
+QString kio_sysinfoProtocol::startStock( const QString title )
+{
+    QString templator = QString ("<table class=\"stock\">"
+                                 "<tr>"
+                                 "     <th colspan=3><h2>%1</h2></th>"
+                                 "</tr>").arg(title);
+    return templator;
+}
+
+QString kio_sysinfoProtocol::addToStock( const QString _icon, const QString text, const QString details, const QString link )
+{
+    QString iconpath = icon(_icon, 22, true);
+    QString templator;
+    QString temp = "";
+
+    if ( link != "" )
+        temp = QString(" onClick=\"location.href='%1'\" ").arg(link);
+
+    templator += QString ("<tr class=\"info\" %1>").arg(temp);
+    templator += QString ("<td><img src=\"%1\"></td><td>%2").arg(iconpath).arg(text);
+
+    if ( details != "" )
+        templator += QString("<span class=\"detail\">[ %1 ]</span>").arg(details);
+
+    templator += "</td><td></td></tr>";
+    return templator;
+}
+
+QString kio_sysinfoProtocol::addProgress( const QString _icon, const unsigned long long size )
+{
+    QString iconpath = icon(_icon, 22, true);
+    QString progress = "file:" + KStandardDirs::locate( "data", "sysinfo/about/images/progress.png" );
+    QString templator;
+
+    templator += QString ("<tr class=\"progress\">");
+    templator += QString ("<td><img src=\"%1\"></td>").arg(iconpath);
+    templator += QString ("<td><img src=\"%1\" width=\"%2%\"></td><td></td></tr>").
+                         arg(progress).arg(size);
+    return templator;
+}
+
+QString kio_sysinfoProtocol::finishStock()
+{
+    return QString ("</table>");
+}
+
 void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
 {
- //   mimeType( "application/x-sysinfo" );
+    // mimeType( "application/x-sysinfo" );
     mimeType( "text/html" );
 
-    // CPU info
-    infoMessage( i18n( "Looking for CPU information..." ) );
-    cpuInfo();
+    infoMessage( i18n( "Looking for hardware information..." ) );
 
     // header
-    QString location = KStandardDirs::locate( "data", "sysinfo/about/my-computer.html" );
+    QString location = KStandardDirs::locate( "data", "sysinfo/about/index.html" );
     QFile f( location );
     f.open( QIODevice::ReadOnly );
     QTextStream t( &f );
-    QString content = t.readAll();
-    content = content.arg( i18n( "My Computer" ),
-                           htmlQuote("file:" + KStandardDirs::locate( "data", "sysinfo/about/style.css" )),
-                           i18n( "My Computer"),
-                           i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ));
 
-    QString sysInfo = "<div id=\"column2\">"; // table with 2 cols
+    QString content = t.readAll();
+    content = content.arg( i18n( "My Computer" ) ); // <title>
+    content = content.arg( "file:" + KStandardDirs::locate( "data", "sysinfo/about/stil.css" ) );
+    content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
+
+    QString dynamicInfo, staticInfo;
     QString dummy;
 
-    // disk info
-    infoMessage( i18n( "Looking for disk information..." ) );
-    sysInfo += "<h2 id=\"hdds\">" + i18n( "Disk Information" ) + "</h2>";
-    sysInfo += diskInfo();
+    // Dynamic Info
 
+    // common folders
+    dynamicInfo += startStock( i18n( "Common Folders" ) );
+    dynamicInfo += addToStock( "folder_home", i18n( "My Home Folder" ), QDir::homePath(), "file:" + QDir::homePath() );
+    dynamicInfo += addToStock( "folder_red", i18n( "Root Folder" ), QDir::rootPath(), "file:" + QDir::rootPath() );
+    dynamicInfo += addToStock( "network", i18n( "Network Folders" ), "remote:/" , "remote:/" );
+    dynamicInfo += finishStock();
+
+    // net info
+    QString state = netStatus();
+    dynamicInfo += startStock( i18n( "Network" ) );
+    dynamicInfo += addToStock( "network", state);
+    dynamicInfo += finishStock();
+
+    // memory info
+    unsigned long int percent = memoryInfo();
+
+    dynamicInfo += startStock( i18n( "Memory" ) );
+    dynamicInfo += addToStock( "memory",
+                                i18n( "%1 free of %2" ).arg( m_info[MEM_FREERAM].toString() ).arg( m_info[MEM_TOTALRAM].toString() ),
+                                m_info[MEM_USAGE].toString());
+    dynamicInfo += addProgress( "memory", percent);
+    dynamicInfo += finishStock();
+
+    content = content.arg( dynamicInfo ); // put the dynamicInfo text into the dynamic left box
+
+    // Disk Info
+
+    content = content.arg( i18n( "Disks" ) );
+    content = content.arg(diskInfo()); // put the discInfo text into the disk right box
+
+    // Static Info
+
+    // Os info
     osInfo();
-    sysInfo += "<h2 id=\"sysinfo\">" +i18n( "OS Information" ) + "</h2>";
-    sysInfo += "<table>";
-    sysInfo += "<tr><td>" + i18n( "OS:" ) + "</td><td>" + htmlQuote(m_info[OS_SYSNAME]) + " " +
-               htmlQuote(m_info[OS_RELEASE]) + " " + htmlQuote(m_info[OS_MACHINE]) + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Current user:" ) + "</td><td>" + htmlQuote(m_info[OS_USER]) + "@"
-               + htmlQuote(m_info[OS_HOSTNAME]) + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "System:" ) +  "</td><td>" + htmlQuote(m_info[OS_SYSTEM]) + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "KDE:" ) + "</td><td>" + KDE::versionString() + "</td></tr>";
-    sysInfo += "</table>";
+    staticInfo += startStock( i18n( "Operating System" ) );
+    staticInfo += addToStock( "system", m_info[OS_SYSNAME].toString() + 
+                              " <b>" + m_info[OS_RELEASE].toString() + "</b>", 
+                              m_info[OS_USER].toString() + "@" + m_info[OS_HOSTNAME].toString() );
+    staticInfo += addToStock( "system", i18n( "Kde <b>%1</b> on <b>%2</b>" ).arg(KDE::versionString()).arg( m_info[OS_SYSTEM].toString() ));
+    staticInfo += finishStock();
+
+    // update content..
+    content = content.arg( staticInfo );
+    staticInfo = "";
+
+    // CPU info
+    cpuInfo();
+    if ( !m_info[CPU_MODEL].isNull() )
+    {
+        staticInfo += startStock( i18n( "Processor" ) );
+        staticInfo += addToStock( "kcmprocessor", m_info[CPU_MODEL].toString());
+        staticInfo += addToStock( "kcmprocessor", i18n( "%1 MHz" ).arg( 
+                    KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toDouble(), 2 )), m_info[CPU_CORES].toString() + i18n( " core" ));
+        staticInfo += finishStock();
+    }
+
+    // update content..
+    content = content.arg( staticInfo );
+    staticInfo = "";
 
     // OpenGL info
     if ( glInfo() )
     {
-        sysInfo += "<h2 id=\"display\">" + i18n( "Display Info" ) + "</h2>";
-        sysInfo += "<table>";
-        sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + htmlQuote(m_info[GFX_VENDOR]) +  "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + htmlQuote(m_info[GFX_MODEL]) + "</td></tr>";
+        staticInfo += startStock( i18n( "Display" ) );
+        staticInfo += addToStock( "krdc", formatStr(m_info[GFX_MODEL].toString()), formatStr(m_info[GFX_VENDOR].toString()) );
         if (!m_info[GFX_DRIVER].isNull())
-            sysInfo += "<tr><td>" + i18n( "Driver:" ) + "</td><td>" + htmlQuote(m_info[GFX_DRIVER]) + "</td></tr>";
-        sysInfo += "</table>";
+            staticInfo += addToStock( "x", i18n( "Driver: " ) + m_info[GFX_DRIVER].toString() );
+        staticInfo += finishStock();
     }
 
-    sysInfo += "</div><div id=\"column1\">"; // second column
-
-    // OS info
-    infoMessage( i18n( "Getting OS information...." ) );
-
-    // common folders
-    sysInfo += "<h2 id=\"dirs\">" + i18n( "Common Folders" ) + "</h2>"; sysInfo += "<ul>";
-    if ( KStandardDirs::exists( KGlobalSettings::documentPath() + "/" ) )
-        sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( htmlQuote(KGlobalSettings::documentPath()) )
-                   + i18n( "My Documents" ) + "</a></li>";
-    sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( htmlQuote(QDir::homePath()) ) + i18n( "My Home Folder" ) + "</a></li>";
-    sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( htmlQuote(QDir::rootPath()) ) + i18n( "Root Folder" ) + "</a></li>";
-    sysInfo += "<li><a href=\"remote:/\">" + i18n( "Network Folders" ) + "</a></li>";
-    sysInfo += "</ul>";
-
-    // net info
-    infoMessage( i18n( "Looking up network status..." ) );
-    QString state = netStatus();
-    if ( !state.isEmpty() ) // assume no network manager / networkstatus
-    {
-        sysInfo += "<h2 id=\"net\">" + i18n( "Network Status" ) + "</h2>";
-        sysInfo += "<ul>";
-        sysInfo += "<li>" + state + "</li>";
-        sysInfo += "</ul>";
-    }
-
-    // more CPU info
-    if ( !m_info[CPU_MODEL].isNull() )
-    {
-        sysInfo += "<h2 id=\"cpu\">" + i18n( "CPU Information" ) + "</h2>";
-        sysInfo += "<table>";
-        sysInfo += "<tr><td>" + i18n( "Processor (CPU):" ) + "</td><td>" + htmlQuote(m_info[CPU_MODEL]) + "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Speed:" ) + "</td><td>" +
-                   i18n( "%1 MHz" , KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toDouble(), 2 ) ) + "</td></tr>";
-
-        int core_num = m_info[CPU_CORES].toInt();
-        if ( core_num > 1 )
-            sysInfo += "<tr><td>" + i18n("Cores:") + QString("</td><td>%1</td></tr>").arg(core_num);
-
-        if (!m_info[CPU_TEMP].isNull())
-        {
-            sysInfo += "<tr><td>" + i18n("Temperature:") + QString("</td><td>%1</td></tr>").arg(m_info[CPU_TEMP].toString());
-        }
-        sysInfo += "</table>";
-    }
-
-    // memory info
-    infoMessage( i18n( "Looking for memory information..." ) );
-    memoryInfo();
-    sysInfo += "<h2 id=\"memory\">" + i18n( "Memory Information" ) + "</h2>";
-    sysInfo += "<table>";
-    sysInfo += "<tr><td>" + i18n( "Total memory (RAM):" ) + "</td><td>" + m_info[MEM_TOTALRAM].toString() + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Free memory:" ) + "</td><td>" + m_info[MEM_FREERAM].toString() + "</td></tr>";
-    dummy = i18n( "Used Memory" );
-    dummy += "<tr><td>" + i18n( "Total swap:" ) + "</td><td>" + m_info[MEM_TOTALSWAP].toString() + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Free swap:" ) + "</td><td>" + m_info[MEM_FREESWAP].toString() + "</td></tr>";
-    sysInfo += "</table>";
-
-    sysInfo += "</div>";
+    // update content
+    content = content.arg( staticInfo );
+    staticInfo = "";
 
     // Send the data
-    content = content.arg( sysInfo ); // put the sysinfo text into the main box
     data( content.toUtf8() );
-    data( QByteArray() ); // empty array means we're done sending the data
+    data( QByteArray() );
     finished();
+
 }
 
 void kio_sysinfoProtocol::mimetype( const KUrl & /*url*/ )
@@ -308,15 +348,20 @@ static quint64 calculateFreeRam()
     return MemFree;
 }
 
-void kio_sysinfoProtocol::memoryInfo()
+unsigned long int kio_sysinfoProtocol::memoryInfo()
 {
     struct sysinfo info;
     int retval = sysinfo( &info );
-
+    unsigned long int usage, percent, peer;
     if ( retval !=-1 )
     {
         quint64 mem_unit = info.mem_unit;
 
+        usage = ( info.totalram - info.freeram ) * mem_unit;
+        peer = (info.totalram * mem_unit) / 100;
+        peer == 0 ? percent = 0 : percent = usage / peer;
+
+        m_info[MEM_USAGE] = formattedUnit( usage );
         m_info[MEM_TOTALRAM] = formattedUnit( quint64(info.totalram) * mem_unit );
         quint64 totalFree = calculateFreeRam() * 1024;
         kDebug(1242) << "total " << totalFree << " free " << info.freeram << " unit " << mem_unit;
@@ -331,7 +376,9 @@ void kio_sysinfoProtocol::memoryInfo()
         m_info[MEM_FREESWAP] = formattedUnit( quint64(info.freeswap) * mem_unit );
 
         m_info[SYSTEM_UPTIME] = KIO::convertSeconds( info.uptime );
+        return percent;
     }
+    return 0;
 }
 
 void kio_sysinfoProtocol::cpuInfo()
@@ -356,6 +403,7 @@ void kio_sysinfoProtocol::cpuInfo()
             break;
     }
 
+    // Use Solid to get Processor Information
     QList<Solid::Device> list = Solid::Device::listFromType(Solid::DeviceInterface::Processor, QString());
     Solid::Device device = list[0];
     m_info[CPU_CORES] = list.size();
@@ -365,51 +413,50 @@ void kio_sysinfoProtocol::cpuInfo()
 
 QString kio_sysinfoProtocol::diskInfo()
 {
-    QString result = "<table><tr><th>" + i18n( "Device" ) + "</th><th>" + i18n( "Filesystem" ) + "</th><th>" +
-                     i18n( "Total space" ) + "</th><th>" + i18n( "Available space" ) + "</th></tr>";
-
+    QString result;
     if ( fillMediaDevices() )
     {
         for ( QList<DiskInfo>::ConstIterator it = m_devices.constBegin(); it != m_devices.constEnd(); ++it )
         {
-            QString tooltip = i18n("Press the right mouse button for more options like Mount or Eject");
-
             DiskInfo di = ( *it );
-            unsigned int percent = 0;
-            quint64 usage = di.total - di.avail;
-            if (di.total)
-                percent = usage / ( di.total / 100);
+            unsigned long long usage,percent,peer;
+            QString label = di.label;
+            QString mountState = di.mounted ? i18n( "Mounted on %1" ).arg(di.mountPoint) : i18n( "Not mounted" );
+            QString tooltip = di.model;
+            usage = di.total - di.avail;
+            peer = di.total / 100;
+            peer == 0 ? percent = 0 : percent = usage / peer;
+            QString sizeStatus = i18n( "%1 free of %2" ).arg( formattedUnit( di.avail,0 ) ).arg( formattedUnit( di.total,0 ) );
 
-            QString media;
-            if (di.mounted)
-                media = "file://" + di.mountPoint;
+            result +=   QString("<tr class=\"media\">"
+                                "   <td>"
+                                "   <a href=\"media:/%1\" title=\"%2\">"
+                                "       <img src=\"%3\" width=\"48\" height=\"48\" />"
+                                "   </a></td>").
+                                arg( di.name ).
+                                arg( tooltip+" "+di.deviceNode ).
+                                arg( icon( di.iconName, 48, true) );
 
-            result += QString( "<tr><td>%1 <a href=\"%2\" title=\"%7\">%3</a></td><td>%4</td><td>%5</td><td>%6</td></tr>\n" ).
-                      arg( icon( di.iconName ) ).arg( htmlQuote(media) ).arg( htmlQuote(di.label) ).arg( di.fsType ).
-                      arg( di.total ? formattedUnit( di.total) : QString::null).
-                      arg( di.mounted ? formattedUnit( di.avail ) : QString::null).
-                      arg( htmlQuote( tooltip ) );
-            if (di.mounted)
-            {
-                QColor c;
-                c.setHsv(100-percent, 180, 230);
-                QString dp = formattedUnit(usage).replace(" ", "&nbsp;");
-                QString dpl, dpr;
-                if (percent >= 50)
-                    dpl = dp;
-                else
-                    dpr = dp;
-                result += QString("<tr><td colspan=\"4\" class=\"bar\" width=\"100%\">"
-                                  "<div><span class=\"filled\" style=\"text-align: right; width: %1%; height: 1em; background-color: %4\">"
-                                  "%2</span><span style=\"color: #000; text-align: left\">%3</span></div></td></tr>\n")
-                          .arg(percent).arg(dpl).arg(dpr).arg(c.name());
-            }
+            result +=   QString("   <td>"
+                                "       <span class=\"detail\">[ %1 ]<br><span style=\"float:right\">[ %2 ]</span></span>"
+                                "       <a href=\"media:/%3\" title=\"%4\">"
+                                "       %5<br><span class=\"mediaDf\">%6</span><br></a>"
+                                "       <img class=\"diskusage\" src=\"file:%7\" width=\"%8%\">"
+                                "   </td>"
+                                "   <td></td>"
+                                "</tr>").
+                                arg( mountState ).
+                                arg( di.fsType ).
+                                arg( di.name ).
+                                arg( tooltip+" "+di.deviceNode ).
+                                arg( label ).
+                                arg( sizeStatus ).
+                                arg( KStandardDirs::locate( "data", "sysinfo/themes/2008/images/progress.png" ) ).
+                                arg( percent );
         }
     }
-
-    result += "</table>";
-
     return result;
+
 }
 
 #define HAVE_GLXCHOOSEVISUAL
@@ -605,10 +652,12 @@ bool kio_sysinfoProtocol::glInfo()
     return false;
 }
 
-QString kio_sysinfoProtocol::icon( const QString & name, int size ) const
+QString kio_sysinfoProtocol::icon( const QString & name, int size, bool justPath) const
 {
     QString path = KIconLoader::global()->iconPath( name, -size );
-    return QString( "<img src=\"file:%1\" width=\"%2\" height=\"%3\" valign=\"bottom\"/>" )
+    if ( justPath == true )
+        return QString( "file:%1" ).arg( path );
+    return QString( "<img src=\"file:%1\" width=\"%2\" height=\"%3\" valign=\"center\"/>" )
         .arg( htmlQuote(path) ).arg( size ).arg( size );
 }
 
@@ -687,7 +736,7 @@ bool kio_sysinfoProtocol::fillMediaDevices()
             di.fsType = volume->fsType();
         di.mounted = access && access->isAccessible();
         di.iconName = device.icon();
-
+        di.model = device.product();
         di.total = di.avail = 0;
 
         if (volume)

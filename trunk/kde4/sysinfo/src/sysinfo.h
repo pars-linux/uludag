@@ -46,6 +46,7 @@ struct DiskInfo
     QString fsType;
     bool mounted;
     QString iconName;
+    QString model;
 
     // own stuff
     quint64 total, avail; // space on device
@@ -74,6 +75,7 @@ public:
         MEM_FREERAM,
         MEM_TOTALSWAP,
         MEM_FREESWAP,
+        MEM_USAGE,
         SYSTEM_UPTIME,          // in seconds
         CPU_MODEL,
         CPU_SPEED,              // in MHz
@@ -96,7 +98,7 @@ private:
     /**
      * Gather basic memory info
      */
-    void memoryInfo();
+    unsigned long int memoryInfo();
 
     /**
      * Gather CPU info
@@ -122,7 +124,7 @@ private:
      * Helper function to locate a KDE icon
      * @return img tag with full path to the icon
      */
-    QString icon( const QString & name, int size = KIconLoader::SizeSmall ) const;
+    QString icon( const QString & name, int size = KIconLoader::SizeSmall, bool justPath = false) const;
 
     /**
      * Fill the list of devices (m_devices) with data from the media KIO protocol
@@ -134,6 +136,11 @@ private:
      * Map holding the individual info attributes
      */
     QMap<int, QVariant> m_info;
+
+    QString startStock( const QString title );
+    QString addToStock( const QString _icon, const QString text, const QString details = "", const QString link = "" );
+    QString addProgress( const QString _icon, const unsigned long long size );
+    QString finishStock();
 
     QList<DiskInfo> m_devices;
     Solid::Predicate m_predicate;
