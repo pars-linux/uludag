@@ -7,7 +7,7 @@ build:
 	python fix-pykdeuic src/ui_mainwindow.py
 	pyrcc4 resources/data.qrc -o src/data_rc.py
 clean:
-	-rm *.pyc src/ui_mainwindow.py src/data_rc.py
+	-rm */*.pyc src/ui_mainwindow.py src/data_rc.py
 install: uninstall
 	mkdir -p $(INSTALL_DIR)
 	install -m 0755 src/main.py $(INSTALL_DIR)/$(PROJECT_NAME)
