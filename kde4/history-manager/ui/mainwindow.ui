@@ -10,9 +10,15 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Form</string>
+   <string>History Manager</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resources/data.qrc" >
+    <normaloff>:/history-manager.png</normaloff>:/history-manager.png</iconset>
   </property>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources/data.qrc" />
+ </resources>
  <connections/>
 </ui>
