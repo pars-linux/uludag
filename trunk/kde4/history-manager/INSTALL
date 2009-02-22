@@ -1,0 +1,6 @@
+INSTALL
+-------
+To install history-manager, type:
+
+$ sudo make install
+
