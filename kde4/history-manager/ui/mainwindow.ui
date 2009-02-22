@@ -14,7 +14,7 @@
   </property>
   <property name="windowIcon" >
    <iconset resource="../resources/data.qrc" >
-    <normaloff>:/history-manager.png</normaloff>:/history-manager.png</iconset>
+    <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
   </property>
  </widget>
  <resources>

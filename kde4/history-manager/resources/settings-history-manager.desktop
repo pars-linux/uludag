@@ -1,6 +1,6 @@
 [Desktop Entry]
 Exec=kcmshell4 history-manager
-Icon=preferences-desktop
+Icon=history-manager
 Type=Service
 X-KDE-ServiceTypes=KCModule
 
