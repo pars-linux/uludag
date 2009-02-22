@@ -21,8 +21,7 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
 from about import aboutData
-from uimain import Ui_mainManager
-from uiitem import Ui_ServiceItemWidget
+from ui_mainwindow import Ui_MainManager
 
 from dbus.mainloop.qt import DBusQtMainLoop
 
@@ -30,7 +29,7 @@ class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
         QtGui.QWidget.__init__(self, parent)
 
-        self.ui = Ui_mainManager()
+        self.ui = Ui_MainManager()
 
         if standAlone:
             self.ui.setupUi(self)
