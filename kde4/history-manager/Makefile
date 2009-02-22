@@ -3,21 +3,19 @@ INSTALL_DIR=/usr/kde/4/share/apps/$(PROJECT_NAME)
 
 all: build
 build:
-	pykde4uic -o uimain.py ui.ui
-	pykde4uic -o uiitem.py ui.item.ui
-	python fix-pykdeuic uimain.py
-	pyrcc4 data.qrc -o data_rc.py
+	pykde4uic -o src/ui_mainwindow.py ui/mainwindow.ui
+	python fix-pykdeuic src/ui_mainwindow.py
+	pyrcc4 resources/data.qrc -o src/data_rc.py
 clean:
-	-rm *.pyc uimain.py uiitem.py data_rc.py
+	-rm *.pyc src/ui_mainwindow.py src/data_rc.py
 install: uninstall
 	mkdir -p $(INSTALL_DIR)
-	install -m 0755 main.py $(INSTALL_DIR)/$(PROJECT_NAME)
+	install -m 0755 src/main.py $(INSTALL_DIR)/$(PROJECT_NAME)
 	ln -s $(INSTALL_DIR)/$(PROJECT_NAME) $(INSTALL_DIR)/$(PROJECT_NAME).py
-	install -m 0644 about.py $(INSTALL_DIR)
-	install -m 0644 uimain.py $(INSTALL_DIR)
-	install -m 0644 uiitem.py $(INSTALL_DIR)
-	install -m 0644 data_rc.py $(INSTALL_DIR)
-	install -m 0644 settings-history-manager.desktop /usr/kde/4/share/kde4/services
+	install -m 0644 src/about.py $(INSTALL_DIR)
+	install -m 0644 src/ui_mainwindow.py $(INSTALL_DIR)
+	install -m 0644 src/data_rc.py $(INSTALL_DIR)
+	install -m 0644 resources/settings-history-manager.desktop /usr/kde/4/share/kde4/services
 uninstall:
 	rm -rf $(INSTALL_DIR)
 	rm -f /usr/kde/4/share/kde4/services/settings-history-manager.desktop
