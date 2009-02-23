@@ -13,6 +13,7 @@
   * pisi.conf'da delta ve emniyet mandalı kapatılabilsin (-)
   * dodoc versiyonu eklemesin (-)
   * pisi ilk çalışma performans artışı için depo ve paket cacheleme (-)
+  * blacklistteki paketlerin kurulumunu reverse depleri zorlayamasın, reverse depler de uyarı ile kurulmasın (-)
 
 * Paket Yöneticisi (Faik Uygur)
   * KDE4 için yeniden yazılacak (-)
