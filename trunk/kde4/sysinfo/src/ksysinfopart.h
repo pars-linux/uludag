@@ -73,13 +73,6 @@ class KSysinfoPart : public KHTMLPart
       KComponentData *m_instance;
       QTimer *rescanTimer;
 
-#ifdef PORTED
-      // Reimplemented from KDirNotify
-      virtual void FilesAdded( const KUrl & dir );
-      virtual void FilesRemoved( const KUrl::List & urls );
-      virtual void FilesChanged( const KUrl::List & urls );
-#endif
-
       void customEvent( QEvent *event );
 };
 
