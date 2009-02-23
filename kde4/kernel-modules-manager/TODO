@@ -12,6 +12,6 @@ TODO
 
 - test, test, test...
 
-- setOptions thing...- 
+- setOptions thing
 
-- refactor organization of the files according to new kde4-managers trend (manager/plasmoid etc...)
+? refactor organization of the files according to new kde4-managers trend (manager/plasmoid etc...)
