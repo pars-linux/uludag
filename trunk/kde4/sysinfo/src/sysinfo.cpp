@@ -237,7 +237,6 @@ void kio_sysinfoProtocol::get( const KUrl &)
     content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
 
     QString dynamicInfo, staticInfo;
-    QString dummy;
 
     // Dynamic Info
 
@@ -262,8 +261,7 @@ void kio_sysinfoProtocol::get( const KUrl &)
                                 i18n( "Ram : %1 free of %2" ).arg( m_info[MEM_FREERAM].toString() ).arg( m_info[MEM_TOTALRAM].toString() ),
                                 m_info[MEM_USAGE].toString());
     dynamicInfo += addToStock( "media-flash",
-                                i18n( "Swap: %1 free of %2" ).arg( m_info[MEM_FREESWAP].toString() ).arg( m_info[MEM_TOTALSWAP].toString() ),
-                                m_info[MEM_USAGE].toString());
+                                i18n( "Swap: %1 free of %2" ).arg( m_info[MEM_FREESWAP].toString() ).arg( m_info[MEM_TOTALSWAP].toString() ));
     dynamicInfo += addProgress( "media-flash", percent);
     dynamicInfo += finishStock();
 

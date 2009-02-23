@@ -37,14 +37,14 @@
 #include <qcursor.h>
 #include <kio/netaccess.h>
 #include <kfileitem.h>
+
 #include <solid/networking.h>
-#include <solid/device.h>
 #include <solid/storageaccess.h>
-#include <solid/storagevolume.h>
+#include <solid/storagedrive.h>
 #include <solid/block.h>
 #include <solid/devicenotifier.h>
 #include <solid/deviceinterface.h>
-#include <solid/processor.h>
+#include <solid/device.h>
 
 #include <assert.h>
 
@@ -106,8 +106,10 @@ KSysinfoPart::KSysinfoPart( QWidget * parent )
    setMetaRefreshEnabled(false);
 
    connect(Solid::DeviceNotifier::instance(), SIGNAL(deviceAdded(const QString &)),
-            this, SLOT(rescan()));
+            this, SLOT(deviceAction(const QString &)));
    connect(Solid::DeviceNotifier::instance(), SIGNAL(deviceRemoved(const QString &)),
+            this, SLOT(rescan()));
+   connect(Solid::Networking::notifier(), SIGNAL(statusChanged(Solid::Networking::Status)),
             this, SLOT(rescan()));
    installEventFilter( this );
 }
@@ -149,6 +151,15 @@ void KSysinfoPart::rescan()
   openUrl(KUrl("sysinfo:/"));
   rescanTimer->stop();
   rescanTimer->start(20000);
+}
+
+void KSysinfoPart::deviceAction(const QString &udi)
+{
+    Solid::Device device(udi);
+    if (!device.isValid())
+        return;
+    if (device.is<Solid::StorageAccess>() || device.is<Solid::Block>() || device.is<Solid::StorageDrive>())
+        rescan();
 }
 
 #include "ksysinfopart.moc"
