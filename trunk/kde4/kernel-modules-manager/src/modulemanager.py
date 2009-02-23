@@ -65,11 +65,11 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
 
     def addModuleToAutoload(self):
         selectedModule = str(self.listAllModules.currentItem().text())
-        self.comarLink.Boot.Modules["module_init_tools"].addAutoload(module=selectedModule, kernel_version='2.6') # FIXME: kernel_version shouldn't be hard-coded
+        self.comarLink.Boot.Modules["module_init_tools"].addAutoload(module=selectedModule, kernel_version="2.6") # FIXME: kernel_version shouldn't be hard-coded
 
     def removeModuleFromAutoload(self):
         selectedModule = str(self.listAllModules.currentItem().text())
-        self.comarLink.Boot.Modules["module_init_tools"].removeAutoload(module=selectedModule, kernel_version='2.6') # FIXME: kernel_version shouldn't be hard-coded
+        self.comarLink.Boot.Modules["module_init_tools"].removeAutoload(module=selectedModule, kernel_version="2.6") # FIXME: kernel_version shouldn't be hard-coded
 
 
     def listViaSelectedType(self, listingType):
@@ -107,9 +107,7 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
     def populateAutoloadingModules(self):
         
         def putToList(package, exception, results):
-            self.listAllModules.clear()
-            self.listAllModules.addItem("Loading...")
-            
+
             if not exception:
 
                 self.listAllModules.clear()
@@ -124,14 +122,14 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
                     item = QtGui.QListWidgetItem(str(element))
                     self.listAllModules.addItem(item)
 
-            self.comarLink.Boot.Modules.listAutoload(async = putToList)
-            self.comarLink.Boot.Modules["module_init_tools"].listAutoload(kernel_version="2.6")
+        self.listAllModules.clear()
+            
+        self.comarLink.Boot.Modules.listAutoload(async = putToList)
+        self.comarLink.Boot.Modules["module_init_tools"].listAutoload("2.6")
 
     def populateBlacklistedModules(self):
 
         def putToList(package, exception, results):
-            self.listAllModules.clear()
-            self.listAllModules.addItem("Loading...")
             
             if not exception:
                 self.listAllModules.clear()
@@ -144,6 +142,9 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
             for element in self.allModules:
                 item = QtGui.QListWidgetItem(str(element))
                 self.listAllModules.addItem(item)
+
+        self.listAllModules.clear()
+        self.listAllModules.addItem("Loading...")
 
         self.comarLink.Boot.Modules.listBlacklist(async = putToList)
 
