@@ -210,6 +210,15 @@ QString kio_sysinfoProtocol::finishStock( bool isLive )
     return QString ("</table>");
 }
 
+QString kio_sysinfoProtocol::icon( const QString & name, int size, bool justPath) const
+{
+    QString path = KIconLoader::global()->iconPath( name, -size );
+    if ( justPath == true )
+        return QString( "file:%1" ).arg( path );
+    return QString( "<img src=\"file:%1\" width=\"%2\" height=\"%3\" valign=\"center\"/>" )
+        .arg( htmlQuote(path) ).arg( size ).arg( size );
+}
+
 void kio_sysinfoProtocol::get( const KUrl &)
 {
     mimeType( "application/x-sysinfo" );
@@ -250,7 +259,10 @@ void kio_sysinfoProtocol::get( const KUrl &)
 
     dynamicInfo += startStock( i18n( "Memory" ) );
     dynamicInfo += addToStock( "media-flash",
-                                i18n( "%1 free of %2" ).arg( m_info[MEM_FREERAM].toString() ).arg( m_info[MEM_TOTALRAM].toString() ),
+                                i18n( "Ram : %1 free of %2" ).arg( m_info[MEM_FREERAM].toString() ).arg( m_info[MEM_TOTALRAM].toString() ),
+                                m_info[MEM_USAGE].toString());
+    dynamicInfo += addToStock( "media-flash",
+                                i18n( "Swap: %1 free of %2" ).arg( m_info[MEM_FREESWAP].toString() ).arg( m_info[MEM_TOTALSWAP].toString() ),
                                 m_info[MEM_USAGE].toString());
     dynamicInfo += addProgress( "media-flash", percent);
     dynamicInfo += finishStock();
@@ -270,7 +282,8 @@ void kio_sysinfoProtocol::get( const KUrl &)
     staticInfo += addToStock( "computer", m_info[OS_SYSNAME].toString() + 
                               " <b>" + m_info[OS_RELEASE].toString() + "</b>", 
                               m_info[OS_USER].toString() + "@" + m_info[OS_HOSTNAME].toString() );
-    staticInfo += addToStock( "computer", i18n( "Kde <b>%1</b> on <b>%2</b>" ).arg(KDE::versionString()).arg( m_info[OS_SYSTEM].toString() ));
+    staticInfo += addToStock( "computer", i18n( "Kde <b>%1</b> on <b>%2</b>" ).arg(KDE::versionString()).arg( m_info[OS_SYSTEM].toString() ), 
+                                          m_info[SYSTEM_UPTIME].toString());
     staticInfo += finishStock();
 
     // update content..
@@ -282,9 +295,9 @@ void kio_sysinfoProtocol::get( const KUrl &)
     if ( !m_info[CPU_MODEL].isNull() )
     {
         staticInfo += startStock( i18n( "Processor" ) );
-        staticInfo += addToStock( "cpu", m_info[CPU_MODEL].toString());
-        staticInfo += addToStock( "cpu", i18n( "%1 MHz" ).arg( 
-                    KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toDouble(), 2 )), m_info[CPU_CORES].toString() + i18n( " core" ));
+        staticInfo += addToStock( "cpu", m_info[CPU_MODEL].toString(), m_info[CPU_TEMP].toString());
+        staticInfo += addToStock( "cpu", i18n( "%1 MHz" ).arg(KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toDouble(), 2 )), 
+                                         m_info[CPU_CORES].toString() + i18n( " core" ));
         staticInfo += finishStock();
     }
 
@@ -393,6 +406,23 @@ unsigned long int kio_sysinfoProtocol::memoryInfo()
     return 0;
 }
 
+void kio_sysinfoProtocol::osInfo()
+{
+    struct utsname uts;
+    uname( &uts );
+    m_info[ OS_SYSNAME ] = uts.sysname;
+    m_info[ OS_RELEASE ] = uts.release;
+    m_info[ OS_VERSION ] = uts.version;
+    m_info[ OS_MACHINE ] = uts.machine;
+    m_info[ OS_HOSTNAME ] = uts.nodename;
+
+    m_info[ OS_USER ] = KUser().loginName();
+
+    m_info[ OS_SYSTEM ] = readFromFile( "/etc/pardus-release" );
+    m_info[ OS_SYSTEM ].toString().replace("X86-64", "x86_64");
+}
+
+
 void kio_sysinfoProtocol::cpuInfo()
 {
     QString speed = readFromFile( "/proc/cpuinfo", "cpu MHz", ":" );
@@ -421,6 +451,29 @@ void kio_sysinfoProtocol::cpuInfo()
     m_info[CPU_CORES] = list.size();
     m_info[CPU_MODEL] = device.product();
 
+}
+
+bool kio_sysinfoProtocol::glInfo()
+{
+    FILE *fd = popen( "glxinfo", "r" );
+    if ( !fd )
+        return false;
+
+    QTextStream is( fd );
+
+    while ( !is.atEnd() )
+    {
+        QString line = is.readLine();
+        if ( line.startsWith( "OpenGL vendor string:" ) )
+            m_info[GFX_VENDOR] = line.section(':', 1, 1);
+        else if ( line.startsWith( "OpenGL renderer string:" ) )
+            m_info[GFX_MODEL] = line.section(':', 1, 1);
+        else if ( line.startsWith( "OpenGL version string:" ) )
+            m_info[GFX_DRIVER] = line.section(':', 1, 1);
+    }
+
+    pclose( fd );
+    return true;
 }
 
 QString kio_sysinfoProtocol::diskInfo()
@@ -469,224 +522,6 @@ QString kio_sysinfoProtocol::diskInfo()
     }
     return result;
 
-}
-
-#define HAVE_GLXCHOOSEVISUAL
-#ifdef HAVE_GLXCHOOSEVISUAL
-#include <GL/glx.h>
-#endif
-
-//-------------------------------------
-bool hasDirectRendering ( QString &renderer ) {
-    renderer = QString::null;
-
-    Display *dpy = QX11Info::display();
-    if (!dpy) return false;
-
-#ifdef HAVE_GLXCHOOSEVISUAL
-    int attribSingle[] = {
-        GLX_RGBA,
-        GLX_RED_SIZE,   1,
-        GLX_GREEN_SIZE, 1,
-        GLX_BLUE_SIZE,  1,
-        None
-    };
-    int attribDouble[] = {
-      GLX_RGBA,
-      GLX_RED_SIZE, 1,
-      GLX_GREEN_SIZE, 1,
-      GLX_BLUE_SIZE, 1,
-      GLX_DOUBLEBUFFER,
-      None
-    };
-
-    XVisualInfo* visinfo = glXChooseVisual (
-        dpy, QApplication::desktop()->primaryScreen(), attribSingle
-    );
-    if (visinfo)
-    {
-        GLXContext ctx = glXCreateContext ( dpy, visinfo, NULL, True );
-        if (glXIsDirect(dpy, ctx))
-        {
-            glXDestroyContext (dpy,ctx);
-            return true;
-        }
-
-        XSetWindowAttributes attr;
-        unsigned long mask;
-        Window root;
-        XVisualInfo *visinfo;
-        int width = 100, height = 100;
-        int scrnum = QApplication::desktop()->primaryScreen();
-
-        root = RootWindow(dpy, scrnum);
-
-        visinfo = glXChooseVisual(dpy, scrnum, attribSingle);
-        if (!visinfo)
-        {
-            visinfo = glXChooseVisual(dpy, scrnum, attribDouble);
-            if (!visinfo)
-            {
-                fprintf(stderr, "Error: could not find RGB GLX visual\n");
-                return false;
-            }
-        }
-
-        attr.background_pixel = 0;
-        attr.border_pixel = 0;
-        attr.colormap = XCreateColormap(dpy, root, visinfo->visual, AllocNone);
-        attr.event_mask = StructureNotifyMask | ExposureMask;
-        mask = CWBackPixel | CWBorderPixel | CWColormap | CWEventMask;
-
-        Window win = XCreateWindow(dpy, root, 0, 0, width, height,
-                                   0, visinfo->depth, InputOutput,
-                                   visinfo->visual, mask, &attr);
-
-        if ( glXMakeCurrent(dpy, win, ctx))
-            renderer = (const char *) glGetString(GL_RENDERER);
-        XDestroyWindow(dpy, win);
-
-        glXDestroyContext (dpy,ctx);
-        return false;
-    }
-    else
-    {
-        return false;
-    }
-#else
-#error no GL?
-    return false;
-#endif
-}
-
-
-bool kio_sysinfoProtocol::glInfo()
-{
-#ifdef HAVE_HD_H
-    static hd_data_t hd_data;
-    static bool inited_hd = false;
-    if ( !inited_hd )
-    {
-        memset(&hd_data, 0, sizeof(hd_data));
-        inited_hd = true;
-    }
-
-    if (!hd_list(&hd_data, hw_display, 1, NULL))
-        return false;
-
-    hd_t* hd = hd_get_device_by_idx(&hd_data, hd_display_adapter(&hd_data));
-
-    if (!hd)
-        return false;
-
-    driver_info_t *di = hd->driver_info;
-    QString renderer;
-    bool dri = hasDirectRendering( renderer );
-    QString driver;
-
-    for(di = di; di; di = di->next)
-    {
-        QString loadline;
-        if (di->any.type == di_x11)
-            driver = di->x11.server;
-        else if (di->any.type == di_module && di->module.names)
-            driver = di->module.names->str;
-        loadline = QString("(II) LoadModule: \"%1\"").arg( driver );
-
-        QFile file( "/var/log/Xorg.0.log" );
-        if ( !file.exists() || !file.open( QIODevice::ReadOnly ) )
-        {
-            di = 0;
-            break;
-        }
-
-        QTextStream stream( &file );
-        QString line;
-        bool found_line = false;
-
-        while ( !stream.atEnd() )
-        {
-            line = stream.readLine();
-            if (line == loadline)
-            {
-                found_line = true;
-                break;
-            }
-        }
-
-        kDebug(1242) << "found_line " << found_line;
-        if (found_line)
-            break;
-        else
-            driver = QString::null;
-    }
-
-    m_info[GFX_VENDOR] = hd->vendor.name;
-    m_info[GFX_MODEL] = hd->device.name;
-    if (!driver.isNull())
-    {
-        if (dri)
-            m_info[GFX_DRIVER] = i18n("%1 (3D Support)", driver);
-        else
-        {
-            if ( renderer.contains( "Mesa GLX Indirect" ) )
-                m_info[GFX_DRIVER] = i18n("%1 (No 3D Support)", driver);
-            else
-                m_info[GFX_DRIVER] = driver;
-        }
-    }
-    else
-        m_info[GFX_DRIVER] = i18n( "Unknown" );
-
-    return true;
-#else
-    FILE *fd = popen( "glxinfo", "r" );
-    if ( !fd )
-        return false;
-
-    QTextStream is( fd );
-
-    while ( !is.atEnd() )
-    {
-        QString line = is.readLine();
-        if ( line.startsWith( "OpenGL vendor string:" ) )
-            m_info[GFX_VENDOR] = line.section(':', 1, 1);
-        else if ( line.startsWith( "OpenGL renderer string:" ) )
-            m_info[GFX_MODEL] = line.section(':', 1, 1);
-        else if ( line.startsWith( "OpenGL version string:" ) )
-            m_info[GFX_DRIVER] = line.section(':', 1, 1);
-    }
-
-    pclose( fd );
-    return true;
-#endif
-
-    return false;
-}
-
-QString kio_sysinfoProtocol::icon( const QString & name, int size, bool justPath) const
-{
-    QString path = KIconLoader::global()->iconPath( name, -size );
-    if ( justPath == true )
-        return QString( "file:%1" ).arg( path );
-    return QString( "<img src=\"file:%1\" width=\"%2\" height=\"%3\" valign=\"center\"/>" )
-        .arg( htmlQuote(path) ).arg( size ).arg( size );
-}
-
-void kio_sysinfoProtocol::osInfo()
-{
-    struct utsname uts;
-    uname( &uts );
-    m_info[ OS_SYSNAME ] = uts.sysname;
-    m_info[ OS_RELEASE ] = uts.release;
-    m_info[ OS_VERSION ] = uts.version;
-    m_info[ OS_MACHINE ] = uts.machine;
-    m_info[ OS_HOSTNAME ] = uts.nodename;
-
-    m_info[ OS_USER ] = KUser().loginName();
-
-    m_info[ OS_SYSTEM ] = readFromFile( "/etc/pardus-release" );
-    m_info[ OS_SYSTEM ].toString().replace("X86-64", "x86_64");
 }
 
 extern "C" int KDE_EXPORT kdemain(int argc, char **argv)
@@ -792,11 +627,8 @@ bool kio_sysinfoProtocol::fillMediaDevices()
                 di.total = ( unsigned long long )sfs.f_blocks * sfs.f_bsize;
                 di.avail = ( unsigned long long )( getuid() ? sfs.f_bavail : sfs.f_bfree ) * sfs.f_bsize;
             }
-
             m_devices.append( di );
         }
     }
-
-
     return true;
 }
