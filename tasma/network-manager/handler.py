@@ -111,7 +111,7 @@ class CallHandler:
         name = exception._dbus_error_name
         if name.startswith(self.dest):
             name = name.split(self.dest)[1]
-        if name.startswith(".policy.auth"):
+        if name.startswith(".policy.auth") or name.startswith(".Comar.PolicyKit"):
             self.__obtainAuth()
         else:
             for func, args in self.handleError.iteritems():
