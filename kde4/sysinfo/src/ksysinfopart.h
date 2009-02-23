@@ -67,6 +67,7 @@ class KSysinfoPart : public KHTMLPart
 
    protected slots:
       void rescan();
+      void deviceAction( const QString &udi );
       void slotResult( KJob *job );
 
    protected:

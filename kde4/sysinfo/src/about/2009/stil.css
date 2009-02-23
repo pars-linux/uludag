@@ -99,6 +99,7 @@ table.stock tr.progress td:nth-child(1)>img {
 table.stock tr.progress td:nth-child(2)>img {
     padding: 4px;
     padding-top:0px;
+    padding-left:0px;
     height:16px;
     border:none;
 }
