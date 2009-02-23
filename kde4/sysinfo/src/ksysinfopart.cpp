@@ -46,7 +46,6 @@
 #include <solid/deviceinterface.h>
 #include <solid/processor.h>
 
-
 #include <assert.h>
 
 extern "C"
@@ -95,10 +94,12 @@ KSysinfoPart::KSysinfoPart( QWidget * parent )
 {
    KComponentData * instance = new KComponentData( "ksysinfopart" );
    setComponentData( *instance );
+
    rescanTimer=new QTimer(this);
    connect(rescanTimer, SIGNAL(timeout()), SLOT(rescan()));
    rescanTimer->setSingleShot(true);
    rescanTimer->start(20000);
+
    setJScriptEnabled(true);
    setJavaEnabled(false);
    setPluginsEnabled(false);
@@ -130,14 +131,12 @@ void KSysinfoPart::customEvent( QEvent *event )
     KUrl url(ev->url().string());
     if (url.path().startsWith("/media") && (ev->qmouseEvent()->button() & Qt::RightButton) )
       {
-	KIO::UDSEntry entry;
-	KIO::Job *job = KIO::stat(url, KIO::HideProgressInfo);
-	connect( job, SIGNAL( result( KJob * ) ),
-		 SLOT( slotResult( KJob * ) ) );
-	return;
+          KIO::UDSEntry entry;
+          KIO::Job *job = KIO::stat(url, KIO::HideProgressInfo);
+          connect( job, SIGNAL( result( KJob * ) ),SLOT( slotResult( KJob * ) ) );
+          return;
       }
   }
-
   KHTMLPart::customEvent(event);
 }
 
@@ -147,29 +146,6 @@ void KSysinfoPart::rescan()
   rescanTimer->stop();
   rescanTimer->start(20000);
 }
-
-#ifdef PORTED
-void KSysinfoPart::FilesAdded( const KUrl & dir )
-{
-  if (dir.protocol() == "media") 
-    {
-      rescanTimer->stop();
-      rescanTimer->start(10, true);
-    }
-}
-
-void KSysinfoPart::FilesRemoved( const KUrl::List & urls )
-{
-    for ( KUrl::List::ConstIterator it = urls.begin() ; it != urls.end() ; ++it )
-      FilesAdded( *it );
-}
-
-void KSysinfoPart::FilesChanged( const KUrl::List & urls )
-{
-    // not same signal, but same implementation
-    FilesRemoved( urls );
-}
-#endif
 
 #include "ksysinfopart.moc"
 

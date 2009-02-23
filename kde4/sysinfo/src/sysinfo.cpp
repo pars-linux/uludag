@@ -159,12 +159,15 @@ kio_sysinfoProtocol::~kio_sysinfoProtocol()
 {
 }
 
-QString kio_sysinfoProtocol::startStock( const QString title )
+QString kio_sysinfoProtocol::startStock( const QString title, const QString liveID)
 {
     QString templator = QString ("<table class=\"stock\">"
                                  "<tr>"
                                  "     <th colspan=3><h2>%1</h2></th>"
                                  "</tr>").arg(title);
+    if ( liveID != "")
+        templator += QString("<span id=\"%1\">").arg(liveID);
+
     return templator;
 }
 
@@ -200,17 +203,16 @@ QString kio_sysinfoProtocol::addProgress( const QString _icon, const unsigned lo
     return templator;
 }
 
-QString kio_sysinfoProtocol::finishStock()
+QString kio_sysinfoProtocol::finishStock( bool isLive )
 {
+    if ( isLive )
+        return QString("</span></table>");
     return QString ("</table>");
 }
 
-void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
+void kio_sysinfoProtocol::get( const KUrl &)
 {
     mimeType( "application/x-sysinfo" );
-
-    infoMessage( i18n( "Looking for hardware information..." ) );
-
     // header
     QString location = KStandardDirs::locate( "data", "sysinfo/about/index.html" );
     QFile f( location );
@@ -218,6 +220,9 @@ void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
     QTextStream t( &f );
 
     QString content = t.readAll();
+
+    infoMessage( i18n( "Looking for hardware information..." ) );
+
     content = content.arg( i18n( "My Computer" ) ); // <title>
     content = content.arg( "file:" + KStandardDirs::locate( "data", "sysinfo/about/stil.css" ) );
     content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
@@ -236,9 +241,9 @@ void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
 
     // net info
     QString state = netStatus();
-    dynamicInfo += startStock( i18n( "Network" ) );
+    dynamicInfo += startStock( i18n( "Network" ), "idNetwork" );
     dynamicInfo += addToStock( "applications-internet", state);
-    dynamicInfo += finishStock();
+    dynamicInfo += finishStock( true );
 
     // memory info
     unsigned long int percent = memoryInfo();
@@ -306,6 +311,14 @@ void kio_sysinfoProtocol::get( const KUrl & /*url*/ )
     data( QByteArray() );
     finished();
 
+}
+
+void kio_sysinfoProtocol::updateContent( const QString liveID )
+{
+    QString cont = liveID;
+    data( cont.toUtf8() );
+    data( QByteArray() );
+    finished();
 }
 
 void kio_sysinfoProtocol::mimetype( const KUrl & /*url*/ )

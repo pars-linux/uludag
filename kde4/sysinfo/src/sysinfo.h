@@ -60,11 +60,12 @@ struct DiskInfo
  */
 class kio_sysinfoProtocol : public KIO::SlaveBase
 {
+
 public:
     kio_sysinfoProtocol( const QByteArray &pool_socket, const QByteArray &app_socket );
     virtual ~kio_sysinfoProtocol();
     virtual void mimetype( const KUrl& url );
-    virtual void get( const KUrl& url );
+    virtual void get( const KUrl& url);
 
     /**
      * Info field
@@ -137,11 +138,12 @@ private:
      */
     QMap<int, QVariant> m_info;
 
-    QString startStock( const QString title );
+    QString startStock( const QString title, const QString liveID = "");
     QString addToStock( const QString _icon, const QString text, const QString details = "", const QString link = "" );
     QString addProgress( const QString _icon, const unsigned long long size );
-    QString finishStock();
+    QString finishStock( bool isLive = false);
 
+    void updateContent( const QString liveID );
     QList<DiskInfo> m_devices;
     Solid::Predicate m_predicate;
 };
