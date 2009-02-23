@@ -27,7 +27,12 @@ class Popup(QWidget):
                 self.addConnectionItem(package, str(connection))
                 info = self.iface.info(package, connection)
                 if str(info['state']).startswith('up'):
-                    self.applet.handler(package, 'stateChanged', [connection, 'up', str(info['state']).split()[1]])
+                    # Sometimes COMAR doesnt send ip with up state, we need to fix it
+                    try:
+                        ip = str(info['state'].split()[1])
+                    except IndexError:
+                        ip = 'N/A'
+                    self.applet.handler(package, 'stateChanged', [connection, 'up', ip])
                 else:
                     self.connections[package][connection].setState(str(info['state']))
 
