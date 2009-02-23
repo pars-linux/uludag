@@ -442,16 +442,16 @@ QString kio_sysinfoProtocol::diskInfo()
 
             result +=   QString("<tr class=\"media\">"
                                 "   <td>"
-                                "   <a href=\"media:/%1\" title=\"%2\">"
+                                "   <a href=\"file:%1\" title=\"%2\">"
                                 "       <img src=\"%3\" width=\"48\" height=\"48\" />"
                                 "   </a></td>").
-                                arg( di.name ).
+                                arg( di.mountPoint ).
                                 arg( tooltip+" "+di.deviceNode ).
                                 arg( icon( di.iconName, 48, true) );
 
             result +=   QString("   <td>"
                                 "       <span class=\"detail\">[ %1 ]<br><span style=\"float:right\">[ %2 ]</span></span>"
-                                "       <a href=\"media:/%3\" title=\"%4\">"
+                                "       <a href=\"file:%3\" title=\"%4\">"
                                 "       %5<br><span class=\"mediaDf\">%6</span><br></a>"
                                 "       <img class=\"diskusage\" src=\"file:%7\" width=\"%8%\">"
                                 "   </td>"
@@ -459,7 +459,7 @@ QString kio_sysinfoProtocol::diskInfo()
                                 "</tr>").
                                 arg( mountState ).
                                 arg( di.fsType ).
-                                arg( di.name ).
+                                arg( di.mountPoint ).
                                 arg( tooltip+" "+di.deviceNode ).
                                 arg( label ).
                                 arg( sizeStatus ).
