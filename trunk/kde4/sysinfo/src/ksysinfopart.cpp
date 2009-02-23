@@ -138,6 +138,8 @@ void KSysinfoPart::customEvent( QEvent *event )
           connect( job, SIGNAL( result( KJob * ) ),SLOT( slotResult( KJob * ) ) );
           return;
       }
+    else if (ev->qmouseEvent()->button() & Qt::RightButton)
+        return;
   }
   KHTMLPart::customEvent(event);
 }
