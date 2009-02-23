@@ -129,10 +129,12 @@ void KSysinfoPart::customEvent( QEvent *event )
   {
     khtml::MousePressEvent *ev = static_cast<khtml::MousePressEvent *>( event );
     KUrl url(ev->url().string());
-    if (url.path().startsWith("/media") && (ev->qmouseEvent()->button() & Qt::RightButton) )
+    //kDebug(1242) << "URL was : " << url.path();
+    if (url.path().startsWith("/") && (ev->qmouseEvent()->button() & Qt::RightButton) )
       {
           KIO::UDSEntry entry;
           KIO::Job *job = KIO::stat(url, KIO::HideProgressInfo);
+          //kDebug(1242) << "entered.." << url.path();
           connect( job, SIGNAL( result( KJob * ) ),SLOT( slotResult( KJob * ) ) );
           return;
       }
