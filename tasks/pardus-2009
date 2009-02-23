@@ -34,8 +34,8 @@
   * Pulseaudio ve ailesinin güncellenmesi (/60)
   * foomatic-*, gutenprint, ghostscript, hplip, foo2zjs paketlerinin güncellenmesi (/20)
   * udev 13x geçişi (/70)
-  * mudur'de udev ile ilgili değişiklikler [8458, 8520] (-)
-  * mudur'de udevtrigger loglarının tutulması (-)
+  * mudur'de udev ile ilgili değişiklikler [8458, 8520] (+)
+  * mudur'de udevtrigger loglarının tutulması (+)
   * mudur'de CPUFreq sınıfının gözden geçirilmesi, bu işlevin olabildiğince çekirdeğe aktarılması (-)
   * HAL 0.5.12 geçişi (/40)
 
