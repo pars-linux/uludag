@@ -98,7 +98,7 @@ class connShare(QDialog):
     def languageChange(self):
         self.setCaption(i18n("Internet Connection Sharing"))
         self.sharecheckBox.setText(i18n("Share Internet Connection"))
-        self.groupBox1.setTitle(i18n(""))
+        self.groupBox1.setTitle("")
         self.textLabel1.setText(i18n("Interface that goes to internet"))
         self.textLabel2.setText(i18n("Interface that will share connection"))
         self.buttonGroup2.setTitle(QString.null)
