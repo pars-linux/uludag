@@ -13,6 +13,7 @@
 
 import sys
 import comar
+import dbus
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
@@ -21,9 +22,7 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
 from about import aboutData
-from ui_mainwindow import Ui_MainManager
-
-from dbus.mainloop.qt import DBusQtMainLoop
+from mainwindow import MainManager
 
 class Manager(KMainWindow):
     def __init__ (self, *args):
@@ -46,7 +45,9 @@ if __name__ == '__main__':
     KCmdLineArgs.init(sys.argv, aboutData)
     app = KApplication()
 
-    DBusQtMainLoop(set_as_default = True)
+    if not dbus.get_default_main_loop():
+        from dbus.mainloop.qt import DBusQtMainLoop
+        DBusQtMainLoop(set_as_default = True)
 
     mainWindow = Manager(None, 'history-manager')
     mainWindow.show()
