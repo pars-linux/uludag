@@ -24,19 +24,32 @@ class ComarIface:
         self.link.System.Manager["pisi"].takeBack(num)
 
 class PisiIface:
-    """ Pisi Iface """
+    """ Pisi Api Interface """
 
     def __init__(self):
+        self.pdb = pisi.db.historydb.HistoryDB()
+        self.pdb.init()
 
-    def get_history_dir():
+    def historyDir(self):
         return pisi.ctx.config.history_dir()
 
-    def getPlan(op):
+    def plan(self, op):
         return pisi.api.get_takeback_plan(op)
 
-    def reloadPisi():
+    def reloadPisi(self):
         for module in sys.modules.keys():
             if module.startswith("pisi."):
                 """removal from sys.modules forces reload via import"""
                 del sys.modules[module]
         reload(pisi)
+
+    def historyDb(self):
+        return self.pdb
+
+    def updateHdb(self):
+        #FIXME
+        self.pdb.init()
+
+    def getConfigFiles(self, op):
+        self.pdb.get_config_files(op)
+
