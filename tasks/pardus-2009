@@ -117,4 +117,21 @@
   * Swap sorunsalı .9233 (-)
   * Otomatik bölümlendirmede boş alan ve mantıksal alan kullanabilme desteği (-)
 
+* Toolchain (Onur Küçük)
+  * xFLAGS elden geçirme (+)
+  * as-needed ve sort-common test etme onaylama (+)
+  * Toolchain ve yandaşları güncelleme (+)
+  * system.base / system.devel elden geçirip bootstrap işleri, 2009 test ortamı kurmak için CD / altyapı / betik vs. (/90)
+
+* Multimedia (Onur Küçük)
+  * Nasm -> Yasm geçişi (/20)
+  * libv4l geçişi (-)
+
+* Initramfs (Onur Küçük)
+  * Mkinitramfs kod temizliği baştan yazılması (-)
+  * Ayar dosyası desteği (-)
+
+* Donanım (Onur Küçük)
+  * Kamera sürücüleri kernel içine girecekler ve dışında kalacakların belirlenmesi (-)
+
 
