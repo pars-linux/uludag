@@ -16,6 +16,7 @@
    <iconset resource="../resources/data.qrc" >
     <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
   </property>
+  <layout class="QGridLayout" name="gridLayout" />
  </widget>
  <resources>
   <include location="../resources/data.qrc" />

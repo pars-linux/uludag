@@ -13,6 +13,8 @@ install: uninstall
 	install -m 0755 src/main.py $(INSTALL_DIR)/$(PROJECT_NAME)
 	ln -s $(INSTALL_DIR)/$(PROJECT_NAME) $(INSTALL_DIR)/$(PROJECT_NAME).py
 	install -m 0644 src/about.py $(INSTALL_DIR)
+	install -m 0644 src/mainwindow.py $(INSTALL_DIR)
+	install -m 0644 src/interface.py $(INSTALL_DIR)
 	install -m 0644 src/ui_mainwindow.py $(INSTALL_DIR)
 	install -m 0644 src/data_rc.py $(INSTALL_DIR)
 	install -m 0644 resources/settings-history-manager.desktop /usr/kde/4/share/kde4/services

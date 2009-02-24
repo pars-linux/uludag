@@ -1,8 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from ui_mainwindow import Ui_MainManager
+import comar
+import dbus
 
+from PyQt4 import QtGui
+
+from ui_mainwindow import Ui_MainManager
+from interface import ComarIface, PisiIface
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
@@ -15,18 +20,11 @@ class MainManager(QtGui.QWidget):
         else:
             self.ui.setupUi(parent)
 
-        self.link = comar.Link()
+        self.cface = ComarIface()
+        self.pface = PisiIface()
 
-    def getServices(self):
-        self.link.listenSignals("System.Manager", self.handler)
-        # Get service list from comar link
-        # self.link.System.Service.info(async=self.handleServices)
+        self.iface.listen(self.handler)
 
     def handler(self, package, signal, args):
-        print(package)
-        print(signal)
-        print(args)
-
-        #self.widgets[package].setState(args[1])
-        # print args, signal, package
+        pass
 
