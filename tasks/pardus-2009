@@ -134,4 +134,6 @@
 * Donanım (Onur Küçük)
   * Kamera sürücüleri kernel içine girecekler ve dışında kalacakların belirlenmesi (-)
 
+* Paketler (Tüm paket sorumluları)
+  * Bütün paketlerin yeni flaglar, toolchain vs. ile 2009 a uyumlu hale getirilmesi (-)
 
