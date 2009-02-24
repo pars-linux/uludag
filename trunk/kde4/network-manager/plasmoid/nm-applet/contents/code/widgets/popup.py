@@ -43,6 +43,7 @@ class Popup(QWidget):
             self.ui.ethernetStatus.setText(message)
 
     def addConnectionItem(self, package, name):
+        name = unicode(name)
         if package == "wireless_tools":
             item = ConnectionItem(self.ui.wirelessConnections, package, name, self)
             self.ui.wirelessLayout.addWidget(item)
