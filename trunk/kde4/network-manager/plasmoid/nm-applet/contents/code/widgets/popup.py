@@ -36,6 +36,15 @@ class Popup(QWidget):
                 else:
                     self.connections[package][connection].setState(str(info['state']))
 
+        needSeperator = True
+
+        for package in self.connections.keys():
+            if len(self.connections[package]) == 0:
+                needSeperator = False
+                getattr(self.ui,package).hide()
+
+        self.ui.seperator.setVisible(needSeperator)
+
     def setConnectionStatus(self, package, message):
         if package == "wireless_tools":
             self.ui.wirelessStatus.setText(message)
