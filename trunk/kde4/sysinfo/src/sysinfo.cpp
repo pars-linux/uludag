@@ -1,6 +1,8 @@
 //////////////////////////////////////////////////////////////////////////
 // sysinfo.cpp                                                          //
 //                                                                      //
+// Copyright (C)  2009  Gökmen GÖKSEL <gokmen@pardus.org.tr             //
+//                      TUBITAK/UEKAE                                   //
 // Copyright (C)  2005, 2008  Lukas Tinkl <lukas.tinkl@suse.cz>         //
 //                                        <ltinkl@redhat.com>           //
 //           (C)  2008  Dirk Mueller <dmueller@suse.de>                 //
