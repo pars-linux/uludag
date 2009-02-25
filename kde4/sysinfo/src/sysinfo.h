@@ -1,6 +1,8 @@
 //////////////////////////////////////////////////////////////////////////
 // sysinfo.h                                                            //
 //                                                                      //
+// Copyright (C)  2009  Gökmen GÖKSEL <gokmen@pardus.org.tr             //
+//                      TUBITAK/UEKAE                                   //
 // Copyright (C)  2005  Lukas Tinkl <lukas.tinkl@suse.cz>               //
 //                                                                      //
 // This program is free software; you can redistribute it and/or        //
