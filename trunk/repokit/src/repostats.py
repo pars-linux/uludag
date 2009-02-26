@@ -356,7 +356,7 @@ class Source:
             <p>%s: %s</p>
             <h3>%s</h3>
             <p><a href="%s">%s</a></p>
-            <p><a href="http://bugs.pardus.org.tr/buglist.cgi?product=Paketler&component=%s&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED">%s</a></p>
+            <p><a href="http://bugs.pardus.org.tr/buglist.cgi?product=Paketler%20%2F%20Packages&component=%s&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED">%s</a></p>
 
             <h3>%s</h3>
             <p>%s</p>
