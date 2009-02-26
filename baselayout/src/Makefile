@@ -1,4 +1,4 @@
-# Copyright © 2005  TUBITAK/UEKAE
+# Copyright © 2005-2009 TUBITAK/UEKAE
 # Licensed under the GNU General Public License, version 2.
 # See the file http://www.gnu.org/copyleft/gpl.txt.
 #
@@ -17,7 +17,7 @@ TARGET = $(BIN_TARGETS) $(SBIN_TARGETS)
 all: $(TARGET)
 
 start-stop-daemon: start-stop-daemon.c
-	$(CC) -o $@ $(CFLAGS) -DHAVE_ERROR_H -DHAVE_TIOCNOTTY -DHAVE_SETSID $^
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
 
 install: $(TARGET)
 	install -m 0755 -d $(DESTDIR)/sbin
