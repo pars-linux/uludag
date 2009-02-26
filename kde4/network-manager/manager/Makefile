@@ -18,6 +18,9 @@ install: uninstall
 	install -m 0644 uimain.py $(INSTALL_DIR)
 	install -m 0644 uiitem.py $(INSTALL_DIR)
 	install -m 0644 data_rc.py $(INSTALL_DIR)
+	install -m 0644 faces.py $(INSTALL_DIR)
+	install -m 0644 uisettings.py $(INSTALL_DIR)
+	install -m 0644 nettools.py $(INSTALL_DIR)
 	# install -m 0644 settings-service-manager.desktop /usr/kde/4/share/kde4/services
 uninstall:
 	rm -rf $(INSTALL_DIR)
