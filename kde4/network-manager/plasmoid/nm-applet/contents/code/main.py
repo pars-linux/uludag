@@ -82,26 +82,32 @@ class NmApplet(plasmascript.Applet):
 
     def handler(self, package, signal, args):
         args = map(lambda x: str(x), list(args))
-        ip = ''
-        solidState = Solid.Networking.Unknown
-        if (str(args[1]) == "up"):
-            msg = "Connected to <b>%s</b> IP: %s" % (args[0], args[2])
-            ip = args[2]
-            self.popup.setConnectionStatus(package, "Connected")
-            self.icon.setSvg(self.defaultIcon)
-            solidState = Solid.Networking.Connected
-        elif (str(args[1]) == "connecting"):
-            msg = "Connecting to <b>%s</b> .." % args[0]
-            self.popup.setConnectionStatus(package, "Connecting..")
-            solidState = Solid.Networking.Connecting
-        else:
-            msg = "Disconnected"
-            self.popup.setConnectionStatus(package, msg)
-            self.icon.setSvg(self.defaultIcon, "native")
-            solidState = Solid.Networking.Unconnected
+        if signal == "stateChanged":
+            ip = ''
+            solidState = Solid.Networking.Unknown
+            if (str(args[1]) == "up"):
+                msg = "Connected to <b>%s</b> IP: %s" % (args[0], args[2])
+                ip = args[2]
+                self.popup.setConnectionStatus(package, "Connected")
+                self.icon.setSvg(self.defaultIcon)
+                solidState = Solid.Networking.Connected
+            elif (str(args[1]) == "connecting"):
+                msg = "Connecting to <b>%s</b> .." % args[0]
+                self.popup.setConnectionStatus(package, "Connecting..")
+                solidState = Solid.Networking.Connecting
+            else:
+                msg = "Disconnected"
+                self.popup.setConnectionStatus(package, msg)
+                self.icon.setSvg(self.defaultIcon, "native")
+                solidState = Solid.Networking.Unconnected
 
-        self.popup.connections[package][str(args[0])].setState(str(args[1]), ip)
-        self.notifyface.notify(str(msg), solidState)
+            self.popup.connections[package][str(args[0])].setState(str(args[1]), ip)
+            self.notifyface.notify(str(msg), solidState)
+        elif signal == "connectionChanged":
+            if args[0] == 'deleted':
+                self.popup.connections[package][args[1]].hide()
+            if args[0] == 'added':
+                self.popup.addConnectionItem(package, args[1])
 
     def updateTheme(self):
         self.dialog.setStyleSheet("color: %s;" % Plasma.Theme.defaultTheme().color(Plasma.Theme.TextColor).name())
