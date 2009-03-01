@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'nm-applet/contents/ui/popup.ui'
 #
-# Created: Tue Feb 24 08:37:29 2009
+# Created: Sat Feb 28 15:01:22 2009
 #      by: PyQt4 UI code generator 4.4.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,7 +12,7 @@ from PyQt4 import QtCore, QtGui
 class Ui_Connection(object):
     def setupUi(self, Connection):
         Connection.setObjectName("Connection")
-        Connection.resize(253, 163)
+        Connection.resize(235, 191)
         self.verticalLayout_5 = QtGui.QVBoxLayout(Connection)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setMargin(0)
@@ -121,6 +121,10 @@ class Ui_Connection(object):
         self.wirelessLayout.setObjectName("wirelessLayout")
         self.verticalLayout_4.addWidget(self.wirelessConnections)
         self.verticalLayout_5.addWidget(self.wireless_tools)
+        self.nmButton = QtGui.QPushButton(Connection)
+        self.nmButton.setStyleSheet("color:black;")
+        self.nmButton.setObjectName("nmButton")
+        self.verticalLayout_5.addWidget(self.nmButton)
 
         self.retranslateUi(Connection)
         QtCore.QMetaObject.connectSlotsByName(Connection)
@@ -131,5 +135,6 @@ class Ui_Connection(object):
         self.ethernetStatus.setText(QtGui.QApplication.translate("Connection", "Not connected.", None, QtGui.QApplication.UnicodeUTF8))
         self.label_4.setText(QtGui.QApplication.translate("Connection", "Wireless", None, QtGui.QApplication.UnicodeUTF8))
         self.wirelessStatus.setText(QtGui.QApplication.translate("Connection", "Not connected.", None, QtGui.QApplication.UnicodeUTF8))
+        self.nmButton.setText(QtGui.QApplication.translate("Connection", "Open Network Manager", None, QtGui.QApplication.UnicodeUTF8))
 
 import data_rc

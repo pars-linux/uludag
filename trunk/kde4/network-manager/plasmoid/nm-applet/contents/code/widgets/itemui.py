@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'nm-applet/contents/ui/item.ui'
 #
-# Created: Thu Feb 19 12:46:18 2009
+# Created: Sat Feb 28 14:58:34 2009
 #      by: PyQt4 UI code generator 4.4.4
 #
 # WARNING! All changes made in this file will be lost!

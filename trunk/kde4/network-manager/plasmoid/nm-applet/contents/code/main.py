@@ -1,6 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# OS
+import os
+
 # D-Bus
 import dbus
 
@@ -73,12 +76,18 @@ class NmApplet(plasmascript.Applet):
         # It may cause crashes in PlasmoidViewer but luckly not in Plasma :)
         self.connect(Plasma.Theme.defaultTheme(), SIGNAL("themeChanged()"), self.updateTheme)
 
+        self.connect(self.popup.ui.nmButton, SIGNAL("clicked()"), self.openNM)
+
         # Listen network status from comar
         self.iface.listen(self.handler)
 
     def constraintsEvent(self, constraints):
         if constraints & Plasma.FormFactorConstraint:
             return
+
+    def openNM(self):
+        self.dialog.hide()
+        os.system('network-manager')
 
     def handler(self, package, signal, args):
         args = map(lambda x: str(x), list(args))
