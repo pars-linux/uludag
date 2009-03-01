@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>253</width>
-    <height>163</height>
+    <width>235</width>
+    <height>191</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -253,6 +253,16 @@
        </widget>
       </item>
      </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="nmButton" >
+     <property name="styleSheet" >
+      <string notr="true" >color:black;</string>
+     </property>
+     <property name="text" >
+      <string>Open Network Manager</string>
+     </property>
     </widget>
    </item>
   </layout>
