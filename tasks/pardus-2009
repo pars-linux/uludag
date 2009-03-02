@@ -117,6 +117,11 @@
   * Swap sorunsalı .9233 (-)
   * Otomatik bölümlendirmede boş alan ve mantıksal alan kullanabilme desteği (-)
 
+* Yalı4 (Mete Alpaslan)
+  * Raid destekli kurulumun sağlanması (/35)
+  * Lvm destekli kurulumun sağlanması (/20)
+  * Kripto desteğinin sağlanarak şifrelenmiş kök sistemin kurulum sırasında yaratılabilmesi (-)
+
 * Toolchain (Onur Küçük)
   * xFLAGS elden geçirme (+)
   * as-needed ve sort-common test etme onaylama (+)
