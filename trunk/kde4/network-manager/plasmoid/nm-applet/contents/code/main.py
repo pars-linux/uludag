@@ -91,6 +91,7 @@ class NmApplet(plasmascript.Applet):
 
     def handler(self, package, signal, args):
         args = map(lambda x: str(x), list(args))
+        # print signal, args, package
         if signal == "stateChanged":
             ip = ''
             solidState = Solid.Networking.Unknown
@@ -110,13 +111,13 @@ class NmApplet(plasmascript.Applet):
                 self.icon.setSvg(self.defaultIcon, "native")
                 solidState = Solid.Networking.Unconnected
 
-            self.popup.connections[package][str(args[0])].setState(str(args[1]), ip)
+            self.popup.connections[package][unicode(args[0])].setState(str(args[1]), ip)
             self.notifyface.notify(str(msg), solidState)
         elif signal == "connectionChanged":
             if args[0] == 'deleted':
-                self.popup.connections[package][args[1]].hide()
+                self.popup.connections[package][unicode(args[1])].hide()
             if args[0] == 'added':
-                self.popup.addConnectionItem(package, args[1])
+                self.popup.addConnectionItem(package, unicode(args[1]))
 
     def updateTheme(self):
         self.dialog.setStyleSheet("color: %s;" % Plasma.Theme.defaultTheme().color(Plasma.Theme.TextColor).name())
