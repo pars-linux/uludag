@@ -137,3 +137,9 @@
 * Paketler (Tüm paket sorumluları)
   * Bütün paketlerin yeni flaglar, toolchain vs. ile 2009 a uyumlu hale getirilmesi (-)
 
+* Yalı4 (İşbaran Akçayır)
+  * Lvm & Raid Desteği eklenmesi (/10)
+
+* KDE4 (İşbaran Akçayır)
+  * History-Manager (/50)
+
