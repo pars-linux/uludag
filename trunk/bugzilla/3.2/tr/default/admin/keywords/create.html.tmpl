@@ -17,6 +17,7 @@
   #
   # Contributor(s): Terry Weissman <terry@mozilla.org>
   #                 Vlad Dascalu <jocuri@softhome.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -24,18 +25,18 @@
   #%]
   
 [% PROCESS global/header.html.tmpl
-  title = "Add keyword"
-  subheader = "This page allows you to add a new keyword."
+  title = "Anahtar ekle"
+  subheader = "Bu sayfada yeni bir anahtar ekleyebilirsiniz."
 %]
 
 <form method="post" action="editkeywords.cgi">
   <table border="0" cellpadding="4" cellspacing="0">
     <tr>
-      <th align="right">Name:</th>
+      <th align="right">İsim:</th>
       <td><input size="64" maxlength="64" name="name" value=""></td>
     </tr>
     <tr>
-      <th align="right">Description:</th>
+      <th align="right">Açıklama:</th>
       <td>
         [% INCLUDE global/textarea.html.tmpl
           name    = 'description'
@@ -48,11 +49,11 @@
   </table>
   <hr>
   <input type="hidden" name="id" value="-1">
-  <input type="submit" id="create" value="Add">
+  <input type="submit" id="create" value="Ekle">
   <input type="hidden" name="action" value="new">
   <input type="hidden" name="token" value="[% token FILTER html %]">
 </form>
 
-<p><a href="editkeywords.cgi">Edit other keywords</a>.</p>
+<p><a href="editkeywords.cgi">Diğer anahtarları göster</a>.</p>
 
 [% PROCESS global/footer.html.tmpl %]

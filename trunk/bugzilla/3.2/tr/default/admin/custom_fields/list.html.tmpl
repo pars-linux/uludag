@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -20,7 +21,7 @@
 [% PROCESS "global/field-descs.none.tmpl" %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Custom Fields"
+  title = "Özel Alanlar"
   doc_section = "custom-fields.html"
 %]
 
@@ -29,36 +30,36 @@
 [% columns = [
      {
        name => "name"
-       heading => "Edit custom field..."
+       heading => "Özel alanda değişiklik yap..."
        contentlink => "editfields.cgi?action=edit&amp;name=%%name%%"
      },
      {
        name => "description"
-       heading => "Description"
+       heading => "Açıklama"
      },
      {
        name => "sortkey"
-       heading => "Sortkey"
+       heading => "Sıralama anahtarı"
      },
      {
        name => "type"
-       heading => "Type"
+       heading => "Tür"
      },
      {
        name => "enter_bug"
-       heading => "Editable on $terms.Bug Creation"
+       heading => "$terms.Bug Oluştururken Değiştirilebilir"
      },
      {
        name => "mailhead"
-       heading => "In ${terms.Bug}mail on $terms.Bug Creation"
+       heading => "$terms.Bug Oluştururken mail on $terms.Bug Epostasında Bulunur"
      },
      {
        name => "obsolete"
-       heading => "Is Obsolete"
+       heading => "Eskidi"
      },
      {
        name => "action"
-       heading => "Action"
+       heading => "Eylem"
        content => ""
      }
    ]
@@ -85,7 +86,7 @@
      match_value => 1
      match_field => 'obsolete'
      override_content => 1
-     content => "Delete"
+     content => "Sil"
      override_contentlink => 1
      contentlink => delete_contentlink
    } ]
@@ -98,7 +99,7 @@
 %]
 
 <p>
-  <a href="editfields.cgi?action=add">Add a new custom field</a>
+  <a href="editfields.cgi?action=add">Yeni özel alan ekle</a>
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

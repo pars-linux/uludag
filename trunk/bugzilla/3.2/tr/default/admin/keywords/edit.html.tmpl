@@ -18,6 +18,7 @@
   # Contributor(s): Terry Weissman <terry@mozilla.org>
   #                 Vlad Dascalu <jocuri@softhome.net>
   #                 Max Kanat-Alexander <mkanat@bugzilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -27,18 +28,18 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Edit keyword"
+  title = "Anahtarı değiştir"
 %]
 
 <form method="post" action="editkeywords.cgi">
   <table border="0" cellpadding="4" cellspacing="0">
     <tr>
-      <th align="right">Name:</th>
+      <th align="right">İsim:</th>
       <td><input size="64" maxlength="64" name="name" 
                  value="[% keyword.name FILTER html %]"></td>
     </tr>
     <tr>
-      <th align="right">Description:</th>
+      <th align="right">Açıklama:</th>
       <td>
         [% INCLUDE global/textarea.html.tmpl
           name           = 'description'
@@ -56,18 +57,18 @@
           <a href="buglist.cgi?keywords=[% keyword.name FILTER url_quote %]">
             [% keyword.bug_count FILTER html %]</a>
         [% ELSE %]
-          none
+          yok
         [% END %]
       </td>
     </tr>
   </table>
 
-  <input type="submit" id="update" value="Save Changes">
+  <input type="submit" id="update" value="Değişiklikleri Kaydet">
   <input type="hidden" name="action" value="update">
   <input type="hidden" name="id" value="[% keyword.id FILTER html %]">
   <input type="hidden" name="token" value="[% token FILTER html %]">
 </form>
 
-<p><a href="editkeywords.cgi">Edit other keywords</a>.</p>
+<p><a href="editkeywords.cgi">Diğer anahtarları göster</a>.</p>
 
 [% PROCESS global/footer.html.tmpl %]
