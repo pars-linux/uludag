@@ -16,7 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Jouni Heikniemi <jouni@heikniemi.net>
-  #
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -150,9 +150,9 @@
         [% ELSE %]
           [% IF yesno_field %]
             [% IF row.${c.name} %]
-              Yes
+              Evet
             [% ELSE %]
-              No
+              Hayır
             [% END %]
           [% ELSE %]
             [% IF allow_html_content %]
@@ -173,7 +173,7 @@
 [% END %]
 
 [% IF data.size == 0 %]
-  <tr><td colspan="[% columns.size %]" align="center"><i>&lt;none&gt;</i></td></tr>
+  <tr><td colspan="[% columns.size %]" align="center"><i>&lt;yok&gt;</i></td></tr>
 [% END %]
 
 
