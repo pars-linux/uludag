@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>731</width>
-    <height>395</height>
+    <width>734</width>
+    <height>412</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -17,31 +17,20 @@
     <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_2" >
-   <item rowspan="2" row="0" column="0" >
+   <item row="0" column="0" >
     <layout class="QVBoxLayout" name="verticalLayout" >
      <item>
-      <widget class="QLabel" name="label" >
-       <property name="text" >
-        <string/>
-       </property>
-       <property name="alignment" >
-        <set>Qt::AlignCenter</set>
+      <widget class="QComboBox" name="comboBox" >
+       <property name="maximumSize" >
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
        </property>
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2" >
-       <item>
-        <widget class="QComboBox" name="comboBox" >
-         <property name="maximumSize" >
-          <size>
-           <width>200</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <layout class="QHBoxLayout" name="horizontalLayout_2" />
      </item>
      <item>
       <widget class="QListWidget" name="lw" >
@@ -71,120 +60,124 @@
     </layout>
    </item>
    <item row="0" column="1" >
-    <layout class="QHBoxLayout" name="horizontalLayout_3" >
+    <layout class="QVBoxLayout" name="verticalLayout_2" >
      <item>
-      <widget class="QLabel" name="noLabel2" >
-       <property name="frameShape" >
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="text" >
-        <string>No:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="typeLabel2" >
-       <property name="frameShape" >
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="text" >
-        <string>Type:</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="1" >
-    <widget class="QToolBox" name="operationTB" >
-     <property name="autoFillBackground" >
-      <bool>false</bool>
-     </property>
-     <property name="frameShape" >
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow" >
-      <enum>QFrame::Plain</enum>
-     </property>
-     <property name="currentIndex" >
-      <number>1</number>
-     </property>
-     <widget class="QWidget" name="planPage" >
-      <property name="geometry" >
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>507</width>
-        <height>250</height>
-       </rect>
-      </property>
-      <attribute name="label" >
-       <string>Takeback Plan</string>
-      </attribute>
-      <attribute name="icon" >
-       <iconset resource="../resources/data.qrc" >
-        <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
-      </attribute>
-      <attribute name="toolTip" >
-       <string>Click to see what will happen if you click restore button</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout" >
-       <item row="0" column="0" >
-        <widget class="QTextEdit" name="textEdit" >
+      <layout class="QHBoxLayout" name="horizontalLayout_3" >
+       <item>
+        <widget class="QLabel" name="noLabel2" >
          <property name="frameShape" >
-          <enum>QFrame::Panel</enum>
+          <enum>QFrame::StyledPanel</enum>
          </property>
-         <property name="documentTitle" >
-          <string/>
+         <property name="text" >
+          <string>No:</string>
          </property>
-         <property name="undoRedoEnabled" >
-          <bool>false</bool>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="typeLabel2" >
+         <property name="frameShape" >
+          <enum>QFrame::StyledPanel</enum>
          </property>
-         <property name="readOnly" >
-          <bool>true</bool>
+         <property name="text" >
+          <string>Type:</string>
          </property>
-         <property name="html" >
-          <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QToolBox" name="operationTB" >
+       <property name="autoFillBackground" >
+        <bool>false</bool>
+       </property>
+       <property name="frameShape" >
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow" >
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="currentIndex" >
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="planPage" >
+        <property name="geometry" >
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>508</width>
+          <height>265</height>
+         </rect>
+        </property>
+        <attribute name="label" >
+         <string>Takeback Plan</string>
+        </attribute>
+        <attribute name="icon" >
+         <iconset resource="../resources/data.qrc" >
+          <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
+        </attribute>
+        <attribute name="toolTip" >
+         <string>Click to see what will happen if you click restore button</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout" >
+         <item row="0" column="0" >
+          <widget class="QTextEdit" name="textEdit" >
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="documentTitle" >
+            <string/>
+           </property>
+           <property name="undoRedoEnabled" >
+            <bool>false</bool>
+           </property>
+           <property name="readOnly" >
+            <bool>true</bool>
+           </property>
+           <property name="html" >
+            <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
 &lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>&lt;/body>&lt;/html></string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="opPage" >
-      <property name="geometry" >
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>507</width>
-        <height>250</height>
-       </rect>
-      </property>
-      <attribute name="label" >
-       <string>Operation Details</string>
-      </attribute>
-      <attribute name="icon" >
-       <iconset resource="../resources/data.qrc" >
-        <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
-      </attribute>
-      <attribute name="toolTip" >
-       <string>Click to see operation details</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_3" >
-       <item row="0" column="0" >
-        <widget class="QListView" name="listView" >
-         <property name="frameShape" >
-          <enum>QFrame::Panel</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="opPage" >
+        <property name="geometry" >
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>94</width>
+          <height>64</height>
+         </rect>
+        </property>
+        <attribute name="label" >
+         <string>Operation Details</string>
+        </attribute>
+        <attribute name="icon" >
+         <iconset resource="../resources/data.qrc" >
+          <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
+        </attribute>
+        <attribute name="toolTip" >
+         <string>Click to see operation details</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_3" >
+         <item row="0" column="0" >
+          <widget class="QListView" name="listView" >
+           <property name="frameShape" >
+            <enum>QFrame::Panel</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
    </item>
-   <item row="2" column="0" colspan="2" >
+   <item row="1" column="0" colspan="2" >
     <layout class="QHBoxLayout" name="horizontalLayout" >
      <item>
       <widget class="QPushButton" name="helpPB" >
@@ -219,6 +212,9 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="text" >
         <string>New Snapshot</string>
+       </property>
+       <property name="flat" >
+        <bool>true</bool>
        </property>
       </widget>
      </item>

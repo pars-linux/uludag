@@ -9,12 +9,12 @@ from PyQt4 import QtCore
 
 from ui_mainwindow import Ui_MainManager
 from interface import ComarIface, PisiIface
+from listitem import NewWidgetItem
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
         QtGui.QWidget.__init__(self, parent)
 
-        self.settings = QtCore.QSettings()
         self.ui = Ui_MainManager()
 
         if standAlone:
@@ -26,11 +26,15 @@ class MainManager(QtGui.QWidget):
         self.pface = PisiIface()
 
         self.cface.listen(self.handler)
+        self.getHistory()
+
+    def getHistory(self):
+        for operation in self.pface.historyDb().get_last():
+            item = NewWidgetItem(self.ui.lw, operation)
 
     def handler(self, package, signal, args):
-        pass
+        print package, signal, args
 
     def showPlan(self, op):
         willbeinstalled, willberemoved = self.pface.plan(operation)
-
 
