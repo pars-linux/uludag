@@ -102,6 +102,7 @@
   * 3.0.x serisine yapılan değişikliklerden gerekenlerin alınması (-)
 
 * Yalı4 2.1 (Gökmen GÖKSEL)
+  * Python 2.6 geçişi
   * Ağ üzerinden kurulum .2095 (/30)
   * Harici araçların çıktısı hata ayıklamada gözüksün .7568 (/20)
   * Disk tablosunda değişiklik yoksa disk tablosu yeniden yazılmasın .7530 (-)
