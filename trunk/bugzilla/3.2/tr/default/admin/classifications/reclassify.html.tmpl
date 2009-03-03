@@ -16,37 +16,38 @@
   # Rights Reserved.
   #
   # Contributor(s): Albert Ting <alt@sonic.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Reclassify products"
+  title = "Ürünleri yeniden sınıflandır"
 %]
 
 <form method=post action="editclassifications.cgi">
   <table border=0 cellpadding=4 cellspacing=0>
     <tr>
-      <td valign="top">Classification:</td>
+      <td valign="top">Sınıf:</td>
       <td valign="top" colspan=3>[% classification.name FILTER html %]</td>
 
     </tr><tr>
-      <td valign="top">Description:</td>
+      <td valign="top">Açıklama:</td>
       <td valign="top" colspan=3>
         [% IF classification.description %]
           [% classification.description FILTER html_light %]
         [% ELSE %]
-          <font color="red">description missing</font>
+          <font color="red">açıklama yok</font>
         [% END %]
       </td>
 
     </tr><tr>
-      <td valign="top">Sortkey:</td>
+      <td valign="top">Sıralama anahtarı:</td>
       <td valign="top" colspan=3>[% classification.sortkey FILTER html %]</td>
 
     </tr><tr>
-      <td valign="top">Products:</td>
-      <td valign="top">Other Classifications</td>
+      <td valign="top">Ürünler:</td>
+      <td valign="top">Diğer Sınıflar</td>
       <td></td>
-      <td valign="top">This Classification</td>
+      <td valign="top">Bu Sınıf</td>
 
     </tr><tr>
       <td></td>
@@ -64,8 +65,8 @@
       </select></td>
 
       <td align="center">
-        <input type=submit value="     Add &gt;&gt;  " name="add_products"><br><br>
-        <input type=submit value="&lt;&lt; Remove" name="remove_products">
+        <input type=submit value="     Ekle &gt;&gt;  " name="add_products"><br><br>
+        <input type=submit value="&lt;&lt; Çıkar" name="remove_products">
       </td>
 
       <td valign="middle" rowspan=2>
@@ -84,8 +85,8 @@
   <input type="hidden" name="token" value="[% token FILTER html %]">
 </form>
 
-<p>Back to the <a href="./">main [% terms.bugs %] page</a>,
-or <a href="editclassifications.cgi"> edit</a> more classifications.
+<p><a href="./">Ana [% terms.bug %] sayfası</a>na dön,
+veya başka sınıflarda <a href="editclassifications.cgi">değişiklik yap</a>.
 
 [% PROCESS global/footer.html.tmpl %]
 
