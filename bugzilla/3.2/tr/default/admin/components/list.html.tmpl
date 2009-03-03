@@ -17,6 +17,7 @@
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -27,8 +28,7 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = BLOCK %]Select component of product
-                   '[% product.name FILTER html %]'[% END %]
+[% title = BLOCK %]'[% product.name FILTER html %]' ürününün bileşenini seç[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
@@ -44,17 +44,17 @@
 [% columns = [
      { 
        name => "name"
-       heading => "Edit component..."
+       heading => "Bileşeni değiştir..."
        contentlink => edit_contentlink
      },
      { 
        name => "description"
-       heading => "Description" 
+       heading => "Açıklama" 
        allow_html_content => 1
      },
      { 
        name => "initialowner"
-       heading => "Default Assignee"
+       heading => "Öntanımlı Atanan"
      },
    ]
 %]
@@ -63,7 +63,7 @@
 
   [% columns.push({
        name => 'initialqacontact'
-       heading => 'QA Contact'
+       heading => 'Kalite Kontrol Kişisi'
      }) %]
 
 [% END %]
@@ -80,8 +80,8 @@
 [% END %]
 
 [% columns.push({
-     heading => "Action"
-     content => "Delete"
+     heading => "Eylem"
+     content => "Sil"
      contentlink => delete_contentlink
    }) %]
 
@@ -112,13 +112,13 @@
      overrides = overrides
 %]
 
-<p><a href="editcomponents.cgi?action=add&amp;product=[% product.name FILTER url_quote %]">Add</a>
-    a new component to product '[% product.name FILTER html %]'</p>
+<p>'[% product.name FILTER html %]' ürününe yeni bileşen <a href="editcomponents.cgi?action=add&amp;product=[% product.name FILTER url_quote %]">Ekle</a>
+    </p>
 
 [% IF ! showbugcounts %]
 
   <p><a href="editcomponents.cgi?product=[% product.name FILTER url_quote %]&amp;showbugcounts=1">
-      Redisplay table with [% terms.bug %] counts (slower)</a></p>
+      Tabloyu [% terms.bug %] sayılarıyla birlikte göster (daha yavaştır)</a></p>
 
 [% END %]
 

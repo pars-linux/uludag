@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -27,28 +28,28 @@
 <hr>
 
 <p>
-Edit 
+Değiştirmek için
 
 [% IF comp && !no_edit_component_link %]
-  component <a 
-  title="Edit Component '[% comp.name FILTER html %]'"
+  <a 
+  title="'[% comp.name FILTER html %]' Bileşenini Aç"
   href="editcomponents.cgi?action=edit&amp;product=
   [%- product.name FILTER url_quote %]&amp;component=[% comp.name FILTER url_quote %]">
    '[% comp.name FILTER html %]'</a> 
-  or edit
+  bileşenini aç veya 
 [% END %]
 
 [% IF !no_edit_other_components_link %]
-other components of product <a 
-  title="Choose a component from product '[% product.name FILTER html %]' to edit"
+<a 
+  title="'[% product.name FILTER html %]' ürününden değiştirmek istediğin bileşeni seç"
   href="editcomponents.cgi?product=
-  [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a>, 
-  or edit 
+  [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a> ürününün diğer bileşenlerini aç, 
+  veya 
 [% END %]
 
-product <a 
-  title="Edit Product '[% product.name FILTER html %]'"
+<a 
+  title="'[% product.name FILTER html %]' Ürününü Aç"
   href="editproducts.cgi?action=edit&amp;product=
-  [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a>.
+  [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a> ürününü aç.
 
 </p>

@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -25,8 +26,7 @@
   #               which the component belongs.
   #%]
 
-[% title = BLOCK %]Delete component '[% comp.name FILTER html %]'
-from '[% product.name FILTER html %]' product
+[% title = BLOCK %]'[% product.name FILTER html %]' ürününden '[% comp.name FILTER html %]' bileşenini sil
   [% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -35,44 +35,44 @@ from '[% product.name FILTER html %]' product
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr bgcolor="#6666FF">
-  <th valign="top" align="left">Field</th>
-  <th valign="top" align="left">Value</th>
+  <th valign="top" align="left">Alan</th>
+  <th valign="top" align="left">Değer</th>
 </tr>
 <tr>
-  <td valign="top">Component:</td>
+  <td valign="top">Bileşen:</td>
   <td valign="top">[% comp.name FILTER html %]</td>
 </tr>
 <tr>
-  <td valign="top">Component Description:</td>
+  <td valign="top">Bileşen Açıklaması:</td>
   <td valign="top">[% comp.description FILTER html_light %]</td>
 </tr>
 <tr>
-  <td valign="top">Default assignee:</td>
+  <td valign="top">Öntanımlı atanan:</td>
   <td valign="top">[% comp.default_assignee.login FILTER html %]</td>
   
 [% IF Param('useqacontact') %]
 </tr>
 <tr>
-  <td valign="top">Default QA contact:</td>
+  <td valign="top">Öntanımlı kalite kontrol kişisi:</td>
   <td valign="top">[% comp.default_qa_contact.login FILTER html %]</td>
 [% END %]
   
 </tr>
 <tr>
-  <td valign="top">Component of Product:</td>
+  <td valign="top">Ürünün Bileşeni:</td>
   <td valign="top">[% product.name FILTER html %]</td>
 
 [% IF product.description %]
 </tr>
 <tr>
-  <td valign="top">Product Description:</td>
+  <td valign="top">Ürün Açıklaması:</td>
   <td valign="top">[% product.description FILTER html_light %]</td>
 [% END %]
 
 [% IF Param('usetargetmilestone') %]
 </tr>
 <tr>
-  <td valign="top">Product Milestone URL:</td>
+  <td valign="top">Ürün Aşama Adresi:</td>
   <td valign="top">
     <a href="[% product.milestone_url FILTER html %]">
       [% product.milestone_url FILTER html %]
@@ -82,59 +82,42 @@ from '[% product.name FILTER html %]' product
 
 </tr>
 <tr>
-  <TD VALIGN="top">Closed for [% terms.bugs %]:</TD>
-  <TD VALIGN="top">[% IF product.disallow_new %]Yes[% ELSE %]No[% END %]</td>
+  <TD VALIGN="top">[% terms.BugsDat %] kapalı:</TD>
+  <TD VALIGN="top">[% IF product.disallow_new %]Evet[% ELSE %]Hayır[% END %]</td>
 </tr>
 <tr>
   <td valign="top">[% terms.Bugs %]:</td>
   <td valign="top">
 [% IF comp.bug_count %]
-  <a title="List of [% terms.bugs %] for component '[% comp.name FILTER html %]'"
+  <a title="'[% comp.name FILTER html %]' bileşeni [% terms.bug %] listesi"
      href="buglist.cgi?component=[% comp.name FILTER url_quote %]&amp;product=
           [%- product.name FILTER url_quote %]">[% comp.bug_count %]</a>
 [% ELSE %]
-  None
+  Yok
 [% END %]
   </td>
 </tr>
 </table>
 
-<h2>Confirmation</h2>
+<h2>Onay</h2>
   
 [% IF comp.bug_count %]
 
   [% IF !Param("allowbugdeletion") %]
   <p>
-    Sorry, there
-
-    [% IF comp.bug_count > 1 %] 
-      are [% comp.bug_count %] [%+ terms.bugs %] 
-    [% ELSE %]
-      is [% comp.bug_count %] [%+ terms.bug %] 
-    [% END %]
-
-    outstanding for this component.  You must reassign 
-
+    Bu bileşende ön plana çıkan [% comp.bug_count %] hata var. Bu bileşeni silmeden önce o 
     [% IF comp.bug_count > 1 %]
-       those [% terms.bugs %] 
+       [% terms.bugsAcc %] 
     [% ELSE %]
-       that [% terms.bug %]
+       [% terms.bugAcc %] 
     [% END %]
-
-    to another component before you can delete this one.
+    başka bir bileşene atamalısınız.
   </p>
   [% ELSE %]
 
     <table border="0" cellpadding="20" width="70%" bgcolor="red"><tr><td>
 
-      There [% IF comp.bug_count > 1 %] 
-        are [% comp.bug_count %] [%+ terms.bugs %] 
-      [% ELSE %]
-        is 1 [% terms.bug %]
-      [% END %]
-      entered for this component!  When you delete this
-      component, <b><blink>ALL</blink></b> stored [% terms.bugs %] and
-      their history will be deleted too.
+      Bu bileşene girilmiş [% comp.bug_count %] [% terms.bug %] var! Bu bileşeni sildiğinizde, kayıtlı <b><blink>TÜM</blink></b> [% terms.bugs %] ve tarihçeleri de silinecek.
       </td></tr></table>
 
   [% END %]
@@ -143,10 +126,10 @@ from '[% product.name FILTER html %]' product
 
 [% IF comp.bug_count == 0 || Param('allowbugdeletion') %]
 
-  <p>Do you really want to delete this component?</p>
+  <p>Bu bileşeni silmek istiyor musunuz?</p>
   
   <form method="post" action="editcomponents.cgi">
-  <input type="submit" id="delete" value="Yes, delete">
+  <input type="submit" id="delete" value="Evet, sil">
   <input type="hidden" name="action" value="delete">
   <input type="hidden" name="product" value="[% product.name FILTER html %]">
   <input type="hidden" name="component" value="[% comp.name FILTER html %]">
