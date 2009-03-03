@@ -23,21 +23,8 @@ from PyKDE4.kdecore import *
 from uimain import Ui_MainManager
 from uiitem import Ui_PackageWidget
 
-import pmtools
-
-class PackageWidgetItem(QtGui.QListWidgetItem):
-    def __init__(self, parent):
-        QtGui.QListWidgetItem.__init__(self, parent)
-
-class PackageWidget(QtGui.QWidget):
-    def __init__(self, parent, name, summary):
-        QtGui.QWidget.__init__(self, None)
-
-        self.ui = Ui_PackageWidget()
-        self.ui.setupUi(self)
-
-        self.ui.labelName.setText(name)
-        self.ui.labelSummary.setText(unicode(summary))
+from packagelistmodel import PackageListModel
+from packagelistdelegate import PackageListDelegate
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
@@ -51,22 +38,9 @@ class MainManager(QtGui.QWidget):
         else:
             self.ui.setupUi(parent)
 
-        # Init pm
-        self.iface = pmtools.Iface()
-
         # Initialize
         self.initialize()
 
     def initialize(self):
-        packages = self.iface.getPackageList()
-        for name in packages:
-            package = self.iface.getPackage(name)
-            widget = PackageWidget(self, package.name, unicode(package.summary))
-            widget_item = PackageWidgetItem(self.ui.packageList)
-            self.ui.packageList.setItemWidget(widget_item, widget)
-            widget_item.setSizeHint(QSize(100, 48))
-
-    def addComponent(self, name, icon, no_of_pkgs):
-        item = QtGui.QListWidgetItem(self.ui.componentList)
-        item.setText("%s (%s)" % (i18n(name), no_of_pkgs))
-        item.setIcon(KIconLoader().loadIcon(icon, KIconLoader.Desktop, KIconLoader.SizeMedium))
+        self.ui.packageList.setModel(PackageListModel(self))
+        self.ui.packageList.setItemDelegate(PackageListDelegate(self))
