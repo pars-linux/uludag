@@ -24,34 +24,34 @@
 %]
 
 [% param_descs = {
-  duplicate_or_move_bug_status => "When $terms.abug is marked as a duplicate of another one " _
-                                  "or is moved to another installation, use this $terms.bug status."
+  duplicate_or_move_bug_status => "$terms.Abug başka bir $terms.bugGen aynısı olarak " _
+                                  "işaretlendiğinde veya başka bir kuruluma taşındığında, " _
+                                  "bu $terms.bug durumunu kullan."
 
-  letsubmitterchoosepriority => "If this is on, then people submitting $terms.bugs can " _
-                                "choose an initial priority for that ${terms.bug}. " _
-                                "If off, then all $terms.bugs initially have the default " _
-                                "priority selected below.",
+  letsubmitterchoosepriority => "Eğer bu açıksa, $terms.bug gönderen kişiler o $terms.bug " _
+                                "için bir öncelik belirtebilirler. Kapalıysa, tüm $terms.bugsDat " _
+                                "başlangıçta aşağıda belirtilen öntanımlı öncelik atanır.",
 
-  letsubmitterchoosemilestone => "If this is on, then people submitting $terms.bugs can " _
-                                 "choose the Target Milestone for that ${terms.bug}. " _
-                                 "If off, then all $terms.bugs initially have the default " _
-                                 "milestone for the product being filed in.",
+  letsubmitterchoosemilestone => "Açıksa, $terms.bug gönderen kişiler o $terms.bug için Hedef " _
+                                 "Aşama seçebilirler. Kapalıysa, tüm $terms.bugsDat ilgili " _
+                                 "ürünün öntanımlı aşaması atanır.",
 
-  musthavemilestoneonaccept => "If you are using Target Milestone, do you want to require that " _
-                               "the milestone be set in order for a user to ACCEPT a ${terms.bug}?",
+  musthavemilestoneonaccept => "Eğer Hedef Aşama kullanıyorsanız, bir kullanıcının bir $terms.bugAcc " _
+                               "KABUL edebilmesi için bir aşama belirtilmesini zorunlu hale getirmek " _
+                               "istiyor musunuz??",
 
-  commentonclearresolution => "If this option is on, the user needs to enter a short comment if " _
-                              "the ${terms.bug}'s resolution is cleared.",
+  commentonclearresolution => "Açıksa, kullanıcı $terms.abugGen işlemini temizlediğinde kısa bir " _
+                              "yorum girmesi gerekir.",
 
-  commentonchange_resolution => "If this option is on, the user needs to enter a short " _
-                                "comment if the resolution of the $terms.bug changes.",
+  commentonchange_resolution => "Eğer bu seçenek açıksa, $terms.abugGen işlemi değiştiğinde " _
+                                "kullanıcının kısa bir yorum girmesi gerekir.",
 
-  commentonreassignbycomponent => "If this option is on, the user needs to enter a short comment if " _
-                                  "the $terms.bug is reassigned by component.",
+  commentonreassignbycomponent => "Seçenek açıksa, kullanıcının $terms.bug bileşene göre yeniden " _
+                                  "atandığında kullanıcının kısa bir yorum girmesi gerekir.",
 
-  commentonduplicate => "If this option is on, the user needs to enter a short comment " _
-                        "if the $terms.bug is marked as duplicate.",
+  commentonduplicate => "Bu seçenek açık olduğu taktirde $terms.bug başka bir $terms.bugGen " _
+                        "aynısı olarak işaretlendiğinde kullanıcının kısa bir yorum girmesi gerekir.",
 
-  noresolveonopenblockers => "Don\'t allow $terms.bugs to be resolved as fixed " _
-                             "if they have unresolved dependencies." }
+  noresolveonopenblockers => "Eğer bir $terms.bugGen çözümlenmemiş bağımlılıkları varsa çözüldü " _
+                             "olarak işaretlenmesine izin verme." }
 %]
