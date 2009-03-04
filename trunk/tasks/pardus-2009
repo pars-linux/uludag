@@ -30,6 +30,7 @@
 
 * Donanım (Ozan Çağlayan)
   * Yeni çekirdek geçişi (2.6.29) (/75)
+  * Yeni module-init-tools geçişi (/100)
   * BlueZ 4.x geçişi (-)
   * Pulseaudio ve ailesinin güncellenmesi (/60)
   * foomatic-*, gutenprint, ghostscript, hplip, foo2zjs paketlerinin güncellenmesi (/20)
