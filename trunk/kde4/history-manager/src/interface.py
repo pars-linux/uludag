@@ -53,3 +53,9 @@ class PisiIface:
     def getConfigFiles(self, op):
         self.pdb.get_config_files(op)
 
+    def getEmptyHistory(self):
+        return pisi.history.History()
+
+def getEmptyHistory():
+    return pisi.history.History()
+

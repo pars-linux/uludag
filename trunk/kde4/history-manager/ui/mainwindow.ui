@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>734</width>
-    <height>412</height>
+    <width>861</width>
+    <height>465</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -16,179 +16,244 @@
    <iconset resource="../resources/data.qrc" >
     <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2" >
+  <layout class="QGridLayout" name="gridLayout" >
    <item row="0" column="0" >
     <layout class="QVBoxLayout" name="verticalLayout" >
      <item>
-      <widget class="QComboBox" name="comboBox" >
-       <property name="maximumSize" >
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2" />
-     </item>
-     <item>
-      <widget class="QListWidget" name="lw" >
-       <property name="sizePolicy" >
-        <sizepolicy vsizetype="Expanding" hsizetype="Preferred" >
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="toolTip" >
-        <string>Select a operation to process</string>
-       </property>
-       <property name="viewMode" >
-        <enum>QListView::ListMode</enum>
-       </property>
-       <property name="sortingEnabled" >
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="1" >
-    <layout class="QVBoxLayout" name="verticalLayout_2" >
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3" >
+      <layout class="QHBoxLayout" name="horizontalLayout_2" >
        <item>
-        <widget class="QLabel" name="noLabel2" >
+        <widget class="QLabel" name="noLabel" >
+         <property name="font" >
+          <font>
+           <weight>50</weight>
+           <bold>false</bold>
+           <underline>false</underline>
+           <strikeout>false</strikeout>
+          </font>
+         </property>
          <property name="frameShape" >
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Plain</enum>
          </property>
          <property name="text" >
-          <string>No:</string>
+          <string>&lt;b>No&lt;/b>: 1200</string>
+         </property>
+         <property name="textFormat" >
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="textInteractionFlags" >
+          <set>Qt::NoTextInteraction</set>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="typeLabel2" >
+        <widget class="QLabel" name="typeLabel" >
+         <property name="font" >
+          <font>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="frameShape" >
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Plain</enum>
          </property>
          <property name="text" >
-          <string>Type:</string>
+          <string>&lt;b>Type&lt;/b>: snapshot</string>
+         </property>
+         <property name="textFormat" >
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="textInteractionFlags" >
+          <set>Qt::NoTextInteraction</set>
          </property>
         </widget>
        </item>
       </layout>
      </item>
      <item>
-      <widget class="QToolBox" name="operationTB" >
-       <property name="autoFillBackground" >
+      <widget class="QListView" name="lw" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Expanding" hsizetype="Minimum" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize" >
+        <size>
+         <width>200</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>260</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="showDropIndicator" stdset="0" >
         <bool>false</bool>
        </property>
-       <property name="frameShape" >
-        <enum>QFrame::NoFrame</enum>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox" >
+       <property name="maximumSize" >
+        <size>
+         <width>260</width>
+         <height>16777215</height>
+        </size>
        </property>
-       <property name="frameShadow" >
-        <enum>QFrame::Plain</enum>
+       <property name="maxVisibleItems" >
+        <number>5</number>
        </property>
-       <property name="currentIndex" >
-        <number>0</number>
+       <property name="maxCount" >
+        <number>5</number>
        </property>
-       <widget class="QWidget" name="planPage" >
-        <property name="geometry" >
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>508</width>
-          <height>265</height>
-         </rect>
-        </property>
-        <attribute name="label" >
-         <string>Takeback Plan</string>
-        </attribute>
-        <attribute name="icon" >
-         <iconset resource="../resources/data.qrc" >
-          <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
-        </attribute>
-        <attribute name="toolTip" >
-         <string>Click to see what will happen if you click restore button</string>
-        </attribute>
-        <layout class="QGridLayout" name="gridLayout" >
-         <item row="0" column="0" >
-          <widget class="QTextEdit" name="textEdit" >
-           <property name="frameShape" >
-            <enum>QFrame::Panel</enum>
-           </property>
-           <property name="documentTitle" >
-            <string/>
-           </property>
-           <property name="undoRedoEnabled" >
-            <bool>false</bool>
-           </property>
-           <property name="readOnly" >
-            <bool>true</bool>
-           </property>
-           <property name="html" >
-            <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>&lt;/body>&lt;/html></string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="opPage" >
-        <property name="geometry" >
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>94</width>
-          <height>64</height>
-         </rect>
-        </property>
-        <attribute name="label" >
-         <string>Operation Details</string>
-        </attribute>
-        <attribute name="icon" >
-         <iconset resource="../resources/data.qrc" >
-          <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
-        </attribute>
-        <attribute name="toolTip" >
-         <string>Click to see operation details</string>
-        </attribute>
-        <layout class="QGridLayout" name="gridLayout_3" >
-         <item row="0" column="0" >
-          <widget class="QListView" name="listView" >
-           <property name="frameShape" >
-            <enum>QFrame::Panel</enum>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+       <property name="frame" >
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
     </layout>
    </item>
+   <item row="0" column="1" >
+    <widget class="QToolBox" name="operationTB" >
+     <property name="autoFillBackground" >
+      <bool>false</bool>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="currentIndex" >
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="planPage" >
+      <property name="geometry" >
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>599</width>
+        <height>332</height>
+       </rect>
+      </property>
+      <attribute name="label" >
+       <string>Takeback Plan</string>
+      </attribute>
+      <attribute name="icon" >
+       <iconset resource="../resources/data.qrc" >
+        <normaloff>:/icons/plan.png</normaloff>:/icons/plan.png</iconset>
+      </attribute>
+      <attribute name="toolTip" >
+       <string>Click to see what will happen if you click restore button</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2" >
+       <item row="0" column="0" >
+        <widget class="QTextEdit" name="textEdit" >
+         <property name="frameShape" >
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="undoRedoEnabled" >
+          <bool>false</bool>
+         </property>
+         <property name="lineWrapMode" >
+          <enum>QTextEdit::NoWrap</enum>
+         </property>
+         <property name="readOnly" >
+          <bool>true</bool>
+         </property>
+         <property name="html" >
+          <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>&lt;/body>&lt;/html></string>
+         </property>
+         <property name="textInteractionFlags" >
+          <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="opPage" >
+      <property name="geometry" >
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>599</width>
+        <height>332</height>
+       </rect>
+      </property>
+      <attribute name="label" >
+       <string>Operation Details</string>
+      </attribute>
+      <attribute name="icon" >
+       <iconset resource="../resources/data.qrc" >
+        <normaloff>:/icons/details.png</normaloff>:/icons/details.png</iconset>
+      </attribute>
+      <attribute name="toolTip" >
+       <string>Click to see operation details</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3" >
+       <item row="0" column="0" >
+        <widget class="QListView" name="listView" >
+         <property name="frameShape" >
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="editTriggers" >
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="showDropIndicator" stdset="0" >
+          <bool>false</bool>
+         </property>
+         <property name="alternatingRowColors" >
+          <bool>true</bool>
+         </property>
+         <property name="uniformItemSizes" >
+          <bool>true</bool>
+         </property>
+         <property name="selectionRectVisible" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
    <item row="1" column="0" colspan="2" >
     <layout class="QHBoxLayout" name="horizontalLayout" >
      <item>
-      <widget class="QPushButton" name="helpPB" >
-       <property name="toolTip" >
-        <string>Show Help Text</string>
-       </property>
+      <widget class="QToolButton" name="toolButton" >
        <property name="text" >
         <string>Help</string>
        </property>
-       <property name="flat" >
-        <bool>false</bool>
+       <property name="icon" >
+        <iconset resource="../resources/data.qrc" >
+         <normaloff>:/icons/help.png</normaloff>:/icons/help.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="toolButtonStyle" >
+        <enum>Qt::ToolButtonTextUnderIcon</enum>
        </property>
       </widget>
      </item>
@@ -199,39 +264,49 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="sizeHint" stdset="0" >
         <size>
-         <width>40</width>
-         <height>20</height>
+         <width>636</width>
+         <height>44</height>
         </size>
        </property>
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="newSnapshotPB" >
-       <property name="toolTip" >
-        <string>Take a new snapshot</string>
-       </property>
+      <widget class="QToolButton" name="newSnapshotTB" >
        <property name="text" >
         <string>New Snapshot</string>
        </property>
-       <property name="flat" >
-        <bool>true</bool>
+       <property name="icon" >
+        <iconset resource="../resources/data.qrc" >
+         <normaloff>:/icons/snapshot.png</normaloff>:/icons/snapshot.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="toolButtonStyle" >
+        <enum>Qt::ToolButtonTextUnderIcon</enum>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="Line" name="line" >
-       <property name="orientation" >
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="restorePB" >
-       <property name="toolTip" >
-        <string>Restore to a previous state</string>
-       </property>
+      <widget class="QToolButton" name="restoreTB" >
        <property name="text" >
         <string>Takeback</string>
+       </property>
+       <property name="icon" >
+        <iconset resource="../resources/data.qrc" >
+         <normaloff>:/icons/takeback.png</normaloff>:/icons/takeback.png</iconset>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="toolButtonStyle" >
+        <enum>Qt::ToolButtonTextUnderIcon</enum>
        </property>
       </widget>
      </item>
