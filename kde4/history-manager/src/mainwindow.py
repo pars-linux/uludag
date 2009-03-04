@@ -9,11 +9,11 @@ from PyQt4 import QtCore
 
 from ui_mainwindow import Ui_MainManager
 from interface import ComarIface, PisiIface
-from listitem import NewWidgetItem
+from listitem import *
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
-        QtGui.QWidget.__init__(self, parent)
+        super(MainManager, self).__init__(parent)
 
         self.ui = Ui_MainManager()
 
@@ -22,15 +22,17 @@ class MainManager(QtGui.QWidget):
         else:
             self.ui.setupUi(parent)
 
+        self.item_model = OperationDataModel()
+
         self.cface = ComarIface()
         self.pface = PisiIface()
 
         self.cface.listen(self.handler)
-        self.getHistory()
+        self.loadHistory()
 
-    def getHistory(self):
+    def loadHistory(self):
         for operation in self.pface.historyDb().get_last():
-            item = NewWidgetItem(self.ui.lw, operation)
+            self.item_model.items.append(NewOperation(operation))
 
     def handler(self, package, signal, args):
         print package, signal, args
