@@ -8,7 +8,7 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 from ui_mainwindow import Ui_MainManager
-from interface import ComarIface, PisiIface
+from interface import *
 from listitem import *
 
 class MainManager(QtGui.QWidget):
@@ -22,21 +22,35 @@ class MainManager(QtGui.QWidget):
         else:
             self.ui.setupUi(parent)
 
+        self.ops = []
+
         self.item_model = OperationDataModel()
+        self.ui.lw.setModel(self.item_model)
 
         self.cface = ComarIface()
-        self.pface = PisiIface()
+        self.pface = PisiIface(self)
 
+        self.connectSignals()
         self.cface.listen(self.handler)
-        self.loadHistory()
+
+    def connectSignals(self):
+        for val in ["Snapshot", "Install", "Remove", "Update", "Takeback"]:
+            exec('self.connect(self.ui.%s, SIGNAL("clicked()"), self.changeListing)' % val)
+        self.connect(self.pface, SIGNAL("finished()"), self.loadHistory)
 
     def loadHistory(self):
-        for operation in self.pface.historyDb().get_last():
-            self.item_model.items.append(NewOperation(operation))
+        for i in self.ops:
+            self.item_model.items.append(NewOperation(i))
+        self.item_model.reset()
+        self.ui.lw.setEnabled(True)
+        self.ui.opTypeLabel.setText(ki18n("- All Operations"))
 
     def handler(self, package, signal, args):
-        print package, signal, args
+        pass
 
     def showPlan(self, op):
         willbeinstalled, willberemoved = self.pface.plan(operation)
+
+    def changeListing(self):
+        self.ui.opTypeLabel.setText("- Listing %s Operations" % QObject.sender(self).objectName())
 

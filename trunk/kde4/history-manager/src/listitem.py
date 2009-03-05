@@ -7,6 +7,8 @@ from PyKDE4.kdecore import ki18n
 
 from interface import getEmptyHistory
 
+ICON, NUMBER, DATE, TIME = range(4)
+
 class OperationDataModel(QAbstractTableModel):
     def __init__(self):
         super(OperationDataModel, self).__init__()
@@ -27,15 +29,6 @@ class OperationDataModel(QAbstractTableModel):
         column = index.column()
 
         return QVariant(item.op_pack)
-
-    def insertRows(self, position, rows=1, index=QModelIndex()):
-        self.beginInsertRows(QModelIndex(), position, position + rows-1)
-
-        for row in range(rows):
-            self.items.insert(position+row, getEmptyHistory())
-
-        self.endInsertRows()
-        return True
 
     def removeRows(self, position, rows=1, index=QModelIndex()):
         self.beginRemoveRows(QModelIndex, position, position + row -1)
@@ -72,9 +65,10 @@ class OperationDataModel(QAbstractTableModel):
             return QVariant()
 
         item = self.items[index.row()]
-        column = index.column()
+        column = index.column() + 1
 
         if role == Qt.DisplayRole:
+            print "display request for item:%s" % str(item.op_no), " column:%s" % str(column)
             if column == ICON:
                 return QVariant(item.icon)
             elif column == NUMBER:
@@ -119,6 +113,17 @@ class OperationDataModel(QAbstractTableModel):
                 return QVariant(ki18n("Time"))
         return QVariant(int(section+1))
 
+    """
+    def insertRows(self, position, rows=1, index=QModelIndex()):
+        self.beginInsertRows(QModelIndex(), position, position + rows-1)
+
+        for row in range(rows):
+            self.items.insert(position+row, NewOperation(getEmptyHistory()))
+
+        self.endInsertRows()
+        return True
+    """
+
 class NewOperation:
     def __init__(self, operation):
         self.op_no = operation.no
@@ -133,25 +138,30 @@ class NewOperation:
         self.icon = None
 
         if self.op_type == 'snapshot':
-            self.icon = ":/icons/update.png"
+            self.icon = ":/pics/snapshot.png"
             self.op_type_int = 1
             self.op_type_tr = ki18n("snapshot")
         elif self.op_type == 'upgrade':
-            self.icon = ":/icons/upgrade.png"
+            self.icon = ":/pics/upgrade.png"
             self.op_type_int = 2
             self.op_type_tr = ki18n("upgrade")
         elif self.op_type == 'remove':
-            self.icon = ":/icons/remove.png"
+            self.icon = ":/pics/remove.png"
             self.op_type_int = 3
             self.op_type_tr = ki18n("remove")
         elif self.op_type == 'install':
-            self.icon = ":/icons/install.png"
+            self.icon = ":/pics/install.png"
             self.op_type_int = 4
             self.op_type_tr = ki18n("install")
         elif self.op_type == 'takeback':
-            self.icon = ":/icons/takeback.png"
+            self.icon = ":/pics/takeback.png"
             self.op_type_int = 5
             self.op_type_tr = ki18n("takeback")
+        else:
+            self.icon = "?"
+            self.op_type_int = 6
+            self.op_type_tr = ki18n("unknown")
 
     def __cmp__(self, ot):
-        return self.op_no == ot.getOpNo()
+        return cmp(self.op_no, ot.op_no)
+
