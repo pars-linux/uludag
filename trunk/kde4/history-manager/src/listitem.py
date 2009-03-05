@@ -5,11 +5,9 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n
 
-from interface import getEmptyHistory
-
 ICON, NUMBER, DATE, TIME = range(4)
 
-class OperationDataModel(QAbstractTableModel):
+class OperationDataModel(QAbstractItemModel):
     def __init__(self):
         super(OperationDataModel, self).__init__()
 
@@ -20,6 +18,12 @@ class OperationDataModel(QAbstractTableModel):
 
     def columnCount(self, index=QModelIndex()):
         return 4
+
+    def index(self, row, column, parent=QModelIndex()):
+        return QAbstractItemModel.createIndex(self, row, column)
+
+    def parent(self, index):
+        return QModelIndex()
 
     def getPackages(self, index):
         if not index.isValid() or not (0 <= index.row() < len(self.items)):
@@ -68,7 +72,6 @@ class OperationDataModel(QAbstractTableModel):
         column = index.column() + 1
 
         if role == Qt.DisplayRole:
-            print "display request for item:%s" % str(item.op_no), " column:%s" % str(column)
             if column == ICON:
                 return QVariant(item.icon)
             elif column == NUMBER:
@@ -86,14 +89,15 @@ class OperationDataModel(QAbstractTableModel):
         item = self.items(index.row())
         column = index.column()
 
-        if column == ICON:
-            item.icon = value.toString()
-        if column == NUMBER:
-            item.op_no = value.toString()
-        if column == DATE:
-            item.op_date = value.toString()
-        if column == TIME:
-            item.op_time = value.toString()
+        if role == Qt.DisplayRole:
+            if column == ICON:
+                item.icon = value.toString()
+            if column == NUMBER:
+                item.op_no = value.toString()
+            if column == DATE:
+                item.op_date = value.toString()
+            if column == TIME:
+                item.op_time = value.toString()
 
         self.emit(SIGNAL("dataChanged(QModelIndex, QModelIndex)"), index, index)
         return True
