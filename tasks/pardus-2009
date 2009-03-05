@@ -150,3 +150,11 @@
 * KDE4 (İşbaran Akçayır)
   * History-Manager (/50)
 
+* E17 (H. İbrahim Güngör)
+  * bileşen adı değişecek - enlightenment -> e17 (-)
+  * base/ bileşende eksik 2 paket review edilecek (-)
+  * binding'ler paketlenecek (-)
+  * base/ ve extra/ bileşenlerindeki paketlerin bağımlılıkları elden geçirilecek (/50)
+  * Pardus simge/tema/arkaplan uyarlanacak (/20)
+  * öntanımlı gelen kısayol/pager/shelf ıvır zıvır elden geçirilecek (/40)
+
