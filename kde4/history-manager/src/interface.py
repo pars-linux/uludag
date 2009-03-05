@@ -5,6 +5,8 @@ import comar
 import pisi
 import sys
 
+from PyQt4.QtCore import QThread
+
 class ComarIface:
     """ COMAR Interface """
 
@@ -23,12 +25,21 @@ class ComarIface:
     def takeBack(self, num):
         self.link.System.Manager["pisi"].takeBack(num)
 
-class PisiIface:
+class PisiIface(QThread):
     """ Pisi Api Interface """
 
-    def __init__(self):
+    def __init__(self, parent=None):
+        super(PisiIface, self).__init__(parent)
+        self.parent = parent
+
         self.pdb = pisi.db.historydb.HistoryDB()
         self.pdb.init()
+
+        self.start()
+
+    def run(self):
+        for operation in self.pdb.get_last():
+            self.parent.ops.append(operation)
 
     def historyDir(self):
         return pisi.ctx.config.history_dir()
@@ -52,10 +63,4 @@ class PisiIface:
 
     def getConfigFiles(self, op):
         self.pdb.get_config_files(op)
-
-    def getEmptyHistory(self):
-        return pisi.history.History()
-
-def getEmptyHistory():
-    return pisi.history.History()
 
