@@ -43,7 +43,7 @@ class MainManager(QtGui.QWidget):
             self.item_model.items.append(NewOperation(i))
         self.item_model.reset()
         self.ui.lw.setEnabled(True)
-        self.ui.opTypeLabel.setText(ki18n("- All Operations"))
+        self.ui.opTypeLabel.setText("- All Operations")
 
     def handler(self, package, signal, args):
         pass
