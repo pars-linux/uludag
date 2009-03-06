@@ -136,14 +136,13 @@ class SahipUninstall(Command):
 
 i18n_domain = "sahip"
 i18n_languages = ["tr",
-                  "es"]
+                  "es",
+                  "nl"]
 """,
-                  "nl",
                   "it",
                   "fr",
                   "de",
                   "pt_BR",
-                  "es",
                   "pl",
                   "ca"]
 """

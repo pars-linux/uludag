@@ -4,10 +4,11 @@ import getpass
 import commands
 
 tarname = "sahip-0.1.tar.gz"
-packagedir="/home/emre/pardus/playground/emre/sahip/"
+packagedir="/home/emre/svn/paketler/sahip/"
+desktop = "/home/emre/Desktop/"
 packagepspec=packagedir+"pspec.xml"
 
-os.chdir("/home/emre/Desktop")
+os.chdir(desktop)
 os.system("tar cfz %s sahip-0.1/"%tarname)  
 
 
@@ -17,7 +18,7 @@ p = getpass.getpass()
 
 s = ftplib.FTP('ftp.emrealadag.com', u, p)
 s.cwd("www/dosyalar/pardus")
-f = open("/home/emre/Desktop/"+tarname)
+f = open(desktop+tarname)
 s.storbinary("STOR "+tarname, f)
 
 f.close()
@@ -25,7 +26,7 @@ s.quit()
 print "Ftp transmission has ended..."
 # ftp end---------
 
-o = commands.getoutput("sha1sum /home/emre/Desktop/"+tarname)
+o = commands.getoutput("sha1sum "+ desktop + tarname)
 shasum = o.split(" ")[0]
 print "Sha1sum : %s" % shasum
 
@@ -57,7 +58,7 @@ f = open(packagepspec,"w")
 f.write(output)
 f.close()
 print "Wrote it"
-os.chdir("/home/emre/pardus/playground/emre/sahip/")
+os.chdir(packagedir)
 os.system("sudo pisi rm sahip")
 os.system("sudo pisi bi pspec.xml -d")
 os.system("sudo pisi it sahip-0.1-1.pisi -d")
