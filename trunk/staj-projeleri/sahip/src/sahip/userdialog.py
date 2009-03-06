@@ -37,6 +37,7 @@ class UserDialog(QtGui.QDialog):
         else:                                   # Else create a new user.
             self.user = User()                  # Empty user to be filled in.
             self.editMode = False
+            self.backupUser = None              # Indicate this is a new user to slotCancel.
                 
         self.currentWarnings = set()            # To keep the warning sentences in.        
         self.slotSwitchToNormal(True)           # Select plain password radio button.
@@ -92,7 +93,7 @@ class UserDialog(QtGui.QDialog):
         
     def slotCancel(self):
         """Closes the dialog, Restores the user if the OK button is not clicked.""" 
-        if self.user.username != None:                           # Means self.user is changed.
+        if self.user.username != None and self.backupUser != None:    # Means self.user is changed.
             self.restoreUser()                          # Then restore backup
         # No restore required if there's no change.
         self.close()                                    # Close the window
@@ -242,7 +243,7 @@ class UserDialog(QtGui.QDialog):
         if a and b and c and d:
             return True
         else:
-            self.ui.warningMessages.setText("<br/>".join(self.currentWarnings))
+            self.ui.warningMessages.setText("\n".join(self.currentWarnings))
             return False
         
     
