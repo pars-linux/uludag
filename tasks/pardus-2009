@@ -98,7 +98,7 @@
   * External mailer olarak xdg-email, browser için de xdg-open kullanılması (/50)
   * open/save dialogları için, KGtk ya da experimental upstream KDE4 dialogları kullanımı (-)
 
-* Firefox 3.1 (Gökçen Eraslan)
+* Firefox 3.5 (Gökçen Eraslan)
   * Paketleme (/80)
   * --enable-system-lcms açılacak, hunspell ve sqlite'a bakılacak  (/80)
   * nss ve nspr güncellemeleri (-)
