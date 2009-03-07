@@ -1,0 +1,147 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[turkish]{babel}
+
+\usepackage{beamerthemesplit}
+\usepackage[amssymb,cdot]{SIunits}
+
+\title{Pardus Teknolojileri ve Pardus 2009}
+\author[Pardus Geliştiricileri]{bilgi@pardus.org.tr}
+\date{Bilmök ODTÜ, Ankara\\ 28 Şubat, 2009}
+\institute{
+  Ulusal Elektronik ve Kriptoloji Araştırma Enstitüsü\\
+  TÜBİTAK}
+
+\setbeamertemplate{navigation symbols}{}
+\usetheme{Warsaw}
+
+%images
+\pgfdeclareimage[width=8cm]{2009}{2009}
+\pgfdeclareimage[width=9cm]{2009tech}{2009tech}
+\pgfdeclareimage[width=7cm]{bilesen}{bilesen}
+\pgfdeclareimage[width=2cm]{pardus-logo}{logo}
+\logo{\pgfuseimage{pardus-logo}}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Pardus Teknolojileri}
+
+\subsection{Pardus Bileşenleri}
+\frame
+{
+    \frametitle{Pardus Bileşenleri}
+    \begin{center}{\pgfuseimage{bilesen}}\end{center}
+}
+
+\subsection{Çomar}
+\frame{
+    \frametitle{Çomar}
+       \only<1>{
+       \begin{itemize}
+       \item Yeni bir yaklaşım
+       \item \emph{Herkes onu arıyor!}
+       \item Sorunun doğru tarifi $\to$ Doğru çözüm
+       \end{itemize}
+       }
+
+       \only<2>{
+       \begin{itemize}
+       \item Yapılandırma arayüzleri görev tabanlı olmalı
+       \item Gündelik işler için komut satırı gerekmemeli
+       \item \emph{Herkes belge okumuyor}
+       \item Güvenlik seviyeleri atomik olarak belirlenebilmeli (PolicyKit)
+       \item Bilgisayar kendi işini kendi yapmalı
+       \item Uygulamalar bir arada çalışabilmeli
+       \end{itemize}
+       }
+       \only<3>{
+          \begin{itemize}
+          \item Basit ve hızlı, profil tabanlı ağ yapılandırması
+          \item Otomatik grafik arayüz yapılandırması
+          \item Açılış sistemi; \textbf{hızlı}, kolay
+          \item Kullanıcı ve kullanıcı hakları yönetimi
+          \item Yazılım kurulum ve güncelleme (PiSi ile birlikte)
+          \item Yazılım kurulum ve güncelleme (uzaktaki bir makine için)
+          \item Uzaktan yönetim (Lider)
+          \end{itemize}
+       }
+
+}
+
+\subsection{PiSi}
+\frame{
+  \frametitle{PiSi}
+  \only<1>{
+   \begin{itemize}
+   \item \emph{Packages Installed Successfully as Intended}
+   \item "Paket yönetimi" yeni değil
+   \item Doğru yapılması gereken bir işi doğru yap! \\ Gerekirse yeniden yap !
+   \item Paket yönetimi dağıtım için \textbf{çok önemli}
+   \item Parçaları bir araya getiren sistem
+   \end{itemize}
+  }
+  \only<2>{
+   \begin{itemize}
+    \item Hızlı, basit, mantıklı
+    \item Paket yapmak, paket bakımı yapmak çok kolay
+    \item Benzerlerinden kat ve kat daha ufak bir kod, fazlaca özellik
+   \end{itemize}
+  }
+}
+
+\subsection{Yalı}
+\frame{
+  \frametitle{Yalı}
+   \begin{itemize}
+   \item Sade, basit : görev temelli, insan odaklı
+   \item PiSi ve Çomar altyapısı
+   \item Ufak ve hızlı
+   \item \emph{Herkes için kolay ve hızlı bir kurulum deneyimi} 
+   \end{itemize}
+}
+
+\section{Pardus 2009}
+
+\subsection{Yeni Teknolojiler}
+\frame
+{
+    \frametitle{Yeni Teknolojiler}
+    \begin{center}{\pgfuseimage{2009}}\end{center}
+}
+
+\subsection{Kde 4 Teknolojileri}
+\frame
+{
+    \frametitle{Kde 4 Teknolojileri}
+    \begin{itemize}
+       \item Plasma  : Masaüstüne yeni bir bakış
+       \item Phonon  : Multimedya uygulamaları için ortak bir altyapı
+       \item Akonadi : Kişisel veriler tek bir çatı altında toplansın
+       \item Solid   : Donanım bilgisine kolayca ulaşmanın yolu
+    \end{itemize}
+
+}
+
+\subsection{Pardus 2009 Teknolojileri}
+\frame
+{
+    \frametitle{Pardus 2009 Teknolojileri}
+    \begin{center}{\pgfuseimage{2009tech}}\end{center}
+}
+
+%\section{The End}
+\frame
+{
+	\frametitle{Teşekkürler}
+	\begin{itemize}
+        \item Sorular ?
+        \item Bilgi için www.pardus.org.tr, www.ozgurlukicin.com
+        \item Geliştirici adayları developer.pardus.org.tr
+	\end{itemize}
+
+}
+
+\end{document}
