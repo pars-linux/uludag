@@ -65,11 +65,11 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
 
     def addModuleToAutoload(self):
         selectedModule = str(self.listAllModules.currentItem().text())
-        self.comarLink.Boot.Modules["module_init_tools"].addAutoload(module=selectedModule, kernel_version="2.6") # FIXME: kernel_version shouldn't be hard-coded
+        self.comarLink.Boot.Modules["module_init_tools"].addAutoload(selectedModule,"2.6") # FIXME: kernel_version shouldn't be hard-coded
 
     def removeModuleFromAutoload(self):
         selectedModule = str(self.listAllModules.currentItem().text())
-        self.comarLink.Boot.Modules["module_init_tools"].removeAutoload(module=selectedModule, kernel_version="2.6") # FIXME: kernel_version shouldn't be hard-coded
+        self.comarLink.Boot.Modules["module_init_tools"].removeAutoload(selectedModule, "2.6") # FIXME: kernel_version shouldn't be hard-coded
 
 
     def listViaSelectedType(self, listingType):
@@ -117,15 +117,13 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
                     for module in set:
                         self.allModules.append(module)
 
-
                 for element in self.allModules:
                     item = QtGui.QListWidgetItem(str(element))
                     self.listAllModules.addItem(item)
 
         self.listAllModules.clear()
-            
-        self.comarLink.Boot.Modules.listAutoload(async = putToList)
-        self.comarLink.Boot.Modules["module_init_tools"].listAutoload("2.6")
+        self.listAllModules.addItem("Loading")
+        self.comarLink.Boot.Modules["module_init_tools"].listAutoload("2.6", async=putToList)
 
     def populateBlacklistedModules(self):
 
@@ -173,11 +171,11 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
         selectedModule = str(self.listModules.currentItem().text())
 
-        def handler(package, exception, results):
+        def updateList(package, exception, results):
             self.populateLoadedModules()
         
-        self.comarLink.Boot.Modules.unload(async=handler)
-        self.comarLink.Boot.Modules["module_init_tools"].unload(selectedModule)
+        self.comarLink.Boot.Modules["module_init_tools"].unload(selectedModule, async=updateList)
+
 
         
     def addModuleToBlacklist(self):
@@ -202,7 +200,10 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
             pass
         else:
             self.listModules.addItems(searchResults)
-
+    
+    def clearList(self):
+        self.listModules.clear()
+        self.loadedModules = []
 
     def populateLoadedModules(self):
 
