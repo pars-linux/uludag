@@ -1,17 +1,11 @@
 TODO
 ----
 
-- setup.py will be coded 
-- i18n 
-- help docs will be written
-- list functions will be called again after each operation. (remanining = 50% )
-
-    ps: it will refresh "loaded modules" window when a module is loaded from "all available modules" window
-
-    when we remove it is now refreshing. skip this.
-
-- test, test, test...
-
-- setOptions thing
-
+- setup.py will be coded [%0] 
+- i18n [%0]
+- help docs will be written [%0]
+- test, test, test... [%90]
+- setOptions thing [%0]
 ? refactor organization of the files according to new kde4-managers trend (manager/plasmoid etc...)
+- make gui cooler. 
+- {add,remove}Blacklist'te doğru çağrılara rağmen policykit access denied hatası var. yanlış şifre ile hatırla denmiş olabilir mi?
