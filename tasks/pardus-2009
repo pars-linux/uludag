@@ -162,3 +162,7 @@
   * Pardus simge/tema/arkaplan uyarlanacak (/20)
   * öntanımlı gelen kısayol/pager/shelf ıvır zıvır elden geçirilecek (/40)
 
+* Smolt (Fethican Coşkuner)
+  * Smolt server'ın tüm bağımlılıklarının depoya girmesi (/50)
+  * Pardus sunucusuna smolt-server kurulumunun yapılması (-)
+  * Smolt client için KDE4 arayüzü yazılması (-)
