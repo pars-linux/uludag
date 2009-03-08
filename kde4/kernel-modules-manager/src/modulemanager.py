@@ -146,15 +146,13 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
 
         self.comarLink.Boot.Modules.listBlacklist(async = putToList)
 
-class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
+class ModuleManagerDlg(QtGui.QWidget, Ui_moduleManagerDlg):
+#class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
     def __init__(self, parent=None):
 
         QtGui.QDialog.__init__(self, parent) 
         self.setupUi(self)
-
-        if not dbus.get_default_main_loop():
-            dbus.mainloop.qt.DBusQtMainLoop(set_as_default=True)
 
         self.comarLink = comar.Link()
 
