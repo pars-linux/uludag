@@ -840,15 +840,6 @@ def startUdev():
     # Stop udevmonitor
     os.kill(pid, 15)
 
-    # NOTE: handle lvm here when used by pardus
-    # These could be achieved using some udev rules.
-
-    if config.get("lvm"):
-        run_quiet("/sbin/modprobe", "dm-mod")
-        run_quiet("/usr/sbin/dmsetup", "mknodes")
-        run_quiet("/usr/sbin/lvm", "vgscan", "--ignorelockingfailure")
-        run_quiet("/usr/sbin/lvm", "vgchange", "-ay", "--ignorelockingfailure")
-
 def stopUdev():
     run("/sbin/start-stop-daemon",
         "--stop", "--exec", "/sbin/udevd")
