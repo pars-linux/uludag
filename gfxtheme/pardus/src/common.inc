@@ -1159,11 +1159,11 @@
     moveto setcolor
   } if
 
-  dup keyF8 eq syslinux and {
-    kroete.file .undef eq { /kroete.file "kroete.dat" findfile def } if
-    kroete.file kroete.dir idle
-    /kroete.dir kroete.dir 1 xor def
-  } if
+%  dup keyF8 eq syslinux and {
+%    kroete.file .undef eq { /kroete.file "kroete.dat" findfile def } if
+%    kroete.file kroete.dir idle
+%    /kroete.dir kroete.dir 1 xor def
+%  } if
 
   dup keyF9 eq syslinux and {
     /v_impaired inc
