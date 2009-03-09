@@ -1138,6 +1138,7 @@ def stopSystem():
         return x[1]
 
     stopServices()
+    stopUdev()
     stopDBus()
 
     saveClock()
@@ -1269,7 +1270,11 @@ if __name__ == "__main__":
         ui.info(_("Mounting /sys"))
         mount("/sys", "-t sysfs sysfs /sys")
 
+        # Prepare the /dev directory for udev startup
         setupUdev()
+
+        # Start udev and event triggering
+        startUdev()
 
         ui.info(_("Mounting /dev/pts"))
         mount("/dev/pts", "-t devpts -o gid=5,mode=0620 devpts /dev/pts")
@@ -1279,6 +1284,10 @@ if __name__ == "__main__":
         run("/bin/dmesg", "-n", "1")
 
         checkRoot()
+
+        # Grab persistent rules and udev.log file from /dev
+        copyUdevRules()
+
         setHostname()
 
         modules()

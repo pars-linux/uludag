@@ -1,11 +1,13 @@
 2009-03-09  Ozan Çağlayan <ozan@pardus.org.tr>
 	* bin/mudur.py: Implement run_async() for asynchronous process
-	execution, fix copyright date.
-	* bin/mudur.py: Rename ensureDirs to createDirectory,
+	execution, fix copyright date,
+	Rename ensureDirs to createDirectory,
 	Refactor setupUdev(), add {start,stop}Udev() and copyUdevFiles()
 	methods.
 	Limit the size of /dev to 10M,
-	Add trivial lvm support.
+	Add trivial lvm support,
+	Call udev stuff from sysinit (#8458, #8520),
+	stop udev in stopServices().
 
 2009-02-02  Bahadır Kandemir <bahadir@pardus.org.tr>
     * bin/mudur.py: Handle logger.sync() exceptions (Fixes #7410).
