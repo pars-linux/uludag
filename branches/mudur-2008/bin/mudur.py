@@ -21,6 +21,7 @@ import signal
 import fcntl
 import termios
 import socket
+import shutil
 
 import pardus.iniutils
 from pardus.netutils import waitNet
@@ -785,7 +786,7 @@ def setupUdev():
     # Copy over any persistent things
     devpath = "/lib/udev/devices"
     if os.path.exists(devpath):
-        ui.info(_("Restoring saved device nodes"))
+        ui.info(_("Restoring saved device states"))
         run_quiet(
             "/bin/cp",
             "--preserve=all", "--recursive",
