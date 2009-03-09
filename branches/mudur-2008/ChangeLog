@@ -1,3 +1,6 @@
+2009-02-02  Bahadır Kandemir <bahadir@pardus.org.tr>
+    * bin/mudur.py: Handle logger.sync() exceptions (Fixes #7410).
+
 2009-01-14  Furkan Duman <coderlord@gmail.com>
     * bin/network.py: Unicode fix for Turkish characters in connection name.
 
