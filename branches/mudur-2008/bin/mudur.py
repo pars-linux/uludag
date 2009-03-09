@@ -55,7 +55,7 @@ def loadConfig(path):
             dict[key] = value
     return dict
 
-def ensureDirs(path):
+def createDirectory(path):
     """Create missing directories in the path"""
     if not os.path.exists(path):
         os.makedirs(path)
@@ -546,7 +546,7 @@ def setSystemLanguage():
     # without duplicating default->mudur.conf->kernel-option logic
     # we do here. Note that these are system-wide not per user,
     # and only for reading.
-    ensureDirs("/etc/mudur")
+    createDirectory("/etc/mudur")
     write("/etc/mudur/language", "%s\n" % lang)
     write("/etc/mudur/keymap", "%s\n" % keymap)
     write("/etc/mudur/locale", "%s\n" % language.locale)
@@ -740,33 +740,61 @@ def stopDBus():
     run("start-stop-daemon", "--stop", "--quiet", "--pidfile", "/var/run/dbus/pid")
 
 
-#
-# Initialization functions
-#
+#############################
+# UDEV management functions #
+#############################
+
+def copyUdevRules():
+
+    # Copy udevtrigger log file to /var/log
+    if os.path.exists("/dev/.udevmonitor.log"):
+        try:
+            shutil.move("/dev/.udevmonitor.log", "/var/log/udev.log")
+        except IOError:
+            # Can't move it, no problem.
+            pass
+
+    # Moves any persistent rules from /dev/.udev to /etc/udev/rules.d
+    for rule in glob.glob("/dev/.udev/tmp-rules--*"):
+        dest = "/etc/udev/rules.d/%s" % os.path.basename(rule).split("tmp-rules--")[1]
+        try:
+            shutil.move(rule, dest)
+        except IOError:
+            ui.warn(_("Can't move persistent udev rules from /dev/.udev"))
+            pass
+
+    # If any persistent rules exist in /etc/udev/rules.d, trigger udev
+    # for processing them.
+    if glob.glob("/etc/udev/rules.d/70-persistent-*"):
+        run("/sbin/udevadm", "trigger")
 
 def setupUdev():
+
     ui.info(_("Mounting /dev"))
-    # many video drivers require exec access in /dev
-    mount("/dev", "-t tmpfs -o exec,nosuid,mode=0755 udev /dev")
+
+    # Many video drivers require exec access in /dev
+    mount("/dev", "-t tmpfs -o exec,nosuid,mode=0755,size=10M udev /dev")
 
     # At this point, an empty /dev is mounted on ramdisk
     # We need /dev/null for calling run_quiet
     os.mknod("/dev/null", 0666 | stat.S_IFCHR, os.makedev(1, 3))
 
+    # Copy over any persistent things
     devpath = "/lib/udev/devices"
     if os.path.exists(devpath):
-        ui.info(_("Restoring saved device states"))
-        for name in os.listdir(devpath):
-            run_quiet(
-                "/bin/cp",
-                "--preserve=all", "--recursive", "--update",
-                "%s/%s" % (devpath, name), "/dev/"
-            )
+        ui.info(_("Restoring saved device nodes"))
+        run_quiet(
+            "/bin/cp",
+            "--preserve=all", "--recursive",
+            "--update", "--no-dereference",
+            "%s/*" % (devpath), "/dev/"
+        )
 
     # When these files are missing, lots of trouble happens
-    # so we double check that they are there
-    ensureDirs("/dev/pts")
-    ensureDirs("/dev/shm")
+    # so we double check their existence
+    createDirectory("/dev/pts")
+    createDirectory("/dev/shm")
+
     devlinks = (
         ("/dev/fd", "/proc/self/fd"),
         ("/dev/stdin", "fd/0"),
@@ -774,32 +802,54 @@ def setupUdev():
         ("/dev/stderr", "fd/2"),
         ("/dev/core", "/proc/kcore"),
     )
+
+    # Create if any of the above links is missing
     for link in devlinks:
         if not os.path.lexists(link[0]):
             os.symlink(link[1], link[0])
 
+def startUdev():
+
+    # Start udev daemon
     ui.info(_("Starting udev"))
 
-    if config.kernel_ge("2.6.16"):
-        # disable uevent helper, udevd listens to netlink
-        write("/sys/kernel/uevent_helper", " ")
-        run("/sbin/udevd", "--daemon")
+    run("/sbin/start-stop-daemon",
+        "--start", "--quiet",
+        "--exec", "/sbin/udevd", "--", "--daemon")
 
-        ui.info(_("Populating /dev"))
+    # Create needed queue directory
+    createDirectory("/dev/.udev/queue/")
 
-        # create needed queue directory
-        ensureDirs("/dev/.udev/queue/")
+    # Log things that trigger does
+    pid = run_async(["/sbin/udevadm", "monitor", "--env"],
+                    fstdout="/dev/.udevmonitor.log")
 
-        # trigger events for all devices
-        run("/sbin/udevadm", "trigger")
-        # wait for events to finish
-        run("/sbin/udevadm", "settle", "--timeout=180")
-    else:
-        # no netlink support in old kernels
-        write("/proc/sys/kernel/hotplug", "/sbin/udevsend")
-        run("/sbin/udevstart")
+    # Filling up /dev by triggering uevents
+    ui.info(_("Populating /dev"))
+
+    # Trigger events for all devices
+    run("/sbin/udevadm", "trigger")
+
+    # Wait for events to finish
+    run("/sbin/udevadm", "settle", "--timeout=60")
+
+    # Stop udevmonitor
+    os.kill(pid, 15)
 
     # NOTE: handle lvm here when used by pardus
+    # These could be achieved using some udev rules.
+
+    if config.get("lvm"):
+        run_quiet("/sbin/modprobe", "dm-mod")
+        run_quiet("/usr/sbin/dmsetup", "mknodes")
+        run_quiet("/usr/sbin/lvm", "vgscan", "--ignorelockingfailure")
+        run_quiet("/usr/sbin/lvm", "vgchange", "-ay", "--ignorelockingfailure")
+
+def stopUdev():
+    run("/sbin/start-stop-daemon",
+        "--stop", "--exec", "/sbin/udevd")
+
+
 
 def checkRoot():
     if not config.get("livecd"):
@@ -1057,11 +1107,11 @@ def cleanupTmp():
     )
     map(delete, cleanup_list)
 
-    ensureDirs("/tmp/.ICE-unix")
+    createDirectory("/tmp/.ICE-unix")
     os.chown("/tmp/.ICE-unix", 0, 0)
     os.chmod("/tmp/.ICE-unix", 01777)
 
-    ensureDirs("/tmp/.X11-unix")
+    createDirectory("/tmp/.X11-unix")
     os.chown("/tmp/.X11-unix", 0, 0)
     os.chmod("/tmp/.X11-unix", 01777)
 
