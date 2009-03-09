@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # Pardus boot and initialization system
-# Copyright (C) 2006-2008, TUBITAK/UEKAE
+# Copyright (C) 2006-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -106,6 +106,16 @@ def capture(*cmd):
     """Capture output of the command without running a shell"""
     a = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     return a.communicate()
+
+def run_async(cmd, fstdout=None, fstderr=None):
+    """Runs a command in background and redirects the outputs optionally"""
+    if fstdout and fstderr:
+        return subprocess.Popen(cmd, stdout=open(fstdout, "w"),
+                                     stderr=open(fstderr, "w")).pid
+    elif fstdout:
+        return subprocess.Popen(cmd, stdout=open(fstdout, "w")).pid
+    else:
+        return subprocess.Popen(cmd, stderr=open(fstdout, "w")).pid
 
 def run(*cmd):
     """Run a command without running a shell, only output errors"""
