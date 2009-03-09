@@ -36,7 +36,7 @@ class Ui_availableModulesDlg(object):
 
 
         self.editSearch = QtGui.QLineEdit(availableModulesDlg)
-        self.editSearch.setGeometry(QtCore.QRect(44,10,231,25))
+        self.editSearch.setGeometry(QtCore.QRect(44,10,231,28))
         self.editSearch.setObjectName("editSearch")
         self.editSearch.setFocus()
 
