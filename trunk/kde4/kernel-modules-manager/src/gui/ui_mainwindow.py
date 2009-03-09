@@ -76,6 +76,6 @@ class Ui_moduleManagerDlg(object):
         moduleManagerDlg.setWindowTitle(QtGui.QApplication.translate("moduleManagerDlg", "Kernel Module Manager", None, QtGui.QApplication.UnicodeUTF8))
         self.lblSearch.setText(QtGui.QApplication.translate("moduleManagerDlg", "Search", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("moduleManagerDlg", "Currently loaded modules", None, QtGui.QApplication.UnicodeUTF8))
-        self.btnNewModule.setText(QtGui.QApplication.translate("moduleManagerDlg", "Module Settings", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnNewModule.setText(QtGui.QApplication.translate("moduleManagerDlg", "Other settings", None, QtGui.QApplication.UnicodeUTF8))
 
 import resource_rc
