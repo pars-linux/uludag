@@ -26,8 +26,14 @@ from dbus import DBusException
 # Global Zemberek Interface
 zpInterface = None
 
-# DBUS MainLoop
-DBusQtMainLoop(set_as_default = True)
+
+# it is very important to check if there is an active mainloop
+# before creating a new one, it may cause to crash plasma itself
+if not dbus.get_default_main_loop():
+    from dbus.mainloop.qt import DBusQtMainLoop
+    DBusQtMainLoop(set_as_default=True)
+
+# Our Comar Link
 link = comar.Link()
 systemBus = dbus.SystemBus()
 
