@@ -463,7 +463,10 @@ class CPU:
             elif self.family == 6:
                 modules.add("powernow_k7")
             # AMD Opteron/Athlon64
-            elif self.family == 15:
+            elif self.family >= 7:
+                # Try loading powernow_k8 if family 7 or greater
+                # (Athlon XP/MP was family 6)
+                # (#8678, probably #9355)
                 modules.add("powernow_k8")
 
         elif self.vendor == "CentaurHauls":
