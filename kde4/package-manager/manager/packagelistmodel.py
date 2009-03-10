@@ -29,6 +29,7 @@ class PackageListModel(QAbstractTableModel):
         QAbstractTableModel.__init__(self, parent)
         self.iface = pmtools.Iface()
         self.packages = self.iface.getPackageList()
+        self.package_selections = [Qt.Unchecked] * len(self.packages)
         self.packages.sort(key=string.lower)
         self.icon = QtGui.QIcon(QtGui.QPixmap("icons/package.png"))
 
@@ -51,25 +52,21 @@ class PackageListModel(QAbstractTableModel):
             return self.icon
         elif role == SummaryRole:
             return unicode(package.summary)
-	elif role == Qt.CheckStateRole:
-            return Qt.Unchecked
+	elif role == Qt.CheckStateRole and index.column() == 0:
+            return QVariant(self.package_selections[index.row()])
         else:
             return QVariant()
 
     def setData(self, index, value, role):
-        if role == Qt.CheckStateRole and index.column() == 1:
-            if value:
-                self.emit(QtCore.SIGNAL("dataChanged(QModelIndex,QModelIndex)"), index, index)
-                return True
-            else:
-                self.emit(QtCore.SIGNAL("dataChanged(QModelIndex,QModelIndex)"), index, index)
-                return True
+        if role == Qt.CheckStateRole and index.column() == 0:
+            self.package_selections[index.row()] = value
+            return True
         else:
             return False
 
     def flags(self, index):
-        if index.isValid() and index.column() == 1:
-            return Qt.ItemIsUserCheckable | QAbstractTableModel.flags(self, index)
+        if index.isValid() and index.column() == 0:
+            return Qt.ItemIsEnabled | Qt.ItemIsUserCheckable | QAbstractTableModel.flags(self, index)
         else:
             return QAbstractTableModel.flags(self, index)
 

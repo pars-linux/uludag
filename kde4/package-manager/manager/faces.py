@@ -44,3 +44,4 @@ class MainManager(QtGui.QWidget):
     def initialize(self):
         self.ui.packageList.setModel(PackageListModel(self))
         self.ui.packageList.setItemDelegate(PackageListDelegate(self))
+        self.ui.packageList.setColumnWidth(0, 32)
