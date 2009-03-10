@@ -22,6 +22,7 @@ from PyKDE4.kdecore import *
 from packagelistmodel import *
 
 UNIVERSAL_PADDING = 6
+FAV_ICON_SIZE = 24
 MAIN_ICON_SIZE = 48
 
 class PackageListDelegate(QtGui.QItemDelegate):
@@ -36,17 +37,30 @@ class PackageListDelegate(QtGui.QItemDelegate):
         if opt.widget:
             style = opt.widget.style()
         else:
-            style = QApplication.style()
+            style = QtGui.QApplication.style()
 
         style.drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, opt, painter, opt.widget)
-        self.paintColMain(painter, option, index)
+
+        if index.column() == 1:
+            self.paintColMain(painter, option, index)
+        elif index.column() == 0:
+            self.paintColCheckBox(painter, option, index)
+        else:
+            print "Unexpected column"
+
+    def paintColCheckBox(self, painter, option, index):
+        opt = QtGui.QStyleOptionViewItemV4(option)
+
+        buttonStyle = QtGui.QStyleOptionButton()
+        buttonStyle.state = QtGui.QStyle.State_On if index.model().data(index, Qt.CheckStateRole) == QVariant(Qt.Checked) else QtGui.QStyle.State_Off
+
+        buttonStyle.rect = option.rect.adjusted(10, 2, 0, -2)
+        opt.widget.style().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
 
     def paintColMain(self, painter, option, index):
         left = option.rect.left()
         top = option.rect.top()
         width = option.rect.width()
-
-        leftToRight = (painter.layoutDirection() == Qt.LeftToRight)
 
         pixmap = QtGui.QPixmap(option.rect.size())
         pixmap.fill(Qt.transparent)
@@ -60,13 +74,11 @@ class PackageListDelegate(QtGui.QItemDelegate):
         title = index.model().data(index, Qt.DisplayRole)
         description = index.model().data(index, SummaryRole)
 
+        p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextWordWrap, description)
+        p.setFont(QtGui.QFont(KGlobalSettings.generalFont().family(), 10, QtGui.QFont.Bold))
         p.drawText(left + textInner, top, width - textInner, itemHeight / 2, Qt.AlignBottom | Qt.AlignLeft, title)
-        p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.AlignTop | Qt.AlignLeft, description)
 
-        if leftToRight:
-            margin = left + UNIVERSAL_PADDING
-        else:
-            margin = left + width - UNIVERSAL_PADDING - MAIN_ICON_SIZE
+        margin = left + UNIVERSAL_PADDING
 
         icon = index.model().data(index, Qt.DecorationRole)
         icon.paint(p, margin, top + UNIVERSAL_PADDING, MAIN_ICON_SIZE, MAIN_ICON_SIZE, Qt.AlignCenter)
@@ -76,10 +88,15 @@ class PackageListDelegate(QtGui.QItemDelegate):
         painter.drawPixmap(option.rect.topLeft(), pixmap)
 
     def editorEvent(self, event, model, option, index):
-        return QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
+        if event.type() == QEvent.MouseButtonRelease and index.column() == 0:
+            toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
+            return model.setData(index, toggled, Qt.CheckStateRole)
+        else:
+            return QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
 
     def sizeHint(self, option, index):
-        return QSize(0, MAIN_ICON_SIZE + 2 * UNIVERSAL_PADDING)
-
-    def columnWidth(self, column, viewWidth):
-        return viewWidth - 2 * columnWidth(1, viewWidth)
+        if index.column() == 1:
+            width = 0
+        else:
+            width = FAV_ICON_SIZE
+        return QSize(width, MAIN_ICON_SIZE + 2 * UNIVERSAL_PADDING)

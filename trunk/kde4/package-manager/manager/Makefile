@@ -5,7 +5,6 @@ all: build
 build:
 	pykde4uic -o uimain.py uimain.ui
 	pykde4uic -o uiitem.py ui.item.ui
-	python fix-pykdeuic uimain.py
 	pyrcc4 data.qrc -o data_rc.py
 clean:
 	rm *.pyc uimain.py uiitem.py data_rc.py

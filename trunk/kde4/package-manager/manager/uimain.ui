@@ -47,12 +47,27 @@
     </widget>
    </item>
    <item row="1" column="1" colspan="2" >
-    <widget class="QListView" name="packageList" >
+    <widget class="QTreeView" name="packageList" >
      <property name="minimumSize" >
       <size>
        <width>450</width>
        <height>0</height>
       </size>
+     </property>
+     <property name="rootIsDecorated" >
+      <bool>false</bool>
+     </property>
+     <property name="itemsExpandable" >
+      <bool>false</bool>
+     </property>
+     <property name="wordWrap" >
+      <bool>true</bool>
+     </property>
+     <property name="headerHidden" >
+      <bool>true</bool>
+     </property>
+     <property name="expandsOnDoubleClick" >
+      <bool>false</bool>
      </property>
     </widget>
    </item>
