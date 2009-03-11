@@ -3,21 +3,49 @@
 |   |   |-- library
 |   |   |-- misc
 |   |-- kde
-|   |   |-- library
 |   |   |-- i18n
-|   |   |-- kdebase
-|   |-- themes
+|   |   |-- base
+|   |-- lookandfeel
 |   |-- toolkit
 |   |   |-- qt
+    |   |   |-- PyQt3
+    |   |   |-- PyQt4
+    |   |   |-- qt3
+    |   |   |-- qt4
 |   |   |-- gtk
 |   |   |-- fltk
+    |   |   |-- fltk
+    |   |   |-- python-fltk
+|   |   |-- wxWidgets
+|   |   |-- motif
+|   |   |   `-- motif
 |   `-- fonts
+
+
+|-- development
+|   |-- python
+    |   |-- psyco
+    |   |-- pychecker
+|   |-- perl
+|   |-- ruby
+|   |-- tcl
+|   |-- php
+|   |-- lisp
+|   |-- haskell
+|   |-- java
+|   |-- pascal
+
+|-- web
+|   |
+
 |-- x11
 |   |-- library
 |   |-- misc
 |   |-- driver
 |   |-- terminal
 |   |-- application
+
+
 |-- games
 |   |-- library
 |   |-- action
@@ -33,7 +61,8 @@
 |   |-- strategy
 |   |-- kdegames
 |   |-- kdegames-extra
-|   |
+
+
 |-- hardware
 |   |-- library
 |   |-- emulator
@@ -45,11 +74,13 @@
 |   |-- sound
 |   |-- infrared
 |   |-- bluetooth
-|   |-- disks
+|   |-- filesystem
 |   |-- firmware
-|   |-- informers
+|   |-- informers??
 |   `-- virtualization
 |
+
+
 |-- multimedia
 |   |-- library
 |   |-- graphics
@@ -58,25 +89,47 @@
 |   |-- tv
 |   |-- video
 |   `-- plugins
+
+
 |
 |-- network
 |   |-- library
+|   |-- connection
+    |   |-- wpa-supplicant
+    |   |-- rutilt
+    |   |-- brctl
+    |   |-- rp-pppoe
 |   |-- p2p
+    |   |-- ktorrent
+    |   |-- azureus
+    |   |-- apollon
+    |   |-- gift
 |   |-- browser
-|   |-- irc
-|   |-- analyzer
+    |   |-- firefox
+    |   |-- arora
+    |   |-- lynx
+    |   |-- links
 |   |-- monitoring
+    |   |-- wireshark
+    |   |-- tcpdump
+    |   |-- nessus
 |   |-- security
 |   |-- dialup
 |   |-- firewall
-|   |-- messanger
-|   |-- mail-client
-|   |-- mail-filter
+|   |-- chat
+    |   |-- pidgin
+    |   |-- amsn
+    |   |-- amsn-kde
+    |   |-- kopete
+    |   |-- konversation
+|   |-- mail
 |   |-- vpn
+    |   |-- kvpnc
 |   |-- telnet
-|   |-- transferring
-|   |-- connection
+|   |-- transfer
 |   |-- misc
+
+
 |-- server
 |   |-- library
 |   |-- mta
@@ -97,45 +150,45 @@
 |   |-- xinetd
 |   |-- memcached
 |   `-- hylafax
+
+
 |-- programming
-|   |-- library
-|   |-- tool
+|   |-- tools
 |   |-- ide
 |   |-- compiler
 |   |-- interpreter
 |   |-- module
+
+
 |-- science
 |   |-- library
 |   |-- astronomy
 |   |-- chemistry
+|   |-- geosciences
 |   |-- electronics
 |   |-- mathematics
 |   |-- medical
 |   `-- robotics
-|
+
+
 |-- filesystem
 |   |-- library
 |   |-- fs-tools
 |   |-- fs
 |   |-- misc
-|
+
+
 |-- system
-|   |-- base 
-|   |-- devel
-|
-|-- kernel
 |   |-- base
+|   |-- devel
+
+
+|-- kernel
+|   |-- pae
+
 |   `-- driver
-|       |-- virtualisation
-|       |-- misc
-|       |-- wireless
-|       |-- ethernet
-|       |-- dialup
-|       |-- sound
-|       |-- cameras
-|       |-- pcmcia-cards
-|       `-- graphics
-|
+
+
 |-- editor
 |
 |-- publishing
