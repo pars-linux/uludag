@@ -44,6 +44,7 @@ class MainManager(QtGui.QWidget):
         self.item_model.reset()
         self.ui.lw.setEnabled(True)
         self.ui.opTypeLabel.setText("- All Operations")
+        self.ui.lw.adjustSize()
 
     def handler(self, package, signal, args):
         pass
