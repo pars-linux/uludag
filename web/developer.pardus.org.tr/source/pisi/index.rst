@@ -6,4 +6,7 @@
 
 :Date: |today|
 
-Packages from Pardus
+.. toctree::
+
+    pisi-structure.rst
+
