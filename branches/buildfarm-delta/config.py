@@ -36,7 +36,11 @@ binaryPath       = "/var/cache/pisi/packages/"
 testPath         = "/var/cache/pisi/packages-test/"
 
 # This repo contains only the latest binaries and deltas.
+# It seems that it's not used anymore
 deltaPath        = "/var/cache/pisi/packages-delta/"
+
+# This repo contains only the dbginfo packages.
+debugPath        = "/var/cache/pisi/packages-debug/"
 
 # Information for mailer module.
 # Edit templates.py for the  structure of mails.
@@ -64,6 +68,7 @@ useSmtpAuth      = False
 
 blacklist = ["skype",
              "kernel",
+             "flashplugin",
              "kernel-debug",
              "openarena-data",
              "vdrift-data-full",

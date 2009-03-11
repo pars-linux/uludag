@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2008 TUBITAK/UEKAE
+# Copyright (C) 2006-2009 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,7 +18,6 @@ import copy
 import shutil
 import traceback
 import cStringIO
-import exceptions
 import cPickle
 
 import config
@@ -83,11 +82,27 @@ def buildPackages():
         try:
             try:
                 # Build source package
+                # Returned values can also contain -dbginfo- packages.
                 (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
 
                 # Reduce to filenames
                 newBinaryPackages = map(lambda x: os.path.basename(x), newBinaryPackages)
                 oldBinaryPackages = map(lambda x: os.path.basename(x), oldBinaryPackages)
+
+                # Filter debug packages because we don't need to build delta packages
+                # for debug packages
+                newDebugPackages = [p for p in newBinaryPackages if isdebug(p)]
+                oldDebugPackages = [p for p in oldBinaryPackages if isdebug(p)]
+
+                #print "************* newDebugPackages: %s" % newDebugPackages
+                #print "************* oldDebugPackages: %s" % oldDebugPackages
+
+                newBinaryPackages = list(set(newBinaryPackages).difference(newDebugPackages))
+                oldBinaryPackages = list(set(oldBinaryPackages).difference(oldDebugPackages))
+
+                #print "************* newBinaryPackages: %s" % newBinaryPackages
+                #print "************* oldBinaryPackages: %s" % oldBinaryPackages
+
                 newBinaryPackages.sort()
                 oldBinaryPackages.sort()
 
@@ -103,8 +118,8 @@ def buildPackages():
                     packagesToInstall = deltasToInstall[:]
                     if len(newBinaryPackages) > len(oldBinaryPackages):
                         logger.info("*** There are new binaries, the package is probably splitted.")
-                        # There exists some first builds, install them
-                        # because they dont have delta.
+
+                        # There exists some first builds, install them because they don't have delta.
                         packagesToInstall.extend(newBinaryPackages[len(oldBinaryPackages):])
                         logger.debug("(splitted package), packagesToInstall: %s" % packagesToInstall)
                 else:
@@ -157,7 +172,7 @@ def buildPackages():
                         removeBinaryPackageFromWorkDir(pa)
                 else:
                     qmgr.removeFromWorkQueue(pspec)
-                    movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPackages)
+                    movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages, newDebugPackages)
                     packageList += (map(lambda x: os.path.basename(x), newBinaryPackages))
                     deltaPackageList += (map(lambda x: os.path.basename(x), deltaPackages))
 
@@ -176,7 +191,7 @@ def buildPackages():
 
     # Save current path
     current = os.getcwd()
-    for dir in [config.binaryPath, config.testPath]:
+    for dir in [config.binaryPath, config.testPath, config.debugPath]:
         os.chdir(dir)
         logger.info("\n*** Generating PiSi Index in %s:" % dir)
         os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
@@ -192,13 +207,12 @@ def buildPackages():
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
 
-def movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPackages):
+def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPackages):
 
     def cleanupStaleDeltaPackages(package):
         # Say that 'package' is kernel-2.6.25.20-114.45.pisi
         # We can remove delta packages going to any build < 45 from both
         # packages/ and packages-test/ because we no longer need them.
-        build = getBuild(package)
         for p in getDeltasNotGoingTo(config.binaryPath, package):
             logger.info("*** Removing stale delta '%s' from '%s'" % (p, config.binaryPath))
             remove(join(config.binaryPath, p))
@@ -240,6 +254,14 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPac
             copy(join(config.workDir, package), config.testPath)
             remove(join(config.workDir, package))
 
+    def moveDebugPackage(package):
+        # Move all debug packages into packages-debug/ and clean them
+        # from WorkDir.
+        logger.info("*** Moving debug package '%s' to packages-debug" % package)
+        if exists(join(config.workDir, package)):
+            copy(join(config.workDir, package), config.debugPath)
+            remove(join(config.workDir, package))
+
     # Normalize files to full paths
     try:
         newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
@@ -259,6 +281,7 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPac
     logger.info("*** Old binary package(s): %s" % oldPackages)
     logger.info("*** Unchanged binary package(s): %s" % unchangedPackages)
     logger.info("*** Delta package(s): %s" % deltaPackages)
+    logger.info("*** Debug package(s): %s" % debugPackages)
 
     exists = os.path.exists
     join   = os.path.join
@@ -291,6 +314,12 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPac
             if package:
                 cleanupStaleDeltaPackages(package)
 
+    if debugPackages:
+        for package in debugPackages:
+            # Move debug packages to packages-debug/
+            if package:
+                moveDebugPackage(package)
+
 
 
 def removeBinaryPackageFromWorkDir(package):
@@ -302,6 +331,7 @@ def create_directories():
     directories = [config.workDir,
                    config.testPath,
                    config.binaryPath,
+                   config.debugPath,
                    config.localPspecRepo,
                    config.outputDir]
 

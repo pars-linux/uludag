@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2008 TUBITAK/UEKAE
+# Copyright (C) 2006-2009 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,6 +22,9 @@ def getName(p):
 
 def isdelta(p):
     return p.endswith(".delta.pisi")
+
+def isdebug(p):
+    return "-dbginfo-" in p
 
 def getDeltaPackages(path, name, target=None):
     if target and isinstance(target, int):
