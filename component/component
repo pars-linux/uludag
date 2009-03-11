@@ -8,24 +8,13 @@
 |   |-- lookandfeel
 |   |-- toolkit
 |   |   |-- qt
-    |   |   |-- PyQt3
-    |   |   |-- PyQt4
-    |   |   |-- qt3
-    |   |   |-- qt4
 |   |   |-- gtk
 |   |   |-- fltk
-    |   |   |-- fltk
-    |   |   |-- python-fltk
 |   |   |-- wxWidgets
 |   |   |-- motif
-|   |   |   `-- motif
-|   `-- fonts
-
-
+|   |-- fonts
 |-- development
 |   |-- python
-    |   |-- psyco
-    |   |-- pychecker
 |   |-- perl
 |   |-- ruby
 |   |-- tcl
@@ -34,18 +23,13 @@
 |   |-- haskell
 |   |-- java
 |   |-- pascal
-
 |-- web
-|   |
-
 |-- x11
 |   |-- library
 |   |-- misc
 |   |-- driver
 |   |-- terminal
 |   |-- application
-
-
 |-- games
 |   |-- library
 |   |-- action
@@ -61,13 +45,11 @@
 |   |-- strategy
 |   |-- kdegames
 |   |-- kdegames-extra
-
-
 |-- hardware
 |   |-- library
 |   |-- emulator
 |   |-- graphics
-|   |-- mobile (phone, pda)
+|   |-- mobile
 |   |-- powermanagement
 |   |-- printing
 |   |-- smartcard
@@ -77,10 +59,7 @@
 |   |-- filesystem
 |   |-- firmware
 |   |-- informers??
-|   `-- virtualization
-|
-
-
+|   |-- virtualization
 |-- multimedia
 |   |-- library
 |   |-- graphics
@@ -88,48 +67,22 @@
 |   |-- sound
 |   |-- tv
 |   |-- video
-|   `-- plugins
-
-
-|
+|   |-- plugins
 |-- network
 |   |-- library
 |   |-- connection
-    |   |-- wpa-supplicant
-    |   |-- rutilt
-    |   |-- brctl
-    |   |-- rp-pppoe
 |   |-- p2p
-    |   |-- ktorrent
-    |   |-- azureus
-    |   |-- apollon
-    |   |-- gift
 |   |-- browser
-    |   |-- firefox
-    |   |-- arora
-    |   |-- lynx
-    |   |-- links
 |   |-- monitoring
-    |   |-- wireshark
-    |   |-- tcpdump
-    |   |-- nessus
 |   |-- security
 |   |-- dialup
 |   |-- firewall
 |   |-- chat
-    |   |-- pidgin
-    |   |-- amsn
-    |   |-- amsn-kde
-    |   |-- kopete
-    |   |-- konversation
 |   |-- mail
 |   |-- vpn
-    |   |-- kvpnc
 |   |-- telnet
 |   |-- transfer
 |   |-- misc
-
-
 |-- server
 |   |-- library
 |   |-- mta
@@ -149,17 +102,13 @@
 |   |-- ntp
 |   |-- xinetd
 |   |-- memcached
-|   `-- hylafax
-
-
+|   |-- hylafax
 |-- programming
 |   |-- tools
 |   |-- ide
 |   |-- compiler
 |   |-- interpreter
 |   |-- module
-
-
 |-- science
 |   |-- library
 |   |-- astronomy
@@ -168,72 +117,39 @@
 |   |-- electronics
 |   |-- mathematics
 |   |-- medical
-|   `-- robotics
-
-
+|   |-- robotics
 |-- filesystem
 |   |-- library
 |   |-- fs-tools
 |   |-- fs
 |   |-- misc
-
-
 |-- system
 |   |-- base
 |   |-- devel
-
-
 |-- kernel
 |   |-- pae
-
-|   `-- driver
-
-
+|   |-- driver
 |-- editor
-|
 |-- publishing
 |   |-- libs
 |   |-- reader
 |   |-- docbook
 |   |-- converters
 |   |-- office
-|   `-- tex
-`-- util
-    |-- archive
-    |   |-- library
-    |   |-- archiver
-    |-- admin
-    |-- antivirus
-    |-- backup
-    |-- cdr
-    |-- crypt
-    |   |-- library
-    |   |-- gnupg
-    |   |-- johntheripper
-    |   |-- tpm-tools
-    |   |-- tpmmanager
-    |   |-- trouser
-    |-- dictionary
-    |   |-- library
-    |   |-- spellchecker
-    |   |-- aiksaurus
-    |   |-- ktranslator
-    |   |-- qstardict
-    |   |-- translate-toolkit
-    |-- shell
-    |-- system
-    |-- organizer
-
-
+|   |-- tex
+|-- util
+|   |-- archive
+|   |   |-- library
+|   |   |-- archiver
+|   |-- admin
+|   |-- antivirus
+|   |-- backup
+|   |-- cdr
+|   |-- crypt
+|   |   |-- library
+|   |-- dictionary
+|   |   |-- library
+|   |-- shell
+|   |-- system
+|   |-- organizer
 |-- pardus-apps
-|   |-- boot-manager
-|   |-- display-manager
-|   |-- history-manager
-|   |-- kaptan
-|   |-- knazar
-|   |-- migration
-|   |-- package-manager
-|   |-- tasma
-|   |-- service-manager
-|   |-- yali4
-|   |-- yali4-firstBoot
