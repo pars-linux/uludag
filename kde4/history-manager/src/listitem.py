@@ -5,7 +5,7 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n
 
-ICON, NUMBER, DATE, TIME = range(4)
+ICON, DATE, TIME = range(3)
 
 class OperationDataModel(QAbstractItemModel):
     def __init__(self):
@@ -17,7 +17,7 @@ class OperationDataModel(QAbstractItemModel):
         return len(self.items)
 
     def columnCount(self, index=QModelIndex()):
-        return 4
+        return 2
 
     def index(self, row, column, parent=QModelIndex()):
         return QAbstractItemModel.createIndex(self, row, column)
@@ -74,8 +74,6 @@ class OperationDataModel(QAbstractItemModel):
         if role == Qt.DisplayRole:
             if column == ICON:
                 return QVariant(item.icon)
-            elif column == NUMBER:
-                return QVariant(item.op_no)
             elif column == DATE:
                 return QVariant(item.op_date)
             elif column == TIME:
@@ -92,8 +90,6 @@ class OperationDataModel(QAbstractItemModel):
         if role == Qt.DisplayRole:
             if column == ICON:
                 item.icon = value.toString()
-            if column == NUMBER:
-                item.op_no = value.toString()
             if column == DATE:
                 item.op_date = value.toString()
             if column == TIME:
@@ -103,18 +99,24 @@ class OperationDataModel(QAbstractItemModel):
         return True
 
     def headerData(self, section, orientation, role=Qt.DisplayRole):
+        if role == Qt.TextAlignmentRole:
+            if orientation == Qt.Horizontal:
+                return QVariant(int(Qt.AlignLeft|Qt.AlignVCenter))
+            return QVariant(int(Qt.AlignRight|Qt.AlignVCenter))
+
         if role !=  Qt.DisplayRole:
             return QVariant()
 
         if orientation == Qt.Horizontal:
             if section == ICON:
-                return QVariant("")
-            elif section == NUMBER:
-                return QVariant(ki18n("No"))
+                return QVariant("Date")
             elif section == DATE:
-                return QVariant(ki18n("Date"))
+                return QVariant("Time")
             elif section == TIME:
-                return QVariant(ki18n("Time"))
+                return QVariant(ki18n(""))
+        elif orientation == Qt.Vertical:
+            return QVariant(self.items[section].op_no)
+
         return QVariant(int(section+1))
 
     """
