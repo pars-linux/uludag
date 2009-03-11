@@ -7,3 +7,7 @@
 :Date: |today|
 
 Configuration Manager
+
+.. toctree::
+
+    service-scripts.rst
