@@ -109,6 +109,7 @@
 |   |-- compiler
 |   |-- interpreter
 |   |-- module
+|   |-- debug
 |-- science
 |   |-- library
 |   |-- astronomy
