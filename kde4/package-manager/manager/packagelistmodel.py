@@ -21,7 +21,7 @@ from PyKDE4.kdeui import *
 import string
 import pmtools
 
-(SummaryRole) = (Qt.UserRole)
+(SummaryRole, DescriptionRole, VersionRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2)
 
 class PackageListModel(QAbstractTableModel):
 
@@ -40,7 +40,6 @@ class PackageListModel(QAbstractTableModel):
         return 2
 
     def data(self, index, role=Qt.DisplayRole):
-
         if not index.isValid():
             return QVariant()
 
@@ -52,6 +51,10 @@ class PackageListModel(QAbstractTableModel):
             return self.icon
         elif role == SummaryRole:
             return unicode(package.summary)
+        elif role == DescriptionRole:
+            return unicode(package.description)
+        elif role == VersionRole:
+            return unicode(package.version)
 	elif role == Qt.CheckStateRole and index.column() == 0:
             return QVariant(self.package_selections[index.row()])
         else:
