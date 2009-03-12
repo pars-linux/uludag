@@ -10,8 +10,6 @@
 #
 # Please read the COPYING file.
 
-import os
-
 # Basic buildfarm configuration.
 #
 # Workdir

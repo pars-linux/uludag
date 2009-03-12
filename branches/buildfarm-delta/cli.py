@@ -11,8 +11,6 @@
 #
 
 import sys
-import logging
-import locale
 
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
@@ -83,7 +81,7 @@ class CLI(pisi.ui.UI):
         else:
             self.output(pisi.util.colorize(msg + '\n', 'red'), err=True)
 
-    def action(self, msg, verbose = False):
+    def action(self, msg, verbose=False):
         #TODO: this seems quite redundant?
         msg = unicode(msg)
         if ctx.log:

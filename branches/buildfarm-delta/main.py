@@ -191,11 +191,11 @@ def buildPackages():
 
     # Save current path
     current = os.getcwd()
-    for dir in [config.binaryPath, config.testPath, config.debugPath]:
-        os.chdir(dir)
-        logger.info("\n*** Generating PiSi Index in %s:" % dir)
+    for d in [config.binaryPath, config.testPath, config.debugPath]:
+        os.chdir(d)
+        logger.info("\n*** Generating PiSi Index in %s:" % d)
         os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
-        logger.info("*** PiSi Index Generated for %s" % dir)
+        logger.info("*** PiSi Index Generated for %s" % d)
 
     # Go back to the saved directory
     os.chdir(current)
@@ -335,12 +335,12 @@ def create_directories():
                    config.localPspecRepo,
                    config.outputDir]
 
-    for dir in directories:
-        if dir and not os.path.isdir(dir):
+    for d in directories:
+        if d and not os.path.isdir(d):
             try:
-                os.makedirs(dir)
+                os.makedirs(d)
             except OSError:
-                raise ("Directory '%s' cannot be created, permission problem?" % dir)
+                raise ("Directory '%s' cannot be created, permission problem?" % d)
 
 
 def handle_exception(exception, value, tb):

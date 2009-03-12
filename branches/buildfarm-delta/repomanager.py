@@ -19,7 +19,6 @@ from string import find
 
 import config
 import logger
-import qmanager
 
 Exclude = ["packages", "pisi-index.xml", "README", "TODO", "useful-scripts"]
 
