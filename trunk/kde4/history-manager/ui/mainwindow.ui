@@ -349,7 +349,11 @@
           <enum>QFrame::Plain</enum>
          </property>
          <property name="text" >
-          <string>&lt;b>No&lt;/b>: 1200</string>
+          <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>&lt;/body>&lt;/html></string>
          </property>
          <property name="textFormat" >
           <enum>Qt::RichText</enum>
@@ -374,7 +378,11 @@
           <enum>QFrame::Plain</enum>
          </property>
          <property name="text" >
-          <string>&lt;b>Type&lt;/b>: snapshot</string>
+          <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;">
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>&lt;/body>&lt;/html></string>
          </property>
          <property name="textFormat" >
           <enum>Qt::RichText</enum>
@@ -406,7 +414,7 @@
       <enum>QFrame::Plain</enum>
      </property>
      <property name="currentIndex" >
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="planPage" >
       <property name="geometry" >
@@ -480,27 +488,9 @@ p, li { white-space: pre-wrap; }
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3" >
        <item row="0" column="0" >
-        <widget class="QListView" name="listView" >
+        <widget class="QListWidget" name="listWidget" >
          <property name="frameShape" >
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow" >
-          <enum>QFrame::Plain</enum>
-         </property>
-         <property name="editTriggers" >
-          <set>QAbstractItemView::NoEditTriggers</set>
-         </property>
-         <property name="showDropIndicator" stdset="0" >
-          <bool>false</bool>
-         </property>
-         <property name="alternatingRowColors" >
-          <bool>true</bool>
-         </property>
-         <property name="uniformItemSizes" >
-          <bool>true</bool>
-         </property>
-         <property name="selectionRectVisible" >
-          <bool>false</bool>
+          <enum>QFrame::NoFrame</enum>
          </property>
         </widget>
        </item>
