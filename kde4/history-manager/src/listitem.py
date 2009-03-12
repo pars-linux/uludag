@@ -5,6 +5,9 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n
 
+import inspect
+from new import instancemethod
+
 ICON, DATE, TIME = range(3)
 
 class OperationDataModel(QAbstractItemModel):
@@ -46,23 +49,22 @@ class OperationDataModel(QAbstractItemModel):
         self.items = sorted(self.items)
         self.reset()
 
-    def getTypeTr(self, index):
+    def getProperty(self, index, property):
         if not index.isValid() or not (0 <= index.row() < len(self.items)):
             return QVariant()
 
         item = self.items[index.row()]
-        column = index.column()
 
-        return QVariant(item.op_type_tr)
+        members = inspect.getmembers(item)
 
-    def getTypeInt(self, index):
-        if not index.isValid() or not (0 <= index.row() < len(self.items)):
-            return QVariant()
+        i = 3
+        while i < len(members):
+            if not isinstance(members[i][1], instancemethod):
+                if property == members[i][0]:
+                    return QVariant(members[i][1])
+            i += 1
 
-        item = self.items[index.row()]
-        column = index.column()
-
-        return QVariant(item.op_type_int)
+        return QVariant()
 
     def data(self, index, role=Qt.DisplayRole):
         if not index.isValid() or not (0 <= index.row() < len(self.items)):
@@ -136,8 +138,13 @@ class NewOperation:
         self.op_type = operation.type
         self.op_date = operation.date
         self.op_time = operation.time
-        self.op_pack = operation.packages
+        self.op_pack = []
+
+        for i in operation.packages:
+            self.op_pack.append(i.__str__())
+
         self.op_tag = operation.tag
+        self.op_pack_len = len(self.op_pack)
 
         self.op_type_int = 0
         self.op_type_tr = ""
@@ -146,27 +153,27 @@ class NewOperation:
         if self.op_type == 'snapshot':
             self.icon = ":/pics/snapshot.png"
             self.op_type_int = 1
-            self.op_type_tr = ki18n("snapshot")
+            self.op_type_tr = "snapshot"
         elif self.op_type == 'upgrade':
             self.icon = ":/pics/upgrade.png"
             self.op_type_int = 2
-            self.op_type_tr = ki18n("upgrade")
+            self.op_type_tr = "upgrade"
         elif self.op_type == 'remove':
             self.icon = ":/pics/remove.png"
             self.op_type_int = 3
-            self.op_type_tr = ki18n("remove")
+            self.op_type_tr = "remove"
         elif self.op_type == 'install':
             self.icon = ":/pics/install.png"
             self.op_type_int = 4
-            self.op_type_tr = ki18n("install")
+            self.op_type_tr = "install"
         elif self.op_type == 'takeback':
             self.icon = ":/pics/takeback.png"
             self.op_type_int = 5
-            self.op_type_tr = ki18n("takeback")
+            self.op_type_tr = "takeback"
         else:
             self.icon = "?"
             self.op_type_int = 6
-            self.op_type_tr = ki18n("unknown")
+            self.op_type_tr = "unknown"
 
     def __cmp__(self, ot):
         return cmp(self.op_no, ot.op_no)
