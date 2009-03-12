@@ -45,3 +45,4 @@ class MainManager(QtGui.QWidget):
         self.ui.packageList.setModel(PackageListModel(self))
         self.ui.packageList.setItemDelegate(PackageListDelegate(self))
         self.ui.packageList.setColumnWidth(0, 32)
+        self.ui.packageList.setAlternatingRowColors(True)
