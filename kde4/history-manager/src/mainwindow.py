@@ -21,6 +21,7 @@ class MainManager(QtGui.QWidget):
             self.ui.setupUi(self)
         else:
             self.ui.setupUi(parent)
+        self.tweakUi()
 
         self.ops = []
 
@@ -36,7 +37,7 @@ class MainManager(QtGui.QWidget):
         self.connectSignals()
 
     def connectSignals(self):
-        for val in ["Snapshot", "Install", "Remove", "Update", "Takeback"]:
+        for val in ["All", "Snapshot", "Install", "Remove", "Update", "Takeback"]:
             exec('self.connect(self.ui.%s, SIGNAL("clicked()"), self.changeListing)' % val)
         self.connect(self.pface, SIGNAL("finished()"), self.loadHistory)
 
@@ -50,6 +51,11 @@ class MainManager(QtGui.QWidget):
         self.ui.lw.setEnabled(True)
         self.ui.opTypeLabel.setText("- All Operations")
         self.ui.lw.adjustSize()
+
+    def tweakUi(self):
+        self.ui.lw.verticalHeader().hide()
+        self.ui.lw.horizontalHeader().setResizeMode(QHeaderView.Stretch)
+        self.ui.lw.horizontalHeader().setWindowFlags(Qt.FramelessWindowHint)
 
     def loadIndex(self, index):
         ''' Load selected index details to Operations Window '''
@@ -67,7 +73,7 @@ class MainManager(QtGui.QWidget):
 
         for val in self.item_model.getProperty(index, "op_pack").toList():
             self.ui.listWidget.insertItem(self.ui.listWidget.count() +1, \
-                    QtGui.QListWidgetItem(val.__str__()))
+                    QtGui.QListWidgetItem(" * %s" % val.toString()))
 
     def handler(self, package, signal, args):
         pass

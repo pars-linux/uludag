@@ -121,17 +121,6 @@ class OperationDataModel(QAbstractItemModel):
 
         return QVariant(int(section+1))
 
-    """
-    def insertRows(self, position, rows=1, index=QModelIndex()):
-        self.beginInsertRows(QModelIndex(), position, position + rows-1)
-
-        for row in range(rows):
-            self.items.insert(position+row, NewOperation(getEmptyHistory()))
-
-        self.endInsertRows()
-        return True
-    """
-
 class NewOperation:
     def __init__(self, operation):
         self.op_no = operation.no
