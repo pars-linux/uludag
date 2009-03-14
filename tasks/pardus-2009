@@ -43,6 +43,7 @@
   * mudur'de udevtrigger loglarının tutulması (+)
   * mudur'de CPUFreq sınıfının gözden geçirilmesi, bu işlevin olabildiğince çekirdeğe aktarılması (/85)
   * HAL 0.5.12 geçişi (/40)
+  * Userspace power governor'ımız neden yok (powernowd, cpuspeed gibi)? (-)
 
 * GNOME güncellemeleri (Ozan Çağlayan)
   * glib2 2.20 geçişi (-)
