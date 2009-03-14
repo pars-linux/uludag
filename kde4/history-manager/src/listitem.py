@@ -128,6 +128,7 @@ class NewOperation:
         self.op_date = operation.date
         self.op_time = operation.time
         self.op_pack = []
+        self.op = operation
 
         for i in operation.packages:
             self.op_pack.append(i.__str__())
