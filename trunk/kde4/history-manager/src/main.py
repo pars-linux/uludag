@@ -27,7 +27,6 @@ from mainwindow import MainManager
 class Manager(KMainWindow):
     def __init__ (self, *args):
         KMainWindow.__init__(self)
-        self.resize (640, 480)
         self.setCentralWidget(MainManager(self))
 
 class ServiceManager(KCModule):
@@ -52,6 +51,7 @@ if __name__ == '__main__':
     mainWindow = Manager(None, 'history-manager')
     mainWindow.show()
 
+    app.setQuitOnLastWindowClosed(True)
     app.connect(app, SIGNAL('lastWindowClosed()'), app.quit)
 
     app.exec_()

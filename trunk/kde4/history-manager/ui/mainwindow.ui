@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>998</width>
-    <height>470</height>
+    <width>962</width>
+    <height>528</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -43,6 +43,9 @@
         </size>
        </property>
        <property name="checkable" >
+        <bool>true</bool>
+       </property>
+       <property name="checked" >
         <bool>true</bool>
        </property>
        <property name="autoExclusive" >
@@ -284,7 +287,7 @@
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text" >
-        <string>- Loading Operations List</string>
+        <string>- Loading Pisi History</string>
        </property>
        <property name="textFormat" >
         <enum>Qt::RichText</enum>
@@ -294,6 +297,34 @@
        </property>
        <property name="textInteractionFlags" >
         <set>Qt::NoTextInteraction</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="progressBar" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>150</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="value" >
+        <number>0</number>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="format" >
+        <string>%p%</string>
        </property>
       </widget>
      </item>
@@ -463,8 +494,8 @@ p, li { white-space: pre-wrap; }
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>718</width>
-          <height>280</height>
+          <width>682</width>
+          <height>335</height>
          </rect>
         </property>
         <attribute name="label" >
@@ -514,8 +545,8 @@ p, li { white-space: pre-wrap; }
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>718</width>
-          <height>280</height>
+          <width>682</width>
+          <height>335</height>
          </rect>
         </property>
         <attribute name="label" >
@@ -534,6 +565,9 @@ p, li { white-space: pre-wrap; }
            <property name="frameShape" >
             <enum>QFrame::NoFrame</enum>
            </property>
+           <property name="selectionMode" >
+            <enum>QAbstractItemView::ContiguousSelection</enum>
+           </property>
           </widget>
          </item>
         </layout>
@@ -545,7 +579,7 @@ p, li { white-space: pre-wrap; }
    <item row="2" column="0" colspan="2" >
     <layout class="QHBoxLayout" name="horizontalLayout" >
      <item>
-      <widget class="QToolButton" name="toolButton" >
+      <widget class="QToolButton" name="helpTB" >
        <property name="text" >
         <string>Help</string>
        </property>
@@ -620,13 +654,20 @@ p, li { white-space: pre-wrap; }
     </layout>
    </item>
   </layout>
-  <zorder>operationTB</zorder>
-  <zorder>label</zorder>
-  <zorder>line</zorder>
-  <zorder>All</zorder>
-  <zorder>horizontalSpacer_2</zorder>
-  <zorder>horizontalSpacer_3</zorder>
-  <zorder>opTypeLabel</zorder>
+  <action name="takeBackAction" >
+   <property name="icon" >
+    <iconset resource="../resources/data.qrc" >
+     <normaloff>:/icons/dotakeback.png</normaloff>:/icons/dotakeback.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Take back to this point</string>
+   </property>
+  </action>
+  <action name="copyAction" >
+   <property name="text" >
+    <string>Copy</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="../resources/data.qrc" />
