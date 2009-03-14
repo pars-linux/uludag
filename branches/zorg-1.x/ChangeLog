@@ -1,9 +1,3 @@
-2009-03-15  Fatih Aşıcı  <fatih@pardus.org.tr>
-	* zorg/probe.py:
-		Convert "PCI" to "pci" in BusId string in order to
-		workaround a bug caused by the locale-aware comparison
-		bug in xserver.
-
 2009-02-19  Fatih Aşıcı  <fatih@pardus.org.tr>
 	* zorg/hwdata.py:
 		Copy hwdata module from display manager.
