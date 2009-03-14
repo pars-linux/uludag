@@ -75,7 +75,7 @@ class VideoDevice:
 
     def getDict(self):
         info = {
-            "bus-id" : "PCI:%d:%d:%d" % self.bus,
+            "bus-id" : "pci:%d:%d:%d" % self.bus,
             "driver" : self.driver,
             "depth" : self.depth,
             "desktop-setup" : self.desktop_setup,
