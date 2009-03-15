@@ -17,98 +17,42 @@
   #
   # Contributor(s): Dave Miller <justdave@bugzilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% 
-   title = "Required Settings"
-   desc = "Settings that are required for proper operation of $terms.Bugzilla" 
+   title = "Zorunlu Ayarlar"
+   desc = "$terms.BugzillaGen düzgün çalışması için zorunlu olan ayarlar" 
 %]
 
 [% param_descs = {
-  maintainer => "The email address of the person who maintains this installation " _
-                "of ${terms.Bugzilla}.",
+  maintainer => "Bu $terms.Bugzilla kurulumunun sağlıklı işlemesinden ve bakımından sorumlu kişinin eposta adresi.",
 
-  urlbase => "The URL that is the common initial leading part of all $terms.Bugzilla " _
-             "URLs.",
+  urlbase => "Tüm $terms.Bugzilla adreslerinin başlangıcındaki ortak kısım.",
 
-  docs_urlbase => "The URL that is the common initial leading part of all " _
-                  "$terms.Bugzilla documentation URLs. " _
-                  "It may be an absolute URL, or a URL relative to urlbase " _
-                  "above. " _
-                  "Leave this empty to suppress links to the documentation." _
-                  "'%lang%' will be replaced by user's preferred language " _
-                  "(if available).",
+  docs_urlbase => "Tüm $terms.Bugzilla belgelendirme adreslerinin başlangıcındaki ortak kısım. Tam bir adres olabileceği gibi, yukarıdaki urlbase parametresine görece bir adres de olabilir. Belgelendirmeye yapılan bağlantıları ortadan kaldırmak için bu alanı boş bırakın. '%lang%' ifadesi kullanıcının kendi tercihlerinde belirttiği dil ile değiştirilir.",
 
-  sslbase => "The URL that is the common initial leading part of all HTTPS " _
-             "(SSL) $terms.Bugzilla URLs.",
+  sslbase => "Tüm HTTPS (SSL) $terms.Bugzilla adreslerinin başlangıcındaki ortak kısım.",
 
-  ssl => "Controls when $terms.Bugzilla should enforce sessions to use HTTPS by " _
-         "using <tt>sslbase</tt>.",
+  ssl => "$terms.BugzillaGen ne zaman oturumların <tt>sslbase</tt> vasıtasıyla HTTPS'yi zorunlu kılacağını belirler.",
 
-  cookiedomain => "The domain for $terms.Bugzilla cookies. Normally blank. " _
-                  "If your website is at 'www.foo.com', setting this to " _
-                  "'.foo.com' will also allow 'bar.foo.com' to access " _
-                  "$terms.Bugzilla cookies. This is useful if you have more than " _
-                  "one hostname pointing at the same web server, and you " _
-                  "want them to share the $terms.Bugzilla cookie.",
+  cookiedomain => "$terms.Bugzilla çerezlerinin alanı. Normalde boştur. Örneğin siteniz 'www.foo.com' ise, bu alanı '.foo.com' olarak ayarlamak $terms.Bugzilla çerezlerinin tüm 'foo.com' alt alanlarından erişilebilir olmasını sağlar. Bu şekilde ayarlamak aynı sunucuya bağlı birden fazla alan adınız varsa ve o alan adlarının $terms.Bugzilla çerezlerini ortak kullanabilmesini istiyorsanız kullanışlıdır.",
+ 
+  cookiepath => "$terms.Bugzilla çerezlerinin kısıtlanacağı yol. Belge kök konumuna bağıl olarak yazılmalıdır. Normalde taban adresinizin URI kısmıdır. / (bölü) ile başlamalıdır. Örneğin, eğer $terms.Bugzilla 'http://www.siteadresi.com/bugzilla/' adresindeyse, bu parametreyi '/bugzilla/' olarak ayarlayın. Bu alanı / olarak vermek, bu sunucu altından yayınlanan tüm içeriğin $terms.Bugzilla çerezlerine ulaşabilmesini sağlar.",
 
-  cookiepath => "Path, relative to your web document root, to which to restrict " _
-                "$terms.Bugzilla cookies. Normally this is the URI portion of your URL " _
-                "base. Begin with a / (single slash mark). For instance, if " _
-                "$terms.Bugzilla serves from 'http://www.somedomain.com/bugzilla/', set " _
-                "this parameter to /bugzilla/. Setting it to / will allow " _
-                "all sites served by this web server or virtual host to read " _
-                "$terms.Bugzilla cookies.",
+  timezone => "Veritabanı sunucunuzun bulunduğu zaman dilimi: UTC, PDT veya JST ve benzeri. Eğer '' olarak ayarlarsanız, zaman etiketlerinde zaman dilimi gösterilmez.",
 
-  timezone => "The timezone that your database server lives in, " _
-              "such as UTC, PDT or JST. If set to '', " _
-              "then the timezone will not be displayed with the timestamps.",
+  utf8 => "Tüm $terms.Bugzilla metinlerinde UTF-8 (Unicode) kodlama kullan. Yeni kurulumlar karakter kodlarıyla problem yaşamamak için bunu açmalıdır. <strong>Varolan veritabanlarında da sadece <kbd>contrib/recode.pl</kdb> betiği kullanılıp veri eski karakter kodlamalarından UTF-8'e dönüştürüldükten sonra açılmalıdır</strong>. <br><br> Eğer bu parametreyi &quot;kapalı&quot;dan &quot;açık&quot;a çevirirseniz, hemen arkasından checksetup.pl'yi yeniden çalıştırmanız gerektiğini unutmayınız.",
 
-  utf8 => "Use UTF-8 (Unicode) encoding for all text in ${terms.Bugzilla}. New " _
-          "installations should set this to true to avoid character encoding " _
-          "problems. <strong>Existing databases should set this to true " _
-          " only after the data has been converted from existing legacy " _
-          " character encodings to UTF-8, using the " _
-          " <kbd>contrib/recode.pl</kbd> script</strong>. <br><br> Note " _
-          " that if you  turn this parameter from &quot;off&quot; to " _
-          " &quot;on&quot;, you must re-run checksetup.pl immediately " _
-          " afterward.",
+  shutdownhtml => "Eğer bu alan boş değilse, $terms.Bugzilla tamamen kapatılır ve tüm $terms.Bugzilla sayfalarının yerine o metin gösterilir.",
 
-  shutdownhtml => "If this field is non-empty, then $terms.Bugzilla will be completely " _
-                  "disabled and this text will be displayed instead of all the " _
-                  "$terms.Bugzilla pages.",
+  announcehtml => "Eğer bu alan boş değilse, $terms.Bugzilla tüm HTML sayfalarının üstünde buradaki metni gösterir. Buraya yazacağınız HTML kodları herhangi başka bir etiketin altına yerleştirilmez. O yüzden bir <tt>&lt;div&gt;</tt> içine koymanızı tavsiye ederiz. Kırmızı bir kutu üzerine yeşil metin olarak göstermek için <em>id=message</em> kullanın, veya kırmızı zemin üzerine koyu kırmızı metin için <em>class=bz_private</em> kullanın. Metni ortalatmak içinse <em>style=\"text-align: center;\"</em> kullanın. <tt>skins/standard/global.css</tt> ve_<tt>skins/custom/global.css</tt> içerisinde tanımlı sınıf ve kimlikleri kullanabilirsiniz.",
 
-  announcehtml => "If this field is non-empty, then $terms.Bugzilla will " _
-                  "display whatever is in this field at the top of every " _
-                  "HTML page.  The HTML you put in this field is not " _
-                  "wrapped or enclosed in anything; you might want to " _
-                  "wrap it inside a <tt>&lt;div&gt;</tt>.  Give the div " _
-                  "<em>id=message</em> to get green text inside a " _
-                  "red box, or <em>class=bz_private</em> for dark " _
-                  "red on a red background.  Anything defined in " _
-                  "<tt>skins/standard/global.css</tt> or " _
-                  "<tt>skins/custom/global.css</tt> will work.  To get " _
-                  "centered text, use <em>style=\"text-align: " _
-                  "center;\"</em>.",
+  proxy_url => "Yeni sürümler için $terms.BugzillaGen internete erişmesi gerekebilir, bununla ilgili olarak <tt>upgrade_notification</tt> parametresine bakabilirsiniz. Eğer bir vekil sunucu arkasındaysanız, sunucu HTTP_PROXY çevre değişkenine erişemezse adresini girmeniz gerekebilir. Eğer internete erişmek için kimlik doğrulaması gerekiyorsa, <code>http://kullanıcıadı:parola@vekil_adresi</code> yapısını kullanın.",
 
-  proxy_url => "$terms.Bugzilla may have to access the web to get notifications about new " _
-               "releases, see the <tt>upgrade_notification</tt> parameter. In case you are " _
-               "behind a proxy, it may be necessary to enter its URL if the web server " _
-               "group cannot access the HTTP_PROXY environment variable. If you have to " _
-               "authenticate, use the <code>http://user:pass@proxy_url/</code> syntax.",
-
-  upgrade_notification => "<p>$terms.Bugzilla can inform you when a new release is available. " _
-                          "The notification will appear on the $terms.Bugzilla homepage, " _
-                          "for administrators only.</p>" _
-                          "<ul><li>'development_snapshot' notifies you about the latest " _
-                          "release on the trunk, i.e. development snapshots.</li>" _
-                          "<li>'latest_stable_release' notifies you about the most recent release " _
-                          "available on the most recent stable branch. This branch may be " _
-                          "different from the branch your installation is based on.</li>" _
-                          "<li>'stable_branch_release' notifies you only about new releases " _
-                          "corresponding to the branch your installation is based on. " _
-                          "If you are running a release candidate, you will get " _
-                          "a notification for newer release candidates too.</li>" _
-                          "<li>'disabled' will never notify you about new releases and no " _
-                          "connection will be established to a remote server.</li></ul>" }
+  upgrade_notification => "<p>Yeni bir sürüm çıktığında $terms.Bugzilla size haber verebilir. İlgili bildirim yöneticilerin $terms.Bugzilla ana sayfasında çıkar.</p>" _
+                          "<ul><li>'geliştirme sürümü' trunk'daki son sürümü ifade eder.</li>" _
+                          "<li>'son kararlı sürüm' en son kararlı daldan çıkan sürümden haberdar eder. Bu dal kurulumuzda kullanılan daldan farklı olabilir.</li>" _
+                          "<li>'kararlı dal sürümü' sizi sadece kendi kurulumunuzun bulunduğu dalı temel alan yeni sürümlerden haberdar eder. Eğer bir sürüm adayı kullanıyorsanız, yeni sürüm adaylarından da haberdar edilirsiniz.</li>" _
+                          "<li>'kapalı' sizi yeni sürümlerden haberdar etmez ve herhangi bir uzak sunucuya bağlantı kurulmaz.</li></ul>" }
 %]
