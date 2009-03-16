@@ -47,7 +47,7 @@ class PisiIface(QThread):
     def historyConfigs(self, op):
         return self.pdb.get_config_files(op)
 
-    def reloadPisi():
+    def reloadPisi(self):
         import sys
         for module in sys.modules.keys():
             if module.startswith("pisi."):

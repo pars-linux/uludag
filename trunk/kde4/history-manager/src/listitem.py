@@ -20,7 +20,7 @@ class OperationDataModel(QAbstractItemModel):
         return len(self.items)
 
     def columnCount(self, index=QModelIndex()):
-        return 2
+        return 3
 
     def index(self, row, column, parent=QModelIndex()):
         return QAbstractItemModel.createIndex(self, row, column)
@@ -71,15 +71,17 @@ class OperationDataModel(QAbstractItemModel):
             return QVariant()
 
         item = self.items[index.row()]
-        column = index.column() + 1
+        column = index.column()
 
         if role == Qt.DisplayRole:
-            if column == ICON:
-                return QVariant(item.icon)
-            elif column == DATE:
+            if column == DATE:
                 return QVariant(item.op_date)
             elif column == TIME:
                 return QVariant(item.op_time)
+        elif role == Qt.DecorationRole:
+            if column == ICON:
+                return QVariant(QPixmap(item.icon))
+
         return QVariant()
 
     def setData(self, index, value, role=Qt.EditRole):
@@ -90,8 +92,6 @@ class OperationDataModel(QAbstractItemModel):
         column = index.column()
 
         if role == Qt.DisplayRole:
-            if column == ICON:
-                item.icon = value.toString()
             if column == DATE:
                 item.op_date = value.toString()
             if column == TIME:
@@ -111,11 +111,11 @@ class OperationDataModel(QAbstractItemModel):
 
         if orientation == Qt.Horizontal:
             if section == ICON:
-                return QVariant("Date")
+                return QVariant("")
             elif section == DATE:
-                return QVariant("Time")
+                return QVariant("Date")
             elif section == TIME:
-                return QVariant(ki18n(""))
+                return QVariant("Time")
         elif orientation == Qt.Vertical:
             return QVariant(self.items[section].op_no)
 
@@ -164,7 +164,4 @@ class NewOperation:
             self.icon = "?"
             self.op_type_int = 6
             self.op_type_tr = "unknown"
-
-    def __cmp__(self, ot):
-        return cmp(self.op_no, ot.op_no)
 

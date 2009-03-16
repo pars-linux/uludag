@@ -130,7 +130,7 @@ class MainManager(QtGui.QWidget):
             self.status("Finished succesfully")
             self.enableButtons(True)
         elif signal == "progress":
-            self.status("%s : %s" % (args[2], args[1]))
+            self.status("%s : %s/100" % (args[2], args[1]))
             self.enableButtons(False)
 
     def showPlan(self):
@@ -174,6 +174,9 @@ class MainManager(QtGui.QWidget):
 
     def changeListing(self):
         self.status("Listing %s Operations" % QObject.sender(self).objectName())
+
+        self.proxyModel.setFilterRegExp("")
+        self.proxyModel.setFilterKeyColumn(1)
 
     def selectAllOps(self):
         self.ui.listWidget.selectAll()
