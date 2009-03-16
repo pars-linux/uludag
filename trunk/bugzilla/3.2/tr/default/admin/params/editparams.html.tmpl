@@ -17,6 +17,7 @@
   #
   # Contributor(s): Dave Miller <justdave@bugzilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 [%# INTERFACE:
   # panels: array of hashes representing the panels available.
@@ -45,9 +46,9 @@
 
 [% title = BLOCK %]
   [% IF curpanel == -1 %]
-    Parameters: Index
+    Parametreler: Endeks
   [% ELSE %]
-    Configuration:
+    Yapılandırma:
     [%+ current_panel.title FILTER html %]
   [% END %]
 [% END %]
@@ -67,7 +68,7 @@
       <table id="menu">
         <tr>
           <td class="index">
-            <a href="editparams.cgi?section=index" title="Show all parameters">Index</a>
+            <a href="editparams.cgi?section=index" title="Tüm parametreleri göster">Endeks</a>
           </td>
         </tr>
         [% FOREACH panel = panels %]
@@ -91,18 +92,18 @@
         [% PROCESS admin/params/index.html.tmpl panels = panels %]
       [% ELSE %]
 
-        <div class="contribute"><strong>Note:</strong>
-          [%+ terms.Bugzilla %] is developed entirely by volunteers. The
-          best way to give back to the [% terms.Bugzilla %] project is
-          to <a href="http://www.bugzilla.org/contribute/">contribute</a>
-          yourself! You don't have to be a programmer to contribute, there are
-          lots of things that we need.
+        <div class="contribute"><strong>Not:</strong>
+          [%+ terms.Bugzilla %] tamamen gönüllüler tarafından geliştirilmektedir.
+          [% terms.Bugzilla %] projesine teşekkür etmenin en iyi yolu
+          <a href="http://www.bugzilla.org/contribute/">katkı yap</a>mak!
+          Katkı sağlamak için programcı olmanıza gerek yok, ihtiyaç duyduğumuz
+          çok şey var.
         </div>
 
         <p>
-          This lets you edit the basic operating parameters of [% terms.Bugzilla %].
-          Be careful!<br>
-          Any item you check "Reset" on will get reset to its default value.
+          Bu, [% terms.BugzillaGen %] temel işletim sistemi parametrelerini değiştirmenize olanak verir.
+          Dikkatli olun!<br>
+          "Sıfırla" düğmesine bastığınız her öğe öntanımlı değerine dönecektir.
         </p>
 
         [%# CONTENT PANEL %]
@@ -111,8 +112,8 @@
           <input type="hidden" name="section" value="[% current_panel.name FILTER html %]">
           <input type="hidden" name="action" value="save">
           <input type="hidden" name="token" value="[% token FILTER html %]">
-          <input type="reset" value="Reset form">
-          <input type="submit" name="action" value="Save Changes">
+          <input type="reset" value="Formu sıfırla">
+          <input type="submit" name="action" value="Değişiklikleri Kaydet">
         </form>
       [% END %]
     </td>
