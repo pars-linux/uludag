@@ -23,7 +23,7 @@ import pmtools
 
 (SummaryRole, DescriptionRole, VersionRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2)
 
-class PackageListModel(QAbstractTableModel):
+class PackageModel(QAbstractTableModel):
 
     def __init__(self, parent=None):
         QAbstractTableModel.__init__(self, parent)

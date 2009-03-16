@@ -19,7 +19,7 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-from packagelistmodel import *
+from packagemodel import *
 
 UNIVERSAL_PADDING = 6
 FAV_ICON_SIZE = 24
@@ -29,7 +29,7 @@ DEFAULT_HEIGHT = MAIN_ICON_SIZE + 2 * UNIVERSAL_PADDING
 
 (UP, DOWN) = range(2)
 
-class PackageListDelegate(QtGui.QItemDelegate):
+class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
         self.parent = parent
