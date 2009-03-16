@@ -15,7 +15,6 @@ import os
 workDir          = "/var/pisi/"
 outputDir        = "/var/cache/pisi/buildlogs/"
 binaryPath       = "/var/cache/pisi/packages/"
-binaryDebugPath  = "/var/cache/pisi/packages-debug/"
 localPspecRepo   = "%s/exampleRepo" % os.getcwd()
 logFile          = "/var/cache/pisi/buildfarm.log"
 

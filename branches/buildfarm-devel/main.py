@@ -19,7 +19,6 @@ import copy
 import shutil
 import traceback
 import cStringIO
-import exceptions
 
 """ BuildFarm Modules """
 import config
@@ -27,7 +26,6 @@ import logger
 import mailer
 import qmanager
 import pisiinterface
-import pisi.util
 
 """ Gettext Support """
 import gettext
@@ -106,7 +104,6 @@ def buildPackages():
     logger.raw()
 
     generateIndex(config.binaryPath)
-    generateIndex(config.binaryDebugPath)
 
 def generateIndex(repositoryPath = config.binaryPath):
     logger.raw()
@@ -154,49 +151,37 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
     remove = os.remove
     copy   = shutil.copy
 
-    def moveOldPackage(package, debug = False):
+    def moveOldPackage(package):
         logger.info(_("*** Old package '%s' is processing") % (package))
         if exists(join(config.binaryPath, package)):
-            if debug:
-                remove(join(config.binaryDebugPath, package))
-            else:
-                remove(join(config.binaryPath, package))
+            remove(join(config.binaryPath, package))
 
         if exists(join(config.workDir, package)):
             remove(join(config.workDir, package))
 
-    def moveNewPackage(package, debug = False):
+    def moveNewPackage(package):
         logger.info(_("*** New package '%s' is processing") % (package))
         if exists(join(config.workDir, package)):
-            if debug:
-                copy(join(config.workDir, package), config.binaryDebugPath)
-            else:
-                copy(join(config.workDir, package), config.binaryPath)
+            copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
 
-    def moveUnchangedPackage(package, debug = False):
+    def moveUnchangedPackage(package):
         logger.info(_("*** Unchanged package '%s' is processing") % (package))
         if exists(join(config.workDir, package)):
-            if debug:
-                copy(join(config.workDir, package), config.binaryDebugPath)
-            else:
-                copy(join(config.workDir, package), config.binaryPath)
+            copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
 
     for package in newPackages:
         if package:
-            isDebug = (pisi.util.parse_package_name(package)[0]).endswith("-debug")
-            moveNewPackage(package, isDebug)
+            moveNewPackage(package)
 
     for package in oldPackages:
         if package:
-            isDebug = (pisi.util.parse_package_name(package)[0]).endswith("-debug")
-            moveOldPackage(package, isDebug)
+            moveOldPackage(package)
 
     for package in unchangedPackages:
         if package:
-            isDebug = (pisi.util.parse_package_name(package)[0]).endswith("-debug")
-            moveUnchangedPackage(package, isDebug)
+            moveUnchangedPackage(package)
 
 def removeBinaryPackageFromWorkDir(package):
     join   = os.path.join
@@ -206,7 +191,6 @@ def removeBinaryPackageFromWorkDir(package):
 def create_directories():
     directories = [config.workDir,
                    config.binaryPath,
-                   config.binaryDebugPath,
                    config.localPspecRepo,
                    config.outputDir]
 
