@@ -26,6 +26,7 @@ FAV_ICON_SIZE = 24
 DETAIL_LINE_OFFSET = 36
 MAIN_ICON_SIZE = 48
 DEFAULT_HEIGHT = MAIN_ICON_SIZE + 2 * UNIVERSAL_PADDING
+MAX_HEIGHT = DEFAULT_HEIGHT * 4
 
 (UP, DOWN) = range(2)
 
@@ -33,7 +34,7 @@ class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
         self.parent = parent
-        self.timeLine = QTimeLine(350)
+        self.timeLine = QTimeLine(250)
         self.timeLine.setUpdateInterval(40)
         self.animatedHeight = DEFAULT_HEIGHT
         self.animationDirection = DOWN
@@ -44,8 +45,10 @@ class PackageDelegate(QtGui.QItemDelegate):
     def animationFinished(self):
         if self.animationDirection == DOWN:
             self.animationDirection = UP
+            self.animatedHeight = MAX_HEIGHT
         else:
             self.animationDirection = DOWN
+            self.animatedHeight = DEFAULT_HEIGHT
 
     def paint(self, painter, option, index):
         if not index.isValid():
@@ -57,7 +60,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         else:
             style = QtGui.QApplication.style()
 
-        style.drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, opt, painter, opt.widget)
+#        style.drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, opt, painter, opt.widget)
 
         if index.column() == 1:
             self.paintColMain(painter, option, index)
@@ -72,7 +75,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         buttonStyle = QtGui.QStyleOptionButton()
         buttonStyle.state = QtGui.QStyle.State_On if index.model().data(index, Qt.CheckStateRole) == QVariant(Qt.Checked) else QtGui.QStyle.State_Off
 
-        buttonStyle.rect = option.rect.adjusted(10, 2, 0, -2)
+        buttonStyle.rect = option.rect.adjusted(4, 2, 0, -2)
         opt.widget.style().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
 
     def paintColMain(self, painter, option, index):
@@ -102,11 +105,11 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         # Package Name
         p.setFont(boldFont)
-        p.drawText(left + textInner, top, width - textInner, itemHeight / 2, Qt.AlignBottom | Qt.AlignLeft, title)
+        p.drawText(left + textInner, top, width - textInner, itemHeight / 2, Qt.AlignBottom | Qt.AlignLeft, title.toString())
 
         # Package Summary
         p.setFont(normalFont)
-        p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextWordWrap, summary)
+        p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextWordWrap, summary.toString())
 
         # Package Detail Label
         position = top + MAIN_ICON_SIZE + FAV_ICON_SIZE
@@ -115,7 +118,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Açıklama:"))
 
         p.setFont(normalDetailFont)
-        p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, description)
+        p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, description.toString())
 
         # Package Detail Version
         position += DETAIL_LINE_OFFSET
@@ -124,13 +127,13 @@ class PackageDelegate(QtGui.QItemDelegate):
         p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Sürüm:"))
 
         p.setFont(normalDetailFont)
-        p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, version)
+        p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, version.toString())
 
         margin = left + UNIVERSAL_PADDING
 
-        icon = index.model().data(index, Qt.DecorationRole)
+        icon_path = index.model().data(index, Qt.DecorationRole)
+        icon = QtGui.QIcon(QtGui.QPixmap(icon_path.toString()))
         icon.paint(p, margin, top + UNIVERSAL_PADDING, MAIN_ICON_SIZE, MAIN_ICON_SIZE, Qt.AlignCenter)
-
         p.end()
 
         painter.drawPixmap(option.rect.topLeft(), pixmap)
@@ -161,8 +164,12 @@ class PackageDelegate(QtGui.QItemDelegate):
         if index.row() == self.animatingRow and self.timeLine.state() == QTimeLine.Running:
             if self.animationDirection == DOWN:
                 self.animatedHeight += 25
+                if self.animatedHeight > MAX_HEIGHT:
+                    self.animatedHeight = MAX_HEIGHT
             else:
                 self.animatedHeight -= 25
+                if self.animatedHeight < DEFAULT_HEIGHT:
+                    self.animatedHeight = DEFAULT_HEIGHT
 
         if index.row() == self.animatingRow:
             return QSize(width, self.animatedHeight)

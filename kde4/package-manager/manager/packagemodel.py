@@ -31,7 +31,6 @@ class PackageModel(QAbstractTableModel):
         self.packages = self.iface.getPackageList()
         self.package_selections = [Qt.Unchecked] * len(self.packages)
         self.packages.sort(key=string.lower)
-        self.icon = QtGui.QIcon(QtGui.QPixmap("icons/package.png"))
 
     def rowCount(self, index=QModelIndex()):
         return len(self.packages)
@@ -46,15 +45,15 @@ class PackageModel(QAbstractTableModel):
         package = self.iface.getPackage(self.packages[index.row()])
 
         if role == Qt.DisplayRole:
-            return package.name
+            return QVariant(package.name)
         elif role == Qt.DecorationRole:
-            return self.icon
+            return QVariant("icons/package.png")
         elif role == SummaryRole:
-            return unicode(package.summary)
+            return QVariant(unicode(package.summary))
         elif role == DescriptionRole:
-            return unicode(package.description)
+            return QVariant(unicode(package.description))
         elif role == VersionRole:
-            return unicode(package.version)
+            return QVariant(unicode(package.version))
 	elif role == Qt.CheckStateRole and index.column() == 0:
             return QVariant(self.package_selections[index.row()])
         else:
