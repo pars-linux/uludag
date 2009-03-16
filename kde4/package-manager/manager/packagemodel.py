@@ -42,20 +42,20 @@ class PackageModel(QAbstractTableModel):
         if not index.isValid():
             return QVariant()
 
-        package = self.iface.getPackage(self.packages[index.row()])
-
         if role == Qt.DisplayRole:
-            return QVariant(package.name)
+            return QVariant(self.packages[index.row()])
+	elif role == Qt.CheckStateRole and index.column() == 0:
+            return QVariant(self.package_selections[index.row()])
         elif role == Qt.DecorationRole:
             return QVariant("icons/package.png")
-        elif role == SummaryRole:
+
+        package = self.iface.getPackage(self.packages[index.row()])
+        if role == SummaryRole:
             return QVariant(unicode(package.summary))
         elif role == DescriptionRole:
             return QVariant(unicode(package.description))
         elif role == VersionRole:
             return QVariant(unicode(package.version))
-	elif role == Qt.CheckStateRole and index.column() == 0:
-            return QVariant(self.package_selections[index.row()])
         else:
             return QVariant()
 
