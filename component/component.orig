@@ -163,6 +163,7 @@
 |   |-- service-manager
 |   |-- yali4
 |   |-- yali4-firstBoot
+|   |-- command-not-found
 |-- x11
 |   |-- libs
 |   |   |-- cairo
@@ -577,7 +578,7 @@
 |   |   |-- zd1211-firmware
 |   |   |-- fxload
 |   |   `-- b43-fwcutter
-|   |-- informers
+|   |-- info
 |   |   |-- arrayprobe
 |   |   |-- dmidecode
 |   |   |-- lshw
@@ -1854,32 +1855,37 @@
     |   |-- xdelta
     |   |-- xdelta3
     |-- admin
-    |   |-- kdeadmin
-    |   |-- device-mapper
-    |   |-- dstat
-    |   |-- gfxboot
-    |   |-- gfxtheme-pardus-boot
-    |   |-- gfxtheme-pardus-install
-    |   |-- gkrellm
-    |   |-- gptsync
-    |   |-- irqbalance
-    |   |-- kexec-tools
-    |   |-- killproc
-    |   |-- mc
-    |   |-- multitail
-    |   |-- sudo
-    |   |-- syslinux
-    |   |-- sysstat
-    |   |-- tmpwatch
-    |   |-- killproc
-    |   |-- logrotate
-    |   |-- mc
-    |   |-- sudo
-    |   |-- syslinux
-    |   |-- testdisk
-    |   |-- tmpwatch
-    |   |-- user-manager
-    |   `-- webalizer
+    |   |-- kdeadmin (user manager)
+    |   |-- device-mapper (hw)
+    |   |-- dstat (hw)
+    |   |-- gfxboot (hw)
+    |   |-- gfxtheme-pardus-boot (hw)
+    |   |-- gfxtheme-pardus-install (hw)
+    |   |-- gkrellm (hw)
+    |   |-- gptsync (hw)
+    |   |-- irqbalance (hw)
+    |   |-- kexec-tools (system)
+    |   |-- killproc (sytem)
+    |   |-- mc (file manager)
+    |   |-- multitail(hw)
+    |   |-- sudo (system)
+    |   |-- syslinux (hw)
+    |   |-- sysstat (hw)
+    |   |-- tmpwatch(file)
+    |   |-- logrotate (log)
+    |   |-- testdisk (hw)
+    |   |-- user-manager 
+    |   |-- autostart (start-stop)
+    |   |-- krename (file)
+    |   |-- slocate (file)
+    |   |-- kshutdown (start-stop)
+    |   |-- metamonitor (log)
+    |   |-- lsof (file)
+    |   |-- schedtool (system)
+    |   |-- acct (system)
+    |   |-- utempter (system)
+    |   |-- prelink (system)
+    |   `-- webalizer(log)
     |-- antivirus
     |   |-- clamav
     |   |-- klamav
@@ -1970,18 +1976,6 @@
     |   |-- sash
     |   |-- tcsh
     |   |-- zsh
-    |-- system
-    |   |-- autostart
-    |   |-- krename
-    |   |-- slocate
-    |   |-- kshutdown
-    |   |-- metamonitor
-    |   |-- lsof
-    |   |-- schedtool
-    |   |-- acct
-    |   |-- utempter
-    |   |-- prelink
-    |   |-- command-not-found
     |-- organizer
     |   |-- basket 
     |   |-- katapult
