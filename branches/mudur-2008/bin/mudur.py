@@ -952,8 +952,10 @@ def checkFS():
         splash.verbose()
         ui.info(_("A full fsck has been forced"))
         t = run_full("/sbin/fsck", "-C", "-R", "-A", "-a", "-f")
-        # remove forcefsck file
-        os.unlink("/forcefsck")
+
+        # remove forcefsck file if it exists
+        if os.path.exists("/forcefsck"):
+            os.unlink("/forcefsck")
     else:
         t = run_full("/sbin/fsck", "-C", "-T", "-R", "-A", "-a")
 
