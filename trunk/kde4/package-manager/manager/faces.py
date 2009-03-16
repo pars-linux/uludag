@@ -23,6 +23,7 @@ from PyKDE4.kdecore import *
 from uimain import Ui_MainManager
 from uiitem import Ui_PackageWidget
 
+from packageproxy import PackageProxy
 from packagemodel import PackageModel
 from packagedelegate import PackageDelegate
 
@@ -42,7 +43,9 @@ class MainManager(QtGui.QWidget):
         self.initialize()
 
     def initialize(self):
-        self.ui.packageList.setModel(PackageModel(self))
+        abstractModel = PackageProxy(self)
+        abstractModel.setSourceModel(PackageModel(self))
+        self.ui.packageList.setModel(abstractModel)
         self.ui.packageList.setItemDelegate(PackageDelegate(self))
         self.ui.packageList.setColumnWidth(0, 32)
         self.ui.packageList.setAlternatingRowColors(True)
