@@ -13,15 +13,14 @@ class ComarIface(QThread):
         self.link = comar.Link()
 
     def listen(self, func):
+        self.handler = func
         self.link.listenSignals("System.Manager", func)
 
     def takeSnap(self):
-        QCoreApplication.processEvents()
-        self.link.System.Manager["pisi"].takeSnapshot()
+        self.link.System.Manager["pisi"].takeSnapshot(async=self.handler)
 
     def takeBack(self, num):
-        QCoreApplication.processEvents()
-        self.link.System.Manager["pisi"].takeBack(num)
+        self.link.System.Manager["pisi"].takeBack(num, async=self.handler)
 
 class PisiIface(QThread):
     """ Pisi Api Interface """
