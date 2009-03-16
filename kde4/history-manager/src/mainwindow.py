@@ -31,8 +31,11 @@ class MainManager(QtGui.QWidget):
 
         self.ops = []
 
+        self.proxyModel = QtGui.QSortFilterProxyModel()
+        self.proxyModel.setDynamicSortFilter(True)
         self.item_model = OperationDataModel()
-        self.ui.lw.setModel(self.item_model)
+        self.proxyModel.setSourceModel(self.item_model)
+        self.ui.lw.setModel(self.proxyModel)
 
         self.cface = ComarIface()
         self.pface = PisiIface(self)
@@ -119,14 +122,16 @@ class MainManager(QtGui.QWidget):
                     QtGui.QListWidgetItem(" * %s" % val.toString()))
 
     def handler(self, package, signal, args):
-        if signal == "status":
-            self.status("".join(args))
-        elif signal == "finished":
-            self.status("%s finished succesfully" % args)
-            self.enableButtons(True)
-            self.ui.progressBar.hide()
-
         print package, signal, args
+
+        if signal == "status":
+            self.status(" ".join(args))
+        elif signal == "finished":
+            self.status("Finished succesfully")
+            self.enableButtons(True)
+        elif signal == "progress":
+            self.status("%s : %s" % (args[2], args[1]))
+            self.enableButtons(False)
 
     def showPlan(self):
         if not len(self.ui.lw.selectedIndexes()):
@@ -179,7 +184,6 @@ class MainManager(QtGui.QWidget):
             self.ui.opTypeLabel.hide()
         else:
             self.ui.opTypeLabel.setText(txt)
-            self.ui.progressBar.setFormat("%p%")
             self.ui.opTypeLabel.show()
 
     def get(self, index, prop):
@@ -205,8 +209,6 @@ class MainManager(QtGui.QWidget):
 
         if reply == QtGui.QMessageBox.Ok:
             self.status("Taking back to : %s" % current_date)
-            self.ui.progressBar.reset()
-            self.ui.progressBar.show()
             self.enableButtons(False)
 
             try:
@@ -215,7 +217,6 @@ class MainManager(QtGui.QWidget):
             except dbus.DBusException:
                 self.status("Authentication Failed")
                 self.enableButtons(True)
-                self.ui.progressBar.hide()
 
     def takeSnapshot(self):
         reply = QtGui.QMessageBox.question(self, "Start new snapshot",
@@ -226,8 +227,6 @@ class MainManager(QtGui.QWidget):
             return
 
         self.status("Taking New Snapshot")
-        self.ui.progressBar.reset()
-        self.ui.progressBar.show()
         self.enableButtons(False)
 
         try:
@@ -236,7 +235,6 @@ class MainManager(QtGui.QWidget):
         except dbus.DBusException:
             self.status("Authentication Failed")
             self.enableButtons(True)
-            self.ui.progressBar.hide()
 
     def closeEvent(self, event=None):
         self.settings.setValue("pos", QtCore.QVariant(self.mapToGlobal(self.pos())))
