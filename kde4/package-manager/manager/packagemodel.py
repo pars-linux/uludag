@@ -28,6 +28,7 @@ class PackageModel(QAbstractTableModel):
     def __init__(self, parent=None):
         QAbstractTableModel.__init__(self, parent)
         self.iface = pmtools.Iface()
+        self.cached_package = None
         self.packages = self.iface.getPackageList()
         self.package_selections = [Qt.Unchecked] * len(self.packages)
         self.packages.sort(key=string.lower)
@@ -49,7 +50,7 @@ class PackageModel(QAbstractTableModel):
         elif role == Qt.DecorationRole:
             return QVariant("icons/package.png")
 
-        package = self.iface.getPackage(self.packages[index.row()])
+        package = self.package(index)
         if role == SummaryRole:
             return QVariant(unicode(package.summary))
         elif role == DescriptionRole:
@@ -73,4 +74,8 @@ class PackageModel(QAbstractTableModel):
             return QAbstractTableModel.flags(self, index)
 
     def package(self, index):
-        return self.packages[index.row()]
+        if self.cached_package and self.cached_package.name == self.packages[index.row()]:
+            return self.cached_package
+        else:
+            self.cached_package = self.iface.getPackage(self.packages[index.row()])
+            return self.cached_package
