@@ -92,6 +92,12 @@ class PackageDelegate(QtGui.QItemDelegate):
         textInner = 2 * UNIVERSAL_PADDING + MAIN_ICON_SIZE
         itemHeight = MAIN_ICON_SIZE + 2 * UNIVERSAL_PADDING
 
+        margin = left + UNIVERSAL_PADDING
+
+        icon_path = index.model().data(index, Qt.DecorationRole)
+        icon = QtGui.QIcon(QtGui.QPixmap(icon_path.toString()))
+        icon.paint(p, margin, top + UNIVERSAL_PADDING, MAIN_ICON_SIZE, MAIN_ICON_SIZE, Qt.AlignCenter)
+
         title = index.model().data(index, Qt.DisplayRole)
         summary = index.model().data(index, SummaryRole)
         description = index.model().data(index, DescriptionRole)
@@ -99,9 +105,6 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         normalFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 10, QtGui.QFont.Normal)
         boldFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 10, QtGui.QFont.Bold)
-
-        normalDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Normal)
-        boldDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Bold)
 
         # Package Name
         p.setFont(boldFont)
@@ -111,31 +114,29 @@ class PackageDelegate(QtGui.QItemDelegate):
         p.setFont(normalFont)
         p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextWordWrap, summary.toString())
 
-        # Package Detail Label
-        position = top + MAIN_ICON_SIZE + FAV_ICON_SIZE
+        if self.animatingRow == index.row():
+            normalDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Normal)
+            boldDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Bold)
 
-        p.setFont(boldDetailFont)
-        p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Açıklama:"))
+            # Package Detail Label
+            position = top + MAIN_ICON_SIZE + FAV_ICON_SIZE
 
-        p.setFont(normalDetailFont)
-        p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, description.toString())
+            p.setFont(boldDetailFont)
+            p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Açıklama:"))
 
-        # Package Detail Version
-        position += DETAIL_LINE_OFFSET
+            p.setFont(normalDetailFont)
+            p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, description.toString())
 
-        p.setFont(boldDetailFont)
-        p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Sürüm:"))
+            # Package Detail Version
+            position += DETAIL_LINE_OFFSET
 
-        p.setFont(normalDetailFont)
-        p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, version.toString())
+            p.setFont(boldDetailFont)
+            p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Sürüm:"))
 
-        margin = left + UNIVERSAL_PADDING
+            p.setFont(normalDetailFont)
+            p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, version.toString())
 
-        icon_path = index.model().data(index, Qt.DecorationRole)
-        icon = QtGui.QIcon(QtGui.QPixmap(icon_path.toString()))
-        icon.paint(p, margin, top + UNIVERSAL_PADDING, MAIN_ICON_SIZE, MAIN_ICON_SIZE, Qt.AlignCenter)
         p.end()
-
         painter.drawPixmap(option.rect.topLeft(), pixmap)
 
     def editorEvent(self, event, model, option, index):
