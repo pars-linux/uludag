@@ -1,3 +1,7 @@
+2009-03-17  Ozan Çağlayan <ozan@pardus.org.tr>
+	* bin/mudur.py (CPUFreq): Load cpufreq_conservative, remove loading
+	cpufreq_ondemand as it's compiled in.
+
 2009-03-16  Ozan Çağlayan <ozan@pardus.org.tr>
 	* bin/mudur.py (checkFS): Check if /forcefsck exists before trying
 	to delete it.

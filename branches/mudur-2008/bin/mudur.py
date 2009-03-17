@@ -493,7 +493,7 @@ class CPU:
         if len(modules) > 0:
             modules.add("cpufreq_userspace")
             modules.add("cpufreq_powersave")
-            modules.add("cpufreq_ondemand")
+            modules.add("cpufreq_conservative")
 
             for module in modules:
                 run_quiet("/sbin/modprobe", module)
