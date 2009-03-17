@@ -159,8 +159,8 @@
 * E17 (H. İbrahim Güngör)
   * bileşen adı değişecek - enlightenment -> e17 (-)
   * base/ bileşende eksik 2 paket review edilecek (-)
-  * binding'ler paketlenecek (-)
-  * base/ ve extra/ bileşenlerindeki paketlerin bağımlılıkları elden geçirilecek (/50)
+  * binding'ler paketlenecek (/10)
+  * base/ ve extra/ bileşenlerindeki paketlerin bağımlılıkları elden geçirilecek (/70)
   * Pardus simge/tema/arkaplan uyarlanacak (/20)
   * öntanımlı gelen kısayol/pager/shelf ıvır zıvır elden geçirilecek (/40)
 
