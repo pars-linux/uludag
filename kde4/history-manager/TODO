@@ -3,9 +3,11 @@ TODO List
 
 - Improve progress ui
 - Enable sorting by type
-- Help dialog
-- Mainwindow icon should be fixed
++ Help dialog
+- Mainwindow icon should be fixed/made
 + Icons on tableview
+  - Small column width
+
 - i18n strings
 
 Release as 2.0

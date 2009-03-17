@@ -10,6 +10,7 @@ from PyQt4 import QtCore
 from ui_mainwindow import Ui_MainManager
 from interface import *
 from listitem import *
+from utility import *
 
 import time
 
@@ -30,6 +31,7 @@ class MainManager(QtGui.QWidget):
         self.tweakUi()
 
         self.ops = []
+        self.help = None
 
         self.proxyModel = QtGui.QSortFilterProxyModel()
         self.proxyModel.setDynamicSortFilter(True)
@@ -193,7 +195,11 @@ class MainManager(QtGui.QWidget):
         return self.item_model.getProperty(index, prop).toString()
 
     def showHelp(self):
-        pass
+        if self.help == None:
+            self.help = HelpDialog(self)
+            self.help.show()
+        else:
+            self.help.show()
 
     def takeBack(self):
         willbeinstalled, willberemoved = None, None
