@@ -10,3 +10,4 @@
 - Port UI'fied Network Manager
 - Start DHCP after associating to AP
     - When WEP authorization selected, try both hex and ASCII password
+- Use ifplug
