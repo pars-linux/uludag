@@ -1131,45 +1131,43 @@
 |   |   |-- urwid
 |   |-- tools
 |   |   |-- autogen
-|   |   |-- binutils-avr
-|   |   |-- ant
-|   |   |-- SVK
-|   |   |-- astyle
-|   |   |-- bk-client
-|   |   |-- cdecl
-|   |   |-- cgdb
-|   |   |-- cogito
-|   |   |-- colorcvs
-|   |   |-- colorgcc
-|   |   |-- ctags
-|   |   |-- cvs
-|   |   |-- cvsps
-|   |   |-- ddd
-|   |   |-- dejagnu
-|   |   |-- dialog
-|   |   |-- diffstat
-|   |   |-- esvn
-|   |   |-- gdb
-|   |   |-- git
+|   |   |-- binutils-avr (compile)
+|   |   |-- ant (compile)
+|   |   |-- SVK (subversion)
+|   |   |-- astyle (style)
+|   |   |-- bk-client (subversion)
+|   |   |-- cdecl (style)
+|   |   |-- cgdb (debug)
+|   |   |-- cogito (subversion)
+|   |   |-- colorcvs (subversion)
+|   |   |-- colorgcc (style)
+|   |   |-- ctags (subversion)
+|   |   |-- cvs (subversion)
+|   |   |-- cvsps (subversion)
+|   |   |-- ddd (debug)
+|   |   |-- dejagnu  (debug)
+|   |   |-- dialog (style)
+|   |   |-- diffstat (patch)
+|   |   |-- esvn  (subverion)
+|   |   |-- gdb (debug)
+|   |   |-- git (subversion)
 |   |   |-- gperf
-|   |   |-- hgforest
-|   |   |-- indent
-|   |   |-- jam
-|   |   |-- kdbg
-|   |   |-- ltrace
-|   |   |-- mercurial
+|   |   |-- hgforest (subversion)
+|   |   |-- indent (style)
+|   |   |-- jam (compile)
+|   |   |-- kdbg  (debug)
+|   |   |-- ltrace (debug)
+|   |   |-- mercurial (subversion)
 |   |   |-- oprofile
-|   |   |-- patchutils
+|   |   |-- patchutils (patch)
 |   |   |-- pax-utils
-|   |   |-- qconf
-|   |   |-- qgit
-|   |   |-- rcs
-|   |   |-- strace
-|   |   |-- subversion
-|   |   |-- sysprof
-|   |   |-- systemtap
-|   |   |-- unsermake
-|   |   |-- valgrind
+|   |   |-- qconf (compile)
+|   |   |-- qgit (subversion)
+|   |   |-- rcs (subversion)
+|   |   |-- strace (debug)
+|   |   |-- subversion (subversion)
+|   |   |-- unsermake (compile)
+|   |   |-- valgrind (debug)
 |   |-- ide
 |   |   |-- drscheme
 |   |   |-- eclipse
@@ -1855,6 +1853,8 @@
     |   |-- xdelta
     |   |-- xdelta3
     |-- admin
+    |   |-- systemtap (system)
+    |   |-- sysprof (system)
     |   |-- kdeadmin (user manager)
     |   |-- device-mapper (hw)
     |   |-- dstat (hw)
@@ -1866,7 +1866,7 @@
     |   |-- irqbalance (hw)
     |   |-- kexec-tools (system)
     |   |-- killproc (sytem)
-    |   |-- mc (file manager)
+    |   |-- mc (file)
     |   |-- multitail(hw)
     |   |-- sudo (system)
     |   |-- syslinux (hw)
