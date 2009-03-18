@@ -165,3 +165,28 @@ class NewOperation:
             self.op_type_int = 6
             self.op_type_tr = "unknown"
 
+class SortFilterProxyModel(QSortFilterProxyModel):
+    def __init__(self, parent=None):
+        super(SortFilterProxyModel, self).__init__(parent)
+
+        self.sortby = None
+
+    def lessThan(self, left, right):
+        lno = self.sourceModel().getProperty(left, "op_no").toInt()
+        rno = self.sourceModel().getProperty(right, "op_no").toInt()
+        ltype = self.sourceModel().getProperty(left, "op_type").toString()
+        rtype = self.sourceModel().getProperty(right, "op_type").toString()
+
+        if self.sortby == None or self.sortby == "all":
+            return lno < rno
+
+        if ltype == rtype == self.sortby:
+            return lno < rno
+
+        if ltype == self.sortby:
+            return False
+
+        if rtype == self.sortby:
+            return True
+
+        return lno < rno

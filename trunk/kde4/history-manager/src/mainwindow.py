@@ -33,7 +33,7 @@ class MainManager(QtGui.QWidget):
         self.ops = []
         self.help = None
 
-        self.proxyModel = QtGui.QSortFilterProxyModel()
+        self.proxyModel = SortFilterProxyModel()
         self.proxyModel.setDynamicSortFilter(True)
         self.item_model = OperationDataModel()
         self.proxyModel.setSourceModel(self.item_model)
@@ -50,7 +50,7 @@ class MainManager(QtGui.QWidget):
         self.cface.listen(self.handler)
 
     def connectSignals(self):
-        for val in ["All", "Snapshot", "Install", "Remove", "Update", "Takeback"]:
+        for val in ["All", "Snapshot", "Install", "Remove", "Upgrade", "Takeback"]:
             exec('self.connect(self.ui.%s, SIGNAL("clicked()"), self.changeListing)' % val)
         self.connect(self.pface, SIGNAL("finished()"), self.loadHistory)
 
@@ -177,11 +177,9 @@ class MainManager(QtGui.QWidget):
     def changeListing(self):
         self.status("Listing %s Operations" % QObject.sender(self).objectName())
 
-        self.proxyModel.setFilterRegExp("")
-        self.proxyModel.setFilterKeyColumn(1)
-
-    def selectAllOps(self):
-        self.ui.listWidget.selectAll()
+        self.proxyModel.sortby = QObject.sender(self).objectName().toLower()
+        self.proxyModel.sort(ICON, Qt.DescendingOrder)
+        self.proxyModel.reset()
 
     def status(self, txt):
         if self.ui.progressBar.isVisible():
@@ -273,5 +271,5 @@ class MainManager(QtGui.QWidget):
         return QtCore.QObject.eventFilter(self, obj, event)
 
     def enableButtons(self, true):
-        for val in ["All", "Snapshot", "Install", "Remove", "Update", "Takeback", "restoreTB", "newSnapshotTB", "helpTB"]:
+        for val in ["All", "Snapshot", "Install", "Remove", "Upgrade", "Takeback", "restoreTB", "newSnapshotTB", "helpTB"]:
             exec('self.ui.%s.setEnabled(%s)' % (val, true))
