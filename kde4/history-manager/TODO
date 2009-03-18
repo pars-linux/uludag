@@ -1,14 +1,19 @@
 TODO List
 =========================
 
-- Improve progress ui
-- Enable sorting by type
+~ Improve progress ui
++ Enable sorting by type
 + Help dialog
 - Mainwindow icon should be fixed/made
 + Icons on tableview
-  - Small column width
+  - Small icon column width
 
 - i18n strings
+- Package
 
 Release as 2.0
+
+- Shortcut for Copy and Select All in operation details page
+- Some artwork near help button and progress label ?
+- Better handle takeback/snapshot progress, exceptions etc.
 
