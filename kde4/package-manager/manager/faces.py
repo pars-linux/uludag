@@ -27,6 +27,8 @@ from packageproxy import PackageProxy
 from packagemodel import PackageModel
 from packagedelegate import PackageDelegate
 
+import pmtools
+
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
         QtGui.QWidget.__init__(self, parent)
@@ -39,16 +41,30 @@ class MainManager(QtGui.QWidget):
         else:
             self.ui.setupUi(parent)
 
+        self.iface = pmtools.Iface()
+
         # Initialize
         self.initialize()
 
-    def initialize(self):
+    def initializePackageList(self):
         abstractModel = PackageProxy(self)
         abstractModel.setSourceModel(PackageModel(self))
         self.ui.packageList.setModel(abstractModel)
         self.ui.packageList.setItemDelegate(PackageDelegate(self))
         self.ui.packageList.setColumnWidth(0, 32)
         self.ui.packageList.setAlternatingRowColors(True)
+
+    def initializeComponentList(self):
+        self.ui.componentList.setAlternatingRowColors(True)
+        for group in self.iface.getGroups():
+            name, icon_path = group["name"], group["icon"]
+            icon = QtGui.QIcon(KIconLoader().loadIcon(icon_path, KIconLoader.Desktop))
+            item = QtGui.QListWidgetItem(icon, name, self.ui.componentList)
+            item.setSizeHint(QSize(0,32))
+
+    def initialize(self):
+        self.initializePackageList()
+        self.initializeComponentList()
         self.connect(self.ui.searchLine, SIGNAL("textChanged(const QString&)"), self.filter)
 
     def filter(self, text):
