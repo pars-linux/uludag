@@ -1,4 +1,7 @@
-History Manager -
+History Manager for Pardus Linux
 ------------------------------
 
-QT4 port of history manager application
+QT4 port of history manager application,
+which simply uses pisi api to let you handle history functions
+in a nice gui.
+
