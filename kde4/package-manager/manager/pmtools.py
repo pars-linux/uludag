@@ -13,6 +13,7 @@
 
 import comar
 import pisi
+import groups
 
 class Iface:
     """
@@ -23,9 +24,20 @@ class Iface:
         # Connect to COMAR
         self.link = comar.Link()
         self.pdb  = pisi.db.packagedb.PackageDB()
+        self.cdb  = pisi.db.componentdb.ComponentDB()
 
     def getPackageList(self):
         return pisi.api.list_available()
 
     def getPackage(self, name):
         return self.pdb.get_package(name)
+
+    def getGroups(self):
+        return groups.groups.values()
+
+    def getGroupPackages(self, name):
+        components = groups.getGroupComponents(name)
+        packages = []
+        for component in components:
+            packages.extend(self.cdb.get_union_packages(component))
+        return packages
