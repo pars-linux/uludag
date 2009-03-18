@@ -1,4 +1,4 @@
-PROJECT_NAME=network-manager
+PROJECT_NAME=package-manager
 INSTALL_DIR=/usr/kde/4/share/apps/$(PROJECT_NAME)
 
 all: build
