@@ -14,16 +14,6 @@
 |   |   |-- motif
 |   |-- fonts
 |-- development
-|   |-- python
-|   |-- perl
-|   |-- ruby
-|   |-- tcl
-|   |-- php
-|   |-- lisp
-|   |-- haskell
-|   |-- java
-|   |-- pascal
-|-- web
 |-- x11
 |   |-- library
 |   |-- misc
@@ -55,9 +45,8 @@
 |   |-- sound
 |   |-- infrared
 |   |-- bluetooth
-|   |-- filesystem
 |   |-- firmware
-|   |-- informers??
+|   |-- info
 |   |-- virtualization
 |-- multimedia
 |   |-- library
@@ -108,6 +97,9 @@
 |   |-- compiler
 |   |-- interpreter
 |   |-- module
+|   |-- subversion
+|   |-- codestyle
+|   |-- patch
 |   |-- debug
 |-- science
 |   |-- library
@@ -131,10 +123,10 @@
 |   |-- driver
 |-- editor
 |-- publishing
-|   |-- libs
+|   |-- library
 |   |-- reader
 |   |-- docbook
-|   |-- converters
+|   |-- converter
 |   |-- office
 |   |-- tex
 |-- util
@@ -149,7 +141,8 @@
 |   |   |-- library
 |   |-- dictionary
 |   |   |-- library
+|   |   |-- spellchecker
 |   |-- shell
-|   |-- system
 |   |-- organizer
 |-- pardus-apps
+
