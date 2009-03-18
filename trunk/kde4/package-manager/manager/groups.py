@@ -236,6 +236,9 @@ def groupNameToID(name):
             return gid
     return None
 
+def getGroups():
+    return list(set(component_group_mappings.values()))
+
 def getGroupComponents(name):
     group = groupNameToID(name)
     components = []

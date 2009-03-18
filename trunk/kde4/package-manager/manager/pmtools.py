@@ -33,7 +33,10 @@ class Iface:
         return self.pdb.get_package(name)
 
     def getGroups(self):
-        return groups.groups.values()
+        _groups = []
+        for group in groups.getGroups():
+            _groups.append(groups.groups[group])
+        return _groups
 
     def getGroupPackages(self, name):
         components = groups.getGroupComponents(name)
