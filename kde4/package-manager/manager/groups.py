@@ -11,44 +11,134 @@
 # Please read the COPYING file.
 #
 
+# A temporary module for mapping components and groups until pisi components provide them
+
 (GROUP_UNKNOWN, GROUP_ACCESSIBILITIY, GROUP_ACCESSORIES, GROUP_EDUCATION, GROUP_GAMES, GROUP_GRAPHICS,
  GROUP_INTERNET, GROUP_OFFICE, GROUP_OTHER, GROUP_PROGRAMMING, GROUP_MULTIMEDIA, GROUP_SYSTEM,
  GROUP_DESKTOP_KDE, GROUP_DESKTOP_GNOME, GROUP_DESKTOP_XFCE, GROUP_DESKTOP_OTHER, GROUP_PUBLISHING,
  GROUP_SERVERS, GROUP_FONTS, GROUP_ADMIN_TOOLS, GROUP_LEGACY, GROUP_LOCALIZATION, GROUP_VIRTUALIZATION,
- GROUP_POWER_MANAGEMENT, GROUP_SECURITY, GROUP_COMMUNICATION, GROUP_NETWORK, GROUP_MAPS, GROUP_SCIENCE,
- GROUP_ELECTRONICS, GROUP_DOCUMENTATION) = range(31)
+ GROUP_POWER_MANAGEMENT, GROUP_SECURITY, GROUP_COMMUNICATION, GROUP_NETWORK, GROUP_SCIENCE,
+ GROUP_ELECTRONICS, GROUP_DOCUMENTATION) = range(30)
 
-groups = { GROUP_UNKNOWN : "Unknown",
-           GROUP_ACCESSIBILITIY: "Accessibility",
-           GROUP_ACCESSORIES: "Accessories",
-           GROUP_EDUCATION: "Education",
-           GROUP_GAMES: "Games",
-           GROUP_GRAPHICS: "Graphics",
-           GROUP_INTERNET: "Internet",
-           GROUP_OFFICE: "Office",
-           GROUP_OTHER: "Other",
-           GROUP_PROGRAMMING: "Programming",
-           GROUP_MULTIMEDIA: "Multimedia",
-           GROUP_SYSTEM: "System",
-           GROUP_DESKTOP_KDE: "KDE Desktop",
-           GROUP_DESKTOP_GNOME: "Gnome Desktop",
-           GROUP_DESKTOP_XFCE: "Xfce Desktop",
-           GROUP_DESKTOP_OTHER: "Other Desktops",
-           GROUP_PUBLISHING: "Publishing",
-           GROUP_SERVERS: "Servers",
-           GROUP_FONTS: "Fonts",
-           GROUP_ADMIN_TOOLS: "Admin Tools",
-           GROUP_LEGACY: "Legacy",
-           GROUP_LOCALIZATION: "Localization",
-           GROUP_VIRTUALIZATION: "Virtualization",
-           GROUP_POWER_MANAGEMENT: "Power Management",
-           GROUP_SECURITY: "Security",
-           GROUP_COMMUNICATION: "Communication",
-           GROUP_NETWORK: "Network",
-           GROUP_MAPS: "Maps",
-           GROUP_SCIENCE: "Science",
-           GROUP_ELECTRONICS: "Electronics",
-           GROUP_DOCUMENTATION: "Documentation"
+groups = { GROUP_UNKNOWN : {
+             "name": "Unknown",
+             "icon": "unknown"
+             },
+           GROUP_ACCESSIBILITIY: {
+             "name": "Accessibility",
+             "icon": "preferences-desktop-accessibility"
+             },
+           GROUP_ACCESSORIES: {
+             "name": "Accessories",
+             "icon": "applications-accessories"
+             },
+           GROUP_EDUCATION: {
+             "name": "Education",
+             "icon": "applications-education"
+             },
+           GROUP_GAMES: {
+             "name": "Games",
+             "icon": "applications-games"
+             },
+           GROUP_GRAPHICS: {
+             "name": "Graphics",
+             "icon": "applications-graphics"
+             },
+           GROUP_INTERNET: {
+             "name": "Internet",
+             "icon": "applications-internet"
+             },
+           GROUP_OFFICE: {
+             "name": "Office",
+             "icon": "applications-office"
+             },
+           GROUP_OTHER: {
+             "name": "Other",
+             "icon": "applications-other" },
+           GROUP_PROGRAMMING: {
+             "name": "Programming",
+             "icon": "applications-development"
+             },
+           GROUP_MULTIMEDIA: {
+             "name": "Multimedia",
+             "icon": "applications-multimedia"
+             },
+           GROUP_SYSTEM: {
+             "name": "System",
+             "icon": "applications-system"
+             },
+           GROUP_DESKTOP_KDE: {
+             "name": "KDE Desktop",
+             "icon": "kde"
+             },
+           GROUP_DESKTOP_GNOME: {
+             "name": "Gnome Desktop",
+             "icon": "preferences-desktop"
+             },
+           GROUP_DESKTOP_XFCE: {
+             "name": "Xfce Desktop",
+             "icon": "preferences-desktop"
+             },
+           GROUP_DESKTOP_OTHER: {
+             "name": "Other Desktops",
+             "icon": "preferences-desktop"
+             },
+           GROUP_PUBLISHING: {
+             "name": "Publishing",
+             "icon": "accessories-dictionary"
+             },
+           GROUP_SERVERS: {
+             "name": "Servers",
+             "icon": "network-server"
+             },
+           GROUP_FONTS: {
+             "name": "Fonts",
+             "icon": "preferences-desktop-font"
+             },
+           GROUP_ADMIN_TOOLS: {
+             "name": "Admin Tools",
+             "icon": "application-x-shellscript"
+             },
+           GROUP_LEGACY: {
+             "name": "Legacy",
+             "icon": "media-floppy"
+             },
+           GROUP_LOCALIZATION: {
+             "name": "Localization",
+             "icon": "preferences-desktop-locale"
+             },
+           GROUP_VIRTUALIZATION: {
+             "name": "Virtualization",
+             "icon": "video-display"
+             },
+           GROUP_POWER_MANAGEMENT: {
+             "name": "Power Management",
+             "icon": "preferences-system-power-management"
+             },
+           GROUP_SECURITY: {
+             "name": "Security",
+             "icon": "preferences-desktop-cryptography"
+             },
+           GROUP_COMMUNICATION: {
+             "name": "Communication",
+             "icon": "internet-telephony"
+             },
+           GROUP_NETWORK: {
+             "name": "Network",
+             "icon": "network-workgroup"
+             },
+           GROUP_SCIENCE: {
+             "name": "Science",
+             "icon": "applications-science"
+             },
+           GROUP_ELECTRONICS: {
+             "name": "Electronics",
+             "icon": "utilities-system-monitor"
+             },
+           GROUP_DOCUMENTATION: {
+             "name": "Documentation",
+             "icon": "graphics-viewer-document"
+             }
 }
 
 component_group_mappings = {
