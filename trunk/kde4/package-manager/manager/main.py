@@ -25,7 +25,7 @@ from PyKDE4.kdecore import *
 # Application Stuff
 from about import aboutData
 
-# Intefaces
+# Interfaces
 from faces import MainManager
 
 # DBus-Qt
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     # Set Command-line arguments
     KCmdLineArgs.init(sys.argv, aboutData)
 
-    # Create a Kapplitcation instance
+    # Create a Kapplication instance
     app = KApplication()
 
     # DBus MainLoop
