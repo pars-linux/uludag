@@ -229,3 +229,17 @@ component_group_mappings = {
     "system.doc" : GROUP_SYSTEM,
     "system.locale" : GROUP_LOCALIZATION
 }
+
+def groupNameToID(name):
+    for gid in groups.keys():
+        if groups[gid]["name"] == name:
+            return gid
+    return None
+
+def getGroupComponents(name):
+    group = groupNameToID(name)
+    components = []
+    for name in component_group_mappings.keys():
+        if component_group_mappings[name] == group:
+            components.append(name)
+    return components
