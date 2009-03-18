@@ -31,14 +31,15 @@ class PackageProxy(QtGui.QSortFilterProxyModel):
         self.__sourceModel = model
 
     def data(self, index, role):
-        if role != Qt.CheckStateRole and self.__modelCache.has_key(index.row()) and self.__modelCache[index.row()].has_key(role):
-            v = self.__modelCache[index.row()][role]
+        sourceIndex = self.mapToSource(index)
+        if role != Qt.CheckStateRole and self.__modelCache.has_key(sourceIndex.row()) and self.__modelCache[sourceIndex.row()].has_key(role):
+            v = self.__modelCache[sourceIndex.row()][role]
         else:
             v = self.__sourceModel.data(self.mapToSource(index), role)
-            if not self.__modelCache.has_key(index.row()):
-                self.__modelCache[index.row()] = {}
-            if not self.__modelCache[index.row()].has_key(role):
-                self.__modelCache[index.row()][role] = v
+            if not self.__modelCache.has_key(sourceIndex.row()):
+                self.__modelCache[sourceIndex.row()] = {}
+            if not self.__modelCache[sourceIndex.row()].has_key(role):
+                self.__modelCache[sourceIndex.row()][role] = v
         return v
 
     def setData(self, index, value, role):

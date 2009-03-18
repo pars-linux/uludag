@@ -49,3 +49,9 @@ class MainManager(QtGui.QWidget):
         self.ui.packageList.setItemDelegate(PackageDelegate(self))
         self.ui.packageList.setColumnWidth(0, 32)
         self.ui.packageList.setAlternatingRowColors(True)
+        self.connect(self.ui.searchLine, SIGNAL("textChanged(const QString&)"), self.filter)
+
+    def filter(self, text):
+        text = unicode(text)
+        self.ui.packageList.model().setFilterRegExp(QRegExp(text, Qt.CaseInsensitive, QRegExp.FixedString))
+
