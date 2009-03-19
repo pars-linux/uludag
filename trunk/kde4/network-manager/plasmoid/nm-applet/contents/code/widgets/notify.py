@@ -48,7 +48,7 @@ class Notifier:
         if len(args) > 0:
             self.lastId = long(args[0])
 
-    def notify(self, message, state=Solid.Networking.Unknown, timeout=5000):
+    def notify(self, message, state, timeout=5000):
         self.setState(state)
         if self.lastMessage == message:
             return

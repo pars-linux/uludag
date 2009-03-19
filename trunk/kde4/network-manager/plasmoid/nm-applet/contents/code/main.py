@@ -31,6 +31,9 @@ from backend.pardus import NetworkIface
 
 iface = NetworkIface()
 
+def getDevice(info):
+    return info['device_id'].split(':')[1].split('_')[-1]
+
 class NmApplet(plasmascript.Applet):
     """ Our main applet derived from plasmascript.Applet """
 
@@ -66,6 +69,10 @@ class NmApplet(plasmascript.Applet):
 
         self.connect(self.icon, SIGNAL("clicked()"), self.showDialog)
 
+        # Listen data transfers from systemmonitor data engine ..
+        self.lastActiveDevice = None
+        self.listenDataTransfers()
+
         self.dialog = Plasma.Dialog()
         self.dialog.setWindowFlags(Qt.Popup)
         self.updateTheme()
@@ -84,9 +91,6 @@ class NmApplet(plasmascript.Applet):
         # Listen network status from comar
         self.iface.listen(self.handler)
 
-        # Listen data transfers from systemmonitor data engine ..
-        self.listenDataTransfers()
-
     def listenDataTransfers(self):
         self.engine = self.dataEngine("systemmonitor")
         if self.engine.sources().count() == 0:
@@ -100,7 +104,13 @@ class NmApplet(plasmascript.Applet):
             QTimer.singleShot(0, self.parseSources)
 
     def parseSources(self):
-        self.engine.connectSource("network/interfaces/wlan0/receiver/packets", self, 20)
+        statePath = "network/interfaces/%s/receiver/data"
+        if self.lastActiveDevice:
+            self.engine.connectSource(statePath % self.lastActiveDevice, self, 1000)
+
+    def stopFollowing(self, device):
+        statePath = "network/interfaces/%s/receiver/data"
+        self.engine.disconnectSource(statePath % device, self)
 
     @pyqtSignature("dataUpdated(const QString &, const Plasma::DataEngine::Data &)")
     def dataUpdated(self, sourceName, data):
@@ -109,7 +119,6 @@ class NmApplet(plasmascript.Applet):
 
     def constraintsEvent(self, constraints):
         self.setBackgroundHints(Plasma.Applet.NoBackground)
-        #if constraints & Plasma.FormFactorConstraint:
 
     def openNM(self):
         self.dialog.hide()
@@ -117,13 +126,15 @@ class NmApplet(plasmascript.Applet):
 
     def handler(self, package, signal, args):
         args = map(lambda x: str(x), list(args))
-        print "Comar pinged : ", signal, args, package
         if signal == "stateChanged":
-            ip = ''
             solidState = Solid.Networking.Unknown
+            lastDevice = getDevice(iface.info(package, args[0]))
+            ip = str()
             if (str(args[1]) == "up"):
                 msg = "Connected to <b>%s</b> IP: %s" % (args[0], args[2])
                 ip = args[2]
+                self.lastActiveDevice = lastDevice
+                self.parseSources()
                 self.popup.setConnectionStatus(package, "Connected")
                 self.icon.setSvg(self.defaultIcon)
                 solidState = Solid.Networking.Connected
@@ -134,10 +145,12 @@ class NmApplet(plasmascript.Applet):
             else:
                 msg = "Disconnected"
                 self.popup.setConnectionStatus(package, msg)
+                self.stopFollowing(lastDevice)
                 self.icon.setSvg(self.defaultIcon, "native")
                 solidState = Solid.Networking.Unconnected
             self.popup.connections[package][unicode(args[0])].setState(str(args[1]), ip)
             self.notifyface.notify(str(msg), solidState)
+
         elif signal == "connectionChanged":
             if args[0] == 'deleted':
                 self.popup.connections[package][unicode(args[1])].hide()
