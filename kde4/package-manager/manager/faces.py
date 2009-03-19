@@ -56,11 +56,12 @@ class MainManager(QtGui.QWidget):
 
     def initializeComponentList(self):
         self.ui.componentList.setAlternatingRowColors(True)
+        self.ui.componentList.setIconSize(QSize(KIconLoader.SizeLarge, KIconLoader.SizeLarge))
         for group in self.iface.getGroups():
             name, icon_path = group["name"], group["icon"]
-            icon = QtGui.QIcon(KIconLoader().loadIcon(icon_path, KIconLoader.Desktop))
+            icon = QtGui.QIcon(KIconLoader().loadMimeTypeIcon(icon_path, KIconLoader.Desktop, KIconLoader.SizeSmallMedium))
             item = QtGui.QListWidgetItem(icon, name, self.ui.componentList)
-            item.setSizeHint(QSize(0,32))
+            item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
 
     def initialize(self):
         self.initializePackageList()
