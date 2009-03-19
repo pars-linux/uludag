@@ -59,8 +59,9 @@ class MainManager(QtGui.QWidget):
         self.ui.componentList.setIconSize(QSize(KIconLoader.SizeLarge, KIconLoader.SizeLarge))
         for group in self.iface.getGroups():
             name, icon_path = group["name"], group["icon"]
+            package_count = len(self.iface.getGroupPackages(name))
             icon = QtGui.QIcon(KIconLoader().loadMimeTypeIcon(icon_path, KIconLoader.Desktop, KIconLoader.SizeSmallMedium))
-            item = QtGui.QListWidgetItem(icon, name, self.ui.componentList)
+            item = QtGui.QListWidgetItem(icon, "%s (%d)" % (name, package_count), self.ui.componentList)
             item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
 
     def initialize(self):
