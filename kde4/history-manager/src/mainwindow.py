@@ -82,7 +82,7 @@ class MainManager(QtGui.QWidget):
     def loadHistory(self):
         for i in self.ops:
             self.item_model.items.append(NewOperation(i))
-        self.item_model.reset()
+        self.proxyModel.reset()
         self.ui.lw.setEnabled(True)
 
         self.status("Ready")

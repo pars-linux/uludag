@@ -365,12 +365,6 @@
      <property name="editTriggers" >
       <set>QAbstractItemView::NoEditTriggers</set>
      </property>
-     <property name="showDropIndicator" stdset="0" >
-      <bool>false</bool>
-     </property>
-     <property name="dragDropOverwriteMode" >
-      <bool>false</bool>
-     </property>
      <property name="alternatingRowColors" >
       <bool>true</bool>
      </property>
@@ -494,8 +488,8 @@ p, li { white-space: pre-wrap; }
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>94</width>
-          <height>68</height>
+          <width>682</width>
+          <height>343</height>
          </rect>
         </property>
         <attribute name="label" >
