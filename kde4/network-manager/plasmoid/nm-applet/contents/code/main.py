@@ -8,7 +8,7 @@ import os
 import dbus
 
 # Qt Libs
-from PyQt4.QtCore import Qt, SIGNAL
+from PyQt4.QtCore import Qt, SIGNAL, SLOT, pyqtSignature, QString, QTimer
 from PyQt4.QtGui import QWidget, QFrame, QGraphicsLinearLayout, QPixmap
 
 # Plasma Libs
@@ -25,7 +25,10 @@ from widgets.notify import Notifier
 from PyKDE4.solid import Solid
 
 # Network Interface for operations
+# It creates a dbus-mainlook or registers 
+# itself to the current dbus mainloop if exists
 from backend.pardus import NetworkIface
+
 iface = NetworkIface()
 
 class NmApplet(plasmascript.Applet):
@@ -50,10 +53,10 @@ class NmApplet(plasmascript.Applet):
         self.layout.setSpacing(0)
 
         self.icon = Plasma.IconWidget()
-        self.layout.addItem(self.icon)
-
         self.icon.setSvg(self.defaultIcon, "native")
         self.icon.setToolTip("Click here to show connections..")
+
+        self.layout.addItem(self.icon)
 
         try:
             # new kdebindings4 and kdebase4-workspace are required.
@@ -81,9 +84,32 @@ class NmApplet(plasmascript.Applet):
         # Listen network status from comar
         self.iface.listen(self.handler)
 
+        # Listen data transfers from systemmonitor data engine ..
+        self.listenDataTransfers()
+
+    def listenDataTransfers(self):
+        self.engine = self.dataEngine("systemmonitor")
+        if self.engine.sources().count() == 0:
+            self.connect(self.engine, SIGNAL("sourceAdded(QString)"), SLOT("initLater(QString)"))
+        else:
+            self.parseSources()
+
+    @pyqtSignature("initLater(const QString &)")
+    def initLater(self, name):
+        if name == "ps":
+            QTimer.singleShot(0, self.parseSources)
+
+    def parseSources(self):
+        self.engine.connectSource("network/interfaces/wlan0/receiver/packets", self, 20)
+
+    @pyqtSignature("dataUpdated(const QString &, const Plasma::DataEngine::Data &)")
+    def dataUpdated(self, sourceName, data):
+        if data.has_key(QString('value')):
+            print "Data received : ", data[QString('value')].toDouble()
+
     def constraintsEvent(self, constraints):
-        if constraints & Plasma.FormFactorConstraint:
-            return
+        self.setBackgroundHints(Plasma.Applet.NoBackground)
+        #if constraints & Plasma.FormFactorConstraint:
 
     def openNM(self):
         self.dialog.hide()
@@ -91,7 +117,7 @@ class NmApplet(plasmascript.Applet):
 
     def handler(self, package, signal, args):
         args = map(lambda x: str(x), list(args))
-        # print signal, args, package
+        print "Comar pinged : ", signal, args, package
         if signal == "stateChanged":
             ip = ''
             solidState = Solid.Networking.Unknown
@@ -110,7 +136,6 @@ class NmApplet(plasmascript.Applet):
                 self.popup.setConnectionStatus(package, msg)
                 self.icon.setSvg(self.defaultIcon, "native")
                 solidState = Solid.Networking.Unconnected
-
             self.popup.connections[package][unicode(args[0])].setState(str(args[1]), ip)
             self.notifyface.notify(str(msg), solidState)
         elif signal == "connectionChanged":
