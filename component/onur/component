@@ -721,6 +721,408 @@ system
         system/yali-firstBoot/pspec.xml
         system/yali/pspec.xml
 
+programming
+    build
+        programming/tools/autogen/pspec.xml
+        programming/tools/ant/pspec.xml
+        programming/tools/jam/pspec.xml
+        programming/tools/unsermake/pspec.xml
+        programming/tools/qconf/pspec.xml
+    debug
+        programming/tools/cgdb/pspec.xml
+        programming/tools/ddd/pspec.xml
+        programming/tools/gdb/pspec.xml
+        programming/tools/kdbg/pspec.xml
+    environment
+        eclipse
+            programming/environments/eclipse/eclipse-binary/pspec.xml
+            programming/environments/eclipse/eclipse-cdt-binary/pspec.xml
+            programming/environments/eclipse/eclipse-jdt-binary/pspec.xml
+            programming/environments/eclipse/eclipse-pde-binary/pspec.xml
+            programming/environments/eclipse/eclipse-pydev/pspec.xml
+            programming/environments/eclipse/kde-eclipse-binary/pspec.xml
+        eric
+            programming/environments/eric/eric-i18n-cs/pspec.xml
+            programming/environments/eric/eric-i18n-de/pspec.xml
+            programming/environments/eric/eric-i18n-es/pspec.xml
+            programming/environments/eric/eric-i18n-fr/pspec.xml
+            programming/environments/eric/eric-i18n-ru/pspec.xml
+            programming/environments/eric/eric-i18n-tr/pspec.xml
+            programming/environments/eric/eric/pspec.xml
+        programming/environments/drscheme/pspec.xml
+        programming/environments/ipython/pspec.xml
+        programming/environments/kdevelop/pspec.xml
+        programming/environments/lazarus/pspec.xml
+        programming/environments/qdevelop/pspec.xml
+        programming/environments/qt-creator/pspec.xml
+    inspect
+        programming/tools/elfutils/pspec.xml
+        programming/tools/lsof/pspec.xml
+        programming/tools/ltrace/pspec.xml
+        programming/tools/oprofile/pspec.xml
+        programming/tools/pax-utils/pspec.xml
+        programming/tools/strace/pspec.xml
+        programming/tools/sysprof/pspec.xml
+        programming/tools/valgrind/pspec.xml
+    language
+        dotnet
+            programming/languages/dotnet/gecko-sharp/pspec.xml
+            programming/languages/dotnet/gmime/pspec.xml
+            programming/languages/dotnet/gtk-sharp/pspec.xml
+            programming/languages/dotnet/libgdiplus/pspec.xml
+            programming/languages/dotnet/mono/pspec.xml
+        gambas
+            programming/languages/gambas/gambas2/pspec.xml
+        haskell
+            programming/languages/haskell/ghc/pspec.xml
+            programming/languages/haskell/hugs98/pspec.xml
+        java
+            programming/languages/java/bc-crypto-java/pspec.xml
+            programming/languages/java/db4-java/pspec.xml
+            programming/languages/java/dbus-java/pspec.xml
+            programming/languages/java/hamcrest/pspec.xml
+            programming/languages/java/hsqldb/pspec.xml
+            programming/languages/java/icu4j/pspec.xml
+            programming/languages/java/jcommon/pspec.xml
+            programming/languages/java/jcommon-serializer/pspec.xml
+            programming/languages/java/jfreechart/pspec.xml
+            programming/languages/java/junit/pspec.xml
+            programming/languages/java/libflute-java/pspec.xml
+            programming/languages/java/libfonts-java/pspec.xml
+            programming/languages/java/libformula-java/pspec.xml
+            programming/languages/java/libitext-java/pspec.xml
+            programming/languages/java/liblayout-java/pspec.xml
+            programming/languages/java/libloader-java/pspec.xml
+            programming/languages/java/libmatthew-java/pspec.xml
+            programming/languages/java/libpixie-java/pspec.xml
+            programming/languages/java/librepository-java/pspec.xml
+            programming/languages/java/libsac-java/pspec.xml
+            programming/languages/java/libxml-java/pspec.xml
+            programming/languages/java/mina-core/pspec.xml
+            programming/languages/java/pentaho-reporting-flow/pspec.xml
+            programming/languages/java/qtjambi/pspec.xml
+            programming/languages/java/slf4j/pspec.xml
+            programming/languages/java/sun-jaf/pspec.xml
+            programming/languages/java/sun-javamail/pspec.xml
+            programming/languages/java/sun-java/pspec.xml
+            programming/languages/java/tomcat-servlet-api/pspec.xml
+            programming/languages/java/zemberek/pspec.xml
+        lisp
+            programming/languages/lisp/clisp/pspec.xml
+            programming/languages/lisp/ecl/pspec.xml
+            programming/languages/lisp/guile/pspec.xml
+        pascal
+            programming/languages/pascal/fpc/pspec.xml
+        perl
+            programming/languages/perl/perl-Algorithm-Annotate/pspec.xml
+            programming/languages/perl/perl-Algorithm-Diff/pspec.xml
+            programming/languages/perl/perl-Apache-DBI/pspec.xml
+            programming/languages/perl/perl-App-CLI/pspec.xml
+            programming/languages/perl/perl-AppConfig/pspec.xml
+            programming/languages/perl/perl-Archive-Tar/pspec.xml
+            programming/languages/perl/perl-Archive-Zip/pspec.xml
+            programming/languages/perl/perl-Authen-SASL/pspec.xml
+            programming/languages/perl/perl-Bit-Vector/pspec.xml
+            programming/languages/perl/perl-Carp-Clan/pspec.xml
+            programming/languages/perl/perl-Chart/pspec.xml
+            programming/languages/perl/perl-Class-Accessor/pspec.xml
+            programming/languages/perl/perl-Class-Autouse/pspec.xml
+            programming/languages/perl/perl-Class-Data-Inheritable/pspec.xml
+            programming/languages/perl/perl-Class-ISA/pspec.xml
+            programming/languages/perl/perl-Class-MethodMaker/pspec.xml
+            programming/languages/perl/perl-Clone/pspec.xml
+            programming/languages/perl/perl-Compress-Raw-Zlib/pspec.xml
+            programming/languages/perl/perl-Compress-Zlib/pspec.xml
+            programming/languages/perl/perl-Convert-ASN1/pspec.xml
+            programming/languages/perl/perl-Crypt-PasswdMD5/pspec.xml
+            programming/languages/perl/perl-Crypt-SmbHash/pspec.xml
+            programming/languages/perl/perl-Crypt-SSLeay/pspec.xml
+            programming/languages/perl/perl-Curses/pspec.xml
+            programming/languages/perl/perl-Data-Hierarchy/pspec.xml
+            programming/languages/perl/perl-Data-UUID/pspec.xml
+            programming/languages/perl/perl-Date-Calc/pspec.xml
+            programming/languages/perl/perl-Date-Manip/pspec.xml
+            programming/languages/perl/perl-DBD-mysql/pspec.xml
+            programming/languages/perl/perl-DBD-SQLite/pspec.xml
+            programming/languages/perl/perl-DBI/pspec.xml
+            programming/languages/perl/perl-Digest-Base/pspec.xml
+            programming/languages/perl/perl-Digest-HMAC/pspec.xml
+            programming/languages/perl/perl-Digest-MD4/pspec.xml
+            programming/languages/perl/perl-Digest-MD5/pspec.xml
+            programming/languages/perl/perl-Digest-SHA1/pspec.xml
+            programming/languages/perl/perl-Email-Abstract/pspec.xml
+            programming/languages/perl/perl-Email-Address/pspec.xml
+            programming/languages/perl/perl-Email-Date-Format/pspec.xml
+            programming/languages/perl/perl-Email-Date/pspec.xml
+            programming/languages/perl/perl-Email-MessageID/pspec.xml
+            programming/languages/perl/perl-Email-MIME-Attachment-Stripper/pspec.xml
+            programming/languages/perl/perl-Email-MIME-ContentType/pspec.xml
+            programming/languages/perl/perl-Email-MIME-Creator/pspec.xml
+            programming/languages/perl/perl-Email-MIME-Encodings/pspec.xml
+            programming/languages/perl/perl-Email-MIME-Modifier/pspec.xml
+            programming/languages/perl/perl-Email-MIME/pspec.xml
+            programming/languages/perl/perl-Email-Reply/pspec.xml
+            programming/languages/perl/perl-Email-Send/pspec.xml
+            programming/languages/perl/perl-Email-Simple-Creator/pspec.xml
+            programming/languages/perl/perl-Email-Simple/pspec.xml
+            programming/languages/perl/perl-Error/pspec.xml
+            programming/languages/perl/perl-ExtUtils-CBuilder/pspec.xml
+            programming/languages/perl/perl-ExtUtils-ParseXS/pspec.xml
+            programming/languages/perl/perl-File-chdir/pspec.xml
+            programming/languages/perl/perl-File-HomeDir/pspec.xml
+            programming/languages/perl/perl-File-Tail/pspec.xml
+            programming/languages/perl/perl-File-Temp/pspec.xml
+            programming/languages/perl/perl-File-Type/pspec.xml
+            programming/languages/perl/perl-FreezeThaw/pspec.xml
+            programming/languages/perl/perl-GD-Graph/pspec.xml
+            programming/languages/perl/perl-GD/pspec.xml
+            programming/languages/perl/perl-GD-TextUtil/pspec.xml
+            programming/languages/perl/perl-GSSAPI/pspec.xml
+            programming/languages/perl/perl-HTML-Parser/pspec.xml
+            programming/languages/perl/perl-HTML-Scrubber/pspec.xml
+            programming/languages/perl/perl-HTML-Tagset/pspec.xml
+            programming/languages/perl/perl-Internals/pspec.xml
+            programming/languages/perl/perl-IO-Compress-Base/pspec.xml
+            programming/languages/perl/perl-IO-Compress-Zlib/pspec.xml
+            programming/languages/perl/perl-IO-Digest/pspec.xml
+            programming/languages/perl/perl-IO-eol/pspec.xml
+            programming/languages/perl/perl-IO-Pager/pspec.xml
+            programming/languages/perl/perl-IO-Socket-INET6/pspec.xml
+            programming/languages/perl/perl-IO-Socket-SSL/pspec.xml
+            programming/languages/perl/perl-IO-stringy/pspec.xml
+            programming/languages/perl/perl-IO-via-dynamic/pspec.xml
+            programming/languages/perl/perl-IO-via-symlink/pspec.xml
+            programming/languages/perl/perl-IO-Zlib/pspec.xml
+            programming/languages/perl/perl-IP-Country/pspec.xml
+            programming/languages/perl/perl-Jcode/pspec.xml
+            programming/languages/perl/perl-ldap/pspec.xml
+            programming/languages/perl/perl-libnet/pspec.xml
+            programming/languages/perl/perl-libwww/pspec.xml
+            programming/languages/perl/perl-libxml/pspec.xml
+            programming/languages/perl/perl-List-MoreUtils/pspec.xml
+            programming/languages/perl/perl-Locale-gettext/pspec.xml
+            programming/languages/perl/perl-Locale-Maketext-Lexicon/pspec.xml
+            programming/languages/perl/perl-Locale-Maketext-Simple/pspec.xml
+            programming/languages/perl/perl-Log-Log4perl/pspec.xml
+            programming/languages/perl/perl-Mail-SPF-Query/pspec.xml
+            programming/languages/perl/perl-MailTools/pspec.xml
+            programming/languages/perl/perl-Math-Complex/pspec.xml
+            programming/languages/perl/perl-MIME-Base64/pspec.xml
+            programming/languages/perl/perl-MIME-Lite/pspec.xml
+            programming/languages/perl/perl-MIME-tools/pspec.xml
+            programming/languages/perl/perl-MIME-Types/pspec.xml
+            programming/languages/perl/perl-Module-Build/pspec.xml
+            programming/languages/perl/perl-Module-Pluggable/pspec.xml
+            programming/languages/perl/perl-Net-CIDR-Lite/pspec.xml
+            programming/languages/perl/perl-Net-Daemon/pspec.xml
+            programming/languages/perl/perl-Net-DNS/pspec.xml
+            programming/languages/perl/perl-Net-Ident/pspec.xml
+            programming/languages/perl/perl-Net-IP/pspec.xml
+            programming/languages/perl/perl-Net-SMTP-SSL/pspec.xml
+            programming/languages/perl/perl-Net-SSLeay/pspec.xml
+            programming/languages/perl/perl-Parse-Yapp/pspec.xml
+            programming/languages/perl/perl-PatchReader/pspec.xml
+            programming/languages/perl/perl-Path-Class/pspec.xml
+            programming/languages/perl/perl-PathTools/pspec.xml
+            programming/languages/perl/perl-pcsc/pspec.xml
+            programming/languages/perl/perl-PlRPC/pspec.xml
+            programming/languages/perl/perl-Pod-Escapes/pspec.xml
+            programming/languages/perl/perl-Pod-Simple/pspec.xml
+            programming/languages/perl/perl-Regexp-Shellish/pspec.xml
+            programming/languages/perl/perl-Return-Value/pspec.xml
+            programming/languages/perl/perl-RPC-XML/pspec.xml
+            programming/languages/perl/perl-SDL/pspec.xml
+            programming/languages/perl/perl-SOAP-Lite/pspec.xml
+            programming/languages/perl/perl-Socket6/pspec.xml
+            programming/languages/perl/perl-Storable/pspec.xml
+            programming/languages/perl/perl-String-ShellQuote/pspec.xml
+            programming/languages/perl/perl-SVN-Mirror/pspec.xml
+            programming/languages/perl/perl-SVN-Simple/pspec.xml
+            programming/languages/perl/perl-Sys-Hostname-Long/pspec.xml
+            programming/languages/perl/perl-Template-GD/pspec.xml
+            programming/languages/perl/perl-Template-Toolkit/pspec.xml
+            programming/languages/perl/perl-Term-ReadKey/pspec.xml
+            programming/languages/perl/perl-Test-Pod/pspec.xml
+            programming/languages/perl/perl-Text-Iconv/pspec.xml
+            programming/languages/perl/perl-TimeDate/pspec.xml
+            programming/languages/perl/perl-Time-HiRes/pspec.xml
+            programming/languages/perl/perl-Time-Local/pspec.xml
+            programming/languages/perl/perl-Time-Piece/pspec.xml
+            programming/languages/perl/perl-Tk/pspec.xml
+            programming/languages/perl/perl-UNIVERSAL-require/pspec.xml
+            programming/languages/perl/perl-Unicode-Map8/pspec.xml
+            programming/languages/perl/perl-Unicode-Map/pspec.xml
+            programming/languages/perl/perl-Unicode-MapUTF8/pspec.xml
+            programming/languages/perl/perl-Unicode-String/pspec.xml
+            programming/languages/perl/perl-URI/pspec.xml
+            programming/languages/perl/perl-version/pspec.xml
+            programming/languages/perl/perl-X11-Protocol/pspec.xml
+            programming/languages/perl/perl-XML-DOM/pspec.xml
+            programming/languages/perl/perl-XML-Filter-BufferText/pspec.xml
+            programming/languages/perl/perl-XML-NamespaceSupport/pspec.xml
+            programming/languages/perl/perl-XML-RegExp/pspec.xml
+            programming/languages/perl/perl-XML-SAX/pspec.xml
+            programming/languages/perl/perl-XML-SAX-Writer/pspec.xml
+            programming/languages/perl/perl-XML-Twig/pspec.xml
+            programming/languages/perl/perl-XML-XQL/pspec.xml
+            programming/languages/perl/perl-YAML/pspec.xml
+            programming/languages/perl/perl-YAML-Syck/pspec.xml
+        php
+            programming/languages/php/php/pspec.xml
+            programming/languages/php/Smarty/pspec.xml
+        python
+            programming/languages/python/aggdraw/pspec.xml
+            programming/languages/python/beautifulsoup/pspec.xml
+            programming/languages/python/chardet/pspec.xml
+            programming/languages/python/cheetah/pspec.xml
+            programming/languages/python/cherrypy2/pspec.xml
+            programming/languages/python/cherrypy/pspec.xml
+            programming/languages/python/cmemcache/pspec.xml
+            programming/languages/python/dbus-pyqt3-mainloop/pspec.xml
+            programming/languages/python/django/Django/pspec.xml
+            programming/languages/python/django/django-tagging/pspec.xml
+            programming/languages/python/docutils/pspec.xml
+            programming/languages/python/epydoc/pspec.xml
+            programming/languages/python/feedparser/pspec.xml
+            programming/languages/python/fpconst/pspec.xml
+            programming/languages/python/gdmodule/pspec.xml
+            programming/languages/python/Genshi/pspec.xml
+            programming/languages/python/gnuplot-py/pspec.xml
+            programming/languages/python/httplib2/pspec.xml
+            programming/languages/python/Jinja/pspec.xml
+            programming/languages/python/matplotlib/pspec.xml
+            programming/languages/python/mechanize/pspec.xml
+            programming/languages/python/mpmath/pspec.xml
+            programming/languages/python/mutagen/pspec.xml
+            programming/languages/python/mysql-python/pspec.xml
+            programming/languages/python/networkx/pspec.xml
+            programming/languages/python/notify-python/pspec.xml
+            programming/languages/python/numeric/pspec.xml
+            programming/languages/python/numpy/pspec.xml
+            programming/languages/python/paramiko/pspec.xml
+            programming/languages/python/pexpect/pspec.xml
+            programming/languages/python/psyco/pspec.xml
+            programming/languages/python/pyalsaaudio/pspec.xml
+            programming/languages/python/pyao/pspec.xml
+            programming/languages/python/pyaspects/pspec.xml
+            programming/languages/python/pycallgraph/pspec.xml
+            programming/languages/python/pychecker/pspec.xml
+            programming/languages/python/pycrypto/pspec.xml
+            programming/languages/python/pycups/pspec.xml
+            programming/languages/python/pydelicious/pspec.xml
+            programming/languages/python/pydns/pspec.xml
+            programming/languages/python/pyFltk/pspec.xml
+            programming/languages/python/Pygments/pspec.xml
+            programming/languages/python/pygraphviz/pspec.xml
+            programming/languages/python/PyICU/pspec.xml
+            programming/languages/python/pyinotify/pspec.xml
+            programming/languages/python/pylzma/pspec.xml
+            programming/languages/python/pynifti/pspec.xml
+            programming/languages/python/pyogg/pspec.xml
+            programming/languages/python/pyopenssl/pspec.xml
+            programming/languages/python/pyosd/pspec.xml
+            programming/languages/python/pyparsing/pspec.xml
+            programming/languages/python/pyPdf/pspec.xml
+            programming/languages/python/PyProtocols/pspec.xml
+            programming/languages/python/PyQt4/pspec.xml
+            programming/languages/python/PyQt/pspec.xml
+            programming/languages/python/pyrex/pspec.xml
+            programming/languages/python/pysmbc/pspec.xml
+            programming/languages/python/pysqlite/pspec.xml
+            programming/languages/python/pysvn/pspec.xml
+            programming/languages/python/python-Babel/pspec.xml
+            programming/languages/python/python-bsddb3/pspec.xml
+            programming/languages/python/python-clientform/pspec.xml
+            programming/languages/python/python-configobj/pspec.xml
+            programming/languages/python/python-decoratortools/pspec.xml
+            programming/languages/python/python-docs/pspec.xml
+            programming/languages/python/python-FormEncode/pspec.xml
+            programming/languages/python/python-imaging/pspec.xml
+            programming/languages/python/python-iniparse/pspec.xml
+            programming/languages/python/python-iptables/pspec.xml
+            programming/languages/python/python-kid/pspec.xml
+            programming/languages/python/python-ldap/pspec.xml
+            programming/languages/python/python-M2Crypto/pspec.xml
+            programming/languages/python/python-memcached/pspec.xml
+            programming/languages/python/python-nose/pspec.xml
+            programming/languages/python/python-pastedeploy/pspec.xml
+            programming/languages/python/python-paste/pspec.xml
+            programming/languages/python/python-pastescript/pspec.xml
+            programming/languages/python/python-RuleDispatch/pspec.xml
+            programming/languages/python/python-simplejson/pspec.xml
+            programming/languages/python/python-sphinx/pspec.xml
+            programming/languages/python/python-std-extensions/pspec.xml
+            programming/languages/python/python-turbocheetah/pspec.xml
+            programming/languages/python/python-turboflot/pspec.xml
+            programming/languages/python/python-turbojson/pspec.xml
+            programming/languages/python/python-turbokid/pspec.xml
+            programming/languages/python/python-xlib/pspec.xml
+            programming/languages/python/pytz/pspec.xml
+            programming/languages/python/pyusb/pspec.xml
+            programming/languages/python/pyv4l/pspec.xml
+            programming/languages/python/pyvorbis/pspec.xml
+            programming/languages/python/pyxdg/pspec.xml
+            programming/languages/python/PyXML/pspec.xml
+            programming/languages/python/PyX/pspec.xml
+            programming/languages/python/scapy/pspec.xml
+            programming/languages/python/scipy/pspec.xml
+            programming/languages/python/setuptools/pspec.xml
+            programming/languages/python/sexy-python/pspec.xml
+            programming/languages/python/sip/pspec.xml
+            programming/languages/python/SOAPpy/pspec.xml
+            programming/languages/python/SQLObject/pspec.xml
+            programming/languages/python/sympy/pspec.xml
+            programming/languages/python/tagpy/pspec.xml
+            programming/languages/python/TurboGears/pspec.xml
+            programming/languages/python/Twisted/pspec.xml
+            programming/languages/python/urwid/pspec.xml
+            programming/languages/python/xmpppy/pspec.xml
+            programming/languages/python/xpyb/pspec.xml
+            programming/languages/python/zodb3/pspec.xml
+            programming/languages/python/ZopeInterface/pspec.xml
+        tcl
+            programming/languages/tcl/blt/pspec.xml
+            programming/languages/tcl/snack/pspec.xml
+            programming/languages/tcl/tcl/pspec.xml
+            programming/languages/tcl/tcltk/pspec.xml
+        programming/languages/R/pspec.xml
+        programming/languages/erlang/pspec.xml
+        programming/languages/falcon/pspec.xml
+        programming/languages/lua/pspec.xml
+        programming/languages/ocaml/pspec.xml
+        programming/languages/ruby/pspec.xml
+    tool
+        programming/tools/astyle/pspec.xml
+        programming/tools/cdecl/pspec.xml
+        programming/tools/colorcvs/pspec.xml
+        programming/tools/colorgcc/pspec.xml
+        programming/tools/colorsvn/pspec.xml
+        programming/tools/ctags/pspec.xml
+        programming/tools/dejagnu/pspec.xml
+        programming/tools/dev86/pspec.xml
+        programming/tools/expect/pspec.xml
+        programming/tools/gperf/pspec.xml
+        programming/tools/help2man/pspec.xml
+        programming/tools/indent/pspec.xml
+        programming/tools/patchutils/pspec.xml
+        programming/tools/translate-toolkit/pspec.xml
+    vcs
+        programming/tools/bk-client/pspec.xml
+        programming/tools/cogito/pspec.xml
+        programming/tools/cvs/pspec.xml
+        programming/tools/cvsps/pspec.xml
+        programming/tools/esvn/pspec.xml
+        programming/tools/git/pspec.xml
+        programming/tools/hgforest/pspec.xml
+        programming/tools/mercurial/pspec.xml
+        programming/tools/qgit/pspec.xml
+        programming/tools/rcs/pspec.xml
+        programming/tools/subversion/pspec.xml
+        programming/tools/SVK/pspec.xml
+        programming/tools/systemtap/pspec.xml
+        programming/tools/tig/pspec.xml
+
+
 x11
     library
         desktop/freedesktop/xorg/libdrm/pspec.xml
@@ -1461,341 +1863,6 @@ desktop/kde/umbrello/pspec.xml
 desktop/kde/user-manager/pspec.xml
 desktop/kde/yakuake/pspec.xml
 desktop/kde/zpspell/pspec.xml
-programming/environments/drscheme/pspec.xml
-programming/environments/eclipse/eclipse-binary/pspec.xml
-programming/environments/eclipse/eclipse-cdt-binary/pspec.xml
-programming/environments/eclipse/eclipse-jdt-binary/pspec.xml
-programming/environments/eclipse/eclipse-pde-binary/pspec.xml
-programming/environments/eclipse/eclipse-pydev/pspec.xml
-programming/environments/eclipse/kde-eclipse-binary/pspec.xml
-programming/environments/eric/eric-i18n-cs/pspec.xml
-programming/environments/eric/eric-i18n-de/pspec.xml
-programming/environments/eric/eric-i18n-es/pspec.xml
-programming/environments/eric/eric-i18n-fr/pspec.xml
-programming/environments/eric/eric-i18n-ru/pspec.xml
-programming/environments/eric/eric-i18n-tr/pspec.xml
-programming/environments/eric/eric/pspec.xml
-programming/environments/ipython/pspec.xml
-programming/environments/kdevelop/pspec.xml
-programming/environments/lazarus/pspec.xml
-programming/environments/qdevelop/pspec.xml
-programming/environments/qt-creator/pspec.xml
-programming/languages/dotnet/gecko-sharp/pspec.xml
-programming/languages/dotnet/gmime/pspec.xml
-programming/languages/dotnet/gtk-sharp/pspec.xml
-programming/languages/dotnet/libgdiplus/pspec.xml
-programming/languages/dotnet/mono/pspec.xml
-programming/languages/erlang/pspec.xml
-programming/languages/falcon/pspec.xml
-programming/languages/gambas/gambas2/pspec.xml
-programming/languages/haskell/ghc/pspec.xml
-programming/languages/haskell/hugs98/pspec.xml
-programming/languages/java/bc-crypto-java/pspec.xml
-programming/languages/java/db4-java/pspec.xml
-programming/languages/java/dbus-java/pspec.xml
-programming/languages/java/hamcrest/pspec.xml
-programming/languages/java/hsqldb/pspec.xml
-programming/languages/java/icu4j/pspec.xml
-programming/languages/java/jcommon/pspec.xml
-programming/languages/java/jcommon-serializer/pspec.xml
-programming/languages/java/jfreechart/pspec.xml
-programming/languages/java/junit/pspec.xml
-programming/languages/java/libflute-java/pspec.xml
-programming/languages/java/libfonts-java/pspec.xml
-programming/languages/java/libformula-java/pspec.xml
-programming/languages/java/libitext-java/pspec.xml
-programming/languages/java/liblayout-java/pspec.xml
-programming/languages/java/libloader-java/pspec.xml
-programming/languages/java/libmatthew-java/pspec.xml
-programming/languages/java/libpixie-java/pspec.xml
-programming/languages/java/librepository-java/pspec.xml
-programming/languages/java/libsac-java/pspec.xml
-programming/languages/java/libxml-java/pspec.xml
-programming/languages/java/mina-core/pspec.xml
-programming/languages/java/pentaho-reporting-flow/pspec.xml
-programming/languages/java/qtjambi/pspec.xml
-programming/languages/java/slf4j/pspec.xml
-programming/languages/java/sun-jaf/pspec.xml
-programming/languages/java/sun-javamail/pspec.xml
-programming/languages/java/sun-java/pspec.xml
-programming/languages/java/tomcat-servlet-api/pspec.xml
-programming/languages/java/zemberek/pspec.xml
-programming/languages/lisp/clisp/pspec.xml
-programming/languages/lisp/ecl/pspec.xml
-programming/languages/lisp/guile/pspec.xml
-programming/languages/lua/pspec.xml
-programming/languages/ocaml/pspec.xml
-programming/languages/pascal/fpc/pspec.xml
-programming/languages/perl/perl-Algorithm-Annotate/pspec.xml
-programming/languages/perl/perl-Algorithm-Diff/pspec.xml
-programming/languages/perl/perl-Apache-DBI/pspec.xml
-programming/languages/perl/perl-App-CLI/pspec.xml
-programming/languages/perl/perl-AppConfig/pspec.xml
-programming/languages/perl/perl-Archive-Tar/pspec.xml
-programming/languages/perl/perl-Archive-Zip/pspec.xml
-programming/languages/perl/perl-Authen-SASL/pspec.xml
-programming/languages/perl/perl-Bit-Vector/pspec.xml
-programming/languages/perl/perl-Carp-Clan/pspec.xml
-programming/languages/perl/perl-Chart/pspec.xml
-programming/languages/perl/perl-Class-Accessor/pspec.xml
-programming/languages/perl/perl-Class-Autouse/pspec.xml
-programming/languages/perl/perl-Class-Data-Inheritable/pspec.xml
-programming/languages/perl/perl-Class-ISA/pspec.xml
-programming/languages/perl/perl-Class-MethodMaker/pspec.xml
-programming/languages/perl/perl-Clone/pspec.xml
-programming/languages/perl/perl-Compress-Raw-Zlib/pspec.xml
-programming/languages/perl/perl-Compress-Zlib/pspec.xml
-programming/languages/perl/perl-Convert-ASN1/pspec.xml
-programming/languages/perl/perl-Crypt-PasswdMD5/pspec.xml
-programming/languages/perl/perl-Crypt-SmbHash/pspec.xml
-programming/languages/perl/perl-Crypt-SSLeay/pspec.xml
-programming/languages/perl/perl-Curses/pspec.xml
-programming/languages/perl/perl-Data-Hierarchy/pspec.xml
-programming/languages/perl/perl-Data-UUID/pspec.xml
-programming/languages/perl/perl-Date-Calc/pspec.xml
-programming/languages/perl/perl-Date-Manip/pspec.xml
-programming/languages/perl/perl-DBD-mysql/pspec.xml
-programming/languages/perl/perl-DBD-SQLite/pspec.xml
-programming/languages/perl/perl-DBI/pspec.xml
-programming/languages/perl/perl-Digest-Base/pspec.xml
-programming/languages/perl/perl-Digest-HMAC/pspec.xml
-programming/languages/perl/perl-Digest-MD4/pspec.xml
-programming/languages/perl/perl-Digest-MD5/pspec.xml
-programming/languages/perl/perl-Digest-SHA1/pspec.xml
-programming/languages/perl/perl-Email-Abstract/pspec.xml
-programming/languages/perl/perl-Email-Address/pspec.xml
-programming/languages/perl/perl-Email-Date-Format/pspec.xml
-programming/languages/perl/perl-Email-Date/pspec.xml
-programming/languages/perl/perl-Email-MessageID/pspec.xml
-programming/languages/perl/perl-Email-MIME-Attachment-Stripper/pspec.xml
-programming/languages/perl/perl-Email-MIME-ContentType/pspec.xml
-programming/languages/perl/perl-Email-MIME-Creator/pspec.xml
-programming/languages/perl/perl-Email-MIME-Encodings/pspec.xml
-programming/languages/perl/perl-Email-MIME-Modifier/pspec.xml
-programming/languages/perl/perl-Email-MIME/pspec.xml
-programming/languages/perl/perl-Email-Reply/pspec.xml
-programming/languages/perl/perl-Email-Send/pspec.xml
-programming/languages/perl/perl-Email-Simple-Creator/pspec.xml
-programming/languages/perl/perl-Email-Simple/pspec.xml
-programming/languages/perl/perl-Error/pspec.xml
-programming/languages/perl/perl-ExtUtils-CBuilder/pspec.xml
-programming/languages/perl/perl-ExtUtils-ParseXS/pspec.xml
-programming/languages/perl/perl-File-chdir/pspec.xml
-programming/languages/perl/perl-File-HomeDir/pspec.xml
-programming/languages/perl/perl-File-Tail/pspec.xml
-programming/languages/perl/perl-File-Temp/pspec.xml
-programming/languages/perl/perl-File-Type/pspec.xml
-programming/languages/perl/perl-FreezeThaw/pspec.xml
-programming/languages/perl/perl-GD-Graph/pspec.xml
-programming/languages/perl/perl-GD/pspec.xml
-programming/languages/perl/perl-GD-TextUtil/pspec.xml
-programming/languages/perl/perl-GSSAPI/pspec.xml
-programming/languages/perl/perl-HTML-Parser/pspec.xml
-programming/languages/perl/perl-HTML-Scrubber/pspec.xml
-programming/languages/perl/perl-HTML-Tagset/pspec.xml
-programming/languages/perl/perl-Internals/pspec.xml
-programming/languages/perl/perl-IO-Compress-Base/pspec.xml
-programming/languages/perl/perl-IO-Compress-Zlib/pspec.xml
-programming/languages/perl/perl-IO-Digest/pspec.xml
-programming/languages/perl/perl-IO-eol/pspec.xml
-programming/languages/perl/perl-IO-Pager/pspec.xml
-programming/languages/perl/perl-IO-Socket-INET6/pspec.xml
-programming/languages/perl/perl-IO-Socket-SSL/pspec.xml
-programming/languages/perl/perl-IO-stringy/pspec.xml
-programming/languages/perl/perl-IO-via-dynamic/pspec.xml
-programming/languages/perl/perl-IO-via-symlink/pspec.xml
-programming/languages/perl/perl-IO-Zlib/pspec.xml
-programming/languages/perl/perl-IP-Country/pspec.xml
-programming/languages/perl/perl-Jcode/pspec.xml
-programming/languages/perl/perl-ldap/pspec.xml
-programming/languages/perl/perl-libnet/pspec.xml
-programming/languages/perl/perl-libwww/pspec.xml
-programming/languages/perl/perl-libxml/pspec.xml
-programming/languages/perl/perl-List-MoreUtils/pspec.xml
-programming/languages/perl/perl-Locale-gettext/pspec.xml
-programming/languages/perl/perl-Locale-Maketext-Lexicon/pspec.xml
-programming/languages/perl/perl-Locale-Maketext-Simple/pspec.xml
-programming/languages/perl/perl-Log-Log4perl/pspec.xml
-programming/languages/perl/perl-Mail-SPF-Query/pspec.xml
-programming/languages/perl/perl-MailTools/pspec.xml
-programming/languages/perl/perl-Math-Complex/pspec.xml
-programming/languages/perl/perl-MIME-Base64/pspec.xml
-programming/languages/perl/perl-MIME-Lite/pspec.xml
-programming/languages/perl/perl-MIME-tools/pspec.xml
-programming/languages/perl/perl-MIME-Types/pspec.xml
-programming/languages/perl/perl-Module-Build/pspec.xml
-programming/languages/perl/perl-Module-Pluggable/pspec.xml
-programming/languages/perl/perl-Net-CIDR-Lite/pspec.xml
-programming/languages/perl/perl-Net-Daemon/pspec.xml
-programming/languages/perl/perl-Net-DNS/pspec.xml
-programming/languages/perl/perl-Net-Ident/pspec.xml
-programming/languages/perl/perl-Net-IP/pspec.xml
-programming/languages/perl/perl-Net-SMTP-SSL/pspec.xml
-programming/languages/perl/perl-Net-SSLeay/pspec.xml
-programming/languages/perl/perl-Parse-Yapp/pspec.xml
-programming/languages/perl/perl-PatchReader/pspec.xml
-programming/languages/perl/perl-Path-Class/pspec.xml
-programming/languages/perl/perl-PathTools/pspec.xml
-programming/languages/perl/perl-pcsc/pspec.xml
-programming/languages/perl/perl-PlRPC/pspec.xml
-programming/languages/perl/perl-Pod-Escapes/pspec.xml
-programming/languages/perl/perl-Pod-Simple/pspec.xml
-programming/languages/perl/perl-Regexp-Shellish/pspec.xml
-programming/languages/perl/perl-Return-Value/pspec.xml
-programming/languages/perl/perl-RPC-XML/pspec.xml
-programming/languages/perl/perl-SDL/pspec.xml
-programming/languages/perl/perl-SOAP-Lite/pspec.xml
-programming/languages/perl/perl-Socket6/pspec.xml
-programming/languages/perl/perl-Storable/pspec.xml
-programming/languages/perl/perl-String-ShellQuote/pspec.xml
-programming/languages/perl/perl-SVN-Mirror/pspec.xml
-programming/languages/perl/perl-SVN-Simple/pspec.xml
-programming/languages/perl/perl-Sys-Hostname-Long/pspec.xml
-programming/languages/perl/perl-Template-GD/pspec.xml
-programming/languages/perl/perl-Template-Toolkit/pspec.xml
-programming/languages/perl/perl-Term-ReadKey/pspec.xml
-programming/languages/perl/perl-Test-Pod/pspec.xml
-programming/languages/perl/perl-Text-Iconv/pspec.xml
-programming/languages/perl/perl-TimeDate/pspec.xml
-programming/languages/perl/perl-Time-HiRes/pspec.xml
-programming/languages/perl/perl-Time-Local/pspec.xml
-programming/languages/perl/perl-Time-Piece/pspec.xml
-programming/languages/perl/perl-Tk/pspec.xml
-programming/languages/perl/perl-UNIVERSAL-require/pspec.xml
-programming/languages/perl/perl-Unicode-Map8/pspec.xml
-programming/languages/perl/perl-Unicode-Map/pspec.xml
-programming/languages/perl/perl-Unicode-MapUTF8/pspec.xml
-programming/languages/perl/perl-Unicode-String/pspec.xml
-programming/languages/perl/perl-URI/pspec.xml
-programming/languages/perl/perl-version/pspec.xml
-programming/languages/perl/perl-X11-Protocol/pspec.xml
-programming/languages/perl/perl-XML-DOM/pspec.xml
-programming/languages/perl/perl-XML-Filter-BufferText/pspec.xml
-programming/languages/perl/perl-XML-NamespaceSupport/pspec.xml
-programming/languages/perl/perl-XML-RegExp/pspec.xml
-programming/languages/perl/perl-XML-SAX/pspec.xml
-programming/languages/perl/perl-XML-SAX-Writer/pspec.xml
-programming/languages/perl/perl-XML-Twig/pspec.xml
-programming/languages/perl/perl-XML-XQL/pspec.xml
-programming/languages/perl/perl-YAML/pspec.xml
-programming/languages/perl/perl-YAML-Syck/pspec.xml
-programming/languages/php/php/pspec.xml
-programming/languages/php/Smarty/pspec.xml
-programming/languages/python/aggdraw/pspec.xml
-programming/languages/python/beautifulsoup/pspec.xml
-programming/languages/python/chardet/pspec.xml
-programming/languages/python/cheetah/pspec.xml
-programming/languages/python/cherrypy2/pspec.xml
-programming/languages/python/cherrypy/pspec.xml
-programming/languages/python/cmemcache/pspec.xml
-programming/languages/python/dbus-pyqt3-mainloop/pspec.xml
-programming/languages/python/django/Django/pspec.xml
-programming/languages/python/django/django-tagging/pspec.xml
-programming/languages/python/docutils/pspec.xml
-programming/languages/python/epydoc/pspec.xml
-programming/languages/python/feedparser/pspec.xml
-programming/languages/python/fpconst/pspec.xml
-programming/languages/python/gdmodule/pspec.xml
-programming/languages/python/Genshi/pspec.xml
-programming/languages/python/gnuplot-py/pspec.xml
-programming/languages/python/httplib2/pspec.xml
-programming/languages/python/Jinja/pspec.xml
-programming/languages/python/matplotlib/pspec.xml
-programming/languages/python/mechanize/pspec.xml
-programming/languages/python/mpmath/pspec.xml
-programming/languages/python/mutagen/pspec.xml
-programming/languages/python/mysql-python/pspec.xml
-programming/languages/python/networkx/pspec.xml
-programming/languages/python/notify-python/pspec.xml
-programming/languages/python/numeric/pspec.xml
-programming/languages/python/numpy/pspec.xml
-programming/languages/python/paramiko/pspec.xml
-programming/languages/python/pexpect/pspec.xml
-programming/languages/python/psyco/pspec.xml
-programming/languages/python/pyalsaaudio/pspec.xml
-programming/languages/python/pyao/pspec.xml
-programming/languages/python/pyaspects/pspec.xml
-programming/languages/python/pycallgraph/pspec.xml
-programming/languages/python/pychecker/pspec.xml
-programming/languages/python/pycrypto/pspec.xml
-programming/languages/python/pycups/pspec.xml
-programming/languages/python/pydelicious/pspec.xml
-programming/languages/python/pydns/pspec.xml
-programming/languages/python/pyFltk/pspec.xml
-programming/languages/python/Pygments/pspec.xml
-programming/languages/python/pygraphviz/pspec.xml
-programming/languages/python/PyICU/pspec.xml
-programming/languages/python/pyinotify/pspec.xml
-programming/languages/python/pylzma/pspec.xml
-programming/languages/python/pynifti/pspec.xml
-programming/languages/python/pyogg/pspec.xml
-programming/languages/python/pyopenssl/pspec.xml
-programming/languages/python/pyosd/pspec.xml
-programming/languages/python/pyparsing/pspec.xml
-programming/languages/python/pyPdf/pspec.xml
-programming/languages/python/PyProtocols/pspec.xml
-programming/languages/python/PyQt4/pspec.xml
-programming/languages/python/PyQt/pspec.xml
-programming/languages/python/pyrex/pspec.xml
-programming/languages/python/pysmbc/pspec.xml
-programming/languages/python/pysqlite/pspec.xml
-programming/languages/python/pysvn/pspec.xml
-programming/languages/python/python-Babel/pspec.xml
-programming/languages/python/python-bsddb3/pspec.xml
-programming/languages/python/python-clientform/pspec.xml
-programming/languages/python/python-configobj/pspec.xml
-programming/languages/python/python-decoratortools/pspec.xml
-programming/languages/python/python-docs/pspec.xml
-programming/languages/python/python-FormEncode/pspec.xml
-programming/languages/python/python-imaging/pspec.xml
-programming/languages/python/python-iniparse/pspec.xml
-programming/languages/python/python-iptables/pspec.xml
-programming/languages/python/python-kid/pspec.xml
-programming/languages/python/python-ldap/pspec.xml
-programming/languages/python/python-M2Crypto/pspec.xml
-programming/languages/python/python-memcached/pspec.xml
-programming/languages/python/python-nose/pspec.xml
-programming/languages/python/python-pastedeploy/pspec.xml
-programming/languages/python/python-paste/pspec.xml
-programming/languages/python/python-pastescript/pspec.xml
-programming/languages/python/python-RuleDispatch/pspec.xml
-programming/languages/python/python-simplejson/pspec.xml
-programming/languages/python/python-sphinx/pspec.xml
-programming/languages/python/python-std-extensions/pspec.xml
-programming/languages/python/python-turbocheetah/pspec.xml
-programming/languages/python/python-turboflot/pspec.xml
-programming/languages/python/python-turbojson/pspec.xml
-programming/languages/python/python-turbokid/pspec.xml
-programming/languages/python/python-xlib/pspec.xml
-programming/languages/python/pytz/pspec.xml
-programming/languages/python/pyusb/pspec.xml
-programming/languages/python/pyv4l/pspec.xml
-programming/languages/python/pyvorbis/pspec.xml
-programming/languages/python/pyxdg/pspec.xml
-programming/languages/python/PyXML/pspec.xml
-programming/languages/python/PyX/pspec.xml
-programming/languages/python/scapy/pspec.xml
-programming/languages/python/scipy/pspec.xml
-programming/languages/python/setuptools/pspec.xml
-programming/languages/python/sexy-python/pspec.xml
-programming/languages/python/sip/pspec.xml
-programming/languages/python/SOAPpy/pspec.xml
-programming/languages/python/SQLObject/pspec.xml
-programming/languages/python/sympy/pspec.xml
-programming/languages/python/tagpy/pspec.xml
-programming/languages/python/TurboGears/pspec.xml
-programming/languages/python/Twisted/pspec.xml
-programming/languages/python/urwid/pspec.xml
-programming/languages/python/xmpppy/pspec.xml
-programming/languages/python/xpyb/pspec.xml
-programming/languages/python/zodb3/pspec.xml
-programming/languages/python/ZopeInterface/pspec.xml
-programming/languages/R/pspec.xml
-programming/languages/ruby/pspec.xml
-programming/languages/tcl/blt/pspec.xml
-programming/languages/tcl/snack/pspec.xml
-programming/languages/tcl/tcl/pspec.xml
-programming/languages/tcl/tcltk/pspec.xml
 programming/libs/4suite/pspec.xml
 programming/libs/aalib/pspec.xml
 programming/libs/agg/pspec.xml
@@ -2112,57 +2179,13 @@ programming/microcontroller/avrdude/pspec.xml
 programming/microcontroller/avr-libc/pspec.xml
 programming/microcontroller/binutils-avr/pspec.xml
 programming/microcontroller/gcc-avr/pspec.xml
-programming/tools/ant/pspec.xml
-programming/tools/astyle/pspec.xml
-programming/tools/autogen/pspec.xml
-programming/tools/bk-client/pspec.xml
-programming/tools/cdecl/pspec.xml
-programming/tools/cgdb/pspec.xml
-programming/tools/cogito/pspec.xml
-programming/tools/colorcvs/pspec.xml
-programming/tools/colorgcc/pspec.xml
-programming/tools/colorsvn/pspec.xml
-programming/tools/ctags/pspec.xml
-programming/tools/cvs/pspec.xml
-programming/tools/cvsps/pspec.xml
-programming/tools/ddd/pspec.xml
-programming/tools/dejagnu/pspec.xml
-programming/tools/dev86/pspec.xml
+
 programming/tools/doxygen/pspec.xml
-programming/tools/elfutils/pspec.xml
-programming/tools/esvn/pspec.xml
-programming/tools/expect/pspec.xml
-programming/tools/gdb/pspec.xml
-programming/tools/git/pspec.xml
-programming/tools/gperf/pspec.xml
-programming/tools/help2man/pspec.xml
-programming/tools/hgforest/pspec.xml
-programming/tools/indent/pspec.xml
-programming/tools/jam/pspec.xml
-programming/tools/kdbg/pspec.xml
-programming/tools/lsof/pspec.xml
-programming/tools/ltrace/pspec.xml
-programming/tools/mercurial/pspec.xml
-programming/tools/oprofile/pspec.xml
-programming/tools/patchutils/pspec.xml
-programming/tools/pax-utils/pspec.xml
-programming/tools/qconf/pspec.xml
-programming/tools/qgit/pspec.xml
-programming/tools/rcs/pspec.xml
-programming/tools/strace/pspec.xml
-programming/tools/subversion/pspec.xml
-programming/tools/SVK/pspec.xml
-programming/tools/sysprof/pspec.xml
-programming/tools/systemtap/pspec.xml
-programming/tools/tig/pspec.xml
-programming/tools/translate-toolkit/pspec.xml
-programming/tools/unsermake/pspec.xml
-programming/tools/valgrind/pspec.xml
 
 Ideas
 ------------------------------------
-rename qt4 and qt packages ?
-rename gtk2 to gtk
-use "no" library component, differentiate in IsA tags
-shall language bindings be splitted or not ? (60, 70, 80, 90)
+- rename qt4 and qt packages
+- rename gtk2 to gtk
+- use "no" library component, differentiate in IsA tags
+- shall language bindings be splitted or not ? (60, 70, 80, 90) programming.language is really confusing, if we name it language it is confused with i10l, removing the language part does not seem necessary though since python "is" a programming.language
 
