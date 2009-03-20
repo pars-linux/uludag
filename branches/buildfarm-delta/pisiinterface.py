@@ -67,6 +67,10 @@ class PisiApi:
 
     def delta(self, isopackages, oldBinaryPackages, newBinaryPackages):
 
+        # If we don't want to generate delta packages, return empty lists
+        if not config.generateDelta:
+            return ([], [])
+
         logger.debug("delta() -> oldBinaryPackages: %s" % oldBinaryPackages)
         logger.debug("delta() -> newBinaryPackages: %s" % newBinaryPackages)
 
@@ -99,7 +103,7 @@ class PisiApi:
             # Parse the name of the new package
             name = getName(os.path.basename(pl[1]))
 
-            if name in config.blacklist:
+            if name in config.deltaBlacklist:
                 logger.debug("Skipping %s as it's blacklisted.." % name)
                 continue
 

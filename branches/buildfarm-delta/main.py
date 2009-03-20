@@ -43,19 +43,16 @@ def buildPackages():
     f = open("/var/run/buildfarm", 'w')
     f.close()
 
-    # Unpickle and load ISO package list here
-    try:
-        isopackages = cPickle.Unpickler(open("data/packages.db", "rb")).load()
-    except:
-        logger.error("You have to put packages.db in data/ for delta generation.")
-        os.unlink("/var/run/buildfarm")
-        sys.exit(1)
+    # Unpickle and load ISO package list here if config.generateDelta is true.
+    if config.generateDelta:
+        try:
+            isopackages = cPickle.Unpickler(open("data/packages.db", "rb")).load()
+        except:
+            logger.error("You have to create packages.db in data/ for delta generation.")
+            os.unlink("/var/run/buildfarm")
+            sys.exit(1)
 
     # Compiling current workqueue
-
-    # TODO: Determine the packages to be recompiled for ABI compatibility.
-    # We have to parse all pspec.xml's in queue to search for a special <Requires>
-    # tag in "latest" <Update> tags.
 
     logger.raw("QUEUE")
     logger.info("*** Work Queue: %s" % qmgr.workQueue)
@@ -94,14 +91,8 @@ def buildPackages():
                 newDebugPackages = [p for p in newBinaryPackages if isdebug(p)]
                 oldDebugPackages = [p for p in oldBinaryPackages if isdebug(p)]
 
-                #print "************* newDebugPackages: %s" % newDebugPackages
-                #print "************* oldDebugPackages: %s" % oldDebugPackages
-
                 newBinaryPackages = list(set(newBinaryPackages).difference(newDebugPackages))
                 oldBinaryPackages = list(set(oldBinaryPackages).difference(oldDebugPackages))
-
-                #print "************* newBinaryPackages: %s" % newBinaryPackages
-                #print "************* oldBinaryPackages: %s" % oldBinaryPackages
 
                 newBinaryPackages.sort()
                 oldBinaryPackages.sort()

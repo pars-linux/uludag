@@ -61,18 +61,21 @@ smtpServer       = "mail.pardus.org.tr"
 # Set this to 'False' for turning mail sending off.
 useSmtpAuth      = False
 
+# Set this to 'False' if you don't want to generate delta packages
+generateDelta    = True
+
 # Blacklist for delta packages. Buildfarm will never build
 # delta packages for them.
 
-blacklist = ["skype",
-             "kernel",
-             "flashplugin",
-             "kernel-debug",
-             "openarena-data",
-             "vdrift-data-full",
-             "eclipse-jdt-binary",
-             "nvidia-drivers177",
-             "nvidia-drivers180",
-             "nvidia-drivers173",
-             "nvidia-drivers-new",
-             "nvidia-drivers-old"]
+deltaBlacklist   = ["skype",
+                    "kernel",
+                     "flashplugin",
+                     "kernel-debug",
+                     "openarena-data",
+                     "vdrift-data-full",
+                     "eclipse-jdt-binary",
+                     "nvidia-drivers177",
+                     "nvidia-drivers180",
+                     "nvidia-drivers173",
+                     "nvidia-drivers-new",
+                     "nvidia-drivers-old"]
