@@ -2158,3 +2158,11 @@ programming/tools/tig/pspec.xml
 programming/tools/translate-toolkit/pspec.xml
 programming/tools/unsermake/pspec.xml
 programming/tools/valgrind/pspec.xml
+
+Ideas
+------------------------------------
+rename qt4 and qt packages ?
+rename gtk2 to gtk
+use "no" library component, differentiate in IsA tags
+shall language bindings be splitted or not ? (60, 70, 80, 90)
+
