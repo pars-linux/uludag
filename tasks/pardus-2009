@@ -29,7 +29,7 @@
   * log ve debug desteği
 
 * Donanım (Ozan Çağlayan)
-  * Yeni çekirdek geçişi (2.6.29) (/85)
+  * Yeni çekirdek geçişi (2.6.29) (/75)
   * Python ile çekirdek geçiş ve depo betiklerinin yazılması (-)
   * Yeni module-init-tools geçişi (/100)
   * initramfs'de busybox güncellemesi (/100)
