@@ -506,6 +506,11 @@ system
         applications/admin/xfsdump/pspec.xml
         applications/admin/xfsprogs/pspec.xml
         applications/admin/gptsync/pspec.xml
+    installer
+        system/yali4-firstBoot/pspec.xml
+        system/yali4/pspec.xml
+        system/yali-firstBoot/pspec.xml
+        system/yali/pspec.xml
 
 
 
@@ -2128,7 +2133,3 @@ programming/tools/tig/pspec.xml
 programming/tools/translate-toolkit/pspec.xml
 programming/tools/unsermake/pspec.xml
 programming/tools/valgrind/pspec.xml
-system/yali4-firstBoot/pspec.xml
-system/yali4/pspec.xml
-system/yali-firstBoot/pspec.xml
-system/yali/pspec.xml
