@@ -30,6 +30,15 @@ desktop
         desktop/fonts/tv-fonts/pspec.xml
         desktop/freedesktop/fontconfig/pspec.xml
         desktop/freedesktop/ttmkfdir/pspec.xml
+    gnome
+        desktop/gnome/QtCurve-Gtk2/pspec.xml
+        desktop/gnome/gail/pspec.xml
+        desktop/gnome/gconf/pspec.xml
+        desktop/gnome/gconfmm/pspec.xml
+        desktop/gnome/glibmm/pspec.xml
+        desktop/gnome/libgnomecanvas/pspec.xml
+        desktop/gnome/libgnomecanvasmm/pspec.xml
+        desktop/gnome/orbit2/pspec.xml
     kde
         base
             desktop/kde4/base/kdeaccessibility4/pspec.xml
@@ -117,7 +126,6 @@ desktop
             desktop/kde/base/kdetoys/pspec.xml
             desktop/kde/base/kdeutils/pspec.xml
             desktop/kde/base/kdewebdev/pspec.xml
-            desktop/kde/base/qt/pspec.xml
         i18n
             desktop/kde/i18n/kde-i18n-af/pspec.xml
             desktop/kde/i18n/kde-i18n-ar/pspec.xml
@@ -185,6 +193,31 @@ desktop
             desktop/kde/i18n/kde-i18n-vi/pspec.xml
             desktop/kde/i18n/kde-i18n-zh_CN/pspec.xml
             desktop/kde/i18n/kde-i18n-zh_TW/pspec.xml
+    toolkit
+        qt
+            programming/libs/qt4/pspec.xml
+        qt3
+            desktop/kde/base/qt/pspec.xml
+        gtk
+            desktop/gnome/atk/pspec.xml
+            desktop/gnome/cairomm/pspec.xml
+            desktop/gnome/cairo/pspec.xml
+            desktop/gnome/gtk2/pspec.xml
+            desktop/gnome/gtk2-themes-kde4oxygen/pspec.xml
+            desktop/gnome/gtk-engines/pspec.xml
+            desktop/gnome/gtkmm/pspec.xml
+            desktop/gnome/gtkspell/pspec.xml
+            desktop/gnome/pango/pspec.xml
+            programming/libs/gtk+extra/pspec.xml
+            desktop/gnome/libglade2/pspec.xml
+            desktop/gnome/libglademm/pspec.xml
+            desktop/gnome/libsexy/pspec.xml
+            desktop/gnome/libwnck/pspec.xml
+        motif
+            programming/libs/openmotif/pspec.xml
+            programming/libs/lesstif/pspec.xml
+        programming/libs/wxGTK/pspec.xml
+        programming/libs/fltk/pspec.xml
 
 editor
     emacs
@@ -736,6 +769,7 @@ x11
     terminal
         desktop/freedesktop/xterm/pspec.xml
         desktop/freedesktop/rxvt-unicode/pspec.xml
+        desktop/gnome/vte/pspec.xml
     application
         desktop/freedesktop/x2x/pspec.xml
         desktop/freedesktop/xorg/xorg-util/pspec.xml
@@ -1245,16 +1279,9 @@ desktop/freedesktop/shared-mime-info/pspec.xml
 desktop/freedesktop/startup-notification/pspec.xml
 desktop/freedesktop/xdg-utils/pspec.xml
 desktop/freedesktop/xorg/xcursor-themes/pspec.xml
-desktop/gnome/atk/pspec.xml
 desktop/gnome/beagle/pspec.xml
-desktop/gnome/cairomm/pspec.xml
-desktop/gnome/cairo/pspec.xml
-desktop/gnome/gail/pspec.xml
-desktop/gnome/gconfmm/pspec.xml
-desktop/gnome/gconf/pspec.xml
 desktop/gnome/gimp-data-extras/pspec.xml
 desktop/gnome/gimp/pspec.xml
-desktop/gnome/glibmm/pspec.xml
 desktop/gnome/gst-ffmpeg/pspec.xml
 desktop/gnome/gst-plugins-bad/pspec.xml
 desktop/gnome/gst-plugins-base/pspec.xml
@@ -1262,28 +1289,13 @@ desktop/gnome/gst-plugins-farsight/pspec.xml
 desktop/gnome/gst-plugins-good/pspec.xml
 desktop/gnome/gst-plugins-ugly/pspec.xml
 desktop/gnome/gstreamer/pspec.xml
-desktop/gnome/gtk2/pspec.xml
-desktop/gnome/gtk2-themes-kde4oxygen/pspec.xml
-desktop/gnome/gtk-engines/pspec.xml
-desktop/gnome/gtkmm/pspec.xml
-desktop/gnome/gtkspell/pspec.xml
 desktop/gnome/libcroco/pspec.xml
-desktop/gnome/libglade2/pspec.xml
-desktop/gnome/libglademm/pspec.xml
-desktop/gnome/libgnomecanvasmm/pspec.xml
-desktop/gnome/libgnomecanvas/pspec.xml
 desktop/gnome/librsvg/pspec.xml
-desktop/gnome/libsexy/pspec.xml
 desktop/gnome/libsvg-cairo/pspec.xml
 desktop/gnome/libsvg/pspec.xml
-desktop/gnome/libwnck/pspec.xml
-desktop/gnome/orbit2/pspec.xml
-desktop/gnome/pango/pspec.xml
 desktop/gnome/pycairo/pspec.xml
 desktop/gnome/pygobject/pspec.xml
 desktop/gnome/pygtk/pspec.xml
-desktop/gnome/QtCurve-Gtk2/pspec.xml
-desktop/gnome/vte/pspec.xml
 desktop/kde4/amarok-kde4/pspec.xml
 desktop/kde4/automoc4/pspec.xml
 desktop/kde4/bespin-kde4-theme/pspec.xml
@@ -1833,7 +1845,6 @@ programming/libs/ffcall/pspec.xml
 programming/libs/fftw2/pspec.xml
 programming/libs/fftw3/pspec.xml
 programming/libs/flint/pspec.xml
-programming/libs/fltk/pspec.xml
 programming/libs/fplll/pspec.xml
 programming/libs/freealut/pspec.xml
 programming/libs/FreeImage/pspec.xml
@@ -1857,7 +1868,6 @@ programming/libs/gpgme/pspec.xml
 programming/libs/gsl/pspec.xml
 programming/libs/gsm/pspec.xml
 programming/libs/gssdp/pspec.xml
-programming/libs/gtk+extra/pspec.xml
 programming/libs/gupnp-igd/pspec.xml
 programming/libs/gupnp/pspec.xml
 programming/libs/hdf5/pspec.xml
@@ -1878,7 +1888,6 @@ programming/libs/ladspa-cmt/pspec.xml
 programming/libs/ladspa-sdk/pspec.xml
 programming/libs/lapack/pspec.xml
 programming/libs/lensfun/pspec.xml
-programming/libs/lesstif/pspec.xml
 programming/libs/lib3ds/pspec.xml
 programming/libs/libacpi/pspec.xml
 programming/libs/libaio/pspec.xml
@@ -2026,7 +2035,6 @@ programming/libs/omniORB/pspec.xml
 programming/libs/openal/pspec.xml
 programming/libs/openexr/pspec.xml
 programming/libs/openjpeg/pspec.xml
-programming/libs/openmotif/pspec.xml
 programming/libs/openmpi/pspec.xml
 programming/libs/openobex/pspec.xml
 programming/libs/OpenSceneGraph/pspec.xml
@@ -2050,7 +2058,6 @@ programming/libs/qca-tls/pspec.xml
 programming/libs/qedje/pspec.xml
 programming/libs/qhull/pspec.xml
 programming/libs/qimageblitz/pspec.xml
-programming/libs/qt4/pspec.xml
 programming/libs/quaddouble/pspec.xml
 programming/libs/quesoglc/pspec.xml
 programming/libs/qwtplot3d/pspec.xml
@@ -2090,7 +2097,6 @@ programming/libs/ucl/pspec.xml
 programming/libs/unixODBC/pspec.xml
 programming/libs/wavpack/pspec.xml
 programming/libs/wv2/pspec.xml
-programming/libs/wxGTK/pspec.xml
 programming/libs/xalan-c/pspec.xml
 programming/libs/xerces-c/pspec.xml
 programming/libs/xine-lib/pspec.xml
