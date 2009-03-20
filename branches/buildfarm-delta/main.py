@@ -182,11 +182,19 @@ def buildPackages():
 
     # Save current path
     current = os.getcwd()
-    for d in [config.binaryPath, config.testPath, config.debugPath]:
+
+    # Set index paths
+    paths = [config.binaryPath, config.testPath]
+    if config.debugSupport:
+        # Enable debugSupport in config to generate an index
+        # for the debug repository.
+        paths.append(config.debugPath)
+
+    for d in paths:
         os.chdir(d)
-        logger.info("\n*** Generating PiSi Index in %s:" % d)
+        logger.info("\n*** Generating repository index in %s:" % d)
         os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
-        logger.info("*** PiSi Index Generated for %s" % d)
+        logger.info("*** Repository index generated for %s" % d)
 
     # Go back to the saved directory
     os.chdir(current)

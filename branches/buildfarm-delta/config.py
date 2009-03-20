@@ -37,7 +37,10 @@ testPath         = "/var/cache/pisi/packages-test/"
 # It seems that it's not used anymore
 deltaPath        = "/var/cache/pisi/packages-delta/"
 
-# This repo contains only the dbginfo packages.
+# This repo contains only the dbginfo packages
+# Set debugSupport to 'True' for managing a separate
+# debug repository in debugPath.
+debugSupport     = False
 debugPath        = "/var/cache/pisi/packages-debug/"
 
 # Information for mailer module.
