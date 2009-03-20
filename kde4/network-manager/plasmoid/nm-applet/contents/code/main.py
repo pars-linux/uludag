@@ -3,6 +3,7 @@
 
 # OS
 import os
+import time
 
 # D-Bus
 import dbus
@@ -72,6 +73,9 @@ class NmApplet(plasmascript.Applet):
         # Listen data transfers from systemmonitor data engine ..
         self.lastActiveDevice = None
         self.listenDataTransfers()
+        self.color = Qt.green
+        self.activityTimer = QTimer(self)
+        self.connect(self.activityTimer, SIGNAL("timeout()"), self.blinkLight)
 
         self.dialog = Plasma.Dialog()
         self.dialog.setWindowFlags(Qt.Popup)
@@ -90,6 +94,7 @@ class NmApplet(plasmascript.Applet):
 
         # Listen network status from comar
         self.iface.listen(self.handler)
+        self.activityTimer.start(100)
 
     def listenDataTransfers(self):
         self.engine = self.dataEngine("systemmonitor")
@@ -97,6 +102,20 @@ class NmApplet(plasmascript.Applet):
             self.connect(self.engine, SIGNAL("sourceAdded(QString)"), SLOT("initLater(QString)"))
         else:
             self.parseSources()
+
+    def paintInterface(self, painter, option, rect):
+        painter.save()
+        f = rect.width()/10
+        if self.activityTimer.isActive():
+            painter.fillRect(rect.x()+rect.width()-f, rect.y()+rect.height()-f, f, f, self.color)
+        painter.restore()
+
+    def blinkLight(self):
+        if self.color == Qt.green:
+            self.color = Qt.transparent
+        else:
+            self.color = Qt.green
+        self.update()
 
     @pyqtSignature("initLater(const QString &)")
     def initLater(self, name):
@@ -106,16 +125,22 @@ class NmApplet(plasmascript.Applet):
     def parseSources(self):
         statePath = "network/interfaces/%s/receiver/data"
         if self.lastActiveDevice:
-            self.engine.connectSource(statePath % self.lastActiveDevice, self, 1000)
+            self.engine.connectSource(statePath % self.lastActiveDevice, self, 500)
 
     def stopFollowing(self, device):
         statePath = "network/interfaces/%s/receiver/data"
         self.engine.disconnectSource(statePath % device, self)
+        self.activityTimer.stop()
 
     @pyqtSignature("dataUpdated(const QString &, const Plasma::DataEngine::Data &)")
     def dataUpdated(self, sourceName, data):
         if data.has_key(QString('value')):
-            print "Data received : ", data[QString('value')].toDouble()
+            if data[QString('value')].toInt()[0] == 0:
+                self.activityTimer.stop()
+                self.color = Qt.transparent
+                self.update()
+            else:
+                self.activityTimer.start(100)
 
     def constraintsEvent(self, constraints):
         self.setBackgroundHints(Plasma.Applet.NoBackground)
