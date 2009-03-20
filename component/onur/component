@@ -278,9 +278,13 @@ editor
         applications/editors/emacs/mmm-mode/pspec.xml
         applications/editors/emacs/php-mode/pspec.xml
         applications/editors/emacs/pymacs/pspec.xml
-    vim
+    vi
         applications/editors/vim-colorschemes/pspec.xml
         applications/editors/vim/pspec.xml
+    web
+        applications/editors/kompozer/pspec.xml
+        applications/editors/nvu/pspec.xml
+
     applications/editors/joe/pspec.xml
     applications/editors/ed/pspec.xml
 
@@ -1160,7 +1164,7 @@ science
         applications/science/medical/xmedcon/pspec.xml
 
 server
-    auth
+    authentication
         server/freeradius/pspec.xml
         server/nis/ypbind/pspec.xml
         server/nis/ypserv/pspec.xml
@@ -1514,8 +1518,6 @@ applications/doc/t1utils/pspec.xml
 applications/doc/texi2html/pspec.xml
 applications/doc/wv/pspec.xml
 applications/doc/yodl/pspec.xml
-applications/editors/kompozer/pspec.xml
-applications/editors/nvu/pspec.xml
 applications/editors/scribus/pspec.xml
 applications/emulators/scummvm/pspec.xml
 applications/emulators/wine/pspec.xml
