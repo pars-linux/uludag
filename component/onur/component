@@ -241,7 +241,6 @@ editor
 game
     library
         applications/games/crystalspace/pspec.xml
-        programming/languages/python/pygame/pspec.xml
     action
         applications/games/abuse-data/pspec.xml
         applications/games/abuse/pspec.xml
@@ -1117,6 +1116,7 @@ programming
             programming/languages/python/pydelicious/pspec.xml
             programming/languages/python/pydns/pspec.xml
             programming/languages/python/pyFltk/pspec.xml
+            programming/languages/python/pygame/pspec.xml
             programming/languages/python/Pygments/pspec.xml
             programming/languages/python/pygraphviz/pspec.xml
             programming/languages/python/PyICU/pspec.xml
