@@ -203,6 +203,180 @@ editor
     applications/editors/joe/pspec.xml
     applications/editors/ed/pspec.xml
 
+game
+    library
+        applications/games/crystalspace/pspec.xml
+        programming/languages/python/pygame/pspec.xml
+    action
+        applications/games/abuse-data/pspec.xml
+        applications/games/abuse/pspec.xml
+        applications/games/armagetronad-moviepack/pspec.xml
+        applications/games/armagetronad-moviesounds/pspec.xml
+        applications/games/armagetronad/pspec.xml
+        applications/games/AstroMenace-data/pspec.xml
+        applications/games/AstroMenace/pspec.xml
+        applications/games/btanks/pspec.xml
+        applications/games/bzflag/pspec.xml
+        applications/games/chromium-data/pspec.xml
+        applications/games/chromium/pspec.xml
+        applications/games/clanbomber/pspec.xml
+        applications/games/funguloids/pspec.xml
+        applications/games/glaxium/pspec.xml
+        applications/games/gltron/pspec.xml
+        applications/games/nogravity-data/pspec.xml
+        applications/games/nogravity/pspec.xml
+        applications/games/project-starfighter/pspec.xml
+        applications/games/supertuxkart/pspec.xml
+        applications/games/teeworlds/pspec.xml
+        applications/games/trackballs-music/pspec.xml
+        applications/games/trackballs/pspec.xml
+        applications/games/wordwarvi/pspec.xml
+    adventure
+        applications/games/bass/pspec.xml
+        applications/games/goonies/pspec.xml
+        applications/games/loosecannon/pspec.xml
+        applications/games/queen/pspec.xml
+    arcade
+        applications/games/Ri-li/pspec.xml
+        applications/games/StepMania-data/pspec.xml
+        applications/games/StepMania-stepmix1/pspec.xml
+        applications/games/StepMania/pspec.xml
+        applications/games/abe/pspec.xml
+        applications/games/blobAndConquer/pspec.xml
+        applications/games/blobby/pspec.xml
+        applications/games/blobwars/pspec.xml
+        applications/games/cdogs-sdl-data/pspec.xml
+        applications/games/cdogs-sdl/pspec.xml
+        applications/games/crack-attack-music/pspec.xml
+        applications/games/crack-attack-sounds/pspec.xml
+        applications/games/crack-attack/pspec.xml
+        applications/games/frozen-bubble/pspec.xml
+        applications/games/gnujump/pspec.xml
+        applications/games/kobodeluxe/pspec.xml
+        applications/games/lbreakout2/pspec.xml
+        applications/games/njam/pspec.xml
+        applications/games/ppracer/pspec.xml
+        applications/games/rocksndiamonds/pspec.xml
+        applications/games/smc-music/pspec.xml
+        applications/games/smc/pspec.xml
+        applications/games/supertux/pspec.xml
+        applications/games/tecnoballz/pspec.xml
+        applications/games/tomatoes-data/pspec.xml
+        applications/games/tomatoes/pspec.xml
+    board
+        applications/games/dreamchess/pspec.xml
+        applications/games/eboard/pspec.xml
+        applications/games/gnuchess-book/pspec.xml
+        applications/games/gnuchess/pspec.xml
+        applications/games/gnugo/pspec.xml
+        applications/games/knights/pspec.xml
+        applications/games/ksudoku/pspec.xml
+        applications/games/qGo/pspec.xml
+    fps
+        applications/games/AssaultCube-maps/pspec.xml
+        applications/games/AssaultCube/pspec.xml
+        applications/games/WoP-data/pspec.xml
+        applications/games/WoP-padpack/pspec.xml
+        applications/games/WoP/pspec.xml
+        applications/games/alienarena-data/pspec.xml
+        applications/games/alienarena/pspec.xml
+        applications/games/ioPaintball-data/pspec.xml
+        applications/games/ioPaintball/pspec.xml
+        applications/games/nexuiz-data/pspec.xml
+        applications/games/nexuiz-mappack/pspec.xml
+        applications/games/nexuiz/pspec.xml
+        applications/games/openarena-data/pspec.xml
+        applications/games/openarena/pspec.xml
+        applications/games/sauerbraten/pspec.xml
+        applications/games/tremulous-data/pspec.xml
+        applications/games/tremulous/pspec.xml
+        applications/games/urbanterror-data/pspec.xml
+        applications/games/urbanterror/pspec.xml
+        applications/games/warsow-data/pspec.xml
+        applications/games/warsow/pspec.xml
+        applications/games/westernquake3-data/pspec.xml
+        applications/games/westernquake3/pspec.xml
+    kids
+        applications/games/funnyboat/pspec.xml
+        applications/games/memonix-data/pspec.xml
+        applications/games/memonix/pspec.xml
+        applications/games/pytraffic/pspec.xml
+    puzzle
+        applications/games/amoebax/pspec.xml
+        applications/games/blockout2/pspec.xml
+        applications/games/enigma/pspec.xml
+        applications/games/ensemblist/pspec.xml
+        applications/games/fish-fillets-data/pspec.xml
+        applications/games/fish-fillets/pspec.xml
+        applications/games/gmult/pspec.xml
+        applications/games/hex-a-hop/pspec.xml
+        applications/games/kiki-extra/pspec.xml
+        applications/games/kiki/pspec.xml
+        applications/games/lmarbles/pspec.xml
+        applications/games/ltris/pspec.xml
+        applications/games/magicor-data/pspec.xml
+        applications/games/magicor/pspec.xml
+        applications/games/monsterz/pspec.xml
+        applications/games/neverball/pspec.xml
+        applications/games/pathological/pspec.xml
+        applications/games/pingus/pspec.xml
+        applications/games/pushover/pspec.xml
+    rpg
+        applications/games/daimonin-music/pspec.xml
+        applications/games/daimonin/pspec.xml
+        applications/games/egoboo-data/pspec.xml
+        applications/games/egoboo/pspec.xml
+        applications/games/eternal-lands-data/pspec.xml
+        applications/games/eternal-lands-music/pspec.xml
+        applications/games/eternal-lands/pspec.xml
+        applications/games/freedroidrpg/pspec.xml
+        applications/games/scourge-data/pspec.xml
+        applications/games/scourge/pspec.xml
+    simulation
+        applications/games/dangerdeep-data/pspec.xml
+        applications/games/dangerdeep/pspec.xml
+        applications/games/flightgear-data-base/pspec.xml
+        applications/games/flightgear/pspec.xml
+        applications/games/gl117/pspec.xml
+        applications/games/lincity-ng/pspec.xml
+        applications/games/opencity/pspec.xml
+        applications/games/simutrans-base/pspec.xml
+        applications/games/simutrans-food/pspec.xml
+        applications/games/simutrans/pspec.xml
+        applications/games/simutrans-waste/pspec.xml
+    sports
+        applications/games/foobillard/pspec.xml
+        applications/games/maniadrive/pspec.xml
+        applications/games/stormbaancoureur/pspec.xml
+        applications/games/torcs/pspec.xml
+        applications/games/trigger-data/pspec.xml
+        applications/games/trigger/pspec.xml
+        applications/games/vdrift-data-full/pspec.xml
+        applications/games/vdrift/pspec.xml
+        applications/games/xmoto-edit/pspec.xml
+        applications/games/xmoto/pspec.xml
+    strategy
+        applications/games/boson/pspec.xml
+        applications/games/boswars/pspec.xml
+        applications/games/crimson-fields/pspec.xml
+        applications/games/freeciv/pspec.xml
+        applications/games/freecol/pspec.xml
+        applications/games/glest-data/pspec.xml
+        applications/games/glest/pspec.xml
+        applications/games/glob2/pspec.xml
+        applications/games/liquidwar/pspec.xml
+        applications/games/scorched3d/pspec.xml
+        applications/games/ufoai-data/pspec.xml
+        applications/games/ufoai/pspec.xml
+        applications/games/uqm_3domusic/pspec.xml
+        applications/games/uqm-content/pspec.xml
+        applications/games/uqm/pspec.xml
+        applications/games/uqm-voice/pspec.xml
+        applications/games/warzone2100/pspec.xml
+        applications/games/wesnoth/pspec.xml
+        applications/games/widelands/pspec.xml
+        applications/games/wormux/pspec.xml
+
 hardware
     firmware
         kernel/firmware/accessrunner-firmware/pspec.xml
@@ -604,165 +778,6 @@ applications/emulators/vice/pspec.xml
 applications/emulators/wine/pspec.xml
 applications/emulators/xmame/pspec.xml
 applications/emulators/zsnes/pspec.xml
-applications/games/abe/pspec.xml
-applications/games/abuse-data/pspec.xml
-applications/games/abuse/pspec.xml
-applications/games/alienarena-data/pspec.xml
-applications/games/alienarena/pspec.xml
-applications/games/amoebax/pspec.xml
-applications/games/armagetronad-moviepack/pspec.xml
-applications/games/armagetronad-moviesounds/pspec.xml
-applications/games/armagetronad/pspec.xml
-applications/games/AssaultCube-maps/pspec.xml
-applications/games/AssaultCube/pspec.xml
-applications/games/AstroMenace-data/pspec.xml
-applications/games/AstroMenace/pspec.xml
-applications/games/bass/pspec.xml
-applications/games/blobAndConquer/pspec.xml
-applications/games/blobby/pspec.xml
-applications/games/blobwars/pspec.xml
-applications/games/blockout2/pspec.xml
-applications/games/boson/pspec.xml
-applications/games/boswars/pspec.xml
-applications/games/btanks/pspec.xml
-applications/games/bzflag/pspec.xml
-applications/games/cdogs-sdl-data/pspec.xml
-applications/games/cdogs-sdl/pspec.xml
-applications/games/chromium-data/pspec.xml
-applications/games/chromium/pspec.xml
-applications/games/clanbomber/pspec.xml
-applications/games/crack-attack-music/pspec.xml
-applications/games/crack-attack/pspec.xml
-applications/games/crack-attack-sounds/pspec.xml
-applications/games/crimson-fields/pspec.xml
-applications/games/crystalspace/pspec.xml
-applications/games/daimonin-music/pspec.xml
-applications/games/daimonin/pspec.xml
-applications/games/dangerdeep-data/pspec.xml
-applications/games/dangerdeep/pspec.xml
-applications/games/dreamchess/pspec.xml
-applications/games/eboard/pspec.xml
-applications/games/egoboo-data/pspec.xml
-applications/games/egoboo/pspec.xml
-applications/games/enigma/pspec.xml
-applications/games/ensemblist/pspec.xml
-applications/games/eternal-lands-data/pspec.xml
-applications/games/eternal-lands-music/pspec.xml
-applications/games/eternal-lands/pspec.xml
-applications/games/fish-fillets-data/pspec.xml
-applications/games/fish-fillets/pspec.xml
-applications/games/flightgear-data-base/pspec.xml
-applications/games/flightgear/pspec.xml
-applications/games/foobillard/pspec.xml
-applications/games/freeciv/pspec.xml
-applications/games/freecol/pspec.xml
-applications/games/freedroidrpg/pspec.xml
-applications/games/frozen-bubble/pspec.xml
-applications/games/funguloids/pspec.xml
-applications/games/funnyboat/pspec.xml
-applications/games/gl117/pspec.xml
-applications/games/glaxium/pspec.xml
-applications/games/glest-data/pspec.xml
-applications/games/glest/pspec.xml
-applications/games/glob2/pspec.xml
-applications/games/gltron/pspec.xml
-applications/games/gmult/pspec.xml
-applications/games/gnuchess-book/pspec.xml
-applications/games/gnuchess/pspec.xml
-applications/games/gnugo/pspec.xml
-applications/games/gnujump/pspec.xml
-applications/games/goonies/pspec.xml
-applications/games/hex-a-hop/pspec.xml
-applications/games/ioPaintball-data/pspec.xml
-applications/games/ioPaintball/pspec.xml
-applications/games/kiki-extra/pspec.xml
-applications/games/kiki/pspec.xml
-applications/games/knights/pspec.xml
-applications/games/kobodeluxe/pspec.xml
-applications/games/ksudoku/pspec.xml
-applications/games/lbreakout2/pspec.xml
-applications/games/lincity-ng/pspec.xml
-applications/games/liquidwar/pspec.xml
-applications/games/lmarbles/pspec.xml
-applications/games/loosecannon/pspec.xml
-applications/games/ltris/pspec.xml
-applications/games/magicor-data/pspec.xml
-applications/games/magicor/pspec.xml
-applications/games/maniadrive/pspec.xml
-applications/games/memonix-data/pspec.xml
-applications/games/memonix/pspec.xml
-applications/games/monsterz/pspec.xml
-applications/games/neverball/pspec.xml
-applications/games/nexuiz-data/pspec.xml
-applications/games/nexuiz-mappack/pspec.xml
-applications/games/nexuiz/pspec.xml
-applications/games/njam/pspec.xml
-applications/games/nogravity-data/pspec.xml
-applications/games/nogravity/pspec.xml
-applications/games/openarena-data/pspec.xml
-applications/games/openarena/pspec.xml
-applications/games/opencity/pspec.xml
-applications/games/pathological/pspec.xml
-applications/games/pingus/pspec.xml
-applications/games/ppracer/pspec.xml
-applications/games/project-starfighter/pspec.xml
-applications/games/pushover/pspec.xml
-applications/games/pytraffic/pspec.xml
-applications/games/qGo/pspec.xml
-applications/games/queen/pspec.xml
-applications/games/Ri-li/pspec.xml
-applications/games/rocksndiamonds/pspec.xml
-applications/games/sauerbraten/pspec.xml
-applications/games/scorched3d/pspec.xml
-applications/games/scourge-data/pspec.xml
-applications/games/scourge/pspec.xml
-applications/games/simutrans-base/pspec.xml
-applications/games/simutrans-food/pspec.xml
-applications/games/simutrans/pspec.xml
-applications/games/simutrans-waste/pspec.xml
-applications/games/smc-music/pspec.xml
-applications/games/smc/pspec.xml
-applications/games/StepMania-data/pspec.xml
-applications/games/StepMania/pspec.xml
-applications/games/StepMania-stepmix1/pspec.xml
-applications/games/stormbaancoureur/pspec.xml
-applications/games/supertuxkart/pspec.xml
-applications/games/supertux/pspec.xml
-applications/games/tecnoballz/pspec.xml
-applications/games/teeworlds/pspec.xml
-applications/games/tomatoes-data/pspec.xml
-applications/games/tomatoes/pspec.xml
-applications/games/torcs/pspec.xml
-applications/games/trackballs-music/pspec.xml
-applications/games/trackballs/pspec.xml
-applications/games/tremulous-data/pspec.xml
-applications/games/tremulous/pspec.xml
-applications/games/trigger-data/pspec.xml
-applications/games/trigger/pspec.xml
-applications/games/ufoai-data/pspec.xml
-applications/games/ufoai/pspec.xml
-applications/games/uqm_3domusic/pspec.xml
-applications/games/uqm-content/pspec.xml
-applications/games/uqm/pspec.xml
-applications/games/uqm-voice/pspec.xml
-applications/games/urbanterror-data/pspec.xml
-applications/games/urbanterror/pspec.xml
-applications/games/vdrift-data-full/pspec.xml
-applications/games/vdrift/pspec.xml
-applications/games/warsow-data/pspec.xml
-applications/games/warsow/pspec.xml
-applications/games/warzone2100/pspec.xml
-applications/games/wesnoth/pspec.xml
-applications/games/westernquake3-data/pspec.xml
-applications/games/westernquake3/pspec.xml
-applications/games/widelands/pspec.xml
-applications/games/WoP-data/pspec.xml
-applications/games/WoP-padpack/pspec.xml
-applications/games/WoP/pspec.xml
-applications/games/wordwarvi/pspec.xml
-applications/games/wormux/pspec.xml
-applications/games/xmoto-edit/pspec.xml
-applications/games/xmoto/pspec.xml
 applications/hardware/acpi4asus/pspec.xml
 applications/hardware/acpica/pspec.xml
 applications/hardware/alsa-headers/pspec.xml
@@ -1690,7 +1705,6 @@ programming/languages/python/pycups/pspec.xml
 programming/languages/python/pydelicious/pspec.xml
 programming/languages/python/pydns/pspec.xml
 programming/languages/python/pyFltk/pspec.xml
-programming/languages/python/pygame/pspec.xml
 programming/languages/python/Pygments/pspec.xml
 programming/languages/python/pygraphviz/pspec.xml
 programming/languages/python/PyICU/pspec.xml
