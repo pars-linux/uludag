@@ -28,6 +28,8 @@ desktop
         desktop/fonts/terminus-font/pspec.xml
         desktop/fonts/Tiresias-fonts/pspec.xml
         desktop/fonts/tv-fonts/pspec.xml
+        desktop/freedesktop/fontconfig/pspec.xml
+        desktop/freedesktop/ttmkfdir/pspec.xml
     kde
         base
             desktop/kde4/base/kdeaccessibility4/pspec.xml
@@ -686,6 +688,72 @@ system
         system/yali-firstBoot/pspec.xml
         system/yali/pspec.xml
 
+x11
+    library
+        desktop/freedesktop/xorg/libdrm/pspec.xml
+        desktop/freedesktop/xorg/lib/libdmx/pspec.xml
+        desktop/freedesktop/xorg/lib/libfontenc/pspec.xml
+        desktop/freedesktop/xorg/lib/libFS/pspec.xml
+        desktop/freedesktop/xorg/lib/libICE/pspec.xml
+        desktop/freedesktop/xorg/lib/liboldX/pspec.xml
+        desktop/freedesktop/xorg/lib/libpciaccess/pspec.xml
+        desktop/freedesktop/xorg/lib/libSM/pspec.xml
+        desktop/freedesktop/xorg/lib/libXaw/pspec.xml
+        desktop/freedesktop/xorg/lib/libXcomposite/pspec.xml
+        desktop/freedesktop/xorg/lib/libXcursor/pspec.xml
+        desktop/freedesktop/xorg/lib/libXdamage/pspec.xml
+        desktop/freedesktop/xorg/lib/libXext/pspec.xml
+        desktop/freedesktop/xorg/lib/libXfixes/pspec.xml
+        desktop/freedesktop/xorg/lib/libXfont/pspec.xml
+        desktop/freedesktop/xorg/lib/libXft/pspec.xml
+        desktop/freedesktop/xorg/lib/libXinerama/pspec.xml
+        desktop/freedesktop/xorg/lib/libXi/pspec.xml
+        desktop/freedesktop/xorg/lib/libxkbfile/pspec.xml
+        desktop/freedesktop/xorg/lib/libxkbui/pspec.xml
+        desktop/freedesktop/xorg/lib/libXmu/pspec.xml
+        desktop/freedesktop/xorg/lib/libXpm/pspec.xml
+        desktop/freedesktop/xorg/lib/libXrandr/pspec.xml
+        desktop/freedesktop/xorg/lib/libXrender/pspec.xml
+        desktop/freedesktop/xorg/lib/libXres/pspec.xml
+        desktop/freedesktop/xorg/lib/libXScrnSaver/pspec.xml
+        desktop/freedesktop/xorg/lib/libXt/pspec.xml
+        desktop/freedesktop/xorg/lib/libXtst/pspec.xml
+        desktop/freedesktop/xorg/lib/libXvMC/pspec.xml
+        desktop/freedesktop/xorg/lib/libXv/pspec.xml
+        desktop/freedesktop/xorg/lib/libXxf86dga/pspec.xml
+        desktop/freedesktop/xorg/lib/libXxf86vm/pspec.xml
+        desktop/freedesktop/xorg/lib/mesa/pspec.xml
+        desktop/freedesktop/xorg/lib/pixman/pspec.xml
+        desktop/freedesktop/glitz/pspec.xml
+        desktop/freedesktop/Xaw3d/pspec.xml
+    driver
+        desktop/freedesktop/inputmethods/scim/pspec.xml
+        desktop/freedesktop/inputmethods/scim-tables/pspec.xml
+        desktop/freedesktop/inputmethods/skim/pspec.xml
+        desktop/freedesktop/synaptics/pspec.xml
+        desktop/freedesktop/xorg/xorg-input/pspec.xml
+        desktop/freedesktop/xorg/xorg-video/pspec.xml
+    terminal
+        desktop/freedesktop/xterm/pspec.xml
+        desktop/freedesktop/rxvt-unicode/pspec.xml
+    application
+        desktop/freedesktop/x2x/pspec.xml
+        desktop/freedesktop/xorg/xorg-util/pspec.xml
+        desktop/freedesktop/xorg/xorg-app/pspec.xml
+        desktop/freedesktop/xorg/xdriinfo/pspec.xml
+        desktop/freedesktop/xorg/xkeyboard-config/pspec.xml
+        desktop/freedesktop/xorg/font-util/pspec.xml
+        desktop/freedesktop/xorg/xbitmaps/pspec.xml
+        desktop/freedesktop/xorg/xcb-util/pspec.xml
+        desktop/freedesktop/xorg/xrx/pspec.xml
+        desktop/freedesktop/xosd/pspec.xml
+        desktop/freedesktop/xscreensaver/pspec.xml
+        desktop/freedesktop/xvattr/pspec.xml
+        desktop/freedesktop/zorg/pspec.xml
+        applications/util/xdotool/pspec.xml
+    desktop/freedesktop/xorg/xorg-font/pspec.xml
+    desktop/freedesktop/xorg/xorg-server/pspec.xml
+    desktop/freedesktop/xorg/xorg-doc/pspec.xml
 
 
 all packages in devel
@@ -1162,84 +1230,21 @@ applications/util/tidy/pspec.xml
 applications/util/tree/pspec.xml
 applications/util/utempter/pspec.xml
 applications/util/x11-ssh-askpass/pspec.xml
-applications/util/xdotool/pspec.xml
 applications/zemberek-openoffice/pspec.xml
 desktop/freedesktop/dbus-qt3/pspec.xml
 desktop/freedesktop/exempi/pspec.xml
-desktop/freedesktop/fontconfig/pspec.xml
-desktop/freedesktop/glitz/pspec.xml
 desktop/freedesktop/grounation-xcursor/pspec.xml
 desktop/freedesktop/hal-info/pspec.xml
 desktop/freedesktop/hal/pspec.xml
-desktop/freedesktop/inputmethods/scim/pspec.xml
-desktop/freedesktop/inputmethods/scim-tables/pspec.xml
-desktop/freedesktop/inputmethods/skim/pspec.xml
 desktop/freedesktop/jimmac-xcursor/pspec.xml
 desktop/freedesktop/liblazy/pspec.xml
 desktop/freedesktop/notification-daemon/pspec.xml
 desktop/freedesktop/poppler-bindings/pspec.xml
 desktop/freedesktop/poppler/pspec.xml
-desktop/freedesktop/rxvt-unicode/pspec.xml
 desktop/freedesktop/shared-mime-info/pspec.xml
 desktop/freedesktop/startup-notification/pspec.xml
-desktop/freedesktop/synaptics/pspec.xml
-desktop/freedesktop/ttmkfdir/pspec.xml
-desktop/freedesktop/x2x/pspec.xml
-desktop/freedesktop/Xaw3d/pspec.xml
 desktop/freedesktop/xdg-utils/pspec.xml
-desktop/freedesktop/xorg/font-util/pspec.xml
-desktop/freedesktop/xorg/libdrm/pspec.xml
-desktop/freedesktop/xorg/lib/libdmx/pspec.xml
-desktop/freedesktop/xorg/lib/libfontenc/pspec.xml
-desktop/freedesktop/xorg/lib/libFS/pspec.xml
-desktop/freedesktop/xorg/lib/libICE/pspec.xml
-desktop/freedesktop/xorg/lib/liboldX/pspec.xml
-desktop/freedesktop/xorg/lib/libpciaccess/pspec.xml
-desktop/freedesktop/xorg/lib/libSM/pspec.xml
-desktop/freedesktop/xorg/lib/libXaw/pspec.xml
-desktop/freedesktop/xorg/lib/libXcomposite/pspec.xml
-desktop/freedesktop/xorg/lib/libXcursor/pspec.xml
-desktop/freedesktop/xorg/lib/libXdamage/pspec.xml
-desktop/freedesktop/xorg/lib/libXext/pspec.xml
-desktop/freedesktop/xorg/lib/libXfixes/pspec.xml
-desktop/freedesktop/xorg/lib/libXfont/pspec.xml
-desktop/freedesktop/xorg/lib/libXft/pspec.xml
-desktop/freedesktop/xorg/lib/libXinerama/pspec.xml
-desktop/freedesktop/xorg/lib/libXi/pspec.xml
-desktop/freedesktop/xorg/lib/libxkbfile/pspec.xml
-desktop/freedesktop/xorg/lib/libxkbui/pspec.xml
-desktop/freedesktop/xorg/lib/libXmu/pspec.xml
-desktop/freedesktop/xorg/lib/libXpm/pspec.xml
-desktop/freedesktop/xorg/lib/libXrandr/pspec.xml
-desktop/freedesktop/xorg/lib/libXrender/pspec.xml
-desktop/freedesktop/xorg/lib/libXres/pspec.xml
-desktop/freedesktop/xorg/lib/libXScrnSaver/pspec.xml
-desktop/freedesktop/xorg/lib/libXt/pspec.xml
-desktop/freedesktop/xorg/lib/libXtst/pspec.xml
-desktop/freedesktop/xorg/lib/libXvMC/pspec.xml
-desktop/freedesktop/xorg/lib/libXv/pspec.xml
-desktop/freedesktop/xorg/lib/libXxf86dga/pspec.xml
-desktop/freedesktop/xorg/lib/libXxf86vm/pspec.xml
-desktop/freedesktop/xorg/lib/mesa/pspec.xml
-desktop/freedesktop/xorg/lib/pixman/pspec.xml
-desktop/freedesktop/xorg/xbitmaps/pspec.xml
-desktop/freedesktop/xorg/xcb-util/pspec.xml
 desktop/freedesktop/xorg/xcursor-themes/pspec.xml
-desktop/freedesktop/xorg/xdriinfo/pspec.xml
-desktop/freedesktop/xorg/xkeyboard-config/pspec.xml
-desktop/freedesktop/xorg/xorg-app/pspec.xml
-desktop/freedesktop/xorg/xorg-doc/pspec.xml
-desktop/freedesktop/xorg/xorg-font/pspec.xml
-desktop/freedesktop/xorg/xorg-input/pspec.xml
-desktop/freedesktop/xorg/xorg-server/pspec.xml
-desktop/freedesktop/xorg/xorg-util/pspec.xml
-desktop/freedesktop/xorg/xorg-video/pspec.xml
-desktop/freedesktop/xorg/xrx/pspec.xml
-desktop/freedesktop/xosd/pspec.xml
-desktop/freedesktop/xscreensaver/pspec.xml
-desktop/freedesktop/xterm/pspec.xml
-desktop/freedesktop/xvattr/pspec.xml
-desktop/freedesktop/zorg/pspec.xml
 desktop/gnome/atk/pspec.xml
 desktop/gnome/beagle/pspec.xml
 desktop/gnome/cairomm/pspec.xml
