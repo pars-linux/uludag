@@ -413,6 +413,48 @@ game
         applications/games/wormux/pspec.xml
 
 hardware
+    bluetooth
+        applications/hardware/bluez-libs/pspec.xml
+        applications/hardware/bluez-utils/pspec.xml
+        applications/hardware/cwiid/pspec.xml
+    disk
+        filesystem
+            applications/filesystems/cramfs/pspec.xml
+            applications/filesystems/encfs/pspec.xml
+            applications/filesystems/fuse/pspec.xml
+            applications/filesystems/fuse-python/pspec.xml
+            applications/filesystems/gmailfs/pspec.xml
+            applications/filesystems/libgmail/pspec.xml
+            applications/filesystems/ntfs_3g/pspec.xml
+            applications/filesystems/sshfs/pspec.xml
+            applications/filesystems/unionfs/pspec.xml
+            applications/admin/jfsutils/pspec.xml
+            applications/admin/dosfstools/pspec.xml
+            applications/admin/ntfsprogs/pspec.xml
+            applications/admin/reiserfsprogs/pspec.xml
+            applications/admin/squashfs-tools/pspec.xml
+            applications/filesystems/wdfs/pspec.xml
+            applications/admin/xfsdump/pspec.xml
+            applications/admin/xfsprogs/pspec.xml
+            applications/admin/gptsync/pspec.xml
+            applications/util/mtools/pspec.xml
+        partition
+            applications/hardware/gparted/pspec.xml
+            applications/hardware/partimage/pspec.xml
+            applications/hardware/qtparted/pspec.xml
+        applications/hardware/mdadm/pspec.xml
+        applications/hardware/arrayprobe/pspec.xml
+        applications/hardware/smartmontools/pspec.xml
+        applications/util/readahead/pspec.xml
+        applications/util/testdisk/pspec.xml
+        applications/admin/device-mapper/pspec.xml
+
+    emulator
+        applications/emulators/dosbox/pspec.xml
+        applications/emulators/vice/pspec.xml
+        applications/emulators/xmame/pspec.xml
+        applications/emulators/zsnes/pspec.xml
+
     firmware
         kernel/firmware/accessrunner-firmware/pspec.xml
         kernel/firmware/acx100-firmware/pspec.xml
@@ -430,10 +472,92 @@ hardware
         kernel/firmware/speedtouch-firmware/pspec.xml
         kernel/firmware/zd1201-firmware/pspec.xml
         kernel/firmware/zd1211-firmware/pspec.xml
+        applications/hardware/b43-fwcutter/pspec.xml
+    graphic
+        applications/hardware/fbset/pspec.xml
+        applications/hardware/nvidia-settings/pspec.xml
+        applications/hardware/nvidia-xconfig/pspec.xml
+        applications/hardware/smartdimmer/pspec.xml
+        applications/hardware/vbetool/pspec.xml
+    info
+        applications/util/lshw/pspec.xml
+        applications/util/lsscsi/pspec.xml
+    irda
+        applications/hardware/irda-utils/pspec.xml
+        applications/hardware/lirc-remotes/pspec.xml
+    mobile
+        applications/hardware/gnokii/pspec.xml
+        applications/pda/libopensync-plugin-file/pspec.xml
+        applications/pda/libopensync-plugin-gnokii/pspec.xml
+        applications/pda/libopensync-plugin-google-calendar/pspec.xml
+        applications/pda/libopensync-plugin-gpe/pspec.xml
+        applications/pda/libopensync-plugin-irmc/pspec.xml
+        applications/pda/libopensync-plugin-kdepim/pspec.xml
+        applications/pda/libopensync-plugin-ldap/pspec.xml
+        applications/pda/libopensync-plugin-opie/pspec.xml
+        applications/pda/libopensync-plugin-palm/pspec.xml
+        applications/pda/libopensync-plugin-python/pspec.xml
+        applications/pda/libopensync-plugin-syncml/pspec.xml
+        applications/pda/libopensync/pspec.xml
+        applications/pda/libsyncml/pspec.xml
+        applications/pda/msynctool/pspec.xml
+        applications/pda/wbxml2/pspec.xml
+    optical
+    powermanagement
+        applications/hardware/acpi4asus/pspec.xml
+        applications/hardware/acpica/pspec.xml
+        applications/hardware/pmtools/pspec.xml
+        applications/powermanagement/acpid/pspec.xml
+        applications/powermanagement/acpi/pspec.xml
+        applications/powermanagement/apmd/pspec.xml
+        applications/powermanagement/kpowersave/pspec.xml
+        applications/powermanagement/nut/pspec.xml
+        applications/powermanagement/pm-utils/pspec.xml
+        applications/powermanagement/powertop/pspec.xml
+        applications/powermanagement/suspend/pspec.xml
+        applications/powermanagement/yacpi/pspec.xml
+    printer
+        applications/printing/cups/pspec.xml
+        applications/printing/enscript/pspec.xml
+        applications/printing/foo2zjs/pspec.xml
+        applications/printing/foomatic-db-engine/pspec.xml
+        applications/printing/foomatic-db-hpijs/pspec.xml
+        applications/printing/foomatic-db/pspec.xml
+        applications/printing/foomatic-filters-ppds/pspec.xml
+        applications/printing/foomatic-filters/pspec.xml
+        applications/printing/gutenprint/pspec.xml
+        applications/printing/hal-cups-utils/pspec.xml
+        applications/printing/hplip/pspec.xml
+        applications/printing/magicfilter/pspec.xml
+        applications/printing/min12xxw/pspec.xml
+        applications/printing/pnm2ppa/pspec.xml
+        applications/printing/poster/pspec.xml
+        applications/printing/psutils/pspec.xml
+        applications/printing/splix/pspec.xml
+        applications/printing/system-config-printer/pspec.xml    scanner
+        applications/hardware/sane-backends/pspec.xml
+    smartcard
+        applications/hardware/smartcard/ccid/pspec.xml
+        applications/hardware/smartcard/ifd-gempc/pspec.xml
+        applications/hardware/smartcard/libp11/pspec.xml
+        applications/hardware/smartcard/openct/pspec.xml
+        applications/hardware/smartcard/opensc/pspec.xml
+        applications/hardware/smartcard/pam_p11/pspec.xml
+        applications/hardware/smartcard/pam_pkcs11/pspec.xml
+        applications/hardware/smartcard/pcsc-lite/pspec.xml
+        applications/hardware/smartcard/pcsc-tools/pspec.xml
+    sound
+        applications/hardware/alsa-headers/pspec.xml
+        applications/hardware/alsa-lib/pspec.xml
+        applications/hardware/alsa-plugins/pspec.xml
+        applications/hardware/alsa-tools/pspec.xml
+        applications/hardware/alsa-utils/pspec.xml
     virtualization
         applications/virtualization/convirt/pspec.xml
         applications/virtualization/kvm/pspec.xml
         applications/virtualization/libvirt/pspec.xml
+        applications/emulators/qemu/pspec.xml
+        applications/emulators/qtemu/pspec.xml
         applications/virtualization/virtualbox-guestadditions/pspec.xml
         applications/virtualization/virtualbox/pspec.xml
         applications/virtualization/xen/pspec.xml
@@ -696,25 +820,6 @@ system
         system/devel/yasm/pspec.xml
     doc
         (empty but system components can put docs in here)
-    filesystem
-        applications/filesystems/cramfs/pspec.xml
-        applications/filesystems/encfs/pspec.xml
-        applications/filesystems/fuse/pspec.xml
-        applications/filesystems/fuse-python/pspec.xml
-        applications/filesystems/gmailfs/pspec.xml
-        applications/filesystems/libgmail/pspec.xml
-        applications/filesystems/ntfs_3g/pspec.xml
-        applications/filesystems/sshfs/pspec.xml
-        applications/filesystems/unionfs/pspec.xml
-        applications/admin/jfsutils/pspec.xml
-        applications/admin/dosfstools/pspec.xml
-        applications/admin/ntfsprogs/pspec.xml
-        applications/admin/reiserfsprogs/pspec.xml
-        applications/admin/squashfs-tools/pspec.xml
-        applications/filesystems/wdfs/pspec.xml
-        applications/admin/xfsdump/pspec.xml
-        applications/admin/xfsprogs/pspec.xml
-        applications/admin/gptsync/pspec.xml
     installer
         system/yali4-firstBoot/pspec.xml
         system/yali4/pspec.xml
@@ -1085,6 +1190,11 @@ programming
             programming/languages/tcl/snack/pspec.xml
             programming/languages/tcl/tcl/pspec.xml
             programming/languages/tcl/tcltk/pspec.xml
+        microcontroller
+            programming/microcontroller/avrdude/pspec.xml
+            programming/microcontroller/avr-libc/pspec.xml
+            programming/microcontroller/binutils-avr/pspec.xml
+            programming/microcontroller/gcc-avr/pspec.xml
         programming/languages/R/pspec.xml
         programming/languages/erlang/pspec.xml
         programming/languages/falcon/pspec.xml
@@ -1187,6 +1297,7 @@ x11
         desktop/freedesktop/xvattr/pspec.xml
         desktop/freedesktop/zorg/pspec.xml
         applications/util/xdotool/pspec.xml
+        applications/util/x11-ssh-askpass/pspec.xml
     desktop/freedesktop/xorg/xorg-font/pspec.xml
     desktop/freedesktop/xorg/xorg-server/pspec.xml
     desktop/freedesktop/xorg/xorg-doc/pspec.xml
@@ -1196,7 +1307,6 @@ all packages in devel
 ---------------------------------------------------
 applications/admin/acct/pspec.xml
 applications/admin/dazuko/pspec.xml
-applications/admin/device-mapper/pspec.xml
 applications/admin/dstat/pspec.xml
 applications/admin/gfxboot/pspec.xml
 applications/admin/gfxtheme-pardus/pspec.xml
@@ -1274,63 +1384,21 @@ applications/doc/yodl/pspec.xml
 applications/editors/kompozer/pspec.xml
 applications/editors/nvu/pspec.xml
 applications/editors/scribus/pspec.xml
-applications/emulators/dosbox/pspec.xml
-applications/emulators/qemu/pspec.xml
-applications/emulators/qtemu/pspec.xml
 applications/emulators/scummvm/pspec.xml
-applications/emulators/vice/pspec.xml
 applications/emulators/wine/pspec.xml
-applications/emulators/xmame/pspec.xml
-applications/emulators/zsnes/pspec.xml
-applications/hardware/acpi4asus/pspec.xml
-applications/hardware/acpica/pspec.xml
-applications/hardware/alsa-headers/pspec.xml
-applications/hardware/alsa-lib/pspec.xml
-applications/hardware/alsa-plugins/pspec.xml
-applications/hardware/alsa-tools/pspec.xml
-applications/hardware/alsa-utils/pspec.xml
-applications/hardware/arrayprobe/pspec.xml
-applications/hardware/b43-fwcutter/pspec.xml
-applications/hardware/bluez-libs/pspec.xml
-applications/hardware/bluez-utils/pspec.xml
-applications/hardware/cwiid/pspec.xml
 applications/hardware/dmidecode/pspec.xml
 applications/hardware/eject/pspec.xml
-applications/hardware/fbset/pspec.xml
 applications/hardware/fnfx/pspec.xml
 applications/hardware/fxload/pspec.xml
-applications/hardware/gnokii/pspec.xml
-applications/hardware/gparted/pspec.xml
 applications/hardware/gpm/pspec.xml
 applications/hardware/interbench/pspec.xml
-applications/hardware/irda-utils/pspec.xml
-applications/hardware/lirc-remotes/pspec.xml
 applications/hardware/lm_sensors/pspec.xml
-applications/hardware/mdadm/pspec.xml
 applications/hardware/microcode-ctl/pspec.xml
 applications/hardware/microcode-data/pspec.xml
-applications/hardware/nvidia-settings/pspec.xml
-applications/hardware/nvidia-xconfig/pspec.xml
-applications/hardware/partimage/pspec.xml
-applications/hardware/pmtools/pspec.xml
-applications/hardware/qtparted/pspec.xml
-applications/hardware/sane-backends/pspec.xml
 applications/hardware/sdparm/pspec.xml
 applications/hardware/setserial/pspec.xml
 applications/hardware/sg3_utils/pspec.xml
-applications/hardware/smartcard/ccid/pspec.xml
-applications/hardware/smartcard/ifd-gempc/pspec.xml
-applications/hardware/smartcard/libp11/pspec.xml
-applications/hardware/smartcard/openct/pspec.xml
-applications/hardware/smartcard/opensc/pspec.xml
-applications/hardware/smartcard/pam_p11/pspec.xml
-applications/hardware/smartcard/pam_pkcs11/pspec.xml
-applications/hardware/smartcard/pcsc-lite/pspec.xml
-applications/hardware/smartcard/pcsc-tools/pspec.xml
-applications/hardware/smartdimmer/pspec.xml
-applications/hardware/smartmontools/pspec.xml
 applications/hardware/uhinv/pspec.xml
-applications/hardware/vbetool/pspec.xml
 applications/multimedia/a52dec/pspec.xml
 applications/multimedia/aften/pspec.xml
 applications/multimedia/ardour/pspec.xml
@@ -1524,48 +1592,7 @@ applications/network/wireshark/pspec.xml
 applications/network/wpa_supplicant/pspec.xml
 applications/network/youtube-dl/pspec.xml
 applications/openoffice/pspec.xml
-applications/pda/libopensync-plugin-file/pspec.xml
-applications/pda/libopensync-plugin-gnokii/pspec.xml
-applications/pda/libopensync-plugin-google-calendar/pspec.xml
-applications/pda/libopensync-plugin-gpe/pspec.xml
-applications/pda/libopensync-plugin-irmc/pspec.xml
-applications/pda/libopensync-plugin-kdepim/pspec.xml
-applications/pda/libopensync-plugin-ldap/pspec.xml
-applications/pda/libopensync-plugin-opie/pspec.xml
-applications/pda/libopensync-plugin-palm/pspec.xml
-applications/pda/libopensync-plugin-python/pspec.xml
-applications/pda/libopensync-plugin-syncml/pspec.xml
-applications/pda/libopensync/pspec.xml
-applications/pda/libsyncml/pspec.xml
-applications/pda/msynctool/pspec.xml
-applications/pda/wbxml2/pspec.xml
-applications/powermanagement/acpid/pspec.xml
-applications/powermanagement/acpi/pspec.xml
-applications/powermanagement/apmd/pspec.xml
-applications/powermanagement/kpowersave/pspec.xml
-applications/powermanagement/nut/pspec.xml
-applications/powermanagement/pm-utils/pspec.xml
-applications/powermanagement/powertop/pspec.xml
-applications/powermanagement/suspend/pspec.xml
-applications/powermanagement/yacpi/pspec.xml
-applications/printing/cups/pspec.xml
-applications/printing/enscript/pspec.xml
-applications/printing/foo2zjs/pspec.xml
-applications/printing/foomatic-db-engine/pspec.xml
-applications/printing/foomatic-db-hpijs/pspec.xml
-applications/printing/foomatic-db/pspec.xml
-applications/printing/foomatic-filters-ppds/pspec.xml
-applications/printing/foomatic-filters/pspec.xml
-applications/printing/gutenprint/pspec.xml
-applications/printing/hal-cups-utils/pspec.xml
-applications/printing/hplip/pspec.xml
-applications/printing/magicfilter/pspec.xml
-applications/printing/min12xxw/pspec.xml
-applications/printing/pnm2ppa/pspec.xml
-applications/printing/poster/pspec.xml
-applications/printing/psutils/pspec.xml
-applications/printing/splix/pspec.xml
-applications/printing/system-config-printer/pspec.xml
+
 applications/science/astronomy/celestia/pspec.xml
 applications/science/astronomy/stellarium/pspec.xml
 applications/science/electronics/gpsim/pspec.xml
@@ -1643,11 +1670,8 @@ applications/util/command-not-found/pspec.xml
 applications/util/google-gadgets/pspec.xml
 applications/util/iTest/pspec.xml
 applications/util/logrotate/pspec.xml
-applications/util/lshw/pspec.xml
-applications/util/lsscsi/pspec.xml
 applications/util/lxsplit/pspec.xml
 applications/util/mountmanager/pspec.xml
-applications/util/mtools/pspec.xml
 applications/util/ncdu/pspec.xml
 applications/util/nrg2iso/pspec.xml
 applications/util/PisiYap/pspec.xml
@@ -1655,17 +1679,14 @@ applications/util/portmap/pspec.xml
 applications/util/prelink/pspec.xml
 applications/util/pv/pspec.xml
 applications/util/qstardict/pspec.xml
-applications/util/readahead/pspec.xml
 applications/util/schedtool/pspec.xml
 applications/util/schedutils/pspec.xml
 applications/util/screen/pspec.xml
 applications/util/slocate/pspec.xml
 applications/util/strigi/pspec.xml
-applications/util/testdisk/pspec.xml
 applications/util/tidy/pspec.xml
 applications/util/tree/pspec.xml
 applications/util/utempter/pspec.xml
-applications/util/x11-ssh-askpass/pspec.xml
 applications/zemberek-openoffice/pspec.xml
 desktop/freedesktop/dbus-qt3/pspec.xml
 desktop/freedesktop/exempi/pspec.xml
@@ -2175,10 +2196,6 @@ programming/libs/yazpp/pspec.xml
 programming/libs/yaz/pspec.xml
 programming/libs/zvbi/pspec.xml
 programming/libs/zziplib/pspec.xml
-programming/microcontroller/avrdude/pspec.xml
-programming/microcontroller/avr-libc/pspec.xml
-programming/microcontroller/binutils-avr/pspec.xml
-programming/microcontroller/gcc-avr/pspec.xml
 
 programming/tools/doxygen/pspec.xml
 
@@ -2188,4 +2205,5 @@ Ideas
 - rename gtk2 to gtk
 - use "no" library component, differentiate in IsA tags
 - shall language bindings be splitted or not ? (60, 70, 80, 90) programming.language is really confusing, if we name it language it is confused with i10l, removing the language part does not seem necessary though since python "is" a programming.language
+- hardware emulator and virtualization should be merged maybe ? they do the same thing, only with different methods
 
