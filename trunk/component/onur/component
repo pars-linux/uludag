@@ -183,6 +183,26 @@ desktop
             desktop/kde/i18n/kde-i18n-vi/pspec.xml
             desktop/kde/i18n/kde-i18n-zh_CN/pspec.xml
             desktop/kde/i18n/kde-i18n-zh_TW/pspec.xml
+
+editor
+    emacs
+        applications/editors/emacs/cedet/pspec.xml
+        applications/editors/emacs/color-theme/pspec.xml
+        applications/editors/emacs/ecb/pspec.xml
+        applications/editors/emacs/emacs-easypg/pspec.xml
+        applications/editors/emacs/emacs-emms/pspec.xml
+        applications/editors/emacs/emacs-muse/pspec.xml
+        applications/editors/emacs/emacs/pspec.xml
+        applications/editors/emacs/emacs-python/pspec.xml
+        applications/editors/emacs/mmm-mode/pspec.xml
+        applications/editors/emacs/php-mode/pspec.xml
+        applications/editors/emacs/pymacs/pspec.xml
+    vim
+        applications/editors/vim-colorschemes/pspec.xml
+        applications/editors/vim/pspec.xml
+    applications/editors/joe/pspec.xml
+    applications/editors/ed/pspec.xml
+
 hardware
     firmware
         kernel/firmware/accessrunner-firmware/pspec.xml
@@ -201,6 +221,15 @@ hardware
         kernel/firmware/speedtouch-firmware/pspec.xml
         kernel/firmware/zd1201-firmware/pspec.xml
         kernel/firmware/zd1211-firmware/pspec.xml
+    virtualization
+        applications/virtualization/convirt/pspec.xml
+        applications/virtualization/kvm/pspec.xml
+        applications/virtualization/libvirt/pspec.xml
+        applications/virtualization/virtualbox-guestadditions/pspec.xml
+        applications/virtualization/virtualbox/pspec.xml
+        applications/virtualization/xen/pspec.xml
+
+
 kernel
     default (linux, base, standard whatever)
         kernel/drivers/acerhk/pspec.xml
@@ -248,6 +277,61 @@ kernel
         kernel/drivers/vloopback/pspec.xml
         kernel/kernel-debug/pspec.xml
         kernel/kernel/pspec.xml
+    xen
+        kernel-xen/dom0/drivers/alsa-driver-dom0/pspec.xml
+        kernel-xen/dom0/drivers/ipw3945-dom0/pspec.xml
+        kernel-xen/dom0/drivers/ndiswrapper-dom0/pspec.xml
+        kernel-xen/dom0/drivers/nvidia-dom0/pspec.xml
+        kernel-xen/dom0/drivers/nvidia-new-dom0/pspec.xml
+        kernel-xen/dom0/kernel-dom0/pspec.xml
+        kernel-xen/domU/kernel-domU/pspec.xml
+
+server
+    auth
+        server/freeradius/pspec.xml
+        server/nis/ypbind/pspec.xml
+        server/nis/ypserv/pspec.xml
+        server/nis/yp-tools/pspec.xml
+    database
+        server/database/firebird/pspec.xml
+        server/database/mysql/pspec.xml
+        server/database/postgresql-odbc/pspec.xml
+        server/database/postgresql/pspec.xml
+        server/database/postgresql-python/pspec.xml
+        server/memcached/pspec.xml
+    ftp
+        server/vsftpd/pspec.xml
+        server/tftp/pspec.xml
+    mta
+        server/mail/cyrus-sasl/pspec.xml
+        server/mail/dovecot/pspec.xml
+        server/mail/postfix/pspec.xml
+    proxy
+        server/proxy/dansguardian/pspec.xml
+        server/proxy/squid/pspec.xml
+    ptsp
+        server/ptsp/lbuscd/pspec.xml
+        server/ptsp/ltspfsd/pspec.xml
+        server/ptsp/ltspfs/pspec.xml
+        server/ptsp/ptsp-client/pspec.xml
+        server/ptsp/ptsp-server/pspec.xml
+    www
+        server/www/apache/pspec.xml
+        server/www/htdig/pspec.xml
+        server/www/mod_fastcgi/pspec.xml
+        server/www/mod_perl/pspec.xml
+        server/www/mod_python/pspec.xml
+        server/www/mrtg/pspec.xml
+    server/bind/pspec.xml
+    server/dhcp/pspec.xml
+    server/ejabberd/pspec.xml
+    server/hylafax/pspec.xml
+    server/ntp/pspec.xml
+    server/openldap/pspec.xml
+    server/samba/pspec.xml
+    server/xinetd/pspec.xml
+    server/zemberek-server/pspec.xml
+
 system
     base
         system/base/acl/pspec.xml
@@ -403,6 +487,25 @@ system
         system/devel/yasm/pspec.xml
     doc
         (empty but system components can put docs in here)
+    filesystem
+        applications/filesystems/cramfs/pspec.xml
+        applications/filesystems/encfs/pspec.xml
+        applications/filesystems/fuse/pspec.xml
+        applications/filesystems/fuse-python/pspec.xml
+        applications/filesystems/gmailfs/pspec.xml
+        applications/filesystems/libgmail/pspec.xml
+        applications/filesystems/ntfs_3g/pspec.xml
+        applications/filesystems/sshfs/pspec.xml
+        applications/filesystems/unionfs/pspec.xml
+        applications/admin/jfsutils/pspec.xml
+        applications/admin/dosfstools/pspec.xml
+        applications/admin/ntfsprogs/pspec.xml
+        applications/admin/reiserfsprogs/pspec.xml
+        applications/admin/squashfs-tools/pspec.xml
+        applications/filesystems/wdfs/pspec.xml
+        applications/admin/xfsdump/pspec.xml
+        applications/admin/xfsprogs/pspec.xml
+        applications/admin/gptsync/pspec.xml
 
 
 
@@ -411,28 +514,20 @@ all packages in devel
 applications/admin/acct/pspec.xml
 applications/admin/dazuko/pspec.xml
 applications/admin/device-mapper/pspec.xml
-applications/admin/dosfstools/pspec.xml
 applications/admin/dstat/pspec.xml
 applications/admin/gfxboot/pspec.xml
 applications/admin/gfxtheme-pardus/pspec.xml
 applications/admin/gkrellm/pspec.xml
-applications/admin/gptsync/pspec.xml
 applications/admin/irqbalance/pspec.xml
-applications/admin/jfsutils/pspec.xml
 applications/admin/kexec-tools/pspec.xml
 applications/admin/killproc/pspec.xml
 applications/admin/mc/pspec.xml
 applications/admin/multitail/pspec.xml
-applications/admin/ntfsprogs/pspec.xml
-applications/admin/reiserfsprogs/pspec.xml
-applications/admin/squashfs-tools/pspec.xml
 applications/admin/sudo/pspec.xml
 applications/admin/syslinux/pspec.xml
 applications/admin/sysstat/pspec.xml
 applications/admin/tmpwatch/pspec.xml
 applications/admin/webalizer/pspec.xml
-applications/admin/xfsdump/pspec.xml
-applications/admin/xfsprogs/pspec.xml
 applications/archive/cabextract/pspec.xml
 applications/archive/lrzip/pspec.xml
 applications/archive/lzo/pspec.xml
@@ -493,24 +588,9 @@ applications/doc/t1utils/pspec.xml
 applications/doc/texi2html/pspec.xml
 applications/doc/wv/pspec.xml
 applications/doc/yodl/pspec.xml
-applications/editors/ed/pspec.xml
-applications/editors/emacs/cedet/pspec.xml
-applications/editors/emacs/color-theme/pspec.xml
-applications/editors/emacs/ecb/pspec.xml
-applications/editors/emacs/emacs-easypg/pspec.xml
-applications/editors/emacs/emacs-emms/pspec.xml
-applications/editors/emacs/emacs-muse/pspec.xml
-applications/editors/emacs/emacs/pspec.xml
-applications/editors/emacs/emacs-python/pspec.xml
-applications/editors/emacs/mmm-mode/pspec.xml
-applications/editors/emacs/php-mode/pspec.xml
-applications/editors/emacs/pymacs/pspec.xml
-applications/editors/joe/pspec.xml
 applications/editors/kompozer/pspec.xml
 applications/editors/nvu/pspec.xml
 applications/editors/scribus/pspec.xml
-applications/editors/vim-colorschemes/pspec.xml
-applications/editors/vim/pspec.xml
 applications/emulators/dosbox/pspec.xml
 applications/emulators/qemu/pspec.xml
 applications/emulators/qtemu/pspec.xml
@@ -519,16 +599,6 @@ applications/emulators/vice/pspec.xml
 applications/emulators/wine/pspec.xml
 applications/emulators/xmame/pspec.xml
 applications/emulators/zsnes/pspec.xml
-applications/filesystems/cramfs/pspec.xml
-applications/filesystems/encfs/pspec.xml
-applications/filesystems/fuse/pspec.xml
-applications/filesystems/fuse-python/pspec.xml
-applications/filesystems/gmailfs/pspec.xml
-applications/filesystems/libgmail/pspec.xml
-applications/filesystems/ntfs_3g/pspec.xml
-applications/filesystems/sshfs/pspec.xml
-applications/filesystems/unionfs/pspec.xml
-applications/filesystems/wdfs/pspec.xml
 applications/games/abe/pspec.xml
 applications/games/abuse-data/pspec.xml
 applications/games/abuse/pspec.xml
@@ -1073,12 +1143,6 @@ applications/util/tree/pspec.xml
 applications/util/utempter/pspec.xml
 applications/util/x11-ssh-askpass/pspec.xml
 applications/util/xdotool/pspec.xml
-applications/virtualization/convirt/pspec.xml
-applications/virtualization/kvm/pspec.xml
-applications/virtualization/libvirt/pspec.xml
-applications/virtualization/virtualbox-guestadditions/pspec.xml
-applications/virtualization/virtualbox/pspec.xml
-applications/virtualization/xen/pspec.xml
 applications/zemberek-openoffice/pspec.xml
 desktop/freedesktop/dbus-qt3/pspec.xml
 desktop/freedesktop/exempi/pspec.xml
@@ -1197,7 +1261,6 @@ desktop/gnome/QtCurve-Gtk2/pspec.xml
 desktop/gnome/vte/pspec.xml
 desktop/kde4/amarok-kde4/pspec.xml
 desktop/kde4/automoc4/pspec.xml
-
 desktop/kde4/bespin-kde4-theme/pspec.xml
 desktop/kde4/choqok/pspec.xml
 desktop/kde4/crystal-kde4/pspec.xml
@@ -1361,13 +1424,6 @@ desktop/kde/umbrello/pspec.xml
 desktop/kde/user-manager/pspec.xml
 desktop/kde/yakuake/pspec.xml
 desktop/kde/zpspell/pspec.xml
-kernel-xen/dom0/drivers/alsa-driver-dom0/pspec.xml
-kernel-xen/dom0/drivers/ipw3945-dom0/pspec.xml
-kernel-xen/dom0/drivers/ndiswrapper-dom0/pspec.xml
-kernel-xen/dom0/drivers/nvidia-dom0/pspec.xml
-kernel-xen/dom0/drivers/nvidia-new-dom0/pspec.xml
-kernel-xen/dom0/kernel-dom0/pspec.xml
-kernel-xen/domU/kernel-domU/pspec.xml
 programming/environments/drscheme/pspec.xml
 programming/environments/eclipse/eclipse-binary/pspec.xml
 programming/environments/eclipse/eclipse-cdt-binary/pspec.xml
@@ -2072,43 +2128,6 @@ programming/tools/tig/pspec.xml
 programming/tools/translate-toolkit/pspec.xml
 programming/tools/unsermake/pspec.xml
 programming/tools/valgrind/pspec.xml
-server/bind/pspec.xml
-server/database/firebird/pspec.xml
-server/database/mysql/pspec.xml
-server/database/postgresql-odbc/pspec.xml
-server/database/postgresql/pspec.xml
-server/database/postgresql-python/pspec.xml
-server/dhcp/pspec.xml
-server/ejabberd/pspec.xml
-server/freeradius/pspec.xml
-server/hylafax/pspec.xml
-server/mail/cyrus-sasl/pspec.xml
-server/mail/dovecot/pspec.xml
-server/mail/postfix/pspec.xml
-server/memcached/pspec.xml
-server/nis/ypbind/pspec.xml
-server/nis/ypserv/pspec.xml
-server/nis/yp-tools/pspec.xml
-server/ntp/pspec.xml
-server/openldap/pspec.xml
-server/proxy/dansguardian/pspec.xml
-server/proxy/squid/pspec.xml
-server/ptsp/lbuscd/pspec.xml
-server/ptsp/ltspfsd/pspec.xml
-server/ptsp/ltspfs/pspec.xml
-server/ptsp/ptsp-client/pspec.xml
-server/ptsp/ptsp-server/pspec.xml
-server/samba/pspec.xml
-server/tftp/pspec.xml
-server/vsftpd/pspec.xml
-server/www/apache/pspec.xml
-server/www/htdig/pspec.xml
-server/www/mod_fastcgi/pspec.xml
-server/www/mod_perl/pspec.xml
-server/www/mod_python/pspec.xml
-server/www/mrtg/pspec.xml
-server/xinetd/pspec.xml
-server/zemberek-server/pspec.xml
 system/yali4-firstBoot/pspec.xml
 system/yali4/pspec.xml
 system/yali-firstBoot/pspec.xml
