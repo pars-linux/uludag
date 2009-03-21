@@ -1,8 +1,10 @@
-PiSi Package Building 
+.. _pisi-packaging-guide:
+
+PiSi Packaging Guide
 ======================
 
 Structure of a PiSi 1.1 Package
--------------------------------
+--------------------------------
 
 A pisi package is essentially a zipped file. Let's download one and examine it::
 
@@ -25,12 +27,12 @@ A pisi package is essentially a zipped file. Let's download one and examine it::
     $ tar xvf install.tar
 
 Building a PiSi Package
------------------------
+------------------------
 
 In order to build a pisi package we need to prepare at least two files by hand: ``pspec.xml`` and ``actions.py``
 
 pspec.xml
----------
+----------
 
 This file is an XML file containing at least 3 child nodes: ``Source, Package, History``
 
@@ -49,7 +51,7 @@ As you can see in the example,
 You may want to examine the dtd file for pisi here: http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd
 
 Installation of Additional Files from the Files Of the Source Tree
-------------------------------------------------------------------
+-------------------------------------------------------------------
 
 The Package may contain the AdditionalFiles tag, which can be used to copy files from the files subdirectory of your source tree into the .pisi.
 
@@ -78,7 +80,7 @@ Then, (one of) the Package(s) can have the following::
     </Package>
 
 actions.py
-----------
+-----------
 
 This file contains python codes that would compile and install the source package into a specific InstallDIR (in our example it is ``/var/pisi/knazar-0.2-3-3/install/``)
 
