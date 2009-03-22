@@ -12,10 +12,6 @@
   <property name="windowTitle" >
    <string>History Manager</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="../resources/data.qrc" >
-    <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
-  </property>
   <layout class="QGridLayout" name="gridLayout" >
    <item row="0" column="0" colspan="2" >
     <layout class="QHBoxLayout" name="horizontalLayout_3" >

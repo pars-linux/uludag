@@ -93,6 +93,7 @@ class MainManager(QtGui.QWidget):
             self.parent.move(self.mapToGlobal(self.settings.value("pos").toPoint()))
             self.parent.resize(self.settings.value("size").toSize())
 
+        self.parent.setWindowIcon(QtGui.QIcon(":/icons/history-manager.png"))
         self.ui.progressBar.hide()
         self.ui.lw.verticalHeader().hide()
         self.ui.lw.horizontalHeader().setResizeMode(QHeaderView.Stretch)
@@ -102,6 +103,7 @@ class MainManager(QtGui.QWidget):
 
     def tabChanged(self, index):
         if index == 1:
+            QtCore.QCoreApplication.processEvents()
             self.loadIndex(self.ui.lw.currentIndex())
         elif index == 0:
             self.showPlan()
