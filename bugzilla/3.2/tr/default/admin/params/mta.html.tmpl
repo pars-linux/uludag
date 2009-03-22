@@ -17,60 +17,42 @@
   #
   # Contributor(s): Dave Miller <justdave@bugzilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 [%
-   title = "Email"
-   desc = "How will outgoing mail be delivered?"
+   title = "Eposta"
+   desc = "Epostalar nasıl gönderilecek?"
 %]
 
 [% param_descs = {
-  mail_delivery_method => "Defines how email is sent, or if it is sent at all.<br>
+  mail_delivery_method => "Epostanın gönderilip gönderilmeyeceğini ve gönderilecekse nasıl gönderileceğini belirler.<br>
                            <ul>
                              <li>
-                               'Sendmail', 'SMTP' and 'Qmail' are all MTAs.
-                               You need to install a third-party sendmail replacement if
-                               you want to use sendmail on Windows.
+                               'Sendmail', 'SMTP' and 'Qmail' birer MTA'dır (Mail Transfer Agent - Posta Aktarım Aracısı).
+                               Eğer Windows'de sendmail kullanmak istiyorsanız, üçüncü parti bir sendmail uygulaması yüklemeniz gerekir.
                              </li>
                              <li>
-                               'Test' is useful for debugging: all email is stored
-                               in 'data/mailer.testfile' instead of being sent.
+                               'Test' hata ayıklama konusunda faydalıdır: tüm epostalar gönderilmek yerine 'data/mailer.testfile' dosyasına depolanır.
                              </li>
                              <li>
-                               'none' will completely disable email. $terms.Bugzilla continues
-                               to act as though it is sending mail, but nothing is sent or
-                               stored.
+                               'none' eposta işlemlerini tamamen kapatır. $terms.Bugzilla eposta gönderiyormuş gibi davranmaya devam edecektir, fakat hiçbirşey gönderilmez ve herhangi bir yerde depolanmaz.
                              </li>
                            </ul>",
 
-  mailfrom => "The email address of the $terms.Bugzilla mail daemon.  Some email systems " _
-              "require this to be a valid email address.",
+  mailfrom => "$terms.Bugzilla eposta aracının eposta adresi. Bazı eposta sistemleri bunun geçerli bir eposta adresi olmasını zorunlu kılar.",
 
-  sendmailnow => "Sites using anything older than version 8.12 of 'sendmail' " _
-                 "can achieve a significant performance increase in the " _
-                 "UI -- at the cost of delaying the sending of mail -- by " _
-                 "disabling this parameter. Sites using 'sendmail' 8.12 or " _
-                 "higher should leave this on, as they will see no benefit from " _
-                 "turning it off. Sites using an MTA other than 'sendmail' " _
-                 "<b>must</b> leave it on, or no $terms.bug mail will be sent.",
+  sendmailnow => "'sendmail'in 8,12 sürümünden öncesini kullanan siteler, bu parametreyi kapatırlarsa epostanın gönderilmesini geciktirerek arayüzde gözle görülür bir başarım artışı elde edebilirler. ", 'sendmail' 8,12 veya daha üstü bir sürüm kullananlar bu parametreyi açık bırakmalıdır, çünkü kapatmak herhangi bir başarım artışı sağlamaz. 'sendmail' dışında bir posta aktarım aracısı kullanan siteler ise bu parametreyi <b>açık</b> bırakmalıdır, aksi taktirde eposta gönderilemez.",
 
-  smtpserver => "The SMTP server address (if using SMTP for mail delivery).",
+  smtpserver => "Eğer eposta göndermek için SMTP kullanılıyorsa, SMTP sunucu adresi.",
 
-  smtp_username => "The username to pass to the SMTP server for SMTP authentication. " _
-                   "Leave this field empty if your SMTP server doesn't require authentication.",
+  smtp_username => "Kimlik doğrulaması için SMTP sunucuya gönderilecek kullanıcı adı. Eğer SMTP sunucunuz kimlik doğrulama gerektirmiyorsa boş bırakın.",
 
-  smtp_password => "The password to pass to the SMTP server for SMTP authentication. " _
-                   "This field has no effect if the smtp_username parameter is left empty.",
+  smtp_password => "Kimlik doğrulaması için SMTP sunucuya gönderilecek parola. Eğer smtp_username parametresi boş ise bu alan gözardı edilir.",
 
-  smtp_debug => "If enabled, this will print detailed information to your" _
-                " web server's error log about the communication between" _
-                " $terms.Bugzilla and your SMTP server. You can use this to" _
-                " troubleshoot email problems.",
+  smtp_debug => "Açıksa, web sunucunuzun hata günlüğünde $terms.Bugzilla ile SMTP sunucunuz arasındaki iletişim hakkında detaylı rapor tutulur. Eposta problemlerinin kaynağını bulmak için kullanabilirsiniz.",
 
-  whinedays => "The number of days that we'll let a $terms.bug sit untouched in a NEW " _
-               "state before our cronjob will whine at the owner.<br> " _
-               "Set to 0 to disable whining.",
+  whinedays => "YENİ durumundaki bir hata hakkında kullanıcı uyarılmadan önce geçmesi gereken gün sayısı.<br>Uyarıyı kapatmak için 0 kullanın.",
 
-  globalwatchers => "A comma-separated list of users who should receive a " _
-                    "copy of every notification mail the system sends." }
+  globalwatchers => "Sistemin gönderdiği her bilgilendirme epostasının bir kopyasını alması gereken kullanıcıların listesi. Liste öğeleri birbirlerinden virgülle ayrılmalıdır." }
 
 %]
