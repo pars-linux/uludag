@@ -17,44 +17,34 @@
   #
   # Contributor(s): Dave Miller <justdave@bugzilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 [%
-   title = "Query Defaults"
-   desc = "Default options for query and $terms.bug lists"
+   title = "Sorgu Varsayılanları"
+   desc = "Sorgu ve $terms.bug listelerinin öntanımlı ayarları"
 %]
 
 [% param_descs = {
-  quip_list_entry_control => "Controls how easily users can add entries to the quip list.
+  quip_list_entry_control => "Kullanıcıların yeni nükteler girmesiyle ilgili ayardır.
                               <ul>
                                 <li>
-                                  open - Users may freely add to the quip list, and
-                                  their entries will immediately be available for viewing.
+                                  açık - Kullanıcılar kısıtlama olmaksızın yeni nükteler girebilirler ve girdikleri metinler hemen görünür hale gelir.
                                 </li>
                                 <li>
-                                  moderated - quips can be entered, but need to be approved
-                                  by an admin before they will be shown.
+                                  onay bekler - Kullanıcılar nükteler girebilirler fakat girilen nükteler görünür hale gelmeden önce bir yöneticinin onayından geçmelidir.
                                 </li>
                                 <li>
-                                  closed - no new additions to the quips list are allowed.
+                                  kapalı - Yeni nükte girilemez.
                                 </li>
                               </ul>",
 
-  mostfreqthreshold => "The minimum number of duplicates $terms.abug needs to show up on the " _
-                       "<a href=\"duplicates.cgi\">most frequently reported $terms.bugs page</a>. " _
-                       "If you have a large database and this page takes a long time to " _
-                       "load, try increasing this number.",
+  mostfreqthreshold => "$terms.AbugGen <a href=\"duplicates.cgi\">en sık raporlanan $terms.bugs</a> sayfasında görüntülenmesi için gereken en az tekrar sayısı. Büyük bir veritabanınız varsa ve bu sayfanın yüklenmesi uzun sürüyorsa, bu sayıyı arttırmayı deneyin.",
 
-  mybugstemplate => "This is the URL to use to bring up a simple 'all of my $terms.bugs' " _
-                    "list for a user. %userid% will get replaced with the login name of a user.",
+  mybugstemplate => "Bu, kullanıcıların basit bir 'Girdiğim ve üzerimdeki $terms.bugs' listesine erişmek için kullanacakları adrestir. %userid% kullanıcının oturum açma adıyla değiştirilir.",
 
-  defaultquery => "This is the default query that initially comes up when you " _
-                  "access the advanced query page. It's in URL parameter " _
-                  "format, which makes it hard to read. Sorry!",
+  defaultquery => "Bu alan, gelişmiş sorgulama sayfasına girişte ilk olarak gelen öntanımlı sorgudur. URL parametre biçimindedir (ki bu okumayı zorlaştırıyor), artık kusura bakmazsınız!",
 
-  quicksearch_comment_cutoff => "The maximum number of search terms for a QuickSearch " _
-                                "to search comments. If the QuickSearch query contains " _
-                                "more terms than this value, QuickSearch will not search comments.",
+  quicksearch_comment_cutoff => "Hızlı aramanın yorumlarda da arama yapması için gereken en fazla arama kriteri sayısı. Eğer hızlı arama sorgusu bundan daha fazla sayıda kriter içeriyorsa, aramaya yorumlar dahil edilmez.",
 
-  specific_search_allow_empty_words => "Whether to allow a search on the 'Find a Specific " _
-                                       "Bug' page with an empty 'Words' field." }
+  specific_search_allow_empty_words => "'Belirli Bir $terms.Bug Bul' sayfasında boş bir 'Kelimeler' alanına müsaade edilip edilmediği." }
 %]
