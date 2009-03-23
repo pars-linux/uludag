@@ -21,7 +21,7 @@ from PyKDE4.kdeui import *
 import string
 import pmtools
 
-(SummaryRole, DescriptionRole, VersionRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2)
+(SummaryRole, DescriptionRole, VersionRole, GroupRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3)
 
 class PackageModel(QAbstractTableModel):
 
@@ -57,6 +57,9 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.description))
         elif role == VersionRole:
             return QVariant(unicode(package.version))
+        elif role == GroupRole:
+            # TODO
+            return QVariant()
         else:
             return QVariant()
 

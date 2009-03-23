@@ -24,7 +24,7 @@ from uimain import Ui_MainManager
 from uiitem import Ui_PackageWidget
 
 from packageproxy import PackageProxy
-from packagemodel import PackageModel
+from packagemodel import PackageModel, GroupRole
 from packagedelegate import PackageDelegate
 
 import pmtools
@@ -62,14 +62,21 @@ class MainManager(QtGui.QWidget):
             package_count = len(self.iface.getGroupPackages(name))
             icon = QtGui.QIcon(KIconLoader().loadMimeTypeIcon(icon_path, KIconLoader.Desktop, KIconLoader.SizeSmallMedium))
             item = QtGui.QListWidgetItem(icon, "%s (%d)" % (name, package_count), self.ui.componentList)
+            item.setData(Qt.UserRole, QVariant(unicode(name)))
             item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
+        self.connect(self.ui.componentList, SIGNAL("itemClicked(QListWidgetItem*)"), self.componentFilter)
 
     def initialize(self):
         self.initializePackageList()
         self.initializeComponentList()
-        self.connect(self.ui.searchLine, SIGNAL("textChanged(const QString&)"), self.filter)
+        self.connect(self.ui.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
 
-    def filter(self, text):
+    def packageFilter(self, text):
         text = unicode(text)
+        self.ui.packageList.model().setFilterRole(Qt.DisplayRole)
         self.ui.packageList.model().setFilterRegExp(QRegExp(text, Qt.CaseInsensitive, QRegExp.FixedString))
 
+    def componentFilter(self, item):
+        packages = self.iface.getGroupPackages(item.data(Qt.UserRole).toString())
+        self.ui.packageList.model().setFilterRole(GroupRole)
+        self.ui.packageList.model().setFilterPackages(packages)
