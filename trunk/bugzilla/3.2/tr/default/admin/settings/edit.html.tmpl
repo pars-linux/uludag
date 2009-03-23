@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Shane H. W. Travis <travis@sedsystems.ca>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #
   #%]
 
@@ -24,25 +25,25 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-   title = "Default Preferences"
+   title = "Öntanımlı Tercihler"
  %]
 
 [% PROCESS "global/setting-descs.none.tmpl" %]
 
 <p>
-This lets you edit the default preferences values.
+Burada öntanımlı tercihlerin değerlerini ayarlayabilirsiniz.
 </p>
 <p>
+Her tercih için gösterilen Öntanımlı Değer, o alanla ilgili olarak kendi tercihini belirlememiş kullanıcılara ve oturum açmamış kullanıcılara uygulanır.
 The Default Value displayed for each preference will apply to all users who
 do not choose their own value, and to anyone who is not logged in.
 </p>
 <p>
-The 'Enabled' checkbox controls whether or not this preference is available
-to users.<br>
-If it is checked, users will see this preference on their User Preferences page,
-and will be allowed to choose their own value if they desire.<br>
-If it is not checked, this preference will not appear on the User Preference
-page, and the Default Value will automatically apply to everyone.
+'Açık' işaretleme kutusu, kullanıcıların o alanla ilgili olarak kendi tercihlerini yapabilip yapamayacağını gösterir.
+<br>
+Eğer işaretliyse, kullanıcılar Tercihler sayfasında bu ayarı görürler ve isterlerse değiştirebilirler.
+<br>
+Eğer işaretli değilse, kullanıcılar Tercihler sayfasında bu ayarı görmezler ve Öntanımlı Değer otomatik olarak tüm kullanıcılara uygulanır.
 </p>
 <hr>
 
@@ -50,9 +51,9 @@ page, and the Default Value will automatically apply to everyone.
     <form name="adminsettingform" method="post" action="editsettings.cgi">
       <table border="1" cellpadding="4">
       <tr>
-        <th>Preference Text</th>
-        <th>Default Value</th>
-        <th>Enabled</th>
+        <th>Tercih Metni</th>
+        <th>Öntanımlı Değer</th>
+        <th>Açık</th>
       </tr>
 
       [% FOREACH name = settings.keys %]
@@ -88,14 +89,14 @@ page, and the Default Value will automatically apply to everyone.
       <tr>
         <td width="150"></td>
         <td>
-          <input type="submit" id="update" value="Submit Changes">
+          <input type="submit" id="update" value="Değişiklikleri Kaydet">
         </td>
       </tr>
     </table>
   
   </form>
 [% ELSE %]
-  There are no preferences to edit.
+  Değiştirilecek tercih yok.
 [% END %]
 
 [% PROCESS global/footer.html.tmpl %]
