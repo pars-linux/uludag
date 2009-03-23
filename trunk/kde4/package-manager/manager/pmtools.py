@@ -44,3 +44,6 @@ class Iface:
         for component in components:
             packages.extend(self.cdb.get_union_packages(component))
         return packages
+
+    def getGroupComponents(self, name):
+        return groups.getGroupComponents(name)
