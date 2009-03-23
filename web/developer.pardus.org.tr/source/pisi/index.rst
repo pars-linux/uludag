@@ -45,4 +45,5 @@ To remove a package, it works exacly the contrary
 .. toctree::
 
     pisi-structure.rst
+    pisi-pisibul.rst
 
