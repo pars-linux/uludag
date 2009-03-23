@@ -7,6 +7,9 @@ import dbus
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 
+from PyKDE4.kdeui import *
+from PyKDE4.kdecore import *
+
 from ui_mainwindow import Ui_MainManager
 from interface import *
 from listitem import *
@@ -68,7 +71,7 @@ class MainManager(QtGui.QWidget):
 
         self.listWidgetMenu = QtGui.QMenu()
         self.listWidgetMenu.addAction(self.ui.copyAction)
-        self.listWidgetMenu.addAction("Select All", self.ui.listWidget.selectAll)
+        self.listWidgetMenu.addAction(i18n("Select All"), self.ui.listWidget.selectAll)
 
     def copySelected(self):
         cb = QApplication.clipboard()
@@ -85,7 +88,7 @@ class MainManager(QtGui.QWidget):
         self.proxyModel.reset()
         self.ui.lw.setEnabled(True)
 
-        self.status("Ready")
+        self.status(i18n("Ready"))
         self.enableButtons(True)
 
     def tweakUi(self):
@@ -109,16 +112,16 @@ class MainManager(QtGui.QWidget):
             self.showPlan()
 
     def loadIndex(self, index):
-        self.ui.noLabel.setText("No: <b>%s</b>" % self.get(index, "op_no"))
-        self.ui.typeLabel.setText("Type: <b>%s</b>" % self.get(index, "op_type_tr"))
-        self.status("Operation details")
+        self.ui.noLabel.setText("%s <b>%s</b>" % (i18n("No:"), self.get(index, "op_no")))
+        self.ui.typeLabel.setText("%s <b>%s</b>" % (i18n("Type:"), self.get(index, "op_type_tr")))
+        self.status(i18n("Operation details"))
 
         self.ui.listWidget.clear()
         self.ui.operationTB.setCurrentIndex(1)
 
         if self.get(index, "op_type") == "snapshot":
             self.ui.listWidget.insertItem(self.ui.listWidget.count() + 1, \
-                    QtGui.QListWidgetItem("There are %s packages in this snapshot" % self.get(index, "op_pack_len")))
+                    QtGui.QListWidgetItem(i18n("There are %1 packages in this snapshot", self.get(index, "op_pack_len"))))
             return
 
         for val in self.item_model.getProperty(index, "op_pack").toList():
@@ -131,7 +134,7 @@ class MainManager(QtGui.QWidget):
         if signal == "status":
             self.status(" ".join(args))
         elif signal == "finished":
-            self.status("Finished succesfully")
+            self.status(i18n("Finished succesfully"))
             self.enableButtons(True)
         elif signal == "progress":
             self.status("%s : %s/100" % (args[2], args[1]))
@@ -147,28 +150,28 @@ class MainManager(QtGui.QWidget):
         current_date = self.get(current_index, "op_date")
 
         willbeinstalled, willberemoved = self.pface.historyPlan(current_op)
-        self.status("Loading Plan")
+        self.status(i18n("Loading Plan"))
 
         information = ""
         if current_type == "snapshot":
             configs = self.pface.historyConfigs(current_op)
             if configs and len(configs) != 0:
-                information += "Configuration files in snapshot:"
+                information += i18n("Configuration files in snapshot:")
                 for i in configs.keys():
                     information += "<br><br><b> %s </b><br>" % i
                     for j in configs.get(i):
                         information += "%s \n" % ("/".join(j.split(str(current_op),1)[1].split(i,1)[1:]))
 
-        message = "Takeback Plan for %s operation on %s <br><br>" % (current_type_tr, current_date)
-        self.status("Takeback Plan %s" % current_date)
+        message = i18n("Takeback Plan for %1 operation on %2 <br><br>", current_type_tr, current_date)
+        self.status(i18n("Takeback Plan %1", current_date))
 
         if willbeinstalled and len(willbeinstalled) != 0:
-            message += "<br> These package(s) will be <b>installed</b> :<br>"
+            message += i18n("<br> These package(s) will be <b>installed</b> :<br>")
             for i in range(len(willbeinstalled)):
                 message += "%s <br>" % willbeinstalled[i]
 
         if willberemoved and len(willberemoved) != 0:
-            message += "<br> These package(s) will be <b>removed</b> :<br>"
+            message += i18n("<br> These package(s) will be <b>removed</b> :<br>")
             for i in range(len(willberemoved)):
                 message += "%s <br>" % willberemoved[i]
 
@@ -177,7 +180,7 @@ class MainManager(QtGui.QWidget):
         self.ui.textEdit.setText(message + information)
 
     def changeListing(self):
-        self.status("Listing %s Operations" % QObject.sender(self).objectName())
+        self.status(i18n("Listing %s Operations", QObject.sender(self).objectName()))
 
         self.proxyModel.sortby = QObject.sender(self).objectName().toLower()
         self.proxyModel.sort(ICON, Qt.DescendingOrder)
@@ -211,38 +214,38 @@ class MainManager(QtGui.QWidget):
         current_date = self.get(self.ui.lw.currentIndex(), "op_date")
         current_time = self.get(self.ui.lw.currentIndex(), "op_time")
 
-        reply = QtGui.QMessageBox.warning(self, "Takeback operation verification",
-            "<center>This will restore your system back to : <b>%s</b> - <b>%s</b><br>" % (current_date, current_time) + \
-            "If you're unsure, click Cancel and see TakeBack Plan.</center>",
+        reply = QtGui.QMessageBox.warning(self, i18n("Takeback operation verification"),
+            i18n("<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>", current_date, current_time) + \
+            i18n("If you're unsure, click Cancel and see TakeBack Plan.</center>"),
              QtGui.QMessageBox.Cancel | QtGui.QMessageBox.Ok, QtGui.QMessageBox.Ok)
 
         if reply == QtGui.QMessageBox.Ok:
-            self.status("Taking back to : %s" % current_date)
+            self.status(i18n("Taking back to : %1", current_date))
             self.enableButtons(False)
 
             try:
                 QtCore.QCoreApplication.processEvents()
                 self.cface.takeBack(int(self.get(self.ui.lw.currentIndex(), "op_no")))
             except dbus.DBusException:
-                self.status("Authentication Failed")
+                self.status(i18n("Authentication Failed"))
                 self.enableButtons(True)
 
     def takeSnapshot(self):
-        reply = QtGui.QMessageBox.question(self, "Start new snapshot",
-            "<center>This will take a snapshot of your system.<br>Click Ok when you're ready.</center>",
+        reply = QtGui.QMessageBox.question(self, i18n("Start new snapshot"),
+            i18n("<center>This will take a snapshot of your system.<br>Click Ok when you're ready.</center>"),
              QtGui.QMessageBox.Cancel | QtGui.QMessageBox.Ok, QtGui.QMessageBox.Ok)
 
         if reply == QtGui.QMessageBox.Cancel:
             return
 
-        self.status("Taking New Snapshot")
+        self.status(i18n("Taking New Snapshot"))
         self.enableButtons(False)
 
         try:
             QtCore.QCoreApplication.processEvents()
             self.cface.takeSnap()
         except dbus.DBusException:
-            self.status("Authentication Failed")
+            self.status(i18n("Authentication Failed"))
             self.enableButtons(True)
 
     def closeEvent(self, event=None):

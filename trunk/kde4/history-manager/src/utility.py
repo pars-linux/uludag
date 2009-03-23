@@ -6,13 +6,13 @@ import os
 from PyQt4.QtGui import *
 from PyQt4.QtCore import QUrl
 
-from PyKDE4.kdecore import KStandardDirs
+from PyKDE4.kdecore import *
 
 class HelpDialog(QDialog):
     def __init__(self, parent=None):
         super(HelpDialog, self).__init__(parent)
         self.setWindowIcon(QIcon(":/icons/help.png"))
-        self.setWindowTitle("Information")
+        self.setWindowTitle(i18n("Information"))
         self.layout = QGridLayout(self)
         self.htmlpart = QTextBrowser(self)
         self.resize(500, 300)
