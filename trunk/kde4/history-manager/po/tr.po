@@ -1,0 +1,237 @@
+# History Manager Application for Pardus Linux.
+# Copyright (C) 2009 İşbaran Akçayır
+# This file is distributed under the same license as the History Manager package.
+# İşbaran Akçayır <isbaran@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: history-manager-kde4 0.2\n"
+"Report-Msgid-Bugs-To: isbaran@gmail.com\n"
+"POT-Creation-Date: 2009-03-23 17:04+0200\n"
+"PO-Revision-Date: 2009-03-23 16:56+0200\n"
+"Last-Translator: isbaran <isbaran@gmail.com>\n"
+"Language-Team: Turkish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../src/about.py:20 ../src/about.py:22 ../src/ui_mainwindow.py:258
+msgid "History Manager"
+msgstr "Geçmiş Yöneticisi"
+
+#: ../src/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(C) 2009 TUBİTAK/UEKAE"
+
+#: ../src/about.py:31
+msgid "İşbaran Akçayır"
+msgstr "İşbaran Akçayır"
+
+#: ../src/about.py:31
+msgid "Current Maintainer"
+msgstr "Geliştirici"
+
+#: ../src/listitem.py:117
+msgid "Date"
+msgstr "Tarih"
+
+#: ../src/listitem.py:119
+msgid "Time"
+msgstr "Zaman"
+
+#: ../src/listitem.py:147
+msgid "snapshot"
+msgstr "görüntü"
+
+#: ../src/listitem.py:151
+msgid "upgrade"
+msgstr "yükseltme"
+
+#: ../src/listitem.py:155
+msgid "remove"
+msgstr "kaldırma"
+
+#: ../src/listitem.py:159
+msgid "install"
+msgstr "yükleme"
+
+#: ../src/listitem.py:163
+msgid "takeback"
+msgstr "geri alma"
+
+#: ../src/listitem.py:167
+msgid "unknown"
+msgstr "bilinmeyen"
+
+#: ../src/mainwindow.py:74
+msgid "Select All"
+msgstr "Hepsini Seç"
+
+#: ../src/mainwindow.py:91
+msgid "Ready"
+msgstr "Hazır"
+
+#: ../src/mainwindow.py:115
+msgid "No:"
+msgstr "No:"
+
+#: ../src/mainwindow.py:116
+msgid "Type:"
+msgstr "Tip:"
+
+#: ../src/mainwindow.py:117
+msgid "Operation details"
+msgstr "İşlem detayları"
+
+#: ../src/mainwindow.py:124
+msgid "There are %1 packages in this snapshot"
+msgstr "Bu görüntüde %1 paket var"
+
+#: ../src/mainwindow.py:137
+msgid "Finished succesfully"
+msgstr "Başarıyla tamamlandı"
+
+#: ../src/mainwindow.py:153
+msgid "Loading Plan"
+msgstr "Plan Yükleniyor"
+
+#: ../src/mainwindow.py:159
+msgid "Configuration files in snapshot:"
+msgstr "Görüntüdeki ayar dosyaları:"
+
+#: ../src/mainwindow.py:165
+msgid "Takeback Plan for %1 operation on %2 <br><br>"
+msgstr "%2 tarihindeki %1 işlemi için geri alma planı <br><br>"
+
+#: ../src/mainwindow.py:166
+msgid "Takeback Plan %1"
+msgstr "Geri alma Planı %1"
+
+#: ../src/mainwindow.py:169
+msgid "<br> These package(s) will be <b>installed</b> :<br>"
+msgstr "<br> Bu paket(ler) <b>yüklenecek</b> :<br>"
+
+#: ../src/mainwindow.py:174
+msgid "<br> These package(s) will be <b>removed</b> :<br>"
+msgstr "<br> Bu paket(ler) <b>kaldırılacak</b> :<br>"
+
+#: ../src/mainwindow.py:183
+msgid "Listing %1 Operations"
+msgstr "%s İşlemleri Listeleniyor"
+
+#: ../src/mainwindow.py:217
+msgid "Takeback operation verification"
+msgstr "Geri alma işlemi doğrulama"
+
+#: ../src/mainwindow.py:218
+msgid ""
+"<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
+msgstr ""
+"<center> Bu hareket sisteminizi <b>%1</b> - <b>%2</b> ye geri alacak<br>"
+
+#: ../src/mainwindow.py:219
+msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
+msgstr ""
+"Emin değilseniz, Vazgeç düğmesine tıklayıp Gerialma Planına göz atın.</"
+"center>"
+
+#: ../src/mainwindow.py:223
+msgid "Taking back to : %1"
+msgstr "%1'e geri alıyor"
+
+#: ../src/mainwindow.py:230 ../src/mainwindow.py:248
+msgid "Authentication Failed"
+msgstr "Kimlik doğrulama Başarısız"
+
+#: ../src/mainwindow.py:234
+msgid "Start new snapshot"
+msgstr "Yeni görüntü al"
+
+#: ../src/mainwindow.py:235
+msgid ""
+"<center>This will take a snapshot of your system.<br>Click Ok when you're "
+"ready.</center>"
+msgstr ""
+"<center>Bu hareket sisteminizin görüntüsünü alacak.<br>Hazır olduğunuzda "
+"Tamam düğmesine tıklayın</center>"
+
+#: ../src/mainwindow.py:241
+msgid "Taking New Snapshot"
+msgstr "Yeni Görüntü Alınıyor"
+
+#: ../src/ui_mainwindow.py:259
+msgid "- Loading Pisi History"
+msgstr "- Pisi Geçmişi Yükleniyor"
+
+#: ../src/ui_mainwindow.py:260
+msgid "%p%"
+msgstr "%p%"
+
+#: ../src/ui_mainwindow.py:261 ../src/ui_mainwindow.py:266
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p></body></html>"
+msgstr ""
+
+#: ../src/ui_mainwindow.py:271
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt;\"></p></body></html>"
+msgstr ""
+
+#: ../src/ui_mainwindow.py:276
+msgid "Takeback Plan"
+msgstr "Gerialma Planı"
+
+#: ../src/ui_mainwindow.py:277
+msgid "Click to see what will happen if you click restore button"
+msgstr "Gerial düğmesine tıkladığınızda olacakları görmek için tıklayın"
+
+#: ../src/ui_mainwindow.py:278
+msgid "Operation Details"
+msgstr "İşlem Detayları"
+
+#: ../src/ui_mainwindow.py:279
+msgid "Click to see operation details"
+msgstr "İşlem detaylarını görmek için tıklayın"
+
+#: ../src/ui_mainwindow.py:280
+msgid "Help"
+msgstr "Yardım"
+
+#: ../src/ui_mainwindow.py:281
+msgid "New Snapshot"
+msgstr "Yeni Görüntü"
+
+#: ../src/ui_mainwindow.py:282
+msgid "Takeback"
+msgstr "Gerial"
+
+#: ../src/ui_mainwindow.py:283
+msgid "Take back to this point"
+msgstr "Bu noktaya geri al"
+
+#: ../src/ui_mainwindow.py:284
+msgid "Copy"
+msgstr "Kopyala"
+
+#: ../src/utility.py:15
+msgid "Information"
+msgstr "Bilgi"
