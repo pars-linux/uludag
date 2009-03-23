@@ -22,6 +22,16 @@
       </ul>
     </div>
 {%- endmacro %}
+
+{%- macro tableofcontents %}
+    {%- if title not in ['Pardus Developer Base'] %}
+        <h1>Table of Contents</h1>
+        {{ toc }}
+    {%- else %}
+        <br />
+    {%- endif %}
+{%- endmacro %}
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -109,7 +119,8 @@
         <div class="bodywrapper">
       {%- endif %}
           <div class="body">
-            {% block body %} {% endblock %}
+              {{ tableofcontents() }}
+              {% block body %} {% endblock %}
           </div>
       {%- if builder != 'htmlhelp' %}
         </div>
