@@ -11,18 +11,12 @@
 # Please read the COPYING file.
 #
 
-import comar
-import pisi
 import groups
+import pisi
 
 class Iface:
-    """
-        Package Manager operations abstraction layer
-    """
 
     def __init__(self):
-        # Connect to COMAR
-        self.link = comar.Link()
         self.pdb  = pisi.db.packagedb.PackageDB()
         self.cdb  = pisi.db.componentdb.ComponentDB()
 
