@@ -27,7 +27,7 @@ from packageproxy import PackageProxy
 from packagemodel import PackageModel, GroupRole
 from packagedelegate import PackageDelegate
 
-import pmtools
+import backend
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
@@ -41,7 +41,7 @@ class MainManager(QtGui.QWidget):
         else:
             self.ui.setupUi(parent)
 
-        self.iface = pmtools.Iface()
+        self.iface = backend.pm.Iface()
 
         # Initialize
         self.initialize()

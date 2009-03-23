@@ -19,7 +19,7 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 
 import string
-import pmtools
+import backend
 
 (SummaryRole, DescriptionRole, VersionRole, GroupRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3)
 
@@ -27,7 +27,7 @@ class PackageModel(QAbstractTableModel):
 
     def __init__(self, parent=None):
         QAbstractTableModel.__init__(self, parent)
-        self.iface = pmtools.Iface()
+        self.iface = backend.pm.Iface()
         self.cached_package = None
         self.packages = self.iface.getPackageList()
         self.package_selections = [Qt.Unchecked] * len(self.packages)
