@@ -180,7 +180,7 @@ class MainManager(QtGui.QWidget):
         self.ui.textEdit.setText(message + information)
 
     def changeListing(self):
-        self.status(i18n("Listing %s Operations", QObject.sender(self).objectName()))
+        self.status(i18n("Listing %1 Operations", QObject.sender(self).objectName()))
 
         self.proxyModel.sortby = QObject.sender(self).objectName().toLower()
         self.proxyModel.sort(ICON, Qt.DescendingOrder)

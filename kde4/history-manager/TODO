@@ -8,12 +8,13 @@ TODO List
 + Icons on tableview
   - Small icon column width
 
-- i18n strings
++ i18n strings
 + Package
+- Fix Makefile, CMakeLists
 
 Release as 2.0
 
-- Shortcut for Copy and Select All in operation details page
++ Shortcut for Copy and Select All in operation details page
 - Some artwork near help button and progress label ?
-- Better handle takeback/snapshot progress, exceptions etc.
+~ Better handle takeback/snapshot progress, exceptions etc.
 
