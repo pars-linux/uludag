@@ -19,11 +19,14 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
+import packagemodel # roles needed
+
 class PackageProxy(QtGui.QSortFilterProxyModel):
 
     def __init__(self, parent=None):
         QtGui.QSortFilterProxyModel.__init__(self, parent)
         self.__modelCache = {}
+        self.__filteredPackages = set()
 
     def data(self, index, role):
         sourceIndex = self.mapToSource(index)
@@ -39,3 +42,14 @@ class PackageProxy(QtGui.QSortFilterProxyModel):
 
     def setData(self, index, value, role):
         return self.sourceModel().setData(self.mapToSource(index), value, role)
+
+    def filterAcceptsRow(self, source_row, source_parent):
+        if self.filterRole() == packagemodel.GroupRole:
+            sourceIndex = self.sourceModel().index(source_row, 0, source_parent)
+            return unicode(sourceIndex.data(Qt.DisplayRole).toString()) in self.__filteredPackages
+        else:
+            return QtGui.QSortFilterProxyModel.filterAcceptsRow(self, source_row, source_parent)
+
+    def setFilterPackages(self, packages):
+        self.__filteredPackages = set(packages)
+        self.invalidateFilter()
