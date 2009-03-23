@@ -3,7 +3,8 @@
 
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n
+
+from PyKDE4.kdecore import *
 
 import inspect
 from new import instancemethod
@@ -113,9 +114,9 @@ class OperationDataModel(QAbstractItemModel):
             if section == ICON:
                 return QVariant("")
             elif section == DATE:
-                return QVariant("Date")
+                return QVariant(i18n("Date"))
             elif section == TIME:
-                return QVariant("Time")
+                return QVariant(i18n("Time"))
         elif orientation == Qt.Vertical:
             return QVariant(self.items[section].op_no)
 
@@ -143,27 +144,27 @@ class NewOperation:
         if self.op_type == 'snapshot':
             self.icon = ":/pics/snapshot.png"
             self.op_type_int = 1
-            self.op_type_tr = "snapshot"
+            self.op_type_tr = i18n("snapshot")
         elif self.op_type == 'upgrade':
             self.icon = ":/pics/upgrade.png"
             self.op_type_int = 2
-            self.op_type_tr = "upgrade"
+            self.op_type_tr = i18n("upgrade")
         elif self.op_type == 'remove':
             self.icon = ":/pics/remove.png"
             self.op_type_int = 3
-            self.op_type_tr = "remove"
+            self.op_type_tr = i18n("remove")
         elif self.op_type == 'install':
             self.icon = ":/pics/install.png"
             self.op_type_int = 4
-            self.op_type_tr = "install"
+            self.op_type_tr = i18n("install")
         elif self.op_type == 'takeback':
             self.icon = ":/pics/takeback.png"
             self.op_type_int = 5
-            self.op_type_tr = "takeback"
+            self.op_type_tr = i18n("takeback")
         else:
             self.icon = "?"
             self.op_type_int = 6
-            self.op_type_tr = "unknown"
+            self.op_type_tr = i18n("unknown")
 
 class SortFilterProxyModel(QSortFilterProxyModel):
     def __init__(self, parent=None):

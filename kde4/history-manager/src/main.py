@@ -40,7 +40,6 @@ def CreatePlugin(widget_parent, parent, component_data):
     return ServiceManager(component_data, parent)
 
 if __name__ == '__main__':
-
     KCmdLineArgs.init(sys.argv, aboutData)
     app = KApplication()
 
