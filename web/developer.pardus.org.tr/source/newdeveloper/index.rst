@@ -4,13 +4,6 @@
 New developer's guide
 ##############################
 
-:Author: Ozan Çağlayan
-:Date: |today|
-
-*************
-Introduction
-*************
-
 In this document we'll try to explain the requirements to be a Pardus developer/contributor. Although we are talking about Pardus in particular, the cited requirements in this document should apply to nearly all open source projects.
 
 Please feel free to browse the web pages of `Pardus <http://www.pardus.org.tr/eng>`_ for other information not included in this document.
@@ -88,6 +81,12 @@ You can support the documentation of the ongoing projects and different developm
 The `wiki <http://pardus-wiki.org>`_ for Pardus is a nice place to start helping for the documentation.
 
 You can also enrich the content of this `developer web page <http://developer.pardus.org.tr>`_. Currently, only people with an SVN account have write permissions to the content.
+
+About this document
+====================
+
+:Author: Ozan Çağlayan
+:Date: |today|
 
 
 .. toctree::
