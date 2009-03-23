@@ -5,4 +5,6 @@ Howto Documents
    :maxdepth: 2
 
    kde4-programming
+   general-pardus
+   specific-pardus
    howto-rst
