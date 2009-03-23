@@ -1,7 +1,7 @@
 .. highlightlang:: rest
 
 Specific Pardus Howto
-****************************
+**************************
 
 STARTUP
 -------------
@@ -53,11 +53,11 @@ How to install and remove programs on Pardus?
 
 You can install programs on Pardus by PISI (Package manager).You can go to pisi by Pardus > Package manager or Pardus > Tasma > System > Package manager.
 
-There are three buttons called "Show new packages","Show Installed packages","Show upgradable packages".You can upgrade Pardus by pressing on "Show upgradable packages" button,then put a tick on the small box on the left of the package you like to upgrade or just click on the "select all packages in this category" on the top of the window under search bar.Then press on the "upgrade packages"button on the right of the window.Pisi downloads the packages and installs all of them.
+There are three buttons called "Show new packages","Show Installed packages","Show upgradable packages".You can upgrade Pardus by pressing on "Show upgradable packages" button,then put a tick on the small box on the left of the package you like to upgrade or just click on the "select all packages in this category" on the top of the window under search bar.Then press on the "upgrade packages"button on the right of the window. Pisi downloads the packages and installs all of them.
 
-You can install the package you like by writing it on the search bar after you press on the "Show new packages" button. Then put a tick on the small box on the left of the package you like, then press on the "install packages" button on the right of the window.Pisi downloads the packages and dependencies and installs all of them after showing you the amaount of the download.
+You can install the package you like by writing it on the search bar after you press on the "Show new packages" button. Then put a tick on the small box on the left of the package you like, then press on the "install packages" button on the right of the window. Pisi downloads the packages and dependencies and installs all of them after showing you the amount of the download.
 
-You can remove the package you like by writing it on the search bar after you press on the "Show installed packages" button.Then put a tick on the small box on the left of the package you like to remove.Then press on the "Remove packages" button on the right of the window.Pisi removes the package and dependencies.
+You can remove the package you like by writing it on the search bar after you press on the "Show installed packages" button.Then put a tick on the small box on the left of the package you like to remove.Then press on the "Remove packages" button on the right of the window. Pisi removes the package and dependencies.
 
 Note:If you couldnot find the package you like to install try PisiBul  :ref:`PisiBul`.
 
@@ -111,7 +111,7 @@ Or you can use konsole and add the repo. Open konsole (press "alt+f2" and write 
 What is PisiBul, How to use it?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-PisiBul is a helping program defined by one of our friends as formula of simplfied life on Pardus. It helps us find and build pisi packages you could not find by Package manager.
+PisiBul is a helping program defined by one of our friends as formula of simplfied life on Pardus. It helps us find and build pisi packages you could not find by Package manager. You can install Pisibul by following the instructions found `here <https://developer.pardus.org.tr/pisi/pisi-pisibul.html>`_.
 
 Go to Pardus > Utilities > Pisibul and open the program. When you write the package name on the search bar the package appears on the right of the window. Click on the package then press on "the create the package" button. Then you must write root password. After that it creates the pisi package on the desktop after a couple of minutes depending on the amount of the package.You can install the package just clicking on the pisi package.
 
