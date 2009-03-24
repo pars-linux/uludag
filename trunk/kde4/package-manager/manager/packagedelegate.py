@@ -60,7 +60,8 @@ class PackageDelegate(QtGui.QItemDelegate):
         else:
             style = QtGui.QApplication.style()
 
-#        style.drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, opt, painter, opt.widget)
+        opt.state &= ~QtGui.QStyle.State_Selected
+        style.drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, opt, painter, None)
 
         if index.column() == 1:
             self.paintColMain(painter, option, index)
