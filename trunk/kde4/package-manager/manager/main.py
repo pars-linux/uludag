@@ -11,49 +11,28 @@
 # Please read the COPYING file.
 #
 
-# System
 import sys
 
-# Qt Stuff
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-# PyKDE4 Stuff
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-# Application Stuff
-from about import aboutData
-
-# Interfaces
-from faces import MainManager
-
-# DBus-Qt
 from dbus.mainloop.qt import DBusQtMainLoop
 
-class Manager(KMainWindow):
-    def __init__ (self, *args):
-        KMainWindow.__init__(self)
-        self.resize(640, 480)
-        self.setCentralWidget(MainManager(self))
+from about import aboutData
+from mainwindow import MainWindow
 
 if __name__ == '__main__':
 
-    # Set Command-line arguments
     KCmdLineArgs.init(sys.argv, aboutData)
-
-    # Create a Kapplication instance
     app = KApplication()
 
-    # DBus MainLoop
     DBusQtMainLoop(set_as_default=True)
 
-    # Create Main Widget
-    mainWindow = Manager(None, 'package-manager')
-    mainWindow.show()
+    manager = MainWindow()
+    manager.show()
 
-    # Create connection for lastWindowClosed signal to quit app
     app.connect(app, SIGNAL('lastWindowClosed()'), app.quit)
-
-    # Run the application
     app.exec_()

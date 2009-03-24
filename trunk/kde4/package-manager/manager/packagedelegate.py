@@ -39,7 +39,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         self.animatedHeight = DEFAULT_HEIGHT
         self.animationDirection = DOWN
         self.animatingRow = None
-        QObject.connect(self.timeLine, SIGNAL("valueChanged(qreal)"), parent.ui.packageList.reset)
+        QObject.connect(self.timeLine, SIGNAL("valueChanged(qreal)"), parent.packageList.reset)
         QObject.connect(self.timeLine, SIGNAL("finished()"), self.animationFinished)
 
     def animationFinished(self):
