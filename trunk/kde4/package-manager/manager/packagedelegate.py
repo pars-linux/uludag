@@ -75,6 +75,9 @@ class PackageDelegate(QtGui.QItemDelegate):
         buttonStyle = QtGui.QStyleOptionButton()
         buttonStyle.state = QtGui.QStyle.State_On if index.model().data(index, Qt.CheckStateRole) == QVariant(Qt.Checked) else QtGui.QStyle.State_Off
 
+        if option.state & QtGui.QStyle.State_MouseOver:
+            buttonStyle.state |= QtGui.QStyle.State_HasFocus
+
         buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + 64, 0, -2)
         opt.widget.style().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
 
