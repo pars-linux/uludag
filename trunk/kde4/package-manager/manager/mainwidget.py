@@ -17,7 +17,7 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-from uimain import Ui_MainWidget
+from ui_mainwidget import Ui_MainWidget
 
 from packageproxy import PackageProxy
 from packagemodel import PackageModel, GroupRole
