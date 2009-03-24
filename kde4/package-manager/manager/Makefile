@@ -4,10 +4,9 @@ INSTALL_DIR=/usr/kde/4/share/apps/$(PROJECT_NAME)
 all: build
 build:
 	pykde4uic -o uimain.py uimain.ui
-	pykde4uic -o uiitem.py ui.item.ui
 	pyrcc4 data.qrc -o data_rc.py
 clean:
-	rm *.pyc uimain.py uiitem.py data_rc.py
+	rm *.pyc uimain.py data_rc.py
 install: uninstall
 	mkdir -p $(INSTALL_DIR)
 	install -m 0755 main.py $(INSTALL_DIR)/$(PROJECT_NAME)
