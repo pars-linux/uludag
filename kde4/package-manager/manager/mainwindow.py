@@ -22,3 +22,4 @@ class MainWindow(KMainWindow):
         self.setCentralWidget(MainWidget(self))
         self.setCaption(i18n("Package Manager"))
         self.resize(640, 480)
+

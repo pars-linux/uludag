@@ -1,9 +1,10 @@
+
 PROJECT_NAME=package-manager
 INSTALL_DIR=/usr/kde/4/share/apps/$(PROJECT_NAME)
 
 all: build
 build:
-	pykde4uic -o uimain.py uimain.ui
+	pykde4uic -o ui_mainwidget.py mainwidget.ui
 	pyrcc4 data.qrc -o data_rc.py
 clean:
 	rm *.pyc uimain.py data_rc.py
