@@ -11,15 +11,18 @@
 # Please read the COPYING file.
 #
 
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
+from ui_mainwindow import Ui_MainWindow
+
 from mainwidget import MainWidget
 
-class MainWindow(KMainWindow):
+class MainWindow(KMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         KMainWindow.__init__(self, parent)
+        self.setupUi(self)
         self.setCentralWidget(MainWidget(self))
-        self.setCaption(i18n("Package Manager"))
-        self.resize(640, 480)
-
