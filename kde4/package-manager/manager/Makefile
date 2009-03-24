@@ -8,7 +8,7 @@ build:
 	pykde4uic -o ui_mainwindow.py mainwindow.ui
 	pyrcc4 data.qrc -o data_rc.py
 clean:
-	rm *.pyc uimain.py data_rc.py
+	rm *.pyc ui_mainwidget.py ui_mainwindow.py data_rc.py
 install: uninstall
 	mkdir -p $(INSTALL_DIR)
 	install -m 0755 main.py $(INSTALL_DIR)/$(PROJECT_NAME)
