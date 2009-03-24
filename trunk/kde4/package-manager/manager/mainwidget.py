@@ -17,7 +17,7 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-from uimain import Ui_MainManager
+from uimain import Ui_MainWidget
 
 from packageproxy import PackageProxy
 from packagemodel import PackageModel, GroupRole
@@ -25,7 +25,7 @@ from packagedelegate import PackageDelegate
 
 import backend
 
-class MainWidget(QtGui.QWidget, Ui_MainManager):
+class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent, standAlone=True):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
