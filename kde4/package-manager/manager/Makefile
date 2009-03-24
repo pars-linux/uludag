@@ -5,6 +5,7 @@ INSTALL_DIR=/usr/kde/4/share/apps/$(PROJECT_NAME)
 all: build
 build:
 	pykde4uic -o ui_mainwidget.py mainwidget.ui
+	pykde4uic -o ui_mainwindow.py mainwindow.ui
 	pyrcc4 data.qrc -o data_rc.py
 clean:
 	rm *.pyc uimain.py data_rc.py
