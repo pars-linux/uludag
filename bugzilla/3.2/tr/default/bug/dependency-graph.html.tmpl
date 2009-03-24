@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -33,14 +34,14 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = "Dependency Graph"
+[% title = "Bağımlılık Grafiği"
    header = title
  %]
 
 [% IF NOT multiple_bugs AND NOT doall %]
   [% filtered_desc = short_desc FILTER html %]
-  [% title = "$title for $terms.bug $bug_id"
-     header = "$header for $terms.bug <a href=\"show_bug.cgi?id=$bug_id\">$bug_id</a>"
+  [% title = "$terms.Bug $bug_id $title"
+     header = "$terms.Bug <a href=\"show_bug.cgi?id=$bug_id\">$bug_id</a> $header"
      subheader = filtered_desc
    %]
 [% END %]
@@ -50,14 +51,14 @@
 [% image_map %]
 
 <p>
-  Green circles represent open [% terms.bugs %].
+  Yeşil daireler açık [% terms.bugsAcc %] temsil eder.
 </p>
 
 [% IF image_map %]
-  <img src="[% image_url %]" alt="Dependency graph" usemap="#imagemap">
+  <img src="[% image_url %]" alt="Bağımlılık grafiği" usemap="#imagemap">
 [% ELSE %]
   <a href="[% map_url %]">
-    <img src="[% image_url %]" alt="Dependency graph" ismap="ismap">
+    <img src="[% image_url %]" alt="Bağımlılık grafiği" ismap="ismap">
   </a>
 [% END %]
 
@@ -66,24 +67,24 @@
 <form action="showdependencygraph.cgi" method="GET">
   <table>
     <tr>
-      <th align="left"><label for="id">[% terms.Bug %] numbers</label>:</th>
+      <th align="left"><label for="id">[% terms.Bug %] sayıları</label>:</th>
       <td><input id="id" name="id" value="[% bug_id %]"></td>
       <td>
         <input type="checkbox" id="showsummary" name="showsummary" [% " checked" IF showsummary %]>
-        <label for="showsummary">Show the summaries of all displayed [% terms.bugs %]</label>
+        <label for="showsummary">Gösterilen tüm [% terms.bugsGen %] özetlerini göster</label>
       </td>
     </tr>
 
     <tr>
-      <th align="left"><label for="display">Display:</label></th>
+      <th align="left"><label for="display">Görüntüle:</label></th>
       <td colspan="2">
         <select id="display" name="display">
           <option value="tree"[% 'selected="selected"' IF (!display || display == "tree") %]>
-            Restrict to [% terms.bugs %] having a direct relationship with entered [% terms.bugs %]</option>
+            Girilen [% terms.bugs %] ile sadece doğrudan ilişkili [% terms.bugsAcc %] göster</option>
           <option value="web" [% 'selected="selected"' IF display == "web" %]>
-            Show all [% terms.bugs %] having any relationship with entered [% terms.bugs %]</option>
+            Girilen [% terms.bugs %] ile herhangi bir ilişkisi olan tüm [% terms.bugsAcc %] göster</option>
           <option value="doall" [% 'selected="selected"' IF display == "doall" %]>
-            Show every [% terms.bug %] in the system with dependencies</option>
+            Sistemdeki tüm [% terms.bugAcc %] bağımlılıklarıyla göster</option>
         </select>
       </td>
     </tr>
@@ -92,15 +93,15 @@
       <th align="left"><label for="rankdir">Orientation:</label></th>
       <td colspan="2">
         <select id="rankdir" name="rankdir">
-          <option value="TB"[% " selected" IF rankdir == "TB" %]>Top to bottom</option>
-          <option value="BT"[% " selected" IF rankdir == "BT" %]>Bottom to top</option>
-          <option value="LR"[% " selected" IF rankdir == "LR" %]>Left to right</option>
-          <option value="RL"[% " selected" IF rankdir == "RL" %]>Right to left</option>
+          <option value="TB"[% " selected" IF rankdir == "TB" %]>Yukarıdan aşağıya</option>
+          <option value="BT"[% " selected" IF rankdir == "BT" %]>Aşağıdan yukarıya</option>
+          <option value="LR"[% " selected" IF rankdir == "LR" %]>Soldan sağa</option>
+          <option value="RL"[% " selected" IF rankdir == "RL" %]>Sağdan sola</option>
         </select>
       </td>
     </tr>
   </table>
-  <input type="submit" id="change" value="Change Parameters">
+  <input type="submit" id="change" value="Parametreleri Değiştir">
 </form>
 
 [% PROCESS global/footer.html.tmpl %]
