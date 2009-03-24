@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="data" >
     <file>icons/package.png</file>
+    <file>icons/package-manager.png</file>
   </qresource>
 </RCC>
