@@ -19,12 +19,13 @@
   #                 Joel Peshkin <bugreport@peshkin.net>
   #                 Erik Stambaugh <erik@dasbistro.com>
   #                 Marc Schumann <wurblzap@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 <tr>
-  <th><label for="data">File</label>:</th>
+  <th><label for="data">Dosya</label>:</th>
   <td>
-    <em>Enter the path to the file on your computer.</em><br>
+    <em>Bilgisayarınızdaki dosyanın yolunu girin.</em><br>
     <input type="file" id="data" name="data" size="50"
       [% IF Param("allow_attach_url") %]
         onchange="DataFieldHandler()" 
@@ -34,12 +35,12 @@
 </tr>
 [% IF Param("maxlocalattachment") %]
 <tr>
-  <th>BigFile:</th>
+  <th>BüyükDosya:</th>
   <td>
     <input type="checkbox" id="bigfile"
            name="bigfile" value="bigfile">
     <label for="bigfile">
-      Big File - Stored locally and may be purged
+      Büyük Dosya - Yerelde saklanır ve temizlenebilir
     </label>
   </td>
 </tr>
@@ -56,34 +57,34 @@
 </tr>
 [% END %]
 <tr>
-  <th><label for="description">Description</label>:</th>
+  <th><label for="description">Açıklama</label>:</th>
   <td>
-    <em>Describe the attachment briefly.</em><br>
+    <em>Eki kısaca açıklayın.</em><br>
     <input type="text" id="description" name="description" size="60" maxlength="200">
   </td>
 </tr>
 <tr>
-  <th>Content Type:</th>
+  <th>İçerik Türü:</th>
   <td>
-    <em>If the attachment is a patch, check the box below.</em><br>
+    <em>Ek bir yama ise aşağıdaki kutuyu işaretleyin.</em><br>
     <input type="checkbox" id="ispatch" name="ispatch" value="1"
            onchange="setContentTypeDisabledState(this.form);">
-    <label for="ispatch">patch</label><br><br>
+    <label for="ispatch">yama</label><br><br>
 
-    <em>Otherwise, choose a method for determining the content type.</em><br>
+    <em>Aksi taktirde, içerik türünü belirleme yöntemini seçin.</em><br>
     <input type="radio" id="autodetect"
            name="contenttypemethod" value="autodetect" checked="checked">
-      <label for="autodetect">auto-detect</label><br>
+      <label for="autodetect">otomatik belirle</label><br>
     <input type="radio" id="list"
            name="contenttypemethod" value="list">
-      <label for="list">select from list</label>:
+      <label for="list">listeden seç</label>:
       <select name="contenttypeselection" id="contenttypeselection"
               onchange="this.form.contenttypemethod[1].checked = true;">
         [% PROCESS "attachment/content-types.html.tmpl" %]
       </select><br>
     <input type="radio" id="manual"
                  name="contenttypemethod" value="manual">
-      <label for="manual">enter manually</label>:
+      <label for="manual">kendin gir</label>:
       <input type="text" name="contenttypeentry" id="contenttypeentry"
              size="30" maxlength="200"
              onchange="if (this.value) this.form.contenttypemethod[2].checked = true;">

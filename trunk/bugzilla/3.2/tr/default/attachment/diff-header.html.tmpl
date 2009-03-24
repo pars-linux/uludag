@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): John Keiser <jkeiser@netscape.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# Define strings that will serve as the title and header of this page %]
@@ -23,10 +24,11 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% title = BLOCK %]
+[% terms.Bug %] #[% bugid %] 
   [% IF attachid %]
-Attachment #[% attachid %] for [% terms.bug %] #[% bugid %]
+ek #[% attachid %]
   [% ELSE %]
-Interdiff of #[% oldid %] and #[% newid %] for [% terms.bug %] #[% bugid %]
+#[% oldid %] ile #[% newid %] farkı
   [% END %]
 [% END %]
 
@@ -209,12 +211,12 @@ tbody.file pre:empty {
 [% IF headers %]
   [% header = BLOCK %]
     [% IF attachid %]
-      Attachment #[% attachid %]: [% description FILTER html %]
+      Ek #[% attachid %]: [% description FILTER html %]
     [% ELSE %]
-      Diff Between 
        #[% oldid %]: <a href="[% PROCESS diffurl id=oldid %]">[% old_desc FILTER html %]</a>
-      and 
+      ile
        #[% newid %]: <a href="[% PROCESS diffurl id=newid %]">[% new_desc FILTER html %]</a>
+      farkı
     [% END %]
     for <a href="show_bug.cgi?id=[% bugid %]">[% terms.bug %] #[% bugid %]</a>
   [% END %]
@@ -243,11 +245,10 @@ tbody.file pre:empty {
   [% IF headers %]
     <a href="[% PROCESS viewurl id=attachid %]">View</a>
     | <a href="[% PROCESS editurl id=attachid %]">Details</a>
-    | <a href="[% PROCESS diffurl id=attachid %]&amp;context=[% context FILTER url_quote %]&amp;collapsed=[% collapsed FILTER url_quote %]&amp;headers=[% headers FILTER url_quote %]&amp;format=raw">Raw&nbsp;Unified</a>
+    | <a href="[% PROCESS diffurl id=attachid %]&amp;context=[% context FILTER url_quote %]&amp;collapsed=[% collapsed FILTER url_quote %]&amp;headers=[% headers FILTER url_quote %]&amp;format=raw">Ham&nbsp;Birleşik</a>
   [% END %]
   [% IF other_patches.size > 0 %]
     [% IF headers %] |[%END%]
-    Differences between
     <form style="display: inline" action="attachment.cgi">
       <select name="oldid">
       [% FOREACH patch = other_patches %]
@@ -256,8 +257,8 @@ tbody.file pre:empty {
         >[% patch.desc FILTER html %]</option>
       [% END %]
       </select>
-      and this patch
-      <input type="submit" id="diff" value="Diff">
+      ile bu yama arasındaki farklar
+      <input type="submit" id="diff" value="Fark">
       <input type="hidden" name="action" value="interdiff">
       <input type="hidden" name="newid" value="[% attachid %]">
       <input type="hidden" name="headers" value="[% headers FILTER html %]">
@@ -266,7 +267,7 @@ tbody.file pre:empty {
   <br>
 [% ELSE %]
   [% IF headers %]
-    <a href="attachment.cgi?oldid=[% oldid %]&amp;newid=[% newid %]&amp;action=interdiff&amp;format=raw">Raw Unified</a>
+    <a href="attachment.cgi?oldid=[% oldid %]&amp;newid=[% newid %]&amp;action=interdiff&amp;format=raw">Ham Birleşik</a>
     |
   [% END %]
 [% END %]
@@ -275,24 +276,24 @@ tbody.file pre:empty {
 <a href="#"
    onmouseover="lastStatus = window.status; window.status='Collapse All'; return true"
    onmouseout="window.status = lastStatus; return true"
-   onclick="return collapse_all()">Collapse All</a> | 
+   onclick="return collapse_all()">Tümünü Kapat</a> | 
 <a href="#"
    onmouseover="lastStatus = window.status; window.status='Expand All'; return true"
    onmouseout="window.status = lastStatus; return true"
-   onclick="return expand_all()">Expand All</a>
+   onclick="return expand_all()">Tümünü Aç</a>
 
 [% IF do_context %]
   [%# only happens for normal viewing, not interdiff %]
-  | <span style='font-weight: bold'>Context:</span>
+  | <span style='font-weight: bold'>Bağlam:</span>
   [% IF context == "patch" %]
-    (<strong>Patch</strong> / 
+    (<strong>Yama</strong> / 
   [% ELSE %]
-    (<a href="[% PROCESS diffurl id=attachid %]&amp;headers=[% headers FILTER url_quote %]">Patch</a> / 
+    (<a href="[% PROCESS diffurl id=attachid %]&amp;headers=[% headers FILTER url_quote %]">Yama</a> / 
   [% END %]
   [% IF context == "file" %]
-    <strong>File</strong> /
+    <strong>Dosya</strong> /
   [% ELSE %]
-    <a href="[% PROCESS diffurl id=attachid %]&amp;headers=[% headers FILTER url_quote %]&amp;context=file">File</a> / 
+    <a href="[% PROCESS diffurl id=attachid %]&amp;headers=[% headers FILTER url_quote %]&amp;context=file">Dosya</a> / 
   [% END %]
 
   [% IF context == "patch" || context == "file" %]
@@ -303,15 +304,12 @@ tbody.file pre:empty {
 [% END %]
 
 [% IF warning %]
-<h2 class="warning">Warning: 
+<h2 class="warning">Uyarı: 
   [% IF warning == "interdiff1" %]
-  this difference between two patches may show things in the wrong places due
-  to a limitation in [% terms.Bugzilla %] when comparing patches with different
-  sets of files.
+  iki yama arasındaki bu fark çıktısı, farklı dosya kümelerinden gelen yamaları karşılaştırma noktasındaki [% terms.Bugzilla %] kısıtlamalarından dolayı yanlış yerleştirmeler yapabilir.
   [% END %]
   [% IF warning == "interdiff2" %]
-  this difference between two patches may be inaccurate due to a limitation in
-  [%+ terms.Bugzilla %] when comparing patches made against different revisions.
+  iki yama arasındaki bu fark çıktısı, farklı sürümlerden gelen yapamaları karşılaştırma noktasındaki [%+ terms.Bugzilla %] kısıtlamalarından dolayı kusurlu olabilir.
   [% END %]
 </h2>
 [% ELSE %]
