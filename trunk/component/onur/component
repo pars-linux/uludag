@@ -282,10 +282,10 @@ editor
     vi
         applications/editors/vim-colorschemes/pspec.xml
         applications/editors/vim/pspec.xml
+        applications/util/vimchant/pspec.xml
     web
         applications/editors/kompozer/pspec.xml
         applications/editors/nvu/pspec.xml
-
     applications/editors/joe/pspec.xml
     applications/editors/ed/pspec.xml
 
@@ -466,6 +466,7 @@ hardware
     bluetooth
         applications/hardware/bluez-libs/pspec.xml
         applications/hardware/bluez-utils/pspec.xml
+        applications/hardware/bluez/pspec.xml
         applications/hardware/cwiid/pspec.xml
     cpu
         applications/admin/irqbalance/pspec.xml
@@ -504,13 +505,11 @@ hardware
         applications/hardware/smartmontools/pspec.xml
         applications/util/readahead/pspec.xml
         applications/util/testdisk/pspec.xml
-
     emulator
         applications/emulators/dosbox/pspec.xml
         applications/emulators/vice/pspec.xml
         applications/emulators/xmame/pspec.xml
         applications/emulators/zsnes/pspec.xml
-
     firmware
         kernel/firmware/accessrunner-firmware/pspec.xml
         kernel/firmware/acx100-firmware/pspec.xml
@@ -638,7 +637,6 @@ hardware
         applications/virtualization/virtualbox/pspec.xml
         applications/virtualization/xen/pspec.xml
 
-
 kernel
     default (linux, base, standard whatever)
         kernel/drivers/acerhk/pspec.xml
@@ -724,6 +722,8 @@ multimedia
         programming/libs/freealut/pspec.xml
         programming/libs/FreeImage/pspec.xml
         programming/libs/FusionSound/pspec.xml
+        programming/libs/frei0r-plugins/pspec.xml
+        programming/libs/gavl/pspec.xml
         programming/libs/gsm/pspec.xml
         programming/libs/imlib2/pspec.xml
         programming/libs/ladspa-cmt/pspec.xml
@@ -815,6 +815,7 @@ multimedia
         applications/multimedia/vorbis-tools/pspec.xml
     stream
         applications/network/streamripper/pspec.xml
+        server/icecast/pspec.xml
     tv
         applications/multimedia/tvtime/pspec.xml
         applications/multimedia/xawtv/pspec.xml
@@ -881,6 +882,7 @@ network
     library
         applications/network/telepathy-qt/pspec.xml
         applications/network/tapioca-qt/pspec.xml
+        programming/libs/libproxy/pspec.xml
 
     mail
         applications/network/alpine/pspec.xml
@@ -964,6 +966,16 @@ office
         applications/doc/docbook/xmlto/pspec.xml
     dictionary
         applications/util/qstardict/pspec.xml
+        applications/dictionaries/hunspell-dict-ca/pspec.xml
+        applications/dictionaries/hunspell-dict-de/pspec.xml
+        applications/dictionaries/hunspell-dict-en/pspec.xml
+        applications/dictionaries/hunspell-dict-es/pspec.xml
+        applications/dictionaries/hunspell-dict-fr/pspec.xml
+        applications/dictionaries/hunspell-dict-it/pspec.xml
+        applications/dictionaries/hunspell-dict-nl/pspec.xml
+        applications/dictionaries/hunspell-dict-pl/pspec.xml
+        applications/dictionaries/hunspell-dict-pt/pspec.xml
+        applications/dictionaries/hunspell-dict-sv/pspec.xml
     koffice
         desktop/kde/i18n/koffice-l10n-ca/pspec.xml
         desktop/kde/i18n/koffice-l10n-cs/pspec.xml
@@ -1005,6 +1017,7 @@ office
     openoffice
         applications/openoffice/pspec.xml
         applications/zemberek-openoffice/pspec.xml
+        applications/util/mdbtools/pspec.xml
     spellcheck
         applications/dictionaries/aspell/aspell-de/pspec.xml
         applications/dictionaries/aspell/aspell-en/pspec.xml
@@ -1416,6 +1429,7 @@ programming
             programming/microcontroller/avr-libc/pspec.xml
             programming/microcontroller/binutils-avr/pspec.xml
             programming/microcontroller/gcc-avr/pspec.xml
+            programming/microcontroller/lpc21isp/pspec.xml
         programming/languages/R/pspec.xml
         programming/languages/erlang/pspec.xml
         programming/languages/falcon/pspec.xml
@@ -1519,7 +1533,7 @@ server
         server/ptsp/ltspfs/pspec.xml
         server/ptsp/ptsp-client/pspec.xml
         server/ptsp/ptsp-server/pspec.xml
-    www
+    web
         server/www/apache/pspec.xml
         server/www/htdig/pspec.xml
         server/www/mod_fastcgi/pspec.xml
@@ -1600,6 +1614,7 @@ system
         system/base/libXdmcp/pspec.xml
         system/base/libxml2/pspec.xml
         system/base/libxslt/pspec.xml
+        system/base/lsb-release/pspec.xml
         system/base/lzma/pspec.xml
         system/base/man-pages/pspec.xml
         system/base/man/pspec.xml
@@ -1817,28 +1832,6 @@ x11
 
 all packages in devel
 ---------------------------------------------------
-
-applications/dictionaries/hunspell-dict-ca/pspec.xml
-applications/dictionaries/hunspell-dict-de/pspec.xml
-applications/dictionaries/hunspell-dict-en/pspec.xml
-applications/dictionaries/hunspell-dict-es/pspec.xml
-applications/dictionaries/hunspell-dict-fr/pspec.xml
-applications/dictionaries/hunspell-dict-it/pspec.xml
-applications/dictionaries/hunspell-dict-nl/pspec.xml
-applications/dictionaries/hunspell-dict-pl/pspec.xml
-applications/dictionaries/hunspell-dict-pt/pspec.xml
-applications/dictionaries/hunspell-dict-sv/pspec.xml
-applications/hardware/bluez/pspec.xml
-applications/util/mdbtools/pspec.xml
-applications/util/vimchant/pspec.xml
-programming/libs/frei0r-plugins/pspec.xml
-programming/libs/gavl/pspec.xml
-programming/libs/libproxy/pspec.xml
-programming/microcontroller/lpc21isp/pspec.xml
-server/icecast/pspec.xml
-system/base/lsb-release/pspec.xml
-
-
 applications/admin/gfxboot/pspec.xml
 applications/admin/gfxtheme-pardus/pspec.xml
 applications/admin/syslinux/pspec.xml
@@ -1907,9 +1900,6 @@ applications/multimedia/vnc2swf/pspec.xml
 applications/multimedia/vobcopy/pspec.xml
 applications/multimedia/xvidcap/pspec.xml
 applications/multimedia/yafray/pspec.xml
-
-
-
 
 applications/network/netcat/pspec.xml
 applications/network/nfdump/pspec.xml
@@ -1983,8 +1973,6 @@ desktop/gnome/libsvg/pspec.xml
 desktop/gnome/pycairo/pspec.xml
 desktop/gnome/pygobject/pspec.xml
 desktop/gnome/pygtk/pspec.xml
-
-
 
 desktop/kde4/amarok-kde4/pspec.xml
 desktop/kde4/digikam-kde4/pspec.xml
