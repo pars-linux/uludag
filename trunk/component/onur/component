@@ -1817,6 +1817,28 @@ x11
 
 all packages in devel
 ---------------------------------------------------
+
+applications/dictionaries/hunspell-dict-ca/pspec.xml
+applications/dictionaries/hunspell-dict-de/pspec.xml
+applications/dictionaries/hunspell-dict-en/pspec.xml
+applications/dictionaries/hunspell-dict-es/pspec.xml
+applications/dictionaries/hunspell-dict-fr/pspec.xml
+applications/dictionaries/hunspell-dict-it/pspec.xml
+applications/dictionaries/hunspell-dict-nl/pspec.xml
+applications/dictionaries/hunspell-dict-pl/pspec.xml
+applications/dictionaries/hunspell-dict-pt/pspec.xml
+applications/dictionaries/hunspell-dict-sv/pspec.xml
+applications/hardware/bluez/pspec.xml
+applications/util/mdbtools/pspec.xml
+applications/util/vimchant/pspec.xml
+programming/libs/frei0r-plugins/pspec.xml
+programming/libs/gavl/pspec.xml
+programming/libs/libproxy/pspec.xml
+programming/microcontroller/lpc21isp/pspec.xml
+server/icecast/pspec.xml
+system/base/lsb-release/pspec.xml
+
+
 applications/admin/gfxboot/pspec.xml
 applications/admin/gfxtheme-pardus/pspec.xml
 applications/admin/syslinux/pspec.xml
