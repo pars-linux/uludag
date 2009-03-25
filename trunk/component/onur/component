@@ -810,6 +810,7 @@ multimedia
         applications/multimedia/twolame/pspec.xml
         applications/multimedia/vorbis-tools/pspec.xml
     stream
+        applications/network/streamripper/pspec.xml
     tv
         applications/multimedia/tvtime/pspec.xml
         applications/multimedia/xawtv/pspec.xml
@@ -824,6 +825,99 @@ multimedia
         applications/multimedia/x264/pspec.xml
         desktop/kde/kmplayer/pspec.xml
 
+network
+    chat
+        applications/network/amsn-kde/pspec.xml
+        applications/network/amsn/pspec.xml
+        applications/network/skype/pspec.xml
+        applications/network/bitlbee/pspec.xml
+        applications/network/pidgin/pspec.xml
+        applications/network/qtwitter/pspec.xml
+        applications/network/quassel/pspec.xml
+    connection
+        applications/network/br2684ctl/pspec.xml
+        applications/network/bridge-utils/pspec.xml
+        applications/network/ebtables/pspec.xml
+        applications/network/ethtool/pspec.xml
+        applications/network/iproute2/pspec.xml
+        applications/network/iptables/pspec.xml
+        applications/network/linux-atm/pspec.xml
+        applications/network/minicom/pspec.xml
+        applications/network/openvpn/pspec.xml
+        applications/network/ppp/pspec.xml
+        applications/network/pptpclient/pspec.xml
+        applications/network/rp-pppoe/pspec.xml
+        applications/network/rutilt/pspec.xml
+        applications/network/sabishape/pspec.xml
+        applications/network/wpa_supplicant/pspec.xml
+    discovery
+        applications/network/avahi-bindings/pspec.xml
+        applications/network/avahi/pspec.xml
+        applications/security/nmap/pspec.xml
+        applications/network/traceroute/pspec.xml
+        applications/network/whois/pspec.xml
+    download
+        applications/network/aria2/pspec.xml
+        applications/network/wget/pspec.xml
+        applications/network/youtube-dl/pspec.xml
+    fax
+        applications/network/efax-gtk/pspec.xml
+        applications/network/jhylafax/pspec.xml
+    ftp
+        applications/network/gftp/pspec.xml
+        applications/network/ncftp/pspec.xml
+        applications/network/netkit-ftp/pspec.xml
+    library
+        applications/network/telepathy-qt/pspec.xml
+        applications/network/tapioca-qt/pspec.xml
+
+    mail
+        applications/network/alpine/pspec.xml
+        applications/network/crm114/pspec.xml
+        applications/network/mozilla/thunderbird/pspec.xml
+        applications/network/normalizemime/pspec.xml
+        applications/network/bogofilter/pspec.xml
+        applications/network/metamail/pspec.xml
+        applications/network/spamassassin/pspec.xml
+        applications/network/sylpheed/pspec.xml
+    monitor
+        applications/network/net-snmp/pspec.xml
+        applications/network/iptraf/pspec.xml
+        applications/network/wireshark/pspec.xml
+        applications/network/tcpdump/pspec.xml
+    plugin
+        applications/network/mozilla/flashplugin/pspec.xml
+        applications/network/mozilla/gecko-mediaplayer/pspec.xml
+        applications/network/mozilla/mplayerplug-in/pspec.xml
+    p2p
+        applications/network/gift-ares/pspec.xml
+        applications/network/giftcurs/pspec.xml
+        applications/network/gift-fasttrack/pspec.xml
+        applications/network/gift-gnutella/pspec.xml
+        applications/network/gift-openft/pspec.xml
+        applications/network/gift/pspec.xml
+        applications/network/nicotine/pspec.xml
+    remoteshell
+        applications/network/italc/pspec.xml
+        applications/network/rdesktop/pspec.xml
+        applications/network/telnet-bsd/pspec.xml
+        applications/network/tn5250/pspec.xml
+        applications/network/vpnc/pspec.xml
+        applications/network/synergy/pspec.xml
+        applications/network/tightvnc/pspec.xml
+    rss
+        applications/network/canto/pspec.xml
+    share
+        applications/network/grsync/pspec.xml
+        applications/network/nfs-utils/pspec.xml
+        applications/network/rsync/pspec.xml
+        applications/network/smbldap-tools/pspec.xml
+    voip
+        applications/network/decibel/pspec.xml
+    web
+        applications/network/links/pspec.xml
+        applications/network/metalink/pspec.xml
+        applications/network/mozilla/firefox/pspec.xml
 office
     docbook
         applications/doc/docbook/asciidoc/pspec.xml
@@ -1377,6 +1471,7 @@ science
 
 server
     authentication
+        applications/network/mit-kerberos/pspec.xml
         server/freeradius/pspec.xml
         server/nis/ypbind/pspec.xml
         server/nis/ypserv/pspec.xml
@@ -1411,6 +1506,7 @@ server
         server/www/mod_perl/pspec.xml
         server/www/mod_python/pspec.xml
         server/www/mrtg/pspec.xml
+        applications/admin/webalizer/pspec.xml
     server/bind/pspec.xml
     server/dhcp/pspec.xml
     server/ejabberd/pspec.xml
@@ -1575,7 +1671,6 @@ system
         system/devel/yacc/pspec.xml
         system/devel/yasm/pspec.xml
     doc
-        (empty but system components can put docs in here)
     installer
         system/yali4-firstBoot/pspec.xml
         system/yali4/pspec.xml
@@ -1705,7 +1800,6 @@ applications/admin/dazuko/pspec.xml
 applications/admin/gfxboot/pspec.xml
 applications/admin/gfxtheme-pardus/pspec.xml
 applications/admin/syslinux/pspec.xml
-applications/admin/webalizer/pspec.xml
 
 applications/emulators/scummvm/pspec.xml
 applications/emulators/wine/pspec.xml
@@ -1775,88 +1869,15 @@ applications/multimedia/vobcopy/pspec.xml
 applications/multimedia/xvidcap/pspec.xml
 applications/multimedia/yafray/pspec.xml
 
-applications/network/alpine/pspec.xml
-applications/network/amsn-kde/pspec.xml
-applications/network/amsn/pspec.xml
-applications/network/aria2/pspec.xml
-applications/network/avahi-bindings/pspec.xml
-applications/network/avahi/pspec.xml
-applications/network/bitlbee/pspec.xml
-applications/network/bogofilter/pspec.xml
-applications/network/br2684ctl/pspec.xml
-applications/network/bridge-utils/pspec.xml
-applications/network/canto/pspec.xml
-applications/network/crm114/pspec.xml
-applications/network/decibel/pspec.xml
-applications/network/ebtables/pspec.xml
-applications/network/efax-gtk/pspec.xml
-applications/network/ethtool/pspec.xml
-applications/network/gftp/pspec.xml
-applications/network/gift-ares/pspec.xml
-applications/network/giftcurs/pspec.xml
-applications/network/gift-fasttrack/pspec.xml
-applications/network/gift-gnutella/pspec.xml
-applications/network/gift-openft/pspec.xml
-applications/network/gift/pspec.xml
-applications/network/grsync/pspec.xml
-applications/network/iproute2/pspec.xml
-applications/network/iptables/pspec.xml
-applications/network/iptraf/pspec.xml
-applications/network/italc/pspec.xml
-applications/network/jhylafax/pspec.xml
-applications/network/links/pspec.xml
-applications/network/linux-atm/pspec.xml
-applications/network/metalink/pspec.xml
-applications/network/metamail/pspec.xml
-applications/network/minicom/pspec.xml
-applications/network/mit-kerberos/pspec.xml
-applications/network/mozilla/firefox/pspec.xml
-applications/network/mozilla/flashplugin/pspec.xml
-applications/network/mozilla/gecko-mediaplayer/pspec.xml
-applications/network/mozilla/mplayerplug-in/pspec.xml
-applications/network/mozilla/thunderbird/pspec.xml
-applications/network/ncftp/pspec.xml
+
+
+
 applications/network/netcat/pspec.xml
-applications/network/netkit-ftp/pspec.xml
-applications/network/net-snmp/pspec.xml
 applications/network/nfdump/pspec.xml
-applications/network/nfs-utils/pspec.xml
-applications/network/nicotine/pspec.xml
-applications/network/normalizemime/pspec.xml
 applications/network/ntlmaps/pspec.xml
-applications/network/openvpn/pspec.xml
-applications/network/pidgin/pspec.xml
 applications/network/pilot-link/pspec.xml
-applications/network/ppp/pspec.xml
-applications/network/pptpclient/pspec.xml
-applications/network/qtwitter/pspec.xml
-applications/network/quassel/pspec.xml
 applications/network/rdate/pspec.xml
-applications/network/rdesktop/pspec.xml
-applications/network/rp-pppoe/pspec.xml
 applications/network/rrdtool/pspec.xml
-applications/network/rsync/pspec.xml
-applications/network/rutilt/pspec.xml
-applications/network/sabishape/pspec.xml
-applications/network/skype/pspec.xml
-applications/network/smbldap-tools/pspec.xml
-applications/network/spamassassin/pspec.xml
-applications/network/streamripper/pspec.xml
-applications/network/sylpheed/pspec.xml
-applications/network/synergy/pspec.xml
-applications/network/tapioca-qt/pspec.xml
-applications/network/tcpdump/pspec.xml
-applications/network/telepathy-qt/pspec.xml
-applications/network/telnet-bsd/pspec.xml
-applications/network/tightvnc/pspec.xml
-applications/network/tn5250/pspec.xml
-applications/network/traceroute/pspec.xml
-applications/network/vpnc/pspec.xml
-applications/network/wget/pspec.xml
-applications/network/whois/pspec.xml
-applications/network/wireshark/pspec.xml
-applications/network/wpa_supplicant/pspec.xml
-applications/network/youtube-dl/pspec.xml
 
 applications/security/apparmor-docs/pspec.xml
 applications/security/apparmor-parser/pspec.xml
@@ -1876,7 +1897,6 @@ applications/security/metasploit/pspec.xml
 applications/security/nessus-lib/pspec.xml
 applications/security/nessus-plugins/pspec.xml
 applications/security/nessus/pspec.xml
-applications/security/nmap/pspec.xml
 applications/security/nss_ldap/pspec.xml
 applications/security/pam_fprint/pspec.xml
 applications/security/pam-krb5/pspec.xml
@@ -2254,11 +2274,13 @@ Ideas
 ------------------------------------
 - rename qt4 and qt packages
 - rename gtk2 to gtk
-- use "no" library component, differentiate in IsA tags
+- system.doc is empty but system components will put docs there
 - shall language bindings be splitted or not ? (60, 70, 80, 90) programming.language is really confusing, if we name it language it is confused with i10l, removing the language part does not seem necessary though since python "is" a programming.language
 - hardware emulator and virtualization should be merged maybe ? they do the same thing, only with different methods
 - hardware info name may change
 - kde addons contains packages that we added by hand as Pardus tools, or used only for kde as a kde enhancement
 - rename tool component to something better (accessory, util etc.) maybe
+- network.remoteshell should have a better name
+- should zemberek-server be in office.spellcheck ?
 
 
