@@ -108,7 +108,7 @@ class ServiceItemWidget(QtGui.QWidget):
             icon = 'running'
         else:
             icon = 'notrunning'
-        self.ui.labelStatus.setPixmap(QtGui.QPixmap(':data/icons/%s.png' % icon))
+        self.ui.labelStatus.setPixmap(QtGui.QPixmap(':data/%s.png' % icon))
 
     def setService(self):
         try:

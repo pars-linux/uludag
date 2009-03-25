@@ -95,13 +95,17 @@ class Install(install):
             destpath = os.path.join(KDEDIR, "share/locale/%s/LC_MESSAGES/" % lang)
             shutil.copy("po/%s.mo" % lang, os.path.join(destpath, "%s.mo" % i18n_domain))
         project_dir = os.path.join(KDEDIR, "share/apps", PROJECT)
-        os.makedirs(project_dir)
+        try:
+            os.makedirs(project_dir)
+        except:
+            pass
         for path in data_files():
             shutil.copyfile(os.path.join("src",path), os.path.join(project_dir,path))
         service_file = os.path.join(KDEDIR, "share/kde4/services", DESKTOPFILE)
         shutil.copy(os.path.join("src/",DESKTOPFILE), service_file)
-        os.link(os.path.join(project_dir,"main.py"), os.path.join(project_dir,PROJECT)+".py")
-        os.chmod(os.path.join(project_dir,PROJECT)+".py",0755)
+        shutil.move(os.path.join(project_dir,"main.py"), os.path.join(project_dir,PROJECT))
+        os.link(os.path.join(project_dir,PROJECT), os.path.join(project_dir,PROJECT+'.py'))
+        os.chmod(os.path.join(project_dir,PROJECT+'.py'),0755)
 
 setup(
       name              = PROJECT,
