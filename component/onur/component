@@ -264,6 +264,8 @@ desktop
         motif
             programming/libs/openmotif/pspec.xml
             programming/libs/lesstif/pspec.xml
+        tcl
+            programming/libs/tls/pspec.xml
         programming/libs/wxGTK/pspec.xml
         programming/libs/fltk/pspec.xml
 
@@ -849,6 +851,7 @@ multimedia
         programming/libs/dssi/pspec.xml
         programming/libs/fribidi/pspec.xml
         programming/libs/xsynth-dssi/pspec.xml
+        programming/libs/teckit/pspec.xml
     plugin
         desktop/kde4/kipi-plugins-kde4/pspec.xml
         desktop/kde/k3bmonkeyaudioplugin/pspec.xml
@@ -2275,10 +2278,9 @@ programming/libs/swh-plugins/pspec.xml
 programming/libs/symmetrica/pspec.xml
 programming/libs/tachyon/pspec.xml
 programming/libs/tap-plugins/pspec.xml
-programming/libs/teckit/pspec.xml
-programming/libs/tls/pspec.xml
-programming/libs/tolua++/pspec.xml
 
+
+programming/libs/tolua++/pspec.xml
 programming/libs/unixODBC/pspec.xml
 programming/libs/tre/pspec.xml
 programming/libs/ucl/pspec.xml
