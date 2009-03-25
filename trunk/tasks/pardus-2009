@@ -46,12 +46,12 @@
   * HAL 0.5.12 geçişi (/40)
 
 * GNOME güncellemeleri (Ozan Çağlayan)
-  * glib2 2.20 geçişi (-)
+  * glib2 2.20 geçişi (+)
   * gtk2 2.16 geçişi (-)
 
 * KDE4 (Ozan Çağlayan)
   * kdenlive ve bağımlılıkları (+)
-  * kbluetooth (-)
+  * kbluetooth (+)
   * system-config-printer-kde'nin ayaklandırılması (+)
   * kdelibs'ten arts bağımlılığının atılması, ogg ve wav çalan düzgün bir external player bulunması, ilgili .upd dosyasının ve kdebase-sounds paketinin hazırlanması (-)
 
