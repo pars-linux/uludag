@@ -246,6 +246,9 @@ desktop
             desktop/kde/base/qt/pspec.xml
             desktop/kde/gtk-qt-engine/pspec.xml
             desktop/freedesktop/dbus-qt3/pspec.xml
+        qwt
+            programming/libs/qwtplot3d/pspec.xml
+            programming/libs/qwt/pspec.xml
         gtk
             desktop/gnome/atk/pspec.xml
             desktop/gnome/cairomm/pspec.xml
@@ -266,6 +269,7 @@ desktop
             programming/libs/lesstif/pspec.xml
         programming/libs/wxGTK/pspec.xml
         programming/libs/fltk/pspec.xml
+        programming/libs/newt/pspec.xml
 
 editor
     emacs
@@ -296,6 +300,11 @@ game
         programming/libs/cegui/pspec.xml
         programming/libs/cel/pspec.xml
         programming/libs/clanlib/pspec.xml
+        programming/libs/simgear/pspec.xml
+        programming/libs/plib/pspec.xml
+        programming/libs/ois/pspec.xml
+        programming/libs/ode/pspec.xml
+        programming/libs/ogre/pspec.xml
     action
         applications/games/abuse-data/pspec.xml
         applications/games/abuse/pspec.xml
@@ -560,6 +569,8 @@ hardware
     library
         programming/libs/dmapi/pspec.xml
         programming/libs/zvbi/pspec.xml
+        programming/libs/openobex/pspec.xml
+        programming/libs/obexftp/pspec.xml
     mobile
         applications/hardware/gnokii/pspec.xml
         applications/pda/libopensync-plugin-file/pspec.xml
@@ -851,6 +862,11 @@ multimedia
         programming/libs/xsynth-dssi/pspec.xml
         programming/libs/teckit/pspec.xml
         programming/libs/tachyon/pspec.xml
+        programming/libs/quesoglc/pspec.xml
+        programming/libs/qimageblitz/pspec.xml
+        programming/libs/phonon/pspec.xml
+        programming/libs/OpenSceneGraph/pspec.xml
+        programming/libs/openexr/pspec.xml
     plugin
         desktop/kde4/kipi-plugins-kde4/pspec.xml
         desktop/kde/k3bmonkeyaudioplugin/pspec.xml
@@ -986,6 +1002,13 @@ network
         programming/libs/yaz/pspec.xml
         programming/libs/farsight2/pspec.xml
         programming/libs/xmlrpc-epi/pspec.xml
+        programming/libs/spidermonkey/pspec.xml
+        programming/libs/ortp/pspec.xml
+        programming/libs/openslp/pspec.xml
+        programming/libs/openmpi/pspec.xml
+        programming/libs/nspr/pspec.xml
+        programming/libs/nss/pspec.xml
+        programming/libs/neon/pspec.xml
 
     mail
         applications/network/alpine/pspec.xml
@@ -1047,6 +1070,7 @@ office
     library
         programming/libs/ebook-tools/pspec.xml
         programming/libs/wv2/pspec.xml
+        programming/libs/podofo/pspec.xml
     docbook
         applications/doc/docbook/asciidoc/pspec.xml
         applications/doc/docbook/build-docbook-catalog/pspec.xml
@@ -1532,6 +1556,8 @@ programming
             programming/languages/python/xpyb/pspec.xml
             programming/languages/python/zodb3/pspec.xml
             programming/languages/python/ZopeInterface/pspec.xml
+            programming/libs/pylibacl/pspec.xml
+            programming/libs/pyxattr/pspec.xml
         tcl
             programming/languages/tcl/blt/pspec.xml
             programming/languages/tcl/snack/pspec.xml
@@ -1594,6 +1620,15 @@ science
         programming/libs/fplll/pspec.xml
         programming/libs/symmetrica/pspec.xml
         programming/libs/SuiteSparse/pspec.xml
+        programming/libs/singular/pspec.xml
+        programming/libs/quaddouble/pspec.xml
+        programming/libs/qhull/pspec.xml
+        programming/libs/pth/pspec.xml
+        programming/libs/physfs/pspec.xml
+        programming/libs/palp/pspec.xml
+        programming/libs/pari/pspec.xml
+        programming/libs/ntl/pspec.xml
+        programming/libs/nifticlib/pspec.xml
     astronomy
         applications/science/astronomy/celestia/pspec.xml
         applications/science/astronomy/stellarium/pspec.xml
@@ -2228,57 +2263,23 @@ programming/libs/mhash/pspec.xml
 programming/libs/miniupnp/pspec.xml
 programming/libs/minixml/pspec.xml
 programming/libs/mpfi/pspec.xml
-programming/libs/neon/pspec.xml
 programming/libs/netcdf/pspec.xml
-programming/libs/newt/pspec.xml
-programming/libs/nifticlib/pspec.xml
-programming/libs/nspr/pspec.xml
-programming/libs/nss/pspec.xml
-programming/libs/ntl/pspec.xml
-programming/libs/obexftp/pspec.xml
-programming/libs/ode/pspec.xml
-programming/libs/ogre/pspec.xml
-programming/libs/ois/pspec.xml
+
+
 programming/libs/omniORB/pspec.xml
-programming/libs/openexr/pspec.xml
-programming/libs/openmpi/pspec.xml
-programming/libs/openobex/pspec.xml
-programming/libs/OpenSceneGraph/pspec.xml
-programming/libs/openslp/pspec.xml
-programming/libs/ortp/pspec.xml
-programming/libs/palp/pspec.xml
-programming/libs/pari/pspec.xml
 programming/libs/pcre++/pspec.xml
-programming/libs/phonon/pspec.xml
-programming/libs/physfs/pspec.xml
-programming/libs/plib/pspec.xml
-programming/libs/podofo/pspec.xml
-programming/libs/pth/pspec.xml
-programming/libs/pylibacl/pspec.xml
-programming/libs/pyxattr/pspec.xml
 programming/libs/qca2-ossl/pspec.xml
 programming/libs/qca2/pspec.xml
 programming/libs/qca/pspec.xml
 programming/libs/qca-tls/pspec.xml
 programming/libs/qedje/pspec.xml
-programming/libs/qhull/pspec.xml
-programming/libs/qimageblitz/pspec.xml
-programming/libs/quaddouble/pspec.xml
-programming/libs/quesoglc/pspec.xml
-programming/libs/qwtplot3d/pspec.xml
-programming/libs/qwt/pspec.xml
 programming/libs/qzion/pspec.xml
 programming/libs/raptor/pspec.xml
 programming/libs/rasqal/pspec.xml
 programming/libs/redland/pspec.xml
 programming/libs/rlog/pspec.xml
-programming/libs/simgear/pspec.xml
-programming/libs/singular/pspec.xml
 programming/libs/soprano/pspec.xml
-programming/libs/spidermonkey/pspec.xml
 programming/libs/stlport/pspec.xml
-
-
 programming/libs/tolua++/pspec.xml
 programming/libs/unixODBC/pspec.xml
 programming/libs/tre/pspec.xml
