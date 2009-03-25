@@ -850,9 +850,12 @@ multimedia
         programming/libs/fribidi/pspec.xml
         programming/libs/xsynth-dssi/pspec.xml
         programming/libs/teckit/pspec.xml
+        programming/libs/tachyon/pspec.xml
     plugin
         desktop/kde4/kipi-plugins-kde4/pspec.xml
         desktop/kde/k3bmonkeyaudioplugin/pspec.xml
+        programming/libs/tap-plugins/pspec.xml
+        programming/libs/swh-plugins/pspec.xml
     radio
         desktop/kde/kradio/pspec.xml
         desktop/kde4/kradio-kde4/pspec.xml
@@ -1589,6 +1592,8 @@ science
         programming/libs/ffcall/pspec.xml
         programming/libs/flint/pspec.xml
         programming/libs/fplll/pspec.xml
+        programming/libs/symmetrica/pspec.xml
+        programming/libs/SuiteSparse/pspec.xml
     astronomy
         applications/science/astronomy/celestia/pspec.xml
         applications/science/astronomy/stellarium/pspec.xml
@@ -2272,11 +2277,6 @@ programming/libs/singular/pspec.xml
 programming/libs/soprano/pspec.xml
 programming/libs/spidermonkey/pspec.xml
 programming/libs/stlport/pspec.xml
-programming/libs/SuiteSparse/pspec.xml
-programming/libs/swh-plugins/pspec.xml
-programming/libs/symmetrica/pspec.xml
-programming/libs/tachyon/pspec.xml
-programming/libs/tap-plugins/pspec.xml
 
 
 programming/libs/tolua++/pspec.xml
