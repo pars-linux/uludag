@@ -1962,19 +1962,6 @@ applications/emulators/wine/pspec.xml
 applications/hardware/eject/pspec.xml
 applications/hardware/setserial/pspec.xml
 
-    converter
-
-    editor
-
-    graphic
-
-    sound
-
-    video
-
-    stream
-
-
 applications/multimedia/cg/pspec.xml
 
 applications/multimedia/dvgrab/pspec.xml
