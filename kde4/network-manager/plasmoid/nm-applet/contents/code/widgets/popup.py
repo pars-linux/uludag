@@ -61,4 +61,3 @@ class Popup(QWidget):
             self.ui.ethernetLayout.addWidget(item)
         self.connections[package][name] = item
 
-
