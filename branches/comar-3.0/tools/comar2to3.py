@@ -17,8 +17,16 @@ def main():
         print "Must be run as root."
         return -1
 
-    if len(os.listdir(COMAR_DB_NEW)):
-        # COMAR 3.0 database already initialized, do nothing.
+    # If COMAR 3.0 database is already initialized, do nothing.
+    init = False
+    for model in os.listdir(COMAR_DB_NEW):
+        files = os.listdir(os.path.join(COMAR_DB_NEW, model))
+        files.remove("comar.py")
+        if len(files):
+            init = True
+            break
+    if init:
+        print "COMAR database is already initialized."
         return 0
 
     bus = dbus.SystemBus()
@@ -50,8 +58,11 @@ def main():
             _group, _class, _app = filename.split("_", 2)
             _model = "%s.%s" % (_group, _class)
             _app = _app.rsplit(".py", 1)[0]
+            # COMAR package always registers its packages to new daemon
+            if _app == "comar":
+                continue
             obj.register(_app, _model, os.path.join(COMAR_DB_OLD, filename), dbus_interface=COMAR_IFACE)
-            print filename
+            print "Registering %s" % filename
 
     return 0
 
