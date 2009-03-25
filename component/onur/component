@@ -492,12 +492,14 @@ hardware
             applications/hardware/gparted/pspec.xml
             applications/hardware/partimage/pspec.xml
             applications/hardware/qtparted/pspec.xml
-        applications/hardware/mdadm/pspec.xml
+        applications/admin/device-mapper/pspec.xml
         applications/hardware/arrayprobe/pspec.xml
+        applications/hardware/mdadm/pspec.xml
+        applications/hardware/sdparm/pspec.xml
+        applications/hardware/sg3_utils/pspec.xml
         applications/hardware/smartmontools/pspec.xml
         applications/util/readahead/pspec.xml
         applications/util/testdisk/pspec.xml
-        applications/admin/device-mapper/pspec.xml
 
     emulator
         applications/emulators/dosbox/pspec.xml
@@ -536,6 +538,9 @@ hardware
         applications/util/lsscsi/pspec.xml
         desktop/freedesktop/hal-info/pspec.xml
         desktop/freedesktop/hal/pspec.xml
+        applications/admin/gkrellm/pspec.xml
+        applications/hardware/interbench/pspec.xml
+        applications/hardware/uhinv/pspec.xml
     irda
         applications/hardware/irda-utils/pspec.xml
         applications/hardware/lirc-remotes/pspec.xml
@@ -878,6 +883,7 @@ office
         desktop/kde/i18n/koffice-l10n-uk/pspec.xml
         desktop/kde/i18n/koffice-l10n-zh_CN/pspec.xml
         desktop/kde/i18n/koffice-l10n-zh_TW/pspec.xml
+        desktop/kde/koffice/pspec.xml
     openoffice
         applications/openoffice/pspec.xml
         applications/zemberek-openoffice/pspec.xml
@@ -891,6 +897,7 @@ office
         applications/dictionaries/aspell/aspell-sv/pspec.xml
         applications/dictionaries/hunspell/pspec.xml
         desktop/kde/zpspell/pspec.xml
+        programming/libs/enchant/pspec.xml
     tex
         applications/tex/auctex/pspec.xml
         applications/tex/chktex/pspec.xml
@@ -919,6 +926,7 @@ office
     applications/doc/wv/pspec.xml
     applications/doc/yodl/pspec.xml
     applications/editors/scribus/pspec.xml
+    programming/tools/doxygen/pspec.xml
 
 programming
     build
@@ -1574,6 +1582,8 @@ tool
     admin
         applications/admin/acct/pspec.xml
         applications/admin/dstat/pspec.xml
+        applications/admin/irqbalance/pspec.xml
+        applications/admin/kexec-tools/pspec.xml
         applications/admin/killproc/pspec.xml
         applications/admin/sudo/pspec.xml
         applications/admin/sysstat/pspec.xml
@@ -1691,9 +1701,6 @@ all packages in devel
 applications/admin/dazuko/pspec.xml
 applications/admin/gfxboot/pspec.xml
 applications/admin/gfxtheme-pardus/pspec.xml
-applications/admin/gkrellm/pspec.xml
-applications/admin/irqbalance/pspec.xml
-applications/admin/kexec-tools/pspec.xml
 applications/admin/syslinux/pspec.xml
 applications/admin/webalizer/pspec.xml
 
@@ -1704,13 +1711,9 @@ applications/hardware/eject/pspec.xml
 applications/hardware/fnfx/pspec.xml
 applications/hardware/fxload/pspec.xml
 applications/hardware/gpm/pspec.xml
-applications/hardware/interbench/pspec.xml
 applications/hardware/microcode-ctl/pspec.xml
 applications/hardware/microcode-data/pspec.xml
-applications/hardware/sdparm/pspec.xml
 applications/hardware/setserial/pspec.xml
-applications/hardware/sg3_utils/pspec.xml
-applications/hardware/uhinv/pspec.xml
 
 applications/multimedia/asymptote/pspec.xml
 applications/multimedia/AtomicParsley/pspec.xml
@@ -1976,7 +1979,6 @@ desktop/kde/kipi-plugins/pspec.xml
 desktop/kde/klamav/pspec.xml
 desktop/kde/knetstats/pspec.xml
 desktop/kde/knutclient/pspec.xml
-desktop/kde/koffice/pspec.xml
 desktop/kde/kompose/pspec.xml
 desktop/kde/konversation/pspec.xml
 desktop/kde/kpogre/pspec.xml
@@ -2036,7 +2038,6 @@ programming/libs/eet/pspec.xml
 programming/libs/egenix-mx-base/pspec.xml
 programming/libs/eigen/pspec.xml
 programming/libs/eina/pspec.xml
-programming/libs/enchant/pspec.xml
 programming/libs/facile/pspec.xml
 programming/libs/farsight2/pspec.xml
 programming/libs/ffcall/pspec.xml
@@ -2247,7 +2248,6 @@ programming/libs/yazpp/pspec.xml
 programming/libs/yaz/pspec.xml
 programming/libs/zvbi/pspec.xml
 programming/libs/zziplib/pspec.xml
-programming/tools/doxygen/pspec.xml
 
 Ideas
 ------------------------------------
