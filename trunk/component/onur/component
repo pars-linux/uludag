@@ -538,6 +538,8 @@ hardware
     irda
         applications/hardware/irda-utils/pspec.xml
         applications/hardware/lirc-remotes/pspec.xml
+    library
+
     mobile
         applications/hardware/gnokii/pspec.xml
         applications/pda/libopensync-plugin-file/pspec.xml
@@ -680,14 +682,86 @@ kernel
         kernel-xen/domU/kernel-domU/pspec.xml
 
 multimedia
+    converter
+    editor
+        applications/multimedia/blender/pspec.xml
+        applications/multimedia/avidemux/pspec.xml
     graphic
         applications/multimedia/imagemagick/pspec.xml
         applications/multimedia/netpbm/pspec.xml
         desktop/gnome/gimp-data-extras/pspec.xml
         desktop/gnome/gimp/pspec.xml
-    editor
-        applications/multimedia/blender/pspec.xml
-        applications/multimedia/avidemux/pspec.xml
+    library
+        programming/libs/aalib/pspec.xml
+        programming/libs/alleggl/pspec.xml
+        programming/libs/allegro/pspec.xml
+        programming/libs/amrnb/pspec.xml
+        programming/libs/amrwb/pspec.xml
+        programming/libs/audiofile/pspec.xml
+        programming/libs/cdk/pspec.xml
+        programming/libs/DirectFB/pspec.xml
+        programming/libs/essential/pspec.xml
+        programming/libs/exiv2/pspec.xml
+        programming/libs/fftw2/pspec.xml
+        programming/libs/fftw3/pspec.xml
+        programming/libs/freealut/pspec.xml
+        programming/libs/FreeImage/pspec.xml
+        programming/libs/FusionSound/pspec.xml
+        programming/libs/gsm/pspec.xml
+        programming/libs/imlib2/pspec.xml
+        programming/libs/ladspa-cmt/pspec.xml
+        programming/libs/ladspa-sdk/pspec.xml
+        programming/libs/libao/pspec.xml
+        programming/libs/libart_lgpl/pspec.xml
+        programming/libs/libavc1394/pspec.xml
+        programming/libs/libcaca/pspec.xml
+        programming/libs/libdca/pspec.xml
+        programming/libs/libdvdcss/pspec.xml
+        programming/libs/libdvdnav/pspec.xml
+        programming/libs/libdvdread/pspec.xml
+        programming/libs/libebml/pspec.xml
+        programming/libs/libid3tag/pspec.xml
+        programming/libs/libmad/pspec.xml
+        programming/libs/libmatroska/pspec.xml
+        programming/libs/libmikmod/pspec.xml
+        programming/libs/libmimic/pspec.xml
+        programming/libs/libmodplug/pspec.xml
+        programming/libs/libmovtar/pspec.xml
+        programming/libs/libmp4v2/pspec.xml
+        programming/libs/libmpcdec/pspec.xml
+        programming/libs/libmpeg2/pspec.xml
+        programming/libs/libmpeg3/pspec.xml
+        programming/libs/libogg/pspec.xml
+        programming/libs/liboil/pspec.xml
+        programming/libs/libquicktime/pspec.xml
+        programming/libs/libsamplerate/pspec.xml
+        programming/libs/libsdl/pspec.xml
+        programming/libs/libsidplay2/pspec.xml
+        programming/libs/libsndfile/pspec.xml
+        programming/libs/libtheora/pspec.xml
+        programming/libs/libvorbis/pspec.xml
+        programming/libs/live555/pspec.xml
+        programming/libs/mpeg2vidcodec/pspec.xml
+        programming/libs/musicbrainz/pspec.xml
+        programming/libs/openal/pspec.xml
+        programming/libs/openjpeg/pspec.xml
+        programming/libs/portaudio/pspec.xml
+        programming/libs/schroedinger/pspec.xml
+        programming/libs/sdl-gfx/pspec.xml
+        programming/libs/sdl-image/pspec.xml
+        programming/libs/sdl-mixer/pspec.xml
+        programming/libs/sdl-net/pspec.xml
+        programming/libs/sdl-pango/pspec.xml
+        programming/libs/sdl-sound/pspec.xml
+        programming/libs/sdl-ttf/pspec.xml
+        programming/libs/t1lib/pspec.xml
+        programming/libs/taglib/pspec.xml
+        programming/libs/soundtouch/pspec.xml
+        programming/libs/tunepimp/pspec.xml
+        programming/libs/wavpack/pspec.xml
+        programming/libs/xine-lib/pspec.xml
+        programming/libs/xvid/pspec.xml
+    plugin
     radio
         desktop/kde/kradio/pspec.xml
     sound
@@ -1923,17 +1997,11 @@ desktop/kde/yakuake/pspec.xml
 desktop/kde/zpspell/pspec.xml
 
 programming/libs/4suite/pspec.xml
-programming/libs/aalib/pspec.xml
 programming/libs/agg/pspec.xml
 programming/libs/akonadi/pspec.xml
-programming/libs/alleggl/pspec.xml
-programming/libs/allegro/pspec.xml
-programming/libs/amrnb/pspec.xml
-programming/libs/amrwb/pspec.xml
 programming/libs/apr/pspec.xml
 programming/libs/apr-util/pspec.xml
 programming/libs/atlas/pspec.xml
-programming/libs/audiofile/pspec.xml
 programming/libs/babl/pspec.xml
 programming/libs/boehm-gc/pspec.xml
 programming/libs/boost/pspec.xml
@@ -1941,7 +2009,6 @@ programming/libs/cal3d/pspec.xml
 programming/libs/capseo/pspec.xml
 programming/libs/c-ares/pspec.xml
 programming/libs/cddlib/pspec.xml
-programming/libs/cdk/pspec.xml
 programming/libs/cegui/pspec.xml
 programming/libs/cel/pspec.xml
 programming/libs/cfitsio/pspec.xml
@@ -1952,7 +2019,6 @@ programming/libs/clucene/pspec.xml
 programming/libs/compface/pspec.xml
 programming/libs/cvxopt/pspec.xml
 programming/libs/DevIL/pspec.xml
-programming/libs/DirectFB/pspec.xml
 programming/libs/djbfft/pspec.xml
 programming/libs/dmapi/pspec.xml
 programming/libs/dsdp/pspec.xml
@@ -1963,20 +2029,13 @@ programming/libs/egenix-mx-base/pspec.xml
 programming/libs/eigen/pspec.xml
 programming/libs/eina/pspec.xml
 programming/libs/enchant/pspec.xml
-programming/libs/essential/pspec.xml
-programming/libs/exiv2/pspec.xml
 programming/libs/facile/pspec.xml
 programming/libs/farsight2/pspec.xml
 programming/libs/ffcall/pspec.xml
-programming/libs/fftw2/pspec.xml
-programming/libs/fftw3/pspec.xml
 programming/libs/flint/pspec.xml
 programming/libs/fplll/pspec.xml
-programming/libs/freealut/pspec.xml
-programming/libs/FreeImage/pspec.xml
 programming/libs/fribidi/pspec.xml
 programming/libs/ftgl/pspec.xml
-programming/libs/FusionSound/pspec.xml
 programming/libs/gd/pspec.xml
 programming/libs/gegl/pspec.xml
 programming/libs/geoip/pspec.xml
@@ -1992,7 +2051,6 @@ programming/libs/gmm/pspec.xml
 programming/libs/gnutls/pspec.xml
 programming/libs/gpgme/pspec.xml
 programming/libs/gsl/pspec.xml
-programming/libs/gsm/pspec.xml
 programming/libs/gssdp/pspec.xml
 programming/libs/gupnp-igd/pspec.xml
 programming/libs/gupnp/pspec.xml
@@ -2003,28 +2061,24 @@ programming/libs/icu4c/pspec.xml
 programming/libs/iksemel/pspec.xml
 programming/libs/ilbc/pspec.xml
 programming/libs/ilmbase/pspec.xml
-programming/libs/imlib2/pspec.xml
 programming/libs/iml/pspec.xml
 programming/libs/indilib/pspec.xml
 programming/libs/inotify-tools/pspec.xml
 programming/libs/intel-tbb/pspec.xml
 programming/libs/jrtplib/pspec.xml
 programming/libs/jthread/pspec.xml
-programming/libs/ladspa-cmt/pspec.xml
-programming/libs/ladspa-sdk/pspec.xml
 programming/libs/lapack/pspec.xml
 programming/libs/lensfun/pspec.xml
 programming/libs/lib3ds/pspec.xml
 programming/libs/libacpi/pspec.xml
 programming/libs/libaio/pspec.xml
-programming/libs/libao/pspec.xml
 programming/libs/libarchive/pspec.xml
-programming/libs/libart_lgpl/pspec.xml
+
+
+
 programming/libs/libassuan/pspec.xml
 programming/libs/libasyncns/pspec.xml
 programming/libs/libatomic_ops/pspec.xml
-programming/libs/libavc1394/pspec.xml
-programming/libs/libcaca/pspec.xml
 programming/libs/libcaptury/pspec.xml
 programming/libs/libcdaudio/pspec.xml
 programming/libs/libcddb/pspec.xml
@@ -2033,14 +2087,9 @@ programming/libs/lib-compat/pspec.xml
 programming/libs/libconfig/pspec.xml
 programming/libs/libdaemon/pspec.xml
 programming/libs/libdc1394/pspec.xml
-programming/libs/libdca/pspec.xml
 programming/libs/libdiscid/pspec.xml
 programming/libs/libdvbpsi/pspec.xml
-programming/libs/libdvdcss/pspec.xml
-programming/libs/libdvdnav/pspec.xml
-programming/libs/libdvdread/pspec.xml
 programming/libs/libdv/pspec.xml
-programming/libs/libebml/pspec.xml
 programming/libs/libevent/pspec.xml
 programming/libs/libexif/pspec.xml
 programming/libs/libfame/pspec.xml
@@ -2054,7 +2103,6 @@ programming/libs/libgpod/pspec.xml
 programming/libs/libgsf/pspec.xml
 programming/libs/libIDL/pspec.xml
 programming/libs/libical/pspec.xml
-programming/libs/libid3tag/pspec.xml
 programming/libs/libiec61883/pspec.xml
 programming/libs/libieee1284/pspec.xml
 programming/libs/libifp/pspec.xml
@@ -2069,19 +2117,9 @@ programming/libs/libksba/pspec.xml
 programming/libs/liblo/pspec.xml
 programming/libs/liblrdf/pspec.xml
 programming/libs/liblzf/pspec.xml
-programming/libs/libmad/pspec.xml
 programming/libs/libmal/pspec.xml
-programming/libs/libmatroska/pspec.xml
 programming/libs/libmcrypt/pspec.xml
 programming/libs/libmemcache/pspec.xml
-programming/libs/libmikmod/pspec.xml
-programming/libs/libmimic/pspec.xml
-programming/libs/libmodplug/pspec.xml
-programming/libs/libmovtar/pspec.xml
-programming/libs/libmp4v2/pspec.xml
-programming/libs/libmpcdec/pspec.xml
-programming/libs/libmpeg2/pspec.xml
-programming/libs/libmpeg3/pspec.xml
 programming/libs/libmsn/pspec.xml
 programming/libs/libmtp/pspec.xml
 programming/libs/libnfsidmap/pspec.xml
@@ -2091,30 +2129,22 @@ programming/libs/libnl/pspec.xml
 programming/libs/libnotify/pspec.xml
 programming/libs/libnova/pspec.xml
 programming/libs/libofa/pspec.xml
-programming/libs/libogg/pspec.xml
-programming/libs/liboil/pspec.xml
 programming/libs/libopenraw/pspec.xml
 programming/libs/libotr/pspec.xml
 programming/libs/libpaper/pspec.xml
 programming/libs/libpcap/pspec.xml
 programming/libs/libpqxx/pspec.xml
 programming/libs/libqalculate/pspec.xml
-programming/libs/libquicktime/pspec.xml
 programming/libs/libraw1394/pspec.xml
 programming/libs/librsync/pspec.xml
-programming/libs/libsamplerate/pspec.xml
-programming/libs/libsdl/pspec.xml
 programming/libs/libshout/pspec.xml
-programming/libs/libsidplay2/pspec.xml
 programming/libs/libsigc++/pspec.xml
 programming/libs/libsmbios/pspec.xml
-programming/libs/libsndfile/pspec.xml
 programming/libs/libsoup/pspec.xml
 programming/libs/libspectre/pspec.xml
 programming/libs/libstdc++/pspec.xml
 programming/libs/libtar/pspec.xml
 programming/libs/libtextcat/pspec.xml
-programming/libs/libtheora/pspec.xml
 programming/libs/libuninameslist/pspec.xml
 programming/libs/libupnp/pspec.xml
 programming/libs/libv4l/pspec.xml
@@ -2122,7 +2152,6 @@ programming/libs/libvisual-plugins/pspec.xml
 programming/libs/libvisual/pspec.xml
 programming/libs/libvncserver/pspec.xml
 programming/libs/libvolpack/pspec.xml
-programming/libs/libvorbis/pspec.xml
 programming/libs/libwmf/pspec.xml
 programming/libs/libwpd/pspec.xml
 programming/libs/libwpg/pspec.xml
@@ -2134,7 +2163,6 @@ programming/libs/libxmlpp2/pspec.xml
 programming/libs/libxmlpp/pspec.xml
 programming/libs/libzip/pspec.xml
 programming/libs/linbox/pspec.xml
-programming/libs/live555/pspec.xml
 programming/libs/loudmouth/pspec.xml
 programming/libs/lpc10/pspec.xml
 programming/libs/lxml/pspec.xml
@@ -2143,9 +2171,7 @@ programming/libs/metis/pspec.xml
 programming/libs/mhash/pspec.xml
 programming/libs/miniupnp/pspec.xml
 programming/libs/minixml/pspec.xml
-programming/libs/mpeg2vidcodec/pspec.xml
 programming/libs/mpfi/pspec.xml
-programming/libs/musicbrainz/pspec.xml
 programming/libs/neon/pspec.xml
 programming/libs/netcdf/pspec.xml
 programming/libs/newt/pspec.xml
@@ -2158,9 +2184,7 @@ programming/libs/ode/pspec.xml
 programming/libs/ogre/pspec.xml
 programming/libs/ois/pspec.xml
 programming/libs/omniORB/pspec.xml
-programming/libs/openal/pspec.xml
 programming/libs/openexr/pspec.xml
-programming/libs/openjpeg/pspec.xml
 programming/libs/openmpi/pspec.xml
 programming/libs/openobex/pspec.xml
 programming/libs/OpenSceneGraph/pspec.xml
@@ -2173,7 +2197,6 @@ programming/libs/phonon/pspec.xml
 programming/libs/physfs/pspec.xml
 programming/libs/plib/pspec.xml
 programming/libs/podofo/pspec.xml
-programming/libs/portaudio/pspec.xml
 programming/libs/pth/pspec.xml
 programming/libs/pylibacl/pspec.xml
 programming/libs/pyxattr/pspec.xml
@@ -2193,43 +2216,28 @@ programming/libs/raptor/pspec.xml
 programming/libs/rasqal/pspec.xml
 programming/libs/redland/pspec.xml
 programming/libs/rlog/pspec.xml
-programming/libs/schroedinger/pspec.xml
-programming/libs/sdl-gfx/pspec.xml
-programming/libs/sdl-image/pspec.xml
-programming/libs/sdl-mixer/pspec.xml
-programming/libs/sdl-net/pspec.xml
-programming/libs/sdl-pango/pspec.xml
-programming/libs/sdl-sound/pspec.xml
-programming/libs/sdl-ttf/pspec.xml
 programming/libs/simgear/pspec.xml
 programming/libs/singular/pspec.xml
 programming/libs/soprano/pspec.xml
-programming/libs/soundtouch/pspec.xml
 programming/libs/spidermonkey/pspec.xml
 programming/libs/stlport/pspec.xml
 programming/libs/SuiteSparse/pspec.xml
 programming/libs/swh-plugins/pspec.xml
 programming/libs/symmetrica/pspec.xml
-programming/libs/t1lib/pspec.xml
 programming/libs/tachyon/pspec.xml
-programming/libs/taglib/pspec.xml
 programming/libs/tap-plugins/pspec.xml
 programming/libs/teckit/pspec.xml
 programming/libs/tls/pspec.xml
 programming/libs/tolua++/pspec.xml
 programming/libs/tre/pspec.xml
-programming/libs/tunepimp/pspec.xml
 programming/libs/ucl/pspec.xml
 programming/libs/unixODBC/pspec.xml
-programming/libs/wavpack/pspec.xml
 programming/libs/wv2/pspec.xml
 programming/libs/xalan-c/pspec.xml
 programming/libs/xerces-c/pspec.xml
-programming/libs/xine-lib/pspec.xml
 programming/libs/xmlrpc-epi/pspec.xml
 programming/libs/xmlsec/pspec.xml
 programming/libs/xsynth-dssi/pspec.xml
-programming/libs/xvid/pspec.xml
 programming/libs/yazpp/pspec.xml
 programming/libs/yaz/pspec.xml
 programming/libs/zvbi/pspec.xml
