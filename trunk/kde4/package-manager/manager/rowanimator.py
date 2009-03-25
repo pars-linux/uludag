@@ -15,8 +15,8 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-DEFAULT_HEIGHT = 64
-MAX_HEIGHT = DEFAULT_HEIGHT * 4
+DEFAULT_HEIGHT = 72
+MAX_HEIGHT = DEFAULT_HEIGHT * 3
 (UP, DOWN) = range(2)
 
 class RowAnimator(object):

@@ -22,10 +22,10 @@ from PyKDE4.kdecore import *
 from packagemodel import *
 from rowanimator import RowAnimator
 
-UNIVERSAL_PADDING = 6
-FAV_ICON_SIZE = 24
+ICON_PADDING = 0
+ICON_SIZE = 24
 DETAIL_LINE_OFFSET = 36
-MAIN_ICON_SIZE = 48
+ROW_HEIGHT = 72
 
 class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
@@ -75,14 +75,14 @@ class PackageDelegate(QtGui.QItemDelegate):
         p = QtGui.QPainter(pixmap)
         p.translate(-option.rect.topLeft())
 
-        textInner = 2 * UNIVERSAL_PADDING + MAIN_ICON_SIZE
-        itemHeight = MAIN_ICON_SIZE + 2 * UNIVERSAL_PADDING
+        textInner = 2 * ICON_PADDING + ROW_HEIGHT
+        itemHeight = ROW_HEIGHT + 2 * ICON_PADDING
 
-        margin = left + UNIVERSAL_PADDING
+        margin = left + ICON_PADDING
 
         icon_path = index.model().data(index, Qt.DecorationRole)
         icon = QtGui.QIcon(QtGui.QPixmap(icon_path.toString()))
-        icon.paint(p, margin, top + UNIVERSAL_PADDING, MAIN_ICON_SIZE, MAIN_ICON_SIZE, Qt.AlignCenter)
+        icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
 
         title = index.model().data(index, Qt.DisplayRole)
         summary = index.model().data(index, SummaryRole)
@@ -104,22 +104,22 @@ class PackageDelegate(QtGui.QItemDelegate):
         boldDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Bold)
 
             # Package Detail Label
-        position = top + MAIN_ICON_SIZE + FAV_ICON_SIZE
+        position = top + ROW_HEIGHT + ICON_SIZE
 
         p.setFont(boldDetailFont)
-        p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Açıklama:"))
+        p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Açıklama:"))
 
         p.setFont(normalDetailFont)
-        p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, description.toString())
+        p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, description.toString())
 
         # Package Detail Version
         position += DETAIL_LINE_OFFSET
 
         p.setFont(boldDetailFont)
-        p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Sürüm:"))
+        p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Sürüm:"))
 
         p.setFont(normalDetailFont)
-        p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, version.toString())
+        p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, version.toString())
 
         p.end()
         painter.drawPixmap(option.rect.topLeft(), pixmap)
@@ -136,9 +136,9 @@ class PackageDelegate(QtGui.QItemDelegate):
         if index.column() == 1:
             width = 0
         else:
-            width = FAV_ICON_SIZE
+            width = ICON_SIZE
 
         if self.rowAnimator.currentRow() == index.row():
             return self.rowAnimator.size()
 
-        return QSize(width, MAIN_ICON_SIZE + 2 * UNIVERSAL_PADDING)
+        return QSize(width, ROW_HEIGHT)
