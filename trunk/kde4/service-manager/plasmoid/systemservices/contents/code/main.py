@@ -92,7 +92,6 @@ class WidgetSystemServices(QGraphicsWidget):
             self.stateButton.setText("Stop")
         else:
             self.stateButton.setText("Start")
-        self.startShaking()
 
     def isServiceRunning(self):
         return self._state in ["on", "started", "conditional_started"]
@@ -118,6 +117,7 @@ class WidgetSystemServices(QGraphicsWidget):
 
         self.service_icon.setIcon(state_icons[self._state])
         self.setButtonStates()
+        self.startShaking()
 
 class WidgetStack(QGraphicsWidget):
     def __init__(self, parent):
