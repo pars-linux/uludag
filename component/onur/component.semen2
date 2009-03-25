@@ -149,6 +149,7 @@ desktop
             desktop/kde/tulliana2/pspec.xml
             desktop/kde/tulliana/pspec.xml
             desktop/kde/user-manager/pspec.xml
+            desktop/kde/autostart/pspec.xml
         base
             desktop/kde/base/arts/pspec.xml
             desktop/kde/base/artwork/pspec.xml
@@ -471,6 +472,7 @@ hardware
         applications/hardware/bluez-utils/pspec.xml
         applications/hardware/bluez/pspec.xml
         applications/hardware/cwiid/pspec.xml
+        desktop/kde/kdebluetooth/pspec.xml
     cpu
         applications/admin/irqbalance/pspec.xml
         applications/hardware/microcode-ctl/pspec.xml
@@ -508,6 +510,7 @@ hardware
         applications/hardware/smartmontools/pspec.xml
         applications/util/readahead/pspec.xml
         applications/util/testdisk/pspec.xml
+        desktop/kde/filelight/pspec.xml
     emulator
         applications/emulators/dosbox/pspec.xml
         applications/emulators/vice/pspec.xml
@@ -578,6 +581,9 @@ hardware
         applications/multimedia/cdrdao/pspec.xml
         applications/multimedia/cdrtools/pspec.xml
         applications/multimedia/dvd+rw-tools/pspec.xml
+        desktop/kde4/k3b-kde4/pspec.xml
+        desktop/kde/k3b-i18n/pspec.xml
+        desktop/kde/k3b/pspec.xml
     powermanagement
         applications/hardware/acpi4asus/pspec.xml
         applications/hardware/acpica/pspec.xml
@@ -592,6 +598,7 @@ hardware
         applications/powermanagement/powertop/pspec.xml
         applications/powermanagement/suspend/pspec.xml
         applications/powermanagement/yacpi/pspec.xml
+        desktop/kde4/guidance-power-manager-kde4/pspec.xml
     printer
         applications/printing/cups/pspec.xml
         applications/printing/enscript/pspec.xml
@@ -698,9 +705,31 @@ kernel
 
 multimedia
     converter
+        applications/multimedia/ccd2iso/pspec.xml
+        applications/multimedia/emovix/pspec.xml
+        applications/multimedia/ffmpeg2theora/pspec.xml
+        applications/multimedia/icns2png/pspec.xml
+        applications/multimedia/mkvtoolnix/pspec.xml
+        applications/multimedia/ogmtools/pspec.xml
+        applications/multimedia/shorten/pspec.xml
+        applications/multimedia/speex/pspec.xml
+        applications/multimedia/transcode/pspec.xml
+        applications/multimedia/vcdimager/pspec.xml
+        applications/multimedia/vnc2swf/pspec.xml
+        applications/multimedia/vobcopy/pspec.xml
+        applications/multimedia/dvdbackup/pspec.xml
+        applications/multimedia/potrace/pspec.xml
     editor
         applications/multimedia/blender/pspec.xml
         applications/multimedia/avidemux/pspec.xml
+        desktop/kde4/kiconedit-kde4/pspec.xml
+        desktop/kde/kdenlive/pspec.xml
+        applications/multimedia/dvdauthor/pspec.xml
+        applications/multimedia/dvd-slideshow/pspec.xml
+        applications/multimedia/jubler/pspec.xml
+        applications/multimedia/lilycomp/pspec.xml
+        applications/multimedia/lilypond/pspec.xml
+        applications/multimedia/mandvd/pspec.xml
     graphic
         applications/multimedia/imagemagick/pspec.xml
         applications/multimedia/netpbm/pspec.xml
@@ -709,6 +738,23 @@ multimedia
         applications/multimedia/jasper/pspec.xml
         applications/multimedia/jbigkit/pspec.xml
         applications/multimedia/mjpegtools/pspec.xml
+        desktop/kde4/digikam-kde4/pspec.xml
+        desktop/kde/digikam/pspec.xml
+        desktop/kde/gwenview-i18n/pspec.xml
+        desktop/kde/gwenview/pspec.xml
+        applications/multimedia/asymptote/pspec.xml
+        applications/multimedia/inkscape/pspec.xml
+        applications/multimedia/ImageJ/pspec.xml
+        applications/multimedia/gocr/pspec.xml
+        applications/multimedia/tesseract/pspec.xml
+        applications/multimedia/GraphicsMagick/pspec.xml
+        applications/multimedia/ufraw/pspec.xml
+        applications/multimedia/autotrace/pspec.xml
+        applications/multimedia/yafray/pspec.xml
+        applications/multimedia/dcraw/pspec.xml
+        applications/multimedia/tuxpaint/pspec.xml
+        applications/multimedia/tuxpaint-stamps/pspec.xml
+        applications/multimedia/graphviz/pspec.xml
     library
         programming/libs/aalib/pspec.xml
         programming/libs/alleggl/pspec.xml
@@ -781,6 +827,17 @@ multimedia
         programming/libs/wavpack/pspec.xml
         programming/libs/xine-lib/pspec.xml
         programming/libs/xvid/pspec.xml
+        desktop/kde/akode/pspec.xml
+        applications/multimedia/libnut/pspec.xml
+        desktop/gnome/gst-ffmpeg/pspec.xml
+        desktop/gnome/gst-plugins-bad/pspec.xml
+        desktop/gnome/gst-plugins-base/pspec.xml
+        desktop/gnome/gst-plugins-farsight/pspec.xml
+        desktop/gnome/gst-plugins-good/pspec.xml
+        desktop/gnome/gst-plugins-ugly/pspec.xml
+        desktop/gnome/gstreamer/pspec.xml
+        desktop/gnome/libsvg-cairo/pspec.xml
+        desktop/gnome/libsvg/pspec.xml
         programming/libs/agg/pspec.xml
         programming/libs/atlas/pspec.xml
         programming/libs/babl/pspec.xml
@@ -792,11 +849,15 @@ multimedia
         programming/libs/farsight2/pspec.xml
         programming/libs/fribidi/pspec.xml
     plugin
+        desktop/kde4/kipi-plugins-kde4/pspec.xml
+        desktop/kde/k3bmonkeyaudioplugin/pspec.xml
     radio
         desktop/kde/kradio/pspec.xml
+        desktop/kde4/kradio-kde4/pspec.xml
     sound
         applications/multimedia/a52dec/pspec.xml
         applications/multimedia/aften/pspec.xml
+        desktop/kde4/amarok-kde4/pspec.xml
         applications/multimedia/ardour/pspec.xml
         applications/multimedia/audacity/pspec.xml
         applications/multimedia/esound/pspec.xml
@@ -826,13 +887,27 @@ multimedia
         applications/multimedia/timidity/pspec.xml
         applications/multimedia/twolame/pspec.xml
         applications/multimedia/vorbis-tools/pspec.xml
+        applications/multimedia/mixxx/pspec.xml
+        applications/multimedia/mpck/pspec.xml
+        applications/multimedia/normalize/pspec.xml
+        applications/multimedia/qsynth/pspec.xml
+        applications/multimedia/rosegarden/pspec.xml
+        applications/multimedia/streamtuner/pspec.xml
+        applications/multimedia/gnomad2/pspec.xml
+        desktop/kde/amarok/pspec.xml
     stream
         applications/network/streamripper/pspec.xml
         server/icecast/pspec.xml
+        applications/multimedia/darkice/pspec.xml
+        applications/multimedia/mpeg4ip/pspec.xml
+        applications/multimedia/mediatomb/pspec.xml
+        applications/multimedia/muse/pspec.xml
     tv
         applications/multimedia/tvtime/pspec.xml
         applications/multimedia/xawtv/pspec.xml
         desktop/kde/kdetv/pspec.xml
+        applications/multimedia/mlt/pspec.xml
+        applications/multimedia/mlt++/pspec.xml
     video
         applications/multimedia/ffmpeg/pspec.xml
         applications/multimedia/gnome-mplayer/pspec.xml
@@ -842,6 +917,12 @@ multimedia
         applications/multimedia/vlc/pspec.xml
         applications/multimedia/x264/pspec.xml
         desktop/kde/kmplayer/pspec.xml
+        desktop/kde4/kmplayer-kde4/pspec.xml
+        desktop/kde4/kaffeine-kde4/pspec.xml
+        desktop/kde/kaffeine/pspec.xml
+        applications/multimedia/gpac/pspec.xml
+        applications/multimedia/AtomicParsley/pspec.xml
+        applications/multimedia/xvidcap/pspec.xml
 
 network
     chat
@@ -896,7 +977,6 @@ network
         applications/network/telepathy-qt/pspec.xml
         applications/network/tapioca-qt/pspec.xml
         programming/libs/libproxy/pspec.xml
-        programming/libs/4suite/pspec.xml
 
     mail
         applications/network/alpine/pspec.xml
@@ -1034,6 +1114,7 @@ office
         applications/openoffice/pspec.xml
         applications/zemberek-openoffice/pspec.xml
         applications/util/mdbtools/pspec.xml
+        applications/multimedia/imposter/pspec.xml
     spellcheck
         applications/dictionaries/aspell/aspell-de/pspec.xml
         applications/dictionaries/aspell/aspell-en/pspec.xml
@@ -1074,6 +1155,11 @@ office
     applications/doc/yodl/pspec.xml
     applications/editors/scribus/pspec.xml
     programming/tools/doxygen/pspec.xml
+    desktop/kde4/krename-kde4/pspec.xml
+    desktop/kde/basket/pspec.xml
+    desktop/kde/bookreader/pspec.xml
+    desktop/kde/kbib/pspec.xml
+    desktop/kde/kchmviewer/pspec.xml
 
 programming
     build
@@ -1161,6 +1247,7 @@ programming
             programming/languages/java/sun-java/pspec.xml
             programming/languages/java/tomcat-servlet-api/pspec.xml
             programming/languages/java/zemberek/pspec.xml
+            desktop/kde/freetts/pspec.xml
         lisp
             programming/languages/lisp/clisp/pspec.xml
             programming/languages/lisp/ecl/pspec.xml
@@ -1467,6 +1554,7 @@ programming
         programming/tools/indent/pspec.xml
         programming/tools/patchutils/pspec.xml
         programming/tools/translate-toolkit/pspec.xml
+        desktop/kde4/kdiff3-kde4/pspec.xml
     vcs
         programming/tools/bk-client/pspec.xml
         programming/tools/cogito/pspec.xml
@@ -1757,7 +1845,6 @@ tool
         applications/util/schedtool/pspec.xml
         applications/util/schedutils/pspec.xml
     archive
-        programming/libs/eet/pspec.xml
         applications/archive/cabextract/pspec.xml
         applications/archive/lrzip/pspec.xml
         applications/archive/lzo/pspec.xml
@@ -1782,6 +1869,7 @@ tool
         applications/util/slocate/pspec.xml
         applications/util/tidy/pspec.xml
         applications/util/tree/pspec.xml
+        applications/multimedia/dialog/pspec.xml
     shell
         applications/shells/sash/pspec.xml
         applications/shells/tcsh/pspec.xml
@@ -1840,6 +1928,7 @@ x11
         desktop/freedesktop/xterm/pspec.xml
         desktop/freedesktop/rxvt-unicode/pspec.xml
         desktop/gnome/vte/pspec.xml
+        desktop/kde4/yakuake4/pspec.xml
     application
         desktop/freedesktop/x2x/pspec.xml
         desktop/freedesktop/xorg/xorg-util/pspec.xml
@@ -1873,64 +1962,27 @@ applications/emulators/wine/pspec.xml
 applications/hardware/eject/pspec.xml
 applications/hardware/setserial/pspec.xml
 
-applications/multimedia/asymptote/pspec.xml
-applications/multimedia/AtomicParsley/pspec.xml
-applications/multimedia/autotrace/pspec.xml
-applications/multimedia/ccd2iso/pspec.xml
+    converter
+
+    editor
+
+    graphic
+
+    sound
+
+    video
+
+    stream
+
+
 applications/multimedia/cg/pspec.xml
-applications/multimedia/darkice/pspec.xml
-applications/multimedia/dcraw/pspec.xml
-applications/multimedia/dialog/pspec.xml
-applications/multimedia/dvdauthor/pspec.xml
-applications/multimedia/dvdbackup/pspec.xml
-applications/multimedia/dvd-slideshow/pspec.xml
+
 applications/multimedia/dvgrab/pspec.xml
-applications/multimedia/emovix/pspec.xml
-applications/multimedia/ffmpeg2theora/pspec.xml
 applications/multimedia/ghostscript/pspec.xml
-applications/multimedia/gnomad2/pspec.xml
-applications/multimedia/gocr/pspec.xml
-applications/multimedia/gpac/pspec.xml
-applications/multimedia/GraphicsMagick/pspec.xml
-applications/multimedia/graphviz/pspec.xml
 applications/multimedia/gv/pspec.xml
-applications/multimedia/ImageJ/pspec.xml
-applications/multimedia/icns2png/pspec.xml
-applications/multimedia/imposter/pspec.xml
-applications/multimedia/inkscape/pspec.xml
-applications/multimedia/jubler/pspec.xml
-applications/multimedia/libnut/pspec.xml
-applications/multimedia/lilycomp/pspec.xml
-applications/multimedia/lilypond/pspec.xml
-applications/multimedia/mandvd/pspec.xml
-applications/multimedia/mediatomb/pspec.xml
-applications/multimedia/mixxx/pspec.xml
-applications/multimedia/mkvtoolnix/pspec.xml
-applications/multimedia/mlt/pspec.xml
-applications/multimedia/mlt++/pspec.xml
-applications/multimedia/mpck/pspec.xml
-applications/multimedia/mpeg4ip/pspec.xml
-applications/multimedia/muse/pspec.xml
-applications/multimedia/normalize/pspec.xml
-applications/multimedia/ogmtools/pspec.xml
-applications/multimedia/potrace/pspec.xml
-applications/multimedia/qsynth/pspec.xml
-applications/multimedia/rosegarden/pspec.xml
-applications/multimedia/shorten/pspec.xml
-applications/multimedia/smile/pspec.xml
-applications/multimedia/speex/pspec.xml
-applications/multimedia/streamtuner/pspec.xml
-applications/multimedia/tesseract/pspec.xml
-applications/multimedia/transcode/pspec.xml
 applications/multimedia/ttf2pt1/pspec.xml
-applications/multimedia/tuxpaint/pspec.xml
-applications/multimedia/tuxpaint-stamps/pspec.xml
-applications/multimedia/ufraw/pspec.xml
-applications/multimedia/vcdimager/pspec.xml
-applications/multimedia/vnc2swf/pspec.xml
-applications/multimedia/vobcopy/pspec.xml
-applications/multimedia/xvidcap/pspec.xml
-applications/multimedia/yafray/pspec.xml
+
+applications/multimedia/smile/pspec.xml
 
 applications/network/netcat/pspec.xml
 applications/network/nfdump/pspec.xml
@@ -1990,56 +2042,17 @@ desktop/freedesktop/xdg-utils/pspec.xml
 desktop/freedesktop/xorg/xcursor-themes/pspec.xml
 
 desktop/gnome/beagle/pspec.xml
-desktop/gnome/gst-ffmpeg/pspec.xml
-desktop/gnome/gst-plugins-bad/pspec.xml
-desktop/gnome/gst-plugins-base/pspec.xml
-desktop/gnome/gst-plugins-farsight/pspec.xml
-desktop/gnome/gst-plugins-good/pspec.xml
-desktop/gnome/gst-plugins-ugly/pspec.xml
-desktop/gnome/gstreamer/pspec.xml
 desktop/gnome/libcroco/pspec.xml
 desktop/gnome/librsvg/pspec.xml
-desktop/gnome/libsvg-cairo/pspec.xml
-desktop/gnome/libsvg/pspec.xml
 desktop/gnome/pycairo/pspec.xml
 desktop/gnome/pygobject/pspec.xml
 desktop/gnome/pygtk/pspec.xml
 
-desktop/kde4/amarok-kde4/pspec.xml
-desktop/kde4/digikam-kde4/pspec.xml
-desktop/kde4/guidance-power-manager-kde4/pspec.xml
-desktop/kde4/k3b-kde4/pspec.xml
-desktop/kde4/kaffeine-kde4/pspec.xml
-desktop/kde4/kdiff3-kde4/pspec.xml
 desktop/kde4/kgraphviewer-kde4/pspec.xml
-desktop/kde4/kiconedit-kde4/pspec.xml
-desktop/kde4/kipi-plugins-kde4/pspec.xml
-desktop/kde4/kmplayer-kde4/pspec.xml
-desktop/kde4/kradio-kde4/pspec.xml
-desktop/kde4/krename-kde4/pspec.xml
 desktop/kde4/rsibreak-kde4/pspec.xml
-desktop/kde4/yakuake4/pspec.xml
 
-desktop/kde/akode/pspec.xml
-desktop/kde/amarok/pspec.xml
-desktop/kde/autostart/pspec.xml
-desktop/kde/basket/pspec.xml
-desktop/kde/bookreader/pspec.xml
-desktop/kde/digikam/pspec.xml
-desktop/kde/filelight/pspec.xml
-desktop/kde/freetts/pspec.xml
-desktop/kde/gwenview-i18n/pspec.xml
-desktop/kde/gwenview/pspec.xml
-desktop/kde/k3b-i18n/pspec.xml
-desktop/kde/k3bmonkeyaudioplugin/pspec.xml
-desktop/kde/k3b/pspec.xml
-desktop/kde/kaffeine/pspec.xml
 desktop/kde/katapult/pspec.xml
 desktop/kde/kbarcode/pspec.xml
-desktop/kde/kbib/pspec.xml
-desktop/kde/kchmviewer/pspec.xml
-desktop/kde/kdebluetooth/pspec.xml
-desktop/kde/kdenlive/pspec.xml
 desktop/kde/keep/pspec.xml
 desktop/kde/kerry/pspec.xml
 desktop/kde/kflickr/pspec.xml
@@ -2070,11 +2083,13 @@ desktop/kde/tuneroid/pspec.xml
 desktop/kde/umbrello/pspec.xml
 desktop/kde/yakuake/pspec.xml
 
+programming/libs/4suite/pspec.xml
 programming/libs/akonadi/pspec.xml
 programming/libs/boehm-gc/pspec.xml
 programming/libs/boost/pspec.xml
 programming/libs/clucene/pspec.xml
 programming/libs/cvxopt/pspec.xml
+programming/libs/eet/pspec.xml
 programming/libs/eina/pspec.xml
 programming/libs/facile/pspec.xml
 programming/libs/chmlib/pspec.xml
@@ -2165,8 +2180,6 @@ programming/libs/libmsn/pspec.xml
 programming/libs/libmtp/pspec.xml
 programming/libs/libnfsidmap/pspec.xml
 programming/libs/libnice/pspec.xml
-
-===================================
 programming/libs/libnjb/pspec.xml
 programming/libs/libnl/pspec.xml
 programming/libs/libnotify/pspec.xml
