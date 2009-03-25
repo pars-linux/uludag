@@ -529,6 +529,7 @@ hardware
         kernel/firmware/zd1201-firmware/pspec.xml
         kernel/firmware/zd1211-firmware/pspec.xml
         applications/hardware/b43-fwcutter/pspec.xml
+        applications/hardware/fxload/pspec.xml
     graphic
         applications/multimedia/fbgrab/pspec.xml
         applications/hardware/fbset/pspec.xml
@@ -545,6 +546,9 @@ hardware
         applications/admin/gkrellm/pspec.xml
         applications/hardware/interbench/pspec.xml
         applications/hardware/uhinv/pspec.xml
+    input
+        applications/hardware/fnfx/pspec.xml
+        applications/hardware/gpm/pspec.xml
     irda
         applications/hardware/irda-utils/pspec.xml
         applications/hardware/lirc-remotes/pspec.xml
@@ -1680,6 +1684,7 @@ system
 tool
     admin
         applications/admin/acct/pspec.xml
+        applications/admin/dazuko/pspec.xml
         applications/admin/dstat/pspec.xml
         applications/admin/kexec-tools/pspec.xml
         applications/admin/killproc/pspec.xml
@@ -1796,7 +1801,6 @@ x11
 
 all packages in devel
 ---------------------------------------------------
-applications/admin/dazuko/pspec.xml
 applications/admin/gfxboot/pspec.xml
 applications/admin/gfxtheme-pardus/pspec.xml
 applications/admin/syslinux/pspec.xml
@@ -1805,9 +1809,6 @@ applications/emulators/scummvm/pspec.xml
 applications/emulators/wine/pspec.xml
 
 applications/hardware/eject/pspec.xml
-applications/hardware/fnfx/pspec.xml
-applications/hardware/fxload/pspec.xml
-applications/hardware/gpm/pspec.xml
 applications/hardware/setserial/pspec.xml
 
 applications/multimedia/asymptote/pspec.xml
