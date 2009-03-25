@@ -559,6 +559,7 @@ hardware
         applications/hardware/lirc-remotes/pspec.xml
     library
         programming/libs/dmapi/pspec.xml
+        programming/libs/zvbi/pspec.xml
     mobile
         applications/hardware/gnokii/pspec.xml
         applications/pda/libopensync-plugin-file/pspec.xml
@@ -846,8 +847,8 @@ multimedia
         programming/libs/compface/pspec.xml
         programming/libs/DevIL/pspec.xml
         programming/libs/dssi/pspec.xml
-        programming/libs/farsight2/pspec.xml
         programming/libs/fribidi/pspec.xml
+        programming/libs/xsynth-dssi/pspec.xml
     plugin
         desktop/kde4/kipi-plugins-kde4/pspec.xml
         desktop/kde/k3bmonkeyaudioplugin/pspec.xml
@@ -977,6 +978,10 @@ network
         applications/network/telepathy-qt/pspec.xml
         applications/network/tapioca-qt/pspec.xml
         programming/libs/libproxy/pspec.xml
+        programming/libs/yazpp/pspec.xml
+        programming/libs/yaz/pspec.xml
+        programming/libs/farsight2/pspec.xml
+        programming/libs/xmlrpc-epi/pspec.xml
 
     mail
         applications/network/alpine/pspec.xml
@@ -1037,6 +1042,7 @@ network
 office
     library
         programming/libs/ebook-tools/pspec.xml
+        programming/libs/wv2/pspec.xml
     docbook
         applications/doc/docbook/asciidoc/pspec.xml
         applications/doc/docbook/build-docbook-catalog/pspec.xml
@@ -2272,18 +2278,13 @@ programming/libs/tap-plugins/pspec.xml
 programming/libs/teckit/pspec.xml
 programming/libs/tls/pspec.xml
 programming/libs/tolua++/pspec.xml
+
+programming/libs/unixODBC/pspec.xml
 programming/libs/tre/pspec.xml
 programming/libs/ucl/pspec.xml
-programming/libs/unixODBC/pspec.xml
-programming/libs/wv2/pspec.xml
 programming/libs/xalan-c/pspec.xml
 programming/libs/xerces-c/pspec.xml
-programming/libs/xmlrpc-epi/pspec.xml
 programming/libs/xmlsec/pspec.xml
-programming/libs/xsynth-dssi/pspec.xml
-programming/libs/yazpp/pspec.xml
-programming/libs/yaz/pspec.xml
-programming/libs/zvbi/pspec.xml
 programming/libs/zziplib/pspec.xml
 
 Ideas
