@@ -1,4 +1,4 @@
-PROJECT_NAME=history-manager
+PROJECT_NAME=history-manager-kde4
 INSTALL_DIR=/usr/kde/4/share/apps/$(PROJECT_NAME)
 
 all: build
@@ -10,6 +10,7 @@ clean:
 	-rm */*.pyc src/ui_mainwindow.py src/data_rc.py
 
 export DESTDIR := $(DESTDIR)
+export VERSION := $(VERSION)
 install: uninstall
 	mkdir -p $(DESTDIR)$(INSTALL_DIR)
 	install -m 0755 src/main.py $(DESTDIR)$(INSTALL_DIR)/$(PROJECT_NAME).py
@@ -25,3 +26,8 @@ install: uninstall
 uninstall:
 	rm -rf $(DESTDIR)$(INSTALL_DIR)
 	rm -f $(DESTDIR)/usr/kde/4/share/kde4/services/settings-history-manager.desktop
+
+package:
+	svn export . $(PROJECT_NAME)-$(VERSION)
+	tar -jcf $(PROJECT_NAME)-$(VERSION).tar.bz2 $(PROJECT_NAME)-$(VERSION)
+	rm -rf $(PROJECT_NAME)-$(VERSION)
