@@ -838,6 +838,9 @@ network
         applications/network/pidgin/pspec.xml
         applications/network/qtwitter/pspec.xml
         applications/network/quassel/pspec.xml
+        desktop/kde4/kvirc-kde4/pspec.xml
+        desktop/kde4/choqok/pspec.xml
+        desktop/kde/konversation/pspec.xml
     connection
         applications/network/br2684ctl/pspec.xml
         applications/network/bridge-utils/pspec.xml
@@ -854,6 +857,7 @@ network
         applications/network/rutilt/pspec.xml
         applications/network/sabishape/pspec.xml
         applications/network/wpa_supplicant/pspec.xml
+        desktop/kde/kvpnc/pspec.xml
     discovery
         applications/network/avahi-bindings/pspec.xml
         applications/network/avahi/pspec.xml
@@ -867,10 +871,13 @@ network
     fax
         applications/network/efax-gtk/pspec.xml
         applications/network/jhylafax/pspec.xml
+        desktop/kde4/kfax-kde4/pspec.xml
     ftp
         applications/network/gftp/pspec.xml
         applications/network/ncftp/pspec.xml
         applications/network/netkit-ftp/pspec.xml
+        desktop/kde4/kftpgrabber-kde4/pspec.xml
+        desktop/kde/kftpgrabber/pspec.xml
     library
         applications/network/telepathy-qt/pspec.xml
         applications/network/tapioca-qt/pspec.xml
@@ -884,11 +891,15 @@ network
         applications/network/metamail/pspec.xml
         applications/network/spamassassin/pspec.xml
         applications/network/sylpheed/pspec.xml
+        desktop/kde/kbiff/pspec.xml
     monitor
         applications/network/net-snmp/pspec.xml
         applications/network/iptraf/pspec.xml
         applications/network/wireshark/pspec.xml
         applications/network/tcpdump/pspec.xml
+        desktop/kde/knetstats/pspec.xml
+        desktop/kde/KTrafficAnalyzer/pspec.xml
+        desktop/kde/PyWireless/pspec.xml
     plugin
         applications/network/mozilla/flashplugin/pspec.xml
         applications/network/mozilla/gecko-mediaplayer/pspec.xml
@@ -901,6 +912,9 @@ network
         applications/network/gift-openft/pspec.xml
         applications/network/gift/pspec.xml
         applications/network/nicotine/pspec.xml
+        desktop/kde4/ktorrent-kde4/pspec.xml
+        desktop/kde/apollon/pspec.xml
+        desktop/kde/ktorrent/pspec.xml
     remoteshell
         applications/network/italc/pspec.xml
         applications/network/rdesktop/pspec.xml
@@ -916,12 +930,14 @@ network
         applications/network/nfs-utils/pspec.xml
         applications/network/rsync/pspec.xml
         applications/network/smbldap-tools/pspec.xml
+        desktop/kde/smb4k/pspec.xml
     voip
         applications/network/decibel/pspec.xml
     web
         applications/network/links/pspec.xml
         applications/network/metalink/pspec.xml
         applications/network/mozilla/firefox/pspec.xml
+        desktop/kde4/webkitkde/pspec.xml
 office
     docbook
         applications/doc/docbook/asciidoc/pspec.xml
@@ -1946,30 +1962,25 @@ desktop/gnome/pycairo/pspec.xml
 desktop/gnome/pygobject/pspec.xml
 desktop/gnome/pygtk/pspec.xml
 
+
+
 desktop/kde4/amarok-kde4/pspec.xml
-desktop/kde4/choqok/pspec.xml
 desktop/kde4/digikam-kde4/pspec.xml
 desktop/kde4/guidance-power-manager-kde4/pspec.xml
 desktop/kde4/k3b-kde4/pspec.xml
 desktop/kde4/kaffeine-kde4/pspec.xml
 desktop/kde4/kdiff3-kde4/pspec.xml
-desktop/kde4/kfax-kde4/pspec.xml
-desktop/kde4/kftpgrabber-kde4/pspec.xml
 desktop/kde4/kgraphviewer-kde4/pspec.xml
 desktop/kde4/kiconedit-kde4/pspec.xml
 desktop/kde4/kipi-plugins-kde4/pspec.xml
 desktop/kde4/kmplayer-kde4/pspec.xml
 desktop/kde4/kradio-kde4/pspec.xml
 desktop/kde4/krename-kde4/pspec.xml
-desktop/kde4/ktorrent-kde4/pspec.xml
-desktop/kde4/kvirc-kde4/pspec.xml
 desktop/kde4/rsibreak-kde4/pspec.xml
-desktop/kde4/webkitkde/pspec.xml
 desktop/kde4/yakuake4/pspec.xml
 
 desktop/kde/akode/pspec.xml
 desktop/kde/amarok/pspec.xml
-desktop/kde/apollon/pspec.xml
 desktop/kde/autostart/pspec.xml
 desktop/kde/basket/pspec.xml
 desktop/kde/bookreader/pspec.xml
@@ -1978,7 +1989,6 @@ desktop/kde/filelight/pspec.xml
 desktop/kde/freetts/pspec.xml
 desktop/kde/gwenview-i18n/pspec.xml
 desktop/kde/gwenview/pspec.xml
-
 desktop/kde/k3b-i18n/pspec.xml
 desktop/kde/k3bmonkeyaudioplugin/pspec.xml
 desktop/kde/k3b/pspec.xml
@@ -1986,42 +1996,33 @@ desktop/kde/kaffeine/pspec.xml
 desktop/kde/katapult/pspec.xml
 desktop/kde/kbarcode/pspec.xml
 desktop/kde/kbib/pspec.xml
-desktop/kde/kbiff/pspec.xml
 desktop/kde/kchmviewer/pspec.xml
 desktop/kde/kdebluetooth/pspec.xml
 desktop/kde/kdenlive/pspec.xml
 desktop/kde/keep/pspec.xml
 desktop/kde/kerry/pspec.xml
 desktop/kde/kflickr/pspec.xml
-desktop/kde/kftpgrabber/pspec.xml
 desktop/kde/kgraphviewer/pspec.xml
 desktop/kde/kid3/pspec.xml
 desktop/kde/kile/pspec.xml
 desktop/kde/kipi-plugins/pspec.xml
 desktop/kde/klamav/pspec.xml
-desktop/kde/knetstats/pspec.xml
 desktop/kde/knutclient/pspec.xml
 desktop/kde/kompose/pspec.xml
-desktop/kde/konversation/pspec.xml
 desktop/kde/kpogre/pspec.xml
 desktop/kde/krename/pspec.xml
 desktop/kde/kshutdown/pspec.xml
 desktop/kde/ksubtile/pspec.xml
 desktop/kde/ksubtitleripper/pspec.xml
 desktop/kde/ksystemlog/pspec.xml
-desktop/kde/ktorrent/pspec.xml
-desktop/kde/KTrafficAnalyzer/pspec.xml
 desktop/kde/ktranslator/pspec.xml
-desktop/kde/kvpnc/pspec.xml
 desktop/kde/kxmame/pspec.xml
 desktop/kde/metamonitor/pspec.xml
-desktop/kde/PyWireless/pspec.xml
 desktop/kde/qscintilla2/pspec.xml
 desktop/kde/qscintilla/pspec.xml
 desktop/kde/rkward/pspec.xml
 desktop/kde/rsibreak/pspec.xml
 desktop/kde/semantik/pspec.xml
-desktop/kde/smb4k/pspec.xml
 desktop/kde/tellico/pspec.xml
 desktop/kde/transKode/pspec.xml
 desktop/kde/tuneroid/pspec.xml
