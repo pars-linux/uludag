@@ -695,9 +695,27 @@ kernel
 
 multimedia
     converter
+        applications/multimedia/ccd2iso/pspec.xml
+        applications/multimedia/emovix/pspec.xml
+        applications/multimedia/ffmpeg2theora/pspec.xml
+        applications/multimedia/icns2png/pspec.xml
+        applications/multimedia/mkvtoolnix/pspec.xml
+        applications/multimedia/ogmtools/pspec.xml
+        applications/multimedia/shorten/pspec.xml
+        applications/multimedia/speex/pspec.xml
+        applications/multimedia/transcode/pspec.xml
+        applications/multimedia/vcdimager/pspec.xml
+        applications/multimedia/vnc2swf/pspec.xml
+        applications/multimedia/vobcopy/pspec.xml
     editor
         applications/multimedia/blender/pspec.xml
         applications/multimedia/avidemux/pspec.xml
+        applications/multimedia/dvdauthor/pspec.xml
+        applications/multimedia/dvd-slideshow/pspec.xml
+        applications/multimedia/jubler/pspec.xml
+        applications/multimedia/lilycomp/pspec.xml
+        applications/multimedia/lilypond/pspec.xml
+        applications/multimedia/mandvd/pspec.xml
     graphic
         applications/multimedia/imagemagick/pspec.xml
         applications/multimedia/netpbm/pspec.xml
@@ -706,6 +724,16 @@ multimedia
         applications/multimedia/jasper/pspec.xml
         applications/multimedia/jbigkit/pspec.xml
         applications/multimedia/mjpegtools/pspec.xml
+        applications/multimedia/asymptote/pspec.xml
+        applications/multimedia/inkscape/pspec.xml
+        applications/multimedia/ImageJ/pspec.xml
+        applications/multimedia/gocr/pspec.xml
+        applications/multimedia/tesseract/pspec.xml
+        applications/multimedia/GraphicsMagick/pspec.xml
+        applications/multimedia/ufraw/pspec.xml
+        applications/multimedia/autotrace/pspec.xml
+        applications/multimedia/yafray/pspec.xml
+        applications/multimedia/dcraw/pspec.xml
     library
         programming/libs/aalib/pspec.xml
         programming/libs/alleggl/pspec.xml
@@ -813,9 +841,18 @@ multimedia
         applications/multimedia/timidity/pspec.xml
         applications/multimedia/twolame/pspec.xml
         applications/multimedia/vorbis-tools/pspec.xml
+        applications/multimedia/mixxx/pspec.xml
+        applications/multimedia/mpck/pspec.xml
+        applications/multimedia/normalize/pspec.xml
+        applications/multimedia/qsynth/pspec.xml
+        applications/multimedia/rosegarden/pspec.xml
     stream
         applications/network/streamripper/pspec.xml
         server/icecast/pspec.xml
+        applications/multimedia/darkice/pspec.xml
+        applications/multimedia/mpeg4ip/pspec.xml
+        applications/multimedia/mediatomb/pspec.xml
+        applications/multimedia/muse/pspec.xml
     tv
         applications/multimedia/tvtime/pspec.xml
         applications/multimedia/xawtv/pspec.xml
@@ -829,6 +866,8 @@ multimedia
         applications/multimedia/vlc/pspec.xml
         applications/multimedia/x264/pspec.xml
         desktop/kde/kmplayer/pspec.xml
+        applications/multimedia/gpac/pspec.xml
+        applications/multimedia/AtomicParsley/pspec.xml
 
 network
     chat
@@ -1842,64 +1881,39 @@ applications/emulators/wine/pspec.xml
 applications/hardware/eject/pspec.xml
 applications/hardware/setserial/pspec.xml
 
-applications/multimedia/asymptote/pspec.xml
-applications/multimedia/AtomicParsley/pspec.xml
-applications/multimedia/autotrace/pspec.xml
-applications/multimedia/ccd2iso/pspec.xml
+    converter
+
+    editor
+
+    graphic
+
+    sound
+
+    video
+
+    stream
+
+
 applications/multimedia/cg/pspec.xml
-applications/multimedia/darkice/pspec.xml
-applications/multimedia/dcraw/pspec.xml
+
 applications/multimedia/dialog/pspec.xml
-applications/multimedia/dvdauthor/pspec.xml
 applications/multimedia/dvdbackup/pspec.xml
-applications/multimedia/dvd-slideshow/pspec.xml
 applications/multimedia/dvgrab/pspec.xml
-applications/multimedia/emovix/pspec.xml
-applications/multimedia/ffmpeg2theora/pspec.xml
 applications/multimedia/ghostscript/pspec.xml
 applications/multimedia/gnomad2/pspec.xml
-applications/multimedia/gocr/pspec.xml
-applications/multimedia/gpac/pspec.xml
-applications/multimedia/GraphicsMagick/pspec.xml
 applications/multimedia/graphviz/pspec.xml
 applications/multimedia/gv/pspec.xml
-applications/multimedia/ImageJ/pspec.xml
-applications/multimedia/icns2png/pspec.xml
 applications/multimedia/imposter/pspec.xml
-applications/multimedia/inkscape/pspec.xml
-applications/multimedia/jubler/pspec.xml
 applications/multimedia/libnut/pspec.xml
-applications/multimedia/lilycomp/pspec.xml
-applications/multimedia/lilypond/pspec.xml
-applications/multimedia/mandvd/pspec.xml
-applications/multimedia/mediatomb/pspec.xml
-applications/multimedia/mixxx/pspec.xml
-applications/multimedia/mkvtoolnix/pspec.xml
 applications/multimedia/mlt/pspec.xml
 applications/multimedia/mlt++/pspec.xml
-applications/multimedia/mpck/pspec.xml
-applications/multimedia/mpeg4ip/pspec.xml
-applications/multimedia/muse/pspec.xml
-applications/multimedia/normalize/pspec.xml
-applications/multimedia/ogmtools/pspec.xml
 applications/multimedia/potrace/pspec.xml
-applications/multimedia/qsynth/pspec.xml
-applications/multimedia/rosegarden/pspec.xml
-applications/multimedia/shorten/pspec.xml
 applications/multimedia/smile/pspec.xml
-applications/multimedia/speex/pspec.xml
 applications/multimedia/streamtuner/pspec.xml
-applications/multimedia/tesseract/pspec.xml
-applications/multimedia/transcode/pspec.xml
 applications/multimedia/ttf2pt1/pspec.xml
 applications/multimedia/tuxpaint/pspec.xml
 applications/multimedia/tuxpaint-stamps/pspec.xml
-applications/multimedia/ufraw/pspec.xml
-applications/multimedia/vcdimager/pspec.xml
-applications/multimedia/vnc2swf/pspec.xml
-applications/multimedia/vobcopy/pspec.xml
 applications/multimedia/xvidcap/pspec.xml
-applications/multimedia/yafray/pspec.xml
 
 applications/network/netcat/pspec.xml
 applications/network/nfdump/pspec.xml
