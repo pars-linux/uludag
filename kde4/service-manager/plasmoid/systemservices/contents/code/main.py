@@ -46,7 +46,6 @@ class WidgetSystemServices(QGraphicsWidget):
         self._parent = parent
 
         self.layout = QGraphicsLinearLayout(Qt.Horizontal, self)
-
         self.service_icon = Plasma.IconWidget(self)
         self.layout.addItem(self.service_icon)
 
@@ -70,6 +69,7 @@ class WidgetSystemServices(QGraphicsWidget):
         self.layout.addStretch()
 
         self.stateButton = Plasma.PushButton(self)
+        self.stateButton.setMinimumWidth(70)
         self.layout.addItem(self.stateButton)
         self.connect(self.stateButton, SIGNAL("clicked()"), self.setService)
 
@@ -125,14 +125,8 @@ class WidgetStack(QGraphicsWidget):
         self.layout = QGraphicsLinearLayout(Qt.Vertical, self)
         self._widgets = {}
 
-        # Our animator instance to animate adding/deleting widgets
-        self.animator = Plasma.Animator.self()
-
     def addItem(self, widget):
-        # Animate creation of widget
-        self.animator.animateItem(widget, 0)
         self.layout.addItem(widget)
-
         self._widgets[widget._name] = widget
 
 class SystemServicesApplet(plasmascript.Applet):
