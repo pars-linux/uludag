@@ -707,6 +707,8 @@ multimedia
         applications/multimedia/vcdimager/pspec.xml
         applications/multimedia/vnc2swf/pspec.xml
         applications/multimedia/vobcopy/pspec.xml
+        applications/multimedia/dvdbackup/pspec.xml
+        applications/multimedia/potrace/pspec.xml
     editor
         applications/multimedia/blender/pspec.xml
         applications/multimedia/avidemux/pspec.xml
@@ -734,6 +736,9 @@ multimedia
         applications/multimedia/autotrace/pspec.xml
         applications/multimedia/yafray/pspec.xml
         applications/multimedia/dcraw/pspec.xml
+        applications/multimedia/tuxpaint/pspec.xml
+        applications/multimedia/tuxpaint-stamps/pspec.xml
+        applications/multimedia/graphviz/pspec.xml
     library
         programming/libs/aalib/pspec.xml
         programming/libs/alleggl/pspec.xml
@@ -806,6 +811,7 @@ multimedia
         programming/libs/wavpack/pspec.xml
         programming/libs/xine-lib/pspec.xml
         programming/libs/xvid/pspec.xml
+        applications/multimedia/libnut/pspec.xml
     plugin
     radio
         desktop/kde/kradio/pspec.xml
@@ -846,6 +852,8 @@ multimedia
         applications/multimedia/normalize/pspec.xml
         applications/multimedia/qsynth/pspec.xml
         applications/multimedia/rosegarden/pspec.xml
+        applications/multimedia/streamtuner/pspec.xml
+        applications/multimedia/gnomad2/pspec.xml
     stream
         applications/network/streamripper/pspec.xml
         server/icecast/pspec.xml
@@ -857,6 +865,8 @@ multimedia
         applications/multimedia/tvtime/pspec.xml
         applications/multimedia/xawtv/pspec.xml
         desktop/kde/kdetv/pspec.xml
+        applications/multimedia/mlt/pspec.xml
+        applications/multimedia/mlt++/pspec.xml
     video
         applications/multimedia/ffmpeg/pspec.xml
         applications/multimedia/gnome-mplayer/pspec.xml
@@ -868,6 +878,7 @@ multimedia
         desktop/kde/kmplayer/pspec.xml
         applications/multimedia/gpac/pspec.xml
         applications/multimedia/AtomicParsley/pspec.xml
+        applications/multimedia/xvidcap/pspec.xml
 
 network
     chat
@@ -1057,6 +1068,7 @@ office
         applications/openoffice/pspec.xml
         applications/zemberek-openoffice/pspec.xml
         applications/util/mdbtools/pspec.xml
+        applications/multimedia/imposter/pspec.xml
     spellcheck
         applications/dictionaries/aspell/aspell-de/pspec.xml
         applications/dictionaries/aspell/aspell-en/pspec.xml
@@ -1790,6 +1802,7 @@ tool
         applications/util/slocate/pspec.xml
         applications/util/tidy/pspec.xml
         applications/util/tree/pspec.xml
+        applications/multimedia/dialog/pspec.xml
     shell
         applications/shells/sash/pspec.xml
         applications/shells/tcsh/pspec.xml
@@ -1896,24 +1909,12 @@ applications/hardware/setserial/pspec.xml
 
 applications/multimedia/cg/pspec.xml
 
-applications/multimedia/dialog/pspec.xml
-applications/multimedia/dvdbackup/pspec.xml
 applications/multimedia/dvgrab/pspec.xml
 applications/multimedia/ghostscript/pspec.xml
-applications/multimedia/gnomad2/pspec.xml
-applications/multimedia/graphviz/pspec.xml
 applications/multimedia/gv/pspec.xml
-applications/multimedia/imposter/pspec.xml
-applications/multimedia/libnut/pspec.xml
-applications/multimedia/mlt/pspec.xml
-applications/multimedia/mlt++/pspec.xml
-applications/multimedia/potrace/pspec.xml
-applications/multimedia/smile/pspec.xml
-applications/multimedia/streamtuner/pspec.xml
 applications/multimedia/ttf2pt1/pspec.xml
-applications/multimedia/tuxpaint/pspec.xml
-applications/multimedia/tuxpaint-stamps/pspec.xml
-applications/multimedia/xvidcap/pspec.xml
+
+applications/multimedia/smile/pspec.xml
 
 applications/network/netcat/pspec.xml
 applications/network/nfdump/pspec.xml
