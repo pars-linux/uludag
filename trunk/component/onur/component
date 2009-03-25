@@ -264,8 +264,6 @@ desktop
         motif
             programming/libs/openmotif/pspec.xml
             programming/libs/lesstif/pspec.xml
-        tcl
-            programming/libs/tls/pspec.xml
         programming/libs/wxGTK/pspec.xml
         programming/libs/fltk/pspec.xml
 
@@ -1536,6 +1534,7 @@ programming
             programming/languages/tcl/snack/pspec.xml
             programming/languages/tcl/tcl/pspec.xml
             programming/languages/tcl/tcltk/pspec.xml
+            programming/libs/tls/pspec.xml
         microcontroller
             programming/microcontroller/avrdude/pspec.xml
             programming/microcontroller/avr-libc/pspec.xml
