@@ -799,6 +799,7 @@ multimedia
         applications/multimedia/timidity/pspec.xml
         applications/multimedia/twolame/pspec.xml
         applications/multimedia/vorbis-tools/pspec.xml
+    stream
     tv
         applications/multimedia/tvtime/pspec.xml
         applications/multimedia/xawtv/pspec.xml
@@ -812,6 +813,109 @@ multimedia
         applications/multimedia/vlc/pspec.xml
         applications/multimedia/x264/pspec.xml
         desktop/kde/kmplayer/pspec.xml
+
+office
+    docbook
+        applications/doc/docbook/asciidoc/pspec.xml
+        applications/doc/docbook/build-docbook-catalog/pspec.xml
+        applications/doc/docbook/docbook-dsssl/pspec.xml
+        applications/doc/docbook/docbook-sgml3_1/pspec.xml
+        applications/doc/docbook/docbook-sgml4_1/pspec.xml
+        applications/doc/docbook/docbook-sgml4_2/pspec.xml
+        applications/doc/docbook/docbook-sgml4_4/pspec.xml
+        applications/doc/docbook/docbook-sgml4_5/pspec.xml
+        applications/doc/docbook/docbook-utils/pspec.xml
+        applications/doc/docbook/docbook-xml4_1_2/pspec.xml
+        applications/doc/docbook/docbook-xml4_1/pspec.xml
+        applications/doc/docbook/docbook-xml4_2/pspec.xml
+        applications/doc/docbook/docbook-xml4_3/pspec.xml
+        applications/doc/docbook/docbook-xml4_4/pspec.xml
+        applications/doc/docbook/docbook-xml4_5/pspec.xml
+        applications/doc/docbook/docbook-xsl/pspec.xml
+        applications/doc/docbook/jadetex/pspec.xml
+        applications/doc/docbook/openjade/pspec.xml
+        applications/doc/docbook/opensp/pspec.xml
+        applications/doc/docbook/sgml-common/pspec.xml
+        applications/doc/docbook/SGMLSpm/pspec.xml
+        applications/doc/docbook/xmlto/pspec.xml
+    dictionary
+    koffice
+        desktop/kde/i18n/koffice-l10n-ca/pspec.xml
+        desktop/kde/i18n/koffice-l10n-cs/pspec.xml
+        desktop/kde/i18n/koffice-l10n-cy/pspec.xml
+        desktop/kde/i18n/koffice-l10n-da/pspec.xml
+        desktop/kde/i18n/koffice-l10n-de/pspec.xml
+        desktop/kde/i18n/koffice-l10n-el/pspec.xml
+        desktop/kde/i18n/koffice-l10n-en_GB/pspec.xml
+        desktop/kde/i18n/koffice-l10n-es/pspec.xml
+        desktop/kde/i18n/koffice-l10n-et/pspec.xml
+        desktop/kde/i18n/koffice-l10n-eu/pspec.xml
+        desktop/kde/i18n/koffice-l10n-fa/pspec.xml
+        desktop/kde/i18n/koffice-l10n-fi/pspec.xml
+        desktop/kde/i18n/koffice-l10n-fr/pspec.xml
+        desktop/kde/i18n/koffice-l10n-ga/pspec.xml
+        desktop/kde/i18n/koffice-l10n-gl/pspec.xml
+        desktop/kde/i18n/koffice-l10n-hu/pspec.xml
+        desktop/kde/i18n/koffice-l10n-it/pspec.xml
+        desktop/kde/i18n/koffice-l10n-ja/pspec.xml
+        desktop/kde/i18n/koffice-l10n-km/pspec.xml
+        desktop/kde/i18n/koffice-l10n-lv/pspec.xml
+        desktop/kde/i18n/koffice-l10n-ms/pspec.xml
+        desktop/kde/i18n/koffice-l10n-nb/pspec.xml
+        desktop/kde/i18n/koffice-l10n-nl/pspec.xml
+        desktop/kde/i18n/koffice-l10n-pl/pspec.xml
+        desktop/kde/i18n/koffice-l10n-pt_BR/pspec.xml
+        desktop/kde/i18n/koffice-l10n-pt/pspec.xml
+        desktop/kde/i18n/koffice-l10n-ru/pspec.xml
+        desktop/kde/i18n/koffice-l10n-sk/pspec.xml
+        desktop/kde/i18n/koffice-l10n-sl/pspec.xml
+        desktop/kde/i18n/koffice-l10n-sr_Latn/pspec.xml
+        desktop/kde/i18n/koffice-l10n-sr/pspec.xml
+        desktop/kde/i18n/koffice-l10n-sv/pspec.xml
+        desktop/kde/i18n/koffice-l10n-tr/pspec.xml
+        desktop/kde/i18n/koffice-l10n-uk/pspec.xml
+        desktop/kde/i18n/koffice-l10n-zh_CN/pspec.xml
+        desktop/kde/i18n/koffice-l10n-zh_TW/pspec.xml
+    openoffice
+        applications/openoffice/pspec.xml
+        applications/zemberek-openoffice/pspec.xml
+    spellcheck
+        applications/dictionaries/aspell/aspell-de/pspec.xml
+        applications/dictionaries/aspell/aspell-en/pspec.xml
+        applications/dictionaries/aspell/aspell-fr/pspec.xml
+        applications/dictionaries/aspell/aspell-it/pspec.xml
+        applications/dictionaries/aspell/aspell-nl/pspec.xml
+        applications/dictionaries/aspell/aspell/pspec.xml
+        applications/dictionaries/aspell/aspell-sv/pspec.xml
+        applications/dictionaries/hunspell/pspec.xml
+    tex
+        applications/tex/auctex/pspec.xml
+        applications/tex/chktex/pspec.xml
+        applications/tex/hevea/pspec.xml
+        applications/tex/latex-beamer/pspec.xml
+        applications/tex/latex-unicode/pspec.xml
+        applications/tex/lyx/pspec.xml
+        applications/tex/pgf/pspec.xml
+        applications/tex/tetex/pspec.xml
+        applications/tex/tetex-texmf/pspec.xml
+        applications/tex/transfig/pspec.xml
+        applications/tex/xfig/pspec.xml
+    applications/doc/aiksaurus/pspec.xml
+    applications/doc/antiword/pspec.xml
+    applications/doc/barcode/pspec.xml
+    applications/doc/djvu/pspec.xml
+    applications/doc/dos2unix/pspec.xml
+    applications/doc/htmldoc/pspec.xml
+    applications/doc/iso-codes/pspec.xml
+    applications/doc/mftrace/pspec.xml
+    applications/doc/recode/pspec.xml
+    applications/doc/reportlab/pspec.xml
+    applications/doc/sablotron/pspec.xml
+    applications/doc/t1utils/pspec.xml
+    applications/doc/texi2html/pspec.xml
+    applications/doc/wv/pspec.xml
+    applications/doc/yodl/pspec.xml
+    applications/editors/scribus/pspec.xml
 
 programming
     build
@@ -1224,6 +1328,8 @@ science
     astronomy
         applications/science/astronomy/celestia/pspec.xml
         applications/science/astronomy/stellarium/pspec.xml
+    chemistry
+        applications/science/openbabel/pspec.xml
     electronics
         applications/science/electronics/gpsim/pspec.xml
         applications/science/electronics/gputils/pspec.xml
@@ -1248,6 +1354,11 @@ science
         applications/science/mathematics/wxMaxima/pspec.xml
     medical
         applications/science/medical/xmedcon/pspec.xml
+    robotics
+        applications/science/robotics/opencv/pspec.xml
+        applications/science/robotics/player/pspec.xml
+        applications/science/robotics/sphinx2/pspec.xml
+        applications/science/robotics/stage/pspec.xml
 
 server
     authentication
@@ -1561,54 +1672,6 @@ applications/archive/unshield/pspec.xml
 applications/archive/xdelta3/pspec.xml
 applications/archive/xdelta/pspec.xml
 
-applications/dictionaries/aspell/aspell-de/pspec.xml
-applications/dictionaries/aspell/aspell-en/pspec.xml
-applications/dictionaries/aspell/aspell-fr/pspec.xml
-applications/dictionaries/aspell/aspell-it/pspec.xml
-applications/dictionaries/aspell/aspell-nl/pspec.xml
-applications/dictionaries/aspell/aspell/pspec.xml
-applications/dictionaries/aspell/aspell-sv/pspec.xml
-applications/dictionaries/hunspell/pspec.xml
-
-applications/doc/aiksaurus/pspec.xml
-applications/doc/antiword/pspec.xml
-applications/doc/barcode/pspec.xml
-applications/doc/djvu/pspec.xml
-applications/doc/docbook/asciidoc/pspec.xml
-applications/doc/docbook/build-docbook-catalog/pspec.xml
-applications/doc/docbook/docbook-dsssl/pspec.xml
-applications/doc/docbook/docbook-sgml3_1/pspec.xml
-applications/doc/docbook/docbook-sgml4_1/pspec.xml
-applications/doc/docbook/docbook-sgml4_2/pspec.xml
-applications/doc/docbook/docbook-sgml4_4/pspec.xml
-applications/doc/docbook/docbook-sgml4_5/pspec.xml
-applications/doc/docbook/docbook-utils/pspec.xml
-applications/doc/docbook/docbook-xml4_1_2/pspec.xml
-applications/doc/docbook/docbook-xml4_1/pspec.xml
-applications/doc/docbook/docbook-xml4_2/pspec.xml
-applications/doc/docbook/docbook-xml4_3/pspec.xml
-applications/doc/docbook/docbook-xml4_4/pspec.xml
-applications/doc/docbook/docbook-xml4_5/pspec.xml
-applications/doc/docbook/docbook-xsl/pspec.xml
-applications/doc/docbook/jadetex/pspec.xml
-applications/doc/docbook/openjade/pspec.xml
-applications/doc/docbook/opensp/pspec.xml
-applications/doc/docbook/sgml-common/pspec.xml
-applications/doc/docbook/SGMLSpm/pspec.xml
-applications/doc/docbook/xmlto/pspec.xml
-applications/doc/dos2unix/pspec.xml
-applications/doc/htmldoc/pspec.xml
-applications/doc/iso-codes/pspec.xml
-applications/doc/mftrace/pspec.xml
-applications/doc/recode/pspec.xml
-applications/doc/reportlab/pspec.xml
-applications/doc/sablotron/pspec.xml
-applications/doc/t1utils/pspec.xml
-applications/doc/texi2html/pspec.xml
-applications/doc/wv/pspec.xml
-applications/doc/yodl/pspec.xml
-
-applications/editors/scribus/pspec.xml
 applications/emulators/scummvm/pspec.xml
 applications/emulators/wine/pspec.xml
 
@@ -1623,7 +1686,6 @@ applications/hardware/sdparm/pspec.xml
 applications/hardware/setserial/pspec.xml
 applications/hardware/sg3_utils/pspec.xml
 applications/hardware/uhinv/pspec.xml
-
 
 
 applications/multimedia/asymptote/pspec.xml
@@ -1768,14 +1830,6 @@ applications/network/wireshark/pspec.xml
 applications/network/wpa_supplicant/pspec.xml
 applications/network/youtube-dl/pspec.xml
 
-applications/openoffice/pspec.xml
-
-applications/science/openbabel/pspec.xml
-applications/science/robotics/opencv/pspec.xml
-applications/science/robotics/player/pspec.xml
-applications/science/robotics/sphinx2/pspec.xml
-applications/science/robotics/stage/pspec.xml
-
 applications/security/apparmor-docs/pspec.xml
 applications/security/apparmor-parser/pspec.xml
 applications/security/apparmor-profiles/pspec.xml
@@ -1808,18 +1862,6 @@ applications/shells/sash/pspec.xml
 applications/shells/tcsh/pspec.xml
 applications/shells/zsh/pspec.xml
 
-applications/tex/auctex/pspec.xml
-applications/tex/chktex/pspec.xml
-applications/tex/hevea/pspec.xml
-applications/tex/latex-beamer/pspec.xml
-applications/tex/latex-unicode/pspec.xml
-applications/tex/lyx/pspec.xml
-applications/tex/pgf/pspec.xml
-applications/tex/tetex/pspec.xml
-applications/tex/tetex-texmf/pspec.xml
-applications/tex/transfig/pspec.xml
-applications/tex/xfig/pspec.xml
-
 applications/util/bash-completion-config/pspec.xml
 applications/util/bash-completion/pspec.xml
 applications/util/bashdb/pspec.xml
@@ -1845,8 +1887,6 @@ applications/util/strigi/pspec.xml
 applications/util/tidy/pspec.xml
 applications/util/tree/pspec.xml
 applications/util/utempter/pspec.xml
-
-applications/zemberek-openoffice/pspec.xml
 
 desktop/freedesktop/dbus-qt3/pspec.xml
 desktop/freedesktop/exempi/pspec.xml
@@ -1910,42 +1950,6 @@ desktop/kde/freetts/pspec.xml
 desktop/kde/gwenview-i18n/pspec.xml
 desktop/kde/gwenview/pspec.xml
 
-desktop/kde/i18n/koffice-l10n-ca/pspec.xml
-desktop/kde/i18n/koffice-l10n-cs/pspec.xml
-desktop/kde/i18n/koffice-l10n-cy/pspec.xml
-desktop/kde/i18n/koffice-l10n-da/pspec.xml
-desktop/kde/i18n/koffice-l10n-de/pspec.xml
-desktop/kde/i18n/koffice-l10n-el/pspec.xml
-desktop/kde/i18n/koffice-l10n-en_GB/pspec.xml
-desktop/kde/i18n/koffice-l10n-es/pspec.xml
-desktop/kde/i18n/koffice-l10n-et/pspec.xml
-desktop/kde/i18n/koffice-l10n-eu/pspec.xml
-desktop/kde/i18n/koffice-l10n-fa/pspec.xml
-desktop/kde/i18n/koffice-l10n-fi/pspec.xml
-desktop/kde/i18n/koffice-l10n-fr/pspec.xml
-desktop/kde/i18n/koffice-l10n-ga/pspec.xml
-desktop/kde/i18n/koffice-l10n-gl/pspec.xml
-desktop/kde/i18n/koffice-l10n-hu/pspec.xml
-desktop/kde/i18n/koffice-l10n-it/pspec.xml
-desktop/kde/i18n/koffice-l10n-ja/pspec.xml
-desktop/kde/i18n/koffice-l10n-km/pspec.xml
-desktop/kde/i18n/koffice-l10n-lv/pspec.xml
-desktop/kde/i18n/koffice-l10n-ms/pspec.xml
-desktop/kde/i18n/koffice-l10n-nb/pspec.xml
-desktop/kde/i18n/koffice-l10n-nl/pspec.xml
-desktop/kde/i18n/koffice-l10n-pl/pspec.xml
-desktop/kde/i18n/koffice-l10n-pt_BR/pspec.xml
-desktop/kde/i18n/koffice-l10n-pt/pspec.xml
-desktop/kde/i18n/koffice-l10n-ru/pspec.xml
-desktop/kde/i18n/koffice-l10n-sk/pspec.xml
-desktop/kde/i18n/koffice-l10n-sl/pspec.xml
-desktop/kde/i18n/koffice-l10n-sr_Latn/pspec.xml
-desktop/kde/i18n/koffice-l10n-sr/pspec.xml
-desktop/kde/i18n/koffice-l10n-sv/pspec.xml
-desktop/kde/i18n/koffice-l10n-tr/pspec.xml
-desktop/kde/i18n/koffice-l10n-uk/pspec.xml
-desktop/kde/i18n/koffice-l10n-zh_CN/pspec.xml
-desktop/kde/i18n/koffice-l10n-zh_TW/pspec.xml
 
 desktop/kde/k3b-i18n/pspec.xml
 desktop/kde/k3bmonkeyaudioplugin/pspec.xml
@@ -2075,8 +2079,6 @@ programming/libs/lib3ds/pspec.xml
 programming/libs/libacpi/pspec.xml
 programming/libs/libaio/pspec.xml
 programming/libs/libarchive/pspec.xml
-
-
 
 programming/libs/libassuan/pspec.xml
 programming/libs/libasyncns/pspec.xml
