@@ -37,22 +37,15 @@ class PackageDelegate(QtGui.QItemDelegate):
             return
 
         opt = QtGui.QStyleOptionViewItemV4(option)
-        if opt.widget:
-            style = opt.widget.style()
-        else:
-            style = QtGui.QApplication.style()
-
         opt.state &= ~QtGui.QStyle.State_Selected
-        style.drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, opt, painter, None)
+        opt.widget.style().drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, opt, painter, None)
 
         if index.column() == 1:
-            self.paintColMain(painter, option, index)
+            self.paintInfoColumn(painter, option, index)
         elif index.column() == 0:
-            self.paintColCheckBox(painter, option, index)
-        else:
-            print "Unexpected column"
+            self.paintCheckBoxColumn(painter, option, index)
 
-    def paintColCheckBox(self, painter, option, index):
+    def paintCheckBoxColumn(self, painter, option, index):
         opt = QtGui.QStyleOptionViewItemV4(option)
 
         buttonStyle = QtGui.QStyleOptionButton()
@@ -64,7 +57,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + 64, 0, -2)
         opt.widget.style().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
 
-    def paintColMain(self, painter, option, index):
+    def paintInfoColumn(self, painter, option, index):
         left = option.rect.left()
         top = option.rect.top()
         width = option.rect.width()
@@ -133,12 +126,8 @@ class PackageDelegate(QtGui.QItemDelegate):
         return QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
 
     def sizeHint(self, option, index):
-        if index.column() == 1:
-            width = 0
-        else:
-            width = ICON_SIZE
-
         if self.rowAnimator.currentRow() == index.row():
             return self.rowAnimator.size()
-
-        return QSize(width, ROW_HEIGHT)
+        else:
+            width = ICON_SIZE if index.column() == 0 else 0
+            return QSize(width, ROW_HEIGHT)
