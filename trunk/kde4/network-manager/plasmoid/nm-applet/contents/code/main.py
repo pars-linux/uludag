@@ -183,7 +183,7 @@ class NmApplet(plasmascript.Applet):
                 self.popup.addConnectionItem(package, unicode(args[1]))
 
     def updateTheme(self):
-        self.dialog.setStyleSheet("color: %s;" % Plasma.Theme.defaultTheme().color(Plasma.Theme.TextColor).name())
+        self.dialog.setStyleSheet("padding-left:0;color: %s;" % Plasma.Theme.defaultTheme().color(Plasma.Theme.TextColor).name())
 
     def showDialog(self):
         if self.dialog.isVisible():

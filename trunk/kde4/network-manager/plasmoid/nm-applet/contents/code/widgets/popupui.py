@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'nm-applet/contents/ui/popup.ui'
 #
-# Created: Sat Feb 28 15:01:22 2009
+# Created: Wed Mar 25 12:25:40 2009
 #      by: PyQt4 UI code generator 4.4.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -32,13 +32,13 @@ class Ui_Connection(object):
         self.verticalLayout.setSizeConstraint(QtGui.QLayout.SetMinimumSize)
         self.verticalLayout.setContentsMargins(-1, 5, -1, 5)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.label = QtGui.QLabel(self.net_tools)
+        self.labelEthernet = QtGui.QLabel(self.net_tools)
         font = QtGui.QFont()
         font.setWeight(75)
         font.setBold(True)
-        self.label.setFont(font)
-        self.label.setObjectName("label")
-        self.verticalLayout.addWidget(self.label)
+        self.labelEthernet.setFont(font)
+        self.labelEthernet.setObjectName("labelEthernet")
+        self.verticalLayout.addWidget(self.labelEthernet)
         self.ethernetStatus = QtGui.QLabel(self.net_tools)
         self.ethernetStatus.setObjectName("ethernetStatus")
         self.verticalLayout.addWidget(self.ethernetStatus)
@@ -86,13 +86,13 @@ class Ui_Connection(object):
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setContentsMargins(-1, 3, -1, 3)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.label_4 = QtGui.QLabel(self.wireless_tools)
+        self.labelWireless = QtGui.QLabel(self.wireless_tools)
         font = QtGui.QFont()
         font.setWeight(75)
         font.setBold(True)
-        self.label_4.setFont(font)
-        self.label_4.setObjectName("label_4")
-        self.verticalLayout_3.addWidget(self.label_4)
+        self.labelWireless.setFont(font)
+        self.labelWireless.setObjectName("labelWireless")
+        self.verticalLayout_3.addWidget(self.labelWireless)
         self.wirelessStatus = QtGui.QLabel(self.wireless_tools)
         self.wirelessStatus.setObjectName("wirelessStatus")
         self.verticalLayout_3.addWidget(self.wirelessStatus)
@@ -122,6 +122,7 @@ class Ui_Connection(object):
         self.verticalLayout_4.addWidget(self.wirelessConnections)
         self.verticalLayout_5.addWidget(self.wireless_tools)
         self.nmButton = QtGui.QPushButton(Connection)
+        self.nmButton.setMinimumSize(QtCore.QSize(0, 22))
         self.nmButton.setStyleSheet("color:black;")
         self.nmButton.setObjectName("nmButton")
         self.verticalLayout_5.addWidget(self.nmButton)
@@ -131,9 +132,9 @@ class Ui_Connection(object):
 
     def retranslateUi(self, Connection):
         Connection.setWindowTitle(QtGui.QApplication.translate("Connection", "Form", None, QtGui.QApplication.UnicodeUTF8))
-        self.label.setText(QtGui.QApplication.translate("Connection", "Ethernet", None, QtGui.QApplication.UnicodeUTF8))
+        self.labelEthernet.setText(QtGui.QApplication.translate("Connection", "Ethernet", None, QtGui.QApplication.UnicodeUTF8))
         self.ethernetStatus.setText(QtGui.QApplication.translate("Connection", "Not connected.", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_4.setText(QtGui.QApplication.translate("Connection", "Wireless", None, QtGui.QApplication.UnicodeUTF8))
+        self.labelWireless.setText(QtGui.QApplication.translate("Connection", "Wireless", None, QtGui.QApplication.UnicodeUTF8))
         self.wirelessStatus.setText(QtGui.QApplication.translate("Connection", "Not connected.", None, QtGui.QApplication.UnicodeUTF8))
         self.nmButton.setText(QtGui.QApplication.translate("Connection", "Open Network Manager", None, QtGui.QApplication.UnicodeUTF8))
 
