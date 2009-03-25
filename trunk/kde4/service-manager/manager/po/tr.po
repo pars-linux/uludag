@@ -1,0 +1,27 @@
+#: src/uiitem.ui.py:102 src/ui.ui.py:49
+msgid "Form"
+msgstr ""
+
+#: src/uiitem.ui.py:103
+msgid "serviceName"
+msgstr ""
+
+#: src/uiitem.ui.py:104
+msgid "serviceDesc"
+msgstr ""
+
+#: src/uiitem.ui.py:105
+msgid "Run on Startup"
+msgstr "Açılışta Çalıştır"
+
+#: src/ui.ui.py:50
+msgid "System Services"
+msgstr ""
+
+#: src/ui.ui.py:51
+msgid "type service name to search..."
+msgstr ""
+
+#: src/ui.ui.py:52
+msgid "Just show servers"
+msgstr ""
