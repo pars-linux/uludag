@@ -244,6 +244,7 @@ desktop
         qt3
             desktop/kde/base/qt/pspec.xml
             desktop/kde/gtk-qt-engine/pspec.xml
+            desktop/freedesktop/dbus-qt3/pspec.xml
         gtk
             desktop/gnome/atk/pspec.xml
             desktop/gnome/cairomm/pspec.xml
@@ -888,6 +889,7 @@ office
         applications/dictionaries/aspell/aspell/pspec.xml
         applications/dictionaries/aspell/aspell-sv/pspec.xml
         applications/dictionaries/hunspell/pspec.xml
+        desktop/kde/zpspell/pspec.xml
     tex
         applications/tex/auctex/pspec.xml
         applications/tex/chktex/pspec.xml
@@ -1687,7 +1689,6 @@ applications/hardware/setserial/pspec.xml
 applications/hardware/sg3_utils/pspec.xml
 applications/hardware/uhinv/pspec.xml
 
-
 applications/multimedia/asymptote/pspec.xml
 applications/multimedia/AtomicParsley/pspec.xml
 applications/multimedia/autotrace/pspec.xml
@@ -1888,7 +1889,6 @@ applications/util/tidy/pspec.xml
 applications/util/tree/pspec.xml
 applications/util/utempter/pspec.xml
 
-desktop/freedesktop/dbus-qt3/pspec.xml
 desktop/freedesktop/exempi/pspec.xml
 desktop/freedesktop/grounation-xcursor/pspec.xml
 desktop/freedesktop/jimmac-xcursor/pspec.xml
@@ -2000,7 +2000,6 @@ desktop/kde/transKode/pspec.xml
 desktop/kde/tuneroid/pspec.xml
 desktop/kde/umbrello/pspec.xml
 desktop/kde/yakuake/pspec.xml
-desktop/kde/zpspell/pspec.xml
 
 programming/libs/4suite/pspec.xml
 programming/libs/agg/pspec.xml
