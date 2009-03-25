@@ -840,6 +840,7 @@ office
         applications/doc/docbook/SGMLSpm/pspec.xml
         applications/doc/docbook/xmlto/pspec.xml
     dictionary
+        applications/util/qstardict/pspec.xml
     koffice
         desktop/kde/i18n/koffice-l10n-ca/pspec.xml
         desktop/kde/i18n/koffice-l10n-cs/pspec.xml
@@ -1569,6 +1570,52 @@ system
         system/yali-firstBoot/pspec.xml
         system/yali/pspec.xml
 
+tool
+    admin
+        applications/admin/acct/pspec.xml
+        applications/admin/dstat/pspec.xml
+        applications/admin/killproc/pspec.xml
+        applications/admin/sudo/pspec.xml
+        applications/admin/sysstat/pspec.xml
+        applications/admin/tmpwatch/pspec.xml
+        applications/util/logrotate/pspec.xml
+        applications/util/prelink/pspec.xml
+        applications/util/schedtool/pspec.xml
+        applications/util/schedutils/pspec.xml
+    archive
+        applications/archive/cabextract/pspec.xml
+        applications/archive/lrzip/pspec.xml
+        applications/archive/lzo/pspec.xml
+        applications/archive/mt-st/pspec.xml
+        applications/archive/p7zip/pspec.xml
+        applications/archive/rdiff-backup/pspec.xml
+        applications/archive/rpm2targz/pspec.xml
+        applications/archive/rzip/pspec.xml
+        applications/archive/sharutils/pspec.xml
+        applications/archive/unalz/pspec.xml
+        applications/archive/unarj/pspec.xml
+        applications/archive/unrar/pspec.xml
+        applications/archive/unshield/pspec.xml
+        applications/archive/xdelta3/pspec.xml
+        applications/archive/xdelta/pspec.xml
+    console
+        applications/admin/mc/pspec.xml
+        applications/admin/multitail/pspec.xml
+        applications/util/ncdu/pspec.xml
+        applications/util/pv/pspec.xml
+        applications/util/screen/pspec.xml
+        applications/util/slocate/pspec.xml
+        applications/util/tidy/pspec.xml
+        applications/util/tree/pspec.xml
+    shell
+        applications/shells/sash/pspec.xml
+        applications/shells/tcsh/pspec.xml
+        applications/shells/zsh/pspec.xml
+        applications/util/bash-completion-config/pspec.xml
+        applications/util/bash-completion/pspec.xml
+        applications/util/bashdb/pspec.xml
+        applications/util/command-not-found/pspec.xml
+
 x11
     library
         desktop/freedesktop/xorg/libdrm/pspec.xml
@@ -1641,38 +1688,14 @@ x11
 
 all packages in devel
 ---------------------------------------------------
-applications/admin/acct/pspec.xml
 applications/admin/dazuko/pspec.xml
-applications/admin/dstat/pspec.xml
 applications/admin/gfxboot/pspec.xml
 applications/admin/gfxtheme-pardus/pspec.xml
 applications/admin/gkrellm/pspec.xml
 applications/admin/irqbalance/pspec.xml
 applications/admin/kexec-tools/pspec.xml
-applications/admin/killproc/pspec.xml
-applications/admin/mc/pspec.xml
-applications/admin/multitail/pspec.xml
-applications/admin/sudo/pspec.xml
 applications/admin/syslinux/pspec.xml
-applications/admin/sysstat/pspec.xml
-applications/admin/tmpwatch/pspec.xml
 applications/admin/webalizer/pspec.xml
-
-applications/archive/cabextract/pspec.xml
-applications/archive/lrzip/pspec.xml
-applications/archive/lzo/pspec.xml
-applications/archive/mt-st/pspec.xml
-applications/archive/p7zip/pspec.xml
-applications/archive/rdiff-backup/pspec.xml
-applications/archive/rpm2targz/pspec.xml
-applications/archive/rzip/pspec.xml
-applications/archive/sharutils/pspec.xml
-applications/archive/unalz/pspec.xml
-applications/archive/unarj/pspec.xml
-applications/archive/unrar/pspec.xml
-applications/archive/unshield/pspec.xml
-applications/archive/xdelta3/pspec.xml
-applications/archive/xdelta/pspec.xml
 
 applications/emulators/scummvm/pspec.xml
 applications/emulators/wine/pspec.xml
@@ -1859,34 +1882,15 @@ applications/security/tpmmanager/pspec.xml
 applications/security/tpm-tools/pspec.xml
 applications/security/trousers/pspec.xml
 
-applications/shells/sash/pspec.xml
-applications/shells/tcsh/pspec.xml
-applications/shells/zsh/pspec.xml
-
-applications/util/bash-completion-config/pspec.xml
-applications/util/bash-completion/pspec.xml
-applications/util/bashdb/pspec.xml
 applications/util/bchunk/pspec.xml
-applications/util/command-not-found/pspec.xml
 applications/util/google-gadgets/pspec.xml
 applications/util/iTest/pspec.xml
-applications/util/logrotate/pspec.xml
 applications/util/lxsplit/pspec.xml
 applications/util/mountmanager/pspec.xml
-applications/util/ncdu/pspec.xml
 applications/util/nrg2iso/pspec.xml
 applications/util/PisiYap/pspec.xml
 applications/util/portmap/pspec.xml
-applications/util/prelink/pspec.xml
-applications/util/pv/pspec.xml
-applications/util/qstardict/pspec.xml
-applications/util/schedtool/pspec.xml
-applications/util/schedutils/pspec.xml
-applications/util/screen/pspec.xml
-applications/util/slocate/pspec.xml
 applications/util/strigi/pspec.xml
-applications/util/tidy/pspec.xml
-applications/util/tree/pspec.xml
 applications/util/utempter/pspec.xml
 
 desktop/freedesktop/exempi/pspec.xml
@@ -1949,7 +1953,6 @@ desktop/kde/filelight/pspec.xml
 desktop/kde/freetts/pspec.xml
 desktop/kde/gwenview-i18n/pspec.xml
 desktop/kde/gwenview/pspec.xml
-
 
 desktop/kde/k3b-i18n/pspec.xml
 desktop/kde/k3bmonkeyaudioplugin/pspec.xml
@@ -2078,7 +2081,6 @@ programming/libs/lib3ds/pspec.xml
 programming/libs/libacpi/pspec.xml
 programming/libs/libaio/pspec.xml
 programming/libs/libarchive/pspec.xml
-
 programming/libs/libassuan/pspec.xml
 programming/libs/libasyncns/pspec.xml
 programming/libs/libatomic_ops/pspec.xml
@@ -2256,5 +2258,6 @@ Ideas
 - hardware emulator and virtualization should be merged maybe ? they do the same thing, only with different methods
 - hardware info name may change
 - kde addons contains packages that we added by hand as Pardus tools, or used only for kde as a kde enhancement
+- rename tool component to something better (accessory, util etc.) maybe
 
 
