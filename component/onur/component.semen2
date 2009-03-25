@@ -2093,6 +2093,7 @@ programming/libs/lib-compat/pspec.xml
 programming/libs/libconfig/pspec.xml
 programming/libs/libevent/pspec.xml
 programming/libs/libffi/pspec.xml
+programming/libs/iksemel/pspec.xml
 
 multimedia
 programming/libs/ftgl/pspec.xml
@@ -2102,7 +2103,6 @@ programming/libs/giflib/pspec.xml
 programming/libs/gle/pspec.xml
 programming/libs/glew/pspec.xml
 programming/libs/glfw/pspec.xml
-programming/libs/hermes/pspec.xml
 programming/libs/ilbc/pspec.xml
 programming/libs/lensfun/pspec.xml
 programming/libs/lib3ds/pspec.xml
@@ -2116,6 +2116,7 @@ programming/libs/libfame/pspec.xml
 
 game
 programming/libs/ggz-client-libs/pspec.xml
+programming/libs/hermes/pspec.xml
 
 science
 programming/libs/givaro/pspec.xml
@@ -2132,7 +2133,7 @@ programming/libs/gnutls/pspec.xml
 programming/libs/gssdp/pspec.xml
 programming/libs/gupnp-igd/pspec.xml
 programming/libs/gupnp/pspec.xml
-programming/libs/iksemel/pspec.xml
+programming/libs/libcddb/pspec.xml
 
 hardware
 programming/libs/intel-tbb/pspec.xml
@@ -2149,7 +2150,6 @@ programming/libs/libdiscid/pspec.xml
 programming/libs/libfprint/pspec.xml
 
 sever
-programming/libs/libcddb/pspec.xml
 
 programming/libs/libfwbuilder/pspec.xml
 programming/libs/libgadu/pspec.xml
