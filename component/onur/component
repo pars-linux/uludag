@@ -467,6 +467,10 @@ hardware
         applications/hardware/bluez-libs/pspec.xml
         applications/hardware/bluez-utils/pspec.xml
         applications/hardware/cwiid/pspec.xml
+    cpu
+        applications/admin/irqbalance/pspec.xml
+        applications/hardware/microcode-ctl/pspec.xml
+        applications/hardware/microcode-data/pspec.xml
     disk
         filesystem
             applications/filesystems/cramfs/pspec.xml
@@ -1582,7 +1586,6 @@ tool
     admin
         applications/admin/acct/pspec.xml
         applications/admin/dstat/pspec.xml
-        applications/admin/irqbalance/pspec.xml
         applications/admin/kexec-tools/pspec.xml
         applications/admin/killproc/pspec.xml
         applications/admin/sudo/pspec.xml
@@ -1711,8 +1714,6 @@ applications/hardware/eject/pspec.xml
 applications/hardware/fnfx/pspec.xml
 applications/hardware/fxload/pspec.xml
 applications/hardware/gpm/pspec.xml
-applications/hardware/microcode-ctl/pspec.xml
-applications/hardware/microcode-data/pspec.xml
 applications/hardware/setserial/pspec.xml
 
 applications/multimedia/asymptote/pspec.xml
