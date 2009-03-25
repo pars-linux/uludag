@@ -1,7 +1,7 @@
 - CSL methods
     - log_*()
     - model_apps()
-? Move core methods into script.c
+- Move core methods into script.c
 - Execute onRegister/onRemove methods after registering/removing script
 / Logging to file
     ? Logging errors and traceback to seperate file
