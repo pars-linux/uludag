@@ -691,6 +691,9 @@ multimedia
         applications/multimedia/netpbm/pspec.xml
         desktop/gnome/gimp-data-extras/pspec.xml
         desktop/gnome/gimp/pspec.xml
+        applications/multimedia/jasper/pspec.xml
+        applications/multimedia/jbigkit/pspec.xml
+        applications/multimedia/mjpegtools/pspec.xml
     library
         programming/libs/aalib/pspec.xml
         programming/libs/alleggl/pspec.xml
@@ -766,12 +769,18 @@ multimedia
         desktop/kde/kradio/pspec.xml
     sound
         applications/multimedia/a52dec/pspec.xml
+        applications/multimedia/aften/pspec.xml
+        applications/multimedia/ardour/pspec.xml
         applications/multimedia/audacity/pspec.xml
         applications/multimedia/esound/pspec.xml
         applications/multimedia/faac/pspec.xml
         applications/multimedia/faad2/pspec.xml
         applications/multimedia/flac/pspec.xml
+        applications/multimedia/fluidsynth/pspec.xml
+        applications/multimedia/hydrogen-drumkits/pspec.xml
+        applications/multimedia/hydrogen/pspec.xml
         applications/multimedia/jack-audio-connection-kit/pspec.xml
+        applications/multimedia/jamin/pspec.xml
         applications/multimedia/lame/pspec.xml
         applications/multimedia/lastfm/pspec.xml
         applications/multimedia/mac/pspec.xml
@@ -786,8 +795,8 @@ multimedia
         applications/multimedia/shntool/pspec.xml
         applications/multimedia/sox/pspec.xml
         applications/multimedia/timidity-eawpatches/pspec.xml
-        applications/multimedia/timidity/pspec.xml
         applications/multimedia/timidity-shompatches/pspec.xml
+        applications/multimedia/timidity/pspec.xml
         applications/multimedia/twolame/pspec.xml
         applications/multimedia/vorbis-tools/pspec.xml
     tv
@@ -1615,8 +1624,8 @@ applications/hardware/setserial/pspec.xml
 applications/hardware/sg3_utils/pspec.xml
 applications/hardware/uhinv/pspec.xml
 
-applications/multimedia/aften/pspec.xml
-applications/multimedia/ardour/pspec.xml
+
+
 applications/multimedia/asymptote/pspec.xml
 applications/multimedia/AtomicParsley/pspec.xml
 applications/multimedia/autotrace/pspec.xml
@@ -1631,7 +1640,6 @@ applications/multimedia/dvd-slideshow/pspec.xml
 applications/multimedia/dvgrab/pspec.xml
 applications/multimedia/emovix/pspec.xml
 applications/multimedia/ffmpeg2theora/pspec.xml
-applications/multimedia/fluidsynth/pspec.xml
 applications/multimedia/ghostscript/pspec.xml
 applications/multimedia/gnomad2/pspec.xml
 applications/multimedia/gocr/pspec.xml
@@ -1639,15 +1647,10 @@ applications/multimedia/gpac/pspec.xml
 applications/multimedia/GraphicsMagick/pspec.xml
 applications/multimedia/graphviz/pspec.xml
 applications/multimedia/gv/pspec.xml
-applications/multimedia/hydrogen-drumkits/pspec.xml
-applications/multimedia/hydrogen/pspec.xml
 applications/multimedia/ImageJ/pspec.xml
 applications/multimedia/icns2png/pspec.xml
 applications/multimedia/imposter/pspec.xml
 applications/multimedia/inkscape/pspec.xml
-applications/multimedia/jamin/pspec.xml
-applications/multimedia/jasper/pspec.xml
-applications/multimedia/jbigkit/pspec.xml
 applications/multimedia/jubler/pspec.xml
 applications/multimedia/libnut/pspec.xml
 applications/multimedia/lilycomp/pspec.xml
@@ -1655,7 +1658,6 @@ applications/multimedia/lilypond/pspec.xml
 applications/multimedia/mandvd/pspec.xml
 applications/multimedia/mediatomb/pspec.xml
 applications/multimedia/mixxx/pspec.xml
-applications/multimedia/mjpegtools/pspec.xml
 applications/multimedia/mkvtoolnix/pspec.xml
 applications/multimedia/mlt/pspec.xml
 applications/multimedia/mlt++/pspec.xml
