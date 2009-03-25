@@ -812,6 +812,15 @@ multimedia
         programming/libs/xine-lib/pspec.xml
         programming/libs/xvid/pspec.xml
         applications/multimedia/libnut/pspec.xml
+        desktop/gnome/gst-ffmpeg/pspec.xml
+        desktop/gnome/gst-plugins-bad/pspec.xml
+        desktop/gnome/gst-plugins-base/pspec.xml
+        desktop/gnome/gst-plugins-farsight/pspec.xml
+        desktop/gnome/gst-plugins-good/pspec.xml
+        desktop/gnome/gst-plugins-ugly/pspec.xml
+        desktop/gnome/gstreamer/pspec.xml
+        desktop/gnome/libsvg-cairo/pspec.xml
+        desktop/gnome/libsvg/pspec.xml
     plugin
     radio
         desktop/kde/kradio/pspec.xml
@@ -1974,17 +1983,8 @@ desktop/freedesktop/xdg-utils/pspec.xml
 desktop/freedesktop/xorg/xcursor-themes/pspec.xml
 
 desktop/gnome/beagle/pspec.xml
-desktop/gnome/gst-ffmpeg/pspec.xml
-desktop/gnome/gst-plugins-bad/pspec.xml
-desktop/gnome/gst-plugins-base/pspec.xml
-desktop/gnome/gst-plugins-farsight/pspec.xml
-desktop/gnome/gst-plugins-good/pspec.xml
-desktop/gnome/gst-plugins-ugly/pspec.xml
-desktop/gnome/gstreamer/pspec.xml
 desktop/gnome/libcroco/pspec.xml
 desktop/gnome/librsvg/pspec.xml
-desktop/gnome/libsvg-cairo/pspec.xml
-desktop/gnome/libsvg/pspec.xml
 desktop/gnome/pycairo/pspec.xml
 desktop/gnome/pygobject/pspec.xml
 desktop/gnome/pygtk/pspec.xml
