@@ -4,7 +4,7 @@
 # Pardus Libs
 import comar
 import dbus
-
+import time
 # Qt Libs
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
@@ -41,6 +41,7 @@ class WidgetSystemServices(QGraphicsWidget):
     def __init__(self, parent, name, isdescenabled=True):
         QGraphicsWidget.__init__(self, parent)
 
+        self.animator = Plasma.Animator.self()
         self._name = name
         self._parent = parent
 
@@ -68,33 +69,42 @@ class WidgetSystemServices(QGraphicsWidget):
 
         self.layout.addStretch()
 
-        self.switcher = Plasma.TabBar(self)
-        self.switcher_locked = False
-        self.initSwitcher()
-        if not self.isServiceRunning():
-            self.switcher.setCurrentIndex(1)
-        self.layout.addItem(self.switcher)
+        self.stateButton = Plasma.PushButton(self)
+        self.layout.addItem(self.stateButton)
+        self.connect(self.stateButton, SIGNAL("clicked()"), self.setService)
 
-        self.connect(self.switcher, SIGNAL("currentChanged(int)"), self.setService)
+        QTimer.singleShot(100, self.setButtonStates)
+
+    def startShaking(self):
+        self.animator.moveItem(self, Plasma.Animator.SlideOutMovement, QPoint(self.currentPos.x()-14,self.currentPos.y()))
+        QTimer.singleShot(100, self.shakeRight)
+
+    def shakeRight(self):
+        self.animator.moveItem(self, Plasma.Animator.SlideOutMovement, QPoint(self.currentPos.x()+14,self.currentPos.y()))
+        QTimer.singleShot(100, self.stopShaking)
+
+    def stopShaking(self):
+        self.animator.moveItem(self, Plasma.Animator.SlideInMovement, self.currentPos)
+
+    def setButtonStates(self):
+        self.currentPos = self.pos().toPoint()
+        if self.isServiceRunning():
+            self.stateButton.setText("Stop")
+        else:
+            self.stateButton.setText("Start")
+        self.startShaking()
 
     def isServiceRunning(self):
         return self._state in ["on", "started", "conditional_started"]
 
-    def initSwitcher(self):
-        self.switcher.addTab("Start")
-        self.switcher.addTab("Stop")
-
-    def setService(self, index):
-        if (index == 0 and self.isServiceRunning()) or \
-                (index == 1 and not self.isServiceRunning()):
-            return
+    def setService(self):
         try:
-            if index == 0:
-                link.System.Service[self._name].start(async=self.handler)
-            else:
+            if self.isServiceRunning():
                 link.System.Service[self._name].stop(async=self.handler)
+            else:
+                link.System.Service[self._name].start(async=self.handler)
         except dbus.DBusException:
-            self.switcher.setCurrentIndex(index^1)
+            self.setButtonStates()
 
     def handler(self, *args):
         pass
@@ -107,13 +117,7 @@ class WidgetSystemServices(QGraphicsWidget):
             self._state = state
 
         self.service_icon.setIcon(state_icons[self._state])
-
-        self.disconnect(self.switcher, SIGNAL("currentChanged(int)"), self.setService)
-        if self.isServiceRunning():
-            self.switcher.setCurrentIndex(0)
-        else:
-            self.switcher.setCurrentIndex(1)
-        self.connect(self.switcher, SIGNAL("currentChanged(int)"), self.setService)
+        self.setButtonStates()
 
 class WidgetStack(QGraphicsWidget):
     def __init__(self, parent):
