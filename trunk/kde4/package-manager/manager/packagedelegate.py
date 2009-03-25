@@ -20,35 +20,17 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
 from packagemodel import *
+from rowanimator import RowAnimator
 
 UNIVERSAL_PADDING = 6
 FAV_ICON_SIZE = 24
 DETAIL_LINE_OFFSET = 36
 MAIN_ICON_SIZE = 48
-DEFAULT_HEIGHT = MAIN_ICON_SIZE + 2 * UNIVERSAL_PADDING
-MAX_HEIGHT = DEFAULT_HEIGHT * 4
-
-(UP, DOWN) = range(2)
 
 class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
-        self.parent = parent
-        self.timeLine = QTimeLine(250)
-        self.timeLine.setUpdateInterval(40)
-        self.animatedHeight = DEFAULT_HEIGHT
-        self.animationDirection = DOWN
-        self.animatingRow = None
-        QObject.connect(self.timeLine, SIGNAL("valueChanged(qreal)"), parent.packageList.reset)
-        QObject.connect(self.timeLine, SIGNAL("finished()"), self.animationFinished)
-
-    def animationFinished(self):
-        if self.animationDirection == DOWN:
-            self.animationDirection = UP
-            self.animatedHeight = MAX_HEIGHT
-        else:
-            self.animationDirection = DOWN
-            self.animatedHeight = DEFAULT_HEIGHT
+        self.rowAnimator = RowAnimator(parent.packageList.reset)
 
     def paint(self, painter, option, index):
         if not index.isValid():
@@ -118,27 +100,26 @@ class PackageDelegate(QtGui.QItemDelegate):
         p.setFont(normalFont)
         p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextWordWrap, summary.toString())
 
-        if self.animatingRow == index.row():
-            normalDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Normal)
-            boldDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Bold)
+        normalDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Normal)
+        boldDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Bold)
 
             # Package Detail Label
-            position = top + MAIN_ICON_SIZE + FAV_ICON_SIZE
+        position = top + MAIN_ICON_SIZE + FAV_ICON_SIZE
 
-            p.setFont(boldDetailFont)
-            p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Açıklama:"))
+        p.setFont(boldDetailFont)
+        p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Açıklama:"))
 
-            p.setFont(normalDetailFont)
-            p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, description.toString())
+        p.setFont(normalDetailFont)
+        p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, description.toString())
 
-            # Package Detail Version
-            position += DETAIL_LINE_OFFSET
+        # Package Detail Version
+        position += DETAIL_LINE_OFFSET
 
-            p.setFont(boldDetailFont)
-            p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Sürüm:"))
+        p.setFont(boldDetailFont)
+        p.drawText(left + FAV_ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Sürüm:"))
 
-            p.setFont(normalDetailFont)
-            p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, version.toString())
+        p.setFont(normalDetailFont)
+        p.drawText(left + 2 * MAIN_ICON_SIZE, position, width - textInner - MAIN_ICON_SIZE, itemHeight / 2, Qt.TextWordWrap, version.toString())
 
         p.end()
         painter.drawPixmap(option.rect.topLeft(), pixmap)
@@ -148,17 +129,8 @@ class PackageDelegate(QtGui.QItemDelegate):
             toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
             return model.setData(index, toggled, Qt.CheckStateRole)
         if event.type() == QEvent.MouseButtonRelease and index.column() == 1:
-            if self.animatingRow != index.row():
-                self.resetRowAnimation(index.row())
-            self.timeLine.start()
+            self.rowAnimator.animate(index.row())
         return QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
-
-    def resetRowAnimation(self, row):
-        self.timeLine.stop()
-        self.timeLine.setCurrentTime(0)
-        self.animatingRow = row
-        self.animatedHeight = DEFAULT_HEIGHT
-        self.animationDirection = DOWN
 
     def sizeHint(self, option, index):
         if index.column() == 1:
@@ -166,17 +138,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         else:
             width = FAV_ICON_SIZE
 
-        if index.row() == self.animatingRow and self.timeLine.state() == QTimeLine.Running:
-            if self.animationDirection == DOWN:
-                self.animatedHeight += 25
-                if self.animatedHeight > MAX_HEIGHT:
-                    self.animatedHeight = MAX_HEIGHT
-            else:
-                self.animatedHeight -= 25
-                if self.animatedHeight < DEFAULT_HEIGHT:
-                    self.animatedHeight = DEFAULT_HEIGHT
-
-        if index.row() == self.animatingRow:
-            return QSize(width, self.animatedHeight)
+        if self.rowAnimator.currentRow() == index.row():
+            return self.rowAnimator.size()
 
         return QSize(width, MAIN_ICON_SIZE + 2 * UNIVERSAL_PADDING)
