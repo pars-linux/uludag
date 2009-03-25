@@ -25,7 +25,7 @@ from PyKDE4.kdecore import *
 
 # Application Stuff
 from about import aboutData
-from uimain import Ui_mainManager
+from ui import Ui_mainManager
 from uiitem import Ui_ServiceItemWidget
 
 # DBUS-QT
