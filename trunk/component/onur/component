@@ -530,8 +530,11 @@ hardware
         applications/hardware/smartdimmer/pspec.xml
         applications/hardware/vbetool/pspec.xml
     info
+        applications/hardware/dmidecode/pspec.xml
         applications/util/lshw/pspec.xml
         applications/util/lsscsi/pspec.xml
+        desktop/freedesktop/hal-info/pspec.xml
+        desktop/freedesktop/hal/pspec.xml
     irda
         applications/hardware/irda-utils/pspec.xml
         applications/hardware/lirc-remotes/pspec.xml
@@ -560,6 +563,7 @@ hardware
     powermanagement
         applications/hardware/acpi4asus/pspec.xml
         applications/hardware/acpica/pspec.xml
+        applications/hardware/lm_sensors/pspec.xml
         applications/hardware/pmtools/pspec.xml
         applications/powermanagement/acpid/pspec.xml
         applications/powermanagement/acpi/pspec.xml
@@ -1525,13 +1529,11 @@ applications/editors/scribus/pspec.xml
 applications/emulators/scummvm/pspec.xml
 applications/emulators/wine/pspec.xml
 
-applications/hardware/dmidecode/pspec.xml
 applications/hardware/eject/pspec.xml
 applications/hardware/fnfx/pspec.xml
 applications/hardware/fxload/pspec.xml
 applications/hardware/gpm/pspec.xml
 applications/hardware/interbench/pspec.xml
-applications/hardware/lm_sensors/pspec.xml
 applications/hardware/microcode-ctl/pspec.xml
 applications/hardware/microcode-data/pspec.xml
 applications/hardware/sdparm/pspec.xml
@@ -1773,8 +1775,6 @@ applications/zemberek-openoffice/pspec.xml
 desktop/freedesktop/dbus-qt3/pspec.xml
 desktop/freedesktop/exempi/pspec.xml
 desktop/freedesktop/grounation-xcursor/pspec.xml
-desktop/freedesktop/hal-info/pspec.xml
-desktop/freedesktop/hal/pspec.xml
 desktop/freedesktop/jimmac-xcursor/pspec.xml
 desktop/freedesktop/liblazy/pspec.xml
 desktop/freedesktop/notification-daemon/pspec.xml
@@ -2243,5 +2243,7 @@ Ideas
 - use "no" library component, differentiate in IsA tags
 - shall language bindings be splitted or not ? (60, 70, 80, 90) programming.language is really confusing, if we name it language it is confused with i10l, removing the language part does not seem necessary though since python "is" a programming.language
 - hardware emulator and virtualization should be merged maybe ? they do the same thing, only with different methods
+- hardware info name may change
 - kde addons contains packages that we added by hand as Pardus tools, or used only for kde as a kde enhancement
+
 
