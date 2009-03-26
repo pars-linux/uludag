@@ -22,6 +22,7 @@
   #                 Olav Vitters <olav@bkor.dhs.org>
   #                 Guy Pyrzak <guy.pyrzak@gmail.com>
   #                 Elliotte Martin <emartin@everythingsolved.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
@@ -40,13 +41,13 @@
        */
       [% IF user.settings.quote_replies.value != 'off' %]
         document.write('[<a href="#add_comment" onclick="replyToComment(' + 
-                       id + ',' + real_id + ');">reply<' + '/a>]');
+                       id + ',' + real_id + ');">yanıtla<' + '/a>]');
       [% END %]
   }
 
   /* Adds the reply text to the `comment' textarea */
   function replyToComment(id, real_id) {
-      var prefix = "(In reply to comment #" + id + ")\n";
+      var prefix = "(Cevaplanan yorum: #" + id + ")\n";
       var replytext = "";
       [% IF user.settings.quote_replies.value == 'quoted_reply' %]
         /* pre id="comment_name_N" */
@@ -236,7 +237,7 @@
         <a name="add_comment"></a>
         [% IF user.id %]
         <table><tr><td>
-          <label for="comment" accesskey="c"><b>Additional <u>C</u>omments</b></label>:
+          <label for="comment" accesskey="y"><b>Ek <u>Y</u>orumlar</b></label>:
           [% IF Param("insidergroup") && user.in_group(Param("insidergroup")) %]
             <input type="checkbox" name="commentprivacy" value="1"
                    id="newcommentprivacy"
@@ -261,7 +262,7 @@
           <table class="status">
             <tr>
               <td class="field_label">
-                <b><a href="page.cgi?id=fields.html#status">Status</a></b>:
+                <b><a href="page.cgi?id=fields.html#status">Durum</a></b>:
               </td>
               <td>
                 <a name="bug_status_bottom"></a>
@@ -272,11 +273,10 @@
         </td></tr></table>
         [% ELSE %]
           <fieldset>
-            <legend>Note</legend>
+            <legend>Not</legend>
             <p>
-              You need to
-              <a href="[% IF Param('ssl') != 'never' %][% Param('sslbase') %][% END %]show_bug.cgi?id=[% bug.bug_id %]&amp;GoAheadAndLogIn=1">log in</a>
-              before you can comment on or make changes to this [% terms.bug %].
+              Bu [% terms.bugDat %] yorum yapabilmek veya [% terms.bugLoc %] değişiklik yapabilmek için önce
+              <a href="[% IF Param('ssl') != 'never' %][% Param('sslbase') %][% END %]show_bug.cgi?id=[% bug.bug_id %]&amp;GoAheadAndLogIn=1">oturum açın</a>.
             </p>
           </fieldset>
         [% END %]
@@ -313,7 +313,7 @@
       <span id="short_desc_nonedit_display">[% bug.short_desc FILTER html %]</span>
       [% IF bug.check_can_change_field('short_desc', 0, 1) || 
             bug.check_can_change_field('alias', 0, 1)  %]
-        <small class="editme">(<a href="#" id="editme_action">edit</a>)</small>
+        <small class="editme">(<a href="#" id="editme_action">değiştir</a>)</small>
       [% END %]
      </span>
   
@@ -326,9 +326,7 @@
             <td>
               <label 
                 for="alias" 
-                title="a name for the 
-                       [% terms.bug %] that can be used in place of its ID number, 
-                       [%%] e.g. when adding it to a list of dependencies"
+                title="[% terms.bug %] için bağımlılık ekleme gibi işlemlerde numarası yerine kullanılabilecek bir isim"
                 >Alias</label>:</td><td>
           [% ELSIF bug.alias %]
             <td colspan="2">(
@@ -347,7 +345,7 @@
         [%# *** Summary *** %]
         <tr>
           <td>
-            <label accesskey="s" for="short_desc"><u>S</u>ummary</label>:
+            <label accesskey="ö" for="short_desc"><u>Ö</u>zet</label>:
           </td>
           <td>
             [% PROCESS input inputname => "short_desc" size => "80" colspan => 2
@@ -373,7 +371,7 @@
     [%#############%]
     <tr>
       <td class="field_label">
-        <label for="product" accesskey="p"><b><u>P</u>roduct</b></label>:
+        <label for="product" accesskey="ü"><b><u>Ü</u>rün</b></label>:
       </td>
       [% PROCESS select selname => "product" %]
     </tr>
@@ -382,9 +380,9 @@
     [%###############%]
     <tr>
       <td class="field_label">
-        <label for="component" accesskey="m">
+        <label for="component" accesskey="b">
           <b><a href="describecomponents.cgi?product=[% bug.product FILTER url_quote %]">
-            Co<u>m</u>ponent</a>:
+            <u>B</u>ileşen</a>:
           </b>
         </label>
       </td>
@@ -392,7 +390,7 @@
     </tr>
     <tr>
       <td class="field_label">
-        <label for="version"><b>Version</b></label>:
+        <label for="version"><b>Sürüm</b></label>:
       </td>
 
       [% PROCESS select selname => "version" %]
@@ -402,7 +400,7 @@
     [%############%]    
     <tr>
       <td class="field_label">
-        <label for="rep_platform" accesskey="h"><b>Platform</b></label>:
+        <label for="rep_platform" accesskey="p"><b><u>P</u>latform</b></label>:
       </td>
       <td>
        [% PROCESS select selname => "rep_platform" no_td=> 1 %]
@@ -424,7 +422,7 @@
 [% BLOCK section_status %]
   <tr>
     <td class="field_label">
-      <b><a href="page.cgi?id=fields.html#status">Status</a></b>:
+      <b><a href="page.cgi?id=fields.html#status">Durum</a></b>:
     </td>
     <td id="bz_field_status">
       <span id="static_bug_status">
@@ -432,12 +430,12 @@
         [% IF bug.resolution %]
           [%+ get_resolution(bug.resolution) FILTER html %]
           [% IF bug.dup_id %]
-            of [% "${terms.bug} ${bug.dup_id}" FILTER bug_link(bug.dup_id) FILTER none %]
+            - [% "${terms.bug} ${bug.dup_id}" FILTER bug_link(bug.dup_id) FILTER none %]
           [% END %]
         [% END %]
         [% IF bug.user.canedit || bug.user.isreporter %]
           (<a href="#add_comment" 
-              onclick="window.setTimeout(function() { document.getElementById('bug_status').focus(); }, 10)">edit</a>)
+              onclick="window.setTimeout(function() { document.getElementById('bug_status').focus(); }, 10)">değiştir</a>)
         [% END %]
       </span>
     </td>
@@ -455,8 +453,8 @@
  [%###############################################################%]
     <tr>
       <td class="field_label">
-        <label for="priority" accesskey="i">
-          <b><a href="page.cgi?id=fields.html#importance"><u>I</u>mportance</a></b></label>:
+        <label for="priority" accesskey="n">
+          <b><a href="page.cgi?id=fields.html#importance">Ö<u></u>em</a></b></label>:
       </td>
       <td>
         [% PROCESS select selname => "priority" no_td=>1 %] 
@@ -464,17 +462,12 @@
         [% IF bug.use_votes %]
           <span id="votes_container">
           [% IF bug.votes %] 
-            with 
             <a href="votes.cgi?action=show_bug&amp;bug_id=[% bug.bug_id %]">
               [% bug.votes %] 
-              [% IF bug.votes == 1 %]
-                vote
-              [% ELSE %]
-                votes
-              [% END %]</a> 
+              oyla</a> 
           [% END %]    
           (<a href="votes.cgi?action=show_user&amp;bug_id=
-                  [% bug.bug_id %]#vote_[% bug.bug_id %]">vote</a>)
+                  [% bug.bug_id %]#vote_[% bug.bug_id %]">oy ver</a>)
           </span>  
         [% END %]
       </td>
@@ -487,7 +480,7 @@
             [% IF bug.milestoneurl %]
               <a href="[% bug.milestoneurl FILTER html %]">
             [% END %]
-            Target&nbsp;Milestone[% "</a>" IF bug.milestoneurl %]
+            Hedef&nbsp;Aşama[% "</a>" IF bug.milestoneurl %]
           [%%]</b></label>:
         </td>
         [% PROCESS select selname = "target_milestone" %]
@@ -511,7 +504,7 @@
           <div id="bz_assignee_edit_container" class="bz_default_hidden">
             <span>
               [% INCLUDE user_identity user=> bug.assigned_to %]
-              (<a href="#" id="bz_assignee_edit_action">edit</a>)
+              (<a href="#" id="bz_assignee_edit_action">değiştir</a>)
             </span>
           </div>
           <div id="bz_assignee_input">
@@ -523,7 +516,7 @@
             %]
             <br>
             <input type="checkbox" id="set_default_assignee" name="set_default_assignee" value="1">
-            <label id="set_default_assignee_label" for="set_default_assignee">Reset Assignee to default</label>
+            <label id="set_default_assignee_label" for="set_default_assignee">Öntanımlı Atanana Geri Ata</label>
           </div>
           <script type="text/javascript">
            hideEditableField('bz_assignee_edit_container', 
@@ -542,7 +535,7 @@
     [% IF Param('useqacontact') %]
     <tr>
       <td class="field_label">
-        <label for="qa_contact" accesskey="q"><b><u>Q</u>A Contact</b></label>:
+        <label for="qa_contact" accesskey="k"><b><u>K</u>alite Kontrol Kişisi</b></label>:
       </td>
       <td>
 
@@ -552,7 +545,7 @@
             <span>
               <span id="bz_qa_contact_edit_display">
               [% INCLUDE user_identity user=> bug.qa_contact %]</span>
-              (<a href="#" id="bz_qa_contact_edit_action">edit</a>)
+              (<a href="#" id="bz_qa_contact_edit_action">değiştir</a>)
             </span>
           </div>
           [% END %]
@@ -566,7 +559,7 @@
             %]
             <br>
             <input type="checkbox" id="set_default_qa_contact" name="set_default_qa_contact" value="1">
-            <label for="set_default_qa_contact" id="set_default_qa_contact_label">Reset QA Contact to default</label>
+            <label for="set_default_qa_contact" id="set_default_qa_contact_label">Kalite Kontrol Kişisini öntanımlı değere döndür</label>
           </div>
           <script type="text/javascript">
             [% IF bug.qa_contact != "" %]
@@ -593,12 +586,12 @@
 [%# *** URL Whiteboard Keywords *** %]
   <tr>
     <td class="field_label">
-      <label for="bug_file_loc" accesskey="u"><b>
+      <label for="bug_file_loc" accesskey="a"><b>
         [% IF bug.bug_file_loc 
            AND NOT bug.bug_file_loc.match("^(javascript|data)") %]
-          <a href="[% bug.bug_file_loc FILTER html %]"><u>U</u>RL</a>
+          <a href="[% bug.bug_file_loc FILTER html %]"><u>A</u>dres</a>
         [% ELSE %]
-          <u>U</u>RL
+          <u>A</u>dres
         [% END %]
       [%%]</b></label>:
     </td>
@@ -613,7 +606,7 @@
         [% ELSE %]
           [% bug.bug_file_loc FILTER html %]
         [% END %]
-        (<a href="#" id="bz_url_edit_action">edit</a>)</span>
+        (<a href="#" id="bz_url_edit_action">değiştir</a>)</span>
       [% END %]
       <span id="bz_url_input_area">
         [% url_output =  PROCESS input no_td=1 inputname => "bug_file_loc" size => "40" colspan => 2 %]
@@ -638,7 +631,7 @@
   [% IF Param('usestatuswhiteboard') %]
     <tr>
       <td class="field_label">
-        <label for="status_whiteboard" accesskey="w"><b><u>W</u>hiteboard</b></label>:
+        <label for="status_whiteboard" accesskey="d"><b>Karalama <u>d</u>efteri</b></label>:
       </td>
       [% PROCESS input inputname => "status_whiteboard" size => "40" colspan => 2 %]
     </tr>
@@ -647,8 +640,8 @@
   [% IF use_keywords %]
     <tr>
       <td class="field_label">
-        <label for="keywords" accesskey="k">
-          <b><a href="describekeywords.cgi"><u>K</u>eywords</a></b></label>:
+        <label for="keywords" accesskey="a">
+          <b><a href="describekeywords.cgi"><u>A</u>nahtarlar</a></b></label>:
       </td>
       [% PROCESS input inputname => "keywords" size => 40 colspan => 2
                        value => bug.keywords.join(', ') %]
@@ -662,21 +655,21 @@
 [% BLOCK section_dependson_blocks %]
   <tr>
     [% PROCESS dependencies
-               dep = { title => "Depends&nbsp;on", fieldname => "dependson" } %]
+               dep = { title => "Ters&nbsp;bağımlılıklar", fieldname => "dependson" } %]
   </tr>
   
   <tr>
-    [% PROCESS dependencies accesskey = "b"
-               dep = { title => "<u>B</u>locks", fieldname => "blocked" } %]
+    [% PROCESS dependencies accesskey = "e"
+               dep = { title => "<u>E</u>ngelledikleri", fieldname => "blocked" } %]
   
   <tr>
     <th>&nbsp;</th>
   
     <td colspan="2" align="left" id="show_dependency_tree_or_graph">
-      Show dependency <a href="showdependencytree.cgi?id=[% bug.bug_id %]&amp;hide_resolved=1">tree</a>
+      <a href="showdependencytree.cgi?id=[% bug.bug_id %]&amp;hide_resolved=1">Bağımlılık ağacını</a> göster
   
       [% IF Param('webdotbase') %]
-        /&nbsp;<a href="showdependencygraph.cgi?id=[% bug.bug_id %]">graph</a>
+        /&nbsp;<a href="showdependencygraph.cgi?id=[% bug.bug_id %]">grafik</a>
       [% END %]
     </td>
   </tr>
@@ -692,7 +685,7 @@
   <table>
     <tr>
       <td class="field_label">
-        <label id="bz_restrict_group_visibility_label"><b> Restrict Group Visibility</b>:</label>
+        <label id="bz_restrict_group_visibility_label"><b> Grup Görünürlüğünü Kısıtla</b>:</label>
       </td>
       <td>
         [% inallgroups = 1 %]
@@ -706,10 +699,10 @@
           [% IF NOT emitted_description %]
             [% emitted_description = 1 %]
             <div id="bz_restrict_group_visibility_help">
-              <b>Only users in all of the selected groups can view this [% terms.bug %]:</b>
+              <b>Sadece seçili tüm grupların üyesi olan kullanıcılar bu [% terms.bugAcc %] görebilir:</b>
               <br>
               <small>
-                (Unchecking all boxes makes this a more public [% terms.bug %].)
+                (Tüm kutuların işaretlerini kaldırırsanız halka daha açık bir [% terms.bug %] elde edersiniz.)
               </small>
             </div>
           [% END %]
@@ -727,8 +720,7 @@
 
         [% IF NOT inallgroups %]
           <b>
-            Only members of a group can change the visibility of [% terms.abug %] for
-            that group.
+            Bir grupta bir [% terms.abugGen %] görünürlüğünü sadece o grubun üyeleri değiştirebilir.
           </b>
           <br>
         [% END %]
@@ -738,19 +730,18 @@
     [% IF inagroup %]
     <tr>
       <td class="field_label">
-        <label id="bz_enable_role_visibility_label"><b>Enable Role Visibility</b>:</label>
+        <label id="bz_enable_role_visibility_label"><b>Görev Görünürlüğünü Aç</b>:</label>
       </td>
       <td>
         <div id="bz_enable_role_visibility_help">
-          <b>Users in the roles selected below can always view this [% terms.bug %]:</b>
+          <b>Aşağıdaki görevde bulunan kullanıcılar bu [% terms.bugDat%] her zaman erişebilir:</b>
           <br>
           <small>
-            (The assignee
+            (Atanan
             [% IF (Param('useqacontact')) %]
-               and QA contact
+               ve kalite kontrol kişisi
             [% END %]
-            can always see [% terms.abug %], and this section does not take effect unless
-            the [% terms.bug %] is restricted to at least one group.)
+            [% terms.bugAcc %] her zaman görebilir, ve bu bölüm [% terms.bug %] bir grupla kısıtlamasına tabi tutulmadığı sürece etkisidir.)
           </small>
         </div>
         <div>
@@ -763,7 +754,7 @@
                    name="reporter_accessible" id="reporter_accessible"
                    [% " checked" IF bug.reporter_accessible %]
                    [% " disabled=\"disabled\"" UNLESS user_can_edit_accessible %]>
-            <label for="reporter_accessible">Reporter</label>
+            <label for="reporter_accessible">Bildiren</label>
           </div>
           <div>
             [% user_can_edit_accessible = bug.check_can_change_field("cclist_accessible", 0, 1) %]
@@ -774,7 +765,7 @@
                    name="cclist_accessible" id="cclist_accessible"
                    [% " checked" IF bug.cclist_accessible %]
                    [% " disabled=\"disabled\"" UNLESS user_can_edit_accessible %]>
-            <label for="cclist_accessible">CC List</label>
+            <label for="cclist_accessible">Haber verilecekler listesi</label>
           </div>
         </div>
       </td>
@@ -790,20 +781,20 @@
 [% BLOCK section_dates %]
   <tr>
     <td class="field_label">
-      <b>Reported</b>:
+      <b>Bildirildi</b>:
     </td>
     <td>
-     [% bug.creation_ts FILTER time %] by [% INCLUDE user_identity user => bug.reporter %]
+     [% bug.creation_ts FILTER time %], bildiren [% INCLUDE user_identity user => bug.reporter %]
     </td>
   </tr>
   
   <tr>
     <td class="field_label">
-      <b> Modified</b>:
+      <b> Değiştirildi</b>:
     </td>
     <td>
       [% bug.delta_ts FILTER time FILTER replace(':\d\d$', '') FILTER replace(':\d\d ', ' ')%] 
-      (<a href="show_activity.cgi?id=[% bug.bug_id %]">[%# terms.Bug %]History</a>)
+      (<a href="show_activity.cgi?id=[% bug.bug_id %]">[%# terms.Bug %]Tarihçe</a>)
     </td>
   
   </tr>
@@ -816,7 +807,7 @@
   [% IF user.id %]
     <tr>
         <td class="field_label">
-          <label for="newcc" accesskey="a"><b>CC List</b>:</label>
+          <label for="newcc" accesskey="a"><b>Haber verilecekler listesi</b>:</label>
         </td>
       <td>
         [% IF user.id %]
@@ -831,7 +822,7 @@
                    IF user.settings.state_addselfcc.value == 'always'
                       || (!has_role
                           && user.settings.state_addselfcc.value == 'cc_unless_role') %]>
-            <label for="addselfcc">Add me to CC list</label>
+            <label for="addselfcc">Beni haber verilecekler listesine ekle</label>
             <br> 
           [% END %]
         [% END %]
@@ -847,13 +838,13 @@
           [% END %]
         [% END %]
         <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
-          (<a href="#" id="cc_edit_area_showhide">edit</a>)
+          (<a href="#" id="cc_edit_area_showhide">değiştir</a>)
         </span>
         <div id="cc_edit_area">
           <div>
             <div>
               <label for="cc">
-                <b>Add</b>
+                <b>Ekle</b>
               </label>
             </div>
             [% INCLUDE global/userselect.html.tmpl
@@ -873,7 +864,7 @@
           [% IF user.id %]
             <br>
             <input type="checkbox" id="removecc" name="removecc">
-            [%%]<label for="removecc">Remove selected CCs</label>
+            [%%]<label for="removecc">Seçili olanları kaldır</label>
             <br>
           [% END %]
         [% END %]
@@ -906,7 +897,7 @@
   [% IF show_bug_flags %]
     <tr>
       <td class="field_label">
-        <label><b>Flags:</b></label>
+        <label><b>Bayraklar:</b></label>
       </td>
       <td></td>
     </tr>
@@ -987,7 +978,7 @@
     [% END %]
     [% IF bug.check_can_change_field(dep.fieldname, 0, 1) %]
       <span id="[% dep.fieldname %]_edit_container" class="edit_me bz_default_hidden" >
-        (<a href="#" id="[% dep.fieldname %]_edit_action">edit</a>)
+        (<a href="#" id="[% dep.fieldname %]_edit_action">değiştir</a>)
       </span>
       <script type="text/javascript">
         hideEditableField('[% dep.fieldname %]_edit_container', 
@@ -1011,25 +1002,25 @@
   <table class="bz_time_tracking_table">
     <tr>
       <th>
-        <label for="estimated_time">Orig. Est.</label>
+        <label for="estimated_time">İlk Tahmin</label>
       </th>
       <th>
-        Current Est.
+        Güncel Tahmin
       </th>
       <th>
-        <label for="work_time">Hours Worked</label>
+        <label for="work_time">Çalışılan Saat</label>
       </th>
       <th>
-        <label for="remaining_time">Hours Left</label>
+        <label for="remaining_time">Kalan Saat</label>
       </th>
       <th>
-        %Complete
+        Tamamlanma %
       </th>
       <th>
-        Gain
+        Kazanım
       </th>
       <th>
-        <label for="deadline">Deadline</label>
+        <label for="deadline">Son gün</label>
       </th>
     </tr>
     <tr>
@@ -1065,14 +1056,13 @@
        <td>
          <input name="deadline" id="deadline" value="[% bug.deadline %]"
                 size="10" maxlength="10"><br />
-         <small>(YYYY-MM-DD)</small>
+         <small>(YYYY-AA-GG)</small>
       </td>        
     </tr>
     <tr>
       <td colspan="7" class="bz_summarize_time">
         <a href="summarize_time.cgi?id=[% bug.bug_id %]&amp;do_depends=1">
-        Summarize time (including time for [% terms.bugs %]
-        blocking this [% terms.bug %])</a>
+        Zamanı özetle (bu [% terms.bugAcc %] engelleyen [% terms.bugs %] dahil)</a>
       </td>
     </tr>
   </table> 
@@ -1155,4 +1145,3 @@
       [% END %]
     [% END %]</span>
 [% END %]
-
