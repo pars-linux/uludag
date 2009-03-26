@@ -5,7 +5,7 @@ COMAR API paketi, COMAR servisine çağrı yapılması ve sinyallerin
 dinlenebilmesi için, DBus modülüne göre daha temiz bir arabirim sunar:
 
     import comar
-    link = comar.Link("3")
+    link = comar.Link()
 
     # Betiklerdeki i18n metodu istemci yerelinde değer üretsin
     link.setLocale()
