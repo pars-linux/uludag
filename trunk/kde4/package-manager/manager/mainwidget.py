@@ -38,9 +38,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
 
     def initializePackageList(self):
-        abstractModel = PackageProxy(self)
-        abstractModel.setSourceModel(PackageModel(self))
-        self.packageList.setModel(abstractModel)
+        self.packageList.setModel(PackageProxy(self))
+        self.packageList.model().setSourceModel(PackageModel(self))
         self.packageList.setItemDelegate(PackageDelegate(self))
         self.packageList.setColumnWidth(0, 32)
         self.packageList.setAlternatingRowColors(True)
