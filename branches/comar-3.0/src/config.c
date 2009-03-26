@@ -93,7 +93,7 @@ static struct option longopts[] = {
     { "socket", required_argument, NULL, 's' },
     { "timeout", required_argument, NULL, 't' },
     { "help", 0, NULL, 'h' },
-    { "version", 0, NULL, 'V' },
+    { "version", 0, NULL, 'v' },
     { NULL, 0, NULL, 0 }
 };
 
