@@ -19,15 +19,15 @@
   #                 Ville Skyttä <ville.skytta@iki.fi>
   #                 Myk Melez <myk@mozilla.org>
   #                 André Batosti <batosti@async.com.br>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS 'global/field-descs.none.tmpl' %]
 
 [% filtered_desc = blocked_tree.$bugid.short_desc FILTER html %]
 [% PROCESS global/header.html.tmpl
-   title           = "Dependency tree for $terms.Bug $bugid"
-   header          = "Dependency tree for 
-                      <a href=\"show_bug.cgi?id=$bugid\">$terms.Bug $bugid</a>"
+   title           = "$terms.Bug $bugid Bağımlılık Ağacı"
+   header          = "<a href=\"show_bug.cgi?id=$bugid\">$terms.Bug $bugid</a> Bağımlılık Ağacı"
    javascript_urls = ["js/expanding-tree.js"]
    style_urls      = ["skins/standard/dependency-tree.css"]
    subheader      = filtered_desc
@@ -62,29 +62,28 @@
     [% IF type == 1 %]
         [% tree_name = "dependson_tree" %]
         [% IF ids.size %]
-            depends on 
+            [%+ ids.size %] 
+            [%+ IF hide_resolved %]açık[% END %]
+            [%+ terms.bugDat %] bağımlı:
         [% ELSE %]
-            does not depend on any [% terms.bugs %].
+            herhangi bir [% terms.bugsDat %] bağımlı değil.
         [% END %]
     [% ELSIF type == 2 %]
         [% tree_name = "blocked_tree" %]
         [% IF ids.size %] 
-            blocks 
+            [%+ ids.size %] 
+            [%+ IF hide_resolved %]açık[% END %]
+            [%+ terms.bugAcc %] engelliyor:
         [% ELSE %]
-            does not block any [% terms.bugs %].
+            [% terms.bugsAcc %] engellemiyor.
         [% END %]
     [% END %]
-    [% IF ids.size %]
-        [%+ (ids.size == 1) ? "one" : ids.size %]
-        [%+ IF hide_resolved %]open[% END %]
-        [%+ (ids.size == 1) ? terms.bug : terms.bugs %]:
-    [% END %] 
   </h3>
   [% IF ids.size %]
-    ([% IF maxdepth -%]Up to [% maxdepth %] level[% "s" IF maxdepth > 1 %] deep | [% END -%]
-    <a href="buglist.cgi?bug_id=[% ids.join(",") %]">view as [% terms.bug %] list</a>
+    ([% IF maxdepth -%][% maxdepth %] seviye[% "s" IF maxdepth > 1 %] derinliğe katar | [% END -%]
+    <a href="buglist.cgi?bug_id=[% ids.join(",") %]">[% terms.bug %] listesi olarak bak</a>
     [% IF user.groups.editbugs && ids.size > 1 %]
-      | <a href="buglist.cgi?bug_id=[% ids.join(",") %]&amp;tweak=1">change several</a>
+      | <a href="buglist.cgi?bug_id=[% ids.join(",") %]&amp;tweak=1">birkaç tane değiştir</a>
     [% END %])
     <ul class="tree">
       [% INCLUDE display_tree tree=$tree_name %]
@@ -110,7 +109,7 @@
       [%- INCLUDE buglink bug=bug bugid=bugid %]
     </span>
     [% IF global.seen.$bugid %]
-      <b><a title="Already displayed above; click to locate"
+      <b><a title="Yukarıda gösterilir; tıklayarak seçebilirsiniz"
             onclick="duplicated('[% bugid FILTER html %]')"
             href="#b[% bugid %]">(*)</a></b>
     [% ELSIF tree.dependencies.$bugid.size %]
@@ -131,7 +130,7 @@
   [% END %]
   <a name="b[% bugid %]" 
      class="b [%+ extra_class FILTER none %]"
-     title="Click to expand or contract this portion of the tree. Hold down the Ctrl key while clicking to expand or contract all subtrees."
+     title="Ağacın bu bölümünü açmak veya kapatmak için tıklayın. Tüm alt dalları açmak veya kapatmak için Ctrl ile tıklayın."
      [% extra_args FILTER none %]>&nbsp;&nbsp;</a>
 [% END %]
 
@@ -147,15 +146,15 @@
     <a href="showdependencytree.cgi?id=[% bugid FILTER url_quote %]"
        class="tree_link">
       <img src="skins/standard/dependency-tree/tree.png"
-           title="See dependency tree for [% terms.bug %] [%+ bugid FILTER html %]">
+           title="[% terms.Bug %] [%+ bugid FILTER html %] bağımlılık ağacını aç">
     </a>
   [% END %]
 [% END %]
 
 [% BLOCK buginfo %]
   [% get_status(bug.bug_status) FILTER html -%] [%+ get_resolution(bug.resolution) FILTER html %];
-  [%-%] assigned to [% bug.assigned_to.login FILTER html %]
-  [%-%][% "; Target: " _ bug.target_milestone IF bug.target_milestone %]
+  [%-%] atanan: [% bug.assigned_to.login FILTER html %]
+  [%-%][% "; Hedef: " _ bug.target_milestone IF bug.target_milestone %]
 [% END %]
 
 [%###########################################################################%]
@@ -176,12 +175,12 @@
      [% END %]
      <input type="hidden" name="hide_resolved" value="[% hide_resolved ? 0 : 1 %]">
      <input type="submit" id="toggle_visibility"
-            value="[% IF hide_resolved %]Show[% ELSE %]Hide[% END %] Resolved">
+            value="Karar verilmiş olanları [% IF hide_resolved %]Göster[% ELSE %]Gizle[% END %]">
    </form>
    </td>
 
    <td>
-     Max Depth:
+     En Fazla Derinlik:
    </td>
 
    <td>
