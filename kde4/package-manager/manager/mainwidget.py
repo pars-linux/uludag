@@ -26,7 +26,7 @@ from packagedelegate import PackageDelegate
 import backend
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
-    def __init__(self, parent, standAlone=True):
+    def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
         self.iface = backend.pm.Iface()

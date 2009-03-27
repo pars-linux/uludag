@@ -66,6 +66,7 @@ class PackageModel(QAbstractTableModel):
     def setData(self, index, value, role):
         if role == Qt.CheckStateRole and index.column() == 0:
             self.package_selections[index.row()] = value
+            self.emit(SIGNAL("dataChanged(QModelIndex,QModelIndex)"), index, index)
             return True
         else:
             return False
