@@ -26,3 +26,9 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         KMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.setCentralWidget(MainWidget(self))
+        self.connect(self.centralWidget(), SIGNAL("selectionChanged(QModelIndexList)"), self.updateStatusBar)
+        self.statusBar().showMessage(i18n("Currently your basket is empty."))
+
+    def updateStatusBar(self, indexes):
+        pass
+

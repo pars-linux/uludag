@@ -75,7 +75,7 @@ class PackageModel(QAbstractTableModel):
         if index.isValid() and index.column() == 0:
             return Qt.ItemIsEnabled | Qt.ItemIsUserCheckable | QAbstractTableModel.flags(self, index)
         else:
-            return QAbstractTableModel.flags(self, index)
+            return Qt.ItemIsEnabled
 
     def package(self, index):
         if self.cached_package and self.cached_package.name == self.packages[index.row()]:
