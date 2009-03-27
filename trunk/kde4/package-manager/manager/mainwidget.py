@@ -44,7 +44,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.setColumnWidth(0, 32)
         self.packageList.setAlternatingRowColors(True)
         self.packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
-        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.changed)
+        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
+                     lambda: self.emit(SIGNAL("selectionChanged(QModelIndexList)"),
+                             self.packageList.selectionModel().selectedIndexes()))
 
     def initializeComponentList(self):
         self.componentList.setAlternatingRowColors(True)
@@ -69,6 +71,3 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         packages = self.iface.getGroupPackages(item.data(Qt.UserRole).toString())
         self.packageList.model().setFilterRole(GroupRole)
         self.packageList.model().setFilterPackages(packages)
-
-    def changed(self):
-        self.emit(SIGNAL("selectionChanged(QModelIndexList)"), self.packageList.selectionModel().selectedIndexes())
