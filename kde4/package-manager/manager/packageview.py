@@ -17,3 +17,6 @@ from PyQt4.QtCore import *
 class PackageView(QtGui.QTreeView):
     def __init__(self, parent=None):
         QtGui.QTreeView.__init__(self, parent)
+
+    def isIndexHidden(self, index):
+        return False
