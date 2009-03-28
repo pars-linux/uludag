@@ -1,6 +1,9 @@
 2009-03-28  Fatih Aşıcı  <fatih@pardus.org.tr>
 	* zorg/parser.py:
-		Do case-insensitive comparison for entry names
+		Do case-insensitive comparison for entry names.
+	* zorg/config.py:
+		Remove no-modes-line as randr12 implies that.
+		Do not create wacom sections.
 
 2009-02-19  Fatih Aşıcı  <fatih@pardus.org.tr>
 	* zorg/hwdata.py:
