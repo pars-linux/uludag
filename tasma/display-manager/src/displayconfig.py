@@ -163,7 +163,7 @@ class DisplayConfig:
         self.card_product_id = self._info.product_id
 
         self.desktop_setup = self._info.desktop_setup
-        self.outputs = self._info.probe_result["outputs"].split(",")
+        self.outputs = self._info.probe_result.get("outputs", "default").split(",")
         self.monitors = self._info.monitors
 
         self._flags = self._info.probe_result.get("flags", "").split(",")
@@ -196,6 +196,8 @@ class DisplayConfig:
         self.current_modes = {}
 
         if self._randr12:
+            self.outputs = [output.name for output in self._rriface.outputs]
+
             for output in self.outputs:
                 modes = self._rriface.getResolutions(output)
                 if modes:
@@ -215,15 +217,8 @@ class DisplayConfig:
                     else:
                         self.current_modes[output] = modes[0]
 
-            primary = self._info.active_outputs[0]
-            enabled_outputs = []
-            for output in self._rriface.outputs:
-                if output.current:
-                    enabled_outputs.append(output.name)
-                    if output.name == primary:
-                        break
-            else:
-                self._info.active_outputs = enabled_outputs
+            enabled_outputs = [output.name for output in self._rriface.outputs if output.current]
+            self._info.active_outputs = enabled_outputs[:2]
 
         else:
             if self._info.driver == "fglrx":
@@ -369,6 +364,9 @@ class DisplayConfig:
                 run("xrandr", "-s", self.current_modes[self.primaryScr])
 
         run("xrefresh")
+
+    def driverName(self):
+        return self._info.driver or "auto"
 
     def changeDriver(self, driver):
         self.driver_changed = True
