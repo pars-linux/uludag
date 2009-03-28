@@ -11,6 +11,7 @@ class Output:
         self.modes = []
         self.preferred = ""
         self.current = ""
+        self.primary = False
 
 class RandRIface:
     def __init__(self):
@@ -19,7 +20,7 @@ class RandRIface:
     def detect(self):
         self.outputs = []
 
-        output_pattern = re.compile("(.*) (.*connected)")
+        output_pattern = re.compile("(.*) (.*connected) *(\d+x\d+\+\d+\+\d+)?")
         mode_pattern = re.compile("   (\S*) .+")
 
         p = subprocess.Popen(["xrandr"], stdout=subprocess.PIPE)
@@ -30,10 +31,12 @@ class RandRIface:
             if "connected" in line:
                 matched = output_pattern.match(line)
                 if matched:
-                    name, status = matched.groups()
+                    name, status, geometry = matched.groups()
                     output = Output(name)
                     self.outputs.append(output)
                     output.connected = (status == "connected")
+                    if geometry and geometry.endswith("+0+0"):
+                        output.primary = True
 
             elif output:
                 matched = mode_pattern.match(line)

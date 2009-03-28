@@ -217,8 +217,9 @@ class DisplayConfig:
                     else:
                         self.current_modes[output] = modes[0]
 
-            enabled_outputs = [output.name for output in self._rriface.outputs if output.current]
-            self._info.active_outputs = enabled_outputs[:2]
+            enabled_outputs = filter(lambda x: x.current, self._rriface.outputs)
+            active_outputs = map(lambda x: x.name, enabled_outputs)
+            self._info.active_outputs = active_outputs if enabled_outputs[0].primary else active_outputs[::-1]
 
         else:
             if self._info.driver == "fglrx":
