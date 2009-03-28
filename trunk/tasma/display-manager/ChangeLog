@@ -1,3 +1,9 @@
+2009-03-28 Fatih Aşıcı <fatih@pardus.org.tr>
+	* src/display-manager.py,
+	  src/displayconfig.py,
+	  src/randriface.py:
+		RandR support improved to not rely on zorg config.
+
 2009-02-19 Fatih Aşıcı <fatih@pardus.org.tr>
 	* src/hwdata.py:
 		Remove hwdata module which is moved into zorg.
