@@ -94,21 +94,6 @@ def saveXorgConfig(card):
         "CorePointer" :     "true",
     }
 
-    if os.path.exists("/dev/input/wacom"):
-        def addWacom(wtype):
-            wacomSec = XorgSection("InputDevice")
-            wacomSec.set("Identifier", "Wacom[%s]" % wtype)
-            wacomSec.set("Driver", "wacom")
-            wacomSec.options = {
-                "Device" :          "/dev/input/wacom",
-                "Type":             wtype,
-                "USB":              "on"
-            }
-            parser.sections.append(wacomSec)
-
-        for wtype in "stylus", "eraser", "cursor", "pad":
-            addWacom(wtype)
-
     info = card.getDict()
 
     secDevice.set("Identifier", "VideoCard")
@@ -183,10 +168,6 @@ def saveXorgConfig(card):
 
     secLay.set("Identifier", "Layout")
     secLay.set("Screen", "Screen")
-
-    if os.path.exists("/dev/input/wacom"):
-        for wtype in "stylus", "eraser", "cursor", "pad":
-            secLay.add("InputDevice", "Wacom[%s]" % wtype)
 
     backup(xorgConf)
 
