@@ -17,6 +17,7 @@
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 David D. Kilzer <ddkilzer@kilzer.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -40,22 +41,19 @@
 
 [% IF incomplete_data %]
   <p>
-    There used to be an issue in <a href="http://www.bugzilla.org/">Bugzilla</a>
-    which caused activity data to be lost if there were a large number of cc's
-    or dependencies.  That has been fixed, but some data was already lost in
-    your activity table that could not be regenerated.  The changes that the
-    script could not reliably determine are prefixed by '?'.
+    <a href="http://www.bugzilla.org/">Bugzilla</a>'da 
+    çok sayıda haber verilecek kişi veya bağımlılık olduğunda eylem verisinin kaybedilmesine neden olan bir hata vardı. Bu durum yeni sürümlerde düzeltildi fakat sizin eylem tablonuzdaki bazı veriler kurtarılamadı. Betiğin güvenilir şekilde belirleyemediği değişiklikler '?' önekiyle gösterilir.
   </p>
 [% END %]
 
 [% IF operations.size > 0 %]
   <table border cellpadding="4">
     <tr>
-      <th>Who</th>
-      <th>When</th>
-      <th>What</th>
-      <th>Removed</th>
-      <th>Added</th>
+      <th>Kim</th>
+      <th>Ne zaman</th>
+      <th>Ne</th>
+      <th>Kaldırdı</th>
+      <th>Ekledi</th>
     </tr>
 
     [% FOREACH operation = operations %]
@@ -71,7 +69,7 @@
             <td>
               [% IF change.attachid %]
                 <a href="attachment.cgi?id=[% change.attachid %]">
-                Attachment #[% change.attachid %]</a>
+                Ek #[% change.attachid %]</a>
               [% END %]
               [%+ change.field %]
             </td>

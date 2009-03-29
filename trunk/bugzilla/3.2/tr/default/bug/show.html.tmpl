@@ -19,6 +19,7 @@
   #                 Vaskin Kissoyan <vkissoyan@yahoo.com>
   #                 Bradley Baetz <bbaetz@student.usyd.edu.au>
   #                 Max Kanat-Alexander <mkanat@bugzilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
@@ -42,7 +43,7 @@
     title = "$terms.Bug $bug.bug_id &ndash; $filtered_desc"
     header = "$terms.Bug&nbsp;$bug.bug_id"
     subheader = filtered_desc
-    header_addl_info = "Last modified: $filtered_timestamp"
+    header_addl_info = "Son değişiklik: $filtered_timestamp"
     bodyclasses = bodyclasses
     javascript_urls = [ "js/util.js", "js/field.js",
                         "js/yui/yahoo-dom-event.js", "js/yui/calendar.js" ]
@@ -54,7 +55,7 @@
 [% IF nextbug %]
   <hr>
   <p>
-    The next [% terms.bug %] in your list is [% terms.bug %]
+    Listenizdeki sonraki [% terms.bug %] 
     <a href="show_bug.cgi?id=[% bug.bug_id %]">[% bug.bug_id %]</a>:
   </p>
   <hr>

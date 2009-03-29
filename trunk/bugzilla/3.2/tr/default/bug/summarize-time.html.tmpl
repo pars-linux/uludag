@@ -12,17 +12,18 @@
   #
   # Contributor(s): Christian Reis <kiko@async.com.br>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% USE date %]
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
-[% title = "Time Summary " %]
+[% title = "Zaman Özeti " %]
 [% IF do_depends %]
     [% title = title _ "for " %]
     [% header = "$terms.Bug $ids.0" FILTER bug_link(ids.0) FILTER none %]
-    [% header = title _ header _ " (and $terms.bugs blocking it)" %]
+    [% header = title _ header _ " (ve onu engelleyen $terms.bugs)" %]
     [% title = title _ "$terms.Bug $ids.0" %]
 [% ELSE %]
     [% title = title _ "($ids.size $terms.bugs selected)" %]
@@ -48,9 +49,9 @@
     <div align="right">
       <h4 style="padding-right: 2em; margin: 0;">
         [% IF part.0 or part.1 %]
-          [% part.0 OR "Up" FILTER html %] to [% part.1 OR "now" FILTER html %]
+          [% part.0 OR "Yukarı" FILTER html %] to [% part.1 OR "şu an" FILTER html %]
         [% ELSE %]
-          Full summary (no period specified)
+          Tam özet (aralık belirtilmemiş)
         [% END %]
       </h4>
     </div>
@@ -62,13 +63,13 @@
   [% END %]
 
   [% IF monthly %]
-    <h4 style="margin: 0">Total of [% global.grand_total FILTER format("%.2f") %] hours worked</h4>
+    <h4 style="margin: 0">Toplam [% global.grand_total FILTER format("%.2f") %] saat çalışılmış</h4>
     <hr noshade size="1">
   [% END %]
 
   [% IF null.size > 0 %]
     [% INCLUDE inactive_report %]
-    <h4 style="margin: 0">Total of [% null.size %] inactive [% terms.bugs %]</h4>
+    <h4 style="margin: 0">Toplam [% null.size %] etkin olmayan [% terms.bug %]</h4>
   [% END %]
 
 [% END %]
@@ -111,7 +112,7 @@
         [% subtotal = subtotal + bugdata.total_time %]
     [% END %]
     <tr>
-      <td colspan="4" align="right"><b>Total</b>:</td>
+      <td colspan="4" align="right"><b>Toplam</b>:</td>
       <td align="right" class="subtotal" width="100">
         <b>[% subtotal FILTER format("%.2f") %]</b></td>
         [% global.total = global.total + subtotal %]
@@ -162,7 +163,7 @@
     <tr>
       <td colspan="2">&nbsp;</td>
       <td align="right">
-      <b>Total</b>:
+      <b>Toplam</b>:
       </td>
       <td align="right" class="subtotal" width="100">
         <b>[% subtotal FILTER format("%.2f") %]</b>
@@ -200,13 +201,13 @@
 [% BLOCK section_total %]
   [% IF global.total > 0 %]
     <tr class="section_total">
-      <td><b>Totals</b></td>
+      <td><b>Yekünler</b></td>
       <td colspan="[% colspan FILTER html %]" align="right"><b>[% additional FILTER html %]</b></td>
       <td align="right"><b>[% global.total FILTER format("%.2f") %]</b></td>
     </tr>
   [% ELSE %]
     <tr>
-      <td>No time allocated during the specified period.</td>
+      <td>Belirtilen zaman aralığında herhangi bir zaman kullanılmamış.</td>
     </tr>
   [% END %]
   [% global.grand_total = global.grand_total + global.total %]
@@ -226,59 +227,59 @@
 <input type="hidden" name="do_report" value="1">
 
 [% IF warn_swap_dates %]
-    <h4 style="border: 1px solid red; margin: 1em; padding: 0.5em">The
-    end date specified occurs before the start date, which doesn't
-    make sense; the dates below have therefore been swapped.</h4>
+    <h4 style="border: 1px solid red; margin: 1em; padding: 0.5em">
+    Belirtilen bitiş tarihi başlangıç tarihinden önce, bu yüzden aşağıdaki
+    tarihlerin yerleri değiştirildi.</h4>
 [% END %]
 
 <table>
 <tr>
 <td align="right">
-  <b><label accesskey="s" 
-             for="start_date">Period <u>s</u>tarting</label></b>: 
+  <b><label accesskey="b" 
+             for="start_date"><u>B</u>aşlangıç tarihi</label></b>: 
 </td><td colspan="3">
   <input type="text" id="start_date" name="start_date" size="11"
   align="right" value="[% start_date FILTER html %]" maxlength="10">
   &nbsp;
-  <b>and <label accesskey="e" for="end_date"><u>e</u>nding</label></b>: 
+  <b>and <label accesskey="t" for="end_date">Bitiş <u>t</u>arihi</label></b>: 
   <input type="text" name="end_date" size="11" id="end_date"
   align="right" value ="[% end_date FILTER html %]" maxlength="10">
 </td><td align="right">
-  <input type="submit" id="summarize" value="Summarize">
+  <input type="submit" id="summarize" value="Özetle">
 </td></tr>
 <tr>
 <td>&nbsp;</td><td colspan="4">
-  <small>(Dates are optional, and in YYYY-MM-DD format)</small>
+  <small>(Tarihler isteğe bağlıdır, ve YYYY-AA-GG biçiminde olmalıdır)</small>
 </td>
 <tr><td align="right">
-  <b>Group by</b>:
+  <b>Gruplama</b>:
 </td><td colspan="2">
   <input type="radio" name="group_by" id="number" value="number" [%+
     'checked="checked"' IF group_by == "number"
   %]><label 
-  for="number" accesskey="n">[% terms.Bug %] <u>N</u>umber</label>
+  for="number" accesskey="s">[% terms.Bug %] <u>S</u>ayı</label>
   <input type="radio" name="group_by" id="owner" value="owner" [%+
     'checked="checked"' IF group_by == "owner"
   %]><label 
-  for="owner" accesskey="d"><u>D</u>eveloper</label>
+  for="owner" accesskey="g"><u>G</u>eliştirici</label>
 </td><td colspan="2">
   <label for="ctype"><b>Format</b></label>: <select name="ctype" id="ctype">
-    <option value="html">HTML Report</option>
+    <option value="html">HTML Rapor</option>
   </select>
 </td></tr><tr>
 <td>&nbsp;</td><td colspan="4">
   <input type="checkbox" name="monthly" [% 'checked="checked"' IF
       monthly %] id="monthly">
-  <label for="monthly" accesskey="m">Split by <u>m</u>onth</label>
+  <label for="monthly" accesskey="a"><u>A</u>ylarla ayrılmış</label>
   [%# XXX: allow splitting by other intervals %]
   &nbsp;
   <input type="checkbox" name="detailed" [% 'checked="checked"' IF
       detailed %] id="detailed">
-  <label for="detailed" accesskey="t">De<u>t</u>ailed summaries</label>
+  <label for="detailed" accesskey="d"><u>D</u>etaylı özetler</label>
   &nbsp;
   <input type="checkbox" name="inactive" [% 'checked="checked"' IF
       inactive %] id="inactive">
-  <label for="inactive" accesskey="i">Also show <u>i</u>nactive
+  <label for="inactive" accesskey="o">Etkin <u>o</u>lmayanlara da izin ver
   [%+ terms.bugs %]</label>
 </td>
 </tr></table>
