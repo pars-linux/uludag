@@ -611,6 +611,7 @@ hardware
         applications/pda/libsyncml/pspec.xml
         applications/pda/msynctool/pspec.xml
         applications/pda/wbxml2/pspec.xml
+        applications/network/pilot-link/pspec.xml
     optical
         applications/multimedia/cdparanoia/pspec.xml
         applications/multimedia/cdrdao/pspec.xml
@@ -1045,6 +1046,8 @@ network
         applications/security/nmap/pspec.xml
         applications/network/traceroute/pspec.xml
         applications/network/whois/pspec.xml
+        applications/network/nfdump/pspec.xml
+        applications/network/netcat/pspec.xml
     download
         applications/network/aria2/pspec.xml
         applications/network/wget/pspec.xml
@@ -1269,12 +1272,12 @@ office
     applications/doc/yodl/pspec.xml
     applications/editors/scribus/pspec.xml
     programming/tools/doxygen/pspec.xml
-    desktop/kde4/krename-kde4/pspec.xml
-    desktop/kde/basket/pspec.xml
     desktop/kde/bookreader/pspec.xml
     desktop/kde/kbib/pspec.xml
     desktop/kde/kchmviewer/pspec.xml
     desktop/kde/semantik/pspec.xml
+    desktop/kde/tellico/pspec.xml
+    applications/multimedia/smile/pspec.xml
 
 programming
     build
@@ -1310,6 +1313,7 @@ programming
         programming/environments/lazarus/pspec.xml
         programming/environments/qdevelop/pspec.xml
         programming/environments/qt-creator/pspec.xml
+        applications/util/PisiYap/pspec.xml
     inspect
         programming/tools/elfutils/pspec.xml
         programming/tools/lsof/pspec.xml
@@ -1660,6 +1664,7 @@ programming
         programming/languages/lua/pspec.xml
         programming/languages/ocaml/pspec.xml
         programming/languages/ruby/pspec.xml
+        applications/multimedia/cg/pspec.xml
     tool
         programming/tools/astyle/pspec.xml
         programming/tools/cdecl/pspec.xml
@@ -1754,6 +1759,7 @@ science
         desktop/kde4/kgraphviewer-kde4/pspec.xml
         desktop/kde/kgraphviewer/pspec.xml
         desktop/kde/rkward/pspec.xml
+        applications/network/rrdtool/pspec.xml
     medical
         applications/science/medical/xmedcon/pspec.xml
     robotics
@@ -1814,6 +1820,7 @@ server
     server/samba/pspec.xml
     server/xinetd/pspec.xml
     server/zemberek-server/pspec.xml
+    applications/util/portmap/pspec.xml
 
 system
     base
@@ -1980,7 +1987,7 @@ system
         system/yali-firstBoot/pspec.xml
         system/yali/pspec.xml
 
-tool
+util
     admin
         applications/admin/acct/pspec.xml
         applications/admin/dazuko/pspec.xml
@@ -1999,6 +2006,7 @@ tool
         desktop/kde/ksystemlog/pspec.xml
         desktop/kde/metamonitor/pspec.xml
         applications/network/rdate/pspec.xml
+        applications/util/utempter/pspec.xml
     archive
         applications/archive/cabextract/pspec.xml
         applications/archive/lrzip/pspec.xml
@@ -2029,6 +2037,13 @@ tool
         applications/util/tidy/pspec.xml
         applications/util/tree/pspec.xml
         applications/multimedia/dialog/pspec.xml
+    gui
+        desktop/kde4/krename-kde4/pspec.xml
+        desktop/kde/basket/pspec.xml
+        desktop/kde/krename/pspec.xml
+        desktop/kde/keep/pspec.xml
+        desktop/kde4/rsibreak-kde4/pspec.xml
+        desktop/kde/rsibreak/pspec.xml
     shell
         applications/shells/sash/pspec.xml
         applications/shells/tcsh/pspec.xml
@@ -2110,17 +2125,9 @@ x11
     desktop/freedesktop/xorg/xorg-doc/pspec.xml
 
 
-all packages in devel
+packages that we don't know where to put
 ---------------------------------------------------
-applications/multimedia/cg/pspec.xml
-
-applications/multimedia/smile/pspec.xml
-
-applications/network/netcat/pspec.xml
-applications/network/nfdump/pspec.xml
 applications/network/ntlmaps/pspec.xml
-applications/network/pilot-link/pspec.xml
-applications/network/rrdtool/pspec.xml
 
 applications/security/apparmor-docs/pspec.xml
 applications/security/apparmor-parser/pspec.xml
@@ -2151,10 +2158,7 @@ applications/security/trousers/pspec.xml
 
 applications/util/google-gadgets/pspec.xml
 applications/util/iTest/pspec.xml
-applications/util/PisiYap/pspec.xml
-applications/util/portmap/pspec.xml
 applications/util/strigi/pspec.xml
-applications/util/utempter/pspec.xml
 
 desktop/freedesktop/exempi/pspec.xml
 desktop/freedesktop/grounation-xcursor/pspec.xml
@@ -2175,14 +2179,7 @@ desktop/gnome/pycairo/pspec.xml
 desktop/gnome/pygobject/pspec.xml
 desktop/gnome/pygtk/pspec.xml
 
-desktop/kde4/rsibreak-kde4/pspec.xml
-desktop/kde/rsibreak/pspec.xml
-
-desktop/kde/keep/pspec.xml
 desktop/kde/klamav/pspec.xml
-
-desktop/kde/krename/pspec.xml
-desktop/kde/tellico/pspec.xml
 
 programming/libs/akonadi/pspec.xml
 programming/libs/boehm-gc/pspec.xml
