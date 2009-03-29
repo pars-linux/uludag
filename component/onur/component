@@ -343,6 +343,10 @@ game
         applications/games/goonies/pspec.xml
         applications/games/loosecannon/pspec.xml
         applications/games/queen/pspec.xml
+        applications/games/uqm_3domusic/pspec.xml
+        applications/games/uqm-content/pspec.xml
+        applications/games/uqm/pspec.xml
+        applications/games/uqm-voice/pspec.xml
     arcade
         applications/games/Ri-li/pspec.xml
         applications/games/StepMania-data/pspec.xml
@@ -477,10 +481,6 @@ game
         applications/games/scorched3d/pspec.xml
         applications/games/ufoai-data/pspec.xml
         applications/games/ufoai/pspec.xml
-        applications/games/uqm_3domusic/pspec.xml
-        applications/games/uqm-content/pspec.xml
-        applications/games/uqm/pspec.xml
-        applications/games/uqm-voice/pspec.xml
         applications/games/warzone2100/pspec.xml
         applications/games/wesnoth/pspec.xml
         applications/games/widelands/pspec.xml
