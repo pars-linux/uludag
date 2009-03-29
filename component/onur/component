@@ -150,6 +150,10 @@ desktop
             desktop/kde/tulliana/pspec.xml
             desktop/kde/user-manager/pspec.xml
             desktop/kde/autostart/pspec.xml
+            desktop/kde/katapult/pspec.xml
+            desktop/kde/kshutdown/pspec.xml
+            desktop/kde/kerry/pspec.xml
+            desktop/kde/kompose/pspec.xml
         base
             desktop/kde/base/arts/pspec.xml
             desktop/kde/base/artwork/pspec.xml
@@ -2125,10 +2129,8 @@ desktop/gnome/pygtk/pspec.xml
 desktop/kde4/kgraphviewer-kde4/pspec.xml
 desktop/kde4/rsibreak-kde4/pspec.xml
 
-desktop/kde/katapult/pspec.xml
 desktop/kde/kbarcode/pspec.xml
 desktop/kde/keep/pspec.xml
-desktop/kde/kerry/pspec.xml
 desktop/kde/kflickr/pspec.xml
 desktop/kde/kgraphviewer/pspec.xml
 desktop/kde/kid3/pspec.xml
@@ -2136,10 +2138,8 @@ desktop/kde/kile/pspec.xml
 desktop/kde/kipi-plugins/pspec.xml
 desktop/kde/klamav/pspec.xml
 desktop/kde/knutclient/pspec.xml
-desktop/kde/kompose/pspec.xml
 desktop/kde/kpogre/pspec.xml
 desktop/kde/krename/pspec.xml
-desktop/kde/kshutdown/pspec.xml
 desktop/kde/ksubtile/pspec.xml
 desktop/kde/ksubtitleripper/pspec.xml
 desktop/kde/ksystemlog/pspec.xml
