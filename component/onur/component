@@ -29,6 +29,7 @@ desktop
         desktop/fonts/tv-fonts/pspec.xml
         desktop/freedesktop/fontconfig/pspec.xml
         desktop/freedesktop/ttmkfdir/pspec.xml
+        applications/multimedia/ttf2pt1/pspec.xml
     gnome
         desktop/gnome/QtCurve-Gtk2/pspec.xml
         desktop/gnome/gail/pspec.xml
@@ -246,10 +247,12 @@ desktop
             programming/libs/qt4/pspec.xml
             desktop/kde4/automoc4/pspec.xml
             desktop/kde4/gtk-qt-engine-kde4/pspec.xml
+            desktop/kde/qscintilla2/pspec.xml
         qt3
             desktop/kde/base/qt/pspec.xml
             desktop/kde/gtk-qt-engine/pspec.xml
             desktop/freedesktop/dbus-qt3/pspec.xml
+            desktop/kde/qscintilla/pspec.xml
         qwt
             programming/libs/qwtplot3d/pspec.xml
             programming/libs/qwt/pspec.xml
@@ -376,6 +379,8 @@ game
         applications/games/knights/pspec.xml
         applications/games/ksudoku/pspec.xml
         applications/games/qGo/pspec.xml
+    engine
+        applications/emulators/scummvm/pspec.xml
     fps
         applications/games/AssaultCube-maps/pspec.xml
         applications/games/AssaultCube/pspec.xml
@@ -531,6 +536,8 @@ hardware
         applications/emulators/vice/pspec.xml
         applications/emulators/xmame/pspec.xml
         applications/emulators/zsnes/pspec.xml
+        desktop/kde/kxmame/pspec.xml
+        applications/emulators/wine/pspec.xml
     firmware
         kernel/firmware/accessrunner-firmware/pspec.xml
         kernel/firmware/acx100-firmware/pspec.xml
@@ -566,9 +573,6 @@ hardware
         applications/admin/gkrellm/pspec.xml
         applications/hardware/interbench/pspec.xml
         applications/hardware/uhinv/pspec.xml
-    input
-        applications/hardware/fnfx/pspec.xml
-        applications/hardware/gpm/pspec.xml
     irda
         applications/hardware/irda-utils/pspec.xml
         applications/hardware/lirc-remotes/pspec.xml
@@ -608,6 +612,11 @@ hardware
         desktop/kde4/k3b-kde4/pspec.xml
         desktop/kde/k3b-i18n/pspec.xml
         desktop/kde/k3b/pspec.xml
+        applications/hardware/eject/pspec.xml
+    peripheral
+        applications/hardware/fnfx/pspec.xml
+        applications/hardware/gpm/pspec.xml
+        applications/hardware/setserial/pspec.xml
     powermanagement
         applications/hardware/acpi4asus/pspec.xml
         applications/hardware/acpica/pspec.xml
@@ -623,6 +632,7 @@ hardware
         applications/powermanagement/suspend/pspec.xml
         applications/powermanagement/yacpi/pspec.xml
         desktop/kde4/guidance-power-manager-kde4/pspec.xml
+        desktop/kde/knutclient/pspec.xml
     printer
         applications/printing/cups/pspec.xml
         applications/printing/enscript/pspec.xml
@@ -642,6 +652,7 @@ hardware
         applications/printing/psutils/pspec.xml
         applications/printing/splix/pspec.xml
         applications/printing/system-config-printer/pspec.xml
+        desktop/kde/kbarcode/pspec.xml
     scanner
         desktop/kde4/skanlite/pspec.xml
         applications/hardware/sane-backends/pspec.xml
@@ -743,6 +754,7 @@ multimedia
         applications/multimedia/vobcopy/pspec.xml
         applications/multimedia/dvdbackup/pspec.xml
         applications/multimedia/potrace/pspec.xml
+        desktop/kde/transKode/pspec.xml
     editor
         applications/multimedia/blender/pspec.xml
         applications/multimedia/avidemux/pspec.xml
@@ -754,6 +766,9 @@ multimedia
         applications/multimedia/lilycomp/pspec.xml
         applications/multimedia/lilypond/pspec.xml
         applications/multimedia/mandvd/pspec.xml
+        desktop/kde/kid3/pspec.xml
+        desktop/kde/ksubtile/pspec.xml
+        desktop/kde/ksubtitleripper/pspec.xml
     graphics
         applications/multimedia/imagemagick/pspec.xml
         applications/multimedia/netpbm/pspec.xml
@@ -779,6 +794,7 @@ multimedia
         applications/multimedia/tuxpaint/pspec.xml
         applications/multimedia/tuxpaint-stamps/pspec.xml
         applications/multimedia/graphviz/pspec.xml
+        desktop/kde/kflickr/pspec.xml
     library
         programming/libs/aalib/pspec.xml
         programming/libs/alleggl/pspec.xml
@@ -901,6 +917,7 @@ multimedia
         desktop/kde/k3bmonkeyaudioplugin/pspec.xml
         programming/libs/tap-plugins/pspec.xml
         programming/libs/swh-plugins/pspec.xml
+        desktop/kde/kipi-plugins/pspec.xml
     radio
         desktop/kde/kradio/pspec.xml
         desktop/kde4/kradio-kde4/pspec.xml
@@ -945,6 +962,7 @@ multimedia
         applications/multimedia/streamtuner/pspec.xml
         applications/multimedia/gnomad2/pspec.xml
         desktop/kde/amarok/pspec.xml
+        desktop/kde/tuneroid/pspec.xml
     stream
         applications/network/streamripper/pspec.xml
         server/icecast/pspec.xml
@@ -973,6 +991,7 @@ multimedia
         applications/multimedia/gpac/pspec.xml
         applications/multimedia/AtomicParsley/pspec.xml
         applications/multimedia/xvidcap/pspec.xml
+        applications/multimedia/dvgrab/pspec.xml
 
 network
     chat
@@ -1183,6 +1202,9 @@ office
         applications/zemberek-openoffice/pspec.xml
         applications/util/mdbtools/pspec.xml
         applications/multimedia/imposter/pspec.xml
+    postscript
+        applications/multimedia/ghostscript/pspec.xml
+        applications/multimedia/gv/pspec.xml
     spellcheck
         applications/dictionaries/aspell/aspell-de/pspec.xml
         applications/dictionaries/aspell/aspell-en/pspec.xml
@@ -1206,6 +1228,7 @@ office
         applications/tex/tetex-texmf/pspec.xml
         applications/tex/transfig/pspec.xml
         applications/tex/xfig/pspec.xml
+        desktop/kde/kile/pspec.xml
     applications/doc/aiksaurus/pspec.xml
     applications/doc/antiword/pspec.xml
     applications/doc/barcode/pspec.xml
@@ -1228,6 +1251,7 @@ office
     desktop/kde/bookreader/pspec.xml
     desktop/kde/kbib/pspec.xml
     desktop/kde/kchmviewer/pspec.xml
+    desktop/kde/semantik/pspec.xml
 
 programming
     build
@@ -1272,6 +1296,8 @@ programming
         programming/tools/strace/pspec.xml
         programming/tools/sysprof/pspec.xml
         programming/tools/valgrind/pspec.xml
+    l10n
+        desktop/kde/ktranslator/pspec.xml
     language
         dotnet
             programming/languages/dotnet/gecko-sharp/pspec.xml
@@ -1627,6 +1653,7 @@ programming
         programming/tools/patchutils/pspec.xml
         programming/tools/translate-toolkit/pspec.xml
         desktop/kde4/kdiff3-kde4/pspec.xml
+        desktop/kde/umbrello/pspec.xml
     vcs
         programming/tools/bk-client/pspec.xml
         programming/tools/cogito/pspec.xml
@@ -1699,6 +1726,9 @@ science
         applications/science/mathematics/qalculate/pspec.xml
         applications/science/mathematics/rpcalc/pspec.xml
         applications/science/mathematics/wxMaxima/pspec.xml
+        desktop/kde4/kgraphviewer-kde4/pspec.xml
+        desktop/kde/kgraphviewer/pspec.xml
+        desktop/kde/rkward/pspec.xml
     medical
         applications/science/medical/xmedcon/pspec.xml
     robotics
@@ -1914,6 +1944,10 @@ system
         system/devel/xtrans/pspec.xml
         system/devel/yacc/pspec.xml
         system/devel/yasm/pspec.xml
+    boot
+        applications/admin/gfxboot/pspec.xml
+        applications/admin/gfxtheme-pardus/pspec.xml
+        applications/admin/syslinux/pspec.xml
     doc
     installer
         system/yali4-firstBoot/pspec.xml
@@ -1935,6 +1969,10 @@ tool
         applications/util/prelink/pspec.xml
         applications/util/schedtool/pspec.xml
         applications/util/schedutils/pspec.xml
+        desktop/kde/kpogre/pspec.xml
+        applications/util/mountmanager/pspec.xml
+        desktop/kde/ksystemlog/pspec.xml
+        desktop/kde/metamonitor/pspec.xml
     archive
         applications/archive/cabextract/pspec.xml
         applications/archive/lrzip/pspec.xml
@@ -1951,6 +1989,7 @@ tool
         applications/archive/unshield/pspec.xml
         applications/archive/xdelta3/pspec.xml
         applications/archive/xdelta/pspec.xml
+        applications/util/lxsplit/pspec.xml
     console
         applications/admin/mc/pspec.xml
         applications/admin/multitail/pspec.xml
@@ -1969,6 +2008,7 @@ tool
         applications/util/bash-completion/pspec.xml
         applications/util/bashdb/pspec.xml
         applications/util/command-not-found/pspec.xml
+        desktop/kde/yakuake/pspec.xml
 
 x11
     library
@@ -2043,22 +2083,7 @@ x11
 
 all packages in devel
 ---------------------------------------------------
-applications/admin/gfxboot/pspec.xml
-applications/admin/gfxtheme-pardus/pspec.xml
-applications/admin/syslinux/pspec.xml
-
-applications/emulators/scummvm/pspec.xml
-applications/emulators/wine/pspec.xml
-
-applications/hardware/eject/pspec.xml
-applications/hardware/setserial/pspec.xml
-
 applications/multimedia/cg/pspec.xml
-
-applications/multimedia/dvgrab/pspec.xml
-applications/multimedia/ghostscript/pspec.xml
-applications/multimedia/gv/pspec.xml
-applications/multimedia/ttf2pt1/pspec.xml
 
 applications/multimedia/smile/pspec.xml
 
@@ -2099,8 +2124,6 @@ applications/security/trousers/pspec.xml
 applications/util/bchunk/pspec.xml
 applications/util/google-gadgets/pspec.xml
 applications/util/iTest/pspec.xml
-applications/util/lxsplit/pspec.xml
-applications/util/mountmanager/pspec.xml
 applications/util/nrg2iso/pspec.xml
 applications/util/PisiYap/pspec.xml
 applications/util/portmap/pspec.xml
@@ -2126,37 +2149,14 @@ desktop/gnome/pycairo/pspec.xml
 desktop/gnome/pygobject/pspec.xml
 desktop/gnome/pygtk/pspec.xml
 
-desktop/kde4/kgraphviewer-kde4/pspec.xml
 desktop/kde4/rsibreak-kde4/pspec.xml
-
-desktop/kde/kbarcode/pspec.xml
-desktop/kde/keep/pspec.xml
-desktop/kde/kflickr/pspec.xml
-desktop/kde/kgraphviewer/pspec.xml
-desktop/kde/kid3/pspec.xml
-desktop/kde/kile/pspec.xml
-desktop/kde/kipi-plugins/pspec.xml
-desktop/kde/klamav/pspec.xml
-desktop/kde/knutclient/pspec.xml
-desktop/kde/kpogre/pspec.xml
-desktop/kde/krename/pspec.xml
-desktop/kde/ksubtile/pspec.xml
-desktop/kde/ksubtitleripper/pspec.xml
-desktop/kde/ksystemlog/pspec.xml
-desktop/kde/ktranslator/pspec.xml
-desktop/kde/kxmame/pspec.xml
-desktop/kde/metamonitor/pspec.xml
-desktop/kde/qscintilla2/pspec.xml
-desktop/kde/qscintilla/pspec.xml
-desktop/kde/rkward/pspec.xml
 desktop/kde/rsibreak/pspec.xml
-desktop/kde/semantik/pspec.xml
-desktop/kde/tellico/pspec.xml
-desktop/kde/transKode/pspec.xml
-desktop/kde/tuneroid/pspec.xml
-desktop/kde/umbrello/pspec.xml
-desktop/kde/yakuake/pspec.xml
 
+desktop/kde/keep/pspec.xml
+desktop/kde/klamav/pspec.xml
+
+desktop/kde/krename/pspec.xml
+desktop/kde/tellico/pspec.xml
 
 programming/libs/akonadi/pspec.xml
 programming/libs/boehm-gc/pspec.xml
