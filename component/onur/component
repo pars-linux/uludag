@@ -546,7 +546,7 @@ hardware
         kernel/firmware/zd1211-firmware/pspec.xml
         applications/hardware/b43-fwcutter/pspec.xml
         applications/hardware/fxload/pspec.xml
-    graphic
+    graphics
         applications/multimedia/fbgrab/pspec.xml
         applications/hardware/fbset/pspec.xml
         applications/hardware/nvidia-settings/pspec.xml
@@ -750,7 +750,7 @@ multimedia
         applications/multimedia/lilycomp/pspec.xml
         applications/multimedia/lilypond/pspec.xml
         applications/multimedia/mandvd/pspec.xml
-    graphic
+    graphics
         applications/multimedia/imagemagick/pspec.xml
         applications/multimedia/netpbm/pspec.xml
         desktop/gnome/gimp-data-extras/pspec.xml
