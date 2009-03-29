@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -41,13 +42,13 @@
   [% PROCESS bug/process/header.html.tmpl %]
 [% END %]
 
-<h1>Mid-air collision detected!</h1>
+<h1>Değişiklikler Çarpıştı!</h1>
 
 <p>
-  Someone else has made changes to
+  Başka biri daha sizinle aynı zamanda
   [%+ "$terms.bug $bug.id" FILTER bug_link(bug.id) FILTER none %]
-  at the same time you were trying to.
-  The changes made were:
+  üzerinde değişiklik yapmaya çalıştı.
+  Yapılan değişiklikler şunlardı:
 </p>
 
 <p>
@@ -56,7 +57,7 @@
 
 [% IF comments.size > start_at %]
 <p>
-  Added the comment(s):
+  Şu yorumu ekledi:
   <blockquote>
     [% PROCESS "bug/comments.html.tmpl" %]
   </blockquote>
@@ -65,7 +66,7 @@
 
 [% IF cgi.param("comment") %]
 <p>
-  Your comment was:<br>
+  Sizin yorumunuz ise şuydu:<br>
   <blockquote><pre class="bz_comment_text">
     [% cgi.param("comment") FILTER wrap_comment FILTER html %]
   </pre></blockquote>
@@ -73,7 +74,7 @@
 [% END %]
 
 <p>
-You have the following choices:
+Seçenekleriniz şunlar:
 </p>
 
 <ul>
@@ -83,14 +84,16 @@ You have the following choices:
              value="[% bug.delta_ts FILTER html %]">
       [% PROCESS "global/hidden-fields.html.tmpl" 
           exclude="^Bugzilla_login|Bugzilla_password|delta_ts$" %]
-      <input type="submit" id="process" value="Submit my changes anyway">
-        This will cause all of the above changes to be overwritten
-        [% ", except for the added comment(s)" IF comments.size > start_at %].
+      <input type="submit" id="process" value="Benim değişikliklerimi yine de gönder">
+        Bu, 
+        [% "yorumlar haricinde " IF comments.size > start_at %] 
+        yukarıdaki tüm değişikliklerin üzerine yazar.
     </form>
   </li>
   <li>
-    Throw away my changes, and
-    [%+ "revisit $terms.bug $bug.id" FILTER bug_link(bug.id) FILTER none %]
+    Benim yaptığım değişiklikleri sil ve 
+    [%+ "$terms.bugDat" FILTER bug_link(bug.id) FILTER none %] 
+    geri dön.
   </li>
 </ul>
 

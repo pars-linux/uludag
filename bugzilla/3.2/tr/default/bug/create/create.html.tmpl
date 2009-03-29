@@ -22,11 +22,12 @@
   #                 Akamai Technologies <bugzilla-dev@akamai.com>
   #                 Max Kanat-Alexander <mkanat@bugzilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
-[% title = BLOCK %]Enter [% terms.Bug %]: [% product.name FILTER html %][% END %]
+[% title = BLOCK %][% terms.Bug %] Gir: [% product.name FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
@@ -183,10 +184,10 @@ function handleWantsAttachment(wants_attachment) {
   </tr>
 
   <tr>
-    <th>Product:</th>
+    <th>Ürün:</th>
     <td width="10%">[% product.name FILTER html %]</td>
 
-    <th>Reporter:</th>
+    <th>Bildiren:</th>
     <td width="100%">[% user.login FILTER html %]</td>
   </tr>
 
@@ -194,7 +195,7 @@ function handleWantsAttachment(wants_attachment) {
   <tr>
     <th>
       <a href="describecomponents.cgi?product=[% product.name FILTER url_quote %]">
-      Component</a>:
+      Bileşen</a>:
     </th>
     <td>
       <select name="component" onchange="set_assign_to();" size="7">
@@ -214,8 +215,8 @@ function handleWantsAttachment(wants_attachment) {
         <tr>
           <td>
             <fieldset>
-              <legend>Component Description</legend>
-              <div id="comp_desc" class="comment">Select a component to read its description.</div>
+              <legend>Bileşen Açıklaması</legend>
+              <div id="comp_desc" class="comment">Açıklamasını okumak istediğiniz bileşeni seçin.</div>
             </fieldset>
           </td>
         </tr>
@@ -224,7 +225,7 @@ function handleWantsAttachment(wants_attachment) {
   </tr>
 
   <tr>
-    <th rowspan="3">Version:</th>
+    <th rowspan="3">Sürüm:</th>
     <td rowspan="3">
       <select name="version" size="5">
         [%- FOREACH v = version %]
@@ -235,7 +236,7 @@ function handleWantsAttachment(wants_attachment) {
       </select>
     </td>
 
-    [% sel = { description => 'Severity', name => 'bug_severity' } %]
+    [% sel = { description => 'Önem', name => 'bug_severity' } %]
     [% INCLUDE select %]
   </tr>
 
@@ -245,7 +246,7 @@ function handleWantsAttachment(wants_attachment) {
   </tr>
 
   <tr>
-    [% sel = { description => 'OS', name => 'op_sys' } %]
+    [% sel = { description => 'İşletim Sistemi', name => 'op_sys' } %]
     [% INCLUDE select %]
   </tr>
 </tbody>
@@ -253,14 +254,14 @@ function handleWantsAttachment(wants_attachment) {
 <tbody class="expert_fields">
   <tr>
     [% IF Param('usetargetmilestone') && Param('letsubmitterchoosemilestone') %]
-      [% sel = { description => 'Target Milestone', name => 'target_milestone' } %]
+      [% sel = { description => 'Hedef Aşama', name => 'target_milestone' } %]
       [% INCLUDE select %]
     [% ELSE %]
       <td colspan="2">&nbsp;</td>
     [% END %]
 
     [% IF Param('letsubmitterchoosepriority') %]
-      [% sel = { description => 'Priority', name => 'priority' } %]
+      [% sel = { description => 'Öncelik', name => 'priority' } %]
       [% INCLUDE select %]
     [% ELSE %]
       <td colspan="2">
@@ -275,15 +276,14 @@ function handleWantsAttachment(wants_attachment) {
     <tr>
       <th>&nbsp;</th>
       <td colspan="3" class="comment">
-        We've made a guess at your
         [% IF Param('defaultplatform') %]
-          operating system. Please check it
+          İşletim sisteminiz 
         [% ELSIF Param('defaultopsys') %]
           platform. Please check it
         [% ELSE %]
-          operating system and platform. Please check them
+          İşletim sisteminiz ve platform 
         [% END %]
-        and make any corrections if necessary.
+        tahminidir. Lütfen kontrol edip gerekiyorsa düzeltiniz.
       </td>
     </tr>
   </tbody>
@@ -298,10 +298,10 @@ function handleWantsAttachment(wants_attachment) {
 [% IF bug_status.size <= 1 %]
   <input type="hidden" name="bug_status" 
          value="[% default.bug_status FILTER html %]">
-    <th>Initial State:</th>
+    <th>Başlangıçtaki Durumu:</th>
     <td>[% get_status(default.bug_status) FILTER html %]</td>
 [% ELSE %]
-    [% sel = { description => 'Initial State', name => 'bug_status' } %]
+    [% sel = { description => 'Başlangıçtaki Durumu', name => 'bug_status' } %]
     [% INCLUDE select %]
 [% END %]
 
@@ -334,7 +334,7 @@ function handleWantsAttachment(wants_attachment) {
   </tr>
 
   <tr>
-    <th><a href="page.cgi?id=fields.html#assigned_to">Assign To</a>:</th>
+    <th><a href="page.cgi?id=fields.html#assigned_to">Atanan</a>:</th>
     <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "assigned_to"
@@ -343,13 +343,13 @@ function handleWantsAttachment(wants_attachment) {
          size => 30
          emptyok => 1
        %]
-      <noscript>(Leave blank to assign to component's default assignee)</noscript>
+      <noscript>(Atamayı bileşen için öntanımlı olan kişiye yapmak için boş bırakın)</noscript>
     </td>
   </tr>
   
 [% IF Param("useqacontact") %]
     <tr>
-      <th>QA Contact:</th>
+      <th>Kalite kontrol kişisi:</th>
       <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "qa_contact"
@@ -358,7 +358,7 @@ function handleWantsAttachment(wants_attachment) {
          size => 30
          emptyok => 1
        %]
-        <noscript>(Leave blank to assign to default qa contact)</noscript>
+        <noscript>(Kalite kontrol kişisinin bileşene göre seçilmesi için boş bırakın)</noscript>
       </td>
     </tr>
 [% END %]
@@ -377,7 +377,7 @@ function handleWantsAttachment(wants_attachment) {
   </tr>
 
   <tr>
-    <th>Default CC:</th>
+    <th>Öntanımlı olarak haber verilecekler:</th>
     <td colspan="2">
       <div id="initial_cc">
           <!-- This has to happen after everything above renders,
@@ -394,16 +394,16 @@ function handleWantsAttachment(wants_attachment) {
 
 [% IF user.in_group(Param('timetrackinggroup')) %]
   <tr>
-    <th>Estimated Hours:</th>
+    <th>Tahmini Saat:</th>
     <td colspan="2">
       <input name="estimated_time" size="6" maxlength="6" value="0.0">
     </td>
   </tr>
   <tr>
-    <th>Deadline:</th>
+    <th>Bitirme Tarihi:</th>
     <td colspan="2">
       <input name="deadline" size="10" maxlength="10" value="[% deadline FILTER html %]">
-      <small>(YYYY-MM-DD)</small>
+      <small>(YYYY-AA-GG)</small>
     </td>
   </tr>
 
@@ -414,7 +414,7 @@ function handleWantsAttachment(wants_attachment) {
 
 [% IF Param("usebugaliases") %]
   <tr>
-    <th>Alias:</th>
+    <th>Hata İsmi:</th>
     <td colspan="2">
       <input name="alias" size="20">
     </td>
@@ -422,7 +422,7 @@ function handleWantsAttachment(wants_attachment) {
 [% END %]
 
   <tr>
-    <th>URL:</th>
+    <th>Adres:</th>
     <td colspan="2">
       <input name="bug_file_loc" size="40"
              value="[% bug_file_loc FILTER html %]">
@@ -442,7 +442,7 @@ function handleWantsAttachment(wants_attachment) {
   [% END %]
 
   <tr>
-    <th>Summary:</th>
+    <th>Özet:</th>
     <td colspan="3">
       <input name="short_desc" size="70" value="[% short_desc FILTER html %]"
              maxlength="255" spellcheck="true">
@@ -450,11 +450,11 @@ function handleWantsAttachment(wants_attachment) {
   </tr>
 
   <tr>
-    <th>Description:</th>
+    <th>Açıklama:</th>
     <td colspan="3">
       [% defaultcontent = BLOCK %]
         [% IF cloned_bug_id %]
-+++ This [% terms.bug %] was initially created as a clone of [% terms.Bug %] #[% cloned_bug_id %] +++
++++ Bu [% terms.bug %], [% cloned_bug_id %] numaralı [% terms.bugGen %] kopyası olarak başlatıldı +++
 
 
         [% END %]
@@ -482,7 +482,7 @@ function handleWantsAttachment(wants_attachment) {
         <input type="checkbox" id="commentprivacy" name="commentprivacy"
           [% " checked=\"checked\"" IF commentprivacy %]>
         <label for="commentprivacy">
-          Initial Description is Private
+          İlk Açıklama Gizli
         </label>
       </td>
     </tr>
@@ -491,25 +491,24 @@ function handleWantsAttachment(wants_attachment) {
 
 <tbody class="expert_fields">
   <tr>
-    <th>Attachment:</th>
+    <th>Ek:</th>
     <td colspan="3">
       <script type="text/javascript">
         <!--
         document.write( '<div id="attachment_false">'
                       +   '<input type="button" value="Add an attachment" '
                       +          'onClick="handleWantsAttachment(true)"> '
-                      +   '<em style="display: none">This button has no '
-                      +   'functionality for you because your browser does '
-                      +   'not support CSS or does not use it.<\/em>'
+                      +   '<em style="display: none">Bu düğme sizde çalışmıyor '
+                      +   'çünkü tarayıcınız CSS desteklemiyor (veya kapatılmış).<\/em>'
                       + '<\/div>'
                       + '<div id="attachment_true" style="display: none">'
                       +   '<input type="button" '
-                      +          'value="Don\'t add an attachment " '
+                      +          'value="Ek oluşturma " '
                       +          'onClick="handleWantsAttachment(false)">');
         //-->
       </script>
         <fieldset>
-          <legend>Add an attachment</legend>
+          <legend>Yeni ek oluştur</legend>
           <table class="attachment_entry">
             [% PROCESS attachment/createformcontents.html.tmpl
                        flag_types = product.flag_types.attachment
@@ -528,7 +527,7 @@ function handleWantsAttachment(wants_attachment) {
   [% IF user.in_group('editbugs', product.id) %]
     [% IF use_keywords %]
       <tr>
-        <th><a href="describekeywords.cgi">Keywords</a>:</th>
+        <th><a href="describekeywords.cgi">Anahtarlar</a>:</th>
         <td colspan="3">
           <input id="keywords" name="keywords" size="40"
                  value="[% keywords FILTER html %]"> (optional)
@@ -537,13 +536,13 @@ function handleWantsAttachment(wants_attachment) {
     [% END %]
 
     <tr>
-      <th>Depends on:</th>
+      <th>Bağımlılıkları:</th>
       <td colspan="3">
         <input name="dependson" accesskey="d" value="[% dependson FILTER html %]">
       </td>
     </tr>
     <tr>
-      <th>Blocks:</th>
+      <th>Engelledikleri:</th>
       <td colspan="3">
         <input name="blocked" accesskey="b" value="[% blocked FILTER html %]">
       </td>
@@ -558,11 +557,11 @@ function handleWantsAttachment(wants_attachment) {
     <td colspan="3">
       <br>
         <strong>
-          Only users in all of the selected groups can view this [% terms.bug %]:
+          Sadece seçili grupların tamamına üye olan kullanıcılar bu [% terms.bugAcc %] görebilir:
         </strong>
       <br>
       <font size="-1">
-        (Leave all boxes unchecked to make this a public [% terms.bug %].)
+        (Bunu herkese açık bir [% terms.bug %] haline getirmek için bütün kutuları boş bırakın.)
       </font>
       <br>
       <br>
@@ -587,11 +586,11 @@ function handleWantsAttachment(wants_attachment) {
     <td colspan="3">
       <input type="submit" id="commit" value="Commit"
              onclick="if (this.form.short_desc.value == '')
-             { alert('Please enter a summary sentence for this [% terms.bug %].');
+             { alert('Lütfen bu [% terms.bugAcc %] özetleyen bir cümle girin.');
                return false; } return true;">
       &nbsp;&nbsp;&nbsp;&nbsp;
       <input type="submit" name="maketemplate" id="maketemplate"
-             value="Remember values as bookmarkable template"
+             value="Değerleri yer imlerine alınabilir bir şablon olarak hatırla"
              class="expert_fields">
     </td>
   </tr>
