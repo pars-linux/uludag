@@ -39,7 +39,7 @@ def getRevision():
         return "UNKNOWN"
 
 def data_files():
-    return glob.glob1("src","*.py")
+    return glob.glob1("build","*.py")
 
 def py_file_name(ui_file):
     return ui_file.split('.')[0] + '.py'
@@ -47,28 +47,20 @@ def py_file_name(ui_file):
 def ui_files():
     return glob.glob1("ui","*.ui")
 
-class Build(build):
-
-    def compile_ui(self, ui_file):
-        pyuic_exe = find_executable('pykde4uic')
-        print ('%s -o src/%s ui/%s' % (pyuic_exe, py_file_name(ui_file), ui_file))
-        os.system('%s -o src/%s ui/%s' % (pyuic_exe, py_file_name(ui_file), ui_file))
-
-    def run(self):
-        for path in ui_files():
-            self.compile_ui(path)
-        os.system("pyrcc4 icons/data.qrc -o src/data_rc.py")
-        build.run(self)
+def mo_files():
+    return glob.glob("po/*.mo")
 
 class Clean(clean):
 
     def run(self):
         clean.run(self)
-        if os.path.exists("src/data_rc.py"):
-            os.unlink("src/data_rc.py")
+        if os.path.exists("build"):
+            shutil.rmtree("build")
+        for mo in mo_files():
+            os.unlink(mo)
 
 class Uninstall(Command):
-    user_options = [ ]
+    user_options = []
 
     def initialize_options(self):
         pass
@@ -83,14 +75,27 @@ class Uninstall(Command):
         service_file = os.path.join(KDEDIR, "share/kde4/services", DESKTOPFILE)
         if os.path.exists(service_file):
             os.unlink(service_file)
+        for lang in i18n_languages:
+            destpath = os.path.join(KDEDIR, "share/locale/%s/LC_MESSAGES/" % lang)
+            os.unlink(os.path.join(destpath, "%s.mo" % i18n_domain))
+        os.unlink(os.path.join(KDEDIR,"bin/",PROJECT))
 
 i18n_domain = PROJECT
 i18n_languages = ["tr"]
 
 class Install(install):
+
+    def compile_ui(self, ui_file):
+        pyuic_exe = '/usr/kde/4/bin/pykde4uic'
+        os.system('%s -o build/%s ui/%s' % (pyuic_exe, py_file_name(ui_file), ui_file))
+
     def run(self):
+        shutil.rmtree("build", True)
+        shutil.copytree("src","build")
+        for path in ui_files():
+            self.compile_ui(path)
+        os.system("pyrcc4 icons/data.qrc -o build/data_rc.py")
         for lang in i18n_languages:
-            print "Installing '%s' translations..." % lang
             os.system("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
             destpath = os.path.join(KDEDIR, "share/locale/%s/LC_MESSAGES/" % lang)
             shutil.copy("po/%s.mo" % lang, os.path.join(destpath, "%s.mo" % i18n_domain))
@@ -100,11 +105,12 @@ class Install(install):
         except:
             pass
         for path in data_files():
-            shutil.copyfile(os.path.join("src",path), os.path.join(project_dir,path))
+            shutil.copyfile(os.path.join("build",path), os.path.join(project_dir,path))
         service_file = os.path.join(KDEDIR, "share/kde4/services", DESKTOPFILE)
-        shutil.copy(os.path.join("src/",DESKTOPFILE), service_file)
+        shutil.copy(os.path.join("build/",DESKTOPFILE), service_file)
         shutil.move(os.path.join(project_dir,"main.py"), os.path.join(project_dir,PROJECT))
-        os.link(os.path.join(project_dir,PROJECT), os.path.join(project_dir,PROJECT+'.py'))
+        os.symlink(os.path.join(project_dir,PROJECT), os.path.join(project_dir,PROJECT+'.py'))
+        os.symlink(os.path.join(project_dir,PROJECT), os.path.join(KDEDIR,"bin/",PROJECT))
         os.chmod(os.path.join(project_dir,PROJECT+'.py'),0755)
 
 setup(
@@ -119,7 +125,6 @@ setup(
       package_dir       = {'': ''},
       data_files        = [],
       cmdclass          = {
-                            'build' : Build,
                             'clean' : Clean,
                             'install': Install,
                             'uninstall': Uninstall
