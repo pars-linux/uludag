@@ -2297,7 +2297,7 @@ Ideas
 - shall language bindings be splitted or not ? (60, 70, 80, 90) programming.language is really confusing, if we name it language it is confused with i10l, removing the language part does not seem necessary though since python "is" a programming.language
 - hardware emulator and virtualization should be merged maybe ? they do the same thing, only with different methods
 - hardware info name may change
-- kde addons contains packages that we added by hand as Pardus tools, or used only for kde as a kde enhancement
+- kde addons contains packages that we added by hand as Pardus tools, or used only for kde as a kde enhancement, addon may be renamed to misc
 - rename tool component to something better (accessory, util etc.) maybe
 - network.remoteshell should have a better name
 - should zemberek-server be in office.spellcheck ?
