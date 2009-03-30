@@ -164,10 +164,13 @@ if __name__ == "__main__":
         for p in breaksABI:
             print "  * %s" % p
 
-    if revDepsToBeRecompiled:
-        print "\nThese reverse dependencies will be recompiled because of ABI breakage:\n%s" % ('-'*70)
-        for p in revDepsToBeRecompiled:
-            print "  * %s" % p
+        if revDepsToBeRecompiled:
+            print "\nThese reverse dependencies will be recompiled because of ABI breakage:\n%s" % ('-'*70)
+            for p in revDepsToBeRecompiled:
+                print "  * %s" % p
+        else:
+            # p broke API but no reverse build dependency exists
+            print "\nCouldn't find any reverse build dependency in source repository.."
 
     if len(updatedPspecFiles + newPspecFiles):
         queue = []
