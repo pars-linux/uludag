@@ -74,7 +74,14 @@ class RepositoryManager:
 
         def check():
             rdb = pisi.db.repodb.RepoDB()
-            return rdb.get_source_repos()
+            try:
+                dbname = rdb.get_source_repos()[0]
+                pisi.api.update_repo(dbname)
+            except IndexError:
+                # No source repo
+                return False
+            else:
+                return True
 
         def getPackageName(pspec):
             # Extracts package name from full path to pspec.xml
