@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2008 TUBITAK/UEKAE
-# 
+# Copyright (C) 2006-2009 TUBITAK/UEKAE
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -70,15 +70,26 @@ class RepositoryManager:
             return rval
 
     def getReverseDependencies(self, pspecList):
-        # Needs a source repository added to system.
+        # Needs a source repository
+
+        def check():
+            rdb = pisi.db.repodb.RepoDB()
+            return rdb.get_source_repos()
 
         def getPackageName(pspec):
             # Extracts package name from full path to pspec.xml
             return os.path.basename(pspec.rsplit("/pspec.xml")[0])
 
+
         breaksABI = []
         revBuildDeps = []
 
+        if not check():
+            # No source repository
+            print "You should add a source repository for reverse dependency checking. Skipping.."
+            return (breaksABI, revBuildDeps)
+
+        # Create a source db instance
         sdb = SourceDB()
 
         # Create a diff output of all the repository
@@ -98,9 +109,6 @@ class RepositoryManager:
         # Now we have the list of packages which break ABI.
         # We need to find out the reverse build dependencies of these packages.
         # e.g. live555 breaks ABI, vlc and mplayer needs live555 during build
-
-        # Don't forget that we need a source repository added in buildfarm 
-        # to make this revdep support work!
 
         for p in breaksABI:
             for revdep, revdepObject in sdb.get_rev_deps(p):
