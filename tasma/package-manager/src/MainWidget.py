@@ -390,6 +390,11 @@ class MainApplicationWidget(QWidget):
 
         self.updateButtons()
         self.refreshComponentList(self.setLastSelected())
+        item = self.componentsList.firstChild()
+        if item and item.text(0) == i18n("Search Results"):
+            Globals.setWaitCursor()
+            self.searchPackage()
+            Globals.setNormalCursor()
         basketDialog.deleteLater()
 
     def conflictCheckPass(self):
