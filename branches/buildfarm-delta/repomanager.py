@@ -14,6 +14,7 @@
 import os
 import re
 import sys
+import pisi
 from pisi.db.sourcedb import SourceDB
 from string import find
 
