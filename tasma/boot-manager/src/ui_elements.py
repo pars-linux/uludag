@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2007, TUBITAK/UEKAE
+# Copyright (C) 2006-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -83,6 +83,7 @@ class Entry(QWidget):
         if not os.path.exists(locate("data", "boot-manager/%s.png" % os_type)):
             os_type = "other"
 
+        # Set icon for the entry
         self.icon = QImage(locate("data", "boot-manager/%s.png" % os_type))
         self.icon.smoothScale(32, 32)
         self.icon = QPixmap(self.icon)
