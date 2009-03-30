@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 16:41+0300\n"
+"POT-Creation-Date: 2009-03-30 15:58+0300\n"
 "PO-Revision-Date: 2007-11-12 20:45+0100\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -33,51 +33,52 @@ msgstr "Ricorda la voce scelta all'ultimo avvio."
 msgid "Timeout:"
 msgstr "Attesa:"
 
-#: src/bm_mainview.py:146
+#: src/bm_mainview.py:153
 msgid "Title:"
 msgstr "Titolo:"
 
-#: src/bm_mainview.py:154
+#: src/bm_mainview.py:161
 msgid "System:"
 msgstr "Sistema:"
 
-#: src/bm_mainview.py:164
+#: src/bm_mainview.py:171
 msgid "Root:"
 msgstr "Radice:"
 
-#: src/bm_mainview.py:173
+#: src/bm_mainview.py:180
 msgid "Kernel:"
 msgstr "Kernel:"
 
-#: src/bm_mainview.py:182
+#: src/bm_mainview.py:189
 msgid "Kernel Parameters:"
 msgstr "Parametri kernel:"
 
-#: src/bm_mainview.py:191
+#: src/bm_mainview.py:198
 msgid "Initial Ramdisk:"
 msgstr "Ramdisk iniziale:"
 
-#: src/bm_mainview.py:200
+#: src/bm_mainview.py:207
 msgid "Set as default boot entry."
 msgstr "Imposta come voce di avvio predefinita."
 
-#: src/bm_mainview.py:269
+#: src/bm_mainview.py:282
 msgid "There must be at least one Pardus entry."
 msgstr "Deve esserci almeno una voce di Pardus."
 
-#: src/bm_mainview.py:269
+#: src/bm_mainview.py:282
 msgid "Access Denied"
 msgstr "Accesso negato"
 
-#: src/bm_mainview.py:271
-msgid "Are you sure you want to remove this entry?"
+#: src/bm_mainview.py:284
+#, fuzzy
+msgid "Are you sure you want to remove this entry from the boot loader?"
 msgstr "Sei sicuro di voler eliminare questa voce?"
 
-#: src/bm_mainview.py:271
+#: src/bm_mainview.py:284
 msgid "Delete Entry"
 msgstr "Elimina voce"
 
-#: src/bm_mainview.py:277
+#: src/bm_mainview.py:290
 msgid ""
 "This is a Pardus kernel entry.\n"
 "Do you want to uninstall it from the system?"
@@ -85,15 +86,15 @@ msgstr ""
 "Questa è la voce di un kernel Pardus.\n"
 "Desideri disinstallarlo dal sistema?"
 
-#: src/bm_mainview.py:277 src/bm_mainview.py:456
+#: src/bm_mainview.py:290 src/bm_mainview.py:473
 msgid "Uninstall Kernel"
 msgstr "Disinstalla kernel"
 
-#: src/bm_mainview.py:356
+#: src/bm_mainview.py:373
 msgid "Failed"
 msgstr "Errore"
 
-#: src/bm_mainview.py:381
+#: src/bm_mainview.py:398
 msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
@@ -101,54 +102,54 @@ msgstr ""
 "Questi kernel sono installati nel sistema ma non esistono nella lista del "
 "gestore di avvio:"
 
-#: src/bm_mainview.py:390
+#: src/bm_mainview.py:407
 msgid "Add Boot Entry"
 msgstr "Aggiungi voce di avvio"
 
-#: src/bm_mainview.py:395
+#: src/bm_mainview.py:412
 msgid "Uninstall"
 msgstr "Disinstalla"
 
-#: src/bm_mainview.py:403
+#: src/bm_mainview.py:420
 msgid "Ok"
 msgstr "OK"
 
-#: src/bm_mainview.py:456
+#: src/bm_mainview.py:473
 msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Desideri disinstallare il/i kernel selezionato/i dal sistema?"
 
-#: src/bm_mainview.py:518
+#: src/bm_mainview.py:545
 msgid "Unable to connect to DBus."
 msgstr ""
 
-#: src/bm_mainview.py:518
+#: src/bm_mainview.py:545
 msgid "DBus Error"
 msgstr ""
 
-#: src/bm_mainview.py:540
+#: src/bm_mainview.py:567 src/bm_mainview.py:594
 #, fuzzy
 msgid "You are not authorized for this operation."
 msgstr "Non hai i permessi necessari per modificare le impostazioni di avvio."
 
-#: src/bm_mainview.py:546
+#: src/bm_mainview.py:573
 msgid "Waiting DBus..."
 msgstr ""
 
-#: src/bm_mainview.py:546
+#: src/bm_mainview.py:573
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
 
-#: src/bm_mainview.py:562
+#: src/bm_mainview.py:589
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
 
-#: src/bm_mainview.py:566
+#: src/bm_mainview.py:597
 msgid "COMAR Error"
 msgstr ""
 
-#: src/bm_mainview.py:580
+#: src/bm_mainview.py:611
 msgid "Bootloader configuration changed by another application."
 msgstr ""
 "La configurazione del gestore di avvio è stata modificata da un'altra "
@@ -170,10 +171,10 @@ msgstr "Contributi al modello Boot.Loader."
 msgid "Boot Manager is already started!"
 msgstr "Il gestore di avvio è già in esecuzione!"
 
-#: src/ui_elements.py:91
+#: src/ui_elements.py:92
 msgid "Edit entry"
 msgstr "Modifica voce"
 
-#: src/ui_elements.py:95
+#: src/ui_elements.py:96
 msgid "Delete entry"
 msgstr "Elimina voce"

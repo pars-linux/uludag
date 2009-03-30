@@ -281,7 +281,7 @@ class widgetEditEntry(QWidget):
         if len(pardus_entries) < 2 and entries[index] in pardus_entries:
             KMessageBox.error(self, i18n("There must be at least one Pardus entry."), i18n("Access Denied"))
             return
-        confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry?"), i18n("Delete Entry"))
+        confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry from the boot loader?"), i18n("Delete Entry"))
         if confirm == KMessageBox.Yes:
             uninstall = "no"
             if entries[index] in pardus_entries:

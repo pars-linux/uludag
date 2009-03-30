@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 16:41+0300\n"
+"POT-Creation-Date: 2009-03-30 15:58+0300\n"
 "PO-Revision-Date: 2007-10-19 22:30+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
@@ -30,128 +30,126 @@ msgstr "Se souvenir de la dernière entrée démarrée."
 
 #: src/bm_mainview.py:68
 msgid "Timeout:"
-msgstr "Délais d'attente dépassé :"
+msgstr "Délais d'attente dépassé:"
 
-#: src/bm_mainview.py:146
+#: src/bm_mainview.py:153
 msgid "Title:"
 msgstr "Titre:"
 
-#: src/bm_mainview.py:154
+#: src/bm_mainview.py:161
 msgid "System:"
 msgstr "Système:"
 
-#: src/bm_mainview.py:164
+#: src/bm_mainview.py:171
 msgid "Root:"
 msgstr "Root (Racine):"
 
-#: src/bm_mainview.py:173
+#: src/bm_mainview.py:180
 msgid "Kernel:"
 msgstr "Noyau:"
 
-#: src/bm_mainview.py:182
+#: src/bm_mainview.py:189
 msgid "Kernel Parameters:"
-msgstr "Paramètres du noyau :"
+msgstr "Paramètres du noyau:"
 
-#: src/bm_mainview.py:191
+#: src/bm_mainview.py:198
 msgid "Initial Ramdisk:"
-msgstr "Ramdrive initial :"
+msgstr "Ramdrive initial:"
 
-#: src/bm_mainview.py:200
+#: src/bm_mainview.py:207
 msgid "Set as default boot entry."
 msgstr "Établir comme entrée de démarrage par défaut."
 
-#: src/bm_mainview.py:269
+#: src/bm_mainview.py:282
 msgid "There must be at least one Pardus entry."
 msgstr "Il doit y avoir au moins une entrée Pardus."
 
-#: src/bm_mainview.py:269
+#: src/bm_mainview.py:282
 msgid "Access Denied"
 msgstr "Accès refusé"
 
-#: src/bm_mainview.py:271
-msgid "Are you sure you want to remove this entry?"
-msgstr "Êtes-vous sûr de vouloir supprimer cette entrée ?"
+#: src/bm_mainview.py:284
+msgid "Are you sure you want to remove this entry from the boot loader?"
+msgstr "Êtes-vous sûr de vouloir enlever cette entrée de la liste du chargeur de démarrage?"
 
-#: src/bm_mainview.py:271
+#: src/bm_mainview.py:284
 msgid "Delete Entry"
 msgstr "Supprimer l'entrée"
 
-#: src/bm_mainview.py:277
+#: src/bm_mainview.py:290
 msgid ""
 "This is a Pardus kernel entry.\n"
 "Do you want to uninstall it from the system?"
 msgstr ""
 "Ceci est une entrée de noyau Pardus.\n"
-"Voulez vous la désinstaller du système ?"
+"Voulez vous la désinstaller du système?"
 
-#: src/bm_mainview.py:277 src/bm_mainview.py:456
+#: src/bm_mainview.py:290 src/bm_mainview.py:473
 msgid "Uninstall Kernel"
 msgstr "Desinstaller le noyau"
 
-#: src/bm_mainview.py:356
+#: src/bm_mainview.py:373
 msgid "Failed"
 msgstr "Échec"
 
-#: src/bm_mainview.py:381
+#: src/bm_mainview.py:398
 msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
 msgstr ""
-"Les noyaux suivants sont installés sur le système mains n'existent pas dans "
-"la liste du chargeur de démarrage :"
+"Les noyaux suivants sont installés sur le système mais n'existent pas dans "
+"la liste du chargeur de démarrage:"
 
-#: src/bm_mainview.py:390
+#: src/bm_mainview.py:407
 msgid "Add Boot Entry"
 msgstr "Ajouter une Entrée de Démarrage"
 
-#: src/bm_mainview.py:395
+#: src/bm_mainview.py:412
 msgid "Uninstall"
 msgstr "Désinstaller"
 
-#: src/bm_mainview.py:403
+#: src/bm_mainview.py:420
 msgid "Ok"
 msgstr "Ok"
 
-#: src/bm_mainview.py:456
+#: src/bm_mainview.py:473
 msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Voulez vous désinstaller le(s) noyau(x) sélectionné(s) du système ?"
 
-#: src/bm_mainview.py:518
+#: src/bm_mainview.py:545
 msgid "Unable to connect to DBus."
-msgstr ""
+msgstr "Impossible à connecter à DBus."
 
-#: src/bm_mainview.py:518
+#: src/bm_mainview.py:545
 msgid "DBus Error"
-msgstr ""
+msgstr "Erreur de DBus"
 
-#: src/bm_mainview.py:540
-#, fuzzy
+#: src/bm_mainview.py:567 src/bm_mainview.py:594
 msgid "You are not authorized for this operation."
-msgstr ""
-"Vous n'êtes pas autorisé à éditer les paramètres du chargeur de démarrage."
+msgstr "Vous n'êtes pas autorisé pour cette opération."
 
-#: src/bm_mainview.py:546
+#: src/bm_mainview.py:573
 msgid "Waiting DBus..."
 msgstr ""
 
-#: src/bm_mainview.py:546
+#: src/bm_mainview.py:573
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
 
-#: src/bm_mainview.py:562
+#: src/bm_mainview.py:589
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
 
-#: src/bm_mainview.py:566
+#: src/bm_mainview.py:597
 msgid "COMAR Error"
-msgstr ""
+msgstr "Erreur de COMAR"
 
-#: src/bm_mainview.py:580
+#: src/bm_mainview.py:611
 msgid "Bootloader configuration changed by another application."
 msgstr ""
-"Configuration du chargeur de démarrage changée par une autre application."
+"Configuration du chargeur de démarrage est modifiée par une autre application."
 
 #: src/boot-manager.py:33 src/boot-manager.py:92
 msgid "Boot Manager"
@@ -167,12 +165,12 @@ msgstr "Contributions au modèle du Boot.Loader"
 
 #: src/boot-manager.py:84
 msgid "Boot Manager is already started!"
-msgstr "Le gestionnaire de démarrage est déjà lancé !"
+msgstr "Le gestionnaire de démarrage est déjà lancé!"
 
-#: src/ui_elements.py:91
+#: src/ui_elements.py:92
 msgid "Edit entry"
-msgstr "Éditer l'entrée"
+msgstr "Modifier l'entrée"
 
-#: src/ui_elements.py:95
+#: src/ui_elements.py:96
 msgid "Delete entry"
 msgstr "Supprimer l'entrée"

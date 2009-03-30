@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 16:41+0300\n"
+"POT-Creation-Date: 2009-03-30 15:58+0300\n"
 "PO-Revision-Date: 2008-06-17 15:43+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -36,51 +36,52 @@ msgstr "Zuletzt geladenen Eintrag merken."
 msgid "Timeout:"
 msgstr "Zeitüberschreitung:"
 
-#: src/bm_mainview.py:146
+#: src/bm_mainview.py:153
 msgid "Title:"
 msgstr "Titel:"
 
-#: src/bm_mainview.py:154
+#: src/bm_mainview.py:161
 msgid "System:"
 msgstr "System:"
 
-#: src/bm_mainview.py:164
+#: src/bm_mainview.py:171
 msgid "Root:"
 msgstr "Wurzel:"
 
-#: src/bm_mainview.py:173
+#: src/bm_mainview.py:180
 msgid "Kernel:"
 msgstr "Kernel:"
 
-#: src/bm_mainview.py:182
+#: src/bm_mainview.py:189
 msgid "Kernel Parameters:"
 msgstr "Kernel-Parameter:"
 
-#: src/bm_mainview.py:191
+#: src/bm_mainview.py:198
 msgid "Initial Ramdisk:"
 msgstr "RAM-Disk initialisieren"
 
-#: src/bm_mainview.py:200
+#: src/bm_mainview.py:207
 msgid "Set as default boot entry."
 msgstr "Als Standard-Booteintrag setzen"
 
-#: src/bm_mainview.py:269
+#: src/bm_mainview.py:282
 msgid "There must be at least one Pardus entry."
 msgstr "Es muss mindestens ein Pardus-Eintrag bestehen."
 
-#: src/bm_mainview.py:269
+#: src/bm_mainview.py:282
 msgid "Access Denied"
 msgstr "Zugriff verweigert"
 
-#: src/bm_mainview.py:271
-msgid "Are you sure you want to remove this entry?"
+#: src/bm_mainview.py:284
+#, fuzzy
+msgid "Are you sure you want to remove this entry from the boot loader?"
 msgstr "Sind Sie sicher, dass Sie diesen Eintrag entfernen möchten?"
 
-#: src/bm_mainview.py:271
+#: src/bm_mainview.py:284
 msgid "Delete Entry"
 msgstr "Eintrag entfernen"
 
-#: src/bm_mainview.py:277
+#: src/bm_mainview.py:290
 msgid ""
 "This is a Pardus kernel entry.\n"
 "Do you want to uninstall it from the system?"
@@ -88,15 +89,15 @@ msgstr ""
 "Dies ist ein Pardus-Kernel Eintrag.\n"
 "Wollen Sie es vom System deinstallieren?"
 
-#: src/bm_mainview.py:277 src/bm_mainview.py:456
+#: src/bm_mainview.py:290 src/bm_mainview.py:473
 msgid "Uninstall Kernel"
 msgstr "Kernel deinstallieren"
 
-#: src/bm_mainview.py:356
+#: src/bm_mainview.py:373
 msgid "Failed"
 msgstr "Fehlgeschlagen"
 
-#: src/bm_mainview.py:381
+#: src/bm_mainview.py:398
 msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
@@ -104,43 +105,45 @@ msgstr ""
 "Folgende Kernel sind im System installiert aber existieren nicht in der Boot-"
 "Lader-Liste:"
 
-#: src/bm_mainview.py:390
+#: src/bm_mainview.py:407
 msgid "Add Boot Entry"
 msgstr "Boot-Eintrag hinzufügen"
 
-#: src/bm_mainview.py:395
+#: src/bm_mainview.py:412
 msgid "Uninstall"
 msgstr "Deinstallieren"
 
-#: src/bm_mainview.py:403
+#: src/bm_mainview.py:420
 msgid "Ok"
 msgstr "Ok"
 
-#: src/bm_mainview.py:456
+#: src/bm_mainview.py:473
 msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Nicht verwendete(n) Kernel vom System deinstallieren?"
 
-#: src/bm_mainview.py:518
+#: src/bm_mainview.py:545
 msgid "Unable to connect to DBus."
 msgstr "Kann nicht mit DBus verbunden werden."
 
-#: src/bm_mainview.py:518
+#: src/bm_mainview.py:545
 msgid "DBus Error"
 msgstr "DBus-Fehler"
 
-#: src/bm_mainview.py:540
+#: src/bm_mainview.py:567 src/bm_mainview.py:594
 msgid "You are not authorized for this operation."
 msgstr "Sie sind für diesen Vorgang nicht berechtigt."
 
-#: src/bm_mainview.py:546
+#: src/bm_mainview.py:573
 msgid "Waiting DBus..."
 msgstr "Auf DBus wartend..."
 
-#: src/bm_mainview.py:546
+#: src/bm_mainview.py:573
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr "Verbindung zu DBus unerwartet geschlossen, es wird versucht erneut zu verbinden..."
+msgstr ""
+"Verbindung zu DBus unerwartet geschlossen, es wird versucht erneut zu "
+"verbinden..."
 
-#: src/bm_mainview.py:562
+#: src/bm_mainview.py:589
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
@@ -149,13 +152,14 @@ msgstr ""
 "sollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus start' "
 "ausführen."
 
-#: src/bm_mainview.py:566
+#: src/bm_mainview.py:597
 msgid "COMAR Error"
 msgstr "COMAR-Fehler"
 
-#: src/bm_mainview.py:580
+#: src/bm_mainview.py:611
 msgid "Bootloader configuration changed by another application."
-msgstr "Boot-Loader-Konfiguration wurde durch eine andere Applikation geändert."
+msgstr ""
+"Boot-Loader-Konfiguration wurde durch eine andere Applikation geändert."
 
 #: src/boot-manager.py:33 src/boot-manager.py:92
 msgid "Boot Manager"
@@ -173,11 +177,10 @@ msgstr "Beiträge zum Boot-Lader-Model."
 msgid "Boot Manager is already started!"
 msgstr "Boot-Manager ist bereits gestartet worden!"
 
-#: src/ui_elements.py:91
+#: src/ui_elements.py:92
 msgid "Edit entry"
 msgstr "Eintrag bearbeiten"
 
-#: src/ui_elements.py:95
+#: src/ui_elements.py:96
 msgid "Delete entry"
 msgstr "Eintrag löschen"
-
