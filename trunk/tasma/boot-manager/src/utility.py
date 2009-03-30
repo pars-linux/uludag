@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2006-2009 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -39,10 +39,3 @@ class HelpDialog(QDialog):
         if not os.path.exists(url):
             url = locate('data', '%s/help/en/main_help.html' % name)
         self.htmlPart.openURL(KURL(url))
-
-def getRoot():
-    import os
-    for mount in os.popen("/bin/mount").readlines():
-        mount_items = mount.split()
-        if mount_items[2] == "/":
-            return mount_items[0]

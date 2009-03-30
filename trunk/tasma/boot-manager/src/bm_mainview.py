@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2007, TUBITAK/UEKAE
+# Copyright (C) 2006-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -269,11 +269,10 @@ class widgetEditEntry(QWidget):
             handler()
 
         entries = self.parent.entries
-        pardus_root = getRoot()
         pardus_entries = []
         pardus_versions = {}
         for entry in entries:
-            if entry["os_type"] in ["linux", "xen"] and entry["root"] == pardus_root:
+            if entry["os_type"] in ["linux", "xen"] and bool(entry.get("is_pardus_kernel", False)):
                 pardus_entries.append(entry)
                 version = entry["kernel"].split("kernel-")[1]
                 if version not in pardus_versions:
@@ -650,10 +649,22 @@ class widgetMain(QWidget):
             self.widgetEntries.listEntries.clear()
             self.entries = []
             for entry in entries:
-                index = int(entry["index"])
-                pardus = entry["os_type"] == "linux" and getRoot() == entry["root"]
                 self.entries.append(entry)
-                item = self.widgetEntries.listEntries.add(self.widgetEditEntry, index, unicode(entry["title"]), entry["root"],  pardus, entry)
+
+                if entry.has_key("root"):
+                    root_or_uuid = entry["root"]
+                elif entry.has_key("uuid"):
+                    root_or_uuid = entry["uuid"]
+                else:
+                    root_or_uuid = ""
+
+                self.widgetEntries.listEntries.add(self.widgetEditEntry,
+                                                   int(entry["index"]),
+                                                   unicode(entry["title"]),
+                                                   root_or_uuid,
+                                                   bool(entry.get("is_pardus_kernel", False)),
+                                                   entry)
+
         self.widgetEntries.listEntries.setEnabled(True)
         ch = self.callMethod("listEntries", "tr.org.pardus.comar.boot.loader.get")
         ch.registerDone(handler)
