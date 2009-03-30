@@ -147,6 +147,9 @@ class ServiceManager(KCModule):
     def __init__(self, component_data, parent):
         KCModule.__init__(self, component_data, parent)
 
+        # This is very important for translations when running as kcm_module
+        KGlobal.locale().insertCatalog("service-manager")
+
         # DBUS MainLoop
         DBusQtMainLoop(set_as_default = True)
         MainManager(self, standAlone = False)

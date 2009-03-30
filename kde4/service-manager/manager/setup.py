@@ -109,8 +109,11 @@ class Install(install):
         service_file = os.path.join(KDEDIR, "share/kde4/services", DESKTOPFILE)
         shutil.copy(os.path.join("build/",DESKTOPFILE), service_file)
         shutil.move(os.path.join(project_dir,"main.py"), os.path.join(project_dir,PROJECT))
-        os.symlink(os.path.join(project_dir,PROJECT), os.path.join(project_dir,PROJECT+'.py'))
-        os.symlink(os.path.join(project_dir,PROJECT), os.path.join(KDEDIR,"bin/",PROJECT))
+        try:
+            os.symlink(os.path.join(project_dir,PROJECT), os.path.join(project_dir,PROJECT+'.py'))
+            os.symlink(os.path.join(project_dir,PROJECT), os.path.join(KDEDIR,"bin/",PROJECT))
+        except:
+            pass
         os.chmod(os.path.join(project_dir,PROJECT+'.py'),0755)
 
 setup(
