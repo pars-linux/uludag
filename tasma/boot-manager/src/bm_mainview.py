@@ -370,7 +370,7 @@ class widgetEditEntry(QWidget):
 
         def handlerError(exception):
             self.parent.widgetEditEntry.saved = False
-            KMessageBox.error(self, unicode(exception), i18n("Failed"))
+            KMessageBox.error(self, unicode(exception.message), i18n("Failed"))
             self.parent.widgetEditEntry.buttonOK.setEnabled(True)
         def handler():
             self.parent.widgetEditEntry.saved = False
@@ -557,7 +557,6 @@ class widgetMain(QWidget):
                          action,
                          self.winId(),
                          self.busSys, self.busSes)
-        ch.registerError(self.comarError)
         ch.registerAuthError(self.comarError)
         ch.registerDBusError(self.busError)
         ch.registerCancel(self.cancelError)
