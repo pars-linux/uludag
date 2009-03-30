@@ -94,8 +94,8 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="data.qrc" >
-         <normaloff>:/data/icons/start.png</normaloff>:/data/icons/start.png</iconset>
+        <iconset resource="../icons/data.qrc" >
+         <normaloff>:/data/start.png</normaloff>:/data/start.png</iconset>
        </property>
        <property name="flat" >
         <bool>true</bool>
@@ -120,8 +120,8 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="data.qrc" >
-         <normaloff>:/data/icons/reload.png</normaloff>:/data/icons/reload.png</iconset>
+        <iconset resource="../icons/data.qrc" >
+         <normaloff>:/data/reload.png</normaloff>:/data/reload.png</iconset>
        </property>
       </widget>
      </item>
@@ -143,23 +143,8 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="data.qrc" >
-         <normaloff>:/data/icons/stop.png</normaloff>:/data/icons/stop.png</iconset>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3" >
-      <widget class="QPushButton" name="runOnStart" >
-       <property name="styleSheet" >
-        <string notr="true" >QPushButton:checked {
-	background-color: rgb(85, 170, 255);
-}</string>
-       </property>
-       <property name="text" >
-        <string>Run on Startup</string>
-       </property>
-       <property name="checkable" >
-        <bool>true</bool>
+        <iconset resource="../icons/data.qrc" >
+         <normaloff>:/data/stop.png</normaloff>:/data/stop.png</iconset>
        </property>
       </widget>
      </item>
@@ -190,7 +175,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="data.qrc" />
+  <include location="../icons/data.qrc" />
  </resources>
  <connections/>
 </ui>

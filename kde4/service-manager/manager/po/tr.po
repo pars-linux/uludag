@@ -1,27 +1,24 @@
-#: src/uiitem.ui.py:102 src/ui.ui.py:49
+#: build/uiitem.py:95 build/ui.py:49
 msgid "Form"
 msgstr ""
 
-#: src/uiitem.ui.py:103
+#: build/uiitem.py:96
 msgid "serviceName"
 msgstr ""
 
-#: src/uiitem.ui.py:104
+#: build/uiitem.py:97
 msgid "serviceDesc"
 msgstr ""
 
-#: src/uiitem.ui.py:105
-msgid "Run on Startup"
-msgstr "Açılışta Çalıştır"
-
-#: src/ui.ui.py:50
+#: build/ui.py:50
 msgid "System Services"
 msgstr ""
 
-#: src/ui.ui.py:51
+#: build/ui.py:51
 msgid "type service name to search..."
-msgstr ""
+msgstr "servis adını yazarak aramaya başlayın..."
 
-#: src/ui.ui.py:52
+#: build/ui.py:52
 msgid "Just show servers"
-msgstr ""
+msgstr "Sadece sunucuları göster"
+
