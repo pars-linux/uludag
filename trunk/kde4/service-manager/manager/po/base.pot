@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-25 16:25+0200\n"
+"POT-Creation-Date: 2009-03-30 23:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,30 +16,26 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/uiitem.ui.py:102 src/ui.ui.py:49
+#: build/uiitem.py:95 build/ui.py:49
 msgid "Form"
 msgstr ""
 
-#: src/uiitem.ui.py:103
+#: build/uiitem.py:96
 msgid "serviceName"
 msgstr ""
 
-#: src/uiitem.ui.py:104
+#: build/uiitem.py:97
 msgid "serviceDesc"
 msgstr ""
 
-#: src/uiitem.ui.py:105
-msgid "Run on Startup"
-msgstr ""
-
-#: src/ui.ui.py:50
+#: build/ui.py:50
 msgid "System Services"
 msgstr ""
 
-#: src/ui.ui.py:51
+#: build/ui.py:51
 msgid "type service name to search..."
 msgstr ""
 
-#: src/ui.ui.py:52
+#: build/ui.py:52
 msgid "Just show servers"
 msgstr ""
