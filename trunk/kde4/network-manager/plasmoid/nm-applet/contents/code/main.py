@@ -17,7 +17,7 @@ from PyKDE4.plasma import Plasma
 from PyKDE4 import plasmascript
 
 # Custom Widgets
-from widgets.popup import Popup
+from widgets.popup import Popup, NmIcon
 
 # KDE4 Notifier
 from widgets.notify import Notifier
@@ -31,6 +31,9 @@ from PyKDE4.solid import Solid
 from backend.pardus import NetworkIface
 
 iface = NetworkIface()
+
+receiverPath = "network/interfaces/%s/receiver/data"
+transmitterPath = "network/interfaces/%s/transmitter/data"
 
 def getDevice(info):
     return info['device_id'].split(':')[1].split('_')[-1]
@@ -56,7 +59,7 @@ class NmApplet(plasmascript.Applet):
         self.layout.setContentsMargins(0, 0, 0, 0)
         self.layout.setSpacing(0)
 
-        self.icon = Plasma.IconWidget()
+        self.icon = NmIcon(self)
         self.icon.setSvg(self.defaultIcon, "native")
         self.icon.setToolTip("Click here to show connections..")
 
@@ -73,6 +76,7 @@ class NmApplet(plasmascript.Applet):
         # Listen data transfers from systemmonitor data engine ..
         self.lastActiveDevice = None
         self.listenDataTransfers()
+
         self.color = Qt.green
         self.activityTimer = QTimer(self)
         self.connect(self.activityTimer, SIGNAL("timeout()"), self.blinkLight)
@@ -123,13 +127,11 @@ class NmApplet(plasmascript.Applet):
             QTimer.singleShot(0, self.parseSources)
 
     def parseSources(self):
-        statePath = "network/interfaces/%s/receiver/data"
         if self.lastActiveDevice:
-            self.engine.connectSource(statePath % self.lastActiveDevice, self, 500)
+            self.engine.connectSource(receiverPath % self.lastActiveDevice, self, 500)
 
     def stopFollowing(self, device):
-        statePath = "network/interfaces/%s/receiver/data"
-        self.engine.disconnectSource(statePath % device, self)
+        self.engine.disconnectSource(receiverPath % device, self)
         self.activityTimer.stop()
 
     @pyqtSignature("dataUpdated(const QString &, const Plasma::DataEngine::Data &)")
