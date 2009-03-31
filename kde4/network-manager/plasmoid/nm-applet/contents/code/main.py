@@ -10,7 +10,7 @@ import dbus
 
 # Qt Libs
 from PyQt4.QtCore import Qt, SIGNAL, SLOT, pyqtSignature, QString, QTimer, QRectF
-from PyQt4.QtGui import QWidget, QFrame, QGraphicsLinearLayout, QPixmap, QColor, QPainterPath
+from PyQt4.QtGui import QWidget, QFrame, QGraphicsLinearLayout, QPixmap, QColor, QPainterPath, QPainter
 
 # Plasma Libs
 from PyKDE4.plasma import Plasma
@@ -104,6 +104,7 @@ class NmApplet(plasmascript.Applet):
             self.parseSources()
 
     def paintInterface(self, painter, option, rect):
+        painter.setRenderHint(QPainter.Antialiasing)
         painter.save()
         f = rect.width()/12
         if self.receiverBlinker.isActive():
