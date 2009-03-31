@@ -17,7 +17,7 @@ from PyKDE4.plasma import Plasma
 from PyKDE4 import plasmascript
 
 # Custom Widgets
-from widgets.popup import Popup, NmIcon
+from widgets.popup import Popup, NmIcon, Blinker
 
 # KDE4 Notifier
 from widgets.notify import Notifier
@@ -30,8 +30,6 @@ from PyKDE4.solid import Solid
 # itself to the current dbus mainloop if exists
 from backend.pardus import NetworkIface
 
-iface = NetworkIface()
-
 receiverPath = "network/interfaces/%s/receiver/data"
 transmitterPath = "network/interfaces/%s/transmitter/data"
 
@@ -43,7 +41,7 @@ class NmApplet(plasmascript.Applet):
 
     def __init__(self, parent):
         plasmascript.Applet.__init__(self, parent)
-        self.iface = iface
+        self.iface = NetworkIface()
         self.notifyface = Notifier(dbus.get_default_main_loop())
         self.notifyface.registerNetwork()
 
@@ -73,13 +71,12 @@ class NmApplet(plasmascript.Applet):
 
         self.connect(self.icon, SIGNAL("clicked()"), self.showDialog)
 
+        self.receiverBlinker = Blinker(self)
+        self.transmitterBlinker = Blinker(self, Qt.red)
+
         # Listen data transfers from systemmonitor data engine ..
         self.lastActiveDevice = None
         self.listenDataTransfers()
-
-        self.color = Qt.green
-        self.activityTimer = QTimer(self)
-        self.connect(self.activityTimer, SIGNAL("timeout()"), self.blinkLight)
 
         self.dialog = Plasma.Dialog()
         self.dialog.setWindowFlags(Qt.Popup)
@@ -98,7 +95,6 @@ class NmApplet(plasmascript.Applet):
 
         # Listen network status from comar
         self.iface.listen(self.handler)
-        self.activityTimer.start(100)
 
     def listenDataTransfers(self):
         self.engine = self.dataEngine("systemmonitor")
@@ -110,16 +106,11 @@ class NmApplet(plasmascript.Applet):
     def paintInterface(self, painter, option, rect):
         painter.save()
         f = rect.width()/10
-        if self.activityTimer.isActive():
-            painter.fillRect(rect.x()+rect.width()-f, rect.y()+rect.height()-f, f, f, self.color)
+        if self.receiverBlinker.isActive():
+            painter.fillRect(rect.x()+rect.width()-f, rect.y()+rect.height()-f, f, f, self.receiverBlinker.color)
+        if self.transmitterBlinker.isActive():
+            painter.fillRect(0, rect.y()+rect.height()-f, f, f, self.transmitterBlinker.color)
         painter.restore()
-
-    def blinkLight(self):
-        if self.color == Qt.green:
-            self.color = Qt.transparent
-        else:
-            self.color = Qt.green
-        self.update()
 
     @pyqtSignature("initLater(const QString &)")
     def initLater(self, name):
@@ -128,21 +119,23 @@ class NmApplet(plasmascript.Applet):
 
     def parseSources(self):
         if self.lastActiveDevice:
-            self.engine.connectSource(receiverPath % self.lastActiveDevice, self, 500)
+            self.receiverBlinker.follow(receiverPath % self.lastActiveDevice)
+            self.engine.connectSource(self.receiverBlinker.path, self, 500)
+            self.transmitterBlinker.follow(transmitterPath % self.lastActiveDevice)
+            self.engine.connectSource(self.transmitterBlinker.path, self, 500)
 
     def stopFollowing(self, device):
-        self.engine.disconnectSource(receiverPath % device, self)
-        self.activityTimer.stop()
+        self.transmitterBlinker.stop()
+        self.receiverBlinker.stop()
+        self.engine.disconnectSource(self.transmitterBlinker.path, self)
+        self.engine.disconnectSource(self.receiverBlinker.path, self)
 
     @pyqtSignature("dataUpdated(const QString &, const Plasma::DataEngine::Data &)")
     def dataUpdated(self, sourceName, data):
         if data.has_key(QString('value')):
-            if data[QString('value')].toInt()[0] == 0:
-                self.activityTimer.stop()
-                self.color = Qt.transparent
-                self.update()
-            else:
-                self.activityTimer.start(100)
+            for blinker in (self.receiverBlinker, self.transmitterBlinker):
+                if blinker.path==sourceName:
+                    blinker.update(data)
 
     def constraintsEvent(self, constraints):
         self.setBackgroundHints(Plasma.Applet.NoBackground)
@@ -155,7 +148,7 @@ class NmApplet(plasmascript.Applet):
         args = map(lambda x: str(x), list(args))
         if signal == "stateChanged":
             solidState = Solid.Networking.Unknown
-            lastDevice = getDevice(iface.info(package, args[0]))
+            lastDevice = getDevice(self.iface.info(package, args[0]))
             ip = str()
             if (str(args[1]) == "up"):
                 msg = "Connected to <b>%s</b> IP: %s" % (args[0], args[2])

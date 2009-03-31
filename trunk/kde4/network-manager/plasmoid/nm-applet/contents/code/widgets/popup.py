@@ -3,6 +3,7 @@
 
 # QT Libs
 from PyQt4.QtGui import QWidget, QFrame, QGraphicsLinearLayout, QPixmap
+from PyQt4.QtCore import Qt, QTimer, SIGNAL, QString
 
 # Plasma Libs
 from PyKDE4.plasma import Plasma
@@ -14,6 +15,39 @@ from item import ConnectionItem
 class NmIcon(Plasma.IconWidget):
     def __init__(self, parent):
         Plasma.IconWidget.__init__(self)
+
+class Blinker:
+    def __init__(self, parent, color=Qt.green, path=None):
+        self.parent = parent
+        self.timer = QTimer(parent)
+        self.parent.connect(self.timer, SIGNAL("timeout()"), self.blink)
+        self.defaultColor = self.color = color
+        self.path = path
+        self.timer.start(100)
+
+    def blink(self):
+        if self.color == self.defaultColor:
+            self.color = Qt.transparent
+        else:
+            self.color = self.defaultColor
+        self.parent.update()
+
+    def follow(self, path):
+        self.path = path
+
+    def update(self, data):
+        if data[QString('value')].toInt()[0] >= 2:
+            self.timer.start(100)
+        else:
+            self.timer.stop()
+            self.color = Qt.transparent
+            self.parent.update()
+
+    def isActive(self):
+        return self.timer.isActive()
+
+    def stop(self):
+        self.timer.stop()
 
 class Popup(QWidget):
 
