@@ -4,9 +4,16 @@
 # QT Libs
 from PyQt4.QtGui import QWidget, QFrame, QGraphicsLinearLayout, QPixmap
 
+# Plasma Libs
+from PyKDE4.plasma import Plasma
+
 # Custom Widgets
 from popupui import Ui_Connection
 from item import ConnectionItem
+
+class NmIcon(Plasma.IconWidget):
+    def __init__(self, parent):
+        Plasma.IconWidget.__init__(self)
 
 class Popup(QWidget):
 
