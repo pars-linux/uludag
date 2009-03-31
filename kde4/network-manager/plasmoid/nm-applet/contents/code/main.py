@@ -9,8 +9,8 @@ import time
 import dbus
 
 # Qt Libs
-from PyQt4.QtCore import Qt, SIGNAL, SLOT, pyqtSignature, QString, QTimer
-from PyQt4.QtGui import QWidget, QFrame, QGraphicsLinearLayout, QPixmap
+from PyQt4.QtCore import Qt, SIGNAL, SLOT, pyqtSignature, QString, QTimer, QRectF
+from PyQt4.QtGui import QWidget, QFrame, QGraphicsLinearLayout, QPixmap, QColor, QPainterPath
 
 # Plasma Libs
 from PyKDE4.plasma import Plasma
@@ -72,7 +72,7 @@ class NmApplet(plasmascript.Applet):
         self.connect(self.icon, SIGNAL("clicked()"), self.showDialog)
 
         self.receiverBlinker = Blinker(self)
-        self.transmitterBlinker = Blinker(self, Qt.red)
+        self.transmitterBlinker = Blinker(self, QColor(255,114,32))
 
         # Listen data transfers from systemmonitor data engine ..
         self.lastActiveDevice = None
@@ -105,11 +105,17 @@ class NmApplet(plasmascript.Applet):
 
     def paintInterface(self, painter, option, rect):
         painter.save()
-        f = rect.width()/10
+        f = rect.width()/12
         if self.receiverBlinker.isActive():
-            painter.fillRect(rect.x()+rect.width()-f, rect.y()+rect.height()-f, f, f, self.receiverBlinker.color)
+            _rect = QRectF(rect.x()+rect.width()-f*1.2, rect.y()+rect.height()-f*1.3, f, f)
+            _path = QPainterPath()
+            _path.addEllipse(_rect)
+            painter.fillPath(_path, self.receiverBlinker.color)
         if self.transmitterBlinker.isActive():
-            painter.fillRect(0, rect.y()+rect.height()-f, f, f, self.transmitterBlinker.color)
+            _rect = QRectF(rect.x()+rect.width()-f*2*1.2-4, rect.y()+rect.height()-f*1.3, f, f)
+            _path = QPainterPath()
+            _path.addEllipse(_rect)
+            painter.fillPath(_path, self.transmitterBlinker.color)
         painter.restore()
 
     @pyqtSignature("initLater(const QString &)")
