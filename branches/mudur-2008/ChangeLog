@@ -1,3 +1,7 @@
+2009-03-31  Ozan Çağlayan <ozan@pardus.org.tr>
+	* bin/mudur.py (copyUdevRules): Upstream says that we don't need to
+	retrigger at all for persistent rules.
+
 2009-03-17  Ozan Çağlayan <ozan@pardus.org.tr>
 	* bin/mudur.py (CPUFreq): Load cpufreq_conservative, remove loading
 	cpufreq_ondemand as it's compiled in.
