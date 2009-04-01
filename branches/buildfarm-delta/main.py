@@ -34,6 +34,7 @@ def buildPackages():
     queue = copy.copy(qmgr.workQueue)
     packageList = []
     deltaPackageList = []
+    isopackages = {}
 
     if len(queue) == 0:
         logger.info("Work Queue is empty...")
