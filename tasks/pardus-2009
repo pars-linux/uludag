@@ -88,10 +88,10 @@
   * Boot-Manager (-)
 
 * OpenOffice.org 3 (Gökçen Eraslan)
-  * OpenOffice paketi (/90)
+  * OpenOffice paketi (+)
   * Sözlüklerin extension olarak kurulması (+)
   * Clipart (-)
-  * Help paketi (+)
+  * Help paketinin ve diğer dil paketlerinin bölünmesi (+)
   * Desktop dosyalarının upstreamden alınması (+)
   * LanguageTool paketi (-)
   * unopkg GUI, StartCenter(+)
