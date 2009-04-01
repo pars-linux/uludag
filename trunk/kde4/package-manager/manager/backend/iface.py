@@ -39,3 +39,11 @@ class Iface:
     def getPackage(self, name):
         """ returns the package info """
         pass
+
+    def getDepends(self, packages, filters=None):
+        """ returns the packages that the given packages depends """
+        pass
+
+    def getRequires(self, packages, filters=None):
+        """ returns the packages that the given packages required by """
+        pass

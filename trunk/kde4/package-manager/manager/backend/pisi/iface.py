@@ -19,6 +19,7 @@ class Iface:
     def __init__(self):
         self.pdb  = pisi.db.packagedb.PackageDB()
         self.cdb  = pisi.db.componentdb.ComponentDB()
+        self.idb  = pisi.db.installdb.InstallDB()
 
     def getPackageList(self):
         return pisi.api.list_available()
@@ -41,3 +42,14 @@ class Iface:
 
     def getGroupComponents(self, name):
         return groups.getGroupComponents(name)
+
+    def getDepends(self, packages, filters=None):
+        if not self.idb.has_package(packages[0]):
+            deps = set(pisi.api.get_install_order(packages))
+        else:
+            deps = set(pisi.api.get_upgrade_order(packages))
+        return list(set(deps) - set(packages))
+
+    def getRequires(self, packages, filters=None):
+        revDeps = set(pisi.api.get_remove_order(packages))
+        return list(set(revDeps) - set(packages))
