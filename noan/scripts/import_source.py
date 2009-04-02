@@ -143,7 +143,20 @@ def updateDB(path_source, full_import, newRelease):
         if up_count > 0:
             print '    New Updates: %s' % up_count
 
+    # Initialize SVN client
     cli = pysvn.Client()
+
+    # Handle SSL warnings
+    def cbSSL(trust_dict):
+        # No username/password are available
+        retcode = False
+        # Accept SVN_AUTH_SSL_NOTYETVALID, SVN_AUTH_SSL_EXPIRED, SVN_AUTH_SSL_CNMISMATCH, SVN_AUTH_SSL_UNKNOWNCA, SVN_AUTH_SSL_OTHER
+        accepted_failures = 0x8
+        # Save certificate
+        save = True
+        return retcode, accepted_failures, save
+
+    cli.callback_ssl_server_trust_prompt = cbSSL
 
     if full_import:
         cli.update(path_source)
