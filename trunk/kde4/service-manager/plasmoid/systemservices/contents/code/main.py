@@ -233,7 +233,8 @@ class SystemServicesApplet(plasmascript.Applet):
                 self.applet.setMinimumSize(self.mainWidget.minimumSize())# * len(self.mainWidget._widgets))
 
     def handler(self, package, signal, args):
-        self.mainWidget._widgets[str(package)].updateState(args[1])
+        if self.mainWidget:
+            self.mainWidget._widgets[str(package)].updateState(args[1])
 
     def showConfigurationInterface(self):
         self.dialog.show()
