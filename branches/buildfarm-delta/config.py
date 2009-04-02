@@ -44,7 +44,10 @@ debugSupport     = False
 debugPath        = "/var/cache/pisi/packages-debug/"
 
 # Information for mailer module.
-# Edit templates.py for the  structure of mails.
+# Edit templates.py for the structure of mails.
+
+# Set this to 'False' for turning off notification e-mails
+sendEmail        = True
 
 # Default from address
 mailFrom         = "buildfarm@pardus.org.tr"
@@ -61,8 +64,8 @@ ccList           = ["buildfarm@pardus.org.tr"]
 smtpServer       = "mail.pardus.org.tr"
 
 # Create and edit mailauth.py for authentication if needed
-# Set this to 'False' for turning mail sending off.
-useSmtpAuth      = False
+# Set this to 'False' for not authenticating on the SMTP server
+useSmtpAuth      = True
 
 # Set this to 'False' if you don't want to generate delta packages
 generateDelta    = True
@@ -72,13 +75,13 @@ generateDelta    = True
 
 deltaBlacklist   = ["skype",
                     "kernel",
-                     "flashplugin",
-                     "kernel-debug",
-                     "openarena-data",
-                     "vdrift-data-full",
-                     "eclipse-jdt-binary",
-                     "nvidia-drivers177",
-                     "nvidia-drivers180",
-                     "nvidia-drivers173",
-                     "nvidia-drivers-new",
-                     "nvidia-drivers-old"]
+                    "flashplugin",
+                    "kernel-debug",
+                    "openarena-data",
+                    "vdrift-data-full",
+                    "eclipse-jdt-binary",
+                    "nvidia-drivers177",
+                    "nvidia-drivers180",
+                    "nvidia-drivers173",
+                    "nvidia-drivers-new",
+                    "nvidia-drivers-old"]
