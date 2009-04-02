@@ -47,19 +47,25 @@ class MainManager(QtGui.QWidget):
         self.widgets = {}
 
         # Fill service list
+        services = self.iface.services()
+        services.sort()
+        for service in services:
+            item = ServiceItem(service, self.ui.listServices)
+            self.widgets[service] = ServiceItemWidget(service, self, item)
+            self.ui.listServices.setItemWidget(item, self.widgets[service])
+            item.setSizeHint(QSize(38,48))
+ 
+        # Update service status and follow Comar for state changes
         self.getServices()
 
     def handleServices(self, package, exception, results):
         # Handle request and fill the listServices in the ui
         if not exception:
-            item = ServiceItem(self.ui.listServices, results, package)
-            self.widgets[package] = ServiceItemWidget(results, package, self)
-            self.ui.listServices.setItemWidget(item, self.widgets[package])
-            item.setSizeHint(QSize(38,48))
+            self.widgets[package].updateService(results)
 
     def getServices(self):
-        self.iface.listen(self.handler)
         self.iface.services(self.handleServices)
+        self.iface.listen(self.handler)
 
     def handler(self, package, signal, args):
         self.widgets[package].setState(args[1])

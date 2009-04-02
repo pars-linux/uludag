@@ -36,6 +36,10 @@ class ServiceIface:
         # scripts, so it should be fixed in Comar itself.
         self.link.System.Service[service].reload( async=self.handler )
 
+    def setEnable(self, service, state):
+        states = {True:'on', False:'off'}
+        self.link.System.Service[service].setState(states[state])
+
     def info(self, service):
         return self.link.System.Service[service].info()
 
