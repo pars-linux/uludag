@@ -24,6 +24,7 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
 # Application Stuff
+from backend import ServiceIface
 from about import aboutData
 from ui import Ui_mainManager
 from uiitem import Ui_ServiceItemWidget
@@ -42,7 +43,7 @@ class MainManager(QtGui.QWidget):
             self.ui.setupUi(parent)
 
         # Call Comar
-        self.link = comar.Link()
+        self.iface = ServiceIface()
         self.widgets = {}
 
         # Fill service list
@@ -57,9 +58,8 @@ class MainManager(QtGui.QWidget):
             item.setSizeHint(QSize(38,48))
 
     def getServices(self):
-        self.link.listenSignals("System.Service", self.handler)
-        # Get service list from comar link
-        self.link.System.Service.info(async=self.handleServices)
+        self.iface.listen(self.handler)
+        self.iface.services(self.handleServices)
 
     def handler(self, package, signal, args):
         self.widgets[package].setState(args[1])
