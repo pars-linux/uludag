@@ -32,12 +32,12 @@ class MainWindow(KMainWindow, Ui_MainWindow):
 
     def initializeActions(self):
         self.toolBar.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
-        self.showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show New Packages"), self.toolBar)
-        self.showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self.toolBar)
-        self.showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self.toolBar)
+        showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show New Packages"), self.toolBar)
+        showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self.toolBar)
+        showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self.toolBar)
 
         actionGroup = QtGui.QActionGroup(self.toolBar)
-        for action in [self.showInstallAction, self.showRemoveAction, self.showUpgradeAction]:
+        for action in [showInstallAction, showRemoveAction, showUpgradeAction]:
             actionGroup.addAction(action)
             self.toolBar.addAction(action)
             self.menu_File.addAction(action)
