@@ -48,7 +48,7 @@ class ServiceItemWidget(QtGui.QWidget):
         self.toggleButtons()
 
         self.toggled = False
-        self.rootWidget = parent
+        self.iface = parent.iface
         self.package = package
 
         self.connect(self.ui.buttonStart, SIGNAL("clicked()"), self.setService)
@@ -65,11 +65,11 @@ class ServiceItemWidget(QtGui.QWidget):
     def setService(self):
         try:
             if self.sender() == self.ui.buttonStart:
-                self.rootWidget.link.System.Service[self.package].start()
+                self.iface.start(self.package)
             elif self.sender() == self.ui.buttonStop:
-                self.rootWidget.link.System.Service[self.package].stop()
+                self.iface.stop(self.package)
             elif self.sender() == self.ui.buttonReload:
-                self.rootWidget.link.System.Service[self.package].reload()
+                self.iface.restart(self.package)
         except Exception, e:
             print e
 
