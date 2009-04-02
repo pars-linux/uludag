@@ -21,39 +21,43 @@ from uiitem import Ui_ServiceItemWidget
 
 class ServiceItem(QtGui.QListWidgetItem):
 
-    def __init__(self, parent, data, package):
+    def __init__(self, package, parent):
         QtGui.QListWidgetItem.__init__(self, parent)
-
-        serviceType, serviceDesc, serviceState = data
-
-        if not serviceType == "server":
-            self.setHidden(True)
 
         self.package = package
 
 class ServiceItemWidget(QtGui.QWidget):
 
-    def __init__(self, data, package, parent):
+    def __init__(self, package, parent, item):
         QtGui.QWidget.__init__(self, None)
 
         self.ui = Ui_ServiceItemWidget()
         self.ui.setupUi(self)
 
-        serviceType, serviceDesc, serviceState = data
+        # serviceType, serviceDesc, serviceState = data
 
-        self.setState(serviceState)
-        self.ui.labelDesc.setText(serviceDesc)
+        # self.setState(serviceState)
+        # self.ui.labelDesc.setText(serviceDesc)
         self.ui.labelName.setText(package)
 
         self.toggleButtons()
 
         self.toggled = False
         self.iface = parent.iface
+        self.item = item
         self.package = package
 
         self.connect(self.ui.buttonStart, SIGNAL("clicked()"), self.setService)
         self.connect(self.ui.buttonStop, SIGNAL("clicked()"), self.setService)
         self.connect(self.ui.buttonReload, SIGNAL("clicked()"), self.setService)
+        self.connect(self.ui.checkStart, SIGNAL("clicked()"), self.setService)
+
+    def updateService(self, data):
+        serviceType, serviceDesc, serviceState = data
+        if not serviceType == 'server':
+            self.item.setHidden(True)
+        self.setState(serviceState)
+        self.ui.labelDesc.setText(serviceDesc)
 
     def setState(self, state):
         if state in ('on', 'started', 'conditional_started'):
@@ -61,6 +65,10 @@ class ServiceItemWidget(QtGui.QWidget):
         else:
             icon = 'notrunning'
         self.ui.labelStatus.setPixmap(QtGui.QPixmap(':data/%s.png' % icon))
+        if state == 'on':
+            self.ui.checkStart.setChecked(True)
+        elif state == 'off':
+            self.ui.checkStart.setChecked(False)
 
     def setService(self):
         try:
@@ -70,6 +78,8 @@ class ServiceItemWidget(QtGui.QWidget):
                 self.iface.stop(self.package)
             elif self.sender() == self.ui.buttonReload:
                 self.iface.restart(self.package)
+            elif self.sender() == self.ui.checkStart:
+                self.iface.setEnable(self.package, self.ui.checkStart.isChecked())
         except Exception, e:
             print e
 
