@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2008, TUBITAK/UEKAE
+# Copyright (C) 2008-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -13,151 +13,28 @@
 
 # System
 import sys
-import comar
 
 # Qt Stuff
-from PyQt4 import QtGui
-from PyQt4.QtCore import *
+from PyQt4.QtCore import SIGNAL
 
 # PyKDE4 Stuff
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-# Application Stuff
-from about import aboutData
-from ui import Ui_mainManager
-from uiitem import Ui_ServiceItemWidget
-
-# DBUS-QT
-from dbus.mainloop.qt import DBusQtMainLoop
-
-class MainManager(QtGui.QWidget):
-    def __init__(self, parent, standAlone=True):
-        QtGui.QWidget.__init__(self, parent)
-
-        # Create the ui
-        self.ui = Ui_mainManager()
-
-        if standAlone:
-            self.ui.setupUi(self)
-        else:
-            self.ui.setupUi(parent)
-
-        # Call Comar
-        self.link = comar.Link()
-        self.widgets = {}
-
-        # Fill service list
-        self.getServices()
-
-    def handleServices(self, package, exception, results):
-        # Handle request and fill the listServices in the ui
-        if not exception:
-            item = ServiceItem(self.ui.listServices, results, package)
-            self.widgets[package] = ServiceItemWidget(results, package, self)
-            self.ui.listServices.setItemWidget(item, self.widgets[package])
-            item.setSizeHint(QSize(38,48))
-
-    def getServices(self):
-        self.link.listenSignals("System.Service", self.handler)
-        # Get service list from comar link
-        self.link.System.Service.info(async=self.handleServices)
-
-    def handler(self, package, signal, args):
-        self.widgets[package].setState(args[1])
-        # print args, signal, package
-
-class ServiceItem(QtGui.QListWidgetItem):
-
-    def __init__(self, parent, data, package):
-        QtGui.QListWidgetItem.__init__(self, parent)
-
-        serviceType, serviceDesc, serviceState = data
-
-        if not serviceType == "server":
-            self.setHidden(True)
-
-        self.package = package
-
-class ServiceItemWidget(QtGui.QWidget):
-
-    def __init__(self, data, package, parent):
-        QtGui.QWidget.__init__(self, None)
-
-        self.ui = Ui_ServiceItemWidget()
-        self.ui.setupUi(self)
-
-        serviceType, serviceDesc, serviceState = data
-
-        self.setState(serviceState)
-        self.ui.labelDesc.setText(serviceDesc)
-        self.ui.labelName.setText(package)
-
-        self.toggleButtons()
-
-        self.toggled = False
-        self.rootWidget = parent
-        self.package = package
-
-        self.connect(self.ui.buttonStart, SIGNAL("clicked()"), self.setService)
-        self.connect(self.ui.buttonStop, SIGNAL("clicked()"), self.setService)
-        self.connect(self.ui.buttonReload, SIGNAL("clicked()"), self.setService)
-
-    def setState(self, state):
-        if state in ('on', 'started', 'conditional_started'):
-            icon = 'running'
-        else:
-            icon = 'notrunning'
-        self.ui.labelStatus.setPixmap(QtGui.QPixmap(':data/%s.png' % icon))
-
-    def setService(self):
-        try:
-            if self.sender() == self.ui.buttonStart:
-                self.rootWidget.link.System.Service[self.package].start()
-            elif self.sender() == self.ui.buttonStop:
-                self.rootWidget.link.System.Service[self.package].stop()
-            elif self.sender() == self.ui.buttonReload:
-                self.rootWidget.link.System.Service[self.package].reload()
-        except Exception, e:
-            print e
-
-    def enterEvent(self, event):
-        if not self.toggled:
-            self.toggleButtons(True)
-            self.toggled = True
-
-    def leaveEvent(self, event):
-        if self.toggled:
-            self.toggleButtons()
-            self.toggled = False
-
-    def toggleButtons(self, toggle=False):
-        self.ui.buttonStart.setVisible(toggle)
-        self.ui.buttonReload.setVisible(toggle)
-        self.ui.buttonStop.setVisible(toggle)
-        #self.ui.runOnStart.setVisible(toggle)
-
-class Manager(KMainWindow):
-    def __init__ (self, *args):
-        KMainWindow.__init__(self)
-        self.resize (640, 480)
-        self.setCentralWidget(MainManager(self))
-
-class ServiceManager(KCModule):
-    def __init__(self, component_data, parent):
-        KCModule.__init__(self, component_data, parent)
-
-        # This is very important for translations when running as kcm_module
-        KGlobal.locale().insertCatalog("service-manager")
-
-        # DBUS MainLoop
-        DBusQtMainLoop(set_as_default = True)
-        MainManager(self, standAlone = False)
-
 def CreatePlugin(widget_parent, parent, component_data):
+    from kcmodule import ServiceManager
     return ServiceManager(component_data, parent)
 
 if __name__ == '__main__':
+
+    # Service Manager
+    from standalone import ServiceManager
+
+    # Application Stuff
+    from about import aboutData
+
+    # DBUS-QT
+    from dbus.mainloop.qt import DBusQtMainLoop
 
     # Set Command-line arguments
     KCmdLineArgs.init(sys.argv, aboutData)
@@ -169,7 +46,7 @@ if __name__ == '__main__':
     DBusQtMainLoop(set_as_default = True)
 
     # Create Main Widget
-    mainWindow = Manager(None, 'service-manager')
+    mainWindow = ServiceManager(None, 'service-manager')
     mainWindow.show()
 
     # Create connection for lastWindowClosed signal to quit app
