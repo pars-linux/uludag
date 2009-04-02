@@ -51,9 +51,11 @@ class Profile:
     def delete(self):
         self.db.remDB(self.name)
 
-    def save(self):
+    def save(self, no_notify=False):
         is_new = self.name not in listProfiles()
         self.db.setDB(self.name, self.info)
+        if no_notify:
+            return
         if is_new:
             notify("Network.Link", "connectionChanged", ("added", self.name))
         else:
@@ -395,7 +397,7 @@ def setState(name, state):
             notify("Network.Link", "stateChanged", (name, "connecting", ""))
             # Save state to profile database
             profile.info["state"] = "connecting"
-            profile.save()
+            profile.save(no_notify=True)
             # Wifi settings
             wifi = Wireless(iface)
             wifi.setSSID(profile.info["remote"])
@@ -410,14 +412,14 @@ def setState(name, state):
                     registerNameServers(profile, iface)
                     # Save state to profile database
                     profile.info["state"] = "up " + address[0]
-                    profile.save()
+                    profile.save(no_notify=True)
                     # Notify clients
                     notify("Network.Link", "stateChanged", (name, "up", address[0]))
                 else:
                     iface.down()
                     # Save state to profile database
                     profile.info["state"] = "down"
-                    profile.save()
+                    profile.save(no_notify=True)
                     # Notify clients
                     notify("Network.Link", "stateChanged", (name, "inaccesible", _(MSG_DHCP_FAILED)))
             else:
@@ -438,7 +440,7 @@ def setState(name, state):
                 registerNameServers(profile, iface)
                 # Save state to profile database
                 profile.info["state"] = "up " + net_address
-                profile.save()
+                profile.save(no_notify=True)
                 # Notify clients
                 notify("Network.Link", "stateChanged", (name, "up", net_address))
         elif state == "down":
@@ -453,7 +455,7 @@ def setState(name, state):
             iface.down()
             # Save state to profile database
             profile.info["state"] = "down"
-            profile.save()
+            profile.save(no_notify=True)
             # Notify clients
             notify("Network.Link", "stateChanged", (name, "down", ""))
     elif device_mode == "adhoc":
