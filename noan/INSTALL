@@ -1,3 +1,6 @@
+Install
+=======
+
 - Copy sessions-dist.py as settings.py and set these variables:
     - ADMINS
     - DATABASE_NAME
@@ -28,6 +31,17 @@
     PythonPath "['/path_to/noan/'] + sys.path"
     PythonInterpreter noanDjango
 
+- Checkout sources:
+    svn co http://url.to/devel /path_to/repo/pardus/devel
+    svn co http://url.to/2007 /path_to/repo/pardus/2007
+    svn co http://url.to/2008 /path_to/repo/pardus/2008
+
+- Fetch binaries:
+    rsync rsync://url.to/2007 --recursive --delete-after --update --verbose /path_to/repo/binary/2007-stable
+    rsync rsync://url.to/2007-test --recursive --delete-after --update --verbose /path_to/repo/binary/2007-test
+    rsync rsync://url.to/2008 --recursive --delete-after --update --verbose /path_to/repo/binary/2008-stable
+    rsync rsync://url.to/2008-test --recursive --delete-after --update --verbose /path_to/repo/binary/2008-test
+
 - Import all:
     ./import_source.py /path_to/noan/ /path_to/repo/pardus/devel/ -r Devel
     ./import_source.py /path_to/noan/ /path_to/repo/pardus/2008/
@@ -35,9 +49,19 @@
     ./import_binary.py /path_to/noan/ /path_to/repo/binary/2008-stable /path_to/repo/binary/2008-test
     ./import_binary.py /path_to/noan/ /path_to/repo/binary/2007-stable /path_to/repo/binary/2007-test
 
-- Import updated files (runs 'svn up'):
+
+Update
+======
+
+- Import updated sources (runs 'svn up'):
     ./import_source.py -u /path_to/noan/ /path_to/repo/pardus/devel/ -r Devel
     ./import_source.py -u /path_to/noan/ /path_to/repo/pardus/2008/
     ./import_source.py -u /path_to/noan/ /path_to/repo/pardus/2007/
+
+- Import updated binaries:
+    rsync rsync://url.to/2007 --recursive --delete-after --update --verbose /path_to/repo/binary/2007-stable
+    rsync rsync://url.to/2007-test --recursive --delete-after --update --verbose /path_to/repo/binary/2007-test
+    rsync rsync://url.to/2008 --recursive --delete-after --update --verbose /path_to/repo/binary/2008-stable
+    rsync rsync://url.to/2008-test --recursive --delete-after --update --verbose /path_to/repo/binary/2008-test
     ./import_binary.py /path_to/noan/ /path_to/repo/binary/2008-stable /path_to/repo/binary/2008-test
     ./import_binary.py /path_to/noan/ /path_to/repo/binary/2007-stable /path_to/repo/binary/2007-test
