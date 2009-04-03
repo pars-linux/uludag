@@ -637,13 +637,6 @@ hardware
         programming/libs/libmtp/pspec.xml
         programming/libs/libifp/pspec.xml
 
-    microcontroller
-        programming/microcontroller/avrdude/pspec.xml
-        programming/microcontroller/avr-libc/pspec.xml
-        programming/microcontroller/binutils-avr/pspec.xml
-        programming/microcontroller/gcc-avr/pspec.xml
-        programming/microcontroller/lpc21isp/pspec.xml
-
     mobile
         applications/hardware/gnokii/pspec.xml
         applications/pda/libopensync-plugin-file/pspec.xml
@@ -1770,6 +1763,14 @@ programming
         programming/languages/ocaml/pspec.xml
         programming/languages/ruby/pspec.xml
         applications/multimedia/cg/pspec.xml
+
+    microcontroller
+        programming/microcontroller/avrdude/pspec.xml
+        programming/microcontroller/avr-libc/pspec.xml
+        programming/microcontroller/binutils-avr/pspec.xml
+        programming/microcontroller/gcc-avr/pspec.xml
+        programming/microcontroller/lpc21isp/pspec.xml
+
 
     tool
         programming/tools/astyle/pspec.xml
