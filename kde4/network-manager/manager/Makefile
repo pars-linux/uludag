@@ -6,10 +6,11 @@ build:
 	pykde4uic -o uimain.py ui.ui
 	pykde4uic -o uiitem.py ui.item.ui
 	pykde4uic -o uisettings.py settings.ui
+	pykde4uic -o uidevices.py devices.ui
 	python fix-pykdeuic uimain.py
 	pyrcc4 data.qrc -o data_rc.py
 clean:
-	-rm *.pyc uimain.py uiitem.py uisettings.py data_rc.py
+	-rm *.pyc uimain.py uiitem.py uisettings.py uidevices.py data_rc.py
 install: uninstall
 	mkdir -p $(INSTALL_DIR)
 	install -m 0755 main.py $(INSTALL_DIR)/$(PROJECT_NAME)
@@ -20,6 +21,7 @@ install: uninstall
 	install -m 0644 data_rc.py $(INSTALL_DIR)
 	install -m 0644 faces.py $(INSTALL_DIR)
 	install -m 0644 uisettings.py $(INSTALL_DIR)
+	install -m 0644 uidevices.py $(INSTALL_DIR)
 	install -m 0644 nettools.py $(INSTALL_DIR)
 	# install -m 0644 settings-service-manager.desktop /usr/kde/4/share/kde4/services
 uninstall:

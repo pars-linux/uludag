@@ -23,6 +23,7 @@ from PyKDE4.kdecore import *
 from uimain import Ui_MainManager
 from uiitem import Ui_ProfileWidget
 from uisettings import Ui_DialogSettings
+from uidevices import Ui_DialogDevices
 
 # Network Tools
 import nettools
@@ -44,6 +45,7 @@ class MainManager(QtGui.QWidget):
 
         # Backend info
         self.backendInfo = {}
+        self.backendDevices = {}
 
         # Profile info
         self.profiles = {}
@@ -54,6 +56,7 @@ class MainManager(QtGui.QWidget):
     def initialize(self):
         # Register listeners
         self.iface.listenBackendInfo(self.handleBackendInfo)
+        self.iface.listenBackendDevices(self.handleBackendDevices)
         self.iface.listenConnectionInfo(self.handleConnectionInfo)
         self.iface.listenConnectionList(self.handleConnectionList)
         self.iface.listenConnectionNew(self.handleConnectionNew)
@@ -66,6 +69,10 @@ class MainManager(QtGui.QWidget):
     def handleBackendInfo(self, package, backendInfo):
         self.backendInfo[package] = backendInfo
         self.iface.getConnectionList(package)
+        self.iface.getDevices(package)
+
+    def handleBackendDevices(self, package, devices):
+        self.backendDevices[package] = devices
 
     def handleConnectionList(self, package, profiles):
         for profile in profiles:
@@ -106,14 +113,15 @@ class MainManager(QtGui.QWidget):
 
 
 class Settings(QtGui.QDialog):
-    def __init__(self, parent, iface, package, backendInfo, profileInfo):
+    def __init__(self, parent, package, backendInfo, profileInfo):
         QtGui.QDialog.__init__(self, parent)
 
         # Create the ui
         self.ui = Ui_DialogSettings()
         self.ui.setupUi(self)
 
-        self.iface = iface
+        self.rootWidget = parent
+        self.iface = parent.iface
         self.package = package
         self.backendInfo = backendInfo
         self.profileInfo = profileInfo
@@ -122,6 +130,11 @@ class Settings(QtGui.QDialog):
         if "device" in modes:
             if "devicemode" not in modes:
                 self.ui.comboDeviceMode.setVisible(False)
+            if len(self.rootWidget.backendDevices[self.package]) == 1:
+                self.ui.pushDevice.setVisible(False)
+            devices = self.rootWidget.backendDevices[self.package]
+            device = devices[self.profileInfo["device_id"]].replace(" - ", "\n")
+            self.ui.labelDevice.setText(device)
         else:
             self.ui.groupDevice.setVisible(False)
         if "remote" in modes:
@@ -132,11 +145,35 @@ class Settings(QtGui.QDialog):
         if "auth" not in modes:
             self.ui.groupSecurity.setVisible(False)
         if "net" not in modes:
-            self.ui.groupSecurity.setAddress(False)
+            self.ui.groupAddress.setVisible(False)
 
         self.ui.lineName.setText(profileInfo["name"])
 
         self.resize(400, 1)
+
+        self.connect(self.ui.pushDevice, SIGNAL("clicked()"), self.slotDevice)
+
+    def slotDevice(self):
+        dialog = Devices(self, self.iface)
+        dialog.exec_()
+
+
+class Devices(QtGui.QDialog):
+    def __init__(self, parent, iface, package=None):
+        QtGui.QDialog.__init__(self, parent)
+
+        # Create the ui
+        self.ui = Ui_DialogDevices()
+        self.ui.setupUi(self)
+
+        self.iface = iface
+        self.package = package
+        self.initialize()
+
+        self.resize(400, 250)
+
+    def initialize(self):
+        pass
 
 
 class ProfileWidgetItem(QtGui.QListWidgetItem):
@@ -158,6 +195,7 @@ class ProfileWidget(QtGui.QWidget):
         self.package = package
         self.backendInfo = backendInfo
         self.profileInfo = profileInfo
+
         self.initialize()
 
         self.connect(self.ui.buttonEdit, SIGNAL("clicked()"), self.slotEdit)
@@ -169,23 +207,31 @@ class ProfileWidget(QtGui.QWidget):
             self.profileInfo = profileInfo
 
         self.ui.labelName.setText(self.profileInfo["name"])
-        self.ui.labelDesc.setText("")
 
         if self.backendInfo["type"] == "net":
             self.ui.labelStatus.setPixmap(QtGui.QPixmap("icons/network-wired.png"))
         elif self.backendInfo["type"] == "wifi":
             self.ui.labelStatus.setPixmap(QtGui.QPixmap("icons/network-wireless.png"))
+        elif self.backendInfo["type"] == "dialup":
+            self.ui.labelStatus.setPixmap(QtGui.QPixmap("icons/network-wired.png"))
 
-    def setState(self, state, message=""):
+        state = "down"
+        if " " in self.profileInfo["state"]:
+            state, message = self.profileInfo["state"].split(" ", 1)
+            self.ui.labelDesc.setText(message)
+        else:
+            state = self.profileInfo["state"]
+            self.ui.labelDesc.setText("")
         if state == "up":
             self.ui.checkState.setChecked(True)
-        else:
-            self.ui.checkState.setChecked(False)
-        if message:
-            self.ui.labelDesc.setText(message)
+
+    def setState(self, state, message=""):
+        if state in ("up", "connecting", "inaccesible"):
+            self.ui.checkState.setChecked(True)
+        self.ui.labelDesc.setText(message)
 
     def slotEdit(self):
-        dialog = Settings(self.rootWidget.parent(), self.rootWidget.iface, self.package, self.backendInfo, self.profileInfo)
+        dialog = Settings(self.rootWidget, self.package, self.backendInfo, self.profileInfo)
         dialog.exec_()
 
     def slotDelete(self):
