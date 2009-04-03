@@ -20,6 +20,8 @@ You can grab the source from uludag repository with the following
 
     $ svn checkout https://svn.pardus.org.tr/uludag/trunk/yali4
 
+And also there is an automatically created ApiDoc_ for Yalı4
+
 Programming Environment
 -----------------------
 
@@ -30,6 +32,7 @@ For hacking YALI you need to have basic knowledge about Python_, CPP_ and Qt4_ *
 .. _Qt4: http://www.trolltech.com
 .. _Vim: http://www.vim.org
 .. _Emacs: http://www.gnu.org/software/emacs
+.. _ApiDoc: http://cekirdek.pardus.org.tr/~gokmen/yali-api-doc
 
 Document Content
 ----------------
