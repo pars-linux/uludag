@@ -43,6 +43,7 @@ class ServiceItemWidget(QtGui.QWidget):
         self.iface = parent.iface
         self.item = item
         self.package = package
+        self.type = None
 
         self.connect(self.ui.buttonStart, SIGNAL("clicked()"), self.setService)
         self.connect(self.ui.buttonStop, SIGNAL("clicked()"), self.setService)
@@ -50,9 +51,7 @@ class ServiceItemWidget(QtGui.QWidget):
         self.connect(self.ui.checkStart, SIGNAL("clicked()"), self.setService)
 
     def updateService(self, data, firstRun):
-        serviceType, serviceDesc, serviceState = data
-        if not serviceType == 'server':
-            self.item.setHidden(True)
+        self.type, serviceDesc, serviceState = data
         self.setState(serviceState, firstRun)
         self.ui.labelDesc.setText(serviceDesc)
 
