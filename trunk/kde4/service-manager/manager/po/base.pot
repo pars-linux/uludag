@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-30 23:36+0300\n"
+"POT-Creation-Date: 2009-04-03 10:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,20 +16,32 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: build/uiitem.py:95 build/ui.py:49
+#: build/uiitem.py:98 build/ui.py:50
 msgid "Form"
 msgstr ""
 
-#: build/uiitem.py:96
+#: build/uiitem.py:99
 msgid "serviceName"
 msgstr ""
 
-#: build/uiitem.py:97
+#: build/uiitem.py:100
 msgid "serviceDesc"
 msgstr ""
 
-#: build/ui.py:50
-msgid "System Services"
+#: build/uiitem.py:101
+msgid "Start service"
+msgstr ""
+
+#: build/uiitem.py:102
+msgid "Reload service"
+msgstr ""
+
+#: build/uiitem.py:103
+msgid "Stop service"
+msgstr ""
+
+#: build/uiitem.py:104
+msgid "Run on start"
 msgstr ""
 
 #: build/ui.py:51
@@ -38,4 +50,8 @@ msgstr ""
 
 #: build/ui.py:52
 msgid "Just show servers"
+msgstr ""
+
+#: build/ui.py:53
+msgid "Getting service info... %p%"
 msgstr ""
