@@ -47,18 +47,39 @@ class MainManager(QtGui.QWidget):
         self.widgets = {}
 
         # Fill service list
-        services = self.iface.services()
-        services.sort()
-        for service in services:
+        self.services = self.iface.services()
+        self.services.sort()
+        for service in self.services:
             item = ServiceItem(service, self.ui.listServices)
             self.widgets[service] = ServiceItemWidget(service, self, item)
             self.ui.listServices.setItemWidget(item, self.widgets[service])
             item.setSizeHint(QSize(38,48))
         self.infoCount = 0
-        self.piece = 100/len(services)
+        self.piece = 100/len(self.services)
 
         # Update service status and follow Comar for state changes
         self.getServices()
+
+        # search line, we may use model view for correct filtering
+        self.connect(self.ui.lineSearch, SIGNAL("textChanged(QString)"), self.doSearch)
+        self.connect(self.ui.checkShowServers, SIGNAL("toggled(bool)"), self.setLocalServices)
+
+    def doSearch(self, text):
+        for service in self.services:
+            if service.find(text) < 0:
+                self.widgets[service].item.setHidden(True)
+            else:
+                self.widgets[service].item.setHidden(False)
+        if self.ui.checkShowServers.isChecked():
+            self.setLocalServices(self.ui.checkShowServers.isChecked())
+
+    def isLocal(self, service):
+        return self.widgets[service].type == 'local'
+
+    def setLocalServices(self, state):
+        for service in self.services:
+            if self.isLocal(service):
+                self.widgets[service].item.setHidden(state)
 
     def handleServices(self, package, exception, results):
         # Handle request and fill the listServices in the ui
@@ -66,9 +87,10 @@ class MainManager(QtGui.QWidget):
             self.widgets[package].updateService(results, True)
             self.infoCount+=1
             self.ui.progress.setValue(self.ui.progress.value() + self.piece)
-            if self.infoCount == len(self.iface.services()):
+            if self.infoCount == len(self.services):
                 self.ui.progress.hide()
                 self.ui.listServices.setEnabled(True)
+                self.setLocalServices(self.ui.checkShowServers.isChecked())
 
     def getServices(self):
         self.iface.services(self.handleServices)
