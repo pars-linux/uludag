@@ -66,10 +66,10 @@ class MainManager(QtGui.QWidget):
 
     def doSearch(self, text):
         for service in self.services:
-            if service.find(text) < 0:
-                self.widgets[service].item.setHidden(True)
-            else:
+            if service.find(text) >= 0 or unicode(self.widgets[service].desc).lower().find(unicode(text).lower()) >= 0:
                 self.widgets[service].item.setHidden(False)
+            else:
+                self.widgets[service].item.setHidden(True)
         if self.ui.checkShowServers.isChecked():
             self.setLocalServices(self.ui.checkShowServers.isChecked())
 
