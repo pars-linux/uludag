@@ -34,6 +34,7 @@ class Iface:
         self.listener_conn_list = []
         self.listener_conn_state = []
         self.listener_back_info = []
+        self.listener_back_devices = []
 
         # Listen network signals
         self.link.listenSignals("Net.Link", self.__signalHandler)
@@ -72,6 +73,12 @@ class Iface:
         if not exception:
             info = results[0]
             for func in self.listener_back_info:
+                func(package, info)
+
+    def __handleBackendDevices(self, package, exception, results):
+        if not exception:
+            info = results[0]
+            for func in self.listener_back_devices:
                 func(package, info)
 
     def __handleConnectionDelete(self, package, exception, results):
@@ -158,3 +165,16 @@ class Iface:
             Sets state of a profile on specified backend.
         """
         self.link.Net.Link[backend].setState(profile, state, async=self.__handleConnectionState)
+
+    def listenBackendDevices(self, func):
+        """
+            Registers function to be called after backend devices list fetched.
+            Backend name and device list will be passed to function as arguments.
+        """
+        self.listener_back_devices.append(func)
+
+    def getDevices(self, backend):
+        """
+            Gets device list of specified backend.
+        """
+        self.link.Net.Link[backend].deviceList(async=self.__handleBackendDevices)

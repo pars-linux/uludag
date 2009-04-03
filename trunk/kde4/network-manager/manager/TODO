@@ -1,3 +1,0 @@
-- Use Network.Link instead of Net.Link
-    - Extend nettools.Iface to support all network operations
-- Current interface is for debug purposes only, needs to be designed from scratch
