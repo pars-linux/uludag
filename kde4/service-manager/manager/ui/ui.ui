@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>577</width>
-    <height>460</height>
+    <width>480</width>
+    <height>379</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -14,67 +14,74 @@
   </property>
   <layout class="QGridLayout" name="gridLayout" >
    <item row="0" column="0" >
-    <widget class="QGroupBox" name="groupBox" >
-     <property name="title" >
-      <string>System Services</string>
+    <layout class="QHBoxLayout" name="horizontalLayout" >
+     <item>
+      <widget class="KLineEdit" name="lineSearch" >
+       <property name="urlDropsEnabled" >
+        <bool>false</bool>
+       </property>
+       <property name="clickMessage" >
+        <string>type service name to search...</string>
+       </property>
+       <property name="showClearButton" stdset="0" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkShowServers" >
+       <property name="text" >
+        <string>Just show servers</string>
+       </property>
+       <property name="checked" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0" >
+    <widget class="QListWidget" name="listServices" >
+     <property name="enabled" >
+      <bool>false</bool>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2" >
-      <item row="0" column="0" colspan="2" >
-       <layout class="QHBoxLayout" name="horizontalLayout" >
-        <item>
-         <widget class="KLineEdit" name="lineSearch" >
-          <property name="urlDropsEnabled" >
-           <bool>false</bool>
-          </property>
-          <property name="clickMessage" >
-           <string>type service name to search...</string>
-          </property>
-          <property name="showClearButton" stdset="0" >
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="checkShowServers" >
-          <property name="text" >
-           <string>Just show servers</string>
-          </property>
-          <property name="checked" >
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="0" colspan="2" >
-       <widget class="QListWidget" name="listServices" >
-        <property name="font" >
-         <font>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet" >
-         <string notr="true" />
-        </property>
-        <property name="alternatingRowColors" >
-         <bool>true</bool>
-        </property>
-        <property name="selectionMode" >
-         <enum>QAbstractItemView::SingleSelection</enum>
-        </property>
-        <property name="iconSize" >
-         <size>
-          <width>32</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="verticalScrollMode" >
-         <enum>QAbstractItemView::ScrollPerItem</enum>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <property name="font" >
+      <font>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet" >
+      <string notr="true" />
+     </property>
+     <property name="editTriggers" >
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="alternatingRowColors" >
+      <bool>true</bool>
+     </property>
+     <property name="iconSize" >
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="verticalScrollMode" >
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" >
+    <widget class="QProgressBar" name="progress" >
+     <property name="value" >
+      <number>0</number>
+     </property>
+     <property name="textVisible" >
+      <bool>true</bool>
+     </property>
+     <property name="format" >
+      <string>Getting service info... %p%</string>
+     </property>
     </widget>
    </item>
   </layout>
@@ -87,7 +94,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="data.qrc" />
+  <include location="../icons/data.qrc" />
  </resources>
  <connections/>
 </ui>

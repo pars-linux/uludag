@@ -54,21 +54,28 @@ class MainManager(QtGui.QWidget):
             self.widgets[service] = ServiceItemWidget(service, self, item)
             self.ui.listServices.setItemWidget(item, self.widgets[service])
             item.setSizeHint(QSize(38,48))
- 
+        self.infoCount = 0
+        self.piece = 100/len(services)
+
         # Update service status and follow Comar for state changes
         self.getServices()
 
     def handleServices(self, package, exception, results):
         # Handle request and fill the listServices in the ui
         if not exception:
-            self.widgets[package].updateService(results)
+            self.widgets[package].updateService(results, True)
+            self.infoCount+=1
+            self.ui.progress.setValue(self.ui.progress.value() + self.piece)
+            if self.infoCount == len(self.iface.services()):
+                self.ui.progress.hide()
+                self.ui.listServices.setEnabled(True)
 
     def getServices(self):
         self.iface.services(self.handleServices)
         self.iface.listen(self.handler)
 
     def handler(self, package, signal, args):
+        print "Burasi,", args, signal, package
         self.widgets[package].setState(args[1])
-        # print args, signal, package
 
 

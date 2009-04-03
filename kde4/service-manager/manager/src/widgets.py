@@ -18,6 +18,7 @@ from PyQt4.QtCore import *
 # Application Stuff
 from ui import Ui_mainManager
 from uiitem import Ui_ServiceItemWidget
+import time
 
 class ServiceItem(QtGui.QListWidgetItem):
 
@@ -34,10 +35,6 @@ class ServiceItemWidget(QtGui.QWidget):
         self.ui = Ui_ServiceItemWidget()
         self.ui.setupUi(self)
 
-        # serviceType, serviceDesc, serviceState = data
-
-        # self.setState(serviceState)
-        # self.ui.labelDesc.setText(serviceDesc)
         self.ui.labelName.setText(package)
 
         self.toggleButtons()
@@ -52,23 +49,28 @@ class ServiceItemWidget(QtGui.QWidget):
         self.connect(self.ui.buttonReload, SIGNAL("clicked()"), self.setService)
         self.connect(self.ui.checkStart, SIGNAL("clicked()"), self.setService)
 
-    def updateService(self, data):
+    def updateService(self, data, firstRun):
         serviceType, serviceDesc, serviceState = data
         if not serviceType == 'server':
             self.item.setHidden(True)
-        self.setState(serviceState)
+        self.setState(serviceState, firstRun)
         self.ui.labelDesc.setText(serviceDesc)
 
-    def setState(self, state):
+    def setState(self, state, firstRun=False):
+        if not firstRun:
+            # There is a raise condition, FIXME in System.Service
+            time.sleep(1)
+            state = self.iface.info(self.package)[2]
         if state in ('on', 'started', 'conditional_started'):
             icon = 'running'
         else:
             icon = 'notrunning'
         self.ui.labelStatus.setPixmap(QtGui.QPixmap(':data/%s.png' % icon))
-        if state == 'on':
+        if state in ('on', 'stopped'):
             self.ui.checkStart.setChecked(True)
-        elif state == 'off':
+        elif state in ('off', 'started', 'conditional_started'):
             self.ui.checkStart.setChecked(False)
+        # print self.package, state
 
     def setService(self):
         try:
@@ -97,6 +99,5 @@ class ServiceItemWidget(QtGui.QWidget):
         self.ui.buttonStart.setVisible(toggle)
         self.ui.buttonReload.setVisible(toggle)
         self.ui.buttonStop.setVisible(toggle)
-        #self.ui.runOnStart.setVisible(toggle)
-
+        self.ui.checkStart.setVisible(toggle)
 
