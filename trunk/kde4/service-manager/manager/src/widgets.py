@@ -44,16 +44,16 @@ class ServiceItemWidget(QtGui.QWidget):
         self.item = item
         self.package = package
         self.type = None
-
+        self.desc = None
         self.connect(self.ui.buttonStart, SIGNAL("clicked()"), self.setService)
         self.connect(self.ui.buttonStop, SIGNAL("clicked()"), self.setService)
         self.connect(self.ui.buttonReload, SIGNAL("clicked()"), self.setService)
         self.connect(self.ui.checkStart, SIGNAL("clicked()"), self.setService)
 
     def updateService(self, data, firstRun):
-        self.type, serviceDesc, serviceState = data
+        self.type, self.desc, serviceState = data
         self.setState(serviceState, firstRun)
-        self.ui.labelDesc.setText(serviceDesc)
+        self.ui.labelDesc.setText(self.desc)
 
     def setState(self, state, firstRun=False):
         if not firstRun:
