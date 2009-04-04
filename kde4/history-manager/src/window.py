@@ -10,7 +10,7 @@ from PyQt4 import QtCore
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-from ui_mainwindow import Ui_MainManager
+from mainwindow import Ui_MainManager
 from interface import *
 from listitem import *
 from utility import *
