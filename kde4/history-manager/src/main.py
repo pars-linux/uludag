@@ -22,7 +22,7 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
 from about import aboutData
-from mainwindow import MainManager
+from window import MainManager
 
 class Manager(KMainWindow):
     def __init__ (self, *args):
