@@ -30,6 +30,7 @@
 
 * Donanım (Ozan Çağlayan)
   * Yeni çekirdek geçişi (2.6.29) (/75)
+  * update-fstab'ın noatime/relatime, ext4, vs konusunda güncellenmesi (-)
   * Python ile çekirdek geçiş ve depo betiklerinin yazılması (-)
   * Yeni module-init-tools geçişi (/100)
   * initramfs'de busybox güncellemesi (/100)
@@ -43,7 +44,7 @@
   * mudur'de udev ile ilgili değişiklikler [8458, 8520] (+)
   * mudur'de udevtrigger loglarının tutulması (+)
   * mudur'de CPUFreq sınıfının gözden geçirilmesi, bu işlevin olabildiğince çekirdeğe aktarılması (+)
-  * HAL 0.5.12 geçişi (/40)
+  * HAL 0.5.12 geçişi (/50)
 
 * GNOME güncellemeleri (Ozan Çağlayan)
   * glib2 2.20 geçişi (+)
