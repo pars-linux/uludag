@@ -1770,7 +1770,7 @@ programming
         programming/microcontroller/binutils-avr/pspec.xml
         programming/microcontroller/gcc-avr/pspec.xml
         programming/microcontroller/lpc21isp/pspec.xml
-
+        applications/science/electronics/jal/pspec.xml
 
     tool
         programming/tools/astyle/pspec.xml
@@ -1848,7 +1848,6 @@ science
     electronics
         applications/science/electronics/gpsim/pspec.xml
         applications/science/electronics/gputils/pspec.xml
-        applications/science/electronics/jal/pspec.xml
         applications/science/electronics/klogic/pspec.xml
         applications/science/electronics/ktechlab/pspec.xml
         applications/science/electronics/magic/pspec.xml
