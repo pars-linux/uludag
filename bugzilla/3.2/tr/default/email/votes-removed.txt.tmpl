@@ -16,37 +16,35 @@
   # Rights Reserved.
   #
   # Contributor(s): Emmanuel Seyman <eseyman@linagora.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 From: [% Param('mailfrom') %]
 To: [% to %]
-Subject: [% terms.Bug %] [%+ bugid %] Some or all of your votes have been removed.
+Subject: [% terms.Bug %] [%+ bugid %] oylarınızdan birkaçı veya tamamı silindi.
 X-Bugzilla-Type: voteremoved
 
-Some or all of your votes have been removed from [% terms.bug %] [%+ bugid %].
+[% terms.bug %] [%+ bugid %] üzerindeki oylarınızdan birkaçı veya tamamı kaldırıldı.
 
-You had [% votesold FILTER html %] [%+ IF votesold == 1 %]vote[% ELSE %]votes[% END
-%] on this [% terms.bug %], but [% votesremoved FILTER html %] have been removed.
+Bu [% terms.bugLoc %] [% votesold FILTER html %] oyunuz vardı, fakat [% votesremoved FILTER html %] tanesi kaldırıldı.
 
 [% IF votesnew %]
-You still have [% votesnew FILTER html %] [%+ IF votesnew == 1 %]vote[% ELSE %]votes[% END %] on this [% terms.bug %].
+Halâ bu [% terms.bugLoc %] [% votesnew FILTER html %] oyunuz var.
 [% ELSE %]
-You have no more votes remaining on this [% terms.bug %].
+Bu [% terms.bugLoc %] hiç oyunuz kalmadı.
 [% END %]
 
-Reason:
+Sebep
 [% IF reason == "votes_bug_moved" %]
-  This [% terms.bug %] has been moved to a different product.
+  Bu [% terms.bug %] başka bir ürüne taşındı.
 
 [% ELSIF reason == "votes_too_many_per_bug" %]
-  The rules for voting on this product has changed;
-  you had too many votes for a single [% terms.bug %].
+  Bu ürün üzerindeki oy kullanma kuralları değiştirildi ve sizin bir [% terms.bug %] için çok fazla oyunuz vardı.
 
 [% ELSIF reason == "votes_too_many_per_user" %]
-  The rules for voting on this product has changed; you had
-  too many total votes, so all votes have been removed.
+  Bu ürün üzerindeki oy kullanma kuralları değiştirildi ve sizin toplamda çok fazla oyunuz vardı, o yüzden tüm oylar kaldırıldı.
 [% END %]
 
 

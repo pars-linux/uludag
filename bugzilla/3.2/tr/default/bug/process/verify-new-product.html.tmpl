@@ -18,6 +18,7 @@
   # Contributor(s): Myk Melez <myk@mozilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
   #                 Max Kanat-Alexander <mkanat@bugzilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -34,7 +35,7 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = 'Verify New Product Details...' %]
+  title = 'Yeni Ürün Detaylarını Onayla...' %]
 
 <form action="process_bug.cgi" method="post">
 
@@ -49,31 +50,30 @@
 <input type="hidden" name="confirm_product_change" value="1">
     
 [%# Verify the version, component, and target milestone fields. %]
-<h3>Verify Version, Component
-  [%- ", Target Milestone" 
+<h3>Sürüm, Bileşen
+  [%- ", Hedef Aşama" 
       IF Param("usetargetmilestone")
-         && bug.check_can_change_field('target_milestone', 0, 1) %]</h3>
+         && bug.check_can_change_field('target_milestone', 0, 1) %] Onayla</h3>
 
 <p>
 [% IF Param("usetargetmilestone") 
    && bug.check_can_change_field('target_milestone', 0, 1) 
 %]
-  You are moving the [% terms.bug %](s) to the product 
-  <b>[% product.name FILTER html %]</b>,
-  and the version, component, and/or target milestone fields are no longer
-  correct.  Please set the correct version, component, and target milestone now:
+  Bir veya daha fazla [% terms.bugAcc %] 
+  <b>[% product.name FILTER html %]</b> ürününe taşıyorsunuz
+  ve sürüm, bileşen ve/veya hedef aşama alanları geçerliliklerini yitiriyor. Lütfen şimdi doğru sürüm, bileşen ve hedef aşamayı ayarlayın:
 [% ELSE %]
-  You are moving the [% terms.bug %](s) to the product 
-  <b>[% product.name FILTER html %]</b>,
-  and the version and component fields are no longer correct.
-  Please set the correct version and component now:
+  Bir veya daha fazla [% terms.bugAcc %] 
+  <b>[% product.name FILTER html %]</b> ürününe taşıyorsunuz 
+  ve sürüm ve bileşen alanları geçerliliklerini yitiriyor.
+  Lütfen şimdi doğru sürüm ve bileşeni ayarlayın:
 [% END %]
 </p>
 
 <table>
   <tr>
     <td>
-      <b>Version:</b><br>
+      <b>Sürüm:</b><br>
       [% IF versions.size == 1 %]
         [% SET default_version = versions.0 %]
       [% ELSE %]
@@ -86,7 +86,7 @@
                  size=10 %]
     </td>
     <td>
-      <b>Component:</b><br>
+      <b>Bileşen:</b><br>
       [% IF components.size == 1 %]
         [% SET default_component = components.0 %]
       [% ELSE %]
@@ -102,7 +102,7 @@
           && bug.check_can_change_field('target_milestone', 0, 1) 
     %]
       <td>
-        <b>Target Milestone:</b><br>
+        <b>Hedef Aşama:</b><br>
       [% PROCESS "global/select-menu.html.tmpl"
                  name="target_milestone"
                  options=milestones
@@ -114,13 +114,11 @@
 </table>
 
 [% IF verify_bug_groups %]
-  <h3>Verify [% terms.Bug %] Group</h3>
+  <h3>[% terms.Bug %] Grubunu Onaylayın</h3>
   
   [% IF old_groups.size %]
-    <p>These groups are not legal for the '[% product.name FILTER html %]'
-    product or you are not allowed to restrict [% terms.bugs %] to these groups.
-    [%+ terms.Bugs %] will no longer be restricted to these groups and may become
-    public if no other group applies:<br>
+    <p>'[% product.name FILTER html %]' ürünü için bu gruplar geçerli değil ve sizin [% terms.bugsAcc %] bu gruplara kısıtlama izniniz yok.
+    [%+ terms.Bugs %] artık bu gruplara kısıtlanmış olmayacak ve başka bir gruba kısıtlanamıyorlarsa herkese açık hale gelecekler:<br>
     [% FOREACH group = old_groups %]
       <input type="checkbox" id="bit-[% group.id FILTER html %]"
              name="bit-[% group.id FILTER html %]" disabled="disabled" value="1">
@@ -149,8 +147,7 @@
   [% END %]
 
   [% IF optional_groups.size %]
-    <p>These groups are optional. You can decide to restrict [% terms.bugs %] to
-    one or more of the following groups:<br>
+    <p>Bu gruplar isteğe bağlı. You can decide to restrict [% terms.bugs %] aşağıdaki grupların birine veya birkaçına kısıtlamayı seçebilirsiniz:<br>
     [% FOREACH group = optional_groups %]
       <input type="hidden" name="defined_bit-[% group.group.id FILTER html %]"
              value="1">
@@ -170,8 +167,7 @@
   [% END %]
 
   [% IF mandatory_groups.size %]
-    <p>These groups are mandatory and [% terms.bugs %] will be automatically
-    restricted to these groups:<br>
+    <p>Bu gruplar zorunlu ve [% terms.bugs %] otomatik olarak bu gruplara kısıtlanacak:<br>
     [% FOREACH group = mandatory_groups %]
       <input type="checkbox" id="bit-[% group.group.id FILTER html %]" checked="checked"
              name="bit-[% group.group.id FILTER html %]" value="1" disabled="disabled">
@@ -192,12 +188,14 @@
 [%# If 'id' is defined, then we are editing a single bug.
   # Else we are editing several bugs at once. %]
 
+İptal et ve 
 [% IF cgi.param('id') AND cgi.param('id').match('^\d+$') %]
   [% id = cgi.param('id') %]
-  Cancel and Return to [% "$terms.bug $id" FILTER bug_link(id) FILTER none %]
+  [% "$id numaralı $terms.bugDat" FILTER bug_link(id) FILTER none %] 
 [% ELSE %]
-  Cancel and Return to <a href="buglist.cgi?regetlastlist=1">the last search results</a>
+  <a href="buglist.cgi?regetlastlist=1">son arama sonuçları</a>na 
 [% END %]
+geri dön
 
 [% PROCESS global/footer.html.tmpl %]
 
