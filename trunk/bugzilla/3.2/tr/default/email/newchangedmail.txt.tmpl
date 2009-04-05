@@ -16,12 +16,13 @@
   # Rights Reserved.
   #
   # Contributor(s): André Batosti <batosti@async.com.br>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS "global/variables.none.tmpl" %]
 From: [% Param('mailfrom') %]
 To: [% to %]
-Subject: [[% terms.Bug %] [%+ bugid %]] [% 'New: ' IF isnew %][%+ summary %]
+Subject: [[% terms.Bug %] [%+ bugid %]] [% 'Yeni: ' IF isnew %][%+ summary %]
 X-Bugzilla-Reason: [% reasonsheader %]
 X-Bugzilla-Type: newchanged
 X-Bugzilla-Watch-Reason: [% reasonswatchheader %]
@@ -45,35 +46,35 @@ X-Bugzilla-Changed-Fields: [% changedfields %]
 [%+ diffs %]
 
 -- 
-Configure [% terms.bug %]mail: [% urlbase %]userprefs.cgi?tab=email
-------- You are receiving this mail because: -------
+[% terms.Bug %] eposta yapılandır: [% urlbase %]userprefs.cgi?tab=email
+------- Bu epostayı almanızın nedeni: -------
 [% FOREACH relationship = reasons %]
   [% SWITCH relationship %]
     [% CASE constants.REL_ASSIGNEE %]
-You are the assignee for the [% terms.bug %].
+[% terms.Bug %] tarafınızdan atanmış.
     [% CASE constants.REL_REPORTER %]
-You reported the [% terms.bug %].
+[% terms.BugAcc %] siz bildirdiniz.
     [% CASE constants.REL_QA %]
-You are the QA contact for the [% terms.bug %].
+[% terms.BugGen %] kalite kontrol kişisisiniz.
     [% CASE constants.REL_CC %]
-You are on the CC list for the [% terms.bug %].
+[% terms.Bug %] etkinliklerinde haber verilecek kişiler listesindesiniz.
     [% CASE constants.REL_VOTER %]
-You are a voter for the [% terms.bug %].
+[% terms.Bug %] için oy kullanmışsınız veya kullanmanız istenmiş.
     [% CASE constants.REL_GLOBAL_WATCHER %]
-You are watching all [% terms.bug %] changes.
+Tüm [% terms.bug %] değişikliklerini takip ediyorsunuz.
   [% END %]
 [% END %]
 [% FOREACH relationship = reasons_watch %]
   [% SWITCH relationship %]
     [% CASE constants.REL_ASSIGNEE %]
-You are watching the assignee of the [% terms.bug %].
+[% terms.BugAcc %] atayanı takip ediyorsunuz.
     [% CASE constants.REL_REPORTER %]
-You are watching the reporter.
+Bildireni takip ediyorsunuz.
     [% CASE constants.REL_QA %]
-You are watching the QA contact of the [% terms.bug %].
+[% terms.BugGen %] kalite kontrol kişisini takip ediyorsunuz.
     [% CASE constants.REL_CC %]
-You are watching someone on the CC list of the [% terms.bug %].
+[% terms.BugGen %] haber verilecek kişiler listesindeki birini takip ediyorsunuz.
     [% CASE constants.REL_VOTER %]
-You are watching a voter for the [% terms.bug %].
+[% terms.Bug %] için oy kullanan veya kullanması istenen birini takip ediyorsunuz.
   [% END %]
 [% END %]
