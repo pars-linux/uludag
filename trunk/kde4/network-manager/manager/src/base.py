@@ -53,6 +53,8 @@ class MainManager(QtGui.QWidget):
             self.widgets[connection] = ConnectionItemWidget(connection, self, item)
             self.ui.profileList.setItemWidget(item, self.widgets[connection])
             item.setSizeHint(QSize(38,48))
+
+        self.ui.editBox.hide()
         # self.infoCount = 0
         # self.piece = 100/len(self.services)
 

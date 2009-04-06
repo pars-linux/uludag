@@ -97,7 +97,7 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../icons/data.qrc" >
+        <iconset resource="../../new-nm/icons/data.qrc" >
          <normaloff>:/data/edit-rename.png</normaloff>:/data/edit-rename.png</iconset>
        </property>
        <property name="flat" >
@@ -126,7 +126,7 @@
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../icons/data.qrc" >
+        <iconset resource="../../new-nm/icons/data.qrc" >
          <normaloff>:/data/edit-delete.png</normaloff>:/data/edit-delete.png</iconset>
        </property>
       </widget>
@@ -151,7 +151,7 @@
       <string/>
      </property>
      <property name="pixmap" >
-      <pixmap>icons/stopped.png</pixmap>
+      <pixmap resource="../../new-nm/icons/data.qrc" >:/data/network-wired.png</pixmap>
      </property>
     </widget>
    </item>
@@ -165,7 +165,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../icons/data.qrc" />
+  <include location="../../new-nm/icons/data.qrc" />
  </resources>
  <connections/>
 </ui>
