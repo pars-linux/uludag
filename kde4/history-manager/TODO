@@ -10,11 +10,12 @@ TODO List
 
 + i18n strings
 + Package
-- Fix Makefile, CMakeLists
++ Fix Makefile, CMakeLists ( switched to setuptools )
 
-Release as 2.0
++ Release as 2.0
 
 + Shortcut for Copy and Select All in operation details page
 - Some artwork near help button and progress label ?
 ~ Better handle takeback/snapshot progress, exceptions etc.
-
+- i18n ".. Listing" status'
+- Fix slow filtering issue in some situations in listview

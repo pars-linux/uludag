@@ -183,7 +183,7 @@ msgstr "<br> Bu paket(ler) <b>kaldırılacak</b> :<br>"
 
 #: build/window.py:183
 msgid "Listing %1 Operations"
-msgstr "%s İşlemleri Listeleniyor"
+msgstr "%1 İşlemleri Listeleniyor"
 
 #: build/window.py:217
 msgid "Takeback operation verification"
