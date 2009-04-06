@@ -1,0 +1,39 @@
+#: build/uiitem.py:98 build/ui.py:50
+msgid "Form"
+msgstr ""
+
+#: build/uiitem.py:99
+msgid "serviceName"
+msgstr ""
+
+#: build/uiitem.py:100
+msgid "serviceDesc"
+msgstr ""
+
+#: build/uiitem.py:101
+msgid "Start service"
+msgstr "Servisi başlat"
+
+#: build/uiitem.py:102
+msgid "Reload service"
+msgstr "Servisi yeniden başlat"
+
+#: build/uiitem.py:103
+msgid "Stop service"
+msgstr "Servisi durdur"
+
+#: build/uiitem.py:104
+msgid "Run on start"
+msgstr "Açılışta çalıştır"
+
+#: build/ui.py:51
+msgid "type service name to search..."
+msgstr "Servis adını yazarak aramaya başlayın..."
+
+#: build/ui.py:52
+msgid "Just show servers"
+msgstr "Sadece sunucuları göster"
+
+#: build/ui.py:53
+msgid "Getting service info... %p%"
+msgstr "Servis bilgisi getiriliyor... %p%"
