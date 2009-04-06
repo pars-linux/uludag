@@ -143,14 +143,17 @@
 
 * Multimedia (Onur Küçük)
   * Nasm -> Yasm geçişi (/20)
-  * libv4l geçişi (-)
+  * Kamera kullanan yazılımlara libv4l desteği eklenecek (-)
 
 * Initramfs (Onur Küçük)
   * Mkinitramfs kod temizliği baştan yazılması (-)
   * Ayar dosyası desteği (-)
 
+* Birtakım işler (Onur Küçük)
+  * 2009 farmı kurulacak (/50)
+
 * Donanım (Onur Küçük)
-  * Kamera sürücüleri kernel içine girecekler ve dışında kalacakların belirlenmesi (-)
+  * Kamera sürücüleri kernel içine girecekler ve dışında kalacakların belirlenmesi (/50)
 
 * Paketler (Tüm paket sorumluları)
   * Bütün paketlerin yeni flaglar, toolchain vs. ile 2009 a uyumlu hale getirilmesi (-)
