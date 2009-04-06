@@ -18,15 +18,15 @@ from PyKDE4.kdecore import *
 # DBUS-QT
 from dbus.mainloop.qt import DBusQtMainLoop
 
-# Service Manager
+# Network Manager
 from base import MainManager
 
-class ServiceManager(KCModule):
+class NetworkManager(KCModule):
     def __init__(self, component_data, parent):
         KCModule.__init__(self, component_data, parent)
 
         # This is very important for translations when running as kcm_module
-        KGlobal.locale().insertCatalog("service-manager")
+        KGlobal.locale().insertCatalog("network-manager")
 
         # DBUS MainLoop
         DBusQtMainLoop(set_as_default = True)

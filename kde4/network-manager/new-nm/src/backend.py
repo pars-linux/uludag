@@ -13,39 +13,40 @@
 
 import comar
 
-class ServiceIface:
-    """ Service Interface """
+class NetworkIface:
+    """ Network Interface """
 
     def __init__(self):
         self.link = comar.Link()
 
-    def services(self, func=None):
-        if func:
-            self.link.System.Service.info( async=func )
+    def connections(self, package):
+        return list(self.link.Net.Link[package].connections())
+
+    def connect(self, package, profile):
+        self.setState(package, profile, "up")
+
+    def disconnect(self, package, profile):
+        self.setState(package, profile, "down")
+
+    def toggle(self, package, profile):
+        info = self.info(package, profile)
+        if str(info['state']) == "down":
+            self.connect(package, profile)
         else:
-            return list(self.link.System.Service)
+            self.disconnect(package, profile)
 
-    def start(self, service):
-        self.link.System.Service[service].start( async=self.handler )
+    def delete(self, package, profile):
+        self.link.Net.Link[package].deleteConnection(profile)
 
-    def stop(self, service):
-        self.link.System.Service[service].stop( async=self.handler )
+    def setState(self, package, profile, state):
+        self.link.Net.Link[package].setState(profile, state, async=self.handler)
 
-    def restart(self, service):
-        # some services does not have reload method in their service
-        # scripts, so it should be fixed in Comar itself.
-        self.link.System.Service[service].reload( async=self.handler )
-
-    def setEnable(self, service, state):
-        states = {True:'on', False:'off'}
-        self.link.System.Service[service].setState(states[state])
-
-    def info(self, service):
-        return self.link.System.Service[service].info()
+    def info(self, package, profile):
+        return self.link.Net.Link[package].connectionInfo(str(profile))
 
     def handler(self, *args):
         pass
 
     def listen(self, func):
-        self.link.listenSignals("System.Service", func)
+        self.link.listenSignals("Net.Link", func)
 

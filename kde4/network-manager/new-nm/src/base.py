@@ -24,11 +24,10 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
 # Application Stuff
-from backend import ServiceIface
+from backend import NetworkIface
 from about import aboutData
 from ui import Ui_mainManager
-from uiitem import Ui_ServiceItemWidget
-from widgets import ServiceItemWidget, ServiceItem
+from widgets import ConnectionItemWidget, ConnectionItem
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
@@ -43,61 +42,36 @@ class MainManager(QtGui.QWidget):
             self.ui.setupUi(parent)
 
         # Call Comar
-        self.iface = ServiceIface()
+        self.iface = NetworkIface()
         self.widgets = {}
 
         # Fill service list
-        self.services = self.iface.services()
-        self.services.sort()
-        for service in self.services:
-            item = ServiceItem(service, self.ui.listServices)
-            self.widgets[service] = ServiceItemWidget(service, self, item)
-            self.ui.listServices.setItemWidget(item, self.widgets[service])
+        self.connections = self.iface.connections('net-tools')
+        # self.services.sort()
+        for connection in self.connections:
+            item = ConnectionItem(connection, self.ui.profileList)
+            self.widgets[connection] = ConnectionItemWidget(connection, self, item)
+            self.ui.profileList.setItemWidget(item, self.widgets[connection])
             item.setSizeHint(QSize(38,48))
-        self.infoCount = 0
-        self.piece = 100/len(self.services)
+        # self.infoCount = 0
+        # self.piece = 100/len(self.services)
 
         # Update service status and follow Comar for state changes
-        self.getServices()
+        self.getConnectionStates()
 
-        # search line, we may use model view for correct filtering
-        self.connect(self.ui.lineSearch, SIGNAL("textChanged(QString)"), self.doSearch)
-        self.connect(self.ui.checkShowServers, SIGNAL("toggled(bool)"), self.setLocalServices)
+    def handleConnections(self, package, exception, results):
+        print package, exception, results
 
-    def doSearch(self, text):
-        for service in self.services:
-            if service.find(text) >= 0 or unicode(self.widgets[service].desc).lower().find(unicode(text).lower()) >= 0:
-                self.widgets[service].item.setHidden(False)
-            else:
-                self.widgets[service].item.setHidden(True)
-        if self.ui.checkShowServers.isChecked():
-            self.setLocalServices(self.ui.checkShowServers.isChecked())
-
-    def isLocal(self, service):
-        return self.widgets[service].type == 'local'
-
-    def setLocalServices(self, state):
-        for service in self.services:
-            if self.isLocal(service):
-                self.widgets[service].item.setHidden(state)
-
-    def handleServices(self, package, exception, results):
-        # Handle request and fill the listServices in the ui
-        if not exception:
-            self.widgets[package].updateService(results, True)
-            self.infoCount+=1
-            self.ui.progress.setValue(self.ui.progress.value() + self.piece)
-            if self.infoCount == len(self.services):
-                self.ui.progress.hide()
-                self.ui.listServices.setEnabled(True)
-                self.setLocalServices(self.ui.checkShowServers.isChecked())
-
-    def getServices(self):
-        self.iface.services(self.handleServices)
+    def getConnectionStates(self):
+        # self.iface.connections('net-tools', self.handleConnections)
         self.iface.listen(self.handler)
 
     def handler(self, package, signal, args):
         print "Burasi,", args, signal, package
-        self.widgets[package].setState(args[1])
+        # self.widgets[package].setState(args[1])
 
+    def editConnection(self):
+        print self.sender().parent().package
 
+    def deleteConnection(self):
+        print self.sender().parent().package

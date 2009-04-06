@@ -22,13 +22,13 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
 def CreatePlugin(widget_parent, parent, component_data):
-    from kcmodule import ServiceManager
-    return ServiceManager(component_data, parent)
+    from kcmodule import NetworkManager
+    return NetworkManager(component_data, parent)
 
 if __name__ == '__main__':
 
-    # Service Manager
-    from standalone import ServiceManager
+    # Network Manager
+    from standalone import NetworkManager
 
     # Application Stuff
     from about import aboutData
@@ -46,7 +46,7 @@ if __name__ == '__main__':
     DBusQtMainLoop(set_as_default = True)
 
     # Create Main Widget
-    mainWindow = ServiceManager(None, 'service-manager')
+    mainWindow = NetworkManager(None, 'network-manager')
     mainWindow.show()
 
     # Create connection for lastWindowClosed signal to quit app
