@@ -17,22 +17,22 @@ from PyQt4.QtCore import *
 
 # Application Stuff
 from ui import Ui_mainManager
-from uiitem import Ui_ServiceItemWidget
+from uiitem import Ui_ConnectionItemWidget
 import time
 
-class ServiceItem(QtGui.QListWidgetItem):
+class ConnectionItem(QtGui.QListWidgetItem):
 
     def __init__(self, package, parent):
         QtGui.QListWidgetItem.__init__(self, parent)
 
         self.package = package
 
-class ServiceItemWidget(QtGui.QWidget):
+class ConnectionItemWidget(QtGui.QWidget):
 
     def __init__(self, package, parent, item):
         QtGui.QWidget.__init__(self, None)
 
-        self.ui = Ui_ServiceItemWidget()
+        self.ui = Ui_ConnectionItemWidget()
         self.ui.setupUi(self)
 
         self.ui.labelName.setText(package)
@@ -43,46 +43,10 @@ class ServiceItemWidget(QtGui.QWidget):
         self.iface = parent.iface
         self.item = item
         self.package = package
-        self.type = None
         self.desc = None
-        self.connect(self.ui.buttonStart, SIGNAL("clicked()"), self.setService)
-        self.connect(self.ui.buttonStop, SIGNAL("clicked()"), self.setService)
-        self.connect(self.ui.buttonReload, SIGNAL("clicked()"), self.setService)
-        self.connect(self.ui.checkStart, SIGNAL("clicked()"), self.setService)
 
-    def updateService(self, data, firstRun):
-        self.type, self.desc, serviceState = data
-        self.setState(serviceState, firstRun)
-        self.ui.labelDesc.setText(self.desc)
-
-    def setState(self, state, firstRun=False):
-        if not firstRun:
-            # There is a raise condition, FIXME in System.Service
-            time.sleep(1)
-            state = self.iface.info(self.package)[2]
-        if state in ('on', 'started', 'conditional_started'):
-            icon = 'running'
-        else:
-            icon = 'notrunning'
-        self.ui.labelStatus.setPixmap(QtGui.QPixmap(':data/%s.png' % icon))
-        if state in ('on', 'stopped'):
-            self.ui.checkStart.setChecked(True)
-        elif state in ('off', 'started', 'conditional_started'):
-            self.ui.checkStart.setChecked(False)
-        # print self.package, state
-
-    def setService(self):
-        try:
-            if self.sender() == self.ui.buttonStart:
-                self.iface.start(self.package)
-            elif self.sender() == self.ui.buttonStop:
-                self.iface.stop(self.package)
-            elif self.sender() == self.ui.buttonReload:
-                self.iface.restart(self.package)
-            elif self.sender() == self.ui.checkStart:
-                self.iface.setEnable(self.package, self.ui.checkStart.isChecked())
-        except Exception, e:
-            print e
+        self.connect(self.ui.buttonEdit, SIGNAL("clicked()"), parent.editConnection)
+        self.connect(self.ui.buttonDelete, SIGNAL("clicked()"), parent.deleteConnection)
 
     def enterEvent(self, event):
         if not self.toggled:
@@ -95,8 +59,6 @@ class ServiceItemWidget(QtGui.QWidget):
             self.toggled = False
 
     def toggleButtons(self, toggle=False):
-        self.ui.buttonStart.setVisible(toggle)
-        self.ui.buttonReload.setVisible(toggle)
-        self.ui.buttonStop.setVisible(toggle)
-        self.ui.checkStart.setVisible(toggle)
+        self.ui.buttonEdit.setVisible(toggle)
+        self.ui.buttonDelete.setVisible(toggle)
 

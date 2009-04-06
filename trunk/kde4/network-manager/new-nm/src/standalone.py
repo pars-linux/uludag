@@ -15,15 +15,15 @@
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import KGlobal
 
-# Service Manager
+# Network Manager
 from base import MainManager
 
-class ServiceManager(KMainWindow):
+class NetworkManager(KMainWindow):
     def __init__ (self, *args):
         KMainWindow.__init__(self)
 
         # This is very important for translations when running as kcm_module
-        KGlobal.locale().insertCatalog("service-manager")
+        KGlobal.locale().insertCatalog("network-manager")
 
         self.resize (640, 480)
         self.setCentralWidget(MainManager(self))
