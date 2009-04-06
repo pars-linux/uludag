@@ -47,6 +47,7 @@ class WidgetSystemServices(QGraphicsWidget):
 
         self.layout = QGraphicsLinearLayout(Qt.Horizontal, self)
         self.service_icon = Plasma.IconWidget(self)
+        self.service_icon.setMinimumWidth(20)
         self.layout.addItem(self.service_icon)
 
         info = link.System.Service[self._name].info()
@@ -68,30 +69,39 @@ class WidgetSystemServices(QGraphicsWidget):
 
         self.layout.addStretch()
 
-        self.stateButton = Plasma.PushButton(self)
-        self.stateButton.setMinimumWidth(70)
+        self.stateButton = Plasma.IconWidget(self)
+        self.stateButton.setMinimumWidth(100)
+        self.stateButton.setMaximumHeight(120)
+        self.stateButton.setOrientation(Qt.Horizontal)
+        self.stateButton.invertLayout(True)
         self.layout.addItem(self.stateButton)
+
         self.connect(self.stateButton, SIGNAL("clicked()"), self.setService)
 
         QTimer.singleShot(100, self.setButtonStates)
 
     def startShaking(self):
-        self.animator.moveItem(self, Plasma.Animator.SlideOutMovement, QPoint(self.currentPos.x()-14,self.currentPos.y()))
+        self.animator.moveItem(self, Plasma.Animator.SlideOutMovement,
+                                     QPoint(self.currentPos.x()-14,self.currentPos.y()))
         QTimer.singleShot(100, self.shakeRight)
 
     def shakeRight(self):
-        self.animator.moveItem(self, Plasma.Animator.SlideOutMovement, QPoint(self.currentPos.x()+14,self.currentPos.y()))
+        self.animator.moveItem(self, Plasma.Animator.SlideOutMovement,
+                                     QPoint(self.currentPos.x()+14,self.currentPos.y()))
         QTimer.singleShot(100, self.stopShaking)
 
     def stopShaking(self):
-        self.animator.moveItem(self, Plasma.Animator.SlideInMovement, self.currentPos)
+        self.animator.moveItem(self, Plasma.Animator.SlideInMovement,
+                                     self.currentPos)
 
     def setButtonStates(self):
         self.currentPos = self.pos().toPoint()
         if self.isServiceRunning():
             self.stateButton.setText("Stop")
+            self.stateButton.setIcon("media-playback-stop")
         else:
             self.stateButton.setText("Start")
+            self.stateButton.setIcon("media-playback-start")
 
     def isServiceRunning(self):
         return self._state in ["on", "started", "conditional_started"]
@@ -230,11 +240,13 @@ class SystemServicesApplet(plasmascript.Applet):
         if constraints & Plasma.SizeConstraint:
             self.theme.resize(self.size())
             if self.mainWidget:
-                self.applet.setMinimumSize(self.mainWidget.minimumSize())# * len(self.mainWidget._widgets))
+                self.applet.setMinimumWidth(270)
+                self.applet.setMinimumHeight(60*len(self.mainWidget._widgets))
 
     def handler(self, package, signal, args):
         if self.mainWidget:
             self.mainWidget._widgets[str(package)].updateState(args[1])
+        self.update()
 
     def showConfigurationInterface(self):
         self.dialog.show()
