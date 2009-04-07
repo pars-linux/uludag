@@ -39,7 +39,7 @@ def main():
     # Old PiSi releases start new COMAR service after all postInstall
     # operations complete. We start our own COMAR service so we 
     # guarantee that we register all scripts to new COMAR.
-    os.system("/usr/sbin/comar3 -b %s &" % COMAR_ADDRESS)
+    os.system("/usr/sbin/comar -i -b %s &" % COMAR_ADDRESS)
 
     # Wait until service gets ready
     timeout = COMAR_TIMEOUT
