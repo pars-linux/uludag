@@ -37,28 +37,11 @@ class ConnectionItemWidget(QtGui.QWidget):
 
         self.ui.labelName.setText(package)
 
-        self.toggleButtons()
-
-        self.toggled = False
         self.iface = parent.iface
         self.item = item
         self.package = package
         self.desc = None
 
-        self.connect(self.ui.buttonEdit, SIGNAL("clicked()"), parent.editConnection)
+        self.connect(self.ui.buttonEdit,   SIGNAL("clicked()"), parent.editConnection)
         self.connect(self.ui.buttonDelete, SIGNAL("clicked()"), parent.deleteConnection)
-
-    def enterEvent(self, event):
-        if not self.toggled:
-            self.toggleButtons(True)
-            self.toggled = True
-
-    def leaveEvent(self, event):
-        if self.toggled:
-            self.toggleButtons()
-            self.toggled = False
-
-    def toggleButtons(self, toggle=False):
-        self.ui.buttonEdit.setVisible(toggle)
-        self.ui.buttonDelete.setVisible(toggle)
 

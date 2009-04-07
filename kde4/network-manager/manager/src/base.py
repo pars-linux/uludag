@@ -13,6 +13,7 @@
 
 # System
 import sys
+import time
 import comar
 
 # Qt Stuff
@@ -52,14 +53,53 @@ class MainManager(QtGui.QWidget):
             item = ConnectionItem(connection, self.ui.profileList)
             self.widgets[connection] = ConnectionItemWidget(connection, self, item)
             self.ui.profileList.setItemWidget(item, self.widgets[connection])
-            item.setSizeHint(QSize(38,48))
+            item.setSizeHint(QSize(48,48))
 
         self.ui.editBox.hide()
-        # self.infoCount = 0
-        # self.piece = 100/len(self.services)
+        self.ui.profileList.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+
+        self.maxSize = False
+        self.minSize = False
+
+        self.timer = QTimer(self)
+        self.connect(self.timer, SIGNAL("timeout()"), self.animate)
+        self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.closeEdit)
 
         # Update service status and follow Comar for state changes
         self.getConnectionStates()
+
+    def animate(self):
+        if self.maxSize:
+            if self.ui.editBox.minimumHeight() < self.maxSize - 30:
+                self.ui.editBox.setMinimumHeight(self.ui.editBox.minimumHeight() + 30)
+            else:
+                self.ui.editBox.setMinimumHeight(self.maxSize)
+                self.ui.editBox.setMaximumHeight(16777215)
+                self.ui.profileList.setMaximumHeight(56)
+                self.maxSize = False
+                self.timer.stop()
+        if self.minSize:
+            if self.ui.editBox.maximumHeight() > 30:
+                self.ui.editBox.setMinimumHeight(self.ui.editBox.minimumHeight() - 30)
+                self.ui.editBox.setMaximumHeight(self.ui.editBox.minimumHeight() - 30)
+            else:
+                self.ui.editBox.hide()
+                self.ui.editBox.setMinimumHeight(10)
+                self.ui.editBox.setMaximumHeight(10)
+                self.minSize = False
+                self.timer.stop()
+        self.update()
+
+    def closeEdit(self):
+        self.minSize = True
+        self.ui.profileList.setMaximumHeight(16777215)
+        self.timer.start(0.1)
+        self.showAll()
+
+    def resizeEvent(self, event):
+        if not self.ui.editBox.isHidden():
+            self.ui.editBox.setMaximumHeight(self.height() - 70)
+            self.ui.editBox.setMinimumHeight(self.height() - 70)
 
     def handleConnections(self, package, exception, results):
         print package, exception, results
@@ -73,7 +113,23 @@ class MainManager(QtGui.QWidget):
         # self.widgets[package].setState(args[1])
 
     def editConnection(self):
+        self.ui.editBox.setMaximumHeight(10)
+        self.ui.editBox.show()
+        self.ui.profileList.setMinimumHeight(52)
+        self.maxSize = self.height() - 70
+        self.timer.start(0.1)
+        self.hideOthers(self.sender().parent())
         print self.sender().parent().package
+
+    def hideOthers(self, current):
+        print "called"
+        for widget in self.widgets.values():
+            if not widget == current:
+                widget.item.setHidden(True)
+
+    def showAll(self):
+        for widget in self.widgets.values():
+            widget.item.setHidden(False)
 
     def deleteConnection(self):
         print self.sender().parent().package
