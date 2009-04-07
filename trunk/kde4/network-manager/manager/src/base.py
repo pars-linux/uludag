@@ -28,7 +28,7 @@ from PyKDE4.kdecore import *
 from backend import NetworkIface
 from about import aboutData
 from ui import Ui_mainManager
-from widgets import ConnectionItemWidget, ConnectionItem
+from widgets import ConnectionItemWidget
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
@@ -48,81 +48,61 @@ class MainManager(QtGui.QWidget):
 
         # Fill service list
         self.connections = self.iface.connections('net-tools')
+
         # self.services.sort()
         for connection in self.connections:
-            item = ConnectionItem(connection, self.ui.profileList)
-            self.widgets[connection] = ConnectionItemWidget(connection, self, item)
+            item = QtGui.QListWidgetItem(self.ui.profileList)
+            self.widgets[connection] = ConnectionItemWidget('net-tools', connection, self, item)
             self.ui.profileList.setItemWidget(item, self.widgets[connection])
             item.setSizeHint(QSize(48,48))
 
         self.ui.editBox.hide()
         self.ui.profileList.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
-        self.maxSize = False
-        self.minSize = False
+        self.animateWidget = self.ui.editBox
+        self.animateTarget = None
+        self.animateItemHeight = None
+        self.animateInterval = 30
 
-        self.timer = QTimer(self)
-        self.connect(self.timer, SIGNAL("timeout()"), self.animate)
-        self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.closeEdit)
+        self.animator = QTimer(self)
+        self.connect(self.animator, SIGNAL("timeout()"), self.animate)
+        self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.hideEditBox)
 
         # Update service status and follow Comar for state changes
         self.getConnectionStates()
 
+    # Anime Naruto depends on GUI
     def animate(self):
-        if self.maxSize:
-            if self.ui.editBox.minimumHeight() < self.maxSize - 30:
-                self.ui.editBox.setMinimumHeight(self.ui.editBox.minimumHeight() + 30)
+        if self.animateWidget:
+            if self.animateWidget.maximumHeight() < self.animateTarget - self.animateInterval:
+                self.animateWidget.setMaximumHeight(self.animateWidget.maximumHeight() + self.animateInterval)
+                self.animateWidget.setMinimumHeight(self.animateWidget.maximumHeight() + self.animateInterval)
             else:
-                self.ui.editBox.setMinimumHeight(self.maxSize)
-                self.ui.editBox.setMaximumHeight(16777215)
-                self.ui.profileList.setMaximumHeight(56)
-                self.maxSize = False
-                self.timer.stop()
-        if self.minSize:
-            if self.ui.editBox.maximumHeight() > 30:
-                self.ui.editBox.setMinimumHeight(self.ui.editBox.minimumHeight() - 30)
-                self.ui.editBox.setMaximumHeight(self.ui.editBox.minimumHeight() - 30)
-            else:
-                self.ui.editBox.hide()
-                self.ui.editBox.setMinimumHeight(10)
-                self.ui.editBox.setMaximumHeight(10)
-                self.minSize = False
-                self.timer.stop()
-        self.update()
+                self.animateWidget.setMaximumHeight(16777215)
+                self.animateWidget.setMinimumHeight(self.animateTarget)
+                self.ui.profileList.setMaximumHeight(self.animateItemHeight)
+                self.animator.stop()
+        else:
+            self.animator.stop()
 
-    def closeEdit(self):
-        self.minSize = True
-        self.ui.profileList.setMaximumHeight(16777215)
-        self.timer.start(0.1)
-        self.showAll()
+    def hideEditBox(self):
+        self.ui.editBox.hide()
 
-    def resizeEvent(self, event):
-        if not self.ui.editBox.isHidden():
-            self.ui.editBox.setMaximumHeight(self.height() - 70)
-            self.ui.editBox.setMinimumHeight(self.height() - 70)
-
-    def handleConnections(self, package, exception, results):
-        print package, exception, results
-
-    def getConnectionStates(self):
-        # self.iface.connections('net-tools', self.handleConnections)
-        self.iface.listen(self.handler)
-
-    def handler(self, package, signal, args):
-        print "Burasi,", args, signal, package
-        # self.widgets[package].setState(args[1])
-
-    def editConnection(self):
-        self.ui.editBox.setMaximumHeight(10)
+    def showEditBox(self, profile, package):
         self.ui.editBox.show()
-        self.ui.profileList.setMinimumHeight(52)
-        self.maxSize = self.height() - 70
-        self.timer.start(0.1)
-        self.hideOthers(self.sender().parent())
-        print self.sender().parent().package
+
+        # Define minimumListHeight
+        self.animateItemHeight = self.widgets.values()[0].height() + 10
+        self.ui.profileList.setMinimumHeight(self.animateItemHeight)
+
+        # Target height
+        self.animateTarget = self.height() - self.animateItemHeight - 20 # -10 for spacing
+        print self.animateTarget, self.animateWidget, self.height()
+
+        # Do animation
+        self.animator.start(0.1)
 
     def hideOthers(self, current):
-        print "called"
         for widget in self.widgets.values():
             if not widget == current:
                 widget.item.setHidden(True)
@@ -131,5 +111,22 @@ class MainManager(QtGui.QWidget):
         for widget in self.widgets.values():
             widget.item.setHidden(False)
 
+    # Comar operations calls gui
+    def editConnection(self):
+        sender = self.sender().parent()
+        profile, package = sender.profile, sender.package
+        self.showEditBox(profile, package)
+
     def deleteConnection(self):
         print self.sender().parent().package
+
+    # Comar mangling routines
+    def handleConnections(self, package, exception, results):
+        print package, exception, results
+
+    def getConnectionStates(self):
+        self.iface.listen(self.handler)
+
+    def handler(self, package, signal, args):
+        print "Comar call : ", args, signal, package
+
