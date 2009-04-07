@@ -83,11 +83,15 @@ int config_print = 0;
 //! Runlevel (1 after logging enabled)
 int config_runlevel = 0;
 
+//! Ignore missing functions
+int config_ignore_missing = 0;
+
 //! Command line options
 static struct option longopts[] = {
     { "busname", required_argument, NULL, 'b' },
     { "datadir", required_argument, NULL, 'd' },
     { "debug", 0, NULL, 'g' },
+    { "ignore-missing", 0, NULL, 'i' },
     { "logdir", required_argument, NULL, 'l' },
     { "print", 0, NULL, 'p' },
     { "socket", required_argument, NULL, 's' },
@@ -98,7 +102,7 @@ static struct option longopts[] = {
 };
 
 //! Short options
-static char *shortopts = "b:d:gl:ps:t:phv";
+static char *shortopts = "b:d:gil:ps:t:phv";
 
 //! Print help message
 static void
@@ -118,6 +122,7 @@ print_usage(const char *name)
         "  -d, --datadir   [DIR] Data storage directory.\n"
         "                        (default is %s)\n"
         "  -g, --debug           Enable debug mode.\n"
+        "  -i, --ignore-missing  Ignore 'missing function' errors.\n"
         "  -l, --logdir    [DIR] Log storage directory.\n"
         "                        (default is %s)\n"
         "  -p, --print           Print to console.\n"
@@ -178,6 +183,9 @@ config_init(int argc, char *argv[])
                 break;
             case 'g':
                 config_debug = 1;
+                break;
+            case 'i':
+                config_ignore_missing = 1;
                 break;
             case 'l':
                 config_dir_log = strdup(optarg);

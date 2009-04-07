@@ -625,8 +625,14 @@ py_execute(const char *app, const char *model, const char *method, PyObject *py_
 
     // Finally, run method
     if (!py_func) {
-        PyErr_Format(PyExc_COMAR_Missing, "Method '%s' is not defined in script", method);
-        return -2;
+        if (config_ignore_missing) {
+            Py_INCREF(Py_None);
+            *py_ret = Py_None;
+        }
+        else {
+            PyErr_Format(PyExc_COMAR_Missing, "Method '%s' is not defined in script", method);
+            return -2;
+        }
     }
     else if (!PyCallable_Check(py_func)) {
         PyErr_Format(PyExc_COMAR_Script, "Method '%s' is not callable in script", method);
