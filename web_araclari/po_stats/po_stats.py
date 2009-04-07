@@ -38,7 +38,7 @@ for lang in lang_descs.keys():
                       "Müdür": REAL_PATH + "comar/mudur/po/%s.po" % lang,
                       "Sysinfo": REAL_PATH + "sysinfo/po/%s/kio_sysinfo.po" % lang,
                       "YALI": REAL_PATH + "yali4/po/%s.po" % lang,
-                      "Kaptan": REAL_PATH + "kaptan/po/%s.po" % lang,
+                      "Kaptan": REAL_PATH + "../branches/kaptan/po/%s.po" % lang,
                       "PolicyKit-kde": REAL_PATH + "PolicyKit-kde/po/%s.po" % lang,
                       "command-not-found": REAL_PATH + "command-not-found/po/%s.po" % lang,
                       "Repokit": REAL_PATH + "repokit/po/%s.po" % lang,
