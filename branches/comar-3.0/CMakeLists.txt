@@ -63,8 +63,7 @@ TARGET_LINK_LIBRARIES(comar ${LIBS} )
 
 # Install comar to /usr/sbin/<app-name>
 INSTALL (PROGRAMS comar
-         DESTINATION /usr/sbin
-         RENAME ${APP_NAME})
+         DESTINATION /usr/sbin)
 
 # Install Models
 INSTALL (DIRECTORY
@@ -99,7 +98,7 @@ INSTALL (FILES
 # Install hav to /usr/bin/hav
 INSTALL (PROGRAMS tools/hav.py
          DESTINATION /usr/bin
-         RENAME hav3)
+         RENAME hav)
 
 # Install hav to /usr/bin/comar2to3
 INSTALL (PROGRAMS tools/comar2to3.py
