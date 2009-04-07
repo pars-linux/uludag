@@ -20,26 +20,20 @@ from ui import Ui_mainManager
 from uiitem import Ui_ConnectionItemWidget
 import time
 
-class ConnectionItem(QtGui.QListWidgetItem):
-
-    def __init__(self, package, parent):
-        QtGui.QListWidgetItem.__init__(self, parent)
-
-        self.package = package
-
 class ConnectionItemWidget(QtGui.QWidget):
 
-    def __init__(self, package, parent, item):
+    def __init__(self, package, profile, parent, item):
         QtGui.QWidget.__init__(self, None)
 
         self.ui = Ui_ConnectionItemWidget()
         self.ui.setupUi(self)
 
-        self.ui.labelName.setText(package)
+        self.ui.labelName.setText(profile)
 
         self.iface = parent.iface
         self.item = item
         self.package = package
+        self.profile = profile
         self.desc = None
 
         self.connect(self.ui.buttonEdit,   SIGNAL("clicked()"), parent.editConnection)
