@@ -63,16 +63,20 @@ def main():
             print "Invalid model name"
             return -1
         met = comar.Call(link, _group, _class, app, method)
-        if len(sys.argv) > 5:
-            args = []
-            for i in sys.argv[5:]:
-                if i.startswith("[") or i.startswith("(") or i.startswith("{"):
-                    args.append(eval(i))
-                else:
-                    args.append(i)
-            print met.call(*args)
-        else:
-            print met.call()
+        try:
+            if len(sys.argv) > 5:
+                args = []
+                for i in sys.argv[5:]:
+                    if i.startswith("[") or i.startswith("(") or i.startswith("{"):
+                        args.append(eval(i))
+                    else:
+                        args.append(i)
+                print met.call(*args)
+            else:
+                print met.call()
+        except dbus.DBusException:
+            print "Application does not provide that model."
+            return -1
     else:
         printUsage()
 
