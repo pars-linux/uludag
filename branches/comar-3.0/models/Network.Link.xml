@@ -79,7 +79,7 @@
             <arg name="nameserver" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
-        <method name="setState">
+        <method name="setState" action_id="tr.org.pardus.comar.net.link.setstate">
             <arg name="name" type="s" direction="in"/>
             <arg name="state" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
