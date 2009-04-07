@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
+    <width>489</width>
     <height>48</height>
    </rect>
   </property>
@@ -15,11 +15,46 @@
     <height>48</height>
    </size>
   </property>
-  <property name="windowTitle" >
-   <string>Form</string>
+  <property name="focusPolicy" >
+   <enum>Qt::NoFocus</enum>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2" >
-   <item row="0" column="2" >
+  <property name="windowTitle" >
+   <string/>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout" >
+   <item>
+    <widget class="QCheckBox" name="checkToggler" >
+     <property name="focusPolicy" >
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="text" >
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelStatus" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize" >
+      <size>
+       <width>36</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text" >
+      <string/>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="../icons/data.qrc" >:/data/network-wired.png</pixmap>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QVBoxLayout" name="verticalLayout" >
      <property name="spacing" >
       <number>0</number>
@@ -61,7 +96,7 @@
      </item>
     </layout>
    </item>
-   <item row="0" column="3" >
+   <item>
     <spacer name="horizontalSpacer" >
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
@@ -74,7 +109,7 @@
      </property>
     </spacer>
    </item>
-   <item row="0" column="4" >
+   <item>
     <layout class="QGridLayout" name="gridLayout" >
      <item row="0" column="0" >
       <widget class="QPushButton" name="buttonEdit" >
@@ -91,13 +126,13 @@
         </size>
        </property>
        <property name="toolTip" >
-        <string>Start service</string>
+        <string>Edit connection</string>
        </property>
        <property name="text" >
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../../new-nm/icons/data.qrc" >
+        <iconset resource="../icons/data.qrc" >
          <normaloff>:/data/edit-rename.png</normaloff>:/data/edit-rename.png</iconset>
        </property>
        <property name="flat" >
@@ -120,52 +155,24 @@
         </size>
        </property>
        <property name="toolTip" >
-        <string>Reload service</string>
+        <string>Delete connection</string>
        </property>
        <property name="text" >
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../../new-nm/icons/data.qrc" >
+        <iconset resource="../icons/data.qrc" >
          <normaloff>:/data/edit-delete.png</normaloff>:/data/edit-delete.png</iconset>
        </property>
       </widget>
      </item>
     </layout>
    </item>
-   <item row="0" column="1" >
-    <widget class="QLabel" name="labelStatus" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize" >
-      <size>
-       <width>36</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="text" >
-      <string/>
-     </property>
-     <property name="pixmap" >
-      <pixmap resource="../../new-nm/icons/data.qrc" >:/data/network-wired.png</pixmap>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" >
-    <widget class="QCheckBox" name="checkToggler" >
-     <property name="text" >
-      <string/>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <resources>
-  <include location="../../new-nm/icons/data.qrc" />
+  <include location="../icons/data.qrc" />
+  <include location="../icons/data.qrc" />
  </resources>
  <connections/>
 </ui>
