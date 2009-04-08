@@ -22,7 +22,8 @@ static void ensure_path(char *path)
     path = strdup(path);
     cur = path;
     if (path[0] == '/') ++cur;
-    while (1) {
+    while (1)
+    {
         t = strchr(cur, '/');
         if (!t) break;
         *t = '\0';
@@ -39,6 +40,7 @@ int devnode_mknod(const char *name, const char *major, const char *minor)
     struct stat fs;
     char buf[512];
     char *path;
+    char *msg;
     char *t;
 
     path = concat("/dev/", name);
@@ -46,16 +48,18 @@ int devnode_mknod(const char *name, const char *major, const char *minor)
          if (*t == '!') *t = '/';
     }
 
-    if (stat(path, &fs) == 0) {
-        if (cfg_debug) printf("exists: mknod %s b %s %s\n", path, major, minor);
-    } else {
+    if (stat(path, &fs) == 0)
+    {
+        msg = concat(path, " already exists.");
+        debug(msg);
+    }
+    else
+    {
         sprintf(buf, "mknod %s b %s %s", path, major, minor);
-        if (cfg_debug)
-            puts(buf);
-        else {
-            ensure_path(path);
-            system(buf);
-        }
+        debug(buf);
+
+        ensure_path(path);
+        system(buf);
     }
     return 0;
 }
