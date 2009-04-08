@@ -1,5 +1,5 @@
 /*
-** Copyright (c) 2006, TUBITAK/UEKAE
+** Copyright (c) 2006-2009 TUBITAK/UEKAE
 **
 ** This program is free software; you can redistribute it and/or modify it
 ** under the terms of the GNU General Public License as published by the
@@ -13,8 +13,8 @@
 extern int cfg_debug;
 
 struct list {
-	struct list *next;
-	char *data;
+    struct list *next;
+    char *data;
 };
 
 int list_has(struct list *listptr, const char *data);
