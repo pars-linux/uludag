@@ -40,6 +40,8 @@ desktop
         desktop/gnome/libgnomecanvas/pspec.xml
         desktop/gnome/libgnomecanvasmm/pspec.xml
         desktop/gnome/orbit2/pspec.xml
+        desktop/gnome/libcroco/pspec.xml
+        desktop/gnome/librsvg/pspec.xml
 
     kde
         addon
@@ -123,7 +125,6 @@ desktop
 
     kde3
         addon
-            desktop/kde/artwork-pardus-release/pspec.xml
             desktop/kde/crystal/pspec.xml
             desktop/kde/feedback/pspec.xml
             desktop/kde/kaptan/pspec.xml
@@ -134,8 +135,6 @@ desktop
             desktop/kde/kio-to-local/pspec.xml
             desktop/kde/lipstik/pspec.xml
             desktop/kde/migration/pspec.xml
-            desktop/kde/milky/pspec.xml
-            desktop/kde/nuvola/pspec.xml
             desktop/kde/pardusman/pspec.xml
             desktop/kde/pardus-support/pspec.xml
             desktop/kde/plastique/pspec.xml
@@ -146,8 +145,6 @@ desktop
             desktop/kde/QtCurve-KDE3/pspec.xml
             desktop/kde/sysinfo/pspec.xml
             desktop/kde/tasma/pspec.xml
-            desktop/kde/tulliana2/pspec.xml
-            desktop/kde/tulliana/pspec.xml
             desktop/kde/autostart/pspec.xml
             desktop/kde/katapult/pspec.xml
             desktop/kde/kshutdown/pspec.xml
@@ -253,6 +250,34 @@ desktop
             desktop/kde/i18n/kde-i18n-vi/pspec.xml
             desktop/kde/i18n/kde-i18n-zh_CN/pspec.xml
             desktop/kde/i18n/kde-i18n-zh_TW/pspec.xml
+
+    lookandfeel
+        desktop/freedesktop/xorg/xcursor-themes/pspec.xml
+        desktop/freedesktop/grounation-xcursor/pspec.xml
+        desktop/freedesktop/jimmac-xcursor/pspec.xml
+        desktop/kde/tulliana2/pspec.xml
+        desktop/kde/tulliana/pspec.xml
+        desktop/kde/artwork-pardus-release/pspec.xml
+        desktop/kde/milky/pspec.xml
+        desktop/kde/nuvola/pspec.xml
+
+    misc
+        applications/util/google-gadgets/pspec.xml
+        desktop/gnome/beagle/pspec.xml
+        applications/util/strigi/pspec.xml
+        applications/util/iTest/pspec.xml
+        applications/security/clamav/pspec.xml
+        desktop/freedesktop/shared-mime-info/pspec.xml
+        desktop/freedesktop/xdg-utils/pspec.xml
+        desktop/freedesktop/notification-daemon/pspec.xml
+        desktop/freedesktop/startup-notification/pspec.xml
+        desktop/kde/klamav/pspec.xml
+        desktop/kde4/krename-kde4/pspec.xml
+        desktop/kde/basket/pspec.xml
+        desktop/kde/krename/pspec.xml
+        desktop/kde/keep/pspec.xml
+        desktop/kde4/rsibreak-kde4/pspec.xml
+        desktop/kde/rsibreak/pspec.xml
 
     toolkit
         qt
@@ -823,6 +848,8 @@ multimedia
         applications/multimedia/dvdbackup/pspec.xml
         applications/multimedia/potrace/pspec.xml
         desktop/kde/transKode/pspec.xml
+        applications/multimedia/ccd2iso/pspec.xml
+        applications/util/nrg2iso/pspec.xml
 
     editor
         applications/multimedia/blender/pspec.xml
@@ -1771,6 +1798,9 @@ programming
             programming/libs/pylibacl/pspec.xml
             programming/libs/pyxattr/pspec.xml
             programming/libs/4suite/pspec.xml
+            desktop/gnome/pycairo/pspec.xml
+            desktop/gnome/pygobject/pspec.xml
+            desktop/gnome/pygtk/pspec.xml
 
         tcl
             programming/languages/tcl/blt/pspec.xml
@@ -2180,20 +2210,7 @@ util
         applications/archive/xdelta3/pspec.xml
         applications/archive/xdelta/pspec.xml
         applications/util/lxsplit/pspec.xml
-        applications/multimedia/ccd2iso/pspec.xml
-        applications/util/nrg2iso/pspec.xml
         applications/util/bchunk/pspec.xml
-
-    console
-        applications/admin/mc/pspec.xml
-        applications/admin/multitail/pspec.xml
-        applications/util/ncdu/pspec.xml
-        applications/util/pv/pspec.xml
-        applications/util/screen/pspec.xml
-        applications/util/slocate/pspec.xml
-        applications/util/tidy/pspec.xml
-        applications/util/tree/pspec.xml
-        applications/multimedia/dialog/pspec.xml
 
     crypt
         applications/security/cryptsetup-luks/pspec.xml
@@ -2204,13 +2221,16 @@ util
         applications/security/pinentry/pspec.xml
         applications/security/dirmngr/pspec.xml
 
-    gui
-        desktop/kde4/krename-kde4/pspec.xml
-        desktop/kde/basket/pspec.xml
-        desktop/kde/krename/pspec.xml
-        desktop/kde/keep/pspec.xml
-        desktop/kde4/rsibreak-kde4/pspec.xml
-        desktop/kde/rsibreak/pspec.xml
+    misc
+        applications/admin/mc/pspec.xml
+        applications/admin/multitail/pspec.xml
+        applications/util/ncdu/pspec.xml
+        applications/util/pv/pspec.xml
+        applications/util/screen/pspec.xml
+        applications/util/slocate/pspec.xml
+        applications/util/tidy/pspec.xml
+        applications/util/tree/pspec.xml
+        applications/multimedia/dialog/pspec.xml
 
     shell
         applications/shells/sash/pspec.xml
@@ -2299,36 +2319,11 @@ x11
 
 packages that we don't know where to put
 ---------------------------------------------------
-applications/util/google-gadgets/pspec.xml
-desktop/gnome/beagle/pspec.xml
-applications/util/strigi/pspec.xml
-
-applications/security/clamav/pspec.xml
 
 applications/security/nss_ldap/pspec.xml
 applications/security/pam_fprint/pspec.xml
 applications/security/pam-krb5/pspec.xml
 applications/security/pam_ldap/pspec.xml
-
-applications/util/iTest/pspec.xml
-
-desktop/freedesktop/xorg/xcursor-themes/pspec.xml
-desktop/freedesktop/grounation-xcursor/pspec.xml
-desktop/freedesktop/jimmac-xcursor/pspec.xml
-
-desktop/freedesktop/notification-daemon/pspec.xml
-desktop/freedesktop/startup-notification/pspec.xml
-
-desktop/freedesktop/shared-mime-info/pspec.xml
-desktop/freedesktop/xdg-utils/pspec.xml
-
-desktop/gnome/libcroco/pspec.xml
-desktop/gnome/librsvg/pspec.xml
-desktop/gnome/pycairo/pspec.xml
-desktop/gnome/pygobject/pspec.xml
-desktop/gnome/pygtk/pspec.xml
-
-desktop/kde/klamav/pspec.xml
 
 ----------------------------------------------------
 
@@ -2356,8 +2351,6 @@ programming/libs/jthread/pspec.xml
 programming/libs/libassuan/pspec.xml
 programming/libs/libatomic_ops/pspec.xml
 programming/libs/libdaemon/pspec.xml
-
-
 programming/libs/libgadu/pspec.xml
 programming/libs/libggz/pspec.xml
 programming/libs/libgsf/pspec.xml
