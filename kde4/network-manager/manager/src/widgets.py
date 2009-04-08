@@ -23,7 +23,7 @@ import time
 class ConnectionItemWidget(QtGui.QWidget):
 
     def __init__(self, package, profile, parent, item):
-        QtGui.QWidget.__init__(self, None)
+        QtGui.QWidget.__init__(self, parent)
 
         self.ui = Ui_ConnectionItemWidget()
         self.ui.setupUi(self)

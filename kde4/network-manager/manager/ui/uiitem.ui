@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>ConnectionItemWidget</class>
- <widget class="QWidget" name="ConnectionItemWidget" >
-  <property name="geometry" >
+ <widget class="QWidget" name="ConnectionItemWidget">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,87 +10,84 @@
     <height>48</height>
    </rect>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>0</width>
     <height>48</height>
    </size>
   </property>
-  <property name="focusPolicy" >
-   <enum>Qt::NoFocus</enum>
-  </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string/>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout" >
+  <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
-    <widget class="QCheckBox" name="checkToggler" >
-     <property name="focusPolicy" >
+    <widget class="QCheckBox" name="checkToggler">
+     <property name="focusPolicy">
       <enum>Qt::NoFocus</enum>
      </property>
-     <property name="text" >
+     <property name="text">
       <string/>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="labelStatus" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+    <widget class="QLabel" name="labelStatus">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="minimumSize" >
+     <property name="minimumSize">
       <size>
        <width>36</width>
        <height>0</height>
       </size>
      </property>
-     <property name="text" >
+     <property name="text">
       <string/>
      </property>
-     <property name="pixmap" >
-      <pixmap resource="../icons/data.qrc" >:/data/network-wired.png</pixmap>
+     <property name="pixmap">
+      <pixmap resource="../icons/data.qrc">:/data/network-wired.png</pixmap>
      </property>
     </widget>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout" >
-     <property name="spacing" >
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
       <number>0</number>
      </property>
-     <property name="sizeConstraint" >
+     <property name="sizeConstraint">
       <enum>QLayout::SetNoConstraint</enum>
      </property>
-     <property name="topMargin" >
+     <property name="topMargin">
       <number>0</number>
      </property>
      <item>
-      <widget class="QLabel" name="labelName" >
-       <property name="font" >
+      <widget class="QLabel" name="labelName">
+       <property name="font">
         <font>
          <pointsize>12</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
-       <property name="text" >
+       <property name="text">
         <string>profileName</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="labelDesc" >
-       <property name="font" >
+      <widget class="QLabel" name="labelDesc">
+       <property name="font">
         <font>
          <pointsize>8</pointsize>
         </font>
        </property>
-       <property name="styleSheet" >
-        <string notr="true" >color:gray;</string>
+       <property name="styleSheet">
+        <string notr="true">color:gray;</string>
        </property>
-       <property name="text" >
+       <property name="text">
         <string>profileDesc</string>
        </property>
       </widget>
@@ -97,11 +95,11 @@
     </layout>
    </item>
    <item>
-    <spacer name="horizontalSpacer" >
-     <property name="orientation" >
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>308</width>
        <height>20</height>
@@ -110,58 +108,58 @@
     </spacer>
    </item>
    <item>
-    <layout class="QGridLayout" name="gridLayout" >
-     <item row="0" column="0" >
-      <widget class="QPushButton" name="buttonEdit" >
-       <property name="sizePolicy" >
-        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="buttonEdit">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="maximumSize" >
+       <property name="maximumSize">
         <size>
          <width>36</width>
          <height>16777215</height>
         </size>
        </property>
-       <property name="toolTip" >
+       <property name="toolTip">
         <string>Edit connection</string>
        </property>
-       <property name="text" >
+       <property name="text">
         <string/>
        </property>
-       <property name="icon" >
-        <iconset resource="../icons/data.qrc" >
+       <property name="icon">
+        <iconset resource="../icons/data.qrc">
          <normaloff>:/data/edit-rename.png</normaloff>:/data/edit-rename.png</iconset>
        </property>
-       <property name="flat" >
+       <property name="flat">
         <bool>true</bool>
        </property>
       </widget>
      </item>
-     <item row="0" column="1" >
-      <widget class="QPushButton" name="buttonDelete" >
-       <property name="sizePolicy" >
-        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+     <item row="0" column="1">
+      <widget class="QPushButton" name="buttonDelete">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="maximumSize" >
+       <property name="maximumSize">
         <size>
          <width>36</width>
          <height>16777215</height>
         </size>
        </property>
-       <property name="toolTip" >
+       <property name="toolTip">
         <string>Delete connection</string>
        </property>
-       <property name="text" >
+       <property name="text">
         <string/>
        </property>
-       <property name="icon" >
-        <iconset resource="../icons/data.qrc" >
+       <property name="icon">
+        <iconset resource="../icons/data.qrc">
          <normaloff>:/data/edit-delete.png</normaloff>:/data/edit-delete.png</iconset>
        </property>
       </widget>
@@ -171,8 +169,8 @@
   </layout>
  </widget>
  <resources>
-  <include location="../icons/data.qrc" />
-  <include location="../icons/data.qrc" />
+  <include location="../icons/data.qrc"/>
+  <include location="../icons/data.qrc"/>
  </resources>
  <connections/>
 </ui>
