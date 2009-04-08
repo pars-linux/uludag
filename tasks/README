@@ -1,11 +1,11 @@
 == Project Name ==
 
 * Main task (Owner)
-  ** Sub task ({-,+,/precentage,X})
+  ** Sub task ({-,+,/percentage,X})
 
 '-'       : Not started
 '+'       : Finished
-'/precent': Percetanage of completion
+'/percent': Percentage of completion
 'X'       : Task is planned but dropped for now, maybe it will be dropped
 
 Example:
