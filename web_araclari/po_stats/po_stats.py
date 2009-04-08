@@ -35,7 +35,7 @@ for lang in lang_descs.keys():
                       "Firewall Configurator": REAL_PATH + "tasma/firewall-config/po/%s.po" % lang,
                       "Tasma": REAL_PATH + "tasma/tasma/po/%s.po" % lang,
                       "PiSi": REAL_PATH + "pisi/po/%s.po" % lang,
-                      "Müdür": REAL_PATH + "comar/mudur/po/%s.po" % lang,
+                      "Müdür": REAL_PATH + "mudur/po/%s.po" % lang,
                       "Sysinfo": REAL_PATH + "sysinfo/po/%s/kio_sysinfo.po" % lang,
                       "YALI": REAL_PATH + "yali4/po/%s.po" % lang,
                       "Kaptan": REAL_PATH + "../branches/kaptan/po/%s.po" % lang,
