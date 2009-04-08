@@ -665,6 +665,7 @@ hardware
         applications/hardware/acpi4asus/pspec.xml
         applications/hardware/gpm/pspec.xml
         applications/hardware/setserial/pspec.xml
+        applications/network/ethtool/pspec.xml
 
     mobile
         applications/hardware/gnokii/pspec.xml
@@ -1138,8 +1139,7 @@ network
         applications/network/rutilt/pspec.xml
         applications/network/wpa_supplicant/pspec.xml
         desktop/kde/kvpnc/pspec.xml
-
-        applications/network/ethtool/pspec.xml
+        applications/network/vpnc/pspec.xml
 
     download
         applications/network/aria2/pspec.xml
@@ -1242,7 +1242,6 @@ network
         applications/network/rdesktop/pspec.xml
         applications/network/telnet-bsd/pspec.xml
         applications/network/tn5250/pspec.xml
-        applications/network/vpnc/pspec.xml
         applications/network/synergy/pspec.xml
         applications/network/tightvnc/pspec.xml
 
