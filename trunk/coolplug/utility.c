@@ -13,11 +13,17 @@
 
 #include "common.h"
 
+void debug(const char *message)
+{
+    if (cfg_debug)
+        fprintf(stdout, "DEBUG: %s\n", message);
+}
+
 int list_has(struct list *listptr, const char *data)
 {
     struct list *tmp;
 
-    // Our lists arent big, so simple iteration isnt slow
+    /* Our lists arent big, so simple iteration isnt slow */
     for (tmp = listptr; tmp; tmp = tmp->next) {
         if (0 == strcmp(tmp->data, data))
             return 1;
@@ -29,7 +35,7 @@ struct list* list_add(struct list *listptr, const char *data)
 {
     struct list *tmp;
 
-    // We dont want duplicate module names in our lists
+    /* We dont want duplicate module names in our lists */
     if (list_has(listptr, data))
         return listptr;
 
@@ -42,9 +48,9 @@ struct list* list_add(struct list *listptr, const char *data)
 void* zalloc(size_t size)
 {
     void *ptr = 0;
-    // For small allocations we shouldn't really fail
+    /* For small allocations we shouldn't really fail */
     while (ptr == 0) {
-        // we usually need zeroed buffers
+        /* we usually need zeroed buffers */
         ptr = calloc(1, size);
     }
     return ptr;
@@ -118,3 +124,4 @@ char* sys_value(const char *path, const char *value)
         valbuf[size-1] = '\0';
     return valbuf;
 }
+
