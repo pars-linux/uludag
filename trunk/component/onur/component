@@ -1189,6 +1189,7 @@ network
         programming/libs/libmsn/pspec.xml
         programming/libs/libupnp/pspec.xml
         programming/libs/libpcap/pspec.xml
+        programming/libs/meanwhile/pspec.xml
         programming/libs/miniupnp/pspec.xml
         programming/libs/libnl/pspec.xml
         programming/libs/libwww/pspec.xml
@@ -2391,7 +2392,6 @@ programming/libs/linbox/pspec.xml
 programming/libs/loudmouth/pspec.xml
 programming/libs/lpc10/pspec.xml
 programming/libs/lxml/pspec.xml
-programming/libs/meanwhile/pspec.xml
 programming/libs/metis/pspec.xml
 programming/libs/mhash/pspec.xml
 programming/libs/minixml/pspec.xml
