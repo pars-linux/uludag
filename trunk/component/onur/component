@@ -920,6 +920,7 @@ multimedia
         programming/libs/libdvdnav/pspec.xml
         programming/libs/libdvdread/pspec.xml
         programming/libs/libebml/pspec.xml
+        programming/libs/libkate/pspec.xml
         programming/libs/libkexif/pspec.xml
         programming/libs/libkexiv2/pspec.xml
         programming/libs/libid3tag/pspec.xml
@@ -2353,7 +2354,6 @@ programming/libs/libIDL/pspec.xml
 programming/libs/libical/pspec.xml
 programming/libs/libiodbc/pspec.xml
 programming/libs/libjingle/pspec.xml
-programming/libs/libkate/pspec.xml
 programming/libs/libksba/pspec.xml
 programming/libs/liblo/pspec.xml
 programming/libs/liblrdf/pspec.xml
