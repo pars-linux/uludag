@@ -12,8 +12,8 @@
 #
 
 # PyKDE4 Stuff
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
+from PyKDE4.kdeui import KCModule
+from PyKDE4.kdecore import KGlobal
 
 # DBUS-QT
 from dbus.mainloop.qt import DBusQtMainLoop

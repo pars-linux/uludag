@@ -12,26 +12,22 @@
 #
 
 # System
-import sys
-import time
 import comar
 
 # Qt Stuff
 from PyQt4 import QtGui
-from PyQt4.QtCore import *
-
-# PyKDE4 Stuff
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
+from PyQt4.QtCore import SIGNAL, Qt, QTimeLine, QSize
 
 # Application Stuff
 from backend import NetworkIface
-from about import aboutData
 from ui import Ui_mainManager
 from widgets import ConnectionItemWidget
 
-UP, DOWN = range(2)
-M_HEIGHT = 0
+# Animation Definitions
+SHOW, HIDE     = range(2)
+TARGET_HEIGHT  = 0
+ANIMATION_TIME = 240
+DEFAULT_HEIGHT = 16777215
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
@@ -40,6 +36,7 @@ class MainManager(QtGui.QWidget):
         # Create the ui
         self.ui = Ui_mainManager()
 
+        # Network Manager can run as KControl Module or Standalone
         if standAlone:
             self.ui.setupUi(self)
             self.baseWidget = self
@@ -50,33 +47,36 @@ class MainManager(QtGui.QWidget):
         # Call Comar
         self.iface = NetworkIface()
         self.widgets = {}
+        self.fillProfileList()
 
+        # Preparing for animation
+        self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
+        self.lastAnimation = SHOW
+
+        # Naruto
+        self.animator = QTimeLine(ANIMATION_TIME, self)
+
+        # Animator connections, Naruto loves Sakura-chan
+        self.connect(self.animator, SIGNAL("frameChanged(int)"), self.animate)
+        self.connect(self.animator, SIGNAL("finished()"), self.animateFinished)
+
+        # Hide editBox when clicked Cancel
+        self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.hideEditBox)
+
+        # Update service status and follow Comar for state changes
+        self.getConnectionStates()
+
+    def fillProfileList(self):
         # Fill profile list
         self.connections = self.iface.connections('net-tools')
         self.connections.sort()
+        self.ui.profileList.clear()
         for connection in self.connections:
             item = QtGui.QListWidgetItem(self.ui.profileList)
             self.widgets[connection] = ConnectionItemWidget('net-tools', connection, self, item)
             self.ui.profileList.setItemWidget(item, self.widgets[connection])
             item.setSizeHint(QSize(48,48))
             del item
-
-        # Preparing for animation
-        self.ui.editBox.setMaximumHeight(M_HEIGHT)
-        self.lastAnimation = UP
-
-        # Naruto
-        self.animator = QTimeLine(200, self)
-
-        # Animator connections, Naruto loves Sakura-chan
-        self.connect(self.animator, SIGNAL("frameChanged(int)"), self.animate)
-        self.connect(self.animator, SIGNAL("finished()"), self.animateFinished)
-
-        # Hide editBox
-        self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.hideEditBox)
-
-        # Update service status and follow Comar for state changes
-        self.getConnectionStates()
 
     # Anime Naruto depends on GUI
     def animate(self, height):
@@ -85,25 +85,27 @@ class MainManager(QtGui.QWidget):
         self.update()
 
     def animateFinished(self):
-        if self.lastAnimation == UP:
+        if self.lastAnimation == SHOW:
             self.ui.editBox.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
-            self.ui.editBox.setMaximumHeight(167777)
-            self.ui.profileList.setMaximumHeight(M_HEIGHT)
-        elif self.lastAnimation == DOWN:
+            self.ui.editBox.setMaximumHeight(DEFAULT_HEIGHT)
+            self.ui.profileList.setMaximumHeight(TARGET_HEIGHT)
+        elif self.lastAnimation == HIDE:
             self.ui.profileList.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
-            self.ui.profileList.setMaximumHeight(167777)
-            self.ui.editBox.setMaximumHeight(M_HEIGHT)
+            self.ui.profileList.setMaximumHeight(DEFAULT_HEIGHT)
+            self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
 
     def hideEditBox(self):
-        self.lastAnimation = DOWN
+        self.lastAnimation = HIDE
         self.hideScrollBars()
-        self.animator.setFrameRange(self.ui.editBox.height(), M_HEIGHT)
+        self.animator.setFrameRange(self.ui.editBox.height(), TARGET_HEIGHT)
         self.animator.start()
 
     def showEditBox(self, profile, package):
-        self.lastAnimation = UP
+        sender = self.sender().parent()
+        self.lastAnimation = SHOW
+        self.buildEditBoxFor(sender.package, sender.profile)
         self.hideScrollBars()
-        self.animator.setFrameRange(M_HEIGHT, self.baseWidget.height() - M_HEIGHT)
+        self.animator.setFrameRange(TARGET_HEIGHT, self.baseWidget.height() - TARGET_HEIGHT)
         self.animator.start()
 
     def hideScrollBars(self):
@@ -111,6 +113,16 @@ class MainManager(QtGui.QWidget):
         self.ui.profileList.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
     # Comar operations calls gui
+    def buildEditBoxFor(self, package, profile):
+        data = self.iface.info(package, profile)
+        self.ui.lineConnectionName.setText(data["name"])
+        self.ui.labelDeviceDescription.setText(data["device_name"])
+        if data["net_mode"] == "auto":
+            self.ui.useDHCP.setChecked(True)
+        else:
+            self.ui.useManual.setChecked(True)
+        self.ui.labelDeviceDescription.setText(data["device_name"])
+
     def editConnection(self):
         sender = self.sender().parent()
         profile, package = sender.profile, sender.package
