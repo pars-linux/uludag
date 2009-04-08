@@ -13,8 +13,7 @@
 
 #include "common.h"
 
-int
-list_has(struct list *listptr, const char *data)
+int list_has(struct list *listptr, const char *data)
 {
     struct list *tmp;
 
@@ -26,8 +25,7 @@ list_has(struct list *listptr, const char *data)
     return 0;
 }
 
-struct list *
-list_add(struct list *listptr, const char *data)
+struct list* list_add(struct list *listptr, const char *data)
 {
     struct list *tmp;
 
@@ -41,8 +39,7 @@ list_add(struct list *listptr, const char *data)
     return tmp;
 }
 
-void *
-zalloc(size_t size)
+void* zalloc(size_t size)
 {
     void *ptr = 0;
     // For small allocations we shouldn't really fail
@@ -53,8 +50,7 @@ zalloc(size_t size)
     return ptr;
 }
 
-char *
-concat(const char *str, const char *append)
+char* concat(const char *str, const char *append)
 {
     char *buf;
     size_t str_len = strlen(str);
@@ -67,8 +63,7 @@ concat(const char *str, const char *append)
     return buf;
 }
 
-char *
-my_readlink(const char *path)
+char* my_readlink(const char *path)
 {
     char *pathdir;
     char *tmp;
@@ -89,8 +84,7 @@ my_readlink(const char *path)
     return concat(pathdir, buf);
 }
 
-char *
-sys_value(const char *path, const char *value)
+char* sys_value(const char *path, const char *value)
 {
     static char valbuf[128];
     static char *buf = NULL;

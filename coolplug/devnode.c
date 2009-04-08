@@ -14,8 +14,7 @@
 
 #include "common.h"
 
-static void
-ensure_path(char *path)
+static void ensure_path(char *path)
 {
     struct stat fs;
     char *t, *cur;
@@ -35,8 +34,7 @@ ensure_path(char *path)
     }
 }
 
-int
-devnode_mknod(const char *name, const char *major, const char *minor)
+int devnode_mknod(const char *name, const char *major, const char *minor)
 {
     struct stat fs;
     char buf[512];
@@ -62,8 +60,7 @@ devnode_mknod(const char *name, const char *major, const char *minor)
     return 0;
 }
 
-static int
-mknod_parts(char *dev)
+static int mknod_parts(char *dev)
 {
     char *path;
     DIR *dir;
@@ -91,8 +88,7 @@ mknod_parts(char *dev)
     return 0;
 }
 
-int
-devnode_populate(void)
+int devnode_populate(void)
 {
     DIR *dir;
     struct dirent *dirent;
