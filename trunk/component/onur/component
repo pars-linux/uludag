@@ -2328,6 +2328,7 @@ desktop/gnome/pygtk/pspec.xml
 
 desktop/kde/klamav/pspec.xml
 
+----------------------------------------------------
 
 desktop/freedesktop/liblazy/pspec.xml
 programming/libs/akonadi/pspec.xml
