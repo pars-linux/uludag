@@ -1185,6 +1185,7 @@ network
         programming/libs/gupnp-igd/pspec.xml
         programming/libs/gupnp/pspec.xml
         programming/libs/libcddb/pspec.xml
+        programming/libs/libgadu/pspec.xml
         programming/libs/librsync/pspec.xml
         programming/libs/libmsn/pspec.xml
         programming/libs/libupnp/pspec.xml
@@ -2348,7 +2349,6 @@ programming/libs/jthread/pspec.xml
 programming/libs/libassuan/pspec.xml
 programming/libs/libatomic_ops/pspec.xml
 programming/libs/libdaemon/pspec.xml
-programming/libs/libgadu/pspec.xml
 programming/libs/libggz/pspec.xml
 programming/libs/libgsf/pspec.xml
 programming/libs/libIDL/pspec.xml
