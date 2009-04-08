@@ -14,8 +14,7 @@
 
 #include "common.h"
 
-struct list *
-scsi_get_list(void)
+struct list* scsi_get_list(void)
 {
     DIR *dir;
     struct dirent *dirent;

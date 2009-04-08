@@ -15,8 +15,7 @@
 
 #include "common.h"
 
-static struct list *
-find_aliases(const char *syspath)
+static struct list* find_aliases(const char *syspath)
 {
     DIR *dir;
     struct dirent *dirent;
@@ -41,8 +40,7 @@ find_aliases(const char *syspath)
     return aliases;
 }
 
-static struct list *
-find_modules(const char *mapfile, struct list *aliases)
+static struct list* find_modules(const char *mapfile, struct list *aliases)
 {
     FILE *f;
     struct list *modules = NULL;
@@ -72,8 +70,7 @@ find_modules(const char *mapfile, struct list *aliases)
     return modules;
 }
 
-struct list *
-module_get_list(const char *syspath)
+struct list* module_get_list(const char *syspath)
 {
     struct list *aliases;
     struct utsname name;
@@ -87,8 +84,7 @@ module_get_list(const char *syspath)
     return find_modules(mapfile, aliases);
 }
 
-int
-module_probe(const char *name)
+int module_probe(const char *name)
 {
     char *cmd;
 

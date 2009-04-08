@@ -14,9 +14,9 @@
 
 int cfg_debug = 0;
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
+    fprintf(stdout, "Starting coolplug..");
     struct list *modules;
     struct list *item;
     int has_scsi_storage = 0;
