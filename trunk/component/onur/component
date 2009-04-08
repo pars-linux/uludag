@@ -660,6 +660,12 @@ hardware
         programming/libs/libifp/pspec.xml
         applications/hardware/smartcard/libp11/pspec.xml
 
+    misc
+        applications/hardware/fnfx/pspec.xml
+        applications/hardware/acpi4asus/pspec.xml
+        applications/hardware/gpm/pspec.xml
+        applications/hardware/setserial/pspec.xml
+
     mobile
         applications/hardware/gnokii/pspec.xml
         applications/pda/libopensync-plugin-file/pspec.xml
@@ -689,13 +695,7 @@ hardware
         desktop/kde/k3b/pspec.xml
         applications/hardware/eject/pspec.xml
 
-    peripheral
-        applications/hardware/fnfx/pspec.xml
-        applications/hardware/gpm/pspec.xml
-        applications/hardware/setserial/pspec.xml
-
     powermanagement
-        applications/hardware/acpi4asus/pspec.xml
         applications/hardware/acpica/pspec.xml
         applications/hardware/lm_sensors/pspec.xml
         applications/hardware/pmtools/pspec.xml
