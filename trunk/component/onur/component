@@ -1451,15 +1451,6 @@ programming
         programming/environments/qt-creator/pspec.xml
         applications/util/PisiYap/pspec.xml
 
-    inspect
-        programming/tools/elfutils/pspec.xml
-        programming/tools/ltrace/pspec.xml
-        programming/tools/oprofile/pspec.xml
-        programming/tools/pax-utils/pspec.xml
-        programming/tools/strace/pspec.xml
-        programming/tools/sysprof/pspec.xml
-        programming/tools/valgrind/pspec.xml
-
     language
         dotnet
             programming/languages/dotnet/gecko-sharp/pspec.xml
@@ -1816,6 +1807,11 @@ programming
         programming/microcontroller/gcc-avr/pspec.xml
         programming/microcontroller/lpc21isp/pspec.xml
         applications/science/electronics/jal/pspec.xml
+
+    profiler
+        programming/tools/oprofile/pspec.xml
+        programming/tools/sysprof/pspec.xml
+        programming/tools/valgrind/pspec.xml
 
     tool
         programming/tools/astyle/pspec.xml
@@ -2235,6 +2231,10 @@ util
         applications/util/tidy/pspec.xml
         applications/util/tree/pspec.xml
         applications/multimedia/dialog/pspec.xml
+        programming/tools/elfutils/pspec.xml
+        programming/tools/pax-utils/pspec.xml
+        programming/tools/ltrace/pspec.xml
+        programming/tools/strace/pspec.xml
 
     shell
         applications/shells/sash/pspec.xml
