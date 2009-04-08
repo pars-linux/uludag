@@ -266,12 +266,10 @@ desktop
         desktop/gnome/beagle/pspec.xml
         applications/util/strigi/pspec.xml
         applications/util/iTest/pspec.xml
-        applications/security/clamav/pspec.xml
         desktop/freedesktop/shared-mime-info/pspec.xml
         desktop/freedesktop/xdg-utils/pspec.xml
         desktop/freedesktop/notification-daemon/pspec.xml
         desktop/freedesktop/startup-notification/pspec.xml
-        desktop/kde/klamav/pspec.xml
         desktop/kde4/krename-kde4/pspec.xml
         desktop/kde/basket/pspec.xml
         desktop/kde/krename/pspec.xml
@@ -660,6 +658,7 @@ hardware
         programming/libs/libnjb/pspec.xml
         programming/libs/libmtp/pspec.xml
         programming/libs/libifp/pspec.xml
+        applications/hardware/smartcard/libp11/pspec.xml
 
     mobile
         applications/hardware/gnokii/pspec.xml
@@ -745,11 +744,8 @@ hardware
     smartcard
         applications/hardware/smartcard/ccid/pspec.xml
         applications/hardware/smartcard/ifd-gempc/pspec.xml
-        applications/hardware/smartcard/libp11/pspec.xml
         applications/hardware/smartcard/openct/pspec.xml
         applications/hardware/smartcard/opensc/pspec.xml
-        applications/hardware/smartcard/pam_p11/pspec.xml
-        applications/hardware/smartcard/pam_pkcs11/pspec.xml
         applications/hardware/smartcard/pcsc-lite/pspec.xml
         applications/hardware/smartcard/pcsc-tools/pspec.xml
 
@@ -1931,12 +1927,7 @@ science
         applications/science/robotics/stage/pspec.xml
 
 server
-    library
-        programming/libs/apr/pspec.xml
-        programming/libs/apr-util/pspec.xml
-        programming/libs/egenix-mx-base/pspec.xml
-
-    authentication
+    auth
         applications/network/mit-kerberos/pspec.xml
         server/freeradius/pspec.xml
         server/nis/ypbind/pspec.xml
@@ -1954,6 +1945,11 @@ server
     ftp
         server/vsftpd/pspec.xml
         server/tftp/pspec.xml
+
+    library
+        programming/libs/apr/pspec.xml
+        programming/libs/apr-util/pspec.xml
+        programming/libs/egenix-mx-base/pspec.xml
 
     mta
         server/mail/cyrus-sasl/pspec.xml
@@ -1993,6 +1989,13 @@ server
     applications/util/portmap/pspec.xml
 
 system
+    auth
+        applications/security/nss_ldap/pspec.xml
+        applications/security/pam_fprint/pspec.xml
+        applications/security/pam-krb5/pspec.xml
+        applications/security/pam_ldap/pspec.xml
+        applications/hardware/smartcard/pam_p11/pspec.xml
+        applications/hardware/smartcard/pam_pkcs11/pspec.xml
     base
         system/base/acl/pspec.xml
         system/base/attr/pspec.xml
@@ -2112,6 +2115,12 @@ system
         system/base/zip/pspec.xml
         system/base/zlib/pspec.xml
 
+    boot
+        applications/admin/gfxboot/pspec.xml
+        applications/admin/gfxtheme-pardus/pspec.xml
+        applications/admin/syslinux/pspec.xml
+        applications/admin/kexec-tools/pspec.xml
+
     devel
         system/devel/autoconf/pspec.xml
         system/devel/automake/pspec.xml
@@ -2148,12 +2157,6 @@ system
         system/devel/yacc/pspec.xml
         system/devel/yasm/pspec.xml
 
-    boot
-        applications/admin/gfxboot/pspec.xml
-        applications/admin/gfxtheme-pardus/pspec.xml
-        applications/admin/syslinux/pspec.xml
-        applications/admin/kexec-tools/pspec.xml
-
     doc
 
     installer
@@ -2181,6 +2184,10 @@ util
         desktop/kde/metamonitor/pspec.xml
         applications/network/rdate/pspec.xml
         applications/util/utempter/pspec.xml
+
+    antivirus
+        desktop/kde/klamav/pspec.xml
+        applications/security/clamav/pspec.xml
 
     apparmor
         applications/security/apparmor-docs/pspec.xml
@@ -2315,13 +2322,6 @@ x11
 
 packages that we don't know where to put
 ---------------------------------------------------
-
-applications/security/nss_ldap/pspec.xml
-applications/security/pam_fprint/pspec.xml
-applications/security/pam-krb5/pspec.xml
-applications/security/pam_ldap/pspec.xml
-
-----------------------------------------------------
 
 desktop/freedesktop/liblazy/pspec.xml
 programming/libs/akonadi/pspec.xml
