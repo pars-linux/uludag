@@ -18,8 +18,8 @@ import sys
 from PyQt4.QtCore import SIGNAL
 
 # PyKDE4 Stuff
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
+from PyKDE4.kdeui import KApplication
+from PyKDE4.kdecore import KCmdLineArgs
 
 def CreatePlugin(widget_parent, parent, component_data):
     from kcmodule import NetworkManager
