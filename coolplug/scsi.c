@@ -46,3 +46,4 @@ struct list* scsi_get_list(void)
 
     return modules;
 }
+

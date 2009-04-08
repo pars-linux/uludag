@@ -89,9 +89,10 @@ int module_probe(const char *name)
     char *cmd;
 
     cmd = concat("modprobe ", name);
-    if (cfg_debug)
-        puts(cmd);
-    else
-        system(cmd);
+    debug(cmd);
+
+    system(cmd);
+
     return 0;
 }
+

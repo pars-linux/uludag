@@ -20,6 +20,7 @@ struct list {
 int list_has(struct list *listptr, const char *data);
 struct list *list_add(struct list *listptr, const char *data);
 
+void debug(const char *message);
 void *zalloc(size_t size);
 char *concat(const char *str, const char *append);
 int fnmatch(const char *p, const char *s);
@@ -33,3 +34,4 @@ struct list *scsi_get_list(void);
 
 int devnode_mknod(const char *name, const char *major, const char *minor);
 int devnode_populate(void);
+

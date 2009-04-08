@@ -1,4 +1,6 @@
 2009-04-08  Ozan Çağlayan <ozan@pardus.org.tr>
 	* Replace tabs by spaces,
 	* Update copyrights,
-	* Change function signature typesetting.
+	* Change function signature typesetting,
+	* (utility.c): Add a debug function to print some messages,
+	* (main.c, module.c): Use debug to give information about sleeps
