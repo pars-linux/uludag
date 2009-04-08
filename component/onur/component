@@ -561,42 +561,37 @@ hardware
         applications/hardware/microcode-data/pspec.xml
 
     disk
-        filesystem
-            applications/filesystems/cramfs/pspec.xml
-            applications/filesystems/encfs/pspec.xml
-            applications/filesystems/fuse/pspec.xml
-            applications/filesystems/fuse-python/pspec.xml
-            applications/filesystems/gmailfs/pspec.xml
-            applications/filesystems/libgmail/pspec.xml
-            applications/filesystems/ntfs_3g/pspec.xml
-            applications/filesystems/sshfs/pspec.xml
-            applications/filesystems/unionfs/pspec.xml
-            applications/admin/jfsutils/pspec.xml
-            applications/admin/dosfstools/pspec.xml
-            applications/admin/ntfsprogs/pspec.xml
-            applications/admin/reiserfsprogs/pspec.xml
-            applications/admin/squashfs-tools/pspec.xml
-            applications/filesystems/wdfs/pspec.xml
-            applications/admin/xfsdump/pspec.xml
-            applications/admin/xfsprogs/pspec.xml
-            applications/admin/gptsync/pspec.xml
-            applications/util/mtools/pspec.xml
-
-        partition
-            applications/hardware/gparted/pspec.xml
-            applications/hardware/partimage/pspec.xml
-            applications/hardware/qtparted/pspec.xml
-
-        misc
-            applications/admin/device-mapper/pspec.xml
-            applications/hardware/arrayprobe/pspec.xml
-            applications/hardware/mdadm/pspec.xml
-            applications/hardware/sdparm/pspec.xml
-            applications/hardware/sg3_utils/pspec.xml
-            applications/hardware/smartmontools/pspec.xml
-            applications/util/readahead/pspec.xml
-            applications/util/testdisk/pspec.xml
-            desktop/kde/filelight/pspec.xml
+        applications/admin/device-mapper/pspec.xml
+        applications/admin/dosfstools/pspec.xml
+        applications/admin/gptsync/pspec.xml
+        applications/admin/jfsutils/pspec.xml
+        applications/admin/ntfsprogs/pspec.xml
+        applications/admin/reiserfsprogs/pspec.xml
+        applications/admin/squashfs-tools/pspec.xml
+        applications/admin/xfsdump/pspec.xml
+        applications/admin/xfsprogs/pspec.xml
+        applications/filesystems/cramfs/pspec.xml
+        applications/filesystems/encfs/pspec.xml
+        applications/filesystems/fuse-python/pspec.xml
+        applications/filesystems/fuse/pspec.xml
+        applications/filesystems/gmailfs/pspec.xml
+        applications/filesystems/libgmail/pspec.xml
+        applications/filesystems/ntfs_3g/pspec.xml
+        applications/filesystems/sshfs/pspec.xml
+        applications/filesystems/unionfs/pspec.xml
+        applications/filesystems/wdfs/pspec.xml
+        applications/hardware/arrayprobe/pspec.xml
+        applications/hardware/gparted/pspec.xml
+        applications/hardware/mdadm/pspec.xml
+        applications/hardware/partimage/pspec.xml
+        applications/hardware/qtparted/pspec.xml
+        applications/hardware/sdparm/pspec.xml
+        applications/hardware/sg3_utils/pspec.xml
+        applications/hardware/smartmontools/pspec.xml
+        applications/util/mtools/pspec.xml
+        applications/util/readahead/pspec.xml
+        applications/util/testdisk/pspec.xml
+        desktop/kde/filelight/pspec.xml
 
     emulator
         applications/emulators/dosbox/pspec.xml
@@ -2156,6 +2151,7 @@ system
         applications/admin/gfxboot/pspec.xml
         applications/admin/gfxtheme-pardus/pspec.xml
         applications/admin/syslinux/pspec.xml
+        applications/admin/kexec-tools/pspec.xml
 
     doc
 
@@ -2170,7 +2166,6 @@ util
         applications/admin/acct/pspec.xml
         applications/admin/dazuko/pspec.xml
         applications/admin/dstat/pspec.xml
-        applications/admin/kexec-tools/pspec.xml
         applications/admin/killproc/pspec.xml
         applications/admin/sudo/pspec.xml
         applications/admin/sysstat/pspec.xml
