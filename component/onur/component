@@ -1832,8 +1832,6 @@ programming
         programming/tools/patchutils/pspec.xml
         desktop/kde4/kdiff3-kde4/pspec.xml
         desktop/kde/umbrello/pspec.xml
-
-    translation
         desktop/kde/ktranslator/pspec.xml
         programming/tools/translate-toolkit/pspec.xml
 
