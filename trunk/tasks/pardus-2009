@@ -165,10 +165,10 @@
   * History-Manager (/50)
 
 * E17 (H. İbrahim Güngör)
-  * bileşen adı değişecek - enlightenment -> e17 (-)
-  * base/ bileşende eksik 2 paket review edilecek (-)
+  * bileşen adı değişecek - enlightenment -> e17 (X)
+  * base/ bileşende eksik 2 paket review edilecek (+)
   * binding'ler paketlenecek (/10)
-  * base/ ve extra/ bileşenlerindeki paketlerin bağımlılıkları elden geçirilecek (/70)
+  * base/ ve extra/ bileşenlerindeki paketlerin bağımlılıkları elden geçirilecek (/90)
   * Pardus simge/tema/arkaplan uyarlanacak (/20)
   * öntanımlı gelen kısayol/pager/shelf ıvır zıvır elden geçirilecek (/40)
 
