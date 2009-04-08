@@ -767,6 +767,8 @@ hardware
         applications/virtualization/xen/pspec.xml
 
 kernel
+    debug
+        kernel/kernel-debug/pspec.xml
     default (linux, base, standard whatever)
         kernel/drivers/acerhk/pspec.xml
         kernel/drivers/acx100/pspec.xml
@@ -811,7 +813,6 @@ kernel
         kernel/drivers/virtualbox-guest-modules/pspec.xml
         kernel/drivers/virtualbox-modules/pspec.xml
         kernel/drivers/vloopback/pspec.xml
-        kernel/kernel-debug/pspec.xml
         kernel/kernel/pspec.xml
     xen
         kernel-xen/dom0/drivers/alsa-driver-dom0/pspec.xml
@@ -1452,16 +1453,12 @@ programming
 
     inspect
         programming/tools/elfutils/pspec.xml
-        programming/tools/lsof/pspec.xml
         programming/tools/ltrace/pspec.xml
         programming/tools/oprofile/pspec.xml
         programming/tools/pax-utils/pspec.xml
         programming/tools/strace/pspec.xml
         programming/tools/sysprof/pspec.xml
         programming/tools/valgrind/pspec.xml
-
-    l10n
-        desktop/kde/ktranslator/pspec.xml
 
     language
         dotnet
@@ -1802,6 +1799,7 @@ programming
             programming/languages/tcl/tcl/pspec.xml
             programming/languages/tcl/tcltk/pspec.xml
             programming/libs/tls/pspec.xml
+            programming/tools/expect/pspec.xml
 
         programming/languages/R/pspec.xml
         programming/languages/erlang/pspec.xml
@@ -1828,14 +1826,16 @@ programming
         programming/tools/ctags/pspec.xml
         programming/tools/dejagnu/pspec.xml
         programming/tools/dev86/pspec.xml
-        programming/tools/expect/pspec.xml
         programming/tools/gperf/pspec.xml
         programming/tools/help2man/pspec.xml
         programming/tools/indent/pspec.xml
         programming/tools/patchutils/pspec.xml
-        programming/tools/translate-toolkit/pspec.xml
         desktop/kde4/kdiff3-kde4/pspec.xml
         desktop/kde/umbrello/pspec.xml
+
+    translation
+        desktop/kde/ktranslator/pspec.xml
+        programming/tools/translate-toolkit/pspec.xml
 
     vcs
         programming/tools/bk-client/pspec.xml
@@ -2229,6 +2229,7 @@ util
     misc
         applications/admin/mc/pspec.xml
         applications/admin/multitail/pspec.xml
+        programming/tools/lsof/pspec.xml
         applications/util/ncdu/pspec.xml
         applications/util/pv/pspec.xml
         applications/util/screen/pspec.xml
