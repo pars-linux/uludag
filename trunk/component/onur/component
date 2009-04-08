@@ -1082,6 +1082,18 @@ multimedia
         applications/multimedia/dvgrab/pspec.xml
 
 network
+    analyzer
+        applications/network/avahi/pspec.xml
+        applications/security/nmap/pspec.xml
+        applications/network/traceroute/pspec.xml
+        applications/network/whois/pspec.xml
+        applications/network/nfdump/pspec.xml
+        applications/network/netcat/pspec.xml
+        applications/security/metasploit/pspec.xml
+        applications/security/nessus-lib/pspec.xml
+        applications/security/nessus-plugins/pspec.xml
+        applications/security/nessus/pspec.xml
+
     chat
         applications/network/amsn-kde/pspec.xml
         applications/network/amsn/pspec.xml
@@ -1108,18 +1120,6 @@ network
         desktop/kde/kvpnc/pspec.xml
 
         applications/network/ethtool/pspec.xml
-
-    discovery
-        applications/network/avahi/pspec.xml
-        applications/security/nmap/pspec.xml
-        applications/network/traceroute/pspec.xml
-        applications/network/whois/pspec.xml
-        applications/network/nfdump/pspec.xml
-        applications/network/netcat/pspec.xml
-        applications/security/metasploit/pspec.xml
-        applications/security/nessus-lib/pspec.xml
-        applications/security/nessus-plugins/pspec.xml
-        applications/security/nessus/pspec.xml
 
     download
         applications/network/aria2/pspec.xml
@@ -1176,6 +1176,7 @@ network
         applications/network/avahi-bindings/pspec.xml
         programming/libs/c-ares/pspec.xml
         programming/libs/libfwbuilder/pspec.xml
+        applications/security/libnasl/pspec.xml
 
     mail
         applications/network/alpine/pspec.xml
@@ -2155,6 +2156,13 @@ util
         applications/network/rdate/pspec.xml
         applications/util/utempter/pspec.xml
 
+    apparmor
+        applications/security/apparmor-docs/pspec.xml
+        applications/security/apparmor-parser/pspec.xml
+        applications/security/apparmor-profiles/pspec.xml
+        applications/security/apparmor-utils/pspec.xml
+        applications/security/libapparmor/pspec.xml
+
     archive
         applications/archive/cabextract/pspec.xml
         applications/archive/lrzip/pspec.xml
@@ -2194,6 +2202,7 @@ util
         applications/security/keychain/pspec.xml
         applications/security/mcrypt/pspec.xml
         applications/security/pinentry/pspec.xml
+        applications/security/dirmngr/pspec.xml
 
     gui
         desktop/kde4/krename-kde4/pspec.xml
@@ -2290,19 +2299,12 @@ x11
 
 packages that we don't know where to put
 ---------------------------------------------------
-applications/security/apparmor-docs/pspec.xml
-applications/security/apparmor-parser/pspec.xml
-applications/security/apparmor-profiles/pspec.xml
-applications/security/apparmor-utils/pspec.xml
-applications/security/libapparmor/pspec.xml
-
 applications/util/google-gadgets/pspec.xml
 desktop/gnome/beagle/pspec.xml
 applications/util/strigi/pspec.xml
 
 applications/security/clamav/pspec.xml
-applications/security/dirmngr/pspec.xml
-applications/security/libnasl/pspec.xml
+
 applications/security/nss_ldap/pspec.xml
 applications/security/pam_fprint/pspec.xml
 applications/security/pam-krb5/pspec.xml
