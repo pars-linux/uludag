@@ -127,7 +127,9 @@ class MainManager(QtGui.QWidget):
         for device in devices:
             ui.deviceList.addItem(device)
         if len(devices) == 1:
-            ui.deviceList.hide()
+            ui.groupDevice.hide()
+        else:
+            ui.groupDevice.show()
 
         ui.lineConnectionName.setText(data["name"])
         ui.labelDeviceDescription.setText(data["device_name"])
