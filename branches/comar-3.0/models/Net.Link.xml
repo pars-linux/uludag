@@ -160,7 +160,7 @@
         <method name="getRules" action_id="">
             <arg name="rules" type="as" direction="out"/>
         </method>
-        <method name="setProfile" action_id="tr.org.pardus.comar.net.stack.set">
+        <method name="setProfile" action_id="tr.org.pardus.comar.net.filter.set">
             <arg name="profile" type="s" direction="in"/>
             <arg name="save_filter" type="s" direction="in"/>
             <arg name="save_mangle" type="s" direction="in"/>
