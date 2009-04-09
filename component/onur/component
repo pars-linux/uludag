@@ -80,7 +80,6 @@ desktop
             desktop/kde4/base/kdewebdev4/pspec.xml
 
         l10n
-            (The following packages will be renamed to kde4-l10n-)
             desktop/kde4/i18n/kde4-i18n-bg/pspec.xml
             desktop/kde4/i18n/kde4-i18n-ca/pspec.xml
             desktop/kde4/i18n/kde4-i18n-csb/pspec.xml
@@ -185,7 +184,7 @@ desktop
             desktop/kde/base/kdeutils/pspec.xml
             desktop/kde/base/kdewebdev/pspec.xml
 
-        i18n
+        l10n
             desktop/kde/i18n/kde-i18n-af/pspec.xml
             desktop/kde/i18n/kde-i18n-ar/pspec.xml
             desktop/kde/i18n/kde-i18n-az/pspec.xml
