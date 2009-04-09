@@ -34,8 +34,8 @@ def loadFile(_file):
         sys.exit(1)
 
 def svnMerge(src, target):
-    # os.system("svn copy %s %s" % (src, target))
-    print "svn copy %s %s" % (src, target)
+    # os.system("svn copy %s %s" % (src.replace("/pspec.xml", ""), target))
+    print "svn copy %s %s" % (src.replace("/pspec.xml", ""), target)
 
 def parseComponentIndex(_list):
     # the all knowing tree
