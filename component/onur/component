@@ -279,6 +279,10 @@ desktop
         desktop/kde/rsibreak/pspec.xml
 
     toolkit
+        programming/libs/wxGTK/pspec.xml
+        programming/libs/fltk/pspec.xml
+        programming/libs/newt/pspec.xml
+
         qt
             programming/libs/qt4/pspec.xml
             desktop/kde4/automoc4/pspec.xml
@@ -315,11 +319,10 @@ desktop
             programming/libs/openmotif/pspec.xml
             programming/libs/lesstif/pspec.xml
 
-        programming/libs/wxGTK/pspec.xml
-        programming/libs/fltk/pspec.xml
-        programming/libs/newt/pspec.xml
-
 editor
+    applications/editors/joe/pspec.xml
+    applications/editors/ed/pspec.xml
+
     emacs
         applications/editors/emacs/cedet/pspec.xml
         applications/editors/emacs/color-theme/pspec.xml
@@ -341,9 +344,6 @@ editor
     web
         applications/editors/kompozer/pspec.xml
         applications/editors/nvu/pspec.xml
-
-    applications/editors/joe/pspec.xml
-    applications/editors/ed/pspec.xml
 
 game
     library
@@ -1395,30 +1395,31 @@ office
         applications/tex/xfig/pspec.xml
         desktop/kde/kile/pspec.xml
 
-    applications/doc/aiksaurus/pspec.xml
-    applications/doc/antiword/pspec.xml
-    applications/doc/barcode/pspec.xml
-    applications/doc/djvu/pspec.xml
-    applications/doc/dos2unix/pspec.xml
-    applications/doc/htmldoc/pspec.xml
-    applications/doc/iso-codes/pspec.xml
-    applications/doc/mftrace/pspec.xml
-    applications/doc/recode/pspec.xml
-    applications/doc/reportlab/pspec.xml
-    applications/doc/sablotron/pspec.xml
-    applications/doc/t1utils/pspec.xml
-    applications/doc/texi2html/pspec.xml
-    applications/doc/wv/pspec.xml
-    applications/doc/yodl/pspec.xml
-    applications/editors/scribus/pspec.xml
-    programming/tools/doxygen/pspec.xml
-    desktop/kde/bookreader/pspec.xml
-    desktop/kde/kbib/pspec.xml
-    desktop/kde/kchmviewer/pspec.xml
-    desktop/kde/semantik/pspec.xml
-    desktop/kde/tellico/pspec.xml
-    applications/multimedia/smile/pspec.xml
-    applications/util/noor/pspec.xml
+    misc
+        applications/doc/aiksaurus/pspec.xml
+        applications/doc/antiword/pspec.xml
+        applications/doc/barcode/pspec.xml
+        applications/doc/djvu/pspec.xml
+        applications/doc/dos2unix/pspec.xml
+        applications/doc/htmldoc/pspec.xml
+        applications/doc/iso-codes/pspec.xml
+        applications/doc/mftrace/pspec.xml
+        applications/doc/recode/pspec.xml
+        applications/doc/reportlab/pspec.xml
+        applications/doc/sablotron/pspec.xml
+        applications/doc/t1utils/pspec.xml
+        applications/doc/texi2html/pspec.xml
+        applications/doc/wv/pspec.xml
+        applications/doc/yodl/pspec.xml
+        applications/editors/scribus/pspec.xml
+        programming/tools/doxygen/pspec.xml
+        desktop/kde/bookreader/pspec.xml
+        desktop/kde/kbib/pspec.xml
+        desktop/kde/kchmviewer/pspec.xml
+        desktop/kde/semantik/pspec.xml
+        desktop/kde/tellico/pspec.xml
+        applications/multimedia/smile/pspec.xml
+        applications/util/noor/pspec.xml
 
 programming
     build
@@ -1435,6 +1436,14 @@ programming
         programming/tools/kdbg/pspec.xml
 
     environment
+        programming/environments/drscheme/pspec.xml
+        programming/environments/ipython/pspec.xml
+        programming/environments/kdevelop/pspec.xml
+        programming/environments/lazarus/pspec.xml
+        programming/environments/qdevelop/pspec.xml
+        programming/environments/qt-creator/pspec.xml
+        applications/util/PisiYap/pspec.xml
+
         eclipse
             programming/environments/eclipse/eclipse-binary/pspec.xml
             programming/environments/eclipse/eclipse-cdt-binary/pspec.xml
@@ -1452,15 +1461,15 @@ programming
             programming/environments/eric/eric-i18n-tr/pspec.xml
             programming/environments/eric/eric/pspec.xml
 
-        programming/environments/drscheme/pspec.xml
-        programming/environments/ipython/pspec.xml
-        programming/environments/kdevelop/pspec.xml
-        programming/environments/lazarus/pspec.xml
-        programming/environments/qdevelop/pspec.xml
-        programming/environments/qt-creator/pspec.xml
-        applications/util/PisiYap/pspec.xml
-
     language
+        programming/languages/R/pspec.xml
+        programming/languages/erlang/pspec.xml
+        programming/languages/falcon/pspec.xml
+        programming/languages/lua/pspec.xml
+        programming/languages/ocaml/pspec.xml
+        programming/languages/ruby/pspec.xml
+        applications/multimedia/cg/pspec.xml
+
         dotnet
             programming/languages/dotnet/gecko-sharp/pspec.xml
             programming/languages/dotnet/gmime/pspec.xml
@@ -1801,14 +1810,6 @@ programming
             programming/libs/tls/pspec.xml
             programming/tools/expect/pspec.xml
 
-        programming/languages/R/pspec.xml
-        programming/languages/erlang/pspec.xml
-        programming/languages/falcon/pspec.xml
-        programming/languages/lua/pspec.xml
-        programming/languages/ocaml/pspec.xml
-        programming/languages/ruby/pspec.xml
-        applications/multimedia/cg/pspec.xml
-
     library
         desktop/freedesktop/liblazy/pspec.xml
         programming/libs/akonadi/pspec.xml
@@ -2028,6 +2029,17 @@ science
         applications/science/robotics/stage/pspec.xml
 
 server
+    server/bind/pspec.xml
+    server/dhcp/pspec.xml
+    server/ejabberd/pspec.xml
+    server/hylafax/pspec.xml
+    server/ntp/pspec.xml
+    server/openldap/pspec.xml
+    server/samba/pspec.xml
+    server/xinetd/pspec.xml
+    server/zemberek-server/pspec.xml
+    applications/util/portmap/pspec.xml
+
     auth
         applications/network/mit-kerberos/pspec.xml
         server/freeradius/pspec.xml
@@ -2077,17 +2089,6 @@ server
         server/www/mod_python/pspec.xml
         server/www/mrtg/pspec.xml
         applications/admin/webalizer/pspec.xml
-
-    server/bind/pspec.xml
-    server/dhcp/pspec.xml
-    server/ejabberd/pspec.xml
-    server/hylafax/pspec.xml
-    server/ntp/pspec.xml
-    server/openldap/pspec.xml
-    server/samba/pspec.xml
-    server/xinetd/pspec.xml
-    server/zemberek-server/pspec.xml
-    applications/util/portmap/pspec.xml
 
 system
     auth
@@ -2351,6 +2352,12 @@ util
         applications/util/command-not-found/pspec.xml
 
 x11
+    desktop/freedesktop/xorg/xorg-font/pspec.xml
+    desktop/freedesktop/xorg/xorg-server/pspec.xml
+    desktop/freedesktop/xorg/xorg-doc/pspec.xml
+    desktop/freedesktop/xorg/xdm/pspec.xml
+    desktop/freedesktop/xorg/xinit/pspec.xml
+
     library
         desktop/freedesktop/xorg/libdrm/pspec.xml
         desktop/freedesktop/xorg/lib/libdmx/pspec.xml
@@ -2423,12 +2430,6 @@ x11
         desktop/freedesktop/zorg/pspec.xml
         applications/util/xdotool/pspec.xml
         applications/util/x11-ssh-askpass/pspec.xml
-
-    desktop/freedesktop/xorg/xorg-font/pspec.xml
-    desktop/freedesktop/xorg/xorg-server/pspec.xml
-    desktop/freedesktop/xorg/xorg-doc/pspec.xml
-    desktop/freedesktop/xorg/xdm/pspec.xml
-    desktop/freedesktop/xorg/xinit/pspec.xml
 
 Ideas
 ------------------------------------
