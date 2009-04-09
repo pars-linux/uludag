@@ -1810,6 +1810,102 @@ programming
         programming/languages/ruby/pspec.xml
         applications/multimedia/cg/pspec.xml
 
+    library
+        desktop/freedesktop/liblazy/pspec.xml
+        programming/libs/akonadi/pspec.xml
+        programming/libs/boehm-gc/pspec.xml
+        programming/libs/boost/pspec.xml
+        programming/libs/clucene/pspec.xml
+        programming/libs/cvxopt/pspec.xml
+        programming/libs/eet/pspec.xml
+        programming/libs/eina/pspec.xml
+        programming/libs/facile/pspec.xml
+        programming/libs/dsdp/pspec.xml
+        programming/libs/geoip/pspec.xml
+        programming/libs/gpgme/pspec.xml
+        programming/libs/inotify-tools/pspec.xml
+        programming/libs/lib-compat/pspec.xml
+        programming/libs/libconfig/pspec.xml
+        programming/libs/libevent/pspec.xml
+        programming/libs/libffi/pspec.xml
+        programming/libs/iksemel/pspec.xml
+        programming/libs/intel-tbb/pspec.xml
+        programming/libs/jrtplib/pspec.xml
+        programming/libs/jthread/pspec.xml
+        programming/libs/libassuan/pspec.xml
+        programming/libs/libatomic_ops/pspec.xml
+        programming/libs/libdaemon/pspec.xml
+        programming/libs/libggz/pspec.xml
+        programming/libs/libgsf/pspec.xml
+        programming/libs/libIDL/pspec.xml
+        programming/libs/libical/pspec.xml
+        programming/libs/libiodbc/pspec.xml
+        programming/libs/libjingle/pspec.xml
+        programming/libs/libksba/pspec.xml
+        programming/libs/liblo/pspec.xml
+        programming/libs/liblrdf/pspec.xml
+        programming/libs/liblzf/pspec.xml
+        programming/libs/libmal/pspec.xml
+        programming/libs/libmcrypt/pspec.xml
+        programming/libs/libmemcache/pspec.xml
+        programming/libs/libnfsidmap/pspec.xml
+        programming/libs/libnice/pspec.xml
+        programming/libs/libnotify/pspec.xml
+        programming/libs/libnova/pspec.xml
+        programming/libs/libofa/pspec.xml
+        programming/libs/libopenraw/pspec.xml
+        programming/libs/libotr/pspec.xml
+        programming/libs/libpaper/pspec.xml
+        programming/libs/libpqxx/pspec.xml
+        programming/libs/libqalculate/pspec.xml
+        programming/libs/libsigc++/pspec.xml
+        programming/libs/libsoup/pspec.xml
+        programming/libs/libspectre/pspec.xml
+        programming/libs/libstdc++/pspec.xml
+        programming/libs/libtar/pspec.xml
+        programming/libs/libtextcat/pspec.xml
+        programming/libs/libuninameslist/pspec.xml
+        programming/libs/libvncserver/pspec.xml
+        programming/libs/libwmf/pspec.xml
+        programming/libs/libwpd/pspec.xml
+        programming/libs/libwpg/pspec.xml
+        programming/libs/libwps/pspec.xml
+        programming/libs/libxklavier/pspec.xml
+        programming/libs/libxmlpp2/pspec.xml
+        programming/libs/libxmlpp/pspec.xml
+        programming/libs/libzip/pspec.xml
+        programming/libs/linbox/pspec.xml
+        programming/libs/loudmouth/pspec.xml
+        programming/libs/lpc10/pspec.xml
+        programming/libs/lxml/pspec.xml
+        programming/libs/metis/pspec.xml
+        programming/libs/mhash/pspec.xml
+        programming/libs/minixml/pspec.xml
+        programming/libs/mpfi/pspec.xml
+        programming/libs/omniORB/pspec.xml
+        programming/libs/pcre++/pspec.xml
+        programming/libs/qca2-ossl/pspec.xml
+        programming/libs/qca2/pspec.xml
+        programming/libs/qca/pspec.xml
+        programming/libs/qca-tls/pspec.xml
+        programming/libs/qedje/pspec.xml
+        programming/libs/qzion/pspec.xml
+        programming/libs/raptor/pspec.xml
+        programming/libs/rasqal/pspec.xml
+        programming/libs/redland/pspec.xml
+        programming/libs/rlog/pspec.xml
+        programming/libs/soprano/pspec.xml
+        programming/libs/stlport/pspec.xml
+        programming/libs/tolua++/pspec.xml
+        programming/libs/unixODBC/pspec.xml
+        programming/libs/tre/pspec.xml
+        programming/libs/ucl/pspec.xml
+        programming/libs/vigra/pspec.xml
+        programming/libs/xalan-c/pspec.xml
+        programming/libs/xerces-c/pspec.xml
+        programming/libs/xmlsec/pspec.xml
+        programming/libs/zziplib/pspec.xml
+
     microcontroller
         programming/microcontroller/avrdude/pspec.xml
         programming/microcontroller/avr-libc/pspec.xml
@@ -2334,105 +2430,6 @@ x11
     desktop/freedesktop/xorg/xorg-doc/pspec.xml
     desktop/freedesktop/xorg/xdm/pspec.xml
     desktop/freedesktop/xorg/xinit/pspec.xml
-
-
-packages that we don't know where to put
----------------------------------------------------
-
-desktop/freedesktop/liblazy/pspec.xml
-programming/libs/akonadi/pspec.xml
-programming/libs/boehm-gc/pspec.xml
-programming/libs/boost/pspec.xml
-programming/libs/clucene/pspec.xml
-programming/libs/cvxopt/pspec.xml
-programming/libs/eet/pspec.xml
-programming/libs/eina/pspec.xml
-programming/libs/facile/pspec.xml
-programming/libs/dsdp/pspec.xml
-programming/libs/geoip/pspec.xml
-programming/libs/gpgme/pspec.xml
-programming/libs/inotify-tools/pspec.xml
-programming/libs/lib-compat/pspec.xml
-programming/libs/libconfig/pspec.xml
-programming/libs/libevent/pspec.xml
-programming/libs/libffi/pspec.xml
-programming/libs/iksemel/pspec.xml
-programming/libs/intel-tbb/pspec.xml
-programming/libs/jrtplib/pspec.xml
-programming/libs/jthread/pspec.xml
-programming/libs/libassuan/pspec.xml
-programming/libs/libatomic_ops/pspec.xml
-programming/libs/libdaemon/pspec.xml
-programming/libs/libggz/pspec.xml
-programming/libs/libgsf/pspec.xml
-programming/libs/libIDL/pspec.xml
-programming/libs/libical/pspec.xml
-programming/libs/libiodbc/pspec.xml
-programming/libs/libjingle/pspec.xml
-programming/libs/libksba/pspec.xml
-programming/libs/liblo/pspec.xml
-programming/libs/liblrdf/pspec.xml
-programming/libs/liblzf/pspec.xml
-programming/libs/libmal/pspec.xml
-programming/libs/libmcrypt/pspec.xml
-programming/libs/libmemcache/pspec.xml
-programming/libs/libnfsidmap/pspec.xml
-programming/libs/libnice/pspec.xml
-programming/libs/libnotify/pspec.xml
-programming/libs/libnova/pspec.xml
-programming/libs/libofa/pspec.xml
-programming/libs/libopenraw/pspec.xml
-programming/libs/libotr/pspec.xml
-programming/libs/libpaper/pspec.xml
-programming/libs/libpqxx/pspec.xml
-programming/libs/libqalculate/pspec.xml
-programming/libs/libsigc++/pspec.xml
-programming/libs/libsoup/pspec.xml
-programming/libs/libspectre/pspec.xml
-programming/libs/libstdc++/pspec.xml
-programming/libs/libtar/pspec.xml
-programming/libs/libtextcat/pspec.xml
-programming/libs/libuninameslist/pspec.xml
-programming/libs/libvncserver/pspec.xml
-programming/libs/libwmf/pspec.xml
-programming/libs/libwpd/pspec.xml
-programming/libs/libwpg/pspec.xml
-programming/libs/libwps/pspec.xml
-programming/libs/libxklavier/pspec.xml
-programming/libs/libxmlpp2/pspec.xml
-programming/libs/libxmlpp/pspec.xml
-programming/libs/libzip/pspec.xml
-programming/libs/linbox/pspec.xml
-programming/libs/loudmouth/pspec.xml
-programming/libs/lpc10/pspec.xml
-programming/libs/lxml/pspec.xml
-programming/libs/metis/pspec.xml
-programming/libs/mhash/pspec.xml
-programming/libs/minixml/pspec.xml
-programming/libs/mpfi/pspec.xml
-programming/libs/omniORB/pspec.xml
-programming/libs/pcre++/pspec.xml
-programming/libs/qca2-ossl/pspec.xml
-programming/libs/qca2/pspec.xml
-programming/libs/qca/pspec.xml
-programming/libs/qca-tls/pspec.xml
-programming/libs/qedje/pspec.xml
-programming/libs/qzion/pspec.xml
-programming/libs/raptor/pspec.xml
-programming/libs/rasqal/pspec.xml
-programming/libs/redland/pspec.xml
-programming/libs/rlog/pspec.xml
-programming/libs/soprano/pspec.xml
-programming/libs/stlport/pspec.xml
-programming/libs/tolua++/pspec.xml
-programming/libs/unixODBC/pspec.xml
-programming/libs/tre/pspec.xml
-programming/libs/ucl/pspec.xml
-programming/libs/vigra/pspec.xml
-programming/libs/xalan-c/pspec.xml
-programming/libs/xerces-c/pspec.xml
-programming/libs/xmlsec/pspec.xml
-programming/libs/zziplib/pspec.xml
 
 Ideas
 ------------------------------------
