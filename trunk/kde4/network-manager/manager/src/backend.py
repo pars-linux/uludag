@@ -50,3 +50,18 @@ class NetworkIface:
     def listen(self, func):
         self.link.listenSignals("Net.Link", func)
 
+    def updateConnection(self, package, profile, data):
+        self.link.Net.Link[package].setConnection(profile,  data["device_id"])
+        self.link.Net.Link[package].setAddress(profile,     data["net_mode"],
+                                                            data["net_address"],
+                                                            data["net_mask"],
+                                                            data["net_gateway"])
+        self.link.Net.Link[package].setNameService(profile, data["namemode"],
+                                                            data["nameserver"])
+
+    def deleteConnection(self, package, profile):
+        self.link.Net.Link[package].deleteConnection(profile)
+
+    def devices(self, package):
+        return self.link.Net.Link[package].deviceList()
+

@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="data">
+  <qresource prefix="data" >
     <file>edit-delete.png</file>
     <file>edit-rename.png</file>
     <file>network-wired.png</file>
