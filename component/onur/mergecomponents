@@ -8,8 +8,7 @@ componentIndexFile = "/tmp/sil/component"
 svnSrc = "devel"
 svnTarget = "2009/devel"
 
-componentXMLTemplate = """
-<PISI>
+componentXMLTemplate = """<PISI>
   <Name>%s</Name>
   <LocalName xml:lang="en">FIXME</LocalName>
   <Summary xml:lang="en">FIXME</Summary>
@@ -78,7 +77,7 @@ def getComponentDirs(_index):
         d = ""
 
         for k in i:
-            d += "/%s" % k
+            d += "%s/" % k
 
         if d not in targetdirs:
             targetdirs.append(d)
@@ -95,14 +94,14 @@ def createDirs(_index, _path):
         if not os.path.exists(target):
             os.makedirs(target)
 
-        writeComponentData(i.lstrip("/").replace("/", "."), target)
+        writeComponentData(i.strip("/").replace("/", "."), target)
 
 
 if __name__ == "__main__":
     componentIndex = loadFile(componentIndexFile)
     packageDict = parseComponentIndex(componentIndex)
 
-    # createDirs(packageDict, "/")
+    createDirs(packageDict, "/tmp/sil/sil/")
 
 #    for i in getComponentDirs(packageDict):
 #        print i
