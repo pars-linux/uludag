@@ -99,17 +99,29 @@ def createDirs(_index, _path):
             componentname = os.path.join(root, name).replace(_path, "").replace("/", ".")
             writeComponentData(componentname, os.path.join(root, name))
 
+def getMergeDict(_index):
+    componentList = {}
+
+    for package in _index.keys():
+        d = ""
+
+        for k in _index[package]:
+            d += "%s/" % k
+
+        if d not in componentList:
+            componentList[d] = [package]
+        else:
+            componentList[d].append(package)
+
+    return componentList
 
 if __name__ == "__main__":
     componentIndex = loadFile(componentIndexFile)
     packageDict = parseComponentIndex(componentIndex)
+    mergeDict = getMergeDict(packageDict)
 
-    createDirs(packageDict, "/tmp/sil/sil/")
+    # createDirs(packageDict, "/tmp/sil/sil/")
 
-#    for i in getComponentDirs(packageDict):
-#        print i
-
-#    for i in packageDict.keys():
-#        print "%s -> %s" % (i, packageDict[i])
+    # mergePackages(mergeDict)
 
 
