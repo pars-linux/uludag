@@ -94,7 +94,10 @@ def createDirs(_index, _path):
         if not os.path.exists(target):
             os.makedirs(target)
 
-        writeComponentData(i.strip("/").replace("/", "."), target)
+    for root, dirs, files in os.walk(_path):
+        for name in dirs:
+            componentname = os.path.join(root, name).replace(_path, "").replace("/", ".")
+            writeComponentData(componentname, os.path.join(root, name))
 
 
 if __name__ == "__main__":
