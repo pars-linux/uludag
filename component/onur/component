@@ -6,6 +6,7 @@ desktop
         desktop/fonts/Charis-fonts/pspec.xml
         desktop/fonts/dejavu-fonts/pspec.xml
         desktop/fonts/Doulos-fonts/pspec.xml
+        desktop/fonts/droid-fonts/pspec.xml
         desktop/fonts/ecofont/pspec.xml
         desktop/fonts/fontforge/pspec.xml
         desktop/fonts/freefont/pspec.xml
@@ -52,6 +53,7 @@ desktop
             desktop/kde4/ksplash-pardus-kde4/pspec.xml
             desktop/kde4/PolicyKit-kde4/pspec.xml
             desktop/kde4/QtCurve-KDE4/pspec.xml
+            desktop/kde4/mplayerthumbs/pspec.xml
 
         admin
 
@@ -548,6 +550,7 @@ hardware
         applications/hardware/bluez/pspec.xml
         applications/hardware/cwiid/pspec.xml
         desktop/kde/kdebluetooth/pspec.xml
+        applications/hardware/obex-data-server/pspec.xml
 
     irda
         applications/hardware/irda-utils/pspec.xml
@@ -601,7 +604,7 @@ hardware
 
     firmware
         kernel/firmware/accessrunner-firmware/pspec.xml
-        kernel/firmware/acx100-firmware/pspec.xml
+        kernel/firmware/acx-firmware/pspec.xml
         kernel/firmware/alsa-firmware/pspec.xml
         kernel/firmware/atmel-firmware/pspec.xml
         kernel/firmware/b43-firmware/pspec.xml
@@ -622,9 +625,9 @@ hardware
     graphics
         applications/multimedia/fbgrab/pspec.xml
         applications/hardware/fbset/pspec.xml
+        applications/hardware/nvclock/pspec.xml
         applications/hardware/nvidia-settings/pspec.xml
         applications/hardware/nvidia-xconfig/pspec.xml
-        applications/hardware/smartdimmer/pspec.xml
         applications/hardware/vbetool/pspec.xml
 
     info
@@ -803,6 +806,8 @@ kernel
         kernel/drivers/qc-usb-messenger/pspec.xml
         kernel/drivers/qc-usb/pspec.xml
         kernel/drivers/r5u870/pspec.xml
+        kernel/drivers/rt2860sta/pspec.xml
+        kernel/drivers/rt2870sta/pspec.xml
         kernel/drivers/rtl8187se/pspec.xml
         kernel/drivers/sdricoh_cs/pspec.xml
         kernel/drivers/slmodem/pspec.xml
@@ -1069,6 +1074,8 @@ multimedia
         applications/multimedia/gnomad2/pspec.xml
         desktop/kde/amarok/pspec.xml
         desktop/kde/tuneroid/pspec.xml
+        desktop/kde4/frescobaldi/pspec.xml
+        applications/multimedia/rumor/pspec.xml
 
     stream
         applications/network/streamripper/pspec.xml
@@ -1254,6 +1261,7 @@ network
         applications/network/rsync/pspec.xml
         applications/network/smbldap-tools/pspec.xml
         desktop/kde/smb4k/pspec.xml
+        desktop/kde4/smb4k-kde4/pspec.xml
 
     voip
         applications/network/decibel/pspec.xml
@@ -1359,6 +1367,8 @@ office
         applications/multimedia/gv/pspec.xml
         desktop/freedesktop/poppler-bindings/pspec.xml
         desktop/freedesktop/poppler/pspec.xml
+        applications/editors/pdfedit/pspec.xml
+        applications/tex/a2ps/pspec.xml
 
     spellcheck
         applications/dictionaries/aspell/aspell-de/pspec.xml
@@ -1409,6 +1419,7 @@ office
     desktop/kde/semantik/pspec.xml
     desktop/kde/tellico/pspec.xml
     applications/multimedia/smile/pspec.xml
+    applications/util/noor/pspec.xml
 
 programming
     build
@@ -2287,9 +2298,12 @@ x11
         desktop/freedesktop/inputmethods/scim/pspec.xml
         desktop/freedesktop/inputmethods/scim-tables/pspec.xml
         desktop/freedesktop/inputmethods/skim/pspec.xml
+        desktop/freedesktop/xorg/driver/xorg-input-evdev/pspec.xml
+        desktop/freedesktop/xorg/driver/xorg-input-synaptics/pspec.xml
+        desktop/freedesktop/xorg/driver/xorg-input-void/pspec.xml
+        desktop/freedesktop/xorg/driver/xorg-video-vesa/pspec.xml
         desktop/freedesktop/synaptics/pspec.xml
-        desktop/freedesktop/xorg/xorg-input/pspec.xml
-        desktop/freedesktop/xorg/xorg-video/pspec.xml
+        desktop/freedesktop/linuxwacom/pspec.xml
 
     terminal
         desktop/freedesktop/xterm/pspec.xml
@@ -2318,6 +2332,8 @@ x11
     desktop/freedesktop/xorg/xorg-font/pspec.xml
     desktop/freedesktop/xorg/xorg-server/pspec.xml
     desktop/freedesktop/xorg/xorg-doc/pspec.xml
+    desktop/freedesktop/xorg/xdm/pspec.xml
+    desktop/freedesktop/xorg/xinit/pspec.xml
 
 
 packages that we don't know where to put
@@ -2412,6 +2428,7 @@ programming/libs/tolua++/pspec.xml
 programming/libs/unixODBC/pspec.xml
 programming/libs/tre/pspec.xml
 programming/libs/ucl/pspec.xml
+programming/libs/vigra/pspec.xml
 programming/libs/xalan-c/pspec.xml
 programming/libs/xerces-c/pspec.xml
 programming/libs/xmlsec/pspec.xml
