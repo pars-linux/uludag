@@ -17,6 +17,7 @@
   #
   # Contributor(s): Toms Baugis <toms.baugis@tietoenator.com>
   #                 Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -65,21 +66,21 @@
 
   [%# *** Dependencies, Votes, Activity, Print-version *** %]
   [% IF bug %]
-    <link rel="Show" title="Dependency Tree"
+    <link rel="Show" title="Bağımlılık Ağacı"
           href="showdependencytree.cgi?id=[% bug.bug_id %]&amp;hide_resolved=1">
     [% IF Param('webdotbase') %]
-      <link rel="Show" title="Dependency Graph"
+      <link rel="Show" title="Bağımlılık Grafiği"
             href="showdependencygraph.cgi?id=[% bug.bug_id %]">
     [% END %]
 
     [% IF bug.use_votes %]
-      <link rel="Show" title="Votes ([% bug.votes %])"
+      <link rel="Show" title="Oylar ([% bug.votes %])"
             href="votes.cgi?action=show_bug&amp;bug_id=[% bug.bug_id %]">
     [% END %]
 
-      <link rel="Show" title="[% terms.Bug %] Activity"
+      <link rel="Show" title="[% terms.Bug %] Hareketleri"
             href="show_activity.cgi?id=[% bug.bug_id %]">
-      <link rel="Show" title="Printer-Friendly Version"
+      <link rel="Show" title="Yazıcı Dostu Sürüm"
             href="show_bug.cgi?format=multiple&amp;id=[% bug.bug_id %]">
   [% END %]
 
@@ -87,18 +88,18 @@
   [%# *** Saved Searches *** %]
   [% IF user.showmybugslink %]
     [% user_login = user.login FILTER url_quote %]
-    <link rel="Saved&nbsp;Searches" title="My [% terms.Bugs %]"
+    <link rel="Kayıtlı&nbsp;Aramalar" title="İlgilendiğim [% terms.Bugs %]"
           href="[% Param('mybugstemplate').replace('%userid%', user_login) %]">
   [% END %]
 
   [% FOREACH q = user.queries %]
-    <link rel="Saved&nbsp;Searches" 
+    <link rel="Kayıtlı&nbsp;Aramalar" 
           title="[% q.name FILTER html %]"
           href="buglist.cgi?cmdtype=runnamed&amp;namedcmd=[% q.name FILTER url_quote %]">
   [% END %]
 
   [% FOREACH q = user.queries_subscribed %]
-    <link rel="Saved&nbsp;Search"
+    <link rel="Kayıtlı&nbsp;Aramalar"
           title="[% q.name FILTER html %] ([% q.user.login FILTER html %])"
           href="buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=
                  [% q.name FILTER url_quote %]&amp;sharer_id=
@@ -107,21 +108,21 @@
 
   [%# *** Bugzilla Administration Tools *** %]
   [% IF user.login %] 
-    [% '<link rel="Administration" title="Parameters"    
+    [% '<link rel="Administration" title="Parametreler"    
               href="editparams.cgi">' IF user.groups.tweakparams %]
-    [% '<link rel="Administration" title="Users"    
+    [% '<link rel="Administration" title="Kullanıcılar"    
               href="editusers.cgi">' IF user.groups.editusers %]
-    [% '<link rel="Administration" title="Products" href="editproducts.cgi">'
+    [% '<link rel="Administration" title="Ürünler" href="editproducts.cgi">'
        IF user.groups.editcomponents || user.get_products_by_permission("editcomponents").size %]
-    [% '<link rel="Administration" title="Flag Types"   
+    [% '<link rel="Administration" title="Bayrak Türleri"   
               href="editflagtypes.cgi">' IF user.groups.editcomponents %]
-    [% '<link rel="Administration" title="Groups"        
+    [% '<link rel="Administration" title="Gruplar"        
               href="editgroups.cgi">' IF user.groups.creategroups %]
-    [% '<link rel="Administration" title="Keywords"      
+    [% '<link rel="Administration" title="Anahtarlar"      
               href="editkeywords.cgi">' IF user.groups.editkeywords %]
-    [% '<link rel="Administration" title="Whining"       
+    [% '<link rel="Administration" title="Alarmlar"       
               href="editwhines.cgi">' IF user.groups.bz_canusewhines %]
-    [% '<link rel="Administration" title="Sanity Check"  
+    [% '<link rel="Administration" title="Temizlik Kontrolü"  
               href="sanitycheck.cgi">' IF user.groups.editcomponents %]
   [% END %]  
 [% END %]

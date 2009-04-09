@@ -18,6 +18,7 @@
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 Svetlana Harisova <light@rathedg.com>
   #                 Marc Schumann <wurblzap@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# Migration note: this whole file corresponds to the old %commandmenu% 
@@ -27,7 +28,7 @@
 
 <ul id="useful-links">
   <li id="links-actions">
-    <div class="label">Actions: </div>
+    <div class="label">Eylemler: </div>
       [% PROCESS "global/common-links.html.tmpl" qs_suffix = "_bottom" %]
   </li>
 
@@ -39,12 +40,12 @@
     [% print_pipe = 0 %]
     <li id="links-saved">
       <div class="label">
-        Saved Searches:
+        Kayıtlı Aramalar:
       </div>
       <ul class="links">
         [% IF user.showmybugslink %]
           [% filtered_username = user.login FILTER url_quote %]
-          <li><a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">My [% terms.Bugs %]</a></li>
+          <li><a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">İlgilendiğim [% terms.Bugs %]</a></li>
           [% print_pipe = 1 %]
         [% END %]
 
@@ -68,7 +69,7 @@
                      [% q.name FILTER url_quote %]&amp;sharer_id=
                      [% q.user.id FILTER url_quote %]"
                class="shared"
-               title="Shared by [% q.user.identity FILTER html %]"
+               title="Paylaşan: [% q.user.identity FILTER html %]"
                >[% q.name FILTER html FILTER no_break %]</a></li>
           [% print_pipe = 1 %]
         [% END %]

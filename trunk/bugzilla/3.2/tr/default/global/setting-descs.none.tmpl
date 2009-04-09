@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Shane H. W. Travis <travis@sedsystems.ca>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #
   #%]
 
@@ -19,29 +20,29 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% setting_descs = { 
-   "comment_sort_order"               => "When viewing $terms.abug, show comments in this order",
-   "csv_colsepchar"                   => "Field separator character for CSV files",
-   "display_quips"                    => "Show a quip at the top of each $terms.bug list",
-   "zoom_textareas"                   => "Zoom textareas large when in use (requires JavaScript)",
-   "newest_to_oldest"                 => "Newest to Oldest",
-   "newest_to_oldest_desc_first"      => "Newest to Oldest, but keep Description at the top",
-   "off"                              => "Off",
-   "oldest_to_newest"                 => "Oldest to Newest",
-   "on"                               => "On",
-   "per_bug_queries"                  => "Enable tags for $terms.bugs",
-   "post_bug_submit_action"           => "After changing $terms.abug",
-   "next_bug"                         => "Show next $terms.bug in my list",
-   "same_bug"                         => "Show the updated $terms.bug",
-   "standard"                         => "Classic",
-   "skin"                             => "$terms.Bugzilla's general appearance (skin)",
-   "nothing"                          => "Do Nothing",
-   "state_addselfcc"                  => "Automatically add me to the CC list of $terms.bugs I change",
-   "always"                           => "Always",
-   "never"                            => "Never",
-   "cc_unless_role"                   => "Only if I have no role on them",
-   "lang"                             => "Language used in email",
-   "quote_replies"                    => "Quote the associated comment when you click on its reply link",
-   "quoted_reply"                     => "Quote the full comment",
-   "simple_reply"                     => "Reference the comment number only",
+   "comment_sort_order"               => "$terms.AbugDat bakarken, yorumları bu sırada göster",
+   "csv_colsepchar"                   => "CSV dosyalarında alan ayracı olarak kullanılacak karakter",
+   "display_quips"                    => "Her $terms.bug listesinin başında bir nükte göster",
+   "zoom_textareas"                   => "Kullanılırken metin kutularını büyüt (JavaScript gerektirir)",
+   "newest_to_oldest"                 => "Yeniden Eskiye",
+   "newest_to_oldest_desc_first"      => "Yeniden Eskiye, ama Açıklama'yı en üstte tut",
+   "off"                              => "Kapalı",
+   "oldest_to_newest"                 => "Eskiden Yeniye",
+   "on"                               => "Açık",
+   "per_bug_queries"                  => "$terms.bugs için takıları aç",
+   "post_bug_submit_action"           => "$terms.AbugAcc değiştirdikten sonra",
+   "next_bug"                         => "Listemdeki bir sonraki $terms.bugAcc göster",
+   "same_bug"                         => "Güncellenmiş $terms.bugAcc göster",
+   "standard"                         => "Klasik",
+   "skin"                             => "$terms.Bugzilla'nın genel görünümü (deri)",
+   "nothing"                          => "Hiçbirşey Yapma",
+   "state_addselfcc"                  => "Beni otomatik olarak değiştirdiğim $terms.bugsGen haber verilecekler listesine ekle",
+   "always"                           => "Her zaman",
+   "never"                            => "Hiçbir zaman",
+   "cc_unless_role"                   => "Sadece onlarda bir rolüm yoksa",
+   "lang"                             => "Epostada kullanılan dil",
+   "quote_replies"                    => "'Yanıtla' bağlantısına tıkladığımda ilgili yorumu alıntıla",
+   "quoted_reply"                     => "Tüm yorumu alıntıla",
+   "simple_reply"                     => "Sadece yorum numarasını alıntıla",
                    } 
 %]

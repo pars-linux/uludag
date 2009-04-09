@@ -17,51 +17,52 @@
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 Svetlana Harisova <light@rathedg.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% DEFAULT qs_suffix = "" %]
 
 <ul class="links">
-  <li><a href="./">Home</a></li>
-  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
-  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+  <li><a href="./">Ana sayfa</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">Yeni</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Ara</a></li>
 
   <li class="form">
     <span class="separator">| </span>
     <form action="buglist.cgi" method="get"
         onsubmit="if (this.quicksearch.value == '')
-                  { alert('Please enter one or more search terms first.');
+                  { alert('Lütfen önce aranması için en az bir ifade girin.');
                     return false; } return true;">
     <input class="txt" type="text" id="quicksearch[% qs_suffix FILTER html %]" name="quicksearch">
-    <input class="btn" type="submit" value="Find" id="find[% qs_suffix FILTER html %]">
+    <input class="btn" type="submit" value="Bul" id="find[% qs_suffix FILTER html %]">
     [%-# Work around FF bug: keep this on one line %]</form></li>
 
-  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+  <li><span class="separator">| </span><a href="report.cgi">Raporlar</a></li>
 
   <li>
     [% IF Param('shutdownhtml') || Bugzilla.has_flags %]
       <span class="separator">| </span>
       [% IF user.id %]
         <a href="request.cgi?requester=[% user.login FILTER url_quote %]&amp;requestee=
-                 [% user.login FILTER url_quote %]&amp;do_union=1&amp;group=type&amp;action=queue">My Requests</a>
+                 [% user.login FILTER url_quote %]&amp;do_union=1&amp;group=type&amp;action=queue">İstediklerim</a>
       [% ELSE %]
-        <a href="request.cgi">Requests</a>
+        <a href="request.cgi">İsteklers</a>
       [% END %]
     [% END %]
   [%-# Work around FF bug: keep this on one line %]</li>
 
   [% IF user.id && Param('usevotes') %]
-    <li><span class="separator">| </span><a href="votes.cgi?action=show_user">My&nbsp;Votes</a></li>
+    <li><span class="separator">| </span><a href="votes.cgi?action=show_user">My&nbsp;Oylar</a></li>
   [% END %]
 
   [% IF user.login %]
-    <li><span class="separator">| </span><a href="userprefs.cgi">Preferences</a></li>
+    <li><span class="separator">| </span><a href="userprefs.cgi">Tercihler</a></li>
     [% IF user.groups.tweakparams || user.groups.editusers || user.can_bless
           || (Param('useclassification') && user.groups.editclassifications)
           || user.groups.editcomponents || user.groups.admin || user.groups.creategroups
           || user.groups.editkeywords || user.groups.bz_canusewhines
           || user.get_products_by_permission("editcomponents").size %]
-      <li><span class="separator">| </span><a href="admin.cgi">Administration</a></li>
+      <li><span class="separator">| </span><a href="admin.cgi">Yönetim</a></li>
     [% END %]
 
     [% PROCESS link_to_documentation %]
@@ -69,14 +70,12 @@
     <li>
       <span class="separator">| </span>
       [% IF user.authorizer.can_logout %]
-        <a href="relogin.cgi">Log&nbsp;out</a>
-      [% ELSE %]
-        Logged&nbsp;in&nbsp;as
+        <a href="relogin.cgi">Oturumu&nbsp;kapat</a>
       [% END %]
       [% IF sudoer %]
-        [%+ sudoer.login FILTER html %] (<b>impersonating
+        [%+ sudoer.login FILTER html %] (<b>yerine geçilen
         [%+ user.login FILTER html %]</b>
-        <a href="relogin.cgi?action=end-sudo">end session</a>)
+        <a href="relogin.cgi?action=end-sudo">oturumu kapat</a>)
       [% ELSE %]
         [%+ user.login FILTER html %]
       [% END %]
@@ -84,7 +83,7 @@
   [% ELSE %]
     [% IF Param('createemailregexp')
           && user.authorizer.user_can_create_account %]
-      <li><span class="separator">| </span><a href="createaccount.cgi">New&nbsp;Account</a></li>
+      <li><span class="separator">| </span><a href="createaccount.cgi">Yeni&nbsp;Hesap</a></li>
     [% END %]
 
     [% PROCESS link_to_documentation %]
@@ -113,7 +112,7 @@
         [% script_name = script_name _ "?GoAheadAndLogIn=1" %]
       [% END %]
         
-      <li><span class="separator">| </span><a href="[% script_name FILTER html %]">Log&nbsp;In</a></li>
+      <li><span class="separator">| </span><a href="[% script_name FILTER html %]">Oturum&nbsp;Aç</a></li>
     [% END %]
   [% END %]
 </ul>
@@ -122,7 +121,7 @@
     [% IF doc_section && Param('docs_urlbase') %]
       <li>
         <span class="separator">| </span>
-        <a href="[% docs_urlbase _ doc_section FILTER html %]" target="_blank">Help</a>
+        <a href="[% docs_urlbase _ doc_section FILTER html %]" target="_blank">Yardım</a>
       </li>
     [% END %]
 [% END %]

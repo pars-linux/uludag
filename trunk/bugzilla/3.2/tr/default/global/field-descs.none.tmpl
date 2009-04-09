@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# Remember to PROCESS rather than INCLUDE this template. %]
@@ -26,15 +27,15 @@
                    "actual_time"             => "Güncel Saatler"
                    "alias"                   => "Sembolik Ad",
                    "assigned_to"             => "Atanan",
-                   "attach_data.thedata"     => "Attachment data",
-                   "attachments.description" => "Attachment description",
-                   "attachments.filename"    => "Attachment filename",
-                   "attachments.mimetype"    => "Attachment mime type",
-                   "attachments.ispatch"     => "Attachment is patch",
-                   "attachments.isobsolete"  => "Attachment is obsolete",
-                   "attachments.isprivate"   => "Attachment is private",
-                   "attachments.isurl"       => "Attachment is a URL",
-                   "attachments.submitter"   => "Attachment creator",
+                   "attach_data.thedata"     => "Ek verisi",
+                   "attachments.description" => "Ek açıklaması",
+                   "attachments.filename"    => "Ek dosya adı",
+                   "attachments.mimetype"    => "Ek dosya türü",
+                   "attachments.ispatch"     => "Ek bir yama",
+                   "attachments.isobsolete"  => "Ek eski olarak işaretli",
+                   "attachments.isprivate"   => "Ek gizli olarak işaretli",
+                   "attachments.isurl"       => "Ek bir URL",
+                   "attachments.submitter"   => "Eki oluşturan",
                    "blocked"                 => "Engellediği",
                    "bug_file_loc"            => "URL",
                    "bug_group"               => "Grup",
@@ -42,29 +43,29 @@
                    "bug_severity"            => "Önem",
                    "bug_status"              => "Durum",
                    "changeddate"             => "Değişti",
-                   "cc"                      => "CC",
+                   "cc"                      => "Haber verilecekler",
                    "classification"          => "Sınıflandırma",
-                   "cclist_accessible"       => "CC listesi erişilebilir mi?",
-                   "commenter"               => "Commenter",
+                   "cclist_accessible"       => "Haber verilecekler listesi erişilebilir mi?",
+                   "commenter"               => "Yorum Yazan",
                    "component_id"            => "Bileşen Numarası",
                    "component"               => "Bileşen",
                    "content"                 => "Content",
-                   "creation_ts"             => "Oluşturma Zamanı",
-                   "deadline"                => "Son Teslim Tarihi",
-                   "delta_ts"                => "Değişti",
+                   "creation_ts"             => "Oluşturma zamanı",
+                   "deadline"                => "Son teslim tarihi",
+                   "delta_ts"                => "Fark zaman etiketi",
                    "dependson"               => "Bağımlı olduğu",
-                   "dup_id"                  => "Aynısı",
-                   "estimated_time"          => "Orj. Tahmin.",
+                   "dup_id"                  => "Aynısı olduğu",
+                   "estimated_time"          => "Öngörülen zaman",
                    "everconfirmed"           => "Onaylandı mı?",
-                   "flagtypes.name"          => "Flag",
-                   "keywords"                => "Anahtar Kelimeler",
-                   "longdesc"                => "Comment",
-                   "longdescs.isprivate"     => "Comment is private",
-                   "newcc"                   => "CC",
-                   "op_sys"                  => "OS",
-                   "opendate"                => "Açıldı",
-                   "owner_idle_time"         => "Time Since Assignee Touched",
-                   "percentage_complete"     => "%Tamamlandı",
+                   "flagtypes.name"          => "Bayrak",
+                   "keywords"                => "Anahtarlar",
+                   "longdesc"                => "Açıklama",
+                   "longdescs.isprivate"     => "Yorum gizli",
+                   "newcc"                   => "Haber verilecekler",
+                   "op_sys"                  => "İşletim Sistemi",
+                   "opendate"                => "Açılma tarihi",
+                   "owner_idle_time"         => "Atanan Dokunduğundan Beri Geçen Zaman",
+                   "percentage_complete"     => "Tamamlanma %",
                    "priority"                => "Öncelik",
                    "product_id"              => "Ürün Numarası",
                    "product"                 => "Ürün",
@@ -73,9 +74,9 @@
                    "rep_platform"            => "Donanım",
                    "reporter"                => "Raporlayan",
                    "reporter_accessible"     => "Raporlayan erişilebilir mi?",
-                   "requestees.login_name"   => "Flag Requestee",
+                   "requestees.login_name"   => "Bayrak İsteyen",
                    "resolution"              => "Çözüm",
-                   "setters.login_name"      => "Flag Setter",
+                   "setters.login_name"      => "Bayrak Atayan",
                    "setting"                 => "Tercih",
                    "settings"                => "Tercihler",
                    "short_desc"              => "Özet",
@@ -83,7 +84,7 @@
                    "target_milestone"        => "Hedef Mihenktaşı",
                    "version"                 => "Sürüm",
                    "votes"                   => "Oylar",
-                   "work_time"               => "Saat Çalışıldı"} %]
+                   "work_time"               => "Çalışılan Süre"} %]
 
 [%# Also include any custom fields or fields which don't have a
     Description here, by copying their Description from the
@@ -98,12 +99,12 @@
   [% END %]
 [% END %]
 
-[% field_types = { ${constants.FIELD_TYPE_UNKNOWN}       => "Belirsiz Tip",
+[% field_types = { ${constants.FIELD_TYPE_UNKNOWN}       => "Belirsiz Tür",
                    ${constants.FIELD_TYPE_FREETEXT}      => "Serbest Metin",
-                   ${constants.FIELD_TYPE_SINGLE_SELECT} => "Drop Down",
-                   ${constants.FIELD_TYPE_MULTI_SELECT}  => "Multiple-Selection Box",
-                   ${constants.FIELD_TYPE_TEXTAREA}      => "Large Text Box",
-                   ${constants.FIELD_TYPE_DATETIME}      => "Date/Time",
+                   ${constants.FIELD_TYPE_SINGLE_SELECT} => "Tekli Seçim Kutusu",
+                   ${constants.FIELD_TYPE_MULTI_SELECT}  => "Çoklu Seçim Kutusu",
+                   ${constants.FIELD_TYPE_TEXTAREA}      => "Büyük Metin Kutusu",
+                   ${constants.FIELD_TYPE_DATETIME}      => "Tarih/Zaman",
                 } %]
 
 [% status_descs = { "UNCONFIRMED" => "ONAYLANMADI",

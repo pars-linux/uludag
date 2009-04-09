@@ -13,6 +13,7 @@
   # The Initial Developer of the Original Code is Albert Ting
   #
   # Contributor(s): Albert Ting <alt@sonic.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -21,11 +22,11 @@
   #%]
 
 [% IF target == "enter_bug.cgi" %]
-  [% title = "Select Classification" %]
-  [% subheader = "Please select the classification." %]
+  [% title = "Sınıf Seç" %]
+  [% subheader = "Lütfen sınıfı seçin." %]
 [% END %]
 
-[% DEFAULT title = "Choose the classification" %]
+[% DEFAULT title = "Sınıfı seç" %]
 [% PROCESS global/header.html.tmpl %]
 
 <table>
@@ -39,7 +40,7 @@
       All</a>:
     </th>
 
-    <td valign="top">&nbsp;Show all products</td>
+    <td valign="top">&nbsp;Tüm ürünleri göster</td>
   </tr>
   <tr>
     <th colspan="2">&nbsp;</th>
