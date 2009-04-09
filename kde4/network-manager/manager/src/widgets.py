@@ -39,3 +39,6 @@ class ConnectionItemWidget(QtGui.QWidget):
         self.connect(self.ui.buttonEdit,   SIGNAL("clicked()"), parent.editConnection)
         self.connect(self.ui.buttonDelete, SIGNAL("clicked()"), parent.deleteConnection)
 
+    def mouseDoubleClickEvent(self, event):
+        self.ui.buttonEdit.animateClick(100)
+

@@ -82,6 +82,9 @@
        <property name="font">
         <font>
          <pointsize>8</pointsize>
+         <italic>true</italic>
+         <strikeout>false</strikeout>
+         <kerning>true</kerning>
         </font>
        </property>
        <property name="styleSheet">

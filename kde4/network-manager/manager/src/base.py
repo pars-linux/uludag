@@ -63,6 +63,9 @@ class MainManager(QtGui.QWidget):
         # Hide editBox when clicked Cancel
         self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.hideEditBox)
 
+        # Save changes when clicked Apply
+        self.connect(self.ui.buttonApply, SIGNAL("clicked()"), self.applyChanges)
+
         # Update service status and follow Comar for state changes
         self.getConnectionStates()
 
@@ -73,6 +76,7 @@ class MainManager(QtGui.QWidget):
         self.ui.profileList.clear()
         for connection in self.connections:
             item = QtGui.QListWidgetItem(self.ui.profileList)
+            item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
             self.widgets[connection] = ConnectionItemWidget('net-tools', connection, self, item)
             self.ui.profileList.setItemWidget(item, self.widgets[connection])
             item.setSizeHint(QSize(48,48))
@@ -86,25 +90,26 @@ class MainManager(QtGui.QWidget):
 
     def animateFinished(self):
         if self.lastAnimation == SHOW:
-            self.ui.editBox.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
             self.ui.editBox.setMaximumHeight(DEFAULT_HEIGHT)
             self.ui.profileList.setMaximumHeight(TARGET_HEIGHT)
+            self.ui.editBox.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
         elif self.lastAnimation == HIDE:
-            self.ui.profileList.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
             self.ui.profileList.setMaximumHeight(DEFAULT_HEIGHT)
             self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
+            self.ui.profileList.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
     def hideEditBox(self):
-        self.lastAnimation = HIDE
-        self.hideScrollBars()
-        self.animator.setFrameRange(self.ui.editBox.height(), TARGET_HEIGHT)
-        self.animator.start()
+        if self.lastAnimation == SHOW:
+            self.lastAnimation = HIDE
+            self.hideScrollBars()
+            self.animator.setFrameRange(self.ui.editBox.height(), TARGET_HEIGHT)
+            self.animator.start()
 
     def showEditBox(self, profile, package):
         sender = self.sender().parent()
         self.lastAnimation = SHOW
-        self.buildEditBoxFor(sender.package, sender.profile)
         self.hideScrollBars()
+        self.buildEditBoxFor(sender.package, sender.profile)
         self.animator.setFrameRange(TARGET_HEIGHT, self.baseWidget.height() - TARGET_HEIGHT)
         self.animator.start()
 
@@ -114,14 +119,85 @@ class MainManager(QtGui.QWidget):
 
     # Comar operations calls gui
     def buildEditBoxFor(self, package, profile):
-        data = self.iface.info(package, profile)
-        self.ui.lineConnectionName.setText(data["name"])
-        self.ui.labelDeviceDescription.setText(data["device_name"])
+        ui = self.ui
+        self.lastEditedPackage = package
+        self.lastEditedData = data = self.iface.info(package, profile)
+
+        devices = self.iface.devices(package)
+        for device in devices:
+            ui.deviceList.addItem(device)
+        if len(devices) == 1:
+            ui.deviceList.hide()
+
+        ui.lineConnectionName.setText(data["name"])
+        ui.labelDeviceDescription.setText(data["device_name"])
+
         if data["net_mode"] == "auto":
             self.ui.useDHCP.setChecked(True)
+            if data.has_key("net_address"):
+                self.ui.useCustomAddress.setChecked(True)
+            if data.has_key("net_gateway"):
+                self.ui.useCustomDNS.setChecked(True)
         else:
-            self.ui.useManual.setChecked(True)
-        self.ui.labelDeviceDescription.setText(data["device_name"])
+            ui.useManual.setChecked(True)
+
+        if data.has_key("net_address"):
+            ui.lineAddress.setText(data["net_address"])
+            ui.lineNetworkMask.lineEdit().setText(data["net_mask"])
+        if data.has_key("net_gateway"):
+            ui.lineGateway.setText(data["net_gateway"])
+
+        if data["namemode"] == "default":
+            ui.useDefault.setChecked(True)
+        if data["namemode"] == "auto":
+            ui.useAutomatic.setChecked(True)
+        if data["namemode"] == "custom":
+            ui.useCustom.setChecked(True)
+            ui.lineCustomDNS.setText(data["nameserver"])
+
+    def applyChanges(self):
+        ui = self.ui
+        connectionName = unicode(ui.lineConnectionName.text())
+        # Updating a profile
+        if self.lastEditedData:
+            # If profile name has been changed, delete profile first
+            if not self.lastEditedData["name"] == connectionName:
+                self.iface.deleteConnection(self.lastEditedPackage, self.lastEditedData["name"])
+        # New profile
+        self.iface.updateConnection(self.lastEditedPackage, connectionName, self.collectDataFromUI())
+        self.fillProfileList()
+        self.hideEditBox()
+
+    def collectDataFromUI(self):
+        ui = self.ui
+        data = {}
+
+        data["name"] = ui.lineConnectionName.text()
+        data["device_id"] = ui.deviceList.currentText()
+
+        data["net_mode"] = "auto"
+        data["net_address"] = ""
+        data["net_mask"] = ""
+        data["net_gateway"] = ""
+        if ui.useManual.isChecked():
+            data["net_mode"] = "manual"
+        if ui.lineAddress.isEnabled():
+            data["net_address"] = ui.lineAddress.text()
+            data["net_mask"] = ui.lineNetworkMask.currentText()
+        if ui.lineGateway.isEnabled():
+            data["net_gateway"] = ui.lineGateway.text()
+
+        data["namemode"] = "default"
+        data["nameserver"] = ""
+        if ui.useAutomatic.isChecked():
+            data["namemode"] = "auto"
+        if ui.useCustom.isChecked():
+            data["namemode"] = "custom"
+            data["nameserver"] = ui.lineCustomDNS.text()
+
+        for i,j in data.items():
+            data[i] = unicode(j)
+        return data
 
     def editConnection(self):
         sender = self.sender().parent()
