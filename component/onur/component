@@ -772,7 +772,7 @@ hardware
 kernel
     debug
         kernel/kernel-debug/pspec.xml
-    default (linux, base, standard whatever)
+    default
         kernel/drivers/acerhk/pspec.xml
         kernel/drivers/acx100/pspec.xml
         kernel/drivers/alsa-driver/pspec.xml
