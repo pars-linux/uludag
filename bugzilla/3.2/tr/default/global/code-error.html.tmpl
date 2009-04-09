@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -34,402 +35,364 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% DEFAULT title = "Internal Error" %]
+[% DEFAULT title = "İç Hata" %]
 
 [% error_message = BLOCK %]
   [% IF    error == "action_unrecognized" %]
-    [% docslinks = {'query.html' => "Searching for $terms.bugs",
-                    'query.html#list' => "$terms.Bug lists"} %]
-    I don't recognize the value (<em>[% action FILTER html %]</em>)
-    of the <em>action</em> variable.
+    [% docslinks = {'query.html' => "$terms.Bugs taranıyor",
+                    'query.html#list' => "$terms.Bug listeleri"} %]
+    <em>Action</em> (<i>eylem</i>) değişkeninin değerini (<em>[% action FILTER html %]</em>) bilmiyorum.
   
   [% ELSIF error == "attachment_already_obsolete" %]
-    Attachment #[% attach_id FILTER html %] ([% description FILTER html %]) 
-    is already obsolete.
+    Ek #[% attach_id FILTER html %] ([% description FILTER html %]) 
+    zaten eskiymiş.
 
   [% ELSIF error == "auth_invalid_email" %]
-    [% title = "Invalid Email Address" %]
-    We received an email address (<b>[% addr FILTER html %]</b>)
-    that didn't pass our syntax checking for a legal email address,
-    when trying to create or update your account.
+    [% title = "Geçersiz Eposta Adresi" %]
+    Hesabınızı oluşturmaya veya güncellemeye çalışırken aldığımız eposta adresi (<b>[% addr FILTER html %]</b>)
+    geçerli eposta adresi testlerimizden geçemedi.
     [% IF default %]
-      A legal address must contain exactly one '@',
-      and at least one '.' after the @.
+      Geçerli bir adreste sadece bir tane '@' olabilir ve '@' işaretinden sonra en az bir '.' olmalıdır.
     [% ELSE %]
       [%+ Param('emailregexpdesc') %]
     [% END %]
-    It must also not contain any of these special characters:
-    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt>, or any whitespace.
+    Ayrıca bu karakterlerden herhangi birini ve boşluk karakterini içeremez:
+    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt>.
 
   [% ELSIF error == "authres_unhandled" %]
-    The result value of [% value FILTER html %] was not handled by
-    the login code.
+    [% value FILTER html %] sonuç değeri oturum kodu tarafından dikkate alınmadı.
 
   [% ELSIF error == "bad_page_cgi_id" %]
-    [% title = "Invalid Page ID" %]
-    The ID <code>[% page_id FILTER html %]</code> is not a
-    valid page identifier.
+    [% title = "Geçersiz Sayfa Kimliği" %]
+    <code>[% page_id FILTER html %]</code> kimliği geçerli bir sayfa belirteci değil.
 
   [% ELSIF error == "bad_arg" %]
-    Bad argument <code>[% argument FILTER html %]</code> sent to
-    <code>[% function FILTER html %]</code> function.
+    <code>[% function FILTER html %]</code> fonksiyonuna
+    geçersiz parametre (<code>[% argument FILTER html %]</code>)
+    gönderildi.
 
   [% ELSIF error == "bug_error" %]
-    Trying to retrieve [% terms.bug %] [%+ bug.bug_id FILTER html %] returned 
-    the error [% bug.error FILTER html %].
+    [% terms.bug %] [%+ bug.bug_id FILTER html %] açma çabası [% bug.error FILTER html %] hatasını döndürdü.
     
   [% ELSIF error == "chart_data_not_generated" %]
-    [% admindocslinks = {'extraconfig.html' => 'Setting up Charting'} %]
+    [% admindocslinks = {'extraconfig.html' => 'Çizelge Ayarları'} %]
     [% IF product %]
-      Charts for the <em>[% product FILTER html %]</em> product are not
-      available yet because no charting data has been collected for it since it
-      was created.
+      <em>[% product FILTER html %]</em> ürünü çizelgeleri, ürün oluşturulduğundan beri çizelge yapılabilecek herhangi bir veri toplanamadığı için henüz hazır değil.
     [% ELSE %]
-      No charting data has been collected yet.
+      Henüz hiç çizelge verisi toplanmadı.
     [% END %]
-    Please wait a day and try again.
-    If you're seeing this message after a day, then you should contact
+    Lütfen bir gün bekleyip sonra tekrar deneyin.
+    Eğer bu mesajı o bir günden sonra aldıysanız, 
     <a href="mailto:[% Param('maintainer') %]">[% Param('maintainer') %]</a>
-    and reference this error.
+    ile iletişime geçip bu hatayı bildirin.
 
   [% ELSIF error == "chart_datafile_corrupt" %]
-    The chart data file [% file FILTER html %] is corrupt.
+    Çizelge veri dosyası [% file FILTER html %] bozuk.
         
   [% ELSIF error == "chart_dir_nonexistent" %]
-    One of the directories <tt>[% dir FILTER html %]</tt> and 
-    <tt>[% graph_dir FILTER html %]</tt> does not exist.
+    Dizinlerden biri <tt>[% dir FILTER html %]</tt> ve
+    <tt>[% graph_dir FILTER html %]</tt> yok.
   
   [% ELSIF error == "chart_file_open_fail" %]
-    Unable to open the chart datafile <tt>[% filename FILTER html %]</tt>.
+    Çizelge veri dosyası <tt>[% filename FILTER html %]</tt> açılamadı.
   
   [% ELSIF error == "chart_lines_not_installed" %]
-    [% admindocslinks = {'installation.html#install-perlmodules' => 'Installing Perl modules necessary for Charting'} %]
-    Charts will not work without the Chart::Lines Perl module being installed.
-    Run checksetup.pl for installation instructions.
+    [% admindocslinks = {'installation.html#install-perlmodules' => 'Çizelgeler için gerekli Perl bileşenlerinin yüklenmesi'} %]
+    Chart::Lines Perl bileşeni yüklenmeden çizelgeler oluşturulamaz.
+    Kurulum yönergeleri için checksetup.pl dosyasını çalıştırın.
 
   [% ELSIF error == "column_not_null_without_default" %]
-    Failed adding the column [% name FILTER html %]:
-    You cannot add a NOT NULL column with no default to an existing table
-    unless you specify something for the <code>$init_value</code> argument.
+    [% name FILTER html %] sütunu eklenemedi:
+    <code>$init_value</code> 
+    parametresine bir değer atamadan, öntanımlı bir değer belirtmeksizin varolan bir tabloya NOT NULL (boş değil) işaretli bir sütun ekleyemezsiniz.
 
   [% ELSIF error == "column_not_null_no_default_alter" %]
-    You cannot alter the [% name FILTER html %] column to be NOT NULL 
-    without specifying a default or something for $set_nulls_to, because
-    there are NULL values currently in it.
+    [% name FILTER html %] sütununu varsayılan bir değer belirtmeden veya $set_null_to alanına bir değer girmeden NOT NULL (BOŞ OLAMAZ) işaretleyemezsiniz çünkü şu anda bu sütunda NULL (BOŞ) olan hücreler var.
 
   [% ELSIF error == "db_rename_conflict" %]
-    Name conflict: Cannot rename [% old FILTER html %] to
-    [% new FILTER html %] because [% new FILTER html %] already exists.
+    İsim çakışması: [% old FILTER html %] ismini [% new FILTER html %] olarak değiştiremezsiniz çünkü [% new FILTER html %] zaten var.
 
   [% ELSIF error == "cookies_need_value" %]
-    Every cookie must have a value.
+    Her çerezin bir değeri olmalıdır.
 
   [% ELSIF error == "env_no_email" %]
-    [% terms.Bugzilla %] did not receive an email address from the 
-    environment.
+    [% terms.Bugzilla %] çevreden bir eposta adresi alamadı.
     [% IF Param("auth_env_email") %]
-      This means that the '[% Param("auth_env_email") FILTER html %]'
-      environment variable was empty or did not exist.
+      Bu, '[% Param("auth_env_email") FILTER html %]' çevre değişkeninin ya boş olduğu ya da olmadığı anlamına gelir.
     [% ELSE %]
-      You need to set the "auth_env_email" parameter to the name of
-      the environment variable that will contain the user's email
-      address.
+      "auth_env_email" parametresine kullanıcının eposta adresini içerecek olan çevre değişkeninin adını yazmalısınız.
     [% END %]
 
   [% ELSIF error == "extension_invalid" %]
-    An error occurred processing hook [% name FILTER html %] in
-    extension [% extension FILTER html %]: [% errstr FILTER html %]
+    [% extension FILTER html %] eklentisindeki [% name FILTER html %] kancası işlenirken bir hata oluştu:
+    [% errstr FILTER html %]
 
   [% ELSIF error == "extern_id_conflict" %]
-    The external ID '[% extern_id FILTER html %]' already exists
-    in the database for '[% username FILTER html %]', but your
-    account source says that '[% extern_user FILTER html %]' has that ID.
+    Dış kimlik '[% extern_id FILTER html %]' veritabanında '[% username FILTER html %]' için kullanılmış fakat hesabınızın kaynağı bu kimliğin sahibini '[% extern_user FILTER html %]' olarak raporluyor.
 
   [% ELSIF error == "field_type_mismatch" %]
-    Cannot seem to handle <code>[% field FILTER html %]</code>
-    and <code>[% type FILTER html %]</code> together.
+    <code>[% field FILTER html %]</code> ve <code>[% type FILTER html %]</code>; ikisiyle birden başa çıkamıyorum.
 
   [% ELSIF error == "field_not_custom" %]
     '[% field.description FILTER html %]' ([% field.name FILTER html %])
-    is not a custom field.
+    özel oluşturulmuş bir alan değil.
 
   [% ELSIF error == "gd_not_installed" %]
-    [% admindocslinks = {'installation.html#install-perlmodules' => 'Installing Perl modules necessary for Charting'} %]
-    Charts will not work without the GD Perl module being installed.
-    Run checksetup.pl for installation instructions.
+    [% admindocslinks = {'installation.html#install-perlmodules' => 'Çizelgeler için gerekli Perl bileşenlerinin yüklenmesi'} %]
+    Çizelgeler GD Perl bileşeni yüklenmeden çalışmaz. Kurulum yönergeleri için checksetup.pl'yi çalıştırın.
 
   [% ELSIF error == "illegal_content_type_method" %]
-    Your form submission got corrupted somehow.  The <em>content
-    method</em> field, which specifies how the content type gets determined,
-    should have been either <em>autodetect</em>, <em>list</em>,
-    or <em>manual</em>, but was instead
-    <em>[% contenttypemethod FILTER html %]</em>.
+    Gönderdiğiniz form bir şekilde bozuldu. İçerik türünün nasıl belirlendiğini belirten <em>içerik yöntemi</em> 
+    alanı <em>autodetect</em>, <em>list</em>, veya <em>manual</em> olmalıydı fakat
+    <em>[% contenttypemethod FILTER html %]</em> olarak geldi.
 
   [% ELSIF error == "illegal_field" %]
-    A legal [% field FILTER html %] was not set.
+    Geçerli bir [% field FILTER html %] atanmış değildi.
 
   [% ELSIF error == "inactive_group" %]
-    Attempted to add [% terms.bug %] to the '[% name FILTER html %]'
-    group, which is not used for [% terms.bugs %].
+    [% terms.Bugs %] için kullanılmayan '[% name FILTER html %]' grubuna [% terms.bug %] eklemeye çalıştınız.
 
   [% ELSIF error == "invalid_attach_id_to_obsolete" %]
-     The attachment number of one of the attachments you wanted to obsolete,
-     [% attach_id FILTER html %], is invalid.
+     'Eskidi' olarak işaretlemeye çalıştığınız eklerin bir tanesinin ek numarası ([% attach_id FILTER html %]) geçersiz.
           
   [% ELSIF error == "invalid_column_name_cookie" %]
-    [% title = "Invalid Column Name" %]
-     The custom sort order specified in your cookie contains an invalid
-     column name <em>[% fragment FILTER html %]</em>. 
-     The cookie has been cleared.
+    [% title = "Geçersiz Sütun Adı" %]
+     Tarayıcınızda kayıtlı çerezde belirtilen özelleştirilmiş sıralama geçersiz bir sütun adı içeriyor (<em>[% fragment FILTER html %]</em>). Çerez bilgisayarınızdan temizlendi.
          
   [% ELSIF error == "invalid_column_name_form" %]
-    [% title = "Invalid Column Name" %]
-     The custom sort order specified in your form submission contains an
-     invalid column name <em>[% fragment FILTER html %]</em>.
+    [% title = "Geçersiz Sütun Adı" %]
+     Gönderdiğiniz formda belirtilen özelleştirilmiş sıralama geçersiz bir sütun adı içeriyor (<em>[% fragment FILTER html %]</em>).
 
   [% ELSIF error == "invalid_customfield_type" %]
-    [% title = "Invalid Field Type" %]
+    [% title = "Geçersiz Alan Türü" %]
     The type <em>[% type FILTER html %]</em> is not a valid field type.
 
   [% ELSIF error == "invalid_dimensions" %]
-    [% title = "Invalid Dimensions" %]
-    The width or height specified is not a positive integer.
+    [% title = "Boyutlar Geçersiz" %]
+    Belirtilen genişlik veya yükseklik pozitif bir tamsayı değil.
 
   [% ELSIF error == "invalid_flag_association" %]
-    [% title = "Invalid Flag Association" %]
-    Some flags do not belong to
+    [% title = "Geçersiz Bayrak İlişkilendirmesi" %]
+    Bazı bayraklar Some flags do not belong to
     [% IF attach_id %]
-      attachment [% attach_id FILTER html %].
+      [% attach_id FILTER html %] ekine
     [% ELSE %]
-      [%+ terms.bug %] [%+ bug_id FILTER html %].
+      [%+ bug_id FILTER html %] [%+ terms.bugDat %] 
     [% END %]
+    ait değil.
 
   [% ELSIF error == "invalid_series_id" %]
-    [% title = "Invalid Series" %]
-    The series_id [% series_id FILTER html %] is not valid. It may be that
-    this series has been deleted.
+    [% title = "Geçersiz Seri" %]
+    series_id [% series_id FILTER html %] geçerli değil. Bu seri silinmiş olabilir.
 
   [% ELSIF error == "invalid_webservergroup" %]
     There is no such group: [% group FILTER html %]. Check your $webservergroup
     setting in [% constants.bz_locations.localconfig FILTER html %].
 
   [% ELSIF error == "mismatched_bug_ids_on_obsolete" %]
-    Attachment [% attach_id FILTER html %] ([% description FILTER html %]) 
-    is attached to [% terms.bug %] [%+ attach_bug_id FILTER html %], 
-    but you tried to flag it as obsolete while creating a new attachment to 
-    [% terms.bug %] [%+ my_bug_id FILTER html %].
+    Ek [% attach_id FILTER html %] ([% description FILTER html %]) 
+    [%+ attach_bug_id FILTER html %] numaralı [% terms.bugDat %] ekli, 
+    fakat siz [%+ my_bug_id FILTER html %] numaralı [% terms.bugDat %] yeni bir ek oluştururken onu eski olarak işaretlemeye çalıştınız.
 
   [% ELSIF error == "flags_not_available" %]
-    [% title = "Flag Editing not Allowed" %]
+    [% title = "Bayrak Değiştirmeye İzin Yok" %]
     [% IF type == "b" %]
-      Flags cannot be set or changed when
-      changing several [% terms.bugs %] at once.
+      Bir kerede birden fazla [% terms.bugLoc %] değişiklik yaparken bayrakları değiştiremezsiniz.
     [% ELSE %]
-      References to existing flags when creating
-      a new attachment are invalid.
+      Yeni bir ek oluştururken varolan bayraklara referanslar geçersizdir.
     [% END %] 
 
   [% ELSIF error == "flag_requestee_disabled" %]
-    [% title = "Flag not Requestable from Specific Person" %]
-    You can't ask a specific person for
-    <em>[% type.name FILTER html %]</em>.
+    [% title = "Bayrak Belirli Bir Kişiden İstenemez" %]
+    <em>[% type.name FILTER html %]</em>
+    belirli bir kişiden istenemez.
   
   [% ELSIF error == "flag_status_invalid" %]
-    The flag status <em>[% status FILTER html %]</em>
+    Bayrak 
     [% IF id %]
-      for flag ID #[% id FILTER html %]
+      kimliği #[% id FILTER html %] için bayrak
     [% END %]
-    is invalid.
+    durumu (<em>[% status FILTER html %]</em>)
+    geçersiz.
 
   [% ELSIF error == "flag_type_inactive" %]
-    [% title = "Inactive Flag Type" %]
-    The flag type [% type FILTER html %] is inactive and cannot be used
-    to create new flags.
+    [% title = "Etkin Olmayan Bayrak Türü" %]
+    Bayrak türü [% type FILTER html %] etkin değil ve yeni bayraklar oluşturmak için kullanılamaz.
 
   [% ELSIF error == "flag_type_nonexistent" %]
-    There is no flag type with the ID <em>[% id FILTER html %]</em>.
+    <em>[% id FILTER html %]</em> kimliğini taşıyan bir bayrak türü yok.
 
   [% ELSIF error == "flag_type_target_type_invalid" %]
-    The target type was neither <em>[% terms.bug %]</em> nor <em>attachment</em>
-    but rather <em>[% target_type FILTER html %]</em>.
+    Hedef türü ne <em>[% terms.bug %]</em> ne de <em>ek</em> idi,
+    onun yerine <em>[% target_type FILTER html %]</em>
+    olarak atanmıştı.
   
   [% ELSIF error == "invalid_field_name" %]
-    Can't use [% field FILTER html %] as a field name.
+    [% field FILTER html %] bir alan adı olarak kullanılamaz.
 
   [% ELSIF error == "invalid_keyword_id" %]
-    The keyword ID <em>[% id FILTER html %]</em> couldn't be
-    found.
+    Anahtar kimliği <em>[% id FILTER html %]</em> 
+    bulunamadı.
 
   [% ELSIF error == "invalid_user" %]
-    [% title = "Invalid User" %]
-    There is no user account
+    [% title = "Geçersiz Kullanıcı" %]
     [% IF user_id %]
-      with ID <em>[% user_id FILTER html %]</em>.
+      Kimliği <em>[% user_id FILTER html %]</em>
     [% ELSIF user_login %]
-      with login name <em>[% user_login FILTER html %]</em>.
+      Oturum açma adı <em>[% user_login FILTER html %]</em>
     [% ELSE %]
-      given.
+      Verilmiş 
     [% END %]
+    olan kullanıcı yok.
 
   [% ELSIF error == "ldap_bind_failed" %]
-    Failed to bind to the LDAP server. The error message was: 
+    LDAP sunucusuna bağlantı sabitlenemedi. Hata mesajı:
     <code>[% errstr FILTER html %]</code>
 
   [% ELSIF error == "ldap_cannot_retreive_attr" %]
-    The specified LDAP attribute [% attr FILTER html %] was not found.
+    Belirtilen LDAP özniteliği ([% attr FILTER html %]) bulunamadı.
 
   [% ELSIF error == "ldap_connect_failed" %]
-    Could not connect to the LDAP server(s) <code>[% server FILTER html %]</code>.
+    LDAP sunucusuna (<code>[% server FILTER html %]</code>) bağlanılamadı.
 
   [% ELSIF error == "ldap_start_tls_failed" %]
-    Could not start TLS with LDAP server: <code>[% error FILTER html %]</code>.
+    LDAP sunucusuyla TLS başlatılamadı: <code>[% error FILTER html %]</code>.
 
   [% ELSIF error == "ldap_search_error" %]
-    An error occurred while trying to search LDAP for 
-    &quot;[% username FILTER html %]&quot;: 
+    LDAP'de &quot;[% username FILTER html %]&quot; aranırken bir hata oluştu: 
    <code>[% errstr FILTER html %]</code>
 
   [% ELSIF error == "ldap_server_not_defined" %]
-    The LDAP server for authentication has not been defined.
+    Kimlik denetimi için kullanılacak LDAP sunucusu tanımlanmamış.
 
   [% ELSIF error == "mail_send_error" %]
-    There was an error sending mail from '[% mail.header('From') FILTER html %]'
-    to '[% mail.header('To') FILTER html %]':
+    '[% mail.header('From') FILTER html %]' adresinden
+    '[% mail.header('To') FILTER html %]' adresine eposta gönderilemedi:
     [% msg FILTER html %]
 
   [% ELSIF error == "missing_bug_id" %]
-    No [% terms.bug %] ID was given.
+    [% terms.Bug %] kimliği verilmedi.
     
   [% ELSIF error == "missing_series_id" %]
-    Having inserted a series into the database, no series_id was returned for
-    it. Series: [% series.category FILTER html %] / 
+    Veritabanına bir seri girildikten sonra, series_id dönmedi.
+    Seri: [% series.category FILTER html %] / 
     [%+ series.subcategory FILTER html %] / 
     [%+ series.name FILTER html %].
     
   [% ELSIF error == "need_quipid" %]
-    A valid quipid is needed.
+    Geçerli bir nükte kimliği gerekiyor.
 
   [% ELSIF error == "no_manual_moved" %]
-    You cannot set the resolution of [% terms.abug %] to MOVED without
-    moving the [% terms.bug %].
+    [% terms.BugAcc %] taşımadan durumunu TAŞINDI olarak değiştiremezsiniz.
 
   [% ELSIF error == "param_must_be_numeric" %]
-    [% title = "Invalid Parameter" %]
-    Invalid parameter passed to [% function FILTER html %].
-    It must be numeric.
+    [% title = "Geçersiz Parametre" %]
+    [% function FILTER html %] fonksiyonuna geçersiz parametre geldi.
+    Sayısal olmalı.
 
   [% ELSIF error == "param_required" %]
-    [% title = "Missing Parameter" %]
-    The function <code>[% function FILTER html %]</code> requires
-    a <code>[% param FILTER html %]</code> argument, and that
-    argument was not set.
+    [% title = "Kayıp Parametre" %]
+    <code>[% function FILTER html %]</code> fonksiyonu
+    bir <code>[% param FILTER html %]</code> parametresi gerektiriyor fakat o parametre gelmedi.
 
   [% ELSIF error == "protection_violation" %]
-    The function <code>[% function FILTER html %]</code> was called
-
-    [% IF argument %]
-        with the argument <code>[% argument FILTER html %]</code>
-    [% END %]
-
-    from
-   
+    Paketin dışından
     [% IF caller %]
-        <code>[%+ caller FILTER html %]</code>, which is
+        <code>[%+ caller FILTER html %]</code> tarafından 
     [% END %]
-
-    outside the package. This function may only be called from
-    a subclass of <code>[% superclass FILTER html %]</code>.
+    <code>[% function FILTER html %]</code> fonksiyonu 
+    [% IF argument %]
+        <code>[% argument FILTER html %]</code> parametresiyle
+    [% END %]
+    çağırıldı. Bu fonksiyon sadece 
+    <code>[% superclass FILTER html %]</code> sınıfının altsınıfları tarafından çağrılabilir.
 
   [% ELSIF error == "radius_preparation_error" %]
-    An error occurred while preparing for a RADIUS authentication request:
+    RADIUS kimlik doğrulama isteği hazırlanırken bir hata oluştu:
     <code>[% errstr FILTER html %]</code>.
 
   [% ELSIF error == "unknown_comparison_type" %]
-    Specified comparison type is not supported.
+    Belirtilen karşılaştırma türü desteklenmiyor.
 
   [% ELSIF error == "request_queue_group_invalid" %]
-    The group field <em>[% group FILTER html %]</em> is invalid.
+    <em>[% group FILTER html %]</em> grup alanı geçersiz.
 
   [% ELSIF error == "report_axis_invalid" %]
-    <em>[% val FILTER html %]</em> is not a valid value for 
-    [%+ IF    fld == "x" %]the horizontal axis
-    [%+ ELSIF fld == "y" %]the vertical axis
-    [%+ ELSIF fld == "z" %]the multiple tables/images
-    [%+ ELSE %]a report axis[% END %] field.
+    <em>[% val FILTER html %]</em> 
+    [%+ IF    fld == "x" %]yatay eksen 
+    [%+ ELSIF fld == "y" %]dikey eksen 
+    [%+ ELSIF fld == "z" %]birden fazla tablo veya resim 
+    [%+ ELSE %]bir raporlama ekseni[% END %] alanı olarak 
+    geçerli bir değer değil.
 
   [% ELSIF error == "setting_info_invalid" %]
-    To create a new setting, you must supply a setting name, a list of 
-    value/sortindex pairs, and the devault value.
+    Yeni bir ayar oluştururken bir ayar adı, değer/sıralama endeksi çiftleri ve öntanımlı değer belirtmelisiniz.
 
   [% ELSIF error == "setting_name_invalid" %]
-    The setting name <em>[% name FILTER html %]</em> is not a valid
-    option. Setting names must begin with a letter, and contain only
-    letters, digits, or the symbols '_', '-', '.', or ':'.
+    Ayar adı <em>[% name FILTER html %]</em> 
+    geçerli bir seçenek değil. Ayar adları bir harfle başlamalıdır ve sadece harf, sayı ve 
+    '_', '-', '.', ve ':' işaretlerini içerebilir.
 
   [% ELSIF error == "setting_subclass_invalid" %]
-    There is no such Setting subclass as
-    <code>[% subclass FILTER html %]</code>.
+    <code>[% subclass FILTER html %]</code>
+    diye bir Ayar alt sınıfı yok.
 
   [% ELSIF error == "setting_value_invalid" %]
-    The value "<code>[% value FILTER html %]</code>" is not in the list of
-    legal values for the <em>[% name FILTER html %]</em> setting.
+    "<code>[% value FILTER html %]</code>" değeri, <em>[% name FILTER html %]</em> ayarı için geçerli bir değer değil.
 
   [% ELSIF error == "soap_not_installed" %]
-    [% admindocslinks = {'installation.html#install-perlmodules' => 'Installing Perl modules'} %]
-    The XMLRPC interface will not work without the SOAP::Lite Perl module being
-    installed.
-    Run checksetup.pl for installation instructions.
+    [% admindocslinks = {'installation.html#install-perlmodules' => 'Perl bileşenlerini yüklemek'} %]
+    XMLRPC arayüzü SOAP::Lite Perl bileşeni yüklü olmadan çalışmaz.
+    Kurulum yönergeleri için checksetup.pl'yi çalıştırın.
 
   [% ELSIF error == "token_generation_error" %]
-    Something is seriously wrong with the token generation system.
+    Bilet oluşturma sisteminde çok ciddi bir terslik var.
 
   [% ELSIF error == "template_error" %]
     [% template_error_msg FILTER html %]
 
   [% ELSIF error == "template_invalid" %]
-    Template with invalid file name found in hook call: [% name FILTER html %].
+    Kanca çağrısında geçersiz dosya adı olan bir şablon bulundu: [% name FILTER html %].
 
   [% ELSIF error == "unable_to_retrieve_password" %]
-     I was unable to retrieve your old password from the database.
+     Veritabanından eski parolanızı getiremiyorum.
 
   [% ELSIF error == "undefined_field" %]
-    Form field [% field FILTER html %] was not defined.
+    [% field FILTER html %] form alanı tanımlı değil.
     
   [% ELSIF error == "unknown_action" %]
     [% IF action %]
-       Unknown action [% action FILTER html %]!
+       [% action FILTER html %] eylemi bilinmiyor!
     [% ELSE %]
-       I could not figure out what you wanted to do.
+       Ne yapmak istediğinizi anlayamadım.
     [% END %]
 
   [% ELSIF error == "usage_mode_invalid" %]
-    '[% invalid_usage_mode FILTER html %]' is not a valid usage mode.
+    '[% invalid_usage_mode FILTER html %]' geçerli bir kullanım kipi değil.
 
   [% ELSIF error == "must_be_patch" %]
-    [% title = "Attachment Must Be Patch" %]
-    Attachment #[% attach_id FILTER html %] must be a patch.
+    [% title = "Ek Yama Olmalı" %]
+    #[% attach_id FILTER html %] eki bir yama olmalı.
 
   [% ELSIF error == "not_in_transaction" %]
-    Attempted to end transaction without starting one first.
+    Aktarım (transaction) başlatmadan bitirmeye çalışıldı.
 
   [% ELSIF error == "comma_operator_deprecated" %]
-    [% title = "SQL query generator internal error" %]
-    There is an internal error in the SQL query generation code,
-    creating queries with implicit JOIN.
+    [% title = "SQL sorgu oluşturucusunda iç hata" %]
+    SQL sorgusu oluşturan kodda bir hata bulunuyor. Sorgular örtük (implicit) JOIN ile oluşturulacak.
 
   [% ELSIF error == "invalid_post_bug_submit_action" %]
-    Invalid setting for post_bug_submit_action
+    post_bug_submit_action ayarı hatalı.
 
   [% ELSE %]
     [%# Try to find hooked error messages %]
     [% error_message = Hook.process("errors") %]
     [% IF NOT error_message %]
-      [% title = "Internal error" %]
-      An internal error has occurred, but [% terms.Bugzilla %] doesn't know
-      what <code>[% error FILTER html %]</code> means.
+      [% title = "İç hata" %]
+      Bir iç hata oluştu, fakat [% terms.Bugzilla %] 
+      <code>[% error FILTER html %]</code> ne demek bilmiyor.
 
-      If you are a [% terms.Bugzilla %] end-user seeing this message, please save
-      this page and send it to [% Param('maintainer') %].
+      Eğer siz bir [% terms.Bugzilla %] son kullanıcısı iseniz, lütfen bu sayfayı kaydedin ve ilgili kişiye ([% Param('maintainer') %]) gönderin.
     [% ELSE %]
       [% error_message FILTER none %]
     [% END %]
@@ -458,9 +421,8 @@
 
 <tt>
   <p>
-    [% terms.Bugzilla %] has suffered an internal error. Please save this page and send
-    it to [% Param("maintainer") %] with details of what you were doing at
-    the time this message appeared.
+    [% terms.Bugzilla %] iç bir hata yaşadı. Lütfen bu sayfayı kaydedin ve 
+    [% Param("maintainer") %] adresine bu mesaj çıktığında neler yaptığınıza dair detayları da anlatarak gönderin.
   </p>
   <script type="text/javascript"> <!--
     document.write("<p>URL: " + 

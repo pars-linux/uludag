@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -36,14 +37,11 @@
   [% IF field == "data" && cgi.param("data") %]
     <div class="box">
       <p>
-        We were unable to store the file you uploaded because of incomplete information
-        in the form you just submitted. Because we are unable to retain the file between
-        form submissions, you must re-attach the file in addition to completing the
-        remaining missing information above.
+        Gönderdiğiniz formdaki yetersiz bilgi nedeniyle yüklediğiniz dosyayı depolamayı başaramadık. Form gönderileri arasında dosyayı saklayamadığımız için, yukarıdaki eksik bilgiyi de tamamlayarak dosyayı yeniden eklemelisiniz.
       </p>
       <p>
-        Please re-attach the file <b>[% cgi.param(field) FILTER html %]</b> in
-        the field below:
+        Lütfen dosyayı <b>[% cgi.param(field) FILTER html %]</b> 
+        aşağıdaki alanda yeniden ekleyin:
       </p>
       <p>
         <input type="file" id="data" name="data" size="50">
