@@ -17,6 +17,7 @@
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -42,477 +43,441 @@
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
-[% DEFAULT title = "Error" %]
+[% DEFAULT title = "Hata" %]
 
 [% error_message = BLOCK %]
   [% IF    error == "account_creation_disabled" %]
-    [% title = "Account Creation Disabled" %]
-    User account creation has been disabled.
+    [% title = "Hesap Oluşturma Kapalı" %]
+    Kullanıcı hesabı oluşturma işlemine izin verilmiyor.
     <hr>
-    New accounts must be created by an administrator. The
-    maintainer is [% Param("maintainer") %].
+    Yeni hesaplar bir yönetici tarafından oluşturulmalı. Bakımcı: [% Param("maintainer") %].
 
   [% ELSIF error == "account_creation_restricted" %]
-    [% title = "Account Creation Restricted" %]
-    User account creation has been restricted.
+    [% title = "Hesap Oluşturma Kısıtlanmış" %]
+    Kullanıcı hesabı oluşturma işlemi kısıtlanmış durumda.
     <hr>
-    Contact your administrator or the maintainer
-    ([% Param("maintainer") %]) for information about
-    creating an account.
+    Yeni bir hesap oluşturma hakkında bilgi almak için yöneticinizle veya bakımcıyla ([% Param("maintainer") %]) iletişim kurun.
 
   [% ELSIF error == "account_disabled" %]
-    [% title = "Account Disabled" %]
+    [% title = "Hesap Kapalı" %]
     [% disabled_reason FILTER none %]
     <hr>
-    If you believe your account should be restored, please
-    send email to [% Param("maintainer") %] explaining why.
+    Hesabınızın tekrar açılması gerektiğini düşünüyorsanız, lütfen [% Param("maintainer") %] eposta adresine nedenini açıklayan bir eposta gönderin.
 
   [% ELSIF error == "account_exists" %]
-    [% title = "Account Already Exists" %]
-    There is already an account with
+    [% title = "Hesap Zaten Var" %]
     [% IF email %]
-      the login name [% email FILTER html %].
+      [% email FILTER html %] oturum açma adıyla
     [% ELSE %]
-      that login name.
+      O oturum açma adıyla
     [% END %]
+    zaten bir hesap var.
 
   [% ELSIF error == "alias_has_comma_or_space" %]
-    [% title = "Invalid Characters In Alias" %]
-    The alias you entered, <em>[% alias FILTER html %]</em>,
-    contains one or more commas or spaces.  Aliases cannot contain
-    commas or spaces because those characters are used to separate
-    aliases from each other in lists.  Please choose an alias
-    that does not contain commas and spaces.
+    [% title = "İsimde Geçersiz Karakterler" %]
+    Girdiğiniz isim (<em>[% alias FILTER html %]</em>)
+    bir veya daha fazla virgül veya boşluk karakteri içeriyor. Takma adlar bu karakterleri içeremez çünkü o karakterler listelerde takma adları birbirinden ayırmak için kullanılıyor. Lütfen virgül ve boşluk içermeyen bir takma ad seçin.
 
   [% ELSIF error == "alias_in_use" %]
-    [% title = "Alias In Use" %]
-    [% terms.Bug %] [%+ bug_id FILTER bug_link(bug_id) FILTER none %]
-    has already taken the alias <em>[% alias FILTER html %]</em>.
-    Please choose another one.
+    [% title = "İsim Kullanımda" %]
+    <em>[% alias FILTER html %]</em> ismi zaten [%+ bug_id FILTER bug_link(bug_id) FILTER none %] numaralı [% terms.bugDat %] atanmış durumda. Lütfen başka bir tane seçin.
 
   [% ELSIF error == "alias_is_numeric" %]
-    [% title = "Alias Is Numeric" %]
-    You tried to give this [% terms.bug %] the alias <em>[% alias FILTER html %]</em>,
-    but aliases cannot be merely numbers, since they could
-    then be confused with [% terms.bug %] IDs.  Please choose an
-    alias containing at least one letter.
+    [% title = "İsim Sayılardan Oluşuyor" %]
+    [% terms.bugDat %] vermeye çalıştığınız <em>[% alias FILTER html %]</em> 
+    ismi sayılardan oluşuyor. İsimler [% terms.bug %] numaralarıyla karışabileceği için sadece sayılardan oluşamaz. Lütfen en az bir harf içeren bir isim seçin.
 
   [% ELSIF error == "alias_too_long" %]
-    [% title = "Alias Too Long" %]
-    [% terms.Bug %] aliases cannot be longer than 20 characters.
-    Please choose a shorter alias.
+    [% title = "İsim Fazla Uzun" %]
+    [% terms.Bug %] isimleri 20 karakterden uzun olamaz. Lütfen daha kısa bir isim seçin.
 
   [% ELSIF error == "auth_cant_create_account" %]
-    [% title = "Can't create accounts" %]
-    This site is using an authentication scheme which does not permit
-    account creation. Please contact an administrator to get a new account
-    created.
+    [% title = "Hesap Oluşturulamıyor" %]
+    Bu site hesap oluşturmaya izin vermeyen bir kimlik doğrulama sistemi kullanıyor. Lütfen yeni bir hesap oluşturması için bir yöneticiyle irtibata geçin.
 
   [% ELSIF error == "auth_failure" %]
-    [% title = "Authorization Required" %]
+    [% title = "Oturum Açmak Gerekir" %]
     [% admindocslinks = {'groups.html' => 'Group Security'} %]
-    Sorry,
     [% IF group %]
-      you aren't a member of the '[% group FILTER html %]' group,
+      '[% group FILTER html %]' grubunun üyesi değilsiniz.
     [% END %]
 
     [% IF reason %]
       [% IF group %] and [% END %]
       [% IF reason == "cant_bless" %]
-        you don't have permissions to add or remove people from a group,
+        Gruba üye ekleme veya gruptan üye çıkarma izniniz yok.
       [% ELSIF reason == "not_visible" %]
-        there are visibility restrictions on certain user groups,
+        Belirli kullanıcı gruplarında görünürlük kısıtlamaları var.
       [% END %]
     [% END %]
 
-    [% IF group || reason %] and so [% END %] you are not authorized to
-    [% IF action == "access" %]
-      access
-    [% ELSIF action == "add" %]
-      add new
-    [% ELSIF action == "begin" %]
-      begin
-    [% ELSIF action == "modify" %]
-      modify
-    [% ELSIF action == "delete" %]
-      delete
-    [% ELSIF action == "edit" %]
-      add, modify or delete
-    [% ELSIF action == "move" %]
-      move
-    [% ELSIF action == "run" %]
-      run
-    [% ELSIF action == "schedule" %]
-      schedule
-    [% ELSIF action == "use" %]
-      use
-    [% ELSIF action == "approve" %]
-      approve
-    [% END %]
+    [% IF group || reason %] Dolayısıyla [% END %]
 
     [% IF object == "administrative_pages" %]
-      administrative pages
+      yönetim sayfaları 
     [% ELSIF object == "attachment" %]
-      this attachment
+      bu ek 
     [% ELSIF object == "bugs" %]
       [%+ terms.bugs %]
     [% ELSIF object == "charts" %]
-      the "New Charts" feature
+      "Yeni Çizelgeler" özelliği 
     [% ELSIF object == "classifications" %]
-      classifications
+      sınıflar
     [% ELSIF object == "components" %]
-      components
+      bileşenler
     [% ELSIF object == "custom_fields" %]
-      custom fields
+      özel hazırlanmış alanlar
     [% ELSIF object == "field_values" %]
-      field values
+      alan değerleri
     [% ELSIF object == "flagtypes" %]
-      flag types
+      bayrak türleri
     [% ELSIF object == "group_access" %]
-      group access
+      grup erişimi
     [% ELSIF object == "groups" %]
-      groups
+      gruplar
     [% ELSIF object == "keywords" %]
-      keywords
+      anahtarlar
     [% ELSIF object == "milestones" %]
-      milestones
+      aşamalar
     [% ELSIF object == "multiple_bugs" %]
-      multiple [% terms.bugs %] at once
+      bir kerede birden fazla [% terms.bug %]
     [% ELSIF object == "parameters" %]
-      parameters
+      parametreler
     [% ELSIF object == "products" %]
-      products
+      ürünler
     [% ELSIF object == "quips" %]
-      quips
+      nükteler
     [% ELSIF object == "reports" %]
-      whine reports
+      alarm raporları
     [% ELSIF object == "sanity_check" %]
-      a sanity check
+      bir doğruluk kontrolü
     [% ELSIF object == "settings" %]
-      settings
+      ayarlar
     [% ELSIF object == "sudo_session" %]
-      a sudo session
+      bir sudo oturumu
     [% ELSIF object == "timetracking_summaries" %]
-      time-tracking summary reports
+      özet zaman takip raporları
     [% ELSIF object == "user" %]
-      the user you specified
+      belirttiğiniz kullanıcı
     [% ELSIF object == "users" %]
-      users
+      kullanıcılar
     [% ELSIF object == "versions" %]
-      versions
+      sürümler
     [% ELSIF object == "workflow" %]
-      the workflow
-    [% END %].
+      iş akışı
+    [% END %]
+    
+    üzerinde
+
+    [% IF action == "access" %]
+      erişme
+    [% ELSIF action == "add" %]
+      ekleme
+    [% ELSIF action == "begin" %]
+      başlama
+    [% ELSIF action == "modify" %]
+      değiştirme
+    [% ELSIF action == "delete" %]
+      silme
+    [% ELSIF action == "edit" %]
+      ekleme, değiştirme veya silme
+    [% ELSIF action == "move" %]
+      taşıma
+    [% ELSIF action == "run" %]
+      çalıştırma
+    [% ELSIF action == "schedule" %]
+      takvime bağlama
+    [% ELSIF action == "use" %]
+      kullanma
+    [% ELSIF action == "approve" %]
+      onaylama
+    [% END %]
+    
+    işlemine yapma izniniz yok.
+
 
     [% Hook.process("auth_failure") %]
 
   [% ELSIF error == "attachment_deletion_disabled" %]
-    [% title = "Attachment Deletion Disabled" %]
-    Attachment deletion is disabled on this installation.
+    [% title = "Ek Silme Kapalı" %]
+    Bu kurulumda eklerin silinmesine izin yok.
 
   [% ELSIF error == "attachment_removed" %]
-    [% title = "Attachment Removed" %]
-    The attachment you are attempting to access has been removed.
+    [% title = "Ek Silindi" %]
+    Erişmeye çalıştığınız ek silinmiş.
 
   [% ELSIF error == "bug_access_denied" %]
-    [% title = "Access Denied" %]
-    [% admindocslinks = {'groups.html' => 'Group Security'} %]
-    You are not authorized to access [% terms.bug %] #[% bug_id FILTER html %].
+    [% title = "Erişim Reddedildi" %]
+    [% admindocslinks = {'groups.html' => 'Grup Güvenliği'} %]
+    [% bug_id FILTER html %] numaralı [% terms.bugDat %] erişim izniniz yok.
 
   [% ELSIF error == "bug_access_query" %]
-    [% title = "Access Denied" %]
-    [% docslinks = {'myaccount.html' => 'Creating an account'} %]
-    You are not authorized to access [% terms.bug %] #[% bug_id FILTER html %].
-    To see this [% terms.bug %], you must
+    [% title = "Erişim Reddedildi" %]
+    [% docslinks = {'myaccount.html' => 'Hesap oluşturma'} %]
+    [% bug_id FILTER html %] numaralı [% terms.bugDat %] erişim izniniz yok.
+    Bu [% terms.bugDat %] görebilmek için, gerekli izinlere sahip 
     first <a href="show_bug.cgi?id=
-                   [% bug_id FILTER url_quote %]&amp;GoAheadAndLogIn=1">log
-    in to an account</a> with the appropriate permissions.
+                   [% bug_id FILTER url_quote %]&amp;GoAheadAndLogIn=1">bir 
+    hesaba oturum aç</a>malısınız.
 
   [% ELSIF error == "buglist_parameters_required" %]
-    [% title = "Parameters Required" %]
-    [% docslinks = {'query.html' => "Searching for $terms.bugs",
-                    'query.html#list' => "$terms.Bug lists"} %]
-    You may not search, or create saved searches, without any search terms.
+    [% title = "Parametre Gerekli" %]
+    [% docslinks = {'query.html' => "$terms.Bug Aramak",
+                    'query.html#list' => "$terms.Bug listeleri"} %]
+    Herhangi bir arama kriteri içermeyen kayıtlı arama yapamaz ve oluşturamazsınız.
 
   [% ELSIF error == "chart_too_large" %]
-    [% title = "Chart Too Large" %]
-    Sorry, but 2000 x 2000 is the maximum size for a chart.
+    [% title = "Çizelge Fazla Büyük" %]
+    Bir çizelgenin büyüklüğü en fazla 2000 x 2000 olabilir.
 
   [% ELSIF error == "comment_invalid_isprivate" %]
-    You tried to modify the privacy of comment id [% id FILTER html %],
-    but that is not a valid comment on this [% terms.bug %].
+    [% id FILTER html %] numaralı yorumun gizliliğini değiştirmeye çalıştınız,
+    ama bu [% terms.bugLoc %] bu geçerli bir yorum değil.
 
   [% ELSIF error == "comment_required" %]
-    [% title = "Comment Required" %]
-    You have to specify a
+    [% title = "Yorum Gerekiyor" %]
     [% IF old && new %]
-      <b>comment</b> when changing the status of [% terms.abug %] from
-      [%+ old.name FILTER html %] to [% new.name FILTER html %].
+      [% terms.abugGen %] durumunu 
+      [%+ new.name FILTER html %] olarak değiştirirken bir <b>yorum</b> 
     [% ELSIF new %]
-      description for this [% terms.bug %].
+      Bu [% terms.bug %] için bir yorum 
     [% ELSE %]
-      <b>comment</b> on this change.
+      bu değişiklik hakkında bir <b>yorum</b> 
     [% END %]
+    girmelisiniz.
 
   [% ELSIF error == "comment_too_long" %]
-    [% title = "Comment Too Long" %]
-    Comments cannot be longer than 65,535 characters.
+    [% title = "Yorum Fazla Uzun" %]
+    Yorumlar 65,535 karakterden fazla olamaz.
 
   [% ELSIF error == "auth_classification_not_enabled" %]
-    [% title = "Classification Not Enabled" %]
-    Sorry, classification is not enabled.
+    [% title = "Sınıflandırma Kapalı" %]
+    Sınıflandırma kapatılmış durumda.
 
   [% ELSIF error == "classification_not_specified" %]
-    [% title = "You Must Supply A Classification Name" %]
-    You must enter a classification name.
+    [% title = "Sınıf Adı Gerekli" %]
+    Bir sınıf adı girmelisiniz.
 
   [% ELSIF error == "classification_already_exists" %]
-    [% title = "Classification Already Exists" %]
-    A classification with the name '[% name FILTER html %]' already exists.
+    [% title = "Sınıf Zaten Var" %]
+    '[% name FILTER html %]' adında bir sınıf zaten mevcut.
 
   [% ELSIF error == "classification_doesnt_exist" %]
-    [% title = "Classification Does Not Exist" %]
-    The classification '[% name FILTER html %]' does not exist.
+    [% title = "Sınıf Yok" %]
+    '[% name FILTER html %]' adında bir sınıf yok.
 
   [% ELSIF error == "classification_doesnt_exist_for_product" %]
-    [% title = "Classification Does Not Exist For Product" %]
-    The classification '[% classification FILTER html %]' does not exist
-    for product '[% product FILTER html %]'.
+    [% title = "Bu Üründe Bu Sınıf Yok" %]
+    '[% product FILTER html %]' ürününde '[% classification FILTER html %]' adında bir sınıf bulunmuyor.
 
   [% ELSIF error == "classification_invalid_sortkey" %]
-    [% title = "Invalid Sortkey for Classification" %]
-    The sortkey <em>[% sortkey FILTER html %]</em> for the '[% name FILTER html %]'
-    classification is invalid. It must be a positive integer.
+    [% title = "Sınıf Sıralama Anahtarı Geçersiz" %]
+    '[% name FILTER html %]' sınıfı için verilen <em>[% sortkey FILTER html %]</em> 
+    sıralama anahtarı geçersiz. Pozitif bir tamsayı olmalı.
 
   [% ELSIF error == "classification_not_deletable" %]
-    [% title = "Default Classification Can Not Be Deleted" %]
-    You can not delete the default classification
+    [% title = "Öntanımlı Sınıf Silinemez" %]
+    Öntanımlı sınıfı silemezsiniz.
 
   [% ELSIF error == "classification_has_products" %]
-     Sorry, there are products for this classification. You
-     must reassign those products to another classification before you
-     can delete this one.
+     Bu sınıfı kullanan ürünler var. Bu sınıfı silmeden önce o ürünleri başka bir sınıfa atamalısınız.
 
   [% ELSIF error == "component_already_exists" %]
-    [% title = "Component Already Exists" %]
-    The <em>[% product.name FILTER html %]</em> product already has
-    a component named <em>[% name FILTER html %]</em>.
+    [% title = "Bileşen Zaten Var" %]
+    <em>[% product.name FILTER html %]</em> ürününde 
+    zaten <em>[% name FILTER html %]</em> adında bir bileşen var.
 
   [% ELSIF error == "component_blank_description" %]
-    [% title = "Blank Component Description Not Allowed" %]
-    You must enter a non-blank description for this component.
+    [% title = "Bileşen Açıklaması Boş Bırakılamaz" %]
+    Bu bileşen için bir açıklama girmelisiniz.
 
   [% ELSIF error == "component_blank_name" %]
-    [% title = "Blank Component Name Not Allowed" %]
-    You must enter a name for this new component.
+    [% title = "Bileşen Adı Boş Bırakılamaz" %]
+    Bu bileşen için bir ad girmelisiniz.
 
   [% ELSIF error == "component_has_bugs" %]
-    [% title = BLOCK %]Component has [% terms.Bugs %][% END %]
-    There are [% nb FILTER html %] [%+ terms.bugs %] entered for this component!
-    You must reassign those [% terms.bugs %] to another component before you
-    can delete this one.
+    [% title = BLOCK %]Bileşende Kayıtlı [% terms.Bugs %] Var[% END %]
+    Bu bileşene girilmiş [% nb FILTER html %] [%+ terms.bug %] var!
+    Bu bileşeni silmeden önce o [% terms.bugs %] başka bir bileşene atamalısınız.
 
   [% ELSIF error == "component_name_too_long" %]
-    [% title = "Component Name Is Too Long" %]
-    The name of a component is limited to 64 characters. 
-    '[% name FILTER html %]' is too long ([% name.length %] characters).
+    [% title = "Bileşen Adı Fazla Uzun" %]
+    Bileşen adları 64 karakterle sınırlıdır.
+    '[% name FILTER html %]' fazla uzun ([% name.length %] karakter).
 
   [% ELSIF error == "component_need_initialowner" %]
-    [% title = "Component Requires Default Assignee" %]
-    A default assignee is required for this component.
+    [% title = "Bileşene Öntanımlı Biri Atanmalı" %]
+    Bu bileşenin öntanımlı olarak birine atanması gerekir.
 
   [% ELSIF error == "customfield_nonexistent" %]
-    [% title = "Unknown Custom Field" %]
-    There is no custom field with the name '[% name FILTER html %]'.
+    [% title = "Bilinmeyen Özel Alan" %]
+    '[% name FILTER html %]' adında özel oluşturulmuş bir alan yok.
 
   [% ELSIF error == "customfield_not_obsolete" %]
-    [% title = "Custom Field Not Obsolete" %]
-    The custom field '[% name FILTER html %]' is not obsolete.
-    Please obsolete a custom field before attempting to delete it.
+    [% title = "Özel Alan Halâ Kullanılıyor" %]
+    '[% name FILTER html %]' alanı halâ kullanımda. Lütfen özel oluşturulmuş bir alanı silmeden önce herhangi bir yerde kullanılmadığından emin olun.
 
   [% ELSIF error == "customfield_has_activity" %]
-    [% title = "Custom Field Has Activity" %]
-    The custom field '[% name FILTER html %]' cannot be deleted because
-    it has recorded activity.
+    [% title = "Özel Alanda Hareket Bulunuyor" %]
+    '[% name FILTER html %]' özel alanı silinemez çünkü üzerinde kayıtlı bazı hareketler var.
 
   [% ELSIF error == "customfield_has_contents" %]
-    [% title = "Custom Field Has Contents" %]
-    The custom field '[% name FILTER html %]' cannot be deleted because
-    at least one [% terms.bug %] has a non empty value for this field.
+    [% title = "Özel Alanda İçerik Bulunuyor" %]
+    '[% name FILTER html %]' özel alanı silinemez çünkü en az bir [% terms.bugLoc %] bu alana bir değer atanmış.
 
   [% ELSIF error == "dependency_loop_multi" %]
-    [% title = "Dependency Loop Detected" %]
-    The following [% terms.bug %](s) would appear on both the "depends on"
-    and "blocks" parts of the dependency tree if these changes
-    are committed:
+    [% title = "Bağımlılık Döngüsü Tespit Edildi" %]
+    Eğer bu değişiklikler gönderilirse, aşağıdaki [% terms.bug %](lar) bağımlılık ağacının hem "bağımlı" hem de "engelleyici" bölümlerinde görünecek.
     [% FOREACH dep = deps %]
       [%+ dep FILTER bug_link(dep) FILTER none %]
     [% END %].
-    This would create a circular dependency, which is not allowed.
+    Bu durum dairesel bir bağımlılık oluşturur (ve dairesel bağımlılığa izin verilmez).
 
   [% ELSIF error == "dependency_loop_single" %]
-    [% title = "Dependency Loop Detected" %]
-    You can't make [% terms.abug %] block itself or depend on itself.
+    [% title = "Bağımlılık Döngüsü Tespit Edildi" %]
+    [% terms.AbugAcc %] kendine bağımlı ya da kendini engelliyor olarak işaretleyemezsiniz.
 
   [% ELSIF error == "dupe_id_required" %]
-    [% title = "Duplicate $terms.Bug Id Required" %]
-    You must specify [% terms.abug %] id to mark this [% terms.bug %]
-    as a duplicate of.
+    [% title = "Aynı Olan $terms.BugGen Numaralı Gerekli" %]
+    Bu [% terms.bugAcc %] bir başkasının eşi olarak işaretleyebilmek için o [% terms.bugGen %] numarasını vermelisiniz.
 
   [% ELSIF error == "dupe_not_allowed" %]
-    [% title = "Cannot mark $terms.bugs as duplicates" %]
-    You cannot mark [% terms.bugs %] as duplicates when
-    changing several [% terms.bugs %] at once.
+    [% title = "$terms.Bugs Aynı İşaretlenemiyor" %]
+    Bir kerede birden fazla [% terms.bug %] üzerinde değişiklik yaparken onları başka [% terms.bugsGen %] aynısı olarak işaretleyemezsiniz.
 
   [% ELSIF error == "dupe_loop_detected" %]
-    [% title = "Loop detected among duplicates" %]
-    You cannot mark [% terms.bug %] [%+ bug_id FILTER html %] as
-    a duplicate of
+    [% title = "Aynı Olanlar Arasında Döngü Tespit Edildi" %]
+    [%+ bug_id FILTER html %] numaralı [% terms.bugAcc %]  
     [% IF dupe_of == bug_id %]
-      itself
+      kendisinin
     [% ELSE %]
-      [%+ terms.bug %] [%+ dupe_of FILTER html %], because it
-      would create a duplicate loop
-    [% END %].
+      [%+ dupe_of FILTER html %] numaralı [%+ terms.bugGen %] 
+    [% END %]
+    aynısı olarak işaretleyemezsiniz[% IF dupe_of != bug_id %] çünkü bu durumda iki "aynı" hata oluşur[% END %].
 
   [% ELSIF error == "email_change_in_progress" %]
-    [% title = "Email Change Already In Progress" %]
-    Email change already in progress; please check your email.
+    [% title = "Eposta Değiştirme Süreci İşliyor" %]
+    Eposta değiştirme süreci halihazırda işliyor; lütfen eposta kutunuzu kontrol edin.
 
   [% ELSIF error == "email_confirmation_failed" %]
-    [% title = "Email Address Confirmation Failed" %]
-    Email address confirmation failed.
+    [% title = "Eposta Adresi Onaylama Başarısız" %]
+    Eposta adresi onaylanamadı.
 
   [% ELSIF error == "email_no_text_plain" %]
-    Your message did not contain any text.[% terms.Bugzilla %] does not
-    accept HTML-only email, or HTML email with attachments.
+    Mesajınızda metin yoktu. [% terms.Bugzilla %] salt HTML içeren epostaları ve ek içeren HTML epostaları kabul etmez.
 
   [% ELSIF error == "empty_group_description" %]
-    [% title = "The group description can not be empty" %]
-    You must enter a description for the group.
+    [% title = "Grup Açıklaması Boş" %]
+    Grup açıklaması boş olamaz, gruba bir açıklama girmelisiniz.
 
   [% ELSIF error == "empty_group_name" %]
-    [% title = "The group name can not be empty" %]
-    You must enter a name for the group.
+    [% title = "Grup Adı Boş" %]
+    Gruba bir isim vermelisiniz.
   
   [% ELSIF error == "entry_access_denied" %]
-    [% title = "Permission Denied" %]
-    [% admindocslinks = {'groups.html' => 'Group Security'} %]
-    Sorry, either the product <em>[% product FILTER html %]</em>
-    does not exist or you aren't authorized to
-    enter [% terms.abug %] into it.
+    [% title = "İzin Verilmedi" %]
+    [% admindocslinks = {'groups.html' => 'Grup Güvenliği'} %]
+    Ya <em>[% product FILTER html %]</em> ürünü yok ya da o ürüne [% terms.bug %] girme izniniz yok.
 
   [% ELSIF error == "field_already_exists" %]
-    [% title = "Field Already Exists" %]
-    The field '[% field.name FILTER html %]'     
-    ([% field.description FILTER html %]) already exists. Please
-    choose another name.
+    [% title = "Alan Zaten Var" %]
+    '[% field.name FILTER html %]' ([% field.description FILTER html %]) alanı zaten var. Lütfen başka bir isim seçin.
 
   [% ELSIF error == "field_invalid_name" %]
-    [% title = "Invalid Field Name" %]
-    '[% name FILTER html %]' is not a valid name for a field.
-    A name may contain only letters, numbers, and the underscore character.
+    [% title = "Geçersiz Alan Adı" %]
+    '[% name FILTER html %]' geçerli bir alan adı değil. Bir ad sadece harfler, sayılar ve altçizgi ("_") içerebilir.
 
   [% ELSIF error == "field_invalid_sortkey" %]
-    [% title = "Invalid Sortkey for Field" %]
-    The sortkey [% sortkey FILTER html %] that you have provided for
-    this field is not a valid positive integer.
+    [% title = "Geçersiz Alan Sıralama Anahtarı" %]
+    Bu alan için verdiğiniz [% sortkey FILTER html %] sıralama anahtarı geçerli bir pozitif tamsayı değil.
 
   [% ELSIF error == "field_missing_description" %]
-    [% title = "Missing Description for Field" %]
-    You must enter a description for this field.
+    [% title = "Alan Açıklaması Eksik" %]
+    Bu alan için bir açıklama girmelisiniz.
 
   [% ELSIF error == "field_missing_name" %]
-    [% title = "Missing Name for Field" %]
-    You must enter a name for this field.
+    [% title = "Alan İsmi Eksik" %]
+    Bu alan için bir isim girmelisiniz.
 
   [% ELSIF error == "fieldname_invalid" %]
-    [% title = "Specified Field Does Not Exist" %]
-    The field '[% field FILTER html %]' does not exist or 
-    cannot be edited with this interface.
+    [% title = "Belirtilen Alan Mevcut Değil" %]
+    '[% field FILTER html %]' alanı ya yok ya da bu arayüzle açılamıyor.
 
   [% ELSIF error == "fieldname_not_specified" %]
-    [% title = "Field Name Not Specified" %]
-    No field name specified when trying to edit field values.
+    [% title = "Alan Adı Eksik" %]
+    Alan değerlerini değiştirmek için bir alan adı girmelisiniz.
 
   [% ELSIF error == "fieldvalue_already_exists" %]
-    [% title = "Field Value Already Exists" %]
-    The value '[% value FILTER html %]' already exists for the
-    '[%- field.description FILTER html %]' field.
+    [% title = "Alan Değeri Zaten Var" %]
+    '[%- field.description FILTER html %]' alanının zaten '[% value FILTER html %]' değeri var.
 
   [% ELSIF error == "fieldvalue_doesnt_exist" %]
-    [% title = "Specified Field Value Does Not Exist" %]
-    The value '[% value FILTER html %]' does not exist for
-    the '[% field FILTER html %]' field.
+    [% title = "Belirtilen Alan Değeri Yok" %]
+    '[% field FILTER html %]' alanı için '[% value FILTER html %]' diye bir değer yok.
 
   [% ELSIF error == "fieldvalue_is_default" %]
-    [% title = "Specified Field Value Is Default" %]
-    '[% value FILTER html %]' is the default value for
-    the '[% field.description FILTER html %]' field and cannot be deleted.
+    [% title = "Belirtilen Alan Değeri Öntanımlı" %]
+    '[% field.description FILTER html %]' alanının '[% value FILTER html %]' değeri bu alanın öntanımlı değeri ve silinemez.
     [% IF user.groups.tweakparams %]
-      You have to <a href="editparams.cgi?section=bugfields#
-      [%- param_name FILTER url_quote %]">change</a> the default value first.
+      Önce öntanımlı değeri <a href="editparams.cgi?section=bugfields#
+      [%- param_name FILTER url_quote %]">değiştir</a>melisiniz.
     [% END %]
 
   [% ELSIF error == "fieldvalue_name_too_long" %]
-    [% title = "Field Value Is Too Long" %]
-    The value of a field is limited to 60 characters.
-    '[% value FILTER html %]' is too long ([% value.length %] characters).
+    [% title = "Alan Değeri Fazla Uzun" %]
+    Alan değerleri 60 karakterle sınırlıdır.
+    '[% value FILTER html %]' değeri fazla uzun ([% value.length %] karakter).
 
   [% ELSIF error == "fieldvalue_not_editable" %]
-    [% title = "Field Value Not Editable" %]
-    The value '[% old_value FILTER html %]' cannot be renamed because
-    it plays some special role for the '[% field.description FILTER html %]' field.
+    [% title = "Alan Değeri Değiştirilemez" %]
+    '[% old_value FILTER html %]' değerinin adı değiştirilemez çünkü
+    '[% field.description FILTER html %]' alanı için özel bir işlevi var.
 
   [% ELSIF error == "fieldvalue_not_deletable" %]
-    [% title = "Field Value Not Deletable" %]
-    The value '[% value FILTER html %]' cannot be removed because
-    it plays some special role for the '[% field.description FILTER html %]' field.
+    [% title = "Alan Değeri Silinemez" %]
+    '[% value FILTER html %]' değeri silinemiyor çünkü 
+    '[% field.description FILTER html %]' alanı için özel bir işlevi var.
 
   [% ELSIF error == "fieldvalue_not_specified" %]
-    [% title = "Field Value Not Specified" %]
-    No field value specified when trying to edit a field value.
+    [% title = "Alan Değeri Seçilmemiş" %]
+    Alan değerini değiştirmek için önce bir alan değeri seçmelisiniz.
 
   [% ELSIF error == "fieldvalue_reserved_word" %]
-    [% title = "Reserved Word Not Allowed" %]
-    You cannot use the '[% value FILTER html %]' value for the
-    '[% field.description FILTER html %]' field. This value is used internally.
-    Please choose another one.
+    [% title = "Ayrılmış Kelime Kullanılamaz" %]
+    '[% field.description FILTER html %]' alanı için '[% value FILTER html %]' değeri kullanılamaz. Bu değer sistemin iç işleyişi için kullanılmaktadır. Lütfen başka bir değer belirleyin.
 
   [% ELSIF error == "fieldvalue_sortkey_invalid" %]
-    [% title = "Invalid Field Value Sortkey" %]
-    The sortkey '[% sortkey FILTER html %]' for the '[% name FILTER html %]'
-    field is not a valid (positive) number.
+    [% title = "Alan Değeri Sıralama Anahtarı Geçersiz" %]
+    '[% name FILTER html %]' alanı için belirtilen '[% sortkey FILTER html %]' sıralama anahtarı geçerli (pozitif) bir sayı değil.
 
   [% ELSIF error == "fieldvalue_still_has_bugs" %]
-    [% title = "You Cannot Delete This Field Value" %]
-    You cannot delete the value '[% value FILTER html %]' from the 
-    '[% field FILTER html %]' field, because there are still
-    [%+ count FILTER html %] [%+ terms.bugs %] using it.
+    [% title = "Bu Alan Değerini Silemezsiniz" %]
+    '[% field FILTER html %]' alanından '[% value FILTER html %]' değerini silemezsiniz çünkü bu değer halâ
+    [%+ count FILTER html %] [%+ terms.bug %] tarafından kullanılıyor.
 
   [% ELSIF error == "fieldvalue_undefined" %]
-    [% title = "Undefined Value Not Allowed" %]
-    You must specify a value.
+    [% title = "Değer Belirtilmemiş" %]
+    Bir değer belirtmelisiniz.
 
   [% ELSIF error == "file_not_specified" %]
-    [% title = "No File Specified" %]
-    You did not specify a file to attach.
+    [% title = "Dosya Belirtilmemiş" %]
+    Ekleyecek bir dosya seçmelisiniz.
 
   [% ELSIF error == "file_too_large" %]
-    [% title = "File Too Large" %]
-    The file you are trying to attach is [% filesize FILTER html %] 
-    kilobytes (KB) in size. Non-patch attachments cannot be more than
-    [%+ Param('maxattachmentsize') %] KB. <br>
-    We recommend that you store your attachment elsewhere
+    [% title = "Dosya Fazla Büyük" %]
+    Eklemeye çalıştığınız dosya [% filesize FILTER html %] kilobayt boyutunda.
+    Yama olmayan ekler [%+ Param('maxattachmentsize') %] kilobayttan büyük olamaz.
+    <br>
+    Eki başka bir yerde depolayıp
     [% IF Param("allow_attach_url") %]
-      and then specify the URL to this file on the attachment
-      creation page in the <b>AttachURL</b> field.
+      ek oluşturma sayfasında 
+      <b>AttachURL</b> alanına bu dosyanın adresini vermenizi
     [% ELSE %]
-      and then insert the URL to it in a comment, or in the URL field
-      for this [% terms.bug %].
+      adresi bir yoruma veya bu [% terms.bugGen %] URL (adres) alanına girmenizi
     [% END %]
-    <br>Alternately, if your attachment is an image, you could convert
-    it to a compressible format like JPG or PNG and try again.
+    tavsiye ederiz.
+    <br>
+    Bir diğer seçenek de, eğer göndermeye çalıştığınız ek bir resim ise, onu JPG veya PNG gibi sıkıştırılabilir bir biçime dönüştürüp tekrar denemektir.
 
   [% ELSIF error == "flag_not_multiplicable" %]
     [% docslinks = {'flags-overview.html' => 'An overview on Flags',
