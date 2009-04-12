@@ -97,7 +97,7 @@
 
   [% ELSIF error == "auth_failure" %]
     [% title = "Oturum Açmak Gerekir" %]
-    [% admindocslinks = {'groups.html' => 'Group Security'} %]
+    [% admindocslinks = {'groups.html' => 'Grup Güvenliği'} %]
     [% IF group %]
       '[% group FILTER html %]' grubunun üyesi değilsiniz.
     [% END %]
@@ -480,222 +480,185 @@
     Bir diğer seçenek de, eğer göndermeye çalıştığınız ek bir resim ise, onu JPG veya PNG gibi sıkıştırılabilir bir biçime dönüştürüp tekrar denemektir.
 
   [% ELSIF error == "flag_not_multiplicable" %]
-    [% docslinks = {'flags-overview.html' => 'An overview on Flags',
-                    'flags.html' => 'Using Flags'} %]
-    You can't ask more than one person at a time for
-    <em>[% type.name FILTER html %]</em>.
+    [% docslinks = {'flags-overview.html' => 'Bayraklara Genel Bakış',
+                    'flags.html' => 'Bayrakların Kullanımı'} %]
+    <em>[% type.name FILTER html %]</em> 
+    için aynı anda birden fazla kişiden istekte bulunamazsınız.
 
   [% ELSIF error == "flag_requestee_needs_privs" %]
-    [% title = "Flag Requestee Needs Privileges" %]
-    [% requestee.identity FILTER html %] does not have permission to set the
-    <em>[% flagtype.name FILTER html %]</em> flag. Please select a user who is
-    a member of the <em>[% flagtype.grant_group.name FILTER html %]</em> group.
+    [% title = "Bayrak İsteyenin Ayrıcalıklara İhtiyacı Var" %]
+    [% requestee.identity FILTER html %] <em>[% flagtype.name FILTER html %]</em> bayrağını atamak için izne ihtiyaç duyuyor.
+    Lütfen <em>[% flagtype.grant_group.name FILTER html %]</em> grubunun üyesi bir kullanıcı seçin.
 
   [% ELSIF error == "flag_requestee_unauthorized" %]
-    [% title = "Flag Requestee Not Authorized" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Administering Flags',
-                         'groups.html' => 'Group Security'} %]
-    [% docslinks = {'flags-overview.html' => 'An overview on Flags',
-                    'flags.html' => 'Using Flags'} %]
+    [% title = "Bayrak İsteyen Yetkili Değil" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Bayrakların Yönetimi',
+                         'groups.html' => 'Grup Güvenliği'} %]
+    [% docslinks = {'flags-overview.html' => 'Bayraklara Genel Bakış',
+                    'flags.html' => 'Bayrakların Kullanımı'} %]
 
-    You asked [% requestee.identity FILTER html %]
-    for <code>[% flag_type.name FILTER html %]</code> on [% terms.bug %] 
-    [%+ bug_id FILTER html -%]
-    [% IF attach_id && attach_id > 0 %], attachment [% attach_id FILTER html %][% END %],
-    but that [% terms.bug %] has been restricted to users in certain groups, 
-    and the user you asked isn't in all the groups to which 
-    the [% terms.bug %] has been restricted.
-    Please choose someone else to ask, or make the [% terms.bug %] accessible
-    to users on its CC: list and add that user to the list.
+    [%+ bug_id FILTER html -%] numaralı [% terms.bug %] [% IF attach_id && attach_id > 0 %] [% attach_id FILTER html %] numaralı ek [% END %] için [% requestee.identity FILTER html %] isimli kişiden <code>[% flag_type.name FILTER html %]</code> 
+    bayrağını atamasını istediniz, fakat o [% terms.bug %] sadece belirli gruplardaki kullanıcılara açık durumda ve istekte bulunduğunuz kişi [% terms.bugDat %] erişebilir durumda olan tüm gruplarda değil. Lütfen başka birinden isteyin veya [% terms.bugAcc %] haber verilecekler listesindeki kişiler için erişilebilir yaparak o kullanıcıyı haber verilecekler listesine ekleyin.
 
   [% ELSIF error == "flag_requestee_unauthorized_attachment" %]
-    [% title = "Flag Requestee Not Authorized" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Administering Flags',
-                         'groups.html' => 'Group Security'} %]
-    [% docslinks = {'flags-overview.html' => 'An overview on Flags',
-                    'flags.html' => 'Using Flags'} %]
+    [% title = "Bayrak İsteyen Yetkili Değil" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Bayrakların Yönetimi',
+                         'groups.html' => 'Grup Güvenliği'} %]
+    [% docslinks = {'flags-overview.html' => 'Bayraklara Genel Bakış',
+                    'flags.html' => 'Bayrakların Kullanımı'} %]
 
-    You asked [% requestee.identity FILTER html %]
-    for <code>[% flag_type.name FILTER html %]</code> on 
-    [%+ terms.bug %] [%+ bug_id FILTER html %],
-    attachment [% attach_id FILTER html %], but that attachment
-    is restricted to users in the [% Param("insidergroup") FILTER html %] group,
-    and the user you asked isn't in that group.  Please choose someone else
-    to ask, or ask an administrator to add the user to the group.
+    [%+ bug_id FILTER html -%] numaralı [%+ terms.bug %] [% attach_id FILTER html %] numaralı ek için [% requestee.identity FILTER html %] isimli kişiden <code>[% flag_type.name FILTER html %]</code> 
+    bayrağını atamasını istediniz, fakat o ek sadece [% Param("insidergroup") FILTER html %] grubundaki kullanıcıların erişimine açık ve istekte bulunduğunuz kişi o grupta değil. Lütfen başka birinden isteyin veya bir yöneticiden kullanıcıyı o gruba eklemesini rica edin.
 
   [% ELSIF error == "flag_type_cc_list_invalid" %]
-    [% title = "Flag Type CC List Invalid" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Administering Flags'} %]
-    The CC list [% cc_list FILTER html %] must be less than 200 characters long.
+    [% title = "Bayrak Türü Haber Verilecekler Listesi Geçersiz" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Bayrakların Yönetimi'} %]
+    Haber verilecekler listesi [% cc_list FILTER html %] 200 karakterden kısa olmalıdır.
 
   [% ELSIF error == "flag_type_component_without_product" %]
-    [% title = "Product Missing" %]
-    A component was selected without a product being selected.
+    [% title = "Ürün Kayıp" %]
+    Bileşen seçildi ama ürün seçilmedi.
 
   [% ELSIF error == "flag_type_description_invalid" %]
-    [% title = "Flag Type Description Invalid" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Administering Flags'} %]
-    The description must be less than 32K.
+    [% title = "Bayrak Türü Açıklaması Geçersiz" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Bayrak Yönetimi'} %]
+    Açıklama 32 kilobayttan küçük olmalı.
 
   [% ELSIF error == "flag_type_name_invalid" %]
-    [% title = "Flag Type Name Invalid" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Administering Flags'} %]
-    The name <em>[% name FILTER html %]</em> must be 1-50 characters long
-    and must not contain any spaces or commas.
+    [% title = "Bayrak Türü Adı Geçersiz" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Bayrak Yönetimi'} %]
+    <em>[% name FILTER html %]</em> ismi en fazla 50 karakter uzunluğunda olabilir ve boşluk ya da virgül içermemelidir.
 
   [% ELSIF error == "flag_update_denied" %]
-    [% title = "Flag Modification Denied" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Administering Flags',
-                         'groups.html' => 'Group Security'} %]
-    [% docslinks = {'flags-overview.html' => 'An overview on Flags',
-                    'flags.html' => 'Using Flags'} %]
-    You tried to [% IF status == "+" %] grant [% ELSIF status == "-" %] deny
-    [% ELSIF status == "X" %] clear [% ELSE %] request [% END %]
+    [% title = "Bayrak Değiştirme İşlemi Reddedildi" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => 'Bayrak Yönetimi',
+                         'groups.html' => 'Grup Güvenliği'} %]
+    [% docslinks = {'flags-overview.html' => 'Bayraklara Genel Bakış',
+                    'flags.html' => 'Bayrakların Kullanımı'} %]
     <code>[% name FILTER html %]
-          [% IF status == "X" %][% old_status FILTER html %][% END %]</code>.
+          [% IF status == "X" %][% old_status FILTER html %][% END %]</code>
+    [% IF status == "+" %] izin vermeye [% ELSIF status == "-" %] reddetmeye
+    [% ELSIF status == "X" %] temizlemeye [% ELSE %] istemeye [% END %]
+    çalıştınız.
 
-    Only a user with the required permissions may make this change.
+    Sadece gerekli izinlere sahip bir kullanıcı bunu yapabilir.
 
   [% ELSIF error == "format_not_found" %]
-    [% title = "Format Not Found" %]
-    The requested format <em>[% format FILTER html %]</em> does not exist with
-    a content type of <em>[% ctype FILTER html %]</em>.
+    [% title = "Biçim Bulunamadı" %]
+    <em>[% ctype FILTER html %]</em> içerik türünde istenen <em>[% format FILTER html %]</em> biçimi yok.
     
   [% ELSIF error == "flag_type_sortkey_invalid" %]
-    [% title = "Flag Type Sort Key Invalid" %]
-    The sort key must be an integer between 0 and 32767 inclusive.
-    It cannot be <em>[% sortkey FILTER html %]</em>.
+    [% title = "Bayrak Türü Sıralama Anahtarı Geçersiz" %]
+    Sıralama anahtarı 0 ile 32767 arasında bir tamsayı olmalıdır.
+    <em>[% sortkey FILTER html %]</em> olamaz.
 
   [% ELSIF error == "freetext_too_long" %]
-    [% title = "Text Too Long" %]
-    The text you entered is too long ([% text.length FILTER html %] characters,
-    above the maximum length allowed of [% constants.MAX_FREETEXT_LENGTH FILTER none %]
-    characters):
+    [% title = "Metin Fazla Uzun" %]
+    Girdiğiniz metin fazla uzun ([% text.length FILTER html %] karakter,
+    izin verilen en fazla [% constants.MAX_FREETEXT_LENGTH FILTER none %] karakter):
     <p><em>[% text FILTER html %]</em></p>
 
   [% ELSIF error == "group_cannot_delete" %]
-    [% title = "Cannot Delete Group" %]
-    The <em>[% name FILTER html %]</em> group cannot be deleted because
-    there are
-    <a href="editgroups.cgi?action=del&amp;group=[% gid FILTER url_quote %]">records</a>
-    in the database which refer to it. All references to this group must
-    be removed before you can remove it.
+    [% title = "Grup Silinemez" %]
+    <em>[% name FILTER html %]</em> grubu silinemez çünkü veritabanında ona başvuruda bulunan 
+    <a href="editgroups.cgi?action=del&amp;group=[% gid FILTER url_quote %]">kayıt</a>
+    var. Grubu silmeden önce bu başvuruların silinmesi gerekir.
 
   [% ELSIF error == "group_change_denied" %]
-    [% title = "Cannot Add/Remove That Group" %]
-    You tried to add or remove group id [% group_id FILTER html %]
-    from [% terms.bug %] [%+ bug.id FILTER html %], but you do not
-    have permissions to do so.
+    [% title = "O Grup Eklenemez-Silinemez" %]
+    [%+ bug.id FILTER html %] numaralı [% terms.bugDat %] [% group_id FILTER html %] kimlikli bir grup eklemeye veya silmeye çalıştınız, fakat bunu yapma izniniz yok.
 
   [% ELSIF error == "group_exists" %]
-    [% title = "The group already exists" %]
-    The group [% name FILTER html %] already exists.
+    [% title = "Grup Zaten Var" %]
+    [% name FILTER html %] grubu zaten var.
 
   [% ELSIF error == "group_has_special_role" %]
-    [% title = "Group not deletable" %]
+    [% title = "Grup Silinemez" %]
     [% IF groups.size == 1 %]
-      [% attr = "it" %]
-      [% param = "parameter" %]
+      [% attr = "onu" %]
+      [% param = "parametresi" %]
     [% ELSE %]
-      [% attr = "them" %]
-      [% param = "parameters" %]
+      [% attr = "onları" %]
+      [% param = "parametreleri" %]
     [% END %]
-    The group '[% name FILTER html %]' is used by the
-    '[% groups.join("' and '") FILTER html %]' [% param FILTER html %].
-    In order to delete this group, you first have to change the
-    [%+ param FILTER html %] to make [% attr FILTER html %] point to another group.
-
+    '[% name FILTER html %]' grubu
+    '[% groups.join("' ve '") FILTER html %]' [% param FILTER html %] tarafından kullanılıyor.
+    Bu grubu silebilmek için, önce o [% attr FILTER html %] başka bir gruba işaret eder hale getirmelisiniz.
 
   [% ELSIF error == "group_invalid_removal" %]
-    You tried to remove [% terms.bug %] [%+ bug.id FILTER html %]
-    from group id [% group_id FILTER html %], but [% terms.bugs %] in the 
-    '[% product FILTER html %]' product can not be removed from that
-    group.
+    [%+ bug.id FILTER html %] numaralı [% terms.bugAcc %] [% group_id FILTER html %] kimlikli gruptan silmeye çalıştınız, fakat '[% product FILTER html %]' ürünündeki [% terms.bugs %] o gruptan silinemez.
     
   [% ELSIF error == "group_invalid_restriction" %]
-    You tried to restrict [% terms.bug %] [%+ bug.id FILTER html %] to
-    to group id [% group_id FILTER html %], but [% terms.bugs %] in the
-    '[% product FILTER html %]' product can not be restricted to
-    that group.
+    [%+ bug.id FILTER html %] numaralı [% terms.bugAcc %] [% group_id FILTER html %] kimlikli gruba sınırlandırmaya çalıştınız, ama '[% product FILTER html %]' ürünündeki [% terms.bugs %] o gruba sınırlandırılamaz.
 
   [% ELSIF error == "group_not_specified" %]
-    [% title = "Group not specified" %]
-    No group was specified.
+    [% title = "Grup Belirtilmedi" %]
+    Herhangi bir grup belirtilmedi.
 
   [% ELSIF error == "system_group_not_deletable" %]
-    [% title = "System Groups not deletable" %]
-    <em>[% name FILTER html %]</em> is a system group.
-    This group cannot be deleted.
+    [% title = "Sistem Grupları Silinemez" %]
+    <em>[% name FILTER html %]</em> bir sistem grubu, o yüzden silinemez.
 
   [% ELSIF error == "group_unknown" %]
-    [% title = "Unknown Group" %]
-    The group [% name FILTER html %] does not exist. Please specify
-    a valid group name. Create it first if necessary!
+    [% title = "Bilinmeyen Grup" %]
+    [% name FILTER html %] diye bir grup yok. Lütfen geçerli bir grup adı belirtin. Gerekiyorsa önce o grubu oluşturun!
 
   [% ELSIF error == "illegal_at_least_x_votes" %]
-    [% title = "Your Search Makes No Sense" %]
-    The <em>At least ___ votes</em> field must be a simple number. 
-    You entered <tt>[% value FILTER html %]</tt>, which isn't.
+    [% title = "Arama Anlamsız" %]
+    <em>En az ___ oy</em> alanı bir tamsayı olmalıdır. Sizin girdiğiniz <tt>[% value FILTER html %]</tt> değeri bu nedenle geçersiz.
     
   [% ELSIF error == "illegal_attachment_edit" %]
-    [% title = "Unauthorized Action" %]
-    You are not authorized to edit attachment [% attach_id FILTER html %].
+    [% title = "Yetkisiz Eylem" %]
+    [% attach_id FILTER html %] ekini değiştirme yetkiniz yok.
 
   [% ELSIF error == "illegal_attachment_edit_bug" %]
-    [% title = "Unauthorized Action" %]
-    You are not authorized to edit attachments on [% terms.bug %] 
-    [%+ bug_id FILTER html %].
+    [% title = "Yetkisiz Eylem" %]
+    [%+ bug_id FILTER html %] numaralı [% terms.bugLoc %] ekleri değiştirme yetkiniz yok.
+    .
          
   [% ELSIF error == "illegal_attachment_is_patch" %]
-    [% title = "Your Search Makes No Sense" %]
-    The only legal values for the <em>Attachment is patch</em> field are
-    0 and 1.
+    [% title = "Arama Anlamsız" %]
+    <em>Ek bir yama</em> alanı için geçerli değerler sadece 0 ve 1'dir.
 
   [% ELSIF error == "illegal_bug_status_transition" %]
-    [% title = "Illegal $terms.Bug Status Change" %]
+    [% title = "Geçersiz $terms.Bug Durum Değişimi" %]
     [% IF old.defined %]
-      You are not allowed to change the [% terms.bug %] status from
-      [%+ old.name FILTER html %] to [% new.name FILTER html %].
+      [% terms.bug %] durumunu [%+ old.name FILTER html %] iken [% new.name FILTER html %] yapamazsınız.
     [% ELSE %]
-      You are not allowed to file new [% terms.bugs %] with the
-      [%+ new.name FILTER html %] status. 
+      [%+ new.name FILTER html %] durumunda yeni [% terms.bugs %] giremezsiniz.
     [% END %]
 
   [% ELSIF error == "illegal_change" %]
-    [% title = "Not allowed" %]
-    You tried to change the
-    <strong>[% field_descs.$field FILTER html %]</strong> field 
+    [% title = "İzin Yok" %]
+    <strong>[% field_descs.$field FILTER html %]</strong> alanını 
     [% IF oldvalue.defined %]
-      from <em>[% oldvalue.join(', ') FILTER html %]</em>
+      <em>[% oldvalue.join(', ') FILTER html %]</em> iken 
     [% END %]
     [% IF newvalue.defined %]
-      to <em>[% newvalue.join(', ') FILTER html %]</em>
+      <em>[% newvalue.join(', ') FILTER html %]</em> olarak 
     [% END %]
-    , but only
+    değiştirmeye çalıştınız, fakat sadece 
     [% IF privs < 3 %]
-      the assignee
-      [% IF privs < 2 %] or reporter [% END %]
-      of the [% terms.bug %], or
+      [% terms.bug %] atanan[% IF privs < 2 %], [% terms.bugAcc %] bildiren [% END %]
+      veya
     [% END %]
-    a user with the required permissions may change that field.
+    gerekli izinlere sahip bir kullanıcı o alanı değiştirebilir.
 
   [% ELSIF error == "illegal_change_deps" %]
-    [% title = "Not allowed" %]
-    You tried to change the 
-    <strong>[% field_descs.$field FILTER html %]</strong> field 
-    but only a user allowed to edit 
-    both related [% terms.bugs %] may change that field.
+    [% title = "İzin Yok" %]
+    <strong>[% field_descs.$field FILTER html %]</strong> alanını 
+    değiştirmeye çalıştınız ama o alanı sadece ilgili iki [% terms.bugsAcc %] da değiştirme izni olan bir kullanıcı değiştirebilir.
 
   [% ELSIF error == "illegal_changed_in_last_x_days" %]
-    [% title = "Your Search Makes No Sense" %]
-    The <em>Changed in last ___ days</em> field must be a simple number. 
-    You entered <tt>[% value FILTER html %]</tt>, which isn't.
+    [% title = "Arama Anlamsız" %]
+    <em>Son ___ günde değişmiş</em> alanı bir tamsayı olmalıdır. fakat sizin girdiğiniz
+    <tt>[% value FILTER html %]</tt> değeri geçerli bir tamsayı değil.
     
   [% ELSIF error == "illegal_date" %]
-    [% title = "Illegal Date" %]
-    '<tt>[% date FILTER html %]</tt>' is not a legal date.
+    [% title = "Geçersiz Tarih" %]
+    '<tt>[% date FILTER html %]</tt>' geçerli bir tarih değil.
     [% IF format %]
-      Please use the format '<tt>[% format FILTER html %]</tt>'.
+      Lütfen '<tt>[% format FILTER html %]</tt>' biçimini kullanın.
     [% END %]
     
   [% ELSIF error == "illegal_email_address" %]
