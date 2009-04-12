@@ -971,209 +971,183 @@
     Yeni bir parola girmelisiniz.
 
   [% ELSIF error == "no_axes_defined" %]
-    [% title = "No Axes Defined" %]
+    [% title = "Eksen Tanımlanmadı" %]
     [% docslinks = {'reporting.html' => 'Bildirme'} %]
-    You didn't define any axes to plot.
+    Çizilmesini istediğiniz herhangi bir eksen tanımlamadınız.
 
   [% ELSIF error == "no_bugs_chosen" %]
-    [% title = BLOCK %]No [% terms.Bugs %] Selected[% END %]
-    You apparently didn't choose any [% terms.bugs %]
+    [% title = BLOCK %][% terms.Bug %] Seçilmedi[% END %]
     [% IF action == "modify" %]
-      to modify.
+      Değiştirmek için
     [% ELSIF action == "view" %]
-      to view.
+      Açmak için
     [% END %]
+    herhangi bir [% terms.bug %] seçmediniz.
 
   [% ELSIF error == "no_bug_ids" %]
-    [% title = BLOCK %]No [% terms.Bugs %] Selected[% END %]
-    You didn't choose any [% terms.bugs %] to
-    [% IF action == "add" %] add to [% ELSE %] remove from [% END %]
-    the [% tag FILTER html %] tag.
+    [% title = BLOCK %][% terms.Bugs %] Seçilmedi[% END %]
+    the [% tag FILTER html %] 
+    [% IF action == "add" %] takısına eklemek [% ELSE %] takısından çıkarmak [% END %]
+    için herhangi bir [% terms.bug %] seçmediniz.
 
   [% ELSIF error == "no_bugs_in_list" %]
-    [% title = "Delete Tag?" %]
-    This will remove all [% terms.bugs %] from the
-    [% tag FILTER html %] tag. This will delete the tag completely. Click
+    [% title = "Takı Silinsin mi?" %]
+    Bu eylem [% tag FILTER html %] takısından bütün [% terms.bugsAcc %] ve takıyı tamamen silecek. Gerçekten silmek istiyorsanız
     <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
-    [%- tag FILTER url_quote %]">here</a> if you really want to delete it.
+    [%- tag FILTER url_quote %]">buraya</a> tıklayın.
 
   [% ELSIF error == "no_bugs_to_remove" %]
-    [% title = "No Tag Selected" %]
-    You didn't select a tag from which to remove [% terms.bugs %].
+    [% title = "Takı Seçilmedi" %]
+    [% terms.bugsAcc %] sileceğiniz takıyı seçmediniz.
 
   [% ELSIF error == "no_dupe_stats" %]
-    [% title = "Cannot Find Duplicate Statistics" %]
-    [% admindocslinks = {'extraconfig.html' => 'Setting up the collecstats.pl job'} %]
-    There are no duplicate statistics for today ([% today FILTER html %]) 
-    or yesterday.
+    [% title = "'Aynı' İstatistikleri Bulunamıyor" %]
+    [% admindocslinks = {'extraconfig.html' => 'collectstats.pl İşini Düzenli Aralıklarla Çalıştırmak'} %]
+    Bugün ([% today FILTER html %]) ve dün için 'aynı [% terms.bug %]' istatistiği yok.
 
   [% ELSIF error == "no_dupe_stats_error_today" %]
-    [% title = "Error Reading Today's Dupes File" %]
-    [% admindocslinks = {'extraconfig.html' => 'Setting up the collecstats.pl job'} %]
-    An error occurred opening today's dupes file: [% error_msg FILTER html %].
+    [% title = "Bugünün 'Aynı Olanlar' Dosyasının Okunmasında Hata" %]
+    [% admindocslinks = {'extraconfig.html' => 'collectstats.pl İşini Düzenli Aralıklarla Çalıştırmak'} %]
+    Bugünün 'aynı olanlar' dosyası okunmaya çalışırken bir hata oluştu: [% error_msg FILTER html %].
 
   [% ELSIF error == "no_dupe_stats_error_whenever" %]
-    [% title = "Error Reading Previous Dupes File" %]
-    [% admindocslinks = {'extraconfig.html' => 'Setting up the collecstats.pl job'} %]
-    An error occurred opening [% changedsince FILTER html %] days ago
-    ([% whenever FILTER html %])'s dupes file:
+    [% title = "Önceki 'Aynı Olanlar' Dosyasının Okunmasında Hata" %]
+    [% admindocslinks = {'extraconfig.html' => 'collectstats.pl İşini Düzenli Aralıklarla Çalıştırmak'} %]
+    [% changedsince FILTER html %] gün öncesinin ([% whenever FILTER html %]) 'aynı olanlar' dosyasını açmaya çalışırken bir hata oluştu:
     [% error_msg FILTER html %].
 
   [% ELSIF error == "no_dupe_stats_error_yesterday" %]
-    [% title = "Error Reading Yesterday's Dupes File" %]
-    [% admindocslinks = {'extraconfig.html' => 'Setting up the collecstats.pl job'} %]
-    There are no duplicate statistics for today ([% today FILTER html %]), 
-    and an error
-    occurred opening yesterday's dupes file: [% error_msg FILTER html %].
+    [% title = "Dünün 'Aynı Olanlar' Dosyasının Okunmasında Hata" %]
+    [% admindocslinks = {'extraconfig.html' => 'collectstats.pl İşini Düzenli Aralıklarla Çalıştırmak'} %]
+    Bugün ([% today FILTER html %]) için hiç 'aynı olanlar' istatistiği yok ve dünün 'aynı olanlar' dosyasını açmaya çalışırken bir hata oluştu: [% error_msg FILTER html %].
 
   [% ELSIF error == "no_initial_bug_status" %]
-    [% title = "No Initial $terms.Bug Status" %]
-    No [% terms.bug %] status is available on [% terms.bug %] creation.
-    Please report the problem to [% Param("maintainer") %].
+    [% title = "Başlangıç $terms.Bug Durumu Yok" %]
+    [% terms.Bug %] oluştururken hangi durumun atanacağı belli değil.
+    Lütfen problemi [% Param("maintainer") %] adresine bildirin.
 
   [% ELSIF error == "no_new_quips" %]
-    [% title = "No New Quips" %]
-    [% admindocslinks = {'quips.html' => 'Controlling quip usage'} %]
-    This site does not permit the addition of new quips.
+    [% title = "Yeni Nükte Yok" %]
+    [% admindocslinks = {'quips.html' => 'Nükte Kullanımını Kontrol Etmek'} %]
+    Site yeni nükte eklenmesine izin vermiyor.
 
   [% ELSIF error == "no_page_specified" %]
-    [% title = "No Page Specified" %]
-    You did not specify the id of a page to display.
+    [% title = "Sayfa Belirtilmedi" %]
+    Gösterilecek sayfanın kimliğini belirtmediniz.
 
   [% ELSIF error == "no_products" %]
-    [% title = "No Products" %]
-    [% admindocslinks = {'products.html'   => 'Setting up a product',
-                         'components.html' => 'Adding components to products',
-                         'groups.html'     => 'Groups security'} %]
-    Either no products have been defined to enter [% terms.bugs %] against or you have not
-    been given access to any.
+    [% title = "Ürün Yok" %]
+    [% admindocslinks = {'products.html'   => 'Bir Ürünü Yapılandırmak',
+                         'components.html' => 'Ürünlere Bileşen Eklemek',
+                         'groups.html'     => 'Grup Güvenliği'} %]
+    Ya [% terms.bug %] girilebilecek herhangi bir ürün tanımlanmadı ya da sizin herhangi bir ürüne erişiminiz yok.
 
   [% ELSIF error == "no_valid_action" %]
-    [% title = "No valid action specified" %]
-    Cannot edit [% field_descs.$field FILTER html %]: no valid action was specified.
+    [% title = "Geçerli Bir Eylem Belirtilmedi" %]
+    [% field_descs.$field FILTER html %] değiştirilemiyor: geçerli bir eylem belirtilmedi.
 
   [% ELSIF error == "number_not_numeric" %]
-    [% title = "Numeric Value Required" %]
-    The value '[% num FILTER html %]' in the 
-    <em>[% field_descs.$field FILTER html %]</em> field 
-    is not a numeric value.
+    [% title = "Sayısal Değer Gerekiyor" %]
+    <em>[% field_descs.$field FILTER html %]</em> alanındaki '[% num FILTER html %]' değeri sayısal bir değer değil.
 
   [% ELSIF error == "number_too_large" %]
-    [% title = "Number Too Large" %]
-    The value '[% num FILTER html %]' in the 
-    <em>[% field_descs.$field FILTER html %]</em> field 
-    is more than the maximum allowable value of '[% max_num FILTER html %]'.
+    [% title = "Sayı Fazla Büyük" %]
+    <em>[% field_descs.$field FILTER html %]</em> alanındaki '[% num FILTER html %]' sayısı, izin verilen en yüksek değerden ([% max_num FILTER html %]) daha büyük.
 
   [% ELSIF error == "number_too_small" %]
-    [% title = "Number Too Small" %]
-    The value '[% num FILTER html %]' 
-    in the <em>[% field_descs.$field FILTER html %]</em> field 
-    is less than the minimum allowable value of '[% min_num FILTER html %]'.
+    [% title = "Sayı Fazla Küçük" %]
+    <em>[% field_descs.$field FILTER html %]</em> alanındaki '[% num FILTER html %]' sayısı, izin verilen en düşük değerden ([% min_num FILTER html %]) daha küçük.
 
   [% ELSIF error == "object_name_not_specified" %]
     [% type = BLOCK %][% PROCESS object_name %][% END %]
-    [% title = BLOCK %][% type FILTER ucfirst FILTER html %] Not 
-    Specified[% END %]
-    You must select/enter a [% type FILTER html %].
+    [% title = BLOCK %][% type FILTER ucfirst FILTER html %] Belirtilmedi[% END %]
+    Bir [% type FILTER html %] seçmeli ya da girmelisiniz.
 
   [% ELSIF error == "object_does_not_exist" %]
     [% type = BLOCK %][% PROCESS object_name %][% END %]
-    [% title = BLOCK %]Invalid [% type FILTER ucfirst FILTER html %][% END %]
-    There is no [% type FILTER html %] named '[% name FILTER html %]'
+    [% title = BLOCK %]Geçersiz [% type FILTER ucfirst FILTER html %][% END %]
     [% IF product.defined %]
-      in the '[% product.name FILTER html %]' product
-    [% END %].
+      '[% product.name FILTER html %]' ürününde
+    [% END %]
+    '[% name FILTER html %]' adında bir [% type FILTER html %] yok.
     [% IF class == "Bugzilla::User" %]
-      Either you mis-typed the name or that user has not yet registered
-      for a [% terms.Bugzilla %] account.
+      Ya adı yalış yazdınız ya da o kullanıcı henüz bir [% terms.Bugzilla %] hesabı açmadı.
     [% END %]
 
   [% ELSIF error == "old_password_incorrect" %]
-    [% title = "Incorrect Old Password" %]
-    You did not enter your old password correctly.
+    [% title = "Hatalı Eski Parola" %]
+    Eski parolanızı doğru girmediniz.
 
   [% ELSIF error == "old_password_required" %]
-    [% title = "Old Password Required" %]
-    You must enter your old password to change your email address.
+    [% title = "Eski Parola Gerekli" %]
+    Eposta adresinizi değiştirmek için eski parolanızı girmelisiniz.
 
   [% ELSIF error == "password_change_requests_not_allowed" %]
-    [% title = "Password Change Requests Not Allowed" %]
-    The system is not configured to allow password change requests.
+    [% title = "Parola Değiştirme İsteklerine İzin Verilmiyor" %]
+    Sistem parola değiştirme isteklerine izin vermeyecek şekilde yapılandırılmış.
 
   [% ELSIF error == "passwords_dont_match" %]
-    [% title = "Passwords Don't Match" %]
-    The two passwords you entered did not match.
+    [% title = "Parolalar Uyuşmuyor" %]
+    Girdiğiniz iki parola birbiriyle uyuşmuyor.
 
   [% ELSIF error == "password_too_long" %]
-    [% title = "Password Too Long" %]
-    The password must be no more than
-    [%+ constants.USER_PASSWORD_MAX_LENGTH FILTER html %] characters long.
+    [% title = "Parola Fazla Uzun" %]
+    Parola
+    [%+ constants.USER_PASSWORD_MAX_LENGTH FILTER html %] karakterden uzun olmamalı.
 
   [% ELSIF error == "password_too_short" %]
-    [% title = "Password Too Short" %]
-    The password must be at least
-    [%+ constants.USER_PASSWORD_MIN_LENGTH FILTER html %] characters long.
+    [% title = "Parola Fazla Kısa" %]
+    Parola en az
+    [%+ constants.USER_PASSWORD_MIN_LENGTH FILTER html %] karakter uzunluğunda olmalı.
 
   [% ELSIF error == "patch_too_large" %]
-    [% title = "File Too Large" %]
-    The file you are trying to attach is [% filesize FILTER html %] 
-    kilobytes (KB) in size.
-    Patches cannot be more than [% Param('maxpatchsize') %] KB in size.
-    Try breaking your patch into several pieces.
+    [% title = "Dosya Fazla Büyük" %]
+    Eklemeye çalıştığınız dosya [% filesize FILTER html %] kilobayt. Yamalar [% Param('maxpatchsize') %] kilobayttan büyük olamaz. Yamayı birkaç parçaya bölmeyi deneyin.
 
   [% ELSIF error == "product_access_denied" %]
-    Either the product '[% product FILTER html %]' does not exist or
-    you don't have access to it.
+    Ya '[% product FILTER html %]' böyle bir ürün yok ya da sizin bu ürüne erişiminiz yok.
 
   [% ELSIF error == "product_doesnt_exist" %]
-    [% title = "Specified Product Does Not Exist" %]
-    The product '[% product FILTER html %]' does not exist.
+    [% title = "Belirtilen Ürün Mevcut Değil" %]
+    '[% product FILTER html %]' diye bir ürün yok.
 
   [% ELSIF error == "product_votes_per_bug_must_be_nonnegative" %]
-    [% title = "Maximum Votes Must Be Non-negative" %]
-    [% admindocslinks = {'voting.html' => 'Setting up the voting feature'} %]
-    '[% maxvotesperbug FILTER html %]' is an invalid value for the 
-    <em>'Maximum Votes Per [% terms.Bug %]'</em> field, which should
-    contain a non-negative number.
+    [% title = "En Fazla Oy Sayısı Negatif Olmamalı" %]
+    [% admindocslinks = {'voting.html' => 'Oy Özelliğini Ayarlamak'} %]
+    '[% maxvotesperbug FILTER html %]' değeri pozitif bir sayı olması gereken <em>'[% terms.Bug %] Başına En Fazla Oy Sayısı'</em> alanı için geçersiz bir değer.
 
   [% ELSIF error == "product_votes_per_user_must_be_nonnegative" %]
-    [% title = "Votes Per User Must Be Non-negative" %]
-    [% admindocslinks = {'voting.html' => 'Setting up the voting feature'} %]
-    '[% votesperuser FILTER html %]' is an invalid value for the 
-    <em>'Votes Per User'</em> field, which should contain a
-    non-negative number.
+    [% title = "Kullanıcı Başına Oy Sayısı Negatif Olmamalı" %]
+    [% admindocslinks = {'voting.html' => 'Oy Özelliğini Ayarlamak'} %]
+    '[% votesperuser FILTER html %]' değeri pozitif bir sayı olması gereken <em>'Kullanıcı Başına Oy'</em> alanı için geçersiz bir değer.
 
   [% ELSIF error == "product_votes_to_confirm_must_be_nonnegative" %]
-    [% title = "Votes To Confirm Must Be Non-negative" %]
-    [% admindocslinks = {'voting.html' => 'Setting up the voting feature'} %]
-    '[% votestoconfirm FILTER html %]' is an invalid value for the 
-    <em>'Votes To Confirm'</em> field, which should contain a
-    non-negative number.
+    [% title = "Onay İçin Oy Sayısı Negatif Olmamalı" %]
+    [% admindocslinks = {'voting.html' => 'Oy Özelliğini Ayarlamak'} %]
+    '[% votestoconfirm FILTER html %]' değeri pozitif bir sayı içermesi gereken <em>'Onay İçin Oy Sayısı'</em> alanı için geçersiz bir değer.
 
   [% ELSIF error == "product_cant_delete_description" %]
-    [% title = "Cannot delete product description" %]
+    [% title = "Ürün Açıklaması Silinemez" %]
     [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
-    Cannot delete the description for product
-    '[% product FILTER html %]'.
+    '[% product FILTER html %]' ürününün açıklaması silinemez.
 
   [% ELSIF error == "product_cant_delete_name" %]
-    [% title = "Cannot delete product name" %]
+    [% title = "Ürün adı silinemez" %]
     [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
-    Cannot delete the product name for product '[% product FILTER html %]'.
+    '[% product FILTER html %]' ürününün adı silinemez.
 
   [% ELSIF error == "product_name_already_in_use" %]
-    [% title = "Product name already in use" %]
+    [% title = "Ürün Adı Zaten Kullanımda" %]
     [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
-    The product name '[% product FILTER html %]' is already in use.
+    '[% product FILTER html %]' ürün adı zaten kullanılıyor
   
   [% ELSIF error == "product_name_diff_in_case" %]
-    [% title = "Product name differs only in case" %]
+    [% title = "Ürün Adında Sadece Harfleri Halleri Farklı" %]
     [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
-    The product name '[% product FILTER html %]' differs from existing 
-    product '[% existing_product FILTER html %]' only in case.
+    '[% product FILTER html %]' ürün adı varolan '[% existing_product FILTER html %]' ürününün adından sadece harflerin halleri yoluyla ayrılıyor.
 
   [% ELSIF error == "product_must_define_defaultmilestone" %]
-    [% title = "Must define new default milestone" %]
+    [% title = "Yeni Öntanımlı Aşama Belirtilmeli" %]
     [% admindocslinks = {'products.html' => 'Ürün Yönetimi',
                          'milestones.html' => 'Aşamalar Hakkında'} %]
     [% IF classification %]
@@ -1371,7 +1345,7 @@
 
   [% ELSIF error == "too_many_votes_for_bug" %]
     [% title = "Illegal Vote" %]
-    [% admindocslinks = {'voting.html' => 'Setting up the voting feature'} %]
+    [% admindocslinks = {'voting.html' => 'Oy Özelliğini Ayarlamak'} %]
     You may only use at most [% max FILTER html %] votes for a single
     [%+ terms.bug %] in the
     <tt>[% product FILTER html %]</tt> product, but you are trying to
@@ -1379,7 +1353,7 @@
 
   [% ELSIF error == "too_many_votes_for_product" %]
     [% title = "Illegal Vote" %]
-    [% admindocslinks = {'voting.html' => 'Setting up the voting feature'} %]
+    [% admindocslinks = {'voting.html' => 'Oy Özelliğini Ayarlamak'} %]
     You tried to use [% votes FILTER html %] votes in the
     <tt>[% product FILTER html %]</tt> product, which exceeds the maximum of
     [%+ max FILTER html %] votes for this product.
@@ -1456,7 +1430,7 @@
 
   [% ELSIF error == "votes_must_be_nonnegative" %]
     [% title = "Votes Must Be Non-negative" %]
-    [% admindocslinks = {'voting.html' => 'Setting up the voting feature'} %]
+    [% admindocslinks = {'voting.html' => 'Oy Özelliğini Ayarlamak'} %]
     Only use non-negative numbers for your [% terms.bug %] votes.
 
   [% ELSIF error == "wrong_token_for_cancelling_email_change" %]
