@@ -662,353 +662,317 @@
     [% END %]
     
   [% ELSIF error == "illegal_email_address" %]
-    [% title = "Invalid Email Address" %]
-    The e-mail address you entered (<b>[% addr FILTER html %]</b>) 
-    didn't pass our syntax checking for a legal email address.
+    [% title = "Geçersiz Eposta Adresi" %]
+    Girdiğiniz eposta adresi (<b>[% addr FILTER html %]</b>) 
+    geçerli eposta adresi testimizden geçemedi.
     [% IF default %]
-      A legal address must contain exactly one '@',
-      and at least one '.' after the @.
+      Geçerli bir adres bir adet '@'
+      ve '@' işaretinden sonra da en az bir tane de '.' içermelidir.
     [% ELSE %]
       [%+ Param('emailregexpdesc') %]
     [% END %]
-    It must also not contain any of these special characters:
-    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt>, or any whitespace.
+    Ayrıca şu özel karakterlerden birini ve boşluk karakterini içeremez:
+    <tt>\ ( ) &amp; &lt; &gt; , ; : &quot; [ ]</tt>.
     
   [% ELSIF error == "illegal_frequency" %]
-    [% title = "Too Frequent" %]
-    Unless you are an administrator, you may not create series which are 
-    run more often than once every [% minimum FILTER html %] days.
+    [% title = "Fazla Sık" %]
+    Eğer bir yönetici değilseniz oluşturacağınız seriler en az [% minimum FILTER html %] günde bir kullanılabilir.
     
   [% ELSIF error == "illegal_group_control_combination" %]
-    [% title = "Your Group Control Combination Is Illegal" %]
-    [% admindocslinks = {'groups.html' => 'Assigning Group Controls to Products'} %]
-    Your group control combination for group &quot;
-    [% groupname FILTER html %]&quot; is illegal.
+    [% title = "Grup Kontrol Bileşiminiz Geçersiz" %]
+    [% admindocslinks = {'groups.html' => 'Ürünlere Grup Kontrolleri Atamak'} %]
+    &quot;[% groupname FILTER html %]&quot; grubuna atadığınız grup kontrol bileşiminiz geçersiz.
 
   [% ELSIF error == "illegal_is_obsolete" %]
-    [% title = "Your Search Makes No Sense" %]
-    The only legal values for the <em>Attachment is obsolete</em> field are
-    0 and 1.
+    [% title = "Arama Anlamsız" %]
+    <em>Ek eski</em> alanı için geçerli değerler sadece 0 ve 1'dir.
 
   [% ELSIF error == "illegal_query_name" %]
-    [% title = "Illegal Search Name" %]
-    The name of your search cannot contain any of the following characters: 
+    [% title = "Geçersiz Arama Adı" %]
+    Aramanızın adı aşağıdaki karakterleri içeremez:
     &lt;, &gt;, &amp;.
 
   [% ELSIF error == "illegal_series_creation" %]
-    [% admindocslinks = {'groups.html' => 'Group security'} %]
-    [% docslinks = {'reporting.html' => 'Reporting'} %]
-    You are not authorized to create series.
+    [% admindocslinks = {'groups.html' => 'Grup Güvenliği'} %]
+    [% docslinks = {'reporting.html' => 'Bildirme'} %]
+    Seri oluşturma izniniz yok.
         
   [% ELSIF error == "illegal_series_edit" %]
-    [% admindocslinks = {'groups.html' => 'Group security'} %]
-    [% docslinks = {'reporting.html' => 'Reporting'} %]
-    You are not authorized to edit this series. To do this, you must either
-    be its creator, or an administrator.
+    [% admindocslinks = {'groups.html' => 'Grup Güvenliği'} %]
+    [% docslinks = {'reporting.html' => 'Bildirme'} %]
+    Bu seriyi değiştirme izniniz yok. Bunu sadece bu seriyi oluşturan kişi ve yöneticiler yapabilir.
 
   [% ELSIF error == "illegal_time" %]
-    [% title = "Illegal Time" %]
-    '<tt>[% time FILTER html %]</tt>' is not a legal time.
+    [% title = "Geçersiz Zaman" %]
+    '<tt>[% time FILTER html %]</tt>' geçerli bir zaman değil.
     [% IF format %]
-      Please use the format '<tt>[% format FILTER html %]</tt>'.
+      Lütfen '<tt>[% format FILTER html %]</tt>' biçimini kullanın.
     [% END %]
         
   [% ELSIF error == "insufficient_data_points" %]
-    [% docslinks = {'reporting.html' => 'Reporting'} %]
-    We don't have enough data points to make a graph (yet).
+    [% docslinks = {'reporting.html' => 'Bildirme'} %]
+    Bir grafik oluşturmak için yeterli veri noktamız yok (henüz).
         
   [% ELSIF error == "invalid_attach_id" %]
-    [% title = "Invalid Attachment ID" %]
-    The attachment id [% attach_id FILTER html %] is invalid.
+    [% title = "Geçersiz Ek Kimliği" %]
+    Ek kimliği ([% attach_id FILTER html %]) geçersiz.
 
   [% ELSIF error == "bug_id_does_not_exist" %]
-    [% title = BLOCK %]Invalid [% terms.Bug %] ID[% END %]
-    [% terms.Bug %] #[% bug_id FILTER html %] does not exist.
+    [% title = BLOCK %]Geçersiz [% terms.Bug %] Kimliği[% END %]
+    [% bug_id FILTER html %] kimlikli bir [% terms.bug %] yok.
     
   [% ELSIF error == "improper_bug_id_field_value" %]
     [% title = BLOCK %]
-      [% IF bug_id %]Invalid [% ELSE %]Missing [% END %] [% terms.Bug %] ID
+      [% IF bug_id %]Geçersiz [% ELSE %]Kayıp [% END %] [% terms.Bug %] Kimliği
     [% END %]
     [% IF bug_id %]
-      '[% bug_id FILTER html %]' is not a valid [% terms.bug %] number
+      '[% bug_id FILTER html %]' geçerli bir [% terms.bug %] numarası
       [% IF Param("usebugaliases") %]
-        nor an alias to [% terms.abug %]
-      [% END %].
+        ve [% terms.abug %] adı
+      [% END %] değil.
     [% ELSE %]
       [% IF field %]
-        The '[% field_descs.$field FILTER html %]' field
-        cannot be empty.
+        '[% field_descs.$field FILTER html %]' alanı boş olamaz.
       [% END %]
-      You must enter a valid [% terms.bug %] number!
+      Geçerli bir [% terms.bug %] numarası girmelisiniz!
     [% END %]
 
   [% ELSIF error == "invalid_changedsince" %]
-    [% title = "Invalid 'Changed Since'" %]
-    The 'changed since' value, '[% changedsince FILTER html %]', must be an
-    integer >= 0.
+    [% title = "Geçersiz 'İtibaren Değişen'" %]
+    'itibaren değişen' değeri, '[% changedsince FILTER html %]', 0'dan (sıfır) büyük bir tamsayı olmalıdır.
 
   [% ELSIF error == "invalid_content_type" %]
-    [% title = "Invalid Content-Type" %]
-    The content type <em>[% contenttype FILTER html %]</em> is invalid.
-    Valid types must be of the form <em>foo/bar</em> where <em>foo</em>
-    is either <em>application, audio, image, message, model, multipart,
-    text,</em> or <em>video</em>.
+    [% title = "Geçersiz İçerik Türü" %]
+    <em>[% contenttype FILTER html %]</em> içerik türü geçersiz.
+    Geçerli değerler <em>üst</em>'ün <em>application, audio, image, message, model, multipart, text</em> veya <em>video</em> olabildiği <em>üst/alt</em> şeklinde olmalıdır.
     
   [% ELSIF error == "invalid_context" %]
-    [% title = "Invalid Context" %]
-    The context [% context FILTER html %] is invalid (must be a number,
-    "file" or "patch").
+    [% title = "Geçersiz Bağlam" %]
+    [% context FILTER html %] bağlamı geçersiz (bir sayı, "dosya" veya "yama" olabilir).
 
   [% ELSIF error == "invalid_datasets" %]
-    [% title = "Invalid Datasets" %]
-    Invalid datasets <em>[% datasets FILTER html %]</em>. Only digits,
-    letters and colons are allowed.
+    [% title = "Geçersiz Veri Kümeleri" %]
+    <em>[% datasets FILTER html %]</em> veri kümeleri geçersiz. Sadece basamaklar, harfler ve sütunlar kullanılabilir.
 
   [% ELSIF error == "invalid_format" %]
-    [% title = "Invalid Format" %]
-    The format "[% format FILTER html %]" is invalid (must be one of
+    [% title = "Geçersiz Biçim" %]
+    "[% format FILTER html %]" biçimi geçersiz. (
     [% FOREACH my_format = formats %]
       "[% my_format FILTER html %]"
     [% END %]
-    ).
+    değerlerinden biri olmalıdır).
 
   [% ELSIF error == "invalid_group_ID" %]
-    [% title = "Invalid group ID" %]
-    The group you specified doesn't exist.
+    [% title = "Geçersiz Grup Kimliği" %]
+    Belirttiğiniz grup mevcut değil.
 
   [% ELSIF error == "invalid_group_name" %]
-    [% title = "Invalid group name" %]
-    The group you specified, [% name FILTER html %], is not valid here.
+    [% title = "Geçersiz Grup Adı" %]
+    Belirttiğiniz grup ([% name FILTER html %]) burada kullanılamaz.
 
   [% ELSIF error == "invalid_maxrows" %]
-    [% title = "Invalid Max Rows" %]
-    The maximum number of rows, '[% maxrows FILTER html %]', must be
-    a positive integer.
+    [% title = "En Fazla Satır Sayısı Değeri Geçersiz" %]
+    Olabilecek en fazla satır sayısı değeri ('[% maxrows FILTER html %]') pozitif bir tamsayı olmalıdır.
 
   [% ELSIF error == "invalid_parameter" %]
-    [% title = "Invalid Parameter" %]
-    The new value for [% name FILTER html %] is invalid: [% err FILTER html %].
+    [% title = "Geçersiz Parametre" %]
+    [% name FILTER html %] için verilen yeni değer geçersiz: [% err FILTER html %].
 
   [% ELSIF error == "invalid_product_name" %]
-    [% title = "Invalid Product Name" %]
-    The product name '[% product FILTER html %]' is invalid or does not exist.
+    [% title = "Geçersiz Ürün Adı" %]
+    '[% product FILTER html %]' ürün adı geçersiz veya böyle bir ürün yok.
 
   [% ELSIF error == "invalid_regexp" %]
-    [% title = "Invalid regular expression" %]
-    The regular expression you entered is invalid.
+    [% title = "Geçersiz Düzenli İfade" %]
+    Girdiğiniz düzenli ifade (regular expression) geçersiz.
 
   [% ELSIF error == "invalid_user_group" %]
-    [% title = "Invalid User Group" %]
-    [% IF users.size > 1 %] Users [% ELSE %] User [% END %]
-    '[% users.join(', ') FILTER html %]'
-    [% IF users.size > 1 %] are [% ELSE %] is [% END %]
-    not able to edit the
+    [% title = "Geçersiz Kullanıcı Grubu" %]
+    
+    '[% users.join(', ') FILTER html %]' [% IF users.size > 1 %] kullanıcıları [% ELSE %] kullanıcısı [% END %]
+    [% IF bug_id %]
+      '[% bug_id FILTER html %]' kimlikli [% terms.bug %] için
+    [% ELSIF new %]
+      yeni bir [% terms.bugDat %] dahil edilemez ve
+    [% ELSE %]
+      değiştirilen en az bir [% terms.bug %] için
+    [% END %]
     [% IF product %]
       '[% product FILTER html %]'
     [% END %]
     [%+ field_descs.product FILTER html %]
-    [% IF bug_id %]
-      for [% terms.bug %] '[% bug_id FILTER html %]'.
-    [% ELSIF new %]
-      and may not be included on a new [% terms.bug %].
-    [% ELSE %]
-      for at least one [% terms.bug %] being changed.
-    [% END %]
+    ürününü değiştiremiyor.
 
   [% ELSIF error == "invalid_username" %]
-    [% title = "Invalid Username" %]
-    The name <tt>[% name FILTER html %]</tt> is not a valid username.  
-    Either you misspelled it, or the person has not
-    registered for a [% terms.Bugzilla %] account.
+    [% title = "Geçersiz Kullanıcı Adı" %]
+    <tt>[% name FILTER html %]</tt> adı geçerli bir kullanıcı adı değil.
+    Ya yanlış yazdınız, ya da o kişinin bir [% terms.Bugzilla %] hesabı yok.
 
   [% ELSIF error == "invalid_username_or_password" %]
-    [% title = "Invalid Username Or Password" %]
-    The username or password you entered is not valid.
+    [% title = "Geçersiz Kullanıcı Adı Veya Parola" %]
+    Girdiğiniz kullanıcı adı ya da parola geçersiz.
 
   [% ELSIF error == "keyword_already_exists" %]
-    [% title = "Keyword Already Exists" %]
-    A keyword with the name [% name FILTER html %] already exists.
+    [% title = "Anahtar Zaten Var" %]
+    [% name FILTER html %] adında bir anahtar zaten var.
 
   [% ELSIF error == "keyword_blank_description" %]
-    [% title = "Blank Keyword Description Not Allowed" %]
-    You must enter a non-blank description for the keyword.
+    [% title = "Anahtar Açıklaması Boş Olamaz" %]
+    Anahtar için bir açıklama girmelisiniz.
      
   [% ELSIF error == "keyword_blank_name" %]
-    [% title = "Blank Keyword Name Not Allowed" %]
-    You must enter a non-blank name for the keyword.
+    [% title = "Anahtar Adı Boş Olamaz" %]
+    Anahtara bir isim girmelisiniz.
      
   [% ELSIF error == "keyword_invalid_name" %]
-    [% title = "Invalid Keyword Name" %]
-    You may not use commas or whitespace in a keyword name.
+    [% title = "Geçersiz Anahtar Adı" %]
+    Anahtar adında virgül ve boşluk kullanamazsınız.
      
   [% ELSIF error == "local_file_too_large" %]
-    [% title = "Local File Too Large" %]
-    Local file uploads must not exceed 
-    [% Param('maxlocalattachment') %] MB in size.
+    [% title = "Yerel Dosya Fazla Büyük" %]
+    Yerel dosya yüklemeleri boyut olarak [% Param('maxlocalattachment') %] megabaytı geçemez.
 
   [% ELSIF error == "login_needed_for_password_change" %]
-    [% title = "Login Name Required" %]
-    You must enter a login name when requesting to change your password.
+    [% title = "Oturum Açmalısınız" %]
+    Parolanızı değiştirmek için önce oturum açma adı girmelisiniz.
 
   [% ELSIF error == "login_required_for_pronoun" %]
-    [% title = "Login Name Required" %]
-    You can't use %user% without being logged in, because %user% refers
-    to your login name, which we don't know.
+    [% title = "Oturum Açmalısınız" %]
+    Oturum açmadan "%user%" kullanamazsınız, çünkü %user% sizin kullanıcı adınıza karşılık gelir.
 
   [% ELSIF error == "milestone_already_exists" %]
-    [% title = "Milestone Already Exists" %]
-    [% admindocslinks = {'products.html' => 'Administering products',
-                         'milestones.html' => 'About Milestones'} %]
-    The milestone '[% name FILTER html %]' already exists for product '
-    [%- product FILTER html %]'.
+    [% title = "Aşama Zaten Var" %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi',
+                         'milestones.html' => 'Aşamalar Hakkında'} %]
+    '[%- product FILTER html %]' ürününün zaten bir '[% name FILTER html %]' aşaması var.
+    .
 
   [% ELSIF error == "milestone_blank_name" %]
-    [% title = "Blank Milestone Name Not Allowed" %]
-    You must enter a name for this milestone.
+    [% title = "Aşama Adı Boş Olamaz" %]
+    Bu aşama için bir isim girmelisiniz.
 
   [% ELSIF error == "milestone_is_default" %]
-    [% title = "Default milestone not deletable" %]
-    [% admindocslinks = {'products.html' => 'Administering products',
-                         'milestones.html' => 'About Milestones'} %]
-    Sorry, but [% milestone.name FILTER html %] is the default milestone
-    for the '[% milestone.product.name FILTER html %]' product, and so
-    it cannot be deleted.
+    [% title = "Öntanımlı Aşama Silinemez" %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi',
+                         'milestones.html' => 'Aşamalar Hakkında'} %]
+    [% milestone.name FILTER html %], '[% milestone.product.name FILTER html %]' ürününün öntanımlı aşaması, o yüzden silinemez.
 
   [% ELSIF error == "milestone_name_too_long" %]
-    [% title = "Milestone Name Is Too Long" %]
-    The name of a milestone is limited to 20 characters. 
-    '[% name FILTER html %]' is too long ([% name.length %] characters).
+    [% title = "Aşama Adı Fazla Uzun" %]
+    Bir aşamanın adı en fazla 20 karakter olabilir. '[% name FILTER html %]' fazla uzun bir isim ([% name.length %] karakter).
 
   [% ELSIF error == "milestone_required" %]
-    [% title = "Milestone Required" %]
-    You must select a target milestone for [% terms.bug %]
-    [%+ bug.id FILTER html %]
-    if you are going to accept it.  Part of accepting 
-    [%+ terms.abug %] is giving an estimate of when it will be fixed.
+    [% title = "Aşama Gerekiyor" %]
+    Eğer [% terms.bugAcc %] kabul edecekseniz, [%+ bug.id FILTER html %] kimlikli [% terms.bug %] için bir aşama seçmelisiniz. Ne zaman düzeltilmiş olacağına dair bir tahminde bulunmak, [% terms.abugAcc %] kabul etmenin gereğidir.
 
   [% ELSIF error == "milestone_sortkey_invalid" %]
-    [% title = "Invalid Milestone Sortkey" %]
-    The sortkey '[% sortkey FILTER html %]' is not in the range
-    [%+ constants.MIN_SMALLINT FILTER html %] &le; sortkey &le;
-    [%+ constants.MAX_SMALLINT FILTER html %].
+    [% title = "Aşama Sıralama Anahtarı Geçersiz" %]
+    '[% sortkey FILTER html %]' sıralama anahtarı
+    [%+ constants.MIN_SMALLINT FILTER html %] ile
+    [%+ constants.MAX_SMALLINT FILTER html %] arasında değil.
 
   [% ELSIF error == "misarranged_dates" %]
-    [% title = "Misarranged Dates" %]
-    Your start date ([% datefrom FILTER html %]) is after 
-    your end date ([% dateto FILTER html %]).
+    [% title = "Tarihler Ters" %]
+    Verdiğiniz başlangıç tarihi ([% datefrom FILTER html %]) bitiş tarihinden ([% dateto FILTER html %]) sonra.
     
   [% ELSIF error == "missing_attachment_description" %]
-    [% title = "Missing Attachment Description" %]
-    You must enter a description for the attachment.
+    [% title = "Ek Açıklaması Verilmemiş" %]
+    Ek için bir açıklama girmelisiniz.
     
   [% ELSIF error == "missing_category" %]
-    [% title = "Missing Category" %]
-    You did not specify a category for this series.
+    [% title = "Kategori Verilmemiş" %]
+    Bu seri için bir kategori belirtmemişsiniz.
 
   [% ELSIF error == "missing_component" %]
-    [% title = "Missing Component" %]
-    [% admindocslinks = {'products.html'   => 'Administering products',
-                         'components.html' => 'Creating a component'} %]
-    Sorry, the product <em>[% product.name FILTER html %]</em>
-    has to have at least one component in order for you to
-    enter [% terms.abug %] into it.<br>
+    [% title = "Bileşen Verilmemiş" %]
+    [% admindocslinks = {'products.html'   => 'Ürün Yönetimi',
+                         'components.html' => 'Bileşen Oluşturma'} %]
+    <em>[% product.name FILTER html %]</em> ürününe [% terms.abug %] girebilmemiz için ürünün en az bir bileşeni olması gerekiyor.
+    <br>
     [% IF user.in_group("editcomponents", product.id) %]
-      <a href="editcomponents.cgi?action=add&amp;product=[% product.name FILTER url_quote %]">Create
-      a new component</a>.
+      <a href="editcomponents.cgi?action=add&amp;product=[% product.name FILTER url_quote %]">Yeni bileşen oluştur</a>.
     [% ELSE %]
-      Please contact [% Param("maintainer") %] and ask them
-      to add a component to this product.
+      Lütfen [% Param("maintainer") %] ile iletişime geçip bu ürüne bir bileşen eklemesini isteyin.
     [% END %]
 
   [% ELSIF error == "missing_content_type" %]
-    [% title = "Missing Content-Type" %]
-     You asked [% terms.Bugzilla %] to auto-detect the content type, but
-     your browser did not specify a content type when uploading the file, 
-     so you must enter a content type manually.
+    [% title = "İçerik Türü Belirtilmemiş" %]
+     [% terms.BugzillaAbl %] içerik türünü otomatik olarak algılamasını istediniz fakat tarayıcınız dosyayı yüklerken herhangi bir içerik türü belirtmedi, o yüzden kendiniz bir içerik türü girmelisiniz.
                 
   [% ELSIF error == "missing_content_type_method" %]
-    [% title = "Missing Content-Type Determination Method" %]
-    You must choose a method for determining the content type,
-    either <em>auto-detect</em>, <em>select from list</em>, or <em>enter 
-    manually</em>.
+    [% title = "İçerik Türü Algılama Yönetimi Belirtilmemiş" %]
+    <em>otomatik algıla</em>, <em>listeden seç</em>, veya <em>elle gir</em>
+    değerlerinden biri olmak üzere içerik türünü belirlemek için bir yöntem seçmelisiniz.
         
   [% ELSIF error == "missing_cookie" %]
-    [% title = "Missing Cookie" %]
-    Sorry, I seem to have lost the cookie that recorded
-    the results of your last search. I'm afraid you will have to start
-    again from the <a href="query.cgi">search page</a>.
+    [% title = "Çerez Kayıp" %]
+    Görünüşe göre son aramanızın sonuçlarını tutan çerezi kaybettim. <a href="query.cgi">Arama sayfası</a>ndan yeniden başlamanız gerekecek.
           
   [% ELSIF error == "missing_datasets" %]
-    [% title = "No Datasets Selected" %]
-    [% docslinks = {'reporting.html' => 'Reporting'} %]
-    You must specify one or more datasets to plot.
+    [% title = "Veri Kümesi Seçilmemiş" %]
+    [% docslinks = {'reporting.html' => 'Bildirme'} %]
+    Çizim için en az bir veri kümesi seçmelisiniz.
     
   [% ELSIF error == "missing_email_type" %]
-    [% title = "Your Search Makes No Sense" %]
-    You must specify one or more fields in which to search for
-    <tt>[% email FILTER html %]</tt>.
+    [% title = "Arama Anlamsız" %]
+    İçinde <tt>[% email FILTER html %]</tt> aranacak bir veya daha fazla alan seçmelisiniz.
     
   [% ELSIF error == "missing_frequency" %]
-    [% title = "Missing Frequency" %]
-    [% docslinks = {'reporting.html' => 'Reporting'} %]
-    You did not specify a valid frequency for this series.
+    [% title = "Sıklık Belirtilmemiş" %]
+    [% docslinks = {'reporting.html' => 'Bildirme'} %]
+    Bu seri için geçerli bir tekrarlama sıklığı belirtmediniz.
                 
   [% ELSIF error == "missing_name" %]
-    [% title = "Missing Name" %]
-    [% docslinks = {'reporting.html' => 'Reporting'} %]
-    You did not specify a name for this series.
+    [% title = "İsim Belirtilmemiş" %]
+    [% docslinks = {'reporting.html' => 'Bildirme'} %]
+    Bu seri için bir isim girmelisiniz.
                 
   [% ELSIF error == "missing_query" %]
-    [% title = "Missing Search" %]
-    [% docslinks = {'query.html' => "Searching for $terms.bugs",
-                    'query.html#list' => "$terms.Bug lists"} %]
-    The search named <em>[% queryname FILTER html %]</em>
+    [% title = "Arama Kayıp" %]
+    [% docslinks = {'query.html' => '$terms.Bug Arama',
+                    'query.html#list' => '$terms.Bug Listeleri'} %]
+    <em>[% queryname FILTER html %]</em> isimli arama
     [% IF sharer_id && sharer_id != user.id %]
-      has not been made visible to you.
+      size görünür kılınmamış.
     [% ELSE %]
-      does not exist.
+      yok.
     [% END %]
 
   [% ELSIF error == "missing_resolution" %]
-    [% title = "Resolution Required" %]
-    A valid resolution is required to mark [% terms.bugs %] as
-    [%+ status FILTER upper FILTER html %].
+    [% title = "Karar Gerekli" %]
+    Hataları [%+ status FILTER upper FILTER html %] olarak işaretleyebilmek için geçerli bir karar girmelisiniz.
 
   [% ELSIF error == "move_bugs_disabled" %]
-    [% title = BLOCK %][% terms.Bug %] Moving Disabled[% END %]
-    Sorry, [% terms.bug %] moving has been disabled. If you need
-    to move [% terms.abug %], please contact [% Param("maintainer") %].
+    [% title = BLOCK %][% terms.Bug %] Taşıma Kapatılmış[% END %]
+    [% terms.Bug %] taşıma kapatılmış durumda. Eğer [% terms.abugAcc %] taşımanız gerekiyorsa, lütfen [% Param("maintainer") %] ile iletişime geçin.
 
   [% ELSIF error == "missing_subcategory" %]
-    [% title = "Missing Subcategory" %]
-    You did not specify a subcategory for this series.
+    [% title = "Alt Kategori Belirtilmemiş" %]
+    Bu seri için herhangi bir alt kategori belirtmediniz.
                 
   [% ELSIF error == "missing_version" %]
-    [% title = "Missing Version" %]
-    [% admindocslinks = {'versions.html' => 'Defining versions'} %]
-    Sorry, the product <em>[% product.name FILTER html %]</em>
-    has to have at least one version in order for you to
-    enter [% terms.abug %] into it.<br>
+    [% title = "Sürüm Belirtilmemiş" %]
+    [% admindocslinks = {'versions.html' => 'Sürüm Tanımlama'} %]
+    <em>[% product.name FILTER html %]</em> ürününe [% terms.abug %] girebilmeniz için 
+    en az bir sürümü olması gerekir.<br>
     [% IF user.in_group("editcomponents", product.id) %]
-      <a href="editversions.cgi?action=add&amp;product=[% product.name FILTER url_quote %]">Create
-      a new version</a>.
+      <a href="editversions.cgi?action=add&amp;product=[% product.name FILTER url_quote %]">Yeni sürüm oluştur</a>.
     [% ELSE %]
-      Please contact [% Param("maintainer") %] and ask them
-      to add a version to this product.
+      Lütfen [% Param("maintainer") %] ile iletişime geçip bu ürüne bir sürüm eklemesini isteyin.
     [% END %]
 
   [% ELSIF error == "need_quip" %]
-    [% title = "Quip Required" %]
-    [% docslinks = {'quips.html' => 'About quips'} %]
-    Please enter a quip in the text field.
+    [% title = "Nükte Gerekli" %]
+    [% docslinks = {'quips.html' => 'Nükteler Hakkında'} %]
+    Lütfen metin alanına bir nükte girin.
 
   [% ELSIF error == "new_password_missing" %]
-    [% title = "New Password Missing" %]
-    You must enter a new password.
+    [% title = "Yeni Parola Belirtilmemiş" %]
+    Yeni bir parola girmelisiniz.
 
   [% ELSIF error == "no_axes_defined" %]
     [% title = "No Axes Defined" %]
-    [% docslinks = {'reporting.html' => 'Reporting'} %]
+    [% docslinks = {'reporting.html' => 'Bildirme'} %]
     You didn't define any axes to plot.
 
   [% ELSIF error == "no_bugs_chosen" %]
@@ -1188,30 +1152,30 @@
 
   [% ELSIF error == "product_cant_delete_description" %]
     [% title = "Cannot delete product description" %]
-    [% admindocslinks = {'products.html' => 'Administering products'} %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
     Cannot delete the description for product
     '[% product FILTER html %]'.
 
   [% ELSIF error == "product_cant_delete_name" %]
     [% title = "Cannot delete product name" %]
-    [% admindocslinks = {'products.html' => 'Administering products'} %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
     Cannot delete the product name for product '[% product FILTER html %]'.
 
   [% ELSIF error == "product_name_already_in_use" %]
     [% title = "Product name already in use" %]
-    [% admindocslinks = {'products.html' => 'Administering products'} %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
     The product name '[% product FILTER html %]' is already in use.
   
   [% ELSIF error == "product_name_diff_in_case" %]
     [% title = "Product name differs only in case" %]
-    [% admindocslinks = {'products.html' => 'Administering products'} %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
     The product name '[% product FILTER html %]' differs from existing 
     product '[% existing_product FILTER html %]' only in case.
 
   [% ELSIF error == "product_must_define_defaultmilestone" %]
     [% title = "Must define new default milestone" %]
-    [% admindocslinks = {'products.html' => 'Administering products',
-                         'milestones.html' => 'About Milestones'} %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi',
+                         'milestones.html' => 'Aşamalar Hakkında'} %]
     [% IF classification %]
       [% classification_url_part = BLOCK %]&amp;classification=
         [%- classification FILTER url_quote %]
@@ -1229,43 +1193,43 @@
 
   [% ELSIF error == "product_blank_name" %]
     [% title = "Blank Product Name Not Allowed" %]
-    [% admindocslinks = {'products.html' => 'Administering products'} %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
     You must enter a name for the new product.
   
   [% ELSIF error == "product_disabled" %]
     [% title = BLOCK %]Product closed for [% terms.Bug %] Entry[% END %]
-    [% admindocslinks = {'products.html' => 'Administering products'} %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
     Sorry, entering [% terms.abug %] into the
     product <em>[% product.name FILTER html %]</em> has been disabled.
 
   [% ELSIF error == "product_edit_denied" %]
     [% title = "Product Edit Access Denied" %]
-    [% admindocslinks = {'products.html' => 'Administering products',
-                         'groups.html'   => 'Group security'} %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi',
+                         'groups.html'   => 'Grup Güvenliği'} %]
     You are not permitted to edit [% terms.bugs %] in product 
     [%+ product FILTER html %].
 
   [% ELSIF error == "product_has_bugs" %]
     [% title = BLOCK %]Product has [% terms.Bugs %][% END %]
-    [% admindocslinks = {'products.html' => 'Administering products'} %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
     There are [% nb FILTER html %] [%+ terms.bugs %] entered for this product!
     You must move those [% terms.bugs %] to another product before you
     can delete this one.
 
   [% ELSIF error == "product_must_have_description" %]
     [% title = "Product needs Description" %]
-    [% admindocslinks = {'products.html' => 'Administering products'} %]
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
     You must enter a description for product '[% product FILTER html %]'.
 
   [% ELSIF error == "product_must_have_version" %]
     [% title = "Product needs Version" %]
-    [% admindocslinks = {'products.html' => 'Administering products',
+    [% admindocslinks = {'products.html' => 'Ürün Yönetimi',
                          'versions.html' => 'Administering versions'} %]
     You must enter a version for product '[% product FILTER html %]'.
 
   [% ELSIF error == "product_not_specified" %]
     [% title = "No Product Specified" %]
-    [% admindocslinks = {'products.html'   => 'Administering products',
+    [% admindocslinks = {'products.html'   => 'Ürün Yönetimi',
                          'components.html' => 'Administering components',
                          'milestones.html' => 'Administering milestones',
                          'versions.html'   => 'Administering versions'} %]
@@ -1282,7 +1246,7 @@
 
   [% ELSIF error == "query_name_missing" %]
     [% title = "No Search Name Specified" %]
-    [% docslinks = {'query.html#list' => "$terms.Bug lists"} %]
+    [% docslinks = {'query.html#list' => '$terms.Bug Listeleri'} %]
     You must enter a name for your search.
 
   [% ELSIF error == "query_name_too_long" %]
@@ -1344,7 +1308,7 @@
 
   [% ELSIF error == "series_already_exists" %]
     [% title = "Series Already Exists" %]
-    [% docslinks = {'reporting.html' => 'Reporting'} %]
+    [% docslinks = {'reporting.html' => 'Bildirme'} %]
       A series named <em>[% series.category FILTER html %] /
       [%+ series.subcategory FILTER html %] / 
       [%+ series.name FILTER html %]</em>
