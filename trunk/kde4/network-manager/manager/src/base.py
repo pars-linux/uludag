@@ -12,11 +12,15 @@
 #
 
 # System
+import time
 import comar
 
 # Qt Stuff
 from PyQt4 import QtGui
 from PyQt4.QtCore import SIGNAL, Qt, QTimeLine, QSize
+
+# KDE Stuff
+from PyKDE4.kdeui import KMessageBox
 
 # Application Stuff
 from backend import NetworkIface
@@ -69,18 +73,33 @@ class MainManager(QtGui.QWidget):
         # Update service status and follow Comar for state changes
         self.getConnectionStates()
 
-    def fillProfileList(self):
-        # Fill profile list
-        self.connections = self.iface.connections('net-tools')
-        self.connections.sort()
+    def fillProfileList(self, ignore = None):
+        a=time.time()
+        print a
+        # Clear the entire list
         self.ui.profileList.clear()
-        for connection in self.connections:
-            item = QtGui.QListWidgetItem(self.ui.profileList)
-            item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
-            self.widgets[connection] = ConnectionItemWidget('net-tools', connection, self, item)
-            self.ui.profileList.setItemWidget(item, self.widgets[connection])
-            item.setSizeHint(QSize(48,48))
-            del item
+        self.widgets = {}
+
+        # Fill the list with current connections
+        for package in ('net_tools', 'wireless_tools'):
+            # Fill profile list
+            self.connections = self.iface.connections(package)
+            self.connections.sort()
+            for connection in self.connections:
+                if ignore:
+                    if package == ignore[0] and connection == ignore[1]:
+                        continue
+                info = self.iface.info(package, connection)
+                state= str(info["state"])
+                item = QtGui.QListWidgetItem(self.ui.profileList)
+                item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
+                self.widgets[connection] = ConnectionItemWidget(package, connection, self, item)
+                self.widgets[connection].update(state)
+                self.ui.profileList.setItemWidget(item, self.widgets[connection])
+                item.setSizeHint(QSize(48,48))
+                del item
+        print time.time()
+        print time.time()-a
 
     # Anime Naruto depends on GUI
     def animate(self, height):
@@ -159,24 +178,30 @@ class MainManager(QtGui.QWidget):
 
     def applyChanges(self):
         ui = self.ui
-        connectionName = unicode(ui.lineConnectionName.text())
+        needsListUpdate = False
+        connectionName  = unicode(ui.lineConnectionName.text())
         # Updating a profile
         if self.lastEditedData:
             # If profile name has been changed, delete profile first
             if not self.lastEditedData["name"] == connectionName:
                 self.iface.deleteConnection(self.lastEditedPackage, self.lastEditedData["name"])
-        # New profile
+                needsListUpdate = True
         self.iface.updateConnection(self.lastEditedPackage, connectionName, self.collectDataFromUI())
-        self.fillProfileList()
+        if needsListUpdate:
+            self.fillProfileList()
+        if self.lastEditedData["state"].startswith("up"):
+            self.iface.reconnect(self.lastEditedPackage, connectionName)
         self.hideEditBox()
 
     def collectDataFromUI(self):
         ui = self.ui
         data = {}
 
+        # Default options
         data["name"] = ui.lineConnectionName.text()
         data["device_id"] = ui.deviceList.currentText()
 
+        # Network options
         data["net_mode"] = "auto"
         data["net_address"] = ""
         data["net_mask"] = ""
@@ -189,6 +214,7 @@ class MainManager(QtGui.QWidget):
         if ui.lineGateway.isEnabled():
             data["net_gateway"] = ui.lineGateway.text()
 
+        # Nameservics options
         data["namemode"] = "default"
         data["nameserver"] = ""
         if ui.useAutomatic.isChecked():
@@ -197,8 +223,10 @@ class MainManager(QtGui.QWidget):
             data["namemode"] = "custom"
             data["nameserver"] = ui.lineCustomDNS.text()
 
+        # Let them unicode
         for i,j in data.items():
             data[i] = unicode(j)
+
         return data
 
     def editConnection(self):
@@ -207,15 +235,21 @@ class MainManager(QtGui.QWidget):
         self.showEditBox(profile, package)
 
     def deleteConnection(self):
-        print self.sender().parent().package
-
-    # Comar mangling routines
-    def handleConnections(self, package, exception, results):
-        print package, exception, results
+        profile = self.sender().parent().profile
+        package = self.sender().parent().package
+        if KMessageBox.questionYesNo(self, "Do you really want to remove profile %s ?" % profile,
+                                           "Network-Manager") == KMessageBox.Yes:
+            self.fillProfileList(ignore=(package, profile))
+            self.iface.deleteConnection(package, profile)
+        self.fillProfileList()
 
     def getConnectionStates(self):
         self.iface.listen(self.handler)
 
     def handler(self, package, signal, args):
+        args = map(lambda x: unicode(x), list(args))
+        if signal == "stateChanged":
+            if self.widgets.has_key(args[0]):
+                self.widgets[args[0]].update(args)
         print "Comar call : ", args, signal, package
 

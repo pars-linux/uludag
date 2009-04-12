@@ -18,6 +18,8 @@ class NetworkIface:
 
     def __init__(self):
         self.link = comar.Link()
+        self.waitFunctions = []
+        self.link.listenSignals("Net.Link", self.postProcessor)
 
     def connections(self, package):
         return list(self.link.Net.Link[package].connections())
@@ -35,8 +37,17 @@ class NetworkIface:
         else:
             self.disconnect(package, profile)
 
-    def delete(self, package, profile):
-        self.link.Net.Link[package].deleteConnection(profile)
+    def reconnect(self, package, profile):
+        self.disconnect(package, profile)
+        self.registerFunc("stateChanged","down", self.connect, package, profile)
+
+    def registerFunc(self, waitSignal, waitValue, func, package, profile):
+        data = {"signal" :waitSignal,
+                "value"  :waitValue,
+                "func"   :func,
+                "package":package,
+                "profile":profile}
+        self.waitFunctions.append(data)
 
     def setState(self, package, profile, state):
         self.link.Net.Link[package].setState(profile, state, async=self.handler)
@@ -47,20 +58,35 @@ class NetworkIface:
     def handler(self, *args):
         pass
 
+    def postProcessor(self, package, signal, args):
+        finishedFunctions = []
+        args = map(lambda x: unicode(x), list(args))
+        # walk in waiting functions
+        for waitFunc in self.waitFunctions:
+            if signal == str(waitFunc["signal"]) and args[1].startswith(waitFunc["value"]):
+                if package == str(waitFunc["package"]) and unicode(args[0]) == waitFunc["profile"]:
+                    # run the function
+                    waitFunc["func"](waitFunc["package"], waitFunc["profile"])
+                    # and pop it from queue
+                    finishedFunctions.append(waitFunc)
+        # remove all finished functions
+        for finishedFunc in finishedFunctions:
+            self.waitFunctions.remove(finishedFunc)
+
     def listen(self, func):
         self.link.listenSignals("Net.Link", func)
 
     def updateConnection(self, package, profile, data):
-        self.link.Net.Link[package].setConnection(profile,  data["device_id"])
+        self.link.Net.Link[package].setConnection(profile,  data["device_id"],  async=self.handler)
         self.link.Net.Link[package].setAddress(profile,     data["net_mode"],
                                                             data["net_address"],
                                                             data["net_mask"],
-                                                            data["net_gateway"])
+                                                            data["net_gateway"],async=self.handler)
         self.link.Net.Link[package].setNameService(profile, data["namemode"],
-                                                            data["nameserver"])
+                                                            data["nameserver"], async=self.handler)
 
     def deleteConnection(self, package, profile):
-        self.link.Net.Link[package].deleteConnection(profile)
+        self.link.Net.Link[package].deleteConnection(profile, aysnc=self.handler)
 
     def devices(self, package):
         return self.link.Net.Link[package].deviceList()
