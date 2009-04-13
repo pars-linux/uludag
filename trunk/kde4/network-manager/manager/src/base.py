@@ -14,6 +14,7 @@
 # System
 import time
 import comar
+from pardus.netutils import findInterface
 
 # Qt Stuff
 from PyQt4 import QtGui
@@ -35,7 +36,7 @@ ANIMATION_TIME = 200
 DEFAULT_HEIGHT = 16777215
 
 # Comar Definitions
-NETPACKAGES    = ('wireless_tools','net_tools')
+NETPACKAGES    = {'wireless_tools':i18n("Wireless"),'net_tools':i18n("Ethernet")}
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True, app=None):
@@ -44,6 +45,8 @@ class MainManager(QtGui.QWidget):
         # Create the ui
         self.ui = Ui_mainManager()
         self.app = app
+        self.lastEditedPackage = None
+        self.lastEditedData = None
 
         # Network Manager can run as KControl Module or Standalone
         if standAlone:
@@ -64,10 +67,21 @@ class MainManager(QtGui.QWidget):
 
         # Let look what we can do
         haveDevice = False
-        for package in NETPACKAGES:
+        for package in NETPACKAGES.keys():
             devices = self.iface.devices(package)
             if len(devices) > 0:
+                # Create profile menu with current devices
+                menu = QtGui.QMenu(self)
+                for device in devices.keys():
+                    menuItem = QtGui.QAction("%s - %s" % (NETPACKAGES[package], findInterface(device).name), self)
+                    menuItem.setData(QVariant('%s::%s' % (package,device)))
+                    self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
+                    menu.addAction(menuItem)
+                menu.addSeparator()
+                self.ui.buttonCreate.setMenu(menu)
                 haveDevice = True
+
+                # Add package specific menu entiries
                 if package == "net_tools":
                     self.ui.filterBox.addItem(i18n("Ethernet Profiles"), QVariant(package))
                 if package == "wireless_tools":
@@ -109,15 +123,19 @@ class MainManager(QtGui.QWidget):
         if id < 0:
             filter = "essid"
         else:
-            filter = self.ui.filterBox.itemData(id)
-            filter = str(filter.toString())
+            filter = str(self.ui.filterBox.itemData(id).toString())
 
         def filterByScan(*args):
+            # We have finished the scanning let set widgets to old states
             self.ui.profileList.setEnabled(True)
             self.ui.refreshButton.show()
             self.ui.workingLabel.hide()
             self.setCursor(Qt.ArrowCursor)
+
+            # Update the GUI
             self.app.processEvents()
+
+            # Update List with found remote networks
             availableNetworks = {}
             for result in args[2][0]:
                 availableNetworks[unicode(result['remote'])] = int(result['quality'])
@@ -159,18 +177,28 @@ class MainManager(QtGui.QWidget):
             setHidden()
         # Avaliable profiles
         elif filter == "essid":
+            # We need to show user, we are working :)
             self.ui.profileList.setEnabled(False)
             self.ui.refreshButton.hide()
             self.ui.workingLabel.show()
             self.setCursor(Qt.WaitCursor)
+
+            # Show all profiles
             setHidden()
+
+            # Hide not usable ones
             setHidden("wireless_tools", False, "essid")
+
+            # Update the GUI
             self.app.processEvents()
+
+            # Scan for availableNetworks
             devices = self.iface.devices("wireless_tools")
             for device in devices.keys():
                 self.app.processEvents()
                 self.iface.scanRemote(device, "wireless_tools", filterByScan)
         else:
+            # Filter by given package
             setHidden(filter, False)
 
     def fillProfileList(self, ignore = None):
@@ -179,7 +207,7 @@ class MainManager(QtGui.QWidget):
         self.widgets = {}
 
         # Fill the list with current connections
-        for package in NETPACKAGES:
+        for package in NETPACKAGES.keys():
             # Fill profile list
             self.connections = self.iface.connections(package)
             self.connections.sort()
@@ -219,12 +247,14 @@ class MainManager(QtGui.QWidget):
             self.hideScrollBars()
             self.animator.setFrameRange(self.ui.editBox.height(), TARGET_HEIGHT)
             self.animator.start()
+            self.resetForm()
 
-    def showEditBox(self, profile, package):
+    def showEditBox(self, profile=None, package=None):
         sender = self.sender().parent()
         self.lastAnimation = SHOW
         self.hideScrollBars()
-        self.buildEditBoxFor(sender.package, sender.profile)
+        if profile:
+            self.buildEditBoxFor(sender.package, sender.profile)
         self.animator.setFrameRange(TARGET_HEIGHT, self.baseWidget.height() - TARGET_HEIGHT)
         self.animator.start()
 
@@ -232,12 +262,8 @@ class MainManager(QtGui.QWidget):
         self.ui.editBox.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.ui.profileList.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
-    # Comar operations calls gui
-    def buildEditBoxFor(self, package, profile):
+    def fillDeviceList(self, package):
         ui = self.ui
-        self.lastEditedPackage = package
-        self.lastEditedData = data = self.iface.info(package, profile)
-
         devices = self.iface.devices(package)
         for device in devices:
             ui.deviceList.addItem(device)
@@ -246,20 +272,29 @@ class MainManager(QtGui.QWidget):
         else:
             ui.groupDevice.show()
 
+    # Comar operations calls gui
+    def buildEditBoxFor(self, package, profile):
+        ui = self.ui
+        self.lastEditedPackage = package
+        self.lastEditedData = data = self.iface.info(package, profile)
+
+        self.fillDeviceList(package)
+
         ui.lineConnectionName.setText(data["name"])
         ui.labelDeviceDescription.setText(data["device_name"])
 
         if data["net_mode"] == "auto":
-            self.ui.useDHCP.setChecked(True)
+            ui.useDHCP.setChecked(True)
             if data.has_key("net_address"):
-                self.ui.useCustomAddress.setChecked(True)
+                ui.useCustomAddress.setChecked(True)
             if data.has_key("net_gateway"):
-                self.ui.useCustomDNS.setChecked(True)
+                ui.useCustomDNS.setChecked(True)
         else:
             ui.useManual.setChecked(True)
 
         if data.has_key("net_address"):
             ui.lineAddress.setText(data["net_address"])
+        if data.has_key("net_mask"):
             ui.lineNetworkMask.lineEdit().setText(data["net_mask"])
         if data.has_key("net_gateway"):
             ui.lineGateway.setText(data["net_gateway"])
@@ -272,6 +307,25 @@ class MainManager(QtGui.QWidget):
             ui.useCustom.setChecked(True)
             ui.lineCustomDNS.setText(data["nameserver"])
 
+    def resetForm(self):
+        ui = self.ui
+        ui.lineConnectionName.setText("")
+        ui.deviceList.clear()
+        ui.labelDeviceDescription.setText("")
+        ui.useDHCP.setChecked(True)
+        ui.useCustomAddress.setChecked(False)
+        ui.useCustomDNS.setChecked(False)
+        ui.useManual.setChecked(False)
+        ui.lineAddress.setText("")
+        ui.lineNetworkMask.lineEdit().setText("")
+        ui.lineGateway.setText("")
+        ui.useDefault.setChecked(True)
+        ui.useAutomatic.setChecked(False)
+        ui.useCustom.setChecked(False)
+        ui.lineCustomDNS.setText("")
+        self.lastEditedData = None
+        self.lastEditedPackage = None
+
     def applyChanges(self):
         ui = self.ui
         needsListUpdate = False
@@ -283,10 +337,14 @@ class MainManager(QtGui.QWidget):
                 self.iface.deleteConnection(self.lastEditedPackage, self.lastEditedData["name"])
                 needsListUpdate = True
         self.iface.updateConnection(self.lastEditedPackage, connectionName, self.collectDataFromUI())
+        if self.lastEditedData:
+            if self.lastEditedData.has_key("state"):
+                if self.lastEditedData["state"].startswith("up"):
+                    self.iface.reconnect(self.lastEditedPackage, connectionName)
+        else:
+            needsListUpdate = True
         if needsListUpdate:
             self.fillProfileList()
-        if self.lastEditedData["state"].startswith("up"):
-            self.iface.reconnect(self.lastEditedPackage, connectionName)
         self.hideEditBox()
 
     def collectDataFromUI(self):
@@ -324,6 +382,13 @@ class MainManager(QtGui.QWidget):
             data[i] = unicode(j)
 
         return data
+
+    def createConnection(self):
+        package, device = str(self.sender().data().toString()).split('::')
+        self.resetForm()
+        self.lastEditedPackage = package
+        self.fillDeviceList(package)
+        self.showEditBox()
 
     def editConnection(self):
         sender = self.sender().parent()
