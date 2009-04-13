@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): William Jon McCann <mccann@jhu.edu>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 [% PROCESS global/variables.none.tmpl %]
 BEGIN:VCALENDAR
@@ -76,15 +77,15 @@ END:VCALENDAR
   [% status = "" %]
   [% FOREACH state = closedstates %]
     [% IF bug_status == state %]
-      [% status = 'COMPLETED' %]
+      [% status = 'TAMAMLANDI' %]
       [% LAST %]
     [% END %]
   [% END %]
   [% IF NOT status %]
     [% IF bug_status == 'ASSIGNED' %]
-      [% status = 'IN-PROGRESS' %]
+      [% status = 'İŞLENİYOR' %]
     [% ELSE %]
-      [% status = 'NEEDS-ACTION' %]
+      [% status = 'EYLEM-GEREKİYOR' %]
     [% END %]
   [% END %]
   [% status FILTER ics('STATUS') %]

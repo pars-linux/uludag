@@ -1155,308 +1155,269 @@
         [%- classification FILTER url_quote %]
       [% END %]
     [% END %]
-    You must <a href="editmilestones.cgi?action=add&amp;product=
+    '[% product FILTER html %]' ürünü için öntanımlı aşama olabilmesi için önce onu <a href="editmilestones.cgi?action=add&amp;product=
     [%- product FILTER url_quote %]
     [%- classification_url_part FILTER none %]">
-    create the milestone '[% defaultmilestone FILTER html %]'</a> before
-    it can be made the default milestone for product '[% product FILTER html %]'.
+    aşamayı oluştur</a>malısınız.
 
   [% ELSIF error == "product_admin_denied" %]
-    [% title = "Product Access Denied" %]
-    You are not allowed to edit properties of product '[% product FILTER html %]'.
+    [% title = "Ürüne Erişim Reddedildi" %]
+    '[% product FILTER html %]' ürününün özelliklerini değiştirme izniniz yok.
 
   [% ELSIF error == "product_blank_name" %]
-    [% title = "Blank Product Name Not Allowed" %]
+    [% title = "Ürün Adı Boş Olamaz" %]
     [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
-    You must enter a name for the new product.
+    Yeni ürün için bir isim girmelisiniz.
   
   [% ELSIF error == "product_disabled" %]
-    [% title = BLOCK %]Product closed for [% terms.Bug %] Entry[% END %]
+    [% title = BLOCK %]Ürün [% terms.Bug %] Girişine Kapalı[% END %]
     [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
-    Sorry, entering [% terms.abug %] into the
-    product <em>[% product.name FILTER html %]</em> has been disabled.
+    <em>[% product.name FILTER html %]</em> ürününe [% terms.bug %] girişi kapatılmış durumda.
 
   [% ELSIF error == "product_edit_denied" %]
-    [% title = "Product Edit Access Denied" %]
+    [% title = "Ürün Değiştirme Erişimi Reddedildi" %]
     [% admindocslinks = {'products.html' => 'Ürün Yönetimi',
                          'groups.html'   => 'Grup Güvenliği'} %]
-    You are not permitted to edit [% terms.bugs %] in product 
-    [%+ product FILTER html %].
+    [%+ product FILTER html %] ürünündeki [% terms.bugsAcc %] değiştirme izniniz yok.
 
   [% ELSIF error == "product_has_bugs" %]
-    [% title = BLOCK %]Product has [% terms.Bugs %][% END %]
+    [% title = BLOCK %]Ürüne Kayıtlı [% terms.Bugs %] Var[% END %]
     [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
-    There are [% nb FILTER html %] [%+ terms.bugs %] entered for this product!
-    You must move those [% terms.bugs %] to another product before you
-    can delete this one.
+    Bu ürüne girilmiş [% nb FILTER html %] [%+ terms.bug %] var!
+    Bu ürünü silebilmek için önce o [% terms.bugsAcc %] taşımalısınız.
 
   [% ELSIF error == "product_must_have_description" %]
-    [% title = "Product needs Description" %]
+    [% title = "Ürüne Açıklama Girilmeli" %]
     [% admindocslinks = {'products.html' => 'Ürün Yönetimi'} %]
-    You must enter a description for product '[% product FILTER html %]'.
+    '[% product FILTER html %]' ürününe bir açıklama girmelisiniz.
 
   [% ELSIF error == "product_must_have_version" %]
-    [% title = "Product needs Version" %]
+    [% title = "Ürüne Sürüm Girilmeli" %]
     [% admindocslinks = {'products.html' => 'Ürün Yönetimi',
-                         'versions.html' => 'Administering versions'} %]
-    You must enter a version for product '[% product FILTER html %]'.
+                         'versions.html' => 'Sürüm Yönetimi'} %]
+    '[% product FILTER html %]' ürününe bir sürüm girmelisiniz.
 
   [% ELSIF error == "product_not_specified" %]
-    [% title = "No Product Specified" %]
+    [% title = "Ürün Belirtilmemiş" %]
     [% admindocslinks = {'products.html'   => 'Ürün Yönetimi',
-                         'components.html' => 'Administering components',
-                         'milestones.html' => 'Administering milestones',
-                         'versions.html'   => 'Administering versions'} %]
-    No product specified when trying to edit components, milestones, versions
-    or product.
+                         'components.html' => 'Bileşen Yönetimi',
+                         'milestones.html' => 'Aşama Yönetimi',
+                         'versions.html'   => 'Sürüm Yönetimi'} %]
+    Bileşen, aşama, sürüm veya ürün değiştirilmeye çalışırken herhangi bir ürün belirtilmedi.
 
   [% ELSIF error == "query_name_exists" %]
-    [% title = "Search Name Already In Use" %]
-    The name <em>[% name FILTER html %]</em> is already used by another
-    saved search. You first have to
+    [% title = "Arama Adı Kullanılıyor" %]
+    <em>[% name FILTER html %]</em> adı başka bir kayıtlı arama tarafından kullanılıyor. Eğer bu adı kullanmanız şart ise önce onu
     <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
-    [%- name FILTER url_quote %]">delete</a> it if you really want to use
-    this name.
+    [%- name FILTER url_quote %]">sil</a>melisiniz.
 
   [% ELSIF error == "query_name_missing" %]
-    [% title = "No Search Name Specified" %]
+    [% title = "Arama Adı Belirtilmedi" %]
     [% docslinks = {'query.html#list' => '$terms.Bug Listeleri'} %]
-    You must enter a name for your search.
+    Arama için bir isim girmelisiniz.
 
   [% ELSIF error == "query_name_too_long" %]
-    [% title = "Query Name Too Long" %]
-    The name of the query must be less than 64 characters long.
+    [% title = "Sorgu Adı Fazla Uzun" %]
+    Sorgunun adı 64 karakterden az olmalı.
 
   [% ELSIF error == "quicksearch_unknown_field" %]
-    [% title = "Unknown QuickSearch Field" %]
+    [% title = "Bilinmeyen Hızlı Arama Alanı" %]
     [% IF fields.unique.size == 1 %]
-      Field <code>[% fields.first FILTER html %]</code> is not a known field.
+      <code>[% fields.first FILTER html %]</code> alanı bilinen bir alan değil.
     [% ELSE %]
       Fields
       [% FOREACH field = fields.unique.sort %]
          <code>[% field FILTER html %]</code>
          [% ', ' UNLESS loop.last() %]
       [% END %]
-      are not known fields.
+      alanları bilinen alanlar değil.
     [% END %]
-    The legal field names are <a href="page.cgi?id=quicksearchhack.html">listed here</a>.
+    Kabul edilen alan adları <a href="page.cgi?id=quicksearchhack.html">burada listelenmekte</a>dir.
 
   [% ELSIF error == "reassign_to_empty" %]
-    [% title = "Illegal Reassignment" %]
-    To reassign [% terms.abug %], you must provide an address for
-    the new assignee.
+    [% title = "Geçersiz Yeniden Atama" %]
+    [% terms.Abug %] yeniden atamak için, [% terms.bugGen %] atanacağı yeni kişinin adresini girmelisiniz.
 
   [% ELSIF error == "require_component" %]
-    [% title = "Component Needed" %]
-    To file this [% terms.bug %], you must first choose a component.
-    If necessary, just guess.
+    [% title = "Bileşen Gerekiyor" %]
+    Bu [% terms.bugAcc %] girmek için önce bir bileşen seçmelisiniz. Eğer emin olamıyorsanız, tahminde bulunmanız yeterlidir.
 
   [% ELSIF error == "require_new_password" %]
-    [% title = "New Password Needed" %]
-    You cannot change your password without choosing a new one.
+    [% title = "Yeni Parola Gerekiyor" %]
+    Yeni bir parola yazmadan parolanızı değiştiremezsiniz.
 
   [% ELSIF error == "require_summary" %]
-    [% title = "Summary Needed" %]
-    You must enter a summary for this [% terms.bug %].
+    [% title = "Özet Gerekiyor" %]
+    Bu [% terms.bugDat %] bir özet girmelisiniz.
 
   [% ELSIF error == "resolution_cant_clear" %]
-    [% terms.Bug %] [%+ bug_id FILTER bug_link(bug_id) FILTER none %] is 
-    closed, so you cannot clear its resolution.
+    [% terms.Bug %] [%+ bug_id FILTER bug_link(bug_id) FILTER none %] kapatılmış durumda, dolayısıyla kararı değiştiremezsiniz.
 
   [% ELSIF error == "resolution_not_allowed" %]
-    [% title = "Resolution Not Allowed" %]
-    You cannot set a resolution for open [% terms.bugs %].
+    [% title = "Karara İzin Verilmiyor" %]
+    Açık [% terms.abugGen %] kararını değiştiremezsiniz.
 
   [% ELSIF error == "saved_search_used_by_whines" %]
-    [% title = "Saved Search In Use" %]
-    [% docslinks = {'whining.html' => 'About Whining'} %]
-    The saved search <em>[% search_name FILTER html %]</em> is being used 
-    by <a href="editwhines.cgi">Whining events</a> with the following subjects:
+    [% title = "Kayıtlı Arama Kullanımda" %]
+    [% docslinks = {'whining.html' => 'Alarmlar Hakkında'} %]
+    <em>[% search_name FILTER html %]</em> kayıtlı araması aşağıdaki başlıkları taşıyan
+    <a href="editwhines.cgi">alarm tetikleri</a> tarafından kullanılıyor:
     [%+ subjects FILTER html %]
 
   [% ELSIF error == "search_content_without_matches" %]
-    [% title = "Illegal Search" %]
-    The "content" field can only be used with "matches" search 
-    and the "matches" search can only be used with the "content"
-    field.
+    [% title = "Geçersiz Arama" %]
+    "İçerik" alanı sadece "eşleştirme" aramalarıyla kullanılabilir ve "eşleştirme" aramalarında sadece "içerik" alanı kullanılabilir.
 
   [% ELSIF error == "series_already_exists" %]
-    [% title = "Series Already Exists" %]
+    [% title = "Seri Zaten Var" %]
     [% docslinks = {'reporting.html' => 'Bildirme'} %]
-      A series named <em>[% series.category FILTER html %] /
+      <em>[% series.category FILTER html %] /
       [%+ series.subcategory FILTER html %] / 
       [%+ series.name FILTER html %]</em>
-      already exists.
+      adında bir seri zaten var.
     
   [% ELSIF error == "sidebar_supports_mozilla_only" %]
-    Sorry - sidebar.cgi currently only supports Mozilla based web browsers.
-    <a href="http://www.mozilla.org">Upgrade today</a>. :-)
+    sidebar.cgi şu anda sadece Mozilla tabanlı web tarayıcılarını destekliyor.
+    <a href="http://www.mozilla.org">Kendinize bir iyilik yapın</a>. :-)
 
   [% ELSIF error == "still_unresolved_bugs" %]
     [% IF dependency_count == 1 %]
-      [% terms.Bug %]# <a href="show_bug.cgi?id=[% dependencies.0.bug_id FILTER none %]">[% dependencies.0.bug_id FILTER none %]</a>
-      still has [% dependencies.0.dependencies FILTER html %] unresolved
-      [% IF dependencies.0.dependencies == 1 %]
-        dependency
-      [% ELSE %]
-        dependencies
-      [% END %]. Show
-      <a href="showdependencytree.cgi?id=[% dependencies.0.bug_id FILTER none %]&amp;hide_resolved=1">Dependency
-      Tree</a>.
+      <a href="show_bug.cgi?id=[% dependencies.0.bug_id FILTER none %]">[% dependencies.0.bug_id FILTER none %]</a> kimlikli [% terms.bugLoc %]
+      halâ [% dependencies.0.dependencies FILTER html %] çözülmemiş bağımlılık var.
+      <a href="showdependencytree.cgi?id=[% dependencies.0.bug_id FILTER none %]&amp;hide_resolved=1">Bağımlılık Ağacı</a>nı göster.
     [% ELSE %]
-      There are [% dependency_count FILTER none %] open [% terms.bugs %] which
-      have unresolved dependencies.
+      Çözülmemiş bağımlılıkları bulunan [% dependency_count FILTER none %] açık [% terms.bug %] var.
       <br>
       [% FOREACH bug = dependencies %]
-        [% terms.Bug %]# <a href="show_bug.cgi?id=[% bug.bug_id FILTER none %]">[% bug.bug_id FILTER none %]</a>
-        has [% bug.dependencies FILTER html %] open
-        [% IF bug.dependencies == 1 %]
-          dependency.
-        [% ELSE %]
-          dependencies.
-        [% END %]
-        (<a href="showdependencytree.cgi?id=[% bug.bug_id FILTER none %]&amp;hide_resolved=1">Dependency
-        Tree</a>)<br>
+        <a href="show_bug.cgi?id=[% bug.bug_id FILTER none %]">[% bug.bug_id FILTER none %]</a> kimlikli [% terms.bugLoc %]
+        [% bug.dependencies FILTER html %] açık bağımlılık var.
+        (<a href="showdependencytree.cgi?id=[% bug.bug_id FILTER none %]&amp;hide_resolved=1">Bağımlılık Ağacı</a>)<br>
       [% END %]
     [% END %]
 
   [% ELSIF error == "sudo_in_progress" %]
-    [% title = "Session In Progress" %]
-    A sudo session (impersonating [% target FILTER html %]) is in progress.  
-    End that session (using the link in the footer) before starting a new one.
+    [% title = "Oturum Açık" %]
+    Bir sudo oturumu ([% target FILTER html %] yerine geçilmiş) açık durumda. Yeni bir oturuma başlamadan önce o oturumu sayfa altlığındaki bağlantıyı kullanarak sonlandırın.
 
   [% ELSIF error == "sudo_password_required" %]
-    [% title = "Password Required" %]
-    Your [% terms.Bugzilla %] password is required to begin a sudo 
-    session. Please <a href="relogin.cgi?action=prepare-sudo&target_login=
+    [% title = "Parola Gerekli" %]
+    Bir sudo oturumuna başlamak için [% terms.Bugzilla %] parolanız gerekiyor.
+    Lütfen <a href="relogin.cgi?action=prepare-sudo&target_login=
     [%- target_login FILTER html %]&reason=
-    [%- reason FILTER html %]">go back</a> and enter your password.
+    [%- reason FILTER html %]">geri dön</a>ün ve parolanızı girin.
     
   [% ELSIF error == "sudo_preparation_required" %]
-    [% title = "Preparation Required" %]
-    You may not start a sudo session directly.  Please
+    [% title = "Hazırlık Gerekiyor" %]
+    Bir sudo oturumuna doğrudan başlayamazsınız. Lütfen
     <a href="relogin.cgi?action=prepare-sudo&target_login=
     [%- target_login FILTER html %]&reason=
-    [%- reason FILTER html %]">start your session normally</a>.
+    [%- reason FILTER html %]">oturumunuzu normal şekilde başlatın</a>.
 
   [% ELSIF error == "sudo_protected" %]
-    [% title = "User Protected" %]
-    The user [% login FILTER html %] may not be impersonated by sudoers.
+    [% title = "Kullanıcı Korumalı" %]
+    [% login FILTER html %] kullanıcısının yerine geçemezsiniz.
 
   [% ELSIF error == "too_many_votes_for_bug" %]
-    [% title = "Illegal Vote" %]
+    [% title = "Geçersiz Oy" %]
     [% admindocslinks = {'voting.html' => 'Oy Özelliğini Ayarlamak'} %]
-    You may only use at most [% max FILTER html %] votes for a single
-    [%+ terms.bug %] in the
-    <tt>[% product FILTER html %]</tt> product, but you are trying to
-    use [% votes FILTER html %].
+    <tt>[% product FILTER html %]</tt> ürününde tek [%+ terms.abug %] için en fazla [% max FILTER html %] oy kullanabilirsiniz ama siz [% votes FILTER html %] oy kullanmaya çalışıyorsunuz.
 
   [% ELSIF error == "too_many_votes_for_product" %]
-    [% title = "Illegal Vote" %]
+    [% title = "Geçersiz Oy" %]
     [% admindocslinks = {'voting.html' => 'Oy Özelliğini Ayarlamak'} %]
-    You tried to use [% votes FILTER html %] votes in the
-    <tt>[% product FILTER html %]</tt> product, which exceeds the maximum of
-    [%+ max FILTER html %] votes for this product.
+    <tt>[% product FILTER html %]</tt> ürününde [% votes FILTER html %] oy kullanmaya çalıştınız fakat bu üründe en fazla [%+ max FILTER html %] oy kullanılabilir.
 
   [% ELSIF error == "token_does_not_exist" %]
-    [% title = "Token Does Not Exist" %]
-    The token you submitted does not exist, has expired, or has
-    been canceled.
+    [% title = "Böyle Bir Jeton Yok" %]
+    Gönderdiğiniz jeton mevcut değil, süresi dolmuş veya iptâl edilmiş.
 
   [% ELSIF error == "too_soon_for_new_token" %]
-    [% title = "Too Soon For New Token" %]
-    You have requested
+    [% title = "Yeni Jeton İçin Fazla Erken" %]
+    Başka bir jeton istemek için fazla kısa bir süre önce
     [% IF type == "password" %]
-      a password
+      bir parola
     [% ELSIF type == "account" %]
-      an account
+      bir hesap
     [% END %]
-    token too recently to request another. Please wait a while and try again.
+    isteğinde bulundunuz. Lütfen biraz bekleyip tekrar deneyin.
 
   [% ELSIF error == "unknown_keyword" %]
-    [% title = "Unknown Keyword" %]
+    [% title = "Bilinmeyen Anahtar" %]
     <code>[% keyword FILTER html %]</code> is not a known keyword.
-    The legal keyword names are <a href="describekeywords.cgi">listed here</a>.
+    Geçerli anahtarlar <a href="describekeywords.cgi">burada listeleniyor</a>.
 
   [% ELSIF error == "unknown_tab" %]
-    [% title = "Unknown Tab" %]
-    <code>[% current_tab_name FILTER html %]</code> is not a legal tab name.
+    [% title = "Bilinmeyen Sekme" %]
+    <code>[% current_tab_name FILTER html %]</code> geçerli bir sekme adı değil.
 
   [% ELSIF error == "version_already_exists" %]
-    [% title = "Version Already Exists" %]
-    [% admindocslinks = {'versions.html' => 'Administering versions'} %]
-    The version '[% name FILTER html %]' already exists for product '
-    [%- product FILTER html %]'.
+    [% title = "Sürüm Zaten Mevcut" %]
+    [% admindocslinks = {'versions.html' => 'Sürüm Yönetimi'} %]
+    '[%- product FILTER html %]' ürününde zaten '[% name FILTER html %]' sürümü bulunuyor.
 
   [% ELSIF error == "version_blank_name" %]
-    [% title = "Blank Version Name Not Allowed" %]
-    You must enter a name for this version.
+    [% title = "Sürüm Adı Boş Olamaz" %]
+    Bu sürüm için bir isim girmelisiniz.
 
   [% ELSIF error == "version_has_bugs" %]
-    [% title = BLOCK %]Version has [% terms.Bugs %][% END %]
-    There are [% nb FILTER html %] [%+ terms.bugs %] associated with this
-    version! You must reassign those [% terms.bugs %] to another version
-    before you can delete this one.
+    [% title = BLOCK %]Sürüme Kayıtlı [% terms.Bugs %] Var[% END %]
+    Bu sürümle ilişkilendirilmiş [% nb FILTER html %] [%+ terms.bug %] bulunuyor! Bu sürümü silmeden önce o [% terms.bugsAcc %] başka bir sürüme atamalısınız.
 
   [% ELSIF error == "version_not_specified" %]
-    [% title = "No Version Specified" %]
-    No version specified when trying to edit versions.
+    [% title = "Sürüm Belirtilmedi" %]
+    Sürümleri değiştirmeye çalışırken herhangi bir sürüm belirtmediniz.
 
   [% ELSIF error == "users_deletion_disabled" %]
-    [% title = "Deletion not activated" %]
-    [% admindocslinks = {'useradmin.html' => 'User administration'} %]
-    Sorry, the deletion of user accounts is not allowed.
+    [% title = "Silme Etkinleştirilmedi" %]
+    [% admindocslinks = {'useradmin.html' => 'Kullanıcı Yönetimi'} %]
+    Kullanıcı hesaplarının silinmesine izin verilmiyor.
 
   [% ELSIF error == "user_has_responsibility" %]
-    [% title = "Can't Delete User Account" %]
-    [% admindocslinks = {'useradmin.html' => 'User administration'} %]
-    The user you want to delete is set up as the default [% terms.bug %]
-    assignee
+    [% title = "Kullanıcı Hesabı Silinemez" %]
+    [% admindocslinks = {'useradmin.html' => 'Kullanıcı Yönetimi'} %]
+    Silmeye çalıştığınız kullanıcı The en az bir bileşenin öntanımlı [% terms.bug %] atanan kişisi
     [% IF Param('useqacontact') %]
-      or QA contact
+      veya kalite kontrol kişisi
     [% END %]
-    for at least one component.
-    For this reason, you cannot delete the account at this time.
+    olarak atanmış durumda. Bu nedenle şu anda bu hesabı silemezsiniz.
 
   [% ELSIF error == "user_login_required" %]
-    [% title = "Login Name Required" %]
-    [% admindocslinks = {'useradmin.html' => 'User administration'} %]
-    You must enter a login name for the new user.
+    [% title = "Oturum Açma Adı Gerekli" %]
+    [% admindocslinks = {'useradmin.html' => 'Kullanıcı Yönetimi'} %]
+    Yeni kullanıcı için bir oturum açma adı girmelisiniz.
 
   [% ELSIF error == "user_match_failed" %]
-    [% title = "Match Failed" %]
-    <tt>[% name FILTER html %]</tt> does not exist or you are not allowed 
-    to see that user.
+    [% title = "Eşleştirme Başarısız" %]
+    <tt>[% name FILTER html %]</tt> mevcut değil veya o kullanıcı görme izniniz yok.
 
   [% ELSIF error == "votes_must_be_nonnegative" %]
-    [% title = "Votes Must Be Non-negative" %]
+    [% title = "Oylar Negatif Olmamalı" %]
     [% admindocslinks = {'voting.html' => 'Oy Özelliğini Ayarlamak'} %]
-    Only use non-negative numbers for your [% terms.bug %] votes.
+    [% terms.Bug %] oylarınız için pozitif sayılar kullanın.
 
   [% ELSIF error == "wrong_token_for_cancelling_email_change" %]
-    [% title = "Wrong Token" %]
-    That token cannot be used to cancel an email address change.
+    [% title = "Yanlış Jeton" %]
+    Bu jeton eposta adresi değişikliğini iptal etmek için kullanılamaz.
 
   [% ELSIF error == "wrong_token_for_changing_passwd" %]
-    [% title = "Wrong Token" %]
-    That token cannot be used to change your password.
+    [% title = "Yanlış Jeton" %]
+    Bu jeton parola değiştirmek için kullanılamaz.
 
   [% ELSIF error == "wrong_token_for_confirming_email_change" %]
-    [% title = "Wrong Token" %]
-    That token cannot be used to change your email address.
+    [% title = "Yanlış Jeton" %]
+    Bu jetonu eposta adresinizi değiştirmek için kullanamazsınız.
 
   [% ELSIF error == "wrong_token_for_creating_account" %]
-    [% title = "Wrong Token" %]
-    That token cannot be used to create a user account.
+    [% title = "Yanlış Jeton" %]
+    Bu jeton yeni bir kullanıcı hesabı oluşturmak için kullanılamaz.
 
   [% ELSIF error == "zero_length_file" %]
-    [% title = "File Is Empty" %]
-    The file you are trying to attach is empty, does not exist, or you don't
-    have permission to read it.
+    [% title = "Dosya Boş" %]
+    Eklemeye çalıştığınız dosya boş, öyle bir dosya yok ya da o dosyayı okuma izniniz yok.
 
   [% ELSIF error == "illegal_user_id" %]
-    [% title = "Illegal User ID" %]
-    User ID '[% userid FILTER html %]' is not valid integer.
+    [% title = "Geçersiz Kullanıcı Kimliği" %]
+    '[% userid FILTER html %]' kullanıcı kimliği geçerli bir tamsayı değil.
 
   [% ELSE %]
 
@@ -1464,10 +1425,8 @@
     [% error_message = Hook.process("errors") %]
 
     [% IF not error_message %]
-      [% title = "Error string not found" %]
-      The user error string <code>[% error FILTER html %]</code> was not found.
-      Please send email to [% Param("maintainer") %] describing the steps taken
-      to obtain this message.
+      [% title = "Hata Mesajı Bulunamadı" %]
+      <code>[% error FILTER html %]</code> kullanıcı hata mesajı bulunamadı. Lütfen bu mesajı alana kadar yaptığınız son işlemleri [% Param("maintainer") %] adresine epostayla gönderin.
     [% ELSE %]
       [% error_message FILTER none %]
     [% END %]
@@ -1503,7 +1462,7 @@
 </table>
 
 <p>
-  Please press <b>Back</b> and try again.
+  Lütfen <b>Geri</b> gidip tekrar deneyin.
 </p>
 
 [%# If a saved search fails, people want the ability to edit or delete it. 
@@ -1516,17 +1475,15 @@
                AND error != "saved_search_used_by_whines"
                AND !sharer_id %]
   <p>  
-    Alternatively, you can    
+    Alternatif olarak, '[% namedcmd FILTER html %]' kayıtlı aramasını
     <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
-                  [% namedcmd FILTER url_quote %]">forget</a>
+                  [% namedcmd FILTER url_quote %]">unut</a>abilirsiniz
                   
     [% FOREACH q = Bugzilla.user.queries %]
       [% IF q.name == namedcmd %]
-        or <a href="query.cgi?[% q.url FILTER html %]">edit</a>
+        veya <a href="query.cgi?[% q.url FILTER html %]">değiştir</a>ebilirsiniz
       [% END %]
     [% END %]
-    
-    the saved search '[% namedcmd FILTER html %]'.
   </p>
 [% END %]            
 
@@ -1534,14 +1491,14 @@
 
 [% BLOCK object_name %]
   [% IF class == "Bugzilla::User" %]
-    user
+    kullanıcı
   [% ELSIF class == "Bugzilla::Component" %]
-    component
+    bileşen
   [% ELSIF class == "Bugzilla::Version" %]
-    version
+    sürüm
   [% ELSIF class == "Bugzilla::Milestone" %]
-    milestone
+    aşama
   [% ELSIF class == "Bugzilla::Status" %]
-    status
+    durum
   [% END %]
 [% END %]

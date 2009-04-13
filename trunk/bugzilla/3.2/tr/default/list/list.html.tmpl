@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -71,7 +72,7 @@
   [% END %]
 
   [% IF user.settings.display_quips.value == 'on' %]
-    [% DEFAULT quip = "$terms.Bugzilla would like to put a random quip here, but no one has entered any." %]
+    [% DEFAULT quip = "$terms.Bugzilla buraya elindekilerden bir nükte koyacaktı, fakat henüz kimse nükte girmemiş." %]
     <span class="bz_quip">
       <a href="quips.cgi"><i>[% quip FILTER html %]</i></a>
     </span>
@@ -81,8 +82,7 @@
 
 [% IF toolong %]
   <h2 class="bz_smallminded">
-    This list is too long for [% terms.Bugzilla %]'s little mind; the
-    Next/Prev/First/Last buttons won't appear on individual [% terms.bugs %].
+    Bu liste [% terms.Bugzilla %]'nın beyni için fazla uzun, [% terms.bugsLoc %] Önceki, Sonraki, İlk ve Son düğmeleri olmayacak.
   </h2>
 [% END %]
 
@@ -94,7 +94,7 @@
 
 [% IF bugs.size > 9 %]
   <span class="bz_result_count">
-    [% bugs.size %] [%+ terms.bugs %] found.
+    [% bugs.size %] [%+ terms.bug %] bulundu.
   </span>
 [% END %]
 
@@ -121,9 +121,9 @@
   [% IF bugs.size == 0 %]
     [% terms.zeroSearchResults %].
   [% ELSIF bugs.size == 1 %]
-    One [% terms.bug %] found.
+    Bir [% terms.bug %] bulundu.
   [% ELSE %]
-    [% bugs.size %] [%+ terms.bugs %] found.
+    [% bugs.size %] [%+ terms.bug %] bulundu.
   [% END %]
 </span>
 
@@ -152,7 +152,7 @@
             <input type="hidden" name="id" value="[% id FILTER html %]">
           [% END %]
           <input type="hidden" name="format" value="multiple">
-          <input type="submit" id="long_format" value="Long Format">
+          <input type="submit" id="long_format" value="Uzun Biçim">
         </form>
         <form method="post" action="show_bug.cgi">
             <input type="hidden" name="ctype" value="xml">
@@ -166,7 +166,7 @@
         [% IF user.in_group(Param('timetrackinggroup')) %]
           <form method="post" action="summarize_time.cgi">
             <input type="hidden" name="id" value="[% buglist_joined FILTER html %]">
-            <input type="submit" id="timesummary" value="Time Summary">
+            <input type="submit" id="timesummary" value="Zaman Özeti">
           </form>
         [% END %]
       </td>
@@ -178,23 +178,23 @@
         [% urlquerypart FILTER html %]&amp;ctype=csv">CSV</a> |
         <a href="buglist.cgi?
         [% urlquerypart FILTER html %]&amp;title=
-        [%- title FILTER html %]&amp;ctype=atom">Feed</a> |
+        [%- title FILTER html %]&amp;ctype=atom">Besleme</a> |
         <a href="buglist.cgi?
         [% urlquerypart FILTER html %]&amp;ctype=ics">iCalendar</a> |
         <a href="colchange.cgi?
         [% urlquerypart FILTER html %]&amp;query_based_on=
-          [% defaultsavename OR searchname FILTER url_quote %]">Change&nbsp;Columns</a> |
+          [% defaultsavename OR searchname FILTER url_quote %]">Sütunları&nbsp;Değiştir</a> |
 
         [% IF bugs.size > 1 && caneditbugs && !dotweak %]
           <a href="buglist.cgi?[% urlquerypart FILTER html %]
             [%- "&order=$qorder" FILTER html IF order %]&amp;tweak=1"
-            >Change&nbsp;Several&nbsp;[% terms.Bugs %]&nbsp;at&nbsp;Once</a>
+            >Bir&nbsp;Kerede&nbsp;Birkaç&nbsp;[% terms.Bug %]&nbsp;Değiştir</a>
           |
         [% END %]
 
         [% IF bugowners %]
           <a href="mailto:
-            [% bugowners FILTER html %]">Send&nbsp;Mail&nbsp;to&nbsp;[% terms.Bug %]&nbsp;Assignees</a> |
+            [% bugowners FILTER html %]">[% terms.Bug %]&nbsp;Atanan&nbsp;Kişilerine&nbsp;Posta&nbsp;Gönder</a> |
         [% END %]
 
         [%# Links to more things users can do with this bug list. %]
@@ -207,28 +207,27 @@
       <a href="query.cgi?[% urlquerypart FILTER html %]
       [% IF editqueryname != '' %]&amp;known_name=
         [% editqueryname FILTER url_quote %]
-      [% END %]">Edit&nbsp;Search</a>
+      [% END %]">Aramayı&nbsp;Değiştir</a>
     </td>
       
     [% IF searchtype == "saved" %]
       <td valign="middle" nowrap="nowrap" class="bz_query_forget">
         |
         <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
-                [% searchname FILTER url_quote %]">Forget&nbsp;Search&nbsp;'
-                [% searchname FILTER html %]'</a>
+                [% searchname FILTER url_quote %]">'[% searchname FILTER html %]'&nbsp;Aramasını&nbsp;Unut</a>
       </td>
     [% ELSE %]
       <td>&nbsp;</td>
       
       <td valign="middle" class="bz_query_remember">
         <form method="get" action="buglist.cgi">
-          <input type="submit" id="remember" value="Remember search"> as 
+          <input type="submit" id="remember" value="Aramayı hatırla"> 
           <input type="hidden" name="newquery" 
                  value="[% urlquerypart FILTER html %][% "&order=$qorder" FILTER html IF order %]">
           <input type="hidden" name="cmdtype" value="doit">
           <input type="hidden" name="remtype" value="asnamed">
           <input type="text" id="save_newqueryname" name="newqueryname" size="20"
-                 value="[% defaultsavename FILTER html %]"> 
+                 value="[% defaultsavename FILTER html %]"> olarak.
         </form> 
       </td>
     [% END %]  
@@ -237,8 +236,7 @@
 
 [% IF cgi.param('product').size == 1 && cgi.param('product') != "" %]
   <p class="bz_query_single_product">
-    <a href="enter_bug.cgi?product=[% cgi.param('product') FILTER url_quote %]">File
-      a new [% terms.bug %] in the "[% cgi.param('product') FILTER html %]" product</a>
+    <a href="enter_bug.cgi?product=[% cgi.param('product') FILTER url_quote %]">"[% cgi.param('product') FILTER html %]" ürününe yeni [% terms.bug %] gir</a>
   </p>
 [% END %]
 
