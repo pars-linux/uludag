@@ -28,11 +28,12 @@ iconForPackage = {"net_tools":"network-wired",
 
 class ConnectionItemWidget(QtGui.QWidget):
 
-    def __init__(self, package, profile, parent, item):
+    def __init__(self, package, profile, data, parent, item):
         QtGui.QWidget.__init__(self, parent)
 
         self.ui = Ui_ConnectionItemWidget()
         self.ui.setupUi(self)
+        self.ui.wifiStrength.hide()
 
         self.ui.labelName.setText(profile)
 
@@ -41,10 +42,18 @@ class ConnectionItemWidget(QtGui.QWidget):
         self.package = package
         self.profile = profile
         self.desc = None
+        self.data = data
 
         self.connect(self.ui.buttonEdit,   SIGNAL("clicked()"), parent.editConnection)
         self.connect(self.ui.buttonDelete, SIGNAL("clicked()"), parent.deleteConnection)
         self.connect(self.ui.checkToggler, SIGNAL("clicked()"), self.toggleConnection)
+
+    def setSignalStrength(self, value):
+        self.ui.wifiStrength.setValue(value)
+        self.ui.wifiStrength.show()
+
+    def hideSignalStrength(self):
+        self.ui.wifiStrength.hide()
 
     def mouseDoubleClickEvent(self, event):
         self.ui.buttonEdit.animateClick(100)

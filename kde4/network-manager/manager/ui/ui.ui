@@ -43,6 +43,32 @@
       </spacer>
      </item>
      <item>
+      <widget class="QLabel" name="workingLabel" >
+       <property name="text" >
+        <string>Scanning ...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="KUrlLabel" name="refreshButton" >
+       <property name="text" >
+        <string>Refresh</string>
+       </property>
+       <property name="url" >
+        <string/>
+       </property>
+       <property name="tipText" >
+        <string/>
+       </property>
+       <property name="glowEnabled" >
+        <bool>false</bool>
+       </property>
+       <property name="floatEnabled" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="KComboBox" name="filterBox" >
        <item>
         <property name="text" >
@@ -61,7 +87,7 @@
        </item>
        <item>
         <property name="text" >
-         <string>Avaliable Networks</string>
+         <string>Avaliable Profiles</string>
         </property>
        </item>
       </widget>
@@ -512,6 +538,11 @@
    <class>KSqueezedTextLabel</class>
    <extends>QLabel</extends>
    <header>ksqueezedtextlabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlLabel</class>
+   <extends>QLabel</extends>
+   <header>kurllabel.h</header>
   </customwidget>
  </customwidgets>
  <resources>

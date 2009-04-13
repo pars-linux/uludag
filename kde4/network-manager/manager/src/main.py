@@ -46,7 +46,7 @@ if __name__ == '__main__':
     DBusQtMainLoop(set_as_default = True)
 
     # Create Main Widget
-    mainWindow = NetworkManager(None, 'network-manager')
+    mainWindow = NetworkManager(app)
     mainWindow.show()
 
     # Create connection for lastWindowClosed signal to quit app
