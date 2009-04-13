@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -29,16 +30,16 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-           title = "$terms.Bugzilla Quip System"
-           header = "Add your own clever headline"
+           title = "$terms.Bugzilla Nükte Sistemi"
+           header = "Kendi nükteli cümlenizi ekleyin"
  %]
 
 [% IF added_quip %]
   <p>
     <font color="red">
-      Your quip '<tt>[% added_quip FILTER html %]</tt>' has been added.
+      '<tt>[% added_quip FILTER html %]</tt>' nükteniz eklendi.
       [% IF Param("quip_list_entry_control") == "moderated" AND !user.groups.admin %]
-        It will be used as soon as it gets approved.
+        Onaylanır onaylanmaz kullanılacak.
       [% END %]
     </font>
   </p>
@@ -47,27 +48,25 @@
 [% IF deleted_quip %]
   <p>
     <font color="red">
-      The quip '<tt>[% deleted_quip FILTER html %]</tt>' has been deleted.
+      '<tt>[% deleted_quip FILTER html %]</tt>' nüktesi silindi.
     </font>
   </p>
 [% END %]
 
 [% IF approved or unapproved %]
-  <p>[% approved.size %] quips approved and [% unapproved.size %] quips unapproved</p>
+  <p>[% approved.size %] nükte onaylandı ve [% unapproved.size %] nükte reddedildi.</p>
 [% END %]
 
 
 <p>
-  [% terms.Bugzilla %] will pick a random quip for the headline on each 
-  [% terms.bug %] list.
+  [% terms.Bugzilla %] her [% terms.bug %] listesinde başlığa rastgele bir nükte yerleştirecek.
 </p>
 
 [% IF Param("quip_list_entry_control") != "closed" %]
   <p>
-    You can extend the quip list. Type in something clever or funny or boring
-    (but not obscene or offensive, please) and bonk on the button.
+    Nükte listesini genişletebilirsiniz. Akıllıca, komik, eğlenceli ya da sıkıcı (ama lütfen müstehcen veya saldırgan olmayan) birşeyler yazın, düğmeye bir tık, tamamdır.
     [% IF Param("quip_list_entry_control") == "moderated" AND !user.groups.admin %]
-      Note that your quip has to be approved before it is used.
+      Nüktenin kullanılabilir olmadan önce onaylanması gerektiğini de unutmamak lazım.
     [% END %]
   </p>
 
@@ -75,18 +74,18 @@
     <input type="hidden" name="action" value="add">
     <input size="80" name="quip">
     <p>
-      <input type="submit" id="add" value="Add This Quip">
+      <input type="submit" id="add" value="Bu Nükteyi Ekle">
     </p>
   </form>
 [% ELSE %]
-  <p>No new entries may be submitted at this time.
+  <p>Şu anda yeni kayıtlar gönderilemez.
   </p>
 [% END %]
 
 [% IF show_quips %]
   [% IF !user.in_group('admin') %]
     <h2>
-      Existing quips:
+      Varolan nükteler:
     </h2>
     <ul>
       [% FOREACH quipid = quipids %]
@@ -95,20 +94,19 @@
       [% END %]
     </ul>
   [% ELSE %]
-    <h2>Edit existing quips:</h2>
+    <h2>Mevcut nükteleri değiştir:</h2>
     <p>
-      <strong>Note:</strong> Only approved quips will be shown.
-      If the parameter 'quip_list_entry_control' is set to <q>open</q>, 
-      entered quips are automatically approved.
+      <strong>Not:</strong> 
+      Sadece onaylanan nükteler gösterilecek. Eğer 'quip_list_entry_control' parametresi '<q>açık</q>' atandıysa, girilen nükteler otomatik olarak onaylanır.
     </p>
     <form name="editform" method="post" action="quips.cgi">
       <input type="hidden" name="action" value="approve">
       <table border="1">
         <thead><tr>
-          <th>Quip</th>
-          <th>Author</th>
-          <th>Action</th>
-          <th>Approved</th>
+          <th>Nükte</th>
+          <th>Yazan</th>
+          <th>Eylem</th>
+          <th>Onay</th>
         </tr></thead><tbody>
         [% FOREACH quipid = quipids %]
           <tr>
@@ -116,11 +114,11 @@
             <td>
               [% userid = quips.$quipid.userid  %]
               [% users.$userid FILTER html      %]
-              [% "Unknown" IF NOT users.$userid %]
+              [% "Bilinmiyor" IF NOT users.$userid %]
             </td>
             <td>
               <a href="quips.cgi?action=delete&amp;quipid=[% quipid FILTER url_quote %]">
-                Delete
+                Sil
               </a>
             </td>
             <td>
@@ -145,23 +143,23 @@
           }
         }
         document.write(' <input type="button" name="uncheck_all" '
-                      +'value="Uncheck All" onclick="SetCheckboxes(false);">');
+                      +'value="Hepsinin İşaretini Kaldır" onclick="SetCheckboxes(false);">');
         document.write(' <input type="button" name="check_all" '
-                      +'value="Check All" onclick="SetCheckboxes(true);">');
+                      +'value="Hepsini İşaretle" onclick="SetCheckboxes(true);">');
         //--></script>
 
-      <input type="submit" id="update" value="Save Changes">
+      <input type="submit" id="update" value="Değişiklikleri Kaydet">
     </form>
     <br>
   [% END %]
 [% ELSE %]
   <p>
-    Those who like their wisdom in large doses can
-    <a href="quips.cgi?action=show">view
+    Nükte bombardımanı yaşamak isteyenler
+    <a href="quips.cgi?action=show">tüm nükte listesine bakabilir
     [% IF user.in_group('admin') %]
-      and edit
+      ve değiştirebilir
     [% END %]
-    the whole quip list</a>.
+    </a>.
   </p>
 [% END %]
 

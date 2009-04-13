@@ -16,25 +16,25 @@
   # Rights Reserved.
   #
   # Contributor(s): Dave Lawrence <dkl@redhat.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Change Columns"
+  title = "Sütunları Değiştir"
 %]
 
 <p>
-  Select the columns you wish to appear in your [% terms.bug %] lists. Note that
-  this feature requires cookies to work.
+  [% terms.Bug %] listelerinizde görünmesini istediğiniz sütunları seçin. Bu özelliğin çalışması için çerezlerin açık olması gerektiğini unutmayın.
 </p>
 
 [% PROCESS "global/field-descs.none.tmpl" %]
-[% field_descs.short_short_desc     = "Summary (first 60 characters)" %]
-[% field_descs.short_desc           = "Full Summary" %]
-[% field_descs.assigned_to_realname = "Assignee Realname" %]
-[% field_descs.reporter_realname    = "Reporter Realname" %]
-[% field_descs.qa_contact_realname  = "QA Contact Realname" %]
+[% field_descs.short_short_desc     = "Özet (ilk 60 karakter)" %]
+[% field_descs.short_desc           = "Tam Özet" %]
+[% field_descs.assigned_to_realname = "Atananın Gerçek Adı" %]
+[% field_descs.reporter_realname    = "Bildirenin Gerçek Adı" %]
+[% field_descs.qa_contact_realname  = "Kalite Kontrol Kişisi Gerçek Adı" %]
 
 <form action="colchange.cgi">
   <input type="hidden" name="rememberedquery" value="[% buffer FILTER html %]">
@@ -51,14 +51,14 @@
     <input id="nosplitheader" type="radio" name="splitheader" value="0"
       [%+ "checked='checked'" IF NOT splitheader %]>
     <label for="nosplitheader">
-      Normal headers (prettier)
+      Normal başlıklar (daha güzel görünür)
     </label>
     <br>
 
     <input id="splitheader" type="radio" name="splitheader" value="1"
       [%+ "checked='checked'" IF splitheader %]>
     <label for="splitheader">
-      Stagger headers (often makes list more compact)
+      Yoğun başlıklar (genellikle listeyi daha sıkışık yapar)
     </label>
   </p>
 
@@ -68,17 +68,16 @@
              value="[% saved_search.id FILTER html%]" >
       <input type="checkbox" id="save_columns_for_search" checked="checked" 
              name="save_columns_for_search" value="1">
-      <label for="save_columns_for_search">Save this column list only 
-        for search '[% saved_search.name FILTER html %]'</label>
+      <label for="save_columns_for_search">Bu sütun listesini sadece '[% saved_search.name FILTER html %]' araması için kaydet</label>
     </p>
   [% END %]
 
   <p>
-    <input type="submit" id="change" value="Change Columns">
+    <input type="submit" id="change" value="Sütunları Değiştir">
   </p>
 
   <input type="submit" id="resetit" name="resetit" 
-         value="Reset to [% terms.Bugzilla %] default">
+         value="[% terms.Bugzilla %] öntanımlı haline getir">
 </form>
 
 [% PROCESS global/footer.html.tmpl %]
