@@ -63,15 +63,21 @@ class MainManager(QtGui.QWidget):
         self.fillProfileList()
 
         # Let look what we can do
+        haveDevice = False
         for package in NETPACKAGES:
             devices = self.iface.devices(package)
             if len(devices) > 0:
-                self.ui.filterBox.addItem(i18n("All Profiles"), QVariant("all"))
+                haveDevice = True
                 if package == "net_tools":
                     self.ui.filterBox.addItem(i18n("Ethernet Profiles"), QVariant(package))
                 if package == "wireless_tools":
                     self.ui.filterBox.addItem(i18n("Wireless Profiles"), QVariant(package))
                     self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
+        if haveDevice:
+            self.ui.filterBox.insertItem(0, i18n("All Profiles"), QVariant("all"))
+        else:
+            self.ui.filterBox.insertItem(0, i18n("No Device Found"))
+        self.ui.filterBox.setCurrentIndex(0)
 
         # Preparing for animation
         self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
@@ -99,9 +105,12 @@ class MainManager(QtGui.QWidget):
         # Update service status and follow Comar for sate changes
         self.getConnectionStates()
 
-    def filterList(self, id=None):
-        filter = self.ui.filterBox.itemData(id)
-        filter = str(filter.toString())
+    def filterList(self, id=-1):
+        if id < 0:
+            filter = "essid"
+        else:
+            filter = self.ui.filterBox.itemData(id)
+            filter = str(filter.toString())
 
         def filterByScan(*args):
             self.ui.profileList.setEnabled(True)
