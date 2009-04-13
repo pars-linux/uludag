@@ -173,6 +173,9 @@
          <height>20</height>
         </size>
        </property>
+       <property name="toolTip" >
+        <string>Signal Strength</string>
+       </property>
        <property name="styleSheet" >
         <string notr="true" />
        </property>
