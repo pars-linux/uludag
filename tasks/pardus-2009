@@ -171,7 +171,7 @@
   * binding bileşeni review sürecinden geçecek (-)
   * base/ ve extra/ bileşenlerindeki paketlerin bağımlılıkları elden geçirilecek (/90)
   * Pardus simge/tema/arkaplan uyarlanacak (/20)
-  * öntanımlı gelen kısayol/pager/shelf ıvır zıvır elden geçirilecek (/40)
+  * öntanımlı gelen kısayol/pager/shelf ıvır zıvır elden geçirilecek (/75)
 
 * Smolt (Fethican Coşkuner)
   * Smolt server'ın tüm bağımlılıklarının depoya girmesi (+)
