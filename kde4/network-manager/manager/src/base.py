@@ -66,31 +66,35 @@ class MainManager(QtGui.QWidget):
         self.fillProfileList()
 
         # Let look what we can do
-        haveDevice = False
+        supportedPackages = []
+        menu = QtGui.QMenu(self)
         for package in NETPACKAGES.keys():
             devices = self.iface.devices(package)
             if len(devices) > 0:
                 # Create profile menu with current devices
-                menu = QtGui.QMenu(self)
                 for device in devices.keys():
                     menuItem = QtGui.QAction("%s - %s" % (NETPACKAGES[package], findInterface(device).name), self)
-                    menuItem.setData(QVariant('%s::%s' % (package,device)))
+                    menuItem.setData(QVariant("%s::%s" % (package,device)))
                     self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
                     menu.addAction(menuItem)
                 menu.addSeparator()
-                self.ui.buttonCreate.setMenu(menu)
-                haveDevice = True
+                supportedPackages.append(package)
 
-                # Add package specific menu entiries
-                if package == "net_tools":
-                    self.ui.filterBox.addItem(i18n("Ethernet Profiles"), QVariant(package))
-                if package == "wireless_tools":
-                    self.ui.filterBox.addItem(i18n("Wireless Profiles"), QVariant(package))
-                    self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
-        if haveDevice:
+        # Add package specific menu entiries
+        if "net_tools" in supportedPackages:
+            self.ui.filterBox.addItem(i18n("Ethernet Profiles"), QVariant("net_tools"))
+        if "wireless_tools" in supportedPackages:
+            self.ui.filterBox.addItem(i18n("Wireless Profiles"), QVariant("wireless_tools"))
+            self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
+
+        if len(supportedPackages) > 0:
+            self.ui.buttonCreate.setMenu(menu)
             self.ui.filterBox.insertItem(0, i18n("All Profiles"), QVariant("all"))
         else:
+            self.ui.buttonCreate.setText(i18n("No Device Found"))
+            self.ui.buttonCreate.setEnabled(False)
             self.ui.filterBox.insertItem(0, i18n("No Device Found"))
+            self.ui.filterBox.setEnabled(False)
         self.ui.filterBox.setCurrentIndex(0)
 
         # Preparing for animation
@@ -255,6 +259,10 @@ class MainManager(QtGui.QWidget):
         self.hideScrollBars()
         if profile:
             self.buildEditBoxFor(sender.package, sender.profile)
+        if package == "net_tools":
+            self.ui.groupRemote.hide()
+        else:
+            self.ui.groupRemote.show()
         self.animator.setFrameRange(TARGET_HEIGHT, self.baseWidget.height() - TARGET_HEIGHT)
         self.animator.start()
 
@@ -377,6 +385,8 @@ class MainManager(QtGui.QWidget):
             data["namemode"] = "custom"
             data["nameserver"] = ui.lineCustomDNS.text()
 
+        data["remote"] = passs
+        data["apmac"]  = ""
         # Let them unicode
         for i,j in data.items():
             data[i] = unicode(j)
