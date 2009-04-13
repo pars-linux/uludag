@@ -108,8 +108,9 @@ class MainManager(QtGui.QWidget):
         self.connect(self.animator, SIGNAL("frameChanged(int)"), self.animate)
         self.connect(self.animator, SIGNAL("finished()"), self.animateFinished)
 
-        # Hide editBox when clicked Cancel
+        # Hide editBox when clicked Cancel*
         self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.hideEditBox)
+        self.connect(self.ui.buttonCancelMini, SIGNAL("clicked()"), self.hideEditBox)
 
         # Save changes when clicked Apply
         self.connect(self.ui.buttonApply, SIGNAL("clicked()"), self.applyChanges)
@@ -237,13 +238,19 @@ class MainManager(QtGui.QWidget):
 
     def animateFinished(self):
         if self.lastAnimation == SHOW:
+            self.ui.lineConnectionName.setFocus()
             self.ui.editBox.setMaximumHeight(DEFAULT_HEIGHT)
             self.ui.profileList.setMaximumHeight(TARGET_HEIGHT)
             self.ui.editBox.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+            self.ui.buttonCreate.setEnabled(False)
+            self.ui.filterBox.setEnabled(False)
         elif self.lastAnimation == HIDE:
+            self.ui.profileList.setFocus()
             self.ui.profileList.setMaximumHeight(DEFAULT_HEIGHT)
             self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
             self.ui.profileList.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+            self.ui.buttonCreate.setEnabled(True)
+            self.ui.filterBox.setEnabled(True)
 
     def hideEditBox(self):
         if self.lastAnimation == SHOW:
@@ -253,7 +260,7 @@ class MainManager(QtGui.QWidget):
             self.animator.start()
             self.resetForm()
 
-    def showEditBox(self, profile=None, package=None):
+    def showEditBox(self, package=None, profile=None):
         sender = self.sender().parent()
         self.lastAnimation = SHOW
         self.hideScrollBars()
@@ -276,9 +283,12 @@ class MainManager(QtGui.QWidget):
         for device in devices:
             ui.deviceList.addItem(device)
         if len(devices) == 1:
-            ui.groupDevice.hide()
+            ui.deviceList.hide()
+            ui.labelDeviceDescription.show()
+            ui.labelDeviceDescription.setText(devices[device])
         else:
-            ui.groupDevice.show()
+            ui.deviceList.show()
+            ui.labelDeviceDescription.hide()
 
     # Comar operations calls gui
     def buildEditBoxFor(self, package, profile):
@@ -291,6 +301,8 @@ class MainManager(QtGui.QWidget):
         ui.lineConnectionName.setText(data["name"])
         ui.labelDeviceDescription.setText(data["device_name"])
 
+        if data.has_key("remote"):
+            ui.lineEssid.setText(data["remote"])
         if data["net_mode"] == "auto":
             ui.useDHCP.setChecked(True)
             if data.has_key("net_address"):
@@ -327,6 +339,7 @@ class MainManager(QtGui.QWidget):
         ui.lineAddress.setText("")
         ui.lineNetworkMask.lineEdit().setText("")
         ui.lineGateway.setText("")
+        ui.lineEssid.setText("")
         ui.useDefault.setChecked(True)
         ui.useAutomatic.setChecked(False)
         ui.useCustom.setChecked(False)
@@ -376,7 +389,7 @@ class MainManager(QtGui.QWidget):
         if ui.lineGateway.isEnabled():
             data["net_gateway"] = ui.lineGateway.text()
 
-        # Nameservics options
+        # Nameservice options
         data["namemode"] = "default"
         data["nameserver"] = ""
         if ui.useAutomatic.isChecked():
@@ -385,8 +398,10 @@ class MainManager(QtGui.QWidget):
             data["namemode"] = "custom"
             data["nameserver"] = ui.lineCustomDNS.text()
 
-        data["remote"] = passs
-        data["apmac"]  = ""
+        if ui.groupRemote.isVisible():
+            data["remote"] = ui.lineEssid.text()
+            data["apmac"]  = ""
+
         # Let them unicode
         for i,j in data.items():
             data[i] = unicode(j)
@@ -398,12 +413,12 @@ class MainManager(QtGui.QWidget):
         self.resetForm()
         self.lastEditedPackage = package
         self.fillDeviceList(package)
-        self.showEditBox()
+        self.showEditBox(package)
 
     def editConnection(self):
         sender = self.sender().parent()
         profile, package = sender.profile, sender.package
-        self.showEditBox(profile, package)
+        self.showEditBox(package, profile)
 
     def deleteConnection(self):
         profile = self.sender().parent().profile
