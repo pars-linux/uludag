@@ -125,7 +125,7 @@
         <x>0</x>
         <y>0</y>
         <width>804</width>
-        <height>430</height>
+        <height>434</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
@@ -363,6 +363,19 @@
                     </property>
                    </item>
                   </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <spacer name="verticalSpacer_3">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
                  </item>
                 </layout>
                </item>

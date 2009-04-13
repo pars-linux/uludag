@@ -85,6 +85,10 @@ class NetworkIface:
         self.link.Net.Link[package].setNameService(profile, data["namemode"],
                                                             data["nameserver"], async=self.handler)
 
+        if package == 'wireless_tools':
+            self.link.Net.Link[package].setRemote(profile,  data["remote"],
+                                                            data["apmac"])
+
     def deleteConnection(self, package, profile):
         self.link.Net.Link[package].deleteConnection(profile, aysnc=self.handler)
 
