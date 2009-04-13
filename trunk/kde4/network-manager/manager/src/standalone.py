@@ -19,12 +19,12 @@ from PyKDE4.kdecore import KGlobal
 from base import MainManager
 
 class NetworkManager(KMainWindow):
-    def __init__ (self, *args):
+    def __init__ (self, app):
         KMainWindow.__init__(self)
 
         # This is very important for translations when running as kcm_module
         KGlobal.locale().insertCatalog("network-manager")
 
         self.resize (640, 480)
-        self.setCentralWidget(MainManager(self))
+        self.setCentralWidget(MainManager(self, True, app))
 

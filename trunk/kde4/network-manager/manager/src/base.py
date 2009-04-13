@@ -33,12 +33,16 @@ TARGET_HEIGHT  = 0
 ANIMATION_TIME = 200
 DEFAULT_HEIGHT = 16777215
 
+# Comar Definitions
+NETPACKAGES    = ('wireless_tools','net_tools')
+
 class MainManager(QtGui.QWidget):
-    def __init__(self, parent, standAlone=True):
+    def __init__(self, parent, standAlone=True, app=None):
         QtGui.QWidget.__init__(self, parent)
 
         # Create the ui
         self.ui = Ui_mainManager()
+        self.app = app
 
         # Network Manager can run as KControl Module or Standalone
         if standAlone:
@@ -47,6 +51,10 @@ class MainManager(QtGui.QWidget):
         else:
             self.ui.setupUi(parent)
             self.baseWidget = parent
+
+        # Set visibility of indicators
+        self.ui.workingLabel.hide()
+        self.ui.refreshButton.hide()
 
         # Call Comar
         self.iface = NetworkIface()
@@ -73,20 +81,55 @@ class MainManager(QtGui.QWidget):
         # Filter
         self.connect(self.ui.filterBox, SIGNAL("currentIndexChanged(int)"), self.filterList)
 
+        # Refresh button for scanning remote again..
+        self.connect(self.ui.refreshButton, SIGNAL("leftClickedUrl()"), self.filterList)
+
         # Update service status and follow Comar for sate changes
         self.getConnectionStates()
 
-    def filterList(self, filter):
+    def filterList(self, filter=3):
 
-        def setHidden(package=None, hidden=False):
+        def filterByScan(*args):
+            self.ui.profileList.setEnabled(True)
+            self.ui.refreshButton.show()
+            self.ui.workingLabel.hide()
+            self.setCursor(Qt.ArrowCursor)
+            self.app.processEvents()
+            availableNetworks = {}
+            for result in args[2][0]:
+                availableNetworks[unicode(result['remote'])] = int(result['quality'])
             for widget in self.widgets.values():
+                if widget.item.isHidden():
+                    continue
+                print widget.profile, widget.data["remote"], availableNetworks
+                if unicode(widget.data["remote"]) in availableNetworks.keys():
+                    widget.setSignalStrength(availableNetworks[unicode(widget.data["remote"])])
+                    widget.item.setHidden(False)
+                else:
+                    widget.hideSignalStrength()
+                    widget.item.setHidden(True)
+
+        def setHidden(package=None, hidden=False, attr="package"):
+            for widget in self.widgets.values():
+                widget.hideSignalStrength()
                 if not package:
                     widget.item.setHidden(False)
                     continue
-                if widget.package == package:
+                if attr == "essid" and not widget.package == 'wireless_tools':
+                    widget.item.setHidden(True)
+                    continue
+                elif attr == "essid" and widget.package == 'wireless_tools':
+                    if not widget.data.has_key("remote"):
+                        widget.item.setHidden(True)
+                    continue
+                if getattr(widget, attr) == package:
                     widget.item.setHidden(hidden)
                 else:
                     widget.item.setHidden(not hidden)
+
+        # Set visibility of indicators
+        self.ui.workingLabel.hide()
+        self.ui.refreshButton.hide()
 
         # All profiles
         if filter == 0:
@@ -97,6 +140,19 @@ class MainManager(QtGui.QWidget):
         # Ethernet profiles
         elif filter == 2:
             setHidden("net_tools", False)
+        # Avaliable profiles
+        elif filter == 3:
+            self.ui.profileList.setEnabled(False)
+            self.ui.refreshButton.hide()
+            self.ui.workingLabel.show()
+            self.setCursor(Qt.WaitCursor)
+            setHidden()
+            setHidden("wireless_tools", False, "essid")
+            self.app.processEvents()
+            devices = self.iface.devices("wireless_tools")
+            for device in devices.keys():
+                self.app.processEvents()
+                self.iface.scanRemote(device, "wireless_tools", filterByScan)
 
     def fillProfileList(self, ignore = None):
         # Clear the entire list
@@ -104,7 +160,7 @@ class MainManager(QtGui.QWidget):
         self.widgets = {}
 
         # Fill the list with current connections
-        for package in ('net_tools', 'wireless_tools'):
+        for package in NETPACKAGES:
             # Fill profile list
             self.connections = self.iface.connections(package)
             self.connections.sort()
@@ -116,7 +172,7 @@ class MainManager(QtGui.QWidget):
                 state= str(info["state"])
                 item = QtGui.QListWidgetItem(self.ui.profileList)
                 item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
-                self.widgets[connection] = ConnectionItemWidget(package, connection, self, item)
+                self.widgets[connection] = ConnectionItemWidget(package, connection, info, self, item)
                 self.widgets[connection].update(state)
                 self.ui.profileList.setItemWidget(item, self.widgets[connection])
                 item.setSizeHint(QSize(48,48))

@@ -56,7 +56,7 @@ class NetworkIface:
         return self.link.Net.Link[package].connectionInfo(str(profile))
 
     def handler(self, *args):
-        pass
+        print args
 
     def postProcessor(self, package, signal, args):
         finishedFunctions = []
@@ -90,4 +90,10 @@ class NetworkIface:
 
     def devices(self, package):
         return self.link.Net.Link[package].deviceList()
+
+    def scanRemote(self, device, package="wireless_tools", func=None):
+        if func:
+            self.link.Net.Link[package].scanRemote(device, async=func)
+        else:
+            return self.link.Net.Link[package].scanRemote(device)
 
