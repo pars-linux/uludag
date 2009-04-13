@@ -30,7 +30,7 @@ from widgets import ConnectionItemWidget
 # Animation Definitions
 SHOW, HIDE     = range(2)
 TARGET_HEIGHT  = 0
-ANIMATION_TIME = 240
+ANIMATION_TIME = 200
 DEFAULT_HEIGHT = 16777215
 
 class MainManager(QtGui.QWidget):
@@ -70,12 +70,35 @@ class MainManager(QtGui.QWidget):
         # Save changes when clicked Apply
         self.connect(self.ui.buttonApply, SIGNAL("clicked()"), self.applyChanges)
 
-        # Update service status and follow Comar for state changes
+        # Filter
+        self.connect(self.ui.filterBox, SIGNAL("currentIndexChanged(int)"), self.filterList)
+
+        # Update service status and follow Comar for sate changes
         self.getConnectionStates()
 
+    def filterList(self, filter):
+
+        def setHidden(package=None, hidden=False):
+            for widget in self.widgets.values():
+                if not package:
+                    widget.item.setHidden(False)
+                    continue
+                if widget.package == package:
+                    widget.item.setHidden(hidden)
+                else:
+                    widget.item.setHidden(not hidden)
+
+        # All profiles
+        if filter == 0:
+            setHidden()
+        # Wireless profiles
+        elif filter == 1:
+            setHidden("wireless_tools", False)
+        # Ethernet profiles
+        elif filter == 2:
+            setHidden("net_tools", False)
+
     def fillProfileList(self, ignore = None):
-        a=time.time()
-        print a
         # Clear the entire list
         self.ui.profileList.clear()
         self.widgets = {}
@@ -98,8 +121,6 @@ class MainManager(QtGui.QWidget):
                 self.ui.profileList.setItemWidget(item, self.widgets[connection])
                 item.setSizeHint(QSize(48,48))
                 del item
-        print time.time()
-        print time.time()-a
 
     # Anime Naruto depends on GUI
     def animate(self, height):
