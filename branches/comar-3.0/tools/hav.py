@@ -74,8 +74,12 @@ def main():
                 print met.call(*args)
             else:
                 print met.call()
-        except dbus.DBusException:
-            print "Application does not provide that model."
+        except dbus.exceptions.DBusException, e:
+            if e._dbus_error_name.endswith(".Comar.PolicyKit"):
+                print "Access to '%s' PolicyKit action required." % e.message
+            else:
+                print "Error:"
+                print "  %s" % e.message
             return -1
     else:
         printUsage()
