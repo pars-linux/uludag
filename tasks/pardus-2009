@@ -12,7 +12,7 @@
   * pisi abi check (-)
   * pisi.conf'da delta ve emniyet mandalı kapatılabilsin (-)
   * dodoc versiyonu eklemesin (+)
-  * pisi ilk çalışma performans artışı için depo ve paket cacheleme (/99)
+  * pisi ilk çalışma performans artışı için depo ve paket cacheleme (+)
   * blacklistteki paketlerin kurulumunu reverse depleri zorlayamasın, reverse depler de uyarı ile kurulmasın (-)
   * pyc, la, pod, pyo otomatik paket alınmasın, NoStrip benzeri bir yontem ile opsiyonel olsun (+)
   * error ve warning sayıları build sonunda gösterilsin (+)
