@@ -63,7 +63,6 @@ class MainManager(QtGui.QWidget):
         # Call Comar
         self.iface = NetworkIface()
         self.widgets = {}
-        self.fillProfileList()
 
         # Let look what we can do
         supportedPackages = []
@@ -96,6 +95,9 @@ class MainManager(QtGui.QWidget):
             self.ui.filterBox.insertItem(0, i18n("No Device Found"))
             self.ui.filterBox.setEnabled(False)
         self.ui.filterBox.setCurrentIndex(0)
+
+        # Fill the list
+        self.fillProfileList()
 
         # Preparing for animation
         self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
@@ -229,6 +231,9 @@ class MainManager(QtGui.QWidget):
                 self.ui.profileList.setItemWidget(item, self.widgets[connection])
                 item.setSizeHint(QSize(48,48))
                 del item
+
+        # Filter list with selected filter method
+        self.filterList(self.ui.filterBox.currentIndex())
 
     # Anime Naruto depends on GUI
     def animate(self, height):
