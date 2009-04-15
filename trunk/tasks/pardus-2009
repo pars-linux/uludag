@@ -138,7 +138,7 @@
   * xFLAGS elden geçirme (+)
   * as-needed ve sort-common test etme onaylama (+)
   * Toolchain ve yandaşları güncelleme (+)
-  * system.base / system.devel elden geçirip bootstrap işleri, 2009 test ortamı kurmak için CD / altyapı / betik vs. (/90)
+  * system.base / system.devel elden geçirip bootstrap işleri, 2009 test ortamı kurmak için CD / altyapı / betik vs. (+)
 
 * Multimedia (Onur Küçük)
   * Nasm -> Yasm geçişi (/20)
@@ -149,7 +149,8 @@
   * Ayar dosyası desteği (-)
 
 * Birtakım işler (Onur Küçük)
-  * 2009 farmı kurulacak (/50)
+  * 2009 farmı kurulması (+)
+  * 2009 bileşen ve svn yapısı değiştirilmesi (+)
 
 * Donanım (Onur Küçük)
   * Kamera sürücüleri kernel içine girecekler ve dışında kalacakların belirlenmesi (/50)
