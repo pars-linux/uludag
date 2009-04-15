@@ -21,6 +21,9 @@ class NetworkIface:
         self.waitFunctions = []
         self.link.listenSignals("Net.Link", self.postProcessor)
 
+    def capabilities(self, package):
+        return self.link.Net.Link[package].linkInfo()
+
     def connections(self, package):
         return list(self.link.Net.Link[package].connections())
 
@@ -55,6 +58,9 @@ class NetworkIface:
     def info(self, package, profile):
         return self.link.Net.Link[package].connectionInfo(str(profile))
 
+    def authInfo(self, package, profile):
+        return self.link.Net.Link[package].getAuthentication(profile)
+
     def handler(self, *args):
         print args
 
@@ -88,6 +94,17 @@ class NetworkIface:
         if package == 'wireless_tools':
             self.link.Net.Link[package].setRemote(profile,  data["remote"],
                                                             data["apmac"])
+
+            self.link.Net.Link[package].setAuthentication(profile, data["authmode"],
+                                                                   data["authuser"],
+                                                                   data["authpass"],
+                                                                   data["authauth"],
+                                                                   data["authanon"],
+                                                                   data["authinner"],
+                                                                   data["authca_cert"],
+                                                                   data["authclient_cert"],
+                                                                   data["authprivate_key"],
+                                                                   data["authprivate_key_password"], async=self.handler)
 
     def deleteConnection(self, package, profile):
         self.link.Net.Link[package].deleteConnection(profile, aysnc=self.handler)
