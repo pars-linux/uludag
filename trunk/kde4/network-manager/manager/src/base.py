@@ -27,7 +27,7 @@ from PyKDE4.kdecore import i18n
 # Application Stuff
 from backend import NetworkIface
 from ui import Ui_mainManager
-from widgets import ConnectionItemWidget
+from widgets import ConnectionItemWidget, WifiPopup
 
 # Animation Definitions
 SHOW, HIDE     = range(2)
@@ -63,6 +63,9 @@ class MainManager(QtGui.QWidget):
         # Call Comar
         self.iface = NetworkIface()
         self.widgets = {}
+
+        wifiScanner = WifiPopup(self)
+        self.ui.buttonScan.setMenu(wifiScanner)
 
         # Let look what we can do
         supportedPackages = []
@@ -416,9 +419,11 @@ class MainManager(QtGui.QWidget):
 
         # Remote and security options
         if ui.groupRemote.isVisible():
+            # Remote
             data["remote"] = ui.lineEssid.text()
             data["apmac"]  = ""
 
+            # Security
             data["authmode"] = str(ui.comboSecurityTypes.itemData(ui.comboSecurityTypes.currentIndex()).toString())
             data["authuser"] = ""
             data["authpass"] = ui.lineKey.text()
