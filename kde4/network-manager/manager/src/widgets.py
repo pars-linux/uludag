@@ -21,10 +21,30 @@ from PyKDE4.kdeui import KIcon
 # Application Stuff
 from ui import Ui_mainManager
 from uiitem import Ui_ConnectionItemWidget
+from uiwifiitem import Ui_WifiItemWidget
 import time
 
 iconForPackage = {"net_tools":"network-wired",
                   "wireless_tools":"network-wireless"}
+
+class WifiItemWidget(QtGui.QWidget):
+
+    def __init__(self, data, parent, item):
+        QtGui.QWidget.__init__(self, parent)
+
+        self.ui = Ui_WifiItemWidget()
+        self.ui.setupUi(self)
+        self.item = item
+
+class WifiPopup(QtGui.QMenu):
+    def __init__(self, parent):
+        QtGui.QMenu.__init__(self, parent)
+
+        self.gridLayout = QtGui.QGridLayout(self)
+        self.gridLayout.setMargin(0)
+        self.gridLayout.setSpacing(0)
+        self.listWidget = QtGui.QListWidget(self)
+        self.gridLayout.addWidget(self.listWidget, 0, 0, 1, 1)
 
 class ConnectionItemWidget(QtGui.QWidget):
 
