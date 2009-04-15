@@ -83,6 +83,10 @@ class MainManager(QtGui.QWidget):
         if "net_tools" in supportedPackages:
             self.ui.filterBox.addItem(i18n("Ethernet Profiles"), QVariant("net_tools"))
         if "wireless_tools" in supportedPackages:
+            self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
+            authMods = self.iface.capabilities('wireless_tools')['auth_modes'].split(';')
+            for name, auth, desc in map(lambda x:x.split(','), authMods):
+                self.ui.comboSecurityTypes.addItem(desc, QVariant(name))
             self.ui.filterBox.addItem(i18n("Wireless Profiles"), QVariant("wireless_tools"))
             self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
 
@@ -300,7 +304,6 @@ class MainManager(QtGui.QWidget):
         ui = self.ui
         self.lastEditedPackage = package
         self.lastEditedData = data = self.iface.info(package, profile)
-
         self.fillDeviceList(package)
 
         ui.lineConnectionName.setText(data["name"])
@@ -308,6 +311,12 @@ class MainManager(QtGui.QWidget):
 
         if data.has_key("remote"):
             ui.lineEssid.setText(data["remote"])
+            authInfo = self.iface.authInfo(package, profile)
+            authType = authInfo[0]
+            authPass = authInfo[2]
+            ui.lineKey.setText(authPass)
+            ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(authType)))
+
         if data["net_mode"] == "auto":
             ui.useDHCP.setChecked(True)
             if data.has_key("net_address"):
@@ -349,6 +358,8 @@ class MainManager(QtGui.QWidget):
         ui.useAutomatic.setChecked(False)
         ui.useCustom.setChecked(False)
         ui.lineCustomDNS.setText("")
+        ui.lineKey.setText("")
+        ui.comboSecurityTypes.setCurrentIndex(0)
         self.lastEditedData = None
         self.lastEditedPackage = None
 
@@ -403,9 +414,21 @@ class MainManager(QtGui.QWidget):
             data["namemode"] = "custom"
             data["nameserver"] = ui.lineCustomDNS.text()
 
+        # Remote and security options
         if ui.groupRemote.isVisible():
             data["remote"] = ui.lineEssid.text()
             data["apmac"]  = ""
+
+            data["authmode"] = str(ui.comboSecurityTypes.itemData(ui.comboSecurityTypes.currentIndex()).toString())
+            data["authuser"] = ""
+            data["authpass"] = ui.lineKey.text()
+            data["authauth"] = ""
+            data["authanon"] = ""
+            data["authinner"] = ""
+            data["authca_cert"] = ""
+            data["authclient_cert"] = ""
+            data["authprivate_key"] = ""
+            data["authprivate_key_password"] = ""
 
         # Let them unicode
         for i,j in data.items():
