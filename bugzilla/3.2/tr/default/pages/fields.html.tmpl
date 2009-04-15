@@ -17,15 +17,15 @@
   #
   # Contributor(s): Terry Weissman <terry@mozilla.org>
   #                 Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 [% PROCESS "global/field-descs.none.tmpl" %]
-[% INCLUDE global/header.html.tmpl title = "A $terms.Bug's Life Cycle" %]
+[% INCLUDE global/header.html.tmpl title = "Bir $terms.BugGen Hayatı" %]
 
 <p>
-The <b>status</b> and <b>resolution</b> fields define and track the life
-cycle of [% terms.abug %].  
+<b>Durum</b> ve <b>karar</b> alanları, [% terms.bugsGen %] yaşam döngüsünü tanımlayan ve takibini sağlayan kavramlardır.
 </p>
 
 <a name="status"></a>
@@ -34,20 +34,18 @@ cycle of [% terms.abug %].
 <table border="1" cellpadding="4">
   <tr align="center" valign="top">
     <td width="50%">
-      <h1>STATUS</h1>
+      <h1>DURUM</h1>
     </td>
 
     <td>
-      <h1>RESOLUTION</h1>
+      <h1>KARAR</h1>
     </td>
   </tr>
 
   <tr valign="top">
-    <td>The <b>status</b> field indicates the general health of a 
-    [% terms.bug %]. Only certain status transitions are allowed.</td>
+    <td><b>Durum</b> alanı [% terms.abugGen %] genel sağlığını belirtir. Sadece belirli durum geçişlerine izin verilir.</td>
 
-    <td>The <b>resolution</b> field indicates what happened to this
-    [%+ terms.bug %].</td>
+    <td><b>Karar</b> alanı bu [%+ terms.bugDat %] ne olduğunu belirtir.</td>
   </tr>
 
   <tr valign="top">
@@ -57,44 +55,28 @@ cycle of [% terms.abug %].
           <b>[% get_status("UNCONFIRMED") FILTER html %]</b>
         </dt>
         <dd>
-          This [% terms.bug %] has recently been added to the database. 
-          Nobody has validated that this [% terms.bug %] is true. Users
-          who have the "canconfirm" permission set may confirm
-          this [% terms.bug %], changing its state to [% get_status("NEW") FILTER html %]. Or, it may be
-          directly resolved and marked [% get_status("RESOLVED") FILTER html %].
+          Bu [% terms.bug %] veritabanına yeni eklendi. Henüz kimse [% terms.bugGen %] onaylamadı. "canconfirm" (onaylayabilir) iznine sahip kullanıcılar bu [% terms.bug %] onaylayabilir; bu durumda [% terms.bugGen %] durumu [% get_status("NEW") FILTER html %] olarak değişir. Veya, karar hemen verilir ve [% get_status("RESOLVED") FILTER html %] olarak işaretlenir.
         </dd>
 
         <dt>
           <b>[% get_status("NEW") FILTER html %]</b>
         </dt>
         <dd>
-          This [% terms.bug %] has recently been added to the assignee's
-          list of [% terms.bugs %] and must be processed. [% terms.Bugs %] in
-          this state may be accepted, and become <b>[% get_status("ASSIGNED") FILTER html %]</b>, passed
-          on to someone else, and remain <b>[% get_status("NEW") FILTER html %]</b>, or resolved and marked
-          <b>[% get_status("RESOLVED") FILTER html %]</b>.
+          Bu [% terms.bug %] ilgili kişiye daha yeni atandı ve işlenmesi gerekiyor. Bu durumdaki [% terms.bugs %] kabul edilebilir, başka birisine geçirilebilir, veya <b>[% get_status("RESOLVED") FILTER html %]</b> durumuna geçirilebilir.
         </dd>
 
         <dt>
           <b>[% get_status("ASSIGNED") FILTER html %]</b>
         </dt>
         <dd>
-          This [% terms.bug %] is not yet resolved, but is assigned to the 
-          proper person. From here [% terms.bugs %] can be given to another 
-          person and become <b>[% get_status("NEW") FILTER html %]</b>, or
-          resolved and become <b>[% get_status("RESOLVED") FILTER html %]</b>.
+          Bu [% terms.bug %] ilgili kişiye atandı fakat henüz karara bağlanmadı. Bu noktadan sonra [% terms.bugs %] başka birine geçirilebilir veya hakkında bir karara varılabilir.
         </dd>
 
         <dt>
           <b>[% get_status("REOPENED") FILTER html %]</b>
         </dt>
         <dd>
-          This [% terms.bug %] was once resolved, but the resolution was 
-          deemed incorrect. For example, a <b>[% get_resolution("WORKSFORME") FILTER html %]</b> [% terms.bug %] is
-          <b>[% get_status("REOPENED") FILTER html %]</b> when more information shows up and
-          the [% terms.bug %] is now reproducible. From here [% terms.bugs %] are
-          either marked <b>[% get_status("ASSIGNED") FILTER html %]</b> or
-          <b>[% get_status("RESOLVED") FILTER html %]</b>.
+          Bu [% terms.bug %] bir kez karara bağlanmıştı, fakat karar yanlış olarak addedildi. Örneğin <b>[% get_resolution("WORKSFORME") FILTER html %]</b> durumundaki bir [% terms.bug %] hakkında daha fazla bilgi toplandığında ve [% terms.bug %] tekrarlanabilir olduğunda bu durum kullanılır. Bu noktadan itibaren hatalar <b>[% get_status("ASSIGNED") FILTER html %]</b> veya <b>[% get_status("RESOLVED") FILTER html %]</b> durumuna geçebilir.
         </dd>
       </dl>
     </td>
@@ -102,10 +84,7 @@ cycle of [% terms.abug %].
     <td>
       <dl>
         <dd>
-          No resolution yet. All [% terms.bugs %] which are in one of 
-          these "open" states have the resolution set to blank. All 
-          other [% terms.bugs %] will be marked with one of the following 
-          resolutions.
+          Henüz bir karara varılmadı. Bu "açık" durumların herhangi birindeki [% terms.bugsGen %] kararı boş olur. Diğer [% terms.bugs %] ise aşağıdaki kararlardan biriyle işaretlenir.
         </dd>
       </dl>
     </td>
@@ -118,31 +97,21 @@ cycle of [% terms.abug %].
           <b>[% get_status("RESOLVED") FILTER html %]</b>
         </dt>
         <dd>
-          A resolution has been taken, and it is awaiting verification by
-          QA. From here [% terms.bugs %] are either re-opened and become 
-          <b>[% get_status("REOPENED") FILTER html %]</b>, are marked
-          <b>[% get_status("VERIFIED") FILTER html %]</b>, or are closed for
-          good and marked <b>[% get_status("CLOSED") FILTER html %]</b>.
+          Bir karar alındı ve kalite kontrol kişisinden onay bekliyor. Buradan sonra [% terms.bugs %] ya yeniden açılır ve <b>[% get_status("REOPENED") FILTER html %]</b> durumuna geçer, ya <b>[% get_status("VERIFIED") FILTER html %]</b> olarak işaretlenir, ya da problem giderilmiş olur ve <b>[% get_status("CLOSED") FILTER html %]</b> olarak işaretlenir.
         </dd>
 
         <dt>
           <b>[% get_status("VERIFIED") FILTER html %]</b>
         </dt>
         <dd>
-          QA has looked at the [% terms.bug %] and the resolution and 
-          agrees that the appropriate resolution has been taken. [% terms.Bugs %] remain
-          in this state until the product they were reported
-          against actually ships, at which point they become
-          <b>[% get_status("CLOSED") FILTER html %]</b>.
+          Kalite kontrolden sorumlu kişi [% terms.bugAcc %] ve kararı inceledi ve yapılan işlemlerin ve alınan kararın doğru olduğuna karar verdi. Bu durumdaki [% terms.bugs %] ilgili ürün sürüldüğünde <b>[% get_status("CLOSED") FILTER html %]</b> durumuna geçirilir ve o zamana kadar da <b>[% get_status("VERIFIED") FILTER html %]</b> olarak kalır.
         </dd>
 
         <dt>
           <b>[% get_status("CLOSED") FILTER html %]</b>
         </dt>
         <dd>
-          The [% terms.bug %] is considered dead, the resolution is correct. 
-          Any zombie [% terms.bugs %] who choose to walk the earth again must 
-          do so by becoming <b>[% get_status("REOPENED") FILTER html %]</b>.
+          [% terms.BugGen %] çözüldüğüne ya da doğru kararın alındığı netleştiğinde [% terms.bugs %] bu durumda bırakılır. Yeniden açılması gereken [% terms.bugs %] için durum <b>[% get_status("REOPENED") FILTER html %]</b> olarak atanmalıdır.
         </dd>
       </dl>
     </td>
@@ -153,137 +122,127 @@ cycle of [% terms.abug %].
           <b>[% get_resolution("FIXED") FILTER html %]</b>
         </dt>
         <dd>
-          A fix for this [% terms.bug %] is checked into the tree and 
-          tested.
+          Bu [% terms.bug %] ile ilgili bir yama/tamir işlemi ağaca alındı ve test edildi.
         </dd>
 
         <dt>
           <b>[% get_resolution("INVALID") FILTER html %]</b>
         </dt>
         <dd>
-          The problem described is not [% terms.abug %].
+          Açıklanan problem [% terms.abug %] değil.
         </dd>
 
         <dt>
           <b>[% get_resolution("WONTFIX") FILTER html %]</b>
         </dt>
         <dd>
-          The problem described is [% terms.abug %] which will never be 
-          fixed.
+          Açıklanan problem [% terms.abug %] fakat hiçbir zaman düzeltilmeyecek.
         </dd>
 
         <dt>
          <b>[% get_resolution("DUPLICATE") FILTER html %]</b>
         </dt>
         <dd>
-          The problem is a duplicate of an existing [% terms.bug %].
-          Marking [% terms.abug %] duplicate requires the [% terms.bug %]#
-          of the duplicating [% terms.bug %] and will at least put
-          that [% terms.bug %] number in the description field.
+          Girilen problem, varolan bir [% terms.bugGen %] aynısı.
+          [% terms.AbugAcc %] aynı olarak işaretlemek, önceden girilen [% terms.bugGen %]
+          numarasını gerektirir ve en azından açıklama alanına o [% terms.bugGen %]
+          numarası yazılır.
         </dd>
 
         <dt>
           <b>[% get_resolution("WORKSFORME") FILTER html %]</b>
         </dt>
         <dd>
-          All attempts at reproducing this [% terms.bug %] were futile, 
-          and reading the code produces no clues as to why the described
-          behavior would occur. If more information appears later,
-          the [% terms.bug %] can be reopened.
+          Bu [% terms.bugAcc %] tekrarlama çabaları başarısız oldu ve ilgili kodu 
+          okumak da bahsedilen davranışın neden gerçekleştiği hakkında herhangi bir 
+          ipucu sağlamadı. Eğer sonradan en bilgilere erişilebilirse, [% terms.bug %] 
+          yeniden açılabilir.
         </dd>
 
         <dt>
           <b>[% get_resolution("MOVED") FILTER html %]</b>
         </dt>
         <dd>
-          The problem was specific to a related product 
-          whose [% terms.bugs %] are tracked in
-          another [% terms.bug %] database.
-          The [% terms.bug %] has been moved to that database.
+          Problem, [% terms.bugsAcc %] başka bir [% terms.bug %] veritabanında 
+          takip edilen bir ürüne ait. [% terms.Bug %] o veritabanına taşındı.
         </dd>
       </dl>
     </td>
   </tr>
 </table>
 
-<h2><a name="importance">Importance</h2>
-The importance of [% terms.abug %] is described as the combination of
-its <a href="#priority">priority</a> and <a href="#bug_severity">severity</a>,
-as described below.
+<h2><a name="importance">Önem</h2>
+[% terms.AbugGen %] önemi, aşağıda açıklanan <a href="#priority">öncelik</a> 
+ve <a href="#bug_severity">ciddiyet</a> (önem) kavramlarının birleşimidir.
 
-<h2><a name="priority">Priority</a></h2>
-This field describes the importance and order in which [% terms.abug %]
-should be fixed. This field is utilized by the
-programmers/engineers to prioritize their work to be done. The
-available priorities range from <b>P1</b> (most important) to
-<b>P5</b> (least important).
+<h2><a name="priority">Önem</a></h2>
+Bu alan önemi açıklar ve [% terms.abugGen %] düzeltilmesi gereken sırayı
+anlatır. Bu alan, programcılar veya mühendisler tarafından yapacakları işleri
+önem sırasına koymak için kullanılır. Önem değerleri
+<b>P1</b> (çok önemli) ile <b>P5</b> (az önemli) arasında olabilir.
 
-<h2><a name="bug_severity">Severity</a></h2>
-This field describes the impact of [% terms.abug %]. 
+<h2><a name="bug_severity">Ciddiyet</a></h2>
+Bu alan [% terms.bugGen %] etki derecesini gösterir. 
 
 <table>
   <tr>
-    <th>Blocker</th>
+    <th>Engelleyici</th>
 
-    <td>Blocks development and/or testing work</td>
+    <td>geliştirme ve-veya test etme işlerini engelliyor</td>
   </tr>
 
   <tr>
-    <th>Critical</th>
+    <th>Kritik</th>
 
-    <td>crashes, loss of data, severe memory leak</td>
+    <td>çakılmalar, veri kaybı, ciddi hafıza açıkları</td>
   </tr>
 
   <tr>
-    <th>Major</th>
+    <th>Büyük</th>
 
-    <td>major loss of function</td>
+    <td>önemli derecede işlev kaybı</td>
   </tr>
 
   <tr>
     <th>Normal</th>
 
-    <td>regular issue, some loss of functionality under specific circumstances</td>
+    <td>belirli şartlarda oluşan işlev kaybı</td>
   </tr>
 
 
   <tr>
-    <th>Minor</th>
+    <th>Küçük</th>
 
-    <td>minor loss of function, or other problem where easy
-    workaround is present</td>
+    <td>işin başka bir şekilde halledilebildiği durumlar için 
+    düşük derecede işlev kaybı ve benzeri problemler</td>
   </tr>
 
   <tr>
-    <th>Trivial</th>
+    <th>Önemsiz</th>
 
-    <td>cosmetic problem like misspelled words or misaligned
-    text</td>
+    <td>yanlış yazılmış bir kelime veya yanlış yerleştirilmiş 
+    metin gibi, görüntüde küçük kaymalar</td>
   </tr>
 
   <tr>
-    <th>Enhancement</th>
+    <th>Geliştirme</th>
 
-    <td>Request for enhancement</td>
+    <td>"şöyle daha iyi olabilir" şeklindeki geliştirme istekleri</td>
 </table>
 
 <h2><a name="rep_platform">Platform</a></h2>
-This is the hardware platform against which the [% terms.bug %] was
-reported. Legal platforms include: 
+[% terms.BugGen %] raporlandığı donanım platformu. Geçerli platformlar şunlardır:
 
 <ul>
-  <li>All (happens on all platforms; cross-platform [% terms.bug %])</li>
+  <li>Tümü (tüm platformlarda oluyor)</li>
 
   <li>Macintosh</li>
 
   <li>PC</li>
 </ul>
-<b>Note:</b> When searching, selecting the option "All" does not 
-select [% terms.bugs %]
-assigned against any platform. It merely selects [% terms.bugs %] that are
-marked as occurring on all platforms, i.e. are designated "All". 
+<b>Not:</b> Arama yapılırken, "Tümü"nü seçmek yukarıdaki listenin tamamını kapsamaz. Sadece "Tümü" işaretli [% terms.bugsAcc %] tarar.
 
-<h2><a name="op_sys">Operating System</a></h2>
+<h2><a name="op_sys">İşletim Sistemi</a></h2>
 This is the operating system against which the [% terms.bug %] was
 reported. Legal operating systems include: 
 
