@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%############################################################################%]
@@ -39,26 +40,26 @@
 
 [% abbrev = 
   {
-    "bug_severity"         => { maxlength => 3 , title => "Sev" } , 
-    "priority"             => { maxlength => 3 , title => "Pri" } , 
+    "bug_severity"         => { maxlength => 3 , title => "Önm" } , 
+    "priority"             => { maxlength => 3 , title => "Önc" } , 
     "rep_platform"         => { maxlength => 3 , title => "Plt" } , 
     "bug_status"           => { maxlength => 6 } , 
     "assigned_to"          => { maxlength => 30 , ellipsis => "..." } , 
     "assigned_to_realname" => { maxlength => 20 , ellipsis => "..." } , 
     "reporter"             => { maxlength => 30 , ellipsis => "..." } , 
     "reporter_realname"    => { maxlength => 20 , ellipsis => "..." } , 
-    "qa_contact"           => { maxlength => 30 , ellipsis => "..." , title => "QAContact" } , 
-    "qa_contact_realname"  => { maxlength => 20 , ellipsis => "..." , title => "QAContact" } , 
+    "qa_contact"           => { maxlength => 30 , ellipsis => "..." , title => "Kal.Kont." } , 
+    "qa_contact_realname"  => { maxlength => 20 , ellipsis => "..." , title => "Kal.Kont." } , 
     "resolution"        => { maxlength => 4 } , 
     "short_desc"        => { wrap => 1 } ,
     "short_short_desc"  => { maxlength => 60 , ellipsis => "..." , wrap => 1 } ,
-    "status_whiteboard" => { title => "Whiteboard" , wrap => 1 } , 
+    "status_whiteboard" => { title => "Notlar" , wrap => 1 } , 
     "keywords"          => { wrap => 1 } ,
-    "component"         => { maxlength => 8 , title => "Comp" } , 
+    "component"         => { maxlength => 8 , title => "Blş" } , 
     "product"           => { maxlength => 8 } , 
-    "version"           => { maxlength => 5 , title => "Vers" } , 
+    "version"           => { maxlength => 5 , title => "Sürm" } , 
     "op_sys"            => { maxlength => 4 } , 
-    "target_milestone"  => { title => "TargetM" } , 
+    "target_milestone"  => { title => "HedfAşm" } , 
     "percentage_complete" => { format_value => "%d %%" } , 
   }
 %]
@@ -139,7 +140,7 @@
     [% END %]
     [% desc = '' %]
     [% IF (om = order.match("$column.sortalias( desc)?")) %]
-      [% desc = ' desc' IF NOT om.0 %]
+      [% desc = ' açkl' IF NOT om.0 %]
     [% END %]
     [% order = order.remove("$column.sortalias( desc)?,?") %]
     <a href="buglist.cgi?[% urlquerypart FILTER html %]&amp;order=
@@ -183,7 +184,7 @@
     <td class="first-child">
       <a name="b[% bug.bug_id %]"
          href="show_bug.cgi?id=[% bug.bug_id %]">[% bug.bug_id %]</a>
-      <span style="display: none">[%+ '[SEC]' IF bug.secure_mode %]</span>
+      <span style="display: none">[%+ '[GÜV]' IF bug.secure_mode %]</span>
     </td>
 
     [% FOREACH column = displaycolumns %]

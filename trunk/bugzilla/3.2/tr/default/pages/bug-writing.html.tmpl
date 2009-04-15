@@ -23,158 +23,135 @@
   #                 Chris Pratt
   #                 Tom Schutter
   #                 Chris Yeh
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
-[% INCLUDE global/header.html.tmpl title = "$terms.Bug Writing Guidelines" %]
+[% INCLUDE global/header.html.tmpl title = "$terms.Bug Yazma Kılavuzu" %]
 
-  <p>Effective [% terms.bug %] reports are the most likely to be fixed. 
-  These guidelines explain how to write such reports.
+  <p>Çözülme ihtimali en yüksek [% terms.bugs %], etkin şekilde yazılmış [% terms.bug %] raporlarında olur.
+  Bu kılavuzlar etkin bir raporun nasıl yazıldığını açıklar.
 
-<h3>Principles</h3>
+<h3>Prensipler</h3>
 
   <ul>
-    <li>Be precise</li>
-    <li>Be clear - explain it so others can reproduce the [% terms.bug %]</li>
-    <li>One [% terms.bug %] per report</li>
-    <li>No [% terms.bug %] is too trivial to report - 
-    small [% terms.bugs %] may hide big [% terms.bugs %]</li>
-    <li>Clearly separate fact from speculation</li>
+    <li>Kesin bilgi verin</li>
+    <li>Açık olun - açıklamanızı okuyan, [% terms.bugAcc %] tekrarlayabilsin</li>
+    <li>Her raporda sadece bir [% terms.bug %] girin</li>
+    <li>Hiçbir [% terms.bug %] bildirilmeyecek kadar önemsiz değildir - 
+    küçük [% terms.bugs %] büyük [% terms.bugsAcc %] gizleyebilir</li>
+    <li>Gerçekleri ve tahminlerinizi birbirinden net şekilde ayırın</li>
   </ul>
 
-<h3>Preliminaries</h3>
+<h3>Ön hazırlıklar</h3>
 
 <ol>
-  <li>Reproduce your [% terms.bug %] using a recent build of the
-  software, to see whether it has already been fixed.
+  <li>[% terms.BugAcc %] yazılımın güncel sürümünde tekrarlayın, tekrarlayamıyorsanız düzeltilmiş olabilir.
   </li>
 
-  <li><a href="query.cgi?format=specific">Search</a> 
-  [% terms.Bugzilla %], to see whether your [% terms.bug %] has
-  already been reported.</li>
+  <li>[% terms.BugzillaLoc %] <a href="query.cgi?format=specific">Ara</a>ma yapın, belki [% terms.bug %] zaten bildirilmiştir.</li>
 </ol>
 
-<h3>Reporting a New [% terms.Bug %]</h3>
+<h3>Yeni [% terms.Bug %] Raporlamak</h3>
 
-<p>If you have reproduced the [% terms.bug %] in a recent build and 
-no-one else appears to have reported it, then:</p>
+<p>Eğer [% terms.bugAcc %] uygulamanın güncel sürümünde tekrarlayabiliyorsanız ve başka kimse raporlamadıysa:</p>
 
 <ol>
- <li>Choose 
- "<a href="enter_bug.cgi">Enter a new [% terms.bug %]</a>"</li>
- <li>Select the product in which you've found the [% terms.bug %]</li>
- <li>Fill out the form. Here is some help understanding it:</li>
+ <li>"<a href="enter_bug.cgi">Yeni bir [% terms.bug %] gir</a>"i seçin</li>
+ <li>[% terms.BugAcc %] bulduğunuz ürünü seçin</li>
+ <li>Formu doldurun. Formu anlama konusunda birkaç ipucu:</li>
 </ol>
 
   <blockquote>
-    <p><b>Component:</b> In which sub-part of the software does it 
-          exist?<br>
-    This field is required.
-    Click the word "Component" to see a description of each 
-    component. If none seems appropriate, look for a "General" component.</p>
+    <p><b>Bileşen:</b> [% terms.Bug %] yazılımın hangi bölümünde?<br>
+    Bu alan zorunludur.
+    Her bileşenle ilgili bir açıklama görmek için "Bileşen" kelimesine tıklayın. Eğer mevcut bileşen seçenekleri uygun gelmediyse, "Genel" bileşenini seçin.</p>
 
-    <p><b>OS:</b> On which operating system (OS) did you find 
-          it?
-    (e.g. Linux, Windows XP, Mac OS X.)<br>
-    If you know the [% terms.bug %] happens on more than one type of 
-    operating system, choose "All". 
+    <p><b>İşletim Sistemi:</b> Bu problemi hangi işletim sisteminde yaşıyorsunuz? (örn. Linux, Windows XP, Mac OS X.)<br>
+    Eğer [% terms.bugGen %] birden fazla işletim sisteminde yaşandığını biliyorsanız "Tümü"nü seçin. 
     If your OS isn't listed, choose Other.</p>
 
-    <p><b>Summary:</b> How would you describe the [% terms.bug %], in 
-    approximately 60 or fewer characters?<br>
-     A good summary should <b>quickly and uniquely identify [% terms.abug %]
-    report</b>. It should explain the problem, not your suggested solution.<br>
+    <p><b>Özet:</b> [% terms.BugAcc %] en fazla 60 karakterde nasıl açıklarsınız?<br>
+     İyi bir özet <b>[% terms.abug %] raporunu hızlı ve benzersiz şekilde açıklar</b>. Önerdiğiniz çözümü değil, problemi açıklamalıdır.<br>
     <ul>
-     <li>Good: "<tt>Cancelling a File Copy dialog crashes 
-     File Manager</tt>"</li>
-     <li>Bad: "<tt>Software crashes</tt>"</li>
-     <li>Bad: "<tt>Browser should work with my web site</tt>"</li>
+     <li>Güzel: "<tt>Bir dosya kopyalama diyaloğunda iptâl Dosya Yöneticisi'nin çakılmasına neden oluyor</tt>"</li>
+     <li>Kötü: "<tt>Yazılım çakılıyor</tt>"</li>
+     <li>Kötü: "<tt>Tarayıcı benim sitemi düzgün görüntülemeli</tt>"</li>
     </ul>
     
-    <b>Description:</b>
-    The details of your problem report, including:</p>
+    <b>Açıklama:</b>
+    Problemin detayları:</p>
 
     <blockquote>
-      <p><b>Overview:</b> More detailed restatement of
-      summary.</p>
+      <p><b>Genel Bakış:</b> Özetin daha kapsamlı şekilde yazılmış hali.</p>
 
       <blockquote>
 <pre>
-Drag-selecting any page crashes Mac builds in the NSGetFactory function.
+Bir sayfayı sürükleyerek seçmek Mac'lerde NSGetFactory fonksiyonunun çakılmasına neden oluyor.
 </pre>
       </blockquote>
 
-      <p><b>Steps to Reproduce:</b> Minimized, easy-to-follow steps that
-      will trigger the [% terms.bug %]. Include any special setup steps.</p>
+      <p><b>Tekrarlama Aşamaları:</b> [% terms.BugGen %] tekrar edilebilmesi için yapılması gerekenler, mümkün olduğunca kısa olarak. Özel kurulum adımlarını da burada belirtmelisiniz.</p>
 
       <blockquote>
 <pre>
-1) View any web page. (I used the default sample page, 
-resource:/res/samples/test0.html)
+1) Herhangi bir sayfa açılır. (Ben varsayılan test sayfasını 
+kullandım - resource:/res/samples/test0.html)
 
-2) Drag-select the page. (Specifically, while holding down 
-the mouse button, drag the mouse pointer downwards from any 
-point in the browser's content region to the bottom of the 
-browser's content region.)
+2) Sayfayı sürükleyerek seçin. (Fareyle tıklayıp, tuşu 
+bırakmadan tarayıcının içerik alanında herhangi bir yerden 
+içerik alanının alt kısmına doğru sürükleyin.)
 </pre>
       </blockquote>
 
-      <p><b>Actual Results:</b> What the application did after performing
-      the above steps.</p>
+      <p><b>Oluşan Sonuçlar:</b> Uygulama yukarıda verdiğiniz adımlar tamamlandığında ne yaptı?</p>
 
       <blockquote>
 <pre>
-The application crashed.
+Uygulama çakıldı.
 </pre>
       </blockquote>
 
-      <p><b>Expected Results:</b> What the application should have done,
-      were the [% terms.bug %] not present.</p>
+      <p><b>Beklenen Sonuçlar:</b> [% terms.Bug %] olmasaydı uygulamanın ne yapması gerekiyordu?</p>
 
       <blockquote>
 <pre>
-The window should scroll downwards. Scrolled content should be selected. 
-(Or, at least, the application should not crash.)
+Pencere aşağıya doğru kaymalıydı. 
+Kayan içerik seçilmeliydi. 
+(Ya da en azından, uygulama çakılmamalıydı.)
 </pre>
       </blockquote>
 
-      <p><b>Build Date &amp; Platform:</b> Date and platform of the build
-      in which you first encountered the [% terms.bug %].</p>
+      <p><b>İnşa Tarihi ve Platform:</b> Bu [% terms.bug %] ile ilk karşılaştığınız inşanın tarihi ve platformu</p>
 
       <blockquote>
 <pre>
-Build 2006-08-10 on Mac OS 10.4.3
+Mac OS 10.4.3 üzerinde inşa 2006-08-10.
 </pre>
       </blockquote>
 
-      <p><b>Additional Builds and Platforms:</b> Whether or not 
-      the [% terms.bug %] takes place on other platforms (or browsers, 
-      if applicable).</p>
+      <p><b>Ek İnşalar ve Platformlar:</b> [% terms.BugGen %] diğer platformlarda (veya ortama göre, tarayıcılarda) tekrarlanıp tekrarlanmadığı.</p>
 
       <blockquote>
 <pre>
-Doesn't Occur On Build 2006-08-10 on Windows XP Home (Service Pack 2)
+Pardus 2008.2 üzerinde tekrarlanmıyor.
 </pre>
       </blockquote>
 
-      <p><b>Additional Information:</b> Any other useful information.
-      <br><br>For crashing [% terms.bugs %]:</p>
+      <p><b>Ek Bilgi:</b> Diğer faydalı bilgi.
+      <br><br>Çakılma [% terms.bugsAcc %] ile ilgili olarak:</p>
 
       <ul>
-        <li><b>Windows:</b> Note the type of the crash, and the module that the
-        application crashed in (e.g. access violation in apprunner.exe).</li>
+        <li><b>Windows:</b> Çakılmanın türünü ve uygulamanın çakıldığı bileşenin adını verin (örn. "access violation in apprunner.exe").</li>
 
-        <li><b>Mac OS X:</b> Attach the "Crash Reporter" log that appears
-        upon crash.
-        Only include the section directly below the crashing thread, usually 
-        titled "Thread 0 Crashed". Please do not paste the entire log!</li>
+        <li><b>Mac OS X:</b> Çakılmalarda çıkan "Çakılma Raporu"nu ekleyin.
+        Sadece çakılma metninin altında bulunan ve "Thread 0 Crashed" başlıklı olan bölümü ekleyin. Tüm raporu buraya yapıştırmayın!</li>
       </ul>
     </blockquote>
 
-  <p>Double-check your report for errors and omissions, then press "Commit".
-  Your [% terms.bug %] report will now be in 
-  the [% terms.Bugzilla %] database.<br>
+  <p>Raporunuzu hatalara ve eksik kalan noktalara karşı iki kez kontrol edin, sonra "Gönder"e basın.
+  Artık [% terms.bug %] raporunuz [% terms.Bugzilla %] veritabanına eklenmiş durumdadır.<br>
   </p>
 </blockquote>
 
