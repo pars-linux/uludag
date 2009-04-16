@@ -16,7 +16,8 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
 # KDE Stuff
-from PyKDE4.kdeui import KIcon
+from PyKDE4.kdeui import KIcon, KUrlLabel
+from PyKDE4.kdecore import i18n
 
 # Application Stuff
 from ui import Ui_mainManager
@@ -35,16 +36,64 @@ class WifiItemWidget(QtGui.QWidget):
         self.ui = Ui_WifiItemWidget()
         self.ui.setupUi(self)
         self.item = item
+        self.data = data
+        self.ui.labelName.setText(data['remote'])
+        self.setToolTip("%s - %s" % (data['encryption'], data['mac']))
+        self.ui.wifiStrength.setValue(int(data['quality']))
+        icon = "document-encrypt"
+        if data['encryption'] == 'none':
+            icon = "document-decrypt"
+        self.ui.labelStatus.setPixmap(KIcon(icon).pixmap(22))
 
 class WifiPopup(QtGui.QMenu):
     def __init__(self, parent):
         QtGui.QMenu.__init__(self, parent)
+        self.parent = parent
+        self.iface  = parent.iface
 
+        # Layout & Widgets
         self.gridLayout = QtGui.QGridLayout(self)
         self.gridLayout.setMargin(0)
         self.gridLayout.setSpacing(0)
         self.listWidget = QtGui.QListWidget(self)
+        self.listWidget.setMinimumSize(QSize(280, 160))
         self.gridLayout.addWidget(self.listWidget, 0, 0, 1, 1)
+        self.refreshButton = QtGui.QPushButton(self)
+        self.refreshButton.setText(i18n("Refresh"))
+        self.gridLayout.addWidget(self.refreshButton, 1, 0, 1, 1)
+
+        # Connections
+        self.connect(self, SIGNAL("aboutToShow()"), self.rescan)
+        self.connect(self.refreshButton, SIGNAL("clicked()"), self.rescan)
+        self.connect(self.listWidget, SIGNAL("itemClicked(QListWidgetItem*)"), self.useSelected)
+        self.refreshButton.hide()
+
+    def useSelected(self, item):
+        self.hide()
+        data = self.listWidget.itemWidget(item).data
+        self.parent.ui.lineEssid.setText(data['remote'])
+        self.parent.ui.comboSecurityTypes.setCurrentIndex(self.parent.ui.comboSecurityTypes.findData(QVariant(data['encryption'])))
+
+    def fillList(self, *args):
+        self.refreshButton.show()
+        self.listWidget.clear()
+        for remote in args[2][0]:
+            item = QtGui.QListWidgetItem(self.listWidget)
+            item.setSizeHint(QSize(22,30))
+            wifi = WifiItemWidget(remote, self, item)
+            self.listWidget.setItemWidget(item, wifi)
+
+    def rescan(self):
+        self.listWidget.clear()
+        self.refreshButton.hide()
+
+        # Show notification
+        self.listWidget.addItem(i18n("Scanning..."))
+        self.listWidget.item(0).setFlags(Qt.NoItemFlags)
+
+        # Scan with current device
+        device = str(self.parent.ui.deviceList.currentText())
+        self.iface.scanRemote(device, "wireless_tools", self.fillList)
 
 class ConnectionItemWidget(QtGui.QWidget):
 
