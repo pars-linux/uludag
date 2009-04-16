@@ -243,12 +243,10 @@ Bu alan [% terms.bugGen %] etki derecesini gösterir.
 <b>Not:</b> Arama yapılırken, "Tümü"nü seçmek yukarıdaki listenin tamamını kapsamaz. Sadece "Tümü" işaretli [% terms.bugsAcc %] tarar.
 
 <h2><a name="op_sys">İşletim Sistemi</a></h2>
-This is the operating system against which the [% terms.bug %] was
-reported. Legal operating systems include: 
+Bu alan, [% terms.bugGen %] yaşandığı işletim sistemini gösterir. Geçerli değerleri şunlardır:
 
 <ul>
-  <li>All (happens on all operating systems; cross-platform
-  [% terms.bug %])</li>
+  <li>Tümü (tüm işletim sistemlerinde yaşanıyor)</li>
 
   <li>Windows</li>
 
@@ -256,22 +254,17 @@ reported. Legal operating systems include:
 
   <li>Linux</li>
 </ul>
-Sometimes the operating system implies the platform, but not
-always. For example, Linux can run on PC and Macintosh and
-others. 
+Bazen işletim sistemi platformu belli etse de, bu her zaman geçerli değildir. Örneğin, Linux hem PC'lerde, hem Macintosh'larda, hem de diğerlerinde çalışır.
 
-<h2><a name="assigned_to">Assigned To</a></h2>
+<h2><a name="assigned_to">Atanan</a></h2>
 
 <p>
-This is the person in charge of resolving the [% terms.bug %]. Every time
-this field changes, the status changes to <b>[% get_status("NEW") FILTER html %]</b> to make it
-easy to see which new [% terms.bugs %] have appeared on a person's list.</p>
+Bu [% terms.bugAcc %] çözmekle ya da bir karara bağlamakla görevli olan kişidir. Bu alan her değiştiğinde, [% terms.bug %]durumu <b>[% get_status("NEW") FILTER html %]</b> olarak değiştirilir, böylece kişilerin kendi [% terms.bug%] listelerini takip etmeleri kolaylaştırılır.</p>
 
 <p>
-The default status for queries is set to [% get_status("NEW") FILTER html %],
-[%+ get_status("ASSIGNED") FILTER html %] and [% get_status("REOPENED") FILTER html %].
-When searching for [% terms.bugs %] that have been resolved or
-verified, remember to set the status field appropriately. 
+Sorgularda öntanımlı durum değerleri [% get_status("NEW") FILTER html %],
+[%+ get_status("ASSIGNED") FILTER html %] ve [% get_status("REOPENED") FILTER html %] olarak kullanılır.
+Karara bağlanmış ve onaylanmış [% terms.bugs %] için arama yaparken durum alanını ona göre değiştirmeyi unutmayın.
 </p>
 
 [% INCLUDE global/footer.html.tmpl %]
