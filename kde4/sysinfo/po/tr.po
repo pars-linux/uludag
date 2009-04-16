@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-01 12:10+0200\n"
+"POT-Creation-Date: 2009-04-16 09:56+0300\n"
 "PO-Revision-Date: 2006-10-12 05:15+0100\n"
 "Last-Translator: Ömer Kehri <xanathar@gmx.com.tr>\n"
 "Language-Team: Turkish <yast-int@suse.de>\n"
@@ -20,233 +20,240 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: KBabel 1.11.2\n"
 
-#: ksysinfopart.cpp:72
-msgid "KSysinfo"
-msgstr "K sistem bilgisi"
-
-#: sysinfo.cpp:68
+#: src/sysinfo.cpp:83
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: sysinfo.cpp:71
+#: src/sysinfo.cpp:86
 msgid "%1 MB"
 msgstr "%1 MB"
 
-#: sysinfo.cpp:73
+#: src/sysinfo.cpp:88
 msgid "%1 KB"
 msgstr "%1 KB"
 
-#: sysinfo.cpp:129
-msgid "Looking for CPU information..."
-msgstr "CPU bilgisi araştırılıyor..."
-
-#: sysinfo.cpp:138 sysinfo.cpp:140
-msgid "My Computer"
-msgstr "Bilgisayarım"
-
-#: sysinfo.cpp:141
-msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Klasörler, Sabit Disk Sürücüler, Tak-Çıkar Aygıtlar, Sistem Bilgisi ve daha fazlası..."
-
-#: sysinfo.cpp:147
-msgid "Looking for disk information..."
-msgstr "Disk içeriği araştırılıyor..."
-
-#: sysinfo.cpp:148
-msgid "Disk Information"
-msgstr "Disk Bilgisi"
-
-#: sysinfo.cpp:152
-msgid "OS Information"
-msgstr "İşletim Sistemi Bilgisi"
-
-#: sysinfo.cpp:154
-msgid "OS:"
-msgstr "İşletim Sistemi:"
-
-#: sysinfo.cpp:156
-msgid "Current user:"
-msgstr "Aktif kullanıcı:"
-
-#: sysinfo.cpp:158
-msgid "System:"
-msgstr "Sistem"
-
-#: sysinfo.cpp:159
-msgid "KDE:"
-msgstr "KDE:"
-
-#: sysinfo.cpp:165
-msgid "Display Info"
-msgstr "Görüntü Özellikleri"
-
-#: sysinfo.cpp:167
-msgid "Vendor:"
-msgstr "Üretici:"
-
-#: sysinfo.cpp:168
-msgid "Model:"
-msgstr "Model:"
-
-#: sysinfo.cpp:170
-msgid "Driver:"
-msgstr "Sürücü:"
-
-#: sysinfo.cpp:177
-msgid "Getting OS information...."
-msgstr "İşletim Sistemi bilgisi alınıyor..."
-
-#: sysinfo.cpp:180
-msgid "Common Folders"
-msgstr "Ortak Klasörler"
-
-#: sysinfo.cpp:183
-msgid "My Documents"
-msgstr "Belgelerim"
-
-#: sysinfo.cpp:184
-msgid "My Home Folder"
-msgstr "Ana Klasörüm"
-
-#: sysinfo.cpp:185
-msgid "Root Folder"
-msgstr "Kök Klasör"
-
-#: sysinfo.cpp:186
-msgid "Network Folders"
-msgstr "Ağ Klasörlerim"
-
-#: sysinfo.cpp:190
-msgid "Looking up network status..."
-msgstr "Ağ bağlantı durumu kontrol ediliyor..."
-
-#: sysinfo.cpp:193
-msgid "Network Status"
-msgstr "Ağ Bağlantı Durumu"
-
-#: sysinfo.cpp:201
-msgid "CPU Information"
-msgstr "CPU Bilgisi"
-
-# classnames.ycp:93 clients/hwinfo.ycp:103
-#: sysinfo.cpp:203
-msgid "Processor (CPU):"
-msgstr "İşlemci (CPU)"
-
-#: sysinfo.cpp:204
-msgid "Speed:"
-msgstr "Hız:"
-
-# clients/inst_sunfb.ycp:204
-#: sysinfo.cpp:205
-msgid "%1 MHz"
-msgstr "%1 MHz"
-
-#: sysinfo.cpp:209
-msgid "Cores:"
-msgstr ""
-
-#: sysinfo.cpp:213
-msgid "Temperature:"
-msgstr ""
-
-#: sysinfo.cpp:220
-msgid "Looking for memory information..."
-msgstr "Hafıza bilgisi araştırılıyor..."
-
-# clients/online_update.ycp:214
-#: sysinfo.cpp:222
-msgid "Memory Information"
-msgstr "Hafıza Bilgisi"
-
-#: sysinfo.cpp:224
-msgid "Total memory (RAM):"
-msgstr "Toplam bellek (RAM):"
-
-# classnames.ycp:45
-#: sysinfo.cpp:225
-msgid "Free memory:"
-msgstr "Boş bellek"
-
-# classnames.ycp:45
-#: sysinfo.cpp:226
-msgid "Used Memory"
-msgstr "Kullanılan Bellek"
-
-#: sysinfo.cpp:227
-msgid "Total swap:"
-msgstr "Toplam takas belleği:"
-
-#: sysinfo.cpp:228
-msgid "Free swap:"
-msgstr "Boş takas belleği:"
-
-#: sysinfo.cpp:292
-msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ %2 ön bellek)"
-
-#: sysinfo.cpp:334
-msgid "Device"
-msgstr "Aygıtlar"
-
-# include/partitioning/custom_part_dialogs.ycp:288
-#: sysinfo.cpp:334
-msgid "Filesystem"
-msgstr "Dosya sistemi"
-
-#: sysinfo.cpp:335
-msgid "Total space"
-msgstr "Kapasite:"
-
 # include/ui/wizard_hw.ycp:48
-#: sysinfo.cpp:335
-msgid "Available space"
-msgstr "Kullanılabilir alan:"
+#: src/sysinfo.cpp:94
+msgid "Not Available"
+msgstr "Mevcut değil"
 
-#: sysinfo.cpp:341
-msgid "Press the right mouse button for more options like Mount or Eject"
-msgstr "Yükle veya Çıkar gibi komutları sağ fare tuşuna basarak görebilirsiniz"
-
-#: sysinfo.cpp:577
-msgid "%1 (3D Support)"
-msgstr "%1 (3D Desteği)"
-
-#: sysinfo.cpp:581
-msgid "%1 (No 3D Support)"
-msgstr "%1 (3D Desteği YOK)"
-
-#: sysinfo.cpp:587
-msgid "Unknown"
-msgstr "Bilinmiyor"
-
-#: sysinfo.cpp:595
-msgid "Network is <strong>unreachable</strong>"
-msgstr "Ağa <strong>ulaşılamıyor</strong>"
-
-#: sysinfo.cpp:597
-msgid "You are <strong>offline</strong>"
-msgstr "<strong>Çevrimdışı</strong> gözüküyorsunuz"
-
-#: sysinfo.cpp:599
+#: src/sysinfo.cpp:141
 msgid "Network is <strong>shutting down</strong>"
 msgstr "Ağ bağlantısı <strong>sonlandırılıyor</strong>"
 
-#: sysinfo.cpp:601
+#: src/sysinfo.cpp:143
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "Ağ Bağlantısı <strong>kuruluyor</strong>"
 
-#: sysinfo.cpp:603
+#: src/sysinfo.cpp:145
 msgid "You are <strong>online</strong>"
 msgstr "<strong>Çevrimiçi</strong> gözüküyorsunuz"
 
-#: sysinfo.cpp:605
+#: src/sysinfo.cpp:147
+msgid "You are <strong>offline</strong>"
+msgstr "<strong>Çevrimdışı</strong> gözüküyorsunuz"
+
+#: src/sysinfo.cpp:150
 msgid "Unknown network status"
 msgstr "Bilinmeyen ağ bağlantı durumu"
+
+#: src/sysinfo.cpp:235
+msgid "Looking for hardware information..."
+msgstr "Donanım bilgisi alınıyor..."
+
+#: src/sysinfo.cpp:237
+msgid "My Computer"
+msgstr "Bilgisayarım"
+
+#: src/sysinfo.cpp:239
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr ""
+"Klasörler, Sabit Disk Sürücüler, Tak-Çıkar Aygıtlar, Sistem Bilgisi ve daha "
+"fazlası..."
+
+#: src/sysinfo.cpp:246
+msgid "Common Folders"
+msgstr "Ortak Klasörler"
+
+#: src/sysinfo.cpp:247
+msgid "My Home Folder"
+msgstr "Ev Dizini"
+
+#: src/sysinfo.cpp:248
+msgid "Root Folder"
+msgstr "Kök Klasör"
+
+#: src/sysinfo.cpp:249
+msgid "Network Folders"
+msgstr "Ağ Klasörleri"
+
+#: src/sysinfo.cpp:254
+msgid "Network"
+msgstr "Ağ Bağlantı Durumu"
+
+# classnames.ycp:45
+#: src/sysinfo.cpp:261
+msgid "Memory"
+msgstr "Bellek"
+
+#: src/sysinfo.cpp:263
+msgid "Ram : %1 free of %2"
+msgstr "Rem : %2'ın %1 kadarı boş"
+
+#: src/sysinfo.cpp:266
+msgid "Swap: %1 free of %2"
+msgstr "Takas: %2'ın %1 kadarı boş"
+
+#: src/sysinfo.cpp:274
+msgid "Disks"
+msgstr "Diskler"
+
+#: src/sysinfo.cpp:281
+msgid "Operating System"
+msgstr "İşletim Sistemi"
+
+#: src/sysinfo.cpp:285
+msgid "Kde <b>%1</b> on <b>%2</b>"
+msgstr "<b>%2</b> üzerinde Kde <b>%1</b>"
+
+# classnames.ycp:93 clients/hwinfo.ycp:103
+#: src/sysinfo.cpp:297
+msgid "Processor"
+msgstr "İşlemci"
+
+# clients/inst_sunfb.ycp:204
+#: src/sysinfo.cpp:299
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: src/sysinfo.cpp:300
+msgid " core"
+msgstr " çekirdek"
+
+#: src/sysinfo.cpp:311
+msgid "Display"
+msgstr "Görüntü Özellikleri"
+
+#: src/sysinfo.cpp:314
+msgid "Driver: "
+msgstr "Sürücü: "
+
+#: src/sysinfo.cpp:394
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 ön bellek)"
+
+#: src/sysinfo.cpp:489
+msgid "Mounted on %1"
+msgstr "%1'e bağlanmış"
+
+#: src/sysinfo.cpp:489
+msgid "Not mounted"
+msgstr "Bağlanmamış"
+
+#: src/sysinfo.cpp:494
+msgid "%1 free of %2"
+msgstr "%2'ın %1 kadarı boş"
+
+#~ msgid "KSysinfo"
+#~ msgstr "K sistem bilgisi"
+
+#~ msgid "Looking for CPU information..."
+#~ msgstr "CPU bilgisi araştırılıyor..."
+
+#~ msgid "Disk Information"
+#~ msgstr "Disk Bilgisi"
+
+#~ msgid "OS Information"
+#~ msgstr "İşletim Sistemi Bilgisi"
+
+#~ msgid "OS:"
+#~ msgstr "İşletim Sistemi:"
+
+#~ msgid "Current user:"
+#~ msgstr "Aktif kullanıcı:"
+
+#~ msgid "System:"
+#~ msgstr "Sistem"
+
+#~ msgid "KDE:"
+#~ msgstr "KDE:"
+
+#~ msgid "Vendor:"
+#~ msgstr "Üretici:"
+
+#~ msgid "Model:"
+#~ msgstr "Model:"
+
+#~ msgid "Getting OS information...."
+#~ msgstr "İşletim Sistemi bilgisi alınıyor..."
+
+#~ msgid "My Documents"
+#~ msgstr "Belgelerim"
+
+#~ msgid "Looking up network status..."
+#~ msgstr "Ağ bağlantı durumu kontrol ediliyor..."
+
+#~ msgid "CPU Information"
+#~ msgstr "CPU Bilgisi"
+
+#~ msgid "Speed:"
+#~ msgstr "Hız:"
+
+#~ msgid "Cores:"
+#~ msgstr "Çekirdek:"
+
+#~ msgid "Temperature:"
+#~ msgstr "Sıcaklık:"
+
+#~ msgid "Looking for memory information..."
+#~ msgstr "Hafıza bilgisi araştırılıyor..."
+
+# clients/online_update.ycp:214
+#~ msgid "Memory Information"
+#~ msgstr "Hafıza Bilgisi"
+
+#~ msgid "Total memory (RAM):"
+#~ msgstr "Toplam bellek (RAM):"
+
+# classnames.ycp:45
+#~ msgid "Free memory:"
+#~ msgstr "Boş bellek"
+
+#~ msgid "Total swap:"
+#~ msgstr "Toplam takas belleği:"
+
+#~ msgid "Free swap:"
+#~ msgstr "Boş takas belleği:"
+
+#~ msgid "Device"
+#~ msgstr "Aygıtlar"
+
+# include/partitioning/custom_part_dialogs.ycp:288
+#~ msgid "Filesystem"
+#~ msgstr "Dosya sistemi"
+
+#~ msgid "Total space"
+#~ msgstr "Kapasite:"
+
+#~ msgid "Press the right mouse button for more options like Mount or Eject"
+#~ msgstr ""
+#~ "Yükle veya Çıkar gibi komutları sağ fare tuşuna basarak görebilirsiniz"
+
+#~ msgid "%1 (3D Support)"
+#~ msgstr "%1 (3D Desteği)"
+
+#~ msgid "%1 (No 3D Support)"
+#~ msgstr "%1 (3D Desteği YOK)"
+
+#~ msgid "Unknown"
+#~ msgstr "Bilinmiyor"
+
+#~ msgid "Network is <strong>unreachable</strong>"
+#~ msgstr "Ağa <strong>ulaşılamıyor</strong>"
 
 # include/cups/ui.ycp:2577 include/cups/ui.ycp:2598
 #~ msgid "unknown"
 #~ msgstr "bilinmeyen"
 
-#, fuzzy
 #~ msgid "Renderer:"
 #~ msgstr "Üretici:"

@@ -260,10 +260,10 @@ void kio_sysinfoProtocol::get( const KUrl &)
 
     dynamicInfo += startStock( i18n( "Memory" ) );
     dynamicInfo += addToStock( "media-flash",
-                                i18n( "Ram : %1 free of %2" ).arg( m_info[MEM_FREERAM].toString() ).arg( m_info[MEM_TOTALRAM].toString() ),
+                                i18n( "Ram : %1 free of %2", m_info[MEM_FREERAM].toString(), m_info[MEM_TOTALRAM].toString() ),
                                 m_info[MEM_USAGE].toString());
     dynamicInfo += addToStock( "media-flash",
-                                i18n( "Swap: %1 free of %2" ).arg( m_info[MEM_FREESWAP].toString() ).arg( m_info[MEM_TOTALSWAP].toString() ));
+                                i18n( "Swap: %1 free of %2", m_info[MEM_FREESWAP].toString(), m_info[MEM_TOTALSWAP].toString() ));
     dynamicInfo += addProgress( "media-flash", percent);
     dynamicInfo += finishStock();
 
@@ -279,10 +279,10 @@ void kio_sysinfoProtocol::get( const KUrl &)
     // Os info
     osInfo();
     staticInfo += startStock( i18n( "Operating System" ) );
-    staticInfo += addToStock( "computer", m_info[OS_SYSNAME].toString() + 
-                              " <b>" + m_info[OS_RELEASE].toString() + "</b>", 
+    staticInfo += addToStock( "computer", m_info[OS_SYSNAME].toString() +
+                              " <b>" + m_info[OS_RELEASE].toString() + "</b>",
                               m_info[OS_USER].toString() + "@" + m_info[OS_HOSTNAME].toString() );
-    staticInfo += addToStock( "computer", i18n( "Kde <b>%1</b> on <b>%2</b>" ).arg(KDE::versionString()).arg( m_info[OS_SYSTEM].toString() ), 
+    staticInfo += addToStock( "computer", i18n( "Kde <b>%1</b> on <b>%2</b>", KDE::versionString(), m_info[OS_SYSTEM].toString() ),
                                           m_info[SYSTEM_UPTIME].toString());
     staticInfo += finishStock();
 
@@ -296,7 +296,7 @@ void kio_sysinfoProtocol::get( const KUrl &)
     {
         staticInfo += startStock( i18n( "Processor" ) );
         staticInfo += addToStock( "cpu", m_info[CPU_MODEL].toString(), m_info[CPU_TEMP].toString());
-        staticInfo += addToStock( "cpu", i18n( "%1 MHz" ).arg(KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toDouble(), 2 )), 
+        staticInfo += addToStock( "cpu", i18n( "%1 MHz", KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toDouble(), 2 )),
                                          m_info[CPU_CORES].toString() + i18n( " core" ));
         staticInfo += finishStock();
     }
@@ -390,12 +390,15 @@ unsigned long int kio_sysinfoProtocol::memoryInfo()
         m_info[MEM_TOTALRAM] = formattedUnit( quint64(info.totalram) * mem_unit );
         quint64 totalFree = calculateFreeRam() * 1024;
         kDebug(1242) << "total " << totalFree << " free " << info.freeram << " unit " << mem_unit;
+        /* FIXME It causes crash with following message:
+         * glibc: corrupted double-linked list
         if ( totalFree > info.freeram * info.mem_unit || true )
             m_info[MEM_FREERAM] = i18n("%1 (+ %2 Caches)",
                                        formattedUnit( quint64(info.freeram) * mem_unit ),
                                        formattedUnit( totalFree - info.freeram * mem_unit ));
         else
-            m_info[MEM_FREERAM] = formattedUnit( quint64(info.freeram) * mem_unit );
+        */
+        m_info[MEM_FREERAM] = formattedUnit( quint64(info.freeram) * mem_unit );
 
         m_info[MEM_TOTALSWAP] = formattedUnit( quint64(info.totalswap) * mem_unit );
         m_info[MEM_FREESWAP] = formattedUnit( quint64(info.freeswap) * mem_unit );
@@ -486,12 +489,12 @@ QString kio_sysinfoProtocol::diskInfo()
             DiskInfo di = ( *it );
             unsigned long long usage,percent,peer;
             QString label = di.label;
-            QString mountState = di.mounted ? i18n( "Mounted on %1" ).arg(di.mountPoint) : i18n( "Not mounted" );
+            QString mountState = di.mounted ? i18n( "Mounted on %1", di.mountPoint) : i18n( "Not mounted" );
             QString tooltip = di.model;
             usage = di.total - di.avail;
             peer = di.total / 100;
             peer == 0 ? percent = 0 : percent = usage / peer;
-            QString sizeStatus = i18n( "%1 free of %2" ).arg( formattedUnit( di.avail,0 ) ).arg( formattedUnit( di.total,0 ) );
+            QString sizeStatus = i18n( "%1 free of %2", formattedUnit( di.avail,0 ), formattedUnit( di.total,0 ) );
 
             result +=   QString("<tr class=\"media\">"
                                 "   <td>"

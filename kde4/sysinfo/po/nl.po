@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-01 12:10+0200\n"
+"POT-Creation-Date: 2009-04-16 09:56+0300\n"
 "PO-Revision-Date: 2008-06-03 17:21+0200\n"
 "Last-Translator: Freek de Kruijf <f.de.kruijf@hetnet.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -25,230 +25,244 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ksysinfopart.cpp:72
-msgid "KSysinfo"
-msgstr "KSysinfo"
-
 # /usr/lib/YaST2/clients/inst_config_x11.ycp:156
-#: sysinfo.cpp:68
+#: src/sysinfo.cpp:83
 msgid "%1 GB"
 msgstr "%1 GB"
 
 # /usr/lib/YaST2/clients/inst_config_x11.ycp:156
-#: sysinfo.cpp:71
+#: src/sysinfo.cpp:86
 msgid "%1 MB"
 msgstr "%1 MB"
 
 # /usr/lib/YaST2/clients/inst_config_x11.ycp:156
-#: sysinfo.cpp:73
+#: src/sysinfo.cpp:88
 msgid "%1 KB"
 msgstr "%1 kB"
 
-#: sysinfo.cpp:129
-msgid "Looking for CPU information..."
-msgstr "CPU-gegevens opzoeken..."
+#: src/sysinfo.cpp:94
+#, fuzzy
+msgid "Not Available"
+msgstr "Beschikbare ruimte"
 
-#: sysinfo.cpp:138 sysinfo.cpp:140
+#: src/sysinfo.cpp:141
+msgid "Network is <strong>shutting down</strong>"
+msgstr "Netwerk wordt <strong>afgesloten</strong>"
+
+#: src/sysinfo.cpp:143
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr "Verbinding met netwerk wordt <strong>opgebouwd</strong>"
+
+#: src/sysinfo.cpp:145
+msgid "You are <strong>online</strong>"
+msgstr "U bent <strong>online</strong>"
+
+#: src/sysinfo.cpp:147
+msgid "You are <strong>offline</strong>"
+msgstr "U bent <strong>offline</strong>"
+
+# /usr/lib/YaST2/clients/lan.ycp:373
+#: src/sysinfo.cpp:150
+msgid "Unknown network status"
+msgstr "Onbekende netwerkstatus"
+
+#: src/sysinfo.cpp:235
+#, fuzzy
+msgid "Looking for hardware information..."
+msgstr "Zoeken naar schijfgegevens..."
+
+#: src/sysinfo.cpp:237
 msgid "My Computer"
 msgstr "Deze computer"
 
-#: sysinfo.cpp:141
+#: src/sysinfo.cpp:239
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Mappen, harde schijven, verwijderbare apparaten, systeeminformatie en meer..."
-
-#: sysinfo.cpp:147
-msgid "Looking for disk information..."
-msgstr "Zoeken naar schijfgegevens..."
-
-#: sysinfo.cpp:148
-msgid "Disk Information"
-msgstr "Schijfgegevens"
-
-#: sysinfo.cpp:152
-msgid "OS Information"
-msgstr "Gegevens besturingssysteem"
-
-#: sysinfo.cpp:154
-msgid "OS:"
-msgstr "OS:"
-
-#: sysinfo.cpp:156
-msgid "Current user:"
-msgstr "Huidige gebruiker:"
-
-#: sysinfo.cpp:158
-msgid "System:"
-msgstr "Systeem:"
-
-#: sysinfo.cpp:159
-msgid "KDE:"
-msgstr "KDE:"
-
-#: sysinfo.cpp:165
-msgid "Display Info"
-msgstr "Weergave-informatie"
-
-#: sysinfo.cpp:167
-msgid "Vendor:"
-msgstr "Leverancier:"
-
-#: sysinfo.cpp:168
-msgid "Model:"
-msgstr "Model:"
-
-#: sysinfo.cpp:170
-msgid "Driver:"
-msgstr "Stuurprogramma:"
-
-#: sysinfo.cpp:177
-msgid "Getting OS information...."
-msgstr "Gegevens van besturingssysteem ophalen...."
+msgstr ""
+"Mappen, harde schijven, verwijderbare apparaten, systeeminformatie en meer..."
 
 # /usr/lib/YaST2/clients/lan_dns.ycp:87
 # /usr/lib/YaST2/clients/lan_dns.ycp:87
-#: sysinfo.cpp:180
+#: src/sysinfo.cpp:246
 msgid "Common Folders"
 msgstr "Gemeenschappelijke mappen"
 
-#: sysinfo.cpp:183
-msgid "My Documents"
-msgstr "Mijn documenten"
-
-#: sysinfo.cpp:184
+#: src/sysinfo.cpp:247
 msgid "My Home Folder"
 msgstr "Mijn persoonlijke map"
 
-#: sysinfo.cpp:185
+#: src/sysinfo.cpp:248
 msgid "Root Folder"
 msgstr "Hoofdmap"
 
 # /usr/lib/YaST2/clients/dialup_dev_cfg.ycp:71
-#: sysinfo.cpp:186
+#: src/sysinfo.cpp:249
 msgid "Network Folders"
 msgstr "Netwerkmappen"
+
+#: src/sysinfo.cpp:254
+#, fuzzy
+msgid "Network"
+msgstr "Netwerkstatus"
+
+#: src/sysinfo.cpp:261
+#, fuzzy
+msgid "Memory"
+msgstr "Gebruikt geheugen"
+
+#: src/sysinfo.cpp:263
+msgid "Ram : %1 free of %2"
+msgstr ""
+
+#: src/sysinfo.cpp:266
+msgid "Swap: %1 free of %2"
+msgstr ""
+
+#: src/sysinfo.cpp:274
+msgid "Disks"
+msgstr ""
+
+#: src/sysinfo.cpp:281
+msgid "Operating System"
+msgstr ""
+
+#: src/sysinfo.cpp:285
+msgid "Kde <b>%1</b> on <b>%2</b>"
+msgstr ""
+
+#: src/sysinfo.cpp:297
+#, fuzzy
+msgid "Processor"
+msgstr "Processor (CPU):"
+
+# /usr/lib/YaST2/clients/inst_config_x11.ycp:156
+#: src/sysinfo.cpp:299
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: src/sysinfo.cpp:300
+msgid " core"
+msgstr ""
+
+#: src/sysinfo.cpp:311
+#, fuzzy
+msgid "Display"
+msgstr "Weergave-informatie"
+
+#: src/sysinfo.cpp:314
+#, fuzzy
+msgid "Driver: "
+msgstr "Stuurprogramma:"
+
+#: src/sysinfo.cpp:394
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 caches)"
+
+#: src/sysinfo.cpp:489
+msgid "Mounted on %1"
+msgstr ""
+
+#: src/sysinfo.cpp:489
+msgid "Not mounted"
+msgstr ""
+
+#: src/sysinfo.cpp:494
+msgid "%1 free of %2"
+msgstr ""
+
+#~ msgid "KSysinfo"
+#~ msgstr "KSysinfo"
+
+#~ msgid "Looking for CPU information..."
+#~ msgstr "CPU-gegevens opzoeken..."
+
+#~ msgid "Disk Information"
+#~ msgstr "Schijfgegevens"
+
+#~ msgid "OS Information"
+#~ msgstr "Gegevens besturingssysteem"
+
+#~ msgid "OS:"
+#~ msgstr "OS:"
+
+#~ msgid "Current user:"
+#~ msgstr "Huidige gebruiker:"
+
+#~ msgid "System:"
+#~ msgstr "Systeem:"
+
+#~ msgid "KDE:"
+#~ msgstr "KDE:"
+
+#~ msgid "Vendor:"
+#~ msgstr "Leverancier:"
+
+#~ msgid "Model:"
+#~ msgstr "Model:"
+
+#~ msgid "Getting OS information...."
+#~ msgstr "Gegevens van besturingssysteem ophalen...."
+
+#~ msgid "My Documents"
+#~ msgstr "Mijn documenten"
 
 # /usr/lib/YaST2/clients/dialup_detection.ycp:235
 # /usr/lib/YaST2/clients/dialup_detection.ycp:269
 # /usr/lib/YaST2/clients/dialup_detection.ycp:294
-#: sysinfo.cpp:190
-msgid "Looking up network status..."
-msgstr "Netwerkstatus zoeken..."
+#~ msgid "Looking up network status..."
+#~ msgstr "Netwerkstatus zoeken..."
 
-#: sysinfo.cpp:193
-msgid "Network Status"
-msgstr "Netwerkstatus"
+#~ msgid "CPU Information"
+#~ msgstr "CPU-gegevens"
 
-#: sysinfo.cpp:201
-msgid "CPU Information"
-msgstr "CPU-gegevens"
+#~ msgid "Speed:"
+#~ msgstr "Snelheid:"
 
-#: sysinfo.cpp:203
-msgid "Processor (CPU):"
-msgstr "Processor (CPU):"
+#~ msgid "Cores:"
+#~ msgstr "Kernen:"
 
-#: sysinfo.cpp:204
-msgid "Speed:"
-msgstr "Snelheid:"
+#~ msgid "Temperature:"
+#~ msgstr "Temperatuur:"
 
-# /usr/lib/YaST2/clients/inst_config_x11.ycp:156
-#: sysinfo.cpp:205
-msgid "%1 MHz"
-msgstr "%1 MHz"
+#~ msgid "Looking for memory information..."
+#~ msgstr "Geheugengegevens opzoeken..."
 
-#: sysinfo.cpp:209
-msgid "Cores:"
-msgstr "Kernen:"
+#~ msgid "Memory Information"
+#~ msgstr "Geheugengegevens"
 
-#: sysinfo.cpp:213
-msgid "Temperature:"
-msgstr "Temperatuur:"
+#~ msgid "Total memory (RAM):"
+#~ msgstr "Totaal aan geheugen (RAM):"
 
-#: sysinfo.cpp:220
-msgid "Looking for memory information..."
-msgstr "Geheugengegevens opzoeken..."
+#~ msgid "Free memory:"
+#~ msgstr "Beschikbaar geheugen:"
 
-#: sysinfo.cpp:222
-msgid "Memory Information"
-msgstr "Geheugengegevens"
+#~ msgid "Total swap:"
+#~ msgstr "Totaal wisselgeheugen:"
 
-#: sysinfo.cpp:224
-msgid "Total memory (RAM):"
-msgstr "Totaal aan geheugen (RAM):"
+#~ msgid "Free swap:"
+#~ msgstr "Beschikbaar wisselgeheugen:"
 
-#: sysinfo.cpp:225
-msgid "Free memory:"
-msgstr "Beschikbaar geheugen:"
+#~ msgid "Device"
+#~ msgstr "Apparaat"
 
-#: sysinfo.cpp:226
-msgid "Used Memory"
-msgstr "Gebruikt geheugen"
+#~ msgid "Filesystem"
+#~ msgstr "Bestandssysteem"
 
-#: sysinfo.cpp:227
-msgid "Total swap:"
-msgstr "Totaal wisselgeheugen:"
+#~ msgid "Total space"
+#~ msgstr "Totale ruimte"
 
-#: sysinfo.cpp:228
-msgid "Free swap:"
-msgstr "Beschikbaar wisselgeheugen:"
+#~ msgid "Press the right mouse button for more options like Mount or Eject"
+#~ msgstr ""
+#~ "Klik met de rechter muisknop voor meer opties zoals Aankoppelen en "
+#~ "Uitwerpen"
 
-#: sysinfo.cpp:292
-msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ %2 caches)"
+#~ msgid "%1 (3D Support)"
+#~ msgstr "%1 (3D-ondersteuning)"
 
-#: sysinfo.cpp:334
-msgid "Device"
-msgstr "Apparaat"
+#~ msgid "%1 (No 3D Support)"
+#~ msgstr "%1 (geen 3D-ondersteuning)"
 
-#: sysinfo.cpp:334
-msgid "Filesystem"
-msgstr "Bestandssysteem"
+#~ msgid "Unknown"
+#~ msgstr "Onbekend"
 
-#: sysinfo.cpp:335
-msgid "Total space"
-msgstr "Totale ruimte"
-
-#: sysinfo.cpp:335
-msgid "Available space"
-msgstr "Beschikbare ruimte"
-
-#: sysinfo.cpp:341
-msgid "Press the right mouse button for more options like Mount or Eject"
-msgstr "Klik met de rechter muisknop voor meer opties zoals Aankoppelen en Uitwerpen"
-
-#: sysinfo.cpp:577
-msgid "%1 (3D Support)"
-msgstr "%1 (3D-ondersteuning)"
-
-#: sysinfo.cpp:581
-msgid "%1 (No 3D Support)"
-msgstr "%1 (geen 3D-ondersteuning)"
-
-#: sysinfo.cpp:587
-msgid "Unknown"
-msgstr "Onbekend"
-
-#: sysinfo.cpp:595
-msgid "Network is <strong>unreachable</strong>"
-msgstr "Netwerk is <strong>onbereikbaar</strong>"
-
-#: sysinfo.cpp:597
-msgid "You are <strong>offline</strong>"
-msgstr "U bent <strong>offline</strong>"
-
-#: sysinfo.cpp:599
-msgid "Network is <strong>shutting down</strong>"
-msgstr "Netwerk wordt <strong>afgesloten</strong>"
-
-#: sysinfo.cpp:601
-msgid "<strong>Establishing</strong> connection to the network"
-msgstr "Verbinding met netwerk wordt <strong>opgebouwd</strong>"
-
-#: sysinfo.cpp:603
-msgid "You are <strong>online</strong>"
-msgstr "U bent <strong>online</strong>"
-
-# /usr/lib/YaST2/clients/lan.ycp:373
-#: sysinfo.cpp:605
-msgid "Unknown network status"
-msgstr "Onbekende netwerkstatus"
-
+#~ msgid "Network is <strong>unreachable</strong>"
+#~ msgstr "Netwerk is <strong>onbereikbaar</strong>"
