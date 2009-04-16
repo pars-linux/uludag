@@ -1,0 +1,219 @@
+# translation of tr.po to
+# This file is put in the public domain.
+#
+# Görkem Çetin <gorkem@uludag.org.tr>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: tr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-13 15:46+0200\n"
+"PO-Revision-Date: 2008-05-16 13:07+0300\n"
+"Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+
+#: sysinfo/ksysinfopart.cpp:72
+msgid "KSysinfo"
+msgstr "KSysinfo"
+
+#: sysinfo/sysinfo.cpp:67
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: sysinfo/sysinfo.cpp:69
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: sysinfo/sysinfo.cpp:71
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: sysinfo/sysinfo.cpp:136
+msgid "Not Available"
+msgstr "Mevcut Değil"
+
+#: sysinfo/sysinfo.cpp:150
+msgid "Looking for hardware information..."
+msgstr "Donanım bilgileri alınıyor.."
+
+#: sysinfo/sysinfo.cpp:153
+msgid "My Computer"
+msgstr "Sistem"
+
+#: sysinfo/sysinfo.cpp:155
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr ""
+"Dizinler, Sabit Diskler, Ayrılabilir Aygıtlar, Sistem Bilgisi ve daha "
+"fazlası..."
+
+#: sysinfo/sysinfo.cpp:163
+msgid "Common Folders"
+msgstr "Ortak Dizinler"
+
+#: sysinfo/sysinfo.cpp:164
+msgid "My Home Folder"
+msgstr "Ev Dizini"
+
+#: sysinfo/sysinfo.cpp:165
+msgid "Root Folder"
+msgstr "Kök Dizini"
+
+#: sysinfo/sysinfo.cpp:166
+msgid "Network Folders"
+msgstr "Ağ Dizinleri"
+
+#: sysinfo/sysinfo.cpp:172
+msgid "Network"
+msgstr "Ağ Durumu"
+
+#: sysinfo/sysinfo.cpp:180
+msgid "Memory"
+msgstr "Bellek"
+
+#: sysinfo/sysinfo.cpp:181 sysinfo/sysinfo.cpp:323
+msgid "%1 free of %2"
+msgstr "%2 'ın %1 'ı boş"
+
+#: sysinfo/sysinfo.cpp:189
+msgid "Disks"
+msgstr "Diskler"
+
+#: sysinfo/sysinfo.cpp:196
+msgid "Operating System"
+msgstr "İşletim Sistemi"
+
+#: sysinfo/sysinfo.cpp:198
+msgid "Kde <b>%1</b> on <b>%2</b>"
+msgstr "<b>%2</b> üzerinde Kde <b>%1</b>"
+
+#: sysinfo/sysinfo.cpp:209
+msgid "Processor"
+msgstr "İşlemci"
+
+#: sysinfo/sysinfo.cpp:211
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: sysinfo/sysinfo.cpp:212
+msgid " core"
+msgstr " çekirdek"
+
+#: sysinfo/sysinfo.cpp:223
+msgid "Display"
+msgstr "Ekran"
+
+#: sysinfo/sysinfo.cpp:226
+msgid "Driver: "
+msgstr "Sürücü: "
+
+#: sysinfo/sysinfo.cpp:318
+msgid "Mounted on %1"
+msgstr "%1 'e bağlı"
+
+#: sysinfo/sysinfo.cpp:318
+msgid "Not mounted"
+msgstr "Bağlı değil"
+
+#: sysinfo/sysinfo.cpp:462
+msgid "%1 (3D Support)"
+msgstr "%1 (3B desteği var)"
+
+#: sysinfo/sysinfo.cpp:464
+msgid "%1 (No 3D Support)"
+msgstr "%1 (3B desteği yok)"
+
+#: sysinfo/sysinfo.cpp:474
+msgid "Network is <strong>unreachable</strong>"
+msgstr "Ağa erişim <strong>yapılamıyor</strong>"
+
+#: sysinfo/sysinfo.cpp:476
+msgid "You are <strong>offline</strong>"
+msgstr "Şu anda <strong>bağlı değilsiniz</strong>"
+
+#: sysinfo/sysinfo.cpp:478
+msgid "Network is <strong>shutting down</strong>"
+msgstr "Ağ bağlantısı <strong>kapatılıyor</strong>"
+
+#: sysinfo/sysinfo.cpp:480
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr "Ağa bağlantı <strong>sağlanıyor</strong>"
+
+#: sysinfo/sysinfo.cpp:482
+msgid "You are <strong>online</strong>"
+msgstr "Şu anda <strong>bağlısınız</strong>"
+
+#: sysinfo/sysinfo.cpp:484
+msgid "Unknown network status"
+msgstr "Bilinmeyen ağ durumu"
+
+#~ msgid "CPU Information"
+#~ msgstr "İşlemci Bilgisi"
+
+#~ msgid "Speed:"
+#~ msgstr "Hız:"
+
+#~ msgid "Number of Core :"
+#~ msgstr "Çekirdek sayısı :"
+
+#~ msgid "Memory Information"
+#~ msgstr "Bellek Bilgisi"
+
+#~ msgid "Total memory (RAM):"
+#~ msgstr "Toplam bellek (RAM):"
+
+#~ msgid "Free memory:"
+#~ msgstr "Boş bellek:"
+
+#~ msgid "Total swap:"
+#~ msgstr "Toplam takas:"
+
+#~ msgid "Free swap:"
+#~ msgstr "Boş takas:"
+
+#~ msgid "Hardware Information"
+#~ msgstr "Donanım Bilgisi"
+
+#~ msgid "Type:"
+#~ msgstr "Tip"
+
+#~ msgid "Vendor:"
+#~ msgstr "Üretici:"
+
+#~ msgid "Model:"
+#~ msgstr "Model:"
+
+#~ msgid "Bios Vendor:"
+#~ msgstr "Bios Üreticisi:"
+
+#~ msgid "Bios Version:"
+#~ msgstr "Bios Versiyonu:"
+
+#~ msgid "Disk Information"
+#~ msgstr "Disk Bilgisi"
+
+#~ msgid "OS Information"
+#~ msgstr "İşletim Sistemi Bilgisi"
+
+#~ msgid "OS:"
+#~ msgstr "İşletim sistemi:"
+
+#~ msgid "Current user:"
+#~ msgstr "Kullanıcı:"
+
+#~ msgid "System:"
+#~ msgstr "Sistem:"
+
+#~ msgid "KDE:"
+#~ msgstr "KDE:"
+
+#~ msgid "%1 (+ %2 Caches)"
+#~ msgstr "%1 (+ %2 Önbellek)"
+
+#~ msgid "Total"
+#~ msgstr "Toplam"
+
+#~ msgid "Available"
+#~ msgstr "Kullanılabilir"

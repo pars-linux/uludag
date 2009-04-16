@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=kfmclient openURL %u application/x-sysinfo
+Icon=konqueror
+Terminal=false
+MimeType=application/x-sysinfo;
+InitialPreference=9
+NoDisplay=true
+Name=System Information
+Name[de]=Systeminformation
+Name[pt_BR]=Informação do Sistema
+Name[nl]=Systeem informatie
+Name[es]=Información del Sistema
+Categories=Qt;KDE;System;
+X-KDE-HasTempFileOption=true

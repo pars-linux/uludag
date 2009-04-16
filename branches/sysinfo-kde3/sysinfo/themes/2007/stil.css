@@ -1,0 +1,183 @@
+body {
+    background-image: url('images/background.png');
+    background-repeat: no-repeat;
+    background-color: white;
+    font-size: 9pt;
+}
+
+body>h1 {
+	font-size: 12pt;
+	font-family: "Trebuchet MS", Sans-Serif;
+	letter-spacing: .1em;
+	color: #fff;
+	margin-left: 180px;
+    margin-top:37px;
+}
+
+body>h3 {
+	color: #ffffff;
+	padding: 0px 0px 5px 180px;
+	font-size: 9pt;
+	font-weight: normal;
+	letter-spacing: .1em;
+}
+
+div#container1 {
+    background-repeat: repeat-x;
+    padding: 2em;
+    border-bottom: 1px solid #bbb;
+    border-top: 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+div#column {
+    width: 46%;
+    float:left;
+}
+
+div#column2 {
+    float:left;
+    width: 53%;
+}
+
+h2 {
+    color: #204a87;
+    font-size: 11pt;
+}
+
+ul {
+    list-style: none;
+    margin-left: 4px;
+    padding: 4px;
+}
+
+a {
+    color: #5c3566;
+}
+
+a:hover {
+    color: #75507b;
+}
+
+table {
+    margin-left: 10px;
+}
+
+td,th {
+    padding: 3px;
+}
+
+th {
+    text-align: left;
+    color: #555;
+    font-size: 8pt;
+}
+
+li {
+    margin: 0px;
+    padding: 4px;
+}
+
+span.mountpoint {
+    font-family: monospace;
+    font-weight: bold;
+    color: #2e3436;
+}
+span.freespace {
+    padding-right: 10px;
+    font-weight: bold;
+    color: #aaa;
+}
+
+h2 {
+    margin-top: 2em;
+}
+
+span.label {
+    color: #888;
+}
+
+h2#dirs+ul {
+    padding-left: 60px;
+    background-image: url('images/dirs.png');
+    background-repeat: no-repeat;
+}
+
+h2#net+ul {
+    padding-left: 60px;
+    /*background-image: url('images/network.png');*/
+    background-repeat: no-repeat;
+    min-height: 60px;
+}
+
+h2#cpu+ul {
+    padding-left: 60px;
+    background-image: url('images/cpu.png');
+    background-repeat: no-repeat;
+}
+
+h2#memory+table {
+	margin-left: 4px;
+	padding-left: 50px;
+	background-image: url('images/mem.png');
+	background-repeat: no-repeat;
+}
+
+h2#display+table {
+	margin-left: 4px;
+	padding-left: 50px;
+	background-image: url('images/display.png');
+	background-repeat: no-repeat;
+}
+
+h2#hwinfo+table {
+    margin-left: 4px;
+    padding-left: 50px;
+    background-image: url('images/laptop.png');
+    background-repeat: no-repeat;
+}
+
+h2#sysinfo+table {
+	margin-left: 4px;
+	padding-left: 50px;
+	background-image: url('images/sysinfo.png');
+	background-repeat: no-repeat;
+}
+
+h2#launch+ul {
+	opacity: 1;
+	padding-left: 60px;
+	background-image: url('images/launch.png');
+	background-repeat: no-repeat;
+}
+
+h2#hdds+table {
+	margin-left: 4px;
+}
+
+table td:first-child {
+	color: #888;
+}
+
+.bar {
+    padding: 0px;
+    /*background-color: #FFF;
+    text-align: right;*/
+    /*border-left: solid 1px #FCB125;*/
+    border-right: solid 1px #FCB125;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    vertical-align:middle;
+}
+
+.bar div {
+    /*border-top: solid 2px #549CAC;*/
+    background-color: #FEB12D;
+    /*border-bottom: solid 2px #2C5F6A;*/
+    text-align: right;
+    vertical-align:middle;
+    color: white;
+    float: left;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
