@@ -1,3 +1,0 @@
-KDE_LANG=pl
-
-POFILES=AUTO
