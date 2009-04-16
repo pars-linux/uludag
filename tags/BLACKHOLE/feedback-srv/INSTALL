@@ -1,0 +1,13 @@
+Requirements
+============
+
+Apache web server
+Mod_Python module
+Python-Mysql module
+
+Steps to Install
+================
+
+1. Create a database and load sql/feedback.sql into it.
+2. Put files in src/ to your web directory
+3. Configure config.py
