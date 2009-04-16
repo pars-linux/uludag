@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-01 12:10+0200\n"
+"POT-Creation-Date: 2009-04-16 09:56+0300\n"
 "PO-Revision-Date: 2008-03-30 15:51+0100\n"
 "Last-Translator: Giuseppe Bevacqua <gepeppe@gmail.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
@@ -18,232 +18,246 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ksysinfopart.cpp:72
-msgid "KSysinfo"
-msgstr "KSysinfo"
-
 # TLABEL modules/inst_config_x11.ycp:402
-#: sysinfo.cpp:68
+#: src/sysinfo.cpp:83
 msgid "%1 GB"
 msgstr "%1 GB"
 
 # TLABEL modules/inst_config_x11.ycp:402
-#: sysinfo.cpp:71
+#: src/sysinfo.cpp:86
 msgid "%1 MB"
 msgstr "%1 MB"
 
 # TLABEL modules/inst_config_x11.ycp:402
-#: sysinfo.cpp:73
+#: src/sysinfo.cpp:88
 msgid "%1 KB"
 msgstr "%1 KB"
 
-#: sysinfo.cpp:129
-msgid "Looking for CPU information..."
-msgstr "Ricerca in corso delle informazioni sulla CPU..."
+#: src/sysinfo.cpp:94
+#, fuzzy
+msgid "Not Available"
+msgstr "Spazio disponibile"
 
-#: sysinfo.cpp:138
-#: sysinfo.cpp:140
+#: src/sysinfo.cpp:141
+msgid "Network is <strong>shutting down</strong>"
+msgstr "<strong>Chiusura della rete</strong> in corso"
+
+#: src/sysinfo.cpp:143
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr "<strong>Connessione</strong> in corso alla rete"
+
+#: src/sysinfo.cpp:145
+msgid "You are <strong>online</strong>"
+msgstr "Si è in modalità <strong>in linea</strong>"
+
+#: src/sysinfo.cpp:147
+msgid "You are <strong>offline</strong>"
+msgstr "Si è in modalità <strong>non in linea</strong>"
+
+#: src/sysinfo.cpp:150
+msgid "Unknown network status"
+msgstr "Stato di rete sconosciuto"
+
+#: src/sysinfo.cpp:235
+#, fuzzy
+msgid "Looking for hardware information..."
+msgstr "Ricerca in corso delle informazioni sul disco..."
+
+#: src/sysinfo.cpp:237
 msgid "My Computer"
 msgstr "Risorse del computer"
 
-#: sysinfo.cpp:141
+#: src/sysinfo.cpp:239
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Cartelle, dischi rigidi, dispositivi rimovibile, informazioni sul sistema e altro ancora..."
-
-#: sysinfo.cpp:147
-msgid "Looking for disk information..."
-msgstr "Ricerca in corso delle informazioni sul disco..."
-
-#: sysinfo.cpp:148
-msgid "Disk Information"
-msgstr "Informazioni sul disco"
-
-#: sysinfo.cpp:152
-msgid "OS Information"
-msgstr "Informazioni sul sistema operativo"
-
-#: sysinfo.cpp:154
-msgid "OS:"
-msgstr "SO:"
-
-#: sysinfo.cpp:156
-msgid "Current user:"
-msgstr "Utente corrente:"
-
-#: sysinfo.cpp:158
-msgid "System:"
-msgstr "Sistema:"
-
-#: sysinfo.cpp:159
-msgid "KDE:"
-msgstr "KDE:"
-
-#: sysinfo.cpp:165
-msgid "Display Info"
-msgstr "Informazioni sulla visualizzazione"
-
-#: sysinfo.cpp:167
-msgid "Vendor:"
-msgstr "Marca:"
-
-#: sysinfo.cpp:168
-msgid "Model:"
-msgstr "Modello:"
-
-#: sysinfo.cpp:170
-msgid "Driver:"
-msgstr "Driver:"
-
-#: sysinfo.cpp:177
-msgid "Getting OS information...."
-msgstr "Recupero in corso delle informazioni sul sistema operativo...."
+msgstr ""
+"Cartelle, dischi rigidi, dispositivi rimovibile, informazioni sul sistema e "
+"altro ancora..."
 
 # TLABEL modules/lan/lan.ycp:1379
-#: sysinfo.cpp:180
+#: src/sysinfo.cpp:246
 msgid "Common Folders"
 msgstr "Cartelle comuni"
 
-# TLABEL modules/inst_sw_single.ycp:61
-#: sysinfo.cpp:183
-msgid "My Documents"
-msgstr "Documenti"
-
-#: sysinfo.cpp:184
+#: src/sysinfo.cpp:247
 msgid "My Home Folder"
 msgstr "Cartella principale"
 
-#: sysinfo.cpp:185
+#: src/sysinfo.cpp:248
 msgid "Root Folder"
 msgstr "Cartella radice"
 
 # TLABEL modules/dialup/dialup.ycp:1187
-#: sysinfo.cpp:186
+#: src/sysinfo.cpp:249
 msgid "Network Folders"
 msgstr "Cartelle di rete"
 
-# TLABEL modules/dialup/dialup.ycp:752
-#: sysinfo.cpp:190
-msgid "Looking up network status..."
-msgstr "Ricerca in corso dello stato della rete..."
-
-#: sysinfo.cpp:193
-msgid "Network Status"
+#: src/sysinfo.cpp:254
+#, fuzzy
+msgid "Network"
 msgstr "Stato di rete"
 
-#: sysinfo.cpp:201
-msgid "CPU Information"
-msgstr "Informazioni sulla CPU"
+#: src/sysinfo.cpp:261
+#, fuzzy
+msgid "Memory"
+msgstr "Memoria utilizzata"
 
-#: sysinfo.cpp:203
-msgid "Processor (CPU):"
+#: src/sysinfo.cpp:263
+msgid "Ram : %1 free of %2"
+msgstr ""
+
+#: src/sysinfo.cpp:266
+msgid "Swap: %1 free of %2"
+msgstr ""
+
+#: src/sysinfo.cpp:274
+msgid "Disks"
+msgstr ""
+
+#: src/sysinfo.cpp:281
+msgid "Operating System"
+msgstr ""
+
+#: src/sysinfo.cpp:285
+msgid "Kde <b>%1</b> on <b>%2</b>"
+msgstr ""
+
+#: src/sysinfo.cpp:297
+#, fuzzy
+msgid "Processor"
 msgstr "Processore (CPU):"
 
-#: sysinfo.cpp:204
-msgid "Speed:"
-msgstr "Velocità:"
-
 # TLABEL modules/inst_config_x11.ycp:402
-#: sysinfo.cpp:205
+#: src/sysinfo.cpp:299
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo.cpp:209
-msgid "Cores:"
-msgstr "Core:"
+#: src/sysinfo.cpp:300
+msgid " core"
+msgstr ""
 
-#: sysinfo.cpp:213
-msgid "Temperature:"
-msgstr "Temperatura:"
+#: src/sysinfo.cpp:311
+#, fuzzy
+msgid "Display"
+msgstr "Informazioni sulla visualizzazione"
 
-#: sysinfo.cpp:220
-msgid "Looking for memory information..."
-msgstr "Ricerca in corso delle informazioni sulla memoria..."
+#: src/sysinfo.cpp:314
+#, fuzzy
+msgid "Driver: "
+msgstr "Driver:"
 
-# TLABEL modules/inst_sw_single.ycp:732
-#: sysinfo.cpp:222
-msgid "Memory Information"
-msgstr "Informazioni sulla memoria"
-
-#: sysinfo.cpp:224
-msgid "Total memory (RAM):"
-msgstr "Memoria totale (RAM):"
-
-#: sysinfo.cpp:225
-msgid "Free memory:"
-msgstr "Memoria disponibile:"
-
-#: sysinfo.cpp:226
-msgid "Used Memory"
-msgstr "Memoria utilizzata"
-
-#: sysinfo.cpp:227
-msgid "Total swap:"
-msgstr "Swap totale:"
-
-#: sysinfo.cpp:228
-msgid "Free swap:"
-msgstr "Swap disponibile:"
-
-#: sysinfo.cpp:292
+#: src/sysinfo.cpp:394
 msgid "%1 (+ %2 Caches)"
 msgstr "%1 (+ cache %2 )"
 
-#: sysinfo.cpp:334
-msgid "Device"
-msgstr "Dispositivo"
+#: src/sysinfo.cpp:489
+msgid "Mounted on %1"
+msgstr ""
 
-#: sysinfo.cpp:334
-msgid "Filesystem"
-msgstr "File system"
+#: src/sysinfo.cpp:489
+msgid "Not mounted"
+msgstr ""
 
-#: sysinfo.cpp:335
-msgid "Total space"
-msgstr "Spazio totale"
+#: src/sysinfo.cpp:494
+msgid "%1 free of %2"
+msgstr ""
 
-#: sysinfo.cpp:335
-msgid "Available space"
-msgstr "Spazio disponibile"
+#~ msgid "KSysinfo"
+#~ msgstr "KSysinfo"
 
-#: sysinfo.cpp:341
-msgid "Press the right mouse button for more options like Mount or Eject"
-msgstr "Fare clic con il pulsante destro del mouse per visualizzare ulteriori opzioni, ad esempio Montaggio o Rimuovi"
+#~ msgid "Looking for CPU information..."
+#~ msgstr "Ricerca in corso delle informazioni sulla CPU..."
 
-#: sysinfo.cpp:577
-msgid "%1 (3D Support)"
-msgstr "%1 (Supporto 3D)"
+#~ msgid "Disk Information"
+#~ msgstr "Informazioni sul disco"
 
-#: sysinfo.cpp:581
-msgid "%1 (No 3D Support)"
-msgstr "%1 (Nessun supporto 3D)"
+#~ msgid "OS Information"
+#~ msgstr "Informazioni sul sistema operativo"
 
-#: sysinfo.cpp:587
-msgid "Unknown"
-msgstr "Sconosciuto"
+#~ msgid "OS:"
+#~ msgstr "SO:"
 
-#: sysinfo.cpp:595
-msgid "Network is <strong>unreachable</strong>"
-msgstr "La rete <strong>non è raggiungibile</strong>"
+#~ msgid "Current user:"
+#~ msgstr "Utente corrente:"
 
-#: sysinfo.cpp:597
-msgid "You are <strong>offline</strong>"
-msgstr "Si è in modalità <strong>non in linea</strong>"
+#~ msgid "System:"
+#~ msgstr "Sistema:"
 
-#: sysinfo.cpp:599
-msgid "Network is <strong>shutting down</strong>"
-msgstr "<strong>Chiusura della rete</strong> in corso"
+#~ msgid "KDE:"
+#~ msgstr "KDE:"
 
-#: sysinfo.cpp:601
-msgid "<strong>Establishing</strong> connection to the network"
-msgstr "<strong>Connessione</strong> in corso alla rete"
+#~ msgid "Vendor:"
+#~ msgstr "Marca:"
 
-#: sysinfo.cpp:603
-msgid "You are <strong>online</strong>"
-msgstr "Si è in modalità <strong>in linea</strong>"
+#~ msgid "Model:"
+#~ msgstr "Modello:"
 
-#: sysinfo.cpp:605
-msgid "Unknown network status"
-msgstr "Stato di rete sconosciuto"
+#~ msgid "Getting OS information...."
+#~ msgstr "Recupero in corso delle informazioni sul sistema operativo...."
+
+# TLABEL modules/inst_sw_single.ycp:61
+#~ msgid "My Documents"
+#~ msgstr "Documenti"
+
+# TLABEL modules/dialup/dialup.ycp:752
+#~ msgid "Looking up network status..."
+#~ msgstr "Ricerca in corso dello stato della rete..."
+
+#~ msgid "CPU Information"
+#~ msgstr "Informazioni sulla CPU"
+
+#~ msgid "Speed:"
+#~ msgstr "Velocità:"
+
+#~ msgid "Cores:"
+#~ msgstr "Core:"
+
+#~ msgid "Temperature:"
+#~ msgstr "Temperatura:"
+
+#~ msgid "Looking for memory information..."
+#~ msgstr "Ricerca in corso delle informazioni sulla memoria..."
+
+# TLABEL modules/inst_sw_single.ycp:732
+#~ msgid "Memory Information"
+#~ msgstr "Informazioni sulla memoria"
+
+#~ msgid "Total memory (RAM):"
+#~ msgstr "Memoria totale (RAM):"
+
+#~ msgid "Free memory:"
+#~ msgstr "Memoria disponibile:"
+
+#~ msgid "Total swap:"
+#~ msgstr "Swap totale:"
+
+#~ msgid "Free swap:"
+#~ msgstr "Swap disponibile:"
+
+#~ msgid "Device"
+#~ msgstr "Dispositivo"
+
+#~ msgid "Filesystem"
+#~ msgstr "File system"
+
+#~ msgid "Total space"
+#~ msgstr "Spazio totale"
+
+#~ msgid "Press the right mouse button for more options like Mount or Eject"
+#~ msgstr ""
+#~ "Fare clic con il pulsante destro del mouse per visualizzare ulteriori "
+#~ "opzioni, ad esempio Montaggio o Rimuovi"
+
+#~ msgid "%1 (3D Support)"
+#~ msgstr "%1 (Supporto 3D)"
+
+#~ msgid "%1 (No 3D Support)"
+#~ msgstr "%1 (Nessun supporto 3D)"
+
+#~ msgid "Unknown"
+#~ msgstr "Sconosciuto"
+
+#~ msgid "Network is <strong>unreachable</strong>"
+#~ msgstr "La rete <strong>non è raggiungibile</strong>"
 
 #~ msgid "unknown"
 #~ msgstr "sconosciuto"
-

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-01 12:10+0200\n"
+"POT-Creation-Date: 2009-04-16 09:56+0300\n"
 "PO-Revision-Date: 2007-08-06 14:53+0200\n"
 "Last-Translator: Mattias Newzella <newzella@linux.se>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -21,219 +21,230 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ksysinfopart.cpp:72
-msgid "KSysinfo"
-msgstr "KSysinfo"
-
-#: sysinfo.cpp:68
+#: src/sysinfo.cpp:83
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: sysinfo.cpp:71
+#: src/sysinfo.cpp:86
 msgid "%1 MB"
 msgstr "%1 MB"
 
-#: sysinfo.cpp:73
+#: src/sysinfo.cpp:88
 msgid "%1 KB"
 msgstr "%1 kB"
 
-#: sysinfo.cpp:129
-msgid "Looking for CPU information..."
-msgstr "Söker efter processorinformation..."
-
-#: sysinfo.cpp:138 sysinfo.cpp:140
-msgid "My Computer"
-msgstr "Den här datorn"
-
-#: sysinfo.cpp:141
-msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Kataloger, hårddiskar, flyttbara enheter, systeminformation och mer..."
-
-#: sysinfo.cpp:147
-msgid "Looking for disk information..."
-msgstr "Söker efter diskinformation..."
-
-#: sysinfo.cpp:148
-msgid "Disk Information"
-msgstr "Diskinformation"
-
-#: sysinfo.cpp:152
-msgid "OS Information"
-msgstr "OS-information"
-
-#: sysinfo.cpp:154
-msgid "OS:"
-msgstr "OS:"
-
-#: sysinfo.cpp:156
-msgid "Current user:"
-msgstr "Aktuell användare:"
-
-#: sysinfo.cpp:158
-msgid "System:"
-msgstr "System:"
-
-#: sysinfo.cpp:159
-msgid "KDE:"
-msgstr "KDE:"
-
-#: sysinfo.cpp:165
-msgid "Display Info"
-msgstr "Visa info"
-
-#: sysinfo.cpp:167
-msgid "Vendor:"
-msgstr "Leverantör:"
-
-#: sysinfo.cpp:168
-msgid "Model:"
-msgstr "Modell:"
-
-#: sysinfo.cpp:170
-msgid "Driver:"
-msgstr "Drivrutin:"
-
-#: sysinfo.cpp:177
-msgid "Getting OS information...."
-msgstr "Hämtar OS-information...."
-
-#: sysinfo.cpp:180
-msgid "Common Folders"
-msgstr "Gemensamma mappar"
-
-#: sysinfo.cpp:183
-msgid "My Documents"
-msgstr "Mina dokument"
-
-#: sysinfo.cpp:184
-msgid "My Home Folder"
-msgstr "Min hemkatalog"
-
-#: sysinfo.cpp:185
-msgid "Root Folder"
-msgstr "Rotkatalog"
-
-#: sysinfo.cpp:186
-msgid "Network Folders"
-msgstr "Nätverkskataloger"
-
-#: sysinfo.cpp:190
-msgid "Looking up network status..."
-msgstr "Söker efter nätverksstatus..."
-
-#: sysinfo.cpp:193
-msgid "Network Status"
-msgstr "Nätverksstatus"
-
-#: sysinfo.cpp:201
-msgid "CPU Information"
-msgstr "Processorinformation"
-
-#: sysinfo.cpp:203
-msgid "Processor (CPU):"
-msgstr "Processor (CPU):"
-
-#: sysinfo.cpp:204
-msgid "Speed:"
-msgstr "Hastighet:"
-
-#: sysinfo.cpp:205
-msgid "%1 MHz"
-msgstr "%1 MHz"
-
-#: sysinfo.cpp:209
-msgid "Cores:"
-msgstr "Kärnor:"
-
-#: sysinfo.cpp:213
-msgid "Temperature:"
-msgstr "Temperatur:"
-
-#: sysinfo.cpp:220
-msgid "Looking for memory information..."
-msgstr "Söker efter minnesinformation..."
-
-#: sysinfo.cpp:222
-msgid "Memory Information"
-msgstr "Minnesinformation"
-
-#: sysinfo.cpp:224
-msgid "Total memory (RAM):"
-msgstr "Totalt minne (RAM):"
-
-#: sysinfo.cpp:225
-msgid "Free memory:"
-msgstr "Ledigt minne:"
-
-#: sysinfo.cpp:226
-msgid "Used Memory"
-msgstr "Använt minne"
-
-#: sysinfo.cpp:227
-msgid "Total swap:"
-msgstr "Totalt växlingsutrymme:"
-
-#: sysinfo.cpp:228
-msgid "Free swap:"
-msgstr "Fritt växlingsutrymme:"
-
-#: sysinfo.cpp:292
-msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ %2 cachar)"
-
-#: sysinfo.cpp:334
-msgid "Device"
-msgstr "Enhet"
-
-#: sysinfo.cpp:334
-msgid "Filesystem"
-msgstr "Filsystem"
-
-#: sysinfo.cpp:335
-msgid "Total space"
-msgstr "Utrymme totalt"
-
-#: sysinfo.cpp:335
-msgid "Available space"
+#: src/sysinfo.cpp:94
+#, fuzzy
+msgid "Not Available"
 msgstr "Tillgängligt utrymme"
 
-#: sysinfo.cpp:341
-msgid "Press the right mouse button for more options like Mount or Eject"
-msgstr "Tryck på höger musknapp för fler alternativ som Montera och Mata ut"
-
-#: sysinfo.cpp:577
-msgid "%1 (3D Support)"
-msgstr "%1 (3D-stöd)"
-
-#: sysinfo.cpp:581
-msgid "%1 (No 3D Support)"
-msgstr "%1 (Inget 3D-stöd)"
-
-#: sysinfo.cpp:587
-msgid "Unknown"
-msgstr "Okänd"
-
-#: sysinfo.cpp:595
-msgid "Network is <strong>unreachable</strong>"
-msgstr "Nätverket är <strong>otillgängligt</strong>"
-
-#: sysinfo.cpp:597
-msgid "You are <strong>offline</strong>"
-msgstr "Du är <strong>nerkopplad</strong>"
-
-#: sysinfo.cpp:599
+#: src/sysinfo.cpp:141
 msgid "Network is <strong>shutting down</strong>"
 msgstr "Nätverket <strong>stängs av</strong>"
 
-#: sysinfo.cpp:601
+#: src/sysinfo.cpp:143
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "<strong>Etablerar</strong> nätverksanslutning"
 
-#: sysinfo.cpp:603
+#: src/sysinfo.cpp:145
 msgid "You are <strong>online</strong>"
 msgstr "Du är <strong>ansluten</strong>"
 
-#: sysinfo.cpp:605
+#: src/sysinfo.cpp:147
+msgid "You are <strong>offline</strong>"
+msgstr "Du är <strong>nerkopplad</strong>"
+
+#: src/sysinfo.cpp:150
 msgid "Unknown network status"
 msgstr "Okänd nätverksstatus"
 
+#: src/sysinfo.cpp:235
+#, fuzzy
+msgid "Looking for hardware information..."
+msgstr "Söker efter diskinformation..."
+
+#: src/sysinfo.cpp:237
+msgid "My Computer"
+msgstr "Den här datorn"
+
+#: src/sysinfo.cpp:239
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr "Kataloger, hårddiskar, flyttbara enheter, systeminformation och mer..."
+
+#: src/sysinfo.cpp:246
+msgid "Common Folders"
+msgstr "Gemensamma mappar"
+
+#: src/sysinfo.cpp:247
+msgid "My Home Folder"
+msgstr "Min hemkatalog"
+
+#: src/sysinfo.cpp:248
+msgid "Root Folder"
+msgstr "Rotkatalog"
+
+#: src/sysinfo.cpp:249
+msgid "Network Folders"
+msgstr "Nätverkskataloger"
+
+#: src/sysinfo.cpp:254
+#, fuzzy
+msgid "Network"
+msgstr "Nätverksstatus"
+
+#: src/sysinfo.cpp:261
+#, fuzzy
+msgid "Memory"
+msgstr "Använt minne"
+
+#: src/sysinfo.cpp:263
+msgid "Ram : %1 free of %2"
+msgstr ""
+
+#: src/sysinfo.cpp:266
+msgid "Swap: %1 free of %2"
+msgstr ""
+
+#: src/sysinfo.cpp:274
+msgid "Disks"
+msgstr ""
+
+#: src/sysinfo.cpp:281
+msgid "Operating System"
+msgstr ""
+
+#: src/sysinfo.cpp:285
+msgid "Kde <b>%1</b> on <b>%2</b>"
+msgstr ""
+
+#: src/sysinfo.cpp:297
+#, fuzzy
+msgid "Processor"
+msgstr "Processor (CPU):"
+
+#: src/sysinfo.cpp:299
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: src/sysinfo.cpp:300
+msgid " core"
+msgstr ""
+
+#: src/sysinfo.cpp:311
+#, fuzzy
+msgid "Display"
+msgstr "Visa info"
+
+#: src/sysinfo.cpp:314
+#, fuzzy
+msgid "Driver: "
+msgstr "Drivrutin:"
+
+#: src/sysinfo.cpp:394
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 cachar)"
+
+#: src/sysinfo.cpp:489
+msgid "Mounted on %1"
+msgstr ""
+
+#: src/sysinfo.cpp:489
+msgid "Not mounted"
+msgstr ""
+
+#: src/sysinfo.cpp:494
+msgid "%1 free of %2"
+msgstr ""
+
+#~ msgid "KSysinfo"
+#~ msgstr "KSysinfo"
+
+#~ msgid "Looking for CPU information..."
+#~ msgstr "Söker efter processorinformation..."
+
+#~ msgid "Disk Information"
+#~ msgstr "Diskinformation"
+
+#~ msgid "OS Information"
+#~ msgstr "OS-information"
+
+#~ msgid "OS:"
+#~ msgstr "OS:"
+
+#~ msgid "Current user:"
+#~ msgstr "Aktuell användare:"
+
+#~ msgid "System:"
+#~ msgstr "System:"
+
+#~ msgid "KDE:"
+#~ msgstr "KDE:"
+
+#~ msgid "Vendor:"
+#~ msgstr "Leverantör:"
+
+#~ msgid "Model:"
+#~ msgstr "Modell:"
+
+#~ msgid "Getting OS information...."
+#~ msgstr "Hämtar OS-information...."
+
+#~ msgid "My Documents"
+#~ msgstr "Mina dokument"
+
+#~ msgid "Looking up network status..."
+#~ msgstr "Söker efter nätverksstatus..."
+
+#~ msgid "CPU Information"
+#~ msgstr "Processorinformation"
+
+#~ msgid "Speed:"
+#~ msgstr "Hastighet:"
+
+#~ msgid "Cores:"
+#~ msgstr "Kärnor:"
+
+#~ msgid "Temperature:"
+#~ msgstr "Temperatur:"
+
+#~ msgid "Looking for memory information..."
+#~ msgstr "Söker efter minnesinformation..."
+
+#~ msgid "Memory Information"
+#~ msgstr "Minnesinformation"
+
+#~ msgid "Total memory (RAM):"
+#~ msgstr "Totalt minne (RAM):"
+
+#~ msgid "Free memory:"
+#~ msgstr "Ledigt minne:"
+
+#~ msgid "Total swap:"
+#~ msgstr "Totalt växlingsutrymme:"
+
+#~ msgid "Free swap:"
+#~ msgstr "Fritt växlingsutrymme:"
+
+#~ msgid "Device"
+#~ msgstr "Enhet"
+
+#~ msgid "Filesystem"
+#~ msgstr "Filsystem"
+
+#~ msgid "Total space"
+#~ msgstr "Utrymme totalt"
+
+#~ msgid "Press the right mouse button for more options like Mount or Eject"
+#~ msgstr "Tryck på höger musknapp för fler alternativ som Montera och Mata ut"
+
+#~ msgid "%1 (3D Support)"
+#~ msgstr "%1 (3D-stöd)"
+
+#~ msgid "%1 (No 3D Support)"
+#~ msgstr "%1 (Inget 3D-stöd)"
+
+#~ msgid "Unknown"
+#~ msgstr "Okänd"
+
+#~ msgid "Network is <strong>unreachable</strong>"
+#~ msgstr "Nätverket är <strong>otillgängligt</strong>"
