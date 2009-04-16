@@ -64,8 +64,6 @@ class MainManager(QtGui.QWidget):
         self.iface = NetworkIface()
         self.widgets = {}
 
-        wifiScanner = WifiPopup(self)
-        self.ui.buttonScan.setMenu(wifiScanner)
 
         # Let look what we can do
         supportedPackages = []
@@ -92,6 +90,8 @@ class MainManager(QtGui.QWidget):
                 self.ui.comboSecurityTypes.addItem(desc, QVariant(name))
             self.ui.filterBox.addItem(i18n("Wireless Profiles"), QVariant("wireless_tools"))
             self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
+            wifiScanner = WifiPopup(self)
+            self.ui.buttonScan.setMenu(wifiScanner)
 
         if len(supportedPackages) > 0:
             self.ui.buttonCreate.setMenu(menu)
@@ -233,10 +233,10 @@ class MainManager(QtGui.QWidget):
                 state= str(info["state"])
                 item = QtGui.QListWidgetItem(self.ui.profileList)
                 item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
+                item.setSizeHint(QSize(48,48))
                 self.widgets[connection] = ConnectionItemWidget(package, connection, info, self, item)
                 self.widgets[connection].update(state)
                 self.ui.profileList.setItemWidget(item, self.widgets[connection])
-                item.setSizeHint(QSize(48,48))
                 del item
 
         # Filter list with selected filter method
@@ -456,7 +456,7 @@ class MainManager(QtGui.QWidget):
     def deleteConnection(self):
         profile = self.sender().parent().profile
         package = self.sender().parent().package
-        if KMessageBox.questionYesNo(self, "Do you really want to remove profile %s ?" % profile,
+        if KMessageBox.questionYesNo(self, i18n("Do you really want to remove profile %s ?" % profile),
                                            "Network-Manager") == KMessageBox.Yes:
             self.fillProfileList(ignore=(package, profile))
             self.iface.deleteConnection(package, profile)
