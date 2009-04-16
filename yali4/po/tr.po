@@ -1080,7 +1080,7 @@ msgstr "Hoşçakalın"
 
 #: yali4/gui/ScrGoodbye.py:45
 msgid "Enjoy your fresh Pardus !..."
-msgstr "Taze Pardus'unuz zevkini çıkartın !..."
+msgstr "Taze Pardus'unuzun zevkini çıkarın !..."
 
 #: yali4/gui/ScrGoodbye.py:46
 msgid ""
