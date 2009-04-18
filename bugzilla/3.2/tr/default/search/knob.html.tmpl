@@ -18,6 +18,7 @@
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 Tobias Burnus <burnus@net-b.de>
   #                 Jouni Heikniemi <jouni@heikniemi.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -33,16 +34,16 @@
 
 [%# This is not necessary for English templates, but useful for localizers. %]
 [% ordersdesc = {
-   "Reuse same sort as last time" => "Reuse same sort as last time",
-   "Bug Number"   => "$terms.Bug Number",
-   "Importance"   => "Importance",
-   "Assignee"     => "Assignee",
-   "Last Changed" => "Last Changed" } %]
+   "Reuse same sort as last time" => "Son seferkiyle aynı sıralamayı kullan",
+   "Bug Number"   => "$terms.Bug Numarası",
+   "Importance"   => "Önem",
+   "Assignee"     => "Atanan",
+   "Last Changed" => "Son Değişiklik" } %]
 
 <input type="hidden" name="cmdtype" value="doit">
 
 <p>
-  <label for="order">Sort results by</label>:
+  <label for="order">Sonuçları sıralama şekli:</label>:
   <select name="order" id="order">
   [% FOREACH order = orders %]
     <option value="[% order FILTER html %]"
@@ -69,13 +70,13 @@
   <input type="checkbox" id="remasdefault"
          name="remtype" value="asdefault">
   <label for="remasdefault">
-    and remember these as my default search options
+    ve bunları öntanımlı arama seçeneklerim olarak kaydet
   </label>
 </p>
         
 [% IF userdefaultquery %]
   <p>
     <a href="query.cgi?nukedefaultquery=1">
-      Set my default search back to the system default</a>.
+      Öntanımlı aramamı sistem varsayılanlarına geri döndür</a>.
   </p>
 [% END %]

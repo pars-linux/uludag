@@ -16,36 +16,37 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
   
 [% types = [
   { name => "noop", description => "---" },
-  { name => "equals", description => "is equal to" },
-  { name => "notequals", description => "is not equal to" },
-  { name => "anyexact", description => "is equal to any of the strings" },
-  { name => "substring", description => "contains the string" },
-  { name => "casesubstring", description => "contains the string (exact case)" },
-  { name => "notsubstring", description => "does not contain the string" },
-  { name => "anywordssubstr", description => "contains any of the strings" },
-  { name => "allwordssubstr", description => "contains all of the strings" },
-  { name => "nowordssubstr", description => "contains none of the strings" },
-  { name => "regexp", description => "contains regexp" },
-  { name => "notregexp", description => "does not contain regexp" },
-  { name => "lessthan", description => "is less than" },
-  { name => "greaterthan", description => "is greater than" },
-  { name => "anywords", description => "contains any of the words" },
-  { name => "allwords", description => "contains all of the words" },
-  { name => "nowords", description => "contains none of the words" },
-  { name => "changedbefore", description => "changed before" },
-  { name => "changedafter", description => "changed after" },
-  { name => "changedfrom", description => "changed from" },
-  { name => "changedto", description => "changed to" },
-  { name => "changedby", description => "changed by" },
-  { name => "matches", description => "matches" } ] %]
+  { name => "equals", description => "eşittir" },
+  { name => "notequals", description => "eşit değil" },
+  { name => "anyexact", description => "katarların herhangi birine eşit" },
+  { name => "substring", description => "katarı içerir" },
+  { name => "casesubstring", description => "katarı içerir (büyük-küçük harf ayrımı yapar)" },
+  { name => "notsubstring", description => "katarı içermez" },
+  { name => "anywordssubstr", description => "katarların herhangi birini içerir" },
+  { name => "allwordssubstr", description => "katarların tümünü içerir" },
+  { name => "nowordssubstr", description => "katarların hiçbirini içermez" },
+  { name => "regexp", description => "düzenli ifadeyle eşleşir" },
+  { name => "notregexp", description => "düzenli ifadeyle eşleşmez" },
+  { name => "lessthan", description => "küçüktür" },
+  { name => "greaterthan", description => "büyüktür" },
+  { name => "anywords", description => "kelimelerin herhangi birini içerir" },
+  { name => "allwords", description => "kelimelerin tümünü içerir" },
+  { name => "nowords", description => "kelimelerin hiçbirini içermez" },
+  { name => "changedbefore", description => "öncesinde değiştirilmiş" },
+  { name => "changedafter", description => "sonrasında değiştirilmiş" },
+  { name => "changedfrom", description => "önceki hali" },
+  { name => "changedto", description => "sonraki hali" },
+  { name => "changedby", description => "değiştiren" },
+  { name => "matches", description => "eşleşir" } ] %]
 
   <p>
     <strong>
-      <a name="chart">Advanced Searching Using Boolean Charts</a>:
+      <a name="chart">Boole Çizelgeler Kullanarak Gelişmiş Arama</a>:
     </strong>
   </p>
 
@@ -62,7 +63,7 @@
              name="negate[% chartnum FILTER html %]" value="1"
             [%+ "checked" IF chart.negate %]>
         <label for="negate[% chartnum FILTER html %]">
-          Not (negate this whole chart)
+          Değil (bu çizelgenin tamamının tersini al)
         </label>
       </td>
     </tr>
@@ -93,14 +94,14 @@
       
       [% UNLESS loop.last %]
         <td align="center"> 
-          Or 
+          Veya 
         </td>    
       </tr>
       <tr>
       [% ELSE %]
         <td>
           [% newor = colnum + 1 %]
-          <input type="submit" value="Or" [% jsmagic %]
+          <input type="submit" value="Veya" [% jsmagic %]
                  name="cmd-add[% "${chartnum}-${rownum}-${newor}" %]"
                  id="cmd-add[% "${chartnum}-${rownum}-${newor}" %]">
         </td>
@@ -111,17 +112,17 @@
     
     [% UNLESS loop.last %]
     <tr>
-      <td>And</td>
+      <td>Ve</td>
     </tr>    
     [% ELSE %]
     <tr>
       <td>
         [% newand = rownum + 1; newchart = chartnum + 1 %]
-        <input type="submit" value="And" [% jsmagic %]
+        <input type="submit" value="Ve" [% jsmagic %]
                name="cmd-add[% "${chartnum}-${newand}-0" %]"
                id="cmd-add[% "${chartnum}-${newand}-0" %]">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="submit" value="Add another boolean chart" [% jsmagic %]
+        <input type="submit" value="Bir boole çizelge daha ekle" [% jsmagic %]
                name="cmd-add[% newchart %]-0-0"
                id="cmd-add[% newchart %]-0-0">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

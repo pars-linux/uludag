@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -35,7 +36,7 @@ var queryform = "queryform"
 [% END %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Search for $terms.bugs"
+  title = "$terms.Bug ara"
   onload = "doOnSelectProduct(0); enableHelp();"
   javascript = js_data
   javascript_urls = [ "js/productform.js" "js/util.js" "js/help.js" ]
@@ -53,13 +54,13 @@ var queryform = "queryform"
 [%# The decent help requires Javascript %]
 <script type="text/javascript"> <!--
 [% IF NOT cgi.param("help") %]
-  document.write("<p><a href='query.cgi?help=1&amp;format=advanced'>Give me some help<\/a> (reloads page).<\/p>");
+  document.write("<p><a href='query.cgi?help=1&amp;format=advanced'>Biraz yardım iyi olurdu<\/a> (sayfayı yeniler).<\/p>");
 [% ELSE %]
   [% PROCESS "search/search-help.html.tmpl" %]
   if (generateHelp())
-    document.write("<p>For help, mouse over the page elements.<\/p>");
+    document.write("<p>Yardım almak için, öğeler üzerinde fareyle biraz bekleyin.<\/p>");
   else
-    document.write("<p>Help initialization failed, no help available.<\/p>");
+    document.write("<p>Yardım başlatılamadı, maalesef yardım olmayacak.<\/p>");
 [% END %]
 // -->
 </script>

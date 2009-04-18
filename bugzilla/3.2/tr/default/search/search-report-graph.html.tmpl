@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -30,7 +31,7 @@ var queryform = "reportform"
 [% END %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Generate Graphical Report"
+  title = "Grafik Rapor Oluştur"
   onload = "doOnSelectProduct(0); chartTypeChanged()"
   javascript = js_data
   javascript_urls = [ "js/productform.js" ]
@@ -40,8 +41,7 @@ var queryform = "reportform"
 [% PROCESS "search/search-report-select.html.tmpl" %]
 
 <p>
-  Choose one or more fields as your axes, and then refine your set of 
-  [% terms.bugs %] using the rest of the form.
+  Bir veya daha fazla alanı eksen olarak seçin, sonra formun geri kalanını kullanarak grafiğe dahil etmek istediğiniz [% terms.bugsAcc %] belirleyin.
 </p>
 
 <script type="text/javascript"><!--
@@ -61,41 +61,41 @@ var queryform = "reportform"
 // -->
 </script>
 
-[% button_name = "Generate Report" %]
+[% button_name = "Rapor Oluştur" %]
 
 <form method="get" action="report.cgi" name="reportform">
 
 <table align="center">
   <tr>
     <td valign="middle">
-      <b>Vertical Axis:</b><br>
-      <noscript><small>(not for pie charts)</small><br></noscript>
+      <b>Dikey Eksen:</b><br>
+      <noscript><small>(değirmi çizeneklerde kullanılamaz)</small><br></noscript>
       [% PROCESS select name = 'y_axis_field' %]<br>
       <br>
-        <b>Plot Data Sets:</b><br>
+        <b>Veri Kümelerinin Yerleşimi:</b><br>
         <input type="radio" name="cumulate" value="0"
         [% " checked" IF default.cumulate.0 != "1" %]>
-        Individually<br>
+        Tek Tek<br>
         <input type="radio" name="cumulate" value="1"
         [% " checked" IF default.cumulate.0 == "1" %]>
-        Stacked
+        Yığılı
     </td>
     <td width="150" height="150">
       <table border="1" width="100%" height="100%">
         <tr>
           <td align="center" valign="middle">
-            <b>Multiple Images:</b><br>
+            <b>Birden Fazla Resim:</b><br>
             [% PROCESS select name = 'z_axis_field' %]
           </td>
         </tr>
       </table>
     </td>
     <td rowspan="2">
-      <b>Format:</b><br>
+      <b>Biçim:</b><br>
       [% chart_formats = [
-        { name => "line", description => "Line Graph" },
-        { name => "bar",  description => "Bar Chart" },
-        { name => "pie",  description => "Pie Chart" } ] %]
+        { name => "line", description => "Çizgi Çizenek" },
+        { name => "bar",  description => "Çubuk Çizenek" },
+        { name => "pie",  description => "Değirmi Çizenek" } ] %]
       [% default.chart_format.0 = default.chart_format.0 || "bar" %]
 
       [% FOREACH chart_format = chart_formats %]
@@ -112,9 +112,9 @@ var queryform = "reportform"
     <td>
     </td>
     <td align="left">
-      <b>Horizontal Axis:</b>
+      <b>Yatay Eksen:</b>
       [% PROCESS select name = 'x_axis_field' %]<br>
-      <label for="x_labels_vertical"><b>Vertical labels:</b></label>
+      <label for="x_labels_vertical"><b>Dikey etiketler:</b></label>
       <input type="checkbox" name="x_labels_vertical" id="x_labels_vertical"
              value="1"
          [% " checked" IF default.x_labels_vertical.0 == "1" %]>

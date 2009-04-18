@@ -17,53 +17,37 @@
   #
   # Contributor(s): Terry Weissman <terry@mozilla.org>
   #                 Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
-[% INCLUDE global/header.html.tmpl title = "Voting" %]
+[% INCLUDE global/header.html.tmpl title = "Oylama" %]
 
-<p>[% terms.Bugzilla %] has a "voting" feature. Each product allows users to 
-have a certain number of votes. (Some products may not allow any, which means 
-you can't vote on things in those products at all.) With your vote, you 
-indicate which [% terms.bugs %] you think are the most important and 
-would like to see fixed. Note that voting is nowhere near as effective 
-as providing a fix yourself.</p>
+<p>[% terms.BugzillaGen %] bir "oylama" özelliği bulunur. 
+Her ürün kullanıcıların belirli sayıda oy kullanmasına izin verir. (Bazı ürünlerde oy kullanmaya izin yoktur.) Oyunuzla hangi [% terms.bugsGen %] en önemlileri olduğunu, hangilerinin daha acilen düzeltilmesi gerektiğini düşündüğünüzü belirtme şansını elde edersiniz. Elbette oy kullanmak hiçbir zaman hataya bir çözüm bulmak kadar etkili olamaz.</p>
 
-<p>Depending on how the administrator has configured the relevant product,
-you may be able to vote for the same [% terms.bug %] more than once.
-Remember that you have a limited number of votes. When weighted voting 
-is allowed and a limited number of votes are available to you, you will 
-have to decide whether you want to distribute your votes among a large 
-number of [% terms.bugs %] indicating your minimal interest or focus on 
-a few [% terms.bugs %] indicating your strong support for them.
+<p>Yöneticinin ilgili ürünü yapılandırma şekline bağlı olarak, aynı [% terms.bug %] üzerinde birden fazla oy kullanmanız mümkün olabilir. Bu şekilde bir oylama açıldığında ve sizin oyunuz belirli bir sayıda tutulduğunda, oylarınızı çok sayıda [% terms.bug %] arasında eşit olmayan bir şekilde dağıtarak belirli [% terms.bugsAcc %] ön plâna çıkarabilirsiniz.
 </p>
 
-<p>To look at votes:</p>
+<p>Oylara bakmak için:</p>
 
 <ul>
-  <li>Go to the query page. Do a normal query, but enter 1 in the "At least
-  ___ votes" field. This will show you items that match your query that
-  have at least one vote.</li>
+  <li>Sorgu sayfasına gidin, normal bir sorgulama yapın, fakat "En az ___ oy" alanına 1 (bir) değerini girin. Bu sorgu, size en az bir oya sahip olan öğeleri gösterecektir.</li>
 </ul>
 
-<p>To vote for [% terms.abug %]:</p>
+<p>[% terms.Abug %] için oy kullanmak:</p>
 
 <ul>
-  <li>Bring up the [% terms.bug %] in question.</li>
+  <li>Oy kullanmak istediğiniz [% terms.bugAcc %] açın.</li>
 
-  <li>Click on the "(vote)" link that appears on the right of the "Importance"
-  fields. (If no such link appears, then voting may not be allowed in
-  this [% terms.bug %]'s product.)</li>
+  <li>"Önem" alanlarının hemen sağında bulunan "(oy kullan)" bağlantısına tıklayın. (Eğer öyle bir bağlantı görünmüyorsa, bu [% terms.bugGen %] bulunduğu üründe oylama kapalı olabilir.)</li>
 
-  <li>Indicate how many votes you want to give this [% terms.bug %]. This page 
-  also displays how many votes you've given to other [% terms.bugs %], so you 
-  may rebalance your votes as necessary.</li>
+  <li>Bu [% terms.bugDat %] kaç oy vermek istediğinizi belirtin. Bu sayfa oylarınızı istediğiniz şekilde dağıtabilmeniz için diğer [% terms.bugsLoc %] kullancığınız oyları da gösterecektir.</li>
 </ul>
 
-<p>You will automatically get email notifying you of any changes that occur
-on [% terms.bugs %] you vote for.</p>
+<p>Oyladığınız [% terms.bugsLoc %] gerçekleşen değişikliklerden eposta yoluyla haberdar edilirsiniz.</p>
 
-<p>You may review your votes at any time by clicking on the "<a href=
-"votes.cgi?action=show_user">My Votes</a>" link in the page footer.</p>
+<p>Sayfa altlığında bulunan "<a href=
+"votes.cgi?action=show_user">Verdiğim Oylar</a>" bağlantısını kullanarak istediğiniz zaman oylarınıza göz atabilirsiniz.</p>
 
 [% INCLUDE global/footer.html.tmpl %]
