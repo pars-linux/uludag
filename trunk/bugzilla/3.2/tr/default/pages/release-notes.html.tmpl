@@ -15,53 +15,45 @@
   # Everything Solved. All Rights Reserved.
   #
   # Contributor(s): Max Kanat-Alexander <mkanat@bugzilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 [% INCLUDE global/header.html.tmpl 
-  title = "$terms.Bugzilla 3.2 Release Notes" 
+  title = "$terms.Bugzilla 3.2 Sürüm Notları" 
   style_urls = ['skins/standard/release-notes.css'] 
 %]
 
-<h2>Table of Contents</h2>
+<h2>İçindekiler</h2>
 
 <ul class="bz_toc">
-  <li><a href="#v32_introduction">Introduction</a></li>
-  <li><a href="#v32_req">Minimum Requirements</a></li>
-  <li><a href="#v32_feat">New Features and Improvements</a></li>
-  <li><a href="#v32_issues">Outstanding Issues</a></li>
-  <li><a href="#v32_upgrading">How to Upgrade From An Older Version</a></li>
-  <li><a href="#v32_code_changes">Code Changes Which May Affect 
-    Customizations</a></li>
-  <li><a href="#v32_previous">Release Notes for Previous Versions</a></li>
+  <li><a href="#v32_introduction">Giriş</a></li>
+  <li><a href="#v32_req">En Düşük Gereksinimler</a></li>
+  <li><a href="#v32_feat">Yeni Özellikler ve Geliştirmeler</a></li>
+  <li><a href="#v32_issues">Önemli Noktalar</a></li>
+  <li><a href="#v32_upgrading">Eski Bir Sürümden Yükseltmek</a></li>
+  <li><a href="#v32_code_changes">Özelleştirmeleri Etkileyebilecek Kod Değişiklikleri</a></li>
+  <li><a href="#v32_previous">Önceki Sürümlerin Sürüm Notları</a></li>
 </ul>
 
-<h2><a name="v32_introduction"></a>Introduction</h2>
+<h2><a name="v32_introduction"></a>Giriş</h2>
 
-<p>Welcome to [% terms.Bugzilla %] 3.2! This is our first major feature
-  release since [% terms.Bugzilla %] 3.0, and it brings a lot of great
-  improvements and polish to the [% terms.Bugzilla %] experience.</p>
+<p>[% terms.Bugzilla %] 3.2'ye hoşgeldiniz! Bu sürüm, [% terms.Bugzilla %] 3.0'dan bu yana ilk ana sürümümüzdür ve [% terms.Bugzilla %] deneyiminize çok sayıda güzel iyileştirme ve makyaj içermektedir.</p>
 
-<p>If you're upgrading, make sure to read <a href="#v32_upgrading">How to
-  Upgrade From An Older Version</a>. If you are upgrading from a release
-  before 3.0, make sure to read the release notes for all the 
-  <a href="#v32_previous">previous versions</a> in between your version
-  and this one, <strong>particularly the "Notes For Upgraders" section of each
-  version's release notes</strong>.</p>
+<p>Eğer önceki bir sürümden yükseltiyorsanız <a href="#v32_upgrading">Önceki Bir Sürümden Yükseltme</a> bölümünü mutlaka okuyun. Eğer 3.0 öncesi bir sürümden yükseltiyorsanız, sizdeki sürümle bu sürüm arasındaki tüm sürümlerin <a href="#v32_previous">notlar</a>ını <strong>özellikle de "Yükseltenler İçin Notlar" bölümlerini</strong> okumalısınız.</p>
 
-<h2><a name="v32_req"></a>Minimum Requirements</h2>
+<h2><a name="v32_req"></a>En Düşük Gereksinimler</h2>
 
-<p>Any requirements that are new since 3.0.5 will look like
-  <span class="req_new">this</span>.</p>
+<p>3.0.5'ten bu yana eklenen gereksinimler
+  <span class="req_new">böyle</span> görünür.</p>
 
 <ul>
   <li><a href="#v32_req_perl">Perl</a></li>
-  <li><a href="#v32_req_mysql">For MySQL Users</a></li>
-  <li><a href="#v32_req_pg">For PostgreSQL Users</a></li>
-  <li><a href="#v32_req_oracle">For Oracle Users</a></li>
-  <li><a href="#v32_req_modules">Required Perl Modules</a></li>
-  <li><a href="#v32_req_optional_mod">Optional Perl
-    Modules</a></li>
+  <li><a href="#v32_req_mysql">MySQL Kullanıcıları İçin</a></li>
+  <li><a href="#v32_req_pg">PostgreSQL Kullanıcıları İçin</a></li>
+  <li><a href="#v32_req_oracle">Oracle Kullanıcıları İçin</a></li>
+  <li><a href="#v32_req_modules">Gerekli Perl Bileşenleri</a></li>
+  <li><a href="#v32_req_optional_mod">İsteğe Bağlı Perl Bileşenleri</a></li>
 </ul>
 
 <h3><a name="v32_req_perl"></a>Perl</h3>
@@ -74,70 +66,60 @@
 
 [% INCLUDE db_req db='oracle' %]
 
-<h3><a name="v32_req_modules"></a>Required Perl Modules</h3>
+<h3><a name="v32_req_modules"></a>Gerekli Perl Bileşenleri</h3>
 
 [% INCLUDE req_table reqs = REQUIRED_MODULES 
                      new = []
                      updated = ['Template-Toolkit', 'Email-MIME',
                                 'Email-MIME-Modifier', 'CGI'] %]
 
-<h3><a name="v32_req_optional_mod"></a>Optional Perl Modules</h3>
+<h3><a name="v32_req_optional_mod"></a>İsteğe Bağlı Perl Bileşenleri</h3>
 
-<p>The following perl modules, if installed, enable various
-  features of [% terms.Bugzilla %]:</p>
+<p>Aşağıdaki Perl bileşenleri, yüklü iseler çeşitli [% terms.Bugzilla %] özelliklerinin kullanılabilir olmasını sağlarlar:</p>
 
 [% INCLUDE req_table reqs = OPTIONAL_MODULES
                      new  = ['SASL-Authen', 'RadiusPerl']
                      updated = []
                      include_feature = 1 %]
 
-<h2><a name="v32_feat"></a>New Features and Improvements</h2>
+<h2><a name="v32_feat"></a>Yeni Özellikler ve Geliştirmeler</h2>
 
 <ul>
-  <li><a href="#v32_feat_ui">Major UI Improvements</a></li>
-  <li><a href="#v32_feat_skin">New Default Skin: Dusk</a></li>
-  <li><a href="#v32_feat_status">Custom Status Workflow</a></li>
-  <li><a href="#v32_feat_fields">New Custom Field Types</a></li>
-  <li><a href="#v32_feat_install">Easier Installation</a></li>
-  <li><a href="#v32_feat_oracle">Experimental Oracle Support</a></li>
-  <li><a href="#v32_feat_utf8">Improved UTF-8 Support</a></li>
-  <li><a href="#v32_feat_grcons">Group Icons</a></li>
-  <li><a href="#v32_feat_other">Other Enhancements and Changes</a></li>
+  <li><a href="#v32_feat_ui">Ana Arayüz İyileştirmeleri</a></li>
+  <li><a href="#v32_feat_skin">Yeni Varsayılan Cilt: Alacakaranlık</a></li>
+  <li><a href="#v32_feat_status">Özelleştirilmiş Durum Akışı</a></li>
+  <li><a href="#v32_feat_fields">Yeni Özelleştirilmiş Alan Türleri</a></li>
+  <li><a href="#v32_feat_install">Daha Kolay Kurulum</a></li>
+  <li><a href="#v32_feat_oracle">Deneysel Oracle Desteği</a></li>
+  <li><a href="#v32_feat_utf8">Geliştirilmiş UTF-8 Desteği</a></li>
+  <li><a href="#v32_feat_grcons">Grup Simgeleri</a></li>
+  <li><a href="#v32_feat_other">Diğer İyileştirmeler ve Değişiklikler</a></li>
 </ul>
 
-<h3><a name="v32_feat_ui"></a>Major UI Improvements</h3>
+<h3><a name="v32_feat_ui"></a>Ana Arayüz İyileştirmeleri</h3>
 
-<p>[% terms.Bugzilla %] 3.2 has had some UI assistance from the NASA
-  Human-Computer Interaction department and the new 
-  <a href="http://wiki.mozilla.org/Bugzilla:UE">[% terms.Bugzilla %]
-  User Interface Team</a>.</p>
+<p>[% terms.Bugzilla %] 3.2 NASA İnsan-Bilgisayar Etkileşimi bölümünden ve yeni kurulan <a href="http://wiki.mozilla.org/Bugzilla:UE">[% terms.Bugzilla %]
+  Kullanıcı Arayüz Takımı</a>ndan arayüz konusunda yardım aldı.</p>
 
-<p>In particular, you will notice a massively redesigned [% terms.bug %]
-  editing form, in addition to our <a href="#v32_feat_skin">new skin</a>.</p>
+<p>Özelde, [% terms.bug %] değiştirme formunda büyük bir değişiklik göreceksiniz ve ayrıca [% terms.Bugzilla %] için <a href="#v32_feat_skin">yeni bir deri</a> bulunuyor.</p>
 
-<h3><a name="v32_feat_skin"></a>New Default Skin: Dusk</h3>
+<h3><a name="v32_feat_skin"></a>Yeni Varsayılan Cilt: Alacakaranlık</h3>
 
-<p>[% terms.Bugzilla %] 3.2 now ships with a skin called "Dusk" that is
-  a bit more colorful than old default "Classic" skin.</p>
+<p>[% terms.Bugzilla %] 3.2 artık öntanımlı deri olan "Klasik"ten biraz daha renkli olan ve "Alacakaranlık" adı verilen bir deri ile geliyor.</p>
 
-<p>Upgrading installations will still default to the "Classic" 
-  skin--administrators can change the default in the Default Preferences
-  control panel. Users can also choose to use the old skin in their
-  Preferences (or using the View :: Page Style menu in Firefox).</p>
+<p>Yükseltilen kurulumlar halâ öntanımlı olarak "Klasik" deriyi kullanacak ve yöneticiler bunu Öntanımlı Tercihler denetim masasından değiştirebilecekler. Kullanıcılar kendi Tercihler sayfalarında (ya da Firefox'da Görünüm :: Sayfa Biçimi'nden) değiştirebilecekler.</p>
 
-<p>The changes that [% terms.Bugzilla %] required for Dusk made
-  [%+ terms.Bugzilla %] much easier to skin. See the
-  <a href="http://wiki.mozilla.org/Bugzilla:Addons#Skins">Addons page</a>
-  for additional skins, or try making your own!</p>
+<p>[% terms.Bugzilla %]'nın Alacakaranlık için gerektirdiği değişiklikler yeni deriler eklemeyi çok kolaylaştırdı.
+  <a href="http://wiki.mozilla.org/Bugzilla:Addons#Skins">Eklentiler sayfası</a>ndan başka deriler indirebilir, ya da kendinize bir [% terms.Bugzilla %] derisi yapabilirsiniz!</p>
 
-<h3><a name="v32_feat_status"></a>Custom Status Workflow</h3>
+<h3><a name="v32_feat_status"></a>Özelleştirilmiş Durum Akışı</h3>
 
 <p>You can now customize the list of statuses in [% terms.Bugzilla %],
   and transitions between them.</p>
 
 <p>You can also specify that a comment must be made on certain transitions.</p>
 
-<h3><a name="v32_feat_fields"></a>New Custom Field Types</h3>
+<h3><a name="v32_feat_fields"></a>Yeni Özelleştirilmiş Alan Türleri</h3>
 
 <p>[% terms.Bugzilla %] 3.2 has support for three new types of
   custom fields:</p>
@@ -150,7 +132,7 @@
     calendar popup to make picking a date easier.</li>
 </ul>
 
-<h3><a name="v32_feat_install"></a>Easier Installation</h3>
+<h3><a name="v32_feat_install"></a>Daha Kolay Kurulum</h3>
 
 <p>[% terms.Bugzilla %] now comes with a script called 
   <kbd>install-module.pl</kbd> that can automatically download
@@ -163,7 +145,7 @@
   <kbd>install-module.pl</kbd>, or you can read its
   <a href="[% docs_urlbase FILTER html %]api/install-module.html">documentation</a>.</p>
 
-<h3><a name="v32_feat_oracle"></a>Experimental Oracle Support</h3>
+<h3><a name="v32_feat_oracle"></a>Deneysel Oracle Desteği</h3>
 
 <p>[% terms.Bugzilla %] 3.2 contains experimental support for using 
   Oracle as its database. Some features of [% terms.Bugzilla %] are known 
@@ -179,7 +161,7 @@
   development contributions to [% terms.Bugzilla %] which allowed this to 
   happen!</p>
 
-<h3><a name="v32_feat_utf8"></a>Improved UTF-8 Support</h3>
+<h3><a name="v32_feat_utf8"></a>Geliştirilmiş UTF-8 Desteği</h3>
 
 <p>[% terms.Bugzilla %] 3.2 now has advanced UTF-8 support in its code,
   including correct handling for truncating and wrapping multi-byte
@@ -188,14 +170,14 @@
   by users in every country with little (or at least much less)
   customization.</p>
 
-<h3><a name="v32_feat_grcons"></a>Group Icons</a></h3>
+<h3><a name="v32_feat_grcons"></a>Grup Simgeleri</a></h3>
 
 <p>Administrators can now specify that users who are in certain groups
   should have an icon appear next to their name whenever they comment.
   This is particularly useful for distinguishing developers from 
   [%+ terms.bug %] reporters.</p>
 
-<h3><a name="v32_feat_other"></a>Other Enhancements and Changes</h3>
+<h3><a name="v32_feat_other"></a>Diğer İyileştirmeler ve Değişiklikler</h3>
 
 <p>These are either minor enhancements, or enhancements that have
   very short descriptions. Some of these are very useful, though!</p>
@@ -921,10 +903,10 @@
   <li><a href="#v30_feat_emi">File/Modify [% terms.Bugs %] By Email</a></li>
   <li><a href="#v30_feat_gw">Users Who Get All [% terms.Bug %] 
     Notifications</a></li>
-  <li><a href="#v30_feat_utf8">Improved UTF-8 Support</a></li>
+  <li><a href="#v30_feat_utf8">Geliştirilmiş UTF-8 Desteği</a></li>
   <li><a href="#v30_feat_upda">Automatic Update Notification</a></li>
   <li><a href="#v30_feat_welc">Welcome Page for New Installs</a></li>
-  <li><a href="#v30_feat_other">Other Enhancements and Changes</a></li>
+  <li><a href="#v30_feat_other">Diğer İyileştirmeler ve Değişiklikler</a></li>
 </ul>
 
 <h3><a name="v30_feat_cf"></a>Custom Fields</h3>
@@ -1096,7 +1078,7 @@
 <p>Group controls still apply, though, so users who can't see a [% terms.bug %]
   still won't get notifications about that [% terms.bug %].</p>
 
-<h3><a name="v30_feat_utf8"></a>Improved UTF-8 Support</h3>
+<h3><a name="v30_feat_utf8"></a>Geliştirilmiş UTF-8 Desteği</h3>
 
 <p>[% terms.Bugzilla %] users running MySQL should now have excellent
   UTF-8 support if they turn on the <kbd>utf8</kbd> parameter. (New
@@ -1130,7 +1112,7 @@
   This uses the 
   <a href="page.cgi?id=quicksearch.html">QuickSearch syntax</a>.</p>
 
-<h3><a name="v30_feat_other"></a>Other Enhancements and Changes</h3>
+<h3><a name="v30_feat_other"></a>Diğer İyileştirmeler ve Değişiklikler</h3>
 
 <p>These are either minor enhancements, or enhancements that have
   very short descriptions. Some of these are very useful, though!</p>

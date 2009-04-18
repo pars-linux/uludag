@@ -16,52 +16,36 @@
   # Rights Reserved.
   #
   # Contributor(s): A. Karl Kornel <karl@kornel.name>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
-[% INCLUDE global/header.html.tmpl title = "sudo: User Impersonation" %]
+[% INCLUDE global/header.html.tmpl title = "sudo: Başka Kullanıcının Yerine Geçme" %]
 
 <p>
-  [%+ terms.Bugzilla %] includes the ability to have one user impersonate 
-another, in something called a <i>sudo session</i>, so long as the person 
-doing the impersonating has the appropriate privileges.
+  [%+ terms.Bugzilla %] bir kullanıcının, eğer gerekli izinlere ve yetkilere sahipse, <i>sudo oturumu</i> adı verilen bir yöntemle başka bir kullanıcının yerine geçmesine olanak tanır.</p>
+
+<p>
+  Bir oturum açıkken, [% terms.Bugzilla %] herşeyi sanki diğer kullanıcı yapıyormuş gibi davranır. Bu özellikle test amaçlı olarak ve yerine geçilen kişinin müsait olmadığı durumlarda kullanışlı bir seçenektir. Yerine geçilen kullanıcı [% terms.BugzillaAbl %] oturum başladığında bir bilgilendirme epostası alır (bunun dışında başka birşeyden haberleri olmaz).
 </p>
 
 <p>
-  While a session is in progress, [% terms.Bugzilla %] will act as if the 
-  impersonated user is doing everything.  This is especially useful for testing,
-  and for doing critical work when the impersonated user is unavailable.  The 
-  impersonated user will receive an email from [% terms.Bugzilla %] when the 
-  session begins; they will not be told anything else.
+  Bu özelliği kullanmak için ilgili grubun üyesi olmanız gerekir. Bu grup, öntanımlı olarak tüm yöneticileri içerir. Diğer kullanıcılar ve diğer grupların üyeleri bu özelliği "lâzım oldukça" kullanabilirler. Bu türden erişim istemek için, bu kurulumun bakımından ve sağlığından sorumlu kişiyle (<a href="mailto:[% Param("maintainer") %]">[%- Param("maintainer") %]</a>) iletişim kurabilirsiniz.
 </p>
 
 <p>
-  To use this feature, you must be a member of the appropriate group.  The group 
-  includes all administrators by default.  Other users, and members of other 
-  groups, can be given access to this feature on a case-by-case basis.  To 
-  request access, contact the maintainer of this installation: 
-  <a href="mailto:[% Param("maintainer") %]">
-  [%- Param("maintainer") %]</a>.
-</p>
-
-<p>
-  If you would like to be protected from impersonation, you should contact the 
-  maintainer of this installation to see if that is possible.  People with 
-  access to this feature are protected automatically.
+  Eğer başka kullanıcıların sizin yerine geçememesini istiyorsanız, bu kurulumdan sorumlu kişiyle irtibat kurarak bunun mümkün olup olmadığını sorabilirsiniz. Bu özelliğe erişimi olan kullanıcılar otomatik olarak korumaya alınır.
 </p>
 
 <p id="message">
   [% IF user.groups.bz_sudoers %]
-    You are a member of the <b>bz_sudoers</b> group.  You may use this 
-    feature to impersonate others.
+    <b>bz_sudoers</b> grubunun üyesisiniz. Bu özelliği başkalarının yerine geçmek için kullanabilirsiniz.
   [% ELSE %]
-    You are not a member of an appropriate group.  You may not use this 
-    feature.
+    Bu özelliği kullanabilecek herhangi bir grubun üyesi değilsiniz, o nedenle bu özelliği kullanamazsınız.
   [% END %]
   [% IF user.groups.bz_sudo_protect %]
     <br>
-    You are a member of the <b>bz_sudo_protect</b> group.  Other people will 
-    not be able to use this feature to impersonate you.
+    <b>bz_sudo_protect</b> grubunun üyesisiniz. Başkaları bu özelliği kullanarak sizin yerinize geçemez.
   [% END %]
 </p>
 

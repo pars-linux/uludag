@@ -16,92 +16,103 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
   
 [% help_html = [ 
 { id => "short_desc_type", 
-  html => "The type of summary search you would like" },   
+  html => "İstediğiniz özet aramanın türü" },   
 { id => "short_desc", 
-  html => "The $terms.bug summary is a short sentence which succinctly  
-           describes <br> what the $terms.bug is about." },   
+  html => "$terms.Bug özeti, $terms.bugGen ne hakkında olduğunu <br>
+           kısaca açıklayan bir cümledir." },   
 { id => "classification", 
-  html => "$terms.Bugs are categorised into Classifications, Products and Components. classifications is the<br>
-           top-level categorisation." },   
+  html => "$terms.Bugs Sınıflar, Ürün ve Bileşen cinsinden tasnif <br>
+           edilmiştir. Sınıflar, bu tasnifin en üst noktasıdır." },   
 { id => "product", 
   html => Param('useclassification') ?
-       "$terms.Bugs are categorised into Products and Components. Select a Classification to narrow down this list" :
-       "$terms.Bugs are categorised into Products and Components. Product is 
-           the<br>top-level categorisation." },   
+       "$terms.Bugs Ürün ve Bileşen cinsinden tasnif edilmiştir. <br>
+       Bu listeyi küçültmek için bir Sınıf seçin" :
+       "$terms.Bugs Ürün ve Bileşen cinsinden tasnif edilmiştir. <br>
+       Ürünler bu tasnifin en üst noktasıdır." },   
 { id => "component", 
-  html => "Components are second-level categories; each belongs to a<br> 
-           particular Product. Select a Product to narrow down this list." },   
+  html => "Bileşenler ikinci seviye sınıflandırmadır; her biri belirli <br>
+           bir Ürün'e aittir. Bu listeyi küçültmek için bir Ürün seçin." },   
 { id => "version", 
-  html => "The version field defines the version of the software the 
-           $terms.bug<br>was found in." },   
+  html => "Sürüm (version) alanı, $terms.bugGen bulunduğu yazılımın <br>
+           sürümünü belirtir." },   
 { id => "target_milestone", 
-  html => "The target_milestone field is used to define when the engineer<br>
-           the $terms.bug is assigned to expects to fix it." },   
+  html => "Hedef aşama (target_milestone) alanı $terms.bugGen atandığı <br>
+           mühendisin problemi ne zaman düzelteceği yönündeki beklentiyi <br>
+           belirtir." },   
 { id => "long_desc", 
-  html => "$terms.Bugs have comments added to them by $terms.Bugzilla users.  
-           You can<br>search for some text in those comments." },   
+  html => "$terms.BugsGen onlara $terms.Bugzilla kullanıcıları tarafından <br>
+           eklenen yorumları bulunur. Bu yorumlarda metin arayabilirsiniz." },   
 { id => "long_desc_type", 
-  html => "The type of comment search you would like" },   
+  html => "İstediğiniz yorum aramasının türü" },   
 { id => "bug_file_loc", 
-  html => "$terms.Bugs can have a URL associated with them - for example, a 
-           pointer<br>to a web site where the problem is seen." },   
+  html => "$terms.BugsGen onlarla ilişkilendirilmiş bir adresi olabilir; <br>
+           örneğin problemin görüldüğü bir web sitesinin adresi" },   
 { id => "bug_file_loc_type", 
-  html => "The type of URL search you would like" },   
+  html => "İstediğiniz adres aramasının türü" },   
 { id => "status_whiteboard", 
-  html => "Each $terms.bug has a free-form single line text entry box for 
-           adding<br>tags and status information." },   
+  html => "Her $terms.bugLoc takı ve durum bilgisi eklenebilen ve serbestçe <br>
+           kullanılabilen tek satırlık bir metin alanı bulunur." },   
 { id => "status_whiteboard_type", 
-  html => "The type of whiteboard search you would like" },   
+  html => "İstediğiniz durum notları alanı arama yöntemi" },   
 { id => "keywords", 
-  html => "You can add keywords from a defined list to $terms.bugs, in order 
-           to<br>tag and group them." },   
+  html => "$terms.BugsDat, onları gruplara ayırmak ve takılarla sınıflandırmak <br>
+           için önceden tanımlanmış bir listeden anahtarlar ekleyebilirsiniz." },   
 { id => "keywords_type", 
-  html => "The type of keyword search you would like" },   
+  html => "İstediğiniz anahtar aramasının türü" },   
 { id => "bug_status", 
-  html => "$terms.Abug may be in any of a number of states." },
+  html => "$terms.Abug çok sayıda durumda bulunabilir." },
 { id => "resolution", 
-  html => "If $terms.abug is in a resolved state, then one of these reasons
-           will<br>be given for its resolution." },   
+  html => "Eğer $terms.abug karara bağlanmışsa, karar olarak bu nedenlerden <br>
+           birisi verilir." },   
 { id => "bug_severity", 
-  html => "How severe the $terms.bug is, or whether it's an enhancement." },   
+  html => "$terms.BugGen ne kadar ciddi olduğu (ya da bir iyileştirme olup <br>
+           olmadığı)." },   
 { id => "priority", 
-  html => "Engineers prioritize their $terms.bugs using this field." },   
+  html => "Mühendisler üzerlerindeki $terms.bugsAcc bu alanı kullanarak <br>
+           sıralarlar."},   
 { id => "rep_platform", 
-  html => "The hardware platform the $terms.bug was observed on." },   
+  html => "$terms.BugGen hangi donanım platformunda yaşandığı." },   
 { id => "op_sys", 
-  html => "The operating system the $terms.bug was observed on." },   
+  html => "$terms.BugGen yaşandığı işletim sistemi." },   
 { id => "email1", 
-  html => "Every $terms.bug has people associated with it in different 
-           roles.<br>Here, you can search on what people are in what role." },
+  html => "Her $terms.bugLoc onunla çeşitli nedenle ilişkilendirili kişiler <br>
+           olur. Burayı kullanarak, hangi kişinin hangi nedenle ilişkili olduğunu <br>
+           öğrenebilirsiniz." },
 { id => "email2", 
-  html => "Every $terms.bug has people associated with it in different 
-           roles.<br>Here, you can search on what people are in what role." },
+  html => "Her $terms.bugLoc onunla çeşitli nedenle ilişkilendirili kişiler <br>
+           olur. Burayı kullanarak, hangi kişinin hangi nedenle ilişkili olduğunu <br>
+           öğrenebilirsiniz." },
 { id => "bug_id", 
-  html => "You can limit your search to a specific set of $terms.bugs ." },   
+  html => "Aramanızı belirli bir $terms.bug kümesiyle sınırlandırabilirsiniz." },   
 { id => "votes", 
-  html => "Some $terms.bugs can be voted for, and you can limit your search to 
-           $terms.bugs<br>with more than a certain number of votes." },   
+  html => "Bazı $terms.bugs için oy kullanılabilir ve aramanızı belirli sayıdaki <br>
+           oya sahip $terms.bugs ile sınırlandırabilirsiniz." },   
 { id => "chfield", 
-  html => "You can search for specific types of change - this field define <br>
-           which field you are interested in changes for." },   
+  html => "Belirli türde değişiklikler için arama yapabilirsiniz - bu alan hangi <br>
+           alandaki değişikliklerle ilgilendiğinizi belirler." },   
 { id => "chfieldfrom", 
-  html => "Specify the start and end dates either in YYYY-MM-DD format<br>
-           (optionally followed by HH:mm, in 24 hour clock), or in relative<br>
-           dates such as 1h, 2d, 3w, 4m, 5y, which respectively mean one hour,<br>
-           two days, three weeks, four months, or five years ago. 0d is last<br>
-           midnight, and 0h, 0w, 0m, 0y is the beginning of this hour, week,<br>
-           month, or year." },
+  html => "Başlangıç ve bitiş tarihlerini YYYY-AA-GG biçiminde (isterseniz bu <br>
+           değere 24 saatlik biçiminde olmak koşuluyorla SS:DD da ekleyebilirsiniz), <br>
+           ya da bağıl tarih - saat biçiminde girin. Bağıl biçim kullandığınızda <br>
+           sayı+harf biçiminde belirtmelisiniz. Harf olarak, saatler için h, günler <br>
+           için d, haftalar için w, yıllar için y kullanabilirsiniz (Örneğin <br>
+           1h=1 saat, 2d=2 gün, 3w=3 hafta, 4m=4 ay, 5y=5 yıl). 0d son geceyarısını, <br>
+           0h bu saat başını belirtir. Benzer şekilde, 0w bu haftanın başını, 0m bu <br>
+           ayın başını, 0y ise bu yılın başını ifade eder." },
 { id => "chfieldto", 
-  html => "Specify the start and end dates either in YYYY-MM-DD format<br>
-           (optionally followed by HH:mm, in 24 hour clock), or in relative<br>
-           dates such as 1h, 2d, 3w, 4m, 5y, which respectively mean one hour,<br>
-           two days, three weeks, four months, or five years ago. 0d is last<br>
-           midnight, and 0h, 0w, 0m, 0y is the beginning of this hour, week,<br>
-           month, or year." },
+  html => "Başlangıç ve bitiş tarihlerini YYYY-AA-GG biçiminde (isterseniz bu <br>
+           değere 24 saatlik biçiminde olmak koşuluyorla SS:DD da ekleyebilirsiniz), <br>
+           ya da bağıl tarih - saat biçiminde girin. Bağıl biçim kullandığınızda <br>
+           sayı+harf biçiminde belirtmelisiniz. Harf olarak, saatler için h, günler <br>
+           için d, haftalar için w, yıllar için y kullanabilirsiniz (Örneğin <br>
+           1h=1 saat, 2d=2 gün, 3w=3 hafta, 4m=4 ay, 5y=5 yıl). 0d son geceyarısını, <br>
+           0h bu saat başını belirtir. Benzer şekilde, 0w bu haftanın başını, 0m bu <br>
+           ayın başını, 0y ise bu yılın başını ifade eder." },
 { id => "chfieldvalue", 
-  html => "The value the field defined above changed to during that time." },   
+  html => "Belirtilen süre içerisinde yukarıda belirtilen alanının aldığı değer." },   
 ] %]
