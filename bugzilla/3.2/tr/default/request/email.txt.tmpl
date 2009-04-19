@@ -18,28 +18,29 @@
   # Contributor(s):     Myk Melez <myk@mozilla.org>
   #                     Jeff Hedlund <jeff.hedlund@matrixsi.com>
   #                     Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% bugidsummary = bug.bug_id _ ': ' _ bug.short_desc %]
 [% attidsummary = attachment.id _ ': ' _ attachment.description %]
-[% statuses = { '+' => "granted" , '-' => 'denied' , 'X' => "canceled" ,
-                '?' => "asked" } %]
+[% statuses = { '+' => "onayladı" , '-' => 'reddetti' , 'X' => "iptal etti" ,
+                '?' => "istedi" } %]
 
 [% to_identity = "" %]
 [% on_behalf_of = 0 %]
 [% IF flag.status == '?' %]
   [% subject_status = "requested" %]
   [% IF flag.setter.id == user.id %]
-    [% to_identity = flag.requestee.identity _ " for" %]
+    [% to_identity = flag.requestee.identity _ " için" %]
   [% ELSE %]
     [% on_behalf_of = 1 %]
-    [% IF flag.requestee %][% to_identity = " to " _ flag.requestee.identity %][% END %]
+    [% IF flag.requestee %][% to_identity = flag.requestee.identity _ " kullanıcısına " %][% END %]
   [% END %]
 [% ELSE %]
   [% IF flag.requester %]
-    [% to_identity = flag.requester.identity _ "'s request for" %]
+    [% to_identity = flag.requester.identity _ " adresinin isteği " %]
   [% END %]
   [% subject_status = statuses.${flag.status} %]
 [% END %]
@@ -55,10 +56,10 @@ X-Bugzilla-Type: request
 [%- FILTER bullet = wrap(80) -%]
 
 [% IF on_behalf_of %]
-[% user.identity %] has reassigned [% flag.setter.identity %]'s request for [% flag.type.name %]
-[% to_identity %]:
+[% user.identity %] [% flag.setter.identity %] kullanıcısının [% flag.type.name %] isteğini
+[% to_identity %] yeniden atadı:
 [% ELSE %]
-[% user.identity %] has [% statuses.${flag.status} %] [%+ to_identity %] [%+ flag.type.name %]:
+[% user.identity %] [%+ to_identity %] [%+ flag.type.name %] [% statuses.${flag.status} %] :
 [% END %]
 
 [% terms.Bug %] [%+ bugidsummary %]
@@ -67,7 +68,7 @@ X-Bugzilla-Type: request
 [% IF attachment %]
 
 [% FILTER bullet = wrap(80) %]
-Attachment [% attidsummary %]
+Ek [% attidsummary %]
 [%- END %]
 [%+ urlbase %]attachment.cgi?id=[% attachment.id %]&action=edit
 [%- END %]
@@ -75,7 +76,7 @@ Attachment [% attidsummary %]
 
 [% USE Bugzilla %]
 [% IF Bugzilla.cgi.param("comment") && Bugzilla.cgi.param("comment").length > 0 %]
-------- Additional Comments from [% user.identity %]
+------- [% user.identity %] Kullanıcısının Ek Yorumları
 [%+ Bugzilla.cgi.param("comment") %]
 [% END %]
 

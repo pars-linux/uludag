@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
@@ -26,7 +27,7 @@
 [% PROCESS "global/js-products.html.tmpl" %]
 
 [% PROCESS global/header.html.tmpl
-  title="Request Queue"
+  title="İstek Sırası"
   style = "
     table.requests th { text-align: left; }
     table#filtering th { text-align: right; }
@@ -36,10 +37,7 @@
 %]
 
 <p>
-When you are logged in, only requests made by you or addressed to you
-are shown by default.  You can change the criteria using the form below.
-When you are logged out, all pending requests that are not restricted
-to some group are shown by default.
+Oturum açtığınızda, öntanımlı olarak, sadece sizin yaptığınız istekler ve sizden istenenler gösterilir. Aşağıdaki formu kullanarak bu kriteri değiştirebilirsiniz. Oturumunuzu kapattığınızda ise öntanımlı olarak sadece belirli bir gruba kısıtlanmamış olan açık istekler gösterilir.
 </p>
 
 <form action="request.cgi" method="get">
@@ -47,13 +45,13 @@ to some group are shown by default.
 
   <table id="filtering">
     <tr>
-      <th>Requester:</th>
+      <th>İsteyen:</th>
       <td><input type="text" name="requester" value="[% cgi.param('requester') FILTER html %]" size="20" 
-           title="Requester's email address"></td>
-      <th>Product:</th>
+           title="İsteyenin eposta adresi"></td>
+      <th>Ürün:</th>
       <td>
-        <select name="product" onchange="selectProduct(this, this.form.component, null, null, 'Any');">
-          <option value="">Any</option>
+        <select name="product" onchange="selectProduct(this, this.form.component, null, null, 'Herhangi biri');">
+          <option value="">Herhangi biri</option>
           [% FOREACH prod = products %]
             <option value="[% prod.name FILTER html %]"
                     [% "selected" IF cgi.param('product') == prod.name %]>
@@ -61,7 +59,7 @@ to some group are shown by default.
           [% END %]
         </select>
       </td>
-      <th>Flag:</th>
+      <th>Bayrak:</th>
       <td>
         [% PROCESS "global/select-menu.html.tmpl"
                     name="type"
@@ -71,7 +69,7 @@ to some group are shown by default.
 
       [%# We could let people see a "queue" of non-pending requests. %]
       <!--
-      <th>Status:</th>
+      <th>Durum:</th>
       <td>
         [%# PROCESS "global/select-menu.html.tmpl"
                     name="status"
@@ -82,47 +80,47 @@ to some group are shown by default.
 
     </tr>
     <tr>
-      <th>Requestee:</th>
+      <th>İstekte bulunulan:</th>
       <td><input type="text" name="requestee" value="[% cgi.param('requestee') FILTER html %]" size="20" 
-           title="Requestee's email address or &quot;-&quot; (hyphen) for requests with no requestee"></td>
-      <th>Component:</th>
+           title="İstekte bulunulanın eposta adresi veya istekte bulunulan belirli bir kişi olmadığı taktirde &quot;-&quot; (eksi)"></td>
+      <th>Bileşen:</th>
       <td>
         <select name="component">
-          <option value="">Any</option>
+          <option value="">Herhangi biri</option>
           [% FOREACH comp = components %]
             <option value="[% comp FILTER html %]" [% "selected" IF cgi.param('component') == comp %]>
               [% comp FILTER html %]</option>
           [% END %]
         </select>
       </td>
-      <th>Group By:</th>
+      <th>Gruplama:</th>
       <td>
         [% groups = {
-            "Requester" => 'requester' ,
-            "Requestee" => 'requestee',
-            "Flag" => 'type' ,
-            "Product/Component" => 'category'
+            "İsteyen" => 'requester' ,
+            "İstekte Bulunulan" => 'requestee',
+            "Bayrak" => 'type' ,
+            "Ürün/Bileşen" => 'category'
           } %]
         [% PROCESS "global/select-menu.html.tmpl" name="group" options=groups default=cgi.param('group') %]
       </td>
-      <td><input type="submit" id="filter" value="Filter"></td>
+      <td><input type="submit" id="filter" value="Süz"></td>
     </tr>
   </table>
 
 </form>
 
 [% column_headers = {
-      "type"       => "Flag" ,
-      "status"     => "Status" ,
+      "type"       => "Bayrak" ,
+      "status"     => "Durum" ,
       "bug"        => "$terms.Bug" ,
-      "attachment" => "Attachment" ,
-      "requester"  => "Requester" ,
-      "requestee"  => "Requestee" ,
-      "created"    => "Created" ,
-      "category"   => "Product/Component"    } %]
+      "attachment" => "Ek" ,
+      "requester"  => "İsteyen" ,
+      "requestee"  => "İstekte Bulunulan" ,
+      "created"    => "Oluşturulma" ,
+      "category"   => "Ürün/Bileşen"    } %]
 
 [% DEFAULT display_columns = ["requester", "requestee", "type", "bug", "attachment", "created"]
-           group_field     = "Requestee"
+           group_field     = "İsteyen"
            group_value     = ""
 %]
 
@@ -132,7 +130,7 @@ to some group are shown by default.
 
 [% IF requests.size == 0 %]
   <p>
-    No requests.
+    İstek yok.
   </p>
 [% ELSE %]
   [% FOREACH request = requests %]
@@ -157,7 +155,7 @@ to some group are shown by default.
 [% PROCESS global/footer.html.tmpl %]
 
 [% BLOCK start_new_table %]
-  <h3>[% column_headers.$group_field %]: [% (request.$group_field || "None") FILTER html %]</h3>
+  <h3>[% column_headers.$group_field %]: [% (request.$group_field || "Hiçbiri") FILTER html %]</h3>
   <table class="requests" cellspacing="0" cellpadding="4" border="1">
     <tr>
       [% FOREACH column = display_columns %]
@@ -185,7 +183,7 @@ to some group are shown by default.
     <a href="attachment.cgi?id=[% request.attach_id %]&amp;action=edit">
       [% request.attach_id %]: [%+ request.attach_summary FILTER html %]</a>
   [% ELSE %]
-    N/A
+    Uyg.Değil
   [% END %]
 [% END %]
 
