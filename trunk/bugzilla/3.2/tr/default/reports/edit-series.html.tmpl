@@ -16,9 +16,10 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
-[% title = "Edit Series" %]
+[% title = "Seriyi Değiştir" %]
 [% subheader = BLOCK %]
   [% default.category FILTER html %] / 
   [%+ default.subcategory FILTER html %] /
@@ -30,7 +31,7 @@
 [% IF changes_saved %]
   <p>
     <font color="red">
-      Series updated.
+      Seri güncellendi.
     </font>
   </p>
 [% END %]
@@ -38,7 +39,7 @@
 <form method="get" action="chart.cgi" name="chartform">
   
   [% PROCESS reports/series.html.tmpl 
-     button_name = "Change Data Set" %]
+     button_name = "Veri Kümesini Değiştir" %]
   <input type="hidden" name="action" value="alter">
   
   [% IF default.series_id %]
@@ -47,27 +48,26 @@
 </form>
 
 <p>
-  <b>Creator</b>: 
+  <b>Oluşturan</b>: 
   [% IF creator.email %]
     <a href="mailto:[% creator.email FILTER html %]">
     [% creator.email FILTER html %]</a>
   [% ELSE %]
-    (automatically created by [% terms.Bugzilla %])
+    ([% terms.Bugzilla %] tarafından otomatik olarak oluşturuldu)
   [% END %]
 </p>
 
-<p>Note: it is not yet possible to edit the search associated with this data
+<p>Not: henüz bu veri kümesiyle ilişkilendirilmiş aramayı değiştirmek mümkün değil.
 set.
 </p>
 
 <p>
-  <a href="query.cgi?[% default.query FILTER html %]">View 
-    series search parameters</a> |
+  <a href="query.cgi?[% default.query FILTER html %]">Seri arama parametrelerini göster</a> |
   <a href="buglist.cgi?cmdtype=dorem&amp;namedcmd=
     [% default.category FILTER url_quote %]-
     [% default.subcategory FILTER url_quote %]-
     [% default.name FILTER url_quote %]&amp;remaction=runseries&amp;series_id=
-    [% default.series_id %]">Run series search</a>
+    [% default.series_id %]">Seri aramasını çalıştır</a>
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

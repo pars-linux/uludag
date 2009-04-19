@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -49,16 +50,16 @@
   <table border>
     <thead>
       <tr bgcolor="#CCCCCC">
-        [% FOREACH column = [ { name => "id", description => "$terms.Bug #" },
-                              { name => "count", description => "Dupe<br>Count" },
+        [% FOREACH column = [ { name => "id", description => "$terms.Bug No" },
+                              { name => "count", description => "Aynı Olanların<br>Sayısı" },
                               { name => "delta",
-                                description => "Change in last<br>$changedsince day(s)" },
-                              { name => "component", description => "Component" },
-                              { name => "bug_severity", description => "Severity" },
-                              { name => "op_sys", description => "Op Sys" },
+                                description => "Son <br>$changedsince gündeki değişiklik" },
+                              { name => "component", description => "Bileşen" },
+                              { name => "bug_severity", description => "Önem" },
+                              { name => "op_sys", description => "İşl.Sis." },
                               { name => "target_milestone",
-                                description => "Target<br>Milestone" },
-                              { name => "short_desc", description => "Summary" } ]
+                                description => "Hedef<br>Aşama" },
+                              { name => "short_desc", description => "Özet" } ]
          %]
 
           [%# Small hack to keep delta column out if we don't need it %]
@@ -141,5 +142,5 @@
     </tbody>
   </table>
 [% ELSE %]
-  <h3>No duplicate [% terms.bugs %] found.</h3>
+  <h3>Aynısı olan [% terms.bug %] yok.</h3>
 [% END %]

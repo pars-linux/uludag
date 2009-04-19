@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -27,17 +28,17 @@
   #%]
 
 [% PROCESS "reports/series-common.html.tmpl"
-   newtext = "New (name below)" 
+   newtext = "Yeni (ismi aşağıda)" 
  %]
   
 <table cellpadding="2" cellspacing="2" border="0"
        style="text-align: left; margin-left: 20px">
   <tbody>
     <tr>
-      <th>Category:</th>
+      <th>Kategori:</th>
       <th></th>
-      <th>Sub-category:</th>
-      <th>Name:</th>
+      <th>Alt kategori:</th>
+      <th>İsim:</th>
       <td></td>
     </tr>
     <tr>
@@ -46,7 +47,7 @@
                                        onchange => "catSelected()" } %]
         <td>
           <noscript>
-            <input type="submit" name="action-edit" value="Update --&gt;"
+            <input type="submit" name="action-edit" value="Güncelle --&gt;"
                    id="action-edit">
           </noscript>
         </td>
@@ -61,17 +62,17 @@
       </td>
 
       <td valign="top">
-        <span style="font-weight: bold;">Run every</span> &nbsp;
+        <span style="font-weight: bold;">Her</span> &nbsp;
         <input type="text" size="2" name="frequency"
                value="[% (default.frequency.0 OR 7) FILTER html %]">
-        <span style="font-weight: bold;">&nbsp;day(s)</span><br>
+        <span style="font-weight: bold;">&nbsp;günde bir çalıştır</span><br>
         [%# Change 'admin' here and in Series.pm, or remove the check
             completely, if you want to change who can make series public. %]
         [% IF user.in_group('admin') %]      
           <input type="checkbox" name="public"
                  [%+ "checked='checked'" IF default.public.0 %]>
-          <span style="font-weight: bold;">Visible to all<br>
-          (within group restrictions)</span> 
+          <span style="font-weight: bold;">Herkese görünür durumda<br>
+          (grup kısıtlamaları dahilinde)</span> 
         [% END %]
       </td>
     </tr>
