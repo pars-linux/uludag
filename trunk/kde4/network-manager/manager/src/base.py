@@ -197,7 +197,6 @@ class MainManager(QtGui.QWidget):
         # Set visibility of indicators
         self.ui.workingLabel.hide()
         self.ui.refreshButton.hide()
-
         # All profiles
         if filter == "all":
             setHidden()
@@ -247,7 +246,7 @@ class MainManager(QtGui.QWidget):
                 item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
                 item.setSizeHint(QSize(48,48))
                 self.widgets[connection] = ConnectionItemWidget(package, connection, info, self, item)
-                self.widgets[connection].update(state)
+                self.widgets[connection].updateData(state)
                 self.ui.profileList.setItemWidget(item, self.widgets[connection])
                 del item
 
@@ -523,6 +522,6 @@ class MainManager(QtGui.QWidget):
         args = map(lambda x: unicode(x), list(args))
         if signal == "stateChanged":
             if self.widgets.has_key(args[0]):
-                self.widgets[args[0]].update(args)
+                self.widgets[args[0]].updateData(args)
         print "Comar call : ", args, signal, package
 

@@ -128,7 +128,7 @@ class ConnectionItemWidget(QtGui.QWidget):
     def mouseDoubleClickEvent(self, event):
         self.ui.buttonEdit.animateClick(100)
 
-    def update(self, data):
+    def updateData(self, data):
         if type(data) == list:
             name, state, detail = data
         elif type(data) == str:
