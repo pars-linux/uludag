@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
   
 [%# INTERFACE:
@@ -26,7 +27,7 @@
 %]
 
 [% PROCESS global/header.html.tmpl 
-  title = "Chart"
+  title = "Çizelge"
   header_addl_info = time2str("%Y-%m-%d %H:%M:%S", time)
 %]
 
@@ -44,20 +45,19 @@
       [% imagebase FILTER html %]&amp;action=wrap
     [% END %]
     <a href="[% sizeurl %]&amp;width=[% width %]&amp;height=
-             [% height + 100 %]">Taller</a><br>
+             [% height + 100 %]">Daha uzun</a><br>
     <a href="[% sizeurl %]&amp;width=[% width - 100 %]&amp;height=
-             [% height %]">Thinner</a> * 
+             [% height %]">Daha ince</a> * 
     <a href="[% sizeurl %]&amp;width=[% width + 100 %]&amp;height=
-             [% height %]">Fatter</a>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+             [% height %]">Daha kalın</a>&nbsp;&nbsp;&nbsp;&nbsp;<br>
     <a href="[% sizeurl %]&amp;width=[% width %]&amp;height=
-             [% height - 100 %]">Shorter</a><br>
+             [% height - 100 %]">Daha kısa</a><br>
   </p>
   
   <p>
     <a href="chart.cgi?
       [% imagebase FILTER html %]&amp;ctype=csv&amp;action=plot">CSV</a> |
-    <a href="chart.cgi?[% imagebase FILTER html %]&amp;action=assemble">Edit 
-    this chart</a>
+    <a href="chart.cgi?[% imagebase FILTER html %]&amp;action=assemble">Bu çizelgeyi değiştir</a>
   </p>
  
 </div>
