@@ -39,11 +39,12 @@ class __PartitionType(PartitionType):
         # check cmdline for reiserfs support
         cmdline = open("/proc/cmdline", "r").read()
         if cmdline.find("enable_reiserfs") >= 0:
-            self.filesystem = yali4.filesystem.ReiserFileSystem()
+            self.filesystem = yali4.filesystem.get_filesystem("reiserfs")
         elif cmdline.find("enable_xfs") >= 0:
-            self.filesystem = yali4.filesystem.XFSFileSystem()
+            self.filesystem = yali4.filesystem.get_filesystem("xfs")
         else:
-            self.filesystem = yali4.filesystem.Ext3FileSystem()
+            # In Pardus 2009 ext4 will be default fs
+            self.filesystem = yali4.filesystem.get_filesystem("ext4")
 
 class RootPartitionType(__PartitionType):
     name = _("Install Root")
@@ -63,7 +64,7 @@ class HomePartitionType(__PartitionType):
 
 class SwapPartitionType(PartitionType):
     name = _("Swap")
-    filesystem = yali4.filesystem.SwapFileSystem()
+    filesystem = yali4.filesystem.get_filesystem("swap")
     mountpoint = None
     mountoptions = "sw"
     parted_type = parted.PARTITION_PRIMARY
@@ -72,7 +73,6 @@ class SwapPartitionType(PartitionType):
 
 class ArchivePartitionType(PartitionType):
     name = _("Archive Partition")
-    filesystem = yali4.filesystem.Ext3FileSystem()
     mountpoint = "/mnt/archive"
     mountoptions = "noatime"
     needsmtab = False
@@ -81,9 +81,10 @@ class ArchivePartitionType(PartitionType):
     label = "ARCHIVE"
 
     def setFileSystem(self, filesystem):
-        supportedFS = {"fat32":yali4.filesystem.FatFileSystem(),
-                       "ext3" :yali4.filesystem.Ext3FileSystem(),
-                       "ntfs" :yali4.filesystem.NTFSFileSystem()}
+        supportedFS = {"fat32":yali4.filesystem.get_filesystem("fat32"),
+                       "ext4" :yali4.filesystem.get_filesystem("ext4"),
+                       "ext3" :yali4.filesystem.get_filesystem("ext3"),
+                       "ntfs" :yali4.filesystem.get_filesystem("ntfs")}
         if supportedFS.has_key(filesystem):
             self.filesystem = supportedFS[filesystem]
 

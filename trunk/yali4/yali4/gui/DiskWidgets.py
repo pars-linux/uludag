@@ -179,7 +179,7 @@ class DiskList(QtGui.QWidget):
 
         if cur == self.useTypes["home"]:
             # if selected partition has different fs for userspace, forceToFormat
-            if not self.partEdit.currentPart.getFSName() in ["ext3","reiserfs","xfs"]:
+            if not self.partEdit.currentPart.getFSName() in ["ext4","ext3","reiserfs","xfs"]:
                 forceToFormat()
 
         if cur == self.useTypes["swap"]:
@@ -290,7 +290,7 @@ class DiskList(QtGui.QWidget):
 
         t = partitionTypes[self.partEdit.ui.formatType.currentIndex()]
         if t == parttype.archive:
-            _fsorder = ["ext3","ntfs","fat32"]
+            _fsorder = ["ext4","ext3","ntfs","fat32"]
             t.setFileSystem(_fsorder[self.partEdit.ui.fileSystemBox.currentIndex()])
 
         if not t:
@@ -468,6 +468,9 @@ class DiskItem(QtGui.QWidget):
                          "fat16":{"bgcolor":"#00FF00",
                                   "fgcolor":"#000000",
                                   "icon"   :"windows"},
+                         "ext4" :{"bgcolor":"#7590AE",
+                                  "fgcolor":"#FFFFFF",
+                                  "icon"   :"linux"},
                          "ext3" :{"bgcolor":"#7590AE",
                                   "fgcolor":"#FFFFFF",
                                   "icon"   :"linux"},
