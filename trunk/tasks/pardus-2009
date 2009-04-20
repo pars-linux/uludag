@@ -16,7 +16,7 @@
   * blacklistteki paketlerin kurulumunu reverse depleri zorlayamasın, reverse depler de uyarı ile kurulmasın (-)
   * pyc, la, pod, pyo otomatik paket alınmasın, NoStrip benzeri bir yontem ile opsiyonel olsun (+)
   * error ve warning sayıları build sonunda gösterilsin (+)
-  * Or desteği - AnyDependency (-)
+  * Or desteği - AnyDependency (/75)
   * Distribution no upgrade'de build no dan öncelikli olsun (-)
 
 * Paket Yöneticisi (Faik Uygur)
