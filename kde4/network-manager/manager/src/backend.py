@@ -84,14 +84,15 @@ class NetworkIface:
 
     def updateConnection(self, package, profile, data):
         self.link.Net.Link[package].setConnection(profile,  data["device_id"],  async=self.handler)
-        self.link.Net.Link[package].setAddress(profile,     data["net_mode"],
-                                                            data["net_address"],
-                                                            data["net_mask"],
-                                                            data["net_gateway"],async=self.handler)
-        self.link.Net.Link[package].setNameService(profile, data["namemode"],
-                                                            data["nameserver"], async=self.handler)
+        if package in ('net_tools', 'wireless_tools'):
+            self.link.Net.Link[package].setAddress(profile,     data["net_mode"],
+                                                                data["net_address"],
+                                                                data["net_mask"],
+                                                                data["net_gateway"],async=self.handler)
+            self.link.Net.Link[package].setNameService(profile, data["namemode"],
+                                                                data["nameserver"], async=self.handler)
 
-        if package == 'wireless_tools':
+        if package in ('ppp', 'wireless_tools'):
             self.link.Net.Link[package].setRemote(profile,  data["remote"],
                                                             data["apmac"])
 

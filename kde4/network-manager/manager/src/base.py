@@ -36,7 +36,7 @@ ANIMATION_TIME = 200
 DEFAULT_HEIGHT = 16777215
 
 # Comar Definitions
-NETPACKAGES    = {'wireless_tools':i18n("Wireless"),'net_tools':i18n("Ethernet")}
+NETPACKAGES    = {'wireless_tools':i18n("Wireless"),'net_tools':i18n("Ethernet"),'ppp':i18n("Modem")}
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True, app=None):
@@ -64,25 +64,37 @@ class MainManager(QtGui.QWidget):
         self.iface = NetworkIface()
         self.widgets = {}
 
-
         # Let look what we can do
         supportedPackages = []
-        menu = QtGui.QMenu(self)
+        menu    = QtGui.QMenu(self)
         for package in NETPACKAGES.keys():
             devices = self.iface.devices(package)
             if len(devices) > 0:
                 # Create profile menu with current devices
                 for device in devices.keys():
-                    menuItem = QtGui.QAction("%s - %s" % (NETPACKAGES[package], findInterface(device).name), self)
-                    menuItem.setData(QVariant("%s::%s" % (package,device)))
-                    self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
-                    menu.addAction(menuItem)
+                    if not package == 'ppp':
+                        menuItem = QtGui.QAction("%s - %s" % (NETPACKAGES[package], findInterface(device).name), self)
+                        menuItem.setData(QVariant("%s::%s" % (package,device)))
+                        self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
+                        menu.addAction(menuItem)
                 menu.addSeparator()
                 supportedPackages.append(package)
+
+        if 'ppp' in NETPACKAGES.keys():
+            pppMenu = QtGui.QMenu(NETPACKAGES['ppp'], self)
+            devices = self.iface.devices('ppp')
+            for device in devices.keys():
+                menuItem = QtGui.QAction(device, self)
+                menuItem.setData(QVariant("%s::%s" % ('ppp',device)))
+                self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
+                pppMenu.addAction(menuItem)
+            menu.addMenu(pppMenu)
 
         # Add package specific menu entiries
         if "net_tools" in supportedPackages:
             self.ui.filterBox.addItem(i18n("Ethernet Profiles"), QVariant("net_tools"))
+        if "ppp" in supportedPackages:
+            self.ui.filterBox.addItem(i18n("Modem Profiles"), QVariant("ppp"))
         if "wireless_tools" in supportedPackages:
             self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
             authMods = self.iface.capabilities('wireless_tools')['auth_modes'].split(';')
@@ -276,12 +288,25 @@ class MainManager(QtGui.QWidget):
         sender = self.sender().parent()
         self.lastAnimation = SHOW
         self.hideScrollBars()
+
+        # Hide all settings first
+        self.ui.groupModemSettings.hide()
+        self.ui.groupRemote.hide()
+        self.ui.groupNetwork.hide()
+        self.ui.groupNameServer.hide()
+
         if profile:
             self.buildEditBoxFor(sender.package, sender.profile)
-        if package == "net_tools":
-            self.ui.groupRemote.hide()
-        else:
+
+        # Then show them by giving package
+        if package in ("net_tools","wireless_tools"):
+            self.ui.groupNetwork.show()
+            self.ui.groupNameServer.show()
+        if package == "wireless_tools":
             self.ui.groupRemote.show()
+        if package == "ppp":
+            self.ui.groupModemSettings.show()
+
         self.animator.setFrameRange(TARGET_HEIGHT, self.baseWidget.height() - TARGET_HEIGHT)
         self.animator.start()
 
@@ -292,6 +317,7 @@ class MainManager(QtGui.QWidget):
     def fillDeviceList(self, package):
         ui = self.ui
         devices = self.iface.devices(package)
+        # print devices
         for device in devices:
             ui.deviceList.addItem(device)
         if len(devices) == 1:
@@ -311,8 +337,20 @@ class MainManager(QtGui.QWidget):
 
         ui.lineConnectionName.setText(data["name"])
         ui.labelDeviceDescription.setText(data["device_name"])
+        ui.deviceList.setCurrentIndex(ui.deviceList.findText(data["device_id"]))
 
-        if data.has_key("remote"):
+        if data.has_key("remote") and package == "ppp":
+            ui.linePhoneNumber.setText(data["remote"])
+            authInfo = self.iface.authInfo(package, profile)
+            authType = authInfo[0]
+            authUser = authInfo[1]
+            authPass = authInfo[2]
+            if not authType == 'none':
+                ui.lineUserName.setText(authUser)
+                ui.linePassword.setText(authPass)
+                ui.needsAuth.setChecked(True)
+
+        if data.has_key("remote") and package == "wireless_tools":
             ui.lineEssid.setText(data["remote"])
             authInfo = self.iface.authInfo(package, profile)
             authType = authInfo[0]
@@ -320,14 +358,15 @@ class MainManager(QtGui.QWidget):
             ui.lineKey.setText(authPass)
             ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(authType)))
 
-        if data["net_mode"] == "auto":
-            ui.useDHCP.setChecked(True)
-            if data.has_key("net_address"):
-                ui.useCustomAddress.setChecked(True)
-            if data.has_key("net_gateway"):
-                ui.useCustomDNS.setChecked(True)
-        else:
-            ui.useManual.setChecked(True)
+        if data.has_key("net_mode"):
+            if data["net_mode"] == "auto":
+                ui.useDHCP.setChecked(True)
+                if data.has_key("net_address"):
+                    ui.useCustomAddress.setChecked(True)
+                if data.has_key("net_gateway"):
+                    ui.useCustomDNS.setChecked(True)
+            else:
+                ui.useManual.setChecked(True)
 
         if data.has_key("net_address"):
             ui.lineAddress.setText(data["net_address"])
@@ -336,13 +375,14 @@ class MainManager(QtGui.QWidget):
         if data.has_key("net_gateway"):
             ui.lineGateway.setText(data["net_gateway"])
 
-        if data["namemode"] == "default":
-            ui.useDefault.setChecked(True)
-        if data["namemode"] == "auto":
-            ui.useAutomatic.setChecked(True)
-        if data["namemode"] == "custom":
-            ui.useCustom.setChecked(True)
-            ui.lineCustomDNS.setText(data["nameserver"])
+        if data.has_key("namemode"):
+            if data["namemode"] == "default":
+                ui.useDefault.setChecked(True)
+            if data["namemode"] == "auto":
+                ui.useAutomatic.setChecked(True)
+            if data["namemode"] == "custom":
+                ui.useCustom.setChecked(True)
+                ui.lineCustomDNS.setText(data["nameserver"])
 
     def resetForm(self):
         ui = self.ui
@@ -363,6 +403,10 @@ class MainManager(QtGui.QWidget):
         ui.lineCustomDNS.setText("")
         ui.lineKey.setText("")
         ui.comboSecurityTypes.setCurrentIndex(0)
+        ui.linePassword.setText("")
+        ui.lineUserName.setText("")
+        ui.linePhoneNumber.setText("")
+        ui.needsAuth.setChecked(False)
         self.lastEditedData = None
         self.lastEditedPackage = None
 
@@ -418,7 +462,8 @@ class MainManager(QtGui.QWidget):
             data["nameserver"] = ui.lineCustomDNS.text()
 
         # Remote and security options
-        if ui.groupRemote.isVisible():
+        if ui.groupRemote.isVisible() or ui.groupModemSettings.isVisible():
+
             # Remote
             data["remote"] = ui.lineEssid.text()
             data["apmac"]  = ""
@@ -435,6 +480,14 @@ class MainManager(QtGui.QWidget):
             data["authprivate_key"] = ""
             data["authprivate_key_password"] = ""
 
+        # Modem Settings
+        if ui.groupModemSettings.isVisible():
+            data["remote"] = ui.linePhoneNumber.text()
+            # FIXME, use comar to set known auth methods
+            data["authmode"] = "login"
+            data["authuser"] = ui.lineUserName.text()
+            data["authpass"] = ui.linePassword.text()
+
         # Let them unicode
         for i,j in data.items():
             data[i] = unicode(j)
@@ -443,6 +496,7 @@ class MainManager(QtGui.QWidget):
 
     def createConnection(self):
         package, device = str(self.sender().data().toString()).split('::')
+        # print package, device
         self.resetForm()
         self.lastEditedPackage = package
         self.fillDeviceList(package)
