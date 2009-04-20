@@ -130,7 +130,11 @@ class ConnectionItemWidget(QtGui.QWidget):
 
     def updateData(self, data):
         if type(data) == list:
-            name, state, detail = data
+            if len(data) == 2:
+                name, state = data
+                detail = ''
+            elif len(data) == 3:
+                name, state, detail = data
         elif type(data) == str:
             splitted = data.split(' ',1)
             state = splitted[0]

@@ -18,7 +18,7 @@ import sys
 from PyQt4.QtCore import SIGNAL
 
 # PyKDE4 Stuff
-from PyKDE4.kdeui import KApplication
+from PyKDE4.kdeui import KUniqueApplication
 from PyKDE4.kdecore import KCmdLineArgs
 
 def CreatePlugin(widget_parent, parent, component_data):
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     KCmdLineArgs.init(sys.argv, aboutData)
 
     # Create a Kapplitcation instance
-    app = KApplication()
+    app = KUniqueApplication()
 
     # DBUS MainLoop
     DBusQtMainLoop(set_as_default = True)

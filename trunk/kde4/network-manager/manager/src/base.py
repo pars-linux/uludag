@@ -413,6 +413,7 @@ class MainManager(QtGui.QWidget):
         ui = self.ui
         needsListUpdate = False
         connectionName  = unicode(ui.lineConnectionName.text())
+
         # Updating a profile
         if self.lastEditedData:
             # If profile name has been changed, delete profile first
@@ -423,7 +424,7 @@ class MainManager(QtGui.QWidget):
         if self.lastEditedData:
             if self.lastEditedData.has_key("state"):
                 if self.lastEditedData["state"].startswith("up"):
-                    self.iface.reconnect(self.lastEditedPackage, connectionName)
+                    self.iface.connect(self.lastEditedPackage, connectionName)
         else:
             needsListUpdate = True
         if needsListUpdate:
