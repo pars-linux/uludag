@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Bradley Baetz <bbaetz@student.usyd.edu.au>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -23,7 +24,7 @@
   #%]
 
 [% title = BLOCK %]
-  Components for [% product.name FILTER html %]
+  [% product.name FILTER html %] Ürünü Bileşenleri
 [% END %]
 
 [% PROCESS global/header.html.tmpl title = title %]
@@ -40,10 +41,10 @@
 
 <table>
   <tr>
-    <th align="left">Component</th>
-    <th align="left">Default Assignee</th>
+    <th align="left">Bileşen</th>
+    <th align="left">Öntanımlı Atanan</th>
     [% IF Param("useqacontact") %]
-      <th align="left">Default QA Contact</th>
+      <th align="left">Öntanımlı Kal.Kont. Kişisi</th>
     [% END %]
   </tr>
 

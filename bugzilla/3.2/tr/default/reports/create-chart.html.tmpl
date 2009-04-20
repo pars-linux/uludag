@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -26,7 +27,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl 
-  title = "Create Chart"
+  title = "Çizelge Oluştur"
 %]
 
 [% PROCESS "reports/series-common.html.tmpl" 
@@ -64,16 +65,16 @@ function subcatSelected() {
     [% IF NOT category OR category.size == 0 %]
       <tr>
         <td>
-          <i>No data sets exist, or none are visible to you.</i>
+          <i>Veri kümesi yok ya da olanlar sizin tarafınızdan görüntülenebilir ayarlanmamış.</i>
         </td>
       </tr>
     [% ELSE %]
       <tr>
-        <th><label for="category">Category</label>:</th>
+        <th><label for="category">Kategori</label>:</th>
         <th></th>
-        <th><label for="subcategory">Sub-category</label>:</th>
+        <th><label for="subcategory">Alt kategori</label>:</th>
         <th></th>
-        <th><label for="name" accesskey="N">Name</label>:</th>
+        <th><label for="name" accesskey="N">İsim</label>:</th>
         <th><br>
         </th>
       </tr>
@@ -86,7 +87,7 @@ function subcatSelected() {
                                    
         <td>
           <noscript>
-            <input type="submit" name="action-assemble" value="Update --&gt;"
+            <input type="submit" name="action-assemble" value="Güncelle --&gt;"
                    id="action-assemble">
           </noscript>
         </td>
@@ -97,7 +98,7 @@ function subcatSelected() {
                                    
         <td>
           <noscript>
-            <input type="submit" name="action-assemble" value="Update --&gt;"
+            <input type="submit" name="action-assemble" value="Güncelle --&gt;"
                    id="action-assemble">
           </noscript>
         </td>
@@ -117,7 +118,7 @@ function subcatSelected() {
         </td>
 
         <td align="center" valign="middle"> 
-          <input type="submit" name="action-add" value="Add To List"
+          <input type="submit" name="action-add" value="Listeye Ekle"
                  id="action-add"><br>
         </td>
       </tr>
@@ -132,15 +133,15 @@ function subcatSelected() {
     subcatSelected();
   </script>
 
-  <h3>List Of Data Sets To Plot</h3>
+  <h3>Çizilecek Veri Kümelerinin Listesi</h3>
 
   [% IF chart.lines.size > 0 %]
     <table cellspacing="2" cellpadding="2">
       <tr>
-        <th style="width: 5em;">Select</th>
-        <th>Label</th>
+        <th style="width: 5em;">Seç</th>
+        <th>Etiket</th>
         <th></th>
-        <th>Data Set</th>
+        <th>Veri Kümesi</th>
         <th></th>
       </tr>
       
@@ -189,13 +190,13 @@ function subcatSelected() {
             <td align="center">
               [% IF user.id == series.creator OR user.in_group("admin") %]
                <a href="chart.cgi?action=edit&amp;series_id=
-                       [% series.series_id %]">Edit</a> |
+                       [% series.series_id %]">Değiştir</a> |
               [% END %]
               <a href="buglist.cgi?cmdtype=dorem&amp;namedcmd=
                 [% series.category FILTER url_quote %]%20/%20
                 [% series.subcategory FILTER url_quote %]%20/%20
                 [% series.name FILTER url_quote -%]&amp;series_id=
-                [% series.series_id %]&amp;remaction=runseries">Run Search</a>
+                [% series.series_id %]&amp;remaction=runseries">Aramayı Çalıştır</a>
             </td>        
           </tr>
         [% END %]
@@ -226,41 +227,41 @@ function subcatSelected() {
 
       <tr>
         <td valign="bottom" style="text-align: center;">
-          <input type="submit" name="action-sum" value="Sum" 
+          <input type="submit" name="action-sum" value="Topla" 
                  style="width: 5em;" id="action-sum"><br>
-          <input type="submit" name="action-remove" value="Remove"
+          <input type="submit" name="action-remove" value="Çıkar"
                  style="width: 5em;" id="action-remove">
         </td>
 
         <td style="text-align: right; vertical-align: bottom;">
-          <label for="cumulate"><b>Cumulate</b></label>:
+          <label for="cumulate"><b>Birleştir</b></label>:
           <input type="checkbox" name="cumulate" id="cumulate" value="1"
           [% " checked" IF chart.cumulate %]>
         </td>
 
         <td></td>
         <td valign="bottom">
-          <label for="datefrom"><b>Date Range</b></label>:
+          <label for="datefrom"><b>Tarih Aralığı</b></label>:
           <input type="text" size="12" name="datefrom" id="datefrom"
             value="[% time2str("%Y-%m-%d", chart.datefrom) IF chart.datefrom%]">
-          <label for="dateto"><b>to</b></label>
+          <label for="dateto"><b>-</b></label>
           <input type="text" size="12" name="dateto" id="dateto"
             value="[% time2str("%Y-%m-%d", chart.dateto) IF chart.dateto %]">
         </td>
 
         <td style="text-align: right" valign="bottom">
-          <input type="submit" name="action-wrap" value="Chart This List"
+          <input type="submit" name="action-wrap" value="Bu Listeyi Çizelge Haline Gelir"
                  id="action-wrap">
         </td>
       </tr>
     </table>
   [% ELSE %]
-  <p><i>None</i></p>
+  <p><i>Yok</i></p>
   [% END %]  
 </form>
 
 [% IF user.in_group('editbugs') %]
-  <h3><a href="query.cgi?format=create-series">Create New Data Set</a></h3>
+  <h3><a href="query.cgi?format=create-series">Yeni Veri Kümesi Oluştur</a></h3>
 [% END %]                 
 
 [% PROCESS global/footer.html.tmpl %]
