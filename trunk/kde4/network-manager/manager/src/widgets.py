@@ -26,7 +26,8 @@ from uiwifiitem import Ui_WifiItemWidget
 import time
 
 iconForPackage = {"net_tools":"network-wired",
-                  "wireless_tools":"network-wireless"}
+                  "wireless_tools":"network-wireless",
+                  "ppp":"modem"}
 
 class WifiItemWidget(QtGui.QWidget):
 
