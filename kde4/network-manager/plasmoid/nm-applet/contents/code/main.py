@@ -149,7 +149,7 @@ class NmApplet(plasmascript.Applet):
 
     def openNM(self):
         self.dialog.hide()
-        os.system('network-manager')
+        os.popen('network-manager')
 
     def handler(self, package, signal, args):
         args = map(lambda x: str(x), list(args))
