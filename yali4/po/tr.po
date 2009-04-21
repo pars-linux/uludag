@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-28 13:58+0200\n"
+"POT-Creation-Date: 2009-04-21 08:49+0300\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -715,7 +715,7 @@ msgid "as Storage Area"
 msgstr "Genel veri saklama için"
 
 #: yali4/gui/DiskWidgets.py:93
-msgid "Manuel Partitioning selected."
+msgid "Manual Partitioning selected."
 msgstr "Elle Bölümlendirme seçildi."
 
 #: yali4/gui/DiskWidgets.py:169
@@ -1139,7 +1139,7 @@ msgstr ""
 "</b>\n"
 
 #: yali4/gui/ScrGoodbye.py:120 yali4/gui/ScrSummary.py:73
-#: yali4/installer.py:652
+#: yali4/installer.py:655
 msgid "Reboot"
 msgstr "Sistemi Yeniden Başlat!"
 
@@ -1763,47 +1763,47 @@ msgstr "Yeniden boyutlandırma bitti ..."
 msgid "Creating new partition ..."
 msgstr "Yeni disk bölümü yaratılıyor ..."
 
-#: yali4/installer.py:481
+#: yali4/installer.py:482
 msgid "Trying to connect DBUS..."
 msgstr "DBUS'a bağlanmaya çalışıyor..."
 
-#: yali4/installer.py:483
+#: yali4/installer.py:484
 msgid "Setting Hostname..."
 msgstr "Makine adı ayarlanıyor..."
 
-#: yali4/installer.py:484
+#: yali4/installer.py:485
 msgid "Setting TimeZone..."
 msgstr "Zaman dilimi ayarlanıyor..."
 
-#: yali4/installer.py:485
+#: yali4/installer.py:486
 msgid "Setting Root Password..."
 msgstr "Root parolası ayarlanıyor..."
 
-#: yali4/installer.py:486
+#: yali4/installer.py:487
 msgid "Adding Users..."
 msgstr "Kullanıcılar ekleniyor..."
 
-#: yali4/installer.py:487
+#: yali4/installer.py:488
 msgid "Writing Console Data..."
 msgstr "Konsol bilgisi yazılıyor..."
 
-#: yali4/installer.py:488
+#: yali4/installer.py:489
 msgid "Migrating X.org Configuration..."
 msgstr "X.org yapılandırması aktarılıyor..."
 
-#: yali4/installer.py:490
+#: yali4/installer.py:491
 msgid "Copy Pisi index..."
 msgstr "Pisi index kopyalanıyor..."
 
-#: yali4/installer.py:491
+#: yali4/installer.py:492
 msgid "Setting misc. package configurations..."
 msgstr "Diğer paket yapılandırmaları gerçekleştiriliyor..."
 
-#: yali4/installer.py:492
+#: yali4/installer.py:493
 msgid "Installing BootLoader..."
 msgstr "Açılış yöneticisi yükleniyor..."
 
-#: yali4/installer.py:629
+#: yali4/installer.py:632
 msgid "Retry"
 msgstr ""
 

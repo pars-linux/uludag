@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-28 13:58+0200\n"
+"POT-Creation-Date: 2009-04-21 08:49+0300\n"
 "PO-Revision-Date: 2009-01-14 18:39+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
@@ -724,7 +724,8 @@ msgid "as Storage Area"
 msgstr "als opslagruimte"
 
 #: yali4/gui/DiskWidgets.py:93
-msgid "Manuel Partitioning selected."
+#, fuzzy
+msgid "Manual Partitioning selected."
 msgstr "Handmatig partitioneren geselecteerd."
 
 #: yali4/gui/DiskWidgets.py:169
@@ -1164,7 +1165,7 @@ msgstr ""
 "</b>\n"
 
 #: yali4/gui/ScrGoodbye.py:120 yali4/gui/ScrSummary.py:73
-#: yali4/installer.py:652
+#: yali4/installer.py:655
 msgid "Reboot"
 msgstr "Herstart"
 
@@ -1813,47 +1814,47 @@ msgstr "Grootte aanpassen beëindigd ..."
 msgid "Creating new partition ..."
 msgstr "Maak nieuwe partitie ..."
 
-#: yali4/installer.py:481
+#: yali4/installer.py:482
 msgid "Trying to connect DBUS..."
 msgstr "Proberen te verbinden met DBUS..."
 
-#: yali4/installer.py:483
+#: yali4/installer.py:484
 msgid "Setting Hostname..."
 msgstr "Instellen hostnaam.."
 
-#: yali4/installer.py:484
+#: yali4/installer.py:485
 msgid "Setting TimeZone..."
 msgstr "Instellen tijdszone..."
 
-#: yali4/installer.py:485
+#: yali4/installer.py:486
 msgid "Setting Root Password..."
 msgstr "Instellen root wachtwoord..."
 
-#: yali4/installer.py:486
+#: yali4/installer.py:487
 msgid "Adding Users..."
 msgstr "Toevoegen gebruikers..."
 
-#: yali4/installer.py:487
+#: yali4/installer.py:488
 msgid "Writing Console Data..."
 msgstr "Schrijven console gegevens..."
 
-#: yali4/installer.py:488
+#: yali4/installer.py:489
 msgid "Migrating X.org Configuration..."
 msgstr "Migreren X.org configuratie..."
 
-#: yali4/installer.py:490
+#: yali4/installer.py:491
 msgid "Copy Pisi index..."
 msgstr "Kopiëer Pisi index..."
 
-#: yali4/installer.py:491
+#: yali4/installer.py:492
 msgid "Setting misc. package configurations..."
 msgstr "Instellen misc. pakketconfiguraties..."
 
-#: yali4/installer.py:492
+#: yali4/installer.py:493
 msgid "Installing BootLoader..."
 msgstr "Installeren bootlader..."
 
-#: yali4/installer.py:629
+#: yali4/installer.py:632
 msgid "Retry"
 msgstr "Probeer opnieuw"
 

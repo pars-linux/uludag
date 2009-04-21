@@ -90,7 +90,7 @@ class DiskList(QtGui.QWidget):
 
         # Summary
         ctx.partSum = []
-        ctx.partSum.append(_("Manuel Partitioning selected."))
+        ctx.partSum.append(_("Manual Partitioning selected."))
 
         # Connections
         self.connect(self.tabWidget,QtCore.SIGNAL("currentChanged(int)"),self.updatePartEdit)
