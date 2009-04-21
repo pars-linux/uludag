@@ -24,7 +24,7 @@
       </widget>
      </item>
      <item>
-      <widget class="KPushButton" name="buttonNameserver">
+      <widget class="KPushButton" name="buttonNameServer">
        <property name="text">
         <string>Nameserver Settings</string>
        </property>
@@ -738,7 +738,7 @@
  </customwidgets>
  <tabstops>
   <tabstop>buttonCreate</tabstop>
-  <tabstop>buttonNameserver</tabstop>
+  <tabstop>buttonNameServer</tabstop>
   <tabstop>filterBox</tabstop>
   <tabstop>profileList</tabstop>
   <tabstop>editBox</tabstop>

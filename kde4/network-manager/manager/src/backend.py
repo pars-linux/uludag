@@ -113,6 +113,12 @@ class NetworkIface:
     def devices(self, package):
         return self.link.Net.Link[package].deviceList()
 
+    def packages(self):
+        return list(self.link.Net.Link)
+
+    def linkInfo(self, package):
+        return self.link.Net.Link[package].linkInfo()
+
     def scanRemote(self, device, package="wireless_tools", func=None):
         if func:
             self.link.Net.Link[package].scanRemote(device, async=func)
