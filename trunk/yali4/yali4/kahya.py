@@ -256,19 +256,19 @@ class kahya:
                         correctPart.ratio="100"
                     self.correctData.partitioning.append(correctPart)
 
-        elif self.data.partitioningType=="manuel":
-            self.correctData.partitioningType="manuel"
+        elif self.data.partitioningType=="manual":
+            self.correctData.partitioningType="manual"
 
             if len(self.data.partitioning)==0:
                 error.Empty=True
-                self.errorList.append("Manuel Partitioning Error : No partition entry ")
+                self.errorList.append("Manual Partitioning Error : No partition entry ")
             else:
                 for partitionRoot in self.data.partitioning:
                     if partitionRoot.partitionType=="pardus_root": #pardus_root is required
                         break
                 else:
                     error.Root=True
-                    self.errorList.append("Manuel Partitioning Error : \"pardus_root\" missing ")
+                    self.errorList.append("Manual Partitioning Error : \"pardus_root\" missing ")
                 if not self.checkRatio()==True:
                     error.TotalRatio=True
                     self.errorList.append(" Ratio Error : Total not equal to 100")

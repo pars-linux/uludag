@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-28 13:58+0200\n"
+"POT-Creation-Date: 2009-04-21 08:49+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -632,7 +632,7 @@ msgstr ""
 
 #: yali4/gui/DiskWidgets.py:93
 #, fuzzy
-msgid "Manuel Partitioning selected."
+msgid "Manual Partitioning selected."
 msgstr "Stwórz Partycję"
 
 #: yali4/gui/DiskWidgets.py:169
@@ -1030,7 +1030,7 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:120 yali4/gui/ScrSummary.py:73
-#: yali4/installer.py:652
+#: yali4/installer.py:655
 msgid "Reboot"
 msgstr "Restart"
 
@@ -1622,48 +1622,48 @@ msgstr ""
 msgid "Creating new partition ..."
 msgstr "Stwórz Nową Partycję"
 
-#: yali4/installer.py:481
+#: yali4/installer.py:482
 msgid "Trying to connect DBUS..."
 msgstr ""
 
-#: yali4/installer.py:483
+#: yali4/installer.py:484
 msgid "Setting Hostname..."
 msgstr ""
 
-#: yali4/installer.py:484
+#: yali4/installer.py:485
 msgid "Setting TimeZone..."
 msgstr ""
 
-#: yali4/installer.py:485
+#: yali4/installer.py:486
 msgid "Setting Root Password..."
 msgstr ""
 
-#: yali4/installer.py:486
+#: yali4/installer.py:487
 msgid "Adding Users..."
 msgstr ""
 
-#: yali4/installer.py:487
+#: yali4/installer.py:488
 msgid "Writing Console Data..."
 msgstr ""
 
-#: yali4/installer.py:488
+#: yali4/installer.py:489
 msgid "Migrating X.org Configuration..."
 msgstr ""
 
-#: yali4/installer.py:490
+#: yali4/installer.py:491
 msgid "Copy Pisi index..."
 msgstr ""
 
-#: yali4/installer.py:491
+#: yali4/installer.py:492
 msgid "Setting misc. package configurations..."
 msgstr ""
 
-#: yali4/installer.py:492
+#: yali4/installer.py:493
 #, fuzzy
 msgid "Installing BootLoader..."
 msgstr "Nie instaluj menedżera rozruchu"
 
-#: yali4/installer.py:629
+#: yali4/installer.py:632
 msgid "Retry"
 msgstr ""
 

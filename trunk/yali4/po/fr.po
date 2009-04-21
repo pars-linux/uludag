@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-28 13:58+0200\n"
+"POT-Creation-Date: 2009-04-21 08:49+0300\n"
 "PO-Revision-Date: 2008-07-03 11:13+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -727,7 +727,8 @@ msgid "as Storage Area"
 msgstr "Partition de stockage"
 
 #: yali4/gui/DiskWidgets.py:93
-msgid "Manuel Partitioning selected."
+#, fuzzy
+msgid "Manual Partitioning selected."
 msgstr "Partitionnement manuel sélectionné."
 
 #: yali4/gui/DiskWidgets.py:169
@@ -1169,7 +1170,7 @@ msgstr ""
 "</b>\n"
 
 #: yali4/gui/ScrGoodbye.py:120 yali4/gui/ScrSummary.py:73
-#: yali4/installer.py:652
+#: yali4/installer.py:655
 msgid "Reboot"
 msgstr "Redémarrer"
 
@@ -1815,47 +1816,47 @@ msgstr "Redimensionnement est terminé"
 msgid "Creating new partition ..."
 msgstr "Création d'une nouvelle partition..."
 
-#: yali4/installer.py:481
+#: yali4/installer.py:482
 msgid "Trying to connect DBUS..."
 msgstr "Tentative de connexion au service DBUS"
 
-#: yali4/installer.py:483
+#: yali4/installer.py:484
 msgid "Setting Hostname..."
 msgstr "Établissement du nom d'hôte..."
 
-#: yali4/installer.py:484
+#: yali4/installer.py:485
 msgid "Setting TimeZone..."
 msgstr "Établissement du fuseau horaire..."
 
-#: yali4/installer.py:485
+#: yali4/installer.py:486
 msgid "Setting Root Password..."
 msgstr "Établissement du mot de passe root..."
 
-#: yali4/installer.py:486
+#: yali4/installer.py:487
 msgid "Adding Users..."
 msgstr "Ajout des utilisateurs..."
 
-#: yali4/installer.py:487
+#: yali4/installer.py:488
 msgid "Writing Console Data..."
 msgstr "Écriture de l'information de console..."
 
-#: yali4/installer.py:488
+#: yali4/installer.py:489
 msgid "Migrating X.org Configuration..."
 msgstr "Migration de la configuration de X.org..."
 
-#: yali4/installer.py:490
+#: yali4/installer.py:491
 msgid "Copy Pisi index..."
 msgstr "Recopiage de l'index de Pisi..."
 
-#: yali4/installer.py:491
+#: yali4/installer.py:492
 msgid "Setting misc. package configurations..."
 msgstr "Configuration des autres paquets..."
 
-#: yali4/installer.py:492
+#: yali4/installer.py:493
 msgid "Installing BootLoader..."
 msgstr "Installation du chargeur de démarrage..."
 
-#: yali4/installer.py:629
+#: yali4/installer.py:632
 msgid "Retry"
 msgstr ""
 
