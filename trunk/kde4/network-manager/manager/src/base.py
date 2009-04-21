@@ -27,16 +27,13 @@ from PyKDE4.kdecore import i18n
 # Application Stuff
 from backend import NetworkIface
 from ui import Ui_mainManager
-from widgets import ConnectionItemWidget, WifiPopup
+from widgets import ConnectionItemWidget, WifiPopup, NameServerDialog
 
 # Animation Definitions
 SHOW, HIDE     = range(2)
 TARGET_HEIGHT  = 0
 ANIMATION_TIME = 200
 DEFAULT_HEIGHT = 16777215
-
-# Comar Definitions
-NETPACKAGES    = {'wireless_tools':i18n("Wireless"),'net_tools':i18n("Ethernet"),'ppp':i18n("Modem")}
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True, app=None):
@@ -64,31 +61,37 @@ class MainManager(QtGui.QWidget):
         self.iface = NetworkIface()
         self.widgets = {}
 
+        # Populate Packages
+        self.packages = {}
+        packages = self.iface.packages()
+        for package in packages:
+            self.packages[package] = self.iface.linkInfo(package)
+
         # Let look what we can do
         supportedPackages = []
-        menu    = QtGui.QMenu(self)
-        for package in NETPACKAGES.keys():
+        menu = QtGui.QMenu(self)
+        for package in self.packages.keys():
             devices = self.iface.devices(package)
             if len(devices) > 0:
                 # Create profile menu with current devices
                 for device in devices.keys():
-                    if not package == 'ppp':
-                        menuItem = QtGui.QAction("%s - %s" % (NETPACKAGES[package], findInterface(device).name), self)
+                    if self.packages[package]['type'] in ('net','wifi'):
+                        menuItem = QtGui.QAction("%s - %s" % (self.packages[package]['name'], findInterface(device).name), self)
                         menuItem.setData(QVariant("%s::%s" % (package,device)))
                         self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
                         menu.addAction(menuItem)
                 menu.addSeparator()
                 supportedPackages.append(package)
-
-        if 'ppp' in NETPACKAGES.keys():
-            pppMenu = QtGui.QMenu(NETPACKAGES['ppp'], self)
-            devices = self.iface.devices('ppp')
-            for device in devices.keys():
-                menuItem = QtGui.QAction(device, self)
-                menuItem.setData(QVariant("%s::%s" % ('ppp',device)))
-                self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
-                pppMenu.addAction(menuItem)
-            menu.addMenu(pppMenu)
+            if self.packages[package]['type'] == 'dialup':
+                pppMenu = QtGui.QMenu(self.packages[package]['name'], self)
+                devices = self.iface.devices(package)
+                for device in devices.keys():
+                    menuItem = QtGui.QAction(device, self)
+                    menuItem.setData(QVariant("%s::%s" % (package,device)))
+                    self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
+                    pppMenu.addAction(menuItem)
+                menu.addMenu(pppMenu)
+                menu.addSeparator()
 
         # Add package specific menu entiries
         if "net_tools" in supportedPackages:
@@ -135,6 +138,10 @@ class MainManager(QtGui.QWidget):
 
         # Save changes when clicked Apply
         self.connect(self.ui.buttonApply, SIGNAL("clicked()"), self.applyChanges)
+
+        # Show NameServer Settings Dialog
+        self.nameServerDialog = NameServerDialog(self)
+        self.connect(self.ui.buttonNameServer, SIGNAL("clicked()"), self.nameServerDialog.run)
 
         # Filter
         self.connect(self.ui.filterBox, SIGNAL("currentIndexChanged(int)"), self.filterList)
@@ -232,7 +239,7 @@ class MainManager(QtGui.QWidget):
         self.widgets = {}
 
         # Fill the list with current connections
-        for package in NETPACKAGES.keys():
+        for package in self.packages.keys():
             # Fill profile list
             self.connections = self.iface.connections(package)
             self.connections.sort()

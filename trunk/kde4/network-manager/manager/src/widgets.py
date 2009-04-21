@@ -23,11 +23,26 @@ from PyKDE4.kdecore import i18n
 from ui import Ui_mainManager
 from uiitem import Ui_ConnectionItemWidget
 from uiwifiitem import Ui_WifiItemWidget
+from uinameserver import Ui_nameServer
 import time
 
 iconForPackage = {"net_tools":"network-wired",
                   "wireless_tools":"network-wireless",
                   "ppp":"modem"}
+
+class NameServerDialog(QtGui.QDialog):
+
+    def __init__(self, parent):
+        QtGui.QDialog.__init__(self, parent)
+        self.ui = Ui_nameServer()
+        self.ui.setupUi(self)
+
+    def run(self):
+        print "yarak"
+        self.exec_()
+
+    def accept(self):
+        self.done(QtGui.QDialog.Accepted)
 
 class WifiItemWidget(QtGui.QWidget):
 
