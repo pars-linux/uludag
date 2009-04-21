@@ -46,13 +46,13 @@
         <a href="request.cgi?requester=[% user.login FILTER url_quote %]&amp;requestee=
                  [% user.login FILTER url_quote %]&amp;do_union=1&amp;group=type&amp;action=queue">İstediklerim</a>
       [% ELSE %]
-        <a href="request.cgi">İsteklers</a>
+        <a href="request.cgi">İstekler</a>
       [% END %]
     [% END %]
   [%-# Work around FF bug: keep this on one line %]</li>
 
   [% IF user.id && Param('usevotes') %]
-    <li><span class="separator">| </span><a href="votes.cgi?action=show_user">My&nbsp;Oylar</a></li>
+    <li><span class="separator">| </span><a href="votes.cgi?action=show_user">Oylarım</a></li>
   [% END %]
 
   [% IF user.login %]
