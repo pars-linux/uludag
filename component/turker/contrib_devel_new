@@ -1,148 +1,479 @@
-|-- desktop
-|   |-- gnome
-|   |   |-- library
-|   |   |-- misc
-|   |-- kde
-|   |   |-- i18n
-|   |   |-- base
-|   |-- lookandfeel
-|   |-- toolkit
-|   |   |-- qt
-|   |   |-- gtk
-|   |   |-- fltk
-|   |   |-- wxWidgets
-|   |   |-- motif
-|   |-- fonts
-|-- development
-|-- x11
-|   |-- library
-|   |-- misc
-|   |-- driver
-|   |-- terminal
-|   |-- application
-|-- games
-|   |-- library
-|   |-- action
-|   |-- arcade
-|   |-- board
-|   |-- fps
-|   |-- kids
-|   |-- puzzle
-|   |-- roguelike
-|   |-- rpg
-|   |-- simulation
-|   |-- sports
-|   |-- strategy
-|-- hardware
-|   |-- library
-|   |-- emulator
-|   |-- graphics
-|   |-- mobile
-|   |-- powermanagement
-|   |-- laptop
-|   |-- printing
-|   |-- smartcard
-|   |-- sound
-|   |-- infrared
-|   |-- bluetooth
-|   |-- firmware
-|   |-- info
-|   |-- virtualization
-|-- multimedia
-|   |-- library
-|   |-- graphics
-|   |-- radio
-|   |-- sound
-|   |-- tv
-|   |-- video
-|   |-- plugins
-|-- network
-|   |-- library
-|   |-- connection
-|   |-- p2p
-|   |-- browser
-|   |-- monitoring
-|   |-- security
-|   |-- dialup
-|   |-- firewall
-|   |-- chat
-|   |-- mail
-|   |-- vpn
-|   |-- telnet
-|   |-- transfer
-|   |-- misc
-|-- server
-|   |-- library
-|   |-- mta
-|   |-- database
-|   |-- www
-|   |-- ftp
-|   |-- dns
-|   |-- authentication
-|   |-- ptsp
-|   |-- proxy
-|   |-- tightvnc
-|   |-- samba
-|   |-- freeradius
-|   |-- dhcp
-|   |-- dirmngr
-|   |-- zemberek-server
-|   |-- ntp
-|   |-- xinetd
-|   |-- memcached
-|   |-- hylafax
-|-- programming
-|   |-- tools
-|   |-- ide
-|   |-- compiler
-|   |-- interpreter
-|   |-- module
-|   |-- subversion
-|   |-- codestyle
-|   |-- patch
-|   |-- debug
-|-- science
-|   |-- library
-|   |-- astronomy
-|   |-- chemistry
-|   |-- geosciences
-|   |-- electronics
-|   |-- mathematics
-|   |-- medical
-|   |-- robotics
-|-- filesystem
-|   |-- library
-|   |-- fs-tools
-|   |-- fs
-|   |-- misc
-|-- system
-|   |-- base
-|   |-- devel
-|-- kernel
-|   |-- pae
-|   |-- driver
-|-- editor
-|-- publishing
-|   |-- library
-|   |-- reader
-|   |-- docbook
-|   |-- converter
-|   |-- office
-|   |-- tex
-|-- util
-|   |-- archive
-|   |   |-- library
-|   |   |-- archiver
-|   |-- admin
-|   |-- antivirus
-|   |-- backup
-|   |-- cdr
-|   |-- crypt
-|   |   |-- library
-|   |-- dictionary
-|   |   |-- library
-|   |   |-- spellchecker
-|   |-- shell
-|   |-- organizer
-|-- pardus-apps
+desktop
+    font
+    ./desktop/fonts/fontmatrix/pspec.xml
 
+    gnome
+
+    kde
+        addon
+
+        admin
+
+        base
+
+        l10n
+
+    kde3
+        addon
+
+        admin
+
+        base
+
+        l10n
+
+    lookandfeel
+
+    misc
+
+    toolkit
+
+        qt
+
+        qt3
+
+        qwt
+
+        gtk
+
+        motif
+
+editor
+
+    emacs
+
+    vi
+
+    web
+
+game
+    library
+
+    action
+
+    adventure
+
+    arcade
+
+    board
+
+    engine
+
+    fps
+
+    kids
+
+    puzzle
+
+    rpg
+
+    simulation
+
+    sports
+
+    strategy
+
+hardware
+    bluetooth
+
+    irda
+
+    cpu
+
+    disk
+
+    emulator
+    ./applications/network/dynagen/pspec.xml
+    ./applications/network/dynagui/pspec.xml
+    ./applications/network/dynamips/pspec.xml
+    ./applications/network/x3270/pspec.xml
+
+    firmware
+
+    graphics
+
+    info
+
+    library
+
+    misc
+
+    mobile
+    ./applications/network/gammu/pspec.xml
+    ./applications/network/wammu/pspec.xml
+
+    optical
+    ./applications/multimedia/brasero/pspec.xml
+    ./applications/multimedia/devede/pspec.xml
+
+    powermanagement
+    ./applications/powermanagement/acpitool/pspec.xml
+
+    printer
+    ./applications/printing/lexmark-z35/pspec.xml
+    ./applications/printing/epson-alc1100/pspec.xml
+    ./applications/printing/lexmark-z700/pspec.xml
+    ./applications/printing/lexmark-z65/pspec.xml
+    ./applications/printing/lexmark-z600/pspec.xml
+    ./applications/printing/lexmark-z55/pspec.xml
+
+    scanner
+
+    security
+
+    smartcard
+
+    sound
+
+    virtualization
+
+kernel
+    debug
+
+    default
+
+    xen
+
+multimedia
+    converter
+
+    editor
+    ./applications/multimedia/qtractor/pspec.xml
+    ./applications/multimedia/denemo/pspec.xml
+    ./applications/multimedia/lmms/pspec.xml
+    ./applications/multimedia/lives/pspec.xml
+    ./applications/multimedia/lmms-extras/pspec.xml
+    ./applications/multimedia/aldrin/pspec.xml
+    ./applications/multimedia/sweep/pspec.xml
+    ./applications/multimedia/kino/pspec.xml
+    ./applications/multimedia/jokosher/pspec.xml
+    ./applications/multimedia/Miro/pspec.xml
+
+    graphics
+    ./applications/multimedia/gifsicle/pspec.xml
+    ./applications/multimedia/gqview/pspec.xml
+
+    library
+
+    plugin
+    ./applications/multimedia/jack-rack/pspec.xml
+
+    radio
+
+    sound
+    ./applications/multimedia/gnaural/pspec.xml
+    ./applications/multimedia/quodlibet/pspec.xml
+    ./applications/multimedia/ncmpc/pspec.xml
+    ./applications/multimedia/mpc/pspec.xml
+    ./applications/multimedia/kyamo/pspec.xml
+    ./applications/multimedia/sidplay2/pspec.xml
+    ./applications/multimedia/rawrec/pspec.xml
+    ./applications/multimedia/herrie/pspec.xml
+    ./applications/multimedia/moc/pspec.xml
+    ./applications/multimedia/gimmix/pspec.xml
+
+    stream
+    ./applications/multimedia/idjc/pspec.xml
+
+    tv
+
+    video
+    ./applications/multimedia/wxcam/pspec.xml
+    ./applications/multimedia/qt-recordmydesktop/pspec.xml
+    ./applications/multimedia/subtitleripper/pspec.xml
+    ./applications/multimedia/Miro/pspec.xml
+
+network
+    analyzer
+    ./applications/network/knmap/pspec.xml
+    ./applications/network/aircrack-ng/pspec.xml
+    ./applications/network/lft/pspec.xml
+    ./applications/network/fping/pspec.xml
+
+    chat
+    ./applications/network/kmess/pspec.xml
+    ./applications/network/emesene/pspec.xml
+    ./applications/network/gtmess/pspec.xml
+    ./applications/network/irssi/pspec.xml
+    ./applications/network/psi/pspec.xml
+    ./applications/network/weechat/pspec.xml
+    ./applications/network/xchat/pspec.xml
+    ./applications/network/micq/pspec.xml
+    ./applications/network/twitux/pspec.xml
+    ./applications/network/licq/pspec.xml
+    ./applications/network/mcabber/pspec.xml
+    ./applications/network/openc6/pspec.xml
+    ./applications/network/centerim/pspec.xml
+    ./applications/network/tmsnc/pspec.xml
+    ./applications/network/qwit/pspec.xml
+    ./applications/network/trix/pspec.xml
+    ./applications/network/mitter/pspec.xml
+    ./applications/network/kadu/pspec.xml
+    ./applications/network/sim/pspec.xml
+    ./applications/network/gtmess-sound/pspec.xml
+
+    connection
+    ./applications/network/wicd/pspec.xml
+    ./applications/network/rinetd/pspec.xml
+    ./applications/network/tor/pspec.xml
+    ./applications/network/privoxy/pspec.xml
+    ./applications/network/ifplugd/pspec.xml
+    ./applications/network/webcleaner/pspec.xml
+    ./applications/network/iw/pspec.xml
+    ./applications/network/tork/pspec.xml
+
+    download
+    ./applications/network/filezilla/pspec.xml
+    ./applications/network/fatrat/pspec.xml
+    ./applications/network/d4x/pspec.xml
+    ./applications/network/httrack/pspec.xml
+    ./applications/network/qttube/pspec.xml
+    ./applications/network/wxdfast/pspec.xml
+    ./applications/network/freerapid/pspec.xml
+    ./applications/network/yougrabber/pspec.xml
+
+    fax
+
+    filter
+    ./applications/network/procmail/pspec.xml
+    ./applications/network/firestarter/pspec.xml
+
+    ftp
+    ./applications/network/stftp/pspec.xml
+    ./applications/network/scythia/pspec.xml
+    ./applications/network/wput/pspec.xml
+
+    library
+    ./applications/network/mozilla/xulrunner/pspec.xml
+
+    mail
+    ./applications/network/mutt/pspec.xml
+    ./applications/network/getmail/pspec.xml
+    ./applications/network/checkgmail/pspec.xml
+    ./applications/network/mixminion/pspec.xml
+    ./applications/network/klibido/pspec.xml
+    ./applications/network/msmtp/pspec.xml
+
+    monitor
+    ./applications/network/ksniffer/pspec.xml
+    ./applications/network/kismet/pspec.xml
+    ./applications/network/trickle/pspec.xml
+    ./applications/network/socat/pspec.xml
+    ./applications/network/kotaci/pspec.xml
+    ./applications/network/vnstat/pspec.xml
+
+    plugin
+    ./applications/network/pidgin-sipe/pspec.xml
+    ./applications/network/qtscrobbler/pspec.xml
+    ./applications/network/pidgin-libnotify/pspec.xml
+    ./applications/network/amsn/amsn-plugins/pspec.xml
+    ./applications/network/amsn/amsn-emerald-theme/pspec.xml
+    ./applications/network/amsn/amsn-live-theme/pspec.xml
+    ./applications/network/pidgin-encryption/pspec.xml
+    ./applications/network/xchat-xsys/pspec.xml
+
+    p2p
+    ./applications/network/transmission/pspec.xml
+    ./applications/network/qbittorrent/pspec.xml
+    ./applications/network/limewire/pspec.xml
+    ./applications/network/linuxdcpp/pspec.xml
+    ./applications/network/amule/pspec.xml
+    ./applications/network/azureus/pspec.xml
+    ./applications/network/ctorrent/pspec.xml
+    ./applications/network/rtorrent/pspec.xml
+    ./applications/network/valknut/pspec.xml
+    ./applications/network/deluge/pspec.xml
+    ./applications/network/phex/pspec.xml
+    ./applications/network/gtk-gnutella/pspec.xml
+
+    remoteshell
+    ./applications/network/krdm/pspec.xml
+    ./applications/network/x11vnc/pspec.xml
+    ./applications/network/gtkterm/pspec.xml
+
+    rss
+    ./applications/network/nrss/pspec.xml
+
+    share
+
+    voip
+    ./applications/network/twinkle/pspec.xml
+
+    web
+    ./applications/network/arora/pspec.xml
+    ./applications/network/opera/pspec.xml
+    ./applications/network/lynx/pspec.xml
+    ./applications/network/opera-i18n/pspec.xml
+
+office
+    library
+
+    docbook
+
+    dictionary
+
+    koffice
+
+    openoffice
+
+    postscript
+
+    spellcheck
+
+    tex
+
+    misc
+
+programming
+    build
+
+    debug
+
+    environment
+
+        eclipse
+
+        eric
+
+    language
+
+        dotnet
+
+        gambas
+
+        haskell
+
+        java
+
+        lisp
+
+        pascal
+
+        perl
+        ./programming/languages/perl/perl-Crypt-Simple/pspec.xml
+        ./programming/languages/perl/perl-Cairo/pspec.xml
+        ./programming/languages/perl/perl-ExtUtils-Depends/pspec.xml
+        ./programming/languages/perl/perl-X10/pspec.xml
+        ./programming/languages/perl/perl-Getopt-Long/pspec.xml
+        ./programming/languages/perl/perlconsole/pspec.xml
+        ./programming/languages/perl/perl-Test-Number-Delta/pspec.xml
+        ./programming/languages/perl/perl-Module-Refresh/pspec.xml
+        ./programming/languages/perl/perl-Lexical-Persistence/pspec.xml
+        ./programming/languages/perl/perl-Glib/pspec.xml
+        ./programming/languages/perl/perl-Gtk2-Sexy/pspec.xml
+        ./programming/languages/perl/perl-Crypt-Blowfish/pspec.xml
+        ./programming/languages/perl/perl-DBD-Pg/pspec.xml
+        ./programming/languages/perl/perl-File-Next/pspec.xml
+        ./programming/languages/perl/perl-Devel-Caller/pspec.xml
+        ./programming/languages/perl/perl-Astro-SunTime/pspec.xml
+        ./programming/languages/perl/perl-Gtk2-Ex-FormFactory/pspec.xml
+        ./programming/languages/perl/perl-Event/pspec.xml
+        ./programming/languages/perl/perl-Audio/pspec.xml
+        ./programming/languages/perl/perl-Data-Dumper/pspec.xml
+        ./programming/languages/perl/perl-Sys-Syslog/pspec.xml
+        ./programming/languages/perl/perl-XML-Simple/pspec.xml
+        ./programming/languages/perl/perl-Event-ExecFlow/pspec.xml
+        ./programming/languages/perl/perl-XML-LibXML-Common/pspec.xml
+        ./programming/languages/perl/perl-XML-LibXML/pspec.xml
+        ./programming/languages/perl/perl-Devel-LexAlias/pspec.xml
+        ./programming/languages/perl/perl-Time-modules/pspec.xml
+        ./programming/languages/perl/perl-B-Keywords/pspec.xml
+        ./programming/languages/perl/perl-libintl/pspec.xml
+        ./programming/languages/perl/perl-Config-Tidy/pspec.xml
+        ./programming/languages/perl/perl-Event-RPC/pspec.xml
+        ./programming/languages/perl/perl-Gtk2/pspec.xml
+        ./programming/languages/perl/perl-Image-ExifTool/pspec.xml
+        ./programming/languages/perl/perl-ExtUtils-PkgConfig/pspec.xml
+        ./programming/languages/perl/perl-Device-SerialPort/pspec.xml
+        ./programming/languages/perl/perl-Test-Simple/pspec.xml
+        ./programming/languages/perl/perl-AnyEvent/pspec.xml
+        ./programming/languages/perl/perl-Term-ReadLine-Perl/pspec.xml
+        ./programming/languages/perl/perl-Gtk2-TrayIcon/pspec.xml
+        ./programming/languages/perl/perl-PadWalker/pspec.xml
+
+        php
+
+        python
+
+        tcl
+
+    library
+
+    microcontroller
+
+    profiler
+
+    tool
+
+    vcs
+
+science
+    library
+
+    astronomy
+
+    chemistry
+
+    electronics
+
+    mathematics
+
+    medical
+
+    robotics
+
+server
+
+    auth
+
+    database
+
+    ftp
+
+    library
+
+    mta
+
+    proxy
+
+    ptsp
+
+    web
+
+system
+    auth
+
+    base
+    ./system/base/baselayout-contrib/pspec.xml
+    boot
+
+    devel
+
+    doc
+
+    installer
+
+util
+    admin
+
+    antivirus
+
+    apparmor
+
+    archive
+
+    crypt
+
+    misc
+
+    shell
+
+x11
+
+    library
+
+    driver
+
+    terminal
+
+    application
