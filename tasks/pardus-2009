@@ -33,8 +33,8 @@
   * log ve debug desteği
 
 * Donanım (Ozan Çağlayan)
-  * Yeni çekirdek geçişi (2.6.29) (/75)
-  * update-fstab'ın noatime/relatime, ext4, vs konusunda güncellenmesi (-)
+  * Yeni çekirdek geçişi (2.6.30) (/75)
+  * update-fstab'ın noatime/relatime, ext4, vs konusunda güncellenmesi, eksiklerinin giderilmesi (-)
   * Python ile çekirdek geçiş ve depo betiklerinin yazılması (-)
   * Yeni module-init-tools geçişi (/100)
   * initramfs'de busybox güncellemesi (/100)
@@ -43,16 +43,16 @@
   * sreadahead paketlenmesi, test edilmesi (/40)
   * BlueZ 4.x geçişi (/75)
   * Pulseaudio ve ailesinin güncellenmesi (/60)
-  * foomatic-*, gutenprint, ghostscript, hplip, foo2zjs paketlerinin güncellenmesi (/20)
+  * foomatic-*, gutenprint, ghostscript, hplip, foo2zjs paketlerinin güncellenmesi (/30)
   * udev 14x geçişi (/80)
   * mudur'de udev ile ilgili değişiklikler [8458, 8520] (+)
   * mudur'de udevtrigger loglarının tutulması (+)
   * mudur'de CPUFreq sınıfının gözden geçirilmesi, bu işlevin olabildiğince çekirdeğe aktarılması (+)
-  * HAL 0.5.12 geçişi (/50)
+  * HAL 0.5.12 geçişi (+)
 
 * GNOME güncellemeleri (Ozan Çağlayan)
   * glib2 2.20 geçişi (+)
-  * gtk2 2.16 geçişi (-)
+  * gtk2 2.16 geçişi (+)
 
 * KDE4 (Ozan Çağlayan)
   * kdenlive ve bağımlılıkları (+)
