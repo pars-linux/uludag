@@ -51,11 +51,8 @@ def mo_files():
     return glob.glob("po/*.mo")
 
 class Build(build):
-
     def compile_ui(self, ui_file):
-        pyuic_exe = find_executable('pykde4uic')
-        print ('%s -o src/%s ui/%s' % (pyuic_exe, py_file_name(ui_file), ui_file))
-        os.system('%s -o src/%s ui/%s' % (pyuic_exe, py_file_name(ui_file), ui_file))
+        os.system('/usr/kde/4/bin/pykde4uic -o src/%s ui/%s' % (py_file_name(ui_file), ui_file))
 
     def run(self):
         for path in ui_files():
@@ -97,8 +94,7 @@ i18n_languages = ["tr"]
 
 class Install(install):
     def compile_ui(self, ui_file):
-        pyuic_exe = '/usr/kde/4/bin/pykde4uic'
-        os.system('%s -o build/%s ui/%s' % (pyuic_exe, py_file_name(ui_file), ui_file))
+        os.system('/usr/kde/4/bin/pykde4uic -o build/%s ui/%s' % (py_file_name(ui_file), ui_file))
 
     def run(self):
         shutil.rmtree("build", True)
@@ -117,7 +113,7 @@ class Install(install):
         except:
             pass
         for path in data_files():
-            shutil.copyfile(os.path.join("src",path), os.path.join(project_dir,path))
+            shutil.copyfile(os.path.join("build",path), os.path.join(project_dir,path))
         service_file = os.path.join(KDEDIR, "share/kde4/services", DESKTOPFILE)
         shutil.copy(os.path.join("resources/",DESKTOPFILE), service_file)
         shutil.move(os.path.join(project_dir,"main.py"), os.path.join(project_dir,PROJECT))
