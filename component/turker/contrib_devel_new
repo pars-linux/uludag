@@ -39,12 +39,23 @@ desktop
         motif
 
 editor
+./applications/editors/juffed/pspec.xml
+./applications/editors/jedit/pspec.xml
+./applications/editors/poedit/pspec.xml
 
     emacs
+./applications/editors/emacs/emacs-cvs/pspec.xml
+./applications/editors/emacs/slime/pspec.xml
+./applications/editors/zile/pspec.xml
 
     vi
+./applications/editors/cream/pspec.xml
 
     web
+./applications/editors/amaya/pspec.xml
+./applications/editors/cssed/pspec.xml
+./applications/editors/bluefish/pspec.xml
+./applications/editors/qt_xhtmledit/pspec.xml
 
 game
     library
@@ -136,6 +147,7 @@ kernel
 
 multimedia
     converter
+    ./applications/multimedia/subtitleripper/pspec.xml
 
     editor
     ./applications/multimedia/qtractor/pspec.xml
@@ -180,7 +192,6 @@ multimedia
     video
     ./applications/multimedia/wxcam/pspec.xml
     ./applications/multimedia/qt-recordmydesktop/pspec.xml
-    ./applications/multimedia/subtitleripper/pspec.xml
     ./applications/multimedia/Miro/pspec.xml
 
 network
@@ -212,15 +223,18 @@ network
     ./applications/network/sim/pspec.xml
     ./applications/network/gtmess-sound/pspec.xml
 
+    proxy
+    ./applications/network/tor/pspec.xml
+    ./applications/network/privoxy/pspec.xml
+    ./applications/network/tork/pspec.xml
+    ./applications/network/tsocks/pspec.xml
+
     connection
     ./applications/network/wicd/pspec.xml
     ./applications/network/rinetd/pspec.xml
-    ./applications/network/tor/pspec.xml
-    ./applications/network/privoxy/pspec.xml
     ./applications/network/ifplugd/pspec.xml
     ./applications/network/webcleaner/pspec.xml
     ./applications/network/iw/pspec.xml
-    ./applications/network/tork/pspec.xml
 
     download
     ./applications/network/filezilla/pspec.xml
@@ -271,6 +285,7 @@ network
     ./applications/network/amsn/amsn-live-theme/pspec.xml
     ./applications/network/pidgin-encryption/pspec.xml
     ./applications/network/xchat-xsys/pspec.xml
+    ./applications/network/firefoxqs/pspec.xml
 
     p2p
     ./applications/network/transmission/pspec.xml
@@ -321,6 +336,8 @@ office
     spellcheck
 
     tex
+./applications/editors/texmaker/pspec.xml
+./applications/editors/amyedit/pspec.xml
 
     misc
 
@@ -330,6 +347,7 @@ programming
     debug
 
     environment
+    ./applications/editors/pida/pspec.xml
 
         eclipse
 
@@ -464,7 +482,17 @@ util
 
     crypt
 
+    database
+    ./applications/network/mysql-administrator/pspec.xml
+    ./applications/network/mysql-query-browser/pspec.xml
+    ./applications/network/mysql-gui-common/pspec.xml
+    ./applications/network/mysql-workbench/pspec.xml
+    ./applications/network/mysqlcc/pspec.xml
+    ./applications/network/tora/pspec.xml
+
     misc
+    ./applications/network/urlview/pspec.xml
+    ./applications/util/vilistextum/pspec.xml
 
     shell
 
