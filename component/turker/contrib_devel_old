@@ -1,0 +1,1102 @@
+contrib/devel/
+|-- applications
+|   |-- admin
+|   |   |-- conky
+|   |   |-- dmraid
+|   |   |-- fish
+|   |   |-- osh
+|   |   |-- pgadmin3
+|   |   |-- phpmyadmin
+|   |   `-- usermode-utilities
+|   |-- archive
+|   |   |-- atool
+|   |   |-- dar
+|   |   |-- komparator
+|   |   |-- pbzip2
+|   |   `-- xarchiver
+|   |-- dictionaries
+|   |   |-- boncuk
+|   |   |-- boncuk-dict
+|   |   |-- imtihan
+|   |   |-- pysozluk
+|   |   |-- sdcv
+|   |   |-- stardict
+|   |   `-- stardict-essential-turkish
+|   |-- doc
+|   |   |-- convertlit
+|   |   |-- evince
+|   |   |-- hteditor
+|   |   |-- jabref
+|   |   |-- ocrad
+|   |   |-- scrollkeeper
+|   |   `-- trml2pdf
+|   |-- editors
+|   |   |-- amaya
+|   |   |-- amyedit
+|   |   |-- bluefish
+|   |   |-- cream
+|   |   |-- cssed
+|   |   |-- emacs
+|   |   |   |-- emacs-cvs
+|   |   |   `-- slime
+|   |   |-- jedit
+|   |   |-- juffed
+|   |   |-- medit
+|   |   |-- pida
+|   |   |-- poedit
+|   |   |-- qt_xhtmledit
+|   |   |-- texmaker
+|   |   `-- zile
+|   |-- education
+|   |   `-- programming
+|   |       `-- klogoturtle
+|   |-- emulators
+|   |   |-- desmume
+|   |   |-- e-uae
+|   |   |-- fceultra
+|   |   |-- gngeo
+|   |   |-- mednafen
+|   |   |-- playonlinux
+|   |   `-- visualboyadvance
+|   |-- games
+|   |   |-- bygfoot
+|   |   |-- cgoban
+|   |   |-- cuyo
+|   |   |-- dark-oberon
+|   |   |-- enemy-territory
+|   |   |-- gcompris
+|   |   |-- glchess
+|   |   |-- hangman
+|   |   |-- hearts
+|   |   |-- hedgewars
+|   |   |-- kskippingstones
+|   |   |-- marbles
+|   |   |-- miniracer
+|   |   |-- netpanzer
+|   |   |-- numptyphysics
+|   |   |-- openttd
+|   |   |-- openttd-scenarios
+|   |   |-- pegsolitaire
+|   |   |-- planeshift
+|   |   |-- planeshift-data
+|   |   |-- pouetchess
+|   |   |-- risk
+|   |   |-- secondlife
+|   |   |-- smw
+|   |   |-- sturmbahnfahrer
+|   |   |-- tennix
+|   |   |-- torrent
+|   |   |-- toycars
+|   |   |-- tuxmath
+|   |   |-- tuxtype
+|   |   |-- uzakdiyarlar
+|   |   |-- vitetris
+|   |   `-- vulcan
+|   |-- hardware
+|   |   |-- hddtemp
+|   |   |-- hwreport
+|   |   |-- libsynaptics
+|   |   |-- lineakd
+|   |   |-- macchanger
+|   |   `-- qink
+|   |-- multimedia
+|   |   |-- Miro
+|   |   |-- agave
+|   |   |-- aldrin
+|   |   |-- asunder
+|   |   |-- aucdtect
+|   |   |-- audacious
+|   |   |-- audacious-plugins
+|   |   |-- autopano-sift
+|   |   |-- autopano-sift-C
+|   |   |-- bmpx
+|   |   |-- brasero
+|   |   |-- camstream
+|   |   |-- cdcat
+|   |   |-- cinelerra
+|   |   |-- cmus
+|   |   |-- codeine
+|   |   |-- comix
+|   |   |-- ctronome
+|   |   |-- denemo
+|   |   |-- devede
+|   |   |-- easytag
+|   |   |-- ecamegapedal
+|   |   |-- ecasound
+|   |   |-- elisa
+|   |   |-- elisa-plugins-bad
+|   |   |-- elisa-plugins-good
+|   |   |-- enblend
+|   |   |-- epdfview
+|   |   |-- feh
+|   |   |-- ffmpegthumbnailer
+|   |   |-- fotoxx
+|   |   |-- freevo
+|   |   |-- gcolor2
+|   |   |-- gifsicle
+|   |   |-- gimmix
+|   |   |-- gimp
+|   |   |   `-- gimp-greycstoration
+|   |   |-- gnaural
+|   |   |-- gnuitar
+|   |   |-- gqview
+|   |   |-- gtk-recordmydesktop
+|   |   |-- gtkpod
+|   |   |-- herrie
+|   |   |-- hugin
+|   |   |-- idjc
+|   |   |-- jack-rack
+|   |   |-- jokosher
+|   |   |-- k3guitune
+|   |   |-- kino
+|   |   |-- klearnnotes2
+|   |   |-- koverartist
+|   |   |-- ksquirrel
+|   |   |-- kyamo
+|   |   |-- libzzub
+|   |   |-- linuxsampler
+|   |   |-- listen
+|   |   |-- lives
+|   |   |-- lmms
+|   |   |-- lmms-extras
+|   |   |-- manencode
+|   |   |-- mconverter
+|   |   |-- milkytracker
+|   |   |-- milkytracker-xi
+|   |   |-- moc
+|   |   |-- mpc
+|   |   |-- mpd
+|   |   |-- mpg321
+|   |   |-- mplayer-skins
+|   |   |-- mypaint
+|   |   |-- ncmpc
+|   |   |-- ncmpcpp
+|   |   |-- ostbox
+|   |   |-- phasex
+|   |   |-- picard
+|   |   |-- poweriso
+|   |   |-- prokyon3
+|   |   |-- qcomicbook
+|   |   |-- qdvdauthor
+|   |   |-- qmmp
+|   |   |-- qmmp-skins
+|   |   |-- qmpdclient
+|   |   |-- qsampler
+|   |   |-- qt-recordmydesktop
+|   |   |-- qtpfsgui
+|   |   |-- qtractor
+|   |   |-- quodlibet
+|   |   |-- rawrec
+|   |   |-- rawstudio
+|   |   |-- recordmydesktop
+|   |   |-- scrobby
+|   |   |-- showimg
+|   |   |-- sidplay2
+|   |   |-- smplayer
+|   |   |-- solfege
+|   |   |-- sonata
+|   |   |-- sonik
+|   |   |-- soundconverter
+|   |   |-- soundkonverter
+|   |   |-- stopmotion
+|   |   |-- subtitleeditor
+|   |   |-- subtitleripper
+|   |   |-- sweep
+|   |   |-- synfigstudio
+|   |   |-- themekreator
+|   |   |-- tse3
+|   |   |-- uade
+|   |   |-- vamps
+|   |   |-- videotrans
+|   |   |-- vmpk
+|   |   |-- wink
+|   |   |-- wxcam
+|   |   `-- xsane
+|   |-- network
+|   |   |-- aircrack-ng
+|   |   |-- amsn
+|   |   |   |-- amsn-emerald-theme
+|   |   |   |-- amsn-live-theme
+|   |   |   `-- amsn-plugins
+|   |   |-- amule
+|   |   |-- arora
+|   |   |-- azureus
+|   |   |-- centerim
+|   |   |-- checkgmail
+|   |   |-- ctorrent
+|   |   |-- d4x
+|   |   |-- deluge
+|   |   |-- dynagen
+|   |   |-- dynagui
+|   |   |-- dynamips
+|   |   |-- emesene
+|   |   |-- fatrat
+|   |   |-- filezilla
+|   |   |-- firefoxqs
+|   |   |-- firestarter
+|   |   |-- fping
+|   |   |-- freerapid
+|   |   |-- gammu
+|   |   |-- getmail
+|   |   |-- gtk-gnutella
+|   |   |-- gtkterm
+|   |   |-- gtmess
+|   |   |-- gtmess-sound
+|   |   |-- httrack
+|   |   |-- ifplugd
+|   |   |-- irssi
+|   |   |-- iw
+|   |   |-- kadu
+|   |   |-- kismet
+|   |   |-- klibido
+|   |   |-- kmess
+|   |   |-- knmap
+|   |   |-- kotaci
+|   |   |-- krdm
+|   |   |-- ksniffer
+|   |   |-- lft
+|   |   |-- licq
+|   |   |-- limewire
+|   |   |-- linuxdcpp
+|   |   |-- lynx
+|   |   |-- mcabber
+|   |   |-- micq
+|   |   |-- mitter
+|   |   |-- mixminion
+|   |   |-- mozilla
+|   |   |   `-- xulrunner
+|   |   |-- msmtp
+|   |   |-- mutt
+|   |   |-- mysql-administrator
+|   |   |-- mysql-gui-common
+|   |   |-- mysql-query-browser
+|   |   |-- mysql-workbench
+|   |   |-- mysqlcc
+|   |   |-- nrss
+|   |   |-- openc6
+|   |   |-- opera
+|   |   |-- opera-i18n
+|   |   |-- phex
+|   |   |-- pidgin-encryption
+|   |   |-- pidgin-libnotify
+|   |   |-- pidgin-sipe
+|   |   |-- privoxy
+|   |   |-- procmail
+|   |   |-- psi
+|   |   |-- qbittorrent
+|   |   |-- qtscrobbler
+|   |   |-- qttube
+|   |   |-- qwit
+|   |   |-- rinetd
+|   |   |-- rtorrent
+|   |   |-- scythia
+|   |   |-- sim
+|   |   |-- socat
+|   |   |-- stftp
+|   |   |-- tmsnc
+|   |   |-- tor
+|   |   |-- tora
+|   |   |-- tork
+|   |   |-- transmission
+|   |   |-- trickle
+|   |   |-- trix
+|   |   |-- tsocks
+|   |   |-- twinkle
+|   |   |-- twitux
+|   |   |-- urlview
+|   |   |-- valknut
+|   |   |-- vnstat
+|   |   |-- wammu
+|   |   |-- webcleaner
+|   |   |-- weechat
+|   |   |-- wicd
+|   |   |-- wput
+|   |   |-- wxdfast
+|   |   |-- x11vnc
+|   |   |-- x3270
+|   |   |-- xchat
+|   |   |-- xchat-xsys
+|   |   `-- yougrabber
+|   |-- office
+|   |   |-- abiword
+|   |   |-- abook
+|   |   |-- calcurse
+|   |   |-- dia
+|   |   |-- freemind
+|   |   |-- ganttproject
+|   |   |-- gcstar
+|   |   |-- grisbi
+|   |   |-- homebank
+|   |   |-- kbibtex
+|   |   |-- osmo
+|   |   |-- planner
+|   |   |-- taskjuggler
+|   |   |-- tekir
+|   |   `-- turquaz
+|   |-- powermanagement
+|   |   `-- acpitool
+|   |-- printing
+|   |   |-- epson-alc1100
+|   |   |-- lexmark-z35
+|   |   |-- lexmark-z55
+|   |   |-- lexmark-z600
+|   |   |-- lexmark-z65
+|   |   `-- lexmark-z700
+|   |-- science
+|   |   |-- AutoQ3D
+|   |   |-- aqsis
+|   |   |-- avogadro
+|   |   |-- bioclipse
+|   |   |-- bkchem
+|   |   |-- brlcad
+|   |   |-- calcoo
+|   |   |-- electronics
+|   |   |   |-- freehdl
+|   |   |   |-- geda-docs
+|   |   |   |-- geda-examples
+|   |   |   |-- geda-gattrib
+|   |   |   |-- geda-gnetlist
+|   |   |   |-- geda-gschem
+|   |   |   |-- geda-gsymcheck
+|   |   |   |-- geda-symbols
+|   |   |   |-- geda-utils
+|   |   |   |-- gerbv
+|   |   |   |-- gnucap
+|   |   |   |-- gtkwave
+|   |   |   |-- iverilog
+|   |   |   |-- kicad
+|   |   |   |-- kontrollerlab
+|   |   |   |-- lintouch
+|   |   |   |-- logisim
+|   |   |   |-- ng-spice-rework
+|   |   |   |-- qucs
+|   |   |   `-- xcircuit
+|   |   |-- extcalc
+|   |   |-- fet
+|   |   |-- fityk
+|   |   |-- galculator
+|   |   |-- gdpc
+|   |   |-- genchemlab
+|   |   |-- gips
+|   |   |-- gperiodic
+|   |   |-- gpsbabel
+|   |   |-- grace
+|   |   |-- grass
+|   |   |-- grass-sample-data
+|   |   |-- gretl
+|   |   |-- gts
+|   |   |-- inchi
+|   |   |-- ipc
+|   |   |-- josm
+|   |   |-- k3d
+|   |   |-- kalgebra
+|   |   |-- ksimus
+|   |   |-- ksimus-boolean
+|   |   |-- ksimus-datarecorder
+|   |   |-- ksimus-floatingpoint
+|   |   |-- massxpert
+|   |   |-- merkaartor
+|   |   |-- mm3d
+|   |   |-- mmtk
+|   |   |-- navilink
+|   |   |-- polyxmass
+|   |   |-- qcad
+|   |   |-- qcad-partlibrary
+|   |   |-- qgis
+|   |   |-- qgis-sample-data
+|   |   |-- qlandkarte
+|   |   |-- rlplot
+|   |   |-- scilab
+|   |   |-- sdcc
+|   |   |-- sherpa
+|   |   |-- speedcrunch
+|   |   |-- units
+|   |   |-- veusz
+|   |   `-- xvibs
+|   |-- security
+|   |   |-- fpm2
+|   |   |-- qtfprot
+|   |   |-- rkhunter
+|   |   `-- zibu
+|   `-- util
+|       |-- acetoneiso2
+|       |-- ack
+|       |-- boxes
+|       |-- bwm-ng
+|       |-- catfish
+|       |-- cellwriter
+|       |-- chmsee
+|       |-- colordiff
+|       |-- comedi_calibrate
+|       |-- comedilib
+|       |-- convmv
+|       |-- cpulimit
+|       |-- d-feet
+|       |-- ddrescue
+|       |-- fdupes
+|       |-- figlet
+|       |-- flashrom
+|       |-- fprint_demo
+|       |-- fuseiso
+|       |-- gramps
+|       |-- hardinfo
+|       |-- htop
+|       |-- iat
+|       |-- isomaster
+|       |-- kpassdns
+|       |-- launchy
+|       |-- litconverter
+|       |-- pisibul
+|       |-- recoll
+|       |-- rpl
+|       |-- scrot
+|       |-- sourceinstall
+|       |-- sourceinstall-gtk
+|       |-- sshpass
+|       |-- synce-librapi2
+|       |-- systester
+|       |-- takenote
+|       |-- tuxcards
+|       |-- uudeview
+|       |-- vilistextum
+|       |-- wmbiff
+|       |-- xbindkeys
+|       |-- xournal
+|       `-- xpad
+|-- desktop
+|   |-- enlightenment
+|   |   |-- base
+|   |   |   |-- e_dbus
+|   |   |   |-- ecore
+|   |   |   |-- edje
+|   |   |   |-- efreet
+|   |   |   |-- embryo
+|   |   |   |-- enlightenment
+|   |   |   `-- evas
+|   |   `-- extra
+|   |       |-- emotion
+|   |       |-- enterminus
+|   |       |-- epsilon
+|   |       |-- esmart
+|   |       |-- eterm
+|   |       |-- eterm-bg
+|   |       |-- etk
+|   |       |-- ewl
+|   |       `-- exhibit
+|   |-- fluxbox
+|   |   |-- fbdesk
+|   |   |-- fluxbox
+|   |   |-- fluxconf
+|   |   |-- fluxstyle
+|   |   |-- idesk
+|   |   `-- tenr-de-styles
+|   |-- fonts
+|   |   `-- fontmatrix
+|   |-- freedesktop
+|   |   |-- dmz-aa-xcursor
+|   |   |-- dmz-xcursor
+|   |   |-- hicolor-icon-theme
+|   |   |-- icon-naming-utils
+|   |   `-- tango-icon-theme
+|   |-- gnome
+|   |   |-- base
+|   |   |   |-- desktop-file-utils
+|   |   |   |-- gdm
+|   |   |   |-- gnome-common
+|   |   |   |-- gnome-doc-utils
+|   |   |   |-- gnome-icon-theme
+|   |   |   |-- gnome-keyring
+|   |   |   |-- gnome-mime-data
+|   |   |   |-- gnome-themes
+|   |   |   |-- gnome-vfs
+|   |   |   |-- gtkhtml2
+|   |   |   |-- gtkhtml3
+|   |   |   |-- gtksourceview
+|   |   |   |-- libbonobo
+|   |   |   |-- libbonoboui
+|   |   |   |-- libglademm
+|   |   |   |-- libgnome
+|   |   |   |-- libgnomecups
+|   |   |   |-- libgnomeprint
+|   |   |   |-- libgnomeprintui
+|   |   |   |-- libgnomeui
+|   |   |   |-- libgtop
+|   |   |   |-- libgweather
+|   |   |   `-- pyorbit
+|   |   |-- gajim
+|   |   |-- gdl
+|   |   |-- gedit
+|   |   |-- gedit-plugins
+|   |   |-- gksu
+|   |   |-- glipper
+|   |   |-- glista
+|   |   |-- gnome-bluetooth
+|   |   |-- gnome-build
+|   |   |-- gnome-cups-manager
+|   |   |-- gnome-python
+|   |   |-- gnome-python-desktop
+|   |   |-- gnome-python-extras
+|   |   |-- gnomebaker
+|   |   |-- gnonlin
+|   |   |-- gob
+|   |   |-- gossip
+|   |   |-- gphpedit
+|   |   |-- gthumb
+|   |   |-- gtk2-engines-murrine
+|   |   |-- gtk2-engines-nodoka
+|   |   |-- gtranslator
+|   |   |-- guake
+|   |   |-- liferea
+|   |   |-- pygtksourceview
+|   |   |-- tilda
+|   |   `-- yelp
+|   |-- kde
+|   |   |-- 3ddesktop
+|   |   |-- Q7Z
+|   |   |-- abakus
+|   |   |-- alloyon
+|   |   |-- amarokFS
+|   |   |-- baghira
+|   |   |-- dekorator
+|   |   |-- deposplash
+|   |   |-- destick
+|   |   |-- diskmonitor
+|   |   |-- dolphin
+|   |   |-- k9copy
+|   |   |-- kalbum
+|   |   |-- kasablanca
+|   |   |-- katephpbrowser
+|   |   |-- kbackup
+|   |   |-- kbfx
+|   |   |-- kblogger
+|   |   |-- kbloggersidebar
+|   |   |-- kcheckgmail
+|   |   |-- kdesvn
+|   |   |-- kdevisualboyadvance
+|   |   |-- kdiff3
+|   |   |-- kdmtheme
+|   |   |-- keepassx
+|   |   |-- kenvy24gui
+|   |   |-- kfuseiso
+|   |   |-- kgmailnotifier
+|   |   |-- kguitar
+|   |   |-- kima
+|   |   |-- kiosktool
+|   |   |-- kirocker
+|   |   |-- kkeyled
+|   |   |-- klcddimmer
+|   |   |-- kleansweep
+|   |   |-- klineakconfig
+|   |   |-- klogshow
+|   |   |-- kmetabar
+|   |   |-- kmetronome
+|   |   |-- kmobiletools
+|   |   |-- kmymoney
+|   |   |-- knemo
+|   |   |-- knoda
+|   |   |-- kommander-scripts
+|   |   |   `-- 3gpconverter
+|   |   |-- kooldock
+|   |   |-- kpager2
+|   |   |-- kplayer
+|   |   |-- krusader
+|   |   |-- ksmoothdock
+|   |   |-- kstreamripper
+|   |   |-- ksynaptics
+|   |   |-- kthinkbat
+|   |   |-- ktu
+|   |   |-- kuftp
+|   |   |-- kvirc
+|   |   |-- kvkbd
+|   |   |-- kxgenerator
+|   |   |-- kxmleditor
+|   |   |-- kxstitch
+|   |   |-- laora
+|   |   |-- lilykde
+|   |   |-- mailkount
+|   |   |-- metalik-splash
+|   |   |-- moodin-themes
+|   |   |-- pardus-tticonset
+|   |   |-- pate
+|   |   |-- pathbar
+|   |   |-- qtsozluk
+|   |   |-- servicemenus
+|   |   |   |-- audiokonverter
+|   |   |   |-- conversion-tools
+|   |   |   |-- editassu
+|   |   |   |-- imageshack-upload
+|   |   |   |-- imaj-at
+|   |   |   |-- kim
+|   |   |   |-- kpaste
+|   |   |   |-- kvm-convert
+|   |   |   `-- takesum
+|   |   |-- subtitlecomposer
+|   |   |-- surprise
+|   |   |-- suse2
+|   |   |-- tastymenu
+|   |   |-- tulliana-splash
+|   |   `-- tweak
+|   |-- kde4
+|   |   |-- k9copy-kde4
+|   |   `-- krusader-kde4
+|   |-- opencompositing
+|   |   |-- cairo-dock
+|   |   |   |-- cairo-dock
+|   |   |   |-- cairo-dock-plugins
+|   |   |   `-- cairo-dock-themes
+|   |   |-- compiz
+|   |   |   |-- ccsm
+|   |   |   |-- compiz-bcop
+|   |   |   |-- compiz-emerald
+|   |   |   |-- compiz-emerald-themes
+|   |   |   |-- compiz-fusion
+|   |   |   |-- compiz-fusion-icon
+|   |   |   |-- compiz-fusion-plugins-extra
+|   |   |   |-- compiz-fusion-plugins-main
+|   |   |   |-- compiz-fusion-plugins-unsupported
+|   |   |   |-- compiz-manager
+|   |   |   |-- compizconfig-backend-kconfig
+|   |   |   |-- compizconfig-python
+|   |   |   |-- libcompizconfig
+|   |   |   `-- simple-ccsm
+|   |   `-- kiba
+|   |       |-- akamaru
+|   |       |-- kiba-dbus-plugins
+|   |       |-- kiba-dock
+|   |       |-- kiba-pidgin-plugin
+|   |       `-- kiba-plugins
+|   `-- xfce4
+|       |-- base
+|       |   |-- Terminal
+|       |   |-- Thunar
+|       |   |-- exo
+|       |   |-- gtk2-engines-xfce
+|       |   |-- libxfce4menu
+|       |   |-- libxfce4util
+|       |   |-- libxfcegui4
+|       |   |-- mousepad
+|       |   |-- orage
+|       |   |-- squeeze
+|       |   |-- xfce-utils
+|       |   |-- xfce4-appfinder
+|       |   |-- xfce4-dev-tools
+|       |   |-- xfce4-icon-theme
+|       |   |-- xfce4-mixer
+|       |   |-- xfce4-panel
+|       |   |-- xfce4-session
+|       |   |-- xfce4-settings
+|       |   |-- xfconf
+|       |   |-- xfdesktop
+|       |   |-- xfprint
+|       |   |-- xfwm4
+|       |   `-- xfwm4-themes
+|       |-- goodies
+|       |   |-- battery-applet-4-xfce4
+|       |   |-- ristretto
+|       |   |-- thunar-archive-plugin
+|       |   |-- thunar-media-tags-plugin
+|       |   |-- thunar-svn-plugin
+|       |   |-- thunar-thumbnailers
+|       |   |-- thunar-volman
+|       |   |-- xfbib
+|       |   |-- xfburn
+|       |   |-- xfce4-clipman-plugin
+|       |   |-- xfce4-cpugraph-plugin
+|       |   |-- xfce4-datetime-plugin
+|       |   |-- xfce4-dict
+|       |   |-- xfce4-diskperf-plugin
+|       |   |-- xfce4-eyes-plugin
+|       |   |-- xfce4-netload-plugin
+|       |   |-- xfce4-notes-plugin
+|       |   |-- xfce4-notifyd
+|       |   |-- xfce4-places-plugin
+|       |   |-- xfce4-power-manager
+|       |   |-- xfce4-radio-plugin
+|       |   |-- xfce4-screenshooter-plugin
+|       |   |-- xfce4-systemload-plugin
+|       |   |-- xfce4-taskmanager
+|       |   |-- xfce4-timer-plugin
+|       |   |-- xfce4-verve-plugin
+|       |   |-- xfce4-weather-plugin
+|       |   |-- xfmedia
+|       |   `-- xfmpc
+|       `-- themes
+|           `-- murrine
+|-- kernel
+|   `-- drivers
+|       `-- comedi
+|-- programming
+|   |-- languages
+|   |   |-- java
+|   |   |   |-- antlr
+|   |   |   |-- commons-beanutils
+|   |   |   |-- commons-codec
+|   |   |   |-- commons-collections
+|   |   |   |-- commons-daemon
+|   |   |   |-- commons-dbcp
+|   |   |   |-- commons-digester
+|   |   |   |-- commons-el
+|   |   |   |-- commons-fileupload
+|   |   |   |-- commons-httpclient
+|   |   |   |-- commons-io
+|   |   |   |-- commons-launcher
+|   |   |   |-- commons-logging
+|   |   |   |-- commons-modeler
+|   |   |   |-- commons-pool
+|   |   |   |-- eclipse-ecj
+|   |   |   |-- jetspeed-portlet-api
+|   |   |   |-- log4j
+|   |   |   |-- openjms-bin
+|   |   |   |-- sun-java5
+|   |   |   |-- tomcat-servlet-api
+|   |   |   |-- xerces-j
+|   |   |   |-- xjavac
+|   |   |   |-- xml-commons-external
+|   |   |   `-- xml-commons-resolver
+|   |   |-- lisp
+|   |   |   `-- sbcl
+|   |   |-- oorexx
+|   |   |-- perl
+|   |   |   |-- perl-AnyEvent
+|   |   |   |-- perl-Astro-SunTime
+|   |   |   |-- perl-Audio
+|   |   |   |-- perl-B-Keywords
+|   |   |   |-- perl-Cairo
+|   |   |   |-- perl-Config-Tidy
+|   |   |   |-- perl-Crypt-Blowfish
+|   |   |   |-- perl-Crypt-Simple
+|   |   |   |-- perl-DBD-Pg
+|   |   |   |-- perl-Data-Dumper
+|   |   |   |-- perl-Devel-Caller
+|   |   |   |-- perl-Devel-LexAlias
+|   |   |   |-- perl-Device-SerialPort
+|   |   |   |-- perl-Event
+|   |   |   |-- perl-Event-ExecFlow
+|   |   |   |-- perl-Event-RPC
+|   |   |   |-- perl-ExtUtils-Depends
+|   |   |   |-- perl-ExtUtils-PkgConfig
+|   |   |   |-- perl-File-Next
+|   |   |   |-- perl-Getopt-Long
+|   |   |   |-- perl-Glib
+|   |   |   |-- perl-Gtk2
+|   |   |   |-- perl-Gtk2-Ex-FormFactory
+|   |   |   |-- perl-Gtk2-Sexy
+|   |   |   |-- perl-Gtk2-TrayIcon
+|   |   |   |-- perl-Image-ExifTool
+|   |   |   |-- perl-Lexical-Persistence
+|   |   |   |-- perl-Module-Refresh
+|   |   |   |-- perl-PadWalker
+|   |   |   |-- perl-Sys-Syslog
+|   |   |   |-- perl-Term-ReadLine-Perl
+|   |   |   |-- perl-Test-Number-Delta
+|   |   |   |-- perl-Test-Simple
+|   |   |   |-- perl-Time-modules
+|   |   |   |-- perl-X10
+|   |   |   |-- perl-XML-LibXML
+|   |   |   |-- perl-XML-LibXML-Common
+|   |   |   |-- perl-XML-Simple
+|   |   |   |-- perl-libintl
+|   |   |   `-- perlconsole
+|   |   |-- php
+|   |   |   |-- PEAR
+|   |   |   |   |-- PEAR
+|   |   |   |   |-- PEAR-Archive_Tar
+|   |   |   |   |-- PEAR-Auth
+|   |   |   |   |-- PEAR-Auth_HTTP
+|   |   |   |   |-- PEAR-Auth_PrefManager
+|   |   |   |   |-- PEAR-Auth_SASL
+|   |   |   |   |-- PEAR-Cache
+|   |   |   |   |-- PEAR-Cache_Lite
+|   |   |   |   |-- PEAR-Calendar
+|   |   |   |   |-- PEAR-Config
+|   |   |   |   |-- PEAR-Console_Color
+|   |   |   |   |-- PEAR-Console_Table
+|   |   |   |   |-- PEAR-Crypt_CHAP
+|   |   |   |   |-- PEAR-Crypt_HMAC
+|   |   |   |   |-- PEAR-Crypt_RC4
+|   |   |   |   |-- PEAR-DB
+|   |   |   |   |-- PEAR-DB_DataObject
+|   |   |   |   |-- PEAR-Date
+|   |   |   |   |-- PEAR-File
+|   |   |   |   |-- PEAR-File_Archive
+|   |   |   |   |-- PEAR-File_Find
+|   |   |   |   |-- PEAR-File_Fortune
+|   |   |   |   |-- PEAR-File_Gettext
+|   |   |   |   |-- PEAR-File_Passwd
+|   |   |   |   |-- PEAR-File_SMBPasswd
+|   |   |   |   |-- PEAR-HTML_AJAX
+|   |   |   |   |-- PEAR-HTML_BBCodeParser
+|   |   |   |   |-- PEAR-HTML_Common
+|   |   |   |   |-- PEAR-HTML_Common2
+|   |   |   |   |-- PEAR-HTML_Javascript
+|   |   |   |   |-- PEAR-HTML_QuickForm
+|   |   |   |   |-- PEAR-HTML_QuickForm_Controller
+|   |   |   |   |-- PEAR-HTML_QuickForm_ElementGrid
+|   |   |   |   |-- PEAR-HTML_Table
+|   |   |   |   |-- PEAR-HTML_Table_Matrix
+|   |   |   |   |-- PEAR-HTML_Template_Flexy
+|   |   |   |   |-- PEAR-HTML_Template_IT
+|   |   |   |   |-- PEAR-HTML_Template_Sigma
+|   |   |   |   |-- PEAR-HTML_TreeMenu
+|   |   |   |   |-- PEAR-HTTP
+|   |   |   |   |-- PEAR-HTTP_Client
+|   |   |   |   |-- PEAR-HTTP_Download
+|   |   |   |   |-- PEAR-HTTP_Header
+|   |   |   |   |-- PEAR-HTTP_Request
+|   |   |   |   |-- PEAR-HTTP_Session
+|   |   |   |   |-- PEAR-HTTP_Upload
+|   |   |   |   |-- PEAR-HTTP_WebDAV_Server
+|   |   |   |   |-- PEAR-I18N
+|   |   |   |   |-- PEAR-I18Nv2
+|   |   |   |   |-- PEAR-Image_Canvas
+|   |   |   |   |-- PEAR-Image_Color
+|   |   |   |   |-- PEAR-Image_Graph
+|   |   |   |   |-- PEAR-Image_GraphViz
+|   |   |   |   |-- PEAR-Image_IPTC
+|   |   |   |   |-- PEAR-Log
+|   |   |   |   |-- PEAR-MDB
+|   |   |   |   |-- PEAR-MDB2
+|   |   |   |   |-- PEAR-MDB2_Driver_mysql
+|   |   |   |   |-- PEAR-MDB2_Driver_mysqli
+|   |   |   |   |-- PEAR-MDB2_Driver_oci8
+|   |   |   |   |-- PEAR-MDB2_Driver_pgsql
+|   |   |   |   |-- PEAR-MDB2_Driver_sqlite
+|   |   |   |   |-- PEAR-MIME_Type
+|   |   |   |   |-- PEAR-Mail
+|   |   |   |   |-- PEAR-Mail_Mime
+|   |   |   |   |-- PEAR-Math_Stats
+|   |   |   |   |-- PEAR-Net_CheckIP
+|   |   |   |   |-- PEAR-Net_DIME
+|   |   |   |   |-- PEAR-Net_DNS
+|   |   |   |   |-- PEAR-Net_DNSBL
+|   |   |   |   |-- PEAR-Net_FTP
+|   |   |   |   |-- PEAR-Net_IMAP
+|   |   |   |   |-- PEAR-Net_IPv4
+|   |   |   |   |-- PEAR-Net_LMTP
+|   |   |   |   |-- PEAR-Net_POP3
+|   |   |   |   |-- PEAR-Net_Ping
+|   |   |   |   |-- PEAR-Net_SMTP
+|   |   |   |   |-- PEAR-Net_Server
+|   |   |   |   |-- PEAR-Net_Sieve
+|   |   |   |   |-- PEAR-Net_SmartIRC
+|   |   |   |   |-- PEAR-Net_Socket
+|   |   |   |   |-- PEAR-Net_URL
+|   |   |   |   |-- PEAR-Net_UserAgent_Detect
+|   |   |   |   |-- PEAR-Numbers_Roman
+|   |   |   |   |-- PEAR-Numbers_Words
+|   |   |   |   |-- PEAR-OLE
+|   |   |   |   |-- PEAR-PHP_Archive
+|   |   |   |   |-- PEAR-Pager
+|   |   |   |   |-- PEAR-SOAP
+|   |   |   |   |-- PEAR-Services_Amazon
+|   |   |   |   |-- PEAR-Services_W3C_HTMLValidator
+|   |   |   |   |-- PEAR-Services_Weather
+|   |   |   |   |-- PEAR-Spreadsheet_Excel_Writer
+|   |   |   |   |-- PEAR-System_Command
+|   |   |   |   |-- PEAR-Text_Diff
+|   |   |   |   |-- PEAR-Translation2
+|   |   |   |   |-- PEAR-Validate
+|   |   |   |   |-- PEAR-XML_Beautifier
+|   |   |   |   |-- PEAR-XML_Parser
+|   |   |   |   |-- PEAR-XML_RSS
+|   |   |   |   |-- PEAR-XML_Serializer
+|   |   |   |   `-- PEAR-XML_Util
+|   |   |   `-- xdebug
+|   |   |-- python
+|   |   |   |-- ElementTree
+|   |   |   |-- Pmw
+|   |   |   |-- PyCg
+|   |   |   |-- PyGLEW
+|   |   |   |-- PyGPU
+|   |   |   |-- PyODE
+|   |   |   |-- PyOpenGL
+|   |   |   |-- PyProtocols
+|   |   |   |-- SilverCity
+|   |   |   |-- bpython
+|   |   |   |-- cgkit
+|   |   |   |-- ctypes
+|   |   |   |-- cython
+|   |   |   |-- elixir
+|   |   |   |-- flickrapi
+|   |   |   |-- gdata-python-client
+|   |   |   |-- geoip-python
+|   |   |   |-- gst-python
+|   |   |   |-- imdbpy
+|   |   |   |-- kaa
+|   |   |   |   |-- kaa-base
+|   |   |   |   |-- kaa-imlib2
+|   |   |   |   `-- kaa-metadata
+|   |   |   |-- kiwi
+|   |   |   |-- nltk
+|   |   |   |-- nltk-corpora
+|   |   |   |-- numarray
+|   |   |   |-- pigment
+|   |   |   |-- pigment-python
+|   |   |   |-- pyMbus
+|   |   |   |-- pyNotifier
+|   |   |   |-- pyRXP
+|   |   |   |-- pybluez
+|   |   |   |-- pycha
+|   |   |   |-- pycurl
+|   |   |   |-- pyfits
+|   |   |   |-- pygtkglext
+|   |   |   |-- pylirc
+|   |   |   |-- pyquante
+|   |   |   |-- pyro
+|   |   |   |-- pyserial
+|   |   |   |-- pytextile
+|   |   |   |-- python-cx_freeze
+|   |   |   |-- python-daap
+|   |   |   |-- python-eyeD3
+|   |   |   |-- python-gameobjects
+|   |   |   |-- python-gammu
+|   |   |   |-- python-irclib
+|   |   |   |-- python-markdown
+|   |   |   |-- python-mpd
+|   |   |   |-- python-musicbrainz2
+|   |   |   |-- python-twitter
+|   |   |   |-- python-xlrd
+|   |   |   |-- python2-biggles
+|   |   |   |-- rapyd
+|   |   |   |-- renderPM
+|   |   |   |-- rlaccel
+|   |   |   |-- rpy
+|   |   |   |-- scientificpython
+|   |   |   |-- soya
+|   |   |   |-- sqlalchemy
+|   |   |   |-- tk-happy
+|   |   |   |-- uuid
+|   |   |   |-- wxPython
+|   |   |   `-- zsi
+|   |   `-- scheme
+|   |       `-- mit-scheme
+|   |-- libs
+|   |   |-- PyQwt
+|   |   |-- SoQt
+|   |   |-- bio2jack
+|   |   |-- caps
+|   |   |-- ccrtp
+|   |   |-- clearsilver
+|   |   |-- coin
+|   |   |-- commoncpp2
+|   |   |-- crypto++
+|   |   |-- dbh
+|   |   |-- dclib
+|   |   |-- dcmtk
+|   |   |-- dxflib
+|   |   |-- etl
+|   |   |-- fparser
+|   |   |-- freeverb3
+|   |   |-- gamin
+|   |   |-- gdal
+|   |   |-- geos
+|   |   |-- giblib
+|   |   |-- ginac
+|   |   |-- gloox
+|   |   |-- gmm
+|   |   |-- gnet
+|   |   |-- google-ctemplate
+|   |   |-- google-perftools
+|   |   |-- google-sparsehash
+|   |   |-- gtkglext
+|   |   |-- hamlib
+|   |   |-- hashit
+|   |   |-- hawknl
+|   |   |-- hk-classes
+|   |   |-- imlib
+|   |   |-- imlib2_loaders
+|   |   |-- itcl
+|   |   |-- itk
+|   |   |-- ksquirrel-libs
+|   |   |-- libBSUtilities
+|   |   |-- libast
+|   |   |-- libbinio
+|   |   |-- libbtctl
+|   |   |-- libburn
+|   |   |-- libconfuse
+|   |   |-- libdbf
+|   |   |-- libflaim
+|   |   |-- libgeda
+|   |   |-- libgeotiff
+|   |   |-- libgig
+|   |   |-- libgksu
+|   |   |-- libinklevel
+|   |   |-- libisofs
+|   |   |-- libjackasyn
+|   |   |-- liblscp
+|   |   |-- libmcs
+|   |   |-- libmms
+|   |   |-- libmowgli
+|   |   |-- libmpd
+|   |   |-- libnet
+|   |   |-- libpano13
+|   |   |-- libpixman
+|   |   |-- libprojectM
+|   |   |-- libqglviewer
+|   |   |-- libsift
+|   |   |-- libspiff
+|   |   |-- libsrcinst
+|   |   |-- libstroke
+|   |   |-- libtasn1
+|   |   |-- libtommath
+|   |   |-- libtorrent
+|   |   |-- libtorrent-rakshasa
+|   |   |-- libzrtpcpp
+|   |   |-- log4net
+|   |   |-- loki
+|   |   |-- lsdvd
+|   |   |-- mysql-ruby
+|   |   |-- ogdi
+|   |   |-- postgis
+|   |   |-- proj
+|   |   |-- redland-bindings
+|   |   |-- revel
+|   |   |-- scipres
+|   |   |-- sdlconsole
+|   |   |-- sqlite3-ruby
+|   |   |-- synce-libsynce
+|   |   |-- synfig
+|   |   |-- uriparser
+|   |   |-- urt
+|   |   |-- webkit-gtk
+|   |   |-- xapian-core
+|   |   `-- xylib
+|   `-- tools
+|       |-- anjuta
+|       |-- boa-constructor
+|       |-- codeblocks
+|       |-- cppunit
+|       |-- dabo
+|       |-- dbf
+|       |-- deveditor
+|       |-- devhelp
+|       |-- drpython
+|       |-- gazpacho
+|       |-- gcc-snapshot
+|       |-- geany
+|       |-- glade
+|       |-- gquilt
+|       |-- protoeditor
+|       |-- qedit
+|       |-- rapidsvn
+|       |-- shed
+|       |-- sqlitebrowser
+|       |-- sqliteman
+|       |-- uisp
+|       |-- wxGlade
+|       `-- xrope
+|-- server
+|   |-- finger
+|   |-- jboss4
+|   |-- rsh
+|   |-- simias
+|   |-- simias-bonjour
+|   |-- teamspeak-client
+|   |-- teamspeak-server
+|   `-- www
+|       |-- tomcat-connectors
+|       `-- trac
+`-- system
+    `-- base
+        `-- baselayout-contrib
+
