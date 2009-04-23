@@ -42,7 +42,7 @@
   * readahead paketlenmesi, test edilmesi (/70)
   * sreadahead paketlenmesi, test edilmesi (/40)
   * BlueZ 4.x geçişi (/75)
-  * Pulseaudio ve ailesinin güncellenmesi (/60)
+  * Pulseaudio ve ailesinin güncellenmesi (/65)
   * foomatic-*, gutenprint, ghostscript, hplip, foo2zjs paketlerinin güncellenmesi (/30)
   * udev 14x geçişi (/80)
   * mudur'de udev ile ilgili değişiklikler [8458, 8520] (+)
@@ -59,6 +59,10 @@
   * kbluetooth (+)
   * system-config-printer-kde'nin ayaklandırılması (+)
   * kdelibs'ten arts bağımlılığının atılması, ogg ve wav çalan düzgün bir external player bulunması, ilgili .upd dosyasının ve kdebase-sounds paketinin hazırlanması (-)
+
+* Diğer geçişler (Ozan Çağlayan)
+ * Samba 3.3.3 geçişi, keyutils ve ctdb'nin paketlenip depoya alınması (+)
+ * libusb 1.0 geçişi (/60)
 
 * KDE4 (Gökçen Eraslan)
   * Paketleme (+)
