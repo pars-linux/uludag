@@ -2,6 +2,42 @@ desktop
     font
     ./desktop/fonts/fontmatrix/pspec.xml
 
+    enlightenment
+        base
+        ./desktop/enlightenment/base/efreet/pspec.xml
+        ./desktop/enlightenment/base/e_dbus/pspec.xml
+        ./desktop/enlightenment/base/enlightenment/pspec.xml
+        ./desktop/enlightenment/base/edje/pspec.xml
+        ./desktop/enlightenment/base/embryo/pspec.xml
+        ./desktop/enlightenment/base/evas/pspec.xml
+        ./desktop/enlightenment/base/ecore/pspec.xml
+
+    xfce
+        base
+        ./desktop/xfce4/base/orage/pspec.xml
+        ./desktop/xfce4/base/xfconf/pspec.xml
+        ./desktop/xfce4/base/xfce4-dev-tools/pspec.xml
+        ./desktop/xfce4/base/xfce4-session/pspec.xml
+        ./desktop/xfce4/base/xfce4-panel/pspec.xml
+        ./desktop/xfce4/base/xfwm4-themes/pspec.xml
+        ./desktop/xfce4/base/xfprint/pspec.xml
+        ./desktop/xfce4/base/Terminal/pspec.xml
+        ./desktop/xfce4/base/squeeze/pspec.xml
+        ./desktop/xfce4/base/xfce-utils/pspec.xml
+        ./desktop/xfce4/base/Thunar/pspec.xml
+        ./desktop/xfce4/base/xfce4-icon-theme/pspec.xml
+        ./desktop/xfce4/base/mousepad/pspec.xml
+        ./desktop/xfce4/base/xfce4-settings/pspec.xml
+        ./desktop/xfce4/base/xfwm4/pspec.xml
+        ./desktop/xfce4/base/xfce4-mixer/pspec.xml
+        ./desktop/xfce4/base/xfdesktop/pspec.xml
+        ./desktop/xfce4/base/gtk2-engines-xfce/pspec.xml
+        ./desktop/xfce4/base/exo/pspec.xml
+        ./desktop/xfce4/base/xfce4-appfinder/pspec.xml
+        ./desktop/xfce4/base/libxfce4menu/pspec.xml
+        ./desktop/xfce4/base/libxfcegui4/pspec.xml
+        ./desktop/xfce4/base/libxfce4util/pspec.xml
+
     gnome
 
     kde
@@ -23,6 +59,10 @@ desktop
         l10n
 
     lookandfeel
+./desktop/freedesktop/tango-icon-theme/pspec.xml
+./desktop/freedesktop/dmz-aa-xcursor/pspec.xml
+./desktop/freedesktop/hicolor-icon-theme/pspec.xml
+./desktop/freedesktop/dmz-xcursor/pspec.xml
 
     misc
 
@@ -422,6 +462,7 @@ programming
     profiler
 
     tool
+./desktop/freedesktop/icon-naming-utils/pspec.xml
 
     vcs
 

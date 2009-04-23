@@ -650,12 +650,6 @@
 ./desktop/opencompositing/compiz/compiz-fusion-plugins-unsupported/pspec.xml
 ./desktop/opencompositing/compiz/compiz-emerald/pspec.xml
 
-./desktop/freedesktop/tango-icon-theme/pspec.xml
-./desktop/freedesktop/dmz-aa-xcursor/pspec.xml
-./desktop/freedesktop/hicolor-icon-theme/pspec.xml
-./desktop/freedesktop/icon-naming-utils/pspec.xml
-./desktop/freedesktop/dmz-xcursor/pspec.xml
-
 ./desktop/enlightenment/extra/epsilon/pspec.xml
 ./desktop/enlightenment/extra/exhibit/pspec.xml
 ./desktop/enlightenment/extra/esmart/pspec.xml
@@ -665,13 +659,6 @@
 ./desktop/enlightenment/extra/enterminus/pspec.xml
 ./desktop/enlightenment/extra/emotion/pspec.xml
 ./desktop/enlightenment/extra/eterm-bg/pspec.xml
-./desktop/enlightenment/base/efreet/pspec.xml
-./desktop/enlightenment/base/e_dbus/pspec.xml
-./desktop/enlightenment/base/enlightenment/pspec.xml
-./desktop/enlightenment/base/edje/pspec.xml
-./desktop/enlightenment/base/embryo/pspec.xml
-./desktop/enlightenment/base/evas/pspec.xml
-./desktop/enlightenment/base/ecore/pspec.xml
 
 ./desktop/fluxbox/fluxconf/pspec.xml
 ./desktop/fluxbox/idesk/pspec.xml
@@ -709,30 +696,6 @@
 ./desktop/xfce4/goodies/xfce4-notes-plugin/pspec.xml
 ./desktop/xfce4/goodies/xfce4-screenshooter-plugin/pspec.xml
 ./desktop/xfce4/goodies/battery-applet-4-xfce4/pspec.xml
-
-./desktop/xfce4/base/orage/pspec.xml
-./desktop/xfce4/base/xfconf/pspec.xml
-./desktop/xfce4/base/xfce4-dev-tools/pspec.xml
-./desktop/xfce4/base/xfce4-session/pspec.xml
-./desktop/xfce4/base/xfce4-panel/pspec.xml
-./desktop/xfce4/base/xfwm4-themes/pspec.xml
-./desktop/xfce4/base/xfprint/pspec.xml
-./desktop/xfce4/base/Terminal/pspec.xml
-./desktop/xfce4/base/squeeze/pspec.xml
-./desktop/xfce4/base/xfce-utils/pspec.xml
-./desktop/xfce4/base/Thunar/pspec.xml
-./desktop/xfce4/base/xfce4-icon-theme/pspec.xml
-./desktop/xfce4/base/mousepad/pspec.xml
-./desktop/xfce4/base/xfce4-settings/pspec.xml
-./desktop/xfce4/base/xfwm4/pspec.xml
-./desktop/xfce4/base/xfce4-mixer/pspec.xml
-./desktop/xfce4/base/xfdesktop/pspec.xml
-./desktop/xfce4/base/gtk2-engines-xfce/pspec.xml
-./desktop/xfce4/base/exo/pspec.xml
-./desktop/xfce4/base/xfce4-appfinder/pspec.xml
-./desktop/xfce4/base/libxfce4menu/pspec.xml
-./desktop/xfce4/base/libxfcegui4/pspec.xml
-./desktop/xfce4/base/libxfce4util/pspec.xml
 
 ./desktop/xfce4/themes/murrine/pspec.xml
 
