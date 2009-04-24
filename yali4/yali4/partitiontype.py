@@ -50,7 +50,7 @@ class RootPartitionType(__PartitionType):
     name = _("Install Root")
     mountpoint = "/"
     mountoptions = "noatime"
-    parted_type = parted.PARTITION_PRIMARY
+    parted_type = parted.PARTITION_NORMAL
     parted_flags = [ parted.PARTITION_BOOT ]
     label = "PARDUS_ROOT"
 
@@ -58,7 +58,7 @@ class HomePartitionType(__PartitionType):
     name = _("Users' Files")
     mountpoint = "/home"
     mountoptions = "noatime"
-    parted_type = parted.PARTITION_PRIMARY
+    parted_type = parted.PARTITION_NORMAL
     parted_flags = []
     label = "PARDUS_HOME"
 
@@ -67,7 +67,7 @@ class SwapPartitionType(PartitionType):
     filesystem = yali4.filesystem.get_filesystem("swap")
     mountpoint = None
     mountoptions = "sw"
-    parted_type = parted.PARTITION_PRIMARY
+    parted_type = parted.PARTITION_NORMAL
     parted_flags = []
     label = "PARDUS_SWAP"
 
@@ -76,7 +76,7 @@ class ArchivePartitionType(PartitionType):
     mountpoint = "/mnt/archive"
     mountoptions = "noatime"
     needsmtab = False
-    parted_type = parted.PARTITION_PRIMARY
+    parted_type = parted.PARTITION_NORMAL
     parted_flags = []
     label = "ARCHIVE"
 
