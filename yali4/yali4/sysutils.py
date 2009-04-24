@@ -371,17 +371,18 @@ class TimeZoneList:
             self.entries.append(entry)
 
 # getShadow for passwd ..
-import random,md5
+import random
+import hashlib
 
 def getShadowed(passwd):
     des_salt = list('./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz') 
     salt, magic = str(random.random())[-8:], '$1$'
 
-    ctx = md5.new(passwd)
+    ctx = hashlib.new('md5', passwd)
     ctx.update(magic)
     ctx.update(salt)
 
-    ctx1 = md5.new(passwd)
+    ctx1 = hashlib.new('md5', passwd)
     ctx1.update(salt)
     ctx1.update(passwd)
 
@@ -404,7 +405,7 @@ def getShadowed(passwd):
     final = ctx.digest()
 
     for i in range(1000):
-        ctx1 = md5.new()
+        ctx1 = hashlib.new('md5')
         if i & 1:
             ctx1.update(passwd)
         else:
