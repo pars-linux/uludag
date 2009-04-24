@@ -96,36 +96,30 @@ class Device:
         self._sector_size = 0
         self._parted_type = deviceType
 
-        dev = parted.PedDevice.get(device_path)
+        _partedDev = parted.Device(device_path)
+        dev = _partedDev.getPedDevice()
 
         self._model = dev.model
         self._length = dev.length
         self._sector_size = dev.sector_size
 
         self._dev = dev
-        try:
-            self._disk = parted.PedDisk.new(dev)
-        except:
-            label = archinfo[self._arch]["disklabel"]
-            disk_type = parted.disk_type_get(label)
-            self._disk = self._dev.disk_new_fresh(disk_type)
+        self._disk = parted.Disk(_partedDev)
+        #except:
+        #    label = archinfo[self._arch]["disklabel"]
+        #    disk_type = parted.diskType[label]
+        #    self._disk = self._dev.disk_new_fresh(disk_type)
 
-        self._disklabel = self._disk.type.name
-
+        self._disklabel = self._disk.type
         self._path = device_path
-
         self.update()
-
 
     ##
     # clear and re-fill partitions dict.
     def update(self):
         self._partitions = []
-
-        part = self._disk.next_partition()
-        while part:
+        for part in self._disk.partitions:
             self.__addToPartitionsDict(part)
-            part = self._disk.next_partition(part)
 
     ##
     # do we have room for another primary partition?
@@ -235,7 +229,7 @@ class Device:
     def getPrimaryPartitions(self):
         l = []
         for p in self.getPartitions():
-            if p._partition.type == parted.PARTITION_PRIMARY:
+            if p._partition.type == parted.PARTITION_NORMAL:
                 l.append(p)
         return l
 
@@ -310,14 +304,12 @@ class Device:
     def __getLargestFreePedPartition(self):
         size = 0
         largest = None
-        pedPart = self._disk.next_partition()
-        while pedPart:
+        for pedPart in self._disk.partitions:
             if parted.PARTITION_FREESPACE == pedPart.type:
                 p_size = self.__pedPartitionBytes(pedPart)
                 if p_size > size:
                     size = p_size
                     largest = pedPart
-            pedPart = self._disk.next_partition(pedPart)
         return largest
 
 
@@ -334,7 +326,7 @@ class Device:
     ##
     # Add (create) a new partition to the device
     # @param part: parted partition; must be parted.PARTITION_FREESPACE
-    # @param type: parted partition type (eg. parted.PARTITION_PRIMARY)
+    # @param type: parted partition type (eg. parted.PARTITION_NORMAL)
     # @param fs: filesystem.FileSystem or file system name (like "ext3")
     # @param size_mb: size of the partition in MBs.
     def addPartition(self, part, type, fs, size_mb, flags = [], manualGeomStart = None):
@@ -378,7 +370,7 @@ class Device:
     ##
     # Add (create) a new partition to the device from start to end.
     #
-    # @param type: parted partition type (eg. parted.PARTITION_PRIMARY)
+    # @param type: parted partition type (eg. parted.PARTITION_NORMAL)
     # @param fs: filesystem.FileSystem or file system name (string like "ext3")
     # @param start: start geom..
     # @param end: end geom
@@ -412,17 +404,17 @@ class Device:
     #
     # @returns: Partition
     def __addToPartitionsDict(self, part, fs_ready=True):
-        geom = part.geom
+        geom = part._geometry
         part_mb = long((geom.end - geom.start + 1) * self._sector_size / MEGABYTE)
-        if part.num >= 1:
+        if part.number >= 1:
             fs_name = ""
-            if part.fs_type:
-                fs_name = part.fs_type.name
+            if part._fileSystem:
+                fs_name = part._fileSystem._type
             elif part.type & parted.PARTITION_EXTENDED:
                 fs_name = "extended"
 
             self._partitions.append(Partition(self, part,
-                                                    part.num,
+                                                    part.number,
                                                     part_mb,
                                                     geom.start,
                                                     geom.end,
@@ -432,8 +424,8 @@ class Device:
         elif part.type & parted.PARTITION_FREESPACE and part_mb >= 10:
             self._partitions.append(FreeSpace(self, part,
                                                     part_mb,
-                                                    part.geom.start,
-                                                    part.geom.end))
+                                                    geom.start,
+                                                    geom.end))
         return part
 
     ##
@@ -444,7 +436,7 @@ class Device:
         self.update()
 
     def deleteAllPartitions(self):
-        self._disk.delete_all()
+        self._disk.deleteAllPartitions()
         self.update()
 
     def resizePartition(self, fs, size_mb, part):
@@ -470,7 +462,7 @@ class Device:
         if part.isLogical():
             ptype = PARTITION_LOGICAL
         else:
-            ptype = PARTITION_PRIMARY
+            ptype = PARTITION_NORMAL
         time.sleep(3)
         self.deletePartition(part)
         self.commit()
