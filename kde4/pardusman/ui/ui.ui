@@ -1,0 +1,350 @@
+<ui version="4.0" >
+ <class>mainForm</class>
+ <widget class="QWidget" name="mainForm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>597</width>
+    <height>421</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Maximum" hsizetype="Maximum" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>597</width>
+    <height>421</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset>
+    <normaloff>../icons/pardusman.png</normaloff>../icons/pardusman.png</iconset>
+  </property>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>60</y>
+     <width>581</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="title" >
+    <string>Image Properties</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+   <property name="flat" >
+    <bool>false</bool>
+   </property>
+   <property name="checkable" >
+    <bool>false</bool>
+   </property>
+   <widget class="QWidget" name="layoutWidget" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>561</width>
+      <height>244</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout" >
+     <item row="0" column="0" >
+      <widget class="QLabel" name="label" >
+       <property name="text" >
+        <string>Image title</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" colspan="2" >
+      <widget class="QLineEdit" name="lineEditTitle" >
+       <property name="toolTip" >
+        <string>The title of the Pardus image</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" >
+      <widget class="QLabel" name="label_5" >
+       <property name="text" >
+        <string>Extra parameters</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="2" >
+      <widget class="QLineEdit" name="lineEditParams" >
+       <property name="toolTip" >
+        <string>Extra parameters to pass to the kernel command line during boot.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" >
+      <widget class="QLabel" name="label_3" >
+       <property name="text" >
+        <string>Repository</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" >
+      <widget class="QLineEdit" name="lineEditRepo" >
+       <property name="toolTip" >
+        <string>Local or remote URL of the repository index from which the image will be created</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" >
+      <widget class="QLabel" name="label_4" >
+       <property name="text" >
+        <string>Release files</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1" >
+      <widget class="QLineEdit" name="lineEditRelease" >
+       <property name="toolTip" >
+        <string>Path to the local directory which contains metadata about the image like the release notes, etc.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" >
+      <widget class="QLabel" name="label_6" >
+       <property name="text" >
+        <string>Plugin package</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1" >
+      <widget class="QLineEdit" name="lineEditPlugin" />
+     </item>
+     <item row="5" column="0" >
+      <widget class="QLabel" name="label_2" >
+       <property name="text" >
+        <string>Work folder</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1" >
+      <widget class="QLineEdit" name="lineEditWorkdir" >
+       <property name="toolTip" >
+        <string>Path to the directory where Pardusman will work and create the related files and directories</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" >
+      <widget class="QLabel" name="label_7" >
+       <property name="text" >
+        <string>Image type</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1" colspan="2" >
+      <widget class="QComboBox" name="comboBoxType" >
+       <item>
+        <property name="text" >
+         <string>Installation Image</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Live Image</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="7" column="0" >
+      <widget class="QLabel" name="label_8" >
+       <property name="text" >
+        <string>Image size</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1" colspan="2" >
+      <widget class="QComboBox" name="comboBoxSize" >
+       <item>
+        <property name="text" >
+         <string>CD (700MB)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>DVD (4.2GB)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Flash Disk (1GB)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Custom</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="2" >
+      <widget class="QPushButton" name="pushButtonBrowseRepo" >
+       <property name="text" >
+        <string>Browse</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2" >
+      <widget class="QPushButton" name="pushButtonBrowseRelease" >
+       <property name="text" >
+        <string>Browse</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2" >
+      <widget class="QPushButton" name="pushButtonBrowsePlugin" >
+       <property name="text" >
+        <string>Browse</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2" >
+      <widget class="QPushButton" name="pushButtonBrowseWork" >
+       <property name="text" >
+        <string>Browse</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButtonUpdate" >
+    <property name="geometry" >
+     <rect>
+      <x>10</x>
+      <y>290</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="text" >
+     <string>Update Repository</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonPackages" >
+    <property name="geometry" >
+     <rect>
+      <x>163</x>
+      <y>290</y>
+      <width>137</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font" >
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+      <stylestrategy>PreferDefault</stylestrategy>
+     </font>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="text" >
+     <string>Select Packages</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonLanguages" >
+    <property name="geometry" >
+     <rect>
+      <x>303</x>
+      <y>290</y>
+      <width>145</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="text" >
+     <string>Select Languages</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonCreate" >
+    <property name="geometry" >
+     <rect>
+      <x>451</x>
+      <y>290</y>
+      <width>120</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="text" >
+     <string>Create Image</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QSplitter" name="splitter" >
+   <property name="geometry" >
+    <rect>
+     <x>12</x>
+     <y>10</y>
+     <width>571</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <widget class="QPushButton" name="pushButtonLoad" >
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="text" >
+     <string>Load Project</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonSave" >
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="text" >
+     <string>Save Project</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonSaveAs" >
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="text" >
+     <string>Save Project As..</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonAbout" >
+    <property name="autoFillBackground" >
+     <bool>false</bool>
+    </property>
+    <property name="text" >
+     <string>About</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
