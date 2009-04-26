@@ -348,7 +348,7 @@ class Yali:
         if np.isLogical():
             ptype = PARTITION_LOGICAL
         else:
-            ptype = PARTITION_NORMAL
+            ptype = PARTITION_PRIMARY
 
         self.info.updateMessage(_("Creating new partition ..."))
         ctx.debugger.log("UA: newStart : %s " % newStart)
