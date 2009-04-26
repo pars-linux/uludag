@@ -38,6 +38,7 @@ class FSError(YaliError):
 def get_filesystem(name):
     """ Returns filesystem implementation for given filesystem name """
     knownFS = {"ext3":      Ext3FileSystem,
+               "ext4":      Ext4FileSystem,
                "swap":      SwapFileSystem,
                "linux-swap":SwapFileSystem,
                "ntfs":      NTFSFileSystem,
@@ -61,7 +62,7 @@ class FileSystem:
     _fs_type = None  # parted fs type
 
     def __init__(self):
-        self._fs_type = parted.fileSystemType[self._name]
+        self._fs_type = parted.file_system_type_get(self._name)
 
     def openPartition(self, partition):
         """ Checks if partition exists or not;

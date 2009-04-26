@@ -345,7 +345,7 @@ class DiskList(QtGui.QWidget):
 
         # This is a new partition request
         if partition._parted_type & parteddata.freeSpaceType:
-            type = parteddata.PARTITION_NORMAL
+            type = parteddata.PARTITION_PRIMARY
             extendedPartition = device.getExtendedPartition()
 
             # GPT Disk tables doesnt support extended partitions
@@ -362,7 +362,7 @@ class DiskList(QtGui.QWidget):
                 min_primary = 1
 
             if partitionNum == 0:
-                type = parteddata.PARTITION_NORMAL
+                type = parteddata.PARTITION_PRIMARY
             elif device.numberOfPrimaryPartitions() >= min_primary and device.numberOfPrimaryPartitions() <= 3 and not extendedPartition:
                 # if three primary partitions exists on disk and no more extendedPartition
                 # we must create new extended one for other logical partitions

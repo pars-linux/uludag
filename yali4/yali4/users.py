@@ -14,6 +14,7 @@
 import random
 import shutil
 import glob
+import md5
 import os
 
 from string import ascii_letters, digits
