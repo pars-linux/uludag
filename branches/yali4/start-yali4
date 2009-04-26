@@ -1,0 +1,5 @@
+#!/bin/sh -l
+HOME=/root
+USER=root
+export HOME USER
+exec /usr/bin/xinit /usr/bin/yali4-bin -d -s6 -- vt7 -nolisten tcp -br
