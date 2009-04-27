@@ -15,6 +15,7 @@ def printUsage():
     print "  call <app> <model> <method> <arguments>"
     print "  list-apps [model]"
     print "  list-models <app>"
+    print "  list-methods <app> <model>"
     print "  register <app> <model> <script.py>"
     print "  remove <app>"
     sys.exit(1)
@@ -74,7 +75,18 @@ def main():
             return -1
         apps, interfaces = introspect(link, "/package/%s" % app)
         for interface in interfaces:
-            print interface, interfaces[interface]
+            print interface
+    elif sys.argv[1] == "list-methods":
+        try:
+            app = sys.argv[2]
+            model = sys.argv[3]
+        except IndexError:
+            print "Application and model name are required."
+            return -1
+        apps, interfaces = introspect(link, "/package/%s" % app)
+        if model in interfaces:
+            for method in interfaces[model]:
+                print method
     elif sys.argv[1] == "register":
         try:
             app = sys.argv[2]
