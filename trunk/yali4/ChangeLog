@@ -1,3 +1,8 @@
+2009-04-28 Ozan Çağlayan <ozan@pardus.org.tr>
+         * (fstab.py): Mount /dev/shm without noexec. This was breaking
+         userspace applications which try to use /dev/shm as a shared memory
+         pool like pulseaudio.
+
 2009-01-28 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * Fix for overriding selected partitioning method
          * Just check kernel command in entries, its enough..
