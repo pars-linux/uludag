@@ -106,7 +106,7 @@ class FileSystem:
             p = os.popen(cmd)
             label = p.read()
             p.close()
-        except e:
+        except Exception, e:
             ctx.debugger.log("Something failed while getting label for partition %s : %s" % (partition.getPath(), e))
             return False
         return label.strip()
@@ -124,10 +124,10 @@ class FileSystem:
                                     [partition.getPath(), label],
                                     stdout="/tmp/label.log",
                                     stderr="/tmp/label.log")
-        except:
+        except Exception, e:
+            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
             return False
         return label
-
 
     def labelExists(self, label):
         """ Check label for existence """
