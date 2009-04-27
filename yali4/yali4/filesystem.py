@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008 TUBITAK/UEKAE
+# Copyright (C) 2005-2009 TUBITAK/UEKAE
 # Copyright 2001-2008 Red Hat, Inc.
 #
 # This program is free software; you can redistribute it and/or modify it under
@@ -110,7 +110,6 @@ class FileSystem:
             for part in dev.getPartitions():
                 if label == part.getFSLabel():
                     return True
-
         return False
 
     def availableLabel(self, label):
@@ -124,11 +123,8 @@ class FileSystem:
 
     def preFormat(self, partition):
         """ Necessary checks before formatting """
-        e = ""
         if not self.isImplemented():
-            e = "%s file system is not fully implemented." %(self.name())
-        if e:
-            raise YaliException, e
+            raise YaliException, "%s file system is not fully implemented." % (self.name())
 
         import yali4.gui.context as ctx
         ctx.debugger.log("Format %s: %s" %(partition.getPath(), self.name()))
@@ -152,116 +148,6 @@ class FileSystem:
     def preResize(self, partition):
         """ Routine operations before resizing """
         pass
-
-class Ext4FileSystem(FileSystem):
-    """ Implementation of ext4 file system """
-
-    _name = "ext4"
-    _mountoptions = "defaults,user_xattr"
-
-    def __init__(self):
-        FileSystem.__init__(self)
-        self.setImplemented(True)
-        # FIXME resize operation
-        self.setResizable(False)
-
-    def format(self, partition):
-        """ Format the given partition """
-        self.preFormat(partition)
-
-        cmd_path = sysutils.find_executable("mke2fs")
-        if not cmd_path:
-            cmd_path = sysutils.find_executable("mkfs.ext4")
-
-        if not cmd_path:
-            e = "Command not found to format %s filesystem" %(self.name())
-            raise FSError, e
-
-        # bug 5616: ~100MB reserved-blocks-percentage
-        reserved_percentage = int(math.ceil(100.0 * 100.0 / partition.getMB()))
-
-        # Use hashed b-trees to speed up lookups in large directories
-        cmd = "%s -O dir_index -j -m %d %s" %(cmd_path,
-                                              reserved_percentage,
-                                              partition.getPath())
-
-        p = os.popen(cmd)
-        o = p.readlines()
-        if p.close():
-            raise YaliException, "ext4 format failed: %s" % partition.getPath()
-
-        # for Disabling Lengthy Boot-Time Checks
-        self.tune2fs(partition)
-
-    def formatWithCapture(self, partition):
-        self.preFormat(partition)
-
-        cmd_path = sysutils.find_executable("mke2fs")
-        if not cmd_path:
-            cmd_path = sysutils.find_executable("mkfs.ext4")
-
-        if not cmd_path:
-            raise FSError, "Command not found to format %s filesystem" % self.name()
-
-        reserved_percentage = int(math.ceil(100.0 * 100.0 / partition.getMB()))
-
-        cmd = [cmd_path, "-O dir_index", "-j", "-m %d"%reserved_percentage, partition.getPath()]
-
-        pipe = os.pipe()
-        childpid = os.fork()
-        if not childpid:
-            os.close(pipe[0])
-            os.dup2(pipe[1])
-            os.close(pipe[1])
-
-            env = os.environ
-            os.execvpe(cmd_path, cmd, env)
-            print "failed to exec %s " % cmd
-            os._exit(1)
-        os.close(pipe[1])
-
-        s = 1
-        while s and s != '\b':
-            try:
-                s = os.read(pipe[0], 1)
-            except:
-                (num, str) = args
-                if(num != 4):
-                    raise YaliException, "ext4 format failed: %s" % partition.getPath()
-        num = ''
-        while s:
-            try:
-                s = os.read(pipe[0], 1)
-                if s != '\b':
-                    try:
-                        num = num + s
-                    except:
-                        pass
-                else:
-                    if num and len(num):
-                        l = string.split(num, '/')
-                        try:
-                            val = (int(l[0]) * 100) / int(l[1])
-                        except (IndexError, TypeError):
-                            pass
-                        else:
-                            # emit signal
-                            print val
-                    num = ''
-            except OSError, args:
-                (errno, str) = args
-                if(errno != 4):
-                    raise IOError, args
-        try:
-            (pid, status) = os.waitpid(childpid, 0)
-        except OSError, (num, msg):
-            raise YaliException, "exception from waitpid while formatting: %s %s" % (num, msg)
-            status = None
-
-        if status is None:
-            print "wtf status is none, noes!"
-
-        self.tune2fs(partition)
 
     def tune2fs(self, partition):
         """ Runs tune2fs for given partition """
@@ -295,6 +181,43 @@ class Ext4FileSystem(FileSystem):
         except:
             return 0
 
+class Ext4FileSystem(FileSystem):
+    """ Implementation of ext4 file system """
+
+    _name = "ext4"
+    _mountoptions = "defaults,user_xattr"
+
+    def __init__(self):
+        FileSystem.__init__(self)
+        self.setImplemented(True)
+        self.setResizable(True)
+
+    def format(self, partition):
+        """ Format the given partition """
+        self.preFormat(partition)
+
+        cmd_path = sysutils.find_executable("mkfs.ext4")
+
+        if not cmd_path:
+            e = "Command not found to format %s filesystem" %(self.name())
+            raise FSError, e
+
+        # bug 5616: ~100MB reserved-blocks-percentage
+        reserved_percentage = int(math.ceil(100.0 * 100.0 / partition.getMB()))
+
+        # Use hashed b-trees to speed up lookups in large directories
+        cmd = "%s -O dir_index -j -m %d %s" %(cmd_path,
+                                              reserved_percentage,
+                                              partition.getPath())
+
+        p = os.popen(cmd)
+        o = p.readlines()
+        if p.close():
+            raise YaliException, "%s format failed: %s" % (self.name(), partition.getPath())
+
+        # for Disabling Lengthy Boot-Time Checks
+        self.tune2fs(partition)
+
     def preResize(self, partition):
         """ FileSystem Check before resize """
         cmd_path = sysutils.find_executable("e2fsck")
@@ -315,8 +238,6 @@ class Ext4FileSystem(FileSystem):
 
     def resize(self, size_mb, partition):
         """ Resize given partition as given size """
-        # FIXME resizing has different options for now
-        """
         if size_mb < self.minResizeMB(partition):
             return False
 
@@ -331,10 +252,7 @@ class Ext4FileSystem(FileSystem):
                                 stderr="/tmp/resize.log")
         if res:
             raise FSError, "Resize failed on %s" % (partition.getPath())
-
         return True
-        """
-        pass
 
     def getLabel(self, partition):
         cmd_path = sysutils.find_executable("e2label")
@@ -382,9 +300,7 @@ class Ext3FileSystem(FileSystem):
         """ Format the given partition """
         self.preFormat(partition)
 
-        cmd_path = sysutils.find_executable("mke2fs")
-        if not cmd_path:
-            cmd_path = sysutils.find_executable("mkfs.ext3")
+        cmd_path = sysutils.find_executable("mkfs.ext3")
 
         if not cmd_path:
             e = "Command not found to format %s filesystem" %(self.name())
@@ -401,112 +317,10 @@ class Ext3FileSystem(FileSystem):
         p = os.popen(cmd)
         o = p.readlines()
         if p.close():
-            raise YaliException, "ext3 format failed: %s" % partition.getPath()
+            raise YaliException, "%s format failed: %s" % (self.name(), partition.getPath())
 
         # for Disabling Lengthy Boot-Time Checks
         self.tune2fs(partition)
-
-    def formatWithCapture(self, partition):
-        self.preFormat(partition)
-
-        cmd_path = sysutils.find_executable("mke2fs")
-        if not cmd_path:
-            cmd_path = sysutils.find_executable("mkfs.ext3")
-
-        if not cmd_path:
-            raise FSError, "Command not found to format %s filesystem" % self.name()
-
-        reserved_percentage = int(math.ceil(100.0 * 100.0 / partition.getMB()))
-
-        cmd = [cmd_path, "-O dir_index", "-j", "-m %d"%reserved_percentage, partition.getPath()]
-
-        pipe = os.pipe()
-        childpid = os.fork()
-        if not childpid:
-            os.close(pipe[0])
-            os.dup2(pipe[1])
-            os.close(pipe[1])
-
-            env = os.environ
-            os.execvpe(cmd_path, cmd, env)
-            print "failed to exec %s " % cmd
-            os._exit(1)
-        os.close(pipe[1])
-
-        s = 1
-        while s and s != '\b':
-            try:
-                s = os.read(pipe[0], 1)
-            except:
-                (num, str) = args
-                if(num != 4):
-                    raise YaliException, "ext3 format failed: %s" % partition.getPath()
-        num = ''
-        while s:
-            try:
-                s = os.read(pipe[0], 1)
-                if s != '\b':
-                    try:
-                        num = num + s
-                    except:
-                        pass
-                else:
-                    if num and len(num):
-                        l = string.split(num, '/')
-                        try:
-                            val = (int(l[0]) * 100) / int(l[1])
-                        except (IndexError, TypeError):
-                            pass
-                        else:
-                            # emit signal
-                            print val
-                    num = ''
-            except OSError, args:
-                (errno, str) = args
-                if(errno != 4):
-                    raise IOError, args
-        try:
-            (pid, status) = os.waitpid(childpid, 0)
-        except OSError, (num, msg):
-            raise YaliException, "exception from waitpid while formatting: %s %s" % (num, msg)
-            status = None
-
-        if status is None:
-            print "wtf status is none, noes!"
-
-        self.tune2fs(partition)
-
-    def tune2fs(self, partition):
-        """ Runs tune2fs for given partition """
-        cmd_path = sysutils.find_executable("tune2fs")
-        if not cmd_path:
-            e = "Command not found to tune the filesystem"
-            raise FSError, e
-
-        # Disable mount count and use 6 month interval to fsck'ing disks at boot
-        cmd = "%s -c 0 -i 6m %s" % (cmd_path, partition.getPath())
-
-        p = os.popen(cmd)
-        o = p.readlines()
-        if p.close():
-            raise YaliException, "tune2fs tuning failed: %s" % partition.getPath()
-
-    def minResizeMB(self, partition):
-        """ Get minimum resize size (mb) for given partition """
-        cmd_path = sysutils.find_executable("dumpe2fs")
-
-        if not cmd_path:
-            raise FSError, "Command not found to get information about %s" % (partition.getPath())
-
-        lines = os.popen("%s -h %s" % (cmd_path, partition.getPath())).readlines()
-
-        try:
-            total_blocks = long(filter(lambda line: line.startswith('Block count'), lines)[0].split(':')[1].strip('\n').strip(' '))
-            free_blocks  = long(filter(lambda line: line.startswith('Free blocks'), lines)[0].split(':')[1].strip('\n').strip(' '))
-            block_size   = long(filter(lambda line: line.startswith('Block size'), lines)[0].split(':')[1].strip('\n').strip(' '))
-            return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 150
-        except:
-            return 0
 
     def preResize(self, partition):
         """ FileSystem Check before resize """
@@ -780,7 +594,6 @@ class NTFSFileSystem(FileSystem):
     def minResizeMB(self, partition):
         cmd = "/usr/sbin/ntfsresize -f -i %s" % partition.getPath()
         lines = os.popen(cmd).readlines()
-
         MB = parteddata.MEGABYTE
         _min = 0
         for l in lines:
