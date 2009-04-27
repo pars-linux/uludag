@@ -2,7 +2,7 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: stajer_development
+  database: stajyer_development
   pool: 5
   username: root
   password:
@@ -12,7 +12,7 @@ test:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: stajer_test
+  database: stajyer_test
   pool: 5
   username: root
   password:
@@ -22,7 +22,7 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: stajer_production
+  database: stajyer_production
   pool: 5
   username: root
   password:
