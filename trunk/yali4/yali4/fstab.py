@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2009, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -34,8 +34,8 @@ fstab_header = """# See the manpage fstab(5) for more information.
 standard_entries = [
     FstabEntry("proc", "/proc", "proc", "nosuid,noexec"),
     FstabEntry("sysfs", "/sys", "sysfs", "defaults"),
-    FstabEntry("tmpfs", "/dev/shm", "tmpfs", "nodev,nosuid")]
     FstabEntry("debugfs", "/sys/kernel/debug", "debugfs", "defaults"),
+    FstabEntry("tmpfs", "/dev/shm", "tmpfs", "nodev,nosuid,noexec")]
 
 class Fstab(file):
 
