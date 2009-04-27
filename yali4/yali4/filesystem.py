@@ -51,6 +51,16 @@ def get_filesystem(name):
 
     return None
 
+def getLabel(partition):
+    if not os.path.exists("/dev/disk/by-label"):
+        return None
+    base = os.walk("/dev/disk/by-label/").next()
+    path = partition.getPath()
+    for part in base[2]:
+        if os.path.realpath("%s%s" % (base[0],part)) == path:
+            return part
+    return None
+
 class FileSystem:
     """ Abstract fileSystem class for other implementations """
     _name = None
@@ -88,18 +98,36 @@ class FileSystem:
 
     def getLabel(self, partition):
         """ Read filesystem label and return """
-        if not os.path.exists("/dev/disk/by-label"):
-            return None
-        base = os.walk("/dev/disk/by-label/").next()
-        path = partition.getPath()
-        for part in base[2]:
-            if os.path.realpath("%s%s" % (base[0],part)) == path:
-                return part
-        return None
+        cmd_path = sysutils.find_executable("e2label")
+        cmd = "%s %s" % (cmd_path, partition.getPath())
+        import yali4.gui.context as ctx
+        ctx.debugger.log("Running CMD: %s" % cmd)
+        try:
+            p = os.popen(cmd)
+            label = p.read()
+            p.close()
+        except e:
+            ctx.debugger.log("Something failed while getting label for partition %s : %s" % (partition.getPath(), e))
+            return False
+        return label.strip()
 
     def setLabel(self, partition, label):
-        """ Set label for filesystem """
-        return False
+        label = self.availableLabel(label)
+        cmd_path = sysutils.find_executable("e2label")
+        import yali4.gui.context as ctx
+        cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
+        ctx.debugger.log("Running CMD: %s" % cmd)
+        try:
+            p = os.popen(cmd)
+            p.close()
+            res = sysutils.execClear("e2label",
+                                    [partition.getPath(), label],
+                                    stdout="/tmp/label.log",
+                                    stderr="/tmp/label.log")
+        except:
+            return False
+        return label
+
 
     def labelExists(self, label):
         """ Check label for existence """
@@ -147,7 +175,47 @@ class FileSystem:
 
     def preResize(self, partition):
         """ Routine operations before resizing """
-        pass
+        cmd_path = sysutils.find_executable("e2fsck")
+
+        if not cmd_path:
+            raise FSError, "Command not found to resize %s filesystem" % (self.name())
+
+        res = sysutils.execClear("e2fsck",
+                                ["-f", "-p", "-C", "0", partition.getPath()],
+                                stdout="/tmp/resize.log",
+                                stderr="/tmp/resize.log")
+
+        # FIXME if res == 2 means filesystem fixed but needs reboot !
+        if res >= 4:
+            raise FSError, "FSCheck failed on %s" % (partition.getPath())
+
+        return True
+
+    def format(self, partition):
+        """ Format the given partition """
+        self.preFormat(partition)
+
+        cmd_path = sysutils.find_executable("mkfs.%s" % self.name())
+
+        if not cmd_path:
+            e = "Command not found to format %s filesystem" %(self.name())
+            raise FSError, e
+
+        # bug 5616: ~100MB reserved-blocks-percentage
+        reserved_percentage = int(math.ceil(100.0 * 100.0 / partition.getMB()))
+
+        # Use hashed b-trees to speed up lookups in large directories
+        cmd = "%s -O dir_index -j -m %d %s" %(cmd_path,
+                                              reserved_percentage,
+                                              partition.getPath())
+
+        p = os.popen(cmd)
+        o = p.readlines()
+        if p.close():
+            raise YaliException, "%s format failed: %s" % (self.name(), partition.getPath())
+
+        # for Disabling Lengthy Boot-Time Checks
+        self.tune2fs(partition)
 
     def tune2fs(self, partition):
         """ Runs tune2fs for given partition """
@@ -181,6 +249,24 @@ class FileSystem:
         except:
             return 0
 
+    def resize(self, size_mb, partition):
+        """ Resize given partition as given size """
+        if size_mb < self.minResizeMB(partition):
+            return False
+
+        cmd_path = sysutils.find_executable("resize2fs")
+
+        if not cmd_path:
+            raise FSError, "Command not found to resize %s filesystem" % (self.name())
+
+        res = sysutils.execClear("resize2fs",
+                                ["-f", partition.getPath(), "%sM" %(size_mb)],
+                                stdout="/tmp/resize.log",
+                                stderr="/tmp/resize.log")
+        if res:
+            raise FSError, "Resize failed on %s" % (partition.getPath())
+        return True
+
 class Ext4FileSystem(FileSystem):
     """ Implementation of ext4 file system """
 
@@ -192,99 +278,6 @@ class Ext4FileSystem(FileSystem):
         self.setImplemented(True)
         self.setResizable(True)
 
-    def format(self, partition):
-        """ Format the given partition """
-        self.preFormat(partition)
-
-        cmd_path = sysutils.find_executable("mkfs.ext4")
-
-        if not cmd_path:
-            e = "Command not found to format %s filesystem" %(self.name())
-            raise FSError, e
-
-        # bug 5616: ~100MB reserved-blocks-percentage
-        reserved_percentage = int(math.ceil(100.0 * 100.0 / partition.getMB()))
-
-        # Use hashed b-trees to speed up lookups in large directories
-        cmd = "%s -O dir_index -j -m %d %s" %(cmd_path,
-                                              reserved_percentage,
-                                              partition.getPath())
-
-        p = os.popen(cmd)
-        o = p.readlines()
-        if p.close():
-            raise YaliException, "%s format failed: %s" % (self.name(), partition.getPath())
-
-        # for Disabling Lengthy Boot-Time Checks
-        self.tune2fs(partition)
-
-    def preResize(self, partition):
-        """ FileSystem Check before resize """
-        cmd_path = sysutils.find_executable("e2fsck")
-
-        if not cmd_path:
-            raise FSError, "Command not found to resize %s filesystem" % (self.name())
-
-        res = sysutils.execClear("e2fsck",
-                                ["-f", "-p", "-C", "0", partition.getPath()],
-                                stdout="/tmp/resize.log",
-                                stderr="/tmp/resize.log")
-
-        # FIXME if res == 2 means filesystem fixed but needs reboot !
-        if res >= 4:
-            raise FSError, "FSCheck failed on %s" % (partition.getPath())
-
-        return True
-
-    def resize(self, size_mb, partition):
-        """ Resize given partition as given size """
-        if size_mb < self.minResizeMB(partition):
-            return False
-
-        cmd_path = sysutils.find_executable("resize2fs")
-
-        if not cmd_path:
-            raise FSError, "Command not found to resize %s filesystem" % (self.name())
-
-        res = sysutils.execClear("resize2fs",
-                                ["-f", partition.getPath(), "%sM" %(size_mb)],
-                                stdout="/tmp/resize.log",
-                                stderr="/tmp/resize.log")
-        if res:
-            raise FSError, "Resize failed on %s" % (partition.getPath())
-        return True
-
-    def getLabel(self, partition):
-        cmd_path = sysutils.find_executable("e2label")
-        cmd = "%s %s" % (cmd_path, partition.getPath())
-        import yali4.gui.context as ctx
-        ctx.debugger.log("Running CMD: %s" % cmd)
-        try:
-            p = os.popen(cmd)
-            label = p.read()
-            p.close()
-        except:
-            return False
-        return label.strip()
-
-    def setLabel(self, partition, label):
-        label = self.availableLabel(label)
-        cmd_path = sysutils.find_executable("e2label")
-        import yali4.gui.context as ctx
-        cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
-        ctx.debugger.log("Running CMD: %s" % cmd)
-        try:
-            p = os.popen(cmd)
-            p.close()
-            res = sysutils.execClear("e2label",
-                                    [partition.getPath(), label],
-                                    stdout="/tmp/label.log",
-                                    stderr="/tmp/label.log")
-        except:
-            return False
-        return label
-
-
 class Ext3FileSystem(FileSystem):
     """ Implementation of ext3 file system """
 
@@ -295,98 +288,6 @@ class Ext3FileSystem(FileSystem):
         FileSystem.__init__(self)
         self.setImplemented(True)
         self.setResizable(True)
-
-    def format(self, partition):
-        """ Format the given partition """
-        self.preFormat(partition)
-
-        cmd_path = sysutils.find_executable("mkfs.ext3")
-
-        if not cmd_path:
-            e = "Command not found to format %s filesystem" %(self.name())
-            raise FSError, e
-
-        # bug 5616: ~100MB reserved-blocks-percentage
-        reserved_percentage = int(math.ceil(100.0 * 100.0 / partition.getMB()))
-
-        # Use hashed b-trees to speed up lookups in large directories
-        cmd = "%s -O dir_index -j -m %d %s" %(cmd_path,
-                                              reserved_percentage,
-                                              partition.getPath())
-
-        p = os.popen(cmd)
-        o = p.readlines()
-        if p.close():
-            raise YaliException, "%s format failed: %s" % (self.name(), partition.getPath())
-
-        # for Disabling Lengthy Boot-Time Checks
-        self.tune2fs(partition)
-
-    def preResize(self, partition):
-        """ FileSystem Check before resize """
-        cmd_path = sysutils.find_executable("e2fsck")
-
-        if not cmd_path:
-            raise FSError, "Command not found to resize %s filesystem" % (self.name())
-
-        res = sysutils.execClear("e2fsck",
-                                ["-f", "-p", "-C", "0", partition.getPath()],
-                                stdout="/tmp/resize.log",
-                                stderr="/tmp/resize.log")
-
-        if res >= 4:
-            raise FSError, "FSCheck failed on %s" % (partition.getPath())
-
-        return True
-
-    def resize(self, size_mb, partition):
-        """ Resize given partition as given size """
-        if size_mb < self.minResizeMB(partition):
-            return False
-
-        cmd_path = sysutils.find_executable("resize2fs")
-
-        if not cmd_path:
-            raise FSError, "Command not found to resize %s filesystem" % (self.name())
-
-        res = sysutils.execClear("resize2fs",
-                                ["-f", partition.getPath(), "%sM" %(size_mb)],
-                                stdout="/tmp/resize.log",
-                                stderr="/tmp/resize.log")
-        if res:
-            raise FSError, "Resize failed on %s" % (partition.getPath())
-
-        return True
-
-    def getLabel(self, partition):
-        cmd_path = sysutils.find_executable("e2label")
-        cmd = "%s %s" % (cmd_path, partition.getPath())
-        import yali4.gui.context as ctx
-        ctx.debugger.log("Running CMD: %s" % cmd)
-        try:
-            p = os.popen(cmd)
-            label = p.read()
-            p.close()
-        except:
-            return False
-        return label.strip()
-
-    def setLabel(self, partition, label):
-        label = self.availableLabel(label)
-        cmd_path = sysutils.find_executable("e2label")
-        import yali4.gui.context as ctx
-        cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
-        ctx.debugger.log("Running CMD: %s" % cmd)
-        try:
-            p = os.popen(cmd)
-            p.close()
-            res = sysutils.execClear("e2label",
-                                    [partition.getPath(), label],
-                                    stdout="/tmp/label.log",
-                                    stderr="/tmp/label.log")
-        except:
-            return False
-        return label
 
 ##
 # reiserfs
@@ -425,6 +326,9 @@ class ReiserFileSystem(FileSystem):
             return False
         return label
 
+    def getLabel(self, partition):
+        getLabel(partition)
+
 ##
 # xfs
 class XFSFileSystem(FileSystem):
@@ -461,6 +365,8 @@ class XFSFileSystem(FileSystem):
             return False
         return label
 
+    def getLabel(self, partition):
+        getLabel(partition)
 
 ##
 # linux-swap
@@ -565,6 +471,9 @@ class NTFSFileSystem(FileSystem):
 
         return True
 
+    def getLabel(self, partition):
+        getLabel(partition)
+
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
         cmd_path = sysutils.find_executable("ntfslabel")
@@ -614,7 +523,7 @@ class FatFileSystem(FileSystem):
         FileSystem.__init__(self)
         self.setImplemented(True)
 
-        # I will do it later
+        # FIXME I will do it later
         self.setResizable(False)
 
     def format(self, partition):
@@ -629,6 +538,9 @@ class FatFileSystem(FileSystem):
         o = p.readlines()
         if p.close():
             raise YaliException, "vfat format failed: %s" % partition.getPath()
+
+    def getLabel(self, partition):
+        getLabel(partition)
 
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
