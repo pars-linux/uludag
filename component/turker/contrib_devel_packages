@@ -11,29 +11,8 @@
 
 ./kernel/drivers/comedi/pspec.xml
 
-./programming/tools/sqliteman/pspec.xml
-./programming/tools/shed/pspec.xml
-./programming/tools/anjuta/pspec.xml
-./programming/tools/deveditor/pspec.xml
-./programming/tools/gazpacho/pspec.xml
-./programming/tools/xrope/pspec.xml
 ./programming/tools/cppunit/pspec.xml
 ./programming/tools/devhelp/pspec.xml
-./programming/tools/drpython/pspec.xml
-./programming/tools/wxGlade/pspec.xml
-./programming/tools/protoeditor/pspec.xml
-./programming/tools/boa-constructor/pspec.xml
-./programming/tools/sqlitebrowser/pspec.xml
-./programming/tools/uisp/pspec.xml
-./programming/tools/geany/pspec.xml
-./programming/tools/rapidsvn/pspec.xml
-./programming/tools/gcc-snapshot/pspec.xml
-./programming/tools/dabo/pspec.xml
-./programming/tools/qedit/pspec.xml
-./programming/tools/glade/pspec.xml
-./programming/tools/gquilt/pspec.xml
-./programming/tools/codeblocks/pspec.xml
-./programming/tools/dbf/pspec.xml
 
 ./programming/languages/python/uuid/pspec.xml
 ./programming/languages/python/python-musicbrainz2/pspec.xml
