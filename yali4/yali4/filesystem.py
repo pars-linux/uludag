@@ -107,7 +107,7 @@ class FileSystem:
             label = p.read()
             p.close()
         except Exception, e:
-            ctx.debugger.log("Something failed while getting label for partition %s : %s" % (partition.getPath(), e))
+            ctx.debugger.log("Failed while getting label for partition %s : %s" % (partition.getPath(), e))
             return False
         return label.strip()
 
@@ -246,7 +246,8 @@ class FileSystem:
             free_blocks  = long(filter(lambda line: line.startswith('Free blocks'), lines)[0].split(':')[1].strip('\n').strip(' '))
             block_size   = long(filter(lambda line: line.startswith('Block size'), lines)[0].split(':')[1].strip('\n').strip(' '))
             return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 150
-        except:
+        except Exception, e:
+            ctx.debugger.log("Failed while getting minimum size for partition %s : %s" % (partition.getPath(), e))
             return 0
 
     def resize(self, size_mb, partition):
@@ -322,7 +323,8 @@ class ReiserFileSystem(FileSystem):
         try:
             p = os.popen(cmd)
             p.close()
-        except:
+        except Exception, e:
+            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
             return False
         return label
 
@@ -361,7 +363,8 @@ class XFSFileSystem(FileSystem):
         try:
             p = os.popen(cmd)
             p.close()
-        except:
+        except Exception, e:
+            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
             return False
         return label
 
@@ -409,9 +412,9 @@ class SwapFileSystem(FileSystem):
         try:
             buf = os.read(fd, pagesize)
             os.close(fd)
-        except OSError, e:
-            e = "error reading swap label on %s: %s" %(partition.getPath(), e)
-            raise YaliException, e
+        except Exception, e:
+            ctx.debugger.log("Failed while getting label for partition %s : %s" % (partition.getPath(), e))
+            return False
 
         if ((len(buf) == pagesize) and (buf[pagesize - 10:] == "SWAPSPACE2")):
             label = string.rstrip(buf[1052:1068], "\0x00")
@@ -424,7 +427,8 @@ class SwapFileSystem(FileSystem):
         try:
             p = os.popen(cmd)
             p.close()
-        except:
+        except Exception, e:
+            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
             return False
         return label
 
@@ -481,7 +485,8 @@ class NTFSFileSystem(FileSystem):
         try:
             p = os.popen(cmd)
             p.close()
-        except:
+        except Exception, e:
+            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
             return False
         return label
 
@@ -549,7 +554,8 @@ class FatFileSystem(FileSystem):
         try:
             p = os.popen(cmd)
             p.close()
-        except:
+        except Exception, e:
+            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
             return False
         return label
 
