@@ -1,0 +1,22 @@
+<div class="list">
+  <table id="queues">
+    <tr align="left">
+      <th>Student</th>
+      <th>University</th>
+      <th>Major</th>
+      <th>Year</th>
+      <th>Score</th>
+      <th>Last Modified on</th>
+    </tr>
+    <% for student in @students %>
+    <tr class="off" onmouseover="this.className='on'" onmouseout="this.className='off'" onclick="document.location.href='<%= student_path(student) %>'">
+      <td><div class="name"><%= link_to student.name, student_path(student), :class => "noul" %></div></td>
+      <td><div class="university"><%= student.university %></div></td>
+      <td><div class="major"><%= student.major %></div></td>
+      <td><div class="score"><%= student.year %></div></td>
+      <td><div class="score"><%= student.score %></div></td>
+      <td><div class="date"><%= student.created_at %></div></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
