@@ -7,14 +7,41 @@ import locale
 import sys
 import os
 
+import piksemel
+
 def printUsage():
     print "Usage: %s <command>" % sys.argv[0]
     print "Commands:"
     print "  call <app> <model> <method> <arguments>"
-    print "  list-apps <model>"
+    print "  list-apps [model]"
+    print "  list-models <app>"
     print "  register <app> <model> <script.py>"
     print "  remove <app>"
     sys.exit(1)
+
+def introspect(link, path="/"):
+    bus = dbus.SystemBus()
+    obj = bus.get_object(link.address, path)
+
+    nodes = []
+    interfaces = {}
+
+    xml = piksemel.parseString(obj.Introspect(dbus_interface="org.freedesktop.DBus.Introspectable"))
+    for tag in xml.tags():
+        if tag.name() == "node":
+            nodes.append(tag.getAttribute("name"))
+        elif tag.name() == "interface":
+            # Remove root interface address
+            iface = tag.getAttribute("name")
+            iface = iface.split(link.interface)[1]
+            iface = iface[1:]
+            interfaces[iface] = []
+            for child in tag.tags():
+                if child.name() == "method":
+                    method = child.getAttribute("name")
+                    interfaces[iface].append(method)
+
+    return nodes, interfaces
 
 def main():
     if len(sys.argv) == 1:
@@ -27,15 +54,27 @@ def main():
         try:
             model = sys.argv[2]
         except IndexError:
-            printUsage()
-        try:
-            _group, _class = model.split(".")
-        except ValueError:
-            print "Invalid model name"
-            return -1
-        apps = list(comar.Call(link, _group, _class))
+            model = None
+        if model:
+            try:
+                _group, _class = model.split(".")
+            except ValueError:
+                print "Invalid model name"
+                return -1
+            apps = list(comar.Call(link, _group, _class))
+        else:
+            apps, interfaces = introspect(link, "/package")
         for app in apps:
             print app
+    elif sys.argv[1] == "list-models":
+        try:
+            app = sys.argv[2]
+        except IndexError:
+            print "Application name is required."
+            return -1
+        apps, interfaces = introspect(link, "/package/%s" % app)
+        for interface in interfaces:
+            print interface, interfaces[interface]
     elif sys.argv[1] == "register":
         try:
             app = sys.argv[2]
