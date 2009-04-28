@@ -2,7 +2,11 @@ class StudentsController < ApplicationController
   before_filter :login_required
 
   def index
-    @students = Student.all.sort {|a,b| b.score <=> a.score}
+    if params[:order].nil? or params[:order] == "score"
+      @students = Student.all.sort {|a,b| b.score <=> a.score}
+    else
+      @students = Student.find(:all, :order => params[:order])
+    end
   end
 
   def show
