@@ -1,12 +1,12 @@
 <div class="list">
   <table id="queues">
     <tr align="left">
-      <th>Student</th>
-      <th>University</th>
-      <th>Major</th>
-      <th>Year</th>
-      <th>Score</th>
-      <th>Last Modified on</th>
+      <th><%= link_to "Student", students_path(:order => "name") %></th>
+      <th><%= link_to "University", students_path(:order => "university") %></th>
+      <th><%= link_to "Major", students_path(:order => "major") %></th>
+      <th><%= link_to "Year", students_path(:order =>  "year") %></th>
+      <th><%= link_to "Score", students_path(:order => "score") %></th>
+      <th><%= link_to "Last Modified on", students_path(:order => "updated_at") %></th>
     </tr>
     <% for student in @students %>
     <tr class="off" onmouseover="this.className='on'" onmouseout="this.className='off'" onclick="document.location.href='<%= student_path(student) %>'">
