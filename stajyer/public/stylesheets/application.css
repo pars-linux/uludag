@@ -149,3 +149,8 @@ width: 55%;
 #student_attachments ul li a:hover { color:#0000CC; text-decoration:underline}
 
 #student_attachments #notsent { background:#E5ECF9 none repeat scroll 0 0;width: 55%;}{ background:#E5ECF9 none repeat scroll 0 0; }
+
+.link { margin-left: 20px;padding-top:5px; }
+.link a:visited, .link a:link { color:black; text-decoration:underline }
+.link a:hover { color:white; text-decoration:none; background-color:black}
+
