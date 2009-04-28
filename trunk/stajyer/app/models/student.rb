@@ -4,6 +4,8 @@ class Student < ActiveRecord::Base
 
   accepts_nested_attributes_for :documents, :allow_destroy => true
 
+  validates_uniqueness_of :name
+
   def score
     result = 0
     self.comments.each { |c| result += c.score }
