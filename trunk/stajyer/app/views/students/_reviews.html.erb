@@ -2,7 +2,7 @@
 <% for comment in @student.comments %>
 <div class="studentreview">
   <div class="title">
-    On <%= comment.created_at %> <%= comment.commented_by %> gave a score of <b><%= comment.score %></b> and wrote:
+    On <%= comment.updated_at.to_s(:long) %> <%= comment.commented_by %> gave a score of <b><%= comment.score %></b> and wrote:
   </div>
   <div class="other">
     <p>
