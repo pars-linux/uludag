@@ -201,8 +201,8 @@ db_load_model(iks *xml, PyObject **py_models)
             PyTuple_SetItem(py_tuple, 1, PyString_FromString(action_id));
 
             // Build argument lists
-            PyObject *py_args_in = PyString_FromString("");
-            PyObject *py_args_out = PyString_FromString("");
+            PyObject *py_args_in = PyList_New(0);
+            PyObject *py_args_out = PyList_New(0);
             int noreply = 0;
             for (arg = iks_first_tag(met); arg; arg = iks_next_tag(arg)) {
                 if (iks_strcmp(iks_name(arg), "attribute") == 0) {
@@ -215,26 +215,21 @@ db_load_model(iks *xml, PyObject **py_models)
                 else if (iks_strcmp(iks_name(arg), "arg") == 0) {
                     if (iks_strcmp(iks_name(met), "method") == 0) {
                         if (iks_strcmp(iks_find_attrib(arg, "direction"), "out") == 0) {
-                            PyString_Concat(&py_args_out, PyString_FromString(iks_find_attrib(arg, "type")));
+                            PyList_Append(py_args_out, PyString_FromString(iks_find_attrib(arg, "type")));
                         }
                         else {
-                            PyString_Concat(&py_args_in, PyString_FromString(iks_find_attrib(arg, "type")));
+                            PyList_Append(py_args_in, PyString_FromString(iks_find_attrib(arg, "type")));
                         }
                     }
                     else if (iks_strcmp(iks_name(met), "signal") == 0) {
-                        PyString_Concat(&py_args_out, PyString_FromString(iks_find_attrib(arg, "type")));
+                        PyList_Append(py_args_out, PyString_FromString(iks_find_attrib(arg, "type")));
                     }
                 }
             }
 
-
             if (noreply) {
-                py_args_out = PyString_FromString("");
+                py_args_out = PyList_New(0);
             }
-
-            // Split signatures
-            py_args_in = script_signature_each(PyString_AsString(py_args_in));
-            py_args_out = script_signature_each(PyString_AsString(py_args_out));
 
             // Third argument is input arguments
             PyTuple_SetItem(py_tuple, 2, py_args_in);
