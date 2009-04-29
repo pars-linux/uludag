@@ -1,32 +1,5 @@
 <h1>Editing student</h1>
-
-<% form_for(@student) do |f| %>
-<%= f.error_messages %>
-
-<p>
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
-</p>
-<p>
-  <%= f.label :university %><br />
-  <%= f.text_field :university %>
-</p>
-<p>
-  <%= f.label :major %><br />
-  <%= f.text_field :major %>
-</p>
-<p>
-  <%= f.label :year %><br />
-  <%= f.text_field :year %>
-</p>
-<p>
-  <%= f.label :cover %><br />
-  <%= f.text_area :cover, :size => 100 %>
-</p>
-<p>
-  <%= f.submit 'Update' %>
-</p>
+<% form_for @student, :html => { :multipart => true } do |form| %>
+<%= render :partial => "form", :locals => { :form => form } %>
+<p><%= form.submit 'Update' %></p>
 <% end %>
-
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
