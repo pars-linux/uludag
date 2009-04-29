@@ -15,7 +15,7 @@
       <td><div class="major"><%= student.major %></div></td>
       <td><div class="score"><%= student.year %></div></td>
       <td><div class="score"><%= student.score %></div></td>
-      <td><div class="date"><%= student.comments.last.updated_at.to_s(:long) %></div></td>
+      <td><div class="date"><%= student.updated_at.to_s(:long) %></div></td>
     </tr>
     <% end %>
   </table>
