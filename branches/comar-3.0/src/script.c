@@ -129,57 +129,26 @@ PyObject *
 script_signature_each(const char *signature)
 {
     PyObject *py_list = PyList_New(0);
-    char *sub;
-    int i = 0;
 
-    /*
-     * This function will split this string:
-     *
-     *   iusixas(sv)a(ss)
-     *
-     * into:
-     *
-     *   i, u, s, i, x, as, (sv), a(ss)
-     *
-     */
+    DBusError error;
+    DBusSignatureIter iter;
 
-    while (i < strlen(signature)) {
-        switch (signature[i]) {
-            case 'a':
-                switch (signature[i + 1]) {
-                    case '(':
-                        sub = parse_brackets(signature + i + 2, '(', ')');
-                        i += strlen(sub) + 1;
-                        PyList_Append(py_list, PyString_FromFormat("a(%s)", sub));
-                        free(sub);
-                        break;
-                    case '{':
-                        sub = parse_brackets(signature + i + 2, '{', '}');
-                        i += strlen(sub) + 1;
-                        PyList_Append(py_list, PyString_FromFormat("a{%s}", sub));
-                        free(sub);
-                        break;
-                    case 'a':
-                        sub = PyString_AsString(PyList_GetItem(script_signature_each(signature + i + 1), 0));
-                        i += strlen(sub) + 1;
-                        PyList_Append(py_list, PyString_FromFormat("a%s", sub));
-                        break;
-                    default:
-                        PyList_Append(py_list, PyString_FromFormat("a%c", signature[i + 1]));
-                        break;
-                }
-                i++;
-                break;
-            case '(':
-                sub = parse_brackets(signature + i + 1, '(', ')');
-                i += strlen(sub) + 1;
-                PyList_Append(py_list, PyString_FromFormat("(%s)", sub));
-                free(sub);
-                break;
-            default:
-                PyList_Append(py_list, PyString_FromFormat("%c", signature[i]));
+    dbus_signature_iter_init(&iter, signature);
+    while (dbus_signature_iter_get_current_type(&iter) != DBUS_TYPE_INVALID) {
+        char *sign = dbus_signature_iter_get_signature(&iter);
+
+        dbus_error_init(&error);
+        dbus_signature_validate(sign, &error);
+        if (dbus_error_is_set(&error)) {
+            dbus_error_free(&error);
+            return NULL;
         }
-        i++;
+        else {
+            PyList_Append(py_list, PyString_FromString(sign));
+        }
+
+        dbus_free(sign);
+        dbus_signature_iter_next(&iter);
     }
 
     return py_list;

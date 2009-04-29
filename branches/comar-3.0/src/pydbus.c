@@ -91,7 +91,11 @@ pydbus_export(DBusMessageIter *iter, PyObject *obj, char *signature)
 
     // Check signature and tuple size
     PyObject *py_list = script_signature_each(signature);
-    if (PyList_Size(py_list) != PyTuple_Size(obj)) {
+    if (py_list == NULL) {
+        PyErr_SetString(PyExc_COMAR_Invalid, "Method signature is invalid.");
+        return -1;
+    }
+    else if (PyList_Size(py_list) != PyTuple_Size(obj)) {
         PyErr_SetString(PyExc_COMAR_Invalid, "Method signature does not match with object.");
         return -1;
     }

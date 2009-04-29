@@ -25,6 +25,7 @@
  */
 
 #include <Python.h>
+#include <dbus/dbus.h>
 #include <dirent.h>
 #include <unistd.h>
 #include <sys/file.h>
@@ -49,6 +50,7 @@ db_validate_model(iks *xml, char *filename)
      */
 
     iks *iface, *met, *arg;
+    DBusError bus_error;
 
     if (iks_strcmp(iks_name(xml), "comarModel") != 0) {
         log_error("Not a valid model XML: %s\n", filename);
@@ -61,37 +63,45 @@ db_validate_model(iks *xml, char *filename)
             return -1;
         }
         if (!iks_strlen(iks_find_attrib(iface, "name"))) {
-            log_error("Model has no name: %s\n", filename);
+            log_error("Model with no name in XML: %s\n", filename);
             return -1;
         }
 
         for (met = iks_first_tag(iface); met; met = iks_next_tag(met)) {
             if (iks_strcmp(iks_name(met), "method") == 0 || iks_strcmp(iks_name(met), "signal") == 0) {
                 if (!iks_strlen(iks_find_attrib(met, "name"))) {
-                    log_error("Method/Signal tag without name: %s\n", filename);
+                    log_error("Method/Signal tag without name under '%s' in XML: %s\n", iks_find_attrib(iface, "name"), filename);
                     return -1;
                 }
                 for (arg = iks_first_tag(met); arg; arg = iks_next_tag(arg)) {
                     if (iks_strcmp(iks_name(arg), "arg") == 0) {
                         if (!iks_strlen(iks_find_attrib(arg, "type"))) {
-                            log_error("Argument tag without type: %s\n", filename);
+                            log_error("Argument tag without type under '%s/%s' in XML: %s\n", iks_find_attrib(iface, "name"), iks_find_attrib(met, "name"), filename);
                             return -1;
+                        }
+                        else {
+                            dbus_error_init(&bus_error);
+                            if (!dbus_signature_validate(iks_find_attrib(arg, "type"), &bus_error)) {
+                                dbus_error_free(&bus_error);
+                                log_error("Argument tag with invalid type under '%s/%s' in XML: %s\n", iks_find_attrib(iface, "name"), iks_find_attrib(met, "name"), filename);
+                                return -1;
+                            }
                         }
                     }
                     else if (iks_strcmp(iks_name(arg), "annotation") == 0) {
                         if (!iks_strlen(iks_find_attrib(arg, "name"))) {
-                            log_error("Annotation tag without name: %s\n", filename);
+                            log_error("Annotation tag without name under '%s' in XML: %s\n", iks_find_attrib(iface, "name"), iks_find_attrib(met, "name"), filename);
                             return -1;
                         }
                     }
                     else {
-                        log_error("Unknown tag '%s' in XML: %s\n", iks_name(arg), filename);
+                        log_error("Unknown tag '%s' under '%s/%s' in XML: %s\n", iks_name(arg), iks_find_attrib(iface, "name"), iks_find_attrib(met, "name"), filename);
                         return -1;
                     }
                 }
             }
             else {
-                log_error("Unknown tag '%s' in XML: %s\n", iks_name(met), filename);
+                log_error("Unknown tag '%s' under '%s' in XML: %s\n", iks_name(met), iks_find_attrib(iface, "name"), filename);
                 return -1;
             }
         }
@@ -228,6 +238,7 @@ db_load_models(PyObject **py_models)
      * Returns a dictionary of models and their methods.
      *
      * @py_models Pointer to dictionary
+     * @return 0 on success, -1 on error
      *
      */
 
@@ -257,21 +268,22 @@ db_load_models(PyObject **py_models)
             case IKS_FILE_RWERR:
             case IKS_FILE_NOACCESS:
                 log_error("Unable to open XML: %s\n", fn_xml);
-                goto next_xml;
+                closedir(dir);
+                free(fn_xml);
+                return -1;
         }
 
         // Validate XML
         if (db_validate_model(xml, fn_xml) != 0) {
-            goto next_xml_clean;
+            closedir(dir);
+            iks_delete(xml);
+            free(fn_xml);
+            return -1;
         }
 
         // Load model
         db_load_model(xml, py_models);
 
-next_xml_clean:
-        iks_delete(xml);
-next_xml:
-        free(fn_xml);
     }
     closedir(dir);
 

@@ -192,27 +192,3 @@ strsub(const char *str, int start, int end)
     new_src[t - (str + start)] = '\0';
     return new_src;
 }
-
-char *
-parse_brackets(const char *str, char op, char cl)
-{
-    int depth = 1;
-    int i = 0;
-
-    while (i < strlen(str)) {
-        if (str[i] == op) {
-            depth++;
-        }
-        else if (str[i] == cl) {
-            depth--;
-        }
-        if (depth == 0) {
-            return strsub(str, 0, i);
-        }
-        else {
-            i++;
-        }
-    }
-
-    return "";
-}
