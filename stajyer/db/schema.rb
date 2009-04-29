@@ -9,12 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090427121531) do
+ActiveRecord::Schema.define(:version => 20090429065232) do
 
   create_table "comments", :force => true do |t|
     t.integer  "student_id"
     t.string   "commented_by"
-    t.string   "review"
+    t.text     "review"
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
