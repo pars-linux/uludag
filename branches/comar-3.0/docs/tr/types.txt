@@ -45,3 +45,18 @@ Taşınan değer değişken ise (örneğin bir eleman int iken, diğeri str ise)
 sadece temel tiplerden biri olabilir.
 
     [{str: [str, int]}]   aa{sav}
+
+ÖNEMLİ: Bir argüman içinde, birden fazla imza (taşıyıcı bir tip içinde
+olmadıkları sürece) birleştirilerek kullanılamaz. Aşağıdaki imzalar
+yanlıştır:
+
+    ss
+    si
+    s(si)
+    sa{ss}
+
+Ancak, aşağıdaki imzalar geçerlidir:
+
+    (sssss)
+    a{s(sss)}
+    aa{ss}

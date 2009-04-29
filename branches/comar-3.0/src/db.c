@@ -50,45 +50,63 @@ db_validate_model(iks *xml, char *filename)
      */
 
     iks *iface, *met, *arg;
-    DBusError bus_error;
 
+    DBusError bus_error;
+    dbus_error_init(&bus_error);
+
+    // Check root tag
     if (iks_strcmp(iks_name(xml), "comarModel") != 0) {
         log_error("Not a valid model XML: %s\n", filename);
         return -1;
     }
 
     for (iface = iks_first_tag(xml); iface; iface = iks_next_tag(iface)) {
+        // Only "interface" tag is allowed
         if (iks_strcmp(iks_name(iface), "interface") != 0) {
             log_error("Unknown tag '%s' in XML: %s\n", iks_name(iface), filename);
             return -1;
         }
+        // Interfaces must have a "name" attribute
         if (!iks_strlen(iks_find_attrib(iface, "name"))) {
             log_error("Model with no name in XML: %s\n", filename);
             return -1;
         }
 
         for (met = iks_first_tag(iface); met; met = iks_next_tag(met)) {
+            // Only "method" and "signal" tags are allowed
             if (iks_strcmp(iks_name(met), "method") == 0 || iks_strcmp(iks_name(met), "signal") == 0) {
+                // Tags must have a "name" attribute
                 if (!iks_strlen(iks_find_attrib(met, "name"))) {
                     log_error("Method/Signal tag without name under '%s' in XML: %s\n", iks_find_attrib(iface, "name"), filename);
                     return -1;
                 }
                 for (arg = iks_first_tag(met); arg; arg = iks_next_tag(arg)) {
                     if (iks_strcmp(iks_name(arg), "arg") == 0) {
+                        // Arguments must have a "name" attribute
+                        if (!iks_strlen(iks_find_attrib(arg, "name"))) {
+                            log_error("Argument tag with no name under '%s/%s' in XML: %s\n", iks_find_attrib(iface, "name"), iks_find_attrib(met, "name"), filename);
+                            return -1;
+                        }
+                        // Arguments must have a "type" attribute
                         if (!iks_strlen(iks_find_attrib(arg, "type"))) {
                             log_error("Argument tag without type under '%s/%s' in XML: %s\n", iks_find_attrib(iface, "name"), iks_find_attrib(met, "name"), filename);
                             return -1;
                         }
-                        else {
-                            dbus_error_init(&bus_error);
-                            if (!dbus_signature_validate(iks_find_attrib(arg, "type"), &bus_error)) {
-                                dbus_error_free(&bus_error);
-                                log_error("Argument tag with invalid type under '%s/%s' in XML: %s\n", iks_find_attrib(iface, "name"), iks_find_attrib(met, "name"), filename);
-                                return -1;
-                            }
+                        // Types must be a valid DBus signature
+                        if (!dbus_signature_validate(iks_find_attrib(arg, "type"), &bus_error)) {
+                            dbus_error_free(&bus_error);
+                            log_error("Argument tag with invalid type (%s/%s/%s) in XML: %s\n", iks_find_attrib(iface, "name"), iks_find_attrib(met, "name"), iks_find_attrib(arg, "name"), filename);
+                            return -1;
+                        }
+                        // Types must be single type object
+                        if (!dbus_signature_validate_single(iks_find_attrib(arg, "type"), &bus_error)) {
+                            dbus_error_free(&bus_error);
+                            log_error("Argument tag with a non-single element type (%s/%s/%s) in XML: %s\n", iks_find_attrib(iface, "name"), iks_find_attrib(met, "name"), iks_find_attrib(arg, "name"), filename);
+                            return -1;
                         }
                     }
                     else if (iks_strcmp(iks_name(arg), "annotation") == 0) {
+                        // Attributes must have a "name" attribute
                         if (!iks_strlen(iks_find_attrib(arg, "name"))) {
                             log_error("Annotation tag without name under '%s' in XML: %s\n", iks_find_attrib(iface, "name"), iks_find_attrib(met, "name"), filename);
                             return -1;

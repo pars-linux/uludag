@@ -44,3 +44,17 @@ If contained type is variant (some values are str's, some are int's e.g.),
 other container type.
 
     [{str: [str, int]}]   aa{sav}
+
+IMPORTANT: You can't use more than one signature in arguments, unless
+they are contained in a container type. Following signatures are wrong:
+
+    ss
+    si
+    s(si)
+    sa{ss}
+
+However, following signatures are valid:
+
+    (sssss)
+    a{s(sss)}
+    aa{ss}
