@@ -431,16 +431,22 @@ def make_image(project):
         chrun("/usr/bin/pisi configure-pending")
 
         # FIXME : find a generic way to do this
-        if "kdebase4" in project.all_packages :
-            chrun("/bin/service kdebase4_workspace on")
-            # Change headstart
-            fn_config = os.path.join(image_dir, "etc/conf.d/mudur")
-            str_conf = file(fn_config).read()
-            str_conf = re.sub("kdebase", "kdebase4_workspace", str_conf)
-            file(fn_config, "w").write(str_conf)
+        if "kdebase4" in project.all_packages:
             # Disable Nepomuk in live CDs
             if project.type == "live":
                 os.unlink("%s/usr/kde/4/share/autostart/nepomukserver.desktop" % image_dir)
+
+        if project.type == "install" and "xdm" in project.all_packages:
+            # FIXME: Do not hard code installer name
+            dm_config = "DISPLAY_MANAGER=yali4"
+
+            # Write default display manager config
+            image_dir = project.image_dir()
+            dest = os.path.join(image_dir, "etc/default/xdm")
+
+            f = file(dest, "w")
+            f.write(dm_config)
+            f.close()
 
         connectToDBus(image_dir)
 
