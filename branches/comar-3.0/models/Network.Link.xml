@@ -24,7 +24,7 @@
             <arg name="name" type="s" direction="in"/>
             <arg name="method" type="s" direction="out"/>
         </method>
-        <method name="getAuthParameters" action_id="">
+        <method name="getAuthParameters" action_id="tr.org.pardus.comar.net.link.getauth">
             <arg name="name" type="s" direction="in"/>
             <arg name="key" type="a{ss}" direction="out"/>
         </method>
