@@ -44,13 +44,13 @@ SET (SOURCES src/main.c
              src/utils.c)
 
 # Set standard libraries
-SET (LIBS python2.5
+SET (LIBS python2.6
           dbus-1
           polkit-dbus)
 
 # Include standard headers
 INCLUDE_DIRECTORIES (include/
-                     /usr/include/python2.5
+                     /usr/include/python2.6
                      /usr/include/dbus-1.0
                      /usr/lib/dbus-1.0/include
                      /usr/include/PolicyKit)
