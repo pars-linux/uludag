@@ -1,3 +1,4 @@
+- Handle kernel events
 - Move AccessPoint, Wireless, Profile classes under comar.network module
     - Also review/refactor them
 - Put AdHoc support back into wireless-tools
