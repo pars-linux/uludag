@@ -46,15 +46,16 @@ def index_language(request, lang_code):
                                                                "other_languages": other_languages})
 
 def index(request):
-    """
     languages = [x.code for x in Language.objects.all()]
     for lang in request.META["HTTP_ACCEPT_LANGUAGE"].split(","):
-        lang = lang.split("-")[0]
-        if lang in languages:
-            return HttpResponseRedirect("/%s/" % lang)
-    """
-    return render_to_response("advisory/about.html", {"advisories": advisories,
-                                                      "language": lang_code,
+        lang_code = lang.split("-")[0]
+        if lang_code in languages:
+            break
+    translation.activate(lang_code)
+    advisories = Advisory.objects.filter(publish=True, language__code=lang_code)[:10]
+    years = [x.year for x in Advisory.objects.dates("release_date", "year")]
+    other_languages = Language.objects.exclude(code=lang_code)
+    return render_to_response("advisory/about.html", {"language": lang_code,
                                                       "years": years,
                                                       "other_languages": other_languages})
 
