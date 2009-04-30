@@ -1,3 +1,5 @@
+*customization: -color
+
 Xft.antialias:  true
 Xft.dpi:        96
 Xft.hinting:    true
