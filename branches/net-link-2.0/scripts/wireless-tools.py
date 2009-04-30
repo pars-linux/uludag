@@ -16,6 +16,11 @@ MSG_NO_SUPPLICANT = {
     "tr": "WPA supplicant bulunamadı.",
 }
 
+MSG_NO_SUPPLICANT_SERVICE = {
+    "en": "Unable to start WPA supplicant service.",
+    "tr": "WPA servisi başlatılamadı.",
+}
+
 MSG_WPA_FAILED = {
     "en": "Authentication failed.",
     "tr": "Kimlik doğrulama başarısız.",
@@ -217,13 +222,11 @@ class Wireless:
             if not supplicant:
                 fail(_(MSG_NO_WPA))
             if not wpa_supplicant.startWpaService():
-                fail("Unable to start WPA service")
+                fail(_(MSG_NO_SUPPLICANT_SERVICE))
             ret = wpa_supplicant.setWpaAuthentication(self.ifc.name, self.ssid, parameters["password"])
             if not ret:
                 fail(_(MSG_WPA_FAILED))
         elif mode == "802.1x":
-            pass
-        elif mode == "WPA-EAP":
             pass
 
     def getBitrate(self, ifname):
