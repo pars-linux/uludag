@@ -53,7 +53,10 @@ def index(request):
         if lang in languages:
             return HttpResponseRedirect("/%s/" % lang)
     """
-    return render_to_response("advisory/about.html", {})
+    return render_to_response("advisory/about.html", {"advisories": advisories,
+                                                      "language": lang_code,
+                                                      "years": years,
+                                                      "other_languages": other_languages})
 
 def feed(request, lang_code):
     translation.activate(lang_code)
