@@ -1,0 +1,17 @@
+{% load i18n %}
+
+{% extends "base.html" %}
+
+{% block content %}
+    ...
+{% endblock %}
+
+{% block menu %}
+    <a href="/{{ language }}/">{% trans "Homepage" %}</a>
+    {% for year in years %}
+        | <a href="/{{ language }}/{{ year }}/">{{ year }}</a>
+    {% endfor %}
+    {% for lang in other_languages %}
+        | <a href="/{{ lang.code }}">{{ lang.name }}</a>
+    {% endfor %}
+{% endblock %}
