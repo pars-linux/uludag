@@ -37,6 +37,36 @@ desktop
         ./desktop/xfce4/base/libxfce4menu/pspec.xml
         ./desktop/xfce4/base/libxfcegui4/pspec.xml
         ./desktop/xfce4/base/libxfce4util/pspec.xml
+        ./desktop/xfce4/goodies/xfburn/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-power-manager/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-notifyd/pspec.xml
+        ./desktop/xfce4/goodies/ristretto/pspec.xml
+        ./desktop/xfce4/goodies/xfmedia/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-taskmanager/pspec.xml
+
+        addon
+        ./desktop/xfce4/goodies/thunar-volman/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-radio-plugin/pspec.xml
+        ./desktop/xfce4/goodies/thunar-media-tags-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-weather-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-datetime-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-clipman-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-places-plugin/pspec.xml
+        ./desktop/xfce4/goodies/thunar-thumbnailers/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-eyes-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-cpugraph-plugin/pspec.xml
+        ./desktop/xfce4/goodies/thunar-archive-plugin/pspec.xml
+        ./desktop/xfce4/goodies/thunar-svn-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-diskperf-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-timer-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-verve-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-netload-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-notes-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-screenshooter-plugin/pspec.xml
+        ./desktop/xfce4/goodies/battery-applet-4-xfce4/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-systemload-plugin/pspec.xml
+        ./desktop/xfce4/goodies/xfce4-mpc-plugin/pspec.xml
+        ./desktop/xfce4/themes/murrine/pspec.xml
 
     gnome
     ./desktop/gnome/gtk2-engines-nodoka/pspec.xml
@@ -332,6 +362,7 @@ multimedia
     ./applications/multimedia/herrie/pspec.xml
     ./applications/multimedia/moc/pspec.xml
     ./applications/multimedia/gimmix/pspec.xml
+    ./desktop/xfce4/goodies/xfmpc/pspec.xml
 ./desktop/kde/amarokFS/pspec.xml
 ./desktop/kde/kmetronome/pspec.xml
 ./desktop/kde/kguitar/pspec.xml
@@ -490,6 +521,7 @@ office
     docbook
 
     dictionary
+    ./desktop/xfce4/goodies/xfce4-dict/pspec.xml
 ./desktop/kde/qtsozluk/pspec.xml
 
     koffice
@@ -503,6 +535,7 @@ office
     tex
     ./applications/editors/texmaker/pspec.xml
     ./applications/editors/amyedit/pspec.xml
+    ./desktop/xfce4/goodies/xfbib/pspec.xml
 
     misc
     ./programming/languages/python/renderPM/pspec.xml
