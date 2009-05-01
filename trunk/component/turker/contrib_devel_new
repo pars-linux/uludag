@@ -331,6 +331,8 @@ multimedia
     converter
     ./applications/multimedia/subtitleripper/pspec.xml
     ./desktop/kde/kommander-scripts/3gpconverter/pspec.xml
+    ./applications/multimedia/soundkonverter/pspec.xml
+    ./applications/multimedia/soundconverter/pspec.xml
 
     editor
     ./applications/multimedia/qtractor/pspec.xml
@@ -352,6 +354,9 @@ multimedia
     ./applications/multimedia/gqview/pspec.xml
     ./desktop/gnome/gthumb/pspec.xml
     ./desktop/kde/kalbum/pspec.xml
+    ./applications/multimedia/comix/pspec.xml
+    ./applications/multimedia/rawstudio/pspec.xml
+    ./applications/multimedia/ffmpegthumbnailer/pspec.xml
 
     library
     ./desktop/gnome/gnonlin/pspec.xml
@@ -365,6 +370,7 @@ multimedia
     ./applications/multimedia/gnaural/pspec.xml
     ./applications/multimedia/quodlibet/pspec.xml
     ./applications/multimedia/ncmpc/pspec.xml
+    ./applications/multimedia/ncmpcpp/pspec.xml
     ./applications/multimedia/mpc/pspec.xml
     ./applications/multimedia/kyamo/pspec.xml
     ./applications/multimedia/sidplay2/pspec.xml
@@ -377,6 +383,8 @@ multimedia
     ./desktop/kde/kmetronome/pspec.xml
     ./desktop/kde/kguitar/pspec.xml
     ./desktop/kde/destick/pspec.xml
+    ./applications/multimedia/sonata/pspec.xml
+    ./applications/multimedia/listen/pspec.xml
 
     stream
     ./applications/multimedia/idjc/pspec.xml
@@ -387,6 +395,7 @@ multimedia
     video
     ./applications/multimedia/wxcam/pspec.xml
     ./applications/multimedia/qt-recordmydesktop/pspec.xml
+    ./applications/multimedia/gtk-recordmydesktop/pspec.xml
     ./applications/multimedia/Miro/pspec.xml
 ./desktop/kde/kplayer/pspec.xml
 
@@ -461,6 +470,7 @@ network
 
     library
     ./applications/network/mozilla/xulrunner/pspec.xml
+    ./programming/libs/webkit-gtk/pspec.xml
 
     mail
     ./applications/network/mutt/pspec.xml
@@ -556,6 +566,9 @@ office
     ./applications/doc/trml2pdf/pspec.xml
     ./applications/doc/jabref/pspec.xml
     ./desktop/kde/kmymoney/pspec.xml
+    ./applications/util/chmsee/pspec.xml
+    ./applications/multimedia/epdfview/pspec.xml
+    ./applications/office/dia/pspec.xml
 
 programming
     build
@@ -882,6 +895,8 @@ science
 
     mathematics
     ./desktop/kde/abakus/pspec.xml
+    ./applications/science/galculator/pspec.xml
+    ./applications/science/speedcrunch/pspec.xml
 
     medical
 
@@ -931,6 +946,7 @@ util
     archive
     ./desktop/kde/Q7Z/pspec.xml
     ./desktop/kde/kbackup/pspec.xml
+    ./applications/archive/xarchiver/pspec.xml
 
     crypt
 

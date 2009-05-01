@@ -42,7 +42,6 @@
 ./programming/libs/libflaim/pspec.xml
 ./programming/libs/ccrtp/pspec.xml
 ./programming/libs/libgeotiff/pspec.xml
-./programming/libs/webkit-gtk/pspec.xml
 ./programming/libs/xylib/pspec.xml
 ./programming/libs/libmowgli/pspec.xml
 ./programming/libs/libburn/pspec.xml
@@ -91,7 +90,6 @@
 ./programming/libs/libgeda/pspec.xml
 ./programming/libs/fparser/pspec.xml
 
-
 ./applications/hardware/qink/pspec.xml
 ./applications/hardware/hddtemp/pspec.xml
 ./applications/hardware/hwreport/pspec.xml
@@ -138,7 +136,6 @@
 ./applications/multimedia/vmpk/pspec.xml
 ./applications/multimedia/camstream/pspec.xml
 ./applications/multimedia/codeine/pspec.xml
-./applications/multimedia/listen/pspec.xml
 ./applications/multimedia/aucdtect/pspec.xml
 ./applications/multimedia/showimg/pspec.xml
 ./applications/multimedia/qmpdclient/pspec.xml
@@ -147,10 +144,8 @@
 ./applications/multimedia/cdcat/pspec.xml
 ./applications/multimedia/milkytracker/pspec.xml
 ./applications/multimedia/solfege/pspec.xml
-./applications/multimedia/epdfview/pspec.xml
 ./applications/multimedia/themekreator/pspec.xml
 ./applications/multimedia/mplayer-skins/pspec.xml
-./applications/multimedia/gtk-recordmydesktop/pspec.xml
 ./applications/multimedia/libzzub/pspec.xml
 ./applications/multimedia/ecasound/pspec.xml
 ./applications/multimedia/qsampler/pspec.xml
@@ -167,7 +162,6 @@
 ./applications/multimedia/mypaint/pspec.xml
 ./applications/multimedia/gnuitar/pspec.xml
 ./applications/multimedia/autopano-sift-C/pspec.xml
-./applications/multimedia/soundconverter/pspec.xml
 ./applications/multimedia/linuxsampler/pspec.xml
 ./applications/multimedia/wink/pspec.xml
 ./applications/multimedia/enblend/pspec.xml
@@ -187,16 +181,13 @@
 ./applications/multimedia/smplayer/pspec.xml
 ./applications/multimedia/klearnnotes2/pspec.xml
 ./applications/multimedia/ecamegapedal/pspec.xml
-./applications/multimedia/sonata/pspec.xml
 ./applications/multimedia/agave/pspec.xml
-./applications/multimedia/ncmpcpp/pspec.xml
 ./applications/multimedia/mconverter/pspec.xml
 ./applications/multimedia/sonik/pspec.xml
 ./applications/multimedia/mpg321/pspec.xml
 ./applications/multimedia/hugin/pspec.xml
 ./applications/multimedia/gtkpod/pspec.xml
 ./applications/multimedia/uade/pspec.xml
-./applications/multimedia/ffmpegthumbnailer/pspec.xml
 ./applications/multimedia/ctronome/pspec.xml
 ./applications/multimedia/qdvdauthor/pspec.xml
 ./applications/multimedia/fotoxx/pspec.xml
@@ -206,13 +197,10 @@
 ./applications/multimedia/bmpx/pspec.xml
 ./applications/multimedia/milkytracker-xi/pspec.xml
 ./applications/multimedia/mpd/pspec.xml
-./applications/multimedia/comix/pspec.xml
 ./applications/multimedia/koverartist/pspec.xml
-./applications/multimedia/rawstudio/pspec.xml
 ./applications/multimedia/gimp/gimp-greycstoration/pspec.xml
 ./applications/multimedia/freevo/pspec.xml
 ./applications/multimedia/manencode/pspec.xml
-./applications/multimedia/soundkonverter/pspec.xml
 ./applications/multimedia/audacious/pspec.xml
 
 ./applications/emulators/fceultra/pspec.xml
@@ -231,7 +219,6 @@
 ./applications/science/qgis/pspec.xml
 ./applications/science/josm/pspec.xml
 ./applications/science/navilink/pspec.xml
-./applications/science/galculator/pspec.xml
 ./applications/science/massxpert/pspec.xml
 ./applications/science/extcalc/pspec.xml
 ./applications/science/veusz/pspec.xml
@@ -266,7 +253,6 @@
 ./applications/science/electronics/geda-symbols/pspec.xml
 ./applications/science/electronics/geda-docs/pspec.xml
 ./applications/science/electronics/iverilog/pspec.xml
-./applications/science/speedcrunch/pspec.xml
 ./applications/science/calcoo/pspec.xml
 ./applications/science/qcad/pspec.xml
 ./applications/science/fet/pspec.xml
@@ -340,7 +326,6 @@
 ./applications/util/cellwriter/pspec.xml
 ./applications/util/flashrom/pspec.xml
 ./applications/util/recoll/pspec.xml
-./applications/util/chmsee/pspec.xml
 ./applications/util/cpulimit/pspec.xml
 ./applications/util/catfish/pspec.xml
 ./applications/util/scrot/pspec.xml
@@ -348,10 +333,8 @@
 ./applications/office/osmo/pspec.xml
 ./applications/office/homebank/pspec.xml
 ./applications/office/taskjuggler/pspec.xml
-./applications/office/abiword/pspec.xml
 ./applications/office/abook/pspec.xml
 ./applications/office/grisbi/pspec.xml
-./applications/office/dia/pspec.xml
 ./applications/office/planner/pspec.xml
 ./applications/office/tekir/pspec.xml
 ./applications/office/kbibtex/pspec.xml
@@ -365,7 +348,6 @@
 ./applications/archive/atool/pspec.xml
 ./applications/archive/komparator/pspec.xml
 ./applications/archive/pbzip2/pspec.xml
-./applications/archive/xarchiver/pspec.xml
 
 ./applications/security/rkhunter/pspec.xml
 ./applications/security/qtfprot/pspec.xml
