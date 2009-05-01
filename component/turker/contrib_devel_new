@@ -12,6 +12,17 @@ desktop
         ./desktop/enlightenment/base/evas/pspec.xml
         ./desktop/enlightenment/base/ecore/pspec.xml
 
+        addon
+        ./desktop/enlightenment/extra/etk/pspec.xml
+        ./desktop/enlightenment/extra/ewl/pspec.xml
+        ./desktop/enlightenment/extra/eterm/pspec.xml
+        ./desktop/enlightenment/extra/enterminus/pspec.xml
+        ./desktop/enlightenment/extra/emotion/pspec.xml
+        ./desktop/enlightenment/extra/eterm-bg/pspec.xml
+        ./desktop/enlightenment/extra/epsilon/pspec.xml
+        ./desktop/enlightenment/extra/exhibit/pspec.xml
+        ./desktop/enlightenment/extra/esmart/pspec.xml
+
     xfce
         base
         ./desktop/xfce4/base/orage/pspec.xml

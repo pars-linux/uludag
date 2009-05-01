@@ -398,17 +398,6 @@
 ./desktop/opencompositing/compiz/compiz-fusion-plugins-unsupported/pspec.xml
 ./desktop/opencompositing/compiz/compiz-emerald/pspec.xml
 
-
-./desktop/enlightenment/extra/etk/pspec.xml
-./desktop/enlightenment/extra/ewl/pspec.xml
-./desktop/enlightenment/extra/eterm/pspec.xml
-./desktop/enlightenment/extra/enterminus/pspec.xml
-./desktop/enlightenment/extra/emotion/pspec.xml
-./desktop/enlightenment/extra/eterm-bg/pspec.xml
-./desktop/enlightenment/extra/epsilon/pspec.xml
-./desktop/enlightenment/extra/exhibit/pspec.xml
-./desktop/enlightenment/extra/esmart/pspec.xml
-
 ./desktop/fluxbox/fluxconf/pspec.xml
 ./desktop/fluxbox/idesk/pspec.xml
 ./desktop/fluxbox/fbdesk/pspec.xml
