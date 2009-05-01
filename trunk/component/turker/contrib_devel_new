@@ -110,36 +110,48 @@ desktop
         l10n
 
     kde3
-./desktop/kde/tweak/pspec.xml
-./desktop/kde/krusader/pspec.xml
-
         addon
-./desktop/kde/kblogger/pspec.xml
-./desktop/kde/kkeyled/pspec.xml
-./desktop/kde/ksmoothdock/pspec.xml
-./desktop/kde/pathbar/pspec.xml
-./desktop/kde/kirocker/pspec.xml
-./desktop/kde/tastymenu/pspec.xml
-./desktop/kde/mailkount/pspec.xml
-./desktop/kde/kooldock/pspec.xml
-./desktop/kde/klcddimmer/pspec.xml
-./desktop/kde/kbloggersidebar/pspec.xml
-./desktop/kde/servicemenus/kpaste/pspec.xml
-./desktop/kde/servicemenus/editassu/pspec.xml
-./desktop/kde/servicemenus/kvm-convert/pspec.xml
-./desktop/kde/servicemenus/conversion-tools/pspec.xml
-./desktop/kde/servicemenus/takesum/pspec.xml
-./desktop/kde/servicemenus/imaj-at/pspec.xml
-./desktop/kde/servicemenus/kim/pspec.xml
-./desktop/kde/servicemenus/audiokonverter/pspec.xml
-./desktop/kde/servicemenus/imageshack-upload/pspec.xml
-./desktop/kde/kmetabar/pspec.xml
-./desktop/kde/kfuseiso/pspec.xml
-./desktop/kde/kcheckgmail/pspec.xml
-./desktop/kde/kpager2/pspec.xml
-./desktop/kde/kthinkbat/pspec.xml
+        ./desktop/kde/kblogger/pspec.xml
+        ./desktop/kde/kkeyled/pspec.xml
+        ./desktop/kde/ksmoothdock/pspec.xml
+        ./desktop/kde/pathbar/pspec.xml
+        ./desktop/kde/kirocker/pspec.xml
+        ./desktop/kde/tastymenu/pspec.xml
+        ./desktop/kde/mailkount/pspec.xml
+        ./desktop/kde/kooldock/pspec.xml
+        ./desktop/kde/klcddimmer/pspec.xml
+        ./desktop/kde/kbloggersidebar/pspec.xml
+        ./desktop/kde/servicemenus/kpaste/pspec.xml
+        ./desktop/kde/servicemenus/editassu/pspec.xml
+        ./desktop/kde/servicemenus/kvm-convert/pspec.xml
+        ./desktop/kde/servicemenus/conversion-tools/pspec.xml
+        ./desktop/kde/servicemenus/takesum/pspec.xml
+        ./desktop/kde/servicemenus/imaj-at/pspec.xml
+        ./desktop/kde/servicemenus/kim/pspec.xml
+        ./desktop/kde/servicemenus/audiokonverter/pspec.xml
+        ./desktop/kde/servicemenus/imageshack-upload/pspec.xml
+        ./desktop/kde/kmetabar/pspec.xml
+        ./desktop/kde/kfuseiso/pspec.xml
+        ./desktop/kde/kcheckgmail/pspec.xml
+        ./desktop/kde/kpager2/pspec.xml
+        ./desktop/kde/kthinkbat/pspec.xml
+        ./desktop/kde/tulliana-splash/pspec.xml
+        ./desktop/kde/suse2/pspec.xml
+        ./desktop/kde/kbfx/pspec.xml
+        ./desktop/kde/alloyon/pspec.xml
+        ./desktop/kde/moodin-themes/pspec.xml
+        ./desktop/kde/laora/pspec.xml
+        ./desktop/kde/pardus-tticonset/pspec.xml
+        ./desktop/kde/baghira/pspec.xml
+        ./desktop/kde/metalik-splash/pspec.xml
+        ./desktop/kde/deposplash/pspec.xml
+        ./desktop/kde/dekorator/pspec.xml
+        ./desktop/kde/surprise/pspec.xml
+        ./desktop/kde/kdmtheme/pspec.xml
+        ./desktop/kde/krusader/pspec.xml
 
         admin
+        ./desktop/kde/tweak/pspec.xml
 
         base
 
@@ -150,23 +162,10 @@ desktop
     ./desktop/freedesktop/dmz-aa-xcursor/pspec.xml
     ./desktop/freedesktop/hicolor-icon-theme/pspec.xml
     ./desktop/freedesktop/dmz-xcursor/pspec.xml
-./desktop/kde/tulliana-splash/pspec.xml
-./desktop/kde/suse2/pspec.xml
-./desktop/kde/kbfx/pspec.xml
-./desktop/kde/alloyon/pspec.xml
-./desktop/kde/moodin-themes/pspec.xml
-./desktop/kde/laora/pspec.xml
-./desktop/kde/pardus-tticonset/pspec.xml
-./desktop/kde/baghira/pspec.xml
-./desktop/kde/metalik-splash/pspec.xml
-./desktop/kde/deposplash/pspec.xml
-./desktop/kde/dekorator/pspec.xml
-./desktop/kde/surprise/pspec.xml
-./desktop/kde/kdmtheme/pspec.xml
 
     misc
     ./desktop/gnome/glipper/pspec.xml
-./desktop/kde/3ddesktop/pspec.xml
+    ./desktop/kde/3ddesktop/pspec.xml
 
     toolkit
     ./programming/languages/python/tk-happy/pspec.xml
@@ -248,17 +247,17 @@ hardware
     irda
 
     cpu
-./desktop/kde/kima/pspec.xml
+    ./desktop/kde/kima/pspec.xml
 
     disk
-./desktop/kde/diskmonitor/pspec.xml
+    ./desktop/kde/diskmonitor/pspec.xml
 
     emulator
     ./applications/network/dynagen/pspec.xml
     ./applications/network/dynagui/pspec.xml
     ./applications/network/dynamips/pspec.xml
     ./applications/network/x3270/pspec.xml
-./desktop/kde/kdevisualboyadvance/pspec.xml
+    ./desktop/kde/kdevisualboyadvance/pspec.xml
 
     firmware
 
@@ -269,20 +268,20 @@ hardware
     library
 
     misc
-./desktop/kde/ksynaptics/pspec.xml
-./desktop/kde/klineakconfig/pspec.xml
+    ./desktop/kde/ksynaptics/pspec.xml
+    ./desktop/kde/klineakconfig/pspec.xml
 
     mobile
     ./applications/network/gammu/pspec.xml
     ./applications/network/wammu/pspec.xml
-./desktop/kde/kmobiletools/pspec.xml
+    ./desktop/kde/kmobiletools/pspec.xml
 
     optical
     ./applications/multimedia/brasero/pspec.xml
     ./applications/multimedia/devede/pspec.xml
     ./desktop/gnome/gnomebaker/pspec.xml
-./desktop/kde4/k9copy-kde4/pspec.xml
-./desktop/kde/k9copy/pspec.xml
+    ./desktop/kde4/k9copy-kde4/pspec.xml
+    ./desktop/kde/k9copy/pspec.xml
 
     powermanagement
     ./applications/powermanagement/acpitool/pspec.xml
@@ -297,10 +296,10 @@ hardware
     smartcard
 
     sound
-./desktop/kde/kenvy24gui/pspec.xml
+    ./desktop/kde/kenvy24gui/pspec.xml
 
     virtualization
-./applications/admin/usermode-utilities/pspec.xml
+    ./applications/admin/usermode-utilities/pspec.xml
 
 kernel
     debug
@@ -320,7 +319,7 @@ kernel
 multimedia
     converter
     ./applications/multimedia/subtitleripper/pspec.xml
-./desktop/kde/kommander-scripts/3gpconverter/pspec.xml
+    ./desktop/kde/kommander-scripts/3gpconverter/pspec.xml
 
     editor
     ./applications/multimedia/qtractor/pspec.xml
@@ -334,14 +333,14 @@ multimedia
     ./applications/multimedia/jokosher/pspec.xml
     ./programming/languages/python/python-eyeD3/pspec.xml
     ./applications/multimedia/cinelerra/pspec.xml
-./desktop/kde/subtitlecomposer/pspec.xml
-./desktop/kde/lilykde/pspec.xml
+    ./desktop/kde/subtitlecomposer/pspec.xml
+    ./desktop/kde/lilykde/pspec.xml
 
     graphics
     ./applications/multimedia/gifsicle/pspec.xml
     ./applications/multimedia/gqview/pspec.xml
     ./desktop/gnome/gthumb/pspec.xml
-./desktop/kde/kalbum/pspec.xml
+    ./desktop/kde/kalbum/pspec.xml
 
     library
     ./desktop/gnome/gnonlin/pspec.xml
@@ -363,14 +362,14 @@ multimedia
     ./applications/multimedia/moc/pspec.xml
     ./applications/multimedia/gimmix/pspec.xml
     ./desktop/xfce4/goodies/xfmpc/pspec.xml
-./desktop/kde/amarokFS/pspec.xml
-./desktop/kde/kmetronome/pspec.xml
-./desktop/kde/kguitar/pspec.xml
-./desktop/kde/destick/pspec.xml
+    ./desktop/kde/amarokFS/pspec.xml
+    ./desktop/kde/kmetronome/pspec.xml
+    ./desktop/kde/kguitar/pspec.xml
+    ./desktop/kde/destick/pspec.xml
 
     stream
     ./applications/multimedia/idjc/pspec.xml
-./desktop/kde/kstreamripper/pspec.xml
+    ./desktop/kde/kstreamripper/pspec.xml
 
     tv
 
@@ -410,7 +409,7 @@ network
     ./applications/network/gtmess-sound/pspec.xml
     ./desktop/gnome/gajim/pspec.xml
     ./desktop/gnome/gossip/pspec.xml
-./desktop/kde/kvirc/pspec.xml
+    ./desktop/kde/kvirc/pspec.xml
 
     proxy
     ./applications/network/tor/pspec.xml
@@ -434,7 +433,7 @@ network
     ./applications/network/wxdfast/pspec.xml
     ./applications/network/freerapid/pspec.xml
     ./applications/network/yougrabber/pspec.xml
-./desktop/kde/ktu/pspec.xml
+    ./desktop/kde/ktu/pspec.xml
 
     fax
 
@@ -446,8 +445,8 @@ network
     ./applications/network/stftp/pspec.xml
     ./applications/network/scythia/pspec.xml
     ./applications/network/wput/pspec.xml
-./desktop/kde/kasablanca/pspec.xml
-./desktop/kde/kuftp/pspec.xml
+    ./desktop/kde/kasablanca/pspec.xml
+    ./desktop/kde/kuftp/pspec.xml
 
     library
     ./applications/network/mozilla/xulrunner/pspec.xml
@@ -459,7 +458,7 @@ network
     ./applications/network/mixminion/pspec.xml
     ./applications/network/klibido/pspec.xml
     ./applications/network/msmtp/pspec.xml
-./desktop/kde/kgmailnotifier/pspec.xml
+    ./desktop/kde/kgmailnotifier/pspec.xml
 
     monitor
     ./applications/network/ksniffer/pspec.xml
@@ -468,7 +467,7 @@ network
     ./applications/network/socat/pspec.xml
     ./applications/network/kotaci/pspec.xml
     ./applications/network/vnstat/pspec.xml
-./desktop/kde/knemo/pspec.xml
+    ./desktop/kde/knemo/pspec.xml
 
     plugin
     ./applications/network/pidgin-sipe/pspec.xml
@@ -502,7 +501,7 @@ network
 
     rss
     ./applications/network/nrss/pspec.xml
-./desktop/gnome/liferea/pspec.xml
+    ./desktop/gnome/liferea/pspec.xml
 
     share
 
@@ -522,7 +521,7 @@ office
 
     dictionary
     ./desktop/xfce4/goodies/xfce4-dict/pspec.xml
-./desktop/kde/qtsozluk/pspec.xml
+    ./desktop/kde/qtsozluk/pspec.xml
 
     koffice
 
@@ -539,13 +538,13 @@ office
 
     misc
     ./programming/languages/python/renderPM/pspec.xml
-./applications/doc/ocrad/pspec.xml
-./applications/doc/scrollkeeper/pspec.xml
-./applications/doc/evince/pspec.xml
-./applications/doc/convertlit/pspec.xml
-./applications/doc/trml2pdf/pspec.xml
-./applications/doc/jabref/pspec.xml
-./desktop/kde/kmymoney/pspec.xml
+    ./applications/doc/ocrad/pspec.xml
+    ./applications/doc/scrollkeeper/pspec.xml
+    ./applications/doc/evince/pspec.xml
+    ./applications/doc/convertlit/pspec.xml
+    ./applications/doc/trml2pdf/pspec.xml
+    ./applications/doc/jabref/pspec.xml
+    ./desktop/kde/kmymoney/pspec.xml
 
 programming
     build
@@ -569,7 +568,7 @@ programming
     ./programming/tools/dabo/pspec.xml
     ./programming/tools/codeblocks/pspec.xml
     ./programming/languages/python/bpython/pspec.xml
-./applications/education/programming/klogoturtle/pspec.xml
+    ./applications/education/programming/klogoturtle/pspec.xml
 
         eclipse
 
@@ -586,29 +585,29 @@ programming
         haskell
 
         java
-./programming/languages/java/xml-commons-external/pspec.xml
-./programming/languages/java/jetspeed-portlet-api/pspec.xml
-./programming/languages/java/commons-modeler/pspec.xml
-./programming/languages/java/tomcat-servlet-api/pspec.xml
-./programming/languages/java/xml-commons-resolver/pspec.xml
-./programming/languages/java/commons-daemon/pspec.xml
-./programming/languages/java/commons-pool/pspec.xml
-./programming/languages/java/commons-fileupload/pspec.xml
-./programming/languages/java/xerces-j/pspec.xml
-./programming/languages/java/antlr/pspec.xml
-./programming/languages/java/commons-el/pspec.xml
-./programming/languages/java/commons-logging/pspec.xml
-./programming/languages/java/openjms-bin/pspec.xml
-./programming/languages/java/commons-httpclient/pspec.xml
-./programming/languages/java/commons-digester/pspec.xml
-./programming/languages/java/commons-collections/pspec.xml
-./programming/languages/java/commons-dbcp/pspec.xml
-./programming/languages/java/commons-launcher/pspec.xml
-./programming/languages/java/sun-java5/pspec.xml
-./programming/languages/java/commons-beanutils/pspec.xml
-./programming/languages/java/commons-codec/pspec.xml
-./programming/languages/java/log4j/pspec.xml
-./programming/languages/java/commons-io/pspec.xml
+        ./programming/languages/java/xml-commons-external/pspec.xml
+        ./programming/languages/java/jetspeed-portlet-api/pspec.xml
+        ./programming/languages/java/commons-modeler/pspec.xml
+        ./programming/languages/java/tomcat-servlet-api/pspec.xml
+        ./programming/languages/java/xml-commons-resolver/pspec.xml
+        ./programming/languages/java/commons-daemon/pspec.xml
+        ./programming/languages/java/commons-pool/pspec.xml
+        ./programming/languages/java/commons-fileupload/pspec.xml
+        ./programming/languages/java/xerces-j/pspec.xml
+        ./programming/languages/java/antlr/pspec.xml
+        ./programming/languages/java/commons-el/pspec.xml
+        ./programming/languages/java/commons-logging/pspec.xml
+        ./programming/languages/java/openjms-bin/pspec.xml
+        ./programming/languages/java/commons-httpclient/pspec.xml
+        ./programming/languages/java/commons-digester/pspec.xml
+        ./programming/languages/java/commons-collections/pspec.xml
+        ./programming/languages/java/commons-dbcp/pspec.xml
+        ./programming/languages/java/commons-launcher/pspec.xml
+        ./programming/languages/java/sun-java5/pspec.xml
+        ./programming/languages/java/commons-beanutils/pspec.xml
+        ./programming/languages/java/commons-codec/pspec.xml
+        ./programming/languages/java/log4j/pspec.xml
+        ./programming/languages/java/commons-io/pspec.xml
 
         lisp
 
@@ -823,26 +822,26 @@ programming
         ./desktop/gnome/gnome-python-desktop/pspec.xml
         ./desktop/gnome/gnome-python-extras/pspec.xml
         ./desktop/gnome/pygtksourceview/pspec.xml
-./programming/libs/PyQwt/pspec.xml
+        ./programming/libs/PyQwt/pspec.xml
 
         ruby
-./programming/libs/sqlite3-ruby/pspec.xml
+        ./programming/libs/sqlite3-ruby/pspec.xml
 
         tcl
 
     library
     ./desktop/gnome/gdl/pspec.xml
-./programming/libs/hamlib/pspec.xml
-./programming/libs/gnet/pspec.xml
-./programming/libs/imlib2_loaders/pspec.xml
-./programming/libs/libtorrent-rakshasa/pspec.xml
-./programming/libs/commoncpp2/pspec.xml
-./programming/libs/libmcs/pspec.xml
-./programming/libs/sdlconsole/pspec.xml
-./programming/libs/libmms/pspec.xml
-./programming/libs/redland-bindings/pspec.xml
-./programming/libs/google-sparsehash/pspec.xml
-./programming/libs/libpano13/pspec.xml
+    ./programming/libs/hamlib/pspec.xml
+    ./programming/libs/gnet/pspec.xml
+    ./programming/libs/imlib2_loaders/pspec.xml
+    ./programming/libs/libtorrent-rakshasa/pspec.xml
+    ./programming/libs/commoncpp2/pspec.xml
+    ./programming/libs/libmcs/pspec.xml
+    ./programming/libs/sdlconsole/pspec.xml
+    ./programming/libs/libmms/pspec.xml
+    ./programming/libs/redland-bindings/pspec.xml
+    ./programming/libs/google-sparsehash/pspec.xml
+    ./programming/libs/libpano13/pspec.xml
 
     microcontroller
     ./programming/tools/uisp/pspec.xml
@@ -854,12 +853,12 @@ programming
     ./programming/tools/shed/pspec.xml
     ./programming/tools/gquilt/pspec.xml
     ./programming/tools/cppunit/pspec.xml
-./applications/doc/hteditor/pspec.xml
-./desktop/kde/kdiff3/pspec.xml
+    ./applications/doc/hteditor/pspec.xml
+    ./desktop/kde/kdiff3/pspec.xml
 
     vcs
     ./programming/tools/rapidsvn/pspec.xml
-./desktop/kde/kdesvn/pspec.xml
+    ./desktop/kde/kdesvn/pspec.xml
 
 science
     library
@@ -871,7 +870,7 @@ science
     electronics
 
     mathematics
-./desktop/kde/abakus/pspec.xml
+    ./desktop/kde/abakus/pspec.xml
 
     medical
 
@@ -911,16 +910,16 @@ system
 
 util
     admin
-./desktop/kde/kiosktool/pspec.xml
-./applications/admin/conky/pspec.xml
+    ./desktop/kde/kiosktool/pspec.xml
+    ./applications/admin/conky/pspec.xml
 
     antivirus
 
     apparmor
 
     archive
-./desktop/kde/Q7Z/pspec.xml
-./desktop/kde/kbackup/pspec.xml
+    ./desktop/kde/Q7Z/pspec.xml
+    ./desktop/kde/kbackup/pspec.xml
 
     crypt
 
@@ -934,17 +933,17 @@ util
     ./programming/tools/sqliteman/pspec.xml
     ./programming/tools/sqlitebrowser/pspec.xml
     ./programming/tools/dbf/pspec.xml
-./desktop/kde/knoda/pspec.xml
-./applications/admin/phpmyadmin/pspec.xml
-./applications/admin/pgadmin3/pspec.xml
+    ./desktop/kde/knoda/pspec.xml
+    ./applications/admin/phpmyadmin/pspec.xml
+    ./applications/admin/pgadmin3/pspec.xml
 
     misc
     ./applications/network/urlview/pspec.xml
     ./applications/util/vilistextum/pspec.xml
-./desktop/kde/kleansweep/pspec.xml
-./desktop/kde/kxstitch/pspec.xml
-./desktop/kde/keepassx/pspec.xml
-./desktop/kde/klogshow/pspec.xml
+    ./desktop/kde/kleansweep/pspec.xml
+    ./desktop/kde/kxstitch/pspec.xml
+    ./desktop/kde/keepassx/pspec.xml
+    ./desktop/kde/klogshow/pspec.xml
 
     shell
 
@@ -957,7 +956,7 @@ x11
     terminal
     ./desktop/gnome/tilda/pspec.xml
     ./desktop/gnome/guake/pspec.xml
-./applications/admin/fish/pspec.xml
+    ./applications/admin/fish/pspec.xml
 
     misc
-./desktop/kde/kvkbd/pspec.xml
+    ./desktop/kde/kvkbd/pspec.xml
