@@ -19,13 +19,22 @@ class NetworkIface:
     def __init__(self):
         self.link = comar.Link()
         self.waitFunctions = []
-        self.link.listenSignals("Net.Link", self.postProcessor)
+        self.link.listenSignals("Network.Link", self.postProcessor)
 
     def capabilities(self, package):
-        return self.link.Net.Link[package].linkInfo()
+        return self.link.Network.Link[package].linkInfo()
+
+    def authMethods(self, package):
+        return self.link.Network.Link[package].authMethods()
+
+    def authParameters(self, package, method):
+        return self.link.Network.Link[package].authParameters(method)
+
+    def remoteName(self, package):
+        return self.link.Network.Link[package].remoteName()
 
     def connections(self, package):
-        return list(self.link.Net.Link[package].connections())
+        return list(self.link.Network.Link[package].connections())
 
     def connect(self, package, profile):
         self.setState(package, profile, "up")
@@ -53,13 +62,13 @@ class NetworkIface:
         self.waitFunctions.append(data)
 
     def setState(self, package, profile, state):
-        self.link.Net.Link[package].setState(profile, state, async=self.handler)
+        self.link.Network.Link[package].setState(profile, state, async=self.handler)
 
     def info(self, package, profile):
-        return self.link.Net.Link[package].connectionInfo(str(profile))
+        return self.link.Network.Link[package].connectionInfo(str(profile))
 
     def authInfo(self, package, profile):
-        return self.link.Net.Link[package].getAuthentication(profile)
+        return self.link.Network.Link[package].getAuthentication(profile)
 
     def handler(self, *args):
         print args
@@ -80,23 +89,23 @@ class NetworkIface:
             self.waitFunctions.remove(finishedFunc)
 
     def listen(self, func):
-        self.link.listenSignals("Net.Link", func)
+        self.link.listenSignals("Network.Link", func)
 
     def updateConnection(self, package, profile, data):
-        self.link.Net.Link[package].setConnection(profile,  data["device_id"],  async=self.handler)
+        self.link.Network.Link[package].setConnection(profile,  data["device_id"],  async=self.handler)
         if package in ('net_tools', 'wireless_tools'):
-            self.link.Net.Link[package].setAddress(profile,     data["net_mode"],
+            self.link.Network.Link[package].setAddress(profile,     data["net_mode"],
                                                                 data["net_address"],
                                                                 data["net_mask"],
                                                                 data["net_gateway"],async=self.handler)
-            self.link.Net.Link[package].setNameService(profile, data["namemode"],
+            self.link.Network.Link[package].setNameService(profile, data["namemode"],
                                                                 data["nameserver"], async=self.handler)
 
         if package in ('ppp', 'wireless_tools'):
-            self.link.Net.Link[package].setRemote(profile,  data["remote"],
+            self.link.Network.Link[package].setRemote(profile,  data["remote"],
                                                             data["apmac"])
 
-            self.link.Net.Link[package].setAuthentication(profile, data["authmode"],
+            self.link.Network.Link[package].setAuthentication(profile, data["authmode"],
                                                                    data["authuser"],
                                                                    data["authpass"],
                                                                    data["authauth"],
@@ -108,20 +117,20 @@ class NetworkIface:
                                                                    data["authprivate_key_password"], async=self.handler)
 
     def deleteConnection(self, package, profile):
-        self.link.Net.Link[package].deleteConnection(profile, aysnc=self.handler)
+        self.link.Network.Link[package].deleteConnection(profile, aysnc=self.handler)
 
     def devices(self, package):
-        return self.link.Net.Link[package].deviceList()
+        return self.link.Network.Link[package].deviceList()
 
     def packages(self):
-        return list(self.link.Net.Link)
+        return list(self.link.Network.Link)
 
     def linkInfo(self, package):
-        return self.link.Net.Link[package].linkInfo()
+        return self.link.Network.Link[package].linkInfo()
 
     def scanRemote(self, device, package="wireless_tools", func=None):
         if func:
-            self.link.Net.Link[package].scanRemote(device, async=func)
+            self.link.Network.Link[package].scanRemote(device, async=func)
         else:
-            return self.link.Net.Link[package].scanRemote(device)
+            return self.link.Network.Link[package].scanRemote(device)
 

@@ -92,6 +92,7 @@ class WifiPopup(QtGui.QMenu):
     def fillList(self, *args):
         self.refreshButton.show()
         self.listWidget.clear()
+        print args
         for remote in args[2][0]:
             item = QtGui.QListWidgetItem(self.listWidget)
             item.setSizeHint(QSize(22,30))
