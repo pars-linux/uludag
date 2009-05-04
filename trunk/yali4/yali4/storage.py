@@ -489,8 +489,7 @@ class Device:
             time.sleep(3)
             os.system("sync")
             ctx.debugger.log("Commit failed !")
-            try:
-                self._disk.commit()
+            self._disk.commit()
         self.update()
 
     def close(self):
