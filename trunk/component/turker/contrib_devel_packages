@@ -1,7 +1,5 @@
 ./programming/tools/devhelp/pspec.xml
 
-./programming/languages/python/rlaccel/pspec.xml
-
 ./applications/science/gpsbabel/pspec.xml
 ./applications/science/qgis/pspec.xml
 ./applications/science/josm/pspec.xml
