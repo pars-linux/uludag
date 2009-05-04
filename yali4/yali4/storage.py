@@ -481,7 +481,16 @@ class Device:
         return np
 
     def commit(self):
-        self._disk.commit()
+        import yali4.gui.context as ctx
+        try:
+            self._disk.commit()
+        except:
+            os.system("sync")
+            time.sleep(3)
+            os.system("sync")
+            ctx.debugger.log("Commit failed !")
+            try:
+                self._disk.commit()
         self.update()
 
     def close(self):
