@@ -51,6 +51,7 @@ class LanguageForm(QtGui.QDialog):
 
     def setLanguages(self, languages=[]):
         selected = self.ui.kactionselectorLang.selectedListWidget()
+        available = self.ui.kactionselectorLang.availableListWidget()
         selected.clear()
         for code in languages:
             label = self.supported_languages[code]
@@ -86,24 +87,22 @@ class PackagesForm(QtGui.QDialog):
     def setRepo(self, repo):
         self.repo = repo
         self.repo.parse_index()
-        selected = self.ui.listPackages
-        selected.clear()
+        # Packages
+        self.ui.listPackages.clear()
         for package in self.repo.packages.keys():
             item = QtGui.QListWidgetItem(package)
-            selected.addItem(item)
+            self.ui.listPackages.addItem(item)
+        # Components
+        self.ui.listComponents.clear()
+        for component in self.repo.components.keys():
+            item = QtGui.QListWidgetItem(component)
+            self.ui.listComponents.addItem(item)
 
     def getRepo(self):
         return self.repo
 
     def setSelectedPackages(self, packages):
         pass
-        """
-        selected = self.ui.listPackages
-        selected.clear()
-        for package in packages:
-            item = QtGui.QListWidgetItem(package)
-            selected.addItem(item)
-        """
 
     def setAllPackages(self, packages):
         pass
@@ -115,11 +114,7 @@ class PackagesForm(QtGui.QDialog):
         return []
 
     def setSelectedComponents(self, components):
-        selected = self.ui.listComponents
-        selected.clear()
-        for component in components:
-            item = QtGui.QListWidgetItem(component)
-            selected.addItem(item)
+        pass
 
     def getSelectedComponents(self):
         return []
@@ -235,7 +230,7 @@ class MainForm(QtGui.QWidget):
             elif self.ui.comboBoxSize.currentIndex() == 2:
                 self.project.media = "usb"
             elif self.ui.comboBoxSize.currentIndex() == 3:
-                self.project.media = "custoö"
+                self.project.media = "custom"
             # Save file
             self.project.save()
         else:
