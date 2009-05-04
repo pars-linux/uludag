@@ -67,8 +67,11 @@ class NetworkIface:
     def info(self, package, profile):
         return self.link.Network.Link[package].connectionInfo(str(profile))
 
+    def authType(self, package, profile):
+        return self.link.Network.Link[package].getAuthMethod(profile)
+
     def authInfo(self, package, profile):
-        return self.link.Network.Link[package].getAuthentication(profile)
+        return self.link.Network.Link[package].getAuthParameters(profile)
 
     def handler(self, *args):
         print args
@@ -92,29 +95,28 @@ class NetworkIface:
         self.link.listenSignals("Network.Link", func)
 
     def updateConnection(self, package, profile, data):
-        self.link.Network.Link[package].setConnection(profile,  data["device_id"],  async=self.handler)
-        if package in ('net_tools', 'wireless_tools'):
-            self.link.Network.Link[package].setAddress(profile,     data["net_mode"],
+        info = self.capabilities(package)
+        modes = info["modes"].split(",")
+
+        if "device" in modes:
+            self.link.Network.Link[package].setDevice(profile,  data["device_id"],  async=self.handler)
+
+        if "net" in modes:
+            self.link.Network.Link[package].setAddress(profile, data["net_mode"],
                                                                 data["net_address"],
                                                                 data["net_mask"],
                                                                 data["net_gateway"],async=self.handler)
-            self.link.Network.Link[package].setNameService(profile, data["namemode"],
-                                                                data["nameserver"], async=self.handler)
+            self.link.Network.Link[package].setNameService(profile, data["name_mode"],
+                                                                data["name_server"], async=self.handler)
 
-        if package in ('ppp', 'wireless_tools'):
-            self.link.Network.Link[package].setRemote(profile,  data["remote"],
-                                                            data["apmac"])
+        if "remote" in modes:
+            self.link.Network.Link[package].setRemote(profile, data["remote"])
 
-            self.link.Network.Link[package].setAuthentication(profile, data["authmode"],
-                                                                   data["authuser"],
-                                                                   data["authpass"],
-                                                                   data["authauth"],
-                                                                   data["authanon"],
-                                                                   data["authinner"],
-                                                                   data["authca_cert"],
-                                                                   data["authclient_cert"],
-                                                                   data["authprivate_key"],
-                                                                   data["authprivate_key_password"], async=self.handler)
+        if "auth" in modes:
+            self.link.Network.Link[package].setAuthMethod(profile, data["auth"])
+
+            for key, label, type_ in self.link.Network.Link[package].authParameters(data["auth"]):
+                self.link.Network.Link[package].setAuthParameters(profile, key, data.get("auth_%s" % key, ""), async=self.handler)
 
     def deleteConnection(self, package, profile):
         self.link.Network.Link[package].deleteConnection(profile, aysnc=self.handler)

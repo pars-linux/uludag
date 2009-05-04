@@ -299,7 +299,9 @@ class MainManager(QtGui.QWidget):
         self.ui.groupNetwork.hide()
         self.ui.groupNameServer.hide()
 
-        if "auth" in info:
+        modes = info["modes"].split(",")
+
+        if "auth" in modes:
             self.ui.comboSecurityTypes.clear()
             self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
             for name, desc in self.iface.authMethods(package):
@@ -315,7 +317,6 @@ class MainManager(QtGui.QWidget):
             self.buildEditBoxFor(sender.package, sender.profile)
 
         # Then show them by giving package
-        modes = info["modes"].split(",")
         if "net" in modes:
             self.ui.groupNetwork.show()
             self.ui.groupNameServer.show()
@@ -369,11 +370,16 @@ class MainManager(QtGui.QWidget):
         if "remote" in data:
             ui.lineRemote.setText(data["remote"])
 
-        #authInfo = self.iface.authInfo(package, profile)
-        #authType = authInfo[0]
-        #authPass = authInfo[2]
-        #ui.lineKey.setText(authPass)
-        #ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(authType)))
+        authType = self.iface.authType(package, profile)
+        authInfo = self.iface.authInfo(package, profile)
+        ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(authType)))
+
+        if len(authInfo) == 1:
+            password = authInfo.values()[0]
+            ui.lineKey.setText(password)
+        else:
+            # FIXME: More than one authentication parameter not supported yet!
+            pass
 
         if data.has_key("net_mode"):
             if data["net_mode"] == "auto":
@@ -479,20 +485,12 @@ class MainManager(QtGui.QWidget):
         if ui.groupRemote.isVisible():
 
             # Remote
-            data["remote"] = ui.lineEssid.text()
+            data["remote"] = ui.lineRemote.text()
             data["apmac"]  = ""
 
             # Security
-            data["authmode"] = str(ui.comboSecurityTypes.itemData(ui.comboSecurityTypes.currentIndex()).toString())
-            data["authuser"] = ""
-            data["authpass"] = ui.lineKey.text()
-            data["authauth"] = ""
-            data["authanon"] = ""
-            data["authinner"] = ""
-            data["authca_cert"] = ""
-            data["authclient_cert"] = ""
-            data["authprivate_key"] = ""
-            data["authprivate_key_password"] = ""
+            data["auth"] = str(ui.comboSecurityTypes.itemData(ui.comboSecurityTypes.currentIndex()).toString())
+            data["auth_password"] = ui.lineKey.text()
 
         # Let them unicode
         for i,j in data.items():

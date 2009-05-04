@@ -294,7 +294,14 @@
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QComboBox" name="comboSecurityTypes"/>
+              <widget class="QComboBox" name="comboSecurityTypes">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
              </item>
              <item row="2" column="2">
               <widget class="QLabel" name="labelKey">

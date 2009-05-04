@@ -86,7 +86,7 @@ class WifiPopup(QtGui.QMenu):
     def useSelected(self, item):
         self.hide()
         data = self.listWidget.itemWidget(item).data
-        self.parent.ui.lineEssid.setText(data['remote'])
+        self.parent.ui.lineRemote.setText(data['remote'])
         self.parent.ui.comboSecurityTypes.setCurrentIndex(self.parent.ui.comboSecurityTypes.findData(QVariant(data['encryption'])))
 
     def fillList(self, *args):
