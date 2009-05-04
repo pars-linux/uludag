@@ -478,6 +478,10 @@ multimedia
     ./programming/libs/synfig/pspec.xml
     ./programming/libs/proj/pspec.xml
     ./programming/libs/dcmtk/pspec.xml
+    ./applications/science/k3d/pspec.xml
+    ./applications/science/brlcad/pspec.xml
+    ./applications/science/qcad/pspec.xml
+    ./applications/science/mm3d/pspec.xml
 
     library
     ./desktop/gnome/gnonlin/pspec.xml
@@ -498,6 +502,8 @@ multimedia
     ./programming/libs/revel/pspec.xml
     ./programming/libs/coin/pspec.xml
     ./programming/libs/bio2jack/pspec.xml
+    ./applications/science/aqsis/pspec.xml
+    ./applications/science/qcad-partlibrary/pspec.xml
 
     plugin
     ./applications/multimedia/jack-rack/pspec.xml
@@ -784,6 +790,7 @@ programming
     ./desktop/gnome/gob/pspec.xml
     ./desktop/gnome/gnome-build/pspec.xml
     ./programming/languages/java/eclipse-ecj/pspec.xml
+    ./applications/science/sdcc/pspec.xml
 
     debug
     ./programming/tools/protoeditor/pspec.xml
@@ -1137,11 +1144,23 @@ programming
 
 science
     library
+    ./applications/science/gts/pspec.xml
+    ./applications/science/mmtk/pspec.xml
 
     astronomy
 
     chemistry
     ./applications/science/avogadro/pspec.xml
+    ./applications/science/bkchem/pspec.xml
+    ./applications/science/genchemlab/pspec.xml
+    ./applications/science/massxpert/pspec.xml
+    ./applications/science/xvibs/pspec.xml
+    ./applications/science/gips/pspec.xml
+    ./applications/science/polyxmass/pspec.xml
+    ./applications/science/gperiodic/pspec.xml
+    ./applications/science/inchi/pspec.xml
+    ./applications/science/ipc/pspec.xml
+    ./applications/science/bioclipse/pspec.xml
 
     electronics
     ./applications/science/electronics/kontrollerlab/pspec.xml
@@ -1172,12 +1191,24 @@ science
     ./applications/science/extcalc/pspec.xml
     ./applications/science/kalgebra/pspec.xml
     ./applications/science/calcoo/pspec.xml
+    ./applications/science/rlplot/pspec.xml
+    ./applications/science/gretl/pspec.xml
+    ./applications/science/scilab/pspec.xml
+    ./applications/science/grace/pspec.xml
 
     medical
+    ./applications/science/fityk/pspec.xml
 
     robotics
 
 server
+./server/teamspeak-server/pspec.xml
+./server/simias-bonjour/pspec.xml
+./server/finger/pspec.xml
+./server/rsh/pspec.xml
+./server/jboss4/pspec.xml
+./server/simias/pspec.xml
+./server/teamspeak-client/pspec.xml
 
     auth
 
@@ -1194,6 +1225,8 @@ server
     ptsp
 
     web
+    ./server/www/tomcat-connectors/pspec.xml
+    ./server/www/trac/pspec.xml
 
 system
     auth
@@ -1269,6 +1302,14 @@ util
     ./applications/util/launchy/pspec.xml
     ./applications/util/gramps/pspec.xml
     ./applications/util/figlet/pspec.xml
+    ./applications/science/fet/pspec.xml
+    ./applications/science/units/pspec.xml
+
+        ksimus
+        ./applications/science/ksimus/pspec.xml
+        ./applications/science/ksimus-floatingpoint/pspec.xml
+        ./applications/science/ksimus-datarecorder/pspec.xml
+        ./applications/science/ksimus-boolean/pspec.xml
 
     shell
     ./applications/admin/osh/pspec.xml
