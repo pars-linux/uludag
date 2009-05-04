@@ -67,6 +67,8 @@ def initbaselayout():
     # create needed device nodes
     os.system("/bin/mknod %s/dev/console c 5 1" % consts.target_dir)
     os.system("/bin/mknod %s/dev/null c 1 3" % consts.target_dir)
+    os.system("/bin/mknod %s/dev/random c 1 8" % consts.target_dir)
+    os.system("/bin/mknod %s/dev/urandom c 1 9" % consts.target_dir)
 
 def setTimeZone():
     os.system("rm -rf %s" % os.path.join(consts.target_dir, "etc/localtime"))
@@ -110,7 +112,7 @@ def connectToDBus():
 def setHostName():
     global bus
     obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
-    obj.setHostName(str(ctx.installData.hostName), dbus_interface="tr.org.pardus.comar.Net.Stack")
+    obj.setHostName(str(ctx.installData.hostName), dbus_interface="tr.org.pardus.comar.Network.Stack")
     ctx.debugger.log("Hostname set as %s" % ctx.installData.hostName)
     return True
 
