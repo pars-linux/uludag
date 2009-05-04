@@ -25,6 +25,7 @@ from uilanguage import Ui_languageForm
 from uipackages import Ui_packagesForm
 
 from project import Project
+from packages import Repository
 
 class LanguageForm(QtGui.QDialog):
     def __init__(self, parent):
@@ -77,8 +78,51 @@ class PackagesForm(QtGui.QDialog):
         self.ui = Ui_packagesForm()
         self.ui.setupUi(self)
 
+        self.repo = None
+
         self.connect(self.ui.buttonBox, SIGNAL("accepted()"), self.accept)
         self.connect(self.ui.buttonBox, SIGNAL("rejected()"), self.reject)
+
+    def setRepo(self, repo):
+        self.repo = repo
+        self.repo.parse_index()
+        selected = self.ui.listPackages
+        selected.clear()
+        for package in self.repo.packages.keys():
+            item = QtGui.QListWidgetItem(package)
+            selected.addItem(item)
+
+    def getRepo(self):
+        return self.repo
+
+    def setSelectedPackages(self, packages):
+        pass
+        """
+        selected = self.ui.listPackages
+        selected.clear()
+        for package in packages:
+            item = QtGui.QListWidgetItem(package)
+            selected.addItem(item)
+        """
+
+    def setAllPackages(self, packages):
+        pass
+
+    def getSelectedPackages(self):
+        return []
+
+    def getAllPackages(self):
+        return []
+
+    def setSelectedComponents(self, components):
+        selected = self.ui.listComponents
+        selected.clear()
+        for component in components:
+            item = QtGui.QListWidgetItem(component)
+            selected.addItem(item)
+
+    def getSelectedComponents(self):
+        return []
 
 
 class MainForm(QtGui.QWidget):
@@ -93,7 +137,7 @@ class MainForm(QtGui.QWidget):
         self.languageSelectionDialog = LanguageForm(self)
 
         # Create package selector
-        self.packageSelectionDialog = PackagesForm(self)
+        self.packagesSelectionDialog = PackagesForm(self)
 
         # Project
         self.project = Project()
@@ -160,6 +204,12 @@ class MainForm(QtGui.QWidget):
                     self.ui.comboBoxSize.setCurrentIndex(3)
                 # Languages
                 self.languageSelectionDialog.setLanguages(self.project.selected_languages)
+                # Selected Packages
+                self.packagesSelectionDialog.setSelectedPackages(self.project.selected_packages)
+                # All Packages
+                self.packagesSelectionDialog.setAllPackages(self.project.all_packages)
+                # Selected Components
+                self.packagesSelectionDialog.setSelectedComponents(self.project.selected_components)
 
     def slotProjectSave(self):
         if self.project.filename:
@@ -186,8 +236,6 @@ class MainForm(QtGui.QWidget):
                 self.project.media = "usb"
             elif self.ui.comboBoxSize.currentIndex() == 3:
                 self.project.media = "custoö"
-            # Languages
-            self.project.selected_languages = self.languageSelectionDialog.getLanguages()
             # Save file
             self.project.save()
         else:
@@ -201,15 +249,17 @@ class MainForm(QtGui.QWidget):
 
     def slotLanguages(self):
         if self.languageSelectionDialog.exec_():
-            print "ok"
-        else:
-            print "cancel"
+            self.project.selected_languages = self.languageSelectionDialog.getLanguages()
 
     def slotPackages(self):
-        if self.packageSelectionDialog.exec_():
-            print "ok"
-        else:
-            print "cancel"
+        # FIXME: Check URI/WorkDir
+        if not self.packagesSelectionDialog.getRepo():
+            repo = Repository(self.project.repo_uri, self.project.work_dir)
+            self.packagesSelectionDialog.setRepo(repo)
+        if self.packagesSelectionDialog.exec_():
+            self.project.selected_packages = self.packagesSelectionDialog.getSelectedPackages()
+            self.project.all_packages = self.packagesSelectionDialog.getAllPackages()
+            self.project.selected_components = self.packagesSelectionDialog.getSelectedComponents()
 
     def slotBrowseRepo(self):
         self.repo_uri = KFileDialog.getOpenFileName(KUrl('.'), "pisi-index.xml*", self, i18n("Select repository index"))
