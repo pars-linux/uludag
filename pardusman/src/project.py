@@ -70,8 +70,7 @@ usr/share/groff/
 usr/share/dict/
 var/db/pisi/
 var/lib/pisi/
-var/cache/pisi/packages/
-var/cache/pisi/archives/
+var/cache/pisi/
 var/tmp/pisi/
 var/pisi/
 tmp/pisi-root/
@@ -83,6 +82,8 @@ root/.bash_history
 default_install_glob_excludes = (
     ( "usr/lib/python2.5/", "*.pyc" ),
     ( "usr/lib/python2.5/", "*.pyo" ),
+    ( "usr/lib/python2.6/", "*.pyc" ),
+    ( "usr/lib/python2.6/", "*.pyo" ),
     ( "usr/lib/pardus/", "*.pyc" ),
     ( "usr/lib/pardus/", "*.pyo" ),
     ( "usr/lib/", "*.a" ),
@@ -96,6 +97,8 @@ default_install_glob_excludes = (
 default_live_glob_excludes = (
     ( "usr/lib/python2.5/", "*.pyc" ),
     ( "usr/lib/python2.5/", "*.pyo" ),
+    ( "usr/lib/python2.6/", "*.pyc" ),
+    ( "usr/lib/python2.6/", "*.pyo" ),
     ( "usr/lib/pardus/", "*.pyc" ),
     ( "usr/lib/pardus/", "*.pyo" ),
     ( "usr/lib/", "*.a" ),
