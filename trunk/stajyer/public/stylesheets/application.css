@@ -116,6 +116,9 @@ border-right:1px solid lightgray;
 .list table .first {
 border-left:1px solid lightgray;
 }
+.list table tr td .commented {
+margin-left:40px;
+}
 #cover {
 margin: 30px;
 font-family: Arial;
