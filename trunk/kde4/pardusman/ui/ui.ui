@@ -221,6 +221,11 @@
             <string>Live Image</string>
            </property>
           </item>
+          <item>
+           <property name="text">
+            <string>Package Repository</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item row="7" column="0">
