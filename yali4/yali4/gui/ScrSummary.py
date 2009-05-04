@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2008, TUBITAK/UEKAE
+# Copyright (C) 2008-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -272,7 +272,8 @@ Here you can see your install options and look at them again before installation
             ctx.yali.info.updateAndShow(_("Writing disk tables ..."))
             for dev in yali4.storage.devices:
                 ctx.mainScreen.processEvents()
-                dev.commit()
+                if dev._needs_commit:
+                    dev.commit()
             # wait for udev to create device nodes
             time.sleep(2)
             ctx.yali.checkSwap()

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2009, TUBITAK/UEKAE
 # Copyright 1999-2008 Gentoo Foundation
 #
 # This program is free software; you can redistribute it and/or modify it under
@@ -18,7 +18,6 @@
 # Storage module handles disk/partitioning basics for
 # installation. Basically it provides a Device interface to physical
 # storage devices.
-
 
 import parted
 import os
@@ -95,6 +94,7 @@ class Device:
         self._length = 0       # total sectors
         self._sector_size = 0
         self._parted_type = deviceType
+        self._needs_commit = False
 
         dev = parted.PedDevice.get(device_path)
 
@@ -383,7 +383,7 @@ class Device:
     # @param start: start geom..
     # @param end: end geom
     def addPartitionStartEnd(self, type, fs, start, end, flags = []):
-
+        self._needs_commit = True
         if isinstance(fs, str):
             # a string... get the corresponding FileSystem object
             fs = yali4.filesystem.get_filesystem(fs)
@@ -440,10 +440,12 @@ class Device:
     # delete a partition
     # @param part: Partition
     def deletePartition(self, part):
+        self._needs_commit = True
         self._disk.delete_partition(part.getPartition())
         self.update()
 
     def deleteAllPartitions(self):
+        self._needs_commit = True
         self._disk.delete_all()
         self.update()
 
