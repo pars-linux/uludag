@@ -11,4 +11,9 @@ class Student < ActiveRecord::Base
     self.comments.each { |c| result += c.score }
     return result
   end
+
+  def commented_by(user)
+    self.comments.each { |c| return true if c.commented_by == user.name }
+    return false
+  end
 end
