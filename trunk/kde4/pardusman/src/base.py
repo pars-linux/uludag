@@ -33,23 +33,42 @@ class LanguageForm(QtGui.QDialog):
         self.ui.setupUi(self)
 
         # TODO: i18n stuff
-        self.supported_languages = {"Catalan" : "ca_ES",
-                                    "Deutsch" : "de_DE",
-                                    "English" : "en_US",
-                                    "Spanish" : "es_ES",
-                                    "French" : "fr_FR",
-                                    "Italian" : "it_IT",
-                                    "Dutch" : "nl_NL",
-                                    "Polish" : "pl_PL",
-                                    "Brazilian Portuguese" : "pt_BR",
-                                    "Svenska" : "sv_SE",
-                                    "Turkish" : "tr_TR"}
-
-        available = self.ui.kactionselectorLang.availableListWidget()
-        available.addItems(self.supported_languages.keys())
+        self.supported_languages = {"ca_ES": "Catalan",
+                                    "de_DE": "Deutsch",
+                                    "en_US": "English",
+                                    "es_ES": "Spanish",
+                                    "fr_FR": "French",
+                                    "it_IT": "Italian",
+                                    "nl_NL": "Dutch",
+                                    "pl_PL": "Polish",
+                                    "pt_BR": "Brazilian Portuguese",
+                                    "sv_SE": "Svenska",
+                                    "tr_TR": "Turkish"}
 
         self.connect(self.ui.buttonBox, SIGNAL("accepted()"), self.accept)
         self.connect(self.ui.buttonBox, SIGNAL("rejected()"), self.reject)
+
+    def setLanguages(self, languages=[]):
+        selected = self.ui.kactionselectorLang.selectedListWidget()
+        selected.clear()
+        for code in languages:
+            label = self.supported_languages[code]
+            item = QtGui.QListWidgetItem(label)
+            item.code = code
+            selected.addItem(item)
+        for code, label in self.supported_languages.iteritems():
+            if code not in languages:
+                item = QtGui.QListWidgetItem(label)
+                item.code = code
+                available.addItem(item)
+
+    def getLanguages(self):
+        selected = self.ui.kactionselectorLang.selectedListWidget()
+        languages = []
+        for i in xrange(selected.count()):
+            item = selected.item(i)
+            languages.append(item.code)
+        return languages
 
 
 class PackagesForm(QtGui.QDialog):
@@ -116,7 +135,7 @@ class MainForm(QtGui.QWidget):
                 # FIXME: Show error dialog
                 pass
             else:
-                # Labels
+                # Title, repo, etc.
                 self.ui.lineEditTitle.setText(self.project.title)
                 self.ui.lineEditParams.setText(self.project.extra_params)
                 self.ui.lineEditRepo.setText(self.project.repo_uri)
@@ -139,9 +158,37 @@ class MainForm(QtGui.QWidget):
                     self.ui.comboBoxSize.setCurrentIndex(2)
                 elif self.project.media == "custom":
                     self.ui.comboBoxSize.setCurrentIndex(3)
+                # Languages
+                self.languageSelectionDialog.setLanguages(self.project.selected_languages)
 
     def slotProjectSave(self):
         if self.project.filename:
+            # Title, repo, etc.
+            self.project.title = unicode(self.ui.lineEditTitle.text())
+            self.project.extra_params = unicode(self.ui.lineEditParams.text())
+            self.project.repo_uri = unicode(self.ui.lineEditRepo.text())
+            self.project.release_files = unicode(self.ui.lineEditRelease.text())
+            self.project.plugin_package = unicode(self.ui.lineEditPlugin.text())
+            self.project.work_dir = unicode(self.ui.lineEditWorkdir.text())
+            # Type
+            if self.ui.comboBoxType.currentIndex() == 0:
+                self.project.type = "install"
+            elif self.ui.comboBoxType.currentIndex() == 1:
+                self.project.type = "live"
+            elif self.ui.comboBoxType.currentIndex() == 2:
+                self.project.type = "package"
+            # Media
+            if self.ui.comboBoxSize.currentIndex() == 0:
+                self.project.media = "cd"
+            elif self.ui.comboBoxSize.currentIndex() == 1:
+                self.project.media = "dvd"
+            elif self.ui.comboBoxSize.currentIndex() == 2:
+                self.project.media = "usb"
+            elif self.ui.comboBoxSize.currentIndex() == 3:
+                self.project.media = "custoö"
+            # Languages
+            self.project.selected_languages = self.languageSelectionDialog.getLanguages()
+            # Save file
             self.project.save()
         else:
             self.slotProjectSaveAs()
@@ -149,7 +196,8 @@ class MainForm(QtGui.QWidget):
     def slotProjectSaveAs(self):
         project_file = KFileDialog.getSaveFileName(KUrl('.'), "*.xml", self, i18n("Select project file"))
         if project_file:
-            self.project.save(unicode(project_file))
+            self.project.filename = project_file
+            self.slotProjectSave()
 
     def slotLanguages(self):
         if self.languageSelectionDialog.exec_():

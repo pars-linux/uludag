@@ -194,10 +194,7 @@ class Project:
         self.all_packages.sort()
 
 
-    def save(self, filename=None):
-        if not filename:
-            filename = self.filename
-
+    def save(self):
         # Save the data into filename as pardusman project file
         doc = piksemel.newDocument("PardusmanProject")
 
@@ -212,7 +209,7 @@ class Project:
             doc.insertTag("ReleaseFiles").insertData(self.release_files)
         if self.plugin_package:
             doc.insertTag("PluginPackage").insertData(self.plugin_package)
-        if self.exparams:
+        if self.extra_params:
             doc.insertTag("ExtraParameters").insertData(self.extra_params)
 
         if self.repo_uri:
@@ -239,7 +236,7 @@ class Project:
                 langs.insertTag("Language").insertData(item)
 
         # Write the file
-        f = file(filename, "w")
+        f = file(self.filename, "w")
         f.write(doc.toPrettyString())
         f.close()
 
