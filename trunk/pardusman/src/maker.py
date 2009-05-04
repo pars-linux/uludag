@@ -479,9 +479,6 @@ def make_image(project):
 
         os.utime(os.path.join(image_dir, "etc/profile.env"), (1, 1))
 
-        # We dont need pisi cache in live system
-        run('rm -rf %s/var/cache/pisi' % image_dir)
-
         run('umount %s/proc' % image_dir)
         run('umount %s/sys' % image_dir)
     except KeyboardInterrupt:
