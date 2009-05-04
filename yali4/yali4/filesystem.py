@@ -422,10 +422,10 @@ class NTFSFileSystem(FileSystem):
         self.setResizable(True)
         self.setImplemented(True)
 
-    #FIXME#
     def check_resize(self, size_mb, partition):
         # don't do anything, just check
-        cmd = "/usr/sbin/ntfsresize -n -f -s %dM %s" %(size_mb, partition.getPath())
+        cmd_path = requires("ntfsresize")
+        cmd = "%s -n -f -s %dM %s" % (cmd_path, size_mb, partition.getPath())
         p = os.popen(cmd)
         if p.close():
             return False
@@ -478,9 +478,9 @@ class NTFSFileSystem(FileSystem):
         if p.close():
             raise YaliException, "Ntfs format failed: %s" % partition.getPath()
 
-    #FIXME#
     def minResizeMB(self, partition):
-        cmd = "/usr/sbin/ntfsresize -f -i %s" % partition.getPath()
+        cmd_path = requires("ntfsresize")
+        cmd = "%s -f -i %s" % (cmd_path, partition.getPath())
         lines = os.popen(cmd).readlines()
         MB = parteddata.MEGABYTE
         _min = 0
