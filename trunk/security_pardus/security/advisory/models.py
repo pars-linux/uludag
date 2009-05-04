@@ -1,5 +1,5 @@
 from django.db import models
-from django.form import ValidationError
+from django.forms import ValidationError
 from security.advisory.utils import *
 
 # i18n
