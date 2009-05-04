@@ -13,7 +13,6 @@ class Student < ActiveRecord::Base
   end
 
   def commented_by(user)
-    self.comments.each { |c| return true if c.commented_by == user.name }
-    return false
+    self.comments.exists?(:commented_by => user.name)
   end
 end
