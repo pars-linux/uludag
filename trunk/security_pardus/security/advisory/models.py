@@ -7,8 +7,8 @@ from django.utils.translation import gettext_lazy
 _ = lambda x: unicode(gettext_lazy(x))
 
 class Language(models.Model):
-    code = models.CharField(_("Code"), maxlength=5)
-    name = models.CharField(_("Language"), maxlength=20)
+    code = models.CharField(_("Code"), max_length=5)
+    name = models.CharField(_("Language"), max_length=20)
 
     def __str__(self):
         return self.name
@@ -45,8 +45,8 @@ class Advisory(models.Model):
     publish = models.BooleanField(_("Publish"))
     release_date = models.DateField(_("Last Update"), auto_now=True)
     language = models.ForeignKey("Language", verbose_name=_("Language"))
-    plsa_id = models.CharField(_("PLSA ID"), validator_list=[isValidAdvisoryID], maxlength=10, help_text=_("YEAR-NO"))
-    type = models.CharField(_("Type"), maxlength=10, choices=ADVISORY_TYPES)
+    plsa_id = models.CharField(_("PLSA ID"), validator_list=[isValidAdvisoryID], max_length=10, help_text=_("YEAR-NO"))
+    type = models.CharField(_("Type"), max_length=10, choices=ADVISORY_TYPES)
     severity = models.IntegerField(_("Severity"), default=1)
     title = models.CharField(_("Title"), maxlength=120)
     summary = models.TextField(_("Summary"))
