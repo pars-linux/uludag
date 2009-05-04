@@ -9,24 +9,24 @@
 #
 # Please read the COPYING file.
 
-
-_type = ("disk", "partition", "luks", "vg", "lv", "pv", "raidarray", "raidmember")
+# Device types :)
+# _type = ("disk", "partition", "luks", "vg", "lv", "pv", "raidarray", "raidmember")
 
 import parted
 import _ped
 from syutils import notify_kernel
 import logging
-log = logging.getLogger("storage")
+log = logging.getLogger("pare")
 
 import gettext
-_ = lambda x :gettext.ldgettext("storage", x)
+_ = lambda x :gettext.ldgettext("pare", x)
 
 class Storage(object):
     """A generic device"""
-    _type = ""
+    type = ""
     _sysfsBlockDir = "class/block"
     _devDir = "/dev"
-    _resizable = False
+    resizable = False
 
     def __init__(self, device, format = None, size = None, major = None,
             minor = None, sysfsPath = '', exists = None, parents = None):
@@ -61,6 +61,9 @@ class Storage(object):
 
     def removeChild(self):
         self._kids -= 1
+
+    def isLeaf(self):
+        return self.kids == 0
 
     def createParents(self):
         """Run create method for all parent devices."""
@@ -101,7 +104,7 @@ class Storage(object):
 
     @property
     def partedDevice(self):
-        if self.exists and self.status and not self._partedDevice:
+        if self._exists and self.status and not self._partedDevice:
             log.debug("looking parted device %s" % self.path)
 
             try:
@@ -177,13 +180,13 @@ class Storage(object):
             True is device open and ready for use
             False is device is not open
         """
-        if not self.exists:
+        if not self._exists:
             return False
         return os.access(self.path, os.W_OK)
 
     def type(self):
         """Device Type"""
-        return self._type
+        return self.type
 
     def mediaPresent(self):
         return True
@@ -196,7 +199,7 @@ class Storage(object):
         log.debug("%s sysfs path %" % (self.name, self.e_sysfsPath))
 
     def notifyKernel(self):
-        if not self.exists:
+        if not self._exists:
             log.debug("not sending change uevent for non-existing device")
 
         if not self.status:
@@ -221,10 +224,11 @@ class Storage(object):
         return []
 
     def resizeable(self):
-        return self._resizable and self._exists
+        return self.resizable and self._exists
 
 class Disk(Storage):
     """A disk"""
+    type = "disk"
 
     def __init__(self, device, format=None, size=None, major=None, minor=None, \
             sysfsPath='', parents=None, initCB=None, initLabel=None)
@@ -276,7 +280,8 @@ class Disk(Storage):
 
     def freshPartedDisk(self):
         #FIXME
-        labelType = ''
+        #Default disktype.label 
+        labelType = 'msdos'
         return parted.freshDisk(device=self.partedDevice, ty=labelType)
 
     def resetPartedDisk(self):
@@ -346,10 +351,11 @@ class Disk(Storage):
 class Partition(Storage):
     """A disk partition"""
 
-    _resizable = True
+    resizable = True
+    type = "partition"
 
-    def __init__(self, name, format=None, size=None, grow=False, maxsize=None\
-                major=None, minor=None, bootable=None, sysfsPath='', parents=None\
+    def __init__(self, name, format=None, size=None, grow=False, maxsize=None,\
+                major=None, minor=None, bootable=None, sysfsPath='', parents=None,\
                 exists=None, partType=None):
         """
             name -- device node base name
@@ -374,7 +380,7 @@ class Partition(Storage):
         """
 
         self._req_disks = []
-        self._req_parType = None
+        self._req_partType = None
         self._req_primary = None
         self._req_grow = None
         self._req_bootable = None
@@ -386,11 +392,250 @@ class Partition(Storage):
 
         Storage.__init__(self, name, format=format, size=size, major=major, minor=minor, \
                         exists=exists, sysfsPath=sysfsPath, parents=parents)
-        if not exists:
+        if not self._exists:
             self._req_disks = self.parents[:]
 
-        for parent in parents:
-            parent.removeChild()
-        self.parents = []
+            for parent in parents:
+                parent.removeChild()
+            self.parents = []
+
+        self._partType = None
+        self._partedFlag = {}
+        self._partedPartition = None
+
+        if self._exists:
+            self._partedPartition = self.disk.partedDisk.getPartitionByPath(self.path)
+
+            if not self._partedPartition:
+                raise DeviceError("Cannot find partition instance",self.path)
+        else:
+            self._req_name = name
+            self._req_partType = partType
+            self._req_primary = primary
+            self._req_max_size = int(maxsize)
+            self._req_bootable = bootable
+            self._req_grow = grow
+
+            self._req_size = self._size
+            self._req_base_size = self._size
 
 
+
+    def _getDisk(self):
+        """The disk that contain these partition"""
+        try:
+            disk = self.parents[0]
+        except IndexError:
+            disk = None
+
+        return disk
+
+    def _setDisk(self):
+        """Change partition parent"""
+        if self.disk:
+            self.disk.removeChild()
+
+        if disk:
+            self.parents = [disk]
+            disk.addChild()
+        else:
+            self.parents = []
+
+    disk = property(lambda p: p._getDisk(), lambda p: p._setDisk() )
+
+    def _setTargetSize(self,newsize):
+        if newsize != self.currentSize:
+            partition = self.disk.partedDisk.getPartitionByPath(self.path)
+            (constraint,geometry) = self._computeResize(partition)
+
+            self.disk.partedDisk.setPartitionGeometry(partition=partition, constraint=constraint,\
+                                                      start=geometry.start, end=geometry.end)
+    @property
+    def path(self):
+        return "%s%s" % (self.parents[0]._devDir, self.name)
+
+    @property
+    def partType(self):
+        try:
+            partType = self.partedPartition.type
+        except AttributeError:
+            partType =  self._partType
+
+        if partType is None and not self._exists:
+            partType = self.req_partType
+
+        return partType
+
+    @property
+    def isExtended(self):
+        return (self.partType is not None and self.partType & parted.PARTITION_EXTENDED)
+
+    @property
+    def isLogical(self):
+        return (self.partType is not None and self.partType & parted.PARTITION_LOGICAL)
+
+    @property
+    def isPrimary(self):
+        return (self.partType is not None and self.partType & parted.PARTITION_PRIMARY)
+
+    def _getPartedPartition(self):
+        return self._partedPartition
+
+    def _setPartedPartition(self, partition):
+        if partition is None:
+            path = None
+        elif isinstance(partition, parted.Partition):
+            path = partition.path
+        else:
+            raise ValueError("partition must be parted.Partition instance")
+
+        self._partedPartition = partition
+        self.updateName()
+
+    partedPartition = property(lambda p: p._getPartedPartition(), lambda p,d: p._setPartedPartition(d))
+
+    def updateSysfsPath(self):
+        if not self.parents:
+            self.parents = ''
+        elif self.parents[0]._devDir == "/dev/mapper":
+            dmNode = dm.dm_node_from_name(self.name)
+            path = os.path.join("/sys", self.sysfsBlockDir, dmNode)
+            self.sysfsPath = os.path.realpath(path)[4:]
+        else:
+            Storage.updateSysfsPath(self)
+
+    def updateName(self):
+        if self.partedPartition is None:
+            self._name = self._req_name
+        else:
+            self_name = devicePathToName(self.partedPartition.getDeviceNodeName())
+
+    def _computeSize(self,partition):
+
+        currentGeom = partition.geometry
+        currentDev = currentGeom.device
+        newSizeLen = long(self.targetSize * 1024 * 1024) / currentDev.sectorSize
+
+        newGeom = parted.Geometry (device = currentDev, start=currentGeom.start, length=newLen)
+
+        constraint = parted.Constraint(exactGeom=newGeom)
+
+        return (constraint,newGeom)
+
+    def resize(self):
+
+        if self.targetSize != self.currentSize:
+            partition = self.disk.partedDisk.getPartitionByPath(self.path)
+            (newconstraint, newGeom) = self._computeResize(partition)
+
+            self.disk.partedDisk.setPartitionGeometry(partition=partition, constraint=newconstraint, \
+                                                      start=newGeom.start, end=newGeom.end)
+
+            self.disk.commit()
+            self.notifyKernel()
+
+    def _setFormat(self, format):
+        Storage.setFormat(format)
+
+    def _setBootable(self, bootable):
+        if self.partedPartition:
+            if self._flagAvailable(parted.PARTITION_BOOT):
+                if bootable:
+                    self._setFlag(parted.PARTITION_BOOT)
+                else:
+                    self._unsetFlag(parted.PARTITION_BOOT)
+            else:
+                raise DeviceError("boot flag is not available for this partition", self.path)
+
+            self._bootable = bootable
+        else:
+            self._req_bootable = bootable
+
+    def _getBootable(self):
+        return self._bootable or self._req_bootable
+
+    bootable = property(lambda p: p._getBootable(), lambda p:p._setBootable())
+
+
+    def _flagAvailable(self, flag):
+        if self.partedPartition is None:
+            return
+        return self.partedPartition.isFlagAvailable(flag)
+
+    def _setFlag(self.flag):
+        if not self.partedPartition or not self.flagAvailable(flag):
+            return
+
+        self.partedPartition.setFlag(flag)
+
+    def _unsetFlag(self, flag):
+        if not self.partedPartition or not self.flagAvailable(flag):
+            return
+
+        self.partedPartition.unsetFlag(flag)
+
+    def probe(self):
+        if not self._exists:
+            return
+
+        self._size = self.partedPartition.getSize()
+        self._targetSize = self._size
+        self._partType = self.partedPartition.type
+        self._bootable = self.getFlag(parted.PARTITION_BOOT)
+
+    def create(self):
+        if self._exists:
+            raise DeviceError("device already exists", self.path)
+
+        self.createParents()
+        self.setupParents()
+        self.disk.addPartition(self)
+        self.disk.commit()
+
+        self.parted = self.disk.partedDisk.getPartitionByPath(self.path)
+        self._exists = True
+        self.setup()
+
+    def destroy(self):
+        if not self._exists:
+            raise DeviceError("partition has not been created", self.path)
+
+        if not self.isLeaf():
+            raise DeviceError("Cannot destroy non-leaf partition", self.path)
+
+
+        self.setupParents()
+        self.disk.removePartition(self)
+        self.disk.commit()
+        self._exists = False
+
+    def getSize(self)
+        size = self._size
+        if self.partedPartition:
+            size = self.partedPartition.getSize()
+
+        return size
+
+    def setSize(self, newsize):
+        if not self._exists:
+            raise DeviceError("Device does not exists", self.path)
+
+        if newsize > self.disk.size:
+            raise ValueError("New size exceed disk size")
+
+        maxAvailableSize = self.partedPartition.getMaxAvailableSize()
+
+        if newsize > maxAvailableSize:
+            raise ValueError("New size is greater than available space ")
+
+        geometry = self.partedPartition.geometry
+        physicalSectorSize = geometry.device.physicalSectorSize
+        geometry.length = (newsize / (1024 * 1024)) / physicalSectorSize
+
+    def maxSize(self):
+        maxSize = self.partedPartition.getMaxAvailableSize()
+
+        if self.format.maxSize > maxSize:
+            return maxSize
+        else:
+            return self.format.maxSize
