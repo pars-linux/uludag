@@ -118,10 +118,10 @@
   * 3.0.x serisine yapılan değişikliklerden gerekenlerin alınması (-)
 
 * Yalı4 2.1 (Gökmen GÖKSEL)
-  * Python 2.6 geçişi (-)
+  * Python 2.6 geçişi (/90)
   * Ağ üzerinden kurulum .2095 (/30)
   * Harici araçların çıktısı hata ayıklamada gözüksün .7568 (/20)
-  * Disk tablosunda değişiklik yoksa disk tablosu yeniden yazılmasın .7530 (-)
+  * Disk tablosunda değişiklik yoksa disk tablosu yeniden yazılmasın .7530 (+)
   * NTFS Kontrolü daha insancıl olsun (-)
   * Kullanıcı Ekle ekranı iyileştirmeleri .8714 .7658 (-)
   * Kullanıcı Eklerken polkit için parola sorma desteği (-)
