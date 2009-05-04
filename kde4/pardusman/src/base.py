@@ -22,6 +22,7 @@ from PyKDE4.kdecore import *
 
 from ui import Ui_mainForm
 from uilanguage import Ui_languageForm
+from uipackages import Ui_packagesForm
 
 class LanguageForm(QtGui.QDialog):
     def __init__(self, parent):
@@ -45,11 +46,18 @@ class LanguageForm(QtGui.QDialog):
         available = self.ui.kactionselectorLang.availableListWidget()
         available.addItems(self.supported_languages.keys())
 
-    def run(self):
-        self.exec_()
+        self.connect(self.ui.buttonBox, SIGNAL("accepted()"), self.accept)
+        self.connect(self.ui.buttonBox, SIGNAL("rejected()"), self.reject)
 
-    def accept(self):
-        self.done(QtGui.QDialog.Accepted)
+
+class PackagesForm(QtGui.QDialog):
+    def __init__(self, parent):
+        QtGui.QDialog.__init__(self, parent)
+        self.ui = Ui_packagesForm()
+        self.ui.setupUi(self)
+
+        self.connect(self.ui.buttonBox, SIGNAL("accepted()"), self.accept)
+        self.connect(self.ui.buttonBox, SIGNAL("rejected()"), self.reject)
 
 
 class MainForm(QtGui.QWidget):
@@ -62,6 +70,9 @@ class MainForm(QtGui.QWidget):
 
         # Create language selector
         self.languageSelectionDialog = LanguageForm(self)
+
+        # Create package selector
+        self.packageSelectionDialog = PackagesForm(self)
 
         # Create attributes
         self.repo_uri = None
@@ -80,22 +91,29 @@ class MainForm(QtGui.QWidget):
         self.connect(self.ui.pushButtonBrowseWork, SIGNAL("clicked()"), self.slotBrowseWork)
         self.connect(self.ui.pushButtonBrowsePlugin, SIGNAL("clicked()"), self.slotBrowsePlugin)
         self.connect(self.ui.pushButtonBrowseRelease, SIGNAL("clicked()"), self.slotBrowseRelease)
+        self.connect(self.ui.pushButtonLanguages, SIGNAL("clicked()"), self.slotLanguages)
+        self.connect(self.ui.pushButtonLanguages, SIGNAL("clicked()"), self.slotLanguages)
+        self.connect(self.ui.pushButtonPackages, SIGNAL("clicked()"), self.slotPackages)
 
-        self.connect(self.ui.pushButtonLanguages, SIGNAL("clicked()"), self.languageSelectionDialog.run)
+    def slotLanguages(self):
+        if self.languageSelectionDialog.exec_():
+            print "ok"
+        else:
+            print "cancel"
+
+    def slotPackages(self):
+        if self.packageSelectionDialog.exec_():
+            print "ok"
+        else:
+            print "cancel"
 
     def slotBrowseRepo(self):
-        self.repo_uri = KFileDialog.getOpenFileName(KUrl('.'),
-                                                    "pisi-index.xml*",
-                                                    self,
-                                                    i18n("Select repository index"))
+        self.repo_uri = KFileDialog.getOpenFileName(KUrl('.'), "pisi-index.xml*", self, i18n("Select repository index"))
         if self.repo_uri:
             self.ui.lineEditRepo.setText(self.repo_uri)
 
     def slotBrowsePlugin(self):
-        self.plug_dir = KFileDialog.getOpenFileName(KUrl('.'),
-                                                    "*.pisi",
-                                                    self,
-                                                    i18n("Select plugin package"))
+        self.plug_dir = KFileDialog.getOpenFileName(KUrl('.'), "*.pisi", self, i18n("Select plugin package"))
         if self.plug_dir:
             self.ui.lineEditPlugin.setText(self.plug_dir)
 
@@ -104,8 +122,7 @@ class MainForm(QtGui.QWidget):
 
         file_dialog.setMode(KFile.Directory)
 
-        self.rl_files = file_dialog.getOpenFileName(KUrl(), "", self,
-                                                    i18n("Select the directory for the release files"))
+        self.rl_files = file_dialog.getOpenFileName(KUrl(), "", self, i18n("Select the directory for the release files"))
         if self.rl_files:
             self.ui.lineEditRelease.setText(self.rl_files)
 
