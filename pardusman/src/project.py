@@ -36,8 +36,7 @@ usr/share/man/
 usr/share/groff/
 usr/share/dict/
 var/db/pisi/
-var/cache/pisi/packages/
-var/cache/pisi/archives/
+var/cache/pisi/
 var/tmp/pisi/
 var/pisi/
 tmp/pisi-root/
