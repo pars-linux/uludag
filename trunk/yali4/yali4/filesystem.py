@@ -61,6 +61,12 @@ def getLabel(partition):
             return part
     return None
 
+def requires(command):
+    cmd_path = sysutils.find_executable(command)
+    if not cmd_path:
+        raise FSError, "Command not found: %s " % command
+    return cmd_path
+
 class FileSystem:
     """ Abstract fileSystem class for other implementations """
     _name = None
@@ -98,7 +104,7 @@ class FileSystem:
 
     def getLabel(self, partition):
         """ Read filesystem label and return """
-        cmd_path = sysutils.find_executable("e2label")
+        cmd_path = requires("e2label")
         cmd = "%s %s" % (cmd_path, partition.getPath())
         import yali4.gui.context as ctx
         ctx.debugger.log("Running CMD: %s" % cmd)
@@ -113,7 +119,7 @@ class FileSystem:
 
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
-        cmd_path = sysutils.find_executable("e2label")
+        cmd_path = requires("e2label")
         import yali4.gui.context as ctx
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
         ctx.debugger.log("Running CMD: %s" % cmd)
@@ -175,10 +181,7 @@ class FileSystem:
 
     def preResize(self, partition):
         """ Routine operations before resizing """
-        cmd_path = sysutils.find_executable("e2fsck")
-
-        if not cmd_path:
-            raise FSError, "Command not found to resize %s filesystem" % (self.name())
+        cmd_path = requires("e2fsck")
 
         res = sysutils.execClear("e2fsck",
                                 ["-f", "-p", "-C", "0", partition.getPath()],
@@ -194,12 +197,7 @@ class FileSystem:
     def format(self, partition):
         """ Format the given partition """
         self.preFormat(partition)
-
-        cmd_path = sysutils.find_executable("mkfs.%s" % self.name())
-
-        if not cmd_path:
-            e = "Command not found to format %s filesystem" %(self.name())
-            raise FSError, e
+        cmd_path = requires("mkfs.%s" % self.name())
 
         # bug 5616: ~100MB reserved-blocks-percentage
         reserved_percentage = int(math.ceil(100.0 * 100.0 / partition.getMB()))
@@ -219,10 +217,7 @@ class FileSystem:
 
     def tune2fs(self, partition):
         """ Runs tune2fs for given partition """
-        cmd_path = sysutils.find_executable("tune2fs")
-        if not cmd_path:
-            e = "Command not found to tune the filesystem"
-            raise FSError, e
+        cmd_path = requires("tune2fs")
 
         # Disable mount count and use 6 month interval to fsck'ing disks at boot
         cmd = "%s -c 0 -i 6m %s" % (cmd_path, partition.getPath())
@@ -234,17 +229,17 @@ class FileSystem:
 
     def minResizeMB(self, partition):
         """ Get minimum resize size (mb) for given partition """
-        cmd_path = sysutils.find_executable("dumpe2fs")
+        cmd_path = requires("dumpe2fs")
 
-        if not cmd_path:
-            raise FSError, "Command not found to get information about %s" % (partition.getPath())
+        def capture(lines, param):
+            return long(filter(lambda line: line.startswith(param), lines)[0].split(':')[1].strip('\n').strip(' '))
 
         lines = os.popen("%s -h %s" % (cmd_path, partition.getPath())).readlines()
 
         try:
-            total_blocks = long(filter(lambda line: line.startswith('Block count'), lines)[0].split(':')[1].strip('\n').strip(' '))
-            free_blocks  = long(filter(lambda line: line.startswith('Free blocks'), lines)[0].split(':')[1].strip('\n').strip(' '))
-            block_size   = long(filter(lambda line: line.startswith('Block size'), lines)[0].split(':')[1].strip('\n').strip(' '))
+            total_blocks = capture(lines, 'Block count')
+            free_blocks  = capture(lines, 'Free blocks')
+            block_size   = capture(lines, 'Block size')
             return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 150
         except Exception, e:
             ctx.debugger.log("Failed while getting minimum size for partition %s : %s" % (partition.getPath(), e))
@@ -255,10 +250,7 @@ class FileSystem:
         if size_mb < self.minResizeMB(partition):
             return False
 
-        cmd_path = sysutils.find_executable("resize2fs")
-
-        if not cmd_path:
-            raise FSError, "Command not found to resize %s filesystem" % (self.name())
+        cmd_path = requires("resize2fs")
 
         res = sysutils.execClear("resize2fs",
                                 ["-f", partition.getPath(), "%sM" %(size_mb)],
@@ -303,12 +295,7 @@ class ReiserFileSystem(FileSystem):
     def format(self, partition):
         self.preFormat(partition)
 
-        cmd_path = sysutils.find_executable("mkreiserfs")
-
-        if not cmd_path:
-            e = "Command not found to format %s filesystem" %(self.name())
-            raise FSError, e
-
+        cmd_path = requires("mkreiserfs")
         cmd = "%s  %s" %(cmd_path, partition.getPath())
 
         p = os.popen(cmd, "w")
@@ -318,7 +305,7 @@ class ReiserFileSystem(FileSystem):
 
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
-        cmd_path = sysutils.find_executable("reiserfstune")
+        cmd_path = requires("reiserfstune")
         cmd = "%s --label %s %s" % (cmd_path, label, partition.getPath())
         try:
             p = os.popen(cmd)
@@ -343,13 +330,7 @@ class XFSFileSystem(FileSystem):
 
     def format(self, partition):
         self.preFormat(partition)
-
-        cmd_path = sysutils.find_executable("mkfs.xfs")
-
-        if not cmd_path:
-            e = "Command not found to format %s filesystem" %(self.name())
-            raise FSError, e
-
+        cmd_path = requires("mkfs.xfs")
         cmd = "%s -f %s" %(cmd_path, partition.getPath())
 
         p = os.popen(cmd)
@@ -358,7 +339,7 @@ class XFSFileSystem(FileSystem):
 
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
-        cmd_path = sysutils.find_executable("xfs_admin")
+        cmd_path = requires("xfs_admin")
         cmd = "%s -L %s %s" % (cmd_path, label, partition.getPath())
         try:
             p = os.popen(cmd)
@@ -388,13 +369,8 @@ class SwapFileSystem(FileSystem):
 
     def format(self, partition):
         self.preFormat(partition)
-
-        cmd_path = sysutils.find_executable("mkswap")
+        cmd_path = requires("mkswap")
         cmd = "%s %s" %(cmd_path, partition.getPath())
-
-        if not cmd_path:
-            e = "Command not found to format %s filesystem" %(self.name())
-            raise FSError, e
 
         p = os.popen(cmd)
         o = p.readlines()
@@ -422,7 +398,7 @@ class SwapFileSystem(FileSystem):
 
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
-        cmd_path = sysutils.find_executable("mkswap")
+        cmd_path = requires("mkswap")
         cmd = "%s -v1 -L %s %s" % (cmd_path, label, partition.getPath())
         try:
             p = os.popen(cmd)
@@ -446,6 +422,7 @@ class NTFSFileSystem(FileSystem):
         self.setResizable(True)
         self.setImplemented(True)
 
+    #FIXME#
     def check_resize(self, size_mb, partition):
         # don't do anything, just check
         cmd = "/usr/sbin/ntfsresize -n -f -s %dM %s" %(size_mb, partition.getPath())
@@ -465,7 +442,8 @@ class NTFSFileSystem(FileSystem):
         os.write(p[1], "y\n")
         os.close(p[1])
 
-        res = sysutils.execClear("ntfsresize",
+        cmd_path = requires("ntfsresize")
+        res = sysutils.execClear(cmd_path,
                                 ["-f","-s", "%sM" % (size_mb), partition.getPath()],
                                 stdin = p[0],
                                 stdout = "/tmp/resize.log",
@@ -480,7 +458,7 @@ class NTFSFileSystem(FileSystem):
 
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
-        cmd_path = sysutils.find_executable("ntfslabel")
+        cmd_path = requires("ntfslabel")
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
         try:
             p = os.popen(cmd)
@@ -492,12 +470,7 @@ class NTFSFileSystem(FileSystem):
 
     def format(self, partition):
         self.preFormat(partition)
-        cmd_path = sysutils.find_executable("mkfs.ntfs")
-
-        if not cmd_path:
-            e = "Command not found to format %s filesystem" %(self.name())
-            raise FSError, e
-
+        cmd_path = requires("mkfs.ntfs")
         cmd = "%s -f %s" % (cmd_path,partition.getPath())
 
         p = os.popen(cmd)
@@ -505,6 +478,7 @@ class NTFSFileSystem(FileSystem):
         if p.close():
             raise YaliException, "Ntfs format failed: %s" % partition.getPath()
 
+    #FIXME#
     def minResizeMB(self, partition):
         cmd = "/usr/sbin/ntfsresize -f -i %s" % partition.getPath()
         lines = os.popen(cmd).readlines()
@@ -533,11 +507,7 @@ class FatFileSystem(FileSystem):
 
     def format(self, partition):
         self.preFormat(partition)
-        cmd_path = sysutils.find_executable("mkfs.vfat")
-        if not cmd_path:
-            e = "Command not found to format %s filesystem" %(self.name())
-            raise FSError, e
-
+        cmd_path = requires("mkfs.vfat")
         cmd = "%s %s" %(cmd_path,partition.getPath())
         p = os.popen(cmd)
         o = p.readlines()
@@ -549,7 +519,7 @@ class FatFileSystem(FileSystem):
 
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
-        cmd_path = sysutils.find_executable("dosfslabel")
+        cmd_path = requires("dosfslabel")
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
         try:
             p = os.popen(cmd)

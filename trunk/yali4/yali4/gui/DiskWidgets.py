@@ -383,7 +383,6 @@ class DiskList(QtGui.QWidget):
                                                 _("You need to delete one of the primary or extended(if exists) partition from your disk table !"))
                 return
 
-
             if extendedPartition and partition._partition.type & parteddata.PARTITION_LOGICAL:
                 type = parteddata.PARTITION_LOGICAL
 
