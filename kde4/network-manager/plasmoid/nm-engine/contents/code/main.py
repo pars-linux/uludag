@@ -36,7 +36,7 @@ class NMEngine(plasmascript.DataEngine):
 
     def init(self):
         self.setMinimumPollingInterval(333)
-        link.listenSignals("Net.Link", self.handler)
+        link.listenSignals("Network.Link", self.handler)
 
     def handler(self, package, signal, args):
         self.updateSourceEvent("%s.%s" % (package, args[0]))
@@ -44,7 +44,7 @@ class NMEngine(plasmascript.DataEngine):
     def sources(self):
         sources = []
         for package in net_packages:
-            profiles = asString(list(link.Net.Link[package].connections()), package)
+            profiles = asString(list(link.Network.Link[package].connections()), package)
             for profile in profiles:
                 sources.append(profile)
         return sources
@@ -54,7 +54,7 @@ class NMEngine(plasmascript.DataEngine):
 
     def updateSourceEvent(self, _name):
         pkg, name = _name.split('.')
-        _st = link.Net.Link[str(pkg)].connectionInfo(str(name))
+        _st = link.Network.Link[str(pkg)].connectionInfo(str(name))
         self.setData(_name, "State", QVariant(str(_st['state'])))
         self.setData(_name, "Device", QVariant(str(_st['device_id'])))
         return True

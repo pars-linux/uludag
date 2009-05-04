@@ -17,7 +17,7 @@ class NetworkIface:
         self.link = comar.Link()
 
     def connections(self, package):
-        return list(self.link.Net.Link[package].connections())
+        return list(self.link.Network.Link[package].connections())
 
     def connect(self, package, profile):
         self.setState(package, profile, "up")
@@ -33,15 +33,15 @@ class NetworkIface:
             self.disconnect(package, profile)
 
     def setState(self, package, profile, state):
-        self.link.Net.Link[package].setState(profile, state, async=self.handler)
+        self.link.Network.Link[package].setState(profile, state, async=self.handler)
 
     def info(self, package, profile):
-        return self.link.Net.Link[package].connectionInfo(str(profile))
+        return self.link.Network.Link[package].connectionInfo(str(profile))
 
     def handler(self, *args):
         pass
 
     def listen(self, func):
-        self.link.listenSignals("Net.Link", func)
+        self.link.listenSignals("Network.Link", func)
 
 

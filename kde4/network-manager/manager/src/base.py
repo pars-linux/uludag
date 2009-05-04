@@ -63,25 +63,22 @@ class MainManager(QtGui.QWidget):
 
         # Populate Packages
         self.packages = {}
-        packages = self.iface.packages()
-        for package in packages:
+        for package in self.iface.packages():
             self.packages[package] = self.iface.linkInfo(package)
 
         # Let look what we can do
-        supportedPackages = []
         menu = QtGui.QMenu(self)
         for package in self.packages.keys():
             devices = self.iface.devices(package)
             if len(devices) > 0:
                 # Create profile menu with current devices
                 for device in devices.keys():
-                    if self.packages[package]['type'] in ('net','wifi'):
+                    if self.packages[package]['type'] in ('net', 'wifi'):
                         menuItem = QtGui.QAction("%s - %s" % (self.packages[package]['name'], findInterface(device).name), self)
                         menuItem.setData(QVariant("%s::%s" % (package,device)))
                         self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
                         menu.addAction(menuItem)
                 menu.addSeparator()
-                supportedPackages.append(package)
             if self.packages[package]['type'] == 'dialup':
                 pppMenu = QtGui.QMenu(self.packages[package]['name'], self)
                 devices = self.iface.devices(package)
@@ -93,22 +90,22 @@ class MainManager(QtGui.QWidget):
                 menu.addMenu(pppMenu)
                 menu.addSeparator()
 
-        # Add package specific menu entiries
-        if "net_tools" in supportedPackages:
-            self.ui.filterBox.addItem(i18n("Ethernet Profiles"), QVariant("net_tools"))
-        if "ppp" in supportedPackages:
-            self.ui.filterBox.addItem(i18n("Modem Profiles"), QVariant("ppp"))
-        if "wireless_tools" in supportedPackages:
-            self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
-            authMods = self.iface.capabilities('wireless_tools')['auth_modes'].split(';')
-            for name, auth, desc in map(lambda x:x.split(','), authMods):
-                self.ui.comboSecurityTypes.addItem(desc, QVariant(name))
-            self.ui.filterBox.addItem(i18n("Wireless Profiles"), QVariant("wireless_tools"))
-            self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
-            wifiScanner = WifiPopup(self)
-            self.ui.buttonScan.setMenu(wifiScanner)
+        ## Add package specific menu entiries
+        #if "net_tools" in supportedPackages:
+        #    self.ui.filterBox.addItem(i18n("Ethernet Profiles"), QVariant("net_tools"))
+        #if "wireless_tools" in supportedPackages:
+        #    self.ui.filterBox.addItem(i18n("Wireless Profiles"), QVariant("wireless_tools"))
+        #    self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
+        #    wifiScanner = WifiPopup(self)
+        #    self.ui.buttonScan.setMenu(wifiScanner)
+        ## Get authentication types
+        #authMods = self.iface.authMethods('wireless_tools')
+        #if len(authMods):
+        #    self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
+        #    for name, desc in authMods:
+        #        self.ui.comboSecurityTypes.addItem(desc, QVariant(name))
 
-        if len(supportedPackages) > 0:
+        if len(self.packages) > 0:
             self.ui.buttonCreate.setMenu(menu)
             self.ui.filterBox.insertItem(0, i18n("All Profiles"), QVariant("all"))
         else:
@@ -248,7 +245,7 @@ class MainManager(QtGui.QWidget):
                     if package == ignore[0] and connection == ignore[1]:
                         continue
                 info = self.iface.info(package, connection)
-                state= str(info["state"])
+                state = str(info["state"])
                 item = QtGui.QListWidgetItem(self.ui.profileList)
                 item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
                 item.setSizeHint(QSize(48,48))
@@ -295,23 +292,45 @@ class MainManager(QtGui.QWidget):
         self.lastAnimation = SHOW
         self.hideScrollBars()
 
+        info = self.iface.capabilities(package)
+
         # Hide all settings first
-        self.ui.groupModemSettings.hide()
         self.ui.groupRemote.hide()
         self.ui.groupNetwork.hide()
         self.ui.groupNameServer.hide()
+
+        if "auth" in info:
+            self.ui.comboSecurityTypes.clear()
+            self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
+            for name, desc in self.iface.authMethods(package):
+                self.ui.comboSecurityTypes.addItem(desc, QVariant(name))
+        else:
+            self.ui.labelSecurity.hide()
+            self.ui.comboSecurityTypes.hide()
+            self.ui.labelKey.hide()
+            self.ui.lineKey.hide()
+            self.ui.checkShowPassword.hide()
 
         if profile:
             self.buildEditBoxFor(sender.package, sender.profile)
 
         # Then show them by giving package
-        if package in ("net_tools","wireless_tools"):
+        modes = info["modes"].split(",")
+        if "net" in modes:
             self.ui.groupNetwork.show()
             self.ui.groupNameServer.show()
-        if package == "wireless_tools":
+        if "remote" in modes:
+            remote_name = self.iface.remoteName(package)
+            self.ui.labelRemote.setText("%s :" % remote_name)
+            if "remote_scan" in modes:
+                wifiScanner = WifiPopup(self)
+                self.ui.buttonScan.setMenu(wifiScanner)
+                self.ui.buttonScan.show()
+            else:
+                self.ui.buttonScan.hide()
             self.ui.groupRemote.show()
-        if package == "ppp":
-            self.ui.groupModemSettings.show()
+        if "device" in modes:
+            self.fillDeviceList(package)
 
         self.animator.setFrameRange(TARGET_HEIGHT, self.baseWidget.height() - TARGET_HEIGHT)
         self.animator.start()
@@ -339,30 +358,22 @@ class MainManager(QtGui.QWidget):
         ui = self.ui
         self.lastEditedPackage = package
         self.lastEditedData = data = self.iface.info(package, profile)
-        self.fillDeviceList(package)
 
         ui.lineConnectionName.setText(data["name"])
-        ui.labelDeviceDescription.setText(data["device_name"])
-        ui.deviceList.setCurrentIndex(ui.deviceList.findText(data["device_id"]))
 
-        if data.has_key("remote") and package == "ppp":
-            ui.linePhoneNumber.setText(data["remote"])
-            authInfo = self.iface.authInfo(package, profile)
-            authType = authInfo[0]
-            authUser = authInfo[1]
-            authPass = authInfo[2]
-            if not authType == 'none':
-                ui.lineUserName.setText(authUser)
-                ui.linePassword.setText(authPass)
-                ui.needsAuth.setChecked(True)
+        if "device_id" in data:
+            ui.labelDeviceDescription.setText(data["device_name"])
+        if "device_name" in data:
+            ui.deviceList.setCurrentIndex(ui.deviceList.findText(data["device_id"]))
 
-        if data.has_key("remote") and package == "wireless_tools":
-            ui.lineEssid.setText(data["remote"])
-            authInfo = self.iface.authInfo(package, profile)
-            authType = authInfo[0]
-            authPass = authInfo[2]
-            ui.lineKey.setText(authPass)
-            ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(authType)))
+        if "remote" in data:
+            ui.lineRemote.setText(data["remote"])
+
+        #authInfo = self.iface.authInfo(package, profile)
+        #authType = authInfo[0]
+        #authPass = authInfo[2]
+        #ui.lineKey.setText(authPass)
+        #ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(authType)))
 
         if data.has_key("net_mode"):
             if data["net_mode"] == "auto":
@@ -381,14 +392,14 @@ class MainManager(QtGui.QWidget):
         if data.has_key("net_gateway"):
             ui.lineGateway.setText(data["net_gateway"])
 
-        if data.has_key("namemode"):
-            if data["namemode"] == "default":
+        if data.has_key("name_mode"):
+            if data["name_mode"] == "default":
                 ui.useDefault.setChecked(True)
-            if data["namemode"] == "auto":
+            if data["name_mode"] == "auto":
                 ui.useAutomatic.setChecked(True)
-            if data["namemode"] == "custom":
+            if data["name_mode"] == "custom":
                 ui.useCustom.setChecked(True)
-                ui.lineCustomDNS.setText(data["nameserver"])
+                ui.lineCustomDNS.setText(data["name_server"])
 
     def resetForm(self):
         ui = self.ui
@@ -402,17 +413,13 @@ class MainManager(QtGui.QWidget):
         ui.lineAddress.setText("")
         ui.lineNetworkMask.lineEdit().setText("")
         ui.lineGateway.setText("")
-        ui.lineEssid.setText("")
+        ui.lineRemote.setText("")
         ui.useDefault.setChecked(True)
         ui.useAutomatic.setChecked(False)
         ui.useCustom.setChecked(False)
         ui.lineCustomDNS.setText("")
         ui.lineKey.setText("")
         ui.comboSecurityTypes.setCurrentIndex(0)
-        ui.linePassword.setText("")
-        ui.lineUserName.setText("")
-        ui.linePhoneNumber.setText("")
-        ui.needsAuth.setChecked(False)
         self.lastEditedData = None
         self.lastEditedPackage = None
 
@@ -460,16 +467,16 @@ class MainManager(QtGui.QWidget):
             data["net_gateway"] = ui.lineGateway.text()
 
         # Nameservice options
-        data["namemode"] = "default"
-        data["nameserver"] = ""
+        data["name_mode"] = "default"
+        data["name_server"] = ""
         if ui.useAutomatic.isChecked():
-            data["namemode"] = "auto"
+            data["name_mode"] = "auto"
         if ui.useCustom.isChecked():
-            data["namemode"] = "custom"
-            data["nameserver"] = ui.lineCustomDNS.text()
+            data["name_mode"] = "custom"
+            data["name_server"] = ui.lineCustomDNS.text()
 
         # Remote and security options
-        if ui.groupRemote.isVisible() or ui.groupModemSettings.isVisible():
+        if ui.groupRemote.isVisible():
 
             # Remote
             data["remote"] = ui.lineEssid.text()
@@ -487,14 +494,6 @@ class MainManager(QtGui.QWidget):
             data["authprivate_key"] = ""
             data["authprivate_key_password"] = ""
 
-        # Modem Settings
-        if ui.groupModemSettings.isVisible():
-            data["remote"] = ui.linePhoneNumber.text()
-            # FIXME, use comar to set known auth methods
-            data["authmode"] = "login"
-            data["authuser"] = ui.lineUserName.text()
-            data["authpass"] = ui.linePassword.text()
-
         # Let them unicode
         for i,j in data.items():
             data[i] = unicode(j)
@@ -506,7 +505,6 @@ class MainManager(QtGui.QWidget):
         # print package, device
         self.resetForm()
         self.lastEditedPackage = package
-        self.fillDeviceList(package)
         self.showEditBox(package)
 
     def editConnection(self):
