@@ -118,6 +118,7 @@ class Project:
         self.reset()
 
     def reset(self):
+        self.filename = None
         self.title = None
         self.work_dir = None
         self.release_files = None
@@ -146,6 +147,7 @@ class Project:
             return _("Not a Pardusman project file")
 
         self.reset()
+        self.filename = filename
 
         # Fill in the properties from XML file
         self.title = doc.getTagData("Title")
@@ -153,9 +155,17 @@ class Project:
         self.media = doc.getAttribute("media")
 
         self.plugin_package = doc.getTagData("PluginPackage")
+        if not self.plugin_package:
+            self.plugin_package = ""
         self.release_files = doc.getTagData("ReleaseFiles")
+        if not self.release_files:
+            self.release_files = ""
         self.extra_params = doc.getTagData("ExtraParameters")
+        if not self.extra_params:
+            self.extra_params = ""
         self.work_dir = doc.getTagData("WorkDir")
+        if not self.work_dir:
+            self.work_dir = ""
 
         # Fill in the packages
         package_selection = doc.getTag("PackageSelection")
@@ -170,7 +180,7 @@ class Project:
 
         lang_selection = doc.getTag("LanguageSelection")
         if lang_selection:
-            self.default_language = langsel.getAttribute("default_language")
+            self.default_language = lang_selection.getAttribute("default_language")
             for tag in lang_selection.tags("Language"):
                 self.selected_languages.append(tag.firstChild().data())
 
@@ -184,7 +194,10 @@ class Project:
         self.all_packages.sort()
 
 
-    def save(self, filename):
+    def save(self, filename=None):
+        if not filename:
+            filename = self.filename
+
         # Save the data into filename as pardusman project file
         doc = piksemel.newDocument("PardusmanProject")
 
