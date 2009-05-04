@@ -7,9 +7,7 @@ class Student < ActiveRecord::Base
   validates_uniqueness_of :name
 
   def score
-    result = 0
-    self.comments.each { |c| result += c.score }
-    return result
+    self.comments.inject(0) { |result, c| result + c.score }
   end
 
   def commented_by(user)
