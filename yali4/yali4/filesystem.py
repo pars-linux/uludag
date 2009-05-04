@@ -559,4 +559,3 @@ class FatFileSystem(FileSystem):
             return False
         return label
 
-
