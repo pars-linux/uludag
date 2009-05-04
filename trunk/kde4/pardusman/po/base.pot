@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-04 17:39+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: build/base.py:111
+msgid "Select repository index"
+msgstr ""
+
+#: build/base.py:116
+msgid "Select plugin package"
+msgstr ""
+
+#: build/base.py:125
+msgid "Select the directory for the release files"
+msgstr ""
+
+#: build/project.py:141
+#, python-format
+msgid "Project file '%s' does not exists!"
+msgstr ""
+
+#: build/project.py:144
+msgid "Not a Pardusman project file, invalid xml!"
+msgstr ""
+
+#: build/project.py:146
+msgid "Not a Pardusman project file"
+msgstr ""
+
+#: build/uilanguage.py:49 build/uilanguage.py:50
+msgid "Select languages"
+msgstr ""
+
+#: build/uipackages.py:73
+msgid "Packages"
+msgstr ""
+
+#: build/uipackages.py:74 build/uipackages.py:75 build/uipackages.py:76
+msgid "TextLabel"
+msgstr ""
+
+#: build/ui.py:160
+msgid "Pardusman"
+msgstr ""
+
+#: build/ui.py:161
+msgid "New Project"
+msgstr ""
+
+#: build/ui.py:162
+msgid "Load Project"
+msgstr ""
+
+#: build/ui.py:163
+msgid "Save Project"
+msgstr ""
+
+#: build/ui.py:164
+msgid "Save Project As.."
+msgstr ""
+
+#: build/ui.py:165
+msgid "About"
+msgstr ""
+
+#: build/ui.py:166
+msgid "Image Properties"
+msgstr ""
+
+#: build/ui.py:167
+msgid "Image title"
+msgstr ""
+
+#: build/ui.py:168
+msgid "The title of the Pardus image"
+msgstr ""
+
+#: build/ui.py:169
+msgid "Extra parameters"
+msgstr ""
+
+#: build/ui.py:170
+msgid "Extra parameters to pass to the kernel command line during boot."
+msgstr ""
+
+#: build/ui.py:171
+msgid "Repository"
+msgstr ""
+
+#: build/ui.py:172
+msgid ""
+"Local or remote URL of the repository index from which the image will be "
+"created"
+msgstr ""
+
+#: build/ui.py:173
+msgid "Release files"
+msgstr ""
+
+#: build/ui.py:174
+msgid ""
+"Path to the local directory which contains metadata about the image like the "
+"release notes, etc."
+msgstr ""
+
+#: build/ui.py:175
+msgid "Plugin package"
+msgstr ""
+
+#: build/ui.py:176
+msgid "Work folder"
+msgstr ""
+
+#: build/ui.py:177
+msgid ""
+"Path to the directory where Pardusman will work and create the related files "
+"and directories"
+msgstr ""
+
+#: build/ui.py:178
+msgid "Image type"
+msgstr ""
+
+#: build/ui.py:179
+msgid "Installation Image"
+msgstr ""
+
+#: build/ui.py:180
+msgid "Live Image"
+msgstr ""
+
+#: build/ui.py:181
+msgid "Image size"
+msgstr ""
+
+#: build/ui.py:182
+msgid "CD (700MB)"
+msgstr ""
+
+#: build/ui.py:183
+msgid "DVD (4.2GB)"
+msgstr ""
+
+#: build/ui.py:184
+msgid "Flash Disk (1GB)"
+msgstr ""
+
+#: build/ui.py:185
+msgid "Custom"
+msgstr ""
+
+#: build/ui.py:186 build/ui.py:187 build/ui.py:188 build/ui.py:189
+msgid "Browse"
+msgstr ""
+
+#: build/ui.py:190
+msgid "Update Repository"
+msgstr ""
+
+#: build/ui.py:191
+msgid "Select Packages"
+msgstr ""
+
+#: build/ui.py:192
+msgid "Select Languages"
+msgstr ""
+
+#: build/ui.py:193
+msgid "Create Image"
+msgstr ""

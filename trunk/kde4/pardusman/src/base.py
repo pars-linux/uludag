@@ -24,6 +24,8 @@ from ui import Ui_mainForm
 from uilanguage import Ui_languageForm
 from uipackages import Ui_packagesForm
 
+from project import Project
+
 class LanguageForm(QtGui.QDialog):
     def __init__(self, parent):
         QtGui.QDialog.__init__(self, parent)
@@ -74,6 +76,9 @@ class MainForm(QtGui.QWidget):
         # Create package selector
         self.packageSelectionDialog = PackagesForm(self)
 
+        # Project
+        self.project = Project()
+
         # Create attributes
         self.repo_uri = None
         self.work_dir = None
@@ -87,13 +92,64 @@ class MainForm(QtGui.QWidget):
         self.setIcons()
 
         # Set connections
+        self.connect(self.ui.pushButtonNew, SIGNAL("clicked()"), self.slotProjectNew)
+        self.connect(self.ui.pushButtonLoad, SIGNAL("clicked()"), self.slotProjectLoad)
+        self.connect(self.ui.pushButtonSave, SIGNAL("clicked()"), self.slotProjectSave)
+        self.connect(self.ui.pushButtonSaveAs, SIGNAL("clicked()"), self.slotProjectSaveAs)
+
         self.connect(self.ui.pushButtonBrowseRepo, SIGNAL("clicked()"), self.slotBrowseRepo)
         self.connect(self.ui.pushButtonBrowseWork, SIGNAL("clicked()"), self.slotBrowseWork)
         self.connect(self.ui.pushButtonBrowsePlugin, SIGNAL("clicked()"), self.slotBrowsePlugin)
         self.connect(self.ui.pushButtonBrowseRelease, SIGNAL("clicked()"), self.slotBrowseRelease)
-        self.connect(self.ui.pushButtonLanguages, SIGNAL("clicked()"), self.slotLanguages)
+
         self.connect(self.ui.pushButtonLanguages, SIGNAL("clicked()"), self.slotLanguages)
         self.connect(self.ui.pushButtonPackages, SIGNAL("clicked()"), self.slotPackages)
+
+    def slotProjectNew(self):
+        self.project.reset()
+
+    def slotProjectLoad(self):
+        project_file = KFileDialog.getOpenFileName(KUrl('.'), "*.xml", self, i18n("Select project file"))
+        if project_file:
+            ret = self.project.open(unicode(project_file))
+            if ret:
+                # FIXME: Show error dialog
+                pass
+            else:
+                # Labels
+                self.ui.lineEditTitle.setText(self.project.title)
+                self.ui.lineEditParams.setText(self.project.extra_params)
+                self.ui.lineEditRepo.setText(self.project.repo_uri)
+                self.ui.lineEditRelease.setText(self.project.release_files)
+                self.ui.lineEditPlugin.setText(self.project.plugin_package)
+                self.ui.lineEditWorkdir.setText(self.project.work_dir)
+                # Type
+                if self.project.type == "install":
+                    self.ui.comboBoxType.setCurrentIndex(0)
+                elif self.project.type == "live":
+                    self.ui.comboBoxType.setCurrentIndex(1)
+                elif self.project.type == "package":
+                    self.ui.comboBoxType.setCurrentIndex(2)
+                # Media
+                if self.project.media == "cd":
+                    self.ui.comboBoxSize.setCurrentIndex(0)
+                elif self.project.media == "dvd":
+                    self.ui.comboBoxSize.setCurrentIndex(1)
+                elif self.project.media == "usb":
+                    self.ui.comboBoxSize.setCurrentIndex(2)
+                elif self.project.media == "custom":
+                    self.ui.comboBoxSize.setCurrentIndex(3)
+
+    def slotProjectSave(self):
+        if self.project.filename:
+            self.project.save()
+        else:
+            self.slotProjectSaveAs()
+
+    def slotProjectSaveAs(self):
+        project_file = KFileDialog.getSaveFileName(KUrl('.'), "*.xml", self, i18n("Select project file"))
+        if project_file:
+            self.project.save(unicode(project_file))
 
     def slotLanguages(self):
         if self.languageSelectionDialog.exec_():
@@ -133,6 +189,7 @@ class MainForm(QtGui.QWidget):
 
     def setIcons(self):
         # Set pushbutton icons
+        self.ui.pushButtonNew.setIcon(KIcon('document-new'))
         self.ui.pushButtonLoad.setIcon(KIcon('document-open'))
         self.ui.pushButtonSave.setIcon(KIcon('document-save'))
         self.ui.pushButtonAbout.setIcon(KIcon('help-about'))

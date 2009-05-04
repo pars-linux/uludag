@@ -373,6 +373,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../icons/data.qrc"/>
+ </resources>
  <connections/>
 </ui>
