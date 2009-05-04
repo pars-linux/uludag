@@ -6,13 +6,15 @@
        background-repeat: no-repeat;
        background-position: center top;
        background-color: rgb(26,26,26);
+       alternate-background-color: gray;
+       selection-background-color: gray;
 }
 
 /*
 QStackedWidget#mainStack {
      border-style: outset;
      border-width: 2px;
-     border-radius: 14px;
+     border-radius: 16px;
      border-color: beige;
      background-image:url(':/gui/pics/trans.png');
 }
@@ -209,7 +211,7 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
 /* The popup of the QComboBox */
 QComboBox QAbstractItemView {
        color: #eeeeee;
-       selection-background-color: #0057ae;
+       selection-background-color: gray;
        background: #000000;
 }
 
@@ -219,7 +221,7 @@ QLineEdit {
        border-radius: 4px;
        padding: 0 6px;
        background: #000000;
-       selection-background-color: #0057ae;
+       selection-background-color: gray;
 }
 
 QLineEdit:hover {
@@ -228,7 +230,7 @@ QLineEdit:hover {
        border-radius: 4px;
        padding: 0 6px;
        background: #000000;
-       selection-background-color: #0057ae;
+       selection-background-color: gray;
 }
 
 QLineEdit:disabled {
@@ -237,7 +239,7 @@ QLineEdit:disabled {
        border-radius: 4px;
        padding: 0 6px;
        background: #000000;
-       selection-background-color: #0057ae;
+       selection-background-color: gray;
 }
 
 QSpinBox {
@@ -246,7 +248,7 @@ QSpinBox {
         border: 1px solid #6b6b6b;
         border-radius: 4px;
         background: #000000;
-        selection-background-color: #0057ae;
+        selection-background-color: gray;
 }
 
 QSpinBox:hover {
@@ -255,7 +257,7 @@ QSpinBox:hover {
         border: 1px solid #808080;
         border-radius: 4px;
         background: #000000;
-        selection-background-color: #0057ae;
+        selection-background-color: gray;
 }
 
 QSpinBox::up-button {
@@ -303,6 +305,7 @@ QTextEdit, QListView {
         border: 1px solid #6b6b6b;
         border-radius: 4px;
         alternate-background-color: #222222;
+        selection-background-color: gray;
 }
 
 QTreeView {
@@ -310,7 +313,7 @@ QTreeView {
         background-color: #000000;
         border: 1px solid #6b6b6b;
         border-radius: 4px;
-        selection-background-color: #0057ae;
+        selection-background-color: gray;
 }
 
 QTreeView::branch:has-siblings:!adjoins-item {
@@ -373,7 +376,6 @@ QScrollBar::handle:vertical {
         border: 2px solid #6b6b6b;;
         background-color: #323232;
         border-radius: 3px;
-        margin-right: 2px;
 }
 
 QScrollBar::handle:vertical:hover {
@@ -381,7 +383,6 @@ QScrollBar::handle:vertical:hover {
         border: 2px solid #808080;;
         background-color:  #323232;
         border-radius: 3px;
-        margin-right: 2px;
 }
 
 QScrollBar::add-line:vertical {

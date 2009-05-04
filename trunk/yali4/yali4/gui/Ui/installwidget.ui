@@ -58,9 +58,6 @@
      </item>
      <item>
       <widget class="QLabel" name="desc" >
-       <property name="styleSheet" >
-        <string notr="true" >color:#000000;</string>
-       </property>
        <property name="text" >
         <string>Desc</string>
        </property>
