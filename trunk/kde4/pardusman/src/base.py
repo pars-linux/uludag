@@ -13,7 +13,7 @@
 
 # Qt Stuff
 from PyQt4 import QtGui
-from PyQt4.QtCore import SIGNAL, SLOT, Qt
+from PyQt4.QtCore import SIGNAL, SLOT, Qt, QSize
 
 # KDE Stuff
 from PyKDE4.kdeui import KMessageBox, KIcon
@@ -23,6 +23,7 @@ from PyKDE4.kdecore import *
 from ui import Ui_mainForm
 from uilanguage import Ui_languageForm
 from uipackages import Ui_packagesForm
+from uipackage import Ui_PackageWidget
 
 from project import Project
 from packages import Repository
@@ -73,51 +74,94 @@ class LanguageForm(QtGui.QDialog):
         return languages
 
 
+class PackageWidgetItem(QtGui.QListWidgetItem):
+    def __init__(self, parent, package, widget):
+        QtGui.QListWidgetItem.__init__(self, parent)
+        self.package = package
+        self.widget = widget
+
+
+class PackageWidget(QtGui.QWidget):
+    def __init__(self, parent, package):
+        QtGui.QWidget.__init__(self, parent)
+        self.ui = Ui_PackageWidget()
+        self.ui.setupUi(self)
+        self.package = package
+        self.ui.labelPackage.setText(package.name)
+
+
 class PackagesForm(QtGui.QDialog):
     def __init__(self, parent):
         QtGui.QDialog.__init__(self, parent)
         self.ui = Ui_packagesForm()
         self.ui.setupUi(self)
 
+        self.all_packages = []
+        self.selected_packages = []
+        self.selected_components = []
         self.repo = None
 
         self.connect(self.ui.buttonBox, SIGNAL("accepted()"), self.accept)
         self.connect(self.ui.buttonBox, SIGNAL("rejected()"), self.reject)
+
+        self.connect(self.ui.listPackages, SIGNAL("itemSelectionChanged()"), self.slotItemChanged)
+
+    def slotItemChanged(self):
+        items = self.ui.listPackages.selectedItems()
+        if len(items):
+            item = items[0]
+            self.ui.labelSummary.setText(item.package.summary)
+            self.ui.labelSize.setText("%.2f MB" % (item.package.size / 1024.0 / 1024.0))
+            self.ui.labelInstalledSize.setText("%.2f MB" % (item.package.inst_size / 1024.0 / 1024.0))
+            self.ui.lineDependencies.setText(" ".join(item.package.depends))
+        else:
+            self.ui.labelSummary.setText("...")
+            self.ui.labelSize.setText("0 KB")
+            self.ui.labelInstalledSize.setText("0 KB")
+            self.ui.lineDependencies.setText("")
 
     def setRepo(self, repo):
         self.repo = repo
         self.repo.parse_index()
         # Packages
         self.ui.listPackages.clear()
-        for package in self.repo.packages.keys():
-            item = QtGui.QListWidgetItem(package)
-            self.ui.listPackages.addItem(item)
-        # Components
-        self.ui.listComponents.clear()
-        for component in self.repo.components.keys():
-            item = QtGui.QListWidgetItem(component)
-            self.ui.listComponents.addItem(item)
+        for name, package in self.repo.packages.iteritems():
+            widget = PackageWidget(self, package)
+            if name in self.selected_packages:
+                widget.ui.checkPackage.setChecked(True)
+            item = PackageWidgetItem(self.ui.listPackages, package, widget)
+            item.setSizeHint(QSize(1, 26))
+            self.ui.listPackages.setItemWidget(item, widget)
+        self.ui.listPackages.sortItems()
 
     def getRepo(self):
         return self.repo
 
     def setSelectedPackages(self, packages):
-        pass
+        self.selected_packages = packages
 
-    def setAllPackages(self, packages):
-        pass
+    def updatePackages(self):
+        self.selected_packages = []
+        self.all_packages = []
+        for i in xrange(self.ui.listPackages.count()):
+            item = self.ui.listPackages.item(i)
+            if item.widget.ui.checkPackage.isChecked():
+                self.selected_packages.append(item.package.name)
+                for dep in item.package.depends:
+                    if dep not in self.all_packages:
+                        self.all_packages.append(dep)
 
     def getSelectedPackages(self):
-        return []
+        return self.selected_packages
 
     def getAllPackages(self):
-        return []
+        return self.all_packages
 
     def setSelectedComponents(self, components):
-        pass
+        self.selected_components = components
 
     def getSelectedComponents(self):
-        return []
+        return self.selected_components
 
 
 class MainForm(QtGui.QWidget):
@@ -201,8 +245,6 @@ class MainForm(QtGui.QWidget):
                 self.languageSelectionDialog.setLanguages(self.project.selected_languages)
                 # Selected Packages
                 self.packagesSelectionDialog.setSelectedPackages(self.project.selected_packages)
-                # All Packages
-                self.packagesSelectionDialog.setAllPackages(self.project.all_packages)
                 # Selected Components
                 self.packagesSelectionDialog.setSelectedComponents(self.project.selected_components)
 
@@ -252,6 +294,7 @@ class MainForm(QtGui.QWidget):
             repo = Repository(self.project.repo_uri, self.project.work_dir)
             self.packagesSelectionDialog.setRepo(repo)
         if self.packagesSelectionDialog.exec_():
+            self.packagesSelectionDialog.updatePackages()
             self.project.selected_packages = self.packagesSelectionDialog.getSelectedPackages()
             self.project.all_packages = self.packagesSelectionDialog.getAllPackages()
             self.project.selected_components = self.packagesSelectionDialog.getSelectedComponents()

@@ -71,8 +71,14 @@ class Package:
         self.uri = node.getTagData('PackageURI')
         self.sha1sum = node.getTagData('PackageHash')
         self.component = node.getTagData('PartOf')
-        self.summary = node.getTagData('Summary')
-        self.description = node.getTagData('Description')
+        self.summary = ""
+        self.description = ""
+        for tag in node.tags():
+            if tag.name() == "Summary" and tag.getAttribute("xml:lang") == "en":
+                self.summary = tag.firstChild().data()
+        for tag in node.tags():
+            if tag.name() == "Description" and tag.getAttribute("xml:lang") == "en":
+                self.description = tag.firstChild().data()
         deps = node.getTag('RuntimeDependencies')
         if deps:
             self.depends = map(lambda x: x.firstChild().data(), deps.tags('Dependency'))
