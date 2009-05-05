@@ -1,6 +1,44 @@
-2009-01-28 Gökmen GÖKSEL <gokmen@pardus.org.tr>
-         * Fix for overriding selected partitioning method
-         * Just check kernel command in entries, its enough..
+2009-05-04 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * New Release 2.1.2
+
+2009-05-04 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Sometimes parted.device.commit fails with "device in use" error,
+         * to avoid this retry when commit failed.
+
+2009-05-04 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Net.Stack -> Network.Stack 
+
+2009-05-04 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Switching to oxygen theme.. 
+
+2009-05-04 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Remove duplicate command check methods.
+
+2009-05-04 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Do not call device.commit when disk table is not changed.
+         * Comment added to http://bugs.pardus.org.tr/7530
+
+2009-04-27 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Add log for setting/getting label operations .
+
+2009-04-27 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Refactoring for duplicate functions
+
+2009-04-26 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Comment added to http://bugs.pardus.org.tr/9651
+
+2009-04-24 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Python 2.6 support
+
+2009-04-20 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Ext4 Support added
+
+2009-04-11 fatih
+         * Add script to start YALI in X server
+
+2009-02-19 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Use swap instead of none for mount point
+         * Comment added to http://bugs.pardus.org.tr/9233
 
 2009-01-28 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * New release 2.0.8
@@ -316,11 +354,6 @@
          * Po update
          * Typo.
          * Bug fixed at http://bugs.pardus.org.tr/7288
-
-2008-06-06 Gökmen GÖKSEL <gokmen@pardus.org.tr>
-         * Po update
-         * Typo.
-         * Bug fixed at http://bugs.pardus.org.tr/7294
 
 2008-06-03 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * Umount"home"beforegrub-install
