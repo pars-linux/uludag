@@ -24,6 +24,7 @@ from ui import Ui_mainForm
 from uilanguage import Ui_languageForm
 from uipackages import Ui_packagesForm
 from uipackage import Ui_PackageWidget
+from uicomponent import Ui_ComponentWidget
 
 from project import Project
 from packages import Repository
@@ -74,11 +75,36 @@ class LanguageForm(QtGui.QDialog):
         return languages
 
 
+class ComponentWidgetItem(QtGui.QListWidgetItem):
+    def __init__(self, parent, component, widget):
+        QtGui.QListWidgetItem.__init__(self, parent)
+        self.component = component
+        self.widget = widget
+
+    def setChecked(self, state):
+        self.widget.ui.checkComponent.setChecked(state)
+
+
+class ComponentWidget(QtGui.QWidget):
+    def __init__(self, parent, component):
+        QtGui.QWidget.__init__(self, parent)
+        self.ui = Ui_ComponentWidget()
+        self.ui.setupUi(self)
+        self.component = component
+        self.ui.labelComponent.setText(component)
+
+    def setChecked(self, state):
+        self.ui.checkComponent.setChecked(state)
+
+
 class PackageWidgetItem(QtGui.QListWidgetItem):
     def __init__(self, parent, package, widget):
         QtGui.QListWidgetItem.__init__(self, parent)
         self.package = package
         self.widget = widget
+
+    def setChecked(self, state):
+        self.widget.ui.checkPackage.setChecked(state)
 
 
 class PackageWidget(QtGui.QWidget):
@@ -88,6 +114,9 @@ class PackageWidget(QtGui.QWidget):
         self.ui.setupUi(self)
         self.package = package
         self.ui.labelPackage.setText(package.name)
+
+    def setChecked(self, state):
+        self.ui.checkPackage.setChecked(state)
 
 
 class PackagesForm(QtGui.QDialog):
@@ -123,12 +152,22 @@ class PackagesForm(QtGui.QDialog):
     def setRepo(self, repo):
         self.repo = repo
         self.repo.parse_index()
+        # Components
+        self.ui.listComponents.clear()
+        for component, packages in self.repo.components.iteritems():
+            widget = ComponentWidget(self, component)
+            if component in self.selected_components:
+                widget.setChecked(True)
+            item = ComponentWidgetItem(self.ui.listComponents, component, widget)
+            item.setSizeHint(QSize(1, 26))
+            self.ui.listComponents.setItemWidget(item, widget)
+        self.ui.listComponents.sortItems()
         # Packages
         self.ui.listPackages.clear()
         for name, package in self.repo.packages.iteritems():
             widget = PackageWidget(self, package)
             if name in self.selected_packages:
-                widget.ui.checkPackage.setChecked(True)
+                widget.setChecked(True)
             item = PackageWidgetItem(self.ui.listPackages, package, widget)
             item.setSizeHint(QSize(1, 26))
             self.ui.listPackages.setItemWidget(item, widget)
@@ -143,13 +182,26 @@ class PackagesForm(QtGui.QDialog):
     def updatePackages(self):
         self.selected_packages = []
         self.all_packages = []
+        # Components
+        for i in xrange(self.ui.listComponents.count()):
+            item = self.ui.listComponents.item(i)
+            if item.widget.ui.checkComponent.isChecked():
+                self.selected_components.append(item.component)
+        # Packages
         for i in xrange(self.ui.listPackages.count()):
             item = self.ui.listPackages.item(i)
             if item.widget.ui.checkPackage.isChecked():
                 self.selected_packages.append(item.package.name)
+                self.all_packages.append(item.package.name)
                 for dep in item.package.depends:
                     if dep not in self.all_packages:
                         self.all_packages.append(dep)
+        # Add all packages in component into all packages
+        for name, packages in self.repo.components.iteritems():
+            if name in self.selected_components:
+                for package in packages:
+                    if package not in self.all_packages:
+                        self.all_packages.append(package)
 
     def getSelectedPackages(self):
         return self.selected_packages
