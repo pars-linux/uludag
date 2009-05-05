@@ -180,8 +180,9 @@ class PackagesForm(QtGui.QDialog):
         self.selected_packages = packages
 
     def updatePackages(self):
-        self.selected_packages = []
         self.all_packages = []
+        self.selected_packages = []
+        self.selected_components = []
         # Components
         for i in xrange(self.ui.listComponents.count()):
             item = self.ui.listComponents.item(i)
