@@ -14,7 +14,7 @@
 
 import parted
 import _ped
-from syutils import notify_kernel
+from sysutils import notify_kernel
 import logging
 log = logging.getLogger("pare")
 
@@ -28,8 +28,7 @@ class Storage(object):
     _devDir = "/dev"
     resizable = False
 
-    def __init__(self, device, format = None, size = None, major = None,
-            minor = None, sysfsPath = '', exists = None, parents = None):
+    def __init__(self, device, format = None, size = None, major = None, minor = None, sysfsPath = '', exists = None, parents = None):
 
         self._uuid = None
         self._name = device
@@ -46,7 +45,7 @@ class Storage(object):
 
         self._diskLabel = None
 
-        if parents = None:
+        if parents == None:
             parents = []
         elif not isinstance(parents, list):
             raise ValueError("parents must be Device instances")
@@ -120,7 +119,7 @@ class Storage(object):
 
     @property
     def setTargetSize(self, newsize):
-        return self._targetSize = newsize
+        return self._targetSize == newsize
 
     def resize(self, newsize):
         self.setTargetSize(newsize)
@@ -153,10 +152,9 @@ class Storage(object):
     def getMaxSize(self):
        """The maximum size of the device can be"""
        if self.format.maxSize > self.currentSize:
-            return self.currentSize
-        else:
-            return self.format.maxSize
-
+           return self.currentSize
+       else:
+           return self.format.maxSize
 
     def getMinSize(self):
         """The minumum size of the device can be"""
@@ -231,7 +229,7 @@ class Disk(Storage):
     type = "disk"
 
     def __init__(self, device, format=None, size=None, major=None, minor=None, \
-            sysfsPath='', parents=None, initCB=None, initLabel=None)
+            sysfsPath='', parents=None, initCB=None, initLabel=None):
         """
         Create Disk instance
             device -- generally a device node basename
@@ -245,8 +243,8 @@ class Disk(Storage):
             initCB -- a callback to be used for initiating disk
             initLabel --  whether to start a fresh disk
         """
-        Storage.__init__(device, format=format, size=size, major=major, minor=minor \
-                exists=True, sysfsPath=sysfsPath, parents=parents)
+        Storage.__init__(device, format=format, size=size, major=major, minor=minor, \
+                         exists=True, sysfsPath=sysfsPath, parents=parents)
 
         self._partedDisk = None
 
@@ -260,7 +258,8 @@ class Disk(Storage):
                 try:
                     self._partedDisk = parted.Disk(device=self.partedDevice)
                 except _ped.DeviceException:
-                    if initcb in not None and initcb():
+                    # FIXME why do we need this f.in initCB ?
+                    if initCB is not None:
                         self._partedDisk = parted.freshDisk(device=self.partedDevice,\
                             ty = platform.getPlatform(None).diskType)
                     else:
@@ -291,11 +290,10 @@ class Disk(Storage):
         if not self.mediaPresent:
             raise DeviceError("cannnot add media to disk with no media", self.path)
 
-       geometry = device.partedPartition.geometry
-       constraint = parted.Constraint(exactGeom=geometry)
-       partition = parted.Partition(disk=self.partedDisk, type=device.partedPartition.type, geometry=geometry)
-
-       self.partedDisk.addPartition(partition,constraint=constraint)
+        geometry = device.partedPartition.geometry
+        constraint = parted.Constraint(exactGeom=geometry)
+        partition = parted.Partition(disk=self.partedDisk, type=device.partedPartition.type, geometry=geometry)
+        self.partedDisk.addPartition(partition,constraint=constraint)
 
     def removePartiton(self, device):
         if not self.mediaPresent:
@@ -562,7 +560,7 @@ class Partition(Storage):
             return
         return self.partedPartition.isFlagAvailable(flag)
 
-    def _setFlag(self.flag):
+    def _setFlag(self, flag):
         if not self.partedPartition or not self.flagAvailable(flag):
             return
 
@@ -609,7 +607,7 @@ class Partition(Storage):
         self.disk.commit()
         self._exists = False
 
-    def getSize(self)
+    def getSize(self):
         size = self._size
         if self.partedPartition:
             size = self.partedPartition.getSize()
