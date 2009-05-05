@@ -6,7 +6,7 @@
   </div>
   <div class="other">
     <p>
-      <%= "None" if comment.review.nil? %>
+      <%= "No comment!" if comment.review.blank? %>
       <%= simple_format(comment.review) %>
     </p>
   </div>
