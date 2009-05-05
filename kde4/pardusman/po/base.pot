@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-04 17:39+0300\n"
+"POT-Creation-Date: 2009-05-05 09:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,169 +16,221 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: build/base.py:111
+#: build/base.py:202 build/base.py:270
+msgid "Select project file"
+msgstr ""
+
+#: build/base.py:290
 msgid "Select repository index"
 msgstr ""
 
-#: build/base.py:116
+#: build/base.py:295
 msgid "Select plugin package"
 msgstr ""
 
-#: build/base.py:125
+#: build/base.py:304
 msgid "Select the directory for the release files"
 msgstr ""
 
-#: build/project.py:141
+#: build/project.py:142
 #, python-format
 msgid "Project file '%s' does not exists!"
 msgstr ""
 
-#: build/project.py:144
+#: build/project.py:145
 msgid "Not a Pardusman project file, invalid xml!"
 msgstr ""
 
-#: build/project.py:146
+#: build/project.py:147
 msgid "Not a Pardusman project file"
+msgstr ""
+
+#: build/uicomponent.py:25 build/uipackage.py:41
+msgid "Form"
+msgstr ""
+
+#: build/uicomponent.py:26
+msgid "CheckBox"
 msgstr ""
 
 #: build/uilanguage.py:49 build/uilanguage.py:50
 msgid "Select languages"
 msgstr ""
 
-#: build/uipackages.py:73
+#: build/uipackage.py:42
+msgid ""
+" QCheckBox {\n"
+"     spacing: 1px;\n"
+" }\n"
+"\n"
+" QCheckBox::indicator {\n"
+"     width: 13px;\n"
+"     height: 13px;\n"
+" }"
+msgstr ""
+
+#: build/uipackage.py:50
+msgid "Package name"
+msgstr ""
+
+#: build/uipackages.py:74
 msgid "Packages"
 msgstr ""
 
-#: build/uipackages.py:74 build/uipackages.py:75 build/uipackages.py:76
-msgid "TextLabel"
+#: build/uipackages.py:75
+msgid "Summary:"
 msgstr ""
 
-#: build/ui.py:160
-msgid "Pardusman"
+#: build/uipackages.py:76
+msgid "Size:"
+msgstr ""
+
+#: build/uipackages.py:77 build/uipackages.py:79
+msgid "0 KB"
+msgstr ""
+
+#: build/uipackages.py:78
+msgid "Installed Size:"
+msgstr ""
+
+#: build/uipackages.py:80
+msgid "Dependencies:"
+msgstr ""
+
+#: build/uipackages.py:81
+msgid "..."
 msgstr ""
 
 #: build/ui.py:161
-msgid "New Project"
+msgid "Pardusman"
 msgstr ""
 
 #: build/ui.py:162
-msgid "Load Project"
+msgid "New Project"
 msgstr ""
 
 #: build/ui.py:163
-msgid "Save Project"
+msgid "Load Project"
 msgstr ""
 
 #: build/ui.py:164
-msgid "Save Project As.."
+msgid "Save Project"
 msgstr ""
 
 #: build/ui.py:165
-msgid "About"
+msgid "Save Project As.."
 msgstr ""
 
 #: build/ui.py:166
-msgid "Image Properties"
+msgid "About"
 msgstr ""
 
 #: build/ui.py:167
-msgid "Image title"
+msgid "Image Properties"
 msgstr ""
 
 #: build/ui.py:168
-msgid "The title of the Pardus image"
+msgid "Image title"
 msgstr ""
 
 #: build/ui.py:169
-msgid "Extra parameters"
+msgid "The title of the Pardus image"
 msgstr ""
 
 #: build/ui.py:170
-msgid "Extra parameters to pass to the kernel command line during boot."
+msgid "Extra parameters"
 msgstr ""
 
 #: build/ui.py:171
-msgid "Repository"
+msgid "Extra parameters to pass to the kernel command line during boot."
 msgstr ""
 
 #: build/ui.py:172
+msgid "Repository"
+msgstr ""
+
+#: build/ui.py:173
 msgid ""
 "Local or remote URL of the repository index from which the image will be "
 "created"
 msgstr ""
 
-#: build/ui.py:173
+#: build/ui.py:174
 msgid "Release files"
 msgstr ""
 
-#: build/ui.py:174
+#: build/ui.py:175
 msgid ""
 "Path to the local directory which contains metadata about the image like the "
 "release notes, etc."
 msgstr ""
 
-#: build/ui.py:175
+#: build/ui.py:176
 msgid "Plugin package"
 msgstr ""
 
-#: build/ui.py:176
+#: build/ui.py:177
 msgid "Work folder"
 msgstr ""
 
-#: build/ui.py:177
+#: build/ui.py:178
 msgid ""
 "Path to the directory where Pardusman will work and create the related files "
 "and directories"
 msgstr ""
 
-#: build/ui.py:178
+#: build/ui.py:179
 msgid "Image type"
 msgstr ""
 
-#: build/ui.py:179
+#: build/ui.py:180
 msgid "Installation Image"
 msgstr ""
 
-#: build/ui.py:180
+#: build/ui.py:181
 msgid "Live Image"
 msgstr ""
 
-#: build/ui.py:181
-msgid "Image size"
-msgstr ""
-
 #: build/ui.py:182
-msgid "CD (700MB)"
+msgid "Package Repository"
 msgstr ""
 
 #: build/ui.py:183
-msgid "DVD (4.2GB)"
+msgid "Image size"
 msgstr ""
 
 #: build/ui.py:184
-msgid "Flash Disk (1GB)"
+msgid "CD (700MB)"
 msgstr ""
 
 #: build/ui.py:185
+msgid "DVD (4.2GB)"
+msgstr ""
+
+#: build/ui.py:186
+msgid "Flash Disk (1GB)"
+msgstr ""
+
+#: build/ui.py:187
 msgid "Custom"
 msgstr ""
 
-#: build/ui.py:186 build/ui.py:187 build/ui.py:188 build/ui.py:189
+#: build/ui.py:188 build/ui.py:189 build/ui.py:190 build/ui.py:191
 msgid "Browse"
 msgstr ""
 
-#: build/ui.py:190
+#: build/ui.py:192
 msgid "Update Repository"
 msgstr ""
 
-#: build/ui.py:191
+#: build/ui.py:193
 msgid "Select Packages"
 msgstr ""
 
-#: build/ui.py:192
+#: build/ui.py:194
 msgid "Select Languages"
 msgstr ""
 
-#: build/ui.py:193
+#: build/ui.py:195
 msgid "Create Image"
 msgstr ""

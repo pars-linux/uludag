@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>556</width>
-    <height>465</height>
+    <width>559</width>
+    <height>534</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -53,40 +53,58 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QGridLayout" name="gridLayout" columnstretch="0">
+     <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>TextLabel</string>
+         <string>Summary:</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="label">
         <property name="text">
-         <string>TextLabel</string>
+         <string>Size:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="labelSize">
+        <property name="text">
+         <string>0 KB</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>TextLabel</string>
+         <string>Installed Size:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="labelInstalledSize">
+        <property name="text">
+         <string>0 KB</string>
         </property>
        </widget>
       </item>
       <item row="3" column="0">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Dependencies:</string>
         </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>23</height>
-         </size>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="lineDependencies"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="labelSummary">
+        <property name="text">
+         <string>...</string>
         </property>
-       </spacer>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -102,6 +120,11 @@
     </widget>
    </item>
   </layout>
+  <zorder>listComponents</zorder>
+  <zorder>listPackages</zorder>
+  <zorder>frame</zorder>
+  <zorder>buttonBox</zorder>
+  <zorder>labelSummary</zorder>
  </widget>
  <resources/>
  <connections>
