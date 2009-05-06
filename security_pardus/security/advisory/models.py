@@ -1,5 +1,5 @@
 from django.db import models
-from django.forms import ValidationError
+from django.core import validators
 from security.advisory.utils import *
 
 # i18n
@@ -32,14 +32,14 @@ def isValidPackageList(field_data, all_data):
             if package.strip():
                 year, no = package.split(" ", 1)
     except ValueError:
-        raise ValidationError(_("Package name and version must be seperated with a whitespace."))
+        raise validators.ValidationError(_("Package name and version must be seperated with a whitespace."))
 
 def isValidAdvisoryID(field_data, all_data):
     import re
     if not re.match("[0-9]{4}-[0-9]+", field_data):
-        raise ValidationError(_("Advisory ID must be in YEAR-NO format."))
+        raise validators.ValidationError(_("Advisory ID must be in YEAR-NO format."))
     #if "language" in all_data and Advisory.objects.filter(language=all_data["language"], plsa_id=field_data):
-    #    raise ValidationError(_("Advisory ID already exists for that language."))
+    #    raise validators.ValidationError(_("Advisory ID already exists for that language."))
 
 class Advisory(models.Model):
     publish = models.BooleanField(_("Publish"))
