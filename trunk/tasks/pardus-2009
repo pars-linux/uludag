@@ -120,7 +120,7 @@
 * Yalı4 2.1 (Gökmen GÖKSEL)
   * Python 2.6 geçişi (/90)
   * Ağ üzerinden kurulum .2095 (/30)
-  * Harici araçların çıktısı hata ayıklamada gözüksün .7568 (/20)
+  * Harici araçların çıktısı hata ayıklamada gözüksün .7568 (+)
   * Disk tablosunda değişiklik yoksa disk tablosu yeniden yazılmasın .7530 (+)
   * NTFS Kontrolü daha insancıl olsun (-)
   * Kullanıcı Ekle ekranı iyileştirmeleri .8714 .7658 (-)
