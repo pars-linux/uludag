@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -332,13 +332,8 @@ class MountRequest(PartRequest):
         if not pt.needsmtab:
             params.insert(0,"-n")
 
-        mount_res = yali4.sysutils.execClear("mount",
-                                             params,
-                                             stdout="/tmp/mount.log",
-                                             stderr="/tmp/mount.log")
-
+        yali4.sysutils.run("mount", params)
         PartRequest.applyRequest(self)
-
 
 ##
 # swap file request

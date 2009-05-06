@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -262,10 +262,10 @@ quit
         yali4.sysutils.finalize_chroot()
 
         ctx.debugger.log("IG: Grub install cmd is %s" % cmd)
-        if os.system(cmd) != 0:
+        if not yali4.sysutils.run(cmd):
             ctx.debugger.log("IG: Command failed %s - trying again.. " % cmd)
             time.sleep(2)
-            if os.system(cmd) != 0:
+            if not yali4.sysutils.run(cmd):
                 raise YaliException, "Command failed: %s" % cmd
             else:
                 return True

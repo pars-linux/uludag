@@ -485,9 +485,9 @@ class Device:
         try:
             self._disk.commit()
         except:
-            os.system("sync")
+            sysutils.run("sync")
             time.sleep(3)
-            os.system("sync")
+            sysutils.run("sync")
             ctx.debugger.log("Commit failed !")
             self._disk.commit()
         self.update()
@@ -506,9 +506,8 @@ def setOrderedDiskList():
     if not os.path.exists("/sys/firmware/edd"):
         cmd_path = sysutils.find_executable("modprobe")
         cmd = "%s %s" % (cmd_path, "edd")
-        p = os.popen(cmd)
-        o = p.readlines()
-        if p.close():
+        res = sysutils.run(cmd)
+        if not res:
             ctx.installData.orderedDiskList = devices
             ctx.debugger.log("ERROR : Inserting EDD Module failed !")
             return

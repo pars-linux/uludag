@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2007-2008, TUBITAK/UEKAE
+# Copyright (C) 2007-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -63,7 +63,7 @@ class Debugger:
             self.showWindow()
 
     def log(self,log,type=0,indent=0):
-        if ctx.debugEnabled:
+        if ctx.debugEnabled and not log == '':
             self.traceback.add(unicode(log),type,indent)
 
 class DebugContainer(QtGui.QTextBrowser):

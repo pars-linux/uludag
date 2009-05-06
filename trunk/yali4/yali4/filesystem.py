@@ -106,14 +106,7 @@ class FileSystem:
         """ Read filesystem label and return """
         cmd_path = requires("e2label")
         cmd = "%s %s" % (cmd_path, partition.getPath())
-        import yali4.gui.context as ctx
-        ctx.debugger.log("Running CMD: %s" % cmd)
-        try:
-            p = os.popen(cmd)
-            label = p.read()
-            p.close()
-        except Exception, e:
-            ctx.debugger.log("Failed while getting label for partition %s : %s" % (partition.getPath(), e))
+        if not sysutils.run(cmd):
             return False
         return label.strip()
 
@@ -122,16 +115,14 @@ class FileSystem:
         cmd_path = requires("e2label")
         import yali4.gui.context as ctx
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
-        ctx.debugger.log("Running CMD: %s" % cmd)
+        ctx.debugger.log("CMD: %s" % cmd)
         try:
             p = os.popen(cmd)
             p.close()
-            res = sysutils.execClear("e2label",
-                                    [partition.getPath(), label],
-                                    stdout="/tmp/label.log",
-                                    stderr="/tmp/label.log")
         except Exception, e:
             ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
+            return False
+        if not self.getLabel(partition) == label:
             return False
         return label
 
@@ -188,8 +179,9 @@ class FileSystem:
                                 stdout="/tmp/resize.log",
                                 stderr="/tmp/resize.log")
 
-        # FIXME if res == 2 means filesystem fixed but needs reboot !
-        if res >= 4:
+        if res == 2:
+            raise FSError, _("FSCheck found some problems on partition %s and fixed them. You should restart the machine before starting the installation process !") % (partition.getPath())
+        elif res > 2:
             raise FSError, "FSCheck failed on %s" % (partition.getPath())
 
         return True
@@ -197,19 +189,19 @@ class FileSystem:
     def format(self, partition):
         """ Format the given partition """
         self.preFormat(partition)
+
         cmd_path = requires("mkfs.%s" % self.name())
 
         # bug 5616: ~100MB reserved-blocks-percentage
         reserved_percentage = int(math.ceil(100.0 * 100.0 / partition.getMB()))
 
         # Use hashed b-trees to speed up lookups in large directories
-        cmd = "%s -O dir_index -j -m %d %s" %(cmd_path,
+        cmd = "%s -O dir_index -j -m %d %s" % (cmd_path,
                                               reserved_percentage,
                                               partition.getPath())
 
-        p = os.popen(cmd)
-        o = p.readlines()
-        if p.close():
+        res = sysutils.run(cmd)
+        if not res:
             raise YaliException, "%s format failed: %s" % (self.name(), partition.getPath())
 
         # for Disabling Lengthy Boot-Time Checks
@@ -218,13 +210,10 @@ class FileSystem:
     def tune2fs(self, partition):
         """ Runs tune2fs for given partition """
         cmd_path = requires("tune2fs")
-
         # Disable mount count and use 6 month interval to fsck'ing disks at boot
         cmd = "%s -c 0 -i 6m %s" % (cmd_path, partition.getPath())
-
-        p = os.popen(cmd)
-        o = p.readlines()
-        if p.close():
+        res = sysutils.run(cmd)
+        if not res:
             raise YaliException, "tune2fs tuning failed: %s" % partition.getPath()
 
     def minResizeMB(self, partition):
@@ -296,7 +285,7 @@ class ReiserFileSystem(FileSystem):
         self.preFormat(partition)
 
         cmd_path = requires("mkreiserfs")
-        cmd = "%s  %s" %(cmd_path, partition.getPath())
+        cmd = "%s %s" % (cmd_path, partition.getPath())
 
         p = os.popen(cmd, "w")
         p.write("y\n")
@@ -332,9 +321,8 @@ class XFSFileSystem(FileSystem):
         self.preFormat(partition)
         cmd_path = requires("mkfs.xfs")
         cmd = "%s -f %s" %(cmd_path, partition.getPath())
-
-        p = os.popen(cmd)
-        if p.close():
+        res = sysutils.run(cmd)
+        if not res:
             raise YaliException, "%s format failed: %s" % (self.name(), partition.getPath())
 
     def setLabel(self, partition, label):
@@ -371,11 +359,9 @@ class SwapFileSystem(FileSystem):
         self.preFormat(partition)
         cmd_path = requires("mkswap")
         cmd = "%s %s" %(cmd_path, partition.getPath())
-
-        p = os.popen(cmd)
-        o = p.readlines()
-        if p.close():
-            raise YaliException, "swap format failed: %s" % partition.getPath()
+        res = sysutils.run(cmd)
+        if not res:
+            raise YaliException, "Swap format failed: %s" % partition.getPath()
 
         # Swap on
         sysutils.swap_on(partition.getPath())
@@ -408,7 +394,6 @@ class SwapFileSystem(FileSystem):
             return False
         return label
 
-
 ##
 # ntfs
 class NTFSFileSystem(FileSystem):
@@ -426,10 +411,7 @@ class NTFSFileSystem(FileSystem):
         # don't do anything, just check
         cmd_path = requires("ntfsresize")
         cmd = "%s -n -f -s %dM %s" % (cmd_path, size_mb, partition.getPath())
-        p = os.popen(cmd)
-        if p.close():
-            return False
-        return True
+        return sysutils.run(cmd)
 
     def resize(self, size_mb, partition):
         if size_mb < self.minResizeMB(partition):
@@ -472,10 +454,8 @@ class NTFSFileSystem(FileSystem):
         self.preFormat(partition)
         cmd_path = requires("mkfs.ntfs")
         cmd = "%s -f %s" % (cmd_path,partition.getPath())
-
-        p = os.popen(cmd)
-        o = p.readlines()
-        if p.close():
+        res = sysutils.run(cmd)
+        if not res:
             raise YaliException, "Ntfs format failed: %s" % partition.getPath()
 
     def minResizeMB(self, partition):
@@ -509,9 +489,8 @@ class FatFileSystem(FileSystem):
         self.preFormat(partition)
         cmd_path = requires("mkfs.vfat")
         cmd = "%s %s" %(cmd_path,partition.getPath())
-        p = os.popen(cmd)
-        o = p.readlines()
-        if p.close():
+        res = sysutils.run(cmd)
+        if not res:
             raise YaliException, "vfat format failed: %s" % partition.getPath()
 
     def getLabel(self, partition):

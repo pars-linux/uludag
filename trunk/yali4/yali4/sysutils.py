@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -14,26 +14,45 @@
 
 import os
 import sys
+import time
 import subprocess
 from string import ascii_letters
 from string import digits
 from pardus.sysutils import find_executable
-from pardus.procutils import run
+from pardus import procutils
 
 from yali4._sysutils import *
 from yali4.constants import consts
 
 _sys_dirs = ['dev', 'proc', 'sys']
 
+def run(cmd, params=None):
+    import yali4.gui.context as ctx
+    if params:
+        cmd = "%s %s" % (cmd, ' '.join(params))
+    _cmd = tuple(cmd.split())
+    ctx.debugger.log("RUN : %s" % cmd)
+
+    proc = subprocess.Popen(_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    result = proc.wait()
+    stdout, stderr = proc.communicate()
+    ctx.debugger.log(stderr)
+    ctx.debugger.log(stdout)
+    if result > 0:
+        ctx.debugger.log("FAILED : %s" % cmd)
+        return False
+    ctx.debugger.log("SUCCESS : %s" % cmd)
+    return True
+
 def chroot_run(cmd):
-    os.system("chroot %s %s" % (consts.target_dir, cmd))
+    run("chroot %s %s" % (consts.target_dir, cmd))
 
 # run dbus daemon in chroot
 def chroot_dbus():
 
     for _dir in _sys_dirs:
         tgt = os.path.join(consts.target_dir, _dir)
-        os.system("mount --bind /%s %s" % (_dir, tgt))
+        run("mount --bind /%s %s" % (_dir, tgt))
 
     chroot_run("/sbin/ldconfig")
     chroot_run("/sbin/update-environment")
@@ -71,7 +90,7 @@ def finalize_chroot():
 
     # swap off if it is opened
     if os.path.exists(consts.swap_file_path):
-        os.system("swapoff %s" % consts.swap_file_path)
+        run("swapoff %s" % consts.swap_file_path)
 
     # umount target dir
     umount_(consts.target_dir)
@@ -112,8 +131,7 @@ def swap_as_file(filepath, mb_size):
 def swap_on(partition):
     # swap on
     params = ["-v", partition]
-    execClear("swapon", params, stdout="/tmp/swapon.log",
-                                stderr="/tmp/swapon.log")
+    run("swapon", params)
 
 ##
 # total memory size
@@ -125,7 +143,7 @@ def mem_total():
     return None
 
 def eject_cdrom(mount_point=consts.source_dir):
-    os.system("eject -m %s" % mount_point)
+    run("eject -m %s" % mount_point)
 
 def text_is_valid(text):
     allowed_chars = ascii_letters + digits + '.' + '_' + '-'
@@ -170,18 +188,11 @@ def mount(source, target, fs, needs_mtab=False):
     params = ["-t", fs, source, target]
     if not needs_mtab:
         params.insert(0,"-n")
-
-    mount_res = execClear("mount",
-                          params,
-                          stdout="/tmp/mount.log",
-                          stderr="/tmp/mount.log")
+    run("mount",params)
 
 def umount_(dir='/tmp/pcheck', params=''):
     param = [dir, params]
-    umount_res = execClear("umount",
-                           param,
-                           stdout="/tmp/umount.log",
-                           stderr="/tmp/umount.log")
+    run("umount",param)
 
 def is_windows_boot(partition_path, file_system):
     m_dir = "/tmp/pcheck"
@@ -258,7 +269,7 @@ def execClear(command, argv, stdin = 0, stdout = 1, stderr = 2):
     if isinstance(stderr, str):
         stderr = open(stderr, "w")
     if stdout is not None and not isinstance(stdout, int):
-        ctx.debugger.log("Running CMD : %s" %([command] + argv,))
+        ctx.debugger.log("RUN : %s" %([command] + argv,))
         stdout.write("Running... %s\n" %([command] + argv,))
 
     p = os.pipe()
@@ -286,6 +297,7 @@ def execClear(command, argv, stdin = 0, stdout = 1, stderr = 2):
                 raise IOError, args
 
         stdout.write(s)
+        ctx.debugger.log("OUT : %s" % str(s))
         ctx.mainScreen.processEvents()
 
         if len(s) < 1:
