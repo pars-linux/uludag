@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2008, TUBITAK/UEKAE
+# Copyright (C) 2008-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -214,11 +214,11 @@ class Yali:
 
         # Set current date and time
         ctx.debugger.log("Date/Time setting to %s" % args)
-        os.system("date %s" % args)
+        yali4.sysutils.run("date %s" % args)
 
         # Sync date time with hardware
         ctx.debugger.log("YALI's time is syncing with the system.")
-        os.system("hwclock --systohc")
+        yali4.sysutils.run("hwclock --systohc")
         self.info.hide()
 
     def setTimeZone(self, rootWidget):
