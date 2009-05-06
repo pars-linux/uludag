@@ -187,7 +187,7 @@ class PisiApi:
             for x in B:
                 pkg = packagedb.get_package(x)
                 for dep in pkg.runtimeDependencies():
-                    if dependency.dict_satisfies_dep(d_t, dep):
+                    if dep.satisfied_by_dict_repo(d_t):
                         if not dep.package in G_f.vertices():
                             Bp.add(str(dep.package))
                         G_f.add_dep(x, dep)
