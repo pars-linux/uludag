@@ -241,7 +241,7 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         self.project.release_files = unicode(self.lineReleaseFiles.text())
         self.project.plugin_package = unicode(self.linePluginPackage.text())
         self.project.extra_params = unicode(self.lineParameters.text())
-        self.project.type = ["install", "live", "package"][self.comboType.currentIndex()]
+        self.project.type = ["install", "live"][self.comboType.currentIndex()]
         self.project.media = ["cd", "dvd", "usb", "custom"][self.comboSize.currentIndex()]
 
     def loadProject(self):
@@ -254,7 +254,7 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         self.lineReleaseFiles.setText(unicode(self.project.release_files))
         self.linePluginPackage.setText(unicode(self.project.plugin_package))
         self.lineParameters.setText(unicode(self.project.extra_params))
-        self.comboType.setCurrentIndex(["install", "live", "package"].index(self.project.type))
+        self.comboType.setCurrentIndex(["install", "live"].index(self.project.type))
         self.comboSize.setCurrentIndex(["cd", "dvd", "usb", "custom"].index(self.project.media))
 
     def updateRepo(self, update_repo=True):
