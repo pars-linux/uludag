@@ -15,9 +15,9 @@ from pisi.operations.delta import create_delta_package
 
 # Global variables
 
-default_ack_file    = "/root/2008-ack.txt"
-test_path           = "/var/www/localhost/htdocs/2008-delta-test"
-history_path        = "/var/www/localhost/htdocs/2008-delta"
+default_ack_file    = "/root/2009-ack.txt"
+test_path           = "/var/www/localhost/htdocs/2009-delta-test"
+history_path        = "/var/www/localhost/htdocs/2009-delta"
 
 # TODO: Rename this to the correct one.
 stable_path         = "/root/stable-packages"

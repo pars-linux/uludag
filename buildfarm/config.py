@@ -16,7 +16,7 @@
 workDir          = "/var/pisi/"
 
 # Local source repo
-localPspecRepo   = "/root/2008"
+localPspecRepo   = "/root/2009/"
 
 # Main buildfarm log
 logFile          = "/var/cache/pisi/buildfarm.log"
