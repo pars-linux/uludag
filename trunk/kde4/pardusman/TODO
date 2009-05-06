@@ -1,0 +1,6 @@
+- check depedencies
+    - PyQT, PyKDE (for gui only)
+    - cdrtools
+    - squashfs-tools
+    - pisi
+- repotools package should be reviewed and refactored
