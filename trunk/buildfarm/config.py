@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2008 TUBITAK/UEKAE
+# Copyright (C) 2006-2009 TUBITAK/UEKAE
 # 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 workDir          = "/var/pisi/"
 
 # Local source repo
-localPspecRepo   = "/root/2009/"
+localPspecRepo   = "/root/2009"
 
 # Main buildfarm log
 logFile          = "/var/cache/pisi/buildfarm.log"
