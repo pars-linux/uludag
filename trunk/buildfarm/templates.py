@@ -12,10 +12,10 @@
 #e-mail message templates for mailer module..
 
 error_message = """\
-From: Pardus 2008 Buildfarm <%(mailFrom)s>
+From: Pardus 2009 Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
-Subject: [2008] %(type)s: %(subject)s
+Subject: [2009] %(type)s: %(subject)s
 MIME-Version: 1.0
 Content-Type: multipart/alternative; boundary="boundary42"
 
@@ -40,7 +40,7 @@ The last 20 lines of the log before the error happens is as follows:
 %(log)s
 --------------------------------------------------------------------------
 
-Log file: http://paketler.pardus.org.tr/logs/2008/%(packagename)s.log
+Log file: http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log
 
 Happy hacking!
 
@@ -88,7 +88,7 @@ Content-Type: text/html;
 </div>
 
 <p>Log file: <a
-href="http://paketler.pardus.org.tr/logs/2008/%(packagename)s.log">http://paketler.pardus.org.tr/logs/2008/%(packagename)s.log</a>.
+href="http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log">http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log</a>.
 
 <p>Happy hacking!<br>
 
@@ -96,10 +96,10 @@ href="http://paketler.pardus.org.tr/logs/2008/%(packagename)s.log">http://paketl
 """
 
 info_message = """\
-From: Pardus 2008 Buildfarm <%(mailFrom)s>
+From: Pardus 2009 Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
-Subject: [2008] %(subject)s
+Subject: [2009] %(subject)s
 Content-Type: text/plain;
             charset="utf-8"
 
@@ -112,9 +112,9 @@ Happy hacking!
 """
 
 announce_message = """\
-From: Pardus 2008 Buildfarm <%(mailFrom)s>
+From: Pardus 2009 Buildfarm <%(mailFrom)s>
 To: %(announceAddr)s
-Subject: [2008] [REPORT] New packages in -testing repository
+Subject: [2009] [REPORT] New packages in -testing repository
 Content-Type: text/plain;
             charset="utf-8"
 
