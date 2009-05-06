@@ -1,5 +1,5 @@
 - check depedencies
-    - PyQT, PyKDE (for gui only)
+    - PyQT, PyKDE, xdg-utils (for gui only)
     - cdrtools
     - squashfs-tools
     - pisi
