@@ -19,26 +19,55 @@ import time
 def maker(op, project_file):
     from repotools import maker, project
 
-    prj = project.Project()
-    err = prj.open(project_file)
+    project = project.Project()
+    err = project.open(project_file)
     if err:
-        raise RuntimeError("%s" % err)
+        print "ERROR: %s" % err
+        return
 
     start = time.time()
 
     if op == "make" or op == "make-repo":
-        prj.get_repo(update_repo=True)
-        maker.make_repos(prj)
+        update_repo = True
+        while True:
+            try:
+                project.get_repo(update_repo=update_repo)
+            except ExIndexBogus, e:
+                print "ERROR: Unable to load package index. URL is wrong, or file is corrupt."
+                return
+            except ExPackageCycle, e:
+                cycle = " > ".join(e.args[0])
+                print "ERROR: package index has errors. Cyclic dependency found:\n  %s." % cycle
+                return
+            except ExPackageMissing, e:
+                print "ERROR: Package index has errors. '%s' depends on non-existing '%s'." % e.args
+                return
+            missing_components, missing_packages = project.get_missing()
+            if len(missing_components):
+                print "WARNING: There are missing components. Removing."
+                for component in missing_components:
+                    if component in project.selected_components:
+                        project.selected_components.remove(component)
+                update_repo=False
+            if len(missing_packages):
+                print "WARNING: There are missing packages. Removing."
+                for package in missing_packages:
+                    if package in project.selected_packages:
+                        project.selected_packages.remove(package)
+                update_repo=False
+            break
+
+        maker.make_repos(project)
     if op == "check-repo":
-        maker.check_repo_files(prj)
+        maker.check_repo_files(project)
     if op == "make" or op == "make-live":
-        maker.make_image(prj)
+        maker.make_image(project)
     # install-live
     # configure-live
     if op == "make" or op == "make-live" or op == "pack-live":
-        maker.squash_image(prj)
+        maker.squash_image(project)
     if op == "make" or op == "make-iso":
-        maker.make_iso(prj)
+        maker.make_iso(project)
 
     end = time.time()
     print "Total time is", end - start, "seconds."
