@@ -289,7 +289,7 @@ def execClear(command, argv, stdin = 0, stdout = 1, stderr = 2):
         os._exit(1)
 
     os.close(p[1])
-
+    log = ''
     while 1:
         try:
             s = os.read(p[0], 1)
@@ -299,11 +299,16 @@ def execClear(command, argv, stdin = 0, stdout = 1, stderr = 2):
                 raise IOError, args
 
         stdout.write(s)
-        ctx.debugger.log("OUT : %s" % str(s))
+        log+=s
         ctx.mainScreen.processEvents()
 
         if len(s) < 1:
             break
+
+    try:
+        ctx.debugger.log("OUT : %s" % log)
+    except Exception, e:
+        ctx.debugger.log("Debuger itself crashed yay :) %s" % e)
 
     try:
         (pid, status) = os.waitpid(childpid, 0)

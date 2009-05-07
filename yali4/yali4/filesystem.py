@@ -114,14 +114,9 @@ class FileSystem:
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
         cmd_path = requires("e2label")
-        import yali4.gui.context as ctx
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
-        ctx.debugger.log("CMD: %s" % cmd)
-        try:
-            p = os.popen(cmd)
-            p.close()
-        except Exception, e:
-            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
+        if not sysutils.run(cmd):
+            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
         if not self.getLabel(partition) == label:
             return False
@@ -297,11 +292,8 @@ class ReiserFileSystem(FileSystem):
         label = self.availableLabel(label)
         cmd_path = requires("reiserfstune")
         cmd = "%s --label %s %s" % (cmd_path, label, partition.getPath())
-        try:
-            p = os.popen(cmd)
-            p.close()
-        except Exception, e:
-            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
+        if not sysutils.run(cmd):
+            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
         return label
 
@@ -330,11 +322,8 @@ class XFSFileSystem(FileSystem):
         label = self.availableLabel(label)
         cmd_path = requires("xfs_admin")
         cmd = "%s -L %s %s" % (cmd_path, label, partition.getPath())
-        try:
-            p = os.popen(cmd)
-            p.close()
-        except Exception, e:
-            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
+        if not sysutils.run(cmd):
+            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
         return label
 
@@ -387,11 +376,8 @@ class SwapFileSystem(FileSystem):
         label = self.availableLabel(label)
         cmd_path = requires("mkswap")
         cmd = "%s -v1 -L %s %s" % (cmd_path, label, partition.getPath())
-        try:
-            p = os.popen(cmd)
-            p.close()
-        except Exception, e:
-            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
+        if not sysutils.run(cmd):
+            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
         return label
 
@@ -443,11 +429,8 @@ class NTFSFileSystem(FileSystem):
         label = self.availableLabel(label)
         cmd_path = requires("ntfslabel")
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
-        try:
-            p = os.popen(cmd)
-            p.close()
-        except Exception, e:
-            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
+        if not sysutils.run(cmd):
+            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
         return label
 
@@ -501,11 +484,8 @@ class FatFileSystem(FileSystem):
         label = self.availableLabel(label)
         cmd_path = requires("dosfslabel")
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
-        try:
-            p = os.popen(cmd)
-            p.close()
-        except Exception, e:
-            ctx.debugger.log("Failed while setting label for partition %s : %s" % (partition.getPath(), e))
+        if not sysutils.run(cmd):
+            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
         return label
 
