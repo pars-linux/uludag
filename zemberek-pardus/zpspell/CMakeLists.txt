@@ -1,5 +1,6 @@
 
 project(zpspell)
+cmake_minimum_required(VERSION 2.6)
 
 # variables for project
 set(VERSION 0.4.2)
