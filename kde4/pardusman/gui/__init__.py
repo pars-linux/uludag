@@ -27,17 +27,14 @@ from gui.main import MainWindow
 
 
 def gui(args):
-    # Application name
-    app_name = args[0]
-
     # Set command-line arguments
-    KCmdLineArgs.init(args, aboutData)
+    KCmdLineArgs.init(args[:1], aboutData)
 
     # Create applicatin
     app = KApplication()
 
     # Show main window
-    mainWindow = MainWindow(app_name)
+    mainWindow = MainWindow(args)
     mainWindow.show()
 
     app.setTopWidget(mainWindow)

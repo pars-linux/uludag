@@ -40,12 +40,12 @@ from repotools.project import Project, ExProjectMissing, ExProjectBogus
 
 
 class MainWindow(KMainWindow, Ui_MainWindow):
-    def __init__(self, app_name):
+    def __init__(self, args):
         KMainWindow.__init__(self)
         self.setupUi(self)
 
-        # App name
-        self.app_name = app_name
+        # Arguments
+        self.args = args
 
         # Project
         self.project = Project()
@@ -75,6 +75,13 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         self.connect(self.pushSelectPackages, SIGNAL("clicked()"), self.slotSelectPackages)
         self.connect(self.pushMakeImage, SIGNAL("clicked()"), self.slotMakeImage)
 
+        # Initialize
+        self.initialize()
+
+    def initialize(self):
+        if len(self.args) == 2:
+            self.slotOpen(self.args[1])
+
     def setIcons(self):
         # Top toolbar
         self.pushNew.setIcon(KIcon("document-new"))
@@ -96,11 +103,12 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         self.project = Project()
         self.loadProject()
 
-    def slotOpen(self):
+    def slotOpen(self, filename=None):
         """
             Open button fires this function.
         """
-        filename = KFileDialog.getOpenFileName(KUrl("."), "*.xml", self, i18n("Select project file"))
+        if not filename:
+            filename = KFileDialog.getOpenFileName(KUrl("."), "*.xml", self, i18n("Select project file"))
         if filename:
             self.project = Project()
             try:
@@ -210,7 +218,7 @@ class MainWindow(KMainWindow, Ui_MainWindow):
                 return
         temp_project = tempfile.NamedTemporaryFile(delete=False)
         self.project.save(temp_project.name)
-        app_path = self.app_name
+        app_path = self.args[0]
         if app_path[0] != "/":
             app_path = os.path.join(os.getcwd(), app_path)
         cmd = 'konsole --noclose --workdir "%s" -e "%s" make "%s"' % (os.getcwd(), app_path, temp_project.name)
