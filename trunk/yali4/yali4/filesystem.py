@@ -106,7 +106,13 @@ class FileSystem:
         """ Read filesystem label and return """
         cmd_path = requires("e2label")
         cmd = "%s %s" % (cmd_path, partition.getPath())
-        if not sysutils.run(cmd):
+        ctx.debugger.log("Running CMD: %s" % cmd)
+        try:
+            p = os.popen(cmd)
+            label = p.read()
+            p.close()
+        except Exception, e:
+            ctx.debugger.log("Failed while getting label for partition %s : %s" % (partition.getPath(), e))
             return False
         return label.strip()
 

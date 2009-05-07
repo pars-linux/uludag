@@ -1,3 +1,7 @@
+2009-05-06 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Capture all command outputs into the debugger
+         * Comment added to http://bugs.pardus.org.tr/7568
+
 2009-05-04 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * New Release 2.1.2
 
