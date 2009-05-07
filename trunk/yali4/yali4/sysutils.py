@@ -26,7 +26,7 @@ from yali4.constants import consts
 
 _sys_dirs = ['dev', 'proc', 'sys']
 
-def run(cmd, params=None):
+def run(cmd, params=None, capture=False):
     import yali4.gui.context as ctx
     if params:
         cmd = "%s %s" % (cmd, ' '.join(params))
@@ -42,6 +42,8 @@ def run(cmd, params=None):
         ctx.debugger.log("FAILED : %s" % cmd)
         return False
     ctx.debugger.log("SUCCESS : %s" % cmd)
+    if capture:
+        return stdout
     return True
 
 def chroot_run(cmd):
