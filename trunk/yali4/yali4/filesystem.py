@@ -116,7 +116,6 @@ class FileSystem:
         cmd_path = requires("e2label")
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
         if not sysutils.run(cmd):
-            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
         if not self.getLabel(partition) == label:
             return False
@@ -226,8 +225,7 @@ class FileSystem:
             free_blocks  = capture(lines, 'Free blocks')
             block_size   = capture(lines, 'Block size')
             return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 150
-        except Exception, e:
-            ctx.debugger.log("Failed while getting minimum size for partition %s : %s" % (partition.getPath(), e))
+        except Exception:
             return 0
 
     def resize(self, size_mb, partition):
@@ -293,7 +291,6 @@ class ReiserFileSystem(FileSystem):
         cmd_path = requires("reiserfstune")
         cmd = "%s --label %s %s" % (cmd_path, label, partition.getPath())
         if not sysutils.run(cmd):
-            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
         return label
 
@@ -323,7 +320,6 @@ class XFSFileSystem(FileSystem):
         cmd_path = requires("xfs_admin")
         cmd = "%s -L %s %s" % (cmd_path, label, partition.getPath())
         if not sysutils.run(cmd):
-            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
         return label
 
@@ -353,8 +349,6 @@ class SwapFileSystem(FileSystem):
         if not res:
             raise YaliException, "Swap format failed: %s" % partition.getPath()
 
-        # Swap on
-        sysutils.swap_on(partition.getPath())
 
     def getLabel(self, partition):
         label = None
@@ -364,8 +358,7 @@ class SwapFileSystem(FileSystem):
         try:
             buf = os.read(fd, pagesize)
             os.close(fd)
-        except Exception, e:
-            ctx.debugger.log("Failed while getting label for partition %s : %s" % (partition.getPath(), e))
+        except:
             return False
 
         if ((len(buf) == pagesize) and (buf[pagesize - 10:] == "SWAPSPACE2")):
@@ -377,8 +370,11 @@ class SwapFileSystem(FileSystem):
         cmd_path = requires("mkswap")
         cmd = "%s -v1 -L %s %s" % (cmd_path, label, partition.getPath())
         if not sysutils.run(cmd):
-            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
+
+        # Swap on
+        sysutils.swap_on(partition.getPath())
+
         return label
 
 ##
@@ -430,7 +426,6 @@ class NTFSFileSystem(FileSystem):
         cmd_path = requires("ntfslabel")
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
         if not sysutils.run(cmd):
-            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
         return label
 
@@ -485,7 +480,6 @@ class FatFileSystem(FileSystem):
         cmd_path = requires("dosfslabel")
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
         if not sysutils.run(cmd):
-            ctx.debugger.log("Failed while setting label for partition %s" % partition.getPath())
             return False
         return label
 
