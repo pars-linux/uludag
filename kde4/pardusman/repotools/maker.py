@@ -440,7 +440,7 @@ def make_image(project):
             if project.type == "live":
                 os.unlink("%s/usr/kde/4/share/autostart/nepomukserver.desktop" % image_dir)
 
-        if project.type == "install" and "xdm" in project.all_packages:
+        if project.type == "install":
             # FIXME: Do not hard code installer name
             dm_config = "DISPLAY_MANAGER=yali4"
 
