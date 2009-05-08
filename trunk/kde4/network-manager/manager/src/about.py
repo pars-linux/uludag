@@ -18,7 +18,7 @@ from PyKDE4.kdecore import *
 appName     = "network-manager"
 catalog     = ""
 programName = ki18n("Network Manager")
-version     = "0.1"
+version     = "2.9.0"
 description = ki18n("Network Manager")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2008 TUBITAK/UEKAE")

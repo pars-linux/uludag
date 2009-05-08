@@ -22,6 +22,7 @@ from distutils.command.install import install
 from distutils.spawn import find_executable, spawn
 
 from src.about import aboutData
+from src.about import version as VERSION
 
 PROJECT     = str(aboutData.appName())
 DESKTOPFILE = "settings-%s.desktop" % PROJECT
@@ -117,7 +118,7 @@ class Install(install):
 
 setup(
       name              = PROJECT,
-      version           = getRevision(),
+      version           = VERSION,
       description       = str(aboutData.shortDescription()),
       license           = str(aboutData.licenseName(0)),
       author            = str(aboutData.authors()[0].name()),
