@@ -187,6 +187,8 @@ class DiskList(QtGui.QWidget):
 
         if cur == self.useTypes["archive"]:
             forceToFormat()
+
+        if not cur == 0:
             self.partEdit.ui.fileSystem.setVisible(False)
             self.partEdit.ui.fileSystemBox.setVisible(True)
         else:
