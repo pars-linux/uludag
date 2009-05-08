@@ -30,11 +30,11 @@ from yali4.gui.Ui.partedit import Ui_PartEdit
 from yali4.gui.GUIException import *
 from yali4.gui.GUIAdditional import ResizeWidget
 
-partitionTypes = {0:None,
-                  1:parttype.root,
-                  2:parttype.home,
-                  3:parttype.swap,
-                  4:parttype.archive}
+partitionTypes = [None,
+                  parttype.root,
+                  parttype.home,
+                  parttype.swap,
+                  parttype.archive]
 
 class DiskList(QtGui.QWidget):
 
@@ -74,16 +74,8 @@ class DiskList(QtGui.QWidget):
         self.tabWidget.setAutoFillBackground(False)
         self.tabWidget.setFocusPolicy(Qt.NoFocus)
 
-        self.useTypesTexts = [_("as Pardus System Files (mandatory)"),
-                              _("as User Files (optional)"),
-                              _("as Swap Space (optional)"),
-                              _("as Storage Area")]
-
-        self.useTypesKeys = ["pardus","home","swap","archive"]
-        self.useTypes = dict(zip(self.useTypesKeys, self.useTypesTexts))
-
-        self.partEdit = PartEdit(self.useTypesTexts)
-        self.partEdit.ui.fileSystemBox.setVisible(False)
+        self.partEdit = PartEdit(partitionTypes)
+        self.partEdit.ui.fileSystem.setVisible(False)
 
         self.vbox.addWidget(self.tabWidget)
         self.vbox.addWidget(self.partEdit)
@@ -94,7 +86,7 @@ class DiskList(QtGui.QWidget):
 
         # Connections
         self.connect(self.tabWidget,QtCore.SIGNAL("currentChanged(int)"),self.updatePartEdit)
-        self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(QString)"),self.formatTypeChanged)
+        self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(int)"),self.formatTypeChanged)
         self.connect(self.partEdit.ui.deletePartition,QtCore.SIGNAL("clicked()"),self.slotDeletePart)
         self.connect(self.partEdit.ui.resizePartition,QtCore.SIGNAL("clicked()"),self.slotResizePart)
         self.connect(self.partEdit.ui.applyTheChanges,QtCore.SIGNAL("clicked()"),self.slotApplyPartitionChanges)
@@ -120,8 +112,9 @@ class DiskList(QtGui.QWidget):
     def reinitDevices(self):
         self.initDevices(force=True)
         self.update()
+        self.formatTypeChanged()
 
-    def addDisk(self,dw):
+    def addDisk(self, dw):
         ni = self.tabWidget.addTab(dw,dw.name)
         self.tabWidget.setTabToolTip(ni,"%s - %s" % (dw.model,dw.name))
         self.diskCount+=1
@@ -142,6 +135,7 @@ class DiskList(QtGui.QWidget):
         self.tabWidget.setCurrentIndex(_cur)
         self.updatePartEdit()
         self.checkRootPartRequest()
+        self.formatTypeChanged()
 
     def setCurrent(self, new):
         self.tabWidget.setCurrentIndex(new)
@@ -156,17 +150,38 @@ class DiskList(QtGui.QWidget):
                 # root partition type. can enable next
                 ctx.mainScreen.enableNext()
 
-    def formatTypeChanged(self, cur):
+    def formatTypeChanged(self, cur=None):
+        if not cur:
+            cur = self.partEdit.ui.formatType.currentIndex()
+            if cur < 0:
+                cur = 0
+
+        if cur == 0:
+            self.partEdit.ui.applyTheChanges.setEnabled(False)
+        else:
+            self.partEdit.ui.applyTheChanges.setEnabled(True)
 
         def forceToFormat():
-            self.partEdit.ui.formatCheck.setChecked(True)
             self.partEdit.ui.formatCheck.setEnabled(False)
+            self.partEdit.ui.formatCheck.setChecked(True)
 
-        # index 1 is Pardus' root partition..
-        if cur == self.useTypes["pardus"]:
+        def updateFSList(partitionType):
+            self.partEdit.ui.fileSystemBox.clear()
+            if partitionType:
+                for fs in partitionType.supportedFileSystems:
+                    self.partEdit.ui.fileSystemBox.addItem(fs.name())
+            fsId = self.partEdit.ui.fileSystemBox.findText(self.partEdit.currentPart.getFSName())
+            if fsId < 0:
+                fsId = 0
+            self.partEdit.ui.fileSystemBox.setCurrentIndex(fsId)
+
+        updateFSList(partitionTypes[cur])
+
+        if partitionTypes[cur] == parttype.root:
             if self.partEdit.ui.partitionSize.maximum() < ctx.consts.min_root_size and not self.partEdit.isPartitionUsed:
                 self.partEdit.ui.formatType.setCurrentIndex(0)
                 self.partEdit.ui.information.setText(_("'Install Root' size must be larger than %s MB.") % (ctx.consts.min_root_size))
+                self.partEdit.ui.information.show()
             else:
                 self.partEdit.ui.partitionSize.setMinimum(ctx.consts.min_root_size)
                 self.partEdit.ui.partitionSlider.setMinimum(ctx.consts.min_root_size)
@@ -177,27 +192,19 @@ class DiskList(QtGui.QWidget):
             self.partEdit.ui.partitionSlider.setMinimum(10)
             self.partEdit.ui.formatCheck.setEnabled(True)
 
-        if cur == self.useTypes["home"]:
+        if partitionTypes[cur] == parttype.home:
             # if selected partition has different fs for userspace, forceToFormat
-            if not self.partEdit.currentPart.getFSName() in ["ext4","ext3","reiserfs","xfs"]:
-                forceToFormat()
+            if self.partEdit.currentPart:
+                if not self.partEdit.currentPart.getFSName() in ["ext4","ext3","reiserfs","xfs"]:
+                    forceToFormat()
 
-        if cur == self.useTypes["swap"]:
+        if partitionTypes[cur] == parttype.swap:
             forceToFormat()
-
-        if cur == self.useTypes["archive"]:
-            forceToFormat()
-
-        if not cur == 0:
-            self.partEdit.ui.fileSystem.setVisible(False)
-            self.partEdit.ui.fileSystemBox.setVisible(True)
-        else:
-            self.partEdit.ui.fileSystem.setVisible(True)
-            self.partEdit.ui.fileSystemBox.setVisible(False)
 
         # if selected partition is freespace no matter what we have to format.
-        if self.partEdit.currentPart.isFreespace():
-            forceToFormat()
+        if self.partEdit.currentPart:
+            if self.partEdit.currentPart.isFreespace():
+                forceToFormat()
 
     def initDevices(self, force=False):
         self.devs = []
@@ -291,9 +298,7 @@ class DiskList(QtGui.QWidget):
         """Creates requests for changes in selected partition"""
 
         t = partitionTypes[self.partEdit.ui.formatType.currentIndex()]
-        if t == parttype.archive:
-            _fsorder = ["ext4","ext3","ntfs","fat32"]
-            t.setFileSystem(_fsorder[self.partEdit.ui.fileSystemBox.currentIndex()])
+        t.setFileSystem(str(self.partEdit.ui.fileSystemBox.currentText()))
 
         if not t:
             return False
@@ -466,6 +471,9 @@ class DiskItem(QtGui.QWidget):
                          "hfs+" :{"bgcolor":"#C0A39E",
                                   "fgcolor":"#000000",
                                   "icon"   :"other"},
+                          "xfs" :{"bgcolor":"#EED680",
+                                  "fgcolor":"#000000",
+                                  "icon"   :"linux"}, 
                          "fat16":{"bgcolor":"#00FF00",
                                   "fgcolor":"#000000",
                                   "icon"   :"windows"},
@@ -476,6 +484,9 @@ class DiskItem(QtGui.QWidget):
                                   "fgcolor":"#FFFFFF",
                                   "icon"   :"linux"},
                          "ext2" :{"bgcolor":"#9DB8D2",
+                                  "fgcolor":"#FFFFFF",
+                                  "icon"   :"linux"},
+                     "reiserfs" :{"bgcolor":"#ADA7C8",
                                   "fgcolor":"#FFFFFF",
                                   "icon"   :"linux"},
                    "linux-swap" :{"bgcolor":"#C1665A",
@@ -494,16 +505,16 @@ class DiskItem(QtGui.QWidget):
         _name = ''
         _mpoint = ''
         if partitionType:
-            if partitionType == partitionTypes[1]:
+            if partitionType == parttype.root:
                 _name += "\n" + _("Pardus will install here")
                 _mpoint= "[ / ]"
-            elif partitionType == partitionTypes[2]:
+            elif partitionType == parttype.home:
                 _name += "\n" + _("User files will store here")
                 _mpoint= "[ /home ]"
-            elif partitionType == partitionTypes[3]:
+            elif partitionType == parttype.swap:
                 _name += "\n" + _("Swap will be here")
                 _mpoint= "[ swap ]"
-            elif partitionType == partitionTypes[4]:
+            elif partitionType == parttype.archive:
                 _name += "\n" + _("Backup or archive files will store here")
                 _mpoint= "[ /mnt/archive ]"
 
@@ -593,7 +604,7 @@ class DiskItem(QtGui.QWidget):
 
 def getPartitionType(part, rt=1):
     """ Get partition type from request list """
-    for pt in partitionTypes.values():
+    for pt in partitionTypes:
         # We use MountRequest type for search keyword
         # which is 1, defined in partitionrequest.py
         req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
@@ -611,16 +622,20 @@ class PartEdit(QtGui.QWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_PartEdit()
         self.ui.setupUi(self)
+        self.ui.formatType.clear()
 
         for useType in useTypes:
-            self.ui.formatType.addItem(useType)
+            if not useType:
+                self.ui.formatType.addItem("")
+            else:
+                self.ui.formatType.addItem(useType.desc)
 
     def updateContent(self):
         part = self.currentPart
         self.ui.deletePartition.setVisible(True)
         self.ui.resizePartition.setVisible(True)
         self.ui.formatType.setCurrentIndex(0)
-        self.ui.formatCheck.setChecked(False)
+        self.ui.formatCheck.setChecked(True)
 
         if part._parted_type == parteddata.freeSpaceType:
             self.ui.deletePartition.setVisible(False)
@@ -644,9 +659,10 @@ class PartEdit(QtGui.QWidget):
         partitionType = getPartitionType(part)
         if partitionType:
             self.isPartitionUsed = True
-            for i,j in partitionTypes.items():
-                if j == partitionType:
+            for i in range(len(partitionTypes)):
+                if partitionTypes[i] == partitionType:
                     self.ui.formatType.setCurrentIndex(i)
+            self.ui.fileSystemBox.setCurrentIndex(self.ui.fileSystemBox.findText(part.getFSName()))
         else:
             self.isPartitionUsed = False
 
