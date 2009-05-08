@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-16 09:56+0300\n"
+"POT-Creation-Date: 2009-05-08 11:17+0300\n"
 "PO-Revision-Date: 2007-12-17 18:31+0100\n"
 "Last-Translator: Guillaume GARDET <guillaume.gardet@free.fr>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
@@ -154,21 +154,20 @@ msgstr "Afficher les infos"
 msgid "Driver: "
 msgstr "Pilote :"
 
-#: src/sysinfo.cpp:394
-msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ %2 caches)"
-
-#: src/sysinfo.cpp:489
+#: src/sysinfo.cpp:492
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:489
+#: src/sysinfo.cpp:492
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:494
+#: src/sysinfo.cpp:497
 msgid "%1 free of %2"
 msgstr ""
+
+#~ msgid "%1 (+ %2 Caches)"
+#~ msgstr "%1 (+ %2 caches)"
 
 #~ msgid "KSysinfo"
 #~ msgstr "KSysinfo"

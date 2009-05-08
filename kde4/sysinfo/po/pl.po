@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-16 09:56+0300\n"
+"POT-Creation-Date: 2009-05-08 11:17+0300\n"
 "PO-Revision-Date: 2007-08-01 22:36+0100\n"
 "Last-Translator: wadim dziedzic <wdziedzi@aviary.pl>\n"
 "Language-Team:  <pl@li.org>\n"
@@ -143,21 +143,20 @@ msgstr "Karta graficzna"
 msgid "Driver: "
 msgstr "Sterownik:"
 
-#: src/sysinfo.cpp:394
-msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ bufory %2)"
-
-#: src/sysinfo.cpp:489
+#: src/sysinfo.cpp:492
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:489
+#: src/sysinfo.cpp:492
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:494
+#: src/sysinfo.cpp:497
 msgid "%1 free of %2"
 msgstr ""
+
+#~ msgid "%1 (+ %2 Caches)"
+#~ msgstr "%1 (+ bufory %2)"
 
 #~ msgid "KSysinfo"
 #~ msgstr "Moduł KSysinfo"

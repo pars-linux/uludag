@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-16 09:56+0300\n"
+"POT-Creation-Date: 2009-05-08 11:17+0300\n"
 "PO-Revision-Date: 2007-08-06 14:53+0200\n"
 "Last-Translator: Mattias Newzella <newzella@linux.se>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -140,21 +140,20 @@ msgstr "Visa info"
 msgid "Driver: "
 msgstr "Drivrutin:"
 
-#: src/sysinfo.cpp:394
-msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ %2 cachar)"
-
-#: src/sysinfo.cpp:489
+#: src/sysinfo.cpp:492
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:489
+#: src/sysinfo.cpp:492
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:494
+#: src/sysinfo.cpp:497
 msgid "%1 free of %2"
 msgstr ""
+
+#~ msgid "%1 (+ %2 Caches)"
+#~ msgstr "%1 (+ %2 cachar)"
 
 #~ msgid "KSysinfo"
 #~ msgstr "KSysinfo"
