@@ -22,103 +22,83 @@ from distutils.command.install import install
 from distutils.spawn import find_executable, spawn
 
 from src.about import aboutData
+from src.about import version as VERSION
 
-PROJECT     = str(aboutData.appName())
-DESKTOPFILE = "settings-service-manager.desktop"
-KDEDIR      = "/usr/kde/4"
+PROJECT = str(aboutData.appName())
 
-def getRevision():
-    import os
-    try:
-        p = os.popen("svn info 2> /dev/null")
-        for line in p.readlines():
-            line = line.strip()
-            if line.startswith("Revision:"):
-                return line.split(":")[1].strip()
-    except:
-        return "UNKNOWN"
-
-def data_files():
-    return glob.glob1("build","*.py")
-
-def py_file_name(ui_file):
-    return ui_file.split('.')[0] + '.py'
-
-def ui_files():
-    return glob.glob1("ui","*.ui")
-
-def mo_files():
-    return glob.glob("po/*.mo")
-
-class Clean(clean):
-
+class UpdateMessages(install):
     def run(self):
-        clean.run(self)
-        if os.path.exists("build"):
-            shutil.rmtree("build")
-        for mo in mo_files():
-            os.unlink(mo)
-
-class Uninstall(Command):
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        project_dir = os.path.join(KDEDIR, "share/apps", PROJECT)
-        if os.path.exists(project_dir):
-            shutil.rmtree(project_dir)
-        service_file = os.path.join(KDEDIR, "share/kde4/services", DESKTOPFILE)
-        if os.path.exists(service_file):
-            os.unlink(service_file)
-        for lang in i18n_languages:
-            destpath = os.path.join(KDEDIR, "share/locale/%s/LC_MESSAGES/" % lang)
-            os.unlink(os.path.join(destpath, "%s.mo" % i18n_domain))
-        os.unlink(os.path.join(KDEDIR,"bin/",PROJECT))
-
-i18n_domain = PROJECT
-i18n_languages = ["tr"]
+        try:
+            os.makedirs(".tmp")
+        except OSError:
+            pass
+        for filename in glob.glob1("ui", "*.ui"):
+            os.system("/usr/kde/4/bin/pykde4uic -o .tmp/%s.py ui/%s" % (filename.split(".")[0], filename))
+        for filename in glob.glob1("src", "*.py"):
+            shutil.copy("src/%s" % filename, ".tmp")
+        os.system("xgettext --default-domain=comar --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot .tmp/*" % PROJECT)
+        for item in os.listdir("po"):
+            if item.endswith(".po"):
+                os.system("msgmerge -q -o temp.po po/%s po/%s.pot" % (item, PROJECT))
+                os.system("cp temp.po po/%s" % item)
+        os.system("rm -f temp.po")
 
 class Install(install):
-
-    def compile_ui(self, ui_file):
-        pyuic_exe = '/usr/kde/4/bin/pykde4uic'
-        os.system('%s -o build/%s ui/%s' % (pyuic_exe, py_file_name(ui_file), ui_file))
-
     def run(self):
-        shutil.rmtree("build", True)
-        shutil.copytree("src","build")
-        for path in ui_files():
-            self.compile_ui(path)
-        os.system("pyrcc4 icons/data.qrc -o build/data_rc.py")
-        for lang in i18n_languages:
-            os.system("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
-            destpath = os.path.join(KDEDIR, "share/locale/%s/LC_MESSAGES/" % lang)
-            shutil.copy("po/%s.mo" % lang, os.path.join(destpath, "%s.mo" % i18n_domain))
-        project_dir = os.path.join(KDEDIR, "share/apps", PROJECT)
+        if self.root:
+            kde_dir = "%s/usr/kde/4" % self.root
+        else:
+            kde_dir = "/usr/kde/4"
+        bin_dir = os.path.join(kde_dir, "bin")
+        project_dir = os.path.join(kde_dir, "share/apps", PROJECT)
+        service_dir = os.path.join(kde_dir, "share/kde4/services")
+        locale_dir = os.path.join(kde_dir, "share/locale")
+        print "Making directories..."
         try:
             os.makedirs(project_dir)
-        except:
+            os.makedirs(service_dir)
+            os.makedirs(locale_dir)
+        except OSError:
             pass
-        for path in data_files():
-            shutil.copyfile(os.path.join("build",path), os.path.join(project_dir,path))
-        service_file = os.path.join(KDEDIR, "share/kde4/services", DESKTOPFILE)
-        shutil.copy(os.path.join("build/",DESKTOPFILE), service_file)
-        shutil.move(os.path.join(project_dir,"main.py"), os.path.join(project_dir,PROJECT))
-        try:
-            os.symlink(os.path.join(project_dir,PROJECT), os.path.join(project_dir,PROJECT+'.py'))
-            os.symlink(os.path.join(project_dir,PROJECT), os.path.join(KDEDIR,"bin/",PROJECT))
-        except:
-            pass
-        os.chmod(os.path.join(project_dir,PROJECT+'.py'),0755)
+        # Copy compiled UIs and RC
+        print "Generating UIs..."
+        for filename in glob.glob1("ui", "*.ui"):
+            os.system("/usr/kde/4/bin/pykde4uic -o %s/%s.py ui/%s" % (project_dir, filename.split(".")[0], filename))
+        print "Copying UIs..."
+        os.system("/usr/bin/pyrcc4 icons/data.qrc -o %s/data_rc.py" % project_dir)
+        # Copy service file
+        print "Copying desktop files..."
+        for filename in glob.glob1("src", "*.desktop"):
+            shutil.copy("src/%s" % filename, service_dir)
+        # Copy codes
+        print "Copying Python files..."
+        for filename in glob.glob1("src", "*.py"):
+            shutil.copy("src/%s" % filename, project_dir)
+        # Copy locales
+        print "Copying locales..."
+        for filename in glob.glob1("po", "*.po"):
+            lang = filename.rsplit(".", 1)[0]
+            os.system("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
+            try:
+                os.makedirs(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang))
+            except OSError:
+                pass
+            shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
+        # Rename
+        print "Renaming main.py..."
+        shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % PROJECT))
+        # Symlink
+        print "Creating symlinks..."
+        if not os.path.exists(os.path.join(project_dir, "%s.py" % PROJECT)):
+            os.symlink(os.path.join(project_dir, PROJECT), os.path.join(project_dir, "%s.py" % PROJECT))
+            os.symlink(os.path.join(project_dir, PROJECT), os.path.join(bin_dir, PROJECT))
+        print "Changing file modes..."
+        os.chmod(os.path.join(project_dir, "%s.py" % PROJECT), 0755)
+
 
 setup(
       name              = PROJECT,
-      version           = getRevision(),
+      version           = VERSION,
       description       = str(aboutData.shortDescription()),
       license           = str(aboutData.licenseName(0)),
       author            = str(aboutData.authors()[0].name()),
@@ -128,8 +108,7 @@ setup(
       package_dir       = {'': ''},
       data_files        = [],
       cmdclass          = {
-                            'clean' : Clean,
                             'install': Install,
-                            'uninstall': Uninstall
+                            'update_messages': UpdateMessages,
                           }
      )
