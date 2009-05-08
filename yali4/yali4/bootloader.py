@@ -262,10 +262,10 @@ quit
         yali4.sysutils.finalize_chroot()
 
         ctx.debugger.log("IG: Grub install cmd is %s" % cmd)
-        if not yali4.sysutils.run(cmd):
+        if os.system(cmd) > 0:
             ctx.debugger.log("IG: Command failed %s - trying again.. " % cmd)
             time.sleep(2)
-            if not yali4.sysutils.run(cmd):
+            if os.system(cmd) > 0:
                 raise YaliException, "Command failed: %s" % cmd
             else:
                 return True
