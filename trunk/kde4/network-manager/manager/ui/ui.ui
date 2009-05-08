@@ -46,7 +46,7 @@
      <item>
       <widget class="QLabel" name="workingLabel">
        <property name="text">
-        <string>Scanning ...</string>
+        <string>Scanning...</string>
        </property>
       </widget>
      </item>
@@ -201,7 +201,7 @@
             <item>
              <widget class="KSqueezedTextLabel" name="labelDeviceDescription">
               <property name="text">
-               <string>KSqueezedTextLabel</string>
+               <string notr="true">KSqueezedTextLabel</string>
               </property>
              </widget>
             </item>
@@ -245,7 +245,7 @@
                <string>Cancel</string>
               </property>
               <property name="text">
-               <string>X</string>
+               <string notr="true">X</string>
               </property>
              </widget>
             </item>
@@ -329,8 +329,8 @@
              </item>
              <item row="0" column="1" colspan="4">
               <widget class="KLineEdit" name="lineRemote">
-               <property name="clickMessage">
-                <string>You can write a network name without scanning...</string>
+               <property name="text">
+                <string notr="true"/>
                </property>
                <property name="showClearButton" stdset="0">
                 <bool>true</bool>
@@ -452,22 +452,22 @@
                    </property>
                    <item>
                     <property name="text">
-                     <string/>
+                     <string notr="true"/>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>255.255.255.0</string>
+                     <string notr="true">255.255.255.0</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>255.255.0.0</string>
+                     <string notr="true">255.255.0.0</string>
                     </property>
                    </item>
                    <item>
                     <property name="text">
-                     <string>255.0.0.0</string>
+                     <string notr="true">255.0.0.0</string>
                     </property>
                    </item>
                   </widget>
@@ -564,10 +564,10 @@
                 <bool>false</bool>
                </property>
                <property name="inputMask">
-                <string>000.000.000.000; </string>
+                <string notr="true">000.000.000.000; </string>
                </property>
                <property name="text">
-                <string>...</string>
+                <string notr="true">...</string>
                </property>
               </widget>
              </item>

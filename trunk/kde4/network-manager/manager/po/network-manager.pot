@@ -1,194 +1,195 @@
-# Network Manager.
-# Copyright (C) 2009, TUBITAK/UEKAE
-# This file is distributed under the same license as the Network-Manager package.
-# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Network-Manager\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-08 12:06+0300\n"
-"PO-Revision-Date: 2009-05-08 11:46+0300\n"
-"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
-"Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: .tmp/about.py:20 .tmp/about.py:22
 msgid "Network Manager"
-msgstr "Ağ Yöneticisi"
+msgstr ""
 
 #: .tmp/about.py:24
 msgid "(c) 2008 TUBITAK/UEKAE"
-msgstr "(c) 2008 TUBITAK/UEKAE"
+msgstr ""
 
 #: .tmp/about.py:31
 msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
+msgstr ""
 
 #: .tmp/about.py:31
 msgid "Maintainer"
-msgstr "Bakıcı"
+msgstr ""
 
 #: .tmp/base.py:76
 msgid "Available Profiles"
-msgstr "Kullanılabilir Profiller"
+msgstr ""
 
 #: .tmp/base.py:103
 msgid "All Profiles"
-msgstr "Tüm Profiller"
+msgstr ""
 
 #: .tmp/base.py:105 .tmp/base.py:107
 msgid "No Device Found"
-msgstr "Aygıt Bulunamadı"
+msgstr ""
 
 #: .tmp/base.py:299
 msgid "No Authentication"
-msgstr "Doğrulama Yok"
+msgstr ""
 
 #: .tmp/base.py:509
 #, python-format
 msgid "Do you really want to remove profile %s?"
-msgstr "'%s' profili silinsin mi?"
+msgstr ""
 
 #: .tmp/uiitem.py:103
 msgid "Edit connection"
-msgstr "Bağlantı düzenle"
+msgstr ""
 
 #: .tmp/uiitem.py:104
 msgid "Delete connection"
-msgstr "Bağlantı sil"
+msgstr ""
 
 #: .tmp/uiitem.py:105 .tmp/uiwifiitem.py:53
 msgid "Signal Strength"
-msgstr "Sinyal Gücü"
+msgstr ""
 
 #: .tmp/uiitem.py:106
 msgid "  %p %"
-msgstr "  %p %"
+msgstr ""
 
 #: .tmp/uinameserver.py:42 .tmp/ui.py:321
 msgid "Nameserver Settings"
-msgstr "İsim Sunucusu Ayarları"
+msgstr ""
 
 #: .tmp/uinameserver.py:43
 msgid "Machine Name"
-msgstr "Makine Adı"
+msgstr ""
 
 #: .tmp/uinameserver.py:44 .tmp/ui.py:341
 msgid "Name Servers"
-msgstr "İsim Sunucuları"
+msgstr ""
 
 #: .tmp/ui.py:319
 msgid "Form"
-msgstr "Form"
+msgstr ""
 
 #: .tmp/ui.py:320
 msgid "Create Profile"
-msgstr "Profil Yarat"
+msgstr ""
 
 #: .tmp/ui.py:322 .tmp/widgets.py:107
 msgid "Scanning..."
-msgstr "Taranıyor..."
+msgstr ""
 
 #: .tmp/ui.py:323 .tmp/widgets.py:77
 msgid "Refresh"
-msgstr "Tazele"
+msgstr ""
 
 #: .tmp/ui.py:324
 msgid "Profile Name :"
-msgstr "Profil Adı :"
+msgstr ""
 
 #: .tmp/ui.py:325
 msgid "Device : "
-msgstr "Aygıt : "
+msgstr ""
 
 #: .tmp/ui.py:326 .tmp/ui.py:346
 msgid "Cancel"
-msgstr "İptal"
+msgstr ""
 
 #: .tmp/ui.py:327
 msgid "Remote"
-msgstr "Uzak Nokta"
+msgstr ""
 
 #: .tmp/ui.py:328
 msgid "Network Name (ESSID) :"
-msgstr "Network Adı (ESSID) :"
+msgstr ""
 
 #: .tmp/ui.py:329
 msgid "Scan"
-msgstr "Tara"
+msgstr ""
 
 #: .tmp/ui.py:330
 msgid "Security Type :"
-msgstr "Güvenlik Türü :"
+msgstr ""
 
 #: .tmp/ui.py:331
 msgid "Key :"
-msgstr "Anahtar :"
+msgstr ""
 
 #: .tmp/ui.py:332
 msgid "Hide Password"
-msgstr "Parolayı Gizl"
+msgstr ""
 
 #: .tmp/ui.py:333
 msgid "Network Settings"
-msgstr "Ağ Ayarları"
+msgstr ""
 
 #: .tmp/ui.py:334
 msgid "Use DHCP"
-msgstr "DHCP Kullan"
+msgstr ""
 
 #: .tmp/ui.py:335
 msgid "Use Manual Settings"
-msgstr "Adresi Elle Gir"
+msgstr ""
 
 #: .tmp/ui.py:336
 msgid "Address :"
-msgstr "Adres :"
+msgstr ""
 
 #: .tmp/ui.py:337 .tmp/ui.py:340
 msgid "Custom"
-msgstr "Özel"
+msgstr ""
 
 #: .tmp/ui.py:338
 msgid "Network Mask :"
-msgstr "Ağ Maskesi :"
+msgstr ""
 
 #: .tmp/ui.py:339
 msgid "Default Gateway :"
-msgstr "Öntanımlı Ağ Geçidi :"
+msgstr ""
 
 #: .tmp/ui.py:342
 msgid "Default"
-msgstr "Öntanımlı"
+msgstr ""
 
 #: .tmp/ui.py:343
 msgid "Automatic"
-msgstr "Otomatik"
+msgstr ""
 
 #: .tmp/ui.py:344
 msgid "Custom :"
-msgstr "Özel :"
+msgstr ""
 
 #: .tmp/ui.py:345
 msgid "Apply"
-msgstr "Uygula"
+msgstr ""
 
 #: .tmp/ui.py:347
 msgid "Esc"
-msgstr "Çık"
+msgstr ""
 
 #: .tmp/widgets.py:160
 msgid "Disconnected"
-msgstr "Bağlı değil"
+msgstr ""
 
 #: .tmp/widgets.py:168
 msgid "Connecting"
-msgstr "Bağlanıyor"
+msgstr ""
 
 #: .tmp/widgets.py:164
 #, python-format
 msgid "Connected: %s"
-msgstr "Bağlı: %s"
+msgstr ""
