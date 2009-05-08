@@ -34,6 +34,7 @@ class PartitionType:
 class RootPartitionType(PartitionType):
     name = _("Install Root")
     mountpoint = "/"
+    filesystem = fs("ext4")
     mountoptions = "noatime"
     parted_type = parted.PARTITION_PRIMARY
     parted_flags = [ parted.PARTITION_BOOT ]
@@ -43,6 +44,7 @@ class RootPartitionType(PartitionType):
 class HomePartitionType(PartitionType):
     name = _("Users' Files")
     mountpoint = "/home"
+    filesystem = fs("ext4")
     mountoptions = "noatime"
     parted_type = parted.PARTITION_PRIMARY
     parted_flags = []
@@ -63,6 +65,7 @@ class SwapPartitionType(PartitionType):
 class ArchivePartitionType(PartitionType):
     name = _("Archive Partition")
     mountpoint = "/mnt/archive"
+    filesystem = fs("ntfs")
     mountoptions = "noatime"
     needsmtab = False
     parted_type = parted.PARTITION_PRIMARY
