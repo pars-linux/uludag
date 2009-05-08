@@ -68,7 +68,15 @@ class MainManager(QtGui.QWidget):
 
         # Let look what we can do
         menu = QtGui.QMenu(self)
-        for package in self.packages.keys():
+        for package in self.packages:
+            info = self.packages[package]
+            # Add filter menu entry
+            self.ui.filterBox.addItem(info["name"], QVariant(package))
+            if info["type"] == "wifi":
+                self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
+                wifiScanner = WifiPopup(self)
+                self.ui.buttonScan.setMenu(wifiScanner)
+            # Create devices menu entry
             devices = self.iface.devices(package)
             if len(devices) > 0:
                 # Create profile menu with current devices
@@ -90,20 +98,14 @@ class MainManager(QtGui.QWidget):
                 menu.addMenu(pppMenu)
                 menu.addSeparator()
 
-        ## Add package specific menu entiries
-        #if "net_tools" in supportedPackages:
-        #    self.ui.filterBox.addItem(i18n("Ethernet Profiles"), QVariant("net_tools"))
-        #if "wireless_tools" in supportedPackages:
-        #    self.ui.filterBox.addItem(i18n("Wireless Profiles"), QVariant("wireless_tools"))
-        #    self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
-        #    wifiScanner = WifiPopup(self)
-        #    self.ui.buttonScan.setMenu(wifiScanner)
-        ## Get authentication types
-        #authMods = self.iface.authMethods('wireless_tools')
-        #if len(authMods):
-        #    self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
-        #    for name, desc in authMods:
-        #        self.ui.comboSecurityTypes.addItem(desc, QVariant(name))
+        """
+        # Get authentication types
+        authMods = self.iface.authMethods('wireless_tools')
+        if len(authMods):
+            self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
+            for name, desc in authMods:
+                self.ui.comboSecurityTypes.addItem(desc, QVariant(name))
+        """
 
         if len(self.packages) > 0:
             self.ui.buttonCreate.setMenu(menu)
@@ -236,7 +238,7 @@ class MainManager(QtGui.QWidget):
         self.widgets = {}
 
         # Fill the list with current connections
-        for package in self.packages.keys():
+        for package in self.packages:
             # Fill profile list
             self.connections = self.iface.connections(package)
             self.connections.sort()
