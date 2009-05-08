@@ -242,9 +242,10 @@ class MainManager(QtGui.QWidget):
                 item = QtGui.QListWidgetItem(self.ui.profileList)
                 item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
                 item.setSizeHint(QSize(48,48))
-                self.widgets[connection] = ConnectionItemWidget(package, connection, info, self, item)
-                self.widgets[connection].updateData(state)
-                self.ui.profileList.setItemWidget(item, self.widgets[connection])
+                key = "%s-%s" % (package, connection)
+                self.widgets[key] = ConnectionItemWidget(package, connection, info, self, item)
+                self.widgets[key].updateData(state)
+                self.ui.profileList.setItemWidget(item, self.widgets[key])
                 del item
 
         # Filter list with selected filter method
@@ -518,7 +519,8 @@ class MainManager(QtGui.QWidget):
     def handler(self, package, signal, args):
         args = map(lambda x: unicode(x), list(args))
         if signal == "stateChanged":
-            if self.widgets.has_key(args[0]):
-                self.widgets[args[0]].updateData(args)
+            key = "%s-%s" % (package, args[0])
+            if key in self.widgets:
+                self.widgets[key].updateData(args)
         print "Comar call : ", args, signal, package
 
