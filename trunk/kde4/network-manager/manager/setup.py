@@ -53,6 +53,7 @@ class Install(install):
         project_dir = os.path.join(kde_dir, "share/apps", PROJECT)
         service_dir = os.path.join(kde_dir, "share/kde4/services")
         locale_dir = os.path.join(kde_dir, "share/locale")
+        print "Making directories..."
         try:
             os.makedirs(project_dir)
             os.makedirs(service_dir)
@@ -60,16 +61,21 @@ class Install(install):
         except OSError:
             pass
         # Copy compiled UIs and RC
+        print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
             os.system("/usr/kde/4/bin/pykde4uic -o %s/%s.py ui/%s" % (project_dir, filename.split(".")[0], filename))
+        print "Copying UIs..."
         os.system("/usr/bin/pyrcc4 icons/data.qrc -o %s/data_rc.py" % project_dir)
         # Copy service file
+        print "Copying desktop files..."
         for filename in glob.glob1("src", "*.desktop"):
             shutil.copy("src/%s" % filename, service_dir)
         # Copy codes
+        print "Copying Python files..."
         for filename in glob.glob1("src", "*.py"):
             shutil.copy("src/%s" % filename, project_dir)
         # Copy locales
+        print "Copying locales..."
         for filename in glob.glob1("po", "*.po"):
             lang = filename.rsplit(".", 1)[0]
             os.system("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
@@ -78,11 +84,15 @@ class Install(install):
             except OSError:
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
+        # Rename
+        print "Renaming main.py..."
+        shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % PROJECT))
         # Symlink
-        shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, PROJECT))
+        print "Creating symlinks..."
         if not os.path.exists(os.path.join(project_dir, "%s.py" % PROJECT)):
             os.symlink(os.path.join(project_dir, PROJECT), os.path.join(project_dir, "%s.py" % PROJECT))
             os.symlink(os.path.join(project_dir, PROJECT), os.path.join(bin_dir, PROJECT))
+        print "Changing file modes..."
         os.chmod(os.path.join(project_dir, "%s.py" % PROJECT), 0755)
 
 
