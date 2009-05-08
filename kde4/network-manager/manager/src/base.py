@@ -98,15 +98,6 @@ class MainManager(QtGui.QWidget):
                 menu.addMenu(pppMenu)
                 menu.addSeparator()
 
-        """
-        # Get authentication types
-        authMods = self.iface.authMethods('wireless_tools')
-        if len(authMods):
-            self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
-            for name, desc in authMods:
-                self.ui.comboSecurityTypes.addItem(desc, QVariant(name))
-        """
-
         if len(self.packages) > 0:
             self.ui.buttonCreate.setMenu(menu)
             self.ui.filterBox.insertItem(0, i18n("All Profiles"), QVariant("all"))
@@ -515,7 +506,7 @@ class MainManager(QtGui.QWidget):
     def deleteConnection(self):
         profile = self.sender().parent().profile
         package = self.sender().parent().package
-        if KMessageBox.questionYesNo(self, i18n("Do you really want to remove profile %s ?" % profile),
+        if KMessageBox.questionYesNo(self, i18n("Do you really want to remove profile %s?" % profile),
                                            "Network-Manager") == KMessageBox.Yes:
             self.fillProfileList(ignore=(package, profile))
             self.iface.deleteConnection(package, profile)
