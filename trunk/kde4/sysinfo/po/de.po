@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo.de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-16 09:56+0300\n"
+"POT-Creation-Date: 2009-05-08 11:17+0300\n"
 "PO-Revision-Date: 2008-04-13 23:50+0200\n"
 "Last-Translator: Michael Skiba <trans@michael-skiba.de>\n"
 "Language-Team: German <opensuse-translation-de@opensuse.org>\n"
@@ -138,21 +138,20 @@ msgstr "Graphikkarte"
 msgid "Driver: "
 msgstr "Treiber:"
 
-#: src/sysinfo.cpp:394
-msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ %2 Zwischenspeicher)"
-
-#: src/sysinfo.cpp:489
+#: src/sysinfo.cpp:492
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:489
+#: src/sysinfo.cpp:492
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:494
+#: src/sysinfo.cpp:497
 msgid "%1 free of %2"
 msgstr ""
+
+#~ msgid "%1 (+ %2 Caches)"
+#~ msgstr "%1 (+ %2 Zwischenspeicher)"
 
 #~ msgid "KSysinfo"
 #~ msgstr "KSysinfo"
