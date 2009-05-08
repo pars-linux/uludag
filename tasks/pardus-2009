@@ -129,7 +129,7 @@
   * Klavye kullanarak kurulum desteği (/30)
   * Ext4 desteği (+)
   * Btrfs desteği (/10)
-  * Elle disk yapılandırma ekranında dosya sistemi seçebilme desteği (/60)
+  * Elle disk yapılandırma ekranında dosya sistemi seçebilme desteği (+)
   * Düşük çözünürlüklü ekranlar için kullanılabilir arayüz değişiklikleri (/20)
   * Swap sorunsalı .9233 (-)
   * Otomatik bölümlendirmede boş alan ve mantıksal alan kullanabilme desteği (-)
