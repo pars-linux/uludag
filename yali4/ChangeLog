@@ -1,3 +1,6 @@
+2009-05-08 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * User can choose FileSystem for each partition that we support \o/
+
 2009-05-06 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * Capture all command outputs into the debugger
          * Comment added to http://bugs.pardus.org.tr/7568
