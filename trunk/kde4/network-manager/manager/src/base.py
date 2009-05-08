@@ -384,9 +384,9 @@ class MainManager(QtGui.QWidget):
         if data.has_key("net_mode"):
             if data["net_mode"] == "auto":
                 ui.useDHCP.setChecked(True)
-                if data.has_key("net_address"):
+                if data.get("net_address", "") != "":
                     ui.useCustomAddress.setChecked(True)
-                if data.has_key("net_gateway"):
+                if data.get("net_gateway", "") != "":
                     ui.useCustomDNS.setChecked(True)
             else:
                 ui.useManual.setChecked(True)
