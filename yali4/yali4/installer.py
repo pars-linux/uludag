@@ -552,7 +552,7 @@ class Yali:
         for d in yali4.storage.devices:
             for p in d.getPartitions():
                 fs = p.getFSName()
-                if fs in ("ext3", "reiserfs", "xfs") and not p.getPath() == _ins_part:
+                if fs in ("ext4", "ext3", "reiserfs", "xfs") and not p.getPath() == _ins_part:
                     ctx.debugger.log("Partition found which has usable fs (%s)" % p.getPath())
                     guest_grub_conf = yali4.sysutils.is_linux_boot(p.getPath(), fs)
                     if guest_grub_conf:
