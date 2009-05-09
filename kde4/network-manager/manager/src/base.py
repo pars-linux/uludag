@@ -18,7 +18,7 @@ from pardus.netutils import findInterface
 
 # Qt Stuff
 from PyQt4 import QtGui
-from PyQt4.QtCore import SIGNAL, Qt, QTimeLine, QSize, QVariant
+from PyQt4.QtCore import SIGNAL, Qt, QTimeLine, QSize, QVariant, QThread
 
 # KDE Stuff
 from PyKDE4.kdeui import KMessageBox
@@ -66,7 +66,48 @@ class MainManager(QtGui.QWidget):
         for package in self.iface.packages():
             self.packages[package] = self.iface.linkInfo(package)
 
+        # Naruto
+        self.animator = QTimeLine(ANIMATION_TIME, self)
+
+        # List of functions to call after animation is finished
+        self.animatorFinishHook = []
+
         # Let look what we can do
+        self.refreshBrowser()
+
+        # Preparing for animation
+        self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
+        self.lastAnimation = SHOW
+
+        # Animator connections, Naruto loves Sakura-chan
+        self.connect(self.animator, SIGNAL("frameChanged(int)"), self.animate)
+        self.connect(self.animator, SIGNAL("finished()"), self.animateFinished)
+
+        # Hide editBox when clicked Cancel*
+        self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.hideEditBox)
+        self.connect(self.ui.buttonCancelMini, SIGNAL("clicked()"), self.hideEditBox)
+
+        # Save changes when clicked Apply
+        self.connect(self.ui.buttonApply, SIGNAL("clicked()"), self.applyChanges)
+
+        # Show NameServer Settings Dialog
+        self.nameServerDialog = NameServerDialog(self)
+        self.connect(self.ui.buttonNameServer, SIGNAL("clicked()"), self.nameServerDialog.run)
+
+        # Filter
+        self.connect(self.ui.filterBox, SIGNAL("currentIndexChanged(int)"), self.filterList)
+
+        # Refresh button for scanning remote again..
+        self.connect(self.ui.refreshButton, SIGNAL("leftClickedUrl()"), self.filterList)
+
+        # Update service status and follow Comar for sate changes
+        self.getConnectionStates()
+
+    def refreshBrowser(self):
+        if self.animator.state() != 0:
+            # Refreshing browser when animator is active causes blindness
+            self.animatorFinishHook.append(self.refreshBrowser)
+            return
         menu = QtGui.QMenu(self)
         for package in self.packages:
             info = self.packages[package]
@@ -111,37 +152,6 @@ class MainManager(QtGui.QWidget):
         # Fill the list
         self.fillProfileList()
 
-        # Preparing for animation
-        self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
-        self.lastAnimation = SHOW
-
-        # Naruto
-        self.animator = QTimeLine(ANIMATION_TIME, self)
-
-        # Animator connections, Naruto loves Sakura-chan
-        self.connect(self.animator, SIGNAL("frameChanged(int)"), self.animate)
-        self.connect(self.animator, SIGNAL("finished()"), self.animateFinished)
-
-        # Hide editBox when clicked Cancel*
-        self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.hideEditBox)
-        self.connect(self.ui.buttonCancelMini, SIGNAL("clicked()"), self.hideEditBox)
-
-        # Save changes when clicked Apply
-        self.connect(self.ui.buttonApply, SIGNAL("clicked()"), self.applyChanges)
-
-        # Show NameServer Settings Dialog
-        self.nameServerDialog = NameServerDialog(self)
-        self.connect(self.ui.buttonNameServer, SIGNAL("clicked()"), self.nameServerDialog.run)
-
-        # Filter
-        self.connect(self.ui.filterBox, SIGNAL("currentIndexChanged(int)"), self.filterList)
-
-        # Refresh button for scanning remote again..
-        self.connect(self.ui.refreshButton, SIGNAL("leftClickedUrl()"), self.filterList)
-
-        # Update service status and follow Comar for sate changes
-        self.getConnectionStates()
-
     def filterList(self, id=-1):
         if id < 0:
             filter = "essid"
@@ -165,7 +175,6 @@ class MainManager(QtGui.QWidget):
             for widget in self.widgets.values():
                 if widget.item.isHidden():
                     continue
-                print widget.profile, widget.data["remote"], availableNetworks
                 if unicode(widget.data["remote"]) in availableNetworks.keys():
                     widget.setSignalStrength(availableNetworks[unicode(widget.data["remote"])])
                     widget.item.setHidden(False)
@@ -272,6 +281,10 @@ class MainManager(QtGui.QWidget):
             self.ui.profileList.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
             self.ui.buttonCreate.setEnabled(True)
             self.ui.filterBox.setEnabled(True)
+            # Call waiting functions
+            for func in self.animatorFinishHook:
+                func()
+            self.animatorFinishHook = []
 
     def hideEditBox(self):
         if self.lastAnimation == SHOW:
@@ -307,9 +320,6 @@ class MainManager(QtGui.QWidget):
             self.ui.lineKey.hide()
             self.ui.checkShowPassword.hide()
 
-        if profile:
-            self.buildEditBoxFor(sender.package, sender.profile)
-
         # Then show them by giving package
         if "net" in modes:
             self.ui.groupNetwork.show()
@@ -327,6 +337,9 @@ class MainManager(QtGui.QWidget):
         if "device" in modes:
             self.fillDeviceList(package)
 
+        if profile:
+            self.buildEditBoxFor(sender.package, sender.profile)
+
         self.animator.setFrameRange(TARGET_HEIGHT, self.baseWidget.height() - TARGET_HEIGHT)
         self.animator.start()
 
@@ -337,7 +350,6 @@ class MainManager(QtGui.QWidget):
     def fillDeviceList(self, package):
         ui = self.ui
         devices = self.iface.devices(package)
-        # print devices
         for device in devices:
             ui.deviceList.addItem(device)
         if len(devices) == 1:
@@ -425,24 +437,18 @@ class MainManager(QtGui.QWidget):
 
     def applyChanges(self):
         ui = self.ui
-        needsListUpdate = False
-        connectionName  = unicode(ui.lineConnectionName.text())
+        connectionName = unicode(ui.lineConnectionName.text())
 
         # Updating a profile
         if self.lastEditedData:
             # If profile name has been changed, delete profile first
             if not self.lastEditedData["name"] == connectionName:
                 self.iface.deleteConnection(self.lastEditedPackage, self.lastEditedData["name"])
-                needsListUpdate = True
         self.iface.updateConnection(self.lastEditedPackage, connectionName, self.collectDataFromUI())
         if self.lastEditedData:
             if self.lastEditedData.has_key("state"):
                 if self.lastEditedData["state"].startswith("up"):
                     self.iface.connect(self.lastEditedPackage, connectionName)
-        else:
-            needsListUpdate = True
-        if needsListUpdate:
-            self.fillProfileList()
         self.hideEditBox()
 
     def collectDataFromUI(self):
@@ -494,7 +500,6 @@ class MainManager(QtGui.QWidget):
 
     def createConnection(self):
         package, device = str(self.sender().data().toString()).split('::')
-        # print package, device
         self.resetForm()
         self.lastEditedPackage = package
         self.showEditBox(package)
@@ -509,9 +514,7 @@ class MainManager(QtGui.QWidget):
         package = self.sender().parent().package
         if KMessageBox.questionYesNo(self, i18n("Do you really want to remove profile %s?" % profile),
                                            "Network-Manager") == KMessageBox.Yes:
-            self.fillProfileList(ignore=(package, profile))
             self.iface.deleteConnection(package, profile)
-        self.fillProfileList()
 
     def getConnectionStates(self):
         self.iface.listen(self.handler)
@@ -522,5 +525,8 @@ class MainManager(QtGui.QWidget):
             key = "%s-%s" % (package, args[0])
             if key in self.widgets:
                 self.widgets[key].updateData(args)
-        print "Comar call : ", args, signal, package
+        elif signal == "deviceChanged":
+            self.refreshBrowser()
+        elif signal == "connectionChanged":
+            self.refreshBrowser()
 

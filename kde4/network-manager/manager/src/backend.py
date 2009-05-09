@@ -75,7 +75,7 @@ class NetworkIface:
         return self.link.Network.Link[package].getAuthParameters(profile)
 
     def handler(self, *args):
-        print args
+        pass
 
     def postProcessor(self, package, signal, args):
         finishedFunctions = []
