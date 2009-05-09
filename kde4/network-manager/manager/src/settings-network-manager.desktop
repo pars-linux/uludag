@@ -6,7 +6,7 @@ X-KDE-ServiceTypes=KCModule
 
 X-KDE-Library=kpythonpluginfactory
 X-KDE-ParentApp=kcontrol
-X-KDE-PluginKeyword=network-manager/network-manager
+X-KDE-PluginKeyword=network-manager/network-manager.py
 
 X-KDE-System-Settings-Parent-Category=computer-administration
 X-KDE-Weight=70
