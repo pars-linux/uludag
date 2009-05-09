@@ -108,6 +108,7 @@ class MainManager(QtGui.QWidget):
             # Refreshing browser when animator is active causes blindness
             self.animatorFinishHook.append(self.refreshBrowser)
             return
+        self.ui.filterBox.clear()
         menu = QtGui.QMenu(self)
         for package in self.packages:
             info = self.packages[package]
@@ -152,9 +153,9 @@ class MainManager(QtGui.QWidget):
         # Fill the list
         self.fillProfileList()
 
-    def filterList(self, id=-1):
-        if id < 0:
-            filter = "essid"
+    def filterList(self, id=None):
+        if not id:
+            filter = ""
         else:
             filter = str(self.ui.filterBox.itemData(id).toString())
 
@@ -175,7 +176,7 @@ class MainManager(QtGui.QWidget):
             for widget in self.widgets.values():
                 if widget.item.isHidden():
                     continue
-                if unicode(widget.data["remote"]) in availableNetworks.keys():
+                if "remote" in widget.data and unicode(widget.data["remote"]) in availableNetworks.keys():
                     widget.setSignalStrength(availableNetworks[unicode(widget.data["remote"])])
                     widget.item.setHidden(False)
                 else:
