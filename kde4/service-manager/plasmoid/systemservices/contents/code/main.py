@@ -36,6 +36,7 @@ if not dbus.get_default_main_loop():
 
 # Our Comar Link
 link = comar.Link()
+link.setLocale()
 
 class WidgetSystemServices(QGraphicsWidget):
     def __init__(self, parent, name, isdescenabled=True):
