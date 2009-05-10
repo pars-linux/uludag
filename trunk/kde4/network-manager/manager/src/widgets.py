@@ -24,11 +24,68 @@ from ui import Ui_mainManager
 from uiitem import Ui_ConnectionItemWidget
 from uiwifiitem import Ui_WifiItemWidget
 from uinameserver import Ui_nameServer
-import time
+from uisecurity import Ui_DialogSecurity
+from uisecurityitem import Ui_SecurityWidget
 
-iconForPackage = {"net_tools":"network-wired",
-                  "wireless_tools":"network-wireless",
-                  "ppp":"modem"}
+iconForPackage = {
+    "net_tools": "network-wired",
+    "wireless_tools": "network-wireless",
+    "ppp": "modem",
+}
+
+class SecurityWidget(QtGui.QWidget):
+    def __init__(self, parent, key, label, type_):
+        QtGui.QWidget.__init__(self, parent)
+        self.ui = Ui_SecurityWidget()
+        self.ui.setupUi(self)
+
+        self.key = key
+        if type_ == "pass":
+            self.ui.lineFieldValue.setEchoMode(QtGui.QLineEdit.Password)
+        if type_ != "file":
+            self.ui.pushBrowse.hide()
+
+        self.ui.labelFieldName.setText(unicode(label))
+
+    def setValue(self, value):
+        self.ui.lineFieldValue.setText(unicode(value))
+
+    def getValue(self):
+        return unicode(self.ui.lineFieldValue.text())
+
+
+class SecurityDialog(QtGui.QDialog):
+    def __init__(self, parent):
+        QtGui.QDialog.__init__(self, parent)
+        self.ui = Ui_DialogSecurity()
+        self.ui.setupUi(self)
+
+        self.layout = QtGui.QVBoxLayout(self.ui.frameFields)
+        self.widgets = {}
+
+        self.connect(self.ui.buttonBox, SIGNAL("accepted()"), self.accept)
+        self.connect(self.ui.buttonBox, SIGNAL("rejected()"), self.reject)
+
+    def setFields(self, fields=[]):
+        for key, widget in self.widgets.iteritems():
+            self.layout.removeWidget(widget)
+            widget.hide()
+        self.widgets = {}
+        for key, label, _type in fields:
+            widget = SecurityWidget(self.ui.frameFields, key, label, _type)
+            self.layout.addWidget(widget)
+            self.widgets[key] = widget
+
+    def setValues(self, values={}):
+        for key, value in values.iteritems():
+            if key in self.widgets:
+                self.widgets[key].setValue(value)
+
+    def getValues(self):
+        values = {}
+        for key, widget in self.widgets.iteritems():
+            values[key] = widget.getValue()
+        return values
 
 class NameServerDialog(QtGui.QDialog):
 

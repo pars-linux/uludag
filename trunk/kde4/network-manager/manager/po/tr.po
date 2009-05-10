@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Network-Manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-08 12:06+0300\n"
+"POT-Creation-Date: 2009-05-10 21:45+0300\n"
 "PO-Revision-Date: 2009-05-08 11:46+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
@@ -31,23 +31,23 @@ msgstr "Gökmen GÖKSEL"
 msgid "Maintainer"
 msgstr "Bakıcı"
 
-#: .tmp/base.py:76
+#: .tmp/base.py:163
 msgid "Available Profiles"
 msgstr "Kullanılabilir Profiller"
 
-#: .tmp/base.py:103
+#: .tmp/base.py:190
 msgid "All Profiles"
 msgstr "Tüm Profiller"
 
-#: .tmp/base.py:105 .tmp/base.py:107
+#: .tmp/base.py:192 .tmp/base.py:194
 msgid "No Device Found"
 msgstr "Aygıt Bulunamadı"
 
-#: .tmp/base.py:299
+#: .tmp/base.py:365
 msgid "No Authentication"
 msgstr "Doğrulama Yok"
 
-#: .tmp/base.py:509
+#: .tmp/base.py:588
 #, python-format
 msgid "Do you really want to remove profile %s?"
 msgstr "'%s' profili silinsin mi?"
@@ -68,7 +68,7 @@ msgstr "Sinyal Gücü"
 msgid "  %p %"
 msgstr "  %p %"
 
-#: .tmp/uinameserver.py:42 .tmp/ui.py:321
+#: .tmp/uinameserver.py:42 .tmp/ui.py:326
 msgid "Nameserver Settings"
 msgstr "İsim Sunucusu Ayarları"
 
@@ -76,119 +76,127 @@ msgstr "İsim Sunucusu Ayarları"
 msgid "Machine Name"
 msgstr "Makine Adı"
 
-#: .tmp/uinameserver.py:44 .tmp/ui.py:341
+#: .tmp/uinameserver.py:44 .tmp/ui.py:340
 msgid "Name Servers"
 msgstr "İsim Sunucuları"
 
-#: .tmp/ui.py:319
+#: .tmp/ui.py:324
 msgid "Form"
 msgstr "Form"
 
-#: .tmp/ui.py:320
+#: .tmp/ui.py:325
 msgid "Create Profile"
 msgstr "Profil Yarat"
 
-#: .tmp/ui.py:322 .tmp/widgets.py:107
+#: .tmp/ui.py:327 .tmp/widgets.py:163
 msgid "Scanning..."
 msgstr "Taranıyor..."
 
-#: .tmp/ui.py:323 .tmp/widgets.py:77
+#: .tmp/ui.py:328 .tmp/widgets.py:134
 msgid "Refresh"
 msgstr "Tazele"
 
-#: .tmp/ui.py:324
+#: .tmp/ui.py:329
 msgid "Profile Name :"
 msgstr "Profil Adı :"
 
-#: .tmp/ui.py:325
+#: .tmp/ui.py:330
 msgid "Device : "
 msgstr "Aygıt : "
 
-#: .tmp/ui.py:326 .tmp/ui.py:346
+#: .tmp/ui.py:331 .tmp/ui.py:345
 msgid "Cancel"
 msgstr "İptal"
 
-#: .tmp/ui.py:327
-msgid "Remote"
-msgstr "Uzak Nokta"
-
-#: .tmp/ui.py:328
-msgid "Network Name (ESSID) :"
-msgstr "Network Adı (ESSID) :"
-
-#: .tmp/ui.py:329
-msgid "Scan"
-msgstr "Tara"
-
-#: .tmp/ui.py:330
-msgid "Security Type :"
-msgstr "Güvenlik Türü :"
-
-#: .tmp/ui.py:331
-msgid "Key :"
-msgstr "Anahtar :"
-
 #: .tmp/ui.py:332
-msgid "Hide Password"
-msgstr "Parolayı Gizl"
-
-#: .tmp/ui.py:333
 msgid "Network Settings"
 msgstr "Ağ Ayarları"
 
-#: .tmp/ui.py:334
+#: .tmp/ui.py:333
 msgid "Use DHCP"
 msgstr "DHCP Kullan"
 
-#: .tmp/ui.py:335
+#: .tmp/ui.py:334
 msgid "Use Manual Settings"
 msgstr "Adresi Elle Gir"
 
-#: .tmp/ui.py:336
+#: .tmp/ui.py:335
 msgid "Address :"
 msgstr "Adres :"
 
-#: .tmp/ui.py:337 .tmp/ui.py:340
+#: .tmp/ui.py:336 .tmp/ui.py:339
 msgid "Custom"
 msgstr "Özel"
 
-#: .tmp/ui.py:338
+#: .tmp/ui.py:337
 msgid "Network Mask :"
 msgstr "Ağ Maskesi :"
 
-#: .tmp/ui.py:339
+#: .tmp/ui.py:338
 msgid "Default Gateway :"
 msgstr "Öntanımlı Ağ Geçidi :"
 
-#: .tmp/ui.py:342
+#: .tmp/ui.py:341
 msgid "Default"
 msgstr "Öntanımlı"
 
-#: .tmp/ui.py:343
+#: .tmp/ui.py:342
 msgid "Automatic"
 msgstr "Otomatik"
 
-#: .tmp/ui.py:344
+#: .tmp/ui.py:343
 msgid "Custom :"
 msgstr "Özel :"
 
-#: .tmp/ui.py:345
+#: .tmp/ui.py:344
 msgid "Apply"
 msgstr "Uygula"
 
-#: .tmp/ui.py:347
+#: .tmp/ui.py:346
 msgid "Esc"
 msgstr "Çık"
 
-#: .tmp/widgets.py:160
+#: .tmp/ui.py:347
+msgid "Remote"
+msgstr "Uzak Nokta"
+
+#: .tmp/ui.py:348
+msgid "Network Name (ESSID) :"
+msgstr "Network Adı (ESSID) :"
+
+#: .tmp/ui.py:349
+msgid "Scan"
+msgstr "Tara"
+
+#: .tmp/ui.py:350
+msgid "Security Type :"
+msgstr "Güvenlik Türü :"
+
+#: .tmp/ui.py:351
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: .tmp/ui.py:352
+msgid "Key :"
+msgstr "Anahtar :"
+
+#: .tmp/ui.py:353
+msgid "Hide Password"
+msgstr "Parolayı Gizl"
+
+#: .tmp/uisecurity.py:35
+msgid "Security Settings"
+msgstr "Güvenlik Ayarları"
+
+#: .tmp/widgets.py:216
 msgid "Disconnected"
 msgstr "Bağlı değil"
 
-#: .tmp/widgets.py:168
-msgid "Connecting"
-msgstr "Bağlanıyor"
-
-#: .tmp/widgets.py:164
+#: .tmp/widgets.py:220
 #, python-format
 msgid "Connected: %s"
 msgstr "Bağlı: %s"
+
+#: .tmp/widgets.py:224
+msgid "Connecting"
+msgstr "Bağlanıyor"

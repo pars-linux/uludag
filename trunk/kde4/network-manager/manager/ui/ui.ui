@@ -251,105 +251,6 @@
             </item>
            </layout>
           </item>
-          <item row="1" column="0">
-           <widget class="QGroupBox" name="groupRemote">
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <property name="title">
-             <string>Remote</string>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-            <property name="checkable">
-             <bool>false</bool>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_8">
-             <item row="0" column="0">
-              <widget class="QLabel" name="labelRemote">
-               <property name="text">
-                <string>Network Name (ESSID) :</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="5">
-              <widget class="QPushButton" name="buttonScan">
-               <property name="text">
-                <string>Scan</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
-              <widget class="QLabel" name="labelSecurity">
-               <property name="text">
-                <string>Security Type :</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="1">
-              <widget class="QComboBox" name="comboSecurityTypes">
-               <property name="minimumSize">
-                <size>
-                 <width>100</width>
-                 <height>0</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="2">
-              <widget class="QLabel" name="labelKey">
-               <property name="text">
-                <string>Key :</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="5">
-              <widget class="QCheckBox" name="checkShowPassword">
-               <property name="text">
-                <string>Hide Password</string>
-               </property>
-               <property name="checked">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item row="7" column="0" colspan="6">
-              <widget class="Line" name="line">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1" colspan="4">
-              <widget class="KLineEdit" name="lineRemote">
-               <property name="text">
-                <string notr="true"/>
-               </property>
-               <property name="showClearButton" stdset="0">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="3">
-              <widget class="KLineEdit" name="lineKey">
-               <property name="showClearButton" stdset="0">
-                <bool>true</bool>
-               </property>
-               <property name="passwordMode">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
           <item row="2" column="0">
            <widget class="QGroupBox" name="groupNetwork">
             <property name="styleSheet">
@@ -628,6 +529,116 @@
             </property>
            </spacer>
           </item>
+          <item row="1" column="0">
+           <widget class="QGroupBox" name="groupRemote">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="title">
+             <string>Remote</string>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="labelRemote">
+               <property name="text">
+                <string>Network Name (ESSID) :</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1" colspan="4">
+              <widget class="KLineEdit" name="lineRemote">
+               <property name="text">
+                <string notr="true"/>
+               </property>
+               <property name="showClearButton" stdset="0">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="5">
+              <widget class="QPushButton" name="buttonScan">
+               <property name="text">
+                <string>Scan</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="labelSecurity">
+               <property name="text">
+                <string>Security Type :</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="comboSecurityTypes">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QPushButton" name="pushSecurity">
+               <property name="text">
+                <string>Settings</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../icons/data.qrc">
+                 <normaloff>:/data/security.png</normaloff>:/data/security.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="QLabel" name="labelKey">
+               <property name="text">
+                <string>Key :</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="4">
+              <widget class="KLineEdit" name="lineKey">
+               <property name="showClearButton" stdset="0">
+                <bool>true</bool>
+               </property>
+               <property name="passwordMode">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="5">
+              <widget class="QCheckBox" name="checkShowPassword">
+               <property name="text">
+                <string>Hide Password</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="6">
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -677,7 +688,6 @@
   <tabstop>buttonScan</tabstop>
   <tabstop>comboSecurityTypes</tabstop>
   <tabstop>lineKey</tabstop>
-  <tabstop>checkShowPassword</tabstop>
   <tabstop>useDHCP</tabstop>
   <tabstop>useManual</tabstop>
   <tabstop>lineAddress</tabstop>

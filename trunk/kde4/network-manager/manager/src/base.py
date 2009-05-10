@@ -27,7 +27,7 @@ from PyKDE4.kdecore import i18n
 # Application Stuff
 from backend import NetworkIface
 from ui import Ui_mainManager
-from widgets import ConnectionItemWidget, WifiPopup, NameServerDialog
+from widgets import ConnectionItemWidget, WifiPopup, NameServerDialog, SecurityDialog
 
 # Animation Definitions
 SHOW, HIDE     = range(2)
@@ -75,6 +75,12 @@ class MainManager(QtGui.QWidget):
         # Let look what we can do
         self.refreshBrowser()
 
+        # Security dialog
+        self.securityDialog = SecurityDialog(parent)
+        self.securityPackage = None
+        self.securityFields = []
+        self.securityValues = {}
+
         # Preparing for animation
         self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
         self.lastAnimation = SHOW
@@ -100,8 +106,47 @@ class MainManager(QtGui.QWidget):
         # Refresh button for scanning remote again..
         self.connect(self.ui.refreshButton, SIGNAL("leftClickedUrl()"), self.filterESSID)
 
+        # Security details button
+        self.connect(self.ui.pushSecurity, SIGNAL("clicked()"), self.openSecurityDialog)
+
+        # Security types
+        self.connect(self.ui.comboSecurityTypes, SIGNAL("currentIndexChanged(int)"), self.slotSecurityChanged)
+
         # Update service status and follow Comar for sate changes
         self.getConnectionStates()
+
+    def openSecurityDialog(self):
+        self.securityDialog.setValues(self.securityValues)
+        if self.securityDialog.exec_():
+            self.securityValues = self.securityDialog.getValues()
+
+    def slotSecurityChanged(self, index):
+        method = str(self.ui.comboSecurityTypes.itemData(index).toString())
+        if method == "none":
+            # Hide security widgets
+            self.ui.pushSecurity.hide()
+            self.ui.lineKey.hide()
+            self.ui.labelKey.hide()
+            self.ui.checkShowPassword.hide()
+            # Erase all security data
+            self.securityValues = {}
+        else:
+            parameters = self.iface.authParameters(self.securityPackage, method)
+            if len(parameters) == 1 and parameters[0][2] in ["text", "pass"]:
+                # Single text or password field, don't use dialog
+                self.ui.pushSecurity.hide()
+                # Show other fields
+                self.ui.lineKey.show()
+                self.ui.labelKey.show()
+                self.ui.checkShowPassword.show()
+                self.ui.labelKey.setText(parameters[0][1])
+            else:
+                # Too many fields, dialog required
+                self.ui.pushSecurity.show()
+                self.ui.lineKey.hide()
+                self.ui.labelKey.hide()
+                self.ui.checkShowPassword.hide()
+                self.securityDialog.setFields(parameters)
 
     def refreshBrowser(self):
         if self.animator.state() != 0:
@@ -315,16 +360,13 @@ class MainManager(QtGui.QWidget):
         modes = info["modes"].split(",")
 
         if "auth" in modes:
+            self.securityPackage = package
             self.ui.comboSecurityTypes.clear()
             self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
             for name, desc in self.iface.authMethods(package):
                 self.ui.comboSecurityTypes.addItem(desc, QVariant(name))
         else:
-            self.ui.labelSecurity.hide()
-            self.ui.comboSecurityTypes.hide()
-            self.ui.labelKey.hide()
-            self.ui.lineKey.hide()
-            self.ui.checkShowPassword.hide()
+            self.securityPackage = None
 
         # Then show them by giving package
         if "net" in modes:
@@ -384,14 +426,15 @@ class MainManager(QtGui.QWidget):
 
         authType = self.iface.authType(package, profile)
         authInfo = self.iface.authInfo(package, profile)
+        authParams = self.iface.authParameters(package, authType)
         ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(authType)))
 
-        if len(authInfo) == 1:
+        if len(authParams) == 1:
             password = authInfo.values()[0]
             ui.lineKey.setText(password)
         else:
-            # FIXME: More than one authentication parameter not supported yet!
-            pass
+            self.securityValues = authInfo
+            self.securityDialog.setValues(authInfo)
 
         if data.has_key("net_mode"):
             if data["net_mode"] == "auto":
@@ -450,6 +493,7 @@ class MainManager(QtGui.QWidget):
             # If profile name has been changed, delete profile first
             if not self.lastEditedData["name"] == connectionName:
                 self.iface.deleteConnection(self.lastEditedPackage, self.lastEditedData["name"])
+
         self.iface.updateConnection(self.lastEditedPackage, connectionName, self.collectDataFromUI())
         if self.lastEditedData:
             if self.lastEditedData.has_key("state"):
@@ -496,7 +540,13 @@ class MainManager(QtGui.QWidget):
 
             # Security
             data["auth"] = str(ui.comboSecurityTypes.itemData(ui.comboSecurityTypes.currentIndex()).toString())
-            data["auth_password"] = ui.lineKey.text()
+            if data["auth"] != "none":
+                parameters = self.iface.authParameters(self.securityPackage, data["auth"])
+                if len(parameters) == 1:
+                    data["auth_%s" % parameters[0][0]] = ui.lineKey.text()
+                else:
+                    for key, value in self.securityValues.iteritems():
+                        data["auth_%s" % key] = value
 
         # Let them unicode
         for i,j in data.items():

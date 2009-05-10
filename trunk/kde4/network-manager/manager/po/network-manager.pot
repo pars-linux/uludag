@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-08 12:06+0300\n"
+"POT-Creation-Date: 2009-05-10 21:45+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,23 +32,23 @@ msgstr ""
 msgid "Maintainer"
 msgstr ""
 
-#: .tmp/base.py:76
+#: .tmp/base.py:163
 msgid "Available Profiles"
 msgstr ""
 
-#: .tmp/base.py:103
+#: .tmp/base.py:190
 msgid "All Profiles"
 msgstr ""
 
-#: .tmp/base.py:105 .tmp/base.py:107
+#: .tmp/base.py:192 .tmp/base.py:194
 msgid "No Device Found"
 msgstr ""
 
-#: .tmp/base.py:299
+#: .tmp/base.py:365
 msgid "No Authentication"
 msgstr ""
 
-#: .tmp/base.py:509
+#: .tmp/base.py:588
 #, python-format
 msgid "Do you really want to remove profile %s?"
 msgstr ""
@@ -69,7 +69,7 @@ msgstr ""
 msgid "  %p %"
 msgstr ""
 
-#: .tmp/uinameserver.py:42 .tmp/ui.py:321
+#: .tmp/uinameserver.py:42 .tmp/ui.py:326
 msgid "Nameserver Settings"
 msgstr ""
 
@@ -77,119 +77,127 @@ msgstr ""
 msgid "Machine Name"
 msgstr ""
 
-#: .tmp/uinameserver.py:44 .tmp/ui.py:341
+#: .tmp/uinameserver.py:44 .tmp/ui.py:340
 msgid "Name Servers"
 msgstr ""
 
-#: .tmp/ui.py:319
+#: .tmp/ui.py:324
 msgid "Form"
 msgstr ""
 
-#: .tmp/ui.py:320
+#: .tmp/ui.py:325
 msgid "Create Profile"
 msgstr ""
 
-#: .tmp/ui.py:322 .tmp/widgets.py:107
+#: .tmp/ui.py:327 .tmp/widgets.py:163
 msgid "Scanning..."
 msgstr ""
 
-#: .tmp/ui.py:323 .tmp/widgets.py:77
+#: .tmp/ui.py:328 .tmp/widgets.py:134
 msgid "Refresh"
 msgstr ""
 
-#: .tmp/ui.py:324
+#: .tmp/ui.py:329
 msgid "Profile Name :"
 msgstr ""
 
-#: .tmp/ui.py:325
+#: .tmp/ui.py:330
 msgid "Device : "
 msgstr ""
 
-#: .tmp/ui.py:326 .tmp/ui.py:346
+#: .tmp/ui.py:331 .tmp/ui.py:345
 msgid "Cancel"
 msgstr ""
 
-#: .tmp/ui.py:327
-msgid "Remote"
-msgstr ""
-
-#: .tmp/ui.py:328
-msgid "Network Name (ESSID) :"
-msgstr ""
-
-#: .tmp/ui.py:329
-msgid "Scan"
-msgstr ""
-
-#: .tmp/ui.py:330
-msgid "Security Type :"
-msgstr ""
-
-#: .tmp/ui.py:331
-msgid "Key :"
-msgstr ""
-
 #: .tmp/ui.py:332
-msgid "Hide Password"
-msgstr ""
-
-#: .tmp/ui.py:333
 msgid "Network Settings"
 msgstr ""
 
-#: .tmp/ui.py:334
+#: .tmp/ui.py:333
 msgid "Use DHCP"
 msgstr ""
 
-#: .tmp/ui.py:335
+#: .tmp/ui.py:334
 msgid "Use Manual Settings"
 msgstr ""
 
-#: .tmp/ui.py:336
+#: .tmp/ui.py:335
 msgid "Address :"
 msgstr ""
 
-#: .tmp/ui.py:337 .tmp/ui.py:340
+#: .tmp/ui.py:336 .tmp/ui.py:339
 msgid "Custom"
 msgstr ""
 
-#: .tmp/ui.py:338
+#: .tmp/ui.py:337
 msgid "Network Mask :"
 msgstr ""
 
-#: .tmp/ui.py:339
+#: .tmp/ui.py:338
 msgid "Default Gateway :"
 msgstr ""
 
-#: .tmp/ui.py:342
+#: .tmp/ui.py:341
 msgid "Default"
 msgstr ""
 
-#: .tmp/ui.py:343
+#: .tmp/ui.py:342
 msgid "Automatic"
 msgstr ""
 
-#: .tmp/ui.py:344
+#: .tmp/ui.py:343
 msgid "Custom :"
 msgstr ""
 
-#: .tmp/ui.py:345
+#: .tmp/ui.py:344
 msgid "Apply"
 msgstr ""
 
-#: .tmp/ui.py:347
+#: .tmp/ui.py:346
 msgid "Esc"
 msgstr ""
 
-#: .tmp/widgets.py:160
+#: .tmp/ui.py:347
+msgid "Remote"
+msgstr ""
+
+#: .tmp/ui.py:348
+msgid "Network Name (ESSID) :"
+msgstr ""
+
+#: .tmp/ui.py:349
+msgid "Scan"
+msgstr ""
+
+#: .tmp/ui.py:350
+msgid "Security Type :"
+msgstr ""
+
+#: .tmp/ui.py:351
+msgid "Settings"
+msgstr ""
+
+#: .tmp/ui.py:352
+msgid "Key :"
+msgstr ""
+
+#: .tmp/ui.py:353
+msgid "Hide Password"
+msgstr ""
+
+#: .tmp/uisecurity.py:35
+msgid "Security Settings"
+msgstr ""
+
+#: .tmp/widgets.py:216
 msgid "Disconnected"
 msgstr ""
 
-#: .tmp/widgets.py:168
-msgid "Connecting"
-msgstr ""
-
-#: .tmp/widgets.py:164
+#: .tmp/widgets.py:220
 #, python-format
 msgid "Connected: %s"
+msgstr ""
+
+#: .tmp/widgets.py:224
+msgid "Connecting"
 msgstr ""
