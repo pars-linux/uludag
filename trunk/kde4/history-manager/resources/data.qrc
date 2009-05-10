@@ -11,5 +11,7 @@
         <file>pics/snapshot.png</file>
         <file>pics/takeback.png</file>
         <file>pics/upgrade.png</file>
+        <file>pics/repoupdate.png</file>
+        <file>pics/unknown.png</file>
     </qresource>
 </RCC>
