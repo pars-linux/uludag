@@ -91,11 +91,11 @@ msgstr ""
 
 #: build/mainwindow.py:276 build/ui_mainwindow.py:276
 msgid "Takeback Plan"
-msgstr "Gerialma Planı"
+msgstr "Geri Alma Planı"
 
 #: build/mainwindow.py:277 build/ui_mainwindow.py:277
 msgid "Click to see what will happen if you click restore button"
-msgstr "Gerial düğmesine tıkladığınızda olacakları görmek için tıklayın"
+msgstr "Geri Al düğmesine tıkladığınızda olacakları görmek için tıklayın"
 
 #: build/mainwindow.py:278 build/ui_mainwindow.py:278
 msgid "Operation Details"
@@ -115,7 +115,7 @@ msgstr "Yeni Görüntü"
 
 #: build/mainwindow.py:282 build/ui_mainwindow.py:282
 msgid "Takeback"
-msgstr "Gerial"
+msgstr "Geri Al"
 
 #: build/mainwindow.py:283 build/ui_mainwindow.py:283
 msgid "Take back to this point"
@@ -198,7 +198,7 @@ msgstr ""
 #: build/window.py:219
 msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
 msgstr ""
-"Emin değilseniz, Vazgeç düğmesine tıklayıp Gerialma Planına göz atın.</"
+"Emin değilseniz, Vazgeç düğmesine tıklayıp Geri alma Planına göz atın.</"
 "center>"
 
 #: build/window.py:223
