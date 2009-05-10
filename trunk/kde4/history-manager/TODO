@@ -6,7 +6,7 @@ TODO List
 + Help dialog
 + Mainwindow icon should be fixed/made
 + Icons on tableview
-  - Small icon column width
+  + Small icon column width
 
 + i18n strings
 + Package
@@ -15,7 +15,8 @@ TODO List
 + Release as 2.0
 
 + Shortcut for Copy and Select All in operation details page
-- Some artwork near help button and progress label ?
 ~ Better handle takeback/snapshot progress, exceptions etc.
-- i18n ".. Listing" status'
-- Fix slow filtering issue in some situations in listview
++ i18n ".. Listing" status'
++ Fix slow filtering issue in sortfilterproxy and resizetocontents
+
+- Support aliases to operations
