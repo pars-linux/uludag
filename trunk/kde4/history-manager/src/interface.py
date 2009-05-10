@@ -6,7 +6,9 @@ import pisi
 
 from PyQt4.QtCore import *
 
-class ComarIface(QThread):
+from listitem import *
+
+class ComarIface:
     """ COMAR Interface """
 
     def __init__(self):
@@ -35,8 +37,9 @@ class PisiIface(QThread):
         self.start()
 
     def run(self):
+        self.parent.ops = {}
         for operation in self.pdb.get_last():
-            self.parent.ops.append(operation)
+            self.parent.ops[operation.no] = operation
 
     def historyPlan(self, op):
         return pisi.api.get_takeback_plan(op)

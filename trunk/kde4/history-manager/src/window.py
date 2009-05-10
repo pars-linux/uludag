@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import comar
 import dbus
 
 from PyQt4 import QtGui
@@ -12,10 +11,7 @@ from PyKDE4.kdecore import *
 
 from mainwindow import Ui_MainManager
 from interface import *
-from listitem import *
 from utility import *
-
-import time
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
@@ -33,14 +29,8 @@ class MainManager(QtGui.QWidget):
         self.createMenus()
         self.tweakUi()
 
-        self.ops = []
+        self.ops = {}
         self.help = None
-
-        self.proxyModel = SortFilterProxyModel()
-        self.proxyModel.setDynamicSortFilter(True)
-        self.item_model = OperationDataModel()
-        self.proxyModel.setSourceModel(self.item_model)
-        self.ui.lw.setModel(self.proxyModel)
 
         self.cface = ComarIface()
         self.pface = PisiIface(self)
@@ -53,11 +43,9 @@ class MainManager(QtGui.QWidget):
         self.cface.listen(self.handler)
 
     def connectSignals(self):
-        for val in ["All", "Snapshot", "Install", "Remove", "Upgrade", "Takeback"]:
-            exec('self.connect(self.ui.%s, SIGNAL("clicked()"), self.changeListing)' % val)
         self.connect(self.pface, SIGNAL("finished()"), self.loadHistory)
 
-        self.connect(self.ui.lw, SIGNAL("clicked(const QModelIndex &)"), self.loadIndex)
+        self.connect(self.ui.lw, SIGNAL("itemClicked(QTreeWidgetItem *, int)"), self.loadIndex)
         self.connect(self.ui.operationTB, SIGNAL("currentChanged(int)"), self.tabChanged)
         self.connect(self.ui.restoreTB, SIGNAL("clicked()"), self.takeBack)
         self.connect(self.ui.newSnapshotTB, SIGNAL("clicked()"), self.takeSnapshot)
@@ -65,29 +53,13 @@ class MainManager(QtGui.QWidget):
         self.connect(self.ui.takeBackAction, SIGNAL("triggered()"), self.takeBack)
         self.connect(self.ui.copyAction, SIGNAL("triggered()"), self.copySelected)
 
-    def createMenus(self):
-        self.lwMenu = QtGui.QMenu()
-        self.lwMenu.addAction(self.ui.takeBackAction)
-
-        self.listWidgetMenu = QtGui.QMenu()
-        self.listWidgetMenu.addAction(self.ui.copyAction)
-        self.listWidgetMenu.addAction(i18n("Select All"), self.ui.listWidget.selectAll)
-
-    def copySelected(self):
-        cb = QApplication.clipboard()
-
-        selected = ""
-        for i in self.ui.listWidget.selectedItems():
-            selected += "%s \n" % i.text().replace('* ', '')
-
-        cb.setText(selected, QtGui.QClipboard.Clipboard)
-
     def loadHistory(self):
-        for i in self.ops:
-            self.item_model.items.append(NewOperation(i))
-        self.proxyModel.reset()
-        self.ui.lw.setEnabled(True)
+        self.ui.lw.clear()
 
+        for (k, v) in self.ops.items():
+            NewOperation(v, self.ui.lw)
+
+        self.ui.lw.setEnabled(True)
         self.status(i18n("Ready"))
         self.enableButtons(True)
 
@@ -98,52 +70,46 @@ class MainManager(QtGui.QWidget):
 
         self.parent.setWindowIcon(QtGui.QIcon(":/icons/history-manager.png"))
         self.ui.progressBar.hide()
-        self.ui.lw.verticalHeader().hide()
-        self.ui.lw.horizontalHeader().setResizeMode(QHeaderView.Stretch)
-        self.ui.lw.horizontalHeader().setWindowFlags(Qt.FramelessWindowHint)
+
+        self.ui.lw.headerItem().setText(1, i18n("Date"))
+        self.ui.lw.headerItem().setText(2, i18n("Time"))
+        self.ui.lw.header().resizeSection(0, 40)
+
+        self.ui.lw.header().setResizeMode(0, QHeaderView.ResizeToContents)
+        self.ui.lw.header().setResizeMode(1, QHeaderView.ResizeToContents)
+        self.ui.lw.header().setResizeMode(2, QHeaderView.Stretch)
 
         self.enableButtons(False)
 
     def tabChanged(self, index):
         if index == 1:
             QtCore.QCoreApplication.processEvents()
-            self.loadIndex(self.ui.lw.currentIndex())
+            self.loadIndex(self.ui.lw.currentItem(), 0)
         elif index == 0:
             self.showPlan()
 
-    def loadIndex(self, index):
-        self.ui.noLabel.setText("%s <b>%s</b>" % (i18n("No:"), self.get(index, "op_no")))
-        self.ui.typeLabel.setText("%s <b>%s</b>" % (i18n("Type:"), self.get(index, "op_type_tr")))
+    def loadIndex(self, item, column):
+        self.ui.noLabel.setText("%s <b>%s</b>" % (i18n("No:"), self.get(item, "op_no")))
+        self.ui.typeLabel.setText("%s <b>%s</b>" % (i18n("Type:"), self.get(item, "op_type_tr")))
         self.status(i18n("Operation details"))
 
         self.ui.listWidget.clear()
         self.ui.operationTB.setCurrentIndex(1)
 
-        if self.get(index, "op_type") == "snapshot":
+        if self.get(item, "op_type") == "snapshot":
             self.ui.listWidget.insertItem(self.ui.listWidget.count() + 1, \
-                    QtGui.QListWidgetItem(i18n("There are %1 packages in this snapshot", self.get(index, "op_pack_len"))))
+                    QtGui.QListWidgetItem(i18n("There are %1 packages in this snapshot", self.get(item, "op_pack_len"))))
             return
 
-        for val in self.item_model.getProperty(index, "op_pack").toList():
+        # FIXME
+        for val in self.get(item, "op_pack"):
             self.ui.listWidget.insertItem(self.ui.listWidget.count() +1, \
-                    QtGui.QListWidgetItem(" * %s" % val.toString()))
-
-    def handler(self, package, signal, args):
-        print package, signal, args
-
-        if signal == "status":
-            self.status(" ".join(args))
-        elif signal == "finished":
-            self.status(i18n("Finished succesfully"))
-            self.enableButtons(True)
-        elif signal == "progress":
-            self.status("%s : %s/100" % (args[2], args[1]))
-            self.enableButtons(False)
+                    QtGui.QListWidgetItem(" * %s" % val))
 
     def showPlan(self):
         if not len(self.ui.lw.selectedIndexes()):
             return
-        current_index = self.ui.lw.currentIndex()
+        current_index = self.ui.lw.currentItem()
         current_op = int(self.get(current_index, "op_no"))
         current_type = self.get(current_index, "op_type")
         current_type_tr = self.get(current_index, "op_type_tr")
@@ -182,10 +148,6 @@ class MainManager(QtGui.QWidget):
     def changeListing(self):
         self.status(i18n("Listing %1 Operations", QObject.sender(self).objectName()))
 
-        self.proxyModel.sortby = QObject.sender(self).objectName().toLower()
-        self.proxyModel.sort(ICON, Qt.DescendingOrder)
-        self.proxyModel.reset()
-
     def status(self, txt):
         if self.ui.progressBar.isVisible():
             self.ui.progressBar.setFormat(txt)
@@ -194,25 +156,19 @@ class MainManager(QtGui.QWidget):
             self.ui.opTypeLabel.setText(txt)
             self.ui.opTypeLabel.show()
 
-    def get(self, index, prop):
-        return self.item_model.getProperty(index, prop).toString()
+    def get(self, item, prop):
+        return eval("item.%s" % prop)
 
-    def showHelp(self):
-        if self.help == None:
-            self.help = HelpDialog(self)
-            self.help.show()
-        else:
-            self.help.show()
 
     def takeBack(self):
         willbeinstalled, willberemoved = None, None
         try:
-            willbeinstalled, willberemoved = self.pface.historyPlan(int(self.get(self.ui.lw.currentIndex(), "op_no")))
+            willbeinstalled, willberemoved = self.pface.historyPlan(int(self.get(self.ui.lw.currentItem(), "op_no")))
         except ValueError:
             return
 
-        current_date = self.get(self.ui.lw.currentIndex(), "op_date")
-        current_time = self.get(self.ui.lw.currentIndex(), "op_time")
+        current_date = self.get(self.ui.lw.currentItem(), "op_date")
+        current_time = self.get(self.ui.lw.currentItem(), "op_time")
 
         reply = QtGui.QMessageBox.warning(self, i18n("Takeback operation verification"),
             i18n("<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>", current_date, current_time) + \
@@ -225,8 +181,9 @@ class MainManager(QtGui.QWidget):
 
             try:
                 QtCore.QCoreApplication.processEvents()
-                self.cface.takeBack(int(self.get(self.ui.lw.currentIndex(), "op_no")))
+                self.cface.takeBack(int(self.get(self.ui.lw.currentItem(), "op_no")))
             except dbus.DBusException:
+                # FIXME
                 self.status(i18n("Authentication Failed"))
                 self.enableButtons(True)
 
@@ -247,6 +204,42 @@ class MainManager(QtGui.QWidget):
         except dbus.DBusException:
             self.status(i18n("Authentication Failed"))
             self.enableButtons(True)
+
+    def handler(self, package, signal, args):
+        print package, signal, args
+
+        if signal == "status":
+            self.status(" ".join(args))
+        elif signal == "finished":
+            self.status(i18n("Finished succesfully"))
+            self.enableButtons(True)
+        elif signal == "progress":
+            self.status("%s : %s/100" % (args[2], args[1]))
+            self.enableButtons(False)
+
+    def createMenus(self):
+        self.lwMenu = QtGui.QMenu()
+        self.lwMenu.addAction(self.ui.takeBackAction)
+
+        self.listWidgetMenu = QtGui.QMenu()
+        self.listWidgetMenu.addAction(self.ui.copyAction)
+        self.listWidgetMenu.addAction(i18n("Select All"), self.ui.listWidget.selectAll)
+
+    def showHelp(self):
+        if self.help == None:
+            self.help = HelpDialog(self)
+            self.help.show()
+        else:
+            self.help.show()
+
+    def copySelected(self):
+        cb = QApplication.clipboard()
+
+        selected = ""
+        for i in self.ui.listWidget.selectedItems():
+            selected += "%s \n" % i.text().replace('* ', '')
+
+        cb.setText(selected, QtGui.QClipboard.Clipboard)
 
     def closeEvent(self, event=None):
         self.settings.setValue("pos", QtCore.QVariant(self.mapToGlobal(self.pos())))
@@ -276,5 +269,5 @@ class MainManager(QtGui.QWidget):
         return QtCore.QObject.eventFilter(self, obj, event)
 
     def enableButtons(self, true):
-        for val in ["All", "Snapshot", "Install", "Remove", "Upgrade", "Takeback", "restoreTB", "newSnapshotTB", "helpTB"]:
+        for val in ["restoreTB", "newSnapshotTB", "helpTB"]:
             exec('self.ui.%s.setEnabled(%s)' % (val, true))
