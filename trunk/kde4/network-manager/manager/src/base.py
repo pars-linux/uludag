@@ -81,6 +81,9 @@ class MainManager(QtGui.QWidget):
         self.securityFields = []
         self.securityValues = {}
 
+        # Nameserver dialog
+        self.nameserverDialog = NameServerDialog(parent)
+
         # Preparing for animation
         self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
         self.lastAnimation = SHOW
@@ -97,8 +100,7 @@ class MainManager(QtGui.QWidget):
         self.connect(self.ui.buttonApply, SIGNAL("clicked()"), self.applyChanges)
 
         # Show NameServer Settings Dialog
-        self.nameServerDialog = NameServerDialog(self)
-        self.connect(self.ui.buttonNameServer, SIGNAL("clicked()"), self.nameServerDialog.run)
+        self.connect(self.ui.buttonNameServer, SIGNAL("clicked()"), self.slotNameServerDialog)
 
         # Filter
         self.connect(self.ui.filterBox, SIGNAL("currentIndexChanged(int)"), self.filterList)
@@ -114,6 +116,13 @@ class MainManager(QtGui.QWidget):
 
         # Update service status and follow Comar for sate changes
         self.getConnectionStates()
+
+    def slotNameServerDialog(self):
+        self.nameserverDialog.setHostname(self.iface.getHostname())
+        self.nameserverDialog.setNameservers(self.iface.getNameservers())
+        if self.nameserverDialog.exec_():
+            self.iface.setHostname(self.nameserverDialog.getHostname())
+            self.iface.setNameservers(self.nameserverDialog.getNameservers())
 
     def openSecurityDialog(self):
         self.securityDialog.setValues(self.securityValues)

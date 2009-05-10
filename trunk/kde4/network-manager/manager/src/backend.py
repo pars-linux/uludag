@@ -137,3 +137,18 @@ class NetworkIface:
         else:
             return self.link.Network.Link[package].scanRemote(device)
 
+    def getHostname(self):
+        package = "baselayout"
+        return self.link.Network.Stack[package].getHostName()
+
+    def setHostname(self, hostname):
+        package = "baselayout"
+        self.link.Network.Stack[package].setHostName(hostname)
+
+    def getNameservers(self):
+        package = "baselayout"
+        return self.link.Network.Stack[package].getNameServers()
+
+    def setNameservers(self, servers):
+        package = "baselayout"
+        self.link.Network.Stack[package].setNameServers(servers, "")

@@ -94,11 +94,25 @@ class NameServerDialog(QtGui.QDialog):
         self.ui = Ui_nameServer()
         self.ui.setupUi(self)
 
-    def run(self):
-        self.exec_()
+        self.connect(self.ui.buttonBox, SIGNAL("accepted()"), self.accept)
+        self.connect(self.ui.buttonBox, SIGNAL("rejected()"), self.reject)
 
-    def accept(self):
-        self.done(QtGui.QDialog.Accepted)
+    def setNameservers(self, servers=[]):
+        self.ui.listBox.clear()
+        for server in servers:
+            self.ui.listBox.insertItem(unicode(server))
+
+    def setHostname(self, hostname):
+        self.ui.lineMachineName.setText(unicode(hostname))
+
+    def getHostname(self):
+        return unicode(self.ui.lineMachineName.text())
+
+    def getNameservers(self):
+        servers = []
+        for item in self.ui.listBox.items():
+            servers.append(unicode(item))
+        return servers
 
 class WifiItemWidget(QtGui.QWidget):
 
