@@ -98,7 +98,7 @@ class MainManager(QtGui.QWidget):
         self.connect(self.ui.filterBox, SIGNAL("currentIndexChanged(int)"), self.filterList)
 
         # Refresh button for scanning remote again..
-        self.connect(self.ui.refreshButton, SIGNAL("leftClickedUrl()"), self.filterList)
+        self.connect(self.ui.refreshButton, SIGNAL("leftClickedUrl()"), self.filterESSID)
 
         # Update service status and follow Comar for sate changes
         self.getConnectionStates()
@@ -153,9 +153,14 @@ class MainManager(QtGui.QWidget):
         # Fill the list
         self.fillProfileList()
 
+    def filterESSID(self):
+        self.filterList("essid")
+
     def filterList(self, id=None):
         if not id:
             filter = ""
+        elif id == "essid":
+            filter = "essid"
         else:
             filter = str(self.ui.filterBox.itemData(id).toString())
 
