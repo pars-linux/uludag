@@ -61,14 +61,18 @@ class ServiceItemWidget(QtGui.QWidget):
             time.sleep(1)
             state = self.iface.info(self.package)[2]
         if state in ('on', 'started', 'conditional_started'):
+            self.running = True
             icon = 'running'
         else:
+            self.running = False
             icon = 'notrunning'
         self.ui.labelStatus.setPixmap(QtGui.QPixmap(':data/%s.png' % icon))
+        self.runningAtStart = False
         if state in ('on', 'stopped'):
-            self.ui.checkStart.setChecked(True)
+            self.runningAtStart = True
         elif state in ('off', 'started', 'conditional_started'):
-            self.ui.checkStart.setChecked(False)
+            self.runningAtStart = False
+        self.ui.checkStart.setChecked(self.runningAtStart)
         # print self.package, state
 
     def setService(self):
