@@ -51,9 +51,10 @@ class MainManager(QtGui.QWidget):
         self.services.sort()
         for service in self.services:
             item = ServiceItem(service, self.ui.listServices)
+            item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
+            item.setSizeHint(QSize(38,48))
             self.widgets[service] = ServiceItemWidget(service, self, item)
             self.ui.listServices.setItemWidget(item, self.widgets[service])
-            item.setSizeHint(QSize(38,48))
         self.infoCount = 0
         self.piece = 100/len(self.services)
 
@@ -62,7 +63,7 @@ class MainManager(QtGui.QWidget):
 
         # search line, we may use model view for correct filtering
         self.connect(self.ui.lineSearch, SIGNAL("textChanged(QString)"), self.doSearch)
-        self.connect(self.ui.checkShowServers, SIGNAL("toggled(bool)"), self.setLocalServices)
+        self.connect(self.ui.filterBox, SIGNAL("currentIndexChanged(int)"), self.filterServices)
 
     def doSearch(self, text):
         for service in self.services:
@@ -70,16 +71,37 @@ class MainManager(QtGui.QWidget):
                 self.widgets[service].item.setHidden(False)
             else:
                 self.widgets[service].item.setHidden(True)
-        if self.ui.checkShowServers.isChecked():
-            self.setLocalServices(self.ui.checkShowServers.isChecked())
+        if text == '':
+            self.filterServices(self.ui.filterBox.currentIndex())
 
     def isLocal(self, service):
         return self.widgets[service].type == 'local'
 
-    def setLocalServices(self, state):
+    def filterServices(self, filterBy):
+        Servers, SystemServices, StartupServices, RunningServices, AllServices = range(5)
         for service in self.services:
-            if self.isLocal(service):
-                self.widgets[service].item.setHidden(state)
+            if filterBy == Servers:
+                if not self.isLocal(service):
+                    self.widgets[service].item.setHidden(False)
+                else:
+                    self.widgets[service].item.setHidden(True)
+            elif filterBy == SystemServices:
+                if self.isLocal(service):
+                    self.widgets[service].item.setHidden(False)
+                else:
+                    self.widgets[service].item.setHidden(True)
+            elif filterBy == StartupServices:
+                if self.widgets[service].runningAtStart:
+                    self.widgets[service].item.setHidden(False)
+                else:
+                    self.widgets[service].item.setHidden(True)
+            elif filterBy == RunningServices:
+                if self.widgets[service].running:
+                    self.widgets[service].item.setHidden(False)
+                else:
+                    self.widgets[service].item.setHidden(True)
+            elif filterBy == AllServices:
+                self.widgets[service].item.setHidden(False)
 
     def handleServices(self, package, exception, results):
         # Handle request and fill the listServices in the ui
@@ -90,14 +112,15 @@ class MainManager(QtGui.QWidget):
             if self.infoCount == len(self.services):
                 self.ui.progress.hide()
                 self.ui.listServices.setEnabled(True)
-                self.setLocalServices(self.ui.checkShowServers.isChecked())
+                self.filterServices(self.ui.filterBox.currentIndex())
 
     def getServices(self):
         self.iface.services(self.handleServices)
         self.iface.listen(self.handler)
 
     def handler(self, package, signal, args):
-        print "Burasi,", args, signal, package
+        print "COMAR :", args, signal, package
         self.widgets[package].setState(args[1])
+        self.filterServices(self.ui.filterBox.currentIndex())
 
 
