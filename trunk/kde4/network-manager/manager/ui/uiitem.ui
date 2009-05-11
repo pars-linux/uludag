@@ -136,7 +136,7 @@
          <normaloff>:/data/edit-rename.png</normaloff>:/data/edit-rename.png</iconset>
        </property>
        <property name="flat">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>
