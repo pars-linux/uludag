@@ -44,6 +44,7 @@ class MainManager(QtGui.QWidget):
         self.app = app
         self.lastEditedPackage = None
         self.lastEditedData = None
+        self.lastEditedInfo = None
 
         # Network Manager can run as KControl Module or Standalone
         if standAlone:
@@ -77,7 +78,6 @@ class MainManager(QtGui.QWidget):
 
         # Security dialog
         self.securityDialog = SecurityDialog(parent)
-        self.securityPackage = None
         self.securityFields = []
         self.securityValues = {}
 
@@ -140,7 +140,7 @@ class MainManager(QtGui.QWidget):
             # Erase all security data
             self.securityValues = {}
         else:
-            parameters = self.iface.authParameters(self.securityPackage, method)
+            parameters = self.iface.authParameters(self.lastEditedPackage, method)
             if len(parameters) == 1 and parameters[0][2] in ["text", "pass"]:
                 # Single text or password field, don't use dialog
                 self.ui.pushSecurity.hide()
@@ -354,12 +354,14 @@ class MainManager(QtGui.QWidget):
             self.animator.start()
             self.resetForm()
 
-    def showEditBox(self, package=None, profile=None):
+    def showEditBox(self, package, profile=None):
         sender = self.sender().parent()
         self.lastAnimation = SHOW
         self.hideScrollBars()
 
-        info = self.iface.capabilities(package)
+        # Fill package name and package capabilities
+        self.lastEditedPackage = package
+        self.lastEditedInfo = info = self.iface.capabilities(package)
 
         # Hide all settings first
         self.ui.groupRemote.hide()
@@ -369,13 +371,10 @@ class MainManager(QtGui.QWidget):
         modes = info["modes"].split(",")
 
         if "auth" in modes:
-            self.securityPackage = package
             self.ui.comboSecurityTypes.clear()
             self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
             for name, desc in self.iface.authMethods(package):
                 self.ui.comboSecurityTypes.addItem(desc, QVariant(name))
-        else:
-            self.securityPackage = None
 
         # Then show them by giving package
         if "net" in modes:
@@ -420,7 +419,6 @@ class MainManager(QtGui.QWidget):
     # Comar operations calls gui
     def buildEditBoxFor(self, package, profile):
         ui = self.ui
-        self.lastEditedPackage = package
         self.lastEditedData = data = self.iface.info(package, profile)
 
         ui.lineConnectionName.setText(data["name"])
@@ -433,17 +431,20 @@ class MainManager(QtGui.QWidget):
         if "remote" in data:
             ui.lineRemote.setText(data["remote"])
 
-        authType = self.iface.authType(package, profile)
-        authInfo = self.iface.authInfo(package, profile)
-        authParams = self.iface.authParameters(package, authType)
-        ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(authType)))
+        modes = self.lastEditedInfo["modes"].split(",")
 
-        if len(authParams) == 1:
-            password = authInfo.values()[0]
-            ui.lineKey.setText(password)
-        elif len(authParams) > 1:
-            self.securityValues = authInfo
-            self.securityDialog.setValues(authInfo)
+        if "auth" in modes:
+            authType = self.iface.authType(package, profile)
+            authInfo = self.iface.authInfo(package, profile)
+            authParams = self.iface.authParameters(package, authType)
+            ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(authType)))
+
+            if len(authParams) == 1:
+                password = authInfo.values()[0]
+                ui.lineKey.setText(password)
+            elif len(authParams) > 1:
+                self.securityValues = authInfo
+                self.securityDialog.setValues(authInfo)
 
         if data.has_key("net_mode"):
             if data["net_mode"] == "auto":
@@ -492,6 +493,7 @@ class MainManager(QtGui.QWidget):
         ui.comboSecurityTypes.setCurrentIndex(0)
         self.lastEditedData = None
         self.lastEditedPackage = None
+        self.lastEditedInfo = None
 
     def applyChanges(self):
         ui = self.ui
@@ -550,7 +552,7 @@ class MainManager(QtGui.QWidget):
             # Security
             data["auth"] = str(ui.comboSecurityTypes.itemData(ui.comboSecurityTypes.currentIndex()).toString())
             if data["auth"] != "none":
-                parameters = self.iface.authParameters(self.securityPackage, data["auth"])
+                parameters = self.iface.authParameters(self.lastEditedPackage, data["auth"])
                 if len(parameters) == 1:
                     data["auth_%s" % parameters[0][0]] = ui.lineKey.text()
                 else:

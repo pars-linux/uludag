@@ -182,7 +182,7 @@ msgstr "Anahtar :"
 
 #: .tmp/ui.py:353
 msgid "Hide Password"
-msgstr "Parolayı Gizl"
+msgstr "Parolayı Gizle"
 
 #: .tmp/uisecurity.py:35
 msgid "Security Settings"
