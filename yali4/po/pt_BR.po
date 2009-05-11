@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-08 18:40+0300\n"
+"POT-Creation-Date: 2009-05-11 17:27+0300\n"
 "PO-Revision-Date: 2007-02-19 22:25-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -1520,14 +1520,20 @@ msgstr ""
 msgid "Windows"
 msgstr "Janelas"
 
-#: yali4/filesystem.py:178
+#: yali4/filesystem.py:179
 #, python-format
 msgid ""
-"FSCheck found some problems on partition %s and fixed them. You should "
-"restart the machine before starting the installation process !"
+"FSCheck found some problems on partition %s and fixed "
+"them.                                 You should restart the machine before "
+"starting the installation process !"
 msgstr ""
 
-#: yali4/filesystem.py:404
+#: yali4/filesystem.py:182
+#, fuzzy, python-format
+msgid "FSCheck failed on %s"
+msgstr "Checagem Falhou"
+
+#: yali4/filesystem.py:405
 msgid "Partition is not ready for resizing. Check it before installation."
 msgstr ""
 
@@ -1811,35 +1817,35 @@ msgstr "espaço livre"
 msgid "Install Root"
 msgstr "Instalar Raiz"
 
-#: yali4/partitiontype.py:41
+#: yali4/partitiontype.py:42
 #, fuzzy
 msgid "as Pardus System Files (mandatory)"
 msgstr "Arquivos de sistema do Pardus (obrigatório)"
 
-#: yali4/partitiontype.py:44
+#: yali4/partitiontype.py:45
 msgid "Users' Files"
 msgstr "Arquivos do Usuário"
 
-#: yali4/partitiontype.py:50
+#: yali4/partitiontype.py:52
 #, fuzzy
 msgid "as User Files (optional)"
 msgstr "Arquivos do usuário (opcional)"
 
-#: yali4/partitiontype.py:53
+#: yali4/partitiontype.py:55
 msgid "Swap"
 msgstr "Troca"
 
-#: yali4/partitiontype.py:61
+#: yali4/partitiontype.py:63
 #, fuzzy
 msgid "as Swap Space (optional)"
 msgstr "Espaço de troca (opcional)"
 
-#: yali4/partitiontype.py:64
+#: yali4/partitiontype.py:66
 #, fuzzy
 msgid "Archive Partition"
 msgstr "Criar Partição"
 
-#: yali4/partitiontype.py:77
+#: yali4/partitiontype.py:80
 msgid "as Storage Area"
 msgstr ""
 
