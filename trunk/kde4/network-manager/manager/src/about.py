@@ -28,5 +28,5 @@ bugEmail    = "bugs@pardus.org.tr"
 aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
 # Authors
-aboutData.addAuthor ("Bahadır Kandemir", ki18n("Current Maintainer"))
-aboutData.addAuthor ("Gökmen GÖKSEL",    ki18n("Developer"))
+aboutData.addAuthor (ki18n("Bahadır Kandemir"), ki18n("Current Maintainer"))
+aboutData.addAuthor (ki18n("Gökmen GÖKSEL"),    ki18n("Developer"))
