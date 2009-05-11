@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2009, TUBITAK/UEKAE
+# Copyright (C) 2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -21,11 +21,12 @@ programName = ki18n("Network Manager")
 version     = "2.9.3"
 description = ki18n("Network Manager")
 license     = KAboutData.License_GPL
-copyright   = ki18n("(c) 2008 TUBITAK/UEKAE")
+copyright   = ki18n("(c) 2009 TUBITAK/UEKAE")
 text        = ki18n(None)
 homePage    = "http://www.pardus.org.tr/eng/projects"
 bugEmail    = "bugs@pardus.org.tr"
 aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
 # Authors
-aboutData.addAuthor (ki18n("Gökmen GÖKSEL"), ki18n("Maintainer"))
+aboutData.addAuthor ("Bahadır Kandemir", ki18n("Current Maintainer"))
+aboutData.addAuthor ("Gökmen GÖKSEL",    ki18n("Developer"))
