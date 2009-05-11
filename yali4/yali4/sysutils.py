@@ -26,7 +26,7 @@ from yali4.constants import consts
 
 _sys_dirs = ['dev', 'proc', 'sys']
 
-def run(cmd, params=None, capture=False, largeBuffer=False):
+def run(cmd, params=None, capture=False):
     import yali4.gui.context as ctx
 
     # Merge parameters with command
@@ -40,16 +40,9 @@ def run(cmd, params=None, capture=False, largeBuffer=False):
     # Create an instance for Popen
     proc = subprocess.Popen(_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-    # if we dont need a largeBuffer we can wait the process and get the return code
-    if not largeBuffer:
-        result = proc.wait()
-
     # Capture the output
     stdout, stderr = proc.communicate()
-
-    # if we need a largeBuffer we need to guess the return code from stderr
-    if largeBuffer:
-        result = len(stderr)
+    result = proc.poll()
 
     ctx.debugger.log(stderr)
     ctx.debugger.log(stdout)
