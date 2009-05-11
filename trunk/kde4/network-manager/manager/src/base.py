@@ -441,7 +441,7 @@ class MainManager(QtGui.QWidget):
         if len(authParams) == 1:
             password = authInfo.values()[0]
             ui.lineKey.setText(password)
-        else:
+        elif len(authParams) > 1:
             self.securityValues = authInfo
             self.securityDialog.setValues(authInfo)
 
