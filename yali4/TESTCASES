@@ -1,0 +1,35 @@
+
+Following steps will be useful to test Yalı in an arbitrary order :)
+
+ - Check Release Notes and License files
+ - Check different keyboard layouts and note the selected one to test after install
+    - Test it in tty and X
+ - Set Date and Time, select a timezone and note it to test after install
+    - Compare selected Timezone in /usr/share/zoneinfo/TIMEZONE with /etc/localtime
+ - Add two users; one of with root privileges, one of without
+    - Delete one and edit the other one and update it
+    - Delete other user and try to add a new one with same name
+    - Try to use not acceptable chars for inputs
+    - Try to use wrong passwords in password inputs
+ - Enter root password and machine name
+    - Try to use not acceptable chars for inputs
+    - Try to use wrong passwords in password inputs
+ - Do each of these options;
+    - Select automatic partitioning to test resizing
+        - Use more than 7 Gb disk partition which formatted with a resizable filesystem (ext3, ext4, ntfs)
+        - Check both filesystem after installation, old one and new one
+    - Select Erase all partitions to format all partitions
+    - Use Manual partitioning and create some partitions with all supported filesystems
+        - Delete each one and add again
+        - Delete all
+        - Revert all changes
+        - Resize some of them
+        - Plug a new usb disk and click refresh disk
+        - Try to create same partitions type with different partitions
+        - Try to give different filesystems to already applied partitions
+ - Select each grub options with new disks
+    - Check debugger log for bios boot orders
+    - Check other partitions grub.conf after installation
+ - Check whole log file before restart, yali doesn't stores grub logs in yaliInstall.log because of some (mount,grub-install) problems
+ - Check is AutoLogin working
+
