@@ -26,18 +26,35 @@ from yali4.constants import consts
 
 _sys_dirs = ['dev', 'proc', 'sys']
 
-def run(cmd, params=None, capture=False):
+def run(cmd, params=None, capture=False, largeBuffer=False):
     import yali4.gui.context as ctx
+
+    # Merge parameters with command
     if params:
         cmd = "%s %s" % (cmd, ' '.join(params))
+
+    # to use Popen we need a tuple
     _cmd = tuple(cmd.split())
     ctx.debugger.log("RUN : %s" % cmd)
 
+    # Create an instance for Popen
     proc = subprocess.Popen(_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    result = proc.wait()
+
+    # if we dont need a largeBuffer we can wait the process and get the return code
+    if not largeBuffer:
+        result = proc.wait()
+
+    # Capture the output
     stdout, stderr = proc.communicate()
+
+    # if we need a largeBuffer we need to guess the return code from stderr
+    if largeBuffer:
+        result = len(stderr)
+
     ctx.debugger.log(stderr)
     ctx.debugger.log(stdout)
+
+    # if return code larger then zero, means there is a problem with this command
     if result > 0:
         ctx.debugger.log("FAILED : %s" % cmd)
         return False
