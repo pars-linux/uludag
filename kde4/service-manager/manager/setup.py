@@ -63,7 +63,8 @@ class Install(install):
         # Copy compiled UIs and RC
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
-            os.system("/usr/kde/4/bin/pykde4uic -o %s/%s.py ui/%s" % (project_dir, filename.split(".")[0], filename))
+            os.system("/usr/kde/4/bin/pykde4uic -o src/%s.py ui/%s" % (filename.split(".")[0], filename))
+            os.system("cp src/%s.py %s/" % (filename.split(".")[0], project_dir))
         print "Copying UIs..."
         os.system("/usr/bin/pyrcc4 icons/data.qrc -o %s/data_rc.py" % project_dir)
         # Copy service file
