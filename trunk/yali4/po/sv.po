@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-08 18:40+0300\n"
+"POT-Creation-Date: 2009-05-11 17:27+0300\n"
 "PO-Revision-Date: 2009-01-31 09:56+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -1691,14 +1691,20 @@ msgstr "Dölj hjälp"
 msgid "Windows"
 msgstr "Windows"
 
-#: yali4/filesystem.py:178
+#: yali4/filesystem.py:179
 #, python-format
 msgid ""
-"FSCheck found some problems on partition %s and fixed them. You should "
-"restart the machine before starting the installation process !"
+"FSCheck found some problems on partition %s and fixed "
+"them.                                 You should restart the machine before "
+"starting the installation process !"
 msgstr ""
 
-#: yali4/filesystem.py:404
+#: yali4/filesystem.py:182
+#, fuzzy, python-format
+msgid "FSCheck failed on %s"
+msgstr "Kontrollen misslyckades"
+
+#: yali4/filesystem.py:405
 msgid "Partition is not ready for resizing. Check it before installation."
 msgstr ""
 "Partitionen är inte klar för storleksändring. Kontrollera den före "
@@ -1979,31 +1985,31 @@ msgstr "ledigt utrymme"
 msgid "Install Root"
 msgstr "Systemfiler"
 
-#: yali4/partitiontype.py:41
+#: yali4/partitiontype.py:42
 msgid "as Pardus System Files (mandatory)"
 msgstr "till Pardus systemfiler (obligatoriskt)"
 
-#: yali4/partitiontype.py:44
+#: yali4/partitiontype.py:45
 msgid "Users' Files"
 msgstr "Användarfiler"
 
-#: yali4/partitiontype.py:50
+#: yali4/partitiontype.py:52
 msgid "as User Files (optional)"
 msgstr "till användarfiler (frivilligt)"
 
-#: yali4/partitiontype.py:53
+#: yali4/partitiontype.py:55
 msgid "Swap"
 msgstr "Växling"
 
-#: yali4/partitiontype.py:61
+#: yali4/partitiontype.py:63
 msgid "as Swap Space (optional)"
 msgstr "till växlingsutrymme (frivilligt)"
 
-#: yali4/partitiontype.py:64
+#: yali4/partitiontype.py:66
 msgid "Archive Partition"
 msgstr "Arkiveringspartition"
 
-#: yali4/partitiontype.py:77
+#: yali4/partitiontype.py:80
 msgid "as Storage Area"
 msgstr "till lagringsutrymme"
 

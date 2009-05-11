@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-08 18:40+0300\n"
+"POT-Creation-Date: 2009-05-11 17:27+0300\n"
 "PO-Revision-Date: 2007-11-12 20:52+0100\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -1531,14 +1531,20 @@ msgstr ""
 msgid "Windows"
 msgstr "Windows"
 
-#: yali4/filesystem.py:178
+#: yali4/filesystem.py:179
 #, python-format
 msgid ""
-"FSCheck found some problems on partition %s and fixed them. You should "
-"restart the machine before starting the installation process !"
+"FSCheck found some problems on partition %s and fixed "
+"them.                                 You should restart the machine before "
+"starting the installation process !"
 msgstr ""
 
-#: yali4/filesystem.py:404
+#: yali4/filesystem.py:182
+#, fuzzy, python-format
+msgid "FSCheck failed on %s"
+msgstr "Verifica fallita"
+
+#: yali4/filesystem.py:405
 msgid "Partition is not ready for resizing. Check it before installation."
 msgstr ""
 
@@ -1827,35 +1833,35 @@ msgstr "spazio libero"
 msgid "Install Root"
 msgstr "Root di installazione"
 
-#: yali4/partitiontype.py:41
+#: yali4/partitiontype.py:42
 #, fuzzy
 msgid "as Pardus System Files (mandatory)"
 msgstr "File di sistema di Pardus (obbligatori)"
 
-#: yali4/partitiontype.py:44
+#: yali4/partitiontype.py:45
 msgid "Users' Files"
 msgstr "File degli utenti"
 
-#: yali4/partitiontype.py:50
+#: yali4/partitiontype.py:52
 #, fuzzy
 msgid "as User Files (optional)"
 msgstr "File utente (opzionale)"
 
-#: yali4/partitiontype.py:53
+#: yali4/partitiontype.py:55
 msgid "Swap"
 msgstr "Swap"
 
-#: yali4/partitiontype.py:61
+#: yali4/partitiontype.py:63
 #, fuzzy
 msgid "as Swap Space (optional)"
 msgstr "Spazio di swap (opzionale)"
 
-#: yali4/partitiontype.py:64
+#: yali4/partitiontype.py:66
 #, fuzzy
 msgid "Archive Partition"
 msgstr "Crea partizione"
 
-#: yali4/partitiontype.py:77
+#: yali4/partitiontype.py:80
 msgid "as Storage Area"
 msgstr ""
 

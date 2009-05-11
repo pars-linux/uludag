@@ -99,11 +99,11 @@ class FileSystem:
         return self._mountoptions
 
     def getFSType(self):
-        """ Get parted filesystem type """
+        """ Get parted file system type """
         return self._fs_type
 
     def getLabel(self, partition):
-        """ Read filesystem label and return """
+        """ Read file system label and return """
         cmd_path = requires("e2label")
         cmd = "%s %s" % (cmd_path, partition.getPath())
         label = sysutils.run(cmd, capture=True)
@@ -117,6 +117,7 @@ class FileSystem:
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
         if not sysutils.run(cmd):
             return False
+        # Check label consistency
         if not self.getLabel(partition) == label:
             return False
         return label
@@ -175,9 +176,10 @@ class FileSystem:
                                 stderr="/tmp/resize.log")
 
         if res == 2:
-            raise FSError, _("FSCheck found some problems on partition %s and fixed them. You should restart the machine before starting the installation process !") % (partition.getPath())
+            raise FSError, _("""FSCheck found some problems on partition %s and fixed them. \
+                                You should restart the machine before starting the installation process !""" % (partition.getPath()))
         elif res > 2:
-            raise FSError, "FSCheck failed on %s" % (partition.getPath())
+            raise FSError, _("FSCheck failed on %s" % (partition.getPath()))
 
         return True
 
@@ -232,14 +234,13 @@ class FileSystem:
         """ Resize given partition as given size """
         if size_mb < self.minResizeMB(partition):
             return False
-
         cmd_path = requires("resize2fs")
 
-        res = sysutils.execClear("resize2fs",
-                                ["-f", partition.getPath(), "%sM" %(size_mb)],
-                                stdout="/tmp/resize.log",
-                                stderr="/tmp/resize.log")
-        if res:
+        # Check before resize
+        self.preResize(partition)
+
+        res = sysutils.run("resize2fs",["-f", partition.getPath(), "%sM" %(size_mb)])
+        if not res:
             raise FSError, "Resize failed on %s" % (partition.getPath())
         return True
 
