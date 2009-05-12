@@ -16,12 +16,22 @@ class Iface:
         Package Manager operations abstraction layer
     """
 
-    def __init__(self):
+    (SYSTEM, REPO) = range(2)
+
+    def __init__(self, source=REPO):
         """ Interface initialization """
+        self.source = source
+
+    def setSource(self, source):
+        """ set the package list info source """
         pass
 
     def getPackageList(self):
-        """ returns the package list from available repositories """
+        """ returns the package list """
+        pass
+
+    def getUpdates(self):
+        """ returns the upgradable package list """
         pass
 
     def getGroups(self):
@@ -40,10 +50,10 @@ class Iface:
         """ returns the package info """
         pass
 
-    def getDepends(self, packages, filters=None):
+    def getDepends(self, packages):
         """ returns the packages that the given packages depends """
         pass
 
-    def getRequires(self, packages, filters=None):
+    def getRequires(self, packages):
         """ returns the packages that the given packages required by """
         pass

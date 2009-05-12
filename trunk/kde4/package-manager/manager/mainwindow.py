@@ -20,6 +20,7 @@ from PyKDE4.kdecore import *
 from ui_mainwindow import Ui_MainWindow
 
 from mainwidget import MainWidget
+from statemanager import StateManager
 
 class MainWindow(KMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -34,13 +35,13 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         self.toolBar.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
 
         showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show New Packages"), self.toolBar)
-        self.connect(showInstallAction, SIGNAL("triggered()"), self.switchToInstallState)
+        self.connect(showInstallAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
 
         showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self.toolBar)
-        self.connect(showRemoveAction, SIGNAL("triggered()"), self.switchToRemoveState)
+        self.connect(showRemoveAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.REMOVE))
 
         showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self.toolBar)
-        self.connect(showUpgradeAction, SIGNAL("triggered()"), self.switchToUpgradeState)
+        self.connect(showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
 
         actionGroup = QtGui.QActionGroup(self.toolBar)
         for action in [showInstallAction, showRemoveAction, showUpgradeAction]:
@@ -49,13 +50,4 @@ class MainWindow(KMainWindow, Ui_MainWindow):
             self.menu_File.addAction(action)
 
     def updateStatusBar(self, indexes):
-        pass
-
-    def switchToInstallState(self):
-        pass
-
-    def switchToRemoveState(self):
-        pass
-
-    def switchToUpgradeState(self):
         pass

@@ -22,14 +22,13 @@ from ui_mainwidget import Ui_MainWidget
 from packageproxy import PackageProxy
 from packagemodel import PackageModel, GroupRole
 from packagedelegate import PackageDelegate
-
-import backend
+from statemanager import StateManager
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
-        self.iface = backend.pm.Iface()
+        self.state = StateManager(self)
         self.initialize()
 
     def initialize(self):
@@ -44,20 +43,24 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.setColumnWidth(0, 32)
         self.packageList.setAlternatingRowColors(True)
         self.packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
+        self.packageList.setPackages(self.state.packages())
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
                      lambda: self.emit(SIGNAL("selectionChanged(QModelIndexList)"),
                              self.packageList.selectionModel().selectedIndexes()))
 
     def initializeComponentList(self):
+        self.componentList.clear()
         self.componentList.setAlternatingRowColors(True)
         self.componentList.setIconSize(QSize(KIconLoader.SizeLarge, KIconLoader.SizeLarge))
-        for group in self.iface.getGroups():
+        for group in self.state.groups():
             self.createComponentItem(group)
         self.connect(self.componentList, SIGNAL("itemClicked(QListWidgetItem*)"), self.componentFilter)
 
     def createComponentItem(self, group):
         name, icon_path = group["name"], group["icon"]
-        package_count = len(self.iface.getGroupPackages(name))
+        package_count = len(self.state.groupPackages(name))
+        if not package_count:
+            return
         icon = QtGui.QIcon(KIconLoader().loadMimeTypeIcon(icon_path, KIconLoader.Desktop, KIconLoader.SizeSmallMedium))
         item = QtGui.QListWidgetItem(icon, "%s (%d)" % (name, package_count), self.componentList)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
@@ -68,6 +71,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.model().setFilterRegExp(QRegExp(unicode(text), Qt.CaseInsensitive, QRegExp.FixedString))
 
     def componentFilter(self, item):
-        packages = self.iface.getGroupPackages(item.data(Qt.UserRole).toString())
+        packages = self.state.groupPackages(item.data(Qt.UserRole).toString())
         self.packageList.model().setFilterRole(GroupRole)
         self.packageList.model().setFilterPackages(packages)
+
+    def switchState(self, state):
+        self.state.setState(state)
+        self.initialize()

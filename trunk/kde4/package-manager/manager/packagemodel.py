@@ -29,9 +29,7 @@ class PackageModel(QAbstractTableModel):
         QAbstractTableModel.__init__(self, parent)
         self.iface = backend.pm.Iface()
         self.cached_package = None
-        self.packages = self.iface.getPackageList()
-        self.package_selections = [Qt.Unchecked] * len(self.packages)
-        self.packages.sort(key=string.lower)
+        self.packages = []
 
     def rowCount(self, index=QModelIndex()):
         return len(self.packages)
@@ -76,6 +74,13 @@ class PackageModel(QAbstractTableModel):
             return Qt.ItemIsEnabled | Qt.ItemIsUserCheckable | QAbstractTableModel.flags(self, index)
         else:
             return Qt.ItemIsEnabled
+
+    def setPackages(self, packages):
+        self.cached_package = None
+        self.packages = packages
+        self.package_selections = [Qt.Unchecked] * len(self.packages)
+        self.packages.sort(key=string.lower)
+        self.reset()
 
     def package(self, index):
         if self.cached_package and self.cached_package.name == self.packages[index.row()]:
