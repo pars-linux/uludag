@@ -30,7 +30,6 @@ class MainManager(QtGui.QWidget):
         self.tweakUi()
 
         self.ops = {}
-        self.help = None
 
         self.cface = ComarIface()
         self.pface = PisiIface(self)
@@ -49,7 +48,6 @@ class MainManager(QtGui.QWidget):
         self.connect(self.ui.operationTB, SIGNAL("currentChanged(int)"), self.tabChanged)
         self.connect(self.ui.restoreTB, SIGNAL("clicked()"), self.takeBack)
         self.connect(self.ui.newSnapshotTB, SIGNAL("clicked()"), self.takeSnapshot)
-        self.connect(self.ui.helpTB, SIGNAL("clicked()"), self.showHelp)
         self.connect(self.ui.takeBackAction, SIGNAL("triggered()"), self.takeBack)
         self.connect(self.ui.copyAction, SIGNAL("triggered()"), self.copySelected)
 
@@ -225,13 +223,6 @@ class MainManager(QtGui.QWidget):
         self.listWidgetMenu.addAction(self.ui.copyAction)
         self.listWidgetMenu.addAction(i18n("Select All"), self.ui.listWidget.selectAll)
 
-    def showHelp(self):
-        if self.help == None:
-            self.help = HelpDialog(self)
-            self.help.show()
-        else:
-            self.help.show()
-
     def copySelected(self):
         cb = QApplication.clipboard()
 
@@ -269,5 +260,5 @@ class MainManager(QtGui.QWidget):
         return QtCore.QObject.eventFilter(self, obj, event)
 
     def enableButtons(self, true):
-        for val in ["restoreTB", "newSnapshotTB", "helpTB"]:
+        for val in ["restoreTB", "newSnapshotTB", "operationTB"]:
             exec('self.ui.%s.setEnabled(%s)' % (val, true))
