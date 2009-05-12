@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-30 15:58+0300\n"
+"POT-Creation-Date: 2009-05-12 16:30+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -40,8 +40,8 @@ msgid "System:"
 msgstr "System:"
 
 #: src/bm_mainview.py:171
-msgid "Root:"
-msgstr "Partycja systemowa:"
+msgid "Root (or UUID):"
+msgstr ""
 
 #: src/bm_mainview.py:180
 msgid "Kernel:"
@@ -59,24 +59,24 @@ msgstr "Ramdysk (initrd)"
 msgid "Set as default boot entry."
 msgstr "Ustaw jako domyślne."
 
-#: src/bm_mainview.py:282
+#: src/bm_mainview.py:285
 msgid "There must be at least one Pardus entry."
 msgstr "Musi być co najmniej jeden wpis Pardusa."
 
-#: src/bm_mainview.py:282
+#: src/bm_mainview.py:285
 msgid "Access Denied"
 msgstr "Odmowa Dostępu"
 
-#: src/bm_mainview.py:284
+#: src/bm_mainview.py:287
 #, fuzzy
 msgid "Are you sure you want to remove this entry from the boot loader?"
 msgstr "Czy na pewno chcesz usunąć ten wpis?"
 
-#: src/bm_mainview.py:284
+#: src/bm_mainview.py:287
 msgid "Delete Entry"
 msgstr "Skasuj Wpis"
 
-#: src/bm_mainview.py:290
+#: src/bm_mainview.py:293
 msgid ""
 "This is a Pardus kernel entry.\n"
 "Do you want to uninstall it from the system?"
@@ -84,15 +84,15 @@ msgstr ""
 "To jest wpis kernela Pardusa.\n"
 "Czy chcesz odinstalować go z systemu?"
 
-#: src/bm_mainview.py:290 src/bm_mainview.py:473
+#: src/bm_mainview.py:293 src/bm_mainview.py:476
 msgid "Uninstall Kernel"
 msgstr "Usuwanie Kernela"
 
-#: src/bm_mainview.py:373
+#: src/bm_mainview.py:376
 msgid "Failed"
 msgstr "Niepowodzenie"
 
-#: src/bm_mainview.py:398
+#: src/bm_mainview.py:401
 msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
@@ -100,43 +100,43 @@ msgstr ""
 "Te kernele są zainstalowane w systemie ale nie są wpisane w menedżerze "
 "rozruchu GRUB"
 
-#: src/bm_mainview.py:407
+#: src/bm_mainview.py:410
 msgid "Add Boot Entry"
 msgstr "Dodaj Wpis"
 
-#: src/bm_mainview.py:412
+#: src/bm_mainview.py:415
 msgid "Uninstall"
 msgstr "Usuń"
 
-#: src/bm_mainview.py:420
+#: src/bm_mainview.py:423
 msgid "Ok"
 msgstr "Tak"
 
-#: src/bm_mainview.py:473
+#: src/bm_mainview.py:476
 msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Czy chcesz usunąć zaznaczony/e kernel/e z systemu?"
 
-#: src/bm_mainview.py:545
+#: src/bm_mainview.py:548
 msgid "Unable to connect to DBus."
 msgstr "Nie można połączyć się z DBus."
 
-#: src/bm_mainview.py:545
+#: src/bm_mainview.py:548
 msgid "DBus Error"
 msgstr "Błąd DBus"
 
-#: src/bm_mainview.py:567 src/bm_mainview.py:594
+#: src/bm_mainview.py:569 src/bm_mainview.py:596
 msgid "You are not authorized for this operation."
 msgstr "Nie masz uprawnień do tej operacji."
 
-#: src/bm_mainview.py:573
+#: src/bm_mainview.py:575
 msgid "Waiting DBus..."
 msgstr "Oczekiwanie na DBus..."
 
-#: src/bm_mainview.py:573
+#: src/bm_mainview.py:575
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr "Połączenie z DBusem zostało zerwane, łączę ponownie..."
 
-#: src/bm_mainview.py:589
+#: src/bm_mainview.py:591
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
@@ -144,11 +144,11 @@ msgstr ""
 "Nie można połączyć się z DBus! Jeżeli nie działa to powinieneś uruchomić "
 "usługę 'service dbus start' jako root."
 
-#: src/bm_mainview.py:597
+#: src/bm_mainview.py:599
 msgid "COMAR Error"
 msgstr "Błąd COMAR"
 
-#: src/bm_mainview.py:611
+#: src/bm_mainview.py:613
 msgid "Bootloader configuration changed by another application."
 msgstr "Konfiguracja menedżera GRUB zmieniona przez inną aplikację."
 
@@ -175,6 +175,9 @@ msgstr "Edytuj wpis"
 #: src/ui_elements.py:96
 msgid "Delete entry"
 msgstr "Skasuj wpis"
+
+#~ msgid "Root:"
+#~ msgstr "Partycja systemowa:"
 
 #, fuzzy
 #~ msgid "Uninstall Kernel(s)"

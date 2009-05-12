@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-30 15:58+0300\n"
+"POT-Creation-Date: 2009-05-12 16:30+0300\n"
 "PO-Revision-Date: 2007-04-30 09:26+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>>\n"
@@ -40,8 +40,8 @@ msgid "System:"
 msgstr "Sistem:"
 
 #: src/bm_mainview.py:171
-msgid "Root:"
-msgstr "Kök Sürücü:"
+msgid "Root (or UUID):"
+msgstr ""
 
 #: src/bm_mainview.py:180
 msgid "Kernel:"
@@ -59,23 +59,23 @@ msgstr "Önyükleme Dosyası (Initrd):"
 msgid "Set as default boot entry."
 msgstr "Öntanımlı açılış kaydı olarak ata."
 
-#: src/bm_mainview.py:282
+#: src/bm_mainview.py:285
 msgid "There must be at least one Pardus entry."
 msgstr "En az bir Pardus girdisi olmalı."
 
-#: src/bm_mainview.py:282
+#: src/bm_mainview.py:285
 msgid "Access Denied"
 msgstr "Erişim Engellendi"
 
-#: src/bm_mainview.py:284
+#: src/bm_mainview.py:287
 msgid "Are you sure you want to remove this entry from the boot loader?"
 msgstr "Bu kaydı önyükleyici listesinden kaldırmak istediğinize emin misiniz?"
 
-#: src/bm_mainview.py:284
+#: src/bm_mainview.py:287
 msgid "Delete Entry"
 msgstr "Kaydı Sil"
 
-#: src/bm_mainview.py:290
+#: src/bm_mainview.py:293
 msgid ""
 "This is a Pardus kernel entry.\n"
 "Do you want to uninstall it from the system?"
@@ -83,60 +83,60 @@ msgstr ""
 "Bu bir Pardus çekirdek girdisi.\n"
 "Sistemden tamamen kaldırmak ister misiniz?"
 
-#: src/bm_mainview.py:290 src/bm_mainview.py:473
+#: src/bm_mainview.py:293 src/bm_mainview.py:476
 msgid "Uninstall Kernel"
 msgstr "Çekirdeği Sistemden Kaldır"
 
-#: src/bm_mainview.py:373
+#: src/bm_mainview.py:376
 msgid "Failed"
 msgstr "Başarısız"
 
-#: src/bm_mainview.py:398
+#: src/bm_mainview.py:401
 msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
 msgstr ""
 "Bu çekirdekler sisteminizde kurulu ancak önyükleyici listesinde bulunmuyor:"
 
-#: src/bm_mainview.py:407
+#: src/bm_mainview.py:410
 msgid "Add Boot Entry"
 msgstr "Açılış Girdisi Ekle"
 
-#: src/bm_mainview.py:412
+#: src/bm_mainview.py:415
 msgid "Uninstall"
 msgstr "Sistemden Kaldır"
 
-#: src/bm_mainview.py:420
+#: src/bm_mainview.py:423
 msgid "Ok"
 msgstr "Tamam"
 
-#: src/bm_mainview.py:473
+#: src/bm_mainview.py:476
 msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Seçilen çekirdekleri sistemden kaldırmak ister misiniz?"
 
-#: src/bm_mainview.py:545
+#: src/bm_mainview.py:548
 msgid "Unable to connect to DBus."
 msgstr "DBus'a bağlanılamadı."
 
-#: src/bm_mainview.py:545
+#: src/bm_mainview.py:548
 msgid "DBus Error"
 msgstr "DBus Hatası"
 
-#: src/bm_mainview.py:567 src/bm_mainview.py:594
+#: src/bm_mainview.py:569 src/bm_mainview.py:596
 msgid "You are not authorized for this operation."
 msgstr "Önyükleyici ayarlarını değiştirme izniniz yok."
 
-#: src/bm_mainview.py:573
+#: src/bm_mainview.py:575
 msgid "Waiting DBus..."
 msgstr "DBus bekleniyor..."
 
-#: src/bm_mainview.py:573
+#: src/bm_mainview.py:575
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
 "DBus bağlantısı beklenmedik bir şekilde kapandı, yeniden bağlanma "
 "deneniyor..."
 
-#: src/bm_mainview.py:589
+#: src/bm_mainview.py:591
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
@@ -144,11 +144,11 @@ msgstr ""
 "DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa root olarak konsol açıp "
 "'service dbus start' komutunu deneyebilirsiniz."
 
-#: src/bm_mainview.py:597
+#: src/bm_mainview.py:599
 msgid "COMAR Error"
 msgstr "COMAR Hatası"
 
-#: src/bm_mainview.py:611
+#: src/bm_mainview.py:613
 msgid "Bootloader configuration changed by another application."
 msgstr "Önyükleyici ayarları başka bir uygulama tarafından değiştirildi."
 
@@ -175,6 +175,9 @@ msgstr "Kaydı düzenle"
 #: src/ui_elements.py:96
 msgid "Delete entry"
 msgstr "Kaydı sil"
+
+#~ msgid "Root:"
+#~ msgstr "Kök Sürücü:"
 
 #, fuzzy
 #~ msgid "Uninstall Kernel(s)"
