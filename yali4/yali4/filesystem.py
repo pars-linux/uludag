@@ -338,8 +338,7 @@ class SwapFileSystem(FileSystem):
         FileSystem.__init__(self)
         self.setImplemented(True)
 
-        # override name: system wants "swap" whereas parted needs
-        # linux-swap
+        # override name: system wants "swap" whereas parted needs linux-swap
         self._name = "swap"
 
     def format(self, partition):
