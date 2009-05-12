@@ -1,0 +1,152 @@
+# User Manager.
+# Copyright (C) 2006-2009, TÜBİTAK/UEKAE
+# This file is distributed under the same license as the User Manager package.
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: User Manager 2.90\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-12 23:14+0300\n"
+"PO-Revision-Date: 2009-05-12 13:34+0300\n"
+"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/about.py:19 .tmp/about.py:21
+msgid "User Manager"
+msgstr "Kullanıcı Yöneticisi"
+
+#: .tmp/about.py:23
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/about.py:24
+msgid " "
+msgstr " "
+
+#: .tmp/about.py:31
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/about.py:31
+msgid "Current Maintainer"
+msgstr "Şu anki geliştirici"
+
+#: .tmp/edit.py:155
+msgid "There has to be at least one group selected."
+msgstr ""
+
+#: .tmp/main.py:85
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
+"Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
+
+#: .tmp/main.py:186
+msgid "Users"
+msgstr "Kullanıcılar"
+
+#: .tmp/main.py:187 .tmp/ui_edituser.py:191
+msgid "Groups"
+msgstr "Gruplar"
+
+#: .tmp/main.py:188
+msgid "All Users"
+msgstr "Tüm Kullanıcılar"
+
+#: .tmp/main.py:189
+msgid "All Groups"
+msgstr "Tüm Gruplar"
+
+#: .tmp/main.py:200
+msgid "Add User"
+msgstr "Kullanıcı Ekle"
+
+#: .tmp/main.py:205
+msgid "Add Group"
+msgstr "Grup Ekle"
+
+#: .tmp/main.py:296
+msgid "Do you want to delete user '%1' (%2)?"
+msgstr "'%1' (%2) kullanıcısı silinsin mi?"
+
+#: .tmp/main.py:302
+msgid "Do you want to delete group '%1'?"
+msgstr "'%1' grubu silinsin mi?"
+
+#: .tmp/ui_editgroup.py:78
+msgid "Group Information"
+msgstr "Grup Bilgisi"
+
+#: .tmp/ui_editgroup.py:79
+msgid "Group Name:"
+msgstr "Grup İsmi:"
+
+#: .tmp/ui_editgroup.py:80 .tmp/ui_edituser.py:180
+msgid "No.:"
+msgstr "No.:"
+
+#: .tmp/ui_editgroup.py:81 .tmp/ui_edituser.py:181
+msgid "Auto"
+msgstr "Otomatik"
+
+#: .tmp/ui_edituser.py:176
+msgid "User Information"
+msgstr "Kullanıcı Bilgisi"
+
+#: .tmp/ui_edituser.py:177
+msgid "Full Name:"
+msgstr "Tam İsim:"
+
+#: .tmp/ui_edituser.py:178
+msgid "Password:"
+msgstr "Parola:"
+
+#: .tmp/ui_edituser.py:179
+msgid "Password (Again):"
+msgstr "Parola (Tekrar):"
+
+#: .tmp/ui_edituser.py:182
+msgid "Username:"
+msgstr "Kullanıcı Adı:"
+
+#: .tmp/ui_edituser.py:183
+msgid "Home Directory:"
+msgstr "Ev Dizini:"
+
+#: .tmp/ui_edituser.py:184
+msgid "Shell:"
+msgstr "Kabuk:"
+
+#: .tmp/ui_edituser.py:185
+msgid "Give administrator rights."
+msgstr "Yönetici hakları ver."
+
+#: .tmp/ui_edituser.py:186
+msgid "Use system settings."
+msgstr "Sistem ayarlarını kullan."
+
+#: .tmp/ui_edituser.py:187
+msgid "Authorize user."
+msgstr "Kullanıcıyı yetkilendir."
+
+#: .tmp/ui_edituser.py:188
+msgid "Deny user."
+msgstr "Kullanıcıya izin verme."
+
+#: .tmp/ui_edituser.py:189
+msgid "Authorizations"
+msgstr "Yetkiler"
+
+#: .tmp/ui_edituser.py:190
+msgid "Main Group:"
+msgstr "Ana Grup"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Yeni Ekle"
