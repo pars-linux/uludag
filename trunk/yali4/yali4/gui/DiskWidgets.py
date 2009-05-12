@@ -110,6 +110,7 @@ class DiskList(QtGui.QWidget):
             cur.updatePartEdit()
 
     def reinitDevices(self):
+        self.resetChanges()
         self.initDevices(force=True)
         self.update()
         self.formatTypeChanged()
@@ -276,7 +277,12 @@ class DiskList(QtGui.QWidget):
         currentPart = self.partEdit.currentPart
         dev.deletePartition(currentPart)
 
-        _sum = {"partition":currentPart.getFSLabel() or currentPart.getName(),
+        try:
+            label = currentPart.getFSLabel()
+        except YaliException, e:
+            label = currentPart.getName()
+
+        _sum = {"partition":label,
                 "size":currentPart.getSizeStr(),
                 "device":dev.getModel()}
         ctx.partSum.append(_("Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%(device)s</b>.") % _sum)
