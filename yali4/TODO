@@ -22,6 +22,7 @@
      - Add eject cd-rom support when pisi fails
          > Clear cache before ejecting the cd with : "echo 3 > /proc/sys/vm/drop_caches"
          > Use "eject -m" for ejecting without umount
+     - Use Bios Boot order if available for sorting device list
 
  Partitioning
  --------------------------------------------------------
