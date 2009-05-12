@@ -13,8 +13,8 @@
   <property name="windowTitle">
    <string notr="true">MainWidget</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_7">
-   <item row="0" column="0">
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
     <widget class="QFrame" name="frameList">
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -65,7 +65,7 @@
      </layout>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item>
     <widget class="QFrame" name="frameEdit">
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
