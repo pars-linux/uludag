@@ -3,8 +3,6 @@
 <xcb header="nvctrl" extension-xname="NV-CONTROL" extension-name="NV-CONTROL"
     major-version="1" minor-version="16">
 
-	<import>xproto</import>
-
 	<enum name="Attributes">
 		<item name="PROBE_DISPLAYS"><value>234</value></item>
 	</enum>
