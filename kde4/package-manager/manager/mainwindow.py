@@ -32,9 +32,15 @@ class MainWindow(KMainWindow, Ui_MainWindow):
 
     def initializeActions(self):
         self.toolBar.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
+
         showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show New Packages"), self.toolBar)
+        self.connect(showInstallAction, SIGNAL("triggered()"), self.switchToInstallState)
+
         showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self.toolBar)
+        self.connect(showRemoveAction, SIGNAL("triggered()"), self.switchToRemoveState)
+
         showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self.toolBar)
+        self.connect(showUpgradeAction, SIGNAL("triggered()"), self.switchToUpgradeState)
 
         actionGroup = QtGui.QActionGroup(self.toolBar)
         for action in [showInstallAction, showRemoveAction, showUpgradeAction]:
@@ -43,4 +49,13 @@ class MainWindow(KMainWindow, Ui_MainWindow):
             self.menu_File.addAction(action)
 
     def updateStatusBar(self, indexes):
+        pass
+
+    def switchToInstallState(self):
+        pass
+
+    def switchToRemoveState(self):
+        pass
+
+    def switchToUpgradeState(self):
         pass
