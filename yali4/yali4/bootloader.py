@@ -255,7 +255,7 @@ quit
 
         file('/tmp/_grub','w').write(batch_template)
         ctx.debugger.log("IG: Batch content : %s" % batch_template)
-        cmd = "%s --batch < /tmp/_grub" % yali4.sysutils.find_executable("grub")
+        cmd = "%s --no-floppy --batch < /tmp/_grub" % yali4.sysutils.find_executable("grub")
 
         ctx.debugger.log("IG: Chrooted jobs are finalizing.. ")
         # before installing the bootloader we have to finish chrooted jobs..

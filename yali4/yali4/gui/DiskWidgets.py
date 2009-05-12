@@ -323,6 +323,10 @@ class DiskList(QtGui.QWidget):
                     flags = list(set(flags) - set([parted.PARTITION_BOOT]))
                 partition.setPartedFlags(flags)
                 partition.setFileSystemType(t.filesystem)
+
+                # If selected partition's fs is different from the old one we need to commit this
+                if not partition._fsname == t.filesystem._name:
+                    disk._needs_commit = True
             try:
                 if self.partEdit.ui.formatCheck.isChecked():
                     _sum = {"partition":partition.getName(),
