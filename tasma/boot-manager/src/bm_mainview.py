@@ -168,7 +168,7 @@ class widgetEditEntry(QWidget):
         layout.addItem(spacer, 3, 1)
 
         self.labelRoot = QLabel(self)
-        self.labelRoot.setText(i18n("Root:"))
+        self.labelRoot.setText(i18n("Root (or UUID):"))
         layout.addMultiCellWidget(self.labelRoot, 4, 4, 0, 1)
 
         self.editRoot = QLineEdit(self)
@@ -245,6 +245,9 @@ class widgetEditEntry(QWidget):
 
         self.listSystem.setCurrentText(unicode(systems[entry["os_type"]][0]))
         self.slotSystem(unicode(systems[entry["os_type"]][0]))
+
+        if entry.has_key("uuid"):
+            entry["root"] = entry["uuid"]
 
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
             if label in entry:
