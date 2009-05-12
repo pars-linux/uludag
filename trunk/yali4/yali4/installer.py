@@ -599,8 +599,8 @@ class Yali:
             yali4.sysutils.umount_("/tmp/pcheck")
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/archive"))
             yali4.sysutils.umount_(ctx.consts.target_dir + "/mnt/archive")
-            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/home"))
-            yali4.sysutils.umount_(ctx.consts.target_dir + "/mnt/home")
+            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
+            yali4.sysutils.umount_(ctx.consts.target_dir + "/home")
         except:
             ctx.debugger.log("Umount Failed ")
 
