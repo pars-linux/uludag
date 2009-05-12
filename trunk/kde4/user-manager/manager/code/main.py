@@ -168,9 +168,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Checks if item matches selected filter.
         """
         filter = str(self.comboFilter.itemData(self.comboFilter.currentIndex()).toString())
-        if filter == "users" and (item.getType() == "group" or item.getId() < 1000):
+        if filter == "users" and (item.getType() == "group" or item.getId() < 1000 or item.getId() > 65000):
             return False
-        elif filter == "groups" and (item.getType() == "user" or item.getId() < 1000):
+        elif filter == "groups" and (item.getType() == "user" or item.getId() < 1000 or item.getId() > 65000):
             return False
         elif filter == "all-users" and item.getType() == "group":
             return False
