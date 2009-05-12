@@ -344,7 +344,7 @@ class Device:
         if (parted.PARTITION_BOOT in flags) and self.hasBootablePartition():
             flags = list(set(flags) - set([parted.PARTITION_BOOT]))
 
-        size = int(size_mb * MEGABYTE / self._sector_size)
+        size = int((size_mb * MEGABYTE) / self._sector_size)
 
         if not part:
             part = self.__getLargestFreePedPartition()
@@ -413,7 +413,7 @@ class Device:
     # @returns: Partition
     def __addToPartitionsDict(self, part, fs_ready=True):
         geom = part.geom
-        part_mb = long((geom.end - geom.start + 1) * self._sector_size / MEGABYTE)
+        part_mb = long(((geom.end - geom.start + 1) * self._sector_size) / MEGABYTE)
         if part.num >= 1:
             fs_name = ""
             if part.fs_type:

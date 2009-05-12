@@ -66,6 +66,7 @@ about disk partitioning.
         self.enable_next = False
         self.isAutoResizeAvail = False
         self.lastChoice = self.ui.accept_auto_1
+        self.scannedBefore = False
 
         # initialize all storage devices
         if not yali4.storage.init_devices():
@@ -102,6 +103,9 @@ about disk partitioning.
 
     def shown(self):
 
+        if self.scannedBefore:
+            return
+
         # scan partitions for resizing
         self.toggleAll()
         ctx.yali.scanPartitions(self)
@@ -131,6 +135,8 @@ about disk partitioning.
             self.ui.accept_auto_2.toggle()
         if ctx.installData.autoPartMethod == methodManual:
             self.slotSelectManual()
+        
+        self.scannedBefore = True
         self.update()
 
     def execute(self):

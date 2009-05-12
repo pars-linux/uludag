@@ -170,7 +170,11 @@ class DiskList(QtGui.QWidget):
             if partitionType:
                 for fs in partitionType.supportedFileSystems:
                     self.partEdit.ui.fileSystemBox.addItem(fs.name())
-            fsId = self.partEdit.ui.fileSystemBox.findText(self.partEdit.currentPart.getFSName())
+            # Force to select ext4 by default for ext3 partitions
+            key = self.partEdit.currentPart.getFSName()
+            if key == 'ext3':
+                key = 'ext4'
+            fsId = self.partEdit.ui.fileSystemBox.findText(key)
             if fsId < 0:
                 fsId = 0
             self.partEdit.ui.fileSystemBox.setCurrentIndex(fsId)
@@ -666,7 +670,10 @@ class PartEdit(QtGui.QWidget):
             for i in range(len(partitionTypes)):
                 if partitionTypes[i] == partitionType:
                     self.ui.formatType.setCurrentIndex(i)
-            self.ui.fileSystemBox.setCurrentIndex(self.ui.fileSystemBox.findText(part.getFSName()))
+            key = part.getFSName()
+            if part.getFSName() == 'linux-swap':
+                key = 'swap'
+            self.ui.fileSystemBox.setCurrentIndex(self.ui.fileSystemBox.findText(key))
         else:
             self.isPartitionUsed = False
 

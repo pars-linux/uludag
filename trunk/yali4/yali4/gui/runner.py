@@ -71,6 +71,12 @@ class Runner:
         # Creating the installer
         ctx.yali = yali4.installer.Yali(install_type, install_plugin)
 
+        # These shorcuts for developers :)
+        prevScreenShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F1),self._window.ui)
+        nextScreenShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F2),self._window.ui)
+        QObject.connect(prevScreenShortCut, SIGNAL("activated()"), self._window.slotBack)
+        QObject.connect(nextScreenShortCut, SIGNAL("activated()"), self._window.slotNext)
+
         # yimirtaShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F5),self._window.ui)
         # QObject.connect(yimirtaShortCut, SIGNAL("activated()"), ctx.yali.toggleYimirta)
 

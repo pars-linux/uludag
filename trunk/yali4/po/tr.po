@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-11 17:27+0300\n"
+"POT-Creation-Date: 2009-05-12 20:43+0300\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -515,7 +515,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "GPL Metnini Oku"
 
-#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:168
+#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:174
 msgid "Reboot System!"
 msgstr "Sistemi Yeniden Başlat!"
 
@@ -534,10 +534,10 @@ msgstr "Hata Ayıkla"
 #: yali4/gui/descSlide.py:18
 msgid ""
 "Welcome! Our improved setup tool YALI will help you with the installation of "
-"Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
+"Pardus 2009. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
 msgstr ""
-"Merhaba! Yenilenen kurulum aracımız YALI, Pardus 2008'in kurulumunda sizlere "
+"Merhaba! Yenilenen kurulum aracımız YALI, Pardus 2009'un kurulumunda sizlere "
 "yardımcı olacak. YALI, akıllı disk biçimlendirme aracı ile sisteminizi "
 "bölümlendirdikten sonra, Pardus 2008'i bilgisayarınıza hızlı ve sorunsuz bir "
 "şekilde kurmanızı sağlayacak.\n"
@@ -589,11 +589,11 @@ msgstr ""
 #: yali4/gui/descSlide.py:28
 msgid ""
 "Mozilla Firefox, with its speed, constant development and many advanced "
-"features, will help securely surf the Internet. Pardus 2008 includes Mozilla "
+"features, will help securely surf the Internet. Pardus 2009 includes Mozilla "
 "Firefox 3.0, and you can enrich Firefox with thousands of extensions.\n"
 msgstr ""
 "Hızı, sürekli yenilenmesi ve diğer birçok gelişmiş özelliği ile Mozilla "
-"Firefox, İnternet'te güvenli bir şekilde gezinmenizi sağlar. Pardus 2008 ile "
+"Firefox, İnternet'te güvenli bir şekilde gezinmenizi sağlar. Pardus 2009 ile "
 "gelen yeni nesil Mozilla Firefox 3.0'ı onlarca farklı eklenti ile "
 "zenginleştirebilirsiniz.\n"
 
@@ -622,11 +622,11 @@ msgstr ""
 #: yali4/gui/descSlide.py:34
 msgid ""
 "Gimp is an advanced image editing application that comes preinstalled with "
-"Pardus 2008. Gimp allows editing all common image file formats and has "
+"Pardus 2009. Gimp allows editing all common image file formats and has "
 "extensive abilities that will meet professional graphic artists' and "
 "designers' needs.\n"
 msgstr ""
-"Pardus 2008 ile gelen Gimp, gelişmiş bir resim düzenleme yazılımıdır. Yaygın "
+"Pardus 2009 ile gelen Gimp, gelişmiş bir resim düzenleme yazılımıdır. Yaygın "
 "bütün grafik dosya biçimleriyle çalışmayı mümkün kılan Gimp, profesyonel "
 "grafiker ve tasarımcıların ihtiyaçlarına cevap verecek yeteneklere "
 "sahiptir.\n"
@@ -644,12 +644,12 @@ msgstr ""
 
 #: yali4/gui/descSlide.py:38
 msgid ""
-"Kaffeine is the default video player of Pardus 2008. It has a high "
+"Kaffeine is the default video player of Pardus 2009. It has a high "
 "performance in playing DVDs, VCDs, and countless video file formats, "
 "including, but not limited to, MPEG, AVI and DivX. If you have a digital TV "
 "card, you can record your favourite TV programs using Kaffeine!\n"
 msgstr ""
-"Kaffeine, Pardus 2008'in öntanımlı video oynatıcısıdır. DVD ve VCD'lerin "
+"Kaffeine, Pardus 2009'un öntanımlı video oynatıcısıdır. DVD ve VCD'lerin "
 "yanı sıra MPEG, AVI, DivX gibi sayısız video dosya biçimini büyük bir "
 "başarımla oynatmanızı sağlar. Eğer sayısal TV kartınız varsa Kaffeine ile "
 "sevdiğiniz TV programlarının video kaydını yapabilirsiniz!\n"
@@ -678,7 +678,7 @@ msgstr ""
 msgid ""
 "You can find HOW-TOs, tutorials and package introductions in our community "
 "portal www.ozgurlukicin.com. If you happen to have any problems with Pardus "
-"2008, you can get support using the forum pages and the #pardus room in IRC "
+"2009, you can get support using the forum pages and the #pardus room in IRC "
 "Freenode server (and you can use Konversation for that).\n"
 msgstr ""
 "Kurulumdan sonra, ilk adımlar, nasıl yapılır belgeleri, paket tanıtımları "
@@ -691,36 +691,36 @@ msgstr ""
 msgid "Manual Partitioning selected."
 msgstr "Elle Bölümlendirme seçildi."
 
-#: yali4/gui/DiskWidgets.py:183
+#: yali4/gui/DiskWidgets.py:187
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
 msgstr "'Sistem Dosyaları' bölümü en az %s MB olmalı."
 
-#: yali4/gui/DiskWidgets.py:213 yali4/gui/ScrBootloader.py:67
-#: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:72
+#: yali4/gui/DiskWidgets.py:217 yali4/gui/ScrBootloader.py:67
+#: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:73
 msgid "Can't find a storage device!"
 msgstr "Kurulum için disk bulunamadı!"
 
-#: yali4/gui/DiskWidgets.py:229
+#: yali4/gui/DiskWidgets.py:233
 #, python-format
 msgid "%0.1f GB free"
 msgstr "%0.1f GB boş"
 
-#: yali4/gui/DiskWidgets.py:231
+#: yali4/gui/DiskWidgets.py:235
 #, python-format
 msgid "%d MB free"
 msgstr "%d MB boş"
 
-#: yali4/gui/DiskWidgets.py:251 yali4/gui/GUIAdditional.py:146
+#: yali4/gui/DiskWidgets.py:255 yali4/gui/GUIAdditional.py:146
 #, python-format
 msgid "Partition %d"
 msgstr "Disk bölümü %d"
 
-#: yali4/gui/DiskWidgets.py:258
+#: yali4/gui/DiskWidgets.py:262
 msgid "Free Space"
 msgstr "Boş Alan"
 
-#: yali4/gui/DiskWidgets.py:278
+#: yali4/gui/DiskWidgets.py:282
 #, python-format
 msgid ""
 "Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%"
@@ -729,11 +729,11 @@ msgstr ""
 "Disk bölümü <b>%(partition)s (%(size)s)</b>, <b>%(device)s</b> aygıtından "
 "<b>silindi</b>."
 
-#: yali4/gui/DiskWidgets.py:311 yali4/partitionrequest.py:181
+#: yali4/gui/DiskWidgets.py:315 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
 msgstr "Bu bölüm tipi için daha önceden bir alan ayrılmış."
 
-#: yali4/gui/DiskWidgets.py:330
+#: yali4/gui/DiskWidgets.py:338
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
@@ -741,16 +741,16 @@ msgstr ""
 "Disk bölümü <b>%(partition)s</b>, <b>%(fsType)s</b> tipinde "
 "<b>biçimlendirilecek</b>."
 
-#: yali4/gui/DiskWidgets.py:345 yali4/gui/ScrSummary.py:161
+#: yali4/gui/DiskWidgets.py:353 yali4/gui/ScrSummary.py:161
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr "Disk bölümü <b>%(partition)s</b> <b>%(type)s</b> için <b>seçildi</b>."
 
-#: yali4/gui/DiskWidgets.py:364
+#: yali4/gui/DiskWidgets.py:372
 msgid "Too many primary partition !"
 msgstr "Çok fazla birincil bölüm !"
 
-#: yali4/gui/DiskWidgets.py:365
+#: yali4/gui/DiskWidgets.py:373
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
@@ -758,11 +758,11 @@ msgstr ""
 "GPT Disk tabloları extended disk bölümlerini desteklememektedir.\n"
 "Disk tablonuzdan bir disk bölümü silmeniz gerekmekte !"
 
-#: yali4/gui/DiskWidgets.py:389
+#: yali4/gui/DiskWidgets.py:397
 msgid "Too many primary partitions !"
 msgstr "Çok fazla birincil bölüm !"
 
-#: yali4/gui/DiskWidgets.py:390
+#: yali4/gui/DiskWidgets.py:398
 msgid ""
 "You need to delete one of the primary or extended(if exists) partition from "
 "your disk table !"
@@ -771,7 +771,7 @@ msgstr ""
 "bölümünüzü\n"
 "silmeniz gerekmekte !"
 
-#: yali4/gui/DiskWidgets.py:406 yali4/gui/ScrSummary.py:160
+#: yali4/gui/DiskWidgets.py:414 yali4/gui/ScrSummary.py:160
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -780,27 +780,27 @@ msgstr ""
 "Disk bölümü <b>%(partition)s</b>, <b>%(device)s</b> diskine <b>%(size)s MB</"
 "b> boyutuyla ve <b>%(fs)s</b> dosya sistemi ile eklendi."
 
-#: yali4/gui/DiskWidgets.py:432
+#: yali4/gui/DiskWidgets.py:440
 msgid "Delete All Partitions"
 msgstr "Tüm Disk Bölümlerini Sil"
 
-#: yali4/gui/DiskWidgets.py:509
+#: yali4/gui/DiskWidgets.py:517
 msgid "Pardus will install here"
 msgstr "Pardus buraya kurulacak"
 
-#: yali4/gui/DiskWidgets.py:512
+#: yali4/gui/DiskWidgets.py:520
 msgid "User files will store here"
 msgstr "Kullanıcı dosyaları burada saklanacak"
 
-#: yali4/gui/DiskWidgets.py:515
+#: yali4/gui/DiskWidgets.py:523
 msgid "Swap will be here"
 msgstr "Takas burada olacak"
 
-#: yali4/gui/DiskWidgets.py:518
+#: yali4/gui/DiskWidgets.py:526
 msgid "Backup or archive files will store here"
 msgstr "Yedek ya da arşiv dosyaları burada saklanacak"
 
-#: yali4/gui/DiskWidgets.py:539
+#: yali4/gui/DiskWidgets.py:547
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -811,7 +811,7 @@ msgstr ""
 "                                  <b>Boyut:</b> %s<br>\n"
 "                                  <b>DosyaSistemi:</b> %s%s"
 
-#: yali4/gui/DiskWidgets.py:569 yali4/gui/ScrSummary.py:159
+#: yali4/gui/DiskWidgets.py:577 yali4/gui/ScrSummary.py:159
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Disk aygıtı <b>%(device)s</b> üzerindeki tüm disk bölümleri silindi."
@@ -851,11 +851,11 @@ msgstr "Lisans dosyası açılamıyor!"
 msgid "Can't open Release Notes!"
 msgstr "Sürüm Notları dosyası açılamıyor!"
 
-#: yali4/gui/runner.py:129
+#: yali4/gui/runner.py:135
 msgid "Error!"
 msgstr "Hata!"
 
-#: yali4/gui/runner.py:163
+#: yali4/gui/runner.py:169
 msgid "Unhandled error occured!"
 msgstr "Bir hata oluştu!"
 
@@ -1306,7 +1306,7 @@ msgstr ""
 "</p> \n"
 "</font>\n"
 
-#: yali4/gui/ScrPartitionAuto.py:80
+#: yali4/gui/ScrPartitionAuto.py:81
 #, python-format
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
@@ -1683,7 +1683,7 @@ msgstr ""
 msgid "FSCheck failed on %s"
 msgstr "%s bölümü için dosya sistemi kontrolü başarısız"
 
-#: yali4/filesystem.py:405
+#: yali4/filesystem.py:404
 msgid "Partition is not ready for resizing. Check it before installation."
 msgstr ""
 "Disk bölümü yeniden boyutlandırma için hazır değil. Kurulumdan önce kontrol "
@@ -1995,4 +1995,3 @@ msgstr "Genel veri saklama için"
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "<b>%s</b> kullanıcısının ev dizini ayarlanıyor.."
-
