@@ -193,9 +193,9 @@ class FileSystem:
         reserved_percentage = int(math.ceil(100.0 * 100.0 / partition.getMB()))
 
         # Use hashed b-trees to speed up lookups in large directories
-        cmd = "%s -O dir_index -j -m %d %s" % (cmd_path,
-                                              reserved_percentage,
-                                              partition.getPath())
+        cmd = "%s -O dir_index -q -j -m %d %s" % (cmd_path,
+                                                  reserved_percentage,
+                                                  partition.getPath())
 
         res = sysutils.run(cmd)
         if not res:
@@ -226,7 +226,7 @@ class FileSystem:
             total_blocks = capture(lines, 'Block count')
             free_blocks  = capture(lines, 'Free blocks')
             block_size   = capture(lines, 'Block size')
-            return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 150
+            return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 140
         except Exception:
             return 0
 
@@ -239,7 +239,7 @@ class FileSystem:
         # Check before resize
         self.preResize(partition)
 
-        res = sysutils.run("resize2fs",["-f", partition.getPath(), "%sM" %(size_mb)])
+        res = sysutils.run("resize2fs",[partition.getPath(), "%sM" %(size_mb)])
         if not res:
             raise FSError, "Resize failed on %s" % (partition.getPath())
         return True
@@ -442,11 +442,10 @@ class NTFSFileSystem(FileSystem):
         cmd_path = requires("ntfsresize")
         cmd = "%s -f -i %s" % (cmd_path, partition.getPath())
         lines = os.popen(cmd).readlines()
-        MB = parteddata.MEGABYTE
         _min = 0
         for l in lines:
             if l.startswith("You might resize"):
-                _min = int(l.split()[4]) / MB + 140
+                _min = int(l.split()[4]) / parteddata.MEGABYTE + 140
 
         return _min
 

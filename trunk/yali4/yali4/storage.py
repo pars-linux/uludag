@@ -372,7 +372,7 @@ class Device:
     ##
     # add a partition starting from a given geom...
     def addPartitionFromStart(self, type, fs, start, size_mb, flags = []):
-        size = int(size_mb * MEGABYTE / self._sector_size)
+        size = int((size_mb * MEGABYTE) / self._sector_size)
         return self.addPartitionStartEnd(type, fs, start, start + size, flags)
 
     ##
@@ -450,12 +450,6 @@ class Device:
         self.update()
 
     def resizePartition(self, fs, size_mb, part):
-
-        # maximum cylinder size currently is less than 140 MB hence
-        # this extra size should be always enough.
-        #
-        # see: http://mlf.linux.rulez.org/mlf/ezaz/ntfsresize.html
-        size_mb += 150
 
         if isinstance(fs, str):
             # a string... get the corresponding FileSystem object
