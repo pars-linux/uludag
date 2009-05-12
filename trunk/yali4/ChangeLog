@@ -1,3 +1,48 @@
+2009-05-12 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * New release 2.1.4
+         * Fixed important partitioning issues
+         * Do not scan partitions more than once for resizing
+         * Force to use ext4 for ext* formatted partitions
+         * Fix swap filesystem selection issue
+
+2009-05-12 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * We dont need a junk of 150 MB .. 2 MB is enough.
+
+2009-05-12 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Enable safety checks of resize2fs
+         * Use quiet for mkfs.extX
+         * Do not add another 140 MB hence to avoid resize problems of NTFS
+
+2009-05-12 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * If selected partition's filesystem is different from the old one we need to commit this change
+         * Fix wrong /home path for umount
+         * Use --no-floppy with grub command
+
+2009-05-11 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Some testcases added to test Yalı ..
+
+2009-05-11 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Some format commands needs a large buffer to get whole stdout
+         * so, we should use popen.communicate and popen.poll to avoid blocking the system
+
+2009-05-11 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Call check functions before starting to resize
+         * Localize resize fail messages
+
+2009-05-08 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Use default FileSystems for Auto Partitioning..
+
+2009-05-08 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * New release 2.1.3
+
+2009-05-08 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Progress bar animation disabled because of a bug of Qt
+
+2009-05-08 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * We should set on swap after label set
+         * We dont need debugger anymore in seperate places
+         * Comment added to http://bugs.pardus.org.tr/9233
+
 2009-05-08 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * User can choose FileSystem for each partition that we support \o/
 
