@@ -492,7 +492,9 @@ class StorageList(oject):
             log.debug("_cmp %d -- %s | %s" % (ret, action1, action2))
             
             return ret            
-                             
+
+        log.debug("sorting actions")
+        self._actions.sort(cmp=_cmp)                   
         for action in self._actions:
             log.debug("action:%s" % action)
         
