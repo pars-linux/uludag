@@ -111,6 +111,21 @@ class Action(object):
     def isFormat(self):
         return self.obj == OBJECT_FORMAT
     
+    def __str__(self):
+        s = "%s %s" %(type_from_string(self.type), object_from_string(self.obj))
+        if self.isResize():
+            s+= " %s" % resize_type_from_string(self.dir)
+        if self.isFormat():
+            if self.device.format.type:
+                class_type = self.device.format.type
+            else:
+                class_type = None
+            s += " %s on" % class_type
+        
+        s += " %s (%s)" % (self.device.name, self.device.type)
+        
+        return s
+    
 class CreateDevice(Action):
     type = TYPE_CREATE
     obj = OBJECT_STORAGE
