@@ -20,3 +20,7 @@ class PackageView(QtGui.QTreeView):
 
     def isIndexHidden(self, index):
         return False
+
+    def setPackages(self, packages):
+        self.model().sourceModel().setPackages(packages)
+

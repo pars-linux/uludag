@@ -16,16 +16,27 @@ import pisi
 
 class Iface:
 
-    def __init__(self):
+    (SYSTEM, REPO) = range(2)
+
+    def __init__(self, source=REPO):
+        self.source = source
+
+        # init databases
         self.pdb  = pisi.db.packagedb.PackageDB()
         self.cdb  = pisi.db.componentdb.ComponentDB()
         self.idb  = pisi.db.installdb.InstallDB()
 
-    def getPackageList(self):
-        return pisi.api.list_available()
+    def setSource(self, source):
+        self.source = source
 
-    def getPackage(self, name):
-        return self.pdb.get_package(name)
+    def getPackageList(self):
+        if self.source == self.REPO:
+            return pisi.api.list_available()
+        else:
+            return pisi.api.list_installed()
+
+    def getUpdates(self):
+        return pisi.api.list_upgradable()
 
     def getGroups(self):
         _groups = []
@@ -43,13 +54,19 @@ class Iface:
     def getGroupComponents(self, name):
         return groups.getGroupComponents(name)
 
-    def getDepends(self, packages, filters=None):
+    def getPackage(self, name):
+        if self.source == self.REPO:
+            return self.pdb.get_package(name)
+        else:
+            return self.idb.get_package(name)
+
+    def getDepends(self, packages):
         if not self.idb.has_package(packages[0]):
             deps = set(pisi.api.get_install_order(packages))
         else:
             deps = set(pisi.api.get_upgrade_order(packages))
         return list(set(deps) - set(packages))
 
-    def getRequires(self, packages, filters=None):
+    def getRequires(self, packages):
         revDeps = set(pisi.api.get_remove_order(packages))
         return list(set(revDeps) - set(packages))
