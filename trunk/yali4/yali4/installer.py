@@ -332,7 +332,7 @@ class Yali:
         _part = ctx.installData.autoPartPartition
         part = _part["partition"]
 
-        newPartSize = int(_part["newSize"]/2)
+        newPartSize = int(_part["newSize"]/2) - 2
         ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
         ctx.debugger.log("UA: resizing to : %s " % (int(part.getMB()) - newPartSize))
 
@@ -355,7 +355,7 @@ class Yali:
         _newPart = dev.addPartition(None,
                                     ptype,
                                     parttype.root.filesystem,
-                                    newPartSize - 150,
+                                    newPartSize,
                                     parttype.root.parted_flags,
                                     newStart)
 
