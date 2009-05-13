@@ -25,15 +25,15 @@ import logging
 log = logging.getLogger("pare")
 
 class StorageList(oject):
-    def __init__(self, ignoredDisk = [], reinitializeDisks=None, clear=[], protected=[]):
+    def __init__(self, ignored = [], reinitializeDisks=None, clear=[], protected=[]):
         self._devices = []
         self._actions = []
         
         self.clearPartDisks = clear
         self.protectedPartitions = protected
         self.reinitializeDisks = reinitializeDisks
-        self._ignoredDisks = []
-        for disk in ignoredDisk:
+        self.ignoredDisks = []
+        for disk in ignored:
             self.addIgnoredDisk(disk)
         
     def _add(self, new):
@@ -79,7 +79,7 @@ class StorageList(oject):
                 disk.format = format
                 
     def addIgnoredDisk(self, disk):
-        self._ignoredDisks.append(disk)
+        self.ignoredDisks.append(disk)
         #FIXME: when lvm is came up add this lvmm filtering ;)
         
     def isIgnored(self, info):

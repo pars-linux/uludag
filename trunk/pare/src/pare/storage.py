@@ -630,3 +630,23 @@ class Partition(Storage):
             return maxSize
         else:
             return self.format.maxSize
+        
+    
+class DeviceMapper(Storage):
+    type = "dm"
+    _devDir = "/dev/mapper"
+    
+    def __init__(self, name, format, size=None, uuid=None, target=None, exists=None, parents=None, sysfsPath=''):
+        """
+            name -- device node base name
+            
+            target -- 
+            format --
+            size -- 
+            uuid --
+            target --
+            exists --
+            parents -- 
+            sysfsPath
+        """
+        pass

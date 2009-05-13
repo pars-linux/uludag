@@ -179,7 +179,7 @@ class CreateFormat(Action):
     type = TYPE_CREATE
     obj = OBJECT_FORMAT
     
-    def __init__(self, device, format):
+    def __init__(self, device, format=None):
         Action.__init__(self, device)
         self.origFormat = device.format
         if self.device.format.exists:
