@@ -33,11 +33,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state = StateManager(self)
         self.lastSelectedGroup = None
         self.initialize()
+        self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
 
     def initialize(self):
         self.initializePackageList()
         self.initializeComponentList()
-        self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
 
     def initializePackageList(self):
         self.packageList.setModel(PackageProxy(self))
@@ -83,13 +83,15 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def selectionChanged(self):
         self.emit(SIGNAL("selectionChanged(QModelIndexList)"), self.packageList.selectionModel().selectedIndexes())
 
+    def disconnectSignals(self):
+        self.disconnect(self.componentList, SIGNAL("itemClicked(QListWidgetItem*)"), self.componentFilter)
+        self.disconnect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.selectionChanged)
+
     def switchState(self, state):
         try:
             waitCursor()
             self.state.setState(state)
-            self.disconnect(self.componentList, SIGNAL("itemClicked(QListWidgetItem*)"), self.componentFilter)
-            self.disconnect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.selectionChanged)
-            self.initializePackageList()
-            self.initializeComponentList()
+            self.disconnectSignals()
+            self.initialize()
         finally:
             restoreCursor()
