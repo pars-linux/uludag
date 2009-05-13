@@ -242,11 +242,6 @@
          </property>
          <column>
           <property name="text">
-           <string notr="true">State</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
            <string notr="true">Policy</string>
           </property>
          </column>
