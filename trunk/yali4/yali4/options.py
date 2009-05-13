@@ -21,12 +21,15 @@ class Options(object):
         parser.add_option("-d", "--debug", dest="debug",
                           action="store_true", default="False",
                           help="enable debug")
-        parser.add_option("-r", "--dryRun", dest="dryRun",
+        parser.add_option("-q", "--dryRun", dest="dryRun",
                           action="store_true", default="False",
                           help="only show the result")
         parser.add_option("-f", "--firstBoot", dest="firstBoot",
                           action="store_true", default="False",
                           help="start with first boot options")
+        parser.add_option("-r", "--rescue", dest="rescueMode",
+                          action="store_true", default="False",
+                          help="start Yali with rescue mode")
         parser.add_option("-k", "--kahyaFile", dest="kahyaFile",
                           help="run with Kahya file", metavar="FILE")
         parser.add_option("-K", "--useKahyaDefault", dest="useKahya",

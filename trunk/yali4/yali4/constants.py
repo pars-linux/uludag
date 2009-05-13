@@ -101,6 +101,9 @@ consts.defaultKahyaFile = join(consts.data_dir,"data/default.xml")
 consts.oemInstallParam = "oeminstall"
 consts.oemInstallFile = join(consts.data_dir,"data/firstBoot.xml")
 
+# rescue mode parameter for cmdline
+consts.rescueModeParam = "rescue"
+
 # pisi index files
 consts.pisiIndexFile = join(consts.data_dir,"data/pisi-index.xml.bz2")
 consts.pisiIndexFileSum = join(consts.data_dir,"data/pisi-index.xml.bz2.sha1sum")

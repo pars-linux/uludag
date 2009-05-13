@@ -31,12 +31,7 @@ from yali4.gui.debugger import DebuggerAspect
 
 # mainScreen
 import YaliWindow
-
-YALI_INSTALL, \
-        YALI_FIRSTBOOT, \
-        YALI_OEMINSTALL, \
-        YALI_PLUGIN, \
-        YALI_PARTITIONER = range(5)
+from yali4.gui.installdata import *
 
 ##
 # Runner creates main GUI components for installation...
@@ -63,6 +58,10 @@ class Runner:
         # check for oemInstall
         if yali4.sysutils.checkYaliParams(param=ctx.consts.oemInstallParam):
             install_type = YALI_OEMINSTALL
+
+        # check for rescue Mode
+        if ctx.options.rescueMode == True or yali4.sysutils.checkYaliParams(param=ctx.consts.rescueModeParam):
+            install_type = YALI_RESCUE
 
         install_plugin = yali4.sysutils.checkYaliOptions("plugin") or ctx.options.plugin or None
         if install_plugin:
