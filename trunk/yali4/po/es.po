@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-12 20:43+0300\n"
-"PO-Revision-Date: 2009-04-22 19:34-0400\n"
+"PO-Revision-Date: 2009-05-12 21:03-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -87,7 +87,7 @@ msgid ""
 "a device to proceed your choice. <br>Device list will be updated for "
 "selected method."
 msgstr ""
-"Aquí puede elegir uno de los métodos de particionamiento, y luego un "
+"Aquí puede elegir el método de particionamiento, y luego un "
 "dispositivo donde se aplicará. <br>La lista de dispositivos se actualizará "
 "según el método seleccionado."
 
@@ -96,8 +96,7 @@ msgid "Automatic"
 msgstr "Automático"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Esta opción intentará encontrar espacio adecuado disponible, o particiones "
 "que se puedan redimensionar"
@@ -174,7 +173,7 @@ msgstr ""
 "\n"
 "<p>Si no instala un cargador de arranque o elige su instalación a la "
 "partición raíz (/), tendrá que configurar el cargador de sistema ya "
-"instalado (si hay) para poder iniciar\n"
+"instalado (si tiene uno) para poder iniciar\n"
 " la nueva instalación de Pardus.</p>"
 
 #: yali4/gui/Ui/bootloaderwidget.py:82
@@ -192,6 +191,7 @@ msgstr "Instalar a partición raíz (/) de Pardus"
 
 # when writing the english you seemed very romantic ? ;)
 # should say "BELOW" in english !! - "belove" sounds funny
+# still funny in english.. ortography
 #: yali4/gui/Ui/bootloaderwidget.py:85
 msgid "Install to selected disk belove"
 msgstr "Instalar a disco seleccionado abajo"
@@ -367,7 +367,7 @@ msgstr "Sistema de Archivos :"
 # favor revisar..
 #: yali4/gui/Ui/partedit.py:156
 msgid "Changes will be applied when you finish.."
-msgstr "Se realizarán los cambios cuando usted termina.."
+msgstr "Se aplicarán los cambios cuando usted termina.."
 
 #: yali4/gui/Ui/partedit.py:157
 msgid "Refresh Disks"
@@ -545,19 +545,15 @@ msgstr "No Acepto !"
 msgid "Debug"
 msgstr "Depurar"
 
-# maybe check in english the sequence of operations (for this description)..
-# because partitioning goes FIRST, after accepting the settings for instalation..
-# partitioning follows .. what ?
 #: yali4/gui/descSlide.py:18
-#, fuzzy
+# here it says still Pardus 2008 in the english text !! please check in english !!
 msgid ""
 "Welcome! Our improved setup tool YALI will help you with the installation of "
 "Pardus 2009. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
 msgstr ""
 "Bienvenido! Nuestro asistente de instalación YALI le ayudará instalar Pardus "
-"2008 de manera rápida y sencilla, seguido del particionamiento de disco(s) "
-"con la herramienta inteligente de particionamiento.\n"
+"2009. El asistente le guiará de manera rápida y sencilla, tras establecer las particiones para la instalación con la herramienta inteligente de particionamiento de disco(s).\n"
 
 #: yali4/gui/descSlide.py:20
 msgid ""
@@ -605,20 +601,15 @@ msgstr ""
 "volver a conectarse a conexiones de cable o inalambricas, recordando las "
 "configuraciones previas.\n"
 
-# i changed in spanish ".. with thousands of extensions" to "with a variety of extensions"
-# (Firefox might get into big trouble if you apply all extension you find, better only pick the ones you want)
-# i suggest you should take out the Pardus and Firefox version NUMBERS !!
-# to avoid required changes, when the versions change..
 #: yali4/gui/descSlide.py:28
-#, fuzzy
 msgid ""
 "Mozilla Firefox, with its speed, constant development and many advanced "
 "features, will help securely surf the Internet. Pardus 2009 includes Mozilla "
 "Firefox 3.0, and you can enrich Firefox with thousands of extensions.\n"
 msgstr ""
 "Mozilla Firefox, con mejora en velocidad, desarrollo permanente y muchas "
-"características avanzadas, le permitirá navegar en internet de manera "
-"seguro. Pardus 2008 viene con Mozilla Firefox 3.0, y se puede aumentar las "
+"características avanzadas, le permite navegar en internet de manera "
+"seguro. Mozilla Firefox 3.0 está incluído en Pardus 2009, y se puede aumentar las "
 "funcionalidades de Firefox con una gran variedad de extensiones.\n"
 
 #: yali4/gui/descSlide.py:30
@@ -646,14 +637,13 @@ msgstr ""
 "de datos.\n"
 
 #: yali4/gui/descSlide.py:34
-#, fuzzy
 msgid ""
 "Gimp is an advanced image editing application that comes preinstalled with "
 "Pardus 2009. Gimp allows editing all common image file formats and has "
 "extensive abilities that will meet professional graphic artists' and "
 "designers' needs.\n"
 msgstr ""
-"Gimp es un programa avanzado de edición de imágenes. Con Gimp puede editar "
+"Gimp es un programa avanzado de edición de imágenes instalado en Pardus 2009. Con Gimp puede editar "
 "todos los formatos de imágenes comunes y puede realizar funciones avanzadas "
 "requeridas por artistas y diseñadores gráficos profesionales.\n"
 
@@ -668,14 +658,13 @@ msgstr ""
 "sugerirle medios similares, y así ofrecerle más alternativas.\n"
 
 #: yali4/gui/descSlide.py:38
-#, fuzzy
 msgid ""
 "Kaffeine is the default video player of Pardus 2009. It has a high "
 "performance in playing DVDs, VCDs, and countless video file formats, "
 "including, but not limited to, MPEG, AVI and DivX. If you have a digital TV "
 "card, you can record your favourite TV programs using Kaffeine!\n"
 msgstr ""
-"Kaffeine es el reproductor predeterminado de video en Pardus 2008. Tiene un "
+"Kaffeine es el reproductor predeterminado de video en Pardus 2009. Tiene un "
 "alto rendimiento en la reproducción de DVDs, VCDs, y una serie de formatos "
 "de video, incluyendo, pero no limitado a, MPEG, AVI y DivX. Si posee una "
 "tarjeta de TV digital puede grabar sus programas favoritos con Kaffeine!\n"
@@ -702,7 +691,6 @@ msgstr ""
 
 # translators, please add here some additional non-turkish websites/forums..
 #: yali4/gui/descSlide.py:44
-#, fuzzy
 msgid ""
 "You can find HOW-TOs, tutorials and package introductions in our community "
 "portal www.ozgurlukicin.com. If you happen to have any problems with Pardus "
@@ -711,7 +699,7 @@ msgid ""
 msgstr ""
 "Puede encontrar HOW-TOs, tutoriales e introducciones a los paquetes entrando "
 "en nuestro portal de la comunidad www.ozgurlukicin.com o http://worldforum."
-"pardus-linux.nl/. Si tiene algún problema o inconveniente con Pardus 2008 "
+"pardus-linux.nl/. Si tiene algún problema o inconveniente con Pardus 2009 "
 "puede recibir soporte usando el foro y la sala #pardus en el servidor "
 "Freenode IRC (puede usar el programa Konversation para este fin).\n"
 
@@ -765,18 +753,15 @@ msgstr "Hay una petición para el mismo tipo de partición."
 
 #: yali4/gui/DiskWidgets.py:338
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr ""
-"Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr "Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
 
 # favor verificar contexto,
 # check context, should this say "format as.." instead o "selected as .." ?
 #: yali4/gui/DiskWidgets.py:353 yali4/gui/ScrSummary.py:161
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr "Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 # in english: use plural !! - should say "partitions"
 #: yali4/gui/DiskWidgets.py:372
@@ -788,7 +773,7 @@ msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
-"GPT Disk tables no tiene soporte para particiones extendidas.\n"
+"Tablas de particiones GPT no tienen soporte para particiones extendidas.\n"
 "Usted debería eliminar una de las particiones primarias de su lista de "
 "particiones !"
 
@@ -828,7 +813,7 @@ msgstr "Aquí se va a instalar la raiz (/) de Pardus"
 msgid "User files will store here"
 msgstr "Aquí se guardarán los archivos de los usuarios"
 
-# how long my the translated text be ??
+# how long may the translated text be ??
 #: yali4/gui/DiskWidgets.py:523
 msgid "Swap will be here"
 msgstr "Aquí estará el espacio de intercambio (Swap)"
@@ -964,8 +949,7 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
@@ -975,8 +959,7 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:128
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:133
 msgid ""
@@ -1051,12 +1034,11 @@ msgstr ""
 # favor revisar, suena raro, porque hay un solo cd para verificar !!
 #: yali4/gui/ScrCheckCD.py:29
 msgid "Check your media"
-msgstr "Verifique su CD"
+msgstr "Verifique el CD instalador"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr ""
-"Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1078,8 +1060,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
+msgstr "<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1163,7 +1144,7 @@ msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:72
 msgid "Running post install operations.."
-msgstr "Ejecutando operaciónes post-instal.."
+msgstr "Ejecutando operaciones post-instal.."
 
 #: yali4/gui/ScrGoodbye.py:91
 msgid "<b>Rebooting system. Please wait!</b>"
@@ -1469,7 +1450,7 @@ msgstr ""
 "<font size=\"+2\">Resumen de Instalación</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Aqui se presentan las opciones establecidas para la instalación, para que "
+"Aqui se presentan las opciones establecidos para la instalación, para que "
 "las pueda verificar antes de iniciar el proceso de la instalación.\n"
 "</p>\n"
 "</font>\n"
@@ -1485,7 +1466,7 @@ msgstr "Instalación inicia en : <b>%s seg.</b>"
 
 #: yali4/gui/ScrSummary.py:120
 msgid "Keyboard Settings"
-msgstr "Configuración de Teclado"
+msgstr "Teclado"
 
 #: yali4/gui/ScrSummary.py:121
 #, python-format
@@ -1503,7 +1484,7 @@ msgstr "Zona horaria <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:131
 msgid "User Settings"
-msgstr "Configuración de Usuarios"
+msgstr "Usuarios"
 
 # is this grammer right ? "added"
 #: yali4/gui/ScrSummary.py:133
@@ -1514,8 +1495,7 @@ msgstr "Usuario %s (<b>%s</b>) agregado."
 #: yali4/gui/ScrSummary.py:135
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
-msgstr ""
-"Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
+msgstr "Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
 
 #: yali4/gui/ScrSummary.py:141
 msgid "Hostname Settings"
@@ -1528,7 +1508,7 @@ msgstr "Nombre de la Máquina (hostname) <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:148
 msgid "Partition Settings"
-msgstr "Configuración de Particiones"
+msgstr "Particiones"
 
 #: yali4/gui/ScrSummary.py:150
 msgid "Automatic Partitioning selected."
@@ -1561,12 +1541,11 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:186
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr "Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:201
 msgid "Bootloader Settings"
-msgstr "Configuración del Cargador de arranque"
+msgstr "Cargador de arranque"
 
 #: yali4/gui/ScrSummary.py:202
 #, python-format
@@ -1666,7 +1645,6 @@ msgstr ""
 "<font color=\"#FF6D19\">No use el nombre de usuario o su nombre real como "
 "contraseña !</font>"
 
-# Las contraseñas no coinciden!
 #: yali4/gui/ScrUsers.py:148
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
 msgstr "<font color=\"#FF6D19\">Las contraseñas no coinciden!</font>"
@@ -1689,8 +1667,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
+msgstr "<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
 
 #: yali4/gui/ScrUsers.py:241
 msgid "Update User"
@@ -1775,12 +1752,12 @@ msgid ""
 "FSCheck found some problems on partition %s and fixed "
 "them.                                 You should restart the machine before "
 "starting the installation process !"
-msgstr ""
+msgstr "FSCheck encontró algunos problemas en partición %s y los arregló.                                 Es recomendable reiniciar la computadora y volver a ejecutar el proceso de instalación !"
 
 #: yali4/filesystem.py:182
-#, fuzzy, python-format
+#, python-format
 msgid "FSCheck failed on %s"
-msgstr "Verificación fallada"
+msgstr "FSCheck fallado en %s"
 
 #: yali4/filesystem.py:404
 msgid "Partition is not ready for resizing. Check it before installation."
@@ -2102,11 +2079,3 @@ msgstr "Área de almacenamiento"
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Preparando directorio home de usuario <b>%s</b>.."
 
-#~ msgid "Ext3"
-#~ msgstr "Ext3"
-
-#~ msgid "NTFS"
-#~ msgstr "NTFS"
-
-#~ msgid "Fat 32"
-#~ msgstr "Fat 32"
