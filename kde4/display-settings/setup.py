@@ -46,8 +46,6 @@ class UpdateMessages(install):
 
 class Install(install):
     def run(self):
-        install.run(self)
-
         if not self.root:
             self.root = "/"
 
