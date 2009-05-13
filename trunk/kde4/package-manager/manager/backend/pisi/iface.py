@@ -31,7 +31,7 @@ class Iface:
 
     def getPackageList(self):
         if self.source == self.REPO:
-            return pisi.api.list_available()
+            return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(pisi.api.list_replaces().values()) )
         else:
             return pisi.api.list_installed()
 

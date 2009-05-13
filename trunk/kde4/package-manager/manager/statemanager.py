@@ -21,19 +21,23 @@ class StateManager():
         self.parent = parent
         self.state = self.INSTALL
         self.iface = backend.pm.Iface()
+        self.cached_packages = None
 
     def setState(self, state):
         self.state = state
+        self.cached_packages = None
         if self.state == self.REMOVE:
             self.iface.setSource(self.iface.SYSTEM)
         else:
             self.iface.setSource(self.iface.REPO)
 
     def packages(self):
-        if self.state == self.UPGRADE:
-            return self.iface.getUpdates()
-        else:
-            return self.iface.getPackageList()
+        if self.cached_packages == None:
+            if self.state == self.UPGRADE:
+                self.cached_packages = self.iface.getUpdates()
+            else:
+                self.cached_packages = self.iface.getPackageList()
+        return self.cached_packages
 
     def groups(self):
         return self.iface.getGroups()
