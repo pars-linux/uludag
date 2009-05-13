@@ -13,7 +13,7 @@ from errors import LVMError
 import sysutils
 import gettext
 
-_ = lambda x: gettext.ldgettext("storage", x)
+_ = lambda x: gettext.ldgettext("pare", x)
 
 MAX_LV_SLOTS = 256
 
