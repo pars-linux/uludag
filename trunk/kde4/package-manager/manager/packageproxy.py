@@ -53,3 +53,7 @@ class PackageProxy(QtGui.QSortFilterProxyModel):
     def setFilterPackages(self, packages):
         self.__filteredPackages = set(packages)
         self.invalidateFilter()
+
+    def reset(self):
+        self.__modelCache = {}
+        QtGui.QSortFilterProxyModel.reset(self)

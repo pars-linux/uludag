@@ -23,4 +23,4 @@ class PackageView(QtGui.QTreeView):
 
     def setPackages(self, packages):
         self.model().sourceModel().setPackages(packages)
-
+        self.model().reset()
