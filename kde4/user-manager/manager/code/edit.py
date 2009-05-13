@@ -26,6 +26,9 @@ from ui_editgroup import Ui_EditGroupWidget
 # Utilities
 from utility import nickGuess
 
+# PolicyKit
+import polkit
+
 
 class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
     def __init__(self, parent):
@@ -34,6 +37,9 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
         # List of unavailable nicks
         self.nicklist = []
+
+        # Build policy list
+        self.buildPolicies()
 
         self.connect(self.checkAutoId, QtCore.SIGNAL("stateChanged(int)"), self.slotCheckAuto)
         self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.slotFulnameChanged)
@@ -49,6 +55,13 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.setPassword()
         self.lineUsername.setEnabled(True)
         self.lineHomeDir.setEnabled(True)
+
+    def buildPolicies(self):
+        for action_id in polkit.action_list():
+            if action_id.startswith("tr.org.pardus.comar."):
+                info = polkit.action_info(action_id)
+                item = QtGui.QTreeWidgetItem(self.treeAuthorizations)
+                item.setText(0, unicode(info["description"]))
 
     def isNew(self):
         return self.spinId.isEnabled() or self.checkAutoId.isVisible()
