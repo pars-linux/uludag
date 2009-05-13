@@ -9,13 +9,11 @@
 #
 # Please read the COPYING file.
 
-# Device types :)
-# _type = ("disk", "partition", "luks", "vg", "lv", "pv", "raidarray", "raidmember")
 
 import parted
 import _ped
-from sysutils import notify_kernel
-from udev import udev_settle
+from pare.sysutils import notify_kernel
+from pare.udev import udev_settle
 import logging
 log = logging.getLogger("pare")
 
