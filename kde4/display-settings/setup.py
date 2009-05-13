@@ -11,6 +11,7 @@
 
 import os
 import re
+import sys
 import glob
 import shutil
 
@@ -45,35 +46,50 @@ class UpdateMessages(install):
 
 class Install(install):
     def run(self):
-        if self.root:
-            kde_dir = "%s/usr/kde/4" % self.root
-        else:
-            kde_dir = "/usr/kde/4"
+        install.run(self)
+
+        if not self.root:
+            self.root = "/"
+
+        kde_dir = os.path.join(self.root, "usr/kde/4")
+        xcb_dir = os.path.join(self.root, "usr/lib/python%d.%d/site-packages/xcb" % sys.version_info[:2])
+
         bin_dir = os.path.join(kde_dir, "bin")
         project_dir = os.path.join(kde_dir, "share/apps", PROJECT)
         service_dir = os.path.join(kde_dir, "share/kde4/services")
         locale_dir = os.path.join(kde_dir, "share/locale")
+
         print "Making directories..."
         try:
+            os.makedirs(xcb_dir)
             os.makedirs(project_dir)
             os.makedirs(service_dir)
             os.makedirs(locale_dir)
         except OSError:
             pass
+
         # Copy compiled UIs and RC
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
             os.system("/usr/kde/4/bin/pykde4uic -o %s/%s.py ui/%s" % (project_dir, filename.split(".")[0], filename))
         print "Copying UIs..."
         os.system("/usr/bin/pyrcc4 icons/data.qrc -o %s/data_rc.py" % project_dir)
+
         # Copy service file
         print "Copying desktop files..."
         for filename in glob.glob1("src", "*.desktop"):
             shutil.copy("src/%s" % filename, service_dir)
+
         # Copy codes
         print "Copying Python files..."
         for filename in glob.glob1("src", "*.py"):
             shutil.copy("src/%s" % filename, project_dir)
+
+        print "Copying xcb bindings..."
+        for filename in glob.glob1("xcb", "*.xml"):
+            os.system("python xcb/py_client.py xcb/%s" % filename)
+            shutil.move("%s.py" % os.path.splitext(filename)[0], xcb_dir)
+
         # Copy locales
         print "Copying locales..."
         for filename in glob.glob1("po", "*.po"):
@@ -84,9 +100,11 @@ class Install(install):
             except OSError:
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
+
         # Rename
         print "Renaming main.py..."
         shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % PROJECT))
+
         # Symlink
         print "Creating symlinks..."
         if not os.path.exists(os.path.join(project_dir, "%s.py" % PROJECT)):
