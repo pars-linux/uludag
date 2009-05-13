@@ -33,11 +33,15 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state = StateManager(self)
         self.lastSelectedGroup = None
         self.initialize()
+
         self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
+        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.selectionChanged)
+        self.connect(self.componentList, SIGNAL("itemClicked(QListWidgetItem*)"), self.componentFilter)
 
     def initialize(self):
         self.initializePackageList()
         self.initializeComponentList()
+        self.ensureGroupSelected()
 
     def initializePackageList(self):
         self.packageList.setModel(PackageProxy(self))
@@ -47,28 +51,37 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.setAlternatingRowColors(True)
         self.packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
         self.packageList.setPackages(self.state.packages())
-        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.selectionChanged)
 
     def initializeComponentList(self):
         self.componentList.clear()
         self.componentList.setAlternatingRowColors(True)
         self.componentList.setIconSize(QSize(KIconLoader.SizeLarge, KIconLoader.SizeLarge))
+
         for group in self.state.groups():
             self.createComponentItem(group)
-        self.connect(self.componentList, SIGNAL("itemClicked(QListWidgetItem*)"), self.componentFilter)
 
     def createComponentItem(self, group):
         name, icon_path = group["name"], group["icon"]
+
         package_count = len(self.state.groupPackages(name))
-        if not package_count:
+        if package_count == 0:
             return
+
         icon = QtGui.QIcon(KIconLoader().loadMimeTypeIcon(icon_path, KIconLoader.Desktop, KIconLoader.SizeSmallMedium))
         item = QtGui.QListWidgetItem(icon, "%s (%d)" % (name, package_count), self.componentList)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
-        if self.lastSelectedGroup == name:
-            self.componentList.setCurrentItem(item)
-            self.componentFilter(item)
+
+        if str(self.lastSelectedGroup) == name:
+            self.selectLastGroup(item)
+
+    def selectLastGroup(self, item):
+        self.componentList.setCurrentItem(item)
+        self.componentFilter(item)
+
+    def ensureGroupSelected(self):
+        if self.componentList.currentRow() == -1 and self.componentList.count():
+            self.selectLastGroup(self.componentList.itemAt(0, 0))
 
     def packageFilter(self, text):
         self.packageList.model().setFilterRole(Qt.DisplayRole)
@@ -83,15 +96,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def selectionChanged(self):
         self.emit(SIGNAL("selectionChanged(QModelIndexList)"), self.packageList.selectionModel().selectedIndexes())
 
-    def disconnectSignals(self):
-        self.disconnect(self.componentList, SIGNAL("itemClicked(QListWidgetItem*)"), self.componentFilter)
-        self.disconnect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.selectionChanged)
-
     def switchState(self, state):
         try:
             waitCursor()
             self.state.setState(state)
-            self.disconnectSignals()
             self.initialize()
         finally:
             restoreCursor()
