@@ -29,6 +29,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
         self.state = StateManager(self)
+        self.lastSelectedGroup = None
         self.initialize()
 
     def initialize(self):
@@ -63,13 +64,17 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         item = QtGui.QListWidgetItem(icon, "%s (%d)" % (name, package_count), self.componentList)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
+        if self.lastSelectedGroup == name:
+            self.componentList.setCurrentItem(item)
+            self.componentFilter(item)
 
     def packageFilter(self, text):
         self.packageList.model().setFilterRole(Qt.DisplayRole)
         self.packageList.model().setFilterRegExp(QRegExp(unicode(text), Qt.CaseInsensitive, QRegExp.FixedString))
 
     def componentFilter(self, item):
-        packages = self.state.groupPackages(item.data(Qt.UserRole).toString())
+        self.lastSelectedGroup = item.data(Qt.UserRole).toString()
+        packages = self.state.groupPackages(self.lastSelectedGroup)
         self.packageList.model().setFilterRole(GroupRole)
         self.packageList.model().setFilterPackages(packages)
 
