@@ -23,7 +23,8 @@ YALI_INSTALL, \
         YALI_FIRSTBOOT, \
         YALI_OEMINSTALL, \
         YALI_PLUGIN, \
-        YALI_PARTITIONER = range(5)
+        YALI_PARTITIONER, \
+        YALI_RESCUE = range(6)
 
 class InstallData:
     keyData = None
