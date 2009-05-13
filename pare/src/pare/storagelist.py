@@ -24,8 +24,8 @@ _ = lambda x: gettext.ldgettext("pare", x)
 import logging
 log = logging.getLogger("pare")
 
-class StorageList(oject):
-    def __init__(self, ignored = [], reinitializeDisks=None, clear=[], protected=[]):
+class StorageList(object):
+    def __init__(self, ignored=[], reinitializeDisks=None, clear=[], protected=[]):
         self._devices = []
         self._actions = []
         
