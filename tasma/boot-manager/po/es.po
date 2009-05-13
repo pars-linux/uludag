@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-12 16:30+0300\n"
-"PO-Revision-Date: 2009-04-07 19:54-0400\n"
+"PO-Revision-Date: 2009-05-12 20:25-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Sistema:"
 
 #: src/bm_mainview.py:171
 msgid "Root (or UUID):"
-msgstr ""
+msgstr "Raíz (o UUID):"
 
 #: src/bm_mainview.py:180
 msgid "Kernel:"
@@ -181,5 +181,3 @@ msgstr "Editar entrada"
 msgid "Delete entry"
 msgstr "Eliminar entrada"
 
-#~ msgid "Root:"
-#~ msgstr "Root (Raíz del sistema):"
