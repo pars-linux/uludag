@@ -10,9 +10,9 @@
 # Please read the COPYING file
 
 import os
-from sysutils import notify_kernel, get_sysfs_path_by_name
-from utils.dm import dm_node_from_name
-from errors import FormatCreateError
+from pare.sysutils import notify_kernel, get_sysfs_path_by_name
+from pare.utils.dm import dm_node_from_name
+from pare.errors import FormatCreateError
 
 import logging
 log = logging.getLogger("pare")
