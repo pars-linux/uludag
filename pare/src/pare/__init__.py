@@ -27,11 +27,10 @@ class Pare(object):
         self.clearPartdisks = []
         self.protectedPartitions = []
         
-        self.storageList = StorageList.__init__(self,
-                                                ignored = self.ignoredDisks,
-                                                reinitializeDisks=self.reinitializeDisks,
-                                                clear=self.clearPartdisks,
-                                                protected=self.protectedPartitions)
+        self.storageList = StorageList(ignored=self.ignoredDisks,
+                                       reinitializeDisks=self.reinitializeDisks,
+                                       clear=self.clearPartdisks,
+                                       protected=self.protectedPartitions)
     def setup(self):
         self.storageList.process()
     
