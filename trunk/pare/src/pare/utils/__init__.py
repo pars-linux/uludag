@@ -1,5 +1,3 @@
-from pisi import Exception
-import os.path
 # -*- coding: utf-8 -*-
 #
 # Copyright (C) 2005-2009, TUBITAK/UEKAE
