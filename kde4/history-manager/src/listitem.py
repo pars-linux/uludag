@@ -9,8 +9,13 @@ from PyKDE4.kdecore import *
 from uiitem import Ui_HistoryItemWidget
 
 class HistoryItem(QListWidgetItem):
-    def __init__(self, parent):
+    def __init__(self, parent, no):
         QListWidgetItem.__init__(self, parent)
+
+        self.no = no
+
+    def __cmp__(self, other):
+        return cmp(int(self.no), int(other.no))
 
 class NewOperation(QWidget):
     def __init__(self, operation, parent=None):

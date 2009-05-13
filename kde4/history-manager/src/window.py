@@ -70,7 +70,7 @@ class MainManager(QtGui.QWidget):
             items = self.ops.items()
 
         for (k, v) in items:
-            item = HistoryItem(self.ui.lw)
+            item = HistoryItem(self.ui.lw, v.no)
             item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
             item.setSizeHint(QSize(38,48))
             self.ui.lw.setItemWidget(item, NewOperation(v, self))
