@@ -27,10 +27,11 @@ class ComarIface:
 class PisiIface(QThread):
     """ Pisi Api Interface """
 
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, maxfetch=None):
         super(PisiIface, self).__init__(parent)
         self.parent = parent
 
+        self.max_fetch = maxfetch
         self.pdb = pisi.db.historydb.HistoryDB()
         self.pdb.init()
 
@@ -38,8 +39,14 @@ class PisiIface(QThread):
 
     def run(self):
         self.parent.ops = {}
+        cntr = 0
         for operation in self.pdb.get_last():
             self.parent.ops[operation.no] = operation
+            cntr += 1
+            if self.max_fetch != None:
+                if cntr == self.max_fetch:
+                    self.emit(SIGNAL("loadFetched(PyQt_PyObject)"), self.max_fetch)
+                    break
 
     def historyPlan(self, op):
         return pisi.api.get_takeback_plan(op)
