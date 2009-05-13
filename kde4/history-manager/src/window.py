@@ -84,10 +84,6 @@ class MainManager(QtGui.QWidget):
             self.parent.move(self.mapToGlobal(self.settings.value("pos").toPoint()))
             self.parent.resize(self.settings.value("size").toSize())
 
-        if self.animator.state() != 0:
-            self.animatorFinishHook.append(self.refreshBrowser)
-            return
-
         self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
         self.parent.setWindowIcon(QtGui.QIcon(":/icons/history-manager.png"))
         self.ui.progressBar.hide()
@@ -123,12 +119,12 @@ class MainManager(QtGui.QWidget):
         self.ui.lw.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
     def loadDetails(self):
+        self.status(i18n("Loading operation details.."))
+
         self.ui.textEdit.clear()
         item = self.sender().parent()
 
         self.ui.editGroup.setTitle("Details for operation on %s at %s" % (item.op_date, item.op_time))
-        self.status(i18n("Loading operation details.."))
-        QCoreApplication.processEvents()
 
         message = ""
         if item.op_type == "snapshot":
@@ -138,7 +134,6 @@ class MainManager(QtGui.QWidget):
                 message += "- %s\n" % val
 
         self.ui.textEdit.setText(message)
-        self.status(i18n("Ready .."))
 
         self.lastAnimation = SHOW
         self.hideScrollBars()
@@ -146,14 +141,17 @@ class MainManager(QtGui.QWidget):
         self.animator.setFrameRange(TARGET_HEIGHT, self.parent.height() - TARGET_HEIGHT)
         self.animator.start()
 
+        self.status(i18n("Ready .."))
+
     def loadPlan(self):
+        self.status(i18n("Loading Operation Plan"))
+
         self.ui.textEdit.clear()
         self.lastAnimation = SHOW
         self.hideScrollBars()
 
         item = self.sender().parent()
 
-        self.status(i18n("Loading Operation Plan"))
         QCoreApplication.processEvents()
 
         willbeinstalled, willberemoved = self.pface.historyPlan(item.op_no)
@@ -167,9 +165,6 @@ class MainManager(QtGui.QWidget):
                     information += "<br><br><b> %s </b><br>" % i
                     for j in configs.get(i):
                         information += "%s \n" % ("/".join(j.split(str(item.op_no),1)[1].split(i,1)[1:]))
-
-        self.status(i18n("Takeback Plan for %1", item.op_date))
-
         message = ""
 
         if willbeinstalled and len(willbeinstalled) != 0:
@@ -186,10 +181,11 @@ class MainManager(QtGui.QWidget):
 
         self.ui.editGroup.setTitle("Takeback plan for Operation on %s at %s" % (item.op_date, item.op_time))
         self.ui.textEdit.setText(message+information)
-        self.status(i18n("Ready .."))
 
         self.animator.setFrameRange(TARGET_HEIGHT, self.parent.height() - TARGET_HEIGHT)
         self.animator.start()
+
+        self.status(i18n("Ready .."))
 
     def status(self, txt):
         if self.ui.progressBar.isVisible():
@@ -206,29 +202,20 @@ class MainManager(QtGui.QWidget):
 
         try:
             willbeinstalled, willberemoved = self.pface.historyPlan(item.op_no)
-            print self.sender()
         except ValueError:
             return
 
-        current_date = item.op_date
-        current_time = item.op_time
-
         reply = QtGui.QMessageBox.warning(self, i18n("Takeback operation verification"),
-            i18n("<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>", current_date, current_time) + \
+            i18n("<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>", item.op_date, item.op_time) + \
             i18n("If you're unsure, click Cancel and see TakeBack Plan.</center>"),
              QtGui.QMessageBox.Cancel | QtGui.QMessageBox.Ok, QtGui.QMessageBox.Ok)
 
         if reply == QtGui.QMessageBox.Ok:
-            self.status(i18n("Taking back to : %1", current_date))
+            self.status(i18n("Taking back to : %1", item.op_date))
             self.enableButtons(False)
 
-            try:
-                QtCore.QCoreApplication.processEvents()
-                self.cface.takeBack(sender().op_no)
-            except:
-                # FIXME
-                self.status(i18n("Authentication Failed"))
-                self.enableButtons(True)
+            QtCore.QCoreApplication.processEvents()
+            self.cface.takeBack(item.op_no)
 
     def takeSnapshot(self):
         reply = QtGui.QMessageBox.question(self, i18n("Start new snapshot"),
@@ -249,6 +236,8 @@ class MainManager(QtGui.QWidget):
             self.enableButtons(True)
 
     def handler(self, package, signal, args):
+        print "Package:",package, "Signal:", signal, "Arguments:", args
+
         args = map(lambda x: unicode(x), list(args))
 
         if signal == "status":
@@ -257,6 +246,7 @@ class MainManager(QtGui.QWidget):
             self.status(i18n("Finished succesfully"))
             self.enableButtons(True)
         elif signal == "progress":
+            self.status("In Progress")
             self.status("%s : %s/100" % (args[2], args[1]))
             self.enableButtons(False)
 
