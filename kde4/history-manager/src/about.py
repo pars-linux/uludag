@@ -18,7 +18,7 @@ from PyKDE4.kdecore import *
 appName     = "history-manager"
 catalog     = ""
 programName = ki18n("History Manager")
-version     = "0.2"
+version     = "0.2.4"
 description = ki18n("History Manager")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2009 TUBITAK/UEKAE")

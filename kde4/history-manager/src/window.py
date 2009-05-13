@@ -1,8 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import dbus
-
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 
@@ -13,7 +11,6 @@ from mainwindow import Ui_MainManager
 from uiitem import Ui_HistoryItemWidget
 
 from interface import *
-from utility import *
 
 SHOW, HIDE     = range(2)
 TARGET_HEIGHT  = 0
@@ -34,7 +31,6 @@ class MainManager(QtGui.QWidget):
             self.parent = parent
 
         self.settings = QtCore.QSettings()
-        self.createMenus()
 
         self.animator = QTimeLine(ANIMATION_TIME, self)
         self.lastAnimation = SHOW
@@ -44,7 +40,8 @@ class MainManager(QtGui.QWidget):
         self.ops = {}
 
         self.cface = ComarIface()
-        self.pface = PisiIface(self, 15)
+        self.pface = PisiIface(self)
+        self.pface.setMaxFetch(15)
 
         self.connectSignals()
 
@@ -52,17 +49,15 @@ class MainManager(QtGui.QWidget):
         self.ui.lw.installEventFilter(self)
 
         self.cface.listen(self.handler)
+        self.pface.start()
 
     def connectSignals(self):
         # self.connect(self.pface, SIGNAL("finished()"), self.loadHistory)
         self.connect(self.pface, SIGNAL("loadFetched(PyQt_PyObject)"), self.loadHistory)
 
-        self.connect(self.ui.newSnapshotPB, SIGNAL("clicked()"), self.takeSnapshot)
-        self.connect(self.ui.copyAction, SIGNAL("triggered()"), self.copySelected)
-
         self.connect(self.animator, SIGNAL("frameChanged(int)"), self.animate)
         self.connect(self.animator, SIGNAL("finished()"), self.animateFinished)
-
+        self.connect(self.ui.newSnapshotPB, SIGNAL("clicked()"), self.takeSnapshot)
         self.connect(self.ui.buttonCancelMini, SIGNAL("clicked()"), self.hideEditBox)
 
     def loadHistory(self, count=None):
@@ -230,7 +225,7 @@ class MainManager(QtGui.QWidget):
             try:
                 QtCore.QCoreApplication.processEvents()
                 self.cface.takeBack(sender().op_no)
-            except dbus.DBusException:
+            except:
                 # FIXME
                 self.status(i18n("Authentication Failed"))
                 self.enableButtons(True)
@@ -249,7 +244,7 @@ class MainManager(QtGui.QWidget):
         try:
             QtCore.QCoreApplication.processEvents()
             self.cface.takeSnap()
-        except dbus.DBusException:
+        except:
             self.status(i18n("Authentication Failed"))
             self.enableButtons(True)
 
@@ -265,20 +260,6 @@ class MainManager(QtGui.QWidget):
             self.status("%s : %s/100" % (args[2], args[1]))
             self.enableButtons(False)
 
-    def createMenus(self):
-        self.listWidgetMenu = QtGui.QMenu()
-        self.listWidgetMenu.addAction(self.ui.copyAction)
-        self.listWidgetMenu.addAction(i18n("Select All"), self.ui.textEdit.selectAll)
-
-    def copySelected(self):
-        cb = QApplication.clipboard()
-
-        selected = ""
-        for i in self.ui.listWidget.selectedItems():
-            selected += "%s \n" % i.text().replace('* ', '')
-
-        cb.setText(selected, QtGui.QClipboard.Clipboard)
-
     def closeEvent(self, event=None):
         self.settings.setValue("pos", QtCore.QVariant(self.mapToGlobal(self.parent.pos())))
         self.settings.setValue("size", QtCore.QVariant(self.parent.size()))
@@ -292,12 +273,7 @@ class MainManager(QtGui.QWidget):
             event.accept()
 
     def eventFilter(self, obj, event):
-        if event.type() == QEvent.ContextMenu:
-            if obj == self.ui.textEdit:
-                self.listWidgetMenu.popup(event.globalPos())
-                return True
-
-        elif event.type() == QEvent.Hide:
+        if event.type() == QEvent.Hide:
             self.closeEvent()
             return True
 

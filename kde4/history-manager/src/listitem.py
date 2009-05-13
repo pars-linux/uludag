@@ -37,8 +37,6 @@ class NewOperation(QWidget):
         self.op_pack_len = len(self.op_pack)
 
         self.icon = ":/pics/%s.png" % self.op_type
-        self.op_type_tr = i18n("unknown")
-        self.op_type_int = -1
 
         if self.op_type == 'snapshot':
             self.op_type_int = 1
@@ -67,9 +65,6 @@ class NewOperation(QWidget):
         self.connect(self.ui.detailsPB, SIGNAL("clicked()"), self.parent.loadDetails)
         self.connect(self.ui.planPB, SIGNAL("clicked()"), self.parent.loadPlan)
 
-    def __cmp__(self, other):
-        return cmp(int(self.op_no), int(other.op_no))
-
     def enterEvent(self, event):
         if not self.toggled:
             self.toggleButtons(True)
@@ -84,3 +79,6 @@ class NewOperation(QWidget):
         self.ui.planPB.setVisible(toggle)
         self.ui.restorePB.setVisible(toggle)
         self.ui.detailsPB.setVisible(toggle)
+
+    def __cmp__(self, other):
+        return cmp(int(self.op_no), int(other.op_no))
