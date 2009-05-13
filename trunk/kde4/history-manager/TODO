@@ -12,7 +12,7 @@ TODO List
 + Package
 + Fix Makefile, CMakeLists ( switched to setuptools )
 
-+ Release as 2.0
++ Release as 0.2
 
 + Shortcut for Copy and Select All in operation details page
 ~ Better handle takeback/snapshot progress, exceptions etc.
@@ -20,3 +20,11 @@ TODO List
 + Fix slow filtering issue in sortfilterproxy and resizetocontents
 
 - Support aliases to operations
+- Fix sorting
+- Fix resize, move of widget
+~ Use system icons if possible
+- Fix empty tuples in pisi progress messages issue
+- Add "More history" thing
+
+
+- Release as 0.2.4
