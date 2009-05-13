@@ -16,11 +16,12 @@ import sys
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 
-from PyKDE4.kdeui import KMainWindow, KApplication
-from PyKDE4.kdecore import KCmdLineArgs
+from PyKDE4.kdeui import KMainWindow, KApplication, KCModule
+from PyKDE4.kdecore import KCmdLineArgs, KGlobal
 
-from about import aboutData
+from about import aboutData, catalog
 from main import MainWidget
+
 
 class MainWindow(KMainWindow):
     def __init__(self, parent=None):
@@ -28,6 +29,7 @@ class MainWindow(KMainWindow):
         widget = MainWidget(self)
         self.resize(widget.size())
         self.setCentralWidget(widget)
+
 
 if __name__ == "__main__":
 
@@ -41,3 +43,19 @@ if __name__ == "__main__":
     window.show()
 
     app.exec_()
+
+
+class Module(KCModule):
+    def __init__(self, component_data, parent):
+        KCModule.__init__(self, component_data, parent)
+
+        KGlobal.locale().insertCatalog(catalog)
+
+        from dbus.mainloop.qt import DBusQtMainLoop
+        DBusQtMainLoop(set_as_default=True)
+
+        MainWidget(self, embed=True)
+
+
+def CreatePlugin(widget_parent, parent, component_data):
+    return Module(component_data, parent)

@@ -43,6 +43,12 @@ def update_messages():
     # Remove temporary directory
     os.system("rm -rf .tmp")
 
+def makeDirs(dir):
+    try:
+        os.makedirs(dir)
+    except OSError:
+        pass
+
 class Build(build):
     def run(self):
         # Clear all
@@ -60,17 +66,29 @@ class Build(build):
 
 class Install(install):
     def run(self):
+        if not os.path.exists("build/"):
+            os.system("./setup.py build")
         if self.root:
             kde_dir = "%s/usr/kde/4" % self.root
         else:
             kde_dir = "/usr/kde/4"
+        bin_dir = os.path.join(kde_dir, "bin")
         locale_dir = os.path.join(kde_dir, "share/locale")
+        service_dir = os.path.join(kde_dir, "share/kde4/services")
+        project_dir = os.path.join(kde_dir, "share/apps", about.appName)
         # Make directories
         print "Making directories..."
-        try:
-            os.makedirs(locale_dir)
-        except OSError:
-            pass
+        makeDirs(bin_dir)
+        makeDirs(locale_dir)
+        makeDirs(service_dir)
+        makeDirs(project_dir)
+        # Install desktop files
+        print "Installing desktop files..."
+        for filename in glob.glob1("data", "*.desktop"):
+            shutil.copy("data/%s" % filename, service_dir)
+        # Install codes
+        print "Installing codes..."
+        os.system("cp -R build/* %s/" % project_dir)
         # Install locales
         print "Installing locales..."
         for filename in glob.glob1("po", "*.po"):
@@ -81,6 +99,17 @@ class Install(install):
             except OSError:
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % about.catalog))
+        # Rename
+        print "Renaming application.py..."
+        shutil.move(os.path.join(project_dir, "application.py"), os.path.join(project_dir, "%s.py" % about.appName))
+        # Modes
+        print "Changing file modes..."
+        os.chmod(os.path.join(project_dir, "%s.py" % about.appName), 0755)
+        # Symlink
+        try:
+            os.symlink(os.path.join(project_dir, "%s.py" % about.appName), os.path.join(bin_dir, about.appName))
+        except OSError:
+            pass
 
 
 if "update_messages" in sys.argv:
