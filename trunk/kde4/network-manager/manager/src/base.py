@@ -354,7 +354,7 @@ class MainManager(QtGui.QWidget):
             self.animator.start()
             self.resetForm()
 
-    def showEditBox(self, package, profile=None):
+    def showEditBox(self, package, profile=None, device=None):
         sender = self.sender().parent()
         self.lastAnimation = SHOW
         self.hideScrollBars()
@@ -391,7 +391,7 @@ class MainManager(QtGui.QWidget):
                 self.ui.buttonScan.hide()
             self.ui.groupRemote.show()
         if "device" in modes:
-            self.fillDeviceList(package)
+            self.fillDeviceList(package, device)
 
         if profile:
             self.buildEditBoxFor(sender.package, sender.profile)
@@ -403,11 +403,13 @@ class MainManager(QtGui.QWidget):
         self.ui.editBox.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.ui.profileList.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
-    def fillDeviceList(self, package):
+    def fillDeviceList(self, package, selected_device=None):
         ui = self.ui
         devices = self.iface.devices(package)
         for device in devices:
             ui.deviceList.addItem(device)
+        if selected_device:
+            ui.deviceList.setCurrentIndex(ui.deviceList.findText(selected_device))
         if len(devices) == 1:
             ui.deviceList.hide()
             ui.labelDeviceDescription.show()
@@ -569,17 +571,17 @@ class MainManager(QtGui.QWidget):
         package, device = str(self.sender().data().toString()).split('::')
         self.resetForm()
         self.lastEditedPackage = package
-        self.showEditBox(package)
+        self.showEditBox(package, device=device)
 
     def editConnection(self):
         sender = self.sender().parent()
         profile, package = sender.profile, sender.package
-        self.showEditBox(package, profile)
+        self.showEditBox(package, profile=profile)
 
     def deleteConnection(self):
         profile = self.sender().parent().profile
         package = self.sender().parent().package
-        if KMessageBox.questionYesNo(self, i18n("Do you really want to remove profile %s?" % profile),
+        if KMessageBox.questionYesNo(self, i18n("Do you really want to remove profile %s?", profile),
                                            "Network-Manager") == KMessageBox.Yes:
             self.iface.deleteConnection(package, profile)
 
