@@ -76,17 +76,16 @@ class Install(install):
         # Copy service file
         print "Copying desktop files..."
         for filename in glob.glob1("src", "*.desktop"):
-            shutil.copy("src/%s" % filename, service_dir)
+            self.copy_file("src/%s" % filename, service_dir)
 
         # Copy codes
         print "Copying Python files..."
         for filename in glob.glob1("src", "*.py"):
-            shutil.copy("src/%s" % filename, project_dir)
+            self.copy_file("src/%s" % filename, project_dir)
 
-        print "Copying xcb bindings..."
         for filename in glob.glob1("xcb", "*.xml"):
             os.system("python xcb/py_client.py xcb/%s" % filename)
-            shutil.copy("%s.py" % os.path.splitext(filename)[0], xcb_dir)
+            self.copy_file("%s.py" % os.path.splitext(filename)[0], xcb_dir)
 
         # Copy locales
         print "Copying locales..."
@@ -97,11 +96,11 @@ class Install(install):
                 os.makedirs(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang))
             except OSError:
                 pass
-            shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
+            self.copy_file("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
 
         # Rename
         print "Renaming main.py..."
-        shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % PROJECT))
+        self.move_file(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % PROJECT))
 
         # Symlink
         print "Creating symlinks..."
