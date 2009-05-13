@@ -51,7 +51,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.lineHomeDir.setEnabled(True)
 
     def isNew(self):
-        return self.spinId.isEnabled()
+        return self.spinId.isEnabled() or self.checkAutoId.isVisible()
 
     def getId(self):
         if self.checkAutoId.checkState() == QtCore.Qt.Checked:
