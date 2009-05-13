@@ -1,5 +1,6 @@
 include *.py
 recursive-include src *.py *.desktop
+recursive-include xcb *.py *.xml
 recursive-include ui *.ui
 recursive-include po *.po *.pot
 recursive-include icons *.png *.qrc
