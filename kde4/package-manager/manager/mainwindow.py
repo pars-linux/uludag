@@ -49,5 +49,7 @@ class MainWindow(KMainWindow, Ui_MainWindow):
             self.toolBar.addAction(action)
             self.menu_File.addAction(action)
 
+        showInstallAction.setChecked(True)
+
     def updateStatusBar(self, indexes):
         pass
