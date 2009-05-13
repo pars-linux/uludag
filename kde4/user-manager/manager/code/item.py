@@ -64,6 +64,9 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         self.connect(self.pushEdit, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("editClicked()")))
         self.connect(self.pushDelete, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("deleteClicked()")))
 
+    def mouseDoubleClickEvent(self, event):
+        self.pushEdit.animateClick(100)
+
     def getId(self):
         return self.id
 
