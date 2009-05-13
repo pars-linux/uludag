@@ -50,8 +50,5 @@ if __name__ == '__main__':
     mainWindow = Manager(None, 'history-manager')
     mainWindow.show()
 
-    app.setQuitOnLastWindowClosed(True)
-    app.connect(app, SIGNAL('lastWindowClosed()'), app.quit)
-
     app.exec_()
-
+    del mainWindow

@@ -27,15 +27,13 @@ class ComarIface:
 class PisiIface(QThread):
     """ Pisi Api Interface """
 
-    def __init__(self, parent=None, maxfetch=None):
+    def __init__(self, parent=None):
         super(PisiIface, self).__init__(parent)
         self.parent = parent
 
-        self.max_fetch = maxfetch
+        self.max_fetch = None
         self.pdb = pisi.db.historydb.HistoryDB()
         self.pdb.init()
-
-        self.start()
 
     def run(self):
         self.parent.ops = {}
@@ -64,3 +62,10 @@ class PisiIface(QThread):
                 """removal from sys.modules forces reload via import"""
                 del sys.modules[module]
             reload(pisi)
+
+    def setMaxFetch(self, num):
+        if num == 0:
+            self.max_fetch = None
+            return
+        self.max_fetch = num
+
