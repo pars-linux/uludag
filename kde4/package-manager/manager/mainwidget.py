@@ -24,6 +24,8 @@ from packagemodel import PackageModel, GroupRole
 from packagedelegate import PackageDelegate
 from statemanager import StateManager
 
+from pmutils import *
+
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
@@ -82,8 +84,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.emit(SIGNAL("selectionChanged(QModelIndexList)"), self.packageList.selectionModel().selectedIndexes())
 
     def switchState(self, state):
-        self.state.setState(state)
-        self.disconnect(self.componentList, SIGNAL("itemClicked(QListWidgetItem*)"), self.componentFilter)
-        self.disconnect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.selectionChanged)
-        self.initializePackageList()
-        self.initializeComponentList()
+        try:
+            waitCursor()
+            self.state.setState(state)
+            self.disconnect(self.componentList, SIGNAL("itemClicked(QListWidgetItem*)"), self.componentFilter)
+            self.disconnect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.selectionChanged)
+            self.initializePackageList()
+            self.initializeComponentList()
+        finally:
+            restoreCursor()
