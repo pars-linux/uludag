@@ -10,55 +10,78 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
 from mainwindow import Ui_MainManager
+from uiitem import Ui_HistoryItemWidget
+
 from interface import *
 from utility import *
+
+SHOW, HIDE     = range(2)
+TARGET_HEIGHT  = 0
+ANIMATION_TIME = 200
+DEFAULT_HEIGHT = 16777215
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):
         super(MainManager, self).__init__(parent)
 
         self.ui = Ui_MainManager()
-        self.parent = parent
 
         if standAlone:
             self.ui.setupUi(self)
+            self.parent = self
         else:
             self.ui.setupUi(parent)
+            self.parent = parent
 
         self.settings = QtCore.QSettings()
         self.createMenus()
+
+        self.animator = QTimeLine(ANIMATION_TIME, self)
+        self.lastAnimation = SHOW
+
         self.tweakUi()
 
         self.ops = {}
 
         self.cface = ComarIface()
-        self.pface = PisiIface(self)
+        self.pface = PisiIface(self, 15)
 
         self.connectSignals()
 
-        self.ui.listWidget.installEventFilter(self)
+        self.ui.textEdit.installEventFilter(self)
         self.ui.lw.installEventFilter(self)
 
         self.cface.listen(self.handler)
 
     def connectSignals(self):
-        self.connect(self.pface, SIGNAL("finished()"), self.loadHistory)
+        # self.connect(self.pface, SIGNAL("finished()"), self.loadHistory)
+        self.connect(self.pface, SIGNAL("loadFetched(PyQt_PyObject)"), self.loadHistory)
 
-        self.connect(self.ui.lw, SIGNAL("itemClicked(QTreeWidgetItem *, int)"), self.loadIndex)
-        self.connect(self.ui.operationTB, SIGNAL("currentChanged(int)"), self.tabChanged)
-        self.connect(self.ui.restoreTB, SIGNAL("clicked()"), self.takeBack)
-        self.connect(self.ui.newSnapshotTB, SIGNAL("clicked()"), self.takeSnapshot)
-        self.connect(self.ui.takeBackAction, SIGNAL("triggered()"), self.takeBack)
+        self.connect(self.ui.newSnapshotPB, SIGNAL("clicked()"), self.takeSnapshot)
         self.connect(self.ui.copyAction, SIGNAL("triggered()"), self.copySelected)
 
-    def loadHistory(self):
+        self.connect(self.animator, SIGNAL("frameChanged(int)"), self.animate)
+        self.connect(self.animator, SIGNAL("finished()"), self.animateFinished)
+
+        self.connect(self.ui.buttonCancelMini, SIGNAL("clicked()"), self.hideEditBox)
+
+    def loadHistory(self, count=None):
         self.ui.lw.clear()
 
-        for (k, v) in self.ops.items():
-            NewOperation(v, self.ui.lw)
+        items = None
+        if count != None:
+            items = self.ops.items()[0:count]
+        else:
+            items = self.ops.items()
 
-        self.ui.lw.setEnabled(True)
-        self.status(i18n("Ready"))
+        for (k, v) in items:
+            item = HistoryItem(self.ui.lw)
+            item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
+            item.setSizeHint(QSize(38,48))
+            self.ui.lw.setItemWidget(item, NewOperation(v, self))
+
+        self.ui.lw.sortItems(Qt.DescendingOrder)
+        self.status(i18n("Last %d Operations Loaded" % len(items)))
         self.enableButtons(True)
 
     def tweakUi(self):
@@ -66,68 +89,93 @@ class MainManager(QtGui.QWidget):
             self.parent.move(self.mapToGlobal(self.settings.value("pos").toPoint()))
             self.parent.resize(self.settings.value("size").toSize())
 
+        if self.animator.state() != 0:
+            self.animatorFinishHook.append(self.refreshBrowser)
+            return
+
+        self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
         self.parent.setWindowIcon(QtGui.QIcon(":/icons/history-manager.png"))
         self.ui.progressBar.hide()
-
-        self.ui.lw.headerItem().setText(1, i18n("Date"))
-        self.ui.lw.headerItem().setText(2, i18n("Time"))
-        self.ui.lw.header().resizeSection(0, 40)
-
-        self.ui.lw.header().setResizeMode(0, QHeaderView.ResizeToContents)
-        self.ui.lw.header().setResizeMode(1, QHeaderView.ResizeToContents)
-        self.ui.lw.header().setResizeMode(2, QHeaderView.Stretch)
-
         self.enableButtons(False)
 
-    def tabChanged(self, index):
-        if index == 1:
-            QtCore.QCoreApplication.processEvents()
-            self.loadIndex(self.ui.lw.currentItem(), 0)
-        elif index == 0:
-            self.showPlan()
+    def animate(self, height):
+        self.ui.editBox.setMaximumHeight(height)
+        self.ui.lw.setMaximumHeight(self.parent.height()-height)
+        self.update()
 
-    def loadIndex(self, item, column):
-        self.ui.noLabel.setText("%s <b>%s</b>" % (i18n("No:"), self.get(item, "op_no")))
-        self.ui.typeLabel.setText("%s <b>%s</b>" % (i18n("Type:"), self.get(item, "op_type_tr")))
-        self.status(i18n("Operation details"))
+    def animateFinished(self):
+        if self.lastAnimation == SHOW:
+            self.ui.editBox.setMaximumHeight(DEFAULT_HEIGHT)
+            self.ui.lw.setMaximumHeight(TARGET_HEIGHT)
+            self.ui.editBox.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        elif self.lastAnimation == HIDE:
+            self.ui.lw.setFocus()
+            self.ui.lw.setMaximumHeight(DEFAULT_HEIGHT)
+            self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
+            self.ui.lw.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
-        self.ui.listWidget.clear()
-        self.ui.operationTB.setCurrentIndex(1)
+    def hideEditBox(self):
+        if self.lastAnimation == SHOW:
+            self.lastAnimation = HIDE
+            self.hideScrollBars()
+            self.animator.setFrameRange(self.ui.editBox.height(), TARGET_HEIGHT)
+            self.animator.start()
+            self.ui.textEdit.clear()
+            self.ui.editGroup.setTitle("")
 
-        if self.get(item, "op_type") == "snapshot":
-            self.ui.listWidget.insertItem(self.ui.listWidget.count() + 1, \
-                    QtGui.QListWidgetItem(i18n("There are %1 packages in this snapshot", self.get(item, "op_pack_len"))))
-            return
+    def hideScrollBars(self):
+        self.ui.editBox.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.ui.lw.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
-        # FIXME
-        for val in self.get(item, "op_pack"):
-            self.ui.listWidget.insertItem(self.ui.listWidget.count() +1, \
-                    QtGui.QListWidgetItem(" * %s" % val))
+    def loadDetails(self):
+        self.ui.textEdit.clear()
+        item = self.sender().parent()
 
-    def showPlan(self):
-        if not len(self.ui.lw.selectedIndexes()):
-            return
-        current_index = self.ui.lw.currentItem()
-        current_op = int(self.get(current_index, "op_no"))
-        current_type = self.get(current_index, "op_type")
-        current_type_tr = self.get(current_index, "op_type_tr")
-        current_date = self.get(current_index, "op_date")
+        self.ui.editGroup.setTitle("Details for operation on %s at %s" % (item.op_date, item.op_time))
+        self.status(i18n("Loading operation details.."))
+        QCoreApplication.processEvents()
 
-        willbeinstalled, willberemoved = self.pface.historyPlan(current_op)
-        self.status(i18n("Loading Plan"))
+        message = ""
+        if item.op_type == "snapshot":
+            message += i18n("There are %1 packages in this snapshot", item.op_pack_len)
+        else:
+            for val in item.op_pack:
+                message += "- %s\n" % val
+
+        self.ui.textEdit.setText(message)
+        self.status(i18n("Ready .."))
+
+        self.lastAnimation = SHOW
+        self.hideScrollBars()
+
+        self.animator.setFrameRange(TARGET_HEIGHT, self.parent.height() - TARGET_HEIGHT)
+        self.animator.start()
+
+    def loadPlan(self):
+        self.ui.textEdit.clear()
+        self.lastAnimation = SHOW
+        self.hideScrollBars()
+
+        item = self.sender().parent()
+
+        self.status(i18n("Loading Operation Plan"))
+        QCoreApplication.processEvents()
+
+        willbeinstalled, willberemoved = self.pface.historyPlan(item.op_no)
 
         information = ""
-        if current_type == "snapshot":
-            configs = self.pface.historyConfigs(current_op)
+        if item.op_type == "snapshot":
+            configs = self.pface.historyConfigs(item.op_no)
             if configs and len(configs) != 0:
                 information += i18n("Configuration files in snapshot:")
                 for i in configs.keys():
                     information += "<br><br><b> %s </b><br>" % i
                     for j in configs.get(i):
-                        information += "%s \n" % ("/".join(j.split(str(current_op),1)[1].split(i,1)[1:]))
+                        information += "%s \n" % ("/".join(j.split(str(item.op_no),1)[1].split(i,1)[1:]))
 
-        message = i18n("Takeback Plan for %1 operation on %2 <br><br>", current_type_tr, current_date)
-        self.status(i18n("Takeback Plan %1", current_date))
+        self.status(i18n("Takeback Plan for %1", item.op_date))
+
+        message = ""
 
         if willbeinstalled and len(willbeinstalled) != 0:
             message += i18n("<br> These package(s) will be <b>installed</b> :<br>")
@@ -141,10 +189,12 @@ class MainManager(QtGui.QWidget):
 
         message += "<br>"
 
-        self.ui.textEdit.setText(message + information)
+        self.ui.editGroup.setTitle("Takeback plan for Operation on %s at %s" % (item.op_date, item.op_time))
+        self.ui.textEdit.setText(message+information)
+        self.status(i18n("Ready .."))
 
-    def changeListing(self):
-        self.status(i18n("Listing %1 Operations", QObject.sender(self).objectName()))
+        self.animator.setFrameRange(TARGET_HEIGHT, self.parent.height() - TARGET_HEIGHT)
+        self.animator.start()
 
     def status(self, txt):
         if self.ui.progressBar.isVisible():
@@ -154,19 +204,19 @@ class MainManager(QtGui.QWidget):
             self.ui.opTypeLabel.setText(txt)
             self.ui.opTypeLabel.show()
 
-    def get(self, item, prop):
-        return eval("item.%s" % prop)
-
-
     def takeBack(self):
         willbeinstalled, willberemoved = None, None
+
+        item = self.sender().parent()
+
         try:
-            willbeinstalled, willberemoved = self.pface.historyPlan(int(self.get(self.ui.lw.currentItem(), "op_no")))
+            willbeinstalled, willberemoved = self.pface.historyPlan(item.op_no)
+            print self.sender()
         except ValueError:
             return
 
-        current_date = self.get(self.ui.lw.currentItem(), "op_date")
-        current_time = self.get(self.ui.lw.currentItem(), "op_time")
+        current_date = item.op_date
+        current_time = item.op_time
 
         reply = QtGui.QMessageBox.warning(self, i18n("Takeback operation verification"),
             i18n("<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>", current_date, current_time) + \
@@ -179,7 +229,7 @@ class MainManager(QtGui.QWidget):
 
             try:
                 QtCore.QCoreApplication.processEvents()
-                self.cface.takeBack(int(self.get(self.ui.lw.currentItem(), "op_no")))
+                self.cface.takeBack(sender().op_no)
             except dbus.DBusException:
                 # FIXME
                 self.status(i18n("Authentication Failed"))
@@ -204,7 +254,7 @@ class MainManager(QtGui.QWidget):
             self.enableButtons(True)
 
     def handler(self, package, signal, args):
-        print package, signal, args
+        args = map(lambda x: unicode(x), list(args))
 
         if signal == "status":
             self.status(" ".join(args))
@@ -216,12 +266,9 @@ class MainManager(QtGui.QWidget):
             self.enableButtons(False)
 
     def createMenus(self):
-        self.lwMenu = QtGui.QMenu()
-        self.lwMenu.addAction(self.ui.takeBackAction)
-
         self.listWidgetMenu = QtGui.QMenu()
         self.listWidgetMenu.addAction(self.ui.copyAction)
-        self.listWidgetMenu.addAction(i18n("Select All"), self.ui.listWidget.selectAll)
+        self.listWidgetMenu.addAction(i18n("Select All"), self.ui.textEdit.selectAll)
 
     def copySelected(self):
         cb = QApplication.clipboard()
@@ -233,23 +280,20 @@ class MainManager(QtGui.QWidget):
         cb.setText(selected, QtGui.QClipboard.Clipboard)
 
     def closeEvent(self, event=None):
-        self.settings.setValue("pos", QtCore.QVariant(self.mapToGlobal(self.pos())))
-        self.settings.setValue("size", QtCore.QVariant(self.size()))
+        self.settings.setValue("pos", QtCore.QVariant(self.mapToGlobal(self.parent.pos())))
+        self.settings.setValue("size", QtCore.QVariant(self.parent.size()))
         self.settings.sync()
 
         if self.pface.isRunning():
             self.pface.quit()
-            self.pface.wait()
+            # self.pface.wait()
 
         if event != None:
             event.accept()
 
     def eventFilter(self, obj, event):
         if event.type() == QEvent.ContextMenu:
-            if obj == self.ui.lw:
-                self.lwMenu.popup(event.globalPos())
-                return True
-            elif obj == self.ui.listWidget:
+            if obj == self.ui.textEdit:
                 self.listWidgetMenu.popup(event.globalPos())
                 return True
 
@@ -260,5 +304,6 @@ class MainManager(QtGui.QWidget):
         return QtCore.QObject.eventFilter(self, obj, event)
 
     def enableButtons(self, true):
-        for val in ["restoreTB", "newSnapshotTB", "operationTB"]:
+        for val in ["newSnapshotPB", "lw", "editBox"]:
             exec('self.ui.%s.setEnabled(%s)' % (val, true))
+

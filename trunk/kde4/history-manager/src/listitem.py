@@ -6,9 +6,22 @@ from PyQt4.QtCore import *
 
 from PyKDE4.kdecore import *
 
-class NewOperation(QTreeWidgetItem):
+from uiitem import Ui_HistoryItemWidget
+
+class HistoryItem(QListWidgetItem):
+    def __init__(self, parent):
+        QListWidgetItem.__init__(self, parent)
+
+class NewOperation(QWidget):
     def __init__(self, operation, parent=None):
-        super(NewOperation, self).__init__(parent)
+        super(NewOperation, self).__init__(None)
+
+        self.parent = parent
+        self.ui = Ui_HistoryItemWidget()
+        self.ui.setupUi(self)
+
+        self.toggled = False
+        self.toggleButtons()
 
         self.op_no = operation.no
         self.op_type = operation.type
@@ -23,7 +36,6 @@ class NewOperation(QTreeWidgetItem):
         self.op_tag = operation.tag
         self.op_pack_len = len(self.op_pack)
 
-        self.sortby = 0
         self.icon = ":/pics/%s.png" % self.op_type
         self.op_type_tr = i18n("unknown")
         self.op_type_int = -1
@@ -47,15 +59,28 @@ class NewOperation(QTreeWidgetItem):
             self.op_type_int = 6
             self.op_type_tr = i18n("repo update")
 
-        self.setIcon(0, QIcon(self.icon))
-        self.setText(1, str(self.op_date))
-        self.setText(2, str(self.op_time))
+        self.ui.labelLabel.setText(" - ".join([self.op_date, self.op_time]))
+        self.ui.typeLabel.setText("No: %d   Type: %s" % (self.op_no, self.op_type_tr))
+        self.ui.iconLabel.setPixmap(QPixmap(self.icon))
 
-    def setSortColumn(self, val):
-        self.sortby = val
+        self.connect(self.ui.restorePB, SIGNAL("clicked()"), self.parent.takeBack)
+        self.connect(self.ui.detailsPB, SIGNAL("clicked()"), self.parent.loadDetails)
+        self.connect(self.ui.planPB, SIGNAL("clicked()"), self.parent.loadPlan)
 
-    def __lt__(self, other):
-        if self.sortby == 0:
-            return int(self.op_no) < int(other.op_no)
-        return QTreeWidgetItem.__lt__(self, other)
+    def __cmp__(self, other):
+        return cmp(int(self.op_no), int(other.op_no))
 
+    def enterEvent(self, event):
+        if not self.toggled:
+            self.toggleButtons(True)
+            self.toggled = True
+
+    def leaveEvent(self, event):
+        if self.toggled:
+            self.toggleButtons()
+            self.toggled = False
+
+    def toggleButtons(self, toggle=False):
+        self.ui.planPB.setVisible(toggle)
+        self.ui.restorePB.setVisible(toggle)
+        self.ui.detailsPB.setVisible(toggle)
