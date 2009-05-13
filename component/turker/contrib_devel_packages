@@ -1,38 +1,3 @@
-./programming/tools/devhelp/pspec.xml
 
-./applications/science/gpsbabel/pspec.xml
-./applications/science/qgis/pspec.xml
-./applications/science/josm/pspec.xml
-./applications/science/navilink/pspec.xml
-./applications/science/qlandkarte/pspec.xml
-./applications/science/grass/pspec.xml
-./applications/science/grass-sample-data/pspec.xml
-./applications/science/qgis-sample-data/pspec.xml
-./applications/science/merkaartor/pspec.xml
 
-./applications/science/veusz/pspec.xml
-./applications/science/sherpa/pspec.xml
-./applications/science/gdpc/pspec.xml
 
-./desktop/opencompositing/cairo-dock/cairo-dock-themes/pspec.xml
-./desktop/opencompositing/cairo-dock/cairo-dock-plugins/pspec.xml
-./desktop/opencompositing/cairo-dock/cairo-dock/pspec.xml
-./desktop/opencompositing/kiba/kiba-dbus-plugins/pspec.xml
-./desktop/opencompositing/kiba/akamaru/pspec.xml
-./desktop/opencompositing/kiba/kiba-plugins/pspec.xml
-./desktop/opencompositing/kiba/kiba-dock/pspec.xml
-./desktop/opencompositing/kiba/kiba-pidgin-plugin/pspec.xml
-./desktop/opencompositing/compiz/compiz-emerald-themes/pspec.xml
-./desktop/opencompositing/compiz/libcompizconfig/pspec.xml
-./desktop/opencompositing/compiz/compiz-manager/pspec.xml
-./desktop/opencompositing/compiz/compizconfig-backend-kconfig/pspec.xml
-./desktop/opencompositing/compiz/compiz-bcop/pspec.xml
-./desktop/opencompositing/compiz/simple-ccsm/pspec.xml
-./desktop/opencompositing/compiz/ccsm/pspec.xml
-./desktop/opencompositing/compiz/compizconfig-python/pspec.xml
-./desktop/opencompositing/compiz/compiz-fusion-icon/pspec.xml
-./desktop/opencompositing/compiz/compiz-fusion/pspec.xml
-./desktop/opencompositing/compiz/compiz-fusion-plugins-main/pspec.xml
-./desktop/opencompositing/compiz/compiz-fusion-plugins-extra/pspec.xml
-./desktop/opencompositing/compiz/compiz-fusion-plugins-unsupported/pspec.xml
-./desktop/opencompositing/compiz/compiz-emerald/pspec.xml
