@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>593</width>
+    <width>595</width>
     <height>353</height>
    </rect>
   </property>
@@ -64,7 +64,7 @@ padding:10px;
       <string>If you have problems with boot, you can reinstall Grub</string>
      </property>
      <property name="icon">
-      <iconset resource="../../data.qrc">
+      <iconset>
        <normaloff>:/gui/pics/postinstall.png</normaloff>:/gui/pics/postinstall.png</iconset>
      </property>
      <property name="iconSize">
@@ -109,7 +109,7 @@ padding:10px;
       <string>If you need to take back your old operations you can use Pisi History</string>
      </property>
      <property name="icon">
-      <iconset resource="../../data.qrc">
+      <iconset>
        <normaloff>:/gui/pics/pardus.png</normaloff>:/gui/pics/pardus.png</iconset>
      </property>
      <property name="iconSize">
