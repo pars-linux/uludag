@@ -10,14 +10,14 @@
 # Please read the COPYING file.
 
 import gettext
-import block
-import sysutils
+# import block
+import pare.sysutils
 
-_ = lambda x: gettext.ldgettext("storage", x)
+_ = lambda x: gettext.ldgettext("pare", x)
 
 import logging
 
-log = logging.getLogger("storage")
+log = logging.getLogger("pare")
 
 def name_from_dm_node(dm_node):
     name = block.getNameFromDmNode(dm_node)
@@ -37,9 +37,9 @@ def name_from_dm_node(dm_node):
     return name.strip()
 
 def dm_node_from_name(map_name):
-    dm_node = block.getDmNodeFromName(map_name)
-    if dm_node is not None:
-        return dm_node
+    # dm_node = block.getDmNodeFromName(map_name)
+    # if dm_node is not None:
+    #     return dm_node
 
     devnum = sysutils.execWithCapture("dmsetup",
                                    ["info", "--columns",
