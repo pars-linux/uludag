@@ -86,7 +86,7 @@ class Install(install):
         print "Copying xcb bindings..."
         for filename in glob.glob1("xcb", "*.xml"):
             os.system("python xcb/py_client.py xcb/%s" % filename)
-            shutil.move("%s.py" % os.path.splitext(filename)[0], xcb_dir)
+            shutil.copy("%s.py" % os.path.splitext(filename)[0], xcb_dir)
 
         # Copy locales
         print "Copying locales..."
