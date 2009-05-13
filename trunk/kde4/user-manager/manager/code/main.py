@@ -36,9 +36,13 @@ from edit import EditUserWidget, EditGroupWidget
 
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
-    def __init__(self, parent):
+    def __init__(self, parent, embed=False):
         QtGui.QWidget.__init__(self, parent)
-        self.setupUi(self)
+
+        if embed:
+            self.setupUi(parent)
+        else:
+            self.setupUi(self)
 
         # Animation
         self.animator = QtCore.QTimeLine(ANIM_TIME, self)
