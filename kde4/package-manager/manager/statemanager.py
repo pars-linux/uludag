@@ -11,6 +11,9 @@
 # Please read the COPYING file.
 #
 
+from PyKDE4.kdecore import i18n
+from PyKDE4.kdeui import KIcon
+
 import backend
 
 class StateManager():
@@ -38,6 +41,16 @@ class StateManager():
             else:
                 self.cached_packages = self.iface.getPackageList()
         return self.cached_packages
+
+    def getActionName(self):
+        return {self.INSTALL:i18n("Install Package(s)"),
+                self.REMOVE :i18n("Remove Package(s)"),
+                self.UPGRADE:i18n("Upgrade Package(s)")}[self.state]
+
+    def getActionIcon(self):
+        return {self.INSTALL:KIcon("list-add"),
+                self.REMOVE :KIcon("list-remove"),
+                self.UPGRADE:KIcon("view-refresh")}[self.state]
 
     def groups(self):
         return self.iface.getGroups()
