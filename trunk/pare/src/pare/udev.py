@@ -12,7 +12,7 @@
 import os
 import stat
 
-import sysutils
+import pare.sysutils as sysutils
 from errors import *
 
 import logging
@@ -135,14 +135,14 @@ def udev_settle(timeout=None):
     if timeout:
         argv.append("--timeout=%d" % int(timeout))
 
-    sysutil.execClear("udevadm", argv, stderr="/dev/null")
+    sysutils.run("udevadm", argv)
 
 def udev_trigger(subsystem=None):
     argv = ["trigger"]
     if subsystem:
         argv.append("--subsystem-match=%s" % subsystem)
 
-    sysutil.execClear("udevadm", argv, stderr="/dev/null")
+    sysutils.run("udevadm", argv)
 
 
 # These are functions for retrieving specific pieces of information from
