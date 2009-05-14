@@ -69,6 +69,7 @@ class StorageList(object):
     def _checkInconsistenceDevices(self):
         
         #FIXME: Check inconsistences also lvm & raid
+        print "_checkInconsistenceDevices"
         
         for part in self.getDevicesByInstance(Partition):
             if part.parents[0].format.type is not None:
@@ -88,10 +89,10 @@ class StorageList(object):
         if not sysfs_path:
             return None
         
-        if name in self._ignoredDisks:
+        if name in self.ignoredDisks:
             return True
         
-        for ignored in self._ignoredDisks:
+        for ignored in self.ignoredDisks:
             if ignored == os.path.basename(os.path.dirname(sysfs_path)):
                 return True
             
@@ -268,12 +269,12 @@ class StorageList(object):
     @property
     def devices(self):
         devices = {}
-        
+        print "devices"
         for device in self._devices:
             if device.path in devices:
                 raise StorageListError("duplicate path in storage list")
             else:
-                devices[device.path] = devices
+                devices[device.path] = device
         
         return devices
     
@@ -315,26 +316,32 @@ class StorageList(object):
     
     
     def populate(self):
-        old = []
-        ignored = []
+        old_devices = []
+        ignored_devices = []
         
+        i =0 
         while True:
+            i+=1
+            print "%d kez girdi !!!" % i
             devices = []
-            new = udev_get_block_devices()
-            
-            for _new_dev in new:
+            new_devices = udev_get_block_devices()
+            print "%d uzunluk" % len(new_devices)
+            for new_device in new_devices:
+                #print "storage_list:%s" % _new_dev
                 found = False
-                for _old_dev in old:
-                    if _old_dev["name"] == _new_dev["name"]:
+                for old_device in old_devices:
+                    if old_device["name"] == new_device["name"]:
                         found = True
                         break
+                    
                 if not found:
-                    devices.append(_new_dev)
+                    devices.append(new_device)
                 
-                if len(devices == 0):
-                    break
+            if len(devices) == 0:
+                print "device uzunlugu %d" % len(devices)
+                break
                 
-            old =  new 
+            old_devices =  new_devices
             log.info("devices to scan: %s" % [d['name'] for d in devices])
             for dev in devices:
                 self.addDevice(dev)
@@ -342,16 +349,17 @@ class StorageList(object):
         self._checkInconsistenceDevices()
         self.tearDownAll()
         
-        
+        #FIXME:os.unlink("/etc/mdadm.conf")
+    
     def tearDownAll(self):
-        for device in self.leaves():
+        for device in self.leaves:
             try:
                 device.tearDown()
             except StorageError, StorageFormatError:
                 log.info("teardown failed")
                 
     def setupAll(self):
-        for device in self.leaves():
+        for device in self.leaves:
             try:
                 device.setup()
             except StorageError, StorageFormatError:
