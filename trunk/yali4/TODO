@@ -11,9 +11,9 @@
          > Needs a network settings screen
      - Improve user settings screen #8714 #7658
      ? Add polkit support to user settings screen
-     - Recovery mode #7169
-         > Grub recovery
-         > System recovery with Pisi History
+ %30 / Recovery mode #7169
+     %70 / Grub recovery
+         - System recovery with Pisi History
  %30 / Fix Keyboard shortcuts problems
      - Fix low resolution screen problems
      - Fix warning and info messages for new theme

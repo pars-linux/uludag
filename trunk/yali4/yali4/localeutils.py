@@ -39,9 +39,9 @@ def write_keymap(keymap):
     mudur_file_path = os.path.join(consts.target_dir, "etc/conf.d/mudur")
     lines = []
     for l in open(mudur_file_path, "r").readlines():
-        if l.strip().startswith('keymap=') or l.strip().startswith('#keymap='):
+        if l.strip().startswith('keymap=') or l.strip().startswith('# keymap='):
             l = 'keymap="%s"\n' % keymap
-        if l.strip().startswith('language=') or l.strip().startswith('#language='):
+        if l.strip().startswith('language=') or l.strip().startswith('# language='):
             if consts.lang == "pt":
                 l = 'language="pt_BR"\n'
             else:
