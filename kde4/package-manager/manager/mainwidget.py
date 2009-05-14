@@ -36,7 +36,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.selectionChanged)
-        self.connect(self.componentList, SIGNAL("itemClicked(QListWidgetItem*)"), self.componentFilter)
+        self.connect(self.groupList, SIGNAL("itemClicked(QListWidgetItem*)"), self.componentFilter)
 
     def initialize(self):
         self.initializePackageList()
@@ -53,9 +53,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.setPackages(self.state.packages())
 
     def initializeComponentList(self):
-        self.componentList.clear()
-        self.componentList.setAlternatingRowColors(True)
-        self.componentList.setIconSize(QSize(KIconLoader.SizeLarge, KIconLoader.SizeLarge))
+        self.groupList.clear()
+        self.groupList.setAlternatingRowColors(True)
+        self.groupList.setIconSize(QSize(KIconLoader.SizeLarge, KIconLoader.SizeLarge))
 
         for group in self.state.groups():
             self.createComponentItem(group)
@@ -68,7 +68,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             return
 
         icon = QtGui.QIcon(KIconLoader().loadMimeTypeIcon(icon_path, KIconLoader.Desktop, KIconLoader.SizeSmallMedium))
-        item = QtGui.QListWidgetItem(icon, "%s (%d)" % (name, package_count), self.componentList)
+        item = QtGui.QListWidgetItem(icon, "%s (%d)" % (name, package_count), self.groupList)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
 
@@ -76,12 +76,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.selectLastGroup(item)
 
     def selectLastGroup(self, item):
-        self.componentList.setCurrentItem(item)
+        self.groupList.setCurrentItem(item)
         self.componentFilter(item)
 
     def ensureGroupSelected(self):
-        if self.componentList.currentRow() == -1 and self.componentList.count():
-            self.selectLastGroup(self.componentList.itemAt(0, 0))
+        if self.groupList.currentRow() == -1 and self.groupList.count():
+            self.selectLastGroup(self.groupList.itemAt(0, 0))
 
     def packageFilter(self, text):
         self.packageList.model().setFilterRole(Qt.DisplayRole)
