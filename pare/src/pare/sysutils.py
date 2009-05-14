@@ -9,6 +9,41 @@
 #
 # Please read the COPYING file.
 
+import subprocess
+import logging
+log = logging.getLogger("pare")
+
+def run(cmd, params=None, capture=False):
+
+
+    # Merge parameters with command
+    if params:
+        cmd = "%s %s" % (cmd, ' '.join(params))
+
+    # to use Popen we need a tuple
+    _cmd = tuple(cmd.split())
+    log.info("RUN : %s" % cmd)
+
+    # Create an instance for Popen
+    proc = subprocess.Popen(_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    # Capture the output
+    stdout, stderr = proc.communicate()
+    result = proc.poll()
+
+    log.error(stderr)
+    log.debug(stdout)
+
+    # if return code larger then zero, means there is a problem with this command
+    if result > 0:
+        log.error("FAILED : %s" % cmd)
+        return False
+    log.info("SUCCESS : %s" % cmd)
+    if capture:
+        return stdout
+    return True
+
+
 def execWithCapture(command, argv, stdin = 0, stderr = 2, root ='/'):
      argv = list(argv)
 
