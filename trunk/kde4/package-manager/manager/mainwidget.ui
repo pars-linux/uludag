@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>MainWidget</class>
- <widget class="QWidget" name="MainWidget" >
-  <property name="geometry" >
+ <widget class="QWidget" name="MainWidget">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,19 +10,19 @@
     <height>439</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout" >
-   <item rowspan="2" row="0" column="0" >
-    <widget class="QListWidget" name="componentList" >
-     <property name="minimumSize" >
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" rowspan="2">
+    <widget class="GroupList" name="groupList">
+     <property name="minimumSize">
       <size>
        <width>250</width>
        <height>0</height>
       </size>
      </property>
-     <property name="maximumSize" >
+     <property name="maximumSize">
       <size>
        <width>250</width>
        <height>16777215</height>
@@ -29,44 +30,44 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="1" >
-    <widget class="KLineEdit" name="searchLine" >
-     <property name="clickMessage" >
+   <item row="0" column="1">
+    <widget class="KLineEdit" name="searchLine">
+     <property name="clickMessage">
       <string>Click to search</string>
      </property>
-     <property name="showClearButton" stdset="0" >
+     <property name="showClearButton" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="0" column="2" >
-    <widget class="QPushButton" name="actionButton" >
-     <property name="text" >
+   <item row="0" column="2">
+    <widget class="QPushButton" name="actionButton">
+     <property name="text">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="1" column="1" colspan="2" >
-    <widget class="PackageView" name="packageList" >
-     <property name="minimumSize" >
+   <item row="1" column="1" colspan="2">
+    <widget class="PackageView" name="packageList">
+     <property name="minimumSize">
       <size>
        <width>450</width>
        <height>0</height>
       </size>
      </property>
-     <property name="rootIsDecorated" >
+     <property name="rootIsDecorated">
       <bool>false</bool>
      </property>
-     <property name="itemsExpandable" >
+     <property name="itemsExpandable">
       <bool>false</bool>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>true</bool>
      </property>
-     <property name="headerHidden" >
+     <property name="headerHidden">
       <bool>true</bool>
      </property>
-     <property name="expandsOnDoubleClick" >
+     <property name="expandsOnDoubleClick">
       <bool>false</bool>
      </property>
     </widget>
@@ -82,7 +83,12 @@
   <customwidget>
    <class>PackageView</class>
    <extends>QTreeView</extends>
-   <header location="global" >packageview.h</header>
+   <header location="global">packageview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>GroupList</class>
+   <extends>QListWidget</extends>
+   <header location="global">grouplist.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
