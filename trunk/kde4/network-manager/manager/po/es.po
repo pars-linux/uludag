@@ -1,0 +1,208 @@
+# translation of es.po to spanish
+# Network Manager.
+# Copyright (C) 2009, TUBITAK/UEKAE
+# This file is distributed under the same license as the Network-Manager package.
+#
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
+# Klemens Häckel <click3d at linuxmail dot org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: es\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-10 21:45+0300\n"
+"PO-Revision-Date: 2009-05-13 22:32-0400\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
+"Language-Team: spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/about.py:20 .tmp/about.py:22
+msgid "Network Manager"
+msgstr "Administrador de Red"
+
+#: .tmp/about.py:24
+msgid "(c) 2008 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/about.py:31
+msgid "Gökmen GÖKSEL"
+msgstr ""
+
+#: .tmp/about.py:31
+msgid "Maintainer"
+msgstr "Mantenedor"
+
+#: .tmp/base.py:163
+msgid "Available Profiles"
+msgstr "Perfiles disponibles"
+
+#: .tmp/base.py:190
+msgid "All Profiles"
+msgstr "Todos los perfiles"
+
+#: .tmp/base.py:192 .tmp/base.py:194
+msgid "No Device Found"
+msgstr "Dispositivo no encontrado"
+
+#: .tmp/base.py:365
+msgid "No Authentication"
+msgstr "Sin autenticación"
+
+#: .tmp/base.py:588
+#, python-format
+msgid "Do you really want to remove profile %s?"
+msgstr "Está seguro de remover el perfil %s?"
+
+#: .tmp/uiitem.py:103
+msgid "Edit connection"
+msgstr "Editar conexión"
+
+#: .tmp/uiitem.py:104
+msgid "Delete connection"
+msgstr "Eliminar conexión"
+
+#: .tmp/uiitem.py:105 .tmp/uiwifiitem.py:53
+msgid "Signal Strength"
+msgstr "Potencia de la señal"
+
+#: .tmp/uiitem.py:106
+msgid "  %p %"
+msgstr "  %p %"
+
+#: .tmp/uinameserver.py:42 .tmp/ui.py:326
+msgid "Nameserver Settings"
+msgstr "Servidor de nombres"
+
+#: .tmp/uinameserver.py:43
+msgid "Machine Name"
+msgstr "Nombre de la computadora"
+
+#: .tmp/uinameserver.py:44 .tmp/ui.py:340
+msgid "Name Servers"
+msgstr "Servidores de nombres"
+
+#: .tmp/ui.py:324
+msgid "Form"
+msgstr ""
+
+#: .tmp/ui.py:325
+msgid "Create Profile"
+msgstr "Crear perfil"
+
+#: .tmp/ui.py:327 .tmp/widgets.py:163
+msgid "Scanning..."
+msgstr "Buscando..."
+
+#: .tmp/ui.py:328 .tmp/widgets.py:134
+# favor verificar, refrescar, actualizar..
+msgid "Refresh"
+msgstr "Refrescar"
+
+#: .tmp/ui.py:329
+msgid "Profile Name :"
+msgstr "Nombre de Perfil :"
+
+#: .tmp/ui.py:330
+msgid "Device : "
+msgstr "Dispositivo : "
+
+#: .tmp/ui.py:331 .tmp/ui.py:345
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: .tmp/ui.py:332
+msgid "Network Settings"
+msgstr "Configuración de Red"
+
+#: .tmp/ui.py:333
+msgid "Use DHCP"
+msgstr "Usar DHCP"
+
+#: .tmp/ui.py:334
+msgid "Use Manual Settings"
+msgstr "Configuración manual"
+
+#: .tmp/ui.py:335
+msgid "Address :"
+msgstr "Dirección :"
+
+#: .tmp/ui.py:336 .tmp/ui.py:339
+msgid "Custom"
+msgstr "Personalizado"
+
+#: .tmp/ui.py:337
+msgid "Network Mask :"
+msgstr "Mascara de red :"
+
+#: .tmp/ui.py:338
+# favor revisar, aqui agregar tambien la palabra gateway ? - how much space can i use ? how long may this text be ?
+msgid "Default Gateway :"
+msgstr "Puerto de enlace por omisión :"
+
+#: .tmp/ui.py:341
+msgid "Default"
+msgstr "Por omisión"
+
+#: .tmp/ui.py:342
+msgid "Automatic"
+msgstr "Automático"
+
+#: .tmp/ui.py:343
+msgid "Custom :"
+msgstr "Personalizado :"
+
+#: .tmp/ui.py:344
+msgid "Apply"
+msgstr "Aplicar"
+
+#: .tmp/ui.py:346
+msgid "Esc"
+msgstr ""
+
+#: .tmp/ui.py:347
+msgid "Remote"
+msgstr "Remoto"
+
+#: .tmp/ui.py:348
+msgid "Network Name (ESSID) :"
+msgstr "Nombre de red (ESSID) :"
+
+#: .tmp/ui.py:349
+msgid "Scan"
+msgstr "Buscar"
+
+#: .tmp/ui.py:350
+msgid "Security Type :"
+msgstr "Tipo de seguridad :"
+
+#: .tmp/ui.py:351
+msgid "Settings"
+msgstr "Configuración"
+
+#: .tmp/ui.py:352
+msgid "Key :"
+msgstr "Clave :"
+
+#: .tmp/ui.py:353
+msgid "Hide Password"
+msgstr "Ocultar contraseña"
+
+#: .tmp/uisecurity.py:35
+msgid "Security Settings"
+msgstr "Configuración de seguridad"
+
+#: .tmp/widgets.py:216
+msgid "Disconnected"
+msgstr "Desconectado"
+
+#: .tmp/widgets.py:220
+#, python-format
+msgid "Connected: %s"
+msgstr "Conectado: %s"
+
+#: .tmp/widgets.py:224
+msgid "Connecting"
+msgstr "Conectando"
+
