@@ -69,10 +69,15 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.model().setFilterRole(GroupRole)
         self.packageList.model().setFilterPackages(packages)
 
+    def setActionButton(self):
+        self.actionButton.setText(self.state.getActionName())
+        self.actionButton.setIcon(self.state.getActionIcon())
+
     def switchState(self, state):
         try:
             waitCursor()
             self.state.setState(state)
+            self.setActionButton()
             self.initialize()
         finally:
             restoreCursor()
