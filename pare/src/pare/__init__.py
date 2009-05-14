@@ -14,8 +14,7 @@ from storagelist import StorageList
 from storage import Storage,Disk,Partition
 from storageactions import CreateDevice, CreateFormat, DestroyDevice, DestroyFormat
 
-def storageInitialize():
-    pass
+
     
 
 class Pare(object):
@@ -34,10 +33,14 @@ class Pare(object):
     def setup(self):
         self.storageList.process()
     
+    def storageInitialize(self):
+        print "burada"
+        self.storageList.populate()
+        
     @property
     def devices(self):
         devices = self.storageList.devices.values()
-        devices.sort(key=lambda d: d.path)
+        #devices.sort(key=lambda d: d.path)
         return devices
     
     @property
