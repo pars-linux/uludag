@@ -258,6 +258,13 @@ def is_linux_boot(partition_path, file_system):
 
     return result
 
+def pardus_release():
+    fpath = os.path.join('/tmp/pcheck/', ctx.consts.pardus_release_path)
+    print "okoko", fpath
+    if os.path.exists(fpath):
+        return open(fpath,'r').read().strip()
+    return ''
+
 def reboot():
     try:
         umount(consts.target_dir + "/home")

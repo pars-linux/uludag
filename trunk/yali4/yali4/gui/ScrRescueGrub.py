@@ -10,6 +10,7 @@
 # Please read the COPYING file.
 #
 
+import os
 import gettext
 __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
@@ -19,6 +20,7 @@ from PyQt4.QtCore import SIGNAL
 
 import yali4.storage
 from yali4.gui.installdata import *
+from yali4.gui.GUIAdditional import DeviceItem
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.rescuegrubwidget import Ui_RescueGrubWidget
 from yali4.gui.GUIException import GUIException
@@ -56,10 +58,6 @@ loader.
 
         self.ui.installFirstMBR.setChecked(True)
 
-        # initialize all storage devices
-        if not yali4.storage.init_devices():
-            raise GUIException, _("Can't find a storage device!")
-
         if len(yali4.storage.devices) > 1:
             self.device_list_state = True
             # fill device list
@@ -96,24 +94,19 @@ loader.
     def execute(self):
         ctx.installData.bootLoaderOptionalDev = self.device
         print self.device
+
         # Apply GRUB Options
         if self.ui.installSelectedPart.isChecked():
             ctx.installData.bootLoaderOption = B_INSTALL_PART
+            ###### ctx.installData.bootLoaderDev = os.path.basename(SELECTEDPARTITION)
         elif self.ui.installSelectedDisk.isChecked():
             ctx.installData.bootLoaderOption = B_INSTALL_MBR
+            ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.bootLoaderOptionalDev.getPath())
         elif self.ui.installFirstMBR:
             ctx.installData.bootLoaderOption = B_INSTALL_SMART
-        print ctx.installData.bootLoaderOption
+            ctx.yali.guessBootLoaderDevice()
+
+        print "Option", ctx.installData.bootLoaderOption
+        print "Dev", ctx.installData.bootLoaderDev
+
         return True
-
-class DeviceItem(QtGui.QListWidgetItem):
-    def __init__(self, parent, dev):
-        text = u"%s - %s (%s)" %(dev.getModel(),
-                                dev.getName(),
-                                dev.getSizeStr())
-        QtGui.QListWidgetItem.__init__(self,text,parent)
-        self._dev = dev
-
-    def getDevice(self):
-        return self._dev
-
