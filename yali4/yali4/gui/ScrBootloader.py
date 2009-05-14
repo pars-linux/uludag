@@ -24,6 +24,7 @@ from os.path import basename
 
 import yali4.storage
 from yali4.gui.installdata import *
+from yali4.gui.GUIAdditional import DeviceItem
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
 from yali4.gui.GUIException import *
@@ -133,15 +134,4 @@ loader.
             ctx.installData.bootLoaderOption = B_INSTALL_SMART
 
         return True
-
-class DeviceItem(QtGui.QListWidgetItem):
-    def __init__(self, parent, dev):
-        text = u"%s - %s (%s)" %(dev.getModel(),
-                                dev.getName(),
-                                dev.getSizeStr())
-        QtGui.QListWidgetItem.__init__(self,text,parent)
-        self._dev = dev
-
-    def getDevice(self):
-        return self._dev
 

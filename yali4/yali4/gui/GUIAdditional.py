@@ -152,3 +152,13 @@ class PartitionItem(QtGui.QListWidgetItem):
     def getPartition(self):
         return self.part
 
+class DeviceItem(QtGui.QListWidgetItem):
+    def __init__(self, parent, dev):
+        text = u"%s - %s (%s)" %(dev.getModel(),
+                                dev.getName(),
+                                dev.getSizeStr())
+        QtGui.QListWidgetItem.__init__(self,text,parent)
+        self._dev = dev
+
+    def getDevice(self):
+        return self._dev
