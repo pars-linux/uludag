@@ -25,7 +25,8 @@ import templates as tmpl
 try:
     import mailauth
 except ImportError:
-    logger.info("*** You have to create a mailauth.py file for defining 'username' and 'password' to use SMTP authentication.")
+    if config.sendEmail and config.useSmtpAuth:
+        logger.info("*** You have to create a mailauth.py file for defining 'username' and 'password' to use SMTP authentication.")
 
 class MailerError(Exception):
     pass
