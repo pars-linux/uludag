@@ -5,6 +5,7 @@ setup.py
 auxfiles/org.pardus.notificationmanager.service
 auxfiles/pnm.xsd
 auxfiles/sampleconfig.xml
+i18n/de.po
 i18n/es.po
 i18n/nl.po
 i18n/template.pot
