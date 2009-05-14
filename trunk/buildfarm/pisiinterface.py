@@ -35,8 +35,12 @@ class PisiApi:
         self.options.yes_all = True
         self.options.ignore_file_conflicts = True
         self.options.ignore_package_conflicts = True
-        # FIXME: Band-aid for a while...
-        self.options.ignore_sandbox = True
+
+        # Enable debug and verbose
+        self.options.debug = True
+        self.options.verbose = True
+
+        self.options.ignore_sandbox = False
 
         # Set API options
         pisi.api.set_options(self.options)
@@ -44,7 +48,7 @@ class PisiApi:
         # Set IO streams
         pisi.api.set_io_streams(stdout=stdout, stderr=stderr)
 
-        pisi.api.set_userinterface(cli.CLI())
+        pisi.api.set_userinterface(cli.CLI(stdout))
 
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
@@ -145,6 +149,7 @@ class PisiApi:
         logger.info("BUILD called for %s" % pspec)
 
         __newBinaryPackages, __oldBinaryPackages = pisi.api.build(pspec)
+
         logger.info("Created package(s): %s" % (__newBinaryPackages))
         self.__newBinaryPackages += __newBinaryPackages
         self.__oldBinaryPackages += __oldBinaryPackages
@@ -153,8 +158,6 @@ class PisiApi:
 
     def getInstallOrder(self, packages):
         """ Get installation order for pisi packages. """
-
-        import pisi.dependency as dependency
         import pisi.pgraph as pgraph
 
         # d_t: dict assigning package names to metadata's

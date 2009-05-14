@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005 - 2009 TUBITAK/UEKAE
+# Copyright (C) 2005 - 2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -12,10 +12,6 @@
 
 import sys
 
-import gettext
-__trans = gettext.translation('pisi', fallback=True)
-_ = __trans.ugettext
-
 import pisi
 import pisi.context as ctx
 import pisi.ui
@@ -24,10 +20,8 @@ import pisi.util
 class Error(pisi.Error):
     pass
 
-
 class Exception(pisi.Exception):
     pass
-
 
 def printu(obj, err = False):
     if not isinstance(obj, unicode):
@@ -39,13 +33,42 @@ def printu(obj, err = False):
     out.write(obj.encode('utf-8'))
     out.flush()
 
+
+
 class CLI(pisi.ui.UI):
-    "Command Line Interface"
+    "Command Line Interface special to buildfarm"
+
+    def __init__(self, output, show_debug=False, show_verbose=False):
+        super(CLI, self).__init__(show_debug, show_verbose)
+        self.warnings = 0
+        self.errors = 0
+        self.output_file = output
+
+        self.outtypes = {'Warning'  : ('brightyellow', 'brightyellow'),
+                         'Error'    : ('red', 'red'),
+                         'Action'   : ('green', 'green'),
+                         'Notify'   : ('cyan', 'cyan'),
+                         'Status'   : ('brightgreen', 'brightgreen'),
+                         'Display'  : ('gray', 'gray')}
 
     def close(self):
         pisi.util.xterm_title_reset()
 
-    def output(self, msg, err = False, verbose = False):
+    def format(self, msg, msgtype, colored=True):
+        result = ""
+        if not ctx.get_option('no_color'):
+            if msgtype == 'Display':
+                result = msg
+            elif colored and self.outtypes.has_key(msgtype):
+                result = pisi.util.colorize(msg + '\n', self.outtypes[msgtype][0])
+            else:
+                result = msg + '\n'
+        else:
+            result = msgtype + ': ' + msg + '\n'
+
+        return result
+
+    def output(self, msg, msgtype=None, err=False, verbose=False):
         if (verbose and self.show_verbose) or (not verbose):
             if type(msg)==type(unicode()):
                 msg = msg.encode('utf-8')
@@ -53,56 +76,52 @@ class CLI(pisi.ui.UI):
                 out = sys.stderr
             else:
                 out = sys.stdout
-            out.write(msg)
+
+            # Output to screen
+            out.write(self.format(msg, msgtype))
             out.flush()
 
-    def info(self, msg, verbose = False, noln = False):
-        # TODO: need to look at more kinds of info messages
-        # let's cheat from KDE :)
-        if not noln:
-            msg = '%s\n' % msg
-        self.output(unicode(msg), verbose=verbose)
+            # Output the same stuff to the log file
+            self.output_file.write(self.format(msg, msgtype, False))
+            self.output_file.flush()
 
-    def warning(self, msg, verbose = False):
+    def info(self, msg, verbose=False, noln=False):
+        self.output(unicode(msg), 'Info', verbose=verbose)
+
+    def warning(self, msg):
         msg = unicode(msg)
+        self.warnings += 1
         if ctx.log:
             ctx.log.warning(msg)
-        if ctx.get_option('no_color'):
-            self.output(_('Warning: ') + msg + '\n', err=True, verbose=verbose)
-        else:
-            self.output(pisi.util.colorize(msg + '\n', 'brightred'), err=True, verbose=verbose)
+
+        self.output(msg, 'Warning', err=True, verbose=False)
 
     def error(self, msg):
         msg = unicode(msg)
+        self.errors += 1
         if ctx.log:
             ctx.log.error(msg)
-        if ctx.get_option('no_color'):
-            self.output(_('Error: ') + msg + '\n', err=True)
-        else:
-            self.output(pisi.util.colorize(msg + '\n', 'red'), err=True)
 
-    def action(self, msg, verbose=False):
-        #TODO: this seems quite redundant?
+        self.output(msg, 'Error', err=True)
+
+    def action(self, msg):
         msg = unicode(msg)
         if ctx.log:
             ctx.log.info(msg)
-        self.output(pisi.util.colorize(msg + '\n', 'green'))
+
+        self.output(msg, 'Action')
 
     def choose(self, msg, opts):
-        print msg
-        for i in range(0,len(opts)):
-            print i + 1, opts(i)
+        msg = unicode(msg)
+        prompt = msg + pisi.util.colorize(' (%s)' % "/".join(opts), 'red')
         while True:
-            s = raw_input(msg + pisi.util.colorize('1-%d' % len(opts), 'red'))
-            try:
-                opt = int(s)
-                if 1 <= opt and opt <= len(opts):
-                    return opts(opt-1)
-            except Exception:
-                pass
+            s = raw_input(prompt.encode('utf-8'))
+            for opt in opts:
+                if opt.startswith(s):
+                    return opt
 
     def confirm(self, msg):
-        ## BUILDFARM CHANGE ##
+        # Modify so that it always returns True in buildfarm
         return True
 
     def display_progress(self, **ka):
@@ -111,36 +130,36 @@ class CLI(pisi.ui.UI):
             return
         elif ka['operation'] == "fetching":
             totalsize = '%.1f %s' % pisi.util.human_readable_size(ka['total_size'])
-            out = '\r%-30.30s (%s)%3d%% %9.2f %s [%s]' % \
+            out = '\r%-30.50s (%s)%3d%% %9.2f %s [%s]' % \
                 (ka['filename'], totalsize, ka['percent'],
                  ka['rate'], ka['symbol'], ka['eta'])
-            self.output(out)
+            self.output(out, 'Display')
         else:
-            self.output("\r%s (%d%%)" % (ka['info'], ka['percent']))
+            self.output("\r%s (%d%%)" % (ka['info'], ka['percent']), 'Display')
 
         if ka['percent'] == 100:
-            self.output(pisi.util.colorize(_(' [complete]\n'), 'gray'))
+            self.output(' [complete]\n', 'Display')
 
     def status(self, msg = None):
         if msg:
             msg = unicode(msg)
-            self.output(pisi.util.colorize(msg + '\n', 'brightgreen'))
+            self.output(msg, 'Status')
             pisi.util.xterm_title(msg)
 
     def notify(self, event, **keywords):
         if event == pisi.ui.installed:
-            msg = _('Installed %s') % keywords['package'].name
+            msg = 'Installed %s' % keywords['package'].name
         elif event == pisi.ui.removed:
-            msg = _('Removed %s') % keywords['package'].name
+            msg = 'Removed %s' % keywords['package'].name
         elif event == pisi.ui.upgraded:
-            msg = _('Upgraded %s') % keywords['package'].name
+            msg = 'Upgraded %s' % keywords['package'].name
         elif event == pisi.ui.configured:
-            msg = _('Configured %s') % keywords['package'].name
+            msg = 'Configured %s' % keywords['package'].name
         elif event == pisi.ui.extracting:
-            msg = _('Extracting the files of %s') % keywords['package'].name
+            msg = 'Extracting the files of %s' % keywords['package'].name
         else:
             msg = None
         if msg:
-            self.output(pisi.util.colorize(msg + '\n', 'cyan'))
+            self.output(msg, 'Notify')
             if ctx.log:
                 ctx.log.info(msg)
