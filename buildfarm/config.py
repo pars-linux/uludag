@@ -16,7 +16,7 @@
 workDir          = "/var/pisi/"
 
 # Local source repo
-localPspecRepo   = "/root/2009/stable"
+localPspecRepo   = "/root/2009"
 
 # Main buildfarm log
 logFile          = "/var/cache/pisi/buildfarm.log"
@@ -47,7 +47,7 @@ debugPath        = "/var/cache/pisi/packages-debug/"
 # Edit templates.py for the structure of mails.
 
 # Set this to 'False' for turning off notification e-mails
-sendEmail        = False
+sendEmail        = True
 
 # Default from address
 mailFrom         = "buildfarm@pardus.org.tr"
@@ -65,10 +65,10 @@ smtpServer       = "mail.pardus.org.tr"
 
 # Create and edit mailauth.py for authentication if needed
 # Set this to 'False' for not authenticating on the SMTP server
-useSmtpAuth      = False
+useSmtpAuth      = True
 
 # Set this to 'False' if you don't want to generate delta packages
-generateDelta    = False
+generateDelta    = True
 
 # Blacklist for delta packages. Buildfarm will never build
 # delta packages for them.
