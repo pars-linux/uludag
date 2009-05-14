@@ -581,7 +581,7 @@ class MainManager(QtGui.QWidget):
     def deleteConnection(self):
         profile = self.sender().parent().profile
         package = self.sender().parent().package
-        if KMessageBox.questionYesNo(self, i18n("Do you really want to remove profile %s?", profile),
+        if KMessageBox.questionYesNo(self, i18n("Do you really want to remove profile %1?", profile),
                                            "Network-Manager") == KMessageBox.Yes:
             self.iface.deleteConnection(package, profile)
 
