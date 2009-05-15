@@ -11,6 +11,9 @@
 # Please read the COPYING file.
 #
 
+import string
+import comar
+
 import groups
 import pisi
 
@@ -20,11 +23,36 @@ class Iface:
 
     def __init__(self, source=REPO):
         self.source = source
+        self.initComar()
+        self.initDB()
 
-        # init databases
+    def initComar(self):
+        self.link = comar.Link()
+        self.link.setLocale()
+        self.link.listenSignals("System.Manager", self.__handleSignals)
+
+    def initDB(self):
         self.pdb  = pisi.db.packagedb.PackageDB()
         self.cdb  = pisi.db.componentdb.ComponentDB()
         self.idb  = pisi.db.installdb.InstallDB()
+
+    def handler(self, *args):
+        pass
+
+    def installPackages(self, packages):
+        packages = string.join(packages,",")
+        self.link.System.Manager["pisi"].updatePackage(packages, async=self.handler)
+
+    def removePackages(self, packages):
+        packages = string.join(packages,",")
+        self.link.System.Manager["pisi"].removePackage(packages, async=self.handler)
+
+    def upgradePackages(self, packages):
+        packages = string.join(packages,",")
+        self.link.System.Manager["pisi"].installPackage(packages, async=self.handler)
+
+    def updateRepositories(self):
+        self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler)
 
     def setSource(self, source):
         self.source = source
@@ -70,3 +98,10 @@ class Iface:
     def getRequires(self, packages):
         revDeps = set(pisi.api.get_remove_order(packages))
         return list(set(revDeps) - set(packages))
+
+
+    def __handleSignals(self, package, signal, args):
+        print "Signal:", signal
+        print "Args:", args
+        if signal == "finished":
+            pisi.db.invalidate_caches()

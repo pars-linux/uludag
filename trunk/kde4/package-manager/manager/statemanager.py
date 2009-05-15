@@ -34,6 +34,9 @@ class StateManager():
         else:
             self.iface.setSource(self.iface.REPO)
 
+    def getState(self):
+        return self.state
+
     def packages(self):
         if self.cached_packages == None:
             if self.state == self.UPGRADE:
@@ -57,3 +60,8 @@ class StateManager():
 
     def groupPackages(self, name):
         return list(set(self.packages()).intersection(self.iface.getGroupPackages(name)))
+
+    def takeAction(self, packages):
+        return {self.INSTALL:self.iface.installPackages(packages),
+                self.REMOVE:self.iface.removePackages(packages),
+                self.UPGRADE:self.iface.upgradePackages(packages)}[self.state]
