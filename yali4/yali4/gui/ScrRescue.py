@@ -120,10 +120,10 @@ class PardusPartitions:
                 # print "Checking ... ", partition.getPath()
                 fs = partition.getFSName()
                 if fs in ("ext4", "ext3", "reiserfs", "xfs"):
-                    linuxPartitions.append({'partition':partition, 'release':''})
+                    pardus_release = yali4.sysutils.pardus_release()
+                    linuxPartitions.append({'partition':partition, 'release':pardus_release})
                     ctx.debugger.log("Partition found which has usable fs (%s)" % partition.getPath())
                     guest_grub_conf = yali4.sysutils.is_linux_boot(partition.getPath(), fs)
-                    pardus_release = yali4.sysutils.pardus_release()
                     if pardus_release:
                         pardusPartitions.append({'partition':partition, 'release':pardus_release})
                     # If it is not a pardus installed partition skip it
