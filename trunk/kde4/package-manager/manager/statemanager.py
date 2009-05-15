@@ -11,16 +11,19 @@
 # Please read the COPYING file.
 #
 
+from PyQt4.QtCore import QObject, SIGNAL
+
 from PyKDE4.kdecore import i18n
 from PyKDE4.kdeui import KIcon
 
 import backend
 
-class StateManager():
+class StateManager(QObject):
 
     (INSTALL, REMOVE, UPGRADE) = range(3)
 
     def __init__(self, parent=None):
+        QObject.__init__(self)
         self.parent = parent
         self.state = self.INSTALL
         self.iface = backend.pm.Iface()
@@ -70,5 +73,6 @@ class StateManager():
     def __actionHandler(self, package, signal, args):
         print "Signal:", signal
         print "Args:", args
+
         if signal == "finished":
-            self.iface.invalidateCaches()
+            self.emit(SIGNAL("finished(QString)"), args[0])
