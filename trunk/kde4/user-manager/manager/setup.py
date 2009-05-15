@@ -107,7 +107,10 @@ class Install(install):
         os.chmod(os.path.join(project_dir, "%s.py" % about.appName), 0755)
         # Symlink
         try:
-            os.symlink(os.path.join(project_dir, "%s.py" % about.appName), os.path.join(bin_dir, about.appName))
+            if self.root:
+                os.symlink(os.path.join(project_dir.replace(self.root, ""), "%s.py" % about.appName), os.path.join(bin_dir, about.appName))
+            else:
+                os.symlink(os.path.join(project_dir, "%s.py" % about.appName), os.path.join(bin_dir, about.appName))
         except OSError:
             pass
 
