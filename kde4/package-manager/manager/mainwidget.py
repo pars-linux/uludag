@@ -41,7 +41,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.state, SIGNAL("progress(int)"), self.progressDialog.updateProgressBar)
 
         # Main Widget related signals
-        self.connect(self.actionButton, SIGNAL("clicked()"), self.takeAction)
+        self.connect(self.actionButton, SIGNAL("clicked()"), self.actionStart)
         self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
@@ -86,7 +86,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.actionButton.setText(self.state.getActionName())
         self.actionButton.setIcon(self.state.getActionIcon())
 
-    def takeAction(self):
+    def actionStart(self):
         self.progressDialog.show()
         self.state.takeAction(self.packageList.selectedPackages())
 
