@@ -41,7 +41,7 @@ class Iface:
 
     def installPackages(self, packages):
         packages = string.join(packages,",")
-        self.link.System.Manager["pisi"].updatePackage(packages, async=self.handler)
+        self.link.System.Manager["pisi"].installPackage(packages, async=self.handler)
 
     def removePackages(self, packages):
         packages = string.join(packages,",")
@@ -49,7 +49,7 @@ class Iface:
 
     def upgradePackages(self, packages):
         packages = string.join(packages,",")
-        self.link.System.Manager["pisi"].installPackage(packages, async=self.handler)
+        self.link.System.Manager["pisi"].updatePackage(packages, async=self.handler)
 
     def updateRepositories(self):
         self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler)
