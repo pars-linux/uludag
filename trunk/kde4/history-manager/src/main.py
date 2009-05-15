@@ -45,7 +45,8 @@ class Manager(KMainWindow):
             self.move(self.mapToGlobal(settings.value("pos").toPoint()))
             self.resize(settings.value("size").toSize())
 
-        # self.resize(640, 480)
+        self.setWindowIcon(QtGui.QIcon(":/icons/history-manager.png"))
+
         self.setCentralWidget(MainManager(self, True, app))
 
 def CreatePlugin(widget_parent, parent, component_data):

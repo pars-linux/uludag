@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>History Manager</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resources/data.qrc">
+    <normaloff>:/icons/history-manager.png</normaloff>:/icons/history-manager.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <item row="0" column="0">
     <widget class="QPushButton" name="newSnapshotPB">
@@ -63,7 +67,7 @@
         <x>0</x>
         <y>0</y>
         <width>653</width>
-        <height>326</height>
+        <height>325</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
