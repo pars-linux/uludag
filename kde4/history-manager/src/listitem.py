@@ -17,6 +17,9 @@ class HistoryItem(QListWidgetItem):
     def __cmp__(self, other):
         return cmp(int(self.no), int(other.no))
 
+    def __lt__(self, other):
+        return int(self.no) < int(other.no)
+
 class NewOperation(QWidget):
     def __init__(self, operation, parent=None):
         super(NewOperation, self).__init__(None)
