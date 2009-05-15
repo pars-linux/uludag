@@ -10,6 +10,7 @@
 # Please read the COPYING file
 
 import os
+#import tempfile
 import logging
 log = logging.getLogger("pare")
 
@@ -23,29 +24,6 @@ from pare.utils.dm import dm_node_from_name
 import gettext
 _ = lambda x: gettext.ldgettext("pare", x)
 
-
-
-
-_formatType = {"ext2":"EXT2",
-               "ext3":"EXT3",
-               "ext4":"EXT4"}
-
-def get_format(type, *args, **kwargs):
-    """
-        type -- Format Class type
-        device -- path to the device which resides
-        uuid -- the UUID of (preexisting) formatted Device
-        exists -- whether or not format exists on device
-        
-    """
-    #FIXME:May be walk on os.path.dirname(_file_) to search .py files to get Decorated StoragFormat class
-    
-    formatClassIns =None
-    for key, formatClass in _formatType.items():
-        if type == key and issubclass(formatClass, StorageFormat):
-            formatClassIns = formatClass(*args, **kwargs)
-    
-    return formatClassIns
         
     
 
@@ -180,7 +158,7 @@ class FileSystem(StorageFormat):
             exists -- if fileystem is already exists
         """
         
-        StorageFormat().__init__(self, *args, **kwargs)
+        StorageFormat.__init__(self, *args, **kwargs)
         
         self._targetMountpoint = kwargs.get("mountpoint") # target mount point
         self._mountoptions = kwargs.get("mountoptions")
@@ -189,6 +167,7 @@ class FileSystem(StorageFormat):
         self._size = kwargs.get("size")
         self._minSize = None
         self._currentMountpoint = None # current mountpoint when mounted
+        
         if self.exists:
             #FIXME - determine actual filesystem size
             self._size =  self._getExistingSize()
@@ -240,7 +219,16 @@ class FileSystem(StorageFormat):
     def _getExistingSize(self):
         """Determine the size of FileSystem"""
         size = 0
-        origMount = self._mountpoint
+        origMount = self._currentMountpoint
+#        tmp = tempfile.mkdtemp(prefix="getsize-", dir="/tmp")
+#        self.mount(mountpoint=tmp, options="ro")
+#        buf = os.statvfs(tmp)
+#        os.rmdir(tmp)
+#        self._currentMountpoint = origMount
+#        
+#        size = (buf.f_frsize * buf.f_blocks) / 1024.0 / 1024.0 
+        
+        return size
     
     def _getFormatOptions(self, options=None):
         args = []
@@ -329,7 +317,7 @@ class FileSystem(StorageFormat):
     @property
     def type(self):
         type = self._type
-        if self.migrate():
+        if self.migrate:
             type = self.migrationTarget()
         return type
     
@@ -433,7 +421,11 @@ class FileSystem(StorageFormat):
         
         if not return_code:
             raise FileSystemError("FileSystem check failed")
-        
+     
+     
+    def tearDown(self, *args, **kwargs):
+        return self.umount(*args, **kwargs)
+    
     def mount(self, *args, **kwargs):
         """
             options -- overrides other self.options params
@@ -540,7 +532,6 @@ class EXT2(FileSystem):
     _resizefs = "resize2fs"
     _labelfs = "e2label"
     _fsck = "e2fsck"
-    _formattable = True
     _resizable = True
     _bootable = True
     _maxsize = 8 * 1024 * 1024
@@ -592,3 +583,12 @@ class EXT4(EXT3):
     _defaultFormatOptions = ["-t", "ext4"]
     _migratable = False
     
+    
+class FAT(FileSystem):
+    """ FAT filesystem. """
+    _type = "vfat"
+    _mkfs = "mkdosfs"
+    _labelfs = "dosfslabel"
+    _fsck = "dosfsck"
+    _maxSize = 1024 * 1024
+    _defaultMountOptions = ["umask=0077", "shortname=winnt"]
