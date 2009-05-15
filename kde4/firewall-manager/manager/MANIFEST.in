@@ -2,4 +2,4 @@ include *.py
 recursive-include ui *.ui
 recursive-include code *.py
 recursive-include po *.po *.pot
-recursive-include data *.service
+recursive-include data *.desktop
