@@ -88,3 +88,12 @@ class PackageModel(QAbstractTableModel):
         else:
             self.cached_package = self.iface.getPackage(self.packages[index.row()])
             return self.cached_package
+
+    # FIXME: There should really be a better way to get this from proxy. Proxy's selectedIndexes only
+    # returns the selected but filtered packages.
+    def selectedPackages(self):
+        selected = []
+        for i, pkg in enumerate(self.packages):
+            if self.package_selections[i] == Qt.Checked:
+                selected.append(pkg)
+        return selected
