@@ -20,14 +20,14 @@ TODO List
 + Fix slow filtering issue in sortfilterproxy and resizetocontents
 
 + Fix sorting
-- Fix resize, move of widget
-- Fix empty tuples in pisi progress messages issue
 
 - Release as 0.2.3
 
+- Fix empty tuples in pisi progress messages issue
 - Support aliases to operations
 ~ Use system icons if possible
 - Add "More history" thing
 - Refresh browser after operation
+- Fix resize, move of widget
 
 - Release as 0.2.4
