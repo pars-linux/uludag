@@ -19,12 +19,14 @@ TODO List
 + i18n ".. Listing" status'
 + Fix slow filtering issue in sortfilterproxy and resizetocontents
 
-- Support aliases to operations
-- Fix sorting
++ Fix sorting
 - Fix resize, move of widget
-~ Use system icons if possible
 - Fix empty tuples in pisi progress messages issue
-- Add "More history" thing
 
+- Release as 0.2.3
+
+- Support aliases to operations
+~ Use system icons if possible
+- Add "More history" thing
 
 - Release as 0.2.4
