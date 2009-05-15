@@ -39,9 +39,9 @@ class InstallData:
     bootLoaderDev = None
     bootLoaderOption = B_INSTALL_SMART
     bootLoaderOptionalDev = None
+    rescuePartition = None
     orderedDiskList = []
     repoAddr = None
     useYaliFirstBoot = False
     timezone = "Europe/Istanbul"
     sessionLog = ""
-

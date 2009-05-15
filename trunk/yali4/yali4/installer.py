@@ -68,6 +68,7 @@ import yali4.gui.ScrSummary
 import yali4.gui.ScrGoodbye
 import yali4.gui.ScrRescue
 import yali4.gui.ScrRescueGrub
+import yali4.gui.ScrRescueFinish
 
 PARTITION_ERASE_ALL, PARTITION_USE_AVAIL, PARTITION_USE_OLD = range(3)
 
@@ -123,7 +124,8 @@ class Yali:
         # Rescue Mode
         self._screens[YALI_RESCUE] = [
                                         yali4.gui.ScrRescue,            # Rescue Mode
-                                        yali4.gui.ScrRescueGrub         # Grub Rescue
+                                        yali4.gui.ScrRescueGrub,        # Grub Rescue
+                                        yali4.gui.ScrRescueFinish       # Final step for rescue
                                      ]
 
         self.plugin = None
@@ -507,7 +509,7 @@ class Yali:
 
         rootWidget.steps.setOperations(stepsBase)
 
-    def installBootloader(self, pardusPart = None, pardusPartLabel = None):
+    def installBootloader(self, pardusPart = None):
         if not ctx.installData.bootLoaderDev:
             ctx.debugger.log("Dont install bootloader selected; skipping.")
             return
@@ -516,8 +518,8 @@ class Yali:
 
         # Rredefined Pardus path for rescue mode
         if pardusPart:
-            _ins_part = pardusPart
-            _ins_part_label = pardusPartLabel
+            _ins_part = pardusPart.getPath()
+            _ins_part_label = pardusPart.getTempLabel()
             grubConfPath = os.path.join(ctx.consts.target_dir,"boot/grub/grub.conf")
             if os.path.exists(grubConfPath):
                 # Rename the old config we will create a new one
@@ -624,7 +626,7 @@ class Yali:
 
         # GPT stuff
         gptsync_path = yali4.sysutils.find_executable("gptsync")
-        if gptsync_path:
+        if gptsync_path and not pardusPart:
             gptsync = os.popen("%s %s" % (gptsync_path, root_part_req.partition().getDevicePath()))
             for line in gptsync.readlines():
                 if line.startswith("Status:"):

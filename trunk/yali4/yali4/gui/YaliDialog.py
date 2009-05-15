@@ -149,6 +149,37 @@ your system formatting the selected partition.</p>
     def slotCancel(self):
         self.emit(SIGNAL("signalCancel"), ())
 
+class RebootWidget(QtGui.QWidget):
+
+    def __init__(self, *args):
+        QtGui.QWidget.__init__(self, *args)
+
+        l = QtGui.QVBoxLayout(self)
+        l.setSpacing(20)
+        l.setMargin(10)
+
+        warning = QtGui.QLabel(self)
+        warning.setText(_('''<b>
+<p>Press Reboot button to restart your system.</p>
+</b>
+'''))
+
+        self.reboot = QtGui.QPushButton(self)
+        self.reboot.setText(_("Reboot"))
+
+        buttons = QtGui.QHBoxLayout(self)
+        buttons.setSpacing(10)
+        buttons.addStretch(1)
+        buttons.addWidget(self.reboot)
+
+        l.addWidget(warning)
+        l.addLayout(buttons)
+
+        self.connect(self.reboot, SIGNAL("clicked()"),
+                     self.slotReboot)
+
+    def slotReboot(self):
+        self.emit(SIGNAL("signalOK"), ())
 
 class InformationWindow(QtGui.QWidget):
 
