@@ -34,6 +34,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.initialize()
 
         self.connect(self.actionButton, SIGNAL("clicked()"), self.takeAction)
+        self.connect(self.state, SIGNAL("finished(QString)"), self.actionFinished)
         self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
@@ -75,7 +76,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.actionButton.setIcon(self.state.getActionIcon())
 
     def takeAction(self):
+        waitCursor()
         self.state.takeAction(self.packageList.selectedPackages())
+
+    def actionFinished(self, operation):
+        self.switchState(self.state.getState())
+        restoreCursor()
 
     def switchState(self, state):
         try:

@@ -39,6 +39,7 @@ class Iface(Singleton):
     def initComar(self):
         self.link = comar.Link()
         self.link.setLocale()
+        self.link.listenSignals("System.Manager", self.signalHandler)
 
     def initDB(self):
         self.pdb  = pisi.db.packagedb.PackageDB()
@@ -47,6 +48,10 @@ class Iface(Singleton):
 
     def setHandler(self, handler):
         self.link.listenSignals("System.Manager", handler)
+
+    def signalHandler(self, package, signal, args):
+        if signal == "finished":
+            pisi.db.invalidate_caches()
 
     def handler(self, *args):
         pass
@@ -110,6 +115,3 @@ class Iface(Singleton):
     def getRequires(self, packages):
         revDeps = set(pisi.api.get_remove_order(packages))
         return list(set(revDeps) - set(packages))
-
-    def invalidateCaches(self):
-        pisi.db.invalidate_caches()
