@@ -1,3 +1,30 @@
+2009-05-15 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * New release 2.1.5
+
+2009-05-15 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * If no label defined try to use filesystem label..
+
+2009-05-15 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Grub rescue mode added
+         * Bug fixed at http://bugs.pardus.org.tr/7169
+
+2009-05-14 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Scan partitions and try to find Pardus installed one
+         * Show usable partitions for rescue
+         * Show error messages as a result of partition scan
+         * One step further in Grub rescue..
+
+2009-05-14 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Fixed keyboard issues beacuse of conf.d/mudur change
+
+2009-05-12 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Use internal name instead of label if device does not exists
+         * Reset all changes before reiniting devices
+         * Bug fixed at http://bugs.pardus.org.tr/9476
+
+2009-05-12 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Fixed grub device order issue
+
 2009-05-12 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * New release 2.1.4
          * Fixed important partitioning issues
