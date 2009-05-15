@@ -519,7 +519,7 @@ class Yali:
         # Rredefined Pardus path for rescue mode
         if pardusPart:
             _ins_part = pardusPart.getPath()
-            _ins_part_label = pardusPart.getTempLabel()
+            _ins_part_label = pardusPart.getTempLabel() or pardusPart.getFSLabel()
             grubConfPath = os.path.join(ctx.consts.target_dir,"boot/grub/grub.conf")
             if os.path.exists(grubConfPath):
                 # Rename the old config we will create a new one
@@ -528,7 +528,7 @@ class Yali:
             root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                       request.mountRequestType)
             _ins_part = root_part_req.partition().getPath()
-            _ins_part_label = root_part_req.partition().getTempLabel()
+            _ins_part_label = root_part_req.partition().getTempLabel() or pardusPart.getFSLabel()
 
         loader.write_grub_conf(_ins_part, ctx.installData.bootLoaderDev, _ins_part_label)
 
