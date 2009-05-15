@@ -34,7 +34,6 @@ class Pare(object):
         self.storageList.process()
     
     def storageInitialize(self):
-        print "burada"
         self.storageList.populate()
         
     @property

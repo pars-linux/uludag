@@ -143,7 +143,7 @@ class DestroyDevice(Action):
     def __init__(self, device):
         Action.__init__(self, device)
         if device.exists:
-            device.teardown()
+            device.tearDown()
             
     def execute(self):
         self.device.destroy()
@@ -183,7 +183,7 @@ class CreateFormat(Action):
         Action.__init__(self, device)
         self.origFormat = device.format
         if self.device.format.exists:
-            self.device.format.teardown()
+            self.device.format.tearDown()
             self.device.format = format
     
     def execute(self):
@@ -213,7 +213,7 @@ class DestroyFormat(Action):
         
         if self.device.format.exists:
             self.origFormat = self.device.format
-            self.device.format.teardown()
+            self.device.format.tearDown()
         
         self.device.format = None
         

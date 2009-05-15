@@ -9,11 +9,14 @@
 #
 # Please read the COPYING file.
 
-
+import os
 import parted
 import _ped
+from pare.errors import StorageError, StorageFormatError
+from pare.formats import StorageFormat
 from pare.sysutils import notify_kernel
 from pare.udev import udev_settle
+from pare.formats import filesystem as filesystem
 import logging
 log = logging.getLogger("pare")
 
@@ -32,7 +35,8 @@ class Storage(object):
 
         self._uuid = None
         self._name = device
-        self._format = format
+        self._format = None     #We can add two format variable @preperty usage 
+                                #to be handle later in setter and getter methods 
         self._size = size
         self._major = major
         self._minor = minor
@@ -43,6 +47,8 @@ class Storage(object):
         self._partedDevice = None
         self._targetSize = self._size
 
+        
+
         self._diskLabel = None
 
         if parents == None:
@@ -50,19 +56,43 @@ class Storage(object):
         elif not isinstance(parents, list):
             raise ValueError("parents must be Device instances")
         self._parents = parents
-        self_kids = 0
+        self._kids = 0
 
-        for parent in self.parents:
+        self.format = format # _setFormat() wants self._exists and self.path variable to call get_format 
+                             # we set format after self._exists and self._parents assignment ;)
+                             
+        for parent in self._parents:
             parent.addChild()
 
+    def _getFormat(self):
+        return self._format
+    
+    def _setFormat(self, format):
+        if not type:
+            print "******************Burada _setFormat type is :%s" % type
+            format = filesystem.FileSystem(type, device=self.path, exists=self._exists)
+            if self._format and self._format.status:
+                raise StorageFormatError("Cannot replace active device format")
+            
+            print "self.format----->%s" % format
+        
+        self._format =  format
+            
+    format =  property(lambda p: p._getFormat(), lambda p,f: p._setFormat(f))
+        
+        
     def addChild(self):
         self._kids += 1
 
     def removeChild(self):
         self._kids -= 1
 
+    @property
+    def exists(self):
+        return self._exists
+    @property
     def isLeaf(self):
-        return self.kids == 0
+        return self._kids == 0
 
     def createParents(self):
         """Run create method for all parent devices."""
@@ -78,9 +108,14 @@ class Storage(object):
         """Remove the device"""
         pass
 
-    def teardown(self):
+    def tearDown(self):
         """Close or tear down a device"""
-        pass
+        if not self._exists:
+            raise StorageError("Device doesnt exists")
+        
+        if self.status  and self.format.exists:
+            self.format.tearDown()
+            udev_settle()
 
     def setup(self):
         """Open or setup a device"""
@@ -107,11 +142,13 @@ class Storage(object):
             log.debug("looking parted device %s" % self.path)
 
             try:
+                print "self.path: %s" % self.path
                 self._partedDevice = parted.Device(path=self.path)
+                print "partedDevice foksiyonunun içinde --->self._partedDevice:%s" % self._partedDevice
             except _ped.DeviceException:
                 pass
 
-            return self._partedDevice
+        return self._partedDevice
 
     @property
     def getTargetSize(self):
@@ -166,13 +203,17 @@ class Storage(object):
         else:
             self._size
 
+    @property
     def path(self):
         """Device node representing this device"""
         return "%s/%s" % (self._devDir, self.name)
 
+    @property
     def name(self):
+        print "-------->self._name:%s" % self._name
         return self._name
 
+    @property
     def status(self):
         """ The Device's status
             True is device open and ready for use
@@ -182,10 +223,12 @@ class Storage(object):
             return False
         return os.access(self.path, os.W_OK)
 
+    @property
     def type(self):
         """Device Type"""
         return self.type
-
+    
+    @property
     def mediaPresent(self):
         return True
 
@@ -241,18 +284,20 @@ class Disk(Storage):
             format -- Device Format instances
             initLabel --  whether to start a fresh disk
         """
-        Storage.__init__(name, format=format, size=size, major=major, minor=minor, exists=True, sysfsPath=sysfsPath, parents=parents)
+        Storage.__init__(self, name, format=format, size=size, major=major, minor=minor, exists=True, sysfsPath=sysfsPath, parents=parents)
 
         self._partedDisk = None
 
         log.debug("looking up parted Device %s" % self.path)
-
+        print "1111--self.partedDevice:%s" % self.partedDevice
         if self.partedDevice:
+            print "1111--self.partedDevice:%s" % self.partedDevice
             log.debug("creating parted Disk: %s" % self.path)
             if initLabel:
                 self._partedDisk = self.freshPartedDisk()
             else:
                 try:
+                    print "self.partedDevice:%s" % self.partedDevice 
                     self._partedDisk = parted.Disk(device=self.partedDevice)
                 except _ped.DeviceException:
                     StorageFormatError("User prefered to not format.")
@@ -262,7 +307,11 @@ class Disk(Storage):
             self._origPartedDisk = self._partedDisk.duplicate()
         else:
             self._origPartedDisk = None
-
+    
+    @property
+    def partedDisk(self):
+        return self._partedDisk
+    
     def mediaPresent(self):
         return self.partedDevice is not None
 
@@ -276,7 +325,7 @@ class Disk(Storage):
         return parted.freshDisk(device=self.partedDevice, ty=labelType)
 
     def resetPartedDisk(self):
-        self._partedDisk = self._origPartedDisk
+        self.partedDisk = self._origPartedDisk
 
     def addPartition(self, device):
         if not self.mediaPresent:
@@ -300,7 +349,7 @@ class Disk(Storage):
         """Probe for any missing information about thiss device"""
         if not self._disklabel:
             log.debug("setting %s diskLabel to %s" % (self.name, self.path))
-            self._diskLabel = self._partedDisk.type
+            self._diskLabel = self.partedDisk.type
 
     def commit(self):
         """Commit changes to the device"""
@@ -335,7 +384,7 @@ class Disk(Storage):
         self.partedDisk.deleteAllPartitions()
         self.partedDisk.clobber()
         self.partedDisk.commit()
-        self.teardown()
+        self.tearDown()
 
 class Partition(Storage):
     """A disk partition"""
@@ -393,9 +442,14 @@ class Partition(Storage):
         self._partedPartition = None
 
         if self._exists:
+            print "self._exists---de"
+            print "self.disk-----:%s" % self.disk
+            print "self.disk.partedDisk-----:%s" % self.disk.partedDisk
+            print "self.path---->:%s" % self.path
             self._partedPartition = self.disk.partedDisk.getPartitionByPath(self.path)
 
             if not self._partedPartition:
+                print "BURADAAAAAAAAAAAAAAA"
                 raise StorageError("Cannot find partition instance",self.path)
         else:
             self._req_name = name
@@ -413,10 +467,12 @@ class Partition(Storage):
     def _getDisk(self):
         """The disk that contain these partition"""
         try:
-            disk = self.parents[0]
+            disk = self._parents[0]
         except IndexError:
             disk = None
-
+        
+        print "self._parents[0]:%s" % self._parents[0].name
+        
         return disk
 
     def _setDisk(self):
@@ -437,11 +493,10 @@ class Partition(Storage):
             partition = self.disk.partedDisk.getPartitionByPath(self.path)
             (constraint,geometry) = self._computeResize(partition)
 
-            self.disk.partedDisk.setPartitionGeometry(partition=partition, constraint=constraint,\
-                                                      start=geometry.start, end=geometry.end)
+            self.disk.partedDisk.setPartitionGeometry(partition=partition, constraint=constraint, start=geometry.start, end=geometry.end)
     @property
     def path(self):
-        return "%s%s" % (self.parents[0]._devDir, self.name)
+        return "%s/%s" % (self._parents[0]._devDir, self.name)
 
     @property
     def partType(self):
@@ -523,8 +578,6 @@ class Partition(Storage):
             self.disk.commit()
             self.notifyKernel()
 
-    def _setFormat(self, format):
-        Storage.setFormat(format)
 
     def _setBootable(self, bootable):
         if self.partedPartition:
