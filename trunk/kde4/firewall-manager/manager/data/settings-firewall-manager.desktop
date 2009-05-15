@@ -1,0 +1,17 @@
+[Desktop Entry]
+Exec=kcmshell4 fiewwall-manager
+Icon=security-high
+Type=Service
+X-KDE-ServiceTypes=KCModule
+
+X-KDE-Library=kpythonpluginfactory
+X-KDE-ParentApp=kcontrol
+X-KDE-PluginKeyword=firewall-manager/firewall-manager.py
+
+X-KDE-System-Settings-Parent-Category=computer-administration
+X-KDE-Weight=70
+
+Name=Firewall Manager
+Name[tr]=Güvenlik Duvarı Yöneticisi
+Comment=Firewall Manager
+X-KDE-Keywords=python security firewall managers

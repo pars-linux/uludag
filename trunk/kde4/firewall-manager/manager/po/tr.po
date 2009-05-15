@@ -1,0 +1,68 @@
+# Firewall Manager.
+# Copyright (C) 2006-2009, TÜBİTAK/UEKAE
+# This file is distributed under the same license as the Firewall Manager package.
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Firewall Manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-15 17:53+0300\n"
+"PO-Revision-Date: 2009-05-15 17:53+0300\n"
+"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/about.py:19 .tmp/about.py:21
+msgid "Firewall Manager"
+msgstr "Güvenlik Duvarı Yöneticisi"
+
+#: .tmp/about.py:23
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/about.py:24
+msgid " "
+msgstr " "
+
+#: .tmp/about.py:31
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/about.py:31
+msgid "Current Maintainer"
+msgstr "Şu anki geliştirici"
+
+#: .tmp/main.py:96
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
+"Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
+
+#: .tmp/main.py:200
+msgid "All"
+msgstr "Hepsi"
+
+#: .tmp/main.py:211
+msgid "Action"
+msgstr "Olay"
+
+#: .tmp/main.py:268 .tmp/main.py:300
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: .tmp/service.py:38
+msgid "Firewall is activated."
+msgstr "Güvenlik duvarı aktifleştirildi."
+
+#: .tmp/service.py:42
+msgid "Firewall is deactivated."
+msgstr "Güvenlik duvarı pasifleştirildi."
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Yeni Ekle"
