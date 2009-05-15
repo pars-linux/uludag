@@ -53,7 +53,7 @@ class Install(install):
         project_dir = os.path.join(kde_dir, "share/apps", PROJECT)
         service_dir = os.path.join(kde_dir, "share/kde4/services")
         locale_dir = os.path.join(kde_dir, "share/locale")
-        print "Removing directories"
+        print "Removing %s" % project_dir
         shutil.rmtree(project_dir)
         print "Making directories..."
         try:

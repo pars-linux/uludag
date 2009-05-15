@@ -82,7 +82,6 @@ class MainManager(QtGui.QWidget):
 
     def tweakUi(self):
         self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
-        self.parent.setWindowIcon(QtGui.QIcon(":/icons/history-manager.png"))
         self.ui.progressBar.hide()
         self.enableButtons(False)
 
