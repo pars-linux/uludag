@@ -18,6 +18,7 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
 import yali4.storage
+import yali4.sysutils
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.rescuewidget import Ui_RescueWidget
 import yali4.gui.context as ctx
@@ -35,7 +36,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_RescueWidget()
         self.ui.setupUi(self)
-        self.radios = [self.ui.useGrub, self.ui.usePisiHs]
+        self.radios = [self.ui.useGrub, self.ui.usePisiHs, self.ui.usePassword]
         self.isSuitableForRescue = True
 
         # initialize all storage devices
@@ -45,8 +46,15 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # Get usable partitions for rescue
         self.partitionList = PardusPartitions(self)
 
+        # Set Radio actions
         for radio in self.radios:
-            self.connect(radio, SIGNAL("toggled(bool)"), ctx.mainScreen.enableNext)
+            if not self.isSuitableForRescue:
+                radio.hide()
+            else:
+                self.connect(radio, SIGNAL("toggled(bool)"), ctx.mainScreen.enableNext)
+
+        # Reboot Button
+        self.connect(self.ui.rebootButton, SIGNAL("clicked()"), yali4.sysutils.fastreboot)
 
     def updateNext(self):
         for radio in self.radios:
@@ -59,6 +67,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def shown(self):
         ctx.mainScreen.disableBack()
         self.updateNext()
+        if not self.isSuitableForRescue:
+            self.ui.solutionLabel.hide()
+            ctx.mainScreen.disableNext()
+        else:
+            self.ui.rebootButton.hide()
+
+    def execute(self):
+        pass
 
 class PardusPartitions:
     def __init__(self, parentWidget):
@@ -72,22 +88,19 @@ class PardusPartitions:
                 partition = p['partition']
                 _info = "%s - %s %s" % (partition.getDevice().getModel(),
                                          partition.getPath(),
-                                         p['release'])
+                                         p['release'] or partition.getFSLabel())
                 item = QtGui.QListWidgetItem(QtGui.QIcon(":/gui/pics/iconPartition.png"), _info)
                 parentWidget.ui.partitionList.addItem(item)
+            parentWidget.ui.partitionList.setCurrentItem(parentWidget.ui.partitionList.item(0))
 
         if isPardusFound:
             _msg = _("Yalı found a Pardus installed partition on your system.")
             if len(partitionList) > 1:
                 _msg += _("Please select a partition from list.")
-            else:
-                parentWidget.ui.partitionList.hide()
         elif len(partitionList) > 0:
             _msg = _("Yalı couldn't find a Pardus installed partition on your system. But there is a Linux installed partitions.")
             if len(partitionList) > 1:
                 _msg += _("Please select a partition from list")
-            else:
-                parentWidget.ui.partitionList.hide()
 
         parentWidget.ui.infoLabel.setText(_msg)
 
@@ -97,7 +110,7 @@ class PardusPartitions:
         ctx.debugger.log("Checking for Pardus ...")
         for disk in yali4.storage.devices:
             for partition in disk.getPartitions():
-                print "Checking ... ", partition.getPath()
+                # print "Checking ... ", partition.getPath()
                 fs = partition.getFSName()
                 if fs in ("ext4", "ext3", "reiserfs", "xfs"):
                     linuxPartitions.append({'partition':partition, 'release':''})
@@ -112,7 +125,4 @@ class PardusPartitions:
         if len(pardusPartitions) > 0:
             return (True, pardusPartitions)
         return (False, linuxPartitions)
-
-    def addPartition(self, path, label, version=None):
-        pass
 
