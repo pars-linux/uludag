@@ -11,7 +11,7 @@
         </method>
         <method name="moduleParameters" action_id="">
             <arg name="module" type="s" direction="in"/>
-            <arg name="parameters" type="a(sssa(ss))" direction="out"/>
+            <arg name="parameters" type="a(sssa{ss})" direction="out"/>
         </method>
         <method name="getModuleState" action_id="">
             <arg name="module" type="s" direction="in"/>
