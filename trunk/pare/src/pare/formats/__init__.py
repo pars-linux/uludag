@@ -21,13 +21,10 @@ import gettext
 _ = lambda x: gettext.ldgettext("pare", x)
 
 from filesystem import *
+from pare.formats import FileSystem, EXT2, EXT3, EXT4, FAT
 
 
-_formatType = {"ext2":EXT2,
-               "ext3":EXT3,
-               "ext4":EXT4}
-
-def get_format(type, *args, **kwargs):
+def get_format(type=None, *args, **kwargs):
     """
         type -- Format Class type
         device -- path to the device which resides
@@ -35,16 +32,18 @@ def get_format(type, *args, **kwargs):
         exists -- whether or not format exists on device
         
     """
-    #FIXME:May be walk on os.path.dirname(_file_) to search .py files to get Decorated StoragFormat class
     
-    formatClassIns =None
-    for key, formatClass in _formatType.items():
-        if type == key and issubclass(formatClass, StorageFormat):
-            formatClassIns = formatClass(*args, **kwargs)
-    
-    return formatClassIns
+    if type == "ext2":
+        return EXT2(*args, **kwargs)
+    elif type == "ext3":
+        return EXT3(*args, **kwargs)
+    elif type == "ext4":
+        return EXT4(*args, **kwargs)
+    elif type == "vfat":
+        return FAT(*args, **kwargs)
+    else:
+        return FileSystem(*args, **kwargs)
         
-    
 
 class StorageFormat(object):
     """Generic Storage Format"""
