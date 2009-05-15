@@ -1,6 +1,6 @@
 # translation of YALI-tr.po to Türkçe
 # translation of tr.po to
-# Copyright (C) 2005-2008
+# Copyright (C) 2005-2009
 # This file is distributed under the same license as the yali4 package.
 #
 # Barış Metin <baris@uludag.org.tr>, 2005.
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-12 20:43+0300\n"
+"POT-Creation-Date: 2009-05-15 14:41+0300\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -50,7 +50,8 @@ msgstr "Seçiliyi Kullan"
 
 #: yali4/gui/Ui/autopartwidget.py:109 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
-#: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
+#: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rescuegrubwidget.py:82
+#: yali4/gui/Ui/rescuewidget.py:94 yali4/gui/Ui/rootpasswidget.py:170
 #: yali4/gui/Ui/setupuserswidget.py:153 yali4/gui/Ui/welcomewidget.py:90
 msgid "Form1"
 msgstr "Form1"
@@ -173,19 +174,19 @@ msgstr ""
 "diğer işletim sisteminizin yükleyicisini, kurulmuş olan Pardus'u başlatmak \n"
 "için yapılandırmanız gerekir</p>"
 
-#: yali4/gui/Ui/bootloaderwidget.py:82
+#: yali4/gui/Ui/bootloaderwidget.py:82 yali4/gui/Ui/rescuegrubwidget.py:83
 msgid "Where do you want to install the bootlader ?"
 msgstr "Sistem yükleyicisini nereye kurmak istiyorsunuz?"
 
-#: yali4/gui/Ui/bootloaderwidget.py:83
+#: yali4/gui/Ui/bootloaderwidget.py:83 yali4/gui/Ui/rescuegrubwidget.py:84
 msgid "Install to first bootable disk (recommended)"
 msgstr "Açılış diskinin başına kur (önerilen)"
 
-#: yali4/gui/Ui/bootloaderwidget.py:84
+#: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:85
 msgid "Install to Pardus installed partition"
 msgstr "Pardus'un kurulu olduğu disk bölümünün başına kur"
 
-#: yali4/gui/Ui/bootloaderwidget.py:85
+#: yali4/gui/Ui/bootloaderwidget.py:85 yali4/gui/Ui/rescuegrubwidget.py:86
 msgid "Install to selected disk belove"
 msgstr "Listeden seçilmiş diskin başına kur"
 
@@ -208,7 +209,7 @@ msgstr ""
 "için bu doğrulamayı yapmanızı öneririz."
 
 #: yali4/gui/Ui/checkcdwidget.py:74 yali4/gui/ScrCheckCD.py:56
-#: yali4/installer.py:192
+#: yali4/installer.py:202
 msgid "Check CD Integrity"
 msgstr "CD Doğruluğunu Kontrol Et"
 
@@ -428,6 +429,35 @@ msgstr "İptal"
 msgid "Resize"
 msgstr "Yeniden Boyutlandır"
 
+#: yali4/gui/Ui/rescuegrubwidget.py:87
+msgid "Select the disk to install bootloader:"
+msgstr "Sistem yükleyicisinin kurulacağı diski seçin:"
+
+#: yali4/gui/Ui/rescuewidget.py:95
+msgid "Select the partition below that your Pardus installed:"
+msgstr "Aşağıdaki listeden Pardus yüklü disk bölümünü seçin:"
+
+#: yali4/gui/Ui/rescuewidget.py:96
+msgid "Select a proper solution for your problem and click <b>next</b>..."
+msgstr "Pardus ile ilgili probleminiz için uygun çözümü seçin ve <b>ileri</b>'ye tıklayın..."
+
+#: yali4/gui/Ui/rescuewidget.py:97
+msgid "If you have problems with boot, you can reinstall Grub"
+msgstr "Eğer açılış ile ilgili problemleriniz varsa, Grub'ı tekrar kurabilirsiniz"
+
+#: yali4/gui/Ui/rescuewidget.py:98
+msgid "If you need to take back your old operations you can use Pisi History"
+msgstr "Eğer eski işlemlerinizi geri almak istiyorsanız Pisi Geçmiş özelliğini kullanabilirsiniz"
+
+#: yali4/gui/Ui/rescuewidget.py:99
+msgid "If you lost your password you can change it"
+msgstr "Eğer parolanızı kaybettiyseniz, değiştirebilirsiniz"
+
+#: yali4/gui/Ui/rescuewidget.py:100 yali4/gui/ScrSummary.py:73
+#: yali4/gui/YaliDialog.py:168 yali4/installer.py:675
+msgid "Reboot"
+msgstr "Sistemi Yeniden Başlat!"
+
 #: yali4/gui/Ui/rootpasswidget.py:171
 msgid ""
 "<p align=\"left\">System administrator user (root) handles important system "
@@ -515,7 +545,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "GPL Metnini Oku"
 
-#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:174
+#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:173
 msgid "Reboot System!"
 msgstr "Sistemi Yeniden Başlat!"
 
@@ -539,7 +569,7 @@ msgid ""
 msgstr ""
 "Merhaba! Yenilenen kurulum aracımız YALI, Pardus 2009'un kurulumunda sizlere "
 "yardımcı olacak. YALI, akıllı disk biçimlendirme aracı ile sisteminizi "
-"bölümlendirdikten sonra, Pardus 2008'i bilgisayarınıza hızlı ve sorunsuz bir "
+"bölümlendirdikten sonra, Pardus 2009'u bilgisayarınıza hızlı ve sorunsuz bir "
 "şekilde kurmanızı sağlayacak.\n"
 
 #: yali4/gui/descSlide.py:20
@@ -691,36 +721,37 @@ msgstr ""
 msgid "Manual Partitioning selected."
 msgstr "Elle Bölümlendirme seçildi."
 
-#: yali4/gui/DiskWidgets.py:187
+#: yali4/gui/DiskWidgets.py:188
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
 msgstr "'Sistem Dosyaları' bölümü en az %s MB olmalı."
 
-#: yali4/gui/DiskWidgets.py:217 yali4/gui/ScrBootloader.py:67
+#: yali4/gui/DiskWidgets.py:218 yali4/gui/ScrBootloader.py:68
 #: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:73
+#: yali4/gui/ScrRescue.py:45
 msgid "Can't find a storage device!"
 msgstr "Kurulum için disk bulunamadı!"
 
-#: yali4/gui/DiskWidgets.py:233
+#: yali4/gui/DiskWidgets.py:234
 #, python-format
 msgid "%0.1f GB free"
 msgstr "%0.1f GB boş"
 
-#: yali4/gui/DiskWidgets.py:235
+#: yali4/gui/DiskWidgets.py:236
 #, python-format
 msgid "%d MB free"
 msgstr "%d MB boş"
 
-#: yali4/gui/DiskWidgets.py:255 yali4/gui/GUIAdditional.py:146
+#: yali4/gui/DiskWidgets.py:256 yali4/gui/GUIAdditional.py:146
 #, python-format
 msgid "Partition %d"
 msgstr "Disk bölümü %d"
 
-#: yali4/gui/DiskWidgets.py:262
+#: yali4/gui/DiskWidgets.py:263
 msgid "Free Space"
 msgstr "Boş Alan"
 
-#: yali4/gui/DiskWidgets.py:282
+#: yali4/gui/DiskWidgets.py:288
 #, python-format
 msgid ""
 "Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%"
@@ -729,11 +760,11 @@ msgstr ""
 "Disk bölümü <b>%(partition)s (%(size)s)</b>, <b>%(device)s</b> aygıtından "
 "<b>silindi</b>."
 
-#: yali4/gui/DiskWidgets.py:315 yali4/partitionrequest.py:181
+#: yali4/gui/DiskWidgets.py:321 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
 msgstr "Bu bölüm tipi için daha önceden bir alan ayrılmış."
 
-#: yali4/gui/DiskWidgets.py:338
+#: yali4/gui/DiskWidgets.py:344
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
@@ -741,16 +772,16 @@ msgstr ""
 "Disk bölümü <b>%(partition)s</b>, <b>%(fsType)s</b> tipinde "
 "<b>biçimlendirilecek</b>."
 
-#: yali4/gui/DiskWidgets.py:353 yali4/gui/ScrSummary.py:161
+#: yali4/gui/DiskWidgets.py:359 yali4/gui/ScrSummary.py:161
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr "Disk bölümü <b>%(partition)s</b> <b>%(type)s</b> için <b>seçildi</b>."
 
-#: yali4/gui/DiskWidgets.py:372
+#: yali4/gui/DiskWidgets.py:378
 msgid "Too many primary partition !"
 msgstr "Çok fazla birincil bölüm !"
 
-#: yali4/gui/DiskWidgets.py:373
+#: yali4/gui/DiskWidgets.py:379
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
@@ -758,11 +789,11 @@ msgstr ""
 "GPT Disk tabloları extended disk bölümlerini desteklememektedir.\n"
 "Disk tablonuzdan bir disk bölümü silmeniz gerekmekte !"
 
-#: yali4/gui/DiskWidgets.py:397
+#: yali4/gui/DiskWidgets.py:403
 msgid "Too many primary partitions !"
 msgstr "Çok fazla birincil bölüm !"
 
-#: yali4/gui/DiskWidgets.py:398
+#: yali4/gui/DiskWidgets.py:404
 msgid ""
 "You need to delete one of the primary or extended(if exists) partition from "
 "your disk table !"
@@ -771,7 +802,7 @@ msgstr ""
 "bölümünüzü\n"
 "silmeniz gerekmekte !"
 
-#: yali4/gui/DiskWidgets.py:414 yali4/gui/ScrSummary.py:160
+#: yali4/gui/DiskWidgets.py:420 yali4/gui/ScrSummary.py:160
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -780,27 +811,27 @@ msgstr ""
 "Disk bölümü <b>%(partition)s</b>, <b>%(device)s</b> diskine <b>%(size)s MB</"
 "b> boyutuyla ve <b>%(fs)s</b> dosya sistemi ile eklendi."
 
-#: yali4/gui/DiskWidgets.py:440
+#: yali4/gui/DiskWidgets.py:446
 msgid "Delete All Partitions"
 msgstr "Tüm Disk Bölümlerini Sil"
 
-#: yali4/gui/DiskWidgets.py:517
+#: yali4/gui/DiskWidgets.py:523
 msgid "Pardus will install here"
 msgstr "Pardus buraya kurulacak"
 
-#: yali4/gui/DiskWidgets.py:520
+#: yali4/gui/DiskWidgets.py:526
 msgid "User files will store here"
 msgstr "Kullanıcı dosyaları burada saklanacak"
 
-#: yali4/gui/DiskWidgets.py:523
+#: yali4/gui/DiskWidgets.py:529
 msgid "Swap will be here"
 msgstr "Takas burada olacak"
 
-#: yali4/gui/DiskWidgets.py:526
+#: yali4/gui/DiskWidgets.py:532
 msgid "Backup or archive files will store here"
 msgstr "Yedek ya da arşiv dosyaları burada saklanacak"
 
-#: yali4/gui/DiskWidgets.py:547
+#: yali4/gui/DiskWidgets.py:553
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -811,7 +842,7 @@ msgstr ""
 "                                  <b>Boyut:</b> %s<br>\n"
 "                                  <b>DosyaSistemi:</b> %s%s"
 
-#: yali4/gui/DiskWidgets.py:577 yali4/gui/ScrSummary.py:159
+#: yali4/gui/DiskWidgets.py:583 yali4/gui/ScrSummary.py:159
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Disk aygıtı <b>%(device)s</b> üzerindeki tüm disk bölümleri silindi."
@@ -851,11 +882,11 @@ msgstr "Lisans dosyası açılamıyor!"
 msgid "Can't open Release Notes!"
 msgstr "Sürüm Notları dosyası açılamıyor!"
 
-#: yali4/gui/runner.py:135
+#: yali4/gui/runner.py:134
 msgid "Error!"
 msgstr "Hata!"
 
-#: yali4/gui/runner.py:169
+#: yali4/gui/runner.py:168
 msgid "Unhandled error occured!"
 msgstr "Bir hata oluştu!"
 
@@ -900,7 +931,7 @@ msgstr ""
 "\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Bu adımda Pardus 2008'e tam yetkili kullanıcı olarak eklenecek olan \"root\" "
+"Bu adımda Pardus 2009'a tam yetkili kullanıcı olarak eklenecek olan \"root\" "
 "kullanıcısı için bir parolabelirlemeniz gerekmektedir. Parolanız başkaları "
 "tarafından tahmin edilemeyecek olmasına rağmenkolayca hatırlanabilmelidir. "
 "Parolanızda büyük ya da küçük harf kullanabilir ayrıca rakam ve "
@@ -941,15 +972,15 @@ msgstr ""
 "<center><font color=\"#FF6D19\">Makine adı geçersiz karakterler içeriyor!</"
 "font></center>"
 
-#: yali4/gui/ScrBootloader.py:36
+#: yali4/gui/ScrBootloader.py:37
 msgid "Bootloader Choice"
 msgstr "Önyükleyici Seçimi"
 
-#: yali4/gui/ScrBootloader.py:37
+#: yali4/gui/ScrBootloader.py:38
 msgid "Configure the system boot..."
 msgstr "Sistem açılışını ayarlayın.."
 
-#: yali4/gui/ScrBootloader.py:39
+#: yali4/gui/ScrBootloader.py:40
 msgid ""
 "\n"
 "<font size=\"+2\">Boot loader setup</font>\n"
@@ -977,7 +1008,7 @@ msgstr ""
 "<font size=\"+2\">Açılış Yöneticisi Ayarları</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2008, istediğiniz bir işletim sistemini başlangıçta açmak için GRUB "
+"Pardus 2009, istediğiniz bir işletim sistemini başlangıçta açmak için GRUB "
 "adı verilen bir açılış yöneticisi kullanır.Bilgisayarınızda birden fazla "
 "işletim sistemi varsa GRUB aracılığı ile istediğiniz işletim "
 "sisteminiçalıştırabilirsiniz. GRUB'ı açılış diskinizin başına kurmak "
@@ -1096,25 +1127,9 @@ msgstr ""
 msgid "Running post install operations.."
 msgstr "Kurulum sonrası işlemler gerçekleştiriliyor..."
 
-#: yali4/gui/ScrGoodbye.py:91
+#: yali4/gui/ScrGoodbye.py:91 yali4/gui/ScrRescueFinish.py:88
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Yeniden başlatılıyor. Lütfen bekleyin!</b>"
-
-#: yali4/gui/ScrGoodbye.py:114
-msgid ""
-"<b>\n"
-"<p>Press Reboot button to restart your system.</p>\n"
-"</b>\n"
-msgstr ""
-"<b>\n"
-"<p>Bilgisayarınızı yeniden başlatmak için 'Sistemi Yeniden Başlat!' "
-"düğmesine tıklayın.</p>\n"
-"</b>\n"
-
-#: yali4/gui/ScrGoodbye.py:120 yali4/gui/ScrSummary.py:73
-#: yali4/installer.py:655
-msgid "Reboot"
-msgstr "Sistemi Yeniden Başlat!"
 
 #: yali4/gui/ScrInstall.py:60
 msgid "Installing system..."
@@ -1298,9 +1313,9 @@ msgstr ""
 "bilgileriniz olması durumunda bu bilgilerinizi yedeklemenizi öneririz.</p> \n"
 "<p> \n"
 "Otomatik bölümlendirme seçeneği, seçtiğiniz alanda bulunan tüm verileri "
-"otomatik olarak biçimlendiripbu alana Pardus 2008'i kuracaktır. Eğer "
+"otomatik olarak biçimlendiripbu alana Pardus 2009'u kuracaktır. Eğer "
 "isterseniz disk bölümlendirmenizi kendiniz yapabilir ya da boşalanda Pardus "
-"2008 kurulumu için yeni bir bölüm oluşturulmasını sağlayabilirsiniz.<p>Daha "
+"2009 kurulumu için yeni bir bölüm oluşturulmasını sağlayabilirsiniz.<p>Daha "
 "fazla bilgi için Pardus Kurulum ve Kullanım Kılavuzu'na \n"
 "başvurabilirsiniz. \n"
 "</p> \n"
@@ -1359,6 +1374,111 @@ msgstr ""
 "başvurabilirsiniz. \n"
 "</p>\n"
 "</font>\n"
+
+#: yali4/gui/ScrRescueFinish.py:44 yali4/gui/ScrRescue.py:28
+msgid "Rescue Mode"
+msgstr ""
+
+#: yali4/gui/ScrRescueFinish.py:45
+msgid "Final step of Rescue operations..."
+msgstr ""
+
+#: yali4/gui/ScrRescueFinish.py:46
+msgid ""
+"\n"
+"<font size=\"+2\">Rescue Mode</font>\n"
+"<font size=\"+1\"><p>Click <b>next</b> to reboot !</p></font>\n"
+msgstr ""
+
+#: yali4/gui/ScrRescueFinish.py:57 yali4/installer.py:503
+msgid "Installing BootLoader..."
+msgstr "Açılış yöneticisi yükleniyor..."
+
+#: yali4/gui/ScrRescueFinish.py:70
+msgid "Running rescue operations.."
+msgstr "Kurtarma işlemleri gerçekleştiriliyor..."
+
+#: yali4/gui/ScrRescueGrub.py:32
+msgid "Rescue Mode for Bootlooader"
+msgstr "Açılış yöneticisi için kurtarma modu"
+
+#: yali4/gui/ScrRescueGrub.py:33
+msgid "You can fix your bootloader..."
+msgstr "Açılış yöneticinizi onarabilirsiniz..."
+
+#: yali4/gui/ScrRescueGrub.py:35
+msgid ""
+"\n"
+"<font size=\"+2\">Boot loader setup</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Pardus 2009 uses a boot manager called GRUB to start the operating system "
+"you choose.\n"
+"</p>\n"
+"<p>If there are multiple operating systems in your computer, you can start "
+"the one \n"
+"you like using GRUB. Installing GRUB to the beginning of the boot disk is "
+"the advised \n"
+"option to avoid boot problems.  If you are sure you know what you are "
+"doing, \n"
+"you can change boot loader settings.\n"
+"</p>\n"
+"<p>\n"
+"Please refer to Pardus Installing and Using \n"
+"Guide for more information about GRUB boot \n"
+"loader.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Açılış Yöneticisi Ayarları</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Pardus 2009, istediğiniz bir işletim sistemini başlangıçta açmak için GRUB "
+"adı verilen bir açılış yöneticisi kullanır.Bilgisayarınızda birden fazla "
+"işletim sistemi varsa GRUB aracılığı ile istediğiniz işletim "
+"sisteminiçalıştırabilirsiniz. GRUB'ı açılış diskinizin başına kurmak "
+"herhangi bir problemle karşılaşmadan sisteminizikullanmak için önerilen bir "
+"seçenektir. Eğer ne yaptığınızdan eminseniz sistem yükleyicisi ile ilgili "
+"diğerseçenekleri de seçebilirsiniz.</p>\n"
+"</font>\n"
+
+#: yali4/gui/ScrRescue.py:29
+msgid ""
+"You can reinstall your Grub or you can take back your system by using Pisi "
+"History..."
+msgstr ""
+
+#: yali4/gui/ScrRescue.py:31
+msgid ""
+"\n"
+"<font size=\"+2\">Rescue Mode</font>\n"
+"<font size=\"+1\"><p>This is a rescue mode help document.</p></font>\n"
+msgstr ""
+
+#: yali4/gui/ScrRescue.py:86
+msgid "Yali couldn't find a suitable partition on your system"
+msgstr "Yali sisteminizde kurtarılma için uygun herhangi bir bölüm bulamadı"
+
+#: yali4/gui/ScrRescue.py:104
+msgid "Yalı found a Pardus installed partition on your system."
+msgstr "Yali sisteminizde Pardus kurulu disk bölümü buldu."
+
+#: yali4/gui/ScrRescue.py:106
+msgid "Please select a partition from list."
+msgstr "Lütfen listeden disk bölümünü seçin."
+
+#: yali4/gui/ScrRescue.py:108
+msgid ""
+"Yalı couldn't find a Pardus installed partition on your system. But there is "
+"a Linux installed partitions."
+msgstr ""
+"Yali sisteminizde Pardus kurulu herhangi bir bölüm bulamadı. Fakat sistemde "
+"Linux yüklü disk bölümleri bulunuyor."
+
+#: yali4/gui/ScrRescue.py:110
+msgid "Please select a partition from list"
+msgstr "Lütfen listeden disk bölümünü seçin"
 
 #: yali4/gui/ScrSummary.py:42
 msgid "The last step before install"
@@ -1510,7 +1630,7 @@ msgstr "Biçimlendiriliyor ..."
 msgid "Resizing ..."
 msgstr "Yeniden boyutlandırıyor.."
 
-#: yali4/gui/ScrSummary.py:272 yali4/installer.py:285
+#: yali4/gui/ScrSummary.py:272 yali4/installer.py:295
 msgid "Writing disk tables ..."
 msgstr "Disk tablosu yazılıyor ..."
 
@@ -1549,7 +1669,7 @@ msgstr ""
 "<font size=\"+2\">Kullanıcı Ayarları</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2008 birden fazla kullanıcının bilgisayarı kullanabilmesine izin "
+"Pardus 2009 birden fazla kullanıcının bilgisayarı kullanabilmesine izin "
 "vermektedir. Oluşturacağınızkullanıcılara yönetici hakları verebileceğiniz "
 "gibi bu kullanıcıların sadece çeşitli eylemleri yapabilmesiniTASMA aracılığı "
 "ile yapılandırabilirsiniz.</p>\n"
@@ -1624,10 +1744,10 @@ msgstr ""
 "\n"
 "<font size=\"+2\">Hoşgeldiniz !</font>\n"
 "<font size=\"+1\"><p>Kullanımı kolay pek çok yazılım bileşeni içeren Pardus "
-"2008'e hoşgeldiniz. Pardus 2008 ile İnternet'ebağlanmaktan belgeler "
+"2009'e hoşgeldiniz. Pardus 2009 ile İnternet'ebağlanmaktan belgeler "
 "oluşturmaya, oyun oynamaktan müzik dinlemeye ihtiyacınız olan her şeyi "
 "yapabilirsiniz.</p>\n"
-"<p>Bu program, kullanım kolaylığı ile Pardus 2008'i bilgisayarınıza "
+"<p>Bu program, kullanım kolaylığı ile Pardus 2009'i bilgisayarınıza "
 "kurmanıza yardımcı olacak ve daha sonradonanımlarınızın tanınıp "
 "yapılandırılması için gerekli işlemleri yapacaktır. Başlamadan önce "
 "diskinizde mevcut verilerin bir kopyasını almanızı öneririz.</p>\n"
@@ -1654,6 +1774,17 @@ msgstr ""
 #: yali4/gui/YaliDialog.py:127
 msgid "O.K. Go Ahead"
 msgstr "Tamam. Devam Et"
+
+#: yali4/gui/YaliDialog.py:162
+msgid ""
+"<b>\n"
+"<p>Press Reboot button to restart your system.</p>\n"
+"</b>\n"
+msgstr ""
+"<b>\n"
+"<p>Bilgisayarınızı yeniden başlatmak için 'Sistemi Yeniden Başlat!' "
+"düğmesine tıklayın.</p>\n"
+"</b>\n"
 
 #: yali4/gui/YaliWindow.py:58 yali4/gui/YaliWindow.py:85
 msgid "Show Help"
@@ -1693,7 +1824,7 @@ msgstr ""
 msgid "Backtrace:"
 msgstr "Geri İz:"
 
-#: yali4/installer.py:137
+#: yali4/installer.py:147
 #, python-format
 msgid ""
 "Plugin (%s) not found or error occurred while loading. Switching to normal "
@@ -1702,28 +1833,28 @@ msgstr ""
 "Eklenti (%s) bulunamadı veya yüklenirken bir hata meydana geldi. Normal "
 "kurulumsüreci ile devam ediliyor."
 
-#: yali4/installer.py:143
+#: yali4/installer.py:153
 msgid "YALI Is Working..."
 msgstr "YALI Çalışıyor..."
 
-#: yali4/installer.py:156
+#: yali4/installer.py:166
 msgid "Warning !"
 msgstr "Uyarı !"
 
-#: yali4/installer.py:162
+#: yali4/installer.py:172
 msgid "Starting for CD Check"
 msgstr "CD Kontrolü başlatılıyor"
 
-#: yali4/installer.py:180
+#: yali4/installer.py:190
 #, python-format
 msgid "Checking: %s"
 msgstr "Kontrol ediliyor: %s"
 
-#: yali4/installer.py:186
+#: yali4/installer.py:196
 msgid "Check Failed"
 msgstr "Kontrol Başarısız"
 
-#: yali4/installer.py:187
+#: yali4/installer.py:197
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
@@ -1731,7 +1862,7 @@ msgstr ""
 "<b><p>CD kontrolü başarısız oldu. Bozuk bir kurulum CD'si olabilir. Lütfen "
 "yeni bir kurulum CD'si ile tekrar deneyiniz.</p></b>"
 
-#: yali4/installer.py:191
+#: yali4/installer.py:201
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
@@ -1739,63 +1870,59 @@ msgstr ""
 "<font color=\"#FFF\"><b>Kontrol başarılı. Bir sonraki ekrana geçebilirsiniz."
 "</b></font>"
 
-#: yali4/installer.py:209
+#: yali4/installer.py:219
 msgid "Setting time settings.."
 msgstr "Saat ayarlanıyor.."
 
-#: yali4/installer.py:236
+#: yali4/installer.py:246
 msgid "Disk analyze started.."
 msgstr "Disk analizi başladı.."
 
-#: yali4/installer.py:341
+#: yali4/installer.py:351
 msgid "Resize Finished ..."
 msgstr "Yeniden boyutlandırma bitti ..."
 
-#: yali4/installer.py:353
+#: yali4/installer.py:363
 msgid "Creating new partition ..."
 msgstr "Yeni disk bölümü yaratılıyor ..."
 
-#: yali4/installer.py:482
+#: yali4/installer.py:492
 msgid "Trying to connect DBUS..."
 msgstr "DBUS'a bağlanmaya çalışıyor..."
 
-#: yali4/installer.py:484
+#: yali4/installer.py:494
 msgid "Setting Hostname..."
 msgstr "Makine adı ayarlanıyor..."
 
-#: yali4/installer.py:485
+#: yali4/installer.py:495
 msgid "Setting TimeZone..."
 msgstr "Zaman dilimi ayarlanıyor..."
 
-#: yali4/installer.py:486
+#: yali4/installer.py:496
 msgid "Setting Root Password..."
 msgstr "Root parolası ayarlanıyor..."
 
-#: yali4/installer.py:487
+#: yali4/installer.py:497
 msgid "Adding Users..."
 msgstr "Kullanıcılar ekleniyor..."
 
-#: yali4/installer.py:488
+#: yali4/installer.py:498
 msgid "Writing Console Data..."
 msgstr "Konsol bilgisi yazılıyor..."
 
-#: yali4/installer.py:489
+#: yali4/installer.py:499
 msgid "Migrating X.org Configuration..."
 msgstr "X.org yapılandırması aktarılıyor..."
 
-#: yali4/installer.py:491
+#: yali4/installer.py:501
 msgid "Copy Pisi index..."
 msgstr "Pisi index kopyalanıyor..."
 
-#: yali4/installer.py:492
+#: yali4/installer.py:502
 msgid "Setting misc. package configurations..."
 msgstr "Diğer paket yapılandırmaları gerçekleştiriliyor..."
 
-#: yali4/installer.py:493
-msgid "Installing BootLoader..."
-msgstr "Açılış yöneticisi yükleniyor..."
-
-#: yali4/installer.py:632
+#: yali4/installer.py:652
 msgid "Retry"
 msgstr "Tekrar dene"
 
