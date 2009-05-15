@@ -70,11 +70,9 @@ class WidgetSystemServices(QGraphicsWidget):
 
         self.layout.addStretch()
 
-        self.stateButton = Plasma.IconWidget(self)
+        self.stateButton = Plasma.PushButton(self)
         self.stateButton.setMinimumWidth(100)
         self.stateButton.setMaximumHeight(120)
-        self.stateButton.setOrientation(Qt.Horizontal)
-        self.stateButton.invertLayout(True)
         self.layout.addItem(self.stateButton)
 
         self.connect(self.stateButton, SIGNAL("clicked()"), self.setService)
@@ -99,10 +97,10 @@ class WidgetSystemServices(QGraphicsWidget):
         self.currentPos = self.pos().toPoint()
         if self.isServiceRunning():
             self.stateButton.setText("Stop")
-            self.stateButton.setIcon("media-playback-stop")
+            # self.stateButton.setIcon("media-playback-stop")
         else:
             self.stateButton.setText("Start")
-            self.stateButton.setIcon("media-playback-start")
+            # self.stateButton.setIcon("media-playback-start")
 
     def isServiceRunning(self):
         return self._state in ["on", "started", "conditional_started"]
