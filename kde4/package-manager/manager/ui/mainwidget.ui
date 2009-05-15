@@ -45,8 +45,8 @@
       <string>Install Package(s)</string>
      </property>
      <property name="icon" >
-      <iconset resource="data.qrc" >
-       <normaloff>:/data/icons/list-add.png</normaloff>:/data/icons/list-add.png</iconset>
+       <iconset resource="../data/data.qrc" >
+       <normaloff>:/data/list-add.png</normaloff>:/data/list-add.png</iconset>
      </property>
     </widget>
    </item>
