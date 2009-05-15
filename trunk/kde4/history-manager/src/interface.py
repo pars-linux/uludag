@@ -13,16 +13,24 @@ class ComarIface:
 
     def __init__(self):
         self.link = comar.Link()
+        self.link.setLocale()
 
     def listen(self, func):
-        self.handler = func
-        self.link.listenSignals("System.Manager", func)
+        self.handle = func
+        self.link.listenSignals("System.Manager", self.__handleSignals)
 
     def takeSnap(self):
-        self.link.System.Manager["pisi"].takeSnapshot(async=self.handler)
+        self.link.System.Manager["pisi"].takeSnapshot(async=self.handle)
 
     def takeBack(self, num):
-        self.link.System.Manager["pisi"].takeBack(num, async=self.handler)
+        self.link.System.Manager["pisi"].takeBack(num, async=self.handle)
+
+    def __handleSignals(self, package, signal, args):
+        print "Signal:", signal
+        print "Args:", args
+        if signal == "finished":
+            pisi.db.invalidate_caches()
+        self.handle(package, signal, args)
 
 class PisiIface(QThread):
     """ Pisi Api Interface """
