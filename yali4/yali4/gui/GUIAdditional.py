@@ -164,8 +164,8 @@ class DeviceItem(QtGui.QListWidgetItem):
         return self._dev
 
 class PartitionItem(QtGui.QListWidgetItem):
-    def __init__(self, parent, partition, label):
-        QtGui.QListWidgetItem.__init__(self, QtGui.QIcon(":/gui/pics/iconPartition.png"), label, parent)
+    def __init__(self, parent, partition, label, icon):
+        QtGui.QListWidgetItem.__init__(self, QtGui.QIcon(":/gui/pics/%s.png" % icon), label, parent)
         self._part = partition
 
     def getPartition(self):

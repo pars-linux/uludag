@@ -81,19 +81,23 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 class PardusPartitions:
     def __init__(self, parentWidget):
-        isPardusFound, partitionList = self.scanDisks()
+        isPardusFound, partitionList, pardusPartitions = self.scanDisks()
         if len(partitionList) == 0:
             _msg = _("Yali couldn't find a suitable partition on your system")
             parentWidget.ui.partitionList.hide()
             parentWidget.isSuitableForRescue = False
         else:
             for p in partitionList:
+                if p in pardusPartitions:
+                    icon = "parduspart"
+                else:
+                    icon = "iconPartition"
                 partition = p['partition']
                 label = partition.getFSLabel() or ''
                 _info = "%s - %s %s" % (partition.getDevice().getModel(),
                                          partition.getPath(),
                                          p['release'] or label)
-                PartitionItem(parentWidget.ui.partitionList, p['partition'], _info)
+                PartitionItem(parentWidget.ui.partitionList, p['partition'], _info, icon)
             parentWidget.ui.partitionList.setCurrentItem(parentWidget.ui.partitionList.item(0))
 
         if isPardusFound:
@@ -119,13 +123,12 @@ class PardusPartitions:
                     linuxPartitions.append({'partition':partition, 'release':''})
                     ctx.debugger.log("Partition found which has usable fs (%s)" % partition.getPath())
                     guest_grub_conf = yali4.sysutils.is_linux_boot(partition.getPath(), fs)
-                    if guest_grub_conf:
-                        pardus_release = yali4.sysutils.pardus_release()
-                        if pardus_release:
-                            pardusPartitions.append({'partition':partition, 'release':pardus_release})
+                    pardus_release = yali4.sysutils.pardus_release()
+                    if pardus_release:
+                        pardusPartitions.append({'partition':partition, 'release':pardus_release})
                     # If it is not a pardus installed partition skip it
                     yali4.sysutils.umount_()
         if len(pardusPartitions) > 0:
-            return (True, pardusPartitions)
-        return (False, linuxPartitions)
+            return (True, linuxPartitions, pardusPartitions)
+        return (False, linuxPartitions, pardusPartitions)
 

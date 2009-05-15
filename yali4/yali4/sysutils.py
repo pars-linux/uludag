@@ -260,7 +260,6 @@ def is_linux_boot(partition_path, file_system):
 
 def pardus_release():
     fpath = os.path.join('/tmp/pcheck/', consts.pardus_release_path)
-    print "okoko", fpath
     if os.path.exists(fpath):
         return open(fpath,'r').read().strip()
     return ''
