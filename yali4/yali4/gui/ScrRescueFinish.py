@@ -70,6 +70,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         ctx.yali.info.updateAndShow(_("Running rescue operations.."))
         ctx.mainScreen.disableBack()
         self.steps.slotRunOperations()
+        if not ctx.mainScreen.helpContent.isVisible():
+            ctx.mainScreen.slotToggleHelp()
         self.ui.label.setPixmap(QtGui.QPixmap(":/gui/pics/goodbye.png"))
         ctx.yali.info.hide()
         ctx.mainScreen.enableNext()
