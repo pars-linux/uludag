@@ -18,10 +18,11 @@ ANIMATION_TIME = 200
 DEFAULT_HEIGHT = 16777215
 
 class MainManager(QtGui.QWidget):
-    def __init__(self, parent, standAlone=True):
+    def __init__(self, parent, standAlone=True, app=None):
         super(MainManager, self).__init__(parent)
 
         self.ui = Ui_MainManager()
+        self.app = app
 
         if standAlone:
             self.ui.setupUi(self)
@@ -80,10 +81,6 @@ class MainManager(QtGui.QWidget):
         self.enableButtons(True)
 
     def tweakUi(self):
-        if self.settings.contains("pos") and self.settings.contains("size"):
-            self.parent.move(self.mapToGlobal(self.settings.value("pos").toPoint()))
-            self.parent.resize(self.settings.value("size").toSize())
-
         self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
         self.parent.setWindowIcon(QtGui.QIcon(":/icons/history-manager.png"))
         self.ui.progressBar.hide()
@@ -152,7 +149,7 @@ class MainManager(QtGui.QWidget):
 
         item = self.sender().parent()
 
-        QCoreApplication.processEvents()
+        self.app.processEvents()
 
         willbeinstalled, willberemoved = self.pface.historyPlan(item.op_no)
 
@@ -214,7 +211,7 @@ class MainManager(QtGui.QWidget):
             self.status(i18n("Taking back to : %1", item.op_date))
             self.enableButtons(False)
 
-            QtCore.QCoreApplication.processEvents()
+            self.app.processEvents()
             self.cface.takeBack(item.op_no)
 
     def takeSnapshot(self):
@@ -229,7 +226,7 @@ class MainManager(QtGui.QWidget):
         self.enableButtons(False)
 
         try:
-            QtCore.QCoreApplication.processEvents()
+            self.app.processEvents()
             self.cface.takeSnap()
         except:
             self.status(i18n("Authentication Failed"))
