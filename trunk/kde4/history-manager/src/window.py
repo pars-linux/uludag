@@ -236,7 +236,7 @@ class MainManager(QtGui.QWidget):
             self.enableButtons(True)
 
     def handler(self, package, signal, args):
-        print "Package:",package, "Signal:", signal, "Arguments:", args
+        # print "Package:",package, "Signal:", signal, "Arguments:", args
 
         args = map(lambda x: unicode(x), list(args))
 

@@ -26,8 +26,8 @@ class ComarIface:
         self.link.System.Manager["pisi"].takeBack(num, async=self.handle)
 
     def __handleSignals(self, package, signal, args):
-        print "Signal:", signal
-        print "Args:", args
+        # print "Signal:", signal
+        # print "Args:", args
         if signal == "finished":
             pisi.db.invalidate_caches()
         self.handle(package, signal, args)
