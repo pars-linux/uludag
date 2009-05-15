@@ -40,13 +40,36 @@
         <method name="takeBack">
           <arg name="operation" type="i" direction="in"/>
         </method>
-        <signal name="progress"/>
-        <signal name="error"/>
-        <signal name="warning"/>
-        <signal name="info"/>
-        <signal name="status"/>
-        <signal name="finished"/>
-        <signal name="cancelled"/>
+        <signal name="progress">
+          <arg name="operation" type="s" direction="out"/>
+          <arg name="filename" type="s" direction="out"/>
+          <arg name="percent" type="i" direction="out"/>
+          <arg name="rate" type="i" direction="out"/>
+          <arg name="symbol" type="s" direction="out"/>
+          <arg name="download_size" type="i" direction="out"/>
+          <arg name="total_size" type="i" direction="out"/>
+        </signal>
+        <signal name="error">
+          <arg name="message" type="s" direction="out"/>
+        </signal>
+        <signal name="warning">
+          <arg name="message" type="s" direction="out"/>
+        </signal>
+        <signal name="info">
+          <arg name="message" type="s" direction="out"/>
+        </signal>
+        <signal name="status">
+          <arg name="message1" type="s" direction="out"/>
+          <arg name="message2" type="s" direction="out"/>
+          <arg name="message3" type="s" direction="out"/>
+          <arg name="message4" type="s" direction="out"/>
+        </signal>
+        <signal name="finished">
+          <arg name="message" type="s" direction="out"/>
+        </signal>
+        <signal name="cancelled">
+          <arg name="message" type="s" direction="out"/>
+        </signal>
         <signal name="updatingRepo"/>
         <signal name="takingSnapshot"/>
         <signal name="takingBack"/>
