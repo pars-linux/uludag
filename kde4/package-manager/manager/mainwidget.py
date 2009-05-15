@@ -33,6 +33,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state = StateManager(self)
         self.initialize()
 
+        self.connect(self.actionButton, SIGNAL("clicked()"), self.takeAction)
         self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
@@ -72,6 +73,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def setActionButton(self):
         self.actionButton.setText(self.state.getActionName())
         self.actionButton.setIcon(self.state.getActionIcon())
+
+    def takeAction(self):
+        self.state.takeAction(self.packageList.selectedPackages())
+        self.switchState(self.state.getState())
 
     def switchState(self, state):
         try:
