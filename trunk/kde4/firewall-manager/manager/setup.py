@@ -107,8 +107,10 @@ class Install(install):
         os.chmod(os.path.join(project_dir, "%s.py" % about.appName), 0755)
         # Symlink
         try:
-            #We shouldn't use install path in symlink it will be broken in installed system
-            os.symlink(os.path.join(project_dir, "%s.py" % about.appName), os.path.join("/usr/kde/4/bin", about.appName))
+            if self.root:
+                os.symlink(os.path.join(project_dir.replace(self.root, ""), "%s.py" % about.appName), os.path.join(bin_dir, about.appName))
+            else:
+                os.symlink(os.path.join(project_dir, "%s.py" % about.appName), os.path.join(bin_dir, about.appName))
         except OSError:
             pass
 
