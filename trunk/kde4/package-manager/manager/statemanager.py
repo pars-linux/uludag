@@ -71,8 +71,10 @@ class StateManager(QObject):
                 self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
 
     def __actionHandler(self, package, signal, args):
-        print "Signal:", signal
-        print "Args:", args
+        # print "Signal:", signal
+        # print "Args:", args
 
         if signal == "finished":
             self.emit(SIGNAL("finished(QString)"), args[0])
+        elif signal == "progress":
+            self.emit(SIGNAL("progress(int)"), args[2])

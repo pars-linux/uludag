@@ -22,6 +22,7 @@ from ui_mainwidget import Ui_MainWidget
 from packageproxy import PackageProxy
 from packagemodel import PackageModel, GroupRole
 from packagedelegate import PackageDelegate
+from progressdialog import ProgressDialog
 from statemanager import StateManager
 
 from pmutils import *
@@ -33,8 +34,14 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state = StateManager(self)
         self.initialize()
 
-        self.connect(self.actionButton, SIGNAL("clicked()"), self.takeAction)
+        # State Manager related signals
         self.connect(self.state, SIGNAL("finished(QString)"), self.actionFinished)
+
+        # Progress Dialog related signals
+        self.connect(self.state, SIGNAL("progress(int)"), self.progressDialog.updateProgressBar)
+
+        # Main Widget related signals
+        self.connect(self.actionButton, SIGNAL("clicked()"), self.takeAction)
         self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
@@ -44,6 +51,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def initialize(self):
         self.initializePackageList()
         self.initializeGroupList()
+        self.initializeProgressDialog()
+
+    def initializeProgressDialog(self):
+        self.progressDialog = ProgressDialog(self)
 
     def initializePackageList(self):
         self.packageList.setModel(PackageProxy(self))
@@ -76,12 +87,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.actionButton.setIcon(self.state.getActionIcon())
 
     def takeAction(self):
-        waitCursor()
+        self.progressDialog.show()
         self.state.takeAction(self.packageList.selectedPackages())
 
     def actionFinished(self, operation):
+        self.progressDialog.hide()
         self.switchState(self.state.getState())
-        restoreCursor()
 
     def switchState(self, state):
         try:
