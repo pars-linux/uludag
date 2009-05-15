@@ -246,8 +246,8 @@ class MainManager(QtGui.QWidget):
             self.status(i18n("Finished succesfully"))
             self.enableButtons(True)
         elif signal == "progress":
-            self.status("In Progress")
-            self.status("%s : %s/100" % (args[2], args[1]))
+            self.status(i18n("In Progress"))
+            # self.status("%s : %s/100" % (args[2], args[1]))
             self.enableButtons(False)
 
     def closeEvent(self, event=None):
