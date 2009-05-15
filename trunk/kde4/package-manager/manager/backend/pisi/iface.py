@@ -17,14 +17,25 @@ import comar
 import groups
 import pisi
 
-class Iface:
+
+class Singleton(object):
+    def __new__(type):
+        if not '_the_instance' in type.__dict__:
+            type._the_instance = object.__new__(type)
+        return type._the_instance
+
+class Iface(Singleton):
 
     (SYSTEM, REPO) = range(2)
 
     def __init__(self, source=REPO):
-        self.source = source
-        self.initComar()
-        self.initDB()
+        if not self.initialized():
+            self.source = source
+            self.initComar()
+            self.initDB()
+
+    def initialized(self):
+        return "link" in self.__dict__
 
     def initComar(self):
         self.link = comar.Link()

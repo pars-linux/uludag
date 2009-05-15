@@ -76,7 +76,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def takeAction(self):
         self.state.takeAction(self.packageList.selectedPackages())
-        self.switchState(self.state.getState())
 
     def switchState(self, state):
         try:

@@ -62,6 +62,6 @@ class StateManager():
         return list(set(self.packages()).intersection(self.iface.getGroupPackages(name)))
 
     def takeAction(self, packages):
-        return {self.INSTALL:self.iface.installPackages(packages),
-                self.REMOVE:self.iface.removePackages(packages),
-                self.UPGRADE:self.iface.upgradePackages(packages)}[self.state]
+        return {self.INSTALL:self.iface.installPackages,
+                self.REMOVE:self.iface.removePackages,
+                self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
