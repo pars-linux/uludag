@@ -12,11 +12,10 @@
 #
 
 import string
+
 import comar
-
-import groups
 import pisi
-
+import groups
 
 class Singleton(object):
     def __new__(type):
@@ -40,12 +39,14 @@ class Iface(Singleton):
     def initComar(self):
         self.link = comar.Link()
         self.link.setLocale()
-        self.link.listenSignals("System.Manager", self.__handleSignals)
 
     def initDB(self):
         self.pdb  = pisi.db.packagedb.PackageDB()
         self.cdb  = pisi.db.componentdb.ComponentDB()
         self.idb  = pisi.db.installdb.InstallDB()
+
+    def setHandler(self, handler):
+        self.link.listenSignals("System.Manager", handler)
 
     def handler(self, *args):
         pass
@@ -110,9 +111,5 @@ class Iface(Singleton):
         revDeps = set(pisi.api.get_remove_order(packages))
         return list(set(revDeps) - set(packages))
 
-
-    def __handleSignals(self, package, signal, args):
-        print "Signal:", signal
-        print "Args:", args
-        if signal == "finished":
-            pisi.db.invalidate_caches()
+    def invalidateCaches(self):
+        pisi.db.invalidate_caches()

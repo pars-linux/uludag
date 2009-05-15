@@ -24,6 +24,7 @@ class StateManager():
         self.parent = parent
         self.state = self.INSTALL
         self.iface = backend.pm.Iface()
+        self.iface.setHandler(self.__actionHandler)
         self.cached_packages = None
 
     def setState(self, state):
@@ -65,3 +66,9 @@ class StateManager():
         return {self.INSTALL:self.iface.installPackages,
                 self.REMOVE:self.iface.removePackages,
                 self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
+
+    def __actionHandler(self, package, signal, args):
+        print "Signal:", signal
+        print "Args:", args
+        if signal == "finished":
+            self.iface.invalidateCaches()
