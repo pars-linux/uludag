@@ -77,4 +77,5 @@ class StateManager(QObject):
         if signal == "finished":
             self.emit(SIGNAL("finished(QString)"), args[0])
         elif signal == "progress":
-            self.emit(SIGNAL("progress(int)"), args[2])
+            if len(args) > 2:
+                self.emit(SIGNAL("progress(int)"), args[2])

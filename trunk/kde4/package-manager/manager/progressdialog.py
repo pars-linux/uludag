@@ -28,6 +28,7 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.parent = parent
         animatedPisi = QtGui.QMovie("pisianime.gif")
         self.animeLabel.setMovie(animatedPisi)
+        animatedPisi.start()
         self.forcedClose = False
         self.connect(self.cancelButton,SIGNAL("clicked()"),self.cancelThread)
         self.cancelButton.setEnabled(False)
