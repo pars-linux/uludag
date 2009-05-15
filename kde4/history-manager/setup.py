@@ -53,6 +53,8 @@ class Install(install):
         project_dir = os.path.join(kde_dir, "share/apps", PROJECT)
         service_dir = os.path.join(kde_dir, "share/kde4/services")
         locale_dir = os.path.join(kde_dir, "share/locale")
+        print "Removing directories"
+        shutil.rmtree(project_dir)
         print "Making directories..."
         try:
             os.makedirs(project_dir)
@@ -74,6 +76,10 @@ class Install(install):
         print "Copying Python files..."
         for filename in glob.glob1("src", "*.py"):
             shutil.copy("src/%s" % filename, project_dir)
+        # Copy pics
+        print "Copying icons/pics"
+        shutil.copytree("resources/pics", "%s/resources/pics" % project_dir)
+        shutil.copytree("resources/icons", "%s/resources/icons" % project_dir)
         # Copy locales
         print "Copying locales..."
         for filename in glob.glob1("po", "*.po"):
