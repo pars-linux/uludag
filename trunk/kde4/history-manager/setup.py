@@ -84,9 +84,6 @@ class Install(install):
             except OSError:
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
-        # Copy help files
-        print "Copying help files..."
-        shutil.copytree("resources/help/", "%s/help" % project_dir)
         # Rename
         print "Renaming main.py..."
         shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % PROJECT))
