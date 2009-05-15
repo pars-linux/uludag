@@ -32,7 +32,7 @@ import yali4.partitiontype as parttype
 from os.path import basename
 from yali4.sysutils import is_windows_boot
 from yali4.gui.ScreenWidget import ScreenWidget
-from yali4.gui.YaliDialog import WarningDialog
+from yali4.gui.YaliDialog import WarningDialog, RebootWidget
 from yali4.gui.YaliSteps import YaliSteps
 from yali4.gui.Ui.goodbyewidget import Ui_GoodByeWidget
 import yali4.gui.context as ctx
@@ -100,36 +100,4 @@ don't you?
         ctx.mainScreen.processEvents()
         time.sleep(4)
         yali4.sysutils.fastreboot()
-
-class RebootWidget(QtGui.QWidget):
-
-    def __init__(self, *args):
-        QtGui.QWidget.__init__(self, *args)
-
-        l = QtGui.QVBoxLayout(self)
-        l.setSpacing(20)
-        l.setMargin(10)
-
-        warning = QtGui.QLabel(self)
-        warning.setText(_('''<b>
-<p>Press Reboot button to restart your system.</p>
-</b>
-'''))
-
-        self.reboot = QtGui.QPushButton(self)
-        self.reboot.setText(_("Reboot"))
-
-        buttons = QtGui.QHBoxLayout(self)
-        buttons.setSpacing(10)
-        buttons.addStretch(1)
-        buttons.addWidget(self.reboot)
-
-        l.addWidget(warning)
-        l.addLayout(buttons)
-
-        self.connect(self.reboot, SIGNAL("clicked()"),
-                     self.slotReboot)
-
-    def slotReboot(self):
-        self.emit(SIGNAL("signalOK"), ())
 

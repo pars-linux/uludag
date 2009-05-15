@@ -93,20 +93,20 @@ loader.
 
     def execute(self):
         ctx.installData.bootLoaderOptionalDev = self.device
-        print self.device
 
         # Apply GRUB Options
         if self.ui.installSelectedPart.isChecked():
             ctx.installData.bootLoaderOption = B_INSTALL_PART
-            ###### ctx.installData.bootLoaderDev = os.path.basename(SELECTEDPARTITION)
+            ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.rescuePartition)
         elif self.ui.installSelectedDisk.isChecked():
             ctx.installData.bootLoaderOption = B_INSTALL_MBR
             ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.bootLoaderOptionalDev.getPath())
         elif self.ui.installFirstMBR:
             ctx.installData.bootLoaderOption = B_INSTALL_SMART
-            ctx.yali.guessBootLoaderDevice()
+            ctx.yali.guessBootLoaderDevice(ctx.installData.rescuePartition)
 
-        print "Option", ctx.installData.bootLoaderOption
-        print "Dev", ctx.installData.bootLoaderDev
+        ctx.debugger.log("Bootloader Option is %s" % ctx.installData.bootLoaderOption)
+        ctx.debugger.log("Bootloader Device is %s" % ctx.installData.bootLoaderDev)
+        ctx.debugger.log("Bootloader Partition is %s" % ctx.installData.rescuePartition.getPath())
 
         return True
