@@ -216,7 +216,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Shows edit box.
         """
-        self.widgetService.setEnabled(False)
         if self.animationLast == ANIM_HIDE:
             self.animationLast = ANIM_SHOW
             # Set range
@@ -234,7 +233,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.animator.setFrameRange(self.frameEdit.height(), ANIM_TARGET)
             # Go go go!
             self.animator.start()
-        self.widgetService.setEnabled(True)
 
     def slotFilterChanged(self, index):
         """
@@ -331,10 +329,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.hideEditBox()
 
     def slotServiceChanged(self, state):
-        if state:
-            self.iface.setState(True)
-        else:
-            self.iface.setState(False)
+        self.widgetService.setEnabled(False)
+        try:
+            self.iface.setState(state)
+        except:
+            pass
+        self.widgetService.setEnabled(True)
 
     def slotAnimate(self, frame):
         """
