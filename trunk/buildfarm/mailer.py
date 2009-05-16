@@ -12,6 +12,7 @@
 
 """ Standart Python Modules """
 import os
+import sys
 import socket
 import smtplib
 
@@ -27,6 +28,7 @@ try:
 except ImportError:
     if config.sendEmail and config.useSmtpAuth:
         logger.info("*** You have to create a mailauth.py file for defining 'username' and 'password' to use SMTP authentication.")
+        sys.exit(1)
 
 class MailerError(Exception):
     pass
