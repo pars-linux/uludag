@@ -27,5 +27,24 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.movie.setFileName("data/pisianime.gif")
         self.movie.start()
 
+    def updateAction(self, action):
+        self.actionInfo.setText(action)
+
     def updateProgress(self, progress):
         self.progressBar.setValue(progress)
+
+    def updateOperation(self, operation, package):
+        operationInfo = i18n('%1 %2').arg(package).arg(operation)
+        self.operationInfo.setText(operationInfo)
+
+    def updateStatus(self, status):
+        self.statusInfo.setText(status)
+
+    def updateRemainingTime(self, time):
+        self.timeRemaining.setText(time)
+
+    def updateCompletedInfo(self, completed):
+        self.completedInfo.setText(completed)
+
+    def enableCancel(self):
+        self.cancelButton.setEnabled(True)
