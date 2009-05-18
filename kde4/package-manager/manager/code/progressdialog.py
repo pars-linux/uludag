@@ -12,6 +12,8 @@
 
 from PyQt4 import QtGui
 
+from PyKDE4.kdecore import i18n
+
 from ui_progressdialog import Ui_ProgressDialog
 
 class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
@@ -34,7 +36,7 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.progressBar.setValue(progress)
 
     def updateOperation(self, operation, package):
-        operationInfo = i18n('%1 %2').arg(package).arg(operation)
+        operationInfo = i18n('%1 %2', package, operation)
         self.operationInfo.setText(operationInfo)
 
     def updateStatus(self, status):
