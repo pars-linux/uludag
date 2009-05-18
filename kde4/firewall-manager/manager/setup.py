@@ -66,8 +66,7 @@ class Build(build):
 
 class Install(install):
     def run(self):
-        if not os.path.exists("build/"):
-            os.system("./setup.py build")
+        os.system("./setup.py build")
         if self.root:
             kde_dir = "%s/usr/kde/4" % self.root
         else:
