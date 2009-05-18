@@ -6,3 +6,4 @@
      Program tekrar kapatılıp açıldı
      Yeni kullanıcı silindi (Parola sormadı)
 
+- Kullanıcı şifre tekrarla bölümüne farklı bir şifre yazılmış olsa da bu kullanıcıyı ekliyor veya şifresini değiştiriyor.
