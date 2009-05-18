@@ -11,7 +11,6 @@
 # Please read the COPYING file
 
 from PyQt4 import QtGui
-from PyQt4.QtCore import QResource
 
 from ui_progressdialog import Ui_ProgressDialog
 
