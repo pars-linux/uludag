@@ -36,6 +36,9 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.progressBar.setValue(progress)
 
     def updateOperation(self, operation, package):
+        if operation in [i18n("configuring"),  i18n("extracting")]:
+            self.disableCancel()
+
         operationInfo = i18n('%1 %2', package, operation)
         self.operationInfo.setText(operationInfo)
 
@@ -50,3 +53,6 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
 
     def enableCancel(self):
         self.cancelButton.setEnabled(True)
+
+    def disableCancel(self):
+        self.cancelButton.setEnabled(False)

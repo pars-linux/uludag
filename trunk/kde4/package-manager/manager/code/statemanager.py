@@ -84,7 +84,7 @@ class StateManager(QObject):
     def __statusHandler(self, status, args):
         if status == "started":
             self.emit(SIGNAL("started()"))
-        elif status in ["installing", "removing"]:
+        elif status in ["installing", "removing", "extracting", "configuring"]:
             self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(status), args[0])
         elif status == "cached":
             totalSize = int(args[0]) - int(args[1])
