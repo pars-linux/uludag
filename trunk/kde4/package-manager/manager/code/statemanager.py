@@ -71,17 +71,21 @@ class StateManager(QObject):
                 self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
 
     def __actionHandler(self, package, signal, args):
-        # print "Signal:", signal
-        # print "Args:", args
+        print "Signal:", signal
+        print "Args:", args
 
         if signal == "finished":
             self.emit(SIGNAL("finished(QString)"), args[0])
         elif signal == "progress":
             self.emit(SIGNAL("progress(int)"), args[2])
-        elif signal == "cached":
+        elif signal == "status":
+            self.__statusHandler(args[0], args[1:])
+
+    def __statusHandler(self, status, args):
+        if status == "started":
+            self.emit(SIGNAL("started()"))
+        elif status in ["installing", "removing"]:
+            self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(status), args[0])
+        elif status == "cached":
             totalSize = int(args[0]) - int(args[1])
             self.emit(SIGNAL("totalSizeChanged(int)"), totalSize)
-        elif signal == "started":
-            self.emit(SIGNAL("started()"))
-        elif signal in ["removing", "installing"]:
-            self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(signal), args[0])

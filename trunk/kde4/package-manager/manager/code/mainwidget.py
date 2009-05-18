@@ -58,7 +58,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.progressDialog = ProgressDialog(self)
         self.connect(self.state, SIGNAL("started"), self.progressDialog.enableCancel)
         self.connect(self.state, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
-        self.connect(self.state, SIGNAL("operationChanged(QString, QString)"), self.progressDialog.updateOperation)
+        self.connect(self.state, SIGNAL("operationChanged(QString,QString)"), self.progressDialog.updateOperation)
 
     def initializePackageList(self):
         self.packageList.setModel(PackageProxy(self))
