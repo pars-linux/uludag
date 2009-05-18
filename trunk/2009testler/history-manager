@@ -1,0 +1,11 @@
+- Belirli tarihteki değişiklikleri geri al denildiğinde sistem parola sorduktan sonra
+    Parola grişine iptal denildiğinde geri alma işlemini iptal etmiyor ve işleme devam ediyor.
+- Yeni görüntü al işleminden sonra 
+    - Ekranda bulunan history itemları enable duruma geçemiyor. 
+    - Yeni değişiklikler eklenerek ekran yenilenemiyor.
+- Dil türkçe iken 
+    - Yapılmakta olan işlemler sağ alt köşede ingilizce olarak gözüküyor.
+    - İşlem detayları ve işlemi geri al bölümlerinde bulunan üst bölümdeki açıklamalar ingilizce olarak gözüküyor.
+
+
+
