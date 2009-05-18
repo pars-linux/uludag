@@ -234,6 +234,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.widgetUserEdit.setHomeDir(homedir)
                 self.widgetUserEdit.setShell(shell)
                 self.widgetUserEdit.setGroups(self.all_groups, groups)
+                def handler(package, exception, args):
+                    if exception:
+                        return
+                    authorizations = args[0]
+                    self.widgetUserEdit.setAuthorizations(authorizations)
+                self.iface.getAuthorizations(id_, func=handler)
             else:
                 self.widgetUserEdit.setNickList(self.all_users)
                 self.widgetUserEdit.setGroups(self.all_groups, DEFAULT_GROUPS)

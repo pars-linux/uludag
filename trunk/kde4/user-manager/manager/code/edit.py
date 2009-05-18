@@ -30,6 +30,23 @@ from utility import nickGuess
 import polkit
 
 
+class PolicyItem(QtGui.QTreeWidgetItem):
+    def __init__(self, parent, text, action_id):
+        QtGui.QTreeWidgetItem.__init__(self, parent)
+        self.action_id = action_id
+        self.type = 0
+        self.setText(0, text)
+
+    def getAction(self):
+        return self.action_id
+
+    def setType(self, type_):
+        self.type = type_
+
+    def getType(self):
+        return self.type
+
+
 class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
     def __init__(self, parent):
         QtGui.QWidget.__init__(self, parent)
@@ -44,6 +61,10 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.connect(self.checkAutoId, QtCore.SIGNAL("stateChanged(int)"), self.slotCheckAuto)
         self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.slotFulnameChanged)
         self.connect(self.listGroups, QtCore.SIGNAL("itemClicked(QListWidgetItem*)"), self.slotGroupSelected)
+        self.connect(self.treeAuthorizations, QtCore.SIGNAL("currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)"), self.slotPolicySelected)
+        self.connect(self.radioAuthNo, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
+        self.connect(self.radioAuthDefault, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
+        self.connect(self.radioAuthYes, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
         self.connect(self.checkAdmin, QtCore.SIGNAL("stateChanged(int)"), self.slotAdmin)
 
     def reset(self):
@@ -57,11 +78,12 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.lineHomeDir.setEnabled(True)
 
     def buildPolicies(self):
+        self.actionItems = {}
         for action_id in polkit.action_list():
             if action_id.startswith("tr.org.pardus.comar."):
                 info = polkit.action_info(action_id)
-                item = QtGui.QTreeWidgetItem(self.treeAuthorizations)
-                item.setText(0, unicode(info["description"]))
+                item = PolicyItem(self.treeAuthorizations, unicode(info["description"]), action_id)
+                self.actionItems[action_id] = item
 
     def isNew(self):
         return self.spinId.isEnabled() or self.checkAutoId.isVisible()
@@ -152,6 +174,15 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         groups.insert(0, main_group)
         return groups
 
+    def setAuthorizations(self, authorizations):
+        for action_id, scope, description, policy_active, negative in authorizations:
+            if action_id in self.actionItems:
+                item = self.actionItems[action_id]
+                if scope == negative:
+                    item.setType(-1)
+                elif scope == polkit.SCOPE_ALWAYS:
+                    item.setType(1)
+
     def slotCheckAuto(self, state):
         if state == QtCore.Qt.Checked:
             self.spinId.setEnabled(False)
@@ -188,6 +219,22 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             # Wheel group?
             if item.text() == "wheel":
                 self.checkAdmin.setCheckState(QtCore.Qt.Checked)
+
+    def slotPolicySelected(self, item, previous):
+        if not item:
+            return
+        self.radioAuthNo.setChecked(item.getType() == -1)
+        self.radioAuthDefault.setChecked(item.getType() == 0)
+        self.radioAuthYes.setChecked(item.getType() == 1)
+
+    def slotPolicyChanged(self, state):
+        item = self.treeAuthorizations.currentItem()
+        if self.radioAuthNo.isChecked():
+            item.setType(-1)
+        elif self.radioAuthDefault.isChecked():
+            item.setType(0)
+        elif self.radioAuthYes.isChecked():
+            item.setType(1)
 
     def slotAdmin(self, state):
         if state == QtCore.Qt.Unchecked:
