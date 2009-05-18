@@ -78,3 +78,10 @@ class StateManager(QObject):
             self.emit(SIGNAL("finished(QString)"), args[0])
         elif signal == "progress":
             self.emit(SIGNAL("progress(int)"), args[2])
+        elif signal == "cached":
+            totalSize = int(args[0]) - int(args[1])
+            self.emit(SIGNAL("totalSizeChanged(int)"), totalSize)
+        elif signal == "started":
+            self.emit(SIGNAL("started()"))
+        elif signal in ["removing", "installing"]:
+            self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(signal), args[0])

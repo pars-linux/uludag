@@ -24,6 +24,7 @@ from packagemodel import PackageModel, GroupRole
 from packagedelegate import PackageDelegate
 from progressdialog import ProgressDialog
 from statemanager import StateManager
+from operationprogress import OperationProgress
 
 from pmutils import *
 
@@ -32,15 +33,20 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
         self.state = StateManager(self)
+        self.operation = OperationProgress()
         self.initialize()
 
         # State Manager related signals
         self.connect(self.state, SIGNAL("finished(QString)"), self.actionFinished)
 
-        # Progress Dialog related signals
-        self.connect(self.state, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
+        # Operation Progress related signals
+        self.connect(self.state, SIGNAL("started"), self.operation.initialize)
+        self.connect(self.state, SIGNAL("totalSizeChanged(QString)"), self.operation.setTotalSize)
 
-        # Main Widget related signals
+    def initialize(self):
+        self.initializePackageList()
+        self.initializeGroupList()
+        self.initializeProgressDialog()
         self.connect(self.actionButton, SIGNAL("clicked()"), self.actionStart)
         self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
@@ -48,13 +54,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                      lambda:self.emit(SIGNAL("selectionChanged(QModelIndexList)"),
                             self.packageList.selectionModel().selectedIndexes()))
 
-    def initialize(self):
-        self.initializePackageList()
-        self.initializeGroupList()
-        self.initializeProgressDialog()
-
     def initializeProgressDialog(self):
         self.progressDialog = ProgressDialog(self)
+        self.connect(self.state, SIGNAL("started"), self.progressDialog.enableCancel)
+        self.connect(self.state, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
+        self.connect(self.state, SIGNAL("operationChanged(QString, QString)"), self.progressDialog.updateOperation)
 
     def initializePackageList(self):
         self.packageList.setModel(PackageProxy(self))
