@@ -391,9 +391,9 @@ class Yali:
             else:
                 root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                           request.mountRequestType)
-            if not root_part_req:
-                raise YaliException, "No Root Part request found !"
-            pardus_path = root_part_req.partition().getPath()
+                if not root_part_req:
+                    raise YaliException, "No Root Part request found !"
+                pardus_path = root_part_req.partition().getPath()
 
             if pardus_path.find("cciss") > 0:
                 # HP Smart array controller (something like /dev/cciss/c0d0p1)
