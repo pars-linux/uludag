@@ -80,10 +80,6 @@ class Interface:
             return self.link.User.Manager[self.package].addUser(uid, name, fullname, homedir, shell, password, groups, grants, blocks)
 
     def setUser(self, uid, fullname, homedir, shell, password, groups, func=None):
-        if not grants:
-            grants = dbus.Array([], "s")
-        if not blocks:
-            blocks = dbus.Array([], "s")
         if func:
             self.link.User.Manager[self.package].setUser(uid, fullname, homedir, shell, password, groups, async=func)
         else:
