@@ -38,7 +38,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.state, SIGNAL("finished(QString)"), self.actionFinished)
 
         # Progress Dialog related signals
-        self.connect(self.state, SIGNAL("progress(int)"), self.progressDialog.updateProgressBar)
+        self.connect(self.state, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
 
         # Main Widget related signals
         self.connect(self.actionButton, SIGNAL("clicked()"), self.actionStart)
