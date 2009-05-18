@@ -16,7 +16,7 @@ from PyKDE4.kdecore import *
 
 # Application Data
 appName     = "package-manager"
-catalog     = ""
+catalog     = appName
 programName = ki18n("Package Manager")
 version     = "2.0_alpha1"
 description = ki18n("Package Manager")
