@@ -94,3 +94,9 @@ class Interface:
             self.link.User.Manager[self.package].addGroup(gid, name, async=func)
         else:
             self.link.User.Manager[self.package].addGroup(gid, name)
+
+    def getAuthorizations(self, uid, func=None):
+        if func:
+            self.link.User.Manager[self.package].listUserAuthorizations(uid, async=func)
+        else:
+            self.link.User.Manager[self.package].listUserAuthorizations(uid)
