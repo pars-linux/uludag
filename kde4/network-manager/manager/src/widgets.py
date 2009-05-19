@@ -238,8 +238,7 @@ class ConnectionItemWidget(QtGui.QWidget):
             self.ui.labelDesc.setText(i18n("Connecting"))
             self.ui.labelStatus.setPixmap(KIcon("chronometer").pixmap(32))
         elif state == "inaccessible":
-            self.ui.labelDesc.setText(detail)
-            self.ui.checkToggler.setChecked(True)
+            self.ui.labelDesc.setText(unicode(detail))
             self.ui.labelStatus.setPixmap(KIcon("emblem-important").pixmap(32))
 
     def toggleConnection(self):
