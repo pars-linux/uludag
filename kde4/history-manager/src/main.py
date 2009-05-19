@@ -14,7 +14,6 @@
 import sys
 import comar
 import dbus
-from dbus.mainloop.qt import DBusQtMainLoop
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
@@ -31,7 +30,10 @@ class HistoryManager(KCModule):
 
         KGlobal.locale().insertCatalog("history-manager")
 
-        DBusQtMainLoop(set_as_default=True)
+        if not dbus.get_default_main_loop():
+            from dbus.mainloop.qt import DBusQtMainLoop
+            DBusQtMainLoop(set_as_default = True)
+
         MainManager(self, standAlone=False)
 
 class Manager(KMainWindow):
@@ -57,6 +59,7 @@ if __name__ == '__main__':
     app = KUniqueApplication()
 
     if not dbus.get_default_main_loop():
+        from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)
 
     mainWindow = Manager(app)
