@@ -38,10 +38,10 @@ class NetworkIface:
         return list(self.link.Network.Link[package].connections())
 
     def connect(self, package, profile):
-        self.setState(package, profile, "up")
+        self.setState(package, profile, "up", self.handler)
 
     def disconnect(self, package, profile):
-        self.setState(package, profile, "down")
+        self.setState(package, profile, "down", self.handler)
 
     def toggle(self, package, profile):
         info = self.info(package, profile)
@@ -62,8 +62,8 @@ class NetworkIface:
                 "profile":profile}
         self.waitFunctions.append(data)
 
-    def setState(self, package, profile, state):
-        self.link.Network.Link[package].setState(profile, state, async=self.handler)
+    def setState(self, package, profile, state, func=None):
+        self.link.Network.Link[package].setState(profile, state, async=func)
 
     def info(self, package, profile):
         return self.link.Network.Link[package].connectionInfo(str(profile))
@@ -95,32 +95,32 @@ class NetworkIface:
     def listen(self, func):
         self.link.listenSignals("Network.Link", func)
 
-    def updateConnection(self, package, profile, data):
+    def updateConnection(self, package, profile, data, func=None):
         info = self.capabilities(package)
         modes = info["modes"].split(",")
 
         if "device" in modes:
-            self.link.Network.Link[package].setDevice(profile,  data["device_id"],  async=self.handler)
+            self.link.Network.Link[package].setDevice(profile,  data["device_id"],  async=func)
 
         if "net" in modes:
             self.link.Network.Link[package].setAddress(profile, data["net_mode"],
                                                                 data["net_address"],
                                                                 data["net_mask"],
-                                                                data["net_gateway"],async=self.handler)
+                                                                data["net_gateway"],async=func)
             self.link.Network.Link[package].setNameService(profile, data["name_mode"],
-                                                                data["name_server"], async=self.handler)
+                                                                data["name_server"], async=func)
 
         if "remote" in modes:
-            self.link.Network.Link[package].setRemote(profile, data["remote"])
+            self.link.Network.Link[package].setRemote(profile, data["remote"], async=func)
 
         if "auth" in modes:
-            self.link.Network.Link[package].setAuthMethod(profile, data["auth"])
+            self.link.Network.Link[package].setAuthMethod(profile, data["auth"], async=func)
 
             for key, label, type_ in self.link.Network.Link[package].authParameters(data["auth"]):
-                self.link.Network.Link[package].setAuthParameters(profile, key, data.get("auth_%s" % key, ""), async=self.handler)
+                self.link.Network.Link[package].setAuthParameters(profile, key, data.get("auth_%s" % key, ""), async=func)
 
-    def deleteConnection(self, package, profile):
-        self.link.Network.Link[package].deleteConnection(profile, aysnc=self.handler)
+    def deleteConnection(self, package, profile, func=None):
+        self.link.Network.Link[package].deleteConnection(profile, aysnc=func)
 
     def devices(self, package):
         return self.link.Network.Link[package].deviceList()
