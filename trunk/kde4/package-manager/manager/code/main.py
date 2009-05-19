@@ -19,7 +19,7 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-from dbus.mainloop.qt import DBusQtMainLoop
+from dbus
 
 from about import aboutData
 from mainwindow import MainWindow
@@ -29,7 +29,9 @@ if __name__ == '__main__':
     KCmdLineArgs.init(sys.argv, aboutData)
     app = KApplication()
 
-    DBusQtMainLoop(set_as_default=True)
+    if not dbus.get_default_main_loop():
+        from dbus.mainloop.qt import DBusQtMainLoop
+        DBusQtMainLoop(set_as_default = True)
 
     manager = MainWindow()
     manager.show()
