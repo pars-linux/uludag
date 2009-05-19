@@ -501,14 +501,17 @@ class MainManager(QtGui.QWidget):
         ui = self.ui
         connectionName = unicode(ui.lineConnectionName.text())
 
-        # Updating a profile
+        try:
+            self.iface.updateConnection(self.lastEditedPackage, connectionName, self.collectDataFromUI())
+        except Exception, e:
+            KMessageBox.error(self.baseWidget, unicode(e))
+            return
+
         if self.lastEditedData:
-            # If profile name has been changed, delete profile first
+            # Profile name has been changed, delete old profile
             if not self.lastEditedData["name"] == connectionName:
                 self.iface.deleteConnection(self.lastEditedPackage, self.lastEditedData["name"])
-
-        self.iface.updateConnection(self.lastEditedPackage, connectionName, self.collectDataFromUI())
-        if self.lastEditedData:
+            # Profile state was up
             if self.lastEditedData.has_key("state"):
                 if self.lastEditedData["state"].startswith("up"):
                     self.iface.connect(self.lastEditedPackage, connectionName)
