@@ -14,6 +14,8 @@
 # System
 import sys
 
+import dbus
+
 # Qt Stuff
 from PyQt4.QtCore import SIGNAL
 
@@ -33,9 +35,6 @@ if __name__ == '__main__':
     # Application Stuff
     from about import aboutData
 
-    # DBUS-QT
-    from dbus.mainloop.qt import DBusQtMainLoop
-
     # Set Command-line arguments
     KCmdLineArgs.init(sys.argv, aboutData)
 
@@ -43,7 +42,9 @@ if __name__ == '__main__':
     app = KApplication()
 
     # DBUS MainLoop
-    DBusQtMainLoop(set_as_default = True)
+    if not dbus.get_default_main_loop():
+        from dbus.mainloop.qt import DBusQtMainLoop
+        DBusQtMainLoop(set_as_default = True)
 
     # Create Main Widget
     mainWindow = ServiceManager(None, 'service-manager')

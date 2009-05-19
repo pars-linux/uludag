@@ -15,8 +15,8 @@
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-# DBUS-QT
-from dbus.mainloop.qt import DBusQtMainLoop
+# DBUS
+import dbus
 
 # Service Manager
 from base import MainManager
@@ -28,7 +28,9 @@ class ServiceManager(KCModule):
         # This is very important for translations when running as kcm_module
         KGlobal.locale().insertCatalog("service-manager")
 
-        # DBUS MainLoop
-        DBusQtMainLoop(set_as_default = True)
+        if not dbus.get_default_main_loop():
+            from dbus.mainloop.qt import DBusQtMainLoop
+            DBusQtMainLoop(set_as_default = True)
+
         MainManager(self, standAlone = False)
 
