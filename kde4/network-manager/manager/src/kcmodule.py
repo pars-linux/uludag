@@ -15,8 +15,8 @@
 from PyKDE4.kdeui import KCModule
 from PyKDE4.kdecore import KGlobal
 
-# DBUS-QT
-from dbus.mainloop.qt import DBusQtMainLoop
+# DBUS
+import dbus
 
 # Network Manager
 from base import MainManager
@@ -29,6 +29,9 @@ class NetworkManager(KCModule):
         KGlobal.locale().insertCatalog("network-manager")
 
         # DBUS MainLoop
-        DBusQtMainLoop(set_as_default = True)
+        if not dbus.get_default_main_loop():
+            from dbus.mainloop.qt import DBusQtMainLoop
+            DBusQtMainLoop(set_as_default = True)
+
         MainManager(self, standAlone = False)
 
