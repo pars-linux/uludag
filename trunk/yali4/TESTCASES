@@ -32,4 +32,5 @@ Following steps will be useful to test Yalı in an arbitrary order :)
     - Check other partitions grub.conf after installation
  - Check whole log file before restart, yali doesn't stores grub logs in yaliInstall.log because of some (mount,grub-install) problems
  - Check is AutoLogin working
+ - Prepare a wrong CD and test the check CD part.
 
