@@ -95,4 +95,4 @@ class Interface:
         if func:
             self.link.User.Manager[self.package].listUserAuthorizations(uid, async=func)
         else:
-            self.link.User.Manager[self.package].listUserAuthorizations(uid)
+            return self.link.User.Manager[self.package].listUserAuthorizations(uid)
