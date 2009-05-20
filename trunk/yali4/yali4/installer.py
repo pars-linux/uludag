@@ -244,8 +244,12 @@ class Yali:
             return 1
 
         self.info.updateAndShow(_("Disk analyze started.."))
+
         rootWidget.resizablePartitions = []
         rootWidget.resizableDisks = []
+        rootWidget.freeSpacePartitions = []
+        rootWidget.freeSpaceDisks = []
+
         ctx.debugger.log("Disk analyze started.")
         ctx.debugger.log("%d disk found." % len(yali4.storage.devices))
         for dev in yali4.storage.devices:
@@ -255,7 +259,14 @@ class Yali:
                 #    rootWidget.resizableDisks.append(dev)
                 for part in dev.getOrderedPartitionList():
                     ctx.debugger.log("Partition %s found on disk %s, formatted as %s" % (part.getPath(), dev.getPath(), part.getFSName()))
-                    if part.isResizable():
+                    if part.isFreespace():
+                        ctx.debugger.log(" - This partition is free")
+                        if part.getMB() > ctx.consts.min_root_size:
+                            ctx.debugger.log(" - Usable size for this partition is %.2f MB" % part.getMB())
+                            rootWidget.freeSpacePartitions.append({"partition":part,"newSize":part.getMB()})
+                            if dev not in rootWidget.freeSpaceDisks:
+                                rootWidget.freeSpaceDisks.append(dev)
+                    elif part.isResizable():
                         minSize = part.getMinResizeMB()
                         possibleFreeSize = part.getMB() - minSize
                         ctx.debugger.log(" - This partition is resizable")
@@ -267,12 +278,13 @@ class Yali:
                             if dev not in rootWidget.resizableDisks:
                                 rootWidget.resizableDisks.append(dev)
                     else:
-                        ctx.debugger.log("This partition is not resizable")
+                        ctx.debugger.log("This partition is not usable")
             else:
                 ctx.debugger.log("In disk %s, there is no primary avaliable" % (dev.getPath()))
 
-        # Sort by Resize..
+        # Sort by size..
         rootWidget.resizablePartitions.sort(sortBySize)
+        rootWidget.freeSpacePartitions.sort(sortBySize)
 
         self.info.hide()
 
@@ -342,20 +354,29 @@ class Yali:
         _part = ctx.installData.autoPartPartition
         part = _part["partition"]
 
-        newPartSize = int(_part["newSize"]/2) - 2
-        ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
-        ctx.debugger.log("UA: resizing to : %s " % (int(part.getMB()) - newPartSize))
+        if part.isResizable():
+            newPartSize = int(_part["newSize"]/2) - 2
+            ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
+            ctx.debugger.log("UA: resizing to : %s " % (int(part.getMB()) - newPartSize))
 
-        _np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
+            _np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
 
-        self.info.updateMessage(_("Resize Finished ..."))
-        ctx.debugger.log("UA: Resize finished.")
-        time.sleep(1)
+            self.info.updateMessage(_("Resize Finished ..."))
+            ctx.debugger.log("UA: Resize finished.")
+            time.sleep(1)
 
-        newStart = _np.geom.end
-        np = dev.getPartition(_np.num)
+            newStart = _np.geom.end
+            np = dev.getPartition(_np.num)
+            cp = np
 
-        if np.isLogical():
+        elif part.isFreespace():
+            newPartSize = part.getMB()
+            newStart = part.geom.getStart()
+            cp = part
+        else:
+            raise YaliError, _("Failed to use partition for automatic installation " % part.getPath())
+
+        if cp.isLogical():
             ptype = PARTITION_LOGICAL
         else:
             ptype = PARTITION_PRIMARY

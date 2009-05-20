@@ -87,13 +87,15 @@ about disk partitioning.
         self.connect(self.ui.accept_auto,   SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.device_list,   SIGNAL("currentItemChanged(QListWidgetItem * ,QListWidgetItem * )"),self.slotDeviceChanged)
 
-    def fillDeviceList(self,limit=False):
+    def fillDeviceList(self, limit=False):
         self.ui.device_list.clear()
         # fill device list
         for dev in yali4.storage.devices:
             if dev.getTotalMB() >= ctx.consts.min_root_size:
                 if limit:
-                    if dev in self.resizableDisks:
+                    if dev in self.freeSpaceDisks:
+                        DeviceItem(self.ui.device_list, dev, forceToFirst = True)
+                    elif dev in self.resizableDisks:
                         DeviceItem(self.ui.device_list, dev)
                 else:
                     DeviceItem(self.ui.device_list, dev)
@@ -115,6 +117,9 @@ about disk partitioning.
         self.arp = []
         self.autoPartPartition = None
 
+        for partition in self.freeSpacePartitions:
+            if partition["newSize"] >= ctx.consts.min_root_size:
+                self.arp.append(partition)
         for partition in self.resizablePartitions:
             if partition["newSize"] / 2 >= ctx.consts.min_root_size:
                 self.arp.append(partition)
@@ -123,7 +128,7 @@ about disk partitioning.
             self.isAutoResizeAvail = False
             self.ui.accept_auto_1.setEnabled(self.isAutoResizeAvail)
             self.ui.accept_auto_2.toggle()
-        elif len(self.arp) == 1:
+        elif len(self.arp) >= 1:
             self.isAutoResizeAvail = True
             self.autoPartPartition = self.arp[0]
             self.ui.accept_auto_1.toggle()
@@ -135,7 +140,7 @@ about disk partitioning.
             self.ui.accept_auto_2.toggle()
         if ctx.installData.autoPartMethod == methodManual:
             self.slotSelectManual()
-        
+
         self.scannedBefore = True
         self.update()
 
@@ -144,7 +149,7 @@ about disk partitioning.
         if len(self.arp) > 1:
             _tmp = []
             for part in self.arp:
-                if str(part["partition"].getPath()).startswith(self.device.getPath()):
+                if part["partition"].getDevice().getPath() == self.device.getPath():
                     self.autoPartPartition = part
                     _tmp.append(part)
             self.arp = _tmp
@@ -209,7 +214,7 @@ about disk partitioning.
         self.enable_next = True
         self.update()
 
-    def slotToggleManual(self, b=True):
+    def slotToggleManual(self):
         self.ui.accept_auto_1.setChecked(False)
         self.ui.accept_auto_2.setChecked(False)
 
@@ -225,6 +230,9 @@ about disk partitioning.
             self.enable_next = True
             self.ui.accept_auto_1.setEnabled(False)
             self.ui.accept_auto_2.setEnabled(False)
+        else:
+            self.ui.accept_auto_1.setEnabled(True)
+            self.ui.accept_auto_2.setEnabled(True)
         if self.enable_next:
             ctx.mainScreen.enableNext()
         else:
@@ -237,12 +245,16 @@ about disk partitioning.
         ctx.mainScreen.processEvents()
 
 class DeviceItem(QtGui.QListWidgetItem):
-    def __init__(self, parent, dev):
+    def __init__(self, parent, dev, forceToFirst=False):
         text = u"%s - %s (%s)" % (dev.getModel(),
                                   dev.getName(),
                                   dev.getSizeStr())
-        QtGui.QListWidgetItem.__init__(self,text,parent)
+        QtGui.QListWidgetItem.__init__(self, text, None)
         self._dev = dev
+        if forceToFirst:
+            parent.insertItem(0, self)
+        else:
+            parent.addItem(self)
 
     def getDevice(self):
         return self._dev
