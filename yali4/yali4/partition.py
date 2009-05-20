@@ -121,6 +121,8 @@ class Partition:
     ##
     # partition name (eg. sda1)
     def getName(self):
+        if self.getPath() == "N/A":
+            return _("Free Space")
         return os.path.basename(self.getPath())
 
     def getMinor(self):

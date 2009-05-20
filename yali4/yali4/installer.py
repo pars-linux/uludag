@@ -371,7 +371,7 @@ class Yali:
 
         elif part.isFreespace():
             newPartSize = part.getMB()
-            newStart = part.geom.getStart()
+            newStart = part.getStart()
             cp = part
         else:
             raise YaliError, _("Failed to use partition for automatic installation " % part.getPath())
