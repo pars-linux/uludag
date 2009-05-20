@@ -14,4 +14,5 @@ X-KDE-Weight=70
 Name=Network Manager
 Name[tr]=Ağ Yöneticisi
 Comment=Network Manager
-X-KDE-Keywords=python network managers
+X-KDE-Keywords=python network manager dns ethernet wireless ip dhcp internet
+X-KDE-Keywords[tr]=python ağ yönetici dns ethernet kablosuz ip dhcp internet
