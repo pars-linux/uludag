@@ -80,6 +80,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.buttonBox, QtCore.SIGNAL("rejected()"), self.slotCancelEdit)
         self.connect(self.animator, QtCore.SIGNAL("frameChanged(int)"), self.slotAnimate)
         self.connect(self.animator, QtCore.SIGNAL("finished()"), self.slotAnimationFinished)
+        self.connect(self.widgetUserEdit, QtCore.SIGNAL("buttonStatusChanged(int)"), self.slotButtonStatusChanged)
+        self.connect(self.widgetGroupEdit, QtCore.SIGNAL("buttonStatusChanged(int)"), self.slotButtonStatusChanged)
 
     def checkBackend(self):
         """
@@ -369,3 +371,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         else:
             self.frameEdit.setMaximumHeight(ANIM_TARGET)
             self.frameList.setMaximumHeight(ANIM_DEFAULT)
+
+    def slotButtonStatusChanged(self, status):
+        if status:
+            self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
+        else:
+            self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel)
