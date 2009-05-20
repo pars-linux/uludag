@@ -142,8 +142,12 @@ class PartitionItem(QtGui.QListWidgetItem):
 
     def __init__(self, parent, _part):
         part = _part["partition"]
+        if part.isFreespace():
+            label = _("Free Space")
+        else:
+            label = part.getFSLabel() or _("Partition %d") % part.getMinor()
         text = _("(%s) [%s] Size : %s - Free : %s" % (part.getDevice().getName(),
-                                                      part.getFSLabel() or _("Partition %d") % part.getMinor(),
+                                                      label,
                                                       part.getSizeStr(),
                                                       part.getSizeStr(_part["newSize"])))
         QtGui.QListWidgetItem.__init__(self, text, parent)
@@ -163,7 +167,7 @@ class DeviceItem(QtGui.QListWidgetItem):
     def getDevice(self):
         return self._dev
 
-class PartitionItem(QtGui.QListWidgetItem):
+class PartItem(QtGui.QListWidgetItem):
     def __init__(self, parent, partition, label, icon):
         QtGui.QListWidgetItem.__init__(self, QtGui.QIcon(":/gui/pics/%s.png" % icon), label, parent)
         self._part = partition

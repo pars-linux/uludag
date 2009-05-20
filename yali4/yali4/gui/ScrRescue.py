@@ -20,7 +20,7 @@ from PyQt4.QtCore import *
 import yali4.storage
 import yali4.sysutils
 from yali4.gui.ScreenWidget import ScreenWidget
-from yali4.gui.GUIAdditional import PartitionItem
+from yali4.gui.GUIAdditional import PartItem
 from yali4.gui.Ui.rescuewidget import Ui_RescueWidget
 import yali4.gui.context as ctx
 
@@ -97,7 +97,7 @@ class PardusPartitions:
                 _info = "%s - %s %s" % (partition.getDevice().getModel(),
                                          partition.getPath(),
                                          p['release'] or label)
-                PartitionItem(parentWidget.ui.partitionList, p['partition'], _info, icon)
+                PartItem(parentWidget.ui.partitionList, p['partition'], _info, icon)
             parentWidget.ui.partitionList.setCurrentItem(parentWidget.ui.partitionList.item(0))
 
         if isPardusFound:

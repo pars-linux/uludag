@@ -29,7 +29,7 @@
  Partitioning
  --------------------------------------------------------
      + Use ext4 default for ext* partitions
-     - Support to use free space on disk for Auto Resize
+     + Support to use free space on disk for Auto Resize
      ? Fat32 resize
      - LVM/RAID support
      + Improve NTFS check before resize
