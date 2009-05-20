@@ -1,0 +1,6 @@
+- Profil yaratıldıktan sonra 
+    Profil adı eklenmeme durumunda, profil yaratılabiliyor, fakat profilleri göster denildiğimde bu profil gözükmüyor. (İsimsiz gibi bir default isim verilebilir)
+- Bir wireless ağa bağlanıldıktan sonra
+    Bu ağın bulunmadığı bir yerde network-manager bu ağa bağlı olarak görünüyor.
+- Profil seçimi checkbox'ı seçili iken, bu profil ile  yeni bir wireless ağa bağlanılmak istendiğinde checkbox enable durumdan disable duruma geçiyor. 
+    Bu durumda iken kullanıcı parolası sormadan ağa bağlanamaya çalışıyor.
