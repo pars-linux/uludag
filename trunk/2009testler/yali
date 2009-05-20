@@ -3,7 +3,7 @@ Açılış Ekranı
 - Ekranda progressbar ilerlerken grafik sorunları var.
 - F3 F4 F5 tuşlarının testlerine sonra bakılacak.
 
-Lisans Kabul sayfası
+Lisans Onay sayfası
 - Sürüm notları dosyası açılamıyor.
 - Lisans dosyası açılamıyor.
 -Geri tuşuna basılamıyor. (Bu sayfadan geriye dönüş yapılamıyor)
@@ -11,9 +11,3 @@ Lisans Kabul sayfası
     - Sistemi yeniden başlat tuşuna basılamıyor (sistem yeniden başlatılamıyor)
 - Hayır kabul etmiyorum! radio butonu seçili iken
     - İleri tuşuna basılamıyor.
-
-Disk Bölümlendirme Sayfası
-- Hayır, diskimi kendim bölümlendireceğim seçili ise 
-    - Bir partition silinip installation yapılmaya çalışıldığında root bölümüne atama yapılamıyor.
-        installer.py satır 394'te hata veriyor.
-        ref: yalierror.JPG
