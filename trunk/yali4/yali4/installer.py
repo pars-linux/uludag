@@ -639,8 +639,8 @@ class Yali:
         # finally install it
         return loader.install_grub(ctx.installData.bootLoaderDev, _ins_part)
 
-    def showError(self, title, message):
-        r = ErrorWidget(self)
+    def showError(self, title, message, parent=None):
+        r = ErrorWidget(parent)
         r.label.setText(message)
         d = Dialog(title, r, self)
         d.resize(300,200)
@@ -656,8 +656,9 @@ class Yali:
         return True
 
 class ErrorWidget(QtGui.QWidget):
-    def __init__(self, *args):
-        apply(QtGui.QWidget.__init__, (self,) + args)
+
+    def __init__(self, parent):
+        QtGui.QWidget.__init__(self, parent)
 
         self.gridlayout = QtGui.QGridLayout(self)
         self.vboxlayout = QtGui.QVBoxLayout()
