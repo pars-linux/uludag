@@ -354,6 +354,11 @@ class Yali:
         _part = ctx.installData.autoPartPartition
         part = _part["partition"]
 
+        if part.isLogical():
+            ptype = PARTITION_LOGICAL
+        else:
+            ptype = PARTITION_PRIMARY
+
         if part.isResizable():
             newPartSize = int(_part["newSize"]/2) - 2
             ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
@@ -367,30 +372,26 @@ class Yali:
 
             newStart = _np.geom.end
             np = dev.getPartition(_np.num)
-            cp = np
-
+            self.info.updateMessage(_("Creating new partition ..."))
+            ctx.debugger.log("UA: newStart : %s " % newStart)
+            _newPart = dev.addPartition(None,
+                                        ptype,
+                                        parttype.root.filesystem,
+                                        newPartSize,
+                                        parttype.root.parted_flags,
+                                        newStart)
+            newPart = dev.getPartition(_newPart.num)
         elif part.isFreespace():
-            newPartSize = part.getMB()
+            newPartSize = part.getMB() - 8
             newStart = part.getStart()
-            cp = part
+            _newPart = dev.addPartition(part._partition,
+                                        ptype,
+                                        parttype.root.filesystem,
+                                        newPartSize,
+                                        parttype.root.parted_flags)
+            newPart = dev.getPartition(_newPart.num)
         else:
             raise YaliError, _("Failed to use partition for automatic installation " % part.getPath())
-
-        if cp.isLogical():
-            ptype = PARTITION_LOGICAL
-        else:
-            ptype = PARTITION_PRIMARY
-
-        self.info.updateMessage(_("Creating new partition ..."))
-        ctx.debugger.log("UA: newStart : %s " % newStart)
-        _newPart = dev.addPartition(None,
-                                    ptype,
-                                    parttype.root.filesystem,
-                                    newPartSize,
-                                    parttype.root.parted_flags,
-                                    newStart)
-
-        newPart = dev.getPartition(_newPart.num)
 
         dev.commit()
         ctx.mainScreen.processEvents()
