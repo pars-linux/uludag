@@ -146,8 +146,8 @@ about disk partitioning.
 
     def execute(self):
         ctx.installData.autoPartDev = None
+        _tmp = []
         if len(self.arp) > 1:
-            _tmp = []
             for part in self.arp:
                 if part["partition"].getDevice().getPath() == self.device.getPath():
                     self.autoPartPartition = part
