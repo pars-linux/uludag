@@ -34,7 +34,7 @@ class OperationManager(QObject):
         print "Args:", args
 
         # FIXME: manager.py should just send either a status or signal
-        if signal == "status":
+        if signal in  ["status", "progress"]:
             signal = args[0]
             args = args[1:]
         ####
@@ -42,8 +42,9 @@ class OperationManager(QObject):
         if signal == "finished":
             self.emit(SIGNAL("finished(QString)"), args[0])
 
-        elif signal == "progress":
-            self.emit(SIGNAL("progress(int)"), args[2])
+        elif signal == "fetching":
+            self.emit(SIGNAL("operationChanged(QString, QString)"), i18n("downloading"), args[0])
+            self.emit(SIGNAL("progress(int)"), args[1])
 
         elif signal == "started":
             self.initialize()
