@@ -32,6 +32,6 @@
      - Support to use free space on disk for Auto Resize
      ? Fat32 resize
      - LVM/RAID support
-     - Improve NTFS check before resize
+     + Improve NTFS check before resize
  %20 / Btrfs support
 
