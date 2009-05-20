@@ -263,6 +263,8 @@ Network.Link Model
 
         "unavailable"
 
+        "unplugged"
+
 
     Signals:
         connectionChanged: Fired when a connection profile is changed.

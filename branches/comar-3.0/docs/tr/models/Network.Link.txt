@@ -264,6 +264,8 @@ Network.Link Modeli
 
         "unavailable"
 
+        "unplugged"
+
 
     Sinyaller:
         connectionChanged: Bağlantı profili değiştirildiğinde gönderilir.
