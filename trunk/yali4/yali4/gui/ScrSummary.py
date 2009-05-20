@@ -161,27 +161,38 @@ Here you can see your install options and look at them again before installation
             content.append(item % _("Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>.") % _sum)
 
         elif ctx.installData.autoPartMethod == methodUseAvail:
-            content.append(item % _("Automatic Partitioning (resize method) selected."))
-            self.resizeAction = True
             dev = ctx.installData.autoPartDev
             _part = ctx.installData.autoPartPartition
             part = _part["partition"]
-            newPartSize = int(_part["newSize"]/2)
-            ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
-            resizeTo = int(part.getMB()) - newPartSize
-
-            _sum = {"device":dev.getModel(),
-                    "partition":part.getName(),
-                    "newPartition":"%s%s" % (part.getName()[:-1],int(part._minor)+1),
-                    "size":newPartSize,
-                    "currentFs":part._fsname,
-                    "fs":parttype.root.filesystem.name(),
-                    "type":parttype.root.name,
-                    "currentSize":part.getMB(),
-                    "resizeTo":resizeTo}
-
             pardus_path = "%s%s" % (dev.getPath(), int(part._minor)+1)
-            content.append(item % _("Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>") % _sum)
+
+            if part.isFreespace():
+                _sum = {"device":dev.getModel(),
+                        "partition":part.getName(),
+                        "newPartition":part.getName(),
+                        "size":part.getMB(),
+                        "currentFs":part._fsname,
+                        "fs":parttype.root.filesystem.name(),
+                        "type":parttype.root.name}
+            else:
+                content.append(item % _("Automatic Partitioning (resize method) selected."))
+                self.resizeAction = True
+                newPartSize = int(_part["newSize"]/2)
+                ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
+                resizeTo = int(part.getMB()) - newPartSize
+
+                _sum = {"device":dev.getModel(),
+                        "partition":part.getName(),
+                        "newPartition":"%s%s" % (part.getName()[:-1],int(part._minor)+1),
+                        "size":newPartSize,
+                        "currentFs":part._fsname,
+                        "fs":parttype.root.filesystem.name(),
+                        "type":parttype.root.name,
+                        "currentSize":part.getMB(),
+                        "resizeTo":resizeTo}
+
+                content.append(item % _("Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>") % _sum)
+
             content.append(item % _("Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MB</b> as <b>%(fs)s</b>.") % _sum)
             content.append(item % _("Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>.") % _sum)
 

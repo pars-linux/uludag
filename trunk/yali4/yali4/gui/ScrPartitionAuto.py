@@ -85,7 +85,7 @@ about disk partitioning.
         self.connect(self.ui.manual,        SIGNAL("clicked()"),self.slotSelectManual)
         self.connect(self.ui.manual,        SIGNAL("toggled(bool)"),self.slotToggleManual)
         self.connect(self.ui.accept_auto,   SIGNAL("clicked()"),self.slotSelectAuto)
-        self.connect(self.ui.device_list,   SIGNAL("currentItemChanged(QListWidgetItem * ,QListWidgetItem * )"),self.slotDeviceChanged)
+        self.connect(self.ui.device_list,   SIGNAL("currentItemChanged(QListWidgetItem *, QListWidgetItem * )"),self.slotDeviceChanged)
 
     def fillDeviceList(self, limit=False):
         self.ui.device_list.clear()
@@ -152,10 +152,9 @@ about disk partitioning.
                 if part["partition"].getDevice().getPath() == self.device.getPath():
                     self.autoPartPartition = part
                     _tmp.append(part)
-            self.arp = _tmp
         if self.ui.accept_auto_1.isChecked() or self.ui.accept_auto_2.isChecked():
-            if self.ui.accept_auto_1.isChecked() and len(self.arp) > 1:
-                question = AutoPartQuestionWidget(self,self.arp)
+            if self.ui.accept_auto_1.isChecked() and len(_tmp) > 1:
+                question = AutoPartQuestionWidget(self, _tmp)
                 question.show()
                 ctx.mainScreen.moveInc = 0
             else:
