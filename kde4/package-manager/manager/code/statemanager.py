@@ -27,7 +27,6 @@ class StateManager(QObject):
         self.parent = parent
         self.state = self.INSTALL
         self.iface = backend.pm.Iface()
-        self.iface.setHandler(self.__actionHandler)
         self.cached_packages = None
 
     def setState(self, state):
@@ -70,22 +69,5 @@ class StateManager(QObject):
                 self.REMOVE:self.iface.removePackages,
                 self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
 
-    def __actionHandler(self, package, signal, args):
-        print "Signal:", signal
-        print "Args:", args
-
-        if signal == "finished":
-            self.emit(SIGNAL("finished(QString)"), args[0])
-        elif signal == "progress":
-            self.emit(SIGNAL("progress(int)"), args[2])
-        elif signal == "status":
-            self.__statusHandler(args[0], args[1:])
-
-    def __statusHandler(self, status, args):
-        if status == "started":
-            self.emit(SIGNAL("started()"))
-        elif status in ["installing", "removing", "extracting", "configuring"]:
-            self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(status), args[0])
-        elif status == "cached":
-            totalSize = int(args[0]) - int(args[1])
-            self.emit(SIGNAL("totalSizeChanged(int)"), totalSize)
+    def setActionHandler(self, handler):
+        self.iface.setHandler(handler)
