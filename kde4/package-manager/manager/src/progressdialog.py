@@ -17,8 +17,9 @@ from PyKDE4.kdecore import i18n
 from ui_progressdialog import Ui_ProgressDialog
 
 class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
-    def __init__(self, parent=None):
+    def __init__(self, state, parent=None):
         QtGui.QDialog.__init__(self, parent)
+        self.state = state
         self.setupUi(self)
         self.setModal(True)
         self.startAnimation()
@@ -28,9 +29,6 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.animeLabel.setMovie(self.movie)
         self.movie.setFileName("data/pisianime.gif")
         self.movie.start()
-
-    def updateAction(self, action):
-        self.actionInfo.setText(action)
 
     def updateProgress(self, progress):
         self.progressBar.setValue(progress)
@@ -56,3 +54,7 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
 
     def disableCancel(self):
         self.cancelButton.setEnabled(False)
+
+    def show(self):
+        self.actionLabel.setText("<b>%s</b>" % self.state.getActionCurrent())
+        QtGui.QDialog.show(self)

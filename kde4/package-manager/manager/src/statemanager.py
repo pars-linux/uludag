@@ -48,6 +48,11 @@ class StateManager(QObject):
                 self.cached_packages = self.iface.getPackageList()
         return self.cached_packages
 
+    def getActionCurrent(self):
+        return {self.INSTALL:i18n("Installing Package(s)"),
+                self.REMOVE :i18n("Removing Package(s)"),
+                self.UPGRADE:i18n("Upgrading Package(s)")}[self.state]
+
     def getActionName(self):
         return {self.INSTALL:i18n("Install Package(s)"),
                 self.REMOVE :i18n("Remove Package(s)"),

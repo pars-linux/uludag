@@ -34,6 +34,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.setupUi(self)
         self.state = StateManager(self)
         self.operation = OperationManager(self.state)
+        self.progressDialog = ProgressDialog(self.state)
         self.initialize()
 
         # Operation Manager related signals
@@ -51,7 +52,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                             self.packageList.selectionModel().selectedIndexes()))
 
     def initializeProgressDialog(self):
-        self.progressDialog = ProgressDialog(self)
         self.connect(self.operation, SIGNAL("started"), self.progressDialog.enableCancel)
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
         self.connect(self.operation, SIGNAL("operationChanged(QString,QString)"), self.progressDialog.updateOperation)
