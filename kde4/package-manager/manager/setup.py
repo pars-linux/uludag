@@ -21,7 +21,7 @@ from distutils.cmd import Command
 from distutils.command.build import build
 from distutils.command.install import install
 
-from code import about
+from src import about
 
 def update_messages():
     # Create empty directory
@@ -31,7 +31,7 @@ def update_messages():
     for filename in glob.glob1("ui", "*.ui"):
         os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
     # Collect Python files
-    os.system("cp -R code/* .tmp/")
+    os.system("cp -R src/* .tmp/")
     # Generate POT file
     os.system("find .tmp -name '*.py' | xargs xgettext --default-domain=%s --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot" % (about.catalog, about.catalog))
     # Update PO files
@@ -54,7 +54,7 @@ class Build(build):
         os.system("rm -rf build")
         # Copy codes
         print "Copying PYs..."
-        os.system("cp -R code/ build/")
+        os.system("cp -R src/ build/")
         # Copy icons
         print "Copying Images..."
         os.system("cp -R data/ build/")
