@@ -19,7 +19,7 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-from dbus
+import dbus
 
 from about import aboutData
 from mainwindow import MainWindow
