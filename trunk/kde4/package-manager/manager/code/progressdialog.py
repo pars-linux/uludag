@@ -42,8 +42,8 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         operationInfo = i18n('%1 %2', package, operation)
         self.operationInfo.setText(operationInfo)
 
-    def updateStatus(self, status):
-        self.statusInfo.setText(status)
+    def updateStatus(self, packageNo, totalPackages, operation):
+        self.statusInfo.setText(i18n("%1 / %2 package %3", packageNo, totalPackages, operation))
 
     def updateRemainingTime(self, time):
         self.timeRemaining.setText(time)
