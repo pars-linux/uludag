@@ -33,30 +33,31 @@ class OperationManager(QObject):
         print "Signal:", signal
         print "Args:", args
 
+        # FIXME: manager.py should just send either a status or signal
+        if signal == "status":
+            signal = args[0]
+            args = args[1:]
+        ####
+
         if signal == "finished":
             self.emit(SIGNAL("finished(QString)"), args[0])
 
         elif signal == "progress":
             self.emit(SIGNAL("progress(int)"), args[2])
 
-        elif signal == "status":
-            self.statusHandler(args[0], args[1:])
-
-    def statusHandler(self, status, args):
-        if status == "started":
+        elif signal == "started":
             self.initialize()
             self.emit(SIGNAL("started()"))
 
-        elif status in ["installing", "removing", "extracting", "configuring"]:
-            self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(status), args[0])
+        elif signal in ["installing", "removing", "extracting", "configuring"]:
+            self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(signal), args[0])
 
-        elif status == "cached":
+        elif signal == "cached":
             self.totalSize = int(args[0]) - int(args[1])
 
-        elif status in ["removed", "installed", "upgraded"]:
+        elif signal in ["removed", "installed", "upgraded"]:
             # Bug 4030
-            if self.state.getState() != StateManager.REMOVE and status == "removed":
+            if self.state.getState() != StateManager.REMOVE and signal == "removed":
                 return
-
             self.packageNo += 1
-            self.emit(SIGNAL("packageChanged(int, int, QString)"), self.packageNo, self.totalPackages, i18n(status))
+            self.emit(SIGNAL("packageChanged(int, int, QString)"), self.packageNo, self.totalPackages, i18n(signal))
