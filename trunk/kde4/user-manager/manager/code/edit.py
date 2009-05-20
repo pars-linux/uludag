@@ -58,6 +58,15 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         # Build policy list
         self.buildPolicies()
 
+        # Validators
+        #self.lineUsername.setValidator(QtCore.QRegExpValidator(QtCore.QRegExp("[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_]*"), self.lineUsername))
+        #self.lineFullname.setValidator(QtCore.QRegExpValidator(QtCore.QRegExp("[^\n:]*"), self.lineFullname))
+
+        # Warning icon
+        self.labelSign.setPixmap(kdeui.KIcon("process-stop").pixmap(32, 32))
+        self.labelSign.hide()
+
+        # Signals
         self.connect(self.checkAutoId, QtCore.SIGNAL("stateChanged(int)"), self.slotCheckAuto)
         self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.slotFulnameChanged)
         self.connect(self.listGroups, QtCore.SIGNAL("itemClicked(QListWidgetItem*)"), self.slotGroupSelected)
@@ -66,6 +75,13 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.connect(self.radioAuthDefault, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
         self.connect(self.radioAuthYes, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
         self.connect(self.checkAdmin, QtCore.SIGNAL("stateChanged(int)"), self.slotAdmin)
+
+        self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
+        self.connect(self.linePassword, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
+        self.connect(self.linePasswordAgain, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
+        self.connect(self.lineUsername, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
+        self.connect(self.lineHomeDir, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
+        self.connect(self.lineShell, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
 
     def reset(self):
         self.setId(-1)
@@ -255,6 +271,49 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
                 # Change check state
                 item.setCheckState(state)
                 return
+
+    def checkFields(self, *args):
+        err = ""
+        i18n = kdecore.i18n
+
+        if self.lineFullname.text() == "" and self.lineUsername.text() == "":
+            err = i18n("Start with typing this user's full name.")
+
+        if not err and self.isNew() and self.linePassword.text() == "":
+            err = i18n("You should enter a password for this user.")
+
+        if not err:
+            pw = unicode(self.linePassword.text())
+            if pw != "" and len(pw) < 4:
+                err = i18n("Password must be longer.")
+
+            if not err:
+                if len(pw) and pw == self.lineFullname.text() or pw == self.lineUsername.text():
+                    err = i18n("Don't use your full name or user name as a password.")
+
+        if not err and self.linePassword.text() != self.linePasswordAgain.text():
+            err = i18n("Passwords don't match.")
+
+        nick = self.lineUsername.text()
+
+        if not err and nick == "":
+            err = i18n("You must enter a user name.")
+
+        if not err and self.isNew() and nick in self.nicklist:
+            err = i18n("This user name is used by another user.")
+
+        if not err:
+            if len(nick) > 0 and nick[0] >= "0" and nick[0] <= "9":
+                err = i18n("User name must not start with a number.")
+
+        if err:
+            self.labelWarning.setText(u"<font color=red>%s</font>" % err)
+            self.labelSign.show()
+            self.emit(QtCore.SIGNAL("buttonStatusChanged(int)"), 0)
+        else:
+            self.labelWarning.setText("")
+            self.labelSign.hide()
+            self.emit(QtCore.SIGNAL("buttonStatusChanged(int)"), 1)
 
 class EditGroupWidget(QtGui.QWidget, Ui_EditGroupWidget):
     def __init__(self, parent):
