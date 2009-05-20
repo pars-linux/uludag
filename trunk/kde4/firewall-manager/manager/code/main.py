@@ -250,7 +250,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Item state changed.
         """
         widget = self.sender()
-        self.iface.setModuleState(widget.getId(), state == QtCore.Qt.Checked)
+        try:
+            self.iface.setModuleState(widget.getId(), state == QtCore.Qt.Checked)
+        except Exception, e:
+            if "Comar.PolicyKit" in e._dbus_error_name:
+                kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+            else:
+                kdeui.KMessageBox.error(self, unicode(e))
 
     def slotItemEdit(self):
         """
@@ -299,7 +305,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         dialog.addPage(page_item)
         if dialog.exec_():
-            self.iface.setModuleParameters(widget.getId(), page_widget.getValues())
+            try:
+                self.iface.setModuleParameters(widget.getId(), page_widget.getValues())
+            except Exception, e:
+                if "Comar.PolicyKit" in e._dbus_error_name:
+                    kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+                else:
+                    kdeui.KMessageBox.error(self, unicode(e))
 
     def slotItemDelete(self):
         """
@@ -332,8 +344,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.widgetService.setEnabled(False)
         try:
             self.iface.setState(state)
-        except:
-            pass
+        except Exception, e:
+            if "Comar.PolicyKit" in e._dbus_error_name:
+                kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+            else:
+                kdeui.KMessageBox.error(self, unicode(e))
         self.widgetService.setEnabled(True)
 
     def slotAnimate(self, frame):
