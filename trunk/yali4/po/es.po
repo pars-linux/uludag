@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-15 14:41+0300\n"
+"POT-Creation-Date: 2009-05-20 20:29+0300\n"
 "PO-Revision-Date: 2009-05-15 18:07-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -97,7 +97,8 @@ msgid "Automatic"
 msgstr "Automático"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-msgid "This option will try to find suitable free space or resizable partitions"
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Esta opción intentará encontrar espacio adecuado disponible, o particiones "
 "que se puedan redimensionar"
@@ -448,17 +449,19 @@ msgstr "Redimensionar"
 msgid "Select the disk to install bootloader:"
 msgstr "Seleccione el disco donde se instalará el cargador de arranque:"
 
-#: yali4/gui/Ui/rescuewidget.py:95
 # verificar contexto, a confirmar con lo visual..
+#: yali4/gui/Ui/rescuewidget.py:95
 msgid "Select the partition below that your Pardus installed:"
 msgstr "Seleccione abajo la partición para la instalación de Pardus:"
 
-#: yali4/gui/Ui/rescuewidget.py:96
 # sound strange, asking the user su solve a problem !! there should be No problem - i suppose ??
 # if there is a problem, the developers may resolve, the user may only report it. but solve ??
 # maybe i am just a little "frightened" by the word "problem" .. (kh)
+#: yali4/gui/Ui/rescuewidget.py:96
 msgid "Select a proper solution for your problem and click <b>next</b>..."
-msgstr "Seleccione una solución adecuada para su problema y presione <b>siguiente</b>..."
+msgstr ""
+"Seleccione una solución adecuada para su problema y presione <b>siguiente</"
+"b>..."
 
 #: yali4/gui/Ui/rescuewidget.py:97
 msgid "If you have problems with boot, you can reinstall Grub"
@@ -466,17 +469,18 @@ msgstr "Si tiene algún problema con el arranque, puede reinstalar Grub"
 
 #: yali4/gui/Ui/rescuewidget.py:98
 msgid "If you need to take back your old operations you can use Pisi History"
-msgstr "Si necesita deshacer algunas operaciones previas, puede utilizar Pisi History"
+msgstr ""
+"Si necesita deshacer algunas operaciones previas, puede utilizar Pisi History"
 
-#: yali4/gui/Ui/rescuewidget.py:99
 # i suppose "you can create a new password", it is not really "change" - its is in fact: "replace"
 # favor revisar - observar contexto, 
 # si perdió su contraseña puede crear una nueva
+#: yali4/gui/Ui/rescuewidget.py:99
 msgid "If you lost your password you can change it"
 msgstr "Si perdió su contraseña, lo puede cambiar por una nueva"
 
 #: yali4/gui/Ui/rescuewidget.py:100 yali4/gui/ScrSummary.py:73
-#: yali4/gui/YaliDialog.py:168 yali4/installer.py:675
+#: yali4/gui/YaliDialog.py:168 yali4/installer.py:698
 msgid "Reboot"
 msgstr "Reiniciar"
 
@@ -548,7 +552,7 @@ msgstr "Iniciar sesión automáticamente como usuario:"
 msgid "Auto Login Disabled"
 msgstr "No iniciar sesión automáticamente"
 
-#: yali4/gui/Ui/summarywidget.py:64 yali4/gui/ScrSummary.py:234
+#: yali4/gui/Ui/summarywidget.py:64 yali4/gui/ScrSummary.py:245
 msgid "Begin Install"
 msgstr "Comenzar instalación"
 
@@ -768,12 +772,13 @@ msgstr "%0.1f GB libre"
 msgid "%d MB free"
 msgstr "%d MB libre"
 
-#: yali4/gui/DiskWidgets.py:256 yali4/gui/GUIAdditional.py:146
+#: yali4/gui/DiskWidgets.py:256 yali4/gui/GUIAdditional.py:148
 #, python-format
 msgid "Partition %d"
 msgstr "Partición %d"
 
-#: yali4/gui/DiskWidgets.py:263
+#: yali4/gui/DiskWidgets.py:263 yali4/gui/GUIAdditional.py:146
+#: yali4/partition.py:125
 msgid "Free Space"
 msgstr "Espacio Disponible"
 
@@ -794,15 +799,18 @@ msgstr "Hay una petición para el mismo tipo de partición."
 
 #: yali4/gui/DiskWidgets.py:344
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr "Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr ""
+"Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
 
 # favor verificar contexto,
 # check context, should this say "format as.." instead o "selected as .." ?
 #: yali4/gui/DiskWidgets.py:359 yali4/gui/ScrSummary.py:161
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr ""
+"Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 # in english: use plural !! - should say "partitions"
 #: yali4/gui/DiskWidgets.py:378
@@ -901,7 +909,7 @@ msgstr ""
 "Partición <b>%(partition)s - %(fs)s</b> <b>redimensionada</b> a <b>%"
 "(resizeTo)s MB</b>, tamaño anterior era <b>%(currentSize)s MB</b>"
 
-#: yali4/gui/GUIAdditional.py:145
+#: yali4/gui/GUIAdditional.py:149
 #, python-format
 msgid "(%s) [%s] Size : %s - Free : %s"
 msgstr "(%s) [%s] Tamaño : %s - Libre : %s"
@@ -990,7 +998,8 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
@@ -1000,7 +1009,8 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:128
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:133
 msgid ""
@@ -1079,7 +1089,8 @@ msgstr "Verifique el CD instalador"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr ""
+"Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1101,7 +1112,8 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr "<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
+msgstr ""
+"<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1187,7 +1199,7 @@ msgstr ""
 msgid "Running post install operations.."
 msgstr "Ejecutando operaciones post-instal.."
 
-#: yali4/gui/ScrGoodbye.py:91 yali4/gui/ScrRescueFinish.py:88
+#: yali4/gui/ScrGoodbye.py:91 yali4/gui/ScrRescueFinish.py:77
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Rebooteando sistema. Por favor aguarde!</b>"
 
@@ -1453,15 +1465,15 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrRescueFinish.py:44 yali4/gui/ScrRescue.py:28
+#: yali4/gui/ScrRescueFinish.py:33 yali4/gui/ScrRescue.py:28
 msgid "Rescue Mode"
 msgstr "Modo de Recuperación"
 
-#: yali4/gui/ScrRescueFinish.py:45
+#: yali4/gui/ScrRescueFinish.py:34
 msgid "Final step of Rescue operations..."
 msgstr "Pasos finales de operaciones de rescate..."
 
-#: yali4/gui/ScrRescueFinish.py:46
+#: yali4/gui/ScrRescueFinish.py:35
 msgid ""
 "\n"
 "<font size=\"+2\">Rescue Mode</font>\n"
@@ -1469,18 +1481,19 @@ msgid ""
 msgstr ""
 "\n"
 "<font size=\"+2\">Modo Rescate</font>\n"
-"<font size=\"+1\"><p>Presione <b>siguiente</b> para reiniciar el sistema !</p></font>\n"
+"<font size=\"+1\"><p>Presione <b>siguiente</b> para reiniciar el sistema !</"
+"p></font>\n"
 
-#: yali4/gui/ScrRescueFinish.py:57 yali4/installer.py:503
+#: yali4/gui/ScrRescueFinish.py:46 yali4/installer.py:525
 msgid "Installing BootLoader..."
 msgstr "Instalando Cargador de Arranque.."
 
-#: yali4/gui/ScrRescueFinish.py:70
+#: yali4/gui/ScrRescueFinish.py:59
 msgid "Running rescue operations.."
 msgstr "Ejecutando operaciones de rescate.."
 
-#: yali4/gui/ScrRescueGrub.py:32
 # favor verificar
+#: yali4/gui/ScrRescueGrub.py:32
 msgid "Rescue Mode for Bootlooader"
 msgstr "Modo de rescate del cargador de arranque"
 
@@ -1534,12 +1547,13 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrRescue.py:29
 # verificar retroceder..
+#: yali4/gui/ScrRescue.py:29
 msgid ""
 "You can reinstall your Grub or you can take back your system by using Pisi "
 "History..."
-msgstr "Puede reinstalar Grub o puede retroceder el sistema usando Pisi History..."
+msgstr ""
+"Puede reinstalar Grub o puede retroceder el sistema usando Pisi History..."
 
 #: yali4/gui/ScrRescue.py:31
 msgid ""
@@ -1557,7 +1571,8 @@ msgstr "Yali no pudo identificar una partición adecuada en sus sistema"
 
 #: yali4/gui/ScrRescue.py:104
 msgid "Yalı found a Pardus installed partition on your system."
-msgstr "Yalı encontró una partición con una instalación de Pardus en su sistema."
+msgstr ""
+"Yalı encontró una partición con una instalación de Pardus en su sistema."
 
 #: yali4/gui/ScrRescue.py:106
 msgid "Please select a partition from list."
@@ -1567,7 +1582,9 @@ msgstr "Por favor seleccione una partición de la lista."
 msgid ""
 "Yalı couldn't find a Pardus installed partition on your system. But there is "
 "a Linux installed partitions."
-msgstr "Yali no pudo encontrar una partición con instalación de Pardus, pero hay una partición con instalación de Linux."
+msgstr ""
+"Yali no pudo encontrar una partición con instalación de Pardus, pero hay una "
+"partición con instalación de Linux."
 
 #: yali4/gui/ScrRescue.py:110
 msgid "Please select a partition from list"
@@ -1641,7 +1658,8 @@ msgstr "Usuario %s (<b>%s</b>) agregado."
 #: yali4/gui/ScrSummary.py:135
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
-msgstr "Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
+msgstr ""
+"Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
 
 #: yali4/gui/ScrSummary.py:141
 msgid "Hostname Settings"
@@ -1660,11 +1678,11 @@ msgstr "Particiones"
 msgid "Automatic Partitioning selected."
 msgstr "Particionamiento automático seleccionado."
 
-#: yali4/gui/ScrSummary.py:164
+#: yali4/gui/ScrSummary.py:178
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Particionamiento automático (método redimensionar) seleccionado."
 
-#: yali4/gui/ScrSummary.py:184
+#: yali4/gui/ScrSummary.py:194
 #, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
@@ -1674,7 +1692,7 @@ msgstr ""
 "(resizeTo)s MB</b>, tamaño anterior era <b>%(currentSize)s MB</b>"
 
 # i hope "(fs)s" refers to a string rerpresenting the file-system
-#: yali4/gui/ScrSummary.py:185
+#: yali4/gui/ScrSummary.py:196
 #, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
@@ -1684,25 +1702,26 @@ msgstr ""
 "s</b> con <b>%(size)s MB</b> como <b>%(fs)s</b>."
 
 # favor revisar contexto
-#: yali4/gui/ScrSummary.py:186
+#: yali4/gui/ScrSummary.py:197
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr ""
+"Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
-#: yali4/gui/ScrSummary.py:201
+#: yali4/gui/ScrSummary.py:212
 msgid "Bootloader Settings"
 msgstr "Cargador de arranque"
 
-#: yali4/gui/ScrSummary.py:202
+#: yali4/gui/ScrSummary.py:213
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>"
 msgstr "GRUB se va a instalar en <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:204
+#: yali4/gui/ScrSummary.py:215
 msgid "GRUB will not be installed"
 msgstr "GRUB no se instalará"
 
-#: yali4/gui/ScrSummary.py:230
+#: yali4/gui/ScrSummary.py:241
 msgid ""
 "<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
 "your partition,<br>\n"
@@ -1718,16 +1737,16 @@ msgstr ""
 "                   <b>Tenga en cuenta que esta operación no se puede "
 "deshacer ! </b></p>"
 
-#: yali4/gui/ScrSummary.py:257 yali4/gui/ScrSummary.py:265
-#: yali4/gui/ScrSummary.py:280
+#: yali4/gui/ScrSummary.py:268 yali4/gui/ScrSummary.py:276
+#: yali4/gui/ScrSummary.py:291
 msgid "Formatting ..."
 msgstr "Formateando..."
 
-#: yali4/gui/ScrSummary.py:262
+#: yali4/gui/ScrSummary.py:273
 msgid "Resizing ..."
 msgstr "Redimensionando..."
 
-#: yali4/gui/ScrSummary.py:272 yali4/installer.py:295
+#: yali4/gui/ScrSummary.py:283 yali4/installer.py:307
 msgid "Writing disk tables ..."
 msgstr "Guardando tablas de particiones..."
 
@@ -1813,7 +1832,8 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr "<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
 
 #: yali4/gui/ScrUsers.py:241
 msgid "Update User"
@@ -1918,7 +1938,7 @@ msgstr ""
 msgid "FSCheck failed on %s"
 msgstr "FSCheck fallado en %s"
 
-#: yali4/filesystem.py:404
+#: yali4/filesystem.py:410
 msgid "Partition is not ready for resizing. Check it before installation."
 msgstr ""
 "No posible redimensionar la partición. Favor verifiquela antes de la "
@@ -1986,52 +2006,56 @@ msgstr "Estableciendo configuración de reloj..."
 msgid "Disk analyze started.."
 msgstr "Analisis de disco iniciado.."
 
-#: yali4/installer.py:351
+#: yali4/installer.py:369
 msgid "Resize Finished ..."
 msgstr "Redimensionar terminado..."
 
-#: yali4/installer.py:363
+#: yali4/installer.py:375
 msgid "Creating new partition ..."
 msgstr "Creando nueva partición..."
 
-#: yali4/installer.py:492
+#: yali4/installer.py:394
+msgid "Failed to use partition for automatic installation "
+msgstr ""
+
+#: yali4/installer.py:514
 msgid "Trying to connect DBUS..."
 msgstr "Intentando conectar con DBUS..."
 
-#: yali4/installer.py:494
+#: yali4/installer.py:516
 msgid "Setting Hostname..."
 msgstr "Estableciendo Nombre de maquina (hostname)..."
 
-#: yali4/installer.py:495
+#: yali4/installer.py:517
 msgid "Setting TimeZone..."
 msgstr "Estableciendo Zona Horaria..."
 
-#: yali4/installer.py:496
+#: yali4/installer.py:518
 msgid "Setting Root Password..."
 msgstr "Estableciendo contraseña del usuario Root..."
 
-#: yali4/installer.py:497
+#: yali4/installer.py:519
 msgid "Adding Users..."
 msgstr "Agregando usuarios..."
 
-#: yali4/installer.py:498
+#: yali4/installer.py:520
 msgid "Writing Console Data..."
 msgstr "Guardando datos de consola..."
 
-#: yali4/installer.py:499
+#: yali4/installer.py:521
 msgid "Migrating X.org Configuration..."
 msgstr "Migrando configuración X.org ..."
 
 # favor revisar, podria ser catalogo..
-#: yali4/installer.py:501
+#: yali4/installer.py:523
 msgid "Copy Pisi index..."
 msgstr "Copiando índice de Pisi ..."
 
-#: yali4/installer.py:502
+#: yali4/installer.py:524
 msgid "Setting misc. package configurations..."
 msgstr "Estableciendo configuraciones de programas varios..."
 
-#: yali4/installer.py:652
+#: yali4/installer.py:674
 msgid "Retry"
 msgstr "Reintentar"
 
@@ -2192,7 +2216,7 @@ msgstr "Serbio"
 msgid "unknown"
 msgstr "desconocido"
 
-#: yali4/partition.py:205
+#: yali4/partition.py:207
 msgid "free space"
 msgstr "Espacio disponible"
 
@@ -2233,4 +2257,3 @@ msgstr "Área de almacenamiento"
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Preparando directorio home de usuario <b>%s</b>.."
-

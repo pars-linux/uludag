@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-15 14:41+0300\n"
+"POT-Creation-Date: 2009-05-20 20:29+0300\n"
 "PO-Revision-Date: 2009-01-19 01:54+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -473,7 +473,7 @@ msgid "If you lost your password you can change it"
 msgstr ""
 
 #: yali4/gui/Ui/rescuewidget.py:100 yali4/gui/ScrSummary.py:73
-#: yali4/gui/YaliDialog.py:168 yali4/installer.py:675
+#: yali4/gui/YaliDialog.py:168 yali4/installer.py:698
 msgid "Reboot"
 msgstr "Neustarten"
 
@@ -545,7 +545,7 @@ msgstr "Auto-Login-Benutzer:"
 msgid "Auto Login Disabled"
 msgstr "Auto-Login deaktiviert"
 
-#: yali4/gui/Ui/summarywidget.py:64 yali4/gui/ScrSummary.py:234
+#: yali4/gui/Ui/summarywidget.py:64 yali4/gui/ScrSummary.py:245
 msgid "Begin Install"
 msgstr "Installation beginnen"
 
@@ -769,12 +769,13 @@ msgstr "%0.1f GB frei"
 msgid "%d MB free"
 msgstr "%d MB frei"
 
-#: yali4/gui/DiskWidgets.py:256 yali4/gui/GUIAdditional.py:146
+#: yali4/gui/DiskWidgets.py:256 yali4/gui/GUIAdditional.py:148
 #, python-format
 msgid "Partition %d"
 msgstr "Partition %d"
 
-#: yali4/gui/DiskWidgets.py:263
+#: yali4/gui/DiskWidgets.py:263 yali4/gui/GUIAdditional.py:146
+#: yali4/partition.py:125
 msgid "Free Space"
 msgstr "Freier Bereich"
 
@@ -896,7 +897,7 @@ msgstr ""
 "Grösse der Partition <b>%(partition)s - %(fs)s</b> <b>geändert</b>zu<b>%"
 "(resizeTo)s MB</b>, vorherige Grösse war <b>%(currentSize)s MB</b>"
 
-#: yali4/gui/GUIAdditional.py:145
+#: yali4/gui/GUIAdditional.py:149
 #, python-format
 msgid "(%s) [%s] Size : %s - Free : %s"
 msgstr "(%s) [%s] Grösse : %s - Frei : %s"
@@ -1179,7 +1180,7 @@ msgstr ""
 msgid "Running post install operations.."
 msgstr "Postinstall-Vorgänge werden ausgeführt..."
 
-#: yali4/gui/ScrGoodbye.py:91 yali4/gui/ScrRescueFinish.py:88
+#: yali4/gui/ScrGoodbye.py:91 yali4/gui/ScrRescueFinish.py:77
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>System wird neu gestartet. Bitte warten!</b>"
 
@@ -1446,26 +1447,26 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrRescueFinish.py:44 yali4/gui/ScrRescue.py:28
+#: yali4/gui/ScrRescueFinish.py:33 yali4/gui/ScrRescue.py:28
 msgid "Rescue Mode"
 msgstr ""
 
-#: yali4/gui/ScrRescueFinish.py:45
+#: yali4/gui/ScrRescueFinish.py:34
 msgid "Final step of Rescue operations..."
 msgstr ""
 
-#: yali4/gui/ScrRescueFinish.py:46
+#: yali4/gui/ScrRescueFinish.py:35
 msgid ""
 "\n"
 "<font size=\"+2\">Rescue Mode</font>\n"
 "<font size=\"+1\"><p>Click <b>next</b> to reboot !</p></font>\n"
 msgstr ""
 
-#: yali4/gui/ScrRescueFinish.py:57 yali4/installer.py:503
+#: yali4/gui/ScrRescueFinish.py:46 yali4/installer.py:525
 msgid "Installing BootLoader..."
 msgstr "Boot-Loader wird installiert..."
 
-#: yali4/gui/ScrRescueFinish.py:70
+#: yali4/gui/ScrRescueFinish.py:59
 #, fuzzy
 msgid "Running rescue operations.."
 msgstr "Postinstall-Vorgänge werden ausgeführt..."
@@ -1648,11 +1649,11 @@ msgstr "Partitionseinstellungen"
 msgid "Automatic Partitioning selected."
 msgstr "Automatische Partitionierung ausgewählt."
 
-#: yali4/gui/ScrSummary.py:164
+#: yali4/gui/ScrSummary.py:178
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Automatische Partitionierung (Grössenänderungs-Methode) ausgewählt."
 
-#: yali4/gui/ScrSummary.py:184
+#: yali4/gui/ScrSummary.py:194
 #, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
@@ -1661,7 +1662,7 @@ msgstr ""
 "Grösse der Partition <b>%(partition)s - %(currentFs)s</b> <b>geändert</b> zu "
 "<b>%(resizeTo)s MB</b>, vorherige Grösse war <b>%(currentSize)s MB</b>"
 
-#: yali4/gui/ScrSummary.py:185
+#: yali4/gui/ScrSummary.py:196
 #, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
@@ -1670,26 +1671,26 @@ msgstr ""
 "Partition <b>%(newPartition)s</b> zu Gerät <b>%(device)s</b> mit <b>%(size)s "
 "MB</b> als <b>%(fs)s</b> <b>hinzugefügt</b>."
 
-#: yali4/gui/ScrSummary.py:186
+#: yali4/gui/ScrSummary.py:197
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
 "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
-#: yali4/gui/ScrSummary.py:201
+#: yali4/gui/ScrSummary.py:212
 msgid "Bootloader Settings"
 msgstr "Bootloader-Einstellungen"
 
-#: yali4/gui/ScrSummary.py:202
+#: yali4/gui/ScrSummary.py:213
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>"
 msgstr "GRUB wird installiert nach <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:204
+#: yali4/gui/ScrSummary.py:215
 msgid "GRUB will not be installed"
 msgstr "GRUB wird nicht installiert"
 
-#: yali4/gui/ScrSummary.py:230
+#: yali4/gui/ScrSummary.py:241
 msgid ""
 "<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
 "your partition,<br>\n"
@@ -1706,16 +1707,16 @@ msgstr ""
 "                   <b>Bitte beachten Sie, dass dieser Vorgang nicht mehr "
 "rückgängig gemacht werden kann!</b></p>"
 
-#: yali4/gui/ScrSummary.py:257 yali4/gui/ScrSummary.py:265
-#: yali4/gui/ScrSummary.py:280
+#: yali4/gui/ScrSummary.py:268 yali4/gui/ScrSummary.py:276
+#: yali4/gui/ScrSummary.py:291
 msgid "Formatting ..."
 msgstr "Am formatieren..."
 
-#: yali4/gui/ScrSummary.py:262
+#: yali4/gui/ScrSummary.py:273
 msgid "Resizing ..."
 msgstr "Grössenänderung wird vorgenommen..."
 
-#: yali4/gui/ScrSummary.py:272 yali4/installer.py:295
+#: yali4/gui/ScrSummary.py:283 yali4/installer.py:307
 msgid "Writing disk tables ..."
 msgstr "Laufwerktabellen werden beschrieben..."
 
@@ -1904,7 +1905,7 @@ msgstr ""
 msgid "FSCheck failed on %s"
 msgstr "Überprüfung fehlgeschlagen"
 
-#: yali4/filesystem.py:404
+#: yali4/filesystem.py:410
 msgid "Partition is not ready for resizing. Check it before installation."
 msgstr ""
 "Die Partition ist für die Grössenänderung nicht bereit. Überprüfen Sie es "
@@ -1969,51 +1970,55 @@ msgstr "Zeiteinstellungen werden vorgenommen.."
 msgid "Disk analyze started.."
 msgstr "Festplattenanalyse gestartet.."
 
-#: yali4/installer.py:351
+#: yali4/installer.py:369
 msgid "Resize Finished ..."
 msgstr "Grössenänderung abgeschlossen..."
 
-#: yali4/installer.py:363
+#: yali4/installer.py:375
 msgid "Creating new partition ..."
 msgstr "Neue Partition wird erstellt..."
 
-#: yali4/installer.py:492
+#: yali4/installer.py:394
+msgid "Failed to use partition for automatic installation "
+msgstr ""
+
+#: yali4/installer.py:514
 msgid "Trying to connect DBUS..."
 msgstr "Wird versucht mit DBus zu verbinden..."
 
-#: yali4/installer.py:494
+#: yali4/installer.py:516
 msgid "Setting Hostname..."
 msgstr "Hostname wird eingestellt..."
 
-#: yali4/installer.py:495
+#: yali4/installer.py:517
 msgid "Setting TimeZone..."
 msgstr "Zeiteinstellungen werden vorgenommen..."
 
-#: yali4/installer.py:496
+#: yali4/installer.py:518
 msgid "Setting Root Password..."
 msgstr "Root-Passwort wird eingestellt..."
 
-#: yali4/installer.py:497
+#: yali4/installer.py:519
 msgid "Adding Users..."
 msgstr "Benutzer werden hinzugefügt..."
 
-#: yali4/installer.py:498
+#: yali4/installer.py:520
 msgid "Writing Console Data..."
 msgstr "Konsoldaten werden beschrieben..."
 
-#: yali4/installer.py:499
+#: yali4/installer.py:521
 msgid "Migrating X.org Configuration..."
 msgstr "X.org-Konfiguration wird migriert..."
 
-#: yali4/installer.py:501
+#: yali4/installer.py:523
 msgid "Copy Pisi index..."
 msgstr "Pisi-Index wird kopiert..."
 
-#: yali4/installer.py:502
+#: yali4/installer.py:524
 msgid "Setting misc. package configurations..."
 msgstr "Sonst. Paket-Konfigurationen werden eingestellt..."
 
-#: yali4/installer.py:652
+#: yali4/installer.py:674
 msgid "Retry"
 msgstr "Wiederholen"
 
@@ -2173,7 +2178,7 @@ msgstr "Serbisch"
 msgid "unknown"
 msgstr "Unbekannt"
 
-#: yali4/partition.py:205
+#: yali4/partition.py:207
 msgid "free space"
 msgstr "freier Speicherplatz"
 
