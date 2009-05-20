@@ -228,7 +228,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 try:
                     username, fullname, gid, homedir, shell, groups = self.iface.userInfo(id_)
                 except Exception, e: # TODO: Named exception should be raised
-                    kdeui.KMessageBox.error(self, unicode(e))
+                    if "Comar.PolicyKit" in e._dbus_error_name:
+                        kdeui.KMessageBox.error(self, i18n("Access denied."))
+                    else:
+                        kdeui.KMessageBox.error(self, unicode(e))
                     return
                 self.widgetUserEdit.setId(id_)
                 self.widgetUserEdit.setUsername(username)
@@ -236,12 +239,14 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.widgetUserEdit.setHomeDir(homedir)
                 self.widgetUserEdit.setShell(shell)
                 self.widgetUserEdit.setGroups(self.all_groups, groups)
-                def handler(package, exception, args):
-                    if exception:
-                        return
-                    authorizations = args[0]
-                    self.widgetUserEdit.setAuthorizations(authorizations)
-                self.iface.getAuthorizations(id_, func=handler)
+                try:
+                    self.widgetUserEdit.setAuthorizations(self.iface.getAuthorizations(id_))
+                except Exception, e: # TODO: Named exception should be raised
+                    if "Comar.PolicyKit" in e._dbus_error_name:
+                        kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+                    else:
+                        kdeui.KMessageBox.error(self, unicode(e))
+                    return
             else:
                 self.widgetUserEdit.setNickList(self.all_users)
                 self.widgetUserEdit.setGroups(self.all_groups, DEFAULT_GROUPS)
@@ -346,7 +351,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 widget = self.widgetGroupEdit
                 self.iface.addGroup(widget.getId(), widget.getGroupname())
         except Exception, e: # TODO: Named exception should be raised
-            kdeui.KMessageBox.error(self, unicode(e))
+            if "Comar.PolicyKit" in e._dbus_error_name:
+                kdeui.KMessageBox.error(self, i18n("Access denied."))
+            else:
+                kdeui.KMessageBox.error(self, unicode(e))
             return
         # User.Manager does not emit signals, refresh whole list.
         self.buildItemList()
