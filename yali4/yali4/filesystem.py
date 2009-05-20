@@ -390,17 +390,23 @@ class NTFSFileSystem(FileSystem):
         self.setResizable(True)
         self.setImplemented(True)
 
-    def check_resize(self, size_mb, partition):
+    def resizeSilent(self, size_mb, partition):
         # don't do anything, just check
         cmd_path = requires("ntfsresize")
         cmd = "%s -n -f -s %dM %s" % (cmd_path, size_mb, partition.getPath())
+        return sysutils.run(cmd)
+
+    def preResize(self, partition):
+        """ Routine operations before resizing """
+        cmd_path = requires("ntfsck")
+        cmd = "%s %s" % (cmd_path, partition.getPath())
         return sysutils.run(cmd)
 
     def resize(self, size_mb, partition):
         if size_mb < self.minResizeMB(partition):
             return False
 
-        if not self.check_resize(size_mb, partition):
+        if not self.resizeSilent(size_mb, partition) or not self.preResize(partition):
             raise FSError, _("Partition is not ready for resizing. Check it before installation.")
 
         p = os.pipe()
