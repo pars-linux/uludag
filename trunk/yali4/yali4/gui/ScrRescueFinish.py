@@ -10,27 +10,16 @@
 # Please read the COPYING file.
 #
 
-import os
-
 import gettext
 __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
 from PyQt4 import QtGui
-from PyQt4.QtCore import *
 
-import dbus
 import time
-import yali4.sysutils
-import yali4.users
-import yali4.localeutils
-import yali4.postinstall
-import yali4.bootloader
-import yali4.storage
+from yali4 import sysutils
 import yali4.partitionrequest as request
 import yali4.partitiontype as parttype
-from os.path import basename
-from yali4.sysutils import is_windows_boot
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.YaliDialog import WarningDialog, RebootWidget
 from yali4.gui.YaliSteps import YaliSteps
@@ -90,12 +79,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # remove cd...
         if not ctx.yali.install_type == YALI_FIRSTBOOT:
             ctx.debugger.log("Trying to eject the CD.")
-            yali4.sysutils.eject_cdrom()
+            sysutils.eject_cdrom()
 
         ctx.debugger.log("Yali, fastreboot calling..")
 
         ctx.mainScreen.processEvents()
+        sysutils.run("sync")
         time.sleep(4)
-        yali4.sysutils.fastreboot()
-
+        sysutils.fastreboot()
 
