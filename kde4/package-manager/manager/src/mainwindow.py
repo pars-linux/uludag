@@ -22,9 +22,9 @@ from ui_mainwindow import Ui_MainWindow
 from mainwidget import MainWidget
 from statemanager import StateManager
 
-class MainWindow(KMainWindow, Ui_MainWindow):
+class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def __init__(self, parent=None):
-        KMainWindow.__init__(self, parent)
+        KXmlGuiWindow.__init__(self, parent)
         self.setupUi(self)
         self.setCentralWidget(MainWidget(self))
         self.connect(self.centralWidget(), SIGNAL("selectionChanged(QModelIndexList)"), self.updateStatusBar)
@@ -32,22 +32,27 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         self.initializeActions()
 
     def initializeActions(self):
-        self.toolBar.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
+        KStandardAction.quit(KApplication.kApplication().quit, self.actionCollection())
+        actionGroup = QtGui.QActionGroup(self)
 
-        showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show New Packages"), self.toolBar)
+        showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show New Packages"), self)
+        actionGroup.addAction(showInstallAction)
+        self.actionCollection().addAction("showInstallAction", showInstallAction)
         self.connect(showInstallAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
         self.connect(showInstallAction, SIGNAL("triggered()"), self.centralWidget().initialize)
-        showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self.toolBar)
+
+        showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self)
+        actionGroup.addAction(showRemoveAction)
+        self.actionCollection().addAction("showRemoveAction", showRemoveAction)
         self.connect(showRemoveAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.REMOVE))
         self.connect(showRemoveAction, SIGNAL("triggered()"), self.centralWidget().initialize)
-        showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self.toolBar)
+
+        showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self)
+        actionGroup.addAction(showUpgradeAction)
+        self.actionCollection().addAction("showUpgradeAction", showUpgradeAction)
         self.connect(showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
 
-        actionGroup = QtGui.QActionGroup(self.toolBar)
-        for action in [showInstallAction, showRemoveAction, showUpgradeAction]:
-            actionGroup.addAction(action)
-            self.toolBar.addAction(action)
-            self.menu_File.addAction(action)
+        self.setupGUI(KXmlGuiWindow.Default, "data/mainwindow.rc")
 
         showInstallAction.setChecked(True)
 
