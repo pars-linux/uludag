@@ -1,0 +1,11 @@
+- Try to search a service.
+
+The below operations can be observed with this command line 
+    Go console and type
+    $ service list
+    Observe whether the selected service has made the desirable option.
+
+- Choose a stopped service and try to start it.
+- Choose a started service and try to stop  it.
+- Choose a service and try to reload it.
+- Choose a service and try to put it to autostart.
