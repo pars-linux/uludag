@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-18 15:08+0300\n"
+"POT-Creation-Date: 2009-05-21 16:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,84 +16,28 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/progressdialog.py:39
-msgid "%1 %2"
+#: .tmp/statemanager.py:55
+msgid "Installing Package(s)"
 msgstr ""
 
-#: .tmp/ui_mainwindow.py:42
-msgid "MainWindow"
+#: .tmp/statemanager.py:56
+msgid "Removing Package(s)"
 msgstr ""
 
-#: .tmp/ui_mainwindow.py:43
-msgid "&File"
+#: .tmp/statemanager.py:57
+msgid "Upgrading Package(s)"
 msgstr ""
 
-#: .tmp/ui_mainwindow.py:44
-msgid "&Settings"
-msgstr ""
-
-#: .tmp/ui_mainwindow.py:45
-msgid "&Help"
-msgstr ""
-
-#: .tmp/ui_mainwindow.py:46
-msgid "toolBar"
-msgstr ""
-
-#: .tmp/ui_mainwidget.py:46
-msgid "Form"
-msgstr ""
-
-#: .tmp/ui_mainwidget.py:47
-msgid "Click to search"
-msgstr ""
-
-#: .tmp/ui_mainwidget.py:48 .tmp/statemanager.py:53
+#: .tmp/statemanager.py:60 .tmp/ui_mainwidget.py:48
 msgid "Install Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:54
+#: .tmp/statemanager.py:61
 msgid "Remove Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:55
+#: .tmp/statemanager.py:62
 msgid "Upgrade Package(s)"
-msgstr ""
-
-#: .tmp/about.py:20 .tmp/about.py:22
-msgid "Package Manager"
-msgstr ""
-
-#: .tmp/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
-
-#: .tmp/about.py:31
-msgid "Faik Uygur"
-msgstr ""
-
-#: .tmp/about.py:31
-msgid "Maintainer"
-msgstr ""
-
-#: .tmp/commontext.py:15
-msgid "downloading"
-msgstr ""
-
-#: .tmp/commontext.py:15
-msgid "extracting"
-msgstr ""
-
-#: .tmp/commontext.py:15
-msgid "configuring"
-msgstr ""
-
-#: .tmp/commontext.py:15
-msgid "removing"
-msgstr ""
-
-#: .tmp/commontext.py:15
-msgid "installing"
 msgstr ""
 
 #: .tmp/ui_progressdialog.py:151
@@ -140,18 +84,70 @@ msgstr ""
 msgid "Alt+C"
 msgstr ""
 
+#: .tmp/ui_mainwidget.py:46
+msgid "Form"
+msgstr ""
+
+#: .tmp/ui_mainwidget.py:47
+msgid "Click to search"
+msgstr ""
+
 #: .tmp/mainwindow.py:31
 msgid "Currently your basket is empty."
 msgstr ""
 
-#: .tmp/mainwindow.py:37
+#: .tmp/mainwindow.py:38
 msgid "Show New Packages"
 msgstr ""
 
-#: .tmp/mainwindow.py:39
+#: .tmp/mainwindow.py:44
 msgid "Show Installed Packages"
 msgstr ""
 
-#: .tmp/mainwindow.py:41
+#: .tmp/mainwindow.py:50
 msgid "Show Upgradable Packages"
+msgstr ""
+
+#: .tmp/about.py:20 .tmp/about.py:22 .tmp/ui_mainwindow.py:29
+msgid "Package Manager"
+msgstr ""
+
+#: .tmp/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/about.py:31
+msgid "Faik Uygur"
+msgstr ""
+
+#: .tmp/about.py:31
+msgid "Maintainer"
+msgstr ""
+
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:46
+msgid "downloading"
+msgstr ""
+
+#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
+msgid "extracting"
+msgstr ""
+
+#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
+msgid "configuring"
+msgstr ""
+
+#: .tmp/commontext.py:15
+msgid "removing"
+msgstr ""
+
+#: .tmp/commontext.py:15
+msgid "installing"
+msgstr ""
+
+#: .tmp/progressdialog.py:40
+msgid "%1 %2"
+msgstr ""
+
+#: .tmp/progressdialog.py:44
+msgid "%1 / %2 package %3"
 msgstr ""
