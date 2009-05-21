@@ -13,6 +13,14 @@ import subprocess
 import logging
 log = logging.getLogger("pare")
 
+def checkNumeric(num):
+    if num is None:
+        num =  0
+    elif not (isinstance(num, int) or isinstance(num, long) or isinstance(num, float)):
+        raise ValueError("Value must be a number!")
+    
+    return num
+    
 def run(cmd, params=None, capture=False):
 
 
