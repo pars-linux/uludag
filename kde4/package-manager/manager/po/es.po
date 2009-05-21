@@ -1,0 +1,158 @@
+# translation of es.po to spanish
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Klemens Häckel <click3d at linuxmail dot org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: es\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-18 15:08+0300\n"
+"PO-Revision-Date: 2009-05-20 20:28-0400\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
+"Language-Team: spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/progressdialog.py:39
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: .tmp/ui_mainwindow.py:42
+msgid "MainWindow"
+msgstr ""
+
+#: .tmp/ui_mainwindow.py:43
+msgid "&File"
+msgstr "&Archivo"
+
+#: .tmp/ui_mainwindow.py:44
+msgid "&Settings"
+msgstr "&Configuración"
+
+#: .tmp/ui_mainwindow.py:45
+msgid "&Help"
+msgstr "&Ayuda"
+
+#: .tmp/ui_mainwindow.py:46
+msgid "toolBar"
+msgstr ""
+
+#: .tmp/ui_mainwidget.py:46
+msgid "Form"
+msgstr ""
+
+#: .tmp/ui_mainwidget.py:47
+msgid "Click to search"
+msgstr "Presione para buscar"
+
+#: .tmp/ui_mainwidget.py:48 .tmp/statemanager.py:53
+msgid "Install Package(s)"
+msgstr "Instalar Paquete(s)"
+
+#: .tmp/statemanager.py:54
+msgid "Remove Package(s)"
+msgstr "Remover Paquete(s)"
+
+#: .tmp/statemanager.py:55
+msgid "Upgrade Package(s)"
+msgstr "Actualizar Paquetes(s)"
+
+#: .tmp/about.py:20 .tmp/about.py:22
+msgid "Package Manager"
+msgstr "Administrador de Paquetes"
+
+#: .tmp/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/about.py:31
+msgid "Faik Uygur"
+msgstr ""
+
+#: .tmp/about.py:31
+msgid "Maintainer"
+msgstr "Mantenedor"
+
+#: .tmp/commontext.py:15
+msgid "downloading"
+msgstr "descargando"
+
+#: .tmp/commontext.py:15
+msgid "extracting"
+msgstr "extrayendo"
+
+#: .tmp/commontext.py:15
+msgid "configuring"
+msgstr "configurando"
+
+#: .tmp/commontext.py:15
+msgid "removing"
+msgstr "removiendo"
+
+#: .tmp/commontext.py:15
+msgid "installing"
+msgstr "instalando"
+
+#: .tmp/ui_progressdialog.py:151
+msgid "Progress"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:152
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Preparando PiSi...</h3>"
+
+#: .tmp/ui_progressdialog.py:153
+msgid "amsn"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:154
+msgid "Time remaining:"
+msgstr "Tiempo restante:"
+
+#: .tmp/ui_progressdialog.py:155
+msgid "2 / 20 packages installed."
+msgstr "2 / 20 paquetes instalados."
+
+#: .tmp/ui_progressdialog.py:156
+msgid "01:29"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:157
+msgid "Operation:"
+msgstr "Operación:"
+
+#: .tmp/ui_progressdialog.py:158
+msgid "Status:"
+msgstr "Estado:"
+
+#: .tmp/ui_progressdialog.py:159
+msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:160
+msgid "&Cancel"
+msgstr "&Cancelar"
+
+#: .tmp/ui_progressdialog.py:161
+msgid "Alt+C"
+msgstr ""
+
+#: .tmp/mainwindow.py:31
+msgid "Currently your basket is empty."
+msgstr "Actualmente el carrito está vacío."
+
+#: .tmp/mainwindow.py:37
+msgid "Show New Packages"
+msgstr "Mostrar Paquetes nuevos"
+
+#: .tmp/mainwindow.py:39
+msgid "Show Installed Packages"
+msgstr "Mostrar Paquetes instalados"
+
+#: .tmp/mainwindow.py:41
+msgid "Show Upgradable Packages"
+msgstr "Mostrar Paquetes a actualizar"
+
