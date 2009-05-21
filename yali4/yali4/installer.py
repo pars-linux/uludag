@@ -377,7 +377,7 @@ class Yali:
             _newPart = dev.addPartition(None,
                                         ptype,
                                         parttype.root.filesystem,
-                                        newPartSize,
+                                        newPartSize - 8,
                                         parttype.root.parted_flags,
                                         newStart)
             newPart = dev.getPartition(_newPart.num)
