@@ -55,12 +55,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.operation, SIGNAL("packageChanged(int, int, QString)"), self.progressDialog.updateStatus)
 
     def initialize(self):
-        try:
-            waitCursor()
-            self.initializePackageList()
-            self.initializeGroupList()
-        finally:
-            restoreCursor()
+        waitCursor()
+        self.initializePackageList()
+        self.initializeGroupList()
+        restoreCursor()
 
     def initializePackageList(self):
         self.packageList.setModel(PackageProxy(self))
@@ -86,7 +84,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def groupFilter(self):
         packages = self.state.groupPackages(self.groupList.currentGroup())
         self.packageList.model().setFilterRole(GroupRole)
+        waitCursor()
         self.packageList.model().setFilterPackages(packages)
+        restoreCursor()
 
     def setActionButton(self):
         self.actionButton.setText(self.state.getActionName())
