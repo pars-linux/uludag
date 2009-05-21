@@ -26,7 +26,7 @@ class ItemListWidgetItem(QtGui.QListWidgetItem):
     def __init__(self, parent, widget):
         QtGui.QListWidgetItem.__init__(self, parent)
         self.widget = widget
-        self.setSizeHint(QtCore.QSize(300, 64))
+        self.setSizeHint(QtCore.QSize(300, 48))
 
     def getId(self):
         return self.widget.getId()

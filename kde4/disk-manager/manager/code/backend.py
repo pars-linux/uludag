@@ -44,3 +44,15 @@ class Interface:
             self.link.Disk.Manager[self.package].getDevices(async=func)
         else:
             return self.link.Disk.Manager[self.package].getDevices()
+
+    def partitionList(self, device, func=None):
+        if func:
+            self.link.Disk.Manager[self.package].getDeviceParts(device, async=func)
+        else:
+            return self.link.Disk.Manager[self.package].getDeviceParts(device)
+
+    def entryList(self, func=None):
+        if func:
+            self.link.Disk.Manager[self.package].listEntries(async=func)
+        else:
+            return self.link.Disk.Manager[self.package].listEntries()
