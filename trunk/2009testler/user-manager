@@ -5,3 +5,6 @@
      Yeni kullanıcı eklendi (Parola sormadı)
      Program tekrar kapatılıp açıldı
      Yeni kullanıcı silindi (Parola sormadı)
+- Kulanıcı sil ve kullanıcı bilgilerini güncelle butonlarının üzerine gelindiğide bu butonlar ile ilgili bilgi gelmiyor. 
+- Parola do[rulaması yapılamıyor.
+
