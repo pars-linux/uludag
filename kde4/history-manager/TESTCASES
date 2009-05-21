@@ -1,0 +1,27 @@
+- Try to Take snapshot
+    - Open history-manager
+    - Install or remove a package
+    - Push take snapshot button
+    - Observe that after taking snapshot whether the history manager screen can be refreshed and show new changes.
+
+- Try to push details button
+    Go console and type 
+    pisi hs
+    Compare the last changes with history manager. 
+
+- Try to push Show operation plan button
+     Go console and type·
+     $ pisi hs
+     - Compare the last changes with history manager.
+        Observe that the package(s) will be updated, installed or removed correctly.
+
+- Try to push Take Changes Back button
+    - Observe after taking changes back 
+        - Whether the history manager screen can be refreshed.
+        - Push the show operations button of time that you had taken the operation(s) back.
+            - Observe that operation(s) had been removed from the show operation plan list.
+     Go console and type·
+     $ pisi hs
+     - Compare the last changes with history manager.
+        Observe that the operations that had taken back are listed correctly.
+
