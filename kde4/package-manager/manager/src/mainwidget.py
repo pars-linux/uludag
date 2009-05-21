@@ -49,7 +49,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def connectOperationSignals(self):
         self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
-        self.connect(self.operation, SIGNAL("started"), self.progressDialog.enableCancel)
+        self.connect(self.operation, SIGNAL("started()"), self.progressDialog.enableCancel)
+        self.connect(self.operation, SIGNAL("started()"), self.progressDialog.show)
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
         self.connect(self.operation, SIGNAL("operationChanged(QString,QString)"), self.progressDialog.updateOperation)
         self.connect(self.operation, SIGNAL("packageChanged(int, int, QString)"), self.progressDialog.updateStatus)
@@ -104,4 +105,3 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state.setState(state)
         self.setActionButton()
         self.state.stateAction()
-        self.initialize()
