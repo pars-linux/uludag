@@ -28,7 +28,7 @@ bugEmail    = "bugs@pardus.org.tr"
 aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
 # Authors
-aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("Maintainer")
+aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("Maintainer"))
 
 #FIXME: hardcoded path for now
 aboutData.setProgramIconName("/usr/kde/4/share/apps/package-manager/data/package-manager.png")
