@@ -7,4 +7,5 @@
     - Yapılmakta olan işlemler sağ alt köşede ingilizce olarak görünüyor.
     - İşlem detayları ve işlemi geri al bölümlerinde bulunan üst bölümdeki açıklamalar ingilizce olarak görünüyor.
 - Sytem-settings computer administration bölümünden uygulama açılmaya çalışıldığında açılamıyor.
-
+- İşlemler için kullanıcı yetki sorgusu ilk işlem için soruluyor fakat diğerleri için sorulamıyor.
+- Yeni görüntü almak için yetki sorulmuyor.
