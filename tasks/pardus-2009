@@ -144,8 +144,8 @@
   * system.base / system.devel elden geçirip bootstrap işleri, 2009 test ortamı kurmak için CD / altyapı / betik vs. (+)
 
 * Multimedia (Onur Küçük)
-  * Nasm -> Yasm geçişi (/70)
-  * Kamera kullanan yazılımlara libv4l desteği eklenecek (-)
+  * Nasm -> Yasm geçişi (/90)
+  * Kamera kullanan yazılımlara libv4l desteği eklenecek (/50)
 
 * Initramfs (Onur Küçük)
   * Mkinitramfs kod temizliği baştan yazılması (-)
@@ -156,7 +156,7 @@
   * 2009 bileşen ve svn yapısı değiştirilmesi (+)
 
 * Donanım (Onur Küçük)
-  * Kamera sürücüleri kernel içine girecekler ve dışında kalacakların belirlenmesi (/50)
+  * Kamera sürücüleri kernel içine girecekler ve dışında kalacakların belirlenmesi (+)
 
 * Paketler (Tüm paket sorumluları)
   * Bütün paketlerin yeni flaglar, toolchain vs. ile 2009 a uyumlu hale getirilmesi (/21)
