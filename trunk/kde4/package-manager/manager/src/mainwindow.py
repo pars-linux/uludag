@@ -52,7 +52,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.actionCollection().addAction("showUpgradeAction", showUpgradeAction)
         self.connect(showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
 
-        self.setupGUI(KXmlGuiWindow.Default, "data/mainwindow.rc")
+        self.setupGUI(KXmlGuiWindow.Default, "data/packagemanagerui.rc")
 
         self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
         showInstallAction.setChecked(True)
