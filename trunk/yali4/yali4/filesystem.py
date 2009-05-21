@@ -44,7 +44,8 @@ def get_filesystem(name):
                "ntfs":      NTFSFileSystem,
                "reiserfs":  ReiserFileSystem,
                "xfs":       XFSFileSystem,
-               "fat32":     FatFileSystem}
+               "fat32":     FatFileSystem,
+               "btrfs":     BtrfsFileSystem}
 
     if knownFS.has_key(name):
         return knownFS[name]()
@@ -76,6 +77,8 @@ class FileSystem:
     _resizable = False
     _mountoptions = "defaults"
     _fs_type = None  # parted fs type
+    _linux_supported = True
+    _is_ready_to_use = True
 
     def __init__(self):
         self._fs_type = parted.file_system_type_get(self._name)
@@ -328,6 +331,77 @@ class XFSFileSystem(FileSystem):
         getLabel(partition)
 
 ##
+# btrfs
+class BtrfsFileSystem(FileSystem):
+
+    _name = "btrfs"
+    _is_ready_to_use = yali4.sysutils.checkYaliParams("wowbtrfs")
+
+    def __init__(self):
+        FileSystem.__init__(self)
+        self.setImplemented(True)
+        self.setResizable(True)
+
+    def format(self, partition):
+        self.preFormat(partition)
+        cmd_path = requires("mkfs.btrfs")
+        cmd = "%s %s" % (cmd_path, partition.getPath())
+        res = sysutils.run(cmd)
+        if not res:
+            raise YaliException, "%s format failed: %s" % (self.name(), partition.getPath())
+
+    def minResizeMB(self, partition):
+        cmd_path = requires("btrfs-show")
+        cmd = "%s %s" % (cmd_path, partition.getPath())
+        lines = os.popen(cmd).readlines()
+        _min = 0
+        _safety = 10
+        for l in lines:
+            if l.find("bytes used"):
+                _size = l[-2:]
+                _used = int(l[l.find("bytes used")+len("bytes used "):-5])
+                if _size == 'KB':
+                    return 1 + _safety
+                elif _size == 'GB':
+                    return int(_used * parteddata.MEGABYTE) + _safety
+                elif _size == 'MB':
+                    return _used + _safety
+        return _safety
+
+    def setLabel(self, partition, label):
+        # FIXME It formats the device twice for setting label
+        # Find a better way for it...
+        label = self.availableLabel(label)
+        cmd_path = requires("mkfs.btrfs")
+        cmd = "%s -L %s %s" % (cmd_path, label, partition.getPath())
+        if not sysutils.run(cmd):
+            return False
+        return label
+
+    def getLabel(self, partition):
+        getLabel(partition)
+
+    def preResize(self, partition):
+        """ Routine operations before resizing """
+        cmd_path = requires("fsck.btrfs")
+        cmd = "%s %s" % (cmd_path, partition.getPath())
+        return sysutils.run(cmd)
+
+    def resize(self, size_mb, partition):
+        if size_mb < self.minResizeMB(partition):
+            return False
+
+        if not self.preResize(partition):
+            raise FSError, _("Partition is not ready for resizing. Check it before installation.")
+
+        cmd_path = requires("btrfsctl")
+        cmd = "%s -r %dm -A %s" % (cmd_path, size_mb, partition.getPath())
+        if not sysutils.run(cmd)
+           raise FSError, "Resize failed on %s " % (partition.getPath())
+
+        return True
+
+##
 # linux-swap
 class SwapFileSystem(FileSystem):
 
@@ -348,7 +422,6 @@ class SwapFileSystem(FileSystem):
         res = sysutils.run(cmd)
         if not res:
             raise YaliException, "Swap format failed: %s" % partition.getPath()
-
 
     def getLabel(self, partition):
         label = None
@@ -384,6 +457,7 @@ class NTFSFileSystem(FileSystem):
     _name = "ntfs"
     _sysname = "ntfs-3g"
     _mountoptions = "dmask=007,fmask=117,locale=tr_TR.UTF-8,gid=6"
+    _linux_supported = False
 
     def __init__(self):
         FileSystem.__init__(self)
@@ -461,6 +535,7 @@ class FatFileSystem(FileSystem):
     _name = "fat32"
     _sysname = "vfat"
     _mountoptions = "quiet,shortname=mixed,dmask=007,fmask=117,utf8,gid=6"
+    _linux_supported = False
 
     def __init__(self):
         FileSystem.__init__(self)
