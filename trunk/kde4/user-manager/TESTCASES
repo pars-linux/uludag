@@ -1,0 +1,44 @@
+- Add a new user
+    Go console and type
+    cat /etc/passwd 
+    observe whether the user is added.
+
+    - Try to change password
+        - Write a new password to password part and retype  part.
+        - Write a new password, and write a different password to retype part.
+
+    - Enable and disable root permissions
+        - Switch user to newly added user, than try to be root with this user.
+
+    - Give an authorization
+        Go console and type
+        cat /var/lib//var/lib/PolicyKit/user-<username>.auths
+        observe whether the authorization is gived to this user.
+
+    - Add user to a new group and take user from a group
+        Go console and type
+        $ groups <username> 
+        and observe the results
+
+- Try to remove the user
+     Go console and type
+     cat /etc/passwd·
+     observe whether the user is removed.
+
+- Try to list all users
+    - Try to change informations of this user.
+    - Try to remove this user.
+- Try to add a new group.
+     Go console and type
+     cat /etc/group
+     observe whether the group is added.
+
+- Try to remove a group.
+     Go console and type
+     cat /etc/group
+     observe whether the group is removed.
+
+    Observe the user who is added to this group.
+     Go console and type
+     $ groups <username>·
+     Observe that the user is still a member of this group.
