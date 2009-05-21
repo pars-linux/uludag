@@ -26,8 +26,7 @@ import parted
 import math
 
 from pare.errors import PareError
-import pare.sysutils as sysutils
-import pare.storage
+import pare.utils.sysutils as sysutils
 import logging
 log = logging.getLogger("pare")
 
@@ -179,7 +178,7 @@ class FileSystem:
         cmd_path = requires("e2fsck")
 
         res = sysutils.execClear("e2fsck",
-                                ["-f", "-p", "-C", "0", partition.path],
+                                ["-f", "-p", "-C", "0", partition],
                                 stdout="/tmp/resize.log",
                                 stderr="/tmp/resize.log")
 
@@ -187,7 +186,7 @@ class FileSystem:
             raise FileSystemError, _("""FSCheck found some problems on partition %s and fixed them. \
                                 You should restart the machine before starting the installation process !""" % (partition.getPath()))
         elif res > 2:
-            raise FileSystemError, _("FSCheck failed on %s" % (partition.size))
+            raise FileSystemError, _("FSCheck failed on %s" % (partition))
 
         return True
 
@@ -228,7 +227,7 @@ class FileSystem:
         def capture(lines, param):
             return long(filter(lambda line: line.startswith(param), lines)[0].split(':')[1].strip('\n').strip(' '))
 
-        lines = os.popen("%s -h %s" % (cmd_path, partition.path)).readlines()
+        lines = os.popen("%s -h %s" % (cmd_path, partition)).readlines()
 
         try:
             total_blocks = capture(lines, 'Block count')
@@ -248,9 +247,9 @@ class FileSystem:
         # Check before resize
         self.preResize(partition)
 
-        res = sysutils.run("resize2fs",[partition.path, "%sM" %(size)])
+        res = sysutils.run("resize2fs",[partition, "%sM" %(size)])
         if not res:
-            raise FileSystemError, "Resize failed on %s" % (partition.path)
+            raise FileSystemError, "Resize failed on %s" % (partition)
         return True
 
 class Ext4FileSystem(FileSystem):
