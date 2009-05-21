@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2008, TUBITAK/UEKAE
+# Copyright (C) 2006-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -19,7 +19,7 @@ class Options(object):
     def __init__(self):
         parser = OptionParser()
         parser.add_option("-d", "--debug", dest="debug",
-                          action="store_true", default="False",
+                          action="store_true", default="True",
                           help="enable debug")
         parser.add_option("-q", "--dryRun", dest="dryRun",
                           action="store_true", default="False",
