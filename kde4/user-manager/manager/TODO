@@ -1,7 +1,3 @@
 To Do:
 - User policies
 - List shells
-- Show warnings as you type (in edit widgets)
-
-Known Bugs:
-- PK shows action ID if user clicks cancel button on PK dialog. This will be fixed in COMAR-API
