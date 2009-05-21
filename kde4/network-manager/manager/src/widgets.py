@@ -241,7 +241,7 @@ class ConnectionItemWidget(QtGui.QWidget):
             self.ui.labelDesc.setText(unicode(detail))
             self.ui.labelStatus.setPixmap(KIcon("emblem-important").pixmap(32))
         elif state == "unplugged":
-            self.ui.labelDesc.setText(i18n("Cable is unplugged."))
+            self.ui.labelDesc.setText(i18n("Cable or device is unplugged."))
             self.ui.labelStatus.setPixmap(KIcon("dialog-warning").pixmap(32))
 
     def toggleConnection(self):
