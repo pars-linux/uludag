@@ -37,6 +37,9 @@ class StateManager(QObject):
         else:
             self.iface.setSource(self.iface.REPO)
 
+    def reset(self):
+        self.cached_packages = None
+
     def getState(self):
         return self.state
 

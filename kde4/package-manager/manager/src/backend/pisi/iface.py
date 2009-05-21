@@ -52,6 +52,7 @@ class Iface(Singleton):
     def signalHandler(self, package, signal, args):
         if signal == "finished":
             pisi.db.invalidate_caches()
+            self.initDB()
 
     def handler(self, *args):
         pass

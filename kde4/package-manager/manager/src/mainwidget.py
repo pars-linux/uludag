@@ -41,7 +41,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), lambda:self.state.operationAction(self.packageList.selectedPackages()))
-        self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
+        self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
                      lambda:self.emit(SIGNAL("selectionChanged(QModelIndexList)"),
@@ -97,6 +97,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.progressDialog.enableCancel()
 
     def actionFinished(self, operation):
+        self.searchLine.clear()
+        self.state.reset()
         self.progressDialog.hide()
         self.initialize()
 
