@@ -15,7 +15,7 @@ __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
 slideDesc = [
-{"yali":_("""Welcome! Our improved setup tool YALI will help you with the installation of Pardus 2009. YALI will help install Pardus 2008 quickly and easily following the partitioning of disk(s) using the intelligent partitioning tool.
+{"yali":_("""Welcome! Our improved setup tool YALI will help you with the installation of Pardus 2009. YALI will help install Pardus 2009 quickly and easily following the partitioning of disk(s) using the intelligent partitioning tool.
 """)},
 {"kaptan":_("""Our Kaptan will show you the way after the installation. You can easily add additional repositories and manage basic settings like mouse, wallpaper and panel using in Kaptan.
 """)},
