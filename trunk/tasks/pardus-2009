@@ -88,9 +88,10 @@
   * Hardware Notifier (-)
 
 * KDE4 (Bahadır Kandemir)
-  * COMAR 2.0 -> 3.0 geçişi (/90)
-  * Yeni Network altyapısı (/75)
-  * Firewall-Config (-)
+  * COMAR 2.0 -> 3.0 geçişi (+)
+  * Yeni Network altyapısı (+)
+  * Firewall-Manager (+)
+  * User-Manager (+)
   * Disk-Manager (-)
   * Boot-Manager (-)
 
