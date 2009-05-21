@@ -36,14 +36,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
         self.initialize()
+        self.connectMainSignals()
+        self.connectOperationSignals()
 
-        # Operation Manager related signals
-        self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
-
-    def initialize(self):
-        self.initializePackageList()
-        self.initializeGroupList()
-        self.initializeProgressDialog()
+    def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.actionStart)
         self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
@@ -51,11 +47,16 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                      lambda:self.emit(SIGNAL("selectionChanged(QModelIndexList)"),
                             self.packageList.selectionModel().selectedIndexes()))
 
-    def initializeProgressDialog(self):
+    def connectOperationSignals(self):
+        self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
         self.connect(self.operation, SIGNAL("started"), self.progressDialog.enableCancel)
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
         self.connect(self.operation, SIGNAL("operationChanged(QString,QString)"), self.progressDialog.updateOperation)
         self.connect(self.operation, SIGNAL("packageChanged(int, int, QString)"), self.progressDialog.updateStatus)
+
+    def initialize(self):
+        self.initializePackageList()
+        self.initializeGroupList()
 
     def initializePackageList(self):
         self.packageList.setModel(PackageProxy(self))
