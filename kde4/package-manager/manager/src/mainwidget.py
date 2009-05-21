@@ -40,7 +40,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connectOperationSignals()
 
     def connectMainSignals(self):
-        self.connect(self.actionButton, SIGNAL("clicked()"), self.actionStart)
+        self.connect(self.actionButton, SIGNAL("clicked()"), lambda:self.state.operationAction(self.packageList.selectedPackages()))
         self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
@@ -49,8 +49,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def connectOperationSignals(self):
         self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
-        self.connect(self.operation, SIGNAL("started()"), self.progressDialog.enableCancel)
-        self.connect(self.operation, SIGNAL("started()"), self.progressDialog.show)
+        self.connect(self.operation, SIGNAL("started()"), self.actionStarted)
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
         self.connect(self.operation, SIGNAL("operationChanged(QString,QString)"), self.progressDialog.updateOperation)
         self.connect(self.operation, SIGNAL("packageChanged(int, int, QString)"), self.progressDialog.updateStatus)
@@ -93,9 +92,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.actionButton.setText(self.state.getActionName())
         self.actionButton.setIcon(self.state.getActionIcon())
 
-    def actionStart(self):
+    def actionStarted(self):
         self.progressDialog.show()
-        self.state.operationAction(self.packageList.selectedPackages())
+        self.progressDialog.enableCancel()
 
     def actionFinished(self, operation):
         self.progressDialog.hide()
