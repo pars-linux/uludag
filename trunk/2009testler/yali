@@ -15,3 +15,4 @@ Lisans Onay sayfası
 
 - Disk bölümlendirme-> otomatik->Bölümleri yeniden boyutlandırı dene seçildiğinde
     - Yeni bir ekran çıkıyor fakat bu ekran kapatılamıyor.
+    - Eger dosya sistemi olmayan boş bir partition var ise, bu partition önerilen olarak gelmesi gerekirken, bu partition hiç gözükmüyor.
