@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ui version="4.0">
+<ui version="4.0" >
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
@@ -10,53 +9,57 @@
     <height>600</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>MainWindow</string>
+  <property name="windowTitle" >
+   <string>Package Manager</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
+  <property name="windowIcon" >
+   <iconset resource="../data/data.qrc" >
+    <normaloff>:/data/package-manager.png</normaloff>:/data/package-manager.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget" />
+  <widget class="QStatusBar" name="statusbar" />
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
     <rect>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>25</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_File">
-    <property name="title">
+   <widget class="QMenu" name="menu_File" >
+    <property name="title" >
      <string>&amp;File</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menu_Settings">
-    <property name="title">
+   <widget class="QMenu" name="menu_Settings" >
+    <property name="title" >
      <string>&amp;Settings</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menu_Help">
-    <property name="title">
+   <widget class="QMenu" name="menu_Help" >
+    <property name="title" >
      <string>&amp;Help</string>
     </property>
    </widget>
-   <addaction name="menu_File"/>
-   <addaction name="menu_Settings"/>
-   <addaction name="menu_Help"/>
+   <addaction name="menu_File" />
+   <addaction name="menu_Settings" />
+   <addaction name="menu_Help" />
   </widget>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
+  <widget class="QToolBar" name="toolBar" >
+   <property name="windowTitle" >
     <string>toolBar</string>
    </property>
-   <attribute name="toolBarArea">
+   <attribute name="toolBarArea" >
     <enum>TopToolBarArea</enum>
    </attribute>
-   <attribute name="toolBarBreak">
+   <attribute name="toolBarBreak" >
     <bool>false</bool>
    </attribute>
   </widget>
  </widget>
  <resources>
-  <include location="../data/data.qrc"/>
+  <include location="../data/data.qrc" />
  </resources>
  <connections/>
 </ui>
