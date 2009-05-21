@@ -248,6 +248,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                         kdeui.KMessageBox.error(self, unicode(e))
                     return
             else:
+                self.widgetUserEdit.setShell("/bin/bash")
                 self.widgetUserEdit.setNickList(self.all_users)
                 self.widgetUserEdit.setGroups(self.all_groups, DEFAULT_GROUPS)
         else:
@@ -343,10 +344,25 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         try:
             if self.typeEdit == "user":
                 widget = self.widgetUserEdit
+                grant, revoke, block = widget.getAuthorizations()
                 if widget.isNew():
-                    self.iface.addUser(widget.getId(), widget.getUsername(), widget.getFullname(), widget.getHomeDir(), widget.getShell(), widget.getPassword(), widget.getGroups())
+                    self.iface.addUser(widget.getId(), widget.getUsername(), widget.getFullname(), widget.getHomeDir(), widget.getShell(), widget.getPassword(), widget.getGroups(), grant, block)
                 else:
                     self.iface.setUser(widget.getId(), widget.getFullname(), widget.getHomeDir(), widget.getShell(), widget.getPassword(), widget.getGroups())
+                    def handler(*args):
+                        pass
+                    # Revoke all
+                    for action_id in grant:
+                        self.iface.setRevoke(widget.getId(), action_id, func=handler)
+                    for action_id in revoke:
+                        self.iface.setRevoke(widget.getId(), action_id, func=handler)
+                    for action_id in block:
+                        self.iface.setRevoke(widget.getId(), action_id, func=handler)
+                    # Grants & blocks
+                    for action_id in grant:
+                        self.iface.setGrant(widget.getId(), action_id, func=handler)
+                    for action_id in block:
+                        self.iface.setBlock(widget.getId(), action_id, func=handler)
             else:
                 widget = self.widgetGroupEdit
                 self.iface.addGroup(widget.getId(), widget.getGroupname())

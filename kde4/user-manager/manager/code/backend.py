@@ -96,3 +96,21 @@ class Interface:
             self.link.User.Manager[self.package].listUserAuthorizations(uid, async=func)
         else:
             return self.link.User.Manager[self.package].listUserAuthorizations(uid)
+
+    def setGrant(self, uid, action_id, func=None):
+        if func:
+            self.link.User.Manager[self.package].grantAuthorization(uid, action_id, async=func)
+        else:
+            return self.link.User.Manager[self.package].grantAuthorization(uid, action_id)
+
+    def setRevoke(self, uid, action_id, func=None):
+        if func:
+            self.link.User.Manager[self.package].revokeAuthorization(uid, action_id, async=func)
+        else:
+            return self.link.User.Manager[self.package].revokeAuthorization(uid, action_id)
+
+    def setBlock(self, uid, action_id, func=None):
+        if func:
+            self.link.User.Manager[self.package].blockAuthorization(uid, action_id, async=func)
+        else:
+            return self.link.User.Manager[self.package].blockAuthorization(uid, action_id)

@@ -68,7 +68,8 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
         # Signals
         self.connect(self.checkAutoId, QtCore.SIGNAL("stateChanged(int)"), self.slotCheckAuto)
-        self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.slotFulnameChanged)
+        self.connect(self.lineUsername, QtCore.SIGNAL("textEdited(const QString&)"), self.slotUsernameChanged)
+        self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.slotFullnameChanged)
         self.connect(self.listGroups, QtCore.SIGNAL("itemClicked(QListWidgetItem*)"), self.slotGroupSelected)
         self.connect(self.treeAuthorizations, QtCore.SIGNAL("currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)"), self.slotPolicySelected)
         self.connect(self.radioAuthNo, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
@@ -100,6 +101,20 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
                 info = polkit.action_info(action_id)
                 item = PolicyItem(self.treeAuthorizations, unicode(info["description"]), action_id)
                 self.actionItems[action_id] = item
+
+    def getAuthorizations(self):
+        grant = []
+        revoke = []
+        block = []
+        for index in xrange(self.treeAuthorizations.topLevelItemCount()):
+            item = self.treeAuthorizations.topLevelItem(index)
+            if item.getType() == -1:
+                block.append(item.getAction())
+            elif item.getType() == 0:
+                revoke.append(item.getAction())
+            elif item.getType() == 1:
+                grant.append(item.getAction())
+        return grant, revoke, block
 
     def isNew(self):
         return self.spinId.isEnabled() or self.checkAutoId.isVisible()
@@ -206,9 +221,15 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         else:
             self.spinId.setEnabled(True)
 
-    def slotFulnameChanged(self, name):
+    def slotFullnameChanged(self, name):
         if self.lineUsername.isEnabled() and not self.lineUsername.isModified():
             self.lineUsername.setText(nickGuess(name, self.nicklist))
+            if self.lineHomeDir.isEnabled() and not self.lineHomeDir.isModified():
+                self.lineHomeDir.setText("/home/%s" % self.lineUsername.text())
+
+    def slotUsernameChanged(self, name):
+        if self.lineHomeDir.isEnabled() and not self.lineHomeDir.isModified():
+            self.lineHomeDir.setText("/home/%s" % self.lineUsername.text())
 
     def checkLastItem(self):
         if self.comboMainGroup.count() == 1:
