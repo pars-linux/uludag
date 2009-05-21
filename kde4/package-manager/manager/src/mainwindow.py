@@ -54,6 +54,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         self.setupGUI(KXmlGuiWindow.Default, "data/mainwindow.rc")
 
+        self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
         showInstallAction.setChecked(True)
 
     def updateStatusBar(self, indexes):
