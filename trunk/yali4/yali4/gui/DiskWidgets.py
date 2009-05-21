@@ -170,7 +170,8 @@ class DiskList(QtGui.QWidget):
             self.partEdit.ui.fileSystemBox.clear()
             if partitionType:
                 for fs in partitionType.supportedFileSystems:
-                    self.partEdit.ui.fileSystemBox.addItem(fs.name())
+                    if fs.isReadyToUse():
+                        self.partEdit.ui.fileSystemBox.addItem(fs.name())
             # Force to select ext4 by default for ext3 partitions
             key = self.partEdit.currentPart.getFSName()
             if key == 'ext3':
@@ -200,7 +201,7 @@ class DiskList(QtGui.QWidget):
         if partitionTypes[cur] == parttype.home:
             # if selected partition has different fs for userspace, forceToFormat
             if self.partEdit.currentPart:
-                if not self.partEdit.currentPart.getFSName() in ["ext4","ext3","reiserfs","xfs"]:
+                if not self.partEdit.currentPart.getFSName() in filesystem.getLinuxFileSystems():
                     forceToFormat()
 
         if partitionTypes[cur] == parttype.swap:
@@ -501,6 +502,9 @@ class DiskItem(QtGui.QWidget):
                                   "fgcolor":"#FFFFFF",
                                   "icon"   :"linux"},
                      "reiserfs" :{"bgcolor":"#ADA7C8",
+                                  "fgcolor":"#FFFFFF",
+                                  "icon"   :"linux"},
+                        "btrfs" :{"bgcolor":"#FF9955",
                                   "fgcolor":"#FFFFFF",
                                   "icon"   :"linux"},
                    "linux-swap" :{"bgcolor":"#C1665A",

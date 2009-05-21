@@ -35,23 +35,6 @@ import yali4.storage
 class FSError(YaliError):
     pass
 
-def get_filesystem(name):
-    """ Returns filesystem implementation for given filesystem name """
-    knownFS = {"ext3":      Ext3FileSystem,
-               "ext4":      Ext4FileSystem,
-               "swap":      SwapFileSystem,
-               "linux-swap":SwapFileSystem,
-               "ntfs":      NTFSFileSystem,
-               "reiserfs":  ReiserFileSystem,
-               "xfs":       XFSFileSystem,
-               "fat32":     FatFileSystem,
-               "btrfs":     BtrfsFileSystem}
-
-    if knownFS.has_key(name):
-        return knownFS[name]()
-
-    return None
-
 def getLabel(partition):
     if not os.path.exists("/dev/disk/by-label"):
         return None
@@ -160,6 +143,9 @@ class FileSystem:
     def isImplemented(self):
         """ Check if filesystem is implemented """
         return self._implemented
+
+    def isReadyToUse(self):
+        return self._is_ready_to_use
 
     def setResizable(self, bool):
         """ Set if filesystem is resizable """
@@ -396,8 +382,8 @@ class BtrfsFileSystem(FileSystem):
 
         cmd_path = requires("btrfsctl")
         cmd = "%s -r %dm -A %s" % (cmd_path, size_mb, partition.getPath())
-        if not sysutils.run(cmd)
-           raise FSError, "Resize failed on %s " % (partition.getPath())
+        if not sysutils.run(cmd):
+            raise FSError, "Resize failed on %s " % (partition.getPath())
 
         return True
 
@@ -407,6 +393,7 @@ class SwapFileSystem(FileSystem):
 
     _name = "linux-swap"
     _sysname = "swap"
+    _linux_supported = False
 
     def __init__(self):
         FileSystem.__init__(self)
@@ -562,4 +549,30 @@ class FatFileSystem(FileSystem):
         if not sysutils.run(cmd):
             return False
         return label
+
+knownFS = {"ext3":      Ext3FileSystem,
+           "ext4":      Ext4FileSystem,
+           "swap":      SwapFileSystem,
+           "linux-swap":SwapFileSystem,
+           "ntfs":      NTFSFileSystem,
+           "reiserfs":  ReiserFileSystem,
+           "xfs":       XFSFileSystem,
+           "fat32":     FatFileSystem}
+           # "btrfs":     BtrfsFileSystem}
+
+
+def get_filesystem(name):
+    """ Returns filesystem implementation for given filesystem name """
+    global knownFS
+    if knownFS.has_key(name):
+        return knownFS[name]()
+
+    return None
+
+def getLinuxFileSystems():
+    supported = []
+    for key, value in knownFS.items():
+        if value._linux_supported and value._is_ready_to_use:
+            supported.append(key)
+    return supported
 
