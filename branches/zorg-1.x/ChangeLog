@@ -1,3 +1,8 @@
+2009-05-21  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* data/DriversDB:
+		Make nvidia-drivers180 default for new cards.
+		Add new PCI ids.
+
 2009-03-30  Fatih Aşıcı  <fatih@pardus.org.tr>
 	* data/DriversDB:
 		Prefer nvidia-drivers package for 10de:0242.
