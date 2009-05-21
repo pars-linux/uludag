@@ -99,7 +99,7 @@ msgstr "Bellek"
 
 #: src/sysinfo.cpp:263
 msgid "Ram : %1 free of %2"
-msgstr "Rem : %2'ın %1 kadarı boş"
+msgstr "Ram : %2'ın %1 kadarı boş"
 
 #: src/sysinfo.cpp:266
 msgid "Swap: %1 free of %2"
