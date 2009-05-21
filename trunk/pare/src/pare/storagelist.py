@@ -11,6 +11,7 @@
 
 
 import os
+import parted
 from errors import *
 from pare.storage import Disk, Partition
 from pare.formats import StorageFormat, FileSystem, get_format
@@ -37,7 +38,6 @@ class StorageList(object):
         
     def _add(self, new):
         
-        print "self._devices uzunlugu:%s" % len(self._devices)
         if new.path in  [d.path for d in self._devices]:
             raise ValueError("new device is already in storage list")
         
@@ -45,8 +45,7 @@ class StorageList(object):
             if parent not in self._devices:
                 raise StorageListError("new device parent not in storage list")
         
-        self._devices.append(new)
-        print "self._devices uzunlugu:%d" % len(self._devices) 
+        self._devices.append(new) 
         log.debug("%s is added to storage list" % (new.name,))
     
     def _remove(self, device, force=None):
@@ -70,10 +69,8 @@ class StorageList(object):
     def _checkInconsistenceDevices(self):
         
         #FIXME: Check inconsistences also lvm & raid
-        print "_checkInconsistenceDevices"
         
         for part in self.getDevicesByInstance(Partition):
-            print "Partition.......part:%s--type:%s parent ise %s" % (part.name, part.type,part._parents[0].name)
             if part._parents[0].format is not None:
                 disk = part._parents[0]
                 format = FileSystem(device=disk.path, exists=True)
@@ -83,13 +80,12 @@ class StorageList(object):
                 
     def addIgnoredDisk(self, disk):
         self.ignoredDisks.append(disk)
-        #FIXME: when lvm is came up add this lvmm filtering ;)
+        #FIXME: when lvm is came up add this lvm filtering ;)
         
     def isIgnored(self, info):
         name = udev_device_get_name(info)
         sysfs_path = udev_device_get_sysfs_path(info)
         if not sysfs_path:
-            print "isIgnored.sysfs_path dondu"
             return None
         
         if name in self.ignoredDisks:
@@ -106,53 +102,44 @@ class StorageList(object):
             return True
     
     def addDevice(self, info):
-        print "!!!***AddDevice"
         name = udev_device_get_name(info)
-        print "name: %s" % name
         uuid = udev_device_get_uuid(info)
- #       print "uuid: %s" % uuid
         sysfs_path = udev_device_get_sysfs_path(info)
- #       print "sysfs_path:%s" % sysfs_path
         if self.isIgnored(info):
             log.debug("ignoring %s (%s)" % (name, sysfs_path))
             return
         
         device = self.getDeviceByName(name)
         
-        #print "AddDevice.device-->%s" % device
         #FIXME:Later handle other storage subclasses like lvm & raid
         if udev_device_is_disk(info):
             if device is None:
                 device = self.addDisk(info)
-     #           print "AddDevice.addDisk-->%s" % device.name
         elif udev_device_is_partition(info):
             if device is None:
                 device = self.addPartition(info)
-                print "AddDevice.addPartition-->%s" % device.name
+
                 
-        print "deviceXXX:%s" % device.name
         self.handleDeviceFormat(info, device)
-        
+    
+    def addFreePartition(self, part):
+        pass
+       
     def addPartition(self, info):
         name = udev_device_get_name(info)
-        print "!!!!****addPartition-->%s" % name
         uuid = udev_device_get_uuid(info)
         sysfsPath =  udev_device_get_sysfs_path(info)
+        #print "syspath:%s" % sysfsPath
         device = None
         
-        print "*** name:%s ****" % name
         diskName = os.path.basename(os.path.dirname(sysfsPath))
-        print "diskName:%s" % diskName
         disk = self.getDeviceByName(diskName)
-        print "disk:%s" % disk
         if disk is None:
             path = os.path.dirname(os.path.realpath(sysfsPath))
             newInfo = udev_get_block_device(path)
             if newInfo:
-                print "*** newInfo:%s ****" % newInfo
                 self.addDevice(newInfo)
                 disk = self.getDeviceByName(diskName)
-                print "disk:%s" % disk
             #if the current device is still not in the storage list, something has gone wrong
             if disk is None:
                 raise StorageError("something goes wrong")
@@ -172,7 +159,6 @@ class StorageList(object):
     
     def addDisk(self, info):
         name = udev_device_get_name(info)
-        print "!!!!****addDisk-->%s" % name
         uuid = udev_device_get_uuid(info)
         sysfsPath =  udev_device_get_sysfs_path(info)
         device = None
@@ -209,10 +195,6 @@ class StorageList(object):
         label = udev_device_get_label(info)
         format_type = udev_device_get_format(info)
         
-        if name == "sr0":
-            print "buradaaaaaaaaaaaa!!!!!!!!!!"
-
-        print "format_type = udev_device_get_format(info) :%s" % format_type
         
         #FIXME:Control block device or CDROM device? Arent they IDS_FS_TYPE variable on udev dict
         #FIXME: this probably needs something special for disklabels
@@ -229,25 +211,22 @@ class StorageList(object):
         
         try:
             log.debug("type detected on '%s' is '%s'" % (name, format_type))
+            #FIXME: Change wrong device.format assignment on disk type devices. It gives warning
             if format_type:
                format = get_format(format_type, *args, **kwargs)
             else:
                 format = get_format()
-            print "handleDeviceFormat-------->!!!!!!!!format!!!!!!:%s tipi geldi%s dondu" % (format_type,format.type) 
+                  
             device.format = format
         except FileSystemError:
             log.debug("type '%s' on '%s' invalid, assuming no format" % (format_type, name,))
             device.format = get_format()
-            print "handleDevice.format.type-->%s" % device.format.type
-        
-                      
-
+              
         
     def getDeviceByName(self, name):
         logging.debug("looking for device %s" % name)
         found = None
         for device in self._devices:
-         #   print "device.name==%s" % str(device.name)
             if str(device.name) == name:
                 found = device
                 break
@@ -326,7 +305,6 @@ class StorageList(object):
     @property
     def devices(self):
         devices = {}
-        print "storagelist.devices"
         for device in self._devices:
             if device.path in devices:
                 raise StorageListError("duplicate path in storage list")
@@ -338,7 +316,7 @@ class StorageList(object):
     @property
     def filesystems(self):
         filesystems = []
-        for device in self.leaves():
+        for device in self.leaves:
             if device.format and device.format.mountpoint:
                 filesystems.append(device.format)
                 
@@ -376,15 +354,10 @@ class StorageList(object):
         old_devices = []
         ignored_devices = []
         
-      #  i =0 
         while True:
-       #     i+=1
-       #     print "%d kez girdi !!!" % i
             devices = []
             new_devices = udev_get_block_devices()
-        #    print "%d uzunluk" % len(new_devices)
             for new_device in new_devices:
-                #print "storage_list:%s" % _new_dev
                 found = False
                 for old_device in old_devices:
                     if old_device["name"] == new_device["name"]:
@@ -395,13 +368,11 @@ class StorageList(object):
                     devices.append(new_device)
                 
             if len(devices) == 0:
-         #       print "device uzunlugu %d" % len(devices)
                 break
                 
             old_devices =  new_devices
             log.info("devices to scan: %s" % [d['name'] for d in devices])
             for dev in devices:
-          #      print "dev:%s" % dev
                 self.addDevice(dev)
         
         self._checkInconsistenceDevices()
@@ -412,7 +383,6 @@ class StorageList(object):
     def tearDownAll(self):
         for device in self.leaves:
             try:
-                print "self.leaves deki devicelar:%s" % device.name
                 device.tearDown()
             except StorageError, StorageFormatError:
                 log.info("tearDown failed")
@@ -513,7 +483,7 @@ class StorageList(object):
             ###Create Action Compare StartPoint
             elif action1.isCreate() and action2.isCreate():
                 if action1.device.path == action2.device.path:
-                    if action1.device.obj == action2.device.obj:
+                    if action1.obj == action2.obj:
                         ret = 0
                     elif action1.isFormat():
                         ret = 1
@@ -566,7 +536,7 @@ class StorageList(object):
             log.debug("action:%s" % action)
         
         log.debug("resetting parted disks")
-        for device in self.devices().itervalues():
+        for device in self.devices.itervalues():
             if isinstance(device, Disk):
                 device.resetPartedDisk()
         
@@ -594,7 +564,7 @@ class StorageList(object):
         elif action.isDestroy() and action.isDevice():
             self._remove(action.device)
         elif action.isCreate() and action.isFormat():
-            if isinstance(action.device.format, FileSystem) and action.device.format.mountpoint in self.filesystems():
+            if isinstance(action.device.format, FileSystem) and action.device.format.mountpoint in self.filesystems:
                 raise StorageListError("mount point already in use")
         
         log.debug("registered action %s" % action)

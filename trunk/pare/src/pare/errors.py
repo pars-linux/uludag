@@ -12,38 +12,15 @@
 class   PareError(Exception):
     pass
 
-#Device
-class StorageError(PareError):
+
+class FileSystemError(PareError):
     pass
 
-class StorageListError(StorageError):
+class DiskError(PareError):
     pass
 
-
-#Storage Format
-class StorageFormatError(StorageError):
-    pass
-class FormatCreateError(StorageFormatError):
+class RaidError(PareError):
     pass
 
-#Storage Format
-class StorageFormatError(StorageError):
-    pass
-
-class FileSystemError(StorageFormatError):
-    pass
-
-class FileSystemMigrateError(StorageError):
-    pass
-class FileSystemResizeError(StorageError):
-    pass
-
-#Storage Libs
-class DMError(StorageError):
-    pass
-class RaidError(StorageError):
-    pass
-class MDRaidError(StorageError):
-    pass
-class LVMError(StorageError):
+class LVMError(PareError):
     pass
