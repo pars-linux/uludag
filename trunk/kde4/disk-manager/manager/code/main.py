@@ -152,6 +152,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 devices = args[0]
                 for device in devices:
                     self.addItem(device, device, "")
+                    parts = self.iface.partitionList(device)
+                    parts.sort()
+                    for part in parts:
+                        self.addItem(part, part, "")
         self.iface.deviceList(func=handleList)
 
     def itemMatchesFilter(self, item):
