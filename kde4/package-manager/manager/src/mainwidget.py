@@ -55,8 +55,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.operation, SIGNAL("packageChanged(int, int, QString)"), self.progressDialog.updateStatus)
 
     def initialize(self):
-        self.initializePackageList()
-        self.initializeGroupList()
+        try:
+            waitCursor()
+            self.initializePackageList()
+            self.initializeGroupList()
+        finally:
+            restoreCursor()
 
     def initializePackageList(self):
         self.packageList.setModel(PackageProxy(self))
@@ -90,17 +94,14 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def actionStart(self):
         self.progressDialog.show()
-        self.state.takeAction(self.packageList.selectedPackages())
+        self.state.operationAction(self.packageList.selectedPackages())
 
     def actionFinished(self, operation):
         self.progressDialog.hide()
-        self.switchState(self.state.getState())
+        self.initialize()
 
     def switchState(self, state):
-        try:
-            waitCursor()
-            self.state.setState(state)
-            self.setActionButton()
-            self.initialize()
-        finally:
-            restoreCursor()
+        self.state.setState(state)
+        self.setActionButton()
+        self.state.stateAction()
+        self.initialize()

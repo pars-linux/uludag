@@ -69,7 +69,12 @@ class StateManager(QObject):
     def groupPackages(self, name):
         return list(set(self.packages()).intersection(self.iface.getGroupPackages(name)))
 
-    def takeAction(self, packages):
+    def stateAction(self):
+        return {self.INSTALL:lambda:None,
+                self.REMOVE:lambda:None,
+                self.UPGRADE:self.iface.updateRepositories}[self.state]()
+
+    def operationAction(self, packages):
         return {self.INSTALL:self.iface.installPackages,
                 self.REMOVE:self.iface.removePackages,
                 self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
