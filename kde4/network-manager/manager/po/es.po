@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-10 21:45+0300\n"
+"POT-Creation-Date: 2009-05-21 09:45+0300\n"
 "PO-Revision-Date: 2009-05-13 22:32-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -23,36 +23,45 @@ msgid "Network Manager"
 msgstr "Administrador de Red"
 
 #: .tmp/about.py:24
-msgid "(c) 2008 TUBITAK/UEKAE"
+msgid "(c) 2009 TUBITAK/UEKAE"
 msgstr ""
 
 #: .tmp/about.py:31
+msgid "Bahadır Kandemir"
+msgstr ""
+
+#: .tmp/about.py:31
+#, fuzzy
+msgid "Current Maintainer"
+msgstr "Mantenedor"
+
+#: .tmp/about.py:32
 msgid "Gökmen GÖKSEL"
 msgstr ""
 
-#: .tmp/about.py:31
-msgid "Maintainer"
-msgstr "Mantenedor"
+#: .tmp/about.py:32
+msgid "Developer"
+msgstr ""
 
-#: .tmp/base.py:163
+#: .tmp/base.py:172
 msgid "Available Profiles"
 msgstr "Perfiles disponibles"
 
-#: .tmp/base.py:190
+#: .tmp/base.py:199
 msgid "All Profiles"
 msgstr "Todos los perfiles"
 
-#: .tmp/base.py:192 .tmp/base.py:194
+#: .tmp/base.py:201 .tmp/base.py:203
 msgid "No Device Found"
 msgstr "Dispositivo no encontrado"
 
-#: .tmp/base.py:365
+#: .tmp/base.py:375
 msgid "No Authentication"
 msgstr "Sin autenticación"
 
-#: .tmp/base.py:588
-#, python-format
-msgid "Do you really want to remove profile %s?"
+#: .tmp/base.py:587
+#, fuzzy
+msgid "Do you really want to remove profile %1?"
 msgstr "Está seguro de remover el perfil %s?"
 
 #: .tmp/uiitem.py:103
@@ -71,7 +80,7 @@ msgstr "Potencia de la señal"
 msgid "  %p %"
 msgstr "  %p %"
 
-#: .tmp/uinameserver.py:42 .tmp/ui.py:326
+#: .tmp/uinameserver.py:42 .tmp/ui.py:338
 msgid "Nameserver Settings"
 msgstr "Servidor de nombres"
 
@@ -79,113 +88,113 @@ msgstr "Servidor de nombres"
 msgid "Machine Name"
 msgstr "Nombre de la computadora"
 
-#: .tmp/uinameserver.py:44 .tmp/ui.py:340
+#: .tmp/uinameserver.py:44 .tmp/ui.py:352
 msgid "Name Servers"
 msgstr "Servidores de nombres"
 
-#: .tmp/ui.py:324
+#: .tmp/ui.py:336
 msgid "Form"
 msgstr ""
 
-#: .tmp/ui.py:325
+#: .tmp/ui.py:337
 msgid "Create Profile"
 msgstr "Crear perfil"
 
-#: .tmp/ui.py:327 .tmp/widgets.py:163
+#: .tmp/ui.py:339 .tmp/widgets.py:177
 msgid "Scanning..."
 msgstr "Buscando..."
 
-#: .tmp/ui.py:328 .tmp/widgets.py:134
 # favor verificar, refrescar, actualizar..
+#: .tmp/ui.py:340 .tmp/widgets.py:148
 msgid "Refresh"
 msgstr "Refrescar"
 
-#: .tmp/ui.py:329
+#: .tmp/ui.py:341
 msgid "Profile Name :"
 msgstr "Nombre de Perfil :"
 
-#: .tmp/ui.py:330
+#: .tmp/ui.py:342
 msgid "Device : "
 msgstr "Dispositivo : "
 
-#: .tmp/ui.py:331 .tmp/ui.py:345
+#: .tmp/ui.py:343 .tmp/ui.py:357
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: .tmp/ui.py:332
+#: .tmp/ui.py:344
 msgid "Network Settings"
 msgstr "Configuración de Red"
 
-#: .tmp/ui.py:333
+#: .tmp/ui.py:345
 msgid "Use DHCP"
 msgstr "Usar DHCP"
 
-#: .tmp/ui.py:334
+#: .tmp/ui.py:346
 msgid "Use Manual Settings"
 msgstr "Configuración manual"
 
-#: .tmp/ui.py:335
+#: .tmp/ui.py:347
 msgid "Address :"
 msgstr "Dirección :"
 
-#: .tmp/ui.py:336 .tmp/ui.py:339
+#: .tmp/ui.py:348 .tmp/ui.py:351
 msgid "Custom"
 msgstr "Personalizado"
 
-#: .tmp/ui.py:337
+#: .tmp/ui.py:349
 msgid "Network Mask :"
 msgstr "Mascara de red :"
 
-#: .tmp/ui.py:338
 # favor revisar, aqui agregar tambien la palabra gateway ? - how much space can i use ? how long may this text be ?
+#: .tmp/ui.py:350
 msgid "Default Gateway :"
 msgstr "Puerto de enlace por omisión :"
 
-#: .tmp/ui.py:341
+#: .tmp/ui.py:353
 msgid "Default"
 msgstr "Por omisión"
 
-#: .tmp/ui.py:342
+#: .tmp/ui.py:354
 msgid "Automatic"
 msgstr "Automático"
 
-#: .tmp/ui.py:343
+#: .tmp/ui.py:355
 msgid "Custom :"
 msgstr "Personalizado :"
 
-#: .tmp/ui.py:344
+#: .tmp/ui.py:356
 msgid "Apply"
 msgstr "Aplicar"
 
-#: .tmp/ui.py:346
+#: .tmp/ui.py:358
 msgid "Esc"
 msgstr ""
 
-#: .tmp/ui.py:347
+#: .tmp/ui.py:359
 msgid "Remote"
 msgstr "Remoto"
 
-#: .tmp/ui.py:348
+#: .tmp/ui.py:360
 msgid "Network Name (ESSID) :"
 msgstr "Nombre de red (ESSID) :"
 
-#: .tmp/ui.py:349
+#: .tmp/ui.py:361
 msgid "Scan"
 msgstr "Buscar"
 
-#: .tmp/ui.py:350
+#: .tmp/ui.py:362
 msgid "Security Type :"
 msgstr "Tipo de seguridad :"
 
-#: .tmp/ui.py:351
+#: .tmp/ui.py:363
 msgid "Settings"
 msgstr "Configuración"
 
-#: .tmp/ui.py:352
+#: .tmp/ui.py:364
 msgid "Key :"
 msgstr "Clave :"
 
-#: .tmp/ui.py:353
+#: .tmp/ui.py:365
 msgid "Hide Password"
 msgstr "Ocultar contraseña"
 
@@ -193,16 +202,19 @@ msgstr "Ocultar contraseña"
 msgid "Security Settings"
 msgstr "Configuración de seguridad"
 
-#: .tmp/widgets.py:216
+#: .tmp/widgets.py:230
 msgid "Disconnected"
 msgstr "Desconectado"
 
-#: .tmp/widgets.py:220
+#: .tmp/widgets.py:234
 #, python-format
 msgid "Connected: %s"
 msgstr "Conectado: %s"
 
-#: .tmp/widgets.py:224
+#: .tmp/widgets.py:238
 msgid "Connecting"
 msgstr "Conectando"
 
+#: .tmp/widgets.py:244
+msgid "Cable or device is unplugged."
+msgstr ""
