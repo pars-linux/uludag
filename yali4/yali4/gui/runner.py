@@ -84,7 +84,7 @@ class Runner:
 
         # check boot flags
         # visual debug mode
-        if ctx.options.debug == True or yali4.sysutils.checkYaliParams(param="debug"):
+        if ctx.options.debug == "True" or yali4.sysutils.checkYaliParams(param="debug"):
             ctx.debugEnabled = True
 
         # Let start
