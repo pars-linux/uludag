@@ -2,6 +2,7 @@ Açılış Ekranı
 - Dil durumu türkçe iken F1 tuşuna basıldığında yardım menüsü açıklamaları ingilizce çıkıyor.
 - Ekranda progressbar ilerlerken grafik sorunları var.
 - F3 F4 F5 tuşlarının testlerine sonra bakılacak.
+- Açılış seçenekleri bölümü boş geliyor.
 
 Lisans Onay sayfası
 - Sürüm notları dosyası açılamıyor.
@@ -12,3 +13,8 @@ Lisans Onay sayfası
 - Hayır kabul etmiyorum! radio butonu seçili iken
     - İleri tuşuna basılamıyor.
 
+- Disk bölümlendirme-> otomatik->Bölümleri yeniden yapılandırmayı dene seçildiğinde 
+    - Yeni bir ekran çıkıyor fakat bu ekran kapatılamıyor.
+    - Disk bölümlendirme-> otomatik->Bölümleri yeniden boyutlandır-> Hedefi ben seçeceğim seçildiğinde yali hata veriyor.
+
+    
