@@ -36,8 +36,10 @@ class MainWindow(KMainWindow, Ui_MainWindow):
 
         showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show New Packages"), self.toolBar)
         self.connect(showInstallAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
+        self.connect(showInstallAction, SIGNAL("triggered()"), self.centralWidget().initialize)
         showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self.toolBar)
         self.connect(showRemoveAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.REMOVE))
+        self.connect(showRemoveAction, SIGNAL("triggered()"), self.centralWidget().initialize)
         showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self.toolBar)
         self.connect(showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
 
