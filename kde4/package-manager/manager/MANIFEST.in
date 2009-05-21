@@ -1,5 +1,5 @@
 include *.py
 recursive-include src/ *.py
 recursive-include po/ *.po *.pot
-recursive-include data/ *.png *.qrc *.rc
+recursive-include data/ *.png *.qrc *.rc *.gif
 recursive-include ui/ *.ui
