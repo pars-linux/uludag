@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-21 09:45+0300\n"
-"PO-Revision-Date: 2009-05-13 22:32-0400\n"
+"PO-Revision-Date: 2009-05-21 18:44-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,9 +31,8 @@ msgid "Bahadır Kandemir"
 msgstr ""
 
 #: .tmp/about.py:31
-#, fuzzy
 msgid "Current Maintainer"
-msgstr "Mantenedor"
+msgstr "Mantenedor actual"
 
 #: .tmp/about.py:32
 msgid "Gökmen GÖKSEL"
@@ -41,7 +40,7 @@ msgstr ""
 
 #: .tmp/about.py:32
 msgid "Developer"
-msgstr ""
+msgstr "Desarrollador"
 
 #: .tmp/base.py:172
 msgid "Available Profiles"
@@ -60,9 +59,8 @@ msgid "No Authentication"
 msgstr "Sin autenticación"
 
 #: .tmp/base.py:587
-#, fuzzy
 msgid "Do you really want to remove profile %1?"
-msgstr "Está seguro de remover el perfil %s?"
+msgstr "Realmente desea remover el perfil %1?"
 
 #: .tmp/uiitem.py:103
 msgid "Edit connection"
@@ -217,4 +215,5 @@ msgstr "Conectando"
 
 #: .tmp/widgets.py:244
 msgid "Cable or device is unplugged."
-msgstr ""
+msgstr "Cable o dispositivo desconectado."
+

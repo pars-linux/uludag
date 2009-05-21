@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-21 08:07+0300\n"
-"PO-Revision-Date: 2009-05-20 20:33-0400\n"
+"PO-Revision-Date: 2009-05-21 18:37-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -97,8 +97,7 @@ msgid "Automatic"
 msgstr "Automático"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Esta opción intentará encontrar espacio adecuado disponible, o particiones "
 "que se puedan redimensionar"
@@ -469,8 +468,7 @@ msgstr "Si tiene algún problema con el arranque, puede reinstalar Grub"
 
 #: yali4/gui/Ui/rescuewidget.py:98
 msgid "If you need to take back your old operations you can use Pisi History"
-msgstr ""
-"Si necesita deshacer algunas operaciones previas, puede utilizar Pisi History"
+msgstr "Si necesita deshacer algunas operaciones previas, puede utilizar Pisi History"
 
 # i suppose "you can create a new password", it is not really "change" - its is in fact: "replace"
 # favor revisar - observar contexto,
@@ -586,9 +584,7 @@ msgstr "No Acepto !"
 msgid "Debug"
 msgstr "Depurar"
 
-# here it says still Pardus 2008 in the english text !! please check in english !!
 #: yali4/gui/descSlide.py:18
-#, fuzzy
 msgid ""
 "Welcome! Our improved setup tool YALI will help you with the installation of "
 "Pardus 2009. YALI will help install Pardus 2009 quickly and easily following "
@@ -800,18 +796,15 @@ msgstr "Hay una petición para el mismo tipo de partición."
 
 #: yali4/gui/DiskWidgets.py:344
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr ""
-"Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr "Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
 
 # favor verificar contexto,
 # check context, should this say "format as.." instead o "selected as .." ?
 #: yali4/gui/DiskWidgets.py:359 yali4/gui/ScrSummary.py:161
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr "Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 # in english: use plural !! - should say "partitions"
 #: yali4/gui/DiskWidgets.py:378
@@ -999,8 +992,7 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
@@ -1010,8 +1002,7 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:128
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:133
 msgid ""
@@ -1090,8 +1081,7 @@ msgstr "Verifique el CD instalador"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr ""
-"Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1113,8 +1103,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
+msgstr "<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1362,7 +1351,6 @@ msgid "Auto or Manual partitioning..."
 msgstr "Particionamiento automático o manual..."
 
 #: yali4/gui/ScrPartitionAuto.py:41
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -1390,22 +1378,19 @@ msgstr ""
 "\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Puede instalar Pardus si tiene un espacio sin particionar de 4GB (10GB "
-"recomendado)\n"
-"o un disco entero vacío.\n"
+"Puede instalar Pardus si dispone de un espacio libre en disco\n "
+"de 4GB (10GB recomendado)o una partición entera vacía.\n"
 "El área o la partición seleccionada para la instalación se va a formatear. \n"
 "Le recomendamos realizar una copia de seguridad para prevenir pérdida de los "
 "datos.\n"
 "</p>\n"
 "<p>\n"
 "El particionamiento automático formateará el disco o la partición "
-"seleccionada e instalará Pardus 2008. \n"
-"Si desea, puede particionar manualmente o solicitar que Pardus 2008 crea una "
-"nueva partición para la instalación.\n"
-"</p>\n"
+"seleccionada e instalará Pardus 2009. \n"
+"Si lo prefiere, puede realizar el particionamiento manualmente o solicitar que\n "
+"Pardus 2009 crea automáticamente una nueva partición para la instalación.</p>\n"
 "<p>\n"
-"Favor consulte la guía <i>Pardus Installing and Using Guide</i> por más "
-"información\n"
+"Favor consulte la guía de instalación de pardus por más información\n"
 "acerca de particionamiento de disco.\n"
 "</p>\n"
 "</font>\n"
@@ -1508,8 +1493,7 @@ msgstr "Puede solucionar el cargador de arranque..."
 msgid ""
 "You can reinstall your Grub or you can take back your system by using Pisi "
 "History..."
-msgstr ""
-"Puede reinstalar Grub o puede retroceder el sistema usando Pisi History..."
+msgstr "Puede reinstalar Grub o puede retroceder el sistema usando Pisi History..."
 
 #: yali4/gui/ScrRescue.py:31
 msgid ""
@@ -1527,8 +1511,7 @@ msgstr "Yali no pudo identificar una partición adecuada en sus sistema"
 
 #: yali4/gui/ScrRescue.py:104
 msgid "Yalı found a Pardus installed partition on your system."
-msgstr ""
-"Yalı encontró una partición con una instalación de Pardus en su sistema."
+msgstr "Yalı encontró una partición con una instalación de Pardus en su sistema."
 
 #: yali4/gui/ScrRescue.py:106
 msgid "Please select a partition from list."
@@ -1614,8 +1597,7 @@ msgstr "Usuario %s (<b>%s</b>) agregado."
 #: yali4/gui/ScrSummary.py:135
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
-msgstr ""
-"Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
+msgstr "Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
 
 #: yali4/gui/ScrSummary.py:141
 msgid "Hostname Settings"
@@ -1661,8 +1643,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:197
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr "Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:212
 msgid "Bootloader Settings"
@@ -1715,7 +1696,6 @@ msgid "Create users to use Pardus..."
 msgstr "Crear usuarios que utilizarán Pardus..."
 
 #: yali4/gui/ScrUsers.py:35
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -1742,7 +1722,7 @@ msgstr ""
 "<font size=\"+2\">Configuración de Usuarios</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2008 permite compartir la misma computadora entre varios usuarios.\n"
+"Pardus 2009 permite compartir la misma computadora entre varios usuarios.\n"
 "Puede conceder derechos de administración del sistema; También puede\n"
 "configurar permisos para determinadas operaciones en TASMA.\n"
 "</p>\n"
@@ -1751,7 +1731,7 @@ msgstr ""
 "\"Agregar Usuario\".\n"
 "Si desea que el sistema arranque automaticamente con un usuario determinado, "
 "seleccione\n"
-"el usuario de la lista; Si desea eliminar un usuario, \n"
+"al usuario de la lista; Si desea eliminar un usuario, \n"
 "seleccione su nombre en la lista y presione \"Eliminar\".\n"
 "</p>\n"
 "<p>\n"
@@ -1789,8 +1769,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
+msgstr "<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
 
 #: yali4/gui/ScrUsers.py:241
 msgid "Update User"
@@ -1805,7 +1784,6 @@ msgid "Welcome to the Pardus installer..."
 msgstr "Bienvenido al asistente de instalación de Pardus..."
 
 #: yali4/gui/ScrWelcome.py:32
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Welcome !</font>\n"
@@ -1823,17 +1801,17 @@ msgid ""
 msgstr ""
 "\n"
 "<font size=\"+2\">Bienvenido !</font>\n"
-"<font size=\"+1\"><p>Bienvenido a Pardus 2008 que le ofrece muchos "
-"componentes de software fáciles de usar. Puede realizar con Pardus 2008 todo "
+"<font size=\"+1\"><p>Bienvenido a Pardus 2009 que le ofrece muchos "
+"componentes de software fáciles de usar. Puede realizar con Pardus 2009 todo "
 "tipo de tarea, como por ejemplo conectarse a Internet, crear documentos, "
-"jugar juegos, escuchar musica.</p>\n"
-"<p>Éste asistente le guiará durante la instalación de Pardus 2008 en su "
+"jugar, escuchar musica.</p>\n"
+"<p>Éste asistente le guiará durante la instalación de Pardus 2009 en su "
 "computadora en algunos pocos y sencillos pasos para luego proceder "
-"automaticamente con la detección y configuración de su hardware. Le "
+"automáticamente con la detección y configuración de su hardware. Le "
 "recomendamos realizar copias de respaldo de sus datos antes de iniciar la "
 "instalación.</p>\n"
 "<p>Puede iniciar el proceso de instalación (y hacer un paso al mundo de la "
-"libertad) pinchando el botón Siguiente.</p>\n"
+"libertad) presionando el botón Siguiente.</p>\n"
 "</font>\n"
 
 #: yali4/gui/YaliDialog.py:93
@@ -2217,47 +2195,3 @@ msgstr "Área de almacenamiento"
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Preparando directorio home de usuario <b>%s</b>.."
 
-#~ msgid ""
-#~ "\n"
-#~ "<font size=\"+2\">Boot loader setup</font>\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>\n"
-#~ "Pardus 2008 uses a boot manager called GRUB to start the operating system "
-#~ "you choose.\n"
-#~ "</p>\n"
-#~ "<p>If there are multiple operating systems in your computer, you can "
-#~ "start the one \n"
-#~ "you like using GRUB. Installing GRUB to the beginning of the boot disk is "
-#~ "the advised \n"
-#~ "option to avoid boot problems.  If you are sure you know what you are "
-#~ "doing, \n"
-#~ "you can change boot loader settings.\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "Please refer to Pardus Installing and Using \n"
-#~ "Guide for more information about GRUB boot \n"
-#~ "loader.\n"
-#~ "</p>\n"
-#~ "</font>\n"
-#~ msgstr ""
-#~ "\n"
-#~ "<font size=\"+2\">Configuración del cargador de arranque</font>\n"
-#~ "\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>\n"
-#~ "Pardus 2008 hace uso del cargador de arranque GRUB, para arrancar "
-#~ "(bootear) el sistema operativo de su preferencia. \n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "Si tiene más de un sistema operativo, GRUB le permite elegir con cual "
-#~ "sistema operativo iniciar.\n"
-#~ "Generalmente está recomendado instalar GRUB en el inicio del disco "
-#~ "principal. \n"
-#~ "Si sabe lo que está haciendo puede cambiar la configuración del cargador "
-#~ "de arranque.</p>\n"
-#~ "\n"
-#~ "<p>\n"
-#~ "Favor recurrir a la documentación - Pardus Installing and Using \n"
-#~ "Guide - para más informaciones sobre GRUB. \n"
-#~ "</p>\n"
-#~ "</font>\n"
