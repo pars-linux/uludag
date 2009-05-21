@@ -27,6 +27,7 @@ class PartitionType:
                             fs("ext3"),
                             fs("reiserfs"),
                             fs("xfs")]
+                            #fs("btrfs")]
 
     def setFileSystem(self, filesystem):
         self.filesystem = fs(filesystem)
@@ -77,6 +78,7 @@ class ArchivePartitionType(PartitionType):
                             fs("xfs"),
                             fs("ntfs"),
                             fs("fat32")]
+                            #fs("btrfs")]
     desc = _("as Storage Area")
 
 root = RootPartitionType()
