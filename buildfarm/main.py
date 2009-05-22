@@ -63,8 +63,8 @@ def buildPackages():
     logger.raw()
 
     for pspec in queue:
-        packagename = os.path.basename(os.path.dirname(pspec))
-        build_output = open(os.path.join(config.outputDir, "%s.log" % packagename), "w")
+        packagename = getPackageNameFromPath(pspec)
+        build_output = open(os.path.join(config.outputDir, "%s.txt" % packagename), "w")
         logger.raw()
         logger.info(
             "*** Compiling source %s (%d of %d)" %
@@ -169,7 +169,7 @@ def buildPackages():
                     deltaPackageList += (map(lambda x: os.path.basename(x), deltaPackages))
 
         finally:
-            pass
+            pisi.close()
 
     logger.raw("QUEUE")
     logger.info("*** Wait Queue: %s" % (qmgr.waitQueue))

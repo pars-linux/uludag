@@ -53,6 +53,9 @@ class PisiApi:
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
 
+    def close(self):
+        pisi.api.ctx.ui.prepareLogs()
+
     def getPreviousBuild(self, package):
         """ Returns the previous build with buildno < buildno(package) (nearest) """
         package = package.rstrip(".pisi\n").rsplit("-", 3)

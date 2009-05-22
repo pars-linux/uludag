@@ -87,8 +87,11 @@ Content-Type: text/html;
     </table>
 </div>
 
-<p>Log file: <a
-href="http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log">http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log</a>.
+<p>Plain log file:
+<a href="http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log">http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log</a><br>
+Fancy log file:
+<a href="http://paketler.pardus.org.tr/logs/2009/%(packagename)s.html">http://paketler.pardus.org.tr/logs/2009/%(packagename)s.html</a>
+
 
 <p>Happy hacking!<br>
 
