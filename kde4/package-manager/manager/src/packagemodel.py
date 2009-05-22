@@ -46,7 +46,7 @@ class PackageModel(QAbstractTableModel):
 	elif role == Qt.CheckStateRole and index.column() == 0:
             return QVariant(self.package_selections[index.row()])
         elif role == Qt.DecorationRole:
-            return QVariant("data/package.png")
+            return QVariant(":/data/package.png")
 
         package = self.package(index)
         if role == SummaryRole:
