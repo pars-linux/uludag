@@ -54,8 +54,10 @@ class GroupList(QtGui.QListWidget):
             self.selectLastSelected(self.itemAt(0, 0))
 
     def currentGroup(self):
+        if not self.count():
+            return None
         return self.currentItem().data(Qt.UserRole).toString()
 
     def groupChanged(self):
         self.lastSelected = self.currentGroup()
-        self.emit(SIGNAL("groupChanged()"), self.lastSelected)
+        self.emit(SIGNAL("groupChanged()"))
