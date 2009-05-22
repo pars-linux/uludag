@@ -29,6 +29,39 @@ class OperationManager(QObject):
         self.totalDownloaded = 0
         self.curPkgDownloaded = 0
 
+    def calculateTimeLeft(self, rate, symbol):
+        factor = {"B/s":1, "KB/s":1024, "MB/s":1048576, "GB/s":1073741824}
+        if symbol == "--/-":
+            return "--:--:--"
+        rates = float(rate) * factor[symbol]
+        total = self.totalSize
+        downloaded = self.totalDownloaded + self.curPkgDownloaded
+        left = total - downloaded
+
+        timeLeft = '%02d:%02d:%02d' % tuple([i for i in time.gmtime(left/rates)[3:6]])
+        self.emit(SIGNAL("elapsedTime(QString)"), timeLeft)
+
+    def updateTotalDownloaded(self, pkgDownSize, pkgTotalSize, rate, symbol):
+        if rate == 0:
+            self.rate = "-- KB/s"
+        else:
+            self.rate = "%s %s" % (rate, symbol)
+
+        if pkgDownSize == pkgTotalSize:
+            self.totalDownloaded += int(pkgTotalSize)
+            self.curPkgDownloaded = 0
+        else:
+            self.curPkgDownloaded = int(pkgDownSize)
+
+    def updateTotalOperationPercent(self):
+        totalDownloaded = self.totalDownloaded + self.curPkgDownloaded
+        try:
+            percent = (totalDownloaded * 100) / self.totalSize
+        except ZeroDivisionError:
+            percent = 100
+
+        self.emit(SIGNAL("progress(int)"), percent)
+
     def handler(self, package, signal, args):
         print "Signal:", signal
         print "Args:", args
@@ -44,7 +77,9 @@ class OperationManager(QObject):
 
         elif signal == "fetching":
             self.emit(SIGNAL("operationChanged(QString, QString)"), i18n("downloading"), args[0])
-            self.emit(SIGNAL("progress(int)"), args[1])
+            self.updateTotalDownloaded(args[4], args[5], args[2], args[3])
+            self.calculateTimeLeft(args[2], args[3])
+            self.updateTotalOperationPercent()
 
         elif signal == "started":
             self.initialize()
