@@ -75,18 +75,18 @@ class Install(install):
             kde_dir = "/usr/kde/4"
         bin_dir = os.path.join(kde_dir, "bin")
         #locale_dir = os.path.join(kde_dir, "share/locale")
-        service_dir = os.path.join(kde_dir, "share/kde4/services")
+        autostart_dir = os.path.join(kde_dir, "share/autostart")
         project_dir = os.path.join(kde_dir, "share/apps", about.appName)
         # Make directories
         print "Making directories..."
         makeDirs(bin_dir)
         #makeDirs(locale_dir)
-        makeDirs(service_dir)
+        makeDirs(autostart_dir)
         makeDirs(project_dir)
         # Install desktop files
         print "Installing desktop files..."
         for filename in glob.glob1("data", "*.desktop"):
-            shutil.copy("data/%s" % filename, service_dir)
+            shutil.copy("data/%s" % filename, autostart_dir)
         # Install codes
         print "Installing codes..."
         os.system("cp -R build/* %s/" % project_dir)
