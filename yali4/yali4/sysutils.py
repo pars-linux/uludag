@@ -101,8 +101,7 @@ def finalize_chroot():
     os.chmod(ctx.consts.session_file,0600)
 
     # swap off if it is opened
-    if os.path.exists(consts.swap_file_path):
-        run("swapoff %s" % consts.swap_file_path)
+    run("swapoff -a")
 
     # umount target dir
     umount_(consts.target_dir)
