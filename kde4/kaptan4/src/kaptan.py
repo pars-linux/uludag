@@ -4,14 +4,20 @@
 import sys
 from PyQt4 import QtCore, QtGui
 from PyKDE4 import kdeui
-from PyKDE4.kdecore import ki18n, KAboutData, KCmdLineArgs
+from PyKDE4.kdecore import ki18n, KAboutData, KCmdLineArgs, KConfig
 
 import gui
 from gui.kaptanMain import Ui_kaptanUI
 import gui.ScrWelcome as welcomeWidget
 import gui.ScrMouse as mouseWidget
-import gui.ScrPackage as packageWidget
 import gui.ScrNetwork as networkWidget
+import gui.ScrWallpaper  as wallpaperWidget
+
+# not ready yet
+#import gui.ScrStyle  as styleWidget
+
+# waiting for pisi
+#import gui.ScrPackage as packageWidget
 
 class Kaptan(QtGui.QMainWindow):
     def __init__(self, parent=None):
@@ -19,10 +25,11 @@ class Kaptan(QtGui.QMainWindow):
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = [welcomeWidget, mouseWidget, packageWidget, networkWidget]
+        self.screens = [welcomeWidget, mouseWidget, wallpaperWidget, networkWidget]
         self.screenData = None
         self.moveInc = 1
 
+        self.config = KConfig("kaptanrc")
         self.createWidgets(self.screens)
 
         QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
@@ -64,6 +71,18 @@ class Kaptan(QtGui.QMainWindow):
             _w.update()
             _w.shown()
 
+        if self.ui.mainStack.currentIndex() == len(self.screens)-1:
+            self.ui.buttonNext.hide()
+            self.ui.buttonFinish.show()
+        else:
+            self.ui.buttonNext.show()
+            self.ui.buttonFinish.hide()
+
+        if self.ui.mainStack.currentIndex() == 0:
+            self.ui.buttonBack.hide()
+        else:
+            self.ui.buttonBack.show()
+
     # create all widgets and add inside stack
     def createWidgets(self, screens=[]):
         self.ui.mainStack.removeWidget(self.ui.page)
@@ -91,6 +110,9 @@ class Kaptan(QtGui.QMainWindow):
     def isBackEnabled(self):
         return self.buttonBack.isEnabled()
 
+    def __del__(self):
+        group = self.config.group("General")
+        group.writeEntry("RunOnStart", "False")
 
 if __name__ == "__main__":
     # About data
