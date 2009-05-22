@@ -161,6 +161,9 @@ label harddisk
 
 label memtest
     kernel /boot/memtest
+
+label hdt
+    kernel hdt.c32
 """
 
     # write isolinux.cfg
