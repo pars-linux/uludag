@@ -431,3 +431,7 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
+#. txt_hdt
+msgid "Hardware info"
+msgstr ""
+

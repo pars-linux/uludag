@@ -429,3 +429,7 @@ msgstr "Erneut probieren"
 msgid "Off"
 msgstr "Aus"
 
+#. txt_hdt
+msgid "Hardware info"
+msgstr ""
+

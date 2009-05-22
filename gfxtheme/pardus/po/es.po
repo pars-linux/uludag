@@ -433,3 +433,7 @@ msgstr "Probar de nuevo"
 msgid "Off"
 msgstr "Apagar"
 
+#. txt_hdt
+msgid "Hardware info"
+msgstr ""
+
