@@ -15,6 +15,8 @@ from PyKDE4.kdecore import i18n
 
 from statemanager import StateManager
 
+from pmutils import *
+
 class OperationManager(QObject):
     def __init__(self, state):
         QObject.__init__(self)
@@ -52,6 +54,11 @@ class OperationManager(QObject):
             self.curPkgDownloaded = 0
         else:
             self.curPkgDownloaded = int(pkgDownSize)
+
+        completed = humanReadableSize(self.totalDownloaded + self.curPkgDownloaded, ".2")
+        total = humanReadableSize(self.totalSize, ".2")
+
+        self.emit(SIGNAL("downloadInfoChanged(QString, QString, QString)"), completed, total, self.rate)
 
     def updateTotalOperationPercent(self):
         totalDownloaded = self.totalDownloaded + self.curPkgDownloaded
