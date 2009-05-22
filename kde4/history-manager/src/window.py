@@ -60,6 +60,7 @@ class MainManager(QtGui.QWidget):
         self.connect(self.animator, SIGNAL("finished()"), self.animateFinished)
         self.connect(self.ui.newSnapshotPB, SIGNAL("clicked()"), self.takeSnapshot)
         self.connect(self.ui.buttonCancelMini, SIGNAL("clicked()"), self.hideEditBox)
+        # self.connect(self.ui.labelLabel, SIGNAL(
 
     def loadHistory(self, count=None):
         self.ui.lw.clear()
@@ -232,9 +233,7 @@ class MainManager(QtGui.QWidget):
             self.enableButtons(True)
 
     def handler(self, package, signal, args):
-        # print "Package:",package, "Signal:", signal, "Arguments:", args
-
-        args = map(lambda x: unicode(x), list(args))
+        print "Package:",package, "Signal:", signal, "Arguments:", args
 
         if signal == "status":
             self.status(" ".join(args))
