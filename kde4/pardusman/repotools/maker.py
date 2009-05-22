@@ -236,6 +236,9 @@ def setup_isolinux(project):
     generate_isolinux_conf(project)
 
     copy(os.path.join(image_dir, "usr/lib/syslinux/isolinux-debug.bin"), "%s/isolinux.bin" % dest)
+    copy(os.path.join(image_dir, "usr/lib/syslinux/hdt.c32"), dest)
+    copy(os.path.join(image_dir, "usr/lib/syslinux/gfxboot.com"), dest)
+    copy(os.path.join(image_dir, "usr/lib/syslinux/isolinux-debug.bin"), "%s/isolinux.bin" % dest)
     copy(os.path.join(image_dir, "boot/memtest"), os.path.join(iso_dir, "boot"))
 
 #
