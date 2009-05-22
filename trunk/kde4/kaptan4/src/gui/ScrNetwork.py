@@ -14,6 +14,7 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyKDE4.kdecore import ki18n
+from PyKDE4.kutils import KCModuleInfo, KCModuleProxy
 
 from gui.ScreenWidget import ScreenWidget
 from gui.networkWidget import Ui_networkWidget
@@ -30,24 +31,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_networkWidget()
         self.ui.setupUi(self)
 
-        self.embedded = QX11EmbedWidget(self.ui.networkFrame)
-        self.embedded.resize(500,350)
-
-    def __del__(self):
-        if self.proc.ProcessState() == 2:
-            self.proc.kill()
-            self.running = False
-
-    def shown(self):
-        if not self.running:
-            # embed future network-manager (qt4)
-            self.running = True
-            self.connect(self.proc, SIGNAL("processExited()"),  self.endProcess)
-
-    def endProcess(self):
-        self.running = False
+        moduleInfo = KCModuleInfo("settings-network-manager.desktop")
+        nm = KCModuleProxy(moduleInfo)
+        self.ui.layout.addWidget(nm)
 
     def execute(self):
         return True
-
-
