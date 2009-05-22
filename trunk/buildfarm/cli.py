@@ -10,7 +10,10 @@
 # Please read the COPYING file.
 #
 
+import os
+import re
 import sys
+import shutil
 
 import pisi
 import pisi.context as ctx
@@ -44,27 +47,77 @@ class CLI(pisi.ui.UI):
         self.errors = 0
         self.output_file = output
 
-        self.outtypes = {'Warning'  : ('brightyellow', 'brightyellow'),
-                         'Error'    : ('red', 'red'),
-                         'Action'   : ('green', 'green'),
-                         'Notify'   : ('cyan', 'cyan'),
-                         'Status'   : ('brightgreen', 'brightgreen'),
-                         'Display'  : ('gray', 'gray')}
+        self.outtypes = {'Warning'  : ('brightyellow', '\033[01;33m', '#FFFF00'),
+                         'Error'    : ('red', '\033[31m', '#CC0000'),
+                         'Action'   : ('green', '\033[32m', '#00CC00'),
+                         'Notify'   : ('cyan', '\033[36m', '#99CCFF'),
+                         'Status'   : ('brightgreen', '\033[01;32m', '#00FF00'),
+                         'Display'  : ('gray', 'aa', '#CCCCCC'),
+                         'Default'  : ('default', '\033[0m', '#CCCCCC')}
+
+        self.colormap = dict([(v,m) for k,v,m in self.outtypes.values()])
+
+    def prepareLogs(self):
+        txtfile = self.output_file.name
+        htmlfile = txtfile.replace(".txt", ".html")
+        package = os.path.basename(txtfile.split(".txt")[0])
+
+        self.output_file.flush()
+        shutil.copy(txtfile, htmlfile)
+
+        logfile = txtfile.replace(".txt", ".log")
+        tf = open(logfile, "w")
+        for l in open(htmlfile, "r").readlines():
+            l = l.rstrip('\033[0m\n') + '\n'
+            match = re.match("(\033.*?m)(.*)", l)
+            if match:
+                tf.write("%s\n" % match.groups()[1])
+            else:
+                tf.write(l)
+
+        tf.close()
+
+        # We now have an HTML file which as ANSI colored text file
+        hf = open("%s.swp" % htmlfile, "w")
+        hf.write("<html><head><title>Build logs for %s</title></head>\n" % package)
+        hf.write("<body style=\"background-color: #000000; color: #CCCCCC; font-family: Monospace\">\n")
+        for l in open(htmlfile, "r").readlines():
+            l = l.rstrip('\033[0m\n') + '\n'
+            match = re.match("(\033.*?m)(.*)", l)
+            if match:
+                match = match.groups()
+                hf.write("<span style=\"color: %s\">%s</span><br />\n" % (self.colormap[match[0]], match[1]))
+            else:
+                hf.write("<span>%s</span><br />\n" % l)
+
+        hf.write("\n</body></html>")
+        hf.close()
+
+        shutil.move("%s.swp" % htmlfile, htmlfile)
+
+        try:
+            os.unlink(txtfile)
+        except IOError:
+            pass
 
     def close(self):
         pisi.util.xterm_title_reset()
 
-    def format(self, msg, msgtype, colored=True):
+    def format(self, msg, msgtype, colored=True, html=False):
         result = ""
-        if not ctx.get_option('no_color'):
-            if msgtype == 'Display':
-                result = msg
-            elif colored and self.outtypes.has_key(msgtype):
-                result = pisi.util.colorize(msg + '\n', self.outtypes[msgtype][0])
-            else:
-                result = msg + '\n'
+        if html:
+            # HTML Output
+            result = "<span style=\"color: %s\">%s</span><br />\n" % (self.outtypes.get(msgtype, ['',  '', '#000000'])[2], msg)
         else:
-            result = msgtype + ': ' + msg + '\n'
+            if not ctx.get_option('no_color'):
+                if msgtype == 'Display':
+                    result = msg
+                elif colored and self.outtypes.has_key(msgtype):
+                    result = pisi.util.colorize(msg, self.outtypes[msgtype][0]) + '\n'
+                else:
+                    result = msg + '\n'
+            else:
+                result = msgtype + ': ' + msg + '\n'
 
         return result
 
@@ -82,7 +135,7 @@ class CLI(pisi.ui.UI):
             out.flush()
 
             # Output the same stuff to the log file
-            self.output_file.write(self.format(msg, msgtype, False))
+            self.output_file.write(self.format(msg, msgtype, colored=True))
             self.output_file.flush()
 
     def info(self, msg, verbose=False, noln=False):

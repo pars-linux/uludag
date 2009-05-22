@@ -12,6 +12,7 @@
 
 # Various helper functions for pisi packages
 
+import os
 import glob
 
 def getBuild(p):
@@ -19,6 +20,9 @@ def getBuild(p):
 
 def getName(p):
     return p.rstrip(".pisi").rsplit("-", 3)[0]
+
+def getPackageNameFromPath(p):
+    return os.path.basename(os.path.dirname(p))
 
 def isdelta(p):
     return p.endswith(".delta.pisi")
