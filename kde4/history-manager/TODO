@@ -23,11 +23,12 @@ TODO List
 
 + Release as 0.2.3
 
-- Fix empty tuples in pisi progress messages issue
 + Support aliases to operations
 + Use system icons if possible ( not sure )
-- Add "More history" thing
 + Refresh browser after operation
 + Fix resize, move of widget
 
-- Release as 0.2.4
++ Release as 0.2.4
+
+- Fix empty tuples in pisi progress messages issue
+- Add "More history" thing
