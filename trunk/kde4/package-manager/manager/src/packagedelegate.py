@@ -22,6 +22,7 @@ from PyKDE4.kdecore import *
 from packagemodel import *
 from rowanimator import RowAnimator
 
+DEFAULT_ICON = ":/data/package.png"
 ICON_PADDING = 0
 ICON_SIZE = 24
 DETAIL_LINE_OFFSET = 36
@@ -31,6 +32,7 @@ class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
         self.rowAnimator = RowAnimator(parent.packageList.reset)
+        self.defaultIcon = QtGui.QIcon(QtGui.QPixmap(DEFAULT_ICON))
 
     def paint(self, painter, option, index):
         if not index.isValid():
@@ -73,8 +75,11 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         margin = left + ICON_PADDING
 
-        icon_path = index.model().data(index, Qt.DecorationRole)
-        icon = QtGui.QIcon(QtGui.QPixmap(icon_path.toString()))
+        icon_path = index.model().data(index, Qt.DecorationRole).toString()
+        if icon_path == DEFAULT_ICON:
+            icon = self.defaultIcon
+        else:
+            icon = QtGui.QIcon(QtGui.QPixmap(icon_path))
         icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
 
         title = index.model().data(index, Qt.DisplayRole)
