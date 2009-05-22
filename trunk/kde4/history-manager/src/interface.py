@@ -39,7 +39,11 @@ class PisiIface(QThread):
         super(PisiIface, self).__init__(parent)
         self.parent = parent
 
+        self.pdb = None
         self.max_fetch = None
+        self.initDb()
+
+    def initDb(self):
         self.pdb = pisi.db.historydb.HistoryDB()
         self.pdb.init()
 
@@ -77,3 +81,7 @@ class PisiIface(QThread):
             return
         self.max_fetch = num
 
+    def getLastOperation(self):
+        op = self.pdb.get_last()
+        op = op.next()
+        return op
