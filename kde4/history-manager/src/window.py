@@ -39,6 +39,7 @@ class MainManager(QtGui.QWidget):
         self.tweakUi()
 
         self.ops = {}
+        self.last_item = None
 
         self.cface = ComarIface()
         self.pface = PisiIface(self)
@@ -60,7 +61,7 @@ class MainManager(QtGui.QWidget):
         self.connect(self.animator, SIGNAL("finished()"), self.animateFinished)
         self.connect(self.ui.newSnapshotPB, SIGNAL("clicked()"), self.takeSnapshot)
         self.connect(self.ui.buttonCancelMini, SIGNAL("clicked()"), self.hideEditBox)
-        # self.connect(self.ui.labelLabel, SIGNAL(
+        self.connect(self.ui.aliasLE, SIGNAL("textEdited(const QString &)"), self.setAlias)
 
     def loadHistory(self, count=None):
         self.ui.lw.clear()
@@ -80,6 +81,10 @@ class MainManager(QtGui.QWidget):
         self.ui.lw.sortItems(Qt.DescendingOrder)
         self.status(i18n("Last %d Operations Loaded" % len(items)))
         self.enableButtons(True)
+
+    def setAlias(self, txt):
+        if self.last_item:
+            self.last_item.setAlias(txt)
 
     def tweakUi(self):
         self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
@@ -120,8 +125,11 @@ class MainManager(QtGui.QWidget):
 
         self.ui.textEdit.clear()
         item = self.sender().parent()
+        self.last_item = item
 
         self.ui.editGroup.setTitle("Details for operation on %s at %s" % (item.op_date, item.op_time))
+
+        self.ui.aliasLE.setText(unicode(item.ui.labelLabel.text()))
 
         message = ""
         if item.op_type == "snapshot":
@@ -148,6 +156,7 @@ class MainManager(QtGui.QWidget):
         self.hideScrollBars()
 
         item = self.sender().parent()
+        self.last_item = item
 
         self.app.processEvents()
 
