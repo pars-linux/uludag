@@ -73,12 +73,8 @@ class MainManager(QtGui.QWidget):
             items = self.ops.items()
 
         for (k, v) in items:
-            item = HistoryItem(self.ui.lw, v.no)
-            item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
-            item.setSizeHint(QSize(38,48))
-            self.ui.lw.setItemWidget(item, NewOperation(v, self))
+            self.addNewOperation(v)
 
-        self.ui.lw.sortItems(Qt.DescendingOrder)
         self.status(i18n("Last %d Operations Loaded" % len(items)))
         self.enableButtons(True)
 
@@ -148,6 +144,13 @@ class MainManager(QtGui.QWidget):
 
         self.status(i18n("Ready .."))
 
+    def addNewOperation(self, op):
+        item = HistoryItem(self.ui.lw, op.no)
+        item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
+        item.setSizeHint(QSize(38,48))
+        self.ui.lw.setItemWidget(item, NewOperation(op, self))
+        self.ui.lw.sortItems(Qt.DescendingOrder)
+
     def loadPlan(self):
         self.status(i18n("Loading Operation Plan"))
 
@@ -201,6 +204,10 @@ class MainManager(QtGui.QWidget):
             self.ui.opTypeLabel.setText(txt)
             self.ui.opTypeLabel.show()
 
+    def takeLastOperation(self):
+        self.pface.initDb()
+        return self.pface.getLastOperation()
+
     def takeBack(self):
         willbeinstalled, willberemoved = None, None
 
@@ -248,6 +255,7 @@ class MainManager(QtGui.QWidget):
             self.status(" ".join(args))
         elif signal == "finished":
             self.status(i18n("Finished succesfully"))
+            self.addNewOperation( self.takeLastOperation() )
             self.enableButtons(True)
         elif signal == "progress":
             self.status(i18n("In Progress"))
