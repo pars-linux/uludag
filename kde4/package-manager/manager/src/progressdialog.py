@@ -46,8 +46,8 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
     def updateRemainingTime(self, time):
         self.timeRemaining.setText(time)
 
-    def updateCompletedInfo(self, completed):
-        self.completedInfo.setText(completed)
+    def updateCompletedInfo(self, completed, total, rate):
+        self.completedInfo.setText(i18n("<p align='center'>%1 / %2, %3</p>", completed, total, rate))
 
     def enableCancel(self):
         self.cancelButton.setEnabled(True)

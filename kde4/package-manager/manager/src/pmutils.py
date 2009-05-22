@@ -22,3 +22,16 @@ def restoreCursor():
 
 def processEvents():
     QtGui.QApplication.processEvents()
+
+def humanReadableSize(size, precision=".1"):
+    symbols, depth = [' B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'], 0
+
+    while size > 1000 and depth < 8:
+        size = float(size / 1024)
+        depth += 1
+
+    if size == 0:
+        return "0 B"
+
+    fmt = "%%%sf %%s" % precision
+    return fmt % (size, symbols[depth])
