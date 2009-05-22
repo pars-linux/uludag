@@ -229,9 +229,6 @@ about disk partitioning.
             self.enable_next = True
             self.ui.accept_auto_1.setEnabled(False)
             self.ui.accept_auto_2.setEnabled(False)
-        else:
-            self.ui.accept_auto_1.setEnabled(True)
-            self.ui.accept_auto_2.setEnabled(True)
         if self.enable_next:
             ctx.mainScreen.enableNext()
         else:
