@@ -19,7 +19,7 @@ class HistoryItem(QListWidgetItem):
 
 class NewOperation(QWidget):
     def __init__(self, operation, parent=None):
-        super(NewOperation, self).__init__(None)
+        super(NewOperation, self).__init__(parent)
 
         self.parent = parent
         self.ui = Ui_HistoryItemWidget()
@@ -35,7 +35,7 @@ class NewOperation(QWidget):
         self.op_time = operation.time
         self.op_pack = []
         self.op = operation
-        self.label = " - ".join([self.op_date, self.op_time])
+        self.alias = " - ".join([self.op_date, self.op_time])
 
         for i in operation.packages:
             self.op_pack.append(i.__str__())
@@ -65,37 +65,21 @@ class NewOperation(QWidget):
             self.op_type_tr = i18n("repo update")
 
         if self.settings.contains("%d/label" % self.op_no):
-            self.ui.labelLabel.setText(self.settings.value("%d/label" % self.op_no).toString())
-        else:
-            self.ui.labelLabel.setText(self.label)
+            self.alias = self.settings.value("%d/label" % self.op_no).toString()
+
+        self.ui.labelLabel.setText(self.alias)
 
         self.ui.typeLabel.setText("No: %d   Type: %s" % (self.op_no, self.op_type_tr))
         self.ui.iconLabel.setPixmap(QPixmap(self.icon))
-
-        self.ui.labelLabel.installEventFilter(self)
 
         self.connect(self.ui.restorePB, SIGNAL("clicked()"), self.parent.takeBack)
         self.connect(self.ui.detailsPB, SIGNAL("clicked()"), self.parent.loadDetails)
         self.connect(self.ui.planPB, SIGNAL("clicked()"), self.parent.loadPlan)
 
-    def eventFilter(self, obj=None, event=None):
-        if obj == self.ui.labelLabel:
-            if event.type() == QEvent.Leave:
-                self.label = self.ui.labelLabel.text()
-                self.settings.setValue("%d/label" % self.op_no, QVariant(self.label))
-                print "Operation : %d Set to %s" % (self.op_no, self.label)
-                event.accept()
-            elif event.type() == 150:
-                print "Entered edit focus"
-            elif event.type() == 151:
-                print "Left edit focus"
-            else:
-                print "Other event : %d" % event.type()
-                event.ignore()
-        else:
-            event.ignore()
-
-        return 0
+    def setAlias(self, txt):
+        self.alias = txt
+        self.settings.setValue("%d/label" % self.op_no, QVariant(self.alias))
+        self.ui.labelLabel.setText(self.alias)
 
     def enterEvent(self, event):
         if not self.toggled:

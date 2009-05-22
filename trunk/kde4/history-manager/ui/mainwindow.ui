@@ -67,7 +67,7 @@
         <x>0</x>
         <y>0</y>
         <width>653</width>
-        <height>325</height>
+        <height>326</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
@@ -79,6 +79,16 @@
          <layout class="QGridLayout" name="gridLayout">
           <item row="0" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLabel" name="aliasLabel">
+              <property name="text">
+               <string>Alias :</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="aliasLE"/>
+            </item>
             <item>
              <spacer name="horizontalSpacer_2">
               <property name="orientation">
