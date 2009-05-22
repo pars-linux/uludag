@@ -431,5 +431,5 @@ msgstr "Kapalı"
 
 #. txt_hdt
 msgid "Hardware info"
-msgstr ""
+msgstr "Donanım bilgisi"
 
