@@ -162,7 +162,7 @@ label harddisk
 label memtest
     kernel /boot/memtest
 
-label hdt
+label hardware
     kernel hdt.c32
 """
 
