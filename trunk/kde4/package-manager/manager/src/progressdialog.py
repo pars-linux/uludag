@@ -27,7 +27,7 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
     def startAnimation(self):
         self.movie = QtGui.QMovie(self)
         self.animeLabel.setMovie(self.movie)
-        self.movie.setFileName("data/pisianime.gif")
+        self.movie.setFileName(":/data/pisianime.gif")
         self.movie.start()
 
     def updateProgress(self, progress):
