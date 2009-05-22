@@ -428,3 +428,8 @@ msgstr "Sonder à Nouveau"
 #. txt_zorg_off
 msgid "Off"
 msgstr "Fermé"
+
+#. txt_hdt
+msgid "Hardware info"
+msgstr ""
+

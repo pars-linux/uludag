@@ -429,3 +429,7 @@ msgstr "Tekrar tanı"
 msgid "Off"
 msgstr "Kapalı"
 
+#. txt_hdt
+msgid "Hardware info"
+msgstr ""
+

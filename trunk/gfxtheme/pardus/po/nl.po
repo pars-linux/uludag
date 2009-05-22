@@ -427,3 +427,7 @@ msgstr "Opnieuw koppelen"
 msgid "Off"
 msgstr "Uit"
 
+#. txt_hdt
+msgid "Hardware info"
+msgstr ""
+
