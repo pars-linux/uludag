@@ -221,8 +221,9 @@ class FileSystem:
 
     def resize(self, size_mb, partition):
         """ Resize given partition as given size """
-        if size_mb < self.minResizeMB(partition):
-            return False
+        minsize = self.minResizeMB(partition)
+        if size_mb < minsize:
+            size_mb = minsize
         cmd_path = requires("resize2fs")
 
         # Check before resize
@@ -374,8 +375,9 @@ class BtrfsFileSystem(FileSystem):
         return sysutils.run(cmd)
 
     def resize(self, size_mb, partition):
-        if size_mb < self.minResizeMB(partition):
-            return False
+        minsize = self.minResizeMB(partition)
+        if size_mb < minsize:
+            size_mb = minsize
 
         if not self.preResize(partition):
             raise FSError, _("Partition is not ready for resizing. Check it before installation.")
@@ -464,8 +466,9 @@ class NTFSFileSystem(FileSystem):
         return sysutils.run(cmd)
 
     def resize(self, size_mb, partition):
-        if size_mb < self.minResizeMB(partition):
-            return False
+        minsize = self.minResizeMB(partition)
+        if size_mb < minsize:
+            size_mb = minsize
 
         if not self.resizeSilent(size_mb, partition) or not self.preResize(partition):
             raise FSError, _("Partition is not ready for resizing. Check it before installation.")
