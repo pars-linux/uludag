@@ -243,7 +243,7 @@ def setup_isolinux(project):
     copy(os.path.join(image_dir, "usr/lib/syslinux/hdt.c32"), dest)
     copy(os.path.join(image_dir, "usr/lib/syslinux/gfxboot.com"), dest)
     copy(os.path.join(image_dir, "usr/share/misc/pci.ids"), dest)
-    copy(os.path.join(image_dir, "lib/modules/%s-%s/modules.pcimap" (repo.packages["kernel"].version, repo.packages["kernel"].release)), dest)
+    copy(os.path.join(image_dir, "lib/modules/%s-%s/modules.pcimap" % (repo.packages["kernel"].version, repo.packages["kernel"].release)), dest)
     copy(os.path.join(image_dir, "boot/memtest"), os.path.join(iso_dir, "boot"))
 
 #
