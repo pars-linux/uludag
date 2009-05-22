@@ -1,3 +1,30 @@
+2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * New release 2.1.7, Po update ..
+
+2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Much better NTFS resize process.. 
+
+2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Do not fail when user wants to resize the disk less than minimum possible resize size; just use the minimum one ..
+
+2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * not needed ..
+
+2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Select the first avaliable partition by default 
+
+2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Swap off for all opened swap file or partitions
+
+2009-05-21 klemens
+         * some spanish language additions and adjustments (kh)
+
+2009-05-21 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Add btrfs resize and use dynamic Filesystem list in Manual Partitioning ... We can not use btrfs for now because of the old Parted that we use ...
+
+2009-05-21 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Btrfs support
+
 2009-05-21 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * New release 2.1.6, Po update ..
 
