@@ -10,6 +10,8 @@
 #
 # Please read the COPYING file
 
+import time
+
 from PyQt4.QtCore import QObject, SIGNAL
 from PyKDE4.kdecore import i18n
 
