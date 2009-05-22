@@ -456,13 +456,13 @@ class NTFSFileSystem(FileSystem):
     def resizeSilent(self, size_mb, partition):
         # don't do anything, just check
         cmd_path = requires("ntfsresize")
-        cmd = "%s -n -f -s %dM %s" % (cmd_path, size_mb, partition.getPath())
+        cmd = "%s -n -ff -s %dM %s" % (cmd_path, size_mb, partition.getPath())
         return sysutils.run(cmd)
 
     def preResize(self, partition):
         """ Routine operations before resizing """
-        cmd_path = requires("ntfsck")
-        cmd = "%s %s" % (cmd_path, partition.getPath())
+        cmd_path = requires("ntfsresize")
+        cmd = "%s -c %s" % (cmd_path, partition.getPath())
         return sysutils.run(cmd)
 
     def resize(self, size_mb, partition):
@@ -473,18 +473,11 @@ class NTFSFileSystem(FileSystem):
         if not self.resizeSilent(size_mb, partition) or not self.preResize(partition):
             raise FSError, _("Partition is not ready for resizing. Check it before installation.")
 
-        p = os.pipe()
-        os.write(p[1], "y\n")
-        os.close(p[1])
-
         cmd_path = requires("ntfsresize")
-        res = sysutils.execClear(cmd_path,
-                                ["-f","-s", "%sM" % (size_mb), partition.getPath()],
-                                stdin = p[0],
-                                stdout = "/tmp/resize.log",
-                                stderr = "/tmp/resize.log")
-        if res:
-            raise FSError, "Resize failed on %s " % (partition.getPath())
+        cmd = "%s -ff -s %dM %s" % (cmd_path, size_mb, partition.getPath())
+
+        if not sysutils.run(cmd):
+            raise FSError, _("Resize failed on %s " % partition.getPath())
 
         return True
 
