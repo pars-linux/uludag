@@ -28,9 +28,21 @@ class Kaptan(QtGui.QMainWindow):
         self.screens = [welcomeWidget, mouseWidget, wallpaperWidget, networkWidget]
         self.screenData = None
         self.moveInc = 1
-
+        self.menuText = ""
         self.config = KConfig("kaptanrc")
         self.createWidgets(self.screens)
+
+        self.screenId = []
+        for each in self.screens:
+            title = each.Widget().windowTitle()
+            self.screenId.append(title)
+
+            if self.screens.index(each) == 0:
+                self.menuText += self.putBold(title)
+            else:
+                self.menuText += self.putBr(title)
+
+        self.ui.labelMenu.setText(self.menuText)
 
         QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
         QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
@@ -50,6 +62,19 @@ class Kaptan(QtGui.QMainWindow):
 
     # execute next step
     def slotNext(self,dryRun=False):
+        self.menuText = ""
+        curIndex = self.ui.mainStack.currentIndex() +1
+
+        for each in self.screenId:
+            i = self.screenId.index(each)
+            if  curIndex < len(self.screenId):
+                if i == curIndex:
+                    self.menuText += self.putBold(self.screenId[i])
+                else:
+                    self.menuText += self.putBr(self.screenId[i])
+
+        self.ui.labelMenu.setText(self.menuText)
+
         _w = self.ui.mainStack.currentWidget()
         ret = _w.execute()
         if ret:
@@ -58,10 +83,29 @@ class Kaptan(QtGui.QMainWindow):
 
     # execute previous step
     def slotBack(self):
+        self.menuText = ""
+        curIndex = self.ui.mainStack.currentIndex()
+        for each in self.screenId:
+            i = self.screenId.index(each)
+            if i <= len(self.screenId) and not i == 0:
+                if i == curIndex:
+                    self.menuText += self.putBold(self.screenId[i -1])
+                else:
+                    self.menuText += self.putBr(self.screenId[i -1])
+
+        self.menuText += self.putBr(self.screenId[-1])
+        self.ui.labelMenu.setText(self.menuText)
+
         _w = self.ui.mainStack.currentWidget()
         _w.backCheck()
         self.stackMove(self.getCur(self.moveInc * -1))
         self.moveInc = 1
+
+    def putBr(self, item):
+        return unicode("» ") + item + "<br>"
+
+    def putBold(self, item):
+        return "<b>" + unicode("» ") + item + "</b><br>"
 
     # move to id numbered stack
     def stackMove(self, id):
