@@ -100,5 +100,5 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        pass
+        return True
 
