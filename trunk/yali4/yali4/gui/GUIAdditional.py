@@ -120,6 +120,7 @@ class AutoPartQuestionWidget(QtGui.QWidget):
         for part in partList:
             pi = PartitionItem(self.ui.partition_list, part)
 
+        self.ui.partition_list.setCurrentRow(0)
         self.ui.bestChoice.toggle()
         self.slotDisableList()
         self.resize(ctx.mainScreen.ui.size())
