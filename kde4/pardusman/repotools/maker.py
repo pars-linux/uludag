@@ -150,7 +150,7 @@ def generate_isolinux_conf(project):
 prompt 1
 timeout 200
 
-gfxboot /boot/isolinux/init
+ui gfxboot.com /boot/isolinux/init
 
 label pardus
     kernel /boot/kernel
