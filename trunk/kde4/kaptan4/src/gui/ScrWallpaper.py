@@ -15,19 +15,20 @@ from PyQt4 import QtGui
 from PyQt4.QtGui import QFileDialog
 
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal
-
-import os, sys, glob
+from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
+import os, sys, subprocess
 
 from gui.ScreenWidget import ScreenWidget
 from gui.wallpaperWidget import Ui_wallpaperWidget
-from wallpaperwidget import WallpaperItemWidget
+from widgets import WallpaperItemWidget
 
 from desktopparser import DesktopParser
 from ConfigParser import ConfigParser
 
+
 class Widget(QtGui.QWidget, ScreenWidget):
-    # Set title and description for the information widget
+
+    # title and description at the top of the dialog window
     title = ki18n("Insert some catchy title about wallpapers..")
     desc = ki18n("Wonderful, awesome, superb wallpapers! \m/")
 
@@ -61,7 +62,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 wallpaperDesc = parser.get_locale('Desktop Entry', 'X-KDE-PluginInfo-Author', '')
             except:
-                wallpaperDesc = "Unknown Author"
+                wallpaperDesc = "Unknown"
 
             # Get all files in the wallpaper's directory
             l = os.listdir(os.path.join(os.path.split(str(desktopFiles))[0], "contents/images"))
@@ -73,7 +74,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 self.screenRes = "x".join(sorted(filter(isSquare, [os.path.splitext(x)[0].split("x") for x in l]))[-1])
 
             # Get wallpaper's path and thumbnail. Note that the thumbnail should be located at @wallpaper/contents/screenshot.png
-            wallpaperFile = glob.glob(os.path.join(os.path.split(str(desktopFiles))[0], "contents/images", self.screenRes + ".*"))[0]
+            #wallpaperFile = glob.glob(os.path.join(os.path.split(str(desktopFiles))[0], "contents/images", self.screenRes + ".*"))[0]
+            wallpaperFile = os.path.split(str(desktopFiles))[0]
             wallpaperThumb = os.path.join(os.path.split(str(desktopFiles))[0], "contents/screenshot.png")
 
             # Insert wallpapers to listWidget.
@@ -90,8 +92,35 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 
     def setWallpaper(self):
-        # TODO: Use Gokmen's Dbus call when it's read call when it's readyy
         selectedWallpaper =  self.ui.listWallpaper.currentItem().statusTip()
+        config =  KConfig("plasma-appletsrc")
+        group = config.group("Containments")
+        for each in list(group.groupList()):
+            subgroup = group.group(each)
+            subcomponent = subgroup.readEntry('plugin')
+            if subcomponent == 'desktop':
+                subg = subgroup.group('Wallpaper')
+                subg_2 = subg.group('image')
+                subg_2.writeEntry("wallpaper", selectedWallpaper)
+
+        self.killPlasma()
+
+    def killPlasma(self):
+        p = subprocess.Popen(["pidof", "-s", "plasma"], stdout=subprocess.PIPE)
+        out, err = p.communicate()
+        pidOfPlasma = int(out)
+
+        try:
+            os.kill(pidOfPlasma, 15)
+            self.startPlasma()
+        except OSError, e:
+            print 'WARNING: failed os.kill: %s' % e
+            print "Trying SIGKILL"
+            os.kill(pidOfPlasma, 9)
+            self.startPlasma()
+
+    def startPlasma(self):
+        p = subprocess.Popen(["plasma"], stdout=subprocess.PIPE)
 
     def selectWallpaper(self):
         selectedFile = QFileDialog.getOpenFileName(None,"Open Image", os.path.expanduser("~"), 'Image Files (*.png *.jpg *bmp)')
@@ -101,7 +130,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         else:
             item = QtGui.QListWidgetItem(self.ui.listWallpaper)
             wallpaperName = os.path.splitext(os.path.split(str(selectedFile))[1])[0]
-            widget = WallpaperItemWidget(unicode(wallpaperName), unicode("Unknown Author"), selectedFile, self.ui.listWallpaper)
+            widget = WallpaperItemWidget(unicode(wallpaperName), unicode("Unknown"), selectedFile, self.ui.listWallpaper)
             self.ui.listWallpaper.setItemWidget(item, widget)
             item.setSizeHint(QSize(38,110))
             item.setStatusTip(selectedFile)
@@ -111,4 +140,5 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def execute(self):
         return True
+
 
