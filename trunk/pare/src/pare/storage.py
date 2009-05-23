@@ -33,8 +33,8 @@ class Pare(object):
                     self._diskTable[disk.path] =  disk
                 else:
                     raise PareError("Filling Disk failed!")
-                
-            self._update()
+            for disk in self._diskTable.itervalues():    
+                self._update(disk)
     
     def _addPartitionDict(self, disk, part):
         
@@ -55,19 +55,20 @@ class Pare(object):
                 return FreeSpace(disk, part, size, geom.start, geom.end)
         
         if not self._partitionTable.has_key(disk.path):
-            print "getParePartition(disk,part).name:%s" % getParePartition(disk,part)
+            #print "getParePartition(disk,part).name:%s" % getParePartition(disk,part)
             self._partitionTable[disk.path] = [getParePartition(disk,part)]
         else:
-            print "getParePartition(disk,part).name:%s" % getParePartition(disk,part)
+            #print "getParePartition(disk,part).name:%s" % getParePartition(disk,part)
             self._partitionTable[disk.path].append(getParePartition(disk, part))
     
-    def _update(self):
-        for disk in self._diskTable.itervalues():
+    def _update(self, disk):
+        
             print "len:%d" % len(disk.getAllPartitions())
             for part in disk.getAllPartitions():
                 print "name:%s" % part.path
                 self._addPartitionDict(disk, part)
-                    
+    
+    @property                
     def disks(self):
         return self._diskTable.itervalues()
     
