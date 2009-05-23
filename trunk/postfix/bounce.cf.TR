@@ -13,22 +13,22 @@
 #
 
 failure_template = <<EOF
-Charset: UTF-8
-From: MAILER-DAEMON (E-posta iletim servisi)
-Subject: Undelivered Mail Returned to Sender
+Charset: us-ascii
+From: E-POSTANE (Posta İletim Sistemi)
+Subject: Iletilemeyen Posta Gonderene Geri Donduruldu
 Postmaster-Subject: Postmaster Copy: Undelivered Mail
 
-This is the mail system at host $myhostname.
+Ben $myhostname eposta sistemiyim.
 
-I'm sorry to have to inform you that your message could not
-be delivered to one or more recipients. It's attached below.
+Üzülerek bildirmek zorundayım ki, epostanız alıcıların en az
+birine ulaştırılamadı. Ulaştırılamayan bu eposta ektedir.
 
-For further assistance, please send mail to postmaster.
+Ek yardım için e-postane yönetimine eposta 
+gönderebilirsiniz. Gönderirseniz, lütfen bu problem 
+bildirimini de ekleyin. Ekteki döndürülen epostadan kendi 
+yazdığınız metinleri silebilirsiniz.
 
-If you do so, please include this problem report. You can
-delete your own text from the attached returned message.
-
-                   The mail system
+                   Posta sistemi
 EOF
 
 
@@ -47,26 +47,27 @@ EOF
 #
 
 delay_template = <<EOF
-Charset: UTF-8
-From: MAILER-DAEMON (E-posta iletim servisi)
-Subject: Delayed Mail (still being retried)
+Charset: us-ascii
+From: E-POSTANE (Posta İletim Sistemi)
+Subject: Geciken Eposta (denemeler devam ediyor)
 Postmaster-Subject: Postmaster Warning: Delayed Mail
 
-This is the mail system at host $myhostname.
+Ben $myhostname eposta sistemiyim.
 
-####################################################################
-# THIS IS A WARNING ONLY.  YOU DO NOT NEED TO RESEND YOUR MESSAGE. #
-####################################################################
+#######################################################################
+# BU SADECE BİR BİLDİRİMDİR. EPOSTANIZI YENİDEN GÖNDERMENİZ GEREKMEZ. #
+#######################################################################
 
-Your message could not be delivered for more than $delay_warning_time_hours hour(s).
-It will be retried until it is $maximal_queue_lifetime_days day(s) old.
+Epostanız $delay_warning_time_hours saattir alıcıya iletilemedi.
+Eposta gönderiminin üzerinden $maximal_queue_lifetime_days gün geçene
+kadar denemeye devam edeceğim.
 
-For further assistance, please send mail to postmaster.
+Ek yardım için e-postane yönetimine eposta 
+gönderebilirsiniz. Gönderirseniz, lütfen bu problem 
+bildirimini de ekleyin. Ekteki döndürülen epostadan kendi 
+yazdığınız metinleri silebilirsiniz.
 
-If you do so, please include this problem report. You can
-delete your own text from the attached returned message.
-
-                   The mail system
+                   Posta sistemi
 EOF
 
 
@@ -78,18 +79,18 @@ EOF
 #
 
 success_template = <<EOF
-Charset: UTF-8
-From: MAILER-DAEMON (E-posta iletim servisi)
-Subject: Successful Mail Delivery Report
+Charset: us-ascii
+From: E-POSTANE (Posta İletim Sistemi)
+Subject: Posta Basariyla Iletildi
 
-This is the mail system at host $myhostname.
+Ben $myhostname eposta sistemiyim.
 
-Your message was successfully delivered to the destination(s)
-listed below. If the message was delivered to mailbox you will
-receive no further notifications. Otherwise you may still receive
-notifications of mail delivery errors from other systems.
+Epostanız aşağıda listelenen hedeflere başarıyla ulaştırıldı.
+Eğer ileti posta kutusuna ulaştıysa başka bildiri almayacaksınız.
+Aksi taktirde diğer sistemlerden posta iletimiyle ilgili hata
+bildirimleri alabilirsiniz.
 
-                   The mail system
+                   Posta sistemi
 EOF
 
 
@@ -100,13 +101,13 @@ EOF
 #
 
 verify_template = <<EOF
-Charset: UTF-8
-From: MAILER-DAEMON (E-posta iletim servisi)
+Charset: us-ascii
+From: E-POSTANE (Posta İletim Sistemi)
 Subject: Mail Delivery Status Report
 
-This is the mail system at host $myhostname.
+Ben $myhostname eposta sistemiyim.
 
-Enclosed is the mail delivery report that you requested.
+İstediğiniz eposta iletim raporunu ekte bulabilirsiniz.
 
-                   The mail system
+                   Posta sistemi
 EOF
