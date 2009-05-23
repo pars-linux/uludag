@@ -9,7 +9,7 @@
 #
 # Please read the COPYING file.
 
-from pare import Pare
+from pare.storage import Pare
 
 class Test(object):
 
@@ -17,18 +17,18 @@ class Test(object):
     def __init__(self):
         self.pare = Pare()
 
-    def testDevices(self):
-        self.pare.storageInitialize()
-        print "birinci"
-        devices = None
-        devices=self.pare.devices
-        print devices
-        if devices == None:
-            print "Upss"
-        for dev in devices:
-            print dev.name
-
+    def listDisks(self):
+        disks = self.pare.disks
+        for disk in disks:
+            print "disk.path:%s" % disk.path
+        return disks
+    
+    def listPartitions(self, disk):
+        for part in self.pare.diskPartitions(disk):
+                print "%s disk partitions%s" % (disk.path, part.path)
 
 if __name__ == "__main__":
     test = Test()
-    test.testDevices()
+    disks = test.listDisks()
+    for disk in disks:
+        test.listPartitions(disk.path)
