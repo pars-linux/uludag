@@ -106,7 +106,7 @@ class Disk:
 
         self._device = device
         try:
-            self._disk = parted.Disk.new(dev)
+            self._disk = parted.Disk.new(device)
         except:
             label = archinfo[self._arch]["disklabel"]
             self._disk = parted.freshDisk(self._device, ty=label)
