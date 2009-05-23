@@ -44,7 +44,7 @@ disks = []
 
 ##
 # initialize all devices and fill devices list
-def init_devices(force = False):
+def init(force = False):
     global disks
 
     if disks and not force:
@@ -106,7 +106,7 @@ class Disk:
 
         self._device = device
         try:
-            self._disk = parted.Disk.new(device)
+            self._disk = parted.Disk(device)
         except:
             label = archinfo[self._arch]["disklabel"]
             self._disk = parted.freshDisk(self._device, ty=label)
