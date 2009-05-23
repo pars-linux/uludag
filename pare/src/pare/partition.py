@@ -14,9 +14,10 @@ import os
 
 
 import parted
-from pare.formats.filesystem import FileSystem, getFilesystem
-from pare.parteddate import *
-
+from pare.filesystem import FileSystem, getFilesystem
+from pare.parteddata import *
+import gettext
+_ = lambda x:gettext.ldgettext("pare", x)
 
 ##
 # Class representing a single partition within a Device object
