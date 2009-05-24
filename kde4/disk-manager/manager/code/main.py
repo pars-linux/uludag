@@ -32,7 +32,7 @@ from config import ANIM_SHOW, ANIM_HIDE, ANIM_TARGET, ANIM_DEFAULT, ANIM_TIME
 from item import ItemListWidgetItem, ItemWidget
 
 # Edit widget
-from edit import EditWidget, EditWidget
+from edit import EditWidget
 
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
@@ -66,11 +66,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Build item list
         self.buildItemList()
 
-        # User/group edit widgets
-        layout = QtGui.QVBoxLayout(self.frameWidget)
-        self.widgetEdit = EditWidget(self.frameWidget)
-        layout.addWidget(self.widgetEdit)
-
         # Signals
         self.connect(self.comboFilter, QtCore.SIGNAL("currentIndexChanged(int)"), self.slotFilterChanged)
         self.connect(self.pushNew, QtCore.SIGNAL("triggered(QAction*)"), self.slotOpenEdit)
@@ -78,7 +73,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.buttonBox, QtCore.SIGNAL("rejected()"), self.slotCancelEdit)
         self.connect(self.animator, QtCore.SIGNAL("frameChanged(int)"), self.slotAnimate)
         self.connect(self.animator, QtCore.SIGNAL("finished()"), self.slotAnimationFinished)
-        self.connect(self.widgetEdit, QtCore.SIGNAL("buttonStatusChanged(int)"), self.slotButtonStatusChanged)
 
     def checkBackend(self):
         """
@@ -130,6 +124,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         widget = self.makeItemWidget(id_, name, description, type_, kdeui.KIcon(icon), None)
         widgetItem = ItemListWidgetItem(self.listItems, widget)
 
+        # Delete is unnecessary
+        widget.hideDelete()
+
         # Add to list
         self.listItems.setItemWidget(widgetItem, widget)
 
@@ -143,6 +140,14 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
         # Clear list
         self.clearItemList()
+        self.device_entries = {}
+
+        for entry in self.iface.entryList():
+            if entry.startswith("/dev"):
+                self.device_entries[entry] = entry
+            elif entry.startswith("LABEL="):
+                label = entry.split("LABEL=")[1]
+                self.device_entries[self.iface.getDeviceByLabel(label)] = entry
 
         def handleList(package, exception, args):
             if exception:
@@ -151,11 +156,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             else:
                 devices = args[0]
                 for device in devices:
-                    self.addItem(device, device, "")
+                    # self.addItem(device, device, "")
                     parts = self.iface.partitionList(device)
                     parts.sort()
                     for part in parts:
                         self.addItem(part, part, "")
+
         self.iface.deviceList(func=handleList)
 
     def itemMatchesFilter(self, item):
@@ -245,7 +251,35 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Edit button clicked, show edit box.
         """
         widget = self.sender()
-        self.showEditBox(widget.getId())
+        from PyKDE4.kdeui import KPageDialog, KPageWidgetItem
+
+        # TODO: Move this into another module ASAP
+
+        dialog = KPageDialog(self);
+        dialog.setFaceType(KPageDialog.Tabbed)
+        dialog.setCaption(kdecore.i18n("Settings"))
+
+        page_widget = EditWidget(dialog)
+        page_item = KPageWidgetItem(page_widget, kdecore.i18n("Settings"))
+
+        if widget.getId() in self.device_entries:
+            path, fsType, options = self.iface.getEntry(self.device_entries[widget.getId()])
+            page_widget.setAutoMount(True)
+            page_widget.setMountPoint(path)
+            page_widget.setFilesystem(fsType)
+            page_widget.setOptions(options)
+        else:
+            page_widget.setAutoMount(False)
+
+        dialog.addPage(page_item)
+        if dialog.exec_():
+            device = widget.getId()
+            if widget.getId() in self.device_entries:
+                device = self.device_entries[device]
+            if page_widget.getAutoMount():
+                self.iface.addEntry(device, page_widget.getMountPoint(), page_widget.getFilesystem(), page_widget.getOptions())
+            else:
+                self.iface.removeEntry(device)
 
     def slotItemDelete(self):
         """
