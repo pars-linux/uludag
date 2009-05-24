@@ -76,7 +76,7 @@ class FileSystem:
     _type = None  # parted fs type
 
     def __init__(self):
-        self._type = parted.fileSystemType.get(self.name)
+        self._type = parted.filesystem._ped.file_system_type_get(self.name)
 
     def openPartition(self, partition):
         """ Checks if partition exists or not;

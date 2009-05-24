@@ -95,7 +95,7 @@ class Disk:
         self._disklabel = ""
         self._length = 0       # total sectors
         self._sectorSize = 0
-        self._needs_commit = False
+        self._isSetup = False
 
         device = parted.Device(path)
 
@@ -131,6 +131,12 @@ class Disk:
     def type(self):
         return self._type
 
+    def needSetup(self, bool):
+        self._isSetup = bool
+    
+    def isSetup(self):
+        return self._isSetup
+        
     def getSize(self, unit='MB'):
         return self._disk.device.getSize(unit)
 
@@ -142,6 +148,11 @@ class Disk:
         else:
             return "%d MB" % self.getSize()
 
+
+    @property
+    def sectorSize(self):
+        return self._sectorSize
+    
     @property
     def path(self):
         return self._path
@@ -167,10 +178,9 @@ class Disk:
     # @returns: True/False
     def hasBootablePartition(self):
         flag = parted.PARTITION_BOOT
-        for p in self.partitions:
-            if not p._type == freeSpaceType:
-                partedPartition = p.partition
-                if partedPartition.isFlagAvailable(flag) and partedPartition.getFlag(flag):
+        for partition in self.getAllPartitions():
+            if not partition.type == parted.PARTITION_FREESPACE:
+                if partition.isFlagAvailable(flag) and partition.getFlag(flag):
                     return True
         return False
 
@@ -257,14 +267,12 @@ class Disk:
         return largest
 
     def addPartition(self, type, filesystem, start, end, flags = []):
-        self._needs_commit = True
-
         constraint = self._device.getConstraint()
         geom = parted.Geometry(self._device, start, end=end)
-        part = parted.Partition(self._disk, type, filesystem, geom)
+        part = parted.Partition(self._disk, type, geometry=geom)
         
         for flag in flags:
-            part.setFlag(flag, 1)
+            part.setFlag(flag)
 
         try:
             return self._disk.addPartition(part, constraint)
@@ -277,6 +285,7 @@ class Disk:
     # delete a partition
     # @param part: Partition
     def deletePartition(self, part):
+        self._isSetup = True
         return self._disk.deletePartition(part)
 
     def deleteAllPartitions(self):
@@ -307,46 +316,12 @@ class Disk:
             sysutils.run("sync")
             log.error("Commit Failed!")
             self._disk.commit()
+            self._isSetup = False
 
     def close(self):
         # pyparted will do it for us.
         del self._disk
 
-def setOrderedDiskList():
-    devices = detect_all()
-    devices.sort()
-
-
-    # Check EDD Module
-    if not os.path.exists("/sys/firmware/edd"):
-        cmd_path = sysutils.find_executable("modprobe")
-        cmd = "%s %s" % (cmd_path, "edd")
-        res = sysutils.run(cmd)
-        if not res:
-            ctx.installData.orderedDiskList = devices
-            log.error("Inserting EDD Module failed !")
-            return
-
-    edd = EDD()
-    sortedList = []
-    edd_list = edd.list_edd_signatures()
-    mbr_list = edd.list_mbr_signatures()
-    edd_keys = edd_list.keys()
-    edd_keys.sort()
-    for bios_num in edd_keys:
-        edd_sig = edd_list[bios_num]
-        if mbr_list.has_key(edd_sig):
-            sortedList.append(mbr_list[edd_sig])
-
-    if len(devices) > 1:
-        a = ctx.installData.orderedDiskList = sortedList
-        b = device
-        # check consistency of diskList
-        if not len(filter(None, map(lambda x: x in a,b))) == len(b):
-            ctx.installData.orderedDiskList = devices
-            ctx.isEddFailed = True
-    else:
-        ctx.installData.orderedDiskList = devices
 
 ##
 # Return a list of block devices in system
@@ -377,7 +352,8 @@ def detect_all():
 
     _devices = []
     # Scan sysfs for the device types.
-    blacklisted_devs = glob.glob("/sys/block/ram*") + glob.glob("/sys/block/loop*")
+    #FIXME:Added glob.glob("/sys/block/sda*") for unhandled parition table destroy test later it will erased
+    blacklisted_devs = glob.glob("/sys/block/ram*") + glob.glob("/sys/block/loop*") + glob.glob("/sys/block/sda*")
     sysfs_devs = set(glob.glob("/sys/block/*")) - set(blacklisted_devs)
     for sysfs_dev in sysfs_devs:
         dev_file = sysfs_dev + "/dev"

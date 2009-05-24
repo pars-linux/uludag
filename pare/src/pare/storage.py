@@ -79,18 +79,22 @@ class Pare(object):
     
     
     def getPartition(self, disk, num):
-        for part in self.partitions(disk):
+        for part in self.diskPartitions(disk):
             if part.minor == num:
                 return part
         return None
     
+    def commitToDisk(self, disk):
+        self._diskTable[disk].commit()
     ##
     # Add (create) a new partition to the device
     # @param part: parted partition; must be parted.PARTITION_FREESPACE
     # @param type: parted partition type (eg. parted.PARTITION_PRIMARY)
     # @param fs: filesystem.FileSystem or file system name (like "ext3")
     # @param size_mb: size of the partition in MBs.
-    def addPartition(self, pareDisk, parePartion, parePartitionType, pareFilesystem, size, flags = [], manualGeomStart = None):
+    def addPartition(self, pareDisk, parePartition, parePartitionType, pareFilesystem, size, flags = [], manualGeomStart = None):
+        
+        size = int((size * MEGABYTE) / pareDisk.sectorSize)
         
         if isinstance(pareFilesystem, str):
             filesystem = getFilesystem(pareFilesystem)
@@ -105,27 +109,30 @@ class Pare(object):
         if (parted.PARTITION_BOOT in flags) and pareDisk.hasBootablePartition():
             flags = list(set(flags) - set([parted.PARTITION_BOOT]))
 
-        if not parePartion.partition:
+        if not parePartition.partition:
             partion = pareDisk.__getLargestFreePartition()
 
         if not manualGeomStart:
             geom = parePartition.partition.geometry
             if geom.length >= size:
-                if pareDisk.addPartitionStartEnd(type,filesystem,
-                                                 geom.start, geom.start + size,flags):
-                    self._update()
+                if pareDisk.addPartition(parePartitionType, filesystem, geom.start, geom.start + size,flags):
+                    pareDisk.needSetup(True)
+                    self._update(pareDisk)
+                else:
+                    raise DeviceError, ("Not enough free space on %s to create new partition" % self.getPath())
         else:
-            if pareDisk.addPartitionStartEnd(type,filesystem,manualGeomStart,
-                                          manualGeomStart + size, flags):
-                self._update()
-            
-        raise DeviceError, ("Not enough free space on %s to create new partition" % self.getPath())
+            if pareDisk.addPartitionStartEnd(type,filesystem,manualGeomStart,manualGeomStart + size, flags):
+                pareDisk.needSetup(True)
+                self._update(pareDisk)
+            else:
+                raise DeviceError, ("Not enough free space on %s to create new partition" % self.getPath())
        
     
     def deletePartition(self, pareDisk, parePartition):
-        if not self._partitionTable[pareDisk.path].deletePartition(parePartition.partition):
+        if not self._diskTable[pareDisk.path].deletePartition(parePartition.partition):
             raise PareError("Partition delete failed!")
         else:
+            self._update(pareDisk)
             return True
         
     def deleteAllPartitions(self, pareDisk, parePartition):
