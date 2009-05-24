@@ -28,6 +28,27 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_searchWidget()
         self.ui.setupUi(self)
 
+        self.ui.checkBoxNepomuk.connect(self.ui.checkBoxNepomuk, SIGNAL("stateChanged(int)"), self.activateNepomuk)
+        self.ui.checkBoxStrigi.connect(self.ui.checkBoxStrigi, SIGNAL("stateChanged(int)"), self.activateStrigi)
+
+    def activateNepomuk(self, state):
+        config = KConfig("nepomukserverrc")
+        group = config.group("Basic Settings")
+
+        if state:
+            group.writeEntry('Start Nepomuk', "true")
+        else:
+            group.writeEntry('Start Nepomuk', "false")
+
+    def activateStrigi(self, state):
+        config = KConfig("nepomukserverrc")
+        group = config.group("Service-nepomukstrigiservice")
+
+        if state:
+            group.writeEntry('autostart', "true")
+        else:
+            group.writeEntry('autostart', "false")
+
     def shown(self):
         pass
 
