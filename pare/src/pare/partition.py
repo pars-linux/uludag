@@ -103,7 +103,7 @@ class Partition:
 
     @property
     def path(self):
-        if self._partition.type == parted.PARTITION_FREESPACE:
+        if self.partition.type == parted.PARTITION_FREESPACE:
             return "N/A"
         if self.diskPath.find("cciss") > 0:
             # HP Smart array controller

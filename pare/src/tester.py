@@ -21,14 +21,18 @@ class Test(object):
         disks = self.pare.disks
         for disk in disks:
             print "disk.path:%s" % disk.path
+        
         return disks
     
     def listPartitions(self, disk):
+        print "####"
+        
         for part in self.pare.diskPartitions(disk):
-                print "%s disk partitions%s" % (disk.path, part.path)
+                print "listPartitions--->   %s  partition minor %s" % (disk, part.minor)
 
 if __name__ == "__main__":
     test = Test()
     disks = test.listDisks()
+    print "len(disks):%d" % len(disks)
     for disk in disks:
         test.listPartitions(disk.path)

@@ -92,7 +92,6 @@ class Disk:
         self._device = None
         self._model = ""
         self._disk = None
-        self._partitions = []
         self._disklabel = ""
         self._length = 0       # total sectors
         self._sectorSize = 0
@@ -108,6 +107,7 @@ class Disk:
         try:
             self._disk = parted.Disk(device)
         except:
+            print "freshhdisk yaratılıyor"
             label = archinfo[self._arch]["disklabel"]
             self._disk = parted.freshDisk(self._device, ty=label)
 
@@ -201,7 +201,9 @@ class Disk:
         allparts = []
         part = self._disk.getFirstPartition()
         while part:
-            allparts.append(part)
+            #Cant get metadata partitions
+            if part.getSize(unit="MB") > 10:
+                allparts.append(part)
             part = part.nextPartition()
         return allparts
     ##
