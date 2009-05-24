@@ -10,6 +10,7 @@
 # Please read the COPYING file.
 
 import subprocess
+from pardus.sysutils import find_executable
 import logging
 log = logging.getLogger("pare")
 
