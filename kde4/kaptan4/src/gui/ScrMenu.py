@@ -71,11 +71,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 for i in list(subg.groupList()):
                     subg2 = subg.group(i)
                     launcher = subg2.readEntry('plugin')
-                    print str(launcher)
                     if str(launcher).find('launcher') >= 0:
                         subg2.writeEntry('plugin', self.selectedMenu)
-                    else:
-                        subg2.writeEntry('plugin', 'launcher')
 
     def shown(self):
         pass
