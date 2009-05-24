@@ -1,0 +1,92 @@
+<ui version="4.0" >
+ <class>menuWidget</class>
+ <widget class="QWidget" name="menuWidget" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>501</width>
+    <height>412</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Menu</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" >
+   <item row="0" column="0" >
+    <layout class="QHBoxLayout" name="horizontalLayout" >
+     <item>
+      <widget class="QLabel" name="menuLabel" >
+       <property name="text" >
+        <string>Select a menu style:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="menuStyles" >
+       <item>
+        <property name="text" >
+         <string>Classic (Simple Menu)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Kick-off (Advanced Menu)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Lancelot (Experimental Menu)</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0" >
+    <layout class="QVBoxLayout" name="verticalLayout" >
+     <item>
+      <widget class="QLabel" name="labelMenuDescription" >
+       <property name="frameShadow" >
+        <enum>QFrame::Raised</enum>
+       </property>
+       <property name="text" >
+        <string>Classic menu: An old school menu style from KDE3. Lorem ipsum more information about Classic menu..</string>
+       </property>
+       <property name="wordWrap" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="pictureMenuStyles" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize" >
+        <size>
+         <width>400</width>
+         <height>230</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>400</width>
+         <height>230</height>
+        </size>
+       </property>
+       <property name="text" >
+        <string>Picture of style</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
