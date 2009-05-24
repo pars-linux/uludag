@@ -13,9 +13,7 @@ import gui.ScrMouse as mouseWidget
 import gui.ScrNetwork as networkWidget
 import gui.ScrWallpaper  as wallpaperWidget
 import gui.ScrGoodbye  as goodbyeWidget
-
-# not ready yet
-#import gui.ScrStyle  as styleWidget
+import gui.ScrStyle  as styleWidget
 
 # waiting for pisi
 #import gui.ScrPackage as packageWidget
@@ -26,7 +24,7 @@ class Kaptan(QtGui.QMainWindow):
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = [welcomeWidget, mouseWidget, wallpaperWidget, networkWidget, goodbyeWidget]
+        self.screens = [welcomeWidget,styleWidget, mouseWidget, wallpaperWidget, networkWidget, goodbyeWidget]
         self.screenData = None
         self.moveInc = 1
         self.menuText = ""
