@@ -27,33 +27,35 @@ class Pare(object):
     _raidTable = {}
     
     def __init__(self):
-        if storage.init_devices():
+        if storage.init():
             for disk in storage.disks:
                 if isinstance(disk, storage.Disk):
                     self._diskTable[disk.path] =  disk
                 else:
                     raise PareError("Filling Disk failed!")
-            for disk in self._diskTable.itervalues():    
+            for disk in self._diskTable.values():    
                 self._update(disk)
     
-    def _addPartitionDict(self, disk, part):
+    def _addPartitionDict(self, disk, part, ready=True):
         
         def getParePartition(disk, part):
             geom = part.geometry
             size = part.getSize()
+            print "### %s partition.geom:%s partition.size:%s" % (disk.path, geom.start, size )
             if part.number >= 1:
-                type = ""
-                if part.fileSystem.name:
-                    type = part.fileSystem.name
+                filesystem = ""
+                if part.fileSystem:
+                    filesystem = part.fileSystem.name
                 elif part.type & parted.PARTITION_EXTENDED:
-                    type = "extended"
-
+                    filesystem = "extended"
+                print "disk %s partition.name:%s" % (disk.path, part.path)
                 return Partition(disk, part,part.number,size,
-                                 geom.start,geom.end,name,ready)
+                                 geom.start,geom.end,filesystem,ready)
             
             elif part.type & parted.PARTITION_FREESPACE and size >= 10:
                 return FreeSpace(disk, part, size, geom.start, geom.end)
-        
+                print "FreeSpace disk %s partition.name:%s" % (disk.path, part.name)
+                
         if not self._partitionTable.has_key(disk.path):
             #print "getParePartition(disk,part).name:%s" % getParePartition(disk,part)
             self._partitionTable[disk.path] = [getParePartition(disk,part)]
@@ -65,12 +67,12 @@ class Pare(object):
         
             print "len:%d" % len(disk.getAllPartitions())
             for part in disk.getAllPartitions():
-                print "name:%s" % part.path
+                print "part.path name:%s" % part.path
                 self._addPartitionDict(disk, part)
     
     @property                
     def disks(self):
-        return self._diskTable.itervalues()
+        return self._diskTable.values()
     
     def diskPartitions(self, disk):
         return self._partitionTable[disk]
