@@ -28,10 +28,54 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_menuWidget()
         self.ui.setupUi(self)
 
+        # menu descriptions and preview pics
+        self.kickoffPic = QtGui.QPixmap('../pics/kickoff.png')
+        self.kickoffDesc = "Kickoff menu soyle guzeldir boyle sahanedir.."
+
+        self.simplePic = QtGui.QPixmap('../pics/simple.png')
+        self.simpleDesc = "Simple menu: lorem ipsum.."
+
+        self.lancelotPic = QtGui.QPixmap('../pics/lancelot.png')
+        self.lancelotDesc = "Cok manyak!"
+
+        # set menu preview to default menu: kick-off
+        self.ui.pictureMenuStyles.setPixmap(self.kickoffPic)
+        self.ui.labelMenuDescription.setText(self.kickoffDesc)
+
         self.ui.menuStyles.connect(self.ui.menuStyles, SIGNAL("activated(const QString &)"), self.setMenuStyle)
 
     def setMenuStyle(self, enee):
-        print self.ui.menuStyles.currentText()
+        currentIndex = self.ui.menuStyles.currentIndex()
+
+        if currentIndex == 0:
+            self.selectedMenu = 'launcher'
+            self.ui.pictureMenuStyles.setPixmap(self.kickoffPic)
+            self.ui.labelMenuDescription.setText(self.kickoffDesc)
+        elif currentIndex == 1:
+            self.selectedMenu = 'simplelauncher'
+            self.ui.pictureMenuStyles.setPixmap(self.simplePic)
+            self.ui.labelMenuDescription.setText(self.simpleDesc)
+
+        else:
+            self.selectedMenu = 'lancelot_launcher'
+            self.ui.pictureMenuStyles.setPixmap(self.lancelotPic)
+            self.ui.labelMenuDescription.setText(self.lancelotDesc)
+
+        config = KConfig("plasma-appletsrc")
+        group = config.group("Containments")
+        for each in list(group.groupList()):
+            subgroup = group.group(each)
+            subcomponent = subgroup.readEntry('plugin')
+            if subcomponent == 'panel':
+                subg = subgroup.group('Applets')
+                for i in list(subg.groupList()):
+                    subg2 = subg.group(i)
+                    launcher = subg2.readEntry('plugin')
+                    print str(launcher)
+                    if str(launcher).find('launcher') >= 0:
+                        subg2.writeEntry('plugin', self.selectedMenu)
+                    else:
+                        subg2.writeEntry('plugin', 'launcher')
 
     def shown(self):
         pass

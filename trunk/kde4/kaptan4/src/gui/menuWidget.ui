@@ -26,12 +26,12 @@
       <widget class="QComboBox" name="menuStyles" >
        <item>
         <property name="text" >
-         <string>Classic (Simple Menu)</string>
+         <string>Kick-off (Advanced Menu)</string>
         </property>
        </item>
        <item>
         <property name="text" >
-         <string>Kick-off (Advanced Menu)</string>
+         <string>Classic (Simple Menu)</string>
         </property>
        </item>
        <item>
@@ -51,7 +51,7 @@
         <enum>QFrame::Raised</enum>
        </property>
        <property name="text" >
-        <string>Classic menu: An old school menu style from KDE3. Lorem ipsum more information about Classic menu..</string>
+        <string/>
        </property>
        <property name="wordWrap" >
         <bool>true</bool>
@@ -79,7 +79,10 @@
         </size>
        </property>
        <property name="text" >
-        <string>Picture of style</string>
+        <string/>
+       </property>
+       <property name="pixmap" >
+        <pixmap>../pics/kickoff.png</pixmap>
        </property>
       </widget>
      </item>
