@@ -12,7 +12,7 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal
+from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
 
 import os, sys, Image
 
@@ -33,6 +33,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_styleWidget()
         self.ui.setupUi(self)
 
+        self.styleDetails = {}
+
         """
         # TODO: Add styles as a resource type. It doesn't work, though.
         KGlobal.dirs().addResourceType("styles", "data", "/usr/kde/4/share/styles/")
@@ -46,26 +48,45 @@ class Widget(QtGui.QWidget, ScreenWidget):
             parser.read(str(desktopFiles))
 
             try:
-                styleName = parser.get_locale('Style', 'Name', '')
-                styleDesc = parser.get_locale('Style', 'Description', '')
-                styleTheme = parser.get_locale('Style', 'Style', '')
-                styleApplet = parser.get_locale('Style', 'Applets', '')
-                styleColorScheme = parser.get_locale('Style', 'ColorScheme', '')
-                styleWindowDecoration = parser.get_locale('Style', 'WindowDecoration', '')
-                styleThumb = os.path.join(os.path.split(str(desktopFiles))[0],  parser.get_locale('Style', 'Thumbnail',''))
+                styleName = parser.get_locale('Style', 'name', '')
+                styleDesc = parser.get_locale('Style', 'description', '')
+                #styleApplet = parser.get_locale('Style', 'applets', '')
+                #panelPosition = parser.get_locale('Style', 'panelPosition', '')
+                #styleColorScheme = parser.get_locale('Style', 'colorScheme', '')
+                widgetStyle = parser.get_locale('Style', 'widgetStyle', '')
+                desktopTheme = parser.get_locale('Style', 'desktopTheme', '')
+                iconTheme = parser.get_locale('Style', 'iconTheme', '')
+                windowDecoration = parser.get_locale('Style', 'windowDecoration', '')
+                styleThumb = os.path.join(os.path.split(str(desktopFiles))[0],  parser.get_locale('Style', 'thumbnail',''))
+
+                self.styleDetails[styleName] = {"description": styleDesc, "widgetStyle": widgetStyle, "desktopTheme": desktopTheme, "iconTheme": iconTheme, "windowDecoration": windowDecoration}
 
                 item = QtGui.QListWidgetItem(self.ui.listStyles)
                 widget = StyleItemWidget(unicode(styleName), unicode(styleDesc), styleThumb, self.ui.listStyles)
                 self.ui.listStyles.setItemWidget(item, widget)
                 item.setSizeHint(QSize(38,110))
+                item.setStatusTip(styleName)
             except:
                 print "Warning! Invalid syntax in ", desktopFiles
 
         self.ui.listStyles.connect(self.ui.listStyles, SIGNAL("itemSelectionChanged()"), self.setStyle)
 
     def setStyle(self):
-        # TODO: Use Gokmen's DBus call when it's ready
-        pass
+        styleName =  str(self.ui.listStyles.currentItem().statusTip())
+        configKdeGlobals = KConfig("kdeglobals")
+        group = configKdeGlobals.group("General")
+        group.writeEntry("widgetStyle", self.styleDetails[styleName]["widgetStyle"])
+
+        groupIconTheme = configKdeGlobals.group("Icons")
+        groupIconTheme.writeEntry("Theme", self.styleDetails[styleName]["iconTheme"])
+
+        configPlasmaRc = KConfig("plasmarc")
+        groupDesktopTheme = configPlasmaRc.group("Theme")
+        groupDesktopTheme.writeEntry("name", self.styleDetails[styleName]["desktopTheme"])
+
+        configKwinRc = KConfig("kwinrc")
+        groupWindowDecoration = configKwinRc.group("Style")
+        groupWindowDecoration.writeEntry("PluginLib", self.styleDetails[styleName]["windowDecoration"])
 
     def shown(self):
         pass
