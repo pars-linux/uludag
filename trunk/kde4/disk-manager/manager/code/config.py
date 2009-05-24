@@ -13,6 +13,27 @@
 
 from PyKDE4.kdecore import i18n
 
+# FS types and options
+FS_TYPES = {
+    "ext2": "Extended 2",
+    "ext3": "Extended 3",
+    "ext4": "Extended 4",
+    "reiserfs": "Reiser FS",
+    "xfs": "XFS",
+    "ntfs-3g": "NTFS",
+    "vfat": "Fat 16/32",
+}
+
+FS_OPTIONS = {
+    "vfat": "quiet,shortname=mixed,dmask=007,fmask=117,utf8,gid=6",
+    "ext2": "noatime",
+    "ext3": "noatime",
+    "ext4": "noatime",
+    "ntfs-3g": "dmask=007,fmask=117,locale=tr_TR.UTF-8,gid=6",
+    "reiserfs": "noatime",
+    "xfs": "noatime",
+}
+
 # Animation
 ANIM_SHOW, ANIM_HIDE = range(2)
 ANIM_TIME = 200

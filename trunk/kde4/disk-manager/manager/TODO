@@ -1,0 +1,4 @@
+- Show mount point and device description in device list
+- Guess  mount point
+? Disable editing mount point of root partition
+? Guess filesystem type

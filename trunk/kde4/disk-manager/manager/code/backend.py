@@ -56,3 +56,32 @@ class Interface:
             self.link.Disk.Manager[self.package].listEntries(async=func)
         else:
             return self.link.Disk.Manager[self.package].listEntries()
+
+    def getEntry(self, entry):
+        path, fsType, fs_options = self.link.Disk.Manager[self.package].getEntry(entry)
+        options = []
+        for key, val in fs_options.iteritems():
+            if len(val):
+                options.append("%s=%s" % (key, val))
+            else:
+                options.append("%s" % key)
+        options = ",".join(options)
+        return unicode(path), unicode(fsType), options
+
+    def removeEntry(self, entry):
+        return self.link.Disk.Manager[self.package].removeEntry(entry)
+
+    def addEntry(self, device, path, fsType, fs_options):
+        if isinstance(fs_options, basestring):
+            options = {}
+            for opt in fs_options.split(","):
+                if "=" in opt:
+                    key, val = opt.split("=", 1)
+                    options[key] = val
+                else:
+                    options[opt] = ""
+            fs_options = options
+        return self.link.Disk.Manager[self.package].addEntry(device, path, fsType, fs_options)
+
+    def getDeviceByLabel(self, label):
+        return unicode(self.link.Disk.Manager[self.package].getDeviceByLabel(label))
