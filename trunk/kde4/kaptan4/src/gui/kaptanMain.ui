@@ -1,42 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>kaptanUI</class>
- <widget class="QDialog" name="kaptanUI">
+ <widget class="QWidget" name="kaptanUI">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>660</width>
-    <height>451</height>
+    <width>603</width>
+    <height>467</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Kaptan Main Window</string>
-  </property>
-  <property name="autoFillBackground">
-   <bool>true</bool>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">/*background-image:url(bg.png);*/
-
-QStackedWidget#mainStack {
-     border-style: outset;
-     border-width: 2px;
-     border-radius: 14px;
-     border-color: beige;
-
-}
-QLabel#labelMenu{
-     border-style: outset;
-     border-width: 2px;
-     border-radius: 14px;
-     border-color: beige;
-}
-</string>
+   <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
       <widget class="QLabel" name="labelLogo">
        <property name="sizePolicy">
@@ -73,7 +52,7 @@ QLabel#labelMenu{
     </layout>
    </item>
    <item row="0" column="1">
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
       <widget class="QLabel" name="labelDesc">
        <property name="text">
@@ -101,7 +80,7 @@ QLabel#labelMenu{
     </layout>
    </item>
    <item row="1" column="0" colspan="2">
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="buttonCancel">
        <property name="text">
@@ -110,7 +89,7 @@ QLabel#labelMenu{
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer">
+      <spacer name="horizontalSpacer_2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -148,38 +127,5 @@ QLabel#labelMenu{
   </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>buttonCancel</sender>
-   <signal>clicked()</signal>
-   <receiver>kaptanUI</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>60</x>
-     <y>434</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>329</x>
-     <y>225</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonFinish</sender>
-   <signal>clicked()</signal>
-   <receiver>kaptanUI</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>610</x>
-     <y>434</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>329</x>
-     <y>225</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
