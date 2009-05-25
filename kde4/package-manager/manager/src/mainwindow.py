@@ -27,7 +27,6 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         KXmlGuiWindow.__init__(self, parent)
         self.setupUi(self)
         self.setCentralWidget(MainWidget(self))
-        self.connect(self.centralWidget(), SIGNAL("selectionChanged(QModelIndexList)"), self.updateStatusBar)
         self.statusBar().showMessage(i18n("Currently your basket is empty."))
         self.initializeActions()
 
@@ -57,5 +56,5 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
         showInstallAction.setChecked(True)
 
-    def updateStatusBar(self, indexes):
+    def updateStatusBar(self, packages):
         pass
