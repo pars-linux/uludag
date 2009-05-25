@@ -29,7 +29,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         # menu descriptions and preview pics
-        self.kickoffPic = QtGui.QPixmap('../pics/kickoff.png')
+        self.kickoffPic = QtGui.QPixmap(':/raw/pics/sample2.png')
         self.kickoffDesc = "Kickoff menu soyle guzeldir boyle sahanedir.."
 
         self.simplePic = QtGui.QPixmap('../pics/simple.png')

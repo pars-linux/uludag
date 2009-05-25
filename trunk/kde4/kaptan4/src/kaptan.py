@@ -27,7 +27,7 @@ class Kaptan(QtGui.QWidget):
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = [welcomeWidget, mouseWidget, styleWidget, wallpaperWidget, multipleWidget, searchWidget, networkWidget, goodbyeWidget]
+        self.screens = [welcomeWidget, menuWidget, mouseWidget, styleWidget, wallpaperWidget, multipleWidget, searchWidget, networkWidget, goodbyeWidget]
         self.screenData = None
         self.moveInc = 1
         self.menuText = ""
