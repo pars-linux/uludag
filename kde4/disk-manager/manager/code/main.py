@@ -53,6 +53,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         # Backend
         self.iface = Interface()
+        self.iface.listenSignals(self.signalHandler)
 
         # Fail if no packages provide backend
         self.checkBackend()
@@ -141,6 +142,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Clear list
         self.clearItemList()
         self.device_entries = {}
+        self.mounted_devices = {}
 
         for entry in self.iface.entryList():
             if entry.startswith("/dev"):
@@ -148,6 +150,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             elif entry.startswith("LABEL="):
                 label = entry.split("LABEL=")[1]
                 self.device_entries[self.iface.getDeviceByLabel(label)] = entry
+
+        for device, path in self.iface.mountList():
+            self.mounted_devices[device] = path
 
         def handleList(package, exception, args):
             if exception:
@@ -160,7 +165,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     parts = self.iface.partitionList(device)
                     parts.sort()
                     for part in parts:
-                        self.addItem(part, part, "")
+                        description = ""
+                        if part in self.mounted_devices:
+                            description = kdecore.i18n("Mounted at %1", self.mounted_devices[part])
+                        self.addItem(part, part, description)
 
         self.iface.deviceList(func=handleList)
 
@@ -334,3 +342,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
         else:
             self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel)
+
+    def signalHandler(self, package, signal, args):
+        self.buildItemList()
