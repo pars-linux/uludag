@@ -2,7 +2,7 @@
 name = Sample Style 1
 description = Full with Oxygen!
 applets= digital-clock; folderview
-panelPosition = top; left
+panelPosition = 4
 widgetStyle = oxygen
 colorScheme = blue
 desktopTheme = Silicon

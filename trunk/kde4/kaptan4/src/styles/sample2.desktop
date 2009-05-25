@@ -2,7 +2,7 @@
 name = Sample Style 2
 description = A Gnomeish for Nazis!
 applets= digital-clock; folderview
-panelPosition = top; left
+panelPosition = 3
 widgetStyle = qtc_klearlooks
 colorScheme = pink
 desktopTheme = Aya
