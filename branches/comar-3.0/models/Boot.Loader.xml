@@ -12,7 +12,7 @@
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="listEntries" access_label="get">
-            <arg name="entries" type="a{ss}" direction="out"/>
+            <arg name="entries" type="aa{ss}" direction="out"/>
         </method>
         <method name="updateKernelEntry">
             <arg name="version" type="s" direction="in"/>
