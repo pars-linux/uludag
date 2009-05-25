@@ -15,7 +15,7 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
 from PyKDE4 import kdeui
 
-import os, sys, Image
+import os, sys, Image, dbus
 
 from gui.ScreenWidget import ScreenWidget
 from gui.styleWidget import Ui_styleWidget
@@ -103,6 +103,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
         groupWindowDecoration = configKwinRc.group("Style")
         groupWindowDecoration.writeEntry("PluginLib", self.styleDetails[styleName]["windowDecoration"])
         configKwinRc.sync()
+
+        session = dbus.SessionBus()
+        proxy = session.get_object('org.kde.kwin', '/KWin')
+        proxy.reconfigure()
 
     def shown(self):
         pass
