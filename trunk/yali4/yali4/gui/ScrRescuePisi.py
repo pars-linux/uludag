@@ -11,6 +11,7 @@
 #
 
 import os
+import dbus
 import gettext
 __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
@@ -24,6 +25,7 @@ from yali4.gui.GUIAdditional import DeviceItem
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.rescuepisiwidget import Ui_RescuePisiWidget
 from yali4.gui.GUIException import GUIException
+from yali4.gui.GUIAdditional import ConnectionWidget
 import yali4.gui.context as ctx
 
 ##
@@ -42,8 +44,19 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_RescuePisiWidget()
         self.ui.setupUi(self)
 
+        self.connect(self.ui.buttonSelectConnection, SIGNAL("clicked()"), self.showConnections)
+
+    def showConnections(self):
+        connections = ConnectionWidget(self)
+        connections.show()
+
+    def handler(self, *args):
+        print args
+
     def shown(self):
-        pass
+        if not dbus.get_default_main_loop():
+            from dbus.mainloop.qt import DBusQtMainLoop
+            DBusQtMainLoop(set_as_default = True)
 
     def execute(self):
         return True
