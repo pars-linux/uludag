@@ -18,8 +18,10 @@ __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
 import yali4.gui.context as ctx
+from yali4.postinstall import *
 from yali4.gui.Ui.partresize import Ui_PartResizeWidget
 from yali4.gui.Ui.autopartquestion import Ui_autoPartQuestion
+from yali4.gui.Ui.connectionlist import Ui_connectionWidget
 
 class ResizeWidget(QtGui.QWidget):
 
@@ -175,3 +177,57 @@ class PartItem(QtGui.QListWidgetItem):
 
     def getPartition(self):
         return self._part
+
+class ConnectionItem(QtGui.QListWidgetItem):
+    def __init__(self, parent, connection, package):
+        QtGui.QListWidgetItem.__init__(self, QtGui.QIcon(":/gui/pics/%s.png" % package), connection, parent)
+        self._connection = [connection, package]
+
+    def getConnection(self):
+        return self._connection[0]
+
+    def getPackage(self):
+        return self._connection[1]
+
+    def connect(self, handler):
+        connectTo(self.getPackage(), self.getConnection(), handler)
+
+class ConnectionWidget(QtGui.QWidget):
+
+    def __init__(self, rootWidget):
+        QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
+        self.ui = Ui_connectionWidget()
+        self.ui.setupUi(self)
+        self.setStyleSheet("""
+                QFrame#mainFrame {
+                    background-image: url(:/gui/pics/transBlack.png);
+                    border: 1px solid #BBB;
+                    border-radius:8px;
+                }
+                QWidget#autoPartQuestion {
+                    background-image: url(:/gui/pics/trans.png);
+                }
+        """)
+
+        self.rootWidget = rootWidget
+        self.needsExecute = False
+        self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.hide)
+        self.connect(self.ui.buttonConnect, SIGNAL("clicked()"), self.slotUseSelected)
+
+        connectToDBus()
+        connections = getConnectionList()
+
+        for package in ["net_tools", "wireless_tools"]:
+            for connection in connections[package]:
+                ci = ConnectionItem(self.ui.connectionList, connection, package)
+
+        self.ui.connectionList.setCurrentRow(0)
+        self.resize(ctx.mainScreen.ui.size())
+
+    def slotUseSelected(self):
+        self.ui.connectionList.currentItem().connect(self.rootWidget.handler)
+        self.hide()
+        ctx.mainScreen.processEvents()
+
+        if self.needsExecute:
+            self.rootWidget.execute_(True)

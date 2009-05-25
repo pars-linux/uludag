@@ -116,6 +116,19 @@ def setHostName():
     ctx.debugger.log("Hostname set as %s" % ctx.installData.hostName)
     return True
 
+def getConnectionList():
+    global bus
+    results = {}
+    for package in ["net_tools", "wireless_tools"]:
+        obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % package)
+        results[package] = obj.connections(dbus_interface="tr.org.pardus.comar.Network.Link")
+    return results
+
+def connectTo(package, profile, handler):
+    global bus
+    obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % package)
+    obj.setState(profile, "up", error_handler=handler, reply_handler=handler, dbus_interface="tr.org.pardus.comar.Network.Link")
+
 def addUsers():
     global bus
     obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")

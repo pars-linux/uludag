@@ -57,7 +57,7 @@
            <string notr="true">color:white;</string>
           </property>
           <property name="text">
-           <string>For using Pisi History support you may need internet connection, you can use your connection profiles from your profiles</string>
+           <string>For using Pisi History support you may need internet connection, you can use your connection profiles from list</string>
           </property>
           <property name="wordWrap">
            <bool>true</bool>
@@ -68,14 +68,14 @@
          <widget class="QPushButton" name="buttonCancel">
           <property name="minimumSize">
            <size>
-            <width>21</width>
-            <height>21</height>
+            <width>24</width>
+            <height>24</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>21</width>
-            <height>21</height>
+            <width>24</width>
+            <height>24</height>
            </size>
           </property>
           <property name="font">

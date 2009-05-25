@@ -84,8 +84,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         ctx.debugger.log("Selected Partition for rescue is %s" % ctx.installData.rescuePartition.getPath())
 
         # Mount selected partition
-        ctx.partrequests.append(request.MountRequest(ctx.installData.rescuePartition, parttype.root))
-        ctx.partrequests.applyAll()
+        #ctx.partrequests.append(request.MountRequest(ctx.installData.rescuePartition, parttype.root))
+        #ctx.partrequests.applyAll()
 
         return True
 

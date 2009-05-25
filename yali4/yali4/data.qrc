@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/" >
+    <file>gui/pics/wireless_tools.png</file>
+    <file>gui/pics/net_tools.png</file>
     <file>gui/pics/help-about.png</file>
     <file>gui/pics/admin.png</file>
     <file>gui/pics/backardus.png</file>
