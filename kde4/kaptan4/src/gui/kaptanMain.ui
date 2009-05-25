@@ -7,11 +7,32 @@
     <x>0</x>
     <y>0</y>
     <width>603</width>
-    <height>467</height>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string>#kaptanUI{
+	
+	background-color: rgb(229, 214, 212);
+}
+
+QStackedWidget#mainStack {
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 14px;
+     border-color: beige;
+
+}
+QLabel#labelMenu{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 14px;
+     border-color: beige;
+}
+</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -83,6 +104,10 @@
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="buttonCancel">
+       <property name="styleSheet">
+        <string>background-color: rgba(255, 255, 255, 122);
+</string>
+       </property>
        <property name="text">
         <string>Cancel</string>
        </property>
@@ -103,6 +128,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="buttonBack">
+       <property name="styleSheet">
+        <string>background-color: rgba(255, 255, 255, 122);
+</string>
+       </property>
        <property name="text">
         <string>Back</string>
        </property>
@@ -110,6 +139,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="buttonNext">
+       <property name="styleSheet">
+        <string>background-color: rgba(255, 255, 255, 122);
+</string>
+       </property>
        <property name="text">
         <string>Next</string>
        </property>
@@ -117,6 +150,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="buttonFinish">
+       <property name="styleSheet">
+        <string>background-color: rgba(255, 255, 255, 122);
+</string>
+       </property>
        <property name="text">
         <string>Finish</string>
        </property>
