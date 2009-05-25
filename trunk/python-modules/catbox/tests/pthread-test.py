@@ -15,12 +15,16 @@ def test():
 def main():
     a = threading.Thread(target=test)
     b = threading.Thread(target=test)
+    c = threading.Thread(target=test)
     a.start()
     b.start()
+    c.start()
     test()
     a.join()
     test()
     b.join()
+    test()
+    c.join()
 
 ret = catbox.run(main)
 assert(ret.code == 0)
