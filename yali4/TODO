@@ -1,23 +1,22 @@
 
  YALI TODO List
  --------------------------------------------------------
-  - Todo                                | / In progress
+  - Todo     > Comments, Details        | / In progress
   ? Not determined if/how we have to do | + Accomplished
  --------------------------------------------------------
 
  General
  --------------------------------------------------------
- %30 / Network Install #2095
-         > Needs a network settings screen
-     - Improve user settings screen #8714 #7658
-     ? Add polkit support to user settings screen
  %50 / Recovery mode #7169
          + Grub recovery
          - System recovery with Pisi History
+         - Password recovery
+ %30 / Network Install #2095
+         > Needs a network settings screen
  %30 / Fix Keyboard shortcuts problems
+     - Improve user settings screen #8714 #7658
      - Fix low resolution screen problems
      - Fix warning and info messages for new theme
-     ? Improve Exception dialog
      - Improve new theme widget states
      - Add eject cd-rom support when pisi fails
          > Clear cache before ejecting the cd with : "echo 3 > /proc/sys/vm/drop_caches"
@@ -25,13 +24,17 @@
      - Use Bios Boot order if available for sorting device list
      - Fix GRUB issue about wrong order of sd's 
          > example; hd0:sdb, hd1:sda from bios but system gives opposite, like hd0:sda, hd1:sdb
+     - Add polkit support to user settings screen
+         > depends Comar support
+     ? Improve Exception dialog
 
  Partitioning
  --------------------------------------------------------
      + Use ext4 default for ext* partitions
      + Support to use free space on disk for Auto Resize
-     ? Fat32 resize
-     - LVM/RAID support
      + Improve NTFS check before resize
- %20 / Btrfs support
+     + Btrfs support
+         > depends new parted
+     - LVM/RAID support
+     ? Fat32 resize
 

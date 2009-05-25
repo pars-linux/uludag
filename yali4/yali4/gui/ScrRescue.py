@@ -75,6 +75,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.ui.rebootButton.hide()
 
     def execute(self):
+        if self.ui.usePisiHs.isChecked():
+            ctx.mainScreen.moveInc = 2
         ctx.installData.rescuePartition = self.ui.partitionList.currentItem().getPartition()
         ctx.debugger.log("Selected Partition for rescue is %s" % ctx.installData.rescuePartition.getPath())
         return True

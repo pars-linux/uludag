@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/" >
+    <file>gui/pics/help-about.png</file>
     <file>gui/pics/admin.png</file>
     <file>gui/pics/backardus.png</file>
     <file>gui/pics/goodbye.png</file>
