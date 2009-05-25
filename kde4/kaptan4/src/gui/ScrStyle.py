@@ -71,6 +71,27 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 print "Warning! Invalid syntax in ", desktopFiles
 
         self.ui.listStyles.connect(self.ui.listStyles, SIGNAL("itemSelectionChanged()"), self.setStyle)
+        self.ui.comboBoxDesktopType.connect(self.ui.comboBoxDesktopType, SIGNAL("activated(const QString &)"), self.setDesktopType)
+
+    def setDesktopType(self):
+        currentIndex = self.ui.comboBoxDesktopType.currentIndex()
+        if currentIndex == 0:
+            self.selectedType = 'desktop'
+        else:
+            self.selectedType = 'folderview'
+
+        config =  KConfig("plasma-appletsrc")
+        group = config.group("Containments")
+
+        for each in list(group.groupList()):
+            subgroup = group.group(each)
+            subcomponent = subgroup.readEntry('plugin')
+            subcomponent2 = subgroup.readEntry('screen')
+            if subcomponent == 'desktop' or subcomponent == 'folderview':
+                if int(subcomponent2) == 1:
+                    subgroup.writeEntry('plugin', self.selectedType)
+
+        config.sync()
 
     def setStyle(self):
         styleName =  str(self.ui.listStyles.currentItem().statusTip())
