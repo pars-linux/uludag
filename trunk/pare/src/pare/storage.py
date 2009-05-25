@@ -86,6 +86,9 @@ class Pare(object):
     
     def commitToDisk(self, disk):
         self._diskTable[disk].commit()
+        for partition in self.diskPartitions(disk):
+            partition.exists = True
+        
     ##
     # Add (create) a new partition to the device
     # @param part: parted partition; must be parted.PARTITION_FREESPACE

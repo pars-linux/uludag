@@ -59,7 +59,7 @@ if __name__ == "__main__":
         
     for disk in disks:
         if disk.path == "/dev/sdd":
-            partition = test.getDiskPartition(disk.path, 1)
+            partition = test.getDiskPartition(disk.path, 3)
             print "partition:%s" % partition
             test.deleteDiskPartition(disk, partition)
             test.commit2Disk(disk.path)

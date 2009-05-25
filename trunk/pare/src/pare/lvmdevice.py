@@ -20,7 +20,45 @@ from pare.partition import LVM
 import os
 import pare.parteddata 
 
-class VolumeGroupDevice():
+
+class PhysicalVolume():
+    _type = physicalVolumeType
+    _exists = False
+    _vg = None
+    _child = 0
+    _partition = None
+    
+    def __init__(self, partition):
+        self._exists = False
+        self._partition =  partition
+    
+    def create(self):
+        lvm.pvcreate(partition.path)
+        self._exists = True
+    
+    def destroy(self):
+        lvm.pvremove(partition.path)
+    
+    @property
+    def exists(self):
+       return (self._exists and os.path.exists("/dev/mapper/%s" % self._vg))
+
+    def setupParent(self):
+        if not self._partition.exists:
+            self._partition.disk.setup()
+         
+    @property
+    def parent(self):
+        return  self._partition.path
+    
+    @property
+    def addChild(self):
+        self._child += 1
+    
+    def removeChild(self):
+        self._child -= 1
+         
+class VolumeGroup():
     _type = volumeGroupType 
     _devBlockDir = "/dev/mapper"
     _name = ''
@@ -31,32 +69,37 @@ class VolumeGroupDevice():
     _free = 0
     
     def __init__(self,name, physicalVolumes=None, peSize=None):
-        
+        self._isSetup = False
         self._name = name
-        if isinstance(physicalVolumes, list):
-            for pv in physicalVolumes:
-              self._pvs.append(pv)
+        
+        if physicalVolumes is not None:
+            if isinstance(physicalVolumes, list):
+                for pv in physicalVolumes:
+                    self._pvs.append(pv)
+                    pv.addChild()
               
     
-    def _addPV(self, pv):
+    def addPV(self, pv):
         if isinstance(pv, PhysicalVolume):
             self._pvs.append(pv)
         
         pv.addChild()
     
-    def _removePV(self, pv):
+    def removePV(self, pv):
         if isinstance(pv, PhysicalVolume):
             self._pvs.remove(pv)
+            pv.removeChild()
+    
+    def addLV(self, logicalVolume):
+        if logicalVolume in self._lvs:
+            raise ValueError("Logical Volume is part of this Volume Group")
         
-        pv.removeChild()
+        #FIXME:Check Volume Group free size not smaller than logical volume requested size
     
-    def _addLV(self):
+    def removeLV(self, logicalVolume):
         pass
     
-    def _removeLV(self):
-        pass
-    
-    def createParents(self):
+    def setupParents(self):
         for pv in self._pvs:
             pv.create()
     
@@ -82,13 +125,14 @@ class VolumeGroupDevice():
         return "%s/%s" % (self._devBlockDir, self.name)
     
     @property
-    def status(self):
+    def exists(self):
         if not self._exists:
             return False
         
         for lv in self._lvs:
             if lv.status:
                 return True 
+        
         for pv in self._pvs:
             if not pv.status:
                 return False
@@ -103,31 +147,35 @@ class VolumeGroupDevice():
     def lvs(self):
         return self._lvs[:]
     
-    @property
-    def iscomplete(self):
-        pass
 
-class PhysicalVolume():
-    _type = physicalVolumeType
-    _exists = False
+class LogicalVolume():
     _vg = None
-    _child = 0
+    _name = ''
+    _size = 0
     
-    def __init__(self, partition):
-        pass
-    
+    def __init__(self, name, volumeGroup, size):
+        self._name =  name
+        self._size = size
+        self._vg.createLV(self)
+
     def create(self):
-        lvm.pvcreate(partition.path)
-        self._exists = True
+        pass
     
     def destroy(self):
-        lvm.pvremove(partition.path)
+        pass
     
-    def status(self):
-       return (self._exists and os.path.exists("/dev/mapper/%s" % self._vg))
+    @property
+    def path(self):
+        pass
     
-    def addChild(self):
-        self._child += 1
-        
-    def removeChild(self):
-        self._child -= 1
+    @property
+    def volumeGroup(self):
+        return self._vg
+    
+    @property
+    def size(self):
+        return self._size
+    
+    @property
+    def name(self):
+        return self._name
