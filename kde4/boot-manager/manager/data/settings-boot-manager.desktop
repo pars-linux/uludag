@@ -1,0 +1,17 @@
+[Desktop Entry]
+Exec=kcmshell4 boot-manager
+Icon=computer
+Type=Service
+X-KDE-ServiceTypes=KCModule
+
+X-KDE-Library=kpythonpluginfactory
+X-KDE-ParentApp=kcontrol
+X-KDE-PluginKeyword=boot-manager/boot-manager.py
+
+X-KDE-System-Settings-Parent-Category=computer-administration
+X-KDE-Weight=70
+
+Name=Boot Manager
+Name[tr]=Açılış Yöneticisi
+Comment=Boot Manager
+X-KDE-Keywords=python boot grub managers
