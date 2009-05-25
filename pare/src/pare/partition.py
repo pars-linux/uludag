@@ -39,10 +39,14 @@ class Partition:
     def isFormatted(self):
         return self.isFileSystemReady()
     
-    @property
-    def exists(self):
-        return self.exists
+    def _getExists(self):
+        return self._exists
 
+    def _setExists(self, bool):
+        self._exists =  bool
+    
+    exists = property(lambda p: p._getExists(), lambda p,f: p._setExists(f))
+    
     def setFileSystemType(self, _format):
         if isinstance(_format, FileSystem):
             _format = _format.fileSystemType

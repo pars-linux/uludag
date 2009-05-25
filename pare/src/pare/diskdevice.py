@@ -165,6 +165,9 @@ class Disk:
     def model(self):
         return self._model
 
+    def setup(self):
+        self.commit()
+        
     ##
     # check if the device has an extended partition
     # @returns: True/False
@@ -275,6 +278,7 @@ class Disk:
             part.setFlag(flag)
 
         try:
+            self._isSetup = True
             return self._disk.addPartition(part, constraint)
         except parted.error, e:
             raise DeviceError, e
@@ -289,6 +293,7 @@ class Disk:
         return self._disk.deletePartition(part)
 
     def deleteAllPartitions(self):
+        self._isSetup = True
         return self._disk.deleteAllPartitions()
 
     def resizePartition(self, filesystem, size, partition):
