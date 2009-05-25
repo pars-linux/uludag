@@ -49,12 +49,11 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
     def updateCompletedInfo(self, completed, total, rate):
         self.completedInfo.setText(i18n("<p align='center'>%1 / %2, %3</p>", completed, total, rate))
 
+    def updateActionLabel(self, action):
+        self.actionLabel.setText("<b>%s</b>" % self.state.getActionCurrent(action))
+
     def enableCancel(self):
         self.cancelButton.setEnabled(True)
 
     def disableCancel(self):
         self.cancelButton.setEnabled(False)
-
-    def show(self):
-        self.actionLabel.setText("<b>%s</b>" % self.state.getActionCurrent())
-        QtGui.QDialog.show(self)
