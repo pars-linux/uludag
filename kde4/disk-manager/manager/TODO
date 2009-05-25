@@ -1,4 +1,3 @@
-- Use different icon for mounted disks
 - Guess  mount point
 ? Disable editing mount point of root partition
 ? Guess filesystem type

@@ -114,15 +114,19 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         return widget
 
-    def addItem(self, id_, name="", description=""):
+    def addItem(self, id_, name="", description="", mounted=False):
         """
             Adds an item to list.
         """
-        icon = "drive-harddisk"
+        if mounted:
+            icon = kdeui.KIcon("drive-harddisk", None, ["emblem-mounted"])
+        else:
+            icon = kdeui.KIcon("drive-harddisk")
+
         type_ = "disk"
 
         # Build widget and widget item
-        widget = self.makeItemWidget(id_, name, description, type_, kdeui.KIcon(icon), None)
+        widget = self.makeItemWidget(id_, name, description, type_, icon, None)
         widgetItem = ItemListWidgetItem(self.listItems, widget)
 
         # Delete is unnecessary
@@ -161,14 +165,14 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             else:
                 devices = args[0]
                 for device in devices:
-                    # self.addItem(device, device, "")
                     parts = self.iface.partitionList(device)
                     parts.sort()
                     for part in parts:
-                        description = ""
                         if part in self.mounted_devices:
                             description = kdecore.i18n("Mounted at %1", self.mounted_devices[part])
-                        self.addItem(part, part, description)
+                            self.addItem(part, part, description, True)
+                        else:
+                            self.addItem(part, part, "")
 
         self.iface.deviceList(func=handleList)
 
