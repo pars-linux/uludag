@@ -52,7 +52,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 styleName = parser.get_locale('Style', 'name', '')
                 styleDesc = parser.get_locale('Style', 'description', '')
                 #styleApplet = parser.get_locale('Style', 'applets', '')
-                #panelPosition = parser.get_locale('Style', 'panelPosition', '')
+                panelPosition = parser.get_locale('Style', 'panelPosition', '')
                 #styleColorScheme = parser.get_locale('Style', 'colorScheme', '')
                 widgetStyle = parser.get_locale('Style', 'widgetStyle', '')
                 desktopTheme = parser.get_locale('Style', 'desktopTheme', '')
@@ -60,7 +60,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 windowDecoration = parser.get_locale('Style', 'windowDecoration', '')
                 styleThumb = os.path.join(os.path.split(str(desktopFiles))[0],  parser.get_locale('Style', 'thumbnail',''))
 
-                self.styleDetails[styleName] = {"description": styleDesc, "widgetStyle": widgetStyle, "desktopTheme": desktopTheme, "iconTheme": iconTheme, "windowDecoration": windowDecoration}
+                self.styleDetails[styleName] = {
+                        "description": styleDesc, 
+                        "widgetStyle": widgetStyle, 
+                        "desktopTheme": desktopTheme, 
+                        "iconTheme": iconTheme, 
+                        "windowDecoration": windowDecoration, 
+                        "panelPosition": panelPosition
+                        }
 
                 item = QtGui.QListWidgetItem(self.ui.listStyles)
                 widget = StyleItemWidget(unicode(styleName), unicode(styleDesc), styleThumb, self.ui.listStyles)
@@ -119,6 +126,17 @@ class Widget(QtGui.QWidget, ScreenWidget):
         groupDesktopTheme = configPlasmaRc.group("Theme")
         groupDesktopTheme.writeEntry("name", self.styleDetails[styleName]["desktopTheme"])
         configPlasmaRc.sync()
+
+        configPlasmaApplet = KConfig("plasma-appletsrc")
+        group = configPlasmaApplet.group("Containments")
+        for each in list(group.groupList()):
+            subgroup = group.group(each)
+            subcomponent = subgroup.readEntry('plugin')
+            if subcomponent == 'panel':
+                print subcomponent
+                subgroup.writeEntry('location', self.styleDetails[styleName]["panelPosition"])
+
+        configPlasmaApplet.sync()
 
         configKwinRc = KConfig("kwinrc")
         groupWindowDecoration = configKwinRc.group("Style")
