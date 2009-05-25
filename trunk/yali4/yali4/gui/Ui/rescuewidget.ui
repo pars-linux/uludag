@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>666</width>
-    <height>633</height>
+    <height>563</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -104,7 +104,7 @@
      </property>
      <property name="icon">
       <iconset resource="../../data.qrc">
-       <normaloff>:/gui/pics/postinstall.png</normaloff>:/gui/pics/postinstall.png</iconset>
+       <normaloff>:/gui/pics/iconBootloader.png</normaloff>:/gui/pics/iconBootloader.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -135,9 +135,6 @@
    </item>
    <item row="5" column="1" colspan="2">
     <widget class="QRadioButton" name="usePisiHs">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
@@ -151,7 +148,7 @@
      </property>
      <property name="icon">
       <iconset resource="../../data.qrc">
-       <normaloff>:/gui/pics/pardus.png</normaloff>:/gui/pics/pardus.png</iconset>
+       <normaloff>:/gui/pics/iconInstall.png</normaloff>:/gui/pics/iconInstall.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -179,7 +176,7 @@
      </property>
      <property name="icon">
       <iconset resource="../../data.qrc">
-       <normaloff>:/gui/pics/pardus.png</normaloff>:/gui/pics/pardus.png</iconset>
+       <normaloff>:/gui/pics/postinstall.png</normaloff>:/gui/pics/postinstall.png</iconset>
      </property>
      <property name="iconSize">
       <size>

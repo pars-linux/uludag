@@ -1,6 +1,7 @@
 
 Following steps will be useful to test Yalı in an arbitrary order :)
 
+ - Check translations
  - Check Release Notes and License files
  - Check different keyboard layouts and note the selected one to test after install
     - Test it in tty and X
