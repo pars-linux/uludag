@@ -88,7 +88,16 @@ class Widget(QtGui.QWidget, ScreenWidget):
             item.setStatusTip(wallpaperFile)
 
         self.ui.listWallpaper.connect(self.ui.listWallpaper, SIGNAL("itemSelectionChanged()"), self.setWallpaper)
+        self.ui.checkBox.connect(self.ui.checkBox, SIGNAL("stateChanged(int)"), self.disableWidgets)
         self.ui.buttonChooseWp.connect(self.ui.buttonChooseWp, SIGNAL("clicked()"), self.selectWallpaper)
+
+    def disableWidgets(self, state):
+        if state:
+            self.ui.buttonChooseWp.setDisabled(True)
+            self.ui.listWallpaper.setDisabled(True)
+        else:
+            self.ui.buttonChooseWp.setDisabled(False)
+            self.ui.listWallpaper.setDisabled(False)
 
     def setWallpaper(self):
         selectedWallpaper =  self.ui.listWallpaper.currentItem().statusTip()

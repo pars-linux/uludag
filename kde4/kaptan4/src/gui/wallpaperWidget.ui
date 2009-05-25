@@ -1,27 +1,28 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>wallpaperWidget</class>
- <widget class="QWidget" name="wallpaperWidget" >
-  <property name="geometry" >
+ <widget class="QWidget" name="wallpaperWidget">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>786</width>
-    <height>539</height>
+    <width>578</width>
+    <height>400</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Wallpaper</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout" >
-   <item row="0" column="1" >
-    <spacer name="verticalSpacer" >
-     <property name="orientation" >
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeType" >
+     <property name="sizeType">
       <enum>QSizePolicy::Fixed</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
        <height>18</height>
@@ -29,15 +30,15 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="0" >
-    <spacer name="horizontalSpacer" >
-     <property name="orientation" >
+   <item row="1" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeType" >
+     <property name="sizeType">
       <enum>QSizePolicy::Fixed</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>40</width>
        <height>20</height>
@@ -45,29 +46,36 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="1" >
-    <layout class="QVBoxLayout" name="verticalLayout" >
+   <item row="1" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QListWidget" name="listWallpaper" />
+      <widget class="QListWidget" name="listWallpaper"/>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonChooseWp" >
-       <property name="text" >
+      <widget class="QPushButton" name="buttonChooseWp">
+       <property name="text">
         <string>Choose Wallpaper</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox">
+       <property name="text">
+        <string>Don't change wallpaper</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
-   <item row="1" column="2" >
-    <spacer name="horizontalSpacer_2" >
-     <property name="orientation" >
+   <item row="1" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeType" >
+     <property name="sizeType">
       <enum>QSizePolicy::Fixed</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>40</width>
        <height>20</height>
@@ -75,15 +83,15 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="1" >
-    <spacer name="verticalSpacer_2" >
-     <property name="orientation" >
+   <item row="2" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeType" >
+     <property name="sizeType">
       <enum>QSizePolicy::Fixed</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
        <height>17</height>
@@ -92,12 +100,6 @@
     </spacer>
    </item>
   </layout>
-  <zorder>listWallpaper</zorder>
-  <zorder>horizontalSpacer</zorder>
-  <zorder>verticalSpacer_2</zorder>
-  <zorder>horizontalSpacer_2</zorder>
-  <zorder>verticalSpacer</zorder>
-  <zorder></zorder>
  </widget>
  <resources/>
  <connections/>
