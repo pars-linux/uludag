@@ -83,6 +83,17 @@ def update_repo(name):
 def remove_repo(name):
     pisi.api.remove_repo(name)
 
+def getHistory(limit=50):
+    pdb = pisi.db.historydb.HistoryDB()
+    result = []
+    i=0
+    for op in pdb.get_last():
+        result.append(op)
+        i+=1
+        if i==limit:
+            break
+    return result
+
 def finalize():
     pass
 
