@@ -13,6 +13,7 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
+from PyKDE4 import kdeui
 
 import os, sys, Image
 
@@ -73,6 +74,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def setStyle(self):
         styleName =  str(self.ui.listStyles.currentItem().statusTip())
+
         configKdeGlobals = KConfig("kdeglobals")
         group = configKdeGlobals.group("General")
         group.writeEntry("widgetStyle", self.styleDetails[styleName]["widgetStyle"])
@@ -80,13 +82,27 @@ class Widget(QtGui.QWidget, ScreenWidget):
         groupIconTheme = configKdeGlobals.group("Icons")
         groupIconTheme.writeEntry("Theme", self.styleDetails[styleName]["iconTheme"])
 
+        configKdeGlobals.sync()
+
+        # Change Icon theme
+        kdeui.KIconTheme.reconfigure()
+        kdeui.KIconCache.deleteCache()
+
+        for i in range(kdeui.KIconLoader.LastGroup):
+            kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.IconChanged, i)
+
+        # Change widget style
+        kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.StyleChanged)
+
         configPlasmaRc = KConfig("plasmarc")
         groupDesktopTheme = configPlasmaRc.group("Theme")
         groupDesktopTheme.writeEntry("name", self.styleDetails[styleName]["desktopTheme"])
+        configPlasmaRc.sync()
 
         configKwinRc = KConfig("kwinrc")
         groupWindowDecoration = configKwinRc.group("Style")
         groupWindowDecoration.writeEntry("PluginLib", self.styleDetails[styleName]["windowDecoration"])
+        configKwinRc.sync()
 
     def shown(self):
         pass
