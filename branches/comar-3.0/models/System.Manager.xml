@@ -64,6 +64,9 @@
           <arg name="message3" type="s" direction="out"/>
           <arg name="message4" type="s" direction="out"/>
         </signal>
+        <signal name="started">
+          <arg name="message" type="s" direction="out"/>
+        </signal>
         <signal name="finished">
           <arg name="message" type="s" direction="out"/>
         </signal>
