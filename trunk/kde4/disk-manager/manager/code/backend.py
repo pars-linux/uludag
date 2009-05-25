@@ -23,6 +23,9 @@ class Interface:
         self.link.setLocale()
         self.package = self.getMainPackage()
 
+    def listenSignals(self, func):
+        self.link.listenSignals("Disk.Manager", func)
+
     def getPackages(self):
         """
             List of packages that provide Disk.Manager model
@@ -56,6 +59,12 @@ class Interface:
             self.link.Disk.Manager[self.package].listEntries(async=func)
         else:
             return self.link.Disk.Manager[self.package].listEntries()
+
+    def mountList(self, func=None):
+        if func:
+            self.link.Disk.Manager[self.package].getMounted(async=func)
+        else:
+            return self.link.Disk.Manager[self.package].getMounted()
 
     def getEntry(self, entry):
         path, fsType, fs_options = self.link.Disk.Manager[self.package].getEntry(entry)
