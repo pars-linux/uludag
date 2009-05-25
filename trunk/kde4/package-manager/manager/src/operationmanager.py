@@ -92,7 +92,7 @@ class OperationManager(QObject):
 
         elif signal == "started":
             self.initialize()
-            self.emit(SIGNAL("started()"))
+            self.emit(SIGNAL("started(QString)"), args[0])
 
         elif signal in ["installing", "removing", "extracting", "configuring"]:
             self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(signal), args[0])
