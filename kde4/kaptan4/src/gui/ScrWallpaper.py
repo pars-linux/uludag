@@ -82,14 +82,13 @@ class Widget(QtGui.QWidget, ScreenWidget):
             item = QtGui.QListWidgetItem(self.ui.listWallpaper)
             # Each wallpaper item is a widget. Look at widgets.py for more information.
             widget = WallpaperItemWidget(unicode(wallpaperTitle), unicode(wallpaperDesc), wallpaperThumb, self.ui.listWallpaper)
-            self.ui.listWallpaper.setItemWidget(item, widget)
             item.setSizeHint(QSize(38,110))
+            self.ui.listWallpaper.setItemWidget(item, widget)
             # Add a hidden value to each item for detecting selected wallpaper's path.
             item.setStatusTip(wallpaperFile)
 
         self.ui.listWallpaper.connect(self.ui.listWallpaper, SIGNAL("itemSelectionChanged()"), self.setWallpaper)
         self.ui.buttonChooseWp.connect(self.ui.buttonChooseWp, SIGNAL("clicked()"), self.selectWallpaper)
-
 
     def setWallpaper(self):
         selectedWallpaper =  self.ui.listWallpaper.currentItem().statusTip()
@@ -98,7 +97,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         for each in list(group.groupList()):
             subgroup = group.group(each)
             subcomponent = subgroup.readEntry('plugin')
-            if subcomponent == 'desktop':
+            if subcomponent == 'desktop' or subcomponent == 'folderview':
                 subg = subgroup.group('Wallpaper')
                 subg_2 = subg.group('image')
                 subg_2.writeEntry("wallpaper", selectedWallpaper)
