@@ -41,8 +41,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_RescuePisiWidget()
         self.ui.setupUi(self)
-        #self.connect(self.ui.deviceList, SIGNAL("currentItemChanged(QListWidgetItem*,QListWidgetItem*)"), self.slotDeviceChanged)
-        #self.connect(self.ui.deviceList, SIGNAL("itemClicked(QListWidgetItem*)"), self.slotSelect)
 
     def shown(self):
         pass

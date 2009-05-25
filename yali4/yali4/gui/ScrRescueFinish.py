@@ -18,8 +18,6 @@ from PyQt4 import QtGui
 
 import time
 from yali4 import sysutils
-import yali4.partitionrequest as request
-import yali4.partitiontype as parttype
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.YaliDialog import WarningDialog, RebootWidget
 from yali4.gui.YaliSteps import YaliSteps
@@ -43,19 +41,23 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         self.steps = YaliSteps()
-        self.steps.setOperations([{"text":      _("Installing BootLoader..."),
-                                   "operation": self.installBootLoader}])
 
     def installBootLoader(self):
-        # Mount selected partition
-        ctx.partrequests.append(request.MountRequest(ctx.installData.rescuePartition, parttype.root))
-        ctx.partrequests.applyAll()
-
         # Install bootloader
         ctx.yali.installBootloader(ctx.installData.rescuePartition)
 
+    def takeBackPisi(self):
+        pass
+
     def shown(self):
         ctx.mainScreen.disableNext()
+        if ctx.rescueMode == "grub":
+            self.steps.setOperations([{"text":      _("Installing BootLoader..."),
+                                       "operation": self.installBootLoader}])
+        elif ctx.rescueMode == "pisi":
+            self.steps.setOperations([{"text":      _("Taking back Pisi operation..."),
+                                       "operation": self.takeBackPisi}])
+
         ctx.yali.info.updateAndShow(_("Running rescue operations.."))
         ctx.mainScreen.disableBack()
         self.steps.slotRunOperations()

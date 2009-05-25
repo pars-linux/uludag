@@ -19,6 +19,8 @@ from PyQt4.QtCore import *
 
 import yali4.storage
 import yali4.sysutils
+import yali4.partitiontype as parttype
+import yali4.partitionrequest as request
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.GUIAdditional import PartItem
 from yali4.gui.Ui.rescuewidget import Ui_RescueWidget
@@ -77,8 +79,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def execute(self):
         if self.ui.usePisiHs.isChecked():
             ctx.mainScreen.moveInc = 2
+
         ctx.installData.rescuePartition = self.ui.partitionList.currentItem().getPartition()
         ctx.debugger.log("Selected Partition for rescue is %s" % ctx.installData.rescuePartition.getPath())
+
+        # Mount selected partition
+        ctx.partrequests.append(request.MountRequest(ctx.installData.rescuePartition, parttype.root))
+        ctx.partrequests.applyAll()
+
         return True
 
 class PardusPartitions:
