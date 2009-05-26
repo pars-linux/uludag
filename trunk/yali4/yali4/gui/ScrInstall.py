@@ -251,26 +251,25 @@ class PkgInstaller(QThread):
 
         try:
             order = yali4.pisiiface.get_install_order(yali4.pisiiface.get_available())
-            for package in order:
-                while True:
-                    try:
-                        yali4.pisiiface.install([package])
-                        break # while
-                    except Exception, e:
-                        # Lock the mutex
-                        ctx.yali.mutex.lock()
+            while True:
+                try:
+                    yali4.pisiiface.install(order)
+                    break # while
+                except Exception, e:
+                    # Lock the mutex
+                    ctx.yali.mutex.lock()
 
-                        # Send event for asking retry
-                        qevent = PisiEvent(QEvent.User, EventRetry)
-                        qevent.setData(package)
-                        objectSender(qevent)
+                    # Send event for asking retry
+                    qevent = PisiEvent(QEvent.User, EventRetry)
+                    qevent.setData(ui.lastPackage)
+                    objectSender(qevent)
 
-                        # wait for the result
-                        ctx.yali.waitCondition.wait(ctx.yali.mutex)
-                        ctx.yali.mutex.unlock()
+                    # wait for the result
+                    ctx.yali.waitCondition.wait(ctx.yali.mutex)
+                    ctx.yali.mutex.unlock()
 
-                        if ctx.yali.retryAnswer == False:
-                            raise e
+                    if ctx.yali.retryAnswer == False:
+                        raise e
 
         except Exception, e:
             # Lock the mutex
@@ -324,11 +323,13 @@ class PisiUI(QObject, pisi.ui.UI):
     def __init__(self, *args):
         pisi.ui.UI.__init__(self)
         apply(QObject.__init__, (self,) + args)
+        self.lastPackage = ''
 
     def notify(self, event, **keywords):
         if event == pisi.ui.installing or event == pisi.ui.configuring:
             qevent = PisiEvent(QEvent.User, EventPisi)
             data = [keywords['package'], event]
+            self.lastPackage = keywords['package']
             qevent.setData(data)
             objectSender(qevent)
 
