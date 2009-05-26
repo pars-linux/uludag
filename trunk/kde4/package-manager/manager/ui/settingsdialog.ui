@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>564</width>
-    <height>343</height>
+    <width>578</width>
+    <height>366</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -20,10 +20,48 @@
    <bool>true</bool>
   </property>
   <layout class="QGridLayout" name="gridLayout_4" >
+   <item row="1" column="0" >
+    <layout class="QHBoxLayout" name="horizontalLayout" >
+     <item>
+      <widget class="QPushButton" name="buttonHelp" >
+       <property name="text" >
+        <string>&amp;Help</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonOk" >
+       <property name="text" >
+        <string>&amp;OK</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonCancel" >
+       <property name="text" >
+        <string>&amp;Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
    <item row="0" column="0" >
     <widget class="QTabWidget" name="tabWidget" >
      <property name="currentIndex" >
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_1" >
       <attribute name="title" >
@@ -351,6 +389,114 @@ This will not delete installed software or affect your system stability.</string
       <attribute name="title" >
        <string>&amp;Repositories</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_9" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="label_7" >
+         <property name="text" >
+          <string>Name:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" >
+        <widget class="QLineEdit" name="repoName" />
+       </item>
+       <item rowspan="3" row="0" column="2" >
+        <layout class="QVBoxLayout" name="verticalLayout" >
+         <item>
+          <widget class="QPushButton" name="addRepoButton" >
+           <property name="text" >
+            <string>&amp;Add Repository</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="../data/data.qrc" >
+             <normaloff>:/data/list-add.png</normaloff>:/data/list-add.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="removerepoButton" >
+           <property name="text" >
+            <string>&amp;Remove Repository</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="../data/data.qrc" >
+             <normaloff>:/data/list-remove.png</normaloff>:/data/list-remove.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="moveUpButton" >
+           <property name="text" >
+            <string>Move &amp;Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="moveDownButton" >
+           <property name="text" >
+            <string>Move &amp;Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_4" >
+           <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0" >
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QLabel" name="label_8" >
+         <property name="text" >
+          <string>Address:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" >
+        <widget class="QComboBox" name="repoAddress" >
+         <property name="editable" >
+          <bool>true</bool>
+         </property>
+         <item>
+          <property name="text" >
+           <string/>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text" >
+           <string>http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2" >
+        <widget class="QTableWidget" name="repoListView" >
+         <column>
+          <property name="text" >
+           <string>Name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text" >
+           <string>Address</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="tab_4" >
       <attribute name="title" >
@@ -405,7 +551,7 @@ This will not delete installed software or affect your system stability.</string
         </widget>
        </item>
        <item row="2" column="1" colspan="2" >
-        <widget class="QLineEdit" name="lineEdit" />
+        <widget class="QLineEdit" name="httpProxy" />
        </item>
        <item row="2" column="3" >
         <widget class="QLabel" name="label_2" >
@@ -415,7 +561,7 @@ This will not delete installed software or affect your system stability.</string
         </widget>
        </item>
        <item row="2" column="4" >
-        <widget class="QSpinBox" name="spinBox" >
+        <widget class="QSpinBox" name="httpProxyPort" >
          <property name="minimum" >
           <number>1</number>
          </property>
@@ -428,7 +574,7 @@ This will not delete installed software or affect your system stability.</string
         </widget>
        </item>
        <item row="3" column="1" colspan="2" >
-        <widget class="QCheckBox" name="checkBox" >
+        <widget class="QCheckBox" name="useHttpForAll" >
          <property name="baseSize" >
           <size>
            <width>100</width>
@@ -448,7 +594,7 @@ This will not delete installed software or affect your system stability.</string
         </widget>
        </item>
        <item row="4" column="1" colspan="2" >
-        <widget class="QLineEdit" name="lineEdit_2" />
+        <widget class="QLineEdit" name="httpsProxy" />
        </item>
        <item row="4" column="3" >
         <widget class="QLabel" name="label_4" >
@@ -458,7 +604,7 @@ This will not delete installed software or affect your system stability.</string
         </widget>
        </item>
        <item row="4" column="4" >
-        <widget class="QSpinBox" name="spinBox_2" >
+        <widget class="QSpinBox" name="httpsProxyPort" >
          <property name="minimum" >
           <number>0</number>
          </property>
@@ -478,7 +624,7 @@ This will not delete installed software or affect your system stability.</string
         </widget>
        </item>
        <item row="5" column="1" colspan="2" >
-        <widget class="QLineEdit" name="lineEdit_3" />
+        <widget class="QLineEdit" name="ftpProxy" />
        </item>
        <item row="5" column="3" >
         <widget class="QLabel" name="label_6" >
@@ -488,7 +634,7 @@ This will not delete installed software or affect your system stability.</string
         </widget>
        </item>
        <item row="5" column="4" >
-        <widget class="QSpinBox" name="spinBox_3" >
+        <widget class="QSpinBox" name="ftpProxyPort" >
          <property name="minimum" >
           <number>0</number>
          </property>
@@ -516,44 +662,6 @@ This will not delete installed software or affect your system stability.</string
       </layout>
      </widget>
     </widget>
-   </item>
-   <item row="1" column="0" >
-    <layout class="QHBoxLayout" name="horizontalLayout" >
-     <item>
-      <widget class="QPushButton" name="buttonHelp" >
-       <property name="text" >
-        <string>&amp;Help</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_3" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="buttonOk" >
-       <property name="text" >
-        <string>&amp;OK</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="buttonCancel" >
-       <property name="text" >
-        <string>&amp;Cancel</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </item>
   </layout>
  </widget>
