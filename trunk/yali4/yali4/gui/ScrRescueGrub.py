@@ -109,4 +109,5 @@ loader.
         ctx.debugger.log("Bootloader Device is %s" % ctx.installData.bootLoaderDev)
         ctx.debugger.log("Bootloader Partition is %s" % ctx.installData.rescuePartition.getPath())
 
+        ctx.mainScreen.moveInc = 2
         return True

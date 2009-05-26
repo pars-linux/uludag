@@ -45,6 +45,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def installBootLoader(self):
         # Install bootloader
         ctx.yali.installBootloader(ctx.installData.rescuePartition)
+        return True
 
     def takeBackPisi(self):
         pass
