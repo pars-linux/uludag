@@ -29,17 +29,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         self.ui.spinBox.connect(self.ui.spinBox, SIGNAL("valueChanged(const QString &)"), self.addDesktop)
-        self.ui.desktop1.connect(self.ui.desktop1, SIGNAL("editingFinished()"), self.desktopNames)
-        self.ui.desktop2.connect(self.ui.desktop2, SIGNAL("editingFinished()"), self.desktopNames)
-        self.ui.desktop3.connect(self.ui.desktop3, SIGNAL("editingFinished()"), self.desktopNames)
-        self.ui.desktop4.connect(self.ui.desktop4, SIGNAL("editingFinished()"), self.desktopNames)
-
-    def desktopNames(self):
-        desktopName = self.ui.desktop1.displayText()
-        desktopNumber = int(str(self.sender().objectName()).strip("desktop"))
-        config = KConfig("kwinrc")
-        group = config.group("Desktops")
-        group.writeEntry("Name_%s" % desktopNumber, desktopName)
 
     def addDesktop(self, numberOfDesktop):
         config = KConfig("kwinrc")
