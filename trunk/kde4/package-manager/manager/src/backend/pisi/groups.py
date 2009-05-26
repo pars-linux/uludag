@@ -22,7 +22,7 @@
 
 groups = { GROUP_ALL : {
              "name": "All",
-             "icon": "unknown"
+             "icon": "media-optical"
              },
            GROUP_UNKNOWN : {
              "name": "Unknown",
