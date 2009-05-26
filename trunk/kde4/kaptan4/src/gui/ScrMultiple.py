@@ -14,6 +14,8 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
 
+import dbus
+
 from gui.ScreenWidget import ScreenWidget
 from gui.multipleWidget import Ui_multipleWidget
 
@@ -34,6 +36,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
         config = KConfig("kwinrc")
         group = config.group("Desktops")
         group.writeEntry('Number', QString(numberOfDesktop))
+        group.sync()
+
+        session = dbus.SessionBus()
+        proxy = session.get_object('org.kde.kwin', '/KWin')
+        proxy.reconfigure()
 
     def shown(self):
         pass
