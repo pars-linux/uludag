@@ -28,6 +28,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_searchWidget()
         self.ui.setupUi(self)
 
+        self.ui.labelSearchImage.setPixmap(QtGui.QPixmap(':/raw/pics/nepomuk.png'))
+
         self.ui.checkBoxNepomuk.connect(self.ui.checkBoxNepomuk, SIGNAL("stateChanged(int)"), self.activateNepomuk)
         self.ui.checkBoxStrigi.connect(self.ui.checkBoxStrigi, SIGNAL("stateChanged(int)"), self.activateStrigi)
 
