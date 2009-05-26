@@ -201,12 +201,14 @@ def mount(source, target, fs, needs_mtab=False):
         params.insert(0,"-n")
     run("mount",params)
 
-def umount_(dir='/tmp/pcheck', params=''):
+def umount_(dir=None, params=''):
+    if not dir:
+        dir = consts.tmp_mnt_dir
     param = [dir, params]
     run("umount",param)
 
 def is_windows_boot(partition_path, file_system):
-    m_dir = "/tmp/pcheck"
+    m_dir = consts.tmp_mnt_dir
     if not os.path.isdir(m_dir):
         os.makedirs(m_dir)
     umount(m_dir)
@@ -230,12 +232,12 @@ def is_windows_boot(partition_path, file_system):
 def is_linux_boot(partition_path, file_system):
     import yali4.gui.context as ctx
     result = False
-    m_dir = "/tmp/pcheck"
+    m_dir = consts.tmp_mnt_dir
     if not os.path.isdir(m_dir):
         os.makedirs(m_dir)
     umount_(m_dir)
 
-    ctx.debugger.log("Mounting %s to /tmp/pcheck" % partition_path)
+    ctx.debugger.log("Mounting %s to %s" % (partition_path, consts.tmp_mnt_dir))
 
     try:
         mount(partition_path, m_dir, file_system)
@@ -257,8 +259,23 @@ def is_linux_boot(partition_path, file_system):
 
     return result
 
-def pardus_release():
-    fpath = os.path.join('/tmp/pcheck/', consts.pardus_release_path)
+def pardus_release(partition_path, file_system):
+    import yali4.gui.context as ctx
+    result = False
+    m_dir = consts.tmp_mnt_dir
+    if not os.path.isdir(m_dir):
+        os.makedirs(m_dir)
+    umount_(m_dir)
+
+    ctx.debugger.log("Mounting %s to %s" % (partition_path, consts.tmp_mnt_dir))
+
+    try:
+        mount(partition_path, m_dir, file_system)
+    except:
+        ctx.debugger.log("Mount failed for %s " % partition_path)
+        return False
+
+    fpath = os.path.join(m_dir, consts.pardus_release_path)
     if os.path.exists(fpath):
         return open(fpath,'r').read().strip()
     return ''

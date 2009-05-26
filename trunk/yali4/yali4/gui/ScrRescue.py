@@ -39,6 +39,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_RescueWidget()
         self.ui.setupUi(self)
+        self.ui.info.hide()
         self.radios = [self.ui.useGrub, self.ui.usePisiHs, self.ui.usePassword]
         self.isSuitableForRescue = True
 
@@ -86,43 +87,36 @@ class Widget(QtGui.QWidget, ScreenWidget):
         ctx.installData.rescuePartition = self.ui.partitionList.currentItem().getPartition()
         ctx.debugger.log("Selected Partition for rescue is %s" % ctx.installData.rescuePartition.getPath())
 
+        ctx.yali.info.updateAndShow(_("Mounting selected partition..."))
         # Mount selected partition
         ctx.partrequests.append(request.MountRequest(ctx.installData.rescuePartition, parttype.root))
         ctx.partrequests.applyAll()
+        ctx.yali.info.hide()
 
         return True
 
 class PardusPartitions:
     def __init__(self, parentWidget):
-        isPardusFound, partitionList, pardusPartitions = self.scanDisks()
+        partitionList, pardusPartitions = self.scanDisks()
         if len(partitionList) == 0:
-            _msg = _("Yali couldn't find a suitable partition on your system")
+            parentWidget.ui.infoLabel.setText(_("Yali couldn't find a suitable partition on your system"))
+            parentWidget.ui.info.show()
             parentWidget.ui.partitionList.hide()
             parentWidget.isSuitableForRescue = False
         else:
-            for p in partitionList:
-                if p in pardusPartitions:
+            for partition in partitionList:
+                if partition in pardusPartitions:
                     icon = "parduspart"
                 else:
                     icon = "iconPartition"
-                partition = p['partition']
                 label = partition.getFSLabel() or ''
                 _info = "%s - %s %s" % (partition.getDevice().getModel(),
-                                         partition.getPath(),
-                                         p['release'] or label)
-                PartItem(parentWidget.ui.partitionList, p['partition'], _info, icon)
+                                        partition.getPath(),
+                                        label)
+                PartItem(parentWidget.ui.partitionList, partition, _info, icon)
+
             parentWidget.ui.partitionList.setCurrentItem(parentWidget.ui.partitionList.item(0))
-
-        if isPardusFound:
-            _msg = _("Yalı found a Pardus installed partition on your system.")
-            if len(partitionList) > 1:
-                _msg += _("Please select a partition from list.")
-        elif len(partitionList) > 0:
-            _msg = _("Yalı couldn't find a Pardus installed partition on your system. But there is a Linux installed partitions.")
-            if len(partitionList) > 1:
-                _msg += _("Please select a partition from list")
-
-        parentWidget.ui.infoLabel.setText(_msg)
+            parentWidget.ui.infoLabel.setText(_("Please select a partition from list"))
 
     def scanDisks(self):
         pardusPartitions = []
@@ -130,18 +124,19 @@ class PardusPartitions:
         ctx.debugger.log("Checking for Pardus ...")
         for disk in yali4.storage.devices:
             for partition in disk.getPartitions():
-                # print "Checking ... ", partition.getPath()
                 fs = partition.getFSName()
+                label = partition.getFSLabel() or ''
                 if fs in ("ext4", "ext3", "reiserfs", "xfs"):
-                    pardus_release = yali4.sysutils.pardus_release()
-                    linuxPartitions.append({'partition':partition, 'release':pardus_release})
                     ctx.debugger.log("Partition found which has usable fs (%s)" % partition.getPath())
-                    guest_grub_conf = yali4.sysutils.is_linux_boot(partition.getPath(), fs)
-                    if pardus_release:
-                        pardusPartitions.append({'partition':partition, 'release':pardus_release})
-                    # If it is not a pardus installed partition skip it
-                    yali4.sysutils.umount_()
-        if len(pardusPartitions) > 0:
-            return (True, linuxPartitions, pardusPartitions)
-        return (False, linuxPartitions, pardusPartitions)
+                    if yali4.sysutils.is_linux_boot(partition.getPath(), fs):
+                        linuxPartitions.append(partition)
+                    if label.startswith("PARDUS_ROOT"):
+                        ctx.debugger.log("Pardus Partition found (%s)" % partition.getPath())
+                        pardus_release = yali4.sysutils.pardus_release(partition.getPath(), fs)
+                        if pardus_release:
+                            pardusPartitions.append(partition)
+                        # If it is not a pardus installed partition skip it
+                        yali4.sysutils.umount_()
+
+        return (linuxPartitions, pardusPartitions)
 
