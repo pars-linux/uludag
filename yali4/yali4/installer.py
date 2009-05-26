@@ -639,8 +639,8 @@ class Yali:
         grubConf.write(grubConfPath)
 
         try:
-            ctx.debugger.log("Trying to umount %s" % "/tmp/pcheck")
-            yali4.sysutils.umount_("/tmp/pcheck")
+            ctx.debugger.log("Trying to umount %s" % ctx.consts.tmp_mnt_dir)
+            yali4.sysutils.umount_(ctx.consts.tmp_mnt_dir)
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/archive"))
             yali4.sysutils.umount_(ctx.consts.target_dir + "/mnt/archive")
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
