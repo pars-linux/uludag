@@ -232,11 +232,11 @@ class ConnectionWidget(QtGui.QWidget):
         except:
             ret = True
             self.rootWidget.ui.labelStatus.setText(_("Connection failed"))
-            ctx.yali.info.updateAndShow(_("Connection failed") % current.getConnection())
+            ctx.yali.info.updateAndShow(_("Connection failed"))
 
         if not ret:
             self.rootWidget.ui.labelStatus.setText(_("Connected"))
-            ctx.yali.info.updateAndShow(_("Connected") % current.getConnection())
+            ctx.yali.info.updateAndShow(_("Connected"))
 
         self.hide()
         ctx.mainScreen.processEvents()

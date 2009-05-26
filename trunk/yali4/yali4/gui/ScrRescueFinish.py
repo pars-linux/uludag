@@ -18,6 +18,7 @@ from PyQt4 import QtGui
 
 import time
 import yali4.postinstall
+import yali4.pisiiface
 from yali4 import sysutils
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.YaliDialog import WarningDialog, RebootWidget
@@ -50,8 +51,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def takeBackPisi(self):
         try:
-            yali4.postinstall.takeBack(ctx.takeBackOperation.no)
-        except:
+            yali4.pisiiface.take_back(ctx.takeBackOperation.no)
+        except Exception, e:
+            ctx.debugger.log("Exception occured while taking back !!")
+            ctx.debugger.log(e)
             return False
         return True
 

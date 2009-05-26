@@ -64,7 +64,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def fillHistoryList(self):
         ui = PisiUI()
         ctx.debugger.log("PisiUI is creating..")
-        yali4.pisiiface.initialize(ui)
+        yali4.pisiiface.initialize(ui, with_comar = True)
         try:
             history = yali4.pisiiface.getHistory()
             for hist in history:
@@ -95,10 +95,11 @@ class PisiUI(QObject, pisi.ui.UI):
         apply(QObject.__init__, (self,) + args)
 
     def notify(self, event, **keywords):
-        print event
+        ctx.debugger.log("PISI: Event %s " % event)
 
     def display_progress(self, operation, percent, info, **keywords):
-        print operation, percent, info
+        ctx.debugger.log("PISI: %s %s %s" % (operation, percent, info))
+        ctx.mainScreen.processEvents()
 
 class PisiEvent(QEvent):
 
