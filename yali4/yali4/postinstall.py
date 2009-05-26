@@ -129,11 +129,6 @@ def connectTo(package, profile):
     link = comar.Link(socket=ctx.consts.dbus_socket_file)
     return link.Network.Link[package].setState(profile, "up")
 
-def takeBack(operation):
-    import comar
-    link = comar.Link(socket=ctx.consts.dbus_socket_file)
-    link.System.Manager["pisi"].takeBack(operation)
-
 def addUsers():
     global bus
     obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
