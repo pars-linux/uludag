@@ -13,14 +13,18 @@
 
 # A temporary module for mapping components and groups until pisi components provide them
 
-(GROUP_UNKNOWN, GROUP_ACCESSIBILITIY, GROUP_ACCESSORIES, GROUP_EDUCATION, GROUP_GAMES, GROUP_GRAPHICS,
+(GROUP_ALL, GROUP_UNKNOWN, GROUP_ACCESSIBILITIY, GROUP_ACCESSORIES, GROUP_EDUCATION, GROUP_GAMES, GROUP_GRAPHICS,
  GROUP_INTERNET, GROUP_OFFICE, GROUP_OTHER, GROUP_PROGRAMMING, GROUP_MULTIMEDIA, GROUP_SYSTEM,
  GROUP_DESKTOP_KDE, GROUP_DESKTOP_GNOME, GROUP_DESKTOP_XFCE, GROUP_DESKTOP_OTHER, GROUP_PUBLISHING,
  GROUP_SERVERS, GROUP_FONTS, GROUP_ADMIN_TOOLS, GROUP_LEGACY, GROUP_LOCALIZATION, GROUP_VIRTUALIZATION,
  GROUP_POWER_MANAGEMENT, GROUP_SECURITY, GROUP_COMMUNICATION, GROUP_NETWORK, GROUP_SCIENCE,
- GROUP_ELECTRONICS, GROUP_DOCUMENTATION) = range(30)
+ GROUP_ELECTRONICS, GROUP_DOCUMENTATION) = range(31)
 
-groups = { GROUP_UNKNOWN : {
+groups = { GROUP_ALL : {
+             "name": "All",
+             "icon": "unknown"
+             },
+           GROUP_UNKNOWN : {
              "name": "Unknown",
              "icon": "unknown"
              },
@@ -317,7 +321,7 @@ def groupNameToID(name):
     return None
 
 def getGroups():
-    return list(set(component_group_mappings.values()))
+    return list(set(groups.keys()))
 
 def getGroupComponents(name):
     group = groupNameToID(name)
