@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="raw" >
+    <file>pics/multiple.png</file>
     <file>pics/lancelot.png</file>
     <file>pics/mouse.png</file>
     <file>pics/simple.png</file>

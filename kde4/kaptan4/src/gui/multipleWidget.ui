@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>535</width>
+    <width>534</width>
     <height>378</height>
    </rect>
   </property>
@@ -14,7 +14,7 @@
   </property>
   <property name="styleSheet" >
    <string notr="true" >
-QLabel#labelImage, #labelMultiple{
+QLabel#labelMultiple{
      border-style: outset;
      border-width: 2px;
      border-radius: 14px;
@@ -55,11 +55,8 @@ QLabel#labelImage, #labelMultiple{
      </item>
      <item>
       <widget class="QLabel" name="labelImage" >
-       <property name="styleSheet" >
-        <string notr="true" >background-color: rgba(255, 255, 255, 122);\n</string>
-       </property>
        <property name="text" >
-        <string>[IMAGE] Multiple desktops</string>
+        <string/>
        </property>
       </widget>
      </item>
