@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="raw" >
     <file>pics/nepomuk.png</file>
+    <file>pics/cr64-app-kaptan.png</file>
     <file>pics/multiple.png</file>
     <file>pics/lancelot.png</file>
     <file>pics/mouse.png</file>

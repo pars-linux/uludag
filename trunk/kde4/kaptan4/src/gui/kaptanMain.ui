@@ -12,6 +12,10 @@
   <property name="windowTitle" >
    <string>Kaptan Desktop</string>
   </property>
+  <property name="windowIcon" >
+   <iconset resource="raw.qrc" >
+    <normaloff>:/raw/pics/cr64-app-kaptan.png</normaloff>:/raw/pics/cr64-app-kaptan.png</iconset>
+  </property>
   <property name="styleSheet" >
    <string notr="true" >#kaptanUI{
 	
