@@ -46,22 +46,16 @@ class NewOperation(QWidget):
         self.icon = ":/pics/%s.png" % self.op_type
 
         if self.op_type == 'snapshot':
-            self.op_type_int = 1
             self.op_type_tr = i18n("snapshot")
         elif self.op_type == 'upgrade':
-            self.op_type_int = 2
             self.op_type_tr = i18n("upgrade")
         elif self.op_type == 'remove':
-            self.op_type_int = 3
             self.op_type_tr = i18n("remove")
         elif self.op_type == 'install':
-            self.op_type_int = 4
             self.op_type_tr = i18n("install")
         elif self.op_type == 'takeback':
-            self.op_type_int = 5
             self.op_type_tr = i18n("takeback")
         elif self.op_type == "repoupdate":
-            self.op_type_int = 6
             self.op_type_tr = i18n("repo update")
 
         if self.settings.contains("%d/label" % self.op_no):

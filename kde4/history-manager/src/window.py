@@ -38,12 +38,10 @@ class MainManager(QtGui.QWidget):
 
         self.tweakUi()
 
-        self.ops = {}
         self.last_item = None
 
         self.cface = ComarIface()
         self.pface = PisiIface(self)
-        self.pface.setMaxFetch(15)
 
         self.connectSignals()
 
@@ -63,29 +61,20 @@ class MainManager(QtGui.QWidget):
         self.connect(self.ui.buttonCancelMini, SIGNAL("clicked()"), self.hideEditBox)
         self.connect(self.ui.aliasLE, SIGNAL("textEdited(const QString &)"), self.setAlias)
 
-    def loadHistory(self, count=None):
-        self.ui.lw.clear()
+    def loadHistory(self, num):
+        self.addNewOperation(self.pface.ops.get(num))
 
-        items = None
-        if count != None:
-            items = self.ops.items()[0:count]
-        else:
-            items = self.ops.items()
-
-        for (k, v) in items:
-            self.addNewOperation(v)
-
-        self.status(i18n("Last %d Operations Loaded" % len(items)))
-        self.enableButtons(True)
+        if num in [0, 1]:
+            self.status(i18n("All Operations Loaded"))
 
     def setAlias(self, txt):
         if self.last_item:
             self.last_item.setAlias(txt)
 
     def tweakUi(self):
+        self.ui.lw.clear()
         self.ui.editBox.setMaximumHeight(TARGET_HEIGHT)
         self.ui.progressBar.hide()
-        self.enableButtons(False)
 
     def animate(self, height):
         self.ui.editBox.setMaximumHeight(height)
