@@ -329,7 +329,7 @@ class PisiUI(QObject, pisi.ui.UI):
         if event == pisi.ui.installing or event == pisi.ui.configuring:
             qevent = PisiEvent(QEvent.User, EventPisi)
             data = [keywords['package'], event]
-            self.lastPackage = keywords['package']
+            self.lastPackage = keywords['package'].name
             qevent.setData(data)
             objectSender(qevent)
 
