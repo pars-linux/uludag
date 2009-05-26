@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="raw" >
     <file>pics/sample2.png</file>
+    <file>pics/kaptan_welcome.png</file>
   </qresource>
 </RCC>
