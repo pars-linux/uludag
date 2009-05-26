@@ -10,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Form</string>
+   <string>Kaptan Desktop</string>
   </property>
   <property name="styleSheet" >
    <string notr="true" >#kaptanUI{
@@ -76,7 +76,7 @@ QLabel#labelMenu{
      <item>
       <widget class="QLabel" name="labelDesc" >
        <property name="text" >
-        <string>Welcome to Kaptan Description Label!</string>
+        <string>Welcome to Kaptan!</string>
        </property>
       </widget>
      </item>

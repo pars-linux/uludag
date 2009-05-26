@@ -29,14 +29,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         # menu descriptions and preview pics
-        self.kickoffPic = QtGui.QPixmap(':/raw/pics/sample2.png')
-        self.kickoffDesc = "Kickoff menu soyle guzeldir boyle sahanedir.."
+        self.kickoffPic = QtGui.QPixmap(':/raw/pics/kickoff.png')
+        self.kickoffDesc = "A modern menu for KDE."
 
-        self.simplePic = QtGui.QPixmap('../pics/simple.png')
-        self.simpleDesc = "Simple menu: lorem ipsum.."
+        self.simplePic = QtGui.QPixmap(':/raw/pics/simple.png')
+        self.simpleDesc = "And old style menu from KDE 3."
 
-        self.lancelotPic = QtGui.QPixmap('../pics/lancelot.png')
-        self.lancelotDesc = "Cok manyak!"
+        self.lancelotPic = QtGui.QPixmap(':/raw/pics/lancelot.png')
+        self.lancelotDesc = "An experimental menu for KDE4"
 
         # set menu preview to default menu: kick-off
         self.ui.pictureMenuStyles.setPixmap(self.kickoffPic)
