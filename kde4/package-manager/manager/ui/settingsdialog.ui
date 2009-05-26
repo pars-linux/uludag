@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>settingsDialog</class>
- <widget class="QDialog" name="settingsDialog" >
+ <class>SettingsDialog</class>
+ <widget class="QDialog" name="SettingsDialog" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -407,20 +407,12 @@ This will not delete installed software or affect your system stability.</string
            <property name="text" >
             <string>&amp;Add Repository</string>
            </property>
-           <property name="icon" >
-            <iconset resource="../data/data.qrc" >
-             <normaloff>:/data/list-add.png</normaloff>:/data/list-add.png</iconset>
-           </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="removerepoButton" >
+          <widget class="QPushButton" name="removeRepoButton" >
            <property name="text" >
             <string>&amp;Remove Repository</string>
-           </property>
-           <property name="icon" >
-            <iconset resource="../data/data.qrc" >
-             <normaloff>:/data/list-remove.png</normaloff>:/data/list-remove.png</iconset>
            </property>
           </widget>
          </item>

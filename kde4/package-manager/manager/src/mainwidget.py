@@ -45,6 +45,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
                      lambda:self.emit(SIGNAL("selectionChanged(QStringList)"), self.packageList.selectedPackages))
+
+    def connectOperationSignals(self):
         self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
         self.connect(self.operation, SIGNAL("started(QString)"), self.progressDialog.updateActionLabel)
         self.connect(self.operation, SIGNAL("started(QString)"), self.actionStarted)

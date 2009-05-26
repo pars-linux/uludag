@@ -44,10 +44,6 @@
      <property name="text" >
       <string>Install Package(s)</string>
      </property>
-     <property name="icon" >
-       <iconset resource="../data/data.qrc" >
-       <normaloff>:/data/list-add.png</normaloff>:/data/list-add.png</iconset>
-     </property>
     </widget>
    </item>
    <item row="1" column="1" colspan="2" >
@@ -95,7 +91,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="data.qrc" />
+  <include location="../data/data.qrc" />
  </resources>
  <connections/>
 </ui>

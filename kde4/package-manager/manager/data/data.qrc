@@ -2,9 +2,6 @@
   <qresource prefix="data" >
     <file>package-manager.png</file>
     <file>pisianime.gif</file>
-    <file>list-remove.png</file>
-    <file>list-add.png</file>
-    <file>view-refresh.png</file>
-    <file>package.png</file>
+    <file>package</file>
   </qresource>
 </RCC>
