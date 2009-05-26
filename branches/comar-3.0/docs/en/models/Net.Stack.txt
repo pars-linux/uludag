@@ -1,1 +1,0 @@
-Net.Stack is obsolete, use Network.Stack instead. We keep it for backward compatibilty.

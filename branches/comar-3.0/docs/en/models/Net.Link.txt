@@ -1,1 +1,0 @@
-Net.Link is obsolete, use Network.Link instead. We keep it for backward compatibilty.
