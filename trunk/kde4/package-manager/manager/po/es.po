@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-21 16:31+0300\n"
+"POT-Creation-Date: 2009-05-26 12:30+0300\n"
 "PO-Revision-Date: 2009-05-21 18:41-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -15,6 +15,208 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+msgid "configuring"
+msgstr "configurando"
+
+#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+msgid "extracting"
+msgstr "extrayendo"
+
+#: .tmp/progressdialog.py:40
+msgid "%1 %2"
+msgstr "%1 %2"
+
+# could You put a comment with an example string, maybe in foreign language it sounds better when inverting some positions ?
+#: .tmp/progressdialog.py:44
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 paquete %3"
+
+#: .tmp/progressdialog.py:50
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr ""
+
+#: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
+msgid "Package Manager"
+msgstr "Administrador de Paquetes"
+
+#: .tmp/ui_settingsdialog.py:283
+#, fuzzy
+msgid "Package Manager Settings"
+msgstr "Administrador de Paquetes"
+
+#: .tmp/ui_settingsdialog.py:284
+msgid "&Help"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:285
+msgid "&OK"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:286 .tmp/ui_progressdialog.py:160
+msgid "&Cancel"
+msgstr "&Cancelar"
+
+#: .tmp/ui_settingsdialog.py:287
+msgid "&Show only desktop applications"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:288
+msgid "&Enable system tray icon"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:289 .tmp/ui_settingsdialog.py:298
+msgid "Update check"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:290 .tmp/ui_settingsdialog.py:294
+msgid "Enable &periodic update check"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:291 .tmp/ui_settingsdialog.py:295
+msgid "Check interval:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:292
+msgid " min"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:293
+msgid "Bandwidth limit"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:296
+msgid " kb/s"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:297
+msgid "&General Settings"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:299
+msgid "&Use hard disk cache for downloaded software"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:300
+msgid "Maximum cache size:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:301
+msgid " Mb"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:302
+msgid "(use 0 for no limit)"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:303
+msgid "Clear Cache"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:304
+msgid ""
+"Clearing the disk cache will remove all downloaded software. \n"
+"This will not delete installed software or affect your system stability."
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:306
+msgid "C&lean disk cache now"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:307
+#, fuzzy
+msgid "C&ache"
+msgstr "&Cancelar"
+
+#: .tmp/ui_settingsdialog.py:308
+msgid "Name:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:309
+msgid "&Add Repository"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:310
+msgid "&Remove Repository"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:311
+msgid "Move &Up"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:312
+msgid "Move &Down"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:313
+msgid "Address:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:314
+msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:315
+msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:316
+msgid "Name"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:317
+msgid "Address"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:318
+msgid "&Repositories"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:319
+msgid "No  proxy server"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:320
+msgid "Use proxy server"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:321
+msgid "HTTP proxy server:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:322 .tmp/ui_settingsdialog.py:325
+#: .tmp/ui_settingsdialog.py:327
+msgid "Port:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:323
+msgid "Use this proxy server for all protocols"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:324
+msgid "HTTPS proxy server:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:326
+msgid "FTP proxy server:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:328
+msgid "&Proxy"
+msgstr ""
+
+#: .tmp/ui_mainwidget.py:43
+msgid "Form"
+msgstr ""
+
+#: .tmp/ui_mainwidget.py:44
+msgid "Click to search"
+msgstr "Presione para buscar"
+
+#: .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:61
+msgid "Install Package(s)"
+msgstr "Instalar Paquete(s)"
 
 #: .tmp/statemanager.py:55
 msgid "Installing Package(s)"
@@ -28,17 +230,41 @@ msgstr "Removiendo Paquete(s)"
 msgid "Upgrading Package(s)"
 msgstr "Actualizando Paquetes(s)"
 
-#: .tmp/statemanager.py:60 .tmp/ui_mainwidget.py:48
-msgid "Install Package(s)"
-msgstr "Instalar Paquete(s)"
+#: .tmp/statemanager.py:58
+msgid "Updating Repository(s)"
+msgstr ""
 
-#: .tmp/statemanager.py:61
+#: .tmp/statemanager.py:62
 msgid "Remove Package(s)"
 msgstr "Remover Paquete(s)"
 
-#: .tmp/statemanager.py:62
+#: .tmp/statemanager.py:63
 msgid "Upgrade Package(s)"
 msgstr "Actualizar Paquetes(s)"
+
+#: .tmp/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/about.py:31
+msgid "Faik Uygur"
+msgstr ""
+
+#: .tmp/about.py:31
+msgid "Maintainer"
+msgstr "Mantenedor"
+
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:88
+msgid "downloading"
+msgstr "descargando"
+
+#: .tmp/commontext.py:15
+msgid "removing"
+msgstr "removiendo"
+
+#: .tmp/commontext.py:15
+msgid "installing"
+msgstr "instalando"
 
 #: .tmp/ui_progressdialog.py:151
 msgid "Progress"
@@ -76,80 +302,22 @@ msgstr "Estado:"
 msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:160
-msgid "&Cancel"
-msgstr "&Cancelar"
-
 #: .tmp/ui_progressdialog.py:161
 msgid "Alt+C"
 msgstr ""
-
-#: .tmp/ui_mainwidget.py:46
-msgid "Form"
-msgstr ""
-
-#: .tmp/ui_mainwidget.py:47
-msgid "Click to search"
-msgstr "Presione para buscar"
 
 #: .tmp/mainwindow.py:31
 msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
-#: .tmp/mainwindow.py:38
+#: .tmp/mainwindow.py:46
 msgid "Show New Packages"
 msgstr "Mostrar Paquetes nuevos"
 
-#: .tmp/mainwindow.py:44
+#: .tmp/mainwindow.py:53
 msgid "Show Installed Packages"
 msgstr "Mostrar Paquetes instalados"
 
-#: .tmp/mainwindow.py:50
+#: .tmp/mainwindow.py:59
 msgid "Show Upgradable Packages"
 msgstr "Mostrar Paquetes a actualizar"
-
-#: .tmp/about.py:20 .tmp/about.py:22 .tmp/ui_mainwindow.py:29
-msgid "Package Manager"
-msgstr "Administrador de Paquetes"
-
-#: .tmp/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
-
-#: .tmp/about.py:31
-msgid "Faik Uygur"
-msgstr ""
-
-#: .tmp/about.py:31
-msgid "Maintainer"
-msgstr "Mantenedor"
-
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:46
-msgid "downloading"
-msgstr "descargando"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "extracting"
-msgstr "extrayendo"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "configuring"
-msgstr "configurando"
-
-#: .tmp/commontext.py:15
-msgid "removing"
-msgstr "removiendo"
-
-#: .tmp/commontext.py:15
-msgid "installing"
-msgstr "instalando"
-
-#: .tmp/progressdialog.py:40
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: .tmp/progressdialog.py:44
-# could You put a comment with an example string, maybe in foreign language it sounds better when inverting some positions ?
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 paquete %3"
-
