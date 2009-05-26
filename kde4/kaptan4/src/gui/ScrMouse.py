@@ -32,6 +32,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_mouseWidget()
         self.ui.setupUi(self)
 
+        self.ui.pixMouseIcon.setPixmap(QtGui.QPixmap(':/raw/pics/mouse.png'))
         # set signals
         self.connect(self.ui.radioButtonRightHand, SIGNAL("toggled(bool)"), self.setHandedness)
         self.connect(self.ui.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)
