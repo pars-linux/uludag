@@ -7,9 +7,9 @@
 
  General
  --------------------------------------------------------
- %50 / Recovery mode #7169
+ %80 / Recovery mode #7169
          + Grub recovery
-         - System recovery with Pisi History
+         + System recovery with Pisi History
          - Password recovery
  %30 / Network Install #2095
          > Needs a network settings screen

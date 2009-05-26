@@ -21,14 +21,18 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import SIGNAL, QEvent, QObject
 
 import yali4.storage
+import yali4.pisiiface
+import yali4.postinstall
+import yali4.sysutils
+
 from yali4.gui.installdata import *
 from yali4.gui.GUIAdditional import DeviceItem
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.rescuepisiwidget import Ui_RescuePisiWidget
+from yali4.gui.YaliSteps import YaliSteps
 from yali4.gui.GUIException import GUIException
 from yali4.gui.GUIAdditional import ConnectionWidget
 import yali4.gui.context as ctx
-import yali4.pisiiface
 
 ##
 # BootLoader screen.
@@ -46,6 +50,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_RescuePisiWidget()
         self.ui.setupUi(self)
 
+        self.steps = YaliSteps()
+        self.steps.setOperations([{"text":_("Starting DBUS..."),"operation":yali4.sysutils.chroot_dbus},
+                                  {"text":_("Trying to connect DBUS..."),"operation":yali4.postinstall.connectToDBus},
+                                  {"text":_("Getting history ..."),"operation":self.fillHistoryList}])
+
         self.connect(self.ui.buttonSelectConnection, SIGNAL("clicked()"), self.showConnections)
 
     def showConnections(self):
@@ -56,20 +65,23 @@ class Widget(QtGui.QWidget, ScreenWidget):
         ui = PisiUI()
         ctx.debugger.log("PisiUI is creating..")
         yali4.pisiiface.initialize(ui)
-        history = yali4.pisiiface.getHistory()
-        for hist in history:
-            self.ui.historyList.addItem("%s - %s" % (hist.date, hist.type))
-
-    def handler(self, *args):
-        print args
+        try:
+            history = yali4.pisiiface.getHistory()
+            for hist in history:
+                HistoryItem(self.ui.historyList, hist)
+        except:
+            return False
+        return True
 
     def shown(self):
-        if not dbus.get_default_main_loop():
-            from dbus.mainloop.qt import DBusQtMainLoop
-            DBusQtMainLoop(set_as_default = True)
-        self.fillHistoryList()
+        self.ui.buttonSelectConnection.setEnabled(False)
+        ctx.yali.info.show()
+        self.steps.slotRunOperations()
+        ctx.yali.info.hide()
+        self.ui.buttonSelectConnection.setEnabled(True)
 
     def execute(self):
+        ctx.takeBackOperation = self.ui.historyList.currentItem().getInfo()
         return True
 
     def backCheck(self):
@@ -102,4 +114,12 @@ class PisiEvent(QEvent):
 
     def data(self):
         return self._data
+
+class HistoryItem(QtGui.QListWidgetItem):
+    def __init__(self, parent, info):
+        QtGui.QListWidgetItem.__init__(self, _("Operation %s : %s - %s") % (info.no, info.date, info.type), parent)
+        self._info = info
+
+    def getInfo(self):
+        return self._info
 
