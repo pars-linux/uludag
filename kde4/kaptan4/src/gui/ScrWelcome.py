@@ -27,6 +27,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_welcomeWidget()
         self.ui.setupUi(self)
 
+        self.ui.pixKaptanLogo.setPixmap(QtGui.QPixmap(':/raw/pics/kaptan_welcome.png'))
+
     def shown(self):
         pass
 
