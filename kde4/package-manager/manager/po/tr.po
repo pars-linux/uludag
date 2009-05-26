@@ -1,14 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# translation of tr.po to Türkçe
+# Turkish translations for package-manager package
+# package-manager paketi için Türkçe çeviriler.
+# Copyright (C) 2005 TÜBİTAK/UEKAE
+# This file is distributed under the same license as the PiSi KGA package.
 #
+# Faik Uygur <faik@pardus.org.tr>, 2009
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 2.0_alpha3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-21 16:31+0300\n"
+"POT-Creation-Date: 2009-05-26 12:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,101 +18,231 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/statemanager.py:55
-msgid "Installing Package(s)"
+#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+msgid "configuring"
+msgstr "ayarlanıyor"
+
+#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+msgid "extracting"
+msgstr "açılıyor"
+
+#: .tmp/progressdialog.py:40
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: .tmp/progressdialog.py:44
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 paket %3"
+
+#: .tmp/progressdialog.py:50
+msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr ""
 
-#: .tmp/statemanager.py:56
-msgid "Removing Package(s)"
+#: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
+msgid "Package Manager"
+msgstr "Paket Yöneticisi"
+
+#: .tmp/ui_settingsdialog.py:283
+msgid "Package Manager Settings"
+msgstr "Paket Yöneticisi Ayarları"
+
+#: .tmp/ui_settingsdialog.py:284
+msgid "&Help"
 msgstr ""
 
-#: .tmp/statemanager.py:57
-msgid "Upgrading Package(s)"
+#: .tmp/ui_settingsdialog.py:285
+msgid "&OK"
 msgstr ""
 
-#: .tmp/statemanager.py:60 .tmp/ui_mainwidget.py:48
-msgid "Install Package(s)"
-msgstr ""
-
-#: .tmp/statemanager.py:61
-msgid "Remove Package(s)"
-msgstr ""
-
-#: .tmp/statemanager.py:62
-msgid "Upgrade Package(s)"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:151
-msgid "Progress"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:152
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:153
-msgid "amsn"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:154
-msgid "Time remaining:"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:155
-msgid "2 / 20 packages installed."
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:156
-msgid "01:29"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:157
-msgid "Operation:"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:158
-msgid "Status:"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:159
-msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:160
+#: .tmp/ui_settingsdialog.py:286 .tmp/ui_progressdialog.py:160
 msgid "&Cancel"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:161
-msgid "Alt+C"
+#: .tmp/ui_settingsdialog.py:287
+msgid "&Show only desktop applications"
+msgstr "&Sadece masaüstü uygulamalarını göster"
+
+#: .tmp/ui_settingsdialog.py:288
+msgid "&Enable system tray icon"
+msgstr "Sistem çekmecesi &ikonunu etkinleştir"
+
+#: .tmp/ui_settingsdialog.py:289 .tmp/ui_settingsdialog.py:298
+msgid "Update check"
+msgstr "Güncelleme kontrolü"
+
+#: .tmp/ui_settingsdialog.py:290 .tmp/ui_settingsdialog.py:294
+msgid "Enable &periodic update check"
+msgstr "Aralıklı &güncel paket kontrolünü etkinleştir"
+
+#: .tmp/ui_settingsdialog.py:291 .tmp/ui_settingsdialog.py:295
+msgid "Check interval:"
+msgstr "Kontrol aralığı:"
+
+#: .tmp/ui_settingsdialog.py:292
+msgid " min"
+msgstr " dakika"
+
+#: .tmp/ui_settingsdialog.py:293
+msgid "Bandwidth limit"
+msgstr "Bantgenişliği limiti"
+
+#: .tmp/ui_settingsdialog.py:296
+msgid " kb/s"
 msgstr ""
 
-#: .tmp/ui_mainwidget.py:46
+#: .tmp/ui_settingsdialog.py:297
+msgid "&General Settings"
+msgstr "&Genel Ayarlar"
+
+#: .tmp/ui_settingsdialog.py:299
+msgid "&Use hard disk cache for downloaded software"
+msgstr "İ&ndirilen yazılımlar için sabit disk önbelleğini kullan"
+
+#: .tmp/ui_settingsdialog.py:300
+msgid "Maximum cache size:"
+msgstr "Azami önbellek boyutu:"
+
+#: .tmp/ui_settingsdialog.py:301
+msgid " Mb"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:302
+msgid "(use 0 for no limit)"
+msgstr "(Sınır koymamak için 0 kullanın)"
+
+#: .tmp/ui_settingsdialog.py:303
+msgid "Clear Cache"
+msgstr "&Önbellek"
+
+#: .tmp/ui_settingsdialog.py:304
+msgid ""
+"Clearing the disk cache will remove all downloaded software. \n"
+"This will not delete installed software or affect your system stability."
+msgstr ""
+"Sabit disk önbelleğinin temizlenmesi ile indirilen ve depolanan \n"
+"tüm paketler silinecektir. Bu işlem sistemde kurulu olan paketleri \n"
+"silmez ve bilgisayarınızın çalışmasını etkilemez."
+
+#: .tmp/ui_settingsdialog.py:306
+msgid "C&lean disk cache now"
+msgstr "Ö&nbelleği şimdi temizle"
+
+#: .tmp/ui_settingsdialog.py:307
+msgid "C&ache"
+msgstr "&Önbellek"
+
+#: .tmp/ui_settingsdialog.py:308
+msgid "Name:"
+msgstr "Ad:"
+
+#: .tmp/ui_settingsdialog.py:309
+msgid "&Add Repository"
+msgstr "Yeni Depo &Ekle"
+
+#: .tmp/ui_settingsdialog.py:310
+msgid "&Remove Repository"
+msgstr "Depoyu &Kaldır"
+
+#: .tmp/ui_settingsdialog.py:311
+msgid "Move &Up"
+msgstr "&Yukarı Taşı"
+
+#: .tmp/ui_settingsdialog.py:312
+msgid "Move &Down"
+msgstr "&Aşağı Taşı"
+
+#: .tmp/ui_settingsdialog.py:313
+msgid "Address:"
+msgstr "Adres:"
+
+#: .tmp/ui_settingsdialog.py:314
+msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:315
+msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:316
+msgid "Name"
+msgstr "Ad:"
+
+#: .tmp/ui_settingsdialog.py:317
+msgid "Address"
+msgstr "Adres"
+
+#: .tmp/ui_settingsdialog.py:318
+msgid "&Repositories"
+msgstr "&Depolar"
+
+#: .tmp/ui_settingsdialog.py:319
+msgid "No  proxy server"
+msgstr "Vekil sunucu yok"
+
+#: .tmp/ui_settingsdialog.py:320
+msgid "Use proxy server"
+msgstr "Vekil sunucu kullan"
+
+#: .tmp/ui_settingsdialog.py:321
+msgid "HTTP proxy server:"
+msgstr "HTTP vekil sunucu:"
+
+#: .tmp/ui_settingsdialog.py:322 .tmp/ui_settingsdialog.py:325
+#: .tmp/ui_settingsdialog.py:327
+msgid "Port:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:323
+msgid "Use this proxy server for all protocols"
+msgstr "Tüm protokoller için bu vekil sunucuyu kullan"
+
+#: .tmp/ui_settingsdialog.py:324
+msgid "HTTPS proxy server:"
+msgstr "HTTPS vekil sunucu:"
+
+#: .tmp/ui_settingsdialog.py:326
+msgid "FTP proxy server:"
+msgstr "FTP vekil sunucu:"
+
+#: .tmp/ui_settingsdialog.py:328
+msgid "&Proxy"
+msgstr "Vekil sunucu"
+
+#: .tmp/ui_mainwidget.py:43
 msgid "Form"
 msgstr ""
 
-#: .tmp/ui_mainwidget.py:47
+#: .tmp/ui_mainwidget.py:44
 msgid "Click to search"
-msgstr ""
+msgstr "Arama için tıklayın"
 
-#: .tmp/mainwindow.py:31
-msgid "Currently your basket is empty."
-msgstr ""
+#: .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:61
+msgid "Install Package(s)"
+msgstr "Paket(ler)i Kur"
 
-#: .tmp/mainwindow.py:38
-msgid "Show New Packages"
-msgstr ""
+#: .tmp/statemanager.py:55
+msgid "Installing Package(s)"
+msgstr "Paket(ler) Kuruluyor"
 
-#: .tmp/mainwindow.py:44
-msgid "Show Installed Packages"
-msgstr ""
+#: .tmp/statemanager.py:56
+msgid "Removing Package(s)"
+msgstr "Paket(ler) Kaldırılıyor"
 
-#: .tmp/mainwindow.py:50
-msgid "Show Upgradable Packages"
-msgstr ""
+#: .tmp/statemanager.py:57
+msgid "Upgrading Package(s)"
+msgstr "Paket(ler) Güncelleniyor"
 
-#: .tmp/about.py:20 .tmp/about.py:22 .tmp/ui_mainwindow.py:29
-msgid "Package Manager"
-msgstr ""
+#: .tmp/statemanager.py:58
+msgid "Updating Repository(s)"
+msgstr "Depo(lar) Güncelleniyor"
+
+#: .tmp/statemanager.py:62
+msgid "Remove Package(s)"
+msgstr "Paket(ler)i Kaldır"
+
+#: .tmp/statemanager.py:63
+msgid "Upgrade Package(s)"
+msgstr "Paket(ler)i Güncelle"
 
 #: .tmp/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -122,19 +254,11 @@ msgstr ""
 
 #: .tmp/about.py:31
 msgid "Maintainer"
-msgstr ""
+msgstr "Bakıcı"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:46
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:88
 msgid "downloading"
 msgstr "indiriliyor"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "extracting"
-msgstr "açılıyor"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "configuring"
-msgstr "ayarlanıyor"
 
 #: .tmp/commontext.py:15
 msgid "removing"
@@ -144,10 +268,58 @@ msgstr "kaldırılıyor"
 msgid "installing"
 msgstr "kuruluyor"
 
-#: .tmp/progressdialog.py:40
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: .tmp/progressdialog.py:44
-msgid "%1 / %2 package %3"
+#: .tmp/ui_progressdialog.py:151
+msgid "Progress"
 msgstr ""
+
+#: .tmp/ui_progressdialog.py:152
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>PİSİ Hazırlanıyor...</h3>"
+
+#: .tmp/ui_progressdialog.py:153
+msgid "amsn"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:154
+msgid "Time remaining:"
+msgstr "Kalan zaman:"
+
+#: .tmp/ui_progressdialog.py:155
+msgid "2 / 20 packages installed."
+msgstr "2 / 20 paket kuruldu."
+
+#: .tmp/ui_progressdialog.py:156
+msgid "01:29"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:157
+msgid "Operation:"
+msgstr "İşlem:"
+
+#: .tmp/ui_progressdialog.py:158
+msgid "Status:"
+msgstr "Durum:"
+
+#: .tmp/ui_progressdialog.py:159
+msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:161
+msgid "Alt+C"
+msgstr ""
+
+#: .tmp/mainwindow.py:31
+msgid "Currently your basket is empty."
+msgstr "Şu anda sepetiniz boş."
+
+#: .tmp/mainwindow.py:46
+msgid "Show New Packages"
+msgstr "Yeni Paketleri Göster"
+
+#: .tmp/mainwindow.py:53
+msgid "Show Installed Packages"
+msgstr "Kurulu Paketleri Göster"
+
+#: .tmp/mainwindow.py:59
+msgid "Show Upgradable Packages"
+msgstr "Güncellemeleri Göster"
