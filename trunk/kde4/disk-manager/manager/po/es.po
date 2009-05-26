@@ -1,0 +1,91 @@
+# translation of es.po to spanish
+# Disk Manager.
+# Copyright (C) 2006-2009, TÜBİTAK/UEKAE
+# This file is distributed under the same license as the Disk Manager package.
+#
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
+# Klemens Häckel <click3d at linuxmail dot org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: es\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-25 09:49+0300\n"
+"PO-Revision-Date: 2009-05-25 20:48-0400\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
+"Language-Team: spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/about.py:19 .tmp/about.py:21
+# favor revisar, porque la idea es: 
+# administrar puntos de montaje para particiones, discos y medios de almacenamiento - pero en lenguaje sencillo
+msgid "Disk Manager"
+msgstr "Administrar Discos y Unidades de Almacenamiento"
+
+#: .tmp/about.py:23
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/about.py:24
+msgid " "
+msgstr " "
+
+#: .tmp/about.py:31
+msgid "Bahadır Kandemir"
+msgstr ""
+
+#: .tmp/about.py:31
+msgid "Current Maintainer"
+msgstr "Mantenedor actual"
+
+#: .tmp/main.py:83
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"No hay paquetes que soportan esta aplicación.\n"
+"Por favor verifique si los paquetes necesarios están instalados y configurados adecuadamente."
+
+#: .tmp/main.py:172
+msgid "Mounted at %1"
+msgstr "Montado en %1"
+
+#: .tmp/main.py:191
+msgid "All Items"
+msgstr "Todos"
+
+#: .tmp/main.py:202
+msgid "Add"
+msgstr "Agregar"
+
+#: .tmp/main.py:272 .tmp/main.py:275
+msgid "Settings"
+msgstr "Configuración"
+
+#: .tmp/ui_edit.py:67
+# favor revisar contexto, "disco" deberia ser más generico
+msgid "Mount Disk Automatically"
+msgstr "Montar disco automáticamente"
+
+#: .tmp/ui_edit.py:68
+msgid "Mount Point:"
+msgstr "Punto de Montaje:"
+
+#: .tmp/ui_edit.py:69
+msgid "Filesystem Type:"
+msgstr "Sistema de Archivos:"
+
+#: .tmp/ui_edit.py:70
+msgid "Options:"
+msgstr "Opciones:"
+
+#: .tmp/ui_edit.py:71
+msgid "Default Options"
+msgstr "Opciones por omisión"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Agregar Nuevo"
+
