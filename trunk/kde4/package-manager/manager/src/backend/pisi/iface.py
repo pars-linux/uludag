@@ -94,7 +94,10 @@ class Iface(Singleton):
         components = groups.getGroupComponents(name)
         packages = []
         for component in components:
-            packages.extend(self.cdb.get_union_packages(component))
+            try:
+                packages.extend(self.cdb.get_union_packages(component))
+            except Exception:
+                pass
         return packages
 
     def getGroupComponents(self, name):

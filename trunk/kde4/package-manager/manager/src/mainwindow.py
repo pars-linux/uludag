@@ -21,6 +21,7 @@ from ui_mainwindow import Ui_MainWindow
 
 from mainwidget import MainWidget
 from statemanager import StateManager
+from settingsdialog import SettingsDialog
 
 class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -28,33 +29,37 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setCentralWidget(MainWidget(self))
         self.statusBar().showMessage(i18n("Currently your basket is empty."))
+        self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
 
     def initializeActions(self):
+        self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
         KStandardAction.quit(KApplication.kApplication().quit, self.actionCollection())
+        KStandardAction.preferences(self.settingsDialog.show, self.actionCollection())
+
+        self.initializeOperationActions()
+        self.setupGUI(KXmlGuiWindow.Default, "data/packagemanagerui.rc")
+
+    def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
 
         showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show New Packages"), self)
-        actionGroup.addAction(showInstallAction)
+        showInstallAction.setChecked(True)
         self.actionCollection().addAction("showInstallAction", showInstallAction)
         self.connect(showInstallAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
         self.connect(showInstallAction, SIGNAL("triggered()"), self.centralWidget().initialize)
+        actionGroup.addAction(showInstallAction)
 
         showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self)
-        actionGroup.addAction(showRemoveAction)
         self.actionCollection().addAction("showRemoveAction", showRemoveAction)
         self.connect(showRemoveAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.REMOVE))
         self.connect(showRemoveAction, SIGNAL("triggered()"), self.centralWidget().initialize)
+        actionGroup.addAction(showRemoveAction)
 
         showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self)
-        actionGroup.addAction(showUpgradeAction)
         self.actionCollection().addAction("showUpgradeAction", showUpgradeAction)
         self.connect(showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
-
-        self.setupGUI(KXmlGuiWindow.Default, "data/packagemanagerui.rc")
-
-        self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
-        showInstallAction.setChecked(True)
+        actionGroup.addAction(showUpgradeAction)
 
     def updateStatusBar(self, packages):
         pass
