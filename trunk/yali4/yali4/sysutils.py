@@ -207,6 +207,18 @@ def umount_(dir=None, params=''):
     param = [dir, params]
     run("umount",param)
 
+def umountSystemPaths():
+    import yali4.gui.context as ctx
+    try:
+        ctx.debugger.log("Trying to umount %s" % ctx.consts.tmp_mnt_dir)
+        umount_(ctx.consts.tmp_mnt_dir)
+        ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/archive"))
+        umount_(ctx.consts.target_dir + "/mnt/archive")
+        ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
+        umount_(ctx.consts.target_dir + "/home")
+    except:
+        ctx.debugger.log("Umount Failed ")
+
 def is_windows_boot(partition_path, file_system):
     m_dir = consts.tmp_mnt_dir
     if not os.path.isdir(m_dir):

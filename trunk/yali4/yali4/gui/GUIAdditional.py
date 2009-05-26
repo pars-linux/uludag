@@ -189,8 +189,8 @@ class ConnectionItem(QtGui.QListWidgetItem):
     def getPackage(self):
         return self._connection[1]
 
-    def connect(self, handler):
-        connectTo(self.getPackage(), self.getConnection(), handler)
+    def connect(self):
+        connectTo(self.getPackage(), self.getConnection())
 
 class ConnectionWidget(QtGui.QWidget):
 
@@ -214,20 +214,33 @@ class ConnectionWidget(QtGui.QWidget):
         self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.hide)
         self.connect(self.ui.buttonConnect, SIGNAL("clicked()"), self.slotUseSelected)
 
-        connectToDBus()
         connections = getConnectionList()
 
-        for package in ["net_tools", "wireless_tools"]:
+        for package in connections.keys():
             for connection in connections[package]:
-                ci = ConnectionItem(self.ui.connectionList, connection, package)
+                ci = ConnectionItem(self.ui.connectionList, str(connection), package)
 
         self.ui.connectionList.setCurrentRow(0)
         self.resize(ctx.mainScreen.ui.size())
 
     def slotUseSelected(self):
-        self.ui.connectionList.currentItem().connect(self.rootWidget.handler)
+        current = self.ui.connectionList.currentItem()
+        ctx.yali.info.updateAndShow(_("Connecting to network <b>%s</b> ...") % current.getConnection())
+
+        try:
+            ret = current.connect()
+        except:
+            ret = True
+            self.rootWidget.ui.labelStatus.setText(_("Connection failed"))
+            ctx.yali.info.updateAndShow(_("Connection failed") % current.getConnection())
+
+        if not ret:
+            self.rootWidget.ui.labelStatus.setText(_("Connected"))
+            ctx.yali.info.updateAndShow(_("Connected") % current.getConnection())
+
         self.hide()
         ctx.mainScreen.processEvents()
+        ctx.yali.info.hide()
 
         if self.needsExecute:
             self.rootWidget.execute_(True)

@@ -17,6 +17,7 @@ _ = __trans.ugettext
 from PyQt4 import QtGui
 
 import time
+import yali4.postinstall
 from yali4 import sysutils
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.YaliDialog import WarningDialog, RebootWidget
@@ -48,7 +49,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
         return True
 
     def takeBackPisi(self):
-        pass
+        try:
+            yali4.postinstall.takeBack(ctx.takeBackOperation.no)
+        except:
+            return False
+        return True
 
     def shown(self):
         ctx.mainScreen.disableNext()
@@ -62,6 +67,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
         ctx.yali.info.updateAndShow(_("Running rescue operations.."))
         ctx.mainScreen.disableBack()
         self.steps.slotRunOperations()
+
+        # Umount system paths
+        yali4.sysutils.umountSystemPaths()
+
         if not ctx.mainScreen.helpContent.isVisible():
             ctx.mainScreen.slotToggleHelp()
         self.ui.label.setPixmap(QtGui.QPixmap(":/gui/pics/goodbye.png"))

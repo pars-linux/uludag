@@ -638,15 +638,8 @@ class Yali:
         # write the new grub.conf
         grubConf.write(grubConfPath)
 
-        try:
-            ctx.debugger.log("Trying to umount %s" % ctx.consts.tmp_mnt_dir)
-            yali4.sysutils.umount_(ctx.consts.tmp_mnt_dir)
-            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/archive"))
-            yali4.sysutils.umount_(ctx.consts.target_dir + "/mnt/archive")
-            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
-            yali4.sysutils.umount_(ctx.consts.target_dir + "/home")
-        except:
-            ctx.debugger.log("Umount Failed ")
+        # Umount system paths
+        yali4.sysutils.umountSystemPaths()
 
         # GPT stuff
         gptsync_path = yali4.sysutils.find_executable("gptsync")
