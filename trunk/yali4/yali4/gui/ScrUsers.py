@@ -169,6 +169,7 @@ Click Next button to proceed.
         if self.ui.admin.isChecked():
             u.groups.append("wheel")
             pix = self.superUserIcon
+        u.noPass = self.ui.noPass.isChecked()
 
         existsInList = [i for i in range(self.ui.userList.count())
                         if self.ui.userList.item(i).getUser().username == u.username]
@@ -237,6 +238,8 @@ Click Next button to proceed.
         else:
             self.ui.admin.setChecked(False)
 
+        self.ui.noPass.setChecked(u.noPass)
+
         self.edititemindex = self.ui.userList.currentRow()
         self.ui.createButton.setText(_("Update User"))
 
@@ -258,6 +261,7 @@ Click Next button to proceed.
         self.ui.pass1.clear()
         self.ui.pass2.clear()
         self.ui.admin.setChecked(False)
+        self.ui.noPass.setChecked(False)
         self.ui.createButton.setEnabled(False)
 
     def slotReturnPressed(self):
