@@ -30,6 +30,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_multipleWidget()
         self.ui.setupUi(self)
 
+        self.ui.labelImage.setPixmap(QtGui.QPixmap(':/raw/pics/multiple.png'))
+
         self.ui.spinBox.connect(self.ui.spinBox, SIGNAL("valueChanged(const QString &)"), self.addDesktop)
 
     def addDesktop(self, numberOfDesktop):
