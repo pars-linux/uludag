@@ -15,7 +15,6 @@ TODO List
 + Release as 0.2
 
 + Shortcut for Copy and Select All in operation details page
-~ Better handle takeback/snapshot progress, exceptions etc.
 + i18n ".. Listing" status'
 + Fix slow filtering issue in sortfilterproxy and resizetocontents
 
@@ -32,3 +31,6 @@ TODO List
 
 - Fix empty tuples in pisi progress messages issue
 - Add "More history" thing
+~ Better handle takeback/snapshot progress, exceptions etc.
+
+- Release as 0.2.5 beta 1

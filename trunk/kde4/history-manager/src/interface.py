@@ -3,6 +3,7 @@
 
 import comar
 import pisi
+import time
 
 from PyQt4.QtCore import *
 
@@ -17,19 +18,18 @@ class ComarIface:
 
     def listen(self, func):
         self.handle = func
-        self.link.listenSignals("System.Manager", self.__handleSignals)
+        self.link.listenSignals("System.Manager", self.handlerInternal)
 
     def takeSnap(self):
-        self.link.System.Manager["pisi"].takeSnapshot(async=self.handle)
+        self.link.System.Manager["pisi"].takeSnapshot(async=self.handlerInternal)
 
     def takeBack(self, num):
-        self.link.System.Manager["pisi"].takeBack(num, async=self.handle)
+        self.link.System.Manager["pisi"].takeBack(num, async=self.handlerInternal)
 
-    def __handleSignals(self, package, signal, args):
-        # print "Signal:", signal
-        # print "Args:", args
+    def handlerInternal(self, package, signal, args):
         if signal == "finished":
             pisi.db.invalidate_caches()
+
         self.handle(package, signal, args)
 
 class PisiIface(QThread):
@@ -39,24 +39,18 @@ class PisiIface(QThread):
         super(PisiIface, self).__init__(parent)
         self.parent = parent
 
+        self.ops = {}
         self.pdb = None
-        self.max_fetch = None
         self.initDb()
 
     def initDb(self):
         self.pdb = pisi.db.historydb.HistoryDB()
-        self.pdb.init()
 
     def run(self):
-        self.parent.ops = {}
-        cntr = 0
         for operation in self.pdb.get_last():
-            self.parent.ops[operation.no] = operation
-            cntr += 1
-            if self.max_fetch != None:
-                if cntr == self.max_fetch:
-                    self.emit(SIGNAL("loadFetched(PyQt_PyObject)"), self.max_fetch)
-                    break
+            self.ops[operation.no] = operation
+            self.emit(SIGNAL("loadFetched(PyQt_PyObject)"), operation.no)
+            time.sleep(0.01)
 
     def historyPlan(self, op):
         return pisi.api.get_takeback_plan(op)
@@ -67,21 +61,6 @@ class PisiIface(QThread):
     def historyConfigs(self, op):
         return self.pdb.get_config_files(op)
 
-    def reloadPisi(self):
-        import sys
-        for module in sys.modules.keys():
-            if module.startswith("pisi."):
-                """removal from sys.modules forces reload via import"""
-                del sys.modules[module]
-            reload(pisi)
-
-    def setMaxFetch(self, num):
-        if num == 0:
-            self.max_fetch = None
-            return
-        self.max_fetch = num
-
     def getLastOperation(self):
         op = self.pdb.get_last()
-        op = op.next()
-        return op
+        return op.next()
