@@ -6,7 +6,8 @@ from PyQt4 import QtCore, QtGui
 from PyKDE4 import kdeui
 from PyKDE4.kdecore import ki18n, KAboutData, KCmdLineArgs, KConfig
 
-import gui
+import gui, subprocess, os
+
 from gui.kaptanMain import Ui_kaptanUI
 import gui.ScrWelcome as welcomeWidget
 import gui.ScrMouse as mouseWidget
@@ -20,7 +21,6 @@ import gui.ScrSearch  as searchWidget
 
 # waiting for pisi
 #import gui.ScrPackage as packageWidget
-
 class Kaptan(QtGui.QWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
@@ -48,8 +48,41 @@ class Kaptan(QtGui.QWidget):
 
         QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
         QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
-        QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
+        QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), self.slotFinished)
         QtCore.QObject.connect(self.ui.buttonCancel, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
+
+    def slotFinished(self):
+        if wallpaperWidget.Widget.selectedWallpaper:
+            config =  KConfig("plasma-appletsrc")
+            group = config.group("Containments")
+            for each in list(group.groupList()):
+                subgroup = group.group(each)
+                subcomponent = subgroup.readEntry('plugin')
+                if subcomponent == 'desktop' or subcomponent == 'folderview':
+                    subg = subgroup.group('Wallpaper')
+                    subg_2 = subg.group('image')
+                    subg_2.writeEntry("wallpaper", wallpaperWidget.Widget.selectedWallpaper)
+            self.killPlasma()
+            QtGui.qApp.quit()
+        else:
+            QtGui.qApp.quit()
+
+    def killPlasma(self):
+        p = subprocess.Popen(["pidof", "-s", "plasma"], stdout=subprocess.PIPE)
+        out, err = p.communicate()
+        pidOfPlasma = int(out)
+
+        try:
+            os.kill(pidOfPlasma, 15)
+            self.startPlasma()
+        except OSError, e:
+            print 'WARNING: failed os.kill: %s' % e
+            print "Trying SIGKILL"
+            os.kill(pidOfPlasma, 9)
+            self.startPlasma()
+
+    def startPlasma(self):
+        p = subprocess.Popen(["plasma"], stdout=subprocess.PIPE)
 
     # returns the id of current stack
     def getCur(self, d):

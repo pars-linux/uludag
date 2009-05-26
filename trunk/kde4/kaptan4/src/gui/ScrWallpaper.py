@@ -27,17 +27,15 @@ from ConfigParser import ConfigParser
 
 
 class Widget(QtGui.QWidget, ScreenWidget):
-
+    selectedWallpaper = 0
     # title and description at the top of the dialog window
     title = ki18n("Insert some catchy title about wallpapers..")
     desc = ki18n("Wonderful, awesome, superb wallpapers! \m/")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
-
         self.ui = Ui_wallpaperWidget()
         self.ui.setupUi(self)
-
         # Get system locale
         self.catLang = KGlobal.locale().language()
 
@@ -93,6 +91,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def disableWidgets(self, state):
         if state:
+            self.__class__.selectedWallpaper = 0
             self.ui.buttonChooseWp.setDisabled(True)
             self.ui.listWallpaper.setDisabled(True)
         else:
@@ -100,35 +99,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.ui.listWallpaper.setDisabled(False)
 
     def setWallpaper(self):
-        selectedWallpaper =  self.ui.listWallpaper.currentItem().statusTip()
-        config =  KConfig("plasma-appletsrc")
-        group = config.group("Containments")
-        for each in list(group.groupList()):
-            subgroup = group.group(each)
-            subcomponent = subgroup.readEntry('plugin')
-            if subcomponent == 'desktop' or subcomponent == 'folderview':
-                subg = subgroup.group('Wallpaper')
-                subg_2 = subg.group('image')
-                subg_2.writeEntry("wallpaper", selectedWallpaper)
 
-        self.killPlasma()
-
-    def killPlasma(self):
-        p = subprocess.Popen(["pidof", "-s", "plasma"], stdout=subprocess.PIPE)
-        out, err = p.communicate()
-        pidOfPlasma = int(out)
-
-        try:
-            os.kill(pidOfPlasma, 15)
-            self.startPlasma()
-        except OSError, e:
-            print 'WARNING: failed os.kill: %s' % e
-            print "Trying SIGKILL"
-            os.kill(pidOfPlasma, 9)
-            self.startPlasma()
-
-    def startPlasma(self):
-        p = subprocess.Popen(["plasma"], stdout=subprocess.PIPE)
+        self.__class__.selectedWallpaper =  self.ui.listWallpaper.currentItem().statusTip()
 
     def selectWallpaper(self):
         selectedFile = QFileDialog.getOpenFileName(None,"Open Image", os.path.expanduser("~"), 'Image Files (*.png *.jpg *bmp)')
