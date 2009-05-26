@@ -153,6 +153,11 @@ def addUsers():
         # Enable auto-login
         if u.username == ctx.installData.autoLoginUser:
             u.setAutoLogin()
+
+        # Set no password ask for PolicyKit
+        if u.noPass:
+            u.setNoPassword(uid)
+
     return True
 
 def setRootPassword():
