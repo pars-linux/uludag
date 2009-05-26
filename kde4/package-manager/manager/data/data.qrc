@@ -2,6 +2,6 @@
   <qresource prefix="data" >
     <file>package-manager.png</file>
     <file>pisianime.gif</file>
-    <file>package</file>
+    <file>package.png</file>
   </qresource>
 </RCC>
