@@ -78,7 +78,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def execute(self):
         if self.ui.usePisiHs.isChecked():
+            ctx.rescueMode = "pisi"
             ctx.mainScreen.moveInc = 2
+        else:
+            ctx.rescueMode = "grub"
 
         ctx.installData.rescuePartition = self.ui.partitionList.currentItem().getPartition()
         ctx.debugger.log("Selected Partition for rescue is %s" % ctx.installData.rescuePartition.getPath())
