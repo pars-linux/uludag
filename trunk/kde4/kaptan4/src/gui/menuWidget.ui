@@ -5,12 +5,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>501</width>
-    <height>412</height>
+    <width>521</width>
+    <height>416</height>
    </rect>
   </property>
   <property name="windowTitle" >
    <string>Menu</string>
+  </property>
+  <property name="styleSheet" >
+   <string notr="true" >
+QLabel#labelMenuDescription{
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 14px;
+     border-color: beige;
+}</string>
   </property>
   <layout class="QGridLayout" name="gridLayout" >
    <item row="0" column="0" >
@@ -47,8 +56,8 @@
     <layout class="QVBoxLayout" name="verticalLayout" >
      <item>
       <widget class="QLabel" name="labelMenuDescription" >
-       <property name="frameShadow" >
-        <enum>QFrame::Raised</enum>
+       <property name="styleSheet" >
+        <string notr="true" >background-color: rgba(255, 255, 255, 122);\n</string>
        </property>
        <property name="text" >
         <string/>
@@ -61,7 +70,7 @@
      <item>
       <widget class="QLabel" name="pictureMenuStyles" >
        <property name="sizePolicy" >
-        <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+        <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -81,8 +90,11 @@
        <property name="text" >
         <string/>
        </property>
-       <property name="pixmap" >
-        <pixmap>../pics/kickoff.png</pixmap>
+       <property name="scaledContents" >
+        <bool>false</bool>
+       </property>
+       <property name="wordWrap" >
+        <bool>true</bool>
        </property>
       </widget>
      </item>
