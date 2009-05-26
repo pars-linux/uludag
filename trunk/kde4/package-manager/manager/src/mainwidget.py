@@ -33,6 +33,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
         self.state = StateManager(self)
+        self.actionButton.setIcon(self.state.getActionIcon())
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
         self.initialize()
