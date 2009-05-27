@@ -20,11 +20,11 @@ from PyKDE4 import kdeui
 from PyKDE4 import kdecore
 
 # UI
-from ui_edituser import Ui_EditUserWidget
-from ui_editgroup import Ui_EditGroupWidget
+from usermanager.ui_edituser import Ui_EditUserWidget
+from usermanager.ui_editgroup import Ui_EditGroupWidget
 
 # Utilities
-from utility import nickGuess
+from usermanager.utility import nickGuess
 
 # PolicyKit
 import polkit
