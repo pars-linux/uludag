@@ -58,7 +58,19 @@ usr/lib/python2.6/distutils/
 usr/lib/python2.6/bsddb/test/
 usr/lib/python2.6/lib-old/
 usr/lib/python2.6/test/
+usr/lib/python2.6/site-packages/PyQt4/QtAssistant.so
+usr/lib/python2.6/site-packages/PyQt4/QtDesigner.so
+usr/lib/python2.6/site-packages/PyQt4/QtHelp.so
+usr/lib/python2.6/site-packages/PyQt4/QtNetwork.so
+usr/lib/python2.6/site-packages/PyQt4/QtOpenGL.so
+usr/lib/python2.6/site-packages/PyQt4/QtScript.so
+usr/lib/python2.6/site-packages/PyQt4/QtSql.so
+usr/lib/python2.6/site-packages/PyQt4/QtTest.so
+usr/lib/python2.6/site-packages/PyQt4/QtWebKit.so
+usr/lib/python2.6/site-packages/PyQt4/QtXml.so
+usr/lib/python2.6/site-packages/PyQt4/QtXmlPatterns.so
 usr/lib/klibc/include/
+usr/lib/syslinux/
 usr/qt/4/include/
 usr/qt/4/mkspecs/
 usr/qt/4/bin/
@@ -66,6 +78,7 @@ usr/qt/4/templates/
 usr/share/aclocal/
 usr/share/cups/
 usr/share/doc/
+usr/share/gfxtheme/
 usr/share/info/
 usr/share/sip/
 usr/share/man/
@@ -94,6 +107,28 @@ default_install_glob_excludes = (
     ( "lib/", "*.la" ),
     ( "var/db/comar/", "__db*" ),
     ( "var/db/comar/", "log.*" ),
+    ( "usr/qt/4/lib/", "libphononexperimental.so*" ),
+    ( "usr/qt/4/lib/", "libphonon.so*" ),
+    ( "usr/qt/4/lib/", "libqca.so*" ),
+    ( "usr/qt/4/lib/", "libQt3Support.so*" ),
+    ( "usr/qt/4/lib/", "libQtAssistantClient.so*" ),
+    ( "usr/qt/4/lib/", "libQtCLucene.so*" ),
+    ( "usr/qt/4/lib/", "libQtDBus.so*" ),
+    ( "usr/qt/4/lib/", "libQtDesignerComponents.so*" ),
+    ( "usr/qt/4/lib/", "libQtDesigner.so*" ),
+    ( "usr/qt/4/lib/", "libQtHelp.so*" ),
+    ( "usr/qt/4/lib/", "libQtNetwork.so*" ),
+    ( "usr/qt/4/lib/", "libQtOpenGL.so*" ),
+    ( "usr/qt/4/lib/", "libQtScript.so*" ),
+    ( "usr/qt/4/lib/", "libQtScriptTools.so*" ),
+    ( "usr/qt/4/lib/", "libQtSql.so*" ),
+    ( "usr/qt/4/lib/", "libQtTapioca.so*" ),
+    ( "usr/qt/4/lib/", "libQtTelepathyClient.so*" ),
+    ( "usr/qt/4/lib/", "libQtTest.so*" ),
+    ( "usr/qt/4/lib/", "libQtUiTools.so*" ),
+    ( "usr/qt/4/lib/", "libQtWebKit.so*" ),
+    ( "usr/qt/4/lib/", "libQtXmlPatterns.so*" ),
+    ( "usr/qt/4/lib/", "libQtXml.so*" ),
 )
 
 default_live_glob_excludes = (
