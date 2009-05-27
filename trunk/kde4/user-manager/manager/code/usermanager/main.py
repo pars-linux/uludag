@@ -20,19 +20,19 @@ from PyKDE4 import kdeui
 from PyKDE4 import kdecore
 
 # UI
-from ui_main import Ui_MainWidget
+from usermanager.ui_main import Ui_MainWidget
 
 # Backend
-from backend import Interface
+from usermanager.backend import Interface
 
 # Config
-from config import DEFAULT_GROUPS, ANIM_SHOW, ANIM_HIDE, ANIM_TARGET, ANIM_DEFAULT, ANIM_TIME
+from usermanager.config import DEFAULT_GROUPS, ANIM_SHOW, ANIM_HIDE, ANIM_TARGET, ANIM_DEFAULT, ANIM_TIME
 
 # Item widget
-from item import ItemListWidgetItem, ItemWidget
+from usermanager.item import ItemListWidgetItem, ItemWidget
 
 # Edit widget
-from edit import EditUserWidget, EditGroupWidget
+from usermanager.edit import EditUserWidget, EditGroupWidget
 
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
