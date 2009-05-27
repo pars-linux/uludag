@@ -15,107 +15,153 @@
 # Please read the COPYING file.
 #
 
-from pare.utils import lvm 
-from pare.partition import LVM
+import math
 import os
+from pare.utils import lvm 
+from pare.partition import PhysicalVolume
 import pare.parteddata 
+from pare.errors import *
 
-
-class PhysicalVolume():
-    _type = physicalVolumeType
-    _exists = False
-    _vg = None
-    _child = 0
-    _partition = None
-    
-    def __init__(self, partition):
-        self._exists = False
-        self._partition =  partition
-    
-    def create(self):
-        lvm.pvcreate(partition.path)
-        self._exists = True
-    
-    def destroy(self):
-        lvm.pvremove(partition.path)
-    
-    @property
-    def exists(self):
-       return (self._exists and os.path.exists("/dev/mapper/%s" % self._vg))
-
-    def setupParent(self):
-        if not self._partition.exists:
-            self._partition.disk.setup()
          
-    @property
-    def parent(self):
-        return  self._partition.path
-    
-    @property
-    def addChild(self):
-        self._child += 1
-    
-    def removeChild(self):
-        self._child -= 1
-         
-class VolumeGroup():
+class VolumeGroup(object):
     _type = volumeGroupType 
-    _devBlockDir = "/dev/mapper"
-    _name = ''
+    _devBlockDir = "/dev" # FIXME:ReCheck VG path not to give acces_isSetups error
     _pvs = []
     _lvs = []
-    _exists = False
-    _peSize = 4.0
-    _free = 0
+    _exists = None
     
-    def __init__(self,name, physicalVolumes=None, peSize=None):
-        self._isSetup = False
-        self._name = name
+    def __init__(self, name, size=None, uuid=None, 
+                 pvs=None, maxPV=None, pvCount=None, 
+                 peSize=None, peCount=None, peFree=None,
+                 lvNames=[], maxLV=None, existing=0):
         
-        if physicalVolumes is not None:
-            if isinstance(physicalVolumes, list):
+        """
+            name -- device node's basename
+            peSize -- Physical extents Size (in MB) Must be power power 2!
+            existing -- indicates whether this is a existing device
+            
+        Existing VG
+            size -- size of VG (in MB)
+            uuid -- Volume Group UUID
+            pvs -- a list of physical volumes. Parents of this VG
+            maxPV -- max number of PVs in this VG
+            pvCount -- number of PVs in this VG
+            peCount -- number of PE in this VG
+            peFree -- number of free PE in this VG
+            lvNames -- list of LVs in this VG
+            maxLV -- max number of LVs in this VG
+        """
+        
+        self._exists = existing
+        self._name = name
+        self._size = size
+        self._uuid = uuid
+        self._maxPV = maxPV
+        self._maxLV = maxLV
+        self._pvCount = pvCount
+        self._peSize = peSize
+        self._peCount = peCount
+        self._peFree = peFree
+        self._maxLV = maxLV
+        
+        if pvs is not None:
+            if isinstance(pvs, list):
                 for pv in physicalVolumes:
                     self._pvs.append(pv)
-                    pv.addChild()
               
+        if self._peSize is None:
+            self._peSize = 4 # MB units 
+    
+    def create(self):
+        if self.exists:
+            raise VolumeGroupError("Device is already exist")
+        
+        pvs = []
+        for pv in self.pvs:
+            if not pv.exists:
+                raise PhysicalVolumeError("Volume Group Physical doesnt exist!")
+            else:
+                pvs.append(pv)
+        
+        lvm.vgcreate(self.name, pvs, self._peSize)
+        self._exists =True
+        
+    def destroy(self):
+        if not self.exists:
+            raise LVMError("Device doesnt exist!" , self.path)
+        
+        try:
+            lvm.vgreduce(self._name, [], rm=True)
+            lvm.vgremove(self._name)  
+        except LVMError:
+            raise VolumeGroupError("Could not complete remove VG", self.path)
+        finally:
+            self._exists = True
+    
+    
+    def reduce(self, pvs):
+        if not self.exists:
+            raise VolumeGroupError("Device has not been created!", self.path)
+        
+        lvm.vgreduce(self._name, pvs)
+    
+    def _addDevice(self, device):
+        self.pvs.append(device)
+
+    def _removeDevice(self, device):
+        try:
+            self.pvs.remove(device)
+        except:
+            raise VolumeGroupError("Couldnt remove non-member PV device from VG")    
     
     def addPV(self, pv):
-        if isinstance(pv, PhysicalVolume):
-            self._pvs.append(pv)
+        """
+            Add PV to this VG. Used to add PV to requested VG.
+        """
+        if pv in self.pvs:
+            raise ValueError("device is already in VG")
         
-        pv.addChild()
-    
+        #Cannot allow vg.extend
+        if self.exists:
+            raise VolumeGroupError("Volume Group already exist and can not add pv to existing VG")
+        
+        self.pvs.append(pv)
+                
     def removePV(self, pv):
-        if isinstance(pv, PhysicalVolume):
-            self._pvs.remove(pv)
-            pv.removeChild()
+        """
+            Remove PV to this VG. Used to remove PV to requested VG.
+        """        
+        if not pv in self.pvs:
+            raise ValueError("Specified PV is not part of VG")
+        
+        #Cannot allow vg.reduce
+        if self.exists:
+            raise VolumeGroupError("Volume Group already exist and can not remove pv to existing VG")
+        
+        self.pvs.remove(pv)
     
-    def addLV(self, logicalVolume):
-        if logicalVolume in self._lvs:
+    def addLV(self, lv):
+        if lv in self.lvs:
             raise ValueError("Logical Volume is part of this Volume Group")
         
-        #FIXME:Check Volume Group free size not smaller than logical volume requested size
-    
-    def removeLV(self, logicalVolume):
-        pass
+        if not lv.exists and lv.size > self.freeSpace:
+            raise VolumeGroupError("Requested Logical Volume is too large to fit in free space", self.path)
+        
+        self.lvs.append(lv)
+        
+    def removeLV(self, lv):
+        if lv not in self.lvs:
+            raise ValueError("Specified lv is not part of VG")
+        
+        self.lvs.remove(lv)
     
     def setupParents(self):
         for pv in self._pvs:
             pv.create()
     
-    def create(self):
-        self.createParents()
-        pv_list = [pv.path for pv in self.pvs]
-        lvm.vgcreate(self._name, pv_list, self._peSize)
-        self._exists =True
+    def setup(self):
+        pass
         
-    def destroy(self):
-        lvm.vgreduce(self._name, [], rm=True)
-        lvm.vgremove(self._name)
-    
-    def reduce(self, pvs):
-        lvm.vgreduce(self._name, pvs)
-    
     @property
     def name(self):
         return self._name
@@ -138,7 +184,13 @@ class VolumeGroup():
                 return False
     
         return  True
-            
+        
+    @property
+    def status(self):
+        if not self.exists:
+            return False
+        return os.access(self.path, os.W_OK)
+        
     @property
     def pvs(self):
         return self._pvs[:]
@@ -147,6 +199,56 @@ class VolumeGroup():
     def lvs(self):
         return self._lvs[:]
     
+    @property
+    def size(self):
+        size = 0
+        for pv in self.pvs:
+            size += pv.size
+        
+        return size
+    
+    @property
+    def isModified(self):
+        """
+            Return True if VG has changes queued that LVM is aware of
+        """
+        
+        modified = True
+        if self.exists and not filter(lambda d: d.exists, self.pvs):
+            modified = False
+        
+        return modified
+        
+    @property
+    def extents(self):
+        return self.size / self._peSize
+    
+    @property
+    def freeSpace(self):
+        used = 0
+        size = self.size
+        for lv in self.lvs:
+            used += self._align(lv.size, roundup=True)
+            
+        free = size - used
+        
+        return free
+    
+    @property
+    def freeExtents(self):
+        return self.freeSpace / self._peSize
+    
+    def _align(self, size, roundup=None):
+        
+        if roundup:
+            round = math.ceil
+        else:
+            round = math.floor
+        
+        size *= 1024
+        peSize = self._peSize * 1024
+        
+        return long((round(size / pesize) * pesize) / 1024)
 
 class LogicalVolume():
     _vg = None
