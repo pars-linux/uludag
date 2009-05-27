@@ -12,15 +12,15 @@
 class   PareError(Exception):
     pass
 
-
 class FileSystemError(PareError):
     pass
-
 class DiskError(PareError):
     pass
-
 class RaidError(PareError):
     pass
-
 class LVMError(PareError):
+    pass
+class PhysicalVolumeError(LVMError):
+    pass
+class VolumeGroupError(LVMError):
     pass
