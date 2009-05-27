@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-25 14:25+0300\n"
+"POT-Creation-Date: 2009-05-27 13:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,37 +16,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/about.py:19 .tmp/about.py:21
+#: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
 msgid "Boot Manager"
 msgstr ""
 
-#: .tmp/about.py:23
+#: .tmp/bootmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
 msgstr ""
 
-#: .tmp/about.py:24
+#: .tmp/bootmanager/about.py:25
 msgid " "
 msgstr ""
 
-#: .tmp/about.py:31
+#: .tmp/bootmanager/about.py:32
 msgid "Bahadır Kandemir"
 msgstr ""
 
-#: .tmp/about.py:31
+#: .tmp/bootmanager/about.py:32
 msgid "Current Maintainer"
 msgstr ""
 
-#: .tmp/main.py:83
+#: .tmp/bootmanager/main.py:83
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
 
-#: .tmp/main.py:165
+#: .tmp/bootmanager/main.py:165
 msgid "All Items"
 msgstr ""
 
-#: .tmp/main.py:176
+#: .tmp/bootmanager/main.py:176
 msgid "Boot Entry"
 msgstr ""
 
