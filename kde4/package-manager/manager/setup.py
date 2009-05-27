@@ -82,6 +82,7 @@ class Install(install):
         project_dir = os.path.join(kde_dir, "share/apps", about.appName)
         # Make directories
         print "Making directories..."
+        makeDirs(icon_dir)
         makeDirs(bin_dir)
         makeDirs(locale_dir)
         makeDirs(apps_dir)
