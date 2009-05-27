@@ -87,6 +87,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
         group.writeEntry('Number', QString(numberOfDesktop))
         group.sync()
 
+        info =  kdeui.NETRootInfo(QtGui.QX11Info.display(), kdeui.NET.NumberOfDesktops | kdeui.NET.DesktopNames)
+        info.setNumberOfDesktops(int(numberOfDesktop))
+        info.activate()
+
         session = dbus.SessionBus()
         proxy = session.get_object('org.kde.kwin', '/KWin')
         proxy.reconfigure()
