@@ -91,6 +91,8 @@ class Install(install):
         # Install codes
         print "Installing codes..."
         os.system("cp -R build/* %s/" % project_dir)
+        print "Installing help files..."
+        os.system("cp -R help %s/" % project_dir)
         # Install locales
         print "Installing locales..."
         for filename in glob.glob1("po", "*.po"):
