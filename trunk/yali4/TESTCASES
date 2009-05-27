@@ -28,6 +28,7 @@ Following steps will be useful to test Yalı in an arbitrary order :)
         - Plug a new usb disk and click refresh disk
         - Try to create same partitions type with different partitions
         - Try to give different filesystems to already applied partitions
+    - First select  automatic partitioning,  then turn back and select manual partitioning and do the manual patitioning testcases.
  - Select each grub options with new disks
     - Check debugger log for bios boot orders
     - Check other partitions grub.conf after installation
