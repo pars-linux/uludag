@@ -29,5 +29,5 @@ Lisans Onay sayfası
     1.durum : El ile 2'yi siliyoruz, 4'ü resize ediyoruz ve yedek olarak seçmeye çalışıyoruz, başaramıyor.
     2.durum : El ile 1'i siliyoruz, 4'ü resize edip pardus root olarak seçmeye çalışıyoruz, başaramıyor.
 
-
+- Var olan bir partitionın ikiye bölünmesinden ve dosya sistemlerinin belirlenmesinden sonra, geri butonuna basıldığında, disk eski durumuna geliyor fakat görsel olarak eski haline gelemiyor ve hiç bir uyarı gelmiyor.
 
