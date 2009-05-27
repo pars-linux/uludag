@@ -36,6 +36,7 @@ class Pare(object):
             for disk in self._diskTable.values():    
                 self._update(disk)
     
+    #FIXME:ready can change Partition existing and setup Parameter!!! 
     def _addPartitionDict(self, disk, part, ready=True):
         
         def getParePartition(disk, part):
