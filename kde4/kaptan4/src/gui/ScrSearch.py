@@ -14,6 +14,8 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
 
+import dbus
+
 from gui.ScreenWidget import ScreenWidget
 from gui.searchWidget import Ui_searchWidget
 
@@ -29,27 +31,27 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         self.ui.labelSearchImage.setPixmap(QtGui.QPixmap(':/raw/pics/nepomuk.png'))
+        config = KConfig("nepomukserverrc")
+        group = config.group("Basic Settings")
+        isNepomuk = str(group.readEntry('Start Nepomuk'))
 
-        self.ui.checkBoxNepomuk.connect(self.ui.checkBoxNepomuk, SIGNAL("stateChanged(int)"), self.activateNepomuk)
-        self.ui.checkBoxStrigi.connect(self.ui.checkBoxStrigi, SIGNAL("stateChanged(int)"), self.activateStrigi)
+        if isNepomuk.lower() == "true":
+            self.ui.checkBoxNepomuk.setChecked(True)
+        else:
+            self.ui.checkBoxNepomuk.setChecked(False)
+
+        self.ui.checkBoxNepomuk.connect(self.ui.checkBoxNepomuk, SIGNAL("toggled(bool)"), self.activateNepomuk)
 
     def activateNepomuk(self, state):
         config = KConfig("nepomukserverrc")
         group = config.group("Basic Settings")
 
-        if state:
-            group.writeEntry('Start Nepomuk', "true")
-        else:
-            group.writeEntry('Start Nepomuk', "false")
+        session = dbus.SessionBus()
+        proxy = session.get_object( "org.kde.NepomukServer", "/nepomukserver")
 
-    def activateStrigi(self, state):
-        config = KConfig("nepomukserverrc")
-        group = config.group("Service-nepomukstrigiservice")
-
-        if state:
-            group.writeEntry('autostart', "true")
-        else:
-            group.writeEntry('autostart', "false")
+        group.writeEntry('Start Nepomuk', str(state).lower())
+        proxy.reconfigure()
+        proxy.enableNepomuk(state)
 
     def shown(self):
         pass
