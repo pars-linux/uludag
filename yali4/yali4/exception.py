@@ -18,3 +18,10 @@ class YaliException(Exception):
 
 class YaliExceptionInfo(Exception):
     pass
+
+class FSError(YaliError):
+    pass
+
+class FSCheckError(YaliError):
+    pass
+

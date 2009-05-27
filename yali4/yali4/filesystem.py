@@ -32,9 +32,6 @@ import yali4.sysutils as sysutils
 import yali4.parteddata as parteddata
 import yali4.storage
 
-class FSError(YaliError):
-    pass
-
 def getLabel(partition):
     if not os.path.exists("/dev/disk/by-label"):
         return None
@@ -165,10 +162,10 @@ class FileSystem:
                                 stderr="/tmp/resize.log")
 
         if res == 2:
-            raise FSError, _("""FSCheck found some problems on partition %s and fixed them. \
+            raise FSCheckError, _("""FSCheck found some problems on partition %s and fixed them. \
                                 You should restart the machine before starting the installation process !""" % (partition.getPath()))
         elif res > 2:
-            raise FSError, _("FSCheck failed on %s" % (partition.getPath()))
+            raise FSCheckError, _("FSCheck failed on %s" % (partition.getPath()))
 
         return True
 
@@ -380,7 +377,7 @@ class BtrfsFileSystem(FileSystem):
             size_mb = minsize
 
         if not self.preResize(partition):
-            raise FSError, _("Partition is not ready for resizing. Check it before installation.")
+            raise FSCheckError, _("Partition is not ready for resizing. Check it before installation.")
 
         cmd_path = requires("btrfsctl")
         cmd = "%s -r %dm -A %s" % (cmd_path, size_mb, partition.getPath())
@@ -471,7 +468,7 @@ class NTFSFileSystem(FileSystem):
             size_mb = minsize
 
         if not self.resizeSilent(size_mb, partition) or not self.preResize(partition):
-            raise FSError, _("Partition is not ready for resizing. Check it before installation.")
+            raise FSCheckError, _("Partition is not ready for resizing. Check it before installation.")
 
         cmd_path = requires("ntfsresize")
         cmd = "%s -ff -s %dM %s" % (cmd_path, size_mb, partition.getPath())

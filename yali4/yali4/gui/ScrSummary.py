@@ -82,6 +82,7 @@ Here you can see your install options and look at them again before installation
     def backCheck(self):
         self.timer.stop()
         ctx.yali.info.hide()
+        return True
 
     def updateCounter(self):
         remain = 20 - (int(time.time()) - self.startTime)
