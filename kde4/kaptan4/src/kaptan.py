@@ -17,6 +17,7 @@ import gui.ScrGoodbye  as goodbyeWidget
 import gui.ScrStyle  as styleWidget
 import gui.ScrMenu  as menuWidget
 import gui.ScrSearch  as searchWidget
+import gui.ScrSettings  as settingsWidget
 
 # waiting for pisi
 #import gui.ScrPackage as packageWidget
@@ -26,7 +27,7 @@ class Kaptan(QtGui.QWidget):
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = [welcomeWidget, menuWidget, mouseWidget, styleWidget, wallpaperWidget, searchWidget, networkWidget, goodbyeWidget]
+        self.screens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, settingsWidget, goodbyeWidget]
         self.screenData = None
         self.moveInc = 1
         self.menuText = ""
@@ -47,7 +48,8 @@ class Kaptan(QtGui.QWidget):
 
         QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
         QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
-        QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), self.slotFinished)
+        #QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), self.slotFinished)
+        QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
         QtCore.QObject.connect(self.ui.buttonCancel, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
 
     def slotFinished(self):

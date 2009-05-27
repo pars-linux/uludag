@@ -99,8 +99,19 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.ui.listWallpaper.setDisabled(False)
 
     def setWallpaper(self):
-
         self.__class__.selectedWallpaper =  self.ui.listWallpaper.currentItem().statusTip()
+        selectedWallpaper = self.ui.listWallpaper.currentItem().statusTip()
+        if selectedWallpaper:
+            config =  KConfig("plasma-appletsrc")
+            group = config.group("Containments")
+            for each in list(group.groupList()):
+                subgroup = group.group(each)
+                subcomponent = subgroup.readEntry('plugin')
+                if subcomponent == 'desktop' or subcomponent == 'folderview':
+                    subg = subgroup.group('Wallpaper')
+                    subg_2 = subg.group('image')
+                    subg_2.writeEntry("wallpaper", selectedWallpaper)
+
 
     def selectWallpaper(self):
         selectedFile = QFileDialog.getOpenFileName(None,"Open Image", os.path.expanduser("~"), 'Image Files (*.png *.jpg *bmp)')
