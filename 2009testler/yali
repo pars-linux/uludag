@@ -21,7 +21,7 @@ Lisans Onay sayfası
     - Partition formatlanıp yeni dosya sistemi ile kurulmaya çalışıldığında fscheck hatası veriyor.
     - Partition resize edilmeye çalışıldığında parted hatası veriyor.
 - Disk tablosunda partition signature eğer none olarak gözüküyor ise parted harası veriyor.
-- Elimizde 4 ayrı partition olduğunu düşünelim 
+- # Fixed: Elimizde 4 ayrı partition olduğunu düşünelim 
     1 -> pardus root
     2 -> genel veri saklama
     3 -> swap
@@ -31,3 +31,4 @@ Lisans Onay sayfası
 
 -# Fixed: Var olan bir partitionın ikiye bölünmesinden ve dosya sistemlerinin belirlenmesinden sonra, geri butonuna basıldığında, disk eski durumuna geliyor fakat görsel olarak eski haline gelemiyor ve hiç bir uyarı gelmiyor.
 
+- El ile bölümlenidir seçilip,  hemen ardından  Atomatik bölümlendirme seçilince hata veriyor.
