@@ -16,15 +16,16 @@ from PyKDE4.kdecore import *
 
 # Application Data
 appName     = "service-manager"
-catalog     = ""
+modName     = "servicemanager"
 programName = ki18n("Service Manager")
-version     = "2.0.9"
+version     = "2.9.0"
 description = ki18n("Service Manager")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2009 TUBITAK/UEKAE")
 text        = ki18n(None)
 homePage    = "http://www.pardus.org.tr/eng/projects"
 bugEmail    = "bugs@pardus.org.tr"
+catalog     = appName
 aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
 # Authors

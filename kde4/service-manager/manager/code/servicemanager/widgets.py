@@ -15,9 +15,11 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
+# KDE Stuff
+from PyKDE4 import kdeui
+
 # Application Stuff
-from ui import Ui_mainManager
-from uiitem import Ui_ServiceItemWidget
+from servicemanager.ui_item import Ui_ServiceItemWidget
 import time
 
 class ServiceItem(QtGui.QListWidgetItem):
@@ -38,6 +40,10 @@ class ServiceItemWidget(QtGui.QWidget):
         self.ui.labelName.setText(package)
 
         self.toggleButtons()
+
+        self.ui.buttonStart.setIcon(kdeui.KIcon("media-playback-start"))
+        self.ui.buttonStop.setIcon(kdeui.KIcon("media-playback-stop"))
+        self.ui.buttonReload.setIcon(kdeui.KIcon("view-refresh"))
 
         self.toggled = False
         self.iface = parent.iface
@@ -62,11 +68,11 @@ class ServiceItemWidget(QtGui.QWidget):
             state = self.iface.info(self.package)[2]
         if state in ('on', 'started', 'conditional_started'):
             self.running = True
-            icon = 'running'
+            icon = 'flag-green'
         else:
             self.running = False
-            icon = 'notrunning'
-        self.ui.labelStatus.setPixmap(QtGui.QPixmap(':data/%s.png' % icon))
+            icon = 'flag-black'
+        self.ui.labelStatus.setPixmap(kdeui.KIcon(icon).pixmap(32, 32))
         self.runningAtStart = False
         if state in ('on', 'stopped'):
             self.runningAtStart = True

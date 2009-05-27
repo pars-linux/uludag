@@ -13,24 +13,18 @@
 
 # PyKDE4 Stuff
 from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-
-# DBUS
-import dbus
+from PyKDE4.kdecore import KGlobal
 
 # Service Manager
-from base import MainManager
+from servicemanager.base import MainManager
 
-class ServiceManager(KCModule):
-    def __init__(self, component_data, parent):
-        KCModule.__init__(self, component_data, parent)
+class ServiceManager(KMainWindow):
+    def __init__ (self, *args):
+        KMainWindow.__init__(self)
 
         # This is very important for translations when running as kcm_module
         KGlobal.locale().insertCatalog("service-manager")
 
-        if not dbus.get_default_main_loop():
-            from dbus.mainloop.qt import DBusQtMainLoop
-            DBusQtMainLoop(set_as_default = True)
-
-        MainManager(self, standAlone = False)
+        self.resize (640, 480)
+        self.setCentralWidget(MainManager(self))
 

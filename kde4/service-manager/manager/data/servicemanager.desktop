@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Service Manager
+Name[tr]=Servis Yöneticisi
+GenericName=Service Manager
+GenericName[tr]=Servis Yöneticisi
+Comment=An application for managing system services.
+Comment[tr]=Sistem servislerini yönetmenizi sağlayan bir uygulama.
+Exec=service-manager
+Icon=flag-yellow
+Type=Application
+Categories=Qt;KDE;System;

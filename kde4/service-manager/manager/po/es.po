@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-11 14:34+0300\n"
+"POT-Creation-Date: 2009-05-27 16:19+0300\n"
 "PO-Revision-Date: 2009-05-13 22:04-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -18,83 +18,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/about.py:20 src/about.py:22
-msgid "Service Manager"
-msgstr "Administrador de servicios"
-
-#: src/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
-
-#: src/about.py:31
-msgid "Gökmen GÖKSEL"
-msgstr ""
-
-#: src/about.py:31
-msgid "Current Maintainer"
-msgstr "Mantenedor actual"
-
-#: src/about.py:32
-msgid "Bahadır Kandemir"
-msgstr ""
-
-#: src/about.py:32
-msgid "COMAR Author"
-msgstr "Autor de COMAR"
-
-#: src/uiitem.py:99 src/ui.py:55
+#: .tmp/ui_item.py:99 .tmp/ui_main.py:55
 msgid "Form"
 msgstr ""
 
-#: src/uiitem.py:100
+#: .tmp/ui_item.py:100
 msgid "serviceName"
 msgstr ""
 
-#: src/uiitem.py:101
+#: .tmp/ui_item.py:101
 msgid "serviceDesc"
 msgstr ""
 
-#: src/uiitem.py:102
+#: .tmp/ui_item.py:102
 msgid "Start service"
 msgstr "Iniciar Servicio"
 
-#: src/uiitem.py:103
+#: .tmp/ui_item.py:103
 msgid "Reload service"
 msgstr "Reiniciar servicio"
 
-#: src/uiitem.py:104
+#: .tmp/ui_item.py:104
 msgid "Stop service"
 msgstr "Parar servicio"
 
-#: src/uiitem.py:105
+#: .tmp/ui_item.py:105
 msgid "Run on start"
 msgstr "Iniciar automáticamente con el arranque del sistema"
 
-#: src/ui.py:56
+#: .tmp/ui_main.py:56
 msgid "type service name to search..."
 msgstr "Escriba el nombre de servicio a buscar..."
 
-#: src/ui.py:57
+#: .tmp/ui_main.py:57
 msgid "Servers"
 msgstr "Servidores"
 
-#: src/ui.py:58
+#: .tmp/ui_main.py:58
 msgid "System Services"
 msgstr "Servicios del sistema"
 
-#: src/ui.py:59
+#: .tmp/ui_main.py:59
 msgid "Startup Services"
 msgstr "Servicios que inician automáticamente"
 
-#: src/ui.py:60
+#: .tmp/ui_main.py:60
 msgid "Running Services"
 msgstr "Servicios activos"
 
-#: src/ui.py:61
+#: .tmp/ui_main.py:61
 msgid "All Services"
 msgstr "Todos los servicios"
 
-#: src/ui.py:62
+#: .tmp/ui_main.py:62
 msgid "Getting service info... %p%"
 msgstr "Recibiendo información sobre los servicios... %p%"
 
+#: .tmp/servicemanager/about.py:20 .tmp/servicemanager/about.py:22
+msgid "Service Manager"
+msgstr "Administrador de servicios"
+
+#: .tmp/servicemanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/servicemanager/about.py:32
+msgid "Gökmen GÖKSEL"
+msgstr ""
+
+#: .tmp/servicemanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mantenedor actual"
+
+#: .tmp/servicemanager/about.py:33
+msgid "Bahadır Kandemir"
+msgstr ""
+
+#: .tmp/servicemanager/about.py:33
+msgid "COMAR Author"
+msgstr "Autor de COMAR"
