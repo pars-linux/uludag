@@ -82,6 +82,32 @@
     <file>images/arrow-left.png</file>
     <file>images/sidebar.svg</file>
     <file>images/background.svg</file>
+    <file>images/background-2009.svg</file>
     <file>images/treeview-branch-open.png</file>
+    <file>images/checkbox16x16.png</file>
+    <file>images/radiobutton16x16.png</file>
+    <file>images/button-hover100x32.png</file>
+    <file>images/checkbox-checked-hover16x16_bi.png</file>
+    <file>images/checkbox-hover16x16.png</file>
+    <file>images/checkbox-checked16x16.png</file>
+    <file>images/radiobutton-hover16x16.png</file>
+    <file>images/radiobutton-checked16x16.png</file>
+    <file>images/button100x32.png</file>
+    <file>images/button-pressed100x32.png</file>
+    <file>images/checkbox-checked-hover16x16.png</file>
+    <file>images/radiobutton-checked-hover16x16.png</file>
+    <file>images/sidebar.png</file>
+    <file>images/checkbox16x16_big.png</file>
+    <file>images/radiobutton16x16_big.png</file>
+    <file>images/arrow-down copy.png</file>
+    <file>images/button-hover100x32_big.png</file>
+    <file>images/checkbox-hover16x16_big.png</file>
+    <file>images/radiobutton-hover16x16_big.png</file>
+    <file>images/radiobutton-checked16x16_big.png</file>
+    <file>images/button100x32_big.png</file>
+    <file>images/button-pressed100x32_big.png</file>
+    <file>images/checkbox-checked-hover16x16_big.png</file>
+    <file>images/radiobutton-checked-hover16x16_big.png</file>
+    <file>images/sidebar_big.png</file>
   </qresource>
 </RCC>
