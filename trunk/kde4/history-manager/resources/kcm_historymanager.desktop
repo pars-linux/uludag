@@ -12,7 +12,6 @@ X-KDE-System-Settings-Parent-Category=computer-administration
 X-KDE-Weight=70
 
 Name=History Manager
-Name[x-test]=xxHistory Managerxx
 Name[tr]=Geçmiş Yöneticisi
 Comment=History Manager
 X-KDE-Keywords=python history managers

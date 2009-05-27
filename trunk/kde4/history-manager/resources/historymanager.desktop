@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=History Manager
+Name[tr]=Geçmiş Yöneticisi
+GenericName=History Manager
+GenericName[tr]=Geçmiş Yöneticisi
+Comment=An application for managing Pisi history
+Comment[tr]=Pisi geçmişini yönetmenizi sağlayan bir uygulama
+Exec=history-manager
+Icon=history-manager
+Type=Application
+Categories=Qt;KDE;System;
+
