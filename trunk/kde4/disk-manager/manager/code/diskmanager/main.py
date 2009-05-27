@@ -288,10 +288,16 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             device = widget.getId()
             if widget.getId() in self.device_entries:
                 device = self.device_entries[device]
-            if page_widget.getAutoMount():
-                self.iface.addEntry(device, page_widget.getMountPoint(), page_widget.getFilesystem(), page_widget.getOptions())
-            else:
-                self.iface.removeEntry(device)
+            try:
+                if page_widget.getAutoMount():
+                        self.iface.addEntry(device, page_widget.getMountPoint(), page_widget.getFilesystem(), page_widget.getOptions())
+                else:
+                    self.iface.removeEntry(device)
+            except Exception, e:
+                if "Comar.PolicyKit" in e._dbus_error_name:
+                    kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+                else:
+                    kdeui.KMessageBox.error(self, unicode(e))
 
     def slotItemDelete(self):
         """
