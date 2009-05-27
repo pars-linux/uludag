@@ -18,7 +18,7 @@ Lisans Onay sayfası
     - Eger dosya sistemi olmayan boş bir partition var ise, bu partition önerilen olarak gelmesi gerekirken, bu partition hiç gözükmüyor.
 
 - Disk tablosu herhengi bir şekilde bozulmuş ise  parted hatası veriyor.
-- Disk tablosunda partition eğer none olarak gözüküyor ise parted harası veriyor.
+- Disk tablosunda partition signature eğer none olarak gözüküyor ise parted harası veriyor.
 - Elimizde 4 ayrı partition olduğunu düşünelim 
     1 -> pardus root
     2 -> genel veri saklama
