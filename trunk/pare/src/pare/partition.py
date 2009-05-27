@@ -25,7 +25,7 @@ class Partition:
 
     _type = partitionType
     
-    def __init__(self, disk, partedPartition, minor, size, start, end, format, exists=True):
+    def __init__(self, disk, partedPartition, minor, size, start, end, format, existing=False):
         self._disk = disk
         self._partedPartition = partedPartition
         self._minor = minor
@@ -33,19 +33,19 @@ class Partition:
         self._start = start
         self._end = end
         self._format = format
-        self._exists = exists
+        self._exists = existing
         self.tmpLabel = ''
-
-    def isFormatted(self):
-        return self.isFileSystemReady()
     
-    def _getExists(self):
+    @property
+    def exists(self):
         return self._exists
-
-    def _setExists(self, bool):
-        self._exists =  bool
     
-    exists = property(lambda p: p._getExists(), lambda p,f: p._setExists(f))
+    @property
+    def status(self):
+        if not self.exists:
+            return False
+        
+        return os.access(self.path, os.W_OK)
     
     def setFileSystemType(self, _format):
         if isinstance(_format, FileSystem):
@@ -192,7 +192,7 @@ class Partition:
         return self.start == rhs.start and self.end == rhs.end
 
 
-class LVM(Partition):
+class PhysicalVolume(Partition):
     _type = lvmType
     
     def __init__(self, disk, partedPartition, minor, size, start,end):
@@ -204,7 +204,7 @@ class LVM(Partition):
                            end,
                            format)
         
-class RAID(Partition):
+class RaidMember(Partition):
     _type = raidType
     
     def __init__(self):
