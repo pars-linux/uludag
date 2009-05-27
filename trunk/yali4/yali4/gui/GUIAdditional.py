@@ -89,7 +89,7 @@ class ResizeWidget(QtGui.QWidget):
         try:
             self.dev.resizePartition(self.part._fsname, resizeTo,self.part)
         except FSCheckError, message:
-            QtGui.QMessageBox.information(self.rootWidget, _("Filesystem Error"), message)
+            QtGui.QMessageBox.information(self.rootWidget, _("Filesystem Error"), unicode(message))
             return
 
         _sum = {"partition":self.part.getName(),
