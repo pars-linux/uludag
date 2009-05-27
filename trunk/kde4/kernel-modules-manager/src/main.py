@@ -13,6 +13,7 @@
 
 # System
 import sys
+import dbus
 
 # Qt Stuff
 from PyQt4 import QtGui
@@ -24,9 +25,6 @@ from PyKDE4.kdecore import *
 
 # Application Stuff
 from about import aboutData
-
-# DBus-Qt
-from dbus.mainloop.qt import DBusQtMainLoop
 
 from modulemanager import ModuleManagerDlg
 
@@ -45,7 +43,9 @@ if __name__ == '__main__':
     app = KApplication()
 
     # DBus MainLoop
-    DBusQtMainLoop(set_as_default=True)
+    if not dbus.get_default_main_loop():
+        from dbus.mainloop.qt import DBusQtMainLoop
+        DBusQtMainLoop(set_as_default=True)
 
     # Create Main Widget
     mainWindow = Manager(None, 'kernel-modules-manager')
