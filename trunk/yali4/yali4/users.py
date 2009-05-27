@@ -92,11 +92,6 @@ class User:
         not_allowed_chars = '\n' + ':'
         return '' == filter(lambda r: [x for x in not_allowed_chars if x == r], self.realname)
 
-    def setNoPassword(self, uid):
-        import polkit
-        for action_id in polkit.action_list():
-            polkit.auth_add(action_id, polkit.SCOPE_ALWAYS, uid, 0)
-
     # KDE AutoLogin
     def setAutoLogin(self,state=True):
         """ Sets the KDE's Autologin feature's state """
