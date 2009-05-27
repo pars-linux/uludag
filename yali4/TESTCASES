@@ -12,6 +12,11 @@ Following steps will be useful to test Yalı in an arbitrary order :)
     - Delete other user and try to add a new one with same name
     - Try to use not acceptable chars for inputs
     - Try to use wrong passwords in password inputs
+    - Try to select do not ask password to this user 
+        - After the installation finished 
+            Type as root
+            # nano /var/lib/PolicyKit/user-pardusman.auths
+            Observe that all authentications added for this user.
  - Enter root password and machine name
     - Try to use not acceptable chars for inputs
     - Try to use wrong passwords in password inputs
