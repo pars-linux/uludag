@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="raw" >
+    <file>pics/kaptan-logo.png</file>
     <file>pics/nepomuk.png</file>
     <file>pics/cr64-app-kaptan.png</file>
     <file>pics/multiple.png</file>
