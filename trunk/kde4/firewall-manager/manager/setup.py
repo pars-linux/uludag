@@ -21,7 +21,7 @@ from distutils.cmd import Command
 from distutils.command.build import build
 from distutils.command.install import install
 
-from code import about
+from code.fm import about
 
 def update_messages():
     # Create empty directory
@@ -59,10 +59,10 @@ class Build(build):
         # Copy compiled UIs and RCs
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
-            os.system("/usr/kde/4/bin/pykde4uic -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
-        print "Generating RCs..."
-        for filename in glob.glob1("data", "*.qrc"):
-            os.system("/usr/bin/pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
+            os.system("/usr/kde/4/bin/pykde4uic -o build/%s/ui_%s.py ui/%s" % (about.modName, filename.split(".")[0], filename))
+        #print "Generating RCs..."
+        #for filename in glob.glob1("data", "*.qrc"):
+        #    os.system("/usr/bin/pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
 
 class Install(install):
     def run(self):
@@ -99,8 +99,8 @@ class Install(install):
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % about.catalog))
         # Rename
-        print "Renaming application.py..."
-        shutil.move(os.path.join(project_dir, "application.py"), os.path.join(project_dir, "%s.py" % about.appName))
+        #print "Renaming application.py..."
+        #shutil.move(os.path.join(project_dir, "application.py"), os.path.join(project_dir, "%s.py" % about.appName))
         # Modes
         print "Changing file modes..."
         os.chmod(os.path.join(project_dir, "%s.py" % about.appName), 0755)
