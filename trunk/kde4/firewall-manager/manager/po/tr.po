@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Firewall Manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 12:53+0300\n"
+"POT-Creation-Date: 2009-05-27 13:37+0300\n"
 "PO-Revision-Date: 2009-05-15 17:53+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_service.py:41 .tmp/fm/service.py:46
+#: .tmp/ui_service.py:41 .tmp/firewallmanager/service.py:46
 msgid "Start"
 msgstr "Başlat"
 
@@ -23,39 +23,39 @@ msgstr "Başlat"
 msgid "Add New"
 msgstr "Yeni Ekle"
 
-#: .tmp/fm/service.py:38
+#: .tmp/firewallmanager/service.py:38
 msgid "Firewall is activated."
 msgstr "Güvenlik duvarı aktifleştirildi."
 
-#: .tmp/fm/service.py:41
+#: .tmp/firewallmanager/service.py:41
 msgid "Stop"
 msgstr "Durdur"
 
-#: .tmp/fm/service.py:43
+#: .tmp/firewallmanager/service.py:43
 msgid "Firewall is deactivated."
 msgstr "Güvenlik duvarı pasifleştirildi."
 
-#: .tmp/fm/about.py:20 .tmp/fm/about.py:22
+#: .tmp/firewallmanager/about.py:20 .tmp/firewallmanager/about.py:22
 msgid "Firewall Manager"
 msgstr "Güvenlik Duvarı Yöneticisi"
 
-#: .tmp/fm/about.py:24
+#: .tmp/firewallmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
 msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
-#: .tmp/fm/about.py:25
+#: .tmp/firewallmanager/about.py:25
 msgid " "
 msgstr " "
 
-#: .tmp/fm/about.py:32
+#: .tmp/firewallmanager/about.py:32
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: .tmp/fm/about.py:32
+#: .tmp/firewallmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Şu anki geliştirici"
 
-#: .tmp/fm/main.py:96
+#: .tmp/firewallmanager/main.py:96
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
@@ -63,18 +63,19 @@ msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
 "Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
 
-#: .tmp/fm/main.py:200
+#: .tmp/firewallmanager/main.py:200
 msgid "All"
 msgstr "Hepsi"
 
-#: .tmp/fm/main.py:211
+#: .tmp/firewallmanager/main.py:211
 msgid "Action"
 msgstr "Olay"
 
-#: .tmp/fm/main.py:257 .tmp/fm/main.py:312 .tmp/fm/main.py:349
+#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:312
+#: .tmp/firewallmanager/main.py:349
 msgid "Access denied."
 msgstr "Erişim engellendi."
 
-#: .tmp/fm/main.py:272 .tmp/fm/main.py:304
+#: .tmp/firewallmanager/main.py:272 .tmp/firewallmanager/main.py:304
 msgid "Settings"
 msgstr "Ayarlar"
