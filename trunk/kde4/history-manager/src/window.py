@@ -239,7 +239,7 @@ class MainManager(QtGui.QWidget):
             self.enableButtons(True)
 
     def handler(self, package, signal, args):
-        print "Package:",package, "Signal:", signal, "Arguments:", args
+        # print "Package:",package, "Signal:", signal, "Arguments:", args
 
         if signal == "status":
             self.status(" ".join(args))
@@ -248,8 +248,7 @@ class MainManager(QtGui.QWidget):
             self.addNewOperation( self.takeLastOperation() )
             self.enableButtons(True)
         elif signal == "progress":
-            self.status(i18n("In Progress"))
-            # self.status("%s : %s/100" % (args[2], args[1]))
+            self.status(i18n("Taking Snapshot : <b>%s</b>/100" % args[1]))
             self.enableButtons(False)
 
     def closeEvent(self, event=None):
