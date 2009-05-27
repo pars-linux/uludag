@@ -73,6 +73,7 @@ class Install(install):
         bin_dir = os.path.join(kde_dir, "bin")
         locale_dir = os.path.join(kde_dir, "share/locale")
         service_dir = os.path.join(kde_dir, "share/kde4/services")
+        apps_dir = os.path.join(kde_dir, "share/applications/kde4")
         project_dir = os.path.join(kde_dir, "share/apps", about.appName)
         # Make directories
         print "Making directories..."
@@ -83,8 +84,8 @@ class Install(install):
         makeDirs(project_dir)
         # Install desktop files
         print "Installing desktop files..."
-        for filename in glob.glob1("data", "*.desktop"):
-            shutil.copy("data/%s" % filename, service_dir)
+        shutil.copy("data/kcm_%s.desktop" % about.modName, service_dir)
+        shutil.copy("data/%s.desktop" % about.modName, apps_dir)
         # Install codes
         print "Installing codes..."
         os.system("cp -R build/* %s/" % project_dir)
