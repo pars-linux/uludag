@@ -79,6 +79,7 @@ class Install(install):
         makeDirs(bin_dir)
         makeDirs(locale_dir)
         makeDirs(service_dir)
+        makeDirs(apps_dir)
         makeDirs(project_dir)
         # Install desktop files
         print "Installing desktop files..."
