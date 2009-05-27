@@ -47,10 +47,18 @@ class PisiIface(QThread):
         self.pdb = pisi.db.historydb.HistoryDB()
 
     def run(self):
+        cntr = 0
         for operation in self.pdb.get_last():
+            QCoreApplication.processEvents()
             self.ops[operation.no] = operation
-            self.emit(SIGNAL("loadFetched(PyQt_PyObject)"), operation.no)
-            time.sleep(0.01)
+            cntr += 1
+            if cntr == 24:
+                self.emit(SIGNAL("loadFetched(PyQt_PyObject)"), 24)
+                self.deinit()
+                break
+            time.sleep(0.05)
+
+        self.deinit()
 
     def historyPlan(self, op):
         return pisi.api.get_takeback_plan(op)
@@ -64,3 +72,9 @@ class PisiIface(QThread):
     def getLastOperation(self):
         op = self.pdb.get_last()
         return op.next()
+
+    def deinit(self):
+        if self.pdb:
+            self.pdb.invalidate()
+            del self.pdb
+            self.pdb = None

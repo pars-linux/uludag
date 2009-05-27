@@ -42,6 +42,7 @@ class MainManager(QtGui.QWidget):
 
         self.cface = ComarIface()
         self.pface = PisiIface(self)
+        self.loaded = 0
 
         self.connectSignals()
 
@@ -62,10 +63,10 @@ class MainManager(QtGui.QWidget):
         self.connect(self.ui.aliasLE, SIGNAL("textEdited(const QString &)"), self.setAlias)
 
     def loadHistory(self, num):
-        self.addNewOperation(self.pface.ops.get(num))
-
-        if num in [0, 1]:
-            self.status(i18n("All Operations Loaded"))
+        for k,v in self.pface.ops.items()[self.loaded:num]:
+            self.addNewOperation(v)
+        self.loaded = num
+        self.status(i18n("%d Operations Loaded" % self.loaded))
 
     def setAlias(self, txt):
         if self.last_item:
