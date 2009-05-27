@@ -1,10 +1,3 @@
-- Kullanıcı parolası gerektiren herhangi bir işlem yaptıktan ve program kapatılıp tekrar açıldıktan sonra kullanıcı parolası isteyen başka bir işlem yapıldığında parola sormuyor.
-
-Örn: Var olan kullnıcının şifresi değiştirildi
-     Program tekrar kapatılıp açıldı
-     Yeni kullanıcı eklendi (Parola sormadı)
-     Program tekrar kapatılıp açıldı
-     Yeni kullanıcı silindi (Parola sormadı)
 - Kulanıcı sil ve kullanıcı bilgilerini güncelle butonlarının üzerine gelindiğide bu butonlar ile ilgili bilgi gelmiyor. 
 - Kullanici silindiğinde ev dizini silinemiyor. Ya da kullanicinin tüm verisini silmek istiyor musunuz diyemiyor.
 
