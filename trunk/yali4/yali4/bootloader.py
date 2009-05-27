@@ -148,7 +148,7 @@ class BootLoader:
             """ Returns the installed kernel version """
             d = os.path.join(consts.target_dir, "boot")
             k = glob.glob(d + "/kernel-*")
-            return os.path.basename(k[0])
+            return os.path.basename(sorted(k)[-1])
 
         def find_initramfs_name(bk):
             """ Returns the installed initramfs name """
@@ -184,6 +184,7 @@ class BootLoader:
             return " ".join(s).strip()
 
         boot_kernel = find_boot_kernel()
+        ctx.debugger.log("FBK: Kernel found as %s" % boot_kernel)
         initramfs_name = find_initramfs_name(boot_kernel)
         boot_parameters =  boot_parameters(install_root_path_label)
         s = grub_conf_tmp % {"root": install_root,
