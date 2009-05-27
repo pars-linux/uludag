@@ -20,19 +20,19 @@ from PyKDE4 import kdeui
 from PyKDE4 import kdecore
 
 # UI
-from ui_main import Ui_MainWidget
+from bootmanager.ui_main import Ui_MainWidget
 
 # Backend
-from backend import Interface
+from bootmanager.backend import Interface
 
 # Config
-from config import ANIM_SHOW, ANIM_HIDE, ANIM_TARGET, ANIM_DEFAULT, ANIM_TIME
+from bootmanager.config import ANIM_SHOW, ANIM_HIDE, ANIM_TARGET, ANIM_DEFAULT, ANIM_TIME
 
 # Item widget
-from item import ItemListWidgetItem, ItemWidget
+from bootmanager.item import ItemListWidgetItem, ItemWidget
 
 # Edit widget
-from edit import EditWidget
+from bootmanager.edit import EditWidget
 
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):

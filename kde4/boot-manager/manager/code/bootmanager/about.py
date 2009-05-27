@@ -16,6 +16,7 @@ from PyKDE4.kdecore import KAboutData, ki18n
 
 # Application Data
 appName     = "boot-manager"
+modName     = "bootmanager"
 programName = ki18n("Boot Manager")
 version     = "2.9.0"
 description = ki18n("Boot Manager")

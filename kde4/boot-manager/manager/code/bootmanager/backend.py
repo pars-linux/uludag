@@ -14,9 +14,6 @@
 # Comar
 import comar
 
-# DBus
-import dbus
-
 class Interface:
     def __init__(self):
         self.link = comar.Link()
