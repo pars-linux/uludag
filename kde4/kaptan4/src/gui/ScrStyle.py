@@ -36,6 +36,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         self.styleDetails = {}
 
+        config = KConfig("kwinrc")
+        group = config.group("Desktops")
+        defaultDesktopNumber = int(group.readEntry('Number'))
+
+        self.ui.spinBoxDesktopNumbers.setValue(defaultDesktopNumber)
+
         """
         # TODO: Add styles as a resource type. It doesn't work, though.
         KGlobal.dirs().addResourceType("styles", "data", "/usr/kde/4/share/styles/")
