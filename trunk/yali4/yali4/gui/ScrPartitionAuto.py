@@ -105,6 +105,7 @@ about disk partitioning.
 
     def shown(self):
 
+        ctx.partrequests.remove_all()
         if self.scannedBefore:
             return
 

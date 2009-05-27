@@ -59,6 +59,7 @@ about disk partitioning.
 
     def shown(self):
         ctx.mainScreen.disableNext()
+        ctx.partrequests.remove_all()
         self.diskList.checkRootPartRequest()
 
         # Set current disk if selected in previous screen

@@ -276,6 +276,9 @@ class DiskList(QtGui.QWidget):
         """Creates delete request for selected partition"""
         dev = self.partEdit.currentPart.getDevice()
         currentPart = self.partEdit.currentPart
+        ctx.partrequests.removeRequest(currentPart, request.mountRequestType)
+        ctx.partrequests.removeRequest(currentPart, request.formatRequestType)
+        ctx.partrequests.removeRequest(currentPart, request.labelRequestType)
         dev.deletePartition(currentPart)
 
         try:
@@ -293,9 +296,6 @@ class DiskList(QtGui.QWidget):
             # if there is no more logical partition we also dont need the extended one ;)
             dev.deletePartition(dev.getExtendedPartition())
 
-        ctx.partrequests.removeRequest(currentPart, request.mountRequestType)
-        ctx.partrequests.removeRequest(currentPart, request.formatRequestType)
-        ctx.partrequests.removeRequest(currentPart, request.labelRequestType)
         self.update()
 
     def slotResizePart(self):
@@ -408,8 +408,15 @@ class DiskList(QtGui.QWidget):
             if extendedPartition and partition._partition.type & parteddata.PARTITION_LOGICAL:
                 type = parteddata.PARTITION_LOGICAL
 
-            # Let's create the partition
-            p = device.addPartition(partition._partition, type, t.filesystem, size, t.parted_flags)
+            try:
+                # Let's create the partition
+                p = device.addPartition(partition._partition, type, t.filesystem, size, t.parted_flags)
+            except Exception, e:
+                ctx.debugger.log("Exception : %s" % e)
+                QtGui.QMessageBox.information(self,
+                                                _("Too many primary partitions !"),
+                                                _("You need to delete one of the primary or extended(if exists) partition from your disk table !"))
+                return
 
             # Get new partition meta
             partition = device.getPartition(p.num)
