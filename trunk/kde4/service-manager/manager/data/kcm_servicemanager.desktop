@@ -1,6 +1,6 @@
 [Desktop Entry]
 Exec=kcmshell4 service-manager
-Icon=preferences-desktop
+Icon=flag-yellow
 Type=Service
 X-KDE-ServiceTypes=KCModule
 

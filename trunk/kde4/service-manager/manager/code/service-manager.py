@@ -24,16 +24,16 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
 def CreatePlugin(widget_parent, parent, component_data):
-    from kcmodule import ServiceManager
+    from servicemanager.kcmodule import ServiceManager
     return ServiceManager(component_data, parent)
 
 if __name__ == '__main__':
 
     # Service Manager
-    from standalone import ServiceManager
+    from servicemanager.standalone import ServiceManager
 
     # Application Stuff
-    from about import aboutData
+    from servicemanager.about import aboutData
 
     # Set Command-line arguments
     KCmdLineArgs.init(sys.argv, aboutData)

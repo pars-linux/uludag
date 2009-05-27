@@ -24,11 +24,10 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
 # Application Stuff
-from backend import ServiceIface
-from about import aboutData
-from ui import Ui_mainManager
-from uiitem import Ui_ServiceItemWidget
-from widgets import ServiceItemWidget, ServiceItem
+from servicemanager.backend import ServiceIface
+from servicemanager.about import aboutData
+from servicemanager.ui_main import Ui_mainManager
+from servicemanager.widgets import ServiceItemWidget, ServiceItem
 
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True):

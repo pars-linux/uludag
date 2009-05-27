@@ -113,8 +113,6 @@
    <header>klineedit.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../icons/data.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

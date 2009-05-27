@@ -98,7 +98,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../icons/data.qrc">
+        <iconset>
          <normaloff>:/data/start.png</normaloff>:/data/start.png</iconset>
        </property>
        <property name="flat">
@@ -127,7 +127,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../icons/data.qrc">
+        <iconset>
          <normaloff>:/data/reload.png</normaloff>:/data/reload.png</iconset>
        </property>
       </widget>
@@ -153,7 +153,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../icons/data.qrc">
+        <iconset>
          <normaloff>:/data/stop.png</normaloff>:/data/stop.png</iconset>
        </property>
       </widget>
@@ -191,8 +191,6 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../icons/data.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
