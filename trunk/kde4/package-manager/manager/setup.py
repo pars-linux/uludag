@@ -71,8 +71,10 @@ class Install(install):
         if not os.path.exists("build/"):
             os.system("./setup.py build")
         if self.root:
+            icon_dir = "%s/usr/share/icons/hicolor/128x128/apps" % self.root
             kde_dir = "%s/usr/kde/4" % self.root
         else:
+            icon_dir = "/usr/share/icons/hicolor/128x128/apps"
             kde_dir = "/usr/kde/4"
         bin_dir = os.path.join(kde_dir, "bin")
         locale_dir = os.path.join(kde_dir, "share/locale")
@@ -88,7 +90,7 @@ class Install(install):
         print "Installing desktop files..."
         for filename in glob.glob1("data", "*.desktop"):
             shutil.copy("data/%s" % filename, apps_dir)
-        shutil.copy("data/package-manager.png", "/usr/share/icons/hicolor/128x128/apps")
+        shutil.copy("data/package-manager.png", icon_dir)
         # Install codes
         print "Installing codes..."
         os.system("cp -R build/* %s/" % project_dir)
