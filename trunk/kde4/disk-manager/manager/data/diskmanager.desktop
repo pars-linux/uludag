@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Disk Manager
+Name[tr]=Disk Yöneticisi
+GenericName=Disk Manager
+GenericName[tr]=Disk Yöneticisi
+Comment=An application for managing partitions and their mount paths.
+Comment[tr]=Disk bölümlerini ve bağlandıkları dizinleri yönetmenizi sağlayan bir uygulama.
+Exec=disk-manager
+Icon=drive-harddisk
+Type=Application
+Categories=Qt;KDE;System;
