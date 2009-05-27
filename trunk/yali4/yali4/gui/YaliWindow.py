@@ -122,8 +122,8 @@ class Widget(Ui_YaliMain):
     # execute previous step
     def slotBack(self):
         _w = self.mainStack.currentWidget()
-        _w.backCheck()
-        self.stackMove(self.getCur(self.moveInc * -1))
+        if _w.backCheck():
+            self.stackMove(self.getCur(self.moveInc * -1))
         self.moveInc = 1
 
     # move to id numbered stack

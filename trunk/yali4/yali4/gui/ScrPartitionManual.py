@@ -59,7 +59,6 @@ about disk partitioning.
 
     def shown(self):
         ctx.mainScreen.disableNext()
-        ctx.partrequests.remove_all()
         self.diskList.checkRootPartRequest()
 
         # Set current disk if selected in previous screen
@@ -75,4 +74,13 @@ about disk partitioning.
         ctx.debugger.log("Manual Partitioning selected...")
         ctx.mainScreen.processEvents()
         return True
+
+    def backCheck(self):
+        answer = QtGui.QMessageBox.warning(self, _("Warning"),
+                                                 _("All changes that you made will be removed.\nDo you want to continue ?"),
+                                                 QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+        if answer == QtGui.QMessageBox.Yes:
+            self.diskList.reinitDevices()
+            return True
+        return False
 

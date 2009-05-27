@@ -26,6 +26,7 @@ import time
 import struct
 import binascii
 
+from yali4.exception import *
 from pardus.diskutils import *
 from yali4.parteddata import *
 from yali4.partition import Partition, FreeSpace
@@ -458,8 +459,12 @@ class Device:
         if not isinstance(fs, yali4.filesystem.FileSystem):
             raise DeviceError, "filesystem is None, can't resize"
 
-        if not fs.resize(size_mb, part):
-            raise DeviceError, "fs.resize ERROR"
+        try:
+            ret = fs.resize(size_mb, part)
+        except FSCheckError, e:
+            raise FSCheckError, e
+        except FSError, e:
+            raise FSError, e
 
         start = part.getPartition().geom.start
         fs_name = part.getFSName()
