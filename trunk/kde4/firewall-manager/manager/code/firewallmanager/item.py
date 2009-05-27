@@ -19,7 +19,7 @@ from PyQt4 import QtGui
 from PyKDE4.kdeui import KIcon
 
 # UI
-from fm.ui_item import Ui_ItemWidget
+from firewallmanager.ui_item import Ui_ItemWidget
 
 
 class ItemListWidgetItem(QtGui.QListWidgetItem):

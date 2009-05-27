@@ -19,7 +19,7 @@ from PyQt4 import QtGui
 #from PyKDE4.kdeui import KIcon
 
 # UI
-from fm.ui_settingsitem import Ui_SettingsItemWidget
+from firewallmanager.ui_settingsitem import Ui_SettingsItemWidget
 
 
 class SettingsItemWidget(QtGui.QWidget, Ui_SettingsItemWidget):

@@ -20,7 +20,7 @@ from PyKDE4 import kdeui
 from PyKDE4 import kdecore
 
 # UI
-from fm.ui_service import Ui_ServiceWidget
+from firewallmanager.ui_service import Ui_ServiceWidget
 
 
 class ServiceWidget(QtGui.QWidget, Ui_ServiceWidget):

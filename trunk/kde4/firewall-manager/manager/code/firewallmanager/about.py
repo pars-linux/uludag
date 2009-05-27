@@ -16,7 +16,7 @@ from PyKDE4.kdecore import KAboutData, ki18n
 
 # Application Data
 appName     = "firewall-manager"
-modName     = "fm"
+modName     = "firewallmanager"
 programName = ki18n("Firewall Manager")
 version     = "2.9.0"
 description = ki18n("Firewall Manager")

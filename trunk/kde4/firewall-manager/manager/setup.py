@@ -21,7 +21,7 @@ from distutils.cmd import Command
 from distutils.command.build import build
 from distutils.command.install import install
 
-from code.fm import about
+from code.firewallmanager import about
 
 def update_messages():
     # Create empty directory
