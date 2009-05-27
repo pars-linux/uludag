@@ -250,7 +250,7 @@ class PkgInstaller(QThread):
         ctx.debugger.log("Found %d packages in repo.." % total)
 
         try:
-            order = yali4.pisiiface.get_install_order(yali4.pisiiface.get_available())
+            order = yali4.pisiiface.get_available()
             while True:
                 try:
                     yali4.pisiiface.install(order)
