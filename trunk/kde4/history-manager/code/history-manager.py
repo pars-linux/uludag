@@ -21,8 +21,8 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-from about import aboutData
-from window import MainManager
+from historymanager.about import aboutData
+from historymanager.window import MainManager
 
 class HistoryManager(KCModule):
     def __init__(self, component_data, parent):
