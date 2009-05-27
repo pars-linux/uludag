@@ -131,6 +131,13 @@ def connectTo(package, profile):
 
 def addUsers():
     global bus
+
+    import comar
+    link = comar.Link(socket=ctx.consts.dbus_socket_file)
+
+    def setNoPassword(uid):
+        link.User.Manager["baselayout"].grantAuthorization(uid, "*")
+
     obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
     for u in yali4.users.pending_users:
         ctx.debugger.log("User %s adding to system" % u.username)
@@ -156,7 +163,7 @@ def addUsers():
 
         # Set no password ask for PolicyKit
         if u.noPass:
-            u.setNoPassword(uid)
+            setNoPassword(uid)
 
     return True
 
