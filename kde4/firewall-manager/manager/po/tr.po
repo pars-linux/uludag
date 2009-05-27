@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Firewall Manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-15 17:53+0300\n"
+"POT-Creation-Date: 2009-05-27 12:53+0300\n"
 "PO-Revision-Date: 2009-05-15 17:53+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
@@ -15,27 +15,47 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/about.py:19 .tmp/about.py:21
+#: .tmp/ui_service.py:41 .tmp/fm/service.py:46
+msgid "Start"
+msgstr "Başlat"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Yeni Ekle"
+
+#: .tmp/fm/service.py:38
+msgid "Firewall is activated."
+msgstr "Güvenlik duvarı aktifleştirildi."
+
+#: .tmp/fm/service.py:41
+msgid "Stop"
+msgstr "Durdur"
+
+#: .tmp/fm/service.py:43
+msgid "Firewall is deactivated."
+msgstr "Güvenlik duvarı pasifleştirildi."
+
+#: .tmp/fm/about.py:20 .tmp/fm/about.py:22
 msgid "Firewall Manager"
 msgstr "Güvenlik Duvarı Yöneticisi"
 
-#: .tmp/about.py:23
+#: .tmp/fm/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
 msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
-#: .tmp/about.py:24
+#: .tmp/fm/about.py:25
 msgid " "
 msgstr " "
 
-#: .tmp/about.py:31
+#: .tmp/fm/about.py:32
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: .tmp/about.py:31
+#: .tmp/fm/about.py:32
 msgid "Current Maintainer"
 msgstr "Şu anki geliştirici"
 
-#: .tmp/main.py:96
+#: .tmp/fm/main.py:96
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
@@ -43,26 +63,18 @@ msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
 "Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
 
-#: .tmp/main.py:200
+#: .tmp/fm/main.py:200
 msgid "All"
 msgstr "Hepsi"
 
-#: .tmp/main.py:211
+#: .tmp/fm/main.py:211
 msgid "Action"
 msgstr "Olay"
 
-#: .tmp/main.py:268 .tmp/main.py:300
+#: .tmp/fm/main.py:257 .tmp/fm/main.py:312 .tmp/fm/main.py:349
+msgid "Access denied."
+msgstr "Erişim engellendi."
+
+#: .tmp/fm/main.py:272 .tmp/fm/main.py:304
 msgid "Settings"
 msgstr "Ayarlar"
-
-#: .tmp/service.py:38
-msgid "Firewall is activated."
-msgstr "Güvenlik duvarı aktifleştirildi."
-
-#: .tmp/service.py:42
-msgid "Firewall is deactivated."
-msgstr "Güvenlik duvarı pasifleştirildi."
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Yeni Ekle"
