@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-15 17:53+0300\n"
+"POT-Creation-Date: 2009-05-27 12:53+0300\n"
 "PO-Revision-Date: 2009-05-15 18:13-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -18,56 +18,68 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/about.py:19 .tmp/about.py:21
-msgid "Firewall Manager"
-msgstr "Administrador de Cortafuegos"
-
-#: .tmp/about.py:23
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
+#: .tmp/ui_service.py:41 .tmp/fm/service.py:46
+msgid "Start"
 msgstr ""
-
-#: .tmp/about.py:24
-msgid " "
-msgstr " "
-
-#: .tmp/about.py:31
-msgid "Bahadır Kandemir"
-msgstr ""
-
-#: .tmp/about.py:31
-msgid "Current Maintainer"
-msgstr "Mantenedor actual"
-
-#: .tmp/main.py:96
-# favor revisar, "provide backend" ??
-msgid ""
-"There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
-msgstr ""
-"No hay paquetes de soporte para esta aplicación.\n"
-"Por favor asegúrese que los paquetes están instalados y configurados de manera correcta."
-
-#: .tmp/main.py:200
-msgid "All"
-msgstr "Todos"
-
-#: .tmp/main.py:211
-msgid "Action"
-msgstr "Acción"
-
-#: .tmp/main.py:268 .tmp/main.py:300
-msgid "Settings"
-msgstr "Configuración"
-
-#: .tmp/service.py:38
-msgid "Firewall is activated."
-msgstr "Cortafuegos está activo."
-
-#: .tmp/service.py:42
-msgid "Firewall is deactivated."
-msgstr "Cortafuegos está desactivado."
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
 msgstr "Agregar Nuevo"
 
+#: .tmp/fm/service.py:38
+msgid "Firewall is activated."
+msgstr "Cortafuegos está activo."
+
+#: .tmp/fm/service.py:41
+msgid "Stop"
+msgstr ""
+
+#: .tmp/fm/service.py:43
+msgid "Firewall is deactivated."
+msgstr "Cortafuegos está desactivado."
+
+#: .tmp/fm/about.py:20 .tmp/fm/about.py:22
+msgid "Firewall Manager"
+msgstr "Administrador de Cortafuegos"
+
+#: .tmp/fm/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/fm/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/fm/about.py:32
+msgid "Bahadır Kandemir"
+msgstr ""
+
+#: .tmp/fm/about.py:32
+msgid "Current Maintainer"
+msgstr "Mantenedor actual"
+
+# favor revisar, "provide backend" ??
+#: .tmp/fm/main.py:96
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"No hay paquetes de soporte para esta aplicación.\n"
+"Por favor asegúrese que los paquetes están instalados y configurados de "
+"manera correcta."
+
+#: .tmp/fm/main.py:200
+msgid "All"
+msgstr "Todos"
+
+#: .tmp/fm/main.py:211
+msgid "Action"
+msgstr "Acción"
+
+#: .tmp/fm/main.py:257 .tmp/fm/main.py:312 .tmp/fm/main.py:349
+msgid "Access denied."
+msgstr ""
+
+#: .tmp/fm/main.py:272 .tmp/fm/main.py:304
+msgid "Settings"
+msgstr "Configuración"
