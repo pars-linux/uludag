@@ -9,10 +9,12 @@
 #
 # Please read the COPYING file.
 
-class   PareError(Exception):
+class PareError(Exception):
     pass
 
 class FileSystemError(PareError):
+    pass
+class DeviceError(PareError):
     pass
 class DiskError(PareError):
     pass

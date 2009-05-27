@@ -20,6 +20,7 @@ from pare.partition import *
 import logging
 log = logging.getLogger("pare")
 
+
 class Pare(object):
     _partitionTable = {}
     _diskTable = {}
