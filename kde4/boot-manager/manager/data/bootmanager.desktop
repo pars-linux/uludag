@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Boot Manager
+Name[tr]=Açılış Yöneticisi
+GenericName=Boot Manager
+GenericName[tr]=Açılış Yöneticisi
+Comment=An application for managing boot loader.
+Comment[tr]=Ön yükleyici (GRUB) ayarlarını değiştirmenizi sağlayan bir uygulama.
+Exec=boot-manager
+Icon=computer
+Type=Application
+Categories=Qt;KDE;System;
