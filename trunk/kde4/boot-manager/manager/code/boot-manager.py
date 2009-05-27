@@ -20,8 +20,8 @@ from PyQt4 import QtCore
 from PyKDE4.kdeui import KMainWindow, KApplication, KCModule
 from PyKDE4.kdecore import KCmdLineArgs, KGlobal
 
-from about import aboutData, catalog
-from main import MainWidget
+from bootmanager.about import aboutData, catalog
+from bootmanager.main import MainWidget
 
 
 class MainWindow(KMainWindow):
