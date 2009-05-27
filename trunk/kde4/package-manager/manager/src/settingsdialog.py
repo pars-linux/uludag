@@ -11,11 +11,14 @@
 # Please read the COPYING file
 
 from PyQt4 import QtGui
+from PyQt4.QtCore import *
 
-from PyKDE4.kdecore import i18n
 from PyKDE4.kdeui import *
+from PyKDE4.kdecore import *
 
 from ui_settingsdialog import Ui_SettingsDialog
+
+import helpdialog
 
 class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
     def __init__(self, state, parent=None):
@@ -33,6 +36,11 @@ class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
 
     def connectSignals(self):
         self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
+        self.connect(self.buttonHelp, SIGNAL("clicked()"), self.showHelp)
 
     def saveSettings(self):
         pass
+
+    def showHelp(self):
+        helpDialog = helpdialog.HelpDialog(self, helpdialog.PREFERENCES)
+        helpDialog.show()
