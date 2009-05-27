@@ -26,9 +26,9 @@ import time
 import struct
 import binascii
 
-from pardus.diskutils import *
+
 from pare.partition import Partition, FreeSpace
-from pare.errors import PareError
+from pare.errors import DeviceError, DiskError
 import pare.utils.sysutils as sysutils
 from pare.filesystem import getFilesystem, FileSystem
 from pare.parteddata import *
@@ -36,51 +36,9 @@ from pare.parteddata import *
 import logging
 log = logging.getLogger("pare")
 
-class DeviceError(PareError):
-    pass
 
-# all storage devices
-disks = []
-
-##
-# initialize all devices and fill devices list
-def init(force = False):
-    global disks
-
-    if disks and not force:
-        return True
-
-    clear_devices()
-
-    devs = detect_all()
-    for dev_path in devs:
-        d = Disk(dev_path)
-        disks.append(d)
-
-    def comp(x, y):
-        """sort disks using getName()"""
-        x = x.name
-        y = y.name
-
-        if x > y: return -1
-        elif x == y: return 0
-        else: return 1
-
-    disks.sort(comp,reverse=True)
-
-    if disks:
-        return True
-
-    return False
-
-def clear_devices():
-    global devices
-    devices = []
-
-##
-# Class representing a partitionable storage
 class Disk:
-    
+    """A disk."""
     
     _type = deviceType
     # @param device_path: Device node (eg. /dev/hda, /dev/sda)
@@ -107,7 +65,6 @@ class Disk:
         try:
             self._disk = parted.Disk(device)
         except:
-            print "freshhdisk yaratılıyor"
             label = archinfo[self._arch]["disklabel"]
             self._disk = parted.freshDisk(self._device, ty=label)
 
@@ -328,49 +285,3 @@ class Disk:
         del self._disk
 
 
-##
-# Return a list of block devices in system
-def detect_all():
-
-    # Check for sysfs. Only works for >2.6 kernels.
-    if not os.path.exists("/sys/bus"):
-        raise DeviceError, "sysfs not found!"
-
-    # Check for /proc/partitions
-    if not os.path.exists("/proc/partitions"):
-        raise DeviceError, "/proc/partitions not found!"
-
-    partitions = []
-    for line in open("/proc/partitions"):
-        entry = line.split()
-
-        if not entry:
-            continue
-        if not entry[0].isdigit() and not entry[1].isdigit():
-            continue
-
-        major = int(entry[0])
-        minor = int(entry[1])
-        device = "/dev/" + entry[3]
-
-        partitions.append((major, minor, device))
-
-    _devices = []
-    # Scan sysfs for the device types.
-    #FIXME:Added glob.glob("/sys/block/sda*") for unhandled parition table destroy test later it will erased
-    blacklisted_devs = glob.glob("/sys/block/ram*") + glob.glob("/sys/block/loop*") + glob.glob("/sys/block/sda*")
-    sysfs_devs = set(glob.glob("/sys/block/*")) - set(blacklisted_devs)
-    for sysfs_dev in sysfs_devs:
-        dev_file = sysfs_dev + "/dev"
-        major, minor = open(dev_file).read().split(":")
-        major = int(major)
-        minor = int(minor)
-
-        # Find a device listed in /proc/partitions
-        # that has the same minor and major as our
-        # current block device.
-        for record in partitions:
-            if major == record[0] and minor == record[1]:
-                _devices.append(record[2])
-
-    return _devices
