@@ -106,6 +106,12 @@ def finalize_chroot():
     # umount target dir
     umount_(consts.target_dir)
 
+def udev_settle(timeout=None):
+    arg = ''
+    if timeout:
+        arg = "--timeout=%d" % int(timeout)
+    run("udevadm settle %s" % arg)
+
 def checkYaliParams(param):
     for i in [x for x in open("/proc/cmdline", "r").read().split()]:
         if i.startswith("yali4="):
