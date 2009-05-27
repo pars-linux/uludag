@@ -12,6 +12,7 @@
 #
 
 import sys
+import dbus
 
 from PyQt4 import QtGui
 from PyQt4 import QtCore
@@ -21,7 +22,6 @@ from PyKDE4.kdecore import KCmdLineArgs, KGlobal
 
 from about import aboutData, catalog
 from main import MainWidget
-
 
 class MainWindow(KMainWindow):
     def __init__(self, parent=None):
@@ -36,8 +36,9 @@ if __name__ == "__main__":
     KCmdLineArgs.init(sys.argv, aboutData)
     app = KApplication()
 
-    from dbus.mainloop.qt import DBusQtMainLoop
-    DBusQtMainLoop(set_as_default=True)
+    if not dbus.get_default_main_loop():
+        from dbus.mainloop.qt import DBusQtMainLoop
+        DBusQtMainLoop(set_as_default=True)
 
     window = MainWindow()
     window.show()
@@ -51,11 +52,11 @@ class Module(KCModule):
 
         KGlobal.locale().insertCatalog(catalog)
 
-        from dbus.mainloop.qt import DBusQtMainLoop
-        DBusQtMainLoop(set_as_default=True)
+        if not dbus.get_default_main_loop():
+            from dbus.mainloop.qt import DBusQtMainLoop
+            DBusQtMainLoop(set_as_default=True)
 
         MainWidget(self, embed=True)
-
 
 def CreatePlugin(widget_parent, parent, component_data):
     return Module(component_data, parent)
