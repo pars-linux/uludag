@@ -1,4 +1,5 @@
 - Guess  mount point
+- Disallow mounting twice
 ? Auto unmount
 ? Disable editing mount point of root partition
 ? Guess filesystem type
