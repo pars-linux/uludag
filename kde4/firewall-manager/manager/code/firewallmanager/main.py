@@ -20,22 +20,22 @@ from PyKDE4 import kdeui
 from PyKDE4 import kdecore
 
 # UI
-from fm.ui_main import Ui_MainWidget
+from firewallmanager.ui_main import Ui_MainWidget
 
 # Backend
-from fm.backend import Interface
+from firewallmanager.backend import Interface
 
 # Config
-from fm.config import ANIM_SHOW, ANIM_HIDE, ANIM_TARGET, ANIM_DEFAULT, ANIM_TIME
+from firewallmanager.config import ANIM_SHOW, ANIM_HIDE, ANIM_TARGET, ANIM_DEFAULT, ANIM_TIME
 
 # Item widget
-from fm.item import ItemListWidgetItem, ItemWidget
+from firewallmanager.item import ItemListWidgetItem, ItemWidget
 
 # Service widget
-from fm.service import ServiceWidget
+from firewallmanager.service import ServiceWidget
 
 # Settings item widget
-from fm.settingsitem import SettingsItemWidget
+from firewallmanager.settingsitem import SettingsItemWidget
 
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
