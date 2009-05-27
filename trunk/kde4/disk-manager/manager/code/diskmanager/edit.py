@@ -20,10 +20,10 @@ from PyKDE4 import kdeui
 from PyKDE4 import kdecore
 
 # UI
-from ui_edit import Ui_EditWidget
+from diskmanager.ui_edit import Ui_EditWidget
 
 # FS Options
-from config import FS_TYPES, FS_OPTIONS
+from diskmanager.config import FS_TYPES, FS_OPTIONS
 
 class EditWidget(QtGui.QWidget, Ui_EditWidget):
     def __init__(self, parent):

@@ -16,6 +16,7 @@ from PyKDE4.kdecore import KAboutData, ki18n
 
 # Application Data
 appName     = "disk-manager"
+modName     = "diskmanager"
 programName = ki18n("Disk Manager")
 version     = "2.9.0"
 description = ki18n("Disk Manager")
