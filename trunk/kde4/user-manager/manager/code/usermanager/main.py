@@ -349,26 +349,19 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     self.iface.addUser(widget.getId(), widget.getUsername(), widget.getFullname(), widget.getHomeDir(), widget.getShell(), widget.getPassword(), widget.getGroups(), grant, block)
                 else:
                     self.iface.setUser(widget.getId(), widget.getFullname(), widget.getHomeDir(), widget.getShell(), widget.getPassword(), widget.getGroups())
-                    def handler(*args):
-                        pass
                     # Revoke all
-                    for action_id in grant:
-                        self.iface.setRevoke(widget.getId(), action_id, func=handler)
-                    for action_id in revoke:
-                        self.iface.setRevoke(widget.getId(), action_id, func=handler)
-                    for action_id in block:
-                        self.iface.setRevoke(widget.getId(), action_id, func=handler)
+                    self.iface.setRevoke(widget.getId(), "*")
                     # Grants & blocks
                     for action_id in grant:
-                        self.iface.setGrant(widget.getId(), action_id, func=handler)
+                        self.iface.setGrant(widget.getId(), action_id)
                     for action_id in block:
-                        self.iface.setBlock(widget.getId(), action_id, func=handler)
+                        self.iface.setBlock(widget.getId(), action_id)
             else:
                 widget = self.widgetGroupEdit
                 self.iface.addGroup(widget.getId(), widget.getGroupname())
         except Exception, e: # TODO: Named exception should be raised
             if "Comar.PolicyKit" in e._dbus_error_name:
-                kdeui.KMessageBox.error(self, i18n("Access denied."))
+                kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
             else:
                 kdeui.KMessageBox.error(self, unicode(e))
             return
