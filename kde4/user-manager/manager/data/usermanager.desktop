@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=User Manager
+Name[tr]=Kullanıcı Yöneticisi
+GenericName=User Manager
+GenericName[tr]=Kullanıcı Yöneticisi
+Comment=An application for managing user accounts.
+Comment[tr]=Kullanıcı hesaplarını yönetmenizi sağlayan bir uygulama.
+Exec=user-manager
+Icon=system-users
+Type=Application
+Categories=Qt;KDE;System;
