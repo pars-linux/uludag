@@ -372,3 +372,25 @@ def lvdeactivate(vg_name, lv_name):
 
     if return_code == 0:
         raise LVMError(_("lvdeactivate failed for %s" % lv_name))
+    
+def lvinfo(vg_name):
+    args = ["lvs", "--noheadings", "--nosuffix"] + \
+            ["--units", "m"] + \
+            ["-o", "lv_uuid,lv_size,vg_name"] + \
+            config_args + \
+            [vg_name]
+
+    buffer = sysutils.execWithCapture("lvm",
+                                    args,
+                                    stderr="/dev/tty5")
+    buffer_dict = buffer.split()
+    if len(info) != 7:
+        raise LVMError(_("lvinfo failed for %s" % vg_name))
+
+    info = {}
+
+    (info['lv_uuid'],
+    info['lv_size'],
+    info['vg_name']) = buffer_dict
+
+    return info
