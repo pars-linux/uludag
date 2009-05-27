@@ -32,6 +32,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_mouseWidget()
         self.ui.setupUi(self)
 
+        # Our default click behaviour is double click. So make SingleClick = false (kdeglobals)
+        self.clickBehaviour = "false"
+
         self.ui.pixMouseIcon.setPixmap(QtGui.QPixmap(':/raw/pics/mouse.png'))
         # set signals
         self.connect(self.ui.radioButtonRightHand, SIGNAL("toggled(bool)"), self.setHandedness)
@@ -39,11 +42,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.connect(self.ui.singleClick, SIGNAL("toggled(bool)"), self.setClickBehaviour)
 
     def setClickBehaviour(self):
-        config = KConfig("kdeglobals")
-        group = config.group("KDE")
-        group.writeEntry("SingleClick", QString(str(self.ui.singleClick.isChecked()).lower()))
-        config.sync()
-        KGlobalSettings.self().emitChange(KGlobalSettings.SettingsChanged, KGlobalSettings.SETTINGS_MOUSE)
+        self.clickBehaviour = "true"
 
     def setHandedness(self, item):
         mapMouse = {}
@@ -101,5 +100,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
+        print self.clickBehaviour
+        config = KConfig("kdeglobals")
+        group = config.group("KDE")
+        group.writeEntry("SingleClick", QString(self.clickBehaviour))
+        config.sync()
+        KGlobalSettings.self().emitChange(KGlobalSettings.SettingsChanged, KGlobalSettings.SETTINGS_MOUSE)
+
         return True
 
