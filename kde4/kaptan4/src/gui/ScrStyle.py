@@ -15,7 +15,7 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
 from PyKDE4 import kdeui
 
-import os, sys, Image, dbus
+import os, sys, Image, dbus, glob
 
 from gui.ScreenWidget import ScreenWidget
 from gui.styleWidget import Ui_styleWidget
@@ -41,19 +41,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
         defaultDesktopNumber = int(group.readEntry('Number'))
 
         self.ui.spinBoxDesktopNumbers.setValue(defaultDesktopNumber)
+        lst2 = glob.glob1("/usr/kde/4/share/apps/kaptan/gui/styles", "*.style")
 
-        """
-        # TODO: Add styles as a resource type. It doesn't work, though.
-        KGlobal.dirs().addResourceType("styles", "data", "/usr/kde/4/share/styles/")
-        lst= KStandardDirs().findAllResources("styles")
-        """
-
-        lst= KStandardDirs().findAllResources("wallpaper", "sample*.desktop", KStandardDirs.Recursive)
-
-        for desktopFiles in lst:
+        for desktopFiles in lst2:
             parser = DesktopParser()
-            parser.read(str(desktopFiles))
-
+            parser.read("/usr/kde/4/share/apps/kaptan/gui/styles/" +str(desktopFiles))
             try:
                 styleName = parser.get_locale('Style', 'name', '')
                 styleDesc = parser.get_locale('Style', 'description', '')
@@ -64,7 +56,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 desktopTheme = parser.get_locale('Style', 'desktopTheme', '')
                 iconTheme = parser.get_locale('Style', 'iconTheme', '')
                 windowDecoration = parser.get_locale('Style', 'windowDecoration', '')
-                styleThumb = os.path.join(os.path.split(str(desktopFiles))[0],  parser.get_locale('Style', 'thumbnail',''))
+                styleThumb = os.path.join("/usr/kde/4/share/apps/kaptan/gui/styles/",  parser.get_locale('Style', 'thumbnail',''))
 
                 self.styleDetails[styleName] = {
                         "description": styleDesc, 
