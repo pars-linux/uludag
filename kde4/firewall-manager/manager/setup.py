@@ -31,10 +31,9 @@ def update_messages():
     for filename in glob.glob1("ui", "*.ui"):
         os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
     # Collect Python files
-    for filename in glob.glob1("code", "*.py"):
-        shutil.copy("code/%s" % filename, ".tmp")
+    os.system("cp -R code/* .tmp/")
     # Generate POT file
-    os.system("xgettext --default-domain=%s --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot .tmp/*" % (about.catalog, about.catalog))
+    os.system("find .tmp -name '*.py' | xargs xgettext --default-domain=%s --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot" % (about.catalog, about.catalog))
     # Update PO files
     for item in os.listdir("po"):
         if item.endswith(".po"):
