@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>searchWidget</class>
- <widget class="QWidget" name="searchWidget" >
-  <property name="geometry" >
+ <widget class="QWidget" name="searchWidget">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,19 +10,19 @@
     <height>395</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Desktop Search</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout" >
-   <item row="0" column="0" >
-    <spacer name="verticalSpacer_3" >
-     <property name="orientation" >
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeType" >
+     <property name="sizeType">
       <enum>QSizePolicy::Fixed</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
        <height>40</height>
@@ -29,39 +30,39 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="0" >
-    <layout class="QHBoxLayout" name="horizontalLayout" >
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLabel" name="labelSearchDescription" >
-       <property name="frameShadow" >
+      <widget class="QLabel" name="labelSearchDescription">
+       <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <property name="text" >
+       <property name="text">
         <string>Nepomuk  Semantic Desktop enables tagging and rating of files integrated with the Desktop Search.</string>
        </property>
-       <property name="wordWrap" >
+       <property name="wordWrap">
         <bool>true</bool>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="labelSearchImage" >
-       <property name="text" >
+      <widget class="QLabel" name="labelSearchImage">
+       <property name="text">
         <string/>
        </property>
       </widget>
      </item>
     </layout>
    </item>
-   <item row="2" column="0" >
-    <spacer name="verticalSpacer" >
-     <property name="orientation" >
+   <item row="2" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeType" >
+     <property name="sizeType">
       <enum>QSizePolicy::Fixed</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
        <height>40</height>
@@ -69,33 +70,25 @@
      </property>
     </spacer>
    </item>
-   <item row="3" column="0" >
-    <layout class="QVBoxLayout" name="verticalLayout" >
-     <item>
-      <widget class="QCheckBox" name="checkBoxNepomuk" >
-       <property name="text" >
-        <string>Enable Nepomuk Semantic Desktop</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBoxStrigi" >
-       <property name="text" >
-        <string>Enable Strigi Desktop File Indexer</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+   <item row="3" column="0">
+    <widget class="QCheckBox" name="checkBoxNepomuk">
+     <property name="text">
+      <string>Enable Nepomuk Semantic Desktop</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
    </item>
-   <item row="4" column="0" >
-    <spacer name="verticalSpacer_2" >
-     <property name="orientation" >
+   <item row="4" column="0">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeType" >
+     <property name="sizeType">
       <enum>QSizePolicy::Fixed</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
        <height>18</height>
