@@ -472,7 +472,7 @@ class Device:
             ptype = PARTITION_LOGICAL
         else:
             ptype = PARTITION_PRIMARY
-        time.sleep(3)
+        sysutils.udev_settle(timeout=1)
         self.deletePartition(part)
         self.commit()
         np = self.addPartitionFromStart(ptype, fs_name, start, size_mb)
@@ -481,14 +481,24 @@ class Device:
 
     def commit(self):
         import yali4.gui.context as ctx
-        try:
-            self._disk.commit()
-        except:
-            sysutils.run("sync")
-            time.sleep(3)
-            sysutils.run("sync")
-            ctx.debugger.log("Commit failed !")
-            self._disk.commit()
+
+        attempt = 1
+        maxTries = 5
+        keepTrying = True
+
+        while keepTrying and (attempt <= maxTries):
+            try:
+                self._disk.commit()
+                keepTrying = False
+                sysutils.run("sync")
+            except Exception, msg:
+                attempt += 1
+
+        if keepTrying:
+            ctx.debugger.log("Commit failed with %s " % str(msg))
+            raise FSError, msg
+
+        sysutils.udev_settle(timeout=1)
         self.update()
 
     def close(self):
