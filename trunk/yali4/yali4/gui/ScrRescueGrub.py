@@ -69,7 +69,7 @@ loader.
             self.device = self.ui.deviceList.item(0).getDevice()
         else:
             # don't show device list if we have just one disk
-            self.ui.installMBR.hide()
+            self.ui.installSelectedDisk.hide()
             self.device_list_state = False
             self.ui.deviceList.hide()
             self.ui.select_disk_label.hide()
@@ -97,7 +97,7 @@ loader.
         # Apply GRUB Options
         if self.ui.installSelectedPart.isChecked():
             ctx.installData.bootLoaderOption = B_INSTALL_PART
-            ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.rescuePartition)
+            ctx.installData.bootLoaderDev = ctx.installData.rescuePartition.getPath()
         elif self.ui.installSelectedDisk.isChecked():
             ctx.installData.bootLoaderOption = B_INSTALL_MBR
             ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.bootLoaderOptionalDev.getPath())
