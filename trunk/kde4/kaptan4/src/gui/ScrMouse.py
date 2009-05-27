@@ -100,7 +100,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        print self.clickBehaviour
         config = KConfig("kdeglobals")
         group = config.group("KDE")
         group.writeEntry("SingleClick", QString(self.clickBehaviour))

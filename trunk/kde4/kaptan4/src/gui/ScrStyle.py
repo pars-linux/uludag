@@ -79,6 +79,17 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         self.ui.listStyles.connect(self.ui.listStyles, SIGNAL("itemSelectionChanged()"), self.setStyle)
         self.ui.comboBoxDesktopType.connect(self.ui.comboBoxDesktopType, SIGNAL("activated(const QString &)"), self.setDesktopType)
+        self.ui.spinBoxDesktopNumbers.connect(self.ui.spinBoxDesktopNumbers, SIGNAL("valueChanged(const QString &)"), self.addDesktop)
+
+    def addDesktop(self, numberOfDesktop):
+        config = KConfig("kwinrc")
+        group = config.group("Desktops")
+        group.writeEntry('Number', QString(numberOfDesktop))
+        group.sync()
+
+        session = dbus.SessionBus()
+        proxy = session.get_object('org.kde.kwin', '/KWin')
+        proxy.reconfigure()
 
     def setDesktopType(self):
         currentIndex = self.ui.comboBoxDesktopType.currentIndex()
