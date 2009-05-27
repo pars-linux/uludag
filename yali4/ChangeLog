@@ -1,4 +1,57 @@
 2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * New release 2.1.8
+
+2009-05-27 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Raise FSCheck Error if just FSCheck fails
+         * Warn user when back clicked
+
+2009-05-27 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Use new COMAR backend instead of Polkit API ..
+
+2009-05-27 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Remove partition request before removing partition itself, check if primary partition avaliable in partition table..
+
+2009-05-27 semen
+         * Adding a new testcase.
+
+2009-05-26 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Do not ask any password for selected user support added . 
+
+2009-05-26 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Use pisi.api instead of comar ..
+
+2009-05-26 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Takeback operation (sync now)
+         * Show connection info
+         * Remove duplicate methods
+         * Updated TODO
+
+2009-05-26 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Much better way for checking if Pardus exists ..
+
+2009-05-26 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Store selected rescue mode 
+
+2009-05-26 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Use package name instead of metadata 
+
+2009-05-26 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Use whole list of packages for install even it fails ..
+
+2009-05-25 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Get history from Pisi History DB ...
+
+2009-05-25 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Show connection list for given guest system network profiles and connect to selected profile ...
+
+2009-05-25 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Mount before starting rescue ..
+
+2009-05-25 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Rescue mode Pisi widgets
+         * Updated TODO
+
+2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * New release 2.1.7, Po update ..
 
 2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
