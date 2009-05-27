@@ -23,6 +23,7 @@ class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
         self.state = state
         self.setupUi(self)
         self.initialize()
+        self.connectSignals()
 
     def initialize(self):
         self.moveUpButton.setIcon(KIcon("arrow-up"))
@@ -30,4 +31,8 @@ class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
         self.addRepoButton.setIcon(KIcon("list-add"))
         self.removeRepoButton.setIcon(KIcon("list-remove"))
 
+    def connectSignals(self):
+        self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
 
+    def saveSettings(self):
+        pass
