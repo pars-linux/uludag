@@ -1,0 +1,16 @@
+* Kernel/initramfs/drivers (Ozan Çağlayan)
+    - Find a way for being able to ship saa7134-alsa kernel module (#3478),
+    - findfs in initramfs hangs while trying to probe missing floppy devices,
+    - Add compatibility links to util-linux,
+    - Fix the conflicting states of the new kernel-headers (119) with libdrm,
+    - Don't mount rootfs by giving 'auto' as type, should be fixed in trunk, try it,
+    - s2disk problems/support,
+
+* Pulseaudio/Sound (Ozan Çağlayan)
+    - PA can't unmute the ALSA sink when it's shutdown with the master channel muted,
+
+* KDE
+    - Some Turkish characters like İ,Ü,etc. are rendered as I, U even the translations
+    are correct,
+    - Logout pictures are not rendered correctly when effects are disabled.
+
