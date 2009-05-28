@@ -128,8 +128,7 @@ class PardusPartitions:
                 label = partition.getFSLabel() or ''
                 if fs in ("ext4", "ext3", "reiserfs", "xfs"):
                     ctx.debugger.log("Partition found which has usable fs (%s)" % partition.getPath())
-                    if yali4.sysutils.is_linux_boot(partition.getPath(), fs):
-                        linuxPartitions.append(partition)
+                    linuxPartitions.append(partition)
                     if label.startswith("PARDUS_ROOT"):
                         ctx.debugger.log("Pardus Partition found (%s)" % partition.getPath())
                         pardus_release = yali4.sysutils.pardus_release(partition.getPath(), fs)
