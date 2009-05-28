@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-27 13:54+0300\n"
-"PO-Revision-Date: 2009-05-13 21:57-0400\n"
+"PO-Revision-Date: 2009-05-27 20:08-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -140,7 +140,7 @@ msgstr "Agregar Grupo"
 #: .tmp/usermanager/main.py:232 .tmp/usermanager/main.py:246
 #: .tmp/usermanager/main.py:371
 msgid "Access denied."
-msgstr ""
+msgstr "Acceso denegado."
 
 #: .tmp/usermanager/main.py:314
 msgid "Do you want to delete user '%1' (%2)?"
@@ -155,36 +155,37 @@ msgid "There has to be at least one group selected."
 msgstr "Se debe seleccionar al menos un grupo."
 
 #: .tmp/usermanager/edit.py:301
+# favor revisar, no traduje "start with"
 msgid "Start with typing this user's full name."
-msgstr ""
+msgstr "Ingrese el nombre completo del usuario."
 
 #: .tmp/usermanager/edit.py:304
 msgid "You should enter a password for this user."
-msgstr ""
+msgstr "Debería ingresar una contraseña para éste usuario."
 
 #: .tmp/usermanager/edit.py:309
 msgid "Password must be longer."
-msgstr ""
+msgstr "La contraseña debe ser más larga."
 
 #: .tmp/usermanager/edit.py:313
 msgid "Don't use your full name or user name as a password."
-msgstr ""
+msgstr "No use el nombre completo o el nombre de usuario para la contraseña."
 
 #: .tmp/usermanager/edit.py:316
 msgid "Passwords don't match."
-msgstr ""
+msgstr "Contraseñas no coinciden."
 
 #: .tmp/usermanager/edit.py:321
 msgid "You must enter a user name."
-msgstr ""
+msgstr "Debe ingresar un nombre de usuario."
 
 #: .tmp/usermanager/edit.py:324
 msgid "This user name is used by another user."
-msgstr ""
+msgstr "El nombre de usuario ya fue utilizado para otro usuario."
 
 #: .tmp/usermanager/edit.py:328
 msgid "User name must not start with a number."
-msgstr ""
+msgstr "El nombre de usuario no debe empezar con un número."
 
 #: .tmp/ui_editgroup.py:78
 msgid "Group Information"
@@ -193,3 +194,4 @@ msgstr "Información del grupo"
 #: .tmp/ui_editgroup.py:79
 msgid "Group Name:"
 msgstr "Nombre del grupo:"
+
