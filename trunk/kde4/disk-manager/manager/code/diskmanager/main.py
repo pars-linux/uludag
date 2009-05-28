@@ -282,6 +282,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             page_widget.setOptions(options)
         else:
             page_widget.setAutoMount(False)
+            if widget.getId() in self.mounted_devices:
+                page_widget.setMountPoint(self.mounted_devices[widget.getId()])
 
         dialog.addPage(page_item)
         if dialog.exec_():
