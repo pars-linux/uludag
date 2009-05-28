@@ -14,7 +14,7 @@
 
 import os
 import time
-
+import glob
 import dbus
 import pisi
 import yali4.postinstall
@@ -105,6 +105,21 @@ def install(pkg_name_list):
 
 def install_all():
     install(get_available())
+
+def get_all_with_paths():
+    # Get packages with their full paths
+    packages = glob.glob('%s/repo/*.pisi' % consts.source_dir)
+
+    # Make baselayout package first
+    baselayout = None
+    for package in packages:
+        if not package.find('baselayout') == -1:
+            baselayout = package
+    if baselayout:
+        packages.remove(baselayout)
+        packages.insert(0, baselayout)
+
+    return packages
 
 def get_available():
     return pisi.api.list_available()
