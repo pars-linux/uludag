@@ -12,6 +12,7 @@
 #
 
 import sys
+import traceback
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
@@ -24,6 +25,10 @@ import dbus
 from about import aboutData
 from mainwindow import MainWindow
 from localedata import setSystemLocale
+from pmlogging import logger
+
+def handleException(exception, value, tb):
+    logger.error("".join(traceback.format_exception(exception, value, tb)))
 
 if __name__ == '__main__':
 
@@ -37,6 +42,7 @@ if __name__ == '__main__':
     manager = MainWindow()
     manager.show()
 
+    sys.excepthook = handleException
     setSystemLocale()
     app.connect(app, SIGNAL('lastWindowClosed()'), app.quit)
     app.exec_()
