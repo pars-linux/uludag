@@ -26,3 +26,5 @@ class PhysicalVolumeError(LVMError):
     pass
 class VolumeGroupError(LVMError):
     pass
+class LogicalVolumeError(LVMError):
+    pass
