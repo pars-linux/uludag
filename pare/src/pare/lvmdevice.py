@@ -25,7 +25,7 @@ from pare.errors import *
          
 class VolumeGroup(object):
     _type = volumeGroupType 
-    _devBlockDir = "/dev" # FIXME:ReCheck VG path not to give acces_isSetups error
+    _devBlockDir = "/dev/mapper" # FIXME:ReCheck VG path not to give acces_isSetups error
     _pvs = []
     _lvs = []
     _exists = None
@@ -156,6 +156,7 @@ class VolumeGroup(object):
         self.lvs.remove(lv)
     
     def setupParents(self):
+        #FIXME: Change VG.setupParents function pv.create() obseleted function
         for pv in self._pvs:
             pv.create()
     
@@ -251,33 +252,126 @@ class VolumeGroup(object):
         return long((round(size / pesize) * pesize) / 1024)
 
 class LogicalVolume():
+    _devBlockDir = "/dev/mapper"
     _vg = None
-    _name = ''
-    _size = 0
     
-    def __init__(self, name, volumeGroup, size):
+    def __init__(self, name, vg, size=None, uuid=None, format=None,existing=0):
+        if isinstance(vg, list):
+            if len(vg) != 1:
+                raise ValueError("Requires a single LVMVolumeGroupDevice instance")
+            elif not isinstance(vg, VolumeGroup):
+                raise ValueError("Requires a LVMVolumeGroupDevice instance")
+        elif not isinstance(vg, VolumeGroup):
+            raise ValueError("Requires a LVMVolumeGroupDevice instance")
+        
         self._name =  name
         self._size = size
-        self._vg.createLV(self)
+        self._uuid = uuid
+        self._format = format
+        self._exists = existing
+        self._vg = vg
+        
+        if not self._exists:
+            self.vg.addLV(self)
 
     def create(self):
-        pass
-    
+        if self.exists:
+            raise LogicalVolumeError("logical volume already exists!")
+        #FIXME:fix self.setupParents()
+        self.setupParents()
+        
+        lvm.lvcreate(self.vg.name, self.lvName, self.size)
+        self._exists = True
+        self.setup()
+           
     def destroy(self):
-        pass
+        if not self.exists:
+            raise LogicalVolumeError("logical volume has not been created!",self.path)
+        
+        self.teardown()
+        #Setup Parents( maybe raid parts) so lvm can remove lv
+        #FIXME:fix self.setupParents()
+        self.setupParents()
+        lvm.lvremove(self.vg, self.lvName)
+        self._exists = False
+    
+    def resize(self):
+        if not self.exists:
+            raise LogicalVolumeError("logical volume has not been created!",self.path)
+        
+        if self.format.exists:
+            #FIXME: self.format.teardown()
+            self.format.teardown()
+        
+        #FIXME:add udev_settle()
+        #udev_settle(timeout=10)
+        
+        lvm.lvresize(self.vg.name, self.lvName(), self.size)
+        
+        
+    @property
+    def format(self):
+        return self._format
+    
+    def setup(self):
+        if not self.exists:
+            raise LogicalVolumeError("logical volume has not been created!",self.path)
+        
+        if self.status:
+            return
+        
+        self.setupParents()
+        lvm.lvactivate(self.vg.name, self.lvName)
+    
+    def teardown(self):
+        if not self.exists:
+            raise LogicalVolumeError("logical volume has not been created!", self.path)
+        
+        #FIXME:Add exists func to filesystem to check if filesystem mounted
+        #FIXME:Add teardown and setup fun c to filesystem to mount or unmount system
+        if self.status and self.format.exists:
+            self.format.teardown()
+            
+        if self.status:
+            lvm.lvdeactivate(self.vg, self.lvName)
+            
+    def setupParents(self):
+        self.vg.setup() 
+    
+    @property
+    def exists(self):
+        return self._exists
+    
+    @property
+    def status(self):
+        if not self.exists:
+            return False
+        return os.access(self.path, os.W_OK)
     
     @property
     def path(self):
-        pass
+        return "%s/%s-%s" % (self._devBlockDir, self.vg.name.replace("-", "--"), self.lvName.replace("-", "--"))
     
     @property
-    def volumeGroup(self):
+    def vg(self):
         return self._vg
     
-    @property
-    def size(self):
+    def _setSize(self, size):
+        size = self.vg._align(size)
+        if size <= (self.vg.freeSpace + self._size):
+            self._size = size
+        else:
+            raise ValueError("not enough free space in VG")
+    
+    def _getSize(self):
         return self._size
+    
+    size = property(lambda p: p._getSize(), lambda pi,f: p._setSize(f))
     
     @property
     def name(self):
+        return "%s-%s" % (self.vg.name, self._name)
+    
+    @property
+    def lvName(self):
         return self._name
