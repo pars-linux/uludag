@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-26 12:30+0300\n"
-"PO-Revision-Date: 2009-05-21 18:41-0400\n"
+"PO-Revision-Date: 2009-05-27 20:25-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,17 +42,16 @@ msgid "Package Manager"
 msgstr "Administrador de Paquetes"
 
 #: .tmp/ui_settingsdialog.py:283
-#, fuzzy
 msgid "Package Manager Settings"
-msgstr "Administrador de Paquetes"
+msgstr "Configuración del Administrador de Paquetes"
 
 #: .tmp/ui_settingsdialog.py:284
 msgid "&Help"
-msgstr ""
+msgstr "&Ayuda"
 
 #: .tmp/ui_settingsdialog.py:285
 msgid "&OK"
-msgstr ""
+msgstr "&OK"
 
 #: .tmp/ui_settingsdialog.py:286 .tmp/ui_progressdialog.py:160
 msgid "&Cancel"
@@ -60,31 +59,33 @@ msgstr "&Cancelar"
 
 #: .tmp/ui_settingsdialog.py:287
 msgid "&Show only desktop applications"
-msgstr ""
+msgstr "&Mostrar solamente programas de escritorio"
 
 #: .tmp/ui_settingsdialog.py:288
 msgid "&Enable system tray icon"
-msgstr ""
+msgstr "&Habilitar ícono en la barra del sistema"
 
 #: .tmp/ui_settingsdialog.py:289 .tmp/ui_settingsdialog.py:298
+# favor revisar - comprobar / verificar actualizaciones
 msgid "Update check"
-msgstr ""
+msgstr "Comprobar actualizaciones"
 
 #: .tmp/ui_settingsdialog.py:290 .tmp/ui_settingsdialog.py:294
 msgid "Enable &periodic update check"
-msgstr ""
+msgstr "Habilitar comprobación &periódica de actualizaciones"
 
 #: .tmp/ui_settingsdialog.py:291 .tmp/ui_settingsdialog.py:295
 msgid "Check interval:"
-msgstr ""
+msgstr "Intervalo de comprobación:"
 
 #: .tmp/ui_settingsdialog.py:292
 msgid " min"
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:293
+# verificar, puede ser más lógico poner "máximo ancho de banda"
 msgid "Bandwidth limit"
-msgstr ""
+msgstr "Limitar ancho de banda"
 
 #: .tmp/ui_settingsdialog.py:296
 msgid " kb/s"
@@ -92,15 +93,15 @@ msgstr ""
 
 #: .tmp/ui_settingsdialog.py:297
 msgid "&General Settings"
-msgstr ""
+msgstr "Configuración &General"
 
 #: .tmp/ui_settingsdialog.py:299
 msgid "&Use hard disk cache for downloaded software"
-msgstr ""
+msgstr "&Usar cache en disco rígido para las descargas"
 
 #: .tmp/ui_settingsdialog.py:300
 msgid "Maximum cache size:"
-msgstr ""
+msgstr "Tamaño máximo del cache:"
 
 #: .tmp/ui_settingsdialog.py:301
 msgid " Mb"
@@ -108,50 +109,51 @@ msgstr ""
 
 #: .tmp/ui_settingsdialog.py:302
 msgid "(use 0 for no limit)"
-msgstr ""
+msgstr "(use 0 para indicar \"sin límite\")"
 
 #: .tmp/ui_settingsdialog.py:303
 msgid "Clear Cache"
-msgstr ""
+msgstr "Vaciar cache"
 
 #: .tmp/ui_settingsdialog.py:304
 msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
 msgstr ""
+"Al vaciar el cache en disco se removerán todos los paquetes descargadas con los instaladores de los programas. \n"
+"Esto no afectará a los programas instalados y la estabilidad del sistema."
 
 #: .tmp/ui_settingsdialog.py:306
 msgid "C&lean disk cache now"
-msgstr ""
+msgstr "Vaciar C&ache ahora"
 
 #: .tmp/ui_settingsdialog.py:307
-#, fuzzy
 msgid "C&ache"
-msgstr "&Cancelar"
+msgstr "C&ache"
 
 #: .tmp/ui_settingsdialog.py:308
 msgid "Name:"
-msgstr ""
+msgstr "Nombre:"
 
 #: .tmp/ui_settingsdialog.py:309
 msgid "&Add Repository"
-msgstr ""
+msgstr "&Añadir Repositorio"
 
 #: .tmp/ui_settingsdialog.py:310
 msgid "&Remove Repository"
-msgstr ""
+msgstr "&Remover Repositorio"
 
 #: .tmp/ui_settingsdialog.py:311
 msgid "Move &Up"
-msgstr ""
+msgstr "Mover &Arriba"
 
 #: .tmp/ui_settingsdialog.py:312
 msgid "Move &Down"
-msgstr ""
+msgstr "Mover A&bajo"
 
 #: .tmp/ui_settingsdialog.py:313
 msgid "Address:"
-msgstr ""
+msgstr "Dirección:"
 
 #: .tmp/ui_settingsdialog.py:314
 msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
@@ -163,48 +165,48 @@ msgstr ""
 
 #: .tmp/ui_settingsdialog.py:316
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: .tmp/ui_settingsdialog.py:317
 msgid "Address"
-msgstr ""
+msgstr "Dirección"
 
 #: .tmp/ui_settingsdialog.py:318
 msgid "&Repositories"
-msgstr ""
+msgstr "&Repositorios"
 
 #: .tmp/ui_settingsdialog.py:319
 msgid "No  proxy server"
-msgstr ""
+msgstr "Sin servidor proxy"
 
 #: .tmp/ui_settingsdialog.py:320
 msgid "Use proxy server"
-msgstr ""
+msgstr "Usar servidor proxy"
 
 #: .tmp/ui_settingsdialog.py:321
 msgid "HTTP proxy server:"
-msgstr ""
+msgstr "Servidor proxy HTTP:"
 
 #: .tmp/ui_settingsdialog.py:322 .tmp/ui_settingsdialog.py:325
 #: .tmp/ui_settingsdialog.py:327
 msgid "Port:"
-msgstr ""
+msgstr "Puerto:"
 
 #: .tmp/ui_settingsdialog.py:323
 msgid "Use this proxy server for all protocols"
-msgstr ""
+msgstr "Usar éste servidor de proxy para todos los protocolos"
 
 #: .tmp/ui_settingsdialog.py:324
 msgid "HTTPS proxy server:"
-msgstr ""
+msgstr "Servidor proxy HTTPS:"
 
 #: .tmp/ui_settingsdialog.py:326
 msgid "FTP proxy server:"
-msgstr ""
+msgstr "Servidor proxy FTP:"
 
 #: .tmp/ui_settingsdialog.py:328
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
 
 #: .tmp/ui_mainwidget.py:43
 msgid "Form"
@@ -232,7 +234,7 @@ msgstr "Actualizando Paquetes(s)"
 
 #: .tmp/statemanager.py:58
 msgid "Updating Repository(s)"
-msgstr ""
+msgstr "Actualizando Repositorio(s)"
 
 #: .tmp/statemanager.py:62
 msgid "Remove Package(s)"
@@ -321,3 +323,4 @@ msgstr "Mostrar Paquetes instalados"
 #: .tmp/mainwindow.py:59
 msgid "Show Upgradable Packages"
 msgstr "Mostrar Paquetes a actualizar"
+
