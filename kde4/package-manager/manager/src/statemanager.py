@@ -16,6 +16,7 @@ from PyQt4.QtCore import QObject, SIGNAL
 from PyKDE4.kdecore import i18n
 from PyKDE4.kdeui import KIcon
 
+from pmlogging import logger
 import backend
 
 class StateManager(QObject):
