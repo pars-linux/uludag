@@ -20,6 +20,7 @@
 # storage devices.
 
 import parted
+import _ped
 import os
 import glob
 import time
@@ -226,10 +227,12 @@ class Disk:
         
         return largest
 
-    def addPartition(self, type, filesystem, start, end, flags = []):
+    def addPartition(self, type, filesystemType, start, end, flags = []):
         constraint = self._device.getConstraint()
         geom = parted.Geometry(self._device, start, end=end)
-        part = parted.Partition(self._disk, type, geometry=geom)
+        #FIXME:parted.Partition needs filesystem??
+        filesystem = _ped.file_system_type_get(filesystemType)
+        part = parted.Partition(self._disk, type, filesystem, geom)
         
         for flag in flags:
             part.setFlag(flag)
