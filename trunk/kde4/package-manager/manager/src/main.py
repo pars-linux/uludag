@@ -23,6 +23,7 @@ import dbus
 
 from about import aboutData
 from mainwindow import MainWindow
+from localedata import setSystemLocale
 
 if __name__ == '__main__':
 
@@ -36,5 +37,6 @@ if __name__ == '__main__':
     manager = MainWindow()
     manager.show()
 
+    setSystemLocale()
     app.connect(app, SIGNAL('lastWindowClosed()'), app.quit)
     app.exec_()

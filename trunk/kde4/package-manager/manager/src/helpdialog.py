@@ -18,6 +18,8 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 from PyKDE4.khtml import KHTMLPart
 
+from localedata import *
+
 (MAINAPP, PREFERENCES) = (1, 2)
 
 help_files = {
@@ -28,13 +30,14 @@ help_files = {
 class HelpDialog(KDialog):
     def __init__(self, parent, help):
         KDialog.__init__(self, parent)
+        self.setButtons(KDialog.None)
         self.setCaption(i18n("Package Manager Help"))
         self.layout = QtGui.QGridLayout(self)
         self.htmlPart = KHTMLPart(self)
-        self.resize(500,600)
+        self.resize(700,500)
         self.layout.addWidget(self.htmlPart.view(),1,1)
 
-        locale = "tr"
+        locale = getKDELocale()
 
         if locale in ["tr", "es", "en", "fr", "nl", "de", "sv"]:
             self.htmlPart.openUrl(KUrl(KStandardDirs.locate("data","package-manager/help/%s/%s" % (locale, help_files[help]))))
