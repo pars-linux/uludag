@@ -288,6 +288,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             if widget.getId() in self.mounted_devices:
                 page_widget.setMountPoint(self.mounted_devices[widget.getId()])
             page_widget.setFilesystem(getFSType(widget.getId()))
+            page_widget.slotResetOptions()
 
         dialog.addPage(page_item)
         if dialog.exec_():
