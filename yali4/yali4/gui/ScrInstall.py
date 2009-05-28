@@ -248,9 +248,8 @@ class PkgInstaller(QThread):
         ctx.debugger.log("Posting PisiEvent to the widget..")
         objectSender(qevent)
         ctx.debugger.log("Found %d packages in repo.." % total)
-
         try:
-            order = yali4.pisiiface.get_available()
+            order = yali4.pisiiface.get_all_with_paths()
             while True:
                 try:
                     yali4.pisiiface.install(order)
@@ -283,6 +282,7 @@ class PkgInstaller(QThread):
             # wait for the result
             ctx.yali.waitCondition.wait(ctx.yali.mutex)
 
+        ctx.debugger.log("Package install finished ...")
         # Package Install finished lets configure them
         qevent = PisiEvent(QEvent.User, EventPackageInstallFinished)
         objectSender(qevent)
