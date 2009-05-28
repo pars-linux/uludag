@@ -23,7 +23,6 @@ class Blinker:
         self.parent.connect(self.timer, SIGNAL("timeout()"), self.blink)
         self.defaultColor = self.color = color
         self.path = path
-        self.timer.start(100)
 
     def blink(self):
         if self.color == self.defaultColor:
