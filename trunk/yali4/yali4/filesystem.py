@@ -156,8 +156,8 @@ class FileSystem:
         """ Routine operations before resizing """
         cmd_path = requires("e2fsck")
 
-        res = sysutils.execClear("e2fsck",
-                                ["-f", "-p", "-C", "0", partition.getPath()],
+        res = sysutils.execClear(cmd_path,
+                                ["-y", "-f", "-p", "-C", "0", partition.getPath()],
                                 stdout="/tmp/resize.log",
                                 stderr="/tmp/resize.log")
 
