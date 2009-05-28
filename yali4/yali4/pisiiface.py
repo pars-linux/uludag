@@ -113,11 +113,10 @@ def get_all_with_paths():
     # Make baselayout package first
     baselayout = None
     for package in packages:
-        if not package.find('baselayout') == -1:
-            baselayout = package
+        if 'baselayout' in package:
+            baselayout = packages.index(package)
     if baselayout:
-        packages.remove(baselayout)
-        packages.insert(0, baselayout)
+        packages.insert(0, packages.pop(baselayout))
 
     return packages
 
