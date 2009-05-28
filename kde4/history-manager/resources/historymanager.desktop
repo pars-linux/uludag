@@ -6,7 +6,7 @@ GenericName[tr]=Geçmiş Yöneticisi
 Comment=An application for managing Pisi history
 Comment[tr]=Pisi geçmişini yönetmenizi sağlayan bir uygulama
 Exec=history-manager
-Icon=history-manager
+Icon=user-away-extended
 Type=Application
 Categories=Qt;KDE;System;
 
