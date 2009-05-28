@@ -20,7 +20,7 @@
   * Distribution no upgrade'de build no dan öncelikli olsun (-)
 
 * Paket Yöneticisi (Faik Uygur)
-  * KDE4 için yeniden yazılacak (/55)
+  * KDE4 için yeniden yazılacak (/65)
   * Depolar aktif/deaktif yapılabilsin (-)
   * DVD/USB çubuğu depo içeriği algılansın, soru sorulup öncelikli depo olarak eklensin (-)
   * Kurulum sonunda uygulama çalıştırma listesi çıksın (-)
@@ -30,7 +30,7 @@
   * Güncelleme çeşitleri gösterilsin [security, critical, bug, enhancement,...] (-)
   * Kurulum sırasında tray/plasmoid üzerinde ilerleme yüzdesi gösterilsin (-)
   * Tema renkleri tamamıyle KDE'den alınmalı (-)
-  * log ve debug desteği (-)
+  * log ve debug desteği (+)
 
 * Donanım (Ozan Çağlayan)
   * Yeni çekirdek geçişi (2.6.30) (+)
