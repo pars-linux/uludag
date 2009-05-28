@@ -13,7 +13,7 @@
 import os
 import parted
 from errors import *
-import pare.diskdevice as storage
+import pare.utils.sysblock as sysblock
 from pare.partition import *
 
 
@@ -29,7 +29,7 @@ class Pare(object):
     
     def __init__(self):
         if storage.init():
-            for disk in storage.disks:
+            for disk in sysblock.disks:
                 if isinstance(disk, storage.Disk):
                     self._diskTable[disk.path] =  disk
                 else:
