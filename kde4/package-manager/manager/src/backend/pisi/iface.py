@@ -17,6 +17,8 @@ import comar
 import pisi
 import groups
 
+from pmlogging import logger
+
 class Singleton(object):
     def __new__(type):
         if not '_the_instance' in type.__dict__:
@@ -58,18 +60,22 @@ class Iface(Singleton):
         pass
 
     def installPackages(self, packages):
+        logger.debug("Installing packages: %s" % packages)
         packages = string.join(packages,",")
         self.link.System.Manager["pisi"].installPackage(packages, async=self.handler)
 
     def removePackages(self, packages):
+        logger.debug("Removing packages: %s" % packages)
         packages = string.join(packages,",")
         self.link.System.Manager["pisi"].removePackage(packages, async=self.handler)
 
     def upgradePackages(self, packages):
+        logger.debug("Upgrading packages: %s" % packages)
         packages = string.join(packages,",")
         self.link.System.Manager["pisi"].updatePackage(packages, async=self.handler)
 
     def updateRepositories(self):
+        logger.debug("Updating repositories...")
         self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler)
 
     def setSource(self, source):
