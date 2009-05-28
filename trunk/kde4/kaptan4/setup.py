@@ -28,11 +28,11 @@ def update_messages():
     os.system("rm -rf .tmp")
     os.makedirs(".tmp")
     # Collect UI files
-    for filename in glob.glob1("ui", "*.ui"):
-        os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+    for filename in glob.glob1("src/gui", "*.ui"):
+        os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py src/gui/%s" % (filename.split(".")[0], filename))
     # Collect Python files
-    for filename in glob.glob1("code", "*.py"):
-        shutil.copy("code/%s" % filename, ".tmp")
+    for filename in glob.glob1("src/gui", "*.py"):
+        shutil.copy("src/gui/%s" % filename, ".tmp")
     # Generate POT file
     os.system("xgettext --default-domain=%s --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot .tmp/*" % (about.catalog, about.catalog))
     # Update PO files
