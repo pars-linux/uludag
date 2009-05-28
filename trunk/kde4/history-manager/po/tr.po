@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: history-manager-kde4 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-05 01:19+0300\n"
+"POT-Creation-Date: 2009-05-28 11:04+0300\n"
 "PO-Revision-Date: 2009-03-23 16:56+0200\n"
 "Last-Translator: isbaran <isbaran@gmail.com>\n"
 "Language-Team: Turkish\n"
@@ -16,204 +16,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: build/listitem.py:117
-msgid "Date"
-msgstr "Tarih"
-
-#: build/listitem.py:119
-msgid "Time"
-msgstr "Zaman"
-
-#: build/listitem.py:147
-msgid "snapshot"
-msgstr "görüntü"
-
-#: build/listitem.py:151
-msgid "upgrade"
-msgstr "yükseltme"
-
-#: build/listitem.py:155
-msgid "remove"
-msgstr "kaldırma"
-
-#: build/listitem.py:159
-msgid "install"
-msgstr "yükleme"
-
-#: build/listitem.py:163
-msgid "takeback"
-msgstr "geri alma"
-
-#: build/listitem.py:167
-msgid "unknown"
-msgstr "bilinmeyen"
-
-#: build/mainwindow.py:258 build/ui_mainwindow.py:258
-msgid "History Manager"
-msgstr "Geçmiş Yöneticisi"
-
-#: build/mainwindow.py:259 build/ui_mainwindow.py:259
-msgid "- Loading Pisi History"
-msgstr "- Pisi Geçmişi Yükleniyor"
-
-#: build/mainwindow.py:260 build/ui_mainwindow.py:260
-msgid "%p%"
-msgstr "%p%"
-
-#: build/mainwindow.py:261 build/mainwindow.py:266 build/ui_mainwindow.py:261
-#: build/ui_mainwindow.py:266
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
-"p></body></html>"
+#: .tmp/ui_uiitem.py:83
+msgid "Form"
 msgstr ""
 
-#: build/mainwindow.py:271 build/ui_mainwindow.py:271
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"size:10pt;\"></p></body></html>"
+#: .tmp/ui_uiitem.py:84
+msgid "History Date - Time /Label"
 msgstr ""
 
-#: build/mainwindow.py:276 build/ui_mainwindow.py:276
-msgid "Takeback Plan"
-msgstr "Geri Alma Planı"
+#: .tmp/ui_uiitem.py:85
+msgid "No: Type:"
+msgstr "No: Tip:"
 
-#: build/mainwindow.py:277 build/ui_mainwindow.py:277
-msgid "Click to see what will happen if you click restore button"
-msgstr "Geri Al düğmesine tıkladığınızda olacakları görmek için tıklayın"
-
-#: build/mainwindow.py:278 build/ui_mainwindow.py:278
-msgid "Operation Details"
-msgstr "İşlem Detayları"
-
-#: build/mainwindow.py:279 build/ui_mainwindow.py:279
-msgid "Click to see operation details"
-msgstr "İşlem detaylarını görmek için tıklayın"
-
-#: build/mainwindow.py:280 build/ui_mainwindow.py:280
-msgid "Help"
-msgstr "Yardım"
-
-#: build/mainwindow.py:281 build/ui_mainwindow.py:281
-msgid "New Snapshot"
-msgstr "Yeni Görüntü"
-
-#: build/mainwindow.py:282 build/ui_mainwindow.py:282
-msgid "Takeback"
-msgstr "Geri Al"
-
-#: build/mainwindow.py:283 build/ui_mainwindow.py:283
+#: .tmp/ui_uiitem.py:86 .tmp/ui_mainwindow.py:133
 msgid "Take back to this point"
 msgstr "Bu noktaya geri al"
 
-#: build/mainwindow.py:284 build/ui_mainwindow.py:284
-msgid "Copy"
-msgstr "Kopyala"
+#: .tmp/ui_uiitem.py:87
+msgid "Details"
+msgstr ""
 
-#: build/utility.py:15
-msgid "Information"
-msgstr "Bilgi"
+#: .tmp/ui_uiitem.py:88
+msgid "Show operation plan"
+msgstr ""
 
-#: build/window.py:74
-msgid "Select All"
-msgstr "Hepsini Seç"
+#: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
+#: .tmp/ui_mainwindow.py:126
+msgid "History Manager"
+msgstr "Geçmiş Yöneticisi"
 
-#: build/window.py:91
-msgid "Ready"
-msgstr "Hazır"
+#: .tmp/historymanager/about.py:25
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(C) 2009 TUBİTAK/UEKAE"
 
-#: build/window.py:115
-msgid "No:"
-msgstr "No:"
+#: .tmp/historymanager/about.py:32
+msgid "İşbaran Akçayır"
+msgstr "İşbaran Akçayır"
 
-#: build/window.py:116
-msgid "Type:"
-msgstr "Tip:"
+#: .tmp/historymanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Geliştirici"
 
-#: build/window.py:117
-msgid "Operation details"
-msgstr "İşlem detayları"
+#: .tmp/historymanager/window.py:69
+msgid "%d Operations Loaded"
+msgstr "%d İşlem Yüklendi"
 
-#: build/window.py:124
+#: .tmp/historymanager/window.py:110
+msgid "Loading operation details.."
+msgstr "İşlem detayları yükleniyor"
+
+#: .tmp/historymanager/window.py:122
 msgid "There are %1 packages in this snapshot"
 msgstr "Bu görüntüde %1 paket var"
 
-#: build/window.py:137
-msgid "Finished succesfully"
-msgstr "Başarıyla tamamlandı"
+#: .tmp/historymanager/window.py:135 .tmp/historymanager/window.py:187
+msgid "Ready .."
+msgstr "Hazır .."
 
-#: build/window.py:153
-msgid "Loading Plan"
-msgstr "Plan Yükleniyor"
+#: .tmp/historymanager/window.py:145
+msgid "Loading Operation Plan"
+msgstr "İşlem Planı Yükleniyor"
 
-#: build/window.py:159
+#: .tmp/historymanager/window.py:162
 msgid "Configuration files in snapshot:"
 msgstr "Görüntüdeki ayar dosyaları:"
 
-#: build/window.py:165
-msgid "Takeback Plan for %1 operation on %2 <br><br>"
-msgstr "%2 tarihindeki %1 işlemi için geri alma planı <br><br>"
-
-#: build/window.py:166
-msgid "Takeback Plan %1"
-msgstr "Geri alma Planı %1"
-
-#: build/window.py:169
+#: .tmp/historymanager/window.py:170
 msgid "<br> These package(s) will be <b>installed</b> :<br>"
 msgstr "<br> Bu paket(ler) <b>yüklenecek</b> :<br>"
 
-#: build/window.py:174
+#: .tmp/historymanager/window.py:175
 msgid "<br> These package(s) will be <b>removed</b> :<br>"
 msgstr "<br> Bu paket(ler) <b>kaldırılacak</b> :<br>"
 
-#: build/window.py:183
-msgid "Listing %1 Operations"
-msgstr "%1 İşlemleri Listeleniyor"
-
-#: build/window.py:217
+#: .tmp/historymanager/window.py:211
 msgid "Takeback operation verification"
 msgstr "Geri alma işlemi doğrulama"
 
-#: build/window.py:218
+#: .tmp/historymanager/window.py:212
 msgid ""
 "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
 msgstr ""
 "<center> Bu hareket sisteminizi <b>%1</b> - <b>%2</b> ye geri alacak<br>"
 
-#: build/window.py:219
+#: .tmp/historymanager/window.py:213
 msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
 msgstr ""
 "Emin değilseniz, Vazgeç düğmesine tıklayıp Geri alma Planına göz atın.</"
 "center>"
 
-#: build/window.py:223
+#: .tmp/historymanager/window.py:217
 msgid "Taking back to : %1"
 msgstr "%1'e geri alıyor"
 
-#: build/window.py:230 build/window.py:248
-msgid "Authentication Failed"
-msgstr "Kimlik doğrulama Başarısız"
-
-#: build/window.py:234
+#: .tmp/historymanager/window.py:224
 msgid "Start new snapshot"
 msgstr "Yeni görüntü al"
 
-#: build/window.py:235
+#: .tmp/historymanager/window.py:225
 msgid ""
 "<center>This will take a snapshot of your system.<br>Click Ok when you're "
 "ready.</center>"
@@ -221,15 +121,111 @@ msgstr ""
 "<center>Bu hareket sisteminizin görüntüsünü alacak.<br>Hazır olduğunuzda "
 "Tamam düğmesine tıklayın</center>"
 
-#: build/window.py:241
+#: .tmp/historymanager/window.py:231
 msgid "Taking New Snapshot"
 msgstr "Yeni Görüntü Alınıyor"
 
-#~ msgid "(c) 2009 TUBITAK/UEKAE"
-#~ msgstr "(C) 2009 TUBİTAK/UEKAE"
+#: .tmp/historymanager/window.py:238
+msgid "Authentication Failed"
+msgstr "Kimlik doğrulama Başarısız"
 
-#~ msgid "İşbaran Akçayır"
-#~ msgstr "İşbaran Akçayır"
+#: .tmp/historymanager/window.py:247
+msgid "Finished succesfully"
+msgstr "Başarıyla tamamlandı"
 
-#~ msgid "Current Maintainer"
-#~ msgstr "Geliştirici"
+#: .tmp/historymanager/window.py:251
+msgid "Taking Snapshot : <b>%s</b>/100"
+msgstr "Yeni Görüntü Alınıyor : <b>%s</b>/100"
+
+#: .tmp/historymanager/listitem.py:49
+msgid "snapshot"
+msgstr "görüntü"
+
+#: .tmp/historymanager/listitem.py:51
+msgid "upgrade"
+msgstr "yükseltme"
+
+#: .tmp/historymanager/listitem.py:53
+msgid "remove"
+msgstr "kaldırma"
+
+#: .tmp/historymanager/listitem.py:55
+msgid "install"
+msgstr "yükleme"
+
+#: .tmp/historymanager/listitem.py:57
+msgid "takeback"
+msgstr "geri alma"
+
+#: .tmp/historymanager/listitem.py:59
+msgid "repo update"
+msgstr ""
+
+#: .tmp/ui_mainwindow.py:127
+msgid "New Snapshot"
+msgstr "Yeni Görüntü"
+
+#: .tmp/ui_mainwindow.py:129
+msgid "Alias :"
+msgstr ""
+
+#: .tmp/ui_mainwindow.py:130
+msgid "Cancel"
+msgstr ""
+
+#: .tmp/ui_mainwindow.py:131
+msgid "- Loading Pisi History"
+msgstr "- Pisi Geçmişi Yükleniyor"
+
+#: .tmp/ui_mainwindow.py:132
+msgid "%p%"
+msgstr "%p%"
+
+#: .tmp/ui_mainwindow.py:134
+msgid "Copy"
+msgstr "Kopyala"
+
+#~ msgid "Date"
+#~ msgstr "Tarih"
+
+#~ msgid "Time"
+#~ msgstr "Zaman"
+
+#~ msgid "unknown"
+#~ msgstr "bilinmeyen"
+
+#~ msgid "Takeback Plan"
+#~ msgstr "Geri Alma Planı"
+
+#~ msgid "Click to see what will happen if you click restore button"
+#~ msgstr "Geri Al düğmesine tıkladığınızda olacakları görmek için tıklayın"
+
+#~ msgid "Operation Details"
+#~ msgstr "İşlem Detayları"
+
+#~ msgid "Click to see operation details"
+#~ msgstr "İşlem detaylarını görmek için tıklayın"
+
+#~ msgid "Help"
+#~ msgstr "Yardım"
+
+#~ msgid "Takeback"
+#~ msgstr "Geri Al"
+
+#~ msgid "Information"
+#~ msgstr "Bilgi"
+
+#~ msgid "Select All"
+#~ msgstr "Hepsini Seç"
+
+#~ msgid "No:"
+#~ msgstr "No:"
+
+#~ msgid "Takeback Plan for %1 operation on %2 <br><br>"
+#~ msgstr "%2 tarihindeki %1 işlemi için geri alma planı <br><br>"
+
+#~ msgid "Takeback Plan %1"
+#~ msgstr "Geri alma Planı %1"
+
+#~ msgid "Listing %1 Operations"
+#~ msgstr "%1 İşlemleri Listeleniyor"

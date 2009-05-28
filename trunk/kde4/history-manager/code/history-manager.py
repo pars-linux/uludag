@@ -12,7 +12,6 @@
 #
 
 import sys
-import comar
 import dbus
 
 from PyQt4 import QtGui
@@ -21,14 +20,14 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-from historymanager.about import aboutData
+from historymanager.about import aboutData, catalog
 from historymanager.window import MainManager
 
-class HistoryManager(KCModule):
+class Module(KCModule):
     def __init__(self, component_data, parent):
         KCModule.__init__(self, component_data, parent)
 
-        KGlobal.locale().insertCatalog("history-manager")
+        KGlobal.locale().insertCatalog(catalog)
 
         if not dbus.get_default_main_loop():
             from dbus.mainloop.qt import DBusQtMainLoop
@@ -36,11 +35,10 @@ class HistoryManager(KCModule):
 
         MainManager(self, standAlone=False)
 
-class Manager(KMainWindow):
-    def __init__(self, app):
-        KMainWindow.__init__(self)
+class MainWindow(KMainWindow):
+    def __init__(self, app, parent=None):
+        KMainWindow.__init__(self, parent)
 
-        KGlobal.locale().insertCatalog("history-manager")
         settings = QSettings()
 
         if settings.contains("pos") and settings.contains("size"):
@@ -52,7 +50,7 @@ class Manager(KMainWindow):
         self.setCentralWidget(MainManager(self, True, app))
 
 def CreatePlugin(widget_parent, parent, component_data):
-    return HistoryManager(component_data, parent)
+    return Module(component_data, parent)
 
 if __name__ == '__main__':
     KCmdLineArgs.init(sys.argv, aboutData)
@@ -62,7 +60,7 @@ if __name__ == '__main__':
         from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)
 
-    mainWindow = Manager(app)
+    mainWindow = MainWindow(app)
     mainWindow.show()
 
     app.exec_()

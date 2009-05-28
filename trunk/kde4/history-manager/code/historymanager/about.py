@@ -17,7 +17,7 @@ from PyKDE4.kdecore import *
 # Application Data
 appName     = "history-manager"
 modName     = "historymanager"
-catalog     = ""
+catalog     = appName
 programName = ki18n("History Manager")
 version     = "0.2.4"
 description = ki18n("History Manager")

@@ -1,12 +1,12 @@
 [Desktop Entry]
 Exec=kcmshell4 history-manager
-Icon=history-manager
+Icon=user-away-extended
 Type=Service
 X-KDE-ServiceTypes=KCModule
 
 X-KDE-Library=kpythonpluginfactory
 X-KDE-ParentApp=kcontrol
-X-KDE-PluginKeyword=history-manager/history-manager
+X-KDE-PluginKeyword=history-manager/history-manager.py
 
 X-KDE-System-Settings-Parent-Category=computer-administration
 X-KDE-Weight=70
