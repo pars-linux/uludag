@@ -97,7 +97,7 @@ def getPossiblePhysicalExtents(floor=0):
     return possiblePE
 
 def blacklistVG(name):
-    global lvm_vg_blacklist
+    global vg_blacklist
     vg_blacklist.append(name)
 
 
