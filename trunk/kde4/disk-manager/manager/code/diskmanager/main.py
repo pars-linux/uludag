@@ -28,6 +28,9 @@ from diskmanager.backend import Interface
 # Config
 from diskmanager.config import ANIM_SHOW, ANIM_HIDE, ANIM_TARGET, ANIM_DEFAULT, ANIM_TIME
 
+# Utils
+from diskmanager.utils import getFSType
+
 # Item widget
 from diskmanager.item import ItemListWidgetItem, ItemWidget
 
@@ -284,6 +287,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             page_widget.setAutoMount(False)
             if widget.getId() in self.mounted_devices:
                 page_widget.setMountPoint(self.mounted_devices[widget.getId()])
+            page_widget.setFilesystem(getFSType(widget.getId()))
 
         dialog.addPage(page_item)
         if dialog.exec_():
