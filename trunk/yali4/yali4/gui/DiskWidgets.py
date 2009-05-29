@@ -172,9 +172,10 @@ class DiskList(QtGui.QWidget):
                 for fs in partitionType.supportedFileSystems:
                     if fs.isReadyToUse():
                         self.partEdit.ui.fileSystemBox.addItem(fs.name())
+
             # Force to select ext4 by default for ext3 partitions
             key = self.partEdit.currentPart.getFSName()
-            if key == 'ext3':
+            if key == 'ext3' and not self.partEdit.currentPart.isFileSystemTypeChanged():
                 key = 'ext4'
             fsId = self.partEdit.ui.fileSystemBox.findText(key)
             if fsId < 0:
@@ -699,4 +700,6 @@ class PartEdit(QtGui.QWidget):
         isFormatChecked = getPartitionType(part,0)
         if isFormatChecked:
             self.ui.formatCheck.setChecked(True)
+        else:
+            self.ui.formatCheck.setChecked(False)
 

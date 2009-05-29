@@ -35,6 +35,7 @@ class Partition:
         self._parted_type = parteddata.partitionType
         self._fs_ready = fs_ready
         self._temp_label = ''
+        self._is_file_system_changed = False
 
     def getFormatted(self):
         return self.isFileSystemReady()
@@ -47,6 +48,10 @@ class Partition:
             fs_type = fs_type.getFSType()
 
         self._partition.set_system(fs_type)
+        self._is_file_system_changed = True
+
+    def isFileSystemTypeChanged(self):
+        return self._is_file_system_changed
 
     def setPartedFlags(self, flags):
         for flag in flags:
