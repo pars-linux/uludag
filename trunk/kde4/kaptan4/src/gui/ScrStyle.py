@@ -25,6 +25,7 @@ from desktopparser import DesktopParser
 from ConfigParser import ConfigParser
 
 class Widget(QtGui.QWidget, ScreenWidget):
+    selectedStyle = 0
     # Set title and description for the information widget
     title = ki18n("Some catchy title about styles")
     desc = ki18n("Some catchy description about styles")
@@ -115,6 +116,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def setStyle(self):
         styleName =  str(self.ui.listStyles.currentItem().statusTip())
+        self.__class__.selectedStyle = styleName  + " : " + self.styleDetails[styleName]["description"]
 
         configKdeGlobals = KConfig("kdeglobals")
         group = configKdeGlobals.group("General")
