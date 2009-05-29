@@ -78,6 +78,10 @@ class Iface(Singleton):
         logger.debug("Updating repositories...")
         self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler)
 
+    def clearCache(self, limit):
+        logger.debug("Clearing cache with limit: %s" % limit)
+        self.link.System.Manager["pisi"].clearCache("/var/cache/pisi/packages", limit)
+
     def setSource(self, source):
         self.source = source
 
