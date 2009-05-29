@@ -1,3 +1,6 @@
+2009-05-29  Ozan Çağlayan <ozan@pardus.org.tr>
+	* scsi.c: Don't probe sr_mod and sd_mod as they are now built-in.
+
 2009-04-08  Ozan Çağlayan <ozan@pardus.org.tr>
 	* Replace tabs by spaces,
 	* Update copyrights,
