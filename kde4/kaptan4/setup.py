@@ -72,7 +72,7 @@ class Install(install):
         else:
             kde_dir = "/usr/kde/4"
         bin_dir = os.path.join(kde_dir, "bin")
-        #locale_dir = os.path.join(kde_dir, "share/locale")
+        locale_dir = os.path.join(kde_dir, "share/locale")
         autostart_dir = os.path.join(kde_dir, "share/autostart")
         project_dir = os.path.join(kde_dir, "share/apps", about.appName)
         # Make directories
@@ -89,7 +89,6 @@ class Install(install):
         print "Installing codes..."
         os.system("cp -R build/* %s/" % project_dir)
         # Install locales
-        """
         print "Installing locales..."
         for filename in glob.glob1("po", "*.po"):
             lang = filename.rsplit(".", 1)[0]
@@ -99,7 +98,6 @@ class Install(install):
             except OSError:
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % about.catalog))
-        """
         # Rename
         print "Renaming application.py..."
         #shutil.move(os.path.join(project_dir, "application.py"), os.path.join(project_dir, "%s.py" % about.appName))
