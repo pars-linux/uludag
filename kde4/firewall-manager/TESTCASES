@@ -1,0 +1,61 @@
+- Try to stop service
+    Type console
+    # service list
+    Observe that iptables service gets off.
+
+- Try to start service
+    Type console
+    # service list
+    Observe that iptables service gets on.
+
+- Try these actions for options: Limited Content Serving and Access Restriction
+    - Adding  port
+    - Removing port
+    - Taking up a port
+    - taking down a port
+
+- limited content serving
+    Observe the outputs of this command with appropriate situations.
+    Type console
+     # iptables --list-rules
+
+    - With adding a port
+        - Select limited content serving
+            There should be lines like below at output of the command:
+            -A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports <addedPORT> -j ACCEPT
+            -A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports 0:1024 -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REJECT --reject-with icmp-port-unreachable
+            -A PARDUS-IN-MOD-SERVING -p udp -m multiport --dports 0:1024 -j REJECT --reject-with icmp-port-unreachable
+        - Unselect limited content serving
+            Observe that the above lines are removed from the list-rules.
+    - Without adding a port
+        There should be lines like below at output of the command:
+         -A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports 0:1024 -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REJECT --reject-with icmp-port-unreachable
+         -A PARDUS-IN-MOD-SERVING -p udp -m multiport --dports 0:1024 -j REJECT --reject-with icmp-port-unreachable
+
+
+- Internet sharing
+    - Select Internet sharing
+        - Select different values for gate to internet and gate to home network
+            There should be lines like below at output of the command:
+             -A PARDUS-FW-MOD-SHARING -i <input> -o <output> -m state --state ESTABLISHED,RELATED -j ACCEPT
+             -A PARDUS-FW-MOD-SHARING -i <output> -o <input> -j ACCEPT
+             -t nat -A PARDUS-POST-MOD-SHARING -o <input> -j MASQUERADE
+        - Give same values
+            Observe that the above lines are removed from the list-rules
+
+- Access Restriction 
+    Observe the outputs of this command with appropriate situations.
+    Type console
+    # iptables --list-rules·
+
+    - With adding a port
+        - Select Access Restriction
+            Observe that the port is added
+            There should be lines like below at output of the command:
+            -A PARDUS-FW-MOD-BLOCK -p tcp -m multiport --dports <addedPORT> -j DROP
+            -A PARDUS-OUT-MOD-BLOCK -p tcp -m multiport --dports <addedPORT> -j DROP
+        - Unselect·
+            Type the same command, then observe that the above lines are removed from the list-rules
+
+
+
