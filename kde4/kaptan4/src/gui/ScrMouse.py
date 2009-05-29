@@ -22,7 +22,8 @@ from Xlib import display
 RIGHT_HANDED, LEFT_HANDED = range(2)
 
 class Widget(QtGui.QWidget, ScreenWidget):
-
+    selectedMouse = 0
+    selectedBehaviour = 0
     # title and description at the top of the dialog window
     title = ki18n("Mouse Settings")
     desc = ki18n("Configure your mouse")
@@ -49,9 +50,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         if self.ui.radioButtonRightHand.isChecked():
             handed = RIGHT_HANDED
+            self.__class__.selectedMouse = "Right Handed"
 
         else:
             handed = LEFT_HANDED
+            self.__class__.selectedMouse = "Left Handed"
 
         mapMouse = display.Display().get_pointer_mapping()
         num_buttons = len(mapMouse)
@@ -100,6 +103,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
+        if self.clickBehaviour == True:
+            self.__class__.selectedBehaviour = "Single Click"
+        else:
+            self.__class__.selectedBehaviour = "Double Click"
+
         config = KConfig("kdeglobals")
         group = config.group("KDE")
         group.writeEntry("SingleClick", QString(self.clickBehaviour))

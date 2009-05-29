@@ -18,6 +18,14 @@ import subprocess,os
 from gui.ScreenWidget import ScreenWidget
 from gui.settingsWidget import Ui_settingsWidget
 
+# import other widgets to get the latest configuration
+import gui.ScrWallpaper as wallpaperWidget
+import gui.ScrMouse as mouseWidget
+import gui.ScrWallpaper  as wallpaperWidget
+import gui.ScrStyle  as styleWidget
+import gui.ScrMenu  as menuWidget
+import gui.ScrSearch  as searchWidget
+
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Welcome")
     desc = ki18n("Welcome to Kaptan Wizard :)")
@@ -27,10 +35,15 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_settingsWidget()
         self.ui.setupUi(self)
 
+
         self.ui.pixKaptanLogo.setPixmap(QtGui.QPixmap(':/raw/pics/kaptan_settings.png'))
 
     def shown(self):
-        pass
+        selectedWallpaper = wallpaperWidget.Widget.selectedWallpaper
+        selectedMouse = mouseWidget.Widget.selectedMouse
+        selectedBehaviour = mouseWidget.Widget.selectedBehaviour
+        selectedMenuName = menuWidget.Widget.selectedMenuName
+        isNepomukOn = searchWidget.Widget.isNepomukOn
 
     def killPlasma(self):
         p = subprocess.Popen(["pidof", "-s", "plasma"], stdout=subprocess.PIPE)
