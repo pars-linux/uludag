@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.0.0\n"
+"Project-Id-Version: Kaptan 4.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-28 16:04+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2009-05-28 16:26+0300\n"
+"PO-Revision-Date: 2009-05-29 09:26+0300\n"
 "Last-Translator: Pınar Yanardağ <Pınar Yanardağ@pardus.org.tr>\n"
 "Language-Team: Pınar Yanardağ <Pınar Yanardağ@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -77,7 +77,8 @@ msgid ""
 "functions on the left and right buttons on your pointing device by choosing "
 "the \"Left handed\"option below. You can also select default click behaviour."
 "</p>"
-msgstr "<p align=\"left\">Solaksanız, farenizin sol ve sağ düğmelerinin işlevlerini "
+msgstr ""
+"<p align=\"left\">Solaksanız, farenizin sol ve sağ düğmelerinin işlevlerini "
 "\"sol el\" seçeneğini işaretleyerek değiştirmeyi tercih edebilirsiniz. "
 "Ayrıca varsayılan tıklama davranışını da değiştirebilirsiniz.</p>"
 
@@ -227,8 +228,8 @@ msgid ""
 "Nepomuk  Semantic Desktop enables tagging and rating of files integrated "
 "with the Desktop Search."
 msgstr ""
-"Nepomuk Semantik Masaüstü, Masaüstü Arama Motoru ile bütünleşik "
-"çalışarak dosya etiketlemeyi ve beğeni belirlemeyi etkinleştirir. "
+"Nepomuk Semantik Masaüstü, Masaüstü Arama Motoru ile bütünleşik çalışarak "
+"dosya etiketlemeyi ve beğeni belirlemeyi etkinleştirir. "
 
 #: .tmp/searchWidget.py:45 .tmp/ui_searchWidget.py:45
 msgid "Enable Nepomuk Semantic Desktop"
@@ -265,9 +266,8 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda uygulanacaktır..."
-"</span></p></body></html>"
-
+"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda "
+"uygulanacaktır...</span></p></body></html>"
 
 #: .tmp/styleitem.py:46 .tmp/uiitem.py:46 .tmp/ui_styleitem.py:46
 #: .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
@@ -338,5 +338,4 @@ msgstr ""
 "<b>Kaptan Masaüstü</b> isimli bu uygulama, <b>Pardus</b> masaüstünüzün temel "
 "ayarlarını hızlı bir biçimde yapmanızda size yardım edecektir. Bu uygulama "
 "aynı zamanda daha iyi bir masaüstü için bazı varsayılan yapılandırmayı da "
-"ayarlar :)."
-
+"ayarlar."
