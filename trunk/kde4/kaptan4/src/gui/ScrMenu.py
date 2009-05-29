@@ -19,6 +19,7 @@ from gui.menuWidget import Ui_menuWidget
 
 
 class Widget(QtGui.QWidget, ScreenWidget):
+    selectedMenuName = 0
     # Set title and description for the information widget
     title = ki18n("Some catchy title about styles")
     desc = ki18n("Some catchy description about styles")
@@ -49,15 +50,18 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         if currentIndex == 0:
             self.selectedMenu = 'launcher'
+            self.__class__.selectedMenuName = "Kick-off"
             self.ui.pictureMenuStyles.setPixmap(self.kickoffPic)
             self.ui.labelMenuDescription.setText(self.kickoffDesc)
         elif currentIndex == 1:
             self.selectedMenu = 'simplelauncher'
+            self.__class__.selectedMenuName = "Simple"
             self.ui.pictureMenuStyles.setPixmap(self.simplePic)
             self.ui.labelMenuDescription.setText(self.simpleDesc)
 
         else:
             self.selectedMenu = 'lancelot_launcher'
+            self.__class__.selectedMenuName = "Lancelot"
             self.ui.pictureMenuStyles.setPixmap(self.lancelotPic)
             self.ui.labelMenuDescription.setText(self.lancelotDesc)
 

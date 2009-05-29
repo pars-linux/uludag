@@ -21,6 +21,7 @@ from gui.searchWidget import Ui_searchWidget
 
 
 class Widget(QtGui.QWidget, ScreenWidget):
+    isNepomukOn = 0
     # Set title and description for the information widget
     title = ki18n("Some catchy title about desktop search")
     desc = ki18n("Some catchy description desktop search")
@@ -52,6 +53,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
         group.writeEntry('Start Nepomuk', str(state).lower())
         proxy.reconfigure()
         proxy.enableNepomuk(state)
+
+        if state:
+            self.__class__.isNepomuk = "Nepomuk is On"
+        else:
+            self.__class__.isNepomuk = 0
 
     def shown(self):
         pass
