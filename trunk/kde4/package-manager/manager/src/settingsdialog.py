@@ -64,8 +64,7 @@ class CacheSettings(SettingsTab):
             self.iface.clearCache(0)
 
     def save(self):
-        if self.changed:
-            self.iface.setCacheLimit(self.settings.useCacheCheck.isChecked(), self.settings.useCacheSpin.value())
+        self.iface.setCacheLimit(self.settings.useCacheCheck.isChecked(), self.settings.useCacheSpin.value())
 
 class RepositorySettings(SettingsTab):
     def setupUi(self):
@@ -73,7 +72,68 @@ class RepositorySettings(SettingsTab):
 
 class ProxySettings(SettingsTab):
     def setupUi(self):
-        pass
+        self.settings.noProxyButton.setChecked(True)
+
+    def connectSignals(self):
+        self.connect(self.settings.useHttpForAll, SIGNAL("toggled(bool)"), self.useHttpToggled)
+        self.connect(self.settings.httpProxy, SIGNAL("textChanged(const QString&)"), self.markChanged)
+        self.connect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.markChanged)
+        self.connect(self.settings.httpsProxy, SIGNAL("textChanged(const QString&)"), self.markChanged)
+        self.connect(self.settings.httpsProxyPort, SIGNAL("valueChanged(int)"), self.markChanged)
+        self.connect(self.settings.ftpProxy, SIGNAL("textChanged(const QString&)"), self.markChanged)
+        self.connect(self.settings.ftpProxyPort, SIGNAL("valueChanged(int)"), self.markChanged)
+        self.connect(self.settings.noProxyButton, SIGNAL("toggled(bool)"), self.markChanged)
+
+    def useHttpToggled(self, enabled):
+        if enabled:
+            self.settings.httpsProxy.setText(self.settings.httpProxy.text())
+            self.settings.httpsProxyPort.setValue(self.settings.httpProxyPort.value())
+            self.settings.ftpProxy.setText(self.settings.httpProxy.text())
+            self.settings.ftpProxyPort.setValue(self.settings.httpProxyPort.value())
+
+            for control in [self.settings.httpsProxy, self.settings.httpsProxyPort, self.settings.ftpProxy, self.settings.ftpProxyPort]:
+                control.setEnabled(False)
+
+            self.connect(self.settings.httpProxy, SIGNAL("textChanged(const QString&)"), self.settings.httpsProxy, SLOT("setText(const QString&)"))
+            self.connect(self.settings.httpProxy, SIGNAL("textChanged(const QString&)"), self.settings.ftpProxy, SLOT("setText(const QString&)"))
+            self.connect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.settings.httpsProxyPort, SLOT("setValue(int)"))
+            self.connect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.settings.ftpProxyPort, SLOT("setValue(int)"))
+        else:
+            self.disconnect(self.settings.httpProxy, SIGNAL("textChanged(const QString&)"), self.settings.httpsProxy, SLOT("setText(const QString&)"))
+            self.disconnect(self.settings.httpProxy, SIGNAL("textChanged(const QString&)"), self.settings.ftpProxy, SLOT("setText(const QString&)"))
+            self.disconnect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.settings.httpsProxyPort, SLOT("setValue(int)"))
+            self.disconnect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.settings.ftpProxyPort, SLOT("setValue(int)"))
+
+            for control in [self.settings.httpsProxy, self.settings.httpsProxyPort, self.settings.ftpProxy, self.settings.ftpProxyPort]:
+                control.setEnabled(True)
+
+            self.settings.httpsProxy.setText("")
+            self.settings.httpsProxyPort.setValue(0)
+            self.settings.ftpProxy.setText("")
+            self.settings.ftpProxyPort.setValue(0)
+
+    def save(self):
+        httpProxy, httpProxyPort = self.settings.httpProxy.text(), self.settings.httpProxyPort.value()
+        httpsProxy, httpsProxyPort = self.settings.httpsProxy.text(), self.settings.httpsProxyPort.value()
+        ftpProxy, ftpProxyPort = self.settings.ftpProxy.text(), self.settings.ftpProxyPort.value()
+
+        if self.settings.noProxyButton.isChecked():
+            httpProxy = httpsProxy = ftpProxy = None
+
+        if httpProxy:
+            self.iface.setConfig("general", "http_proxy", "http://%s:%s" % (httpProxy, httpProxyPort))
+        else:
+            self.iface.setConfig("general", "http_proxy", "None")
+
+        if httpsProxy:
+            self.iface.setConfig("general", "https_proxy", "https://%s:%s" % (httpsProxy, httpsProxyPort))
+        else:
+            self.iface.setConfig("general", "https_proxy", "None")
+
+        if ftpProxy:
+            self.iface.setConfig("general", "ftp_proxy", "ftp://%s:%s" % (ftpProxy, ftpProxyPort))
+        else:
+            self.iface.setConfig("general", "ftp_proxy", "None")
 
 class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
     def __init__(self, parent=None):
@@ -92,7 +152,8 @@ class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
 
     def saveSettings(self):
         for settings in [self.generalSettings, self.cacheSettings, self.repositorySettings, self.proxySettings]:
-            settings.save()
+            if settings.changed:
+                settings.save()
 
     def showHelp(self):
         helpDialog = helpdialog.HelpDialog(self, helpdialog.PREFERENCES)
