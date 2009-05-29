@@ -68,6 +68,41 @@ class CacheSettings(SettingsTab):
 
 class RepositorySettings(SettingsTab):
     def setupUi(self):
+        self.settings.repoListView.horizontalHeader().setStretchLastSection(True)
+        self.settings.repoListView.verticalHeader().hide()
+        self.settings.repoListView.setColumnWidth(0, 32)
+
+    def connectSignals(self):
+        self.connect(self.settings.addRepoButton, SIGNAL("clicked()"), self.addRepository)
+
+    def __insertRow(self, repoName, repoAddress):
+        currentRow = self.settings.repoListView.rowCount()
+        self.settings.repoListView.insertRow(currentRow)
+        self.settings.repoListView.setCellWidget(currentRow, 0, QtGui.QCheckBox(self.settings.repoListView))
+
+        repoNameItem = QtGui.QTableWidgetItem()
+        repoNameItem.setText(repoName)
+        repoNameItem.setTextAlignment(Qt.AlignCenter)
+        self.settings.repoListView.setItem(currentRow, 1, repoNameItem)
+
+        repoAddressItem = QtGui.QTableWidgetItem()
+        repoAddressItem.setText(repoAddress)
+        repoAddressItem.setTextAlignment(Qt.AlignCenter)
+        self.settings.repoListView.setItem(currentRow, 2, repoAddressItem)
+
+    def addRepository(self):
+        repoName = self.settings.repoName.text()
+        repoAddress = self.settings.repoAddress.currentText()
+
+        if not repoAddress.endsWith("xml") and not repoAddress.endsWith("xml.bz2"):
+            KMessageBox.error(self,i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
+            return
+
+        self.settings.repoName.setText("")
+        self.settings.repoAddress.setEditText("")
+        self.__insertRow(repoName, repoAddress)
+
+    def removeRepository(self):
         pass
 
 class ProxySettings(SettingsTab):
