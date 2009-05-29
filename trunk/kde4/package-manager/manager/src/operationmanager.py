@@ -22,6 +22,7 @@ from pmutils import *
 class OperationManager(QObject):
     def __init__(self, state):
         QObject.__init__(self)
+        self.nop = ["System.Manager.clearCache"]
         self.state = state
         self.state.setActionHandler(self.handler)
         self.initialize()
@@ -82,6 +83,8 @@ class OperationManager(QObject):
         ####
 
         if signal == "finished":
+            if args[1] in nop: # no operation
+                return
             self.emit(SIGNAL("finished(QString)"), args[0])
 
         elif signal == "fetching":
@@ -91,6 +94,8 @@ class OperationManager(QObject):
             self.updateTotalOperationPercent()
 
         elif signal == "started":
+            if args[1] in nop: # no operation
+                return
             self.initialize()
             self.emit(SIGNAL("started(QString)"), args[0])
 
