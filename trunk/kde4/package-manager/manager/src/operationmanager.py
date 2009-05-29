@@ -83,7 +83,7 @@ class OperationManager(QObject):
         ####
 
         if signal == "finished":
-            if args[0] in nop: # no operation
+            if args[0] in self.nop: # no operation
                 return
             self.emit(SIGNAL("finished(QString)"), args[0])
 
@@ -94,7 +94,7 @@ class OperationManager(QObject):
             self.updateTotalOperationPercent()
 
         elif signal == "started":
-            if args[0] in nop: # no operation
+            if args[0] in self.nop: # no operation
                 return
             self.initialize()
             self.emit(SIGNAL("started(QString)"), args[0])
