@@ -29,6 +29,9 @@ class SettingsTab(QObject):
         self.setupUi()
         self.connectSignals()
 
+    def markChanged(self):
+        self.changed = True
+
     def setupUi(self):
         pass
 
@@ -48,6 +51,8 @@ class GeneralSettings(SettingsTab):
 class CacheSettings(SettingsTab):
     def connectSignals(self):
         self.connect(self.settings.clearCacheButton, SIGNAL("clicked()"), self.clearCache)
+        self.connect(self.settings.useCacheCheck, SIGNAL("toggled(bool)"), self.markChanged)
+        self.connect(self.settings.useCacheSpin, SIGNAL("valueChanged(int)"), self.markChanged)
 
     def clearCache(self):
         if KMessageBox.Yes == KMessageBox.warningYesNo(self.settings,
@@ -57,6 +62,10 @@ class CacheSettings(SettingsTab):
                                                        KStandardGuiItem.cancel()
                                                        ):
             self.iface.clearCache(0)
+
+    def save(self):
+        if self.changed:
+            self.iface.setCacheLimit(self.settings.useCacheCheck.isChecked(), self.settings.useCacheSpin.value())
 
 class RepositorySettings(SettingsTab):
     def setupUi(self):
