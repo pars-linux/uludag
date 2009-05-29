@@ -84,7 +84,10 @@ def remove_repo(name):
     pisi.api.remove_repo(name)
 
 def take_back(operation):
+    # dirty hack for COMAR to find scripts.
+    os.symlink("/",consts.target_dir + consts.target_dir)
     pisi.api.takeback(operation)
+    os.unlink(consts.target_dir + consts.target_dir)
 
 def getHistory(limit=50):
     pdb = pisi.db.historydb.HistoryDB()
@@ -115,6 +118,8 @@ def get_all_with_paths():
     for package in packages:
         if 'baselayout' in package:
             baselayout = packages.index(package)
+            break
+
     if baselayout:
         packages.insert(0, packages.pop(baselayout))
 
@@ -138,6 +143,9 @@ def get_pending_len():
 def configure_pending():
     # dirty hack for COMAR to find scripts.
     os.symlink("/",consts.target_dir + consts.target_dir)
+    # Make baselayout configure first
+    pisi.api.configure_pending(['baselayout'])
+    # And all of pending packages
     pisi.api.configure_pending()
     os.unlink(consts.target_dir + consts.target_dir)
 
@@ -152,7 +160,5 @@ def check_package_hash(pkg_name):
     file_hash = pisi.util.sha1_file(
         os.path.join(repo_path, file_name))
 
-    if pkg.packageHash == file_hash:
-        return True
+    return pkg.packageHash == file_hash
 
-    return False
