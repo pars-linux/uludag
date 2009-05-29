@@ -85,9 +85,9 @@ class DebugContainer(QtGui.QTextBrowser):
         _now = time.strftime("%H:%M:%S", time.localtime())
         _indent = " "+"»"*self.indent
         if type==0:
-            self.plainLogs += "%s\n" % log
+            self.plainLogs += "%s : %s\n" % (_now, log)
             if self.sysoutEnabled:
-                mes = "YALI - %s : %s" % (_now,log)
+                mes = "YALI - %s : %s" % (_now, log)
                 try:
                     file(self.sysout,"a+").write("%s\n" % mes)
                 except:
@@ -96,7 +96,7 @@ class DebugContainer(QtGui.QTextBrowser):
             _indent = ""
 
         if self.level==1 or type==self.level:
-            self.append(unicode("%s :%s %s" % (_now,_indent,log)))
+            self.append(unicode("%s :%s %s" % (_now, _indent, log)))
 
         if indent==-1:
             self.indent += indent
