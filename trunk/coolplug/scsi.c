@@ -34,6 +34,12 @@ struct list* scsi_get_list(void)
         path = my_readlink(path);
         tmp = sys_value(path, "type");
         if (tmp) {
+            /* These are know built into the kernel
+            if (strcmp(tmp, "0") == 0 || strcmp(tmp, "7") == 0)
+                modules = list_add(modules, "sd_mod");
+            if (strcmp(tmp, "4") == 0 || strcmp(tmp, "5") == 0)
+                modules = list_add(modules, "sr_mod");
+            */
             if (strcmp(tmp, "1") == 0)
                 modules = list_add(modules, "st");
         }
