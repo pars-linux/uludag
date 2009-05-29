@@ -44,7 +44,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         selectedBehaviour = mouseWidget.Widget.selectedBehaviour
         selectedMenuName = menuWidget.Widget.selectedMenuName
         isNepomukOn = searchWidget.Widget.isNepomukOn
-
+        selectedStyle = styleWidget.Widget.selectedStyle
+        print selectedStyle
     def killPlasma(self):
         p = subprocess.Popen(["pidof", "-s", "plasma"], stdout=subprocess.PIPE)
         out, err = p.communicate()
