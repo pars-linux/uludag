@@ -198,9 +198,9 @@ class Kaptan(QtGui.QWidget):
 
 if __name__ == "__main__":
     # About data
-    appName     = "Kaptan"
+    appName     = "kaptan"
     catalog     = ""
-    programName = ki18n("Kaptan")
+    programName = ki18n("kaptan")
     version     = "4.0"
     description = ki18n("Kaptan is a welcome wizard for Pardus")
     license     = KAboutData.License_GPL
