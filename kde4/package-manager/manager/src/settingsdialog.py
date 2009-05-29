@@ -19,10 +19,12 @@ from PyKDE4.kdecore import *
 from ui_settingsdialog import Ui_SettingsDialog
 
 import helpdialog
+import backend
 
-class SettingsTab:
+class SettingsTab(QObject):
     def __init__(self, settings):
         self.settings = settings
+        self.iface = backend.pm.Iface()
         self.changed = False
         self.setupUi()
         self.connectSignals()
@@ -44,8 +46,17 @@ class GeneralSettings(SettingsTab):
         self.settings.removeRepoButton.setIcon(KIcon("list-remove"))
 
 class CacheSettings(SettingsTab):
-    def setupUi(self):
-        pass
+    def connectSignals(self):
+        self.connect(self.settings.clearCacheButton, SIGNAL("clicked()"), self.clearCache)
+
+    def clearCache(self):
+        if KMessageBox.Yes == KMessageBox.warningYesNo(self.settings,
+                                                       i18n("All the cached packages will be deleted. Are you sure? "),
+                                                       i18n("Warning"),
+                                                       KGuiItem(i18n("Delete"), "trash-empty"),
+                                                       KStandardGuiItem.cancel()
+                                                       ):
+            self.iface.clearCache(0)
 
 class RepositorySettings(SettingsTab):
     def setupUi(self):
@@ -56,9 +67,8 @@ class ProxySettings(SettingsTab):
         pass
 
 class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
-    def __init__(self, state, parent=None):
+    def __init__(self, parent=None):
         QtGui.QDialog.__init__(self, parent)
-        self.state = state
         self.setupUi(self)
         self.connectSignals()
 
