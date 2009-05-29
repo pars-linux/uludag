@@ -86,6 +86,10 @@ class Iface(Singleton):
         logger.debug("Use cache: %s - change limit to: %s" % (useCache, limit))
         self.link.System.Manager["pisi"].setCache(useCache, limit)
 
+    def setConfig(self, category, name, value):
+        logger.debug("Setting config... Category: %s, Name: %s, Value: %s" % (category, name, value))
+        self.link.System.Manager["pisi"].setConfig(category, name, value)
+
     def setSource(self, source):
         self.source = source
 
