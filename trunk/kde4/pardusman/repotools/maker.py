@@ -13,14 +13,14 @@
 
 import os
 import re
-import subprocess
-import hashlib
-import tempfile
-import stat
 import sys
+import stat
 import time
 import dbus
 import glob
+import hashlib
+import tempfile
+import subprocess
 
 from repotools.utility import xterm_title, wait_bus
 
@@ -257,6 +257,7 @@ def setup_live_kdm(project):
         path = os.path.join(image_dir, "etc/X11/kdm/kdmrc")
     elif "kdebase4" in project.all_packages :
         # FIXME : find a generic way to do this
+        # Heyaa, there's no kdebase4 in 2009, this should be fixed!
         path = os.path.join(image_dir, "etc/X11/kdm/kdmrc4")
     lines = []
     for line in file(path):
