@@ -11,11 +11,11 @@
 #
 
 import os
-
-
 import parted
+
 from pare.filesystem import FileSystem, getFilesystem
 from pare.parteddata import *
+from pare.errors import *
 import gettext
 _ = lambda x:gettext.ldgettext("pare", x)
 
@@ -24,7 +24,7 @@ _ = lambda x:gettext.ldgettext("pare", x)
 class Partition:
 
     _type = partitionType
-    
+
     def __init__(self, disk, partedPartition, minor, size, start, end, format, existing=False):
         self._disk = disk
         self._partedPartition = partedPartition
@@ -35,32 +35,48 @@ class Partition:
         self._format = format
         self._exists = existing
         self.tmpLabel = ''
-    
+
+    def setup(self):
+        if not self.exists:
+            raise PartitionError("Partition has not been created!")
+
+        if self.status:
+            self.format.setup()
+
+    def teardown(self):
+        if not self.exists:
+            raise PartitionError("Partition has not been created!")
+
+        if self.status and self.format.exists:
+            self.format.teardown()
+            #FIXME:add udev_settle()
+
     @property
     def exists(self):
         return self._exists
-    
+
     @property
     def status(self):
+        """ Add parted cache list but it cant be committed to disk"""
         if not self.exists:
             return False
-        
+
         return os.access(self.path, os.W_OK)
-    
+
     def setFileSystemType(self, _format):
         if isinstance(_format, FileSystem):
             _format = _format.fileSystemType
         elif isinstance(_format, str):
             _format = getFilesystem(_format).fileSystemType
-        
+
         self.partition.fileSystem = _format
-         
+
     def getFileSystemType(self):
         return self.partition.fileSystem.name    
-        
+
     def getFSYSName(self):
         return getFilesystem(self.getFileSystemType())._sysname
-    
+
     def setPartedFlags(self, flags):
         for flag in flags:
             if self.partition.isFlagAvailable(flag):
@@ -81,7 +97,7 @@ class Partition:
     @property
     def isRaid(self):
         return self.partition.type == parted.PARTITION_RAID
-    
+
     @property
     def isLvm(self):
         return self.partition.type == parted.PARTITION_LVM
@@ -122,15 +138,15 @@ class Partition:
     @property
     def minor(self):
         return self._minor
-    
+
     def _getFormat(self):
         return self._format
 
     def _setFormat(self, _format):
         self._format = _format
-        
+
     format = property(lambda p: p._getFormat(), lambda p,f:_setFormat(f))
-    
+
     @property
     def resizable(self):
         try:
@@ -145,25 +161,25 @@ class Partition:
         self.tmpLabel = label
 
     tmpLabel = property(lambda p: p._getTmpLabel(), lambda p,f:p_setTmpLabel(f))
-    
+
     @property
     def label(self):
         try:
             return self.format.getLabel(self)
         except AttributeError, e:
             return None
-    
+
     @property
     def minResizeMB(self):
         try:
             return self.format.minResizeMB(self)
         except AttributeError, e:
             return None
-    
+
     @property
     def start(self):
         return self._start
-    
+
     @property
     def end(self):
         return self._end
@@ -194,7 +210,7 @@ class Partition:
 
 class PhysicalVolume(Partition):
     _type = lvmType
-    
+
     def __init__(self, disk, partedPartition, minor, size, start,end):
         Partition.__init__(self, disk,
                            partedPartition,
@@ -203,10 +219,10 @@ class PhysicalVolume(Partition):
                            start,
                            end,
                            format)
-        
+
 class RaidMember(Partition):
     _type = raidType
-    
+
     def __init__(self):
         Partition.__init__(self, disk,
                            partedPartition,
@@ -215,12 +231,12 @@ class RaidMember(Partition):
                            start,
                            end,
                            format)
-     
+
 
 
 class FreeSpace(Partition):
     _type = freeSpaceType
-    
+
     def __init__(self, disk, part, size, start, end):
         Partition.__init__(self, disk,
                            part,

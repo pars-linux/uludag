@@ -40,7 +40,7 @@ log = logging.getLogger("pare")
 
 class Disk:
     """A disk."""
-    
+
     _type = deviceType
     # @param device_path: Device node (eg. /dev/hda, /dev/sda)
     # @param arch: Architecture that we're partition for (defaults to 'x86')
@@ -73,8 +73,8 @@ class Disk:
 
         self._path = path
 
-    
-    
+
+
     ##
     # do we have room for another primary partition?
     # @returns: boolean
@@ -91,10 +91,10 @@ class Disk:
 
     def needSetup(self, bool):
         self._isSetup = bool
-    
+
     def isSetup(self):
         return self._isSetup
-        
+
     def getSize(self, unit='MB'):
         return self._disk.device.getSize(unit)
 
@@ -110,7 +110,7 @@ class Disk:
     @property
     def sectorSize(self):
         return self._sectorSize
-    
+
     @property
     def path(self):
         return self._path
@@ -125,7 +125,7 @@ class Disk:
 
     def setup(self):
         self.commit()
-        
+
     ##
     # check if the device has an extended partition
     # @returns: True/False
@@ -148,7 +148,7 @@ class Disk:
     @property
     def extendedPartition(self):
         return self._disk.getExtendedPartition()
-        
+
 
     @property
     def primaryPartitions(self):
@@ -224,16 +224,17 @@ class Disk:
             if part.getSize() > size:
                 size = part.getSize()
                 largest = part
-        
+
         return largest
 
     def addPartition(self, type, filesystemType, start, end, flags = []):
+        self._isSetup = True
         constraint = self._device.getConstraint()
         geom = parted.Geometry(self._device, start, end=end)
         #FIXME:parted.Partition needs filesystem??
         filesystem = _ped.file_system_type_get(filesystemType)
         part = parted.Partition(self._disk, type, filesystem, geom)
-        
+
         for flag in flags:
             part.setFlag(flag)
 
@@ -242,7 +243,7 @@ class Disk:
             return self._disk.addPartition(part, constraint)
         except parted.error, e:
             raise DeviceError, e
-        
+
         return True
 
     ##
@@ -259,12 +260,12 @@ class Disk:
     def resizePartition(self, filesystem, size, partition):
 
         start = partition.geom.start
-        
+
         if partition.isLogical:
             type = parted.PARTITION_LOGICAL
         else:
             type = parted.PARTITION_NORMAL
-            
+
         time.sleep(3)
         self.deletePartition(partition)
         self.commit()
