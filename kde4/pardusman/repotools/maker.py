@@ -520,7 +520,7 @@ def make_iso(project):
     print "Preparing ISO..."
     xterm_title("Preparing ISO")
 
-    sort_cd_layout = True
+    sort_cd_layout = False
 
     try:
         iso_dir = project.iso_dir(clean=True)
