@@ -513,6 +513,11 @@ def generate_sort_list(iso_dir):
     for i in xrange(len(packages)):
         package_list.insert(i, (package_list.pop(i)[0], 100+10*i))
 
+    # Move baselayout to the top
+    for p in package_list:
+        if "baselayout" in p[0]:
+            package_list.insert(0, package_list.pop(package_list.index(p)))
+
     return package_list
 
 
