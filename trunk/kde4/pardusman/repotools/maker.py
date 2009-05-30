@@ -20,7 +20,6 @@ import dbus
 import glob
 import hashlib
 import tempfile
-import subprocess
 
 from repotools.utility import xterm_title, wait_bus
 
@@ -497,7 +496,7 @@ def make_image(project):
         print "Keyboard Interrupt: make_image() cancelled."
         sys.exit(1)
 
-def generate_sort_list():
+def generate_sort_list(iso_dir):
     # Sorts the packages in repo_dir according to their size
     # mkisofs sort_file format:
     # filename   weight
@@ -507,9 +506,9 @@ def generate_sort_list():
     # High weighted files will be nearer to the inside of the CD.
     # Highest weight -> nearer to the inside,
     # lowest weight -> outwards
-    packages = glob.glob("%s/*.pisi" % project.install_repo_dir())
+    packages = glob.glob("%s/repo/*.pisi" % iso_dir)
     package_list = dict([(k, os.stat(k).st_size) for k in packages]).items()
-    package_list.sort(key=lambda x: x[1])
+    package_list.sort(key=lambda x: x[1], reverse=True)
 
     for i in xrange(len(packages)):
         package_list.insert(i, (package_list.pop(i)[0], 100+10*i))
@@ -520,6 +519,8 @@ def generate_sort_list():
 def make_iso(project):
     print "Preparing ISO..."
     xterm_title("Preparing ISO")
+
+    sort_cd_layout = True
 
     try:
         iso_dir = project.iso_dir(clean=True)
@@ -544,11 +545,17 @@ def make_iso(project):
         if project.type == "install":
             run('ln -s "%s" "%s"' % (project.install_repo_dir(), os.path.join(iso_dir, "repo")))
 
-        # Pass -sort sort_file to sort the oder in which the file data is written to the CD image.
-        run('mkisofs -f -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
-            iso_file,
-            iso_dir,
-        ))
+        # Generate sort_list for mkisofs and YALI
+        # Disabled for now
+        if sort_cd_layout:
+            sorted_list = generate_sort_list(iso_dir)
+            if sorted_list:
+                open("%s/repo/install.order" % iso_dir, "w").write("\n".join(["%s %d" % (k,v) for (k,v) in sorted_list]))
+                run('mkisofs -f -sort %s/repo/install.order -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (iso_dir, iso_file, iso_dir,))
+
+        else:
+            run('mkisofs -f -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (iso_file, iso_dir,))
+
     except KeyboardInterrupt:
         print "Keyboard Interrupt: make_iso() cancelled."
         sys.exit(1)
