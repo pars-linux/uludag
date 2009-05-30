@@ -11,7 +11,8 @@
 
 class PareError(Exception):
     pass
-
+class FileError(PareError):
+    pass
 class FileSystemError(PareError):
     pass
 class DeviceError(PareError):

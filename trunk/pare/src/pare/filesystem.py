@@ -25,13 +25,11 @@ import string
 import parted
 import math
 
-from pare.errors import PareError
+from pare.errors import PareError, FileSystemError
 import pare.utils.sysutils as sysutils
 import logging
 log = logging.getLogger("pare")
 
-class FileSystemError(PareError):
-    pass
 
 def getFilesystem(name):
     """ Returns filesystem implementation for given filesystem name """
@@ -75,8 +73,9 @@ class FileSystem:
     _mountoptions = "defaults"
     _type = None  # parted fs type
 
-    def __init__(self):
+    def __init__(self, device):
         self._type = parted.filesystem._ped.file_system_type_get(self.name)
+        self.device = device
 
     def openPartition(self, partition):
         """ Checks if partition exists or not;
@@ -88,6 +87,31 @@ class FileSystem:
             err = "error opening partition %s: %s" % (partition.path, e)
             raise PareError, err
 
+    def mount(self):
+        #FIXME:Check how yali mount filesystems
+        pass
+
+    def umount(self):
+        #FIXME:Check how yali umount filesystems
+        pass
+
+    def setup(self):
+        self.mount()
+
+    def teardown(self):
+        self.umount()
+
+    @property
+    def exists(self):
+        return self.status
+
+    @property
+    def status(self):
+        if self.device.path in pare.syblock.detec_procMounts():
+            return True
+        else:
+            return False
+
     @property
     def name(self):
         """ Get file system name """
@@ -97,7 +121,7 @@ class FileSystem:
     def mountOptions(self):
         """ Get default mount options for file system """
         return self._mountoptions
-    
+
     @property
     def fileSystemType(self):
         """ Get parted file system type """
@@ -148,31 +172,31 @@ class FileSystem:
         if not self.isImplemented():
             raise PareError, "%s file system is not fully implemented." % (self.name)
 
-        
+
         log.info("Format %s: %s" %(partition.path, self.name))
 
     def _setImplemented(self, bool):
         """ Set if file system is implemented """
         self._implemented = bool
 
-    
+
     def _getImplemented(self):
         """ Check if filesystem is implemented """
         return self._implemented
-    
+
     implemented = property(lambda p: p._getImplemented(), lambda p,f: p._setImplemented(f))
-    
+
     def _setResizable(self, bool):
         """ Set if filesystem is resizable """
         self._resizable = bool
 
-    
+
     def _getResizable(self):
         """ Check if filesystem is resizable """
         return self._resizable
 
     resizable = property(lambda p: p._getResizable(), lambda p,f: p._setResizable(f))
-    
+
     def preResize(self, partition):
         """ Routine operations before resizing """
         cmd_path = requires("e2fsck")
@@ -241,7 +265,7 @@ class FileSystem:
         """ Resize given partition as given size """
         if size < self.minResizeMB(partition):
             return False
-        
+
         cmd_path = requires("resize2fs")
 
         # Check before resize
@@ -282,7 +306,7 @@ class ReiserFileSystem(FileSystem):
     def __init__(self):
         FileSystem.__init__(self)
         self.implemented = True
-        
+
 
     def format(self, partition):
         self.preFormat(partition)

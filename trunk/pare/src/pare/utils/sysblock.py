@@ -10,7 +10,7 @@
 # Please read the COPYING file.
 
 from pare.diskdevice import Disk
-
+from pare.errors import *
 
 # all disks
 disks = []
@@ -51,7 +51,7 @@ def init(force = False):
 def clearAll():
     clear_disks()
     clear_lvs()
-    
+
 def clear_disks():
     global disks
     disks = []
@@ -60,14 +60,28 @@ def clear_lvs():
     global lvs
     lvs = []
 
+def detect_procMounts():
+    if not os.path.exists("/proc/mounts"):
+        raise FileError("/proc/mounts")
+
+    mounts = []
+    for line in open("/proc/mounts"):
+        entry = line.split()
+
+        if not entry:
+            continue
+        mounts.append(entry[0])
+
+    return  mounts
+
 def detect_procPartitions():
     # Check for sysfs. Only works for >2.6 kernels.
     if not os.path.exists("/sys/bus"):
-        raise DeviceError, "sysfs not found!"
+        raise FileError, "sysfs not found!"
 
     # Check for /proc/partitions
     if not os.path.exists("/proc/partitions"):
-        raise DeviceError, "/proc/partitions not found!"
+        raise FileError, "/proc/partitions not found!"
 
     partitions = []
     for line in open("/proc/partitions"):
