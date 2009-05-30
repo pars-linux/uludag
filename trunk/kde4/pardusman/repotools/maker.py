@@ -20,6 +20,7 @@ import stat
 import sys
 import time
 import dbus
+import glob
 
 from repotools.utility import xterm_title, wait_bus
 
@@ -495,6 +496,26 @@ def make_image(project):
         print "Keyboard Interrupt: make_image() cancelled."
         sys.exit(1)
 
+def generate_sort_list():
+    # Sorts the packages in repo_dir according to their size
+    # mkisofs sort_file format:
+    # filename   weight
+    # where filename is the whole name of a file/directory and the weight is a whole
+    # number between +/- 2147483647. Files will be sorted with the highest weights first
+    # and lowest last. The CDs are written from the middle outwards.
+    # High weighted files will be nearer to the inside of the CD.
+    # Highest weight -> nearer to the inside,
+    # lowest weight -> outwards
+    packages = glob.glob("%s/*.pisi" % project.install_repo_dir())
+    package_list = dict([(k, os.stat(k).st_size) for k in packages]).items()
+    package_list.sort(key=lambda x: x[1])
+
+    for i in xrange(len(packages)):
+        package_list.insert(i, (package_list.pop(i)[0], 100+10*i))
+
+    return package_list
+
+
 def make_iso(project):
     print "Preparing ISO..."
     xterm_title("Preparing ISO")
@@ -522,6 +543,7 @@ def make_iso(project):
         if project.type == "install":
             run('ln -s "%s" "%s"' % (project.install_repo_dir(), os.path.join(iso_dir, "repo")))
 
+        # Pass -sort sort_file to sort the oder in which the file data is written to the CD image.
         run('mkisofs -f -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
             iso_file,
             iso_dir,
