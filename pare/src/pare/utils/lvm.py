@@ -9,13 +9,27 @@
 #
 # Please read the COPYING file.
 
-from errors import LVMError
-import sysutils
+from pare.errors import LVMError
+from pare.utils import sysutils
 import gettext
 
 _ = lambda x: gettext.ldgettext("pare", x)
 
 MAX_LV_SLOTS = 256
+
+def _lvmclear(*args):
+    try:
+        return sysutils.run("lvm",args)
+    except Exception:
+        #FIXME:log.error
+        raise LVMError, args[0]
+
+def _lvmcapture(*args):
+    try:
+        return sysutils.run("lvm", args, capture=True)
+    except Exception:
+        #FIXME:log.error
+        raise LVMError, args[0]
 
 def checkLVM():
     check = False
@@ -114,18 +128,9 @@ def safeLvmName(name):
     return tmp
 
 def pvcreate(device):
-    args = ["pvcreate"] + \
-            config_args + \
-            [device]
+    args = ["pvcreate"] + config_args + [device]
 
-    return_code = sysutils.execClear("lvm",
-                                     args,
-                                     stdout = "/dev/tty5",
-                                     stderr = "/dev/tty5")
-
-    if return_code == 0:
-        raise LVMError(_("pvcreate failed for %s" % device))
-
+    return  _lvmclear(args)
 
 def pvresize(device, size):
     args = ["pvresize"] + \
@@ -133,23 +138,12 @@ def pvresize(device, size):
             config_args + \
             [device]
 
-    return_code = sysutils.execClear("lvm", args,
-                                stdout = "/dev/tty5",
-                                stderr = "/dev/tty5")
-    if return_code:
-        raise LVMError(_("pvresize failed for %s" % device))
+    return _lvmclear(args)
 
 def pvremove(device):
-    args = ["pvremove"] + \
-            config_args + \
-            [device]
+    args = ["pvremove"] + config_args + [device]
 
-    return_code = sysutils.execClear("lvm",
-                                    args,
-                                    stdout = "/dev/tty5",
-                                    stderr = "/dev/tty5")
-    if return_code == 0:
-        raise LVMError(_("pvremove failed for %s" % device))
+    return _lvmclear(args)
 
 def pvinfo(device):
     """
@@ -160,7 +154,7 @@ def pvinfo(device):
         pvs -o pv_name,pv_mda_count,vg_name,vg_uuid --config \
             'devices { scan = "/dev" filter = ["a/loop0/", "r/.*/"] }'
     """
-    
+
     #cfg = "'devices { scan = \"/dev\" filter = [\"a/%s/\", \"r/.*/\"] }'"·
     args = ["pvs", "--noheadings"] + \
             ["--units", "m"] + \
@@ -168,12 +162,11 @@ def pvinfo(device):
             config_args + \
             [device]
 
-    buffer = sysutils.execWithCapture("lvm",
-                                            args,
-                                            stderr = "/dev/tty5")
+    buffer = _lvmcapture(args)
+
     values = buffer.split()
     if not values:
-        raise LVMError(_("vgcreate failed for %s" % vg_name))
+        raise LVMError(_("pvinfo failed for %s" % device))
 
     # don't raise an exception if pv is not a part of any vg
     pv_name = values[0]
@@ -196,47 +189,22 @@ def vgcreate(vg_name, pv_list, pe_size):
     argv.append(vg_name)
     argv.extend(pv_list)
 
-    return_code = sysutils.execClear("lvm", argv,
-                                stdout = "/dev/tty5",
-                                stderr = "/dev/tty5")
-
-    if return_code == 0:
-        raise LVMError(_("vgcreate failed for %s" % vg_name))
+    return _lvmclear(args)
 
 def vgremove(vg_name):
-    args = ["vgremove"] + \
-            config_args +\
-            [vg_name]
+    args = ["vgremove"] + config_args + [vg_name]
 
-    return_code = sysutils.execClear("lvm", args,
-                                stdout = "/dev/tty5",
-                                stderr = "/dev/tty5")
-
-    if return_code == 0:
-        raise LVMError(_("vgremove failed for %s" % vg_name))
+    return _lvmclear(args)
 
 def vgactivate(vg_name):
-    args = ["vgchange", "-a", "y"] + \
-            config_args + \
-            [vg_name]
+    args = ["vgchange", "-a", "y"] + config_args + [vg_name]
 
-    return_code = sysutils.execClear("lvm", args,
-                                stdout = "/dev/tty5",
-                                stderr = "/dev/tty5")
-    if return_code == 0:
-        raise LVMError(_("vgactivate failed for %s" % vg_name))
+    return _lvmclear(args)
 
 def vgdeactivate(vg_name):
-    args = ["vgchange", "-a", "n"] + \
-            config_args + \
-            [vg_name]
+    args = ["vgchange", "-a", "n"] + config_args + [vg_name]
 
-    return_code = sysutils.execClear("lvm", args,
-                                stdout = "/dev/tty5",
-                                stderr = "/dev/tty5")
-
-    if return_code == 0:
-        raise LVMError(_("vgdeactivate failed for %s" % vg_name))
+    return _lvmclear(args)
 
 def vgreduce(vg_name, pv_list, rm=False):
     """ Reduce a VG.
@@ -251,12 +219,7 @@ def vgreduce(vg_name, pv_list, rm=False):
     else:
         args.extend([vg_name] + pv_list)
 
-    return_code = sysutils.execClear("lvm", args,
-                                stdout = "/dev/tty5",
-                                stderr = "/dev/tty5")
-
-    if return_code == 0 :
-        raise LVMError(_("vgreduce failed for %s" % vg_name))
+    return _lvmclear(args)
 
 def vginfo(vg_name):
     args = ["vgs", "--noheadings", "--nosuffix"] + \
@@ -265,9 +228,8 @@ def vginfo(vg_name):
             config_args + \
             [vg_name]
 
-    buffer = sysutils.execWithCapture("lvm",
-                                    args,
-                                    stderr="/dev/tty5")
+    buffer = _lvmcapture(args)
+
     buffer_dict = buffer.split()
     if len(info) != 7:
         raise LVMError(_("vginfo failed for %s" % vg_name))
@@ -291,9 +253,7 @@ def lvs(vg_name):
             config_args + \
             [vg_name]
 
-    buffer = sysutils.execWithCapture("lvm",
-                                args,
-                                stderr="/dev/tty5")
+    buffer = _lvmcapture(args)
 
     lvs = {}
     for line in buffer.splitlines():
@@ -316,24 +276,15 @@ def lvcreate(vg_name, lv_name, size):
             config_args + \
             [vg_name]
 
-    return_code = sysutils.execClear("lvm", args,
-                                stdout = "/dev/tty5",
-                                stderr = "/dev/tty5")
 
-    if return_code == 0:
-        raise LVMError(_("lvcreate failed for %s/%s" % (vg_name, lv_name)))
+    return _lvmclear(args)
 
 def lvremove(vg_name, lv_name):
     args = ["lvremove"] + \
             config_args + \
             ["%s/%s" % (vg_name, lv_name)]
 
-    return_code = sysutils.execClear("lvm", args,
-                                stdout = "/dev/tty5",
-                                stderr = "/dev/tty5")
-
-    if return_code:
-        raise LVMError(_("lvremove failed for %s" % lv_name))
+    return _lvmclear(args)
 
 def lvresize(vg_name, lv_name, size):
     args = ["lvresize"] + \
@@ -341,13 +292,7 @@ def lvresize(vg_name, lv_name, size):
             config_args + \
             ["%s/%s" % (vg_name, lv_name)]
 
-    rc = iutil.execWithRedirect("lvm", args,
-                                stdout = "/dev/tty5",
-                                stderr = "/dev/tty5",
-                                searchPath=1)
-
-    if rc:
-        raise LVMError("lvresize failed for %s" % lv_name)
+    return _lvmclear(args)
 
 def lvactivate(vg_name, lv_name):
     # see if lvchange accepts paths of the form 'mapper/$vg-$lv'
@@ -355,24 +300,15 @@ def lvactivate(vg_name, lv_name):
             config_args + \
             ["%s/%s" % (vg_name, lv_name)]
 
-    return_code = sysutils.execClear("lvm", args,
-                                stdout = "/dev/tty5",
-                                stderr = "/dev/tty5")
-    if return_code == 0:
-        raise LVMError(_("lvactivate failed for %s" % lv_name))
+    return _lvmclear(args)
 
 def lvdeactivate(vg_name, lv_name):
     args = ["lvchange", "-a", "n"] + \
             config_args + \
             ["%s/%s" % (vg_name, lv_name)]
 
-    return_code = sysutils.execClear("lvm", args,
-                                stdout = "/dev/tty5",
-                                stderr = "/dev/tty5")
+    return _lvmclear(args)
 
-    if return_code == 0:
-        raise LVMError(_("lvdeactivate failed for %s" % lv_name))
-    
 def lvinfo(vg_name):
     args = ["lvs", "--noheadings", "--nosuffix"] + \
             ["--units", "m"] + \
@@ -380,9 +316,8 @@ def lvinfo(vg_name):
             config_args + \
             [vg_name]
 
-    buffer = sysutils.execWithCapture("lvm",
-                                    args,
-                                    stderr="/dev/tty5")
+    buffer = _lvmcapture(args)
+
     buffer_dict = buffer.split()
     if len(info) != 7:
         raise LVMError(_("lvinfo failed for %s" % vg_name))

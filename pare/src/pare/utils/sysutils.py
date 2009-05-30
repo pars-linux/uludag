@@ -19,9 +19,8 @@ def checkNumeric(num):
         num =  0
     elif not (isinstance(num, int) or isinstance(num, long) or isinstance(num, float)):
         raise ValueError("Value must be a number!")
-    
     return num
-    
+
 def run(cmd, params=None, capture=False):
 
 
@@ -32,6 +31,10 @@ def run(cmd, params=None, capture=False):
     # to use Popen we need a tuple
     _cmd = tuple(cmd.split())
     log.info("RUN : %s" % cmd)
+
+    #stdout must return LC_ALL=C
+    env = os.environ.copy()
+    env.update({"LC_ALL": "C"})
 
     # Create an instance for Popen
     proc = subprocess.Popen(_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -53,105 +56,20 @@ def run(cmd, params=None, capture=False):
     return True
 
 
-def execWithCapture(command, argv, stdin = 0, stderr = 2, root ='/'):
-     argv = list(argv)
-
-     if isinstance(stdin, str):
-         if os.access(stdin, os.R_OK):
-             stdin = open(stdin)
-         else:
-             stdin = 0
-
-     if isinstance(stderr, str):
-         stderr = open(stderr, "w")
-
-     try:
-         pipe = subprocess.Popen([command] + argv, stdin = stdin,
-                                 stdout=subprocess.PIPE,
-                                 stderr=subprocess.STDOUT,
-                                 cwd=root)
-     except OSError, ( errno, msg ):
-         raise RuntimeError, "Error running " + command + ": " + msg
-
-     rc = pipe.stdout.read()
-     pipe.wait()
-     return rc
-
-def execClear(command, argv, stdin = 0, stdout = 1, stderr = 2):
-
-    argv = list(argv)
-    if isinstance(stdin, str):
-        if os.access(stdin, os.R_OK):
-            stdin = open(stdin)
-        else:
-            stdin = 0
-    if isinstance(stdout, str):
-        stdout = open(stdout, "w")
-    if isinstance(stderr, str):
-        stderr = open(stderr, "w")
-    if stdout is not None and not isinstance(stdout, int):
-        stdout.write("Running... %s\n" %([command] + argv,))
-
-    p = os.pipe()
-    childpid = os.fork()
-    if not childpid:
-        os.close(p[0])
-        os.dup2(p[1], 1)
-        os.dup2(stderr.fileno(), 2)
-        os.dup2(stdin, 0)
-        os.close(stdin)
-        os.close(p[1])
-        stderr.close()
-
-        os.execvp(command, [command] + argv)
-        os._exit(1)
-
-    os.close(p[1])
-
-    while 1:
-        try:
-            s = os.read(p[0], 1)
-        except OSError, args:
-            (num, msg) = args
-            if (num != 4):
-                raise IOError, args
-
-        stdout.write(s)
-
-        if len(s) < 1:
-            break
-
-    try:
-        (pid, status) = os.waitpid(childpid, 0)
-    except OSError, (num, msg):
-        pass
-    if status is None:
-        return 0
-
-    if os.WIFEXITED(status):
-        return os.WEXITSTATUS(status)
-
-    return 1
-
 def mount(source, target, fs, needs_mtab=False):
     params = ["-t", fs, source, target]
     if not needs_mtab:
         params.insert(0,"-n")
 
-    mount_res = execClear("mount",
-                          params,
-                          stdout="/tmp/mount.log",
-                          stderr="/tmp/mount.log")
+    mount_res = run("mount",params)
+
     return mount_res
 
 
 def umount(mountpoint=''):
-    
-    umount_res = execClear("umount",
-                           mountpoint,
-                           stdout="/tmp/umount.log",
-                           stderr="/tmp/umount.log")
-    
+
+    umount_res = execClear("umount", mountpoint)
+
 def notify_kernel(path, action="change"):
     """ Signal the kernel that the specified device has changed. """
     log.debug("notifying kernel of '%s' event on device %s" % (action, path))
