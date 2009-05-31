@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-27 17:46+0300\n"
-"PO-Revision-Date: 2009-01-14 18:39+0100\n"
+"PO-Revision-Date: 2009-05-31 19:04+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -97,23 +97,20 @@ msgid "Automatic"
 msgstr "Automatisch"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Deze optie zal vrije ruimte of in grootte aanpasbare partities pogen te "
 "vinden"
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
-msgstr ""
-"Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
+msgstr "Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
 
 #: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
 "This option will erase your entire disk. All of your data on disk will be "
 "lost !"
-msgstr ""
-"Deze optie zal uw gehele schijf wissen. Alle gegevens zullen verloren gaan!"
+msgstr "Deze optie zal uw gehele schijf wissen. Alle gegevens zullen verloren gaan!"
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
@@ -222,7 +219,7 @@ msgstr "Test CD integriteit"
 msgid ""
 "For using Pisi History support you may need internet connection, you can use "
 "your connection profiles from list"
-msgstr ""
+msgstr "Om Pisi geschiedenisnbeheer te kunnen gebruiken heeft u mogelijk een internetverbinding nodig, u kunt uw verbindingsprofiel van de lijst kiezen"
 
 #: yali4/gui/Ui/connectionlist.py:72 yali4/gui/Ui/dialog.py:60
 msgid "X"
@@ -230,7 +227,7 @@ msgstr "X"
 
 #: yali4/gui/Ui/connectionlist.py:73
 msgid "Connect"
-msgstr ""
+msgstr "Verbinden"
 
 #: yali4/gui/Ui/datetimewidget.py:81
 msgid "The current time"
@@ -447,51 +444,50 @@ msgid "Resize"
 msgstr "Grootte aanpassen"
 
 #: yali4/gui/Ui/rescuegrubwidget.py:87
-#, fuzzy
 msgid "Select the disk to install bootloader:"
-msgstr "Selecteer de schijf waarop u de bootlader wilt installeren:"
+msgstr "Selecteer de schijf om bootlader op te installeren:"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:67
 msgid "Connection Status :"
-msgstr ""
+msgstr "Verbindingsstatus:"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:68
 msgid "Not Connected"
-msgstr ""
+msgstr "Niet verbonden"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:69
 msgid ""
 "For using Pisi History support you may need internet connection, you can use "
 "your connection profiles from your profiles"
-msgstr ""
+msgstr "Om Pisi geschiedenisnbeheer te kunnen gebruiken heeft u mogelijk een internetverbinding nodig, u kunt uw verbindingsprofielen van uw profielen gebruiken"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:70
 msgid "Select Connection"
-msgstr ""
+msgstr "Kies verbinding"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:71
 msgid "Select an operation from history list to take back the system"
-msgstr ""
+msgstr "Selecteer een handeling van de geschiedenislijst om het systeem terug te brengen"
 
 #: yali4/gui/Ui/rescuewidget.py:84
 msgid "Select the partition below that your Pardus installed:"
-msgstr ""
+msgstr "Selecteer hieronder de partitie waarop Pardus is geïnstalleerd:"
 
 #: yali4/gui/Ui/rescuewidget.py:85
 msgid "Select a proper solution for your problem and click <b>next</b>..."
-msgstr ""
+msgstr "Selecteer een oplossing voor uw probleem en klik op <b>vollgende</b>..."
 
 #: yali4/gui/Ui/rescuewidget.py:86
 msgid "If you have problems with boot, you can reinstall Grub"
-msgstr ""
+msgstr "Indien u problemen met opstarten ondervindt, kunt u Grub herinstalleren"
 
 #: yali4/gui/Ui/rescuewidget.py:87
 msgid "If you need to take back your old operations you can use Pisi History"
-msgstr ""
+msgstr "Als u wilt teruggrijpen naar uw oude besturingssysteem, dan kunt u Pisi geschiedenis gebruiken"
 
 #: yali4/gui/Ui/rescuewidget.py:88
 msgid "If you lost your password you can change it"
-msgstr ""
+msgstr "Indien u uw wachtwoord kwijt bent dan kunt u het veranderen"
 
 #: yali4/gui/Ui/rescuewidget.py:89 yali4/gui/ScrSummary.py:73
 #: yali4/gui/YaliDialog.py:168 yali4/installer.py:693
@@ -552,7 +548,7 @@ msgstr "Geef beheerdersrechten aan deze gebruiker"
 
 #: yali4/gui/Ui/setupuserswidget.py:164
 msgid "Do not ask any password to this user"
-msgstr ""
+msgstr "Vraag geen wachtwoord aan deze gebruiker"
 
 #: yali4/gui/Ui/setupuserswidget.py:167
 msgid "Users:"
@@ -605,16 +601,14 @@ msgid "Debug"
 msgstr "Debug"
 
 #: yali4/gui/descSlide.py:18
-#, fuzzy
 msgid ""
 "Welcome! Our improved setup tool YALI will help you with the installation of "
 "Pardus 2009. YALI will help install Pardus 2009 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
 msgstr ""
 "Welkom! Ons verbetert installatiegereedschap YALI zal u helpen met de "
-"installatie van Pardus 2008. YALI installeertPardus 2008 snel en maakt \n"
-"het partitioneren uw schijven makkelijk met intelligent "
-"partitiegereedschap.\n"
+"installatie van Pardus 2009. YALI installeert Pardus 2009 snel en maakt"
+"het partitioneren uw schijven makkelijk met het intelligent partitiegereedschap.\n"
 
 #: yali4/gui/descSlide.py:20
 msgid ""
@@ -663,14 +657,13 @@ msgstr ""
 "instellingen worden onthouden.\n"
 
 #: yali4/gui/descSlide.py:28
-#, fuzzy
 msgid ""
 "Mozilla Firefox, with its speed, constant development and many advanced "
 "features, will help securely surf the Internet. Pardus 2009 includes Mozilla "
 "Firefox 3.0, and you can enrich Firefox with thousands of extensions.\n"
 msgstr ""
 "Mozilla Firefox zal u, met zijn snelheid, continue ontwikkeling en vele "
-"geavanceerde functies, veilig over het internet laten surfen. Pardus 2008 "
+"geavanceerde functies, veilig over het internet laten surfen. Pardus 2009 "
 "biedt u Mozilla Firefox 3.0, welk u kunt uitbreiden met duizenden "
 "extensies.\n"
 
@@ -698,7 +691,6 @@ msgstr ""
 "een database applicatie.\n"
 
 #: yali4/gui/descSlide.py:34
-#, fuzzy
 msgid ""
 "Gimp is an advanced image editing application that comes preinstalled with "
 "Pardus 2009. Gimp allows editing all common image file formats and has "
@@ -706,7 +698,7 @@ msgid ""
 "designers' needs.\n"
 msgstr ""
 "Gimp is een geavanceerde beeldberwerkings programma dat standaard "
-"geïnstalleerd is in Pardus 2008. Gimp stelt u in staat alle gangbare "
+"geïnstalleerd is in Pardus 2009. Gimp stelt u in staat alle gangbare "
 "grafische bestandformaten te bewerken, en heeft ongekende mogelijkheden voor "
 "zowel professionele grafische artiesten als voor ontwerpers.\n"
 
@@ -721,14 +713,13 @@ msgstr ""
 "het soortgelijke media adviseren, met nog meer mogelijkheden tot gevolg.\n"
 
 #: yali4/gui/descSlide.py:38
-#, fuzzy
 msgid ""
 "Kaffeine is the default video player of Pardus 2009. It has a high "
 "performance in playing DVDs, VCDs, and countless video file formats, "
 "including, but not limited to, MPEG, AVI and DivX. If you have a digital TV "
 "card, you can record your favourite TV programs using Kaffeine!\n"
 msgstr ""
-"Kaffiene is de standaard videospeler van Pardus 2008. Het kan in hoge "
+"Kaffiene is de standaard videospeler van Pardus 2009. Het kan in hoge "
 "kwaliteit DVD's, VCD's en ontelbare andere beeldformaten afspelen, "
 "inclusief, maar niet beperkt tot; MPEG, AVI en DivX. Als u toegang heeft tot "
 "digitale televiesie, dan kunt u uw favoriete TV programma's opnemen met "
@@ -755,7 +746,6 @@ msgstr ""
 "mogelijkheden die u hebt met K3b.\n"
 
 #: yali4/gui/descSlide.py:44
-#, fuzzy
 msgid ""
 "You can find HOW-TOs, tutorials and package introductions in our community "
 "portal www.ozgurlukicin.com. If you happen to have any problems with Pardus "
@@ -763,13 +753,12 @@ msgid ""
 "Freenode server (and you can use Konversation for that).\n"
 msgstr ""
 "U kunt uitleg, lessen, en pakket beschrijvingen vinden via onze community "
-"website www.pardus-linux.nl. Als u problemen met Pardus 2008 zou "
+"website www.pardus-linux.nl. Als u problemen met Pardus 2009 zou "
 "ondervinden, kunt u hulp krijgen via ons forum en de #pardus of #pardus-"
 "linux.nl chatbox op de IRC Freenode server (u kunt hier Konversation voor "
 "gebruiken).\n"
 
 #: yali4/gui/DiskWidgets.py:85
-#, fuzzy
 msgid "Manual Partitioning selected."
 msgstr "Handmatig partitioneren geselecteerd."
 
@@ -819,8 +808,7 @@ msgstr "Er is een verzoek voor hetzelfde partitietype."
 
 #: yali4/gui/DiskWidgets.py:345
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)"
 "s</b>."
@@ -913,9 +901,8 @@ msgid "Resizing to %s MB.."
 msgstr "Grootte aanpassen tot %s MB.."
 
 #: yali4/gui/GUIAdditional.py:92
-#, fuzzy
 msgid "Filesystem Error"
-msgstr "Bestandssysteem:"
+msgstr "Bestandssysteem fout"
 
 #: yali4/gui/GUIAdditional.py:99
 #, python-format
@@ -934,16 +921,15 @@ msgstr "(%s) [%s] Grootte : %s - Vrij : %s"
 #: yali4/gui/GUIAdditional.py:233
 #, python-format
 msgid "Connecting to network <b>%s</b> ..."
-msgstr ""
+msgstr "Verbinden met netwerk <b>%s</b> ..."
 
 #: yali4/gui/GUIAdditional.py:239 yali4/gui/GUIAdditional.py:240
-#, fuzzy
 msgid "Connection failed"
-msgstr "Controle mislukt"
+msgstr "Verbinden mislukt"
 
 #: yali4/gui/GUIAdditional.py:243 yali4/gui/GUIAdditional.py:244
 msgid "Connected"
-msgstr ""
+msgstr "Verbonden"
 
 #: yali4/gui/GUIGPL.py:52
 msgid "Can't open License file!"
@@ -1425,8 +1411,7 @@ msgstr ""
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
 "installation."
-msgstr ""
-"U heeft niet voldoende schijfruimte (min. %s) om Pardus te installeren."
+msgstr "U heeft niet voldoende schijfruimte (min. %s) om Pardus te installeren."
 
 #: yali4/gui/ScrPartitionManual.py:31
 msgid "Manual Partitioning"
@@ -1696,8 +1681,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:198
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:213
 msgid "Bootloader Settings"
@@ -1802,8 +1786,7 @@ msgstr ""
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
-msgstr ""
-"<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
+msgstr "<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
 
 #: yali4/gui/ScrUsers.py:148
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
@@ -1827,8 +1810,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:185
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
+msgstr "<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
 
 #: yali4/gui/ScrUsers.py:244
 msgid "Update User"
@@ -2238,58 +2220,3 @@ msgstr "als opslagruimte"
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "De thuismap van gebruiker <b>%s</b> wordt klaargemaakt.."
 
-#, fuzzy
-#~ msgid "Yalı found a Pardus installed partition on your system."
-#~ msgstr "Installeer op partitie waarop Pardus is geïnstalleerd"
-
-#~ msgid ""
-#~ "\n"
-#~ "<font size=\"+2\">Boot loader setup</font>\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>\n"
-#~ "Pardus 2008 uses a boot manager called GRUB to start the operating system "
-#~ "you choose.\n"
-#~ "</p>\n"
-#~ "<p>If there are multiple operating systems in your computer, you can "
-#~ "start the one \n"
-#~ "you like using GRUB. Installing GRUB to the beginning of the boot disk is "
-#~ "the advised \n"
-#~ "option to avoid boot problems.  If you are sure you know what you are "
-#~ "doing, \n"
-#~ "you can change boot loader settings.\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "Please refer to Pardus Installing and Using \n"
-#~ "Guide for more information about GRUB boot \n"
-#~ "loader.\n"
-#~ "</p>\n"
-#~ "</font>\n"
-#~ msgstr ""
-#~ "\n"
-#~ "<font size=\"+2\">Bootlader instellen</font>\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>\n"
-#~ "Pardus 2008 maakt gebruik van de bootlader GRUb, om het besturingssysteem "
-#~ "van uw keuze op te starten.\n"
-#~ "</p>\n"
-#~ "<p>Als u meerdere besturingssysteem op uw computer hebt, kunt u kiezen "
-#~ "welk besturingssysteem\n"
-#~ "u wilt starten met GRUB. Installatie van GRUB aan het begin van de "
-#~ "bootschijf is een te aan te bevelen\n"
-#~ "optie om bootproblemen te vermijden. Als u zeker weet wat u doet,\n"
-#~ "kunt u de bootlader opties aanpassen.\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "Lees de Pardus Installatie- en gebruikshandleiding voor\n"
-#~ " meer informatie over de GRUB bootlader \n"
-#~ "</p>\n"
-#~ "</font>\n"
-
-#~ msgid "Ext3"
-#~ msgstr "Ext3"
-
-#~ msgid "NTFS"
-#~ msgstr "NTFS"
-
-#~ msgid "Fat 32"
-#~ msgstr "Fat 32"
