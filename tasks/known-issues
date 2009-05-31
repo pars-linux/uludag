@@ -13,7 +13,8 @@
     are correct,
     - Logout pictures are not rendered correctly when effects are disabled,
     - kbluetooth4 has no translations, goes background when no device is available without
-    notifying the user. It crashes when the dongle is suddenly unplugged.
+    notifying the user. It crashes when the dongle is suddenly unplugged,
+    - The new system-config-printer-kde must be backported.
 
 * Kaptan (Pınar Yanardağ)
     - Kaptan is somehow changing the color scheme causing the font color to be black on some areas
