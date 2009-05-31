@@ -1,7 +1,6 @@
 * Kernel/initramfs/drivers (Ozan Çağlayan)
     - Find a way for being able to ship saa7134-alsa kernel module (#3478),
-    - findfs in initramfs hangs while trying to probe missing floppy devices,
-    - Fix the conflicting states of the new kernel-headers (119) with libdrm,
+    - findfs in initramfs hangs while trying to probe missing floppy devices (Reported upstream),
     - Don't mount rootfs by giving 'auto' as type, should be fixed in trunk, try it,
     - s2disk problems/support,
 
@@ -19,3 +18,10 @@
 * Kaptan (Pınar Yanardağ)
     - Kaptan is somehow changing the color scheme causing the font color to be black on some areas
     of the desktop. See: http://liste.pardus.org.tr/testci/2009-May/002241.html
+
+* Firefox
+    - backspace doesn't work,
+    - The icon bounces until the end of the maximum bounce duration.
+
+* CUPS (Ozan Çağlayan)
+    - Check ::1 lookup regression on a clean Alpha installation.
