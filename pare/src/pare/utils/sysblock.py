@@ -128,9 +128,9 @@ def detect_disk():
     return _devices
 
 def detect_lv():
-    
+
     partitions = detect_procPartitions()
-    
+
     _logicalVolumes = []
     blacklistDEVS = glob.glob("/sys/block/ram*") + glob.glob("/sys/block/loop*") + glob.glob("/sys/block/sd*")
     sysfs = set(glob.glob("/sys/block/*")) - set(blacklistDEVS)
@@ -139,14 +139,14 @@ def detect_lv():
         major, minor = open(dev_node).read().split(":")
         major = int(major)
         minor = int(minor)
-        
+
         for record in partitions:
             if major == record[0] and minor == record[1]:
                 #FIXME:If vg name has '-' character lvm convert it to '--'
                 #FIXME:Recheck right lvm name splitting 
                 name = open(device +"/dm/name").read().split("-")[-1]  
                 uuid = open(device +"/dm/uuid").read()
-                
+
                 _logicalVolumes.append((name, uuid))
-    
+
     return _logicalVolumes
