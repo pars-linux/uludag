@@ -14,7 +14,7 @@ import os
 import parted
 
 from pare.filesystem import FileSystem, getFilesystem
-from pare.parteddata import *
+from pare.parteddata import partition, physicalVolume, raidMember, freeSpace
 from pare.errors import *
 import gettext
 _ = lambda x:gettext.ldgettext("pare", x)
@@ -23,7 +23,7 @@ _ = lambda x:gettext.ldgettext("pare", x)
 # Class representing a single partition within a Device object
 class Partition:
 
-    _type = partitionType
+    _type = partition
 
     def __init__(self, disk, partedPartition, minor, size, start, end, format, existing=False):
         self._disk = disk
@@ -107,7 +107,7 @@ class Partition:
 
     @property
     def type(self):
-        return self.type
+        return self._type
 
     @property
     def partition(self):
@@ -209,33 +209,33 @@ class Partition:
 
 
 class PhysicalVolume(Partition):
-    _type = lvmType
+    _type = physicalVolume
 
-    def __init__(self, disk, partedPartition, minor, size, start,end):
+    def __init__(self, disk, partedPartition, minor, size, start,end,format,exists):
         Partition.__init__(self, disk,
                            partedPartition,
                            minor,
                            size,
                            start,
                            end,
-                           format)
+                           format,exists)
 
 class RaidMember(Partition):
-    _type = raidType
+    _type = raidMember
 
-    def __init__(self):
+    def __init__(self, disk, partedPartition, minor, size, start,end,format,exists):
         Partition.__init__(self, disk,
                            partedPartition,
                            minor,
                            size,
                            start,
                            end,
-                           format)
+                           format,exists)
 
 
 
 class FreeSpace(Partition):
-    _type = freeSpaceType
+    _type = freeSpace
 
     def __init__(self, disk, part, size, start, end):
         Partition.__init__(self, disk,
