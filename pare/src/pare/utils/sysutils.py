@@ -12,6 +12,8 @@
 import subprocess
 from pardus.sysutils import find_executable
 import logging
+import os
+import sys
 log = logging.getLogger("pare")
 
 def checkNumeric(num):
@@ -21,23 +23,31 @@ def checkNumeric(num):
         raise ValueError("Value must be a number!")
     return num
 
-def run(cmd, params=None, capture=False):
-
-
+def run(cmd, params, capture=False):
+    #print "BURAAAA"
+    #print "params:%s" % params
     # Merge parameters with command
     if params:
-        cmd = "%s %s" % (cmd, ' '.join(params))
-
+        cmd = "%s %s"% (cmd, ' '.join(params))
+    #print "%s" % cmd
+    
+    #print "split::: %s" % cmd
     # to use Popen we need a tuple
     _cmd = tuple(cmd.split())
-    log.info("RUN : %s" % cmd)
+    #print "_cmd%s" % _cmd
+    #log.info("RUN : %s" % cmd)
 
     #stdout must return LC_ALL=C
     env = os.environ.copy()
     env.update({"LC_ALL": "C"})
 
     # Create an instance for Popen
-    proc = subprocess.Popen(_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    try:
+        proc = subprocess.Popen(_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    except OSError, (errno, msg):
+        raise RuntimeError, "Error running " + _cmd + ": " + msg
+        
+    
 
     # Capture the output
     stdout, stderr = proc.communicate()
