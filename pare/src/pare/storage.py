@@ -21,7 +21,7 @@ import logging
 log = logging.getLogger("pare")
 
 
-class Pare(object):
+class Storage(object):
     _partitionTable = {}
     _diskTable = {}
     _lvmTable = {}
@@ -46,13 +46,18 @@ class Pare(object):
             print "### %s partition.geom:%s partition.size:%s" % (disk.path, geom.start, size )
             if part.number >= 1:
                 filesystem = ""
-                if part.fileSystem:
-                    filesystem = part.fileSystem.name
-                elif part.type & parted.PARTITION_EXTENDED:
-                    filesystem = "extended"
-                print "disk %s partition.name:%s" % (disk.path, part.path)
-                return Partition(disk, part,part.number,size,
-                                 geom.start,geom.end,filesystem,ready)
+                if part.filesystem:
+                    filesystem = part.filesystem.name
+                #FIXME:Check LVM, RAID, Partition assignment
+                if part.type & parted.PARTITION_LVM:
+                    return PhysicalVolume(disk, part, part.number, size, geom.start, geom.end, filesystem, ready)
+                elif part.type & parted.PARTITION_RAID:
+                    return RaidMember(disk, part, part.number, size, geom.start, geom.end, filesystem, ready)
+                else:
+                    if part.type & parted.PARTITION_EXTENDED:
+                        filesystem = "extended"
+                        print "disk %s partition.name:%s" % (disk.path, part.path)
+                        return Partition(disk, part, part.number, size, geom.start, geom.end, filesystem, ready)
 
             elif part.type & parted.PARTITION_FREESPACE and size >= 10:
                 return FreeSpace(disk, part, size, geom.start, geom.end)
@@ -161,3 +166,7 @@ class Pare(object):
                raise PareError("partition.resize failed!")
            else:
                return True
+
+    def createVolumeGroup(self):
+        pass
+
