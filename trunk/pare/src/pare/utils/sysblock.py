@@ -10,12 +10,16 @@
 # Please read the COPYING file.
 
 from pare.diskdevice import Disk
+from pare.lvmdevice import LogicalVolume, VolumeGroup
+from pare.utils import lvm
 from pare.errors import *
+import os
+import glob
 
 # all disks
 disks = []
 # all logical volumes
-lvs = []
+vgs = []
 
 
 def _comp(x, y):
@@ -28,26 +32,47 @@ def _comp(x, y):
 
 ##
 # initialize all devices and fill devices list
-def init(force = False):
+def init_disks(force = False):
     global disks
-
+      
     if disks and not force:
         return True
 
-    clear_devices()
+    clear_disks()
 
-    devs = detect_disk()
+    devs = detect_disks()
     for dev_path in devs:
         d = Disk(dev_path)
         disks.append(d)
 
     disks.sort(_comp,reverse=True)
-
+    
     if disks:
         return True
 
     return False
 
+def init_vgs():
+    global vgs
+    
+    clear_vgs()
+    
+    
+    volumegroups = detect_vgs()
+    if len(volumegroups) > 0:
+        for vg in volumegroups:
+            info = lvm.vginfo(vg)
+            if info:
+                volumegroup = VolumeGroup(name=info['name'], size=info['size'], uuid=info['uuid'], maxPV=info['max_pv'], pvCount=info['pv_count'], peSize=info['vg_extent_size'], peCount=info['vg_extent_count'], peFree=info['vg_free_count'], freespace=info['vg_free'], maxLV= info['max_lv'], existing=1)
+                vgs.append(volumegroup)
+    
+    vgs.sort(_comp, reverse=True)
+    
+    if vgs:
+        return True
+    
+    return False
+    
 def clearAll():
     clear_disks()
     clear_lvs()
@@ -56,9 +81,9 @@ def clear_disks():
     global disks
     disks = []
 
-def clear_lvs():
-    global lvs
-    lvs = []
+def clear_vgs():
+    global vgs
+    vgs = []
 
 def detect_procMounts():
     if not os.path.exists("/proc/mounts"):
@@ -102,7 +127,7 @@ def detect_procPartitions():
 
 ##
 # Return a list of block devices in system
-def detect_disk():
+def detect_disks():
 
     partitions = detect_procPartitions()
     
@@ -127,11 +152,19 @@ def detect_disk():
 
     return _devices
 
-def detect_lv():
-
+def _lvmNameParser(name):
+    tmp = name.strip()
+    tmp = tmp.replace("--", ".")
+    lvm = tmp.split("-")
+    vg = lvm[0].replace(".", "-")
+    lv = lvm[1].replace(".", "-")
+    
+    return (vg,lv)
+    
+def detect_vgs():
     partitions = detect_procPartitions()
-
-    _logicalVolumes = []
+    
+    _vgs = []
     blacklistDEVS = glob.glob("/sys/block/ram*") + glob.glob("/sys/block/loop*") + glob.glob("/sys/block/sd*")
     sysfs = set(glob.glob("/sys/block/*")) - set(blacklistDEVS)
     for device in sysfs:
@@ -144,9 +177,13 @@ def detect_lv():
             if major == record[0] and minor == record[1]:
                 #FIXME:If vg name has '-' character lvm convert it to '--'
                 #FIXME:Recheck right lvm name splitting 
-                name = open(device +"/dm/name").read().split("-")[-1]  
+                name = open(device +"/dm/name").read()
                 uuid = open(device +"/dm/uuid").read()
-
-                _logicalVolumes.append((name, uuid))
-
-    return _logicalVolumes
+                vg=_lvmNameParser(name)[0]
+                if vg in _vgs:
+                    continue
+                _vgs.append(vg)
+                #_lvm.append((_lvmNameParser(name)[0],_lvmNameParser(name)[1], uuid))
+    
+    return _vgs
+        
