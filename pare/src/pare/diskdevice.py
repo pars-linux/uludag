@@ -28,11 +28,11 @@ import struct
 import binascii
 
 
-from pare.partition import Partition, FreeSpace
+from pare.partition import Partition, PhysicalVolume, RaidMember, FreeSpace
 from pare.errors import DeviceError, DiskError
 import pare.utils.sysutils as sysutils
 from pare.filesystem import getFilesystem, FileSystem
-from pare.parteddata import *
+from pare.parteddata import disk
 
 import logging
 log = logging.getLogger("pare")
@@ -41,7 +41,8 @@ log = logging.getLogger("pare")
 class Disk:
     """A disk."""
 
-    _type = deviceType
+    _type = disk
+    
     # @param device_path: Device node (eg. /dev/hda, /dev/sda)
     # @param arch: Architecture that we're partition for (defaults to 'x86')
     def __init__(self, path, arch="x86"):
@@ -72,9 +73,55 @@ class Disk:
         self._disklabel = self._disk.type
 
         self._path = path
+        self._partitions = None
+        self._update()
 
+    def _getParePartition(self, part, ready=True):
+        geom = part.geometry
+        size = part.getSize()
+        #print "part.path :%s  part.type:%s" % (part.path ,part.type)
+        #print "###partition.geom:%s partition.size:%s" % (geom.start, size )
+        if part.number >= 1:
+            #except free parts number are greater than 0
+            #print "TYPEEEE:%s" % part
+            filesystem = ""
+            #print part.getFlagsAsString()
+            if part.fileSystem and (part.fileSystem.type is not None):
+                filesystem = part.fileSystem.type
+                #FIXME:Check LVM, RAID, Partition assignment
+            if part.getFlagsAsString()=="lvm":
+                #print "part.path :%s  part.getFlagAsString:%s" % (part.path ,part.getFlagsAsString())
+                if not filesystem:
+                    filesystem = "physicalVolume"
+                return PhysicalVolume(self, part, part.number, size, geom.start, geom.end, filesystem, ready)
+            elif part.getFlagsAsString()=="raid":
+                #print "part.path :%s  part.getFlagAsString:%s" % (part.path ,part.getFlagsAsString())
+                if not filesystem:
+                    filesystem = "raidMember"
+                return RaidMember(self, part, part.number, size, geom.start, geom.end, filesystem, ready)
+            else:
+                if part.type & parted.PARTITION_EXTENDED:
+                    filesystem = "extended"
+                    #print " partition.name:%s" % part.path
+                return Partition(self, part, part.number, size, geom.start, geom.end, filesystem, ready)
+        elif part.type & parted.PARTITION_FREESPACE and size >= 10:
+            return FreeSpace(self, part, size, geom.start, geom.end)
+            #print "FreeSpace disk %s partition.name:%s" % (disk.path, part.name)
+    
+    def _addPartition(self, part):
+        self._partitions.append(self._getParePartition(part))
+    
+    def _update(self):
+        self._partitions = []
+        for part in self.getAllPartitions():
+                #print "part.path name:%s" % part.path
+                self._addPartition(part)
 
-
+    @property
+    def partitions(self):
+        #print "disk %s len(self._partitions)=%d" % (self.path,len(self._partitions))
+        return self._partitions
+    
     ##
     # do we have room for another primary partition?
     # @returns: boolean
@@ -243,19 +290,29 @@ class Disk:
             return self._disk.addPartition(part, constraint)
         except parted.error, e:
             raise DeviceError, e
-
+        
+        self._update()
+        
         return True
 
     ##
     # delete a partition
     # @param part: Partition
-    def deletePartition(self, part):
+    def deletePartition(self, part, update=False):
         self._isSetup = True
-        return self._disk.deletePartition(part)
+        if self._disk.deletePartition(part):
+            if update:
+                self._update()
+                return True
+        return False
+
 
     def deleteAllPartitions(self):
         self._isSetup = True
-        return self._disk.deleteAllPartitions()
+        if self._disk.deleteAllPartitions():
+            self._update()
+            return True
+        return False
 
     def resizePartition(self, filesystem, size, partition):
 
