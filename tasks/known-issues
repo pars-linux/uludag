@@ -23,4 +23,5 @@
     - The icon bounces until the end of the maximum bounce duration.
 
 * CUPS (Ozan Çağlayan)
-    - Check ::1 lookup regression on a clean Alpha installation.
+    - Check ::1 lookup regression on a clean Alpha installation,
+    - hal-cups-utils' low-level usb backend fails on some printers.
