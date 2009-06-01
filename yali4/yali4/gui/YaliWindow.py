@@ -30,6 +30,9 @@ from yali4.gui.aspects import *
 # Release Notes
 import GUIRelNotes
 
+# QTerm
+import QTermWidget
+
 ##
 # Widget for YaliWindow (you can call it MainWindow too ;).
 class Widget(QtGui.QWidget):
@@ -44,7 +47,7 @@ class Widget(QtGui.QWidget):
         self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self)
 
         # shortcut to open a console
-        self.consoleShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F12),self)
+        self.consoleShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F11),self)
 
         # something funny
         self.cursorShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F7),self)
@@ -71,6 +74,8 @@ class Widget(QtGui.QWidget):
         self.connect(self.ui.toggleHelp,    SIGNAL("clicked()"),    self.slotToggleHelp)
         self.connect(self.ui.releaseNotes,  SIGNAL("clicked()"),    self.showReleaseNotes)
 
+        self.terminal = None
+
     def updateStyle(self):
         self.setStyleSheet(file(self._style).read())
 
@@ -82,8 +87,11 @@ class Widget(QtGui.QWidget):
         self.updateStyle()
 
     def toggleConsole(self):
-        import os
-        os.system("TERM='xterm' %s/data/consoleq" % ctx.consts.data_dir)
+        if not self.terminal:
+            _terminal = QTermWidget.QTermWidget()
+            self.terminal = Dialog(_('Terminal'), _terminal, self, True, QtGui.QKeySequence(Qt.Key_F11))
+            self.terminal.resize(700,500)
+        self.terminal.exec_()
 
     def toggleCursor(self):
         if self.cursor().shape() == QtGui.QCursor(Qt.ArrowCursor).shape():

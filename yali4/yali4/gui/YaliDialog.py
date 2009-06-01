@@ -61,7 +61,7 @@ class windowTitle(QtGui.QFrame):
             event.accept()
 
 class Dialog(QtGui.QDialog):
-    def __init__(self, t, w, parent=None, closeButton = True):
+    def __init__(self, title, widget, parent = None, closeButton = True, keySequence = None):
         QtGui.QDialog.__init__(self, ctx.mainScreen)
 
         self.gridlayout = QtGui.QGridLayout(self)
@@ -70,15 +70,19 @@ class Dialog(QtGui.QDialog):
         self.gridlayout.setObjectName("gridlayout")
 
         self.windowTitle = windowTitle(self, closeButton)
-        self.windowTitle.label.setText(t)
+        self.windowTitle.label.setText(title)
 
         self.gridlayout.addWidget(self.windowTitle,0,0,1,1)
 
-        self.content = w
+        self.content = widget
         self.gridlayout.addWidget(self.content,1,0,1,1)
 
         if closeButton:
             QObject.connect(self.windowTitle.pushButton,SIGNAL("clicked()"),self.reject)
+
+        if keySequence:
+            shortCut = QtGui.QShortcut(keySequence, self)
+            QObject.connect(shortCut, SIGNAL("activated()"), self.reject)
 
         QMetaObject.connectSlotsByName(self)
 
