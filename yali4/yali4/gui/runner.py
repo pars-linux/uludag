@@ -44,6 +44,7 @@ class Runner:
 
         # Qt Stuff
         ctx._app = self._app = QtGui.QApplication(sys.argv)
+        desktop  = self._app.desktop()
 
         # Yali..
         self._window = YaliWindow.Widget()
@@ -105,6 +106,8 @@ class Runner:
                         self._app, SLOT("quit()"))
         QObject.connect(ctx.mainScreen, SIGNAL("signalProcessEvents"),
                         self._app.processEvents)
+        QObject.connect(desktop, SIGNAL("resized(int)"),
+                        self._init_screen)
 
         # set the current screen ...
         ctx.mainScreen.setCurrent(ctx.options.startupScreen)
@@ -117,18 +120,21 @@ class Runner:
         # if you use different Qt4 theme our works looks ugly :)
         self._app.setStyle(QtGui.QStyleFactory.create('Plastique'))
 
-        # We want it to be a full-screen window.
-        self._window.resize(self._app.desktop().size())
-        self._window.setMaximumSize(self._app.desktop().size())
-        self._window.move(0,0)
-        self._window.show()
-        ctx.yali.info.updateMessage()
+        self._init_screen()
 
         # For testing..
         # self._window.resize(QSize(800,600))
 
         # Run run run
         self._app.exec_()
+
+    def _init_screen(self, screen = 0):
+        # We want it to be a full-screen window.
+        self._window.resize(self._app.desktop().size())
+        self._window.setMaximumSize(self._app.desktop().size())
+        self._window.move(0,0)
+        self._window.show()
+        ctx.yali.info.updateMessage()
 
 def showException(ex_type, tb):
     title = _("Error!")
