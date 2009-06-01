@@ -32,61 +32,76 @@ import GUIRelNotes
 
 ##
 # Widget for YaliWindow (you can call it MainWindow too ;).
-class Widget(Ui_YaliMain):
+class Widget(QtGui.QWidget):
     def __init__(self):
-        self.ui = QtGui.QWidget()
-        self.setupUi(self.ui)
+        QtGui.QWidget.__init__(self, None)
+
+        self.ui = Ui_YaliMain()
+        self.ui.setupUi(self)
+
         self.screenData = None
         # shortcut to open debug window
-        self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.ui)
+        self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self)
 
         # shortcut to open a console
-        self.consoleShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F12),self.ui)
+        self.consoleShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F12),self)
 
         # something funny
-        self.cursorShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F7),self.ui)
+        self.cursorShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F7),self)
+        self.themeShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F8),self)
 
         # set style
-        self.ui.setStyleSheet(file(ctx.consts.stylesheet).read())
+        self._style = ctx.consts.stylesheet
+        self.updateStyle()
 
-        # self.ui.setAttribute(Qt.WA_OpaquePaintEvent)
         # move one step at a time
         self.moveInc = 1
 
         # Dont need help as default
-        self.helpContent.hide()
-        self.toggleHelp.setText(_("Show Help"))
+        self.ui.helpContent.hide()
+        self.ui.toggleHelp.setText(_("Show Help"))
 
         # Main Slots
-        QObject.connect(self.debugShortCut, SIGNAL("activated()"), self.toggleDebug)
-        QObject.connect(self.consoleShortCut, SIGNAL("activated()"), self.toggleConsole)
-        QObject.connect(self.cursorShortCut, SIGNAL("activated()"), self.toggleCursor)
-        QObject.connect(self.buttonNext, SIGNAL("clicked()"), self.slotNext)
-        QObject.connect(self.buttonBack, SIGNAL("clicked()"), self.slotBack)
-        QObject.connect(self.toggleHelp, SIGNAL("clicked()"), self.slotToggleHelp)
-        QObject.connect(self.releaseNotes, SIGNAL("clicked()"), self.showReleaseNotes)
+        self.connect(self.debugShortCut,    SIGNAL("activated()"),  self.toggleDebug)
+        self.connect(self.consoleShortCut,  SIGNAL("activated()"),  self.toggleConsole)
+        self.connect(self.cursorShortCut,   SIGNAL("activated()"),  self.toggleCursor)
+        self.connect(self.themeShortCut,    SIGNAL("activated()"),  self.toggleTheme)
+        self.connect(self.ui.buttonNext,    SIGNAL("clicked()"),    self.slotNext)
+        self.connect(self.ui.buttonBack,    SIGNAL("clicked()"),    self.slotBack)
+        self.connect(self.ui.toggleHelp,    SIGNAL("clicked()"),    self.slotToggleHelp)
+        self.connect(self.ui.releaseNotes,  SIGNAL("clicked()"),    self.showReleaseNotes)
+
+    def updateStyle(self):
+        self.setStyleSheet(file(self._style).read())
+
+    def toggleTheme(self):
+        if self._style == ctx.consts.stylesheet:
+            self._style = ctx.consts.alternatestylesheet
+        else:
+            self._style = ctx.consts.stylesheet
+        self.updateStyle()
 
     def toggleConsole(self):
         import os
         os.system("TERM='xterm' %s/data/consoleq" % ctx.consts.data_dir)
 
     def toggleCursor(self):
-        if self.ui.cursor().shape() == QtGui.QCursor(Qt.ArrowCursor).shape():
+        if self.cursor().shape() == QtGui.QCursor(Qt.ArrowCursor).shape():
             raw = QtGui.QPixmap(":/gui/pics/pardusman-icon.png")
             raw.setMask(raw.mask())
-            self.ui.setCursor(QtGui.QCursor(raw,2,2))
+            self.setCursor(QtGui.QCursor(raw,2,2))
         else:
-            self.ui.unsetCursor()
+            self.unsetCursor()
 
     # show/hide help text
     def slotToggleHelp(self):
-        if self.helpContent.isVisible():
-            self.helpContent.hide()
-            self.toggleHelp.setText(_("Show Help"))
+        if self.ui.helpContent.isVisible():
+            self.ui.helpContent.hide()
+            self.ui.toggleHelp.setText(_("Show Help"))
         else:
-            self.helpContent.show()
-            self.toggleHelp.setText(_("Hide Help"))
-        _w = self.mainStack.currentWidget()
+            self.ui.helpContent.show()
+            self.ui.toggleHelp.setText(_("Hide Help"))
+        _w = self.ui.mainStack.currentWidget()
         _w.update()
 
     # show/hide debug window
@@ -98,8 +113,8 @@ class Widget(Ui_YaliMain):
 
     # returns the id of current stack
     def getCur(self, d):
-        new   = self.mainStack.currentIndex() + d
-        total = self.mainStack.count()
+        new   = self.ui.mainStack.currentIndex() + d
+        total = self.ui.mainStack.count()
         if new < 0: new = 0
         if new > total: new = total
         return new
@@ -111,7 +126,7 @@ class Widget(Ui_YaliMain):
 
     # execute next step
     def slotNext(self,dryRun=False):
-        _w = self.mainStack.currentWidget()
+        _w = self.ui.mainStack.currentWidget()
         ret = True
         if not dryRun:
             ret = _w.execute()
@@ -121,20 +136,20 @@ class Widget(Ui_YaliMain):
 
     # execute previous step
     def slotBack(self):
-        _w = self.mainStack.currentWidget()
+        _w = self.ui.mainStack.currentWidget()
         if _w.backCheck():
             self.stackMove(self.getCur(self.moveInc * -1))
         self.moveInc = 1
 
     # move to id numbered stack
     def stackMove(self, id):
-        if not id == self.mainStack.currentIndex() or id==0:
-            self.mainStack.setCurrentIndex(id)
-            _w = self.mainStack.currentWidget()
-            self.screenName.setText(_w.title)
-            self.screenDescription.setText(_w.desc)
-            self.screenIcon.setPixmap(QtGui.QPixmap(":/gui/pics/%s.png" % (_w.icon or "pardus")))
-            self.helpContent.setText(_w.help)
+        if not id == self.ui.mainStack.currentIndex() or id==0:
+            self.ui.mainStack.setCurrentIndex(id)
+            _w = self.ui.mainStack.currentWidget()
+            self.ui.screenName.setText(_w.title)
+            self.ui.screenDescription.setText(_w.desc)
+            self.ui.screenIcon.setPixmap(QtGui.QPixmap(":/gui/pics/%s.png" % (_w.icon or "pardus")))
+            self.ui.helpContent.setText(_w.help)
             # shown functions contain necessary instructions before
             # showing a stack ( updating gui, disabling some buttons etc. )
             ctx.mainScreen.processEvents()
@@ -147,7 +162,7 @@ class Widget(Ui_YaliMain):
     def createWidgets(self, screens=[]):
         if not self.screenData:
             self.screenData = screens
-        self.mainStack.removeWidget(self.page)
+        self.ui.mainStack.removeWidget(self.ui.page)
         for screen in screens:
             _scr = screen.Widget()
 
@@ -160,37 +175,37 @@ class Widget(Ui_YaliMain):
             # disable navigation buttons before the execute.
             weave_object_method(disableNavButtonsAspect, _scr, "execute")
 
-            self.mainStack.addWidget(_scr)
+            self.ui.mainStack.addWidget(_scr)
 
         weave_all_object_methods(ctx.debugger.aspect, self)
         self.stackMove(0)
 
     # Enable/Disable buttons
     def disableNext(self):
-        self.buttonNext.setEnabled(False)
+        self.ui.buttonNext.setEnabled(False)
 
     def disableBack(self):
-        self.buttonBack.setEnabled(False)
+        self.ui.buttonBack.setEnabled(False)
 
     def enableNext(self):
-        self.buttonNext.setEnabled(True)
+        self.ui.buttonNext.setEnabled(True)
 
     def enableBack(self):
-        self.buttonBack.setEnabled(True)
+        self.ui.buttonBack.setEnabled(True)
 
     def isNextEnabled(self):
-        return self.buttonNext.isEnabled()
+        return self.ui.buttonNext.isEnabled()
 
     def isBackEnabled(self):
-        return self.buttonBack.isEnabled()
+        return self.ui.buttonBack.isEnabled()
 
     # processEvents
     def processEvents(self):
-        QObject.emit(self.ui,SIGNAL("signalProcessEvents"))
+        QObject.emit(self, SIGNAL("signalProcessEvents"))
 
     def showReleaseNotes(self):
         # make a release notes dialog
-        r = GUIRelNotes.Widget(self.ui)
+        r = GUIRelNotes.Widget(self)
         d = Dialog(_('Release Notes'), r, self)
         d.resize(500,400)
         d.exec_()

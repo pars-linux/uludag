@@ -21,6 +21,7 @@ from yali4.partitionrequest import partrequests
 # style sheet
 import yali4.sysutils
 consts.stylesheet = join(consts.data_dir, "data/%s.qss" % (yali4.sysutils.checkYaliOptions("theme") or options.theme))
+consts.alternatestylesheet = join(consts.data_dir, "data/oxygen.qss")
 
 # lock for format request
 requestsCompleted = False

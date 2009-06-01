@@ -27,7 +27,7 @@ from yali4.gui.Ui.connectionlist import Ui_connectionWidget
 class ResizeWidget(QtGui.QWidget):
 
     def __init__(self, dev, part, rootWidget):
-        QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
+        QtGui.QWidget.__init__(self, ctx.mainScreen)
         self.ui = Ui_PartResizeWidget()
         self.ui.setupUi(self)
         self.rootWidget = rootWidget
@@ -58,7 +58,7 @@ class ResizeWidget(QtGui.QWidget):
                 }
         """)
 
-        self.resize(ctx.mainScreen.ui.size())
+        self.resize(ctx.mainScreen.size())
         self.dev = dev
         self.part = part
         minSize = self.part.getMinResizeMB()
@@ -104,7 +104,7 @@ class ResizeWidget(QtGui.QWidget):
 class AutoPartQuestionWidget(QtGui.QWidget):
 
     def __init__(self, rootWidget, partList):
-        QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
+        QtGui.QWidget.__init__(self, ctx.mainScreen)
         self.ui = Ui_autoPartQuestion()
         self.ui.setupUi(self)
         self.setStyleSheet("""
@@ -200,7 +200,7 @@ class ConnectionItem(QtGui.QListWidgetItem):
 class ConnectionWidget(QtGui.QWidget):
 
     def __init__(self, rootWidget):
-        QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
+        QtGui.QWidget.__init__(self, ctx.mainScreen)
         self.ui = Ui_connectionWidget()
         self.ui.setupUi(self)
         self.setStyleSheet("""

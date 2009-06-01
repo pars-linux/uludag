@@ -43,7 +43,7 @@ class Runner:
     def __init__(self):
 
         # Qt Stuff
-        self._app = QtGui.QApplication(sys.argv)
+        ctx._app = self._app = QtGui.QApplication(sys.argv)
 
         # Yali..
         self._window = YaliWindow.Widget()
@@ -71,12 +71,12 @@ class Runner:
         ctx.yali = yali4.installer.Yali(install_type, install_plugin)
 
         # These shorcuts for developers :)
-        prevScreenShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F1),self._window.ui)
-        nextScreenShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F2),self._window.ui)
+        prevScreenShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F1),self._window)
+        nextScreenShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F2),self._window)
         QObject.connect(prevScreenShortCut, SIGNAL("activated()"), self._window.slotBack)
         QObject.connect(nextScreenShortCut, SIGNAL("activated()"), self._window.slotNext)
 
-        # yimirtaShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F5),self._window.ui)
+        # yimirtaShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F5),self._window)
         # QObject.connect(yimirtaShortCut, SIGNAL("activated()"), ctx.yali.toggleYimirta)
 
         # visual debugger
@@ -103,7 +103,7 @@ class Runner:
         # base connections
         QObject.connect(self._app, SIGNAL("lastWindowClosed()"),
                         self._app, SLOT("quit()"))
-        QObject.connect(ctx.mainScreen.ui, SIGNAL("signalProcessEvents"),
+        QObject.connect(ctx.mainScreen, SIGNAL("signalProcessEvents"),
                         self._app.processEvents)
 
         # set the current screen ...
@@ -118,14 +118,14 @@ class Runner:
         self._app.setStyle(QtGui.QStyleFactory.create('Plastique'))
 
         # We want it to be a full-screen window.
-        self._window.ui.resize(self._app.desktop().size())
-        self._window.ui.setMaximumSize(self._app.desktop().size())
-        self._window.ui.move(0,0)
-        self._window.ui.show()
+        self._window.resize(self._app.desktop().size())
+        self._window.setMaximumSize(self._app.desktop().size())
+        self._window.move(0,0)
+        self._window.show()
         ctx.yali.info.updateMessage()
 
         # For testing..
-        # self._window.ui.resize(QSize(800,600))
+        # self._window.resize(QSize(800,600))
 
         # Run run run
         self._app.exec_()

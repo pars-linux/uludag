@@ -62,7 +62,7 @@ class windowTitle(QtGui.QFrame):
 
 class Dialog(QtGui.QDialog):
     def __init__(self, t, w, parent=None, closeButton = True):
-        QtGui.QDialog.__init__(self, ctx.mainScreen.ui)
+        QtGui.QDialog.__init__(self, ctx.mainScreen)
 
         self.gridlayout = QtGui.QGridLayout(self)
         self.gridlayout.setMargin(0)
@@ -184,7 +184,7 @@ class RebootWidget(QtGui.QWidget):
 class InformationWindow(QtGui.QWidget):
 
     def __init__(self, message):
-        QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
+        QtGui.QWidget.__init__(self, ctx.mainScreen)
         self.setObjectName("InfoWin")
         self.resize(280,50)
         self.setStyleSheet("""
@@ -238,8 +238,8 @@ class InformationWindow(QtGui.QWidget):
 
     def updateMessage(self, message=None, progress=False):
         self.progressBar.setVisible(progress)
-        self.move(ctx.mainScreen.ui.width()/2 - self.width()/2,
-                  ctx.mainScreen.ui.height() - self.height()/2 - 26)
+        self.move(ctx.mainScreen.width()/2 - self.width()/2,
+                  ctx.mainScreen.height() - self.height()/2 - 26)
         if message:
             self.label.setText(message)
         ctx.mainScreen.processEvents()
@@ -260,7 +260,7 @@ class InformationWindow(QtGui.QWidget):
 class Yimirta(QtGui.QWidget):
 
     def __init__(self, notifier):
-        QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
+        QtGui.QWidget.__init__(self, ctx.mainScreen)
         Pix = QtGui.QPixmap(':/gui/pics/working.png')
         Pix2= QtGui.QPixmap(':/gui/pics/core.png')
         self.setObjectName("Yimirta")
@@ -297,8 +297,8 @@ class Yimirta(QtGui.QWidget):
     def goturBeniGittiginYere(self):
         self.timer.start(self.remain)
         self.remain -= 1
-        x = random.randint(20, ctx.mainScreen.ui.width() - 20 - self.width())
-        y = random.randint(20, ctx.mainScreen.ui.height() - 20 - self.height())
+        x = random.randint(20, ctx.mainScreen.width() - 20 - self.width())
+        y = random.randint(20, ctx.mainScreen.height() - 20 - self.height())
         self.move(x,y)
         if self.oldscore == self.score:
             self.score -= 10
