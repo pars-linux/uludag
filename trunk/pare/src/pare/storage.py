@@ -14,7 +14,10 @@ import os
 import parted
 from errors import *
 import pare.utils.sysblock as sysblock
+from pare.diskdevice import Disk
+from pare.lvmdevice import VolumeGroup, LogicalVolume
 from pare.partition import *
+import pare.parteddata as parteddata
 
 
 import logging
@@ -22,69 +25,59 @@ log = logging.getLogger("pare")
 
 
 class Storage(object):
-    _partitionTable = {}
-    _diskTable = {}
-    _lvmTable = {}
-    _raidTable = {}
+    _devices = []
+
 
     def __init__(self):
-        if storage.init():
+        self.populate()
+    
+    def populate(self):
+        if sysblock.init_disks():
             for disk in sysblock.disks:
-                if isinstance(disk, storage.Disk):
-                    self._diskTable[disk.path] =  disk
+                if isinstance(disk, Disk):
+                    self._devices.append(disk)
                 else:
                     raise PareError("Filling Disk failed!")
-            for disk in self._diskTable.values():    
-                self._update(disk)
-
-    #FIXME:ready can change Partition existing and setup Parameter!!! 
-    def _addPartitionDict(self, disk, part, ready=True):
-
-        def getParePartition(disk, part):
-            geom = part.geometry
-            size = part.getSize()
-            print "### %s partition.geom:%s partition.size:%s" % (disk.path, geom.start, size )
-            if part.number >= 1:
-                filesystem = ""
-                if part.filesystem:
-                    filesystem = part.filesystem.name
-                #FIXME:Check LVM, RAID, Partition assignment
-                if part.type & parted.PARTITION_LVM:
-                    return PhysicalVolume(disk, part, part.number, size, geom.start, geom.end, filesystem, ready)
-                elif part.type & parted.PARTITION_RAID:
-                    return RaidMember(disk, part, part.number, size, geom.start, geom.end, filesystem, ready)
+                
+        if sysblock.init_vgs():
+            print "LVM BULUNDU"
+            for vg in sysblock.vgs:
+                if isinstance(vg, VolumeGroup):
+                    #vg = VolumeGroup(name=info[0], size=info[1], uuid=info[2], maxPV=info[3], pvCount=info[4], peSize=info[5], peCount=info[6], peFree=info[7], freespace=info[8], maxLV=info[9], existing=1)
+                    self._devices.append(vg)
                 else:
-                    if part.type & parted.PARTITION_EXTENDED:
-                        filesystem = "extended"
-                        print "disk %s partition.name:%s" % (disk.path, part.path)
-                        return Partition(disk, part, part.number, size, geom.start, geom.end, filesystem, ready)
-
-            elif part.type & parted.PARTITION_FREESPACE and size >= 10:
-                return FreeSpace(disk, part, size, geom.start, geom.end)
-                print "FreeSpace disk %s partition.name:%s" % (disk.path, part.name)
-
-        if not self._partitionTable.has_key(disk.path):
-            #print "getParePartition(disk,part).name:%s" % getParePartition(disk,part)
-            self._partitionTable[disk.path] = [getParePartition(disk,part)]
-        else:
-            #print "getParePartition(disk,part).name:%s" % getParePartition(disk,part)
-            self._partitionTable[disk.path].append(getParePartition(disk, part))
-
-    def _update(self, disk):
-
-            print "len:%d" % len(disk.getAllPartitions())
-            for part in disk.getAllPartitions():
-                print "part.path name:%s" % part.path
-                self._addPartitionDict(disk, part)
+                    raise PareError("Filling Volume Group Failed!")
 
     @property
     def disks(self):
-        return self._diskTable.values()
+        return [d for d in self._devices if d.type == parteddata.disk]
+    
+    @property
+    def volumeGroups(self):
+        return [d for d in self._devices if d.type == parteddata.volumeGroup]
+    
+    @property
+    def logicalVolumes(self):
+        lvs = []
+        for vg in self.volumeGroups:
+            lvs.extend(vg.lvs)
+        return lvs
+    
+    def physicalVolumes(self, disk):
+        _physicalVolumes = []
+       
+        for part in disk.partitions:
+            if parteddata.physicalVolume == part.type:
+                print "disk.name %s part.name %s" % (disk.name,part.name)
+                _physicalVolumes.append(part)
+        
+        return _physicalVolumes
+   
+
 
     def diskPartitions(self, disk):
-        return self._partitionTable[disk]
-
-
+        return disk.partitions
+    
     def getPartition(self, disk, num):
         for part in self.diskPartitions(disk):
             if part.minor == num:
@@ -125,31 +118,23 @@ class Storage(object):
         if not manualGeomStart:
             geom = parePartition.partition.geometry
             if geom.length >= size:
-                if pareDisk.addPartition(parePartitionType, filesystem, geom.start, geom.start + size,flags):
-                    #FIXME:Check partitions existing state conditions?
-                    self._update(pareDisk)
-                else:
+                if not pareDisk.addPartition(parePartitionType, filesystem, geom.start, geom.start + size,flags):
                     raise DeviceError, ("Not enough free space on %s to create new partition" % self.getPath())
         else:
-            if pareDisk.addPartition(type,filesystem,manualGeomStart,manualGeomStart + size, flags):
-                #FIXME:Check partitions existing state conditions?
-                self._update(pareDisk)
-            else:
+            if not pareDisk.addPartition(type,filesystem,manualGeomStart,manualGeomStart + size, flags):
                 raise DeviceError, ("Not enough free space on %s to create new partition" % self.getPath())
 
 
     def deletePartition(self, pareDisk, parePartition):
-        if not self._diskTable[pareDisk.path].deletePartition(parePartition.partition):
+        if not pareDisk.deletePartition(parePartition.partition):
             raise PareError("Partition delete failed!")
-        else:
-            self._update(pareDisk)
-            return True
+        
+        return True
 
-    def deleteAllPartitions(self, pareDisk, parePartition):
-        if not self._partitionTable[pareDisk.path].deleteAllPartition():
+    def deleteAllPartitions(self, pareDisk):
+        if not pareDisk.deleteAllPartition():
             raise PareError("All Partitions delete failed!")
-        else:
-            return True
+        return True
 
     def resizePartition(self, pareDisk, parePartition, pareFileSystem, size):
         if isinstance(pareFileSystem, str):
@@ -167,6 +152,5 @@ class Storage(object):
            else:
                return True
 
-    def createVolumeGroup(self):
-        pass
+
 
