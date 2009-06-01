@@ -1,7 +1,7 @@
 /* Jan Mette <funkyou@kdemod.ath.cx> */
 /* Gökmen GÖKSEL <gokmen@pardus.org.tr> */
 
-#YaliMain {
+#Yali {
        background-image:url(':/images/background.svg');
        background-repeat: no-repeat;
        background-position: center top;

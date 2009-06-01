@@ -1,4 +1,4 @@
-#YaliMain {
+QWidget#Yali {
        background-image:url(':/images/background-2009.svg');
        background-repeat: no-repeat;
        background-position: center top;
