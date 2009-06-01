@@ -11,25 +11,27 @@
 
 from pare.errors import LVMError
 from pare.utils import sysutils
+import re
 import gettext
+
 
 _ = lambda x: gettext.ldgettext("pare", x)
 
 MAX_LV_SLOTS = 256
 
-def _lvmclear(*args):
+def _lvmclear(args):
     try:
         return sysutils.run("lvm",args)
     except Exception:
         #FIXME:log.error
         raise LVMError, args[0]
 
-def _lvmcapture(*args):
+def _lvmcapture(args):
     try:
         return sysutils.run("lvm", args, capture=True)
-    except Exception:
+    except RuntimeError, (errno, msg):
         #FIXME:log.error
-        raise LVMError, args[0]
+        raise LVMError, msg
 
 def checkLVM():
     check = False
@@ -224,25 +226,31 @@ def vgreduce(vg_name, pv_list, rm=False):
 def vginfo(vg_name):
     args = ["vgs", "--noheadings", "--nosuffix"] + \
             ["--units", "m"] + \
-            ["-o", "uuid,size,free,extent_size,extent_count,free_count,pv_count"] + \
+            ["-o", "name,size,uuid,max_pv,pv_count,vg_extent_size,vg_extent_count,vg_free_count,vg_free,max_lv"] + \
             config_args + \
             [vg_name]
 
     buffer = _lvmcapture(args)
 
+    #print "buffer:%s" % buffer
     buffer_dict = buffer.split()
-    if len(info) != 7:
+    #print "len(buffer_dict) :%d" % len(buffer_dict) 
+    if len(buffer_dict) != 10:
         raise LVMError(_("vginfo failed for %s" % vg_name))
 
     info = {}
 
-    (info['uuid'],
-    info['size'],
-    info['free'],
-    info['pe_size'],
-    info['pe_count'],
-    info['pe_free'],
-    info['pv_count']) = buffer_dict
+    (info['name'],
+     info['size'],
+     info['uuid'],
+     info['max_pv'],
+     info['pv_count'],
+     info['vg_extent_size'],
+     info['vg_extent_count'],
+     info['vg_free_count'],
+     info['vg_free'],
+     info['max_lv'],
+    ) = buffer_dict
 
     return info
 
@@ -309,23 +317,46 @@ def lvdeactivate(vg_name, lv_name):
 
     return _lvmclear(args)
 
-def lvinfo(vg_name):
+def lvinfo(lv_path):
     args = ["lvs", "--noheadings", "--nosuffix"] + \
             ["--units", "m"] + \
-            ["-o", "lv_uuid,lv_size,vg_name"] + \
+            ["-o", "lv_name,lv_uuid,lv_size,vg_name"] + \
             config_args + \
-            [vg_name]
+            [lv_path]
 
+    print "args:%s" % args
     buffer = _lvmcapture(args)
 
     buffer_dict = buffer.split()
-    if len(info) != 7:
-        raise LVMError(_("lvinfo failed for %s" % vg_name))
+    if len(buffer_dict) != 4:
+        raise LVMError(_("lvinfo failed for %s" % lv_path))
 
     info = {}
 
-    (info['lv_uuid'],
-    info['lv_size'],
-    info['vg_name']) = buffer_dict
+    (info['lv_name'],
+     info['lv_uuid'],
+     info['lv_size'],
+     info['vg_name']) = buffer_dict
 
     return info
+
+def lvlist(vg_name):
+    _lvs = []
+    args = ["lvs", "--noheadings",
+            "--nosuffix", "--options", "vg_name,lv_name"]
+    
+    info = {}
+    lines = None
+    lines = _lvmcapture(args).strip().split("\n")
+    print lines
+    for line in lines:
+        buffer = line.split()
+        
+        print "len(buffer) %d" % len(buffer)
+        (info['vg_name'], info['lv_name']) = buffer 
+        #print "vg:%s lv:%s" % (info['vg_name'],info['lv_name'])
+        if vg_name == info['vg_name']:
+            _lvs.append(info['lv_name'])
+    
+    return _lvs
+           
