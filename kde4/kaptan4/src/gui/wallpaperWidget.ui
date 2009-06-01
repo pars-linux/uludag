@@ -53,6 +53,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="buttonChooseWp">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="text">
         <string>Choose Wallpaper</string>
        </property>
@@ -60,6 +63,9 @@
      </item>
      <item>
       <widget class="QCheckBox" name="checkBox">
+       <property name="styleSheet">
+        <string notr="true">color: white</string>
+       </property>
        <property name="text">
         <string>Don't change wallpaper</string>
        </property>

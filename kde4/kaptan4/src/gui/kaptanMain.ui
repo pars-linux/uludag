@@ -62,7 +62,7 @@ QLabel#labelMenu{
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgba(255, 255, 255, 122);
-</string>
+color: white</string>
           </property>
           <property name="text">
            <string/>
@@ -107,6 +107,9 @@ QLabel#labelMenu{
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
          <widget class="QLabel" name="labelDesc">
+          <property name="styleSheet">
+           <string notr="true">color: white</string>
+          </property>
           <property name="text">
            <string>Welcome to Kaptan!</string>
           </property>

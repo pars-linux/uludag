@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Mouse</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">color: white</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">

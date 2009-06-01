@@ -14,7 +14,8 @@
    <string>Menu</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QLabel#labelMenuDescription{
+   <string notr="true">
+QLabel#labelMenuDescription{
      border-style: outset;
      border-color: beige;
      border-width: 2px;
@@ -31,6 +32,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <widget class="QLabel" name="menuLabel">
+           <property name="styleSheet">
+            <string notr="true">color: white</string>
+           </property>
            <property name="text">
             <string>Select a menu style:</string>
            </property>
@@ -38,6 +42,9 @@
          </item>
          <item>
           <widget class="QComboBox" name="menuStyles">
+           <property name="styleSheet">
+            <string notr="true">color: white</string>
+           </property>
            <item>
             <property name="text">
              <string>Kick-off (Advanced Menu)</string>
@@ -60,7 +67,7 @@
        <item>
         <widget class="QLabel" name="labelMenuDescription">
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">color: white</string>
          </property>
          <property name="text">
           <string/>
