@@ -58,14 +58,14 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Fail if no packages provide backend
         self.checkBackend()
 
+        # Build item list
+        self.buildItemList()
+
         # Build menu
         self.buildMenu()
 
-        # We don't need a filter
-        self.hideFilter()
-
-        # Build item list
-        self.buildItemList()
+        # Build filter
+        self.buildFilter()
 
         # Signals
         self.connect(self.comboFilter, QtCore.SIGNAL("currentIndexChanged(int)"), self.slotFilterChanged)
@@ -114,12 +114,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         return widget
 
-    def addItem(self, id_, name="", description=""):
+    def addItem(self, id_, name="", description="", os_type=""):
         """
             Adds an item to list.
         """
         icon = kdeui.KIcon("tux")
-        type_ = "entry"
+        type_ = os_type
 
         # Build widget and widget item
         widget = self.makeItemWidget(id_, name, description, type_, icon, None)
@@ -138,6 +138,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
         # Clear list
         self.clearItemList()
+        self.systems = self.iface.getSystems()
 
         def handleList(package, exception, args):
             if exception:
@@ -146,7 +147,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             else:
                 entries = args[0]
                 for entry in entries:
-                    self.addItem(entry["index"], entry["title"], entry["root"])
+                    self.addItem(entry["index"], entry["title"], entry["root"], entry["os_type"])
 
         self.iface.getEntries(func=handleList)
 
@@ -155,6 +156,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Checks if item matches selected filter.
         """
         filter = str(self.comboFilter.itemData(self.comboFilter.currentIndex()).toString())
+        if filter != "all":
+            if filter != item.getType():
+                return False
         return True
 
     def buildFilter(self):
@@ -164,6 +168,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.comboFilter.clear()
         self.comboFilter.addItem(kdecore.i18n("All Items"), QtCore.QVariant("all"))
 
+        for name, (label, mandatory, optional) in self.systems.iteritems():
+            self.comboFilter.addItem(label, QtCore.QVariant(name))
+
     def buildMenu(self):
         """
             Builds "Add New" button menu.
@@ -172,10 +179,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         menu = QtGui.QMenu(self.pushNew)
         self.pushNew.setMenu(menu)
 
-        # New action
-        action_user = QtGui.QAction(kdecore.i18n("Boot Entry"), self)
-        action_user.setData(QtCore.QVariant("boot"))
-        menu.addAction(action_user)
+        # Actions
+        for name, (label, mandatory, optional) in self.systems.iteritems():
+            action_user = QtGui.QAction(label, self)
+            action_user.setData(QtCore.QVariant(name))
+            menu.addAction(action_user)
 
     def showEditBox(self, id_, type_=None):
         """
@@ -196,6 +204,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     kdeui.KMessageBox.error(self, unicode(e))
                 return
             """
+
+        print type_, id_
 
         if self.animationLast == ANIM_HIDE:
             self.animationLast = ANIM_SHOW
@@ -237,7 +247,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Edit button clicked, show edit box.
         """
         widget = self.sender()
-        self.showEditBox(widget.getId(), "entry")
+        self.showEditBox(widget.getId(), widget.getType())
 
     def slotItemDelete(self):
         """

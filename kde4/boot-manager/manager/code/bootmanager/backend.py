@@ -39,6 +39,12 @@ class Interface:
             return None
         return "grub"
 
+    def getSystems(self, func=None):
+        if func:
+            self.link.Boot.Loader[self.package].listSystems(async=func)
+        else:
+            return self.link.Boot.Loader[self.package].listSystems()
+
     def getEntries(self, func=None):
         if func:
             self.link.Boot.Loader[self.package].listEntries(async=func)
