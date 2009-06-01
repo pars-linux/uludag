@@ -35,4 +35,4 @@ PARTITION_NORMA = parted.PARTITION_NORMAL
 PARTITION_EXTENDED = parted.PARTITION_EXTENDED
 PARTITION_LOGICAL = parted.PARTITION_LOGICAL
 
-deviceType, partitionType, lvmType, raidType, freeSpaceType, volumeGroupType, physicalVolumeType, logicalVolumeType, raidMemberType, raidArray = range(10)
+disk, partition, physicalVolume, raidMember, freeSpace, volumeGroup, logicalVolume, raidArray = range(8)
