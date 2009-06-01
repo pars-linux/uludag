@@ -43,7 +43,7 @@ QLabel#labelMenuDescription{
          <item>
           <widget class="QComboBox" name="menuStyles">
            <property name="styleSheet">
-            <string notr="true">color: white</string>
+            <string notr="true"/>
            </property>
            <item>
             <property name="text">
