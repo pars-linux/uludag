@@ -1,6 +1,5 @@
 * Kernel/initramfs/drivers (Ozan Çağlayan)
     - Find a way for being able to ship saa7134-alsa kernel module (#3478),
-    - findfs in initramfs hangs while trying to probe missing floppy devices (Reported upstream),
     - Don't mount rootfs by giving 'auto' as type, should be fixed in trunk, try it,
     - s2disk problems/support,
 
