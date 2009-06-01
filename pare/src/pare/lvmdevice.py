@@ -19,12 +19,12 @@ import math
 import os
 from pare.utils import lvm 
 from pare.partition import PhysicalVolume
-import pare.parteddata 
+from pare.parteddata import volumeGroup, logicalVolume 
 from pare.errors import *
 
 class VolumeGroup(object):
-    _type = volumeGroupType 
-    _devBlockDir = "/dev/mapper" # FIXME:ReCheck VG path not to give acces_isSetups error
+    _type = volumeGroup 
+    _devBlockDir = "/dev" # FIXME:ReCheck VG path not to give acces_isSetups error
     _pvs = []
     _lvs = []
     _exists = None
@@ -32,7 +32,7 @@ class VolumeGroup(object):
     def __init__(self, name, size=None, uuid=None, 
                  pvs=None, maxPV=None, pvCount=None, 
                  peSize=None, peCount=None, peFree=None,
-                 lvNames=[], maxLV=None, existing=0):
+                 freespace=None, maxLV=None, existing=0):
 
         """
             name -- device node's basename
@@ -47,7 +47,6 @@ class VolumeGroup(object):
             pvCount -- number of PVs in this VG
             peCount -- number of PE in this VG
             peFree -- number of free PE in this VG
-            lvNames -- list of LVs in this VG
             maxLV -- max number of LVs in this VG
         """
 
@@ -61,6 +60,7 @@ class VolumeGroup(object):
         self._peSize = peSize
         self._peCount = peCount
         self._peFree = peFree
+        self._freeSpace = freespace
         self._maxLV = maxLV
 
         if pvs is not None:
@@ -70,7 +70,19 @@ class VolumeGroup(object):
 
         if self._peSize is None:
             self._peSize = 4 # MB units 
-
+        
+        self._update()
+            
+    def _update(self):
+        lvs = lvm.lvlist(self.name)
+        for lv in lvs:
+            info = lvm.lvinfo("%s/%s" % (self.path, lv))
+            if info:
+                self._lvs.append(LogicalVolume(name=info['lv_name'], vg=self, size=info['lv_size'], uuid=info['lv_uuid'], existing=1))
+    @property
+    def type(self):
+        return self._type
+    
     def create(self):
         if self.exists:
             raise VolumeGroupError("Device is already exist")
@@ -241,14 +253,7 @@ class VolumeGroup(object):
 
     @property
     def freeSpace(self):
-        used = 0
-        size = self.size
-        for lv in self.lvs:
-            used += self._align(lv.size, roundup=True)
-
-        free = size - used
-
-        return free
+        return self._freeSpace
 
     @property
     def freeExtents(self):
@@ -270,7 +275,7 @@ class LogicalVolume():
     _devBlockDir = "/dev/mapper"
     _vg = None
 
-    def __init__(self, name, vg, size=None, uuid=None, format=None,existing=0):
+    def __init__(self, name, vg, size=None, uuid=None, format=None, existing=0):
         if isinstance(vg, list):
             if len(vg) != 1:
                 raise ValueError("Requires a single LVMVolumeGroupDevice instance")
@@ -289,13 +294,17 @@ class LogicalVolume():
         if not self._exists:
             self.vg.addLV(self)
 
+    @property
+    def type(self):
+        return self._type
+    
     def create(self):
         if self.exists:
             raise LogicalVolumeError("logical volume already exists!")
         #FIXME:fix self.setupParents()
         self.setupParents()
 
-        lvm.lvcreate(self.vg.name, self.lvName, self.size)
+        lvm.lvcreate(self.vg.name, self.name, self.size)
         self._exists = True
         self.setup()
 
@@ -307,7 +316,7 @@ class LogicalVolume():
         #Setup Parents( maybe raid parts) so lvm can remove lv
         #FIXME:fix self.setupParents()
         self.vg.setupParents()
-        lvm.lvremove(self.vg, self.lvName)
+        lvm.lvremove(self.vg, self.name)
         self._exists = False
 
     def resize(self):
@@ -323,7 +332,7 @@ class LogicalVolume():
         #FIXME:add udev_settle()
         #udev_settle(timeout=10)
 
-        lvm.lvresize(self.vg.name, self.lvName(), self.size)
+        lvm.lvresize(self.vg.name, self.name, self.size)
 
 
     @property
@@ -338,7 +347,7 @@ class LogicalVolume():
             return
 
         self.setupParents()
-        lvm.lvactivate(self.vg.name, self.lvName)
+        lvm.lvactivate(self.vg.name, self.name)
 
     def teardown(self):
         if not self.exists:
@@ -350,7 +359,7 @@ class LogicalVolume():
             self.format.teardown()
 
         if self.status:
-            lvm.lvdeactivate(self.vg, self.lvName)
+            lvm.lvdeactivate(self.vg, self.name)
 
     def setupParents(self):
         self.vg.setup() 
@@ -367,7 +376,7 @@ class LogicalVolume():
 
     @property
     def path(self):
-        return "%s/%s-%s" % (self._devBlockDir, self.vg.name.replace("-", "--"), self.lvName.replace("-", "--"))
+        return "%s/%s-%s" % (self._devBlockDir, self.vg.name.replace("-", "--"), self.name.replace("-", "--"))
 
     @property
     def vg(self):
@@ -386,9 +395,9 @@ class LogicalVolume():
     size = property(lambda p: p._getSize(), lambda pi,f: p._setSize(f))
 
     @property
-    def name(self):
-        return "%s-%s" % (self.vg.name, self._name)
+    def lvName(self):
+        return "%s-%s" % (self.vg.name, self.name)
 
     @property
-    def lvName(self):
+    def name(self):
         return self._name
