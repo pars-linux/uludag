@@ -76,7 +76,8 @@ class NmApplet(plasmascript.Applet):
 
         # Listen data transfers from systemmonitor data engine ..
         self.lastActiveDevice = None
-        self.listenDataTransfers()
+        # FIXME , systemmonitor dataengine makes plasma crash !!
+        # self.listenDataTransfers()
 
         self.dialog = Plasma.Dialog()
         self.dialog.setWindowFlags(Qt.Popup)
@@ -161,7 +162,7 @@ class NmApplet(plasmascript.Applet):
                 msg = "Connected to <b>%s</b> IP: %s" % (args[0], args[2])
                 ip = args[2]
                 self.lastActiveDevice = lastDevice
-                self.parseSources()
+                # FIXME self.parseSources()
                 self.popup.setConnectionStatus(package, "Connected")
                 self.icon.setSvg(self.defaultIcon)
                 solidState = Solid.Networking.Connected
