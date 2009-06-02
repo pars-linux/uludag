@@ -203,6 +203,34 @@ class RepositorySettings(SettingsTab):
 class ProxySettings(SettingsTab):
     def setupUi(self):
         self.settings.noProxyButton.setChecked(True)
+        self.__getProxySettings()
+
+    def __getProxySettings(self):
+        config = self.iface.getConfig()
+        httpProxy = httpProxyPort = ftpProxy = ftpProxyPort = httpsProxy = httpsProxyPort = None
+
+        http = config.get("general", "http_proxy")
+        if http and http != "None":
+            httpProxy, httpProxyPort = http[7:].split(":")
+            self.settings.httpProxy.setText(httpProxy)
+            self.settings.httpProxyPort.setValue(int(httpProxyPort))
+
+        https = config.get("general", "https_proxy")
+        if https and https != "None":
+            httpsProxy, httpsProxyPort = https[8:].split(":")
+            self.settings.httpsProxy.setText(httpsProxy)
+            self.settings.httpsProxyPort.setValue(int(httpsProxyPort))
+
+        ftp = config.get("general", "ftp_proxy")
+        if ftp and ftp != "None":
+            ftpProxy, ftpProxyPort = ftp[6:].split(":")
+            self.settings.ftpProxy.setText(ftpProxy)
+            self.settings.ftpProxyPort.setValue(int(ftpProxyPort))
+
+        if httpProxy or ftpProxy or httpsProxy:
+            self.settings.useProxyButton.setChecked(True)
+            if (httpProxy == httpsProxy == ftpProxy) and (httpProxyPort == httpsProxyPort == ftpProxyPort):
+                self.settings.useHttpForAll.setChecked(True)
 
     def connectSignals(self):
         self.connect(self.settings.useHttpForAll, SIGNAL("toggled(bool)"), self.useHttpToggled)
