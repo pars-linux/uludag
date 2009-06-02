@@ -21,7 +21,8 @@ from gui.searchWidget import Ui_searchWidget
 
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    isNepomukOn = 0
+    searchSettings = {}
+    searchSettings["hasChanged"] = False
     # Set title and description for the information widget
     title = ki18n("Some catchy title about desktop search")
     desc = ki18n("Some catchy description desktop search")
@@ -38,31 +39,25 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         if isNepomuk.lower() == "true":
             self.ui.checkBoxNepomuk.setChecked(True)
+            self.__class__.searchSettings["state"] = True
         else:
             self.ui.checkBoxNepomuk.setChecked(False)
+            self.__class__.searchSettings["state"] = False
 
         self.ui.checkBoxNepomuk.connect(self.ui.checkBoxNepomuk, SIGNAL("toggled(bool)"), self.activateNepomuk)
 
     def activateNepomuk(self, state):
-        config = KConfig("nepomukserverrc")
-        group = config.group("Basic Settings")
-
-        session = dbus.SessionBus()
-        proxy = session.get_object( "org.kde.NepomukServer", "/nepomukserver")
-
-        group.writeEntry('Start Nepomuk', str(state).lower())
-        proxy.reconfigure()
-        proxy.enableNepomuk(state)
-
-        if state:
-            self.__class__.isNepomuk = "Nepomuk is On"
-        else:
-            self.__class__.isNepomuk = 0
+        self.__class__.searchSettings["state"] = state
+        self.__class__.searchSettings["hasChanged"] = True
 
     def shown(self):
         pass
 
     def execute(self):
-        return True
+        if self.__class__.searchSettings["state"] == True:
+            self.__class__.searchSettings["summaryMessage"] = ki18n("On")
+        else:
+            self.__class__.searchSettings["summaryMessage"] = ki18n("Off")
 
+        return True
 
