@@ -4,5 +4,5 @@ TODO
 TESTS
 
 - Default butonu, mount noktası değiştirildiğinde eski durumuna geri getirilemiyor.
-
+- External hardisk'in dosya sistemi değiştirildiğinde bu dosya sistemi ona uygun bir dosya sistemi değil ise bunu bir uyarı olarak gösteremiyor. Uygun olmayan dosya sistemi seçilip mount edildiğinde disk-manager ekranına tüm mount edilmiş diskler ikişerli olarak çıkıyor.
 
