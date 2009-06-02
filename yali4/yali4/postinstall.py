@@ -116,6 +116,13 @@ def setHostName():
     ctx.debugger.log("Hostname set as %s" % ctx.installData.hostName)
     return True
 
+def getUserList():
+    import comar
+    #link = comar.Link(socket=ctx.consts.dbus_socket_file)
+    link = comar.Link()
+    users = link.User.Manager["baselayout"].userList()
+    return filter(lambda user: user[0]==0 or (user[0]>=1000 and user[0]<=65000), users)
+
 def getConnectionList():
     import comar
     link = comar.Link(socket=ctx.consts.dbus_socket_file)

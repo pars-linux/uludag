@@ -50,12 +50,23 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_RescuePasswordWidget()
         self.ui.setupUi(self)
 
+        self.ui.pass_error.setVisible(False)
+        self.ui.updatePassword.setEnabled(False)
+
+        self.steps = YaliSteps()
+        self.steps.setOperations([#{"text":_("Starting DBUS..."),"operation":yali4.sysutils.chroot_dbus},
+                                  #{"text":_("Trying to connect DBUS..."),"operation":yali4.postinstall.connectToDBus},
+                                  {"text":_("Getting user list ..."),"operation":self.fillUserList}])
+
+    def shown(self):
+        ctx.yali.info.show()
+        self.steps.slotRunOperations()
+        ctx.yali.info.hide()
+
     def fillUserList(self):
-        pass
-        """
-        for hist in history:
-            HistoryItem(self.ui.historyList, hist)
-        """
+        users = yali4.postinstall.getUserList()
+        for user in users:
+            UserItem(self.ui.userList, user)
 
     def execute(self):
         return True
@@ -66,7 +77,16 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 class UserItem(QtGui.QListWidgetItem):
     def __init__(self, parent, user):
-        QtGui.QListWidgetItem.__init__(self, user, parent)
+
+        name = user[2]
+        icon = "normal"
+        if user[2] == "root":
+            icon = "root"
+            name = _("Super User")
+
+        QtGui.QListWidgetItem.__init__(self, QtGui.QIcon(":/gui/pics/user_%s.png" % icon),
+                                             "%s (%s)" % (name,user[1]),
+                                             parent)
         self._user = user
 
     def getInfo(self):

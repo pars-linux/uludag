@@ -63,7 +63,7 @@ Click Next button to proceed.
         self.ui.pass_error.setVisible(False)
         self.ui.caps_error.setVisible(False)
 
-        self.ui.caps_error.setText(_('<center><font color="#FF6D19">Caps Lock is on!</font></center>'))
+        self.ui.caps_error.setText(_('Caps Lock is on!'))
 
         # User Icons
         self.normalUserIcon = QtGui.QPixmap(":/gui/pics/user_normal.png")
@@ -88,8 +88,12 @@ Click Next button to proceed.
                      self.slotCreateUser)
         self.connect(self.ui.deleteButton, SIGNAL("clicked()"),
                      self.slotDeleteUser)
+        self.connect(self.ui.editButton, SIGNAL("clicked()"),
+                     self.slotEditUser)
         self.connect(self.ui.userList, SIGNAL("itemDoubleClicked(QListWidgetItem*)"),
                      self.slotEditUser)
+        self.connect(self.ui.userList, SIGNAL("itemClicked(QListWidgetItem*)"),
+                     self.checkUsers)
         self.connect(self.ui.pass2, SIGNAL("returnPressed()"),
                      self.slotReturnPressed)
 
@@ -142,13 +146,13 @@ Click Next button to proceed.
 
         if not p1 == '' and (str(p1).lower() == str(self.ui.username.text()).lower() or \
                 str(p1).lower() == str(self.ui.realname.text()).lower()):
-            self.showError(_('<font color="#FF6D19">Don\'t use your user name or name as a password.</font>'))
+            self.showError(_('Don\'t use your user name or name as a password.'))
             return
         elif p2 != p1 and p2:
-            self.showError(_('<font color="#FF6D19">Passwords do not match!</font>'))
+            self.showError(_('Passwords do not match!'))
             return
         elif len(p1) == len(p2) and len(p2) < 4 and not p1=='':
-            self.showError(_('<font color="#FF6D19">Password is too short!</font>'))
+            self.showError(_('Password is too short!'))
             return
         else:
             self.ui.pass_error.setVisible(False)
@@ -176,13 +180,13 @@ Click Next button to proceed.
 
         # check user validity
         if u.exists() or (existsInList and self.edititemindex == None):
-            self.showError(_('<font color="#FF6D19">Username exists, choose another one!</font>'))
+            self.showError(_('Username exists, choose another one!'))
             return
         elif not u.usernameIsValid():
-            self.showError(_('<font color="#FF6D19">Username contains invalid characters!</font>'))
+            self.showError(_('Username contains invalid characters!'))
             return
         elif not u.realnameIsValid():
-            self.showError(_('<font color="#FF6D19">Realname contains invalid characters!</font>'))
+            self.showError(_('Realname contains invalid characters!'))
             return
 
         self.ui.createButton.setText(_("Create User"))
@@ -223,9 +227,12 @@ Click Next button to proceed.
         _cur = self.ui.userList.currentRow()
         self.ui.userList.takeItem(_cur)
         self.ui.autoLogin.removeItem(_cur + 1)
+        self.ui.createButton.setText(_("Create User"))
         self.checkUsers()
 
-    def slotEditUser(self, item):
+    def slotEditUser(self, item=None):
+        if not item:
+            item = self.ui.userList.currentItem()
         u = item.getUser()
 
         self.ui.username.setText(QString(u.username))
@@ -244,13 +251,15 @@ Click Next button to proceed.
         self.ui.createButton.setText(_("Update User"))
 
     def checkUsers(self):
-        if self.ui.userList.count():
+        if self.ui.userList.currentItem():
             self.ui.deleteButton.setEnabled(True)
+            self.ui.editButton.setEnabled(True)
             self.ui.autoLogin.setEnabled(True)
             ctx.mainScreen.enableNext()
         else:
             # there is no user in list so noting to delete
             self.ui.deleteButton.setEnabled(False)
+            self.ui.editButton.setEnabled(False)
             self.ui.autoLogin.setEnabled(False)
             ctx.mainScreen.disableNext()
 
