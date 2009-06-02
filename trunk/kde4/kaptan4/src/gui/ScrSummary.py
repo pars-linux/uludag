@@ -43,7 +43,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         isNepomukOn = searchWidget.Widget.isNepomukOn
         selectedStyle = styleWidget.Widget.selectedStyle
 
-    def summaryContent(self):
         subject = "<p><li><b>%s</b></li><ul>"
         item    = "<li>%s</li>"
         end     = "</ul></p>"
@@ -51,7 +50,32 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         content.append("""<html><body><ul>""")
 
-        # add summaries
+        # Mouse Settings
+        content.append(subject % ("Mouse Settings"))
+        content.append(item % ("Selected Mouse configuration is <b>%s</b>") % selectedMouse)
+        content.append(item % ("Selected clicking behaviour is <b>%s</b>") % selectedBehaviour)
+        content.append(end)
+
+        # Menu Settings
+        content.append(subject % ("Menu Settings"))
+        content.append(item % ("Selected Menu is <b>%s</b>") % selectedMenuName)
+        content.append(end)
+
+        # Wallpaper Settings
+        content.append(subject % ("Wallpaper Settings"))
+        content.append(item % ("Selected Wallpaper is <b>%s</b>") % selectedWallpaper)
+        content.append(end)
+
+        # Style Settings
+        content.append(subject % ("Style Settings"))
+        content.append(item % ("Selected Style is <b>%s</b>") % selectedStyle)
+        content.append(end)
+
+
+        # Search Settings
+        content.append(subject %("Search Settings"))
+        content.append(item % ("Desktop search is <b>%s</b>") % isNepomukOn)
+        content.append(end)
 
         content.append("""</ul></body></html>""")
         self.ui.textSummary.setHtml(content)
