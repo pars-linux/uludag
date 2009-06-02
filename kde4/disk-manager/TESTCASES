@@ -1,0 +1,20 @@
+- Mount an external usb stick or an other similar device.
+    - Type console
+        # mount
+        Observe that the mounted disks and  the mounted points of these disks listed on the disk-manager screen are correct.
+
+    - Try to change the mount point of this disk
+        - Type console
+            # mount
+            Observe that newly changed mount point is applied to appropriate disk.
+        And observe that the previous mount point of this disk is unmounted. (This means that the previous mount point is removed from the output of command "mount".)
+        - Try to mount this disk to home directory.
+            Observe whether the disk manager gives a warning message about this unvalid mount point.
+    - Try to change the filesystem type
+        - Type console 
+            # mount
+            Observe that the disk mounted with the given filesystem.
+        - If this filesystem is not a suitable type for the disk:
+            Observe whether the disk-manager gives a warning message about it.
+            Observe also the output of the command "mount" that the filesystem type of the disk don't change.
+
