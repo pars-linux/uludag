@@ -14,7 +14,7 @@
  %30 / Network Install #2095
          > Needs a network settings screen
  %30 / Fix Keyboard shortcuts problems
-     - Improve user settings screen #8714 #7658
+   %60 Improve user settings screen #8714 #7658
      - Fix low resolution screen problems
      - Fix warning and info messages for new theme
      - Improve new theme widget states
