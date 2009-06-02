@@ -17,7 +17,7 @@ import gui.ScrGoodbye  as goodbyeWidget
 import gui.ScrStyle  as styleWidget
 import gui.ScrMenu  as menuWidget
 import gui.ScrSearch  as searchWidget
-import gui.ScrSettings  as settingsWidget
+import gui.ScrSummary  as summaryWidget
 
 # waiting for pisi
 #import gui.ScrPackage as packageWidget
@@ -27,7 +27,7 @@ class Kaptan(QtGui.QWidget):
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, settingsWidget, goodbyeWidget]
+        self.screens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
         self.screenData = None
         self.moveInc = 1
         self.menuText = ""
