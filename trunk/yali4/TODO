@@ -36,5 +36,6 @@
      + Btrfs support
          > depends new parted
      - LVM/RAID support
+     - Auto resizing for logical and empty partitions. (It only auto resizing primary partitions now!)
      ? Fat32 resize
 
