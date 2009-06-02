@@ -69,6 +69,27 @@ class GeneralSettings(SettingsTab):
             self.iface.setConfig("general", "bandwidth_limit", "0")
 
 class CacheSettings(SettingsTab):
+    def setupUi(self):
+        self.settings.onlyGuiApp.setChecked(self.config.getBoolValue(config.general, "ShowOnlyGuiApp"))
+        self.settings.intervalCheck.setChecked(self.config.getBoolValue(config.general, "UpdateCheck"))
+        self.settings.intervalSpin.setValue(self.config.getNumValue(config.general, "UpdateCheckInverval"))
+        self.settings.systemTray.setChecked(self.config.getBoolValue(config.general, "SystemTray"))
+        self.__getBandwidthSettings()
+
+    def __getBandwidthSettings(self):
+        config = self.iface.getConfig("/etc/pisi/pisi.conf")
+        bandwidth_limit = config.get("general", "bandwidth_limit")
+
+        if bandwidth_limit:
+           bandwidth_limit = int(bandwidth_limit)
+        else:
+            bandwidth_limit = 0
+
+        if bandwidth_limit != 0:
+            self.settings.useBandwidthLimit.setChecked(True)
+
+        self.settings.bandwidthSpin.setValue(bandwidth_limit)
+
     def connectSignals(self):
         self.connect(self.settings.clearCacheButton, SIGNAL("clicked()"), self.clearCache)
         self.connect(self.settings.useCacheCheck, SIGNAL("toggled(bool)"), self.markChanged)

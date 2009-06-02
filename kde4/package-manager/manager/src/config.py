@@ -29,11 +29,11 @@ class Config:
 
     def getBoolValue(self, group, option):
         default = self._initValue(group, option, False)
-        return self.group.readEntry(option, default)
+        return self.group.readEntry(option, str(default)) == "True"
 
     def getNumValue(self, group, option):
         default = self._initValue(group, option, 0)
-        return self.group.readEntry(option, default)
+        return int(self.group.readEntry(option, str(default)))
 
     def _initValue(self, group, option, value):
         self.group = self.config.group(group)
