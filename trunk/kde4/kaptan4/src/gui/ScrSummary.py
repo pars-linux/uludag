@@ -42,7 +42,20 @@ class Widget(QtGui.QWidget, ScreenWidget):
         selectedMenuName = menuWidget.Widget.selectedMenuName
         isNepomukOn = searchWidget.Widget.isNepomukOn
         selectedStyle = styleWidget.Widget.selectedStyle
-        print selectedStyle
+
+    def summaryContent(self):
+        subject = "<p><li><b>%s</b></li><ul>"
+        item    = "<li>%s</li>"
+        end     = "</ul></p>"
+        content = QString("")
+
+        content.append("""<html><body><ul>""")
+
+        # add summaries
+
+        content.append("""</ul></body></html>""")
+        self.ui.textSummary.setHtml(content)
+
     def killPlasma(self):
         p = subprocess.Popen(["pidof", "-s", "plasma"], stdout=subprocess.PIPE)
         out, err = p.communicate()
