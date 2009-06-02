@@ -128,12 +128,18 @@ class RepositorySettings(SettingsTab):
         self.settings.repoListView.horizontalHeader().setStretchLastSection(True)
         self.settings.repoListView.verticalHeader().hide()
         self.settings.repoListView.setColumnWidth(0, 32)
+        self.__getRepositories()
 
     def connectSignals(self):
         self.connect(self.settings.addRepoButton, SIGNAL("clicked()"), self.addRepository)
         self.connect(self.settings.removeRepoButton, SIGNAL("clicked()"), self.removeRepository)
         self.connect(self.settings.moveUpButton, SIGNAL("clicked()"), self.moveUp)
         self.connect(self.settings.moveDownButton, SIGNAL("clicked()"), self.moveDown)
+
+    def __getRepositories(self):
+        repositories = self.iface.getRepositories()
+        for name, address in repositories:
+            self.__insertRow(name, address)
 
     def __insertRow(self, repoName, repoAddress):
         currentRow = self.settings.repoListView.rowCount()

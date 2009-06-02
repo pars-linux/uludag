@@ -47,6 +47,7 @@ class Iface(Singleton):
         self.pdb  = pisi.db.packagedb.PackageDB()
         self.cdb  = pisi.db.componentdb.ComponentDB()
         self.idb  = pisi.db.installdb.InstallDB()
+        self.rdb  = pisi.db.repodb.RepoDB()
 
     def setHandler(self, handler):
         self.link.listenSignals("System.Manager", handler)
@@ -140,3 +141,9 @@ class Iface(Singleton):
 
     def getConfig(self):
         return pisi.configfile.ConfigurationFile("/etc/pisi/pisi.conf")
+
+    def getRepositories(self):
+        repos = []
+        for repo in self.rdb.get_binary_repos():
+            repos.append((repo, self.rdb.get_repo_url(repo)))
+        return repos
