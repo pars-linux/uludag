@@ -20,6 +20,7 @@ from ui_settingsdialog import Ui_SettingsDialog
 
 import config
 import helpdialog
+import repodialog
 import backend
 
 class SettingsTab(QObject):
@@ -113,15 +114,16 @@ class RepositorySettings(SettingsTab):
         self.settings.repoListView.setItem(currentRow, 2, repoAddressItem)
 
     def addRepository(self):
-        repoName = self.settings.repoName.text()
-        repoAddress = self.settings.repoAddress.currentText()
+        self.repoDialog = repodialog.RepoDialog()
+        self.connect(self.repoDialog.buttonBox, SIGNAL("accepted()"), self.__addRepository)
+        self.repoDialog.show()
 
+    def __addRepository(self):
+        repoName = self.repoDialog.repoName.text()
+        repoAddress = self.repoDialog.repoAddress.currentText()
         if not repoAddress.endsWith("xml") and not repoAddress.endsWith("xml.bz2"):
             KMessageBox.error(self,i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
-
-        self.settings.repoName.setText("")
-        self.settings.repoAddress.setEditText("")
         self.__insertRow(repoName, repoAddress)
 
     def removeRepository(self):
