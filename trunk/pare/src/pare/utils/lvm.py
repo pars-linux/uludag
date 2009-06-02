@@ -341,7 +341,7 @@ def lvinfo(lv_path):
     return info
 
 def lvlist(vg_name):
-    _lvs = []
+    lvs = []
     args = ["lvs", "--noheadings",
             "--nosuffix", "--options", "vg_name,lv_name"]
     
@@ -356,7 +356,36 @@ def lvlist(vg_name):
         (info['vg_name'], info['lv_name']) = buffer 
         #print "vg:%s lv:%s" % (info['vg_name'],info['lv_name'])
         if vg_name == info['vg_name']:
-            _lvs.append(info['lv_name'])
+            lvs.append(info['lv_name'])
     
-    return _lvs
-           
+    return lvs
+
+def pvlist():
+    pvs = []
+    
+    args = ["pvdisplay", "-C", "--noheadings", "--units", "m", "--nosuffix", "--options", "pv_name,vg_name,dev_size"]
+        
+    lines = _lvmcapture(args).strip().split("\n")
+    for line in lines:
+        buffer = line.split()
+        
+        (dev, vg, size) = buffer
+         
+        pvs.append((dev, vg, size))
+        
+    return pvs
+
+def vglist():
+    vgs = []
+    args = ["vgdisplay", "--noheadings", "--units", "m",
+            "--nosuffix", "--options",
+            "vg_name,vg_size,vg_extent_size,vg_free"]
+    
+    lines = _lvmcapture(args).strip().split("\n")
+    for line in lines:
+        buffer = line.split()
+        
+        (vg, size, pesize, free) = line
+        vgs.append((vg, size, pesize, free))
+    
+    return vgs
