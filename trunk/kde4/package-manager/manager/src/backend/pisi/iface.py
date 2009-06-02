@@ -137,3 +137,6 @@ class Iface(Singleton):
     def getRequires(self, packages):
         revDeps = set(pisi.api.get_remove_order(packages))
         return list(set(revDeps) - set(packages))
+
+    def getConfig(self, name):
+        return pisi.configfile.ConfigurationFile(name)
