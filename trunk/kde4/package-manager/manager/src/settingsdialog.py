@@ -18,12 +18,14 @@ from PyKDE4.kdecore import *
 
 from ui_settingsdialog import Ui_SettingsDialog
 
+import config
 import helpdialog
 import backend
 
 class SettingsTab(QObject):
     def __init__(self, settings):
         self.settings = settings
+        self.config = config.Config(KConfig("package-managerrc"))
         self.iface = backend.pm.Iface()
         self.changed = False
         self.setupUi()
@@ -47,6 +49,23 @@ class GeneralSettings(SettingsTab):
         self.settings.moveDownButton.setIcon(KIcon("arrow-down"))
         self.settings.addRepoButton.setIcon(KIcon("list-add"))
         self.settings.removeRepoButton.setIcon(KIcon("list-remove"))
+
+    def connectSignals(self):
+        self.connect(self.settings.intervalCheck, SIGNAL("toggled(bool)"), self.markChanged)
+        self.connect(self.settings.useBandwidthLimit, SIGNAL("toggled(bool)"), self.markChanged)
+        self.connect(self.settings.intervalSpin, SIGNAL("valueChanged(int)"), self.markChanged)
+        self.connect(self.settings.bandwidthSpin, SIGNAL("valueChanged(int)"), self.markChanged)
+
+    def save(self):
+        self.config.setValue(config.general, "ShowOnlyGuiApp", self.settings.onlyGuiApp.isChecked())
+        self.config.setValue(config.general, "SystemTray", self.settings.systemTray.isChecked())
+        self.config.setValue(config.general, "UpdateCheck", self.settings.intervalCheck.isChecked())
+        self.config.setValue(config.general, "UpdateCheckInterval", self.settings.intervalSpin.value())
+
+        if self.settings.useBandwidthLimit.isChecked():
+            self.iface.setConfig("general", "bandwidth_limit", str(self.settings.bandwidthSpin.value()))
+        else:
+            self.iface.setConfig("general", "bandwidth_limit", "0")
 
 class CacheSettings(SettingsTab):
     def connectSignals(self):
