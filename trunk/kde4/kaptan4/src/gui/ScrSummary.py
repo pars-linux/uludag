@@ -40,7 +40,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         selectedMouse = mouseWidget.Widget.selectedMouse
         selectedBehaviour = mouseWidget.Widget.selectedBehaviour
         selectedMenuName = menuWidget.Widget.selectedMenuName
-        isNepomukOn = searchWidget.Widget.isNepomukOn
+        searchSettings = searchWidget.Widget.searchSettings
         selectedStyle = styleWidget.Widget.selectedStyle
 
         subject = "<p><li><b>%s</b></li><ul>"
@@ -74,7 +74,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Search Settings
         content.append(subject %("Search Settings"))
-        content.append(item % ("Desktop search is <b>%s</b>") % isNepomukOn)
+        content.append(item % ("Desktop search is <b>%s</b>") % searchSettings["summaryMessage"].toString())
         content.append(end)
 
         content.append("""</ul></body></html>""")
@@ -98,6 +98,19 @@ class Widget(QtGui.QWidget, ScreenWidget):
         p = subprocess.Popen(["plasma"], stdout=subprocess.PIPE)
 
     def execute(self):
+
+        # Search settings
+        if searchSettings["hasChanged"] == True:
+            config = KConfig("nepomukserverrc")
+            group = config.group("Basic Settings")
+
+            session = dbus.SessionBus()
+            proxy = session.get_object( "org.kde.NepomukServer", "/nepomukserver")
+
+            group.writeEntry('Start Nepomuk', str(searchSettings["state"]).lower())
+            proxy.reconfigure()
+            proxy.enableNepomuk(state)
+
         self.killPlasma()
         return True
 
