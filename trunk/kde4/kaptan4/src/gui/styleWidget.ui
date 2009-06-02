@@ -59,14 +59,30 @@
           <string notr="true">color: white</string>
          </property>
          <property name="text">
-          <string>Desktop Type:</string>
+          <string>&lt;b&gt;Desktop Type:&lt;/b&gt;</string>
          </property>
         </widget>
        </item>
        <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QComboBox" name="comboBoxDesktopType">
          <property name="styleSheet">
-          <string notr="true">color: white</string>
+          <string notr="true"/>
          </property>
          <item>
           <property name="text">
@@ -90,7 +106,7 @@
           <string notr="true">color: white</string>
          </property>
          <property name="text">
-          <string>Number of Desktops:</string>
+          <string>&lt;b&gt;Number of Desktops:&lt;/b&gt;</string>
          </property>
         </widget>
        </item>
@@ -98,6 +114,9 @@
         <spacer name="horizontalSpacer_3">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
