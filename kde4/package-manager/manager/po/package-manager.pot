@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-26 12:30+0300\n"
+"POT-Creation-Date: 2009-06-02 12:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,171 +36,189 @@ msgstr ""
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr ""
 
+#: .tmp/settingsdialog.py:79
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr ""
+
+#: .tmp/settingsdialog.py:80
+msgid "Warning"
+msgstr ""
+
+#: .tmp/settingsdialog.py:81
+msgid "Delete"
+msgstr ""
+
+#: .tmp/settingsdialog.py:125
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+
+#: .tmp/settingsdialog.py:125
+msgid "Pisi Error"
+msgstr ""
+
 #: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
 msgid "Package Manager"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:283
+#: .tmp/helpdialog.py:34
+msgid "Package Manager Help"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:318
 msgid "Package Manager Settings"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:284
-msgid "&Help"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:285
-msgid "&OK"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:286 .tmp/ui_progressdialog.py:160
-msgid "&Cancel"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:287
+#: .tmp/ui_settingsdialog.py:319
 msgid "&Show only desktop applications"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:288
+#: .tmp/ui_settingsdialog.py:320
 msgid "&Enable system tray icon"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:289 .tmp/ui_settingsdialog.py:298
+#: .tmp/ui_settingsdialog.py:321 .tmp/ui_settingsdialog.py:330
 msgid "Update check"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:290 .tmp/ui_settingsdialog.py:294
+#: .tmp/ui_settingsdialog.py:322
 msgid "Enable &periodic update check"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:291 .tmp/ui_settingsdialog.py:295
+#: .tmp/ui_settingsdialog.py:323
 msgid "Check interval:"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:292
+#: .tmp/ui_settingsdialog.py:324
 msgid " min"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:293
+#: .tmp/ui_settingsdialog.py:325
 msgid "Bandwidth limit"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:296
+#: .tmp/ui_settingsdialog.py:326
+msgid "Use bandwidth limit"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:327
 msgid " kb/s"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:297
+#: .tmp/ui_settingsdialog.py:328
+msgid "Bandwidth limit:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:329
 msgid "&General Settings"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:299
+#: .tmp/ui_settingsdialog.py:331
 msgid "&Use hard disk cache for downloaded software"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:300
+#: .tmp/ui_settingsdialog.py:332
 msgid "Maximum cache size:"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:301
+#: .tmp/ui_settingsdialog.py:333
 msgid " Mb"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:302
+#: .tmp/ui_settingsdialog.py:334
 msgid "(use 0 for no limit)"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:303
+#: .tmp/ui_settingsdialog.py:335
 msgid "Clear Cache"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:304
+#: .tmp/ui_settingsdialog.py:336
 msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:306
+#: .tmp/ui_settingsdialog.py:338
 msgid "C&lean disk cache now"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:307
+#: .tmp/ui_settingsdialog.py:339
 msgid "C&ache"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:308
-msgid "Name:"
+#: .tmp/ui_settingsdialog.py:340 .tmp/ui_repodialog.py:53
+msgid "Repository Name"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:309
-msgid "&Add Repository"
+#: .tmp/ui_settingsdialog.py:341 .tmp/ui_repodialog.py:54
+msgid "Repository Address"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:310
-msgid "&Remove Repository"
+#: .tmp/ui_settingsdialog.py:342
+msgid "&Add New Repository"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:311
+#: .tmp/ui_settingsdialog.py:343
+msgid "Remove Repository"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:344
 msgid "Move &Up"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:312
+#: .tmp/ui_settingsdialog.py:345
 msgid "Move &Down"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:313
-msgid "Address:"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:314
-msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:315
-msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:316
-msgid "Name"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:317
-msgid "Address"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:318
+#: .tmp/ui_settingsdialog.py:346
 msgid "&Repositories"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:319
-msgid "No  proxy server"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:320
-msgid "Use proxy server"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:321
+#: .tmp/ui_settingsdialog.py:347
 msgid "HTTP proxy server:"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:322 .tmp/ui_settingsdialog.py:325
-#: .tmp/ui_settingsdialog.py:327
+#: .tmp/ui_settingsdialog.py:348 .tmp/ui_settingsdialog.py:351
+#: .tmp/ui_settingsdialog.py:353
 msgid "Port:"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:323
+#: .tmp/ui_settingsdialog.py:349
 msgid "Use this proxy server for all protocols"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:324
+#: .tmp/ui_settingsdialog.py:350
 msgid "HTTPS proxy server:"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:326
+#: .tmp/ui_settingsdialog.py:352
 msgid "FTP proxy server:"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:328
+#: .tmp/ui_settingsdialog.py:354
+msgid "No  proxy server"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:355
+msgid "Use proxy server"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:356
 msgid "&Proxy"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:357
+msgid "&Help"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:358
+msgid "&OK"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:359 .tmp/ui_progressdialog.py:160
+msgid "&Cancel"
 msgstr ""
 
 #: .tmp/ui_mainwidget.py:43
@@ -211,31 +229,31 @@ msgstr ""
 msgid "Click to search"
 msgstr ""
 
-#: .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:61
+#: .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:62
 msgid "Install Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:55
+#: .tmp/statemanager.py:56
 msgid "Installing Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:56
+#: .tmp/statemanager.py:57
 msgid "Removing Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:57
+#: .tmp/statemanager.py:58
 msgid "Upgrading Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:58
+#: .tmp/statemanager.py:59
 msgid "Updating Repository(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:62
+#: .tmp/statemanager.py:63
 msgid "Remove Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:63
+#: .tmp/statemanager.py:64
 msgid "Upgrade Package(s)"
 msgstr ""
 
@@ -251,7 +269,7 @@ msgstr ""
 msgid "Maintainer"
 msgstr ""
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:88
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:91
 msgid "downloading"
 msgstr ""
 
@@ -317,4 +335,20 @@ msgstr ""
 
 #: .tmp/mainwindow.py:59
 msgid "Show Upgradable Packages"
+msgstr ""
+
+#: .tmp/ui_repodialog.py:51
+msgid "Add New Repository"
+msgstr ""
+
+#: .tmp/ui_repodialog.py:52
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr ""
+
+#: .tmp/ui_repodialog.py:55
+msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+msgstr ""
+
+#: .tmp/ui_repodialog.py:56
+msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
