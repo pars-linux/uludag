@@ -41,7 +41,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_WelcomeWidget()
         self.ui.setupUi(self)
-        self.ui.rebootButton.setEnabled(False)
 
         self.connect(self.ui.not_accept, SIGNAL("toggled(bool)"),
                      self.slotNotAcceptToggled)
@@ -66,10 +65,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def __enable_next(self, b):
         if b:
             ctx.mainScreen.enableNext()
-            self.ui.rebootButton.setEnabled(False)
         else:
             ctx.mainScreen.disableNext()
-            self.ui.rebootButton.setEnabled(True)
 
     def showGPL(self):
         # make a GPL dialog

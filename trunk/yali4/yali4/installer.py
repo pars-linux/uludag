@@ -69,6 +69,8 @@ import yali4.gui.ScrGoodbye
 import yali4.gui.ScrRescue
 import yali4.gui.ScrRescueGrub
 import yali4.gui.ScrRescuePisi
+import yali4.gui.ScrRescuePassword
+import yali4.gui.ScrRescueSummary
 import yali4.gui.ScrRescueFinish
 
 PARTITION_ERASE_ALL, PARTITION_USE_AVAIL, PARTITION_USE_OLD = range(3)
@@ -124,10 +126,12 @@ class Yali:
 
         # Rescue Mode
         self._screens[YALI_RESCUE] = [
-                                        yali4.gui.ScrRescue,            # Rescue Mode
-                                        yali4.gui.ScrRescueGrub,        # Grub Rescue
-                                        yali4.gui.ScrRescuePisi,        # Pisi HS Rescue
-                                        yali4.gui.ScrRescueFinish       # Final step for rescue
+                                      yali4.gui.ScrRescue,            # Rescue Mode
+                                      yali4.gui.ScrRescueGrub,        # Grub Rescue
+                                      yali4.gui.ScrRescuePisi,        # Pisi HS Rescue
+                                      yali4.gui.ScrRescuePassword,    # Password Rescue
+                                      yali4.gui.ScrRescueSummary,     # Rescue Summary
+                                      yali4.gui.ScrRescueFinish       # Final step for rescue
                                      ]
 
         self.plugin = None
