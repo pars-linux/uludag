@@ -19,8 +19,90 @@ import math
 import os
 from pare.utils import lvm 
 from pare.partition import PhysicalVolume
-from pare.parteddata import volumeGroup, logicalVolume 
+from pare.parteddata import physicalVolume, volumeGroup, logicalVolume 
 from pare.errors import *
+
+class PhysicalVolume(object):
+    _type = physicalVolume
+    
+    def __init__(self, parent, size=None, uuid=None, peSize=None, peCount=None, peFree=None, existing=0):
+        """
+            name   -- device node's basename
+            peSize -- Physical extents size (in MB) Must be power of 2!
+            existing -- indicates whether this is a existing device
+            
+        Existing PV
+            
+            size -- size of VG (in MB)
+            uuid -- Physical Volume UUID
+            peCount -- number of PE in this PV
+            peFree -- number of free PE in this PV
+        """
+        
+        self._exists = existing
+        self._parent = parent
+        self._size = size
+        self._uuid = uuid
+        self._peSize = peSize
+        self._peCount = peCount
+        self._peFree = peFree
+    
+        if self._peSize is None:
+            self._peSize = 4
+    
+    @property
+    def type(self):
+        return self._type
+    
+    def create(self):
+        if self.exists:
+            raise PhysicalVolumeError("Physical Volume already exists!")
+        
+        lvm.pvcreate(self.path)
+        self._exists = True
+        
+    def destory(self):
+        if not self.exists:
+            raise PhysicalVolumeError("Physical Volume doesnt exists!")
+        
+        try:
+            lvm.pvremove(self.path)
+        except LVMError:
+            raise PhysicalVolumeError("Couldnt destroy physical volume!")
+        finally:
+            self._exists = False
+            
+    def setup(self):
+        if self.exists:
+            raise PhysicalVolumeError("Physical Volume already exists!")
+        
+        if not self._parent.status:
+            self._parent.setup()
+        
+    def teardown(self):
+        if not self.exists:
+            raise PhysicalVolumeError("Physical Volume doesnt exists!")
+        
+        if self._parent.status:
+            self._parent.teardown()
+    
+    @property
+    def path(self):
+        return self._parent.path
+    
+    @property
+    def exists(self):
+        return self._exists
+    
+    @property
+    def status(self):
+        if not self.exists:
+            return False
+        return os.access(self.path, os.W_OK)
+    
+    @property
+    def freeExtents(self):
+        return self._peFree
 
 class VolumeGroup(object):
     _type = volumeGroup 
@@ -167,6 +249,7 @@ class VolumeGroup(object):
         self.lvs.remove(lv)
 
     def setupParents(self):
+        print "vg.setupParents"
         for parent in self.pvs:
             parent.setup()
 
@@ -278,11 +361,11 @@ class LogicalVolume():
     def __init__(self, name, vg, size=None, uuid=None, format=None, existing=0):
         if isinstance(vg, list):
             if len(vg) != 1:
-                raise ValueError("Requires a single LVMVolumeGroupDevice instance")
+                raise ValueError("Requires a single VolumeGroupDevice instance")
             elif not isinstance(vg, VolumeGroup):
-                raise ValueError("Requires a LVMVolumeGroupDevice instance")
+                raise ValueError("Requires a VolumeGroupDevice instance")
         elif not isinstance(vg, VolumeGroup):
-            raise ValueError("Requires a LVMVolumeGroupDevice instance")
+            raise ValueError("Requires a VolumeGroupDevice instance")
 
         self._name =  name
         self._size = size
@@ -291,7 +374,7 @@ class LogicalVolume():
         self._exists = existing
         self._vg = vg
 
-        if not self._exists:
+        if self._exists:
             self.vg.addLV(self)
 
     @property
@@ -310,14 +393,19 @@ class LogicalVolume():
 
     def destroy(self):
         if not self.exists:
-            raise LogicalVolumeError("logical volume has not been created!",self.path)
-
-        self.teardown()
-        #Setup Parents( maybe raid parts) so lvm can remove lv
-        #FIXME:fix self.setupParents()
-        self.vg.setupParents()
-        lvm.lvremove(self.vg, self.name)
-        self._exists = False
+            #raise LogicalVolumeError("logical volume has not been created!",self.path)
+            #It is a remove request
+            self.vg.removeLV(self)
+            return True
+        elif self.exists and self.status:
+            self.teardown()
+            #Setup Parents( maybe raid parts) so lvm can remove lv
+            #FIXME:fix self.setupParents()
+            self.vg.setupParents()
+            if lvm.lvremove(self.vg.name, self.name):
+                self._exists = False
+                return True
+        return False
 
     def resize(self):
         if not self.exists:
@@ -355,10 +443,11 @@ class LogicalVolume():
 
         #FIXME:Add exists func to filesystem to check if filesystem mounted
         #FIXME:Add teardown and setup fun c to filesystem to mount or unmount system
-        if self.status and self.format.exists:
+        if self.status and self.format and self.format.exists:
             self.format.teardown()
 
         if self.status:
+            print "Burada"
             lvm.lvdeactivate(self.vg, self.name)
 
     def setupParents(self):
@@ -370,8 +459,8 @@ class LogicalVolume():
 
     @property
     def status(self):
-        if not self.exists:
-            return False
+        #if not self.exists:
+        #    return False
         return os.access(self.path, os.W_OK)
 
     @property
