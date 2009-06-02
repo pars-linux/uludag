@@ -60,11 +60,7 @@ class GeneralSettings(SettingsTab):
     def __getBandwidthSettings(self):
         config = self.iface.getConfig()
         bandwidth_limit = config.get("general", "bandwidth_limit")
-
-        if bandwidth_limit:
-           bandwidth_limit = int(bandwidth_limit)
-        else:
-            bandwidth_limit = 0
+        bandwidth_limit = int(bandwidth_limit) if bandwidth_limit else 0
 
         if bandwidth_limit != 0:
             self.settings.useBandwidthLimit.setChecked(True)
