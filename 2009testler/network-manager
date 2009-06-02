@@ -4,3 +4,8 @@
     Bu ağın bulunmadığı bir yerde network-manager bu ağa bağlı olarak görünüyor.
 - Profil seçimi checkbox'ı seçili iken, bu profil ile  yeni bir wireless ağa bağlanılmak istendiğinde checkbox enable durumdan disable duruma geçiyor. 
     Bu durumda iken kullanıcı parolası sormadan ağa bağlanmaya çalışıyor.
+- Profil seçili değil iken, ağa başlanmaya çalışıyor. Ve ekranda bağlanıyor olarak gözüküyor.
+
+- Bir makina kablolu olarak internete bağlı durumda iken, bu bağlantıyı kesmeden,
+    kablosuz olarak bağlanılmaya çalışıldığında kablolu ağ profili disable duruma geçemiyor. Ve her iki bağlantıyı kurmaya çalıştığı zaman başarılı olamıyor.
+
