@@ -42,6 +42,12 @@
      </item>
      <item>
       <widget class="QGroupBox" name="groupBoxClickBehaviour">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="autoFillBackground">
         <bool>false</bool>
        </property>
@@ -73,6 +79,17 @@
         </item>
         <item row="0" column="0">
          <widget class="QRadioButton" name="DoubleClick">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+            <kerning>true</kerning>
+           </font>
+          </property>
           <property name="text">
            <string>Dou&amp;ble-click to open files and folders</string>
           </property>
@@ -86,6 +103,12 @@
      </item>
      <item>
       <widget class="QGroupBox" name="groupBoxButtonOrder">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="title">
         <string>Button Order</string>
        </property>

@@ -110,7 +110,8 @@ p, li { white-space: pre-wrap; }
        <item>
         <widget class="QLabel" name="labelMenuDescription">
          <property name="styleSheet">
-          <string notr="true">color: white</string>
+          <string notr="true">background-color: rgba(255, 255, 255, 122);
+color: white</string>
          </property>
          <property name="text">
           <string/>
