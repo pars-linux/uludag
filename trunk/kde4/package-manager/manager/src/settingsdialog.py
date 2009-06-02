@@ -93,6 +93,9 @@ class RepositorySettings(SettingsTab):
 
     def connectSignals(self):
         self.connect(self.settings.addRepoButton, SIGNAL("clicked()"), self.addRepository)
+        self.connect(self.settings.removeRepoButton, SIGNAL("clicked()"), self.removeRepository)
+        self.connect(self.settings.moveUpButton, SIGNAL("clicked()"), self.moveUp)
+        self.connect(self.settings.moveDownButton, SIGNAL("clicked()"), self.moveDown)
 
     def __insertRow(self, repoName, repoAddress):
         currentRow = self.settings.repoListView.rowCount()
@@ -122,7 +125,41 @@ class RepositorySettings(SettingsTab):
         self.__insertRow(repoName, repoAddress)
 
     def removeRepository(self):
-        pass
+        self.settings.repoListView.removeRow(self.settings.repoListView.currentRow())
+
+    def __setRow(self, row, rowItems):
+        for col in range(self.settings.repoListView.columnCount()):
+            self.settings.repoListView.setItem(row, col, rowItems[col])
+
+    def __takeRow(self, row):
+        rowItems = []
+        for col in range(self.settings.repoListView.columnCount()):
+            rowItems.append(self.settings.repoListView.takeItem(row, col))
+        return rowItems
+
+    def __move(self, up):
+        srcRow = self.settings.repoListView.currentRow()
+        dstRow = srcRow - 1 if up else srcRow + 1
+        if dstRow < 0 or dstRow >= self.settings.repoListView.rowCount():
+            return
+
+        srcRowChecked = self.settings.repoListView.cellWidget(srcRow, 0).checkState()
+        dstRowChecked = self.settings.repoListView.cellWidget(dstRow, 0).checkState()
+        srcItems = self.__takeRow(srcRow)
+        destItems = self.__takeRow(dstRow)
+
+        self.__setRow(srcRow, destItems)
+        self.__setRow(dstRow, srcItems)
+        self.settings.repoListView.cellWidget(srcRow, 0).setCheckState(dstRowChecked)
+        self.settings.repoListView.cellWidget(dstRow, 0).setCheckState(srcRowChecked)
+
+        self.settings.repoListView.setCurrentItem(srcItems[1])
+
+    def moveUp(self):
+        self.__move(True)
+
+    def moveDown(self):
+        self.__move(False)
 
 class ProxySettings(SettingsTab):
     def setupUi(self):
