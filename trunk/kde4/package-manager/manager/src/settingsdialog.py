@@ -77,7 +77,7 @@ class CacheSettings(SettingsTab):
         self.__getBandwidthSettings()
 
     def __getBandwidthSettings(self):
-        config = self.iface.getConfig("/etc/pisi/pisi.conf")
+        config = self.iface.getConfig()
         bandwidth_limit = config.get("general", "bandwidth_limit")
 
         if bandwidth_limit:
