@@ -31,6 +31,16 @@ class Storage(object):
     def __init__(self):
         self.populate()
     
+    def _vgs(self):
+        """ VGs' Name dict to access VG"""
+        vgs = {}
+        for vg in self.volumeGroups:
+            if vg.name in vgs:
+                raise ValueError("Duplicate VG in Volume Groups")
+            vgs[vg.name] = vg
+        
+        return vgs
+     
     def populate(self):
         if sysblock.init_disks():
             for disk in sysblock.disks:
@@ -139,8 +149,10 @@ class Storage(object):
     def resizePartition(self, pareDisk, parePartition, pareFileSystem, size):
         if isinstance(pareFileSystem, str):
             filesystem = getFilesystem(pareFileSystem)
+        else:
+            filesystem = pareFileSystem
 
-        if not isinstance(pareFileSystem, FileSystem):
+        if not isinstance(filesystem, FileSystem):
             raise PareError, "filesystem is None, can't resize"
 
         if not filesystem.resize(size, parePartition.path):
@@ -152,5 +164,16 @@ class Storage(object):
            else:
                return True
 
-
-
+    def removeVG(self, vg):
+        pass
+    
+    def removeLV(self, lv):
+        """
+            logicalVolume -- LV' name
+        """
+        if not isinstance(lv, LogicalVolume):
+            raise ValueError("lv parameter must be type of lvmdevice.LogicalVolume")
+        else:
+            lv.destroy()
+        
+        
