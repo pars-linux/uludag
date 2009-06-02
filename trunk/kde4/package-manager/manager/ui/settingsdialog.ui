@@ -145,6 +145,32 @@
           <string>Bandwidth limit</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2" >
+          <item row="1" column="2" >
+           <spacer name="horizontalSpacer_2" >
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0" >
+             <size>
+              <width>304</width>
+              <height>24</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="1" >
+           <spacer name="verticalSpacer_2" >
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0" >
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item row="0" column="0" colspan="3" >
            <widget class="QCheckBox" name="useBandwidthLimit" >
             <property name="text" >
@@ -186,32 +212,6 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="2" >
-           <spacer name="horizontalSpacer_2" >
-            <property name="orientation" >
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0" >
-             <size>
-              <width>304</width>
-              <height>24</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="1" >
-           <spacer name="verticalSpacer_2" >
-            <property name="orientation" >
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0" >
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
           <item row="1" column="0" >
            <widget class="QLabel" name="bandwidthLabel" >
             <property name="enabled" >
@@ -223,9 +223,6 @@
            </widget>
           </item>
          </layout>
-         <zorder>useBandwidthLimit</zorder>
-         <zorder>bandwidthSpin</zorder>
-         <zorder>bandwidthLabel</zorder>
         </widget>
        </item>
       </layout>
@@ -799,12 +796,12 @@ This will not delete installed software or affect your system stability.</string
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>97</x>
-     <y>92</y>
+     <x>105</x>
+     <y>65</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>97</x>
-     <y>123</y>
+     <x>105</x>
+     <y>65</y>
     </hint>
    </hints>
   </connection>
@@ -815,12 +812,12 @@ This will not delete installed software or affect your system stability.</string
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>128</x>
-     <y>92</y>
+     <x>111</x>
+     <y>65</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>257</x>
-     <y>123</y>
+     <x>131</x>
+     <y>65</y>
     </hint>
    </hints>
   </connection>
@@ -831,12 +828,12 @@ This will not delete installed software or affect your system stability.</string
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>128</x>
-     <y>92</y>
+     <x>111</x>
+     <y>65</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>360</x>
-     <y>123</y>
+     <x>111</x>
+     <y>65</y>
     </hint>
    </hints>
   </connection>
@@ -863,12 +860,28 @@ This will not delete installed software or affect your system stability.</string
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>572</x>
-     <y>365</y>
+     <x>694</x>
+     <y>368</y>
     </hint>
     <hint type="destinationlabel" >
      <x>482</x>
      <y>356</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonOk</sender>
+   <signal>clicked()</signal>
+   <receiver>SettingsDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>586</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>548</x>
+     <y>363</y>
     </hint>
    </hints>
   </connection>
