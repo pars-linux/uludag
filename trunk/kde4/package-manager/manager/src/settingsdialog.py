@@ -206,6 +206,18 @@ class RepositorySettings(SettingsTab):
     def moveDown(self):
         self.__move(False)
 
+    def getRepo(self, row):
+        active = self.settings.repoListView.cellWidget(row, 0).checkState() == Qt.Checked
+        name  = self.settings.repoListView.item(row, 1).text()
+        address  = self.settings.repoListView.item(row, 2).text()
+        return (active, str(name), str(address))
+
+    def save(self):
+        repos = []
+        for row in range(self.settings.repoListView.rowCount()):
+            repos.append(self.getRepo(row)[1:])
+        self.iface.setRepositories(repos)
+
 class ProxySettings(SettingsTab):
     def setupUi(self):
         self.settings.noProxyButton.setChecked(True)

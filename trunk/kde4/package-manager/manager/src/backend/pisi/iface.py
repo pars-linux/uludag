@@ -83,6 +83,10 @@ class Iface(Singleton):
         logger.debug("Clearing cache with limit: %s" % limit)
         self.link.System.Manager["pisi"].clearCache("/var/cache/pisi/packages", limit)
 
+    def setRepositories(self,  repos):
+        logger.debug("Re-setting repositories: %s" % repos)
+        self.link.System.Manager["pisi"].setRepositories(repos)
+
     def setCacheLimit(self, useCache, limit):
         logger.debug("Use cache: %s - change limit to: %s" % (useCache, limit))
         self.link.System.Manager["pisi"].setCache(useCache, limit)
