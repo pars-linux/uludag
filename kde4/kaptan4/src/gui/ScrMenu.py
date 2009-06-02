@@ -36,9 +36,24 @@ class Widget(QtGui.QWidget, ScreenWidget):
         group = config.group("Containments")
 
         self.menuNames = {}
-        self.menuNames["launcher"] = ki18n("Kick-off Menu")
-        self.menuNames["lancelot_launcher"] = ki18n("Lancelot Menu")
-        self.menuNames["simplelauncher"] = ki18n("Simple Menu")
+        self.menuNames["launcher"] = {
+                "menuIndex": 0,
+                "summaryMessage": ki18n("Kick-off Menu"),
+                "image": QtGui.QPixmap(':/raw/pics/kickoff.png'),
+                "description": ki18n("A modern menu for KDE")
+                }
+        self.menuNames["simplelauncher"] = {
+                "menuIndex": 1,
+                "summaryMessage": ki18n("Simple Menu"),
+                "image": QtGui.QPixmap(':/raw/pics/simple.png'),
+                "description": ki18n("And old style menu from KDE 3.")
+                }
+        self.menuNames["lancelot_launcher"] = {
+                "menuIndex": 2,
+                "summaryMessage": ki18n("Lancelot Menu"),
+                "image": QtGui.QPixmap(':/raw/pics/lancelot.png'),
+                "description": ki18n("An experimental menu for KDE4")
+                }
 
         for each in list(group.groupList()):
             subgroup = group.group(each)
@@ -51,19 +66,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
                     if str(launcher).find('launcher') >= 0:
                         self.__class__.screenSettings["selectedMenu"] =  subg2.readEntry('plugin')
 
-        # menu descriptions and preview pics
-        self.kickoffPic = QtGui.QPixmap(':/raw/pics/kickoff.png')
-        self.kickoffDesc = "A modern menu for KDE."
-
-        self.simplePic = QtGui.QPixmap(':/raw/pics/simple.png')
-        self.simpleDesc = "And old style menu from KDE 3."
-
-        self.lancelotPic = QtGui.QPixmap(':/raw/pics/lancelot.png')
-        self.lancelotDesc = "An experimental menu for KDE4"
-
-        # set menu preview to default menu: kick-off
-        self.ui.pictureMenuStyles.setPixmap(self.kickoffPic)
-        self.ui.labelMenuDescription.setText(self.kickoffDesc)
+        # set menu preview to default menu
+        self.ui.pictureMenuStyles.setPixmap(self.menuNames[str(self.__class__.screenSettings["selectedMenu"])]["image"])
+        self.ui.labelMenuDescription.setText(self.menuNames[str(self.__class__.screenSettings["selectedMenu"])]["description"].toString())
+        self.ui.menuStyles.setCurrentIndex(self.menuNames[str(self.__class__.screenSettings["selectedMenu"])]["menuIndex"])
 
         self.ui.menuStyles.connect(self.ui.menuStyles, SIGNAL("activated(const QString &)"), self.setMenuStyle)
 
@@ -92,7 +98,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        self.__class__.screenSettings["summaryMessage"] = self.menuNames[str(self.__class__.screenSettings["selectedMenu"])]
+        self.__class__.screenSettings["summaryMessage"] = self.menuNames[str(self.__class__.screenSettings["selectedMenu"])]["summaryMessage"]
         return True
 
 
