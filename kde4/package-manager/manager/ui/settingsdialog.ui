@@ -61,7 +61,7 @@
    <item row="0" column="0" >
     <widget class="QTabWidget" name="tabWidget" >
      <property name="currentIndex" >
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_1" >
       <attribute name="title" >
@@ -186,17 +186,7 @@
           <item row="0" column="0" colspan="3" >
            <widget class="QCheckBox" name="useBandwidthLimit" >
             <property name="text" >
-             <string>Enable &amp;periodic update check</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" >
-           <widget class="QLabel" name="bandwidthLabel" >
-            <property name="enabled" >
-             <bool>false</bool>
-            </property>
-            <property name="text" >
-             <string>Check interval:</string>
+             <string>Use bandwidth limit</string>
             </property>
            </widget>
           </item>
@@ -260,7 +250,20 @@
             </property>
            </spacer>
           </item>
+          <item row="1" column="0" >
+           <widget class="QLabel" name="bandwidthLabel" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Bandwidth limit:</string>
+            </property>
+           </widget>
+          </item>
          </layout>
+         <zorder>useBandwidthLimit</zorder>
+         <zorder>bandwidthSpin</zorder>
+         <zorder>bandwidthLabel</zorder>
         </widget>
        </item>
       </layout>
@@ -541,7 +544,7 @@ This will not delete installed software or affect your system stability.</string
          </property>
          <column>
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </column>
          <column>

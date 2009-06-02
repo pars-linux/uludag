@@ -20,22 +20,23 @@ defaults = {"SystemTray":False,
 class Config:
     def __init__(self, config):
         self.config = config
+        self.group = None
 
     def setValue(self, group, option, value):
-        self.config.setGroup(group)
-        self.config.writeEntry(option, value)
+        self.group = self.config.group(group)
+        self.group.writeEntry(option, str(value))
         self.config.sync()
 
     def getBoolValue(self, group, option):
         default = self._initValue(group, option, False)
-        return self.config.readBoolEntry(option, default)
+        return self.group.readEntry(option, default)
 
     def getNumValue(self, group, option):
         default = self._initValue(group, option, 0)
-        return self.config.readNumEntry(option, default)
+        return self.group.readEntry(option, default)
 
     def _initValue(self, group, option, value):
-        self.config.setGroup(group)
+        self.group = self.config.group(group)
 
         if defaults.has_key(option):
             return defaults[option]
