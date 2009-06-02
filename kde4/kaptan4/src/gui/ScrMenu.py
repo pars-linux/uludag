@@ -19,7 +19,9 @@ from gui.menuWidget import Ui_menuWidget
 
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    selectedMenuName = 0
+    screenSettings = {}
+    screenSettings["hasChanged"] = False
+
     # Set title and description for the information widget
     title = ki18n("Some catchy title about styles")
     desc = ki18n("Some catchy description about styles")
@@ -46,37 +48,28 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.menuStyles.connect(self.ui.menuStyles, SIGNAL("activated(const QString &)"), self.setMenuStyle)
 
     def setMenuStyle(self, enee):
+        self.__class__.screenSettings["hasChanged"] = True
         currentIndex = self.ui.menuStyles.currentIndex()
 
         if currentIndex == 0:
-            self.selectedMenu = 'launcher'
-            self.__class__.selectedMenuName = "Kick-off"
+            self.__class__.screenSettings["selectedMenu"] = 'launcher'
+            self.__class__.screenSettings["summaryMessage"] = ki18n("Kick-off")
+
             self.ui.pictureMenuStyles.setPixmap(self.kickoffPic)
             self.ui.labelMenuDescription.setText(self.kickoffDesc)
         elif currentIndex == 1:
-            self.selectedMenu = 'simplelauncher'
-            self.__class__.selectedMenuName = "Simple"
+            self.__class__.screenSettings["selectedMenu"] = 'simplelauncher'
+            self.__class__.screenSettings["summaryMessage"] = ki18n("Simple")
+
             self.ui.pictureMenuStyles.setPixmap(self.simplePic)
             self.ui.labelMenuDescription.setText(self.simpleDesc)
 
         else:
-            self.selectedMenu = 'lancelot_launcher'
-            self.__class__.selectedMenuName = "Lancelot"
+            self.__class__.screenSettings["selectedMenu"] = 'lancelot_launcher'
+            self.__class__.screenSettings["summaryMessage"] = ki18n("Lancelot")
+
             self.ui.pictureMenuStyles.setPixmap(self.lancelotPic)
             self.ui.labelMenuDescription.setText(self.lancelotDesc)
-
-        config = KConfig("plasma-appletsrc")
-        group = config.group("Containments")
-        for each in list(group.groupList()):
-            subgroup = group.group(each)
-            subcomponent = subgroup.readEntry('plugin')
-            if subcomponent == 'panel':
-                subg = subgroup.group('Applets')
-                for i in list(subg.groupList()):
-                    subg2 = subg.group(i)
-                    launcher = subg2.readEntry('plugin')
-                    if str(launcher).find('launcher') >= 0:
-                        subg2.writeEntry('plugin', self.selectedMenu)
 
     def shown(self):
         pass
