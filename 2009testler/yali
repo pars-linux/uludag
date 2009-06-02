@@ -23,7 +23,11 @@ Lisans Onay sayfası
 
 - Disk tablosunda partition signature eğer none olarak gözüküyor ise parted harası veriyor.
 
-- Bozuk CD check edilmeye çalışıldığında, exeption hatası veriyor.
+- Bozuk CD check edilmeye çalışıldığında, exception hatası veriyor.
+
+- Sadece primary partition bulunan external bir belleğe el ile yeniden boyutlandırma yapılabiliyor iken, otomatik olarak yeniden boyutlandırma yapılamıyor.
+
+- Uyarı ekranlarının turuncu olan üst bölümlerinin rengi uygun bir renk ile değiştirilmeli.
 
 + 4 ayrı partition olduğunu düşünelim
     1 -> pardus root
