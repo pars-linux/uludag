@@ -16,7 +16,7 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n
 import subprocess,os
 from gui.ScreenWidget import ScreenWidget
-from gui.settingsWidget import Ui_settingsWidget
+from gui.summaryWidget import Ui_summaryWidget
 
 # import other widgets to get the latest configuration
 import gui.ScrWallpaper as wallpaperWidget
@@ -32,11 +32,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
-        self.ui = Ui_settingsWidget()
+        self.ui = Ui_summaryWidget()
         self.ui.setupUi(self)
-
-
-        self.ui.pixKaptanLogo.setPixmap(QtGui.QPixmap(':/raw/pics/kaptan_settings.png'))
 
     def shown(self):
         selectedWallpaper = wallpaperWidget.Widget.selectedWallpaper
