@@ -82,6 +82,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def execute(self):
         ctx.takeBackOperation = self.ui.historyList.currentItem().getInfo()
+        ctx.mainScreen.moveInc = 2
         return True
 
     def backCheck(self):
