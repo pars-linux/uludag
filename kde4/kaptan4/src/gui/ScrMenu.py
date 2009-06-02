@@ -31,6 +31,26 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_menuWidget()
         self.ui.setupUi(self)
 
+        # read default menu style first
+        config = KConfig("plasma-appletsrc")
+        group = config.group("Containments")
+
+        self.menuNames = {}
+        self.menuNames["launcher"] = ki18n("Kick-off Menu")
+        self.menuNames["lancelot_launcher"] = ki18n("Lancelot Menu")
+        self.menuNames["simplelauncher"] = ki18n("Simple Menu")
+
+        for each in list(group.groupList()):
+            subgroup = group.group(each)
+            subcomponent = subgroup.readEntry('plugin')
+            if subcomponent == 'panel':
+                subg = subgroup.group('Applets')
+                for i in list(subg.groupList()):
+                    subg2 = subg.group(i)
+                    launcher = subg2.readEntry('plugin')
+                    if str(launcher).find('launcher') >= 0:
+                        self.__class__.screenSettings["selectedMenu"] =  subg2.readEntry('plugin')
+
         # menu descriptions and preview pics
         self.kickoffPic = QtGui.QPixmap(':/raw/pics/kickoff.png')
         self.kickoffDesc = "A modern menu for KDE."
@@ -53,20 +73,17 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         if currentIndex == 0:
             self.__class__.screenSettings["selectedMenu"] = 'launcher'
-            self.__class__.screenSettings["summaryMessage"] = ki18n("Kick-off")
 
             self.ui.pictureMenuStyles.setPixmap(self.kickoffPic)
             self.ui.labelMenuDescription.setText(self.kickoffDesc)
         elif currentIndex == 1:
             self.__class__.screenSettings["selectedMenu"] = 'simplelauncher'
-            self.__class__.screenSettings["summaryMessage"] = ki18n("Simple")
 
             self.ui.pictureMenuStyles.setPixmap(self.simplePic)
             self.ui.labelMenuDescription.setText(self.simpleDesc)
 
         else:
             self.__class__.screenSettings["selectedMenu"] = 'lancelot_launcher'
-            self.__class__.screenSettings["summaryMessage"] = ki18n("Lancelot")
 
             self.ui.pictureMenuStyles.setPixmap(self.lancelotPic)
             self.ui.labelMenuDescription.setText(self.lancelotDesc)
@@ -75,6 +92,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
+        self.__class__.screenSettings["summaryMessage"] = self.menuNames[str(self.__class__.screenSettings["selectedMenu"])]
         return True
 
 
