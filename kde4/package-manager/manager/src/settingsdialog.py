@@ -89,6 +89,27 @@ class GeneralSettings(SettingsTab):
             self.iface.setConfig("general", "bandwidth_limit", "0")
 
 class CacheSettings(SettingsTab):
+    def setupUi(self):
+        self.__getCacheSettings()
+
+    def __getCacheSettings(self):
+        config = self.iface.getConfig()
+
+        cache = config.get("general", "package_cache")
+        cache_limit = config.get("general", "package_cache_limit")
+        cache_limit = int(cache_limit) if cache_limit else 0
+
+        # If pisi.conf does not have it yet, default is use package cache
+        if not cache or cache == "True":
+            enableCache = True
+        else:
+            enableCache = False
+
+        self.cacheEnabled = enableCache
+        self.cacheSize = cache_limit
+        self.settings.useCacheCheck.setChecked(enableCache)
+        self.settings.useCacheSpin.setValue(cache_limit)
+
     def connectSignals(self):
         self.connect(self.settings.clearCacheButton, SIGNAL("clicked()"), self.clearCache)
         self.connect(self.settings.useCacheCheck, SIGNAL("toggled(bool)"), self.markChanged)
