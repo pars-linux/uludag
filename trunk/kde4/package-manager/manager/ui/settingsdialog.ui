@@ -455,7 +455,7 @@ This will not delete installed software or affect your system stability.</string
           <item row="0" column="0" >
            <widget class="QPushButton" name="addRepoButton" >
             <property name="text" >
-             <string>&amp;Add Repository</string>
+             <string>&amp;Add New Repository</string>
             </property>
            </widget>
           </item>
