@@ -111,6 +111,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             proxy.reconfigure()
             proxy.enableNepomuk(state)
 
+        # Menu Settings
         if self.menuSettings["hasChanged"] == True:
             config = KConfig("plasma-appletsrc")
             group = config.group("Containments")
@@ -125,8 +126,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
                         launcher = subg2.readEntry('plugin')
                         if str(launcher).find('launcher') >= 0:
                             subg2.writeEntry('plugin', self.menuSettings["selectedMenu"] )
-
-
 
         self.killPlasma()
         return True
