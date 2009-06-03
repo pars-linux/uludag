@@ -169,7 +169,6 @@ Have fun!
 
     def packageInstallFinished(self):
 
-        self.cur = 0
         ctx.yali.fillFstab()
 
         # Configure Pending...
@@ -244,7 +243,7 @@ class PkgInstaller(QThread):
         ctx.debugger.log("Creating PisiEvent..")
         qevent = PisiEvent(QEvent.User, EventSetProgress)
         ctx.debugger.log("Setting data on just created PisiEvent (EventSetProgress)..")
-        qevent.setData(total)
+        qevent.setData(total * 2)
         ctx.debugger.log("Posting PisiEvent to the widget..")
         objectSender(qevent)
         ctx.debugger.log("Found %d packages in repo.." % total)
@@ -297,10 +296,6 @@ class PkgConfigurator(QThread):
         ctx.debugger.log("PkgConfigurator is running.")
         ui = PisiUI()
         yali4.pisiiface.initialize(ui=ui, with_comar=True)
-        total = yali4.pisiiface.get_pending_len()
-        qevent = PisiEvent(QEvent.User, EventSetProgress)
-        qevent.setData(total)
-        objectSender(qevent)
 
         try:
             # run all pending...
