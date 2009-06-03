@@ -279,7 +279,7 @@ class Yali:
                     ctx.debugger.log(" - It can resizable to %.2f MB" % minSize)
                     ctx.debugger.log(" - Usable size for this partition is %.2f MB" % possibleFreeSize)
                     rootWidget.resizablePartitions.append({"partition":part,"newSize":possibleFreeSize})
-                    if possibleFreeSize / 2 > ctx.consts.min_root_size and part.isLogical():
+                    if possibleFreeSize / 2 > ctx.consts.min_root_size:
                         if dev not in rootWidget.resizableDisks:
                             rootWidget.resizableDisks.append(dev)
                 else:
