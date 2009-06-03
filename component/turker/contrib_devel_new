@@ -210,19 +210,20 @@ desktop
             desktop/gnome/gtk2-engines-murrine/pspec.xml
 
 editor
-    applications/editors/juffed/pspec.xml
-    applications/editors/jedit/pspec.xml
-    applications/editors/poedit/pspec.xml
-    programming/tools/geany/pspec.xml
-    programming/tools/qedit/pspec.xml
-    desktop/gnome/gedit-plugins/pspec.xml
-    desktop/gnome/gphpedit/pspec.xml
-    desktop/gnome/gedit/pspec.xml
-    desktop/gnome/gtranslator/pspec.xml
-    desktop/kde4/krusader-kde4/pspec.xml
-    desktop/kde/kxgenerator/pspec.xml
-    desktop/kde/kxmleditor/pspec.xml
-    desktop/kde/katephpbrowser/pspec.xml
+    misc
+        applications/editors/juffed/pspec.xml
+        applications/editors/jedit/pspec.xml
+        applications/editors/poedit/pspec.xml
+        programming/tools/geany/pspec.xml
+        programming/tools/qedit/pspec.xml
+        desktop/gnome/gedit-plugins/pspec.xml
+        desktop/gnome/gphpedit/pspec.xml
+        desktop/gnome/gedit/pspec.xml
+        desktop/gnome/gtranslator/pspec.xml
+        desktop/kde4/krusader-kde4/pspec.xml
+        desktop/kde/kxgenerator/pspec.xml
+        desktop/kde/kxmleditor/pspec.xml
+        desktop/kde/katephpbrowser/pspec.xml
 
     emacs
         applications/editors/emacs/emacs-cvs/pspec.xml
