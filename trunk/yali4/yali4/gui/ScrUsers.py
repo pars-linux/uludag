@@ -63,6 +63,11 @@ Click Next button to proceed.
         self.ui.pass_error.setVisible(False)
         self.ui.caps_error.setVisible(False)
 
+        self.ui.advancedList.setVisible(False)
+        self.ui.createButton.setVisible(False)
+        self.ui.userIDCheck.setVisible(False)
+        self.ui.userID.setVisible(False)
+
         self.ui.caps_error.setText(_('Caps Lock is on!'))
 
         # User Icons
@@ -116,6 +121,10 @@ Click Next button to proceed.
     def execute(self):
         # reset and fill pending_users
         yali4.users.reset_pending_users()
+        if not self.ui.addMore.isChecked():
+            if not self.slotCreateUser():
+                ctx.mainScreen.moveInc = 0
+                return True
 
         ctx.installData.autoLoginUser = str(self.ui.autoLogin.currentText())
 
@@ -159,8 +168,12 @@ Click Next button to proceed.
 
         if self.ui.username.text() and p1 and p2:
             self.ui.createButton.setEnabled(True)
+            if not self.ui.addMore.isChecked():
+                ctx.mainScreen.enableNext()
         else:
             self.ui.createButton.setEnabled(False)
+            if not self.ui.addMore.isChecked():
+                ctx.mainScreen.disableNext()
 
     def slotCreateUser(self):
         u = yali4.users.User()
@@ -181,13 +194,13 @@ Click Next button to proceed.
         # check user validity
         if u.exists() or (existsInList and self.edititemindex == None):
             self.showError(_('Username exists, choose another one!'))
-            return
+            return False
         elif not u.usernameIsValid():
             self.showError(_('Username contains invalid characters!'))
-            return
+            return False
         elif not u.realnameIsValid():
             self.showError(_('Realname contains invalid characters!'))
-            return
+            return False
 
         self.ui.createButton.setText(_("Create User"))
         updateItem = None
@@ -219,6 +232,7 @@ Click Next button to proceed.
         # give focus to username widget for a new user. #3280
         self.ui.username.setFocus()
         self.checkUsers()
+        return True
 
     def slotDeleteUser(self):
         if self.ui.userList.currentRow()==self.edititemindex:
