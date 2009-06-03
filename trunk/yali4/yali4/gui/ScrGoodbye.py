@@ -73,8 +73,8 @@ don't you?
         ctx.mainScreen.disableBack()
         ctx.yali.processPendingActions(self)
         self.steps.slotRunOperations()
-        if not ctx.mainScreen.helpContent.isVisible():
-            ctx.mainScreen.slotToggleHelp()
+        if not ctx.mainScreen.ui.helpContent.isVisible():
+            ctx.mainScreen.ui.slotToggleHelp()
         self.ui.label.setPixmap(QtGui.QPixmap(":/gui/pics/goodbye.png"))
         ctx.yali.info.hide()
         ctx.mainScreen.enableNext()
