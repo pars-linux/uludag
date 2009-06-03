@@ -32,6 +32,8 @@ class PackageWidgetItem(QTreeWidgetItem):
         self.setCheckState(0, Qt.Unchecked)
         self.setText(0, package.name)
         self.setText(1, "%.3f" % (package.size / 1024.0 / 1024.0))
+        self.setText(2, package.version)
+        self.setText(3, package.release)
 
     def setChecked(self, checked):
         if checked:
