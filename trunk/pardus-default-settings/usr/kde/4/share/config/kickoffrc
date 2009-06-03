@@ -1,2 +1,2 @@
 [SystemApplications]
-DesktopFiles=kde4-kfmclient_sysinfo.desktop
+DesktopFiles=kfmclient_sysinfo,systemsettings
