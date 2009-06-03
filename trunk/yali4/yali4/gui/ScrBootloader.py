@@ -101,6 +101,13 @@ loader.
     def shown(self):
         yali4.storage.setOrderedDiskList()
         ctx.debugger.log("Disks BIOS Boot order : %s " % ','.join(ctx.installData.orderedDiskList))
+        self.getBootable().setBootable()
+
+    def getBootable(self):
+        for i in range(self.ui.device_list.count()):
+            item = self.ui.device_list.item(i)
+            if item.getDevice().getPath() == ctx.installData.orderedDiskList[0]:
+                return item
 
     def backCheck(self):
         if ctx.autoInstall:
@@ -110,6 +117,7 @@ loader.
 
     def slotDisableList(self):
         self.ui.device_list.setEnabled(False)
+        self.ui.device_list.setCurrentItem(self.getBootable())
 
     def slotEnableList(self):
         self.ui.device_list.setEnabled(True)

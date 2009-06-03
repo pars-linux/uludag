@@ -87,7 +87,7 @@ class Dialog(QtGui.QDialog):
         QMetaObject.connectSlotsByName(self)
 
         self.setStyleSheet("""
-            QFrame#windowTitle {background-color:#E75F10;color:#FFF;border:1px solid #FFF;border-radius:1px;}
+            QFrame#windowTitle {background-color:#984379;color:#FFF;border:1px solid #FFF;border-radius:4px;}
         """)
 
 class WarningDialog(Dialog):
