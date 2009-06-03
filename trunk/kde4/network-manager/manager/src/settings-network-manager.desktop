@@ -1,6 +1,6 @@
 [Desktop Entry]
 Exec=kcmshell4 settings-network-manager
-Icon=preferences-desktop
+Icon=applications-internet
 Type=Service
 X-KDE-ServiceTypes=KCModule
 
