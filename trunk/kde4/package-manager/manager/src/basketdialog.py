@@ -13,9 +13,28 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
+from packageproxy import PackageProxy
+from packagemodel import PackageModel, GroupRole
+from packagedelegate import PackageDelegate
+
 from ui_basketdialog import Ui_BasketDialog
 
 class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def __init__(self, parent=None):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
+        self.model = None
+
+    def setModel(self, model):
+        self.model = model
+        self.initViews()
+
+    def initViews(self):
+        self.packageList.setModel(PackageProxy(self))
+        self.packageList.model().setSourceModel(self.model)
+        self.packageList.setItemDelegate(PackageDelegate(self))
+        self.packageList.setColumnWidth(0, 32)
+        self.packageList.setAlternatingRowColors(True)
+        self.packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
+        self.packageList.model().reset()
+
