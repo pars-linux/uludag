@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -107,7 +107,7 @@ class Runner:
         QObject.connect(ctx.mainScreen, SIGNAL("signalProcessEvents"),
                         self._app.processEvents)
         QObject.connect(desktop, SIGNAL("resized(int)"),
-                        self._init_screen)
+                        self._reinit_screen)
 
         # set the current screen ...
         ctx.mainScreen.setCurrent(ctx.options.startupScreen)
@@ -132,6 +132,9 @@ class Runner:
 
         # Run run run
         self._app.exec_()
+
+    def _reinit_screen(self):
+        QTimer.singleShot(700,self._init_screen)
 
     def _init_screen(self, screen = 0):
         # We want it to be a full-screen window.

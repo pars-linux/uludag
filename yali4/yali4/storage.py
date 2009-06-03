@@ -459,6 +459,7 @@ class Device:
         if not isinstance(fs, yali4.filesystem.FileSystem):
             raise DeviceError, "filesystem is None, can't resize"
 
+        ctx.debugger.log("RP: Starting to resize : %s" % str(part))
         try:
             ret = fs.resize(size_mb, part)
         except FSCheckError, e:
@@ -467,12 +468,15 @@ class Device:
             raise FSError, e
 
         start = part.getPartition().geom.start
+        ctx.debugger.log("RP: Old Start : %s" % str(start))
         fs_name = part.getFSName()
+        ctx.debugger.log("RP: FS Name : %s" % str(fs_name))
         if part.isLogical():
             ptype = PARTITION_LOGICAL
         else:
             ptype = PARTITION_PRIMARY
         sysutils.udev_settle(timeout=1)
+        ctx.debugger.log("RP: Deleting : %s" % str(part))
         self.deletePartition(part)
         self.commit()
         np = self.addPartitionFromStart(ptype, fs_name, start, size_mb)

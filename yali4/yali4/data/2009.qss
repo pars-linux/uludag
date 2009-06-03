@@ -54,8 +54,8 @@ QPushButton {
         border-bottom: 3px transparent;
         border-right: 10px transparent;
         border-left: 10px transparent;
-        icon-size: 24px;
-        height: 24px;
+        icon-size: 18px;
+        height: 18px;
 }
 
 QPushButton::hover {
@@ -65,8 +65,8 @@ QPushButton::hover {
         border-bottom: 3px transparent;
         border-right: 10px transparent;
         border-left: 10px transparent;
-        icon-size: 24px;
-        height: 24px;
+        icon-size: 18px;
+        height: 18px;
 }
 
 QPushButton::pressed {
@@ -76,8 +76,8 @@ QPushButton::pressed {
         border-bottom: 3px transparent;
         border-right: 10px transparent;
         border-left: 10px transparent;
-        icon-size: 24px;
-        height: 24px;
+        icon-size: 18px;
+        height: 18px;
 }
 
 QRadioButton {
@@ -216,7 +216,7 @@ QLineEdit {
        color: #5A2848;
        border: 1px solid #6b6b6b;
        border-radius: 4px;
-       padding: 0 6px;
+       padding: 0 2px;
        background: #eeeeee;
        selection-background-color: gray;
 }
@@ -225,7 +225,7 @@ QLineEdit:hover {
        color: #5A2848;
        border: 1px solid #808080;
        border-radius: 4px;
-       padding: 0 6px;
+       padding: 0 2px;
        background: #eeeeee;
        selection-background-color: gray;
 }
@@ -234,7 +234,7 @@ QLineEdit:disabled {
        color: #cccccc;
        border: 1px solid #444444;
        border-radius: 4px;
-       padding: 0 6px;
+       padding: 0 2px;
        background: #000000;
        selection-background-color: gray;
 }
