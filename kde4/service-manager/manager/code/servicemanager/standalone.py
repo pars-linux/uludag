@@ -21,6 +21,7 @@ from servicemanager.base import MainManager
 class ServiceManager(KMainWindow):
     def __init__ (self, *args):
         KMainWindow.__init__(self)
+        self.setWindowIcon(KIcon("flag-yellow"))
 
         # This is very important for translations when running as kcm_module
         KGlobal.locale().insertCatalog("service-manager")
