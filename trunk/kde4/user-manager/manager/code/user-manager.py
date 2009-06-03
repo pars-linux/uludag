@@ -17,7 +17,7 @@ import dbus
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 
-from PyKDE4.kdeui import KMainWindow, KApplication, KCModule
+from PyKDE4.kdeui import KMainWindow, KApplication, KCModule, KIcon
 from PyKDE4.kdecore import KCmdLineArgs, KGlobal
 
 from usermanager.about import aboutData, catalog
@@ -30,6 +30,7 @@ class MainWindow(KMainWindow):
         widget = MainWidget(self)
         self.resize(widget.size())
         self.setCentralWidget(widget)
+        self.setWindowIcon(KIcon("system-users"))
 
 
 if __name__ == "__main__":
