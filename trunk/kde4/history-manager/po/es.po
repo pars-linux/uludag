@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-28 11:04+0300\n"
-"PO-Revision-Date: 2009-04-07 20:35-0400\n"
+"PO-Revision-Date: 2009-06-02 20:41-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,13 +24,13 @@ msgid "Form"
 msgstr ""
 
 #: .tmp/ui_uiitem.py:84
+# check how this looks, favor verificar contexto y posición
 msgid "History Date - Time /Label"
-msgstr ""
+msgstr "Marca de Fecha - Hora / Histórico"
 
 #: .tmp/ui_uiitem.py:85
-#, fuzzy
 msgid "No: Type:"
-msgstr "Tipo:"
+msgstr "No: Tipo:"
 
 #: .tmp/ui_uiitem.py:86 .tmp/ui_mainwindow.py:133
 msgid "Take back to this point"
@@ -38,11 +38,11 @@ msgstr "Restaurar hasta este punto"
 
 #: .tmp/ui_uiitem.py:87
 msgid "Details"
-msgstr ""
+msgstr "Detalles"
 
 #: .tmp/ui_uiitem.py:88
 msgid "Show operation plan"
-msgstr ""
+msgstr "Mostrar plan de operación"
 
 #: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
 #: .tmp/ui_mainwindow.py:126
@@ -59,32 +59,28 @@ msgstr ""
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Mantenedor actual"
 
 #: .tmp/historymanager/window.py:69
-#, fuzzy, python-format
+#, python-format
 msgid "%d Operations Loaded"
-msgstr "Detalles de Operación"
+msgstr "%d Operaciones cargados"
 
 #: .tmp/historymanager/window.py:110
-#, fuzzy
 msgid "Loading operation details.."
-msgstr "Detalles de Operación"
+msgstr "Cargando detalles de operación.."
 
 #: .tmp/historymanager/window.py:122
 msgid "There are %1 packages in this snapshot"
 msgstr "Hay %1 paquetes en esta instantánea"
 
 #: .tmp/historymanager/window.py:135 .tmp/historymanager/window.py:187
-#, fuzzy
 msgid "Ready .."
-msgstr "Listo"
+msgstr "Listo .."
 
-# favor revisar, no estoy seguro si estoy tomando sentido inverso..
 #: .tmp/historymanager/window.py:145
-#, fuzzy
 msgid "Loading Operation Plan"
-msgstr "Cargando el Plan"
+msgstr "Cargando plan de operación"
 
 #: .tmp/historymanager/window.py:162
 msgid "Configuration files in snapshot:"
@@ -103,8 +99,7 @@ msgid "Takeback operation verification"
 msgstr "Verificación de la restauración"
 
 #: .tmp/historymanager/window.py:212
-msgid ""
-"<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
+msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
 msgstr "<center> Restaurar el sistema hasta : <b>%1</b> - <b>%2</b><br>"
 
 #: .tmp/historymanager/window.py:213
@@ -142,9 +137,9 @@ msgid "Finished succesfully"
 msgstr "Terminado con éxito"
 
 #: .tmp/historymanager/window.py:251
-#, fuzzy, python-format
+#, python-format
 msgid "Taking Snapshot : <b>%s</b>/100"
-msgstr "Realizando nueva instantánea"
+msgstr "Realizando instantánea : <b>%s</b>/100"
 
 #: .tmp/historymanager/listitem.py:49
 msgid "snapshot"
@@ -168,7 +163,7 @@ msgstr "restaurar"
 
 #: .tmp/historymanager/listitem.py:59
 msgid "repo update"
-msgstr ""
+msgstr "actualizar repositorio"
 
 #: .tmp/ui_mainwindow.py:127
 msgid "New Snapshot"
@@ -180,7 +175,7 @@ msgstr ""
 
 #: .tmp/ui_mainwindow.py:130
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: .tmp/ui_mainwindow.py:131
 msgid "- Loading Pisi History"
@@ -194,48 +189,3 @@ msgstr "%p%"
 msgid "Copy"
 msgstr "Copiar"
 
-#~ msgid "Date"
-#~ msgstr "Fecha"
-
-#~ msgid "Time"
-#~ msgstr "Hora"
-
-#~ msgid "unknown"
-#~ msgstr "desconocido"
-
-#~ msgid "Takeback Plan"
-#~ msgstr "Plan de Restauración"
-
-#~ msgid "Click to see what will happen if you click restore button"
-#~ msgstr "Presione para ver lo que sucedería, si presiona el botón restaurar"
-
-#~ msgid "Operation Details"
-#~ msgstr "Detalles de Operación"
-
-#~ msgid "Click to see operation details"
-#~ msgstr "Presione para ver detalles de operación"
-
-#~ msgid "Help"
-#~ msgstr "Ayuda"
-
-#~ msgid "Takeback"
-#~ msgstr "Restaurar"
-
-#~ msgid "Information"
-#~ msgstr "Información"
-
-#~ msgid "Select All"
-#~ msgstr "Seleccionar todo"
-
-#~ msgid "No:"
-#~ msgstr "No:"
-
-# favor revisar contexto
-#~ msgid "Takeback Plan for %1 operation on %2 <br><br>"
-#~ msgstr "Plan de Restauración para %2 operaciones a fecha %1 <br><br>"
-
-#~ msgid "Takeback Plan %1"
-#~ msgstr "Plan de Restauración %1"
-
-#~ msgid "Listing %1 Operations"
-#~ msgstr "Listando %1 operaciones"
