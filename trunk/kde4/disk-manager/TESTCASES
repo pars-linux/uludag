@@ -18,3 +18,8 @@
             Observe whether the disk-manager gives a warning message about it.
             Observe also the output of the command "mount" that the filesystem type of the disk don't change.
 
+    - Try to add an option for mounting
+        - If the option part is empty try to change the settings. 
+            Observe that it gives a warning about it.
+        - If you add some option to option part,
+            Observe that the output of the command "mount" contains this option for the related disk.
