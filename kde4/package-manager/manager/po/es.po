@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-02 12:22+0300\n"
-"PO-Revision-Date: 2009-05-27 20:25-0400\n"
+"PO-Revision-Date: 2009-06-02 20:33-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,34 +39,33 @@ msgstr ""
 
 #: .tmp/settingsdialog.py:79
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
+msgstr "Se eliminarán todos los paquetes almacenados. Está seguro ?"
 
 #: .tmp/settingsdialog.py:80
 msgid "Warning"
-msgstr ""
+msgstr "Alerta"
 
 #: .tmp/settingsdialog.py:81
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: .tmp/settingsdialog.py:125
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
-msgstr ""
+msgstr "<qt>Dirección del repositorio debe tener una terminación xml o xml.bz2.<p>Por favor intente de nuevo.</qt>"
 
 #: .tmp/settingsdialog.py:125
 msgid "Pisi Error"
-msgstr ""
+msgstr "Error Pisi"
 
 #: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
 msgid "Package Manager"
 msgstr "Administrador de Paquetes"
 
 #: .tmp/helpdialog.py:34
-#, fuzzy
 msgid "Package Manager Help"
-msgstr "Administrador de Paquetes"
+msgstr "Ayuda del Administrador de Paquetes"
 
 #: .tmp/ui_settingsdialog.py:318
 msgid "Package Manager Settings"
@@ -102,9 +101,7 @@ msgstr ""
 msgid "Bandwidth limit"
 msgstr "Limitar ancho de banda"
 
-# verificar, puede ser más lógico poner "máximo ancho de banda"
 #: .tmp/ui_settingsdialog.py:326
-#, fuzzy
 msgid "Use bandwidth limit"
 msgstr "Limitar ancho de banda"
 
@@ -112,11 +109,9 @@ msgstr "Limitar ancho de banda"
 msgid " kb/s"
 msgstr ""
 
-# verificar, puede ser más lógico poner "máximo ancho de banda"
 #: .tmp/ui_settingsdialog.py:328
-#, fuzzy
 msgid "Bandwidth limit:"
-msgstr "Limitar ancho de banda"
+msgstr "Ancho de banda máximo:"
 
 #: .tmp/ui_settingsdialog.py:329
 msgid "&General Settings"
@@ -160,24 +155,20 @@ msgid "C&ache"
 msgstr "C&ache"
 
 #: .tmp/ui_settingsdialog.py:340 .tmp/ui_repodialog.py:53
-#, fuzzy
 msgid "Repository Name"
-msgstr "&Repositorios"
+msgstr "Nombre de Repositorio"
 
 #: .tmp/ui_settingsdialog.py:341 .tmp/ui_repodialog.py:54
-#, fuzzy
 msgid "Repository Address"
-msgstr "&Repositorios"
+msgstr "Dirección de Repositorio"
 
 #: .tmp/ui_settingsdialog.py:342
-#, fuzzy
 msgid "&Add New Repository"
 msgstr "&Añadir Repositorio"
 
 #: .tmp/ui_settingsdialog.py:343
-#, fuzzy
 msgid "Remove Repository"
-msgstr "&Remover Repositorio"
+msgstr "Remover Repositorio"
 
 #: .tmp/ui_settingsdialog.py:344
 msgid "Move &Up"
@@ -353,13 +344,12 @@ msgid "Show Upgradable Packages"
 msgstr "Mostrar Paquetes a actualizar"
 
 #: .tmp/ui_repodialog.py:51
-#, fuzzy
 msgid "Add New Repository"
-msgstr "&Añadir Repositorio"
+msgstr "Añadir Repositorio"
 
 #: .tmp/ui_repodialog.py:52
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr ""
+msgstr "Nombre del repositorio, p.ej. <b>pardus-devel</b>"
 
 #: .tmp/ui_repodialog.py:55
 msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
@@ -369,17 +359,3 @@ msgstr ""
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
 
-#~ msgid "&Add Repository"
-#~ msgstr "&Añadir Repositorio"
-
-#~ msgid "Name:"
-#~ msgstr "Nombre:"
-
-#~ msgid "Address:"
-#~ msgstr "Dirección:"
-
-#~ msgid "Name"
-#~ msgstr "Nombre"
-
-#~ msgid "Address"
-#~ msgstr "Dirección"
