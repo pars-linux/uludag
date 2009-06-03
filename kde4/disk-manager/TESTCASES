@@ -23,3 +23,9 @@
             Observe that it gives a warning about it.
         - If you add some option to option part,
             Observe that the output of the command "mount" contains this option for the related disk.
+
+- Try to mount the root partition
+    Observe that it gives a warning about it can not remount.
+        Not : the mount point of root should be "/".
+
+- Observe whether an extended partition listed on disk-manager screen. (Normally it can not be listed.)
