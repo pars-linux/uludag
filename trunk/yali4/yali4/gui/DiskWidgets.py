@@ -672,7 +672,7 @@ class PartEdit(QtGui.QWidget):
             self.ui.partitionSize.setEnabled(False)
             self.ui.partitionSlider.setEnabled(False)
 
-        self.ui.devicePath.setText(part.getPath())
+        self.ui.deviceGroup.setTitle("%s - %s" % (self.ui.deviceGroup.title(), part.getPath()))
         self.ui.fileSystem.setText(part.getFSName())
         self.ui.partitionSize.setMaximum(part.getMB()-1)
         self.ui.partitionSlider.setMaximum(part.getMB()-1)
