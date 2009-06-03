@@ -22,7 +22,7 @@ from pmutils import *
 class OperationManager(QObject):
     def __init__(self, state):
         QObject.__init__(self)
-        self.nop = ["System.Manager.clearCache", "System.Manager.setCache", "System.Manager.setConfig"]
+        self.nop = ["System.Manager.clearCache", "System.Manager.setCache", "System.Manager.setConfig", "System.Manager.setRepositories"]
         self.state = state
         self.state.setActionHandler(self.handler)
         self.initialize()
@@ -83,6 +83,7 @@ class OperationManager(QObject):
         ####
 
         if signal == "finished":
+            self.state.chainAction(args[0])
             if args[0] in self.nop: # no operation
                 return
             self.emit(SIGNAL("finished(QString)"), args[0])

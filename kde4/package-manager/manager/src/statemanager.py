@@ -78,6 +78,11 @@ class StateManager(QObject):
         else:
             return list(set(self.packages()).intersection(self.iface.getGroupPackages(name)))
 
+    def chainAction(self, operation):
+        chains = { "System.Manager.setRepositories":self.iface.updateRepositories }
+        if chains.has_key(operation):
+            chains[operation]()
+
     def stateAction(self):
         return {self.INSTALL:lambda:None,
                 self.REMOVE:lambda:None,
