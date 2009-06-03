@@ -121,6 +121,7 @@ class AutoPartQuestionWidget(QtGui.QWidget):
         self.rootWidget = rootWidget
 
         self.connect(self.ui.bestChoice, SIGNAL("clicked()"), self.slotDisableList)
+        self.connect(self.ui.cancelButton, SIGNAL("clicked()"), self.slotCancelSelected)
         self.connect(self.ui.userChoice, SIGNAL("clicked()"), self.slotEnableList)
         self.connect(self.ui.useSelectedButton, SIGNAL("clicked()"), self.slotUseSelected)
 
@@ -145,6 +146,10 @@ class AutoPartQuestionWidget(QtGui.QWidget):
             self.rootWidget.autoPartPartition = self.ui.partition_list.currentItem().getPartition()
         ctx.mainScreen.processEvents()
         self.rootWidget.execute_(True)
+
+    def slotCancelSelected(self):
+        self.hide()
+        ctx.mainScreen.enableNext()
 
 class PartitionItem(QtGui.QListWidgetItem):
 
