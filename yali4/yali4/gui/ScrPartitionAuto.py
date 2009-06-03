@@ -89,13 +89,20 @@ about disk partitioning.
 
     def fillDeviceList(self, limit=False):
         self.ui.device_list.clear()
+
+        def _in(_list, _item):
+            for item in _list:
+                if item.getName() == _item.getName():
+                    return True
+            return False
+
         # fill device list
         for dev in yali4.storage.devices:
             if dev.getTotalMB() >= ctx.consts.min_root_size:
                 if limit:
-                    if dev in self.freeSpaceDisks:
+                    if _in(self.freeSpaceDisks, dev):
                         DeviceItem(self.ui.device_list, dev, forceToFirst = True)
-                    elif dev in self.resizableDisks:
+                    elif _in(self.resizableDisks, dev):
                         DeviceItem(self.ui.device_list, dev)
                 else:
                     DeviceItem(self.ui.device_list, dev)
