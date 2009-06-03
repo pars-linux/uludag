@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -42,7 +42,12 @@ class Widget(QtGui.QWidget):
         self.ui = Ui_YaliMain()
         self.ui.setupUi(self)
 
+        self.font = 10
+
         self.screenData = None
+        # shortcut to open help
+        self.helpShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F1),self)
+
         # shortcut to open debug window
         self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self)
 
@@ -62,9 +67,11 @@ class Widget(QtGui.QWidget):
 
         # Dont need help as default
         self.ui.helpContent.hide()
+        self.ui.shortCutButton.hide()
         self.ui.toggleHelp.setText(_("Show Help"))
 
         # Main Slots
+        self.connect(self.helpShortCut,     SIGNAL("activated()"),  self.slotToggleHelp)
         self.connect(self.debugShortCut,    SIGNAL("activated()"),  self.toggleDebug)
         self.connect(self.consoleShortCut,  SIGNAL("activated()"),  self.toggleConsole)
         self.connect(self.cursorShortCut,   SIGNAL("activated()"),  self.toggleCursor)
@@ -78,6 +85,22 @@ class Widget(QtGui.QWidget):
 
     def updateStyle(self):
         self.setStyleSheet(file(self._style).read())
+        self.font = 10
+
+    def setFontPlus(self):
+        self._set_font(1)
+
+    def setFontMinus(self):
+        self._set_font(-1)
+
+    def _set_font(self, num):
+        # We have to edit style sheet to set new fonts
+        # Because if you use a style sheet in your application
+        # ::setFont gets useless :( http://doc.trolltech.com/4.5/qapplication.html#setFont
+        old = "QWidget{font:%dpt;}" % self.font
+        self.font = self.font + num
+        new = "QWidget{font:%dpt;}" % self.font
+        self.setStyleSheet(self.styleSheet().replace(old, new))
 
     def toggleTheme(self):
         if self._style == ctx.consts.stylesheet:
@@ -105,9 +128,11 @@ class Widget(QtGui.QWidget):
     def slotToggleHelp(self):
         if self.ui.helpContent.isVisible():
             self.ui.helpContent.hide()
+            self.ui.shortCutButton.hide()
             self.ui.toggleHelp.setText(_("Show Help"))
         else:
             self.ui.helpContent.show()
+            self.ui.shortCutButton.show()
             self.ui.toggleHelp.setText(_("Hide Help"))
         _w = self.ui.mainStack.currentWidget()
         _w.update()

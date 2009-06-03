@@ -437,3 +437,4 @@ QScrollBar::sub-line:horizontal {
 QScrollBar::right-arrow:horizontal { background-image: url(:/images/arrow-right.png); }
 QScrollBar::left-arrow:horizontal { background-image: url(:/images/arrow-left.png); }
 
+QWidget{font:10pt;}
