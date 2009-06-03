@@ -37,8 +37,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def shown(self):
         selectedWallpaper = wallpaperWidget.Widget.selectedWallpaper
-        selectedMouse = mouseWidget.Widget.selectedMouse
-        selectedBehaviour = mouseWidget.Widget.selectedBehaviour
+        self.mouseSettings = mouseWidget.Widget.screenSettings
         self.menuSettings = menuWidget.Widget.screenSettings
         self.searchSettings = searchWidget.Widget.screenSettings
         selectedStyle = styleWidget.Widget.selectedStyle
@@ -52,8 +51,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Mouse Settings
         content.append(subject % ("Mouse Settings"))
-        content.append(item % ("Selected Mouse configuration is <b>%s</b>") % selectedMouse)
-        content.append(item % ("Selected clicking behaviour is <b>%s</b>") % selectedBehaviour)
+        content.append(item % ("Selected Mouse configuration is <b>%s</b>") % self.mouseSettings["summaryMessage"]["selectedMouse"].toString())
+        content.append(item % ("Selected clicking behaviour is <b>%s</b>") % self.mouseSettings["summaryMessage"]["clickBehaviour"].toString())
         content.append(end)
 
         # Menu Settings
