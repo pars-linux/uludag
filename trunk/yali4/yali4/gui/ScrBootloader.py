@@ -67,19 +67,17 @@ loader.
         if not yali4.storage.init_devices():
             raise GUIException, _("Can't find a storage device!")
 
-        if len(yali4.storage.devices) > 1:
-            self.device_list_state = True
-            # fill device list
-            for dev in yali4.storage.devices:
-                DeviceItem(self.ui.device_list, dev)
-            # select the first disk by default
-            self.ui.device_list.setCurrentRow(0)
-            # be sure first is selected device
-            self.device = self.ui.device_list.item(0).getDevice()
-        else:
+        # fill device list
+        for dev in yali4.storage.devices:
+            DeviceItem(self.ui.device_list, dev)
+        # select the first disk by default
+        self.ui.device_list.setCurrentRow(0)
+        # be sure first is selected device
+        self.device = self.ui.device_list.item(0).getDevice()
+
+        if len(yali4.storage.devices) < 1:
             # don't show device list if we have just one disk
             self.ui.installMBR.hide()
-            self.device_list_state = False
             self.ui.device_list.hide()
             self.ui.select_disk_label.hide()
 
