@@ -1,5 +1,5 @@
-- Disk bölümlendirme-> otomatik->Bölümleri yeniden boyutlandırı dene seçildiğinde
-    - Yeni bir ekran çıkıyor fakat bu ekran kapatılamıyor.
++ Disk bölümlendirme-> otomatik->Bölümleri yeniden boyutlandırı dene seçildiğinde
+    + Yeni bir ekran çıkıyor fakat bu ekran kapatılamıyor.
     + Eger dosya sistemi olmayan boş bir partition var ise, bu partition önerilen olarak gelmesi gerekirken, bu partition hiç gözükmüyor.
 
 - Disk tablosu herhengi bir şekilde bozulmuş ise:
@@ -11,8 +11,8 @@
 - Bozuk CD check edilmeye çalışıldığında, exception hatası veriyor.
 
 + Birden fazla harddisk bulunması durumunda, açılış diskinin hangisi olduğu bilinemiyor.
-   - Yalının grub bölümünde alfabetik sıra ile dizilen harddisklerin hangisinin açılış diski olduğu belirtilmiyor.
-   - Sistem yükleyicisini nereye kurmak istiyorsunuz sorusuna "Listeden seçilmiş diskin başına kur" işaretlenip, açılış diski olmayan bir disk seçtikten sonra açılış diskinin başına kuru işaretlediğimizde, açılış diski seçilmiş olması gerekirken, daha önce işaretlemiş olduğumuz disk seçilmiş olarak kalıyor.
+   + Yalının grub bölümünde alfabetik sıra ile dizilen harddisklerin hangisinin açılış diski olduğu belirtilmiyor.
+   + Sistem yükleyicisini nereye kurmak istiyorsunuz sorusuna "Listeden seçilmiş diskin başına kur" işaretlenip, açılış diski olmayan bir disk seçtikten sonra açılış diskinin başına kuru işaretlediğimizde, açılış diski seçilmiş olması gerekirken, daha önce işaretlemiş olduğumuz disk seçilmiş olarak kalıyor.
 
 + Uyarı ekranlarının turuncu olan üst bölümlerinin rengi uygun bir renk ile değiştirilmeli.
 
