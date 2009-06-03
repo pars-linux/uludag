@@ -130,7 +130,7 @@ class AutoPartQuestionWidget(QtGui.QWidget):
         self.ui.partition_list.setCurrentRow(0)
         self.ui.bestChoice.toggle()
         self.slotDisableList()
-        self.resize(ctx.mainScreen.ui.size())
+        self.resize(ctx.mainScreen.size())
 
     def slotEnableList(self):
         self.ui.partition_list.setEnabled(True)
@@ -226,7 +226,7 @@ class ConnectionWidget(QtGui.QWidget):
                 ci = ConnectionItem(self.ui.connectionList, str(connection), package)
 
         self.ui.connectionList.setCurrentRow(0)
-        self.resize(ctx.mainScreen.ui.size())
+        self.resize(ctx.mainScreen.size())
 
     def slotUseSelected(self):
         current = self.ui.connectionList.currentItem()
