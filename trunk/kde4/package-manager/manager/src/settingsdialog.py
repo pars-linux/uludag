@@ -135,6 +135,7 @@ class RepositorySettings(SettingsTab):
         self.connect(self.settings.removeRepoButton, SIGNAL("clicked()"), self.removeRepository)
         self.connect(self.settings.moveUpButton, SIGNAL("clicked()"), self.moveUp)
         self.connect(self.settings.moveDownButton, SIGNAL("clicked()"), self.moveDown)
+        self.connect(self.settings.repoListView, SIGNAL("itemChanged(QTableWidgetItem*)"), self.markChanged)
 
     def __getRepositories(self):
         repositories = self.iface.getRepositories()
@@ -168,9 +169,11 @@ class RepositorySettings(SettingsTab):
             KMessageBox.error(self,i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
         self.__insertRow(repoName, repoAddress)
+        self.markChanged()
 
     def removeRepository(self):
         self.settings.repoListView.removeRow(self.settings.repoListView.currentRow())
+        self.markChanged()
 
     def __setRow(self, row, rowItems):
         for col in range(self.settings.repoListView.columnCount()):
@@ -199,6 +202,7 @@ class RepositorySettings(SettingsTab):
         self.settings.repoListView.cellWidget(dstRow, 0).setCheckState(srcRowChecked)
 
         self.settings.repoListView.setCurrentItem(srcItems[1])
+        self.markChanged()
 
     def moveUp(self):
         self.__move(True)
