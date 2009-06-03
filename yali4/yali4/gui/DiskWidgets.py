@@ -678,8 +678,8 @@ class PartEdit(QtGui.QWidget):
         self.ui.partitionSlider.setMaximum(part.getMB()-1)
         self.ui.partitionSize.setValue(part.getMB()-1)
         self.ui.information.setText("")
-        self.ui.partitionSize.setMinimum(10)
-        self.ui.partitionSlider.setMinimum(10)
+        self.ui.partitionSize.setMinimum(160)
+        self.ui.partitionSlider.setMinimum(160)
 
         # We must select formatType after GUI update
         partitionType = getPartitionType(part)
