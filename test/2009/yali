@@ -6,15 +6,15 @@
     + Partition formatlanıp yeni dosya sistemi ile kurulmaya çalışıldığında fscheck hatası veriyor.
     - Partition resize edilmeye çalışıldığında parted hatası veriyor.
 
-- Disk tablosunda partition signature eğer none olarak gözüküyor ise parted harası veriyor.
++ Disk tablosunda partition signature eğer none olarak gözüküyor ise parted harası veriyor.
 
 - Bozuk CD check edilmeye çalışıldığında, exception hatası veriyor.
 
-- Birden fazla harddisk bulunması durumunda, açılış diskinin hangisi olduğu bilinemiyor.
++ Birden fazla harddisk bulunması durumunda, açılış diskinin hangisi olduğu bilinemiyor.
    - Yalının grub bölümünde alfabetik sıra ile dizilen harddisklerin hangisinin açılış diski olduğu belirtilmiyor.
    - Sistem yükleyicisini nereye kurmak istiyorsunuz sorusuna "Listeden seçilmiş diskin başına kur" işaretlenip, açılış diski olmayan bir disk seçtikten sonra açılış diskinin başına kuru işaretlediğimizde, açılış diski seçilmiş olması gerekirken, daha önce işaretlemiş olduğumuz disk seçilmiş olarak kalıyor.
 
-- Uyarı ekranlarının turuncu olan üst bölümlerinin rengi uygun bir renk ile değiştirilmeli.
++ Uyarı ekranlarının turuncu olan üst bölümlerinin rengi uygun bir renk ile değiştirilmeli.
 
 + 4 ayrı partition olduğunu düşünelim
     1 -> pardus root
