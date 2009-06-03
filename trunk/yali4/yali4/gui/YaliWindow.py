@@ -67,7 +67,6 @@ class Widget(QtGui.QWidget):
 
         # Dont need help as default
         self.ui.helpContent.hide()
-        self.ui.shortCutButton.hide()
         self.ui.toggleHelp.setText(_("Show Help"))
 
         # Main Slots
@@ -128,11 +127,9 @@ class Widget(QtGui.QWidget):
     def slotToggleHelp(self):
         if self.ui.helpContent.isVisible():
             self.ui.helpContent.hide()
-            self.ui.shortCutButton.hide()
             self.ui.toggleHelp.setText(_("Show Help"))
         else:
             self.ui.helpContent.show()
-            self.ui.shortCutButton.show()
             self.ui.toggleHelp.setText(_("Hide Help"))
         _w = self.ui.mainStack.currentWidget()
         _w.update()
