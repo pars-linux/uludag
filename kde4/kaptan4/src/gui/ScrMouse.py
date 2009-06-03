@@ -122,20 +122,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        #self.__class__.screenSettings["summaryMessage"] = {"clickBehaviour": ki18n("%s Click")% "Double" if self.clickBehaviour is True else "Single" }
         self.__class__.screenSettings["summaryMessage"] ={}
-        print self.__class__.screenSettings["selectedMouse"]
 
-        if self.__class__.screenSettings["selectedMouse"] == "LeftHanded":
-            self.__class__.screenSettings["summaryMessage"].update({"selectedMouse": ki18n("Left Handed")})
-        else:
-            self.__class__.screenSettings["summaryMessage"].update({"selectedMouse": ki18n("Right Handed")})
+        self.__class__.screenSettings["summaryMessage"].update({"selectedMouse": ki18n("%s Handed")% "Left" if self.__class__.screenSettings["selectedMouse"] == "LeftHanded" else "Right"})
+        self.__class__.screenSettings["summaryMessage"].update({"clickBehaviour": ki18n("%s Click ")% "Single" if self.clickBehaviour is True else "Double"})
 
-        print self.clickBehaviour
-        if self.clickBehaviour == "True":
-            self.__class__.screenSettings["summaryMessage"].update({"clickBehaviour": ki18n("Single Click")})
-        else:
-            self.__class__.screenSettings["summaryMessage"].update({"clickBehaviour": ki18n("Double Click")})
+        print self.__class__.screenSettings["summaryMessage"]
 
         config = KConfig("kdeglobals")
         group = config.group("KDE")
@@ -143,6 +135,5 @@ class Widget(QtGui.QWidget, ScreenWidget):
         config.sync()
         KGlobalSettings.self().emitChange(KGlobalSettings.SettingsChanged, KGlobalSettings.SETTINGS_MOUSE)
 
-        print self.__class__.screenSettings["summaryMessage"]["selectedMouse"].toString()
         return True
 
