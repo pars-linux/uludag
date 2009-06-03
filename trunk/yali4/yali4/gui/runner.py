@@ -93,10 +93,10 @@ class Runner:
         ctx.debugger.log("System language is '%s'" % ctx.consts.lang)
         ctx.debugger.log("Install type is %d" % ctx.yali.install_type)
 
-        # font = QtGui.QFont()
-        # font.setFamily("Droid Sans")
-        # font.setPixelSize(11)
-        # self._app.setFont(font)
+        # VBox utils
+        ctx.debugger.log("Starting VirtualBox tools..")
+        yali4.sysutils.run("VBoxClient --autoresize")
+        yali4.sysutils.run("VBoxClient --clipboard")
 
         # add Screens for selected install type
         self._window.createWidgets(ctx.yali.screens)
@@ -112,6 +112,12 @@ class Runner:
         # set the current screen ...
         ctx.mainScreen.setCurrent(ctx.options.startupScreen)
 
+        # Font Resize
+        fontMinusShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.CTRL + Qt.Key_Minus),self._window)
+        fontPlusShortCut  = QtGui.QShortcut(QtGui.QKeySequence(Qt.CTRL + Qt.Key_Plus) ,self._window)
+        QObject.connect(fontMinusShortCut, SIGNAL("activated()"), self._window.setFontMinus)
+        QObject.connect(fontPlusShortCut , SIGNAL("activated()"), self._window.setFontPlus)
+
     ##
     # Fire up the interface.
     def run(self):
@@ -119,7 +125,6 @@ class Runner:
         # Use default theme;
         # if you use different Qt4 theme our works looks ugly :)
         self._app.setStyle(QtGui.QStyleFactory.create('Plastique'))
-
         self._init_screen()
 
         # For testing..

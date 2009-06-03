@@ -256,7 +256,7 @@
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
+             <item row="3" column="0">
               <spacer>
                <property name="orientation">
                 <enum>Qt::Vertical</enum>
@@ -271,6 +271,13 @@
                 </size>
                </property>
               </spacer>
+             </item>
+             <item row="2" column="0">
+              <widget class="QPushButton" name="shortCutButton">
+               <property name="text">
+                <string>Shortcuts</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>
