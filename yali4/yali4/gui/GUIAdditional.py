@@ -32,7 +32,7 @@ class ResizeWidget(QtGui.QWidget):
         self.ui.setupUi(self)
         self.rootWidget = rootWidget
         self.setStyleSheet("""
-                QSlider::groove:horizontal {
+                 QSlider::groove:horizontal {
                      border: 1px solid #999999;
                      height: 12px;
                      background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
@@ -171,11 +171,14 @@ class PartitionItem(QtGui.QListWidgetItem):
 
 class DeviceItem(QtGui.QListWidgetItem):
     def __init__(self, parent, dev):
-        text = u"%s - %s (%s)" %(dev.getModel(),
-                                dev.getName(),
-                                dev.getSizeStr())
-        QtGui.QListWidgetItem.__init__(self,text,parent)
+        self.text = u"%s - %s (%s)" %(dev.getModel(),
+                                      dev.getName(),
+                                      dev.getSizeStr())
+        QtGui.QListWidgetItem.__init__(self, self.text, parent)
         self._dev = dev
+
+    def setBootable(self):
+        self.setText(_("%s (Boot Disk)" % self.text))
 
     def getDevice(self):
         return self._dev
