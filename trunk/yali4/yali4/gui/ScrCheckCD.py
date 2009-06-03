@@ -44,6 +44,11 @@ You can check if the packages included in the installation CD are saved correctl
         if ctx.consts.lang == "tr":
             self.ui.progressBar.setFormat("%%p")
 
+    def shown(self):
+        ctx.yali.showError(_("Check Failed"),
+                           _("<b><p>Integrity check for packages failed.\
+                              It seems that installation CD is broken.</p></b>"))
+
     def slotCheckCD(self):
         if ctx.yali.checkCDStop == True:
             ctx.yali.checkCDStop = False
