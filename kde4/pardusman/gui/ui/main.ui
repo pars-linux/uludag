@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>475</width>
-    <height>370</height>
+    <width>679</width>
+    <height>635</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,6 +56,12 @@
     </item>
     <item row="1" column="0">
      <widget class="QFrame" name="frame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -268,6 +274,9 @@
       </item>
      </layout>
     </item>
+    <item row="3" column="0">
+     <layout class="QVBoxLayout" name="terminalLayout"/>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -275,8 +284,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>475</width>
-     <height>24</height>
+     <width>679</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>

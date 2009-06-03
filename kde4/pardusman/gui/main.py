@@ -18,6 +18,7 @@ import tempfile
 
 # Qt
 from PyQt4.QtCore import SIGNAL
+import QTermWidget
 
 # PyKDE
 from PyKDE4.kdeui import KIcon, KMessageBox, KMainWindow
@@ -43,6 +44,12 @@ class MainWindow(KMainWindow, Ui_MainWindow):
     def __init__(self, args):
         KMainWindow.__init__(self)
         self.setupUi(self)
+
+        # Terminal
+
+        self.terminal = QTermWidget.QTermWidget()
+        self.terminalLayout.addWidget(self.terminal)
+        self.terminal.show()
 
         # Arguments
         self.args = args
@@ -221,8 +228,14 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         app_path = self.args[0]
         if app_path[0] != "/":
             app_path = os.path.join(os.getcwd(), app_path)
-        cmd = 'konsole --noclose --workdir "%s" -e "%s" make "%s"' % (os.getcwd(), app_path, temp_project.name)
-        subprocess.Popen(["xdg-su", "-u", "root", "-c", cmd])
+
+        # Konsole Mode
+        # cmd = 'konsole --noclose --workdir "%s" -e "%s" make "%s"' % (os.getcwd(), app_path, temp_project.name)
+        # subprocess.Popen(["xdg-su", "-u", "root", "-c", cmd])
+
+        cmd = '%s make %s' % (app_path, temp_project.name)
+        self.terminal.sendText("sudo %s\n" % cmd)
+        self.terminal.setFocus()
 
     def checkProject(self):
         """
