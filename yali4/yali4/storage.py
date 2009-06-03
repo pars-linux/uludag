@@ -451,6 +451,7 @@ class Device:
         self.update()
 
     def resizePartition(self, fs, size_mb, part):
+        import yali4.gui.context as ctx
 
         if isinstance(fs, str):
             # a string... get the corresponding FileSystem object
