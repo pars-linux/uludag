@@ -260,33 +260,30 @@ class Yali:
         ctx.debugger.log("%d disk found." % len(yali4.storage.devices))
         for dev in yali4.storage.devices:
             ctx.debugger.log("In disk %s, %d mb is free." % (dev.getPath(), dev.getLargestContinuousFreeMB()))
-            if dev.primaryAvailable():
-                #if dev.getLargestContinuousFreeMB() > ctx.consts.min_root_size + 100:
-                #    rootWidget.resizableDisks.append(dev)
-                for part in dev.getOrderedPartitionList():
-                    ctx.debugger.log("Partition %s found on disk %s, formatted as %s" % (part.getPath(), dev.getPath(), part.getFSName()))
-                    if part.isFreespace():
-                        ctx.debugger.log(" - This partition is free")
-                        if part.getMB() > ctx.consts.min_root_size:
-                            ctx.debugger.log(" - Usable size for this partition is %.2f MB" % part.getMB())
-                            rootWidget.freeSpacePartitions.append({"partition":part,"newSize":part.getMB()})
-                            if dev not in rootWidget.freeSpaceDisks:
-                                rootWidget.freeSpaceDisks.append(dev)
-                    elif part.isResizable():
-                        minSize = part.getMinResizeMB()
-                        possibleFreeSize = part.getMB() - minSize
-                        ctx.debugger.log(" - This partition is resizable")
-                        ctx.debugger.log(" - Total size of this partition is %.2f MB" % part.getMB())
-                        ctx.debugger.log(" - It can resizable to %.2f MB" % minSize)
-                        ctx.debugger.log(" - Usable size for this partition is %.2f MB" % possibleFreeSize)
-                        rootWidget.resizablePartitions.append({"partition":part,"newSize":possibleFreeSize})
-                        if possibleFreeSize / 2 > ctx.consts.min_root_size:
-                            if dev not in rootWidget.resizableDisks:
-                                rootWidget.resizableDisks.append(dev)
-                    else:
-                        ctx.debugger.log("This partition is not usable")
-            else:
-                ctx.debugger.log("In disk %s, there is no primary avaliable" % (dev.getPath()))
+            #if dev.getLargestContinuousFreeMB() > ctx.consts.min_root_size + 100:
+            #    rootWidget.resizableDisks.append(dev)
+            for part in dev.getOrderedPartitionList():
+                ctx.debugger.log("Partition %s found on disk %s, formatted as %s" % (part.getPath(), dev.getPath(), part.getFSName()))
+                if part.isFreespace() and (part.isLogical() or dev.primaryAvailable()):
+                    ctx.debugger.log(" - This partition is free")
+                    if part.getMB() > ctx.consts.min_root_size:
+                        ctx.debugger.log(" - Usable size for this partition is %.2f MB" % part.getMB())
+                        rootWidget.freeSpacePartitions.append({"partition":part,"newSize":part.getMB()})
+                        if dev not in rootWidget.freeSpaceDisks:
+                            rootWidget.freeSpaceDisks.append(dev)
+                elif part.isResizable():
+                    minSize = part.getMinResizeMB()
+                    possibleFreeSize = part.getMB() - minSize
+                    ctx.debugger.log(" - This partition is resizable")
+                    ctx.debugger.log(" - Total size of this partition is %.2f MB" % part.getMB())
+                    ctx.debugger.log(" - It can resizable to %.2f MB" % minSize)
+                    ctx.debugger.log(" - Usable size for this partition is %.2f MB" % possibleFreeSize)
+                    rootWidget.resizablePartitions.append({"partition":part,"newSize":possibleFreeSize})
+                    if possibleFreeSize / 2 > ctx.consts.min_root_size and part.isLogical():
+                        if dev not in rootWidget.resizableDisks:
+                            rootWidget.resizableDisks.append(dev)
+                else:
+                    ctx.debugger.log("This partition is not usable")
 
         # Sort by size..
         rootWidget.resizablePartitions.sort(sortBySize)
