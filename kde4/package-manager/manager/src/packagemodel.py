@@ -29,6 +29,7 @@ class PackageModel(QAbstractTableModel):
         QAbstractTableModel.__init__(self, parent)
         self.iface = backend.pm.Iface()
         self.cached_package = None
+        self.cached_selected = None
         self.packages = []
 
     def rowCount(self, index=QModelIndex()):
@@ -63,6 +64,7 @@ class PackageModel(QAbstractTableModel):
 
     def setData(self, index, value, role):
         if role == Qt.CheckStateRole and index.column() == 0:
+            self.cached_selected = None
             self.package_selections[index.row()] = value
             self.emit(SIGNAL("dataChanged(QModelIndex,QModelIndex)"), index, index)
             return True
@@ -92,8 +94,13 @@ class PackageModel(QAbstractTableModel):
     # FIXME: There should really be a better way to get this from proxy. Proxy's selectedIndexes only
     # returns the selected but filtered packages.
     def selectedPackages(self):
+        if self.cached_selected:
+            return cached_selected
         selected = []
         for i, pkg in enumerate(self.packages):
             if self.package_selections[i] == Qt.Checked:
                 selected.append(pkg)
         return selected
+
+    def extraPackages(self):
+        return self.iface.getExtras(self.selectedPackages())
