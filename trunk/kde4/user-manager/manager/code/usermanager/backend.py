@@ -21,6 +21,7 @@ class Interface:
     def __init__(self):
         self.link = comar.Link()
         self.link.setLocale()
+        self.link.useAgent()
         self.package = self.getMainPackage()
 
     def getPackages(self):
