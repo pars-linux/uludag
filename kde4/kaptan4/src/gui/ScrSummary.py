@@ -13,7 +13,7 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n
+from PyKDE4.kdecore import ki18n, KConfig
 import subprocess,os
 from gui.ScreenWidget import ScreenWidget
 from gui.summaryWidget import Ui_summaryWidget
@@ -37,10 +37,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def shown(self):
         selectedWallpaper = wallpaperWidget.Widget.selectedWallpaper
-        selectedMouse = mouseWidget.Widget.selectedMouse
-        selectedBehaviour = mouseWidget.Widget.selectedBehaviour
-        selectedMenuName = menuWidget.Widget.selectedMenuName
-        searchSettings = searchWidget.Widget.searchSettings
+        self.mouseSettings = mouseWidget.Widget.screenSettings
+        self.menuSettings = menuWidget.Widget.screenSettings
+        self.searchSettings = searchWidget.Widget.screenSettings
         selectedStyle = styleWidget.Widget.selectedStyle
 
         subject = "<p><li><b>%s</b></li><ul>"
@@ -52,13 +51,13 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Mouse Settings
         content.append(subject % ("Mouse Settings"))
-        content.append(item % ("Selected Mouse configuration is <b>%s</b>") % selectedMouse)
-        content.append(item % ("Selected clicking behaviour is <b>%s</b>") % selectedBehaviour)
+        content.append(item % ("Selected Mouse configuration is <b>%s</b>") % self.mouseSettings["summaryMessage"]["selectedMouse"].toString())
+        content.append(item % ("Selected clicking behaviour is <b>%s</b>") % self.mouseSettings["summaryMessage"]["clickBehaviour"].toString())
         content.append(end)
 
         # Menu Settings
         content.append(subject % ("Menu Settings"))
-        content.append(item % ("Selected Menu is <b>%s</b>") % selectedMenuName)
+        content.append(item % ("Selected Menu is <b>%s</b>") % self.menuSettings["summaryMessage"].toString())
         content.append(end)
 
         # Wallpaper Settings
@@ -74,7 +73,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Search Settings
         content.append(subject %("Search Settings"))
-        content.append(item % ("Desktop search is <b>%s</b>") % searchSettings["summaryMessage"].toString())
+        content.append(item % ("Desktop search is <b>%s</b>") % self.searchSettings["summaryMessage"].toString())
         content.append(end)
 
         content.append("""</ul></body></html>""")
@@ -100,16 +99,32 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def execute(self):
 
         # Search settings
-        if searchSettings["hasChanged"] == True:
+        if self.searchSettings["hasChanged"] == True:
             config = KConfig("nepomukserverrc")
             group = config.group("Basic Settings")
 
             session = dbus.SessionBus()
             proxy = session.get_object( "org.kde.NepomukServer", "/nepomukserver")
 
-            group.writeEntry('Start Nepomuk', str(searchSettings["state"]).lower())
+            group.writeEntry('Start Nepomuk', str(self.searchSettings["state"]).lower())
             proxy.reconfigure()
             proxy.enableNepomuk(state)
+
+        # Menu Settings
+        if self.menuSettings["hasChanged"] == True:
+            config = KConfig("plasma-appletsrc")
+            group = config.group("Containments")
+
+            for each in list(group.groupList()):
+                subgroup = group.group(each)
+                subcomponent = subgroup.readEntry('plugin')
+                if subcomponent == 'panel':
+                    subg = subgroup.group('Applets')
+                    for i in list(subg.groupList()):
+                        subg2 = subg.group(i)
+                        launcher = subg2.readEntry('plugin')
+                        if str(launcher).find('launcher') >= 0:
+                            subg2.writeEntry('plugin', self.menuSettings["selectedMenu"] )
 
         self.killPlasma()
         return True
