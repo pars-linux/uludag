@@ -96,11 +96,10 @@ class PisiUI(QObject, pisi.ui.UI):
         apply(QObject.__init__, (self,) + args)
 
     def notify(self, event, **keywords):
-        ctx.debugger.log("PISI: Event %s " % event)
+        ctx.debugger.log("PISI: Event %s %s" % (event, keywords))
 
     def display_progress(self, operation, percent, info, **keywords):
         ctx.debugger.log("PISI: %s %s %s" % (operation, percent, info))
-        ctx.debugger.log("PISI: KE %s " % keywords)
         ctx.mainScreen.processEvents()
 
 class PisiEvent(QEvent):
