@@ -70,6 +70,16 @@ class StateManager(QObject):
                 self.REMOVE :KIcon("list-remove"),
                 self.UPGRADE:KIcon("view-refresh")}[self.state]
 
+    def getBasketInfo(self):
+        return {self.INSTALL:i18n("Selected package(s) for install:"),
+                self.REMOVE :i18n("Selected package(s) for removal:"),
+                self.UPGRADE:i18n("Selected package(s) for upgrade:")}[self.state]
+
+    def getBasketExtrasInfo(self):
+        return {self.INSTALL:i18n("Extra dependencies of the selected package(s) that are also going to be installed:"),
+                self.REMOVE :i18n("Reverse dependencies of the selected package(s) that are also going to be removed:"),
+                self.UPGRADE:i18n("Extra dependencies of the selected package(s) that are also going to be upgraded:")}[self.state]
+
     def groups(self):
         return self.iface.getGroups()
 
