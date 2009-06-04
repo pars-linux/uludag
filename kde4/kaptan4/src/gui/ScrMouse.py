@@ -22,9 +22,8 @@ from Xlib import display
 RIGHT_HANDED, LEFT_HANDED = range(2)
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    screenSettings = {}
-    screenSettings["hasChanged"] = False
-
+    selectedMouse = 0
+    selectedBehaviour = 0
     # title and description at the top of the dialog window
     title = ki18n("Mouse Settings")
     desc = ki18n("Configure your mouse")
@@ -35,43 +34,27 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         # Our default click behaviour is double click. So make SingleClick = false (kdeglobals)
-        self.clickBehaviour = "False"
+        self.clickBehaviour = "false"
 
-        # read default settings
-
-        config = KConfig("kcminputrc")
-        group = config.group("Mouse")
-        self.__class__.screenSettings["selectedMouse"] =  group.readEntry("MouseButtonMapping")
-
-        config = KConfig("kdeglobals")
-        group = config.group("KDE")
-        self.__class__.screenSettings["selectedBehaviour"] = str(group.readEntry("SingleClick"))
         self.ui.pixMouseIcon.setPixmap(QtGui.QPixmap(':/raw/pics/mouse.png'))
-
-        self.ui.singleClick.setChecked(self.str2bool(self.__class__.screenSettings["selectedBehaviour"]))
-
-        if self.__class__.screenSettings["selectedMouse"] == "LeftHanded":
-            self.ui.radioButtonLeftHand.setChecked(True)
-
         # set signals
         self.connect(self.ui.radioButtonRightHand, SIGNAL("toggled(bool)"), self.setHandedness)
         self.connect(self.ui.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)
         self.connect(self.ui.singleClick, SIGNAL("toggled(bool)"), self.setClickBehaviour)
 
-    def str2bool(self, s):
-        return bool(eval(s.capitalize()))
-
     def setClickBehaviour(self):
-        self.clickBehaviour = "True"
+        self.clickBehaviour = "true"
 
     def setHandedness(self, item):
         mapMouse = {}
 
         if self.ui.radioButtonRightHand.isChecked():
             handed = RIGHT_HANDED
+            self.__class__.selectedMouse = "Right Handed"
 
         else:
             handed = LEFT_HANDED
+            self.__class__.selectedMouse = "Left Handed"
 
         mapMouse = display.Display().get_pointer_mapping()
         num_buttons = len(mapMouse)
@@ -108,10 +91,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         if handed == RIGHT_HANDED:
             group.writeEntry("MouseButtonMapping", QString("RightHanded"))
-            self.__class__.screenSettings["selectedMouse"] = "RightHanded"
         else:
             group.writeEntry("MouseButtonMapping", QString("LeftHanded"))
-            self.__class__.screenSettings["selectedMouse"] = "LeftHanded"
 
         group.writeEntry("ReverseScrollPolarity", QString(str(self.ui.checkReverse.isChecked())))
         config.sync()
@@ -122,12 +103,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        self.__class__.screenSettings["summaryMessage"] ={}
-
-        self.__class__.screenSettings["summaryMessage"].update({"selectedMouse": ki18n("%s Handed")% "Left" if self.__class__.screenSettings["selectedMouse"] == "LeftHanded" else "Right"})
-        self.__class__.screenSettings["summaryMessage"].update({"clickBehaviour": ki18n("%s Click ")% "Single" if self.clickBehaviour is True else "Double"})
-
-        print self.__class__.screenSettings["summaryMessage"]
+        if self.clickBehaviour == True:
+            self.__class__.selectedBehaviour = "Single Click"
+        else:
+            self.__class__.selectedBehaviour = "Double Click"
 
         config = KConfig("kdeglobals")
         group = config.group("KDE")

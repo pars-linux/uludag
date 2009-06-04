@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaptan 4.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-03 13:39+0300\n"
+"POT-Creation-Date: 2009-05-28 16:26+0300\n"
 "PO-Revision-Date: 2009-05-29 09:26+0300\n"
 "Last-Translator: Pınar Yanardağ <Pınar Yanardağ@pardus.org.tr>\n"
 "Language-Team: Pınar Yanardağ <Pınar Yanardağ@pardus.org.tr>\n"
@@ -15,86 +15,63 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/goodbyeWidget.py:41 .tmp/ScrGoodbye.py:21 .tmp/ui_goodbyeWidget.py:41
+#: .tmp/goodbyeWidget.py:40 .tmp/ScrGoodbye.py:21 .tmp/ui_goodbyeWidget.py:40
 msgid "Goodbye"
 msgstr "Hoşçakalın"
 
-#: .tmp/goodbyeWidget.py:42 .tmp/ui_goodbyeWidget.py:42
+#: .tmp/goodbyeWidget.py:41 .tmp/ui_goodbyeWidget.py:41
 msgid "Congratulations! You have finished all steps!"
 msgstr "Tebrikler! Bütün adımları bitirdiniz!"
 
-#: .tmp/kaptanMain.py:130 .tmp/ui_kaptanMain.py:130
+#: .tmp/kaptanMain.py:110 .tmp/ui_kaptanMain.py:110
 msgid "Kaptan Desktop"
 msgstr "Kaptan Masaüstü"
 
-#: .tmp/kaptanMain.py:131 .tmp/ui_kaptanMain.py:131
-#, fuzzy
-msgid "<b>Welcome to Kaptan!</b>"
+#: .tmp/kaptanMain.py:111 .tmp/ui_kaptanMain.py:111
+msgid "Welcome to Kaptan!"
 msgstr "Kaptan'a hoşgeldiniz!"
 
-#: .tmp/kaptanMain.py:132 .tmp/ui_kaptanMain.py:132
+#: .tmp/kaptanMain.py:112 .tmp/ui_kaptanMain.py:112
 msgid "Cancel"
 msgstr "İptal"
 
-#: .tmp/kaptanMain.py:133 .tmp/ui_kaptanMain.py:133
+#: .tmp/kaptanMain.py:113 .tmp/ui_kaptanMain.py:113
 msgid "Back"
 msgstr "Geri"
 
-#: .tmp/kaptanMain.py:134 .tmp/ui_kaptanMain.py:134
+#: .tmp/kaptanMain.py:114 .tmp/ui_kaptanMain.py:114
 msgid "Next"
 msgstr "İleri"
 
-#: .tmp/kaptanMain.py:135 .tmp/ui_kaptanMain.py:135
+#: .tmp/kaptanMain.py:115 .tmp/ui_kaptanMain.py:115
 msgid "Finish"
 msgstr "Bitir"
 
-#: .tmp/menuWidget.py:77 .tmp/ui_menuWidget.py:77
+#: .tmp/menuWidget.py:63 .tmp/ui_menuWidget.py:63
 msgid "Menu"
 msgstr "Menü"
 
-#: .tmp/menuWidget.py:78 .tmp/ui_menuWidget.py:78
-#, fuzzy
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Select a menu style:</span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda "
-"uygulanacaktır...</span></p></body></html>"
+#: .tmp/menuWidget.py:64 .tmp/ui_menuWidget.py:64
+msgid "Select a menu style:"
+msgstr "Bir menü stili seçin:"
 
-#: .tmp/menuWidget.py:83 .tmp/ui_menuWidget.py:83
+#: .tmp/menuWidget.py:65 .tmp/ui_menuWidget.py:65
 msgid "Kick-off (Advanced Menu)"
 msgstr "Kick-off (Gelişmiş Menü)"
 
-#: .tmp/menuWidget.py:84 .tmp/ui_menuWidget.py:84
+#: .tmp/menuWidget.py:66 .tmp/ui_menuWidget.py:66
 msgid "Classic (Simple Menu)"
 msgstr "Klasik (Basit Menü)"
 
-#: .tmp/menuWidget.py:85 .tmp/ui_menuWidget.py:85
+#: .tmp/menuWidget.py:67 .tmp/ui_menuWidget.py:67
 msgid "Lancelot (Experimental Menu)"
 msgstr "Lancelot (Deneysel Menü)"
 
-#: .tmp/mouseWidget.py:85 .tmp/ui_mouseWidget.py:85
+#: .tmp/mouseWidget.py:68 .tmp/ui_mouseWidget.py:68
 msgid "Mouse"
 msgstr "Fare"
 
-#: .tmp/mouseWidget.py:86 .tmp/ui_mouseWidget.py:86
+#: .tmp/mouseWidget.py:69 .tmp/ui_mouseWidget.py:69
 msgid ""
 "<p align=\"left\">If you are left-handed, you may prefer to swap the "
 "functions on the left and right buttons on your pointing device by choosing "
@@ -105,51 +82,37 @@ msgstr ""
 "\"sol el\" seçeneğini işaretleyerek değiştirmeyi tercih edebilirsiniz. "
 "Ayrıca varsayılan tıklama davranışını da değiştirebilirsiniz.</p>"
 
-#: .tmp/mouseWidget.py:87 .tmp/ui_mouseWidget.py:87
+#: .tmp/mouseWidget.py:70 .tmp/ui_mouseWidget.py:70
 msgid "mouse icon"
 msgstr "fare ikonu"
 
-#: .tmp/mouseWidget.py:88 .tmp/ui_mouseWidget.py:88
+#: .tmp/mouseWidget.py:71 .tmp/ui_mouseWidget.py:71
 msgid "Click Behaviour"
 msgstr "Tıklama davranışı"
 
-#: .tmp/mouseWidget.py:89 .tmp/ui_mouseWidget.py:89
+#: .tmp/mouseWidget.py:72 .tmp/ui_mouseWidget.py:72
 msgid "Single-click to open files and folders"
 msgstr "Dosya ve dizinleri açmak için tek tıklama "
 
-#: .tmp/mouseWidget.py:90 .tmp/ui_mouseWidget.py:90
+#: .tmp/mouseWidget.py:73 .tmp/ui_mouseWidget.py:73
 msgid "Dou&ble-click to open files and folders"
 msgstr "Dosya ve dizinleri açmak için &çift tıklama"
 
-#: .tmp/mouseWidget.py:91 .tmp/ui_mouseWidget.py:91
+#: .tmp/mouseWidget.py:74 .tmp/ui_mouseWidget.py:74
 msgid "Button Order"
 msgstr "Düğme Sırası"
 
-#: .tmp/mouseWidget.py:92 .tmp/ui_mouseWidget.py:92
+#: .tmp/mouseWidget.py:75 .tmp/ui_mouseWidget.py:75
 msgid "Right Hand"
 msgstr "Sağ El"
 
-#: .tmp/mouseWidget.py:93 .tmp/ui_mouseWidget.py:93
+#: .tmp/mouseWidget.py:76 .tmp/ui_mouseWidget.py:76
 msgid "Left Hand"
 msgstr "Sol El"
 
-#: .tmp/mouseWidget.py:94 .tmp/ui_mouseWidget.py:94
+#: .tmp/mouseWidget.py:77 .tmp/ui_mouseWidget.py:77
 msgid "Reverse scrolling"
 msgstr "Ters Kaydırma"
-
-#: .tmp/multipleWidget.py:58
-#, fuzzy
-msgid "Multiple Desktops"
-msgstr "Masaüstü sayısı:"
-
-#: .tmp/multipleWidget.py:59
-msgid "You can configure number of desktops from this application."
-msgstr ""
-
-#: .tmp/multipleWidget.py:60
-#, fuzzy
-msgid "Number of Desktops"
-msgstr "Masaüstü sayısı:"
 
 #: .tmp/networkWidget.py:25 .tmp/ui_networkWidget.py:25
 msgid "Network"
@@ -195,66 +158,21 @@ msgstr "Katkıcı deposu ekle"
 msgid "Goodbye from Kaptan Wizard :)"
 msgstr "Kaptan Masaüstü size hoşçakalın diyor :)"
 
-#: .tmp/ScrMenu.py:26 .tmp/ScrStyle.py:30
+#: .tmp/ScrMenu.py:23 .tmp/ScrStyle.py:29
 msgid "Some catchy title about styles"
 msgstr "taslak"
 
-#: .tmp/ScrMenu.py:27 .tmp/ScrStyle.py:31
+#: .tmp/ScrMenu.py:24 .tmp/ScrStyle.py:30
 msgid "Some catchy description about styles"
 msgstr "taslak"
 
-#: .tmp/ScrMenu.py:41
-#, fuzzy
-msgid "Kick-off Menu"
-msgstr "Kick-off (Gelişmiş Menü)"
-
-#: .tmp/ScrMenu.py:43
-msgid "A modern menu for KDE"
-msgstr ""
-
-#: .tmp/ScrMenu.py:47
-#, fuzzy
-msgid "Simple Menu"
-msgstr "Klasik (Basit Menü)"
-
-#: .tmp/ScrMenu.py:49
-msgid "And old style menu from KDE 3."
-msgstr ""
-
-#: .tmp/ScrMenu.py:53
-#, fuzzy
-msgid "Lancelot Menu"
-msgstr "Lancelot (Deneysel Menü)"
-
-#: .tmp/ScrMenu.py:55
-msgid "An experimental menu for KDE4"
-msgstr ""
-
-#: .tmp/ScrMouse.py:29
+#: .tmp/ScrMouse.py:27
 msgid "Mouse Settings"
 msgstr "Fare Ayarları"
 
-#: .tmp/ScrMouse.py:30
+#: .tmp/ScrMouse.py:28
 msgid "Configure your mouse"
 msgstr "Farenizi yapılandırın"
-
-#: .tmp/ScrMouse.py:130
-#, fuzzy
-msgid "Left Handed"
-msgstr "Sol El"
-
-#: .tmp/ScrMouse.py:132
-#, fuzzy
-msgid "Right Handed"
-msgstr "Sağ El"
-
-#: .tmp/ScrMouse.py:136
-msgid "Single Click"
-msgstr ""
-
-#: .tmp/ScrMouse.py:138
-msgid "Double Click"
-msgstr ""
 
 #: .tmp/ScrNetwork.py:23 .tmp/ScrNetwork.py:24
 msgid "Network Manager"
@@ -276,28 +194,20 @@ msgstr "Bu işlem için gerekli yetkilere sahip değilsiniz."
 msgid "Authentication Error!"
 msgstr "Yetkilendirme Hatası!"
 
-#: .tmp/ScrSearch.py:27
+#: .tmp/ScrSearch.py:25
 msgid "Some catchy title about desktop search"
 msgstr "taslak"
 
-#: .tmp/ScrSearch.py:28
+#: .tmp/ScrSearch.py:26
 msgid "Some catchy description desktop search"
 msgstr "taslak"
 
-#: .tmp/ScrSearch.py:58
-msgid "On"
-msgstr ""
-
-#: .tmp/ScrSearch.py:60
-msgid "Off"
-msgstr ""
-
-#: .tmp/ScrSummary.py:30 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
-#: .tmp/welcomeWidget.py:43
+#: .tmp/ScrSettings.py:22 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:39
+#: .tmp/welcomeWidget.py:39
 msgid "Welcome"
 msgstr "Hoşgeldiniz"
 
-#: .tmp/ScrSummary.py:31 .tmp/ScrWelcome.py:23
+#: .tmp/ScrSettings.py:23 .tmp/ScrWelcome.py:23
 msgid "Welcome to Kaptan Wizard :)"
 msgstr "Kaptan Masaüstü size hoşgeldiniz diyor :)"
 
@@ -309,11 +219,11 @@ msgstr "taslak"
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Muhteşem duvarkağıtları ile masaüstünüz şenlenecek!"
 
-#: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:52
+#: .tmp/searchWidget.py:43 .tmp/ui_searchWidget.py:43
 msgid "Desktop Search"
 msgstr "Masaüstü Araması"
 
-#: .tmp/searchWidget.py:53 .tmp/ui_searchWidget.py:53
+#: .tmp/searchWidget.py:44 .tmp/ui_searchWidget.py:44
 msgid ""
 "Nepomuk  Semantic Desktop enables tagging and rating of files integrated "
 "with the Desktop Search."
@@ -321,51 +231,19 @@ msgstr ""
 "Nepomuk Semantik Masaüstü, Masaüstü Arama Motoru ile bütünleşik çalışarak "
 "dosya etiketlemeyi ve beğeni belirlemeyi etkinleştirir. "
 
-#: .tmp/searchWidget.py:54 .tmp/ui_searchWidget.py:54
+#: .tmp/searchWidget.py:45 .tmp/ui_searchWidget.py:45
 msgid "Enable Nepomuk Semantic Desktop"
 msgstr "Nepomuk Semantik Masaüstü'nü etkinleştir"
 
-#: .tmp/styleitem.py:46 .tmp/uiitem.py:46 .tmp/ui_styleitem.py:46
-#: .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
-#: .tmp/wallpaperuiitem.py:46
-msgid "Form"
-msgstr "Form"
+#: .tmp/settingsWidget.py:37 .tmp/ui_settingsWidget.py:37
+msgid "Settings"
+msgstr "Ayarlar"
 
-#: .tmp/styleitem.py:47 .tmp/ui_styleitem.py:47
-msgid "styleName"
-msgstr "taslak"
+#: .tmp/settingsWidget.py:38 .tmp/ui_settingsWidget.py:38
+msgid "logo"
+msgstr "logo"
 
-#: .tmp/styleitem.py:48 .tmp/ui_styleitem.py:48
-msgid "styleDesc"
-msgstr "taslak"
-
-#: .tmp/styleWidget.py:65 .tmp/ui_styleWidget.py:65
-msgid "Themes"
-msgstr "Temalar"
-
-#: .tmp/styleWidget.py:66 .tmp/ui_styleWidget.py:66
-#, fuzzy
-msgid "<b>Desktop Type:</b>"
-msgstr "Masaüstü Tipi:"
-
-#: .tmp/styleWidget.py:67 .tmp/ui_styleWidget.py:67
-msgid "Desktop"
-msgstr "Masaüstü"
-
-#: .tmp/styleWidget.py:68 .tmp/ui_styleWidget.py:68
-msgid "Folderview"
-msgstr "Dizin görünümü"
-
-#: .tmp/styleWidget.py:69 .tmp/ui_styleWidget.py:69
-#, fuzzy
-msgid "<b>Number of Desktops:</b>"
-msgstr "Masaüstü sayısı:"
-
-#: .tmp/summaryWidget.py:49 .tmp/ui_summaryWidget.py:49
-msgid "Summary"
-msgstr ""
-
-#: .tmp/summaryWidget.py:50 .tmp/ui_summaryWidget.py:50
+#: .tmp/settingsWidget.py:39 .tmp/ui_settingsWidget.py:39
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -391,6 +269,40 @@ msgstr ""
 "size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda "
 "uygulanacaktır...</span></p></body></html>"
 
+#: .tmp/styleitem.py:46 .tmp/uiitem.py:46 .tmp/ui_styleitem.py:46
+#: .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
+#: .tmp/wallpaperuiitem.py:46
+msgid "Form"
+msgstr "Form"
+
+#: .tmp/styleitem.py:47 .tmp/ui_styleitem.py:47
+msgid "styleName"
+msgstr "taslak"
+
+#: .tmp/styleitem.py:48 .tmp/ui_styleitem.py:48
+msgid "styleDesc"
+msgstr "taslak"
+
+#: .tmp/styleWidget.py:61 .tmp/ui_styleWidget.py:61
+msgid "Themes"
+msgstr "Temalar"
+
+#: .tmp/styleWidget.py:62 .tmp/ui_styleWidget.py:62
+msgid "Desktop Type:"
+msgstr "Masaüstü Tipi:"
+
+#: .tmp/styleWidget.py:63 .tmp/ui_styleWidget.py:63
+msgid "Desktop"
+msgstr "Masaüstü"
+
+#: .tmp/styleWidget.py:64 .tmp/ui_styleWidget.py:64
+msgid "Folderview"
+msgstr "Dizin görünümü"
+
+#: .tmp/styleWidget.py:65 .tmp/ui_styleWidget.py:65
+msgid "Number of Desktops:"
+msgstr "Masaüstü sayısı:"
+
 #: .tmp/uiitem.py:47 .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
 #: .tmp/wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -401,19 +313,19 @@ msgstr "taslak"
 msgid "wallpaperDesc"
 msgstr "taslak"
 
-#: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
+#: .tmp/ui_wallpaperWidget.py:42 .tmp/wallpaperWidget.py:42
 msgid "Wallpaper"
 msgstr "Duvarkağıdı"
 
-#: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:45
+#: .tmp/ui_wallpaperWidget.py:43 .tmp/wallpaperWidget.py:43
 msgid "Choose Wallpaper"
 msgstr "Duvarkağıdı seç"
 
-#: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:46
+#: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
 msgid "Don't change wallpaper"
 msgstr "Duvarkağıdını değiştirme"
 
-#: .tmp/ui_welcomeWidget.py:44 .tmp/welcomeWidget.py:44
+#: .tmp/ui_welcomeWidget.py:40 .tmp/welcomeWidget.py:40
 msgid ""
 "This application, called Kaptan Desktop, will help you with your basic but "
 "sufficient setup for your Pardus desktop in a quick manner. Please click "
@@ -427,12 +339,3 @@ msgstr ""
 "ayarlarını hızlı bir biçimde yapmanızda size yardım edecektir. Bu uygulama "
 "aynı zamanda daha iyi bir masaüstü için bazı varsayılan yapılandırmayı da "
 "ayarlar."
-
-#~ msgid "Select a menu style:"
-#~ msgstr "Bir menü stili seçin:"
-
-#~ msgid "Settings"
-#~ msgstr "Ayarlar"
-
-#~ msgid "logo"
-#~ msgstr "logo"

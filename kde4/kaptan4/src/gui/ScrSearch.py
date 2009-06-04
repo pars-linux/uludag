@@ -21,8 +21,8 @@ from gui.searchWidget import Ui_searchWidget
 
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    screenSettings = {}
-    screenSettings["hasChanged"] = False
+    searchSettings = {}
+    searchSettings["hasChanged"] = False
     # Set title and description for the information widget
     title = ki18n("Some catchy title about desktop search")
     desc = ki18n("Some catchy description desktop search")
@@ -39,25 +39,25 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         if isNepomuk.lower() == "true":
             self.ui.checkBoxNepomuk.setChecked(True)
-            self.__class__.screenSettings["state"] = True
+            self.__class__.searchSettings["state"] = True
         else:
             self.ui.checkBoxNepomuk.setChecked(False)
-            self.__class__.screenSettings["state"] = False
+            self.__class__.searchSettings["state"] = False
 
         self.ui.checkBoxNepomuk.connect(self.ui.checkBoxNepomuk, SIGNAL("toggled(bool)"), self.activateNepomuk)
 
     def activateNepomuk(self, state):
-        self.__class__.screenSettings["state"] = state
-        self.__class__.screenSettings["hasChanged"] = True
+        self.__class__.searchSettings["state"] = state
+        self.__class__.searchSettings["hasChanged"] = True
 
     def shown(self):
         pass
 
     def execute(self):
-        if self.__class__.screenSettings["state"] == True:
-            self.__class__.screenSettings["summaryMessage"] = ki18n("On")
+        if self.__class__.searchSettings["state"] == True:
+            self.__class__.searchSettings["summaryMessage"] = ki18n("On")
         else:
-            self.__class__.screenSettings["summaryMessage"] = ki18n("Off")
+            self.__class__.searchSettings["summaryMessage"] = ki18n("Off")
 
         return True
 
