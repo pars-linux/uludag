@@ -129,7 +129,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         type_ = "disk"
 
         # Build widget and widget item
-        widget = self.makeItemWidget(id_, name, description, type_, icon, None)
+        widget = self.makeItemWidget(id_, name, description, type_, icon, mounted)
         widgetItem = ItemListWidgetItem(self.listItems, widget)
 
         # Delete is unnecessary
@@ -259,7 +259,24 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Item state changed.
         """
-        pass
+        widget = self.sender()
+        if state == QtCore.Qt.Checked:
+            if widget.getId() not in self.iface.entryList():
+                widget.pushEdit.animateClick(100)
+                return
+            path = self.iface.getEntry(widget.getId())[0]
+            try:
+                self.iface.mount(widget.getId(), path)
+            except:
+                widget.setState(False)
+                return
+        elif state == QtCore.Qt.Unchecked:
+            try:
+                self.iface.umount(widget.getId())
+            except:
+                widget.setState(True)
+                return
+        self.buildItemList()
 
     def slotItemEdit(self):
         """
@@ -359,5 +376,4 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel)
 
     def signalHandler(self, package, signal, args):
-        print package, signal, args
         self.buildItemList()
