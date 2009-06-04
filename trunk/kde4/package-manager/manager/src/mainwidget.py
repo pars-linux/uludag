@@ -45,7 +45,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
-                     lambda:self.emit(SIGNAL("selectionChanged(QStringList)"), self.packageList.selectedPackages))
+                     lambda:self.emit(SIGNAL("selectionStatusChanged(QString)"), self.selectedStatus()))
 
     def connectOperationSignals(self):
         self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
@@ -109,3 +109,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state.setState(state)
         self.setActionButton()
         self.state.stateAction()
+
+    def selectedStatus(self):
+        return self.state.selectedStatus(self.packageList.model().sourceModel())
