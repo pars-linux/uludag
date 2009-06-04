@@ -61,6 +61,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         waitCursor()
         self.initializePackageList()
         self.initializeGroupList()
+        self.emit(SIGNAL("selectionStatusChanged(QString)"), self.selectedStatus())
         restoreCursor()
 
     def initializePackageList(self):
@@ -111,4 +112,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state.stateAction()
 
     def selectedStatus(self):
-        return self.state.selectedStatus(self.packageList.model().sourceModel())
+        waitCursor()
+        status = self.state.selectedStatus(self.packageList.model().sourceModel())
+        restoreCursor()
+        return status
