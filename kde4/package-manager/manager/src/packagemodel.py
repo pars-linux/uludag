@@ -28,6 +28,7 @@ class PackageModel(QAbstractTableModel):
     def __init__(self, parent=None):
         QAbstractTableModel.__init__(self, parent)
         self.iface = backend.pm.Iface()
+        self.resetCachedInfos()
         self.cached_package = None
         self.packages = []
 
@@ -64,6 +65,7 @@ class PackageModel(QAbstractTableModel):
     def setData(self, index, value, role):
         if role == Qt.CheckStateRole and index.column() == 0:
             self.package_selections[index.row()] = value
+            self.resetCachedInfos()
             self.emit(SIGNAL("dataChanged(QModelIndex,QModelIndex)"), index, index)
             return True
         else:
@@ -92,14 +94,18 @@ class PackageModel(QAbstractTableModel):
     # FIXME: There should really be a better way to get this from proxy. Proxy's selectedIndexes only
     # returns the selected but filtered packages.
     def selectedPackages(self):
-        selected = []
-        for i, pkg in enumerate(self.packages):
-            if self.package_selections[i] == Qt.Checked:
-                selected.append(pkg)
-        return selected
+        if not self.cached_selected:
+            print "calculating selected packages"
+            for i, pkg in enumerate(self.packages):
+                if self.package_selections[i] == Qt.Checked:
+                    self.cached_selected.append(pkg)
+        return self.cached_selected
 
     def extraPackages(self):
-        return self.iface.getExtras(self.selectedPackages())
+        if not self.cached_extras:
+            print "calculating extra packages"
+            self.cached_extras = self.iface.getExtras(self.selectedPackages())
+        return self.cached_extras
 
     def __packagesSize(self, packages):
         size = 0
@@ -108,7 +114,19 @@ class PackageModel(QAbstractTableModel):
         return size
 
     def selectedPackagesSize(self):
-        return self.__packagesSize(self.selectedPackages())
+        if not self.cached_selected_size < 0:
+            print "calculating selected package size"
+            self.cached_selected_size = self.__packagesSize(self.selectedPackages())
+        return self.cached_selected_size
 
     def extraPackagesSize(self):
-        return self.__packagesSize(self.extraPackages())
+        if not self.cached_extras_size < 0:
+            print "calculating extra package size"
+            self.cached_extras_size = self.__packagesSize(self.extraPackages())
+        return self.cached_extras_size
+
+    def resetCachedInfos(self):
+        self.cached_selected = []
+        self.cached_extras = []
+        self.cached_selected_size = 0
+        self.cached_extras_size = 0

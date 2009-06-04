@@ -25,6 +25,7 @@ from packagedelegate import PackageDelegate
 from progressdialog import ProgressDialog
 from statemanager import StateManager
 from operationmanager import OperationManager
+from basketdialog import BasketDialog
 
 from pmutils import *
 
@@ -33,15 +34,16 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
         self.state = StateManager(self)
+        self.initialize()
         self.actionButton.setIcon(self.state.getActionIcon())
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
-        self.initialize()
+        self.basket = BasketDialog(self.state, self.packageList.model().sourceModel())
         self.connectMainSignals()
         self.connectOperationSignals()
 
     def connectMainSignals(self):
-        self.connect(self.actionButton, SIGNAL("clicked()"), lambda:self.state.operationAction(self.packageList.selectedPackages()))
+        self.connect(self.actionButton, SIGNAL("clicked()"), self.actionInitiated)
         self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
@@ -105,6 +107,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state.reset()
         self.progressDialog.hide()
         self.initialize()
+
+    def actionInitiated(self):
+        waitCursor()
+        self.basket.show()
+        self.basket.refresh()
+        restoreCursor()
 
     def switchState(self, state):
         self.state.setState(state)

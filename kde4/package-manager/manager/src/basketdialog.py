@@ -22,16 +22,16 @@ from pmutils import *
 from ui_basketdialog import Ui_BasketDialog
 
 class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
-    def __init__(self, parent=None):
-        QtGui.QDialog.__init__(self, parent)
+    def __init__(self, state, model):
+        QtGui.QDialog.__init__(self, None)
         self.setupUi(self)
-        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
-        self.model = None
-
-    def setModel(self, model):
+        self.state = state
         self.model = model
         self.initPackageList()
         self.initExtraList()
+        self.setActionButton()
+        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
+        self.connect(self.actionButton, SIGNAL("clicked()"), self.action)
 
     def __initList(self, packageList):
         packageList.setModel(PackageProxy(self))
@@ -44,11 +44,10 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
 
     def __updateList(self, packageList, packages):
         packageList.model().setFilterPackages(packages)
-        packageList.model().reset()
 
     def initExtraList(self):
         self.__initList(self.extraList)
-        self.__updateList(self.extraList, self.model.extraPackages())
+        self.filterExtras()
 
     def initPackageList(self):
         self.__initList(self.packageList)
@@ -56,5 +55,24 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
 
     def filterExtras(self):
         waitCursor()
-        self.__updateList(self.extraList, self.model.extraPackages())
+        extraPackages = self.model.extraPackages()
+        if extraPackages:
+            self.extraList.show()
+            self.extrasLabel.show()
+            self.__updateList(self.extraList, extraPackages)
+        else:
+            self.extraList.hide()
+            self.extrasLabel.hide()
         restoreCursor()
+
+    def setActionButton(self):
+        self.actionButton.setText(self.state.getActionName())
+        self.actionButton.setIcon(self.state.getActionIcon())
+
+    def refresh(self):
+        self.__updateList(self.packageList, self.model.selectedPackages())
+        self.__updateList(self.extraList, self.model.extraPackages())
+
+    def action(self):
+        self.state.operationAction(self.model.selectedPackages())
+        self.close()
