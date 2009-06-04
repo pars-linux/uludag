@@ -14,6 +14,7 @@ import os
 import dbus
 import pisi
 import gettext
+import pardus.xorg
 __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
@@ -51,12 +52,72 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         self.ui.pass_error.setVisible(False)
+        self.ui.caps_error.setVisible(False)
+        self.ui.caps_error.setText(_('Caps Lock is on!'))
+
         self.ui.updatePassword.setEnabled(False)
 
         self.steps = YaliSteps()
-        self.steps.setOperations([#{"text":_("Starting DBUS..."),"operation":yali4.sysutils.chroot_dbus},
-                                  #{"text":_("Trying to connect DBUS..."),"operation":yali4.postinstall.connectToDBus},
+        self.steps.setOperations([{"text":_("Starting DBUS..."),"operation":yali4.sysutils.chroot_dbus},
+                                  {"text":_("Trying to connect DBUS..."),"operation":yali4.postinstall.connectToDBus},
                                   {"text":_("Getting user list ..."),"operation":self.fillUserList}])
+
+        self.connect(self.ui.updatePassword, SIGNAL("clicked()"), self.updatePassword)
+        self.connect(self.ui.userList, SIGNAL("itemChanged(QListWidgetItem*)"),
+                     self.resetWidgets)
+        self.connect(self.ui.pass1, SIGNAL("textChanged(const QString &)"),
+                     self.slotTextChanged)
+        self.connect(self.ui.pass2, SIGNAL("textChanged(const QString &)"),
+                     self.slotTextChanged)
+
+    def resetWidgets(self):
+        self.ui.pass1.clear()
+        self.ui.pass2.clear()
+        self.ui.updatePassword.setEnabled(False)
+
+    def showError(self,message):
+        self.ui.pass_error.setText("<center>%s</center>" % message)
+        self.ui.pass_error.setVisible(True)
+        self.ui.updatePassword.setEnabled(False)
+
+    def checkCapsLock(self):
+        if pardus.xorg.capslock.isOn():
+            self.ui.caps_error.setVisible(True)
+        else:
+            self.ui.caps_error.setVisible(False)
+
+    def keyReleaseEvent(self, e):
+        self.checkCapsLock()
+
+    def updatePassword(self):
+        password = unicode(self.ui.pass1.text())
+        uid  = int(self.ui.userList.currentItem().getInfo()[0])
+        yali4.postinstall.setUserPass(uid, password)
+        QtGui.QMessageBox.information(None, _("Info"), "Password changed", QtGui.QMessageBox.Ok)
+        self.resetWidgets()
+
+    def slotTextChanged(self):
+        p1 = self.ui.pass1.text()
+        p2 = self.ui.pass2.text()
+        if not self.ui.userList.currentItem():
+            return
+        user = self.ui.userList.currentItem().getInfo()
+        if not p1 == '' and (str(p1).lower() == str(user[1]).lower() or \
+                str(p1).lower() == str(user[2]).lower()):
+            self.showError(_('Don\'t use your user name or name as a password.'))
+            return
+        elif p2 != p1 and p2:
+            self.showError(_('Passwords do not match!'))
+            return
+        elif len(p1) == len(p2) and len(p2) < 4 and not p1=='':
+            self.showError(_('Password is too short!'))
+            return
+        elif p1 == '' or p2 == '':
+            self.ui.pass_error.setVisible(False)
+            return
+        else:
+            self.ui.pass_error.setVisible(False)
+            self.ui.updatePassword.setEnabled(True)
 
     def shown(self):
         ctx.yali.info.show()

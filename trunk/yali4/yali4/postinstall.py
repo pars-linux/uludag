@@ -118,10 +118,15 @@ def setHostName():
 
 def getUserList():
     import comar
-    #link = comar.Link(socket=ctx.consts.dbus_socket_file)
-    link = comar.Link()
+    link = comar.Link(socket=ctx.consts.dbus_socket_file)
     users = link.User.Manager["baselayout"].userList()
     return filter(lambda user: user[0]==0 or (user[0]>=1000 and user[0]<=65000), users)
+
+def setUserPass(uid, password):
+    import comar
+    link = comar.Link(socket=ctx.consts.dbus_socket_file)
+    info = link.User.Manager["baselayout"].userInfo(uid)
+    return link.User.Manager["baselayout"].setUser(uid, info[1], info[3], info[4], password, info[5])
 
 def getConnectionList():
     import comar
