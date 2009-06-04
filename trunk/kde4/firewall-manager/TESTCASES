@@ -57,5 +57,46 @@
         - Unselect·
             Type the same command, then observe that the above lines are removed from the list-rules
 
+- Pratical part of tests
+    If the service openssh was not start, start it from service manager
 
 
+    - For Limited content serving:
+        - Disable limited content serving
+            - Try to make a remote connection from an other computer to your computer.
+                If you have a static ip you can use it for remote connection
+
+            Type console
+            # ssh <your_computer_name>@<static_ip>
+            Observe that the connection accepted.
+
+        - Try to add a well known port and enable limited content serving.
+            Open the related service of this port from service-manager.
+
+            - Try to make a remote connection from an other computer to your computer.
+                # ssh <your_computer_name>@<static_ip>
+                Observe that the connection refused.
+
+            - Try to make a remote connection using the added port from an other computer to your computer.
+                # ssh -p <port> <your_computer_name>@<static_ip>
+                Observe that the connection is accepted.
+
+    - For internet sharing:
+        - Plug an external ethernet or internal ethernet card to your computer. And plug an ethernet cable between your computer and an other. ( And if the other computer have an internet acces please stop it. )
+        - Enable internet sharing.
+        - Choose the first ethernet card for gate to internet, and the second for gate to home network.
+            Now try to connect to internet over your computer.
+
+    - For access restriction:
+        - Disable access restriction
+            - Try to make a remote connection with using a well known port from your computer to an other remote computer.
+                If the remote computer has a static ip you can use it for remote connection
+
+                Type console
+                # ssh -p <port> <remote_computer_name>@<static_ip>
+                Observe that the connection accepted.
+
+        - Try to add a well known port and enable access restriction.
+            - Try to make a remote connection using added port from your  computer to an other computer.
+                # ssh -p <port> <remote_computer_name>@<static_ip>
+                Observe that the connection refused. 
