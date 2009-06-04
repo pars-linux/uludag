@@ -56,7 +56,7 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
             self.checkState.hide()
 
         # Buttons
-        self.pushEdit.setIcon(KIcon("edit-rename"))
+        self.pushEdit.setIcon(KIcon("preferences-other"))
         self.pushDelete.setIcon(KIcon("edit-delete"))
 
         # Signals
