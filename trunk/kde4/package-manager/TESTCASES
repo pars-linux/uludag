@@ -123,3 +123,5 @@
         - Select a package from package list, try to remove.
         - Select all, try to remove all.
 
+- Try to shutdown or restart computer while package manager has been making update.
+    Observe that the computer couldn't be shutdown or restart.
