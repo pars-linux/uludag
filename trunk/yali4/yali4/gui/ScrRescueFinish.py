@@ -74,7 +74,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # Umount system paths
         yali4.sysutils.umountSystemPaths()
 
-        if not ctx.mainScreen.helpContent.isVisible():
+        if not ctx.mainScreen.ui.helpContent.isVisible():
             ctx.mainScreen.slotToggleHelp()
         self.ui.label.setPixmap(QtGui.QPixmap(":/gui/pics/goodbye.png"))
         ctx.yali.info.hide()
