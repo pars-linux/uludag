@@ -1,3 +1,6 @@
+2009-06-04  Ozan Çağlayan <ozan@pardus.org.tr>
+	* Makefile: Merge noexecstack.patch from devel/.
+
 2009-05-29  Ozan Çağlayan <ozan@pardus.org.tr>
 	* scsi.c: Don't probe sr_mod and sd_mod as they are now built-in.
 
