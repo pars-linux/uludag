@@ -330,8 +330,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Save clicked on edit box, save item details then show item list.
         """
-        # User.Manager does not emit signals, refresh whole list.
-        self.buildItemList()
         # Hide edit box
         self.hideEditBox()
 
@@ -361,4 +359,5 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel)
 
     def signalHandler(self, package, signal, args):
+        print package, signal, args
         self.buildItemList()
