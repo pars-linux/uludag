@@ -31,6 +31,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.initExtraList()
         self.setActionButton()
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
+        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.updateTotal)
         self.connect(self.actionButton, SIGNAL("clicked()"), self.action)
 
     def __initList(self, packageList):
@@ -60,6 +61,10 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.extrasLabel.setVisible(bool(extraPackages))
         restoreCursor()
 
+    def updateTotal(self):
+        selectedSize, extraSize = self.model.selectedPackagesSize(), self.model.extraPackagesSize()
+        self.totalSize.setText("<b>%s</b>" % humanReadableSize(selectedSize + extraSize))
+
     def setActionButton(self):
         self.actionButton.setText(self.state.getActionName())
         self.actionButton.setIcon(self.state.getActionIcon())
@@ -74,4 +79,5 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
 
     def show(self):
         self.filterExtras()
+        self.updateTotal()
         QtGui.QDialog.show(self)
