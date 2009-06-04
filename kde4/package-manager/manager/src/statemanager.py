@@ -16,6 +16,7 @@ from PyQt4.QtCore import QObject, SIGNAL
 from PyKDE4.kdecore import i18n
 from PyKDE4.kdeui import KIcon
 
+from pmutils import humanReadableSize as humanize
 from pmlogging import logger
 import backend
 
@@ -87,6 +88,23 @@ class StateManager(QObject):
         return {self.INSTALL:lambda:None,
                 self.REMOVE:lambda:None,
                 self.UPGRADE:self.iface.updateRepositories}[self.state]()
+
+    def selectedStatus(self, model):
+        packages, packagesSize = len(model.selectedPackages()), humanize(model.selectedPackagesSize())
+        extraPackages, extraPackagesSize = len(model.extraPackages()), humanize(model.extraPackagesSize())
+
+        if not packages:
+            return i18n("Currently your basket is empty.")
+
+        text = i18n("Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size ", packages, packagesSize)
+        if extraPackages:
+            if self.state == self.REMOVE:
+                text += i18n("with <b>%3</b> reverse dependencies of total <b>%4</b> of size ", extraPackages, extraPackagesSize)
+            else:
+                text += i18n("with <b>%3</b> extra dependencies of total <b>%4</b> of size ", extraPackages, extraPackagesSize)
+        text += i18n("in your basket.")
+
+        return text
 
     def operationAction(self, packages):
         return {self.INSTALL:self.iface.installPackages,

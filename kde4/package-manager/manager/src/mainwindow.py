@@ -28,9 +28,16 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         KXmlGuiWindow.__init__(self, parent)
         self.setupUi(self)
         self.setCentralWidget(MainWidget(self))
-        self.statusBar().showMessage(i18n("Currently your basket is empty."))
         self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
+        self.initializeStatusBar()
+
+    def initializeStatusBar(self):
+        self.statusLabel = QtGui.QLabel(i18n("Currently your basket is empty."), self.statusBar())
+        self.statusLabel.setAlignment(Qt.AlignCenter)
+        self.statusBar().addWidget(self.statusLabel)
+        self.statusBar().setSizeGripEnabled(True)
+        self.connect(self.centralWidget(), SIGNAL("selectionStatusChanged(QString)"), self.updateStatusBar)
 
     def initializeActions(self):
         self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
@@ -61,5 +68,5 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.connect(showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
         actionGroup.addAction(showUpgradeAction)
 
-    def updateStatusBar(self, packages):
-        pass
+    def updateStatusBar(self, text):
+        self.statusLabel.setText(text)

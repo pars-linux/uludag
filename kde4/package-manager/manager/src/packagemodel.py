@@ -100,3 +100,15 @@ class PackageModel(QAbstractTableModel):
 
     def extraPackages(self):
         return self.iface.getExtras(self.selectedPackages())
+
+    def __packagesSize(self, packages):
+        size = 0
+        for name in packages:
+            size += self.iface.getPackageSize(name)
+        return size
+
+    def selectedPackagesSize(self):
+        return self.__packagesSize(self.selectedPackages())
+
+    def extraPackagesSize(self):
+        return self.__packagesSize(self.extraPackages())
