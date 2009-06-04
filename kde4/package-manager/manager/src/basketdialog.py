@@ -47,22 +47,17 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
 
     def initExtraList(self):
         self.__initList(self.extraList)
-        self.filterExtras()
 
     def initPackageList(self):
         self.__initList(self.packageList)
-        self.__updateList(self.packageList, self.model.selectedPackages())
+        self.__updateList(self.packageList, [])
 
     def filterExtras(self):
         waitCursor()
         extraPackages = self.model.extraPackages()
-        if extraPackages:
-            self.extraList.show()
-            self.extrasLabel.show()
-            self.__updateList(self.extraList, extraPackages)
-        else:
-            self.extraList.hide()
-            self.extrasLabel.hide()
+        self.__updateList(self.extraList, extraPackages)
+        self.extraList.setVisible(bool(extraPackages))
+        self.extrasLabel.setVisible(bool(extraPackages))
         restoreCursor()
 
     def setActionButton(self):
@@ -76,3 +71,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def action(self):
         self.state.operationAction(self.model.selectedPackages())
         self.close()
+
+    def show(self):
+        self.filterExtras()
+        QtGui.QDialog.show(self)
