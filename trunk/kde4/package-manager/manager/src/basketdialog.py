@@ -25,6 +25,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def __init__(self, parent=None):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
+        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
         self.model = None
 
     def setModel(self, model):
@@ -32,32 +33,28 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.initPackageList()
         self.initExtraList()
 
+    def __initList(self, packageList):
+        packageList.setModel(PackageProxy(self))
+        packageList.model().setSourceModel(self.model)
+        packageList.setItemDelegate(PackageDelegate(self))
+        packageList.setColumnWidth(0, 32)
+        packageList.setAlternatingRowColors(True)
+        packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
+        packageList.model().setFilterRole(GroupRole)
+
+    def __updateList(self, packageList, packages):
+        packageList.model().setFilterPackages(packages)
+        packageList.model().reset()
+
+    def initExtraList(self):
+        self.__initList(self.extraList)
+        self.__updateList(self.extraList, self.model.extraPackages())
+
     def initPackageList(self):
-        self.packageList.setModel(PackageProxy(self))
-        self.packageList.model().setSourceModel(self.model)
-        self.packageList.setItemDelegate(PackageDelegate(self))
-        self.packageList.setColumnWidth(0, 32)
-        self.packageList.setAlternatingRowColors(True)
-        self.packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
-        self.packageList.model().setFilterRole(GroupRole)
-        packages = self.model.selectedPackages()
-        self.packageList.model().setFilterPackages(packages)
-        self.packageList.model().reset()
-        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
+        self.__initList(self.packageList)
+        self.__updateList(self.packageList, self.model.selectedPackages())
 
     def filterExtras(self):
         waitCursor()
-        packages = self.model.extraPackages()
-        self.extraList.model().setFilterPackages(packages)
-        self.extraList.model().reset()
+        self.__updateList(self.extraList, self.model.extraPackages())
         restoreCursor()
-
-    def initExtraList(self):
-        self.extraList.setModel(PackageProxy(self))
-        self.extraList.model().setSourceModel(self.model)
-        self.extraList.setItemDelegate(PackageDelegate(self))
-        self.extraList.setColumnWidth(0, 32)
-        self.extraList.setAlternatingRowColors(True)
-        self.extraList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
-        self.extraList.model().setFilterRole(GroupRole)
-        self.filterExtras()
