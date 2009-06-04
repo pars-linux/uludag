@@ -14,7 +14,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout" >
    <item row="0" column="0" colspan="4" >
-    <widget class="QLabel" name="label" >
+    <widget class="QLabel" name="infoLabel" >
      <property name="text" >
       <string>Selected package(s) for install:</string>
      </property>
@@ -46,7 +46,7 @@
     </widget>
    </item>
    <item row="2" column="0" colspan="4" >
-    <widget class="QLabel" name="label_2" >
+    <widget class="QLabel" name="extrasLabel" >
      <property name="text" >
       <string>Extra dependencies of the selected package(s) that are also going to be installed:</string>
      </property>

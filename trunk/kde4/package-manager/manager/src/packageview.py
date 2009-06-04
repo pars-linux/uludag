@@ -36,4 +36,3 @@ class PackageView(QtGui.QTreeView):
 
     def extraPackagesSize(self):
         return self.model().sourceModel().extraPackagesSize()
-
