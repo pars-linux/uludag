@@ -7,10 +7,10 @@
 
  General
  --------------------------------------------------------
- %80 / Recovery mode #7169
+     + Recovery mode #7169
          + Grub recovery
          + System recovery with Pisi History
-         - Password recovery
+         + Password recovery
  %30 / Network Install #2095
          > Needs a network settings screen
  %30 / Fix Keyboard shortcuts problems
