@@ -18,6 +18,7 @@ class Interface:
     def __init__(self):
         self.link = comar.Link()
         self.link.setLocale()
+        self.link.useAgent()
         self.package = self.getMainPackage()
 
     def listenSignals(self, func):
@@ -50,3 +51,15 @@ class Interface:
             self.link.Boot.Loader[self.package].listEntries(async=func)
         else:
             return self.link.Boot.Loader[self.package].listEntries()
+
+    def getOptions(self, func=None):
+        if func:
+            self.link.Boot.Loader[self.package].getOptions(async=func)
+        else:
+            return self.link.Boot.Loader[self.package].getOptions()
+
+    def setOption(self, option, value, func=None):
+        if func:
+            self.link.Boot.Loader[self.package].setOption(option, value, async=func)
+        else:
+            self.link.Boot.Loader[self.package].setOption(option, value)
