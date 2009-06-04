@@ -72,10 +72,15 @@ class User:
         self.group_path  = os.path.join(consts.target_dir, 'etc/group')
         self.fake_passwd_path = '/etc/passwd'
 
-    def exists(self):
+    def exists(self, byUid = False):
         """ Check if the given user exists on system """
-        if filter(lambda x: x == self.username, \
-              map(lambda x: x[0], [line.split(':') for line in open(self.fake_passwd_path, 'r').readlines()])):
+        var = self.username
+        col = 0
+        if byUid:
+            var = self.uid
+            col = 2
+        if filter(lambda x: x == var, \
+              map(lambda x: x[col], [line.split(':') for line in open(self.fake_passwd_path, 'r').readlines()])):
             return True
         return False
 
