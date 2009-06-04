@@ -89,12 +89,16 @@ Click Next button to proceed.
                      self.slotTextChanged)
         self.connect(self.ui.realname, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
+        self.connect(self.ui.userID, SIGNAL("valueChanged(int)"),
+                     self.slotTextChanged)
         self.connect(self.ui.createButton, SIGNAL("clicked()"),
                      self.slotCreateUser)
         self.connect(self.ui.deleteButton, SIGNAL("clicked()"),
                      self.slotDeleteUser)
         self.connect(self.ui.editButton, SIGNAL("clicked()"),
                      self.slotEditUser)
+        self.connect(self.ui.advanced, SIGNAL("clicked()"),
+                     self.slotAdvanced)
         self.connect(self.ui.userList, SIGNAL("itemDoubleClicked(QListWidgetItem*)"),
                      self.slotEditUser)
         self.connect(self.ui.userList, SIGNAL("itemClicked(QListWidgetItem*)"),
@@ -104,8 +108,10 @@ Click Next button to proceed.
 
         ctx.installData.users = []
         ctx.installData.autoLoginUser = None
+        self.usedIDs = []
 
     def shown(self):
+        self.ui.realname.setFocus()
         if len(yali4.users.pending_users) > 0 and self.ui.userList.count() == 0:
             for u in yali4.users.pending_users:
                 pix = self.normalUserIcon
@@ -113,21 +119,22 @@ Click Next button to proceed.
                     pix = self.superUserIcon
                 UserItem(self.ui.userList, pix, user = u)
                 self.ui.autoLogin.addItem(QString(u.username))
-
+        if len(yali4.users.pending_users) == 1:
+            self.slotEditUser(self.ui.userList.item(0))
+        elif len(yali4.users.pending_users) > 1:
+            self.ui.advanced.setChecked(True)
         self.checkUsers()
         self.checkCapsLock()
-        self.ui.username.setFocus()
 
     def execute(self):
         # reset and fill pending_users
-        yali4.users.reset_pending_users()
-        if not self.ui.addMore.isChecked():
+        if not self.ui.advanced.isChecked():
             if not self.slotCreateUser():
                 ctx.mainScreen.moveInc = 0
                 return True
 
         ctx.installData.autoLoginUser = str(self.ui.autoLogin.currentText())
-
+        yali4.users.reset_pending_users()
         for i in range(self.ui.userList.count()):
             u = self.ui.userList.item(i).getUser()
             ctx.installData.users.append(u)
@@ -149,6 +156,9 @@ Click Next button to proceed.
         self.ui.pass_error.setVisible(True)
         self.ui.createButton.setEnabled(False)
 
+    def slotAdvanced(self):
+        pass
+
     def slotTextChanged(self):
         p1 = self.ui.pass1.text()
         p2 = self.ui.pass2.text()
@@ -168,11 +178,11 @@ Click Next button to proceed.
 
         if self.ui.username.text() and p1 and p2:
             self.ui.createButton.setEnabled(True)
-            if not self.ui.addMore.isChecked():
+            if not self.ui.advanced.isChecked():
                 ctx.mainScreen.enableNext()
         else:
             self.ui.createButton.setEnabled(False)
-            if not self.ui.addMore.isChecked():
+            if not self.ui.advanced.isChecked():
                 ctx.mainScreen.disableNext()
 
     def slotCreateUser(self):
@@ -202,6 +212,16 @@ Click Next button to proceed.
             self.showError(_('Realname contains invalid characters!'))
             return False
 
+        # Dont check in edit mode
+        if self.ui.advanced.isChecked() and self.ui.userIDCheck.isChecked():
+            uid = self.ui.userID.value()
+            if self.edititemindex == None:
+                if uid in self.usedIDs:
+                    self.showError(_('User ID used before, choose another one!'))
+                    return False
+            self.usedIDs.append(uid)
+            u.uid = uid
+
         self.ui.createButton.setText(_("Create User"))
         updateItem = None
 
@@ -226,11 +246,11 @@ Click Next button to proceed.
         # clear form
         self.resetWidgets()
 
-        ctx.debugger.log("slotCreateUser :: user '%s (%s)' added/updated" % (u.realname,u.username))
+        ctx.debugger.log("slotCreateUser :: user (%s) '%s (%s)' added/updated" % (u.uid, u.realname, u.username))
         ctx.debugger.log("slotCreateUser :: user groups are %s" % str(','.join(u.groups)))
 
-        # give focus to username widget for a new user. #3280
-        self.ui.username.setFocus()
+        # give focus to realname widget for a new user. #3280
+        self.ui.realname.setFocus()
         self.checkUsers()
         return True
 
@@ -239,6 +259,9 @@ Click Next button to proceed.
             self.resetWidgets()
             self.ui.autoLogin.setCurrentIndex(0)
         _cur = self.ui.userList.currentRow()
+        item = self.ui.userList.item(_cur).getUser()
+        if item.uid in self.usedIDs:
+            self.usedIDs.remove(item.uid)
         self.ui.userList.takeItem(_cur)
         self.ui.autoLogin.removeItem(_cur + 1)
         self.ui.createButton.setText(_("Create User"))
@@ -247,8 +270,11 @@ Click Next button to proceed.
     def slotEditUser(self, item=None):
         if not item:
             item = self.ui.userList.currentItem()
+        self.ui.userList.setCurrentItem(item)
         u = item.getUser()
-
+        if u.uid > -1:
+            self.ui.userIDCheck.setChecked(True)
+            self.ui.userID.setValue(u.uid)
         self.ui.username.setText(QString(u.username))
         self.ui.realname.setText(QString(u.realname))
         self.ui.pass1.setText(QString(u.passwd))
@@ -265,7 +291,7 @@ Click Next button to proceed.
         self.ui.createButton.setText(_("Update User"))
 
     def checkUsers(self):
-        if self.ui.userList.currentItem():
+        if self.ui.userList.count() > 0:
             self.ui.deleteButton.setEnabled(True)
             self.ui.editButton.setEnabled(True)
             self.ui.autoLogin.setEnabled(True)
@@ -285,6 +311,7 @@ Click Next button to proceed.
         self.ui.pass2.clear()
         self.ui.admin.setChecked(False)
         self.ui.noPass.setChecked(False)
+        self.ui.userIDCheck.setChecked(False)
         self.ui.createButton.setEnabled(False)
 
     def slotReturnPressed(self):

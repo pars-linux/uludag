@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>761</width>
-    <height>483</height>
+    <width>626</width>
+    <height>451</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form1</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
-   <item row="0" column="0" rowspan="12">
+   <item row="0" column="0" rowspan="13">
     <spacer>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -46,7 +46,7 @@
      </property>
     </spacer>
    </item>
-   <item row="0" column="5" rowspan="12">
+   <item row="0" column="5" rowspan="13">
     <spacer>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -139,75 +139,6 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="1" colspan="4">
-    <widget class="QWidget" name="widget" native="true">
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <layout class="QGridLayout">
-        <property name="horizontalSpacing">
-         <number>0</number>
-        </property>
-        <item row="0" column="0">
-         <widget class="QLabel" name="pass_error">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>18</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border:1px solid white;
-border-radius:6px;
-background-color:white;
-color:#5A2847;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="textFormat">
-           <enum>Qt::RichText</enum>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="caps_error">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>18</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border:1px solid white;
-border-radius:6px;
-background-color:white;
-color:#5A2847;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="textFormat">
-           <enum>Qt::RichText</enum>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </item>
    <item row="10" column="1" colspan="4">
     <widget class="QWidget" name="advancedList" native="true">
      <layout class="QGridLayout" name="gridLayout_2">
@@ -287,7 +218,7 @@ color:#5A2847;</string>
      </layout>
     </widget>
    </item>
-   <item row="11" column="3">
+   <item row="12" column="3">
     <spacer>
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -321,9 +252,9 @@ color:#5A2847;</string>
     </widget>
    </item>
    <item row="8" column="1" colspan="3">
-    <widget class="QCheckBox" name="addMore">
+    <widget class="QCheckBox" name="advanced">
      <property name="text">
-      <string>Add more users</string>
+      <string>Advanced</string>
      </property>
     </widget>
    </item>
@@ -332,6 +263,81 @@ color:#5A2847;</string>
      <property name="text">
       <string>Do not ask any password to this user</string>
      </property>
+    </widget>
+   </item>
+   <item row="11" column="1" colspan="4">
+    <widget class="QWidget" name="widget" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>48</height>
+      </size>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <layout class="QGridLayout">
+        <property name="horizontalSpacing">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="pass_error">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>18</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border:1px solid white;
+border-radius:6px;
+background-color:white;
+color:#5A2847;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::RichText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="caps_error">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>18</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border:1px solid white;
+border-radius:6px;
+background-color:white;
+color:#5A2847;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::RichText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
@@ -344,7 +350,7 @@ color:#5A2847;</string>
   <tabstop>pass1</tabstop>
   <tabstop>pass2</tabstop>
   <tabstop>admin</tabstop>
-  <tabstop>addMore</tabstop>
+  <tabstop>advanced</tabstop>
   <tabstop>userIDCheck</tabstop>
   <tabstop>userID</tabstop>
   <tabstop>createButton</tabstop>
@@ -374,7 +380,7 @@ color:#5A2847;</string>
    </hints>
   </connection>
   <connection>
-   <sender>addMore</sender>
+   <sender>advanced</sender>
    <signal>toggled(bool)</signal>
    <receiver>advancedList</receiver>
    <slot>setVisible(bool)</slot>
@@ -390,7 +396,7 @@ color:#5A2847;</string>
    </hints>
   </connection>
   <connection>
-   <sender>addMore</sender>
+   <sender>advanced</sender>
    <signal>toggled(bool)</signal>
    <receiver>userIDCheck</receiver>
    <slot>setVisible(bool)</slot>
@@ -406,7 +412,7 @@ color:#5A2847;</string>
    </hints>
   </connection>
   <connection>
-   <sender>addMore</sender>
+   <sender>advanced</sender>
    <signal>toggled(bool)</signal>
    <receiver>createButton</receiver>
    <slot>setVisible(bool)</slot>
@@ -422,7 +428,7 @@ color:#5A2847;</string>
    </hints>
   </connection>
   <connection>
-   <sender>addMore</sender>
+   <sender>advanced</sender>
    <signal>toggled(bool)</signal>
    <receiver>userID</receiver>
    <slot>setVisible(bool)</slot>
