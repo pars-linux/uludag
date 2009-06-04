@@ -1,0 +1,74 @@
+- Create a new user, and open this account.
+    - Can kaptan open immediately?
+    - After starting kaptan
+        Type console
+        # vi ~/.kde4/share/config/kaptanrc
+        Observe that RunOnStart is equal to False.
+
+    - Behaviour of the mouse
+        - Choose double click.
+            Observe the situation.
+        - Choose single click
+            Observe the situation.
+
+        - Choose left hand
+            Observe the situation.
+        - Choose right hand
+            Observe the situation.
+
+        - Enable reverse scrolling,
+            Observe the situation.
+
+All of the changes below can be observed when kaptan finished. Each situation should be observed separetely.
+(For each situation, kaptan can be started from console by typing the command "kaptan")
+
+    - Theme and desktop type
+        - Select each theme and observe each situation.
+        - Observe the situation when Desktop is selected for desktop type.
+        - Observe the situation when  Folder view is selected for desktop type.
+        - Change number of desktops and observe the stuation.
+
+    - Menu Style.
+        - Observe each situation.
+
+    - Wallpaper
+        - Try to choose a wallpaper
+            - From the screen of kaptan, observe the situation.
+            - From the system, observe the situation.
+        - Not try to change wallpaper, observe the situation.
+
+    - Nepomuk Semantic Desktop
+        - Enable it and  observe the situation.
+        - Disable it and  observe the situation.
+
+    - Network configuration
+        - Apply the test cases from network-manager.
+
+    - Package manager configuration
+        - Updates
+            - Enable show package manager on system tray.
+                Observe that it is on system tray.
+            - Disable show package manager on system tray.
+                Observe that it is not on system tray.
+            - Enable control updates periodicly and give a short observable period.
+                Observe that package manager gives warnings for updates from system tray.
+            - Disable control updates periodicly and give a short observable period.
+                Observe that package manager doesn't give warnings for updates from system tray.
+
+        - Repository
+            - Enable contrib repository 
+                Then type command 
+                # pisi lr 
+                Observe that this repository is an output of this command.
+            - Disable contrib repository
+                Then type command 
+                # pisi lr 
+                Observe that this repository is not an output of this command.
+
+    - Pardus settings
+        - Try to start systems settings
+        - Try to start user groups and help pages.
+
+    - Smolt hardware profiler
+        - Enable smolt 
+            Observe that the computer hardware profile can be sent to smolt.pardus.org.tr
