@@ -26,7 +26,7 @@
 
 + Var olan bir partitionın ikiye bölünmesinden ve dosya sistemlerinin belirlenmesinden sonra, geri butonuna basıldığında, disk eski durumuna geliyor fakat görsel olarak eski haline gelemiyor ve hiç bir uyarı gelmiyor.
 
-+ El ile bölümlenidir seçilip,  hemen ardından  Atomatik bölümlendirme seçilince hata veriyor.
++ El ile bölümlendir seçilip,  hemen ardından  Atomatik bölümlendirme seçilince hata veriyor.
 
 + Yeni partitionlar yaratılıp daha sonra bu noktadan geri dönülmek istenildiğinde, partition tablosunun eski haline geleceğine dair bir uyarı verilmiyor ve disk tablosu görsel olarak da eski haline gelemiyor.
 
