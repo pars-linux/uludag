@@ -159,3 +159,10 @@ class Iface(Singleton):
         for repo in self.rdb.get_binary_repos():
             repos.append((repo, self.rdb.get_repo_url(repo)))
         return repos
+
+    def getPackageSize(self, name):
+        package = self.getPackage(name)
+        if self.source == self.REPO:
+            return package.packageSize
+        else:
+            return package.installedSize
