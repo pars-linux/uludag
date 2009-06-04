@@ -18,7 +18,7 @@ class Interface:
     def __init__(self):
         self.link = comar.Link()
         self.link.setLocale()
-        self.link.useAgent()
+        #self.link.useAgent()
         self.package = self.getMainPackage()
 
     def listenSignals(self, func):
@@ -92,3 +92,9 @@ class Interface:
 
     def getDeviceByLabel(self, label):
         return unicode(self.link.Disk.Manager[self.package].getDeviceByLabel(label))
+
+    def mount(self, device, path):
+        self.link.Disk.Manager[self.package].mount(device, path)
+
+    def umount(self, device):
+        self.link.Disk.Manager[self.package].umount(device)
