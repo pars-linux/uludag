@@ -40,7 +40,8 @@ The last 20 lines of the log before the error happens is as follows:
 %(log)s
 --------------------------------------------------------------------------
 
-Log file: http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log
+Plain log file: http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log
+Fancy log file: http://paketler.pardus.org.tr/logs/2009/%(packagename)s.html
 
 Happy hacking!
 
