@@ -66,7 +66,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         # Set options widget
         self.widgetOptions = OptionsWidget(self)
-        self.verticalLayout.insertWidget(-1, self.widgetOptions)
+        self.verticalItemsLayout.insertWidget(-1, self.widgetOptions)
 
         # Build item list
         self.buildItemList()

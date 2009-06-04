@@ -22,8 +22,8 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalItemsLayout">
+      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
          <widget class="QToolButton" name="pushNew">
@@ -59,7 +59,7 @@
         </item>
        </layout>
       </item>
-      <item row="1" column="0">
+      <item>
        <widget class="QListWidget" name="listItems"/>
       </item>
      </layout>
@@ -97,8 +97,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>528</width>
-           <height>192</height>
+           <width>522</width>
+           <height>173</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout">

@@ -28,7 +28,9 @@ class OptionsWidget(QtGui.QWidget, Ui_OptionsWidget):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
 
-        self.connect(self.spinTimeout, QtCore.SIGNAL("valueChanged(int)"), lambda: self.emit(QtCore.SIGNAL("timeoutChanged(int)"), self.spinTimeout.value()))
+        self.pushApply.setIcon(kdeui.KIcon("dialog-ok-apply"))
+
+        self.connect(self.pushApply, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("timeoutChanged(int)"), self.spinTimeout.value()))
 
     def getTimeout(self):
         return self.spinTimeout.value()
