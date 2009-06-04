@@ -14,6 +14,7 @@ class ComarIface:
 
     def __init__(self):
         self.link = comar.Link()
+        self.link.useAgent()
         self.link.setLocale()
 
     def listen(self, func):
