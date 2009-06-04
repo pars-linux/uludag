@@ -9,6 +9,7 @@ TESTS
 
 - Root partition mount noktası değiştirilebiliyor, bu duruma izin verilmemeli (müdür root partition'ı bulamıyor ve patlıyor.)
 
-- Options kısmı boş geçilip ayarlar kaydedilebiliyor. Bir uyarı verilmeli.
+? Options kısmı boş geçilip ayarlar kaydedilebiliyor. Bir uyarı verilmeli.
+  - Options opsiyonel, boş geçilebilir.
 
-- Extended partititionlar disk-manager da görüntülenememeli.
++ Extended partititionlar disk-manager da görüntülenememeli.
