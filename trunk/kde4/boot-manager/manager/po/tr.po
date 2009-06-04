@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Boot Manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:39+0300\n"
+"POT-Creation-Date: 2009-06-04 11:29+0300\n"
 "PO-Revision-Date: 2009-05-25 14:25+0300E\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
@@ -35,7 +35,7 @@ msgstr "Bahadır Kandemir"
 msgid "Current Maintainer"
 msgstr "Şu anki geliştirici"
 
-#: .tmp/bootmanager/main.py:83
+#: .tmp/bootmanager/main.py:93
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
@@ -43,14 +43,18 @@ msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
 "Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
 
-#: .tmp/bootmanager/main.py:165
+#: .tmp/bootmanager/main.py:185
 msgid "All Items"
 msgstr "Tüm Öğeler"
 
-#: .tmp/bootmanager/main.py:176
-msgid "Boot Entry"
-msgstr "Açılış Öğesi"
+#: .tmp/ui_edit.py:29
+msgid "Disk"
+msgstr "Disk"
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
 msgstr "Yeni Ekle"
+
+#: .tmp/ui_options.py:33
+msgid "Boot menu display time:"
+msgstr "Açılış menüsü gösterme süresi:"

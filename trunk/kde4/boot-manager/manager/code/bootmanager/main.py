@@ -28,11 +28,17 @@ from bootmanager.backend import Interface
 # Config
 from bootmanager.config import ANIM_SHOW, ANIM_HIDE, ANIM_TARGET, ANIM_DEFAULT, ANIM_TIME
 
+# Utils
+from bootmanager.utility import getDiskByUUID
+
 # Item widget
 from bootmanager.item import ItemListWidgetItem, ItemWidget
 
 # Edit widget
 from bootmanager.edit import EditWidget
+
+# Options widget
+from bootmanager.options import OptionsWidget
 
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
@@ -58,6 +64,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Fail if no packages provide backend
         self.checkBackend()
 
+        # Set options widget
+        self.widgetOptions = OptionsWidget(self)
+        self.verticalLayout.insertWidget(-1, self.widgetOptions)
+
         # Build item list
         self.buildItemList()
 
@@ -74,6 +84,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.buttonBox, QtCore.SIGNAL("rejected()"), self.slotCancelEdit)
         self.connect(self.animator, QtCore.SIGNAL("frameChanged(int)"), self.slotAnimate)
         self.connect(self.animator, QtCore.SIGNAL("finished()"), self.slotAnimationFinished)
+        self.connect(self.widgetOptions, QtCore.SIGNAL("timeoutChanged(int)"), self.slotTimeoutChanged)
 
     def checkBackend(self):
         """
@@ -136,6 +147,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Builds item list.
         """
+        # Options
+        self.options = self.iface.getOptions()
+        self.widgetOptions.setTimeout(self.options.get("timeout", "0"))
+
         # Clear list
         self.clearItemList()
         self.systems = self.iface.getSystems()
@@ -147,8 +162,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             else:
                 entries = args[0]
                 for entry in entries:
-                    self.addItem(entry["index"], entry["title"], entry["root"], entry["os_type"])
-
+                    if "root" in entry:
+                        root = entry["root"]
+                    elif "uuid" in entry:
+                        root = getDiskByUUID(entry["uuid"])
+                    else:
+                        root = ""
+                    self.addItem(entry["index"], entry["title"], root, entry["os_type"])
         self.iface.getEntries(func=handleList)
 
     def itemMatchesFilter(self, item):
@@ -204,8 +224,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     kdeui.KMessageBox.error(self, unicode(e))
                 return
             """
-
-        print type_, id_
 
         if self.animationLast == ANIM_HIDE:
             self.animationLast = ANIM_SHOW
@@ -302,6 +320,14 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
         else:
             self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel)
+
+    def slotTimeoutChanged(self, timeout):
+        def handler(package, exception, args):
+            if exception:
+                self.widgetOptions.setTimeout(self.options["timeout"])
+            else:
+                self.options["timeout"] = timeout
+        self.iface.setOption("timeout", str(timeout), func=handler)
 
     def signalHandler(self, package, signal, args):
         self.buildItemList()

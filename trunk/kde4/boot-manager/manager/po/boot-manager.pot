@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:39+0300\n"
+"POT-Creation-Date: 2009-06-04 11:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,20 +36,24 @@ msgstr ""
 msgid "Current Maintainer"
 msgstr ""
 
-#: .tmp/bootmanager/main.py:83
+#: .tmp/bootmanager/main.py:93
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
 
-#: .tmp/bootmanager/main.py:165
+#: .tmp/bootmanager/main.py:185
 msgid "All Items"
 msgstr ""
 
-#: .tmp/bootmanager/main.py:176
-msgid "Boot Entry"
+#: .tmp/ui_edit.py:29
+msgid "Disk"
 msgstr ""
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
+msgstr ""
+
+#: .tmp/ui_options.py:33
+msgid "Boot menu display time:"
 msgstr ""

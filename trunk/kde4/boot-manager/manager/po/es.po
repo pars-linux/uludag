@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:39+0300\n"
+"POT-Creation-Date: 2009-06-04 11:29+0300\n"
 "PO-Revision-Date: 2009-05-27 20:31-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -38,24 +38,31 @@ msgstr ""
 msgid "Current Maintainer"
 msgstr "Mantenedor actual"
 
-#: .tmp/bootmanager/main.py:83
+#: .tmp/bootmanager/main.py:93
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
 "No hay paquetes que respaldan esta aplicación.\n"
-"Por favor asegúrese que los paquetes están instalados y configurados de manera adecuada."
+"Por favor asegúrese que los paquetes están instalados y configurados de "
+"manera adecuada."
 
-#: .tmp/bootmanager/main.py:165
+#: .tmp/bootmanager/main.py:185
 msgid "All Items"
 msgstr "Todos"
 
-#: .tmp/bootmanager/main.py:176
-# favor verificar
-msgid "Boot Entry"
-msgstr "Entrada en el menú de arranque"
+#: .tmp/ui_edit.py:29
+msgid "Disk"
+msgstr ""
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
 msgstr "Agregar Nuevo"
 
+#: .tmp/ui_options.py:33
+msgid "Boot menu display time:"
+msgstr ""
+
+# favor verificar
+#~ msgid "Boot Entry"
+#~ msgstr "Entrada en el menú de arranque"

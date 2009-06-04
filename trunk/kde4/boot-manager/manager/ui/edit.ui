@@ -19,7 +19,19 @@
   <property name="windowTitle">
    <string notr="true">EditWidget</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2"/>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>53</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Disk</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
