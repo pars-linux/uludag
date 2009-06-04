@@ -19,6 +19,7 @@ class NetworkIface:
     def __init__(self):
         self.link = comar.Link()
         self.link.setLocale()
+        self.link.useAgent()
         self.waitFunctions = []
         self.link.listenSignals("Network.Link", self.postProcessor)
 

@@ -15,6 +15,8 @@ class NetworkIface:
 
     def __init__(self):
         self.link = comar.Link()
+        self.link.useAgent()
+        self.link.setLocale()
 
     def connections(self, package):
         return list(self.link.Network.Link[package].connections())
