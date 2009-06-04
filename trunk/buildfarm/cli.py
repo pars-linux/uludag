@@ -121,7 +121,7 @@ class CLI(pisi.ui.UI):
 
         return result
 
-    def output(self, msg, msgtype=None, err=False, verbose=False):
+    def output(self, msg, msgtype=None, err=False, verbose=False, onlyOnScreen=False):
         if (verbose and self.show_verbose) or (not verbose):
             if type(msg)==type(unicode()):
                 msg = msg.encode('utf-8')
@@ -134,9 +134,10 @@ class CLI(pisi.ui.UI):
             out.write(self.format(msg, msgtype))
             out.flush()
 
-            # Output the same stuff to the log file
-            self.output_file.write(self.format(msg, msgtype, colored=True))
-            self.output_file.flush()
+            if not onlyOnScreen:
+                # Output the same stuff to the log file
+                self.output_file.write(self.format(msg, msgtype, colored=True))
+                self.output_file.flush()
 
     def info(self, msg, verbose=False, noln=False):
         self.output(unicode(msg), 'Info', verbose=verbose)
@@ -186,9 +187,9 @@ class CLI(pisi.ui.UI):
             out = '\r%-30.50s (%s)%3d%% %9.2f %s [%s]' % \
                 (ka['filename'], totalsize, ka['percent'],
                  ka['rate'], ka['symbol'], ka['eta'])
-            self.output(out, 'Display')
+            self.output(out, 'Display', onlyOnScreen=True)
         else:
-            self.output("\r%s (%d%%)" % (ka['info'], ka['percent']), 'Display')
+            self.output("\r%s (%d%%)" % (ka['info'], ka['percent']), 'Display', onlyOnScreen=True)
 
         if ka['percent'] == 100:
             self.output(' [complete]\n', 'Display')
