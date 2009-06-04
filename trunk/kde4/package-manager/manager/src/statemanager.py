@@ -99,9 +99,9 @@ class StateManager(QObject):
         text = i18n("Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size ", packages, packagesSize)
         if extraPackages:
             if self.state == self.REMOVE:
-                text += i18n("with <b>%3</b> reverse dependencies of total <b>%4</b> of size ", extraPackages, extraPackagesSize)
+                text += i18n("with <b>%1</b> reverse dependencies of total <b>%2</b> of size ", extraPackages, extraPackagesSize)
             else:
-                text += i18n("with <b>%3</b> extra dependencies of total <b>%4</b> of size ", extraPackages, extraPackagesSize)
+                text += i18n("with <b>%1</b> extra dependencies of total <b>%2</b> of size ", extraPackages, extraPackagesSize)
         text += i18n("in your basket.")
 
         return text
