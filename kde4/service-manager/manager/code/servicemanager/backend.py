@@ -19,6 +19,7 @@ class ServiceIface:
     def __init__(self):
         self.link = comar.Link()
         self.link.setLocale()
+        self.link.useAgent()
 
     def services(self, func=None):
         if func:
