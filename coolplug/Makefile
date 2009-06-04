@@ -4,7 +4,7 @@ EXE= coolplug
 OBJS= main.c utility.c module.c scsi.c devnode.c
 INCLUDES= common.h
 CFLAGS= -Os -Wall
-LDFLAGS=
+LDFLAGS= -Wl,-z,noexecstack
 
 $(EXE): $(OBJS) $(INCLUDES)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $(EXE) $(OBJS)
