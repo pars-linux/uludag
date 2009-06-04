@@ -30,6 +30,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.initPackageList()
         self.initExtraList()
         self.setActionButton()
+        self.setBasketLabel()
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.updateTotal)
         self.connect(self.actionButton, SIGNAL("clicked()"), self.action)
@@ -68,6 +69,10 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def setActionButton(self):
         self.actionButton.setText(self.state.getActionName())
         self.actionButton.setIcon(self.state.getActionIcon())
+
+    def setBasketLabel(self):
+        self.infoLabel.setText(self.state.getBasketInfo())
+        self.extrasLabel.setText(self.state.getBasketExtrasInfo())
 
     def refresh(self):
         self.__updateList(self.packageList, self.model.selectedPackages())
