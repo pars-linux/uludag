@@ -584,7 +584,7 @@ class Yali:
         grubConf.parseConf(grubConfPath)
 
         def _update_dev(old, new):
-            # If it fails 
+            # If it fails
             try:
                 return "(%s," % new + old.split(',')[1]
             except:
