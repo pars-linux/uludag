@@ -8,14 +8,92 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-04 13:12+0300\n"
-"PO-Revision-Date: 2009-06-04 13:10+0300\n"
+"POT-Creation-Date: 2009-06-05 10:55+0300\n"
+"PO-Revision-Date: 2009-06-05 11:00+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
-"Language-Team: Türkçe <liste.pardus.org.tr/turkce>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/ui_basketdialog.py:69
+msgid "Basket"
+msgstr "Sepet"
+
+#: .tmp/ui_basketdialog.py:70
+msgid "Selected package(s) for install:"
+msgstr "Kurulmak üzere seçilmiş paket(ler):"
+
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:79
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
+
+#: .tmp/ui_basketdialog.py:72
+msgid "Total Size:"
+msgstr "Toplam Boyut:"
+
+#: .tmp/ui_basketdialog.py:73
+msgid "<b>2.2 MB</b>"
+msgstr "<b>2.2 MB</b>"
+
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:64
+msgid "Install Package(s)"
+msgstr "Paket(ler)i Kur"
+
+#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+msgid "configuring"
+msgstr "ayarlanıyor"
+
+#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+msgid "extracting"
+msgstr "açılıyor"
+
+#: .tmp/progressdialog.py:40
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: .tmp/progressdialog.py:44
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 paket %3"
+
+#: .tmp/progressdialog.py:50
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr "<p align='center'>%1 / %2, %3</p>"
+
+#: .tmp/settingsdialog.py:116
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr "Önbellekteki tüm paketler silinecek. Emin misiniz?"
+
+#: .tmp/settingsdialog.py:117
+msgid "Warning"
+msgstr "Uyarı"
+
+#: .tmp/settingsdialog.py:118
+msgid "Delete"
+msgstr "Sil"
+
+#: .tmp/settingsdialog.py:169
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Depo adresleri xml veya xml.bz2 soneki ile bitmelidir. <p>Lütfen yeniden "
+"deneyin.</qt>"
+
+#: .tmp/settingsdialog.py:169
+msgid "Pisi Error"
+msgstr "Pisi Hatası"
+
+#: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
+msgid "Package Manager"
+msgstr "Paket Yöneticisi"
+
+#: .tmp/helpdialog.py:34
+msgid "Package Manager Help"
+msgstr "Paket Yöneticisi Yardım"
 
 #: .tmp/ui_settingsdialog.py:319
 msgid "Package Manager Settings"
@@ -175,65 +253,13 @@ msgstr "&Tamam"
 msgid "&Cancel"
 msgstr "&İptal"
 
-#: .tmp/mainwindow.py:36 .tmp/statemanager.py:97
-msgid "Currently your basket is empty."
-msgstr "Şu anda sepetiniz boş."
-
-#: .tmp/mainwindow.py:53
-msgid "Show New Packages"
-msgstr "Yeni Paketleri Göster"
-
-#: .tmp/mainwindow.py:60
-msgid "Show Installed Packages"
-msgstr "Kurulu Paketleri Göster"
-
-#: .tmp/mainwindow.py:66
-msgid "Show Upgradable Packages"
-msgstr "Güncellemeleri Göster"
-
-#: .tmp/operationmanager.py:92 .tmp/commontext.py:15
-msgid "downloading"
-msgstr "indiriliyor"
-
-#: .tmp/settingsdialog.py:116
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Önbellekteki tüm paketler silinecek. Emin misiniz?"
-
-#: .tmp/settingsdialog.py:117
-msgid "Warning"
-msgstr "Uyarı"
-
-#: .tmp/settingsdialog.py:118
-msgid "Delete"
-msgstr "Sil"
-
-#: .tmp/settingsdialog.py:169
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>Depo adresleri xml veya xml.bz2 soneki ile bitmelidir. <p>Lütfen yeniden "
-"deneyin.</qt>"
-
-#: .tmp/settingsdialog.py:169
-msgid "Pisi Error"
-msgstr "Pisi Hatası"
-
-#: .tmp/about.py:20 .tmp/about.py:22 .tmp/ui_mainwindow.py:29
-msgid "Package Manager"
-msgstr "Paket Yöneticisi"
-
-#: .tmp/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
+#: .tmp/ui_mainwidget.py:43
+msgid "Form"
 msgstr ""
 
-#: .tmp/about.py:31
-msgid "Faik Uygur"
-msgstr ""
-
-#: .tmp/about.py:31
-msgid "Maintainer"
-msgstr "Bakıcı"
+#: .tmp/ui_mainwidget.py:44
+msgid "Click to search"
+msgstr "Arama için tıklayın"
 
 #: .tmp/statemanager.py:57
 msgid "Installing Package(s)"
@@ -255,10 +281,6 @@ msgstr "Depo Değişiklikleri Uygulanıyor"
 msgid "Updating Repository(s)"
 msgstr "Depo(lar) Güncelleniyor"
 
-#: .tmp/statemanager.py:64 .tmp/ui_mainwidget.py:45 .tmp/ui_basketdialog.py:74
-msgid "Install Package(s)"
-msgstr "Paket(ler)i Kur"
-
 #: .tmp/statemanager.py:65
 msgid "Remove Package(s)"
 msgstr "Paket(ler)i Kaldır"
@@ -267,51 +289,65 @@ msgstr "Paket(ler)i Kaldır"
 msgid "Upgrade Package(s)"
 msgstr "Paket(ler)i Güncelle"
 
-#: .tmp/statemanager.py:99
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
+#: .tmp/statemanager.py:74
+msgid "You have selected the following package(s) to install:"
+msgstr "Aşağıdaki paketleri kurmak üzere seçtiniz:"
 
-#: .tmp/statemanager.py:102
+#: .tmp/statemanager.py:75
+msgid "You have selected the following package(s) to removal:"
+msgstr "Aşağıdaki paketleri kaldırmak üzere seçtiniz:"
+
+#: .tmp/statemanager.py:76
+msgid "You have selected the following package(s) to upgrade:"
+msgstr "Aşağıdaki paketleri güncellemek üzere seçtiniz:"
+
+#: .tmp/statemanager.py:80
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr "Seçili paketlerin ayrıca kaldırılacak olan ters bağımlılıkları:"
+
+#: .tmp/statemanager.py:81
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr "Seçili paketlerin ayrıca güncellenecek olan ek bağımlılıkları:"
+
+#: .tmp/statemanager.py:107 .tmp/mainwindow.py:36
+msgid "Currently your basket is empty."
+msgstr "Şu anda sepetiniz boş."
+
+#: .tmp/statemanager.py:109
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
+
+#: .tmp/statemanager.py:112
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "ile toplam <b>%2</b> boyutunda <b>%1</b> ters bağımlılık "
 
-#: .tmp/statemanager.py:104
+#: .tmp/statemanager.py:114
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "ile toplam <b>%2</b> boyutunda <b>%1</b> ek bağımlılık "
 
-#: .tmp/statemanager.py:105
+#: .tmp/statemanager.py:115
 msgid "in your basket."
 msgstr "bulunuyor."
 
-#: .tmp/ui_repodialog.py:51
-msgid "Add New Repository"
-msgstr "Yeni Depo Ekle"
+#: .tmp/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
 
-#: .tmp/ui_repodialog.py:52
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Deponun adı, örneğin <b>pardus-devel<b>"
+#: .tmp/about.py:31
+msgid "Faik Uygur"
+msgstr ""
 
-#: .tmp/ui_repodialog.py:55
-msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+#: .tmp/about.py:31
+msgid "Maintainer"
+msgstr "Bakıcı"
 
-#: .tmp/ui_repodialog.py:56
-msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-
-#: .tmp/helpdialog.py:34
-msgid "Package Manager Help"
-msgstr "Paket Yöneticisi Yardım"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "extracting"
-msgstr "açılıyor"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "configuring"
-msgstr "ayarlanıyor"
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:92
+msgid "downloading"
+msgstr "indiriliyor"
 
 #: .tmp/commontext.py:15
 msgid "removing"
@@ -320,14 +356,6 @@ msgstr "kaldırılıyor"
 #: .tmp/commontext.py:15
 msgid "installing"
 msgstr "kuruluyor"
-
-#: .tmp/ui_mainwidget.py:43
-msgid "Form"
-msgstr ""
-
-#: .tmp/ui_mainwidget.py:44
-msgid "Click to search"
-msgstr "Arama için tıklayın"
 
 #: .tmp/ui_progressdialog.py:151
 msgid "Progress"
@@ -369,36 +397,31 @@ msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: .tmp/ui_basketdialog.py:69
-msgid "Basket"
-msgstr "Sepet"
+#: .tmp/mainwindow.py:53
+msgid "Show New Packages"
+msgstr "Yeni Paketleri Göster"
 
-#: .tmp/ui_basketdialog.py:70
-msgid "Selected package(s) for install:"
-msgstr "Kurulmak üzere seçilmiş paket(ler):"
+#: .tmp/mainwindow.py:60
+msgid "Show Installed Packages"
+msgstr "Kurulu Paketleri Göster"
 
-#: .tmp/ui_basketdialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
+#: .tmp/mainwindow.py:66
+msgid "Show Upgradable Packages"
+msgstr "Güncellemeleri Göster"
 
-#: .tmp/ui_basketdialog.py:72
-msgid "Total Size:"
-msgstr "Toplam Boyut:"
+#: .tmp/ui_repodialog.py:51
+msgid "Add New Repository"
+msgstr "Yeni Depo Ekle"
 
-#: .tmp/ui_basketdialog.py:73
-msgid "<b>2.2 MB</b>"
-msgstr "<b>2.2 MB</b>"
+#: .tmp/ui_repodialog.py:52
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Deponun adı, örneğin <b>pardus-devel<b>"
 
-#: .tmp/progressdialog.py:40
-msgid "%1 %2"
-msgstr "%1 %2"
+#: .tmp/ui_repodialog.py:55
+msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 
-#: .tmp/progressdialog.py:44
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 paket %3"
+#: .tmp/ui_repodialog.py:56
+msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#: .tmp/progressdialog.py:50
-msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr "<p align='center'>%1 / %2, %3</p>"
