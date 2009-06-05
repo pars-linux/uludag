@@ -267,13 +267,21 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             path = self.iface.getEntry(widget.getId())[0]
             try:
                 self.iface.mount(widget.getId(), path)
-            except:
+            except Exception, e:
+                if "Comar.PolicyKit" in e._dbus_error_name:
+                    kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+                else:
+                    kdeui.KMessageBox.error(self, unicode(e))
                 widget.setState(False)
                 return
         elif state == QtCore.Qt.Unchecked:
             try:
                 self.iface.umount(widget.getId())
-            except:
+            except Exception, e:
+                if "Comar.PolicyKit" in e._dbus_error_name:
+                    kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+                else:
+                    kdeui.KMessageBox.error(self, unicode(e))
                 widget.setState(True)
                 return
         self.buildItemList()
