@@ -71,9 +71,9 @@ class StateManager(QObject):
                 self.UPGRADE:KIcon("view-refresh")}[self.state]
 
     def getBasketInfo(self):
-        return {self.INSTALL:i18n("Selected package(s) for install:"),
-                self.REMOVE :i18n("Selected package(s) for removal:"),
-                self.UPGRADE:i18n("Selected package(s) for upgrade:")}[self.state]
+        return {self.INSTALL:i18n("You have selected the following package(s) to install:"),
+                self.REMOVE :i18n("You have selected the following package(s) to removal:"),
+                self.UPGRADE:i18n("You have selected the following package(s) to upgrade:")}[self.state]
 
     def getBasketExtrasInfo(self):
         return {self.INSTALL:i18n("Extra dependencies of the selected package(s) that are also going to be installed:"),

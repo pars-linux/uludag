@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-04 13:12+0300\n"
+"POT-Creation-Date: 2009-06-05 10:55+0300\n"
 "PO-Revision-Date: 2009-06-02 20:33-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -15,6 +15,85 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/ui_basketdialog.py:69
+msgid "Basket"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:70
+msgid "Selected package(s) for install:"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:79
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:72
+msgid "Total Size:"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:73
+msgid "<b>2.2 MB</b>"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:64
+msgid "Install Package(s)"
+msgstr "Instalar Paquete(s)"
+
+#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+msgid "configuring"
+msgstr "configurando"
+
+#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+msgid "extracting"
+msgstr "extrayendo"
+
+#: .tmp/progressdialog.py:40
+msgid "%1 %2"
+msgstr "%1 %2"
+
+# could You put a comment with an example string, maybe in foreign language it sounds better when inverting some positions ?
+#: .tmp/progressdialog.py:44
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 paquete %3"
+
+#: .tmp/progressdialog.py:50
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr ""
+
+#: .tmp/settingsdialog.py:116
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr "Se eliminarán todos los paquetes almacenados. Está seguro ?"
+
+#: .tmp/settingsdialog.py:117
+msgid "Warning"
+msgstr "Alerta"
+
+#: .tmp/settingsdialog.py:118
+msgid "Delete"
+msgstr "Eliminar"
+
+#: .tmp/settingsdialog.py:169
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Dirección del repositorio debe tener una terminación xml o xml.bz2."
+"<p>Por favor intente de nuevo.</qt>"
+
+#: .tmp/settingsdialog.py:169
+msgid "Pisi Error"
+msgstr "Error Pisi"
+
+#: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
+msgid "Package Manager"
+msgstr "Administrador de Paquetes"
+
+#: .tmp/helpdialog.py:34
+msgid "Package Manager Help"
+msgstr "Ayuda del Administrador de Paquetes"
 
 #: .tmp/ui_settingsdialog.py:319
 msgid "Package Manager Settings"
@@ -176,65 +255,13 @@ msgstr "&OK"
 msgid "&Cancel"
 msgstr "&Cancelar"
 
-#: .tmp/mainwindow.py:36 .tmp/statemanager.py:97
-msgid "Currently your basket is empty."
-msgstr "Actualmente el carrito está vacío."
-
-#: .tmp/mainwindow.py:53
-msgid "Show New Packages"
-msgstr "Mostrar Paquetes nuevos"
-
-#: .tmp/mainwindow.py:60
-msgid "Show Installed Packages"
-msgstr "Mostrar Paquetes instalados"
-
-#: .tmp/mainwindow.py:66
-msgid "Show Upgradable Packages"
-msgstr "Mostrar Paquetes a actualizar"
-
-#: .tmp/operationmanager.py:92 .tmp/commontext.py:15
-msgid "downloading"
-msgstr "descargando"
-
-#: .tmp/settingsdialog.py:116
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Se eliminarán todos los paquetes almacenados. Está seguro ?"
-
-#: .tmp/settingsdialog.py:117
-msgid "Warning"
-msgstr "Alerta"
-
-#: .tmp/settingsdialog.py:118
-msgid "Delete"
-msgstr "Eliminar"
-
-#: .tmp/settingsdialog.py:169
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>Dirección del repositorio debe tener una terminación xml o xml.bz2."
-"<p>Por favor intente de nuevo.</qt>"
-
-#: .tmp/settingsdialog.py:169
-msgid "Pisi Error"
-msgstr "Error Pisi"
-
-#: .tmp/about.py:20 .tmp/about.py:22 .tmp/ui_mainwindow.py:29
-msgid "Package Manager"
-msgstr "Administrador de Paquetes"
-
-#: .tmp/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
+#: .tmp/ui_mainwidget.py:43
+msgid "Form"
 msgstr ""
 
-#: .tmp/about.py:31
-msgid "Faik Uygur"
-msgstr ""
-
-#: .tmp/about.py:31
-msgid "Maintainer"
-msgstr "Mantenedor"
+#: .tmp/ui_mainwidget.py:44
+msgid "Click to search"
+msgstr "Presione para buscar"
 
 #: .tmp/statemanager.py:57
 msgid "Installing Package(s)"
@@ -257,10 +284,6 @@ msgstr "Actualizando Repositorio(s)"
 msgid "Updating Repository(s)"
 msgstr "Actualizando Repositorio(s)"
 
-#: .tmp/statemanager.py:64 .tmp/ui_mainwidget.py:45 .tmp/ui_basketdialog.py:74
-msgid "Install Package(s)"
-msgstr "Instalar Paquete(s)"
-
 #: .tmp/statemanager.py:65
 msgid "Remove Package(s)"
 msgstr "Remover Paquete(s)"
@@ -269,51 +292,67 @@ msgstr "Remover Paquete(s)"
 msgid "Upgrade Package(s)"
 msgstr "Actualizar Paquetes(s)"
 
-#: .tmp/statemanager.py:99
+#: .tmp/statemanager.py:74
+msgid "You have selected the following package(s) to install:"
+msgstr ""
+
+#: .tmp/statemanager.py:75
+msgid "You have selected the following package(s) to removal:"
+msgstr ""
+
+#: .tmp/statemanager.py:76
+msgid "You have selected the following package(s) to upgrade:"
+msgstr ""
+
+#: .tmp/statemanager.py:80
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr ""
+
+#: .tmp/statemanager.py:81
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr ""
+
+#: .tmp/statemanager.py:107 .tmp/mainwindow.py:36
+msgid "Currently your basket is empty."
+msgstr "Actualmente el carrito está vacío."
+
+#: .tmp/statemanager.py:109
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:102
+#: .tmp/statemanager.py:112
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:104
+#: .tmp/statemanager.py:114
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:105
+#: .tmp/statemanager.py:115
 #, fuzzy
 msgid "in your basket."
 msgstr "Actualmente el carrito está vacío."
 
-#: .tmp/ui_repodialog.py:51
-msgid "Add New Repository"
-msgstr "Añadir Repositorio"
-
-#: .tmp/ui_repodialog.py:52
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Nombre del repositorio, p.ej. <b>pardus-devel</b>"
-
-#: .tmp/ui_repodialog.py:55
-msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+#: .tmp/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
 msgstr ""
 
-#: .tmp/ui_repodialog.py:56
-msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#: .tmp/about.py:31
+msgid "Faik Uygur"
 msgstr ""
 
-#: .tmp/helpdialog.py:34
-msgid "Package Manager Help"
-msgstr "Ayuda del Administrador de Paquetes"
+#: .tmp/about.py:31
+msgid "Maintainer"
+msgstr "Mantenedor"
 
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "extracting"
-msgstr "extrayendo"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "configuring"
-msgstr "configurando"
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:92
+msgid "downloading"
+msgstr "descargando"
 
 #: .tmp/commontext.py:15
 msgid "removing"
@@ -322,14 +361,6 @@ msgstr "removiendo"
 #: .tmp/commontext.py:15
 msgid "installing"
 msgstr "instalando"
-
-#: .tmp/ui_mainwidget.py:43
-msgid "Form"
-msgstr ""
-
-#: .tmp/ui_mainwidget.py:44
-msgid "Click to search"
-msgstr "Presione para buscar"
 
 #: .tmp/ui_progressdialog.py:151
 msgid "Progress"
@@ -371,37 +402,30 @@ msgstr ""
 msgid "Alt+C"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:69
-msgid "Basket"
+#: .tmp/mainwindow.py:53
+msgid "Show New Packages"
+msgstr "Mostrar Paquetes nuevos"
+
+#: .tmp/mainwindow.py:60
+msgid "Show Installed Packages"
+msgstr "Mostrar Paquetes instalados"
+
+#: .tmp/mainwindow.py:66
+msgid "Show Upgradable Packages"
+msgstr "Mostrar Paquetes a actualizar"
+
+#: .tmp/ui_repodialog.py:51
+msgid "Add New Repository"
+msgstr "Añadir Repositorio"
+
+#: .tmp/ui_repodialog.py:52
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Nombre del repositorio, p.ej. <b>pardus-devel</b>"
+
+#: .tmp/ui_repodialog.py:55
+msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:70
-msgid "Selected package(s) for install:"
-msgstr ""
-
-#: .tmp/ui_basketdialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr ""
-
-#: .tmp/ui_basketdialog.py:72
-msgid "Total Size:"
-msgstr ""
-
-#: .tmp/ui_basketdialog.py:73
-msgid "<b>2.2 MB</b>"
-msgstr ""
-
-#: .tmp/progressdialog.py:40
-msgid "%1 %2"
-msgstr "%1 %2"
-
-# could You put a comment with an example string, maybe in foreign language it sounds better when inverting some positions ?
-#: .tmp/progressdialog.py:44
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 paquete %3"
-
-#: .tmp/progressdialog.py:50
-msgid "<p align='center'>%1 / %2, %3</p>"
+#: .tmp/ui_repodialog.py:56
+msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""

@@ -8,13 +8,89 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-04 13:12+0300\n"
+"POT-Creation-Date: 2009-06-05 10:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/ui_basketdialog.py:69
+msgid "Basket"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:70
+msgid "Selected package(s) for install:"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:79
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:72
+msgid "Total Size:"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:73
+msgid "<b>2.2 MB</b>"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:64
+msgid "Install Package(s)"
+msgstr ""
+
+#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+msgid "configuring"
+msgstr ""
+
+#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+msgid "extracting"
+msgstr ""
+
+#: .tmp/progressdialog.py:40
+msgid "%1 %2"
+msgstr ""
+
+#: .tmp/progressdialog.py:44
+msgid "%1 / %2 package %3"
+msgstr ""
+
+#: .tmp/progressdialog.py:50
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr ""
+
+#: .tmp/settingsdialog.py:116
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr ""
+
+#: .tmp/settingsdialog.py:117
+msgid "Warning"
+msgstr ""
+
+#: .tmp/settingsdialog.py:118
+msgid "Delete"
+msgstr ""
+
+#: .tmp/settingsdialog.py:169
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+
+#: .tmp/settingsdialog.py:169
+msgid "Pisi Error"
+msgstr ""
+
+#: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
+msgid "Package Manager"
+msgstr ""
+
+#: .tmp/helpdialog.py:34
+msgid "Package Manager Help"
+msgstr ""
 
 #: .tmp/ui_settingsdialog.py:319
 msgid "Package Manager Settings"
@@ -171,62 +247,12 @@ msgstr ""
 msgid "&Cancel"
 msgstr ""
 
-#: .tmp/mainwindow.py:36 .tmp/statemanager.py:97
-msgid "Currently your basket is empty."
+#: .tmp/ui_mainwidget.py:43
+msgid "Form"
 msgstr ""
 
-#: .tmp/mainwindow.py:53
-msgid "Show New Packages"
-msgstr ""
-
-#: .tmp/mainwindow.py:60
-msgid "Show Installed Packages"
-msgstr ""
-
-#: .tmp/mainwindow.py:66
-msgid "Show Upgradable Packages"
-msgstr ""
-
-#: .tmp/operationmanager.py:92 .tmp/commontext.py:15
-msgid "downloading"
-msgstr ""
-
-#: .tmp/settingsdialog.py:116
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-
-#: .tmp/settingsdialog.py:117
-msgid "Warning"
-msgstr ""
-
-#: .tmp/settingsdialog.py:118
-msgid "Delete"
-msgstr ""
-
-#: .tmp/settingsdialog.py:169
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-
-#: .tmp/settingsdialog.py:169
-msgid "Pisi Error"
-msgstr ""
-
-#: .tmp/about.py:20 .tmp/about.py:22 .tmp/ui_mainwindow.py:29
-msgid "Package Manager"
-msgstr ""
-
-#: .tmp/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
-
-#: .tmp/about.py:31
-msgid "Faik Uygur"
-msgstr ""
-
-#: .tmp/about.py:31
-msgid "Maintainer"
+#: .tmp/ui_mainwidget.py:44
+msgid "Click to search"
 msgstr ""
 
 #: .tmp/statemanager.py:57
@@ -249,10 +275,6 @@ msgstr ""
 msgid "Updating Repository(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:64 .tmp/ui_mainwidget.py:45 .tmp/ui_basketdialog.py:74
-msgid "Install Package(s)"
-msgstr ""
-
 #: .tmp/statemanager.py:65
 msgid "Remove Package(s)"
 msgstr ""
@@ -261,49 +283,65 @@ msgstr ""
 msgid "Upgrade Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:99
+#: .tmp/statemanager.py:74
+msgid "You have selected the following package(s) to install:"
+msgstr ""
+
+#: .tmp/statemanager.py:75
+msgid "You have selected the following package(s) to removal:"
+msgstr ""
+
+#: .tmp/statemanager.py:76
+msgid "You have selected the following package(s) to upgrade:"
+msgstr ""
+
+#: .tmp/statemanager.py:80
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr ""
+
+#: .tmp/statemanager.py:81
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr ""
+
+#: .tmp/statemanager.py:107 .tmp/mainwindow.py:36
+msgid "Currently your basket is empty."
+msgstr ""
+
+#: .tmp/statemanager.py:109
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:102
+#: .tmp/statemanager.py:112
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:104
+#: .tmp/statemanager.py:114
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:105
+#: .tmp/statemanager.py:115
 msgid "in your basket."
 msgstr ""
 
-#: .tmp/ui_repodialog.py:51
-msgid "Add New Repository"
+#: .tmp/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
 msgstr ""
 
-#: .tmp/ui_repodialog.py:52
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
+#: .tmp/about.py:31
+msgid "Faik Uygur"
 msgstr ""
 
-#: .tmp/ui_repodialog.py:55
-msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+#: .tmp/about.py:31
+msgid "Maintainer"
 msgstr ""
 
-#: .tmp/ui_repodialog.py:56
-msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-msgstr ""
-
-#: .tmp/helpdialog.py:34
-msgid "Package Manager Help"
-msgstr ""
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "extracting"
-msgstr ""
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "configuring"
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:92
+msgid "downloading"
 msgstr ""
 
 #: .tmp/commontext.py:15
@@ -312,14 +350,6 @@ msgstr ""
 
 #: .tmp/commontext.py:15
 msgid "installing"
-msgstr ""
-
-#: .tmp/ui_mainwidget.py:43
-msgid "Form"
-msgstr ""
-
-#: .tmp/ui_mainwidget.py:44
-msgid "Click to search"
 msgstr ""
 
 #: .tmp/ui_progressdialog.py:151
@@ -362,36 +392,30 @@ msgstr ""
 msgid "Alt+C"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:69
-msgid "Basket"
+#: .tmp/mainwindow.py:53
+msgid "Show New Packages"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:70
-msgid "Selected package(s) for install:"
+#: .tmp/mainwindow.py:60
+msgid "Show Installed Packages"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
+#: .tmp/mainwindow.py:66
+msgid "Show Upgradable Packages"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:72
-msgid "Total Size:"
+#: .tmp/ui_repodialog.py:51
+msgid "Add New Repository"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:73
-msgid "<b>2.2 MB</b>"
+#: .tmp/ui_repodialog.py:52
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr ""
 
-#: .tmp/progressdialog.py:40
-msgid "%1 %2"
+#: .tmp/ui_repodialog.py:55
+msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 msgstr ""
 
-#: .tmp/progressdialog.py:44
-msgid "%1 / %2 package %3"
-msgstr ""
-
-#: .tmp/progressdialog.py:50
-msgid "<p align='center'>%1 / %2, %3</p>"
+#: .tmp/ui_repodialog.py:56
+msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
