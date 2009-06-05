@@ -48,6 +48,9 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         # Terminal
 
         self.terminal = QTermWidget.QTermWidget()
+        self.terminal.setHistorySize(-1)
+        self.terminal.setScrollBarPosition(2)
+        self.terminal.setColorScheme(2)
         self.terminalLayout.addWidget(self.terminal)
         self.terminal.show()
 
