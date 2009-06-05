@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 15:41+0300\n"
+"POT-Creation-Date: 2009-06-05 16:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Selected package(s) for install:"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:79
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:84
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
@@ -62,15 +62,15 @@ msgstr ""
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr ""
 
-#: .tmp/progressdialog.py:62 .tmp/ui_progressdialog.py:152
+#: .tmp/progressdialog.py:62 .tmp/ui_progressdialog.py:153
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr ""
 
-#: .tmp/progressdialog.py:65 .tmp/ui_progressdialog.py:154
+#: .tmp/progressdialog.py:65 .tmp/ui_progressdialog.py:155
 msgid "--  / --"
 msgstr ""
 
-#: .tmp/progressdialog.py:66 .tmp/ui_progressdialog.py:155
+#: .tmp/progressdialog.py:66 .tmp/ui_progressdialog.py:156
 msgid "--:--:--"
 msgstr ""
 
@@ -255,7 +255,7 @@ msgstr ""
 msgid "&OK"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:163
+#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:164
 msgid "&Cancel"
 msgstr ""
 
@@ -295,48 +295,60 @@ msgstr ""
 msgid "Upgrade Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:74
+#: .tmp/statemanager.py:69
+msgid "installed"
+msgstr ""
+
+#: .tmp/statemanager.py:70
+msgid "removed"
+msgstr ""
+
+#: .tmp/statemanager.py:71
+msgid "upgraded"
+msgstr ""
+
+#: .tmp/statemanager.py:79
 msgid "You have selected the following package(s) to install:"
 msgstr ""
 
-#: .tmp/statemanager.py:75
+#: .tmp/statemanager.py:80
 msgid "You have selected the following package(s) to removal:"
 msgstr ""
 
-#: .tmp/statemanager.py:76
+#: .tmp/statemanager.py:81
 msgid "You have selected the following package(s) to upgrade:"
 msgstr ""
 
-#: .tmp/statemanager.py:80
+#: .tmp/statemanager.py:85
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
 msgstr ""
 
-#: .tmp/statemanager.py:81
+#: .tmp/statemanager.py:86
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr ""
 
-#: .tmp/statemanager.py:107 .tmp/mainwindow.py:36
+#: .tmp/statemanager.py:112 .tmp/mainwindow.py:36
 msgid "Currently your basket is empty."
 msgstr ""
 
-#: .tmp/statemanager.py:109
+#: .tmp/statemanager.py:114
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:112
+#: .tmp/statemanager.py:117
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:114
+#: .tmp/statemanager.py:119
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:115
+#: .tmp/statemanager.py:120
 msgid "in your basket."
 msgstr ""
 
@@ -352,7 +364,7 @@ msgstr ""
 msgid "Maintainer"
 msgstr ""
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:92
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:95
 msgid "downloading"
 msgstr ""
 
@@ -360,39 +372,27 @@ msgstr ""
 msgid "removing"
 msgstr ""
 
-#: .tmp/commontext.py:16
+#: .tmp/commontext.py:15
 msgid "installing"
 msgstr ""
 
-#: .tmp/commontext.py:16
-msgid "installed"
+#: .tmp/ui_progressdialog.py:152
+msgid "Operation"
 msgstr ""
 
-#: .tmp/commontext.py:16
-msgid "removed"
-msgstr ""
-
-#: .tmp/commontext.py:16
-msgid "upgraded"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:151
-msgid "Progress"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:153
+#: .tmp/ui_progressdialog.py:154
 msgid "Time remaining:"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:156
+#: .tmp/ui_progressdialog.py:157
 msgid "Operation:"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:157
+#: .tmp/ui_progressdialog.py:158
 msgid "Status:"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:158
+#: .tmp/ui_progressdialog.py:159
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -406,7 +406,7 @@ msgid ""
 "style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:164
+#: .tmp/ui_progressdialog.py:165
 msgid "Alt+C"
 msgstr ""
 
