@@ -65,6 +65,11 @@ class StateManager(QObject):
                 self.REMOVE :i18n("Remove Package(s)"),
                 self.UPGRADE:i18n("Upgrade Package(s)")}[self.state]
 
+    def toBe(self):
+        return {self.INSTALL:i18n("installed"),
+                self.REMOVE :i18n("removed"),
+                self.UPGRADE:i18n("upgraded")}[self.state]
+
     def getActionIcon(self):
         return {self.INSTALL:KIcon("list-add"),
                 self.REMOVE :KIcon("list-remove"),

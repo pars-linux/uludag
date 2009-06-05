@@ -34,6 +34,9 @@ class OperationManager(QObject):
         self.totalDownloaded = 0
         self.curPkgDownloaded = 0
 
+    def setTotalPackages(self, totalPackages):
+        self.totalPackages = totalPackages
+
     def calculateTimeLeft(self, rate, symbol):
         factor = {"B/s":1, "KB/s":1024, "MB/s":1048576, "GB/s":1073741824}
         if symbol == "--/-":

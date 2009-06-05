@@ -64,7 +64,3 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.operationInfo.setText("")
         self.statusInfo.setText(i18n("--  / --"))
         self.timeRemaining.setText(i18n("--:--:--"))
-
-    def show(self):
-        self.reset()
-        QtGui.QDialog.show(self)
