@@ -29,10 +29,13 @@ class PackageView(QtGui.QTreeView):
         return self.model().sourceModel().selectedPackages()
 
     def extraPackages(self):
-        return self.model().sourceModel().selectedPackages()
+        return self.model().sourceModel().extraPackages()
 
     def selectedPackagesSize(self):
         return self.model().sourceModel().selectedPackagesSize()
 
     def extraPackagesSize(self):
         return self.model().sourceModel().extraPackagesSize()
+
+    def packageCount(self):
+        return len(self.selectedPackages()) + len(self.extraPackages())
