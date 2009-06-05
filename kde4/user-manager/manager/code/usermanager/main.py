@@ -224,7 +224,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.widgetGroupEdit.hide()
             # Show user edit
             self.widgetUserEdit.show()
-            if id_:
+            if id_ != None:
                 try:
                     username, fullname, gid, homedir, shell, groups = self.iface.userInfo(id_)
                 except Exception, e: # TODO: Named exception should be raised
