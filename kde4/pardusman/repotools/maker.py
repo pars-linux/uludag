@@ -326,7 +326,7 @@ def squash_image(project):
     f.close()
 
     if project.squashfs_comp_type == 'LZMA':
-        run('mksquashfs "%s" "%s" noappend -ef "%s"' % (image_dir, image_file, temp.name))
+        run('mksquashfs "%s" "%s" -noappend -ef "%s"' % (image_dir, image_file, temp.name))
     else:
         run('mksquashfs "%s" "%s" -nolzma -noappend -ef "%s"' % (image_dir, image_file, temp.name))
 
