@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 10:55+0300\n"
+"POT-Creation-Date: 2009-06-05 15:41+0300\n"
 "PO-Revision-Date: 2009-06-02 20:33-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -61,6 +61,18 @@ msgstr "%1 / %2 paquete %3"
 
 #: .tmp/progressdialog.py:50
 msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr ""
+
+#: .tmp/progressdialog.py:62 .tmp/ui_progressdialog.py:152
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Preparando PiSi...</h3>"
+
+#: .tmp/progressdialog.py:65 .tmp/ui_progressdialog.py:154
+msgid "--  / --"
+msgstr ""
+
+#: .tmp/progressdialog.py:66 .tmp/ui_progressdialog.py:155
+msgid "--:--:--"
 msgstr ""
 
 #: .tmp/settingsdialog.py:116
@@ -251,7 +263,7 @@ msgstr "&Ayuda"
 msgid "&OK"
 msgstr "&OK"
 
-#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:160
+#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:163
 msgid "&Cancel"
 msgstr "&Cancelar"
 
@@ -358,47 +370,55 @@ msgstr "descargando"
 msgid "removing"
 msgstr "removiendo"
 
-#: .tmp/commontext.py:15
+#: .tmp/commontext.py:16
 msgid "installing"
 msgstr "instalando"
+
+#: .tmp/commontext.py:16
+#, fuzzy
+msgid "installed"
+msgstr "instalando"
+
+#: .tmp/commontext.py:16
+#, fuzzy
+msgid "removed"
+msgstr "removiendo"
+
+#: .tmp/commontext.py:16
+msgid "upgraded"
+msgstr ""
 
 #: .tmp/ui_progressdialog.py:151
 msgid "Progress"
 msgstr "Progreso"
 
-#: .tmp/ui_progressdialog.py:152
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Preparando PiSi...</h3>"
-
 #: .tmp/ui_progressdialog.py:153
-msgid "amsn"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:154
 msgid "Time remaining:"
 msgstr "Tiempo restante:"
 
-#: .tmp/ui_progressdialog.py:155
-msgid "2 / 20 packages installed."
-msgstr "2 / 20 paquetes instalados."
-
 #: .tmp/ui_progressdialog.py:156
-msgid "01:29"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:157
 msgid "Operation:"
 msgstr "Operación:"
 
-#: .tmp/ui_progressdialog.py:158
+#: .tmp/ui_progressdialog.py:157
 msgid "Status:"
 msgstr "Estado:"
 
-#: .tmp/ui_progressdialog.py:159
-msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+#: .tmp/ui_progressdialog.py:158
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:161
+#: .tmp/ui_progressdialog.py:164
 msgid "Alt+C"
 msgstr ""
 
@@ -429,3 +449,6 @@ msgstr ""
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
+
+#~ msgid "2 / 20 packages installed."
+#~ msgstr "2 / 20 paquetes instalados."
