@@ -41,7 +41,6 @@ class Iface(Singleton):
     def initComar(self):
         self.link = comar.Link()
         self.link.setLocale()
-        self.link.useAgent()
         self.link.listenSignals("System.Manager", self.signalHandler)
 
     def initDB(self):
