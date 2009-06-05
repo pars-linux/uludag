@@ -171,7 +171,7 @@ class Project:
         self.release_files = ""
         self.repo_uri = ""
         self.type = "install"
-        self.squashfs_comp_type = "gzip"
+        self.squashfs_comp_type = "GZIP"
         self.media = "cd"
         self.extra_params = ""
         self.plugin_package = ""
