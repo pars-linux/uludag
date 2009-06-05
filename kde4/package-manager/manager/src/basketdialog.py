@@ -58,7 +58,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def filterExtras(self):
         waitCursor()
         extraPackages = self.model.extraPackages()
-        self.extraList.model().sourceModel().setPackages(extraPackages)
+        self.extraList.setPackages(extraPackages)
         self.__updateList(self.extraList, extraPackages)
         self.extraList.setVisible(bool(extraPackages))
         self.extrasLabel.setVisible(bool(extraPackages))
