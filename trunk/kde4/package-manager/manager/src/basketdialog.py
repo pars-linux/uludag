@@ -22,22 +22,18 @@ from pmutils import *
 from ui_basketdialog import Ui_BasketDialog
 
 class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
-    def __init__(self, state, model):
+    def __init__(self, state):
         QtGui.QDialog.__init__(self, None)
         self.setupUi(self)
         self.state = state
-        self.model = model
         self.initPackageList()
         self.initExtraList()
-        self.setActionButton()
-        self.setBasketLabel()
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.updateTotal)
         self.connect(self.actionButton, SIGNAL("clicked()"), self.action)
 
     def __initList(self, packageList):
         packageList.setModel(PackageProxy(self))
-        packageList.model().setSourceModel(self.model)
         packageList.setItemDelegate(PackageDelegate(self))
         packageList.setColumnWidth(0, 32)
         packageList.setAlternatingRowColors(True)
@@ -46,6 +42,11 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
 
     def __updateList(self, packageList, packages):
         packageList.model().setFilterPackages(packages)
+
+    def setModel(self, model):
+        self.model = model
+        self.packageList.model().setSourceModel(model)
+        self.extraList.model().setSourceModel(model)
 
     def initExtraList(self):
         self.__initList(self.extraList)
@@ -74,15 +75,16 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.infoLabel.setText(self.state.getBasketInfo())
         self.extrasLabel.setText(self.state.getBasketExtrasInfo())
 
-    def refresh(self):
-        self.__updateList(self.packageList, self.model.selectedPackages())
-        self.__updateList(self.extraList, self.model.extraPackages())
-
     def action(self):
         self.state.operationAction(self.model.selectedPackages())
         self.close()
 
     def show(self):
+        waitCursor()
+        self.__updateList(self.packageList, self.model.selectedPackages())
         self.filterExtras()
         self.updateTotal()
+        self.setActionButton()
+        self.setBasketLabel()
+        restoreCursor()
         QtGui.QDialog.show(self)
