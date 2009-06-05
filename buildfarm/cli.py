@@ -86,7 +86,7 @@ class CLI(pisi.ui.UI):
             match = re.match("(\033.*?m)(.*)", l)
             if match:
                 match = match.groups()
-                hf.write("<span style=\"color: %s\">%s</span><br />\n" % (self.colormap.get(match[0], 'Default'), match[1]))
+                hf.write("<span style=\"color: %s\">%s</span><br />\n" % (self.colormap.get(match[0], '\033[0m'), match[1]))
             else:
                 hf.write("<span>%s</span><br />\n" % l)
 
