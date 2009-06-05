@@ -58,7 +58,7 @@ def objectSender(pack):
 # Partitioning screen.
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Installing system...')
-    desc = _('Installing takes approximately 30 minutes depending on your hardware...')
+    desc = _('Installing takes approximately 20 minutes depending on your hardware...')
     icon = "iconInstall"
     help = _('''
 <font size="+2">Installation started</font>
