@@ -194,9 +194,10 @@ class Yali:
             self.info.updateMessage(_("Checking: %s") % pkg_name)
             if self.checkCDStop:
                 continue
-            if yali4.pisiiface.check_package_hash(pkg_name):
+            try:
+                yali4.pisiiface.check_package_hash(pkg_name)
                 rootWidget.progressBar.setValue(cur)
-            else:
+            except:
                 self.showError(_("Check Failed"),
                                _("<b><p>Integrity check for packages failed.\
                                   It seems that installation CD is broken.</p></b>"))
@@ -658,7 +659,7 @@ class Yali:
     def showError(self, title, message, parent=None):
         r = ErrorWidget(parent)
         r.label.setText(message)
-        d = Dialog(title, r, self)
+        d = Dialog(title, r, self, closeButton=False)
         d.resize(300,200)
         d.exec_()
 
