@@ -171,7 +171,7 @@ class Project:
         self.release_files = ""
         self.repo_uri = ""
         self.type = "install"
-        self.squashfs_comp_type = "GZIP"
+        self.squashfs_comp_type = "gzip"
         self.media = "cd"
         self.extra_params = ""
         self.plugin_package = ""
@@ -203,6 +203,7 @@ class Project:
         self.title = doc.getTagData("Title")
         self.type = doc.getAttribute("type")
         self.media = doc.getAttribute("media")
+        self.squashfs_comp_type = doc.getAttribute("compression")
 
         self.plugin_package = doc.getTagData("PluginPackage")
         if not self.plugin_package:
@@ -250,6 +251,7 @@ class Project:
 
         doc.setAttribute("type", self.type)
         doc.setAttribute("media", str(self.media))
+        doc.setAttribute("compression", str(self.squashfs_comp_type))
 
         if self.title:
             doc.insertTag("Title").insertData(self.title)

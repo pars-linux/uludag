@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>679</width>
-    <height>635</height>
+    <width>510</width>
+    <height>440</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -113,6 +113,13 @@
            </property>
           </widget>
          </item>
+         <item row="2" column="2">
+          <widget class="QPushButton" name="pushBrowseRepository">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
          <item row="3" column="0">
           <widget class="QLabel" name="label_4">
            <property name="text">
@@ -127,6 +134,13 @@
            </property>
           </widget>
          </item>
+         <item row="3" column="2">
+          <widget class="QPushButton" name="pushBrowseReleaseFiles">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
          <item row="4" column="0">
           <widget class="QLabel" name="label_6">
            <property name="text">
@@ -136,6 +150,13 @@
          </item>
          <item row="4" column="1">
           <widget class="QLineEdit" name="linePluginPackage"/>
+         </item>
+         <item row="4" column="2">
+          <widget class="QPushButton" name="pushBrowsePluginPackage">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
          </item>
          <item row="5" column="0">
           <widget class="QLabel" name="label_2">
@@ -151,6 +172,13 @@
            </property>
           </widget>
          </item>
+         <item row="5" column="2">
+          <widget class="QPushButton" name="pushBrowseWorkFolder">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
          <item row="6" column="0">
           <widget class="QLabel" name="label_7">
            <property name="text">
@@ -158,7 +186,7 @@
            </property>
           </widget>
          </item>
-         <item row="6" column="1" colspan="2">
+         <item row="6" column="1">
           <widget class="QComboBox" name="comboType">
            <item>
             <property name="text">
@@ -209,32 +237,18 @@
            </item>
           </widget>
          </item>
-         <item row="2" column="2">
-          <widget class="QPushButton" name="pushBrowseRepository">
-           <property name="text">
-            <string>Browse</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="2">
-          <widget class="QPushButton" name="pushBrowseReleaseFiles">
-           <property name="text">
-            <string>Browse</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="2">
-          <widget class="QPushButton" name="pushBrowsePluginPackage">
-           <property name="text">
-            <string>Browse</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="2">
-          <widget class="QPushButton" name="pushBrowseWorkFolder">
-           <property name="text">
-            <string>Browse</string>
-           </property>
+         <item row="6" column="2">
+          <widget class="QComboBox" name="comboCompression">
+           <item>
+            <property name="text">
+             <string>GZIP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LZMA</string>
+            </property>
+           </item>
           </widget>
          </item>
         </layout>
@@ -284,8 +298,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>679</width>
-     <height>26</height>
+     <width>510</width>
+     <height>23</height>
     </rect>
    </property>
   </widget>
