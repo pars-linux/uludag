@@ -4,7 +4,6 @@
     + Ekranda bulunan history itemları enable duruma geçemiyor. 
     + Yeni değişiklikler eklenerek ekran yenilenemiyor.
 + Yeni görüntü almak için yetki sorulmuyor.
-+ Sytem-settings computer administration bölümünden uygulama açılmaya çalışıldığında açılamıyor.
 
 - Dil türkçe iken 
     + Yapılmakta olan işlemler sağ alt köşede ingilizce olarak görünüyor.
@@ -13,3 +12,4 @@
     - Sağ alt bölümde örneğin "2009-06-05'e geri alıyor" diyor ve  ekranda bulunan history itemları disable olarak kalıyor.
 - Son görüntü alınmasından sonra eğer hiçbir değişiklik yapılmamış ise, tekrar görüntü alınmaya çalışıldığında
     - Sağ alt köşede "Yeni görüntü alınıyor" diyor ve ekranda bulunan history itemları disable olarak kalıyor.
+- Sytem-settings computer administration bölümünden uygulama açılmaya çalışıldığında açılamıyor. KDE çöküyor.
