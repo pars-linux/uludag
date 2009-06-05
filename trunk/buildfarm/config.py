@@ -84,4 +84,5 @@ deltaBlacklist   = ["skype",
                     "module-nvidia185",
                     "module-nvidia71",
                     "module-nvidia96",
+                    "kernel-firmware",
                     "nvidia-drivers-old"]
