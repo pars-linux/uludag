@@ -160,18 +160,17 @@ class BootLoader:
                 It also cleans unnecessary options """
 
             def is_required(param):
-                params = ["initrd","init","xorg","yali4","BOOT_IMAGE","lang","mudur",consts.kahyaParam]
+                params = ["root","initrd","init","xorg","yali4","BOOT_IMAGE","lang","mudur",consts.kahyaParam]
                 for p in params:
                     if param.startswith("%s=" % p):
                         return False
                 return True
 
             s = []
+            s.append("root=LABEL=%s" % (root_label))
             # Get parameters from cmdline.
             for i in [x for x in open("/proc/cmdline", "r").read().split()]:
-                if i.startswith("root="):
-                    s.append("root=LABEL=%s" % (root_label))
-                elif is_required(i):
+                if is_required(i):
                     s.append(i)
 
             # a hack for http://bugs.pardus.org.tr/3345
