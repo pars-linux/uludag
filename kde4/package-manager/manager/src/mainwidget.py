@@ -49,8 +49,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def connectOperationSignals(self):
         self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
-        self.connect(self.operation, SIGNAL("started(QString)"), self.progressDialog.updateActionLabel)
         self.connect(self.operation, SIGNAL("started(QString)"), self.actionStarted)
+        self.connect(self.operation, SIGNAL("started(QString)"), self.progressDialog.updateActionLabel)
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
         self.connect(self.operation, SIGNAL("operationChanged(QString,QString)"), self.progressDialog.updateOperation)
         self.connect(self.operation, SIGNAL("packageChanged(int, int, QString)"), self.progressDialog.updateStatus)
