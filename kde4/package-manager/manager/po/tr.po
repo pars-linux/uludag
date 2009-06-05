@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 15:41+0300\n"
+"POT-Creation-Date: 2009-06-05 16:15+0300\n"
 "PO-Revision-Date: 2009-06-05 15:42+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "Sepet"
 msgid "Selected package(s) for install:"
 msgstr "Kurulmak üzere seçilmiş paket(ler):"
 
-#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:79
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:84
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
@@ -63,15 +63,15 @@ msgstr "%1 / %2 paket %3"
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: .tmp/progressdialog.py:62 .tmp/ui_progressdialog.py:152
+#: .tmp/progressdialog.py:62 .tmp/ui_progressdialog.py:153
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>PİSİ Hazırlanıyor...</h3>"
 
-#: .tmp/progressdialog.py:65 .tmp/ui_progressdialog.py:154
+#: .tmp/progressdialog.py:65 .tmp/ui_progressdialog.py:155
 msgid "--  / --"
 msgstr "--  / --"
 
-#: .tmp/progressdialog.py:66 .tmp/ui_progressdialog.py:155
+#: .tmp/progressdialog.py:66 .tmp/ui_progressdialog.py:156
 msgid "--:--:--"
 msgstr "--:--:--"
 
@@ -261,7 +261,7 @@ msgstr "&Yardım"
 msgid "&OK"
 msgstr "&Tamam"
 
-#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:163
+#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:164
 msgid "&Cancel"
 msgstr "&İptal"
 
@@ -301,47 +301,61 @@ msgstr "Paket(ler)i Kaldır"
 msgid "Upgrade Package(s)"
 msgstr "Paket(ler)i Güncelle"
 
-#: .tmp/statemanager.py:74
+#: .tmp/statemanager.py:69
+msgid "installed"
+msgstr "kuruldu"
+
+#: .tmp/statemanager.py:70
+msgid "removed"
+msgstr "kaldırıldı"
+
+#: .tmp/statemanager.py:71
+msgid "upgraded"
+msgstr "güncellendi"
+
+#: .tmp/statemanager.py:79
 msgid "You have selected the following package(s) to install:"
 msgstr "Aşağıdaki paketleri kurmak üzere seçtiniz:"
 
-#: .tmp/statemanager.py:75
+#: .tmp/statemanager.py:80
 msgid "You have selected the following package(s) to removal:"
 msgstr "Aşağıdaki paketleri kaldırmak üzere seçtiniz:"
 
-#: .tmp/statemanager.py:76
+#: .tmp/statemanager.py:81
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Aşağıdaki paketleri güncellemek üzere seçtiniz:"
 
-#: .tmp/statemanager.py:80
+#: .tmp/statemanager.py:85
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
 msgstr "Seçili paketlerin ayrıca kaldırılacak olan ters bağımlılıkları:"
 
-#: .tmp/statemanager.py:81
+#: .tmp/statemanager.py:86
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr "Seçili paketlerin ayrıca güncellenecek olan ek bağımlılıkları:"
 
-#: .tmp/statemanager.py:107 .tmp/mainwindow.py:36
+#: .tmp/statemanager.py:112 .tmp/mainwindow.py:36
 msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
-#: .tmp/statemanager.py:109
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
+#: .tmp/statemanager.py:114
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
-#: .tmp/statemanager.py:112
+#: .tmp/statemanager.py:117
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "ile toplam <b>%2</b> boyutunda <b>%1</b> ters bağımlılık "
 
-#: .tmp/statemanager.py:114
+#: .tmp/statemanager.py:119
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "ile toplam <b>%2</b> boyutunda <b>%1</b> ek bağımlılık "
 
-#: .tmp/statemanager.py:115
+#: .tmp/statemanager.py:120
 msgid "in your basket."
 msgstr "bulunuyor."
 
@@ -357,7 +371,7 @@ msgstr "Faik Uygur"
 msgid "Maintainer"
 msgstr "Bakıcı"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:92
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:95
 msgid "downloading"
 msgstr "indiriliyor"
 
@@ -365,39 +379,27 @@ msgstr "indiriliyor"
 msgid "removing"
 msgstr "kaldırılıyor"
 
-#: .tmp/commontext.py:16
+#: .tmp/commontext.py:15
 msgid "installing"
 msgstr "kuruluyor"
 
-#: .tmp/commontext.py:16
-msgid "installed"
-msgstr "kuruldu"
+#: .tmp/ui_progressdialog.py:152
+msgid "Operation"
+msgstr "İşlem"
 
-#: .tmp/commontext.py:16
-msgid "removed"
-msgstr "kaldırıldı"
-
-#: .tmp/commontext.py:16
-msgid "upgraded"
-msgstr "güncellendi"
-
-#: .tmp/ui_progressdialog.py:151
-msgid "Progress"
-msgstr "Progress"
-
-#: .tmp/ui_progressdialog.py:153
+#: .tmp/ui_progressdialog.py:154
 msgid "Time remaining:"
 msgstr "Kalan zaman:"
 
-#: .tmp/ui_progressdialog.py:156
+#: .tmp/ui_progressdialog.py:157
 msgid "Operation:"
 msgstr "İşlem:"
 
-#: .tmp/ui_progressdialog.py:157
+#: .tmp/ui_progressdialog.py:158
 msgid "Status:"
 msgstr "Durum:"
 
-#: .tmp/ui_progressdialog.py:158
+#: .tmp/ui_progressdialog.py:159
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -411,7 +413,7 @@ msgid ""
 "style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:164
+#: .tmp/ui_progressdialog.py:165
 msgid "Alt+C"
 msgstr "Alt+C"
 
@@ -443,3 +445,5 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
+#~ msgid "Progress"
+#~ msgstr "Progress"
