@@ -169,5 +169,5 @@ def check_package_hash(pkg_name):
     file_hash = pisi.util.sha1_file(
         os.path.join(repo_path, file_name))
 
-    return pkg.packageHash == file_hash
-
+    if not pkg.packageHash == file_hash:
+        raise Exception
