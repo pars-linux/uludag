@@ -1,14 +1,11 @@
-+ Disk bölümlendirme-> otomatik->Bölümleri yeniden boyutlandırı dene seçildiğinde
-    + Yeni bir ekran çıkıyor fakat bu ekran kapatılamıyor.
-    + Eger dosya sistemi olmayan boş bir partition var ise, bu partition önerilen olarak gelmesi gerekirken, bu partition hiç gözükmüyor.
+- iso bozuk olduğu durumda, cd kontrolü yapılmadan kuruluma başlanırsa, bozuk olan paketlerin install bölümüne gelindiğinde "yeniden dene ve iptal" butonu olan bir pencere çıkıyor. 
+    Yeniden dene seçildiğinde, progress bar yeniden install'un başladığı noktadan başlayamıyor. En son bulunduğu noktadan devam ediyor ve bir süre sonra devamlı 100% gösteriyor.
 
 - Disk tablosu herhengi bir şekilde bozulmuş ise:
     + Partition formatlanıp yeni dosya sistemi ile kurulmaya çalışıldığında fscheck hatası veriyor.
     - Partition resize edilmeye çalışıldığında parted hatası veriyor.
 
-+ Disk tablosunda partition signature eğer none olarak gözüküyor ise parted harası veriyor.
-
-- Bozuk CD check edilmeye çalışıldığında, exception hatası veriyor.
+- Bozuk CD check edilmeye çalışıldığında, exception hatası veriyor. Görüntüsü bkz. yalierror.jpg
 
 + Birden fazla harddisk bulunması durumunda, açılış diskinin hangisi olduğu bilinemiyor.
    + Yalının grub bölümünde alfabetik sıra ile dizilen harddisklerin hangisinin açılış diski olduğu belirtilmiyor.
@@ -30,4 +27,8 @@
 
 + Yeni partitionlar yaratılıp daha sonra bu noktadan geri dönülmek istenildiğinde, partition tablosunun eski haline geleceğine dair bir uyarı verilmiyor ve disk tablosu görsel olarak da eski haline gelemiyor.
 
++ Disk bölümlendirme-> otomatik->Bölümleri yeniden boyutlandırı dene seçildiğinde
+    + Yeni bir ekran çıkıyor fakat bu ekran kapatılamıyor.
+    + Eger dosya sistemi olmayan boş bir partition var ise, bu partition önerilen olarak gelmesi gerekirken, bu partition hiç gözükmüyor.
 
++ Disk tablosunda partition signature eğer none olarak gözüküyor ise parted harası veriyor.
