@@ -52,7 +52,7 @@ class CLI(pisi.ui.UI):
                          'Action'   : ('green', '\033[32m', '#00CC00'),
                          'Notify'   : ('cyan', '\033[36m', '#99CCFF'),
                          'Status'   : ('brightgreen', '\033[01;32m', '#00FF00'),
-                         'Display'  : ('gray', 'aa', '#CCCCCC'),
+                         'Display'  : ('gray', '\033[0m', '#CCCCCC'),
                          'Default'  : ('default', '\033[0m', '#CCCCCC')}
 
         self.colormap = dict([(v,m) for k,v,m in self.outtypes.values()])
@@ -86,7 +86,7 @@ class CLI(pisi.ui.UI):
             match = re.match("(\033.*?m)(.*)", l)
             if match:
                 match = match.groups()
-                hf.write("<span style=\"color: %s\">%s</span><br />\n" % (self.colormap[match[0]], match[1]))
+                hf.write("<span style=\"color: %s\">%s</span><br />\n" % (self.colormap.get(match[0], 'Default'), match[1]))
             else:
                 hf.write("<span>%s</span><br />\n" % l)
 
