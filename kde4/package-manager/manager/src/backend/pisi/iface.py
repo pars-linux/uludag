@@ -133,11 +133,12 @@ class Iface(Singleton):
             return self.idb.get_package(name)
 
     def getDepends(self, packages):
+        base = pisi.api.get_base_upgrade_order(packages)
         if not self.idb.has_package(packages[0]):
-            deps = set(pisi.api.get_install_order(packages))
+            deps = pisi.api.get_install_order(packages)
         else:
-            deps = set(pisi.api.get_upgrade_order(packages))
-        return list(set(deps) - set(packages))
+            deps = pisi.api.get_upgrade_order(packages)
+        return list(set(deps + base) - set(packages))
 
     def getRequires(self, packages):
         revDeps = set(pisi.api.get_remove_order(packages))
