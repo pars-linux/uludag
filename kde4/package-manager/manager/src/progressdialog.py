@@ -57,3 +57,14 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
 
     def disableCancel(self):
         self.cancelButton.setEnabled(False)
+
+    def reset(self):
+        self.actionLabel.setText(i18n("<h3>Preparing PiSi...</h3>"))
+        self.progressBar.setValue(0)
+        self.operationInfo.setText("")
+        self.statusInfo.setText(i18n("--  / --"))
+        self.timeRemaining.setText(i18n("--:--:--"))
+
+    def show(self):
+        self.reset()
+        QtGui.QDialog.show(self)
