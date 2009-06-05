@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 10:55+0300\n"
+"POT-Creation-Date: 2009-06-05 15:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,6 +60,18 @@ msgstr ""
 
 #: .tmp/progressdialog.py:50
 msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr ""
+
+#: .tmp/progressdialog.py:62 .tmp/ui_progressdialog.py:152
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr ""
+
+#: .tmp/progressdialog.py:65 .tmp/ui_progressdialog.py:154
+msgid "--  / --"
+msgstr ""
+
+#: .tmp/progressdialog.py:66 .tmp/ui_progressdialog.py:155
+msgid "--:--:--"
 msgstr ""
 
 #: .tmp/settingsdialog.py:116
@@ -243,7 +255,7 @@ msgstr ""
 msgid "&OK"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:160
+#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:163
 msgid "&Cancel"
 msgstr ""
 
@@ -348,47 +360,53 @@ msgstr ""
 msgid "removing"
 msgstr ""
 
-#: .tmp/commontext.py:15
+#: .tmp/commontext.py:16
 msgid "installing"
+msgstr ""
+
+#: .tmp/commontext.py:16
+msgid "installed"
+msgstr ""
+
+#: .tmp/commontext.py:16
+msgid "removed"
+msgstr ""
+
+#: .tmp/commontext.py:16
+msgid "upgraded"
 msgstr ""
 
 #: .tmp/ui_progressdialog.py:151
 msgid "Progress"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:152
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr ""
-
 #: .tmp/ui_progressdialog.py:153
-msgid "amsn"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:154
 msgid "Time remaining:"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:155
-msgid "2 / 20 packages installed."
-msgstr ""
-
 #: .tmp/ui_progressdialog.py:156
-msgid "01:29"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:157
 msgid "Operation:"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:158
+#: .tmp/ui_progressdialog.py:157
 msgid "Status:"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:159
-msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+#: .tmp/ui_progressdialog.py:158
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:161
+#: .tmp/ui_progressdialog.py:164
 msgid "Alt+C"
 msgstr ""
 

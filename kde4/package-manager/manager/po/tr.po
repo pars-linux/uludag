@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 10:55+0300\n"
-"PO-Revision-Date: 2009-06-05 11:00+0300\n"
+"POT-Creation-Date: 2009-06-05 15:41+0300\n"
+"PO-Revision-Date: 2009-06-05 15:42+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -62,6 +62,18 @@ msgstr "%1 / %2 paket %3"
 #: .tmp/progressdialog.py:50
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
+
+#: .tmp/progressdialog.py:62 .tmp/ui_progressdialog.py:152
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>PİSİ Hazırlanıyor...</h3>"
+
+#: .tmp/progressdialog.py:65 .tmp/ui_progressdialog.py:154
+msgid "--  / --"
+msgstr "--  / --"
+
+#: .tmp/progressdialog.py:66 .tmp/ui_progressdialog.py:155
+msgid "--:--:--"
+msgstr "--:--:--"
 
 #: .tmp/settingsdialog.py:116
 msgid "All the cached packages will be deleted. Are you sure? "
@@ -249,13 +261,13 @@ msgstr "&Yardım"
 msgid "&OK"
 msgstr "&Tamam"
 
-#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:160
+#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:163
 msgid "&Cancel"
 msgstr "&İptal"
 
 #: .tmp/ui_mainwidget.py:43
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: .tmp/ui_mainwidget.py:44
 msgid "Click to search"
@@ -335,11 +347,11 @@ msgstr "bulunuyor."
 
 #: .tmp/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/about.py:31
 msgid "Faik Uygur"
-msgstr ""
+msgstr "Faik Uygur"
 
 #: .tmp/about.py:31
 msgid "Maintainer"
@@ -353,47 +365,53 @@ msgstr "indiriliyor"
 msgid "removing"
 msgstr "kaldırılıyor"
 
-#: .tmp/commontext.py:15
+#: .tmp/commontext.py:16
 msgid "installing"
 msgstr "kuruluyor"
+
+#: .tmp/commontext.py:16
+msgid "installed"
+msgstr "kuruldu"
+
+#: .tmp/commontext.py:16
+msgid "removed"
+msgstr "kaldırıldı"
+
+#: .tmp/commontext.py:16
+msgid "upgraded"
+msgstr "güncellendi"
 
 #: .tmp/ui_progressdialog.py:151
 msgid "Progress"
 msgstr "Progress"
 
-#: .tmp/ui_progressdialog.py:152
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>PİSİ Hazırlanıyor...</h3>"
-
 #: .tmp/ui_progressdialog.py:153
-msgid "amsn"
-msgstr "amsn"
-
-#: .tmp/ui_progressdialog.py:154
 msgid "Time remaining:"
 msgstr "Kalan zaman:"
 
-#: .tmp/ui_progressdialog.py:155
-msgid "2 / 20 packages installed."
-msgstr "2 / 20 paket kuruldu."
-
 #: .tmp/ui_progressdialog.py:156
-msgid "01:29"
-msgstr "01:29"
-
-#: .tmp/ui_progressdialog.py:157
 msgid "Operation:"
 msgstr "İşlem:"
 
-#: .tmp/ui_progressdialog.py:158
+#: .tmp/ui_progressdialog.py:157
 msgid "Status:"
 msgstr "Durum:"
 
-#: .tmp/ui_progressdialog.py:159
-msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+#: .tmp/ui_progressdialog.py:158
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+msgstr ""
 
-#: .tmp/ui_progressdialog.py:161
+#: .tmp/ui_progressdialog.py:164
 msgid "Alt+C"
 msgstr "Alt+C"
 
