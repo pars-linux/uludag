@@ -130,7 +130,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         return widget
 
-    def addItem(self, id_, name="", description="", os_type=""):
+    def addItem(self, id_, name="", description="", os_type="", default=False):
         """
             Adds an item to list.
         """
@@ -138,7 +138,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         type_ = os_type
 
         # Build widget and widget item
-        widget = self.makeItemWidget(id_, name, description, type_, icon, None)
+        widget = self.makeItemWidget(id_, name, description, type_, icon, default)
         widgetItem = ItemListWidgetItem(self.listItems, widget)
 
         # Add to list
@@ -167,14 +167,17 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 # TODO: Handle exception
             else:
                 self.entries = args[0]
-                for entry in self.entries:
+                for index, entry in enumerate(self.entries):
                     if "root" in entry:
                         root = entry["root"]
                     elif "uuid" in entry:
                         root = getDiskByUUID(entry["uuid"])
                     else:
                         root = ""
-                    self.addItem(entry["index"], entry["title"], root, entry["os_type"])
+                    default = False
+                    if self.options.get("default", "0") == str(index):
+                        default = True
+                    self.addItem(entry["index"], entry["title"], root, entry["os_type"], default)
         self.iface.getEntries(func=handleList)
 
     def itemMatchesFilter(self, item):
@@ -279,7 +282,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Item state changed.
         """
-        pass
+        widget = self.sender()
+        self.iface.setOption("default", widget.getId())
 
     def slotItemEdit(self):
         """
