@@ -22,7 +22,7 @@ class Interface:
         self.package = self.getMainPackage()
 
     def listenSignals(self, func):
-        self.link.listenSignals("Boot.Manager", func)
+        self.link.listenSignals("Boot.Loader", func)
 
     def getPackages(self):
         """
@@ -63,3 +63,15 @@ class Interface:
             self.link.Boot.Loader[self.package].setOption(option, value, async=func)
         else:
             self.link.Boot.Loader[self.package].setOption(option, value)
+
+    def removeEntry(self, index, title, uninstall=False, func=None):
+        if func:
+            self.link.Boot.Loader[self.package].removeEntry(index, title, uninstall, async=func)
+        else:
+            self.link.Boot.Loader[self.package].removeEntry(index, title, uninstall)
+
+    def setEntry(self, title, os_type, root="", kernel="", initrd="", options="", default="no", index=-1, func=None):
+        if func:
+            self.link.Boot.Loader[self.package].setEntry(title, os_type, root, kernel, initrd, options, default, index, async=func)
+        else:
+            self.link.Boot.Loader[self.package].setEntry(title, os_type, root, kernel, initrd, options, default, index)

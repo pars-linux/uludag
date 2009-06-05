@@ -71,6 +71,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Build item list
         self.buildItemList()
 
+        # Edit widget
+        layout = QtGui.QVBoxLayout(self.frameWidget)
+        self.widgetEdit = EditWidget(self.frameWidget)
+        layout.addWidget(self.widgetEdit)
+
         # Build menu
         self.buildMenu()
 
@@ -154,14 +159,15 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Clear list
         self.clearItemList()
         self.systems = self.iface.getSystems()
+        self.entries = []
 
         def handleList(package, exception, args):
             if exception:
                 pass
                 # TODO: Handle exception
             else:
-                entries = args[0]
-                for entry in entries:
+                self.entries = args[0]
+                for entry in self.entries:
                     if "root" in entry:
                         root = entry["root"]
                     elif "uuid" in entry:
@@ -209,21 +215,36 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Shows edit box.
         """
-        # Reset fields
-        # self.widgetEdit.reset()
-        # Show user edit
-        # self.widgetEdit.show()
-        if id_:
-            """
-            try:
-                username, fullname, gid, homedir, shell, groups = self.iface.userInfo(id_)
-            except Exception, e: # TODO: Named exception should be raised
-                if "Comar.PolicyKit" in e._dbus_error_name:
-                    kdeui.KMessageBox.error(self, i18n("Access denied."))
-                else:
-                    kdeui.KMessageBox.error(self, unicode(e))
-                return
-            """
+        self.widgetEdit.show()
+        self.widgetEdit.reset()
+
+        self.widgetEdit.setType(type_)
+
+        if type_ in self.systems:
+            fields = self.systems[type_][1] + self.systems[type_][2]
+            if "root" not in fields:
+                self.widgetEdit.hideDisk()
+            if "kernel" not in fields:
+                self.widgetEdit.hideKernel()
+            if "initrd" not in fields:
+                self.widgetEdit.hideRamdisk()
+            if "options" not in fields:
+                self.widgetEdit.hideOptions()
+
+        if id_ != None:
+            entry = self.entries[int(id_)]
+            self.widgetEdit.setId(int(id_))
+            self.widgetEdit.setTitle(entry["title"])
+            if "root" in entry:
+                self.widgetEdit.setDisk(entry["root"])
+            elif "uuid" in entry:
+                self.widgetEdit.setDisk(entry["uuid"])
+            if "kernel" in entry:
+                self.widgetEdit.setKernel(entry["kernel"])
+            if "initrd" in entry:
+                self.widgetEdit.setRamdisk(entry["initrd"])
+            if "options" in entry:
+                self.widgetEdit.setOptions(entry["options"])
 
         if self.animationLast == ANIM_HIDE:
             self.animationLast = ANIM_SHOW
@@ -272,6 +293,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Delete button clicked.
         """
         widget = self.sender()
+        if kdeui.KMessageBox.questionYesNo(self, kdecore.i18n("Do you want to delete '%1'?", widget.getTitle())) == kdeui.KMessageBox.Yes:
+            def handler(package, exception, args):
+                pass
+            self.iface.removeEntry(widget.getId(), widget.getTitle(), False, func=handler)
 
     def slotOpenEdit(self, action):
         """
@@ -288,11 +313,21 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.hideEditBox()
 
     def slotSaveEdit(self):
-        """
+        """ 
             Save clicked on edit box, save item details then show item list.
         """
-        # User.Manager does not emit signals, refresh whole list.
-        self.buildItemList()
+        try:
+            widget = self.widgetEdit
+            if widget.isNew():
+                self.iface.setEntry(widget.getTitle(), widget.getType(), widget.getDisk(), widget.getKernel(), widget.getRamdisk(), widget.getOptions(), "no", -1)
+            else:
+                self.iface.setEntry(widget.getTitle(), widget.getType(), widget.getDisk(), widget.getKernel(), widget.getRamdisk(), widget.getOptions(), "no", widget.getId())
+        except Exception, e: # TODO: Named exception should be raised
+            if "Comar.PolicyKit" in e._dbus_error_name:
+                kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+            else:
+                kdeui.KMessageBox.error(self, unicode(e))
+            return
         # Hide edit box
         self.hideEditBox()
 
