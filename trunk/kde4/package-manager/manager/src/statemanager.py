@@ -56,7 +56,7 @@ class StateManager(QObject):
     def getActionCurrent(self, action):
         return {"System.Manager.installPackage":i18n("Installing Package(s)"),
                 "System.Manager.removePackage":i18n("Removing Package(s)"),
-                "System.Manager.upgradePackage":i18n("Upgrading Package(s)"),
+                "System.Manager.updatePackage":i18n("Upgrading Package(s)"),
                 "System.Manager.setRepositories":i18n("Applying Repository Changes"),
                 "System.Manager.updateAllRepositories":i18n("Updating Repository(s)")}[str(action)]
 
