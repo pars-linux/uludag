@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-04 11:29+0300\n"
+"POT-Creation-Date: 2009-06-05 10:32+0300\n"
 "PO-Revision-Date: 2009-05-27 20:31-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Current Maintainer"
 msgstr "Mantenedor actual"
 
-#: .tmp/bootmanager/main.py:93
+#: .tmp/bootmanager/main.py:99
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
@@ -47,19 +47,43 @@ msgstr ""
 "Por favor asegúrese que los paquetes están instalados y configurados de "
 "manera adecuada."
 
-#: .tmp/bootmanager/main.py:185
+#: .tmp/bootmanager/main.py:195
 msgid "All Items"
 msgstr "Todos"
 
-#: .tmp/ui_edit.py:29
+#: .tmp/bootmanager/main.py:297
+msgid "Do you want to delete '%1'?"
+msgstr ""
+
+#: .tmp/bootmanager/main.py:328
+msgid "Access denied."
+msgstr ""
+
+#: .tmp/ui_edit.py:95
 msgid "Disk"
+msgstr ""
+
+#: .tmp/ui_edit.py:96
+msgid "Kernel"
+msgstr ""
+
+#: .tmp/ui_edit.py:97
+msgid "Ramdisk File"
+msgstr ""
+
+#: .tmp/ui_edit.py:98
+msgid "Boot Options"
+msgstr ""
+
+#: .tmp/ui_edit.py:99
+msgid "Title"
 msgstr ""
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
 msgstr "Agregar Nuevo"
 
-#: .tmp/ui_options.py:33
+#: .tmp/ui_options.py:36
 msgid "Boot menu display time:"
 msgstr ""
 

@@ -22,62 +22,98 @@ from PyKDE4 import kdecore
 # UI
 from bootmanager.ui_edit import Ui_EditWidget
 
-# FS Options
-from bootmanager.config import FS_TYPES, FS_OPTIONS
-
 class EditWidget(QtGui.QWidget, Ui_EditWidget):
     def __init__(self, parent):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
+        self.id = None
+        self.type = None
 
-        # Build filesystems
-        self.buildFilesystems()
+    def isNew(self):
+        return self.id == None
 
-        self.connect(self.pushOptions, QtCore.SIGNAL("clicked()"), self.slotResetOptions)
-        self.connect(self.comboFilesystem, QtCore.SIGNAL("activated(int)"), self.slotChangeOptions)
+    def reset(self):
+        self.id = None
+        self.type = None
+        self.setTitle("")
+        self.setDisk("")
+        self.setKernel("")
+        self.setRamdisk("")
+        self.setOptions("")
+        self.showTitle()
+        self.showDisk()
+        self.showKernel()
+        self.showRamdisk()
+        self.showOptions()
 
-    def slotResetOptions(self):
-        index = self.comboFilesystem.currentIndex()
-        fsname = unicode(self.comboFilesystem.itemData(index).toString())
-        options = FS_OPTIONS.get(fsname, "")
-        self.lineOptions.setText(unicode(options))
+    def setId(self, id_):
+        self.id = id_
 
-    def slotChangeOptions(self, index):
-        if len(self.lineOptions.text()) or self.lineOptions.isModified():
-            return
-        self.slotResetOptions()
+    def getId(self):
+        return self.id
 
-    def buildFilesystems(self):
-        for fsname, fslabel in FS_TYPES.iteritems():
-            self.comboFilesystem.addItem(fslabel, QtCore.QVariant(fsname))
+    def setType(self, type_):
+        self.type_ = type_
 
-    def setAutoMount(self, mount):
-        self.groupMount.setChecked(mount)
+    def getType(self):
+        return self.type_
 
-    def getAutoMount(self):
-        return self.groupMount.isChecked()
+    def hideTitle(self):
+        self.lineTitle.setEnabled(False)
 
-    def setMountPoint(self, path):
-        self.lineMountPoint.setText(unicode(path))
+    def showTitle(self):
+        self.lineTitle.setEnabled(True)
 
-    def getMountPoint(self):
-        return unicode(self.lineMountPoint.text())
+    def hideDisk(self):
+        self.widgetDisk.hide()
 
-    def setFilesystem(self, fsname):
-        index = self.comboFilesystem.findData(QtCore.QVariant(fsname))
-        if index == -1:
-            self.comboFilesystem.addItem(fsname, QtCore.QVariant(fsname))
-            self.comboFilesystem.setCurrentIndex(self.comboFilesystem.count() - 1)
-        else:
-            self.comboFilesystem.setCurrentIndex(index)
+    def showDisk(self):
+        self.widgetDisk.show()
 
-    def getFilesystem(self):
-        index = self.comboFilesystem.currentIndex()
-        return unicode(self.comboFilesystem.itemData(index).toString())
+    def hideKernel(self):
+        self.widgetKernel.hide()
+
+    def showKernel(self):
+        self.widgetKernel.show()
+
+    def hideOptions(self):
+        self.widgetOptions.hide()
+
+    def showOptions(self):
+        self.widgetOptions.show()
+
+    def hideRamdisk(self):
+        self.widgetRamdisk.hide()
+
+    def showRamdisk(self):
+        self.widgetRamdisk.show()
+
+    def setTitle(self, title):
+        self.lineTitle.setText(unicode(title))
+
+    def getTitle(self):
+        return unicode(self.lineTitle.text())
+
+    def setDisk(self, disk):
+        self.lineDisk.setText(unicode(disk))
+
+    def getDisk(self):
+        return unicode(self.lineDisk.text())
+
+    def setKernel(self, kernel):
+        self.lineKernel.setText(unicode(kernel))
+
+    def getKernel(self):
+        return unicode(self.lineKernel.text())
+
+    def setRamdisk(self, ramdisk):
+        self.lineRamdisk.setText(unicode(ramdisk))
+
+    def getRamdisk(self):
+        return unicode(self.lineRamdisk.text())
 
     def setOptions(self, options):
         self.lineOptions.setText(unicode(options))
 
     def getOptions(self):
         return unicode(self.lineOptions.text())
-
