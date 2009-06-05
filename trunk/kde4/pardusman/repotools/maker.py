@@ -314,7 +314,7 @@ def install_packages(project):
         if flag:
             run('pisi --yes-all --ignore-comar --ignore-file-conflicts -D"%s" it %s' % (image_dir, name))
 
-def squash_image(project):
+def squash_image(project, comp_type='gzip'):
     image_dir = project.image_dir()
     image_file = project.image_file()
 
@@ -324,7 +324,11 @@ def squash_image(project):
     f = file(temp.name, "w")
     f.write("\n".join(get_exclude_list(project)))
     f.close()
-    run('mksquashfs "%s" "%s" -noappend -ef "%s"' % (image_dir, image_file, temp.name))
+
+    if comp_type == 'lzma':
+        run('mksquashfs "%s" "%s" -lzma -noappend -ef "%s"' % (image_dir, image_file, temp.name))
+    else:
+        run('mksquashfs "%s" "%s" -noappend -ef "%s"' % (image_dir, image_file, temp.name))
 
 #
 # Operations
