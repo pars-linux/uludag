@@ -34,20 +34,18 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
         self.state = StateManager(self)
+        self.basket = BasketDialog(self.state)
         self.initialize()
         self.actionButton.setIcon(self.state.getActionIcon())
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
-        self.basket = BasketDialog(self.state, self.packageList.model().sourceModel())
         self.connectMainSignals()
         self.connectOperationSignals()
 
     def connectMainSignals(self):
-        self.connect(self.actionButton, SIGNAL("clicked()"), self.actionInitiated)
+        self.connect(self.actionButton, SIGNAL("clicked()"), self.basket.show)
         self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
-        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
-                     lambda:self.emit(SIGNAL("selectionStatusChanged(QString)"), self.selectedStatus()))
 
     def connectOperationSignals(self):
         self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
@@ -63,8 +61,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         waitCursor()
         self.initializePackageList()
         self.initializeGroupList()
+        self.initializeBasket()
         self.emit(SIGNAL("selectionStatusChanged(QString)"), self.selectedStatus())
         restoreCursor()
+
+    def initializeBasket(self):
+        self.basket.setModel(self.packageList.model().sourceModel())
 
     def initializePackageList(self):
         self.packageList.setModel(PackageProxy(self))
@@ -74,6 +76,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.setAlternatingRowColors(True)
         self.packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
         self.packageList.setPackages(self.state.packages())
+        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
+                     lambda:self.emit(SIGNAL("selectionStatusChanged(QString)"), self.selectedStatus()))
 
     def initializeGroupList(self):
         self.groupList.clear()
@@ -107,12 +111,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state.reset()
         self.progressDialog.hide()
         self.initialize()
-
-    def actionInitiated(self):
-        waitCursor()
-        self.basket.show()
-        self.basket.refresh()
-        restoreCursor()
 
     def switchState(self, state):
         self.state.setState(state)
