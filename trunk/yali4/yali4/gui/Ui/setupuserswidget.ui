@@ -251,13 +251,6 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="1" colspan="3">
-    <widget class="QCheckBox" name="advanced">
-     <property name="text">
-      <string>Advanced</string>
-     </property>
-    </widget>
-   </item>
    <item row="6" column="4">
     <widget class="QCheckBox" name="noPass">
      <property name="text">
@@ -340,6 +333,16 @@ color:#5A2847;</string>
      </layout>
     </widget>
    </item>
+   <item row="8" column="1">
+    <widget class="QPushButton" name="addMoreUsers">
+     <property name="text">
+      <string>Add More Users</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
@@ -350,7 +353,6 @@ color:#5A2847;</string>
   <tabstop>pass1</tabstop>
   <tabstop>pass2</tabstop>
   <tabstop>admin</tabstop>
-  <tabstop>advanced</tabstop>
   <tabstop>userIDCheck</tabstop>
   <tabstop>userID</tabstop>
   <tabstop>createButton</tabstop>
@@ -380,14 +382,14 @@ color:#5A2847;</string>
    </hints>
   </connection>
   <connection>
-   <sender>advanced</sender>
+   <sender>addMoreUsers</sender>
    <signal>toggled(bool)</signal>
    <receiver>advancedList</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>187</x>
-     <y>266</y>
+     <x>444</x>
+     <y>212</y>
     </hint>
     <hint type="destinationlabel">
      <x>156</x>
@@ -396,14 +398,14 @@ color:#5A2847;</string>
    </hints>
   </connection>
   <connection>
-   <sender>advanced</sender>
+   <sender>addMoreUsers</sender>
    <signal>toggled(bool)</signal>
    <receiver>userIDCheck</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>192</x>
-     <y>262</y>
+     <x>444</x>
+     <y>212</y>
     </hint>
     <hint type="destinationlabel">
      <x>202</x>
@@ -412,14 +414,14 @@ color:#5A2847;</string>
    </hints>
   </connection>
   <connection>
-   <sender>advanced</sender>
+   <sender>addMoreUsers</sender>
    <signal>toggled(bool)</signal>
    <receiver>createButton</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>380</x>
-     <y>272</y>
+     <x>444</x>
+     <y>212</y>
     </hint>
     <hint type="destinationlabel">
      <x>544</x>
@@ -428,14 +430,14 @@ color:#5A2847;</string>
    </hints>
   </connection>
   <connection>
-   <sender>advanced</sender>
+   <sender>addMoreUsers</sender>
    <signal>toggled(bool)</signal>
    <receiver>userID</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>259</x>
-     <y>267</y>
+     <x>444</x>
+     <y>212</y>
     </hint>
     <hint type="destinationlabel">
      <x>283</x>

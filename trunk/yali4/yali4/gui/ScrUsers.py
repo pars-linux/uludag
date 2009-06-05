@@ -97,7 +97,7 @@ Click Next button to proceed.
                      self.slotDeleteUser)
         self.connect(self.ui.editButton, SIGNAL("clicked()"),
                      self.slotEditUser)
-        self.connect(self.ui.advanced, SIGNAL("clicked()"),
+        self.connect(self.ui.addMoreUsers, SIGNAL("clicked()"),
                      self.slotAdvanced)
         self.connect(self.ui.userList, SIGNAL("itemDoubleClicked(QListWidgetItem*)"),
                      self.slotEditUser)
@@ -122,13 +122,15 @@ Click Next button to proceed.
         if len(yali4.users.pending_users) == 1:
             self.slotEditUser(self.ui.userList.item(0))
         elif len(yali4.users.pending_users) > 1:
-            self.ui.advanced.setChecked(True)
+            self.ui.addMoreUsers.setChecked(True)
         self.checkUsers()
         self.checkCapsLock()
 
     def execute(self):
         # reset and fill pending_users
-        if not self.ui.advanced.isChecked():
+        if self.ui.userList.count() > 0:
+            return True
+        if not self.ui.addMoreUsers.isChecked():
             if not self.slotCreateUser():
                 ctx.mainScreen.moveInc = 0
                 return True
@@ -178,11 +180,11 @@ Click Next button to proceed.
 
         if self.ui.username.text() and p1 and p2:
             self.ui.createButton.setEnabled(True)
-            if not self.ui.advanced.isChecked():
+            if not self.ui.addMoreUsers.isChecked():
                 ctx.mainScreen.enableNext()
         else:
             self.ui.createButton.setEnabled(False)
-            if not self.ui.advanced.isChecked():
+            if not self.ui.addMoreUsers.isChecked():
                 ctx.mainScreen.disableNext()
 
     def slotCreateUser(self):
@@ -213,7 +215,7 @@ Click Next button to proceed.
             return False
 
         # Dont check in edit mode
-        if self.ui.advanced.isChecked() and self.ui.userIDCheck.isChecked():
+        if self.ui.addMoreUsers.isChecked() and self.ui.userIDCheck.isChecked():
             uid = self.ui.userID.value()
             if self.edititemindex == None:
                 if uid in self.usedIDs:
@@ -315,7 +317,7 @@ Click Next button to proceed.
         self.ui.createButton.setEnabled(False)
 
     def slotReturnPressed(self):
-        if self.ui.createButton.isEnabled():
+        if self.ui.createButton.isEnabled() and self.ui.addMoreUsers.isChecked():
             self.slotCreateUser()
 
 class UserItem(QtGui.QListWidgetItem):
