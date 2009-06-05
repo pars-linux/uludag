@@ -46,10 +46,10 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def setModel(self, model):
         self.model = model
         self.packageList.model().setSourceModel(model)
-        self.extraList.model().setSourceModel(model)
 
     def initExtraList(self):
         self.__initList(self.extraList)
+        self.extraList.model().setSourceModel(PackageModel(self))
 
     def initPackageList(self):
         self.__initList(self.packageList)
@@ -58,6 +58,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def filterExtras(self):
         waitCursor()
         extraPackages = self.model.extraPackages()
+        self.extraList.model().sourceModel().setPackages(extraPackages)
         self.__updateList(self.extraList, extraPackages)
         self.extraList.setVisible(bool(extraPackages))
         self.extrasLabel.setVisible(bool(extraPackages))
