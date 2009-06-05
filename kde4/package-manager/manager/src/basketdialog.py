@@ -35,13 +35,13 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def __initList(self, packageList):
         packageList.setModel(PackageProxy(self))
         packageList.setItemDelegate(PackageDelegate(self))
-        packageList.setColumnWidth(0, 32)
         packageList.setAlternatingRowColors(True)
         packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
         packageList.model().setFilterRole(GroupRole)
 
     def __updateList(self, packageList, packages):
         packageList.model().setFilterPackages(packages)
+        packageList.setColumnWidth(0, 32)
 
     def setModel(self, model):
         self.model = model
