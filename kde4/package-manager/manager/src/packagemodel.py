@@ -95,7 +95,6 @@ class PackageModel(QAbstractTableModel):
     # returns the selected but filtered packages.
     def selectedPackages(self):
         if not self.cached_selected:
-            print "calculating selected packages"
             for i, pkg in enumerate(self.packages):
                 if self.package_selections[i] == Qt.Checked:
                     self.cached_selected.append(pkg)
@@ -103,7 +102,6 @@ class PackageModel(QAbstractTableModel):
 
     def extraPackages(self):
         if not self.cached_extras:
-            print "calculating extra packages"
             self.cached_extras = self.iface.getExtras(self.selectedPackages())
         return self.cached_extras
 
@@ -115,13 +113,11 @@ class PackageModel(QAbstractTableModel):
 
     def selectedPackagesSize(self):
         if not self.cached_selected_size < 0:
-            print "calculating selected package size"
             self.cached_selected_size = self.__packagesSize(self.selectedPackages())
         return self.cached_selected_size
 
     def extraPackagesSize(self):
         if not self.cached_extras_size < 0:
-            print "calculating extra package size"
             self.cached_extras_size = self.__packagesSize(self.extraPackages())
         return self.cached_extras_size
 
