@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-05 16:15+0300\n"
-"PO-Revision-Date: 2009-06-02 20:33-0400\n"
+"PO-Revision-Date: 2009-06-05 21:16-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,21 +18,22 @@ msgstr ""
 
 #: .tmp/ui_basketdialog.py:69
 msgid "Basket"
-msgstr ""
+msgstr "Carrito"
 
 #: .tmp/ui_basketdialog.py:70
 msgid "Selected package(s) for install:"
-msgstr ""
+msgstr "Paquetes seleccionados a instalar:"
 
 #: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:84
+# favor revisar, creo que breve es mejor, hay que ver las pantallas..
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
-msgstr ""
+msgstr "Dependencias adicionales a instalar:"
 
 #: .tmp/ui_basketdialog.py:72
 msgid "Total Size:"
-msgstr ""
+msgstr "Tamaño Total:"
 
 #: .tmp/ui_basketdialog.py:73
 msgid "<b>2.2 MB</b>"
@@ -288,9 +289,8 @@ msgid "Upgrading Package(s)"
 msgstr "Actualizando Paquetes(s)"
 
 #: .tmp/statemanager.py:60
-#, fuzzy
 msgid "Applying Repository Changes"
-msgstr "Actualizando Repositorio(s)"
+msgstr "Aplicando Cambios de Repositorios"
 
 #: .tmp/statemanager.py:61
 msgid "Updating Repository(s)"
@@ -305,64 +305,61 @@ msgid "Upgrade Package(s)"
 msgstr "Actualizar Paquetes(s)"
 
 #: .tmp/statemanager.py:69
-#, fuzzy
 msgid "installed"
-msgstr "instalando"
+msgstr "instalado"
 
 #: .tmp/statemanager.py:70
-#, fuzzy
+# favor revisar, quizá debe ser plural ?
 msgid "removed"
-msgstr "removiendo"
+msgstr "removido"
 
 #: .tmp/statemanager.py:71
 msgid "upgraded"
-msgstr ""
+msgstr "actualizado"
 
 #: .tmp/statemanager.py:79
 msgid "You have selected the following package(s) to install:"
-msgstr ""
+msgstr "Los siguientes paquetes están seleccionados para instalar:"
 
 #: .tmp/statemanager.py:80
 msgid "You have selected the following package(s) to removal:"
-msgstr ""
+msgstr "Los siguientes paquetes están seleccionados para remover:"
 
 #: .tmp/statemanager.py:81
 msgid "You have selected the following package(s) to upgrade:"
-msgstr ""
+msgstr "Los siguientes paquetes están seleccionados para actualizar:"
 
 #: .tmp/statemanager.py:85
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr ""
+msgstr "Dependencias reversas de los paquetes seleccionados, que también se removerán:"
 
 #: .tmp/statemanager.py:86
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr ""
+msgstr "Dependencias de los paquetes seleccionados, que se actualizarán también:"
 
 #: .tmp/statemanager.py:112 .tmp/mainwindow.py:36
 msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
 #: .tmp/statemanager.py:114
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Actualmente seleccionado <b>%1</b> paquetes, con tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:117
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr ""
+msgstr "con <b>%1</b> dependencias reversas, con tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:119
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr ""
+msgstr "con <b>%1</b> dependencias adicionales, con tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:120
-#, fuzzy
 msgid "in your basket."
-msgstr "Actualmente el carrito está vacío."
+msgstr "En su carrito."
 
 #: .tmp/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -389,9 +386,8 @@ msgid "installing"
 msgstr "instalando"
 
 #: .tmp/ui_progressdialog.py:152
-#, fuzzy
 msgid "Operation"
-msgstr "Operación:"
+msgstr "Operación"
 
 #: .tmp/ui_progressdialog.py:154
 msgid "Time remaining:"
@@ -451,8 +447,3 @@ msgstr ""
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
 
-#~ msgid "Progress"
-#~ msgstr "Progreso"
-
-#~ msgid "2 / 20 packages installed."
-#~ msgstr "2 / 20 paquetes instalados."
