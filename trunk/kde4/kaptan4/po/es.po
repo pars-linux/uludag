@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-03 13:39+0300\n"
-"PO-Revision-Date: 2009-06-02 21:42-0400\n"
+"PO-Revision-Date: 2009-06-05 21:24-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,9 +33,8 @@ msgid "Kaptan Desktop"
 msgstr "Asistente de Escritorio Kaptan"
 
 #: .tmp/kaptanMain.py:131 .tmp/ui_kaptanMain.py:131
-#, fuzzy
 msgid "<b>Welcome to Kaptan!</b>"
-msgstr "Bienvenido a Kaptan!"
+msgstr "<b>Bienvenido a Kaptan!</b>"
 
 #: .tmp/kaptanMain.py:132 .tmp/ui_kaptanMain.py:132
 msgid "Cancel"
@@ -60,7 +59,6 @@ msgid "Menu"
 msgstr "Menú"
 
 #: .tmp/menuWidget.py:78 .tmp/ui_menuWidget.py:78
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -82,8 +80,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">La configuración se aplicará en la pantalla "
-"siguiente...</span></p></body></html>"
+"weight:600;\">Seleccione un estilo de menú:</span></p></body></html>"
 
 #: .tmp/menuWidget.py:83 .tmp/ui_menuWidget.py:83
 msgid "Kick-off (Advanced Menu)"
@@ -146,18 +143,16 @@ msgid "Reverse scrolling"
 msgstr "Deslizamento inverso"
 
 #: .tmp/multipleWidget.py:58
-#, fuzzy
 msgid "Multiple Desktops"
-msgstr "Cantidad de Escritorios:"
+msgstr "Escritorios Múltiples"
 
 #: .tmp/multipleWidget.py:59
 msgid "You can configure number of desktops from this application."
-msgstr ""
+msgstr "Aquí puede configurar la cantidad de escritorios."
 
 #: .tmp/multipleWidget.py:60
-#, fuzzy
 msgid "Number of Desktops"
-msgstr "Cantidad de Escritorios:"
+msgstr "Cantidad de Escritorios"
 
 #: .tmp/networkWidget.py:25 .tmp/ui_networkWidget.py:25
 msgid "Network"
@@ -213,31 +208,28 @@ msgid "Some catchy description about styles"
 msgstr ""
 
 #: .tmp/ScrMenu.py:41
-#, fuzzy
 msgid "Kick-off Menu"
-msgstr "Kick-off (Menú avanzado)"
+msgstr "Menú Kick-off"
 
 #: .tmp/ScrMenu.py:43
 msgid "A modern menu for KDE"
-msgstr ""
+msgstr "Menú moderno para KDE"
 
 #: .tmp/ScrMenu.py:47
-#, fuzzy
 msgid "Simple Menu"
-msgstr "Clásico (Menú sencillo)"
+msgstr "Menú sencillo"
 
 #: .tmp/ScrMenu.py:49
 msgid "And old style menu from KDE 3."
-msgstr ""
+msgstr "Menú al estilo del antiguo KDE 3."
 
 #: .tmp/ScrMenu.py:53
-#, fuzzy
 msgid "Lancelot Menu"
-msgstr "Lancelot (Menú experimental)"
+msgstr "Menú Lancelot"
 
 #: .tmp/ScrMenu.py:55
 msgid "An experimental menu for KDE4"
-msgstr ""
+msgstr "Menú experimental para KDE4"
 
 #: .tmp/ScrMouse.py:29
 msgid "Mouse Settings"
@@ -248,22 +240,20 @@ msgid "Configure your mouse"
 msgstr "Configure su ratón"
 
 #: .tmp/ScrMouse.py:130
-#, fuzzy
 msgid "Left Handed"
 msgstr "Zurdo"
 
 #: .tmp/ScrMouse.py:132
-#, fuzzy
 msgid "Right Handed"
 msgstr "Diestro"
 
 #: .tmp/ScrMouse.py:136
 msgid "Single Click"
-msgstr ""
+msgstr "Clic único"
 
 #: .tmp/ScrMouse.py:138
 msgid "Double Click"
-msgstr ""
+msgstr "Clic doble"
 
 #: .tmp/ScrNetwork.py:23 .tmp/ScrNetwork.py:24
 msgid "Network Manager"
@@ -294,6 +284,7 @@ msgid "Some catchy description desktop search"
 msgstr ""
 
 #: .tmp/ScrSearch.py:58
+# favir revisar, 
 msgid "On"
 msgstr ""
 
@@ -354,9 +345,8 @@ msgid "Themes"
 msgstr "Temas"
 
 #: .tmp/styleWidget.py:66 .tmp/ui_styleWidget.py:66
-#, fuzzy
 msgid "<b>Desktop Type:</b>"
-msgstr "Tipo de Escritorio:"
+msgstr "<b>Tipo de Escritorio:</b>"
 
 #: .tmp/styleWidget.py:67 .tmp/ui_styleWidget.py:67
 msgid "Desktop"
@@ -367,13 +357,12 @@ msgid "Folderview"
 msgstr "Vista de directorios"
 
 #: .tmp/styleWidget.py:69 .tmp/ui_styleWidget.py:69
-#, fuzzy
 msgid "<b>Number of Desktops:</b>"
-msgstr "Cantidad de Escritorios:"
+msgstr "<b>Cantidad de Escritorios:</b>"
 
 #: .tmp/summaryWidget.py:49 .tmp/ui_summaryWidget.py:49
 msgid "Summary"
-msgstr ""
+msgstr "Resumen"
 
 #: .tmp/summaryWidget.py:50 .tmp/ui_summaryWidget.py:50
 msgid ""
@@ -444,8 +433,3 @@ msgstr ""
 "escritorio básico para un usuario de PC; Le ayuda conectar a internet, leer "
 "e-mails, trabajar con documentos de oficina y más!"
 
-#~ msgid "Select a menu style:"
-#~ msgstr "Seleccione un estilo de menu:"
-
-#~ msgid "Settings"
-#~ msgstr "Configuración"
