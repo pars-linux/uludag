@@ -29,6 +29,8 @@ import math
 
 from yali4.exception import *
 import yali4.sysutils as sysutils
+import yali4.lvmutils as lvmutils
+import yali4.raidutils as raidutils
 import yali4.parteddata as parteddata
 import yali4.storage
 
@@ -543,6 +545,37 @@ class FatFileSystem(FileSystem):
             return False
         return label
 
+
+class RaidFileSystem(FileSystem):
+    _name = "ext2"
+    _mountoptions = None
+    
+    def __init__(self):
+        FileSystem.__init__(self)
+
+        self._name ="software-Raid"
+        if len(raidutils.raidlevels) != 0:
+            self.setImplemented(True)
+
+    def format(self, partition):
+        # dont need this
+        pass
+
+class LvmFileSystem(FileSystem):
+    _name = "ext2"
+    _mountoptions = None
+    
+    def __init__(self):
+        FileSystem.__init__(self)
+
+        self._name ="lvm"
+        if lvmutils.checkLVM():
+            self.setImplemented(True)
+
+    def format(self, partition):
+        # dont need this
+        pass
+
 knownFS = {"ext3":      Ext3FileSystem,
            "ext4":      Ext4FileSystem,
            "swap":      SwapFileSystem,
@@ -550,7 +583,9 @@ knownFS = {"ext3":      Ext3FileSystem,
            "ntfs":      NTFSFileSystem,
            "reiserfs":  ReiserFileSystem,
            "xfs":       XFSFileSystem,
-           "fat32":     FatFileSystem}
+           "fat32":     FatFileSystem,
+           "lvm":       LvmFileSystem,
+           "raid":      RaidFileSystem}
            # "btrfs":     BtrfsFileSystem}
 
 
