@@ -1,0 +1,2372 @@
+# translation of sv.po to
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: sv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-06 01:10+0300\n"
+"PO-Revision-Date: 2009-01-31 09:56+0100\n"
+"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"Language-Team:  <sv@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
+#: yali4/gui/Ui/datetimewidget.py:80 yali4/gui/Ui/goodbyewidget.py:46
+#: yali4/gui/Ui/partedit.py:154 yali4/gui/Ui/summarywidget.py:62
+msgid "Form"
+msgstr "Form"
+
+#: yali4/gui/Ui/autopartquestion.py:79
+msgid ""
+"It seems there is more than one partition for resizing. In this case you can "
+"select a partition from the list below or YALI will select one."
+msgstr ""
+"Det verkar som om det finns mer än en partition för storleksändring. Välj "
+"någon partition ur listan eller låt YALI välja åt dig."
+
+#: yali4/gui/Ui/autopartquestion.py:80 yali4/gui/Ui/connectionlist.py:72
+#: yali4/gui/Ui/dialog.py:60
+msgid "X"
+msgstr "X"
+
+#: yali4/gui/Ui/autopartquestion.py:81
+msgid "Choose the best target for resizing (recommended)"
+msgstr "Välj bästa möjliga mål för storleksändring (rekommenderas)"
+
+#: yali4/gui/Ui/autopartquestion.py:82
+msgid "I will choose the target"
+msgstr "Jag väljer mål"
+
+#: yali4/gui/Ui/autopartquestion.py:83
+msgid "Use Selected"
+msgstr "Använd vald"
+
+#: yali4/gui/Ui/autopartwidget.py:109 yali4/gui/Ui/bootloaderwidget.py:75
+#: yali4/gui/Ui/checkcdwidget.py:80 yali4/gui/Ui/keyboardwidget.py:59
+#: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rescuegrubwidget.py:82
+#: yali4/gui/Ui/rescuepasswordwidget.py:101
+#: yali4/gui/Ui/rescuepisiwidget.py:66 yali4/gui/Ui/rescuewidget.py:83
+#: yali4/gui/Ui/rootpasswidget.py:170 yali4/gui/Ui/setupuserswidget.py:170
+#: yali4/gui/Ui/welcomewidget.py:90
+msgid "Form1"
+msgstr "Form1"
+
+#: yali4/gui/Ui/autopartwidget.py:110
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Select the partitioning method:</"
+"span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Välj partitioneringsmetod:</span></p></"
+"body></html>"
+
+#: yali4/gui/Ui/autopartwidget.py:115
+msgid ""
+"Here you can choose one of partitioning method, and then you must select for "
+"a device to proceed your choice. <br>Device list will be updated for "
+"selected method."
+msgstr ""
+"Här kan du först välja en av partitioneringsmetoderna, sedan måste du välja "
+"en enhet för att fortsätta med ditt val.<br>Enhetslistan kommer att "
+"uppdateras för vald metod."
+
+#: yali4/gui/Ui/autopartwidget.py:116
+msgid "Automatic"
+msgstr "Automatisk"
+
+#: yali4/gui/Ui/autopartwidget.py:117
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
+msgstr ""
+"Det här alternativet försöker hitta ett lämpligt ledigt utrymme eller "
+"partitioner för storleksändring"
+
+#: yali4/gui/Ui/autopartwidget.py:118
+msgid "Try to use free space or resize current partitions"
+msgstr ""
+"Försök att använda ledigt utrymme eller storleksändra befintliga partitioner"
+
+#: yali4/gui/Ui/autopartwidget.py:119
+msgid ""
+"This option will erase your entire disk. All of your data on disk will be "
+"lost !"
+msgstr ""
+"Det här alternativet kommer att radera hela disken. Alla dina data kommer "
+"att försvinna!"
+
+#: yali4/gui/Ui/autopartwidget.py:120
+msgid "Delete all partitions"
+msgstr "Ta bort alla partitioner"
+
+#: yali4/gui/Ui/autopartwidget.py:121
+msgid "You can use manual partitioning with this option"
+msgstr "Det här alternativet låter dig partitionera disken för hand"
+
+#: yali4/gui/Ui/autopartwidget.py:122
+msgid "No, I'll partition my disk manually."
+msgstr "Nej, jag partitionerar min disk på egen hand."
+
+#: yali4/gui/Ui/autopartwidget.py:123
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Select the disk to apply selected "
+"method:</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Välj enhet att tillämpa vald metod på:"
+"</span></p></body></html>"
+
+#: yali4/gui/Ui/autopartwidget.py:128
+msgid "&nbsp;"
+msgstr "&nbsp;"
+
+#: yali4/gui/Ui/bootloaderwidget.py:76
+msgid ""
+"<b>Do you want to write boot loader (GRUB) to your hard disk's master boot "
+"record?</b>\n"
+"\n"
+"<p>You need a boot loader to boot your Pardus system.</p>\n"
+"\n"
+"<p>If you don't install a boot loader or choose to install to root "
+"partition, you will have to configure your other operating system's loader  "
+"(if you have one installed) to start \n"
+"your newly installed Pardus.</p>"
+msgstr ""
+"<b>Vill du installera starthanteraren GRUB till huvudstartsektorn på "
+"hårddisken?</b>\n"
+"\n"
+"<p>Du behöver en starthanterare för att starta ditt Pardussystem.</p>\n"
+"\n"
+"<p>Om du inte installerar en starthanterare eller väljer att installera till "
+"huvudpartitionen måste du konfigurera ditt \n"
+"andra operativsystems (om du har något) starthanterare för att kunna starta "
+"ditt nyinstallerade Pardussystem.</p>"
+
+#: yali4/gui/Ui/bootloaderwidget.py:82 yali4/gui/Ui/rescuegrubwidget.py:83
+msgid "Where do you want to install the bootlader ?"
+msgstr "Var vill du installera starthanteraren?"
+
+#: yali4/gui/Ui/bootloaderwidget.py:83 yali4/gui/Ui/rescuegrubwidget.py:84
+msgid "Install to first bootable disk (recommended)"
+msgstr "Installera på första startbara disken (rekommenderas)"
+
+#: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:85
+msgid "Install to Pardus installed partition"
+msgstr "Installera på samma partition som Pardus"
+
+#: yali4/gui/Ui/bootloaderwidget.py:85 yali4/gui/Ui/rescuegrubwidget.py:86
+msgid "Install to selected disk belove"
+msgstr "Installera på vald enhet nedan"
+
+#: yali4/gui/Ui/bootloaderwidget.py:86
+msgid "Select the disk you to install bootloader:"
+msgstr "Välj var du vill installera starthanteraren:"
+
+#: yali4/gui/Ui/bootloaderwidget.py:87
+msgid "Don't install bootloader"
+msgstr "Installera inte starthanterare"
+
+#: yali4/gui/Ui/checkcdwidget.py:81
+msgid ""
+"You can check the integrity of the packages in installation CD. Although "
+"this is an optional step, we encourage you to do it to avoid any errors in "
+"installation."
+msgstr ""
+"Du kan kontrollera paketens integritet på cd-skivan. Även om det här är ett "
+"frivilligt steg uppmuntras du att göra det för att undvika problem under "
+"installationen."
+
+#: yali4/gui/Ui/checkcdwidget.py:82 yali4/gui/ScrCheckCD.py:56
+#: yali4/installer.py:207
+msgid "Check CD Integrity"
+msgstr "Kontrollera cd-skivans integritet"
+
+#: yali4/gui/Ui/connectionlist.py:71
+msgid ""
+"For using Pisi History support you may need internet connection, you can use "
+"your connection profiles from list"
+msgstr ""
+
+#: yali4/gui/Ui/connectionlist.py:73
+msgid "Connect"
+msgstr ""
+
+#: yali4/gui/Ui/datetimewidget.py:81
+msgid "The current time"
+msgstr "Aktuell tid"
+
+#: yali4/gui/Ui/datetimewidget.py:82
+msgid "The analog clock widget displays the current time."
+msgstr "Den analoga klockan visar aktuell tid."
+
+#: yali4/gui/Ui/datetimewidget.py:83
+msgid "HH"
+msgstr "HH"
+
+#: yali4/gui/Ui/datetimewidget.py:84 yali4/gui/Ui/datetimewidget.py:86
+msgid ":"
+msgstr ":"
+
+#: yali4/gui/Ui/datetimewidget.py:85
+msgid "mm"
+msgstr "mm"
+
+#: yali4/gui/Ui/datetimewidget.py:87
+msgid "ss"
+msgstr "ss"
+
+#: yali4/gui/Ui/datetimewidget.py:88
+msgid "Time Zone"
+msgstr "Tidszon"
+
+#: yali4/gui/Ui/dialog.py:59
+msgid "TextLabel"
+msgstr "TextLabel"
+
+#: yali4/gui/Ui/installwidget.py:71
+msgid "Form3"
+msgstr "Form3"
+
+#: yali4/gui/Ui/installwidget.py:72
+msgid "pix"
+msgstr "pix"
+
+#: yali4/gui/Ui/installwidget.py:73
+msgid "Desc"
+msgstr "Desc"
+
+#: yali4/gui/Ui/installwidget.py:74
+msgid "Installing Package: "
+msgstr "Installerar paket: "
+
+#: yali4/gui/Ui/keyboardwidget.py:60
+msgid "Select the keyboard layout of your choice."
+msgstr "Välj önskad tangentbordslayout."
+
+#: yali4/gui/Ui/keyboardwidget.py:61
+msgid "Test selected keyboard:"
+msgstr "Testa vald tangentbordslayout:"
+
+#: yali4/gui/Ui/main.py:172
+msgid "Yali4"
+msgstr "Yali4"
+
+#: yali4/gui/Ui/main.py:174
+msgid "Screen Name"
+msgstr "Skärmnamn"
+
+#: yali4/gui/Ui/main.py:176
+msgid "Details about the screen"
+msgstr "Detaljer om steget"
+
+#: yali4/gui/Ui/main.py:177 yali4/gui/YaliWindow.py:239
+msgid "Release Notes"
+msgstr "Versionsfakta"
+
+#: yali4/gui/Ui/main.py:178
+msgid "Toggle Help"
+msgstr "Växla hjälp"
+
+#: yali4/gui/Ui/main.py:179
+msgid "Previous Screen"
+msgstr "Föregående steg"
+
+#: yali4/gui/Ui/main.py:180
+msgid "Back"
+msgstr "Bakåt"
+
+#: yali4/gui/Ui/main.py:181
+msgid "Next Screen"
+msgstr "Nästa steg"
+
+#: yali4/gui/Ui/main.py:182
+msgid "Next"
+msgstr "Nästa"
+
+#: yali4/gui/Ui/partedit.py:155
+msgid "Partition 1 on FUJISTU - /dev/sda1"
+msgstr "Partition 1 på FUJISTU - /dev/sda1"
+
+#: yali4/gui/Ui/partedit.py:156
+msgid "Use :"
+msgstr "Används :"
+
+#: yali4/gui/Ui/partedit.py:157
+msgid "Size :"
+msgstr "Storlek :"
+
+#: yali4/gui/Ui/partedit.py:158 yali4/gui/Ui/partresize.py:89
+msgid " MB"
+msgstr " MB"
+
+#: yali4/gui/Ui/partedit.py:159
+msgid "Format :"
+msgstr "Formatera :"
+
+#: yali4/gui/Ui/partedit.py:160
+msgid "Yes, format this partition"
+msgstr "Ja, formatera partitionen"
+
+#: yali4/gui/Ui/partedit.py:161
+msgid "File System :"
+msgstr "Filsystem :"
+
+#: yali4/gui/Ui/partedit.py:162
+msgid "Delete Partition"
+msgstr "Ta bort partition"
+
+#: yali4/gui/Ui/partedit.py:163
+msgid "Resize Partition"
+msgstr "Storleksändra partition"
+
+#: yali4/gui/Ui/partedit.py:164
+msgid "Changes will be applied when you finish.."
+msgstr "Ändringar verkställs när du slutför..."
+
+#: yali4/gui/Ui/partedit.py:165
+msgid "Refresh Disks"
+msgstr "Uppdatera enheter"
+
+#: yali4/gui/Ui/partedit.py:166
+msgid "Reset All Changes"
+msgstr "Återställ ändringar"
+
+#: yali4/gui/Ui/partedit.py:167
+msgid "Apply"
+msgstr "Verkställ"
+
+#: yali4/gui/Ui/partresize.py:82
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
+"#ffffff;\">These settings will be applied when you click \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Resize</span><span "
+"style=\" color:#ffffff;\">\". If you want to go back click \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Cancel</span><span "
+"style=\" color:#ffffff;\">\".</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"color:#ffffff;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
+"\" font-weight:600; text-decoration: underline;\">Warning:</span> A resizing "
+"operation may corrupt your partition, rendering your data unreachable. Make "
+"sure that you have a backup for this partition.<span style=\" font-"
+"weight:600;\"> </span><span style=\" font-weight:600;\">Note that this "
+"operation cannot be undone</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
+"#ffffff;\">Dessa ändringar verkställs när du klickar \"</span><span style=\" "
+"text-decoration: underline; color:#ffffff;\">Ändra storlek</span><span style="
+"\" color:#ffffff;\">\". Om du vill återgå, klicka \"</span><span style=\" "
+"text-decoration: underline; color:#ffffff;\">Avbryt</span><span style=\" "
+"color:#ffffff;\">\".</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"color:#ffffff;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
+"\" font-weight:600; text-decoration: underline;\">Varning:</span> En "
+"storleksändring kan förstöra din partition och göra dina filer oåtkomliga. "
+"Var säker på att du har en säkerhetskopia av denna partition.<span style=\" "
+"font-weight:600;\"> </span><span style=\" font-weight:600;\">Observera att "
+"denna åtgärd inte kan ångras.</span></p></body></html>"
+
+#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:63
+#: yali4/gui/YaliDialog.py:128
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: yali4/gui/Ui/partresize.py:91
+msgid "Resize"
+msgstr "Ändra storlek"
+
+#: yali4/gui/Ui/rescuegrubwidget.py:87
+#, fuzzy
+msgid "Select the disk to install bootloader:"
+msgstr "Välj var du vill installera starthanteraren:"
+
+#: yali4/gui/Ui/rescuepasswordwidget.py:102
+msgid "Select user from list to change password:"
+msgstr ""
+
+#: yali4/gui/Ui/rescuepasswordwidget.py:103
+#: yali4/gui/Ui/setupuserswidget.py:173
+msgid "Password:"
+msgstr "Lösenord:"
+
+#: yali4/gui/Ui/rescuepasswordwidget.py:104
+#: yali4/gui/Ui/setupuserswidget.py:182
+msgid "Password (again):"
+msgstr "Lösenord (upprepa):"
+
+#: yali4/gui/Ui/rescuepasswordwidget.py:105
+#, fuzzy
+msgid "Update Password"
+msgstr "Uppdatera användare"
+
+#: yali4/gui/Ui/rescuepisiwidget.py:67
+msgid "Connection Status :"
+msgstr ""
+
+#: yali4/gui/Ui/rescuepisiwidget.py:68
+msgid "Not Connected"
+msgstr ""
+
+#: yali4/gui/Ui/rescuepisiwidget.py:69
+msgid ""
+"For using Pisi History support you may need internet connection, you can use "
+"your connection profiles from your profiles"
+msgstr ""
+
+#: yali4/gui/Ui/rescuepisiwidget.py:70
+msgid "Select Connection"
+msgstr ""
+
+#: yali4/gui/Ui/rescuepisiwidget.py:71
+msgid "Select an operation from history list to take back the system"
+msgstr ""
+
+#: yali4/gui/Ui/rescuewidget.py:84
+msgid "Select the partition below that your Pardus installed:"
+msgstr ""
+
+#: yali4/gui/Ui/rescuewidget.py:85
+msgid "Select a proper solution for your problem and click <b>next</b>..."
+msgstr ""
+
+#: yali4/gui/Ui/rescuewidget.py:86
+msgid "If you have problems with boot, you can reinstall Grub"
+msgstr ""
+
+#: yali4/gui/Ui/rescuewidget.py:87
+msgid "If you need to take back your old operations you can use Pisi History"
+msgstr ""
+
+#: yali4/gui/Ui/rescuewidget.py:88
+msgid "If you lost your password you can change it"
+msgstr ""
+
+#: yali4/gui/Ui/rescuewidget.py:89 yali4/gui/ScrRescueSummary.py:72
+#: yali4/gui/ScrSummary.py:73 yali4/gui/YaliDialog.py:172
+#: yali4/installer.py:693
+msgid "Reboot"
+msgstr "Starta om"
+
+#: yali4/gui/Ui/rootpasswidget.py:171
+msgid ""
+"<p align=\"left\">System administrator user (root) handles important system "
+"maintanence tasks. Please give password for this special user and do not "
+"forget this password. Note that you shouldn't write this password elsewhere "
+"for privacy reasons.</p>"
+msgstr ""
+"<p align=\"left\">Systemadministratören (root) sköter om viktiga uppgifter "
+"för systemunderhållet. Ange lösenord för den här specielle användaren och "
+"glöm inte bort det här lösenordet. Av säkerhetsskäl ska du inte skriva ner "
+"det här lösenordet.</p>"
+
+#: yali4/gui/Ui/rootpasswidget.py:172
+msgid "System administrator password:"
+msgstr "Systemadministratörens lösenord:"
+
+#: yali4/gui/Ui/rootpasswidget.py:173
+msgid "System administrator password (again):"
+msgstr "Systemadministratörens lösenord (upprepa):"
+
+#: yali4/gui/Ui/rootpasswidget.py:176
+msgid "Hostname:"
+msgstr "Värdnamn:"
+
+#: yali4/gui/Ui/setupuserswidget.py:171
+msgid "Real Name:"
+msgstr "Verkligt namn:"
+
+#: yali4/gui/Ui/setupuserswidget.py:172
+msgid "User Name:"
+msgstr "Användarnamn:"
+
+#: yali4/gui/Ui/setupuserswidget.py:174
+#, fuzzy
+msgid "User ID"
+msgstr "Används :"
+
+#: yali4/gui/Ui/setupuserswidget.py:175 yali4/gui/ScrUsers.py:227
+#: yali4/gui/ScrUsers.py:269
+msgid "Create User"
+msgstr "Skapa användare"
+
+#: yali4/gui/Ui/setupuserswidget.py:176
+msgid "Give administrator privileges to this user"
+msgstr "Ge administratörsrättigheter till den här användaren"
+
+#: yali4/gui/Ui/setupuserswidget.py:177
+#, fuzzy
+msgid "Edit Selected User"
+msgstr "Ta bort vald användare"
+
+#: yali4/gui/Ui/setupuserswidget.py:178
+msgid "Delete Selected User"
+msgstr "Ta bort vald användare"
+
+#: yali4/gui/Ui/setupuserswidget.py:179
+msgid "Auto Login User :"
+msgstr "Automatisk inloggning av användare:"
+
+#: yali4/gui/Ui/setupuserswidget.py:180
+msgid "Auto Login Disabled"
+msgstr "Inaktivera automatisk inloggning"
+
+#: yali4/gui/Ui/setupuserswidget.py:181
+msgid "Users:"
+msgstr "Användare:"
+
+#: yali4/gui/Ui/setupuserswidget.py:183
+msgid "Do not ask any password to this user"
+msgstr ""
+
+#: yali4/gui/Ui/setupuserswidget.py:184
+#, fuzzy
+msgid "Add More Users"
+msgstr "Lägger till användare..."
+
+#: yali4/gui/Ui/summarywidget.py:64 yali4/gui/ScrSummary.py:246
+msgid "Begin Install"
+msgstr "Installera"
+
+#: yali4/gui/Ui/welcomewidget.py:91
+msgid ""
+"All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
+"software have their corresponding licenses. By installing or using Pardus, "
+"you agree to accept them. Do you want to continue?"
+msgstr ""
+"All programvara utvecklad av TUBITAK/UEKAE publiceras under GNU/GPL. Andra "
+"program har sina licenser. Genom att installera Pardus accepterar du dem. "
+"Vill du fortsätta?"
+
+#: yali4/gui/Ui/welcomewidget.py:92
+msgid "Read GPL"
+msgstr "Läs GPL"
+
+#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:187
+msgid "Reboot System!"
+msgstr "Starta om datorn!"
+
+#: yali4/gui/Ui/welcomewidget.py:94
+msgid "Accept!"
+msgstr "Accepterar!"
+
+#: yali4/gui/Ui/welcomewidget.py:95
+msgid "Don't Accept!"
+msgstr "Accepterar inte!"
+
+#: yali4/gui/debugger.py:28
+msgid "Debug"
+msgstr "Felsök"
+
+#: yali4/gui/descSlide.py:18
+#, fuzzy
+msgid ""
+"Welcome! Our improved setup tool YALI will help you with the installation of "
+"Pardus 2009. YALI will help install Pardus 2009 quickly and easily following "
+"the partitioning of disk(s) using the intelligent partitioning tool.\n"
+msgstr ""
+"Välkommen! Vårt förbättrade installationsverktyg YALI hjälper dig med "
+"installationen av Pardus 2008. YALI hjälper dig att snabbt och enkelt "
+"installera Pardus 2008 efter partitioneringen med det smarta "
+"partitioneringsverktyget.\n"
+
+#: yali4/gui/descSlide.py:20
+msgid ""
+"Our Kaptan will show you the way after the installation. You can easily add "
+"additional repositories and manage basic settings like mouse, wallpaper and "
+"panel using in Kaptan.\n"
+msgstr ""
+"Vår Kaptan visar dig vägen efter installationen. Med Kaptan kan du enkelt "
+"lägga till förråd och hantera grundläggande inställningar som mus, "
+"bakgrundsbild och panelen.\n"
+
+#: yali4/gui/descSlide.py:22
+msgid ""
+"Tasma is the management and settings center of Pardus. Configuration "
+"operations including but not limited to adding a new user or hardware (e.g. "
+"printer, monitor) to the system, management of visual settings ranging from "
+"desktop icons to fonts are all brought together under Tasma's interface.\n"
+msgstr ""
+"Tasma är Pardus inställningscentral. Konfigurering av bland annat nya "
+"användare, ny hårdvara (skrivare, bildskärm), hantering av utseendet, allt "
+"från skrivbordsikoner till teckensnitt sker via Tasma.\n"
+
+#: yali4/gui/descSlide.py:24
+msgid ""
+"There are thousands of packages in Pardus software repositories. You can "
+"install, remove or update those packages and programs with just two clicks "
+"using the Package Manager!\n"
+msgstr ""
+"Det finns tusentals paket i Pardus programförråd. Med Pakethanteraren kan du "
+"lägga till, ta bort och uppdatera dessa paket med endast två enkla "
+"musklick!\n"
+
+#: yali4/gui/descSlide.py:26
+msgid ""
+"Network Applet helps connecting to local networks and Internet easily and "
+"securely. Thanks to the profile support it has, it will make it easier to "
+"reconnect to cable or wireless connections used before, remembering the "
+"settings used.\n"
+msgstr ""
+"Nätverkshanteraren hjälper dig med att enkelt och säkert ansluta till lokala "
+"nätverk och till Internet. Tack vare dess profilfunktion blir det enklare "
+"att återansluta till en trådad eller trådlös anslutning, med bibehållna "
+"inställningar.\n"
+
+#: yali4/gui/descSlide.py:28
+#, fuzzy
+msgid ""
+"Mozilla Firefox, with its speed, constant development and many advanced "
+"features, will help securely surf the Internet. Pardus 2009 includes Mozilla "
+"Firefox 3.0, and you can enrich Firefox with thousands of extensions.\n"
+msgstr ""
+"Mozilla Firefox, med sin snabbhet, kontinuerliga utveckling och många "
+"avancerade funktioner hjälper dig att surfa säkert. Pardus 2008 innehåller "
+"Mozilla Firefox 3.0 som du kan utöka med tusentals tillägg.\n"
+
+#: yali4/gui/descSlide.py:30
+msgid ""
+"Kontact, KDE Personal Information Manager, helps you manage all your emails, "
+"RSS feeds, diaries, to-do listes and blog entries in one combined interface. "
+"Kontact, with its Groupware feature, will be your best friend at work.\n"
+msgstr ""
+"Kontact, KDEs Personliga informationshanterare (PIM), hjälper dig att "
+"hantera din epost, RSS-flöden, kalender, uppgifter och blogginlägg i ett "
+"enda program. Med sitt stöd för Groupware blir Kontact din bäste vän på "
+"jobbet.\n"
+
+#: yali4/gui/descSlide.py:32
+msgid ""
+"OpenOffice.org, actively being used by hundreds of thousands of institutes "
+"and millions of users around the world, is an office software package "
+"including a word processor, a spreadsheet application, a presentation viewer "
+"and editor, a graphics editor and a database application.\n"
+msgstr ""
+"OpenOffice.org används för närvarande av hundratusentals organisationer och "
+"av miljontals användare världen över. Det är ett paket av kontorsprogram "
+"innehållandes ordbehandlare, kalkylprogram, presentationsprogram, grafisk "
+"editor och ett databasprogram.\n"
+
+#: yali4/gui/descSlide.py:34
+#, fuzzy
+msgid ""
+"Gimp is an advanced image editing application that comes preinstalled with "
+"Pardus 2009. Gimp allows editing all common image file formats and has "
+"extensive abilities that will meet professional graphic artists' and "
+"designers' needs.\n"
+msgstr ""
+"Gimp är ett avancerat bildbehandlingsprogram som är förinstallerat i Pardus "
+"2008. Gimp medger redigering av alla vanliga filformat och har en omfattande "
+"förmåga som möter professionella grafikers och formgivares behov.\n"
+
+#: yali4/gui/descSlide.py:36
+msgid ""
+"Amarok is a convenient, functional, and advanced media player. It can fetch "
+"album covers and lyrics for you, and thanks to its Last.FM support, can "
+"suggest similar media, bringing even more possibilities.\n"
+msgstr ""
+"Amarok är en bekväm, funktionell och avancerad mediaspelare. Den kan hämta "
+"skivomslag och sångtexter åt dig, och tack vare sitt stöd för Last.FM kan "
+"den föreslå liknande musik, vilket väcker ännu fler möjligheter.\n"
+
+#: yali4/gui/descSlide.py:38
+#, fuzzy
+msgid ""
+"Kaffeine is the default video player of Pardus 2009. It has a high "
+"performance in playing DVDs, VCDs, and countless video file formats, "
+"including, but not limited to, MPEG, AVI and DivX. If you have a digital TV "
+"card, you can record your favourite TV programs using Kaffeine!\n"
+msgstr ""
+"Kaffeine är standardvideospelaren i Pardus 2008. Den är en högpresterande "
+"spelare av DVDs, VCDs och oändligt många fler format, bland annat MPEG, AVI "
+"och DivX. Om du har ett digitalt tv-kort kan du spela in dina favoritprogram "
+"med Kaffeine!\n"
+
+#: yali4/gui/descSlide.py:40
+msgid ""
+"You can use multiple accounts in various instant messaging services like "
+"MSN, Yahoo!, ICQ, AIM, GTalk and Jabber, and can talk to your friends in "
+"different networks using Kopete.\n"
+msgstr ""
+"Du kan använda flera olika konton för direktmeddelandetjänster som MSN, "
+"Yahoo!, ICQ, AIM, GTalk och Jabber, och du kan prata med dina vänner i olika "
+"nätverk med hjälp av Kopete.\n"
+
+#: yali4/gui/descSlide.py:42
+msgid ""
+"Copying CDs (or DVDs), creating data or audio CDs, creating ISO images and "
+"burning CD/DVD images to discs are just a few of the things you can do with "
+"K3b.\n"
+msgstr ""
+"Kopiera cd-skivor (eller dvd), skapa data eller audio-cd, skapa iso-avbilder "
+"och bränna cd/dvd-avbilder till skivor är bara några av de saker du kan göra "
+"med K3b.\n"
+
+#: yali4/gui/descSlide.py:44
+#, fuzzy
+msgid ""
+"You can find HOW-TOs, tutorials and package introductions in our community "
+"portal www.ozgurlukicin.com. If you happen to have any problems with Pardus "
+"2009, you can get support using the forum pages and the #pardus room in IRC "
+"Freenode server (and you can use Konversation for that).\n"
+msgstr ""
+"Du kan hitta guider, information om pakethantering och andra instruktioner "
+"på www.ozgurlukicin.com men även på svenska www.pardus.nu. Om du får problem "
+"med Pardus 2008 kan du få hjälp i det svenska forumet och i #pardus-se på "
+"IRC, Freenodeservern (du kan använda Konversation till det).\n"
+
+#: yali4/gui/DiskWidgets.py:85
+#, fuzzy
+msgid "Manual Partitioning selected."
+msgstr "Manuell partitionering vald."
+
+#: yali4/gui/DiskWidgets.py:190
+#, python-format
+msgid "'Install Root' size must be larger than %s MB."
+msgstr "'Systempartitionen' måste vara på minst %s MB."
+
+#: yali4/gui/DiskWidgets.py:220 yali4/gui/ScrBootloader.py:68
+#: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:73
+#: yali4/gui/ScrRescue.py:48
+msgid "Can't find a storage device!"
+msgstr "Kan inte hitta lagringsutrymme!"
+
+#: yali4/gui/DiskWidgets.py:236
+#, python-format
+msgid "%0.1f GB free"
+msgstr "%0.1f GB ledigt"
+
+#: yali4/gui/DiskWidgets.py:238
+#, python-format
+msgid "%d MB free"
+msgstr "%d MB ledigt"
+
+#: yali4/gui/DiskWidgets.py:258 yali4/gui/GUIAdditional.py:161
+#, python-format
+msgid "Partition %d"
+msgstr "Partition %d"
+
+#: yali4/gui/DiskWidgets.py:265 yali4/gui/GUIAdditional.py:159
+#: yali4/partition.py:130
+msgid "Free Space"
+msgstr "Ledigt utrymme"
+
+#: yali4/gui/DiskWidgets.py:293
+#, python-format
+msgid ""
+"Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%"
+"(device)s</b>."
+msgstr ""
+"Partition <b>%(partition)s (%(size)s)</b> <b>borttagen/b> från enhet <b>%"
+"(device)s</b>."
+
+#: yali4/gui/DiskWidgets.py:323 yali4/partitionrequest.py:181
+msgid "There is a request for the same Partition Type."
+msgstr "Den finns en förfrågan av samma partitionstyp"
+
+#: yali4/gui/DiskWidgets.py:346
+#, python-format
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr ""
+"Partition <b>%(partition)s</b> kommer att <b>formateras</b> som <b>%(fsType)"
+"s</b>."
+
+#: yali4/gui/DiskWidgets.py:361 yali4/gui/ScrSummary.py:162
+#, python-format
+msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
+msgstr "Partition <b>%(partition)s</b> <b>vald</b> som <b>%(type)s</b>."
+
+#: yali4/gui/DiskWidgets.py:380
+msgid "Too many primary partition !"
+msgstr "För många primära partitioner!"
+
+#: yali4/gui/DiskWidgets.py:381
+msgid ""
+"GPT Disk tables does not support for extended partitions.\n"
+"You need to delete one of primary partition from your disk table !"
+msgstr ""
+"GPT partitionstabeller stöder inte utökade partitioner.\n"
+"Du måste radera en av de primära partitionerna i din partitionstabell!"
+
+#: yali4/gui/DiskWidgets.py:405 yali4/gui/DiskWidgets.py:418
+msgid "Too many primary partitions !"
+msgstr "För många primära partitioner!"
+
+#: yali4/gui/DiskWidgets.py:406 yali4/gui/DiskWidgets.py:419
+msgid ""
+"You need to delete one of the primary or extended(if exists) partition from "
+"your disk table !"
+msgstr ""
+"Du måste radera en av de primära eller utökade partitionerna i din "
+"partitionstabell!"
+
+#: yali4/gui/DiskWidgets.py:429 yali4/gui/ScrSummary.py:161
+#, python-format
+msgid ""
+"Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
+"<b>%(size)s MB</b> as <b>%(fs)s</b>."
+msgstr ""
+"Partition <b>%(partition)s</b> <b>skapad</b> på enhet <b>%(device)s</b> med "
+"<b>%(size)s MB</b> som <b>%(fs)s</b>."
+
+#: yali4/gui/DiskWidgets.py:455
+msgid "Delete All Partitions"
+msgstr "Ta bort alla partitioner"
+
+#: yali4/gui/DiskWidgets.py:535
+msgid "Pardus will install here"
+msgstr "Pardus installeras här"
+
+#: yali4/gui/DiskWidgets.py:538
+msgid "User files will store here"
+msgstr "Användarfiler lagras här"
+
+#: yali4/gui/DiskWidgets.py:541
+msgid "Swap will be here"
+msgstr "Växlingsutrymmet är här"
+
+#: yali4/gui/DiskWidgets.py:544
+msgid "Backup or archive files will store here"
+msgstr "Säkerhetskopia eller arkiv lagras här"
+
+#: yali4/gui/DiskWidgets.py:565
+#, python-format
+msgid ""
+"<b>Path:</b> %s<br>\n"
+"                                  <b>Size:</b> %s<br>\n"
+"                                  <b>FileSystem:</b> %s%s"
+msgstr ""
+"<b>Sökväg:</b> %s<br>\n"
+"                                  <b>Storlek:</b> %s<br>\n"
+"                                  <b>Filsystem:</b> %s%s"
+
+#: yali4/gui/DiskWidgets.py:595 yali4/gui/ScrSummary.py:160
+#, python-format
+msgid "All partitions on device <b>%(device)s</b> has been deleted."
+msgstr "Alla partitioner på enhet <b>%(device)s</b> har tagits bort."
+
+#: yali4/gui/GUIAdditional.py:70
+msgid ""
+"<p><span style=\"color:#FFF\"><b>It seems this partition is not ready for "
+"resizing.</b></span></p>"
+msgstr ""
+"<p><span style=\"color:#FFF\"><b>Det verkar som om den här partitionen inte "
+"är klar för storleksändring.</b></span></p>"
+
+#: yali4/gui/GUIAdditional.py:83
+#, python-format
+msgid "Resizing to %s MB.."
+msgstr "Ändrar storlek till %s MB.."
+
+#: yali4/gui/GUIAdditional.py:92
+#, fuzzy
+msgid "Filesystem Error"
+msgstr "Filsystem :"
+
+#: yali4/gui/GUIAdditional.py:99
+#, python-format
+msgid ""
+"Partition <b>%(partition)s - %(fs)s</b> <b>resized</b> to <b>%(resizeTo)s "
+"MB</b>, old size was <b>%(currentSize)s MB</b>"
+msgstr ""
+"Partitionen <b>%(partition)s - %(fs)s</b> <b>storleksändrad</b> till <b>%"
+"(resizeTo)s MB</b>, den gamla storleken var <b>%(currentSize)s MB</b>"
+
+#: yali4/gui/GUIAdditional.py:162
+#, python-format
+msgid "(%s) [%s] Size : %s - Free : %s"
+msgstr "(%s) [%s] storlek : %s - ledigt : %s"
+
+#: yali4/gui/GUIAdditional.py:181
+#, python-format
+msgid "%s (Boot Disk)"
+msgstr ""
+
+#: yali4/gui/GUIAdditional.py:241
+#, python-format
+msgid "Connecting to network <b>%s</b> ..."
+msgstr ""
+
+#: yali4/gui/GUIAdditional.py:247 yali4/gui/GUIAdditional.py:248
+#, fuzzy
+msgid "Connection failed"
+msgstr "Kontrollen misslyckades"
+
+#: yali4/gui/GUIAdditional.py:251 yali4/gui/GUIAdditional.py:252
+msgid "Connected"
+msgstr ""
+
+#: yali4/gui/GUIGPL.py:52
+msgid "Can't open License file!"
+msgstr "Kan inte öppna licensfil!"
+
+#: yali4/gui/GUIRelNotes.py:49
+msgid "Can't open Release Notes!"
+msgstr "Kan inte öppna versionsfakta!"
+
+#: yali4/gui/runner.py:148
+msgid "Error!"
+msgstr "Fel!"
+
+#: yali4/gui/runner.py:182
+msgid "Unhandled error occured!"
+msgstr "Ohanterat fel inträffade!"
+
+#: yali4/gui/ScrAdmin.py:30
+msgid "Set Administrator"
+msgstr "Ange administratörslösenordet"
+
+#: yali4/gui/ScrAdmin.py:31
+msgid "Admins have important rights on the system..."
+msgstr "Administratörer har viktiga rättigheter i systemet..."
+
+#: yali4/gui/ScrAdmin.py:33
+msgid ""
+"\n"
+"<font size=\"+2\">System administrator password and hostname</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"You need to define a password for the \"root\" user that has full control "
+"over the system.\n"
+"Your password must be easy to remember (for you) but hard to guess (for "
+"others). \n"
+"You can use lower case or upper case letters, numbers and punctuation marks "
+"in your password. \n"
+"You should take care not to use letters not found in English to avoid "
+"incompatibilities with other systems.\n"
+"</p>\n"
+"<p>\n"
+"Here you can enter a name for your computer in the text box below. As your "
+"computer will be \n"
+"known with this name in the local network, it is advised to enter a "
+"descriptive text.\n"
+"Proceed with the installation after you make your selections.\n"
+"</p>\n"
+"<p>\n"
+"Click Next button to proceed.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Systemadministratörens lösenord och värdnamn</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Du måste ange ett lösenord för \"root\"-kontot som har fullständig kontroll "
+"över systemet.\n"
+"Ditt lösenord måste vara enkelt för dig att minnas men svårt för andra att "
+"gissa.\n"
+"Du kan använda gemener, versaler, siffror och andra tecken i lösenordet.\n"
+"För att undvika problem med andra system bör du inte använda tecken som inte "
+"finns i det engelska språket.\n"
+"</p>\n"
+"<p>\n"
+"Här i textrutan nedan anger du ett namn på din dator under vilket den kommer "
+"att bli känd i det lokala nätverket.\n"
+"Ett gott råd är att använda ett beskrivande namn.\n"
+"Fortsätt med installationen när du har gjort dina val.\n"
+"</p>\n"
+"<p>\n"
+"Klicka på knappen Nästa för att fortsätta.\n"
+"</p>\n"
+"</font>\n"
+
+#: yali4/gui/ScrAdmin.py:66
+msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Caps Lock är aktiverad!</font></center>"
+
+#: yali4/gui/ScrAdmin.py:119
+msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Lösenordet är för kort!</font></center>"
+
+#: yali4/gui/ScrAdmin.py:128
+msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Lösenorden stämmer inte!</font></center>"
+
+#: yali4/gui/ScrAdmin.py:133
+msgid ""
+"<center><font color=\"#FF6D19\">Don't use your username as password !</"
+"font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Använd inte ditt användarnamn som lösenord!</"
+"font></center>"
+
+#: yali4/gui/ScrAdmin.py:153
+msgid ""
+"<center><font color=\"#FF6D19\">Hostname contains invalid characters!</"
+"font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Värdnamnet innehåller ogiltiga tecken!</"
+"font></center>"
+
+#: yali4/gui/ScrBootloader.py:37
+msgid "Bootloader Choice"
+msgstr "Alternativ för starthanteraren"
+
+#: yali4/gui/ScrBootloader.py:38
+msgid "Configure the system boot..."
+msgstr "Konfigurera systemets uppstart..."
+
+#: yali4/gui/ScrBootloader.py:40 yali4/gui/ScrRescueGrub.py:35
+#, fuzzy
+msgid ""
+"\n"
+"<font size=\"+2\">Boot loader setup</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Pardus 2009 uses a boot manager called GRUB to start the operating system "
+"you choose.\n"
+"</p>\n"
+"<p>If there are multiple operating systems in your computer, you can start "
+"the one \n"
+"you like using GRUB. Installing GRUB to the beginning of the boot disk is "
+"the advised \n"
+"option to avoid boot problems.  If you are sure you know what you are "
+"doing, \n"
+"you can change boot loader settings.\n"
+"</p>\n"
+"<p>\n"
+"Please refer to Pardus Installing and Using \n"
+"Guide for more information about GRUB boot \n"
+"loader.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Starthanterarens inställningar</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Pardus 2008 använder en starthanterare, GRUB, för att starta valt "
+"operativsystem.\n"
+"</p>\n"
+"<p>Om det finns flera operativsystem på datorn kan du använda GRUB för att\n"
+"starta det du vill. Att installera GRUB på början av startdisken är det "
+"rekommenderade \n"
+"alternativet för att undvika problem. Om du verkligen vet vad du gör kan du "
+"ändra\n"
+"starthanterarens inställningar.\n"
+"</p>\n"
+"<p>\n"
+"Se Pardus installations- och användarguide för mer information om "
+"starthanteraren GRUB.\n"
+"</p>\n"
+"</font>\n"
+
+#: yali4/gui/ScrCheckCD.py:29
+msgid "Check your media"
+msgstr "Kontrollera ditt media"
+
+#: yali4/gui/ScrCheckCD.py:30
+msgid "To ignore media corruptions you can check your media integrity..."
+msgstr ""
+"Undvik installationsproblem genom att kontrollera cd-skivans integritet..."
+
+#: yali4/gui/ScrCheckCD.py:32
+msgid ""
+"\n"
+"<font size=\"+2\">Check CD Integrity!</font>\n"
+"<font size=\"+1\"><p>\n"
+"You can check if the packages included in the installation CD are saved "
+"correctly into the CD. Performing this test is a highly important step in "
+"making sure for a problem-free installation. If the test fails, try re-"
+"burning the ISO image in a lower (e.g. 12x or less) speed.</p></font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Kontrollera cd-skivans integritet!</font>\n"
+"<font size=\"+1\"><p>\n"
+"Du kan kontrollera att paketen på installationsskivan har skrivits korrekt. "
+"Att utföra detta test är ett mycket viktigt steg till att vara säker på en "
+"felfri installation. Om testet misslyckas, prova att bränna om ISO-filen i "
+"en lägre (12x eller mindre) hastighet.</p></font>\n"
+
+#: yali4/gui/ScrCheckCD.py:50
+msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
+msgstr "<font color=\"#FFF\">Vänta medans cd kontrolleras.</font>"
+
+#: yali4/gui/ScrCheckCD.py:51
+msgid "Stop Checking"
+msgstr "Avbryt kontroll"
+
+#: yali4/gui/ScrDateTime.py:28
+msgid "Set your timezone"
+msgstr "Välj tidszon"
+
+#: yali4/gui/ScrDateTime.py:29
+msgid "You can change your timezone, time or date settings..."
+msgstr "Du kan ändra tidszon, tids- och datuminställningar..."
+
+#: yali4/gui/ScrDateTime.py:31
+msgid ""
+"\n"
+"<font size=\"+2\">Time Zone settings</font>\n"
+"<font size=\"+1\"><p>Here you can select your location and a timezone; and "
+"set the date and time.\n"
+"Your settings will update your hardware clock. Proceed with the installation "
+"after you make your selections.</p></font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Tidszon</font>\n"
+"<font size=\"+1\"><p>Här väljer du din plats och tidszon, du kan även ställa "
+"datum och tid.\n"
+"Dina inställningar ställer systemklockan. Fortsätt med installationen när du "
+"har gjort dina val.</p></font>\n"
+
+#: yali4/gui/ScrGoodbye.py:44
+msgid "Goodbye from YALI"
+msgstr "Hej då från YALI"
+
+#: yali4/gui/ScrGoodbye.py:45
+msgid "Enjoy your fresh Pardus !..."
+msgstr "Njut av din nya Pardus..."
+
+#: yali4/gui/ScrGoodbye.py:46
+msgid ""
+"\n"
+"<font size=\"+2\">Congratulations</font>\n"
+"\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"You have successfully installed Pardus, a very easy to use desktop system "
+"on\n"
+"your machine. Now you can start playing with your system and stay "
+"productive\n"
+"all the time.\n"
+"</p>\n"
+"<P>\n"
+"Click on the Next button to proceed. One note: You remember your password,\n"
+"don't you?\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Gratulerar</font>\n"
+"\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Du har nu lyckats med installationen av Pardus, ett mycket lättanvänt "
+"system.\n"
+"Nu kan du börja utforska ditt system och vara produktiv hela tiden.\n"
+"</p>\n"
+"<P>\n"
+"Klicka på knappen Nästa för att fortsätta. Men du, visst kommer du ihåg ditt "
+"lösenord?\n"
+"</p>\n"
+"</font>\n"
+
+#: yali4/gui/ScrGoodbye.py:72
+msgid "Running post install operations.."
+msgstr "Kör efterbehandlingsåtgärder..."
+
+#: yali4/gui/ScrGoodbye.py:91
+msgid "<b>Rebooting system. Please wait!</b>"
+msgstr "<b>Startar om systemet. Vänta!</b>"
+
+#: yali4/gui/ScrInstall.py:60
+msgid "Installing system..."
+msgstr "Installerar systemet..."
+
+#: yali4/gui/ScrInstall.py:61
+#, fuzzy
+msgid "Installing takes approximately 20 minutes depending on your hardware..."
+msgstr ""
+"Installationen tar uppskattningsvis 30 minuter beroende på din dator..."
+
+#: yali4/gui/ScrInstall.py:63
+msgid ""
+"\n"
+"<font size=\"+2\">Installation started</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"\n"
+"<p>\n"
+"Pardus is now being installed on your hard disk. \n"
+"</p>\n"
+"\n"
+"<p>\n"
+"The duration of this operation depends on the \n"
+"capability and power of your system. Meanwhile,\n"
+"you can enjoy some visual elements showing \n"
+"the distinctive properties of Pardus, your \n"
+"new operating system.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Have fun!\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Installationen påbörjad</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"\n"
+"<p>\n"
+"Pardus installeras nu på din hårddisk. \n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Tiden det kan ta beror av datorns prestanda. \n"
+"Under tiden kan du njuta av några bilder som \n"
+"visar Pardus, ditt nya operativsystem, unika egenskaper.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Ha kul!\n"
+"</p>\n"
+"</font>\n"
+
+#: yali4/gui/ScrInstall.py:116
+msgid "Packages are being installed.."
+msgstr "Installerar paket..."
+
+#: yali4/gui/ScrInstall.py:131
+#, python-format
+msgid "Installing: %s<br>%s"
+msgstr "Installerar: %s<br>%s"
+
+#: yali4/gui/ScrInstall.py:136
+#, python-format
+msgid "Configuring package: %s"
+msgstr "Konfigurerar paket: %s"
+
+#: yali4/gui/ScrInstall.py:158
+#, python-format
+msgid "Package install failed : <b>%s</b><br>Do you want to retry ?"
+msgstr "Paketinstallationen misslyckades: <b>%s</b><br>Vill du försöka igen?"
+
+#: yali4/gui/ScrInstall.py:177
+msgid "Creating baselayout for your system!"
+msgstr "Skapar baselayout för ditt system!"
+
+#: yali4/gui/ScrInstall.py:187
+msgid "Configuring packages.."
+msgstr "Konfigurerar paket..."
+
+#: yali4/gui/ScrInstall.py:210
+#, python-format
+msgid ""
+"An error during the installation of packages occured.\n"
+"\n"
+"This is possibly a broken Pardus CD or CD-ROM drive.\n"
+"\n"
+"Error:\n"
+"%s\n"
+msgstr ""
+"Ett fel uppstod under paketinstallationen.\n"
+"\n"
+"Det kan möjligtvis bero på en trasig cd eller cd-spelare.\n"
+"\n"
+"Fel:\n"
+"%s\n"
+
+#: yali4/gui/ScrKahyaCheck.py:54
+msgid "Kahya is working..."
+msgstr "Kahya arbetar..."
+
+#: yali4/gui/ScrKahyaCheck.py:55
+msgid "Kahya will automatically install your system..."
+msgstr "Kahya installerar ditt system automatiskt..."
+
+#: yali4/gui/ScrKahyaCheck.py:56
+msgid ""
+"\n"
+"<font size=\"+2\">Kicker Check !</font>\n"
+"<p> Some help messages </p>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Kicker Kontrollera!</font>\n"
+"<p> Några hjälpmeddelanden </p>\n"
+
+#: yali4/gui/ScrKeyboard.py:31
+msgid "Set your keyboard layout"
+msgstr "Välj tangentbordslayout"
+
+#: yali4/gui/ScrKeyboard.py:32
+msgid "Use your keyboard layout..."
+msgstr "Använd din tangentbordslayout..."
+
+#: yali4/gui/ScrKeyboard.py:34
+msgid ""
+"\n"
+"<font size=\"+2\">Keyboard Setup</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Here you can select the type of your keyboard and the language map you want "
+"to use. You can test your selection's result in the test box. \n"
+"Proceed with the installation after you make your selections.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Tangentbordslayout</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Här väljer du tangentbordstyp och det språk du vill använda. Du kan testa "
+"ditt val i testrutan.\n"
+"Fortsätt med installationen när du gjort ditt val.\n"
+"</p>\n"
+"</font>\n"
+
+#: yali4/gui/ScrPartitionAuto.py:38
+msgid "Choose Partitioning"
+msgstr "Välj partitioneringsmetod"
+
+#: yali4/gui/ScrPartitionAuto.py:39
+msgid "Auto or Manual partitioning..."
+msgstr "Automatisk eller manuell partitionering..."
+
+#: yali4/gui/ScrPartitionAuto.py:41
+#, fuzzy
+msgid ""
+"\n"
+"<font size=\"+2\">Automatic Partitioning</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"You can install Pardus if you have an unpartitioned-unused disk space \n"
+"of 4GBs (10 GBs recommended) or an unused-unpartitioned disk. \n"
+"The disk area or partition selected for installation will automatically \n"
+"be formatted. Therefore, it is advised to backup your data to avoid future "
+"problems.\n"
+"</p>\n"
+"<p>Auto-partitioning will automatically format the select disk part/"
+"partition \n"
+"and install Pardus 2009. If you like, you can do the partitioning manually "
+"or make \n"
+"Pardus 2009 create a new partition for installation.</p>\n"
+"<p>\n"
+"Please refer to Pardus Installing and Using Guide for more information\n"
+"about disk partitioning.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Automatisk partitionering</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Du kan installera Pardus om du har ett opartitionerat hårddiskutrymme eller\n"
+"en opartitionerad hårddiskpå 4GB (10 GB rekommenderas).\n"
+"Det valda området kommer att formateras automatiskt. Därför råds du att\n"
+"göra en säkerhetskopia för att undvika framtida problem.\n"
+"</p>\n"
+"<p>Automatisk partitionering formaterar automatiskt det valda området och "
+"installerar\n"
+"Pardus 2008. Om du vill kan du partitionera för hand eller låta Pardus 2008 "
+"skapa\n"
+"en ny partition för installationen.</p>\n"
+"<p>\n"
+"Se Pardus installations- och användarguide för mer information om "
+"diskpartitionering.\n"
+"</p>\n"
+"</font>\n"
+
+#: yali4/gui/ScrPartitionAuto.py:81
+#, python-format
+msgid ""
+"It seems that you don't have the required disk space (min. %s) for Pardus "
+"installation."
+msgstr ""
+"Det verkar som om du inte har nödvändigt diskutrymme (min. %s) för din "
+"Pardusinstallation."
+
+#: yali4/gui/ScrPartitionManual.py:31
+msgid "Manual Partitioning"
+msgstr "Manuell partitionering"
+
+#: yali4/gui/ScrPartitionManual.py:32
+msgid "You can easily configure your partitions..."
+msgstr "Du kan enkelt ändra dina partitioner..."
+
+#: yali4/gui/ScrPartitionManual.py:34
+msgid ""
+"\n"
+"<font size=\"+2\">Partitioning your hard disk</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"In this screen, you can manually partition your disk. You can select \n"
+"existing partitions and resize or delete them. You can create new \n"
+"partition(s) in the empty parts, make Pardus use them for system files, \n"
+"users' home directories, swap space or general use. The changes that you \n"
+"make will not be applied until you go on with the installation, \n"
+"which means you can revert if you make any unwanted changes or change your "
+"configuration.\n"
+"</p>\n"
+"<p>\n"
+"Please refer to Pardus Installing and Using Guide for more information\n"
+"about disk partitioning.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Partitionera din hårddisk</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Här kan du själv partitionera din hårddisk. Du kan välja befintliga "
+"partitioner\n"
+"och storleksändra eller ta bort dem. Du kan skapa nya partitioner i tomt "
+"utrymme\n"
+"och låta Pardus använda dem för systemfiler, användarkataloger, "
+"växlingsutrymme\n"
+"eller som allmänt utrymme. De ändringar du gör kommer inte att verkställas "
+"före\n"
+"du fortsätter med installationen, det innebär att du kan ångra oönskade "
+"åtgärder\n"
+"eller ändra i din konfiguration.\n"
+"</p>\n"
+"<p>\n"
+"Se Pardus installations- och användarguide för mer information om "
+"diskpartitionering.\n"
+"</p>\n"
+"</font>\n"
+
+#: yali4/gui/ScrPartitionManual.py:79 yali4/gui/YaliDialog.py:97
+msgid "Warning"
+msgstr "Varning"
+
+#: yali4/gui/ScrPartitionManual.py:80
+msgid ""
+"All changes that you made will be removed.\n"
+"Do you want to continue ?"
+msgstr ""
+
+#: yali4/gui/ScrRescueGrub.py:32
+msgid "Rescue Mode for Bootlooader"
+msgstr ""
+
+#: yali4/gui/ScrRescueGrub.py:33
+msgid "You can fix your bootloader..."
+msgstr ""
+
+#: yali4/gui/ScrRescuePassword.py:41
+msgid "Rescue Mode for Password Recovery"
+msgstr ""
+
+#: yali4/gui/ScrRescuePassword.py:42
+#, fuzzy
+msgid "You can recover your password ..."
+msgstr "Du kan enkelt ändra dina partitioner..."
+
+#: yali4/gui/ScrRescuePassword.py:44
+msgid ""
+"\n"
+"<font size=\"+2\">Password Recovery</font>\n"
+"<font size=\"+1\"></font>\n"
+msgstr ""
+
+#: yali4/gui/ScrRescuePassword.py:56 yali4/gui/ScrUsers.py:71
+msgid "Caps Lock is on!"
+msgstr ""
+
+#: yali4/gui/ScrRescuePassword.py:61 yali4/gui/ScrRescuePisi.py:54
+#, fuzzy
+msgid "Starting DBUS..."
+msgstr "Formaterar..."
+
+#: yali4/gui/ScrRescuePassword.py:62 yali4/gui/ScrRescuePisi.py:55
+#: yali4/installer.py:516
+msgid "Trying to connect DBUS..."
+msgstr "Försöker ansluta till DBUS..."
+
+#: yali4/gui/ScrRescuePassword.py:63
+#, fuzzy
+msgid "Getting user list ..."
+msgstr "Sparar värdnamn..."
+
+#: yali4/gui/ScrRescuePassword.py:96
+msgid "Info"
+msgstr ""
+
+#: yali4/gui/ScrRescuePassword.py:107 yali4/gui/ScrUsers.py:170
+#, fuzzy
+msgid "Don't use your user name or name as a password."
+msgstr ""
+"<font color=\"#FF6D19\">Använd inte ditt namn eller användarnamn som "
+"lösenord.</font>"
+
+#: yali4/gui/ScrRescuePassword.py:110 yali4/gui/ScrUsers.py:173
+#, fuzzy
+msgid "Passwords do not match!"
+msgstr "<font color=\"#FF6D19\">Lösenorden stämmer inte!</font>"
+
+#: yali4/gui/ScrRescuePassword.py:113 yali4/gui/ScrUsers.py:176
+#, fuzzy
+msgid "Password is too short!"
+msgstr "<font color=\"#FF6D19\">Lösenordet är för kort!</font>"
+
+#: yali4/gui/ScrRescuePassword.py:146
+#, fuzzy
+msgid "Super User"
+msgstr "Skapa användare"
+
+#: yali4/gui/ScrRescuePisi.py:40
+msgid "Rescue Mode for Pisi History"
+msgstr ""
+
+#: yali4/gui/ScrRescuePisi.py:41
+msgid "You can take back your system ..."
+msgstr ""
+
+#: yali4/gui/ScrRescuePisi.py:43
+msgid ""
+"\n"
+"<font size=\"+2\">Pisi History</font>\n"
+"<font size=\"+1\"></font>\n"
+msgstr ""
+
+#: yali4/gui/ScrRescuePisi.py:56
+#, fuzzy
+msgid "Getting history ..."
+msgstr "Sparar värdnamn..."
+
+#: yali4/gui/ScrRescuePisi.py:122
+#, python-format
+msgid "Operation %s : %s - %s"
+msgstr ""
+
+#: yali4/gui/ScrRescue.py:30
+msgid "Rescue Mode"
+msgstr ""
+
+#: yali4/gui/ScrRescue.py:31
+msgid ""
+"You can reinstall your Grub or you can take back your system by using Pisi "
+"History..."
+msgstr ""
+
+#: yali4/gui/ScrRescue.py:33
+msgid ""
+"\n"
+"<font size=\"+2\">Rescue Mode</font>\n"
+"<font size=\"+1\"><p>This is a rescue mode help document.</p></font>\n"
+msgstr ""
+
+#: yali4/gui/ScrRescue.py:93
+#, fuzzy
+msgid "Mounting selected partition..."
+msgstr "Skapar ny partition..."
+
+#: yali4/gui/ScrRescue.py:105
+msgid "Yali couldn't find a suitable partition on your system"
+msgstr ""
+
+#: yali4/gui/ScrRescue.py:122
+#, fuzzy
+msgid "Please select a partition from list"
+msgstr "Ta bort alla partitioner"
+
+#: yali4/gui/ScrRescueSummary.py:42
+#, fuzzy
+msgid "The last step before rescue"
+msgstr "Sista steget före installation"
+
+#: yali4/gui/ScrRescueSummary.py:43
+#, fuzzy
+msgid "Summary of your rescue operations..."
+msgstr "Installationssammanställning..."
+
+#: yali4/gui/ScrRescueSummary.py:45
+#, fuzzy
+msgid ""
+"\n"
+"<font size=\"+2\">Rescue Summary</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Here you can see your rescue options and look at them again before rescue "
+"operation starts.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Installationssammanställning</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Här kan du se dina val och granska dem före installationen börjar.\n"
+"</p>\n"
+"</font>\n"
+
+#: yali4/gui/ScrRescueSummary.py:71 yali4/gui/ScrSummary.py:72
+msgid "<b><p>This action will reboot your system !</p></b>"
+msgstr "<b><p>Denna åtgärd startar om datorn!</p></b>"
+
+#: yali4/gui/ScrSummary.py:42
+msgid "The last step before install"
+msgstr "Sista steget före installation"
+
+#: yali4/gui/ScrSummary.py:43
+msgid "Summary of your installation..."
+msgstr "Installationssammanställning..."
+
+#: yali4/gui/ScrSummary.py:45
+msgid ""
+"\n"
+"<font size=\"+2\">Install Summary</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Here you can see your install options and look at them again before "
+"installation starts.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Installationssammanställning</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Här kan du se dina val och granska dem före installationen börjar.\n"
+"</p>\n"
+"</font>\n"
+
+#: yali4/gui/ScrSummary.py:89
+#, python-format
+msgid "Install starts after : <b>%s sec.</b>"
+msgstr "Installationen startar om : <b>%s sek.</b>"
+
+#: yali4/gui/ScrSummary.py:121
+msgid "Keyboard Settings"
+msgstr "Tangentbordsinställningar"
+
+#: yali4/gui/ScrSummary.py:122
+#, python-format
+msgid "Selected keyboard layout is <b>%s</b>"
+msgstr "Vald tangentbordslayout: <b>%s</b>"
+
+#: yali4/gui/ScrSummary.py:126
+msgid "Date/Time Settings"
+msgstr "Datum- och tidsinställningar"
+
+#: yali4/gui/ScrSummary.py:127
+#, python-format
+msgid "Selected TimeZone is <b>%s</b>"
+msgstr "Vald tidszon: <b>%s</b>"
+
+#: yali4/gui/ScrSummary.py:132
+msgid "User Settings"
+msgstr "Användare"
+
+#: yali4/gui/ScrSummary.py:134
+#, python-format
+msgid "User %s (<b>%s</b>) added."
+msgstr "Användare %s (<b>%s</b>) tillagd."
+
+#: yali4/gui/ScrSummary.py:136
+#, python-format
+msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
+msgstr "Användare %s (<b>%s</b>) tillagd med <u>administratörsrättigheter</u>."
+
+#: yali4/gui/ScrSummary.py:142
+msgid "Hostname Settings"
+msgstr "Värdnamn"
+
+#: yali4/gui/ScrSummary.py:143
+#, python-format
+msgid "Hostname is set as <b>%s</b>"
+msgstr "Värdnamnet är satt till <b>%s</b>"
+
+#: yali4/gui/ScrSummary.py:149
+msgid "Partition Settings"
+msgstr "Partitionering"
+
+#: yali4/gui/ScrSummary.py:151
+msgid "Automatic Partitioning selected."
+msgstr "Automatisk partitionering vald"
+
+#: yali4/gui/ScrSummary.py:179
+msgid "Automatic Partitioning (resize method) selected."
+msgstr "Automatisk partitionering (storleksändring) vald"
+
+#: yali4/gui/ScrSummary.py:195
+#, python-format
+msgid ""
+"Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
+"(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>"
+msgstr ""
+"Partition <b>%(partition)s - %(currentFs)s</b> <b>storleksändrad</b> till <b>"
+"%(resizeTo)s MB</b>, tidigare storlek var <b>%(currentSize)s MB</b>"
+
+#: yali4/gui/ScrSummary.py:197
+#, python-format
+msgid ""
+"Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
+"with <b>%(size)s MB</b> as <b>%(fs)s</b>."
+msgstr ""
+"Partition <b>%(newPartition)s</b> <b>skapad</b> på enhet <b>%(device)s</b> "
+"med <b>%(size)s MB</b> som <b>%(fs)s</b>."
+
+#: yali4/gui/ScrSummary.py:198
+#, python-format
+msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
+msgstr "Partition <b>%(newPartition)s</b> <b>vald</b> som <b>%(type)s</b>."
+
+#: yali4/gui/ScrSummary.py:213
+msgid "Bootloader Settings"
+msgstr "Starthanterarens inställningar"
+
+#: yali4/gui/ScrSummary.py:214
+#, python-format
+msgid "GRUB will be installed to <b>%s</b>"
+msgstr "GRUB kommer att installeras på <b>%s</b>"
+
+#: yali4/gui/ScrSummary.py:216
+msgid "GRUB will not be installed"
+msgstr "GRUB kommer inte att installeras."
+
+#: yali4/gui/ScrSummary.py:242
+msgid ""
+"<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
+"your partition,<br>\n"
+"                   rendering your data unreachable. <br>\n"
+"                   Make sure that you have a backup for this partition.<br>\n"
+"                   <b>Note that this operation cannot be undone ! </b></p>"
+msgstr ""
+"<p><b><u>Varning</u></b>: Det finns en åtgärd för storleksändring och det "
+"kan förstöra din partition,<br>\n"
+"                   och göra dina filer oåtkomliga. <br>\n"
+"                   Var övertygad om att du har en säkerhetskopia för den här "
+"partitionen.<br>\n"
+"                   <b>Observera att den här åtgärden inte kan ångras! </b></"
+"p>"
+
+#: yali4/gui/ScrSummary.py:269 yali4/gui/ScrSummary.py:280
+#: yali4/gui/ScrSummary.py:295
+msgid "Formatting ..."
+msgstr "Formaterar..."
+
+#: yali4/gui/ScrSummary.py:275 yali4/gui/ScrSummary.py:287
+#: yali4/installer.py:309
+msgid "Writing disk tables ..."
+msgstr "Skriver disktabeller"
+
+#: yali4/gui/ScrSummary.py:277
+msgid "Resizing ..."
+msgstr "Ändrar storlek..."
+
+#: yali4/gui/ScrUsers.py:32
+msgid "Set Users"
+msgstr "Skapa användare"
+
+#: yali4/gui/ScrUsers.py:33
+msgid "Create users to use Pardus..."
+msgstr "Skapa användare i Pardus..."
+
+#: yali4/gui/ScrUsers.py:35
+#, fuzzy
+msgid ""
+"\n"
+"<font size=\"+2\">User setup</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Pardus 2009 allows multiple users to share the same computer.\n"
+"You can assign management rights to the users you create; you can also\n"
+"configure permissions to users for various operations through TASMA.\n"
+"</p>\n"
+"<p>\n"
+"To create a new user, fill in the form and press the \"Create User\" "
+"button.\n"
+"If you want a user to be automatically logged in to the system, select\n"
+"the user from the list; if you want to delete a user, \n"
+"select his/her username from the list and press \"Delete Selected User\".\n"
+"Proceed with the installation after you make your selections.\n"
+"</p>\n"
+"<p>\n"
+"Click Next button to proceed.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Användare</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Pardus 2008 låter flera användare dela på samma dator.\n"
+"Du kan ge administratörs- rättigheter till de användare du skapar; du kan\n"
+"också anpassa användarnas rättigheter via olika åtgärder i TASMA.\n"
+"</p>\n"
+"<p>\n"
+"För att skapa en ny användare, fyll i formuläret och klicka på knappen\n"
+"\"Skapa användare\". Om du vill att en användare ska loggas in\n"
+"automatiskt väljer du denne från listan, om du vill ta bort en användare, \n"
+"välj det användarnamnet i listan och klicka \"Ta bort vald användare\".\n"
+"Fortsätt med installationen när du har gjort dina val.\n"
+"</p>\n"
+"<p>\n"
+"Klicka på knappen Nästa för att fortsätta.\n"
+"</p>\n"
+"</font>\n"
+
+#: yali4/gui/ScrUsers.py:208
+#, fuzzy
+msgid "Username exists, choose another one!"
+msgstr ""
+"<font color=\"#FF6D19\">Användarnamnet finns redan, välj ett annat!</font>"
+
+#: yali4/gui/ScrUsers.py:211
+#, fuzzy
+msgid "Username contains invalid characters!"
+msgstr ""
+"<font color=\"#FF6D19\">Användarnamnet innehåller ogiltiga tecken!</font>"
+
+#: yali4/gui/ScrUsers.py:214
+#, fuzzy
+msgid "Realname contains invalid characters!"
+msgstr ""
+"<font color=\"#FF6D19\">Det verkliga namnet innehåller ogiltiga tecken!</"
+"font>"
+
+#: yali4/gui/ScrUsers.py:222
+msgid "User ID used before, choose another one!"
+msgstr ""
+
+#: yali4/gui/ScrUsers.py:293
+msgid "Update User"
+msgstr "Uppdatera användare"
+
+#: yali4/gui/ScrWelcome.py:30
+msgid "Welcome !! "
+msgstr "Välkommen!"
+
+#: yali4/gui/ScrWelcome.py:31
+msgid "Welcome to the Pardus installer..."
+msgstr "Välkommen till Pardus installationsprogram..."
+
+#: yali4/gui/ScrWelcome.py:32
+#, fuzzy
+msgid ""
+"\n"
+"<font size=\"+2\">Welcome !</font>\n"
+"<font size=\"+1\"><p>Welcome to Pardus 2009 that contains many easy-to-use "
+"software components. You can do everything you need to, including, but not "
+"limited to, connecting to the Internet, creating documents, playing games, "
+"listening to music using Pardus 2009.</p>\n"
+"<p>This application will help you with the installation of Pardus 2009 to "
+"your computer in few and easy steps and then do what is necessary to "
+"identify and configure your hardware. We advise you to backup your data in "
+"your disk(s) before starting with the installation.</p>\n"
+"<p>You can start the installation process (and step in on a free world) by "
+"pressing the Next button.</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Välkommen!</font>\n"
+"<font size=\"+1\"><p>Välkommen till Pardus 2008 som innehåller många "
+"lättanvända program. Du kan göra allt du behöver med Pardus 2008, bland "
+"annat, ansluta till Internet, skapa dokument, spela spel, lyssna på musik.</"
+"p>\n"
+"<p>Det här programmet hjälper dig med installationen av Pardus 2008 på din "
+"dator i några få enkla steg och med identifieringen och konfigurationen av "
+"din hårdvara. Vi råder dig att säkerhetskopiera dina filer före du startar "
+"installationen.</p>\n"
+"<p>Du startar installationen (och tar klivet in i en friare värld) genom att "
+"klicka på knappen Nästa.</p>\n"
+"</font>\n"
+
+#: yali4/gui/YaliDialog.py:121
+msgid ""
+"<b>\n"
+"<p>This action will start installing Pardus on<br>\n"
+"your system formatting the selected partition.</p>\n"
+"</b>\n"
+msgstr ""
+"<b>\n"
+"<p>Den här åtgärden kommer att installera Pardus<br>\n"
+"på ditt system och formatera valda partitioner.</p>\n"
+"</b>\n"
+
+#: yali4/gui/YaliDialog.py:131
+msgid "O.K. Go Ahead"
+msgstr "Ok, fortsätt"
+
+#: yali4/gui/YaliDialog.py:166
+msgid ""
+"<b>\n"
+"<p>Press Reboot button to restart your system.</p>\n"
+"</b>\n"
+msgstr ""
+"<b>\n"
+"<p>Klicka på knappen Starta om för att starta om datorn.</p>\n"
+"</b>\n"
+
+#: yali4/gui/YaliWindow.py:70 yali4/gui/YaliWindow.py:130
+msgid "Show Help"
+msgstr "Visa hjälp"
+
+#: yali4/gui/YaliWindow.py:114
+msgid "Terminal"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:133
+msgid "Hide Help"
+msgstr "Dölj hjälp"
+
+#: yali4/bootloader.py:217 yali4/bootloader.py:222
+msgid "Windows"
+msgstr "Windows"
+
+#: yali4/filesystem.py:165
+#, python-format
+msgid ""
+"FSCheck found some problems on partition %s and fixed "
+"them.                                 You should restart the machine before "
+"starting the installation process !"
+msgstr ""
+
+#: yali4/filesystem.py:168
+#, fuzzy, python-format
+msgid "FSCheck failed on %s"
+msgstr "Kontrollen misslyckades"
+
+#: yali4/filesystem.py:380 yali4/filesystem.py:471
+msgid "Partition is not ready for resizing. Check it before installation."
+msgstr ""
+"Partitionen är inte klar för storleksändring. Kontrollera den före "
+"installation."
+
+#: yali4/filesystem.py:477
+#, fuzzy, python-format
+msgid "Resize failed on %s "
+msgstr "Kontrollen misslyckades"
+
+#: yali4/__init__.py:62
+msgid "Backtrace:"
+msgstr "Spårning:"
+
+#: yali4/installer.py:151
+#, python-format
+msgid ""
+"Plugin (%s) not found or error occurred while loading. Switching to normal "
+"installation process."
+msgstr ""
+"Hittade inte insticksprogrammet (%s), eller så uppstod ett fel vid laddning. "
+"Återgår till normal installationsprocess."
+
+#: yali4/installer.py:157
+msgid "YALI Is Working..."
+msgstr "YALI arbetar..."
+
+#: yali4/installer.py:170
+msgid "Warning !"
+msgstr "Varning!"
+
+#: yali4/installer.py:176
+msgid "Starting for CD Check"
+msgstr "Startar cd-kontroll"
+
+#: yali4/installer.py:194
+#, python-format
+msgid "Checking: %s"
+msgstr "Kontrollerar: %s"
+
+#: yali4/installer.py:201
+msgid "Check Failed"
+msgstr "Kontrollen misslyckades"
+
+#: yali4/installer.py:202
+msgid ""
+"<b><p>Integrity check for packages failed.                                  "
+"It seems that installation CD is broken.</p></b>"
+msgstr ""
+"<b><p>Integritetskontrollen för paket "
+"misslyckades.                                  Det verkar som om "
+"installationsskivan är trasig.</p></b>"
+
+#: yali4/installer.py:206
+msgid ""
+"<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
+"</b></font>"
+msgstr ""
+"<font color=\"#FFF\"><b>Kontrollen lyckades. Du kan fortsätta till nästa "
+"steg.</b></font>"
+
+#: yali4/installer.py:224
+msgid "Setting time settings.."
+msgstr "Sparar tidsinställningar..."
+
+#: yali4/installer.py:251
+msgid "Disk analyze started.."
+msgstr "Diskanalysen påbörjad..."
+
+#: yali4/installer.py:371
+msgid "Resize Finished ..."
+msgstr "Storleksändringen avslutad..."
+
+#: yali4/installer.py:377
+msgid "Creating new partition ..."
+msgstr "Skapar ny partition..."
+
+#: yali4/installer.py:396
+msgid "Failed to use partition for automatic installation "
+msgstr ""
+
+#: yali4/installer.py:518
+msgid "Setting Hostname..."
+msgstr "Sparar värdnamn..."
+
+#: yali4/installer.py:519
+msgid "Setting TimeZone..."
+msgstr "Sparar tidszon..."
+
+#: yali4/installer.py:520
+msgid "Setting Root Password..."
+msgstr "Sparar lösenord för root..."
+
+#: yali4/installer.py:521
+msgid "Adding Users..."
+msgstr "Lägger till användare..."
+
+#: yali4/installer.py:522
+msgid "Writing Console Data..."
+msgstr "Skriver konsolldata..."
+
+#: yali4/installer.py:523
+msgid "Migrating X.org Configuration..."
+msgstr "Migrerar konfiguration av X.org..."
+
+#: yali4/installer.py:525
+msgid "Copy Pisi index..."
+msgstr "Kopierar Pisiindex..."
+
+#: yali4/installer.py:526
+msgid "Setting misc. package configurations..."
+msgstr "Sparar diverse paketkonfigureringar..."
+
+#: yali4/installer.py:527
+msgid "Installing BootLoader..."
+msgstr "Installerar starthanteraren..."
+
+#: yali4/installer.py:669
+msgid "Retry"
+msgstr "Försök igen"
+
+#: yali4/localedata.py:20
+msgid "Turkish"
+msgstr "Turkiska"
+
+#: yali4/localedata.py:22
+msgid "Turkish F"
+msgstr "Turkiska F"
+
+#: yali4/localedata.py:22
+msgid "Turkish Q"
+msgstr "Turkiska Q"
+
+#: yali4/localedata.py:31
+msgid "English"
+msgstr "Engelska"
+
+#: yali4/localedata.py:42
+msgid "English GB"
+msgstr "Engelska GB"
+
+#: yali4/localedata.py:52
+msgid "Greek"
+msgstr "Grekiska"
+
+#: yali4/localedata.py:62
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: yali4/localedata.py:72
+msgid "Vietnamese"
+msgstr "Vietnamesiska"
+
+#: yali4/localedata.py:82
+msgid "Catalan"
+msgstr "Katalanska"
+
+#: yali4/localedata.py:93
+msgid "Italian"
+msgstr "Italienska"
+
+#: yali4/localedata.py:104
+msgid "Czech"
+msgstr "Tjeckiska"
+
+#: yali4/localedata.py:114
+msgid "Welsh"
+msgstr "Walesiska"
+
+#: yali4/localedata.py:124
+msgid "Arabic"
+msgstr "Arabiska"
+
+#: yali4/localedata.py:134
+msgid "Estonian"
+msgstr "Estniska"
+
+#: yali4/localedata.py:144
+msgid "Spanish"
+msgstr "Spanska"
+
+#: yali4/localedata.py:155
+msgid "Russian"
+msgstr "Ryska"
+
+#: yali4/localedata.py:165
+msgid "Dutch"
+msgstr "Nederländska"
+
+#: yali4/localedata.py:176
+msgid "Portuguese"
+msgstr "Portugisiska"
+
+#: yali4/localedata.py:187
+msgid "Norwegian"
+msgstr "Norska"
+
+#: yali4/localedata.py:197
+msgid "Icelandic"
+msgstr "Isländska"
+
+#: yali4/localedata.py:207
+msgid "Polish"
+msgstr "Polska"
+
+#: yali4/localedata.py:218
+msgid "Belgium"
+msgstr "Belgiska"
+
+#: yali4/localedata.py:228
+msgid "French"
+msgstr "Franska"
+
+#: yali4/localedata.py:239
+msgid "Bulgarian"
+msgstr "Bulgariska"
+
+#: yali4/localedata.py:249
+msgid "Slovenian"
+msgstr "Slovenska"
+
+#: yali4/localedata.py:259
+msgid "Croatian"
+msgstr "Kroatiska"
+
+#: yali4/localedata.py:269
+msgid "German"
+msgstr "Tyska"
+
+#: yali4/localedata.py:280
+msgid "Danish"
+msgstr "Danska"
+
+#: yali4/localedata.py:290
+msgid "Brazilian"
+msgstr "Brasiliansk Portugisiska"
+
+#: yali4/localedata.py:300
+msgid "Finnish"
+msgstr "Finska"
+
+#: yali4/localedata.py:310
+msgid "Hungarian"
+msgstr "Ungerska"
+
+#: yali4/localedata.py:320
+msgid "Japanese"
+msgstr "Japanska"
+
+#: yali4/localedata.py:330
+msgid "Malayalam"
+msgstr "Malayalam"
+
+#: yali4/localedata.py:340
+msgid "Swedish"
+msgstr "Svenska"
+
+#: yali4/localedata.py:351
+msgid "Macedonian"
+msgstr "Makedoniska"
+
+#: yali4/localedata.py:361
+msgid "Slovak"
+msgstr "Slovakiska"
+
+#: yali4/localedata.py:371
+msgid "Ukrainian"
+msgstr "Ukrainska"
+
+#: yali4/localedata.py:381
+msgid "Serbian"
+msgstr "Serbiska"
+
+#: yali4/partition.py:34
+msgid "unknown"
+msgstr "okänd"
+
+#: yali4/partition.py:212
+msgid "free space"
+msgstr "ledigt utrymme"
+
+#: yali4/partitiontype.py:36
+msgid "Install Root"
+msgstr "Systemfiler"
+
+#: yali4/partitiontype.py:43
+msgid "as Pardus System Files (mandatory)"
+msgstr "till Pardus systemfiler (obligatoriskt)"
+
+#: yali4/partitiontype.py:46
+msgid "Users' Files"
+msgstr "Användarfiler"
+
+#: yali4/partitiontype.py:53
+msgid "as User Files (optional)"
+msgstr "till användarfiler (frivilligt)"
+
+#: yali4/partitiontype.py:56
+msgid "Swap"
+msgstr "Växling"
+
+#: yali4/partitiontype.py:64
+msgid "as Swap Space (optional)"
+msgstr "till växlingsutrymme (frivilligt)"
+
+#: yali4/partitiontype.py:67
+msgid "Archive Partition"
+msgstr "Arkiveringspartition"
+
+#: yali4/partitiontype.py:82
+msgid "as Storage Area"
+msgstr "till lagringsutrymme"
+
+#: yali4/postinstall.py:167
+#, python-format
+msgid "User <b>%s</b>'s home directory is being prepared.."
+msgstr "Användare <b>%s</b>s hemkatalog förbereds..."
+
+#, fuzzy
+#~ msgid "Taking back Pisi operation..."
+#~ msgstr "Kör efterbehandlingsåtgärder..."
+
+#, fuzzy
+#~ msgid "Running rescue operations.."
+#~ msgstr "Kör efterbehandlingsåtgärder..."
+
+#~ msgid "Device :"
+#~ msgstr "Enhet:"
+
+#~ msgid "/dev/sda1"
+#~ msgstr "/dev/sda1"
+
+#~ msgid "New User"
+#~ msgstr "Ny användare"
+
+#, fuzzy
+#~ msgid "Yalı found a Pardus installed partition on your system."
+#~ msgstr "Installera på samma partition som Pardus"
+
+#~ msgid ""
+#~ "\n"
+#~ "<font size=\"+2\">Boot loader setup</font>\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Pardus 2008 uses a boot manager called GRUB to start the operating system "
+#~ "you choose.\n"
+#~ "</p>\n"
+#~ "<p>If there are multiple operating systems in your computer, you can "
+#~ "start the one \n"
+#~ "you like using GRUB. Installing GRUB to the beginning of the boot disk is "
+#~ "the advised \n"
+#~ "option to avoid boot problems.  If you are sure you know what you are "
+#~ "doing, \n"
+#~ "you can change boot loader settings.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Please refer to Pardus Installing and Using \n"
+#~ "Guide for more information about GRUB boot \n"
+#~ "loader.\n"
+#~ "</p>\n"
+#~ "</font>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<font size=\"+2\">Starthanterarens inställningar</font>\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Pardus 2008 använder en starthanterare, GRUB, för att starta valt "
+#~ "operativsystem.\n"
+#~ "</p>\n"
+#~ "<p>Om det finns flera operativsystem på datorn kan du använda GRUB för "
+#~ "att\n"
+#~ "starta det du vill. Att installera GRUB på början av startdisken är det "
+#~ "rekommenderade \n"
+#~ "alternativet för att undvika problem. Om du verkligen vet vad du gör kan "
+#~ "du ändra\n"
+#~ "starthanterarens inställningar.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Se Pardus installations- och användarguide för mer information om "
+#~ "starthanteraren GRUB.\n"
+#~ "</p>\n"
+#~ "</font>\n"
+
+#~ msgid "Ext3"
+#~ msgstr "Ext3"
+
+#~ msgid "NTFS"
+#~ msgstr "NTFS"
+
+#~ msgid "Fat 32"
+#~ msgstr "Fat 32"
