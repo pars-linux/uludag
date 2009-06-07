@@ -29,7 +29,7 @@ import binascii
 from yali4.exception import *
 from pardus.diskutils import *
 from yali4.parteddata import *
-from yali4.partition import Partition, FreeSpace
+from yali4.partition import Partition, FreeSpace, LVMPartition, RaidPartition
 from yali4.exception import YaliError, YaliException
 import yali4.sysutils as sysutils
 import yali4.filesystem
@@ -250,6 +250,30 @@ class Device:
                 l.append(p)
         return l
 
+
+    def isLVMPartition(self, part):
+        flag = parted.PARTITION_LVM
+        if not part._parted_type == freeSpaceType:
+            ped = part.getPartition()
+            if ped.is_flag_available(flag) and ped.get_flag(flag):
+                return True
+        return False
+    
+    def getLVMPartitions(self):
+        flag = parted.PARTITION_LVM
+        pvs = []
+        
+        for p in self.getPartitions():
+            if p._parted_type == lvmPartitionType:
+                ped = p.getPartition()
+                #Check again
+                if ped.is_flag_available(flag) and ped.get_flag(flag):
+                    pvs.append(p)
+        return pvs
+
+    def numberOfLVMPartitions(self):
+        return len(self.getLVMPartitions())
+    
     ##
     # get number of primary partitions on device
     # @returns: Number
@@ -417,6 +441,30 @@ class Device:
         part_mb = long(((geom.end - geom.start + 1) * self._sector_size) / MEGABYTE)
         if part.num >= 1:
             fs_name = ""
+            
+            if part.is_flag_available(parted.PARTITION_LVM) and part.get_flag(parted.PARTITION_LVM):
+                 fs_name= "lvm"
+                 self._partitions.append(LVMPartition(self, part,
+                                                      part.num,
+                                                      part_mb,
+                                                      geom.start,
+                                                      geom.end,
+                                                      fs_name,
+                                                      fs_ready))
+            
+                 return part
+             
+            if part.is_flag_available(parted.PARTITION_RAID) and part.get_flag(parted.PARTITION_RAID):
+                 fs_name= "raid"
+                 self._partitions.append(RaidPartition(self, part,
+                                                      part.num,
+                                                      part_mb,
+                                                      geom.start,
+                                                      geom.end,
+                                                      fs_name,
+                                                      fs_ready))
+                 return part
+             
             if part.fs_type:
                 fs_name = part.fs_type.name
             elif part.type & parted.PARTITION_EXTENDED:
