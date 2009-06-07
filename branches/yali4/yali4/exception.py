@@ -25,3 +25,19 @@ class FSError(YaliError):
 class FSCheckError(YaliError):
     pass
 
+class LVMError(YaliError):
+    pass
+
+class PhysicalVolume(LVMError):
+    pass
+
+class VolumeGroupError(LVMError):
+    pass
+
+class LogicalVolume(LVMError):
+    pass
+
+class RaidError(YaliError):
+    pass
+class MDRaidError(RaidError):
+    pass
