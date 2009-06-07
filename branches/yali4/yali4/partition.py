@@ -73,6 +73,12 @@ class Partition:
     def isExtended(self):
         return self._partition.type == parted.PARTITION_EXTENDED
 
+    def isRaid(self):
+        return self._partition.is_flag_available(parted.PARTITION_RAID) and self._partition.get_flag(parted.PARTITION_RAID)
+    
+    def isLvm(self):
+        return self._partition.is_flag_available(parted.PARTITION_LVM) and self._partition.get_flag(parted.PARTITION_LVM)
+    
     ##
     # get freespace on extended partition
     def getFreeBytes(self):
@@ -212,3 +218,29 @@ class FreeSpace(Partition):
                            _("free space"))
 
         self._parted_type = parteddata.freeSpaceType
+
+
+class LVMPartition(Partition):
+
+    def __init__(self, device, parted_part, minor, mb, start, end, fs_name, fs_ready):
+        Partition.__init__(self, device, 
+                           parted_part, 
+                           minor, 
+                           mb, 
+                           start, 
+                           end, _("lvm"), fs_ready)
+        
+        self._parted_type = parteddata.lvmPartitionType
+
+class RaidPartition(Partition):
+    def __init__(self, device, parted_part, minor, mb, start, end, fs_name, fs_ready):
+        Partition.__init__(self, device, 
+                           parted_part, 
+                           minor, 
+                           mb, 
+                           start, 
+                           end, 
+                           _("raid"), 
+                           fs_ready)
+        
+        self._parted_type = parteddata.raidPartitionType
