@@ -34,7 +34,9 @@ partitionTypes = [None,
                   parttype.root,
                   parttype.home,
                   parttype.swap,
-                  parttype.archive]
+                  parttype.archive,
+                  parttype.lvm,
+                  parttype.raid]
 
 class DiskList(QtGui.QWidget):
 
@@ -255,7 +257,12 @@ class DiskList(QtGui.QWidget):
             if part.isExtended():
                 continue
             if part.getMinor() != -1:
-                name = _("Partition %d") % part.getMinor()
+                if part.isLvm():
+                    name = _("LVM Partition")
+                elif part.isRaid:
+                    name = _("Raid Partition")
+                else:
+                    name = _("Partition %d") % part.getMinor()
                 if part.isFileSystemReady():
                     try:
                         name = part.getFSLabel() or name
@@ -517,6 +524,12 @@ class DiskItem(QtGui.QWidget):
                                   "icon"   :"linux"},
                    "linux-swap" :{"bgcolor":"#C1665A",
                                   "fgcolor":"#FFFFFF",
+                                  "icon"   :"linux"},
+                        "lvm"   :{"bgcolor":"#ADA7C8",
+                                  "fgcolor":"#FFFFFF",
+                                  "icon"   :"linux"},
+                "software-Raid" :{"bgcolor":"#EED680",
+                                  "fgcolor":"#FFFFFF",
                                   "icon"   :"linux"}}
 
             if metaTypes.has_key(fs_type):
@@ -543,6 +556,12 @@ class DiskItem(QtGui.QWidget):
             elif partitionType == parttype.archive:
                 _name += "\n" + _("Backup or archive files will store here")
                 _mpoint= "[ /mnt/archive ]"
+            elif partitionType == parttype.lvm:
+                _name += "\n" + _("LVM use here")
+                _mpoint= ""
+            elif partitionType == parttype.raid:
+                _name += "\n" + _("RAID use here")
+                _mpoint= ""
 
         # Create partition
         partition = QtGui.QRadioButton("%s%s\n%s %s" % (name, _name, data.getSizeStr(), _mpoint), self.diskGroup)
