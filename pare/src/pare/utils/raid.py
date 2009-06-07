@@ -34,10 +34,10 @@ def getRaidLevels():
         for line in file.readlines():
             if not line.startswith("Personalities"):
                 continue
-            list = line.split()
+            _list = line.split()
 
             for level in ["RAID0" , "RAID1" , "RAID5" , "RAID6" , "RAID10"]:
-                if "[" + level + "]" in list or "[" + level.lower() + "]" in list:
+                if "[" + level + "]" in _list or "[" + level.lower() + "]" in _list:
                     avail.append(level)
 
         file.close()
