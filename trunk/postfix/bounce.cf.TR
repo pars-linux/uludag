@@ -13,8 +13,8 @@
 #
 
 failure_template = <<EOF
-Charset: us-ascii
-From: E-POSTANE (Posta İletim Sistemi)
+Charset: UTF-8
+From: E-POSTANE (Posta iletim sistemi)
 Subject: Iletilemeyen Posta Gonderene Geri Donduruldu
 Postmaster-Subject: Postmaster Copy: Undelivered Mail
 
@@ -47,8 +47,8 @@ EOF
 #
 
 delay_template = <<EOF
-Charset: us-ascii
-From: E-POSTANE (Posta İletim Sistemi)
+Charset: UTF-8
+From: E-POSTANE (Posta iletim sistemi)
 Subject: Geciken Eposta (denemeler devam ediyor)
 Postmaster-Subject: Postmaster Warning: Delayed Mail
 
@@ -79,8 +79,8 @@ EOF
 #
 
 success_template = <<EOF
-Charset: us-ascii
-From: E-POSTANE (Posta İletim Sistemi)
+Charset: UTF-8
+From: E-POSTANE (Posta iletim sistemi)
 Subject: Posta Basariyla Iletildi
 
 Ben $myhostname eposta sistemiyim.
@@ -101,8 +101,8 @@ EOF
 #
 
 verify_template = <<EOF
-Charset: us-ascii
-From: E-POSTANE (Posta İletim Sistemi)
+Charset: UTF-8
+From: E-POSTANE (Posta iletim sistemi)
 Subject: Mail Delivery Status Report
 
 Ben $myhostname eposta sistemiyim.
