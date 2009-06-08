@@ -420,12 +420,20 @@ class Yali:
 
         dev.commit()
         ctx.mainScreen.processEvents()
-
+        
+        #make part as lvm
+        physicalVolume = PhysicalVolume(newPart)
+        physicalVolume.create()
+        volumeGroup = VolumeGroup(ctx.consts.vg_name, pvs=[physicalVolume])
+        volumeGroup.create()
+        logicalVolume = LogicalVolume(ctx.consts.lv_name, volumeGroup, volumeGroup.size)
+        logicalVolume.create()
+        
         # make partition requests
-        ctx.partrequests.append(request.MountRequest(newPart, parttype.root))
-        ctx.partrequests.append(request.FormatRequest(newPart, parttype.root))
-        ctx.partrequests.append(request.LabelRequest(newPart, parttype.root))
-        ctx.partrequests.append(request.SwapFileRequest(newPart, parttype.root))
+        ctx.partrequests.append(request.MountRequest(logicalVolume, parttype.root))
+        ctx.partrequests.append(request.FormatRequest(logicalVolume, parttype.root))
+        ctx.partrequests.append(request.LabelRequest(logicalVolume, parttype.root))
+        ctx.partrequests.append(request.SwapFileRequest(logicalVolume, parttype.root))
 
         time.sleep(2)
 
