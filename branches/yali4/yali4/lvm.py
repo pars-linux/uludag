@@ -394,7 +394,7 @@ class VolumeGroup(object):
 class LogicalVolume():
     _devBlockDir = "/dev/mapper"
 
-    def __init__(self, name, vg, size=None, uuid=None, format=None, existing=0):
+    def __init__(self, name, vg, size=None, uuid=None, existing=0):
         if isinstance(vg, list):
             if len(vg) != 1:
                 raise ValueError("Requires a single VolumeGroupDevice instance")
@@ -406,7 +406,6 @@ class LogicalVolume():
         self._name =  name
         self._size = size
         self._uuid = uuid
-        self._format = format
         self._exists = existing
         self._vg = vg
 
@@ -421,9 +420,10 @@ class LogicalVolume():
         if self.exists:
             raise LogicalVolumeError("logical volume already exists!")
         #FIXME:fix self.setupParents()
-        self.setupParents()
+        if not self.vg.status:
+            self.setupParents()
 
-        lvm.lvcreate(self.vg.name, self.name, self.size)
+        lvm.lvcreate(self.vg.name, self.name(), self.size)
         self._exists = True
         self.setup()
 
@@ -438,7 +438,7 @@ class LogicalVolume():
             #Setup Parents( maybe raid parts) so lvm can remove lv
             #FIXME:fix self.setupParents()
             self.vg.setupParents()
-            if lvm.lvremove(self.vg.name, self.name):
+            if lvm.lvremove(self.vg.name, self.name()):
                 self._exists = False
                 return True
         return False
@@ -450,18 +450,11 @@ class LogicalVolume():
         #May be vg has some raid parts
         self.vg.setupParents()
 
-        if self.format.exists:
-            self.format.teardown()
-
         #FIXME:add udev_settle()
         #udev_settle(timeout=10)
 
-        lvm.lvresize(self.vg.name, self.name, self.size)
+        lvm.lvresize(self.vg.name, self.name(), self.size)
 
-
-    @property
-    def format(self):
-        return self._format
 
     def setup(self):
         if not self.exists:
@@ -470,8 +463,7 @@ class LogicalVolume():
         if self.status:
             return
 
-        self.setupParents()
-        lvm.lvactivate(self.vg.name, self.name)
+        lvm.lvactivate(self.vg.name, self.name())
 
     def teardown(self):
         if not self.exists:
@@ -479,12 +471,9 @@ class LogicalVolume():
 
         #FIXME:Add exists func to filesystem to check if filesystem mounted
         #FIXME:Add teardown and setup fun c to filesystem to mount or unmount system
-        if self.status and self.format and self.format.exists:
-            self.format.teardown()
 
         if self.status:
-            print "Burada"
-            lvm.lvdeactivate(self.vg, self.name)
+            lvm.lvdeactivate(self.vg, self.name())
 
     def setupParents(self):
         self.vg.setup() 
@@ -501,8 +490,14 @@ class LogicalVolume():
 
     @property
     def path(self):
-        return "%s/%s-%s" % (self._devBlockDir, self.vg.name.replace("-", "--"), self.name.replace("-", "--"))
-
+        return "%s/%s-%s" % (self._devBlockDir, self.vg.name.replace("-", "--"), self.name().replace("-", "--"))
+    
+    def getPath(self):
+        return self.path
+    
+    def getMB(self):
+        return self.size
+        
     @property
     def vg(self):
         return self._vg
@@ -521,8 +516,7 @@ class LogicalVolume():
 
     @property
     def lvName(self):
-        return "%s-%s" % (self.vg.name, self.name)
+        return "%s-%s" % (self.vg.name, self.name())
 
-    @property
     def name(self):
         return self._name
