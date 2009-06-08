@@ -12,11 +12,10 @@
             Observe whether the disk manager gives a warning message about this unvalid mount point.
     - Try to change the filesystem type
         - Type console 
-            # mount
-            Observe that the disk mounted with the given filesystem.
-        - If this filesystem is not a suitable type for the disk:
-            Observe whether the disk-manager gives a warning message about it.
-            Observe also the output of the command "mount" that the filesystem type of the disk don't change.
+            # blkid
+            For a selected device, observe that the default filesystem type on disk-manager is the same with the output of "blkid".
+        - Change the filesystem type:
+            Observe that if this filesystem type is not suitable with this device, disk-manager gives a warning message about it.
 
     - Try to add an option for mounting
         - If the option part is empty try to change the settings. 
