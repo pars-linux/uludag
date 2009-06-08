@@ -22,7 +22,8 @@ from pmutils import *
 class OperationManager(QObject):
     def __init__(self, state):
         QObject.__init__(self)
-        self.nop = ["System.Manager.clearCache", "System.Manager.setCache", "System.Manager.setConfig", "System.Manager.setRepositories"]
+        self.nop = ["System.Manager.clearCache", "System.Manager.setCache", "System.Manager.setConfig",
+                    "System.Manager.setRepoActivities", "System.Manager.setRepositories"]
         self.state = state
         self.state.setActionHandler(self.handler)
         self.initialize()
