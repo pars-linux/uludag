@@ -219,9 +219,13 @@ class RepositorySettings(SettingsTab):
 
     def save(self):
         repos = []
+        activities = {}
         for row in range(self.settings.repoListView.rowCount()):
-            repos.append(self.getRepo(row))
+            name, address, active = self.getRepo(row)
+            repos.append((name, address))
+            activities[name]=active
         self.iface.setRepositories(repos)
+        self.iface.setRepoActivities(activities)
 
 class ProxySettings(SettingsTab):
     def setupUi(self):
