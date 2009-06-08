@@ -146,6 +146,7 @@ class RepositorySettings(SettingsTab):
         currentRow = self.settings.repoListView.rowCount()
         self.settings.repoListView.insertRow(currentRow)
         self.settings.repoListView.setCellWidget(currentRow, 0, QtGui.QCheckBox(self.settings.repoListView))
+        self.settings.repoListView.cellWidget(currentRow, 0).setChecked(self.iface.isRepoActive(repoName))
 
         repoNameItem = QtGui.QTableWidgetItem()
         repoNameItem.setText(repoName)
@@ -218,9 +219,13 @@ class RepositorySettings(SettingsTab):
 
     def save(self):
         repos = []
+        activities = {}
         for row in range(self.settings.repoListView.rowCount()):
-            repos.append(self.getRepo(row)[1:])
+            active, name, address = self.getRepo(row)
+            repos.append((name, address))
+            activities[name] = active
         self.iface.setRepositories(repos)
+        self.iface.setRepoActivities(activities)
 
 class ProxySettings(SettingsTab):
     def setupUi(self):

@@ -87,6 +87,10 @@ class Iface(Singleton):
         logger.debug("Re-setting repositories: %s" % repos)
         self.link.System.Manager["pisi"].setRepositories(repos)
 
+    def setRepoActivities(self, repos):
+        logger.debug("Re-setting repo activities: %s" % repos)
+        self.link.System.Manager["pisi"].setRepoActivities(repos)
+
     def setCacheLimit(self, useCache, limit):
         logger.debug("Use cache: %s - change limit to: %s" % (useCache, limit))
         self.link.System.Manager["pisi"].setCache(useCache, limit)
@@ -170,3 +174,6 @@ class Iface(Singleton):
 
     def getConflicts(self, packages):
         return pisi.api.get_conflicts(packages + self.getExtras(packages))
+
+    def isRepoActive(self, name):
+        return self.rdb.repo_active(name)
