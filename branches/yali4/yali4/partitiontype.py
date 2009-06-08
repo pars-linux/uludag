@@ -56,7 +56,7 @@ class RootPartitionType(PartitionType):
     filesystem = fs("ext4")
     mountoptions = "noatime"
     parted_type = parted.PARTITION_PRIMARY
-    parted_flags = [ parted.PARTITION_BOOT ]
+    parted_flags = [ parted.PARTITION_BOOT, parted.PARTITION_LVM  ]
     label = "PARDUS_ROOT"
     desc = _("as Pardus System Files (mandatory)")
 
