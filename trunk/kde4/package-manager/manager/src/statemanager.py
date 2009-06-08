@@ -12,6 +12,7 @@
 #
 
 from PyQt4.QtCore import QObject, SIGNAL
+from PyQt4.QtGui import QMessageBox
 
 from PyKDE4.kdecore import i18n
 from PyKDE4.kdeui import KIcon
@@ -122,9 +123,29 @@ class StateManager(QObject):
         return text
 
     def operationAction(self, packages):
+        if self.state is not self.REMOVE and not self.conflictCheckPasses(packages):
+            return
         return {self.INSTALL:self.iface.installPackages,
                 self.REMOVE:self.iface.removePackages,
                 self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
 
     def setActionHandler(self, handler):
         self.iface.setHandler(handler)
+
+    def conflictCheckPasses(self, packages):
+        (C, D, pkg_conflicts) = self.iface.getConflicts(packages)
+
+        conflicts_within = list(D)
+        if conflicts_within:
+            text = i18n("Selected packages [%1] are in conflict with each other. These packages can not be installed together.", ", ".join(conflicts_within))
+            QMessageBox.critical(None, i18n("Conflict Error"), text, QMessageBox.Ok)
+            return False
+
+        if pkg_conflicts:
+            text = i18n("The following packages conflicts:\n")
+            for pkg in pkg_conflicts.keys():
+                text += i18n("%1 conflicts with: [%2]\n", pkg, ", ".join(pkg_conflicts[pkg]))
+            text += i18n("\nRemove the conflicting packages from the system?")
+            return QMessageBox.warning(None, i18n("Conflict Error"), text, QMessageBox.Yes, QMessageBox.No) == QMessageBox.Yes
+
+        return True

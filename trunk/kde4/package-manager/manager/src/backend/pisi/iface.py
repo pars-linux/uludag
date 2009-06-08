@@ -167,3 +167,6 @@ class Iface(Singleton):
             return package.packageSize
         else:
             return package.installedSize
+
+    def getConflicts(self, packages):
+        return pisi.api.get_conflicts(packages + self.getExtras(packages))
