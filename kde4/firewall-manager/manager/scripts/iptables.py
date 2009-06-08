@@ -242,7 +242,7 @@ class BlockIncoming:
 
     def getParameters(self):
         parameters = [
-            ("port_exceptions", _(MSG_ALLOWED_PORTS), "editlist", {}),
+            ("port_exceptions", _(MSG_ALLOWED_PORTS), "editlist", {"format": "[0-9]+", "format_error": _(MSG_PORT_FORMAT)}),
         ]
         return parameters
 
@@ -278,7 +278,7 @@ class BlockOutgoing:
 
     def getParameters(self):
         parameters = [
-            ("port_exceptions", _(MSG_ALLOWED_PORTS), "editlist", {}),
+            ("port_exceptions", _(MSG_ALLOWED_PORTS), "editlist", {"format": "[0-9]+", "format_error": _(MSG_PORT_FORMAT)}),
         ]
         return parameters
 
