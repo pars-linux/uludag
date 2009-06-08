@@ -33,6 +33,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         QtGui.QItemDelegate.__init__(self, parent)
         self.rowAnimator = RowAnimator(parent.packageList.reset)
         self.defaultIcon = QtGui.QIcon(QtGui.QPixmap(DEFAULT_ICON))
+        self.animatable = True
 
     def paint(self, painter, option, index):
         if not index.isValid():
@@ -42,10 +43,10 @@ class PackageDelegate(QtGui.QItemDelegate):
         opt.state &= ~QtGui.QStyle.State_Selected
         opt.widget.style().drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, opt, painter, None)
 
-        if index.column() == 1:
-            self.paintInfoColumn(painter, option, index)
-        elif index.column() == 0:
+        if index.flags() & Qt.ItemIsUserCheckable and index.column() == 0:
             self.paintCheckBoxColumn(painter, option, index)
+        else:
+            self.paintInfoColumn(painter, option, index)
 
     def paintCheckBoxColumn(self, painter, option, index):
         opt = QtGui.QStyleOptionViewItemV4(option)
@@ -126,7 +127,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         if event.type() == QEvent.MouseButtonRelease and index.column() == 0:
             toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
             return model.setData(index, toggled, Qt.CheckStateRole)
-        if event.type() == QEvent.MouseButtonRelease and index.column() == 1:
+        if event.type() == QEvent.MouseButtonRelease and index.column() == 1 and self.animatable:
             self.rowAnimator.animate(index.row())
         return QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
 
@@ -136,3 +137,6 @@ class PackageDelegate(QtGui.QItemDelegate):
         else:
             width = ICON_SIZE if index.column() == 0 else 0
             return QSize(width, ROW_HEIGHT)
+
+    def setAnimatable(self, animatable):
+        self.animatable = animatable
