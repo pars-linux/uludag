@@ -242,7 +242,7 @@ class BlockIncoming:
 
     def getParameters(self):
         parameters = [
-            ("port-exceptions", _(MSG_ALLOWED_PORTS), "editlist", {"format": "[0-9]+", "format_warning": _(MSG_PORT_FORMAT)}),
+            ("port_exceptions", _(MSG_ALLOWED_PORTS), "editlist", {}),
         ]
         return parameters
 
@@ -252,7 +252,7 @@ class BlockIncoming:
         # Flush rules
         self.unloadModule()
         # Load rules
-        for port in parameters.get("port-exceptions", "").split():
+        for port in parameters.get("port_exceptions", "").split():
             if port.isdigit():
                 execRule("-A PARDUS-IN-MOD-BLOCK -p tcp -m multiport --dports %s -j ACCEPT" % port)
         # Block else...
@@ -278,7 +278,7 @@ class BlockOutgoing:
 
     def getParameters(self):
         parameters = [
-            ("port-exceptions", _(MSG_ALLOWED_PORTS), "editlist", {}),
+            ("port_exceptions", _(MSG_ALLOWED_PORTS), "editlist", {}),
         ]
         return parameters
 
@@ -288,7 +288,7 @@ class BlockOutgoing:
         # Flush rules
         self.unloadModule()
         # Load rules
-        for port in parameters.get("port-exceptions", "").split():
+        for port in parameters.get("port_exceptions", "").split():
             if port.isdigit():
                 execRule("-A PARDUS-OUT-MOD-BLOCK -p tcp -m multiport --dports %s -j DROP" % port)
                 execRule("-A PARDUS-FW-MOD-BLOCK -p tcp -m multiport --dports %s -j DROP" % port)
@@ -366,9 +366,9 @@ class InternetSharingModule:
 
 # Usable modules
 MODULES = {
-    "internet-sharing": InternetSharingModule,
-    "block-incoming": BlockIncoming,
-    "block-outgoing": BlockOutgoing,
+    "internet_sharing": InternetSharingModule,
+    "block_incoming": BlockIncoming,
+    "block_outgoing": BlockOutgoing,
 }
 
 # Network.Firewall model
@@ -439,6 +439,8 @@ def setState(state):
             startService(script(), auto_start=True)
             # Execute active modules
             for module in listModuleConfigs():
+                if module not in MODULES:
+                    continue
                 info = ModuleConfig(module).info
                 if info.get("state", "off") == "on":
                     inst = MODULES[module]()
@@ -450,6 +452,8 @@ def setState(state):
             stopService(script(), permanent=True)
             # Unload modules
             for module in listModuleConfigs():
+                if module not in MODULES:
+                    continue
                 inst = MODULES[module]()
                 inst.unloadModule(shutdown=True)
         # Notify clients
