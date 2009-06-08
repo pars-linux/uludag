@@ -85,11 +85,11 @@ class Iface(Singleton):
 
     def setRepositories(self,  repos):
         logger.debug("Re-setting repositories: %s" % repos)
-        self.link.System.Manager["pisi"].setRepositories(repos)
+        self.link.System.Manager["pisi"].setRepositories(repos, async=self.handler)
 
     def setRepoActivities(self, repos):
         logger.debug("Re-setting repo activities: %s" % repos)
-        self.link.System.Manager["pisi"].setRepoActivities(repos)
+        self.link.System.Manager["pisi"].setRepoActivities(repos, async=self.handler)
 
     def setCacheLimit(self, useCache, limit):
         logger.debug("Use cache: %s - change limit to: %s" % (useCache, limit))
