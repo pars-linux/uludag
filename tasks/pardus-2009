@@ -91,8 +91,8 @@
   * Yeni Network altyapısı (+)
   * Firewall-Manager (+)
   * User-Manager (+)
-  * Disk-Manager (-)
-  * Boot-Manager (-)
+  * Disk-Manager (+)
+  * Boot-Manager (+)
 
 * OpenOffice.org 3 (Gökçen Eraslan)
   * OpenOffice paketi (+)
