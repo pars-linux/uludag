@@ -28,6 +28,7 @@ class PackageModel(QAbstractTableModel):
     def __init__(self, parent=None):
         QAbstractTableModel.__init__(self, parent)
         self.iface = backend.pm.Iface()
+        self._flags = Qt.ItemIsSelectable | Qt.ItemIsEnabled | Qt.ItemIsUserCheckable
         self.resetCachedInfos()
         self.cached_package = None
         self.packages = []
@@ -36,7 +37,10 @@ class PackageModel(QAbstractTableModel):
         return len(self.packages)
 
     def columnCount(self, index=QModelIndex()):
-        return 2
+        if self._flags & Qt.ItemIsUserCheckable:
+            return 2
+        else:
+            return 1
 
     def data(self, index, role=Qt.DisplayRole):
         if not index.isValid():
@@ -71,11 +75,16 @@ class PackageModel(QAbstractTableModel):
         else:
             return False
 
-    def flags(self, index):
-        if index.isValid() and index.column() == 0:
-            return Qt.ItemIsEnabled | Qt.ItemIsUserCheckable | QAbstractTableModel.flags(self, index)
+    def setCheckable(self, checkable):
+        if checkable:
+            self._flags |= Qt.ItemIsUserCheckable
         else:
-            return Qt.ItemIsEnabled
+            self._flags &= ~Qt.ItemIsUserCheckable
+
+    def flags(self, index):
+        if not index.isValid():
+            return 0
+        return self._flags
 
     def setPackages(self, packages):
         self.cached_package = None

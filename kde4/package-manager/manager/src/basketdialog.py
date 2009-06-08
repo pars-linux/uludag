@@ -38,6 +38,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         packageList.setAlternatingRowColors(True)
         packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
         packageList.model().setFilterRole(GroupRole)
+        packageList.itemDelegate().setAnimatable(False)
 
     def __updateList(self, packageList, packages):
         packageList.model().setFilterPackages(packages)
@@ -50,6 +51,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def initExtraList(self):
         self.__initList(self.extraList)
         self.extraList.model().setSourceModel(PackageModel(self))
+        self.extraList.model().sourceModel().setCheckable(False)
 
     def initPackageList(self):
         self.__initList(self.packageList)
