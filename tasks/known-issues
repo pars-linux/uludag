@@ -3,9 +3,6 @@
     - Don't mount rootfs by giving 'auto' as type, should be fixed in trunk, try it,
     - s2disk problems/support,
 
-* Pulseaudio/Sound (Ozan Çağlayan)
-    - PA can't unmute the ALSA sink when it's shutdown with the master channel muted,
-
 * KDE
     - Some Turkish characters like İ,Ü,etc. are rendered as I, U even the translations
     are correct,
