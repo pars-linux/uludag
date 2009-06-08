@@ -301,7 +301,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             dialog.edit.setFilesystem(fsType)
             dialog.edit.setOptions(options)
         else:
-            dialog.setAutoMount(False)
+            dialog.edit.setAutoMount(False)
             if widget.getId() in self.mounted_devices:
                 dialog.edit.setMountPoint(self.mounted_devices[widget.getId()])
             dialog.edit.setFilesystem(getFSType(widget.getId()))
