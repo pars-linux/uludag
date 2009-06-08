@@ -263,12 +263,9 @@ class Device:
         flag = parted.PARTITION_LVM
         pvs = []
         
-        for p in self.getPartitions():
-            if p._parted_type == lvmPartitionType:
-                ped = p.getPartition()
-                #Check again
-                if ped.is_flag_available(flag) and ped.get_flag(flag):
-                    pvs.append(p)
+        for part in self.getPartitions():
+            if self.isLVMPartition(part):
+                pvs.append(part)
         return pvs
 
     def numberOfLVMPartitions(self):
