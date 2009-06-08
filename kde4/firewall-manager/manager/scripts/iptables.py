@@ -8,6 +8,59 @@ MSG_CONNECTION_NAME = {
     "tr": "Internet Paylaşımı",
 }
 
+MSG_ALLOWED_PORTS = {
+    "en": "Allowed Ports",
+    "tr": "İzinli Portlar",
+}
+
+MSG_PORT_FORMAT = {
+    "en": "Ports must be numbers only.",
+    "tr": "Portlar sadece numaralardan oluşabilir",
+}
+
+MSG_GATEWAY_HOME = {
+    "en": "Gate to Home Network",
+    "tr": "Ev Ağına Çıkış",
+}
+
+MSG_GATEWAY_INTERNET = {
+    "en": "Gate to Internet",
+    "tr": "Internet'e Çıkış",
+}
+
+MSG_ = {
+    "en": "",
+    "tr": "",
+}
+
+TITLE_BLOCK_INCOMING = {
+    "en": "Block Incoming Connections",
+    "tr": "Gelen Bağlantıları Engelle",
+}
+DESCRIPTION_BLOCK_INCOMING = {
+    "en": "Blocks all incoming connections to the computer. Exceptions can be set from configuration dialog.",
+    "tr": "Bilgisayara gelen tüm bağlantıları engeller. İstisnalar ayarlar penceresinden belirlenebilir.",
+}
+
+TITLE_BLOCK_OUTGOING = {
+    "en": "Block Outgoing Connections",
+    "tr": "Giden Bağlantıları Engelle",
+}
+DESCRIPTION_BLOCK_OUTGOING = {
+    "en": "Blocks all outgoing connections. Exceptions can be set from configuration dialog.",
+    "tr": "Dışarı yapılan tüm bağlantıları engeller. İstisnalar ayarlar penceresinden belirlenebilir.",
+}
+
+TITLE_INTERNET_SHARING = {
+    "en": "Internet Sharing",
+    "tr": "Internet Paylaşımı",
+}
+DESCRIPTION_INTERNET_SHARING = {
+    "en": "Allows computers in your local network to connect Internet through this computer.",
+    "tr": "Yerel ağınızdaki bilgisayarların, bu bilgisayarı kullanarak Internet'e bağlanmalarını sağlar.",
+}
+
+
 # Don't touch below, if you don't know what you're doing.
 
 # Module configuration settings and templates
@@ -20,12 +73,12 @@ IPTABLES_RULES = {
         '-P FORWARD DROP',
         '-P OUTPUT ACCEPT',
         '-N PARDUS-IN',                         # Module container table for INPUT
-        '-N PARDUS-IN-MOD-SERVING',             # Table for ContentServingModule rules
+        '-N PARDUS-IN-MOD-BLOCK',               # Table for BlockIncoming rules
         '-N PARDUS-FW',                         # Module container table for FORWARD
         '-N PARDUS-FW-MOD-SHARING',             # Table for InternetSharingModule rules
-        '-N PARDUS-FW-MOD-BLOCK',               # Table for AccessRestrictionModule rules
+        '-N PARDUS-FW-MOD-BLOCK',               # Table for BlockOutgoing rules
         '-N PARDUS-OUT',                        # Module container table for OUTPUT
-        '-N PARDUS-OUT-MOD-BLOCK',              # Table for AccessRestrictionModule rules
+        '-N PARDUS-OUT-MOD-BLOCK',              # Table for BlockOutgoing rules
         '-A INPUT -i lo -j ACCEPT',             # Accept local
         '-A FORWARD -o lo -j ACCEPT',
         '-A INPUT -m state --state INVALID -j DROP',
@@ -33,7 +86,7 @@ IPTABLES_RULES = {
         '-A INPUT -j PARDUS-IN',                # Jump into container tables
         '-A FORWARD -j PARDUS-FW',
         '-A OUTPUT -j PARDUS-OUT',
-        '-A PARDUS-IN -j PARDUS-IN-MOD-SERVING', # Jump into module tables
+        '-A PARDUS-IN -j PARDUS-IN-MOD-BLOCK' , # Jump into module tables
         '-A PARDUS-FW -j PARDUS-FW-MOD-BLOCK',
         '-A PARDUS-FW -j PARDUS-FW-MOD-SHARING',
         '-A PARDUS-OUT -j PARDUS-OUT-MOD-BLOCK',
@@ -177,19 +230,19 @@ def makeDHCPConf():
 
 # Modules
 
-class ContentServingModule:
+class BlockIncoming:
     def __init__(self):
         self.parametersLast = {}
 
     def getInfo(self):
-        title = "Limited Content Serving"
-        description = "Allows serving content to other computers in LAN or WAN with restrictions."
+        title = _(TITLE_BLOCK_INCOMING)
+        description = _(DESCRIPTION_BLOCK_INCOMING)
         icon = "network-server"
         return (title, description, icon)
 
     def getParameters(self):
         parameters = [
-            ("service-ports", "Service ports", "editlist", {}),
+            ("port-exceptions", _(MSG_ALLOWED_PORTS), "editlist", {"format": "[0-9]+", "format_warning": _(MSG_PORT_FORMAT)}),
         ]
         return parameters
 
@@ -199,33 +252,33 @@ class ContentServingModule:
         # Flush rules
         self.unloadModule()
         # Load rules
-        for port in parameters.get("service-ports", "").split():
+        for port in parameters.get("port-exceptions", "").split():
             if port.isdigit():
-                execRule("-A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports %s -j ACCEPT" % port)
+                execRule("-A PARDUS-IN-MOD-BLOCK -p tcp -m multiport --dports %s -j ACCEPT" % port)
         # Block else...
-        execRule("-A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports 0:1024 -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REJECT --reject-with icmp-port-unreachable")
-        execRule("-A PARDUS-IN-MOD-SERVING -p udp -m multiport --dports 0:1024 -j REJECT --reject-with icmp-port-unreachable")
-        execRule("-A PARDUS-IN-MOD-SERVING -j REJECT --reject-with icmp-host-prohibited")
+        execRule("-A PARDUS-IN-MOD-BLOCK -p tcp -m multiport --dports 0:1024 -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REJECT --reject-with icmp-port-unreachable")
+        execRule("-A PARDUS-IN-MOD-BLOCK -p udp -m multiport --dports 0:1024 -j REJECT --reject-with icmp-port-unreachable")
+        execRule("-A PARDUS-IN-MOD-BLOCK -j REJECT --reject-with icmp-host-prohibited")
 
     def unloadModule(self, shutdown=False):
         if not shutdown:
             # Unload rules
-            execRule("-F PARDUS-IN-MOD-SERVING")
+            execRule("-F PARDUS-IN-MOD-BLOCK")
 
 
-class AccessRestrictionModule:
+class BlockOutgoing:
     def __init__(self):
         self.parametersLast = {}
 
     def getInfo(self):
-        title = "Access Restriction"
-        description = "Allows blocking access to services on other computers in LAN or WAN."
+        title = _(TITLE_BLOCK_OUTGOING)
+        description = _(DESCRIPTION_BLOCK_INCOMING)
         icon = "security-medium"
         return (title, description, icon)
 
     def getParameters(self):
         parameters = [
-            ("service-ports", "Service ports", "editlist", {}),
+            ("port-exceptions", _(MSG_ALLOWED_PORTS), "editlist", {}),
         ]
         return parameters
 
@@ -235,7 +288,7 @@ class AccessRestrictionModule:
         # Flush rules
         self.unloadModule()
         # Load rules
-        for port in parameters.get("service-ports", "").split():
+        for port in parameters.get("port-exceptions", "").split():
             if port.isdigit():
                 execRule("-A PARDUS-OUT-MOD-BLOCK -p tcp -m multiport --dports %s -j DROP" % port)
                 execRule("-A PARDUS-FW-MOD-BLOCK -p tcp -m multiport --dports %s -j DROP" % port)
@@ -252,8 +305,8 @@ class InternetSharingModule:
         self.parametersLast = {}
 
     def getInfo(self):
-        title = "Internet Sharing"
-        description = "Allows blocking access to services on other computers in LAN or WAN."
+        title = _(TITLE_INTERNET_SHARING)
+        description = _(DESCRIPTION_INTERNET_SHARING)
         icon = "network-workgroup"
         return (title, description, icon)
 
@@ -269,8 +322,8 @@ class InternetSharingModule:
             "choose": "\n".join(findInterfaces())
         }
         parameters = [
-            ("device-input", "Gate to Internet", "combo", options),
-            ("device-output", "Gate to Home Network", "combo", options),
+            ("device-input", _(MSG_GATEWAY_INTERNET), "combo", options),
+            ("device-output", _(MSG_GATEWAY_HOME), "combo", options),
         ]
         return parameters
 
@@ -314,8 +367,8 @@ class InternetSharingModule:
 # Usable modules
 MODULES = {
     "internet-sharing": InternetSharingModule,
-    "content-serving": ContentServingModule,
-    "access-restriction": AccessRestrictionModule,
+    "block-incoming": BlockIncoming,
+    "block-outgoing": BlockOutgoing,
 }
 
 # Network.Firewall model
