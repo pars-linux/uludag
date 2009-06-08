@@ -580,6 +580,7 @@
         <Package>jbigkit</Package>
         <Package>jasper</Package>
         <Package>jack-audio-connection-kit</Package>
+        <Package>iwlwifi5150-ucode</Package>
         <Package>iwlwifi5000-ucode</Package>
         <Package>iwlwifi4965-ucode</Package>
         <Package>iwlwifi3945-ucode</Package>
