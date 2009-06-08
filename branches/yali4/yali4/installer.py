@@ -45,7 +45,7 @@ import yali4.partitiontype as parttype
 import yali4.partitionrequest as request
 from yali4.partitionrequest import partrequests
 from yali4.parteddata import *
-
+from yali4.filesystem import get_filesystem as fs
 # gui
 from yali4.gui.YaliDialog import Dialog, Yimirta
 from yali4.gui.YaliDialog import WarningDialog, WarningWidget, InformationWindow
@@ -334,7 +334,7 @@ class Yali:
 
         p = dev.addPartition(None,
                              parttype.root.parted_type,
-                             parttype.root.filesystem,
+                             fs("lvm"),
                              dev.getFreeMB(),
                              parttype.root.parted_flags)
         partition = dev.getPartition(p.num) # get partition.Partition
@@ -411,7 +411,7 @@ class Yali:
             newStart = part.getStart()
             _newPart = dev.addPartition(part._partition,
                                         ptype,
-                                        parttype.root.filesystem,
+                                        fs("lvm"),
                                         newPartSize,
                                         parttype.root.parted_flags)
             newPart = dev.getPartition(_newPart.num)
