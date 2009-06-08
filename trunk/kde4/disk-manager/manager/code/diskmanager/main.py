@@ -35,7 +35,7 @@ from diskmanager.utils import getFSType
 from diskmanager.item import ItemListWidgetItem, ItemWidget
 
 # Edit widget
-from diskmanager.edit import EditWidget
+from diskmanager.pagedialog import PageDialog
 
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
@@ -291,38 +291,29 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Edit button clicked, show edit box.
         """
         widget = self.sender()
-        from PyKDE4.kdeui import KPageDialog, KPageWidgetItem
 
-        # TODO: Move this into another module ASAP
-
-        dialog = KPageDialog(self);
-        dialog.setFaceType(KPageDialog.Tabbed)
-        dialog.setCaption(kdecore.i18n("Settings"))
-
-        page_widget = EditWidget(dialog)
-        page_item = KPageWidgetItem(page_widget, kdecore.i18n("Settings"))
+        dialog = PageDialog(self);
 
         if widget.getId() in self.device_entries:
             path, fsType, options = self.iface.getEntry(self.device_entries[widget.getId()])
-            page_widget.setAutoMount(True)
-            page_widget.setMountPoint(path)
-            page_widget.setFilesystem(fsType)
-            page_widget.setOptions(options)
+            dialog.edit.setAutoMount(True)
+            dialog.edit.setMountPoint(path)
+            dialog.edit.setFilesystem(fsType)
+            dialog.edit.setOptions(options)
         else:
-            page_widget.setAutoMount(False)
+            dialog.setAutoMount(False)
             if widget.getId() in self.mounted_devices:
-                page_widget.setMountPoint(self.mounted_devices[widget.getId()])
-            page_widget.setFilesystem(getFSType(widget.getId()))
-            page_widget.slotResetOptions()
+                dialog.edit.setMountPoint(self.mounted_devices[widget.getId()])
+            dialog.edit.setFilesystem(getFSType(widget.getId()))
+            dialog.edit.slotResetOptions()
 
-        dialog.addPage(page_item)
         if dialog.exec_():
             device = widget.getId()
             if widget.getId() in self.device_entries:
                 device = self.device_entries[device]
             try:
-                if page_widget.getAutoMount():
-                        self.iface.addEntry(device, page_widget.getMountPoint(), page_widget.getFilesystem(), page_widget.getOptions())
+                if dialog.edit.getAutoMount():
+                        self.iface.addEntry(device, dialog.edit.getMountPoint(), dialog.edit.getFilesystem(), dialog.edit.getOptions())
                 else:
                     self.iface.removeEntry(device)
             except Exception, e:
