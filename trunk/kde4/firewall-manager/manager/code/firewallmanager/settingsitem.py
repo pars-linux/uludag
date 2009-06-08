@@ -50,6 +50,10 @@ class SettingsItemWidget(QtGui.QWidget, Ui_SettingsItemWidget):
                 for item in value.split("\n"):
                     name, label = item.split("\t")
                     self.comboItems.addItem(label, QtCore.QVariant(name))
+            elif key == "format" and self.type in ["editlist", "text"]:
+                editor = self.listItems.lineEdit()
+                validator = QtGui.QRegExpValidator(QtCore.QRegExp(value), self)
+                editor.setValidator(validator)
 
     def setValue(self, value):
         value = unicode(value)
