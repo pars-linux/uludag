@@ -76,6 +76,9 @@ consts.source_dir = join(consts.mnt_dir, "cdrom")
 # dbus socket path
 consts.dbus_socket_file = join(consts.target_dir, "var/run/dbus/system_bus_socket")
 
+consts.vg_name = "pardusVolumeGroup"
+consts.lv_name = "pardusLogicalVolume"
+
 # swap file path
 consts.swap_file_name = ".swap"
 consts.swap_file_path = join(consts.target_dir, 
