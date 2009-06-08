@@ -56,7 +56,7 @@ class RootPartitionType(PartitionType):
     filesystem = fs("ext4")
     mountoptions = "noatime"
     parted_type = parted.PARTITION_PRIMARY
-    parted_flags = [ parted.PARTITION_BOOT, parted.PARTITION_LVM  ]
+    parted_flags = [ parted.PARTITION_BOOT ]
     label = "PARDUS_ROOT"
     desc = _("as Pardus System Files (mandatory)")
 
@@ -102,6 +102,6 @@ class ArchivePartitionType(PartitionType):
 root = RootPartitionType()
 home = HomePartitionType()
 swap = SwapPartitionType()
-lvm = LVMPartitionType()
-raid = RAIDPartitionType()
+#lvm = LVMPartitionType()
+#raid = RAIDPartitionType()
 archive = ArchivePartitionType()
