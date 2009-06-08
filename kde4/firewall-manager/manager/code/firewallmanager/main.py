@@ -34,9 +34,6 @@ from firewallmanager.item import ItemListWidgetItem, ItemWidget
 # Service widget
 from firewallmanager.service import ServiceWidget
 
-# Settings item widget
-from firewallmanager.settingsitem import SettingsItemWidget
-
 # Page Dialog
 from firewallmanager.pagedialog import PageDialog
 

@@ -9,13 +9,8 @@ MSG_CONNECTION_NAME = {
 }
 
 MSG_ALLOWED_PORTS = {
-    "en": "Allowed Ports",
-    "tr": "İzinli Portlar",
-}
-
-MSG_PORT_FORMAT = {
-    "en": "Ports must be numbers only.",
-    "tr": "Portlar sadece numaralardan oluşabilir",
+    "en": "Allowed Port Numbers",
+    "tr": "İzinli Port Numaraları",
 }
 
 MSG_GATEWAY_HOME = {
@@ -242,7 +237,7 @@ class BlockIncoming:
 
     def getParameters(self):
         parameters = [
-            ("port_exceptions", _(MSG_ALLOWED_PORTS), "editlist", {"format": "[0-9]+", "format_error": _(MSG_PORT_FORMAT)}),
+            ("port_exceptions", _(MSG_ALLOWED_PORTS), "editlist", {"format": "[0-9]{1,5}"}),
         ]
         return parameters
 
@@ -278,7 +273,7 @@ class BlockOutgoing:
 
     def getParameters(self):
         parameters = [
-            ("port_exceptions", _(MSG_ALLOWED_PORTS), "editlist", {"format": "[0-9]+", "format_error": _(MSG_PORT_FORMAT)}),
+            ("port_exceptions", _(MSG_ALLOWED_PORTS), "editlist", {"format": "[0-9]{1,5}"}),
         ]
         return parameters
 
