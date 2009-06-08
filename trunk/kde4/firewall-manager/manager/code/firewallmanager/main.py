@@ -37,6 +37,9 @@ from firewallmanager.service import ServiceWidget
 # Settings item widget
 from firewallmanager.settingsitem import SettingsItemWidget
 
+# Page Dialog
+from firewallmanager.pagedialog import PageDialog
+
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent, embed=False):
@@ -263,50 +266,17 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Edit button clicked, show configuration dialog.
         """
         widget = self.sender()
-        from PyKDE4.kdeui import KPageDialog, KPageWidgetItem
-
-        # TODO: Move this into another module ASAP
-
-        dialog = KPageDialog(self);
-        dialog.setFaceType(KPageDialog.Tabbed)
-        dialog.setCaption(kdecore.i18n("Settings"))
-
-        class MyWidget(QtGui.QWidget):
-            def __init__(cls, parent, parameters=[], saved={}):
-                QtGui.QWidget.__init__(cls, parent)
-                layout = QtGui.QVBoxLayout(cls)
-                cls.widgets = {}
-                for name, label, type_, options in parameters:
-                    widget = SettingsItemWidget(cls, name, type_)
-                    widget.setTitle(label)
-                    widget.setOptions(options)
-                    if name in saved:
-                        widget.setValue(saved[name])
-                    cls.widgets[name] = widget
-                    layout.addWidget(widget)
-
-                cls.item = QtGui.QSpacerItem(10, 10, QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Expanding)
-                layout.addSpacerItem(cls.item)
-
-            def getValues(cls):
-                values = {}
-                for name, widget in cls.widgets.iteritems():
-                    values[name] = widget.getValue()
-                return values
 
         parameters = self.iface.moduleParameters(widget.getId())
+        savedParameters = self.iface.getModuleParameters(widget.getId())
         if not parameters:
             return
 
-        savedParameters = self.iface.getModuleParameters(widget.getId())
+        dialog = PageDialog(self, parameters, savedParameters);
 
-        page_widget = MyWidget(dialog, parameters, savedParameters)
-        page_item = KPageWidgetItem(page_widget, kdecore.i18n("Settings"))
-
-        dialog.addPage(page_item)
         if dialog.exec_():
             try:
-                self.iface.setModuleParameters(widget.getId(), page_widget.getValues())
+                self.iface.setModuleParameters(widget.getId(), dialog.getValues())
             except Exception, e:
                 if "Comar.PolicyKit" in e._dbus_error_name:
                     kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
