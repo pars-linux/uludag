@@ -32,6 +32,8 @@ from yali4.gui.installdata import *
 import yali4.gui.context as ctx
 import yali4.localeutils
 import yali4.sysutils
+import yali4.lvmutils
+import yali4.lvm
 import yali4.fstab
 
 # pisi base
@@ -263,13 +265,24 @@ class Yali:
             #    rootWidget.resizableDisks.append(dev)
             for part in dev.getOrderedPartitionList():
                 ctx.debugger.log("Partition %s found on disk %s, formatted as %s" % (part.getPath(), dev.getPath(), part.getFSName()))
-                if part.isFreespace() and (part.isLogical() or dev.primaryAvailable()):
-                    ctx.debugger.log(" - This partition is free")
-                    if part.getMB() > ctx.consts.min_root_size:
-                        ctx.debugger.log(" - Usable size for this partition is %.2f MB" % part.getMB())
-                        rootWidget.freeSpacePartitions.append({"partition":part,"newSize":part.getMB()})
-                        if dev not in rootWidget.freeSpaceDisks:
-                            rootWidget.freeSpaceDisks.append(dev)
+                if (part.isLogical() or dev.primaryAvailable()):
+                    if part.isFreespace():
+                       ctx.debugger.log(" - This partition is free")
+                       if part.getMB() > ctx.consts.min_root_size:
+                           ctx.debugger.log(" - Usable size for this partition is %.2f MB" % part.getMB())
+                           rootWidget.freeSpacePartitions.append({"partition":part,"newSize":part.getMB()})
+                           if dev not in rootWidget.freeSpaceDisks:
+                               rootWidget.freeSpaceDisks.append(dev)
+                    elif part.isLvm():
+                        ctx.debugger.log(" - This partiton is Lvm Physical Volume")
+                        rootWidget.lvmPartitions.append({"partition":part,"newSize":part.getMB()})
+                        if dev not in rootWidget.lvmSpaceDisks:
+                               rootWidget.lvmSpaceDisks.append(dev)
+                    elif part.isRaid():
+                        ctx.debugger.log(" - This partiton is Raid Member")
+                        rootWidget.raidPartitions.append({"partition":part,"newSize":part.getMB()})
+                        if dev not in rootWidget.raidSpaceDisks:
+                               rootWidget.raidSpaceDisks.append(dev)
                 elif part.isResizable():
                     minSize = part.getMinResizeMB()
                     possibleFreeSize = part.getMB() - minSize
@@ -287,7 +300,9 @@ class Yali:
         # Sort by size..
         rootWidget.resizablePartitions.sort(sortBySize)
         rootWidget.freeSpacePartitions.sort(sortBySize)
-
+        rootWidget.lvmSpacePartitions.sort(sortBySize)
+        rootWidget.raidSpacePartitions.sort(sortBySize)
+        
         self.info.hide()
 
     def getResizableFirstPartition(self):
@@ -322,17 +337,25 @@ class Yali:
                              parttype.root.filesystem,
                              dev.getFreeMB(),
                              parttype.root.parted_flags)
-        p = dev.getPartition(p.num) # get partition.Partition
+        partition = dev.getPartition(p.num) # get partition.Partition
 
         # create the partition
         dev.commit()
         ctx.mainScreen.processEvents()
-
+        
+        #Use LVM
+        physicalVolume = PhysicalVolume(partition)
+        physicalVolume.create()
+        volumeGroup = VolumeGroup(ctx.consts.vg_name, pvs=[physicalVolume])
+        volumeGroup.create()
+        logicalVolume = LogicalVolume(ctx.consts.lv_name, volumeGroup, volumeGroup.size)
+        logicalVolume.create()
+        
         # make partition requests
-        ctx.partrequests.append(request.MountRequest(p, parttype.root))
-        ctx.partrequests.append(request.FormatRequest(p, parttype.root))
-        ctx.partrequests.append(request.LabelRequest(p, parttype.root))
-        ctx.partrequests.append(request.SwapFileRequest(p, parttype.root))
+        ctx.partrequests.append(request.MountRequest(logicalVolume, parttype.root))
+        ctx.partrequests.append(request.FormatRequest(logicalVolume, parttype.root))
+        ctx.partrequests.append(request.LabelRequest(logicalVolume, parttype.root))
+        ctx.partrequests.append(request.SwapFileRequest(logicalVolume, parttype.root))
 
         time.sleep(2)
 
