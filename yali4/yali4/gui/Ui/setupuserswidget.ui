@@ -137,6 +137,9 @@
      <property name="text">
       <string>Give administrator privileges to this user</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
    <item row="10" column="1" colspan="4">
@@ -253,6 +256,9 @@
    </item>
    <item row="6" column="4">
     <widget class="QCheckBox" name="noPass">
+     <property name="statusTip">
+      <string>Not recommended</string>
+     </property>
      <property name="text">
       <string>Do not ask any password to this user</string>
      </property>
