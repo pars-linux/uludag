@@ -411,7 +411,13 @@ class Device:
             fs = yali4.filesystem.get_filesystem(fs)
 
         if isinstance(fs, yali4.filesystem.FileSystem):
-            fs = fs.getFSType()
+            fs = None
+            if fs == "lvm":
+                flags.append(parted.PARTITION_LVM)
+            elif fs == "raid":
+                flags.append(parted.PARTITION_RAID)
+            else:
+                fs = fs.getFSType()
         else:
             fs = None
 
