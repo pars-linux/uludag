@@ -124,12 +124,12 @@
   * Kullanıcı Eklerken polkit için parola sorma desteği (+)
   * Kullanıcı Ekle ekranı iyileştirmeleri .8714 .7658 (+)
   * NTFS Kontrolü daha insancıl olsun (+)
+  * Klavye kullanarak kurulum desteği (+)
   * Swap sorunsalı .9233 (+)
   * Python 2.6 geçişi (+)
   * Btrfs desteği (+)
   * Ext4 desteği (+)
   * Düşük çözünürlüklü ekranlar için kullanılabilir arayüz değişiklikleri (/50)
-  * Klavye kullanarak kurulum desteği (/30)
   * Ağ üzerinden kurulum .2095 (/30)
 
 * Yalı4 (Mete Alpaslan)
