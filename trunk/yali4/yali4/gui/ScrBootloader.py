@@ -138,6 +138,6 @@ loader.
             ctx.installData.bootLoaderOption = B_INSTALL_MBR
         else:
             ctx.installData.bootLoaderOption = B_INSTALL_SMART
-
+        ctx.installData.bootLoaderDetectOthers = self.ui.autoAddOthers.isChecked()
         return True
 

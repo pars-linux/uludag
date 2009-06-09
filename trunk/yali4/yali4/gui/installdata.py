@@ -39,6 +39,7 @@ class InstallData:
     bootLoaderDev = None
     bootLoaderOption = B_INSTALL_SMART
     bootLoaderOptionalDev = None
+    bootLoaderDetectOthers = True
     rescuePartition = None
     orderedDiskList = []
     repoAddr = None
