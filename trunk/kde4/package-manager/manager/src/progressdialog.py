@@ -37,7 +37,7 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         if operation in [i18n("configuring"),  i18n("extracting")]:
             self.disableCancel()
 
-        operationInfo = i18n('%1 %2', package, operation)
+        operationInfo = i18n('%1 %2', operation, package)
         self.operationInfo.setText(operationInfo)
 
     def updateStatus(self, packageNo, totalPackages, operation):
