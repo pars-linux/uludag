@@ -72,7 +72,6 @@ class DiskList(QtGui.QWidget):
 
         self.tabWidget = QtGui.QTabWidget(self)
         self.tabWidget.setAutoFillBackground(False)
-        self.tabWidget.setFocusPolicy(Qt.NoFocus)
 
         self.partEdit = PartEdit(partitionTypes)
         self.partEdit.ui.fileSystem.setVisible(False)
@@ -548,8 +547,6 @@ class DiskItem(QtGui.QWidget):
         partition = QtGui.QRadioButton("%s%s\n%s %s" % (name, _name, data.getSizeStr(), _mpoint), self.diskGroup)
 
         # Modify partition
-        partition.setFocusPolicy(Qt.NoFocus)
-
         if data._parted_type == parteddata.freeSpaceType:
             partition.setStyleSheet("background-image:none;")
         else:

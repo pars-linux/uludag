@@ -13,7 +13,7 @@
          + Password recovery
  %30 / Network Install #2095
          > Needs a network settings screen
- %30 / Fix Keyboard shortcuts problems
+     + Fix Keyboard shortcuts problems
      + Improve user settings screen #8714 #7658
    %40 Fix low resolution screen problems
      + Fix warning and info messages for new theme
