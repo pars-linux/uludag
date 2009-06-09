@@ -26,11 +26,11 @@ import localedata
 import desktopparser
 
 class ApplicationItem(QtGui.QListWidgetItem):
-    def __init__(self, genericName, name, icon, command, parent=None):
+    def __init__(self, name, comment, icon, command, parent=None):
         QtGui.QListWidgetItem.__init__(self, parent)
 
-        self.genericName = genericName
         self.name = name
+        self.comment = comment
         self.icon = icon
         self.command = command
 
@@ -42,37 +42,42 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         self.initialize()
 
     def initialize(self):
-        self.appName.setText(self.item.genericName)
-        self.appSummary.setText(self.item.genericName)
+        self.appComment.setText(self.item.comment)
+        self.appName.setText(self.item.name)
         self.appIcon.setPixmap(KIcon(self.item.icon).pixmap(32))
+        self.appName.hide()
+
+    def enterEvent(self, event):
+        self.appName.show()
+
+    def leaveEvent(self, event):
+        self.appName.hide()
 
 class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
     def __init__(self, operation, parent=None):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
         self.iface = backend.pm.Iface()
-        self.parser = desktopparser.DesktopParser()
         self.lang = localedata.getKDELocale()
         self.operation = operation
 
     def setDesktopFiles(self, desktopFiles):
+        self.appList.clear()
         for desktopFile in desktopFiles:
             self.addApplication(desktopFile)
 
-    def __getValue(self, name):
-        try:
-            value = self.parser.get_locale('Desktop Entry', '%s[%s]' % (name, self.lang), '')
-        except:
-            value = self.parser.get_locale('Desktop Entry', name, '')
-        return value
-
     def addApplication(self, desktopFile):
-        self.parser.read("/%s" % str(desktopFile))
-        item = ApplicationItem(self.__getValue("Comment"),
-                               self.__getValue("Name"),
-                               self.__getValue("Icon"),
-                               self.__getValue("Exec"),
-                               self.appList)
+        parser = desktopparser.DesktopParser()
+        parser.read("/%s" % str(desktopFile))
+
+        icon = parser.safe_get_locale('Desktop Entry', 'Icon', None)
+        command = parser.safe_get_locale('Desktop Entry', 'Exec', None)
+        name = unicode(parser.safe_get_locale('Desktop Entry', 'Name', self.lang))
+        comment = unicode(parser.safe_get_locale('Desktop Entry', 'Comment', self.lang))
+        if not comment:
+            comment = unicode(parser.safe_get_locale('Desktop Entry', 'GenericName', self.lang))
+
+        item = ApplicationItem(name, comment, icon, command, self.appList)
         item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
         item.setSizeHint(QSize(0,48))
         itemWidget = ApplicationItemWidget(item, self)

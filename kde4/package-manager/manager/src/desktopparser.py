@@ -97,6 +97,20 @@ class DesktopParser(ConfigParser):
         """
         return self.get(section, _localize(option, locale))
 
+    def safe_get_locale(self, section, option, locale):
+        """
+        @param section: section name
+        @param option: an option
+        @param locale: a locale
+        """
+        try:
+            return self.get_locale(section, option, locale)
+        except:
+            try:
+                return self.get_locale(section, option, None)
+            except:
+                return ""
+
     def get_string_list(self, section, option):
         """
         @param section: section name
