@@ -80,8 +80,8 @@ class OperationManager(QObject):
     def handler(self, package, signal, args):
 
         if signal != "progress":
-            logger.debug("Signal: %s" % signal)
-            logger.debug("Args: %s" % args)
+            logger.debug("Signal: %s" % str(signal))
+            logger.debug("Args: %s" % str(args))
 
         # FIXME: manager.py should just send either a status or signal
         if signal in  ["status", "progress"]:
