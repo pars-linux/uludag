@@ -117,6 +117,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.initialize()
 
     def switchState(self, state):
+        self.searchLine.clear()
         self.state.setState(state)
         self.setActionButton()
         self.state.stateAction()
