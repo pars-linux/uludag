@@ -84,6 +84,7 @@ class Widget(QtGui.QWidget):
         self.connect(self.ui.releaseNotes,  SIGNAL("clicked()"),    self.showReleaseNotes)
 
         self._terminal = QTermWidget.QTermWidget()
+        self._terminal.sendText("export TERM='xterm'\nclear\n")
         self.terminal = None
         self.tetris = None
 
