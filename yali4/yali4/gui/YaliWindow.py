@@ -80,6 +80,7 @@ class Widget(QtGui.QWidget):
         self.connect(self.ui.toggleHelp,    SIGNAL("clicked()"),    self.slotToggleHelp)
         self.connect(self.ui.releaseNotes,  SIGNAL("clicked()"),    self.showReleaseNotes)
 
+        self._terminal = QTermWidget.QTermWidget()
         self.terminal = None
 
     def updateStyle(self):
@@ -110,8 +111,7 @@ class Widget(QtGui.QWidget):
 
     def toggleConsole(self):
         if not self.terminal:
-            _terminal = QTermWidget.QTermWidget()
-            self.terminal = Dialog(_('Terminal'), _terminal, self, True, QtGui.QKeySequence(Qt.Key_F11))
+            self.terminal = Dialog(_('Terminal'), self._terminal, self, True, QtGui.QKeySequence(Qt.Key_F11))
             self.terminal.resize(700,500)
         self.terminal.exec_()
 
