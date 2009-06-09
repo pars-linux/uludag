@@ -161,7 +161,7 @@ class Iface(Singleton):
 
     def getRepositories(self):
         repos = []
-        for repo in pisi.api.list_repos():
+        for repo in pisi.api.list_repos(only_active=False):
             repos.append((repo, self.rdb.get_repo_url(repo)))
         return repos
 
