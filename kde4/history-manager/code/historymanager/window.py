@@ -271,6 +271,5 @@ class MainManager(QtGui.QWidget):
         return QtCore.QObject.eventFilter(self, obj, event)
 
     def enableButtons(self, true):
-        for val in ["newSnapshotPB", "lw", "editBox"]:
-            exec('self.ui.%s.setEnabled(%s)' % (val, true))
+        self.ui.newSnapshotPB.setEnabled(true)
 
