@@ -77,9 +77,6 @@ class Runner:
         QObject.connect(prevScreenShortCut, SIGNAL("activated()"), self._window.slotBack)
         QObject.connect(nextScreenShortCut, SIGNAL("activated()"), self._window.slotNext)
 
-        # yimirtaShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F5),self._window)
-        # QObject.connect(yimirtaShortCut, SIGNAL("activated()"), ctx.yali.toggleYimirta)
-
         # visual debugger
         ctx.debugger = Debugger()
 

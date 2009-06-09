@@ -45,7 +45,7 @@ from yali4.partitionrequest import partrequests
 from yali4.parteddata import *
 
 # gui
-from yali4.gui.YaliDialog import Dialog, Yimirta
+from yali4.gui.YaliDialog import Dialog
 from yali4.gui.YaliDialog import WarningDialog, WarningWidget, InformationWindow
 
 # debugger
