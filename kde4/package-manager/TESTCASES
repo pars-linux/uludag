@@ -46,7 +46,7 @@
             - Try to take down an action
             Observe all situations
         - Configure package manager
-            - General configuration tab
+            - General Settings tab
                 - Try to show only desktop applications
                 - Try to enable system tray icon
                 - Try to enable periodic update check
@@ -103,7 +103,7 @@
                     - Try to add a fallback language and observe the situation.
                     - Try to remove the fallback language and observe the situation.
 - Toolbar 
-   - Try to right click on toolbar
+    - Try to right click on toolbar
     - Try to change the oriantation, observe each result
     - Try to change text position, observe each result.
     - Try to change the icon size, observe the each result.
