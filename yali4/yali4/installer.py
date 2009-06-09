@@ -556,25 +556,6 @@ class Yali:
 
         loader.write_grub_conf(_ins_part, ctx.installData.bootLoaderDev, _ins_part_label)
 
-        # Check for windows partitions.
-        ctx.debugger.log("Checking for Windows ...")
-        for d in yali4.storage.devices:
-            for p in d.getPartitions():
-                fs = p.getFSName()
-                if fs in ("ntfs", "fat32"):
-                    if yali4.sysutils.is_windows_boot(p.getPath(), fs):
-                        ctx.debugger.log("Windows Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
-                        win_fs = fs
-                        win_dev = os.path.basename(p.getDevicePath())
-                        win_root = os.path.basename(p.getPath())
-                        loader.grub_conf_append_win(ctx.installData.bootLoaderDev,
-                                                    win_dev,
-                                                    win_root,
-                                                    win_fs)
-                        continue
-
-        # check for linux partitions.
-
         # grubutils
         import pardus.grubutils
 
@@ -583,57 +564,78 @@ class Yali:
         grubConfPath = os.path.join(ctx.consts.target_dir,"boot/grub/grub.conf")
         grubConf.parseConf(grubConfPath)
 
-        def _update_dev(old, new):
-            # If it fails
-            try:
-                return "(%s," % new + old.split(',')[1]
-            except:
-                ctx.debugger.log("UD: Failed, new: %s -- old: %s" % (new, old))
-                ctx.debugger.log("UD: Failed, using old: %s" % old)
-                return old
+        # If selected, detect operating systems
+        if ctx.installData.bootLoaderDetectOthers:
 
-        ctx.debugger.log("Checking for Other Distros (Linux) ...")
-        for d in yali4.storage.devices:
-            for p in d.getPartitions():
-                fs = p.getFSName()
-                if fs in ("ext4", "ext3", "reiserfs", "xfs") and not p.getPath() == _ins_part:
-                    ctx.debugger.log("Partition found which has usable fs (%s)" % p.getPath())
-                    guest_grub_conf = yali4.sysutils.is_linux_boot(p.getPath(), fs)
-                    if guest_grub_conf:
-                        ctx.debugger.log("GRUB Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
-                        guestGrubConf = pardus.grubutils.grubConf()
-                        guestGrubConf.parseConf(guest_grub_conf)
-                        for entry in guestGrubConf.entries:
-                            # if entry has kernel value we can use it in our grub.conf
-                            # some distros uses uuid instead of root
-                            if entry.getCommand("kernel"):
-                                entry.title = entry.title + " [ %s ]" % p.getName()
+            # Check for windows partitions.
+            ctx.debugger.log("Checking for Windows ...")
+            for d in yali4.storage.devices:
+                for p in d.getPartitions():
+                    fs = p.getFSName()
+                    if fs in ("ntfs", "fat32"):
+                        if yali4.sysutils.is_windows_boot(p.getPath(), fs):
+                            ctx.debugger.log("Windows Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
+                            win_fs = fs
+                            win_dev = os.path.basename(p.getDevicePath())
+                            win_root = os.path.basename(p.getPath())
+                            loader.grub_conf_append_win(ctx.installData.bootLoaderDev,
+                                                        win_dev,
+                                                        win_root,
+                                                        win_fs)
+                            continue
 
-                                # if device order changed we should update device order in foreign grub.conf
-                                _grub_dev = yali4.bootloader.find_grub_dev(p.getPath())
+            # check for linux partitions.
+            def _update_dev(old, new):
+                # If it fails
+                try:
+                    return "(%s," % new + old.split(',')[1]
+                except:
+                    ctx.debugger.log("UD: Failed, new: %s -- old: %s" % (new, old))
+                    ctx.debugger.log("UD: Failed, using old: %s" % old)
+                    return old
 
-                                if entry.getCommand("root"):
-                                    # update device order for root command
-                                    _root = entry.getCommand("root")
-                                    if _root.value != '':
-                                        _root.value = _update_dev(_root.value, _grub_dev)
+            ctx.debugger.log("Checking for Other Distros (Linux) ...")
+            for d in yali4.storage.devices:
+                for p in d.getPartitions():
+                    fs = p.getFSName()
+                    if fs in ("ext4", "ext3", "reiserfs", "xfs") and not p.getPath() == _ins_part:
+                        ctx.debugger.log("Partition found which has usable fs (%s)" % p.getPath())
+                        guest_grub_conf = yali4.sysutils.is_linux_boot(p.getPath(), fs)
+                        if guest_grub_conf:
+                            ctx.debugger.log("GRUB Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
+                            guestGrubConf = pardus.grubutils.grubConf()
+                            guestGrubConf.parseConf(guest_grub_conf)
+                            for entry in guestGrubConf.entries:
+                                # if entry has kernel value we can use it in our grub.conf
+                                # some distros uses uuid instead of root
+                                if entry.getCommand("kernel"):
+                                    entry.title = entry.title + " [ %s ]" % p.getName()
 
-                                    # update device order for kernel command if already defined
-                                    _kernel = entry.getCommand("kernel")
-                                    if _kernel and _root.value:
-                                        if _kernel.value.startswith('('):
-                                            _kernel.value = ''.join([_root.value, _kernel.value.split(')')[1]])
+                                    # if device order changed we should update device order in foreign grub.conf
+                                    _grub_dev = yali4.bootloader.find_grub_dev(p.getPath())
 
-                                    # update device order for initrd command if already defined
-                                    _initrd = entry.getCommand("initrd")
-                                    if _initrd and _root.value:
-                                        if _initrd.value.startswith('('):
-                                            _initrd.value = ''.join([_root.value, _initrd.value.split(')')[1]])
+                                    if entry.getCommand("root"):
+                                        # update device order for root command
+                                        _root = entry.getCommand("root")
+                                        if _root.value != '':
+                                            _root.value = _update_dev(_root.value, _grub_dev)
 
-                                grubConf.addEntry(entry)
-                    else:
-                        # If not a proper grub.conf found umount the partition
-                        yali4.sysutils.umount_()
+                                        # update device order for kernel command if already defined
+                                        _kernel = entry.getCommand("kernel")
+                                        if _kernel and _root.value:
+                                            if _kernel.value.startswith('('):
+                                                _kernel.value = ''.join([_root.value, _kernel.value.split(')')[1]])
+
+                                        # update device order for initrd command if already defined
+                                        _initrd = entry.getCommand("initrd")
+                                        if _initrd and _root.value:
+                                            if _initrd.value.startswith('('):
+                                                _initrd.value = ''.join([_root.value, _initrd.value.split(')')[1]])
+
+                                    grubConf.addEntry(entry)
+                        else:
+                            # If not a proper grub.conf found umount the partition
+                            yali4.sysutils.umount_()
 
         # write the new grub.conf
         grubConf.write(grubConfPath)
