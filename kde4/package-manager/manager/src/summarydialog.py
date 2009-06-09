@@ -15,6 +15,7 @@ from PyQt4.QtCore import *
 
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
+from PyKDE4.kio import KRun
 
 from ui_summarydialog import Ui_SummaryDialog
 from ui_appitem import Ui_ApplicationItem
@@ -52,6 +53,9 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
 
     def leaveEvent(self, event):
         self.appName.hide()
+
+    def mouseDoubleClickEvent(self, event):
+        KRun.runCommand(self.item.command, None)
 
 class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
     def __init__(self, operation, parent=None):
