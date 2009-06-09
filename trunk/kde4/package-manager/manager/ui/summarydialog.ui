@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog" >
+ <class>SummaryDialog</class>
+ <widget class="QDialog" name="SummaryDialog" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -26,9 +26,6 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2" >
-    <widget class="QListWidget" name="appList" />
-   </item>
    <item row="2" column="0" >
     <spacer name="horizontalSpacer" >
      <property name="orientation" >
@@ -49,8 +46,28 @@
      </property>
     </widget>
    </item>
+   <item row="1" column="0" colspan="2" >
+    <widget class="QListWidget" name="appList" />
+   </item>
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>closeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SummaryDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>326</x>
+     <y>351</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>280</x>
+     <y>339</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
