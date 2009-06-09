@@ -21,6 +21,7 @@ _ = __trans.ugettext
 import yali4.sysutils
 from yali4.gui.Ui.main import Ui_YaliMain
 from yali4.gui.YaliDialog import Dialog
+from yali4.gui.YaliDialog import Tetris
 import yali4.gui.context as ctx
 
 # Aspect oriented huh ;)
@@ -56,7 +57,8 @@ class Widget(QtGui.QWidget):
 
         # something funny
         self.cursorShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F7),self)
-        self.themeShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F8),self)
+        self.themeShortCut  = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F8),self)
+        self.tetrisShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F6),self)
 
         # set style
         self._style = ctx.consts.stylesheet
@@ -75,6 +77,7 @@ class Widget(QtGui.QWidget):
         self.connect(self.consoleShortCut,  SIGNAL("activated()"),  self.toggleConsole)
         self.connect(self.cursorShortCut,   SIGNAL("activated()"),  self.toggleCursor)
         self.connect(self.themeShortCut,    SIGNAL("activated()"),  self.toggleTheme)
+        self.connect(self.tetrisShortCut,   SIGNAL("activated()"),  self.toggleTetris)
         self.connect(self.ui.buttonNext,    SIGNAL("clicked()"),    self.slotNext)
         self.connect(self.ui.buttonBack,    SIGNAL("clicked()"),    self.slotBack)
         self.connect(self.ui.toggleHelp,    SIGNAL("clicked()"),    self.slotToggleHelp)
@@ -82,6 +85,7 @@ class Widget(QtGui.QWidget):
 
         self._terminal = QTermWidget.QTermWidget()
         self.terminal = None
+        self.tetris = None
 
     def updateStyle(self):
         self.setStyleSheet(file(self._style).read())
@@ -114,6 +118,14 @@ class Widget(QtGui.QWidget):
             self.terminal = Dialog(_('Terminal'), self._terminal, self, True, QtGui.QKeySequence(Qt.Key_F11))
             self.terminal.resize(700,500)
         self.terminal.exec_()
+
+    def toggleTetris(self):
+        self.tetris = Dialog(_('Tetris'), None, self, True, QtGui.QKeySequence(Qt.Key_F6))
+        _tetris = Tetris(self.tetris)
+        self.tetris.addWidget(_tetris)
+        self.tetris.resize(240,500)
+        _tetris.start()
+        self.tetris.exec_()
 
     def toggleCursor(self):
         if self.cursor().shape() == QtGui.QCursor(Qt.ArrowCursor).shape():
