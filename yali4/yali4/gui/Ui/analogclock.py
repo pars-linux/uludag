@@ -4,22 +4,28 @@
 import sys
 from PyQt4 import QtCore, QtGui
 
-
 class AnalogClock(QtGui.QWidget):
     hourHand = QtGui.QPolygon([
-        QtCore.QPoint(7, 8),
-        QtCore.QPoint(-7, 8),
+        QtCore.QPoint(4, 5),
+        QtCore.QPoint(-4, 5),
         QtCore.QPoint(0, -40)
     ])
 
     minuteHand = QtGui.QPolygon([
-        QtCore.QPoint(7, 8),
-        QtCore.QPoint(-7, 8),
-        QtCore.QPoint(0, -70)
+        QtCore.QPoint(3, 4),
+        QtCore.QPoint(-3, 4),
+        QtCore.QPoint(0, -60)
     ])
 
-    hourColor = QtGui.QColor(127, 0, 127)
-    minuteColor = QtGui.QColor(0, 127, 127, 191)
+    secondHand = QtGui.QPolygon([
+        QtCore.QPoint(3, 4),
+        QtCore.QPoint(-3, 4),
+        QtCore.QPoint(0, -80)
+    ])
+
+    hourColor = QtGui.QColor(255, 255, 255)
+    minuteColor = QtGui.QColor(255, 255, 255, 200)
+    secondColor = QtGui.QColor(252, 252, 252, 90)
 
     def __init__(self, parent = None):
         QtGui.QWidget.__init__(self, parent)
@@ -28,7 +34,6 @@ class AnalogClock(QtGui.QWidget):
         self.connect(timer, QtCore.SIGNAL("timeout()"), self, QtCore.SLOT("update()"))
         timer.start(1000)
 
-        self.setWindowTitle(self.tr("Analog Clock"))
         self.resize(200, 200)
 
     def paintEvent(self, event):
@@ -60,6 +65,14 @@ class AnalogClock(QtGui.QWidget):
         painter.save()
         painter.rotate(6.0 * (time.minute() + time.second() / 60.0))
         painter.drawConvexPolygon(AnalogClock.minuteHand)
+        painter.restore()
+
+        painter.setPen(AnalogClock.minuteColor)
+        painter.setBrush(AnalogClock.minuteColor)
+
+        painter.save()
+        painter.rotate(6.0 * (time.second()))
+        painter.drawConvexPolygon(AnalogClock.secondHand)
         painter.restore()
 
         painter.setPen(AnalogClock.minuteColor)
