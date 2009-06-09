@@ -576,6 +576,9 @@ class DiskItem(QtGui.QWidget):
 
     def updatePartEdit(self):
         i=0
+        # if there is just one partition left, we need to select it ..
+        if len(self.partitions) == 1:
+            self.splinter.widget(0).setChecked(True)
         for part in self.partitions:
             if self.splinter.widget(i).isChecked():
                 self.partEdit.ui.deviceGroup.setTitle(part["name"])
