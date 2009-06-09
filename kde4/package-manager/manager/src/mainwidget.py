@@ -24,6 +24,7 @@ from packagemodel import PackageModel, GroupRole
 from packagedelegate import PackageDelegate
 from progressdialog import ProgressDialog
 from statemanager import StateManager
+from summarydialog import SummaryDialog
 from operationmanager import OperationManager
 from basketdialog import BasketDialog
 
@@ -39,6 +40,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.actionButton.setIcon(self.state.getActionIcon())
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
+        self.summaryDialog = SummaryDialog(self.operation)
         self.connectMainSignals()
         self.connectOperationSignals()
 
@@ -111,6 +113,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.progressDialog.enableCancel()
 
     def actionFinished(self, operation):
+        self.summaryDialog.show()
         self.searchLine.clear()
         self.state.reset()
         self.progressDialog.hide()

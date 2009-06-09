@@ -35,6 +35,7 @@ class OperationManager(QObject):
         self.totalSize = 0
         self.totalDownloaded = 0
         self.curPkgDownloaded = 0
+        self.desktopFiles = []
 
     def setTotalPackages(self, totalPackages):
         self.totalPackages = totalPackages
@@ -77,6 +78,10 @@ class OperationManager(QObject):
 
         self.emit(SIGNAL("progress(int)"), percent)
 
+    def addDesktopFile(self, desktopFile):
+        if desktopFile.startsWith("usr/share/applications/") or desktopFile.startsWith("usr/kde/4/share/applications/kde4/"):
+            self.desktopFiles.append(desktopFile)
+
     def handler(self, package, signal, args):
 
         if signal != "progress":
@@ -109,6 +114,9 @@ class OperationManager(QObject):
 
         elif signal in ["installing", "removing", "extracting", "configuring"]:
             self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(signal), args[0])
+
+        elif signal == "desktopfile":
+            self.addDesktopFile(args[0])
 
         elif signal == "cached":
             self.totalSize = int(args[0]) - int(args[1])
