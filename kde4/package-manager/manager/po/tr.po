@@ -53,7 +53,7 @@ msgstr "açılıyor"
 
 #: .tmp/progressdialog.py:40
 msgid "%1 %2"
-msgstr "%1 %2"
+msgstr "%2 %1"
 
 #: .tmp/progressdialog.py:44
 msgid "%1 / %2 package %3"
