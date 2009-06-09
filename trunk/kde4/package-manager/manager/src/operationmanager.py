@@ -18,6 +18,7 @@ from PyKDE4.kdecore import i18n
 from statemanager import StateManager
 
 from pmutils import *
+from pmlogging import logger
 
 class OperationManager(QObject):
     def __init__(self, state):
@@ -77,8 +78,10 @@ class OperationManager(QObject):
         self.emit(SIGNAL("progress(int)"), percent)
 
     def handler(self, package, signal, args):
-        print "Signal:", signal
-        print "Args:", args
+
+        if signal != "progress":
+            logger.debug("Signal: %s" % signal)
+            logger.debug("Args: %s" % args)
 
         # FIXME: manager.py should just send either a status or signal
         if signal in  ["status", "progress"]:
