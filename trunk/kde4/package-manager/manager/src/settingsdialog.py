@@ -145,7 +145,9 @@ class RepositorySettings(SettingsTab):
     def __insertRow(self, repoName, repoAddress):
         currentRow = self.settings.repoListView.rowCount()
         self.settings.repoListView.insertRow(currentRow)
-        self.settings.repoListView.setCellWidget(currentRow, 0, QtGui.QCheckBox(self.settings.repoListView))
+        checkbox = QtGui.QCheckBox(self.settings.repoListView)
+        self.connect(checkbox, SIGNAL("toggled(bool)"), self.markChanged)
+        self.settings.repoListView.setCellWidget(currentRow, 0, checkbox)
         self.settings.repoListView.cellWidget(currentRow, 0).setChecked(self.iface.isRepoActive(repoName))
 
         repoNameItem = QtGui.QTableWidgetItem()
