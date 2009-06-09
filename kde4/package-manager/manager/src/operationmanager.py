@@ -79,7 +79,7 @@ class OperationManager(QObject):
         self.emit(SIGNAL("progress(int)"), percent)
 
     def addDesktopFile(self, desktopFile):
-        if desktopFile.startsWith("usr/share/applications/") or desktopFile.startsWith("usr/kde/4/share/applications/kde4/"):
+        if desktopFile.startswith("usr/share/applications/") or desktopFile.startswith("usr/kde/4/share/applications/kde4/"):
             self.desktopFiles.append(desktopFile)
 
     def handler(self, package, signal, args):
@@ -116,7 +116,7 @@ class OperationManager(QObject):
             self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(signal), args[0])
 
         elif signal == "desktopfile":
-            self.addDesktopFile(args[0])
+            self.addDesktopFile(str(args[0]))
 
         elif signal == "cached":
             self.totalSize = int(args[0]) - int(args[1])
