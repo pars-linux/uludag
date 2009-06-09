@@ -34,9 +34,9 @@ partitionTypes = [None,
                   parttype.root,
                   parttype.home,
                   parttype.swap,
-                  parttype.archive,
-                  parttype.lvm,
-                  parttype.raid]
+                  parttype.archive]
+                  #parttype.lvm,
+                  #parttype.raid]
 
 class DiskList(QtGui.QWidget):
 
