@@ -162,6 +162,11 @@ def mem_total():
 def eject_cdrom(mount_point=consts.source_dir):
     run("eject -m %s" % mount_point)
 
+def set_mouse(key="left"):
+    struct = {"left" :"1 2 3",
+              "right":"3 2 1"}
+    os.system("xmodmap -e \"pointer = %s\"" % struct[key])
+
 def text_is_valid(text):
     allowed_chars = ascii_letters + digits + '.' + '_' + '-'
     return len(text) == len(filter(lambda u: [x for x in allowed_chars if x == u], text))

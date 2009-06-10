@@ -85,8 +85,22 @@ class Widget(QtGui.QWidget):
 
         self._terminal = QTermWidget.QTermWidget()
         self._terminal.sendText("export TERM='xterm'\nclear\n")
+        self.cmb = "right"
         self.terminal = None
         self.tetris = None
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.RightButton:
+            reply = QtGui.QMessageBox.question(self,
+                                               _("Mouse settings"),
+                                               _("You just used %s button,\nDo you want to use %s handed mouse settings ?" % (self.cmb, self.cmb)),
+                                               QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+            if reply == QtGui.QMessageBox.Yes:
+                yali4.sysutils.set_mouse(self.cmb)
+                if self.cmb == "left":
+                    self.cmb = "right"
+                else:
+                    self.cmb = "left"
 
     def updateStyle(self):
         self.setStyleSheet(file(self._style).read())
