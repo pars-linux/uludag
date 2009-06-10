@@ -113,10 +113,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.progressDialog.enableCancel()
 
     def actionFinished(self, operation):
-        self.summaryDialog.show()
         self.searchLine.clear()
         self.state.reset()
         self.progressDialog.hide()
+        self.summaryDialog.show()
         self.initialize()
 
     def switchState(self, state):
