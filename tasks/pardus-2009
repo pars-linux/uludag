@@ -42,7 +42,7 @@
   * mudur'de CPUFreq sınıfının gözden geçirilmesi, bu işlevin olabildiğince çekirdeğe aktarılması (+)
   * HAL 0.5.12 geçişi (+)
   * udev 14x geçişi (+)
-  * Pulseaudio ve ailesinin güncellenmesi (/90)
+  * Pulseaudio ve ailesinin güncellenmesi (+)
   * readahead paketlenmesi, test edilmesi (/70)
   * foomatic-*, gutenprint, ghostscript, hplip, foo2zjs paketlerinin güncellenmesi (/70)
   * sreadahead paketlenmesi, test edilmesi (/40)
