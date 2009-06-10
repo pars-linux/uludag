@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 16:15+0300\n"
-"PO-Revision-Date: 2009-06-05 15:42+0300\n"
+"POT-Creation-Date: 2009-06-10 10:53+0300\n"
+"PO-Revision-Date: 2009-06-10 10:54+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "Sepet"
 msgid "Selected package(s) for install:"
 msgstr "Kurulmak üzere seçilmiş paket(ler):"
 
-#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:84
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:90
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
@@ -39,7 +39,7 @@ msgstr "Toplam Boyut:"
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
-#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:64
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:65
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Kur"
 
@@ -75,6 +75,18 @@ msgstr "--  / --"
 msgid "--:--:--"
 msgstr "--:--:--"
 
+#: .tmp/ui_appitem.py:52
+msgid "Application"
+msgstr "Uygulama"
+
+#: .tmp/ui_appitem.py:53
+msgid "Web Tarayıcı"
+msgstr ""
+
+#: .tmp/ui_appitem.py:54
+msgid "Firefox"
+msgstr ""
+
 #: .tmp/settingsdialog.py:116
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Önbellekteki tüm paketler silinecek. Emin misiniz?"
@@ -87,7 +99,7 @@ msgstr "Uyarı"
 msgid "Delete"
 msgstr "Sil"
 
-#: .tmp/settingsdialog.py:169
+#: .tmp/settingsdialog.py:172
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
@@ -95,7 +107,7 @@ msgstr ""
 "<qt>Depo adresleri xml veya xml.bz2 soneki ile bitmelidir. <p>Lütfen yeniden "
 "deneyin.</qt>"
 
-#: .tmp/settingsdialog.py:169
+#: .tmp/settingsdialog.py:172
 msgid "Pisi Error"
 msgstr "Pisi Hatası"
 
@@ -273,91 +285,127 @@ msgstr "Form"
 msgid "Click to search"
 msgstr "Arama için tıklayın"
 
-#: .tmp/statemanager.py:57
+#: .tmp/statemanager.py:58
 msgid "Installing Package(s)"
 msgstr "Paket(ler) Kuruluyor"
 
-#: .tmp/statemanager.py:58
+#: .tmp/statemanager.py:59
 msgid "Removing Package(s)"
 msgstr "Paket(ler) Kaldırılıyor"
 
-#: .tmp/statemanager.py:59
+#: .tmp/statemanager.py:60
 msgid "Upgrading Package(s)"
 msgstr "Paket(ler) Güncelleniyor"
 
-#: .tmp/statemanager.py:60
+#: .tmp/statemanager.py:61
 msgid "Applying Repository Changes"
 msgstr "Depo Değişiklikleri Uygulanıyor"
 
-#: .tmp/statemanager.py:61
+#: .tmp/statemanager.py:62
 msgid "Updating Repository(s)"
 msgstr "Depo(lar) Güncelleniyor"
 
-#: .tmp/statemanager.py:65
+#: .tmp/statemanager.py:66
 msgid "Remove Package(s)"
 msgstr "Paket(ler)i Kaldır"
 
-#: .tmp/statemanager.py:66
+#: .tmp/statemanager.py:67
 msgid "Upgrade Package(s)"
 msgstr "Paket(ler)i Güncelle"
 
-#: .tmp/statemanager.py:69
+#: .tmp/statemanager.py:70
 msgid "installed"
 msgstr "kuruldu"
 
-#: .tmp/statemanager.py:70
+#: .tmp/statemanager.py:71
 msgid "removed"
 msgstr "kaldırıldı"
 
-#: .tmp/statemanager.py:71
+#: .tmp/statemanager.py:72
 msgid "upgraded"
 msgstr "güncellendi"
 
-#: .tmp/statemanager.py:79
+#: .tmp/statemanager.py:80
+msgid "%1 new package(s) have been installed succesfully."
+msgstr "%1 yeni paket başarı ile kuruldu."
+
+#: .tmp/statemanager.py:81
+msgid "%1 package(s) have been removed succesfully."
+msgstr "%1 paket başarı ile kaldırıldı."
+
+#: .tmp/statemanager.py:82
+msgid "%1 package(s) have been upgraded succesfully."
+msgstr "%1 paket başarı ile güncellendi."
+
+#: .tmp/statemanager.py:85
 msgid "You have selected the following package(s) to install:"
 msgstr "Aşağıdaki paketleri kurmak üzere seçtiniz:"
 
-#: .tmp/statemanager.py:80
+#: .tmp/statemanager.py:86
 msgid "You have selected the following package(s) to removal:"
 msgstr "Aşağıdaki paketleri kaldırmak üzere seçtiniz:"
 
-#: .tmp/statemanager.py:81
+#: .tmp/statemanager.py:87
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Aşağıdaki paketleri güncellemek üzere seçtiniz:"
 
-#: .tmp/statemanager.py:85
+#: .tmp/statemanager.py:91
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
 msgstr "Seçili paketlerin ayrıca kaldırılacak olan ters bağımlılıkları:"
 
-#: .tmp/statemanager.py:86
+#: .tmp/statemanager.py:92
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr "Seçili paketlerin ayrıca güncellenecek olan ek bağımlılıkları:"
 
-#: .tmp/statemanager.py:112 .tmp/mainwindow.py:36
+#: .tmp/statemanager.py:121 .tmp/mainwindow.py:36
 msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
-#: .tmp/statemanager.py:114
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
+#: .tmp/statemanager.py:123
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
-#: .tmp/statemanager.py:117
+#: .tmp/statemanager.py:126
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "ile toplam <b>%2</b> boyutunda <b>%1</b> ters bağımlılık "
 
-#: .tmp/statemanager.py:119
+#: .tmp/statemanager.py:128
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "ile toplam <b>%2</b> boyutunda <b>%1</b> ek bağımlılık "
 
-#: .tmp/statemanager.py:120
+#: .tmp/statemanager.py:129
 msgid "in your basket."
 msgstr "bulunuyor."
+
+#: .tmp/statemanager.py:148
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
+
+#: .tmp/statemanager.py:149 .tmp/statemanager.py:157
+msgid "Conflict Error"
+msgstr "Çakışma Hatası"
+
+#: .tmp/statemanager.py:153
+msgid "The following packages conflicts:\n"
+msgstr "Aşağıdaki paketler çakışıyor:\n"
+
+#: .tmp/statemanager.py:155
+msgid "%1 conflicts with: [%2]\n"
+msgstr "%1: [%2] ile çakışıyor\n"
+
+#: .tmp/statemanager.py:156
+msgid ""
+"\n"
+"Remove the conflicting packages from the system?"
+msgstr ""
+"\n"
+"Çakışan paketler sistemden kaldırılsın mı?"
 
 #: .tmp/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -371,7 +419,7 @@ msgstr "Faik Uygur"
 msgid "Maintainer"
 msgstr "Bakıcı"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:95
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:104
 msgid "downloading"
 msgstr "indiriliyor"
 
@@ -382,6 +430,26 @@ msgstr "kaldırılıyor"
 #: .tmp/commontext.py:15
 msgid "installing"
 msgstr "kuruluyor"
+
+#: .tmp/ui_summarydialog.py:53
+msgid "Operation Summary"
+msgstr "İşlem Özeti"
+
+#: .tmp/ui_summarydialog.py:54
+msgid "12 new packages are installed  succesfully."
+msgstr "12 yeni paket başarı ile kuruldu."
+
+#: .tmp/ui_summarydialog.py:55
+msgid ""
+"You can start the new installed application by double-clicking on the list "
+"below or later from the applications menu."
+msgstr ""
+"Yeni kurulan uygulamayı aşağıdaki listeden çift-tıklayarak ve ya daha sonra "
+"uygulama menüsünden çalıştırabilirsiniz."
+
+#: .tmp/ui_summarydialog.py:56
+msgid "&Ok"
+msgstr "&Tamam"
 
 #: .tmp/ui_progressdialog.py:152
 msgid "Operation"
@@ -418,8 +486,8 @@ msgid "Alt+C"
 msgstr "Alt+C"
 
 #: .tmp/mainwindow.py:53
-msgid "Show New Packages"
-msgstr "Yeni Paketleri Göster"
+msgid "Show Installable Packages"
+msgstr "Kurulabilir Paketleri Göster"
 
 #: .tmp/mainwindow.py:60
 msgid "Show Installed Packages"
@@ -445,5 +513,3 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "Progress"
-#~ msgstr "Progress"
