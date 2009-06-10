@@ -64,7 +64,7 @@ class PackageModel(QAbstractTableModel):
                 icon_path = KIconLoader().iconPath(package.icon, KIconLoader.Panel)
             else:
                 icon_path = None
-            if icon_path:
+            if icon_path and not icon_path.endsWith("unknown.png"):
                 return QVariant(icon_path)
             else:
                 return QVariant(":/data/package.png")
