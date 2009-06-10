@@ -8,6 +8,4 @@
 
 - Bir makina kablolu olarak internete bağlı durumda iken, bu bağlantıyı kesmeden,
     kablosuz olarak bağlanılmaya çalışıldığında kablolu ağ profili disable duruma geçemiyor. Ve her iki bağlantıyı kurmaya çalıştığı zaman başarılı olamıyor.
-
-- Internet sharing firewall-manager ile disable edilmiş durumda iken, network-manager'da internet sharing bağlı gözüküyor.
 - Defaults butonu çalışmıyor.
