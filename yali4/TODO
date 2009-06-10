@@ -21,7 +21,7 @@
  %40 / Fix low resolution screen problems
  %30 / Network Install #2095
          > Needs a network settings screen
-     - Fix GRUB issue about wrong order of sd's 
+     - Fix GRUB issue about wrong order of sd's
          > example; hd0:sdb, hd1:sda from bios but system gives opposite, like hd0:sda, hd1:sdb
      - Add eject cd-rom support when pisi fails
          > Clear cache before ejecting the cd with : "echo 3 > /proc/sys/vm/drop_caches"
