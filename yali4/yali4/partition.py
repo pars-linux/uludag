@@ -37,9 +37,6 @@ class Partition:
         self._temp_label = ''
         self._is_file_system_changed = False
 
-    def getFormatted(self):
-        return self.isFileSystemReady()
-
     def isFileSystemReady(self):
         return self._fs_ready
 
