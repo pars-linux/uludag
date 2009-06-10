@@ -50,7 +50,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
 
-        showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show New Packages"), self)
+        showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show Installable Packages"), self)
         showInstallAction.setChecked(True)
         self.actionCollection().addAction("showInstallAction", showInstallAction)
         self.connect(showInstallAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
