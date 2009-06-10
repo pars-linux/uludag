@@ -101,6 +101,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         restoreCursor()
 
     def setActionButton(self):
+        self.actionButton.setEnabled(False)
         self.actionButton.setText(self.state.getActionName())
         self.actionButton.setIcon(self.state.getActionIcon())
 
@@ -120,6 +121,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.summaryDialog.show()
         self.initialize()
 
+    def setActionEnabled(self):
+        enabled = bool(self.packageList.packageCount())
+        self.actionButton.setEnabled(enabled)
+        self.basket.setActionEnabled(enabled)
+
     def switchState(self, state):
         self.searchLine.clear()
         self.state.setState(state)
@@ -129,5 +135,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def selectedStatus(self):
         waitCursor()
         status = self.state.selectedStatus(self.packageList.model().sourceModel())
+        self.setActionEnabled()
         restoreCursor()
         return status
