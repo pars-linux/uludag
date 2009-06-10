@@ -99,7 +99,7 @@ def buildPackages():
                 oldBinaryPackages.sort()
 
                 # Delta package generation using delta interface
-                (deltasToInstall, deltaPackages) = pisi.delta(isopackages, oldBinaryPackages, newBinaryPackages)
+                (deltasToInstall, deltaPackages, blacklistedPackages) = pisi.delta(isopackages, oldBinaryPackages, newBinaryPackages)
 
                 # Reduce to filenames
                 deltasToInstall = map(lambda x: os.path.basename(x), deltasToInstall)
@@ -117,6 +117,13 @@ def buildPackages():
                 else:
                     # No delta, install full packages
                     packagesToInstall = newBinaryPackages[:]
+
+                if blacklistedPackages:
+                    # Merge the blacklisted packages and unify the list
+                    logger.debug("blacklistedPackages: %s" % blacklistedPackages)
+                    packagesToInstall.extend(blacklistedPackages)
+                    packagesToInstall = list(set(packagesToInstall))
+                    logger.debug("packagesToInstall after merge: %s" % packagesToInstall)
 
                 # Merge the package lists
                 deltaPackages = deltaPackages + deltasToInstall
