@@ -78,6 +78,9 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.infoLabel.setText(self.state.getBasketInfo())
         self.extrasLabel.setText(self.state.getBasketExtrasInfo())
 
+    def setActionEnabled(self, enabled):
+        self.actionButton.setEnabled(enabled)
+
     def action(self):
         self.state.operationAction(self.model.selectedPackages())
         self.close()
