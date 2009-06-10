@@ -40,7 +40,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.actionButton.setIcon(self.state.getActionIcon())
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
-        self.summaryDialog = SummaryDialog(self.operation)
+        self.summaryDialog = SummaryDialog(self.operation, self.state)
         self.connectMainSignals()
         self.connectOperationSignals()
 
@@ -116,7 +116,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.searchLine.clear()
         self.state.reset()
         self.progressDialog.hide()
-        self.summaryDialog.show()
+        if self.state.infoNeeded(operation):
+            self.summaryDialog.show()
         self.initialize()
 
     def switchState(self, state):
