@@ -85,6 +85,11 @@ class PisiApi:
 
         brandNewBinaryPackages = []
 
+        # We should keep a list of the blacklisted packages and return them back
+        # for being able to install their full packages correctly in case of a
+        # 1->many source pisi package.
+        blacklisted_packages = []
+
         for p in newBinaryPackages:
             if not getName(p) in [getName(pa) for pa in oldBinaryPackages]:
                 brandNewBinaryPackages.append(p)
@@ -114,6 +119,7 @@ class PisiApi:
 
             if name in config.deltaBlacklist:
                 logger.debug("Skipping %s as it's blacklisted.." % name)
+                blacklisted_packages.append(os.path.basename(pl[1]))
                 continue
 
             # Full path of the new package
@@ -143,7 +149,7 @@ class PisiApi:
         # Ok for here
         logger.debug("delta() -> deltas_to_install: %s" % deltas_to_install)
 
-        return (deltas_to_install, delta_packages)
+        return (deltas_to_install, delta_packages, blacklisted_packages)
 
     def build(self, pspec):
         pspec = os.path.join(config.localPspecRepo, pspec)
