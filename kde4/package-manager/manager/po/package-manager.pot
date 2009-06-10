@@ -8,12 +8,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 16:15+0300\n"
+"POT-Creation-Date: 2009-06-10 10:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: .tmp/ui_basketdialog.py:69
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Selected package(s) for install:"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:84
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:90
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "<b>2.2 MB</b>"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:64
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:65
 msgid "Install Package(s)"
 msgstr ""
 
@@ -74,6 +74,18 @@ msgstr ""
 msgid "--:--:--"
 msgstr ""
 
+#: .tmp/ui_appitem.py:52
+msgid "Application"
+msgstr ""
+
+#: .tmp/ui_appitem.py:53
+msgid "Web Tarayıcı"
+msgstr ""
+
+#: .tmp/ui_appitem.py:54
+msgid "Firefox"
+msgstr ""
+
 #: .tmp/settingsdialog.py:116
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr ""
@@ -86,13 +98,13 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: .tmp/settingsdialog.py:169
+#: .tmp/settingsdialog.py:172
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
 msgstr ""
 
-#: .tmp/settingsdialog.py:169
+#: .tmp/settingsdialog.py:172
 msgid "Pisi Error"
 msgstr ""
 
@@ -267,89 +279,125 @@ msgstr ""
 msgid "Click to search"
 msgstr ""
 
-#: .tmp/statemanager.py:57
+#: .tmp/statemanager.py:58
 msgid "Installing Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:58
+#: .tmp/statemanager.py:59
 msgid "Removing Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:59
+#: .tmp/statemanager.py:60
 msgid "Upgrading Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:60
+#: .tmp/statemanager.py:61
 msgid "Applying Repository Changes"
 msgstr ""
 
-#: .tmp/statemanager.py:61
+#: .tmp/statemanager.py:62
 msgid "Updating Repository(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:65
+#: .tmp/statemanager.py:66
 msgid "Remove Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:66
+#: .tmp/statemanager.py:67
 msgid "Upgrade Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:69
+#: .tmp/statemanager.py:70
 msgid "installed"
 msgstr ""
 
-#: .tmp/statemanager.py:70
+#: .tmp/statemanager.py:71
 msgid "removed"
 msgstr ""
 
-#: .tmp/statemanager.py:71
+#: .tmp/statemanager.py:72
 msgid "upgraded"
 msgstr ""
 
-#: .tmp/statemanager.py:79
-msgid "You have selected the following package(s) to install:"
-msgstr ""
-
 #: .tmp/statemanager.py:80
-msgid "You have selected the following package(s) to removal:"
+msgid "%1 new package(s) have been installed succesfully."
 msgstr ""
 
 #: .tmp/statemanager.py:81
-msgid "You have selected the following package(s) to upgrade:"
+msgid "%1 package(s) have been removed succesfully."
+msgstr ""
+
+#: .tmp/statemanager.py:82
+msgid "%1 package(s) have been upgraded succesfully."
 msgstr ""
 
 #: .tmp/statemanager.py:85
+msgid "You have selected the following package(s) to install:"
+msgstr ""
+
+#: .tmp/statemanager.py:86
+msgid "You have selected the following package(s) to removal:"
+msgstr ""
+
+#: .tmp/statemanager.py:87
+msgid "You have selected the following package(s) to upgrade:"
+msgstr ""
+
+#: .tmp/statemanager.py:91
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
 msgstr ""
 
-#: .tmp/statemanager.py:86
+#: .tmp/statemanager.py:92
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr ""
 
-#: .tmp/statemanager.py:112 .tmp/mainwindow.py:36
+#: .tmp/statemanager.py:121 .tmp/mainwindow.py:36
 msgid "Currently your basket is empty."
 msgstr ""
 
-#: .tmp/statemanager.py:114
+#: .tmp/statemanager.py:123
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:117
+#: .tmp/statemanager.py:126
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:119
+#: .tmp/statemanager.py:128
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:120
+#: .tmp/statemanager.py:129
 msgid "in your basket."
+msgstr ""
+
+#: .tmp/statemanager.py:148
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+
+#: .tmp/statemanager.py:149 .tmp/statemanager.py:157
+msgid "Conflict Error"
+msgstr ""
+
+#: .tmp/statemanager.py:153
+msgid "The following packages conflicts:\n"
+msgstr ""
+
+#: .tmp/statemanager.py:155
+msgid "%1 conflicts with: [%2]\n"
+msgstr ""
+
+#: .tmp/statemanager.py:156
+msgid ""
+"\n"
+"Remove the conflicting packages from the system?"
 msgstr ""
 
 #: .tmp/about.py:24
@@ -364,7 +412,7 @@ msgstr ""
 msgid "Maintainer"
 msgstr ""
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:95
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:104
 msgid "downloading"
 msgstr ""
 
@@ -374,6 +422,24 @@ msgstr ""
 
 #: .tmp/commontext.py:15
 msgid "installing"
+msgstr ""
+
+#: .tmp/ui_summarydialog.py:53
+msgid "Operation Summary"
+msgstr ""
+
+#: .tmp/ui_summarydialog.py:54
+msgid "12 new packages are installed  succesfully."
+msgstr ""
+
+#: .tmp/ui_summarydialog.py:55
+msgid ""
+"You can start the new installed application by double-clicking on the list "
+"below or later from the applications menu."
+msgstr ""
+
+#: .tmp/ui_summarydialog.py:56
+msgid "&Ok"
 msgstr ""
 
 #: .tmp/ui_progressdialog.py:152
@@ -411,7 +477,7 @@ msgid "Alt+C"
 msgstr ""
 
 #: .tmp/mainwindow.py:53
-msgid "Show New Packages"
+msgid "Show Installable Packages"
 msgstr ""
 
 #: .tmp/mainwindow.py:60
