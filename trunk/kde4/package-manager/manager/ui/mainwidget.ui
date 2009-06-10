@@ -13,7 +13,7 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout" >
-   <item rowspan="2" row="0" column="0" >
+   <item rowspan="3" row="0" column="0" >
     <widget class="GroupList" name="groupList" >
      <property name="minimumSize" >
       <size>
@@ -29,7 +29,7 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="1" >
+   <item row="0" column="1" colspan="2" >
     <widget class="KLineEdit" name="searchLine" >
      <property name="clickMessage" >
       <string>Click to search</string>
@@ -39,14 +39,53 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="2" >
+   <item row="0" column="3" >
     <widget class="QPushButton" name="actionButton" >
      <property name="text" >
       <string>Install Package(s)</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="1" colspan="2" >
+   <item row="1" column="1" >
+    <widget class="KUrlLabel" name="selectAll" >
+     <property name="font" >
+      <font>
+       <pointsize>8</pointsize>
+       <underline>true</underline>
+      </font>
+     </property>
+     <property name="styleSheet" >
+      <string notr="true" />
+     </property>
+     <property name="text" >
+      <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Select all packages in this group&lt;/p>&lt;/body>&lt;/html></string>
+     </property>
+     <property name="indent" >
+      <number>5</number>
+     </property>
+     <property name="glowEnabled" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" >
+    <spacer name="horizontalSpacer" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0" >
+      <size>
+       <width>165</width>
+       <height>1</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1" colspan="3" >
     <widget class="PackageView" name="packageList" >
      <property name="minimumSize" >
       <size>
@@ -78,6 +117,11 @@
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlLabel</class>
+   <extends>QLabel</extends>
+   <header>kurllabel.h</header>
   </customwidget>
   <customwidget>
    <class>PackageView</class>
