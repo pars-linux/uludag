@@ -404,7 +404,7 @@ class Device:
         except parted.error, e:
             raise DeviceError, e
 
-        return self.__addToPartitionsDict(newp, fs_ready=False)
+        return self.__addToPartitionsDict(newp)
 
     ##
     # (internal function)
@@ -412,7 +412,7 @@ class Device:
     # @param part: pyparted partition type
     #
     # @returns: Partition
-    def __addToPartitionsDict(self, part, fs_ready=True):
+    def __addToPartitionsDict(self, part):
         geom = part.geom
         part_mb = long(((geom.end - geom.start + 1) * self._sector_size) / MEGABYTE)
         if part.num >= 1:
@@ -427,8 +427,7 @@ class Device:
                                                     part_mb,
                                                     geom.start,
                                                     geom.end,
-                                                    fs_name,
-                                                    fs_ready))
+                                                    fs_name))
 
         elif part.type & parted.PARTITION_FREESPACE and part_mb >= 10:
             self._partitions.append(FreeSpace(self, part,

@@ -255,11 +255,10 @@ class DiskList(QtGui.QWidget):
                 continue
             if part.getMinor() != -1:
                 name = _("Partition %d") % part.getMinor()
-                if part.isFileSystemReady():
-                    try:
-                        name = part.getFSLabel() or name
-                    except:
-                        pass
+                try:
+                    name = part.getFSLabel() or name
+                except:
+                    ctx.debugger.log("GFSL: Failed for %s, not important " % name)
             else:
                 name = _("Free Space")
             if ctx.debugger:

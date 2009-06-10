@@ -24,7 +24,7 @@ import yali4.filesystem
 # Class representing a single partition within a Device object
 class Partition:
 
-    def __init__(self, device, parted_part, minor, mb, start, end, fs_name, fs_ready=True):
+    def __init__(self, device, parted_part, minor, mb, start, end, fs_name):
         self._device = device
         self._partition = parted_part
         self._minor = minor
@@ -33,12 +33,8 @@ class Partition:
         self._end = end
         self._fsname = fs_name or _("unknown")
         self._parted_type = parteddata.partitionType
-        self._fs_ready = fs_ready
         self._temp_label = ''
         self._is_file_system_changed = False
-
-    def isFileSystemReady(self):
-        return self._fs_ready
 
     def setFileSystemType(self, fs_type):
         if isinstance(fs_type, yali4.filesystem.FileSystem):
@@ -63,7 +59,8 @@ class Partition:
     ##
     # check if partition is logical
     def isFreespace(self):
-        return self._partition.type == parted.PARTITION_FREESPACE
+        # There is a parted bug, some times it gives parted.PARTITION_RAID(5) for a freespace :( bork..
+        return self._partition.type in [parted.PARTITION_FREESPACE, parted.PARTITION_RAID]
 
     ##
     # check if partition is extended
