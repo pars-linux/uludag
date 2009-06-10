@@ -17,6 +17,7 @@ from PyQt4.QtCore import *
 
 # PyKDE4 Stuff
 from PyKDE4.kdeui import *
+from PyKDE4.kdecore import KGlobal
 
 import string
 import backend
@@ -50,8 +51,6 @@ class PackageModel(QAbstractTableModel):
             return QVariant(self.packages[index.row()])
 	elif role == Qt.CheckStateRole and index.column() == 0:
             return QVariant(self.package_selections[index.row()])
-        elif role == Qt.DecorationRole:
-            return QVariant(":/data/package.png")
 
         package = self.package(index)
         if role == SummaryRole:
@@ -60,6 +59,15 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.description))
         elif role == VersionRole:
             return QVariant(unicode(package.version))
+        elif role == Qt.DecorationRole:
+            if package.icon:
+                icon_path = KIconLoader().iconPath(package.icon, KIconLoader.Desktop)
+            else:
+                icon_path = None
+            if icon_path:
+                return QVariant(icon_path)
+            else:
+                return QVariant(":/data/package.png")
         elif role == GroupRole:
             # TODO
             return QVariant()
