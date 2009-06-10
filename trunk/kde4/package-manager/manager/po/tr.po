@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-10 11:37+0300\n"
-"PO-Revision-Date: 2009-06-10 10:54+0300\n"
+"POT-Creation-Date: 2009-06-10 14:56+0300\n"
+"PO-Revision-Date: 2009-06-10 14:58+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "Toplam Boyut:"
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
-#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:65
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:56 .tmp/statemanager.py:65
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Kur"
 
@@ -277,13 +277,27 @@ msgstr "&Tamam"
 msgid "&Cancel"
 msgstr "&İptal"
 
-#: .tmp/ui_mainwidget.py:43
+#: .tmp/ui_mainwidget.py:54
 msgid "Form"
 msgstr "Form"
 
-#: .tmp/ui_mainwidget.py:44
+#: .tmp/ui_mainwidget.py:55
 msgid "Click to search"
 msgstr "Arama için tıklayın"
+
+#: .tmp/ui_mainwidget.py:57
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
+"this group</p></body></html>"
+msgstr ""
 
 #: .tmp/statemanager.py:58
 msgid "Installing Package(s)"
@@ -366,10 +380,8 @@ msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
 #: .tmp/statemanager.py:123
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
 #: .tmp/statemanager.py:126
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
@@ -387,8 +399,7 @@ msgstr "bulunuyor."
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr ""
-"Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
+msgstr "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
 
 #: .tmp/statemanager.py:149 .tmp/statemanager.py:157
 msgid "Conflict Error"
@@ -454,6 +465,14 @@ msgstr ""
 msgid "&Ok"
 msgstr "&Tamam"
 
+#: .tmp/mainwidget.py:149
+msgid "Select all packages in this group"
+msgstr "Bu gruptaki tüm paketleri seç"
+
+#: .tmp/mainwidget.py:155
+msgid "Reverse package selections"
+msgstr "Paket seçimlerini ters çevir"
+
 #: .tmp/ui_progressdialog.py:152
 msgid "Operation"
 msgstr "İşlem"
@@ -515,3 +534,4 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+

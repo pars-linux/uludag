@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-10 11:37+0300\n"
+"POT-Creation-Date: 2009-06-10 14:56+0300\n"
 "PO-Revision-Date: 2009-06-05 21:16-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -39,7 +39,7 @@ msgstr "Tamaño Total:"
 msgid "<b>2.2 MB</b>"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:45 .tmp/statemanager.py:65
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:56 .tmp/statemanager.py:65
 msgid "Install Package(s)"
 msgstr "Instalar Paquete(s)"
 
@@ -281,13 +281,27 @@ msgstr "&OK"
 msgid "&Cancel"
 msgstr "&Cancelar"
 
-#: .tmp/ui_mainwidget.py:43
+#: .tmp/ui_mainwidget.py:54
 msgid "Form"
 msgstr ""
 
-#: .tmp/ui_mainwidget.py:44
+#: .tmp/ui_mainwidget.py:55
 msgid "Click to search"
 msgstr "Presione para buscar"
+
+#: .tmp/ui_mainwidget.py:57
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
+"this group</p></body></html>"
+msgstr ""
 
 #: .tmp/statemanager.py:58
 msgid "Installing Package(s)"
@@ -458,6 +472,14 @@ msgstr ""
 #, fuzzy
 msgid "&Ok"
 msgstr "&OK"
+
+#: .tmp/mainwidget.py:149
+msgid "Select all packages in this group"
+msgstr ""
+
+#: .tmp/mainwidget.py:155
+msgid "Reverse package selections"
+msgstr ""
 
 #: .tmp/ui_progressdialog.py:152
 msgid "Operation"
