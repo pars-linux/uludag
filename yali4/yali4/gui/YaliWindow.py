@@ -86,21 +86,33 @@ class Widget(QtGui.QWidget):
         self._terminal = QTermWidget.QTermWidget()
         self._terminal.sendText("export TERM='xterm'\nclear\n")
         self.cmb = "right"
+        self.cmbMsgBox = None
+        self.dontAskCmbAgain = False
         self.terminal = None
         self.tetris = None
 
     def mousePressEvent(self, event):
-        if event.button() == Qt.RightButton:
-            reply = QtGui.QMessageBox.question(self,
-                                               _("Mouse settings"),
-                                               _("You just used %s button,\nDo you want to use %s handed mouse settings ?" % (self.cmb, self.cmb)),
-                                               QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
-            if reply == QtGui.QMessageBox.Yes:
-                yali4.sysutils.set_mouse(self.cmb)
-                if self.cmb == "left":
-                    self.cmb = "right"
-                else:
-                    self.cmb = "left"
+        if event.button() == Qt.RightButton and not self.dontAskCmbAgain:
+            self.askForMouseButtonOrder()
+
+    def askForMouseButtonOrder(self):
+        if not self.cmbMsgBox:
+            self.cmbMsgBox = QtGui.QMessageBox()
+            self.cmbMsgBox.addButton(QtGui.QMessageBox.Yes)
+            self.cmbMsgBox.addButton(QtGui.QMessageBox.No)
+            self.cmbMsgBoxDontAsk = self.cmbMsgBox.addButton(_("Don't ask again"), QtGui.QMessageBox.ActionRole)
+        if self.cmb == "left":
+            ocmb = "right"
+        else:
+            ocmb = "left"
+        self.cmbMsgBox.setText("You just used %s button." % self.cmb)
+        self.cmbMsgBox.setInformativeText("Do you want to use %s handed mouse settings ?" % ocmb)
+        reply = self.cmbMsgBox.exec_()
+        if reply == QtGui.QMessageBox.Yes:
+            yali4.sysutils.set_mouse(self.cmb)
+            self.cmb = ocmb
+        if self.cmbMsgBox.clickedButton() == self.cmbMsgBoxDontAsk:
+            self.dontAskCmbAgain = True
 
     def updateStyle(self):
         self.setStyleSheet(file(self._style).read())
