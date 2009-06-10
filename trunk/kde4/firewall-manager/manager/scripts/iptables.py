@@ -23,11 +23,6 @@ MSG_GATEWAY_INTERNET = {
     "tr": "Internet'e Çıkış",
 }
 
-MSG_ = {
-    "en": "",
-    "tr": "",
-}
-
 TITLE_BLOCK_INCOMING = {
     "en": "Block Incoming Connections",
     "tr": "Gelen Bağlantıları Engelle",
@@ -241,6 +236,9 @@ class BlockIncoming:
         ]
         return parameters
 
+    def checkModule(self, parameters={}, quiet=False):
+        pass
+
     def loadModule(self, parameters={}):
         # Initialize IPTables
         initializeIPTables()
@@ -276,6 +274,9 @@ class BlockOutgoing:
             ("port_exceptions", _(MSG_ALLOWED_PORTS), "editlist", {"format": "[0-9]{1,5}"}),
         ]
         return parameters
+
+    def checkModule(self, parameters={}, quiet=False):
+        pass
 
     def loadModule(self, parameters={}):
         # Initialize IPTables
@@ -321,6 +322,9 @@ class InternetSharingModule:
             ("device-output", _(MSG_GATEWAY_HOME), "combo", options),
         ]
         return parameters
+
+    def checkModule(self, parameters={}, quiet=False):
+        pass
 
     def loadModule(self, parameters={}):
         # Initialize IPTables
@@ -412,7 +416,7 @@ def setModuleParameters(name, parameters):
     # Execute module if it's active
     if getState() == "on" and getModuleState(name) == "on":
         inst = MODULES[name]()
-        print "loading"
+        inst.checkModule(parameters)
         inst.loadModule(parameters)
     # Notify clients
     notify("Network.Firewall", "moduleSettingsChanged", (name))
