@@ -1,11 +1,19 @@
 + Profil yaratıldıktan sonra 
     Profil adı eklenmeme durumunda, profil yaratılabiliyor, fakat profilleri göster denildiğimde bu profil gözükmüyor. (İsimsiz gibi bir default isim verilebilir)
-- Bir wireless ağa bağlanıldıktan sonra
++ Bir wireless ağa bağlanıldıktan sonra
     Bu ağın bulunmadığı bir yerde network-manager bu ağa bağlı olarak görünüyor.
-- Profil seçimi checkbox'ı seçili iken, bu profil ile  yeni bir wireless ağa bağlanılmak istendiğinde checkbox enable durumdan disable duruma geçiyor. 
-    Bu durumda iken kullanıcı parolası sormadan ağa bağlanmaya çalışıyor.
-- Profil seçili değil iken, ağa başlanmaya çalışıyor. Ve ekranda bağlanıyor olarak gözüküyor.
-
-- Bir makina kablolu olarak internete bağlı durumda iken, bu bağlantıyı kesmeden,
++ Bir makina kablolu olarak internete bağlı durumda iken, bu bağlantıyı kesmeden,
     kablosuz olarak bağlanılmaya çalışıldığında kablolu ağ profili disable duruma geçemiyor. Ve her iki bağlantıyı kurmaya çalıştığı zaman başarılı olamıyor.
+
+- Profil seçimi checkbox'ı seçili iken, bu profil ile  yeni bir wireless ağa bağlanılmak istendiğinde checkbox enable durumdan disable duruma geçiyor.
+    Bu durumda iken kullanıcı parolası sormadan ağa bağlanmaya çalışıyor.
+
+- Profil seçili değil iken, ağa başlanmaya çalışıyor. 
+    - Ekranda bağlanıyor olarak gözüküyor. 
+    - Timeout olamıyor.
+
++ Daha öce bir wireless'in bulunduğu yerde bu ağa bağlanılıp, daha sonra bu ağın bulunmadığı bir yerde bilgisayar restart edildiğinde, profil disable durumda iken ağa bağlanmaya çalışıyor.
+
 - Defaults butonu çalışmıyor.
+
+
