@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>530</width>
-    <height>229</height>
+    <height>256</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,6 +24,9 @@
      </property>
      <property name="text">
       <string notr="true">labelTitle:</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
