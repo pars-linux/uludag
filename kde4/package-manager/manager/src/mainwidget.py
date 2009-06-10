@@ -41,6 +41,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
         self.summaryDialog = SummaryDialog(self.operation, self.state)
+        self.selectAll.setUrl("All")
         self.connectMainSignals()
         self.connectOperationSignals()
 
@@ -48,6 +49,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.basket.show)
         self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
+        self.connect(self.selectAll, SIGNAL("leftClickedUrl(const QString&)"), self.toggleSelectAll)
 
     def connectOperationSignals(self):
         self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
@@ -94,6 +96,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.model().setFilterRegExp(QRegExp(unicode(text), Qt.CaseInsensitive, QRegExp.FixedString))
 
     def groupFilter(self):
+        self.setSelectAll()
         packages = self.state.groupPackages(self.groupList.currentGroup())
         self.packageList.model().setFilterRole(GroupRole)
         waitCursor()
@@ -127,6 +130,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.basket.setActionEnabled(enabled)
 
     def switchState(self, state):
+        self.setSelectAll()
         self.searchLine.clear()
         self.state.setState(state)
         self.setActionButton()
@@ -138,3 +142,23 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.setActionEnabled()
         restoreCursor()
         return status
+
+    def setSelectAll(self, packages=None):
+        if packages:
+            self.packageList.reverseSelection(packages)
+        self.selectAll.setText(i18n("Select all packages in this group"))
+        self.selectAll.setUrl("All")
+
+    def setReverseAll(self, packages=None):
+        if packages:
+            self.packageList.selectAll(packages)
+        self.selectAll.setText(i18n("Reverse package selections"))
+        self.selectAll.setUrl("Reverse")
+
+    def toggleSelectAll(self, text):
+        packages = self.state.groupPackages(self.groupList.currentGroup())
+        if text == "All":
+            self.setReverseAll(packages)
+        else:
+            self.setSelectAll(packages)
+        self.emit(SIGNAL("selectionStatusChanged(QString)"), self.selectedStatus())

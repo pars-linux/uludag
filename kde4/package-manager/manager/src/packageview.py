@@ -14,6 +14,8 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
+from pmutils import *
+
 class PackageView(QtGui.QTreeView):
     def __init__(self, parent=None):
         QtGui.QTreeView.__init__(self, parent)
@@ -39,3 +41,15 @@ class PackageView(QtGui.QTreeView):
 
     def packageCount(self):
         return len(self.selectedPackages()) + len(self.extraPackages())
+
+    def reverseSelection(self, packages):
+        waitCursor()
+        self.model().sourceModel().reverseSelection(packages)
+        self.reset()
+        restoreCursor()
+
+    def selectAll(self, packages):
+        waitCursor()
+        self.model().sourceModel().selectPackages(packages)
+        self.reset()
+        restoreCursor()
