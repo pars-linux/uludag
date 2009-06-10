@@ -4,7 +4,7 @@
     Bu ağın bulunmadığı bir yerde network-manager bu ağa bağlı olarak görünüyor.
 + Bir makina kablolu olarak internete bağlı durumda iken, bu bağlantıyı kesmeden,
     kablosuz olarak bağlanılmaya çalışıldığında kablolu ağ profili disable duruma geçemiyor. Ve her iki bağlantıyı kurmaya çalıştığı zaman başarılı olamıyor.
-
++ Daha öce bir wireless'in bulunduğu yerde bu ağa bağlanılıp, daha sonra bu ağın bulunmadığı bir yerde bilgisayar restart edildiğinde, profil disable durumda iken ağa bağlanmaya çalışıyor.
 - Profil seçimi checkbox'ı seçili iken, bu profil ile  yeni bir wireless ağa bağlanılmak istendiğinde checkbox enable durumdan disable duruma geçiyor.
     Bu durumda iken kullanıcı parolası sormadan ağa bağlanmaya çalışıyor.
 
@@ -12,8 +12,7 @@
     - Ekranda bağlanıyor olarak gözüküyor. 
     - Timeout olamıyor.
 
-+ Daha öce bir wireless'in bulunduğu yerde bu ağa bağlanılıp, daha sonra bu ağın bulunmadığı bir yerde bilgisayar restart edildiğinde, profil disable durumda iken ağa bağlanmaya çalışıyor.
-
 - Defaults butonu çalışmıyor.
 
+- Dinamik bir ip kullanılıyor iken, statik bir ip adresi ile bağlanılmak istenirse, bağlantı için network manager yine dinamik ip'yi seçiyor.
 
