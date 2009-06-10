@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-10 10:53+0300\n"
+"POT-Creation-Date: 2009-06-10 11:37+0300\n"
 "PO-Revision-Date: 2009-06-10 10:54+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -366,8 +366,10 @@ msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
 #: .tmp/statemanager.py:123
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
 #: .tmp/statemanager.py:126
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
@@ -385,7 +387,8 @@ msgstr "bulunuyor."
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
+msgstr ""
+"Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
 
 #: .tmp/statemanager.py:149 .tmp/statemanager.py:157
 msgid "Conflict Error"
@@ -512,4 +515,3 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-
