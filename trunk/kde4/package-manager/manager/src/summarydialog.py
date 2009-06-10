@@ -74,6 +74,11 @@ class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
         parser = desktopparser.DesktopParser()
         parser.read("/%s" % str(desktopFile))
 
+        nodisplay = unicode(parser.safe_get_locale('Desktop Entry', 'NoDisplay', None))
+        terminal = unicode(parser.safe_get_locale('Desktop Entry', 'Terminal', None))
+        if nodisplay == "true" or terminal == "true":
+            return
+
         icon = parser.safe_get_locale('Desktop Entry', 'Icon', None)
         command = parser.safe_get_locale('Desktop Entry', 'Exec', None)
         name = unicode(parser.safe_get_locale('Desktop Entry', 'Name', self.lang))
