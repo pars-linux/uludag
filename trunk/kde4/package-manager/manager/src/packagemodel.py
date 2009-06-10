@@ -61,7 +61,7 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.version))
         elif role == Qt.DecorationRole:
             if package.icon:
-                icon_path = KIconLoader().iconPath(package.icon, KIconLoader.Desktop)
+                icon_path = KIconLoader().iconPath(package.icon, KIconLoader.Panel)
             else:
                 icon_path = None
             if icon_path:
