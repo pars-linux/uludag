@@ -40,6 +40,8 @@ class PisiApi:
         self.options.debug = True
         self.options.verbose = True
 
+        self.options.ignore_check = config.ignoreCheck
+
         self.options.ignore_sandbox = False
 
         # Set API options

@@ -43,6 +43,9 @@ deltaPath        = "/var/cache/pisi/packages-delta/"
 debugSupport     = False
 debugPath        = "/var/cache/pisi/packages-debug/"
 
+# Don't execute check() function of the packages
+ignoreCheck      = True
+
 # Information for mailer module.
 # Edit templates.py for the structure of mails.
 
