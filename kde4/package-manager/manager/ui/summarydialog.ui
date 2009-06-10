@@ -9,24 +9,42 @@
     <height>363</height>
    </rect>
   </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Minimum" hsizetype="Minimum" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle" >
-   <string>Operation Finished</string>
+   <string>Operation Summary</string>
   </property>
   <layout class="QGridLayout" name="gridLayout" >
-   <item row="0" column="0" colspan="2" >
-    <widget class="QLabel" name="summaryInfo" >
+   <item row="1" column="0" colspan="2" >
+    <widget class="QLabel" name="startAppInfo" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="font" >
+      <font>
+       <stylestrategy>PreferDefault</stylestrategy>
+       <kerning>true</kerning>
+      </font>
+     </property>
      <property name="text" >
-      <string>The following applications are installed to menu. You can start an application by double-clicking on the list below, or later from the applications menu.</string>
+      <string>You can start the new installed application by double-clicking on the list below or later from the applications menu.</string>
      </property>
      <property name="textFormat" >
       <enum>Qt::AutoText</enum>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
      </property>
      <property name="wordWrap" >
       <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" >
+   <item row="3" column="0" >
     <spacer name="horizontalSpacer" >
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
@@ -39,15 +57,30 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="1" >
+   <item row="3" column="1" >
     <widget class="QPushButton" name="closeButton" >
      <property name="text" >
       <string>&amp;Close</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2" >
+   <item row="2" column="0" colspan="2" >
     <widget class="QListWidget" name="appList" />
+   </item>
+   <item row="0" column="0" colspan="2" >
+    <widget class="QLabel" name="summaryInfo" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text" >
+      <string>12 new packages are installed  succesfully.</string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

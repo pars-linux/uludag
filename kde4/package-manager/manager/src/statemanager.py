@@ -76,6 +76,11 @@ class StateManager(QObject):
                 self.REMOVE :KIcon("list-remove"),
                 self.UPGRADE:KIcon("view-refresh")}[self.state]
 
+    def getSummaryInfo(self, total):
+        return {self.INSTALL:i18n("%1 new package(s) have been installed succesfully.", total),
+                self.REMOVE :i18n("%1 package(s) have been removed succesfully.", total),
+                self.UPGRADE:i18n("%1 package(s) have been upgraded succesfully.", total)}[self.state]
+
     def getBasketInfo(self):
         return {self.INSTALL:i18n("You have selected the following package(s) to install:"),
                 self.REMOVE :i18n("You have selected the following package(s) to removal:"),
@@ -85,6 +90,9 @@ class StateManager(QObject):
         return {self.INSTALL:i18n("Extra dependencies of the selected package(s) that are also going to be installed:"),
                 self.REMOVE :i18n("Reverse dependencies of the selected package(s) that are also going to be removed:"),
                 self.UPGRADE:i18n("Extra dependencies of the selected package(s) that are also going to be upgraded:")}[self.state]
+
+    def infoNeeded(self, operation):
+        return operation in ["System.Manager.installPackage", "System.Manager.removePackage", "System.Manager.updatePackage"]
 
     def groups(self):
         return self.iface.getGroups()
