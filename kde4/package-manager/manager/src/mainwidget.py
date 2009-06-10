@@ -37,11 +37,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state = StateManager(self)
         self.basket = BasketDialog(self.state)
         self.initialize()
+        self.setSelectAll()
         self.actionButton.setIcon(self.state.getActionIcon())
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
         self.summaryDialog = SummaryDialog(self.operation, self.state)
-        self.selectAll.setUrl("All")
         self.connectMainSignals()
         self.connectOperationSignals()
 
