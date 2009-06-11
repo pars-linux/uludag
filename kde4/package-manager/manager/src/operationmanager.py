@@ -108,7 +108,7 @@ class OperationManager(QObject):
             self.updateTotalOperationPercent()
 
         elif signal == "updatingrepo":
-            self.emit(SIGNAL("operationChanged(QString, QString)"), signal, args[1])
+            self.emit(SIGNAL("operationChanged(QString, QString)"), signal, args[0])
 
         elif signal == "started":
             if args[0] in self.nop: # no operation

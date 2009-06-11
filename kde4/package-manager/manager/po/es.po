@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-10 14:56+0300\n"
+"POT-Creation-Date: 2009-06-11 12:29+0300\n"
 "PO-Revision-Date: 2009-06-05 21:16-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -25,7 +25,7 @@ msgid "Selected package(s) for install:"
 msgstr "Paquetes seleccionados a instalar:"
 
 # favor revisar, creo que breve es mejor, hay que ver las pantallas..
-#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:90
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:88
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
@@ -39,7 +39,7 @@ msgstr "Tamaño Total:"
 msgid "<b>2.2 MB</b>"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:56 .tmp/statemanager.py:65
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:56 .tmp/statemanager.py:63
 msgid "Install Package(s)"
 msgstr "Instalar Paquete(s)"
 
@@ -51,28 +51,32 @@ msgstr "configurando"
 msgid "extracting"
 msgstr "extrayendo"
 
-#: .tmp/progressdialog.py:40
+#: .tmp/progressdialog.py:41
+msgid "Downloading package list of %1"
+msgstr ""
+
+#: .tmp/progressdialog.py:43
 msgid "%1 %2"
 msgstr "%1 %2"
 
 # could You put a comment with an example string, maybe in foreign language it sounds better when inverting some positions ?
-#: .tmp/progressdialog.py:44
+#: .tmp/progressdialog.py:48
 msgid "%1 / %2 package %3"
 msgstr "%1 / %2 paquete %3"
 
-#: .tmp/progressdialog.py:50
+#: .tmp/progressdialog.py:54
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr ""
 
-#: .tmp/progressdialog.py:62 .tmp/ui_progressdialog.py:153
+#: .tmp/progressdialog.py:66 .tmp/ui_progressdialog.py:153
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Preparando PiSi...</h3>"
 
-#: .tmp/progressdialog.py:65 .tmp/ui_progressdialog.py:155
+#: .tmp/progressdialog.py:69 .tmp/ui_progressdialog.py:155
 msgid "--  / --"
 msgstr ""
 
-#: .tmp/progressdialog.py:66 .tmp/ui_progressdialog.py:156
+#: .tmp/progressdialog.py:70 .tmp/ui_progressdialog.py:156
 msgid "--:--:--"
 msgstr ""
 
@@ -303,72 +307,72 @@ msgid ""
 "this group</p></body></html>"
 msgstr ""
 
-#: .tmp/statemanager.py:58
+#: .tmp/statemanager.py:56
 msgid "Installing Package(s)"
 msgstr "Instalando Paquete(s)"
 
-#: .tmp/statemanager.py:59
+#: .tmp/statemanager.py:57
 msgid "Removing Package(s)"
 msgstr "Removiendo Paquete(s)"
 
-#: .tmp/statemanager.py:60
+#: .tmp/statemanager.py:58
 msgid "Upgrading Package(s)"
 msgstr "Actualizando Paquetes(s)"
 
-#: .tmp/statemanager.py:61
+#: .tmp/statemanager.py:59
 msgid "Applying Repository Changes"
 msgstr "Aplicando Cambios de Repositorios"
 
-#: .tmp/statemanager.py:62
+#: .tmp/statemanager.py:60
 msgid "Updating Repository(s)"
 msgstr "Actualizando Repositorio(s)"
 
-#: .tmp/statemanager.py:66
+#: .tmp/statemanager.py:64
 msgid "Remove Package(s)"
 msgstr "Remover Paquete(s)"
 
-#: .tmp/statemanager.py:67
+#: .tmp/statemanager.py:65
 msgid "Upgrade Package(s)"
 msgstr "Actualizar Paquetes(s)"
 
-#: .tmp/statemanager.py:70
+#: .tmp/statemanager.py:68
 msgid "installed"
 msgstr "instalado"
 
 # favor revisar, quizá debe ser plural ?
-#: .tmp/statemanager.py:71
+#: .tmp/statemanager.py:69
 msgid "removed"
 msgstr "removido"
 
-#: .tmp/statemanager.py:72
+#: .tmp/statemanager.py:70
 msgid "upgraded"
 msgstr "actualizado"
 
-#: .tmp/statemanager.py:80
+#: .tmp/statemanager.py:78
 msgid "%1 new package(s) have been installed succesfully."
 msgstr ""
 
-#: .tmp/statemanager.py:81
+#: .tmp/statemanager.py:79
 msgid "%1 package(s) have been removed succesfully."
 msgstr ""
 
-#: .tmp/statemanager.py:82
+#: .tmp/statemanager.py:80
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr ""
 
-#: .tmp/statemanager.py:85
+#: .tmp/statemanager.py:83
 msgid "You have selected the following package(s) to install:"
 msgstr "Los siguientes paquetes están seleccionados para instalar:"
 
-#: .tmp/statemanager.py:86
+#: .tmp/statemanager.py:84
 msgid "You have selected the following package(s) to removal:"
 msgstr "Los siguientes paquetes están seleccionados para remover:"
 
-#: .tmp/statemanager.py:87
+#: .tmp/statemanager.py:85
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Los siguientes paquetes están seleccionados para actualizar:"
 
-#: .tmp/statemanager.py:91
+#: .tmp/statemanager.py:89
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
@@ -376,54 +380,54 @@ msgstr ""
 "Dependencias reversas de los paquetes seleccionados, que también se "
 "removerán:"
 
-#: .tmp/statemanager.py:92
+#: .tmp/statemanager.py:90
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr ""
 "Dependencias de los paquetes seleccionados, que se actualizarán también:"
 
-#: .tmp/statemanager.py:121 .tmp/mainwindow.py:36
+#: .tmp/statemanager.py:116 .tmp/mainwindow.py:36 .tmp/mainwindow.py:41
 msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
-#: .tmp/statemanager.py:123
+#: .tmp/statemanager.py:118
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actualmente seleccionado <b>%1</b> paquetes, con tamaño total de <b>%2</b>"
 
-#: .tmp/statemanager.py:126
+#: .tmp/statemanager.py:121
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "con <b>%1</b> dependencias reversas, con tamaño total de <b>%2</b>"
 
-#: .tmp/statemanager.py:128
+#: .tmp/statemanager.py:123
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "con <b>%1</b> dependencias adicionales, con tamaño total de <b>%2</b>"
 
-#: .tmp/statemanager.py:129
+#: .tmp/statemanager.py:124
 msgid "in your basket."
 msgstr "En su carrito."
 
-#: .tmp/statemanager.py:148
+#: .tmp/statemanager.py:143
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
 msgstr ""
 
-#: .tmp/statemanager.py:149 .tmp/statemanager.py:157
+#: .tmp/statemanager.py:144 .tmp/statemanager.py:152
 msgid "Conflict Error"
 msgstr ""
 
-#: .tmp/statemanager.py:153
+#: .tmp/statemanager.py:148
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: .tmp/statemanager.py:155
+#: .tmp/statemanager.py:150
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: .tmp/statemanager.py:156
+#: .tmp/statemanager.py:151
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -441,7 +445,7 @@ msgstr ""
 msgid "Maintainer"
 msgstr "Mantenedor"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:104
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:105
 msgid "downloading"
 msgstr "descargando"
 
@@ -473,11 +477,11 @@ msgstr ""
 msgid "&Ok"
 msgstr "&OK"
 
-#: .tmp/mainwidget.py:149
+#: .tmp/mainwidget.py:165
 msgid "Select all packages in this group"
 msgstr ""
 
-#: .tmp/mainwidget.py:155
+#: .tmp/mainwidget.py:171
 msgid "Reverse package selections"
 msgstr ""
 
@@ -515,16 +519,16 @@ msgstr ""
 msgid "Alt+C"
 msgstr ""
 
-#: .tmp/mainwindow.py:53
+#: .tmp/mainwindow.py:57
 #, fuzzy
 msgid "Show Installable Packages"
 msgstr "Mostrar Paquetes instalados"
 
-#: .tmp/mainwindow.py:60
+#: .tmp/mainwindow.py:64
 msgid "Show Installed Packages"
 msgstr "Mostrar Paquetes instalados"
 
-#: .tmp/mainwindow.py:66
+#: .tmp/mainwindow.py:70
 msgid "Show Upgradable Packages"
 msgstr "Mostrar Paquetes a actualizar"
 
