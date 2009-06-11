@@ -17,7 +17,6 @@ from PyQt4.QtGui import QMessageBox
 from PyKDE4.kdecore import i18n
 from PyKDE4.kdeui import KIcon
 
-from pmutils import humanReadableSize as humanize
 from pmlogging import logger
 import backend
 
@@ -112,10 +111,7 @@ class StateManager(QObject):
                 self.REMOVE:lambda:None,
                 self.UPGRADE:self.iface.updateRepositories}[self.state]()
 
-    def selectedStatus(self, model):
-        packages, packagesSize = len(model.selectedPackages()), humanize(model.selectedPackagesSize())
-        extraPackages, extraPackagesSize = len(model.extraPackages()), humanize(model.extraPackagesSize())
-
+    def statusText(self, packages, packagesSize, extraPackages, extraPackagesSize):
         if not packages:
             return i18n("Currently your basket is empty.")
 

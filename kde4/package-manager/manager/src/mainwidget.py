@@ -27,6 +27,7 @@ from statemanager import StateManager
 from summarydialog import SummaryDialog
 from operationmanager import OperationManager
 from basketdialog import BasketDialog
+from statusupdater import StatusUpdater
 
 from pmutils import *
 
@@ -34,6 +35,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
+        self.statusUpdater = StatusUpdater()
         self.state = StateManager(self)
         self.basket = BasketDialog(self.state)
         self.initialize()
@@ -50,6 +52,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.selectAll, SIGNAL("leftClickedUrl(const QString&)"), self.toggleSelectAll)
+        self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(int, QString, int, QString)"), self.emitStatusBarInfo)
+        self.connect(self.statusUpdater, SIGNAL("finished()"), self.statusUpdated)
 
     def connectOperationSignals(self):
         self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
@@ -66,8 +70,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.initializePackageList()
         self.initializeGroupList()
         self.initializeBasket()
-        self.emit(SIGNAL("selectionStatusChanged(QString)"), self.selectedStatus())
+        self.initializeStatusUpdater()
+        self.statusChanged()
         restoreCursor()
+
+    def initializeStatusUpdater(self):
+        self.statusUpdater.setModel(self.packageList.model().sourceModel())
 
     def initializeBasket(self):
         self.basket.setModel(self.packageList.model().sourceModel())
@@ -80,8 +88,18 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.setAlternatingRowColors(True)
         self.packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
         self.packageList.setPackages(self.state.packages())
-        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
-                     lambda:self.emit(SIGNAL("selectionStatusChanged(QString)"), self.selectedStatus()))
+        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
+
+    def statusUpdated(self):
+        if self.statusUpdater.needsUpdate:
+            self.statusUpdater.needsUpdate = False
+            self.statusChanged()
+
+    def statusChanged(self):
+        if self.statusUpdater.isRunning():
+            self.statusUpdater.needsUpdate = True
+        else:
+            self.statusUpdater.start()
 
     def initializeGroupList(self):
         self.groupList.clear()
@@ -125,7 +143,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.initialize()
 
     def setActionEnabled(self):
-        enabled = bool(self.packageList.packageCount())
+        enabled = self.packageList.isSelected()
         self.actionButton.setEnabled(enabled)
         self.basket.setActionEnabled(enabled)
 
@@ -136,12 +154,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.setActionButton()
         self.state.stateAction()
 
-    def selectedStatus(self):
-        waitCursor()
-        status = self.state.selectedStatus(self.packageList.model().sourceModel())
-        self.setActionEnabled()
-        restoreCursor()
-        return status
+    def emitStatusBarInfo(self, packages, packagesSize, extraPackages, extraPackagesSize):
+        self.emit(SIGNAL("selectionStatusChanged(QString)"), self.state.statusText(packages, packagesSize, extraPackages, extraPackagesSize))
 
     def setSelectAll(self, packages=None):
         if packages:
@@ -161,4 +175,4 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.setReverseAll(packages)
         else:
             self.setSelectAll(packages)
-        self.emit(SIGNAL("selectionStatusChanged(QString)"), self.selectedStatus())
+        self.statusChanged()
