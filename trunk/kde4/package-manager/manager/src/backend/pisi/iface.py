@@ -177,3 +177,6 @@ class Iface(Singleton):
 
     def isRepoActive(self, name):
         return self.rdb.repo_active(name)
+
+    def cancel(self):
+        self.link.cancel()
