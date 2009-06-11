@@ -1,0 +1,26 @@
+Not: - Observe each result from /boot/grub/grub.conf, then restart computer and try each stuation.
+     - Looking for related partition
+        Type console
+        # fdisk -l
+     - Looking for kernel and initramfs
+        Type console
+        ls /boot/`
+
+- Add a new bootable system
+    For all system options try to left empty the textboxe(s) and then observe that they give a warning about it.
+    - Windows
+        - Give a title and write the partition of related windows system and then click "ok".
+            Observe the results.
+    - Xen or Linux
+        - Give a title
+        - Write the partition of related system.
+        - Write the kernel of related system.
+        - Write the ramdisk file (initramfs) of related system.
+        - Write some related boot option.
+        - Then click "ok".
+        - Observe the results.
+    - Memtest
+        - Give a title then click ok.
+            Observe the results.
+
+- Try to change timeout and then observe it.
