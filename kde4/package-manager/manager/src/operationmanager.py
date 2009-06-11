@@ -108,8 +108,7 @@ class OperationManager(QObject):
             self.updateTotalOperationPercent()
 
         elif signal == "updatingrepo":
-            operation = i18n("Downloading package list of %1", args[1])
-            self.emit(SIGNAL("operationChanged(QString, QString)"), operation, "")
+            self.emit(SIGNAL("operationChanged(QString, QString)"), i18n("Downloading package list of"), args[1])
 
         elif signal == "started":
             if args[0] in self.nop: # no operation
