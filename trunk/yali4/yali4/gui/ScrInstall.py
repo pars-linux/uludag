@@ -128,12 +128,12 @@ Have fun!
             p, event = qevent.data()
 
             if event == pisi.ui.installing:
-                self.ui.info.setText(_("Installing: %s<br>%s") % (p.name, p.summary))
+                self.ui.info.setText(_("Installing: <b>%s</b><br>%s") % (p.name, p.summary))
                 ctx.debugger.log("Pisi : %s installing" % p.name)
                 self.cur += 1
                 self.ui.progress.setValue(self.cur)
             elif event == pisi.ui.configuring:
-                self.ui.info.setText(_("Configuring package: %s") % p.name)
+                self.ui.info.setText(_("Configuring package: <b>%s</b>") % p.name)
                 ctx.debugger.log("Pisi : %s configuring" % p.name)
                 self.cur += 1
                 self.ui.progress.setValue(self.cur)
