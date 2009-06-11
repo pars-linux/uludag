@@ -101,10 +101,15 @@ class OperationManager(QObject):
             self.emit(SIGNAL("finished(QString)"), args[0])
 
         elif signal == "fetching":
-            self.emit(SIGNAL("operationChanged(QString, QString)"), i18n("downloading"), args[0])
+            if not args[0].startswith("pisi-index.xml"):
+                self.emit(SIGNAL("operationChanged(QString, QString)"), i18n("downloading"), args[0])
             self.updateTotalDownloaded(args[4], args[5], args[2], args[3])
             self.calculateTimeLeft(args[2], args[3])
             self.updateTotalOperationPercent()
+
+        elif signal == "updatingrepo":
+            operation = i18n("Downloading package list of %1", args[1])
+            self.emit(SIGNAL("operationChanged(QString, QString)"), operation, "")
 
         elif signal == "started":
             if args[0] in self.nop: # no operation
