@@ -11,6 +11,7 @@
 # Please read the COPYING file
 
 from PyQt4 import QtGui
+from PyQt4.QtCore import SIGNAL
 
 from PyKDE4.kdecore import i18n
 
