@@ -476,10 +476,27 @@ class Device:
         else:
             ptype = PARTITION_PRIMARY
         sysutils.udev_settle(timeout=1)
-        ctx.debugger.log("RP: Deleting : %s" % str(part))
-        self.deletePartition(part)
+
+        try:
+            ctx.debugger.log("RP: Deleting : %s" % str(part))
+            self.deletePartition(part)
+        except:
+            # After some file system checks, partition objects are changing,
+            # In this situation we need to recreate partition objects and use the proper one
+            ctx.debugger.log("Partition table is changed, recreating partition objects...")
+            self.update()
+            ctx.debugger.log("Searching for old partition...")
+            for p in self.getPartitions():
+                if p.getPath() == part.getPath():
+                    ctx.debugger.log("Partition found as %s" % p.getPath())
+                    part = p
+                    break
+            ctx.debugger.log("RP: Deleting (try #2) : %s" % str(part))
+            start = part.getPartition().geom.start
+            self.deletePartition(part)
+
         self.commit()
-        np = self.addPartitionFromStart(ptype, fs_name, start, size_mb)
+        np = self.addPartitionFromStart(ptype, fs_name, start, size_mb - 8)
         self.commit()
         return np
 
