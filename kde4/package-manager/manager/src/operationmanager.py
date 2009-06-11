@@ -119,6 +119,9 @@ class OperationManager(QObject):
         elif signal in ["installing", "removing", "extracting", "configuring"]:
             self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(signal), args[0])
 
+        if signal == "cancelled":
+            self.emit(SIGNAL("operationCancelled()"))
+
         elif signal == "desktopfile":
             self.addDesktopFile(str(args[0]))
 
