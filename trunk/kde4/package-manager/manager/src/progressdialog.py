@@ -33,11 +33,15 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
     def updateProgress(self, progress):
         self.progressBar.setValue(progress)
 
-    def updateOperation(self, operation, package):
+    def updateOperation(self, operation, arg):
         if operation in [i18n("configuring"),  i18n("extracting")]:
             self.disableCancel()
 
-        operationInfo = i18n('%1 %2', operation, package)
+        if operation == "updatingrepo":
+            operationInfo = i18n("Downloading package list of %1", arg)
+        else:
+            operationInfo = i18n('%1 %2', operation, arg)
+
         self.operationInfo.setText(operationInfo)
 
     def updateStatus(self, packageNo, totalPackages, operation):
