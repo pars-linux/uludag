@@ -74,6 +74,6 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.timeRemaining.setText(i18n("--:--:--"))
 
     def cancel(self):
-        self.actionLabel.setText(i18n("<b>Cancelling operation...</b>")
+        self.actionLabel.setText(i18n("<b>Cancelling operation...</b>"))
         self.disableCancel()
         self.iface.cancel()
