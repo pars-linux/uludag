@@ -28,9 +28,15 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.state = state
         self.initPackageList()
         self.initExtraList()
+        self.connect(self.actionButton, SIGNAL("clicked()"), self.action)
+
+    def connectModelSignals(self):
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.updateTotal)
-        self.connect(self.actionButton, SIGNAL("clicked()"), self.action)
+
+    def disconnectModelSignals(self):
+        self.disconnect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
+        self.disconnect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.updateTotal)
 
     def __initList(self, packageList):
         packageList.setModel(PackageProxy(self))
@@ -92,5 +98,10 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.updateTotal()
         self.setActionButton()
         self.setBasketLabel()
+        self.connectModelSignals()
         restoreCursor()
         QtGui.QDialog.show(self)
+
+    def reject(self):
+        self.disconnectModelSignals()
+        QtGui.QDialog.reject(self)
