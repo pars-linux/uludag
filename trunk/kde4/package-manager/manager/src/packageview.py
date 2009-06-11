@@ -42,6 +42,9 @@ class PackageView(QtGui.QTreeView):
     def packageCount(self):
         return len(self.selectedPackages()) + len(self.extraPackages())
 
+    def isSelected(self):
+        return bool(self.selectedPackages())
+
     def reverseSelection(self, packages):
         waitCursor()
         self.model().sourceModel().reverseSelection(packages)
