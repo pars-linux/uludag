@@ -37,7 +37,11 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.statusLabel.setAlignment(Qt.AlignCenter)
         self.statusBar().addWidget(self.statusLabel)
         self.statusBar().setSizeGripEnabled(True)
+        self.wheelMovie = QtGui.QMovie(self)
+        self.statusLabel.setText(i18n("Currently your basket is empty."))
+        self.wheelMovie.setFileName(":/data/wheel.gif")
         self.connect(self.centralWidget(), SIGNAL("selectionStatusChanged(QString)"), self.updateStatusBar)
+        self.connect(self.centralWidget(), SIGNAL("updatingStatus()"), self.statusWaiting)
 
     def initializeActions(self):
         self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
@@ -68,5 +72,10 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.connect(showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
         actionGroup.addAction(showUpgradeAction)
 
+    def statusWaiting(self):
+        self.statusLabel.setMovie(self.wheelMovie)
+        self.wheelMovie.start()
+
     def updateStatusBar(self, text):
+        self.wheelMovie.stop()
         self.statusLabel.setText(text)

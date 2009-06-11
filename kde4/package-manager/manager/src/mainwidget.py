@@ -48,7 +48,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connectOperationSignals()
 
     def connectMainSignals(self):
-        self.connect(self.actionButton, SIGNAL("clicked()"), self.basket.show)
+        self.connect(self.actionButton, SIGNAL("clicked()"), self.showBasket)
         self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.packageFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.selectAll, SIGNAL("leftClickedUrl(const QString&)"), self.toggleSelectAll)
@@ -99,6 +99,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         if self.statusUpdater.isRunning():
             self.statusUpdater.needsUpdate = True
         else:
+            self.emit(SIGNAL("updatingStatus()"))
             self.statusUpdater.start()
 
     def initializeGroupList(self):
@@ -176,3 +177,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         else:
             self.setSelectAll(packages)
         self.statusChanged()
+
+    def showBasket(self):
+        waitCursor()
+        self.statusUpdater.wait()
+        self.basket.show()
+        restoreCursor()
