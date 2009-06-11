@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=Boot Manager
-Name[tr]=Açılış Yöneticisi
-GenericName=Boot Manager
-GenericName[tr]=Açılış Yöneticisi
-Comment=An application for managing boot loader.
-Comment[tr]=Ön yükleyici (GRUB) ayarlarını değiştirmenizi sağlayan bir uygulama.
-Exec=boot-manager
-Icon=computer
+Name=Display Settings
+Name[tr]=Ekran Ayarları
+GenericName=Video Card & Monitor
+GenericName[tr]=Ekran kartı & Monitör
+Comment=An application to configure your display devices.
+Comment[tr]=Görüntü aygıtlarınızı yapılandırmak için bir uygulama.
+Exec=display-settings
+Icon=preferences-desktop-display
 Type=Application
 Categories=Qt;KDE;System;

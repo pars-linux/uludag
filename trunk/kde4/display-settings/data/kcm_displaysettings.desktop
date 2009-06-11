@@ -1,17 +1,18 @@
 [Desktop Entry]
-Exec=kcmshell4 boot-manager
-Icon=computer
+Exec=kcmshell4 display-settings
+Icon=preferences-desktop-display
 Type=Service
 X-KDE-ServiceTypes=KCModule
 
 X-KDE-Library=kpythonpluginfactory
 X-KDE-ParentApp=kcontrol
-X-KDE-PluginKeyword=boot-manager/boot-manager.py
+X-KDE-PluginKeyword=display-settings/display-settings.py
 
 X-KDE-System-Settings-Parent-Category=computer-administration
 X-KDE-Weight=70
 
-Name=Boot Manager
-Name[tr]=Açılış Yöneticisi
-Comment=Boot Manager
-X-KDE-Keywords=python boot grub managers
+Name=Display Settings
+Name[tr]=Ekran Ayarları
+Comment=An application to configure your display devices.
+Comment[tr]=Görüntü aygıtlarınızı yapılandırmak için bir uygulama.
+X-KDE-Keywords=python display video managers
