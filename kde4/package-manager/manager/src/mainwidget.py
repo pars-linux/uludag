@@ -96,6 +96,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.statusChanged()
 
     def statusChanged(self):
+        self.setActionEnabled()
         if self.statusUpdater.isRunning():
             self.statusUpdater.needsUpdate = True
         else:
@@ -156,7 +157,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state.stateAction()
 
     def emitStatusBarInfo(self, packages, packagesSize, extraPackages, extraPackagesSize):
-        self.setActionEnabled()
         self.emit(SIGNAL("selectionStatusChanged(QString)"), self.state.statusText(packages, packagesSize, extraPackages, extraPackagesSize))
 
     def setSelectAll(self, packages=None):
