@@ -22,8 +22,8 @@ from distutils.command.clean import clean
 from distutils.command.install import install
 from distutils.spawn import find_executable, spawn
 
-from src.about import aboutData
-from src.about import version as VERSION
+from code.displaysettings.about import aboutData
+from code.displaysettings.about import version as VERSION
 
 PROJECT = str(aboutData.appName())
 
