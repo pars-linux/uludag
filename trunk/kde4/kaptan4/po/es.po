@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-03 13:39+0300\n"
-"PO-Revision-Date: 2009-06-05 21:24-0400\n"
+"PO-Revision-Date: 2009-06-11 19:42-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -197,7 +197,7 @@ msgstr "Agregar repositorio contrib"
 
 #: .tmp/ScrGoodbye.py:22
 msgid "Goodbye from Kaptan Wizard :)"
-msgstr ""
+msgstr "Kaptan Wizard se despide :)"
 
 #: .tmp/ScrMenu.py:26 .tmp/ScrStyle.py:30
 msgid "Some catchy title about styles"
@@ -284,7 +284,7 @@ msgid "Some catchy description desktop search"
 msgstr ""
 
 #: .tmp/ScrSearch.py:58
-# favir revisar, 
+# favor revisar,
 msgid "On"
 msgstr ""
 

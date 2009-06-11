@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-11 12:29+0300\n"
-"PO-Revision-Date: 2009-06-05 21:16-0400\n"
+"PO-Revision-Date: 2009-06-11 19:40-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "extrayendo"
 
 #: .tmp/progressdialog.py:41
 msgid "Downloading package list of %1"
-msgstr ""
+msgstr "Descargando lista de paquetes de %1"
 
 #: .tmp/progressdialog.py:43
 msgid "%1 %2"
@@ -81,11 +81,11 @@ msgid "--:--:--"
 msgstr ""
 
 #: .tmp/ui_appitem.py:52
-#, fuzzy
 msgid "Application"
-msgstr "Operación"
+msgstr "Aplicación"
 
 #: .tmp/ui_appitem.py:53
+# what is this please ?? Some sort of Web-spider ?? (httrack ?)
 msgid "Web Tarayıcı"
 msgstr ""
 
@@ -306,6 +306,15 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
 "this group</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Seleccionar todos los paquetes de éste grupo</p></body></html>"
 
 #: .tmp/statemanager.py:56
 msgid "Installing Package(s)"
@@ -350,15 +359,15 @@ msgstr "actualizado"
 
 #: .tmp/statemanager.py:78
 msgid "%1 new package(s) have been installed succesfully."
-msgstr ""
+msgstr "%1 paquete(s) nuevos instalados con éxito."
 
 #: .tmp/statemanager.py:79
 msgid "%1 package(s) have been removed succesfully."
-msgstr ""
+msgstr "%1 paquete(s) removidos con éxito."
 
 #: .tmp/statemanager.py:80
 msgid "%1 package(s) have been upgraded succesfully."
-msgstr ""
+msgstr "%1 paquete(s) actualizados con éxito."
 
 #: .tmp/statemanager.py:83
 msgid "You have selected the following package(s) to install:"
@@ -384,18 +393,15 @@ msgstr ""
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr ""
-"Dependencias de los paquetes seleccionados, que se actualizarán también:"
+msgstr "Dependencias de los paquetes seleccionados, que se actualizarán también:"
 
 #: .tmp/statemanager.py:116 .tmp/mainwindow.py:36 .tmp/mainwindow.py:41
 msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
 #: .tmp/statemanager.py:118
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Actualmente seleccionado <b>%1</b> paquetes, con tamaño total de <b>%2</b>"
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Actualmente seleccionado <b>%1</b> paquetes, con tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:121
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
@@ -413,25 +419,27 @@ msgstr "En su carrito."
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr ""
+msgstr "Algunos paquetes seleccionados [%1] se están creando conflictos. No se puede tener instalado estos paquetes juntos."
 
 #: .tmp/statemanager.py:144 .tmp/statemanager.py:152
 msgid "Conflict Error"
-msgstr ""
+msgstr "Error de Conflicto"
 
 #: .tmp/statemanager.py:148
 msgid "The following packages conflicts:\n"
-msgstr ""
+msgstr "Los siguientes paquetes crean conflictos:\n"
 
 #: .tmp/statemanager.py:150
 msgid "%1 conflicts with: [%2]\n"
-msgstr ""
+msgstr "%1 crea conflicto con: [%2]\n"
 
 #: .tmp/statemanager.py:151
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
 msgstr ""
+"\n"
+"Remover los paquetes en conflicto del sistema?"
 
 #: .tmp/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -458,32 +466,32 @@ msgid "installing"
 msgstr "instalando"
 
 #: .tmp/ui_summarydialog.py:53
-#, fuzzy
 msgid "Operation Summary"
-msgstr "Operación"
+msgstr "Resumen de la operación"
 
 #: .tmp/ui_summarydialog.py:54
 msgid "12 new packages are installed  succesfully."
-msgstr ""
+msgstr "Se instalaron 12 paquetes nuevos con éxito."
 
 #: .tmp/ui_summarydialog.py:55
+# favor revisar - application menu, mejor traduccion ?
 msgid ""
 "You can start the new installed application by double-clicking on the list "
 "below or later from the applications menu."
-msgstr ""
+msgstr "Puede iniciar los programas recientemente instalados con un doble-clic en la lista abajo, o lo puede ejecutar desde el menú de las aplicaciónes."
 
 #: .tmp/ui_summarydialog.py:56
-#, fuzzy
 msgid "&Ok"
-msgstr "&OK"
+msgstr "&Ok"
 
 #: .tmp/mainwidget.py:165
 msgid "Select all packages in this group"
-msgstr ""
+msgstr "Seleccionar todos los paquetes de éste grupo"
 
 #: .tmp/mainwidget.py:171
+# favor revisar, creo que se trata de invertir las marcas de esta lista..
 msgid "Reverse package selections"
-msgstr ""
+msgstr "Invertir seleción de paquetes"
 
 #: .tmp/ui_progressdialog.py:152
 msgid "Operation"
@@ -520,9 +528,8 @@ msgid "Alt+C"
 msgstr ""
 
 #: .tmp/mainwindow.py:57
-#, fuzzy
 msgid "Show Installable Packages"
-msgstr "Mostrar Paquetes instalados"
+msgstr "Mostrar Paquetes a agregar"
 
 #: .tmp/mainwindow.py:64
 msgid "Show Installed Packages"
@@ -548,5 +555,3 @@ msgstr ""
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
 
-#~ msgid "Show New Packages"
-#~ msgstr "Mostrar Paquetes nuevos"
