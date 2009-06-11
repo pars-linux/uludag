@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-11 12:37+0300\n"
+"POT-Creation-Date: 2009-06-11 15:52+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -188,9 +188,7 @@ msgid "Don't install bootloader"
 msgstr "Nie instaluj menedżera rozruchu"
 
 #: yali4/gui/Ui/bootloaderwidget.py:92
-msgid ""
-"Automatically add other operating systems to \n"
-"the GRUB Menu"
+msgid "Automatically add other operating systems to the GRUB Menu"
 msgstr ""
 
 #: yali4/gui/Ui/checkcdwidget.py:81
