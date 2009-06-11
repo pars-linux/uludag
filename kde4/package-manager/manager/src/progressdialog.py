@@ -15,14 +15,17 @@ from PyQt4 import QtGui
 from PyKDE4.kdecore import i18n
 
 from ui_progressdialog import Ui_ProgressDialog
+import backend
 
 class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
     def __init__(self, state, parent=None):
         QtGui.QDialog.__init__(self, parent)
+        self.iface = backend.pm.Iface()
         self.state = state
         self.setupUi(self)
         self.setModal(True)
         self.startAnimation()
+        self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
 
     def startAnimation(self):
         self.movie = QtGui.QMovie(self)
@@ -68,3 +71,8 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.operationInfo.setText("")
         self.statusInfo.setText(i18n("--  / --"))
         self.timeRemaining.setText(i18n("--:--:--"))
+
+    def cancel(self):
+        self.updateActionLabel(i18n("Cancelling operation...</b>"))
+        self.disableCancel()
+        self.iface.cancel()
