@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: yali\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-11 12:37+0300\n"
+"POT-Creation-Date: 2009-06-11 15:52+0300\n"
 "PO-Revision-Date: 2007-03-18 14:13+0100\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@ns1.uludag.org.tr>\n"
@@ -190,9 +190,7 @@ msgid "Don't install bootloader"
 msgstr "No instal·les el carregador de l'engegada"
 
 #: yali4/gui/Ui/bootloaderwidget.py:92
-msgid ""
-"Automatically add other operating systems to \n"
-"the GRUB Menu"
+msgid "Automatically add other operating systems to the GRUB Menu"
 msgstr ""
 
 #: yali4/gui/Ui/checkcdwidget.py:81

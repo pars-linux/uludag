@@ -144,8 +144,7 @@ your newly installed Pardus.&lt;/p&gt;</string>
       <item>
        <widget class="QCheckBox" name="autoAddOthers">
         <property name="text">
-         <string>Automatically add other operating systems to 
-the GRUB Menu</string>
+         <string>Automatically add other operating systems to the GRUB Menu</string>
         </property>
         <property name="checked">
          <bool>true</bool>

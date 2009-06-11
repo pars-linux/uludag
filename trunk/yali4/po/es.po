@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-11 12:37+0300\n"
+"POT-Creation-Date: 2009-06-11 15:52+0300\n"
 "PO-Revision-Date: 2009-06-05 21:03-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -216,9 +216,7 @@ msgid "Don't install bootloader"
 msgstr "No Instalar el cargador de arranque"
 
 #: yali4/gui/Ui/bootloaderwidget.py:92
-msgid ""
-"Automatically add other operating systems to \n"
-"the GRUB Menu"
+msgid "Automatically add other operating systems to the GRUB Menu"
 msgstr ""
 
 #: yali4/gui/Ui/checkcdwidget.py:81
