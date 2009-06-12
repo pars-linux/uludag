@@ -49,6 +49,9 @@ class windowTitle(QtGui.QFrame):
 
         self.dragPosition = None
         self.mainwidget = self.parent()
+        self.setStyleSheet("""
+            QFrame#windowTitle {background-color:#984379;color:#FFF;border:1px solid #FFF;border-radius:4px;}
+        """)
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
@@ -75,6 +78,7 @@ class Dialog(QtGui.QDialog):
 
         if widget:
             self.addWidget(widget)
+            QObject.connect(widget, SIGNAL("finished(int)"), self.reject)
 
         if closeButton:
             QObject.connect(self.windowTitle.pushButton, SIGNAL("clicked()"), self.reject)
@@ -84,10 +88,6 @@ class Dialog(QtGui.QDialog):
             QObject.connect(shortCut, SIGNAL("activated()"), self.reject)
 
         QMetaObject.connectSlotsByName(self)
-
-        self.setStyleSheet("""
-            QFrame#windowTitle {background-color:#984379;color:#FFF;border:1px solid #FFF;border-radius:4px;}
-        """)
 
     def setTitle(self, title):
         self.windowTitle.label.setText(title)
