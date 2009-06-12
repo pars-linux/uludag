@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-11 15:52+0300\n"
+"POT-Creation-Date: 2009-06-12 12:42+0300\n"
 "PO-Revision-Date: 2009-01-31 09:56+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -303,7 +303,7 @@ msgstr "Skärmnamn"
 msgid "Details about the screen"
 msgstr "Detaljer om steget"
 
-#: yali4/gui/Ui/main.py:177 yali4/gui/YaliWindow.py:278
+#: yali4/gui/Ui/main.py:177 yali4/gui/YaliWindow.py:277
 msgid "Release Notes"
 msgstr "Versionsfakta"
 
@@ -548,8 +548,8 @@ msgstr "Användarnamn:"
 msgid "User ID"
 msgstr "Används :"
 
-#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:227
-#: yali4/gui/ScrUsers.py:269
+#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:246
+#: yali4/gui/ScrUsers.py:288
 msgid "Create User"
 msgstr "Skapa användare"
 
@@ -1047,13 +1047,13 @@ msgstr ""
 "<center><font color=\"#FF6D19\">Caps Lock är aktiverad!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119 yali4/gui/ScrRescuePassword.py:113
-#: yali4/gui/ScrUsers.py:176
+#: yali4/gui/ScrUsers.py:181
 #, fuzzy
 msgid "Password is too short!"
 msgstr "<font color=\"#FF6D19\">Lösenordet är för kort!</font>"
 
 #: yali4/gui/ScrAdmin.py:128 yali4/gui/ScrRescuePassword.py:110
-#: yali4/gui/ScrUsers.py:173
+#: yali4/gui/ScrUsers.py:178
 #, fuzzy
 msgid "Passwords do not match!"
 msgstr "<font color=\"#FF6D19\">Lösenorden stämmer inte!</font>"
@@ -1579,7 +1579,7 @@ msgstr "Sparar värdnamn..."
 msgid "Info"
 msgstr ""
 
-#: yali4/gui/ScrRescuePassword.py:107 yali4/gui/ScrUsers.py:170
+#: yali4/gui/ScrRescuePassword.py:107 yali4/gui/ScrUsers.py:175
 #, fuzzy
 msgid "Don't use your user name or name as a password."
 msgstr ""
@@ -1850,30 +1850,30 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrUsers.py:208
+#: yali4/gui/ScrUsers.py:227
 #, fuzzy
 msgid "Username exists, choose another one!"
 msgstr ""
 "<font color=\"#FF6D19\">Användarnamnet finns redan, välj ett annat!</font>"
 
-#: yali4/gui/ScrUsers.py:211
+#: yali4/gui/ScrUsers.py:230
 #, fuzzy
 msgid "Username contains invalid characters!"
 msgstr ""
 "<font color=\"#FF6D19\">Användarnamnet innehåller ogiltiga tecken!</font>"
 
-#: yali4/gui/ScrUsers.py:214
+#: yali4/gui/ScrUsers.py:233
 #, fuzzy
 msgid "Realname contains invalid characters!"
 msgstr ""
 "<font color=\"#FF6D19\">Det verkliga namnet innehåller ogiltiga tecken!</"
 "font>"
 
-#: yali4/gui/ScrUsers.py:222
+#: yali4/gui/ScrUsers.py:241
 msgid "User ID used before, choose another one!"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:293
+#: yali4/gui/ScrUsers.py:312
 msgid "Update User"
 msgstr "Uppdatera användare"
 
@@ -1942,24 +1942,55 @@ msgstr ""
 "<p>Klicka på knappen Starta om för att starta om datorn.</p>\n"
 "</b>\n"
 
-#: yali4/gui/YaliWindow.py:72 yali4/gui/YaliWindow.py:169
+#: yali4/gui/YaliWindow.py:72 yali4/gui/YaliWindow.py:168
 msgid "Show Help"
 msgstr "Visa hjälp"
 
-#: yali4/gui/YaliWindow.py:103
+#: yali4/gui/YaliWindow.py:88 yali4/gui/YaliWindow.py:103
+msgid "right"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:99
+msgid "Yes"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:100
+msgid "No"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:101
 msgid "Don't ask again"
 msgstr ""
 
-#: yali4/gui/YaliWindow.py:145
+#: yali4/gui/YaliWindow.py:102 yali4/gui/YaliWindow.py:105
+msgid "left"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:106
+#, python-format
+msgid "You just used <b>%s</b> button."
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:107
+#, python-format
+msgid "Do you want to use <b>%s</b> handed mouse settings ?"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:108
+#, fuzzy
+msgid "Mouse Settings"
+msgstr "Användare"
+
+#: yali4/gui/YaliWindow.py:144
 msgid "Terminal"
 msgstr ""
 
-#: yali4/gui/YaliWindow.py:150
+#: yali4/gui/YaliWindow.py:149
 #, fuzzy
 msgid "Tetris"
 msgstr "Turkiska"
 
-#: yali4/gui/YaliWindow.py:172
+#: yali4/gui/YaliWindow.py:171
 msgid "Hide Help"
 msgstr "Dölj hjälp"
 
