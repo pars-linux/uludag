@@ -21,6 +21,7 @@ _ = __trans.ugettext
 import yali4.sysutils
 from yali4.gui.Ui.main import Ui_YaliMain
 from yali4.gui.YaliDialog import Dialog
+from yali4.gui.YaliDialog import Window
 from yali4.gui.YaliDialog import Tetris
 import yali4.gui.context as ctx
 
@@ -86,7 +87,6 @@ class Widget(QtGui.QWidget):
         self._terminal = QTermWidget.QTermWidget()
         self._terminal.sendText("export TERM='xterm'\nclear\n")
         self.cmb = "right"
-        self.cmbMsgBox = None
         self.dontAskCmbAgain = False
         self.terminal = None
         self.tetris = None
@@ -96,22 +96,22 @@ class Widget(QtGui.QWidget):
             self.askForMouseButtonOrder()
 
     def askForMouseButtonOrder(self):
-        if not self.cmbMsgBox:
-            self.cmbMsgBox = QtGui.QMessageBox()
-            self.cmbMsgBox.addButton(QtGui.QMessageBox.Yes)
-            self.cmbMsgBox.addButton(QtGui.QMessageBox.No)
-            self.cmbMsgBoxDontAsk = self.cmbMsgBox.addButton(_("Don't ask again"), QtGui.QMessageBox.ActionRole)
+        cmbMsgBox = QtGui.QMessageBox()
+        buttonYes = cmbMsgBox.addButton(QtGui.QMessageBox.Yes)
+        cmbMsgBox.addButton(QtGui.QMessageBox.No)
+        buttonDontAsk = cmbMsgBox.addButton(_("Don't ask again"), QtGui.QMessageBox.ActionRole)
         if self.cmb == "left":
             ocmb = "right"
         else:
             ocmb = "left"
-        self.cmbMsgBox.setText("You just used %s button." % self.cmb)
-        self.cmbMsgBox.setInformativeText("Do you want to use %s handed mouse settings ?" % ocmb)
-        reply = self.cmbMsgBox.exec_()
-        if reply == QtGui.QMessageBox.Yes:
+        cmbMsgBox.setText("You just used %s button." % self.cmb)
+        cmbMsgBox.setInformativeText("Do you want to use %s handed mouse settings ?" % ocmb)
+        dialog = Dialog("Bop", cmbMsgBox)
+        dialog.exec_()
+        if cmbMsgBox.clickedButton() == buttonYes:
             yali4.sysutils.set_mouse(self.cmb)
             self.cmb = ocmb
-        if self.cmbMsgBox.clickedButton() == self.cmbMsgBoxDontAsk:
+        if cmbMsgBox.clickedButton() == buttonDontAsk:
             self.dontAskCmbAgain = True
 
     def updateStyle(self):
