@@ -24,6 +24,10 @@ from pardus import procutils
 from yali4._sysutils import *
 from yali4.constants import consts
 
+import gettext
+__trans = gettext.translation('yali4', fallback=True)
+_ = __trans.ugettext
+
 _sys_dirs = ['dev', 'proc', 'sys']
 
 def run(cmd, params=None, capture=False):
@@ -163,8 +167,8 @@ def eject_cdrom(mount_point=consts.source_dir):
     run("eject -m %s" % mount_point)
 
 def set_mouse(key="left"):
-    struct = {"left" :"1 2 3",
-              "right":"3 2 1"}
+    struct = {_("left") :"1 2 3",
+              _("right"):"3 2 1"}
     os.system("xmodmap -e \"pointer = %s\"" % struct[key])
 
 def text_is_valid(text):

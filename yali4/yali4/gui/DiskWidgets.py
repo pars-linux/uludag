@@ -374,10 +374,9 @@ class DiskList(QtGui.QWidget):
             if device._disk.type.name == "gpt":
                 min_primary = 4
                 if device.numberOfPrimaryPartitions() == 4:
-                    QtGui.QMessageBox.information(self,
-                                                _("Too many primary partition !"), 
-                                                _("GPT Disk tables does not support for extended partitions.\n" \
-                                                  "You need to delete one of primary partition from your disk table !"))
+                    InfoDialog(_("GPT Disk tables does not support for extended partitions.\n" \
+                                 "You need to delete one of primary partition from your disk table !"),
+                       title = _("Too many primary partitions !"))
                     return
             else:
                 min_primary = 1
@@ -399,9 +398,8 @@ class DiskList(QtGui.QWidget):
                 # if four primary partitions or
                 # three primary partitions and additionaly an extendedPartition
                 # exists on the disk we can't create a new primary partition
-                QtGui.QMessageBox.information(self,
-                                                _("Too many primary partitions !"), 
-                                                _("You need to delete one of the primary or extended(if exists) partition from your disk table !"))
+                InfoDialog(_("You need to delete one of the primary or extended(if exists) partition from your disk table !"),
+                   title = _("Too many primary partitions !"))
                 return
 
             if extendedPartition and partition._partition.type & parteddata.PARTITION_LOGICAL:
@@ -412,9 +410,8 @@ class DiskList(QtGui.QWidget):
                 p = device.addPartition(partition._partition, type, t.filesystem, size, t.parted_flags)
             except Exception, e:
                 ctx.debugger.log("Exception : %s" % e)
-                QtGui.QMessageBox.information(self,
-                                                _("Too many primary partitions !"),
-                                                _("You need to delete one of the primary or extended(if exists) partition from your disk table !"))
+                InfoDialog(_("You need to delete one of the primary or extended(if exists) partition from your disk table !"),
+                   title = _("Too many primary partitions !"))
                 return
 
             # Get new partition meta

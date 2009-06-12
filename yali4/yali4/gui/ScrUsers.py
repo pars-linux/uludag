@@ -24,7 +24,7 @@ from PyQt4.QtCore import *
 from yali4.constants import consts
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.setupuserswidget import Ui_SetupUsersWidget
-from yali4.gui.YaliDialog import Dialog, WarningDialog, WarningWidget
+from yali4.gui.YaliDialog import Dialog
 
 ##
 # Partitioning screen.

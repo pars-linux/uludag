@@ -32,7 +32,7 @@ import yali4.partitiontype as parttype
 
 # GUI Stuff
 from yali4.gui.ScreenWidget import ScreenWidget
-from yali4.gui.YaliDialog import WarningDialog, WarningWidget
+from yali4.gui.YaliDialog import QuestionDialog
 from yali4.gui.Ui.summarywidget import Ui_SummaryWidget
 import yali4.gui.context as ctx
 
@@ -68,11 +68,9 @@ Here you can see your install options and look at them again before installation
             pass
 
     def slotReboot(self):
-        w = WarningWidget(self)
-        w.warning.setText(_('''<b><p>This action will reboot your system !</p></b>'''))
-        w.ok.setText(_("Reboot"))
-        dialog = WarningDialog(w, self)
-        if dialog.exec_():
+        reply = QuestionDialog(_("Reboot"),
+                               _('''<b><p>This action will reboot your system !</p></b>'''))
+        if reply == "yes":
             yali4.sysutils.fastreboot()
 
     def startBombCounter(self):
@@ -237,15 +235,12 @@ Here you can see your install options and look at them again before installation
         self.timer.stop()
 
         if self.resizeAction:
-            w = WarningWidget(self)
-            w.warning.setText(_(
-                """<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt your partition,<br>
-                   rendering your data unreachable. <br>
-                   Make sure that you have a backup for this partition.<br>
-                   <b>Note that this operation cannot be undone ! </b></p>"""))
-            w.ok.setText(_("Begin Install"))
-            dialog = WarningDialog(w, self)
-            if not dialog.exec_():
+            reply = QuestionDialog(_("Before Starting"),
+                                   _("""<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt your partition,<br>
+                                        rendering your data unreachable. <br>
+                                        Make sure that you have a backup for this partition.<br>
+                                        <b>Note that this operation cannot be undone ! </b></p>"""))
+            if reply == "no":
                 ctx.mainScreen.moveInc = 0
                 return
 
