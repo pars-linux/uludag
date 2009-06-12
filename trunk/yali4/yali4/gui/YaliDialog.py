@@ -69,8 +69,9 @@ class Dialog(QtGui.QDialog):
         self.setObjectName("dialog")
 
         self.isDialog = isDialog
-        self.layout = QtGui.QVBoxLayout(self)
-        self.wlayout= QtGui.QHBoxLayout(self)
+        self.layout = QtGui.QVBoxLayout()
+        self.setLayout(self.layout)
+        self.wlayout= QtGui.QHBoxLayout()
 
         self.windowTitle = windowTitle(self, closeButton)
         self.setTitle(title)
@@ -78,8 +79,6 @@ class Dialog(QtGui.QDialog):
         self.layout.addWidget(self.windowTitle)
 
         if widget:
-            widget.setAutoFillBackground(False)
-            widget.setStyleSheet("QWidget { background:none }")
             self.addWidget(widget)
             QObject.connect(widget, SIGNAL("finished(int)"), self.reject)
 
@@ -101,6 +100,7 @@ class Dialog(QtGui.QDialog):
         self.content = widget
         self.wlayout.addWidget(self.content)
         if self.isDialog:
+            widget.setStyleSheet("QWidget { background:none }")
             self.setStyleSheet(""" QDialog#dialog {background-image:url(':/images/info.png');
                                                    background-repeat:no-repeat;
                                                    background-position: top left; } """)
