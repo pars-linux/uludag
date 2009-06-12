@@ -20,7 +20,7 @@ _ = __trans.ugettext
 
 import yali4.sysutils
 from yali4.gui.Ui.main import Ui_YaliMain
-from yali4.gui.YaliDialog import Dialog
+from yali4.gui.YaliDialog import Dialog, QuestionDialog
 from yali4.gui.YaliDialog import Tetris
 import yali4.gui.context as ctx
 
@@ -92,26 +92,19 @@ class Widget(QtGui.QWidget):
 
     def mousePressEvent(self, event):
         if event.button() == Qt.RightButton and not self.dontAskCmbAgain:
-            self.askForMouseButtonOrder()
-
-    def askForMouseButtonOrder(self):
-        cmbMsgBox = QtGui.QMessageBox()
-        buttonYes = cmbMsgBox.addButton(_("Yes"), QtGui.QMessageBox.ActionRole)
-        cmbMsgBox.addButton(_("No"), QtGui.QMessageBox.ActionRole)
-        buttonDontAsk = cmbMsgBox.addButton(_("Don't ask again"), QtGui.QMessageBox.ActionRole)
-        if self.cmb == _("left"):
-            ocmb = _("right")
-        else:
-            ocmb = _("left")
-        cmbMsgBox.setText(_("You just used <b>%s</b> button.") % self.cmb)
-        cmbMsgBox.setInformativeText(_("Do you want to use <b>%s</b> handed mouse settings ?") % ocmb)
-        dialog = Dialog(_("Mouse Settings"), cmbMsgBox)
-        dialog.exec_()
-        if cmbMsgBox.clickedButton() == buttonYes:
-            yali4.sysutils.set_mouse(self.cmb)
-            self.cmb = ocmb
-        if cmbMsgBox.clickedButton() == buttonDontAsk:
-            self.dontAskCmbAgain = True
+            if self.cmb == _("left"):
+                ocmb = _("right")
+            else:
+                ocmb = _("left")
+            reply = QuestionDialog(_("Mouse Settings"),
+                                   _("You just used <b>%s</b> button.") % self.cmb,
+                                   _("Do you want to use <b>%s</b> handed mouse settings ?") % ocmb,
+                                   dontAsk = True)
+            if reply == "yes":
+                yali4.sysutils.set_mouse(self.cmb)
+                self.cmb = ocmb
+            elif reply == "dontask":
+                self.dontAskCmbAgain = True
 
     def updateStyle(self):
         self.setStyleSheet(file(self._style).read())

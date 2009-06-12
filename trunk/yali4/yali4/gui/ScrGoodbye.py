@@ -32,7 +32,7 @@ import yali4.partitiontype as parttype
 from os.path import basename
 from yali4.sysutils import is_windows_boot
 from yali4.gui.ScreenWidget import ScreenWidget
-from yali4.gui.YaliDialog import WarningDialog, RebootWidget
+from yali4.gui.YaliDialog import InfoDialog
 from yali4.gui.YaliSteps import YaliSteps
 from yali4.gui.Ui.goodbyewidget import Ui_GoodByeWidget
 import yali4.gui.context as ctx
@@ -82,12 +82,9 @@ don't you?
     def execute(self):
         ctx.mainScreen.disableNext()
 
-        w = RebootWidget(self)
-
         ctx.debugger.log("Show reboot dialog.")
-        self.dialog = WarningDialog(w, self)
-        self.dialog.exec_()
-        ctx.mainScreen.processEvents()
+        InfoDialog(_("Press <b>Reboot</b> button to restart your system."), _("Reboot"))
+
         ctx.yali.info.updateAndShow(_('<b>Rebooting system. Please wait!</b>'))
 
         # remove cd...

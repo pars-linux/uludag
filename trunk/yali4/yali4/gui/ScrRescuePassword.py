@@ -27,6 +27,7 @@ import yali4.postinstall
 import yali4.sysutils
 
 from yali4.gui.installdata import *
+from yali4.gui.YaliDialog import InfoDialog
 from yali4.gui.GUIAdditional import DeviceItem
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.rescuepasswordwidget import Ui_RescuePasswordWidget
@@ -93,7 +94,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         password = unicode(self.ui.pass1.text())
         uid  = int(self.ui.userList.currentItem().getInfo()[0])
         yali4.postinstall.setUserPass(uid, password)
-        QtGui.QMessageBox.information(None, _("Info"), "Password changed", QtGui.QMessageBox.Ok)
+        InfoDialog(_("Password changed"), title = _("Info"))
         self.resetWidgets()
 
     def slotTextChanged(self):

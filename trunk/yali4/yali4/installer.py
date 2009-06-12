@@ -45,8 +45,7 @@ from yali4.partitionrequest import partrequests
 from yali4.parteddata import *
 
 # gui
-from yali4.gui.YaliDialog import Dialog
-from yali4.gui.YaliDialog import WarningDialog, WarningWidget, InformationWindow
+from yali4.gui.YaliDialog import Dialog, QuestionDialog, InfoDialog, InformationWindow
 
 # debugger
 from yali4.gui.debugger import Debugger
@@ -148,7 +147,7 @@ class Yali:
                 self.plugin.config.setup()
             else:
                 install_type = YALI_INSTALL
-                self.showFail(_("Plugin (%s) not found or error occurred while loading. Switching to normal installation process." % install_plugin))
+                InfoDialog(_("Plugin (%s) not found or error occurred while loading. Switching to normal installation process." % install_plugin))
 
         if not self.plugin:
             self.screens = self._screens[install_type]
@@ -165,9 +164,6 @@ class Yali:
             return False
         plugin = getattr(_p.plugins,p)
         return plugin
-
-    def showFail(self, message):
-        QtGui.QMessageBox.warning(None, _("Warning !"), message, QtGui.QMessageBox.Ok)
 
     def checkCD(self, rootWidget):
         ctx.mainScreen.disableNext()
@@ -666,11 +662,10 @@ class Yali:
         d.exec_()
 
     def askForRetry(self, message):
-        w = WarningWidget()
-        w.warning.setText(str(message))
-        w.ok.setText(_("Retry"))
-        dialog = WarningDialog(w, self)
-        if not dialog.exec_():
+        reply = QuestionDialog(_("Warning"),
+                               str(message),
+                               _("Do you want to retry ?"))
+        if reply == "no":
             return False
         return True
 

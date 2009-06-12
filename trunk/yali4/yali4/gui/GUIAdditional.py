@@ -20,6 +20,7 @@ _ = __trans.ugettext
 import yali4.gui.context as ctx
 from yali4.postinstall import *
 from yali4.exception import *
+from yali4.gui.YaliDialog import InfoDialog
 from yali4.gui.Ui.partresize import Ui_PartResizeWidget
 from yali4.gui.Ui.autopartquestion import Ui_autoPartQuestion
 from yali4.gui.Ui.connectionlist import Ui_connectionWidget
@@ -89,7 +90,7 @@ class ResizeWidget(QtGui.QWidget):
         try:
             self.dev.resizePartition(self.part._fsname, resizeTo,self.part)
         except FSCheckError, message:
-            QtGui.QMessageBox.information(self.rootWidget, _("Filesystem Error"), unicode(message))
+            InfoDialog(unicode(message), title = _("Filesystem Error"))
             return
 
         _sum = {"partition":self.part.getName(),

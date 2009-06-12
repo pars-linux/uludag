@@ -23,7 +23,7 @@ import yali4.gui.context as ctx
 class windowTitle(QtGui.QFrame):
     def __init__(self, parent, closeButton=True):
         QtGui.QFrame.__init__(self, parent)
-        self.setMaximumSize(QSize(9999999,26))
+        self.setMaximumSize(QSize(9999999,22))
         self.setObjectName("windowTitle")
         self.hboxlayout = QtGui.QHBoxLayout(self)
         self.hboxlayout.setSpacing(0)
@@ -96,100 +96,45 @@ class Dialog(QtGui.QDialog):
         self.content = widget
         self.gridlayout.addWidget(self.content,1,0,1,1)
 
-class WarningDialog(Dialog):
+def QuestionDialog(title, text, info = None, dontAsk = False):
+    msgBox = QtGui.QMessageBox()
 
-    def __init__(self, w, parent):
-        self.warning_widget = w
-        Dialog.__init__(self, _("Warning"), self.warning_widget, parent)
+    buttonYes = msgBox.addButton(_("Yes"), QtGui.QMessageBox.ActionRole)
+    buttonNo = msgBox.addButton(_("No"), QtGui.QMessageBox.ActionRole)
 
-        self.connect(self.warning_widget, SIGNAL("signalOK"),
-                     self.slotOK)
-        self.connect(self.warning_widget, SIGNAL("signalCancel"),
-                     self.slotCancel)
+    answers = {buttonYes:"yes",
+               buttonNo :"no"}
+    if dontAsk:
+        buttonDontAsk = msgBox.addButton(_("Don't ask again"), QtGui.QMessageBox.ActionRole)
+        answers[buttonDontAsk] = "dontask"
 
-    def slotOK(self):
-        self.done(1)
+    msgBox.setText(text)
+    if not info:
+        info = _("Do you want to continue ?")
+    msgBox.setInformativeText(info)
 
-    def slotCancel(self):
-        self.done(0)
+    dialog = Dialog(_(title), msgBox)
+    dialog.exec_()
 
-class WarningWidget(QtGui.QWidget):
+    ctx.mainScreen.processEvents()
+    return answers[msgBox.clickedButton()]
 
-    def __init__(self, *args):
-        QtGui.QWidget.__init__(self, *args)
+def InfoDialog(text, button=None, title=None):
+    if not title:
+        title = _("Information")
+    if not button:
+        button = _("Ok")
 
-        l = QtGui.QVBoxLayout(self)
-        l.setSpacing(20)
-        l.setMargin(10)
+    msgBox = QtGui.QMessageBox()
 
-        self.warning = QtGui.QLabel(self)
-        self.warning.setScaledContents(True)
-        self.warning.setText(_('''<b>
-<p>This action will start installing Pardus on<br>
-your system formatting the selected partition.</p>
-</b>
-'''))
+    buttonOk = msgBox.addButton(button, QtGui.QMessageBox.ActionRole)
 
-        self.cancel = QtGui.QPushButton(self)
-        self.cancel.setText(_("Cancel"))
+    msgBox.setText(text)
+    msgBox.setInformativeText(info)
 
-        self.ok = QtGui.QPushButton(self)
-        self.ok.setText(_("O.K. Go Ahead"))
-
-        buttons = QtGui.QHBoxLayout(self)
-        buttons.setSpacing(10)
-        buttons.addStretch(1)
-        buttons.addWidget(self.cancel)
-        buttons.addWidget(self.ok)
-
-        l.addWidget(self.warning)
-        l.addLayout(buttons)
-
-        self.connect(self.ok, SIGNAL("clicked()"),
-                     self.slotOK)
-        self.connect(self.cancel, SIGNAL("clicked()"),
-                     self.slotCancel)
-
-    def setMessage(self,msg):
-        self.warning.setText(msg)
-
-    def slotOK(self):
-        self.emit(SIGNAL("signalOK"), ())
-
-    def slotCancel(self):
-        self.emit(SIGNAL("signalCancel"), ())
-
-class RebootWidget(QtGui.QWidget):
-
-    def __init__(self, *args):
-        QtGui.QWidget.__init__(self, *args)
-
-        l = QtGui.QVBoxLayout(self)
-        l.setSpacing(20)
-        l.setMargin(10)
-
-        warning = QtGui.QLabel(self)
-        warning.setText(_('''<b>
-<p>Press Reboot button to restart your system.</p>
-</b>
-'''))
-
-        self.reboot = QtGui.QPushButton(self)
-        self.reboot.setText(_("Reboot"))
-
-        buttons = QtGui.QHBoxLayout(self)
-        buttons.setSpacing(10)
-        buttons.addStretch(1)
-        buttons.addWidget(self.reboot)
-
-        l.addWidget(warning)
-        l.addLayout(buttons)
-
-        self.connect(self.reboot, SIGNAL("clicked()"),
-                     self.slotReboot)
-
-    def slotReboot(self):
-        self.emit(SIGNAL("signalOK"), ())
+    dialog = Dialog(_(title), msgBox, None, False)
+    dialog.exec_()
+    ctx.mainScreen.processEvents()
 
 class InformationWindow(QtGui.QWidget):
 
@@ -239,7 +184,6 @@ class InformationWindow(QtGui.QWidget):
         self.progressBar = QtGui.QProgressBar(self.frame)
         self.progressBar.setMaximumSize(QSize(16777215,6))
         self.progressBar.setMaximum(0)
-        self.progressBar.setProperty("value",QVariant(-1))
         self.progressBar.setObjectName("progressBar")
         self.gridlayout1.addWidget(self.progressBar,1,0,1,1)
         self.gridlayout.addWidget(self.frame,0,0,1,1)

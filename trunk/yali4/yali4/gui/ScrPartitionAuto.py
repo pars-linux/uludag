@@ -26,7 +26,6 @@ import yali4.parteddata as parteddata
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.autopartwidget import Ui_AutoPartWidget
 from yali4.gui.GUIAdditional import AutoPartQuestionWidget
-from yali4.gui.YaliDialog import WarningDialog
 from yali4.gui.GUIException import *
 import yali4.gui.context as ctx
 

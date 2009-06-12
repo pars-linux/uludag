@@ -20,7 +20,7 @@ from PyQt4.QtCore import *
 import yali4.gui.context as ctx
 import yali4.partitionrequest as request
 import yali4.partitiontype as parttype
-from yali4.gui.YaliDialog import Dialog, WarningDialog, WarningWidget
+from yali4.gui.YaliDialog import Dialog, QuestionDialog
 from yali4.gui.GUIException import *
 from yali4.gui.DiskWidgets import *
 from yali4.gui.ScreenWidget import ScreenWidget
@@ -76,10 +76,10 @@ about disk partitioning.
         return True
 
     def backCheck(self):
-        answer = QtGui.QMessageBox.warning(self, _("Warning"),
-                                                 _("All changes that you made will be removed.\nDo you want to continue ?"),
-                                                 QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
-        if answer == QtGui.QMessageBox.Yes:
+        reply = QuestionDialog(_("Warning"),
+                               _("All changes that you made will be removed."))
+
+        if reply == "yes":
             self.diskList.reinitDevices()
             return True
         return False
