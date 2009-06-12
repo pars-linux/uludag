@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Exec=kfmclient openURL %u application/x-sysinfo
+Exec=kfmclient openURL sysinfo:/
 Icon=konqueror
 Terminal=false
 MimeType=application/x-sysinfo;
