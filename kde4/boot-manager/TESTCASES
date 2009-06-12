@@ -1,10 +1,10 @@
-Not: - Observe each result from /boot/grub/grub.conf, then restart computer and try each stuation.
+Not: - Observe each result from /boot/grub/grub.conf, then restart computer and try each situation.
      - Looking for related partition
         Type console
         # fdisk -l
      - Looking for kernel and initramfs
         Type console
-        ls /boot/`
+        ls /boot/
 
 - Add a new bootable system
     For all system options try to left empty the textboxe(s) and then observe that they give a warning about it.
