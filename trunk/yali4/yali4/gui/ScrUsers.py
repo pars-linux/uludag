@@ -89,6 +89,10 @@ Click Next button to proceed.
                      self.slotTextChanged)
         self.connect(self.ui.realname, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
+        self.connect(self.ui.username, SIGNAL("textEdited(const QString &)"),
+                     self.slotUserNameChanged)
+        self.connect(self.ui.realname, SIGNAL("textChanged(const QString &)"),
+                     self.slotRealNameChanged)
         self.connect(self.ui.userID, SIGNAL("valueChanged(int)"),
                      self.slotTextChanged)
         self.connect(self.ui.createButton, SIGNAL("clicked()"),
@@ -108,6 +112,7 @@ Click Next button to proceed.
 
         ctx.installData.users = []
         ctx.installData.autoLoginUser = None
+        self.userNameChanged = False
         self.usedIDs = []
 
     def shown(self):
@@ -187,6 +192,21 @@ Click Next button to proceed.
             if not self.ui.addMoreUsers.isChecked():
                 ctx.mainScreen.disableNext()
 
+    def currentUsers(self):
+        ret = []
+        for i in range(self.ui.userList.count()):
+            ret.append(self.ui.userList.item(i).getUser().username)
+        return ret
+
+    def slotUserNameChanged(self):
+        self.userNameChanged = True
+
+    def slotRealNameChanged(self):
+        if not self.userNameChanged:
+            usedUsers = yali4.users.getUserList()
+            usedUsers.extend(self.currentUsers())
+            self.ui.username.setText(yali4.users.nickGuess(self.ui.realname.text(), usedUsers))
+
     def slotCreateUser(self):
         u = yali4.users.User()
         u.username = str(self.ui.username.text().toAscii())
@@ -200,8 +220,7 @@ Click Next button to proceed.
             pix = self.superUserIcon
         u.noPass = self.ui.noPass.isChecked()
 
-        existsInList = [i for i in range(self.ui.userList.count())
-                        if self.ui.userList.item(i).getUser().username == u.username]
+        existsInList = u.username in self.currentUsers()
 
         # check user validity
         if u.exists() or (existsInList and self.edititemindex == None):
