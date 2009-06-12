@@ -21,7 +21,6 @@ _ = __trans.ugettext
 import yali4.sysutils
 from yali4.gui.Ui.main import Ui_YaliMain
 from yali4.gui.YaliDialog import Dialog
-from yali4.gui.YaliDialog import Window
 from yali4.gui.YaliDialog import Tetris
 import yali4.gui.context as ctx
 
@@ -86,7 +85,7 @@ class Widget(QtGui.QWidget):
 
         self._terminal = QTermWidget.QTermWidget()
         self._terminal.sendText("export TERM='xterm'\nclear\n")
-        self.cmb = "right"
+        self.cmb = _("right")
         self.dontAskCmbAgain = False
         self.terminal = None
         self.tetris = None
@@ -97,16 +96,16 @@ class Widget(QtGui.QWidget):
 
     def askForMouseButtonOrder(self):
         cmbMsgBox = QtGui.QMessageBox()
-        buttonYes = cmbMsgBox.addButton(QtGui.QMessageBox.Yes)
-        cmbMsgBox.addButton(QtGui.QMessageBox.No)
+        buttonYes = cmbMsgBox.addButton(_("Yes"), QtGui.QMessageBox.ActionRole)
+        cmbMsgBox.addButton(_("No"), QtGui.QMessageBox.ActionRole)
         buttonDontAsk = cmbMsgBox.addButton(_("Don't ask again"), QtGui.QMessageBox.ActionRole)
-        if self.cmb == "left":
-            ocmb = "right"
+        if self.cmb == _("left"):
+            ocmb = _("right")
         else:
-            ocmb = "left"
-        cmbMsgBox.setText("You just used %s button." % self.cmb)
-        cmbMsgBox.setInformativeText("Do you want to use %s handed mouse settings ?" % ocmb)
-        dialog = Dialog("Bop", cmbMsgBox)
+            ocmb = _("left")
+        cmbMsgBox.setText(_("You just used <b>%s</b> button.") % self.cmb)
+        cmbMsgBox.setInformativeText(_("Do you want to use <b>%s</b> handed mouse settings ?") % ocmb)
+        dialog = Dialog(_("Mouse Settings"), cmbMsgBox)
         dialog.exec_()
         if cmbMsgBox.clickedButton() == buttonYes:
             yali4.sysutils.set_mouse(self.cmb)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-11 15:52+0300\n"
+"POT-Creation-Date: 2009-06-12 12:42+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -258,7 +258,7 @@ msgstr ""
 msgid "Details about the screen"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:177 yali4/gui/YaliWindow.py:278
+#: yali4/gui/Ui/main.py:177 yali4/gui/YaliWindow.py:277
 msgid "Release Notes"
 msgstr ""
 
@@ -472,8 +472,8 @@ msgstr ""
 msgid "User ID"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:227
-#: yali4/gui/ScrUsers.py:269
+#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:246
+#: yali4/gui/ScrUsers.py:288
 msgid "Create User"
 msgstr ""
 
@@ -868,12 +868,12 @@ msgid "<center>Caps Lock is on!</center>"
 msgstr ""
 
 #: yali4/gui/ScrAdmin.py:119 yali4/gui/ScrRescuePassword.py:113
-#: yali4/gui/ScrUsers.py:176
+#: yali4/gui/ScrUsers.py:181
 msgid "Password is too short!"
 msgstr ""
 
 #: yali4/gui/ScrAdmin.py:128 yali4/gui/ScrRescuePassword.py:110
-#: yali4/gui/ScrUsers.py:173
+#: yali4/gui/ScrUsers.py:178
 msgid "Passwords do not match!"
 msgstr ""
 
@@ -1256,7 +1256,7 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: yali4/gui/ScrRescuePassword.py:107 yali4/gui/ScrUsers.py:170
+#: yali4/gui/ScrRescuePassword.py:107 yali4/gui/ScrUsers.py:175
 msgid "Don't use your user name or name as a password."
 msgstr ""
 
@@ -1482,23 +1482,23 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:208
+#: yali4/gui/ScrUsers.py:227
 msgid "Username exists, choose another one!"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:211
+#: yali4/gui/ScrUsers.py:230
 msgid "Username contains invalid characters!"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:214
+#: yali4/gui/ScrUsers.py:233
 msgid "Realname contains invalid characters!"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:222
+#: yali4/gui/ScrUsers.py:241
 msgid "User ID used before, choose another one!"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:293
+#: yali4/gui/ScrUsers.py:312
 msgid "Update User"
 msgstr ""
 
@@ -1546,23 +1546,53 @@ msgid ""
 "</b>\n"
 msgstr ""
 
-#: yali4/gui/YaliWindow.py:72 yali4/gui/YaliWindow.py:169
+#: yali4/gui/YaliWindow.py:72 yali4/gui/YaliWindow.py:168
 msgid "Show Help"
 msgstr ""
 
-#: yali4/gui/YaliWindow.py:103
+#: yali4/gui/YaliWindow.py:88 yali4/gui/YaliWindow.py:103
+msgid "right"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:99
+msgid "Yes"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:100
+msgid "No"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:101
 msgid "Don't ask again"
 msgstr ""
 
-#: yali4/gui/YaliWindow.py:145
+#: yali4/gui/YaliWindow.py:102 yali4/gui/YaliWindow.py:105
+msgid "left"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:106
+#, python-format
+msgid "You just used <b>%s</b> button."
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:107
+#, python-format
+msgid "Do you want to use <b>%s</b> handed mouse settings ?"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:108
+msgid "Mouse Settings"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:144
 msgid "Terminal"
 msgstr ""
 
-#: yali4/gui/YaliWindow.py:150
+#: yali4/gui/YaliWindow.py:149
 msgid "Tetris"
 msgstr ""
 
-#: yali4/gui/YaliWindow.py:172
+#: yali4/gui/YaliWindow.py:171
 msgid "Hide Help"
 msgstr ""
 
