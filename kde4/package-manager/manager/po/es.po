@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-11 12:29+0300\n"
-"PO-Revision-Date: 2009-06-11 19:40-0400\n"
+"PO-Revision-Date: 2009-06-15 18:34-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -85,7 +85,7 @@ msgid "Application"
 msgstr "Aplicación"
 
 #: .tmp/ui_appitem.py:53
-# what is this please ?? Some sort of Web-spider ?? (httrack ?)
+# what is this please ?? Some sort of Web-spider / Web-crawler ?? (httrack ?)
 msgid "Web Tarayıcı"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr ""
 
 #: .tmp/settingsdialog.py:116
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Se eliminarán todos los paquetes almacenados. Está seguro ?"
+msgstr "Se eliminarán todos los paquetes almacenados del cache. Está seguro ?"
 
 #: .tmp/settingsdialog.py:117
 msgid "Warning"
@@ -177,7 +177,7 @@ msgstr "Configuración &General"
 
 #: .tmp/ui_settingsdialog.py:332
 msgid "&Use hard disk cache for downloaded software"
-msgstr "&Usar cache en disco rígido para las descargas"
+msgstr "&Usar cache en disco para los paquetes descargados"
 
 #: .tmp/ui_settingsdialog.py:333
 msgid "Maximum cache size:"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: .tmp/ui_settingsdialog.py:335
 msgid "(use 0 for no limit)"
-msgstr "(use 0 para indicar \"sin límite\")"
+msgstr "(use 0 para indicar \"ilimitado\")"
 
 #: .tmp/ui_settingsdialog.py:336
 msgid "Clear Cache"
@@ -290,8 +290,9 @@ msgid "Form"
 msgstr ""
 
 #: .tmp/ui_mainwidget.py:55
+# i translated as "Write here to search", i think this is the idea
 msgid "Click to search"
-msgstr "Presione para buscar"
+msgstr "Escriba aquí para buscar"
 
 #: .tmp/ui_mainwidget.py:57
 msgid ""
@@ -348,7 +349,7 @@ msgstr "Actualizar Paquetes(s)"
 msgid "installed"
 msgstr "instalado"
 
-# favor revisar, quizá debe ser plural ?
+# favor revisar, quizá debe ser plural ??
 #: .tmp/statemanager.py:69
 msgid "removed"
 msgstr "removido"
@@ -359,27 +360,27 @@ msgstr "actualizado"
 
 #: .tmp/statemanager.py:78
 msgid "%1 new package(s) have been installed succesfully."
-msgstr "%1 paquete(s) nuevos instalados con éxito."
+msgstr "%1 paquetes instalados con éxito."
 
 #: .tmp/statemanager.py:79
 msgid "%1 package(s) have been removed succesfully."
-msgstr "%1 paquete(s) removidos con éxito."
+msgstr "%1 paquetes removidos con éxito."
 
 #: .tmp/statemanager.py:80
 msgid "%1 package(s) have been upgraded succesfully."
-msgstr "%1 paquete(s) actualizados con éxito."
+msgstr "%1 paquetes actualizados con éxito."
 
 #: .tmp/statemanager.py:83
 msgid "You have selected the following package(s) to install:"
-msgstr "Los siguientes paquetes están seleccionados para instalar:"
+msgstr "Paquetes seleccionados para instalar:"
 
 #: .tmp/statemanager.py:84
 msgid "You have selected the following package(s) to removal:"
-msgstr "Los siguientes paquetes están seleccionados para remover:"
+msgstr "Paquetes seleccionados para remover:"
 
 #: .tmp/statemanager.py:85
 msgid "You have selected the following package(s) to upgrade:"
-msgstr "Los siguientes paquetes están seleccionados para actualizar:"
+msgstr "Paquetes seleccionados para actualizar:"
 
 #: .tmp/statemanager.py:89
 msgid ""
@@ -401,15 +402,17 @@ msgstr "Actualmente el carrito está vacío."
 
 #: .tmp/statemanager.py:118
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Actualmente seleccionado <b>%1</b> paquetes, con tamaño total de <b>%2</b>"
+msgstr "Actualmente <b>%1</b> paquetes seleccionados, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:121
+# favor revisar si necesario colocar "total" de nuevo ?? porque esto aquí es adicional ..
+# please check if necessary use "total" again ?? because THIS is additional..
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "con <b>%1</b> dependencias reversas, con tamaño total de <b>%2</b>"
+msgstr "y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:123
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "con <b>%1</b> dependencias adicionales, con tamaño total de <b>%2</b>"
+msgstr "y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:124
 msgid "in your basket."
@@ -419,7 +422,7 @@ msgstr "En su carrito."
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr "Algunos paquetes seleccionados [%1] se están creando conflictos. No se puede tener instalado estos paquetes juntos."
+msgstr "Algunos paquetes seleccionados [%1] están creando conflictos. No se puede tener instalado estos paquetes juntos."
 
 #: .tmp/statemanager.py:144 .tmp/statemanager.py:152
 msgid "Conflict Error"
@@ -471,14 +474,14 @@ msgstr "Resumen de la operación"
 
 #: .tmp/ui_summarydialog.py:54
 msgid "12 new packages are installed  succesfully."
-msgstr "Se instalaron 12 paquetes nuevos con éxito."
+msgstr "Se instalaron 12 paquetes con éxito."
 
 #: .tmp/ui_summarydialog.py:55
 # favor revisar - application menu, mejor traduccion ?
 msgid ""
 "You can start the new installed application by double-clicking on the list "
 "below or later from the applications menu."
-msgstr "Puede iniciar los programas recientemente instalados con un doble-clic en la lista abajo, o lo puede ejecutar desde el menú de las aplicaciónes."
+msgstr "Puede ejecutar los programas recientemente instalados con un doble-clic en la lista abajo, o desde el menú del sistema."
 
 #: .tmp/ui_summarydialog.py:56
 msgid "&Ok"
@@ -494,8 +497,9 @@ msgid "Reverse package selections"
 msgstr "Invertir seleción de paquetes"
 
 #: .tmp/ui_progressdialog.py:152
+# translated as "progress information", i see this string is the title of the progress info window..
 msgid "Operation"
-msgstr "Operación"
+msgstr "Información del Progreso"
 
 #: .tmp/ui_progressdialog.py:154
 msgid "Time remaining:"
@@ -528,6 +532,8 @@ msgid "Alt+C"
 msgstr ""
 
 #: .tmp/mainwindow.py:57
+# favor revisar, paquetes o programas
+# maybe here we shoud speak about programs or applications ? the fact that it is a "package" is a tecnical detail.. well there are also those "auxiliar" libraries..
 msgid "Show Installable Packages"
 msgstr "Mostrar Paquetes a agregar"
 
