@@ -132,7 +132,15 @@ class Iface(Singleton):
 
     def getPackage(self, name):
         if self.source == self.REPO:
-            return self.pdb.get_package(name)
+            try:
+                return self.pdb.get_package(name)
+            except  Exception, e: # Repo item not found
+                replaced = self.pdb.get_replaces()
+                # Handle replaced packages
+                if replaced.has_key(name):
+                    return self.pdb.get_package(replaced[name])
+                else:
+                    raise  e
         else:
             return self.idb.get_package(name)
 
