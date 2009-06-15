@@ -80,19 +80,19 @@ class Widget(QtGui.QWidget, ScreenWidget):
         if currentIndex == 0:
             self.__class__.screenSettings["selectedMenu"] = 'launcher'
 
-            self.ui.pictureMenuStyles.setPixmap(self.kickoffPic)
-            self.ui.labelMenuDescription.setText(self.kickoffDesc)
+            self.ui.pictureMenuStyles.setPixmap(self.menuNames["launcher"]["image"])
+            self.ui.labelMenuDescription.setText(self.menuNames["launcher"]["description"].toString())
         elif currentIndex == 1:
             self.__class__.screenSettings["selectedMenu"] = 'simplelauncher'
 
-            self.ui.pictureMenuStyles.setPixmap(self.simplePic)
-            self.ui.labelMenuDescription.setText(self.simpleDesc)
+            self.ui.pictureMenuStyles.setPixmap(self.menuNames["simplelauncher"]["image"])
+            self.ui.labelMenuDescription.setText(self.menuNames["simplelauncher"]["description"].toString())
 
         else:
             self.__class__.screenSettings["selectedMenu"] = 'lancelot_launcher'
 
-            self.ui.pictureMenuStyles.setPixmap(self.lancelotPic)
-            self.ui.labelMenuDescription.setText(self.lancelotDesc)
+            self.ui.pictureMenuStyles.setPixmap(self.menuNames["lancelot_launcher"]["image"])
+            self.ui.labelMenuDescription.setText(self.menuNames["lancelot_launcher"]["description"].toString())
 
     def shown(self):
         pass
