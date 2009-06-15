@@ -1,0 +1,15 @@
+- Settings toolbox
+    - Configure package manager
+        - General settings tab
+            - Enable only desktop applications cannot be observed.
+            - Icon cannot be observed on system tray, when the system tray icon is enabled.
+        - Cache tab
+            - Use hard disk cache doesn't work. 
+            - Clean disk cache now doesn't work.
+        - Proxy tab has not tested yet.
+        - Repository tab
+            - Can not add a new repository
+    - Choose all packages facility has not been available yet.
+    - Icons are not availabe for all groups.
+    - When a package is selected to install, and if there exist dependencies: Without choosing dependencies of this package, the dependencies can be installed. (If the dependencies should be installed why these dependencies have a checkbox on the basket screen.)
+
