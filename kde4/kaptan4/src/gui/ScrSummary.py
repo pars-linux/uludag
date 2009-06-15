@@ -40,7 +40,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.mouseSettings = mouseWidget.Widget.screenSettings
         self.menuSettings = menuWidget.Widget.screenSettings
         self.searchSettings = searchWidget.Widget.screenSettings
-        selectedStyle = styleWidget.Widget.selectedStyle
+        self.styleSettings = styleWidget.Widget.screenSettings
 
         subject = "<p><li><b>%s</b></li><ul>"
         item    = "<li>%s</li>"
@@ -68,7 +68,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Style Settings
         content.append(subject % ("Style Settings"))
-        content.append(item % ("Selected Style is <b>%s</b>") % selectedStyle)
+
+        if self.styleSettings["hasChanged"] == False :
+            content.append(item % ("You haven't selected any style."))
+        else:
+            content.append(item % ("Selected Style is <b>%s</b>") % self.styleSettings["summaryMessage"])
+
         content.append(end)
 
 
