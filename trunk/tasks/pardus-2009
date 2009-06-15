@@ -10,7 +10,7 @@
 # Tasks
 * PiSi (Faik Uygur)
   * virtual dependency desteği (-)
-  * "virtual component"/"group" desteği (-)
+  * PackageKit gruplari desteği, pisi componentlerinin gruplar ile eşleştirilmesi, groups.xml (+)
   * ters bağımlılıkların güncellenme desteği (/75)
   * imza (-)
   * pisi abi check (-)
