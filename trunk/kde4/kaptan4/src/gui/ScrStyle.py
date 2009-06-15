@@ -28,6 +28,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
     screenSettings = {}
     screenSettings["hasChanged"] = False
     screenSettings["hasChangedDesktopType"] = False
+    screenSettings["hasChangedDesktopNumber"] = False
 
     # Set title and description for the information widget
     title = ki18n("Some catchy title about styles")
@@ -82,24 +83,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.listStyles.connect(self.ui.listStyles, SIGNAL("itemSelectionChanged()"), self.setStyle)
         self.ui.comboBoxDesktopType.connect(self.ui.comboBoxDesktopType, SIGNAL("activated(const QString &)"), self.setDesktopType)
         self.ui.spinBoxDesktopNumbers.connect(self.ui.spinBoxDesktopNumbers, SIGNAL("valueChanged(const QString &)"), self.addDesktop)
-        self.ui.previewButton.connect(self.ui.previewButton, SIGNAL("clicked()"), self.previewStyle)
-
-    def previewStyle(self):
-        print "awww"
+        #self.ui.previewButton.connect(self.ui.previewButton, SIGNAL("clicked()"), self.previewStyle)
 
     def addDesktop(self, numberOfDesktop):
-        config = KConfig("kwinrc")
-        group = config.group("Desktops")
-        group.writeEntry('Number', QString(numberOfDesktop))
-        group.sync()
-
-        info =  kdeui.NETRootInfo(QtGui.QX11Info.display(), kdeui.NET.NumberOfDesktops | kdeui.NET.DesktopNames)
-        info.setNumberOfDesktops(int(numberOfDesktop))
-        info.activate()
-
-        session = dbus.SessionBus()
-        proxy = session.get_object('org.kde.kwin', '/KWin')
-        proxy.reconfigure()
+        self.__class__.screenSettings["hasChangedDesktopNumber"] = True
+        self.__class__.screenSettings["desktopNumber"] = str(numberOfDesktop)
 
     def setDesktopType(self):
         currentIndex = self.ui.comboBoxDesktopType.currentIndex()

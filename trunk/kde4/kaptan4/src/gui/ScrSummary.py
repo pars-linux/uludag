@@ -14,10 +14,10 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KConfig
-import subprocess,os
+import subprocess,os, dbus
 from gui.ScreenWidget import ScreenWidget
 from gui.summaryWidget import Ui_summaryWidget
-
+from PyKDE4 import kdeui
 # import other widgets to get the latest configuration
 import gui.ScrWallpaper as wallpaperWidget
 import gui.ScrMouse as mouseWidget
@@ -146,7 +146,21 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             config.sync()
 
+        # Number of Desktops
+        if self.styleSettings["hasChangedDesktopNumber"] == True:
+            config = KConfig("kwinrc")
+            group = config.group("Desktops")
+            group.writeEntry('Number', self.styleSettings["desktopNumber"])
+            group.sync()
 
+            info =  kdeui.NETRootInfo(QtGui.QX11Info.display(), kdeui.NET.NumberOfDesktops | kdeui.NET.DesktopNames)
+            info.setNumberOfDesktops(int(self.styleSettings["desktopNumber"]))
+            info.activate()
+
+            session = dbus.SessionBus()
+            proxy = session.get_object('org.kde.kwin', '/KWin')
+            proxy.reconfigure()
+            config.sync()
 
         self.killPlasma()
         return True
