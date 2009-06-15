@@ -27,6 +27,7 @@ from ConfigParser import ConfigParser
 class Widget(QtGui.QWidget, ScreenWidget):
     screenSettings = {}
     screenSettings["hasChanged"] = False
+    screenSettings["hasChangedDesktopType"] = False
 
     # Set title and description for the information widget
     title = ki18n("Some catchy title about styles")
@@ -81,6 +82,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.listStyles.connect(self.ui.listStyles, SIGNAL("itemSelectionChanged()"), self.setStyle)
         self.ui.comboBoxDesktopType.connect(self.ui.comboBoxDesktopType, SIGNAL("activated(const QString &)"), self.setDesktopType)
         self.ui.spinBoxDesktopNumbers.connect(self.ui.spinBoxDesktopNumbers, SIGNAL("valueChanged(const QString &)"), self.addDesktop)
+        self.ui.previewButton.connect(self.ui.previewButton, SIGNAL("clicked()"), self.previewStyle)
+
+    def previewStyle(self):
+        print "awww"
 
     def addDesktop(self, numberOfDesktop):
         config = KConfig("kwinrc")
@@ -103,18 +108,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         else:
             self.selectedType = 'folderview'
 
-        config =  KConfig("plasma-appletsrc")
-        group = config.group("Containments")
-
-        for each in list(group.groupList()):
-            subgroup = group.group(each)
-            subcomponent = subgroup.readEntry('plugin')
-            subcomponent2 = subgroup.readEntry('screen')
-            if subcomponent == 'desktop' or subcomponent == 'folderview':
-                if int(subcomponent2) == 1:
-                    subgroup.writeEntry('plugin', self.selectedType)
-
-        config.sync()
+        self.__class__.screenSettings["hasChangedDesktopType"] = True
+        self.__class__.screenSettings["desktopType"] = self.selectedType
 
     def setStyle(self):
         styleName =  str(self.ui.listStyles.currentItem().statusTip())
