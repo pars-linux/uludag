@@ -91,7 +91,7 @@ Click Next button to proceed.
                      self.slotTextChanged)
         self.connect(self.ui.username, SIGNAL("textEdited(const QString &)"),
                      self.slotUserNameChanged)
-        self.connect(self.ui.realname, SIGNAL("textChanged(const QString &)"),
+        self.connect(self.ui.realname, SIGNAL("textEdited(const QString &)"),
                      self.slotRealNameChanged)
         self.connect(self.ui.userID, SIGNAL("valueChanged(int)"),
                      self.slotTextChanged)
@@ -135,10 +135,9 @@ Click Next button to proceed.
         # reset and fill pending_users
         if self.ui.userList.count() > 0:
             return True
-        if not self.ui.addMoreUsers.isChecked():
-            if not self.slotCreateUser():
-                ctx.mainScreen.moveInc = 0
-                return True
+        if not self.slotCreateUser():
+            ctx.mainScreen.moveInc = 0
+            return True
 
         ctx.installData.autoLoginUser = str(self.ui.autoLogin.currentText())
         yali4.users.reset_pending_users()
