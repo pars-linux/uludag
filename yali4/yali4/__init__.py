@@ -56,14 +56,17 @@ def exception_handler(exception, value, tb):
         v += str(e) + '\n'
     sio.write(v)
 
-    if exception_type != exception_informational:
-        sio.write(str(exception))
-        sio.write('\n\n')
-        sio.write(_("Backtrace:"))
-        sio.write('\n')
-        traceback.print_tb(tb, None, sio)
+    sio.write(str(exception))
+    sio.write('\n\n')
+    sio.write(_("Backtrace:"))
+    sio.write('\n')
+    traceback.print_tb(tb, None, sio)
 
     sio.seek(0)
 
-    import yali4.gui.runner
-    yali4.gui.runner.showException(exception_type, unicode(sio.read()))
+    if exception_type == exception_informational:
+        from yali4.gui.YaliDialog import InfoDialog
+        InfoDialog(unicode(v), title=_("Error"), icon="error")
+    else:
+        import yali4.gui.runner
+        yali4.gui.runner.showException(exception_type, unicode(sio.read()))

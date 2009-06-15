@@ -64,7 +64,7 @@ class windowTitle(QtGui.QFrame):
             event.accept()
 
 class Dialog(QtGui.QDialog):
-    def __init__(self, title, widget = None, parent = None, closeButton = True, keySequence = None, isDialog = False):
+    def __init__(self, title, widget = None, parent = None, closeButton = True, keySequence = None, isDialog = False, icon = None):
         QtGui.QDialog.__init__(self, ctx.mainScreen)
         self.setObjectName("dialog")
 
@@ -72,6 +72,11 @@ class Dialog(QtGui.QDialog):
         self.layout = QtGui.QVBoxLayout()
         self.setLayout(self.layout)
         self.wlayout= QtGui.QHBoxLayout()
+
+        if icon:
+            self.setStyleSheet(""" QDialog#dialog {background-image:url(':/images/%s.png');
+                                                   background-repeat:no-repeat;
+                                                   background-position: top left; } """ % icon)
 
         self.windowTitle = windowTitle(self, closeButton)
         self.setTitle(title)
@@ -81,6 +86,7 @@ class Dialog(QtGui.QDialog):
         if widget:
             self.addWidget(widget)
             QObject.connect(widget, SIGNAL("finished(int)"), self.reject)
+            QObject.connect(widget, SIGNAL("resizeDialog(int,int)"), self.resize)
 
         if closeButton:
             QObject.connect(self.windowTitle.pushButton, SIGNAL("clicked()"), self.reject)
@@ -89,7 +95,6 @@ class Dialog(QtGui.QDialog):
             shortCut = QtGui.QShortcut(keySequence, self)
             QObject.connect(shortCut, SIGNAL("activated()"), self.reject)
 
-        #self.layout.addItem(QtGui.QSpacerItem(20, 20, QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.MinimumExpanding))
         QMetaObject.connectSlotsByName(self)
         self.resize(10,10)
 
@@ -101,11 +106,8 @@ class Dialog(QtGui.QDialog):
         self.wlayout.addWidget(self.content)
         if self.isDialog:
             widget.setStyleSheet("QWidget { background:none }")
-            self.setStyleSheet(""" QDialog#dialog {background-image:url(':/images/info.png');
-                                                   background-repeat:no-repeat;
-                                                   background-position: top left; } """)
-            self.wlayout.addItem(QtGui.QSpacerItem(20, 20, QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed))
-            self.layout.setContentsMargins(0, 0, 0, 20)
+            self.layout.addItem(QtGui.QSpacerItem(10, 10, QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.MinimumExpanding))
+            self.layout.setContentsMargins(0, 0, 0, 8)
         self.layout.addLayout(self.wlayout)
 
 def QuestionDialog(title, text, info = None, dontAsk = False):
@@ -125,7 +127,8 @@ def QuestionDialog(title, text, info = None, dontAsk = False):
         info = _("Do you want to continue ?")
     msgBox.setInformativeText(info)
 
-    dialog = Dialog(_(title), msgBox, closeButton = False, isDialog = True)
+    dialog = Dialog(_(title), msgBox, closeButton = False, isDialog = True, icon="question")
+    dialog.resize(300,120)
     dialog.exec_()
 
     ctx.mainScreen.processEvents()
@@ -133,7 +136,7 @@ def QuestionDialog(title, text, info = None, dontAsk = False):
         return answers[msgBox.clickedButton()]
     return "no"
 
-def InfoDialog(text, button=None, title=None):
+def InfoDialog(text, button=None, title=None, icon="info"):
     if not title:
         title = _("Information")
     if not button:
@@ -145,7 +148,8 @@ def InfoDialog(text, button=None, title=None):
 
     msgBox.setText(text)
 
-    dialog = Dialog(_(title), msgBox, closeButton = False, isDialog = True)
+    dialog = Dialog(_(title), msgBox, closeButton = False, isDialog = True, icon = icon)
+    dialog.resize(300,120)
     dialog.exec_()
     ctx.mainScreen.processEvents()
 
