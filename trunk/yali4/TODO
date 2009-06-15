@@ -16,6 +16,7 @@
      + Fix warning and info messages for new theme
      + Use Bios Boot order if available for sorting device list
      + Add polkit support to user settings screen
+     + Improve Exception dialog
 
  %60 / Improve new theme widget states
  %40 / Fix low resolution screen problems
@@ -26,7 +27,6 @@
      - Add eject cd-rom support when pisi fails
          > Clear cache before ejecting the cd with : "echo 3 > /proc/sys/vm/drop_caches"
          > Use "eject -m" for ejecting without umount
-     ? Improve Exception dialog
 
  Partitioning
  --------------------------------------------------------

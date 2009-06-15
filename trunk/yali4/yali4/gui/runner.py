@@ -25,6 +25,7 @@ import yali4.sysutils
 import yali4.localedata
 import yali4.gui.context as ctx
 from yali4.gui.YaliDialog import Dialog
+from yali4.gui.Ui.exception import Ui_Exception
 
 from yali4.gui.debugger import Debugger
 from yali4.gui.debugger import DebuggerAspect
@@ -142,56 +143,31 @@ class Runner:
         ctx.yali.info.updateMessage()
 
 def showException(ex_type, tb):
-    title = _("Error!")
+    title = _("Error occured !")
     closeButton = True
 
     if ex_type in (yali4.exception_fatal, yali4.exception_pisi):
         closeButton = False
-        w = ErrorWidget(tb)
-    else:
-        w = ExceptionWidget(tb)
 
-    print "BACKTRACE: ",tb
     ctx.debugger.log(tb)
-    d = Dialog(title, w, None, closeButton)
-    d.resize(500,400)
+    d = Dialog(title, ExceptionWidget(tb, not closeButton), None, closeButton, icon="error")
+    d.resize(300,160)
     d.exec_()
 
 class ExceptionWidget(QtGui.QWidget):
-    def __init__(self, tb_text, *args):
-        apply(QtGui.QWidget.__init__, (self,) + args)
+    def __init__(self, tb_text, rebootButton = False):
+        QtGui.QWidget.__init__(self, None)
+        self.ui = Ui_Exception()
+        self.ui.setupUi(self)
+        self.ui.info.setText(_("Unhandled exception occured!"))
+        self.ui.traceback.setText(tb_text)
+        self.ui.traceback.hide()
+        self.connect(self.ui.showBackTrace, SIGNAL("clicked()"), self.showBackTrace)
+        self.connect(self.ui.rebootButton,  SIGNAL("clicked()"), yali4.sysutils.reboot)
+        self.ui.rebootButton.setShown(rebootButton)
 
-        info = QtGui.QLabel(self)
-        info.setText("Unhandled exception occured!")
-        traceback = QtGui.QTextBrowser(self)
-        traceback.setText(tb_text)
-
-        l = QtGui.QVBoxLayout(self)
-        l.setSpacing(10)
-        l.addWidget(info)
-        l.addWidget(traceback)
-
-class ErrorWidget(QtGui.QWidget):
-    def __init__(self, tb_text, *args):
-        apply(QtGui.QWidget.__init__, (self,) + args)
-
-        info = QtGui.QLabel(self)
-        info.setText(_("Unhandled error occured!"))
-        traceback = QtGui.QTextBrowser(self)
-        traceback.setText(tb_text)
-
-        reboot_button = QtGui.QPushButton(self)
-        reboot_button.setText(_("Reboot System!"))
-
-        l = QtGui.QVBoxLayout(self)
-        l.setSpacing(10)
-        l.addWidget(info)
-        l.addWidget(traceback)
-        l.addWidget(reboot_button)
-
-        self.connect(reboot_button, SIGNAL("clicked()"),
-                     self.slotReboot)
-
-    def slotReboot(self):
-        yali4.sysutils.reboot()
+    def showBackTrace(self):
+        self.ui.traceback.show()
+        self.ui.showBackTrace.hide()
+        self.emit(SIGNAL("resizeDialog(int,int)"), 440, 440)
 
