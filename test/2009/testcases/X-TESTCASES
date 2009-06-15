@@ -1,0 +1,53 @@
+For all X errors you can look the below file
+/var/log/Xorg.0.log
+
+- Testing direct rendering
+    - Push Ctrl+Alt+F1
+        Observe that X doesn't crash.
+    - Type  
+    # xinit -- :2
+        Observe a Grey desktop, and X for the mouse cursor and a term window.
+
+    - Get back with pushing Ctrl+Alt+F7
+         Observe that X doesn't crash.
+    - Type command "glxgears" and then "gleaxgears -fullscrean".
+        Observe that they run without any problem.
+
+- Dpi testing
+    - Run open office writer and open a A4 paper with 100% zoom. Take also a real A4 papper.
+        Observe that the width and the height of the real A4 are same with the open office writer's.
+
+- Resolution
+    - Go system settings => Display
+        Observe that the default resolution of the computer is selected for the current resolution.
+
+        - You can observe it from also, typing command "xrandr". 
+            - The example output of the command:
+                1440x900       50.0*+
+
+                1440x900 => resolution
+                50.0     => refresh rate
+                *        => selected resolution is current resolution
+                +        => selected resolution is default resolution
+
+- Run a media player and open in full screen mode.
+    Observe that X doesn't crash.
+- Open desktop effects from system settings => desktop
+    Observe that X doesn't crash
+
+- 2D testing
+    - Run a window, (for example dolphin, firefox) then swing it to right and left rapidly.
+        Observe that it swings without any problem.
+
+- 3D testing
+    - Running google earth
+        - Download the bin file from http://earth.google.com/
+        - Go the directory which the bin file downloaded.
+            # cd <bin_file_directory>
+        - Make it executable
+            # chmod 755 GoogleEarthLinux.bin
+        - Install it
+            # ./GoogleEarthLinux.bin
+        - Run it and observe that the application apparition is problem-free.
+
+
