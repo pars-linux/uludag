@@ -131,6 +131,22 @@ class Widget(QtGui.QWidget, ScreenWidget):
                         launcher = subg2.readEntry('plugin')
                         if str(launcher).find('launcher') >= 0:
                             subg2.writeEntry('plugin', self.menuSettings["selectedMenu"] )
+        # Desktop Type
+        if self.styleSettings["hasChangedDesktopType"] == True:
+            config =  KConfig("plasma-appletsrc")
+            group = config.group("Containments")
+
+            for each in list(group.groupList()):
+                subgroup = group.group(each)
+                subcomponent = subgroup.readEntry('plugin')
+                subcomponent2 = subgroup.readEntry('screen')
+                if subcomponent == 'desktop' or subcomponent == 'folderview':
+                    if int(subcomponent2) == 1:
+                        subgroup.writeEntry('plugin', self.styleSettings["desktopType"])
+
+            config.sync()
+
+
 
         self.killPlasma()
         return True
