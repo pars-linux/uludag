@@ -96,7 +96,7 @@ class StateManager(QObject):
         return self.iface.getGroups()
 
     def groupPackages(self, name):
-        if self.state == self.UPGRADE and name == "All":
+        if self.state == self.UPGRADE and name == "all":
             return self.packages()
         else:
             return list(set(self.packages()).intersection(self.iface.getGroupPackages(name)))

@@ -17,33 +17,37 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
+import backend
+
 class GroupList(QtGui.QListWidget):
     def __init__(self, parent=None):
         QtGui.QListWidget.__init__(self, parent)
         self.lastSelected = None
+        self.iface = backend.pm.Iface()
         self.connect(self, SIGNAL("itemClicked(QListWidgetItem*)"), self.groupChanged)
 
     def setState(self, state):
         self.state = state
 
     def addGroups(self, groups):
-        for group in groups:
-            self.createGroupItem(group)
+        for name in groups:
+            self.createGroupItem(name)
         self.ensureGroupSelected()
 
-    def createGroupItem(self, group):
-        name, icon_path = group["name"], group["icon"]
+    def createGroupItem(self, name):
+        group = self.iface.getGroup(name)
+        localName, icon_path = unicode(group.localName), group.icon
 
         package_count = len(self.state.groupPackages(name))
         if package_count == 0:
             return
 
         icon = QtGui.QIcon(KIconLoader().loadMimeTypeIcon(icon_path, KIconLoader.Desktop, KIconLoader.SizeSmallMedium))
-        item = QtGui.QListWidgetItem(icon, "%s (%d)" % (name, package_count), self)
+        item = QtGui.QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
 
-        if str(self.lastSelected) == name:
+        if str(self.lastSelected) == localName:
             self.selectLastSelected(item)
 
     def selectLastSelected(self, item):
@@ -56,7 +60,7 @@ class GroupList(QtGui.QListWidget):
     def currentGroup(self):
         if not self.count():
             return None
-        return self.currentItem().data(Qt.UserRole).toString()
+        return unicode(self.currentItem().data(Qt.UserRole).toString())
 
     def groupChanged(self):
         self.lastSelected = self.currentGroup()

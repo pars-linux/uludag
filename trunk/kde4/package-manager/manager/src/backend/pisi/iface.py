@@ -15,7 +15,6 @@ import string
 
 import comar
 import pisi
-import groups
 
 from pmlogging import logger
 
@@ -48,6 +47,7 @@ class Iface(Singleton):
         self.cdb  = pisi.db.componentdb.ComponentDB()
         self.idb  = pisi.db.installdb.InstallDB()
         self.rdb  = pisi.db.repodb.RepoDB()
+        self.gdb  = pisi.db.groupdb.GroupDB()
 
     def setHandler(self, handler):
         self.link.listenSignals("System.Manager", handler)
@@ -111,14 +111,14 @@ class Iface(Singleton):
     def getUpdates(self):
         return pisi.api.list_upgradable()
 
+    def getGroup(self, name):
+        return self.gdb.get_group(name)
+
     def getGroups(self):
-        _groups = []
-        for group in groups.getGroups():
-            _groups.append(groups.groups[group])
-        return _groups
+        return self.gdb.list_groups()
 
     def getGroupPackages(self, name):
-        components = groups.getGroupComponents(name)
+        components = self.gdb.get_group_components(name)
         packages = []
         for component in components:
             try:
