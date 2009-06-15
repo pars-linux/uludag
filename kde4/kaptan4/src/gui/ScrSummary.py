@@ -51,6 +51,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Mouse Settings
         content.append(subject % ("Mouse Settings"))
+
         content.append(item % ("Selected Mouse configuration is <b>%s</b>") % self.mouseSettings["summaryMessage"]["selectedMouse"].toString())
         content.append(item % ("Selected clicking behaviour is <b>%s</b>") % self.mouseSettings["summaryMessage"]["clickBehaviour"].toString())
         content.append(end)

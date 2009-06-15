@@ -62,7 +62,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
         return bool(eval(s.capitalize()))
 
     def setClickBehaviour(self):
-        self.clickBehaviour = "True"
+        if self.ui.singleClick.isChecked():
+            self.clickBehaviour = "True"
+        else:
+            self.clickBehaviour = "False"
 
     def setHandedness(self, item):
         mapMouse = {}
@@ -124,10 +127,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def execute(self):
         self.__class__.screenSettings["summaryMessage"] ={}
 
-        self.__class__.screenSettings["summaryMessage"].update({"selectedMouse": ki18n("%s Handed")% "Left" if self.__class__.screenSettings["selectedMouse"] == "LeftHanded" else "Right"})
-        self.__class__.screenSettings["summaryMessage"].update({"clickBehaviour": ki18n("%s Click ")% "Single" if self.clickBehaviour is True else "Double"})
-
-        print self.__class__.screenSettings["summaryMessage"]
+        self.__class__.screenSettings["summaryMessage"].update({"selectedMouse": ki18n("Left Handed") if self.__class__.screenSettings["selectedMouse"] == "LeftHanded" else ki18n("Right Handed")})
+        self.__class__.screenSettings["summaryMessage"].update({"clickBehaviour": ki18n("Single Click ") if self.clickBehaviour == "True" else ki18n("Double Click")})
 
         config = KConfig("kdeglobals")
         group = config.group("KDE")
