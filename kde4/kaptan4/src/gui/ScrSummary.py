@@ -162,6 +162,53 @@ class Widget(QtGui.QWidget, ScreenWidget):
             proxy.reconfigure()
             config.sync()
 
+        # Theme Settings
+        if self.styleSettings["hasChanged"] == True:
+            configKdeGlobals = KConfig("kdeglobals")
+            group = configKdeGlobals.group("General")
+            group.writeEntry("widgetStyle", self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["widgetStyle"])
+
+            groupIconTheme = configKdeGlobals.group("Icons")
+            groupIconTheme.writeEntry("Theme", self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["iconTheme"])
+
+            configKdeGlobals.sync()
+
+            # Change Icon theme
+            kdeui.KIconTheme.reconfigure()
+            kdeui.KIconCache.deleteCache()
+
+            for i in range(kdeui.KIconLoader.LastGroup):
+                kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.IconChanged, i)
+
+            # Change widget style
+            kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.StyleChanged)
+
+            configPlasmaRc = KConfig("plasmarc")
+            groupDesktopTheme = configPlasmaRc.group("Theme")
+            groupDesktopTheme.writeEntry("name", self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["desktopTheme"])
+            configPlasmaRc.sync()
+
+            configPlasmaApplet = KConfig("plasma-appletsrc")
+            group = configPlasmaApplet.group("Containments")
+            for each in list(group.groupList()):
+                subgroup = group.group(each)
+                subcomponent = subgroup.readEntry('plugin')
+                if subcomponent == 'panel':
+                    print subcomponent
+                    subgroup.writeEntry('location', self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["panelPosition"])
+
+            configPlasmaApplet.sync()
+
+            configKwinRc = KConfig("kwinrc")
+            groupWindowDecoration = configKwinRc.group("Style")
+            groupWindowDecoration.writeEntry("PluginLib", self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["windowDecoration"])
+            configKwinRc.sync()
+
+            session = dbus.SessionBus()
+            proxy = session.get_object('org.kde.kwin', '/KWin')
+            proxy.reconfigure()
+
+
         self.killPlasma()
         return True
 
