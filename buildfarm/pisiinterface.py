@@ -76,9 +76,9 @@ class PisiApi:
 
     def delta(self, isopackages, oldBinaryPackages, newBinaryPackages):
 
-        # If we don't want to generate delta packages, return empty lists
+        # If we don't want to generate delta packages, return None
         if not config.generateDelta:
-            return ([], [])
+            return
 
         logger.debug("delta() -> oldBinaryPackages: %s" % oldBinaryPackages)
         logger.debug("delta() -> newBinaryPackages: %s" % newBinaryPackages)

@@ -99,7 +99,12 @@ def buildPackages():
                 oldBinaryPackages.sort()
 
                 # Delta package generation using delta interface
-                (deltasToInstall, deltaPackages, blacklistedPackages) = pisi.delta(isopackages, oldBinaryPackages, newBinaryPackages)
+                # If the return value is None, delta generation is disabled
+                ret = pisi.delta(isopackages, oldBinaryPackages, newBinaryPackages)
+                if ret:
+                    (deltasToInstall, deltaPackages, blacklistedPackages) = ret
+                else:
+                    (deltasToInstall, deltaPackages, blacklistedPackages) = ([], [], [])
 
                 # Reduce to filenames
                 deltasToInstall = map(lambda x: os.path.basename(x), deltasToInstall)
@@ -155,17 +160,18 @@ def buildPackages():
 
                     # FIXME: The packages before packagesToInstall[p] are already installed and therefore need to be
                     # uninstalled because p can't be installed.
+                    if isdelta(p) and "no attribute 'old_files'" in str(e):
+                        logger.info("*** %s was probably not installed on the system and the delta installation failed." % getName(p))
                     errmsg = "Error occured for '%s' in INSTALL process: %s" % (os.path.join(config.workDir, p), e)
-                    if isdelta(p):
-                        logger.info("*** Probably %s was not installed on the system and the delta installation failed." % getName(p))
                     logger.error(errmsg)
                     mailer.error(errmsg, pspec)
 
-                    # The package should be removed from the related lists and workdir
-                    for pa in deltaPackages+newBinaryPackages:
+                    # The package should be removed from the related lists and WorkDir in case of an
+                    # installation problem
+                    for pa in deltaPackages+newBinaryPackages+newDebugPackages:
                         if pa in deltasToInstall:
                             deltasToInstall.remove(pa)
-                        else:
+                        elif pa in newBinaryPackages:
                             newBinaryPackages.remove(pa)
                         logger.info("*** (Cleanup) Removing %s from %s" % (pa, config.workDir))
                         removeBinaryPackageFromWorkDir(pa)
@@ -231,8 +237,7 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPacka
     def removeOldPackage(package):
         logger.info("*** Removing old package '%s' from '%s'" % (package, config.testPath))
         if exists(join(config.testPath, package)):
-            # If an old build is found in testPath
-            # remove it because the test repo is unique.
+            # If an old build is found in testPath remove it because the test repo is unique.
             remove(join(config.testPath, package))
 
         # Cleanup workDir
@@ -332,7 +337,11 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPacka
 def removeBinaryPackageFromWorkDir(package):
     join   = os.path.join
     remove = os.remove
-    remove(join(config.workDir, package))
+    try:
+        remove(join(config.workDir, package))
+    except:
+        # Don't fail if we can't remove the files
+        pass
 
 def create_directories():
     directories = [config.workDir,
