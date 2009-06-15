@@ -5,3 +5,4 @@
 (-) Automatic command-not-found db generation code      (%0)
 (-) Improve the code, optimize a little bit             (%0)
 (-) Add support for removing obsoleted packages         (%0)
+(-) Properly clean /var/pisi/*.pisi                     (%0)
