@@ -18,6 +18,7 @@ import gui.ScrStyle  as styleWidget
 import gui.ScrMenu  as menuWidget
 import gui.ScrSearch  as searchWidget
 import gui.ScrSummary  as summaryWidget
+#import gui.ScrSmolt  as smoltWidget
 
 # waiting for pisi
 #import gui.ScrPackage as packageWidget
