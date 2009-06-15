@@ -13,6 +13,7 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n
+#from PyKDE4.kutils import KCModuleInfo, KCModuleProxy
 
 from gui.ScreenWidget import ScreenWidget
 from gui.goodbyeWidget import Ui_goodbyeWidget
@@ -26,10 +27,21 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_goodbyeWidget()
         self.ui.setupUi(self)
 
+        self.ui.buttonSystemSettings.connect(self.ui.buttonSystemSettings, SIGNAL("clicked()"), self.startSystemSettings)
+        self.ui.buttonHelpPages.connect(self.ui.buttonHelpPages, SIGNAL("clicked()"), self.startHelpPages)
+
+    def startSystemSettings(self):
+        self.procSettings = QProcess()
+        self.procSettings.start("systemsettings")
+
+    def startHelpPages(self):
+        self.procSettings = QProcess()
+        self.procSettings.start("firefox http://www.pardus.org.tr/eng/contact.html")
+
     def shown(self):
         pass
 
-    def execute(self):
-        return True
+    def execute(self): 
+       return True
 
 

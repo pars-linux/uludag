@@ -114,7 +114,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             group.writeEntry('Start Nepomuk', str(self.searchSettings["state"]).lower())
             proxy.reconfigure()
-            proxy.enableNepomuk(state)
+            proxy.enableNepomuk(self.searchSettings["state"])
 
         # Menu Settings
         if self.menuSettings["hasChanged"] == True:
