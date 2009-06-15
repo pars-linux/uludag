@@ -171,6 +171,10 @@ def set_mouse(key="left"):
               _("right"):"3 2 1"}
     os.system("xmodmap -e \"pointer = %s\"" % struct[key])
 
+    # Fix for TouchPads in left handed mouse...
+    if key == "right":
+        os.system("synclient TapButton1=3 TapButton3=1")
+
 def text_is_valid(text):
     allowed_chars = ascii_letters + digits + '.' + '_' + '-'
     return len(text) == len(filter(lambda u: [x for x in allowed_chars if x == u], text))
