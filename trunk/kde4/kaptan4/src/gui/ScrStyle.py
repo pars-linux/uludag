@@ -104,49 +104,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.__class__.screenSettings["summaryMessage"] = styleName  + " : " + self.styleDetails[styleName]["description"]
         self.__class__.screenSettings["hasChanged"] = True
 
-        configKdeGlobals = KConfig("kdeglobals")
-        group = configKdeGlobals.group("General")
-        group.writeEntry("widgetStyle", self.styleDetails[styleName]["widgetStyle"])
-
-        groupIconTheme = configKdeGlobals.group("Icons")
-        groupIconTheme.writeEntry("Theme", self.styleDetails[styleName]["iconTheme"])
-
-        configKdeGlobals.sync()
-
-        # Change Icon theme
-        kdeui.KIconTheme.reconfigure()
-        kdeui.KIconCache.deleteCache()
-
-        for i in range(kdeui.KIconLoader.LastGroup):
-            kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.IconChanged, i)
-
-        # Change widget style
-        kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.StyleChanged)
-
-        configPlasmaRc = KConfig("plasmarc")
-        groupDesktopTheme = configPlasmaRc.group("Theme")
-        groupDesktopTheme.writeEntry("name", self.styleDetails[styleName]["desktopTheme"])
-        configPlasmaRc.sync()
-
-        configPlasmaApplet = KConfig("plasma-appletsrc")
-        group = configPlasmaApplet.group("Containments")
-        for each in list(group.groupList()):
-            subgroup = group.group(each)
-            subcomponent = subgroup.readEntry('plugin')
-            if subcomponent == 'panel':
-                print subcomponent
-                subgroup.writeEntry('location', self.styleDetails[styleName]["panelPosition"])
-
-        configPlasmaApplet.sync()
-
-        configKwinRc = KConfig("kwinrc")
-        groupWindowDecoration = configKwinRc.group("Style")
-        groupWindowDecoration.writeEntry("PluginLib", self.styleDetails[styleName]["windowDecoration"])
-        configKwinRc.sync()
-
-        session = dbus.SessionBus()
-        proxy = session.get_object('org.kde.kwin', '/KWin')
-        proxy.reconfigure()
+        self.__class__.screenSettings["styleDetails"] = self.styleDetails
+        self.__class__.screenSettings["styleName"] = styleName
 
     def shown(self):
         pass
