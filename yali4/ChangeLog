@@ -1,5 +1,144 @@
-2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
-         * New release 2.1.8
+2009-06-15 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * New release 2.1.9
+
+2009-06-15 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Show human-readable exceptions ...
+         * Fix for raise in user editing mode ..
+         * Fix for TouchPads in left handed mouse...
+         * Bug fixed at http://bugs.pardus.org.tr/7896
+
+2009-06-12 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Fix overriding current layout 
+         * Shiny info dialogs ..
+         * Use Yali's Message Box instead of QMessageBox directly ...
+         * Use i18n, Po update 
+         * Use current theme settings for YaliDialog
+         * Guess username from given Real Name shamelessly stolen from User Manager :) 
+
+2009-06-11 klemens
+         * some spanish language additions (kh)
+
+2009-06-11 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Fix widget color issues
+         * Bug fixed at http://bugs.pardus.org.tr/9906
+         * Comment added to http://bugs.pardus.org.tr/9955
+         * After some file system checks, partition objects are changing,
+         * In this situation we need to recreate partition objects and use the proper one
+         * Write timezone to etc/mudur/timezone 
+
+2009-06-10 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Much better to ask 'Dont ask again' 
+         * Detect clicked mouse button and update mouse button order
+         * Bug fixed at http://bugs.pardus.org.tr/9876
+         * Remove not needed param fs_ready and its methods
+         * Use also PARTITION_RAID for checking FREESPACE 
+         * There is a parted bug, some times it gives parted.PARTITION_RAID(5) for a freespace :(
+
+2009-06-09 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * define TERM env for terminal  
+         * Fix ScrAdmin color issues 
+         * Fix Calendar and Slider styles for colour palette ..
+         * Fix colors of analog clock for new theme, show second hand too 
+         * Install by using keyboard issue fixed ..
+         * Bug fixed at http://bugs.pardus.org.tr/7999
+         * Create QTermWidget at start ..
+         * Add checkbox for enable/disable detecting other operating systems for GRUB menu..
+         * Comment added to http://bugs.pardus.org.tr/9955
+         * if there is just one partition left, we need to select it ..
+
+2009-06-08 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Enable give admin rights to this user check for first time 
+
+2009-06-08 wpmhia
+         * Dutch translations
+
+2009-06-06 klemens
+         * spanish language additions for the new kde4-tools (kh)
+
+2009-06-05 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Add root=LABEL without checking if root= exists in cmdline
+         * Show cmdline content in log
+         * Comment added to http://bugs.pardus.org.tr/9894
+         * Update Po, Turkish translations
+         * Bug fixed at http://bugs.pardus.org.tr/9904
+         * Fix Advanced mode GUI issues 
+         * Check if there is an exception before raise fail dialog
+         * Dont show close button in fail dialog
+
+2009-06-04 semen.cirit
+         * Adding test cases for yali.
+
+2009-06-04 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Add bindYali script .
+         * Add Password Recovery mode for Rescue 
+         * Add advanced mode for user settings screen
+         * Add user id selection feature to advanced mode
+         * TODO updated
+         * Bug fixed at http://bugs.pardus.org.tr/7658
+
+2009-06-03 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Show correct information
+         * Do not ignore primary partitions for resize
+         * Always fill device list in bootloader screen 
+         * Fix for progressbar positions 
+         * remove useless shortcut button 
+         * Show whole progress at once instead of two part ...
+         * Fix layout issues forx 800x600 resolution 
+         * Support for using logical partitions which are resizable or free 
+         * Set minimum partition size to 160Mb 
+         * User edit screen improvements ..
+         * Mark bootable disk in list
+         * Select bootable disk if automatic install selected
+         * Fixes for some CSS issues
+         * Add Cancel button to automatic partitioning device selection screen 
+         * Add Cancel button to automatic partitioning device selection screen 
+         * Start VBox utils
+         * Shortcuts for changing font size
+         * Help shortcut added
+         * ShortCut Help button added
+         * Check device path instead of object hash
+
+2009-06-02 semen
+         * A new todo is added for yali.
+
+2009-06-02 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * User screen improvements
+         * Password Rescue mode for Yali Rescue
+         * Enable reboot button for Welcome Screen
+
+2009-06-01 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Use QtermWidget Python binding, instead of binary one ..
+         * Update YALI sizes when X resized ...
+
+2009-05-30 ozan.caglayan
+         * Add an optional parameter to get_all_with_paths to make it read the installation order from the sort_file generated by pardusman. No behavioral change is introduced by this commit as the new feature is disabled by default.
+
+2009-05-29 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Fix for format check GUI issues .
+         * Add Timestamp to Log file
+         * Make baselayout first for configuring
+
+2009-05-28 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Ignore grub.conf checking for Pardus installed partitions, because it can be removed
+         * Forget the whole order thing, we dont need any
+         * install order because we first unpack packages
+         * and then call configure pending ;) First step
+         * is just unpacking. And it is the fastest way :)
+         * Use all path to pass package hash checking
+         * before install and make baselayout package to
+         * be first.
+         * Answer all questions as YES 
+
+2009-05-28 klemens
+         * several spanish language additions and minor revision (kh)
+
+2009-05-27 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * update package repository address ..
+         * 2009 Theme for Yalı \o/ 
+         * Call udev_settle after each commit ..
+
+2009-05-27 semen
+         * New test cases added.
 
 2009-05-27 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * Raise FSCheck Error if just FSCheck fails
@@ -50,6 +189,9 @@
 2009-05-25 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * Rescue mode Pisi widgets
          * Updated TODO
+
+2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * New release 2.1.8
 
 2009-05-22 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * New release 2.1.7, Po update ..
