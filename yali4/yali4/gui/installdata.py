@@ -46,3 +46,5 @@ class InstallData:
     useYaliFirstBoot = False
     timezone = "Europe/Istanbul"
     sessionLog = ""
+    installAllLangPacks = False
+

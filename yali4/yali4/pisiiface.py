@@ -18,6 +18,7 @@ import glob
 import dbus
 import pisi
 import yali4.postinstall
+import yali4.sysutils
 from yali4.constants import consts
 
 repodb = pisi.db.repodb.RepoDB()
@@ -88,6 +89,27 @@ def take_back(operation):
     os.symlink("/",consts.target_dir + consts.target_dir)
     pisi.api.takeback(operation)
     os.unlink(consts.target_dir + consts.target_dir)
+
+def getExtraLangs():
+
+    def getPackages(piksemelObj, isa):
+        ret = []
+        for package in piksemelObj.tags("Package"):
+            tagData = package.getTagData("IsA")
+            if tagData:
+                for node in package.tags("IsA"):
+                    data = node.firstChild().data()
+                    if data.startswith(isa):
+                        ret.append("%s,%s" % (package.getTagData("Name"), data))
+        return ret
+
+    import piksemel
+    import bz2
+
+    index_path = os.path.join(consts.source_dir, "repo/pisi-index.xml.bz2")
+    index = piksemel.parseString(bz2.decompress(file(index_path).read()))
+
+    return getPackages(index, "locale")
 
 def getHistory(limit=50):
     pdb = pisi.db.historydb.HistoryDB()

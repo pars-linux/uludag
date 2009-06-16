@@ -186,9 +186,12 @@ padding-top:30px;</string>
     </spacer>
    </item>
    <item row="2" column="1" colspan="5">
-    <widget class="QCheckBox" name="dontInstallExtraLangs">
+    <widget class="QCheckBox" name="installAllLangPacks">
+     <property name="toolTip">
+      <string>If you check this, Yalı will install all language packages in this release otherwise not</string>
+     </property>
      <property name="text">
-      <string>Don't install extra language packages</string>
+      <string>Install all language packages</string>
      </property>
     </widget>
    </item>
