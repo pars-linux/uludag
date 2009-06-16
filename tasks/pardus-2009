@@ -182,6 +182,13 @@
   * Pardus simge/tema/arkaplan uyarlanacak (/20)
   * öntanımlı gelen kısayol/pager/shelf ıvır zıvır elden geçirilecek (/75)
 
+* Xfce4 (Gökmen Görgen)
+  * Xfce4 paketleri 2009 deposu için hazırlanacak (/75)
+  * PolicyKit, Dbus ve Pulseaudio desteği tekrar denetlenecek (/25)
+  * default-pardus-settings-xfce paketi yapılacak (-)
+  * xfce.base bileşenindeki paketlerin bağımlılıkları tekrar düzenlenecek (/25)
+  * gtk-doc parametresi aktif edilecek (-)
+
 * Smolt (Fethican Coşkuner)
   * Smolt server'ın tüm bağımlılıklarının depoya girmesi (+)
   * Pardus sunucusuna smolt-server kurulumunun yapılması (+)
