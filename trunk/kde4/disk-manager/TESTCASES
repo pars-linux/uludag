@@ -1,30 +1,38 @@
-- Mount an external usb stick or an other similar device.
-    - Type console
+1) Mounting an external usb stick or an other similar device. (Initially the disk not mounted) 
+    1.a) Type console
         # mount
-        Observe that the mounted disks and  the mounted points of these disks listed on the disk-manager screen are correct.
+        1.a.a) Observe that this disk is not mounted to anywhere. 
+	1.a.b) Observe also that the other mounted disks that seen on the disk-manager are mounted properly.  
 
-    - Try to change the mount point of this disk
+    1.b) Try to mount this disk to home directory.
+          Observe whether the disk manager gives a warning message about this unvalid mount point.
+    1.c) Try to mount this disk
+    	- Type an appropriate mount point. For example "/mnt/sample"
+	- Give an appropriate filesystem.
+	- Give the appropriate options for the mounted device.
+	- Apply it.
+        - Then type console
+            # mount
+        Observe that it is mounted properly according to your directions given.
+    1.d) Try to change the mount point of this disk
         - Type console
             # mount
-            Observe that newly changed mount point is applied to appropriate disk.
-        And observe that the previous mount point of this disk is unmounted. (This means that the previous mount point is removed from the output of command "mount".)
-        - Try to mount this disk to home directory.
-            Observe whether the disk manager gives a warning message about this unvalid mount point.
-    - Try to change the filesystem type
-        - Type console 
+        Observe whether the disk manager gives a warning that the disk is already mounted.
+    1.e) Try to change the filesystem type
+        1.e.a) Type console 
             # blkid
             For a selected device, observe that the default filesystem type on disk-manager is the same with the output of "blkid".
-        - Change the filesystem type:
+        1.e.b) Change the filesystem type:
             Observe that if this filesystem type is not suitable with this device, disk-manager gives a warning message about it.
 
-    - Try to add an option for mounting
-        - If the option part is empty try to change the settings. 
+    1.f) Try to add an option for mounting
+        1.f.a) If the option part is empty try to apply this. 
             Observe that it gives a warning about it.
-        - If you add some option to option part,
+        1.f.b) If you add some option to option part,
             Observe that the output of the command "mount" contains this option for the related disk.
 
-- Try to mount the root partition
+2) Try to change the mount point of the root partition
     Observe that it gives a warning about it can not remount.
         Not : the mount point of root should be "/".
 
-- Observe whether an extended partition listed on disk-manager screen. (Normally it can not be listed.)
+3) Observe whether an extended partition listed on disk-manager screen. (Normally it can not be listed.)
