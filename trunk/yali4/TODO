@@ -17,9 +17,9 @@
      + Use Bios Boot order if available for sorting device list
      + Add polkit support to user settings screen
      + Improve Exception dialog
+     + Fix low resolution screen problems
+     + Improve new theme widget states
 
- %60 / Improve new theme widget states
- %40 / Fix low resolution screen problems
  %30 / Network Install #2095
          > Needs a network settings screen
      - Fix GRUB issue about wrong order of sd's
