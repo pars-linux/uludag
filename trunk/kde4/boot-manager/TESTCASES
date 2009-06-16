@@ -5,12 +5,14 @@ Note: - Observe each result from /boot/grub/grub.conf, then restart computer and
      - Looking for kernel and initramfs
         Type console
         ls /boot/
+1) Try to open boot-manager from systemsettings.
+2) Try to open boot-manager from Kmenu
 
-1) Add a new bootable system
-    1.a) For all system options try to left empty the textbox(es) and then observe that they give a warning about it.
-    1.b) For Windows give a title and write the partition of related windows system and then click "ok".
+3) Add a new bootable system
+    3.a) For all system options try to left empty the textbox(es) and then observe that they give a warning about it.
+    3.b) For Windows give a title and write the partition of related windows system and then click "ok".
             Observe the results with using the above note.
-    1.c) Xen or Linux
+    3.c) Xen or Linux
         - Give a title
         - Write the partition of related system.
         - Write the kernel of related system.
@@ -18,7 +20,7 @@ Note: - Observe each result from /boot/grub/grub.conf, then restart computer and
         - Write some related boot option.
         - Then click "ok".
         - Observe the results with using the above note.
-    1.d) For memtest give a title then click ok.
+    3.d) For memtest give a title then click ok.
           Observe the results with using the above note.
 
-2) Try to change timeout and then observe it with using the above note.
+4) Try to change timeout and then observe it with using the above note.
