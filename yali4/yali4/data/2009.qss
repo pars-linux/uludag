@@ -7,6 +7,13 @@ QWidget#Yali {
        selection-background-color: gray;
 }
 
+QScrollArea#scrollArea {
+       background-color: rgba(255, 255, 255, 0);
+}
+
+QWidget#scrollAreaWidgetContents {
+       background-color: rgba(255, 255, 255, 0);
+}
 /*
 QStackedWidget#mainStack {
      border-style: outset;
@@ -205,6 +212,7 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
        left: 1px;
 }
 
+
 /* The popup of the QComboBox */
 QComboBox QAbstractItemView {
        color: #5A2848;
@@ -362,23 +370,28 @@ QProgressBar:chunk {
         margin: 2px;
 }
 
+
+QScrollArea::corner {
+        background-color: rgba(255, 255, 255, 0);
+}
+
 QScrollBar:vertical {
         width: 16px;
         margin: 16px 0 16px 0;
-        background-color: #5A2847;
+        background-color: rgba(255, 255, 255, 0);
 }
 
 QScrollBar::handle:vertical {
         min-height: 16px;
         border: 2px solid #6b6b6b;
-        background-color: #FFFFFF;
+        background-color: #323232;
         border-radius: 3px;
 }
 
 QScrollBar::handle:vertical:hover {
         min-height: 16px;
-        border: 2px solid #808080;;
-        background-color: #CCCCCC;
+        border: 2px solid #808080;
+        background-color:  #323232;
         border-radius: 3px;
 }
 
@@ -402,12 +415,12 @@ QScrollBar::down-arrow:vertical { background-image: url(:/images/arrow-down.png)
 QScrollBar:horizontal {
         height: 16px;
         margin: 0 16px 0 16px;
-        background-color: #000000;
+        background-color: rgba(255, 255, 255, 0);
 }
 
 QScrollBar::handle:horizontal {
         min-width: 16px;
-        border: 2px solid #6b6b6b;;
+        border: 2px solid #6b6b6b;
         background-color:  #323232;
         border-radius: 3px;
 }
