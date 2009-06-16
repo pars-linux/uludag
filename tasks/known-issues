@@ -27,3 +27,6 @@
     - Check ::1 lookup regression on a clean Alpha installation,
     - hal-cups-utils' low-level usb backend fails on some printers,
     - KDE applications fails to print: cups-document-format-not-supported, pf.
+
+* YALI (Gökmen GÖKSEL - Faik Uygur)
+    - Pisi install whole packages from start after a package fail.
