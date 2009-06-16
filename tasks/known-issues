@@ -12,6 +12,12 @@
     - The new system-config-printer-kde must be backported,
     - Gstreamer backend for Phonon is not able to play dvd:// and vcd://. Year is 2009.
 
+* gfxboot (Onur Küçük)
+    - vga= entry appears twice on /proc/cmdline.
+
+* Disk stuff (Ozan Çağlayan)
+    - Written data to vfat partitions gets flushed upon umount which is bad.
+
 * Firefox
     - backspace doesn't work,
     - The icon bounces until the end of the maximum bounce duration.
