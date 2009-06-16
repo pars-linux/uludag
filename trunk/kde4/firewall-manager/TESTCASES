@@ -1,102 +1,98 @@
-- Try to stop service
+1) Try to open firewall manager from system settings.
+2) Try to open firewall manager from Kmenu.
+3) Try to stop firewall service from the start/stop button of firewall manager.
     Type console
     # service list
     Observe that iptables service gets off.
 
-- Try to start service
+4) Try to start service from the start/stop button of firewall manager.
     Type console
     # service list
     Observe that iptables service gets on.
 
-- Try these actions for options: Limited Content Serving and Access Restriction
-    - Adding  port
-    - Removing port
-    - Taking up a port
-    - taking down a port
+5) Push th configuration button and try these actions for options: Limited Content Serving or Access Restriction
+    5.a) Adding  port
+    5.b) Removing port
+    5.c) Taking up a port
+    5.d) Taking down a port
 
-- limited content serving
-    Observe the outputs of this command with appropriate situations.
-    Type console
-     # iptables --list-rules
+Note: Observe the outputs of this command for each situation.
+Type console
+# iptables --list-rules
 
-    - With adding a port
-        - Select limited content serving
-            There should be lines like below at output of the command:
-            -A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports <addedPORT> -j ACCEPT
-            -A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports 0:1024 -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REJECT --reject-with icmp-port-unreachable
-            -A PARDUS-IN-MOD-SERVING -p udp -m multiport --dports 0:1024 -j REJECT --reject-with icmp-port-unreachable
-        - Unselect limited content serving
-            Observe that the above lines are removed from the list-rules.
-    - Without adding a port
-        There should be lines like below at output of the command:
+6) Limited content serving
+     6.a) After adding a port from firewall manager.
+        6.a.a) Enable limited content serving
+            	Observe that the output of the above command contains these: 
+            	-A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports <addedPORT> -j ACCEPT
+            	-A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports 0:1024 -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REJECT --reject-with icmp-port-unreachable
+            	-A PARDUS-IN-MOD-SERVING -p udp -m multiport --dports 0:1024 -j REJECT --reject-with icmp-port-unreachable
+        6.a.b) Disable limited content serving
+            Observe that the above lines are removed from the output of the below command.
+    6.b) Without adding a port
+        Observe that the output of the above command contains these:
          -A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports 0:1024 -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REJECT --reject-with icmp-port-unreachable
          -A PARDUS-IN-MOD-SERVING -p udp -m multiport --dports 0:1024 -j REJECT --reject-with icmp-port-unreachable
 
 
-- Internet sharing
-    - Select Internet sharing
-        - Select different values for gate to internet and gate to home network
-            There should be lines like below at output of the command:
-             -A PARDUS-FW-MOD-SHARING -i <input> -o <output> -m state --state ESTABLISHED,RELATED -j ACCEPT
-             -A PARDUS-FW-MOD-SHARING -i <output> -o <input> -j ACCEPT
-             -t nat -A PARDUS-POST-MOD-SHARING -o <input> -j MASQUERADE
-        - Give same values
-            Observe that the above lines are removed from the list-rules
+7) Internet sharing
+    7.a) Enable Internet sharing
+    	(If you have two internal ethernet card or an extra external ethernet card, you can test this part, if not skip 7.a.a)
+        7.a.a) Select different values for gate to internet and gate to home network
+            	Observe that the above command output contains these:
+             	-A PARDUS-FW-MOD-SHARING -i <input> -o <output> -m state --state ESTABLISHED,RELATED -j ACCEPT
+             	-A PARDUS-FW-MOD-SHARING -i <output> -o <input> -j ACCEPT
+             	-t nat -A PARDUS-POST-MOD-SHARING -o <input> -j MASQUERADE
+        7.a.b) Give same values
+            	Observe that the above lines are removed from the output of the below command.
 
-- Access Restriction 
-    Observe the outputs of this command with appropriate situations.
-    Type console
-    # iptables --list-rules·
-
-    - With adding a port
-        - Select Access Restriction
+8) Access Restriction 
+    8.a) After adding a port from firewall manager.
+        8.a.a) Enable Access Restriction
             Observe that the port is added
             There should be lines like below at output of the command:
             -A PARDUS-FW-MOD-BLOCK -p tcp -m multiport --dports <addedPORT> -j DROP
             -A PARDUS-OUT-MOD-BLOCK -p tcp -m multiport --dports <addedPORT> -j DROP
-        - Unselect·
-            Type the same command, then observe that the above lines are removed from the list-rules
-
+        - Disable Access Restriction·
+            Observe that the above lines are removed from the output of the below command.
+-------------------------------------------------------------------------------------------------------------------
 - Pratical part of tests
-    If the service openssh was not start, start it from service manager
+    If the service openssh was disabled, start it from service manager.
 
-
-    - For Limited content serving:
-        - Disable limited content serving
+    9) For Limited content serving: (If you have staic ip you can test it, if not skip it)
+        9.a) Disable limited content serving
             - Try to make a remote connection from an other computer to your computer.
-                If you have a static ip you can use it for remote connection
+            	Type console
+            	# ssh <your_computer_name>@<static_ip>
+            	Observe that the connection accepted.
 
-            Type console
-            # ssh <your_computer_name>@<static_ip>
-            Observe that the connection accepted.
-
-        - Try to add a well known port and enable limited content serving.
+        9.b) Try to add a well known port and enable limited content serving.
             Open the related service of this port from service-manager.
 
-            - Try to make a remote connection from an other computer to your computer.
+            9.b.a) Try to make a remote connection from an other computer to your computer.
                 # ssh <your_computer_name>@<static_ip>
                 Observe that the connection refused.
 
-            - Try to make a remote connection using the added port from an other computer to your computer.
+            9.b.b) Try to make a remote connection using the added port from an other computer to your computer.
                 # ssh -p <port> <your_computer_name>@<static_ip>
                 Observe that the connection is accepted.
 
-    - For internet sharing:
-        - Plug an external ethernet or internal ethernet card to your computer. And plug an ethernet cable between your computer and an other. ( And if the other computer have an internet acces please stop it. )
-        - Enable internet sharing.
+    10) For internet sharing:(If you have two internal ethernet card or an extra external ethernet card and an extra computer, you can test this part, if not skip it.)
+        - Plug an extra external or internal ethernet card to your computer. And plug an ethernet cable between your computer and the other. ( And if the other computer have an internet acces please stop it. )
+        - Enable internet sharing from firewall-manager.
         - Choose the first ethernet card for gate to internet, and the second for gate to home network.
-            Now try to connect to internet over your computer.
+            Now try to connect to connect internet over your computer and observe it.
 
-    - For access restriction:
-        - Disable access restriction
-            - Try to make a remote connection with using a well known port from your computer to an other remote computer.
+    11) For access restriction:(If you have staic ip you can test it, if not skip it)
+        11.a) Disable access restriction
+            11.a.a) Try to make a remote connection with using a well known port from your computer to the other remote computer.
                 If the remote computer has a static ip you can use it for remote connection
 
                 Type console
                 # ssh -p <port> <remote_computer_name>@<static_ip>
                 Observe that the connection accepted.
 
-        - Try to add a well known port and enable access restriction.
-            - Try to make a remote connection using added port from your  computer to an other computer.
-                # ssh -p <port> <remote_computer_name>@<static_ip>
-                Observe that the connection refused. 
+            11.a.b) Try to add a well known port and enable access restriction.
+            	- Try to make a remote connection using added port from your computer to the other computer.
+                	# ssh -p <port> <remote_computer_name>@<static_ip>
+                	Observe that the connection refused. 
