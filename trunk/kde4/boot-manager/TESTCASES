@@ -1,4 +1,4 @@
-Not: - Observe each result from /boot/grub/grub.conf, then restart computer and try each situation.
+Note: - Observe each result from /boot/grub/grub.conf, then restart computer and try each situation.
      - Looking for related partition
         Type console
         # fdisk -l
@@ -6,21 +6,19 @@ Not: - Observe each result from /boot/grub/grub.conf, then restart computer and 
         Type console
         ls /boot/
 
-- Add a new bootable system
-    For all system options try to left empty the textboxe(s) and then observe that they give a warning about it.
-    - Windows
-        - Give a title and write the partition of related windows system and then click "ok".
-            Observe the results.
-    - Xen or Linux
+1) Add a new bootable system
+    1.a) For all system options try to left empty the textbox(es) and then observe that they give a warning about it.
+    1.b) For Windows give a title and write the partition of related windows system and then click "ok".
+            Observe the results with using the above note.
+    1.c) Xen or Linux
         - Give a title
         - Write the partition of related system.
         - Write the kernel of related system.
         - Write the ramdisk file (initramfs) of related system.
         - Write some related boot option.
         - Then click "ok".
-        - Observe the results.
-    - Memtest
-        - Give a title then click ok.
-            Observe the results.
+        - Observe the results with using the above note.
+    1.d) For memtest give a title then click ok.
+          Observe the results with using the above note.
 
-- Try to change timeout and then observe it.
+2) Try to change timeout and then observe it with using the above note.
