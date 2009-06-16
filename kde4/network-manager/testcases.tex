@@ -1,0 +1,81 @@
+\documentclass[a4paper,10pt]{article}
+
+\title{Network Manager}
+\author{Semen Cirit}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+\item Create profile button
+    \begin{enumerate}
+    \item For wireless connections
+        \begin{enumerate}
+        \item Try to scan for a wireless network
+    
+            After searching a wireless network observe that security type is correctly found.
+        \item Try to add this wireless network password and enable hide password.
+    
+            Observe the situation.
+        \end{enumerate}
+    \end{enumerate}
+
+    \begin{enumerate}
+    \item For ethernet or wireless connections
+        \begin{enumerate}
+        \item If you have more than one network connection, try to select a device from combobox.
+        \item Try to create a new profile without adding a new name
+            \begin{enumerate}
+            \item Without adding a new name
+    
+                Observe that it gives a warning about the profile name and prevents to create the new profile.
+    
+            \item Add a new name and use DHCP and  and try to add this profile
+            \end{enumerate}
+
+        \item Name server settings button.
+            \begin{enumerate}
+            \item testcases will be added later.
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+
+\item Profiles part
+    \begin{enumerate}
+    \item Try to remove a profile.
+    \item Try to change the configurations of a profile.
+        \begin{enumerate}
+        \item Try to change the profile name
+        \item Network settings
+            \begin{enumerate}
+            \item Use DHCP
+                \begin{itemize}
+                \item Use custom address and network mask.
+                \item Use custum default gateway.
+                \end{itemize}
+            \item Use Manual settings
+            \end{enumerate}
+
+        \item Name servers
+            \begin{enumerate}
+            \item Use Default
+            \item Use Automatic
+            \item Use Custom
+            \end{enumerate}
+        \item Apply them and observe the output of the below command.
+        \end{enumerate}
+
+        Execute the following command:
+\begin{verbatim}
+    # ping 4.2.2.1
+\end{verbatim} 
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
