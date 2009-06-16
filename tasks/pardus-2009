@@ -124,6 +124,7 @@
 * Yalı4 2.1 (Gökmen GÖKSEL)
   * Otomatik bölümlendirmede boş alan ve mantıksal alan kullanabilme desteği (+)
   * Disk tablosunda değişiklik yoksa disk tablosu yeniden yazılmasın .7530 (+)
+  * Düşük çözünürlüklü ekranlar için kullanılabilir arayüz değişiklikleri (+)
   * Elle disk yapılandırma ekranında dosya sistemi seçebilme desteği (+)
   * Grub, Pisi HS kullanılabilecek bir kurtarma arayüzü .7169 (+)
   * Harici araçların çıktısı hata ayıklamada gözüksün .7568 (+)
@@ -135,7 +136,6 @@
   * Python 2.6 geçişi (+)
   * Btrfs desteği (+)
   * Ext4 desteği (+)
-  * Düşük çözünürlüklü ekranlar için kullanılabilir arayüz değişiklikleri (/50)
   * Ağ üzerinden kurulum .2095 (/30)
 
 * Yalı4 (Mete Alpaslan)
