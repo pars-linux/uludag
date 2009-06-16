@@ -27,7 +27,9 @@ from ConfigParser import ConfigParser
 
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    selectedWallpaper = 0
+    screenSettings = {}
+    screenSettings["hasChanged"] = False
+
     # title and description at the top of the dialog window
     title = ki18n("Insert some catchy title about wallpapers..")
     desc = ki18n("Wonderful, awesome, superb wallpapers! \m/")
@@ -91,15 +93,18 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def disableWidgets(self, state):
         if state:
-            self.__class__.selectedWallpaper = 0
+            self.__class__.screenSettings["hasChanged"] = False
             self.ui.buttonChooseWp.setDisabled(True)
             self.ui.listWallpaper.setDisabled(True)
         else:
+            self.__class__.screenSettings["hasChanged"] = True
             self.ui.buttonChooseWp.setDisabled(False)
             self.ui.listWallpaper.setDisabled(False)
 
     def setWallpaper(self):
-        self.__class__.selectedWallpaper =  self.ui.listWallpaper.currentItem().statusTip()
+        self.__class__.screenSettings["selectedWallpaper"] =  self.ui.listWallpaper.currentItem().statusTip()
+        self.__class__.screenSettings["hasChanged"] = True
+
         selectedWallpaper = self.ui.listWallpaper.currentItem().statusTip()
         if selectedWallpaper:
             config =  KConfig("plasma-appletsrc")
