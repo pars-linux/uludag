@@ -30,7 +30,7 @@ _ = __trans.ugettext
 
 _sys_dirs = ['dev', 'proc', 'sys']
 
-def run(cmd, params=None, capture=False):
+def run(cmd, params=None, capture=False, appendToLog=True):
     import yali4.gui.context as ctx
 
     # Merge parameters with command
@@ -49,7 +49,8 @@ def run(cmd, params=None, capture=False):
     result = proc.poll()
 
     ctx.debugger.log(stderr)
-    ctx.debugger.log(stdout)
+    if appendToLog:
+        ctx.debugger.log(stdout)
 
     # if return code larger then zero, means there is a problem with this command
     if result > 0:

@@ -246,7 +246,7 @@ Here you can see your install options and look at them again before installation
 
         self.ui.install.setEnabled(False)
         self.ui.cancel.setEnabled(False)
-
+        ctx.installData.installAllLangPacks = self.ui.installAllLangPacks.isChecked()
         ctx.mainScreen.processEvents()
 
         # We should do partitioning operations in here.
