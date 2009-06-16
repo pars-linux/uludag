@@ -26,18 +26,23 @@ def update_messages():
     # Create empty directory
     os.system("rm -rf .tmp")
     os.makedirs(".tmp")
+
     # Collect UI files
     for filename in glob.glob1("ui", "*.ui"):
         os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+
     # Collect Python files
     os.system("cp -R code/* .tmp/")
+
     # Generate POT file
     os.system("find .tmp -name '*.py' | xargs xgettext --default-domain=%s --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot" % (about.catalog, about.catalog))
+
     # Update PO files
     for item in os.listdir("po"):
         if item.endswith(".po"):
             os.system("msgmerge -q -o .tmp/temp.po po/%s po/%s.pot" % (item, about.catalog))
             os.system("cp .tmp/temp.po po/%s" % item)
+
     # Remove temporary directory
     os.system("rm -rf .tmp")
 
@@ -52,12 +57,16 @@ class Build(build):
         # Clear all
         os.system("rm -rf build")
 
+        makeDirs("build/app")
+        makeDirs("build/lib/xcb")
+
         # Copy codes
         print "Copying PYs..."
-        os.system("cp -R code/ build/")
+        os.system("cp -R code/* build/app/")
 
-        for filename in glob.glob1("xcb", "*.xml"):
-            os.system("python xcb/py_client.py xcb/%s" % filename)
+        # Create xcb binding
+        os.system("python xcb/py_client.py xcb/nvctrl.xml")
+        self.move_file("nvctrl.py", "build/lib/xcb/")
 
         # Copy compiled UIs and RCs
         print "Generating UIs..."
@@ -72,11 +81,10 @@ class Install(install):
     def run(self):
         install.run(self)
 
-        if not self.root:
-            self.root = "/"
-
-        kde_dir = os.path.join(self.root, "usr/kde/4")
-        xcb_dir = os.path.join(self.root, "usr/lib/python%d.%d/site-packages/xcb" % sys.version_info[:2])
+        if self.root:
+            kde_dir = "%s/usr/kde/4" % self.root
+        else:
+            kde_dir = "/usr/kde/4"
 
         bin_dir = os.path.join(kde_dir, "bin")
         locale_dir = os.path.join(kde_dir, "share/locale")
@@ -99,11 +107,7 @@ class Install(install):
 
         # Install codes
         print "Installing codes..."
-        os.system("cp -R build/* %s/" % project_dir)
-
-        for filename in glob.glob1("xcb", "*.xml"):
-            #os.system("python xcb/py_client.py xcb/%s" % filename)
-            self.copy_file("%s.py" % os.path.splitext(filename)[0], xcb_dir)
+        os.system("cp -R build/app/* %s/" % project_dir)
 
         # Install locales
         print "Installing locales..."
