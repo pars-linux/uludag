@@ -10,6 +10,54 @@ from zorg.utils import *
 
 sysdir = "/sys/bus/pci/devices/"
 
+class Output:
+    def __init__(self, name):
+        self.name = name
+        self.enabled = True
+        self.ignored = False
+
+        self.__reset()
+
+    def __reset(self):
+        self.mode = ""
+        self.refresh_rate = ""
+        self.rotation = ""
+        self.right_of = ""
+        self.bottom_of = ""
+
+    def setEnabled(self, enabled):
+        self.enabled = enabled
+
+        if enabled:
+            self.ignored = False
+        else:
+            self.__reset()
+
+    def setIgnored(self, ignored):
+        self.ignored = ignored
+
+        if ignored:
+            self.enabled = False
+            self.__reset()
+
+    def setMode(self, mode, rate=""):
+        self.mode = mode
+        self.rate = rate
+
+    def setOrientation(self, rotation, reflection=""):
+        self.rotation = rotation
+
+    def setPosition(self, pos, output):
+        if out == "RightOf":
+            self.right_of = output
+            self.bottom_of = ""
+        elif out == "BottomOf":
+            self.right_of = ""
+            self.bottom_of = output
+        else:
+            self.right_of = ""
+            self.bottom_of = ""
+
 class VideoDevice:
     def __init__(self, deviceDir=None, busId=None):
         if deviceDir:
@@ -38,6 +86,8 @@ class VideoDevice:
         self.monitors = {}
 
         self._driver_packages = None
+
+        self.outputs = []
 
     def _driverPackages(self):
         if self._driver_packages is None:

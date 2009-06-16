@@ -6,7 +6,7 @@ import piksemel
 
 from zorg import consts
 from zorg.parser import *
-from zorg.probe import VideoDevice, Monitor
+from zorg.probe import VideoDevice, Monitor, Output
 from zorg.utils import *
 
 def saveXorgConfig(card):
@@ -187,6 +187,45 @@ def getDeviceInfo(busId):
         if monitorTag:
             addMonitor(name, monitorTag)
 
+    # Get output info
+    outputsTag = cardTag.getTag("Outputs")
+    for outputTag in outputsTag.tags("Output"):
+        name = outputTag.getAttribute("name")
+        output = Output(name)
+        device.outputs.append(output)
+
+        enabledTag = outputTag.getTag("Enabled")
+        if enabledTag:
+            output.setEnabled(enabledTag.firstChild().data() == "true")
+        ignoredTag = outputTag.getTag("Ignored")
+        if ignoredTag:
+            output.setIgnored(ignoredTag.firstChild().data() == "true")
+
+        mode = ""
+        rate = ""
+        modeTag = outputTag.getTag("Mode")
+        if modeTag:
+            mode = modeTag.firstChild().data()
+        rateTag = outputTag.getTag("RefreshRate")
+        if rateTag:
+            mode = rateTag.firstChild().data()
+        output.setMode(mode, rate)
+
+        rotationTag = outputTag.getTag("Rotation")
+        if rotationTag:
+            output.setOrientation(rotationTag.firstChild().data())
+
+        rightOfTag = outputTag.getTag("RightOf")
+        bottomOfTag = outputTag.getTag("BottomOf")
+        if rightOfTag:
+            output.setPosition("RightOf", rightOfTag.firstChild().data())
+        elif bottomOfTag:
+            output.setPosition("BottomOf", bottomOfTag.firstChild().data())
+
+        monitorTag = outputTag.getTag("Monitor")
+        if monitorTag:
+            addMonitor(name, monitorTag)
+
     device.desktop_setup = activeConfigTag.getTagData("DesktopSetup")
 
     device.probe_result = probeResult
@@ -265,6 +304,32 @@ def saveDeviceInfo(card):
 
             if card.monitors.has_key(outName):
                 addMonitor(outName, "SecondMonitor")
+
+    # Save output info
+    outputs = cardTag.insertTag("Outputs")
+    for output in card.outputs:
+        out = outputs.insertTag("Output")
+        out.setAttribute("name", output.name)
+        addTag(out, "Enabled", "true" if output.enabled else "false")
+        addTag(out, "Ignored", "true" if output.ignored else "false")
+        if output.mode:
+            addTag(out, "Mode", output.mode)
+        if output.refresh_rate:
+            addTag(out, "RefreshRate", output.refresh_rate)
+        if output.rotation:
+            addTag(out, "Rotation", output.rotation)
+        if output.right_of:
+            addTag(out, "RightOf", output.right_of)
+        if output.bottom_of:
+            addTag(out, "BottomOf", output.bottom_of)
+
+        if output.name in card.monitors:
+            mon = card.monitors[output.name]
+            monitor = out.insertTag("Monitor")
+            addTag(monitor, "Vendor", mon.vendor)
+            addTag(monitor, "Model", mon.model)
+            addTag(monitor, "HorizSync", mon.hsync)
+            addTag(monitor, "VertRefresh", mon.vref)
 
     f = open(consts.config_file, "w")
     f.write(doc.toPrettyString().replace("\n\n", ""))
