@@ -29,34 +29,31 @@ msgstr "taslak"
 
 #: .tmp/ScrMenu.py:27 .tmp/ScrStyle.py:35
 msgid "Some catchy description about styles"
-msgstr "taslak"
+msgstr "Masaüstünüzü birbirinden güzel stiller ile donatın"
 
 #: .tmp/ScrMenu.py:41
-#, fuzzy
 msgid "Kick-off Menu"
 msgstr "Kick-off (Gelişmiş Menü)"
 
 #: .tmp/ScrMenu.py:43
 msgid "A modern menu for KDE"
-msgstr ""
+msgstr "KDE için modern bir menü"
 
 #: .tmp/ScrMenu.py:47
-#, fuzzy
 msgid "Simple Menu"
 msgstr "Klasik (Basit Menü)"
 
 #: .tmp/ScrMenu.py:49
 msgid "And old style menu from KDE 3."
-msgstr ""
+msgstr "KDE 3'ten gelen eski moda bir menü."
 
 #: .tmp/ScrMenu.py:53
-#, fuzzy
 msgid "Lancelot Menu"
 msgstr "Lancelot (Deneysel Menü)"
 
 #: .tmp/ScrMenu.py:55
 msgid "An experimental menu for KDE4"
-msgstr ""
+msgstr "KDE4 için deneysel bir menü"
 
 #: .tmp/ScrMouse.py:29
 msgid "Mouse Settings"
@@ -67,22 +64,20 @@ msgid "Configure your mouse"
 msgstr "Farenizi yapılandırın"
 
 #: .tmp/ScrMouse.py:130
-#, fuzzy
 msgid "Left Handed"
 msgstr "Sol El"
 
 #: .tmp/ScrMouse.py:130
-#, fuzzy
 msgid "Right Handed"
 msgstr "Sağ El"
 
 #: .tmp/ScrMouse.py:131
 msgid "Single Click "
-msgstr ""
+msgstr "Tek Tıklama"
 
 #: .tmp/ScrMouse.py:131
 msgid "Double Click"
-msgstr ""
+msgstr "Çift Tıklama"
 
 #: .tmp/ScrNetwork.py:23 .tmp/ScrNetwork.py:24
 msgid "Network Manager"
@@ -114,11 +109,11 @@ msgstr "taslak"
 
 #: .tmp/ScrSearch.py:58
 msgid "On"
-msgstr ""
+msgstr "Açık"
 
 #: .tmp/ScrSearch.py:60
 msgid "Off"
-msgstr ""
+msgstr "Kapalı"
 
 #: .tmp/ScrSmolt.py:21 .tmp/ui_smoltWidget.py:44
 msgid "Smolt"
@@ -145,7 +140,6 @@ msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Muhteşem duvarkağıtları ile masaüstünüz şenlenecek!"
 
 #: .tmp/ui_goodbyeWidget.py:91
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -169,36 +163,34 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda "
-"uygulanacaktır...</span></p></body></html>"
+"size:12pt; font-weight:600;\">Tebrikler! Tüm adımları bitirdiniz!"
+"Aşağıdaki uygulamaları kullanarak Pardus'un keyfini çıkarmaya devam edebilirsiniz!</span></p></body></html>"
 
 #: .tmp/ui_goodbyeWidget.py:96
-#, fuzzy
 msgid "System Settings"
 msgstr "Fare Ayarları"
 
 #: .tmp/ui_goodbyeWidget.py:97
 msgid "System Settings is a configuration tool for Pardus."
-msgstr ""
+msgstr "Gelişmiş sistem ayarlarını yapabileceğiniz bir uygulama."
 
 #: .tmp/ui_goodbyeWidget.py:98 .tmp/ui_goodbyeWidget.py:101
 msgid "Start"
-msgstr ""
+msgstr "Başlat"
 
 #: .tmp/ui_goodbyeWidget.py:99
 msgid "User Groups and Help Pages"
-msgstr ""
+msgstr "Kullanıcı grupları ve yardım sayfaları"
 
 #: .tmp/ui_goodbyeWidget.py:100
 msgid "Pardus community, user lists, IRC channels, wikis and more."
-msgstr ""
+msgstr "Pardus topluluğu, kullanıcı listeleri, IRC kanalları, wikiler ve daha fazlası..."
 
 #: .tmp/ui_kaptanMain.py:130
 msgid "Kaptan Desktop"
 msgstr "Kaptan Masaüstü"
 
 #: .tmp/ui_kaptanMain.py:131
-#, fuzzy
 msgid "<b>Welcome to Kaptan!</b>"
 msgstr "Kaptan'a hoşgeldiniz!"
 
@@ -223,7 +215,6 @@ msgid "Menu"
 msgstr "Menü"
 
 #: .tmp/ui_menuWidget.py:78
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -245,8 +236,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda "
-"uygulanacaktır...</span></p></body></html>"
+"weight:600;\">Bir menü stili seçin:</span></p></body></html>"
 
 #: .tmp/ui_menuWidget.py:83
 msgid "Kick-off (Advanced Menu)"
@@ -384,9 +374,8 @@ msgid "Themes"
 msgstr "Temalar"
 
 #: .tmp/ui_styleWidget.py:66
-#, fuzzy
 msgid "<b>Desktop Type:</b>"
-msgstr "Masaüstü Tipi:"
+msgstr "<b>Masaüstü Tipi:</b>"
 
 #: .tmp/ui_styleWidget.py:67
 msgid "Desktop"
@@ -397,13 +386,12 @@ msgid "Folderview"
 msgstr "Dizin görünümü"
 
 #: .tmp/ui_styleWidget.py:69
-#, fuzzy
 msgid "<b>Number of Desktops:</b>"
-msgstr "Masaüstü sayısı:"
+msgstr "<b>Masaüstü sayısı:</b>"
 
 #: .tmp/ui_summaryWidget.py:49
 msgid "Summary"
-msgstr ""
+msgstr "Özet"
 
 #: .tmp/ui_summaryWidget.py:50
 msgid ""
