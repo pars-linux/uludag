@@ -36,7 +36,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
     def shown(self):
-        selectedWallpaper = wallpaperWidget.Widget.selectedWallpaper
+        self.wallpaperSettings = wallpaperWidget.Widget.screenSettings
         self.mouseSettings = mouseWidget.Widget.screenSettings
         self.menuSettings = menuWidget.Widget.screenSettings
         self.searchSettings = searchWidget.Widget.screenSettings
@@ -63,7 +63,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Wallpaper Settings
         content.append(subject % ("Wallpaper Settings"))
-        content.append(item % ("Selected Wallpaper is <b>%s</b>") % selectedWallpaper)
+        if self.wallpaperSettings["hasChanged"] == False:
+            content.append(item % ("You haven't selected any wallpaper."))
+        else:
+            content.append(item % ("Selected Wallpaper is <b>%s</b>") % self.wallpaperSettings["selectedWallpaper"])
         content.append(end)
 
         # Style Settings
@@ -103,6 +106,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         p = subprocess.Popen(["plasma"], stdout=subprocess.PIPE)
 
     def execute(self):
+        hasChanged = False
 
         # Search settings
         if self.searchSettings["hasChanged"] == True:
@@ -118,6 +122,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Menu Settings
         if self.menuSettings["hasChanged"] == True:
+            hasChanged = True
             config = KConfig("plasma-appletsrc")
             group = config.group("Containments")
 
@@ -133,6 +138,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                             subg2.writeEntry('plugin', self.menuSettings["selectedMenu"] )
         # Desktop Type
         if self.styleSettings["hasChangedDesktopType"] == True:
+            hasChanged = True
             config =  KConfig("plasma-appletsrc")
             group = config.group("Containments")
 
@@ -148,6 +154,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Number of Desktops
         if self.styleSettings["hasChangedDesktopNumber"] == True:
+            hasChanged = True
             config = KConfig("kwinrc")
             group = config.group("Desktops")
             group.writeEntry('Number', self.styleSettings["desktopNumber"])
@@ -164,6 +171,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Theme Settings
         if self.styleSettings["hasChanged"] == True:
+            hasChanged = True
             configKdeGlobals = KConfig("kdeglobals")
             group = configKdeGlobals.group("General")
             group.writeEntry("widgetStyle", self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["widgetStyle"])
@@ -208,8 +216,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
             proxy = session.get_object('org.kde.kwin', '/KWin')
             proxy.reconfigure()
 
+        if hasChanged == True:
+            self.killPlasma()
 
-        self.killPlasma()
         return True
 
 
