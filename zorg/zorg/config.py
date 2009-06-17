@@ -41,35 +41,41 @@ def saveXorgConfig(card):
 
     flags = card.flags()
 
-    for output in card.active_outputs:
-        identifier = "Monitor[%s]" % output
+    for name, output in card.outputs.items():
+        identifier = "Monitor[%s]" % name
 
         monSec = XorgSection("Monitor")
         parser.sections.append(monSec)
         monSec.set("Identifier", identifier)
 
-        if card.monitors.has_key(output):
-            monSec.set("VendorName",  card.monitors[output].vendor)
-            monSec.set("ModelName",   card.monitors[output].model)
-            monSec.set("HorizSync",   unquoted(card.monitors[output].hsync))
-            monSec.set("VertRefresh", unquoted(card.monitors[output].vref ))
+        if card.monitors.has_key(name):
+            monSec.set("VendorName",  card.monitors[name].vendor)
+            monSec.set("ModelName",   card.monitors[name].model)
+            monSec.set("HorizSync",   unquoted(card.monitors[name].hsync))
+            monSec.set("VertRefresh", unquoted(card.monitors[name].vref ))
 
         if "norandr" not in flags:
-            secDevice.options["Monitor-%s" % output] = identifier
-            monSec.options["Enable"] = "true"
+            secDevice.options["Monitor-%s" % name] = identifier
 
-            if card.modes.has_key(output):
-                monSec.options["PreferredMode"] = card.modes[output]
+            if output.ignored:
+                monSec.options["Ignore"] = "true"
+                continue
 
-            if card.desktop_setup in ("horizontal", "vertical"):
-                out1, out2 = card.active_outputs[:2]
-                if output == out1:
-                    if card.desktop_setup == "horizontal":
-                        pos = "LeftOf"
-                    else:
-                        pos = "Above"
+            monSec.options["Enable"] = "true" if output.enabled else "false"
 
-                    monSec.options[pos] = "Monitor[%s]" % out2
+            if output.mode:
+                monSec.options["PreferredMode"] = output.mode
+
+            if output.refresh_rate:
+                monSec.options["TargetRefresh"] = output.refresh_rate
+
+            if output.rotation:
+                monSec.options["Rotate"] = output.rotation
+
+            if output.right_of:
+                monSec.options["RightOf"] = output.right_of
+            elif output.below:
+                monSec.options["Below"] = output.below
 
     if card.needsScreenSection():
         secScr.set("Identifier", "Screen")
@@ -208,7 +214,7 @@ def getDeviceInfo(busId):
             mode = modeTag.firstChild().data()
         rateTag = outputTag.getTag("RefreshRate")
         if rateTag:
-            mode = rateTag.firstChild().data()
+            rate = rateTag.firstChild().data()
         output.setMode(mode, rate)
 
         rotationTag = outputTag.getTag("Rotation")
