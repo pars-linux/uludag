@@ -1,0 +1,40 @@
+\documentclass[a4paper,10pt]{article}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+
+%opening
+\title{Testing Guide for Pardus Alfa and Beta 2009}
+\author{Semen Cirit}
+
+\begin{document}
+
+\maketitle
+
+Attention!
+
+    During the test you may change, remove, or create new disk partitions of your computer. 
+    Before starting the tests you may want to back up your archives.
+
+    After the test finished you have to send the results to us. If you have one more than test machine you have to send the test results for each machine.
+
+    For each test result, you should write Failed or Checked to the end of the relavent case phrase.
+
+\begin{enumerate}
+\item Preparation
+  \begin{enumerate}
+    \item Download the related ISO image.
+    \item Check the data integrity with executing this command.
+      \begin{verbatim}
+       # sha1sum <iso_image>
+      \end{verbatim}
+    \item Burn the ISO image on mode DAO and with maximum 16x speed.
+  \end{enumerate}
+  \item Tests
+    
+    Please apply the following tests cases in the next pages.
+ \end{enumerate}
+\end{document}
