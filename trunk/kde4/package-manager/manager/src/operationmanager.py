@@ -78,6 +78,14 @@ class OperationManager(QObject):
 
         self.emit(SIGNAL("progress(int)"), percent)
 
+    def updatePackageProgress(self):
+        try:
+            percent = (self.packageNo * 100) / self.totalPackages
+        except ZeroDivisionError:
+            percent = 0
+
+        self.emit(SIGNAL("progress(int)"), percent)
+
     def addDesktopFile(self, desktopFile):
         if desktopFile.startswith("usr/share/applications/") or desktopFile.startswith("usr/kde/4/share/applications/kde4/"):
             self.desktopFiles.append(desktopFile)
@@ -133,4 +141,5 @@ class OperationManager(QObject):
             if self.state.getState() != StateManager.REMOVE and signal == "removed":
                 return
             self.packageNo += 1
+            self.updatePackageProgress()
             self.emit(SIGNAL("packageChanged(int, int, QString)"), self.packageNo, self.totalPackages, i18n(signal))
