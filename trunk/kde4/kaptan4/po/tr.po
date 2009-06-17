@@ -168,7 +168,7 @@ msgstr ""
 
 #: .tmp/ui_goodbyeWidget.py:96
 msgid "System Settings"
-msgstr "Fare Ayarları"
+msgstr "Sistem Ayarları"
 
 #: .tmp/ui_goodbyeWidget.py:97
 msgid "System Settings is a configuration tool for Pardus."
