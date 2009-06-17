@@ -47,13 +47,13 @@ class Output:
     def setOrientation(self, rotation, reflection=""):
         self.rotation = rotation
 
-    def setPosition(self, pos, output):
-        if out == "RightOf":
-            self.right_of = output
+    def setPosition(self, pos, arg):
+        if pos == "RightOf":
+            self.right_of = arg
             self.bottom_of = ""
-        elif out == "BottomOf":
+        elif pos == "BottomOf":
             self.right_of = ""
-            self.bottom_of = output
+            self.bottom_of = arg
         else:
             self.right_of = ""
             self.bottom_of = ""
