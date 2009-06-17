@@ -1,71 +1,70 @@
-1) Try to open package manager from system settings
-2) Try to open package manager from Kmenu.
-3) Toolboxes
+- Toolboxes
+    - Check for translations
     The box on the left shows the package groups and each group contain related components' packages.
-    	To see which component belongs to which group go console and  type:
-    	$ grep -A 167 "component_group_mappings " /usr/kde/4/share/apps/package-manager/backend/pisi/groups.py > /tmp/listofgroups
+    To see which component belongs to which group go console and  type:
+    $ grep -A 167 "component_group_mappings " /usr/kde/4/share/apps/package-manager/backend/pisi/groups.py > /tmp/listofgroups
 
-     3.a) File toolbox
+    - File toolbox
         Dropdown alternatives
             Select a component from /tmp/listofgroups file
-            3.a.a) Try to Show new packages
+            - Try to Show new packages
                 Type
                 $ pisi la -Uc <component>
                 Compare package-manager and console results for related component.
 
-            3.a.b) Try to Show installed packages
+            - Try to Show installed packages
                 Type
                 $ pisi li -c <component>
                 Compare package-manager and console results for related component.
 
-            3.a.c) Try to Show upgradable packages
+            - Try to Show upgradable packages
                 Type
                 $ pisi lu -c <component>
                 Compare package-manager and console results for related component.
-            3.a.d) Click quit dropdown menu. 
+            - Click quit dropdown menu. 
                 Observe the situation.
-    3.b) Settings Toolbox
+    - Settings Toolbox
+        - Check for translations.
         Dropdown alternatives
-        3.b.a) Try to enable and then disable show toolbar. Observe the situation.
-        3.b.b) Try to enable and then disable show statusbar. Observe the situation.
-        Configure shortcuts
-            3.b.c) Try to search for an action. Observe the situation.
-
-            Select an alternative from the package-manager list
-            3.b.d) Shortcut action
-                    I) Try to change a shortcut. Observe the situation.
-                   II) Try to add a custom shortcut. Observe the situation.
-                   III) Try to remove shortcut. Observe the situation.
-             3.b.e) Alternative action
-                    I) Try to change a shortcut. Observe the situation.
-                   II) Try to add a custom shortcut. Observe the situation.
-                   III) Try to remove shortcut. Observe the situation.
+        - Try to unclick or click show toolbar. Observe the situation.
+        - Try to unclick or click show statusbar. Observe the situation.
+        - Try to configure shortcuts
+            - Try to search for an action. Observe the situation.
+            - Select an alternative from the package-manager list
+                - Shortcut action
+                    - Try to change a shortcut. Observe the situation.
+                    - Try to add a custom shortcut. Observe the situation.
+                    - Try to remove shortcut. Observe the situation.
+                - Alternative action
+                    - Try to change a shortcut. Observe the situation.
+                    - Try to add a custom shortcut. Observe the situation.
+                    - Try to remove shortcut. Observe the situation.
         - Configure toolbar
-            3.b.f) Try to add an action 
-            3.b.g) Try to remove an action
-            3.b.h) Try to take up an action
-            3.b.i) Try to take down an action
+            - Try to add an action 
+            - Try to remove an action
+            - Try to take up an action
+            - Try to take down an action
             Observe all situations
         - Configure package manager
             - General Settings tab
-                3.b.j) Try to show only desktop applications
+                - Try to show only desktop applications
                     - Observe that "True" is assigned to "ShowOnlyGuiApp" variable in .kde/share/config/package-managerrc file.
-                3.b.k) Try to enable system tray icon
+                - Try to enable system tray icon
                     - Observe that "True" is assigned to "SystemTray" variable in .kde/share/config/package-managerrc file.
-                3.b.l) Try to enable periodic update check
+                - Try to enable periodic update check
                     - Observe that "True" is assigned to "UpdateCheck" variable in .kde/share/config/package-managerrc file.
                     - Put a observable time interval, observe it from package manager,
                     - Also observe this time interval is added to "UpdateCheckInterval" variable in .kde/share/config/package-managerrc file.
-                3.b.m) Try to enable bandwidth limit
+                - Try to enable bandwidth limit
                     - Try to limit bandwidth and install some packages with package-manager, observe the limit from installation progressbar. And compare it with bandwith_limit value in /etc/pisi/pisi.conf file.
             - Cache tab
                 - Update check part
-                    3.b.n) Enable use hard disk cache for downloaded software
+                    - Enable use hard disk cache for downloaded software
                         - Observe package_cache = True in /etc/pisi/pisi.conf file.
-                    3.b.o) Try to give a value to maximum cache size
+                    - Try to give a value to maximum cache size
                         - Observe maximum cache size is added to "package_cache_limit" variable in /etc/pisi/pisi.conf
-                 - Clear Cache part
-                        3.b.p) Try Clean disk cache now
+                    - Clear Cache part
+                        -Try Clean disk cache now
                             - Type console 
                                 # ls -l /var/pisi
                                 # ls -l /var/cache/pisi
@@ -74,61 +73,60 @@
                             - Type console again 
                                 # ls -l /var/pisi
                                 # ls -l /var/cache/pisi
-                                Observe that these directories are empty.
+                                Look that these directories are empty.
              - Repositories tab
-                3.b.q) Try to add a repository from 
-                3.b.r) Try to remove a repository
-                3.b.s) Try to take up a repository 
-                3.b.t) Try to take down a repository 
-		Observe all situations.
-                3.b.u) Type console to list the repositories and compare the results with package-managers'.
-                	# pisi lr
+                - Try to add a repository from 
+                - Try to remove a repository
+                - Try to take up a repository 
+                - Try to take down a repository
+                Type console to list the repositories and compare the results
+                # pisi lr
             - Proxy tab
-                3.b.v) Select No proxy server 
-                    Look /etc/pisi/pisi.conf file, observe these variables are like that
+                - Select No proxy server 
+                    Look /etc/pisi/pisi.conf file that these variables are like that
                         http_proxy = None
                         https_proxy = None
                         ftp_proxy = None
-                3.b.w) Select Use proxy server
+                - Select Use proxy server
                     - Try to add a HTTP server and enable use proxy server for all protocols.
                         Observe the related results of /etc/pisi/pisi.conf
                     - Try to add a HTTP, a HTTPS and a FTP server
                         Observe the related results of /etc/pisi/pisi.conf
 
-        3.c) Help toolbox
+        - Help toolbox
             Dropdown alternatives
-                3.c.a) KDE help center (testcases will added later)
-                3.c.b) What's this? 
+                - KDE help center (testcases will added later)
+                - What's this? 
                     - Try to take the description of each widget on the screen.
-                3.c.d) Report bug
+                - Report bug
                     - Choose a severity for the an example bug
                     - Add a subject and description and send it
                     - Control it from bugzilla
-                3.c.e) Switch application language
+                - Switch application language
                     - Change primary language and observe the situation.
                     - Try to add a fallback language and observe the situation.
                     - Try to remove the fallback language and observe the situation.
-4) Toolbar 
-    4.a) Try to right click on toolbar
-    4.b) Try to change the oriantation, observe each result
-    4.c) Try to change text position, observe each result.
+- Toolbar 
+    - Try to right click on toolbar
+    - Try to change the oriantation, observe each result
+    - Try to change text position, observe each result.
         - Observe also that selected style is assigned to "ToolButtonStyle" variable in .kde/share/config/package-managerrc file.
-    4.d) Try to change the icon size, observe the each result.
-    4.e) Try to lock toolbar, then unlock toolbar
+    - Try to change the icon size, observe the each result.
+    - Try to lock toolbar, then unlock toolbar
         - Then right click again and try to change some feature.
-    4.f) Try to enable and disable toolbar, observe each result.
-    4.g) Try to configure toolbar and test again toolboxes-> configure toolbar part of testcases.
+    - Try to enable and disable toolbar, observe each result.
+    - Try to configure toolbar and test again toolboxes-> configure toolbar part of testcases.
 
-5) Installing Package
+- Installing Package
     For each alternative do the above two
         - Select a package from package list, try to install.
         - Select all, try to install all
-    5.a) After showing new packages. 
-    5.b) After showing upgradable packages.
-6) Removing packages
+    - After showing  new packages. 
+    - After showing  upgradable packages.
+- Removing packages
     - After showing installed packages.
-        6.a) Select a package from package list, try to remove.
-        6.b) Select all, try to remove all.
+        - Select a package from package list, try to remove.
+        - Select all, try to remove all.
 
-7) Try to shutdown or restart computer while package manager has been making update.
+- Try to shutdown or restart computer while package manager has been making update.
     Observe that the computer couldn't be shutdown or restart.
