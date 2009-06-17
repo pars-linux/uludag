@@ -1,6 +1,9 @@
 [Style]
 name = Oxygen
+
 description = Oxygen Theme
+description[tr]= Oksijen teması
+
 applets= digital-clock; folderview
 panelPosition = 4
 widgetStyle = oxygen
