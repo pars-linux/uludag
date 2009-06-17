@@ -1,0 +1,121 @@
+\documentclass[a4paper,10pt]{article}
+
+
+%opening
+\title{Efficient Bug Reporting}
+\author{Semen Cirit}
+
+\begin{document}
+
+\maketitle
+
+\section{Efficient Bug Report Draft}
+	
+An efficient bug reporting example,
+
+For summary part of bugzilla =>
+Summary: After configuring date and time from the panel the effects don't work properly.
+
+For Description part of bugzilla =>
+Description:
+When the translucency effects is already enabled, the configuration of the clock from the panel, distrupts the desktop effects.
+
+Reproducible: Always
+
+Steps to reproduce:
+1) Right click the digital clock widget on the panel.
+2) Select configure date and time from dropbox
+3) Change a clock setting
+4) Apply the change.
+5) Type the root password.
+6) Push the ok button
+
+Actual results:
+The clock configured properly but the desktop effects on the panel lose its translucence.
+
+Expected results:
+The desktop tranclucency effects is enabled on my desktop so the clock configuration should not be change the tranclucency effects.
+
+--------------------------------------------------------------------------------------------------------------------------------
+What should be attached?
+-------------------------------
+For Xorg problems:
+The outputs of these commands shoud be attached.
+lspci -nn > lspci.txt
+dmesg > dmesg.txt
+
+If the computer or the keyboard was not lock, you can take the log from 
+cat /var/log/Xorg.0
+If not, restart your computer and open it in vesa mode and take the log from
+cat /var/log/Xorg.conf.old
+
+For all outputs, if X crashed, you can take the outputs of these command with the below procedure.
+1) Plug an usb stick to the computer.
+2) Mount it manually.
+    Execute this command for mounting:
+    mount /dev/<your_usb_stick_partition> /mnt/flash
+3) Copy the outputs to /mnt/flash
+     cp <output> /mnt/flash
+4) Unmount it manually.
+  umount /dev/<your_usb_stick_partition>
+---------------------------
+
+For Pardus specific applications:
+The outputs of these commands should be attached for all below managers:
+ tail /var/log/comar3/trace.log
+
+ For network-manager:
+  lspci > lspci.txt
+  If the problem is about ethernet.
+    ifconfig -a > ifconfig.txt
+
+  If the problem is about ethernet.
+    iwconfig > iwconfig.txt
+  
+  For disk-manager
+    fdisk -l >fdisk.txt
+    cat /etc/fstab
+
+  For service-manager:
+   service -N > service.txt
+
+  For boot-manager
+  cat /boot/grub/grub.conf
+  
+  user-manager
+
+  firewall-manager
+    service -N > service.txt
+    iptables > iptables.txt
+
+------------------------------------------------------------------------------------------------------
+For camera devices
+The outputs of these commands shoud be attached:
+  lsusb > lsusb.txt
+  test-webcam > webcame.txt
+
+---------------------------------------------
+For Audio devices
+The outputs of these commands shoud be attached:
+  cat /proc/asound/cards
+  cat /proc/asound/*/codec*
+
+---------------------------------------------------------------------------------------
+And also if you solved the problem you can add the related patch to your bug.
+-----------------------------------------------------------------------------------------------
+And also one additional thing, if you don't know the erroneous product exactly, you can find it with this command
+the variable can be any related file about the product. For example a bin file, a library file. 
+# pisi sf `which <variable>`
+
+For our example the effects can be configured from system settings. But there is no product about system settings so we can use the its binary file.
+So the command 
+pisi sf `which systemsettings`
+
+And the output
+/usr/kde/4/bin/systemsettings dosyası aranıyor
+kdebase-workspace paketi içinde usr/kde/4/bin/systemsettings dosyası var
+
+So this means, the bug is for the kdebase-workspace package.
+---------------------------------------------------------------------------------
+
+\end{document}
