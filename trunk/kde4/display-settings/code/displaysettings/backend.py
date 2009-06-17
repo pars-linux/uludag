@@ -25,6 +25,7 @@ class Interface:
         self.package = self.getMainPackage()
 
         self.ext = displaysettings.nv.Interface()
+        print "NVCTRL" if self.ext.ready else "RANDR", "extension will be used to get hardware info."
         if not self.ext.ready:
             self.ext = displaysettings.randr.Interface()
 
