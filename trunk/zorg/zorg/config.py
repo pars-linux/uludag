@@ -216,11 +216,11 @@ def getDeviceInfo(busId):
             output.setOrientation(rotationTag.firstChild().data())
 
         rightOfTag = outputTag.getTag("RightOf")
-        bottomOfTag = outputTag.getTag("BottomOf")
+        belowTag = outputTag.getTag("Below")
         if rightOfTag:
             output.setPosition("RightOf", rightOfTag.firstChild().data())
-        elif bottomOfTag:
-            output.setPosition("BottomOf", bottomOfTag.firstChild().data())
+        elif belowTag:
+            output.setPosition("Below", belowTag.firstChild().data())
 
         monitorTag = outputTag.getTag("Monitor")
         if monitorTag:
@@ -320,8 +320,8 @@ def saveDeviceInfo(card):
             addTag(out, "Rotation", output.rotation)
         if output.right_of:
             addTag(out, "RightOf", output.right_of)
-        if output.bottom_of:
-            addTag(out, "BottomOf", output.bottom_of)
+        if output.below:
+            addTag(out, "Below", output.below)
 
         if name in card.monitors:
             mon = card.monitors[name]

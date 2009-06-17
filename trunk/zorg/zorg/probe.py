@@ -23,7 +23,7 @@ class Output:
         self.refresh_rate = ""
         self.rotation = ""
         self.right_of = ""
-        self.bottom_of = ""
+        self.below = ""
 
     def setEnabled(self, enabled):
         self.enabled = enabled
@@ -50,13 +50,13 @@ class Output:
     def setPosition(self, pos, arg):
         if pos == "RightOf":
             self.right_of = arg
-            self.bottom_of = ""
-        elif pos == "BottomOf":
+            self.below = ""
+        elif pos == "Below":
             self.right_of = ""
-            self.bottom_of = arg
+            self.below = arg
         else:
             self.right_of = ""
-            self.bottom_of = ""
+            self.below = ""
 
 class VideoDevice:
     def __init__(self, deviceDir=None, busId=None):
