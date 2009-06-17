@@ -12,9 +12,9 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n
+from PyKDE4.kdecore import ki18n, KGlobal
 #from PyKDE4.kutils import KCModuleInfo, KCModuleProxy
-
+import subprocess
 from gui.ScreenWidget import ScreenWidget
 from gui.goodbyeWidget import Ui_goodbyeWidget
 
@@ -27,6 +27,13 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_goodbyeWidget()
         self.ui.setupUi(self)
 
+        lang = KGlobal.locale().language()
+
+        if lang == "tr":
+            self.helpPageUrl = "http://www.pardus.org.tr/iletisim.html"
+        else:
+            self.helpPageUrl = "http://www.pardus.org.tr/eng/contact.html"
+
         self.ui.buttonSystemSettings.connect(self.ui.buttonSystemSettings, SIGNAL("clicked()"), self.startSystemSettings)
         self.ui.buttonHelpPages.connect(self.ui.buttonHelpPages, SIGNAL("clicked()"), self.startHelpPages)
 
@@ -36,7 +43,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def startHelpPages(self):
         self.procSettings = QProcess()
-        self.procSettings.start("firefox http://www.pardus.org.tr/eng/contact.html")
+        command = "kfmclient openURL " + self.helpPageUrl
+        self.procSettings.start(command)
 
     def shown(self):
         pass
