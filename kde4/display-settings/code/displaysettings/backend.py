@@ -42,16 +42,3 @@ class Interface:
             Display Settings tool is heavily zorg dependent.
         """
         return "zorg"
-
-
-class Output:
-    Connected = 0
-    Disconnected = 1
-    Unknown = 2
-
-    def __init__(self, name):
-        self.name = name
-        self.connection = self.Disconnected
-
-    def __repr__(self):
-        return "<Output %s>" % self.name
