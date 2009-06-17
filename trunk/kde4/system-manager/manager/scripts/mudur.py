@@ -29,3 +29,24 @@ def getLocale():
 
 def setLocale(local):
     pass
+
+
+def getHeadStart():
+    return ""
+
+def setHeadStart(package):
+    pass
+
+
+def getClock():
+    return ""
+
+def setClock(clock, adjust):
+    pass
+
+
+def getTTYs():
+    return ""
+
+def setTTYs(count):
+    pass
