@@ -5,7 +5,7 @@ import xcb
 from xcb.xproto import *
 import xcb.randr
 
-from displaysettings.backend import Output
+from displaysettings.device import Output
 
 try:
     conn = xcb.connect()
