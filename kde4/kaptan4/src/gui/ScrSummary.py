@@ -50,39 +50,39 @@ class Widget(QtGui.QWidget, ScreenWidget):
         content.append("""<html><body><ul>""")
 
         # Mouse Settings
-        content.append(subject % ("Mouse Settings"))
+        content.append(subject % ki18n("Mouse Settings").toString())
 
-        content.append(item % ("Selected Mouse configuration is <b>%s</b>") % self.mouseSettings["summaryMessage"]["selectedMouse"].toString())
-        content.append(item % ("Selected clicking behaviour is <b>%s</b>") % self.mouseSettings["summaryMessage"]["clickBehaviour"].toString())
+        content.append(item % ki18n("Selected Mouse configuration: <b>%s</b>").toString() % self.mouseSettings["summaryMessage"]["selectedMouse"].toString())
+        content.append(item % ki18n("Selected clicking behaviour: <b>%s</b>").toString() % self.mouseSettings["summaryMessage"]["clickBehaviour"].toString())
         content.append(end)
 
         # Menu Settings
-        content.append(subject % ("Menu Settings"))
-        content.append(item % ("Selected Menu is <b>%s</b>") % self.menuSettings["summaryMessage"].toString())
+        content.append(subject % ki18n("Menu Settings").toString())
+        content.append(item % ("Selected Menu: <b>%s</b>") % self.menuSettings["summaryMessage"].toString())
         content.append(end)
 
         # Wallpaper Settings
-        content.append(subject % ("Wallpaper Settings"))
+        content.append(subject % ki18n("Wallpaper Settings").toString())
         if self.wallpaperSettings["hasChanged"] == False:
-            content.append(item % ("You haven't selected any wallpaper."))
+            content.append(item % ki18n("You haven't selected any wallpaper.").toString())
         else:
-            content.append(item % ("Selected Wallpaper is <b>%s</b>") % self.wallpaperSettings["selectedWallpaper"])
+            content.append(item % ki18n("Selected Wallpaper: <b>%s</b>").toString() % self.wallpaperSettings["selectedWallpaper"])
         content.append(end)
 
         # Style Settings
-        content.append(subject % ("Style Settings"))
+        content.append(subject % ki18n("Style Settings").toString())
 
         if self.styleSettings["hasChanged"] == False :
-            content.append(item % ("You haven't selected any style."))
+            content.append(item % ki18n("You haven't selected any style.").toString())
         else:
-            content.append(item % ("Selected Style is <b>%s</b>") % self.styleSettings["summaryMessage"])
+            content.append(item % ki18n("Selected Style: <b>%s</b>").toString() % self.styleSettings["summaryMessage"])
 
         content.append(end)
 
 
         # Search Settings
-        content.append(subject %("Search Settings"))
-        content.append(item % ("Desktop search is <b>%s</b>") % self.searchSettings["summaryMessage"].toString())
+        content.append(subject %ki18n("Search Settings").toString())
+        content.append(item % ki18n("Desktop search: <b>%s</b>").toString() % self.searchSettings["summaryMessage"].toString())
         content.append(end)
 
         content.append("""</ul></body></html>""")
