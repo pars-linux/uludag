@@ -192,7 +192,7 @@ def getDeviceInfo(busId):
     for outputTag in outputsTag.tags("Output"):
         name = outputTag.getAttribute("name")
         output = Output(name)
-        device.outputs.append(output)
+        device.outputs[name] = output
 
         enabledTag = outputTag.getTag("Enabled")
         if enabledTag:
@@ -307,9 +307,9 @@ def saveDeviceInfo(card):
 
     # Save output info
     outputs = cardTag.insertTag("Outputs")
-    for output in card.outputs:
+    for name, output in card.outputs.items():
         out = outputs.insertTag("Output")
-        out.setAttribute("name", output.name)
+        out.setAttribute("name", name)
         addTag(out, "Enabled", "true" if output.enabled else "false")
         addTag(out, "Ignored", "true" if output.ignored else "false")
         if output.mode:
@@ -323,8 +323,8 @@ def saveDeviceInfo(card):
         if output.bottom_of:
             addTag(out, "BottomOf", output.bottom_of)
 
-        if output.name in card.monitors:
-            mon = card.monitors[output.name]
+        if name in card.monitors:
+            mon = card.monitors[name]
             monitor = out.insertTag("Monitor")
             addTag(monitor, "Vendor", mon.vendor)
             addTag(monitor, "Model", mon.model)

@@ -87,7 +87,7 @@ class VideoDevice:
 
         self._driver_packages = None
 
-        self.outputs = []
+        self.outputs = {}
 
     def _driverPackages(self):
         if self._driver_packages is None:
