@@ -50,8 +50,11 @@ class windowTitle(QtGui.QFrame):
         self.dragPosition = None
         self.mainwidget = self.parent()
         self.setStyleSheet("""
-            QFrame#windowTitle {background-color:#984379;color:#FFF;border:1px solid #FFF;border-radius:4px;}
+            QFrame#windowTitle {background-color:#984379;color:#FFF;}
         """)
+
+        # Initial position to top left
+        self.dragPosition = self.mainwidget.frameGeometry().topLeft()
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
@@ -76,7 +79,7 @@ class Dialog(QtGui.QDialog):
         if icon:
             self.setStyleSheet(""" QDialog#dialog {background-image:url(':/images/%s.png');
                                                    background-repeat:no-repeat;
-                                                   background-position: top left; } """ % icon)
+                                                   background-position: top left;} """ % icon)
 
         self.windowTitle = windowTitle(self, closeButton)
         self.setTitle(title)
@@ -109,6 +112,10 @@ class Dialog(QtGui.QDialog):
             self.layout.addItem(QtGui.QSpacerItem(10, 10, QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.MinimumExpanding))
             self.layout.setContentsMargins(0, 0, 0, 8)
         self.layout.addLayout(self.wlayout)
+
+    def setCentered(self):
+        self.move(ctx.mainScreen.width()/2 - self.width()/2,
+                  ctx.mainScreen.height()/2 - self.height()/2)
 
 def QuestionDialog(title, text, info = None, dontAsk = False):
     msgBox = QtGui.QMessageBox()
