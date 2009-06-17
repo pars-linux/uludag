@@ -1,6 +1,5 @@
 \documentclass[a4paper,10pt]{article}
 
-
 %opening
 \title{Efficient Bug Reporting}
 \author{Semen Cirit}
@@ -10,33 +9,37 @@
 \maketitle
 
 \section{Efficient Bug Report Draft}
-	
-An efficient bug reporting example,
 
-For summary part of bugzilla =>
-Summary: After configuring date and time from the panel the effects don't work properly.
+\begin{itemize}
+  \item A smooth bug report is so valuable for its develpor or maintainer. Therefore, the first thing, you should read the informations of this webpage very carefully: 
+  \begin{verbatim}
+  http://bugs.pardus.org.tr/page.cgi?id=bug-writing.html#why 
+  \end{verbatim}
+  \item For the description part of bugzilla, a template is prepared. All Pardus testers will use this template to report bugs.
+  In Description textbox
 
-For Description part of bugzilla =>
-Description:
-When the translucency effects is already enabled, the configuration of the clock from the panel, distrupts the desktop effects.
+   Reproducible: (Always or arbitrary)
+   
+    Give a short description of the bug here.
+   
+   Steps to reproduce:
+   \begin{enumerate}
+    \item First step.
+    \item Second step
+    \item ...
+   \end{enumerate}
 
-Reproducible: Always
+   Actual results:
+    Describe the actual results here. You can add the bug outputs.
+   
+   Expected results:
+    Describe the expected according your computer hardware and system settings.
+    
+  \item An efficient bug reporting example:
+  http://bugs.pardus.org.tr/show_bug.cgi?id=10043
+\end{itemize}
 
-Steps to reproduce:
-1) Right click the digital clock widget on the panel.
-2) Select configure date and time from dropbox
-3) Change a clock setting
-4) Apply the change.
-5) Type the root password.
-6) Push the ok button
 
-Actual results:
-The clock configured properly but the desktop effects on the panel lose its translucence.
-
-Expected results:
-The desktop tranclucency effects is enabled on my desktop so the clock configuration should not be change the tranclucency effects.
-
---------------------------------------------------------------------------------------------------------------------------------
 What should be attached?
 -------------------------------
 For Xorg problems:
