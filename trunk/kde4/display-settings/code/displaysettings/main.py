@@ -23,7 +23,7 @@ from PyKDE4 import kdecore
 from displaysettings.ui_main import Ui_MainWidget
 
 # Backend
-#from displaysettings.backend import Interface
+from displaysettings.backend import Interface
 
 # Config
 #from displaysettings.config import
@@ -38,11 +38,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.setupUi(self)
 
         # Backend
-        #self.iface = Interface()
-        #self.iface.listenSignals(self.signalHandler)
+        self.iface = Interface()
+        self.iface.listenSignals(self.signalHandler)
 
         # Fail if no packages provide backend
-        #self.checkBackend()
+        self.checkBackend()
 
     def checkBackend(self):
         """
