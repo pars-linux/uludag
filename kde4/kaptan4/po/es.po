@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-16 11:42+0300\n"
-"PO-Revision-Date: 2009-06-11 19:42-0400\n"
+"PO-Revision-Date: 2009-06-17 21:37-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,6 @@ msgid "Right Handed"
 msgstr "Diestro"
 
 #: .tmp/ScrMouse.py:131
-#, fuzzy
 msgid "Single Click "
 msgstr "Clic único"
 
@@ -126,7 +125,7 @@ msgstr ""
 
 #: .tmp/ScrSmolt.py:22
 msgid "Smolt Description"
-msgstr ""
+msgstr "Descripción Smolt"
 
 #: .tmp/ScrSummary.py:30 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
 msgid "Welcome"
@@ -145,7 +144,6 @@ msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr ""
 
 #: .tmp/ui_goodbyeWidget.py:91
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -169,29 +167,29 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">La configuración se aplicará en la pantalla "
-"siguiente...</span></p></body></html>"
+"size:9pt; font-weight:600;\">Felicidades! Terminó todos los pasos del asistente! "
+"Ahora puede pasar a usar Pardus o puede probar uno de los siguientes programas:"
+"</span></p></body></html>"
 
 #: .tmp/ui_goodbyeWidget.py:96
-#, fuzzy
 msgid "System Settings"
-msgstr "Configuración del ratón"
+msgstr "Configuración del Sistema"
 
 #: .tmp/ui_goodbyeWidget.py:97
 msgid "System Settings is a configuration tool for Pardus."
-msgstr ""
+msgstr "Configuración del Sistema es una herramienta de configuración de Pardus."
 
 #: .tmp/ui_goodbyeWidget.py:98 .tmp/ui_goodbyeWidget.py:101
 msgid "Start"
-msgstr ""
+msgstr "Inicio"
 
 #: .tmp/ui_goodbyeWidget.py:99
 msgid "User Groups and Help Pages"
-msgstr ""
+msgstr "Grupos de usuarios y páginas de ayuda"
 
 #: .tmp/ui_goodbyeWidget.py:100
 msgid "Pardus community, user lists, IRC channels, wikis and more."
-msgstr ""
+msgstr "Comunidad Pardus, listas de usuarios, canales IRC, wikis y más."
 
 # i am not sure if it is good to translate this, maybe it should remain in english (for the spanish version at least)
 # favor revisar
@@ -369,7 +367,7 @@ msgstr "Habilitar Escritorio Semántico Nepomuk"
 
 #: .tmp/ui_smoltWidget.py:45
 msgid "Send Smolt profile "
-msgstr ""
+msgstr "Enviar perfil Smolt"
 
 #: .tmp/ui_styleitem.py:46 .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
@@ -474,14 +472,3 @@ msgstr ""
 "escritorio básico para un usuario de PC; Le ayuda conectar a internet, leer "
 "e-mails, trabajar con documentos de oficina y más!"
 
-#~ msgid "Congratulations! You have finished all steps!"
-#~ msgstr "Felicidades ! Usted ha terminado todos los pasos !"
-
-#~ msgid "Multiple Desktops"
-#~ msgstr "Escritorios Múltiples"
-
-#~ msgid "You can configure number of desktops from this application."
-#~ msgstr "Aquí puede configurar la cantidad de escritorios."
-
-#~ msgid "Number of Desktops"
-#~ msgstr "Cantidad de Escritorios"

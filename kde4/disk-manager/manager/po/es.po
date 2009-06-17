@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-27 13:50+0300\n"
-"PO-Revision-Date: 2009-05-25 20:48-0400\n"
+"PO-Revision-Date: 2009-06-17 21:39-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-# favor revisar contexto, "disco" deberia ser más generico
+# favor revisar contexto, "disco" deberia ser más generico - como patición, medio extraíble, recurso compartido en la red, etc
 #: .tmp/ui_edit.py:67
 msgid "Mount Disk Automatically"
 msgstr "Montar disco automáticamente"
@@ -43,7 +43,7 @@ msgstr "Opciones por omisión"
 msgid "Add New"
 msgstr "Agregar Nuevo"
 
-# favor revisar, porque la idea es: 
+# favor revisar, porque la idea es:
 # administrar puntos de montaje para particiones, discos y medios de almacenamiento - pero en lenguaje sencillo
 #: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
 msgid "Disk Manager"
@@ -89,3 +89,4 @@ msgstr "Agregar"
 #: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:275
 msgid "Settings"
 msgstr "Configuración"
+

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-15 12:12+0300\n"
-"PO-Revision-Date: 2009-06-11 19:21-0400\n"
+"PO-Revision-Date: 2009-06-17 21:29-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -105,8 +105,7 @@ msgid "Automatic"
 msgstr "Automático"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Esta opción intentará encontrar espacio adecuado disponible, o particiones "
 "que se puedan redimensionar"
@@ -281,12 +280,11 @@ msgid "TextLabel"
 msgstr "Etiqueta de texto"
 
 #: yali4/gui/Ui/exception.py:60 yali4/__init__.py:69
-#, fuzzy
 msgid "Error"
-msgstr "Error!"
+msgstr "Error"
 
 #: yali4/gui/Ui/exception.py:61
-#, fuzzy
+# favor revisar, como se traduce bien backtrace ?
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -305,18 +303,15 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Seleccione el método de "
-"particionamiento:</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Por favor ingrese un reporte de falla por este problema; en <span style=\" font-weight:600;\">http://bugs.pardus.org."
+"tr </span>con el siguiente backtrace.</p></body></html>"
 
-# Traza/Registro/mensaje
 #: yali4/gui/Ui/exception.py:66
-#, fuzzy
 msgid "Show Backtrace"
-msgstr "Trazo inverso:"
+msgstr "Mostrar trazo inverso"
 
 #: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:89
 #: yali4/gui/ScrGoodbye.py:86 yali4/gui/ScrRescueFinish.py:87
@@ -548,8 +543,7 @@ msgstr "Seleccionar Conexión"
 # favor revisar, depende del contexto
 #: yali4/gui/Ui/rescuepisiwidget.py:71
 msgid "Select an operation from history list to take back the system"
-msgstr ""
-"Seleccione una operación del listado histórico para retroceder el sistema"
+msgstr "Seleccione una operación del listado histórico para retroceder el sistema"
 
 # verificar contexto, a confirmar con lo visual..
 #: yali4/gui/Ui/rescuewidget.py:84
@@ -571,8 +565,7 @@ msgstr "Si tiene algún problema con el arranque, puede reinstalar Grub"
 
 #: yali4/gui/Ui/rescuewidget.py:87
 msgid "If you need to take back your old operations you can use Pisi History"
-msgstr ""
-"Si necesita deshacer algunas operaciones previas, puede utilizar Pisi History"
+msgstr "Si necesita deshacer algunas operaciones previas, puede utilizar Pisi History"
 
 # i suppose "you can create a new password", it is not really "change" - its is in fact: "replace"
 # favor revisar - observar contexto,
@@ -664,7 +657,7 @@ msgstr "Comenzar instalación"
 
 #: yali4/gui/Ui/summarywidget.py:70
 msgid "Don't install extra language packages"
-msgstr ""
+msgstr "No instalar paquetes de idiomas adicionales"
 
 #: yali4/gui/Ui/welcomewidget.py:91
 msgid ""
@@ -908,18 +901,15 @@ msgstr "Hay una petición para el mismo tipo de partición."
 
 #: yali4/gui/DiskWidgets.py:344
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr ""
-"Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr "Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
 
 # favor verificar contexto,
 # check context, should this say "format as.." instead o "selected as .." ?
 #: yali4/gui/DiskWidgets.py:359 yali4/gui/ScrSummary.py:160
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr "Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 #: yali4/gui/DiskWidgets.py:377
 msgid ""
@@ -1049,17 +1039,13 @@ msgstr "No se puede abrir el archivo de licencia!"
 msgid "Can't open Release Notes!"
 msgstr "No se puede abrir el archivo de notas de lanzamiento!"
 
-# favor revisar, unhandled: desconocido, inesperado o mejor.. ?
 #: yali4/gui/runner.py:146
-#, fuzzy
 msgid "Error occured !"
-msgstr "Ocurrió un error inesperado !"
+msgstr "Ocurrió un error !"
 
-# favor revisar, unhandled: desconocido, inesperado o mejor.. ?
 #: yali4/gui/runner.py:162
-#, fuzzy
 msgid "Unhandled exception occured!"
-msgstr "Ocurrió un error inesperado !"
+msgstr "Ocurrió un error desconocido !"
 
 # verify context
 #: yali4/gui/ScrAdmin.py:30
@@ -1210,8 +1196,7 @@ msgstr "Verifique el CD instalador"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr ""
-"Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1233,8 +1218,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
+msgstr "<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1321,12 +1305,8 @@ msgid "Running post install operations.."
 msgstr "Ejecutando operaciones post-instal.."
 
 #: yali4/gui/ScrGoodbye.py:86 yali4/gui/ScrRescueFinish.py:87
-#, fuzzy
 msgid "Press <b>Reboot</b> button to restart your system."
-msgstr ""
-"<b>\n"
-"<p>Presione el botón 'Reiniciar' para reiniciar el sistema.</p>\n"
-"</b>\n"
+msgstr "Presione el botón <b>Reiniciar</b> para reiniciar el sistema."
 
 #: yali4/gui/ScrGoodbye.py:88 yali4/gui/ScrRescueFinish.py:89
 msgid "<b>Rebooting system. Please wait!</b>"
@@ -1597,14 +1577,9 @@ msgstr ""
 msgid "Warning"
 msgstr "Alerta"
 
-# favor revisar, no sé si mejor quito nomas "realmente" ?
-# favor revisar tambien "removed", puede ser tambien "se perderán" ? depende del contexto
 #: yali4/gui/ScrPartitionManual.py:80
-#, fuzzy
 msgid "All changes that you made will be removed."
-msgstr ""
-"Todos los cambios que realizó se eliminarán.\n"
-"Realmente desea continuar ?"
+msgstr "Todos los cambios que realizó se anularán."
 
 #: yali4/gui/ScrRescueFinish.py:33 yali4/gui/ScrRescue.py:30
 msgid "Rescue Mode"
@@ -1684,9 +1659,8 @@ msgid "Getting user list ..."
 msgstr "Obteniendo lista de usuarios ..."
 
 #: yali4/gui/ScrRescuePassword.py:97
-#, fuzzy
 msgid "Password changed"
-msgstr "Repetir Contraseña:"
+msgstr "Contraseña cambiada"
 
 #: yali4/gui/ScrRescuePassword.py:97
 msgid "Info"
@@ -1733,8 +1707,7 @@ msgstr "Operación %s : %s - %s"
 msgid ""
 "You can reinstall your Grub or you can take back your system by using Pisi "
 "History..."
-msgstr ""
-"Puede reinstalar Grub o puede retroceder el sistema usando Pisi History..."
+msgstr "Puede reinstalar Grub o puede retroceder el sistema usando Pisi History..."
 
 #: yali4/gui/ScrRescue.py:33
 msgid ""
@@ -1827,8 +1800,7 @@ msgstr "Usuario %s (<b>%s</b>) agregado."
 #: yali4/gui/ScrSummary.py:134
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
-msgstr ""
-"Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
+msgstr "Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
 
 #: yali4/gui/ScrSummary.py:140
 msgid "Hostname Settings"
@@ -1874,8 +1846,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:196
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr "Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:211
 msgid "Bootloader Settings"
@@ -1891,12 +1862,11 @@ msgid "GRUB will not be installed"
 msgstr "GRUB no se instalará"
 
 #: yali4/gui/ScrSummary.py:238
-#, fuzzy
+# verificar contexto, por la forma gramatical
 msgid "Before Starting"
-msgstr "Usuarios"
+msgstr "Antes de Empezar"
 
 #: yali4/gui/ScrSummary.py:239
-#, fuzzy
 msgid ""
 "<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
 "your partition,<br>\n"
@@ -1907,13 +1877,11 @@ msgid ""
 "                                        <b>Note that this operation cannot "
 "be undone ! </b></p>"
 msgstr ""
-"<p><b><u>Alerta</u></b>: Hay una operación de redimensionar, que pueda "
-"corromper su partición,<br>\n"
-"                   dejando sin poder acceder sus datos. <br>\n"
-"                   Favor asegurese de tener una copia de backup para esta "
-"partición.<br>\n"
-"                   <b>Tenga en cuenta que esta operación no se puede "
-"deshacer ! </b></p>"
+"<p><b><u>Alerta</u></b>: Está a punto de iniciar una tarea de redimensionamiento de partición,<br>\n"
+"                      Esta operación podría dejar inaccesible sus datos. "
+"<br>\n"
+"                                        Asegúrese que tenga una copia de seguridad para esta partición.<br>\n"
+"                                        <b>Tenga en cuenta que esta operación no se puede deshacer ! </b></p>"
 
 #: yali4/gui/ScrSummary.py:264 yali4/gui/ScrSummary.py:275
 #: yali4/gui/ScrSummary.py:290
@@ -2042,11 +2010,11 @@ msgstr ""
 
 #: yali4/gui/YaliDialog.py:116
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #: yali4/gui/YaliDialog.py:117
 msgid "No"
-msgstr ""
+msgstr "No"
 
 # favor revisar - el estilo de mi lenguaje
 #: yali4/gui/YaliDialog.py:122
@@ -2055,11 +2023,11 @@ msgstr "Ya no me preguntes más"
 
 #: yali4/gui/YaliDialog.py:127
 msgid "Do you want to continue ?"
-msgstr ""
+msgstr "Desea continuar ?"
 
 #: yali4/gui/YaliDialog.py:141
 msgid "Information"
-msgstr ""
+msgstr "Información"
 
 #: yali4/gui/YaliDialog.py:143
 msgid "Ok"
@@ -2071,26 +2039,27 @@ msgstr "Mostrar Ayuda"
 
 #: yali4/gui/YaliWindow.py:88 yali4/gui/YaliWindow.py:96 yali4/sysutils.py:171
 msgid "right"
-msgstr ""
+msgstr "derecho"
 
 #: yali4/gui/YaliWindow.py:95 yali4/gui/YaliWindow.py:98 yali4/sysutils.py:170
 msgid "left"
-msgstr ""
+msgstr "izquierdo"
 
 #: yali4/gui/YaliWindow.py:99
-#, fuzzy
 msgid "Mouse Settings"
-msgstr "Usuarios"
+msgstr "Configuración de Ratón"
 
 #: yali4/gui/YaliWindow.py:100
 #, python-format
 msgid "You just used <b>%s</b> button."
-msgstr ""
+msgstr "Acaba de presionar el botón <b>%s</b>."
 
 #: yali4/gui/YaliWindow.py:101
 #, python-format
+# sorry, in spanish there are special words for right-handed and left-handed. I changed the sentence so i could apply the simple words (right, left) as in english. 
+# Although there is still some grammer issue (hand and button have different sex in spanish!)
 msgid "Do you want to use <b>%s</b> handed mouse settings ?"
-msgstr ""
+msgstr "Desea usar la configuración de ratón para mano <b>%s</b> ?"
 
 #: yali4/gui/YaliWindow.py:137
 msgid "Terminal"
@@ -2242,7 +2211,7 @@ msgstr "Estableciendo configuraciones de programas varios..."
 
 #: yali4/installer.py:667
 msgid "Do you want to retry ?"
-msgstr ""
+msgstr "Desea intentar de nuevo ?"
 
 #: yali4/localedata.py:20
 msgid "Turkish"
@@ -2443,27 +2412,3 @@ msgstr "Área de almacenamiento"
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Preparando directorio home de usuario <b>%s</b>.."
 
-# in english: use plural !! - should say "partitions"
-#~ msgid "Too many primary partition !"
-#~ msgstr "Demasiadas particiones primarias !"
-
-#~ msgid ""
-#~ "<b>\n"
-#~ "<p>This action will start installing Pardus on<br>\n"
-#~ "your system formatting the selected partition.</p>\n"
-#~ "</b>\n"
-#~ msgstr ""
-#~ "<b>\n"
-#~ "<p>Esta acción iniciará la instalación de Pardus en<br>\n"
-#~ "el equipo formateando la partición seleccionada.</p>\n"
-#~ "</b>\n"
-
-# Hagámoslo cambiado, Adelante, de acuerdo - Proceda
-#~ msgid "O.K. Go Ahead"
-#~ msgstr "Bien, Hagámoslo"
-
-#~ msgid "Warning !"
-#~ msgstr "Alerta !"
-
-#~ msgid "Retry"
-#~ msgstr "Reintentar"
