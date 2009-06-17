@@ -42,7 +42,7 @@ class Output:
 
     def setMode(self, mode, rate=""):
         self.mode = mode
-        self.rate = rate
+        self.refresh_rate = rate
 
     def setOrientation(self, rotation, reflection=""):
         self.rotation = rotation
