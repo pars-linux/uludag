@@ -40,6 +40,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         self.styleDetails = {}
+        self.catLang = KGlobal.locale().language()
 
         config = KConfig("kwinrc")
         group = config.group("Desktops")
@@ -53,7 +54,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
             parser.read("/usr/kde/4/share/apps/kaptan/gui/styles/" +str(desktopFiles))
             try:
                 styleName = parser.get_locale('Style', 'name', '')
+            except:
+                styleName = ki18n("No name")
+            try:
+                styleDesc = parser.get_locale('Style', 'description[%s]'%self.catLang, '')
+            except:
                 styleDesc = parser.get_locale('Style', 'description', '')
+            try:
+                # TODO find a fallback values for these & handle exceptions seperately.
                 #styleApplet = parser.get_locale('Style', 'applets', '')
                 panelPosition = parser.get_locale('Style', 'panelPosition', '')
                 #styleColorScheme = parser.get_locale('Style', 'colorScheme', '')

@@ -1,6 +1,9 @@
 [Style]
 name = Keramik
+
 description = Keramik Theme
+description[tr] = Keramik Teması
+
 applets= digital-clock; folderview
 panelPosition = 3
 widgetStyle = oxygen
