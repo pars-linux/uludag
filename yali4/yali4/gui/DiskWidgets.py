@@ -29,12 +29,15 @@ import yali4.gui.context as ctx
 from yali4.gui.Ui.partedit import Ui_PartEdit
 from yali4.gui.GUIException import *
 from yali4.gui.GUIAdditional import ResizeWidget
+from yali4.gui.YaliDialog import InfoDialog
 
 partitionTypes = [None,
                   parttype.root,
                   parttype.home,
                   parttype.swap,
                   parttype.archive]
+
+minimumSize = 40
 
 class DiskList(QtGui.QWidget):
 
@@ -251,7 +254,7 @@ class DiskList(QtGui.QWidget):
         # add partitions on device
         for part in dev.getOrderedPartitionList():
             # we dont need to show fu..in extended partition
-            if part.isExtended():
+            if part.isExtended() or part.getMB() < minimumSize:
                 continue
             if part.getMinor() != -1:
                 name = _("Partition %d") % part.getMinor()
@@ -410,8 +413,7 @@ class DiskList(QtGui.QWidget):
                 p = device.addPartition(partition._partition, type, t.filesystem, size, t.parted_flags)
             except Exception, e:
                 ctx.debugger.log("Exception : %s" % e)
-                InfoDialog(_("You need to delete one of the primary or extended(if exists) partition from your disk table !"),
-                   title = _("Too many primary partitions !"))
+                InfoDialog(unicode(e), title = _("Error !"))
                 return
 
             # Get new partition meta
@@ -674,8 +676,8 @@ class PartEdit(QtGui.QWidget):
         self.ui.partitionSlider.setMaximum(part.getMB()-1)
         self.ui.partitionSize.setValue(part.getMB()-1)
         self.ui.information.setText("")
-        self.ui.partitionSize.setMinimum(160)
-        self.ui.partitionSlider.setMinimum(160)
+        self.ui.partitionSize.setMinimum(minimumSize)
+        self.ui.partitionSlider.setMinimum(minimumSize)
 
         # We must select formatType after GUI update
         partitionType = getPartitionType(part)

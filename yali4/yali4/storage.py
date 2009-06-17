@@ -34,6 +34,10 @@ from yali4.exception import YaliError, YaliException
 import yali4.sysutils as sysutils
 import yali4.filesystem
 
+import gettext
+__trans = gettext.translation('yali4', fallback=True)
+_ = __trans.ugettext
+
 class DeviceError(YaliError):
     pass
 
@@ -368,7 +372,7 @@ class Device:
                                              flags)
 
         # if you are here and then we have some problems..
-        raise DeviceError, ("Not enough free space on %s to create new partition" % self.getPath())
+        raise DeviceError, (_("Not enough free space on %s to create new partition") % self.getPath())
 
     ##
     # add a partition starting from a given geom...
