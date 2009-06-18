@@ -348,14 +348,18 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 if widget.isNew():
                     self.iface.addUser(widget.getId(), widget.getUsername(), widget.getFullname(), widget.getHomeDir(), widget.getShell(), widget.getPassword(), widget.getGroups(), grant, block)
                 else:
+                    def handler(package, exception, args):
+                        pass
                     self.iface.setUser(widget.getId(), widget.getFullname(), widget.getHomeDir(), widget.getShell(), widget.getPassword(), widget.getGroups())
-                    # Revoke all
-                    self.iface.setRevoke(widget.getId(), "*")
-                    # Grants & blocks
+                    # Revoke
+                    for action_id in revoke:
+                        self.iface.setRevoke(widget.getId(), action_id, func=handler)
+                    # Grant
                     for action_id in grant:
-                        self.iface.setGrant(widget.getId(), action_id)
+                        self.iface.setGrant(widget.getId(), action_id, func=handler)
+                    # Block
                     for action_id in block:
-                        self.iface.setBlock(widget.getId(), action_id)
+                        self.iface.setBlock(widget.getId(), action_id, func=handler)
             else:
                 widget = self.widgetGroupEdit
                 self.iface.addGroup(widget.getId(), widget.getGroupname())
