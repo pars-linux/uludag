@@ -44,6 +44,16 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Fail if no packages provide backend
         self.checkBackend()
 
+        # Set icons
+        self.pixmapLanguage.setPixmap(kdeui.KIcon("applications-education-language").pixmap(48, 48))
+        self.pixmapTime.setPixmap(kdeui.KIcon("chronometer").pixmap(48, 48))
+        self.pixmapPackage.setPixmap(kdeui.KIcon("applications-other").pixmap(48, 48))
+        self.pixmapConsole.setPixmap(kdeui.KIcon("utilities-terminal").pixmap(48, 48))
+
+        # Initialize
+        self.buildLists()
+        self.setItems()
+
     def checkBackend(self):
         """
             Check if there are packages that provide required backend.
@@ -55,3 +65,60 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def signalHandler(self, package, signal, args):
         pass
+
+    def buildLists(self):
+        # Languages
+        self.comboLanguage.clear()
+        for code, label in self.iface.listLanguages():
+            self.comboLanguage.addItem(label, QtCore.QVariant(code))
+        # Locales
+        self.comboLocale.clear()
+        for code, label in self.iface.listLocales():
+            self.comboLocale.addItem(label, QtCore.QVariant(code))
+        # Keyboard maps
+        self.comboKeyboard.clear()
+        for code, label in self.iface.listKeymaps():
+            self.comboKeyboard.addItem(label, QtCore.QVariant(code))
+        # Time zones
+        self.comboTimeZone.clear()
+        # Services
+        self.comboHeadStart.clear()
+        self.comboHeadStart.addItem(kdecore.i18n("None"), QtCore.QVariant(""))
+        for package, label in self.iface.listServices():
+            self.comboHeadStart.addItem(label, QtCore.QVariant(package))
+
+    def setItems(self):
+        # Language
+        language = QtCore.QVariant(self.iface.getLanguage())
+        index = self.comboLanguage.findData(language)
+        if index != -1:
+            self.comboLanguage.setCurrentIndex(index)
+        # Locale
+        locale = QtCore.QVariant(self.iface.getLocale())
+        index = self.comboLocale.findData(locale)
+        if index != -1:
+            self.comboLocale.setCurrentIndex(index)
+        # Keyboard map
+        keymap = QtCore.QVariant(self.iface.getKeymap())
+        index = self.comboKeyboard.findData(keymap)
+        if index != -1:
+            self.comboKeyboard.setCurrentIndex(index)
+        # Time zone
+        pass
+        # Clock
+        is_utc, adjust = self.iface.getClock()
+        if is_utc:
+            self.checkUTC.setCheckState(QtCore.Qt.Checked)
+        else:
+            self.checkUTC.setCheckState(QtCore.Qt.Unchecked)
+        if adjust:
+            self.checkClockAdjust.setCheckState(QtCore.Qt.Checked)
+        else:
+            self.checkClockAdjust.setCheckState(QtCore.Qt.QtUnchecked)
+        # Head start
+        service = QtCore.QVariant(self.iface.getHeadStart())
+        index = self.comboHeadStart.findData(service)
+        if index != -1:
+            self.comboHeadStart.setCurrentIndex(index)
+        # Console
+        self.spinTTY.setValue(self.iface.getTTYs())

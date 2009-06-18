@@ -8,13 +8,45 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-16 14:35+0300\n"
+"POT-Creation-Date: 2009-06-18 16:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/ui_main.py:173
+msgid "Language:"
+msgstr ""
+
+#: .tmp/ui_main.py:174
+msgid "Locale:"
+msgstr ""
+
+#: .tmp/ui_main.py:175
+msgid "Keyboard Layout:"
+msgstr ""
+
+#: .tmp/ui_main.py:176
+msgid "Time Zone:"
+msgstr ""
+
+#: .tmp/ui_main.py:177
+msgid "Hardware clock is set to UTC."
+msgstr ""
+
+#: .tmp/ui_main.py:178
+msgid "Normalize systematic drift of the hardware clock."
+msgstr ""
+
+#: .tmp/ui_main.py:179
+msgid "First Service to Start:"
+msgstr ""
+
+#: .tmp/ui_main.py:180
+msgid "Number of Consoles:"
+msgstr ""
 
 #: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
 msgid "System Manager"
@@ -36,8 +68,12 @@ msgstr ""
 msgid "Current Maintainer"
 msgstr ""
 
-#: .tmp/systemmanager/main.py:52
+#: .tmp/systemmanager/main.py:62
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
+msgstr ""
+
+#: .tmp/systemmanager/main.py:86
+msgid "None"
 msgstr ""

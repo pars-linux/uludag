@@ -23,7 +23,7 @@ class Interface:
         self.package = self.getMainPackage()
 
     def listenSignals(self, func):
-        self.link.listenSignals("X.Y", func)
+        self.link.listenSignals("System.Settings", func)
 
     def getPackages(self):
         """
@@ -36,3 +36,103 @@ class Interface:
             System Manager is heavily mudur dependent.
         """
         return "mudur"
+
+    def listServices(self):
+        """
+            Returns list of services.
+        """
+        services = []
+        for package in self.link.System.Service:
+            services.append((package, self.link.System.Service[package].info()[1]))
+        services.sort(key=lambda x: x[1])
+        return services
+
+    def listLanguages(self):
+        """
+            Returns list of languages."
+        """
+        return self.link.System.Settings[self.package].listLanguages()
+
+    def getLanguage(self):
+        """
+            Returns selected language.
+        """
+        return self.link.System.Settings[self.package].getLanguage()
+
+    def setLanguage(self, language):
+        """
+            Sets language.
+        """
+        self.link.System.Settings[self.package].setLanguage(language)
+
+    def listKeymaps(self, language=""):
+        """
+            Returns list of keymaps."
+        """
+        return self.link.System.Settings[self.package].listKeymaps(language)
+
+    def getKeymap(self):
+        """
+            Returns selected keymap.
+        """
+        return self.link.System.Settings[self.package].getKeymap()
+
+    def setKeymap(self, keymap):
+        """
+            Sets keymap.
+        """
+        self.link.System.Settings[self.package].setKeymap(keymap)
+
+    def listLocales(self, language=""):
+        """
+            Returns list of locales."
+        """
+        return self.link.System.Settings[self.package].listLocales(language)
+
+    def getLocale(self):
+        """
+            Returns selected locale.
+        """
+        return self.link.System.Settings[self.package].getLocale()
+
+    def setLocale(self, locale):
+        """
+            Sets locale.
+        """
+        self.link.System.Settings[self.package].setLocale(locale)
+
+    def getHeadStart(self):
+        """
+            Returns first service to be started.
+        """
+        return self.link.System.Settings[self.package].getHeadStart()
+
+    def setHeadStart(self, package):
+        """
+            Sets first service to be started.
+        """
+        return self.link.System.Settings[self.package].setHeadStart(package)
+
+    def getTTYs(self):
+        """
+            Returns number of consoles.
+        """
+        return self.link.System.Settings[self.package].getTTYs()
+
+    def setTTYs(self, count):
+        """
+            Sets number of consoles.
+        """
+        return self.link.System.Settings[self.package].setTTYs(count)
+
+    def getClock(self):
+        """
+            Returns clock settings.
+        """
+        return self.link.System.Settings[self.package].getClock()
+
+    def setClock(self, utc, adjust):
+        """
+            Sets clock.
+        """
+        return self.link.System.Settings[self.package].setClock(utc, adjust)
