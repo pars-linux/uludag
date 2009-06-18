@@ -39,19 +39,23 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # read default settings
 
-        config = KConfig("kcminputrc")
-        group = config.group("Mouse")
-        self.__class__.screenSettings["selectedMouse"] =  group.readEntry("MouseButtonMapping")
+        try:
+            config = KConfig("kcminputrc")
+            group = config.group("Mouse")
+            self.__class__.screenSettings["selectedMouse"] =  group.readEntry("MouseButtonMapping")
 
-        config = KConfig("kdeglobals")
-        group = config.group("KDE")
-        self.__class__.screenSettings["selectedBehaviour"] = str(group.readEntry("SingleClick"))
-        self.ui.pixMouseIcon.setPixmap(QtGui.QPixmap(':/raw/pics/mouse.png'))
+            config = KConfig("kdeglobals")
+            group = config.group("KDE")
+            self.__class__.screenSettings["selectedBehaviour"] = str(group.readEntry("SingleClick"))
+            self.ui.pixMouseIcon.setPixmap(QtGui.QPixmap(':/raw/pics/mouse.png'))
 
-        self.ui.singleClick.setChecked(self.str2bool(self.__class__.screenSettings["selectedBehaviour"]))
+            self.ui.singleClick.setChecked(self.str2bool(self.__class__.screenSettings["selectedBehaviour"]))
 
-        if self.__class__.screenSettings["selectedMouse"] == "LeftHanded":
-            self.ui.radioButtonLeftHand.setChecked(True)
+            if self.__class__.screenSettings["selectedMouse"] == "LeftHanded":
+                self.ui.radioButtonLeftHand.setChecked(True)
+
+        except:
+            print "Initial config file --unable to get needed configuration sections."
 
         # set signals
         self.connect(self.ui.radioButtonRightHand, SIGNAL("toggled(bool)"), self.setHandedness)
