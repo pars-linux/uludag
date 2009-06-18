@@ -1,6 +1,15 @@
-#Yali {
+QWidget#Yali {
        background-image:url(':/gui/pics/backardus.png')
 }
+
+QScrollArea#scrollArea {
+       background-color: rgba(255, 255, 255, 0);
+}
+
+QWidget#scrollAreaWidgetContents {
+       background-color: rgba(255, 255, 255, 0);
+}
+
 /*
 QStackedWidget#mainStack {
      border-style: outset;
