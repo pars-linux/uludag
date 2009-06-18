@@ -58,8 +58,8 @@ class StateManager(QObject):
         return list(self.cached_packages)
 
     def onlyGuiInState(self):
-        config = config.Config(KConfig("package-managerrc"))
-        return config.getBoolValue(config.general, "ShowOnlyGuiApp")
+        cfg = config.Config(KConfig("package-managerrc"))
+        return cfg.getBoolValue(config.general, "ShowOnlyGuiApp")
 
     def getActionCurrent(self, action):
         return {"System.Manager.installPackage":i18n("Installing Package(s)"),
