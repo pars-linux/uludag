@@ -15,30 +15,49 @@
 \begin{enumerate}
   \item Push create profile button
     \begin{enumerate}
-     \subsection*{For wireless connections}
-     \item Try to scan for a wireless network
-      
-	Observe that it can find wireless networks.
-     \item Try to add this wireless network password and enable hide password.
-        
-	Observe the situation.
      \subsection*{For ethernet or wireless connections}
 	
-      \item Try to create a new profile without adding a new name.
+      \item Try to create a new profile.
 	\begin{enumerate}
 	  \item  Without adding a new name
 
 		Observe that it gives a warning about the profile name and prevents to create the new profile.
-	  \item Add a new name and use DHCP and  and try to add this profile
+	  \item Add a new name and try to create this profile.
+
 		Observe that it can be added without any problem.
 	\end{enumerate}
       
-     \end{enumerate}
-     \item Tests on profile list screen
+     \subsection*{For wireless connections}
+     \item Try to scan for a wireless network
+      
+	Observe that it can find wireless networks.
+     \item Disable hide password.
+        
+	Observe the situation.
+      \item Try to add this wireless network password and 
+	
+      Observe the situation.
      
-      !!!Apply each of the below cases randomly and observe the output of the below command.
+     \end{enumerate}
+     \item Configuring Profiles (Push the profile configuration button on the right part of each profile.)
+    
+      \begin{enumerate}
+      \item Observe your ethernet or wireless device is in the list of Device dropbox.
 
-		Execute this command:
+	  You can execute this commmand in order to observe this devices:
+	  \begin{verbatim}
+	  network devices
+	  \end{verbatim}
+	  Compare the output of the command with the devices in the combobox.
+
+	  \item Try to change the profile name
+	    \begin{verbatim}
+	     network connections
+	    \end{verbatim}
+	    And observe that its name was changed.
+
+	\newpage    
+    !!!Apply each of the below cases randomly and observe the output of the below command after applying each case.
 		\begin{verbatim}
 		 ping 4.2.2.1
 		\end{verbatim}
@@ -49,32 +68,8 @@
 	64 bytes from 4.2.2.1: icmp_seq=2 ttl=244 time=83.9 ms
       	\end{verbatim}
 
-      \begin{enumerate}
-      \item Observe your ethernet or wireless device is in the Device dropbox.
-
-	  You can execute this commmand in order to observe this devices:
-	  \begin{verbatim}
-	  network devices
-	  \end{verbatim}
-	  Compare the output of the command with the devices in the combobox.
-
-      \item Try to remove a profile.
-      
-	    Execute this command:
-	    \begin{verbatim}
-	     network connections
-	    \end{verbatim}
-	    And observe that it was removed from the output of this command.
-
-      \item Try to change the configurations of a profile.
-	  \begin{enumerate}
-	  \item Try to change the profile name
-	    \begin{verbatim}
-	     network connections
-	    \end{verbatim}
-	    And observe that its name was changed.
-
 	  \item Network settings
+
 	    Execute this command for listing IP address and network mask:
 		  \begin{verbatim}
 		    ifconfig
@@ -88,8 +83,7 @@
 	    	   \begin{verbatim}
 		     route -n 
 		  \end{verbatim}
-	     The Gateway is choosed for the Genmask which is equal to 0.0.0.0
-	
+	   Interested Gateway is for the Genmask which is equal to 0.0.0.0
 
 	      \begin{enumerate} 
 	      \item Use DHCP
@@ -120,13 +114,22 @@
 	  
 		 \item Use Custom
 
-		  Give a cutom nameserver and observe it from:
+		  Give a custom nameserver and observe it from:
 		   \begin{verbatim}
 		     cat /etc/resolv.conf
 		  \end{verbatim}
 	     \end{itemize}
-      
-	  \end{enumerate}	
+   
+	  
+	
       \end{enumerate}
+      \item Try to remove a profile. ((Push the remove button on the right part of each profile.) )
+      
+	    Execute this command:
+	    \begin{verbatim}
+	     network connections
+	    \end{verbatim}
+	    And observe that it was removed from the output of this command.
+
 \end{enumerate}
 \end{document}
