@@ -1,0 +1,92 @@
+\documentclass[a4paper,10pt]{article}
+%opening
+\title{X Test Cases}
+\author{Semen Cirit}
+
+\begin{document}
+
+\maketitle
+
+ Note:	
+  	For all X errors you can look the below file
+	/var/log/Xorg.0.log  
+\begin{enumerate}
+  \item Testing direct rendering
+    \begin{enumerate}
+    \item  Push $Ctrl+Alt+F1$
+    
+	    Observe that X doesn't crash.
+    \item  Then execute this command:
+	  \begin{verbatim}
+	  xinit -- :2
+	  \end{verbatim}
+	  Observe a Grey desktop, and X for the mouse cursor and a term window.
+    \item Get back with pushing $Ctrl+Alt+F7$
+    
+	  Observe that X doesn't crash.
+    \item Type commands "glxgears" and then "gleaxgears -fullscrean".
+
+	  Observe that they run without any problem.
+    \end{enumerate}
+
+  \item DPI testing
+    
+        Run open office writer and open a A4 paper with 100\% zoom. Take also a real A4 papper.
+
+        Observe that the width and the height of the real A4 are same with the open office writer's.
+  \item Resolution testing
+     \begin{enumerate}
+      \item Open system settings $\rightarrow$ Display
+
+	Observe that the default resolution of the computer is selected for the current resolution.
+      \item You can observe it from also, typing command "xrandr". 
+	  
+	  The example output of the command is like:
+	  
+	  1440x900  50.0*+
+	  
+	  This information means:
+	  \begin{table}[h]
+	  \centering
+	  \begin{tabular}{|c|c|c|}
+		  \hline
+		  $1440x900$ & $\rightarrow$ & resolution \\
+		  50.0       & $\rightarrow$ & refresh rate \\
+		  $*$        & $\rightarrow$ & selected resolution is current resolution \\
+		  $+$        & $\rightarrow$ & selected resolution is default resolution \\
+		  \hline
+	  \end{tabular} 
+	  \label{tab:tbl}
+	  \end{table}
+    \end{enumerate}
+ \item  Run a media player and open in full screen mode.
+
+      Observe that X doesn't crash.
+ \item Open desktop effects from system settings $\rightarrow$ desktop
+ 
+      Observe that X doesn't crash
+  \item 2D testing 
+      
+      Run a window, (for example dolphin, firefox) then swing it to right and left rapidly.
+        Observe that it can swing without any problem.
+
+ \item 3D testing
+    Running google earth
+     \begin{enumerate}
+      \item Download the bin file from http://earth.google.com/
+      \item Open the directory which the bin file downloaded.
+	\begin{verbatim}
+	cd <bin_file_directory>
+	\end{verbatim}
+      \item Make it executable
+	\begin{verbatim}
+	chmod 755 GoogleEarthLinux.bin
+	\end{verbatim}
+      \item Install it 
+	\begin{verbatim}
+	./GoogleEarthLinux.bin
+	\end{verbatim}
+      \item Run it and observe that the application apparition is problem-free.
+    \end{enumerate}
+\end{enumerate}
+\end{document}
