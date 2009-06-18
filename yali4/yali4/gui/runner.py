@@ -91,6 +91,7 @@ class Runner:
         ctx.debugger.log("System language is '%s'" % ctx.consts.lang)
         ctx.debugger.log("Install type is %d" % ctx.yali.install_type)
         ctx.debugger.log("Kernel Command Line : %s" % file("/proc/cmdline","r").read())
+
         # VBox utils
         ctx.debugger.log("Starting VirtualBox tools..")
         yali4.sysutils.run("VBoxClient --autoresize")

@@ -19,6 +19,9 @@
      + Improve Exception dialog
      + Fix low resolution screen problems
      + Improve new theme widget states
+     + Dont install not needed Language Packages support
+
+     - Show a proper (Human Readable) dialog when Fs Check failed
 
  %30 / Network Install #2095
          > Needs a network settings screen
