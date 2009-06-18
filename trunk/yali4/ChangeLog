@@ -1,3 +1,13 @@
+2009-06-18 Gökmen GÖKSEL <gokmen@pardus.org.tr>
+         * Add option for install all Language packages
+         * bindYali script fixed
+         * Bug fixed at http://bugs.pardus.org.tr/8936
+         * Show correct name of failed package
+         * Stop slideshow while waiting for an answer from user
+         * Use dict in language package list instead of list
+         * Just ignore free spaces less then minimum partition size
+         * Ignore scannedBefore check for ScrPartitionAuto, scan always when it shown
+
 2009-06-15 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * New release 2.1.9
 
