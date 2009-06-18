@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-11 12:29+0300\n"
+"POT-Creation-Date: 2009-06-18 15:18+0300\n"
 "PO-Revision-Date: 2009-06-15 18:34-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -25,7 +25,7 @@ msgid "Selected package(s) for install:"
 msgstr "Paquetes seleccionados a instalar:"
 
 # favor revisar, creo que breve es mejor, hay que ver las pantallas..
-#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:88
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:97
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
@@ -39,53 +39,57 @@ msgstr "Tamaño Total:"
 msgid "<b>2.2 MB</b>"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:56 .tmp/statemanager.py:63
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:56 .tmp/statemanager.py:72
 msgid "Install Package(s)"
 msgstr "Instalar Paquete(s)"
 
-#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "configuring"
 msgstr "configurando"
 
-#: .tmp/progressdialog.py:37 .tmp/commontext.py:15
+#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "extracting"
 msgstr "extrayendo"
 
-#: .tmp/progressdialog.py:41
+#: .tmp/progressdialog.py:45
 msgid "Downloading package list of %1"
 msgstr "Descargando lista de paquetes de %1"
 
-#: .tmp/progressdialog.py:43
+#: .tmp/progressdialog.py:47
 msgid "%1 %2"
 msgstr "%1 %2"
 
 # could You put a comment with an example string, maybe in foreign language it sounds better when inverting some positions ?
-#: .tmp/progressdialog.py:48
+#: .tmp/progressdialog.py:52
 msgid "%1 / %2 package %3"
 msgstr "%1 / %2 paquete %3"
 
-#: .tmp/progressdialog.py:54
+#: .tmp/progressdialog.py:58
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr ""
 
-#: .tmp/progressdialog.py:66 .tmp/ui_progressdialog.py:153
+#: .tmp/progressdialog.py:70 .tmp/ui_progressdialog.py:153
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Preparando PiSi...</h3>"
 
-#: .tmp/progressdialog.py:69 .tmp/ui_progressdialog.py:155
+#: .tmp/progressdialog.py:73 .tmp/ui_progressdialog.py:155
 msgid "--  / --"
 msgstr ""
 
-#: .tmp/progressdialog.py:70 .tmp/ui_progressdialog.py:156
+#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:156
 msgid "--:--:--"
+msgstr ""
+
+#: .tmp/progressdialog.py:77
+msgid "<b>Cancelling operation...</b>"
 msgstr ""
 
 #: .tmp/ui_appitem.py:52
 msgid "Application"
 msgstr "Aplicación"
 
-#: .tmp/ui_appitem.py:53
 # what is this please ?? Some sort of Web-spider / Web-crawler ?? (httrack ?)
+#: .tmp/ui_appitem.py:53
 msgid "Web Tarayıcı"
 msgstr ""
 
@@ -93,19 +97,19 @@ msgstr ""
 msgid "Firefox"
 msgstr ""
 
-#: .tmp/settingsdialog.py:116
+#: .tmp/settingsdialog.py:117
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Se eliminarán todos los paquetes almacenados del cache. Está seguro ?"
 
-#: .tmp/settingsdialog.py:117
+#: .tmp/settingsdialog.py:118
 msgid "Warning"
 msgstr "Alerta"
 
-#: .tmp/settingsdialog.py:118
+#: .tmp/settingsdialog.py:119
 msgid "Delete"
 msgstr "Eliminar"
 
-#: .tmp/settingsdialog.py:172
+#: .tmp/settingsdialog.py:173
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
@@ -113,7 +117,7 @@ msgstr ""
 "<qt>Dirección del repositorio debe tener una terminación xml o xml.bz2."
 "<p>Por favor intente de nuevo.</qt>"
 
-#: .tmp/settingsdialog.py:172
+#: .tmp/settingsdialog.py:173
 msgid "Pisi Error"
 msgstr "Error Pisi"
 
@@ -289,8 +293,8 @@ msgstr "&Cancelar"
 msgid "Form"
 msgstr ""
 
-#: .tmp/ui_mainwidget.py:55
 # i translated as "Write here to search", i think this is the idea
+#: .tmp/ui_mainwidget.py:55
 msgid "Click to search"
 msgstr "Escriba aquí para buscar"
 
@@ -315,74 +319,75 @@ msgstr ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Seleccionar todos los paquetes de éste grupo</p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Seleccionar todos los "
+"paquetes de éste grupo</p></body></html>"
 
-#: .tmp/statemanager.py:56
+#: .tmp/statemanager.py:65
 msgid "Installing Package(s)"
 msgstr "Instalando Paquete(s)"
 
-#: .tmp/statemanager.py:57
+#: .tmp/statemanager.py:66
 msgid "Removing Package(s)"
 msgstr "Removiendo Paquete(s)"
 
-#: .tmp/statemanager.py:58
+#: .tmp/statemanager.py:67
 msgid "Upgrading Package(s)"
 msgstr "Actualizando Paquetes(s)"
 
-#: .tmp/statemanager.py:59
+#: .tmp/statemanager.py:68
 msgid "Applying Repository Changes"
 msgstr "Aplicando Cambios de Repositorios"
 
-#: .tmp/statemanager.py:60
+#: .tmp/statemanager.py:69
 msgid "Updating Repository(s)"
 msgstr "Actualizando Repositorio(s)"
 
-#: .tmp/statemanager.py:64
+#: .tmp/statemanager.py:73
 msgid "Remove Package(s)"
 msgstr "Remover Paquete(s)"
 
-#: .tmp/statemanager.py:65
+#: .tmp/statemanager.py:74
 msgid "Upgrade Package(s)"
 msgstr "Actualizar Paquetes(s)"
 
-#: .tmp/statemanager.py:68
+#: .tmp/statemanager.py:77
 msgid "installed"
 msgstr "instalado"
 
 # favor revisar, quizá debe ser plural ??
-#: .tmp/statemanager.py:69
+#: .tmp/statemanager.py:78
 msgid "removed"
 msgstr "removido"
 
-#: .tmp/statemanager.py:70
+#: .tmp/statemanager.py:79
 msgid "upgraded"
 msgstr "actualizado"
 
-#: .tmp/statemanager.py:78
+#: .tmp/statemanager.py:87
 msgid "%1 new package(s) have been installed succesfully."
 msgstr "%1 paquetes instalados con éxito."
 
-#: .tmp/statemanager.py:79
+#: .tmp/statemanager.py:88
 msgid "%1 package(s) have been removed succesfully."
 msgstr "%1 paquetes removidos con éxito."
 
-#: .tmp/statemanager.py:80
+#: .tmp/statemanager.py:89
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 paquetes actualizados con éxito."
 
-#: .tmp/statemanager.py:83
+#: .tmp/statemanager.py:92
 msgid "You have selected the following package(s) to install:"
 msgstr "Paquetes seleccionados para instalar:"
 
-#: .tmp/statemanager.py:84
+#: .tmp/statemanager.py:93
 msgid "You have selected the following package(s) to removal:"
 msgstr "Paquetes seleccionados para remover:"
 
-#: .tmp/statemanager.py:85
+#: .tmp/statemanager.py:94
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Paquetes seleccionados para actualizar:"
 
-#: .tmp/statemanager.py:89
+#: .tmp/statemanager.py:98
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
@@ -390,53 +395,61 @@ msgstr ""
 "Dependencias reversas de los paquetes seleccionados, que también se "
 "removerán:"
 
-#: .tmp/statemanager.py:90
+#: .tmp/statemanager.py:99
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr "Dependencias de los paquetes seleccionados, que se actualizarán también:"
+msgstr ""
+"Dependencias de los paquetes seleccionados, que se actualizarán también:"
 
-#: .tmp/statemanager.py:116 .tmp/mainwindow.py:36 .tmp/mainwindow.py:41
+#: .tmp/statemanager.py:125 .tmp/mainwindow.py:40 .tmp/mainwindow.py:45
 msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
-#: .tmp/statemanager.py:118
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Actualmente <b>%1</b> paquetes seleccionados, con un tamaño total de <b>%2</b>"
+#: .tmp/statemanager.py:127
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Actualmente <b>%1</b> paquetes seleccionados, con un tamaño total de <b>%2</"
+"b>"
 
-#: .tmp/statemanager.py:121
 # favor revisar si necesario colocar "total" de nuevo ?? porque esto aquí es adicional ..
 # please check if necessary use "total" again ?? because THIS is additional..
+#: .tmp/statemanager.py:130
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
+msgstr ""
+"y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
 
-#: .tmp/statemanager.py:123
+#: .tmp/statemanager.py:132
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
+msgstr ""
+"y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
 
-#: .tmp/statemanager.py:124
+#: .tmp/statemanager.py:133
 msgid "in your basket."
 msgstr "En su carrito."
 
-#: .tmp/statemanager.py:143
+#: .tmp/statemanager.py:152
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr "Algunos paquetes seleccionados [%1] están creando conflictos. No se puede tener instalado estos paquetes juntos."
+msgstr ""
+"Algunos paquetes seleccionados [%1] están creando conflictos. No se puede "
+"tener instalado estos paquetes juntos."
 
-#: .tmp/statemanager.py:144 .tmp/statemanager.py:152
+#: .tmp/statemanager.py:153 .tmp/statemanager.py:161
 msgid "Conflict Error"
 msgstr "Error de Conflicto"
 
-#: .tmp/statemanager.py:148
+#: .tmp/statemanager.py:157
 msgid "The following packages conflicts:\n"
 msgstr "Los siguientes paquetes crean conflictos:\n"
 
-#: .tmp/statemanager.py:150
+#: .tmp/statemanager.py:159
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 crea conflicto con: [%2]\n"
 
-#: .tmp/statemanager.py:151
+#: .tmp/statemanager.py:160
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -456,7 +469,7 @@ msgstr ""
 msgid "Maintainer"
 msgstr "Mantenedor"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:105
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:113
 msgid "downloading"
 msgstr "descargando"
 
@@ -476,28 +489,30 @@ msgstr "Resumen de la operación"
 msgid "12 new packages are installed  succesfully."
 msgstr "Se instalaron 12 paquetes con éxito."
 
-#: .tmp/ui_summarydialog.py:55
 # favor revisar - application menu, mejor traduccion ?
+#: .tmp/ui_summarydialog.py:55
 msgid ""
 "You can start the new installed application by double-clicking on the list "
 "below or later from the applications menu."
-msgstr "Puede ejecutar los programas recientemente instalados con un doble-clic en la lista abajo, o desde el menú del sistema."
+msgstr ""
+"Puede ejecutar los programas recientemente instalados con un doble-clic en "
+"la lista abajo, o desde el menú del sistema."
 
 #: .tmp/ui_summarydialog.py:56
 msgid "&Ok"
 msgstr "&Ok"
 
-#: .tmp/mainwidget.py:165
+#: .tmp/mainwidget.py:168
 msgid "Select all packages in this group"
 msgstr "Seleccionar todos los paquetes de éste grupo"
 
-#: .tmp/mainwidget.py:171
 # favor revisar, creo que se trata de invertir las marcas de esta lista..
+#: .tmp/mainwidget.py:174
 msgid "Reverse package selections"
 msgstr "Invertir seleción de paquetes"
 
-#: .tmp/ui_progressdialog.py:152
 # translated as "progress information", i see this string is the title of the progress info window..
+#: .tmp/ui_progressdialog.py:152
 msgid "Operation"
 msgstr "Información del Progreso"
 
@@ -531,17 +546,17 @@ msgstr ""
 msgid "Alt+C"
 msgstr ""
 
-#: .tmp/mainwindow.py:57
 # favor revisar, paquetes o programas
 # maybe here we shoud speak about programs or applications ? the fact that it is a "package" is a tecnical detail.. well there are also those "auxiliar" libraries..
+#: .tmp/mainwindow.py:61
 msgid "Show Installable Packages"
 msgstr "Mostrar Paquetes a agregar"
 
-#: .tmp/mainwindow.py:64
+#: .tmp/mainwindow.py:68
 msgid "Show Installed Packages"
 msgstr "Mostrar Paquetes instalados"
 
-#: .tmp/mainwindow.py:70
+#: .tmp/mainwindow.py:74
 msgid "Show Upgradable Packages"
 msgstr "Mostrar Paquetes a actualizar"
 
@@ -560,4 +575,3 @@ msgstr ""
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
-
