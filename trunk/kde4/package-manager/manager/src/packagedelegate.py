@@ -140,3 +140,7 @@ class PackageDelegate(QtGui.QItemDelegate):
 
     def setAnimatable(self, animatable):
         self.animatable = animatable
+
+    def reset(self):
+        self.rowAnimator.reset()
+

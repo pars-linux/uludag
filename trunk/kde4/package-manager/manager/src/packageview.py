@@ -56,3 +56,6 @@ class PackageView(QtGui.QTreeView):
         self.model().sourceModel().selectPackages(packages)
         self.reset()
         restoreCursor()
+
+    def resetMoreInfoRow(self):
+        self.itemDelegate().reset()
