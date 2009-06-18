@@ -14,10 +14,11 @@
 from PyQt4.QtCore import QObject, SIGNAL
 from PyQt4.QtGui import QMessageBox
 
-from PyKDE4.kdecore import i18n
+from PyKDE4.kdecore import i18n, KConfig
 from PyKDE4.kdeui import KIcon
 
 from pmlogging import logger
+import config
 import backend
 
 class StateManager(QObject):
@@ -29,6 +30,7 @@ class StateManager(QObject):
         self.state = self.INSTALL
         self.iface = backend.pm.Iface()
         self.cached_packages = None
+        self.config = config.Config(KConfig("package-managerrc"))
 
     def setState(self, state):
         self.state = state
@@ -50,7 +52,14 @@ class StateManager(QObject):
                 self.cached_packages = self.iface.getUpdates()
             else:
                 self.cached_packages = self.iface.getPackageList()
-        return self.cached_packages
+
+            if self.onlyGuiInState():
+                self.cached_packages = set(self.cached_packages).intersection(self.iface.getIsaPackages("app:gui"))
+
+        return list(self.cached_packages)
+
+    def onlyGuiInState(self):
+        return self.config.getBoolValue(config.general, "ShowOnlyGuiApp")
 
     def getActionCurrent(self, action):
         return {"System.Manager.installPackage":i18n("Installing Package(s)"),
