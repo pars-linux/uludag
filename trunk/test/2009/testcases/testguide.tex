@@ -7,7 +7,7 @@
 
 
 %opening
-\title{Testing Guide for Pardus Alfa and Beta 2009}
+\title{Testing Guide for Pardus Alfa and Beta Versions}
 \author{Semen Cirit}
 
 \begin{document}
@@ -18,10 +18,13 @@ Attention!
 
     During the test you may change, remove, or create new disk partitions of your computer. 
     Before starting the tests you may want to back up your archives.
+    
+    
+    If you have one more than test machine you have to send the test results for each machine.
 
-    After the test finished you have to send the results to us. If you have one more than test machine you have to send the test results for each machine.
+    For each failed test result, you should report a bug to pardus bugzilla.
 
-    For each test result, you should write Failed or Checked to the end of the relavent case phrase.
+    Note: For each bug report please use the bug report template which is exist in \emph{efficient-bug-report.pdf} with related detailed descriptions and attachments. 
 
 \begin{enumerate}
 \item Preparation
@@ -35,6 +38,17 @@ Attention!
   \end{enumerate}
   \item Tests
     
-    Please apply the following tests cases in the next pages.
+    Please apply the following tests cases in this order:
+    \begin{itemize}
+    \item YALI
+    \item Kaptan
+    \item Package Manager
+    \item History Manager
+    \item Boot Manager
+    \item Disk Manager
+    \item User manager
+    \item Service Manager
+    \item Firewall Manager
+    \end{itemize}
  \end{enumerate}
 \end{document}
