@@ -43,7 +43,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.statusBar().setSizeGripEnabled(True)
         self.wheelMovie = QtGui.QMovie(self)
         self.statusLabel.setText(i18n("Currently your basket is empty."))
-        self.wheelMovie.setFileName(":/data/wheel.gif")
+        self.wheelMovie.setFileName(":/data/wheel.mng")
         self.connect(self.centralWidget(), SIGNAL("selectionStatusChanged(QString)"), self.updateStatusBar)
         self.connect(self.centralWidget(), SIGNAL("updatingStatus()"), self.statusWaiting)
 
