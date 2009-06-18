@@ -54,7 +54,7 @@
   * Python ile çekirdek geçiş ve depo betiklerinin yazılması (/15)
   * update-fstab ve yalı'nın noatime/relatime, ext4, vs konusunda güncellenmesi, eksiklerinin giderilmesi (-)
   * kbluetooth'un bluetooth cihazı varsa otomatik başlaması (-)
-  * 2008->2009 geçişi esnasında crda için gerekli timezone dosyasının oluşturulması (-)
+  * 2008->2009 geçişi esnasında crda için gerekli timezone dosyasının oluşturulması (+)
 
 * GNOME güncellemeleri (Ozan Çağlayan)
   * glib2 2.20 geçişi (+)
