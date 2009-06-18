@@ -67,9 +67,6 @@ Here you can see your install options and look at them again before installation
         except:
             pass
 
-        # FIXME Later
-        self.ui.installAllLangPacks.hide()
-
     def slotReboot(self):
         reply = QuestionDialog(_("Reboot"),
                                _('''<b><p>This action will reboot your system !</p></b>'''))

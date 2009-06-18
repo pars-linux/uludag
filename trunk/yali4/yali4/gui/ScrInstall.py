@@ -243,8 +243,14 @@ class PkgInstaller(QThread):
         else:
             yali4.pisiiface.add_cd_repo()
 
+        order = yali4.pisiiface.get_all_with_paths()
+        if not ctx.installData.installAllLangPacks:
+            order = list(set(order) - set(yali4.pisiiface.get_not_needed_langs()))
+            ctx.debugger.log("Not needed lang packages will not be installing...")
+            ctx.debugger.log(yali4.pisiiface.get_not_needed_langs())
+
         # show progress
-        total = yali4.pisiiface.get_available_len()
+        total = len(order)
         ctx.debugger.log("Creating PisiEvent..")
         qevent = PisiEvent(QEvent.User, EventSetProgress)
         ctx.debugger.log("Setting data on just created PisiEvent (EventSetProgress)..")
@@ -253,7 +259,6 @@ class PkgInstaller(QThread):
         objectSender(qevent)
         ctx.debugger.log("Found %d packages in repo.." % total)
         try:
-            order = yali4.pisiiface.get_all_with_paths()
             while True:
                 try:
                     yali4.pisiiface.install(order)
