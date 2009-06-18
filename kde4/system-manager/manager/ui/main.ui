@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>484</height>
+    <width>609</width>
+    <height>442</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,6 +23,19 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QGridLayout" name="gridLayout_5">
+      <item row="0" column="0">
+       <spacer name="verticalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
       <item row="1" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout">
         <property name="spacing">
@@ -60,8 +73,8 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>10</width>
-            <height>5</height>
+            <width>7</width>
+            <height>13</height>
            </size>
           </property>
          </spacer>
@@ -91,28 +104,6 @@
            <widget class="QComboBox" name="comboLanguage"/>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_3">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Locale:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QComboBox" name="comboLocale"/>
-          </item>
-          <item row="2" column="0">
            <widget class="QLabel" name="label_2">
             <property name="minimumSize">
              <size>
@@ -131,7 +122,7 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
+          <item row="1" column="1">
            <widget class="QComboBox" name="comboKeyboard"/>
           </item>
          </layout>
@@ -426,19 +417,6 @@
          <size>
           <width>53</width>
           <height>39</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="0">
-       <spacer name="verticalSpacer_5">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
          </size>
         </property>
        </spacer>

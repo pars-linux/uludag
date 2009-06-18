@@ -83,24 +83,6 @@ class Interface:
         """
         self.link.System.Settings[self.package].setKeymap(keymap)
 
-    def listLocales(self, language=""):
-        """
-            Returns list of locales."
-        """
-        return self.link.System.Settings[self.package].listLocales(language)
-
-    def getLocale(self):
-        """
-            Returns selected locale.
-        """
-        return self.link.System.Settings[self.package].getLocale()
-
-    def setLocale(self, locale):
-        """
-            Sets locale.
-        """
-        self.link.System.Settings[self.package].setLocale(locale)
-
     def getHeadStart(self):
         """
             Returns first service to be started.

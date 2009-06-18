@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 16:46+0300\n"
+"POT-Creation-Date: 2009-06-18 20:38+0300\n"
 "PO-Revision-Date: 2009-06-16 14:35+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
@@ -15,35 +15,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_main.py:173
+#: .tmp/ui_main.py:162
 msgid "Language:"
 msgstr "Dil:"
 
-#: .tmp/ui_main.py:174
-msgid "Locale:"
-msgstr "Yerel:"
-
-#: .tmp/ui_main.py:175
+#: .tmp/ui_main.py:163
 msgid "Keyboard Layout:"
 msgstr "Kavye Düzeni:"
 
-#: .tmp/ui_main.py:176
+#: .tmp/ui_main.py:164
 msgid "Time Zone:"
 msgstr "Zaman Dilimi"
 
-#: .tmp/ui_main.py:177
+#: .tmp/ui_main.py:165
 msgid "Hardware clock is set to UTC."
 msgstr "Donanım saati UTC'ye ayarlı."
 
-#: .tmp/ui_main.py:178
+#: .tmp/ui_main.py:166
 msgid "Normalize systematic drift of the hardware clock."
 msgstr "Donanım saatinin ritmik kaymasını düzelt."
 
-#: .tmp/ui_main.py:179
+#: .tmp/ui_main.py:167
 msgid "First Service to Start:"
 msgstr "İlk Başlatılacak Servis:"
 
-#: .tmp/ui_main.py:180
+#: .tmp/ui_main.py:168
 msgid "Number of Consoles:"
 msgstr "Konsol Sayısı:"
 
@@ -67,7 +63,7 @@ msgstr "Bahadır Kandemir"
 msgid "Current Maintainer"
 msgstr "Şu anki geliştirici"
 
-#: .tmp/systemmanager/main.py:62
+#: .tmp/systemmanager/main.py:68
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
@@ -75,6 +71,6 @@ msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
 "Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
 
-#: .tmp/systemmanager/main.py:86
+#: .tmp/systemmanager/main.py:89
 msgid "None"
 msgstr "Hiçbiri"
