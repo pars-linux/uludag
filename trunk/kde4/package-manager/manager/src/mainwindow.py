@@ -31,6 +31,10 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
         self.initializeStatusBar()
+        self.connectMainSignals()
+
+    def connectMainSignals(self):
+        self.connect(self.settingsDialog, SIGNAL("settingsChanged()"), self.centralWidget().initialize)
 
     def initializeStatusBar(self):
         self.statusLabel = QtGui.QLabel(i18n("Currently your basket is empty."), self.statusBar())
