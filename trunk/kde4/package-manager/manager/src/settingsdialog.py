@@ -68,6 +68,7 @@ class GeneralSettings(SettingsTab):
         self.settings.bandwidthSpin.setValue(bandwidth_limit)
 
     def connectSignals(self):
+        self.connect(self.settings.onlyGuiApp, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.intervalCheck, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.useBandwidthLimit, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.intervalSpin, SIGNAL("valueChanged(int)"), self.markChanged)
