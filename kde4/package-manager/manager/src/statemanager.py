@@ -52,8 +52,8 @@ class StateManager(QObject):
             else:
                 self.cached_packages = self.iface.getPackageList()
 
-            if self.onlyGuiInState():
-                self.cached_packages = set(self.cached_packages).intersection(self.iface.getIsaPackages("app:gui"))
+                if self.onlyGuiInState():
+                    self.cached_packages = set(self.cached_packages).intersection(self.iface.getIsaPackages("app:gui"))
 
         return list(self.cached_packages)
 
