@@ -118,6 +118,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def groupFilter(self):
         self.setSelectAll()
+        self.packageList.resetMoreInfoRow()
         packages = self.state.groupPackages(self.groupList.currentGroup())
         self.packageList.model().setFilterRole(GroupRole)
         waitCursor()
