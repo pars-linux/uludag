@@ -133,6 +133,12 @@ class Iface(Singleton):
     def getGroupComponents(self, name):
         return groups.getGroupComponents(name)
 
+    def getIsaPackages(self, isa):
+        if self.source == self.REPO:
+            return self.pdb.get_isa_packages(isa)
+        else:
+            return self.idb.get_isa_packages(isa)
+
     def getPackage(self, name):
         if self.source == self.REPO:
             try:
