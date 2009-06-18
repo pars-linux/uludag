@@ -18,32 +18,29 @@ import math
 import os
 import yali4.lvmutils as lvm
 from yali4.partition import LVMPartition
-from yali4.parteddata import physicalVolume, volumeGroup, logicalVolume 
+from yali4.parteddata import physicalVolumeType, volumeGroupType, logicalVolumeType 
 from yali4.exception import *
 
 
 class PhysicalVolume(object):
-    _type = physicalVolume
+    _type = physicalVolumeType
     
-    def __init__(self, device, size, existing=0):
+    def __init__(self, device, size=None, existing=0):
         """
             device   -- device node's basename
-            peSize -- Physical extents size (in MB) Must be power of 2!
-            existing -- indicates whether this is a existing device
-            
-        Existing PV
-            
-            size -- size of VG (in MB)
-            uuid -- Physical Volume UUID
-            peCount -- number of PE in this PV
-            peFree -- number of free PE in this PV
+            size -- size of PV (in MB)
+            existing -- whether exists or not
         """
         
         self._exists = existing
         self._device = device
+        self._size = size
     
     @property
     def type(self):
+        return self._type
+    
+    def getType(self):
         return self._type
     
     def setup(self):
@@ -65,6 +62,10 @@ class PhysicalVolume(object):
             self._exists = False
 
     @property
+    def size(self):
+        return self._size
+    
+    @property
     def path(self):
         return self._device
     
@@ -73,10 +74,10 @@ class PhysicalVolume(object):
         return self._exists
 
 class VolumeGroup(object):
-    _type = volumeGroup 
+    _type = volumeGroupType 
     _devBlockDir = "/dev" # FIXME:ReCheck VG path not to give acces_isSetups error
 
-    def __init__(self, name, pvs=None, peSize=None, existing=0):
+    def __init__(self, name, pvs=None, peSize=None, preexist_size=0, existing=0):
 
         """
             name -- device node's basename
@@ -87,6 +88,7 @@ class VolumeGroup(object):
         
         self._name = name
         self._pvs = pvs
+        self._size = preexist_size 
         self._exists = existing
 
         if self._peSize is None:
@@ -96,6 +98,9 @@ class VolumeGroup(object):
     def type(self):
         return self._type
     
+    def getType(self):
+        return self._type
+    
     def setup(self):
         if self.exists:
             raise VolumeGroupError("Device is already exist")
@@ -103,8 +108,10 @@ class VolumeGroup(object):
         for pv in self.pvs:
             if not pv.exists:
                 pv.setup()
+        
+        _pvs = [pv.path for pv in self.pvs ]
                 
-        lvm.vgcreate(self.name, pvs, self._peSize)
+        lvm.vgcreate(self.name, _pvs, self._peSize)
         self._exists =True
 
     def destroy(self):
@@ -122,7 +129,10 @@ class VolumeGroup(object):
     @property
     def name(self):
         return self._name
-
+    
+    def setName(self, name):
+        self._name = name
+    
     @property
     def path(self):
         return "%s/%s" % (self._devBlockDir, self.name)
@@ -145,6 +155,7 @@ class VolumeGroup(object):
 
 
 class LogicalVolume():
+    _type = logicalVolumeType
     _devBlockDir = "/dev/mapper"
 
     def __init__(self, name, vg, size=None, existing=0):
@@ -160,6 +171,9 @@ class LogicalVolume():
 
     @property
     def type(self):
+        return self._type
+    
+    def getType(self):
         return self._type
     
     def setup(self):
