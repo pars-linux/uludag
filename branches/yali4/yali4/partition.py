@@ -44,9 +44,11 @@ class Partition:
         return self._fs_ready
 
     def setFileSystemType(self, fs_type):
+        
         if isinstance(fs_type, yali4.filesystem.FileSystem):
+            self._fsname = fs_type._name
             fs_type = fs_type.getFSType()
-
+            
         self._partition.set_system(fs_type)
         self._is_file_system_changed = True
 
@@ -58,6 +60,11 @@ class Partition:
             if self._partition.is_flag_available(flag):
                 self._partition.set_flag(flag, 1)
 
+    def unsetPartedFlags(self, flags):
+        for flag in flags:
+            if self._partition.is_flag_available(flag):
+                self._partition.set_flag(flag, 0)
+                
     ##
     # check if partition is logical
     def isLogical(self):
@@ -74,10 +81,10 @@ class Partition:
         return self._partition.type == parted.PARTITION_EXTENDED
 
     def isRaid(self):
-        return self._partition.is_flag_available(parted.PARTITION_RAID) and self._partition.get_flag(parted.PARTITION_RAID)
+        return self._partition.is_active() and (self._partition.get_flag(parted.PARTITION_RAID) == 1)
     
     def isLvm(self):
-        return self._partition.is_flag_available(parted.PARTITION_LVM) and self._partition.get_flag(parted.PARTITION_LVM)
+        return self._partition.is_active() and (self._partition.get_flag(parted.PARTITION_LVM) == 1)
     
     ##
     # get freespace on extended partition
@@ -100,9 +107,13 @@ class Partition:
     def getFreeMB(self):
         return long(self.getFreeBytes() / parteddata.MEGABYTE)
 
+    
     def getType(self):
         return self._parted_type
 
+    def setType(self, _type):
+        self._parted_type = _type
+        
     ##
     # get parted partition
     def getPartition(self):
@@ -117,7 +128,10 @@ class Partition:
     # device path (eg. /dev/sda)
     def getDevicePath(self):
         return self._device.getPath()
-
+    
+    @property
+    def path(self):
+        return self.getPath()
     ##
     # partition path (eg. /dev/sda1)
     def getPath(self):
@@ -174,7 +188,7 @@ class Partition:
 
     def getStart(self):
         return self._start
-
+    
     def getEnd(self):
         return self._end
 
@@ -182,6 +196,10 @@ class Partition:
         return long(self.getPartition().geom.length *
                     self.getDevice()._sector_size)
 
+    @property
+    def size(self):
+        return self.getMB()
+    
     def getMB(self):
         return self._mb
 
@@ -216,31 +234,7 @@ class FreeSpace(Partition):
                            start,
                            end,
                            _("free space"))
-
+        
         self._parted_type = parteddata.freeSpaceType
 
 
-class LVMPartition(Partition):
-
-    def __init__(self, device, parted_part, minor, mb, start, end, fs_name, fs_ready):
-        Partition.__init__(self, device, 
-                           parted_part, 
-                           minor, 
-                           mb, 
-                           start, 
-                           end, _("lvm"), fs_ready)
-        
-        self._parted_type = parteddata.lvmPartitionType
-
-class RaidPartition(Partition):
-    def __init__(self, device, parted_part, minor, mb, start, end, fs_name, fs_ready):
-        Partition.__init__(self, device, 
-                           parted_part, 
-                           minor, 
-                           mb, 
-                           start, 
-                           end, 
-                           _("raid"), 
-                           fs_ready)
-        
-        self._parted_type = parteddata.raidPartitionType
