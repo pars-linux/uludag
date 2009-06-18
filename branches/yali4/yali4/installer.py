@@ -33,7 +33,7 @@ import yali4.gui.context as ctx
 import yali4.localeutils
 import yali4.sysutils
 import yali4.lvmutils
-import yali4.lvm
+import yali4.lvm as lvm
 import yali4.fstab
 
 # pisi base
@@ -256,6 +256,10 @@ class Yali:
         rootWidget.resizableDisks = []
         rootWidget.freeSpacePartitions = []
         rootWidget.freeSpaceDisks = []
+        rootWidget.lvmSpacePartitions = []
+        rootWidget.lvmSpaceDisks = []
+        rootWidget.raidSpacePartitions = []
+        rootWidget.raidSpaceDisks = []
 
         ctx.debugger.log("Disk analyze started.")
         ctx.debugger.log("%d disk found." % len(yali4.storage.devices))
@@ -275,12 +279,12 @@ class Yali:
                                rootWidget.freeSpaceDisks.append(dev)
                     elif part.isLvm():
                         ctx.debugger.log(" - This partiton is Lvm Physical Volume")
-                        rootWidget.lvmPartitions.append({"partition":part,"newSize":part.getMB()})
+                        rootWidget.lvmSpacePartitions.append({"partition":part,"newSize":part.getMB()})
                         if dev not in rootWidget.lvmSpaceDisks:
                                rootWidget.lvmSpaceDisks.append(dev)
                     elif part.isRaid():
                         ctx.debugger.log(" - This partiton is Raid Member")
-                        rootWidget.raidPartitions.append({"partition":part,"newSize":part.getMB()})
+                        rootWidget.raidSpacePartitions.append({"partition":part,"newSize":part.getMB()})
                         if dev not in rootWidget.raidSpaceDisks:
                                rootWidget.raidSpaceDisks.append(dev)
                 elif part.isResizable():
@@ -344,18 +348,20 @@ class Yali:
         ctx.mainScreen.processEvents()
         
         #Use LVM
-        physicalVolume = PhysicalVolume(partition)
-        physicalVolume.create()
-        volumeGroup = VolumeGroup(ctx.consts.vg_name, pvs=[physicalVolume])
-        volumeGroup.create()
-        logicalVolume = LogicalVolume(ctx.consts.lv_name, volumeGroup, volumeGroup.size)
-        logicalVolume.create()
+        physicalVolume = lvm.PhysicalVolume(partition.getPath, partition.getMB())
+        volumeGroup = lvm.VolumeGroup("volumegroup", pvs=[physicalVolume], preexist_size=physicalVolume.size)
+        logicalVolume = lvm.LogicalVolume("logicalVolume1", volumeGroup=volumeGroup)
+        
+        ctx.partrequests.append(request.PhysicalVolumeRequest(physicalVolume, parttype.physicalVolume))
+        ctx.partrequests.append(request.VolumeGroupRequest(volumeGroup, parttype.volumeGroup))
+        ctx.partrequests.append(request.LogicalVolumeRequest(logicalVolume, parttype.logicalVolume))
+        
         
         # make partition requests
-        ctx.partrequests.append(request.MountRequest(logicalVolume, parttype.root))
-        ctx.partrequests.append(request.FormatRequest(logicalVolume, parttype.root))
-        ctx.partrequests.append(request.LabelRequest(logicalVolume, parttype.root))
-        ctx.partrequests.append(request.SwapFileRequest(logicalVolume, parttype.root))
+        ctx.partrequests.append(request.MountRequest(logicalVolume.path, parttype.root))
+        ctx.partrequests.append(request.FormatRequest(logicalVolume.path, parttype.root))
+        ctx.partrequests.append(request.LabelRequest(logicalVolume.path, parttype.root))
+        ctx.partrequests.append(request.SwapFileRequest(logicalVolume.path, parttype.root))
 
         time.sleep(2)
 
@@ -363,14 +369,14 @@ class Yali:
         # check swap partition, if not present use swap file
         rt = request.mountRequestType
         pt = parttype.swap
-        swap_part_req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
+        swap_part_req = ctx.partrequests.searchPartTypeAndReqType(pt.filesystem, rt)
 
         if not swap_part_req:
             # No swap partition defined using swap as file in root
             # partition
             rt = request.mountRequestType
             pt = parttype.root
-            root_part_req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
+            root_part_req = ctx.partrequests.searchPartTypeAndReqType(pt.mountpoint, rt)
             ctx.partrequests.append(request.SwapFileRequest(root_part_req.partition(),
                                     root_part_req.partitionType()))
 
@@ -421,19 +427,20 @@ class Yali:
         dev.commit()
         ctx.mainScreen.processEvents()
         
-        #make part as lvm
-        physicalVolume = PhysicalVolume(newPart)
-        physicalVolume.create()
-        volumeGroup = VolumeGroup(ctx.consts.vg_name, pvs=[physicalVolume])
-        volumeGroup.create()
-        logicalVolume = LogicalVolume(ctx.consts.lv_name, volumeGroup, volumeGroup.size)
-        logicalVolume.create()
+        #Use LVM
+        physicalVolume = lvm.PhysicalVolume(partition.getPath, partition.getMB())
+        volumeGroup = lvm.VolumeGroup("volumegroup", pvs=[physicalVolume], preexist_size=physicalVolume.size)
+        logicalVolume = lvm.LogicalVolume("logicalVolume1", volumeGroup=volumeGroup)
+        
+        ctx.partrequests.append(request.PhysicalVolumeRequest(physicalVolume, parttype.physicalVolume))
+        ctx.partrequests.append(request.VolumeGroupRequest(volumeGroup, parttype.volumeGroup))
+        ctx.partrequests.append(request.LogicalVolumeRequest(logicalVolume, parttype.logicalVolume))
         
         # make partition requests
-        ctx.partrequests.append(request.MountRequest(logicalVolume, parttype.root))
-        ctx.partrequests.append(request.FormatRequest(logicalVolume, parttype.root))
-        ctx.partrequests.append(request.LabelRequest(logicalVolume, parttype.root))
-        ctx.partrequests.append(request.SwapFileRequest(logicalVolume, parttype.root))
+        ctx.partrequests.append(request.MountRequest(logicalVolume.path, parttype.root))
+        ctx.partrequests.append(request.FormatRequest(logicalVolume.path, parttype.root))
+        ctx.partrequests.append(request.LabelRequest(logicalVolume.path, parttype.root))
+        ctx.partrequests.append(request.SwapFileRequest(logicalVolume.path, parttype.root))
 
         time.sleep(2)
 
