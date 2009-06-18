@@ -30,7 +30,6 @@ class StateManager(QObject):
         self.state = self.INSTALL
         self.iface = backend.pm.Iface()
         self.cached_packages = None
-        self.config = config.Config(KConfig("package-managerrc"))
 
     def setState(self, state):
         self.state = state
@@ -59,7 +58,8 @@ class StateManager(QObject):
         return list(self.cached_packages)
 
     def onlyGuiInState(self):
-        return self.config.getBoolValue(config.general, "ShowOnlyGuiApp")
+        config = config.Config(KConfig("package-managerrc"))
+        return config.getBoolValue(config.general, "ShowOnlyGuiApp")
 
     def getActionCurrent(self, action):
         return {"System.Manager.installPackage":i18n("Installing Package(s)"),
