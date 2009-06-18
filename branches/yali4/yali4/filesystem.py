@@ -30,7 +30,7 @@ import math
 from yali4.exception import *
 import yali4.sysutils as sysutils
 import yali4.lvmutils as lvmutils
-import yali4.raidutils as raidutils
+#import yali4.raidutils as raidutils
 import yali4.parteddata as parteddata
 import yali4.storage
 
@@ -146,11 +146,10 @@ class FileSystem:
     def isReadyToUse(self):
         return self._is_ready_to_use
 
-    def setResizable(self, bool):
+    def setResizeable(self, bool):
         """ Set if filesystem is resizable """
         self._resizable = bool
-
-    def isResizable(self):
+    def isResizeable(self):
         """ Check if filesystem is resizable """
         return self._resizable
 
@@ -242,7 +241,7 @@ class Ext4FileSystem(FileSystem):
     def __init__(self):
         FileSystem.__init__(self)
         self.setImplemented(True)
-        self.setResizable(True)
+        self.setResizeable(True)
 
 class Ext3FileSystem(FileSystem):
     """ Implementation of ext3 file system """
@@ -253,7 +252,7 @@ class Ext3FileSystem(FileSystem):
     def __init__(self):
         FileSystem.__init__(self)
         self.setImplemented(True)
-        self.setResizable(True)
+        self.setResizeable(True)
 
 ##
 # reiserfs
@@ -326,7 +325,7 @@ class BtrfsFileSystem(FileSystem):
     def __init__(self):
         FileSystem.__init__(self)
         self.setImplemented(True)
-        self.setResizable(True)
+        self.setResizeable(True)
 
     def format(self, partition):
         self.preFormat(partition)
@@ -449,7 +448,7 @@ class NTFSFileSystem(FileSystem):
 
     def __init__(self):
         FileSystem.__init__(self)
-        self.setResizable(True)
+        self.setResizeable(True)
         self.setImplemented(True)
 
     def resizeSilent(self, size_mb, partition):
@@ -524,7 +523,7 @@ class FatFileSystem(FileSystem):
         self.setImplemented(True)
 
         # FIXME I will do it later
-        self.setResizable(False)
+        self.setResizeable(False)
 
     def format(self, partition):
         self.preFormat(partition)
@@ -554,8 +553,8 @@ class RaidFileSystem(FileSystem):
         FileSystem.__init__(self)
 
         self._name ="software-Raid"
-        if len(raidutils.raidlevels) != 0:
-            self.setImplemented(True)
+        #if len(raidutils.raidlevels) != 0:
+        self.setImplemented(True)
 
     def format(self, partition):
         # dont need this
