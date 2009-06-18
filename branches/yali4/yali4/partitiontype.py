@@ -32,7 +32,7 @@ class PartitionType:
     def setFileSystem(self, filesystem):
         self.filesystem = fs(filesystem)
 
-class LVMPartitionType(PartitionType):
+class PhysicalVolumePartitionType(PartitionType):
     name = _("Physical Volume")
     mountpoint = None
     filesystem = fs("lvm")
@@ -40,6 +40,25 @@ class LVMPartitionType(PartitionType):
     parted_type = parted.PARTITION_PRIMARY
     parted_flags = [ parted.PARTITION_LVM ]
     desc = _("as Lvm Physical Volume")
+
+class VolumeGroupType(PartitionType):
+    name = _("Volume Group")
+    mountpoint = None
+    filesystem = fs("lvm")
+    mountoptions = None
+    parted_type = None
+    parted_flags = None
+    desc = _("LVM Volume Group")
+
+class LogicalVolumePartitionType(PartitionType):
+    name = _("Volume Group")
+    mountpoint = None
+    filesystem = fs("ext4")
+    mountoptions = None
+    parted_type = None
+    parted_flags = None
+    desc = _("LVM Logical Volumes")
+
 
 class RAIDPartitionType(PartitionType):
     name = _("Raid Member")
@@ -102,6 +121,8 @@ class ArchivePartitionType(PartitionType):
 root = RootPartitionType()
 home = HomePartitionType()
 swap = SwapPartitionType()
-#lvm = LVMPartitionType()
+physicalVolume = PhysicalVolumePartitionType()
+volumeGroup = VolumeGroupType()
+logicalVolume = LogicalVolumePartitionType()
 #raid = RAIDPartitionType()
 archive = ArchivePartitionType()
