@@ -93,14 +93,14 @@ def take_back(operation):
 def getExtraLangs():
 
     def getPackages(piksemelObj, isa):
-        ret = []
+        ret = {}
         for package in piksemelObj.tags("Package"):
             tagData = package.getTagData("IsA")
             if tagData:
                 for node in package.tags("IsA"):
                     data = node.firstChild().data()
                     if data.startswith(isa):
-                        ret.append("%s,%s" % (package.getTagData("Name"), data))
+                        ret[package.getTagData("PackageURI")] = data
         return ret
 
     import piksemel

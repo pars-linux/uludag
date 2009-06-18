@@ -163,7 +163,7 @@ class FileSystem:
 
         if res == 2:
             raise FSCheckError, _("""FSCheck found some problems on partition %s and fixed them. \
-                                You should restart the machine before starting the installation process !""" % (partition.getPath()))
+                                     You should restart the machine before starting the installation process !""" % (partition.getPath()))
         elif res > 2:
             raise FSCheckError, _("FSCheck failed on %s" % (partition.getPath()))
 

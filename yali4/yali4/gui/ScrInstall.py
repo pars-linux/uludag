@@ -22,16 +22,19 @@ from PyQt4.QtCore import *
 
 import pisi.ui
 
-import yali4.pisiiface
 import yali4.fstab
-import yali4.postinstall
 import yali4.sysutils
+import yali4.pisiiface
+import yali4.postinstall
 import yali4.localeutils
-import yali4.partitionrequest as request
-from yali4.gui.ScreenWidget import ScreenWidget
-from yali4.gui.descSlide import slideDesc
-from yali4.gui.Ui.installwidget import Ui_InstallWidget
+
 import yali4.gui.context as ctx
+import yali4.partitionrequest as request
+
+from yali4.gui.descSlide import slideDesc
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.YaliDialog import QuestionDialog
+from yali4.gui.Ui.installwidget import Ui_InstallWidget
 
 EventPisi, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished, EventRetry = range(1001,1007)
 
@@ -155,7 +158,9 @@ Have fun!
         # EventRetry
         elif qevent.eventType() == EventRetry:
             package = qevent.data()
-            ctx.yali.retryAnswer = ctx.yali.askForRetry(_("Package install failed : <b>%s</b><br>Do you want to retry ?" % package))
+            self.timer.stop()
+            ctx.yali.retryAnswer = QuestionDialog(_("Warning"), _("Package install failed : <b>%s</b>" % package), _("Do you want to retry ?"))
+            self.timer.start(1000 * 30)
             ctx.yali.waitCondition.wakeAll()
 
         # EventAllFinished
@@ -253,21 +258,29 @@ class PkgInstaller(QThread):
                 try:
                     yali4.pisiiface.install(order)
                     break # while
-                except Exception, e:
+
+                except zipfile.BadZipfile, e:
                     # Lock the mutex
                     ctx.yali.mutex.lock()
 
                     # Send event for asking retry
                     qevent = PisiEvent(QEvent.User, EventRetry)
-                    qevent.setData(ui.lastPackage)
+
+                    # Send failed package name
+                    qevent.setData(os.path.basename(str(e)))
                     objectSender(qevent)
 
                     # wait for the result
                     ctx.yali.waitCondition.wait(ctx.yali.mutex)
                     ctx.yali.mutex.unlock()
 
-                    if ctx.yali.retryAnswer == False:
+                    if ctx.yali.retryAnswer == "no":
                         raise e
+
+                except Exception, e:
+                    # Lock the mutex
+                    ctx.yali.mutex.lock()
+                    raise e
 
         except Exception, e:
             # Lock the mutex

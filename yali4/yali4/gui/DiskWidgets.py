@@ -254,7 +254,7 @@ class DiskList(QtGui.QWidget):
         # add partitions on device
         for part in dev.getOrderedPartitionList():
             # we dont need to show fu..in extended partition
-            if part.isExtended() or part.getMB() < minimumSize:
+            if part.isExtended():
                 continue
             if part.getMinor() != -1:
                 name = _("Partition %d") % part.getMinor()
@@ -263,6 +263,8 @@ class DiskList(QtGui.QWidget):
                 except:
                     ctx.debugger.log("GFSL: Failed for %s, not important " % name)
             else:
+                if part.getMB() < minimumSize:
+                    continue
                 name = _("Free Space")
             if ctx.debugger:
                 ctx.debugger.log("Partition added with %s mb" % part.getMB())
