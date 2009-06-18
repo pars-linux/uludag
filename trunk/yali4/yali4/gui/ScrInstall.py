@@ -12,7 +12,7 @@
 
 import os
 import glob
-
+import zipfile
 import gettext
 __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
