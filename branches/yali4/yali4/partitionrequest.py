@@ -27,9 +27,8 @@ class RequestException(YaliException):
     pass
 
 # poor man's enum ;)
-formatRequestType, mountRequestType, \
-    swapFileRequestType, labelRequestType = range(4)
-
+formatRequestType, mountRequestType, swapFileRequestType, labelRequestType , physicalVolumeRequestType, volumeGroupRequestType, logicalVolumeRequestType = range(7)
+uniquePartType = [parttype.root, parttype.home, parttype.swap]
 ##
 # requests object holds the list of requests
 class RequestList(list):
@@ -38,6 +37,20 @@ class RequestList(list):
     # apply all requests
     def applyAll(self):
 
+
+        for req in self.searchRequestTypeIterate(physicalVolumeRequestType):
+            req.apply()
+        
+        for req in self.searchRequestTypeIterate(volumeGroupRequestType):
+            req.apply()
+            
+        for req in self.searchRequestTypeIterate(logicalVolumeRequestType):
+            req.apply()
+            
+        #notify
+        yali4.sysutils.run("/sbin/udevadm trigger")
+        yali4.sysutils.run("/sbin/udevadm settle --timeout=180")
+        
         # first apply format requests
         for r in self.searchReqTypeIterate(formatRequestType):
             r.applyRequest()
@@ -165,7 +178,22 @@ class RequestList(list):
             # return the only request found.
             return req.pop()
 
-
+    @property
+    def pvs(self):
+        
+        return [ x for x in self.searchReqTypeIterate(physicalVolumeRequestType)]
+    
+    @property
+    def vgs(self):
+        
+        return [ x for x in self.searchReqTypeIterate(volumeGroupRequestType)]
+    
+    @property
+    def lvs(self):
+        
+        return [ x for x in self.searchReqTypeIterate(logicalVolumeRequestType)]
+    
+        
     ##
     # add/append a request
     def append(self, req):
@@ -175,26 +203,32 @@ class RequestList(list):
         pt = req.partitionType()
         found = self.searchPartTypeAndReqType(pt, rt)
 
-        # RequestList stores only one request for a requestType() -
-        # partitionType() pair.
+        # RequestList stores only one request for a requestType() - partitionType() pair.
+        # 
         if found:
-            e = _("There is a request for the same Partition Type.")
-            raise RequestException, e
-
+            #if (req.requestType() == physicalVolumeRequestType) or ( req.requestType() == volumeGroupRequestType ) or (req.requestType() == logicalVolumeRequestType):
+            if req.partitionType() in uniquePartType:
+                e = _("There is a request for the same Partition Type.")
+                raise RequestException, e
+            else:
+                pass
+                
+        #print "bu req appende geldi path:%s %s partitionı %s tipinde ekleniyor" % (req.partition().getPath(), req.partitionType(), req.requestType())
         list.append(self, req)
 
 
     ##
     # remove request matching (partition, request type) pair
-    # @param p: Partition
+    # @param p: Partitionn
     # @param t: request Type (eg. formatRequestType)
     def removeRequest(self, p, rt):
         found = [x for x in self.searchPartAndReqTypeIterate(p, rt)]
         # this should give (at most) one result
         # cause we are storing one request for a (part, reqType) pair
         assert(len(found) <= 1)
-
+        
         for f in found:
+            #print "f.partition().getPath:%s f.type:%s siliniyor"% (f.partition().getPath(), f.type)
             self.remove(f)
 
 
@@ -261,7 +295,10 @@ class PartRequest:
     # set the type of the request
     def setRequestType(self, t):
         self._request_type = t
-
+    
+    @property
+    def type(self):
+        return self._request_type
     ##
     # get the type of the request
     def requestType(self):
@@ -382,6 +419,44 @@ class LabelRequest(PartRequest):
         PartRequest.applyRequest(self)
 
 
+class PhysicalVolumeRequest(PartRequest):
+    def __init__(self, partition, part_type):
+        
+        self.setPartition(partition)
+        self.setPartitionType(part_type)
+        self.setRequestType(physicalVolumeRequestType)
+        
+    def apply(self):
+        if not self.partition().exists:
+            self.partition().setup()
+        PartRequest.applyRequest(self)
+    
+class VolumeGroupRequest(PartRequest):
+    
+    def __init__(self, partiton, part_type):
+        RequestSpec.__init__(self, device, requesttype=volumeGroupRequestType, filesystem=fs("lvm"), existing=preexist)
+        
+        self.setPartition(partition)
+        self.setPartitionType(part_type)
+        self.setRequestType(volumeGroupRequestType)
+        
+    def apply(self):
+        if not self.partition().exists:
+            self.partition().setup()
+        PartRequest.applyRequest(self)
+
+class LogicalVolumeRequest(PartRequest):
+    
+    def __init__(self, partiton, part_type):
+        self.setPartition(partition)
+        self.setPartitionType(part_type)
+        self.setRequestType(logicalVolumeRequestType)
+        
+    def apply(self):
+        if not self.partition().exists:
+            self.partition().setup()
+        PartRequest.applyRequest(self)
+        
 # partition requests singleton.
 partrequests = RequestList()
 
