@@ -7,6 +7,10 @@
 
 - Bozuk CD check edilmeye çalışıldığında, exception hatası veriyor. Görüntüsü bkz. yalierror.jpg
 
+- Makine adi bos geliyor
+
+- F8 basilinca ekran tamamiyle gri renge donusemiyor.
+
 + Birden fazla harddisk bulunması durumunda, açılış diskinin hangisi olduğu bilinemiyor.
    + Yalının grub bölümünde alfabetik sıra ile dizilen harddisklerin hangisinin açılış diski olduğu belirtilmiyor.
    + Sistem yükleyicisini nereye kurmak istiyorsunuz sorusuna "Listeden seçilmiş diskin başına kur" işaretlenip, açılış diski olmayan bir disk seçtikten sonra açılış diskinin başına kuru işaretlediğimizde, açılış diski seçilmiş olması gerekirken, daha önce işaretlemiş olduğumuz disk seçilmiş olarak kalıyor.
