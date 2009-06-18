@@ -661,14 +661,6 @@ class Yali:
         d.resize(300,200)
         d.exec_()
 
-    def askForRetry(self, message):
-        reply = QuestionDialog(_("Warning"),
-                               str(message),
-                               _("Do you want to retry ?"))
-        if reply == "no":
-            return False
-        return True
-
 class ErrorWidget(QtGui.QWidget):
 
     def __init__(self, parent):
