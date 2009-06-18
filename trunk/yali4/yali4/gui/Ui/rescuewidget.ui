@@ -66,7 +66,7 @@
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>Select the partition below that your Pardus installed:</string>
+        <string>Partition Pardus is installed on</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
@@ -136,7 +136,7 @@
    <item row="4" column="1" colspan="2">
     <widget class="QLabel" name="solutionLabel">
      <property name="text">
-      <string>Select a proper solution for your problem and click &lt;b&gt;next&lt;/b&gt;...</string>
+      <string>Select operation and click &lt;b&gt;Next&lt;/b&gt;...</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -146,7 +146,7 @@
    <item row="5" column="1" colspan="2">
     <widget class="QRadioButton" name="useGrub">
      <property name="text">
-      <string>If you have problems with boot, you can reinstall Grub</string>
+      <string>Reinstall GRUB (boot problems)</string>
      </property>
      <property name="iconSize">
       <size>
@@ -165,7 +165,7 @@
       <string/>
      </property>
      <property name="text">
-      <string>If you need to take back your old operations you can use Pisi History</string>
+      <string>PiSi history (undo package operations)</string>
      </property>
      <property name="iconSize">
       <size>
@@ -184,7 +184,7 @@
       <string/>
      </property>
      <property name="text">
-      <string>If you lost your password you can change it</string>
+      <string>Change password (lost password)</string>
      </property>
      <property name="iconSize">
       <size>

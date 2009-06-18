@@ -38,7 +38,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Connection Status :</string>
+        <string>Connection Status:</string>
        </property>
       </widget>
      </item>
@@ -58,7 +58,7 @@
      <item>
       <widget class="QPushButton" name="buttonSelectConnection">
        <property name="statusTip">
-        <string>For using Pisi History support you may need internet connection, you can use your connection profiles from your profiles</string>
+        <string>To use PiSi's history feature, you may need to be online. Select connection profile.</string>
        </property>
        <property name="text">
         <string>Select Connection</string>
@@ -98,7 +98,7 @@
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>Select an operation from history list to take back the system</string>
+        <string>Operation to undo:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
