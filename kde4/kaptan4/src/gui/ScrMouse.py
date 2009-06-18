@@ -50,6 +50,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.ui.pixMouseIcon.setPixmap(QtGui.QPixmap(':/raw/pics/mouse.png'))
 
             self.ui.singleClick.setChecked(self.str2bool(self.__class__.screenSettings["selectedBehaviour"]))
+            self.clickBehaviour = self.str2bool(self.__class__.screenSettings["selectedBehaviour"])
 
             if self.__class__.screenSettings["selectedMouse"] == "LeftHanded":
                 self.ui.radioButtonLeftHand.setChecked(True)
