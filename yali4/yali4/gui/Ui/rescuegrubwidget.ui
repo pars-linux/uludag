@@ -41,7 +41,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Where do you want to install the bootlader ?</string>
+      <string>Partition to install the bootloader to:</string>
      </property>
     </widget>
    </item>
@@ -68,7 +68,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Install to first bootable disk (recommended)</string>
+        <string>First bootable disk (recommended)</string>
        </property>
       </widget>
      </item>
@@ -80,7 +80,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Install to Pardus installed partition</string>
+        <string>Pardus-installed partition</string>
        </property>
       </widget>
      </item>
@@ -92,7 +92,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Install to selected disk belove</string>
+        <string>Selected disk below</string>
        </property>
       </widget>
      </item>
@@ -140,7 +140,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Select the disk to install bootloader:</string>
+        <string>Disk to install the bootloader to:</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>

@@ -51,7 +51,7 @@
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-size:12pt; font-weight:600;">Select the partitioning method:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-size:12pt; font-weight:600;">Partitioning method&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
        </property>
        <property name="alignment" >
         <set>Qt::AlignTop</set>
@@ -64,7 +64,7 @@ p, li { white-space: pre-wrap; }
      <item>
       <widget class="QLabel" name="label" >
        <property name="text" >
-        <string>Here you can choose one of partitioning method, and then you must select for a device to proceed your choice. &lt;br>Device list will be updated for selected method.</string>
+        <string>Please choose a partitioning method and then a device to partition.&lt;br>Device list will be updated based on the selected method.</string>
        </property>
        <property name="textFormat" >
         <enum>Qt::AutoText</enum>
@@ -126,7 +126,7 @@ p, li { white-space: pre-wrap; }
              <font/>
             </property>
             <property name="toolTip" >
-             <string>This option will try to find suitable free space or resizable partitions</string>
+             <string>This option will try to find free disk space of suitable size. If no such disk space exists, it will look for resizable partitions</string>
             </property>
             <property name="text" >
              <string>Try to use free space or resize current partitions</string>
@@ -145,7 +145,7 @@ p, li { white-space: pre-wrap; }
              <font/>
             </property>
             <property name="toolTip" >
-             <string>This option will erase your entire disk. All of your data on disk will be lost !</string>
+             <string>This option will erase the entire disk. All the data on the disk will be lost.</string>
             </property>
             <property name="text" >
              <string>Delete all partitions</string>
@@ -166,7 +166,7 @@ p, li { white-space: pre-wrap; }
            <font/>
           </property>
           <property name="toolTip" >
-           <string>You can use manual partitioning with this option</string>
+           <string>This option allows partitioning the disk to your wishes.</string>
           </property>
           <property name="text" >
            <string>No, I'll partition my disk manually.</string>
@@ -191,7 +191,7 @@ p, li { white-space: pre-wrap; }
 &lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-size:12pt; font-weight:600;">Select the disk to apply selected method:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-size:12pt; font-weight:600;">Disk selection&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
          </property>
          <property name="alignment" >
           <set>Qt::AlignTop</set>

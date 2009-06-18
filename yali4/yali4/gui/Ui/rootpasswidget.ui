@@ -85,7 +85,7 @@
         </size>
        </property>
        <property name="text">
-        <string>&lt;p align=&quot;left&quot;&gt;System administrator user (root) handles important system maintanence tasks. Please give password for this special user and do not forget this password. Note that you shouldn't write this password elsewhere for privacy reasons.&lt;/p&gt;</string>
+        <string>&lt;p align=&quot;left&quot;&gt;System administrator user (root) handles important system maintanence tasks. Enter a password for this special user and do not forget this password. Keep in mind that for privacy reasons, you shouldn't write this password elsewhere.&lt;/p&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

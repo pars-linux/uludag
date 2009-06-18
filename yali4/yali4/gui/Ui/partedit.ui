@@ -312,7 +312,7 @@
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>Changes will be applied when you finish..</string>
+        <string>Changes will be applied when are operations are set.</string>
        </property>
       </widget>
      </item>

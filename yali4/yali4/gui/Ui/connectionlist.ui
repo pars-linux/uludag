@@ -57,7 +57,7 @@
            <string notr="true">color:white;</string>
           </property>
           <property name="text">
-           <string>For using Pisi History support you may need internet connection, you can use your connection profiles from list</string>
+           <string>To use PiSi History support, you may need to be online. You can create and/or use a connection profile from the list below.</string>
           </property>
           <property name="wordWrap">
            <bool>true</bool>

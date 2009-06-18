@@ -36,12 +36,11 @@
       <number>1</number>
      </property>
      <property name="text">
-      <string>&lt;b&gt;Do you want to write boot loader (GRUB) to your hard disk's master boot record?&lt;/b&gt;
+      <string>&lt;b&gt;Write boot loader (GRUB) to the master boot record?&lt;/b&gt;
 
-&lt;p&gt;You need a boot loader to boot your Pardus system.&lt;/p&gt;
+&lt;p&gt;Your system will not boot without a loader.&lt;/p&gt;
 
-&lt;p&gt;If you don't install a boot loader or choose to install to root partition, you will have to configure your other operating system's loader  (if you have one installed) to start 
-your newly installed Pardus.&lt;/p&gt;</string>
+&lt;p&gt;If you don't install a boot loader or choose to install to root partition, you will have to manually configure already-installed (if any) loader to be able to boot your new Pardus installation.&lt;/p&gt;</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignVCenter</set>
@@ -89,27 +88,27 @@ your newly installed Pardus.&lt;/p&gt;</string>
    <item row="3" column="1">
     <widget class="QGroupBox" name="buttonGroup">
      <property name="title">
-      <string>Where do you want to install the bootlader ?</string>
+      <string>Bootloader installation partition</string>
      </property>
      <layout class="QVBoxLayout">
       <item>
        <widget class="QRadioButton" name="installFirstMBR">
         <property name="text">
-         <string>Install to first bootable disk (recommended)</string>
+         <string>First bootable disk (recommended)</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QRadioButton" name="installPart">
         <property name="text">
-         <string>Install to Pardus installed partition</string>
+         <string>Pardus installed partition</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QRadioButton" name="installMBR">
         <property name="text">
-         <string>Install to selected disk belove</string>
+         <string>Selected disk below</string>
         </property>
        </widget>
       </item>
@@ -118,7 +117,7 @@ your newly installed Pardus.&lt;/p&gt;</string>
         <item>
          <widget class="QLabel" name="select_disk_label">
           <property name="text">
-           <string>Select the disk you to install bootloader:</string>
+           <string>Bootloader installation disk</string>
           </property>
           <property name="wordWrap">
            <bool>false</bool>
