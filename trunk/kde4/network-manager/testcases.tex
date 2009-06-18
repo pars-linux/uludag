@@ -1,6 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 
-\title{Network Manager Test Cases}
+\title{Network Manager Test Cases}	
 \author{Semen Cirit}
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
@@ -13,69 +13,120 @@
 \maketitle
 
 \begin{enumerate}
-\item Create profile button
+  \item Push create profile button
     \begin{enumerate}
-    \item For wireless connections
-        \begin{enumerate}
-        \item Try to scan for a wireless network
-    
-            After searching a wireless network observe that security type is correctly found.
-        \item Try to add this wireless network password and enable hide password.
-    
-            Observe the situation.
-        \end{enumerate}
-    \end{enumerate}
+     \subsection*{For wireless connections}
+     \item Try to scan for a wireless network
+      
+	Observe that it can find wireless networks.
+     \item Try to add this wireless network password and enable hide password.
+        
+	Observe the situation.
+     \subsection*{For ethernet or wireless connections}
+	
+      \item Try to create a new profile without adding a new name.
+	\begin{enumerate}
+	  \item  Without adding a new name
 
-    \begin{enumerate}
-    \item For ethernet or wireless connections
-        \begin{enumerate}
-        \item If you have more than one network connection, try to select a device from combobox.
-        \item Try to create a new profile without adding a new name
-            \begin{enumerate}
-            \item Without adding a new name
-    
-                Observe that it gives a warning about the profile name and prevents to create the new profile.
-    
-            \item Add a new name and use DHCP and  and try to add this profile
-            \end{enumerate}
+		Observe that it gives a warning about the profile name and prevents to create the new profile.
+	  \item Add a new name and use DHCP and  and try to add this profile
+		Observe that it can be added without any problem.
+	\end{enumerate}
+      
+     \end{enumerate}
+     \item Tests on profile list screen
+     
+      !!!Apply each of the below cases randomly and observe the output of the below command.
 
-        \item Name server settings button.
-            \begin{enumerate}
-            \item testcases will be added later.
-            \end{enumerate}
-        \end{enumerate}
-    \end{enumerate}
+		Execute this command:
+		\begin{verbatim}
+		 ping 4.2.2.1
+		\end{verbatim}
+	If the network reachable it will give an output like this:
+	\begin{verbatim}
+	PING 4.2.2.1 (4.2.2.1) 56(84) bytes of data.
+	64 bytes from 4.2.2.1: icmp_seq=1 ttl=244 time=74.8 ms
+	64 bytes from 4.2.2.1: icmp_seq=2 ttl=244 time=83.9 ms
+      	\end{verbatim}
 
-\item Profiles part
-    \begin{enumerate}
-    \item Try to remove a profile.
-    \item Try to change the configurations of a profile.
-        \begin{enumerate}
-        \item Try to change the profile name
-        \item Network settings
-            \begin{enumerate}
-            \item Use DHCP
-                \begin{itemize}
-                \item Use custom address and network mask.
-                \item Use custum default gateway.
-                \end{itemize}
-            \item Use Manual settings
-            \end{enumerate}
+      \begin{enumerate}
+      \item Observe your ethernet or wireless device is in the Device dropbox.
 
-        \item Name servers
-            \begin{enumerate}
-            \item Use Default
-            \item Use Automatic
-            \item Use Custom
-            \end{enumerate}
-        \item Apply them and observe the output of the below command.
-        \end{enumerate}
+	  You can execute this commmand in order to observe this devices:
+	  \begin{verbatim}
+	  network devices
+	  \end{verbatim}
+	  Compare the output of the command with the devices in the combobox.
 
-        Execute the following command:
-\begin{verbatim}
-    # ping 4.2.2.1
-\end{verbatim} 
-    \end{enumerate}
+      \item Try to remove a profile.
+      
+	    Execute this command:
+	    \begin{verbatim}
+	     network connections
+	    \end{verbatim}
+	    And observe that it was removed from the output of this command.
+
+      \item Try to change the configurations of a profile.
+	  \begin{enumerate}
+	  \item Try to change the profile name
+	    \begin{verbatim}
+	     network connections
+	    \end{verbatim}
+	    And observe that its name was changed.
+
+	  \item Network settings
+	    Execute this command for listing IP address and network mask:
+		  \begin{verbatim}
+		    ifconfig
+		  \end{verbatim}
+	   Then observe that those variables of the above command:
+		   \begin{verbatim}
+		    Variable "inet addr" means the IP address
+		    Variable "Mask" means network mask
+		  \end{verbatim}
+	   Execute this command for listing gateway:
+	    	   \begin{verbatim}
+		     route -n 
+		  \end{verbatim}
+	     The Gateway is choosed for the Genmask which is equal to 0.0.0.0
+	
+
+	      \begin{enumerate} 
+	      \item Use DHCP
+		\begin{itemize}
+		  \item Use automatic IP
+				      
+		   Execute the above two command and observe that your related device takes the automatic settings. 
+
+		  \item Use custom address and network mask. 
+		
+		   Execute the first above command and observe that your related device takes the IP address and network mask that you gave.
+  
+		  \item Use custum default gateway
+		     
+		      Execute the second above command and observe that your related device takes the gateway that you gave.
+		\end{itemize}
+	      \item Use Manual Settings
+		    
+		      Execute the above two command and observe that your related device takes the settings that you gave. 
+	    \end{enumerate}
+	  \item Name servers
+	    \begin{itemize}
+		 \item Use Default
+		 
+		  Observe the situation
+		 \item Use Automatic
+		  Observe the situation
+	  
+		 \item Use Custom
+
+		  Give a cutom nameserver and observe it from:
+		   \begin{verbatim}
+		     cat /etc/resolv.conf
+		  \end{verbatim}
+	     \end{itemize}
+      
+	  \end{enumerate}	
+      \end{enumerate}
 \end{enumerate}
-
 \end{document}
