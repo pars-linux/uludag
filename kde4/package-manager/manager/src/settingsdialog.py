@@ -343,6 +343,9 @@ class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
             if settings.changed:
                 settings.save()
 
+        if not self.repositorySettings.changed and self.generalSettings.changed:
+            self.emit(SIGNAL("settingsChanged()"))
+
     def showHelp(self):
         helpDialog = helpdialog.HelpDialog(self, helpdialog.PREFERENCES)
         helpDialog.show()
