@@ -68,6 +68,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def initialize(self):
         waitCursor()
+        self.state.reset()
         self.initializePackageList()
         self.initializeGroupList()
         self.initializeBasket()
