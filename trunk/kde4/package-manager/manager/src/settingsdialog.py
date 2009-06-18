@@ -28,9 +28,9 @@ class SettingsTab(QObject):
         self.settings = settings
         self.config = config.Config(KConfig("package-managerrc"))
         self.iface = backend.pm.Iface()
-        self.changed = False
         self.setupUi()
         self.connectSignals()
+        self.changed = False
 
     def markChanged(self):
         self.changed = True
