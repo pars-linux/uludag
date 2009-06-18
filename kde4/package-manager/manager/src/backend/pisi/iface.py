@@ -118,7 +118,10 @@ class Iface(Singleton):
         return self.gdb.list_groups()
 
     def getGroupPackages(self, name):
-        components = self.gdb.get_group_components(name)
+        try:
+            components = self.gdb.get_group_components(name)
+        except pisi.db.groupdb.GroupNotFound:
+            components = []
         packages = []
         for component in components:
             try:
