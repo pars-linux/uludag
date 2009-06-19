@@ -33,7 +33,7 @@
   * "Service restart", "System reboot" sorguları (-)
   * Güncelleme çeşitleri gösterilsin [security, critical, bug, enhancement,...] (-)
   * Kurulum sırasında tray/plasmoid üzerinde ilerleme yüzdesi gösterilsin (-)
-  * Tema renkleri tamamıyle KDE'den alınmalı (-)
+  * Tema renkleri tamamıyle KDE'den alınmalı (+)
   * log ve debug desteği (+)
 
 * Donanım (Ozan Çağlayan)
