@@ -86,6 +86,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         title = index.model().data(index, Qt.DisplayRole)
         summary = index.model().data(index, SummaryRole)
         description = index.model().data(index, DescriptionRole)
+        repository = index.model().data(index, RepositoryRole)
         version = index.model().data(index, VersionRole)
 
         foregroundColor = option.palette.color(QtGui.QPalette.Text)
@@ -105,7 +106,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         normalDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Normal)
         boldDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Bold)
 
-            # Package Detail Label
+        # Package Detail Label
         position = top + ROW_HEIGHT + ICON_SIZE
 
         p.setFont(boldDetailFont)
@@ -122,6 +123,15 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         p.setFont(normalDetailFont)
         p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, version.toString())
+
+        # Package Detail Repository
+        position += DETAIL_LINE_OFFSET
+
+        p.setFont(boldDetailFont)
+        p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Depo:"))
+
+        p.setFont(normalDetailFont)
+        p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, repository.toString())
 
         p.end()
         painter.drawPixmap(option.rect.topLeft(), pixmap)

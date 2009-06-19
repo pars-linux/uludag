@@ -22,7 +22,7 @@ from PyKDE4.kdecore import KGlobal
 import string
 import backend
 
-(SummaryRole, DescriptionRole, VersionRole, GroupRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3)
+(SummaryRole, DescriptionRole, VersionRole, GroupRole, RepositoryRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, Qt.UserRole+4)
 
 class PackageModel(QAbstractTableModel):
 
@@ -59,6 +59,8 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.description))
         elif role == VersionRole:
             return QVariant(unicode(package.version))
+        elif role == RepositoryRole:
+            return QVariant(unicode(self.iface.getPackageRepository(package.name)))
         elif role == Qt.DecorationRole:
             if package.icon:
                 icon_path = KIconLoader().iconPath(package.icon, KIconLoader.Panel)
