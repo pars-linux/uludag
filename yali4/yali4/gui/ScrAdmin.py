@@ -79,13 +79,11 @@ Click Next button to proceed.
         if ctx.installData.hostName:
             self.ui.hostname.setText(str(ctx.installData.hostName))
         else:
-            try:
-                # Use first added user's name as machine name
-                hostname_guess = "%s-pardus" % yali4.users.pending_users[0].username
-                if self.ui.hostname.text() == '':
-                    self.ui.hostname.setText(hostname_guess)
-            except:
-                pass
+            # Use first added user's name as machine name
+            print yali4.users.pending_users
+            hostname_guess = "%s-pardus" % yali4.users.pending_users[0].username
+            if self.ui.hostname.text() == '':
+                self.ui.hostname.setText(hostname_guess)
 
         if ctx.installData.rootPassword:
             self.ui.pass1.setText(ctx.installData.rootPassword)
