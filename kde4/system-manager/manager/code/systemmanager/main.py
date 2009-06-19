@@ -52,6 +52,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         # Actions
         self.connect(self.comboLanguage, QtCore.SIGNAL("currentIndexChanged(int)"), self.slotLanguageChanged)
+        self.connect(self.buttonBox, QtCore.SIGNAL("clicked(QAbstractButton*)"), self.slotButtonsClicked)
 
         # Initialize
         self.buildLists()
@@ -59,6 +60,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def slotLanguageChanged(self, index):
         language = str(self.comboLanguage.itemData(index).toString())
         self.buildKeymaps(language)
+
+    def slotButtonsClicked(self, button):
+        if self.buttonBox.buttonRole(button) == QtGui.QDialogButtonBox.ApplyRole:
+            self.saveItems()
+        elif self.buttonBox.buttonRole(button) == QtGui.QDialogButtonBox.ResetRole:
+            self.buildLists()
 
     def checkBackend(self):
         """
@@ -120,3 +127,23 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         index = self.comboKeyboard.findData(keymap)
         if index != -1:
             self.comboKeyboard.setCurrentIndex(index)
+
+    def saveItems(self):
+        # Language
+        language = self.comboLanguage.itemData(self.comboLanguage.currentIndex())
+        language = str(language.toString())
+        self.iface.setLanguage(language)
+        # Keymap
+        keymap = self.comboKeyboard.itemData(self.comboKeyboard.currentIndex())
+        keymap = str(keymap.toString())
+        self.iface.setKeymap(keymap)
+        # Head start
+        package = self.comboHeadStart.itemData(self.comboHeadStart.currentIndex())
+        package = str(package.toString())
+        self.iface.setHeadStart(package)
+        # Console
+        self.iface.setTTYs(self.spinTTY.value())
+        # Clock
+        is_utc = self.checkUTC.checkState() == QtCore.Qt.Checked
+        adjust = self.checkClockAdjust.checkState() == QtCore.Qt.Checked
+        self.iface.setClock(is_utc, adjust)

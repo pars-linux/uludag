@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from pardus.localedata import languages as LANGUAGES
 from pardus.fileutils import FileLock
+from pardus.localedata import languages as LANGUAGES
 
 # Mudur configuration file
 
