@@ -1,3 +1,5 @@
+- Kullanıcı ekleme bölümünde, gerçek ad ve kullanıcı adı eklenip daha sonra yeni kullanıcı denilip, daha önce ismi yazılan kullanıcı eklenmeden adı değiştirilip eklenmeye çalışılınca makina adı boş geliyor ve sistem kurulumundan sonra kullanıcı eklenemiyor.
+
 - iso bozuk olduğu durumda, cd kontrolü yapılmadan kuruluma başlanırsa, bozuk olan paketlerin install bölümüne gelindiğinde "yeniden dene ve iptal" butonu olan bir pencere çıkıyor. 
     Yeniden dene seçildiğinde, progress bar yeniden install'un başladığı noktadan başlayamıyor. En son bulunduğu noktadan devam ediyor ve bir süre sonra devamlı 100% gösteriyor.
 
@@ -6,8 +8,6 @@
     - Partition resize edilmeye çalışıldığında parted hatası veriyor.
 
 - Bozuk CD check edilmeye çalışıldığında, exception hatası veriyor. Görüntüsü bkz. yalierror.jpg
-
-- Makine adi bos geliyor
 
 - F8 basilinca ekran tamamiyle gri renge donusemiyor.
 
