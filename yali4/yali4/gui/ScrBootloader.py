@@ -79,7 +79,6 @@ loader.
             # don't show device list if we have just one disk
             self.ui.installMBR.hide()
             self.ui.device_list.hide()
-            self.ui.select_disk_label.hide()
 
             self.device = yali4.storage.devices[0]
 

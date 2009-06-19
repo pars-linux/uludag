@@ -88,7 +88,7 @@
    <item row="3" column="1">
     <widget class="QGroupBox" name="buttonGroup">
      <property name="title">
-      <string>Bootloader installation partition</string>
+      <string>Select target to install boot loader</string>
      </property>
      <layout class="QVBoxLayout">
       <item>
@@ -114,16 +114,6 @@
       </item>
       <item>
        <layout class="QVBoxLayout">
-        <item>
-         <widget class="QLabel" name="select_disk_label">
-          <property name="text">
-           <string>Bootloader installation disk</string>
-          </property>
-          <property name="wordWrap">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
         <item>
          <widget class="QListWidget" name="device_list">
           <property name="enabled">

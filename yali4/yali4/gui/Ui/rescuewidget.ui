@@ -66,10 +66,10 @@
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>Partition Pardus is installed on</string>
+        <string>Select the partition Pardus is installed on</string>
        </property>
        <property name="wordWrap">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>

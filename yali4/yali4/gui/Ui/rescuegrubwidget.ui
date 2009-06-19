@@ -17,7 +17,7 @@
    <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="2">
+   <item row="0" column="1" colspan="2">
     <spacer>
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -41,11 +41,11 @@
       </font>
      </property>
      <property name="text">
-      <string>Partition to install the bootloader to:</string>
+      <string>Select target to install boot loader</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
+   <item row="2" column="1" colspan="2">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -80,7 +80,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Pardus-installed partition</string>
+        <string>Pardus installed partition</string>
        </property>
       </widget>
      </item>
@@ -98,7 +98,7 @@
      </item>
     </layout>
    </item>
-   <item row="4" column="1">
+   <item row="4" column="1" colspan="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -132,21 +132,6 @@
    </item>
    <item row="5" column="1" colspan="2">
     <layout class="QVBoxLayout">
-     <item>
-      <widget class="QLabel" name="select_disk_label">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Disk to install the bootloader to:</string>
-       </property>
-       <property name="wordWrap">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="QListWidget" name="deviceList">
        <property name="styleSheet">
