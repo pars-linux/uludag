@@ -131,7 +131,11 @@ Click Next button to proceed.
         self.checkUsers()
         self.checkCapsLock()
 
-    def execute(self):
+    def backCheck(self):
+        self.refill()
+        return True
+
+    def refill(self):
         # reset and fill pending_users
         yali4.users.reset_pending_users()
         for i in range(self.ui.userList.count()):
@@ -139,11 +143,14 @@ Click Next button to proceed.
             ctx.installData.users.append(u)
             yali4.users.pending_users.append(u)
 
-        if self.ui.userList.count() > 0:
-            return True
-        if not self.slotCreateUser():
-            ctx.mainScreen.moveInc = 0
-            return True
+    def execute(self):
+
+        if not self.ui.addMoreUsers.isChecked():
+            if not self.slotCreateUser():
+                ctx.mainScreen.moveInc = 0
+                return True
+
+        self.refill()
 
         ctx.installData.autoLoginUser = str(self.ui.autoLogin.currentText())
         return True
