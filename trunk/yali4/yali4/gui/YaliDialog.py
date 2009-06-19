@@ -117,6 +117,10 @@ class Dialog(QtGui.QDialog):
         self.move(ctx.mainScreen.width()/2 - self.width()/2,
                   ctx.mainScreen.height()/2 - self.height()/2)
 
+    def exec_(self):
+        self.setCentered()
+        QtGui.QDialog.exec_(self)
+
 def QuestionDialog(title, text, info = None, dontAsk = False):
     msgBox = QtGui.QMessageBox()
 
@@ -165,7 +169,7 @@ class InformationWindow(QtGui.QWidget):
     def __init__(self, message):
         QtGui.QWidget.__init__(self, ctx.mainScreen)
         self.setObjectName("InfoWin")
-        self.resize(280,50)
+        self.resize(300,50)
         self.setStyleSheet("""
             QFrame#frame { border: 1px solid #CCC;
                            border-radius: 4px;
@@ -181,49 +185,37 @@ class InformationWindow(QtGui.QWidget):
         """)
 
         self.gridlayout = QtGui.QGridLayout(self)
-        self.gridlayout.setObjectName("gridlayout")
-
         self.frame = QtGui.QFrame(self)
         self.frame.setObjectName("frame")
+        self.horizontalLayout = QtGui.QHBoxLayout(self.frame)
+        self.horizontalLayout.setContentsMargins(6, 0, 0, 0)
 
-        self.gridlayout1 = QtGui.QGridLayout(self.frame)
-        self.gridlayout1.setMargin(2)
-        self.gridlayout1.setSpacing(3)
-        self.gridlayout1.setObjectName("gridlayout1")
+        # Spinner
+        self.spinner = QtGui.QLabel(self.frame)
+        self.spinner.setMinimumSize(QSize(16, 16))
+        self.spinner.setMaximumSize(QSize(16, 16))
+        self.spinner.setIndent(6)
+        self.movie = QtGui.QMovie(':/images/working.mng')
+        self.spinner.setMovie(self.movie)
+        self.movie.start()
+        self.horizontalLayout.addWidget(self.spinner)
 
-        self.hboxlayout = QtGui.QHBoxLayout()
-        self.hboxlayout.setObjectName("hboxlayout")
-
-        spacerItem = QtGui.QSpacerItem(40,20,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Minimum)
-        self.hboxlayout.addItem(spacerItem)
-
+        # Message
         self.label = QtGui.QLabel(self.frame)
-        self.label.setObjectName("message")
-        self.hboxlayout.addWidget(self.label)
+        self.horizontalLayout.addWidget(self.label)
 
-        spacerItem1 = QtGui.QSpacerItem(40,20,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Minimum)
-        self.hboxlayout.addItem(spacerItem1)
-        self.gridlayout1.addLayout(self.hboxlayout,0,0,1,1)
-
-        self.progressBar = QtGui.QProgressBar(self.frame)
-        self.progressBar.setMaximumSize(QSize(16777215,6))
-        self.progressBar.setMaximum(0)
-        self.progressBar.setObjectName("progressBar")
-        self.gridlayout1.addWidget(self.progressBar,1,0,1,1)
         self.gridlayout.addWidget(self.frame,0,0,1,1)
-
         self.updateMessage(message)
 
-    def updateMessage(self, message=None, progress=False):
-        self.progressBar.setVisible(progress)
+    def updateMessage(self, message=None):
         self.move(ctx.mainScreen.width()/2 - self.width()/2,
                   ctx.mainScreen.height() - self.height()/2 - 26)
         if message:
             self.label.setText(message)
         ctx.mainScreen.processEvents()
 
-    def updateAndShow(self, message, progress=False):
-        self.updateMessage(message,progress)
+    def updateAndShow(self, message):
+        self.updateMessage(message)
         self.show()
         ctx.mainScreen.processEvents()
 
