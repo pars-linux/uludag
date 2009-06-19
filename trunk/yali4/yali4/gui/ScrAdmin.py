@@ -79,9 +79,12 @@ Click Next button to proceed.
         if ctx.installData.hostName:
             self.ui.hostname.setText(str(ctx.installData.hostName))
         else:
-            # Use first added user's name as machine name
-            print yali4.users.pending_users
-            hostname_guess = "%s-pardus" % yali4.users.pending_users[0].username
+            # Use first added user's name as machine name if its exists
+            hostname_guess = "pardus"
+            if len(yali4.users.pending_users) > 0:
+                hostname_guess = "%s-pardus" % yali4.users.pending_users[0].username
+            else:
+                ctx.debugger.log("No user defined in users screen..")
             if self.ui.hostname.text() == '':
                 self.ui.hostname.setText(hostname_guess)
 
