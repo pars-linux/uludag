@@ -101,7 +101,7 @@
 
                     \item Try to enable periodic update check
                     \begin{itemize}
-                        \item Observe that "True" is assigned to "UpdateCheck" variable in .kde/share/config/package-managerrc file.
+                        \item Observe that "True" is assigned to "UpdateCheck" variable in .kde4/share/config/package-managerrc file.
                         \item Put a observable time interval, observe it from package manager,
                         \item Also observe this time interval is added to "UpdateCheckInterval" variable in .kde/share/config/package-managerrc file.
                     \end{itemize}
@@ -189,12 +189,12 @@
                     \item What's this? 
         
                     Try to take the description of each widget on the screen.
-                    \item Report bug
-                    \begin{itemize}
-                        \item Choose a severity for the an example bug
-                        \item Add a subject and description and send it
-                        \item Control it from bugzilla
-                    \end{itemize}
+                    %\item Report bug
+                    %\begin{itemize}
+                    %    \item Choose a severity for the an example bug
+                    %    \item Add a subject and description and send it
+                    %    \item Control it from bugzilla
+                    %\end{itemize}
                     \item Switch application language
                     \begin{itemize}
                         \item Change primary language and observe the situation.
@@ -221,6 +221,11 @@
         \item Try to configure toolbar and test again toolboxes-> configure toolbar part of testcases.
     \end{itemize}
     \item Installing Package
+	You can observe whether the package installed with this command:
+	\begin{verbatim}
+	 pisi info <package-name>
+	\end{verbatim}
+
         \begin{itemize}
             \item After showing new packages. 
             \begin{itemize}
@@ -232,8 +237,18 @@
                 \item Select a package from package list, try to install.
                 \item Select all, try to install all
             \end{itemize}
+	\item After installing some package try to install a gui application (for example kaffein)and for this time enable remembering password when the system policykit screen open.
+		
+		Observe that after installing this package a screen is opened which contains this package icon. Click on it and try to open it.
+	\item Try to install a package when your password remembered.
+		
+		Observe that the package manager doesn't ask password and install the package without any problem.
         \end{itemize}
     \item Removing packages
+	You can observe whether the package removed with this command:
+	\begin{verbatim}
+	 pisi info <package-name>
+	\end{verbatim}
         \begin{itemize}
             \item After showing installed packages.
             \begin{itemize}
@@ -241,10 +256,6 @@
                 \item Select all, try to remove all.
             \end{itemize}
         \end{itemize}
-
-        \item Try to shutdown or restart computer while package manager has been making update.
-
-        Observe that the computer couldn't be shutdown or restart.
     \end{enumerate}
 
 \end{document}

@@ -35,7 +35,7 @@
 
        Observe that iptables service gets on.
 
-\item Push the configuration button and try these actions for options: Limited Content Serving or Access Restriction
+\item Push the configuration button and try these actions for options: Block incoming connections or Block outgoing connections.
     \begin{enumerate}
         \item Adding  port
         \item Removing port
@@ -51,7 +51,7 @@ Execute the following command:
     # iptables --list-rules
 \end{verbatim} 
 
-\item Limited content serving
+\item Block incoming connections:
 
 \begin{enumerate}
      \item After adding a port from firewall manager.
@@ -67,7 +67,7 @@ Execute the following command:
 -A PARDUS-IN-MOD-SERVING -p udp -m multiport --dports 0:1024 \
     -j REJECT --reject-with icmp-port-unreachable
 \end{verbatim} 
-        \item Disable limited content serving
+        \item Disable block incoming connections
 
               Observe that the above lines are removed from the output of the below command.
         \end{enumerate}
@@ -104,11 +104,11 @@ Execute the following command:
         \end{enumerate}
     \end{enumerate}
 
-\item Access Restriction 
+\item Block outgoing connections 
 \begin{enumerate}
     \item After adding a port from firewall manager.
         \begin{enumerate}
-        \item Enable Access Restriction
+        \item Enable block outgoing connections
 
             Observe that the port is added
 
@@ -121,7 +121,7 @@ Execute the following command:
     -j DROP
 \end{verbatim} 
 
-        \item Disable Access Restriction·
+        \item Disable block outgoing connections·
 
               Observe that the above lines are removed from the output of the below command.
         \end{enumerate}
@@ -129,36 +129,47 @@ Execute the following command:
 \end{enumerate}
 \item Pratical part of tests
 
-    If the service openssh was disabled, start it from service manager.
+	First activate firewall on both two computers.	
+
+    	If the service openssh was disabled, start it from service manager.
 \begin{enumerate}
-    \item For Limited content serving: (If you have staic ip you can test it, if not skip it)
+    \item Block incoming connections: 
+
+	
+	
     \begin{enumerate}
-        \item Disable limited content serving
+        \item Disable block incoming connections
+
+		(If you have a static ip or your two machine is in the same network, you can test this case, if not skip it)
+
               Try to make a remote connection from an other computer to your computer.
 
               Execute the following command:
-\begin{verbatim}
-    # ssh <your_computer_name>@<static_ip>
-\end{verbatim} 
-              Observe that the connection being accepted.
+		\begin{verbatim}
+		# ssh <your_computer_name>@<static_ip>
+		\end{verbatim} 
+              Observe that the connection is being accepted.
 
-        \item Try to add a well known port and enable limited content serving.
+        \item Try to add a well known port and enable block incoming connections.
             Open the related service of this port from service-manager.
 
         \begin{enumerate}
             \item Try to make a remote connection from an other computer to your computer.
-\begin{verbatim}
-    # ssh <your_computer_name>@<static_ip>
-\end{verbatim}                 Observe that the connection refused.
+	\begin{verbatim}
+	# ssh <your_computer_name>@<static_ip>
+	\end{verbatim}
+	Observe that the connection refused.
 
             \item Try to make a remote connection using the added port from an other computer to your computer.
-\begin{verbatim}
-    # ssh -p <port> <your_computer_name>@<static_ip>
-\end{verbatim}
+	\begin{verbatim}
+	# ssh -p <port> <your_computer_name>@<static_ip>
+	\end{verbatim}
                  Observe that the connection is accepted.
         \end{enumerate}
     \end{enumerate}
-    \item For internet sharing:(If you have two internal ethernet card or an extra external ethernet card and an extra computer, you can test this part, if not skip it.)
+    \item For internet sharing: 
+
+	(If you have two internal ethernet card or an extra external ethernet card and an extra computer, you can test this part, if not skip it.)
         \begin{enumerate}
         \item Plug an extra external or internal ethernet card to your computer. And plug an ethernet cable between your computer and the other. ( And if the other computer have an internet acces please stop it. )
 
@@ -168,20 +179,22 @@ Execute the following command:
 
               Now try to connect to connect internet over your computer and observe it.
         \end{enumerate}
-    \item For access restriction:(If you have staic ip you can test it, if not skip it)
+    \item Block outgoing connections:
+
+	(If you have a static ip or your two machine is in the same network, you can test this case, if not skip it)
         \begin{enumerate}
         \item Disable access restriction
             \begin{enumerate}
             \item Try to make a remote connection with using a well known port from your computer to the other remote computer.
-                If the remote computer has a static ip you can use it for remote connection
+                If the remote computer has a static ip you can use it for remote connection. 
 
                 Execute the following command:
-\begin{verbatim}
-    # ssh -p <port> <remote_computer_name>@<static_ip>
-\end{verbatim} 
+		\begin{verbatim}
+		# ssh -p <port> <remote_computer_name>@<static_ip>
+		\end{verbatim} 
                 Observe that the connection accepted.
 
-            \item Try to add a well known port and enable access restriction.
+            \item Try to add a well known port and enable block outgoing connections.
             	
                   Try to make a remote connection using added port from your computer to the other computer.
 \begin{verbatim}
