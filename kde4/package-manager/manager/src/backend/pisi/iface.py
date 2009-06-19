@@ -102,6 +102,12 @@ class Iface(Singleton):
     def setSource(self, source):
         self.source = source
 
+    def getPackageRepository(self, name):
+        try:
+            return self.pdb.which_repo(name)
+        except Exception:
+            return "N/A"
+
     def getPackageList(self):
         if self.source == self.REPO:
             return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(pisi.api.list_replaces().values()) )
