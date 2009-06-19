@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Type=Application
 Exec=kfmclient openURL sysinfo:/
-Icon=konqueror
+Icon=computer
 Terminal=false
 MimeType=application/x-sysinfo;
 InitialPreference=9
