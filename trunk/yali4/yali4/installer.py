@@ -187,7 +187,7 @@ class Yali:
         for pkg_name in pkg_names:
             cur += 1
             ctx.debugger.log("Checking %s " % pkg_name)
-            self.info.updateMessage(_("Checking: %s") % pkg_name)
+            self.info.updateMessage(_("Checking: %s") % pkg_name, spinner = True)
             if self.checkCDStop:
                 continue
             try:
