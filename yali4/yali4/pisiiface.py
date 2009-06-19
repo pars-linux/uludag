@@ -113,8 +113,7 @@ def getExtraLangs():
 
 def get_not_needed_langs():
     return map(lambda x: os.path.join(consts.source_dir, 'repo', x.split(',')[0]), \
-        filter(lambda x: x.split(',')[1].startswith(consts.lang) or \
-                         x.split(',')[1].startswith("en"), getExtraLangs()))
+        filter(lambda x: not (x.split(',')[1].startswith(consts.lang) or x.split(',')[1].startswith("en")), getExtraLangs()))
 
 def getHistory(limit=50):
     pdb = pisi.db.historydb.HistoryDB()
