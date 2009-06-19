@@ -72,7 +72,6 @@ loader.
             self.ui.installSelectedDisk.hide()
             self.device_list_state = False
             self.ui.deviceList.hide()
-            self.ui.select_disk_label.hide()
 
             self.device = yali4.storage.devices[0]
 
