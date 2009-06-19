@@ -96,7 +96,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Language:</string>
+             <string>System Language:</string>
             </property>
            </widget>
           </item>
@@ -118,7 +118,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Keyboard Layout:</string>
+             <string>Console Keyboard Layout:</string>
             </property>
            </widget>
           </item>
@@ -190,40 +190,14 @@
         </item>
         <item>
          <layout class="QGridLayout" name="gridLayout_2">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_4">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Time Zone:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QComboBox" name="comboTimeZone">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
+          <item row="0" column="0" colspan="2">
            <widget class="QCheckBox" name="checkUTC">
             <property name="text">
              <string>Hardware clock is set to UTC.</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="0" colspan="2">
+          <item row="1" column="0" colspan="2">
            <widget class="QCheckBox" name="checkClockAdjust">
             <property name="text">
              <string>Normalize systematic drift of the hardware clock.</string>
@@ -381,7 +355,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Number of Consoles:</string>
+             <string>Number of Real Consoles:</string>
             </property>
            </widget>
           </item>

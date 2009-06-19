@@ -51,15 +51,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.pixmapConsole.setPixmap(kdeui.KIcon("utilities-terminal").pixmap(48, 48))
 
         # Actions
-        self.connect(self.comboLanguage, QtCore.SIGNAL("currentIndexChanged(int)"), self.slotLanguageChanged)
         self.connect(self.buttonBox, QtCore.SIGNAL("clicked(QAbstractButton*)"), self.slotButtonsClicked)
 
         # Initialize
         self.buildLists()
-
-    def slotLanguageChanged(self, index):
-        language = str(self.comboLanguage.itemData(index).toString())
-        self.buildKeymaps(language)
 
     def slotButtonsClicked(self, button):
         if self.buttonBox.buttonRole(button) == QtGui.QDialogButtonBox.ApplyRole:
@@ -89,11 +84,17 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         index = self.comboLanguage.findData(language)
         if index != -1:
             self.comboLanguage.setCurrentIndex(index)
-        # Keymaps
-        self.buildKeymaps(str(language.toString()))
+        # All Keymaps
+        self.comboKeyboard.clear()
+        for code, label in self.iface.listKeymaps():
+            self.comboKeyboard.addItem(label, QtCore.QVariant(code))
+        # Selected keymap
+        keymap = QtCore.QVariant(self.iface.getKeymap())
+        index = self.comboKeyboard.findData(keymap)
+        if index != -1:
+            self.comboKeyboard.setCurrentIndex(index)
         # All services
         self.comboHeadStart.clear()
-        self.comboHeadStart.addItem(kdecore.i18n("None"), QtCore.QVariant(""))
         for package, label in self.iface.listServices():
             self.comboHeadStart.addItem(label, QtCore.QVariant(package))
         # Head start
@@ -103,9 +104,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.comboHeadStart.setCurrentIndex(index)
         # Console
         self.spinTTY.setValue(self.iface.getTTYs())
-        # Time zones
-        self.comboTimeZone.clear()
-        # TODO: Get time zones
         # Clock
         is_utc, adjust = self.iface.getClock()
         if is_utc:
@@ -116,17 +114,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.checkClockAdjust.setCheckState(QtCore.Qt.Checked)
         else:
             self.checkClockAdjust.setCheckState(QtCore.Qt.Unchecked)
-
-    def buildKeymaps(self, language):
-        # All keyboard maps
-        self.comboKeyboard.clear()
-        for code, label in self.iface.listKeymaps(language):
-            self.comboKeyboard.addItem(label, QtCore.QVariant(code))
-        # Selected keyboard map
-        keymap = QtCore.QVariant(self.iface.getKeymap())
-        index = self.comboKeyboard.findData(keymap)
-        if index != -1:
-            self.comboKeyboard.setCurrentIndex(index)
 
     def saveItems(self):
         # Language
