@@ -217,5 +217,7 @@ if __name__ == "__main__":
     app =  kdeui.KApplication()
     kaptan = Kaptan()
     kaptan.show()
+    rect  = QtGui.QDesktopWidget().screenGeometry()
+    kaptan.move(rect.width()/2 - kaptan.width()/2, rect.height()/2 - kaptan.height()/2)
     app.exec_()
 
