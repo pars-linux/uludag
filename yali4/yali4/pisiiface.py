@@ -111,6 +111,11 @@ def getExtraLangs():
 
     return getPackages(index, "locale")
 
+def get_not_needed_langs():
+    return map(lambda x: os.path.join(consts.source_dir, 'repo', x.split(',')[0]), \
+        filter(lambda x: x.split(',')[1].startswith(consts.lang) or \
+                         x.split(',')[1].startswith("en"), getExtraLangs()))
+
 def getHistory(limit=50):
     pdb = pisi.db.historydb.HistoryDB()
     result = []
@@ -130,11 +135,6 @@ def install(pkg_name_list):
 
 def install_all():
     install(get_available())
-
-def get_not_needed_langs():
-    return map(lambda x: os.path.join(consts.source_dir, 'repo', x.split(',')[0]), \
-        filter(lambda x: not x.split(',')[1].startswith(consts.lang) or \
-                         not x.split(',')[1].startswith("en"), getExtraLangs()))
 
 def get_all_with_paths(use_sort_file=False):
     packages = []
