@@ -67,14 +67,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             # Get all files in the wallpaper's directory
             l = os.listdir(os.path.join(os.path.split(str(desktopFiles))[0], "contents/images"))
 
-            # Get the (Wide || Square) wallpaper with the highest available resolution
-            if float(rect.width())/float(rect.height()) >=  1.6:
-                self.screenRes = "x".join(sorted(filter(isWide, [os.path.splitext(x)[0].split("x") for x in l]))[-1])
-            else:
-                self.screenRes = "x".join(sorted(filter(isSquare, [os.path.splitext(x)[0].split("x") for x in l]))[-1])
-
-            # Get wallpaper's path and thumbnail. Note that the thumbnail should be located at @wallpaper/contents/screenshot.png
-            #wallpaperFile = glob.glob(os.path.join(os.path.split(str(desktopFiles))[0], "contents/images", self.screenRes + ".*"))[0]
             wallpaperFile = os.path.split(str(desktopFiles))[0]
             wallpaperThumb = os.path.join(os.path.split(str(desktopFiles))[0], "contents/screenshot.png")
 
