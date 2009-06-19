@@ -1,10 +1,12 @@
 <PardusmanProject type="install" media="cd" compression="GZIP">
     <Title>Pardus 2009 Beta</Title>
     <WorkDir>/tmp/iso</WorkDir>
+    <ReleaseFiles>/tmp/pardusman/release-notes/</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>desktop.kde.admin</SelectedComponent>
+        <SelectedPackage>zemberek-openoffice</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
