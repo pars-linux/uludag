@@ -27,11 +27,13 @@ QStackedWidget#mainStack {
 QTextBrowser#helpContent {
      border-style: solid;
      border-width: 2px;
-     border-top-left-radius:8px;
-     border-bottom-left-radius:8px;
-     border-color: #F4AF2A;
+     border-top-left-radius:12px;
+     border-bottom-left-radius:12px;
+     border-color: #744154;
      border-right:none;
-     background-image:url(':/gui/pics/trans.png');
+     background-image:url(':/gui/pics/helpback.png');
+     background-color: #744154;
+     background-repeat:none;
      padding:5px;
      padding-left:12px;
      padding-top:12px;
