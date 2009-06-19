@@ -2,7 +2,7 @@
 /* Gökmen GÖKSEL <gokmen@pardus.org.tr> */
 
 #Yali {
-       background-image:url(':/images/background.svg');
+       background-image:url(':/images/background-2009.png');
        background-repeat: no-repeat;
        background-position: center top;
        background-color: rgb(26,26,26);

@@ -1,8 +1,8 @@
 QWidget#Yali {
-       background-image:url(':/images/background-2009.svg');
+       background-image:url(':/images/background-2009.png');
        background-repeat: no-repeat;
        background-position: center top;
-       background-color: #5A2848;
+       background-color: #562032;
        alternate-background-color: gray;
        selection-background-color: gray;
 }
@@ -41,7 +41,7 @@ QTextBrowser#helpContent {
 }
 
 QDialog {
-        color: #5A2848;
+        color: #562032;
         background-image: url(:/images/background-dialog.png);
         background-repeat: no-repeat;
         background-position: bottom center;
@@ -57,7 +57,7 @@ QGroupBox {
 }
 
 QPushButton {
-        color: #5A2848;
+        color: #562032;
         border-image: url(:/images/button100x32.png) 3 10 3 10;
         border-top: 3px transparent;
         border-bottom: 3px transparent;
@@ -68,7 +68,7 @@ QPushButton {
 }
 
 QPushButton::hover {
-        color: #5A2848;
+        color: #562032;
         border-image: url(:/images/button-hover100x32.png) 3 10 3 10;
         border-top: 3px transparent;
         border-bottom: 3px transparent;
@@ -79,7 +79,7 @@ QPushButton::hover {
 }
 
 QPushButton::pressed {
-        color: #5A2848;
+        color: #562032;
         border-image: url(:/images/button-pressed100x32.png) 3 10 3 10;
         border-top: 3px transparent;
         border-bottom: 3px transparent;
@@ -147,13 +147,13 @@ QComboBox {
         border-radius: 4px;
         padding: 1px 18px 1px 3px;
         min-width: 6em;
-        color: #5A2848;
+        color: #562032;
 }
 
 QComboBox:editable {
         border-radius: 4px;
         border: 1px solid #6b6b6b;
-        color: #5A2848;
+        color: #562032;
         background: #eeeeee;
         selection-background-color: #0057ae;
 }
@@ -217,13 +217,13 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
 
 /* The popup of the QComboBox */
 QComboBox QAbstractItemView {
-       color: #5A2848;
+       color: #562032;
        selection-background-color: gray;
        background: #eeeeee;
 }
 
 QLineEdit {
-       color: #5A2848;
+       color: #562032;
        border: 1px solid #6b6b6b;
        border-radius: 4px;
        padding: 0 2px;
@@ -232,7 +232,7 @@ QLineEdit {
 }
 
 QLineEdit:hover {
-       color: #5A2848;
+       color: #562032;
        border: 1px solid #808080;
        border-radius: 4px;
        padding: 0 2px;
@@ -250,7 +250,7 @@ QLineEdit:disabled {
 }
 
 QSpinBox {
-        color: #5A2848;
+        color: #562032;
         padding-right: 15px; /* make room for the arrows */
         border: 1px solid #6b6b6b;
         border-radius: 4px;
@@ -259,7 +259,7 @@ QSpinBox {
 }
 
 QSpinBox:hover {
-        color: #5A2848;
+        color: #562032;
         padding-right: 15px; /* make room for the arrows */
         border: 1px solid #808080;
         border-radius: 4px;
@@ -308,7 +308,7 @@ QSpinBox::down-button:hover {
 
 QTextEdit, QListView {
         color: #eeeeee;
-        background-color: #5A2848;
+        background-color: #562032;
         border: 1px solid #6b6b6b;
         border-radius: 4px;
         alternate-background-color: #222222;
@@ -316,7 +316,7 @@ QTextEdit, QListView {
 }
 
 QTreeView {
-        color: #5A2848;
+        color: #562032;
         background-color: #eeeeee;
         border: 1px solid #6b6b6b;
         border-radius: 4px;
@@ -359,7 +359,7 @@ QProgressBar {
         border: 1px solid #6b6b6b;
         border-radius: 4px;
         text-align: center;
-        color: #5A2848;
+        color: #562032;
         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                         stop: 0 #ffffff, stop: 0.4 #eeeeee, stop: 1 #eeeeee);
 }
@@ -367,7 +367,7 @@ QProgressBar {
 QProgressBar:chunk {
         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                         stop: 0 #693B59, stop: 1 #B7A2B0);
-        border: 2px solid #5A2848;
+        border: 2px solid #562032;
         border-radius: 2px;
         margin: 2px;
 }
