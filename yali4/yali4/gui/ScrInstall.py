@@ -115,7 +115,6 @@ Have fun!
         self.pkg_installer = PkgInstaller()
         ctx.debugger.log("Calling PkgInstaller.start...")
         self.pkg_installer.start()
-        # FIXME Knight Rider
         ctx.yali.info.updateAndShow(_("Packages are being installed.."))
 
         ctx.mainScreen.disableNext()
@@ -188,7 +187,6 @@ Have fun!
         # run dbus in chroot
         yali4.sysutils.chroot_dbus()
 
-        # FIXME Knight Rider
         ctx.yali.info.updateMessage(_("Configuring packages.."))
 
         # start configurator thread
