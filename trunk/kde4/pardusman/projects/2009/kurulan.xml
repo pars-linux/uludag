@@ -82,6 +82,7 @@
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
+        <SelectedPackage>sound-theme-pardus</SelectedPackage>
         <SelectedPackage>skanlite</SelectedPackage>
         <SelectedPackage>setserial</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
@@ -155,7 +156,6 @@
         <SelectedPackage>kdenetwork</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
         <SelectedPackage>kdebluetooth</SelectedPackage>
-        <SelectedPackage>kdebase-sounds</SelectedPackage>
         <SelectedPackage>kdebase-emoticons</SelectedPackage>
         <SelectedPackage>kdeartwork-styles</SelectedPackage>
         <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
