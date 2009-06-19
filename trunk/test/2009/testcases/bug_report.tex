@@ -75,14 +75,15 @@
 		\begin{verbatim}
 		lspci -nn > lspci.txt
 		dmesg > dmesg.txt
+		lsmod > lsmod.txt
 		\end{verbatim}
 		\item If the computer or the keyboard was not lock, you can take the log from 
 		\begin{verbatim}
-		cat /var/log/Xorg.0
+		cat /var/log/Xorg.0.log
 		\end{verbatim}
 		\item If not, restart your computer and open it in vesa mode and take the log from
 		\begin{verbatim}
-		cat /var/log/Xorg.conf.old
+		cat /var/log/Xorg.conf.log.old
 		\end{verbatim}
 
 		For all outputs, if X crashed, you can take the outputs of these command with the below procedure.
@@ -103,6 +104,12 @@
 		\end{itemize}
 	\end{itemize}
 	\item For Pardus specific application bugs:
+	
+	All Pardus specific applications need:
+	\begin{verbatim}
+	cat /var/log/comar3/trace.log 
+	\end{verbatim}
+
 	\begin{itemize}
 		\item For network-manager:
 			\begin{verbatim}
@@ -138,16 +145,21 @@
 			\end{verbatim}
 	\end{itemize}
 	\item  For camera devices:
-	
+		
 		The outputs of these commands shoud be attached:
 		\begin{verbatim}
+		dmesg > dmesg.txt
+		cat /var/log/syslog > syslog.txt
 		lsusb > lsusb.txt
-		test-webcam > webcame.txt
+		test-webcam > webcame.txt (Please close all applications use camera device before execute test-webcam.)
 		\end{verbatim}
 	\item  For audio devices:
 
 		The outputs of these commands shoud be attached:
 		\begin{verbatim}
+		ps axu|grep pulse > pulse.txt
+		dmesg > dmesg.txt
+		cat /var/log/syslog > syslog.txt
 		cat /proc/asound/cards
 		cat /proc/asound/*/codec*
 		\end{verbatim}
