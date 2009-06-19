@@ -28,7 +28,7 @@
   * Depolar aktif/deaktif yapılabilsin (+)
   * DVD/USB çubuğu depo içeriği algılansın, soru sorulup öncelikli depo olarak eklensin (-)
   * Kurulum sonunda uygulama çalıştırma listesi çıksın (+)
-  * Paketler hangi depodan kurulmuş bilgisi (-)
+  * Paket yöneticisi arayüzünde paketlerin hangi depoya ait olduğu gösterilsin (-)
   * Güncellemeler arkada otomatik yapılabilsin (-)
   * "Service restart", "System reboot" sorguları (-)
   * Güncelleme çeşitleri gösterilsin [security, critical, bug, enhancement,...] (-)
