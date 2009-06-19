@@ -28,6 +28,10 @@ QStackedWidget#mainStack {
 }
 */
 
+QScrollArea::corner {
+        background-color: rgba(255, 255, 255, 0);
+}
+
 QTextBrowser#helpContent {
      border-style: solid;
      border-width: 2px;
