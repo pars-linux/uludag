@@ -88,8 +88,11 @@ class PackageDelegate(QtGui.QItemDelegate):
         description = index.model().data(index, DescriptionRole)
         version = index.model().data(index, VersionRole)
 
+        foregroundColor = option.palette.color(QtGui.QPalette.Text)
         normalFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 10, QtGui.QFont.Normal)
         boldFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 10, QtGui.QFont.Bold)
+
+        p.setPen(foregroundColor)
 
         # Package Name
         p.setFont(boldFont)
