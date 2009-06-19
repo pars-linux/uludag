@@ -86,12 +86,12 @@ class PackageDelegate(QtGui.QItemDelegate):
         title = index.model().data(index, Qt.DisplayRole)
         summary = index.model().data(index, SummaryRole)
         description = index.model().data(index, DescriptionRole)
-        repository = index.model().data(index, RepositoryRole)
-        version = index.model().data(index, VersionRole)
 
         foregroundColor = option.palette.color(QtGui.QPalette.Text)
         normalFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 10, QtGui.QFont.Normal)
         boldFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 10, QtGui.QFont.Bold)
+        normalDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Normal)
+        boldDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Bold)
 
         p.setPen(foregroundColor)
 
@@ -103,35 +103,37 @@ class PackageDelegate(QtGui.QItemDelegate):
         p.setFont(normalFont)
         p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextWordWrap, summary.toString())
 
-        normalDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Normal)
-        boldDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Bold)
+        if self.rowAnimator.currentRow() == index.row():
 
-        # Package Detail Label
-        position = top + ROW_HEIGHT + ICON_SIZE
+            repository = index.model().data(index, RepositoryRole)
+            version = index.model().data(index, VersionRole)
 
-        p.setFont(boldDetailFont)
-        p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Açıklama:"))
+            # Package Detail Label
+            position = top + ROW_HEIGHT + ICON_SIZE
 
-        p.setFont(normalDetailFont)
-        p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, description.toString())
+            p.setFont(boldDetailFont)
+            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Açıklama:"))
 
-        # Package Detail Version
-        position += DETAIL_LINE_OFFSET
+            p.setFont(normalDetailFont)
+            p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, description.toString())
 
-        p.setFont(boldDetailFont)
-        p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Sürüm:"))
+            # Package Detail Version
+            position += DETAIL_LINE_OFFSET
 
-        p.setFont(normalDetailFont)
-        p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, version.toString())
+            p.setFont(boldDetailFont)
+            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Sürüm:"))
 
-        # Package Detail Repository
-        position += DETAIL_LINE_OFFSET
+            p.setFont(normalDetailFont)
+            p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, version.toString())
 
-        p.setFont(boldDetailFont)
-        p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Depo:"))
+            # Package Detail Repository
+            position += DETAIL_LINE_OFFSET
 
-        p.setFont(normalDetailFont)
-        p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, repository.toString())
+            p.setFont(boldDetailFont)
+            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Depo:"))
+
+            p.setFont(normalDetailFont)
+            p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, repository.toString())
 
         p.end()
         painter.drawPixmap(option.rect.topLeft(), pixmap)
