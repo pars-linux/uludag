@@ -133,6 +133,12 @@ Click Next button to proceed.
 
     def execute(self):
         # reset and fill pending_users
+        yali4.users.reset_pending_users()
+        for i in range(self.ui.userList.count()):
+            u = self.ui.userList.item(i).getUser()
+            ctx.installData.users.append(u)
+            yali4.users.pending_users.append(u)
+
         if self.ui.userList.count() > 0:
             return True
         if not self.slotCreateUser():
@@ -140,12 +146,6 @@ Click Next button to proceed.
             return True
 
         ctx.installData.autoLoginUser = str(self.ui.autoLogin.currentText())
-        yali4.users.reset_pending_users()
-        for i in range(self.ui.userList.count()):
-            u = self.ui.userList.item(i).getUser()
-            ctx.installData.users.append(u)
-            yali4.users.pending_users.append(u)
-
         return True
 
     def checkCapsLock(self):
