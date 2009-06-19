@@ -283,6 +283,7 @@ Here you can see your install options and look at them again before installation
             for dev in yali4.storage.devices:
                 ctx.mainScreen.processEvents()
                 if dev._needs_commit:
+                    ctx.debugger.log("Parted Device.commit() calling ...")
                     dev.commit()
             # wait for udev to create device nodes
             time.sleep(2)
