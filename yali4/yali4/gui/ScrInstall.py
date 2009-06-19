@@ -115,7 +115,7 @@ Have fun!
         self.pkg_installer = PkgInstaller()
         ctx.debugger.log("Calling PkgInstaller.start...")
         self.pkg_installer.start()
-        ctx.yali.info.updateAndShow(_("Packages are being installed.."))
+        ctx.yali.info.updateAndShow(_("Packages are being installed.."), spinner = True)
 
         ctx.mainScreen.disableNext()
         ctx.mainScreen.disableBack()
@@ -187,7 +187,7 @@ Have fun!
         # run dbus in chroot
         yali4.sysutils.chroot_dbus()
 
-        ctx.yali.info.updateMessage(_("Configuring packages.."))
+        ctx.yali.info.updateMessage(_("Configuring packages.."), spinner = True)
 
         # start configurator thread
         self.pkg_configurator = PkgConfigurator()
