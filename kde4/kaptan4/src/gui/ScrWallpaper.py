@@ -102,7 +102,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.ui.listWallpaper.setDisabled(False)
 
     def setWallpaper(self):
-        self.__class__.screenSettings["selectedWallpaper"] =  self.ui.listWallpaper.currentItem().statusTip()
+        self.__class__.screenSettings["selectedWallpaper"] =  os.path.basename(str(self.ui.listWallpaper.currentItem().statusTip()))
         self.__class__.screenSettings["hasChanged"] = True
 
         selectedWallpaper = self.ui.listWallpaper.currentItem().statusTip()
