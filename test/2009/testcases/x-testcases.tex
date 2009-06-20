@@ -1,6 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 %opening
-\title{X Test Cases}
+\title{X Server Test Cases}
 \author{Semen Cirit}
 
 \begin{document}
@@ -13,7 +13,7 @@
 \begin{enumerate}
   \item Testing direct rendering
     \begin{enumerate}
-    \item  Push $Ctrl+Alt+F1$
+    \item  Hit $Ctrl+Alt+F1$
 
 	    Observe that X doesn't crash.
     \item  Then execute this command:
@@ -21,25 +21,25 @@
 	  xinit -- :2
 	  \end{verbatim}
 	  Observe a Grey desktop, and X for the mouse cursor and a term window.
-    \item Get back with pushing $Ctrl+Alt+F7$
+    \item Hit $Ctrl+Alt+F7$ to get back to the graphical environment:
     
 	  Observe that X doesn't crash.
-    \item Type commands "glxgears" and then "gleaxgears -fullscrean".
+    \item Type commands "glxgears" and then "glxgears -fullscreen".
 
 	  Observe that they run without any problem.
     \end{enumerate}
 
   \item DPI testing
     
-        Run open office writer and open a A4 paper with 100\% zoom. Take also a real A4 papper.
+        Run openoffice writer and open an A4 paper with 100\% zoom. Take also a real A4 paper.
 
-        Observe that the width and the height of the real A4 are same with the open office writer's.
+        Observe that the width and the height of the real A4 are same with the open office writer's one.
   \item Resolution testing
      \begin{enumerate}
-      \item Open system settings $\rightarrow$ Display
+      \item Open systemsettings $\rightarrow$ Display
 
 	Observe that the default resolution of the computer is selected for the current resolution.
-      \item You can observe it from also, typing command "xrandr". 
+      \item You can also observe it from the output of the "xrandr" command
 	  
 	  The example output of the command is like:
 	  
@@ -75,6 +75,6 @@
 
     Run from kmenu education $\rightarrow$ science $\rightarrow$ marble
 	
-    Observe that the application apparition is problem-free
-\end{enumerate}
+    Observe that the application is working flawlessly in terms of graphical rendering.
+    \end{enumerate}
 \end{document}
