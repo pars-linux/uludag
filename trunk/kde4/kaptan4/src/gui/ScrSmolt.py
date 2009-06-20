@@ -24,6 +24,9 @@ sys.path.append('/usr/share/smolt/client')
 import smolt
 
 class Widget(QtGui.QWidget, ScreenWidget):
+    screenSettings = {}
+    screenSettings["profileSend"] = False
+
     title = kdecore.ki18n("Smolt")
     desc = kdecore.ki18n("Smolt Description")
 
@@ -60,7 +63,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             row = row + 1
 
     def setTableWidget(self):
-        ''' Specifys te tableWidget properties '''
+        ''' Specify the tableWidget properties '''
 
         colLabel = kdecore.ki18n("Label").toString()
         colData = kdecore.ki18n("Data").toString()
@@ -82,7 +85,13 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def actions(self):
         QtCore.QObject.connect(self.ui.privacyButton, QtCore.SIGNAL("clicked()"), self.changePage)
+        QtCore.QObject.connect(self.ui.checkBox, QtCore.SIGNAL("stateChanged(int)"), self.activateSend)
 
+    def activateSend(self, state):
+        if state:
+            self.__class__.screenSettings["profileSend"] = True
+        else:
+            self.__class__.screenSettings["profileSend"] = False
 
     def setRowColor(self, widget, tableItem):
         ''' Set row background to two colors consecutively like KTableWidget does '''
@@ -123,7 +132,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
                                       kdecore.i18n("SELinux Enforce") ]
 
         return self.sendable_host_labels
-
 
     def shown(self):
         pass
