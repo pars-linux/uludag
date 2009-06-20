@@ -11,7 +11,7 @@
 
 \begin{itemize}
  
-  	\item \subsection*{A smooth bug report is so valuable for its develpor or maintainer. Therefore, the first thing, you should read the informations of this webpage very carefully:}
+  	\item \subsection*{A smooth bug report is so valuable for its developer or maintainer. Therefore, the first thing, you should read the informations on this document very carefully:}
 	\begin{verbatim} 
  	http://bugs.pardus.org.tr/page.cgi?id=bug-writing.html#why
 	\end{verbatim}
@@ -40,62 +40,57 @@
 	\begin{verbatim}
 	http://bugs.pardus.org.tr/show_bug.cgi?id=10043
 	\end{verbatim}
-	\item And also if you solved the problem you can add the related patch to your bug.
+	\item And also don't forget to propose your solution/patch  If you solved the problem.
 
-  	\item And also one additional thing, if you don't know the erroneous product exactly, you can find it with this command
+  	\item If you can't figure out to which product you have to assign the bug but know the name of the application, you can find it with the following command:
 	\begin{verbatim}
-	pisi sf `which <variable>`
+	pisi sf `which <filename>`
 	\end{verbatim}
-	The variable can be any related file about the product. For example a bin file, a library file.
+	The filename is the name of the file(a configuration file, a library, an executable application, etc.) which seems problematic to you.
 
-	For our example the effects can be configured from system settings. But there is no product about system settings so we can use the its binary file. So the command:
+	Let's assume that the systemsettings application crashes when trying to switch the color scheme but you don't know which package actually ships systemsettings. Just type the command below to find it out:
 	\begin{verbatim}
 	pisi sf `which systemsettings`
+	Searching for /usr/kde/4/bin/systemsettings
+	Package kdebase-workspace has file usr/kde/4/bin/systemsettings
 	\end{verbatim}
+	So this means that, the bug should be assigned to the kdebase-workspace package.
 
-	And the output:
+  \item \subsection*{The attachments are also important for developers in order to completely understand the problem:}
+
+	Attention: You have to switch to the root user in order to correctly execute some of the commands below. Type the following command and enter your root password:
 	\begin{verbatim}
-	/usr/kde/4/bin/systemsettings file searching
-	kdebase-workspace paketi içinde usr/kde/4/bin/systemsettings file is find.
-	\end{verbatim}
-	So this means, the bug is for the kdebase-workspace package.
-
-  \item \subsection*{The attachments are also important for developers in order to understand the bug:}
-
-	!!!For some commands you have to be root
-	Execute this command try to be root enter your root password:
-	\begin{verbatim}
-	 su
+	 su -
 	\end{verbatim}
 
 	\begin{enumerate}
-	\item For X bugs:
+	\item For X server related bugs:
 	\begin{itemize}
-		\item The outputs of these commands shoud be attached.
+		\item The outputs of the following commands shoud be attached:
 		\begin{verbatim}
 		lspci -nn > lspci.txt
 		dmesg > dmesg.txt
 		lsmod > lsmod.txt
 		\end{verbatim}
-		\item If the computer or the keyboard was not lock, you can take the log from 
+		\item If the computer or the keyboard is still alive, it's really useful to also grab the X server logs:
 		\begin{verbatim}
-		cat /var/log/Xorg.0.log
+		cat /var/log/Xorg.0.log > xserver.txt
 		\end{verbatim}
-		\item If not, restart your computer and open it in vesa mode and take the log from
+		\item If not, restart your computer and open it in vesa mode and take the log from:
 		\begin{verbatim}
-		cat /var/log/Xorg.conf.log.old
+		cat /var/log/Xorg.0.log.old
 		\end{verbatim}
 
 		For all outputs, if X crashed, you can take the outputs of these command with the below procedure.
 		\begin{itemize}
 			\item Plug an usb stick to the computer.
-			\item Mount it manually.	
+			\item Mount it manually.
 				\begin{verbatim}
     				mount /dev/<your_usb_stick_partition> /mnt/flash
 				\end{verbatim}
-			\item Copy the outputs to /mnt/flash	
+			\item Copy the outputs to /mnt/flash
 				\begin{verbatim}
-     				cp <output> /mnt/flash	
+     				cp <output> /mnt/flash
 				\end{verbatim}
 			\item Unmount it manually.
 				\begin{verbatim}
@@ -103,32 +98,32 @@
 				\end{verbatim}
 		\end{itemize}
 	\end{itemize}
-	\item For Pardus specific application bugs:
+	\item For Pardus specific applications' bugs:
 	
-	All Pardus specific applications need:
+	COMAR's log file is really helping in a lot of situations:
 	\begin{verbatim}
-	cat /var/log/comar3/trace.log 
+	cat /var/log/comar3/trace.log > comar.txt
 	\end{verbatim}
 
 	\begin{itemize}
 		\item For network-manager:
 			\begin{verbatim}
-			lspci > lspci.txt
+			lspci -nn > lspci.txt
 			\end{verbatim}
 			\begin{itemize}
-  			\item If the problem is about ethernet.
+  			\item Ethernet specific problems:
 				\begin{verbatim}
     				ifconfig -a > ifconfig.txt
 				\end{verbatim}
-  			\item If the problem is about ethernet.
+  			\item Wireless specific problems:
 				\begin{verbatim}
     				iwconfig > iwconfig.txt
 				\end{verbatim}
 			\end{itemize}
 		\item For disk-manager:
 			\begin{verbatim}
-		    	fdisk -l >fdisk.txt
-    			cat /etc/fstab
+		    	fdisk -l > fdisk.txt
+    			cat /etc/fstab > fstab.txt
 			\end{verbatim}
 		\item For service-manager:
 			\begin{verbatim}
@@ -136,32 +131,28 @@
 			\end{verbatim}
 		\item For boot-manager:
 			\begin{verbatim}
-			cat /boot/grub/grub.conf
+			cat /boot/grub/grub.conf > grub.txt
 			\end{verbatim}
-		\item For boot-manager:
+		\item For firewall-manager:
 			\begin{verbatim}
 			service -N > service.txt
 			iptables > iptables.txt
 			\end{verbatim}
 	\end{itemize}
-	\item  For camera devices:
+	\item For camera/video device related problems:
 		
-		The outputs of these commands shoud be attached:
+		The outputs of these commands shoud be attached after closing all applications which may use the camera device:
 		\begin{verbatim}
 		dmesg > dmesg.txt
 		cat /var/log/syslog > syslog.txt
 		lsusb > lsusb.txt
-		test-webcam > webcame.txt (Please close all applications use camera device before execute test-webcam.)
+		test-webcam > webcam.txt
 		\end{verbatim}
-	\item  For audio devices:
+	\item For sound card related problems:
 
-		The outputs of these commands shoud be attached:
+		Run the following command as root user and write down the WWW link that it gives you at the end:
 		\begin{verbatim}
-		ps axu|grep pulse > pulse.txt
-		dmesg > dmesg.txt
-		cat /var/log/syslog > syslog.txt
-		cat /proc/asound/cards
-		cat /proc/asound/*/codec*
+        alsa-info
 		\end{verbatim}
 	\end{enumerate}
 \end{itemize}
