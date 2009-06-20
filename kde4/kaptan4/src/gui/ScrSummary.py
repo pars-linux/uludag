@@ -25,6 +25,13 @@ import gui.ScrWallpaper  as wallpaperWidget
 import gui.ScrStyle  as styleWidget
 import gui.ScrMenu  as menuWidget
 import gui.ScrSearch  as searchWidget
+import gui.ScrSmolt  as smoltWidget
+
+# Smolt related headers
+import sys
+sys.path.append('/usr/share/smolt/client')
+import smolt
+from urlparse import urljoin
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Welcome")
@@ -41,6 +48,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.menuSettings = menuWidget.Widget.screenSettings
         self.searchSettings = searchWidget.Widget.screenSettings
         self.styleSettings = styleWidget.Widget.screenSettings
+        self.smoltSettings = smoltWidget.Widget.screenSettings
 
         subject = "<p><li><b>%s</b></li><ul>"
         item    = "<li>%s</li>"
@@ -72,7 +80,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # Style Settings
         content.append(subject % ki18n("Style Settings").toString())
 
-        if self.styleSettings["hasChanged"] == False :
+        if self.styleSettings["hasChanged"] == False:
             content.append(item % ki18n("You haven't selected any style.").toString())
         else:
             content.append(item % ki18n("Selected Style: <b>%s</b>").toString() % self.styleSettings["summaryMessage"])
@@ -83,6 +91,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # Search Settings
         content.append(subject %ki18n("Search Settings").toString())
         content.append(item % ki18n("Desktop search: <b>%s</b>").toString() % self.searchSettings["summaryMessage"].toString())
+        content.append(end)
+
+        # Smolt Settings
+        content.append(subject %ki18n("Smolt Settings").toString())
+        content.append(item % ki18n("Smolt profile: <b>%s</b>").toString() % QVariant(self.smoltSettings["profileSend"]).toString())
         content.append(end)
 
         content.append("""</ul></body></html>""")
@@ -215,6 +228,15 @@ class Widget(QtGui.QWidget, ScreenWidget):
             session = dbus.SessionBus()
             proxy = session.get_object('org.kde.kwin', '/KWin')
             proxy.reconfigure()
+
+        # Smolt Settings
+        if self.smoltSettings["profileSend"] == True:
+            profile = smolt.Hardware()
+            retvalue, pub_uuid, admin = profile.send(smoonURL=smolt.smoonURL)
+            url = urljoin(smolt.smoonURL, '/show?uuid=%s' % pub_uuid)
+            values = { "pub_uuid" : pub_uuid,
+                       "admin" : admin,
+                       "url" : url }
 
         if hasChanged == True:
             self.killPlasma()
