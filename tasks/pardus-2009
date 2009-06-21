@@ -212,3 +212,9 @@
   * Live CD ile gelecek klavye ayarları (-)
   * Paket yöneticisi ayarları (/90)
 
+* Thunderbird (Pınar Yanardağ)
+  * 3.x için tarball oluşturma betiği hazırlanması (-)
+  * Pardus 2009 için 3.0b2 sürümüne yükseltilmesi (/80)
+  * Patch'lerin 3.x serisi için port edilmesi (-)
+  * 3.0b2den sonr yapılan değişikliklerden gerekenlerin alınması (-)
+
