@@ -28,6 +28,7 @@ class Hardware(object):
                          "CPU Informations", \
                          "PCI Devices", \
                          "USB Devices", \
+                         "Driver Informations", \
                          "Sound Devices", \
                          "Printing Informations", \
                          "X11 Server Informations", \
@@ -51,23 +52,33 @@ class Hardware(object):
 
     def __gather_output(self, cmd, params=[]):
         """Capture the output of cmd and return it as a string."""
-        return os.popen("%s %s" % (cmd, " ".join(params))).read().strip()
+        return os.popen("%s %s" % (cmd, " ".join(params))).read().rstrip()
 
 
     def __format_msg(self, msg, sep, up=False):
         """Return the msg + len(msg)*'-' for pretty printing."""
-        m = "%s\n%s\n\n" % (msg, (sep*len(msg)))
+        m = "%s\n%s\n" % (msg, (sep*len(msg)))
         if up:
-            m = "%s\n%s" % (sep*len(msg), m)
+            m = "%s\n%s\n" % (sep*len(msg), m)
 
         return m
 
     def __format_section(self, d):
         section = ""
         if d:
-            max_section_name = max([len(k) for k in d.keys()])
-            for k in d.keys():#sorted(d.keys(), cmp=lambda x,y: len(y)-len(x)):
-                section += "%s%s : %s\n" % (k, ((max_section_name-len(k))*' '), d[k])
+            if isinstance(d, str):
+                # Directly dump it
+                section += "%s\n" % d
+            elif isinstance(d, dict):
+                max_section_name = max([len(k) for k in d.keys()])
+                for k in [_k[0] for _k in sorted(d.items(), key=lambda x: x[1], cmp=lambda x,y: len(str(x))-len(str(y)))]:
+                    if not d[k]:
+                        section += "%s\n" % k
+                    elif isinstance(d[k], str):
+                        section += "%s%s : %s\n" % (k, ((max_section_name-len(k))*' '), d[k])
+                    elif isinstance(d[k], list):
+                        section += "%s%s\n\t%s" % (k, ((max_section_name-len(k))*' '), "\n\t".join(d[k]))
+                        section += "\n"
         return section
 
     # Information collectors for each section
@@ -98,6 +109,36 @@ class Hardware(object):
 
         return d
 
+    def _get_driver_informations(self):
+        d = {}
+        probed_modules = [m.split()[0] for m in self.__gather_output("lsmod").split("\n")[1:]]
+        for m in probed_modules:
+            # Collect parameter informations about modules
+            d[m] = []
+            try:
+                for param in os.listdir("/sys/module/%s/parameters" % m):
+                    try:
+                        d[m].append("%s -> %s" % (param, open("/sys/module/%s/parameters/%s" % (m, param)).read().strip()))
+                    except IOError:
+                        # Can't read it, pass
+                        pass
+            except OSError:
+                # No parameters
+                pass
+
+        return d
+
+    def _get_pci_devices(self):
+        return self.__gather_output("lspci", ["-nn"])
+
+    def _get_usb_devices(self):
+        return self.__gather_output("lsusb")
+
+    def _get_disk_usage(self):
+        return self.__gather_output("df", ["-ahPT"])
+
+    def _get_memory_usage(self):
+        return self.__gather_output("free", ["-mt"])
 
     # Public methods
 
@@ -110,7 +151,7 @@ class Hardware(object):
         report += self.__format_msg("Hardware report generated on %s by donbili" % time.asctime(), '*', True)
 
         # Sections
-        for section in sorted(self.sections):
+        for section in self.sections:
             try:
                 info = getattr(globals()['hwdata'], self.layout[section])
             except Exception, e:
