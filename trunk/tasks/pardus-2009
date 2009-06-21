@@ -216,5 +216,14 @@
   * 3.x için tarball oluşturma betiği hazırlanması (-)
   * Pardus 2009 için 3.0b2 sürümüne yükseltilmesi (/80)
   * Patch'lerin 3.x serisi için port edilmesi (-)
-  * 3.0b2den sonr yapılan değişikliklerden gerekenlerin alınması (-)
+  * 3.0b2den sonra yapılan değişikliklerden gerekenlerin alınması (-)
+
+* Pardus Security Team (Pınar Yanardağ)
+  * vendor-sec'e uyelik (+)
+  * Pardus Security Team prosedürlerinin belirlenmesi (+)
+  * Pardus 2008 için risk raporu hazırlanması (/60)
+  * 2009 deposundaki tüm paketler için güvenlik güncellemelerinin gözden geçirilmesi (-)
+  * Pardus Security Handbook hazırlanması (-)
+  * Pardus Security Tracker kodlanması (e.g: http://security-tracker.debian.net) (-)
+  * security.pardus.org.tr arayuzune girilen plsa'larin listelere otomatik mail ile bildirilmesi (-)
 
