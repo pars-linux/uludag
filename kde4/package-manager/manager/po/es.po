@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-18 15:18+0300\n"
-"PO-Revision-Date: 2009-06-15 18:34-0400\n"
+"PO-Revision-Date: 2009-06-21 19:40-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -82,7 +82,7 @@ msgstr ""
 
 #: .tmp/progressdialog.py:77
 msgid "<b>Cancelling operation...</b>"
-msgstr ""
+msgstr "<b>Cancelando operación...</b>"
 
 #: .tmp/ui_appitem.py:52
 msgid "Application"
@@ -399,16 +399,14 @@ msgstr ""
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr ""
-"Dependencias de los paquetes seleccionados, que se actualizarán también:"
+msgstr "Dependencias de los paquetes seleccionados, que se actualizarán también:"
 
 #: .tmp/statemanager.py:125 .tmp/mainwindow.py:40 .tmp/mainwindow.py:45
 msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
 #: .tmp/statemanager.py:127
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actualmente <b>%1</b> paquetes seleccionados, con un tamaño total de <b>%2</"
 "b>"
@@ -417,13 +415,11 @@ msgstr ""
 # please check if necessary use "total" again ?? because THIS is additional..
 #: .tmp/statemanager.py:130
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr ""
-"y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
+msgstr "y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:132
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr ""
-"y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
+msgstr "y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:133
 msgid "in your basket."
@@ -575,3 +571,4 @@ msgstr ""
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
+
