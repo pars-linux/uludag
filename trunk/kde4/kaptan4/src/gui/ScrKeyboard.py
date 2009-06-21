@@ -21,6 +21,7 @@ import gui.ScrSummary  as summaryWidget
 from gui.ScreenWidget import ScreenWidget
 from gui.keyboardWidget import Ui_keyboardWidget
 
+from pardus import localedata
 
 class Widget(QtGui.QWidget, ScreenWidget):
     screenSettings = {}
@@ -34,6 +35,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_keyboardWidget()
         self.ui.setupUi(self)
+        self.ui.picKeyboard.setPixmap(QtGui.QPixmap(':/raw/pics/keyboards.png'))
+
+        for lang in localedata.languages:
+            for each in localedata.languages[lang].keymaps:
+                item = QtGui.QListWidgetItem(self.ui.listWidgetKeyboard)
+                self.ui.listWidgetKeyboard.addItem(each.name)
 
     def shown(self):
         pass

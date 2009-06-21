@@ -18,6 +18,7 @@ import gui.ScrStyle  as styleWidget
 import gui.ScrMenu  as menuWidget
 import gui.ScrSearch  as searchWidget
 import gui.ScrSummary  as summaryWidget
+import gui.ScrKeyboard  as keyboardWidget
 #import gui.ScrSmolt  as smoltWidget
 
 # waiting for pisi
@@ -28,7 +29,7 @@ class Kaptan(QtGui.QWidget):
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
+        self.screens = [welcomeWidget,keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
         self.screenData = None
         self.moveInc = 1
         self.menuText = ""
