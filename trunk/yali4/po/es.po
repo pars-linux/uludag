@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-19 11:26+0300\n"
-"PO-Revision-Date: 2009-06-17 21:29-0400\n"
+"PO-Revision-Date: 2009-06-21 19:36-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -29,14 +29,10 @@ msgid "Form"
 msgstr "Formulario"
 
 #: yali4/gui/Ui/autopartquestion.py:79
-#, fuzzy
 msgid ""
 "There appears to be more than one resizeable partition. You can select a "
 "partition from the list below or YALI will select one for you."
-msgstr ""
-"Aparentemente hay más de una partición para redimensionar. En este caso "
-"puede seleccionar una partición de la lista abajo o dejar que YALI "
-"seleccione una."
+msgstr "Aparentemente hay más de una partición con posibilidad para redimensionar. Puede seleccionar una partición de la lista abajo o dejar que YALI seleccione una."
 
 #: yali4/gui/Ui/autopartquestion.py:80 yali4/gui/Ui/connectionlist.py:72
 #: yali4/gui/Ui/dialog.py:60
@@ -44,9 +40,8 @@ msgid "X"
 msgstr "X"
 
 #: yali4/gui/Ui/autopartquestion.py:81
-#, fuzzy
 msgid "Automatically choose the partition to resize (recommended)"
-msgstr "Elija Usted el destino óptimo a redimensionar (recomendado)"
+msgstr "Elegir partición a redimensionar automáticamente (recomendado)"
 
 #: yali4/gui/Ui/autopartquestion.py:82
 msgid "I will choose the target"
@@ -67,7 +62,6 @@ msgid "Form1"
 msgstr "Form1"
 
 #: yali4/gui/Ui/autopartwidget.py:110
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -90,16 +84,15 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Seleccione el método de "
+"\" font-size:12pt; font-weight:600;\">Método de "
 "particionamiento:</span></p></body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:115
-#, fuzzy
 msgid ""
 "Please choose a partitioning method and then a device to partition."
 "<br>Device list will be updated based on the selected method."
 msgstr ""
-"Aquí puede elegir el método de particionamiento, y luego un dispositivo "
+"Por favor elija un método de particionamiento, y luego un dispositivo "
 "donde se aplicará. <br>La lista de dispositivos se actualizará según el "
 "método seleccionado."
 
@@ -108,41 +101,35 @@ msgid "Automatic"
 msgstr "Automático"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-#, fuzzy
 msgid ""
 "This option will try to find free disk space of suitable size. If no such "
 "disk space exists, it will look for resizable partitions"
-msgstr ""
-"Esta opción intentará encontrar espacio adecuado disponible, o particiones "
-"que se puedan redimensionar"
+msgstr "Esta opción intentará encontrar espacio de tamaño suficiente disponible. Si no existe un espacio adecuado, intentará encontrar particiones que se puedan redimensionar"
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
 msgstr "Intentará usar el espacio libre o redimensionar particiones existentes"
 
 #: yali4/gui/Ui/autopartwidget.py:119
-#, fuzzy
 msgid ""
 "This option will erase the entire disk. All the data on the disk will be "
 "lost."
-msgstr ""
-"Esta opción utilizará el disco entero. Se eliminará el contenido de todo el "
-"disco y los datos actualmente almacenados se perderán !"
+msgstr "Esta opción eliminará el contenido del disco entero. Todos los datos actualmente almacenados se perderán !"
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
 msgstr "Eliminar todas las particiones"
 
 #: yali4/gui/Ui/autopartwidget.py:121
+# favor revisar, la ultima parte
 msgid "This option allows partitioning the disk to your wishes."
-msgstr ""
+msgstr "Esta opción le permite realizar el particionamiento acorde a sus deseos."
 
 #: yali4/gui/Ui/autopartwidget.py:122
 msgid "No, I'll partition my disk manually."
 msgstr "No, particionar manualmente."
 
 #: yali4/gui/Ui/autopartwidget.py:123
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -164,15 +151,13 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Seleccione el método de "
-"particionamiento:</span></p></body></html>"
+"\" font-size:12pt; font-weight:600;\">Selección de Disco</span></p></body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:128
 msgid "&nbsp;"
 msgstr ""
 
 #: yali4/gui/Ui/bootloaderwidget.py:76
-#, fuzzy
 msgid ""
 "<b>Write boot loader (GRUB) to the master boot record?</b>\n"
 "\n"
@@ -184,36 +169,29 @@ msgid ""
 msgstr ""
 "<b>Desea instalar el cargador de arranque (GRUB) en el MBR del disco ?</b>\n"
 "\n"
-"<p>Se necesita un cargador de arranque para iniciar Pardus.</p>\n"
+"<p>Se necesita un cargador de arranque para iniciar su sistema.</p>\n"
 "\n"
 "<p>Si no instala un cargador de arranque o elige su instalación a la "
 "partición raíz (/), tendrá que configurar el cargador de sistema ya "
-"instalado (si tiene uno) para poder iniciar\n"
+"instalado (si tiene uno) para poder iniciar"
 " la nueva instalación de Pardus.</p>"
 
 #: yali4/gui/Ui/bootloaderwidget.py:81 yali4/gui/Ui/rescuegrubwidget.py:76
-#, fuzzy
 msgid "Select target to install boot loader"
-msgstr "Seleccione el disco donde se instalará el cargador de arranque:"
+msgstr "Seleccione el destino para la instalación del cargador de arranque"
 
 # cual sería la mejor forma de expresar booteable
 #: yali4/gui/Ui/bootloaderwidget.py:82 yali4/gui/Ui/rescuegrubwidget.py:77
-#, fuzzy
 msgid "First bootable disk (recommended)"
-msgstr "Instalar a primer disco apto para arranque (recomendado)"
+msgstr "Primer disco apto para arranque (recomendado)"
 
 #: yali4/gui/Ui/bootloaderwidget.py:83 yali4/gui/Ui/rescuegrubwidget.py:78
-#, fuzzy
 msgid "Pardus installed partition"
-msgstr "Instalar a partición raíz (/) de Pardus"
+msgstr "Partición raíz (/) de Pardus"
 
-# when writing the english you seemed very romantic ? ;)
-# should say "BELOW" in english !! - "belove" sounds funny
-# still funny in english.. ortography
 #: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:79
-#, fuzzy
 msgid "Selected disk below"
-msgstr "Instalar a disco seleccionado abajo"
+msgstr "Seleccione el disco abajo"
 
 #: yali4/gui/Ui/bootloaderwidget.py:85
 msgid "Don't install bootloader"
@@ -224,13 +202,12 @@ msgid "Automatically add other operating systems to the GRUB Menu"
 msgstr "Agregar automáticamente otros sistemas operativos al menú de GRUB"
 
 #: yali4/gui/Ui/checkcdwidget.py:81
-#, fuzzy
 msgid ""
 "You can check the integrity of the packages in installation CD. Although "
 "this is an optional step, we encourage you to do it in order to avoid any "
 "possible errors in the installation process."
 msgstr ""
-"Puede verificar la integridad de los paquetes en el CD de instalación. "
+"Ahora puede verificar la integridad de los paquetes en el CD de instalación. "
 "Aunque es una operación opcional, lo recomendamos para evitar errores "
 "durante la instalación."
 
@@ -240,13 +217,12 @@ msgid "Check CD Integrity"
 msgstr "Verificar integridad de CD"
 
 #: yali4/gui/Ui/connectionlist.py:71
-#, fuzzy
 msgid ""
 "To use PiSi History support, you may need to be online. You can use a "
 "connection profile from the list below."
 msgstr ""
 "Para el soporte del histórico de instalaciones PISI puede ser necesario una "
-"conexión a internet. Puede elegir uno de los perfiles de conexión de la lista"
+"conexión a internet. Puede elegir uno de los perfiles de conexión de la lista abajo."
 
 #: yali4/gui/Ui/connectionlist.py:73
 msgid "Connect"
@@ -291,7 +267,6 @@ msgstr "Error"
 
 # favor revisar, como se traduce bien backtrace ?
 #: yali4/gui/Ui/exception.py:61
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -313,10 +288,8 @@ msgstr ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Por favor ingrese un "
-"reporte de falla por este problema; en <span style=\" font-weight:600;"
-"\">http://bugs.pardus.org.tr </span>con el siguiente backtrace.</p></body></"
-"html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Por favor complete un reporte de falla en <span style=\" font-weight:600;\">http://bugs.pardus.org.tr/</span> "
+"agregando el siguiente trazo inverso.</p></body></html>"
 
 #: yali4/gui/Ui/exception.py:66
 msgid "Show Backtrace"
@@ -345,12 +318,10 @@ msgid "Installing Package: "
 msgstr "Instalando Paquete:"
 
 #: yali4/gui/Ui/keyboardwidget.py:60
-#, fuzzy
 msgid "Choose a keyboard layout:"
-msgstr "Seleccione la distribución de su teclado"
+msgstr "Seleccione una distribución de teclado:"
 
 #: yali4/gui/Ui/keyboardwidget.py:61
-#, fuzzy
 msgid "Test selected layout:"
 msgstr "Probar teclado seleccionado:"
 
@@ -428,11 +399,9 @@ msgstr "Eliminar Partición"
 msgid "Resize Partition"
 msgstr "Redimensionar Partición"
 
-# favor revisar..
 #: yali4/gui/Ui/partedit.py:163
-#, fuzzy
 msgid "Changes will be applied after Summary Screen."
-msgstr "Se aplicarán los cambios cuando usted termina.."
+msgstr "Se aplicarán los cambios luego de aceptar la pantalla de resumen."
 
 #: yali4/gui/Ui/partedit.py:164
 msgid "Refresh Disks"
@@ -448,7 +417,6 @@ msgid "Apply"
 msgstr "Aceptar"
 
 #: yali4/gui/Ui/partresize.py:82
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -484,21 +452,19 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
-"#ffffff;\">Se aplicará la configuración cuando presiona \"</span><span style="
-"\" text-decoration: underline; color:#ffffff;\">Redimensionar</span><span "
-"style=\" color:#ffffff;\">\".Si desea regresar, presione \"</span><span "
-"style=\" text-decoration: underline; color:#ffffff;\">Cancelar</span><span "
-"style=\" color:#ffffff;\">\".</span></p>\n"
+"#ffffff;\">Cambios se aplicarán cuando presione \"</span><span style=\" "
+"text-decoration: underline; color:#ffffff;\">Redimensionar</span><span style=\" "
+"color:#ffffff;\">\". Para deshacer los cambios presione\"</span><span style=\" "
+"text-decoration: underline; color:#ffffff;\">Cancelar</span><span style=\" "
+"color:#ffffff;\">\".</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
 "color:#ffffff;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
-"\" font-weight:600; text-decoration: underline;\">Alerta:</span> "
-"Redimensionar puede corromper la partición, dejando sus datos inaccesibles. "
-"Asegurese de tener una copia de respaldo para esta partición.<span style=\" "
-"font-weight:600;\"> </span><span style=\" font-weight:600;\">Favor tenga en "
-"cuenta que no se puede deshacer esta operación</span></p></body></html>"
+"\" font-weight:600; text-decoration: underline;\">Alerta:</span> Una operación de redimensionamiento puede corromper la partición y dejar inaccesible los datos. "
+"Asegúrese si dispone de una copia de seguridad de los datos !<span style=\" font-weight:600;"
+"\"> </span><span style=\" font-weight:600;\">Esta operación no se puede deshacer !</span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:68
 msgid "Cancel"
@@ -508,19 +474,15 @@ msgstr "Cancelar"
 msgid "Resize"
 msgstr "Redimensionar"
 
-# favor revisar contexto, especialmente gramatica
 #: yali4/gui/Ui/rescuepasswordwidget.py:102
-#, fuzzy
 msgid "User to change password of:"
-msgstr "Seleccione un usuario para cambiar la contraseña:"
+msgstr "Seleccione al usuario a quien desea cambiar la contraseña:"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:103
-#, fuzzy
 msgid "New password:"
-msgstr "Contraseña:"
+msgstr "Contraseña nueva:"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:104
-#, fuzzy
 msgid "New password (again):"
 msgstr "Repetir Contraseña:"
 
@@ -529,61 +491,50 @@ msgid "Update Password"
 msgstr "Actualizar Contraseña"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:67
-#, fuzzy
 msgid "Connection Status:"
-msgstr "Estado de Conexión :"
+msgstr "Estado de Conexión:"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:68
 msgid "Not Connected"
 msgstr "No Conectado"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:69
-#, fuzzy
 msgid ""
 "To use PiSi's history feature, you may need to be online. Select connection "
 "profile."
 msgstr ""
-"Para el soporte del histórico de instalaciones PISI puede ser necesario una "
-"conexión a internet. Puede elegir uno de los perfiles de conexión de la lista"
+"Para usar el soporte del histórico de instalaciones PISI puede ser necesario una "
+"conexión a internet. Seleccione el perfil de conexión."
 
 #: yali4/gui/Ui/rescuepisiwidget.py:70
 msgid "Select Connection"
 msgstr "Seleccionar Conexión"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:71
-#, fuzzy
 msgid "Operation to undo:"
-msgstr "Operación %s : %s - %s"
+msgstr "Operación a deshacer:"
 
 #: yali4/gui/Ui/rescuewidget.py:84
-#, fuzzy
 msgid "Select the partition Pardus is installed on"
-msgstr "Instalar a partición raíz (/) de Pardus"
+msgstr "Seleccione la partición de instalación de Pardus"
 
-# sound strange, asking the user su solve a problem !! there should be No problem - i suppose ??
-# if there is a problem, the developers may resolve, the user may only report it. but solve ??
-# maybe i am just a little "frightened" by the word "problem" .. (kh)
 #: yali4/gui/Ui/rescuewidget.py:85
-#, fuzzy
 msgid "Select operation and click <b>Next</b>..."
-msgstr ""
-"Seleccione una solución adecuada para su problema y presione <b>siguiente</"
-"b>..."
+msgstr "Seleccione la operación y presione <b>Siguiente</b>..."
 
 #: yali4/gui/Ui/rescuewidget.py:86
 msgid "Reinstall GRUB (boot problems)"
-msgstr ""
+msgstr "Reinstalar GRUB (problemas de arranque)"
 
 #: yali4/gui/Ui/rescuewidget.py:87
 msgid "PiSi history (undo package operations)"
-msgstr ""
+msgstr "Registro histórico de PiSi (deshacer operaciones de instalaciones)"
 
 #: yali4/gui/Ui/rescuewidget.py:88
 msgid "Change password (lost password)"
-msgstr ""
+msgstr "Cambiar contraseña (contraseña perdida)"
 
 #: yali4/gui/Ui/rootpasswidget.py:171
-#, fuzzy
 msgid ""
 "<p align=\"left\">System administrator user (root) handles important system "
 "maintanence tasks. Enter a password for this special user and do not forget "
@@ -591,9 +542,7 @@ msgid ""
 "this password elsewhere.</p>"
 msgstr ""
 "<p align=\"left\">El usuario root (Administrador del Sistema) ejecuta "
-"importantes tareas de mantenimiento del sistema. Por favor utilice una "
-"contraseña para este usuario especial y no la olvide. Por razones de "
-"seguridad se recomienda que no anote esta contraseña en ninguna parte.</p>"
+"importantes tareas de mantenimiento del sistema. Ingrese una contarseña para este usuario especial y no la olvide! Por razones de seguridad se recomienda que no anote esta contraseña en ninguna parte.</p>"
 
 #: yali4/gui/Ui/rootpasswidget.py:172
 msgid "System administrator password:"
@@ -673,17 +622,16 @@ msgid "Begin Install"
 msgstr "Comenzar instalación"
 
 #: yali4/gui/Ui/summarywidget.py:70
-msgid ""
-"If you check this, Yalı will install all language packages in this release"
-msgstr ""
+# favor revisar - release, version
+msgid "If you check this, Yalı will install all language packages in this release"
+msgstr "Si marca aquí, Yali instalará todos los paquetes de todos los idiomas disponibles en esta versión"
 
 #: yali4/gui/Ui/summarywidget.py:71
-#, fuzzy
 msgid "Install all language packages"
-msgstr "No instalar paquetes de idiomas adicionales"
+msgstr "Instalar todos los paquetes de idiomas"
 
 #: yali4/gui/Ui/welcomewidget.py:91
-#, fuzzy
+# favor revisar la ultima parte en especial
 msgid ""
 "All software developed by TUBITAK/UEKAE is licensed under GNU/GPL. Other "
 "software have their corresponding licenses. To install and/or use Pardus, "
@@ -692,25 +640,23 @@ msgid ""
 msgstr ""
 "Todo software desarrollado por TUBITAK/UEKAE está cubierto por la licencia "
 "GNU/GPL. Otros software tienen sus licencias respectivas. Al instalar o usar "
-"Pardus, está tomando la decisión de aceptarlos. Desea continuar ?"
+"Pardus, debe aceptarlos. Acepta las licencias GNU/GPL y las demás, según corresponde ?"
 
 #: yali4/gui/Ui/welcomewidget.py:92
 msgid "Read GPL"
 msgstr "Leer Licencia GPL"
 
 #: yali4/gui/Ui/welcomewidget.py:93
-#, fuzzy
 msgid "Reboot System"
-msgstr "Reiniciar Sistema!"
+msgstr "Reiniciar Sistema"
 
 #: yali4/gui/Ui/welcomewidget.py:94
 msgid "Yes, I accept."
-msgstr ""
+msgstr "Si, acepto."
 
 #: yali4/gui/Ui/welcomewidget.py:95
-#, fuzzy
 msgid "No, I don't accept."
-msgstr "No Acepto !"
+msgstr "No acepto."
 
 #: yali4/gui/debugger.py:28
 msgid "Debug"
@@ -928,18 +874,15 @@ msgstr "Hay una petición para el mismo tipo de partición."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr ""
-"Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr "Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
 
 # favor verificar contexto,
 # check context, should this say "format as.." instead o "selected as .." ?
 #: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:160
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr "Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 #: yali4/gui/DiskWidgets.py:382
 msgid ""
@@ -964,9 +907,8 @@ msgstr ""
 "tabla de particiones !"
 
 #: yali4/gui/DiskWidgets.py:418
-#, fuzzy
 msgid "Error !"
-msgstr "Error"
+msgstr "Error !"
 
 # i hope "(fs)s" refers to a string rerpresenting the file-system
 #: yali4/gui/DiskWidgets.py:428 yali4/gui/ScrSummary.py:159
@@ -1230,8 +1172,7 @@ msgstr "Verifique el CD instalador"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr ""
-"Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1253,8 +1194,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
+msgstr "<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1421,9 +1361,9 @@ msgid "Warning"
 msgstr "Alerta"
 
 #: yali4/gui/ScrInstall.py:161
-#, fuzzy, python-format
+#, python-format
 msgid "Package install failed : <b>%s</b>"
-msgstr "Instalación de paquete <b>%s</b> fallado. <br>Desea reintentar ?"
+msgstr "Instalación de paquete falló : <b>%s</b>"
 
 #: yali4/gui/ScrInstall.py:161
 msgid "Do you want to retry ?"
@@ -1717,7 +1657,7 @@ msgstr "Super Usuario"
 # favor verificar
 #: yali4/gui/ScrRescuePisi.py:40
 msgid "Rescue Mode for Pisi History"
-msgstr "Modo de rescate del histórico de PISI"
+msgstr "Modo de rescate del registro histórico de PISI"
 
 #: yali4/gui/ScrRescuePisi.py:41
 msgid "You can take back your system ..."
@@ -1730,12 +1670,12 @@ msgid ""
 "<font size=\"+1\"></font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Histórico de PISI</font>\n"
+"<font size=\"+2\">Registro histórico de PISI</font>\n"
 "<font size=\"+1\"></font>\n"
 
 #: yali4/gui/ScrRescuePisi.py:56
 msgid "Getting history ..."
-msgstr "Obteniendo histórico ..."
+msgstr "Obteniendo registro histórico ..."
 
 #: yali4/gui/ScrRescuePisi.py:122
 #, python-format
@@ -1747,8 +1687,7 @@ msgstr "Operación %s : %s - %s"
 msgid ""
 "You can reinstall your Grub or you can take back your system by using Pisi "
 "History..."
-msgstr ""
-"Puede reinstalar Grub o puede retroceder el sistema usando Pisi History..."
+msgstr "Puede reinstalar Grub o puede retroceder el sistema usando el registro histórico de Pisi..."
 
 #: yali4/gui/ScrRescue.py:33
 msgid ""
@@ -1841,8 +1780,7 @@ msgstr "Usuario %s (<b>%s</b>) agregado."
 #: yali4/gui/ScrSummary.py:134
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
-msgstr ""
-"Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
+msgstr "Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
 
 #: yali4/gui/ScrSummary.py:140
 msgid "Hostname Settings"
@@ -1888,8 +1826,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:196
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr "Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:211
 msgid "Bootloader Settings"
@@ -2100,7 +2037,7 @@ msgstr "Configuración de Ratón"
 msgid "You just used <b>%s</b> button."
 msgstr "Acaba de presionar el botón <b>%s</b>."
 
-# sorry, in spanish there are special words for right-handed and left-handed. I changed the sentence so i could apply the simple words (right, left) as in english. 
+# sorry, in spanish there are special words for right-handed and left-handed. I changed the sentence so i could apply the simple words (right, left) as in english.
 # Although there is still some grammer issue (hand and button have different sex in spanish!)
 #: yali4/gui/YaliWindow.py:101
 #, python-format
@@ -2125,7 +2062,9 @@ msgid "Windows"
 msgstr "Windows"
 
 #: yali4/filesystem.py:165
-#, fuzzy, python-format
+#, python-format
+# favor revisar - you should, lo dejé como estaba al traducir la version anterior en ingles: es recomendable
+# pero está bien así ? o debería ser "Usted debería" .. ?
 msgid ""
 "FSCheck found some problems on partition %s and fixed "
 "them.                                      You should restart the machine "
@@ -2133,7 +2072,7 @@ msgid ""
 msgstr ""
 "FSCheck encontró algunos problemas en partición %s y los "
 "arregló.                                 Es recomendable reiniciar la "
-"computadora y volver a ejecutar el proceso de instalación !"
+"computadora antes de continuar el proceso de instalación !"
 
 #: yali4/filesystem.py:168
 #, python-format
@@ -2455,98 +2394,7 @@ msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Preparando directorio home de usuario <b>%s</b>.."
 
 #: yali4/storage.py:375
-#, fuzzy, python-format
+#, python-format
 msgid "Not enough free space on %s to create new partition"
-msgstr "Intentará usar el espacio libre o redimensionar particiones existentes"
+msgstr "No hay suficiente espacio libre en %s para crear una partición nueva"
 
-#, fuzzy
-#~ msgid "Bootloader installation partition"
-#~ msgstr "Instalar a partición raíz (/) de Pardus"
-
-#, fuzzy
-#~ msgid "Bootloader installation disk"
-#~ msgstr "Cargador de arranque"
-
-#, fuzzy
-#~ msgid "Partition to install the bootloader to:"
-#~ msgstr "Donde desea instalar el cargador de arranque?"
-
-#, fuzzy
-#~ msgid "Pardus-installed partition"
-#~ msgstr "Instalar a partición raíz (/) de Pardus"
-
-#, fuzzy
-#~ msgid "Disk to install the bootloader to:"
-#~ msgstr "No Instalar el cargador de arranque"
-
-#~ msgid "You can use manual partitioning with this option"
-#~ msgstr "Puede utilizar esta opción para realizar particionamiento manual"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span "
-#~ "style=\" font-size:12pt; font-weight:600;\">Select the disk to apply "
-#~ "selected method:</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span "
-#~ "style=\" font-size:12pt; font-weight:600;\">Elija el disco para el método "
-#~ "seleccionado:</span></p></body></html>"
-
-# shouldn't it be in english: "Select the disk (you want) to install the bootloader to:"
-# Seleccione el disco donde se instalará el cargador de arranque:
-#~ msgid "Select the disk you to install bootloader:"
-#~ msgstr "Seleccione el disco donde se instalará el cargador de arranque:"
-
-#~ msgid "Select the keyboard layout of your choice."
-#~ msgstr "Seleccione la distribución de su teclado."
-
-#~ msgid ""
-#~ "For using Pisi History support you may need internet connection, you can "
-#~ "use your connection profiles from your profiles"
-#~ msgstr ""
-#~ "Para el soporte del histórico de instalaciones PISI puede ser necesario "
-#~ "una conexión a internet. Puede elegir uno de los perfiles de conexión de "
-#~ "sus perfiles"
-
-# sounds strange in english - please "fine tune" a little.. !! (grammer ?)
-# favor revisar, depende del contexto
-#~ msgid "Select an operation from history list to take back the system"
-#~ msgstr ""
-#~ "Seleccione una operación del listado histórico para retroceder el sistema"
-
-# verificar contexto, a confirmar con lo visual..
-#~ msgid "Select the partition below that your Pardus installed:"
-#~ msgstr "Seleccione abajo la partición para la instalación de Pardus:"
-
-#~ msgid "If you have problems with boot, you can reinstall Grub"
-#~ msgstr "Si tiene algún problema con el arranque, puede reinstalar Grub"
-
-#~ msgid ""
-#~ "If you need to take back your old operations you can use Pisi History"
-#~ msgstr ""
-#~ "Si necesita deshacer algunas operaciones previas, puede utilizar Pisi "
-#~ "History"
-
-# i suppose "you can create a new password", it is not really "change" - its is in fact: "replace"
-# favor revisar - observar contexto,
-# si perdió su contraseña puede crear una nueva
-#~ msgid "If you lost your password you can change it"
-#~ msgstr "Si perdió su contraseña, lo puede cambiar por una nueva"
-
-#~ msgid "Accept!"
-#~ msgstr "Acepto !"

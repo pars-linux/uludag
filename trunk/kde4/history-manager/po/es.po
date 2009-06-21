@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-28 11:04+0300\n"
-"PO-Revision-Date: 2009-06-02 20:41-0400\n"
+"PO-Revision-Date: 2009-06-21 18:57-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr ""
 #: .tmp/ui_uiitem.py:84
 # check how this looks, favor verificar contexto y posición
 msgid "History Date - Time /Label"
-msgstr "Marca de Fecha - Hora / Histórico"
+msgstr "Fecha de Registro - Hora / Histórico"
 
 #: .tmp/ui_uiitem.py:85
 msgid "No: Type:"
@@ -179,7 +179,7 @@ msgstr "Cancelar"
 
 #: .tmp/ui_mainwindow.py:131
 msgid "- Loading Pisi History"
-msgstr "- Cargando Histórico de Pisi"
+msgstr "- Cargando registro histórico de Pisi"
 
 #: .tmp/ui_mainwindow.py:132
 msgid "%p%"

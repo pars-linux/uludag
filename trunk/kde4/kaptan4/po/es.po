@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-17 12:00+0300\n"
-"PO-Revision-Date: 2009-06-17 21:37-0400\n"
+"PO-Revision-Date: 2009-06-21 19:31-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -56,8 +56,7 @@ msgstr "Configuración del Sistema"
 
 #: .tmp/goodbyeWidget.py:97 .tmp/ui_goodbyeWidget.py:97
 msgid "System Settings is a configuration tool for Pardus."
-msgstr ""
-"Configuración del Sistema es una herramienta de configuración de Pardus."
+msgstr "Configuración del Sistema es una herramienta de configuración de Pardus."
 
 #: .tmp/goodbyeWidget.py:98 .tmp/goodbyeWidget.py:101
 #: .tmp/ui_goodbyeWidget.py:98 .tmp/ui_goodbyeWidget.py:101
@@ -320,11 +319,12 @@ msgstr ""
 # favor revisar,
 #: .tmp/ScrSearch.py:58
 msgid "On"
-msgstr ""
+msgstr "Habilitar"
 
 #: .tmp/ScrSearch.py:60
+# favor revisar
 msgid "Off"
-msgstr ""
+msgstr "Deshabilitar"
 
 #: .tmp/ScrSmolt.py:21 .tmp/smoltWidget.py:44 .tmp/ui_smoltWidget.py:44
 msgid "Smolt"
@@ -336,7 +336,7 @@ msgstr "Descripción Smolt"
 
 #: .tmp/ScrStyle.py:58
 msgid "No name"
-msgstr ""
+msgstr "Sin nombre"
 
 #: .tmp/ScrSummary.py:30 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
 #: .tmp/welcomeWidget.py:43
@@ -350,57 +350,51 @@ msgstr "Bienvenido al Asistente Kaptan :)"
 #: .tmp/ScrSummary.py:55
 #, python-format
 msgid "Selected Mouse configuration: <b>%s</b>"
-msgstr ""
+msgstr "Configuración de ratón seleccionado: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:56
 #, python-format
 msgid "Selected clicking behaviour: <b>%s</b>"
-msgstr ""
+msgstr "Comportamiento de clic seleccionado: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:60
-#, fuzzy
 msgid "Menu Settings"
-msgstr "Configuración del ratón"
+msgstr "Configuración del Menú"
 
 #: .tmp/ScrSummary.py:65
-#, fuzzy
 msgid "Wallpaper Settings"
-msgstr "Imagen de Fondo"
+msgstr "Configuración de Imagen de Fondo"
 
 #: .tmp/ScrSummary.py:67
-#, fuzzy
 msgid "You haven't selected any wallpaper."
-msgstr "No cambiar imagen de fondo"
+msgstr "Usted no eligió ningún imagen de fondo"
 
 #: .tmp/ScrSummary.py:69
 #, python-format
 msgid "Selected Wallpaper: <b>%s</b>"
-msgstr ""
+msgstr "Imagen de fondo seleccionado: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:73
-#, fuzzy
 msgid "Style Settings"
-msgstr "Configuración del Sistema"
+msgstr "Configuración del Estilo"
 
 #: .tmp/ScrSummary.py:76
-#, fuzzy
 msgid "You haven't selected any style."
-msgstr "No cambiar imagen de fondo"
+msgstr "Usted no eligió ningún estilo."
 
 #: .tmp/ScrSummary.py:78
 #, python-format
 msgid "Selected Style: <b>%s</b>"
-msgstr ""
+msgstr "Estilo seleccionado: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:84
-#, fuzzy
 msgid "Search Settings"
-msgstr "Configuración del Sistema"
+msgstr "Configuración de la Busqueda"
 
 #: .tmp/ScrSummary.py:85
-#, fuzzy, python-format
+#, python-format
 msgid "Desktop search: <b>%s</b>"
-msgstr "Busqueda de Escritorio"
+msgstr "Busqueda de Escritorio: <b>%s</b>"
 
 #: .tmp/ScrWallpaper.py:34
 msgid "Insert some catchy title about wallpapers.."
@@ -539,3 +533,4 @@ msgstr ""
 "Pardus es una distribución GNU/Linux, que cubre las necesidades de un "
 "escritorio básico para un usuario de PC; Le ayuda conectar a internet, leer "
 "e-mails, trabajar con documentos de oficina y más!"
+
