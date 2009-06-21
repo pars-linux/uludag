@@ -1,0 +1,13 @@
+==========
+= Apport =
+==========
+
+Apport development is being made of a Bazaar branch:
+* https://code.launchpad.net/~caioromao/apport/pardus-bugzilla
+
+==========
+= PyBugz =
+==========
+
+PyBugz was forked from original. Source can be found here:
+* http://github.com/caio/pybugz
