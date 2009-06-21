@@ -1,0 +1,24 @@
+<?xml version=1.0?>
+<document>
+	<title>X Server Test Cases</title>
+	<note>For all X errors you can look at the following file: /var/log/Xorg.0.log</note>
+	<testcase>
+		<title>Testing direct rendering</title>
+		<order>
+			<text>Hit Ctrl+Alt+F1</text>
+			<observe>Observe that X doesn't crash</observe>
+		</order>
+		<order>
+			<text>Execute this command:
+			
+			\begin{verbatim}
+				xinit -- :2
+			\end{verbatim} </text>
+			<observe> Observe a Grey desktop, and X for the mouse cursor and a term window.</observe>
+		</order>
+		<order>
+			<text>\texttt{Ctrl+Alt+F7} to get back to the graphical environment</text>
+			<observe>Observe that X doesn't crash.</observe>
+		</order>
+	</testcase>
+</document>
