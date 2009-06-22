@@ -22,6 +22,7 @@ from ui_mainwindow import Ui_MainWindow
 from mainwidget import MainWidget
 from statemanager import StateManager
 from settingsdialog import SettingsDialog
+from tray import Tray
 
 class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -31,10 +32,15 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
         self.initializeStatusBar()
+        self.initializeTray()
         self.connectMainSignals()
 
     def connectMainSignals(self):
         self.connect(self.settingsDialog, SIGNAL("settingsChanged()"), self.centralWidget().initialize)
+
+    def initializeTray(self):
+        self.tray = Tray(self)
+        self.tray.show()
 
     def initializeStatusBar(self):
         self.statusLabel = QtGui.QLabel(i18n("Currently your basket is empty."), self.statusBar())
