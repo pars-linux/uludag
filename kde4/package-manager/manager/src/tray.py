@@ -16,16 +16,21 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
+import config
 import backend
 
 class Tray(KSystemTrayIcon):
     def __init__(self, parent):
         KSystemTrayIcon.__init__(self, parent)
         self.iface = backend.pm.Iface()
+        self.unread = 0
+        self.defaultIcon = KIcon(":/data/package-manager.png")
         self.initialize()
+        self.settingsChanged()
+        self.slotSetUnread(1892)
 
     def initialize(self):
-        self.setIcon(KIcon(":/data/package-manager.png"))
+        self.setIcon(self.defaultIcon)
 
         menu = KActionMenu(i18n("Update"), self)
         for name, address in self.iface.getRepositories():
@@ -43,3 +48,61 @@ class Tray(KSystemTrayIcon):
         repoName = unicode(self.sender().iconText())
         pass
 
+    def settingsChanged(self):
+        cfg = config.Config(KConfig("package-managerrc"))
+        if cfg.getBoolValue(config.general, "SystemTray"):
+            self.show()
+        else:
+            self.hide()
+
+    # stolen from Akregator
+    def slotSetUnread(self, unread):
+        if self.unread == unread:
+            return
+
+        self.unread = unread
+
+        if unread == 0:
+            self.setIcon(self.defaultIcon)
+        else:
+            oldWidth = self.defaultIcon.pixmap(22).size().width()
+
+            if oldWidth == 0:
+                return
+
+            countStr = "%s" % unread
+            f = KGlobalSettings.generalFont()
+            f.setBold(True)
+
+            pointSize = f.pointSizeF()
+            fm = QtGui.QFontMetrics(f)
+            w = fm.width(countStr)
+            if w > (oldWidth - 2):
+                pointSize *= float(oldWidth - 2) / float(w)
+                f.setPointSizeF(pointSize)
+
+            # overlay
+            overlayImg = QtGui.QPixmap(self.defaultIcon.pixmap(22))
+            p = QtGui.QPainter(overlayImg)
+            p.setFont(f)
+            scheme = KColorScheme(QtGui.QPalette.Active, KColorScheme.View)
+
+            fm = QtGui.QFontMetrics(f)
+            boundingRect = QRect(fm.tightBoundingRect(countStr))
+            boundingRect.adjust(0, 0, 0, 2)
+            boundingRect.setHeight(min(boundingRect.height(), oldWidth))
+            boundingRect.moveTo((oldWidth - boundingRect.width()) / 2,
+                                ((oldWidth - boundingRect.height()) / 2) - 1)
+            p.setOpacity(0.7)
+            p.setBrush(scheme.background(KColorScheme.LinkBackground))
+            p.setPen(scheme.background(KColorScheme.LinkBackground).color())
+            p.drawRoundedRect(boundingRect, 2.0, 2.0);
+
+            p.setBrush(Qt.NoBrush)
+            p.setPen(scheme.foreground(KColorScheme.LinkText).color())
+            p.setOpacity(1.0)
+            p.drawText(overlayImg.rect(), Qt.AlignCenter, countStr)
+
+            p.end()
+
+            self.setIcon(QtGui.QIcon(overlayImg))
