@@ -1,5 +1,7 @@
 <?xml version=1.0?>
 <document>
+	<name></name>
+	<surname></surname>
 	<title>X Server Test Cases</title>
 	<note>For all X errors you can look at the following file: /var/log/Xorg.0.log</note>
 	<testcase>
