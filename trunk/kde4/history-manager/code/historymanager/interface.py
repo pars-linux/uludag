@@ -51,14 +51,15 @@ class PisiIface(QThread):
         cntr = 0
         for operation in self.pdb.get_last():
             QCoreApplication.processEvents()
-            self.ops[operation.no] = operation
+            self.ops[operation.no] = [operation.no, operation.type,
+                                      operation.date, operation.time,
+                                      operation.packages]
             cntr += 1
-            if cntr == 24:
-                self.emit(SIGNAL("loadFetched(PyQt_PyObject)"), 24)
-                self.deinit()
+            if cntr == 50:
                 break
-            time.sleep(0.05)
+            time.sleep(0.01)
 
+        self.emit(SIGNAL("loadFetched(PyQt_PyObject)"), cntr)
         self.deinit()
 
     def historyPlan(self, op):
@@ -72,10 +73,11 @@ class PisiIface(QThread):
 
     def getLastOperation(self):
         op = self.pdb.get_last()
-        return op.next()
+        op = op.next()
+        return [op.no, op.type, op.date, op.time, op.packages, op.tag]
 
     def deinit(self):
         if self.pdb:
             self.pdb.invalidate()
             del self.pdb
-            self.pdb = None
+            self.initDb()
