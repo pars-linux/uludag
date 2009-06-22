@@ -20,6 +20,7 @@ import gui.ScrSummary  as summaryWidget
 import gui.ScrSummary  as summaryWidget
 from gui.ScreenWidget import ScreenWidget
 from gui.keyboardWidget import Ui_keyboardWidget
+import subprocess
 
 from pardus import localedata
 
@@ -50,6 +51,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def setKeyboard(self):
         layout = self.ui.listWidgetKeyboard.currentItem().toolTip()
         variant = self.ui.listWidgetKeyboard.currentItem().statusTip()
+
+        subprocess.Popen(["setxkbmap", layout, variant])
+        if variant:
+            self.lastLayout = layout + "(" + variant + ")"
+        else:
+            self.lastLayout = layout
 
     def shown(self):
         pass
