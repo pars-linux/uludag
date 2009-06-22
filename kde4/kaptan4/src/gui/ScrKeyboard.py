@@ -77,8 +77,13 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 layoutArr.remove(self.lastLayout)
                 layoutArr.insert(0, str(self.lastLayout))
 
+            for i in layoutArr:
+                if i == "":
+                    layoutArr.remove(i)
+
             layoutList =  ",".join(layoutArr)
             self.group.writeEntry("LayoutList", layoutList)
+            self.group.writeEntry("DisplayNames", layoutList)
             self.config.sync()
         return True
 
