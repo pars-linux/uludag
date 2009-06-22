@@ -14,7 +14,7 @@
 
 - Defaults butonu çalışmıyor.
 
-- Dinamik bir ip kullanılıyor iken, statik bir ip adresi ile bağlanılmak istenirse, bağlantı için network manager yine dinamik ip'yi seçiyor.
++ Dinamik bir ip kullanılıyor iken, statik bir ip adresi ile bağlanılmak istenirse, bağlantı için network manager yine dinamik ip'yi seçiyor.
 - Bluetooth ağları network-manager'da görüntülenebiliyor fakat buradan bağlantı sağlanamıyor. Bu durum için bir warning penceresi çıkarılabilir.
 
 - Ethernet ile baglanilamaya calisilinca ilk seferinde baglanilamiyor. Ve bilgisayar restart edildiginde de aga kendi kendine baglanamiyor.
