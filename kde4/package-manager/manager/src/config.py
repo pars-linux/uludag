@@ -10,6 +10,8 @@
 #
 # Please read the COPYING file
 
+from PyKDE4.kdecore import KConfig
+
 (general) = ("General")
 
 defaults = {"SystemTray":False,
@@ -19,7 +21,7 @@ defaults = {"SystemTray":False,
 
 class Config:
     def __init__(self, config):
-        self.config = config
+        self.config = KConfig(config)
         self.group = None
 
     def setValue(self, group, option, value):
@@ -42,3 +44,31 @@ class Config:
             return defaults[option]
         else:
             return value
+
+class PMConfig(Config):
+    def __init__(self):
+        Config.__init__(self, "package-managerrc")
+
+    def showOnlyGuiApp(self):
+        return self.getBoolValue(general, "ShowOnlyGuiApp")
+
+    def updateCheck(self):
+        return self.getBoolValue(general, "UpdateCheck")
+
+    def updateCheckInterval(self):
+        return self.getNumValue(general, "UpdateCheckInterval")
+
+    def systemTray(self):
+        return self.getBoolValue(general, "SystemTray")
+
+    def setSystemTray(self, enabled):
+        self.setValue(general, "SystemTray", enabled)
+
+    def setUpdateCheck(self, enabled):
+        self.setValue(general, "UpdateCheck", enabled)
+
+    def setUpdateCheckInterval(self, value):
+        self.setValue(general, "UpdateCheckInterval", value)
+
+    def setShowOnlyGuiApp(self, enabled):
+        self.setValue(general, "ShowOnlyGuiApp", enabled)

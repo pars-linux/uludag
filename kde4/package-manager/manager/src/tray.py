@@ -49,8 +49,8 @@ class Tray(KSystemTrayIcon):
         pass
 
     def settingsChanged(self):
-        cfg = config.Config(KConfig("package-managerrc"))
-        if cfg.getBoolValue(config.general, "SystemTray"):
+        cfg = config.PMConfig()
+        if cfg.systemTray():
             self.show()
         else:
             self.hide()
