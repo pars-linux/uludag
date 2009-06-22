@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:54+0300\n"
+"POT-Creation-Date: 2009-06-22 14:01+0300\n"
 "PO-Revision-Date: 2009-05-27 20:08-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Agregar nuevo"
 
 #: .tmp/ui_edituser.py:176
 msgid "User Information"
@@ -79,13 +83,64 @@ msgstr "Autorizaciones"
 msgid "Main Group:"
 msgstr "Grupo principal:"
 
-#: .tmp/ui_edituser.py:191 .tmp/usermanager/main.py:193
+#: .tmp/ui_edituser.py:191 .tmp/usermanager/main.py:196
 msgid "Groups"
 msgstr "Grupos"
 
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Agregar nuevo"
+#: .tmp/ui_editgroup.py:78
+msgid "Group Information"
+msgstr "Información del grupo"
+
+#: .tmp/ui_editgroup.py:79
+msgid "Group Name:"
+msgstr "Nombre del grupo:"
+
+# favor revisar, el tema de respaldo, backend..
+#: .tmp/usermanager/main.py:94
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"No hay paquetes que respaldan esta aplicación.\n"
+"Por favor asegúrese que los paquetes están instalados y configurados de "
+"manera correcta."
+
+#: .tmp/usermanager/main.py:195
+msgid "Users"
+msgstr "Usuarios"
+
+#: .tmp/usermanager/main.py:197
+msgid "All Users"
+msgstr "Todos los usuarios"
+
+#: .tmp/usermanager/main.py:198
+msgid "All Groups"
+msgstr "Todos los grupos"
+
+#: .tmp/usermanager/main.py:209
+msgid "Add User"
+msgstr "Agregar Usuario"
+
+#: .tmp/usermanager/main.py:214
+msgid "Add Group"
+msgstr "Agregar Grupo"
+
+#: .tmp/usermanager/main.py:235 .tmp/usermanager/main.py:249
+#: .tmp/usermanager/main.py:375
+msgid "Access denied."
+msgstr "Acceso denegado."
+
+#: .tmp/usermanager/main.py:319
+msgid "Do you want to delete user '%1' (%2)?"
+msgstr "Desea eliminar usuario '%1' (%2)?"
+
+#: .tmp/usermanager/main.py:320
+msgid "Also remove user files. (This may take long.)"
+msgstr ""
+
+#: .tmp/usermanager/main.py:328
+msgid "Do you want to delete group '%1'?"
+msgstr "Desea eliminar grupo '%1'?"
 
 #: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
 msgid "User Manager"
@@ -107,55 +162,12 @@ msgstr ""
 msgid "Current Maintainer"
 msgstr "Mantenedor actual"
 
-# favor revisar, el tema de respaldo, backend..
-#: .tmp/usermanager/main.py:91
-msgid ""
-"There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
-msgstr ""
-"No hay paquetes que respaldan esta aplicación.\n"
-"Por favor asegúrese que los paquetes están instalados y configurados de "
-"manera correcta."
-
-#: .tmp/usermanager/main.py:192
-msgid "Users"
-msgstr "Usuarios"
-
-#: .tmp/usermanager/main.py:194
-msgid "All Users"
-msgstr "Todos los usuarios"
-
-#: .tmp/usermanager/main.py:195
-msgid "All Groups"
-msgstr "Todos los grupos"
-
-#: .tmp/usermanager/main.py:206
-msgid "Add User"
-msgstr "Agregar Usuario"
-
-#: .tmp/usermanager/main.py:211
-msgid "Add Group"
-msgstr "Agregar Grupo"
-
-#: .tmp/usermanager/main.py:232 .tmp/usermanager/main.py:246
-#: .tmp/usermanager/main.py:371
-msgid "Access denied."
-msgstr "Acceso denegado."
-
-#: .tmp/usermanager/main.py:314
-msgid "Do you want to delete user '%1' (%2)?"
-msgstr "Desea eliminar usuario '%1' (%2)?"
-
-#: .tmp/usermanager/main.py:321
-msgid "Do you want to delete group '%1'?"
-msgstr "Desea eliminar grupo '%1'?"
-
 #: .tmp/usermanager/edit.py:236
 msgid "There has to be at least one group selected."
 msgstr "Se debe seleccionar al menos un grupo."
 
-#: .tmp/usermanager/edit.py:301
 # favor revisar, no traduje "start with"
+#: .tmp/usermanager/edit.py:301
 msgid "Start with typing this user's full name."
 msgstr "Ingrese el nombre completo del usuario."
 
@@ -186,12 +198,3 @@ msgstr "El nombre de usuario ya fue utilizado para otro usuario."
 #: .tmp/usermanager/edit.py:328
 msgid "User name must not start with a number."
 msgstr "El nombre de usuario no debe empezar con un número."
-
-#: .tmp/ui_editgroup.py:78
-msgid "Group Information"
-msgstr "Información del grupo"
-
-#: .tmp/ui_editgroup.py:79
-msgid "Group Name:"
-msgstr "Nombre del grupo:"
-

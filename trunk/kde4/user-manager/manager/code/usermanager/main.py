@@ -34,6 +34,9 @@ from usermanager.item import ItemListWidgetItem, ItemWidget
 # Edit widget
 from usermanager.edit import EditUserWidget, EditGroupWidget
 
+# Delete Dialog
+from usermanager.question import DialogQuestion
+
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent, embed=False):
@@ -311,8 +314,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             uid = widget.getId()
             username = widget.getTitle()
             fullname = widget.getDescription()
-            if kdeui.KMessageBox.questionYesNo(self, kdecore.i18n("Do you want to delete user '%1' (%2)?", fullname, username)) == kdeui.KMessageBox.Yes:
-                self.iface.deleteUser(uid)
+
+            dialog = DialogQuestion(self)
+            dialog.setQuestion(kdecore.i18n("Do you want to delete user '%1' (%2)?", fullname, username))
+            dialog.setCheckBox(kdecore.i18n("Also remove user files. (This may take long.)"))
+            if dialog.exec_():
+                self.iface.deleteUser(uid, deleteFiles=dialog.getCheckBox())
                 # User.Manager does not emit signals, refresh whole list.
                 self.buildItemList()
         else:
