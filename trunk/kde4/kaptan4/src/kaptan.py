@@ -20,16 +20,48 @@ import gui.ScrSearch  as searchWidget
 import gui.ScrSummary  as summaryWidget
 import gui.ScrKeyboard  as keyboardWidget
 #import gui.ScrSmolt  as smoltWidget
-
-# waiting for pisi
 #import gui.ScrPackage as packageWidget
+
+def getKernelOpt(cmdopt=None):
+    if cmdopt:
+        for cmd in "".join(loadFile("/proc/cmdline")).split():
+            if cmd.startswith("%s=" % cmdopt):
+                return cmd[len(cmdopt)+1:].split(",")
+    else:
+        return "".join(loadFile("/proc/cmdline")).split()
+
+    return ""
+
+def loadFile(_file):
+    try:
+        f = file(_file)
+        d = [a.strip() for a in f]
+        d = (x for x in d if x and x[0] != "#")
+        f.close()
+        return d
+    except:
+        return []
+
+def isLiveCD():
+    opts = getKernelOpt("mudur")
+
+    if opts and "livecd" in opts:
+        return True
+
+    return False
+
+if isLiveCD():
+    availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
+else:
+    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
+
 class Kaptan(QtGui.QWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = [welcomeWidget,keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
+        self.screens = availableScreens
         self.screenData = None
         self.moveInc = 1
         self.menuText = ""
