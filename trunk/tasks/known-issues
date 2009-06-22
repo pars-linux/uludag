@@ -22,7 +22,6 @@
 * Firefox
     - backspace doesn't work,
     - libbonobo, libgnomeui stuff can be merged to pardus/ for fully compatible firefox,
-    - The icon bounces until the end of the maximum bounce duration.
 
 * CUPS (Ozan Çağlayan)
     - Check ::1 lookup regression on a clean Alpha installation,
