@@ -7,13 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Manager 2.90\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:54+0300\n"
+"POT-Creation-Date: 2009-06-22 14:01+0300\n"
 "PO-Revision-Date: 2009-05-12 13:34+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Yeni Ekle"
 
 #: .tmp/ui_edituser.py:176
 msgid "User Information"
@@ -75,13 +79,62 @@ msgstr "Yetkiler"
 msgid "Main Group:"
 msgstr "Ana Grup"
 
-#: .tmp/ui_edituser.py:191 .tmp/usermanager/main.py:193
+#: .tmp/ui_edituser.py:191 .tmp/usermanager/main.py:196
 msgid "Groups"
 msgstr "Gruplar"
 
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Yeni Ekle"
+#: .tmp/ui_editgroup.py:78
+msgid "Group Information"
+msgstr "Grup Bilgisi"
+
+#: .tmp/ui_editgroup.py:79
+msgid "Group Name:"
+msgstr "Grup İsmi:"
+
+#: .tmp/usermanager/main.py:94
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
+"Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
+
+#: .tmp/usermanager/main.py:195
+msgid "Users"
+msgstr "Kullanıcılar"
+
+#: .tmp/usermanager/main.py:197
+msgid "All Users"
+msgstr "Tüm Kullanıcılar"
+
+#: .tmp/usermanager/main.py:198
+msgid "All Groups"
+msgstr "Tüm Gruplar"
+
+#: .tmp/usermanager/main.py:209
+msgid "Add User"
+msgstr "Kullanıcı Ekle"
+
+#: .tmp/usermanager/main.py:214
+msgid "Add Group"
+msgstr "Grup Ekle"
+
+#: .tmp/usermanager/main.py:235 .tmp/usermanager/main.py:249
+#: .tmp/usermanager/main.py:375
+msgid "Access denied."
+msgstr "Erişim engellendi."
+
+#: .tmp/usermanager/main.py:319
+msgid "Do you want to delete user '%1' (%2)?"
+msgstr "'%1' (%2) kullanıcısı silinsin mi?"
+
+#: .tmp/usermanager/main.py:320
+msgid "Also remove user files. (This may take long.)"
+msgstr "Kullanıcı dosyalarını da sil. (Bu uzun sürebilir.)"
+
+#: .tmp/usermanager/main.py:328
+msgid "Do you want to delete group '%1'?"
+msgstr "'%1' grubu silinsin mi?"
 
 #: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
 msgid "User Manager"
@@ -102,47 +155,6 @@ msgstr "Bahadır Kandemir"
 #: .tmp/usermanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Şu anki geliştirici"
-
-#: .tmp/usermanager/main.py:91
-msgid ""
-"There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
-msgstr ""
-"Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
-"Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
-
-#: .tmp/usermanager/main.py:192
-msgid "Users"
-msgstr "Kullanıcılar"
-
-#: .tmp/usermanager/main.py:194
-msgid "All Users"
-msgstr "Tüm Kullanıcılar"
-
-#: .tmp/usermanager/main.py:195
-msgid "All Groups"
-msgstr "Tüm Gruplar"
-
-#: .tmp/usermanager/main.py:206
-msgid "Add User"
-msgstr "Kullanıcı Ekle"
-
-#: .tmp/usermanager/main.py:211
-msgid "Add Group"
-msgstr "Grup Ekle"
-
-#: .tmp/usermanager/main.py:232 .tmp/usermanager/main.py:246
-#: .tmp/usermanager/main.py:371
-msgid "Access denied."
-msgstr "Erişim engellendi."
-
-#: .tmp/usermanager/main.py:314
-msgid "Do you want to delete user '%1' (%2)?"
-msgstr "'%1' (%2) kullanıcısı silinsin mi?"
-
-#: .tmp/usermanager/main.py:321
-msgid "Do you want to delete group '%1'?"
-msgstr "'%1' grubu silinsin mi?"
 
 #: .tmp/usermanager/edit.py:236
 msgid "There has to be at least one group selected."
@@ -179,11 +191,3 @@ msgstr "Bu kullanıcı adı başkası tarafından kullanılıyor."
 #: .tmp/usermanager/edit.py:328
 msgid "User name must not start with a number."
 msgstr "Kullanıcı adı rakam ile başlayamaz."
-
-#: .tmp/ui_editgroup.py:78
-msgid "Group Information"
-msgstr "Grup Bilgisi"
-
-#: .tmp/ui_editgroup.py:79
-msgid "Group Name:"
-msgstr "Grup İsmi:"
