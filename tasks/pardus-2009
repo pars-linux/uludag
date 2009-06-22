@@ -47,14 +47,12 @@
   * HAL 0.5.12 geçişi (+)
   * udev 14x geçişi (+)
   * Pulseaudio ve ailesinin güncellenmesi (+)
-  * readahead paketlenmesi, test edilmesi (/70)
+  * 2008->2009 geçişi esnasında crda için gerekli timezone dosyasının oluşturulması (+)
+  * libgphoto2, sand-backends, hplip paketlerinde HAL desteği ve test edilmesi (/80)
   * foomatic-*, gutenprint, ghostscript, hplip, foo2zjs paketlerinin güncellenmesi (/70)
-  * sreadahead paketlenmesi, test edilmesi (/40)
-  * libgphoto2, sand-backends, hplip paketlerinde HAL desteği ve test edilmesi (/40)
   * Python ile çekirdek geçiş ve depo betiklerinin yazılması (/15)
   * update-fstab ve yalı'nın noatime/relatime, ext4, vs konusunda güncellenmesi, eksiklerinin giderilmesi (-)
   * kbluetooth'un bluetooth cihazı varsa otomatik başlaması (-)
-  * 2008->2009 geçişi esnasında crda için gerekli timezone dosyasının oluşturulması (+)
 
 * GNOME güncellemeleri (Ozan Çağlayan)
   * glib2 2.20 geçişi (+)
@@ -67,7 +65,6 @@
 
 * Diğer geçişler (Ozan Çağlayan)
  * Samba 3.3.3 geçişi, keyutils ve ctdb'nin paketlenip depoya alınması (+)
- * libusb 1.0 geçişi (/60)
 
 * KDE4 (Gökçen Eraslan)
   * Paketleme (+)
