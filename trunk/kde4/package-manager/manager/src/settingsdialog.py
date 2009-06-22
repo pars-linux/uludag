@@ -26,7 +26,7 @@ import backend
 class SettingsTab(QObject):
     def __init__(self, settings):
         self.settings = settings
-        self.config = config.Config(KConfig("package-managerrc"))
+        self.config = config.PMConfig()
         self.iface = backend.pm.Iface()
         self.setupUi()
         self.connectSignals()
@@ -51,10 +51,10 @@ class GeneralSettings(SettingsTab):
         self.settings.addRepoButton.setIcon(KIcon("list-add"))
         self.settings.removeRepoButton.setIcon(KIcon("list-remove"))
 
-        self.settings.onlyGuiApp.setChecked(self.config.getBoolValue(config.general, "ShowOnlyGuiApp"))
-        self.settings.intervalCheck.setChecked(self.config.getBoolValue(config.general, "UpdateCheck"))
-        self.settings.intervalSpin.setValue(self.config.getNumValue(config.general, "UpdateCheckInterval"))
-        self.settings.systemTray.setChecked(self.config.getBoolValue(config.general, "SystemTray"))
+        self.settings.onlyGuiApp.setChecked(self.config.showOnlyGuiApp())
+        self.settings.intervalCheck.setChecked(self.config.updateCheck())
+        self.settings.intervalSpin.setValue(self.config.updateCheckInterval())
+        self.settings.systemTray.setChecked(self.config.systemTray())
         self.__getBandwidthSettings()
 
     def __getBandwidthSettings(self):
@@ -75,10 +75,10 @@ class GeneralSettings(SettingsTab):
         self.connect(self.settings.bandwidthSpin, SIGNAL("valueChanged(int)"), self.markChanged)
 
     def save(self):
-        self.config.setValue(config.general, "ShowOnlyGuiApp", self.settings.onlyGuiApp.isChecked())
-        self.config.setValue(config.general, "SystemTray", self.settings.systemTray.isChecked())
-        self.config.setValue(config.general, "UpdateCheck", self.settings.intervalCheck.isChecked())
-        self.config.setValue(config.general, "UpdateCheckInterval", self.settings.intervalSpin.value())
+        self.config.setShowOnlyGuiApp(self.settings.onlyGuiApp.isChecked())
+        self.config.setSystemTray(self.settings.systemTray.isChecked())
+        self.config.setUpdateCheck(self.settings.intervalCheck.isChecked())
+        self.config.setUpdateCheckInterval(self.settings.intervalSpin.value())
 
         if self.settings.useBandwidthLimit.isChecked():
             self.iface.setConfig("general", "bandwidth_limit", str(self.settings.bandwidthSpin.value()))
