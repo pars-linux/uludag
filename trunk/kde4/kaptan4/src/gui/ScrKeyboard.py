@@ -14,7 +14,7 @@
 from PyQt4 import QtGui
 
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n
+from PyKDE4.kdecore import ki18n, KConfig
 
 import gui.ScrSummary  as summaryWidget
 import gui.ScrSummary  as summaryWidget
@@ -37,6 +37,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_keyboardWidget()
         self.ui.setupUi(self)
         self.ui.picKeyboard.setPixmap(QtGui.QPixmap(':/raw/pics/keyboards.png'))
+
+        # get Layout config
+        self.config = KConfig("kxkbrc")
+        self.group = self.config.group("Layout")
+        self.layoutList = str(self.group.readEntry("LayoutList"))
+        self.lastLayout = 0
 
         for lang in localedata.languages:
             for each in localedata.languages[lang].keymaps:
@@ -62,6 +68,18 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
+        if self.lastLayout:
+            layoutArr = self.layoutList.split(",")
+
+            if self.lastLayout not in layoutArr:
+                layoutArr.insert(0, str(self.lastLayout))
+            else:
+                layoutArr.remove(self.lastLayout)
+                layoutArr.insert(0, str(self.lastLayout))
+
+            layoutList =  ",".join(layoutArr)
+            self.group.writeEntry("LayoutList", layoutList)
+            self.config.sync()
         return True
 
 
