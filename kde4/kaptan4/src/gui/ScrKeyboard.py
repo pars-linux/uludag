@@ -40,7 +40,16 @@ class Widget(QtGui.QWidget, ScreenWidget):
         for lang in localedata.languages:
             for each in localedata.languages[lang].keymaps:
                 item = QtGui.QListWidgetItem(self.ui.listWidgetKeyboard)
-                self.ui.listWidgetKeyboard.addItem(each.name)
+                item.setText(each.name)
+                item.setToolTip(each.xkb_layout)
+                item.setStatusTip(each.xkb_variant)
+                self.ui.listWidgetKeyboard.addItem(item)
+
+        self.ui.listWidgetKeyboard.connect(self.ui.listWidgetKeyboard, SIGNAL("itemSelectionChanged()"), self.setKeyboard)
+
+    def setKeyboard(self):
+        layout = self.ui.listWidgetKeyboard.currentItem().toolTip()
+        variant = self.ui.listWidgetKeyboard.currentItem().statusTip()
 
     def shown(self):
         pass
