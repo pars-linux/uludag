@@ -29,18 +29,16 @@ class NewOperation(QWidget):
         self.toggled = False
         self.toggleButtons()
 
-        self.op_no = operation.no
-        self.op_type = operation.type
-        self.op_date = operation.date
-        self.op_time = operation.time
+        self.op_no = operation[0]
+        self.op_type = operation[1]
+        self.op_date = operation[2]
+        self.op_time = operation[3]
         self.op_pack = []
-        self.op = operation
-        self.alias = " - ".join([self.op_date, self.op_time])
 
-        for i in operation.packages:
+        for i in operation[4]:
             self.op_pack.append(i.__str__())
 
-        self.op_tag = operation.tag
+        self.alias = " - ".join([self.op_date, self.op_time])
         self.op_pack_len = len(self.op_pack)
 
         self.icon = ":/pics/%s.png" % self.op_type

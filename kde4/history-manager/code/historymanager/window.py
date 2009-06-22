@@ -63,8 +63,8 @@ class MainManager(QtGui.QWidget):
         self.connect(self.ui.aliasLE, SIGNAL("textEdited(const QString &)"), self.setAlias)
 
     def loadHistory(self, num):
-        for k,v in self.pface.ops.items()[self.loaded:num]:
-            self.addNewOperation(v)
+        map(self.addNewOperation, self.pface.ops.values()[self.loaded:num])
+
         self.loaded = num
         self.status(i18n("%d Operations Loaded" % self.loaded))
 
@@ -135,7 +135,7 @@ class MainManager(QtGui.QWidget):
         self.status(i18n("Ready .."))
 
     def addNewOperation(self, op):
-        item = HistoryItem(self.ui.lw, op.no)
+        item = HistoryItem(self.ui.lw, op[0])
         item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
         item.setSizeHint(QSize(38,48))
         self.ui.lw.setItemWidget(item, NewOperation(op, self))
