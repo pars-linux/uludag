@@ -9,10 +9,11 @@ from PyKDE4.kdecore import *
 
 from mainwindow import Ui_MainManager
 from uiitem import Ui_HistoryItemWidget
+from configure import Ui_Configure
 
 from interface import *
 
-SHOW, HIDE     = range(2)
+SHOW, HIDE     = 0, 1
 TARGET_HEIGHT  = 0
 ANIMATION_TIME = 200
 DEFAULT_HEIGHT = 16777215
@@ -43,6 +44,7 @@ class MainManager(QtGui.QWidget):
 
         self.cface = ComarIface()
         self.pface = PisiIface(self)
+        self.config = ConfigWindow(self)
         self.loaded = 0
 
         self.connectSignals()
@@ -55,7 +57,6 @@ class MainManager(QtGui.QWidget):
         self.pface.start()
 
     def connectSignals(self):
-        # self.connect(self.pface, SIGNAL("finished()"), self.loadHistory)
         self.connect(self.pface, SIGNAL("loadFetched(PyQt_PyObject)"), self.loadHistory)
 
         self.connect(self.animator, SIGNAL("frameChanged(int)"), self.animate)
@@ -63,12 +64,16 @@ class MainManager(QtGui.QWidget):
         self.connect(self.ui.newSnapshotPB, SIGNAL("clicked()"), self.takeSnapshot)
         self.connect(self.ui.buttonCancelMini, SIGNAL("clicked()"), self.hideEditBox)
         self.connect(self.ui.aliasLE, SIGNAL("textEdited(const QString &)"), self.setAlias)
+        self.connect(self.ui.configurePB, SIGNAL("clicked()"), self.showConfig)
+
+    def showConfig(self):
+        self.config.show()
 
     def loadHistory(self, num):
         map(self.addNewOperation, self.pface.ops.values()[self.loaded:num])
 
         self.loaded = num
-        self.status(i18n("%d Operations Loaded, Click here for Loading settings" % self.loaded))
+        self.status(i18n("%d Operations Loaded" % self.loaded))
         self.checkMsgClicks = True
 
     def setAlias(self, txt):
@@ -200,7 +205,7 @@ class MainManager(QtGui.QWidget):
         self.checkMsgClicks = False
 
     def takeLastOperation(self):
-        self.pface.initDb()
+        self.pface.deinit()
         return self.pface.getLastOperation()
 
     def takeBack(self):
@@ -244,8 +249,6 @@ class MainManager(QtGui.QWidget):
             self.enableButtons(True)
 
     def handler(self, package, signal, args):
-        # print "Package:",package, "Signal:", signal, "Arguments:", args
-
         if signal == "status":
             self.status(" ".join(args))
         elif signal == "finished":
@@ -257,16 +260,18 @@ class MainManager(QtGui.QWidget):
             self.enableButtons(False)
 
     def closeEvent(self, event=None):
-        self.settings.setValue("pos", QtCore.QVariant(self.mapToGlobal(self.parent.pos())))
-        self.settings.setValue("size", QtCore.QVariant(self.parent.size()))
-        self.settings.sync()
-
+        # self.saveConfig()
         if self.pface.isRunning():
             self.pface.quit()
             # self.pface.wait()
 
         if event != None:
             event.accept()
+
+    def saveConfig(self):
+        self.settings.setValue("pos", QtCore.QVariant(self.mapToGlobal(self.parent.pos())))
+        self.settings.setValue("size", QtCore.QVariant(self.parent.size()))
+        self.settings.sync()
 
     def eventFilter(self, obj, event):
         if event.type() == QEvent.Hide:
@@ -282,8 +287,20 @@ class MainManager(QtGui.QWidget):
     def enableButtons(self, true):
         self.ui.newSnapshotPB.setEnabled(true)
 
-    def popSettings(self):
-        if self.checkMsgClicks:
-            print "pop options"
-        else:
-            print "not now"
+class ConfigWindow(QtGui.QDialog):
+    def __init__(self, parent):
+        super(ConfigWindow, self).__init__(parent)
+
+        self.ui = Ui_Configure()
+        self.ui.setupUi(self)
+        self.settings = QtCore.QSettings()
+        self.resetConfig()
+
+        self.connect(self, SIGNAL("accepted()"), self.saveConfig)
+        self.connect(self, SIGNAL("rejected()"), self.resetConfig)
+
+    def saveConfig(self):
+        self.settings.setValue("maxhistory", QtCore.QVariant(self.ui.maxHistorySB.value()))
+
+    def resetConfig(self):
+        self.ui.maxHistorySB.setValue(self.settings.value("maxhistory", QVariant(100)).toInt()[0])
