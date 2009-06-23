@@ -48,18 +48,23 @@ class PisiIface(QThread):
         self.pdb = pisi.db.historydb.HistoryDB()
 
     def run(self):
-        cntr = 0
-        for operation in self.pdb.get_last():
-            QCoreApplication.processEvents()
-            self.ops[operation.no] = [operation.no, operation.type,
-                                      operation.date, operation.time,
-                                      operation.packages]
-            cntr += 1
-            if cntr == 50:
-                break
-            time.sleep(0.01)
+        _max = int(self.pdb.get_last().next().no)
 
-        self.emit(SIGNAL("loadFetched(PyQt_PyObject)"), cntr)
+        _min = _max-200
+        if _max <= 200:
+            _min = 0
+
+        for i in range(_max, _min, -1):
+            QCoreApplication.processEvents()
+            operation = self.pdb.get_operation(i)
+            if operation:
+                self.ops[int(operation.no)] = [int(operation.no), str(operation.type),
+                                               str(operation.date), str(operation.time),
+                                              [ i.__str__() for i in operation.packages ]]
+            del operation
+            # time.sleep(0.01)
+
+        self.emit(SIGNAL("loadFetched(PyQt_PyObject)"), len(self.ops))
         self.deinit()
 
     def historyPlan(self, op):

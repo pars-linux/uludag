@@ -39,6 +39,7 @@ class MainManager(QtGui.QWidget):
         self.tweakUi()
 
         self.last_item = None
+        self.checkMsgClicks = False
 
         self.cface = ComarIface()
         self.pface = PisiIface(self)
@@ -48,6 +49,7 @@ class MainManager(QtGui.QWidget):
 
         self.ui.textEdit.installEventFilter(self)
         self.ui.lw.installEventFilter(self)
+        self.ui.opTypeLabel.installEventFilter(self)
 
         self.cface.listen(self.handler)
         self.pface.start()
@@ -66,7 +68,8 @@ class MainManager(QtGui.QWidget):
         map(self.addNewOperation, self.pface.ops.values()[self.loaded:num])
 
         self.loaded = num
-        self.status(i18n("%d Operations Loaded" % self.loaded))
+        self.status(i18n("%d Operations Loaded, Click here for Loading settings" % self.loaded))
+        self.checkMsgClicks = True
 
     def setAlias(self, txt):
         if self.last_item:
@@ -194,6 +197,8 @@ class MainManager(QtGui.QWidget):
             self.ui.opTypeLabel.setText(txt)
             self.ui.opTypeLabel.show()
 
+        self.checkMsgClicks = False
+
     def takeLastOperation(self):
         self.pface.initDb()
         return self.pface.getLastOperation()
@@ -268,8 +273,17 @@ class MainManager(QtGui.QWidget):
             self.closeEvent()
             return True
 
+        if obj == self.ui.opTypeLabel:
+            if event.type() == QEvent.MouseButtonPress:
+                self.popSettings()
+
         return QtCore.QObject.eventFilter(self, obj, event)
 
     def enableButtons(self, true):
         self.ui.newSnapshotPB.setEnabled(true)
 
+    def popSettings(self):
+        if self.checkMsgClicks:
+            print "pop options"
+        else:
+            print "not now"
