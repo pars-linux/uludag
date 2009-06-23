@@ -1,7 +1,5 @@
-- Kullanıcı ekleme bölümünde, gerçek ad ve kullanıcı adı eklenip daha sonra yeni kullanıcı denilip, daha önce ismi yazılan kullanıcı eklenmeden adı değiştirilip eklenmeye çalışılınca makina adı boş geliyor ve sistem kurulumundan sonra kullanıcı eklenemiyor.
-
-- iso bozuk olduğu durumda, cd kontrolü yapılmadan kuruluma başlanırsa, bozuk olan paketlerin install bölümüne gelindiğinde "yeniden dene ve iptal" butonu olan bir pencere çıkıyor. 
-    Yeniden dene seçildiğinde, progress bar yeniden install'un başladığı noktadan başlayamıyor. En son bulunduğu noktadan devam ediyor ve bir süre sonra devamlı 100% gösteriyor.
+- Bazı kurulumlarda yali krulduktansonra tekrar başlatılıyor deyip takılı kalabiliyor.
+- Windows partition grub'da görülemiyor (grub paketinden de kaynaklanıyor olabilir.)
 
 - Disk tablosu herhengi bir şekilde bozulmuş ise:
     + Partition formatlanıp yeni dosya sistemi ile kurulmaya çalışıldığında fscheck hatası veriyor.
@@ -36,3 +34,9 @@
     + Eger dosya sistemi olmayan boş bir partition var ise, bu partition önerilen olarak gelmesi gerekirken, bu partition hiç gözükmüyor.
 
 + Disk tablosunda partition signature eğer none olarak gözüküyor ise parted harası veriyor.
+
++Kullanıcı ekleme bölümünde, gerçek ad ve kullanıcı adı eklenip daha sonra yeni kullanıcı denilip, daha önce ismi yazılan kullanıcı eklenmeden adı değiştirilip eklenmeye çalışılınca makina adı boş geliyor ve sistem kurulumundan sonra kullanıcı eklenemiyor.
+
++ iso bozuk olduğu durumda, cd kontrolü yapılmadan kuruluma başlanırsa, bozuk olan paketlerin install bölümüne gelindiğinde "yeniden dene ve iptal" butonu olan bir pencere çıkıyor. 
+    Yeniden dene seçildiğinde, progress bar yeniden install'un başladığı noktadan başlayamıyor. En son bulunduğu noktadan devam ediyor ve bir süre sonra devamlı 100% gösteriyor.
+
