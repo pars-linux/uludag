@@ -21,6 +21,7 @@ from PyKDE4 import kdecore
 
 # UI
 from displaysettings.ui_main import Ui_MainWidget
+from displaysettings.scene import DisplayScene
 
 # Backend
 from displaysettings.backend import Interface
@@ -36,6 +37,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.setupUi(parent)
         else:
             self.setupUi(self)
+
+        self.scene = DisplayScene(self.graphicsView)
 
         # Backend
         self.iface = Interface()
