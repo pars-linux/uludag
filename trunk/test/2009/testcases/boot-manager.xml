@@ -4,8 +4,8 @@
 	<surname></surname>
 	<title>Boot Manager Test Cases</title>
 	<testcase>
-		<title>Try to open boot-manager from systemsettings.</title>
 		<order>
+		    <text>Try to open boot-manager from systemsettings.</text>
 			<observe>Observe that it is opened without any problem.</observe>
 		</order>
 		<title>Try to open boot-manager from Kmenu.</title>
