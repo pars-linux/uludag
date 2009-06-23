@@ -1,0 +1,55 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+
+%opening
+\title{Pardus Alfa ve Beta Sürümleri İçin Test Kılavuzu}
+
+\begin{document}
+
+\maketitle
+
+Dikkat!
+
+    Test esnasında bilgisayarınızdaki disk bölümlerini değiştirebilir, silebilir ya da yeni bir tane oluşturabilirsiniz. Bu sebeple testlere başlamadan önce bilgilerinizi yedeklemeniz önerilir.
+    
+    Birden fazla test makinanız varsa her makina için ayrı test sonucu göndermelisiniz.
+
+    Başarısız olan her test sonucu için pardus hata takip sistemine hata girmelisiniz.
+
+    Not: Her hata girişi için lütfen \emph{efficient-bug-report.pdf}'te ayrıntılı açıklamalar ve ekler ile yer alan hata raporlama şablonunu kullanınız.
+
+\begin{enumerate}
+\item Hazırlık
+  \begin{enumerate}
+    \item Gerekli ISO kalıbını indirin.
+    \item Kalıptaki veriyi aşağıdaki komutu çalıştırarak doğrulayın.
+      \begin{verbatim}
+       # sha1sum <iso_image>
+      \end{verbatim}
+    \item ISO kalıbını DAO modunda ve en fazla 16x hızında yazdırın.
+  \end{enumerate}
+  \item Testler
+    
+ 	!!!Bazı testlerde konsoldan çıktı alabilmek için root olmanız gerekmektedir.
+	
+    Lütfen aşağıdaki testleri sırasıyla uygulayın:
+    \begin{itemize}
+    \item YALI
+    \item Kaptan
+    \item Ağ Yöneticisi
+    \item Paket Yöneticisi
+    \item Geçmiş Yöneticisi
+    \item Açılış Yöneticisi
+    \item Disk Yöneticisi
+    \item Kullanıcı Yöneticisi
+    \item Servis Yöneticisi
+    \item Güvenlik Duvarı Yöneticisi
+    \end{itemize}
+ \end{enumerate}
+\end{document}
