@@ -14,11 +14,11 @@
 from PyKDE4.kdecore import KAboutData, ki18n
 
 # Application Data
-appName     = "migration-manager"
-modName     = "migrationmanager"
-programName = ki18n("Migration Manager")
+appName     = "migration-tool"
+modName     = "migrationtool"
+programName = ki18n("Migration Tool")
 version     = "0.0.1"
-description = ki18n("Migration Manager")
+description = ki18n("Migration Tool")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2006-2009 TUBITAK/UEKAE")
 text        = ki18n(" ")
