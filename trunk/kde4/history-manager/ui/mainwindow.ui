@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>661</width>
+    <width>756</width>
     <height>722</height>
    </rect>
   </property>
@@ -32,6 +32,13 @@
     </widget>
    </item>
    <item row="0" column="1">
+    <widget class="QPushButton" name="configurePB">
+     <property name="text">
+      <string>History Settings</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
     <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -44,7 +51,7 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="0" colspan="2">
+   <item row="1" column="0" colspan="3">
     <widget class="QListWidget" name="lw">
      <property name="showDropIndicator" stdset="0">
       <bool>false</bool>
@@ -66,7 +73,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="2">
+   <item row="2" column="0" colspan="3">
     <widget class="QScrollArea" name="editBox">
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -85,7 +92,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>653</width>
+        <width>748</width>
         <height>326</height>
        </rect>
       </property>
@@ -174,7 +181,7 @@
      </widget>
     </widget>
    </item>
-   <item row="3" column="0" colspan="2">
+   <item row="3" column="0" colspan="3">
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <spacer name="horizontalSpacer_3">

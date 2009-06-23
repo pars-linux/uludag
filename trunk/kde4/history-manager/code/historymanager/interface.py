@@ -40,6 +40,7 @@ class PisiIface(QThread):
         super(PisiIface, self).__init__(parent)
         self.parent = parent
 
+        self.settings = QSettings()
         self.ops = {}
         self.pdb = None
         self.initDb()
@@ -50,8 +51,10 @@ class PisiIface(QThread):
     def run(self):
         _max = int(self.pdb.get_last().next().no)
 
-        _min = _max-200
-        if _max <= 200:
+        fetch = self.settings.value("maxhistory", QVariant(100)).toInt()[0]
+
+        _min = _max-fetch
+        if _max <= fetch:
             _min = 0
 
         for i in range(_max, _min, -1):
@@ -79,7 +82,7 @@ class PisiIface(QThread):
     def getLastOperation(self):
         op = self.pdb.get_last()
         op = op.next()
-        return [op.no, op.type, op.date, op.time, op.packages, op.tag]
+        return [int(op.no), str(op.type), str(op.date), str(op.time), [ i.__str__() for i in op.packages ]]
 
     def deinit(self):
         if self.pdb:
