@@ -18,3 +18,7 @@
 - Bluetooth ağları network-manager'da görüntülenebiliyor fakat buradan bağlantı sağlanamıyor. Bu durum için bir warning penceresi çıkarılabilir.
 
 - Ethernet ile baglanilamaya calisilinca ilk seferinde baglanilamiyor. Ve bilgisayar restart edildiginde de aga kendi kendine baglanamiyor.
+
+- Butonların üzrine gelindiğinde açıklama gelmeli.
+- Kullanılabilir profiller seçilince network-manager donuyor.
+- İnterface yok iken bağlanabiliyor.

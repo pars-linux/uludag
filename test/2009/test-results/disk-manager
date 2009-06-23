@@ -14,3 +14,4 @@ TESTS
   - Options opsiyonel, boş geçilebilir.
 
 + Extended partititionlar disk-manager da görüntülenememeli.
+- Butonların üzrine gelindiğinde açıklama gelmeli.
