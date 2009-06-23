@@ -1,0 +1,303 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+
+\title{Package Manager Test Cases}
+\author{Semen Cirit}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Menüden paket yöneticisini seçiniz.
+	
+	  Sorunsuz bir şekilde açılabildiğini gözlemleyin.
+ 
+
+    \item Paket yöneticisi menü çubuğu:
+
+    Sol tarafta bulunan kutu ilgili paket gruplarını göstermektedir. Bu paket grupları depolarımızda bulunan ilgili bileşenlerin paketlerini listelemektedir.
+
+    Örnek olarak aşağıda verilecek olan grup ve bileşen eşleşmeleri aşağıda gerçekleştirilecek testcaseler için gereklidir.
+     \begin{table}[h]
+	  \centering
+	  \begin{tabular}{|c|c|}
+		  \hline
+		  Grup & Bileşen \\
+		  Virtualization & hardware.virtualization \\
+		  Servers & server.database \\
+		  \hline
+	  \end{tabular} 
+	  \label{tab:tbl}
+    \end{table}
+    
+    \begin{enumerate}
+        \item Dosya menü çubuğu
+    
+        Düşen kutu seçenekleri
+        \begin{enumerate}
+            \item Kurulabilir Paketleri gösteri seçiniz.
+            
+	     Daha sonra yukarıda verilmiş olan bileşenlerden birini kullanarak aşağıdaki komutu çalıştırınız.
+            \begin{verbatim}
+            $ pisi la -Uc <seçtiğiniz bileşen>
+            \end{verbatim}
+            Paket yöneticisindeki ilgili grubun konsol çıktısından alınan paket adlarını içerdiğini gözlemleyin.
+            \item Kurulu Paketleri Gösteri seçiniz.
+
+             Daha sonra yukarıda verilmiş olan bileşenlerden birini kullanarak aşağıdaki komutu çalıştırınız.
+            \begin{verbatim}
+            $ pisi li -c <seçtiğiniz bileşen>
+            \end{verbatim}
+            Paket yöneticisindeki ilgili grubun konsol çıktısından alınan paket adlarını içerdiğini gözlemleyin.
+    
+            \item Güncellemeleri gösteri seçiniz.
+
+             Daha sonra yukarıda verilmiş olan bileşenlerden birini kullanarak aşağıdaki komutu çalıştırınız.
+            \begin{verbatim}
+            $ pisi lu -c <seçtiğiniz bileşen>
+            \end{verbatim}
+            Paket yöneticisindeki ilgili grubun konsol çıktısından alınan paket adlarını içerdiğini gözlemleyin.
+    
+            \item Çık seçeneğini seçiniz. 
+            Observe the situation.
+        \end{enumerate}
+    
+        \item Ayarlar menü çubuğu
+        
+	 Düşen kutu seçenekleri
+	 \begin{enumerate}
+            \item Araç çubuğunu gösteri disable ediniz.
+	
+	     Araç çubuğunun kaybolduğunu gözlemleyin.
+            \item Durum çubuğunu gösteri disable ediniz.
+  
+	    Durum çubuğunun kaybolduğunu gözlemleyiniz.
+
+            \item Kısa yolları yapılandır'ı seçiniz.
+
+            \begin{enumerate}
+                \item Çıkan pencereden bir eylem seçiniz.
+
+                \item İlgili eylem üzerinde iken kısayol seçiniz.
+                \begin{itemize}
+                    \item Kısayolu değiştiriniz.
+
+		    Bu kısa yolu kullanarak ilgili eylemin gerçekleştiğini kontrol ediniz.
+                    \item Özel bir kısa yol veriniz
+
+		    Bu kısa yolu kullanarak ilgili eylemin gerçekleştiğini kontrol ediniz.
+                    \item Kısa yolu silmeyi deneyiniz.
+		    
+		    Sildiğiniz kısa yolu kullanarak ilgili eylemin gerçekleşmediğini kontrol ediniz.
+		    
+                \end{itemize}
+		\item Öntanımlılara geri dön butonuna basınız.
+      
+		 Değiştirmiş olduğunuz bir kısayolun öntanımlı haline geri döndüğünü gözlemleyiniz.
+
+		\item Eğer yazıcınız var ise print tuşuna basınız.
+	  
+		Çıktısının alınabildiğini gözlemleyiniz.
+            \end{enumerate}
+            \item Araç çubuğunu yapılandır'ı seçiniz.
+            \begin{enumerate}
+                \item Araç çubuğuna bir eylem ekleyiniz
+		 
+		Bu eylemin araç çubuğuna eklendiğini gözlemleyin.
+
+                \item Araç çubuğundan bir eylem siliniz.
+      
+		Bu eylemin araç çubuğundan silindiğini gözlemleyin.
+
+                \item Bir eylemi yukarı taşıyın
+      
+		Eylemlerin araç çubuğunda uygun sırada olduğunu gözlemleyin.
+                \item Bir eylemi aşağıya taşıyın.
+
+                Bu eylemin araç çubuğunda uygun sırada olduğunu gözlemleyin.
+            \end{enumerate}
+            \item Paket Yöneticisi Ayarları'nı seçiniz.
+            \begin{enumerate}
+                \item Genel ayarları seçiniz.
+                \begin{itemize}
+                    \item Sadece masaüstü uygulamalarını gösteri seçiniz.
+
+                    .kde4/share/config/package-managerrc dosyası içerisinde "ShowOnlyGuiApp" değişkeninin "True" olduğunu gözlemleyiniz.
+		     Paket yöneticisindeki paketlere baktığınızda sadece masaüstü uygulamalarının paketlerinin kaldığını gözlemleyiniz.
+
+                    \item Sistem çekmecesi ikonunu etkinleştiri seçiniz.
+
+                    .kde/share/config/package-managerrc dosyasında "SystemTray" değişkeninin "True" olduğunu gözlemleyin.
+		     Paket yöneticisi ikonunun sistem çekmecesinde belirdiğini gözlemleyin.
+
+                    \item Aralıklı güncelleme kontrolünü etkinleştiriniz. 
+                 
+                        .kde4/share/config/package-managerrc dosyasında "UpdateCheck" değişkeninin "True" olduğunu gözlemleyin.
+                        
+		    \item Gözlemleyebileceğiniz bir zaman aralığı veriniz. 
+	
+			 Bu verdiğiniz zaman aralığının .kde4/share/config/package-managerrc dosyasında "UpdateCheckInterval" değişkenine atanmış olduğunu gözlemleyin.    
+
+                    \item band genişliği limitini kullanınız ve uygun bir aralık veriniz.
+
+		     /etc/pisi/pisi.conf dosyasında "bandwith\_limit" değişkeninin verdiğiniz değişken ile aynı olduğunu gözlemleyiniz.
+
+                     Bir paket indirerek paket indirme hızının verdiğiniz hız olduğunu, paket kuruluyor popup penceresinden gözlemleyiniz.
+    
+                \end{itemize}
+                \item Önbelleği seçiniz.
+                \begin{itemize}
+                    \item Güncelleme kontrolü 
+                    \begin{itemize}
+                        \item indirilen yazılımlar için sabit disk önbelleği kullanı seçiniz.
+
+                        /etc/pisi/pisi.conf dosyasında \texttt{package\_cache = True} olduğunu gözlemleyin.
+
+                        \item Azami önbellek boyutuna uygun bir değer verin.
+
+                        /etc/pisi/pisi.conf dosyasından bu verdiğiniz değerin "package\_cache\_limit" değişkenine atanmış olduğunu gözlemleyin.
+                    \end{itemize}
+                  
+		      \item Önbelleği şimdi temizleyi çalıştırınız.
+
+		      Aşağıdaki komutaları çalıştırınız: 
+		      \begin{verbatim}
+		      # cd /var/pisi
+		      \end{verbatim}
+
+		      "bash: cd: /var/pisi: Böyle bir dosya ya da dizin yok" gibi bir çıktı verdiğini gözlemleyiniz.
+	    
+		      \begin{verbatim}
+		      # cd /var/cache/pisi/
+		      \end{verbatim}
+		
+		      Eğer debug paketi kurmamış iseniz bu dizinin boş olduğunu, eğer kurmuş iseniz packages-debug dizininin bulunduğunu gözlemleyiniz.
+		   
+                \end{itemize} 
+                \item Depolar
+
+		 Komutunu çalıştırarak depolar ile ilgili yaptığınız işlemleri gözlemleyebilirsiniz.
+		    \begin{verbatim}
+		      # pisi lr
+		    \end{verbatim}
+                \begin{itemize}
+                    \item Bir depo ekleyiniz.
+		    
+		    Deponun eklenmiş olduğunu yukarıdaki komutu kullanarak gözlemleyiniz.
+
+                    \item Bir depo siliniz
+		
+		    Deponun silinmiş olduğunu yukarıdaki komutu kullanarak gözlemleyiniz.
+                    \item Bir depoyu yukarı çekiniz
+ 
+		     Deponun uygun yere gelmiş olduğunuyukarıdaki komutu kullanarak gözlemleyiniz.
+                    \item Try to take down a repository 
+
+                    Deponun uygun yere gelmiş olduğunuyukarıdaki komutu kullanarak gözlemleyiniz.
+                \end{itemize}
+                \item Veki sunucu
+                \begin{itemize}
+                    \item  Select No proxy server 
+                    Look /etc/pisi/pisi.conf file, observe these variables are like that
+                    \begin{verbatim}
+                    http_proxy = None
+                    https_proxy = None
+                    ftp_proxy = None
+                    \end{verbatim}
+    
+                    \item Select Use proxy server
+    
+                    \begin{itemize}
+                        \item Try to add a HTTP server and enable use proxy server for all protocols.
+        
+                        Observe the related results of /etc/pisi/pisi.conf
+        
+                        \item Try to add a HTTP, a HTTPS and a FTP server
+        
+                        Observe the related results of /etc/pisi/pisi.conf
+                    \end{itemize}
+                \end{itemize}
+                \item Help toolbox
+    
+                Dropdown alternatives
+                \begin{itemize}
+                    \item KDE help center (testcases will added later)
+                    \item What's this? 
+        
+                    Try to take the description of each widget on the screen.
+                    %\item Report bug
+                    %\begin{itemize}
+                    %    \item Choose a severity for the an example bug
+                    %    \item Add a subject and description and send it
+                    %    \item Control it from bugzilla
+                    %\end{itemize}
+                    \item Switch application language
+                    \begin{itemize}
+                        \item Change primary language and observe the situation.
+                        \item Try to add a fallback language and observe the situation.
+                        \item Try to remove the fallback language and observe the situation.
+                    \end{itemize}
+                \end{itemize}
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+    \item Toolbar
+    \begin{itemize}
+        \item Try to right click on toolbar
+        \item Try to change the oriantation, observe each result
+        \item Try to change text position, observe each result.
+    
+            Observe also that selected style is assigned to "ToolButtonStyle" variable in .kde/share/config/package-managerrc file.
+        \item Try to change the icon size, observe the each result.
+        \item Try to lock toolbar, then unlock toolbar
+    
+            Then right click again and try to change some feature.
+        \item Try to enable and disable toolbar, observe each result.
+        \item Try to configure toolbar and test again toolboxes-> configure toolbar part of testcases.
+    \end{itemize}
+    \item Installing Package
+	You can observe whether the package installed with this command:
+	\begin{verbatim}
+	 pisi info <package-name>
+	\end{verbatim}
+
+        \begin{itemize}
+            \item After showing new packages. 
+            \begin{itemize}
+                \item Select a package from package list, try to install.
+                \item Select all, try to install all
+            \end{itemize}
+            \item After showing upgradable packages.
+            \begin{itemize}
+                \item Select a package from package list, try to install.
+                \item Select all, try to install all
+            \end{itemize}
+	\item After installing some package try to install a gui application (for example kaffein)and for this time enable remembering password when the system policykit screen open.
+		
+		Observe that after installing this package a screen is opened which contains this package icon. Click on it and try to open it.
+	\item Try to install a package when your password remembered.
+		
+		Observe that the package manager doesn't ask password and install the package without any problem.
+        \end{itemize}
+    \item Removing packages
+	You can observe whether the package removed with this command:
+	\begin{verbatim}
+	 pisi info <package-name>
+	\end{verbatim}
+        \begin{itemize}
+            \item After showing installed packages.
+            \begin{itemize}
+                \item Select a package from package list, try to remove.
+                \item Select all, try to remove all.
+            \end{itemize}
+        \end{itemize}
+    \end{enumerate}
+
+\end{document}

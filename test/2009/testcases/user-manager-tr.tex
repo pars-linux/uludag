@@ -1,0 +1,114 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\title{Kullanıcı Yöneticisi Test Durumları}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+\begin{enumerate}
+
+\item Kullanıcı yöneticisini kullanıcı ayarlarından açmaya çalışın.
+
+\item Kullanıcı yöneticisini Kmenu'den açmaya çalışın.
+
+\item Yeni bir kullanıcı ekleyin
+
+    Aşağıdaki komutu çalıştırın:
+    \begin{verbatim}
+        $ getent passwd 
+    \end{verbatim}
+    Kullanıcının eklenmiş olduğunu doğrulayın.
+
+    \begin{enumerate}
+    \item Parolayı değiştirmeye çalışın.
+        \begin{enumerate}
+        \item Parola ve parola onay alanlarına yeni bir parola yazın.
+        \item Parola alanına yeni bir parola ve parola onay alanına farklı bir parola yazın. Herhangi bir uyarı verip vermediğini kontrol edin.
+        \end{enumerate}
+    \end{enumerate}
+
+    \item Yönetici yetkilerini etkinleştirin.
+
+          Yeni eklenen kullanıcı ile giriş yapın ve bu kullanıcı ile root olmaya çalışın. root olabildiğinizi doğrulayın.
+    \item Yönetici yetkilerini geri alın.
+
+        Yeni eklenen kullanıcı ile giriş yapın ve bu kullanıcı ile root olmaya çalışın. root olamadığınızı doğrulayın.
+
+    \item Bir yetki verin.
+
+        Aşağıdaki komutu çalıştırın: (root olarak)
+    \begin{verbatim}
+        # cat /var/lib/PolicyKit/user-<username>.auths
+    \end{verbatim}
+        Kullanıcıya bu yetkinin verilmiş olduğunu doğrulayın.
+
+    
+\item Yeni bir grup eklemeye çalışın.
+
+     Aşağıdaki komutu çalıştırın:
+\begin{verbatim}
+     cat /etc/group
+ \end{verbatim}
+     Grubun eklenmiş olduğunu doğrulayın.
+
+\item Bu gruba kullanıcı ekleyin
+
+          Aşağıdaki komutu çalıştırın:
+    \begin{verbatim}
+        $ groups <username> 
+    \end{verbatim}
+
+        Sonuçları gözlemleyin.
+
+\item Bir grubu silin.
+
+\begin{enumerate}
+    \item Aşağıdaki komutu çalıştırın:
+
+\begin{verbatim}
+     $ getent group
+\end{verbatim} 
+
+     Grubun silindiğini doğrulayın.
+
+    \item Bu gruba eklenmiş kullanıcıyı inceleyin.
+
+     Aşağıdaki komutu çalıştırın:
+\begin{verbatim}
+     $ groups <username>
+\end{verbatim}
+     Kullanıcın artık bu gruba ait olmadığını doğrulayın.
+\end{enumerate}
+
+\item Kullanıcıyı bir gruptan çıkarın.
+
+       Aşağıdaki komutu çalıştırın:
+    \begin{verbatim}
+        $ groups <username> 
+    \end{verbatim}
+        ve sonuçları inceleyin.
+
+\item Yeni eklenmiş kullanıcının bilgilerini değiştirmeye çalışın.
+
+\item Kullanıcıyı silmeye çalışın.
+
+      Aşağıdaki komutu çalıştırın:
+\begin{verbatim}
+     $ getent passwd
+\end{verbatim}
+     Kullanıcının silindiğini doğrulayın.
+
+\item Tüm kullanıcıları listelemeye çalışın.
+\item Tüm grupları listelemeye çalışın.
+
+\end{enumerate}
+
+\end{document}
+
+
