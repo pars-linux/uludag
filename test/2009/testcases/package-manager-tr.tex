@@ -1,7 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[utf8x]{inputenc}
 
-\title{Package Manager Test Cases}
+\title{Paket Yöneticisi Test Caseleri}
 \author{Semen Cirit}
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
@@ -191,6 +191,7 @@
 		    
 		    Deponun eklenmiş olduğunu yukarıdaki komutu kullanarak gözlemleyiniz.
 
+		    Güncellemeleri göster deyip, eklediğiniz deponun güncellenip güncellenmediğini gözlemleyiniz.
                     \item Bir depo siliniz
 		
 		    Deponun silinmiş olduğunu yukarıdaki komutu kullanarak gözlemleyiniz.
@@ -246,52 +247,89 @@
 
     \item Toolbar
     \begin{itemize}
-        \item Try to right click on toolbar
-        \item Try to change the oriantation, observe each result
-        \item Try to change text position, observe each result.
+        Araçlar çubuğuna sağ tıklayınız.
+
+	Çıkan düşen menüden:
+        \item Konumu değiştiriniz
+      
+	Araç çubuğunun seçtiğiniz konumda olduğunu gözlemleyiniz.
+        \item Metin konumunu değiştiriniz.
+
+	    Araç çubuğunda bulunan ikonların stillerinin seçmiş olduğunuz şekilde olduğunu gözlemleyiniz.
+            
+	    .kde/share/config/package-managerrc dosyasına seçmiş olduğunuz stilin "ToolButtonStyle" değişkenine atandiğını gözlemleyiniz.
+
+        \item İkon boutunu değiştiriniz.
+      
+	Seçilmiş boyutun seçmiş olduğunuz şekilde olduğunu gözlemleyiniz.
+        \item Araç çubuğunu kilitleyiniz.
     
-            Observe also that selected style is assigned to "ToolButtonStyle" variable in .kde/share/config/package-managerrc file.
-        \item Try to change the icon size, observe the each result.
-        \item Try to lock toolbar, then unlock toolbar
-    
-            Then right click again and try to change some feature.
-        \item Try to enable and disable toolbar, observe each result.
-        \item Try to configure toolbar and test again toolboxes-> configure toolbar part of testcases.
+            Ve tekrar sağ tıklayıp herhangi bir araç çubuğu özelliğini değiştirmeye çalışınız
+	    
+	    Hiçbir değişikliğin gerçekleşmediğini gözlemleyiniz.
     \end{itemize}
-    \item Installing Package
-	You can observe whether the package installed with this command:
+
+	İlgili paketin kurulu olup olamadığını aşağıdaki komut ile gözlemleyebilirsiniz:
 	\begin{verbatim}
-	 pisi info <package-name>
+	 pisi hs
 	\end{verbatim}
 
+    \item Paket kurma
+
         \begin{itemize}
-            \item After showing new packages. 
+            \item Kurulabilir paketleri göster dedikten sonra. 
             \begin{itemize}
-                \item Select a package from package list, try to install.
-                \item Select all, try to install all
+                \item Paketler listesinden bir paket seçip bu paketi kurunuz.
+		
+	Açılan pencerede pakete ait bağımlılıkların düzgün çıktığını gözlemlemleyiniz.
+	
+	 Note: Bu komut ile paket bağımlılıklarını Bağımlılıklar: başlığı altından gözlemleyebilirsiniz.
+	  \begin{verbatim}
+	   # pisi info <paketadı>
+	  \end{verbatim}
+	      
+
+		
+		Yukarıdaki komutu kullanarak paketin kurulmuş olduğunu gözlemleyiniz.
+                \item Bu gruptaki tüm paketleri seç'e tıklayınız 
+
+		Yukarıdaki komutu kullanarak listeden kurduğunuz birkaç paket için paketlerin kurulmuş olduğunu gözlemleyiniz.
+  
             \end{itemize}
-            \item After showing upgradable packages.
+            \item Güncellemeleri göster dedikten sonra.
             \begin{itemize}
-                \item Select a package from package list, try to install.
-                \item Select all, try to install all
+                \item Bir paket seçiniz ve güncellemeyi deneyiniz.
+
+		Yukarıdaki komutu kullanarak paketin güncellenmiş olduğunu gözlemleyiniz.
+                \item Bu gruptaki tüm paketleri seç'e tıklayınız
+
+		Yukarıdaki komutu kullanarak listeden güncellediğiniz birkaç paket için paketlerin update olduğunu gözlemleyiniz.
             \end{itemize}
-	\item After installing some package try to install a gui application (for example kaffein)and for this time enable remembering password when the system policykit screen open.
+	\item Bir masaüstü uygulaması kurun ve parola sorma penceresinde parolamı hatırlayı seçin.
 		
-		Observe that after installing this package a screen is opened which contains this package icon. Click on it and try to open it.
-	\item Try to install a package when your password remembered.
-		
-		Observe that the package manager doesn't ask password and install the package without any problem.
+		Bu paketi kurduktan sonra bu paketin ikonunu ve bilgisini içeren bir a pencere acıldığını gözlemleyin.
+
+		Bu ikona tıklayın
+
+		Uygulamanın sorunsuz bir şekilde açıldığını gözlemleyin.
+
+	\item Parolamı hatırla aşaması bir önceki bölümde gerçekleştirilmişti.
+  
+	  Bu durumda paket kurmayı deneyin.
+
+		Paket yöneticisinin parola sormadan paketi kurabildiğini gölemleyin.
         \end{itemize}
-    \item Removing packages
-	You can observe whether the package removed with this command:
-	\begin{verbatim}
-	 pisi info <package-name>
-	\end{verbatim}
-        \begin{itemize}
-            \item After showing installed packages.
+    \item Paket kaldırma
+      \begin{itemize}
+            \item Kurulu paketleri göster dedikten sonra.
             \begin{itemize}
-                \item Select a package from package list, try to remove.
-                \item Select all, try to remove all.
+                \item Paket listesinden bir paket seçip kaldırınız.
+	  
+		 Bu paketin kaldırıldığını yukarıdaki komutu kullanarak gözlemleyiniz.
+
+                \item Bu gruptaki tüm paketleri seçiniz ve indiriniz.
+
+		Yukarıdaki komutu kullanarak listeden sildiğiniz birkaç paket için paketlerin silinmiş olduğunu gözlemleyiniz.
             \end{itemize}
         \end{itemize}
     \end{enumerate}
