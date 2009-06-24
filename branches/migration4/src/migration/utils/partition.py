@@ -14,7 +14,7 @@
 import os
 import logging
 
-import registry
+from migration.utils import registry
 
 def getPartitions():
     "get all partitions in the form: '/mnt/hda9'"
