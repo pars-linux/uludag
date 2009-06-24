@@ -11,15 +11,15 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Kaptan Desktop</string>
+   <string>Migration Tool</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>:/raw/pics/cr64-app-kaptan.png</normaloff>:/raw/pics/cr64-app-kaptan.png</iconset>
+   <iconset resource="raw.qrc">
+    <normaloff>:/raw/pics/cr64-app-migration.png</normaloff>:/raw/pics/cr64-app-migration.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">
-#kaptan{
+#migration{
 	
        background-image:url(':/raw/pics/bg.svg');
        background-repeat: no-repeat;
@@ -108,7 +108,7 @@ color: white</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>:/raw/pics/kaptan-logo.png</pixmap>
+           <pixmap resource="raw.qrc">:/raw/pics/cr64-app-migration-left.png</pixmap>
           </property>
          </widget>
         </item>
