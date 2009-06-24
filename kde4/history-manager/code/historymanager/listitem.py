@@ -61,7 +61,7 @@ class NewOperation(QWidget):
 
         self.ui.labelLabel.setText(self.alias)
 
-        self.ui.typeLabel.setText("No: %d   Type: %s" % (self.op_no, self.op_type_tr))
+        self.ui.typeLabel.setText(i18n("No: %1   Type: %2", self.op_no, self.op_type_tr))
         self.ui.iconLabel.setPixmap(QPixmap(self.icon))
 
         self.connect(self.ui.restorePB, SIGNAL("clicked()"), self.parent.takeBack)

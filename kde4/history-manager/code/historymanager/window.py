@@ -73,7 +73,7 @@ class MainManager(QtGui.QWidget):
         map(self.addNewOperation, self.pface.ops.values()[self.loaded:num])
 
         self.loaded = num
-        self.status(i18n("%d Operations Loaded" % self.loaded))
+        self.status(i18n("%1 Operations Loaded", self.loaded))
         self.checkMsgClicks = True
 
     def setAlias(self, txt):
@@ -121,7 +121,7 @@ class MainManager(QtGui.QWidget):
         item = self.sender().parent()
         self.last_item = item
 
-        self.ui.editGroup.setTitle("Details for operation on %s at %s" % (item.op_date, item.op_time))
+        self.ui.editGroup.setTitle(i18n("Details for operation on %1 at %2", item.op_date, item.op_time))
 
         self.ui.aliasLE.setText(unicode(item.ui.labelLabel.text()))
 
@@ -186,7 +186,7 @@ class MainManager(QtGui.QWidget):
 
         message += "<br>"
 
-        self.ui.editGroup.setTitle("Takeback plan for Operation on %s at %s" % (item.op_date, item.op_time))
+        self.ui.editGroup.setTitle(i18n("Takeback plan for Operation on %1 at %2", item.op_date, item.op_time))
         self.ui.textEdit.setText(message+information)
 
         self.animator.setFrameRange(TARGET_HEIGHT, self.parent.height() - TARGET_HEIGHT)
