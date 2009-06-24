@@ -103,9 +103,8 @@ msgid "Try:"
 msgstr ""
 
 #: .tmp/keyboardWidget.py:73 .tmp/ui_keyboardWidget.py:73
-#, fuzzy
 msgid "Configure your keyboard layout."
-msgstr "Farenizi yapılandırın"
+msgstr "Klavye düzeninizi buradan ayarlayabilirsiniz."
 
 #: .tmp/menuWidget.py:77 .tmp/ui_menuWidget.py:77
 msgid "Menu"
@@ -239,13 +238,12 @@ msgid "Goodbye from Kaptan Wizard :)"
 msgstr "Kaptan Masaüstü size hoşçakalın diyor :)"
 
 #: .tmp/ScrKeyboard.py:32
-#, fuzzy
 msgid "Insert some catchy title about keyboards.."
 msgstr "taslak"
 
 #: .tmp/ScrKeyboard.py:33
 msgid "Select your keyboard layout"
-msgstr ""
+msgstr "Klavye düzeninizi seçin"
 
 #: .tmp/ScrMenu.py:26 .tmp/ScrStyle.py:34
 msgid "Some catchy title about styles"
@@ -356,13 +354,12 @@ msgid "Data"
 msgstr ""
 
 #: .tmp/ScrSmolt.py:108
-#, fuzzy
 msgid "&Back"
-msgstr "Geri"
+msgstr "&Geri"
 
 #: .tmp/ScrSmolt.py:111 .tmp/smoltWidget.py:78 .tmp/ui_smoltWidget.py:78
 msgid "&Privacy policy"
-msgstr ""
+msgstr "&Gizlilik Politikası"
 
 #: .tmp/ScrSmolt.py:114
 msgid "UUID"
@@ -397,9 +394,8 @@ msgid "CPU Model"
 msgstr ""
 
 #: .tmp/ScrSmolt.py:122
-#, fuzzy
 msgid "Number of CPUs"
-msgstr "Masaüstü sayısı:"
+msgstr ""
 
 #: .tmp/ScrSmolt.py:123
 msgid "CPU Speed"
@@ -410,9 +406,8 @@ msgid "System Memory"
 msgstr ""
 
 #: .tmp/ScrSmolt.py:125
-#, fuzzy
 msgid "System Swap"
-msgstr "Sistem Ayarları"
+msgstr ""
 
 #: .tmp/ScrSmolt.py:126
 msgid "Vendor"
@@ -505,14 +500,13 @@ msgid "Desktop search: <b>%s</b>"
 msgstr "Masaüstü Araması: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:97
-#, fuzzy
 msgid "Smolt Settings"
-msgstr "Stil Ayarları"
+msgstr "Smolt Ayarları"
 
 #: .tmp/ScrSummary.py:98
-#, fuzzy, python-format
+#, python-format
 msgid "Smolt profile: <b>%s</b>"
-msgstr "Seçilen stil: <b>%s</b>"
+msgstr "Smolt profili: <b>%s</b>"
 
 #: .tmp/ScrWallpaper.py:34
 msgid "Insert some catchy title about wallpapers.."
@@ -665,9 +659,8 @@ msgid "Wallpaper"
 msgstr "Duvarkağıdı"
 
 #: .tmp/ui_wallpaperWidget.py:45
-#, fuzzy
 msgid "Choose Wallpaper From a File"
-msgstr "Duvarkağıdı seç"
+msgstr "Dosyadan Bir Duvarkağıdı Seçin"
 
 #: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:46
 msgid "Don't change wallpaper"
@@ -695,7 +688,6 @@ msgstr "Duvarkağıdı seç"
 #~ msgid "Congratulations! You have finished all steps!"
 #~ msgstr "Tebrikler! Bütün adımları bitirdiniz!"
 
-#, fuzzy
 #~ msgid "Multiple Desktops"
 #~ msgstr "Masaüstü sayısı:"
 
