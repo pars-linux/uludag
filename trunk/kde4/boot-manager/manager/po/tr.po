@@ -1,19 +1,23 @@
+# translation of tr.po to Turkish
 # Boot Manager.
 # Copyright (C) 2006-2009, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the Boot Manager package.
-# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 #
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: Boot Manager\n"
+"Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-05 14:28+0300\n"
-"PO-Revision-Date: 2009-05-25 14:25+0300E\n"
-"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
-"Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"PO-Revision-Date: 2009-06-24 13:32+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1;plural=0;\n"
 
 #: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
 msgid "Boot Manager"
@@ -33,7 +37,7 @@ msgstr "Bahadır Kandemir"
 
 #: .tmp/bootmanager/about.py:32
 msgid "Current Maintainer"
-msgstr "Şu anki geliştirici"
+msgstr "Güncel Bakıcı"
 
 #: .tmp/bootmanager/main.py:99
 msgid ""
@@ -41,7 +45,7 @@ msgid ""
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
-"Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
+"Lütfen paketlerin kurulum ve yapılandırmasının düzgün olup olmadığını kontrol edin."
 
 #: .tmp/bootmanager/main.py:195
 msgid "All Items"
@@ -53,7 +57,7 @@ msgstr "'%1' silinsin mi?"
 
 #: .tmp/bootmanager/main.py:327
 msgid "Access denied."
-msgstr "Erişim engellendi."
+msgstr "Erişim reddedildi."
 
 #: .tmp/ui_edit.py:134
 msgid "Title"
@@ -61,7 +65,7 @@ msgstr "Başlık"
 
 #: .tmp/ui_edit.py:135
 msgid "Name of the boot entry to be shown at the boot menu."
-msgstr "Açılış menüsünde gösterilecek isim."
+msgstr "Açılış menüsünde gösterilecek metin."
 
 #: .tmp/ui_edit.py:136
 msgid "Disk"
@@ -84,10 +88,8 @@ msgid "Ramdisk File"
 msgstr "Ramdisk Dosyası"
 
 #: .tmp/ui_edit.py:141
-msgid ""
-"File that contains a micro operating system for preloading kernel modules."
-msgstr ""
-"Çekirdek modüllerini yükleyecek mikro işletim sistemini içeren dosya."
+msgid "File that contains a micro operating system for preloading kernel modules."
+msgstr "Çekirdek bileşenlerini önyükleyecek bir mikro işletim sistemi içeren dosya."
 
 #: .tmp/ui_edit.py:142
 msgid "Boot Options"
@@ -103,4 +105,5 @@ msgstr "Yeni Ekle"
 
 #: .tmp/ui_options.py:36
 msgid "Boot menu display time:"
-msgstr "Açılış menüsü gösterme süresi:"
+msgstr "Açılış menüsünün görüntüleneceği süre:"
+
