@@ -1,7 +1,9 @@
 \documentclass[a4paper,10pt]{article}
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=1cm]{geometry}
+
 \usepackage[utf8x]{inputenc}
 
-\title{Paket Yöneticisi Test Caseleri}
+\title{Paket Yöneticisi Test Aşamaları}
 \author{Semen Cirit}
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
@@ -47,7 +49,9 @@
             \begin{verbatim}
             $ pisi la -Uc <seçtiğiniz bileşen>
             \end{verbatim}
-            Paket yöneticisindeki ilgili grubun konsol çıktısından alınan paket adlarını içerdiğini gözlemleyin.
+            
+	    Paket yöneticisindeki ilgili grubun konsol çıktısından alınan paket adlarını içerdiğini gözlemleyin.
+
             \item Kurulu Paketleri Gösteri seçiniz.
 
              Daha sonra yukarıda verilmiş olan bileşenlerden birini kullanarak aşağıdaki komutu çalıştırınız.
@@ -225,7 +229,9 @@
                         Tüm sunucular için verdiğiniz http sunucusu kullanıldığını gözlemleyiniz.
                     \end{itemize}
                 \end{itemize}
-                \item Yardım menü çubuğu
+                        \end{enumerate}
+    \end{enumerate}
+\item Yardım menü çubuğu
 		
                 \begin{itemize}
                     \item Uygulamanın dilini seç'i seçiniz 
@@ -241,15 +247,13 @@
 			Durumu gözlemleyiniz.
                     \end{itemize}
                 \end{itemize}
-        \end{enumerate}
-    \end{enumerate}
+
 \end{enumerate}
 
-    \item Toolbar
+    \item Araç çubuğu
     \begin{itemize}
-        Araçlar çubuğuna sağ tıklayınız.
+        \item Araçlar çubuğuna sağ tıklayınız.
 
-	Çıkan düşen menüden:
         \item Konumu değiştiriniz
       
 	Araç çubuğunun seçtiğiniz konumda olduğunu gözlemleyiniz.
@@ -269,27 +273,26 @@
 	    Hiçbir değişikliğin gerçekleşmediğini gözlemleyiniz.
     \end{itemize}
 
-	İlgili paketin kurulu olup olamadığını aşağıdaki komut ile gözlemleyebilirsiniz:
+
+    \item Paket kurma
+	
+		
+	İlgili paketin kurulu olup olmadığını aşağıdaki komut ile gözlemleyebilirsiniz:
 	\begin{verbatim}
 	 pisi hs
 	\end{verbatim}
 
-    \item Paket kurma
 
         \begin{itemize}
             \item Kurulabilir paketleri göster dedikten sonra. 
             \begin{itemize}
                 \item Paketler listesinden bir paket seçip bu paketi kurunuz.
 		
-	Açılan pencerede pakete ait bağımlılıkların düzgün çıktığını gözlemlemleyiniz.
-	
-	 Note: Bu komut ile paket bağımlılıklarını Bağımlılıklar: başlığı altından gözlemleyebilirsiniz.
-	  \begin{verbatim}
-	   # pisi info <paketadı>
-	  \end{verbatim}
-	      
-
-		
+		Açılan pencerede pakete ait bağımlılıkların düzgün çıktığını gözlemlemleyiniz.	
+	 	Note: Bu komut ile paket bağımlılıklarını Bağımlılıklar: başlığı altından gözlemleyebilirsiniz.
+		\begin{verbatim}
+		# pisi info <paketadı>
+		\end{verbatim}
 		Yukarıdaki komutu kullanarak paketin kurulmuş olduğunu gözlemleyiniz.
                 \item Bu gruptaki tüm paketleri seç'e tıklayınız 
 
@@ -307,7 +310,7 @@
             \end{itemize}
 	\item Bir masaüstü uygulaması kurun ve parola sorma penceresinde parolamı hatırlayı seçin.
 		
-		Bu paketi kurduktan sonra bu paketin ikonunu ve bilgisini içeren bir a pencere acıldığını gözlemleyin.
+		Bu paketi kurduktan sonra bu paketin ikonunu ve bilgisini içeren bir  pencere açıldığını gözlemleyin.
 
 		Bu ikona tıklayın
 

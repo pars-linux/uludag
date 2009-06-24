@@ -1,6 +1,9 @@
 \documentclass[a4paper,10pt]{article}
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=1cm]{geometry}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
 
-\title{Service Manager Test Cases}
+\title{Servis Yöneticisi Test Aşamaları}
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
@@ -9,30 +12,37 @@
 
 \begin{document}\maketitle
 \begin{enumerate}
-\item Try to open service manager from user settings
+\item Menü $\rightarrow$ Sistem Ayarlarından Servis Yöneticisini açmaya çalışın.
+	
+	Düzgün bir şekilde açıldığını gözlemleyin.
 
-\item Try to open service manager from Kmenu.
+\item Menü $\rightarrow$ Sistem $\rightarrow$ Servis Yöneticisi yolunu kullanarak açayı deneyin.
 
-Note: The below operations can be observed with this command line 
+Not: Aşağıdaki işlemler bu komut ile gözlemlenebilir. 
 
-Execute the following command:
 \begin{verbatim}
     $ service list
 \end{verbatim}
 
-Observe whether the selected service has made the desirable option.
+\item Servis aramayı deneyin.
 
+İstenen servisin bulunabildiğini gözlemleyin.
 
+\item Durdurulmuş bir servis seçin ve başlatmayı deneyin.
 
-\item Try to search a service.
+Yukarıdaki komutu kullanarak ilgili servisin başlatılmış olduğunu gözlemleyin.
 
-\item Choose a stopped service and try to start it.
+\item Başlatılmış bir servis seçin ve durdurmayı deneyin.
 
-\item Choose a started service and try to stop  it.
+Yukarıdaki komutu kullanarak ilgili servisin durdurulmuş olduğunu gözlemleyin.
 
-\item Choose a service and try to reload it.
+\item Bir servis seçin ve tekrar yüklemeyi deneyin.
 
-\item Choose a service and try to put it to autostart.
+Yukarıdaki komutu kullanarak ilgili servisin başlatılmış olduğunu gözlemleyin.
+
+\item Bir servis seçin ve açılışta çalıştır özelliği eklemeyi deneyin.
+
+Yukarıdaki komutu kullanarak ilgili servisin açılışta otomatik olarak başlatılacak olduğunu gözlemleyin.
 
 \end{enumerate}
 \end{document}

@@ -1,81 +1,88 @@
 \documentclass[a4paper,10pt]{article}
 
+
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
 \renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
 
-\title{Disk Manager Test Cases}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+
+\title{Disk Yöneticisi Test Aşamaları}
+\author{Semen Cirit}
 
 \begin{document}
 
 \maketitle
 \begin{enumerate}
 
-\item Try to open disk-manager from system settings.
-\item Try to open disk-manager from Kmenu.
+\item Menü $\rightarrow$ Sistem Ayarları Disk Yöneticisi bölümünden açmayı deneyiniz.
 
-\item Mounting an external usb stick or an other similar device. (Initially the disk not mounted) 
+Sorunzuz bir şekilde açıldığını gözlemlyiniz.
+\item Disk Yöneticisi'ni KMenu'den açmayı deneyiniz.
+
+\item Harici bir usb belleği veya benzeri bir aygıtı bağlama. (Başlangıçta disk bağlı değil) 
     \begin{enumerate}
-        \item Execute the following command:
+        \item Şu komutu çalıştırınız:
             \begin{verbatim}
                 # mount
             \end{verbatim}
-            Observe that this disk is not mounted to anywhere. 
+            Diskin hiçbir yere bağlanmadığını gözlemleyiniz. 
 
-	\item Observe also that the other mounted disks that seen on the disk-manager are mounted properly.  
+	\item Ayrıca disk yöneticisinde bulunan diğer bağlı disklerin uygun bir şekilde bağlı olduklarını gözlemleyiniz.  
 
-    \item Try to mount this disk to home directory.
-          Observe whether the disk manager gives a warning message about this unvalid mount point.
-    \item Try to mount this disk
+    \item Bu diski ev dizininize bağlamayı deneyiniz.
+          Disk yöneticisinin geçerli olmayan bu bağlama noktası hakkında bir uyarı verip vermediğini gözlemleyiniz.
+    \item Bu diski bağlamayı deneyiniz.
         \begin{enumerate}
-            \item Type an appropriate mount point. For example "/mnt/sample"
-            \item Give an appropriate filesystem.
-            \item Give the appropriate options for the mounted device.
-            \item Apply it.
-            \item Execute the following command:
+            \item Uygun bir bağlama noktası deneyiniz. Örneğin "/mnt/sample"
+            \item Uygun bir dosya sistemi veriniz.
+            \item Bağlı aygıt için uygun seçenekleri veriniz.
+            \item Bunları uygulayınız.
+            \item Şu komutu çalıştırınız:
             \begin{verbatim}
                 # mount
             \end{verbatim}
-                Observe that it is mounted properly according to your directions given.
+                Diskin verdiğiniz yönlendirmelere uygun olarak bağlandığını gözlemleyiniz.
         \end{enumerate}
 
-    \item Try to change the mount point of this disk
+    \item Bu diskin bağlanma noktasını değiştirmeye çalışınız.
         \begin{enumerate}
-            \item Execute the following command:
+            \item Şu komutu çalıştırınız:
             \begin{verbatim}
                 # mount
             \end{verbatim}
-            Observe whether the disk manager gives a warning that the disk is already mounted.
+            Disk yöneticisinin diskin zaten bağlı olduğuyla ilgili bir uyarı mesajı verip vermediğini gözlemleyiniz.
         \end{enumerate}
 
-    \item Try to change the filesystem type
+    \item Dosya sistemi türünü değiştirmeye çalışınız.
         \begin{enumerate}
-            \item Execute the following command:
+            \item Şu komutu çalıştırınız:
             \begin{verbatim}
                 # blkid
             \end{verbatim}
-                  For a selected device, observe that the default filesystem type on disk-manager is the same with the output of "blkid".
-            \item Change the filesystem type:
-                  Observe that if this filesystem type is not suitable with this device, disk-manager gives a warning message about it.
+                  Seçilmiş bir aygıt için, disk yöneticisindeki öntanımlı dosya sistemi türünün "blkid" çıktısı ile aynı olduğunu gözlemleyiniz.
+            \item Dosya sistemi türünü değiştiriniz:
+                  Eğer dosya sistemi türü bu aygıtla uyumlu değilse, disk yöneticisinin uyarı mesajı verdiğini gözlemleyiniz.
         \end{enumerate}
 
-    \item Try to add an option for mounting
+    \item Bağlama için bir seçenek eklemeyi deneyiniz:
         \begin{enumerate}
-          \item When the option part is empty try to click OK button.
-                Observe that it gives a warning about it.
-          \item If you add some option to option part,
-                Observe that the output of the command "mount" contains this option for the related disk.
+          \item Seçenek kısmı boş iken Tamam butonuna basmayı deneyiniz.
+                Bir uyarı mesajı verdiğini gözlemleyiniz.
+          \item Eğer seçenekler kısmına birkaç seçenek eklerseniz,
+                "mount" komutunun çıktısının ilgili disk için bu seçenekleri içerdiğini gözlemleyiniz.
         \end{enumerate}
     \end{enumerate}
 
-\item Try to change the mount point of the root partition
+\item Root bölümünün bağlama noktasını değiştirmeyi deneyiniz
 
-      Observe that it gives a warning about it can not remount.
+      Tekrardan bağlama yapılamayacağı ile ilgili bir uyarı mesajı aldığınızı gözlemleyiniz.
 
-        \textbf{Note :} the mount point of root should be "/".
+        \textbf{Not :} Root'un bağlama noktası "/" olmalı.
 
-\item Observe whether an extended partition listed on disk-manager screen. (Normally it can not be listed).
+\item Genişletilmiş bir bölümün disk yöneticisinde listelenip listelenmediğini gözlemleyiniz. (Normal şartlarda listelenmemesi lazım).
 
 \end{enumerate}
 
