@@ -6,12 +6,14 @@ TESTS
 
 + Default butonu, mount noktası değiştirildiğinde eski durumuna geri getirilemiyor. (Default butonu options için kullanılıyor ve düzeldi.)
 
-- External hardisk'in dosya sistemi değiştirildiğinde bu dosya sistemi ona uygun bir dosya sistemi değil ise bunu bir uyarı olarak gösteremiyor. Uygun olmayan dosya sistemi seçilip mount edildiğinde disk-manager ekranına tüm mount edilmiş diskler ikişerli olarak çıkıyor.
+
++Uygun olmayan dosya sistemi seçilip mount edildiğinde disk-manager ekranına tüm mount edilmiş diskler ikişerli olarak çıkıyor.
 
 + Root partition mount noktası değiştirilebiliyor, bu duruma izin verilmemeli (müdür root partition'ı bulamıyor ve patlıyor.)
 
 ? Options kısmı boş geçilip ayarlar kaydedilebiliyor. Bir uyarı verilmeli.
   - Options opsiyonel, boş geçilebilir.
-
 + Extended partititionlar disk-manager da görüntülenememeli.
-- Butonların üzrine gelindiğinde açıklama gelmeli.
+
+- Butonların üzerine gelindiğinde açıklama gelmeli.
+- External hardisk'in dosya sistemi değiştirildiğinde bu dosya sistemi ona uygun bir dosya sistemi değil ise bunu bir uyarı olarak gösteremiyor.
