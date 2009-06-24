@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>214</width>
+    <width>227</width>
     <height>63</height>
    </rect>
   </property>
@@ -23,7 +23,7 @@
      <item>
       <widget class="QLabel" name="maxHistoryLabel">
        <property name="text">
-        <string>Load :</string>
+        <string>Startup Load :</string>
        </property>
       </widget>
      </item>
