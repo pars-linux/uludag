@@ -77,7 +77,7 @@
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>Choose Wallpaper</string>
+        <string>Choose Wallpaper From a File</string>
        </property>
       </widget>
      </item>
