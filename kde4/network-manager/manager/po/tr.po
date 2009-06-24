@@ -1,19 +1,23 @@
+# translation of tr.po to Turkish
 # Network Manager.
 # Copyright (C) 2009, TUBITAK/UEKAE
 # This file is distributed under the same license as the Network-Manager package.
-# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 #
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: Network-Manager\n"
+"Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-27 20:03+0300\n"
-"PO-Revision-Date: 2009-05-08 11:46+0300\n"
-"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
-"Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"PO-Revision-Date: 2009-06-24 15:00+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1;plural=0;\n"
 
 #: .tmp/about.py:20 .tmp/about.py:22
 msgid "Network Manager"
@@ -29,7 +33,7 @@ msgstr "Bahadır Kandemir"
 
 #: .tmp/about.py:31
 msgid "Current Maintainer"
-msgstr "Şu anki bakıcı"
+msgstr "Güncel Bakıcı"
 
 #: .tmp/about.py:32
 msgid "Gökmen GÖKSEL"
@@ -49,7 +53,7 @@ msgstr "Tüm Profiller"
 
 #: .tmp/base.py:201 .tmp/base.py:203
 msgid "No Device Found"
-msgstr "Aygıt Bulunamadı"
+msgstr "Herhangi Bir Aygıt Bulunamadı"
 
 #: .tmp/base.py:375
 msgid "No Authentication"
@@ -61,11 +65,11 @@ msgstr "'%1' profili silinsin mi?"
 
 #: .tmp/uiitem.py:103
 msgid "Edit connection"
-msgstr "Bağlantı düzenle"
+msgstr "Bağlantı ayarlarını değiştir"
 
 #: .tmp/uiitem.py:104
 msgid "Delete connection"
-msgstr "Bağlantı sil"
+msgstr "Bağlantıyı sil"
 
 #: .tmp/uiitem.py:105 .tmp/uiwifiitem.py:53
 msgid "Signal Strength"
@@ -81,7 +85,7 @@ msgstr "İsim Sunucusu Ayarları"
 
 #: .tmp/uinameserver.py:43
 msgid "Machine Name"
-msgstr "Makine Adı"
+msgstr "Makine İsmi"
 
 #: .tmp/uinameserver.py:44 .tmp/ui.py:352
 msgid "Name Servers"
@@ -93,11 +97,11 @@ msgstr "Form"
 
 #: .tmp/ui.py:337
 msgid "Create Profile"
-msgstr "Profil Yarat"
+msgstr "Profil Oluştur"
 
 #: .tmp/ui.py:339 .tmp/widgets.py:177
 msgid "Scanning..."
-msgstr "Taranıyor..."
+msgstr "Tarıyor..."
 
 #: .tmp/ui.py:340 .tmp/widgets.py:148
 msgid "Refresh"
@@ -105,7 +109,7 @@ msgstr "Tazele"
 
 #: .tmp/ui.py:341
 msgid "Profile Name :"
-msgstr "Profil Adı :"
+msgstr "Profil İsmi :"
 
 #: .tmp/ui.py:342
 msgid "Device : "
@@ -113,7 +117,7 @@ msgstr "Aygıt : "
 
 #: .tmp/ui.py:343 .tmp/ui.py:357
 msgid "Cancel"
-msgstr "İptal"
+msgstr "İptâl"
 
 #: .tmp/ui.py:344
 msgid "Network Settings"
@@ -125,7 +129,7 @@ msgstr "DHCP Kullan"
 
 #: .tmp/ui.py:346
 msgid "Use Manual Settings"
-msgstr "Adresi Elle Gir"
+msgstr "Özel Ayarları Kullan"
 
 #: .tmp/ui.py:347
 msgid "Address :"
@@ -161,15 +165,15 @@ msgstr "Uygula"
 
 #: .tmp/ui.py:358
 msgid "Esc"
-msgstr "Çık"
+msgstr "Esc"
 
 #: .tmp/ui.py:359
 msgid "Remote"
-msgstr "Uzak Nokta"
+msgstr "Uzak"
 
 #: .tmp/ui.py:360
 msgid "Network Name (ESSID) :"
-msgstr "Network Adı (ESSID) :"
+msgstr "Ağ İsmi (ESSID) :"
 
 #: .tmp/ui.py:361
 msgid "Scan"
@@ -210,4 +214,5 @@ msgstr "Bağlanıyor"
 
 #: .tmp/widgets.py:244
 msgid "Cable or device is unplugged."
-msgstr "Kablo ya da aygıt bağlı değil."
+msgstr "Kablo ya da aygıt takılı değil."
+
