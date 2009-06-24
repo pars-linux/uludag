@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 10:16+0300\n"
+"POT-Creation-Date: 2009-06-24 09:52+0300\n"
 "PO-Revision-Date: 2009-06-21 19:49-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -17,30 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-
-#: .tmp/ui_main.py:155
-msgid "System Language:"
-msgstr "Idioma del Sistema:"
-
-#: .tmp/ui_main.py:156
-msgid "Console Keyboard Layout:"
-msgstr "Distribución de Teclado en Consola:"
-
-#: .tmp/ui_main.py:157
-msgid "Hardware clock is set to UTC."
-msgstr "Reloj del equipo está configurado para la hora UTC."
-
-#: .tmp/ui_main.py:158
-msgid "Normalize systematic drift of the hardware clock."
-msgstr "Normalizar desajuste sistemático del reloj del equipo."
-
-#: .tmp/ui_main.py:159
-msgid "First Service to Start:"
-msgstr "Primer servicio a iniciar:"
-
-#: .tmp/ui_main.py:160
-msgid "Number of Real Consoles:"
-msgstr "Cantidad de consolas reales:"
 
 #: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
 msgid "System Manager"
@@ -62,11 +38,37 @@ msgstr ""
 msgid "Current Maintainer"
 msgstr "Mantenedor actual"
 
-#: .tmp/systemmanager/main.py:75
+#: .tmp/systemmanager/main.py:70
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
 "No se encuentra el paquete con el aplicativo para esta función.\n"
-"Por favor asegúrese de que los paquetes correspondientes están instalados y configurados correctamente."
+"Por favor asegúrese de que los paquetes correspondientes están instalados y "
+"configurados correctamente."
 
+#: .tmp/ui_main.py:155
+msgid "System Language:"
+msgstr "Idioma del Sistema:"
+
+#: .tmp/ui_main.py:156
+msgid "Console Keyboard Layout:"
+msgstr "Distribución de Teclado en Consola:"
+
+#: .tmp/ui_main.py:157
+#, fuzzy
+msgid "Keep the hardware clock in UTC"
+msgstr "Reloj del equipo está configurado para la hora UTC."
+
+#: .tmp/ui_main.py:158
+#, fuzzy
+msgid "Normalize systematic drift of the hardware clock"
+msgstr "Normalizar desajuste sistemático del reloj del equipo."
+
+#: .tmp/ui_main.py:159
+msgid "First Service to Start:"
+msgstr "Primer servicio a iniciar:"
+
+#: .tmp/ui_main.py:160
+msgid "Number of Real Consoles:"
+msgstr "Cantidad de consolas reales:"

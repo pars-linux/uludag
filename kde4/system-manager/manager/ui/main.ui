@@ -193,14 +193,14 @@
           <item row="0" column="0" colspan="2">
            <widget class="QCheckBox" name="checkUTC">
             <property name="text">
-             <string>Hardware clock is set to UTC.</string>
+             <string>Keep the hardware clock in UTC</string>
             </property>
            </widget>
           </item>
           <item row="1" column="0" colspan="2">
            <widget class="QCheckBox" name="checkClockAdjust">
             <property name="text">
-             <string>Normalize systematic drift of the hardware clock.</string>
+             <string>Normalize systematic drift of the hardware clock</string>
             </property>
            </widget>
           </item>
