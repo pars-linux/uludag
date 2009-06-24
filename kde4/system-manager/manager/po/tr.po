@@ -52,14 +52,12 @@ msgid "Console Keyboard Layout:"
 msgstr "Konsol Klavye Düzeni:"
 
 #: .tmp/ui_main.py:157
-#, fuzzy
 msgid "Keep the hardware clock in UTC"
-msgstr "Donanım saati UTC'ye ayarlı."
+msgstr "Donanım saatini UTC biçiminde tut"
 
 #: .tmp/ui_main.py:158
-#, fuzzy
 msgid "Normalize systematic drift of the hardware clock"
-msgstr "Donanım saatinin ritmik kaymasını düzelt."
+msgstr "Donanım saatinin ritmik kaymasını düzelt"
 
 #: .tmp/ui_main.py:159
 msgid "First Service to Start:"

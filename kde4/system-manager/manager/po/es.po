@@ -56,14 +56,12 @@ msgid "Console Keyboard Layout:"
 msgstr "Distribución de Teclado en Consola:"
 
 #: .tmp/ui_main.py:157
-#, fuzzy
 msgid "Keep the hardware clock in UTC"
-msgstr "Reloj del equipo está configurado para la hora UTC."
+msgstr "Reloj del equipo está configurado para la hora UTC"
 
 #: .tmp/ui_main.py:158
-#, fuzzy
 msgid "Normalize systematic drift of the hardware clock"
-msgstr "Normalizar desajuste sistemático del reloj del equipo."
+msgstr "Normalizar desajuste sistemático del reloj del equipo"
 
 #: .tmp/ui_main.py:159
 msgid "First Service to Start:"
