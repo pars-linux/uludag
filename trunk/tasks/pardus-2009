@@ -210,12 +210,6 @@
   * Paket yöneticisi ayarları (/90)
   * Kamera ekranı ile kullanıcı fotoğrafı alınması (-)
 
-* Thunderbird (Pınar Yanardağ)
-  * 3.x için tarball oluşturma betiği hazırlanması (-)
-  * Pardus 2009 için 3.0b2 sürümüne yükseltilmesi (/80)
-  * Patch'lerin 3.x serisi için port edilmesi (-)
-  * 3.0b2den sonra yapılan değişikliklerden gerekenlerin alınması (-)
-
 * Pardus Security Team (Pınar Yanardağ)
   * vendor-sec'e uyelik (+)
   * Pardus Security Team prosedürlerinin belirlenmesi (+)
