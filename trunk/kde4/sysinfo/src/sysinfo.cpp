@@ -354,7 +354,7 @@ static unsigned long int scan_one( const char* buff, const char *key )
 
 static quint64 calculateFreeRam()
 {
-    FILE *fd = fopen( "/proc/meminfo", "rt" );
+    FILE *fd = fopen( "/proc/meminfo", "r" );
     if ( !fd )
         return 0;
 
