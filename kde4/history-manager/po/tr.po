@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: history-manager-kde4 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-28 11:04+0300\n"
+"POT-Creation-Date: 2009-06-24 10:11+0300\n"
 "PO-Revision-Date: 2009-03-23 16:56+0200\n"
 "Last-Translator: isbaran <isbaran@gmail.com>\n"
 "Language-Team: Turkish\n"
@@ -16,32 +16,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .tmp/ui_uiitem.py:83
-msgid "Form"
-msgstr ""
+#: .tmp/ui_configure.py:44
+msgid "Options"
+msgstr "Seçenekler"
 
-#: .tmp/ui_uiitem.py:84
+#: .tmp/ui_configure.py:45
+msgid "Startup Load :"
+msgstr "Başlangıçta Yükle :"
+
+#: .tmp/ui_configure.py:46
+msgid " Operations"
+msgstr " İşlem"
+
+#: .tmp/ui_uiitem.py:85
 msgid "History Date - Time /Label"
 msgstr ""
 
-#: .tmp/ui_uiitem.py:85
+#: .tmp/ui_uiitem.py:86
 msgid "No: Type:"
-msgstr "No: Tip:"
+msgstr ""
 
-#: .tmp/ui_uiitem.py:86 .tmp/ui_mainwindow.py:133
+#: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
 msgid "Take back to this point"
 msgstr "Bu noktaya geri al"
 
-#: .tmp/ui_uiitem.py:87
-msgid "Details"
-msgstr ""
-
 #: .tmp/ui_uiitem.py:88
+msgid "Details"
+msgstr "Detaylar"
+
+#: .tmp/ui_uiitem.py:89
 msgid "Show operation plan"
-msgstr ""
+msgstr "İşlem planını göster"
 
 #: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
-#: .tmp/ui_mainwindow.py:126
+#: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
 msgstr "Geçmiş Yöneticisi"
 
@@ -57,63 +65,71 @@ msgstr "İşbaran Akçayır"
 msgid "Current Maintainer"
 msgstr "Geliştirici"
 
-#: .tmp/historymanager/window.py:69
-msgid "%d Operations Loaded"
-msgstr "%d İşlem Yüklendi"
+#: .tmp/historymanager/window.py:76
+msgid "%1 Operations Loaded"
+msgstr "%1 İşlem Yüklendi"
 
-#: .tmp/historymanager/window.py:110
+#: .tmp/historymanager/window.py:118
 msgid "Loading operation details.."
 msgstr "İşlem detayları yükleniyor"
 
-#: .tmp/historymanager/window.py:122
+#: .tmp/historymanager/window.py:124
+msgid "Details for operation on %1 at %2"
+msgstr "%1 saat %2 deki işlem detayları"
+
+#: .tmp/historymanager/window.py:130
 msgid "There are %1 packages in this snapshot"
 msgstr "Bu görüntüde %1 paket var"
 
-#: .tmp/historymanager/window.py:135 .tmp/historymanager/window.py:187
+#: .tmp/historymanager/window.py:143 .tmp/historymanager/window.py:195
 msgid "Ready .."
 msgstr "Hazır .."
 
-#: .tmp/historymanager/window.py:145
+#: .tmp/historymanager/window.py:153
 msgid "Loading Operation Plan"
 msgstr "İşlem Planı Yükleniyor"
 
-#: .tmp/historymanager/window.py:162
+#: .tmp/historymanager/window.py:170
 msgid "Configuration files in snapshot:"
 msgstr "Görüntüdeki ayar dosyaları:"
 
-#: .tmp/historymanager/window.py:170
+#: .tmp/historymanager/window.py:178
 msgid "<br> These package(s) will be <b>installed</b> :<br>"
 msgstr "<br> Bu paket(ler) <b>yüklenecek</b> :<br>"
 
-#: .tmp/historymanager/window.py:175
+#: .tmp/historymanager/window.py:183
 msgid "<br> These package(s) will be <b>removed</b> :<br>"
 msgstr "<br> Bu paket(ler) <b>kaldırılacak</b> :<br>"
 
-#: .tmp/historymanager/window.py:211
+#: .tmp/historymanager/window.py:189
+msgid "Takeback plan for Operation on %1 at %2"
+msgstr "%1 saat %2 deki işlem için geri alma planı"
+
+#: .tmp/historymanager/window.py:221
 msgid "Takeback operation verification"
 msgstr "Geri alma işlemi doğrulama"
 
-#: .tmp/historymanager/window.py:212
+#: .tmp/historymanager/window.py:222
 msgid ""
 "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
 msgstr ""
 "<center> Bu hareket sisteminizi <b>%1</b> - <b>%2</b> ye geri alacak<br>"
 
-#: .tmp/historymanager/window.py:213
+#: .tmp/historymanager/window.py:223
 msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
 msgstr ""
 "Emin değilseniz, Vazgeç düğmesine tıklayıp Geri alma Planına göz atın.</"
 "center>"
 
-#: .tmp/historymanager/window.py:217
+#: .tmp/historymanager/window.py:227
 msgid "Taking back to : %1"
 msgstr "%1'e geri alıyor"
 
-#: .tmp/historymanager/window.py:224
+#: .tmp/historymanager/window.py:234
 msgid "Start new snapshot"
 msgstr "Yeni görüntü al"
 
-#: .tmp/historymanager/window.py:225
+#: .tmp/historymanager/window.py:235
 msgid ""
 "<center>This will take a snapshot of your system.<br>Click Ok when you're "
 "ready.</center>"
@@ -121,111 +137,75 @@ msgstr ""
 "<center>Bu hareket sisteminizin görüntüsünü alacak.<br>Hazır olduğunuzda "
 "Tamam düğmesine tıklayın</center>"
 
-#: .tmp/historymanager/window.py:231
+#: .tmp/historymanager/window.py:241
 msgid "Taking New Snapshot"
 msgstr "Yeni Görüntü Alınıyor"
 
-#: .tmp/historymanager/window.py:238
+#: .tmp/historymanager/window.py:248
 msgid "Authentication Failed"
 msgstr "Kimlik doğrulama Başarısız"
 
-#: .tmp/historymanager/window.py:247
+#: .tmp/historymanager/window.py:255
 msgid "Finished succesfully"
 msgstr "Başarıyla tamamlandı"
 
-#: .tmp/historymanager/window.py:251
+#: .tmp/historymanager/window.py:259
+#, python-format
 msgid "Taking Snapshot : <b>%s</b>/100"
 msgstr "Yeni Görüntü Alınıyor : <b>%s</b>/100"
 
-#: .tmp/historymanager/listitem.py:49
+#: .tmp/historymanager/listitem.py:47
 msgid "snapshot"
 msgstr "görüntü"
 
-#: .tmp/historymanager/listitem.py:51
+#: .tmp/historymanager/listitem.py:49
 msgid "upgrade"
 msgstr "yükseltme"
 
-#: .tmp/historymanager/listitem.py:53
+#: .tmp/historymanager/listitem.py:51
 msgid "remove"
 msgstr "kaldırma"
 
-#: .tmp/historymanager/listitem.py:55
+#: .tmp/historymanager/listitem.py:53
 msgid "install"
 msgstr "yükleme"
 
-#: .tmp/historymanager/listitem.py:57
+#: .tmp/historymanager/listitem.py:55
 msgid "takeback"
 msgstr "geri alma"
 
-#: .tmp/historymanager/listitem.py:59
+#: .tmp/historymanager/listitem.py:57
 msgid "repo update"
-msgstr ""
+msgstr "depo güncellemesi"
 
-#: .tmp/ui_mainwindow.py:127
+#: .tmp/historymanager/listitem.py:64
+msgid "No: %1   Type: %2"
+msgstr "No: %1    Tip: %2"
+
+#: .tmp/ui_mainwindow.py:130
 msgid "New Snapshot"
 msgstr "Yeni Görüntü"
 
-#: .tmp/ui_mainwindow.py:129
-msgid "Alias :"
-msgstr ""
-
-#: .tmp/ui_mainwindow.py:130
-msgid "Cancel"
-msgstr ""
-
 #: .tmp/ui_mainwindow.py:131
+msgid "History Settings"
+msgstr "Geçmiş Ayarları"
+
+#: .tmp/ui_mainwindow.py:133
+msgid "Alias :"
+msgstr "Etiket :"
+
+#: .tmp/ui_mainwindow.py:134
+msgid "Cancel"
+msgstr "Vazgeç"
+
+#: .tmp/ui_mainwindow.py:135
 msgid "- Loading Pisi History"
 msgstr "- Pisi Geçmişi Yükleniyor"
 
-#: .tmp/ui_mainwindow.py:132
+#: .tmp/ui_mainwindow.py:136
 msgid "%p%"
 msgstr "%p%"
 
-#: .tmp/ui_mainwindow.py:134
+#: .tmp/ui_mainwindow.py:138
 msgid "Copy"
 msgstr "Kopyala"
-
-#~ msgid "Date"
-#~ msgstr "Tarih"
-
-#~ msgid "Time"
-#~ msgstr "Zaman"
-
-#~ msgid "unknown"
-#~ msgstr "bilinmeyen"
-
-#~ msgid "Takeback Plan"
-#~ msgstr "Geri Alma Planı"
-
-#~ msgid "Click to see what will happen if you click restore button"
-#~ msgstr "Geri Al düğmesine tıkladığınızda olacakları görmek için tıklayın"
-
-#~ msgid "Operation Details"
-#~ msgstr "İşlem Detayları"
-
-#~ msgid "Click to see operation details"
-#~ msgstr "İşlem detaylarını görmek için tıklayın"
-
-#~ msgid "Help"
-#~ msgstr "Yardım"
-
-#~ msgid "Takeback"
-#~ msgstr "Geri Al"
-
-#~ msgid "Information"
-#~ msgstr "Bilgi"
-
-#~ msgid "Select All"
-#~ msgstr "Hepsini Seç"
-
-#~ msgid "No:"
-#~ msgstr "No:"
-
-#~ msgid "Takeback Plan for %1 operation on %2 <br><br>"
-#~ msgstr "%2 tarihindeki %1 işlemi için geri alma planı <br><br>"
-
-#~ msgid "Takeback Plan %1"
-#~ msgstr "Geri alma Planı %1"
-
-#~ msgid "Listing %1 Operations"
-#~ msgstr "%1 İşlemleri Listeleniyor"
