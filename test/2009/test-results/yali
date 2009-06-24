@@ -1,13 +1,13 @@
-- Bazı kurulumlarda yali krulduktansonra tekrar başlatılıyor deyip takılı kalabiliyor.
+- Bazı kurulumlarda yali krulduktan sonra tekrar başlatılıyor deyip takılı kalabiliyor.
 - Windows partition grub'da görülemiyor (grub paketinden de kaynaklanıyor olabilir.)
+- F8 basilinca ekran tamamiyle gri renge donusemiyor.
 
 - Disk tablosu herhengi bir şekilde bozulmuş ise:
     + Partition formatlanıp yeni dosya sistemi ile kurulmaya çalışıldığında fscheck hatası veriyor.
     - Partition resize edilmeye çalışıldığında parted hatası veriyor.
 
-- Bozuk CD check edilmeye çalışıldığında, exception hatası veriyor. Görüntüsü bkz. yalierror.jpg
++ Bozuk CD check edilmeye çalışıldığında, exception hatası veriyor. Görüntüsü bkz. yalierror.jpg
 
-- F8 basilinca ekran tamamiyle gri renge donusemiyor.
 
 + Birden fazla harddisk bulunması durumunda, açılış diskinin hangisi olduğu bilinemiyor.
    + Yalının grub bölümünde alfabetik sıra ile dizilen harddisklerin hangisinin açılış diski olduğu belirtilmiyor.

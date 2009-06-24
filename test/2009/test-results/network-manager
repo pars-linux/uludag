@@ -5,20 +5,19 @@
 + Bir makina kablolu olarak internete bağlı durumda iken, bu bağlantıyı kesmeden,
     kablosuz olarak bağlanılmaya çalışıldığında kablolu ağ profili disable duruma geçemiyor. Ve her iki bağlantıyı kurmaya çalıştığı zaman başarılı olamıyor.
 + Daha öce bir wireless'in bulunduğu yerde bu ağa bağlanılıp, daha sonra bu ağın bulunmadığı bir yerde bilgisayar restart edildiğinde, profil disable durumda iken ağa bağlanmaya çalışıyor.
-- Profil seçimi checkbox'ı seçili iken, bu profil ile  yeni bir wireless ağa bağlanılmak istendiğinde checkbox enable durumdan disable duruma geçiyor.
-    Bu durumda iken kullanıcı parolası sormadan ağa bağlanmaya çalışıyor.
 
-- Profil seçili değil iken, ağa başlanmaya çalışıyor. 
-    - Ekranda bağlanıyor olarak gözüküyor. 
-    - Timeout olamıyor.
-
-- Defaults butonu çalışmıyor.
 
 + Dinamik bir ip kullanılıyor iken, statik bir ip adresi ile bağlanılmak istenirse, bağlantı için network manager yine dinamik ip'yi seçiyor.
+
++ Profil seçimi checkbox'ı seçili iken, bu profil ile  yeni bir wireless ağa bağlanılmak istendiğinde checkbox enable durumdan disable duruma geçiyor.
+    Bu durumda iken kullanıcı parolası sormadan ağa bağlanmaya çalışıyor.
+
 - Bluetooth ağları network-manager'da görüntülenebiliyor fakat buradan bağlantı sağlanamıyor. Bu durum için bir warning penceresi çıkarılabilir.
-
-- Ethernet ile baglanilamaya calisilinca ilk seferinde baglanilamiyor. Ve bilgisayar restart edildiginde de aga kendi kendine baglanamiyor.
-
+- Ethernet ile baglanilamaya calisilinca ilk seferinde baglanilamiyor. 
+- Bilgisayar restart edildiginde de aga kendi kendine baglanamiyor.
 - Butonların üzrine gelindiğinde açıklama gelmeli.
 - Kullanılabilir profiller seçilince network-manager donuyor.
 - İnterface yok iken bağlanabiliyor.
+- Profil seçili değil iken, ağa başlanmaya çalışıyor. 
+    - Ekranda bağlanıyor olarak gözüküyor. 
+    - Timeout olamıyor.
