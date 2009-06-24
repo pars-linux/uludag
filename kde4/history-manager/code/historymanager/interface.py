@@ -63,7 +63,8 @@ class PisiIface(QThread):
             if operation:
                 self.ops[int(operation.no)] = [int(operation.no), str(operation.type),
                                                str(operation.date), str(operation.time),
-                                              [ i.__str__() for i in operation.packages ]]
+                                              [ i for i in operation.packages ],
+                                              [ i for i in operation.repos ]]
             del operation
 
         self.emit(SIGNAL("loadFetched(PyQt_PyObject)"), len(self.ops))

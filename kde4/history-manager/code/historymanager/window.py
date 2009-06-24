@@ -127,7 +127,10 @@ class MainManager(QtGui.QWidget):
 
         message = ""
         if item.op_type == "snapshot":
-            message += i18n("There are %1 packages in this snapshot", item.op_pack_len)
+            message += i18n("There are %1 packages in this snapshot.", item.op_pack_len)
+        elif item.op_type == "repoupdate":
+            for val in item.op_repo:
+                message += "- %s\n" % val
         else:
             for val in item.op_pack:
                 message += "- %s\n" % val

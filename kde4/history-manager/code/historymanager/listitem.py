@@ -8,6 +8,11 @@ from PyKDE4.kdecore import *
 
 from uiitem import Ui_HistoryItemWidget
 
+# Keep this for translation generation
+opttrans = {"upgrade":i18n("Upgrade"), "remove":i18n("Removal"), "emerge":i18n("Emerge"), \
+            "install":i18n("Installation"), "snapshot":i18n("Snapshot"), "takeback":i18n("Takeback"), \
+            "repoupdate":i18n("Repository Update")}
+
 class HistoryItem(QListWidgetItem):
     def __init__(self, parent, no):
         QListWidgetItem.__init__(self, parent)
@@ -33,35 +38,20 @@ class NewOperation(QWidget):
         self.op_type = operation[1]
         self.op_date = operation[2]
         self.op_time = operation[3]
-        self.op_pack = []
-
-        for i in operation[4]:
-            self.op_pack.append(i.__str__())
+        self.op_pack = operation[4]
+        self.op_repo = operation[5]
 
         self.alias = " - ".join([self.op_date, self.op_time])
         self.op_pack_len = len(self.op_pack)
 
         self.icon = ":/pics/%s.png" % self.op_type
 
-        if self.op_type == 'snapshot':
-            self.op_type_tr = i18n("snapshot")
-        elif self.op_type == 'upgrade':
-            self.op_type_tr = i18n("upgrade")
-        elif self.op_type == 'remove':
-            self.op_type_tr = i18n("remove")
-        elif self.op_type == 'install':
-            self.op_type_tr = i18n("install")
-        elif self.op_type == 'takeback':
-            self.op_type_tr = i18n("takeback")
-        elif self.op_type == "repoupdate":
-            self.op_type_tr = i18n("repo update")
-
         if self.settings.contains("%d/label" % self.op_no):
             self.alias = self.settings.value("%d/label" % self.op_no).toString()
 
         self.ui.labelLabel.setText(self.alias)
 
-        self.ui.typeLabel.setText(i18n("No: %1   Type: %2", self.op_no, self.op_type_tr))
+        self.ui.typeLabel.setText(i18n("No: %1   Type: %2", self.op_no, i18n(opttrans[self.op_type])))
         self.ui.iconLabel.setPixmap(QPixmap(self.icon))
 
         self.connect(self.ui.restorePB, SIGNAL("clicked()"), self.parent.takeBack)
