@@ -1,19 +1,23 @@
+# translation of tr.po to Turkish
 # Firewall Manager.
 # Copyright (C) 2006-2009, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the Firewall Manager package.
-# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 #
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: Firewall Manager\n"
+"Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-27 13:37+0300\n"
-"PO-Revision-Date: 2009-05-15 17:53+0300\n"
-"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
-"Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"PO-Revision-Date: 2009-06-24 13:25+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1;plural=0;\n"
 
 #: .tmp/ui_service.py:41 .tmp/firewallmanager/service.py:46
 msgid "Start"
@@ -25,7 +29,7 @@ msgstr "Yeni Ekle"
 
 #: .tmp/firewallmanager/service.py:38
 msgid "Firewall is activated."
-msgstr "Güvenlik duvarı aktifleştirildi."
+msgstr "Güvenlik duvarı açıldı."
 
 #: .tmp/firewallmanager/service.py:41
 msgid "Stop"
@@ -33,7 +37,7 @@ msgstr "Durdur"
 
 #: .tmp/firewallmanager/service.py:43
 msgid "Firewall is deactivated."
-msgstr "Güvenlik duvarı pasifleştirildi."
+msgstr "Güvenlik duvarı kapatıldı."
 
 #: .tmp/firewallmanager/about.py:20 .tmp/firewallmanager/about.py:22
 msgid "Firewall Manager"
@@ -53,7 +57,7 @@ msgstr "Bahadır Kandemir"
 
 #: .tmp/firewallmanager/about.py:32
 msgid "Current Maintainer"
-msgstr "Şu anki geliştirici"
+msgstr "Güncel Bakıcı"
 
 #: .tmp/firewallmanager/main.py:96
 msgid ""
@@ -61,21 +65,22 @@ msgid ""
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
-"Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
+"Lütfen paketlerin kurulum ve yapılandırmasının düzgün olup olmadığını kontrol edin."
 
 #: .tmp/firewallmanager/main.py:200
 msgid "All"
-msgstr "Hepsi"
+msgstr "Tümü"
 
 #: .tmp/firewallmanager/main.py:211
 msgid "Action"
-msgstr "Olay"
+msgstr "Eylem"
 
 #: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:312
 #: .tmp/firewallmanager/main.py:349
 msgid "Access denied."
-msgstr "Erişim engellendi."
+msgstr "Erişim reddedildi."
 
 #: .tmp/firewallmanager/main.py:272 .tmp/firewallmanager/main.py:304
 msgid "Settings"
 msgstr "Ayarlar"
+
