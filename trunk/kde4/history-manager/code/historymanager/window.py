@@ -260,7 +260,7 @@ class MainManager(QtGui.QWidget):
             self.enableButtons(False)
 
     def closeEvent(self, event=None):
-        # self.saveConfig()
+        self.saveConfig()
         if self.pface.isRunning():
             self.pface.quit()
             # self.pface.wait()
@@ -277,10 +277,6 @@ class MainManager(QtGui.QWidget):
         if event.type() == QEvent.Hide:
             self.closeEvent()
             return True
-
-        if obj == self.ui.opTypeLabel:
-            if event.type() == QEvent.MouseButtonPress:
-                self.popSettings()
 
         return QtCore.QObject.eventFilter(self, obj, event)
 
