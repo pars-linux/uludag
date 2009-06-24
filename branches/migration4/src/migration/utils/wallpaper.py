@@ -13,7 +13,7 @@
 import os
 import shutil
 import ConfigParser
-import registry
+from migration.utils import registry
 
 class WallpaperError(Exception):
     pass
