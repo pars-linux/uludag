@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
-"Report-Msgid-Bugs-To: isbaran@gmail.com\n"
-"POT-Creation-Date: 2009-03-23 17:04+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-24 10:11+0300\n"
 "PO-Revision-Date: 2009-06-22 14:20+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -16,217 +16,238 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../src/about.py:20 ../src/about.py:22 ../src/ui_mainwindow.py:258
-msgid "History Manager"
+#: .tmp/ui_configure.py:44
+msgid "Options"
 msgstr ""
 
-#: ../src/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
+#: .tmp/ui_configure.py:45
+msgid "Startup Load :"
 msgstr ""
 
-#: ../src/about.py:31
-msgid "İşbaran Akçayır"
+#: .tmp/ui_configure.py:46
+#, fuzzy
+msgid " Operations"
+msgstr "Dettagli"
+
+#: .tmp/ui_uiitem.py:85
+msgid "History Date - Time /Label"
 msgstr ""
 
-#: ../src/about.py:31
-msgid "Current Maintainer"
-msgstr "Mantainer corrente"
-
-#: ../src/listitem.py:117
-msgid "Date"
-msgstr "Data"
-
-#: ../src/listitem.py:119
-msgid "Time"
-msgstr "Ora"
-
-#: ../src/listitem.py:147
-msgid "snapshot"
-msgstr "Punto di ripristino"
-
-#: ../src/listitem.py:151
-msgid "upgrade"
-msgstr "Aggiornamento"
-
-#: ../src/listitem.py:155
-msgid "remove"
-msgstr "Rimozione"
-
-#: ../src/listitem.py:159
-msgid "install"
-msgstr "Installazione"
-
-#: ../src/listitem.py:163
-msgid "takeback"
-msgstr "Ripristino"
-
-#: ../src/listitem.py:167
-msgid "unknown"
-msgstr "Azione sconosciuta"
-
-#: ../src/mainwindow.py:74
-msgid "Select All"
-msgstr "Seleziona tutto"
-
-#: ../src/mainwindow.py:91
-msgid "Ready"
-msgstr "Pronto"
-
-#: ../src/mainwindow.py:115
-msgid "No:"
-msgstr ""
-
-#: ../src/mainwindow.py:116
-msgid "Type:"
+#: .tmp/ui_uiitem.py:86
+#, fuzzy
+msgid "No: Type:"
 msgstr "Tipo:"
 
-#: ../src/mainwindow.py:117
-msgid "Operation details"
-msgstr "Dettagli"
-
-#: ../src/mainwindow.py:124
-msgid "There are %1 packages in this snapshot"
-msgstr "Ci sono %1 pacchetti in questo punto di ripristino"
-
-#: ../src/mainwindow.py:137
-msgid "Finished succesfully"
-msgstr "Operazione completata con successo."
-
-#: ../src/mainwindow.py:153
-msgid "Loading Plan"
-msgstr "Caricamento del piano di ripristino..."
-
-#: ../src/mainwindow.py:159
-msgid "Configuration files in snapshot:"
-msgstr "File di configurazione nel punto di ripristino:"
-
-#: ../src/mainwindow.py:165
-msgid "Takeback Plan for %1 operation on %2 <br><br>"
-msgstr "Piano di ripristino per %1 operazione su %2 <br><br>"
-
-#: ../src/mainwindow.py:166
-msgid "Takeback Plan %1"
-msgstr "Piano di ripristino %1"
-
-#: ../src/mainwindow.py:169
-msgid "<br> These package(s) will be <b>installed</b> :<br>"
-msgstr "<br>Questi pacchetti verranno<b>installati</b> :<br>"
-
-#: ../src/mainwindow.py:174
-msgid "<br> These package(s) will be <b>removed</b> :<br>"
-msgstr "<br>Questi pacchetti verranno<b>rimossi</b> :<br>"
-
-#: ../src/mainwindow.py:183
-msgid "Listing %1 Operations"
-msgstr ""
-
-#: ../src/mainwindow.py:217
-msgid "Takeback operation verification"
-msgstr "Verifica operazione di ripristino"
-
-#: ../src/mainwindow.py:218
-msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
-msgstr "<center>Il tuo sistema verrà ripristinato a:<b>%1</b> - <b>%2</b><br>"
-
-#: ../src/mainwindow.py:219
-msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
-msgstr "Se non sei sicuro, clicca su Annulla e guarda il piano di ripristino."
-
-#: ../src/mainwindow.py:223
-msgid "Taking back to : %1"
-msgstr "Ripristino a : %1"
-
-#: ../src/mainwindow.py:230 ../src/mainwindow.py:248
-msgid "Authentication Failed"
-msgstr "Autenticazione fallita"
-
-#: ../src/mainwindow.py:234
-msgid "Start new snapshot"
-msgstr "Nuovo punto di ripristino"
-
-#: ../src/mainwindow.py:235
-msgid ""
-"<center>This will take a snapshot of your system.<br>Click Ok when you're "
-"ready.</center>"
-msgstr "<center>Verrà creato un punto di ripristino del tuo sistema.<br>Clicca su Ok quando sei pronto.</center>"
-
-#: ../src/mainwindow.py:241
-msgid "Taking New Snapshot"
-msgstr "Creazione punto di ripristino..."
-
-#: ../src/ui_mainwindow.py:259
-msgid "- Loading Pisi History"
-msgstr "Caricamento cronologia di Pisi..."
-
-#: ../src/ui_mainwindow.py:260
-msgid "%p%"
-msgstr "%p%"
-
-#: ../src/ui_mainwindow.py:261 ../src/ui_mainwindow.py:266
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
-"p></body></html>"
-msgstr ""
-
-#: ../src/ui_mainwindow.py:271
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"size:10pt;\"></p></body></html>"
-msgstr ""
-
-#: ../src/ui_mainwindow.py:276
-msgid "Takeback Plan"
-msgstr "Piano di ripristino"
-
-#: ../src/ui_mainwindow.py:277
-msgid "Click to see what will happen if you click restore button"
-msgstr "Clicca qui per vedere cosa succederà se clicchi il pulsante di ripristino."
-
-#: ../src/ui_mainwindow.py:278
-msgid "Operation Details"
-msgstr "Dettagli"
-
-#: ../src/ui_mainwindow.py:279
-msgid "Click to see operation details"
-msgstr "Clicca per vedere i dettagli"
-
-#: ../src/ui_mainwindow.py:280
-msgid "Help"
-msgstr "Aiuto"
-
-#: ../src/ui_mainwindow.py:281
-msgid "New Snapshot"
-msgstr "Nuovo punto di ripristino"
-
-#: ../src/ui_mainwindow.py:282
-msgid "Takeback"
-msgstr "Ripristino"
-
-#: ../src/ui_mainwindow.py:283
+#: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
 msgid "Take back to this point"
 msgstr "Ripristina a questa situazione"
 
-#: ../src/ui_mainwindow.py:284
+#: .tmp/ui_uiitem.py:88
+msgid "Details"
+msgstr ""
+
+#: .tmp/ui_uiitem.py:89
+msgid "Show operation plan"
+msgstr ""
+
+#: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
+#: .tmp/ui_mainwindow.py:129
+msgid "History Manager"
+msgstr ""
+
+#: .tmp/historymanager/about.py:25
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/historymanager/about.py:32
+msgid "İşbaran Akçayır"
+msgstr ""
+
+#: .tmp/historymanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mantainer corrente"
+
+#: .tmp/historymanager/window.py:76
+#, fuzzy
+msgid "%1 Operations Loaded"
+msgstr "Dettagli"
+
+#: .tmp/historymanager/window.py:118
+#, fuzzy
+msgid "Loading operation details.."
+msgstr "Dettagli"
+
+#: .tmp/historymanager/window.py:124
+msgid "Details for operation on %1 at %2"
+msgstr ""
+
+#: .tmp/historymanager/window.py:130
+msgid "There are %1 packages in this snapshot"
+msgstr "Ci sono %1 pacchetti in questo punto di ripristino"
+
+#: .tmp/historymanager/window.py:143 .tmp/historymanager/window.py:195
+#, fuzzy
+msgid "Ready .."
+msgstr "Pronto"
+
+#: .tmp/historymanager/window.py:153
+#, fuzzy
+msgid "Loading Operation Plan"
+msgstr "Caricamento del piano di ripristino..."
+
+#: .tmp/historymanager/window.py:170
+msgid "Configuration files in snapshot:"
+msgstr "File di configurazione nel punto di ripristino:"
+
+#: .tmp/historymanager/window.py:178
+msgid "<br> These package(s) will be <b>installed</b> :<br>"
+msgstr "<br>Questi pacchetti verranno<b>installati</b> :<br>"
+
+#: .tmp/historymanager/window.py:183
+msgid "<br> These package(s) will be <b>removed</b> :<br>"
+msgstr "<br>Questi pacchetti verranno<b>rimossi</b> :<br>"
+
+#: .tmp/historymanager/window.py:189
+#, fuzzy
+msgid "Takeback plan for Operation on %1 at %2"
+msgstr "Piano di ripristino per %1 operazione su %2 <br><br>"
+
+#: .tmp/historymanager/window.py:221
+msgid "Takeback operation verification"
+msgstr "Verifica operazione di ripristino"
+
+#: .tmp/historymanager/window.py:222
+msgid ""
+"<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
+msgstr "<center>Il tuo sistema verrà ripristinato a:<b>%1</b> - <b>%2</b><br>"
+
+#: .tmp/historymanager/window.py:223
+msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
+msgstr "Se non sei sicuro, clicca su Annulla e guarda il piano di ripristino."
+
+#: .tmp/historymanager/window.py:227
+msgid "Taking back to : %1"
+msgstr "Ripristino a : %1"
+
+#: .tmp/historymanager/window.py:234
+msgid "Start new snapshot"
+msgstr "Nuovo punto di ripristino"
+
+#: .tmp/historymanager/window.py:235
+msgid ""
+"<center>This will take a snapshot of your system.<br>Click Ok when you're "
+"ready.</center>"
+msgstr ""
+"<center>Verrà creato un punto di ripristino del tuo sistema.<br>Clicca su Ok "
+"quando sei pronto.</center>"
+
+#: .tmp/historymanager/window.py:241
+msgid "Taking New Snapshot"
+msgstr "Creazione punto di ripristino..."
+
+#: .tmp/historymanager/window.py:248
+msgid "Authentication Failed"
+msgstr "Autenticazione fallita"
+
+#: .tmp/historymanager/window.py:255
+msgid "Finished succesfully"
+msgstr "Operazione completata con successo."
+
+#: .tmp/historymanager/window.py:259
+#, fuzzy, python-format
+msgid "Taking Snapshot : <b>%s</b>/100"
+msgstr "Creazione punto di ripristino..."
+
+#: .tmp/historymanager/listitem.py:47
+msgid "snapshot"
+msgstr "Punto di ripristino"
+
+#: .tmp/historymanager/listitem.py:49
+msgid "upgrade"
+msgstr "Aggiornamento"
+
+#: .tmp/historymanager/listitem.py:51
+msgid "remove"
+msgstr "Rimozione"
+
+#: .tmp/historymanager/listitem.py:53
+msgid "install"
+msgstr "Installazione"
+
+#: .tmp/historymanager/listitem.py:55
+msgid "takeback"
+msgstr "Ripristino"
+
+#: .tmp/historymanager/listitem.py:57
+msgid "repo update"
+msgstr ""
+
+#: .tmp/historymanager/listitem.py:64
+#, fuzzy
+msgid "No: %1   Type: %2"
+msgstr "Tipo:"
+
+#: .tmp/ui_mainwindow.py:130
+msgid "New Snapshot"
+msgstr "Nuovo punto di ripristino"
+
+#: .tmp/ui_mainwindow.py:131
+msgid "History Settings"
+msgstr ""
+
+#: .tmp/ui_mainwindow.py:133
+msgid "Alias :"
+msgstr ""
+
+#: .tmp/ui_mainwindow.py:134
+msgid "Cancel"
+msgstr ""
+
+#: .tmp/ui_mainwindow.py:135
+msgid "- Loading Pisi History"
+msgstr "Caricamento cronologia di Pisi..."
+
+#: .tmp/ui_mainwindow.py:136
+msgid "%p%"
+msgstr "%p%"
+
+#: .tmp/ui_mainwindow.py:138
 msgid "Copy"
 msgstr "Copia"
 
-#: ../src/utility.py:15
-msgid "Information"
-msgstr "Informazioni"
+#~ msgid "Date"
+#~ msgstr "Data"
 
+#~ msgid "Time"
+#~ msgstr "Ora"
+
+#~ msgid "unknown"
+#~ msgstr "Azione sconosciuta"
+
+#~ msgid "Select All"
+#~ msgstr "Seleziona tutto"
+
+#~ msgid "Takeback Plan %1"
+#~ msgstr "Piano di ripristino %1"
+
+#~ msgid "Takeback Plan"
+#~ msgstr "Piano di ripristino"
+
+#~ msgid "Click to see what will happen if you click restore button"
+#~ msgstr ""
+#~ "Clicca qui per vedere cosa succederà se clicchi il pulsante di ripristino."
+
+#~ msgid "Operation Details"
+#~ msgstr "Dettagli"
+
+#~ msgid "Click to see operation details"
+#~ msgstr "Clicca per vedere i dettagli"
+
+#~ msgid "Help"
+#~ msgstr "Aiuto"
+
+#~ msgid "Takeback"
+#~ msgstr "Ripristino"
+
+#~ msgid "Information"
+#~ msgstr "Informazioni"

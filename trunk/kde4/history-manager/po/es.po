@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-28 11:04+0300\n"
+"POT-Creation-Date: 2009-06-24 10:11+0300\n"
 "PO-Revision-Date: 2009-06-21 18:57-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -19,33 +19,42 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/ui_uiitem.py:83
-msgid "Form"
+#: .tmp/ui_configure.py:44
+msgid "Options"
 msgstr ""
 
-#: .tmp/ui_uiitem.py:84
+#: .tmp/ui_configure.py:45
+msgid "Startup Load :"
+msgstr ""
+
+#: .tmp/ui_configure.py:46
+#, fuzzy
+msgid " Operations"
+msgstr "%d Operaciones cargados"
+
 # check how this looks, favor verificar contexto y posición
+#: .tmp/ui_uiitem.py:85
 msgid "History Date - Time /Label"
 msgstr "Fecha de Registro - Hora / Histórico"
 
-#: .tmp/ui_uiitem.py:85
+#: .tmp/ui_uiitem.py:86
 msgid "No: Type:"
 msgstr "No: Tipo:"
 
-#: .tmp/ui_uiitem.py:86 .tmp/ui_mainwindow.py:133
+#: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
 msgid "Take back to this point"
 msgstr "Restaurar hasta este punto"
 
-#: .tmp/ui_uiitem.py:87
+#: .tmp/ui_uiitem.py:88
 msgid "Details"
 msgstr "Detalles"
 
-#: .tmp/ui_uiitem.py:88
+#: .tmp/ui_uiitem.py:89
 msgid "Show operation plan"
 msgstr "Mostrar plan de operación"
 
 #: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
-#: .tmp/ui_mainwindow.py:126
+#: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
 msgstr "Administrador de Históricos"
 
@@ -61,62 +70,72 @@ msgstr ""
 msgid "Current Maintainer"
 msgstr "Mantenedor actual"
 
-#: .tmp/historymanager/window.py:69
-#, python-format
-msgid "%d Operations Loaded"
+#: .tmp/historymanager/window.py:76
+#, fuzzy
+msgid "%1 Operations Loaded"
 msgstr "%d Operaciones cargados"
 
-#: .tmp/historymanager/window.py:110
+#: .tmp/historymanager/window.py:118
 msgid "Loading operation details.."
 msgstr "Cargando detalles de operación.."
 
-#: .tmp/historymanager/window.py:122
+#: .tmp/historymanager/window.py:124
+msgid "Details for operation on %1 at %2"
+msgstr ""
+
+#: .tmp/historymanager/window.py:130
 msgid "There are %1 packages in this snapshot"
 msgstr "Hay %1 paquetes en esta instantánea"
 
-#: .tmp/historymanager/window.py:135 .tmp/historymanager/window.py:187
+#: .tmp/historymanager/window.py:143 .tmp/historymanager/window.py:195
 msgid "Ready .."
 msgstr "Listo .."
 
-#: .tmp/historymanager/window.py:145
+#: .tmp/historymanager/window.py:153
 msgid "Loading Operation Plan"
 msgstr "Cargando plan de operación"
 
-#: .tmp/historymanager/window.py:162
+#: .tmp/historymanager/window.py:170
 msgid "Configuration files in snapshot:"
 msgstr "Archivos de configuración en instantánea:"
 
-#: .tmp/historymanager/window.py:170
+#: .tmp/historymanager/window.py:178
 msgid "<br> These package(s) will be <b>installed</b> :<br>"
 msgstr "<br> Los siguientes paquetes se <b>instalarán</b> :<br>"
 
-#: .tmp/historymanager/window.py:175
+#: .tmp/historymanager/window.py:183
 msgid "<br> These package(s) will be <b>removed</b> :<br>"
 msgstr "<br> Los siguientes paquetes se <b>removerán</b> :<br>"
 
-#: .tmp/historymanager/window.py:211
+#: .tmp/historymanager/window.py:189
+#, fuzzy
+msgid "Takeback plan for Operation on %1 at %2"
+msgstr "Verificación de la restauración"
+
+#: .tmp/historymanager/window.py:221
 msgid "Takeback operation verification"
 msgstr "Verificación de la restauración"
 
-#: .tmp/historymanager/window.py:212
-msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
+#: .tmp/historymanager/window.py:222
+msgid ""
+"<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
 msgstr "<center> Restaurar el sistema hasta : <b>%1</b> - <b>%2</b><br>"
 
-#: .tmp/historymanager/window.py:213
+#: .tmp/historymanager/window.py:223
 msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
 msgstr ""
 "Si no está seguro, presione Cancelar y verifique el plan de restauración.</"
 "center>"
 
-#: .tmp/historymanager/window.py:217
+#: .tmp/historymanager/window.py:227
 msgid "Taking back to : %1"
 msgstr "Restaurando hasta : %1"
 
-#: .tmp/historymanager/window.py:224
+#: .tmp/historymanager/window.py:234
 msgid "Start new snapshot"
 msgstr "Iniciar nueva instantánea"
 
-#: .tmp/historymanager/window.py:225
+#: .tmp/historymanager/window.py:235
 msgid ""
 "<center>This will take a snapshot of your system.<br>Click Ok when you're "
 "ready.</center>"
@@ -124,68 +143,77 @@ msgstr ""
 "<center>Se generará una nueva instantánea del sistema.<br>Presion Ok cuando "
 "esté listo.</center>"
 
-#: .tmp/historymanager/window.py:231
+#: .tmp/historymanager/window.py:241
 msgid "Taking New Snapshot"
 msgstr "Realizando nueva instantánea"
 
-#: .tmp/historymanager/window.py:238
+#: .tmp/historymanager/window.py:248
 msgid "Authentication Failed"
 msgstr "Autenticación fallada"
 
-#: .tmp/historymanager/window.py:247
+#: .tmp/historymanager/window.py:255
 msgid "Finished succesfully"
 msgstr "Terminado con éxito"
 
-#: .tmp/historymanager/window.py:251
+#: .tmp/historymanager/window.py:259
 #, python-format
 msgid "Taking Snapshot : <b>%s</b>/100"
 msgstr "Realizando instantánea : <b>%s</b>/100"
 
-#: .tmp/historymanager/listitem.py:49
+#: .tmp/historymanager/listitem.py:47
 msgid "snapshot"
 msgstr "Instantánea"
 
-#: .tmp/historymanager/listitem.py:51
+#: .tmp/historymanager/listitem.py:49
 msgid "upgrade"
 msgstr "actualizar"
 
-#: .tmp/historymanager/listitem.py:53
+#: .tmp/historymanager/listitem.py:51
 msgid "remove"
 msgstr "remover"
 
-#: .tmp/historymanager/listitem.py:55
+#: .tmp/historymanager/listitem.py:53
 msgid "install"
 msgstr "instalar"
 
-#: .tmp/historymanager/listitem.py:57
+#: .tmp/historymanager/listitem.py:55
 msgid "takeback"
 msgstr "restaurar"
 
-#: .tmp/historymanager/listitem.py:59
+#: .tmp/historymanager/listitem.py:57
 msgid "repo update"
 msgstr "actualizar repositorio"
 
-#: .tmp/ui_mainwindow.py:127
+#: .tmp/historymanager/listitem.py:64
+#, fuzzy
+msgid "No: %1   Type: %2"
+msgstr "No: Tipo:"
+
+#: .tmp/ui_mainwindow.py:130
 msgid "New Snapshot"
 msgstr "Nueva Instantánea"
 
-#: .tmp/ui_mainwindow.py:129
+#: .tmp/ui_mainwindow.py:131
+#, fuzzy
+msgid "History Settings"
+msgstr "Administrador de Históricos"
+
+#: .tmp/ui_mainwindow.py:133
 msgid "Alias :"
 msgstr ""
 
-#: .tmp/ui_mainwindow.py:130
+#: .tmp/ui_mainwindow.py:134
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: .tmp/ui_mainwindow.py:131
+#: .tmp/ui_mainwindow.py:135
 msgid "- Loading Pisi History"
 msgstr "- Cargando registro histórico de Pisi"
 
-#: .tmp/ui_mainwindow.py:132
+#: .tmp/ui_mainwindow.py:136
 msgid "%p%"
 msgstr "%p%"
 
-#: .tmp/ui_mainwindow.py:134
+#: .tmp/ui_mainwindow.py:138
 msgid "Copy"
 msgstr "Copiar"
-
