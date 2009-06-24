@@ -15,7 +15,7 @@ import os
 import shutil
 
 # KDE Modules
-from kdecore import i18n
+from PyKDE4.kdecore import i18n
 
 ignoreList = ["desktop.ini", "thumbs.db", "$Recycled.Bin"]
 
