@@ -74,7 +74,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         if self.wallpaperSettings["hasChanged"] == False:
             content.append(item % ki18n("You haven't selected any wallpaper.").toString())
         else:
-            content.append(item % ki18n("Selected Wallpaper: <b>%s</b>").toString() % self.wallpaperSettings["selectedWallpaper"])
+            content.append(item % ki18n("Selected Wallpaper: <b>%s</b>").toString() % os.path.basename(str(self.wallpaperSettings["selectedWallpaper"])))
         content.append(end)
 
         # Style Settings
@@ -121,7 +121,21 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def execute(self):
         hasChanged = False
 
-        # Search settings
+        # Wallpaper Settings
+        if self.wallpaperSettings["hasChanged"] == True:
+            hasChanged = True
+            if self.wallpaperSettings["selectedWallpaper"]:
+                config =  KConfig("plasma-appletsrc")
+                group = config.group("Containments")
+                for each in list(group.groupList()):
+                    subgroup = group.group(each)
+                    subcomponent = subgroup.readEntry('plugin')
+                    if subcomponent == 'desktop' or subcomponent == 'folderview':
+                        subg = subgroup.group('Wallpaper')
+                        subg_2 = subg.group('image')
+                        subg_2.writeEntry("wallpaper", self.wallpaperSettings["selectedWallpaper"])
+
+        # Search Settings
         if self.searchSettings["hasChanged"] == True:
             config = KConfig("nepomukserverrc")
             group = config.group("Basic Settings")
