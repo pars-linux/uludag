@@ -462,7 +462,7 @@ bool kio_sysinfoProtocol::glInfo()
     if ( !fd )
         return false;
 
-    QTextStream is( fd );
+    QTextStream is( fd, QIODevice::ReadOnly );
 
     while ( !is.atEnd() )
     {
