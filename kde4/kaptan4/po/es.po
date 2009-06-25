@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-24 10:08+0300\n"
-"PO-Revision-Date: 2009-06-21 19:31-0400\n"
+"PO-Revision-Date: 2009-06-24 21:11-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -56,8 +56,7 @@ msgstr "Configuración del Sistema"
 
 #: .tmp/goodbyeWidget.py:97 .tmp/ui_goodbyeWidget.py:97
 msgid "System Settings is a configuration tool for Pardus."
-msgstr ""
-"Configuración del Sistema es una herramienta de configuración de Pardus."
+msgstr "Configuración del Sistema es una herramienta de configuración de Pardus."
 
 #: .tmp/goodbyeWidget.py:98 .tmp/goodbyeWidget.py:101
 #: .tmp/ui_goodbyeWidget.py:98 .tmp/ui_goodbyeWidget.py:101
@@ -102,16 +101,16 @@ msgstr "Terminar"
 
 #: .tmp/keyboardWidget.py:71 .tmp/ui_keyboardWidget.py:71
 msgid "Keyboard"
-msgstr ""
+msgstr "Teclado"
 
 #: .tmp/keyboardWidget.py:72 .tmp/ui_keyboardWidget.py:72
+# favor revisar, tal vez usar otra palabra
 msgid "Try:"
-msgstr ""
+msgstr "Pruebe:"
 
 #: .tmp/keyboardWidget.py:73 .tmp/ui_keyboardWidget.py:73
-#, fuzzy
 msgid "Configure your keyboard layout."
-msgstr "Configure su ratón"
+msgstr "Configure la distribución del teclado"
 
 #: .tmp/menuWidget.py:77 .tmp/ui_menuWidget.py:77
 msgid "Menu"
@@ -252,7 +251,7 @@ msgstr ""
 
 #: .tmp/ScrKeyboard.py:33
 msgid "Select your keyboard layout"
-msgstr ""
+msgstr "Seleccione su distribución de teclado"
 
 #: .tmp/ScrMenu.py:26 .tmp/ScrStyle.py:34
 msgid "Some catchy title about styles"
@@ -365,13 +364,12 @@ msgid "Data"
 msgstr ""
 
 #: .tmp/ScrSmolt.py:108
-#, fuzzy
 msgid "&Back"
-msgstr "Retroceder"
+msgstr "&Atrás"
 
 #: .tmp/ScrSmolt.py:111 .tmp/smoltWidget.py:78 .tmp/ui_smoltWidget.py:78
 msgid "&Privacy policy"
-msgstr ""
+msgstr "&Política de privacidad"
 
 #: .tmp/ScrSmolt.py:114
 msgid "UUID"
@@ -379,19 +377,19 @@ msgstr ""
 
 #: .tmp/ScrSmolt.py:115
 msgid "OS"
-msgstr ""
+msgstr "SO"
 
 #: .tmp/ScrSmolt.py:116
 msgid "Default run level"
-msgstr ""
+msgstr "Nivel de ejecución por omisión"
 
 #: .tmp/ScrSmolt.py:117
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
 #: .tmp/ScrSmolt.py:118
 msgid "Platform"
-msgstr ""
+msgstr "Plataforma"
 
 #: .tmp/ScrSmolt.py:119
 msgid "BogoMIPS"
@@ -399,56 +397,55 @@ msgstr ""
 
 #: .tmp/ScrSmolt.py:120
 msgid "CPU Vendor"
-msgstr ""
+msgstr "Fabricante de CPU"
 
 #: .tmp/ScrSmolt.py:121
 msgid "CPU Model"
-msgstr ""
+msgstr "Modelo CPU"
 
 #: .tmp/ScrSmolt.py:122
 msgid "Number of CPUs"
-msgstr ""
+msgstr "Cantidad de CPUs"
 
 #: .tmp/ScrSmolt.py:123
 msgid "CPU Speed"
-msgstr ""
+msgstr "Velocidad de la CPU"
 
 #: .tmp/ScrSmolt.py:124
 msgid "System Memory"
-msgstr ""
+msgstr "Memoria del sistema"
 
 #: .tmp/ScrSmolt.py:125
-#, fuzzy
 msgid "System Swap"
-msgstr "Configuración del Sistema"
+msgstr "Espacio de paginación (swap) del Sistema"
 
 #: .tmp/ScrSmolt.py:126
 msgid "Vendor"
-msgstr ""
+msgstr "Fabricante"
 
 #: .tmp/ScrSmolt.py:127
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #: .tmp/ScrSmolt.py:128
 msgid "Form Factor"
-msgstr ""
+msgstr "Factor de molde"
 
 #: .tmp/ScrSmolt.py:129
 msgid "Kernel"
-msgstr ""
+msgstr "Núcleo (kernel)"
 
 #: .tmp/ScrSmolt.py:130
 msgid "SELinux Enabled"
-msgstr ""
+msgstr "SELinux habilitado"
 
 #: .tmp/ScrSmolt.py:131
 msgid "SELinux Policy"
-msgstr ""
+msgstr "Política SELinux"
 
 #: .tmp/ScrSmolt.py:132
 msgid "SELinux Enforce"
-msgstr ""
+msgstr "Forzar SELinux"
 
 #: .tmp/ScrStyle.py:58
 msgid "No name"
@@ -513,14 +510,13 @@ msgid "Desktop search: <b>%s</b>"
 msgstr "Busqueda de Escritorio: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:97
-#, fuzzy
 msgid "Smolt Settings"
-msgstr "Configuración del Estilo"
+msgstr "Configuración de Smolt"
 
 #: .tmp/ScrSummary.py:98
-#, fuzzy, python-format
+#, python-format
 msgid "Smolt profile: <b>%s</b>"
-msgstr "Estilo seleccionado: <b>%s</b>"
+msgstr "Perfil Smolt: <b>%s</b>"
 
 #: .tmp/ScrWallpaper.py:34
 msgid "Insert some catchy title about wallpapers.."
@@ -548,9 +544,8 @@ msgid "Enable Nepomuk Semantic Desktop"
 msgstr "Habilitar Escritorio Semántico Nepomuk"
 
 #: .tmp/smoltWidget.py:77 .tmp/ui_smoltWidget.py:77
-#, fuzzy
 msgid "&Send my profile"
-msgstr "Enviar perfil Smolt"
+msgstr "&Enviar mi perfil"
 
 #: .tmp/smoltWidget.py:79 .tmp/ui_smoltWidget.py:79
 msgid ""
@@ -595,6 +590,32 @@ msgid ""
 "\"<span style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></"
 "body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt enviará solamente información relacionado con hardware y información básica del sistema operativo al servidor smolt de Fedora (smoon). "
+"Lo único que vincula al remitente con la base de datos es el UUID de la PC del remitente. "
+"Mientras el remitente no publica su UUID, los datos enviados son anónimos. "
+"Si en algún momento el usuario desea eliminar su perfil de la base de datos, puede ejecutar sencillamente </p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-"
+"style:italic;\">smoltDeleteProfile</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">   La información enviada a la base de datos smolt se debe considerar pública, en la que cualquier persona puede ver datos estadísticas, perfiles de datos y recursos compartidos. "
+"Smolt fue diseñado para llamar la atención a los distintos fabricantes de hardware y de acesorios. Como tal, no solamente se va a compartir la información reunida con terceros, sino también se va a usar como herramienta para conseguir mejor soporte de los controladores libres y recibir mejor soporte en general.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
+"decoration: underline;\">IP Logging:</span> Al instalar smolt de Fedora, todo el tráfico pasa por un servidor proxy. Esto es el único lugar donde se registra el IP, y se mantiene su registro durante 4 semanas, hasta que es eliminado por la rotación de los logs. Estos logs son privados, y no serán accesible por el público en general."
+"El Proyecto Fedora no almacena la dirección ip cen la base de datos smolt.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"> Usuarios a quienes no les agrada ésta política sencillamente no dberían usar smolt. Si hay dudas o preguntas sobre ésta política, debería contactar al equipo de la infraestructura Fedora Team en admin [at] fedoraproject.org. "
+"Recuerde que el usuario puede eliminar su perfil en cualquier momento con el comando"
+"\"<span style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></body></html>"
 
 #: .tmp/styleitem.py:46 .tmp/uiitem.py:46 .tmp/ui_styleitem.py:46
 #: .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
@@ -675,9 +696,8 @@ msgid "Wallpaper"
 msgstr "Imagen de Fondo"
 
 #: .tmp/ui_wallpaperWidget.py:45
-#, fuzzy
 msgid "Choose Wallpaper From a File"
-msgstr "Elegir imagen de fondo"
+msgstr "Elegir archivo para imagen de fondo "
 
 #: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:46
 msgid "Don't change wallpaper"
@@ -707,3 +727,4 @@ msgstr ""
 #: .tmp/wallpaperWidget.py:45
 msgid "Choose Wallpaper"
 msgstr "Elegir imagen de fondo"
+
