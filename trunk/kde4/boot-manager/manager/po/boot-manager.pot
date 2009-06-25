@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 14:28+0300\n"
+"POT-Creation-Date: 2009-06-25 15:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,18 +39,18 @@ msgstr ""
 #: .tmp/bootmanager/main.py:99
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 
-#: .tmp/bootmanager/main.py:195
+#: .tmp/bootmanager/main.py:198
 msgid "All Items"
 msgstr ""
 
-#: .tmp/bootmanager/main.py:296
+#: .tmp/bootmanager/main.py:300
 msgid "Do you want to delete '%1'?"
 msgstr ""
 
-#: .tmp/bootmanager/main.py:327
+#: .tmp/bootmanager/main.py:331
 msgid "Access denied."
 msgstr ""
 
