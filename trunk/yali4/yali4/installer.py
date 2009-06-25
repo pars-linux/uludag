@@ -552,19 +552,11 @@ class Yali:
 
         loader.write_grub_conf(_ins_part, ctx.installData.bootLoaderDev, _ins_part_label)
 
-        # grubutils
-        import pardus.grubutils
-
-        # our grub.conf
-        grubConf = pardus.grubutils.grubConf()
-        grubConfPath = os.path.join(ctx.consts.target_dir,"boot/grub/grub.conf")
-        grubConf.parseConf(grubConfPath)
-
-        # If selected, detect operating systems
+        # If selected, Check for Windows Partitions
+        # FIXME We need to use pardus.grubutils addEntry method for adding found Windows entries
         if ctx.installData.bootLoaderDetectOthers:
 
-            # Check for windows partitions.
-            ctx.debugger.log("Checking for Windows ...")
+            ctx.debugger.log("Checking for Other Distros (Windows) ...")
             for d in yali4.storage.devices:
                 for p in d.getPartitions():
                     fs = p.getFSName()
@@ -580,7 +572,17 @@ class Yali:
                                                         win_fs)
                             continue
 
-            # check for linux partitions.
+        # Pardus Grub utils
+        import pardus.grubutils
+
+        # Parse current grub.conf which includes installed release entry and Win entries if exists
+        grubConf = pardus.grubutils.grubConf()
+        grubConfPath = os.path.join(ctx.consts.target_dir,"boot/grub/grub.conf")
+        grubConf.parseConf(grubConfPath)
+
+        # If selected, Check for Linux Partitions
+        if ctx.installData.bootLoaderDetectOthers:
+
             def _update_dev(old, new):
                 # If it fails
                 try:
