@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-05 14:28+0300\n"
+"POT-Creation-Date: 2009-06-25 15:33+0300\n"
 "PO-Revision-Date: 2009-06-24 13:32+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -42,20 +42,21 @@ msgstr "Güncel Bakıcı"
 #: .tmp/bootmanager/main.py:99
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
-"Lütfen paketlerin kurulum ve yapılandırmasının düzgün olup olmadığını kontrol edin."
+"Lütfen paketlerin kurulum ve yapılandırmasının düzgün olup olmadığını "
+"kontrol edin."
 
-#: .tmp/bootmanager/main.py:195
+#: .tmp/bootmanager/main.py:198
 msgid "All Items"
 msgstr "Tüm Öğeler"
 
-#: .tmp/bootmanager/main.py:296
+#: .tmp/bootmanager/main.py:300
 msgid "Do you want to delete '%1'?"
 msgstr "'%1' silinsin mi?"
 
-#: .tmp/bootmanager/main.py:327
+#: .tmp/bootmanager/main.py:331
 msgid "Access denied."
 msgstr "Erişim reddedildi."
 
@@ -88,8 +89,10 @@ msgid "Ramdisk File"
 msgstr "Ramdisk Dosyası"
 
 #: .tmp/ui_edit.py:141
-msgid "File that contains a micro operating system for preloading kernel modules."
-msgstr "Çekirdek bileşenlerini önyükleyecek bir mikro işletim sistemi içeren dosya."
+msgid ""
+"File that contains a micro operating system for preloading kernel modules."
+msgstr ""
+"Çekirdek bileşenlerini önyükleyecek bir mikro işletim sistemi içeren dosya."
 
 #: .tmp/ui_edit.py:142
 msgid "Boot Options"
@@ -106,4 +109,3 @@ msgstr "Yeni Ekle"
 #: .tmp/ui_options.py:36
 msgid "Boot menu display time:"
 msgstr "Açılış menüsünün görüntüleneceği süre:"
-
