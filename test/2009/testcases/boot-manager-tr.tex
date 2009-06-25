@@ -1,6 +1,9 @@
 \documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
 
-\title{Boot Manager Test Cases}
+\title{Açılış Yöneticisi Test Aşamaları}
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
@@ -12,51 +15,59 @@
 \maketitle
 
 \begin{enumerate}
-    \item Try to open boot-manager from systemsettings.
-    \item Try to open boot-manager from Kmenu
-    \item Add a new bootable system
+    \item Açılış yöneticisini menü $\rightarrow$ sistem ayarları yolunu kullanarak açmayi deneyin.
+
+    Sorunsuz bir biçimde açılabildiğini gözlemleyin.
+    \item Menü $\rightarrow$ Sistem $\rightarrow$ Açılış yöneticisi yolunu kullanarak açmaya çalışın.
+
+    Sorunsuz bir biçimde açılabildiğini gözlemleyin.
+    \item Yeni ekle açılır listesi işlemleri:
     \begin{enumerate}
-        \item For all system options try to left empty the textbox(es) and then observe that they give a warning about it.
+        \item Tüm sistemler için (Windows, Zen, Linux) istenenleri boş bırakıp eklemeyi deneyin.
+    
+	 Bunun için bir uyary verdiğini kontrol edin.
 
-        \item For Windows give a title and write the partition of related windows system and then click "ok".
+        \item Windows için bir başlık verin ve Windows sistemin bulunduğu disk bölümünü yazıp Kaydet'e basın.
 
-            Observe the results with using the below note.
+            Aşağıdaki notu kullanarak sonucu gözlemleyin.
 
 
-\item Xen or Linux 
+\item Xen ya da Linux 
 \begin{enumerate}
-    \item Give a title
-    \item Write the partition of related system.
-    \item Write the kernel of related system.
-    \item Write the ramdisk file (initramfs) of related system.
-    \item Write some related boot option.
-    \item Then click "ok".
+    \item Bir başlık verin.
+    \item İlgili sitemin bulunduğu disk bölümünü yazın.
+    \item İlgili sistem çekirdeğini(kernel) yazın.
+    \item İlgili sistemin ramdisk dosyasını (initramfs) yazın.
+    \item İlgili açılış seçeneklerini yazın.
+    \item Kaydet'e basın.
 
-          Observe the results with using the below note.
+          Alttaki notu kullanarak sonucu gözlemleyin.
 
 \end{enumerate}
 
-\item For memtest give a title then click ok.
+\item Memtest için bir başlık verin ve Kaydet'e basın.
 
-    Observe the results with using the below note.
+    Alttaki notu kullanarak sonucu gözlemleyin.
 
     \end{enumerate}
-\item Try to change timeout and then observe it with using the below note.
+\item Bekleme süresini değiştirmeye çalışın 
+
+  Alttaki notu kullanarak sonucu gözlemleyin.
 \end{enumerate}
 
-\subsection*{Note:}
+\subsection*{Not:}
     \begin{enumerate}
-    \item Observe each result from /boot/grub/grub.conf, then restart computer and try each situation.
-    \item Looking for related partition
+    \item Her bir sonucu /boot/grub/grub.conf dosyasından inceleyin, sonra bilgisayarınızı yeniden başlatın ve tüm durumları deneyin.
+    \item İlgili disk bölümünü bulmak için:
         \begin{enumerate}
-            \item Execute the following command:
+            \item Aşağıdaki komutu çalıştırın:
             \begin{verbatim}
                 # fdisk -l
             \end{verbatim}
         \end{enumerate}
-    \item Looking for kernel and initramfs
+    \item initramfs ve çekirdeği bulmak için:
         \begin{enumerate}
-            \item Execute the following command:
+            \item Aşağıdaki komutu çalıştırın:
             \begin{verbatim}
                 # ls /boot
             \end{verbatim}
