@@ -27,7 +27,6 @@ class Tray(KSystemTrayIcon):
         self.defaultIcon = KIcon(":/data/package-manager.png")
         self.initialize()
         self.settingsChanged()
-        self.slotSetUnread(1892)
 
     def initialize(self):
         self.setIcon(self.defaultIcon)
@@ -46,7 +45,8 @@ class Tray(KSystemTrayIcon):
 
     def updateRepo(self):
         repoName = unicode(self.sender().iconText())
-        pass
+        if not self.iface.operationInProgress():
+            self.iface.updateRepository(repoName)
 
     def settingsChanged(self):
         cfg = config.PMConfig()
