@@ -13,11 +13,11 @@
     Bu durumda iken kullanıcı parolası sormadan ağa bağlanmaya çalışıyor.
 
 - Bluetooth ağları network-manager'da görüntülenebiliyor fakat buradan bağlantı sağlanamıyor. Bu durum için bir warning penceresi çıkarılabilir.
-- Ethernet ile baglanilamaya calisilinca ilk seferinde baglanilamiyor. 
-- Bilgisayar restart edildiginde de aga kendi kendine baglanamiyor.
++ Ethernet ile baglanilamaya calisilinca ilk seferinde baglanilamiyor. 
++ Bilgisayar restart edildiginde de aga kendi kendine baglanamiyor.
 - Butonların üzrine gelindiğinde açıklama gelmeli.
 + Kullanılabilir profiller seçilince network-manager donuyor.
-- İnterface yok iken bağlanabiliyor.
-- Profil seçili değil iken, ağa başlanmaya çalışıyor. 
+? İnterface yok iken bağlanabiliyor.
+? Profil seçili değil iken, ağa başlanmaya çalışıyor. 
     - Ekranda bağlanıyor olarak gözüküyor. 
     - Timeout olamıyor.
