@@ -51,7 +51,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.pixmapConsole.setPixmap(kdeui.KIcon("utilities-terminal").pixmap(48, 48))
 
         # Actions
-        self.connect(self.buttonBox, QtCore.SIGNAL("clicked(QAbstractButton*)"), self.slotButtonsClicked)
+        if not embed:
+            self.connect(self.buttonBox, QtCore.SIGNAL("clicked(QAbstractButton*)"), self.slotButtonsClicked)
+        else:
+            pass
 
         # Initialize
         self.buildLists()

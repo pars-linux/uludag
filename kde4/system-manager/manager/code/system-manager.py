@@ -58,6 +58,7 @@ class Module(KCModule):
             DBusQtMainLoop(set_as_default=True)
 
         MainWidget(self, embed=True)
+        self.setButtons(KCModule.Help)
 
 def CreatePlugin(widget_parent, parent, component_data):
     return Module(component_data, parent)
