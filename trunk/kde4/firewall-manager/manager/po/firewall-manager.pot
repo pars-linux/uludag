@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:37+0300\n"
+"POT-Creation-Date: 2009-06-25 15:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,10 @@ msgstr ""
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
+msgstr ""
+
+#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
+msgid "Settings"
 msgstr ""
 
 #: .tmp/firewallmanager/service.py:38
@@ -59,7 +63,7 @@ msgstr ""
 #: .tmp/firewallmanager/main.py:96
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 
 #: .tmp/firewallmanager/main.py:200
@@ -70,11 +74,7 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:312
-#: .tmp/firewallmanager/main.py:349
+#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:279
+#: .tmp/firewallmanager/main.py:316
 msgid "Access denied."
-msgstr ""
-
-#: .tmp/firewallmanager/main.py:272 .tmp/firewallmanager/main.py:304
-msgid "Settings"
 msgstr ""

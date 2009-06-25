@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:37+0300\n"
+"POT-Creation-Date: 2009-06-25 15:34+0300\n"
 "PO-Revision-Date: 2009-06-22 13:00+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -23,6 +23,10 @@ msgstr "Avvia"
 #: .tmp/ui_main.py:77
 msgid "Add New"
 msgstr "Aggiungi"
+
+#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
+msgid "Settings"
+msgstr "Impostazioni"
 
 #: .tmp/firewallmanager/service.py:38
 msgid "Firewall is activated."
@@ -57,12 +61,14 @@ msgid "Current Maintainer"
 msgstr "Mantainer corrente"
 
 #: .tmp/firewallmanager/main.py:96
+#, fuzzy
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Non ci sono pacchetti che forniscano un backend per questa applicazione.\n"
-"Per favore, assicurati che i pacchetti siano installati e configurati correttamente."
+"Per favore, assicurati che i pacchetti siano installati e configurati "
+"correttamente."
 
 #: .tmp/firewallmanager/main.py:200
 msgid "All"
@@ -72,12 +78,7 @@ msgstr "Tutti"
 msgid "Action"
 msgstr "Azione"
 
-#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:312
-#: .tmp/firewallmanager/main.py:349
+#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:279
+#: .tmp/firewallmanager/main.py:316
 msgid "Access denied."
 msgstr "Accesso negato."
-
-#: .tmp/firewallmanager/main.py:272 .tmp/firewallmanager/main.py:304
-msgid "Settings"
-msgstr "Impostazioni"
-

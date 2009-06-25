@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:37+0300\n"
+"POT-Creation-Date: 2009-06-25 15:34+0300\n"
 "PO-Revision-Date: 2009-06-24 13:25+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -26,6 +26,10 @@ msgstr "Başlat"
 #: .tmp/ui_main.py:77
 msgid "Add New"
 msgstr "Yeni Ekle"
+
+#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
+msgid "Settings"
+msgstr "Ayarlar"
 
 #: .tmp/firewallmanager/service.py:38
 msgid "Firewall is activated."
@@ -62,10 +66,11 @@ msgstr "Güncel Bakıcı"
 #: .tmp/firewallmanager/main.py:96
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
-"Lütfen paketlerin kurulum ve yapılandırmasının düzgün olup olmadığını kontrol edin."
+"Lütfen paketlerin kurulum ve yapılandırmasının düzgün olup olmadığını "
+"kontrol edin."
 
 #: .tmp/firewallmanager/main.py:200
 msgid "All"
@@ -75,12 +80,7 @@ msgstr "Tümü"
 msgid "Action"
 msgstr "Eylem"
 
-#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:312
-#: .tmp/firewallmanager/main.py:349
+#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:279
+#: .tmp/firewallmanager/main.py:316
 msgid "Access denied."
 msgstr "Erişim reddedildi."
-
-#: .tmp/firewallmanager/main.py:272 .tmp/firewallmanager/main.py:304
-msgid "Settings"
-msgstr "Ayarlar"
-
