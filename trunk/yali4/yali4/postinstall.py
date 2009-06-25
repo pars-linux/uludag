@@ -166,12 +166,15 @@ def addUsers():
         os.chmod(iconPath, 0644)
         os.chown(iconPath, uid, 100)
 
-        # Chown for old users..
+        # If new user id is different from old one, we need to run a huge chown for it
         user_home_dir = os.path.join(consts.target_dir, 'home', u.username)
-        ctx.yali.info.updateAndShow(_("User <b>%s</b>'s home directory is being prepared..") % u.username)
-        os.system('chown -R %d:%d %s ' % (uid, 100, user_home_dir))
+        user_home_dir_id = os.stat(user_home_dir)[4]
+        if not user_home_dir_id == uid:
+            ctx.yali.info.updateAndShow(_("User <b>%s</b>'s home directory is being prepared..") % u.username)
+            os.system('chown -R %d:%d %s ' % (uid, 100, user_home_dir))
+            ctx.yali.info.hide()
+
         os.chmod(user_home_dir, 0711)
-        ctx.yali.info.hide()
 
         # Enable auto-login
         if u.username == ctx.installData.autoLoginUser:
