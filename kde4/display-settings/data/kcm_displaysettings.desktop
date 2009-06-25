@@ -11,8 +11,9 @@ X-KDE-PluginKeyword=display-settings/display-settings.py
 X-KDE-System-Settings-Parent-Category=computer-administration
 X-KDE-Weight=70
 
-Name=Display Settings
-Name[tr]=Ekran Ayarları
-Comment=An application to configure your display devices.
-Comment[tr]=Görüntü aygıtlarınızı yapılandırmak için bir uygulama.
-X-KDE-Keywords=python display video managers
+Name=Video Card & Monitor
+Name[tr]=Ekran Kartı & Monitör
+Comment=Configure display devices
+Comment[tr]=Görüntü aygıtlarını yapılandır
+X-KDE-Keywords=python display screen video monitor manager
+X-KDE-Keywords[tr]=python görüntü ekran video monitör yönetici
