@@ -1,4 +1,7 @@
 \documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
 
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
@@ -6,8 +9,6 @@
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
 \renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
 
-\usepackage[turkish]{babel}
-\usepackage[utf8]{inputenc}
 
 \title{Disk Yöneticisi Test Aşamaları}
 \author{Semen Cirit}
@@ -20,20 +21,20 @@
 \item Menü $\rightarrow$ Sistem Ayarları Disk Yöneticisi bölümünden açmayı deneyiniz.
 
 Sorunzuz bir şekilde açıldığını gözlemlyiniz.
-\item Disk Yöneticisi'ni KMenu'den açmayı deneyiniz.
+\item Menü $\rightarrow$ Sistem $\rightarrow$ Disk Yöneticisi'ni yolunu izleyerek açmayı deneyiniz.
 
-\item Harici bir usb belleği veya benzeri bir aygıtı bağlama. (Başlangıçta disk bağlı değil) 
+\item Harici bir usb belleği veya benzeri bir aygıtı bağlama: (Başlangıçta disk bağlı değil durumda iken) 
     \begin{enumerate}
         \item Şu komutu çalıştırınız:
             \begin{verbatim}
                 # mount
             \end{verbatim}
-            Diskin hiçbir yere bağlanmadığını gözlemleyiniz. 
+            Diskin hiçbir yere bağlı olmadığını gözlemleyiniz. 
 
-	\item Ayrıca disk yöneticisinde bulunan diğer bağlı disklerin uygun bir şekilde bağlı olduklarını gözlemleyiniz.  
+	\item Ayrıca disk yöneticisinde bulunan diğer bağlı disklerin uygun bir şekilde bağlı olduklarını gözlemleyiniz.
 
     \item Bu diski ev dizininize bağlamayı deneyiniz.
-          Disk yöneticisinin geçerli olmayan bu bağlama noktası hakkında bir uyarı verip vermediğini gözlemleyiniz.
+          Disk yöneticisinin geçerli olmayan bu bağlama noktası hakkında bir uyarı verdiğini gözlemleyiniz.
     \item Bu diski bağlamayı deneyiniz.
         \begin{enumerate}
             \item Uygun bir bağlama noktası deneyiniz. Örneğin "/mnt/sample"
@@ -56,14 +57,14 @@ Sorunzuz bir şekilde açıldığını gözlemlyiniz.
             Disk yöneticisinin diskin zaten bağlı olduğuyla ilgili bir uyarı mesajı verip vermediğini gözlemleyiniz.
         \end{enumerate}
 
-    \item Dosya sistemi türünü değiştirmeye çalışınız.
+    \item Dosya sistemi türünü değiştirme:
         \begin{enumerate}
             \item Şu komutu çalıştırınız:
             \begin{verbatim}
                 # blkid
             \end{verbatim}
                   Seçilmiş bir aygıt için, disk yöneticisindeki öntanımlı dosya sistemi türünün "blkid" çıktısı ile aynı olduğunu gözlemleyiniz.
-            \item Dosya sistemi türünü değiştiriniz:
+            \item Dosya sistemi türünü değiştiriniz.
                   Eğer dosya sistemi türü bu aygıtla uyumlu değilse, disk yöneticisinin uyarı mesajı verdiğini gözlemleyiniz.
         \end{enumerate}
 
@@ -78,12 +79,21 @@ Sorunzuz bir şekilde açıldığını gözlemlyiniz.
 
 \item Root bölümünün bağlama noktasını değiştirmeyi deneyiniz
 
-      Tekrardan bağlama yapılamayacağı ile ilgili bir uyarı mesajı aldığınızı gözlemleyiniz.
+      Root böülmünün bağlanma noktasının değiştirilemeyeceğine dair bir uyarı mesajı aldığınızı gözlemleyiniz.
 
         \textbf{Not :} Root'un bağlama noktası "/" olmalı.
 
-\item Genişletilmiş bir bölümün disk yöneticisinde listelenip listelenmediğini gözlemleyiniz. (Normal şartlarda listelenmemesi lazım).
+\item Genişletilmiş (extended) bir bölümün disk yöneticisinde listelenip listelenmediğini gözlemleyiniz. (Normal şartlarda listelenmemeli).
 
+\item Herhangi bir işlem yapılmakta iken çıkan kimlik doğrulama penceresine iptal değiniz.
+
+İptal işlemi sonucunda disk yöneticisinin sorunsuz bir şekilde yapılmakta olan işlemden önceki duruma geçtiğini gözlemleyiniz.
+
+\item Disk yöneticisi ile bir işlem yapmakta iken, kimlik doğrulamayı anımsa bölümünü işaretleyiniz.
+
+Disklerinizden biri için herhangi bir işlem uygulayınız.
+
+Parola sorulmadan işlemin dorunsuz bir şekilde gerçekleştiğini gözlemleyiniz.
 \end{enumerate}
 
 \end{document}
