@@ -79,6 +79,10 @@ class Iface(Singleton):
         logger.debug("Updating repositories...")
         self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler)
 
+    def updateRepository(self, repo):
+        logger.debug("Updating %s..." % repo)
+        self.link.System.Manager["pisi"].updateRepository(repo, async=self.handler)
+
     def clearCache(self, limit):
         logger.debug("Clearing cache with limit: %s" % limit)
         self.link.System.Manager["pisi"].clearCache("/var/cache/pisi/packages", limit)
@@ -203,3 +207,6 @@ class Iface(Singleton):
 
     def cancel(self):
         self.link.cancel()
+
+    def operationInProgress(self):
+        return False
