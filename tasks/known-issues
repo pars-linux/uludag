@@ -5,7 +5,7 @@
 
 * KDE
     - Some Turkish characters like İ,Ü,etc. are rendered as I, U even the translations
-    are correct,
+    are correct (dejavu-fonts problem),
     - Logout pictures are not rendered correctly when effects are disabled,
     - kbluetooth4 has no translations, goes background when no device is available without
     notifying the user. It crashes when the dongle is suddenly unplugged,
@@ -24,8 +24,6 @@
     - libbonobo, libgnomeui stuff can be merged to pardus/ for fully compatible firefox,
 
 * CUPS (Ozan Çağlayan)
-    - Check ::1 lookup regression on a clean Alpha installation,
-    - hal-cups-utils' low-level usb backend fails on some printers,
     - KDE applications fails to print: cups-document-format-not-supported, pf.
 
 * YALI (Gökmen GÖKSEL - Faik Uygur)
