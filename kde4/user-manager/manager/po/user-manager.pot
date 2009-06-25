@@ -8,17 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-22 14:01+0300\n"
+"POT-Creation-Date: 2009-06-25 15:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr ""
 
 #: .tmp/ui_edituser.py:176
 msgid "User Information"
@@ -84,18 +80,34 @@ msgstr ""
 msgid "Groups"
 msgstr ""
 
-#: .tmp/ui_editgroup.py:78
-msgid "Group Information"
+#: .tmp/ui_main.py:77
+msgid "Add New"
 msgstr ""
 
-#: .tmp/ui_editgroup.py:79
-msgid "Group Name:"
+#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
+msgid "User Manager"
+msgstr ""
+
+#: .tmp/usermanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/usermanager/about.py:25
+msgid " "
+msgstr ""
+
+#: .tmp/usermanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr ""
+
+#: .tmp/usermanager/about.py:32
+msgid "Current Maintainer"
 msgstr ""
 
 #: .tmp/usermanager/main.py:94
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 
 #: .tmp/usermanager/main.py:195
@@ -135,26 +147,6 @@ msgstr ""
 msgid "Do you want to delete group '%1'?"
 msgstr ""
 
-#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
-msgid "User Manager"
-msgstr ""
-
-#: .tmp/usermanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr ""
-
-#: .tmp/usermanager/about.py:25
-msgid " "
-msgstr ""
-
-#: .tmp/usermanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr ""
-
-#: .tmp/usermanager/about.py:32
-msgid "Current Maintainer"
-msgstr ""
-
 #: .tmp/usermanager/edit.py:236
 msgid "There has to be at least one group selected."
 msgstr ""
@@ -189,4 +181,12 @@ msgstr ""
 
 #: .tmp/usermanager/edit.py:328
 msgid "User name must not start with a number."
+msgstr ""
+
+#: .tmp/ui_editgroup.py:78
+msgid "Group Information"
+msgstr ""
+
+#: .tmp/ui_editgroup.py:79
+msgid "Group Name:"
 msgstr ""
