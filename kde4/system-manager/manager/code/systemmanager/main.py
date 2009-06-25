@@ -98,8 +98,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.comboKeyboard.setCurrentIndex(index)
         # All services
         self.comboHeadStart.clear()
+        self.comboHeadStart.addItem(kdecore.i18n("None"), QtCore.QVariant(""))
         for package, label in self.iface.listServices():
-            self.comboHeadStart.addItem(label, QtCore.QVariant(package))
+            self.comboHeadStart.addItem("%s (%s)" % (label, package), QtCore.QVariant(package))
         # Head start
         service = QtCore.QVariant(self.iface.getHeadStart())
         index = self.comboHeadStart.findData(service)
