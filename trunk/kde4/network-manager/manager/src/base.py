@@ -168,7 +168,7 @@ class MainManager(QtGui.QWidget):
             info = self.packages[package]
             # Add filter menu entry
             self.ui.filterBox.addItem(info["name"], QVariant(package))
-            if info["type"] == "wifi":
+            if info["type"] == "wifi" and len(self.iface.devices("wireless_tools")):
                 self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
                 wifiScanner = WifiPopup(self)
                 self.ui.buttonScan.setMenu(wifiScanner)

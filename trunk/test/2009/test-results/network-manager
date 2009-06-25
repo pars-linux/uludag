@@ -16,7 +16,7 @@
 - Ethernet ile baglanilamaya calisilinca ilk seferinde baglanilamiyor. 
 - Bilgisayar restart edildiginde de aga kendi kendine baglanamiyor.
 - Butonların üzrine gelindiğinde açıklama gelmeli.
-- Kullanılabilir profiller seçilince network-manager donuyor.
++ Kullanılabilir profiller seçilince network-manager donuyor.
 - İnterface yok iken bağlanabiliyor.
 - Profil seçili değil iken, ağa başlanmaya çalışıyor. 
     - Ekranda bağlanıyor olarak gözüküyor. 
