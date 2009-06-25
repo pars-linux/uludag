@@ -102,7 +102,7 @@ loader.
             ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.bootLoaderOptionalDev.getPath())
         elif self.ui.installFirstMBR:
             ctx.installData.bootLoaderOption = B_INSTALL_SMART
-            ctx.yali.guessBootLoaderDevice(ctx.installData.rescuePartition)
+            ctx.yali.guessBootLoaderDevice(ctx.installData.rescuePartition.getPath())
 
         ctx.debugger.log("Bootloader Option is %s" % ctx.installData.bootLoaderOption)
         ctx.debugger.log("Bootloader Device is %s" % ctx.installData.bootLoaderDev)

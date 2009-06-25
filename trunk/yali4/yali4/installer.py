@@ -536,7 +536,7 @@ class Yali:
 
         loader = yali4.bootloader.BootLoader()
 
-        # Rredefined Pardus path for rescue mode
+        # Predefined Pardus path for rescue mode
         if pardusPart:
             _ins_part = pardusPart.getPath()
             _ins_part_label = pardusPart.getTempLabel() or pardusPart.getFSLabel()
