@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 14:57+0300\n"
+"POT-Creation-Date: 2009-06-25 15:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,8 +30,8 @@ msgstr ""
 
 #: .tmp/ui_main.py:159
 msgid ""
-"Note that, these settings does not effect your desktop settings. They should "
-"be changed from 'Regional & Language' module in System Settings."
+"Note that these settings do not effect your desktop. Desktop settings can be "
+"changed in 'Regional & Language' module in System Settings."
 msgstr ""
 
 #: .tmp/ui_main.py:160
@@ -44,8 +44,8 @@ msgstr ""
 
 #: .tmp/ui_main.py:162
 msgid ""
-"Although services are started parallelly in boot process, users may want to "
-"start a single service before checking dependencies."
+"Although services are started parallel manner in boot process, users may "
+"want to start a single service before checking dependencies."
 msgstr ""
 
 #: .tmp/ui_main.py:163
@@ -91,7 +91,7 @@ msgstr ""
 #: .tmp/systemmanager/main.py:73
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 
 #: .tmp/systemmanager/main.py:101
