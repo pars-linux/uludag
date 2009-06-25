@@ -1,6 +1,9 @@
 \documentclass[a4paper,10pt]{article}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
 
-\title{History Manager Test Cases}
+\title{History Manager Test Aşamaları}
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
@@ -12,50 +15,63 @@
 \maketitle
 
 \begin{enumerate}
-\item sistem ayarlarından geçmiş yöneticisini açmayı deneyin.
-\item Kmenüsünden geçmiş yöneticisini açmayı deneyin.
+\item Menü $\rightarrow$ Sistem Ayarların yolunu izleyerek geçmiş yöneticisini açmayı deneyin.
+
+Sorunsuz bir şekilde açıldığını gözlemleyin.
+\item Menü $\rightarrow$ Uygulamalar $\rightarrow$ Sistem yolunu izleyerek geçmiş yöneticisini açmayı deneyin.
+
+Sorunsuz bir şekilde açıldığını gözlemleyin.
 \item Sistem görüntüsü almayı deneyin.
 \begin{enumerate}
     \item Paket yöneticisinden bir paket kurun veya kaldırın.
     \item Geçmiş yöneticisindeki görüntü alma butonuna basın.
-    \item Görüntü aldıktan sonra, geçmiş yöneticisinin ekranı yenilediğini ve yeni değişiklikleri gösterdiğini onaylayın.
+    
+Görüntü aldıktan sonra, geçmiş yöneticisinin ekranı yenilediğini ve yeni değişiklikleri gösterdiğini gözlemleyin.
 \end{enumerate}
 
-\item Bir tarih için ayrıntıları gösterin.
+\item Yeni yaptığınız işlem için ilgili tarihten ayrıntıları göster butonuna basın.
 
     Aşağıdaki komutu çalıştırın:
 \begin{verbatim}
     $ pisi hs
 \end{verbatim} 
 
-    Son değişiklikleri geçmiş yöneticisi ile ilgili tarihe göre karşılaştırın.
+    Komut çıktısında, seçtiğiniz tarih ile ilgili listelenen değişikliklerin, geçmiş yöneticinde listelenenler ile aynı olduğunu gözlemleyin.
 
-\item Bir tarih için işlem detaylarını gösterin.
+\item Yeni yaptığınız işlem için geri alma işlemi detaylarını göster butonuna basın. (Bir önceki tarihin geri alma işlemi detaylarından gözlemlenebilir.)
     Aşağıdaki komutu çalıştırın:
 \begin{verbatim}
      $ pisi hs
 \end{verbatim} 
-    Son değişiklikleri geçmiş yöneticisi ile ilgili tarih için karşılaştırın.
+    Son değişiklikleri geçmiş yöneticisi ile ilgili tarih için gözlemleyin.
 
-    Paketlerin doğru olarak güncellendiğini, yüklendiğini veya kaldırıldığını onaylayın.
 
-\item Bir tarih seçip sistem geçmiş bir tarihe getirmeyi deneyin.
+\item Geri alma işlemi detay butonuna basıldığında yapılacak işlemi olan bir tarih seçip, sistemi geçmiş bir tarihe getirmeyi deneyin. 
 
-        Değişiklikler geri alındığında 
+      Değişiklikler geri alındığında 
 \begin{enumerate}
         \item İşlemden sonra geçmiş yöneticisi ekranın yenilendiğini gözlemleyin.
         \item İşlemi geri aldığınız tarih için işlemleri göster tuşuna basın.
 
-			  Bu işlemlerin işlem planından kaldırıldığını onaylayın.
+	Bu işlemlerin işlem planından kaldırıldığını gözlemleyin.
      	\item Konsolda şu komutu yazın·
-\begin{verbatim}
-    $ pisi hs
-\end{verbatim} 
+      \begin{verbatim}
+	  $ pisi hs
+      \end{verbatim} 
+       Komut çıktısında, son yapılan değişiklik ile ilgili listelenen değişikliklerin, geçmiş yöneticinde listelenenler ile aynı olduğunu gözlemleyin.
 
-            Son değişiklikleri geçmiş yöneticisi ile karşılaştırın.
-
-			İşlemin ardından geri alma işleminin doğru olarak listelendiğini onaylayın.
 \end{enumerate}
+\item Alınacak yeni bir görüntü olmadığında geçmiş yöneticisinin sorunsuz bir şekilde eski haline döndüğünü gözlemleyin.
+
+\item Herhangi bir işlem yapılmakta iken çıkan kimlik doğrulama penceresine iptal değiniz.
+
+İptal işlemi sonucunda geçmiş yöneticisinin sorunsuz bir şekilde yapılmakta olan işlemden önceki duruma geçtiğini gözlemleyiniz.
+
+\item Kullanıcı yöneticisi ile bir işlem yaptıktan sonra , kimlik doğrulamayı anımsa bölümünü işaretleyiniz.
+
+Geçmiş yöneticisini kullanarak bir işlem yapınız.
+
+Parola sorulmadan işlemin dorunsuz bir şekilde gerçekleştiğini gözlemleyiniz.
 \end{enumerate}
 
 \end{document}
