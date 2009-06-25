@@ -7,17 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Manager 2.90\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-22 14:01+0300\n"
+"POT-Creation-Date: 2009-06-25 15:35+0300\n"
 "PO-Revision-Date: 2009-05-12 13:34+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Yeni Ekle"
 
 #: .tmp/ui_edituser.py:176
 msgid "User Information"
@@ -83,18 +79,34 @@ msgstr "Ana Grup"
 msgid "Groups"
 msgstr "Gruplar"
 
-#: .tmp/ui_editgroup.py:78
-msgid "Group Information"
-msgstr "Grup Bilgisi"
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Yeni Ekle"
 
-#: .tmp/ui_editgroup.py:79
-msgid "Group Name:"
-msgstr "Grup İsmi:"
+#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
+msgid "User Manager"
+msgstr "Kullanıcı Yöneticisi"
+
+#: .tmp/usermanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/usermanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/usermanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/usermanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Şu anki geliştirici"
 
 #: .tmp/usermanager/main.py:94
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
 "Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
@@ -136,26 +148,6 @@ msgstr "Kullanıcı dosyalarını da sil. (Bu uzun sürebilir.)"
 msgid "Do you want to delete group '%1'?"
 msgstr "'%1' grubu silinsin mi?"
 
-#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
-msgid "User Manager"
-msgstr "Kullanıcı Yöneticisi"
-
-#: .tmp/usermanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
-
-#: .tmp/usermanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/usermanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/usermanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Şu anki geliştirici"
-
 #: .tmp/usermanager/edit.py:236
 msgid "There has to be at least one group selected."
 msgstr "En az bir grup seçili olmalı."
@@ -191,3 +183,11 @@ msgstr "Bu kullanıcı adı başkası tarafından kullanılıyor."
 #: .tmp/usermanager/edit.py:328
 msgid "User name must not start with a number."
 msgstr "Kullanıcı adı rakam ile başlayamaz."
+
+#: .tmp/ui_editgroup.py:78
+msgid "Group Information"
+msgstr "Grup Bilgisi"
+
+#: .tmp/ui_editgroup.py:79
+msgid "Group Name:"
+msgstr "Grup İsmi:"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-22 14:01+0300\n"
+"POT-Creation-Date: 2009-06-25 15:35+0300\n"
 "PO-Revision-Date: 2009-05-27 20:08-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -17,10 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Agregar nuevo"
 
 #: .tmp/ui_edituser.py:176
 msgid "User Information"
@@ -87,19 +83,36 @@ msgstr "Grupo principal:"
 msgid "Groups"
 msgstr "Grupos"
 
-#: .tmp/ui_editgroup.py:78
-msgid "Group Information"
-msgstr "Información del grupo"
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Agregar nuevo"
 
-#: .tmp/ui_editgroup.py:79
-msgid "Group Name:"
-msgstr "Nombre del grupo:"
+#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
+msgid "User Manager"
+msgstr "Administrador de Usuarios"
+
+#: .tmp/usermanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/usermanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/usermanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr ""
+
+#: .tmp/usermanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mantenedor actual"
 
 # favor revisar, el tema de respaldo, backend..
 #: .tmp/usermanager/main.py:94
+#, fuzzy
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 "No hay paquetes que respaldan esta aplicación.\n"
 "Por favor asegúrese que los paquetes están instalados y configurados de "
@@ -142,26 +155,6 @@ msgstr ""
 msgid "Do you want to delete group '%1'?"
 msgstr "Desea eliminar grupo '%1'?"
 
-#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
-msgid "User Manager"
-msgstr "Administrador de Usuarios"
-
-#: .tmp/usermanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr ""
-
-#: .tmp/usermanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/usermanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr ""
-
-#: .tmp/usermanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Mantenedor actual"
-
 #: .tmp/usermanager/edit.py:236
 msgid "There has to be at least one group selected."
 msgstr "Se debe seleccionar al menos un grupo."
@@ -198,3 +191,11 @@ msgstr "El nombre de usuario ya fue utilizado para otro usuario."
 #: .tmp/usermanager/edit.py:328
 msgid "User name must not start with a number."
 msgstr "El nombre de usuario no debe empezar con un número."
+
+#: .tmp/ui_editgroup.py:78
+msgid "Group Information"
+msgstr "Información del grupo"
+
+#: .tmp/ui_editgroup.py:79
+msgid "Group Name:"
+msgstr "Nombre del grupo:"
