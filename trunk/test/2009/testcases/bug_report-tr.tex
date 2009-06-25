@@ -1,11 +1,11 @@
 \documentclass[a4paper,10pt]{article}
-
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
 \usepackage[turkish]{babel}
 \usepackage[utf8]{inputenc}
 
 %opening
 \title{Etkili Bug Raporlama}
-
+\author{Semen Cirit}
 \begin{document}
 
 \maketitle
@@ -14,15 +14,15 @@ Etkili Bug Raporu Taslağı
 
 \begin{itemize}
  
-  	\item \subsection*{Düzgün bir  bug raporu, geliştiricisi veya sağlayıcısı için çok önemlidir.Bu sebeple ilk yapmanız gereken şey, bu dökümandaki bilgileri çok dikkatli bir şekilde okumaktır :) }
+  	\item \subsection*{Düzgün bir  bug raporu, geliştiricisi veya sağlayıcısı için çok önemlidir.Bu sebeple ilk yapmanız gereken şey, aşağıdaki linkte bulunan bilgileri çok dikkatli bir şekilde okumaktır!!!}
 	\begin{verbatim} 
  	http://bugs.pardus.org.tr/page.cgi?id=bug-writing.html#why
 	\end{verbatim}
 
-  	\item Bugzilla'nın açıklama bölümü için bir şablon hazırlandı. Bütün Pardus testerları bu şablonu bugları raporlamak için kullanacaklar.
-  	Açıklama textbox'ı içinde
 
-   	Tekrarlanabilir: (Daima veya aralıklarla)	
+  	\item Bugzilla'da hata girişinin açıklama bölümü için bir şablon hazırlandı. Tüm Pardus test ekibi bu şablonu karşılaştıkları hataları raporlamak için kullanmalılar.
+
+   	Tekrarlanabilirlik: (Daima, Bazen, veya Bazı sistemlerde)	
    
     	Bug'ın kısa bir açıklamasını buraya yazın.
    
@@ -45,29 +45,33 @@ Etkili Bug Raporu Taslağı
 	\end{verbatim}
 	\item Ve ayrıca problemi çözdüğünüzü düşünüyorsanız, çözümünüzü ve/veya yamanızı eklemeyi unutmayın.
 
-  	\item Eğer bug'ı hangi ürüne atayacağınızı belirleyemiyorsanız ama uygulamanın ismini biliyorsanız, onu aşağıdaki komutu kullanarak bulabilirsiniz:
+  	\item Eğer bug'ı hangi ürüne atayacağınızı belirleyemiyorsanız ama uygulamanın ismini veya hangi ilgili dosyada hata ile karşılaşıldığını biliyorsanız, onu aşağıdaki komutu kullanarak bulabilirsiniz:
 	\begin{verbatim}
 	pisi sf `which <dosyaadı>`
 	\end{verbatim}
-	dosyaadı, size problemli gözüken dosyanın ismi(yapılandırma dosyası, kütüphane, çalıştırılabilir uygulama, vb.)
+	dosyaadı, problemli gözüken dosyanın ismidir. (yapılandırma dosyası, kütüphane, çalıştırılabilir uygulama, vb.)
 
-	Renk şemasını değiştirmek istediğimizde sistemayarları uygulamasının  çöktüğünü varsayalım, fakat siz hangi paketin sistamayarları uygulamasından sorumlu olduğunu bilmiyorsunuz. Bunu öğrenmek için aşağıdaki komutu giriniz:
+	Örneğin yukarıdaki örnek bug raporlama ile ilgili verilmiş linkte karşılaşığımız sorunu hangi ürüne atayacağımızı bulabilmek için:
+
+	Bildiğimiz gibi efekteler ile ilgili değişiklikler sistem ayarlarından yapılmaktadır. Bu durumda bu örnekte karşılaşmış olduğumuz sorun sistem ayarları ile ilgilidir. Fakat bugzillada hata sayfası girişindeki ürünlere baktığımızda sistem ayarlarını burada  görememekteyiz. Ve diyelim ki hangi paketin sistem ayarları uygulamasından sorumlu olduğunu bilmiyorsunuz. Bu durumda bu uygulamayı çalıştıran bin dosyasını bulup (bu örnek için system settings) aşağıdaki komutu girdiğinizde ilgili paketi bulabileceksiniz:
 	\begin{verbatim}
-	pisi sf `which sistemayarları`
-	Searching for /usr/kde/4/bin/sistemayarları
-	Package kdebase-workspace has file usr/kde/4/bin/sistemayarları
+	pisi sf `which systemsettings`
+	Searching for /usr/kde/4/bin/systemsettings
+	Package kdebase-workspace has file usr/kde/4/bin/systemsettings
 	\end{verbatim}
 	Bu şu anlama geliyor: bug, kdebase-workspace paketine atanmalıdır.
 
   \item \subsection*{Problemi tamamiyle doğru bir şekilde anlayabilmek için ek dosyalar geliştiriciler için çok önemlidir.}
 
-	Dikkat: Aşağıdaki bazı komutları çalıştırabilmeniz için root kullanıcısı olmalısınız. Aşağıdaki komutu giriniz ve root şifrenizi yazınız:
+	Dikkat: Aşağıdaki bazı komutları çalıştırabilmeniz için root kullanıcısı olmalısınız. 
+
+	Bu durumlarda aşağıdaki komutu girerek root olmalısınız:
 	\begin{verbatim}
 	 su -
 	\end{verbatim}
 
 	\begin{enumerate}
-	\item X server'ı ile ilgili buglar için:
+	\item X server bugları için:
 	\begin{itemize}
 		\item Aşağıdaki komutların çıktıları eklenmelidir:
 		\begin{verbatim}
@@ -79,19 +83,22 @@ Etkili Bug Raporu Taslağı
 		\begin{verbatim}
 		cat /var/log/Xorg.0.log > xserver.txt
 		\end{verbatim}
-		\item Eğer çalışmıyorlarsa, bilgisayarınızı yeniden başlatın, onu vesa modunda açın ve logu şu şekilde alın:
+		\item Eğer çalışmıyorlarsa, izlemeniz gereken yol:
+
+		Bilgisayarınızı yeniden başlatın, vesa modunda açın ve gerekli olan logu şu şekilde alın:
 		\begin{verbatim}
 		cat /var/log/Xorg.0.log.old
 		\end{verbatim}
 
-		Bütün çıktılar için, eğer X çökerse, bu çıktıları aşağıdaki prosedürle alabilirsiniz:
+		Bütün çıktılar için, eğer X çökmüş ise, bu çıktıları aşağıdaki prosedürle alabilirsiniz:
 		\begin{itemize}
+			\item $CTRL+ALT+F1$ tuşlarına aynı anda basınız.(Bu komut ile sitem konsoluna geçmiş olmalısınız.)
 			\item Bilgisayarınıza usb bellek takınız.
 			\item Manuel bir şekilde bağlayınız.
 				\begin{verbatim}
     				mount /dev/<your_usb_stick_partition> /mnt/flash
 				\end{verbatim}
-			\item çıktıları  /mnt/flash dizinine kopyalayınız
+			\item X için gerekli olan çıktıları /mnt/flash dizinine kopyalayınız
 				\begin{verbatim}
      				cp <output> /mnt/flash
 				\end{verbatim}
@@ -155,7 +162,7 @@ Etkili Bug Raporu Taslağı
 
 		Aşağıdaki komutu root kullanıcısı olarak çalıştırın ve en son olarak çıktıda bulunacak olan WWW linkini not alın:
 		\begin{verbatim}
-        alsa-info
+        	alsa-info
 		\end{verbatim}
 	\end{enumerate}
 \end{itemize}
