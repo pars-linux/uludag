@@ -8,13 +8,65 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-24 09:52+0300\n"
+"POT-Creation-Date: 2009-06-25 14:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/ui_main.py:156
+msgid "Language Settings"
+msgstr ""
+
+#: .tmp/ui_main.py:157
+msgid "System Language:"
+msgstr ""
+
+#: .tmp/ui_main.py:158
+msgid "Console Keyboard Layout:"
+msgstr ""
+
+#: .tmp/ui_main.py:159
+msgid ""
+"Note that, these settings does not effect your desktop settings. They should "
+"be changed from 'Regional & Language' module in System Settings."
+msgstr ""
+
+#: .tmp/ui_main.py:160
+msgid "Service Settings"
+msgstr ""
+
+#: .tmp/ui_main.py:161
+msgid "First Service to Start:"
+msgstr ""
+
+#: .tmp/ui_main.py:162
+msgid ""
+"Although services are started parallelly in boot process, users may want to "
+"start a single service before checking dependencies."
+msgstr ""
+
+#: .tmp/ui_main.py:163
+msgid "Clock Settings"
+msgstr ""
+
+#: .tmp/ui_main.py:164
+msgid "Keep the hardware clock in UTC"
+msgstr ""
+
+#: .tmp/ui_main.py:165
+msgid "Normalize systematic drift of the hardware clock"
+msgstr ""
+
+#: .tmp/ui_main.py:166
+msgid "Console Settings"
+msgstr ""
+
+#: .tmp/ui_main.py:167
+msgid "Number of Real Consoles:"
+msgstr ""
 
 #: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
 msgid "System Manager"
@@ -36,32 +88,12 @@ msgstr ""
 msgid "Current Maintainer"
 msgstr ""
 
-#: .tmp/systemmanager/main.py:70
+#: .tmp/systemmanager/main.py:73
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
 
-#: .tmp/ui_main.py:155
-msgid "System Language:"
-msgstr ""
-
-#: .tmp/ui_main.py:156
-msgid "Console Keyboard Layout:"
-msgstr ""
-
-#: .tmp/ui_main.py:157
-msgid "Keep the hardware clock in UTC"
-msgstr ""
-
-#: .tmp/ui_main.py:158
-msgid "Normalize systematic drift of the hardware clock"
-msgstr ""
-
-#: .tmp/ui_main.py:159
-msgid "First Service to Start:"
-msgstr ""
-
-#: .tmp/ui_main.py:160
-msgid "Number of Real Consoles:"
+#: .tmp/systemmanager/main.py:101
+msgid "None"
 msgstr ""
