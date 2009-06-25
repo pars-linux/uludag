@@ -192,8 +192,8 @@ msgid "History Settings"
 msgstr "Geçmiş Ayarları"
 
 #: .tmp/ui_mainwindow.py:132
-msgid "Alias :"
-msgstr "Etiket :"
+msgid "Alias:"
+msgstr "Etiket:"
 
 #: .tmp/ui_mainwindow.py:133
 msgid "Cancel"
