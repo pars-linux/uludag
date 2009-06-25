@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:50+0300\n"
+"POT-Creation-Date: 2009-06-25 15:34+0300\n"
 "PO-Revision-Date: 2009-06-17 21:39-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -43,6 +43,10 @@ msgstr "Opciones por omisión"
 msgid "Add New"
 msgstr "Agregar Nuevo"
 
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Configuración"
+
 # favor revisar, porque la idea es:
 # administrar puntos de montaje para particiones, discos y medios de almacenamiento - pero en lenguaje sencillo
 #: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
@@ -65,28 +69,29 @@ msgstr ""
 msgid "Current Maintainer"
 msgstr "Mantenedor actual"
 
-#: .tmp/diskmanager/main.py:83
+#: .tmp/diskmanager/main.py:86
+#, fuzzy
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 "No hay paquetes que soportan esta aplicación.\n"
 "Por favor verifique si los paquetes necesarios están instalados y "
 "configurados adecuadamente."
 
-#: .tmp/diskmanager/main.py:172
+#: .tmp/diskmanager/main.py:175
 msgid "Mounted at %1"
 msgstr "Montado en %1"
 
-#: .tmp/diskmanager/main.py:191
+#: .tmp/diskmanager/main.py:194
 msgid "All Items"
 msgstr "Todos"
 
-#: .tmp/diskmanager/main.py:202
+#: .tmp/diskmanager/main.py:205
 msgid "Add"
 msgstr "Agregar"
 
-#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:275
-msgid "Settings"
-msgstr "Configuración"
-
+#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
+#: .tmp/diskmanager/main.py:321
+msgid "Access denied."
+msgstr ""
