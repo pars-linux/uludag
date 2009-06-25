@@ -130,7 +130,7 @@ def finalize():
     pass
 
 def install(pkg_name_list):
-    pisi.api.install(pkg_name_list)
+    pisi.api.install(pkg_name_list, reinstall=False)
 
 def install_all():
     install(get_available())
