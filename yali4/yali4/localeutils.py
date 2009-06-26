@@ -19,14 +19,14 @@ import yali4.localedata
 import yali4.sysutils
 from yali4.constants import consts
 
-def write_locale_from_cmdline():
+def writeLocaleFromCmdline():
     locale_file_path = os.path.join(consts.target_dir, "etc/env.d/03locale")
     f = open(locale_file_path, "w")
 
     f.write("LANG=%s\n" % yali4.localedata.locales[consts.lang]["locale"])
     f.write("LC_ALL=%s\n" % yali4.localedata.locales[consts.lang]["locale"])
 
-def set_keymap(keymap, variant=None):
+def setKeymap(keymap, variant=None):
     ad = ""
     if variant:
         ad = "-variant %s" % variant
@@ -35,7 +35,7 @@ def set_keymap(keymap, variant=None):
     yali4.sysutils.run("setxkbmap -layout %s %s" % (keymap,ad))
     yali4.sysutils.run("hav call zorg Xorg.Display setKeymap %s %s" % (keymap, variant))
 
-def write_keymap(keymap):
+def writeKeymap(keymap):
     mudur_file_path = os.path.join(consts.target_dir, "etc/conf.d/mudur")
     lines = []
     for l in open(mudur_file_path, "r").readlines():

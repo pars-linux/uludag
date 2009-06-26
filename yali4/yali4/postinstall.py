@@ -79,7 +79,7 @@ def setTimeZone():
 
     return True
 
-def migrate_xorg():
+def migrateXorg():
     def joy(a):
         return os.path.join(consts.target_dir,a[1:])
 
@@ -197,28 +197,28 @@ def writeConsoleData():
     keymap = ctx.installData.keyData["consolekeymap"]
     if isinstance(keymap, list):
         keymap = keymap[1]
-    yali4.localeutils.write_keymap(ctx.installData.keyData["consolekeymap"])
+    yali4.localeutils.writeKeymap(ctx.installData.keyData["consolekeymap"])
     ctx.debugger.log("Keymap stored.")
     return True
 
 def migrateXorgConf():
     if not ctx.yali.install_type == YALI_FIRSTBOOT:
-        yali4.postinstall.migrate_xorg()
+        yali4.postinstall.migrateXorg()
         ctx.debugger.log("xorg.conf and other files merged.")
     return True
 
 def copyPisiIndex():
     target = os.path.join(ctx.consts.target_dir, "var/lib/pisi/index/%s" % ctx.consts.pardus_repo_name)
 
-    if os.path.exists(ctx.consts.pisiIndexFile):
+    if os.path.exists(ctx.consts.pisi_index_file):
         # Copy package index
-        shutil.copy(ctx.consts.pisiIndexFile, target)
-        shutil.copy(ctx.consts.pisiIndexFileSum, target)
+        shutil.copy(ctx.consts.pisi_index_file, target)
+        shutil.copy(ctx.consts.pisi_index_file_sum, target)
 
         # Extract the index
         import bz2
         pureIndex = file(os.path.join(target,"pisi-index.xml"),"w")
-        pureIndex.write(bz2.decompress(open(ctx.consts.pisiIndexFile).read()))
+        pureIndex.write(bz2.decompress(open(ctx.consts.pisi_index_file).read()))
         pureIndex.close()
 
         ctx.debugger.log("pisi index files copied.")

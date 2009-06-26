@@ -97,22 +97,22 @@ consts.pardus_release_path = "etc/pardus-release"
 consts.min_root_size = 3500
 
 # kahya options
-consts.kahyaParam = "kahya"
-consts.defaultKahyaFile = join(consts.data_dir,"data/default.xml")
+consts.kahya_param = "kahya"
+consts.default_kahya_file = join(consts.data_dir,"data/default.xml")
 
-# oemInstall options
-consts.oemInstallParam = "oeminstall"
-consts.oemInstallFile = join(consts.data_dir,"data/firstBoot.xml")
+# oem install options
+consts.oem_install_param = "oeminstall"
+consts.oem_install_file = join(consts.data_dir,"data/firstBoot.xml")
 
 # rescue mode parameter for cmdline
-consts.rescueModeParam = "rescue"
+consts.rescue_mode_param = "rescue"
 
 # system.base packages only parameter for cmdline
-consts.baseOnlyParam = "baseonly"
+consts.base_only_param = "baseonly"
 
 # pisi index files
-consts.pisiIndexFile = join(consts.data_dir,"data/pisi-index.xml.bz2")
-consts.pisiIndexFileSum = join(consts.data_dir,"data/pisi-index.xml.bz2.sha1sum")
+consts.pisi_index_file = join(consts.data_dir,"data/pisi-index.xml.bz2")
+consts.pisi_index_file_sum = join(consts.data_dir,"data/pisi-index.xml.bz2.sha1sum")
 
 # slideshows
 consts.slidepics_dir = join(consts.data_dir, "slideshow")

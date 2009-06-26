@@ -41,8 +41,8 @@ def get_kernel_opt(cmdopt):
     return ''
 
 def kahyaExists():
-    if get_kernel_opt(ctx.consts.kahyaParam) or \
-            yali4.sysutils.checkYaliParams(ctx.consts.kahyaParam) or \
+    if get_kernel_opt(ctx.consts.kahya_param) or \
+            yali4.sysutils.checkYaliParams(ctx.consts.kahya_param) or \
             ctx.options.kahyaFile or \
             ctx.options.useKahya==True:
         return True
@@ -75,15 +75,15 @@ class Widget(QtGui.QWidget, ScreenWidget):
         yaliKahya = kahya()
         ctx.debugger.log("Kahya File : %s " % ctx.options.kahyaFile)
 
-        kahyaOpt = get_kernel_opt(ctx.consts.kahyaParam)
+        kahyaOpt = get_kernel_opt(ctx.consts.kahya_param)
 
         if kahyaOpt:
             ctx.debugger.log("KAHYA-PARAMS:: %s" % kahyaOpt)
             kahyaFile = kahyaOpt.split(',')[1]
             if kahyaFile == "":
-                kahyaFile = ctx.consts.defaultKahyaFile
+                kahyaFile = ctx.consts.default_kahya_file
         elif ctx.options.useKahya:
-            kahyaFile = ctx.consts.defaultKahyaFile
+            kahyaFile = ctx.consts.default_kahya_file
         else:
             kahyaFile = ctx.options.kahyaFile
 
@@ -95,7 +95,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
                 # find usable storage devices
                 # initialize all storage devices
-                if not yali4.storage.init_devices():
+                if not yali4.storage.initDevices():
                     raise GUIException, _("Can't find a storage device!")
 
                 devices = []

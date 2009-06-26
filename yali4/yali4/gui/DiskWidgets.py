@@ -218,14 +218,14 @@ class DiskList(QtGui.QWidget):
     def initDevices(self, force=False):
         self.devs = []
         # initialize all storage devices
-        if not yali4.storage.init_devices(force):
+        if not yali4.storage.initDevices(force):
             raise GUIException, _("Can't find a storage device!")
 
         self.devs = [i for i in yali4.storage.devices]
 
     def resetChanges(self):
         ctx.partSum = []
-        yali4.storage.clear_devices()
+        yali4.storage.clearDevices()
         self.initDevices()
         ctx.partrequests.remove_all()
         self.update()

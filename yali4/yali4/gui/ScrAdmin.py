@@ -147,7 +147,7 @@ Click Next button to proceed.
             self.setNext()
             return
 
-        self.host_valid = yali4.sysutils.text_is_valid(string.toAscii())
+        self.host_valid = yali4.sysutils.isTextValid(string.toAscii())
 
         if not self.host_valid:
             self.ui.host_error.setVisible(True)

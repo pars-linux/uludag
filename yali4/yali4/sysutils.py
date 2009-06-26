@@ -61,21 +61,21 @@ def run(cmd, params=None, capture=False, appendToLog=True):
         return stdout
     return True
 
-def chroot_run(cmd):
+def chrootRun(cmd):
     run("chroot %s %s" % (consts.target_dir, cmd))
 
 # run dbus daemon in chroot
-def chroot_dbus():
+def chrootDbus():
 
     for _dir in _sys_dirs:
         tgt = os.path.join(consts.target_dir, _dir)
         run("mount --bind /%s %s" % (_dir, tgt))
 
-    chroot_run("/sbin/ldconfig")
-    chroot_run("/sbin/update-environment")
-    chroot_run("/bin/service dbus start")
+    chrootRun("/sbin/ldconfig")
+    chrootRun("/sbin/update-environment")
+    chrootRun("/bin/service dbus start")
 
-def finalize_chroot():
+def finalizeChroot():
     # close filesDB if it is still open
     import pisi
     filesdb = pisi.db.filesdb.FilesDB()
@@ -83,10 +83,10 @@ def finalize_chroot():
         filesdb.close()
 
     # stop dbus
-    chroot_run("/bin/service dbus stop")
+    chrootRun("/bin/service dbus stop")
 
     # kill comar in chroot if any exists
-    chroot_run("/bin/killall comar")
+    chrootRun("/bin/killall comar")
 
     # unmount sys dirs
     c = _sys_dirs
@@ -111,7 +111,7 @@ def finalize_chroot():
     # umount target dir
     umount_(consts.target_dir)
 
-def udev_settle(timeout=None):
+def udevSettle(timeout=None):
     arg = ''
     if timeout:
         arg = "--timeout=%d" % int(timeout)
@@ -132,7 +132,7 @@ def checkYaliOptions(param):
                     return str(part.split(':')[1]).strip()
     return None
 
-def swap_as_file(filepath, mb_size):
+def swapAsFile(filepath, mb_size):
     dd, mkswap = find_executable('dd'), find_executable('mkswap')
 
     if (not dd) or (not mkswap): return False
@@ -150,24 +150,24 @@ def swap_as_file(filepath, mb_size):
 
     return True
 
-def swap_on(partition):
+def swapOn(partition):
     # swap on
     params = ["-v", partition]
     run("swapon", params)
 
 ##
 # total memory size
-def mem_total():
+def memTotal():
     m = open("/proc/meminfo")
     for l in m:
         if l.startswith("MemTotal"):
             return int(l.split()[1]) / 1024
     return None
 
-def eject_cdrom(mount_point=consts.source_dir):
+def ejectCdrom(mount_point=consts.source_dir):
     run("eject -m %s" % mount_point)
 
-def set_mouse(key="left"):
+def setMouse(key="left"):
     struct = {_("left") :"1 2 3",
               _("right"):"3 2 1"}
     os.system("xmodmap -e \"pointer = %s\"" % struct[key])
@@ -176,44 +176,9 @@ def set_mouse(key="left"):
     if key == "right":
         os.system("synclient TapButton1=3 TapButton3=1")
 
-def text_is_valid(text):
+def isTextValid(text):
     allowed_chars = ascii_letters + digits + '.' + '_' + '-'
     return len(text) == len(filter(lambda u: [x for x in allowed_chars if x == u], text))
-
-def add_hostname(hostname = 'pardus'):
-    hostname_file = os.path.join(consts.target_dir, 'etc/env.d/01hostname')
-    hosts_file = os.path.join(consts.target_dir, 'etc/hosts')
-
-    def getCont(x):
-        return open(x).readlines()
-    def getFp(x):
-        return open(x, "w")
-
-    hostname_fp, hosts_fp = getFp(hostname_file), getFp(hosts_file)
-    hostname_contents = ""
-    hosts_contents = ""
-    if os.path.exists(hostname_file):
-        hostname_contents = getCont(hostname_file)
-    if os.path.exists(hosts_file):
-        hosts_contents = getCont(hosts_file)
-
-    if hostname_contents:
-        for line in hostname_contents:
-            if line.startswith('HOSTNAME'):
-                line = 'HOSTNAME="%s"\n' % hostname
-            hostname_fp.write(line)
-        hostname_fp.close()
-    else:
-        hostname_fp.write('HOSTNAME="%s"\n' % hostname)
-
-    if hosts_contents:
-        for line in hosts_contents:
-            if line.startswith('127.0.0.1'):
-                line = '127.0.0.1\t\tlocalhost %s\n' % hostname
-            hosts_fp.write(line)
-        hosts_fp.close()
-    else:
-        hosts_fp.write('127.0.0.1\t\tlocalhost %s\n' % hostname)
 
 def mount(source, target, fs, needs_mtab=False):
     params = ["-t", fs, source, target]
@@ -239,7 +204,7 @@ def umountSystemPaths():
     except:
         ctx.debugger.log("Umount Failed ")
 
-def is_windows_boot(partition_path, file_system):
+def isWindowsBoot(partition_path, file_system):
     m_dir = consts.tmp_mnt_dir
     if not os.path.isdir(m_dir):
         os.makedirs(m_dir)
@@ -261,7 +226,7 @@ def is_windows_boot(partition_path, file_system):
         umount_(m_dir)
         return False
 
-def is_linux_boot(partition_path, file_system):
+def isLinuxBoot(partition_path, file_system):
     import yali4.gui.context as ctx
     result = False
     m_dir = consts.tmp_mnt_dir
@@ -291,7 +256,7 @@ def is_linux_boot(partition_path, file_system):
 
     return result
 
-def pardus_release(partition_path, file_system):
+def pardusRelease(partition_path, file_system):
     import yali4.gui.context as ctx
     result = False
     m_dir = consts.tmp_mnt_dir
