@@ -15,8 +15,8 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n
 
-from gui.ScreenWidget import ScreenWidget
-from gui.ui.welcomeWidget import Ui_welcomeWidget
+from migration.gui.ScreenWidget import ScreenWidget
+from migration.gui.ui.welcomeWidget import Ui_welcomeWidget
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Welcome")
