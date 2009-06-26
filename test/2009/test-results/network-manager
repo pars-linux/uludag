@@ -21,3 +21,6 @@
 ? Profil seçili değil iken, ağa başlanmaya çalışıyor. 
     - Ekranda bağlanıyor olarak gözüküyor. 
     - Timeout olamıyor.
+
+- Harici kablosuz aygıt takılı olduğunda sorunsuz olarak bağlanabiliyor fakat aygıt çekildiğinde uzun süre geçmesine rağmen kablosuz ağa bağlı olduğunu söylüyor.
+- Bir işlem yapılmakta iken parola sorgu sayfasına iptal denilince, yapılmakta olan işlemi geri alamıyor.
