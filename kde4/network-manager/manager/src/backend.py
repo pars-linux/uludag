@@ -38,11 +38,17 @@ class NetworkIface:
     def connections(self, package):
         return list(self.link.Network.Link[package].connections())
 
-    def connect(self, package, profile):
-        self.setState(package, profile, "up", self.handler)
+    def connect(self, package, profile, handler=None):
+        if handler:
+            self.setState(package, profile, "up", handler)
+        else:
+            self.setState(package, profile, "up", self.handler)
 
-    def disconnect(self, package, profile):
-        self.setState(package, profile, "down", self.handler)
+    def disconnect(self, package, profile, handler=None):
+        if handler:
+            self.setState(package, profile, "down", handler)
+        else:
+            self.setState(package, profile, "down", self.handler)
 
     def toggle(self, package, profile):
         info = self.info(package, profile)
