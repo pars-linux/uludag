@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-25 15:33+0300\n"
-"PO-Revision-Date: 2009-06-05 21:30-0400\n"
+"PO-Revision-Date: 2009-06-26 18:46-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,14 +39,13 @@ msgid "Current Maintainer"
 msgstr "Mantenedor actual"
 
 #: .tmp/bootmanager/main.py:99
-#, fuzzy
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"No hay paquetes que respaldan esta aplicación.\n"
-"Por favor asegúrese que los paquetes están instalados y configurados de "
-"manera adecuada."
+"No hay aplicativo que respalda las funciones de esta pantalla.\n"
+"Por favor asegúrese que los paquetes respectivos estén instalados y configurados de "
+"manera correcta."
 
 #: .tmp/bootmanager/main.py:198
 msgid "All Items"
@@ -89,10 +88,8 @@ msgid "Ramdisk File"
 msgstr "Archivo Ramdisk"
 
 #: .tmp/ui_edit.py:141
-msgid ""
-"File that contains a micro operating system for preloading kernel modules."
-msgstr ""
-"Archivo con un sistema operativo mínimo, para cargar los módulos del kernel."
+msgid "File that contains a micro operating system for preloading kernel modules."
+msgstr "Archivo con un sistema operativo mínimo, para cargar los módulos del kernel."
 
 #: .tmp/ui_edit.py:142
 msgid "Boot Options"
@@ -109,3 +106,4 @@ msgstr "Agregar Nuevo"
 #: .tmp/ui_options.py:36
 msgid "Boot menu display time:"
 msgstr "Duración de presentación del menú:"
+
