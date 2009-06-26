@@ -66,6 +66,7 @@ class StateManager(QObject):
                 "System.Manager.removePackage":i18n("Removing Package(s)"),
                 "System.Manager.updatePackage":i18n("Upgrading Package(s)"),
                 "System.Manager.setRepositories":i18n("Applying Repository Changes"),
+                "System.Manager.updateRepository":i18n("Updating Repository"),
                 "System.Manager.updateAllRepositories":i18n("Updating Repository(s)")}[str(action)]
 
     def getActionName(self):

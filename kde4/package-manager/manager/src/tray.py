@@ -22,13 +22,23 @@ import backend
 class Tray(KSystemTrayIcon):
     def __init__(self, parent):
         KSystemTrayIcon.__init__(self, parent)
-        self.iface = backend.pm.Iface()
-        self.unread = 0
         self.defaultIcon = KIcon(":/data/package-manager.png")
-        self.initialize()
-        self.settingsChanged()
+        self.iface = backend.pm.Iface()
 
-    def initialize(self):
+        self.initializeTimer()
+        self.initializePopup()
+
+        self.settingsChanged()
+        self.lastUpgrades = []
+        self.unread = 0
+
+    def initializeTimer(self):
+        self.timer = QTimer()
+        self.timer.connect(self.timer, SIGNAL("timeout()"), self.checkUpdate)
+        self.interval = config.PMConfig().updateCheckInterval()
+        self.updateInterval(self.interval)
+
+    def initializePopup(self):
         self.setIcon(self.defaultIcon)
 
         menu = KActionMenu(i18n("Update"), self)
@@ -44,9 +54,36 @@ class Tray(KSystemTrayIcon):
         self.connect(action, SIGNAL("triggered()"), self.updateRepo)
 
     def updateRepo(self):
-        repoName = unicode(self.sender().iconText())
         if not self.iface.operationInProgress():
+            repoName = unicode(self.sender().iconText())
             self.iface.updateRepository(repoName)
+
+    def checkUpdate(self):
+        if not self.iface.operationInProgress():
+            self.iface.updateRepositories()
+
+    def showPopup(self):
+        upgrades = self.iface.getUpdates()
+        newUpgrades = set(upgrades) - set(self.lastUpgrades)
+        self.lastUpgrades = upgrades
+        if not len(upgrades) or not newUpgrades:
+            return
+        self.notification = KNotification("Updates")
+        self.notification.setText(i18n("There are <b>%1</b> updates available!", len(upgrades)))
+        self.notification.setActions(QStringList((i18n("Update Packages"), i18n("Not Now"))))
+        self.notification.setFlags(KNotification.Persistent)
+        self.notification.setComponentData(KComponentData("package-manager","package-manager"))
+        self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("updateSelected()")))
+        self.notification.sendEvent()
+
+    def updateInterval(self, min):
+        # minutes to milliseconds conversion
+        interval = min * 60 * 1000
+        if interval != self.interval:
+            self.interval = interval
+            self.timer.stop()
+            if interval:
+                self.timer.start(interval)
 
     def settingsChanged(self):
         cfg = config.PMConfig()
@@ -54,6 +91,8 @@ class Tray(KSystemTrayIcon):
             self.show()
         else:
             self.hide()
+
+        self.updateInterval(cfg.updateCheckInterval())
 
     # stolen from Akregator
     def slotSetUnread(self, unread):

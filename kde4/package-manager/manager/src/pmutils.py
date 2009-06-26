@@ -14,6 +14,7 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import Qt, QEventLoop
 
+
 def waitCursor():
     QtGui.QApplication.setOverrideCursor(QtGui.QCursor(Qt.WaitCursor))
 
