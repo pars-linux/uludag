@@ -453,13 +453,13 @@ class NTFSFileSystem(FileSystem):
     def resizeSilent(self, size_mb, partition):
         # don't do anything, just check
         cmd_path = requires("ntfsresize")
-        cmd = "%s -n -ff -s %dM %s" % (cmd_path, size_mb, partition.getPath())
+        cmd = "%s -P -n -ff -s %dM %s" % (cmd_path, size_mb, partition.getPath())
         return sysutils.run(cmd)
 
     def preResize(self, partition):
         """ Routine operations before resizing """
         cmd_path = requires("ntfsresize")
-        cmd = "%s -c %s" % (cmd_path, partition.getPath())
+        cmd = "%s -P -c %s" % (cmd_path, partition.getPath())
         return sysutils.run(cmd)
 
     def resize(self, size_mb, partition):
@@ -471,7 +471,7 @@ class NTFSFileSystem(FileSystem):
             raise FSCheckError, _("Partition is not ready for resizing. Check it before installation.")
 
         cmd_path = requires("ntfsresize")
-        cmd = "%s -ff -s %dM %s" % (cmd_path, size_mb, partition.getPath())
+        cmd = "%s -P -ff -s %dM %s" % (cmd_path, size_mb, partition.getPath())
 
         if not sysutils.run(cmd):
             raise FSError, _("Resize failed on %s " % partition.getPath())
@@ -499,7 +499,7 @@ class NTFSFileSystem(FileSystem):
 
     def minResizeMB(self, partition):
         cmd_path = requires("ntfsresize")
-        cmd = "%s -f -i %s" % (cmd_path, partition.getPath())
+        cmd = "%s -P -f -i %s" % (cmd_path, partition.getPath())
         lines = os.popen(cmd).readlines()
         _min = 0
         for l in lines:
