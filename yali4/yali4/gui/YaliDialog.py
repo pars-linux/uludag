@@ -229,6 +229,7 @@ class InformationWindow(QtGui.QWidget):
         QtGui.QWidget.hide(self)
         ctx.mainScreen.processEvents()
 
+# Tetris from http://zetcode.com/tutorials/pyqt4/thetetrisgame
 class Tetris(QtGui.QFrame):
     BoardWidth = 10
     BoardHeight = 22
@@ -332,12 +333,10 @@ class Tetris(QtGui.QFrame):
             self.tryMove(self.curPiece, self.curX - 1, self.curY)
         elif key == Qt.Key_Right:
             self.tryMove(self.curPiece, self.curX + 1, self.curY)
-        elif key == Qt.Key_Down:
-            self.tryMove(self.curPiece.rotatedRight(), self.curX, self.curY)
+        elif key == Qt.Key_Down or key == Qt.Key_Space:
+            self.dropDown()
         elif key == Qt.Key_Up:
             self.tryMove(self.curPiece.rotatedLeft(), self.curX, self.curY)
-        elif key == Qt.Key_Space:
-            self.dropDown()
         elif key == Qt.Key_D:
             self.oneLineDown()
         else:
