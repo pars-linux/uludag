@@ -30,3 +30,6 @@ aboutData   = KAboutData(appName, catalog, programName, version, description, li
 
 # Authors
 aboutData.addAuthor (ki18n("İşbaran Akçayır"), ki18n("Current Maintainer"))
+
+# Use this if icon name is different than appName
+aboutData.setProgramIconName("user-away-extended")

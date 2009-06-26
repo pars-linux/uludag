@@ -30,3 +30,6 @@ aboutData   = KAboutData(appName, catalog, programName, version, description, li
 
 # Author(s)
 aboutData.addAuthor(ki18n("Fatih Aşıcı"), ki18n("Current Maintainer"))
+
+# Use this if icon name is different than appName
+aboutData.setProgramIconName("preferences-desktop-display")
