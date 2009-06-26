@@ -1,0 +1,191 @@
+# translation of es.po to spanish
+# History Manager Application for Pardus Linux.
+# Copyright (C) 2009 İşbaran Akçayır
+# This file is distributed under the same license as the History Manager package.
+#
+# İşbaran Akçayır <isbaran@gmail.com>, 2009.
+# Klemens Häckel <click3d at linuxmail dot org>, 2009.
+# Stefan Wilhelm <sw1976de at googlemail dot com>, 2009.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: es\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-28 11:04+0300\n"
+"PO-Revision-Date: 2009-06-18 14:33+0100\n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE Deutsch <pardus-translation-de@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/ui_uiitem.py:83
+msgid "Form"
+msgstr "Form"
+
+# Überprüfen in welchem Zusammenhang es steht!
+#: .tmp/ui_uiitem.py:84
+msgid "History Date - Time /Label"
+msgstr "Datum - Zeit"
+
+#: .tmp/ui_uiitem.py:85
+msgid "No: Type:"
+msgstr "Nein: Typ:"
+
+#: .tmp/ui_uiitem.py:86
+#: .tmp/ui_mainwindow.py:133
+msgid "Take back to this point"
+msgstr "Bis zu diesem Punkt zurück gehen"
+
+#: .tmp/ui_uiitem.py:87
+msgid "Details"
+msgstr "Datails"
+
+#: .tmp/ui_uiitem.py:88
+msgid "Show operation plan"
+msgstr "Zeige Plan der Operationen"
+
+#: .tmp/historymanager/about.py:21
+#: .tmp/historymanager/about.py:23
+#: .tmp/ui_mainwindow.py:126
+msgid "History Manager"
+msgstr "History Manager"
+
+#: .tmp/historymanager/about.py:25
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/historymanager/about.py:32
+msgid "İşbaran Akçayır"
+msgstr ""
+
+#: .tmp/historymanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Aktueller Maintainer"
+
+#: .tmp/historymanager/window.py:69
+#, python-format
+msgid "%d Operations Loaded"
+msgstr "%d Operationen geladen"
+
+#: .tmp/historymanager/window.py:110
+msgid "Loading operation details.."
+msgstr "Lade Details der Operationen .."
+
+#: .tmp/historymanager/window.py:122
+msgid "There are %1 packages in this snapshot"
+msgstr "Es sind %1 Pakete in dieser Momentaufnahme"
+
+#: .tmp/historymanager/window.py:135
+#: .tmp/historymanager/window.py:187
+msgid "Ready .."
+msgstr "Fertig .."
+
+#: .tmp/historymanager/window.py:145
+msgid "Loading Operation Plan"
+msgstr "Lade Operations Plan"
+
+#: .tmp/historymanager/window.py:162
+msgid "Configuration files in snapshot:"
+msgstr "Archivos de configuración en instantánea:"
+
+#: .tmp/historymanager/window.py:170
+msgid "<br> These package(s) will be <b>installed</b> :<br>"
+msgstr "<br> Diese Pakete werden <b>installiert</b> :<br>"
+
+#: .tmp/historymanager/window.py:175
+msgid "<br> These package(s) will be <b>removed</b> :<br>"
+msgstr "<br> Diese Pakete werden <b>entfernt</b> :<br>"
+
+#: .tmp/historymanager/window.py:211
+msgid "Takeback operation verification"
+msgstr "Verifikation der Wiederherstellungsschritte"
+
+#: .tmp/historymanager/window.py:212
+msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
+msgstr "<center> Dies wird Ihr System zurücksetzen bis : <b>%1</b> - <b>%2</b><br>"
+
+#: .tmp/historymanager/window.py:213
+msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
+msgstr "Falls Sie unsicher sind, klicken Sie auf Zurück und betrachten Sie den Wiederherstellungsplan.</center>"
+
+#: .tmp/historymanager/window.py:217
+msgid "Taking back to : %1"
+msgstr "Zurücksetzen zu : %1"
+
+#: .tmp/historymanager/window.py:224
+msgid "Start new snapshot"
+msgstr "Neue Momentaufnahme durchführen"
+
+#: .tmp/historymanager/window.py:225
+msgid "<center>This will take a snapshot of your system.<br>Click Ok when you're ready.</center>"
+msgstr "<center>Dies wird eine Momentaufnahme Ihres Systems durchführen.<br>Wenn bereit, dann klicken Sie bitte Ok.</center>"
+
+#: .tmp/historymanager/window.py:231
+msgid "Taking New Snapshot"
+msgstr "Sichere neue Momentaufnahme auf"
+
+#: .tmp/historymanager/window.py:238
+msgid "Authentication Failed"
+msgstr "Authentifizierung fehlgeschlagen"
+
+#: .tmp/historymanager/window.py:247
+msgid "Finished succesfully"
+msgstr "Erfolgreich durchgeführt"
+
+#: .tmp/historymanager/window.py:251
+#, python-format
+msgid "Taking Snapshot : <b>%s</b>/100"
+msgstr "Sichere Momentaufnahme : <b>%s</b>/100"
+
+#: .tmp/historymanager/listitem.py:49
+msgid "snapshot"
+msgstr "Momentaufnahme"
+
+#: .tmp/historymanager/listitem.py:51
+msgid "upgrade"
+msgstr "upgrade"
+
+#: .tmp/historymanager/listitem.py:53
+msgid "remove"
+msgstr "entfernen"
+
+#: .tmp/historymanager/listitem.py:55
+msgid "install"
+msgstr "installiere"
+
+#: .tmp/historymanager/listitem.py:57
+msgid "takeback"
+msgstr "wiederherstellen"
+
+#: .tmp/historymanager/listitem.py:59
+msgid "repo update"
+msgstr "Depot Update"
+
+#: .tmp/ui_mainwindow.py:127
+msgid "New Snapshot"
+msgstr "Neue Momentaufnahme"
+
+#: .tmp/ui_mainwindow.py:129
+msgid "Alias :"
+msgstr "Alias :"
+
+#: .tmp/ui_mainwindow.py:130
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: .tmp/ui_mainwindow.py:131
+msgid "- Loading Pisi History"
+msgstr "- Lade PiSi History"
+
+#: .tmp/ui_mainwindow.py:132
+msgid "%p%"
+msgstr "%p%"
+
+# Kopie oder kopiere?
+#: .tmp/ui_mainwindow.py:134
+msgid "Copy"
+msgstr "Kopie"
+
