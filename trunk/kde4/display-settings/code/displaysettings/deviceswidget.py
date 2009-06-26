@@ -71,7 +71,7 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         """
             Makes an item widget having given properties.
         """
-        widget = ItemWidget(self.listItems, id_, title, description, type_, icon, state)
+        widget = ItemWidget(self.outputList, id_, title, description, type_, icon, state)
 
         #self.connect(widget, QtCore.SIGNAL("stateChanged(int)"), self.slotItemState)
         #self.connect(widget, QtCore.SIGNAL("editClicked()"), self.slotItemEdit)
@@ -89,13 +89,13 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
 
         # Build widget and widget item
         widget = self.makeItemWidget(id_, name, description, type_, kdeui.KIcon(icon), None)
-        widgetItem = ItemListWidgetItem(self.listItems, widget)
+        widgetItem = ItemListWidgetItem(self.outputList, widget)
 
         # Add to list
-        self.listItems.setItemWidget(widgetItem, widget)
+        self.outputList.setItemWidget(widgetItem, widget)
 
     def refreshOutputList(self):
-        self.listItems.clear()
+        self.outputList.clear()
 
         for output in self.iface.getOutputs():
             self.addItem(output.name, output.name, "Digital Output")
