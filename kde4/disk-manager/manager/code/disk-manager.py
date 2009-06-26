@@ -30,7 +30,6 @@ class MainWindow(KMainWindow):
         widget = MainWidget(self)
         self.resize(widget.size())
         self.setCentralWidget(widget)
-        self.setWindowIcon(KIcon("drive-harddisk"))
 
 
 if __name__ == "__main__":
