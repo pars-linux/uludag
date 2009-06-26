@@ -16,7 +16,7 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
 # KDE Stuff
-from PyKDE4.kdeui import KIcon, KUrlLabel
+from PyKDE4.kdeui import KIcon, KUrlLabel, KMessageBox
 from PyKDE4.kdecore import i18n
 
 # Application Stuff
@@ -251,6 +251,11 @@ class ConnectionItemWidget(QtGui.QWidget):
                     self.ui.checkToggler.setChecked(False)
                 else:
                     self.ui.checkToggler.setChecked(True)
+                if "Comar.PolicyKit" in exception._dbus_error_name:
+                    KMessageBox.error(self, i18n("Access denied."))
+                else:
+                    KMessageBox.error(self, unicode(exception))
+
         if self.ui.checkToggler.isChecked():
             self.iface.connect(self.package, self.profile, handler=handler)
         else:
