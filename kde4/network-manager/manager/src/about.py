@@ -32,4 +32,4 @@ aboutData.addAuthor (ki18n("Bahadır Kandemir"), ki18n("Current Maintainer"))
 aboutData.addAuthor (ki18n("Gökmen GÖKSEL"),    ki18n("Developer"))
 
 # Use this if icon name is different than appName
-aboutData.setProgramIconName("preferences-desktop")
+aboutData.setProgramIconName("applications-internet")
