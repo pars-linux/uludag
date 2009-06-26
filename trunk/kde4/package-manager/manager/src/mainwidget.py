@@ -136,7 +136,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.operation.setTotalPackages(totalPackages)
         self.progressDialog.reset()
         self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
-        self.progressDialog.show()
+        if self.isVisible():
+            self.progressDialog.show()
         self.progressDialog.enableCancel()
 
     def actionFinished(self, operation):

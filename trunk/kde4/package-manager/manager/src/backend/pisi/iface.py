@@ -209,4 +209,6 @@ class Iface(Singleton):
         self.link.cancel()
 
     def operationInProgress(self):
+        print self.link.listRunning()
         return False
+

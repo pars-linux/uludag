@@ -41,6 +41,17 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def initializeTray(self):
         self.tray = Tray(self)
         self.tray.show()
+        self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.showTrayPopupAfterRepoUpdate)
+        self.connect(self.tray, SIGNAL("updateSelected()"), self.updateSelectedFromTrayPopup)
+
+    def updateSelectedFromTrayPopup(self):
+        self.show()
+        self.raise_()
+        self.centralWidget().switchState(StateManager.UPGRADE)
+
+    def showTrayPopupAfterRepoUpdate(self, operation):
+        if not self.isVisible() and operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
+            self.tray.showPopup()
 
     def initializeStatusBar(self):
         self.statusLabel = QtGui.QLabel(i18n("Currently your basket is empty."), self.statusBar())
