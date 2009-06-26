@@ -107,6 +107,9 @@ consts.oemInstallFile = join(consts.data_dir,"data/firstBoot.xml")
 # rescue mode parameter for cmdline
 consts.rescueModeParam = "rescue"
 
+# system.base packages only parameter for cmdline
+consts.baseOnlyParam = "baseonly"
+
 # pisi index files
 consts.pisiIndexFile = join(consts.data_dir,"data/pisi-index.xml.bz2")
 consts.pisiIndexFileSum = join(consts.data_dir,"data/pisi-index.xml.bz2.sha1sum")
