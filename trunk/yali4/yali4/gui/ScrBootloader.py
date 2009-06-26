@@ -64,7 +64,7 @@ loader.
         self.ui.installFirstMBR.setChecked(True)
 
         # initialize all storage devices
-        if not yali4.storage.init_devices():
+        if not yali4.storage.initDevices():
             raise GUIException, _("Can't find a storage device!")
 
         # fill device list

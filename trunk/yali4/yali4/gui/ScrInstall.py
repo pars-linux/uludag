@@ -187,10 +187,10 @@ Have fun!
         yali4.postinstall.initbaselayout()
 
         # postscripts depend on 03locale...
-        yali4.localeutils.write_locale_from_cmdline()
+        yali4.localeutils.writeLocaleFromCmdline()
 
         # run dbus in chroot
-        yali4.sysutils.chroot_dbus()
+        yali4.sysutils.chrootDbus()
 
         ctx.yali.info.updateMessage(_("Configuring packages.."))
 
@@ -242,21 +242,21 @@ class PkgInstaller(QThread):
         # otherwise use cd as repo
         ctx.debugger.log("CD Repo adding..")
         if ctx.installData.repoAddr:
-            yali4.pisiiface.add_remote_repo(ctx.installData.repoName,ctx.installData.repoAddr)
+            yali4.pisiiface.addRemoteRepo(ctx.installData.repoName,ctx.installData.repoAddr)
         else:
-            yali4.pisiiface.add_cd_repo()
+            yali4.pisiiface.addCdRepo()
 
         # Check for just installing system.base packages
-        if yali4.sysutils.checkYaliParams(param=ctx.consts.baseOnlyParam):
-            order = yali4.pisiiface.get_base_packages()
+        if yali4.sysutils.checkYaliParams(param=ctx.consts.base_only_param):
+            order = yali4.pisiiface.getBasePackages()
         else:
-            order = yali4.pisiiface.get_all_with_paths()
+            order = yali4.pisiiface.getAllPackagesWithPaths()
 
         # Check for extra languages
         if not ctx.installData.installAllLangPacks:
-            order = list(set(order) - set(yali4.pisiiface.get_not_needed_langs()))
+            order = list(set(order) - set(yali4.pisiiface.getNotNeededLanguagePackages()))
             ctx.debugger.log("Not needed lang packages will not be installing...")
-            ctx.debugger.log(yali4.pisiiface.get_not_needed_langs())
+            ctx.debugger.log(yali4.pisiiface.getNotNeededLanguagePackages())
 
         # show progress
         total = len(order)
@@ -326,8 +326,8 @@ class PkgConfigurator(QThread):
 
         try:
             # run all pending...
-            ctx.debugger.log("exec : yali4.pisiiface.configure_pending() called")
-            yali4.pisiiface.configure_pending()
+            ctx.debugger.log("exec : yali4.pisiiface.configurePending() called")
+            yali4.pisiiface.configurePending()
         except Exception, e:
             # User+10: error
             qevent = PisiEvent(QEvent.User, EventError)
@@ -335,7 +335,7 @@ class PkgConfigurator(QThread):
             objectSender(qevent)
 
         # Remove cd repository and install add real
-        yali4.pisiiface.switch_to_pardus_repo()
+        yali4.pisiiface.switchToPardusRepo()
 
         qevent = PisiEvent(QEvent.User, EventAllFinished)
         objectSender(qevent)

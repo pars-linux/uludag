@@ -346,17 +346,15 @@ class SwapFileRequest(PartRequest):
         self.setPartitionType(part_type)
         self.setRequestType(swapFileRequestType)
 
-
     def applyRequest(self):
 
         # see #832
-        if yali4.sysutils.mem_total() > 512:
-            yali4.sysutils.swap_as_file(consts.swap_file_path, 300)
+        if yali4.sysutils.memTotal() > 512:
+            yali4.sysutils.swapAsFile(consts.swap_file_path, 300)
         else:
-            yali4.sysutils.swap_as_file(consts.swap_file_path, 600)
+            yali4.sysutils.swapAsFile(consts.swap_file_path, 600)
 
-        yali4.sysutils.swap_on(consts.swap_file_path)
-
+        yali4.sysutils.swapOn(consts.swap_file_path)
         PartRequest.applyRequest(self)
 
 ##

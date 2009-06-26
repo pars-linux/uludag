@@ -177,9 +177,9 @@ class Yali:
                 pass
 
         yali4.pisiiface.initialize(ui = PisiUI(), with_comar = False, nodestDir = True)
-        yali4.pisiiface.add_cd_repo()
+        yali4.pisiiface.addCdRepo()
         ctx.mainScreen.processEvents()
-        pkg_names = yali4.pisiiface.get_available()
+        pkg_names = yali4.pisiiface.getAvailablePackages()
 
         rootWidget.progressBar.setMaximum(len(pkg_names))
 
@@ -191,7 +191,7 @@ class Yali:
             if self.checkCDStop:
                 continue
             try:
-                yali4.pisiiface.check_package_hash(pkg_name)
+                yali4.pisiiface.checkPackageHash(pkg_name)
                 rootWidget.progressBar.setValue(cur)
             except:
                 self.showError(_("Check Failed"),
@@ -205,7 +205,7 @@ class Yali:
             rootWidget.checkLabel.setText("")
             rootWidget.progressBar.setValue(0)
 
-        yali4.pisiiface.remove_repo(ctx.consts.cd_repo_name)
+        yali4.pisiiface.removeRepo(ctx.consts.cd_repo_name)
 
         ctx.mainScreen.enableNext()
         ctx.mainScreen.enableBack()
@@ -213,7 +213,7 @@ class Yali:
         self.info.hide()
 
     def setKeymap(self, keymap):
-        yali4.localeutils.set_keymap(keymap["xkblayout"], keymap["xkbvariant"])
+        yali4.localeutils.setKeymap(keymap["xkblayout"], keymap["xkbvariant"])
         ctx.installData.keyData = keymap
 
     def setTime(self, rootWidget):
@@ -550,7 +550,7 @@ class Yali:
             _ins_part = root_part_req.partition().getPath()
             _ins_part_label = root_part_req.partition().getTempLabel() or pardusPart.getFSLabel()
 
-        loader.write_grub_conf(_ins_part, ctx.installData.bootLoaderDev, _ins_part_label)
+        loader.writeGrubConf(_ins_part, ctx.installData.bootLoaderDev, _ins_part_label)
 
         # If selected, Check for Windows Partitions
         # FIXME We need to use pardus.grubutils addEntry method for adding found Windows entries
@@ -561,15 +561,15 @@ class Yali:
                 for p in d.getPartitions():
                     fs = p.getFSName()
                     if fs in ("ntfs", "fat32"):
-                        if yali4.sysutils.is_windows_boot(p.getPath(), fs):
+                        if yali4.sysutils.isWindowsBoot(p.getPath(), fs):
                             ctx.debugger.log("Windows Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
                             win_fs = fs
                             win_dev = os.path.basename(p.getDevicePath())
                             win_root = os.path.basename(p.getPath())
-                            loader.grub_conf_append_win(ctx.installData.bootLoaderDev,
-                                                        win_dev,
-                                                        win_root,
-                                                        win_fs)
+                            loader.grubConfAppendWin(ctx.installData.bootLoaderDev,
+                                                     win_dev,
+                                                     win_root,
+                                                     win_fs)
                             continue
 
         # Pardus Grub utils
@@ -598,7 +598,7 @@ class Yali:
                     fs = p.getFSName()
                     if fs in ("ext4", "ext3", "reiserfs", "xfs") and not p.getPath() == _ins_part:
                         ctx.debugger.log("Partition found which has usable fs (%s)" % p.getPath())
-                        guest_grub_conf = yali4.sysutils.is_linux_boot(p.getPath(), fs)
+                        guest_grub_conf = yali4.sysutils.isLinuxBoot(p.getPath(), fs)
                         if guest_grub_conf:
                             ctx.debugger.log("GRUB Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
                             guestGrubConf = pardus.grubutils.grubConf()
@@ -610,7 +610,7 @@ class Yali:
                                     entry.title = entry.title + " [ %s ]" % p.getName()
 
                                     # if device order changed we should update device order in foreign grub.conf
-                                    _grub_dev = yali4.bootloader.find_grub_dev(p.getPath())
+                                    _grub_dev = yali4.bootloader.findGrubDev(p.getPath())
 
                                     if entry.getCommand("root"):
                                         # update device order for root command
@@ -654,7 +654,7 @@ class Yali:
             ctx.debugger.log("GPTSYNC: Command Not Found !")
 
         # finally install it
-        return loader.install_grub(ctx.installData.bootLoaderDev, _ins_part)
+        return loader.installGrub(ctx.installData.bootLoaderDev, _ins_part)
 
     def showError(self, title, message, parent=None):
         r = ErrorWidget(parent)
@@ -687,7 +687,7 @@ class ErrorWidget(QtGui.QWidget):
         self.vboxlayout.addLayout(self.hboxlayout)
         self.gridlayout.addLayout(self.vboxlayout,0,0,1,1)
 
-        yali4.sysutils.eject_cdrom()
+        yali4.sysutils.ejectCdrom()
 
         self.connect(self.reboot, SIGNAL("clicked()"),self.slotReboot)
 

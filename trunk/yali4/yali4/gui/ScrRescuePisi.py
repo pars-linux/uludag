@@ -51,7 +51,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         self.steps = YaliSteps()
-        self.steps.setOperations([{"text":_("Starting DBUS..."),"operation":yali4.sysutils.chroot_dbus},
+        self.steps.setOperations([{"text":_("Starting DBUS..."),"operation":yali4.sysutils.chrootDbus},
                                   {"text":_("Trying to connect DBUS..."),"operation":yali4.postinstall.connectToDBus},
                                   {"text":_("Getting history ..."),"operation":self.fillHistoryList}])
 

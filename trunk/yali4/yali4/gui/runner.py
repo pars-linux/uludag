@@ -57,12 +57,12 @@ class Runner:
         if ctx.options.firstBoot == True or os.path.exists("/etc/yali-is-firstboot"):
             install_type = YALI_FIRSTBOOT
 
-        # check for oemInstall
-        if yali4.sysutils.checkYaliParams(param=ctx.consts.oemInstallParam):
+        # check for oem install
+        if yali4.sysutils.checkYaliParams(param=ctx.consts.oem_install_param):
             install_type = YALI_OEMINSTALL
 
         # check for rescue Mode
-        if ctx.options.rescueMode == True or yali4.sysutils.checkYaliParams(param=ctx.consts.rescueModeParam):
+        if ctx.options.rescueMode == True or yali4.sysutils.checkYaliParams(param=ctx.consts.rescue_mode_param):
             install_type = YALI_RESCUE
 
         install_plugin = yali4.sysutils.checkYaliOptions("plugin") or ctx.options.plugin or None

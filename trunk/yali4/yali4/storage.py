@@ -46,15 +46,15 @@ devices = []
 
 ##
 # initialize all devices and fill devices list
-def init_devices(force = False):
+def initDevices(force = False):
     global devices
 
     if devices and not force:
         return True
 
-    clear_devices()
+    clearDevices()
 
-    devs = detect_all()
+    devs = detectAll()
     for dev_path in devs:
         d = Device(dev_path)
         devices.append(d)
@@ -75,7 +75,7 @@ def init_devices(force = False):
 
     return False
 
-def clear_devices():
+def clearDevices():
     global devices
     devices = []
 
@@ -482,7 +482,7 @@ class Device:
             ptype = PARTITION_LOGICAL
         else:
             ptype = PARTITION_PRIMARY
-        sysutils.udev_settle(timeout=1)
+        sysutils.udevSettle(timeout=1)
 
         try:
             ctx.debugger.log("RP: Deleting : %s" % str(part))
@@ -526,7 +526,7 @@ class Device:
             ctx.debugger.log("Commit failed with %s " % str(msg))
             raise FSError, msg
 
-        sysutils.udev_settle(timeout=1)
+        sysutils.udevSettle(timeout=1)
         self.update()
 
     def close(self):
@@ -534,7 +534,7 @@ class Device:
         del self._disk
 
 def setOrderedDiskList():
-    devices = detect_all()
+    devices = detectAll()
     devices.sort()
 
     import yali4.gui.context as ctx
@@ -572,7 +572,7 @@ def setOrderedDiskList():
 
 ##
 # Return a list of block devices in system
-def detect_all():
+def detectAll():
 
     # Check for sysfs. Only works for >2.6 kernels.
     if not os.path.exists("/sys/bus"):

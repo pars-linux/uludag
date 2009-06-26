@@ -108,7 +108,7 @@ class FileSystem:
     def labelExists(self, label):
         """ Check label for existence """
         if not yali4.storage.devices:
-            yali4.storage.init_devices()
+            yali4.storage.initDevices()
 
         for dev in yali4.storage.devices:
             for part in dev.getPartitions():
@@ -432,7 +432,7 @@ class SwapFileSystem(FileSystem):
             return False
 
         # Swap on
-        sysutils.swap_on(partition.getPath())
+        sysutils.swapOn(partition.getPath())
 
         return label
 

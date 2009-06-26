@@ -101,7 +101,7 @@ class Widget(QtGui.QWidget):
                                    _("Do you want to use <b>%s</b> handed mouse settings ?") % ocmb,
                                    dontAsk = True)
             if reply == "yes":
-                yali4.sysutils.set_mouse(self.cmb)
+                yali4.sysutils.setMouse(self.cmb)
                 self.cmb = ocmb
             elif reply == "dontask":
                 self.dontAskCmbAgain = True

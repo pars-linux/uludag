@@ -137,7 +137,7 @@ Click Next button to proceed.
 
     def refill(self):
         # reset and fill pending_users
-        yali4.users.reset_pending_users()
+        yali4.users.resetPendingUsers()
         for i in range(self.ui.userList.count()):
             u = self.ui.userList.item(i).getUser()
             ctx.installData.users.append(u)

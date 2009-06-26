@@ -34,7 +34,7 @@ def initialize(ui, with_comar = False, nodestDir = False):
     options.yes_all = True
     options.ignore_dependency = True
     options.ignore_safety = True
-    # wait for chroot_dbus to initialize
+    # wait for chrootDbus to initialize
     # generally we don't need this but I think this is safer
     for i in range(20):
         try:
@@ -56,37 +56,31 @@ def initialize(ui, with_comar = False, nodestDir = False):
     pisi.api.set_comar(with_comar)
     pisi.api.set_signal_handling(False)
 
-def add_repo(name=None, uri=None):
+def addRepo(name=None, uri=None):
     if name and uri:
         pisi.api.add_repo(name, uri)
 
-def add_cd_repo():
-    cd_repo_name = consts.cd_repo_name
-    cd_repo_uri = consts.cd_repo_uri
-    if not repodb.has_repo(cd_repo_name):
-        add_repo(cd_repo_name, cd_repo_uri)
-        update_repo(cd_repo_name)
+def addCdRepo():
+    if not repodb.has_repo(consts.cd_repo_name):
+        addRepo(consts.cd_repo_name, consts.cd_repo_uri)
+        updateRepo()
 
-def add_remote_repo(name, uri):
+def addRemoteRepo(name, uri):
     if not repodb.has_repo(name):
-        add_repo(name, uri)
-        update_repo(name)
+        addRepo(name, uri)
+        updateRepo(name)
 
-def switch_to_pardus_repo():
-    cd_repo_name = consts.cd_repo_name
-    pardus_repo_name = consts.pardus_repo_name
-    pardus_repo_uri = consts.pardus_repo_uri
+def switchToPardusRepo():
+    removeRepo(consts.cd_repo_name)
+    addRepo(consts.pardus_repo_name, consts.pardus_repo_uri)
 
-    remove_repo(cd_repo_name)
-    add_repo(pardus_repo_name, pardus_repo_uri)
+def updateRepo(name=consts.cd_repo_name):
+    pisi.api.update_repo(name)
 
-def update_repo(name):
-    pisi.api.update_repo(consts.cd_repo_name)
-
-def remove_repo(name):
+def removeRepo(name):
     pisi.api.remove_repo(name)
 
-def take_back(operation):
+def takeBack(operation):
     # dirty hack for COMAR to find scripts.
     os.symlink("/",consts.target_dir + consts.target_dir)
     pisi.api.takeback(operation)
@@ -108,11 +102,11 @@ def getPackages(tag, value):
 def mergePackagesWithRepoPath(packages):
     return map(lambda x: os.path.join(consts.source_dir, 'repo', x.split(',')[0]), packages)
 
-def get_not_needed_langs():
+def getNotNeededLanguagePackages():
     return mergePackagesWithRepoPath(filter(lambda x: not x.split(',')[1].split(':')[1].startswith((consts.lang, "en")), \
                                             getPackages("IsA", "locale:")))
 
-def get_base_packages():
+def getBasePackages():
     systemBase = getPackages("PartOf", "system.base")
     systemBase.extend(getPackages("Name", "kernel"))
     systemBase.extend(getPackages("Name", "gfxtheme-pardus-boot"))
@@ -135,10 +129,7 @@ def finalize():
 def install(pkg_name_list):
     pisi.api.install(pkg_name_list, reinstall=False)
 
-def install_all():
-    install(get_available())
-
-def get_all_with_paths(use_sort_file=False):
+def getAllPackagesWithPaths(use_sort_file=False):
     packages = []
 
     if use_sort_file and os.path.exists("%s/repo/install.order" % consts.source_dir):
@@ -163,22 +154,10 @@ def get_all_with_paths(use_sort_file=False):
 
     return packages
 
-def get_available():
+def getAvailablePackages():
     return pisi.api.list_available()
 
-def get_available_len():
-    return len(get_available())
-
-def get_pending():
-    return pisi.db.installdb.InstallDB().list_pending()
-
-def get_install_order(pkg_name_list):
-    return pisi.api.get_install_order(pkg_name_list)
-
-def get_pending_len():
-    return len(get_pending())
-
-def configure_pending():
+def configurePending():
     # dirty hack for COMAR to find scripts.
     os.symlink("/",consts.target_dir + consts.target_dir)
     # Make baselayout configure first
@@ -187,7 +166,7 @@ def configure_pending():
     pisi.api.configure_pending()
     os.unlink(consts.target_dir + consts.target_dir)
 
-def check_package_hash(pkg_name):
+def checkPackageHash(pkg_name):
     repo_path = os.path.dirname(consts.cd_repo_uri)
 
     pkg = pisi.db.packagedb.PackageDB().get_package(pkg_name)

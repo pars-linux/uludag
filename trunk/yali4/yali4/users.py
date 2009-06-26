@@ -25,11 +25,11 @@ from yali4.constants import consts
 # we'll add these users at the last step of the installation.
 pending_users = []
 
-def reset_pending_users():
+def resetPendingUsers():
     global pending_users
     pending_users = []
 
-def iter_head_images():
+def iterHeadImages():
     left, right, images = [], [], []
 
     g = glob.glob(consts.user_faces_dir + "/*.png")
@@ -50,7 +50,7 @@ def iter_head_images():
         for image in images:
             yield image
 
-head_images = iter_head_images()
+head_images = iterHeadImages()
 
 def getUserList():
     return map(lambda x: x[0], [line.split(':') for line in open('/etc/passwd', 'r').readlines()])

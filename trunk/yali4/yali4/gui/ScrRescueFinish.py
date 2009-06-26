@@ -51,7 +51,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def takeBackPisi(self):
         try:
-            yali4.pisiiface.take_back(ctx.takeBackOperation.no)
+            yali4.pisiiface.takeBack(ctx.takeBackOperation.no)
         except Exception, e:
             ctx.debugger.log("Exception occured while taking back !!")
             ctx.debugger.log(e)
@@ -91,7 +91,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # remove cd...
         if not ctx.yali.install_type == YALI_FIRSTBOOT:
             ctx.debugger.log("Trying to eject the CD.")
-            sysutils.eject_cdrom()
+            sysutils.ejectCdrom()
 
         ctx.debugger.log("Yali, fastreboot calling..")
 

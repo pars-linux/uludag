@@ -44,7 +44,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.isSuitableForRescue = True
 
         # initialize all storage devices
-        if not yali4.storage.init_devices():
+        if not yali4.storage.initDevices():
             raise GUIException, _("Can't find a storage device!")
 
         # Get usable partitions for rescue
@@ -134,7 +134,7 @@ class PardusPartitions:
                     linuxPartitions.append(partition)
                     if label.startswith("PARDUS_ROOT"):
                         ctx.debugger.log("Pardus Partition found (%s)" % partition.getPath())
-                        pardus_release = yali4.sysutils.pardus_release(partition.getPath(), fs)
+                        pardus_release = yali4.sysutils.pardusRelease(partition.getPath(), fs)
                         if pardus_release:
                             pardusPartitions.append(partition)
                         # If it is not a pardus installed partition skip it

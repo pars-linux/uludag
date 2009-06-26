@@ -30,7 +30,6 @@ import yali4.storage
 import yali4.partitionrequest as partrequest
 import yali4.partitiontype as parttype
 from os.path import basename
-from yali4.sysutils import is_windows_boot
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.YaliDialog import InfoDialog
 from yali4.gui.YaliSteps import YaliSteps
@@ -90,7 +89,7 @@ don't you?
         # remove cd...
         if not ctx.yali.install_type == YALI_FIRSTBOOT:
             ctx.debugger.log("Trying to eject the CD.")
-            yali4.sysutils.eject_cdrom()
+            yali4.sysutils.ejectCdrom()
 
         ctx.debugger.log("Yali, fastreboot calling..")
 

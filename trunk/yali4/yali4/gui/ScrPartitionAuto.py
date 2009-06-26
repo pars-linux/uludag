@@ -67,7 +67,7 @@ about disk partitioning.
         self.lastChoice = self.ui.accept_auto_1
 
         # initialize all storage devices
-        if not yali4.storage.init_devices():
+        if not yali4.storage.initDevices():
             raise GUIException, _("Can't find a storage device!")
 
         # fill device list

@@ -57,7 +57,7 @@ chainloader +1
 
 """
 
-def find_grub_dev(dev_path, device_map=None):
+def findGrubDev(dev_path, device_map=None):
     """ Returns the GRUB device from given dev_path
         It uses YALI's deviceMap created from EDD"""
     if not device_map:
@@ -77,7 +77,7 @@ def find_grub_dev(dev_path, device_map=None):
             return d[1:-1]
     return ''
 
-def get_minor(dev_path):
+def getMinor(dev_path):
     return str(int(filter(lambda d: d.isdigit(), dev_path)) -1)
 
 class BootLoader:
@@ -96,7 +96,7 @@ class BootLoader:
                 d = l[1]
                 return d
 
-    def write_grub_conf(self, install_root_path, install_dev, install_root_path_label):
+    def writeGrubConf(self, install_root_path, install_dev, install_root_path_label):
         """ Check configurations and write grub.conf to the installed system.
             Default path is /mnt/target/boot/grub.conf """
         if not install_dev.startswith("/dev/"):
@@ -138,10 +138,10 @@ class BootLoader:
         # cmd = "/sbin/grub --batch --no-floppy --device-map=%s < %s" % (self.device_map, self.grub_conf)
         # os.system(cmd)
 
-        major = find_grub_dev(install_root_path)
+        major = findGrubDev(install_root_path)
 
         # grub_root is the device on which we install.
-        minor = get_minor(install_root)
+        minor = getMinor(install_root)
         grub_root = ",".join([major, minor])
 
         def find_boot_kernel():
@@ -160,7 +160,7 @@ class BootLoader:
                 It also cleans unnecessary options """
 
             def is_required(param):
-                params = ["root","initrd","init","xorg","yali4","BOOT_IMAGE","lang","mudur",consts.kahyaParam]
+                params = ["root","initrd","init","xorg","yali4","BOOT_IMAGE","lang","mudur",consts.kahya_param]
                 for p in params:
                     if param.startswith("%s=" % p):
                         return False
@@ -194,10 +194,10 @@ class BootLoader:
                              "initramfs": initramfs_name}
         open(self.grub_conf, "w").write(s)
 
-    def grub_conf_append_win(self, install_dev, win_dev, win_root, win_fs):
+    def grubConfAppendWin(self, install_dev, win_dev, win_root, win_fs):
         """ Appends Windows Partitions to the GRUB Conf """
-        grub_dev = find_grub_dev(win_dev)
-        minor = get_minor(win_root)
+        grub_dev = findGrubDev(win_dev)
+        minor = getMinor(win_root)
         grub_root = ",".join([grub_dev, minor])
 
         ctx.debugger.log("GCAW : win_dev : %s , win_root : %s " % (win_dev, win_root))
@@ -226,22 +226,22 @@ class BootLoader:
 
         open(self.grub_conf, "a").write(s)
 
-    def install_grub(self, grub_install_root=None, root_path=None):
+    def installGrub(self, grub_install_root=None, root_path=None):
         """ Install GRUB to the given device or partition """
 
-        major = find_grub_dev(root_path)
-        minor = get_minor(root_path)
+        major = findGrubDev(root_path)
+        minor = getMinor(root_path)
         root_path = "(%s,%s)" % (major, minor)
 
         if not grub_install_root.startswith("/dev/"):
             grub_install_root = "/dev/%s" % grub_install_root
 
-        major = find_grub_dev(grub_install_root)
+        major = findGrubDev(grub_install_root)
 
         ctx.debugger.log("IG: I have found major as '%s'" % major)
         if ctx.installData.bootLoaderOption == 1:
             # means it will install to a partition not MBR
-            minor = get_minor(grub_install_root)
+            minor = getMinor(grub_install_root)
             setupto = "(%s,%s)" % (major, minor)
         else:
             # means it will install to the MBR
@@ -259,7 +259,7 @@ quit
 
         ctx.debugger.log("IG: Chrooted jobs are finalizing.. ")
         # before installing the bootloader we have to finish chrooted jobs..
-        yali4.sysutils.finalize_chroot()
+        yali4.sysutils.finalizeChroot()
 
         ctx.debugger.log("IG: Grub install cmd is %s" % cmd)
         if os.system(cmd) > 0:
