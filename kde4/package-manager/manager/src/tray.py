@@ -24,6 +24,7 @@ class Tray(KSystemTrayIcon):
         KSystemTrayIcon.__init__(self, parent)
         self.defaultIcon = KIcon(":/data/package-manager.png")
         self.iface = backend.pm.Iface()
+        self.appWindow = parent
 
         self.initializeTimer()
         self.initializePopup()
@@ -59,7 +60,7 @@ class Tray(KSystemTrayIcon):
             self.iface.updateRepository(repoName)
 
     def checkUpdate(self):
-        if not self.iface.operationInProgress():
+        if not self.appWindow.isVisible() and not self.iface.operationInProgress():
             self.iface.updateRepositories()
 
     def showPopup(self):
@@ -70,10 +71,10 @@ class Tray(KSystemTrayIcon):
             return
         self.notification = KNotification("Updates")
         self.notification.setText(i18n("There are <b>%1</b> updates available!", len(upgrades)))
-        self.notification.setActions(QStringList((i18n("Update Packages"), i18n("Not Now"))))
+        self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Postpone"))))
         self.notification.setFlags(KNotification.Persistent)
         self.notification.setComponentData(KComponentData("package-manager","package-manager"))
-        self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("updateSelected()")))
+        self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("showUpdatesSelected()")))
         self.notification.sendEvent()
 
     def updateInterval(self, min):

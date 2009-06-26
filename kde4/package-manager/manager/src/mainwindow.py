@@ -41,15 +41,20 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def initializeTray(self):
         self.tray = Tray(self)
         self.tray.show()
-        self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.showTrayPopupAfterRepoUpdate)
-        self.connect(self.tray, SIGNAL("updateSelected()"), self.updateSelectedFromTrayPopup)
+        self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayShow)
+        self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
 
-    def updateSelectedFromTrayPopup(self):
+    def trayShowUpdates(self):
+        self.showUpgradeAction.setChecked(True)
+        self.centralWidget().switchState(StateManager.UPGRADE, action=False)
+        self.centralWidget().initialize()
         self.show()
         self.raise_()
-        self.centralWidget().switchState(StateManager.UPGRADE)
 
-    def showTrayPopupAfterRepoUpdate(self, operation):
+        # Without this sometimes pm windows is not raised
+        KWin.raiseWindow(self.winId())
+
+    def trayShow(self, operation):
         if not self.isVisible() and operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
             self.tray.showPopup()
 
@@ -75,23 +80,23 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
 
-        showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show Installable Packages"), self)
-        showInstallAction.setChecked(True)
-        self.actionCollection().addAction("showInstallAction", showInstallAction)
-        self.connect(showInstallAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
-        self.connect(showInstallAction, SIGNAL("triggered()"), self.centralWidget().initialize)
-        actionGroup.addAction(showInstallAction)
+        self.showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show Installable Packages"), self)
+        self.showInstallAction.setChecked(True)
+        self.actionCollection().addAction("showInstallAction", self.showInstallAction)
+        self.connect(self.showInstallAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
+        self.connect(self.showInstallAction, SIGNAL("triggered()"), self.centralWidget().initialize)
+        actionGroup.addAction(self.showInstallAction)
 
-        showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self)
-        self.actionCollection().addAction("showRemoveAction", showRemoveAction)
-        self.connect(showRemoveAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.REMOVE))
-        self.connect(showRemoveAction, SIGNAL("triggered()"), self.centralWidget().initialize)
-        actionGroup.addAction(showRemoveAction)
+        self.showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self)
+        self.actionCollection().addAction("showRemoveAction", self.showRemoveAction)
+        self.connect(self.showRemoveAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.REMOVE))
+        self.connect(self.showRemoveAction, SIGNAL("triggered()"), self.centralWidget().initialize)
+        actionGroup.addAction(self.showRemoveAction)
 
-        showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self)
-        self.actionCollection().addAction("showUpgradeAction", showUpgradeAction)
-        self.connect(showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
-        actionGroup.addAction(showUpgradeAction)
+        self.showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self)
+        self.actionCollection().addAction("showUpgradeAction", self.showUpgradeAction)
+        self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
+        actionGroup.addAction(self.showUpgradeAction)
 
     def statusWaiting(self):
         self.statusLabel.setMovie(self.wheelMovie)
