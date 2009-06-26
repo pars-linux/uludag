@@ -103,6 +103,7 @@ class Install(install):
         # Install desktop files
         print "Installing desktop files..."
         self.copy_file("data/kcm_%s.desktop" % about.modName, service_dir)
+        self.copy_file("data/kcm_displaydevices.desktop", service_dir)
         self.copy_file("data/%s.desktop" % about.modName, apps_dir)
 
         # Install codes

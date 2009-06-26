@@ -21,7 +21,7 @@ from PyKDE4.kdeui import KMainWindow, KApplication, KCModule, KIcon
 from PyKDE4.kdecore import KCmdLineArgs, KGlobal
 
 from displaysettings.about import aboutData, catalog
-from displaysettings.screenswidget import MainWidget
+from displaysettings.deviceswidget import MainWidget
 
 
 class MainWindow(KMainWindow):
