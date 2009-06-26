@@ -26,38 +26,121 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_welcomeWidget()
         self.ui.setupUi(self)
+        self.sources = ctx.sources
 
-
-
-    def creator(self):
+    def creator(self, sources):
+        self.vbox = QtGui.QVBoxLayout()
          # Bookmarks:
-        if ctx.sources.has_key("Firefox Profile Path") or sources.has_key("Favorites Path"):
+        if sources.has_key("Firefox Profile Path") or sources.has_key("Favorites Path"):
             self.bookmarks = QtGui.QGroupBox(self, "Bookmarks")
             self.bookmarks.setTitle(i18n("Bookmarks"))
-            self.bookmarks.setColumnLayout(0, Qt.Vertical)
+            self.bookmarks.setAlignment(Qt.AlignLeft)
             self.bookmarksLayout = QtGui.QVBoxLayout(self.bookmarks.layout())
-            self.lay.addWidget(self.bookmarks)
+            self.vbox.addWidget(self.bookmarks)
+            
             # FF Bookmarks:
             if sources.has_key("Firefox Profile Path"):
-                self.FFBookmarks = QCheckBox(self.Bookmarks, "FFBookmarks")
-                self.FFBookmarks.setText(i18n("Firefox bookmarks"))
-                self.FFBookmarks.setChecked(True)
-                QToolTip.add(self.FFBookmarks, i18n("Copies your old Firefox bookmarks to Firefox under Pardus."))
-                self.BookmarksLayout.addWidget(self.FFBookmarks)
+                self.fireFoxBookmarks = QtGui.QCheckBox(self.bookmarks, "fireFoxBookmarks")
+                self.fireFoxBookmarks.setText(i18n("Firefox Bookmarks"))
+                self.fireFoxBookmarks.setChecked(True)
+                QtGui.QToolTip.add(self.fireFoxBookmarks, i18n("Copies your old Firefox bookmarks to Firefox under Pardus."))
+                self.bookmarksLayout.addWidget(self.fireFoxBookmarks)
+            
             # Opera Bookmarks:
             if sources.has_key("Opera Profile Path"):
-                self.OperaBookmarks = QCheckBox(self.Bookmarks, "OperaBookmarks")
-                self.OperaBookmarks.setText(i18n("Opera bookmarks"))
-                self.OperaBookmarks.setChecked(True)
-                QToolTip.add(self.OperaBookmarks, i18n("Copies your old Opera bookmarks to Firefox under Pardus."))
-                self.BookmarksLayout.addWidget(self.OperaBookmarks)
+                self.operaBookmarks = QCheckBox(self.bookmarks, "operaBookmarks")
+                self.operaBookmarks.setText(i18n("Opera Bookmarks"))
+                self.operaBookmarks.setChecked(True)
+                QtGui.QToolTip.add(self.operaBookmarks, i18n("Copies your old Opera bookmarks to Firefox under Pardus."))
+                self.bookmarksLayout.addWidget(self.operaBookmarks)
+            
             # IE Bookmarks:
             if sources.has_key("Favorites Path"):
-                self.IEBookmarks = QCheckBox(self.Bookmarks, "IEBookmarks")
+                self.IEBookmarks = QtGui.QCheckBox(self.Bookmarks, "IEBookmarks")
                 self.IEBookmarks.setText(i18n("Internet Explorer favorites"))
                 self.IEBookmarks.setChecked(True)
-                QToolTip.add(self.IEBookmarks, i18n("Copies your old Internet Explorer favorites to Firefox under Pardus."))
-                self.BookmarksLayout.addWidget(self.IEBookmarks)
+                QtGui.QToolTip.add(self.IEBookmarks, i18n("Copies your old Internet Explorer favorites to Firefox under Pardus."))
+                self.bookmarksLayout.addWidget(self.IEBookmarks)
+                
+         # Mail Accounts:
+        if sources.has_key("Windows Mail Path") or sources.has_key("Thunderbird Profile Path"):
+            self.mailAccounts = QtGui.QGroupBox(self, "MailAccounts")
+            self.mailAccounts.setTitle(i18n("E-Mail and News Accounts"))
+            self.mailAccounts.setAlignment(Qt.AlignLeft)
+            self.mailAccountsLayout = QtGui.QVBoxLayout(self.mailAccounts.layout())
+            self.vbox.addWidget(self.mailAccounts)
+            
+            # Windows Mail Accounts:
+            if sources.has_key("Windows Mail Path"):
+                self.winMail = QtGui.QCheckBox(self.mailAccounts, "WinMail")
+                self.winMail.setText(i18n("Windows Mail accounts"))
+                self.winMail.setChecked(True)
+                QtGui.QToolTip.add(self.winMail, i18n("Copies your old mail and newsgroup accounts to KMail and KNode applications."))
+                self.mailAccountsLayout.addWidget(self.winMail)
+            
+            # Thunderbird Accounts:
+            if sources.has_key("Thunderbird Profile Path"):
+                self.TB = QtGui.QCheckBox(self.MailAccounts, "TB")
+                self.TB.setText(i18n("Thunderbird accounts"))
+                self.TB.setChecked(True)
+                QToolTip.add(self.TB, i18n("Copies your old mail and newsgroup accounts to KMail and KNode applications."))
+                self.MailAccountsLayout.addWidget(self.TB)
+            
+            # E-Mails:
+            self.mail = QtGui.QCheckBox(self.mailAccounts, "mail")
+            self.mail.setText(i18n("Copy e-mail messages from e-mail accounts"))
+            self.mail.setChecked(True)
+            QtGui.QToolTip.add(self.mail, i18n("Copies your e-mail messages to KMail from selected applications above."))
+            self.mailAccountsLayout.addWidget(self.mail)
+                
+        # IM Accounts:
+        if sources.has_key("Contacts Path") or sources.has_key("GTalk Key"):
+            self.IMAccounts = QtGui.QGroupBox(self, "IMAccounts")
+            self.IMAccounts.setTitle(i18n("Instant Messenger Accounts"))
+            self.IMAccounts.self.IMAccounts.layout()
+            self.IMAccountsLayout = QVBoxLayout(self)
+            self.vbox.addWidget(self.IMAccounts)
+            # MSN Accounts:
+            if sources.has_key("Contacts Path"):
+                self.MSN = QtGui.QCheckBox(self.IMAccounts, "MSN")
+                self.MSN.setText(i18n("MSN accounts"))
+                self.MSN.setChecked(True)
+                QtGui.QToolTip.add(self.MSN, i18n("Copies your MSN Messenger accounts to Kopete."))
+                self.IMAccountsLayout.addWidget(self.MSN)
+            # GTalk Accounts:
+            if sources.has_key("GTalk Key"):
+                self.GTalk = QtGui.QCheckBox(self.IMAccounts, "GTalk")
+                self.GTalk.setText(i18n("GTalk accounts"))
+                self.GTalk.setChecked(True)
+                QtGui.QToolTip.add(self.GTalk, i18n("Copies your GTalk accounts to Kopete."))
+                self.IMAccountsLayout.addWidget(self.GTalk)
+        # Spacer:
+        spacer = QtGui.QSpacerItem(1,1,QSizePolicy.Minimum,QSizePolicy.Expanding)
+        self.vbox.addItem(spacer)
+        
+    def getOptions(self):
+        "Returns a dictionary consists of selected options"
+        options = {}
+        self.sources["Copy E-Mails"] = True
+        # Add fundamental items:
+        for item in ["Partition", "OS Type", "User Name", "Home Path"]:
+            options[item] = self.sources[item]
+        # Add selected optional items:
+        items = [("IEBookmarks", "Favorites Path"),
+                 ("FFBookmarks", "Firefox Profile Path"),
+                 ("OperaBookmarks", "Opera Profile Path"),
+                 ("oldRadio", "Wallpaper Path"),
+                 ("WinMail", "Windows Mail Path"),
+                 ("TB", "Thunderbird Profile Path"),
+                 ("mail", "Copy E-Mails"),
+                 ("GTalk", "GTalk Key"),
+                 ("MSN", "Contacts Path")]
+        for widgetname, dictname in items:
+            item = self.child(widgetname)
+            if item and item.isChecked():
+                options[dictname] = self.sources[dictname]
+        return options
+
     def shown(self):
         pass
 
