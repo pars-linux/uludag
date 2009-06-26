@@ -13,9 +13,12 @@
 
 # Comar
 import comar
+import zorg.config
+from zorg.utils import idsQuery
 
-import displaysettings.nv
-import displaysettings.randr
+from displaysettings.device import Output
+from displaysettings.nv import Interface as NVInterface
+from displaysettings.randr import Interface as RRInterface
 
 class Interface:
     def __init__(self):
@@ -24,10 +27,22 @@ class Interface:
         self.link.useAgent()
         self.package = self.getMainPackage()
 
-        self.ext = displaysettings.nv.Interface()
+        self.ext = NVInterface()
         print "NVCTRL" if self.ext.ready else "RANDR", "extension will be used to get hardware info."
         if not self.ext.ready:
-            self.ext = displaysettings.randr.Interface()
+            self.ext = RRInterface()
+
+        self._bus = self.link.Xorg.Display["zorg"].activeDeviceID()
+        self._info = zorg.config.getDeviceInfo(self._bus)
+
+        if not self._info:
+            # XXX
+            print "corrupted config"
+            return
+
+        self.cardVendor, self.cardModel = idsQuery(self._info.vendor_id,
+                                                   self._info.product_id)
+        self.monitors = self._info.monitors
 
     def listenSignals(self, func):
         self.link.listenSignals("X.Y", func)
@@ -43,3 +58,6 @@ class Interface:
             Display Settings tool is heavily zorg dependent.
         """
         return "zorg"
+
+    def getOutputs(self):
+        return [Output("LVDS"), Output("VGA"), Output("TV")]
