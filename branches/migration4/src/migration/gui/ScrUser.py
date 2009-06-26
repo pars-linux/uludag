@@ -21,6 +21,8 @@ from migration.gui.ScreenWidget import ScreenWidget
 from migration.gui.ui.welcomeWidget import Ui_welcomeWidget
 
 from migration.utils import partition
+from migration.utils import info
+import migration.gui.context as ctx
 
 class UserListItemWidget(QtGui.QWidget, Ui_usersWidget):
 
@@ -75,5 +77,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        return True
+        user = self.ui.listUsers.currentItem().statusTip()
+        part, ostype, username, userdir = user
+        sources = {"Partition":part, "OS Type":ostype, "User Name":username, "Home Path":userdir}
+        ctx.sources = info.userInfo(self.sources)
+        ctx.destinations = info.localInfo()
     
