@@ -48,11 +48,9 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.showUpgradeAction.setChecked(True)
         self.centralWidget().switchState(StateManager.UPGRADE, action=False)
         self.centralWidget().initialize()
+        KApplication.kApplication().updateUserTimestamp()
         self.show()
         self.raise_()
-
-        # Without this sometimes pm windows is not raised
-        KWin.raiseWindow(self.winId())
 
     def trayShow(self, operation):
         if not self.isVisible() and operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:

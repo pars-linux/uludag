@@ -24,6 +24,7 @@ class Tray(KSystemTrayIcon):
         KSystemTrayIcon.__init__(self, parent)
         self.defaultIcon = KIcon(":/data/package-manager.png")
         self.iface = backend.pm.Iface()
+        self.notification = None
         self.appWindow = parent
 
         self.initializeTimer()
@@ -69,6 +70,9 @@ class Tray(KSystemTrayIcon):
         self.lastUpgrades = upgrades
         if not len(upgrades) or not newUpgrades:
             return
+
+        if self.notification:
+            self.notification.close()
         self.notification = KNotification("Updates")
         self.notification.setText(i18n("There are <b>%1</b> updates available!", len(upgrades)))
         self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Postpone"))))
