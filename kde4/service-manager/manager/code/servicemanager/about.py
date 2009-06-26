@@ -32,3 +32,5 @@ aboutData   = KAboutData(appName, catalog, programName, version, description, li
 aboutData.addAuthor (ki18n("Gökmen GÖKSEL"),    ki18n("Current Maintainer"))
 aboutData.addAuthor (ki18n("Bahadır Kandemir"), ki18n("COMAR Author"))
 
+# Use this if icon name is different than appName
+aboutData.setProgramIconName("flag-yellow")

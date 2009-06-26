@@ -30,7 +30,7 @@ Comment[fr]=Interface Graphique du Gestionnaire de Paquet PiSi
 Comment[it]=Interfaccia grafica per il Gestore di pacchetti PiSi
 Comment[sv]=Grafiskt användargränssnitt till pakethanteraren PiSi
 
-Icon=/usr/share/icons/hicolor/128x128/apps/package-manager.png
+Icon=package-manager
 Type=Application
 Exec=package-manager
-Categories=Qt;KDE;Core;
+Categories=Qt;KDE;System;
