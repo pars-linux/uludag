@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-25 15:31+0300\n"
-"PO-Revision-Date: 2009-06-21 19:49-0400\n"
+"PO-Revision-Date: 2009-06-26 18:55-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .tmp/ui_main.py:156
 msgid "Language Settings"
-msgstr ""
+msgstr "Configuración de Idioma"
 
 #: .tmp/ui_main.py:157
 msgid "System Language:"
@@ -34,25 +34,26 @@ msgstr "Distribución de Teclado en Consola:"
 msgid ""
 "Note that these settings do not effect your desktop. Desktop settings can be "
 "changed in 'Regional & Language' module in System Settings."
-msgstr ""
+msgstr "Observe que ésta configuración no afectará al escritorio. La configuración del escritorio buede ser cambiado en el módulo 'Regional & Idiomas' de centro de Configuración del Sistema - ."
 
 #: .tmp/ui_main.py:160
 msgid "Service Settings"
-msgstr ""
+msgstr "Configuración de Servicios"
 
 #: .tmp/ui_main.py:161
 msgid "First Service to Start:"
 msgstr "Primer servicio a iniciar:"
 
 #: .tmp/ui_main.py:162
+# favor revisar, no estoy seguro si entendí los detalles en inglés
 msgid ""
 "Although services are started parallel manner in boot process, users may "
 "want to start a single service before checking dependencies."
-msgstr ""
+msgstr "Aunque durante el arranque los servicios se inician de manera simultánea en paralelo, usuarios podrían desear iniciar un servicio inicialmete, antes de otros servicios dependientes."
 
 #: .tmp/ui_main.py:163
 msgid "Clock Settings"
-msgstr ""
+msgstr "Configuración del Reloj"
 
 #: .tmp/ui_main.py:164
 msgid "Keep the hardware clock in UTC"
@@ -64,7 +65,7 @@ msgstr "Normalizar desajuste sistemático del reloj del equipo"
 
 #: .tmp/ui_main.py:166
 msgid "Console Settings"
-msgstr ""
+msgstr "Configuración de la Consola"
 
 #: .tmp/ui_main.py:167
 msgid "Number of Real Consoles:"
@@ -91,15 +92,15 @@ msgid "Current Maintainer"
 msgstr "Mantenedor actual"
 
 #: .tmp/systemmanager/main.py:73
-#, fuzzy
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"No se encuentra el paquete con el aplicativo para esta función.\n"
-"Por favor asegúrese de que los paquetes correspondientes están instalados y "
-"configurados correctamente."
+"No hay aplicativo que respalda las funciones de esta pantalla.\n"
+"Por favor asegúrese que los paquetes respectivos estén instalados y configurados de "
+"manera correcta."
 
 #: .tmp/systemmanager/main.py:101
 msgid "None"
-msgstr ""
+msgstr "Ninguno"
+

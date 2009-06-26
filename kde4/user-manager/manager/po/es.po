@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-25 15:35+0300\n"
-"PO-Revision-Date: 2009-05-27 20:08-0400\n"
+"PO-Revision-Date: 2009-06-26 18:47-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -109,13 +109,12 @@ msgstr "Mantenedor actual"
 
 # favor revisar, el tema de respaldo, backend..
 #: .tmp/usermanager/main.py:94
-#, fuzzy
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"No hay paquetes que respaldan esta aplicación.\n"
-"Por favor asegúrese que los paquetes están instalados y configurados de "
+"No hay aplicativo que respalda las funciones de esta pantalla.\n"
+"Por favor asegúrese que los paquetes respectivos estén instalados y configurados de "
 "manera correcta."
 
 #: .tmp/usermanager/main.py:195
@@ -149,7 +148,7 @@ msgstr "Desea eliminar usuario '%1' (%2)?"
 
 #: .tmp/usermanager/main.py:320
 msgid "Also remove user files. (This may take long.)"
-msgstr ""
+msgstr "Además remover archivos de los usuarios. (Esto puede tomar mucho tiempo.)"
 
 #: .tmp/usermanager/main.py:328
 msgid "Do you want to delete group '%1'?"
@@ -199,3 +198,4 @@ msgstr "Información del grupo"
 #: .tmp/ui_editgroup.py:79
 msgid "Group Name:"
 msgstr "Nombre del grupo:"
+

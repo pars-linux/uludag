@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-25 15:34+0300\n"
-"PO-Revision-Date: 2009-05-27 20:26-0400\n"
+"PO-Revision-Date: 2009-06-26 18:45-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -64,13 +64,12 @@ msgstr "Mantenedor actual"
 
 # favor revisar, "provide backend" ??
 #: .tmp/firewallmanager/main.py:96
-#, fuzzy
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"No hay paquetes de soporte para esta aplicación.\n"
-"Por favor asegúrese que los paquetes están instalados y configurados de "
+"No hay aplicativo que respalda las funciones de esta pantalla.\n"
+"Por favor asegúrese que los paquetes respectivos están instalados y configurados de "
 "manera correcta."
 
 #: .tmp/firewallmanager/main.py:200
@@ -85,3 +84,4 @@ msgstr "Acción"
 #: .tmp/firewallmanager/main.py:316
 msgid "Access denied."
 msgstr "Acceso denegado."
+

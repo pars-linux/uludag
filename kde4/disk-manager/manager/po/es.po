@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-25 15:34+0300\n"
-"PO-Revision-Date: 2009-06-17 21:39-0400\n"
+"PO-Revision-Date: 2009-06-26 18:46-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -70,14 +70,13 @@ msgid "Current Maintainer"
 msgstr "Mantenedor actual"
 
 #: .tmp/diskmanager/main.py:86
-#, fuzzy
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"No hay paquetes que soportan esta aplicación.\n"
-"Por favor verifique si los paquetes necesarios están instalados y "
-"configurados adecuadamente."
+"No hay aplicativo que respalda las funciones de esta pantalla.\n"
+"Por favor asegúrese que los paquetes respectivos estén instalados y configurados de "
+"manera correcta."
 
 #: .tmp/diskmanager/main.py:175
 msgid "Mounted at %1"
@@ -94,4 +93,5 @@ msgstr "Agregar"
 #: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
 #: .tmp/diskmanager/main.py:321
 msgid "Access denied."
-msgstr ""
+msgstr "Acceso denegado."
+
