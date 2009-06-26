@@ -107,6 +107,11 @@ Have fun!
         self.hasErrors = False
 
     def shown(self):
+        # Disable mouse handler
+        ctx.mainScreen.dontAskCmbAgain = True
+        ctx.mainScreen.themeShortCut.setEnabled(False)
+
+        # Thread object
         global currentObject
         currentObject = self
 
