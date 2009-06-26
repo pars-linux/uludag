@@ -17,3 +17,4 @@ TESTS
 
 - Butonların üzerine gelindiğinde açıklama gelmeli.
 - External hardisk'in dosya sistemi değiştirildiğinde bu dosya sistemi ona uygun bir dosya sistemi değil ise bunu bir uyarı olarak gösteremiyor.
+- disk yöneticisi ikonu gözükmüyor.

@@ -5,11 +5,14 @@
     + Yeni değişiklikler eklenerek ekran yenilenemiyor.
 + Yeni görüntü almak için yetki sorulmuyor.
 
-- Dil türkçe iken 
++ Belirli tarihteki değişiklikleri geri al denildiğinde sistem parola sorduktan sonra
+    + Sağ alt bölümde örneğin "2009-06-05'e geri alıyor" diyor ve  ekranda bulunan history itemları disable olarak kalıyor.
++ Son görüntü alınmasından sonra eğer hiçbir değişiklik yapılmamış ise, tekrar görüntü alınmaya çalışıldığında
+    + Sağ alt köşede "Yeni görüntü alınıyor" diyor ve ekranda bulunan history itemları disable olarak kalıyor.
++ Dil türkçe iken 
     + Yapılmakta olan işlemler sağ alt köşede ingilizce olarak görünüyor.
-    - İşlem detayları ve işlemi geri al bölümlerinde bulunan üst bölümdeki açıklamalar ingilizce olarak görünüyor.
-- Belirli tarihteki değişiklikleri geri al denildiğinde sistem parola sorduktan sonra
-    - Sağ alt bölümde örneğin "2009-06-05'e geri alıyor" diyor ve  ekranda bulunan history itemları disable olarak kalıyor.
-- Son görüntü alınmasından sonra eğer hiçbir değişiklik yapılmamış ise, tekrar görüntü alınmaya çalışıldığında
-    - Sağ alt köşede "Yeni görüntü alınıyor" diyor ve ekranda bulunan history itemları disable olarak kalıyor.
+    + İşlem detayları ve işlemi geri al bölümlerinde bulunan üst bölümdeki açıklamalar ingilizce olarak görünüyor.
+- Belirli tarihteki değişiklikleri geri al denildiğinde sistem parola sorduktan sonra iptal tuşuna basılırsa
+    - Sağ alt bölümde Yeni görüntü alınıyor diyor ve Yeni görüntü butonu disable duruma geçiyor. 
 - Sytem-settings computer administration bölümünden uygulama açılmaya çalışıldığında açılamıyor. KDE çöküyor.
+- yeni görüntü alındıkta sonra Yeni görüntü butonu disable duruma geçiyor. 
