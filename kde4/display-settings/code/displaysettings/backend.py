@@ -60,4 +60,4 @@ class Interface:
         return "zorg"
 
     def getOutputs(self):
-        return [Output("LVDS"), Output("VGA"), Output("TV")]
+        return self.ext.getOutputs()

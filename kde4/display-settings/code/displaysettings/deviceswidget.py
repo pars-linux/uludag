@@ -31,6 +31,17 @@ from displaysettings.backend import Interface
 # Item widget
 from displaysettings.item import ItemListWidgetItem, ItemWidget
 
+from displaysettings.device import Output
+
+# Define descriptions and icons for output types
+OUTPUT_TYPES = {
+        Output.UnknownOutput:   ("",  "video-display"),
+        Output.LaptopPanel:     (kdecore.i18n("Laptop Panel"), "computer-laptop"),
+        Output.AnalogOutput:    (kdecore.i18n("Analog Output"), "video-display"),
+        Output.DigitalOutput:   (kdecore.i18n("Digital Output"), "video-display"),
+        Output.TVOutput:        (kdecore.i18n("TV Output"), "video-television"),
+        }
+
 class MainWidget(QtGui.QWidget, Ui_devicesWidget):
     def __init__(self, parent, embed=False):
         QtGui.QWidget.__init__(self, parent)
@@ -79,13 +90,12 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
 
         return widget
 
-    def addItem(self, id_, name="", description=""):
+    def addItem(self, id_, name="", description="", icon=""):
         """
             Adds an item to list.
         """
 
         type_ = "user"
-        icon = "video-display"
 
         # Build widget and widget item
         widget = self.makeItemWidget(id_, name, description, type_, kdeui.KIcon(icon), None)
@@ -98,4 +108,5 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         self.outputList.clear()
 
         for output in self.iface.getOutputs():
-            self.addItem(output.name, output.name, "Digital Output")
+            desc, icon = OUTPUT_TYPES[output.outputType]
+            self.addItem(output.name, output.name, desc, icon)
