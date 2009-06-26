@@ -377,7 +377,10 @@ class Device:
     ##
     # add a partition starting from a given geom...
     def addPartitionFromStart(self, type, fs, start, size_mb, flags = []):
+        import yali4.gui.context as ctx
+        ctx.debugger.log("APFS: ptype: %s :: fs_name: %s :: start: %s :: size_mb: %s" % (type, fs, start, size_mb))
         size = int((size_mb * MEGABYTE) / self._sector_size)
+        ctx.debugger.log("APFS: end of partition is %s" % (start + size))
         return self.addPartitionStartEnd(type, fs, start, start + size, flags)
 
     ##
@@ -463,6 +466,7 @@ class Device:
         if not isinstance(fs, yali4.filesystem.FileSystem):
             raise DeviceError, "filesystem is None, can't resize"
 
+        start = part.getPartition().geom.start
         ctx.debugger.log("RP: Starting to resize : %s" % str(part))
         try:
             ret = fs.resize(size_mb, part)
@@ -471,7 +475,6 @@ class Device:
         except FSError, e:
             raise FSError, e
 
-        start = part.getPartition().geom.start
         ctx.debugger.log("RP: Old Start : %s" % str(start))
         fs_name = part.getFSName()
         ctx.debugger.log("RP: FS Name : %s" % str(fs_name))
@@ -500,7 +503,7 @@ class Device:
             self.deletePartition(part)
 
         self.commit()
-        np = self.addPartitionFromStart(ptype, fs_name, start, size_mb - 8)
+        np = self.addPartitionFromStart(ptype, fs_name, start, size_mb + 8)
         self.commit()
         return np
 
