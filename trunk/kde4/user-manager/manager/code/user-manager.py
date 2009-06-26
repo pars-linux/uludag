@@ -30,7 +30,6 @@ class MainWindow(KMainWindow):
         widget = MainWidget(self)
         self.resize(widget.size())
         self.setCentralWidget(widget)
-        self.setWindowIcon(KIcon("system-users"))
 
 
 if __name__ == "__main__":

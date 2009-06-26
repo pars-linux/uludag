@@ -29,7 +29,6 @@ class MainWindow(KMainWindow):
         widget = MainWidget(self)
         self.resize(widget.size())
         self.setCentralWidget(widget)
-        self.setWindowIcon(KIcon("security-high"))
 
 
 if __name__ == "__main__":

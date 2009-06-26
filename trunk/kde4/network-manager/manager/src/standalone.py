@@ -21,7 +21,6 @@ from base import MainManager
 class NetworkManager(KMainWindow):
     def __init__ (self, app):
         KMainWindow.__init__(self)
-        self.setWindowIcon(KIcon("applications-internet"))
 
         # This is very important for translations when running as kcm_module
         KGlobal.locale().insertCatalog("network-manager")
