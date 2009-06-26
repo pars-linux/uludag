@@ -57,8 +57,8 @@ msgid "History Manager"
 msgstr "Geçmiş Yöneticisi"
 
 #: .tmp/historymanager/about.py:25
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgid "(c) 2009 TÜBİTAK/UEKAE"
+msgstr "(c) 2009 TÜBİTAK/UEKAE"
 
 #: .tmp/historymanager/about.py:32
 msgid "İşbaran Akçayır"
@@ -66,7 +66,7 @@ msgstr "İşbaran Akçayır"
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
-msgstr "Geliştirici"
+msgstr "Şimdiki Sorumlusu"
 
 #: .tmp/historymanager/window.py:76
 msgid "%1 Operations Loaded"
@@ -78,7 +78,7 @@ msgstr "İşlem detayları yükleniyor.."
 
 #: .tmp/historymanager/window.py:124
 msgid "Details for operation on %1 at %2"
-msgstr "%1 saat %2 deki işlemin detayları"
+msgstr "%1 saat %2 tarihli işlemin detayları"
 
 #: .tmp/historymanager/window.py:130
 msgid "There are %1 packages in this snapshot."
@@ -106,7 +106,7 @@ msgstr "<br> Bu paket(ler) <b>kaldırılacak</b> :<br>"
 
 #: .tmp/historymanager/window.py:192
 msgid "Takeback plan for Operation on %1 at %2"
-msgstr "%1 saat %2 işlemi için geri alma planı"
+msgstr "%1 saat %2 tarihli işlemin geri alma planı"
 
 #: .tmp/historymanager/window.py:224
 msgid "Takeback operation verification"
@@ -192,7 +192,7 @@ msgid "History Settings"
 msgstr "Geçmiş Ayarları"
 
 #: .tmp/ui_mainwindow.py:132
-msgid "Alias:"
+msgid "Alias :"
 msgstr "Etiket:"
 
 #: .tmp/ui_mainwindow.py:133
