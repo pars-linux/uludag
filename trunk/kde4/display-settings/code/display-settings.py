@@ -11,40 +11,13 @@
 # Please read the COPYING file.
 #
 
-import sys
 import dbus
 
-from PyQt4 import QtGui
-from PyQt4 import QtCore
+from PyKDE4.kdeui import KCModule
+from PyKDE4.kdecore import KGlobal
 
-from PyKDE4.kdeui import KMainWindow, KApplication, KCModule, KIcon
-from PyKDE4.kdecore import KCmdLineArgs, KGlobal
-
-from displaysettings.about import aboutData, catalog
+from displaysettings.about import catalog
 from displaysettings.screenswidget import MainWidget
-
-
-class MainWindow(KMainWindow):
-    def __init__(self, parent=None):
-        KMainWindow.__init__(self, parent)
-        widget = MainWidget(self)
-        self.resize(widget.size())
-        self.setCentralWidget(widget)
-
-
-if __name__ == "__main__":
-
-    KCmdLineArgs.init(sys.argv, aboutData)
-    app = KApplication()
-
-    if not dbus.get_default_main_loop():
-        from dbus.mainloop.qt import DBusQtMainLoop
-        DBusQtMainLoop(set_as_default=True)
-
-    window = MainWindow()
-    window.show()
-
-    app.exec_()
 
 
 class Module(KCModule):
