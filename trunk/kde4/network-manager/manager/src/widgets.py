@@ -245,8 +245,14 @@ class ConnectionItemWidget(QtGui.QWidget):
             self.ui.labelStatus.setPixmap(KIcon("dialog-warning").pixmap(32))
 
     def toggleConnection(self):
+        def handler(package, exception, args):
+            if exception:
+                if self.ui.checkToggler.isChecked():
+                    self.ui.checkToggler.setChecked(False)
+                else:
+                    self.ui.checkToggler.setChecked(True)
         if self.ui.checkToggler.isChecked():
-            self.iface.connect(self.package, self.profile)
+            self.iface.connect(self.package, self.profile, handler=handler)
         else:
-            self.iface.disconnect(self.package, self.profile)
+            self.iface.disconnect(self.package, self.profile, handler=handler)
 
