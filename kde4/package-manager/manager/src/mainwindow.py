@@ -24,10 +24,14 @@ from statemanager import StateManager
 from settingsdialog import SettingsDialog
 from tray import Tray
 
+import backend
+import config
+
 class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         KXmlGuiWindow.__init__(self, parent)
         self.setupUi(self)
+        self.iface = backend.pm.Iface()
         self.setCentralWidget(MainWidget(self))
         self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
@@ -103,3 +107,16 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def updateStatusBar(self, text):
         self.wheelMovie.stop()
         self.statusLabel.setText(text)
+
+    def queryClose(self):
+        if config.PMConfig().systemTray() and not KApplication.kApplication().sessionSaving():
+            self.hide()
+            return False
+        return True
+
+    def queryExit(self):
+        return not self.iface.operationInProgress()
+
+    def slotQuit(self):
+        if self.iface.operationInProgress():
+            return
