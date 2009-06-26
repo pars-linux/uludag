@@ -192,8 +192,8 @@ class DiskList(QtGui.QWidget):
                 self.partEdit.ui.information.setText(_("'Install Root' size must be larger than %s MB.") % (ctx.consts.min_root_size))
                 self.partEdit.ui.information.show()
             else:
-                self.partEdit.ui.partitionSize.setMinimum(ctx.consts.min_root_size)
-                self.partEdit.ui.partitionSlider.setMinimum(ctx.consts.min_root_size)
+                self.partEdit.ui.partitionSize.setMinimum(ctx.consts.min_root_size + 40)
+                self.partEdit.ui.partitionSlider.setMinimum(ctx.consts.min_root_size + 40)
                 forceToFormat()
         else:
             self.partEdit.ui.information.setText("")

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 11:26+0300\n"
+"POT-Creation-Date: 2009-06-26 21:42+0300\n"
 "PO-Revision-Date: 2009-01-19 01:54+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -323,8 +323,8 @@ msgid "Show Backtrace"
 msgstr "Ablaufverfolgung:"
 
 #: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:89
-#: yali4/gui/ScrGoodbye.py:86 yali4/gui/ScrRescueFinish.py:87
-#: yali4/gui/ScrSummary.py:71 yali4/installer.py:682
+#: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
+#: yali4/gui/ScrSummary.py:71 yali4/installer.py:684
 msgid "Reboot"
 msgstr "Neustarten"
 
@@ -612,8 +612,8 @@ msgstr "Passwort:"
 msgid "User ID"
 msgstr "Verwenden :"
 
-#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:245
-#: yali4/gui/ScrUsers.py:287
+#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:252
+#: yali4/gui/ScrUsers.py:294
 msgid "Create User"
 msgstr "Benutzer anlegen"
 
@@ -1143,26 +1143,26 @@ msgstr ""
 "<center><font color=\"#FF6D19\">Die Feststelltaste ist aktiviert!</font></"
 "center>"
 
-#: yali4/gui/ScrAdmin.py:119 yali4/gui/ScrRescuePassword.py:114
-#: yali4/gui/ScrUsers.py:180
+#: yali4/gui/ScrAdmin.py:120 yali4/gui/ScrRescuePassword.py:114
+#: yali4/gui/ScrUsers.py:187
 #, fuzzy
 msgid "Password is too short!"
 msgstr "<font color=\"#FF6D19\">Passwort ist zu kurz!</font>"
 
-#: yali4/gui/ScrAdmin.py:128 yali4/gui/ScrRescuePassword.py:111
-#: yali4/gui/ScrUsers.py:177
+#: yali4/gui/ScrAdmin.py:129 yali4/gui/ScrRescuePassword.py:111
+#: yali4/gui/ScrUsers.py:184
 #, fuzzy
 msgid "Passwords do not match!"
 msgstr "<font color=\"#FF6D19\">Passwörter stimmen nicht überein!</font>"
 
-#: yali4/gui/ScrAdmin.py:133
+#: yali4/gui/ScrAdmin.py:134
 #, fuzzy
 msgid "Don't use your username as password !"
 msgstr ""
 "<font color=\"#FF6D19\">Verwenden Sie Ihren Benutzernamen oder Namen nicht "
 "als Passwort.</font>"
 
-#: yali4/gui/ScrAdmin.py:153
+#: yali4/gui/ScrAdmin.py:154
 #, fuzzy
 msgid "Hostname contains invalid characters!"
 msgstr "<font color=\"#FF6D19\">Benutzname enthält unzulässige Zeichen!</font>"
@@ -1285,15 +1285,15 @@ msgstr ""
 "Durch die Einstellungen wird die Hardware-Uhr aktualisiert. Fahren Sie mit "
 "der Installation fort, nachdem Sie Ihre Auswahl getroffen haben.</p></font>\n"
 
-#: yali4/gui/ScrGoodbye.py:44
+#: yali4/gui/ScrGoodbye.py:43
 msgid "Goodbye from YALI"
 msgstr "Abschied von YALI"
 
-#: yali4/gui/ScrGoodbye.py:45
+#: yali4/gui/ScrGoodbye.py:44
 msgid "Enjoy your fresh Pardus !..."
 msgstr "Viel Spass mit Pardus!..."
 
-#: yali4/gui/ScrGoodbye.py:46
+#: yali4/gui/ScrGoodbye.py:45
 msgid ""
 "\n"
 "<font size=\"+2\">Congratulations</font>\n"
@@ -1331,11 +1331,11 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrGoodbye.py:72
+#: yali4/gui/ScrGoodbye.py:71
 msgid "Running post install operations.."
 msgstr "Postinstall-Vorgänge werden ausgeführt..."
 
-#: yali4/gui/ScrGoodbye.py:86 yali4/gui/ScrRescueFinish.py:87
+#: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
 #, fuzzy
 msgid "Press <b>Reboot</b> button to restart your system."
 msgstr ""
@@ -1343,7 +1343,7 @@ msgstr ""
 "<p>Klicken Sie auf Neustarten, um Ihr System neuzustarten.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrGoodbye.py:88 yali4/gui/ScrRescueFinish.py:89
+#: yali4/gui/ScrGoodbye.py:87 yali4/gui/ScrRescueFinish.py:89
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>System wird neu gestartet. Bitte warten!</b>"
 
@@ -1402,43 +1402,43 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrInstall.py:118
+#: yali4/gui/ScrInstall.py:123
 msgid "Packages are being installed.."
 msgstr "Pakete werden installiert.."
 
-#: yali4/gui/ScrInstall.py:133
+#: yali4/gui/ScrInstall.py:138
 #, fuzzy, python-format
 msgid "Installing: <b>%s</b><br>%s"
 msgstr "Installation von: %s<br>%s"
 
-#: yali4/gui/ScrInstall.py:138
+#: yali4/gui/ScrInstall.py:143
 #, fuzzy, python-format
 msgid "Configuring package: <b>%s</b>"
 msgstr "Konfiguration des Pakets: %s"
 
-#: yali4/gui/ScrInstall.py:161 yali4/gui/ScrPartitionManual.py:79
+#: yali4/gui/ScrInstall.py:166 yali4/gui/ScrPartitionManual.py:79
 msgid "Warning"
 msgstr "Warnung"
 
-#: yali4/gui/ScrInstall.py:161
+#: yali4/gui/ScrInstall.py:166
 #, fuzzy, python-format
 msgid "Package install failed : <b>%s</b>"
 msgstr ""
 "Paketinstallation fehlgeschlagen : <b>%s</b><br>Möchten Sie wieder versuchen?"
 
-#: yali4/gui/ScrInstall.py:161
+#: yali4/gui/ScrInstall.py:166
 msgid "Do you want to retry ?"
 msgstr ""
 
-#: yali4/gui/ScrInstall.py:181
+#: yali4/gui/ScrInstall.py:186
 msgid "Creating baselayout for your system!"
 msgstr "Baselayout für Ihr System wird erstellt!"
 
-#: yali4/gui/ScrInstall.py:190
+#: yali4/gui/ScrInstall.py:195
 msgid "Configuring packages.."
 msgstr "Pakete werden konfiguriert..."
 
-#: yali4/gui/ScrInstall.py:213
+#: yali4/gui/ScrInstall.py:218
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1706,7 +1706,7 @@ msgstr "Passwort (wiederholen):"
 msgid "Info"
 msgstr ""
 
-#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:174
+#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:181
 #, fuzzy
 msgid "Don't use your user name or name as a password."
 msgstr ""
@@ -1994,30 +1994,30 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrUsers.py:226
+#: yali4/gui/ScrUsers.py:233
 #, fuzzy
 msgid "Username exists, choose another one!"
 msgstr ""
 "<font color=\"#FF6D19\">Dieser Benutzername ist bereits vergeben, bitte "
 "wählen Sie einen anderen.</font>"
 
-#: yali4/gui/ScrUsers.py:229
+#: yali4/gui/ScrUsers.py:236
 #, fuzzy
 msgid "Username contains invalid characters!"
 msgstr "<font color=\"#FF6D19\">Benutzname enthält unzulässige Zeichen!</font>"
 
-#: yali4/gui/ScrUsers.py:232
+#: yali4/gui/ScrUsers.py:239
 #, fuzzy
 msgid "Realname contains invalid characters!"
 msgstr ""
 "<font color=\"#FF6D19\">Vollständiger Name enthält unzulässige Zeichen!</"
 "font>"
 
-#: yali4/gui/ScrUsers.py:240
+#: yali4/gui/ScrUsers.py:247
 msgid "User ID used before, choose another one!"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:311
+#: yali4/gui/ScrUsers.py:318
 msgid "Update User"
 msgstr "Benutzer aktualisieren"
 
@@ -2443,7 +2443,7 @@ msgstr "Archiv-Partition"
 msgid "as Storage Area"
 msgstr "als Archivierungs-Bereich"
 
-#: yali4/postinstall.py:171
+#: yali4/postinstall.py:173
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis wird erstellt.."

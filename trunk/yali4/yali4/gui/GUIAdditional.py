@@ -62,7 +62,7 @@ class ResizeWidget(QtGui.QWidget):
         self.resize(ctx.mainScreen.size())
         self.dev = dev
         self.part = part
-        minSize = self.part.getMinResizeMB()
+        minSize = self.part.getMinResizeMB() + 40
 
         if minSize == 0:
             self.ui.resizeMB.setVisible(False)

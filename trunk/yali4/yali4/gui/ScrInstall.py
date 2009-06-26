@@ -163,7 +163,7 @@ Have fun!
         elif qevent.eventType() == EventRetry:
             package = qevent.data()
             self.timer.stop()
-            ctx.yali.retryAnswer = QuestionDialog(_("Warning"), _("Package install failed : <b>%s</b>" % package), _("Do you want to retry ?"))
+            ctx.yali.retryAnswer = QuestionDialog(_("Warning"), _("Package install failed : <b>%s</b>") % package, _("Do you want to retry ?"))
             self.timer.start(1000 * 30)
             ctx.yali.waitCondition.wakeAll()
 
