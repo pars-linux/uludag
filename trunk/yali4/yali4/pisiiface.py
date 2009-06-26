@@ -13,12 +13,14 @@
 # PiSİ module for YALI
 
 import os
+import bz2
 import time
 import glob
 import dbus
 import pisi
-import yali4.postinstall
+import piksemel
 import yali4.sysutils
+import yali4.postinstall
 from yali4.constants import consts
 
 repodb = pisi.db.repodb.RepoDB()
@@ -90,30 +92,30 @@ def take_back(operation):
     pisi.api.takeback(operation)
     os.unlink(consts.target_dir + consts.target_dir)
 
-def getExtraLangs():
-
-    def getPackages(piksemelObj, isa):
-        ret = []
-        for package in piksemelObj.tags("Package"):
-            tagData = package.getTagData("IsA")
-            if tagData:
-                for node in package.tags("IsA"):
-                    data = node.firstChild().data()
-                    if data.startswith(isa) and not data.find(':') == -1:
-                        ret.append("%s,%s" % (package.getTagData("PackageURI"), data.split(':')[1]))
-        return ret
-
-    import piksemel
-    import bz2
-
+def getPackages(tag, value):
     index_path = os.path.join(consts.source_dir, "repo/pisi-index.xml.bz2")
-    index = piksemel.parseString(bz2.decompress(file(index_path).read()))
+    piksemelObj = piksemel.parseString(bz2.decompress(file(index_path).read()))
+    ret = []
+    for package in piksemelObj.tags("Package"):
+        tagData = package.getTagData(tag)
+        if tagData:
+            for node in package.tags(tag):
+                data = node.firstChild().data()
+                if (not data.find(':') == -1 and data.startswith(value)) or (data.find(':') == -1 and data == value):
+                    ret.append("%s,%s" % (package.getTagData("PackageURI"), data))
+    return ret
 
-    return getPackages(index, "locale")
+def mergePackagesWithRepoPath(packages):
+    return map(lambda x: os.path.join(consts.source_dir, 'repo', x.split(',')[0]), packages)
 
 def get_not_needed_langs():
-    return map(lambda x: os.path.join(consts.source_dir, 'repo', x.split(',')[0]), \
-        filter(lambda x: not x.split(',')[1].startswith((consts.lang, "en")), getExtraLangs()))
+    return mergePackagesWithRepoPath(filter(lambda x: not x.split(',')[1].split(':')[1].startswith((consts.lang, "en")), \
+                                            getPackages("IsA", "locale:")))
+
+def get_base_packages():
+    systemBase = getPackages("PartOf", "system.base")
+    systemBase.extend(getPackages("Name", "kernel"))
+    return mergePackagesWithRepoPath(systemBase)
 
 def getHistory(limit=50):
     pdb = pisi.db.historydb.HistoryDB()

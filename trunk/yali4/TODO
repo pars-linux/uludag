@@ -20,9 +20,9 @@
      + Fix low resolution screen problems
      + Improve new theme widget states
      + Dont install not needed Language Packages support
+     + Do not update user home dir if one have same id
+     + Support for installing only system.base packages
 
-     - Support for installing only system.base packages
-     - Do not update user home dir if one have same id
      - Show a progress bar for Pisi HS Rescue operations
      - Show a proper (Human Readable) dialog when Fs Check failed
 

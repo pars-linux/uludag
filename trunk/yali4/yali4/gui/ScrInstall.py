@@ -241,7 +241,13 @@ class PkgInstaller(QThread):
         else:
             yali4.pisiiface.add_cd_repo()
 
-        order = yali4.pisiiface.get_all_with_paths()
+        # Check for just installing system.base packages
+        if yali4.sysutils.checkYaliParams(param=ctx.consts.baseOnlyParam):
+            order = yali4.pisiiface.get_base_packages()
+        else:
+            order = yali4.pisiiface.get_all_with_paths()
+
+        # Check for extra languages
         if not ctx.installData.installAllLangPacks:
             order = list(set(order) - set(yali4.pisiiface.get_not_needed_langs()))
             ctx.debugger.log("Not needed lang packages will not be installing...")
