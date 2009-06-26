@@ -1,19 +1,19 @@
 [Desktop Entry]
-Exec=kcmshell4 display-settings
+Exec=kcmshell4 kcm_displaydevices
 Icon=preferences-desktop-display
 Type=Service
 X-KDE-ServiceTypes=KCModule
 
 X-KDE-Library=kpythonpluginfactory
 X-KDE-ParentApp=kcontrol
-X-KDE-PluginKeyword=display-settings/display-settings.py
+X-KDE-PluginKeyword=display-settings/display-devices.py
 
 X-KDE-System-Settings-Parent-Category=display
-X-KDE-Weight=10
+X-KDE-Weight=20
 
-Name=Screens
-Name[tr]=Ekranlar
-Comment=Resize and rotate displays
-Comment[tr]=Ekranları boyutlandır ve döndür
+Name=Devices
+Name[tr]=Aygıtlar
+Comment=Configure display devices
+Comment[tr]=Görüntü aygıtlarını yapılandır
 X-KDE-Keywords=python display screen video monitor manager
 X-KDE-Keywords[tr]=python görüntü ekran video monitör yönetici

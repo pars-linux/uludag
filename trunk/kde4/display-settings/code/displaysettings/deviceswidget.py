@@ -20,8 +20,7 @@ from PyKDE4 import kdeui
 from PyKDE4 import kdecore
 
 # UI
-from displaysettings.ui_main import Ui_mainWidget
-from displaysettings.scene import DisplayScene
+from displaysettings.ui_devices import Ui_devicesWidget
 
 # Backend
 from displaysettings.backend import Interface
@@ -32,7 +31,7 @@ from displaysettings.backend import Interface
 # Item widget
 from displaysettings.item import ItemListWidgetItem, ItemWidget
 
-class MainWidget(QtGui.QWidget, Ui_mainWidget):
+class MainWidget(QtGui.QWidget, Ui_devicesWidget):
     def __init__(self, parent, embed=False):
         QtGui.QWidget.__init__(self, parent)
 
@@ -40,8 +39,6 @@ class MainWidget(QtGui.QWidget, Ui_mainWidget):
             self.setupUi(parent)
         else:
             self.setupUi(self)
-
-        self.scene = DisplayScene(self.graphicsView)
 
         # Backend
         self.iface = Interface()
