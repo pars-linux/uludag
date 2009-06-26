@@ -115,6 +115,7 @@ def get_not_needed_langs():
 def get_base_packages():
     systemBase = getPackages("PartOf", "system.base")
     systemBase.extend(getPackages("Name", "kernel"))
+    systemBase.extend(getPackages("Name", "gfxtheme-pardus-boot"))
     return mergePackagesWithRepoPath(systemBase)
 
 def getHistory(limit=50):
