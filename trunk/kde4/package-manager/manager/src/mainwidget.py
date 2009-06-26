@@ -153,12 +153,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.actionButton.setEnabled(enabled)
         self.basket.setActionEnabled(enabled)
 
-    def switchState(self, state):
+    def switchState(self, state, action=True):
         self.setSelectAll()
         self.searchLine.clear()
         self.state.setState(state)
         self.setActionButton()
-        self.state.stateAction()
+        if action:
+            self.state.stateAction()
 
     def emitStatusBarInfo(self, packages, packagesSize, extraPackages, extraPackagesSize):
         self.emit(SIGNAL("selectionStatusChanged(QString)"), self.state.statusText(packages, packagesSize, extraPackages, extraPackagesSize))
