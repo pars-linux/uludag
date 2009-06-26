@@ -50,6 +50,7 @@ class Interface:
         self.query()
 
     def getOutputs(self):
+        self.queryCurrent()
         return self.__outputs
 
 if __name__ == "__main__":
