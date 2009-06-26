@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-19 11:26+0300\n"
+"POT-Creation-Date: 2009-06-26 21:42+0300\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -296,8 +296,8 @@ msgid "Show Backtrace"
 msgstr "Geri İz Göster"
 
 #: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:89
-#: yali4/gui/ScrGoodbye.py:86 yali4/gui/ScrRescueFinish.py:87
-#: yali4/gui/ScrSummary.py:71 yali4/installer.py:682
+#: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
+#: yali4/gui/ScrSummary.py:71 yali4/installer.py:684
 msgid "Reboot"
 msgstr "Sistemi Yeniden Başlat!"
 
@@ -572,8 +572,8 @@ msgstr "Parola:"
 msgid "User ID"
 msgstr "Kullanıcı ID"
 
-#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:245
-#: yali4/gui/ScrUsers.py:287
+#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:252
+#: yali4/gui/ScrUsers.py:294
 msgid "Create User"
 msgstr "Kullanıcı Ekle"
 
@@ -1074,21 +1074,21 @@ msgstr ""
 msgid "<center>Caps Lock is on!</center>"
 msgstr "<center>Caps Lock açık!</center>"
 
-#: yali4/gui/ScrAdmin.py:119 yali4/gui/ScrRescuePassword.py:114
-#: yali4/gui/ScrUsers.py:180
+#: yali4/gui/ScrAdmin.py:120 yali4/gui/ScrRescuePassword.py:114
+#: yali4/gui/ScrUsers.py:187
 msgid "Password is too short!"
 msgstr "Parola çok kısa!"
 
-#: yali4/gui/ScrAdmin.py:128 yali4/gui/ScrRescuePassword.py:111
-#: yali4/gui/ScrUsers.py:177
+#: yali4/gui/ScrAdmin.py:129 yali4/gui/ScrRescuePassword.py:111
+#: yali4/gui/ScrUsers.py:184
 msgid "Passwords do not match!"
 msgstr "Parolalar aynı değil!"
 
-#: yali4/gui/ScrAdmin.py:133
+#: yali4/gui/ScrAdmin.py:134
 msgid "Don't use your username as password !"
 msgstr "Kullanıcı adınızı parola olarak kullanmayın !"
 
-#: yali4/gui/ScrAdmin.py:153
+#: yali4/gui/ScrAdmin.py:154
 msgid "Hostname contains invalid characters!"
 msgstr "Makine adı geçersiz karakterler içeriyor!"
 
@@ -1198,15 +1198,15 @@ msgstr ""
 "güncelleyecektir. Ayarlarınızı yaptıktan sonra ilerleyebilirsiniz.</p></"
 "font>\n"
 
-#: yali4/gui/ScrGoodbye.py:44
+#: yali4/gui/ScrGoodbye.py:43
 msgid "Goodbye from YALI"
 msgstr "Hoşçakalın"
 
-#: yali4/gui/ScrGoodbye.py:45
+#: yali4/gui/ScrGoodbye.py:44
 msgid "Enjoy your fresh Pardus !..."
 msgstr "Taze Pardus'unuzun zevkini çıkarın !..."
 
-#: yali4/gui/ScrGoodbye.py:46
+#: yali4/gui/ScrGoodbye.py:45
 msgid ""
 "\n"
 "<font size=\"+2\">Congratulations</font>\n"
@@ -1243,17 +1243,17 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrGoodbye.py:72
+#: yali4/gui/ScrGoodbye.py:71
 msgid "Running post install operations.."
 msgstr "Kurulum sonrası işlemler gerçekleştiriliyor..."
 
-#: yali4/gui/ScrGoodbye.py:86 yali4/gui/ScrRescueFinish.py:87
+#: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
 msgid "Press <b>Reboot</b> button to restart your system."
 msgstr ""
 "Bilgisayarınızı yeniden başlatmak için <b>Sistemi Yeniden Başlat!</b> "
 "düğmesine tıklayın."
 
-#: yali4/gui/ScrGoodbye.py:88 yali4/gui/ScrRescueFinish.py:89
+#: yali4/gui/ScrGoodbye.py:87 yali4/gui/ScrRescueFinish.py:89
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Yeniden başlatılıyor. Lütfen bekleyin!</b>"
 
@@ -1305,42 +1305,42 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrInstall.py:118
+#: yali4/gui/ScrInstall.py:123
 msgid "Packages are being installed.."
 msgstr "Paketler kuruluyor.."
 
-#: yali4/gui/ScrInstall.py:133
+#: yali4/gui/ScrInstall.py:138
 #, python-format
 msgid "Installing: <b>%s</b><br>%s"
 msgstr "Kurulan Paket: <b>%s</b><br>%s"
 
-#: yali4/gui/ScrInstall.py:138
+#: yali4/gui/ScrInstall.py:143
 #, python-format
 msgid "Configuring package: <b>%s</b>"
 msgstr "Yapılandırılan paket: <b>%s</b>"
 
-#: yali4/gui/ScrInstall.py:161 yali4/gui/ScrPartitionManual.py:79
+#: yali4/gui/ScrInstall.py:166 yali4/gui/ScrPartitionManual.py:79
 msgid "Warning"
 msgstr "Uyarı"
 
-#: yali4/gui/ScrInstall.py:161
+#: yali4/gui/ScrInstall.py:166
 #, python-format
 msgid "Package install failed : <b>%s</b>"
 msgstr "Paket kurulumu sırasında hata : <b>%s</b>"
 
-#: yali4/gui/ScrInstall.py:161
+#: yali4/gui/ScrInstall.py:166
 msgid "Do you want to retry ?"
 msgstr "Tekrar denemek ister misiniz ?"
 
-#: yali4/gui/ScrInstall.py:181
+#: yali4/gui/ScrInstall.py:186
 msgid "Creating baselayout for your system!"
 msgstr "Sisteminiz için temel bileşenler yaratılıyor!"
 
-#: yali4/gui/ScrInstall.py:190
+#: yali4/gui/ScrInstall.py:195
 msgid "Configuring packages.."
 msgstr "Paketler yapılandırılıyor.."
 
-#: yali4/gui/ScrInstall.py:213
+#: yali4/gui/ScrInstall.py:218
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1594,7 +1594,7 @@ msgstr "Parola değiştirildi"
 msgid "Info"
 msgstr "Bilgi"
 
-#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:174
+#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:181
 msgid "Don't use your user name or name as a password."
 msgstr "Kullanıcı adınızı parola olarak kullanmayın."
 
@@ -1868,23 +1868,23 @@ msgstr ""
 "yaptıktan sonra lütfen ilerleyin.</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrUsers.py:226
+#: yali4/gui/ScrUsers.py:233
 msgid "Username exists, choose another one!"
 msgstr "Bu kullanıcı adı zaten var, başka bir tane seçin!"
 
-#: yali4/gui/ScrUsers.py:229
+#: yali4/gui/ScrUsers.py:236
 msgid "Username contains invalid characters!"
 msgstr "Kullanıcı adı geçersiz karakterler içeriyor!"
 
-#: yali4/gui/ScrUsers.py:232
+#: yali4/gui/ScrUsers.py:239
 msgid "Realname contains invalid characters!"
 msgstr "Gerçek İsim bölümü geçersiz karakterler içeriyor!"
 
-#: yali4/gui/ScrUsers.py:240
+#: yali4/gui/ScrUsers.py:247
 msgid "User ID used before, choose another one!"
 msgstr "Kullanıcı ID'si daha önce kullanılmış, başka bir tane seçin!"
 
-#: yali4/gui/ScrUsers.py:311
+#: yali4/gui/ScrUsers.py:318
 msgid "Update User"
 msgstr "Kullanıcıyı Güncelle"
 
@@ -2309,7 +2309,7 @@ msgstr "Arşiv Bölümü"
 msgid "as Storage Area"
 msgstr "Genel veri saklama için"
 
-#: yali4/postinstall.py:171
+#: yali4/postinstall.py:173
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "<b>%s</b> kullanıcısının ev dizini ayarlanıyor.."

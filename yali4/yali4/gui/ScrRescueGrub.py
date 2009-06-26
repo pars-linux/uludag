@@ -58,29 +58,21 @@ loader.
 
         self.ui.installFirstMBR.setChecked(True)
 
-        if len(yali4.storage.devices) > 1:
-            self.device_list_state = True
-            # fill device list
-            for dev in yali4.storage.devices:
-                DeviceItem(self.ui.deviceList, dev)
-            # select the first disk by default
-            self.ui.deviceList.setCurrentRow(0)
-            # be sure first is selected device
-            self.device = self.ui.deviceList.item(0).getDevice()
-        else:
-            # don't show device list if we have just one disk
-            self.ui.installSelectedDisk.hide()
-            self.device_list_state = False
-            self.ui.deviceList.hide()
+        # fill device list
+        for dev in yali4.storage.devices:
+            DeviceItem(self.ui.deviceList, dev)
 
-            self.device = yali4.storage.devices[0]
+        # select the first disk by default
+        self.ui.deviceList.setCurrentRow(0)
+
+        # be sure first is selected device
+        self.device = self.ui.deviceList.item(0).getDevice()
 
         self.connect(self.ui.deviceList, SIGNAL("currentItemChanged(QListWidgetItem*,QListWidgetItem*)"), self.slotDeviceChanged)
         self.connect(self.ui.deviceList, SIGNAL("itemClicked(QListWidgetItem*)"), self.slotSelect)
 
     def shown(self):
         yali4.storage.setOrderedDiskList()
-        print ctx.installData.orderedDiskList
         ctx.debugger.log("Disks BIOS Boot order : %s " % ','.join(ctx.installData.orderedDiskList))
 
     def slotSelect(self):
