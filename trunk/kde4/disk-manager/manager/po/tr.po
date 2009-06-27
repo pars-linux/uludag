@@ -10,13 +10,13 @@ msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-25 15:34+0300\n"
-"PO-Revision-Date: 2009-06-24 13:20+0300\n"
-"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2009-06-27 17:05+0300\n"
+"Last-Translator: \n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1;plural=0;\n"
 
 #: .tmp/ui_edit.py:67
@@ -91,4 +91,5 @@ msgstr "Ekle"
 #: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
 #: .tmp/diskmanager/main.py:321
 msgid "Access denied."
-msgstr ""
+msgstr "Erişim reddedildi."
+
