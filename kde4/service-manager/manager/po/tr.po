@@ -3,29 +3,32 @@
 # This file is distributed under the same license as the Service Manager package.
 # Gökmen Göksel <gokmen@pardus.org.tr>
 #
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-27 16:19+0300\n"
-"PO-Revision-Date: 2009-05-11 14:12+0200\n"
-"Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
-"Language-Team: Turkçe <turkce@pardus.org.tr>\n"
+"PO-Revision-Date: 2009-06-27 19:26+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .tmp/ui_item.py:99 .tmp/ui_main.py:55
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: .tmp/ui_item.py:100
 msgid "serviceName"
-msgstr ""
+msgstr "servisİsmi"
 
 #: .tmp/ui_item.py:101
 msgid "serviceDesc"
-msgstr ""
+msgstr "servisAçıklaması"
 
 #: .tmp/ui_item.py:102
 msgid "Start service"
@@ -45,7 +48,7 @@ msgstr "Açılışta çalıştır"
 
 #: .tmp/ui_main.py:56
 msgid "type service name to search..."
-msgstr "Servis adını yazarak aramaya başlayın..."
+msgstr "Servis ismini yazarak aramaya başlayın..."
 
 #: .tmp/ui_main.py:57
 msgid "Servers"
@@ -77,20 +80,21 @@ msgstr "Servis Yöneticisi"
 
 #: .tmp/servicemanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TÜBİTAK/UEKAE"
 
 #: .tmp/servicemanager/about.py:32
 msgid "Gökmen GÖKSEL"
-msgstr ""
+msgstr "Gökmen GÖKSEL"
 
 #: .tmp/servicemanager/about.py:32
 msgid "Current Maintainer"
-msgstr "Ana Geliştirici"
+msgstr "Şimdiki Geliştirici"
 
 #: .tmp/servicemanager/about.py:33
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: .tmp/servicemanager/about.py:33
 msgid "COMAR Author"
 msgstr "COMAR Yazarı"
+
