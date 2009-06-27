@@ -23,8 +23,5 @@
     - backspace doesn't work,
     - libbonobo, libgnomeui stuff can be merged to pardus/ for fully compatible firefox,
 
-* CUPS (Ozan Çağlayan)
-    - KDE applications fails to print: cups-document-format-not-supported, pf.
-
 * YALI (Gökmen GÖKSEL - Faik Uygur)
     - Pisi install whole packages from start after a package fail.
