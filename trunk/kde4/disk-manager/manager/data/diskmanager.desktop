@@ -1,10 +1,13 @@
 [Desktop Entry]
 Name=Disk Manager
 Name[tr]=Disk Yöneticisi
+Name[sv]=Hårddiskhanteraren
 GenericName=Disk Manager
 GenericName[tr]=Disk Yöneticisi
+GenericName[sv]=Hårddiskhanteraren
 Comment=An application for managing partitions and their mount paths.
 Comment[tr]=Disk bölümlerini ve bağlandıkları dizinleri yönetmenizi sağlayan bir uygulama.
+Comment[sv]=Ett program för att hantera partitioner och deras monteringspunkter.
 Exec=disk-manager
 Icon=drive-harddisk
 Type=Application

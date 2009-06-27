@@ -1,0 +1,108 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: system-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-25 15:31+0300\n"
+"PO-Revision-Date: 2009-06-27 16:46+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .tmp/ui_main.py:156
+msgid "Language Settings"
+msgstr "Språkinställningar"
+
+#: .tmp/ui_main.py:157
+msgid "System Language:"
+msgstr "Systemspråk:"
+
+#: .tmp/ui_main.py:158
+msgid "Console Keyboard Layout:"
+msgstr "Tangentbordslayout för terminalen:"
+
+#: .tmp/ui_main.py:159
+msgid ""
+"Note that these settings do not effect your desktop. Desktop settings can be "
+"changed in 'Regional & Language' module in System Settings."
+msgstr ""
+"Observera att denna inställning inte påverkar skrivbordet. Skrivbordets "
+"inställningar "
+"kan ändras via 'Region och språk' i Systeminställningar."
+
+#: .tmp/ui_main.py:160
+msgid "Service Settings"
+msgstr "Tjänsteinställningar"
+
+#: .tmp/ui_main.py:161
+msgid "First Service to Start:"
+msgstr "Första tjänst som startas:"
+
+#: .tmp/ui_main.py:162
+msgid ""
+"Although services are started parallel manner in boot process, users may "
+"want to start a single service before checking dependencies."
+msgstr ""
+"Även om tjänster startas parallellt under uppstart kan användaren vilja "
+"starta en tjänst före kontroll av beroenden."
+
+#: .tmp/ui_main.py:163
+msgid "Clock Settings"
+msgstr "Klockinställningar"
+
+#: .tmp/ui_main.py:164
+msgid "Keep the hardware clock in UTC"
+msgstr "Behåll hårdvaruklockan i UTC"
+
+#: .tmp/ui_main.py:165
+msgid "Normalize systematic drift of the hardware clock"
+msgstr "Kompensera för hårdvaruklockans systematiska avdrift"
+
+#: .tmp/ui_main.py:166
+msgid "Console Settings"
+msgstr "Terminalinställningar"
+
+#: .tmp/ui_main.py:167
+msgid "Number of Real Consoles:"
+msgstr "Antal terminaler:"
+
+#: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
+msgid "System Manager"
+msgstr "Systemhanteraren"
+
+#: .tmp/systemmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/systemmanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/systemmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/systemmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Nuvarande utvecklare"
+
+#: .tmp/systemmanager/main.py:73
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Det finns inte något paket som tillhandahåller bakände för det här "
+"programmet.\n"
+"Vänligen se till att paketen är rätt installerade och inställda."
+
+#: .tmp/systemmanager/main.py:101
+msgid "None"
+msgstr "Ingen"
+

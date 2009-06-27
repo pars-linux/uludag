@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Name=Wifi Radar
 Name[tr]=Kablosuz Ağ İzleyici
+Name[sv]=Wifi Radar
 Name[x-test]=xxWifi Radarxx
 Type=Service
 ServiceTypes=Plasma/Applet

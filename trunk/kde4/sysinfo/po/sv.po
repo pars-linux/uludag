@@ -7,19 +7,20 @@
 # Mattias Newzella <newzella@linux.nu>, 2001.
 # Gudmund Areskoug <fta@algonet.se>, 2001.
 # Mattias Newzella <newzella@linux.se>, 2007.
+# Patrik Karlsson <patrik@pardus.nu>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-08 11:17+0300\n"
-"PO-Revision-Date: 2007-08-06 14:53+0200\n"
-"Last-Translator: Mattias Newzella <newzella@linux.se>\n"
-"Language-Team:  <sv@li.org>\n"
+"PO-Revision-Date: 2009-06-27 16:02+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: src/sysinfo.cpp:83
 msgid "%1 GB"
@@ -34,9 +35,8 @@ msgid "%1 KB"
 msgstr "%1 kB"
 
 #: src/sysinfo.cpp:94
-#, fuzzy
 msgid "Not Available"
-msgstr "Tillgängligt utrymme"
+msgstr "Inte tillgängligt"
 
 #: src/sysinfo.cpp:141
 msgid "Network is <strong>shutting down</strong>"
@@ -59,9 +59,8 @@ msgid "Unknown network status"
 msgstr "Okänd nätverksstatus"
 
 #: src/sysinfo.cpp:235
-#, fuzzy
 msgid "Looking for hardware information..."
-msgstr "Söker efter diskinformation..."
+msgstr "Söker efter hårdvaruinformation..."
 
 #: src/sysinfo.cpp:237
 msgid "My Computer"
@@ -73,7 +72,7 @@ msgstr "Kataloger, hårddiskar, flyttbara enheter, systeminformation och mer..."
 
 #: src/sysinfo.cpp:246
 msgid "Common Folders"
-msgstr "Gemensamma mappar"
+msgstr "Vanliga kataloger"
 
 #: src/sysinfo.cpp:247
 msgid "My Home Folder"
@@ -88,39 +87,36 @@ msgid "Network Folders"
 msgstr "Nätverkskataloger"
 
 #: src/sysinfo.cpp:254
-#, fuzzy
 msgid "Network"
-msgstr "Nätverksstatus"
+msgstr "Nätverk"
 
 #: src/sysinfo.cpp:261
-#, fuzzy
 msgid "Memory"
-msgstr "Använt minne"
+msgstr "Minne"
 
 #: src/sysinfo.cpp:263
 msgid "Ram : %1 free of %2"
-msgstr ""
+msgstr "Ram : %1 ledigt av %2"
 
 #: src/sysinfo.cpp:266
 msgid "Swap: %1 free of %2"
-msgstr ""
+msgstr "Växling: %1 ledigt av %2"
 
 #: src/sysinfo.cpp:274
 msgid "Disks"
-msgstr ""
+msgstr "Lagringsmedia"
 
 #: src/sysinfo.cpp:281
 msgid "Operating System"
-msgstr ""
+msgstr "Operativsystem"
 
 #: src/sysinfo.cpp:285
 msgid "Kde <b>%1</b> on <b>%2</b>"
-msgstr ""
+msgstr "KDE <b>%1</b> på <b>%2</b>"
 
 #: src/sysinfo.cpp:297
-#, fuzzy
 msgid "Processor"
-msgstr "Processor (CPU):"
+msgstr "Processor"
 
 #: src/sysinfo.cpp:299
 msgid "%1 MHz"
@@ -128,29 +124,27 @@ msgstr "%1 MHz"
 
 #: src/sysinfo.cpp:300
 msgid " core"
-msgstr ""
+msgstr " kärnor"
 
 #: src/sysinfo.cpp:311
-#, fuzzy
 msgid "Display"
-msgstr "Visa info"
+msgstr "Bildskärm"
 
 #: src/sysinfo.cpp:314
-#, fuzzy
 msgid "Driver: "
-msgstr "Drivrutin:"
+msgstr "Drivrutin: "
 
 #: src/sysinfo.cpp:492
 msgid "Mounted on %1"
-msgstr ""
+msgstr "Monterad på %1"
 
 #: src/sysinfo.cpp:492
 msgid "Not mounted"
-msgstr ""
+msgstr "Inte monterad"
 
 #: src/sysinfo.cpp:497
 msgid "%1 free of %2"
-msgstr ""
+msgstr "%1 ledigt av %2"
 
 #~ msgid "%1 (+ %2 Caches)"
 #~ msgstr "%1 (+ %2 cachar)"

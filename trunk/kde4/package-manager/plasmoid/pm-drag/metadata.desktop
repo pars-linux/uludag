@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Name=Drag & Drop Pisi Installer
 Name[tr]=Sürükle & Bırak Pisi Yükleme Aracı
+Name[sv]=Dra och släpp Pisi-installerare
 Name[x-test]=xxDrag & Drop Pisi Installerxx
 Type=Service
 ServiceTypes=Plasma/Applet

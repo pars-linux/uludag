@@ -1,10 +1,13 @@
 [Desktop Entry]
 Name=Boot Manager
 Name[tr]=Açılış Yöneticisi
+Name[sv]=Starthanteraren
 GenericName=Boot Manager
 GenericName[tr]=Açılış Yöneticisi
+GenericName[sv]=Starthanteraren
 Comment=An application for managing boot loader.
 Comment[tr]=Ön yükleyici (GRUB) ayarlarını değiştirmenizi sağlayan bir uygulama.
+Comment[sv]=Program för hantering av startladdaren.
 Exec=boot-manager
 Icon=computer
 Type=Application
