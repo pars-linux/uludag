@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Name=Network Manager Applet
 Name[tr]=Ağ Yöneticisi Programcığı
+Name[sv]=Miniprogram för Nätverkshanteraren
 Name[x-test]=xxNetwork Manager Appletxx
 Type=Service
 ServiceTypes=Plasma/Applet

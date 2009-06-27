@@ -1,10 +1,13 @@
 [Desktop Entry]
 Name=Service Manager
 Name[tr]=Servis Yöneticisi
+Name[sv]=Tjänstehanteraren
 GenericName=Service Manager
 GenericName[tr]=Servis Yöneticisi
+GenericName[sv]=Tjänstehanteraren
 Comment=An application for managing system services.
 Comment[tr]=Sistem servislerini yönetmenizi sağlayan bir uygulama.
+Comment[sv]=Ett program för att hantera systemtjänster.
 Exec=service-manager
 Icon=flag-yellow
 Type=Application

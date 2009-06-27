@@ -1,10 +1,13 @@
 [Desktop Entry]
 Name=User Manager
 Name[tr]=Kullanıcı Yöneticisi
+Name[sv]=Användarhanteraren
 GenericName=User Manager
 GenericName[tr]=Kullanıcı Yöneticisi
+GenericName[sv]=Användarhanteraren
 Comment=An application for managing user accounts.
 Comment[tr]=Kullanıcı hesaplarını yönetmenizi sağlayan bir uygulama.
+Comment[sv]=Ett program för att hantera användarkonton.
 Exec=user-manager
 Icon=system-users
 Type=Application

@@ -1,10 +1,12 @@
 [Desktop Entry]
 Name=Network Manager Profiles
 Name[tr]=Ağ Yöneticisi Profilleri
+Name[sv]=Nätverkshanterarens profiler
 Name[x-test]=xxNetwork Manager Profilesxx
 
 Comment=Query Network Manager Profiles
 Comment[tr]=Ağ Yöneticisi Profilleri Sorgulama
+Comment[sv]=Fråga Nätverkshanterarens profiler
 Comment[x-test]=xxQuery Network Manager Profilesxx
 
 Type=Service

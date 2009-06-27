@@ -1,10 +1,13 @@
 [Desktop Entry]
 Name=Firewall Manager
 Name[tr]=Güvenlik Duvarı Yöneticisi
+Name[sv]=Brandväggshanteraren
 GenericName=Firewall Manager
 GenericName[tr]=Güvenlik Duvarı Yöneticisi
+GenericName[sv]=Brandväggshanteraren
 Comment=An application for managing firewall.
 Comment[tr]=Güvenlik duvarını yönetmenizi sağlayan bir uygulama.
+Comment[sv]=Ett program för hantering av brandväggen.
 Exec=firewall-manager
 Icon=security-high
 Type=Application

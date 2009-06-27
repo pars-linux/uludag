@@ -13,5 +13,7 @@ X-KDE-Weight=70
 
 Name=Firewall Manager
 Name[tr]=Güvenlik Duvarı Yöneticisi
+Name[sv]=Brandväggshanteraren
 Comment=Firewall Manager
+Comment[sv]=Brandväggshanteraren
 X-KDE-Keywords=python security firewall managers

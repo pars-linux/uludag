@@ -13,5 +13,7 @@ X-KDE-Weight=70
 
 Name=Disk Manager
 Name[tr]=Disk Yöneticisi
+Name[sv]=Hårddiskhanteraren
 Comment=Disk Manager
+Comment[sv]=Hårddiskhanteraren
 X-KDE-Keywords=python disk managers

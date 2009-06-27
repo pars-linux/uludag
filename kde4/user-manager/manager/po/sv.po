@@ -1,0 +1,196 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: user-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-25 15:35+0300\n"
+"PO-Revision-Date: 2009-06-27 19:54+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .tmp/ui_edituser.py:176
+msgid "User Information"
+msgstr "Användarinformation"
+
+#: .tmp/ui_edituser.py:177
+msgid "Full Name:"
+msgstr "Verkligt namn:"
+
+#: .tmp/ui_edituser.py:178
+msgid "Password:"
+msgstr "Lösenord:"
+
+#: .tmp/ui_edituser.py:179
+msgid "Password (Again):"
+msgstr "Lösenord (upprepa):"
+
+#: .tmp/ui_edituser.py:180 .tmp/ui_editgroup.py:80
+msgid "No.:"
+msgstr "ID"
+
+#: .tmp/ui_edituser.py:181 .tmp/ui_editgroup.py:81
+msgid "Auto"
+msgstr "Automatiskt"
+
+#: .tmp/ui_edituser.py:182
+msgid "Username:"
+msgstr "Användarnamn:"
+
+#: .tmp/ui_edituser.py:183
+msgid "Home Directory:"
+msgstr "Hemkatalog:"
+
+#: .tmp/ui_edituser.py:184
+msgid "Shell:"
+msgstr "Skal:"
+
+#: .tmp/ui_edituser.py:185
+msgid "Give administrator rights."
+msgstr "Tilldela administratörsrättighet."
+
+#: .tmp/ui_edituser.py:186
+msgid "Use system settings."
+msgstr "Använd systeminställningar."
+
+#: .tmp/ui_edituser.py:187
+msgid "Authorize user."
+msgstr "Tillåt användare."
+
+#: .tmp/ui_edituser.py:188
+msgid "Deny user."
+msgstr "Neka användare."
+
+#: .tmp/ui_edituser.py:189
+msgid "Authorizations"
+msgstr "Behörighet"
+
+#: .tmp/ui_edituser.py:190
+msgid "Main Group:"
+msgstr "Primär grupp:"
+
+#: .tmp/ui_edituser.py:191 .tmp/usermanager/main.py:196
+msgid "Groups"
+msgstr "Grupper"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Lägg till ny"
+
+#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
+msgid "User Manager"
+msgstr "Användarhanteraren"
+
+#: .tmp/usermanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/usermanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/usermanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/usermanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Nuvarande utvecklare"
+
+#: .tmp/usermanager/main.py:94
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Det finns inte något paket som tillhandahåller bakände för det här "
+"programmet.\n"
+"Vänligen se till att paketen är rätt installerade och inställda."
+
+#: .tmp/usermanager/main.py:195
+msgid "Users"
+msgstr "Användare"
+
+#: .tmp/usermanager/main.py:197
+msgid "All Users"
+msgstr "Alla användare"
+
+#: .tmp/usermanager/main.py:198
+msgid "All Groups"
+msgstr "Alla grupper"
+
+#: .tmp/usermanager/main.py:209
+msgid "Add User"
+msgstr "Lägg till användare"
+
+#: .tmp/usermanager/main.py:214
+msgid "Add Group"
+msgstr "Lägg till grupp"
+
+#: .tmp/usermanager/main.py:235 .tmp/usermanager/main.py:249
+#: .tmp/usermanager/main.py:375
+msgid "Access denied."
+msgstr "Åtkomst nekas."
+
+#: .tmp/usermanager/main.py:319
+msgid "Do you want to delete user '%1' (%2)?"
+msgstr "Vill du ta bort användaren '%1' (%2)?"
+
+#: .tmp/usermanager/main.py:320
+msgid "Also remove user files. (This may take long.)"
+msgstr "Radera användarens filer. (Det kan ta tid.)"
+
+#: .tmp/usermanager/main.py:328
+msgid "Do you want to delete group '%1'?"
+msgstr "Vill du ta bort gruppen '%1'?"
+
+#: .tmp/usermanager/edit.py:236
+msgid "There has to be at least one group selected."
+msgstr "Minst en grupp måste väljas."
+
+#: .tmp/usermanager/edit.py:301
+msgid "Start with typing this user's full name."
+msgstr "Börja med att ange den här användarens verkliga namn."
+
+#: .tmp/usermanager/edit.py:304
+msgid "You should enter a password for this user."
+msgstr "Du bör ange ett lösenord för den här användaren."
+
+#: .tmp/usermanager/edit.py:309
+msgid "Password must be longer."
+msgstr "Lösenordet måste vara längre."
+
+#: .tmp/usermanager/edit.py:313
+msgid "Don't use your full name or user name as a password."
+msgstr "Använd inte ditt verkliga namn eller användarnamn som lösenord."
+
+#: .tmp/usermanager/edit.py:316
+msgid "Passwords don't match."
+msgstr "Lösenorden stämmer inte."
+
+#: .tmp/usermanager/edit.py:321
+msgid "You must enter a user name."
+msgstr "Du måste ange ett användarnamn."
+
+#: .tmp/usermanager/edit.py:324
+msgid "This user name is used by another user."
+msgstr "Användarnamnet är upptaget."
+
+#: .tmp/usermanager/edit.py:328
+msgid "User name must not start with a number."
+msgstr "Användarnamnet får inte börja med en siffra."
+
+#: .tmp/ui_editgroup.py:78
+msgid "Group Information"
+msgstr "Gruppinformation"
+
+#: .tmp/ui_editgroup.py:79
+msgid "Group Name:"
+msgstr "Gruppnamn"
+

@@ -1,0 +1,111 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: boot-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-25 15:33+0300\n"
+"PO-Revision-Date: 2009-06-26 20:07+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
+msgid "Boot Manager"
+msgstr "Starthanteraren"
+
+#: .tmp/bootmanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/bootmanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/bootmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/bootmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Nuvarande utvecklare"
+
+#: .tmp/bootmanager/main.py:99
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Det finns inte något paket som tillhandahåller bakände för det här "
+"programmet.\n"
+"Vänligen se till att paketen är rätt installerade och inställda."
+
+#: .tmp/bootmanager/main.py:198
+msgid "All Items"
+msgstr "Alla poster"
+
+#: .tmp/bootmanager/main.py:300
+msgid "Do you want to delete '%1'?"
+msgstr "Vill du ta bort '%1'?"
+
+#: .tmp/bootmanager/main.py:331
+msgid "Access denied."
+msgstr "Åtkomst nekad."
+
+#: .tmp/ui_edit.py:134
+msgid "Title"
+msgstr "Titel"
+
+#: .tmp/ui_edit.py:135
+msgid "Name of the boot entry to be shown at the boot menu."
+msgstr "Namn på startalternativ som visas i startmenyn."
+
+#: .tmp/ui_edit.py:136
+msgid "Disk"
+msgstr "Enhet"
+
+#: .tmp/ui_edit.py:137
+msgid "Disk that contains operating system."
+msgstr "Enhet som innehåller ett operativsystem."
+
+#: .tmp/ui_edit.py:138
+msgid "Kernel"
+msgstr "Kärna"
+
+#: .tmp/ui_edit.py:139
+msgid "Operating system kernel."
+msgstr "Operativsystemets kärna."
+
+#: .tmp/ui_edit.py:140
+msgid "Ramdisk File"
+msgstr "Ramdiskfil"
+
+#: .tmp/ui_edit.py:141
+msgid ""
+"File that contains a micro operating system for preloading kernel modules."
+msgstr ""
+"Fil som innehåller ett minimalt operativsystem för förladdning av "
+"kärnmoduler."
+
+#: .tmp/ui_edit.py:142
+msgid "Boot Options"
+msgstr "Startalternativ"
+
+#: .tmp/ui_edit.py:143
+msgid "Boot options for operating system."
+msgstr "Startalternativ för operativsystem."
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Lägg till ny"
+
+#: .tmp/ui_options.py:36
+msgid "Boot menu display time:"
+msgstr "Visningstid för startmeny:"
+
+

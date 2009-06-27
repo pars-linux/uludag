@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Name=Zemberek Spell Checker
 Name[tr]=Zemberek İmla Kontrolü
+Name[sv]=Zemberek stavningskontroll
 Name[x-test]=xxZemberek Spell Checkerxx
 Type=Service
 ServiceTypes=Plasma/Applet

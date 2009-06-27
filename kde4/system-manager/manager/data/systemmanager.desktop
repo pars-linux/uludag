@@ -1,10 +1,13 @@
 [Desktop Entry]
 Name=System Manager
 Name[tr]=Sistem Yöneticisi
+Name[sv]=Systemhanteraren
 GenericName=System Manager
 GenericName[tr]=Sistem Yöneticisi
+GenericName[sv]=Systemhanteraren
 Comment=An application for managing settings like system language, keyboard and timezone.
 Comment[tr]=Sistem dili, klavyesi ve dil gibi ayarları yönetmenizi sağlayan bir uygulama.
+Comment[sv]=Ett program för att hantera systeminställningar som språk, tangentbord och klocka.
 Exec=system-manager
 Icon=preferences-other
 Type=Application
