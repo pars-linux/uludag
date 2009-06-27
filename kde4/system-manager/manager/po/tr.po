@@ -1,19 +1,22 @@
 # System Manager.
 # Copyright (C) 2009 TÜBİTAK/UEKAE
 # This file is distributed under the same license as the System Manager package.
-# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 #
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-25 15:31+0300\n"
-"PO-Revision-Date: 2009-06-16 14:35+0300\n"
-"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
-"Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"PO-Revision-Date: 2009-06-27 19:33+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .tmp/ui_main.py:156
 msgid "Language Settings"
@@ -32,12 +35,12 @@ msgid ""
 "Note that these settings do not effect your desktop. Desktop settings can be "
 "changed in 'Regional & Language' module in System Settings."
 msgstr ""
-"Burada yapılan değişiklikler masaüstü ayarlarınızı etkilemez. Bunun için "
-"Sistem Ayarları'ndaki 'Ülke, Bölge ve Dil' modülü kullanılmalıdır."
+"Burada yapılan değişiklikler masaüstünüzü etkilemez. Masaüstü ayarları "
+"Sistem Ayarları'ndaki 'Ülke, Bölge ve Dil' bileşeninden değiştirilebilir."
 
 #: .tmp/ui_main.py:160
 msgid "Service Settings"
-msgstr "Servis ayarları"
+msgstr "Servis Ayarları"
 
 #: .tmp/ui_main.py:161
 msgid "First Service to Start:"
@@ -48,9 +51,9 @@ msgid ""
 "Although services are started parallel manner in boot process, users may "
 "want to start a single service before checking dependencies."
 msgstr ""
-"Açılış sürecinde tüm servisler paralel olarak başlatılsa da, belirli bir "
-"servisin bağımlılık hesaplamadan, diğerlerinden daha önce başlatılması "
-"istenebilir."
+"Açılış sürecinde tüm servisler paralel olarak başlatılsa da, kullanıcılar "
+"belirli bir "
+"servisi bağımlılık kontrollerinden önce başlatmak isteyebilir."
 
 #: .tmp/ui_main.py:163
 msgid "Clock Settings"
@@ -78,7 +81,7 @@ msgstr "Sistem Yöneticisi"
 
 #: .tmp/systemmanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TÜBİTAK/UEKAE"
 
 #: .tmp/systemmanager/about.py:25
 msgid " "
@@ -90,7 +93,7 @@ msgstr "Bahadır Kandemir"
 
 #: .tmp/systemmanager/about.py:32
 msgid "Current Maintainer"
-msgstr "Şu anki geliştirici"
+msgstr "Güncel Geliştirici"
 
 #: .tmp/systemmanager/main.py:73
 msgid ""
@@ -98,8 +101,10 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
-"Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
+"Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olup olmadığını "
+"kontrol edin."
 
 #: .tmp/systemmanager/main.py:101
 msgid "None"
 msgstr "Hiçbiri"
+
