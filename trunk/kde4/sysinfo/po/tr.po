@@ -3,23 +3,24 @@
 # Copyright (C) 2002 SuSE Linux AG.
 # Copyright (C) 2000, 2001 SuSE GmbH.
 #
-# Gokmen GOKSEL <gokmen@pardus.org.tr>, 2009
+# Gokmen GOKSEL <gokmen@pardus.org.tr>, 2009.
 # James Ogley <ogley@suse.co.uk>, 2000, 2001.
 # Tora Toraman <toratoraman@suse-tr.com>, 2006.
 # Ömer Kehri <xanathar@gmx.com.tr>, 2006.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-08 11:17+0300\n"
-"PO-Revision-Date: 2006-10-12 05:15+0100\n"
-"Last-Translator: Ömer Kehri <xanathar@gmx.com.tr>\n"
-"Language-Team: Turkish <yast-int@suse.de>\n"
+"PO-Revision-Date: 2009-06-27 19:30+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: KBabel 1.11.2\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: src/sysinfo.cpp:83
 msgid "%1 GB"
@@ -40,23 +41,23 @@ msgstr "Mevcut değil"
 
 #: src/sysinfo.cpp:141
 msgid "Network is <strong>shutting down</strong>"
-msgstr "Ağ bağlantısı <strong>sonlandırılıyor</strong>"
+msgstr "Ağ <strong>kapanıyor</strong>"
 
 #: src/sysinfo.cpp:143
 msgid "<strong>Establishing</strong> connection to the network"
-msgstr "Ağ Bağlantısı <strong>kuruluyor</strong>"
+msgstr "Ağa bağlantı <strong>kuruluyor</strong>"
 
 #: src/sysinfo.cpp:145
 msgid "You are <strong>online</strong>"
-msgstr "<strong>Çevrimiçi</strong> gözüküyorsunuz"
+msgstr "<strong>Çevrimiçi</strong> durumdasınız"
 
 #: src/sysinfo.cpp:147
 msgid "You are <strong>offline</strong>"
-msgstr "<strong>Çevrimdışı</strong> gözüküyorsunuz"
+msgstr "<strong>Çevrimdışı</strong> durumdasınız"
 
 #: src/sysinfo.cpp:150
 msgid "Unknown network status"
-msgstr "Bilinmeyen ağ bağlantı durumu"
+msgstr "Bilinmeyen ağ durumu"
 
 #: src/sysinfo.cpp:235
 msgid "Looking for hardware information..."
@@ -69,8 +70,8 @@ msgstr "Bilgisayarım"
 #: src/sysinfo.cpp:239
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
 msgstr ""
-"Klasörler, Sabit Disk Sürücüler, Tak-Çıkar Aygıtlar, Sistem Bilgisi ve daha "
-"fazlası..."
+"Klasörler, Sabit Disk Sürücüler, Çıkarılabilir Aygıtlar, Sistem Bilgisi ve "
+"daha fazlası..."
 
 #: src/sysinfo.cpp:246
 msgid "Common Folders"
@@ -78,7 +79,7 @@ msgstr "Ortak Klasörler"
 
 #: src/sysinfo.cpp:247
 msgid "My Home Folder"
-msgstr "Ev Dizini"
+msgstr "Ev Dizinim"
 
 #: src/sysinfo.cpp:248
 msgid "Root Folder"
@@ -90,7 +91,7 @@ msgstr "Ağ Klasörleri"
 
 #: src/sysinfo.cpp:254
 msgid "Network"
-msgstr "Ağ Bağlantı Durumu"
+msgstr "Ağ"
 
 # classnames.ycp:45
 #: src/sysinfo.cpp:261
@@ -99,11 +100,11 @@ msgstr "Bellek"
 
 #: src/sysinfo.cpp:263
 msgid "Ram : %1 free of %2"
-msgstr "Ram : %2'ın %1 kadarı boş"
+msgstr "RAM : %1 / %2 boş"
 
 #: src/sysinfo.cpp:266
 msgid "Swap: %1 free of %2"
-msgstr "Takas: %2'ın %1 kadarı boş"
+msgstr "Takas: %1 / %2 boş"
 
 #: src/sysinfo.cpp:274
 msgid "Disks"
@@ -115,7 +116,7 @@ msgstr "İşletim Sistemi"
 
 #: src/sysinfo.cpp:285
 msgid "Kde <b>%1</b> on <b>%2</b>"
-msgstr "<b>%2</b> üzerinde Kde <b>%1</b>"
+msgstr "<b>%2</b> üzerinde KDE <b>%1</b>"
 
 # classnames.ycp:93 clients/hwinfo.ycp:103
 #: src/sysinfo.cpp:297
@@ -133,7 +134,7 @@ msgstr " çekirdek"
 
 #: src/sysinfo.cpp:311
 msgid "Display"
-msgstr "Görüntü Özellikleri"
+msgstr "Görüntü"
 
 #: src/sysinfo.cpp:314
 msgid "Driver: "
@@ -141,15 +142,15 @@ msgstr "Sürücü: "
 
 #: src/sysinfo.cpp:492
 msgid "Mounted on %1"
-msgstr "%1'e bağlanmış"
+msgstr "%1 konumuna bağlı"
 
 #: src/sysinfo.cpp:492
 msgid "Not mounted"
-msgstr "Bağlanmamış"
+msgstr "Bağlı değil"
 
 #: src/sysinfo.cpp:497
 msgid "%1 free of %2"
-msgstr "%2'ın %1 kadarı boş"
+msgstr "%1 / %2 boş"
 
 #~ msgid "%1 (+ %2 Caches)"
 #~ msgstr "%1 (+ %2 ön bellek)"
