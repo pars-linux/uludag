@@ -2,6 +2,9 @@
 {% load i18n %}
 {% block title %}{% trans 'Package Search' %}{% endblock %}
 {% block content %}
+	<div style="width:50%">{% blocktrans %}Welcome to Pardus Package Search! Via our search engine, you can find out to which package a file belongs to,
+	which files a package contains, which packages exist in the repos. Of course, you can search partially.{% endblocktrans %}</div>
+
         <h2 align="center">{% trans 'Usage' %}</h2>
 
 	<table align="center">
@@ -10,7 +13,7 @@
 		<th>{% trans 'Meaning' %}</th>
 	</tr>
 	<tr>
-		<td>{% trans 'term in:packge' %}</td>
+		<td>{% trans 'term in:package' %}</td>
 		<td>{% trans 'Search for "term" in "package"' %}</td>
 
 	</tr>

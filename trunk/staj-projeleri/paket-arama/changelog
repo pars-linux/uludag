@@ -1,5 +1,12 @@
 2009-06-29  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
+	* Cleared up some old code (from multi-table system)
+	* Theme adapted to color "lal".
+	* Added a welcome, guide text.
+	* Updated po/mo files.
+
+2009-06-29  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
+
 	* We now use only one table (packages) and one model (Repo).
 	* Added package information page links on the result pages.
 	* Added Pardus 2009 support.

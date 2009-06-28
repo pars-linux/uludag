@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
-from search.pathsearch.models import Repo, Pardus2007, Pardus2008, Contrib2008
+from search.pathsearch.models import Repo
 from django.db import models
 from search.settings import versions, default_version
 from django.template import RequestContext
@@ -27,7 +27,6 @@ def index(request, version=default_version):
         
         elif entry.strip().startswith('p:'):
             pkg = entry[2:].strip()
-	    # be careful, order of entry is different! you'd better find a solution for this.
             return search_for_package(request, version, entry, pkg)
             
         # If search form is submitted, redirect...

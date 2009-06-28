@@ -2,134 +2,155 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Ahmet Emre Aladağ <ahmetemrealadag@gmail.com>, 2008.
+# Ahmet Emre Aladağ <ahmetemrealadag@gmail.com>, 2009.
+# Ahmet Emre Aladağ <aladagemre@users.sourceforge.net>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-19 14:35+0300\n"
-"PO-Revision-Date: 2008-10-11 00:47+0300\n"
-"Last-Translator: Ahmet Emre Aladağ\n"
-"Language-Team:  <tr@li.org>\n"
+"POT-Creation-Date: 2009-06-29 01:29+0300\n"
+"PO-Revision-Date: 2009-06-29 01:27+0300\n"
+"Last-Translator: Ahmet Emre Aladağ <aladagemre@users.sourceforge.net>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: settings.py:26
+#: settings.py:29
 msgid "Turkish"
 msgstr "Türkçe"
 
-#: settings.py:28
+#: settings.py:30
 msgid "English"
 msgstr "İngilizce"
 
-#: templates/base.html:9 templates/index.html:3
+#: pagination/templates/pagination/pagination.html:5
+#: pagination/templates/pagination/pagination.html:7
+msgid "previous"
+msgstr "önceki"
+
+#: pagination/templates/pagination/pagination.html:21
+#: pagination/templates/pagination/pagination.html:23
+msgid "next"
+msgstr "sonraki"
+
+#: templates/base.html:10 templates/index.html:3
 msgid "Package Search"
 msgstr "Paket Arama"
 
-#: templates/base.html:27 templates/base.html.py:28 templates/base.html:29
-#: templates/base.html.py:30
+#: templates/base.html:28 templates/base.html.py:29 templates/base.html:30
+#: templates/base.html.py:31 templates/pathsearch/results.html:41
+#: templates/pathsearch/results.html:42 templates/pathsearch/results.html:43
+#: templates/pathsearch/results.html:44
 msgid "packages"
 msgstr "paketler"
 
-#: templates/base.html:27
+#: templates/base.html:28
 msgid "Information"
 msgstr "Genel Bilgiler"
 
-#: templates/base.html:28
+#: templates/base.html:29
 msgid "Source Packages"
 msgstr "Kaynak Paketler"
 
-#: templates/base.html:29
+#: templates/base.html:30
 msgid "Binary Packages"
 msgstr "İkili Paketler"
 
-#: templates/base.html:30
+#: templates/base.html:31
 msgid "Packagers"
 msgstr "Paketçiler"
 
-#: templates/base.html:31 templates/base.html.py:41
+#: templates/base.html:32 templates/base.html.py:42
 msgid "Search"
 msgstr "Arama"
 
-#: templates/base.html:37 templates/base.html.py:56
+#: templates/base.html:38 templates/base.html.py:58
 msgid "Back"
 msgstr "Geri"
 
-#: templates/base.html:43 templates/base.html.py:45
+#: templates/base.html:45 templates/base.html.py:47
 msgid "Group Packages"
 msgstr "Paketleri Grupla"
 
-#: templates/index.html:5 templates/index.html.py:9
+#: templates/index.html:5
+msgid ""
+"Welcome to Pardus Package Search! Via our search engine, you can find out to "
+"which package a file belongs to,\n"
+"\twhich files a package contains, which packages exist in the repos. Of "
+"course, you can search partially."
+msgstr ""
+"Pardus Paket Arama'ya Hoşgeldiniz! Arama motorumuz vasıtasıyla bir dosyanın "
+"hangi paketten çıktığını, bir paketin içerisinde hangi dosyalar olduğunu, "
+"depolarda hangi paketler olduğunu bulabilirsiniz. Elbette, kısmi arama "
+"yapmanız da mümkün."
+
+#: templates/index.html:8 templates/index.html.py:12
 msgid "Usage"
 msgstr "Kullanım"
 
-#: templates/index.html:10
+#: templates/index.html:13
 msgid "Meaning"
 msgstr "Anlamı"
 
-#: templates/index.html:13
-msgid "term in:packge"
+#: templates/index.html:16
+msgid "term in:package"
 msgstr "ifade in:paket"
 
-#: templates/index.html:14
+#: templates/index.html:17
 msgid "Search for \"term\" in \"package\""
 msgstr "\"paket\" içerisinde \"ifade\" ara"
 
-#: templates/index.html:18
+#: templates/index.html:21
 msgid "in:package"
 msgstr "in:paket"
 
-#: templates/index.html:19
+#: templates/index.html:22
 msgid "List all paths in \"package\""
 msgstr "\"paket\" içerisindeki tüm yolları listele"
 
-#: templates/index.html:22
+#: templates/index.html:25
 msgid "p:package"
 msgstr "p:paket"
 
-#: templates/index.html:24
+#: templates/index.html:27
 msgid "Search for packages related to \"package\""
 msgstr "\"paket\"e benzer tüm paketleri listele"
 
-#: templates/index.html:27
+#: templates/index.html:30
 msgid "p:"
 msgstr "p:"
 
-#: templates/index.html:28
+#: templates/index.html:31
 msgid "List all packages"
 msgstr "Tüm paketleri listele"
 
-#: templates/index.html:32
+#: templates/index.html:35
 msgid "term"
 msgstr "ifade"
 
-#: templates/index.html:33
+#: templates/index.html:36
 msgid "Search for \"term\" in all packages"
 msgstr "Tüm paketlerde \"ifade\"yi ara"
 
-#: templates/pathsearch/packages.html:2
+#: templates/pathsearch/packages.html:5 templates/pathsearch/results.html:7
 #, python-format
-msgid "Results for %(package)s"
-msgstr "%(package)s için sonuçlar"
+msgid "Results for %(package_name)s"
+msgstr "%(package_name)s için sonuçlar"
 
 #: templates/pathsearch/results.html:5
 #, python-format
 msgid "Results for %(term)s"
 msgstr "%(term)s için sonuçlar"
 
-#: templates/pathsearch/results.html:7
-#, python-format
-msgid "Results for %(package_name)s"
-msgstr "%(package)s için sonuçlar"
-
 #: templates/pathsearch/results.html:16
 #, python-format
 msgid "Packages containing files related to %(term)s"
 msgstr "%(term)s ile alakalı dosya içeren paketler"
 
-#: templates/pathsearch/results.html:19 templates/pathsearch/results.html:56
+#: templates/pathsearch/results.html:19 templates/pathsearch/results.html:61
 msgid "Package"
 msgstr "Paket"
 
@@ -151,16 +172,34 @@ msgstr ""
 "<a href=\"/search/%(current_version)s/package/%(package_name)s/list/\">%"
 "(package_name)s</a> içerisindeki dosyalar:"
 
-#: templates/pathsearch/results.html:43 templates/pathsearch/results.html:57
+#: templates/pathsearch/results.html:41
+msgid "Stable Binary"
+msgstr "Kararlı İkili"
+
+#: templates/pathsearch/results.html:42
+msgid "Devel Binary"
+msgstr "Geliştirme İkili"
+
+#: templates/pathsearch/results.html:43
+msgid "Stable Source"
+msgstr "Kararlı Kaynak"
+
+#: templates/pathsearch/results.html:44
+msgid "Devel Source"
+msgstr "Geliştirme Kaynak"
+
+#: templates/pathsearch/results.html:48 templates/pathsearch/results.html:62
 msgid "Filepath"
 msgstr "Dosya yolu"
 
-#: templates/pathsearch/results.html:53
+#: templates/pathsearch/results.html:58
 #, python-format
 msgid "Packages and paths of files related to %(term)s:"
 msgstr "%(term)s ile alakalı dosyaların paket ve yolları:"
 
-#: templates/pathsearch/results.html:71
+#: templates/pathsearch/results.html:76
 msgid "No results..."
 msgstr "Sonuç bulunamadı..."
 
+#~ msgid "Results for %(package)s"
+#~ msgstr "%(package)s için sonuçlar"
