@@ -1,0 +1,107 @@
+# translation of de.po to German
+# System Manager.
+# Copyright (C) 2009 TÜBİTAK/UEKAE
+# This file is distributed under the same license as the System Manager package.
+#
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
+# Klemens Häckel <click3d at linuxmail dot org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-25 15:31+0300\n"
+"PO-Revision-Date: 2009-06-27 20:03-0400\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
+"Language-Team: German <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/ui_main.py:156
+msgid "Language Settings"
+msgstr "Spracheinstellung"
+
+#: .tmp/ui_main.py:157
+msgid "System Language:"
+msgstr "Systemsprache:"
+
+#: .tmp/ui_main.py:158
+msgid "Console Keyboard Layout:"
+msgstr "Tastatur-Layout in Konsole:"
+
+#: .tmp/ui_main.py:159
+msgid ""
+"Note that these settings do not effect your desktop. Desktop settings can be "
+"changed in 'Regional & Language' module in System Settings."
+msgstr "Beachten Sie, dass die gewählte Einstellung hier keinen Einfluss auf Ihre Desktop-Umgebung hat. Um die Sprache des Desktops zu ändern, gehen Sie in das Modul: Systemeinstellungen in das Modul 'Regional & Sprache'."
+
+#: .tmp/ui_main.py:160
+msgid "Service Settings"
+msgstr "Systemdienste"
+
+#: .tmp/ui_main.py:161
+msgid "First Service to Start:"
+msgstr "Erster Dienst beim Systemstart:"
+
+#: .tmp/ui_main.py:162
+# Zweifel, ich habe in englisch nicht alles verstanden, 
+# i did not understand the last part in english..
+msgid ""
+"Although services are started parallel manner in boot process, users may "
+"want to start a single service before checking dependencies."
+msgstr "Obwohl die Dienste während des Boot-Prozesses parallel gestartet werden, kann ein Benutzer einen bestimmten Dienst starten wollen, bevor andere abhängige Dienste auf ihn zugreifen."
+
+#: .tmp/ui_main.py:163
+msgid "Clock Settings"
+msgstr "Einstellung der Uhr"
+
+#: .tmp/ui_main.py:164
+msgid "Keep the hardware clock in UTC"
+msgstr "Die Hardware-clock ist auf UTC eingestellt"
+
+#: .tmp/ui_main.py:165
+msgid "Normalize systematic drift of the hardware clock"
+msgstr "Systematische Zeitdrift der hardware-clock ausgleichen"
+
+#: .tmp/ui_main.py:166
+msgid "Console Settings"
+msgstr "Configuración de la Consola"
+
+#: .tmp/ui_main.py:167
+msgid "Number of Real Consoles:"
+msgstr "Anzahl der echten Konsolen:"
+
+#: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
+msgid "System Manager"
+msgstr "System - Manager"
+
+#: .tmp/systemmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/systemmanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/systemmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr ""
+
+#: .tmp/systemmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Aktueller Betreuer"
+
+#: .tmp/systemmanager/main.py:73
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Es gibt kein Programm das die Funktionen für den aktuellen Bildschirm ausführt.\n"
+"Bitte stellen Sie sicher, dass die entsprechenden Pakete installiert und korrekt konfiguriert wurden."
+
+#: .tmp/systemmanager/main.py:101
+
+msgid "None"
+msgstr "Keine"
+
