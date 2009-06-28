@@ -37,7 +37,12 @@
 				
 					
 				</h2>
-	
+				<div>
+				    <a href="http://{% trans "packages" %}.pardus.org.tr/info/{{current_version}}/stable/binary/{{ package_name }}.html">Stable Binary</a> | 
+				    <a href="http://{% trans "packages" %}.pardus.org.tr/info/{{current_version}}/devel/binary/{{ package_name }}.html">Devel Binary</a> |
+				    <a href="http://{% trans "packages" %}.pardus.org.tr/info/{{current_version}}/stable/source/{{ package_name }}.html">Stable Source</a> |
+				    <a href="http://{% trans "packages" %}.pardus.org.tr/info/{{current_version}}/devel/source/{{ package_name }}.html">Devel Source</a>
+				</div>
 				<table>
 					<tr class="table-top">
 						<th>{% trans 'Filepath' %}</th>

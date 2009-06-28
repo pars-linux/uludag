@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
-from search.pathsearch.models import Pardus2007, Pardus2008, Contrib2008
+from search.pathsearch.models import Repo, Pardus2007, Pardus2008, Contrib2008
 from django.db import models
 from search.settings import versions, default_version
 from django.template import RequestContext
@@ -26,7 +27,8 @@ def index(request, version=default_version):
         
         elif entry.strip().startswith('p:'):
             pkg = entry[2:].strip()
-            return search_for_package(request, version, pkg)
+	    # be careful, order of entry is different! you'd better find a solution for this.
+            return search_for_package(request, version, entry, pkg)
             
         # If search form is submitted, redirect...
         return search_in_all_packages(request, version)
@@ -35,19 +37,8 @@ def index(request, version=default_version):
     return render_to_response('index.html', {'current_version':version,
                                              'versions'       :versions})
 
-def ENTRY(version):
-    match = {
-             'pardus-2007' : Pardus2007,
-             'pardus-2008' : Pardus2008,
-             'contrib-2008' : Contrib2008,
-             }
-    try:
-        return match[version]
-    except:
-        raise Http404
-
 def list_package_contents(request, version, package_name):
-    entry_list = ENTRY(version).objects.filter(package = package_name)
+    entry_list = Repo.objects.filter(repo = version, package = package_name)
     
     return render_to_response('pathsearch/results.html', {
                                                           'entry_list'      :   entry_list,
@@ -59,10 +50,10 @@ def list_package_contents(request, version, package_name):
 def search_for_package(request, version, package_name):
     """Searches for a package related to given name in the URL."""
     if not package_name.strip():
-        package_list = ENTRY(version).objects.values_list('package').order_by('package').distinct()
+        package_list = Repo.objects.values_list('package').order_by('package').distinct()
 
     else:
-        package_list = ENTRY(version).objects.values_list('package').order_by('package').distinct().filter(package__contains=package_name)
+        package_list = Repo.objects.values_list('package').order_by('package').distinct().filter(package__contains=package_name)
     
     #package_list = [p.package for p in package_list]
     package_list = [p[0] for p in package_list]
@@ -81,7 +72,7 @@ def search_for_package(request, version, package_name):
                               )
 def search_in_package(request, version, package_name, term):
     """Searches for term in the given package."""
-    entry_list = ENTRY(version).objects.filter(package = package_name, path__contains=term)
+    entry_list = Repo.objects.filter(package = package_name, path__contains=term)
     return render_to_response('pathsearch/results.html', {
                                                           'entry_list'      :   entry_list,
                                                           'package_name'    :   package_name,
@@ -95,7 +86,7 @@ def search_in_all_packages(request, version, term = None):
     term = term or request.POST['q']    # If no URL term specified, get the POST data.
     group = request.POST.get('group')   # Is grouping enabled?
 
-    entry_list = ENTRY(version).objects.filter(path__contains=term)
+    entry_list = Repo.objects.filter(path__contains=term)
     
     return render_to_response('pathsearch/results.html', {
                                                           'entry_list'      :   entry_list,
