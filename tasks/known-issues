@@ -9,7 +9,6 @@
     - Logout pictures are not rendered correctly when effects are disabled,
     - kbluetooth4 has no translations, goes background when no device is available without
     notifying the user. It crashes when the dongle is suddenly unplugged,
-    - The new system-config-printer-kde must be backported,
     - Gstreamer backend for Phonon is not able to play dvd:// and vcd://. Year is 2009,
     - KDE can't have backtrace information.
 
