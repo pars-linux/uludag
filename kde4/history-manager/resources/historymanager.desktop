@@ -1,10 +1,16 @@
 [Desktop Entry]
 Name=History Manager
 Name[tr]=Geçmiş Yöneticisi
+Name[es]=Administrador de Históricos
+Name[de]=History Manager
 GenericName=History Manager
 GenericName[tr]=Geçmiş Yöneticisi
+GenericName[es]=Administrador de Históricos
+GenericName[de]=History Manager 
 Comment=An application for managing Pisi history
 Comment[tr]=Pisi geçmişini yönetmenizi sağlayan bir uygulama
+Comment[es]=Administración históricos con ayuda del registro de instalaciones de Pisi
+Comment[de]=History Manager mit Hilfe des Pisi Registers der installierten Pakete
 Exec=history-manager
 Icon=user-away-extended
 Type=Application
