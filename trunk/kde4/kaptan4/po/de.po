@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-24 10:08+0300\n"
-"PO-Revision-Date: 2009-06-26 22:58-0400\n"
+"PO-Revision-Date: 2009-06-28 10:19-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -234,7 +234,7 @@ msgstr "Depot contrib hinzufügen"
 
 #: .tmp/ScrGoodbye.py:23
 msgid "Goodbye from Kaptan Wizard :)"
-msgstr ""
+msgstr "Ihr Assistent Kaptan verabschiedet sich :)"
 
 #: .tmp/ScrKeyboard.py:32
 msgid "Insert some catchy title about keyboards.."
@@ -318,7 +318,7 @@ msgstr "Sie sind nicht autorisiert für diesen Vorgang."
 
 #: .tmp/ScrPackage.py:79
 msgid "Authentication Error!"
-msgstr "Autentikationsproblem!"
+msgstr "Authentikationsproblem!"
 
 #: .tmp/ScrSearch.py:27
 msgid "Some catchy title about desktop search"
@@ -368,7 +368,7 @@ msgstr ""
 
 #: .tmp/ScrSmolt.py:115
 msgid "OS"
-msgstr ""
+msgstr "Betriebssystem"
 
 #: .tmp/ScrSmolt.py:116
 msgid "Default run level"
