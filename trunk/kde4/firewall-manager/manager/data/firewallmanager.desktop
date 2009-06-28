@@ -2,12 +2,16 @@
 Name=Firewall Manager
 Name[tr]=Güvenlik Duvarı Yöneticisi
 Name[sv]=Brandväggshanteraren
+Name[es]=Administrador de Cortafuegos
 GenericName=Firewall Manager
 GenericName[tr]=Güvenlik Duvarı Yöneticisi
 GenericName[sv]=Brandväggshanteraren
+GenericName[es]=Administrador de Cortafuegos
 Comment=An application for managing firewall.
 Comment[tr]=Güvenlik duvarını yönetmenizi sağlayan bir uygulama.
 Comment[sv]=Ett program för hantering av brandväggen.
+Comment[es]=Configuración de Cortafuegos
+Comment[de]=Konfiguration des Firewalls
 Exec=firewall-manager
 Icon=security-high
 Type=Application
