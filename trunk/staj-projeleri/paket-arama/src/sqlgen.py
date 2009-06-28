@@ -1,13 +1,11 @@
+# -*- coding: utf-8 -*-
+#!/usr/bin/python
 """
 SQL Generator for the Package Search system.
 
 Generates INSERT SQL Statements for each package-file statement and
 appends these statements at every 50 package into a file.
 """
-
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
 
 import pisi
 import sys
@@ -124,15 +122,16 @@ assert len(version)==4
 # -------- SQL HEADER ---------------------
 f = open(output, "w")
 f.write("""BEGIN;
-DROP TABLE IF EXISTS %(repo)s;
-CREATE TABLE `%(repo)s` (
+/*DROP TABLE IF EXISTS packages;*/
+CREATE TABLE `packages` (
     `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `repo` varchar(30) NOT NULL,
     `package` varchar(60) NOT NULL,
     `path` varchar(200) NOT NULL
 )
 ;
 COMMIT;
-""" % {'repo': underscorize(repo)})
+""") # % {'repo': underscorize(repo)})
 f.close()
 # ------------------------------------------
 
@@ -140,7 +139,7 @@ if verbose: print "Written drop/create table statements."
 if verbose: print "Fetching package information from pisi."
 
 # ---------- PACKAGE LIST ------------------
-if version == '2008':
+if version in ('2008','2009'):
     installed_packages = package_list_from_index(index_path) # Assuming all the packages are installed!
     pi = pisi.db.installdb.InstallDB()
 elif version == '2007':
@@ -167,20 +166,20 @@ for package in installed_packages:
     # Get the file list for a package
     try:
         if version == '2007':
-            files = [file.path for file in pi.files(package).list]
-        elif version == '2008':
-            files = [file.path for file in pi.get_files(package).list]
+            files = [thefile.path for thefile in pi.files(package).list]
+        elif version in ('2008','2009'):
+            files = [thefile.path for thefile in pi.get_files(package).list]
         #else:
         # for pisi api changes in the future...
-        #    files = [file.path for file in pi.get_files(package).list]
+        #    files = [thefile.path for thefile in pi.get_files(package).list]
     except:
            problematic_packages.append(package)
            continue
 
     # For each file, generate an INSERT INTO statement and append it
-    for file in files:
-        to_be_added = '''INSERT INTO %s VALUES(%d, "%s", "/%s");
-''' % (underscorize(repo), record_index, package, file)
+    for thefile in files:
+        to_be_added = '''INSERT INTO packages VALUES(%d, "%s",  "%s", "/%s");
+''' % (record_index,underscorize(repo), package, thefile)
         statements += to_be_added
         record_index += 1
     # Package FINISHED!
@@ -203,7 +202,8 @@ if version == '2007':
 # Add index and make it faster!
 if verbose: print 'Adding index'
 f = open(output, "a")
-f.write('CREATE INDEX package_index USING BTREE on %s(package);\nCOMMIT;\n' % underscorize(repo))
+f.write('CREATE INDEX package_index USING BTREE on packages(package);\n')
+f.write('CREATE INDEX repo_index USING BTREE on packages(repo);\nCOMMIT;\n')
 f.close()
 
 # Compress the SQL file.

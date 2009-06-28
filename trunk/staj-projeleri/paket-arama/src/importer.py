@@ -7,7 +7,7 @@ import os
 db_name = 'search'
 user = 'root'
 
-files = ['arama2008.sql', 'arama2007.sql']
+files = ['arama2009.sql', 'arama2008.sql', 'arama2007.sql']
 
 for file_name in files:
     print 'Uncompressing the bz2 file %s ...' % file_name

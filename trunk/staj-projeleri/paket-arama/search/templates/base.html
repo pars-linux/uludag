@@ -40,6 +40,7 @@
 		<div id="searchForm">
 			<form action="/search/{{current_version}}/" method="post">
 				<input type="text" name="q" value="{{ term }}" checked="true" size="50" style="font-size:large;"/>&nbsp;<button type="submit">{% trans 'Search' %}</button><br />
+
 			{% if group %}
 				<input type="checkbox" name="group" value="yes" checked="true"/>{% trans 'Group Packages' %}
 			{% else %}
