@@ -75,7 +75,7 @@ class Tray(KSystemTrayIcon):
             self.notification.close()
         self.notification = KNotification("Updates")
         self.notification.setText(i18n("There are <b>%1</b> updates available!", len(upgrades)))
-        self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Postpone"))))
+        self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Ignore"))))
         self.notification.setFlags(KNotification.Persistent)
         self.notification.setComponentData(KComponentData("package-manager","package-manager"))
         self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("showUpdatesSelected()")))
