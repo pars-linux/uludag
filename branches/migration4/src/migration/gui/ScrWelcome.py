@@ -13,14 +13,14 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n
+from PyKDE4.kdecore import i18n
 
 from migration.gui.ScreenWidget import ScreenWidget
 from migration.gui.ui.welcomeWidget import Ui_welcomeWidget
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = ki18n("Welcome")
-    desc = ki18n("Welcome to Migration Tool Wizard :)")
+    title = i18n("Welcome")
+    desc = i18n("Welcome to Migration Tool Wizard :)")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
