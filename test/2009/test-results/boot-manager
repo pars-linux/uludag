@@ -1,3 +1,3 @@
 - Butonların üzerine gelindiğinde açıklama gelmeli.
-- Partitionlardan biri enable durumda iken disable edildiğinde şifre istiyor, şifre istenildiğinde cancel denilirse, buton disable duruma geçiyor.
++ Partitionlardan biri enable durumda iken disable edildiğinde şifre istiyor, şifre istenildiğinde cancel denilirse, buton disable duruma geçiyor.
 - Gruba yeni bir bölüm eklerken disk bölümü kontrolü sadece aygıta bakılarak kontrol ediliyor, aygıt bölümlendirmelerine bakılarak kontrol edilebilir.
