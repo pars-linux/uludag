@@ -77,7 +77,7 @@ class NmApplet(plasmascript.Applet):
         # Listen data transfers from systemmonitor data engine ..
         self.lastActiveDevice = None
         # FIXME , systemmonitor dataengine makes plasma crash !!
-        # self.listenDataTransfers()
+        self.listenDataTransfers()
 
         self.dialog = Plasma.Dialog()
         self.dialog.setWindowFlags(Qt.Popup)
@@ -135,8 +135,9 @@ class NmApplet(plasmascript.Applet):
     def stopFollowing(self, device):
         self.transmitterBlinker.stop()
         self.receiverBlinker.stop()
-        self.engine.disconnectSource(self.transmitterBlinker.path, self)
-        self.engine.disconnectSource(self.receiverBlinker.path, self)
+        # FIXME There is a bug in SIP, we disabled blinker support for now
+        # self.engine.disconnectSource(self.transmitterBlinker.path, self)
+        # self.engine.disconnectSource(self.receiverBlinker.path, self)
 
     @pyqtSignature("dataUpdated(const QString &, const Plasma::DataEngine::Data &)")
     def dataUpdated(self, sourceName, data):
