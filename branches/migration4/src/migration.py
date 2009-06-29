@@ -21,8 +21,22 @@ from migration.about import aboutData
 
 #Screens
 import migration.gui.ScrWelcome as welcome
+import migration.gui.ScrUser as user
+import migration.gui.ScrUserFiles as userfiles
+import migration.gui.ScrOptions as options
+import migration.gui.ScrSummary as summary
+import migration.gui.ScrProgress as progress
 
 
+def loadFile(_file):
+    try:
+        f = file(_file)
+        d = [a.strip() for a in f]
+        d = (x for x in d if x and x[0] != "#")
+        f.close()
+        return d
+    except:
+        return []
 
 def getKernelOpt(cmdopt=None):
     if cmdopt:
@@ -44,9 +58,9 @@ def isLiveCD():
     return False
 
 if isLiveCD():
-    availableScreens = [welcomeWidget]
+    availableScreens = [welcome, user, userfiles, options, summary, progress]
 else:
-    availableScreens = [welcomeWidget]
+    availableScreens = [welcome, user, userfiles, options, summary, progress]
 
 class Migration(QtGui.QWidget):
     def __init__(self, parent=None):
@@ -59,19 +73,18 @@ class Migration(QtGui.QWidget):
         self.menuText = ""
         self.config = KConfig("migrationrc")
         self.createWidget(self.screens)
-        
+
         self.screenId = []
+
         for each in self.screens:
-            title = each.Widget().windowTitle()
+            title = each.Widget().title
             self.screenId.append(title)
-            
             if self.screens.index(each) == 0:
                 self.menuText += self.putBold(title)
             else:
                 self.menuText += self.putBr(title)
-        
         self.ui.labelMenu.setText(self.menuText)
-        
+
         QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
         QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
         QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
@@ -81,7 +94,7 @@ class Migration(QtGui.QWidget):
     def slotNext(self):
         self.menuText = ""
         currentIndex = self.ui.mainStack.currentIndex() + 1
-        
+
         for each in self.screenId:
             i = self.screenId.index(each)
             if currentIndex < len(self.screenId):
@@ -89,18 +102,18 @@ class Migration(QtGui.QWidget):
                     self.menuText += self.putBold(self.screenId[i])
                 else:
                     self.menuText += self.putBr(self.screenId[i])
-        
+
         self.ui.labelMenu.setText(self.menuText)
         _widget = self.ui.mainStack.currentWidget()
         _return = _widget.execute()
-        
+
         if _return:
             self.stackMove(self.getCurrentStackId(self.moveInc))
             self.moveInc = 1
-        
+
     def slotBack(self):
         self.menuText = ""
-        currentIndex = self.ui.mainStack.currnetIndex()
+        currentIndex = self.ui.mainStack.currentIndex()
         for each in self.screenId:
             i = self.screenId.index(each)
             if i<= len(self.screenId) and not i ==0:
@@ -108,22 +121,22 @@ class Migration(QtGui.QWidget):
                     self.menuText += self.putBold(self.screenId[i-1])
                 else:
                     self.menuText += self.putBr(self.screenId[i-1])
-        
+
         self.menuText += self.putBr(self.screenId[i-1])
         self.ui.labelMenu.setText(self.menuText)
         _widget = self.ui.mainStack.currentWidget() 
         _widget.backCheck()
         self.moveInc = 1
-            
+
     def enableNext(self):
         self.buttonNext.setEnabled(True)
-    
+
     def disableNext(self):
         self.buttonNext.setEnabled(False)
-        
+
     def enableBack(self):
         self.buttonBack.setEnabled(True)
-    
+
     def disableBack(self):
         self.buttonBack.setEnabled(False)
 
@@ -132,46 +145,46 @@ class Migration(QtGui.QWidget):
 
     def isBackEnabled(self):
         return self.buttonBack.isEnabled()
-    
+
     def putBr(self, item):
         return unicode("» ") + item + "<br>"
-    
+
     def putBold(self, item):
         return "<b>" + unicode("» ") + item + "</b><br>"
-    
+
     def getCurrentStackId(self, d):
-        new = self.ui.mainStack.currnetIndex() + d
+        new = self.ui.mainStack.currentIndex() + d
         total = self.ui.mainStack.count()
         if new < 0 : new = 0
         if new > total: new = total
         return new
-    
+
     def setCurrentStack(self,id=None):
         if id:
             self.stackMove(id)
-            
+
     def createWidget(self, screens = []):
         self.ui.mainStack.removeWidget(self.ui.page)
         for screen in screens:
             _screen = screen.Widget()
             self.ui.mainStack.addWidget(_screen)
-        
+
         self.stackMove(0)
-    
+
     def stackMove(self, id):
         if not id == self.ui.mainStack.currentIndex() or id == 0:
             self.ui.mainStack.setCurrentIndex(id)
             _widget = self.ui.mainStack.currentWidget()
             _widget.update()
             _widget.show()
-            
+
         if self.ui.mainStack.currentIndex() == len(self.screens) - 1 :
             self.ui.buttonNext.hide()
             self.ui.buttonFinish.show()
         else:
             self.ui.buttonNext.show()
             self.ui.buttonFinish.hide()
-        
+
         if self.ui.mainStack.currentIndex() == 0:
             self.ui.buttonBack.hide()
         else:
@@ -180,7 +193,7 @@ class Migration(QtGui.QWidget):
     def __del__(self):
         group = self.config.group("General")
         group.writeEntry("RunOnStart", "False")
-    
+
 if __name__ =="__main__":
 
     KCmdLineArgs.init(sys.argv, aboutData)
@@ -192,4 +205,4 @@ if __name__ =="__main__":
     migration.move(geometry.width()/2 - migration.width()/2, geometry.height()/2 - migration.height()/2) 
     application.exec_()
 
-    
+
