@@ -95,12 +95,20 @@ class Iface(Singleton):
         logger.debug("Re-setting repo activities: %s" % repos)
         self.link.System.Manager["pisi"].setRepoActivities(repos)
 
+    def __configChanged(self, category, name, value):
+        config = self.getConfig()
+        return not str(config.get(category, name)) == str(value)
+
     def setCacheLimit(self, useCache, limit):
         logger.debug("Use cache: %s - change limit to: %s" % (useCache, limit))
+        if not self.__configChanged("general", "package_cache", useCache) and not self.__configChanged("general", "package_cache_limit", limit):
+            return
         self.link.System.Manager["pisi"].setCache(useCache, limit)
 
     def setConfig(self, category, name, value):
         logger.debug("Setting config... Category: %s, Name: %s, Value: %s" % (category, name, value))
+        if not self.__configChanged(category, name, value):
+            return
         self.link.System.Manager["pisi"].setConfig(category, name, value)
 
     def setSource(self, source):
