@@ -41,6 +41,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
     def connectMainSignals(self):
         self.connect(self.settingsDialog, SIGNAL("settingsChanged()"), self.centralWidget().initialize)
+        self.connect(self.settingsDialog, SIGNAL("settingsChanged()"), self.tray.settingsChanged)
 
     def initializeTray(self):
         self.tray = Tray(self)
@@ -112,6 +113,8 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         if config.PMConfig().systemTray() and not KApplication.kApplication().sessionSaving():
             self.hide()
             return False
+        if self.tray.notification:
+            self.tray.notification.close()
         return True
 
     def queryExit(self):

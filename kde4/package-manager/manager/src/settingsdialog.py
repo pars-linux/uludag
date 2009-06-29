@@ -72,6 +72,7 @@ class GeneralSettings(SettingsTab):
         self.connect(self.settings.intervalCheck, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.useBandwidthLimit, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.intervalSpin, SIGNAL("valueChanged(int)"), self.markChanged)
+        self.connect(self.settings.systemTray, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.bandwidthSpin, SIGNAL("valueChanged(int)"), self.markChanged)
 
     def save(self):
@@ -339,11 +340,13 @@ class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.showHelp)
 
     def saveSettings(self):
+        changed = False
         for settings in [self.generalSettings, self.cacheSettings, self.repositorySettings, self.proxySettings]:
             if settings.changed:
+                changed = True
                 settings.save()
-
-        if not self.repositorySettings.changed and self.generalSettings.changed:
+        
+        if changed:
             self.emit(SIGNAL("settingsChanged()"))
 
     def showHelp(self):
