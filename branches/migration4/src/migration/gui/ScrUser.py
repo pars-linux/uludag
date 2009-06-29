@@ -13,12 +13,12 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n
+from PyKDE4.kdecore import i18n
+from PyKDE4.kdeui import KIcon
 
 from migration.gui.ui.usersItemWidget import Ui_usersItemWidget
 from migration.gui.ui.usersWidget import Ui_usersWidget
 from migration.gui.ScreenWidget import ScreenWidget
-from migration.gui.ui.welcomeWidget import Ui_welcomeWidget
 
 from migration.utils import partition
 from migration.utils import info
@@ -40,25 +40,25 @@ class Widget(QtGui.QWidget, ScreenWidget):
     screenSettings = {}
     screenSettings["hasChanged"] = False
     
-    title = ki18n("User")
-    desc = ki18n("User Profiles")
+    title = i18n("Selecting User")
+    desc = i18n("User Profiles")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
-        self.ui = Ui_welcomeWidget()
+        self.ui = Ui_usersWidget()
         self.ui.setupUi(self)
         
         item = QtGui.QListWidgetItem(self.ui.listUsers)    
         self.addUsers(item)
         item.setSizeHint(QSize(38,110))
         
-        self.ui.listUsers.connect(self.ui.listWallpaper, SIGNAL("itemSelectionChanged()"), self.setUser)
+        self.connect(self.ui.listUsers, SIGNAL("itemSelectionChanged()"), self.setUser)
     
 
     def addUsers(self, item):
         "Searches old users and adds them to UserListViewWidget"
         self.users = partition.allUsers()
-        icon = kdeui.KIcon("tux")
+        icon = KIcon("tux")
         for user in self.users:
             part, parttype, username, userdir = user
             if parttype == "Windows XP":
