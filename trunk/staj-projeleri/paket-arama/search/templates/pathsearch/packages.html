@@ -5,7 +5,7 @@
 {% block content %}
 	{% if entries %}
 		<div class="pagination">
-		    <p>Showing results between {{ entries.start_index }} and {{ entries.end_index }}:</p>
+		    <p>{{ result_count }} results<br/>Showing results between {{ entries.start_index }} and {{ entries.end_index }}:</p>
 		</div>
 		<table>
 		{% for pkg in entries.object_list %}

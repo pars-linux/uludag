@@ -123,6 +123,8 @@ assert len(version)==4
 f = open(output, "w")
 f.write("""BEGIN;
 /*DROP TABLE IF EXISTS packages;*/
+
+DELETE FROM packages WHERE repo="%(repo)s";
 CREATE TABLE `packages` (
     `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `repo` varchar(30) NOT NULL,
@@ -131,7 +133,7 @@ CREATE TABLE `packages` (
 )
 ;
 COMMIT;
-""") # % {'repo': underscorize(repo)})
+""" % {'repo': underscorize(repo)} )
 f.close()
 # ------------------------------------------
 

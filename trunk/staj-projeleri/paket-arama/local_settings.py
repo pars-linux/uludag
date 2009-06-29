@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Can add/remove a version support here
-versions = ['pardus-2008', 'contrib-2008'] #pardus-2007, pardus-2008, contrib-2008
-default_version = 'pardus-2008'
+versions = ['pardus-2009', 'pardus-2008', 'contrib-2008']
+default_version = 'pardus-2009'
 
 # Paths
 WEB_URL = 'http://paketler.pardus.org.tr/search'

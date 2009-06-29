@@ -1,3 +1,11 @@
+2009-06-30  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
+
+	* Now we remove old records before inserting new records into the
+	database. (added DELETE statement)
+	* Result count is now shown.
+	* default_version is added to settings.py, version format changed to
+	"pardus-2009" from "2009".
+
 2009-06-29  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
 	* Firefox search engine add-on updated for repo Pardus-2009.

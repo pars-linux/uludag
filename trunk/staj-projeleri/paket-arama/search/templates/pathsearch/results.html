@@ -12,8 +12,9 @@
 		{% if group %}
 		<!-- If grouping is desired -->
 			{% regroup entries by package as pkg_list %}
-		
+			<p>{{ result_count }} results.</p>
 			<h2>{% blocktrans %}Packages containing files related to {{ term }}{% endblocktrans %}:</h2>
+			
 			<table>
 				<tr class="table-top">
 					<th>{% trans 'Package' %}</th>
@@ -46,7 +47,8 @@
 				</div>
 				
 				<div class="pagination">
-				    <p>Showing results between {{ entries.start_index }} and {{ entries.end_index }}:</p>
+				    <p>{{ result_count }} results<br/>Showing results between {{ entries.start_index }} and {{ entries.end_index }}</p>
+				    
 				</div>
 				<table>
 					<tr class="table-top">
@@ -62,7 +64,7 @@
 			<!-- Search for term in all packages-->
 				<h2>{% blocktrans %}Packages and paths of files related to {{ term }}:{% endblocktrans %}</h2>
 				<div class="pagination">
-				    <p>Showing results between {{ entries.start_index }} and {{ entries.end_index }}:</p>
+				    <p>{{ result_count }} results<br/>Showing results between {{ entries.start_index }} and {{ entries.end_index }}</p>
 				</div>
 				<table>
 					<tr class="table-top">
