@@ -1,7 +1,10 @@
 \documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
 
-\title{Firewall Manager Test Cases}
-
+\title{Güvenlik Duvarı Test Aşamaları}
+\author{Semen Cirit}
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
@@ -12,195 +15,195 @@
 \maketitle
 
 \begin{enumerate}
-    \item Sistem Ayarları'ndan Güvenlik Duvarı Yöneticisi'ni açmayı deneyin.
-    \item Kmenu'den Güvenlik Duvarı Yöneticisi'ni açmayı deneyin.
-    \item Güvenlik Duvarı servisini Güvenlik Duvarı Yöneticisindeki başlat/durdur butonunu kullanarak açıp kapatmay deneyin.
+    \item Menü $\rightarrow$ Sistem Ayarları yolunu izleyerek Güvenlik Duvarı Yöneticisi'ni açmayı deneyin.
+
+    Sorunsuz bir şekilde açılabildiğini gözlemleyin.
+    \item Menü $\rightarrow$ Uygulamalar $\rightarrow$ Sistem yolunu izleyerek Güvenlik Duvarı Yöneticisi'ni açmayı deneyin.
+
+	Sorunsuz bir şekilde açılabildiğini gözlemleyin.
+    \item Güvenlik Duvarı servisini başlat/durdur butonunu kullanarak durdurun.
 
     Şu komutu çalıştırın:
 
-\begin{verbatim}
-    # service list
-\end{verbatim} 
+	\begin{verbatim}
+	# service list
+	\end{verbatim} 
 
-    iptables servisinin kapalı olduğunu doğrulayın.
+    iptables servisinin kapalı olduğunu gözlemleyin.
 
-    \item Try to start service from the start/stop button of firewall manager.
+    \item Güvenlik Duvarı servisini başlat/durdur butonunu kullanarak başlatın.
 
         Şu komutu çalıştırın:
+	
+	\begin{verbatim}
+	# service list
+	\end{verbatim}
 
-\begin{verbatim}
-    # service list
-\end{verbatim}
+       iptables servisinin başlatılmış olduğunu gözlemleyin.
 
-       iptables servisinin açık olduğunu doğrulayın.
+\item Gelen Bağlantıları Engelle ve Giden bağlantıları engelle seçenekleri için, bu seçeneklerin sağ tarafında bulunan yapılandırma butonuna basın ve aşağıdaki işlemleri gerçekleştirin:
 
-\item Push the configuration button and try these actions for options: Block incoming connections or Block outgoing connections.
     \begin{enumerate}
-        \item Port ekleme
-        \item Port silme
-        \item Port açmak
-        \item Port kapatmak
+        \item Port eklemeye çalışın.
+        \item Port silmeye çalışın.
+        \item Bir portu yukarı çekmeye çalışın.
+        \item Bir portu aşağı çekmeye çalışın.
     \end{enumerate}
 
-\textbf{Note:} Bu komutun her durum için çıktısını doğrulayın.
+Bu işlemlerin sorunsuz bir şekilde gerçekleştiğini gözlemleyin.
 
-Şu komutu çalıştırın:
+\textbf{Not:} Bu komutun aşağıda gerçekleşen her durum için çıktısını gözlemleyin.
 
 \begin{verbatim}
     # iptables --list-rules
 \end{verbatim} 
 
-\item Gelen bağlantıları engelleme:
+\item Gelen Bağlantıları Engelle seçeneği:
 
+ Güvenlik duvarı Yöneticisinden port ekledikten sonra.
 \begin{enumerate}
-     \item Güvenlik duvarı Yöneticisinden port ekledikten sonra.
-        \begin{enumerate}
-        \item Kısıtlı içerik paylaşımını aktifleştirin
-            	Yukarıdaki komuutun çıktısının şunları içerdiğini doğrulayın: 
-\begin{verbatim}
--A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports <addedPORT> \
-    -j ACCEPT
--A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports 0:1024 \
-    -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REJECT --reject-with \
-    icmp-port-unreachable
--A PARDUS-IN-MOD-SERVING -p udp -m multiport --dports 0:1024 \
-    -j REJECT --reject-with icmp-port-unreachable
-\end{verbatim} 
-        \item Gelen bağlantıları engellemeyi pasifleştirin
+  
+        \item Gelen Bağlantıları Engelle seçeneğini aktifleştirin.
+        
+	İlgili komutun çıktısının şunları içerdiğini gözlemleyin:
+	\begin{verbatim}
+	-A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports <EklenenPort> \
+	-j ACCEPT
+	-A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports 0:1024 \
+	-m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REJECT --reject-with \
+	icmp-port-unreachable
+	-A PARDUS-IN-MOD-SERVING -p udp -m multiport --dports 0:1024 \
+	-j REJECT --reject-with icmp-port-unreachable
+	\end{verbatim} 
+        \item Gelen bağlantıları engelle şeçeneğini iptal edin:
 
-              Yukarıdaki satırların aşağıdaki komutun çıktısından silindiğini doğrulayın.
-        \end{enumerate}
-    \item Port eklemeden
+              Yukarıdaki satırların ilgili komutun çıktısından silindiğini doğrulayın.
+\end{enumerate}
 
-        Yukarıdaki komutun şunları içerdiğini doğrulayın:
+\newpage
 
-\begin{verbatim}
--A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports 0:1024 \
-    -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REJECT --reject-with \
-    icmp-port-unreachable
--A PARDUS-IN-MOD-SERVING -p udp -m multiport --dports 0:1024 \
-    -j REJECT --reject-with icmp-port-unreachable
-\end{verbatim} 
+\item Internet paylaşımı seçeneği:
 
-
-\item Internet paylaşımı
-    \begin{enumerate}
-    \item Internet paylaşımını aktifleştirin
-    	(Dahili iki ethernet kartınız veya fazladan harici bir ethernet kartınız varsa bu bölümü test edebilirsiniz, yoksa bu adımı geçin.
+Internet paylaşımını aktifleştirin
+    Internet paylaşımını aktifleştirin
+    	(Dahili iki ethernet kartınız veya fazladan harici bir ethernet kartınız varsa bu bölümü test edebilirsiniz, yoksa bu adımı geçin.)
         \begin{enumerate}
 
         \item İnternet ve ev ağınız için farklı köprüler seçin.
-            	Yukarıdaki komutun çıktısının şunları içerdiğini doğrulayın:
-\begin{verbatim}
--A PARDUS-FW-MOD-SHARING -i <input> -o <output> -m state \
-    --state ESTABLISHED,RELATED -j ACCEPT
--A PARDUS-FW-MOD-SHARING -i <output> -o <input> -j ACCEPT
--t nat -A PARDUS-POST-MOD-SHARING -o <input> -j MASQUERADE
-\end{verbatim} 
+  
+         İlgili komutun çıktısının aşağıdakileri içerdiğini gözlemleyin:
+	\begin{verbatim}
+	-A PARDUS-FW-MOD-SHARING -i <input> -o <output> -m state \
+	--state ESTABLISHED,RELATED -j ACCEPT
+	-A PARDUS-FW-MOD-SHARING -i <output> -o <input> -j ACCEPT
+	-t nat -A PARDUS-POST-MOD-SHARING -o <input> -j MASQUERADE
+	\end{verbatim} 
         \item Aynı değerleri verin
 
-    	Yukarıdaki satırlaırn aşağıdaki komutun çıktısından silindiğini doğrulayın.
-        \end{enumerate}
+    	Yukarıdaki satırların ilgili komutun çıktısından silindiğini gözlemleyin.
     \end{enumerate}
 
-\item Giden bağlantılar engelle 
-\begin{enumerate}
-    \item Güvenlik Duvarı Yöneticisinden bir port ekledikten sonra.
+\item Giden bağlantılar engelle seçeneği: 
+
+Yapılandırma kısmına bir port ekledikten sonra.
         \begin{enumerate}
         \item Giden bağlantıları engellemeyi aktifleştirin
 
-            Bu portun eklendiğini doğrulayın
-
-            Komutun çıktısı aşağıdaki gibi olmalı:
-
-\begin{verbatim}
--A PARDUS-FW-MOD-BLOCK -p tcp -m multiport --dports <addedPORT> \
-    -j DROP
--A PARDUS-OUT-MOD-BLOCK -p tcp -m multiport --dports <addedPORT> \
-    -j DROP
-\end{verbatim} 
+            Bu portun eklendiğini ilgili komutu çalıştırarak gözlemleyin.
+		\begin{verbatim}
+		-A PARDUS-FW-MOD-BLOCK -p tcp -m multiport --dports <EklenenPort> \
+		-j DROP
+		-A PARDUS-OUT-MOD-BLOCK -p tcp -m multiport --dports <EklenenPort> \
+		-j DROP
+		\end{verbatim} 
 
         \item Giden bağlantıları engellemeyi iptal edin·
 
-              Yukarıdaki satırlaırn aşağıdaki komutun çıktısından silindiğini doğrulayın.
+              Yukarıdaki satırların ilgili komutun çıktısından silindiğini doğrulayın.
         \end{enumerate}
-    \end{enumerate}
-\end{enumerate}
-\item Testlerin pratik bölümü
 
-	Her iki bilgisayarda güvenlik duvarını aktileştirin.	
+\item Testlerin pratik bölümü:
 
-    	openssh servisi kapalı ise, servis yöneticisinden başlatın .
+	Her iki bilgisayarda güvenlik duvarını aktileştirin.
+
+    	Openssh servisi kapalı ise, servis yöneticisinden başlatın.
 \begin{enumerate}
-    \item Gelen Bağlantıları Engelle: 
-
+    \item Gelen Bağlantıları Engelle seçeneği: 
 	
-	
+	(Sabit ip'niz var ise veya aynı ağda iki adet makineniz var ise, bu adımı test edebilirsiniz, diğer durumda bu adımı geçin.)
     \begin{enumerate}
-        \item Gelen Bağlantıları Engellemeyi kapatın
+        \item Gelen Bağlantıları Engelleme seçeneğini pasifleştirin.
 
-		(Sabit ip'niz varsa ya da aynı ağda iki makine varsa, bu adımı test edin, yoksa atlayın.)
+              Başka bir bilgisayardan kendi bilgisayırınıza bağlanmayı deneyin.
 
-              Diğer bilgisyardan kendi bilgisyarınıza uzaktan bağlantı oluşturmayı deneyin.
-
-              Şu komutu çalıştırın:
+              Bu işlem için aşağıdaki komutu çalıştırın:
 		\begin{verbatim}
-		# ssh <your_computer_name>@<static_ip>
+		# ssh <sizin_bilgisayarınızın_adı>@<sabit_ip>
 		\end{verbatim} 
-              Bağlantının kabul edildiğini doğrulaın.
+              Bağlantının kabul edildiğini gözlemleyin.
 
-        \item Bilinen bir portu eklemeyi deneyin ve gelen bağlanıları engellmeyi aktifleştirin.
-            Bu portun ilgili servisini servis yöneticisinden açın.
+        \item Gelen Bağlantıları Engelle seçeneğini aktifleştirin.
+
+	Bilinen bir portu bu işlem için port olarak ekleyin.
+
+	Bu port için ilgili bir servis var ise, bu servisi servis yöneticisinden açın.
 
         \begin{enumerate}
             \item Başka bir bilgisyardan kendi bilgisayarınıza uzaktan bağlanmayı deneyin.
-	\begin{verbatim}
-	# ssh <your_computer_name>@<static_ip>
-	\end{verbatim}
-	Bağlantının geri çevrildiğini gözlemleyin.
 
-            \item Başka bir bilgisyardan eklediğiniz portu kullanarak kendi bilgisyarınıza uzaktan bağlanmayı deneyin.
+	Bu işlem için aşağıdaki komutu çalıştırın:
 	\begin{verbatim}
-	# ssh -p <port> <your_computer_name>@<static_ip>
+	# ssh <sizin_bilgisayarınızın_adı>@<sabit_ip>
+	\end{verbatim}
+	Bağlantıya izin verilmediğini gözlemleyin.
+
+       \item Engellenecek olan port dışında bir port kullanarak kendi bilgisyarınıza uzaktan bağlanmayı deneyin.
+
+	Bu işlem için aşağıdaki komutu çalıştırın:
+	\begin{verbatim}
+	# ssh -p <port> <sizin_bilgisayarınızın_adı>@<sabit_ip>
 	\end{verbatim}
                  Bağlantının kabul edildiğini gözlemleyin.
         \end{enumerate}
     \end{enumerate}
-    \item İnternet paylaşımı için: 
+    \item İnternet paylaşımı seçeneği: 
 
 	(Dahili iki ethernet kartınız veya fazladan harici bir ethernet kartınız varsa bu bölümü test edebilirsiniz, yoksa bu adımı geçin.)
+
         \begin{enumerate}
-        \item Bilgisyarınıza fazladan harici veya dahili ethernet kartınızı takın. Kendi bilgisayarınıza ve diğer bilgisayara ethernet kablonuzu takın. Eğer diğer bilgisayarın internet erişimi varsa durdurun. )
+        \item Harici veya dahili ethernet kartınızı kullanarak, kendi bilgisayarınız ile diğer bilgisayarı ethernet kablosu ile birbirine bağlayın. Eğer diğer bilgisayarın internet erişimi varsa durdurun.)
 
         \item Güvenlik Duvarı Yöneticisinden internet paylaşımını aktifleştirin.
 
         \item Birinci ethernet kartınızı internete köprü için, ikincisini ev ağınıza köprü için seçin.
 
-              Now try to connect to connect internet over your computer and observe it.
+              Diğer makinanın sizin makinanız üzerinden internete bağlanabildiğini gözlemleyin. (Diğer makina üzerinden ağ yöneticisi ile bunu gerçekleştirebilirsiniz.) 
         \end{enumerate}
-    \item Giden bağlantıları engelleme:
+    \item Giden Bağlantıları Engelleme seçeneği:
 
-	(Sabit ip'niz varsa ya da aynı ağda iki makine varsa, bu adımı test edin, yoksa atlayın)
+	(Sabit ip'niz varsa ya da aynı ağda iki makine varsa, bu adımı test edebilirsiniz, diğer durumda bu adımı atlayın.)
+
         \begin{enumerate}
-        \item erişim kısıtlamasını pasifleştirin
+        \item Giden bağlantı engelle seçeneğini pasifleştirin.
             \begin{enumerate}
-            \item Kendi bilgisayarıızdan bilinen bir portu kullanarak uzaktaki bilgisyara uzaktan bağlantı oluşturmayı deneyin.
-                Uzaktaki bilgisayar statik ip'ye sahipse uzaktan bağlantı için onu kullanabilirsiniz. 
+            \item Kendi bilgisayarınızdan, bilinen bir portu kullanarak, diğer bilgisayara bağlantı oluşturmayı deneyin.
 
-                Şu komutu çalıştırın:
+                (Uzaktaki bilgisayar statik ip'ye sahipse uzaktan bağlantı için onu kullanabilirsiniz.)
+
+                Bu işlemi gerçekleştirebilmek için aşağıdaki komutu çalıştırın:
 		\begin{verbatim}
-		# ssh -p <port> <remote_computer_name>@<static_ip>
+		# ssh -p <port> <diğer_bilgisayarın_adı>@<sabit_ip>
 		\end{verbatim} 
                 Bağlantının kabul edildiğini gözlemleyin.
 
             \item Bilinen bir portu ekleyin ve giden bağlantıları engellemeyi aktifleştirin.
             	
-                  Kendi bilgisayarınızdan eklediğiniz portu kullanarak diğer bilgisayara uazaktan bağlantı oluşturmayı deneyin.
-\begin{verbatim}
-    # ssh -p <port> <remote_computer_name>@<static_ip>
-\end{verbatim}
+            Kendi bilgisayarınızdan eklediğiniz portu kullanarak diğer bilgisayara uazaktan bağlantı oluşturmayı deneyin.
+		\begin{verbatim}
+		# ssh -p <port> <diğer_bilgisayarın_adı>@<sabit_ip>
+		\end{verbatim}
 
-                    Bağlantının geri çevrildiğini gözlemleyin. 
+                    Bağlantıya izin verilmediğini gözlemleyin. 
             \end{enumerate}
         \end{enumerate}
     \end{enumerate}
