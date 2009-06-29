@@ -52,11 +52,12 @@ class Notifier:
         self.setState(state)
         if self.lastMessage == message:
             return
+        id = 0
         if self.lastId:
-            self.notifier.CloseNotification(self.lastId, reply_handler=self.handler, error_handler=self.handler)
+            id = self.lastId
             self.lastId = None
         if self.proxy:
-            self.notifier.Notify("NM", 0, "", "applications-internet", "Network Manager", message, [], {}, timeout, reply_handler=self.handler, error_handler=self.handler)
+            self.notifier.Notify("NM", id, "", "applications-internet", "Network Manager", message, [], {}, timeout, reply_handler=self.handler, error_handler=self.handler)
         else:
             print "Notifier is not working, message was : %s" % message
             self.init()
