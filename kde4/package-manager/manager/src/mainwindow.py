@@ -40,12 +40,11 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.connectMainSignals()
 
     def connectMainSignals(self):
-        self.connect(self.settingsDialog, SIGNAL("settingsChanged()"), self.centralWidget().initialize)
-        self.connect(self.settingsDialog, SIGNAL("settingsChanged()"), self.tray.settingsChanged)
+        self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
+        self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
 
     def initializeTray(self):
         self.tray = Tray(self)
-        self.tray.show()
         self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayShow)
         self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
 
