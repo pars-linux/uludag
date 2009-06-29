@@ -166,14 +166,15 @@ class MainManager(QtGui.QWidget):
         menu = QtGui.QMenu(self)
         for package in self.packages:
             info = self.packages[package]
-            # Add filter menu entry
-            self.ui.filterBox.addItem(info["name"], QVariant(package))
-            if info["type"] == "wifi" and len(self.iface.devices("wireless_tools")):
-                self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
-                wifiScanner = WifiPopup(self)
-                self.ui.buttonScan.setMenu(wifiScanner)
-            # Create devices menu entry
             devices = self.iface.devices(package)
+            # Add filter menu entry
+            if len(devices):
+                self.ui.filterBox.addItem(info["name"], QVariant(package))
+                if info["type"] == "wifi":
+                    self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
+                    wifiScanner = WifiPopup(self)
+                    self.ui.buttonScan.setMenu(wifiScanner)
+            # Create devices menu entry
             if len(devices) > 0:
                 # Create profile menu with current devices
                 for device in devices.keys():
