@@ -76,8 +76,14 @@ class GeneralSettings(SettingsTab):
         self.connect(self.settings.bandwidthSpin, SIGNAL("valueChanged(int)"), self.markChanged)
 
     def save(self):
-        self.config.setShowOnlyGuiApp(self.settings.onlyGuiApp.isChecked())
-        self.config.setSystemTray(self.settings.systemTray.isChecked())
+        if self.settings.onlyGuiApp.isChecked() != self.config.showOnlyGuiApp():
+            self.config.setShowOnlyGuiApp(self.settings.onlyGuiApp.isChecked())
+            self.settings.emit(SIGNAL("packagesChanged()"))
+
+        if self.settings.systemTray.isChecked() != self.config.systemTray():
+            self.config.setSystemTray(self.settings.systemTray.isChecked())
+            self.settings.emit(SIGNAL("traySettingChanged()"))
+
         self.config.setUpdateCheck(self.settings.intervalCheck.isChecked())
         self.config.setUpdateCheckInterval(self.settings.intervalSpin.value())
 
@@ -340,14 +346,10 @@ class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.showHelp)
 
     def saveSettings(self):
-        changed = False
         for settings in [self.generalSettings, self.cacheSettings, self.repositorySettings, self.proxySettings]:
             if settings.changed:
-                changed = True
                 settings.save()
-        
-        if changed:
-            self.emit(SIGNAL("settingsChanged()"))
+        self.config = config.PMConfig()
 
     def showHelp(self):
         helpDialog = helpdialog.HelpDialog(self, helpdialog.PREFERENCES)
