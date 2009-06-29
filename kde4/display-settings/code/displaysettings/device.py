@@ -11,6 +11,8 @@
 # Please read the COPYING file.
 #
 
+from pardus.strutils import ascii_lower
+
 class Output:
     # Connection status
     Connected = 0
@@ -34,7 +36,7 @@ class Output:
             (self.DigitalOutput,   ("dfp", "dvi", "hdmi", "tmds")),
             (self.TVOutput,        ("s-video", "composite", "component", "tv")))
 
-        outputLower = name.lower()
+        outputLower = ascii_lower(name)
         for otype, names in outputTypes:
             if outputLower.startswith(names):
                 self.outputType = otype
