@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-08 11:17+0300\n"
+"POT-Creation-Date: 2009-06-29 09:51+0300\n"
 "PO-Revision-Date: 2008-05-18 13:47-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive68@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <opensuse-pt@opensuse.org>\n"
@@ -67,8 +67,8 @@ msgid "Looking for hardware information..."
 msgstr "Procurando por informações do disco..."
 
 #: src/sysinfo.cpp:237
-msgid "My Computer"
-msgstr "Meu Computador"
+msgid "System"
+msgstr "Sistema:"
 
 #: src/sysinfo.cpp:239
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
@@ -157,6 +157,9 @@ msgstr ""
 msgid "%1 free of %2"
 msgstr ""
 
+#~ msgid "My Computer"
+#~ msgstr "Meu Computador"
+
 #~ msgid "%1 (+ %2 Caches)"
 #~ msgstr "%1 (+ %2 Cache)"
 
@@ -177,9 +180,6 @@ msgstr ""
 
 #~ msgid "Current user:"
 #~ msgstr "Usuário atual:"
-
-#~ msgid "System:"
-#~ msgstr "Sistema:"
 
 #~ msgid "KDE:"
 #~ msgstr "KDE:"

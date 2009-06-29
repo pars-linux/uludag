@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-08 11:17+0300\n"
+"POT-Creation-Date: 2009-06-29 09:51+0300\n"
 "PO-Revision-Date: 2007-03-15 14:43+0100\n"
 "Last-Translator: espe <ehumet@idisc.es>\n"
 "Language-Team: Catalan\n"
@@ -60,8 +60,8 @@ msgid "Looking for hardware information..."
 msgstr "S'està cercant la informació del disc..."
 
 #: src/sysinfo.cpp:237
-msgid "My Computer"
-msgstr "El meu ordinador"
+msgid "System"
+msgstr "Sistema"
 
 #: src/sysinfo.cpp:239
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
@@ -150,6 +150,9 @@ msgstr ""
 msgid "%1 free of %2"
 msgstr ""
 
+#~ msgid "My Computer"
+#~ msgstr "El meu ordinador"
+
 #~ msgid "%1 (+ %2 Caches)"
 #~ msgstr "%1 (+ %2 memòries cau)"
 
@@ -170,9 +173,6 @@ msgstr ""
 
 #~ msgid "Current user:"
 #~ msgstr "Usuari actual:"
-
-#~ msgid "System:"
-#~ msgstr "Sistema:"
 
 #~ msgid "KDE:"
 #~ msgstr "KDE:"

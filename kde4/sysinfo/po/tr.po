@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-08 11:17+0300\n"
+"POT-Creation-Date: 2009-06-29 09:51+0300\n"
 "PO-Revision-Date: 2009-06-27 19:30+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -64,8 +64,8 @@ msgid "Looking for hardware information..."
 msgstr "Donanım bilgisi alınıyor..."
 
 #: src/sysinfo.cpp:237
-msgid "My Computer"
-msgstr "Bilgisayarım"
+msgid "System"
+msgstr "Sistem"
 
 #: src/sysinfo.cpp:239
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
@@ -152,6 +152,9 @@ msgstr "Bağlı değil"
 msgid "%1 free of %2"
 msgstr "%1 / %2 boş"
 
+#~ msgid "My Computer"
+#~ msgstr "Bilgisayarım"
+
 #~ msgid "%1 (+ %2 Caches)"
 #~ msgstr "%1 (+ %2 ön bellek)"
 
@@ -172,9 +175,6 @@ msgstr "%1 / %2 boş"
 
 #~ msgid "Current user:"
 #~ msgstr "Aktif kullanıcı:"
-
-#~ msgid "System:"
-#~ msgstr "Sistem"
 
 #~ msgid "KDE:"
 #~ msgstr "KDE:"
