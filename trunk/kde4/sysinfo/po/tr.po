@@ -79,7 +79,7 @@ msgstr "Ortak Klasörler"
 
 #: src/sysinfo.cpp:247
 msgid "My Home Folder"
-msgstr "Ev Klâsörüm"
+msgstr "Ev Klasörüm"
 
 #: src/sysinfo.cpp:248
 msgid "Root Folder"
