@@ -2,7 +2,7 @@
 \usepackage[turkish]{babel}
 \usepackage[utf8]{inputenc}
 
-\title{Kaptan Test Cases}
+\title{Kaptan Test Kriterleri}
 \author{Semen Cirit}
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
@@ -16,121 +16,121 @@
 
 \begin{enumerate}
 
-\item Try Kaptan for all resolutions. 1440*900 to 800*600. 
+\item 1440*900 den 800*600 a kadar tüm çözünürlükleri deneyin.
 
-\item Create a new user, and open this account.
+\item Yeni bir kullanıcı yaratın ve bu hesabı açın.
 \begin{enumerate}
-    \item Can kaptan open immediately?
-    \item After starting kaptan
+    \item Kaptan hemen açılıyor mu?
+    \item Kaptan açıldıkdan sonra
 
-          Execute the following command:
+          şu komutu çalıştırın:
 \begin{verbatim}
     # vi ~/.kde4/share/config/kaptanrc
 \end{verbatim} 
-        Observe that RunOnStart is equal to False.
+        RunOnStart' ın False olduğunu gözlemleyin.
 
-    \item Behaviour of the mouse
+    \item Fare davranışı
     \begin{enumerate}
-        \item Choose double click.
+        \item Çift tıklamayı seçin.
 
-            Observe the situation.
-        \item Choose single click
+            Durumu gözlemleyin.
+        \item Tek tıklamayı seçin.
 
-            Observe the situation.
+            Durumu gözlemleyin.
 
-        \item Choose left hand
+        \item Sol eli seçin.
 
-            Observe the situation.
-        \item Choose right hand
+            Durumu gözlemleyin.
+        \item Sağ eli seçin.
 
-            Observe the situation.
+            Durumu gözlemleyin.
 
-        \item Enable reverse scrolling,
+        \item Ters scroll'ü aktif hale getirin,
 
-            Observe the situation.
+            Durumu gözlemleyin.
     \end{enumerate}
 \end{enumerate}
 
-\item All of the changes below can be observed when kaptan finished. Each situation should be observed separetely.
-(For each situation, kaptan can be started from console by typing the command "kaptan")
+\item Kaptan sonlandığında alttaki bütün değişiklikler gözlenebilmelidir. Her durum tek tek gözlenmelidir.
+(Her bir durum için kaptan, console dan ``kaptan'' komutuyla başlatılabilir.)
     \begin{enumerate}
-    \item Theme and desktop type
+    \item Tema ve masaüstü tipi
         \begin{enumerate}
-        \item Select each theme and observe each situation.
-        \item Observe the situation when Desktop is selected for desktop type.
-        \item Observe the situation when  Folder view is selected for desktop type.
-        \item Change number of desktops and observe the stuation.
+        \item Her bir durumu seçin ve gözlemleyin.
+        \item Masaüstü tipi için Masaüstü görünümünü seçin ve değiştiğini onaylayın.
+        \item Masaüstü tipi için Dosya görünümünü seçin ve değiştiğini onaylayın.
+        \item Masaüstü sayısını değiştirin ve gerçekleştiğini onaylayın.
         \end{enumerate}
 
-    \item Menu Style.
+    \item Menü Stili.
         \begin{enumerate}
-        \item Observe each situation.
+        \item Her durumu gözlemleyin.
         \end{enumerate}
 
-    \item Wallpaper
+    \item Duvar Kağıdı
         \begin{enumerate}
-        \item Try to choose a wallpaper
+        \item Bir duvar kağıdı seçmeyi
             \begin{enumerate}
-            \item From the screen of kaptan, observe the situation.
-            \item From the system, observe the situation.
+            \item Kaptandan deneyin, duvar kağıdının değiştiğini onaylayın.
+            \item Sistem ayarlarından değiştirin ve değiştiğini onaylayın.
             \end{enumerate}
-        \item Not try to change wallpaper, observe the situation.
+        \item Duvar kağıdı seçmeden devam edin.
         \end{enumerate}
 
-    \item Nepomuk Semantic Desktop
+    \item Nepomuk Semantik Masaüstü
         \begin{enumerate}
-        \item Enable it and  observe the situation.
-        \item Disable it and  observe the situation.
+        \item Etkinleştirin ve durumu gözlemleyin.
+        \item Devre dışı bırakın ve durumu gözlemleyin.
         \end{enumerate}
 
-    \item Network configuration
+    \item Ağ ayarları
         \begin{enumerate}
-        \item Apply the test cases from network-manager.
+        \item Ağ Yöneticisi test kriterlerini uygulayın.
         \end{enumerate}
 
-    \item Package manager configuration
+    \item Paket Yöneticisi ayarları
         \begin{enumerate}
-        \item Updates
+        \item Güncellemeler
             \begin{enumerate}
-            \item Enable show package manager on system tray.
-                Observe that it is on system tray.
-            \item Disable show package manager on system tray.
-                Observe that it is not on system tray.
-            \item Enable control updates periodicly and give a short observable period.
-                Observe that package manager gives warnings for updates from system tray.
-            \item Disable control updates periodicly and give a short observable period.
-                Observe that package manager doesn't give warnings for updates from system tray.
+            \item Paket Yöneticisinin sistem çubuğuna yerleşmesini etkinleştirin.
+                Sistem çubuğunda olduğunu onaylayın.
+            \item Paket Yöneticisinin sistem çubuğuna yerleşmesini devre dışı bırakın.
+                Sistem çubuğunda olmadığını onaylayın.
+            \item Periyodik olarak güncellemeleri kontrol etmesini etkinleştirin ve gözlemlenebilir bir periyot zamanı verin.
+                Sistem çubuğunda güncelleme için uyarı çıktığını onaylayın.
+            \item Peryiodik güncellemeyi devre dışı bırakın.
+                Sistem çubuğunda güncelleme için herhangi bir uyarı gelmediğini onaylayın.
             \end{enumerate}
         \end{enumerate}
 
         \begin{enumerate}
-        \item Repository
+        \item Depo
             \begin{enumerate}
-            \item Enable contrib repository 
-                Then type command 
+            \item Katkı deposunu etkinleştirin
+                ardından şu komutu girin
 \begin{verbatim}
     # pisi lr 
 \end{verbatim}
-                 Observe that this repository is an output of this command.
-            \item Disable contrib repository
-                Then type command 
+                 Komutun çıktısında deponun eklendiğini onaylayın.
+            \item Katkı deposunu devre dışı bırakın
+                ardından şu komutu girin
 \begin{verbatim}
     # pisi lr 
 \end{verbatim}
-                 Observe that this repository is not an output of this command.
+                 Komutun çıktısında deponun olmadığını onaylayın.
             \end{enumerate}
         \end{enumerate}
 
-    \item Pardus settings
+    \item Pardus ayarları
         \begin{enumerate}
-        \item Try to start systems settings
-        \item Try to start user groups and help pages.
+        \item Sistem ayarlarını açın
+        \item Kullanıcı gruplarını ve yardım sayfalarını açmaya çalışın.
         \end{enumerate}
 
-    \item Smolt hardware profiler
+    \item Smolt donanım profilcisi
         \begin{enumerate}
-        \item Enable smolt 
-            Observe that the computer hardware profile can be sent to smolt.pardus.org.tr
+        \item Smolt 'u etkinleştirin.
+            Bilgisayar donanım profilinin smolt.pardus.org.tr 'ya yollandığını onaylayın.
         \end{enumerate}
     \end{enumerate}
 \end{enumerate}
