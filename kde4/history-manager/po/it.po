@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-24 10:53+0300\n"
+"POT-Creation-Date: 2009-06-29 23:11+0300\n"
 "PO-Revision-Date: 2009-06-22 14:20+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -29,29 +29,8 @@ msgstr ""
 msgid " Operations"
 msgstr "Dettagli"
 
-#: .tmp/ui_uiitem.py:85
-msgid "History Date - Time /Label"
-msgstr ""
-
-#: .tmp/ui_uiitem.py:86
-#, fuzzy
-msgid "No: Type:"
-msgstr "Tipo:"
-
-#: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:136
-msgid "Take back to this point"
-msgstr "Ripristina a questa situazione"
-
-#: .tmp/ui_uiitem.py:88
-msgid "Details"
-msgstr ""
-
-#: .tmp/ui_uiitem.py:89
-msgid "Show operation plan"
-msgstr ""
-
 #: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
-#: .tmp/ui_mainwindow.py:128
+#: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
 msgstr ""
 
@@ -196,31 +175,52 @@ msgstr ""
 msgid "No: %1   Type: %2"
 msgstr "Tipo:"
 
-#: .tmp/ui_mainwindow.py:129
+#: .tmp/ui_uiitem.py:85
+msgid "History Date - Time /Label"
+msgstr ""
+
+#: .tmp/ui_uiitem.py:86
+#, fuzzy
+msgid "No: Type:"
+msgstr "Tipo:"
+
+#: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
+msgid "Take back to this point"
+msgstr "Ripristina a questa situazione"
+
+#: .tmp/ui_uiitem.py:88
+msgid "Details"
+msgstr ""
+
+#: .tmp/ui_uiitem.py:89
+msgid "Show operation plan"
+msgstr ""
+
+#: .tmp/ui_mainwindow.py:130
 msgid "New Snapshot"
 msgstr "Nuovo punto di ripristino"
 
-#: .tmp/ui_mainwindow.py:130
+#: .tmp/ui_mainwindow.py:131
 msgid "History Settings"
 msgstr ""
 
-#: .tmp/ui_mainwindow.py:132
+#: .tmp/ui_mainwindow.py:133
 msgid "Alias :"
 msgstr ""
 
-#: .tmp/ui_mainwindow.py:133
+#: .tmp/ui_mainwindow.py:134
 msgid "Cancel"
 msgstr ""
 
-#: .tmp/ui_mainwindow.py:134
+#: .tmp/ui_mainwindow.py:135
 msgid "- Loading Pisi History"
 msgstr "Caricamento cronologia di Pisi..."
 
-#: .tmp/ui_mainwindow.py:135
+#: .tmp/ui_mainwindow.py:136
 msgid "%p%"
 msgstr "%p%"
 
-#: .tmp/ui_mainwindow.py:137
+#: .tmp/ui_mainwindow.py:138
 msgid "Copy"
 msgstr "Copia"
 

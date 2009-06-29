@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-24 10:53+0300\n"
+"POT-Creation-Date: 2009-06-29 23:11+0300\n"
 "PO-Revision-Date: 2009-06-24 13:51+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -31,33 +31,13 @@ msgstr "Başlangıçta Yükle:"
 msgid " Operations"
 msgstr " İşlem"
 
-#: .tmp/ui_uiitem.py:85
-msgid "History Date - Time /Label"
-msgstr "Geçmiş Tarih - Zaman / Etiket"
-
-#: .tmp/ui_uiitem.py:86
-msgid "No: Type:"
-msgstr "No: Tip:"
-
-#: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:136
-msgid "Take back to this point"
-msgstr "Bu noktaya geri al"
-
-#: .tmp/ui_uiitem.py:88
-msgid "Details"
-msgstr "Detaylar"
-
-#: .tmp/ui_uiitem.py:89
-msgid "Show operation plan"
-msgstr "İşlem planını göster"
-
 #: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
-#: .tmp/ui_mainwindow.py:128
+#: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
 msgstr "Geçmiş Yöneticisi"
 
 #: .tmp/historymanager/about.py:25
-msgid "(c) 2009 TÜBİTAK/UEKAE"
+msgid "(c) 2009 TUBITAK/UEKAE"
 msgstr "(c) 2009 TÜBİTAK/UEKAE"
 
 #: .tmp/historymanager/about.py:32
@@ -113,12 +93,15 @@ msgid "Takeback operation verification"
 msgstr "Geri alma işlemi doğrulama"
 
 #: .tmp/historymanager/window.py:225
-msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
+msgid ""
+"<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
 msgstr "<center> Sistemin geri alınacağı nokta: <b>%1</b> - <b>%2</b><br>"
 
 #: .tmp/historymanager/window.py:226
 msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
-msgstr "Emin değilseniz, İptal düğmesine tıklayıp Geri Alma Planına göz atın.</center>"
+msgstr ""
+"Emin değilseniz, İptal düğmesine tıklayıp Geri Alma Planına göz atın.</"
+"center>"
 
 #: .tmp/historymanager/window.py:230
 msgid "Taking back to : %1"
@@ -132,7 +115,9 @@ msgstr "Yeni görüntü al"
 msgid ""
 "<center>This will take a snapshot of your system.<br>Click Ok when you're "
 "ready.</center>"
-msgstr "<center>Sistemin durum görüntüsü alınacak.<br>Hazır olduğunuzda Tamam düğmesine tıklayın</center>"
+msgstr ""
+"<center>Sistemin durum görüntüsü alınacak.<br>Hazır olduğunuzda Tamam "
+"düğmesine tıklayın</center>"
 
 #: .tmp/historymanager/window.py:244
 msgid "Taking New Snapshot"
@@ -183,31 +168,50 @@ msgstr "Depo Güncellemesi"
 msgid "No: %1   Type: %2"
 msgstr "No: %1    Tip: %2"
 
-#: .tmp/ui_mainwindow.py:129
+#: .tmp/ui_uiitem.py:85
+msgid "History Date - Time /Label"
+msgstr "Geçmiş Tarih - Zaman / Etiket"
+
+#: .tmp/ui_uiitem.py:86
+msgid "No: Type:"
+msgstr "No: Tip:"
+
+#: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
+msgid "Take back to this point"
+msgstr "Bu noktaya geri al"
+
+#: .tmp/ui_uiitem.py:88
+msgid "Details"
+msgstr "Detaylar"
+
+#: .tmp/ui_uiitem.py:89
+msgid "Show operation plan"
+msgstr "İşlem planını göster"
+
+#: .tmp/ui_mainwindow.py:130
 msgid "New Snapshot"
 msgstr "Yeni Görüntü"
 
-#: .tmp/ui_mainwindow.py:130
+#: .tmp/ui_mainwindow.py:131
 msgid "History Settings"
 msgstr "Geçmiş Ayarları"
 
-#: .tmp/ui_mainwindow.py:132
+#: .tmp/ui_mainwindow.py:133
 msgid "Alias :"
 msgstr "Etiket:"
 
-#: .tmp/ui_mainwindow.py:133
+#: .tmp/ui_mainwindow.py:134
 msgid "Cancel"
 msgstr "İptal"
 
-#: .tmp/ui_mainwindow.py:134
+#: .tmp/ui_mainwindow.py:135
 msgid "- Loading Pisi History"
 msgstr "- Pisi Geçmişi Yükleniyor"
 
-#: .tmp/ui_mainwindow.py:135
+#: .tmp/ui_mainwindow.py:136
 msgid "%p%"
 msgstr "%%p"
 
-#: .tmp/ui_mainwindow.py:137
+#: .tmp/ui_mainwindow.py:138
 msgid "Copy"
 msgstr "Kopyala"
-
