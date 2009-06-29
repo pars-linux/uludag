@@ -541,10 +541,10 @@ bool kio_sysinfoProtocol::glInfo()
             m_info[GFX_DRIVER] = line.section(':', 1, 1);
     }
 
-    if (openGlSupported)
-        m_info[GFX_3D] = i18n("3D Supported");
-    else
+    if (!openGlSupported or m_info[GFX_MODEL].toString().startsWith("Software Rasterizer"))
         m_info[GFX_3D] = i18n("3D Not Supported");
+    else
+        m_info[GFX_3D] = i18n("3D Supported");
 
     pclose( fd );
     return true;
