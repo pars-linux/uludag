@@ -234,7 +234,7 @@ void kio_sysinfoProtocol::get( const KUrl &)
 
     infoMessage( i18n( "Looking for hardware information..." ) );
 
-    content = content.arg( i18n( "My Computer" ) ); // <title>
+    content = content.arg( i18n( "System" ) ); // <title>
     content = content.arg( "file:" + KStandardDirs::locate( "data", "sysinfo/about/stil.css" ) );
     content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
 

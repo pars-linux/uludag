@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-08 11:17+0300\n"
+"POT-Creation-Date: 2009-06-29 09:51+0300\n"
 "PO-Revision-Date: 2009-04-22 19:42-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -77,8 +77,8 @@ msgid "Looking for hardware information..."
 msgstr "Buscando información del equipo..."
 
 #: src/sysinfo.cpp:237
-msgid "My Computer"
-msgstr "Mi equipo"
+msgid "System"
+msgstr "Sistema"
 
 #: src/sysinfo.cpp:239
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
@@ -174,6 +174,9 @@ msgstr "No montado"
 #: src/sysinfo.cpp:497
 msgid "%1 free of %2"
 msgstr "%1 libre de %2"
+
+#~ msgid "My Computer"
+#~ msgstr "Mi equipo"
 
 #~ msgid "%1 (+ %2 Caches)"
 #~ msgstr "%1 (+ %2 cachés)"
