@@ -1,1 +1,14 @@
 + Sistem dili ve klavye duzeni degistir denildiginde kde dili ve klavye duzeni degismeyecegi aciklanmali
+- Sistem dili ve klavye duzeni degistir denildiginde kde dili ve klavye duzeni degismeyecegi aciklanmali
+
+    Bu açıklmalar daha kısa ve sade olmalı:
+
+    Bu değişiklikler masaüstü dil ve klavye düzenini etkilememektedir.
+    Masaüstü dil ve klavye ayarlarını, Sistem Ayarları -> Ülke, Bölge ve Dil yolunu izleyerek yapabilirsiniz.
+
+- Reset butonu çalışmıyor.
+
+- İlk başlatılacak servis açıklaması:
+
+    Açılışta tüm servisler paralel olarak başlatılmaktadır. 
+    Fakat kullanıcılar belirli bir servisi bağımlılık kontrollerinden önce bu ölümü kullanarak başlatabilir.
