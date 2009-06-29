@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 09:51+0300\n"
+"POT-Creation-Date: 2009-06-29 12:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,18 +124,22 @@ msgstr ""
 msgid "Display"
 msgstr ""
 
-#: src/sysinfo.cpp:314
-msgid "Driver: "
+#: src/sysinfo.cpp:545
+msgid "3D Not Supported"
 msgstr ""
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:547
+msgid "3D Supported"
+msgstr ""
+
+#: src/sysinfo.cpp:563
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:563
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:497
+#: src/sysinfo.cpp:572
 msgid "%1 free of %2"
 msgstr ""

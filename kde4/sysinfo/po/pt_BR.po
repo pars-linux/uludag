@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 09:51+0300\n"
+"POT-Creation-Date: 2009-06-29 12:04+0300\n"
 "PO-Revision-Date: 2008-05-18 13:47-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive68@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <opensuse-pt@opensuse.org>\n"
@@ -140,22 +140,31 @@ msgstr ""
 msgid "Display"
 msgstr "Informações de Vídeo"
 
-#: src/sysinfo.cpp:314
+#: src/sysinfo.cpp:545
 #, fuzzy
-msgid "Driver: "
-msgstr "Driver:"
+msgid "3D Not Supported"
+msgstr "%1 (Sem Suporte a 3D)"
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:547
+#, fuzzy
+msgid "3D Supported"
+msgstr "%1 (Suporte a 3D)"
+
+#: src/sysinfo.cpp:563
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:563
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:497
+#: src/sysinfo.cpp:572
 msgid "%1 free of %2"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Driver: "
+#~ msgstr "Driver:"
 
 #~ msgid "My Computer"
 #~ msgstr "Meu Computador"
@@ -242,12 +251,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Pressione o botão direito do mouse para obter mais opções como Montar ou "
 #~ "Ejetar"
-
-#~ msgid "%1 (3D Support)"
-#~ msgstr "%1 (Suporte a 3D)"
-
-#~ msgid "%1 (No 3D Support)"
-#~ msgstr "%1 (Sem Suporte a 3D)"
 
 #~ msgid "Unknown"
 #~ msgstr "Desconhecido"

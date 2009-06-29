@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 09:51+0300\n"
+"POT-Creation-Date: 2009-06-29 12:04+0300\n"
 "PO-Revision-Date: 2009-06-27 16:02+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -130,21 +130,30 @@ msgstr " kärnor"
 msgid "Display"
 msgstr "Bildskärm"
 
-#: src/sysinfo.cpp:314
-msgid "Driver: "
-msgstr "Drivrutin: "
+#: src/sysinfo.cpp:545
+#, fuzzy
+msgid "3D Not Supported"
+msgstr "%1 (Inget 3D-stöd)"
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:547
+#, fuzzy
+msgid "3D Supported"
+msgstr "%1 (3D-stöd)"
+
+#: src/sysinfo.cpp:563
 msgid "Mounted on %1"
 msgstr "Monterad på %1"
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:563
 msgid "Not mounted"
 msgstr "Inte monterad"
 
-#: src/sysinfo.cpp:497
+#: src/sysinfo.cpp:572
 msgid "%1 free of %2"
 msgstr "%1 ledigt av %2"
+
+#~ msgid "Driver: "
+#~ msgstr "Drivrutin: "
 
 #~ msgid "My Computer"
 #~ msgstr "Den här datorn"
@@ -229,12 +238,6 @@ msgstr "%1 ledigt av %2"
 
 #~ msgid "Press the right mouse button for more options like Mount or Eject"
 #~ msgstr "Tryck på höger musknapp för fler alternativ som Montera och Mata ut"
-
-#~ msgid "%1 (3D Support)"
-#~ msgstr "%1 (3D-stöd)"
-
-#~ msgid "%1 (No 3D Support)"
-#~ msgstr "%1 (Inget 3D-stöd)"
 
 #~ msgid "Unknown"
 #~ msgstr "Okänd"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 09:51+0300\n"
+"POT-Creation-Date: 2009-06-29 12:04+0300\n"
 "PO-Revision-Date: 2009-06-29 11:17+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -136,21 +136,28 @@ msgstr " çekirdek"
 msgid "Display"
 msgstr "Görüntü"
 
-#: src/sysinfo.cpp:314
-msgid "Driver: "
-msgstr "Sürücü: "
+#: src/sysinfo.cpp:545
+msgid "3D Not Supported"
+msgstr "3D Desteği Yok"
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:547
+msgid "3D Supported"
+msgstr "3D Destekli"
+
+#: src/sysinfo.cpp:563
 msgid "Mounted on %1"
 msgstr "%1 konumuna bağlı"
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:563
 msgid "Not mounted"
 msgstr "Bağlı değil"
 
-#: src/sysinfo.cpp:497
+#: src/sysinfo.cpp:572
 msgid "%1 free of %2"
 msgstr "%1 / %2 boş"
+
+#~ msgid "Driver: "
+#~ msgstr "Sürücü: "
 
 #~ msgid "My Computer"
 #~ msgstr "Bilgisayarım"
@@ -239,12 +246,6 @@ msgstr "%1 / %2 boş"
 #~ msgid "Press the right mouse button for more options like Mount or Eject"
 #~ msgstr ""
 #~ "Yükle veya Çıkar gibi komutları sağ fare tuşuna basarak görebilirsiniz"
-
-#~ msgid "%1 (3D Support)"
-#~ msgstr "%1 (3D Desteği)"
-
-#~ msgid "%1 (No 3D Support)"
-#~ msgstr "%1 (3D Desteği YOK)"
 
 #~ msgid "Unknown"
 #~ msgstr "Bilinmiyor"

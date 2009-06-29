@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 09:51+0300\n"
+"POT-Creation-Date: 2009-06-29 12:04+0300\n"
 "PO-Revision-Date: 2007-12-17 18:31+0100\n"
 "Last-Translator: Guillaume GARDET <guillaume.gardet@free.fr>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
@@ -148,22 +148,31 @@ msgstr ""
 msgid "Display"
 msgstr "Afficher les infos"
 
-#: src/sysinfo.cpp:314
+#: src/sysinfo.cpp:545
 #, fuzzy
-msgid "Driver: "
-msgstr "Pilote :"
+msgid "3D Not Supported"
+msgstr "%1 (pas de prise en charge 3D)"
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:547
+#, fuzzy
+msgid "3D Supported"
+msgstr "%1 (prise en charge 3D)"
+
+#: src/sysinfo.cpp:563
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:563
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:497
+#: src/sysinfo.cpp:572
 msgid "%1 free of %2"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Driver: "
+#~ msgstr "Pilote :"
 
 # TLABEL rpm-groups_2002_03_14_2340__25
 #~ msgid "My Computer"
@@ -266,12 +275,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Appuyez sur le bouton droit de la souris pour accéder à d'autres options, "
 #~ "telles que Monter ou Éjecter"
-
-#~ msgid "%1 (3D Support)"
-#~ msgstr "%1 (prise en charge 3D)"
-
-#~ msgid "%1 (No 3D Support)"
-#~ msgstr "%1 (pas de prise en charge 3D)"
 
 # #-#-#-#-#  libsusehwhelper.po (libsusehwhelper)  #-#-#-#-#
 # TLABEL autoinst_2002_08_07_0216__168
