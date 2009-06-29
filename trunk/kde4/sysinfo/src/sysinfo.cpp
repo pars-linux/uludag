@@ -561,7 +561,11 @@ QString kio_sysinfoProtocol::diskInfo()
             unsigned long long usage,percent,peer;
             QString label = di.label;
             QString mountState = di.mounted ? i18n( "Mounted on %1", di.mountPoint) : i18n( "Not mounted" );
+            QString path = di.mounted ? "file://" + di.mountPoint : "";
+            QString emblem = di.mounted ? QString("<div style=\"background:url('%1') no-repeat;background-position:bottom right;width:48px;height:48px;\" \\>").arg( icon( "emblem-mounted", 22, true) ) : "";
+
             QString tooltip = di.model;
+
             usage = di.total - di.avail;
             peer = di.total / 100;
             peer == 0 ? percent = 0 : percent = usage / peer;
@@ -569,16 +573,18 @@ QString kio_sysinfoProtocol::diskInfo()
 
             result +=   QString("<tr class=\"media\">"
                                 "   <td>"
-                                "   <a href=\"file:%1\" title=\"%2\">"
-                                "       <img src=\"%3\" width=\"48\" height=\"48\" />"
-                                "   </a></td>").
-                                arg( di.mountPoint ).
+                                "   <a href=\"%1\" title=\"%2\">"
+                                "       <div style=\"background:url('%3') no-repeat;width:48px;height:48px;\">"
+                                "       %4"
+                                "   </div></a></td>").
+                                arg( path ).
                                 arg( tooltip+" "+di.deviceNode ).
-                                arg( icon( di.iconName, 48, true) );
+                                arg( icon( di.iconName, 48, true) ).
+                                arg( emblem );
 
             result +=   QString("   <td>"
                                 "       <span class=\"detail\">[ %1 ]<br><span style=\"float:right\">[ %2 ]</span></span>"
-                                "       <a href=\"file:%3\" title=\"%4\">"
+                                "       <a href=\"%3\" title=\"%4\">"
                                 "       %5<br><span class=\"mediaDf\">%6</span><br></a>"
                                 "       <img class=\"diskusage\" src=\"file:%7\" width=\"%8%\">"
                                 "   </td>"
@@ -586,7 +592,7 @@ QString kio_sysinfoProtocol::diskInfo()
                                 "</tr>").
                                 arg( mountState ).
                                 arg( di.fsType ).
-                                arg( di.mountPoint ).
+                                arg( path ).
                                 arg( tooltip+" "+di.deviceNode ).
                                 arg( label ).
                                 arg( sizeStatus ).
