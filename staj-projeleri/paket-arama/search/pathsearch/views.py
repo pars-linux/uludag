@@ -68,10 +68,11 @@ def list_package_contents(request, version, package_name):
     entry_list = Repo.objects.filter(repo = version.replace("-", "_"), package = package_name)
     
     return render_to_response('pathsearch/results.html', {
-							  'entries'	    :   pager(request, entry_list),
-                                                          'package_name'    :   package_name,
-                                                          'current_version'         : version,
-                                                          'versions'       :versions,
+							  'entries'	    : pager(request, entry_list),
+							  'result_count'    : len(entry_list),
+                                                          'package_name'    : package_name,
+                                                          'current_version' : version,
+                                                          'versions'        : versions,
                                               })
 
 def search_for_package(request, version, package_name=""):
@@ -91,6 +92,7 @@ def search_for_package(request, version, package_name=""):
     
     return render_to_response('pathsearch/packages.html',
                               { 'entries'		: pager(request, package_list),
+				'result_count'	   	: len(package_list),
                                 'package_name'          : package_name,
                                 'current_version'       : version,
                                 'versions'              : versions,
@@ -103,9 +105,10 @@ def search_in_package(request, version, package_name, term):
     entry_list = Repo.objects.filter(repo = version.replace("-","_"), package = package_name, path__contains=term)
     
     return render_to_response('pathsearch/results.html', {
-							  'entries'	    :   pager(request, entry_list),
-                                                          'package_name'    :   package_name,
-                                                          'term'            :   term,
+							  'entries'	    : pager(request, entry_list),
+							  'result_count'    : len(entry_list),
+                                                          'package_name'    : package_name,
+                                                          'term'            : term,
                                                           'current_version' : version,
                                                           'versions'       :versions,
                                               })
@@ -122,7 +125,8 @@ def search_in_all_packages(request, version, term = None):
     entries = entry_list if group else pager(request, entry_list)
     
     return render_to_response('pathsearch/results.html', {
-							  'entries'	    : entries,                                                          
+							  'entries'	    : entries,  
+							  'result_count'    : len(entry_list),
                                                           'term'            : term,
                                                           'group'           : group,
                                                           'current_version' : version,

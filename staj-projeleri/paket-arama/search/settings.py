@@ -10,7 +10,8 @@ DOCUMENT_ROOT = '/home/emre/svn/uludag/trunk/staj-projeleri/paket-arama/search'
 
 
 
-versions = ['2007', '2008']
+versions = ['pardus-2009', 'pardus-2008', 'pardus-2007']
+default_version = 'pardus-2009'
 ADMINS = (
      ('Ahmet Emre Aladag', 'aladagemre@users.sourceforge.net'),
 )
