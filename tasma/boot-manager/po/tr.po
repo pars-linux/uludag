@@ -3,21 +3,24 @@
 # This file is distributed under the same license as the package.
 # Bahadır Kandemir <bahadir@pardus.org.tr>.
 #
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-12 16:30+0300\n"
-"PO-Revision-Date: 2007-04-30 09:26+0300\n"
-"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
-"Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>>\n"
+"PO-Revision-Date: 2009-06-28 13:34+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/bm_mainview.py:36
 msgid "New Entry"
-msgstr "Yeni ekle"
+msgstr "Yeni Ekle"
 
 #: src/bm_mainview.py:41
 msgid "Unused Kernels"
@@ -41,7 +44,7 @@ msgstr "Sistem:"
 
 #: src/bm_mainview.py:171
 msgid "Root (or UUID):"
-msgstr ""
+msgstr "Root (veya UUID):"
 
 #: src/bm_mainview.py:180
 msgid "Kernel:"
@@ -53,7 +56,7 @@ msgstr "Çekirdek Parametreleri:"
 
 #: src/bm_mainview.py:198
 msgid "Initial Ramdisk:"
-msgstr "Önyükleme Dosyası (Initrd):"
+msgstr "Açılış  Ramdisk:"
 
 #: src/bm_mainview.py:207
 msgid "Set as default boot entry."
@@ -65,7 +68,7 @@ msgstr "En az bir Pardus girdisi olmalı."
 
 #: src/bm_mainview.py:285
 msgid "Access Denied"
-msgstr "Erişim Engellendi"
+msgstr "Erişim Reddedildi"
 
 #: src/bm_mainview.py:287
 msgid "Are you sure you want to remove this entry from the boot loader?"
@@ -112,7 +115,7 @@ msgstr "Tamam"
 
 #: src/bm_mainview.py:476
 msgid "Do you want to uninstall selected kernel(s) from the system?"
-msgstr "Seçilen çekirdekleri sistemden kaldırmak ister misiniz?"
+msgstr "Seçilen çekirdekleri sistemden kaldırmak istiyor musunuz?"
 
 #: src/bm_mainview.py:548
 msgid "Unable to connect to DBus."
@@ -124,7 +127,7 @@ msgstr "DBus Hatası"
 
 #: src/bm_mainview.py:569 src/bm_mainview.py:596
 msgid "You are not authorized for this operation."
-msgstr "Önyükleyici ayarlarını değiştirme izniniz yok."
+msgstr "Bu işlemi yapma yetkiniz yok."
 
 #: src/bm_mainview.py:575
 msgid "Waiting DBus..."
@@ -133,16 +136,16 @@ msgstr "DBus bekleniyor..."
 #: src/bm_mainview.py:575
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
-"DBus bağlantısı beklenmedik bir şekilde kapandı, yeniden bağlanma "
-"deneniyor..."
+"DBus bağlantısı beklenmedik bir şekilde sonlandı, yeniden bağlanmaya "
+"çalışıyor..."
 
 #: src/bm_mainview.py:591
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
-"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa root olarak konsol açıp "
-"'service dbus start' komutunu deneyebilirsiniz."
+"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa konsolda root "
+"kullanıcısı olarak 'service dbus start' komutunu deneyebilirsiniz."
 
 #: src/bm_mainview.py:599
 msgid "COMAR Error"
@@ -158,11 +161,11 @@ msgstr "Açılış Yöneticisi"
 
 #: src/boot-manager.py:40
 msgid "Developer and Current Maintainer"
-msgstr "Geliştirici ve şimdiki sorumlu"
+msgstr "Geliştirici ve Şimdiki Sorumlu"
 
 #: src/boot-manager.py:41
 msgid "Contributions to Boot.Loader model."
-msgstr "Boot.Loader modeline katkılar"
+msgstr "Boot.Loader modeline katkılar."
 
 #: src/boot-manager.py:84
 msgid "Boot Manager is already started!"

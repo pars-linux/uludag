@@ -4,18 +4,20 @@
 # This file is distributed under the same license as the Disk-Manager package.
 #
 # Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-02-09 08:43+0200\n"
-"PO-Revision-Date: 2006-11-30 22:01+0200\n"
-"Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
-"Language-Team:  <tr@li.org>\n"
+"PO-Revision-Date: 2009-06-28 13:34+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
 msgid "Disk Manager"
@@ -31,7 +33,7 @@ msgstr "Diskler"
 
 #: src/diskform.py:84 src/diskform.py:111
 msgid "Partitions"
-msgstr "Disk Bölümleri"
+msgstr "Bölümler"
 
 #: src/diskform.py:105
 msgid "Mount Automatically"
@@ -43,7 +45,7 @@ msgstr "Dosya Sistemi Tipi:"
 
 #: src/diskform.py:107
 msgid "Mount Point :"
-msgstr "Bağlama Noktası :"
+msgstr "Bağlama Noktası:"
 
 #: src/diskform.py:108
 msgid "Reset"
@@ -51,7 +53,7 @@ msgstr "Sıfırla"
 
 #: src/diskform.py:109
 msgid "Additional Options :"
-msgstr "Ek Seçenekler :"
+msgstr "Ek Seçenekler:"
 
 #~ msgid "Mount point is missing"
 #~ msgstr "Bağlama noktası eksik"
