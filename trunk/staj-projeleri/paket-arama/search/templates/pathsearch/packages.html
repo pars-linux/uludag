@@ -1,18 +1,39 @@
 {% extends "base.html" %} 
 {% load i18n %}
-{# {% load pagination_tags %} #}
 
 {% block title %}{% blocktrans %}Results for {{ package_name }}{% endblocktrans %}{% endblock %}
 {% block content %}
-	{% if package_list %}
+	{% if entries %}
+		<div class="pagination">
+		    <p>Showing results between {{ entries.start_index }} and {{ entries.end_index }}:</p>
+		</div>
 		<table>
-        {#{% autopaginate package_list 200 %}#}
-		{% for pkg in package_list %}
+		{% for pkg in entries.object_list %}
 			<tr>
 				<td><a href="/search/{{current_version}}/package/{{ pkg }}/">{{ pkg }}</a></td>
 			</tr>
 		{% endfor %}
-        {#{% paginate %}#}
+        
 		</table>
+		<p>
+		<div class="pagination">
+		    <span class="step-links">
+			{% if entries.has_previous %}
+			    <a href="?page=1">First</a> | 
+			    <a href="?page={{ entries.previous_page_number }}">Previous</a> | 
+			{% endif %}
+
+			<span class="current">
+			    Page {{ entries.number }} / {{ entries.paginator.num_pages }}
+			</span>
+
+			{% if entries.has_next %}
+			    | <a href="?page={{ entries.next_page_number }}">Next</a> | 
+			    <a href="?page={{ entries.paginator.num_pages }}">Last</a>
+			{% endif %}
+			
+		    </span>
+		</div>
+		</p>
 	{% endif %}
 {% endblock %}

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Can add/remove a version support here
 versions = ['pardus-2008', 'contrib-2008'] #pardus-2007, pardus-2008, contrib-2008
 default_version = 'pardus-2008'
@@ -13,3 +14,5 @@ DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
+
+LIST_SIZE = 100

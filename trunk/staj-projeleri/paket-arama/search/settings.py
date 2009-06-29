@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Django settings for search project.
 
 DEBUG = True
@@ -24,6 +25,7 @@ DATABASE_HOST = ''             # Set to empty string for localhost. Not used wit
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
 ugettext = lambda s: s
+LIST_SIZE = 100
 
 LANGUAGES = (
 	('tr', ugettext('Turkish')),
