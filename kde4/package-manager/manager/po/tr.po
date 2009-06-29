@@ -285,7 +285,7 @@ msgstr "&Tamam"
 
 #: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:164
 msgid "&Cancel"
-msgstr "&İptâl"
+msgstr "&İptal"
 
 #: .tmp/ui_mainwidget.py:54
 msgid "Form"
