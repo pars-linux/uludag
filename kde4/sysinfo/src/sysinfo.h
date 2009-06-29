@@ -94,6 +94,7 @@ public:
         GFX_VENDOR,              // Display stuff
         GFX_MODEL,
         GFX_DRIVER,
+        GFX_3D,
         SYSINFO_LAST
     };
 
