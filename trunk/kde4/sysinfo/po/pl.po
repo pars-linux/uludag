@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 09:51+0300\n"
+"POT-Creation-Date: 2009-06-29 12:04+0300\n"
 "PO-Revision-Date: 2007-08-01 22:36+0100\n"
 "Last-Translator: wadim dziedzic <wdziedzi@aviary.pl>\n"
 "Language-Team:  <pl@li.org>\n"
@@ -138,22 +138,31 @@ msgstr ""
 msgid "Display"
 msgstr "Karta graficzna"
 
-#: src/sysinfo.cpp:314
+#: src/sysinfo.cpp:545
 #, fuzzy
-msgid "Driver: "
-msgstr "Sterownik:"
+msgid "3D Not Supported"
+msgstr "%1 (bez obsługi 3D)"
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:547
+#, fuzzy
+msgid "3D Supported"
+msgstr "%1 (z obsługą 3D)"
+
+#: src/sysinfo.cpp:563
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:563
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:497
+#: src/sysinfo.cpp:572
 msgid "%1 free of %2"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Driver: "
+#~ msgstr "Sterownik:"
 
 #~ msgid "My Computer"
 #~ msgstr "Komputer"
@@ -240,12 +249,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Aby otrzymać dalsze opcje, jak Montuj albo Wysuń, proszę użyć prawego "
 #~ "przycisku myszy."
-
-#~ msgid "%1 (3D Support)"
-#~ msgstr "%1 (z obsługą 3D)"
-
-#~ msgid "%1 (No 3D Support)"
-#~ msgstr "%1 (bez obsługi 3D)"
 
 #~ msgid "Unknown"
 #~ msgstr "Nieznany"

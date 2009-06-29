@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 09:51+0300\n"
+"POT-Creation-Date: 2009-06-29 12:04+0300\n"
 "PO-Revision-Date: 2009-04-22 19:42-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -159,21 +159,28 @@ msgstr " núcleo"
 msgid "Display"
 msgstr "Monitor"
 
-#: src/sysinfo.cpp:314
-msgid "Driver: "
-msgstr "Controlador: "
+#: src/sysinfo.cpp:545
+msgid "3D Not Supported"
+msgstr ""
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:547
+msgid "3D Supported"
+msgstr ""
+
+#: src/sysinfo.cpp:563
 msgid "Mounted on %1"
 msgstr "Montado en %1"
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:563
 msgid "Not mounted"
 msgstr "No montado"
 
-#: src/sysinfo.cpp:497
+#: src/sysinfo.cpp:572
 msgid "%1 free of %2"
 msgstr "%1 libre de %2"
+
+#~ msgid "Driver: "
+#~ msgstr "Controlador: "
 
 #~ msgid "My Computer"
 #~ msgstr "Mi equipo"

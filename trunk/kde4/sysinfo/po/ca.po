@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 09:51+0300\n"
+"POT-Creation-Date: 2009-06-29 12:04+0300\n"
 "PO-Revision-Date: 2007-03-15 14:43+0100\n"
 "Last-Translator: espe <ehumet@idisc.es>\n"
 "Language-Team: Catalan\n"
@@ -133,22 +133,31 @@ msgstr ""
 msgid "Display"
 msgstr "Mostra informació"
 
-#: src/sysinfo.cpp:314
+#: src/sysinfo.cpp:545
 #, fuzzy
-msgid "Driver: "
-msgstr "Controlador:"
+msgid "3D Not Supported"
+msgstr "%1 (sense compatibilitat amb 3D)"
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:547
+#, fuzzy
+msgid "3D Supported"
+msgstr "%1 (compatibilitat amb 3D)"
+
+#: src/sysinfo.cpp:563
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:563
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:497
+#: src/sysinfo.cpp:572
 msgid "%1 free of %2"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Driver: "
+#~ msgstr "Controlador:"
 
 #~ msgid "My Computer"
 #~ msgstr "El meu ordinador"
@@ -233,12 +242,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Premeu el botó dret del ratolí per a obtenir més opcions, com ara Munta o "
 #~ "Expulsa"
-
-#~ msgid "%1 (3D Support)"
-#~ msgstr "%1 (compatibilitat amb 3D)"
-
-#~ msgid "%1 (No 3D Support)"
-#~ msgstr "%1 (sense compatibilitat amb 3D)"
 
 #~ msgid "Unknown"
 #~ msgstr "Desconeguda"

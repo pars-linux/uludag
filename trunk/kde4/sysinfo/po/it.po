@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 09:51+0300\n"
+"POT-Creation-Date: 2009-06-29 12:04+0300\n"
 "PO-Revision-Date: 2008-03-30 15:51+0100\n"
 "Last-Translator: Giuseppe Bevacqua <gepeppe@gmail.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
@@ -140,22 +140,31 @@ msgstr ""
 msgid "Display"
 msgstr "Informazioni sulla visualizzazione"
 
-#: src/sysinfo.cpp:314
+#: src/sysinfo.cpp:545
 #, fuzzy
-msgid "Driver: "
-msgstr "Driver:"
+msgid "3D Not Supported"
+msgstr "%1 (Nessun supporto 3D)"
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:547
+#, fuzzy
+msgid "3D Supported"
+msgstr "%1 (Supporto 3D)"
+
+#: src/sysinfo.cpp:563
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:492
+#: src/sysinfo.cpp:563
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:497
+#: src/sysinfo.cpp:572
 msgid "%1 free of %2"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Driver: "
+#~ msgstr "Driver:"
 
 #~ msgid "My Computer"
 #~ msgstr "Risorse del computer"
@@ -245,12 +254,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Fare clic con il pulsante destro del mouse per visualizzare ulteriori "
 #~ "opzioni, ad esempio Montaggio o Rimuovi"
-
-#~ msgid "%1 (3D Support)"
-#~ msgstr "%1 (Supporto 3D)"
-
-#~ msgid "%1 (No 3D Support)"
-#~ msgstr "%1 (Nessun supporto 3D)"
 
 #~ msgid "Unknown"
 #~ msgstr "Sconosciuto"
