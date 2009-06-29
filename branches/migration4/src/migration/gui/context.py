@@ -11,6 +11,11 @@
 # Please read the COPYING file.
 #
 
+
+OK, WARNING, ERROR = range(3)
+
 user = None
 sources = None
 destinations = None
+options = None
+filespage = None
