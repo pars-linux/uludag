@@ -1,5 +1,14 @@
 2009-06-29  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
+	* URL Changed: package/pkg_name/list/ -> packages/pkg_name/
+	* Fixed minor bugs:
+		* extra entry parameter
+		* unused version parameter used for filtering
+		* package_name -> entry.package
+		* Some comment fixes
+
+2009-06-29  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
+
 	* Cleared up some old code (from multi-table system)
 	* Theme adapted to color "lal".
 	* Added a welcome, guide text.

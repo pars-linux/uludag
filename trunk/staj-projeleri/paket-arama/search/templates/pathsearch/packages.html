@@ -9,7 +9,7 @@
         {#{% autopaginate package_list 200 %}#}
 		{% for pkg in package_list %}
 			<tr>
-				<td><a href="/search/{{current_version}}/package/{{ pkg }}/list/">{{ pkg }}</a></td>
+				<td><a href="/search/{{current_version}}/package/{{ pkg }}/">{{ pkg }}</a></td>
 			</tr>
 		{% endfor %}
         {#{% paginate %}#}
