@@ -13,21 +13,12 @@
 import os
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n, KGlobal
+from PyKDE4.kdecore import i18n, KGlobal
 
 
 from migration.gui.ScreenWidget import ScreenWidget
 from migration.gui.ui.userFilesWidget import Ui_userFilesWidget
 
-class DirectoryViewRoot(DirectoryViewItem):
-    "root folders for DirView class"
-    def __init__(self, parent, path, name, localname):
-        DirectoryViewItemViewItem.__init__(self, parent, path)
-        self.setText(0, localname)
-        self.name = name
-        self.localname = localname
-        self.path = path
-        self.addChildren()
         
 class DirectoryViewItem(QtGui.QTreeWidgetItem):
     "an element of DirView which represents a file or directory"
@@ -125,15 +116,40 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
                 files.append(self.child(i))
             return files
 
+class DirectoryViewRoot(DirectoryViewItem):
+    "root folders for DirView class"
+    def __init__(self, parent, path, name, localname):
+        DirectoryViewItem.__init__(self, parent, path)
+        self.setText(0, localname)
+        self.name = name
+        self.localname = localname
+        self.path = path
+        self.addChildren()
+
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = ki18n("Welcome")
-    desc = ki18n("Welcome to Migration Tool Wizard :)")
+    title = i18n("Selecting Files")
+    desc = i18n("Welcome to Migration Tool Wizard :)")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_userFilesWidget()
         self.ui.setupUi(self)
-
+        
+        self.connect(self.ui.copy, SIGNAL("clicked(bool checked = false)"), self.slotRadiosClicked)
+        self.connect(self.ui.nothing, SIGNAL("clicked(bool checked = false)"), self.slotRadiosClicked)
+        self.connect(self.ui.link, SIGNAL("clicked(bool checked = false)"), self.slotRadiosClicked)
+        
+        
+    def slotRadiosClicked(self):
+        if self.ui.copy.isClicked():
+            self.ui.destination.setEnabled(True)
+            self.ui.dirview.setEnabled(True)
+        elif self.ui.nothing.isClicked():
+            self.ui.destination.setEnabled(False)
+            self.ui.dirview.setEnabled(False)
+        elif self.ui.link.isClicked():
+            self.ui.destination.setEnabled(False)
+            self.ui.dirview.setEnabled(False)
         
     def creator(self):
         # Add folders:
@@ -189,4 +205,4 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        return True
+        self.options = self.getOptions()
