@@ -13,21 +13,20 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n
+from PyKDE4.kdecore import i18n
 
 from migration.gui.ScreenWidget import ScreenWidget
 import migration.gui.context as ctx
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = ki18n("Welcome")
-    desc = ki18n("Welcome to Migration Tool Wizard :)")
+    title = i18n("Selecting Options")
+    desc = i18n("Welcome to Migration Tool Wizard :)")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
-        self.ui = Ui_welcomeWidget()
-        self.ui.setupUi(self)
         self.sources = ctx.sources
-        self.creator(self.sources)
+        print "ctx.sources:%s" % ctx.sources
+        #self.creator(self.sources)
 
     def creator(self, sources):
         self.vbox = QtGui.QVBoxLayout()
@@ -190,4 +189,4 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        return True
+        ctx.options = self.getOptions()
