@@ -117,7 +117,7 @@ msgstr "Aygıt : "
 
 #: .tmp/ui.py:343 .tmp/ui.py:357
 msgid "Cancel"
-msgstr "İptâl"
+msgstr "İptal"
 
 #: .tmp/ui.py:344
 msgid "Network Settings"
