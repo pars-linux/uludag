@@ -62,7 +62,7 @@
       <enum>QFrame::Raised</enum>
      </property>
      <property name="text">
-      <string>This application, called Kaptan Desktop, will help you with your basic but sufficient setup for your Pardus desktop in a quick manner. Please click Next to personalize your desktop. 
+      <string>This application, called Migration Tool, will help you transfer files and settings from your existing operating systems to Pardus with this application. Please click Next to personalize your desktop. 
 
 Pardus is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; helps you connect to internet, read e-mails, work with office documents and more!</string>
      </property>
