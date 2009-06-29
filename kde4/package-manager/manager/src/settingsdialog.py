@@ -55,6 +55,7 @@ class GeneralSettings(SettingsTab):
         self.settings.intervalCheck.setChecked(self.config.updateCheck())
         self.settings.intervalSpin.setValue(self.config.updateCheckInterval())
         self.settings.systemTray.setChecked(self.config.systemTray())
+        self.settings.updateCheckGroupBox.setEnabled(self.config.systemTray())
         self.__getBandwidthSettings()
 
     def __getBandwidthSettings(self):
