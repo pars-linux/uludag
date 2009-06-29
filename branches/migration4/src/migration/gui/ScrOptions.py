@@ -30,6 +30,50 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def creator(self, sources):
         self.vbox = QtGui.QVBoxLayout()
+        
+        # Wallpaper:
+        if sources.has_key("Wallpaper Path"):
+            self.wallpaperGroup = QtGui.QButtonGroup(self, "wpGroup")
+            self.wallpaperLayout = QtGui.QHBoxLayout()
+            self.vbox.addWidget(self.wallpaperGroup)
+            # New (current) Wallpaper:
+            self.newLayout = QtGui.QVBoxLayout(None)
+            self.newLayout.setAlignment(Qt.AlignCenter)
+            self.wallpaperLayout.addLayout(self.newLayout)
+            # Thumbnail:
+            self.newThumb = QtGui.QLabel(self.wpGroup, "newThumb")
+            self.newLayout.addWidget(self.newThumb)
+            if destinations.has_key("Wallpaper Path"):
+                newwp = QtGui.QImage(unicode(destinations["Wallpaper Path"]))
+                newwp = newwp.smoothScale(100, 100, QImage.ScaleMax)
+                pixmap = QtGui.QPixmap(newwp)
+                self.newThumb.setPixmap(pixmap)
+            # Radio Button:
+            self.newRadio = QtGui.QRadioButton(self.wpGroup, "newRadio")
+            if destinations.has_key("Wallpaper Path"):
+                self.newRadio.setText(i18n("Keep current wallpaper"))
+            else:
+                self.newRadio.setText(i18n("Don't use wallpaper"))
+            QtGui.QToolTip.add(self.newRadio, i18n("Does not change your wallpaper."))
+            self.newRadio.setChecked(True)
+            self.newLayout.addWidget(self.newRadio)
+            # Old Wallpaper:
+            self.oldLayout = QtGui.QVBoxLayout(None)
+            self.oldLayout.setAlignment(Qt.AlignCenter)
+            self.wpLayout.addLayout(self.oldLayout)
+            # Thumbnail:
+            self.oldThumb = QtGui.QLabel(self.wpGroup, "oldThumb")
+            oldwp = QtGui.QImage(unicode(sources["Wallpaper Path"]))
+            oldwp = oldwp.smoothScale(100, 100, QImage.ScaleMax)
+            pixmap = QtGui.QPixmap(oldwp)
+            self.oldThumb.setPixmap(pixmap)
+            self.oldLayout.addWidget(self.oldThumb)
+            # Radio Button:
+            self.oldRadio = QtGui.QRadioButton(self.wpGroup, "oldRadio")
+            self.oldRadio.setText(i18n("Use my old wallpaper"))
+            QtGui.QToolTip.add(self.oldRadio, i18n("Copies your old wallpaper to Pardus and sets it as new background image."))
+            self.oldLayout.addWidget(self.oldRadio)
+        
          # Bookmarks:
         if sources.has_key("Firefox Profile Path") or sources.has_key("Favorites Path"):
             self.bookmarks = QtGui.QGroupBox(self, "Bookmarks")
