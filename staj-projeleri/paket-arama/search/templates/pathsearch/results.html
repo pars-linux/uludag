@@ -30,9 +30,9 @@
 			<!-- Search for term in a specific package-->
 				<h2>
 					{% if term %}
-					{% blocktrans %} Files related to {{ term }} inside <a href="/search/{{current_version}}/package/{{ package_name }}/list/">{{ package_name }}</a>:{% endblocktrans %}
+					{% blocktrans %} Files related to {{ term }} inside <a href="/search/{{current_version}}/package/{{ package_name }}/">{{ package_name }}</a>:{% endblocktrans %}
 					{% else %}
-					{% blocktrans %} Files inside <a href="/search/{{current_version}}/package/{{ package_name }}/list/">{{ package_name }}</a>:{% endblocktrans %}
+					{% blocktrans %} Files inside <a href="/search/{{current_version}}/package/{{ package_name }}/">{{ package_name }}</a>:{% endblocktrans %}
 					{% endif %}
 				
 					
@@ -63,7 +63,7 @@
 					</tr>
 					{% for entry in entry_list %}
 						<tr>
-							<td><a href="/search/{{current_version}}/package/{{ package_name }}/list/">{{ entry.package }}</a></td>
+							<td><a href="/search/{{current_version}}/package/{{ entry.package }}/">{{ entry.package }}</a></td>
 							<td>{{ entry.path }}</td>
 						</tr>		
 					{% endfor %}

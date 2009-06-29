@@ -27,7 +27,7 @@ def index(request, version=default_version):
         
         elif entry.strip().startswith('p:'):
             pkg = entry[2:].strip()
-            return search_for_package(request, version, entry, pkg)
+            return search_for_package(request, version, pkg)
             
         # If search form is submitted, redirect...
         return search_in_all_packages(request, version)
@@ -37,7 +37,8 @@ def index(request, version=default_version):
                                              'versions'       :versions})
 
 def list_package_contents(request, version, package_name):
-    entry_list = Repo.objects.filter(repo = version, package = package_name)
+    entry_list = Repo.objects.filter(repo = version.replace("-", "_"), package = package_name)
+    #TODO: Find out why underscorize? Other functions?
     
     return render_to_response('pathsearch/results.html', {
                                                           'entry_list'      :   entry_list,
@@ -47,12 +48,12 @@ def list_package_contents(request, version, package_name):
                                               })
 
 def search_for_package(request, version, package_name):
-    """Searches for a package related to given name in the URL."""
+    """Searches for a package related to given name"""
     if not package_name.strip():
-        package_list = Repo.objects.values_list('package').order_by('package').distinct()
+        package_list = Repo.objects.values_list('package').order_by('package').distinct().filter(repo = version.replace("-","_"))
 
     else:
-        package_list = Repo.objects.values_list('package').order_by('package').distinct().filter(package__contains=package_name)
+        package_list = Repo.objects.values_list('package').order_by('package').distinct().filter(repo = version.replace("-","_"), package__contains=package_name)
     
     #package_list = [p.package for p in package_list]
     package_list = [p[0] for p in package_list]
@@ -71,7 +72,7 @@ def search_for_package(request, version, package_name):
                               )
 def search_in_package(request, version, package_name, term):
     """Searches for term in the given package."""
-    entry_list = Repo.objects.filter(package = package_name, path__contains=term)
+    entry_list = Repo.objects.filter(repo = version.replace("-","_"), package = package_name, path__contains=term)
     return render_to_response('pathsearch/results.html', {
                                                           'entry_list'      :   entry_list,
                                                           'package_name'    :   package_name,
@@ -85,7 +86,7 @@ def search_in_all_packages(request, version, term = None):
     term = term or request.POST['q']    # If no URL term specified, get the POST data.
     group = request.POST.get('group')   # Is grouping enabled?
 
-    entry_list = Repo.objects.filter(path__contains=term)
+    entry_list = Repo.objects.filter(repo = version.replace("-","_"), path__contains=term)
     
     return render_to_response('pathsearch/results.html', {
                                                           'entry_list'      :   entry_list,
