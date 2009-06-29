@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-29 09:51+0300\n"
-"PO-Revision-Date: 2009-06-27 19:30+0300\n"
+"PO-Revision-Date: 2009-06-29 11:17+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,7 @@ msgstr "Ortak Klasörler"
 
 #: src/sysinfo.cpp:247
 msgid "My Home Folder"
-msgstr "Ev Dizinim"
+msgstr "Ev Klâsörüm"
 
 #: src/sysinfo.cpp:248
 msgid "Root Folder"
