@@ -311,7 +311,7 @@ void kio_sysinfoProtocol::get( const KUrl &)
         staticInfo += startStock( i18n( "Display" ) );
         staticInfo += addToStock( "video-display", formatStr(m_info[GFX_MODEL].toString()), formatStr(m_info[GFX_VENDOR].toString()) );
         if (!m_info[GFX_DRIVER].isNull())
-            staticInfo += addToStock( "xorg", i18n( "Driver: " ) + m_info[GFX_DRIVER].toString() );
+            staticInfo += addToStock( "xorg", m_info[GFX_DRIVER].toString(), m_info[GFX_3D].toString());
         staticInfo += finishStock();
     }
 
@@ -456,12 +456,78 @@ void kio_sysinfoProtocol::cpuInfo()
 
 }
 
+#include <GL/glx.h>
+
+bool isOpenGlSupported() {
+
+    int scr = 0;               // print for screen 0
+    Display *dpy;              // Active X display
+    GLXContext ctx;            // GLX context
+    XVisualInfo *visinfo;      // Visual info
+    char *displayname = NULL;  // Server to connect
+    Bool allowDirect = true;   // Direct rendering only
+    Bool isEnabled = false;
+
+    // GLX attributes
+    int attribSingle[] = {
+        GLX_RGBA,
+        GLX_RED_SIZE,   1,
+        GLX_GREEN_SIZE, 1,
+        GLX_BLUE_SIZE,  1,
+        None
+    };
+    int attribDouble[] = {
+        GLX_RGBA,
+        GLX_RED_SIZE, 1,
+        GLX_GREEN_SIZE, 1,
+        GLX_BLUE_SIZE, 1,
+        GLX_DOUBLEBUFFER,
+        None
+    };
+
+    // Open the display with screen#:scr to fiddle with
+    dpy = XOpenDisplay (displayname);
+
+    if (!dpy)
+        return false;
+
+    visinfo = glXChooseVisual(dpy, scr, attribSingle);
+    if (!visinfo) 
+    {
+        visinfo = glXChooseVisual(dpy, scr, attribDouble);
+        if (!visinfo) 
+        {
+            XCloseDisplay (dpy);
+            return false;
+        }
+    }
+
+    ctx = glXCreateContext( dpy, visinfo, NULL, allowDirect );
+    if (!ctx) 
+    {
+       fprintf(stderr, "Error: glXCreateContext failed\n");
+       XFree(visinfo);
+       XCloseDisplay (dpy);
+       return false;
+    }
+
+    if(glXIsDirect(dpy, ctx))
+        isEnabled = true;
+
+    glXDestroyContext (dpy,ctx);
+    XFree(visinfo);
+    XCloseDisplay (dpy);
+
+    return isEnabled;
+}
+
 bool kio_sysinfoProtocol::glInfo()
 {
     FILE *fd = popen( "glxinfo", "r" );
     if ( !fd )
         return false;
 
+    bool openGlSupported = isOpenGlSupported();
     QTextStream is( fd, QIODevice::ReadOnly );
 
     while ( !is.atEnd() )
@@ -474,6 +540,11 @@ bool kio_sysinfoProtocol::glInfo()
         else if ( line.startsWith( "OpenGL version string:" ) )
             m_info[GFX_DRIVER] = line.section(':', 1, 1);
     }
+
+    if (openGlSupported)
+        m_info[GFX_3D] = i18n("3D Supported");
+    else
+        m_info[GFX_3D] = i18n("3D Not Supported");
 
     pclose( fd );
     return true;
