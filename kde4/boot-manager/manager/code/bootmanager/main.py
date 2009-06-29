@@ -283,7 +283,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Item state changed.
         """
         widget = self.sender()
-        self.iface.setOption("default", widget.getId())
+        def handler(package, exception, args):
+            if exception:
+                self.buildItemList()
+        self.iface.setOption("default", widget.getId(), func=handler)
 
     def slotItemEdit(self):
         """
