@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=kcmshell4 fiewwall-manager
+Exec=kcmshell4 firewall-manager
 Icon=security-high
 Type=Service
 X-KDE-ServiceTypes=KCModule
