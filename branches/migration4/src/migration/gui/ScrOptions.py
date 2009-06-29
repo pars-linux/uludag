@@ -27,6 +27,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_welcomeWidget()
         self.ui.setupUi(self)
         self.sources = ctx.sources
+        self.creator(self.sources)
 
     def creator(self, sources):
         self.vbox = QtGui.QVBoxLayout()
