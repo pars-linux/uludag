@@ -15,8 +15,6 @@
 import os
 import tempfile
 import xml.dom.minidom
-
-from qt import QString
 from PyKDE4.kdecore import KConfig, i18n
 from dbus import *
 
@@ -641,7 +639,7 @@ def addMessage(folder, message, kmail=None):
        if not kmail:
             raise Exception, "Message cannot be added"
     # Add Message:
-    ok, status = kmail.dbusAddMessage(QString(folder), message, "")
+    ok, status = kmail.dbusAddMessage(str(folder), message, "")
     if not ok:
         raise DBusException, "Can not connect to kmail with DBus"
     elif status == -4:
