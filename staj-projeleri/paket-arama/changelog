@@ -1,5 +1,17 @@
 2009-06-29  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
+	* Firefox search engine add-on updated for repo Pardus-2009.
+	* Pagination support added. Default result/page is 100.
+	* URLs are updated when searched via form by directing.
+	* Switched to GET method instead of POST. (for pagination urls: /?page=1)
+	* Bugs fixed:
+		- Listing the packages by /search/repo/packages/ now works. (used to
+		search items like "packages".
+		- Checkbox is now more easygoing! (removed checked="false"!)
+	* KNOWN ISSUE: We can't paginate results that are wanted to be grouped.
+	
+2009-06-29  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
+
 	* URL Changed: package/pkg_name/list/ -> packages/pkg_name/
 	* Fixed minor bugs:
 		* extra entry parameter

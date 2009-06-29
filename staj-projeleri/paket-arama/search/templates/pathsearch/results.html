@@ -8,10 +8,10 @@
 {% endif %}
 {% endblock %}
 {% block content %}
-	{% if entry_list %}
+	{% if entries %}
 		{% if group %}
 		<!-- If grouping is desired -->
-			{% regroup entry_list by package as pkg_list %}
+			{% regroup entries by package as pkg_list %}
 		
 			<h2>{% blocktrans %}Packages containing files related to {{ term }}{% endblocktrans %}:</h2>
 			<table>
@@ -37,17 +37,22 @@
 				
 					
 				</h2>
+				
 				<div>
 				    <a href="http://{% trans "packages" %}.pardus.org.tr/info/{{current_version}}/stable/binary/{{ package_name }}.html">{% trans 'Stable Binary' %}</a> | 
 				    <a href="http://{% trans "packages" %}.pardus.org.tr/info/{{current_version}}/devel/binary/{{ package_name }}.html">{% trans 'Devel Binary' %}</a> |
 				    <a href="http://{% trans "packages" %}.pardus.org.tr/info/{{current_version}}/stable/source/{{ package_name }}.html">{% trans 'Stable Source' %}</a> |
 				    <a href="http://{% trans "packages" %}.pardus.org.tr/info/{{current_version}}/devel/source/{{ package_name }}.html">{% trans 'Devel Source' %}</a>
 				</div>
+				
+				<div class="pagination">
+				    <p>Showing results between {{ entries.start_index }} and {{ entries.end_index }}:</p>
+				</div>
 				<table>
 					<tr class="table-top">
 						<th>{% trans 'Filepath' %}</th>
 					</tr>
-					{% for entry in entry_list %}
+					{% for entry in entries.object_list %}
 						<tr>
 							<td>{{ entry.path }}</td>
 						</tr>		
@@ -56,12 +61,15 @@
 			{% else %}
 			<!-- Search for term in all packages-->
 				<h2>{% blocktrans %}Packages and paths of files related to {{ term }}:{% endblocktrans %}</h2>
+				<div class="pagination">
+				    <p>Showing results between {{ entries.start_index }} and {{ entries.end_index }}:</p>
+				</div>
 				<table>
 					<tr class="table-top">
 						<th>{% trans 'Package' %}</th>
 						<th>{% trans 'Filepath' %}</th>
 					</tr>
-					{% for entry in entry_list %}
+					{% for entry in entries.object_list %}
 						<tr>
 							<td><a href="/search/{{current_version}}/package/{{ entry.package }}/">{{ entry.package }}</a></td>
 							<td>{{ entry.path }}</td>
@@ -69,6 +77,26 @@
 					{% endfor %}
 				</table>
 			{% endif %}
+			<p>
+			<div class="pagination">
+			    <span class="step-links">
+				{% if entries.has_previous %}
+				    <a href="?page=1">First</a> | 
+				    <a href="?page={{ entries.previous_page_number }}">Previous</a> | 
+				{% endif %}
+
+				<span class="current">
+				    Page {{ entries.number }} / {{ entries.paginator.num_pages }}
+				</span>
+
+				{% if entries.has_next %}
+				    | <a href="?page={{ entries.next_page_number }}">Next</a> | 
+				    <a href="?page={{ entries.paginator.num_pages }}">Last</a>
+				{% endif %}
+				
+			    </span>
+			</div>
+			</p>
 		<!-- Grouping selection ended -->
 		{% endif %}
 	<!-- Results ended -->
