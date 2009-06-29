@@ -83,7 +83,7 @@ msgstr "Kaptan'a hoşgeldiniz!"
 
 #: .tmp/kaptanMain.py:132 .tmp/ui_kaptanMain.py:132
 msgid "Cancel"
-msgstr "İptâl"
+msgstr "İptal"
 
 #: .tmp/kaptanMain.py:133 .tmp/ui_kaptanMain.py:133
 msgid "Back"
