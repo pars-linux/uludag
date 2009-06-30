@@ -17,12 +17,12 @@ class NmIcon(Plasma.IconWidget):
         Plasma.IconWidget.__init__(self)
 
 class Blinker:
-    def __init__(self, parent, color=Qt.green, path=None):
+    def __init__(self, parent, color=Qt.green):
         self.parent = parent
         self.timer = QTimer(parent)
         self.parent.connect(self.timer, SIGNAL("timeout()"), self.blink)
         self.defaultColor = self.color = color
-        self.path = path
+        self.transfer = 0
 
     def blink(self):
         if self.color == self.defaultColor:
@@ -31,16 +31,14 @@ class Blinker:
             self.color = self.defaultColor
         self.parent.update()
 
-    def follow(self, path):
-        self.path = path
-
     def update(self, data):
-        if data[QString('value')].toInt()[0] >= 2:
+        if not data == self.transfer:
             self.timer.start(100)
         else:
             self.timer.stop()
             self.color = Qt.transparent
             self.parent.update()
+        self.transfer = data
 
     def isActive(self):
         return self.timer.isActive()

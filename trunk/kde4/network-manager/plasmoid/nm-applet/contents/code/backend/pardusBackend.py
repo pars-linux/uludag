@@ -3,6 +3,7 @@
 
 import dbus
 import comar
+import pardus.netutils
 
 # it is very important to check if there is an active mainloop
 # before creating a new one, it may cause to crash plasma itself
@@ -45,5 +46,8 @@ class NetworkIface:
 
     def listen(self, func):
         self.link.listenSignals("Network.Link", func)
+
+    def stat(self, device):
+        return pardus.netutils.findInterface(device).getStats()
 
 
