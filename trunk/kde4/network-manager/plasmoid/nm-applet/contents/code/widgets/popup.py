@@ -35,9 +35,7 @@ class Blinker:
         if not data == self.transfer:
             self.timer.start(100)
         else:
-            self.timer.stop()
-            self.color = Qt.transparent
-            self.parent.update()
+            self.stop()
         self.transfer = data
 
     def isActive(self):
@@ -45,6 +43,8 @@ class Blinker:
 
     def stop(self):
         self.timer.stop()
+        self.color = Qt.transparent
+        self.parent.update()
 
 class Popup(QWidget):
 
