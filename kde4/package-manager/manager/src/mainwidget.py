@@ -56,6 +56,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.statusUpdater, SIGNAL("finished()"), self.statusUpdated)
 
     def connectOperationSignals(self):
+        self.connect(self.operation, SIGNAL("exception(QString)"), self.exceptionCaught)
         self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
         self.connect(self.operation, SIGNAL("started(QString)"), self.actionStarted)
         self.connect(self.operation, SIGNAL("started(QString)"), self.progressDialog.updateActionLabel)
@@ -139,6 +140,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         if self.isVisible():
             self.progressDialog.show()
         self.progressDialog.enableCancel()
+
+    def exceptionCaught(self, message):
+        self.progressDialog.hide()
+        KMessageBox.error(self, message, i18n("Pisi Error"))
+        self.actionFinished(None)
 
     def actionFinished(self, operation):
         self.searchLine.clear()
