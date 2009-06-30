@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-29 23:11+0300\n"
-"PO-Revision-Date: 2009-06-18 14:33+0100\n"
+"PO-Revision-Date: 2009-06-30 09:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -22,18 +22,19 @@ msgstr ""
 
 #: .tmp/ui_configure.py:44
 msgid "Options"
-msgstr ""
+msgstr "Optionen"
 
+# Last oder Leistung?
 #: .tmp/ui_configure.py:45
 msgid "Startup Load :"
-msgstr ""
+msgstr "Startleistung :"
 
 #: .tmp/ui_configure.py:46
-#, fuzzy
 msgid " Operations"
-msgstr "%d Operationen geladen"
+msgstr "Operationen"
 
-#: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
+#: .tmp/historymanager/about.py:21
+#: .tmp/historymanager/about.py:23
 #: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
 msgstr "History Manager"
@@ -44,41 +45,42 @@ msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/historymanager/about.py:32
 msgid "İşbaran Akçayır"
-msgstr ""
+msgstr "İşbaran Akçayır"
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
-msgstr "Aktueller Maintainer"
+msgstr "Aktueller Betreuer"
 
 #: .tmp/historymanager/window.py:76
-#, fuzzy
 msgid "%1 Operations Loaded"
-msgstr "%d Operationen geladen"
+msgstr "%1 Operationen geladen"
 
 #: .tmp/historymanager/window.py:118
 msgid "Loading operation details.."
 msgstr "Lade Details der Operationen .."
 
+# Zweifel: an ..... auf
 #: .tmp/historymanager/window.py:124
 msgid "Details for operation on %1 at %2"
-msgstr ""
+msgstr "Details für Operation an %1 auf %2"
 
 #: .tmp/historymanager/window.py:130
-#, fuzzy
 msgid "There are %1 packages in this snapshot."
 msgstr "Es sind %1 Pakete in dieser Momentaufnahme"
 
-#: .tmp/historymanager/window.py:146 .tmp/historymanager/window.py:198
+#: .tmp/historymanager/window.py:146
+#: .tmp/historymanager/window.py:198
 msgid "Ready .."
 msgstr "Fertig .."
 
 #: .tmp/historymanager/window.py:156
 msgid "Loading Operation Plan"
-msgstr "Lade Operations Plan"
+msgstr "Lade Ausführungsplan"
 
+# hab mal <files> weggelassen, da ich es so schoener finde.
 #: .tmp/historymanager/window.py:173
 msgid "Configuration files in snapshot:"
-msgstr "Archivos de configuración en instantánea:"
+msgstr "Konfiguration der Momentaufnahme:"
 
 #: .tmp/historymanager/window.py:181
 msgid "<br> These package(s) will be <b>installed</b> :<br>"
@@ -88,26 +90,22 @@ msgstr "<br> Diese Pakete werden <b>installiert</b> :<br>"
 msgid "<br> These package(s) will be <b>removed</b> :<br>"
 msgstr "<br> Diese Pakete werden <b>entfernt</b> :<br>"
 
+# Zweifel:  an ... auf
 #: .tmp/historymanager/window.py:192
-#, fuzzy
 msgid "Takeback plan for Operation on %1 at %2"
-msgstr "Verifikation der Wiederherstellungsschritte"
+msgstr "Verifikation der Wiederherstellungsschritte an %1 auf %2"
 
 #: .tmp/historymanager/window.py:224
 msgid "Takeback operation verification"
 msgstr "Verifikation der Wiederherstellungsschritte"
 
 #: .tmp/historymanager/window.py:225
-msgid ""
-"<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
-msgstr ""
-"<center> Dies wird Ihr System zurücksetzen bis : <b>%1</b> - <b>%2</b><br>"
+msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
+msgstr "<center> Dies wird Ihr System zurücksetzen auf : <b>%1</b> - <b>%2</b><br>"
 
 #: .tmp/historymanager/window.py:226
 msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
-msgstr ""
-"Falls Sie unsicher sind, klicken Sie auf Zurück und betrachten Sie den "
-"Wiederherstellungsplan.</center>"
+msgstr "Falls Sie unsicher sind, klicken Sie auf Zurück und betrachten Sie den Wiederherstellungsplan.</center>"
 
 #: .tmp/historymanager/window.py:230
 msgid "Taking back to : %1"
@@ -118,16 +116,12 @@ msgid "Start new snapshot"
 msgstr "Neue Momentaufnahme durchführen"
 
 #: .tmp/historymanager/window.py:238
-msgid ""
-"<center>This will take a snapshot of your system.<br>Click Ok when you're "
-"ready.</center>"
-msgstr ""
-"<center>Dies wird eine Momentaufnahme Ihres Systems durchführen.<br>Wenn "
-"bereit, dann klicken Sie bitte Ok.</center>"
+msgid "<center>This will take a snapshot of your system.<br>Click Ok when you're ready.</center>"
+msgstr "<center>Dies wird eine Momentaufnahme Ihres Systems durchführen.<br>Wenn bereit, dann klicken Sie bitte Ok.</center>"
 
 #: .tmp/historymanager/window.py:244
 msgid "Taking New Snapshot"
-msgstr "Sichere neue Momentaufnahme auf"
+msgstr "Sichere neue Momentaufnahme"
 
 #: .tmp/historymanager/window.py:251
 msgid "Authentication Failed"
@@ -143,60 +137,60 @@ msgid "Taking Snapshot : <b>%s</b>/100"
 msgstr "Sichere Momentaufnahme : <b>%s</b>/100"
 
 #: .tmp/historymanager/listitem.py:12
-#, fuzzy
 msgid "Upgrade"
-msgstr "upgrade"
+msgstr "Upgrade"
 
+# prüfen in welchem Zusammenhang
 #: .tmp/historymanager/listitem.py:12
 #, fuzzy
 msgid "Removal"
-msgstr "entfernen"
+msgstr "Entferne"
 
+# Zweifel
 #: .tmp/historymanager/listitem.py:12
+#, fuzzy
 msgid "Emerge"
-msgstr ""
+msgstr "Erscheine"
 
+# prüfen in welchem Zusammenhang
 #: .tmp/historymanager/listitem.py:13
 #, fuzzy
 msgid "Installation"
-msgstr "installiere"
+msgstr "Installiere"
 
 #: .tmp/historymanager/listitem.py:13
-#, fuzzy
 msgid "Snapshot"
 msgstr "Momentaufnahme"
 
 #: .tmp/historymanager/listitem.py:13
-#, fuzzy
 msgid "Takeback"
-msgstr "wiederherstellen"
+msgstr "Wiederherstellen"
 
 #: .tmp/historymanager/listitem.py:14
-#, fuzzy
 msgid "Repository Update"
 msgstr "Depot Update"
 
 #: .tmp/historymanager/listitem.py:54
-#, fuzzy
 msgid "No: %1   Type: %2"
-msgstr "Nein: Typ:"
+msgstr "Nein: %1   Typ: %2"
 
 # Überprüfen in welchem Zusammenhang es steht!
 #: .tmp/ui_uiitem.py:85
 msgid "History Date - Time /Label"
-msgstr "Datum - Zeit"
+msgstr "Datum - Zeit /Label"
 
 #: .tmp/ui_uiitem.py:86
 msgid "No: Type:"
 msgstr "Nein: Typ:"
 
-#: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
+#: .tmp/ui_uiitem.py:87
+#: .tmp/ui_mainwindow.py:137
 msgid "Take back to this point"
 msgstr "Bis zu diesem Punkt zurück gehen"
 
 #: .tmp/ui_uiitem.py:88
 msgid "Details"
-msgstr "Datails"
+msgstr "Details"
 
 #: .tmp/ui_uiitem.py:89
 msgid "Show operation plan"
@@ -207,9 +201,8 @@ msgid "New Snapshot"
 msgstr "Neue Momentaufnahme"
 
 #: .tmp/ui_mainwindow.py:131
-#, fuzzy
 msgid "History Settings"
-msgstr "History Manager"
+msgstr "Einstellungen"
 
 #: .tmp/ui_mainwindow.py:133
 msgid "Alias :"
@@ -230,7 +223,8 @@ msgstr "%p%"
 # Kopie oder kopiere?
 #: .tmp/ui_mainwindow.py:138
 msgid "Copy"
-msgstr "Kopie"
+msgstr "Kopiere"
 
 #~ msgid "Form"
 #~ msgstr "Form"
+
