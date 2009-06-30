@@ -15,8 +15,6 @@ import time
 from PyQt4.QtCore import QObject, SIGNAL
 from PyKDE4.kdecore import i18n
 
-from statemanager import StateManager
-
 from pmutils import *
 from pmlogging import logger
 
@@ -88,6 +86,8 @@ class OperationManager(QObject):
         self.emit(SIGNAL("progress(int)"), percent)
 
     def addDesktopFile(self, desktopFile):
+        if not self.state.inInstall():
+            return
         if desktopFile.startswith("usr/share/applications/") or desktopFile.startswith("usr/kde/4/share/applications/kde4/"):
             self.desktopFiles.append(desktopFile)
 
@@ -142,7 +142,7 @@ class OperationManager(QObject):
 
         elif signal in ["removed", "installed", "upgraded"]:
             # Bug 4030
-            if self.state.getState() != StateManager.REMOVE and signal == "removed":
+            if not self.state.inRemove() and signal == "removed":
                 return
             self.packageNo += 1
             self.updatePackageProgress()

@@ -165,3 +165,12 @@ class StateManager(QObject):
             return QMessageBox.warning(None, i18n("Conflict Error"), text, QMessageBox.Yes, QMessageBox.No) == QMessageBox.Yes
 
         return True
+
+    def inInstall(self):
+        return self.state == self.INSTALL
+
+    def inRemove(self):
+        return self.state == self.REMOVE
+
+    def inUpgrade(self):
+        return self.state == self.UPGRADE
