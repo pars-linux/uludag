@@ -1,3 +1,7 @@
+2009-06-30 Ozan Çağlayan <ozan@pardus.org.tr>
+         * (yali4/postinstall.py): Dump timezone information into
+         /etc/timezone instead of /etc/mudur/timezone.
+
 2009-06-18 Gökmen GÖKSEL <gokmen@pardus.org.tr>
          * Add option for install all Language packages
          * bindYali script fixed

@@ -74,8 +74,8 @@ def setTimeZone():
     os.system("rm -rf %s" % os.path.join(consts.target_dir, "etc/localtime"))
     cp("usr/share/zoneinfo/%s" % ctx.installData.timezone, "etc/localtime")
 
-    # Write the timezone data into /etc/mudur
-    open(os.path.join(consts.target_dir, "etc/mudur/timezone"), "w").write("TIMEZONE=\"%s\"\n" % ctx.installData.timezone)
+    # Write the timezone data into /etc/timezone
+    open(os.path.join(consts.target_dir, "etc/timezone"), "w").write("%s" % ctx.installData.timezone)
 
     return True
 
