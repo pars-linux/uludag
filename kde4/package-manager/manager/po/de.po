@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-18 15:18+0300\n"
-"PO-Revision-Date: 2009-06-27 19:34-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
+"PO-Revision-Date: 2009-06-30 11:17+0100\n"
+"Last-Translator: \n"
 "Language-Team: German <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,10 +24,9 @@ msgstr "Korb"
 msgid "Selected package(s) for install:"
 msgstr "Ausgewählte Pakete zur Installation:"
 
-#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:97
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
+#: .tmp/ui_basketdialog.py:71
+#: .tmp/statemanager.py:97
+msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Zusätzlich erforderliche Pakete:"
 
 #: .tmp/ui_basketdialog.py:72
@@ -38,15 +37,19 @@ msgstr "Gesamtgrösse:"
 msgid "<b>2.2 MB</b>"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:56 .tmp/statemanager.py:72
+#: .tmp/ui_basketdialog.py:74
+#: .tmp/ui_mainwidget.py:56
+#: .tmp/statemanager.py:72
 msgid "Install Package(s)"
 msgstr "Pakete installieren"
 
-#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+#: .tmp/progressdialog.py:41
+#: .tmp/commontext.py:15
 msgid "configuring"
 msgstr "konfigurieren"
 
-#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+#: .tmp/progressdialog.py:41
+#: .tmp/commontext.py:15
 msgid "extracting"
 msgstr "auspacken"
 
@@ -67,15 +70,18 @@ msgstr "Paket %1 / %2: %3"
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr ""
 
-#: .tmp/progressdialog.py:70 .tmp/ui_progressdialog.py:153
+#: .tmp/progressdialog.py:70
+#: .tmp/ui_progressdialog.py:153
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Vorbereitung PiSi...</h3>"
 
-#: .tmp/progressdialog.py:73 .tmp/ui_progressdialog.py:155
+#: .tmp/progressdialog.py:73
+#: .tmp/ui_progressdialog.py:155
 msgid "--  / --"
 msgstr ""
 
-#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:156
+#: .tmp/progressdialog.py:74
+#: .tmp/ui_progressdialog.py:156
 msgid "--:--:--"
 msgstr ""
 
@@ -87,10 +93,9 @@ msgstr "<b>Vorgang wird abgebrochen...</b>"
 msgid "Application"
 msgstr "Programm"
 
-# what is this please ?? Some sort of Web-spider / Web-crawler ?? (httrack ?)
 #: .tmp/ui_appitem.py:53
 msgid "Web Tarayıcı"
-msgstr ""
+msgstr "Webbrowser"
 
 #: .tmp/ui_appitem.py:54
 msgid "Firefox"
@@ -109,18 +114,16 @@ msgid "Delete"
 msgstr "Löschen"
 
 #: .tmp/settingsdialog.py:173
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>Die Adresse des Depots sollte mit xml oder xml.bz2 enden. "
-"<p>Bitte erneut versuchen.</qt>"
+msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
+msgstr "<qt>Die Adresse des Depots sollte mit xml oder xml.bz2 enden. <p>Bitte erneut versuchen.</qt>"
 
 #: .tmp/settingsdialog.py:173
 msgid "Pisi Error"
 msgstr "Pisi Error"
 
-#: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
+#: .tmp/ui_mainwindow.py:29
+#: .tmp/about.py:20
+#: .tmp/about.py:22
 msgid "Package Manager"
 msgstr "Paket Manager"
 
@@ -140,7 +143,8 @@ msgstr "&Nur Desktop-Anwendungen zeigen"
 msgid "&Enable system tray icon"
 msgstr "&System-Tray-Icon aktivieren"
 
-#: .tmp/ui_settingsdialog.py:322 .tmp/ui_settingsdialog.py:331
+#: .tmp/ui_settingsdialog.py:322
+#: .tmp/ui_settingsdialog.py:331
 msgid "Update check"
 msgstr "Updateüberprüfung"
 
@@ -190,7 +194,7 @@ msgstr ""
 
 #: .tmp/ui_settingsdialog.py:335
 msgid "(use 0 for no limit)"
-msgstr "(0 für unbegrenzten Limit)"
+msgstr "(0 für kein Limit)"
 
 #: .tmp/ui_settingsdialog.py:336
 msgid "Clear Cache"
@@ -202,8 +206,7 @@ msgid ""
 "This will not delete installed software or affect your system stability."
 msgstr ""
 "Durch das leeren des Festplatten-Caches, werden die heruntergeladenen Programme entfernt.  \n"
-"Die installierten Programme werden dadurch nicht gelöscht und es wird auch keine Auswirkung auf die "
-"Systemstabilität haben."
+"Die installierten Programme werden dadurch nicht gelöscht und es wird auch keine Auswirkung auf die Systemstabilität haben."
 
 #: .tmp/ui_settingsdialog.py:339
 msgid "C&lean disk cache now"
@@ -213,17 +216,19 @@ msgstr "F&estplatten-Cache leeren"
 msgid "C&ache"
 msgstr "C&ache"
 
-#: .tmp/ui_settingsdialog.py:341 .tmp/ui_repodialog.py:53
+#: .tmp/ui_settingsdialog.py:341
+#: .tmp/ui_repodialog.py:53
 msgid "Repository Name"
 msgstr "Depot-Bezeichnung"
 
-#: .tmp/ui_settingsdialog.py:342 .tmp/ui_repodialog.py:54
+#: .tmp/ui_settingsdialog.py:342
+#: .tmp/ui_repodialog.py:54
 msgid "Repository Address"
 msgstr "Depot-Adresse"
 
 #: .tmp/ui_settingsdialog.py:343
 msgid "&Add New Repository"
-msgstr "Neues Depot hinzufügen"
+msgstr "&Neues Depot hinzufügen"
 
 #: .tmp/ui_settingsdialog.py:344
 msgid "Remove Repository"
@@ -245,7 +250,8 @@ msgstr "&Depots"
 msgid "HTTP proxy server:"
 msgstr "HTTP-Proxy-Server:"
 
-#: .tmp/ui_settingsdialog.py:349 .tmp/ui_settingsdialog.py:352
+#: .tmp/ui_settingsdialog.py:349
+#: .tmp/ui_settingsdialog.py:352
 #: .tmp/ui_settingsdialog.py:354
 msgid "Port:"
 msgstr "Port:"
@@ -282,7 +288,8 @@ msgstr "&Hilfe"
 msgid "&OK"
 msgstr "&OK"
 
-#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:164
+#: .tmp/ui_settingsdialog.py:360
+#: .tmp/ui_progressdialog.py:164
 msgid "&Cancel"
 msgstr "&Abbrechen"
 
@@ -296,26 +303,17 @@ msgstr "Hier schreiben, um zu suchen"
 
 #: .tmp/ui_mainwidget.py:57
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
-"this group</p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in this group</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Alle Pakete aus dieser Gruppe auswählen</p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Alle Pakete aus dieser Gruppe auswählen</p></body></html>"
 
 #: .tmp/statemanager.py:65
 msgid "Installing Package(s)"
@@ -381,20 +379,18 @@ msgstr "Ausgewählte Pakete zu entfernen:"
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Ausgewählte Pakete zu aktualisieren:"
 
-#: .tmp/statemanager.py:98
 # Zweifel - hier is das "reverse" nicht korekt ausgedrückt, ist vielleicht auch nicht so wichtig..
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch entfernt werden:"
+#: .tmp/statemanager.py:98
+msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
+msgstr "Zum gewähltem Paket abhängige(s) Paket(e), die auch entfernt werden:"
 
 #: .tmp/statemanager.py:99
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
+msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
 
-#: .tmp/statemanager.py:125 .tmp/mainwindow.py:40 .tmp/mainwindow.py:45
+#: .tmp/statemanager.py:125
+#: .tmp/mainwindow.py:40
+#: .tmp/mainwindow.py:45
 msgid "Currently your basket is empty."
 msgstr "Im Augenblick ist Ihr Korb leer."
 
@@ -402,8 +398,8 @@ msgstr "Im Augenblick ist Ihr Korb leer."
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Momentan <b>%1</b> Paket(e) ausgewählt mit einer Gesamtgrösse von <b>%2</b> "
 
-#: .tmp/statemanager.py:130
 # zweifel reverse, "gegen" (original Tasma), "rückwärts", "höheren.." ?
+#: .tmp/statemanager.py:130
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "und <b>%1</b> rückwärts abhängige Pakete mit Gesamtgrösse <b>%2</b>"
 
@@ -416,14 +412,11 @@ msgid "in your basket."
 msgstr "in Ihrem Korb."
 
 #: .tmp/statemanager.py:152
-msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
-msgstr ""
-"Ausgewählte Pakete [%1] stehen in Konflikt miteinander. Diese Pakete können "
-"nicht zusammen installiert werden."
+msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
+msgstr "Ausgewählte Pakete [%1] stehen in Konflikt miteinander. Diese Pakete können nicht zusammen installiert werden."
 
-#: .tmp/statemanager.py:153 .tmp/statemanager.py:161
+#: .tmp/statemanager.py:153
+#: .tmp/statemanager.py:161
 msgid "Conflict Error"
 msgstr "Konfliktfehler"
 
@@ -431,19 +424,18 @@ msgstr "Konfliktfehler"
 msgid "The following packages conflicts:\n"
 msgstr "Es bestehen Konflikte zwischen folgenden Paketen:\n"
 
-#: .tmp/statemanager.py:159
 # Zweifel - einfach "incompatible" schreiben ?
+#: .tmp/statemanager.py:159
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 in Konflikt mit: [%2]\n"
 
 #: .tmp/statemanager.py:160
-# Zweifel - tasma war: wiederstreitende
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
 msgstr ""
 "\n"
-"Inkompatible Pakete vom System entfernen?"
+"Konfliktverursachende Pakete vom System entfernen?"
 
 #: .tmp/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -457,7 +449,8 @@ msgstr ""
 msgid "Maintainer"
 msgstr "Aktueller Betreuer"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:113
+#: .tmp/commontext.py:15
+#: .tmp/operationmanager.py:113
 msgid "downloading"
 msgstr "wird heruntergeladen"
 
@@ -469,8 +462,8 @@ msgstr "wird entfernt"
 msgid "installing"
 msgstr "wird installiert"
 
-#: .tmp/ui_summarydialog.py:53
 # Zweifel - oder Vorgangs/Aktions-Report/ Bericht ? Zusammenfassung finde ich nicht gut
+#: .tmp/ui_summarydialog.py:53
 msgid "Operation Summary"
 msgstr "Aktions-Report"
 
@@ -479,9 +472,7 @@ msgid "12 new packages are installed  succesfully."
 msgstr "12 neue Pakete mit Erfolg installiert."
 
 #: .tmp/ui_summarydialog.py:55
-msgid ""
-"You can start the new installed application by double-clicking on the list "
-"below or later from the applications menu."
+msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
 msgstr "Sie können die neu installierten Programme mit einem Doppelklick in der Liste unten starten, oder Sie können sie vom Systemmanü aus aufrufen."
 
 #: .tmp/ui_summarydialog.py:56
@@ -514,21 +505,16 @@ msgstr "Status:"
 
 #: .tmp/ui_progressdialog.py:159
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
 
 #: .tmp/ui_progressdialog.py:165
 msgid "Alt+C"
-msgstr ""
+msgstr "Alt+C"
 
 #: .tmp/mainwindow.py:61
 msgid "Show Installable Packages"
