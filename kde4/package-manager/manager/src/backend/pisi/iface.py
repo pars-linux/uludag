@@ -57,8 +57,8 @@ class Iface(Singleton):
             pisi.db.invalidate_caches()
             self.initDB()
 
-    def handler(self, *args):
-        pass
+    def handler(self, package, exception, args):
+        logger.debug("Exception caught by COMAR: %s" % exception)
 
     def installPackages(self, packages):
         logger.debug("Installing packages: %s" % packages)
