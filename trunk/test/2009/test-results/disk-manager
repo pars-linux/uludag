@@ -15,7 +15,7 @@ TESTS
   - Options opsiyonel, boş geçilebilir.
 + Extended partititionlar disk-manager da görüntülenememeli.
 
-- Butonların üzerine gelindiğinde açıklama gelmeli.
++ Butonların üzerine gelindiğinde açıklama gelmeli.
 - External hardisk'in dosya sistemi değiştirildiğinde bu dosya sistemi ona uygun bir dosya sistemi değil ise bunu bir uyarı olarak gösteremiyor.
-- disk yöneticisi ikonu gözükmüyor.
+? disk yöneticisi ikonu gözükmüyor.
 - Kde dili ingilizce ve sistem dili türkçe olduğunda, Uygulamalar -> sistem altından uygulama çalıştırınca, uygulama türkçe açılıyor.
