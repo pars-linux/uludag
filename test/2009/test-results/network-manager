@@ -28,4 +28,4 @@
 
 - Modem restart edildiğinde otomatik olarak kablosuz ağa bağlanılamıyor.
 ? Belirli aralıklarla bağlantı probe edilmeli.
-- Kde dili ingilizce ve sistem dili türkçe olduğunda, Uygulamalar -> sistem altından uygulama çalıştırınca, uygulama türkçe açılıyor.
+x Kde dili ingilizce ve sistem dili türkçe olduğunda, Uygulamalar -> sistem altından uygulama çalıştırınca, uygulama türkçe açılıyor.

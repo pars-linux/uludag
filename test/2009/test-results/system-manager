@@ -16,5 +16,5 @@
 + Sistem ayarlarından açıldığında parola sormadan işlemleri yapabiliyor.
 x Herhangi bir ayarı değiştirilip uygula dedikten sonra çıkan parola sorma sayfasına iptal denildiğinde değişiklikler eski haline gelmiyor.
     - İptal sonrası değiştirilen alanları sıfırlama doğru bir davranış değil.
-- Kde dili ingilizce ve sistem dili türkçe olduğunda, Uygulamalar -> sistem altından uygulama çalıştırınca, uygulama türkçe açılıyor.
-- Sistem dili değiştirilip, bilgisayar restart edildikten sonra, hal başlatılamıyor veya service komutu hata veriyor.
+x Kde dili ingilizce ve sistem dili türkçe olduğunda, Uygulamalar -> sistem altından uygulama çalıştırınca, uygulama türkçe açılıyor.
+x Sistem dili değiştirilip, bilgisayar restart edildikten sonra, hal başlatılamıyor veya service komutu hata veriyor.
