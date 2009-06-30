@@ -1,6 +1,6 @@
 - Sifre bir daha sorma denildikten sonra, paket indirilemiyor.
 - Paket yoneticisi ayarlarindan sistem çekmecesine ikon eklenemiyor.
 - Kurulu paketleri göster dedikten sonra, listedeki paketlerden birinin üzerine tıklandığında, açıklaması geliyor fakat yanındaki checkbox kayboluyor ve paketleri kaldır butonu disable duruma geçiyor. (Qt bug)
-- Paketler kuruluyor penceresinde kalan zaman görünütülenemiyor.
+
 
 
