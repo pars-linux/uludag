@@ -50,4 +50,7 @@ class NetworkIface:
     def stat(self, device):
         return pardus.netutils.findInterface(device).getStats()
 
+    def strength(self, device):
+        return int(pardus.netutils.findInterface(device).getSignalQuality())
+
 

@@ -10,11 +10,15 @@ import dbus
 
 # Qt Libs
 from PyQt4.QtCore import Qt, SIGNAL, SLOT, pyqtSignature, QString, QTimer, QRectF, QTimer
-from PyQt4.QtGui import QWidget, QFrame, QGraphicsLinearLayout, QPixmap, QColor, QPainterPath, QPainter
+from PyQt4.QtGui import QWidget, QFrame, QGraphicsLinearLayout, QPixmap, QColor, QPainterPath, QPainter, QIcon
+
+# KDE Libs
+from PyKDE4.kdecore import i18n
 
 # Plasma Libs
 from PyKDE4.plasma import Plasma
 from PyKDE4 import plasmascript
+from PyKDE4.kdeui import KIconLoader
 
 # Custom Widgets
 from widgets.popup import Popup, NmIcon, Blinker
@@ -30,29 +34,42 @@ from PyKDE4.solid import Solid
 # itself to the current dbus mainloop if exists
 from backend.pardusBackend import NetworkIface
 
-receiverPath = "network/interfaces/%s/receiver/data"
-transmitterPath = "network/interfaces/%s/transmitter/data"
+WIRED           = "network-wired"
+
+CONNECTED       = {"title"  :i18n("Connected"),
+                   "emblem" :"dialog-ok-apply",
+                   "solid"  :Solid.Networking.Connected}
+DISCONNECTED    = {"title"  :i18n("Disconnected"),
+                   "emblem" :"dialog-cancel",
+                   "solid"  :Solid.Networking.Unconnected}
+CONNECTING      = {"title"  :i18n("Connecting"),
+                   "emblem" :"chronometer",
+                   "solid"  :Solid.Networking.Connecting}
+
+ICONPATH        = "%s/contents/code/icons/%s.png"
 
 class NmApplet(plasmascript.Applet):
     """ Our main applet derived from plasmascript.Applet """
 
     def __init__(self, parent):
         plasmascript.Applet.__init__(self, parent)
-        self.iface = NetworkIface()
-        self.notifyface = Notifier(dbus.get_default_main_loop())
-        self.notifyface.registerNetwork()
-        self.timer = QTimer()
 
     def init(self):
         """ Const method for initializing the applet """
 
+        self.iface = NetworkIface()
+        self.notifyface = Notifier(dbus.get_default_main_loop())
+        self.notifyface.registerNetwork()
+
         # Aspect ratio defined in Plasma
-        self.setAspectRatioMode(Plasma.ConstrainedSquare)
-        self.defaultIcon = "%s/contents/code/icons/icon.svgz" % self.package().path()
+        self.setAspectRatioMode(Plasma.Square)
+
+        self.loader = KIconLoader()
+        self.defaultIcon = WIRED
+        self.emblem = DISCONNECTED["emblem"]
 
         self.icon = NmIcon(self)
-        self.icon.setSvg(self.defaultIcon, "native")
-        self.icon.setToolTip("Click here to show connections..")
+        self.icon.setToolTip(i18n("Click here to show connections.."))
 
         self.layout = QGraphicsLinearLayout(self.applet)
         self.layout.setContentsMargins(0, 0, 0, 0)
@@ -66,8 +83,7 @@ class NmApplet(plasmascript.Applet):
 
         # Listen data transfers from lastUsed Device ..
         self.lastActiveDevice = None
-        self.connect(self.timer, SIGNAL("timeout()"), self.dataUpdate);
-        self.timer.start(5000)
+        self.lastActivePackage = None
 
         self.dialog = Plasma.Dialog()
         self.dialog.setWindowFlags(Qt.Popup)
@@ -87,27 +103,59 @@ class NmApplet(plasmascript.Applet):
         # Listen network status from comar
         self.iface.listen(self.handler)
 
-    def paintInterface(self, painter, option, rect):
-        painter.setRenderHint(QPainter.Antialiasing)
-        painter.save()
-        f = rect.width()/12
-        if self.receiverBlinker.isActive():
-            _rect = QRectF(rect.x()+rect.width()-f*1.2, rect.y()+rect.height()-f*1.3, f, f)
-            _path = QPainterPath()
-            _path.addEllipse(_rect)
-            painter.fillPath(_path, self.receiverBlinker.color)
-        if self.transmitterBlinker.isActive():
-            _rect = QRectF(rect.x()+rect.width()-f*2*1.2-4, rect.y()+rect.height()-f*1.3, f, f)
-            _path = QPainterPath()
-            _path.addEllipse(_rect)
-            painter.fillPath(_path, self.transmitterBlinker.color)
-        painter.restore()
+        QTimer.singleShot(4000, self.dataUpdated)
 
-    def dataUpdate(self):
-        print "Updating .... "
+    def paintInterface(self, painter, option, rect):
+        size = min(rect.width(),rect.height())*2
+
+        # Current Icon
+        pix    = self.loader.loadIcon(self.defaultIcon, KIconLoader.NoGroup, size)
+
+        # Current Emblem
+        emblem = self.loader.loadIcon(self.emblem, KIconLoader.NoGroup, size/3)
+
+        paint = QPainter(pix)
+        paint.setRenderHint(QPainter.SmoothPixmapTransform)
+        paint.setRenderHint(QPainter.Antialiasing)
+
+        f = rect.width() * 0.1
+        # Draw Rx
+        if self.receiverBlinker.isActive():
+            _path = QPainterPath()
+            _path.addEllipse(QRectF(size * 0.9, size * 0.9, f, f))
+            paint.fillPath(_path, self.receiverBlinker.color)
+
+        # Draw Tx
+        if self.transmitterBlinker.isActive():
+            _path = QPainterPath()
+            _path.addEllipse(QRectF(size * 0.8, size * 0.9, f, f))
+            paint.fillPath(_path, self.transmitterBlinker.color)
+
+        # Draw Emblem
+        paint.drawPixmap(0,0,emblem)
+        paint.end()
+
+        # Update the icon
+        self.icon.setIcon(QIcon(pix))
+        self.icon.update()
+
+    def dataUpdated(self):
         if self.lastActiveDevice:
+            if self.lastActivePackage == 'wireless_tools':
+                # Show SIGNAL Strength
+                icon =  self.iface.strength(self.lastActiveDevice)/17
+                if not icon in range(1,6):
+                    icon = 1
+                self.defaultIcon = ICONPATH % (self.package().path(), icon)
+            else:
+                self.defaultIcon = WIRED
             self.receiverBlinker.update(self.iface.stat(self.lastActiveDevice)[0])
             self.transmitterBlinker.update(self.iface.stat(self.lastActiveDevice)[1])
+        else:
+            self.receiverBlinker.stop()
+            self.transmitterBlinker.stop()
+        self.update()
+        QTimer.singleShot(5000, self.dataUpdated)
 
     def constraintsEvent(self, constraints):
         self.setBackgroundHints(Plasma.Applet.NoBackground)
@@ -118,30 +166,53 @@ class NmApplet(plasmascript.Applet):
 
     def handler(self, package, signal, args):
         args = map(lambda x: str(x), list(args))
-        if signal == "stateChanged":
-            solidState = Solid.Networking.Unknown
-            ip = str()
-            if (str(args[1]) == "up"):
-                lastDevice = self.iface.info(package, args[0])['device_id']
-                msg = "Connected to <b>%s</b> IP: %s" % (args[0], args[2])
-                ip = args[2]
-                self.lastActiveDevice = lastDevice
-                self.popup.setConnectionStatus(package, "Connected")
-                self.icon.setSvg(self.defaultIcon)
-                solidState = Solid.Networking.Connected
-            elif (str(args[1]) == "connecting"):
-                msg = "Connecting to <b>%s</b> .." % args[0]
-                self.popup.setConnectionStatus(package, "Connecting..")
-                solidState = Solid.Networking.Connecting
-            else:
-                msg = "Disconnected"
-                self.popup.setConnectionStatus(package, msg)
-                self.lastActiveDevice = None
-                self.icon.setSvg(self.defaultIcon, "native")
-                solidState = Solid.Networking.Unconnected
-            self.popup.connections[package][unicode(args[0])].setState(str(args[1]), ip)
-            self.notifyface.notify(str(msg), solidState)
 
+        # Network StateChanged
+        if signal == "stateChanged":
+
+            lastState = {"title":i18n("Unknown"),
+                         "emblem":"dialog-warning",
+                         "solid":Solid.Networking.Unknown}
+
+            ip = None
+            self.lastActiveDevice  = self.iface.info(package, args[0])['device_id']
+            self.lastActivePackage = package
+
+            # Network UP
+            if (str(args[1]) == "up"):
+                msg = i18n("Connected to <b>%s</b> IP: %s" % (args[0], args[2]))
+                lastState = CONNECTED
+
+                # Current Ip
+                ip = args[2]
+
+            # Network CONNECTING
+            elif (str(args[1]) == "connecting"):
+                msg = i18n("Connecting to <b>%s</b> .." % args[0])
+                lastState = CONNECTING
+
+            # Network DOWN
+            else:
+                self.lastActiveDevice  = None
+                self.lastActivePackage = None
+                self.defaultIcon = ICONPATH % (self.package().path(), "off")
+                print self.defaultIcon
+
+                msg = i18n("Disconnected")
+                lastState = DISCONNECTED
+
+            # Update Connection
+            self.popup.setConnectionStatus(package, lastState["title"])
+            self.popup.connections[package][unicode(args[0])].setState(str(args[1]), ip or '')
+
+            # Show Notification
+            self.notifyface.notify(str(msg), lastState["solid"])
+
+            # Update Icon
+            self.emblem = lastState["emblem"]
+            self.dataUpdated()
+
+        # ConnectionChanged
         elif signal == "connectionChanged":
             if args[0] == 'deleted':
                 self.popup.connections[package][unicode(args[1])].hide()
