@@ -113,7 +113,7 @@ def search_in_package(request, version, package_name, term):
                                                           'versions'       :versions,
                                               })
     
-def search_in_all_packages(request, version, term = None):
+def search_in_all_packages(request, version, term = ""):
     """Searches for term in all packages' file paths.
     We have some problems here. If grouping is desired, that can't be combined with pagination.
     So we have to send entry_list instead of entries.    
@@ -121,8 +121,16 @@ def search_in_all_packages(request, version, term = None):
     term = term or request.GET['q']    # If no URL term specified, get the GET data.
     group = request.GET.get('group')   # Is grouping enabled?
 
-    entry_list = Repo.objects.filter(repo = version.replace("-","_"), path__contains=term)
-    entries = entry_list if group else pager(request, entry_list)
+    too_short = group and (len(term) < 3)
+    if too_short:
+	entry_list = []
+    else:
+	entry_list = Repo.objects.filter(repo = version.replace("-","_"), path__contains=term)
+    
+    if group:
+	entries = entry_list
+    else:
+	entries = pager(request, entry_list)
     
     return render_to_response('pathsearch/results.html', {
 							  'entries'	    : entries,  
@@ -131,5 +139,6 @@ def search_in_all_packages(request, version, term = None):
                                                           'group'           : group,
                                                           'current_version' : version,
                                                           'versions'        : versions,
+							  'too_short'	    : too_short,
                                                           
                                               })

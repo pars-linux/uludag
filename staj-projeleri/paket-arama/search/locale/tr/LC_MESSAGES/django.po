@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 01:29+0300\n"
-"PO-Revision-Date: 2009-06-29 01:27+0300\n"
+"POT-Creation-Date: 2009-06-30 03:05+0300\n"
+"PO-Revision-Date: 2009-06-30 03:06+0300\n"
 "Last-Translator: Ahmet Emre Aladağ <aladagemre@users.sourceforge.net>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: settings.py:29
+#: settings.py:32
 msgid "Turkish"
 msgstr "Türkçe"
 
-#: settings.py:30
+#: settings.py:33
 msgid "English"
 msgstr "İngilizce"
 
@@ -41,9 +41,9 @@ msgid "Package Search"
 msgstr "Paket Arama"
 
 #: templates/base.html:28 templates/base.html.py:29 templates/base.html:30
-#: templates/base.html.py:31 templates/pathsearch/results.html:41
-#: templates/pathsearch/results.html:42 templates/pathsearch/results.html:43
-#: templates/pathsearch/results.html:44
+#: templates/base.html.py:31 templates/pathsearch/results.html:46
+#: templates/pathsearch/results.html:47 templates/pathsearch/results.html:48
+#: templates/pathsearch/results.html:49
 msgid "packages"
 msgstr "paketler"
 
@@ -135,71 +135,118 @@ msgstr "ifade"
 msgid "Search for \"term\" in all packages"
 msgstr "Tüm paketlerde \"ifade\"yi ara"
 
-#: templates/pathsearch/packages.html:5 templates/pathsearch/results.html:7
+#: templates/pathsearch/packages.html:4 templates/pathsearch/results.html:7
 #, python-format
 msgid "Results for %(package_name)s"
 msgstr "%(package_name)s için sonuçlar"
+
+#: templates/pathsearch/packages.html:8 templates/pathsearch/results.html:53
+#: templates/pathsearch/results.html:70, python-format
+msgid " %(result_count)s results<br/>Showing results between %(si)s and %(ei)s"
+msgstr ""
+"%(result_count)s sonuç<br/>%(si)s ile %(ei)s "
+"arasındaki sonuçlar gösteriliyor"
+
+#: templates/pathsearch/packages.html:22 templates/pathsearch/results.html:89
+msgid "First"
+msgstr "İlk"
+
+#: templates/pathsearch/packages.html:23 templates/pathsearch/results.html:90
+msgid "Previous"
+msgstr "Önceki"
+
+#: templates/pathsearch/packages.html:27 templates/pathsearch/results.html:94
+#, python-format
+msgid "Page %(pn)s / %(np)s"
+msgstr "Sayfa %(pn)s / %(np)s"
+
+#: templates/pathsearch/packages.html:31 templates/pathsearch/results.html:98
+msgid "Next"
+msgstr "Sonraki"
+
+#: templates/pathsearch/packages.html:32 templates/pathsearch/results.html:99
+msgid "Last"
+msgstr "Son"
 
 #: templates/pathsearch/results.html:5
 #, python-format
 msgid "Results for %(term)s"
 msgstr "%(term)s için sonuçlar"
 
-#: templates/pathsearch/results.html:16
+#: templates/pathsearch/results.html:12
+msgid "Queries involving grouping must be at least 3 characters long."
+msgstr "Gruplama içeren aramalar en az 3 karakter uzunluğunda olmalıdır."
+
+#: templates/pathsearch/results.html:18
+#, python-format
+msgid "%(result_count)s results."
+msgstr "%(result_count)s sonuç."
+
+#: templates/pathsearch/results.html:19
 #, python-format
 msgid "Packages containing files related to %(term)s"
 msgstr "%(term)s ile alakalı dosya içeren paketler"
 
-#: templates/pathsearch/results.html:19 templates/pathsearch/results.html:61
+#: templates/pathsearch/results.html:23 templates/pathsearch/results.html:74
 msgid "Package"
 msgstr "Paket"
 
-#: templates/pathsearch/results.html:33
+#: templates/pathsearch/results.html:37
 #, python-format
 msgid ""
 " Files related to %(term)s inside <a href=\"/search/%(current_version)s/"
-"package/%(package_name)s/list/\">%(package_name)s</a>:"
+"package/%(package_name)s/\">%(package_name)s</a>:"
 msgstr ""
 "<a href=\"/search/%(current_version)s/package/%(package_name)s/list/\">%"
 "(package_name)s</a> paketinde %(term)s ile alakalı dosyalar:"
 
-#: templates/pathsearch/results.html:35
+#: templates/pathsearch/results.html:39
 #, python-format
 msgid ""
 " Files inside <a href=\"/search/%(current_version)s/package/%(package_name)s/"
-"list/\">%(package_name)s</a>:"
+"\">%(package_name)s</a>:"
 msgstr ""
 "<a href=\"/search/%(current_version)s/package/%(package_name)s/list/\">%"
 "(package_name)s</a> içerisindeki dosyalar:"
 
-#: templates/pathsearch/results.html:41
+#: templates/pathsearch/results.html:46
 msgid "Stable Binary"
 msgstr "Kararlı İkili"
 
-#: templates/pathsearch/results.html:42
+#: templates/pathsearch/results.html:47
 msgid "Devel Binary"
 msgstr "Geliştirme İkili"
 
-#: templates/pathsearch/results.html:43
+#: templates/pathsearch/results.html:48
 msgid "Stable Source"
 msgstr "Kararlı Kaynak"
 
-#: templates/pathsearch/results.html:44
+#: templates/pathsearch/results.html:49
 msgid "Devel Source"
 msgstr "Geliştirme Kaynak"
 
-#: templates/pathsearch/results.html:48 templates/pathsearch/results.html:62
+#: templates/pathsearch/results.html:58 templates/pathsearch/results.html:75
 msgid "Filepath"
 msgstr "Dosya yolu"
 
-#: templates/pathsearch/results.html:58
+#: templates/pathsearch/results.html:68
 #, python-format
 msgid "Packages and paths of files related to %(term)s:"
 msgstr "%(term)s ile alakalı dosyaların paket ve yolları:"
 
-#: templates/pathsearch/results.html:76
+#: templates/pathsearch/results.html:109
 msgid "No results..."
 msgstr "Sonuç bulunamadı..."
+
+#~ msgid ""
+#~ "%(result_count)s results<br/>Showing results between %(entries."
+#~ "start_index)s and %(entries.end_index)s:"
+#~ msgstr ""
+#~ "%(result_count) sonuç<br/>%(entries.start_index)s ile %(entries.end_index)"
+#~ "s arasındaki sonuçlar gösteriliyor:"
+
+#~ msgid "Page %(entries.number)s / %(entries.paginator.num_pages)s"
+#~ msgstr "Sayfa %(entries.number)s / %(entries.paginator.num_pages)s"
 
 #~ msgid "Results for %(package)s"
 #~ msgstr "%(package)s için sonuçlar"
