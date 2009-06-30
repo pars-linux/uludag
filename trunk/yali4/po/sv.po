@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-26 21:42+0300\n"
-"PO-Revision-Date: 2009-06-27 21:45+0200\n"
+"PO-Revision-Date: 2009-06-28 14:07+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -99,13 +99,12 @@ msgid "Automatic"
 msgstr "Automatisk"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-#, fuzzy
 msgid ""
 "This option will try to find free disk space of suitable size. If no such "
 "disk space exists, it will look for resizable partitions"
 msgstr ""
-"Det här alternativet försöker hitta ett lämpligt ledigt utrymme eller "
-"partitioner för storleksändring"
+"Det här alternativet försöker hitta ett ledigt utrymme med lämplig storlek. "
+"Om det saknas letar den efter partitioner för storleksändring."
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
@@ -113,13 +112,12 @@ msgstr ""
 "Försök att använda ledigt utrymme eller storleksändra befintliga partitioner"
 
 #: yali4/gui/Ui/autopartwidget.py:119
-#, fuzzy
 msgid ""
 "This option will erase the entire disk. All the data on the disk will be "
 "lost."
 msgstr ""
-"Det här alternativet kommer att radera hela disken. Alla dina data kommer "
-"att försvinna!"
+"Det här alternativet kommer att radera hela disken. All data kommer "
+"att försvinna."
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
@@ -134,7 +132,6 @@ msgid "No, I'll partition my disk manually."
 msgstr "Nej, jag partitionerar min disk på egen hand."
 
 #: yali4/gui/Ui/autopartwidget.py:123
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -156,15 +153,13 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Välj partitioneringsmetod:</span></p></"
-"body></html>"
+"\" font-size:12pt; font-weight:600;\">Hårddiskval</span></p></body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:128
 msgid "&nbsp;"
 msgstr "&nbsp;"
 
 #: yali4/gui/Ui/bootloaderwidget.py:76
-#, fuzzy
 msgid ""
 "<b>Write boot loader (GRUB) to the master boot record?</b>\n"
 "\n"
@@ -174,35 +169,29 @@ msgid ""
 "partition, you will have to manually configure already-installed (if any) "
 "loader to be able to boot your new Pardus installation.</p>"
 msgstr ""
-"<b>Vill du installera starthanteraren GRUB till huvudstartsektorn på "
-"hårddisken?</b>\n"
+"<b>Installera starthanteraren (GRUB) till huvudstartsektorn?</b>\n"
 "\n"
-"<p>Du behöver en starthanterare för att starta ditt Pardussystem.</p>\n"
+"<p>Du system kan inte starta utan en startladdare.</p>\n"
 "\n"
 "<p>Om du inte installerar en starthanterare eller väljer att installera till "
-"huvudpartitionen måste du konfigurera ditt \n"
-"andra operativsystems (om du har något) starthanterare för att kunna starta "
-"ditt nyinstallerade Pardussystem.</p>"
+"huvudpartitionen måste du konfigurera en befintlig starthanterare\n"
+"för att kunna starta ditt nyinstallerade Pardussystem.</p>"
 
 #: yali4/gui/Ui/bootloaderwidget.py:81 yali4/gui/Ui/rescuegrubwidget.py:76
-#, fuzzy
 msgid "Select target to install boot loader"
-msgstr "Välj var du vill installera starthanteraren:"
+msgstr "Välj mål för installation av startladdaren:"
 
 #: yali4/gui/Ui/bootloaderwidget.py:82 yali4/gui/Ui/rescuegrubwidget.py:77
-#, fuzzy
 msgid "First bootable disk (recommended)"
-msgstr "Installera på första startbara disken (rekommenderas)"
+msgstr "Första startbara disken (rekommenderas)"
 
 #: yali4/gui/Ui/bootloaderwidget.py:83 yali4/gui/Ui/rescuegrubwidget.py:78
-#, fuzzy
 msgid "Pardus installed partition"
-msgstr "Installera på samma partition som Pardus"
+msgstr "Partition med Pardusinstallation"
 
 #: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:79
-#, fuzzy
 msgid "Selected disk below"
-msgstr "Installera på vald enhet nedan"
+msgstr "Vald enhet nedan"
 
 #: yali4/gui/Ui/bootloaderwidget.py:85
 msgid "Don't install bootloader"
@@ -273,12 +262,10 @@ msgid "TextLabel"
 msgstr "TextLabel"
 
 #: yali4/gui/Ui/exception.py:60 yali4/__init__.py:69
-#, fuzzy
 msgid "Error"
-msgstr "Fel!"
+msgstr "Fel"
 
 #: yali4/gui/Ui/exception.py:61
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -297,17 +284,17 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Välj partitioneringsmetod:</span></p></"
-"body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Var god och fyll i en "
+"felrapport"
+"på <span style=\" font-weight:600;\">http://bugs.pardus.org.tr/</span> "
+"och bifoga följande bakåtspårning.</p></body></html>"
 
 #: yali4/gui/Ui/exception.py:66
-#, fuzzy
 msgid "Show Backtrace"
-msgstr "Spårning:"
+msgstr "Visa bakåtspårning"
 
 #: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:89
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
@@ -332,12 +319,10 @@ msgid "Installing Package: "
 msgstr "Installerar paket: "
 
 #: yali4/gui/Ui/keyboardwidget.py:60
-#, fuzzy
 msgid "Choose a keyboard layout:"
-msgstr "Välj tangentbordslayout"
+msgstr "Välj tangentbordslayout:"
 
 #: yali4/gui/Ui/keyboardwidget.py:61
-#, fuzzy
 msgid "Test selected layout:"
 msgstr "Testa vald tangentbordslayout:"
 
@@ -496,24 +481,20 @@ msgid "User to change password of:"
 msgstr ""
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:103
-#, fuzzy
 msgid "New password:"
-msgstr "Lösenord:"
+msgstr "Nytt lösenord:"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:104
-#, fuzzy
 msgid "New password (again):"
-msgstr "Lösenord (upprepa):"
+msgstr "Nytt lösenord (upprepa):"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:105
-#, fuzzy
 msgid "Update Password"
-msgstr "Uppdatera användare"
+msgstr "Uppdatera lösenord"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:67
-#, fuzzy
 msgid "Connection Status:"
-msgstr "Kontrollen misslyckades"
+msgstr "Anslutningsstatus:"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:68
 msgid "Not Connected"
@@ -533,7 +514,7 @@ msgstr "Välj anslutning"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:71
 msgid "Operation to undo:"
-msgstr ""
+msgstr "Åtgärd att ångra:"
 
 #: yali4/gui/Ui/rescuewidget.py:84
 #, fuzzy
@@ -594,9 +575,8 @@ msgid "Password:"
 msgstr "Lösenord:"
 
 #: yali4/gui/Ui/setupuserswidget.py:175
-#, fuzzy
 msgid "User ID"
-msgstr "Används :"
+msgstr "Användar-id:"
 
 #: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:252
 #: yali4/gui/ScrUsers.py:294
@@ -608,9 +588,8 @@ msgid "Give administrator privileges to this user"
 msgstr "Ge administratörsrättigheter till den här användaren"
 
 #: yali4/gui/Ui/setupuserswidget.py:178
-#, fuzzy
 msgid "Edit Selected User"
-msgstr "Ta bort vald användare"
+msgstr "Redigera vald användare"
 
 #: yali4/gui/Ui/setupuserswidget.py:179
 msgid "Delete Selected User"
@@ -634,16 +613,15 @@ msgstr "Lösenord (upprepa):"
 
 #: yali4/gui/Ui/setupuserswidget.py:184
 msgid "Not recommended"
-msgstr ""
+msgstr "Rekommenderas ej"
 
 #: yali4/gui/Ui/setupuserswidget.py:185
 msgid "Do not ask any password to this user"
 msgstr ""
 
 #: yali4/gui/Ui/setupuserswidget.py:186
-#, fuzzy
 msgid "Add More Users"
-msgstr "Lägger till användare..."
+msgstr "Lägg till fler användare"
 
 #: yali4/gui/Ui/summarywidget.py:69
 msgid "Begin Install"
@@ -655,9 +633,8 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/Ui/summarywidget.py:71
-#, fuzzy
 msgid "Install all language packages"
-msgstr "Installerar paket: "
+msgstr "Installera alla språkpaket"
 
 #: yali4/gui/Ui/welcomewidget.py:91
 msgid ""
@@ -675,33 +652,30 @@ msgid "Read GPL"
 msgstr "Läs GPL"
 
 #: yali4/gui/Ui/welcomewidget.py:93
-#, fuzzy
 msgid "Reboot System"
-msgstr "Starta om datorn!"
+msgstr "Starta om datorn"
 
 #: yali4/gui/Ui/welcomewidget.py:94
 msgid "Yes, I accept."
 msgstr "Ja, jag accepterar."
 
 #: yali4/gui/Ui/welcomewidget.py:95
-#, fuzzy
 msgid "No, I don't accept."
-msgstr "Accepterar inte!"
+msgstr "Nej, jag accepterar inte."
 
 #: yali4/gui/debugger.py:28
 msgid "Debug"
 msgstr "Felsök"
 
 #: yali4/gui/descSlide.py:18
-#, fuzzy
 msgid ""
 "Welcome! Our improved setup tool YALI will help you with the installation of "
 "Pardus 2009. YALI will help install Pardus 2009 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
 msgstr ""
 "Välkommen! Vårt förbättrade installationsverktyg YALI hjälper dig med "
-"installationen av Pardus 2008. YALI hjälper dig att snabbt och enkelt "
-"installera Pardus 2008 efter partitioneringen med det smarta "
+"installationen av Pardus 2009. YALI hjälper dig att snabbt och enkelt "
+"installera Pardus 2009 efter partitioneringen med det smarta "
 "partitioneringsverktyget.\n"
 
 #: yali4/gui/descSlide.py:20
@@ -748,15 +722,14 @@ msgstr ""
 "inställningar.\n"
 
 #: yali4/gui/descSlide.py:28
-#, fuzzy
 msgid ""
 "Mozilla Firefox, with its speed, constant development and many advanced "
 "features, will help securely surf the Internet. Pardus 2009 includes Mozilla "
 "Firefox 3.0, and you can enrich Firefox with thousands of extensions.\n"
 msgstr ""
 "Mozilla Firefox, med sin snabbhet, kontinuerliga utveckling och många "
-"avancerade funktioner hjälper dig att surfa säkert. Pardus 2008 innehåller "
-"Mozilla Firefox 3.0 som du kan utöka med tusentals tillägg.\n"
+"avancerade funktioner hjälper dig att surfa säkert. Pardus 2009 innehåller "
+"Mozilla Firefox 3.5 som du kan utöka med tusentals tillägg.\n"
 
 #: yali4/gui/descSlide.py:30
 msgid ""
@@ -2012,27 +1985,27 @@ msgstr ""
 
 #: yali4/gui/YaliDialog.py:127
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: yali4/gui/YaliDialog.py:128
 msgid "No"
-msgstr ""
+msgstr "Nej"
 
 #: yali4/gui/YaliDialog.py:133
 msgid "Don't ask again"
-msgstr ""
+msgstr "Fråga inte igen"
 
 #: yali4/gui/YaliDialog.py:138
 msgid "Do you want to continue ?"
-msgstr ""
+msgstr "Vill du fortsätta?"
 
 #: yali4/gui/YaliDialog.py:152
 msgid "Information"
-msgstr ""
+msgstr "Information"
 
 #: yali4/gui/YaliDialog.py:154
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: yali4/gui/YaliWindow.py:72 yali4/gui/YaliWindow.py:161
 msgid "Show Help"
@@ -2040,11 +2013,11 @@ msgstr "Visa hjälp"
 
 #: yali4/gui/YaliWindow.py:88 yali4/gui/YaliWindow.py:96 yali4/sysutils.py:172
 msgid "right"
-msgstr ""
+msgstr "höger"
 
 #: yali4/gui/YaliWindow.py:95 yali4/gui/YaliWindow.py:98 yali4/sysutils.py:171
 msgid "left"
-msgstr ""
+msgstr "vänster"
 
 #: yali4/gui/YaliWindow.py:99
 #, fuzzy
@@ -2063,7 +2036,7 @@ msgstr ""
 
 #: yali4/gui/YaliWindow.py:137
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: yali4/gui/YaliWindow.py:142
 #, fuzzy

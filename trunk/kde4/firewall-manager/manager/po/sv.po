@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: firewall-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-30 11:25+0300\n"
-"PO-Revision-Date: 2009-06-27 14:48+0200\n"
+"PO-Revision-Date: 2009-06-30 18:48+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -17,17 +17,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/ui_item.py:65
-#, fuzzy
 msgid "Active or deactivate module."
-msgstr "Brandväggen är inte aktiverad."
+msgstr "Aktivera eller avaktivera modul."
 
 #: .tmp/ui_item.py:66
 msgid "Edit"
-msgstr ""
+msgstr "Redigera"
 
 #: .tmp/ui_item.py:67
 msgid "Delete"
-msgstr ""
+msgstr "Ta bort"
 
 #: .tmp/ui_service.py:41 .tmp/firewallmanager/service.py:46
 msgid "Start"
@@ -94,3 +93,4 @@ msgstr "Åtgärd"
 #: .tmp/firewallmanager/main.py:317
 msgid "Access denied."
 msgstr "Åtkomst nekas."
+

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: user-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-30 11:25+0300\n"
-"PO-Revision-Date: 2009-06-27 19:54+0200\n"
+"PO-Revision-Date: 2009-06-30 18:56+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -18,11 +18,11 @@ msgstr ""
 
 #: .tmp/ui_item.py:56
 msgid "Edit"
-msgstr ""
+msgstr "Redigera"
 
 #: .tmp/ui_item.py:57
 msgid "Delete"
-msgstr ""
+msgstr "Ta bort"
 
 #: .tmp/ui_edituser.py:176
 msgid "User Information"
@@ -201,3 +201,4 @@ msgstr "Gruppinformation"
 #: .tmp/ui_editgroup.py:79
 msgid "Group Name:"
 msgstr "Gruppnamn"
+

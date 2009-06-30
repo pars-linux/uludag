@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-29 12:04+0300\n"
-"PO-Revision-Date: 2009-06-27 16:02+0200\n"
+"PO-Revision-Date: 2009-06-30 18:51+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -64,7 +64,7 @@ msgstr "Söker efter hårdvaruinformation..."
 
 #: src/sysinfo.cpp:237
 msgid "System"
-msgstr ""
+msgstr "System"
 
 #: src/sysinfo.cpp:239
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
@@ -131,14 +131,12 @@ msgid "Display"
 msgstr "Bildskärm"
 
 #: src/sysinfo.cpp:545
-#, fuzzy
 msgid "3D Not Supported"
-msgstr "%1 (Inget 3D-stöd)"
+msgstr "3D stöds ej"
 
 #: src/sysinfo.cpp:547
-#, fuzzy
 msgid "3D Supported"
-msgstr "%1 (3D-stöd)"
+msgstr "3D stöds"
 
 #: src/sysinfo.cpp:563
 msgid "Mounted on %1"

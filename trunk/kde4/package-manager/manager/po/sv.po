@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-18 15:18+0300\n"
-"PO-Revision-Date: 2009-06-27 14:31+0200\n"
+"PO-Revision-Date: 2009-06-28 12:58+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -545,7 +545,7 @@ msgstr "Visa installerade paket"
 
 #: .tmp/mainwindow.py:74
 msgid "Show Upgradable Packages"
-msgstr "Visa uppdateringsbara paket"
+msgstr "Visa paket med uppdateringar"
 
 #: .tmp/ui_repodialog.py:51
 msgid "Add New Repository"
