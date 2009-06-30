@@ -5,7 +5,7 @@
 {% block content %}
 	{% if entries %}
 		<div class="pagination">
-		    <p>{{ result_count }} results<br/>Showing results between {{ entries.start_index }} and {{ entries.end_index }}:</p>
+		    <p>{% blocktrans with entries.start_index as si and entries.end_index as ei%} {{ result_count }} results<br/>Showing results between {{ si }} and {{ ei }}{% endblocktrans %}</p>
 		</div>
 		<table>
 		{% for pkg in entries.object_list %}
@@ -19,17 +19,17 @@
 		<div class="pagination">
 		    <span class="step-links">
 			{% if entries.has_previous %}
-			    <a href="?page=1">First</a> | 
-			    <a href="?page={{ entries.previous_page_number }}">Previous</a> | 
+			    <a href="?page=1">{% trans 'First' %}</a> | 
+			    <a href="?page={{ entries.previous_page_number }}">{% trans 'Previous' %}</a> | 
 			{% endif %}
 
 			<span class="current">
-			    Page {{ entries.number }} / {{ entries.paginator.num_pages }}
+			    {% blocktrans with entries.number as pn and entries.paginator.num_pages as np%}Page {{ pn }} / {{ np }}{% endblocktrans %}
 			</span>
 
 			{% if entries.has_next %}
-			    | <a href="?page={{ entries.next_page_number }}">Next</a> | 
-			    <a href="?page={{ entries.paginator.num_pages }}">Last</a>
+			    | <a href="?page={{ entries.next_page_number }}">{% trans 'Next' %}</a> | 
+			    <a href="?page={{ entries.paginator.num_pages }}">{% trans 'Last' %}</a>
 			{% endif %}
 			
 		    </span>

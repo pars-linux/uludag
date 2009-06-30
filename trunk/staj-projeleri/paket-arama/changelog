@@ -5,6 +5,8 @@
 	* Result count is now shown.
 	* default_version is added to settings.py, version format changed to
 	"pardus-2009" from "2009".
+	* Added 3 character limit for grouped results.
+	* Updated translations... Added es.mo
 
 2009-06-29  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 

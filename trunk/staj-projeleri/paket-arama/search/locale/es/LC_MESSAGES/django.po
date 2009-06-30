@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 01:29+0300\n"
+"POT-Creation-Date: 2009-06-30 03:05+0300\n"
 "PO-Revision-Date: 2008-10-15 21:20-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
 "Language-Team: español <es@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: settings.py:29
+#: settings.py:32
 msgid "Turkish"
 msgstr "Turco"
 
-#: settings.py:30
+#: settings.py:33
 msgid "English"
 msgstr "Inglés"
 
@@ -41,9 +41,9 @@ msgid "Package Search"
 msgstr "Buscar Paquete"
 
 #: templates/base.html:28 templates/base.html.py:29 templates/base.html:30
-#: templates/base.html.py:31 templates/pathsearch/results.html:41
-#: templates/pathsearch/results.html:42 templates/pathsearch/results.html:43
-#: templates/pathsearch/results.html:44
+#: templates/base.html.py:31 templates/pathsearch/results.html:46
+#: templates/pathsearch/results.html:47 templates/pathsearch/results.html:48
+#: templates/pathsearch/results.html:49
 msgid "packages"
 msgstr "paquetes"
 
@@ -133,69 +133,105 @@ msgstr "término"
 msgid "Search for \"term\" in all packages"
 msgstr "buscar \"term\" en todos los paquetes"
 
-#: templates/pathsearch/packages.html:5 templates/pathsearch/results.html:7
+#: templates/pathsearch/packages.html:4 templates/pathsearch/results.html:7
 #, python-format
 msgid "Results for %(package_name)s"
 msgstr "Encontrado en %(package_name)s "
+
+#: templates/pathsearch/packages.html:8 templates/pathsearch/results.html:53
+#: templates/pathsearch/results.html:70
+#, python-format
+msgid " %(result_count)s results<br/>Showing results between %(si)s and %(ei)s"
+msgstr ""
+
+#: templates/pathsearch/packages.html:22 templates/pathsearch/results.html:89
+msgid "First"
+msgstr ""
+
+#: templates/pathsearch/packages.html:23 templates/pathsearch/results.html:90
+msgid "Previous"
+msgstr ""
+
+#: templates/pathsearch/packages.html:27 templates/pathsearch/results.html:94
+#, python-format
+msgid "Page %(pn)s / %(np)s"
+msgstr ""
+
+#: templates/pathsearch/packages.html:31 templates/pathsearch/results.html:98
+msgid "Next"
+msgstr ""
+
+#: templates/pathsearch/packages.html:32 templates/pathsearch/results.html:99
+msgid "Last"
+msgstr ""
 
 #: templates/pathsearch/results.html:5
 #, python-format
 msgid "Results for %(term)s"
 msgstr "Encontrado en %(term)s"
 
-#: templates/pathsearch/results.html:16
+#: templates/pathsearch/results.html:12
+msgid "Queries involving grouping must be at least 3 characters long."
+msgstr ""
+
+#: templates/pathsearch/results.html:18
+#, python-format
+msgid "%(result_count)s results."
+msgstr ""
+
+#: templates/pathsearch/results.html:19
 #, python-format
 msgid "Packages containing files related to %(term)s"
 msgstr "Paquetes que contienen archivos relacionados con %(term)s "
 
-#: templates/pathsearch/results.html:19 templates/pathsearch/results.html:61
+#: templates/pathsearch/results.html:23 templates/pathsearch/results.html:74
 msgid "Package"
 msgstr "Paquete"
 
-#: templates/pathsearch/results.html:33
-#, python-format
+#: templates/pathsearch/results.html:37
+#, fuzzy, python-format
 msgid ""
 " Files related to %(term)s inside <a href=\"/search/%(current_version)s/"
-"package/%(package_name)s/list/\">%(package_name)s</a>:"
+"package/%(package_name)s/\">%(package_name)s</a>:"
 msgstr ""
 " Archivos relacionados a %(term)s en <a href=\"/search/%(current_version)s/"
 "package/%(package_name)s/list/\">%(package_name)s</a>:"
 
-#: templates/pathsearch/results.html:35
-#, python-format
+#: templates/pathsearch/results.html:39
+#, fuzzy, python-format
 msgid ""
 " Files inside <a href=\"/search/%(current_version)s/package/%(package_name)s/"
-"list/\">%(package_name)s</a>:"
+"\">%(package_name)s</a>:"
 msgstr ""
 " Archivos en <a href=\"/search/%(current_version)s/package/%(package_name)s/"
 "list/\">%(package_name)s</a>:"
 
-#: templates/pathsearch/results.html:41
+#: templates/pathsearch/results.html:46
 msgid "Stable Binary"
 msgstr ""
 
-#: templates/pathsearch/results.html:42
+#: templates/pathsearch/results.html:47
 msgid "Devel Binary"
 msgstr ""
 
-#: templates/pathsearch/results.html:43
+#: templates/pathsearch/results.html:48
 msgid "Stable Source"
 msgstr ""
 
-#: templates/pathsearch/results.html:44
+#: templates/pathsearch/results.html:49
 msgid "Devel Source"
 msgstr ""
 
-#: templates/pathsearch/results.html:48 templates/pathsearch/results.html:62
+#: templates/pathsearch/results.html:58 templates/pathsearch/results.html:75
 msgid "Filepath"
 msgstr "Ruta de archivo"
 
-#: templates/pathsearch/results.html:58
+#: templates/pathsearch/results.html:68
 #, python-format
 msgid "Packages and paths of files related to %(term)s:"
 msgstr "Paquetes y rutas de archivos relacionados con %(term)s:"
 
-#: templates/pathsearch/results.html:76
+#: templates/pathsearch/results.html:109
 msgid "No results..."
 msgstr "No encontrado..."
 
