@@ -56,8 +56,10 @@ class Module(KCModule):
             from dbus.mainloop.qt import DBusQtMainLoop
             DBusQtMainLoop(set_as_default=True)
 
-        MainWidget(self, embed=True)
-        self.setButtons(KCModule.Help)
+        self.widget = MainWidget(self, embed=True)
+
+    def save(self):
+        self.widget.saveItems()
 
 def CreatePlugin(widget_parent, parent, component_data):
     return Module(component_data, parent)
