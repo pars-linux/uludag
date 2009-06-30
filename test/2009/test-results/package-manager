@@ -1,5 +1,1 @@
-- Sifre bir daha sorma denildikten sonra, paket indirilemiyor.
 - Kurulu paketleri göster dedikten sonra, listedeki paketlerden birinin üzerine tıklandığında, açıklaması geliyor fakat yanındaki checkbox kayboluyor ve paketleri kaldır butonu disable duruma geçiyor. (Qt bug)
-
-
-
