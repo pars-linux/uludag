@@ -51,7 +51,9 @@ class Interface:
         """
             Returns list of languages."
         """
-        return self.link.System.Settings[self.package].listLanguages()
+        languages = self.link.System.Settings[self.package].listLanguages()
+        languages.sort(key=lambda x: x[1])
+        return languages
 
     def getLanguage(self):
         """
@@ -69,7 +71,9 @@ class Interface:
         """
             Returns list of keymaps."
         """
-        return self.link.System.Settings[self.package].listKeymaps(language)
+        keymaps = self.link.System.Settings[self.package].listKeymaps(language)
+        keymaps.sort(key=lambda x: x[1])
+        return keymaps
 
     def getKeymap(self):
         """
