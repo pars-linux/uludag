@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:34+0300\n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
 "PO-Revision-Date: 2009-06-24 13:25+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -18,6 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1;plural=0;\n"
+
+#: .tmp/ui_item.py:65
+msgid "Active or deactivate module."
+msgstr "Modülü aç ya da kapa."
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr "Düzenle"
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr "Sil"
 
 #: .tmp/ui_service.py:41 .tmp/firewallmanager/service.py:46
 msgid "Start"
@@ -80,7 +92,7 @@ msgstr "Tümü"
 msgid "Action"
 msgstr "Eylem"
 
-#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:279
-#: .tmp/firewallmanager/main.py:316
+#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:280
+#: .tmp/firewallmanager/main.py:317
 msgid "Access denied."
 msgstr "Erişim reddedildi."

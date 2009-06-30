@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:31+0300\n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
 "PO-Revision-Date: 2009-06-27 19:33+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -52,8 +52,7 @@ msgid ""
 "want to start a single service before checking dependencies."
 msgstr ""
 "Açılış sürecinde tüm servisler paralel olarak başlatılsa da, kullanıcılar "
-"belirli bir "
-"servisi bağımlılık kontrollerinden önce başlatmak isteyebilir."
+"belirli bir servisi bağımlılık kontrollerinden önce başlatmak isteyebilir."
 
 #: .tmp/ui_main.py:163
 msgid "Clock Settings"
@@ -95,7 +94,7 @@ msgstr "Bahadır Kandemir"
 msgid "Current Maintainer"
 msgstr "Güncel Geliştirici"
 
-#: .tmp/systemmanager/main.py:73
+#: .tmp/systemmanager/main.py:70
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -104,7 +103,6 @@ msgstr ""
 "Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olup olmadığını "
 "kontrol edin."
 
-#: .tmp/systemmanager/main.py:101
+#: .tmp/systemmanager/main.py:98
 msgid "None"
 msgstr "Hiçbiri"
-

@@ -16,6 +16,9 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QCheckBox" name="checkState">
+     <property name="toolTip">
+      <string>Mount or unmount disk.</string>
+     </property>
      <property name="text">
       <string notr="true"/>
      </property>
@@ -81,6 +84,9 @@
    </item>
    <item row="0" column="3">
     <widget class="QPushButton" name="pushEdit">
+     <property name="toolTip">
+      <string>Edit</string>
+     </property>
      <property name="text">
       <string notr="true"/>
      </property>
@@ -88,6 +94,9 @@
    </item>
    <item row="0" column="4">
     <widget class="QPushButton" name="pushDelete">
+     <property name="toolTip">
+      <string>Delete</string>
+     </property>
      <property name="text">
       <string notr="true"/>
      </property>

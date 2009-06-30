@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:33+0300\n"
+"POT-Creation-Date: 2009-06-30 11:24+0300\n"
 "PO-Revision-Date: 2009-06-22 12:16+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -50,11 +50,11 @@ msgstr ""
 msgid "All Items"
 msgstr ""
 
-#: .tmp/bootmanager/main.py:300
+#: .tmp/bootmanager/main.py:303
 msgid "Do you want to delete '%1'?"
 msgstr "Sei sicuro di voler eliminare '%1'?"
 
-#: .tmp/bootmanager/main.py:331
+#: .tmp/bootmanager/main.py:334
 msgid "Access denied."
 msgstr "Accesso negato."
 
@@ -99,6 +99,18 @@ msgstr "Opzioni di boot"
 #: .tmp/ui_edit.py:143
 msgid "Boot options for operating system."
 msgstr "Opzioni di boot per il sistema operativo selezionato."
+
+#: .tmp/ui_item.py:65
+msgid "Set or unset entry as default boot entry."
+msgstr ""
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr ""
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr ""
 
 #: .tmp/ui_main.py:77
 msgid "Add New"

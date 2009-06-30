@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:34+0300\n"
+"POT-Creation-Date: 2009-06-30 11:24+0300\n"
 "PO-Revision-Date: 2009-06-29 16:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: GERMAN <pardus-translation-de@pardus.org.tr>\n"
@@ -35,17 +35,27 @@ msgstr "Optionen:"
 msgid "Default Options"
 msgstr "Voreingestellte Optionen:"
 
+#: .tmp/ui_item.py:65
+msgid "Mount or unmount disk."
+msgstr ""
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr ""
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr ""
+
 #: .tmp/ui_main.py:77
 msgid "Add New"
 msgstr "Neu Hinzufügen"
 
-#: .tmp/diskmanager/pagedialog.py:31
-#: .tmp/diskmanager/pagedialog.py:34
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: .tmp/diskmanager/about.py:20
-#: .tmp/diskmanager/about.py:22
+#: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
 msgid "Disk Manager"
 msgstr "Disk Manager"
 
@@ -71,7 +81,8 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Für das Backend dieser Applikation sind keine Pakete vorhanden.\n"
-"Bitte stellen Sie sicher, dass die erforderlichen Pakete installiert und korrekt konfiguriert sind."
+"Bitte stellen Sie sicher, dass die erforderlichen Pakete installiert und "
+"korrekt konfiguriert sind."
 
 #: .tmp/diskmanager/main.py:175
 msgid "Mounted at %1"
@@ -85,9 +96,7 @@ msgstr "Alle Objekte"
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: .tmp/diskmanager/main.py:272
-#: .tmp/diskmanager/main.py:282
+#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
 #: .tmp/diskmanager/main.py:321
 msgid "Access denied."
 msgstr "Zugriff verweigert"
-

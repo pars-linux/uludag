@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>418</width>
-    <height>46</height>
+    <height>52</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,6 +16,9 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QCheckBox" name="checkState">
+     <property name="toolTip">
+      <string>Active or deactivate module.</string>
+     </property>
      <property name="text">
       <string notr="true"/>
      </property>
@@ -81,6 +84,9 @@
    </item>
    <item row="0" column="3">
     <widget class="QPushButton" name="pushEdit">
+     <property name="toolTip">
+      <string>Edit</string>
+     </property>
      <property name="text">
       <string notr="true"/>
      </property>
@@ -88,6 +94,9 @@
    </item>
    <item row="0" column="4">
     <widget class="QPushButton" name="pushDelete">
+     <property name="toolTip">
+      <string>Delete</string>
+     </property>
      <property name="text">
       <string notr="true"/>
      </property>

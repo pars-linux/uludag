@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:31+0300\n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
 "PO-Revision-Date: 2009-06-27 16:46+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -34,8 +34,7 @@ msgid ""
 "changed in 'Regional & Language' module in System Settings."
 msgstr ""
 "Observera att denna inställning inte påverkar skrivbordet. Skrivbordets "
-"inställningar "
-"kan ändras via 'Region och språk' i Systeminställningar."
+"inställningar kan ändras via 'Region och språk' i Systeminställningar."
 
 #: .tmp/ui_main.py:160
 msgid "Service Settings"
@@ -93,7 +92,7 @@ msgstr "Bahadır Kandemir"
 msgid "Current Maintainer"
 msgstr "Nuvarande utvecklare"
 
-#: .tmp/systemmanager/main.py:73
+#: .tmp/systemmanager/main.py:70
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -102,7 +101,6 @@ msgstr ""
 "programmet.\n"
 "Vänligen se till att paketen är rätt installerade och inställda."
 
-#: .tmp/systemmanager/main.py:101
+#: .tmp/systemmanager/main.py:98
 msgid "None"
 msgstr "Ingen"
-
