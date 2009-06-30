@@ -15,3 +15,4 @@
 
 - Sistem ayarlarından açıldığında parola sormadan işlemleri yapabiliyor.
 - Herhangi bir ayarı değiştirilip uygula dedikten sonra çıkan parola sorma sayfasına iptal denildiğinde değişiklikler eski haline gelmiyor.
+- Kde dili ingilizce ve sistem dili türkçe olduğunda, Uygulamalar -> sistem altından uygulama çalıştırınca, uygulama türkçe açılıyor.
