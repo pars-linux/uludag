@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:35+0300\n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
 "PO-Revision-Date: 2009-06-27 20:17-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <es@li.org>\n"
@@ -17,6 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/ui_item.py:56
+msgid "Edit"
+msgstr ""
+
+#: .tmp/ui_item.py:57
+msgid "Delete"
+msgstr ""
 
 #: .tmp/ui_edituser.py:176
 msgid "User Information"
@@ -111,8 +119,10 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"Es gibt kein Programm das die Funktionen für den aktuellen Bildschirm ausführt.\n"
-"Bitte stellen Sie sicher, dass die entsprechenden Pakete installiert und korrekt konfiguriert wurden."
+"Es gibt kein Programm das die Funktionen für den aktuellen Bildschirm "
+"ausführt.\n"
+"Bitte stellen Sie sicher, dass die entsprechenden Pakete installiert und "
+"korrekt konfiguriert wurden."
 
 #: .tmp/usermanager/main.py:195
 msgid "Users"
@@ -157,7 +167,8 @@ msgstr "Sie müssen mindestens eine Gruppe auswählen."
 
 #: .tmp/usermanager/edit.py:301
 msgid "Start with typing this user's full name."
-msgstr "Beginnen Sie mit der Eingabe des vollständigen Namens dieses Benutzers."
+msgstr ""
+"Beginnen Sie mit der Eingabe des vollständigen Namens dieses Benutzers."
 
 #: .tmp/usermanager/edit.py:304
 msgid "You should enter a password for this user."
@@ -169,7 +180,9 @@ msgstr "Das Passwort muss länger sein."
 
 #: .tmp/usermanager/edit.py:313
 msgid "Don't use your full name or user name as a password."
-msgstr "Bitte verwenden Sie nicht Ihren vollständigen Namen oder Benutzernamen als Passwort."
+msgstr ""
+"Bitte verwenden Sie nicht Ihren vollständigen Namen oder Benutzernamen als "
+"Passwort."
 
 #: .tmp/usermanager/edit.py:316
 msgid "Passwords don't match."
@@ -194,4 +207,3 @@ msgstr "Information der Gruppe"
 #: .tmp/ui_editgroup.py:79
 msgid "Group Name:"
 msgstr "Name der Gruppe:"
-

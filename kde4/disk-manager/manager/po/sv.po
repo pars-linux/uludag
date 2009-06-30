@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: disk-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:34+0300\n"
+"POT-Creation-Date: 2009-06-30 11:24+0300\n"
 "PO-Revision-Date: 2009-06-26 21:14+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -35,6 +35,18 @@ msgstr "Alternativ:"
 #: .tmp/ui_edit.py:71
 msgid "Default Options"
 msgstr "Standardalternativ"
+
+#: .tmp/ui_item.py:65
+msgid "Mount or unmount disk."
+msgstr ""
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr ""
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr ""
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
@@ -89,5 +101,3 @@ msgstr "Lägg till"
 #: .tmp/diskmanager/main.py:321
 msgid "Access denied."
 msgstr "Åtkomst nekad."
-
-

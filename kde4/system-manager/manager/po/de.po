@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:31+0300\n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
 "PO-Revision-Date: 2009-06-27 20:03-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <es@li.org>\n"
@@ -34,7 +34,10 @@ msgstr "Tastatur-Layout in Konsole:"
 msgid ""
 "Note that these settings do not effect your desktop. Desktop settings can be "
 "changed in 'Regional & Language' module in System Settings."
-msgstr "Beachten Sie, dass die gewählte Einstellung hier keinen Einfluss auf Ihre Desktop-Umgebung hat. Um die Sprache des Desktops zu ändern, gehen Sie in das Modul: Systemeinstellungen in das Modul 'Regional & Sprache'."
+msgstr ""
+"Beachten Sie, dass die gewählte Einstellung hier keinen Einfluss auf Ihre "
+"Desktop-Umgebung hat. Um die Sprache des Desktops zu ändern, gehen Sie in "
+"das Modul: Systemeinstellungen in das Modul 'Regional & Sprache'."
 
 #: .tmp/ui_main.py:160
 msgid "Service Settings"
@@ -44,13 +47,16 @@ msgstr "Systemdienste"
 msgid "First Service to Start:"
 msgstr "Erster Dienst beim Systemstart:"
 
-#: .tmp/ui_main.py:162
 # Zweifel, ich habe in englisch nicht alles verstanden, 
 # i did not understand the last part in english..
+#: .tmp/ui_main.py:162
 msgid ""
 "Although services are started parallel manner in boot process, users may "
 "want to start a single service before checking dependencies."
-msgstr "Obwohl die Dienste während des Boot-Prozesses parallel gestartet werden, kann ein Benutzer einen bestimmten Dienst starten wollen, bevor andere abhängige Dienste auf ihn zugreifen."
+msgstr ""
+"Obwohl die Dienste während des Boot-Prozesses parallel gestartet werden, "
+"kann ein Benutzer einen bestimmten Dienst starten wollen, bevor andere "
+"abhängige Dienste auf ihn zugreifen."
 
 #: .tmp/ui_main.py:163
 msgid "Clock Settings"
@@ -92,16 +98,16 @@ msgstr ""
 msgid "Current Maintainer"
 msgstr "Aktueller Betreuer"
 
-#: .tmp/systemmanager/main.py:73
+#: .tmp/systemmanager/main.py:70
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"Es gibt kein Programm das die Funktionen für den aktuellen Bildschirm ausführt.\n"
-"Bitte stellen Sie sicher, dass die entsprechenden Pakete installiert und korrekt konfiguriert wurden."
+"Es gibt kein Programm das die Funktionen für den aktuellen Bildschirm "
+"ausführt.\n"
+"Bitte stellen Sie sicher, dass die entsprechenden Pakete installiert und "
+"korrekt konfiguriert wurden."
 
-#: .tmp/systemmanager/main.py:101
-
+#: .tmp/systemmanager/main.py:98
 msgid "None"
 msgstr "Keine"
-

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>493</width>
-    <height>46</height>
+    <height>52</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -72,6 +72,9 @@
    </item>
    <item row="0" column="4">
     <widget class="QPushButton" name="pushEdit">
+     <property name="toolTip">
+      <string>Edit</string>
+     </property>
      <property name="text">
       <string notr="true"/>
      </property>
@@ -79,6 +82,9 @@
    </item>
    <item row="0" column="5">
     <widget class="QPushButton" name="pushDelete">
+     <property name="toolTip">
+      <string>Delete</string>
+     </property>
      <property name="text">
       <string notr="true"/>
      </property>

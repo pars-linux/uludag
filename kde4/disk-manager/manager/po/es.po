@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:34+0300\n"
+"POT-Creation-Date: 2009-06-30 11:24+0300\n"
 "PO-Revision-Date: 2009-06-26 18:46-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -38,6 +38,18 @@ msgstr "Opciones:"
 #: .tmp/ui_edit.py:71
 msgid "Default Options"
 msgstr "Opciones por omisión"
+
+#: .tmp/ui_item.py:65
+msgid "Mount or unmount disk."
+msgstr ""
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr ""
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr ""
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
@@ -75,8 +87,8 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "No hay aplicativo que respalda las funciones de esta pantalla.\n"
-"Por favor asegúrese que los paquetes respectivos estén instalados y configurados de "
-"manera correcta."
+"Por favor asegúrese que los paquetes respectivos estén instalados y "
+"configurados de manera correcta."
 
 #: .tmp/diskmanager/main.py:175
 msgid "Mounted at %1"
@@ -94,4 +106,3 @@ msgstr "Agregar"
 #: .tmp/diskmanager/main.py:321
 msgid "Access denied."
 msgstr "Acceso denegado."
-

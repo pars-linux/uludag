@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:33+0300\n"
+"POT-Creation-Date: 2009-06-30 11:24+0300\n"
 "PO-Revision-Date: 2009-06-24 13:32+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -52,11 +52,11 @@ msgstr ""
 msgid "All Items"
 msgstr "Tüm Öğeler"
 
-#: .tmp/bootmanager/main.py:300
+#: .tmp/bootmanager/main.py:303
 msgid "Do you want to delete '%1'?"
 msgstr "'%1' silinsin mi?"
 
-#: .tmp/bootmanager/main.py:331
+#: .tmp/bootmanager/main.py:334
 msgid "Access denied."
 msgstr "Erişim reddedildi."
 
@@ -101,6 +101,18 @@ msgstr "Açılış Seçenekleri"
 #: .tmp/ui_edit.py:143
 msgid "Boot options for operating system."
 msgstr "İşletim sisteminin açılış seçenekleri."
+
+#: .tmp/ui_item.py:65
+msgid "Set or unset entry as default boot entry."
+msgstr "Öntanımlı açılış öğesi olarak ayarlama."
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr "Düzenle"
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr "Sil"
 
 #: .tmp/ui_main.py:77
 msgid "Add New"

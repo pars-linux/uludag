@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:31+0300\n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
 "PO-Revision-Date: 2009-06-26 18:55-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -34,7 +34,10 @@ msgstr "Distribución de Teclado en Consola:"
 msgid ""
 "Note that these settings do not effect your desktop. Desktop settings can be "
 "changed in 'Regional & Language' module in System Settings."
-msgstr "Observe que ésta configuración no afectará al escritorio. La configuración del escritorio buede ser cambiado en el módulo 'Regional & Idiomas' de centro de Configuración del Sistema - ."
+msgstr ""
+"Observe que ésta configuración no afectará al escritorio. La configuración "
+"del escritorio buede ser cambiado en el módulo 'Regional & Idiomas' de "
+"centro de Configuración del Sistema - ."
 
 #: .tmp/ui_main.py:160
 msgid "Service Settings"
@@ -44,12 +47,15 @@ msgstr "Configuración de Servicios"
 msgid "First Service to Start:"
 msgstr "Primer servicio a iniciar:"
 
-#: .tmp/ui_main.py:162
 # favor revisar, no estoy seguro si entendí los detalles en inglés
+#: .tmp/ui_main.py:162
 msgid ""
 "Although services are started parallel manner in boot process, users may "
 "want to start a single service before checking dependencies."
-msgstr "Aunque durante el arranque los servicios se inician de manera simultánea en paralelo, usuarios podrían desear iniciar un servicio inicialmete, antes de otros servicios dependientes."
+msgstr ""
+"Aunque durante el arranque los servicios se inician de manera simultánea en "
+"paralelo, usuarios podrían desear iniciar un servicio inicialmete, antes de "
+"otros servicios dependientes."
 
 #: .tmp/ui_main.py:163
 msgid "Clock Settings"
@@ -91,16 +97,15 @@ msgstr ""
 msgid "Current Maintainer"
 msgstr "Mantenedor actual"
 
-#: .tmp/systemmanager/main.py:73
+#: .tmp/systemmanager/main.py:70
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "No hay aplicativo que respalda las funciones de esta pantalla.\n"
-"Por favor asegúrese que los paquetes respectivos estén instalados y configurados de "
-"manera correcta."
+"Por favor asegúrese que los paquetes respectivos estén instalados y "
+"configurados de manera correcta."
 
-#: .tmp/systemmanager/main.py:101
+#: .tmp/systemmanager/main.py:98
 msgid "None"
 msgstr "Ninguno"
-

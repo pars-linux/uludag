@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:33+0300\n"
+"POT-Creation-Date: 2009-06-30 11:24+0300\n"
 "PO-Revision-Date: 2009-06-29 21:59+0100\n"
 "Last-Translator: Stefan <>\n"
 "Language-Team: LANGUAGE Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -17,8 +17,7 @@ msgstr ""
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
 
-#: .tmp/bootmanager/about.py:20
-#: .tmp/bootmanager/about.py:22
+#: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
 msgid "Boot Manager"
 msgstr "Boot-Manager"
 
@@ -45,17 +44,18 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Für das Backend dieser Applikation sind keine Pakete vorhanden.\n"
-"Bitte stellen Sie sicher, dass die erforderlichen Pakete installiert und korrekt konfiguriert sind."
+"Bitte stellen Sie sicher, dass die erforderlichen Pakete installiert und "
+"korrekt konfiguriert sind."
 
 #: .tmp/bootmanager/main.py:198
 msgid "All Items"
 msgstr "Alle Elemente"
 
-#: .tmp/bootmanager/main.py:300
+#: .tmp/bootmanager/main.py:303
 msgid "Do you want to delete '%1'?"
 msgstr "Wollen Sie '%1' löschen?"
 
-#: .tmp/bootmanager/main.py:331
+#: .tmp/bootmanager/main.py:334
 msgid "Access denied."
 msgstr "Zugriff verweigert."
 
@@ -93,8 +93,11 @@ msgid "Ramdisk File"
 msgstr "Ramdisk Datei"
 
 #: .tmp/ui_edit.py:141
-msgid "File that contains a micro operating system for preloading kernel modules."
-msgstr "Datei welches ein Micro-Betriebssystem enthält, um Kernelmodule vorab zu laden."
+msgid ""
+"File that contains a micro operating system for preloading kernel modules."
+msgstr ""
+"Datei welches ein Micro-Betriebssystem enthält, um Kernelmodule vorab zu "
+"laden."
 
 #: .tmp/ui_edit.py:142
 msgid "Boot Options"
@@ -104,6 +107,18 @@ msgstr "Boot-Optionen"
 msgid "Boot options for operating system."
 msgstr "Boot-Optionen für das Betriebssystem."
 
+#: .tmp/ui_item.py:65
+msgid "Set or unset entry as default boot entry."
+msgstr ""
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr ""
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr ""
+
 #: .tmp/ui_main.py:77
 msgid "Add New"
 msgstr "Neu hinzufügen"
@@ -111,4 +126,3 @@ msgstr "Neu hinzufügen"
 #: .tmp/ui_options.py:36
 msgid "Boot menu display time:"
 msgstr "Zeit, die das Bootmenü angezeigt wird:"
-

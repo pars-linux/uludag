@@ -251,6 +251,7 @@ class ConnectionItemWidget(QtGui.QWidget):
                     self.ui.checkToggler.setChecked(False)
                 else:
                     self.ui.checkToggler.setChecked(True)
+                print exception._dbus_error_name
                 if "Comar.PolicyKit" in exception._dbus_error_name:
                     KMessageBox.error(self, i18n("Access denied."))
                 else:

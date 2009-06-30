@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:34+0300\n"
+"POT-Creation-Date: 2009-06-30 11:24+0300\n"
 "PO-Revision-Date: 2009-06-27 17:05+0300\n"
 "Last-Translator: \n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -38,6 +38,18 @@ msgstr "Seçenekler:"
 #: .tmp/ui_edit.py:71
 msgid "Default Options"
 msgstr "Öntanımlı Seçenekler"
+
+#: .tmp/ui_item.py:65
+msgid "Mount or unmount disk."
+msgstr "Diski bağla ya da ayır."
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr "Düzenle"
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr "Sil"
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
@@ -92,4 +104,3 @@ msgstr "Ekle"
 #: .tmp/diskmanager/main.py:321
 msgid "Access denied."
 msgstr "Erişim reddedildi."
-

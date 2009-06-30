@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:34+0300\n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
 "PO-Revision-Date: 2009-06-22 13:00+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -15,6 +15,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/ui_item.py:65
+#, fuzzy
+msgid "Active or deactivate module."
+msgstr "Firewall disattivato."
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr ""
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr ""
 
 #: .tmp/ui_service.py:41 .tmp/firewallmanager/service.py:46
 msgid "Start"
@@ -78,7 +91,7 @@ msgstr "Tutti"
 msgid "Action"
 msgstr "Azione"
 
-#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:279
-#: .tmp/firewallmanager/main.py:316
+#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:280
+#: .tmp/firewallmanager/main.py:317
 msgid "Access denied."
 msgstr "Accesso negato."

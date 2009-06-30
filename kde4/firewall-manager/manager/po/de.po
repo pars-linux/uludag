@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:34+0300\n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
 "PO-Revision-Date: 2009-06-29 22:46+0100\n"
 "Last-Translator: Stefan <>\n"
 "Language-Team: LANGUAGE Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -17,8 +17,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/ui_service.py:41
-#: .tmp/firewallmanager/service.py:46
+#: .tmp/ui_item.py:65
+#, fuzzy
+msgid "Active or deactivate module."
+msgstr "Firewall ist deaktiviert."
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr ""
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr ""
+
+#: .tmp/ui_service.py:41 .tmp/firewallmanager/service.py:46
 msgid "Start"
 msgstr "Start"
 
@@ -26,8 +38,7 @@ msgstr "Start"
 msgid "Add New"
 msgstr "Neu hinzufügen"
 
-#: .tmp/firewallmanager/pagedialog.py:31
-#: .tmp/firewallmanager/pagedialog.py:35
+#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -43,8 +54,7 @@ msgstr "Stop"
 msgid "Firewall is deactivated."
 msgstr "Firewall ist deaktiviert."
 
-#: .tmp/firewallmanager/about.py:20
-#: .tmp/firewallmanager/about.py:22
+#: .tmp/firewallmanager/about.py:20 .tmp/firewallmanager/about.py:22
 msgid "Firewall Manager"
 msgstr "Firewall Manager"
 
@@ -70,7 +80,8 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Für das Backend dieser Applikation sind keine Pakete vorhanden.\n"
-"Bitte stellen Sie sicher, dass die erforderlichen Pakete installiert und korrekt konfiguriert sind."
+"Bitte stellen Sie sicher, dass die erforderlichen Pakete installiert und "
+"korrekt konfiguriert sind."
 
 #: .tmp/firewallmanager/main.py:200
 msgid "All"
@@ -80,9 +91,7 @@ msgstr "Alles"
 msgid "Action"
 msgstr "Aktion"
 
-#: .tmp/firewallmanager/main.py:257
-#: .tmp/firewallmanager/main.py:279
-#: .tmp/firewallmanager/main.py:316
+#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:280
+#: .tmp/firewallmanager/main.py:317
 msgid "Access denied."
 msgstr "Zugriff verweigert."
-
