@@ -1,2 +1,3 @@
 x Internet sharing disable edilmiş durumda iken, network-manager'da internet sharing bağlı gözüküyor.
 - Butonların üzerine gelindiğinde açıklama gelmeli.
+- Kde dili ingilizce ve sistem dili türkçe olduğunda, Uygulamalar -> sistem altından uygulama çalıştırınca, uygulama türkçe açılıyor.
