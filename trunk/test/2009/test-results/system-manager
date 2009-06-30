@@ -14,3 +14,4 @@
     uakat kullanıcılar belirli bir servisi bağımlılık kontrollerinden önce bu ölümü kullanarak başlatabilir.
 
 - Sistem ayarlarından açıldığında parola sormadan işlemleri yapabiliyor.
+- Herhangi bir ayarı değiştirilip uygula dedikten sonra çıkan parola sorma sayfasına iptal denildiğinde değişiklikler eski haline gelmiyor.
