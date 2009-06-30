@@ -79,6 +79,9 @@ def buildPackages():
         pisi = pisiinterface.PisiApi(stdout = build_output, stderr = build_output, outputDir = config.workDir)
         try:
             try:
+                # Save current *.pisi file list in /var/pisi for further cleanup
+                pisiList = glob.glob1(config.workDir, "*.pisi")
+
                 # Build source package
                 # Returned values can also contain -dbginfo- packages.
                 (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
@@ -137,6 +140,13 @@ def buildPackages():
             except Exception, e:
                 # Transfer source package to wait queue in case of a build error
                 qmgr.transferToWaitQueue(pspec)
+
+                # If somehow some binary packages could have been build, they'll stay in /var/pisi
+                # We should remove them here.
+                for p in set(glob.glob1(config.workDir, "*.pisi")).difference(pisiList):
+                    logger.info("*** Removing stale package '%s' from '%s'" % (p, config.workDir))
+                    removeBinaryPackageFromWorkDir(p)
+
                 errmsg = "Error occured for '%s' in BUILD process:\n %s" % (pspec, e)
                 logger.error(errmsg)
                 mailer.error(errmsg, pspec)
