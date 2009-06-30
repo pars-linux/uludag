@@ -257,6 +257,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
             else:
                 kdeui.KMessageBox.error(self, unicode(e))
+            self.buildItemList()
 
     def slotItemEdit(self):
         """
