@@ -10,25 +10,26 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-27 20:03+0300\n"
-"PO-Revision-Date: 2009-06-28 10:16-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
+"PO-Revision-Date: 2009-06-30 11:04+0100\n"
+"Last-Translator: \n"
 "Language-Team: German <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/about.py:20 .tmp/about.py:22
+#: .tmp/about.py:20
+#: .tmp/about.py:22
 msgid "Network Manager"
 msgstr "Netzwerk-Manager"
 
 #: .tmp/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/about.py:31
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: .tmp/about.py:31
 msgid "Current Maintainer"
@@ -36,7 +37,7 @@ msgstr "Aktueller Betreuer"
 
 #: .tmp/about.py:32
 msgid "Gökmen GÖKSEL"
-msgstr ""
+msgstr "Gökmen GÖKSEL"
 
 #: .tmp/about.py:32
 msgid "Developer"
@@ -50,7 +51,8 @@ msgstr "Vorhandene Profile"
 msgid "All Profiles"
 msgstr "Alle Profile"
 
-#: .tmp/base.py:201 .tmp/base.py:203
+#: .tmp/base.py:201
+#: .tmp/base.py:203
 msgid "No Device Found"
 msgstr "Kein Gerät gefunden"
 
@@ -70,44 +72,46 @@ msgstr "Verbindung bearbeiten"
 msgid "Delete connection"
 msgstr "Verbindung löschen"
 
-#: .tmp/uiitem.py:105 .tmp/uiwifiitem.py:53
+#: .tmp/uiitem.py:105
+#: .tmp/uiwifiitem.py:53
 msgid "Signal Strength"
 msgstr "Signalstärke"
 
 #: .tmp/uiitem.py:106
 msgid "  %p %"
-msgstr ""
+msgstr "  %p %"
 
-#: .tmp/uinameserver.py:42 .tmp/ui.py:338
-# Zweifel, habe hier den Text aus tasma kopiert, wollte eigenlich DNS Konfiguration schreiben, andere idee ?
+#: .tmp/uinameserver.py:42
+#: .tmp/ui.py:338
 msgid "Nameserver Settings"
-msgstr "Name Service-Einstellungen"
+msgstr "Nameserver Einstellungen"
 
 #: .tmp/uinameserver.py:43
 msgid "Machine Name"
 msgstr "Computername"
 
-#: .tmp/uinameserver.py:44 .tmp/ui.py:352
+#: .tmp/uinameserver.py:44
+#: .tmp/ui.py:352
 msgid "Name Servers"
-msgstr ""
+msgstr "Name Server"
 
 #: .tmp/ui.py:336
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: .tmp/ui.py:337
-# Zweifel: oder einfach - Neues Profil ?? statt Profil einrichten.. (done)
 msgid "Create Profile"
 msgstr "Neues Profil"
 
-#: .tmp/ui.py:339 .tmp/widgets.py:177
+#: .tmp/ui.py:339
+#: .tmp/widgets.py:177
 msgid "Scanning..."
 msgstr "Suche..."
 
-#: .tmp/ui.py:340 .tmp/widgets.py:148
-# Zweifel: ist aktualisieren hier korrekt ? nämlich software wird hier nicht aktualisiert !!
+#: .tmp/ui.py:340
+#: .tmp/widgets.py:148
 msgid "Refresh"
-msgstr ""
+msgstr "Neu laden"
 
 #: .tmp/ui.py:341
 msgid "Profile Name :"
@@ -117,7 +121,8 @@ msgstr "Profilname :"
 msgid "Device : "
 msgstr "Gerät : "
 
-#: .tmp/ui.py:343 .tmp/ui.py:357
+#: .tmp/ui.py:343
+#: .tmp/ui.py:357
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -137,7 +142,8 @@ msgstr "Manuell"
 msgid "Address :"
 msgstr "IP-Adresse :"
 
-#: .tmp/ui.py:348 .tmp/ui.py:351
+#: .tmp/ui.py:348
+#: .tmp/ui.py:351
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
@@ -167,12 +173,13 @@ msgstr "Übernehmen"
 
 #: .tmp/ui.py:358
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
-#: .tmp/ui.py:359
 # Zweifel - wie wäre es am besten hier ??
+# Mein Vorschlag: Fernzugriff (Stefan)
+#: .tmp/ui.py:359
 msgid "Remote"
-msgstr ""
+msgstr "Fernzugriff"
 
 #: .tmp/ui.py:360
 msgid "Network Name (ESSID) :"
@@ -203,7 +210,6 @@ msgid "Security Settings"
 msgstr "Sicherheit"
 
 #: .tmp/widgets.py:230
-# Zweifel - verbinden, oder anschliessen ?
 msgid "Disconnected"
 msgstr "Nicht verbunden"
 
@@ -217,7 +223,6 @@ msgid "Connecting"
 msgstr "Verbindungsaufbau"
 
 #: .tmp/widgets.py:244
-# Zwifel - angeschlossen, verbunden, vorhanden, funktionsbereit .. ??
 msgid "Cable or device is unplugged."
-msgstr "Kabel oder Gerät nicht funktionsbereit."
+msgstr "Kabel oder Gerät nicht angeschlossen."
 
