@@ -145,6 +145,9 @@ class StateManager(QObject):
     def setActionHandler(self, handler):
         self.iface.setHandler(handler)
 
+    def setExceptionHandler(self, handler):
+        self.iface.setExceptionHandler(handler)
+
     def conflictCheckPasses(self, packages):
         (C, D, pkg_conflicts) = self.iface.getConflicts(packages)
 

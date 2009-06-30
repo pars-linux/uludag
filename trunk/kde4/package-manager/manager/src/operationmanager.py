@@ -26,6 +26,7 @@ class OperationManager(QObject):
         self.nop = ["System.Manager.clearCache", "System.Manager.setCache", "System.Manager.setConfig",
                     "System.Manager.setRepoActivities", "System.Manager.setRepositories"]
         self.state = state
+        self.state.setExceptionHandler(self.exceptionHandler)
         self.state.setActionHandler(self.handler)
         self.initialize()
 
@@ -89,6 +90,9 @@ class OperationManager(QObject):
     def addDesktopFile(self, desktopFile):
         if desktopFile.startswith("usr/share/applications/") or desktopFile.startswith("usr/kde/4/share/applications/kde4/"):
             self.desktopFiles.append(desktopFile)
+
+    def exceptionHandler(self, exception):
+        self.emit(SIGNAL("exception(QString)"), unicode(exception).lstrip("tr.org.pardus.comar.Exception: "))
 
     def handler(self, package, signal, args):
 

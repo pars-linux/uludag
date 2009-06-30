@@ -52,13 +52,20 @@ class Iface(Singleton):
     def setHandler(self, handler):
         self.link.listenSignals("System.Manager", handler)
 
+    def setExceptionHandler(self, handler):
+        self.exceptionHandler = handler
+
     def signalHandler(self, package, signal, args):
         if signal == "finished":
             pisi.db.invalidate_caches()
             self.initDB()
 
     def handler(self, package, exception, args):
-        logger.debug("Exception caught by COMAR: %s" % exception)
+        if exception:
+            logger.debug("Exception caught by COMAR: %s" % exception)
+            pisi.db.invalidate_caches()
+            self.initDB()
+            self.exceptionHandler(exception)
 
     def installPackages(self, packages):
         logger.debug("Installing packages: %s" % packages)
