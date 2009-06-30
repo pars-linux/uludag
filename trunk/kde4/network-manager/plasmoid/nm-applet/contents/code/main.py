@@ -40,7 +40,7 @@ CONNECTED       = {"title"  :i18n("Connected"),
                    "emblem" :"dialog-ok-apply",
                    "solid"  :Solid.Networking.Connected}
 DISCONNECTED    = {"title"  :i18n("Disconnected"),
-                   "emblem" :"dialog-cancel",
+                   "emblem" :"edit-delete",
                    "solid"  :Solid.Networking.Unconnected}
 CONNECTING      = {"title"  :i18n("Connecting"),
                    "emblem" :"chronometer",
@@ -193,10 +193,11 @@ class NmApplet(plasmascript.Applet):
 
             # Network DOWN
             else:
+                if self.lastActivePackage == 'wireless_tools':
+                    self.defaultIcon = ICONPATH % (self.package().path(), "off")
+
                 self.lastActiveDevice  = None
                 self.lastActivePackage = None
-                self.defaultIcon = ICONPATH % (self.package().path(), "off")
-                print self.defaultIcon
 
                 msg = i18n("Disconnected")
                 lastState = DISCONNECTED
