@@ -9,6 +9,7 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.http import HttpResponseRedirect
 from search.settings import LIST_SIZE
 
+
 def pager(request, entry_list, per_page=LIST_SIZE):
     """Paginates the given resultset."""    
     paginator = Paginator(entry_list, per_page)
@@ -37,7 +38,8 @@ def index(request, version=default_version):
             in_end = in_start + 4
             term = entry[:in_start-1]
             pkg = entry[in_end-1:]
-	    return HttpResponseRedirect("/search/%s/package/%s/%s" % (version, pkg, term))
+	    url = "/search/%s/package/%s/%s" % (version, pkg, term)
+	    return HttpResponseRedirect(url)
             #return search_in_package(request, version, pkg, term)
         
         elif entry.strip().startswith('in:'):
