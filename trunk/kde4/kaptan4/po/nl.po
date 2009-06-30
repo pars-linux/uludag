@@ -1,0 +1,419 @@
+# translation of nl.po to Nederlands
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Antoon Tolboom <atolboo@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-03 13:39+0300\n"
+"PO-Revision-Date: 11/06/09 21:14\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/goodbyeWidget.py:41 .tmp/ScrGoodbye.py:21 .tmp/ui_goodbyeWidget.py:41
+msgid "Goodbye"
+msgstr "Tot ziens"
+
+#: .tmp/goodbyeWidget.py:42 .tmp/ui_goodbyeWidget.py:42
+msgid "Congratulations! You have finished all steps!"
+msgstr "Gefeliciteerd! Alle stappen zijn doorlopen!"
+
+#: .tmp/kaptanMain.py:130 .tmp/ui_kaptanMain.py:130
+msgid "Kaptan Desktop"
+msgstr "Kaptan Desktop"
+
+#: .tmp/kaptanMain.py:131 .tmp/ui_kaptanMain.py:131
+msgid "<b>Welcome to Kaptan!</b>"
+msgstr "<b>Welkom bij Kaptan!</b>"
+
+#: .tmp/kaptanMain.py:132 .tmp/ui_kaptanMain.py:132
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: .tmp/kaptanMain.py:133 .tmp/ui_kaptanMain.py:133
+msgid "Back"
+msgstr "Terug"
+
+#: .tmp/kaptanMain.py:134 .tmp/ui_kaptanMain.py:134
+msgid "Next"
+msgstr "Volgende"
+
+#: .tmp/kaptanMain.py:135 .tmp/ui_kaptanMain.py:135
+msgid "Finish"
+msgstr "Voltooien"
+
+#: .tmp/menuWidget.py:77 .tmp/ui_menuWidget.py:77
+msgid "Menu"
+msgstr "Menu"
+
+#: .tmp/menuWidget.py:78 .tmp/ui_menuWidget.py:78
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Select a menu style:</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Kies een menustijl:</span></p></body></html>"
+
+#: .tmp/menuWidget.py:83 .tmp/ui_menuWidget.py:83
+msgid "Kick-off (Advanced Menu)"
+msgstr "Kick-off (Geavanceerd menu)"
+
+#: .tmp/menuWidget.py:84 .tmp/ui_menuWidget.py:84
+msgid "Classic (Simple Menu)"
+msgstr "Klassiek (Eenvoudig menu)"
+
+#: .tmp/menuWidget.py:85 .tmp/ui_menuWidget.py:85
+msgid "Lancelot (Experimental Menu)"
+msgstr "Lancelot (Experimenteel menu)"
+
+#: .tmp/mouseWidget.py:85 .tmp/ui_mouseWidget.py:85
+msgid "Mouse"
+msgstr "Muis"
+
+#: .tmp/mouseWidget.py:86 .tmp/ui_mouseWidget.py:86
+msgid ""
+"<p align=\"left\">If you are left-handed, you may prefer to swap the "
+"functions on the left and right buttons on your pointing device by choosing "
+"the \"Left handed\"option below. You can also select default click behaviour."
+"</p>"
+msgstr "<p align=\"left\">Indien u linkshandig bent kunt u de functies van de linker en rechter muisknop verwisselen door het kiezen van de optie \"Linkshandig\" .</p>"
+
+#: .tmp/mouseWidget.py:87 .tmp/ui_mouseWidget.py:87
+msgid "mouse icon"
+msgstr "muispictogram"
+
+#: .tmp/mouseWidget.py:88 .tmp/ui_mouseWidget.py:88
+msgid "Click Behaviour"
+msgstr "Klik gedrag"
+
+#: .tmp/mouseWidget.py:89 .tmp/ui_mouseWidget.py:89
+msgid "Single-click to open files and folders"
+msgstr "Enkele klik opent bestanden en mappen"
+
+#: .tmp/mouseWidget.py:90 .tmp/ui_mouseWidget.py:90
+msgid "Dou&ble-click to open files and folders"
+msgstr "Du&bbel kikken opent bestanden en mappen"
+
+#: .tmp/mouseWidget.py:91 .tmp/ui_mouseWidget.py:91
+msgid "Button Order"
+msgstr "Knopvolgorde"
+
+#: .tmp/mouseWidget.py:92 .tmp/ui_mouseWidget.py:92
+msgid "Right Hand"
+msgstr "Rechtshandig"
+
+#: .tmp/mouseWidget.py:93 .tmp/ui_mouseWidget.py:93
+msgid "Left Hand"
+msgstr "Linkshandig"
+
+#: .tmp/mouseWidget.py:94 .tmp/ui_mouseWidget.py:94
+msgid "Reverse scrolling"
+msgstr "Omgekeerd scrollen"
+
+#: .tmp/multipleWidget.py:58
+msgid "Multiple Desktops"
+msgstr "Meerdere bureaubladen"
+
+#: .tmp/multipleWidget.py:59
+msgid "You can configure number of desktops from this application."
+msgstr "U kunt hier het aantal bureaubladen instellen."
+
+#: .tmp/multipleWidget.py:60
+msgid "Number of Desktops"
+msgstr "Aantal bureaubladen"
+
+#: .tmp/networkWidget.py:25 .tmp/ui_networkWidget.py:25
+msgid "Network"
+msgstr "Netwerk"
+
+#: .tmp/packageWidget.py:61 .tmp/ui_packageWidget.py:61
+msgid "Package"
+msgstr "Pakket"
+
+#: .tmp/packageWidget.py:62 .tmp/ui_packageWidget.py:62
+msgid "Info about Pisi"
+msgstr "Info over Pisi"
+
+#: .tmp/packageWidget.py:63 .tmp/ui_packageWidget.py:63
+msgid "picture label"
+msgstr "afbeeldingslabel"
+
+#: .tmp/packageWidget.py:64 .tmp/ui_packageWidget.py:64
+msgid "Updates"
+msgstr "Updates"
+
+#: .tmp/packageWidget.py:65 .tmp/ui_packageWidget.py:65
+msgid "Show in system  tray"
+msgstr "Toon in systeemvak"
+
+#: .tmp/packageWidget.py:66 .tmp/ui_packageWidget.py:66
+msgid "Check updates automatically for every"
+msgstr "Controlleer op updates elke "
+
+#: .tmp/packageWidget.py:67 .tmp/ui_packageWidget.py:67
+msgid "Repo"
+msgstr "Repo"
+
+#: .tmp/packageWidget.py:68 .tmp/ui_packageWidget.py:68
+msgid "Contrib repo includes extra packages."
+msgstr "Contrib repo bevat extra pakketten."
+
+#: .tmp/packageWidget.py:69 .tmp/ui_packageWidget.py:69
+msgid "Add contrib repo"
+msgstr "Voeg contrib repo toe"
+
+#: .tmp/ScrGoodbye.py:22
+msgid "Goodbye from Kaptan Wizard :)"
+msgstr "Tot ziens van Kaptan wizard :)"
+
+#: .tmp/ScrMenu.py:26 .tmp/ScrStyle.py:30
+msgid "Some catchy title about styles"
+msgstr "Enigszins pakkende titel over stijlen"
+
+#: .tmp/ScrMenu.py:27 .tmp/ScrStyle.py:31
+msgid "Some catchy description about styles"
+msgstr "Enigszins pakkende beschrijving over stijlen"
+
+#: .tmp/ScrMenu.py:41
+msgid "Kick-off Menu"
+msgstr "Kickoff-menu"
+
+#: .tmp/ScrMenu.py:43
+msgid "A modern menu for KDE"
+msgstr "Een modern menu voor KDE"
+
+#: .tmp/ScrMenu.py:47
+msgid "Simple Menu"
+msgstr "Eenvoudig menu"
+
+#: .tmp/ScrMenu.py:49
+msgid "And old style menu from KDE 3."
+msgstr "Een oude stijlmenu van KDE 3."
+
+#: .tmp/ScrMenu.py:53
+msgid "Lancelot Menu"
+msgstr "Lancelot-menu"
+
+#: .tmp/ScrMenu.py:55
+msgid "An experimental menu for KDE4"
+msgstr "Een experimenteel menu voor KDE4"
+
+#: .tmp/ScrMouse.py:29
+msgid "Mouse Settings"
+msgstr "Muisinstellingen"
+
+#: .tmp/ScrMouse.py:30
+msgid "Configure your mouse"
+msgstr "Configureer uw muis"
+
+#: .tmp/ScrMouse.py:130
+msgid "Left Handed"
+msgstr "Linkshandig"
+
+#: .tmp/ScrMouse.py:132
+msgid "Right Handed"
+msgstr "Rechtshandig"
+
+#: .tmp/ScrMouse.py:136
+msgid "Single Click"
+msgstr "Enkelvoudige klik"
+
+#: .tmp/ScrMouse.py:138
+msgid "Double Click"
+msgstr "Dubbelklik"
+
+#: .tmp/ScrNetwork.py:23 .tmp/ScrNetwork.py:24
+msgid "Network Manager"
+msgstr "Netwerkbeheer"
+
+#: .tmp/ScrPackage.py:26
+msgid "Package Manager"
+msgstr "Pakketbeheer"
+
+#: .tmp/ScrPackage.py:27
+msgid "Configure package manager settings"
+msgstr "Configureer pakketbeheer instellingen"
+
+#: .tmp/ScrPackage.py:78
+msgid "You are not authorized for this operation."
+msgstr "U bent niet geautoriseerd voor deze handeling."
+
+#: .tmp/ScrPackage.py:79
+msgid "Authentication Error!"
+msgstr "Autorisatiefout!"
+
+#: .tmp/ScrSearch.py:27
+msgid "Some catchy title about desktop search"
+msgstr "Enigzins pakkende titel van desktop-zoekactie"
+
+#: .tmp/ScrSearch.py:28
+msgid "Some catchy description desktop search"
+msgstr "Enigzins pakkende beschrijving van desktop-zoekactie"
+
+#: .tmp/ScrSearch.py:58
+msgid "On"
+msgstr "Aan"
+
+#: .tmp/ScrSearch.py:60
+msgid "Off"
+msgstr "Uit"
+
+#: .tmp/ScrSummary.py:30 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
+#: .tmp/welcomeWidget.py:43
+msgid "Welcome"
+msgstr "Welkom"
+
+#: .tmp/ScrSummary.py:31 .tmp/ScrWelcome.py:23
+msgid "Welcome to Kaptan Wizard :)"
+msgstr "Welkom bij de Kaptan wizard :)"
+
+#: .tmp/ScrWallpaper.py:32
+msgid "Insert some catchy title about wallpapers.."
+msgstr "Voeg een enigzins pakkende titel over achtergronden toe.."
+
+#: .tmp/ScrWallpaper.py:33
+msgid "Wonderful, awesome, superb wallpapers! \\m/"
+msgstr "Prachtige, overweldigende, schitterende achtergronden! \\m/"
+
+#: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:52
+msgid "Desktop Search"
+msgstr "Desktop-zoekactie"
+
+#: .tmp/searchWidget.py:53 .tmp/ui_searchWidget.py:53
+msgid ""
+"Nepomuk  Semantic Desktop enables tagging and rating of files integrated "
+"with the Desktop Search."
+msgstr ""
+"Nepomuk  Semantic Desktop maakt het mogelijk om etiketten en waarderingen "
+"te maken van bestanden geïntegreerd met desktop-zoekactie."
+
+#: .tmp/searchWidget.py:54 .tmp/ui_searchWidget.py:54
+msgid "Enable Nepomuk Semantic Desktop"
+msgstr "Nepomuk Semantic Desktop activeren"
+
+#: .tmp/styleitem.py:46 .tmp/uiitem.py:46 .tmp/ui_styleitem.py:46
+#: .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
+#: .tmp/wallpaperuiitem.py:46
+msgid "Form"
+msgstr "Vorm"
+
+#: .tmp/styleitem.py:47 .tmp/ui_styleitem.py:47
+msgid "styleName"
+msgstr "Stijlnaam"
+
+#: .tmp/styleitem.py:48 .tmp/ui_styleitem.py:48
+msgid "styleDesc"
+msgstr "Stijlbeschrijving"
+
+#: .tmp/styleWidget.py:65 .tmp/ui_styleWidget.py:65
+msgid "Themes"
+msgstr "Thema's"
+
+#: .tmp/styleWidget.py:66 .tmp/ui_styleWidget.py:66
+msgid "<b>Desktop Type:</b>"
+msgstr "<b>Bureaubladtype:</b>"
+
+#: .tmp/styleWidget.py:67 .tmp/ui_styleWidget.py:67
+msgid "Desktop"
+msgstr "Bureaublad"
+
+#: .tmp/styleWidget.py:68 .tmp/ui_styleWidget.py:68
+msgid "Folderview"
+msgstr "Mapweergave"
+
+#: .tmp/styleWidget.py:69 .tmp/ui_styleWidget.py:69
+msgid "<b>Number of Desktops:</b>"
+msgstr "<b>Aantal bureaubladen:</b>"
+
+#: .tmp/summaryWidget.py:49 .tmp/ui_summaryWidget.py:49
+msgid "Summary"
+msgstr "Samenvatting"
+
+#: .tmp/summaryWidget.py:50 .tmp/ui_summaryWidget.py:50
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Your settings will be applied in next screen..."
+"</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">De instellingen worden in het volgende scherm toegepast..."
+"</span></p></body></html>"
+
+#: .tmp/uiitem.py:47 .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
+#: .tmp/wallpaperuiitem.py:47
+msgid "wallPaperName"
+msgstr "Achtergrondnaam"
+
+#: .tmp/uiitem.py:48 .tmp/ui_uiitem.py:48 .tmp/ui_wallpaperuiitem.py:48
+#: .tmp/wallpaperuiitem.py:48
+msgid "wallpaperDesc"
+msgstr "Achtergrondbeschrijving"
+
+#: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
+msgid "Wallpaper"
+msgstr "Achtergrondafbeelding"
+
+#: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:45
+msgid "Choose Wallpaper"
+msgstr "Kies achtergrond"
+
+#: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:46
+msgid "Don't change wallpaper"
+msgstr "Achtergrond niet wijzigen"
+
+#: .tmp/ui_welcomeWidget.py:44 .tmp/welcomeWidget.py:44
+msgid ""
+"This application, called Kaptan Desktop, will help you with your basic but "
+"sufficient setup for your Pardus desktop in a quick manner. Please click "
+"Next to personalize your desktop. \n"
+"\n"
+"Pardus is a GNU/Linux distribution, targeting at computer literate users' "
+"basic desktop needs; helps you connect to internet, read e-mails, work with "
+"office documents and more!"
+msgstr ""
+"Deze toepassing, genaamd Kaptan Desktop, zal behulpzaam zijn bij de elementaire "
+"en noodzakelijke instellingen van de Pardus-omgeving op een snelle wijze. Klik op "
+"Volgende voor het instellen van het bureaublad. \n"
+"\n"
+"Pardus is een GNU/Linux-distributie, bedoelt voor standaard computergebruik; "
+"verbinding maken met het internet, lezen/schrijven van e-mails, werken met "
+"office documenten en meer!"
+
