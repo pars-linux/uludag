@@ -1,3 +1,4 @@
 - Kulanıcı sil ve kullanıcı bilgilerini güncelle butonlarının üzerine gelindiğide bu butonlar ile ilgili bilgi gelmiyor.
 + Kullanıcı silindiğinde ev dizini silinemiyor. Ya da kullanıcının tüm verisini silmek istiyor musunuz diyemiyor.
 - Kde dili ingilizce ve sistem dili türkçe olduğunda, Uygulamalar -> sistem altından uygulama çalıştırınca, uygulama türkçe açılıyor.
+- Kullanıcı bilgileri değiştirme sayfasına geindiğinde, kullanıcı ile ilgili herhengi bir bilgi değiştirip, uygula butonuna basıldıktan sonra, çıkan parola sorma sayfasına iptal denilince, yapılan değişiklikler geri alınamıyor.
