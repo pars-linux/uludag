@@ -64,7 +64,7 @@
   * system-config-printer-kde'nin ayaklandırılması (+)
 
 * Diğer geçişler (Ozan Çağlayan)
- * Samba 3.3.3 geçişi, keyutils ve ctdb'nin paketlenip depoya alınması (+)
+  * Samba 3.3.3 geçişi, keyutils ve ctdb'nin paketlenip depoya alınması (+)
 
 * KDE4 (Gökçen Eraslan)
   * Paketleme (+)
