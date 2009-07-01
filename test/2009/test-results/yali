@@ -1,8 +1,8 @@
 - Bazı kurulumlarda yali krulduktan sonra tekrar başlatılıyor deyip takılı kalabiliyor.
-- Windows partition grub'da görülemiyor (grub paketinden de kaynaklanıyor olabilir.)
-- F8 basilinca ekran tamamiyle gri renge donusemiyor.
++ Windows partition grub'da görülemiyor (grub paketinden de kaynaklanıyor olabilir.)
++ F8 basilinca ekran tamamiyle gri renge donusemiyor.
 
-- Disk tablosu herhengi bir şekilde bozulmuş ise:
+- Disk tablosu herhangi bir şekilde bozulmuş ise:
     + Partition formatlanıp yeni dosya sistemi ile kurulmaya çalışıldığında fscheck hatası veriyor.
     - Partition resize edilmeye çalışıldığında parted hatası veriyor.
 
