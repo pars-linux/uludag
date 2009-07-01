@@ -49,8 +49,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.showBasket)
-        self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.packageFilter)
+        self.connect(self.searchButton, SIGNAL("clicked()"), self.searchActivated)
+        self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.searchLineChanged)
+        self.connect(self.searchLine, SIGNAL("returnPressed()"), self.searchActivated)
+        self.connect(self.searchLine, SIGNAL("clearButtonClicked()"), self.groupFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
+        self.connect(self.groupList, SIGNAL("groupChanged()"), self.searchLine.clear)
         self.connect(self.selectAll, SIGNAL("leftClickedUrl(const QString&)"), self.toggleSelectAll)
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(int, QString, int, QString)"), self.emitStatusBarInfo)
         self.connect(self.statusUpdater, SIGNAL("finished()"), self.statusUpdated)
@@ -93,6 +97,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.setPackages(self.state.packages())
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
 
+    def searchLineChanged(self, text):
+        self.searchButton.setEnabled(bool(text))
+
     def statusUpdated(self):
         if self.statusUpdater.needsUpdate:
             self.statusUpdater.needsUpdate = False
@@ -124,6 +131,15 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         packages = self.state.groupPackages(self.groupList.currentGroup())
         self.packageList.model().setFilterRole(GroupRole)
         waitCursor()
+        self.packageList.model().setFilterPackages(packages)
+        restoreCursor()
+
+    def searchActivated(self):
+        self.setSelectAll()
+        self.packageList.resetMoreInfoRow()
+        waitCursor()
+        packages = self.packageList.search(unicode(self.searchLine.text()).split())
+        self.packageList.model().setFilterRole(GroupRole)
         self.packageList.model().setFilterPackages(packages)
         restoreCursor()
 
@@ -183,7 +199,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.selectAll.setUrl("Reverse")
 
     def toggleSelectAll(self, text):
-        packages = self.state.groupPackages(self.groupList.currentGroup())
+        packages = self.packageList.model().getFilteredPackages()
         if text == "All":
             self.setReverseAll(packages)
         else:

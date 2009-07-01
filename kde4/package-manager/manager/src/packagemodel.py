@@ -157,3 +157,6 @@ class PackageModel(QAbstractTableModel):
             index = self.packages.index(package)
             checked = self.package_selections[index]
             self.package_selections[index] = Qt.Checked if checked == Qt.Unchecked else Qt.Unchecked
+
+    def search(self, text):
+        return self.iface.search(text, self.packages)

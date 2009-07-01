@@ -50,6 +50,9 @@ class PackageProxy(QtGui.QSortFilterProxyModel):
         else:
             return QtGui.QSortFilterProxyModel.filterAcceptsRow(self, source_row, source_parent)
 
+    def getFilteredPackages(self):
+        return list(self.__filteredPackages)
+
     def setFilterPackages(self, packages):
         self.__filteredPackages = set(packages)
         self.invalidateFilter()

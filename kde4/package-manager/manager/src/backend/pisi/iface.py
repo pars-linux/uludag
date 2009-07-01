@@ -227,3 +227,10 @@ class Iface(Singleton):
         print self.link.listRunning()
         return False
 
+    def search(self, terms, packages=None):
+        if self.source == self.REPO:
+            return self.pdb.search_in_packages(packages, terms)
+        else:
+            return self.idb.search_package(terms)
+
+
