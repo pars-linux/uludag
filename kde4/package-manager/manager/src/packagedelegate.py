@@ -80,7 +80,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         if icon_path == DEFAULT_ICON:
             icon = self.defaultIcon
         else:
-            icon = QtGui.QIcon(QtGui.QPixmap(icon_path))
+            icon = QtGui.QIcon(QtGui.QPixmap(icon_path).scaled(QSize(32, 32), Qt.KeepAspectRatio))
         icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
 
         title = index.model().data(index, Qt.DisplayRole)
