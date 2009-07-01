@@ -16,6 +16,7 @@ import time
 import dbus
 import yali4
 import shutil
+import sysutils
 
 import gettext
 __trans = gettext.translation('yali4', fallback=True)
@@ -71,11 +72,16 @@ def initbaselayout():
     os.system("/bin/mknod %s/dev/urandom c 1 9" % consts.target_dir)
 
 def setTimeZone():
-    os.system("rm -rf %s" % os.path.join(consts.target_dir, "etc/localtime"))
-    cp("usr/share/zoneinfo/%s" % ctx.installData.timezone, "etc/localtime")
+
+    # New Way; use zic
+    sysutils.chrootRun("/usr/sbin/zic -l %s" % ctx.installData.timezone)
+
+    # Old Way; copy proper timezone file as etc/localtime
+    # os.system("rm -rf %s" % os.path.join(consts.target_dir, "etc/localtime"))
+    # cp("usr/share/zoneinfo/%s" % ctx.installData.timezone, "etc/localtime")
 
     # Write the timezone data into /etc/timezone
-    open(os.path.join(consts.target_dir, "etc/timezone"), "w").write("%s" % ctx.installData.timezone)
+    # open(os.path.join(consts.target_dir, "etc/timezone"), "w").write("%s" % ctx.installData.timezone)
 
     return True
 
