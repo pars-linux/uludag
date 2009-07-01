@@ -110,6 +110,9 @@
             <property name="enabled">
              <bool>false</bool>
             </property>
+            <property name="styleSheet">
+             <string>padding-left:15px;</string>
+            </property>
             <property name="text">
              <string>Check interval:</string>
             </property>
@@ -179,6 +182,9 @@
            <widget class="QCheckBox" name="installUpdates">
             <property name="enabled">
              <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string>padding-left:15px;</string>
             </property>
             <property name="text">
              <string>Install updates automatically</string>
