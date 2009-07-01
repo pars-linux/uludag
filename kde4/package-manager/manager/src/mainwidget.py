@@ -55,6 +55,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.searchLine, SIGNAL("clearButtonClicked()"), self.groupFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.searchLine.clear)
+        self.connect(self.groupList, SIGNAL("groupChanged()"), lambda:self.searchButton.setEnabled(False))
         self.connect(self.selectAll, SIGNAL("leftClickedUrl(const QString&)"), self.toggleSelectAll)
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(int, QString, int, QString)"), self.emitStatusBarInfo)
         self.connect(self.statusUpdater, SIGNAL("finished()"), self.statusUpdated)
