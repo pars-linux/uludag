@@ -96,7 +96,7 @@ class OperationManager(QObject):
 
     def handler(self, package, signal, args):
 
-        if signal != "progress":
+        if signal in ["started", "finished"]:
             logger.debug("Signal: %s" % str(signal))
             logger.debug("Args: %s" % str(args))
 
