@@ -75,7 +75,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         d.exec_()
 
     def slotReboot(self):
-        yali4.sysutils.fastreboot()
+        yali4.sysutils.reboot()
 
     def shown(self):
         ctx.mainScreen.disableBack()

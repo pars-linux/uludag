@@ -97,6 +97,9 @@ class Runner:
         yali4.sysutils.run("VBoxClient --autoresize")
         yali4.sysutils.run("VBoxClient --clipboard")
 
+        # Cp Reboot
+        yali4.sysutils.run("cp /sbin/reboot /tmp/reboot", appendToLog = False)
+
         # add Screens for selected install type
         self._window.createWidgets(ctx.yali.screens)
 

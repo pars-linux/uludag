@@ -278,12 +278,8 @@ def pardusRelease(partition_path, file_system):
     return ''
 
 def reboot():
-    try:
-        umount(consts.target_dir + "/home")
-    except:
-        pass
-    umount(consts.target_dir)
-    fastreboot()
+    run("/tmp/reboot -f")
+    # fastreboot()
 
 # Shamelessly stolen from Anaconda :)
 def execClear(command, argv, stdin = 0, stdout = 1, stderr = 2):
