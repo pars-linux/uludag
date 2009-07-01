@@ -17,6 +17,7 @@ import dbus
 import yali4
 import shutil
 import sysutils
+import yali4.pisiiface
 
 import gettext
 __trans = gettext.translation('yali4', fallback=True)
@@ -230,6 +231,9 @@ def copyPisiIndex():
         ctx.debugger.log("pisi index files copied.")
     else:
         ctx.debugger.log("pisi index file not found!")
+
+    ctx.debugger.log("Regenerating pisi caches.. ")
+    yali4.pisiiface.regenerateCaches()
     return True
 
 def setPackages():

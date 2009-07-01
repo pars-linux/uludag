@@ -80,6 +80,9 @@ def updateRepo(name=consts.cd_repo_name):
 def removeRepo(name):
     pisi.api.remove_repo(name)
 
+def regenerateCaches():
+    pisi.db.regenerate_caches()
+
 def takeBack(operation):
     # dirty hack for COMAR to find scripts.
     os.symlink("/",consts.target_dir + consts.target_dir)
