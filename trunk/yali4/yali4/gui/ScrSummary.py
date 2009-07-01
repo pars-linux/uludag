@@ -94,6 +94,9 @@ Here you can see your install options and look at them again before installation
         if ctx.installData.isKahyaUsed:
             self.startBombCounter()
         self.fillContent()
+        # FIXME Later
+        self.ui.installAllLangPacks.setChecked(True)
+        self.ui.installAllLangPacks.hide()
 
     def fillContent(self):
         subject = "<p><li><b>%s</b></li><ul>"

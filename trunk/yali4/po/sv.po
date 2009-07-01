@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-26 21:42+0300\n"
+"POT-Creation-Date: 2009-07-01 10:12+0300\n"
 "PO-Revision-Date: 2009-06-28 14:07+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -82,9 +82,8 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
-"\" font-size:12pt; font-weight:600;\">Partitioneringsmetod</span></p></body>"
-"</"
-"html>"
+"\" font-size:12pt; font-weight:600;\">Partitioneringsmetod</span></p></"
+"body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:115
 msgid ""
@@ -116,8 +115,8 @@ msgid ""
 "This option will erase the entire disk. All the data on the disk will be "
 "lost."
 msgstr ""
-"Det här alternativet kommer att radera hela disken. All data kommer "
-"att försvinna."
+"Det här alternativet kommer att radera hela disken. All data kommer att "
+"försvinna."
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
@@ -288,9 +287,8 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Var god och fyll i en "
-"felrapport"
-"på <span style=\" font-weight:600;\">http://bugs.pardus.org.tr/</span> "
-"och bifoga följande bakåtspårning.</p></body></html>"
+"felrapportpå <span style=\" font-weight:600;\">http://bugs.pardus.org.tr/</"
+"span> och bifoga följande bakåtspårning.</p></body></html>"
 
 #: yali4/gui/Ui/exception.py:66
 msgid "Show Backtrace"
@@ -505,8 +503,8 @@ msgid ""
 "To use PiSi's history feature, you may need to be online. Select connection "
 "profile."
 msgstr ""
-"För att använda PiSis historik kan du behöva vara uppkopplad. Välj "
-"en anslutningsprofil."
+"För att använda PiSis historik kan du behöva vara uppkopplad. Välj en "
+"anslutningsprofil."
 
 #: yali4/gui/Ui/rescuepisiwidget.py:70
 msgid "Select Connection"
@@ -620,8 +618,8 @@ msgid "Do not ask any password to this user"
 msgstr ""
 
 #: yali4/gui/Ui/setupuserswidget.py:186
-msgid "Add More Users"
-msgstr "Lägg till fler användare"
+msgid "Advanced"
+msgstr ""
 
 #: yali4/gui/Ui/summarywidget.py:69
 msgid "Begin Install"
@@ -644,8 +642,8 @@ msgid ""
 "licences?"
 msgstr ""
 "All programvara utvecklad av TUBITAK/UEKAE publiceras under GNU GPL. Andra "
-"program har sina licenser. För att installera och använda Pardus "
-"måste du acceptera dem. Accepterar du GNU GPL och andra motsvarande licenser?"
+"program har sina licenser. För att installera och använda Pardus måste du "
+"acceptera dem. Accepterar du GNU GPL och andra motsvarande licenser?"
 
 #: yali4/gui/Ui/welcomewidget.py:92
 msgid "Read GPL"
@@ -879,7 +877,7 @@ msgstr ""
 "Partition <b>%(partition)s</b> kommer att <b>formateras</b> som <b>%(fsType)"
 "s</b>."
 
-#: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:160
+#: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:163
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr "Partition <b>%(partition)s</b> <b>vald</b> som <b>%(type)s</b>."
@@ -909,7 +907,7 @@ msgstr ""
 msgid "Error !"
 msgstr "Fel!"
 
-#: yali4/gui/DiskWidgets.py:428 yali4/gui/ScrSummary.py:159
+#: yali4/gui/DiskWidgets.py:428 yali4/gui/ScrSummary.py:162
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -949,7 +947,7 @@ msgstr ""
 "                                  <b>Storlek:</b> %s<br>\n"
 "                                  <b>Filsystem:</b> %s%s"
 
-#: yali4/gui/DiskWidgets.py:595 yali4/gui/ScrSummary.py:158
+#: yali4/gui/DiskWidgets.py:595 yali4/gui/ScrSummary.py:161
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Alla partitioner på enhet <b>%(device)s</b> har tagits bort."
@@ -1737,60 +1735,60 @@ msgstr "<b><p>Denna åtgärd startar om datorn!</p></b>"
 msgid "Install starts after : <b>%s sec.</b>"
 msgstr "Installationen startar om : <b>%s sek.</b>"
 
-#: yali4/gui/ScrSummary.py:119
+#: yali4/gui/ScrSummary.py:122
 msgid "Keyboard Settings"
 msgstr "Tangentbordsinställningar"
 
-#: yali4/gui/ScrSummary.py:120
+#: yali4/gui/ScrSummary.py:123
 #, python-format
 msgid "Selected keyboard layout is <b>%s</b>"
 msgstr "Vald tangentbordslayout: <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:124
+#: yali4/gui/ScrSummary.py:127
 msgid "Date/Time Settings"
 msgstr "Datum- och tidsinställningar"
 
-#: yali4/gui/ScrSummary.py:125
+#: yali4/gui/ScrSummary.py:128
 #, python-format
 msgid "Selected TimeZone is <b>%s</b>"
 msgstr "Vald tidszon: <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:130
+#: yali4/gui/ScrSummary.py:133
 msgid "User Settings"
 msgstr "Användare"
 
-#: yali4/gui/ScrSummary.py:132
+#: yali4/gui/ScrSummary.py:135
 #, python-format
 msgid "User %s (<b>%s</b>) added."
 msgstr "Användare %s (<b>%s</b>) tillagd."
 
-#: yali4/gui/ScrSummary.py:134
+#: yali4/gui/ScrSummary.py:137
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
 msgstr "Användare %s (<b>%s</b>) tillagd med <u>administratörsrättigheter</u>."
 
-#: yali4/gui/ScrSummary.py:140
+#: yali4/gui/ScrSummary.py:143
 msgid "Hostname Settings"
 msgstr "Värdnamn"
 
-#: yali4/gui/ScrSummary.py:141
+#: yali4/gui/ScrSummary.py:144
 #, python-format
 msgid "Hostname is set as <b>%s</b>"
 msgstr "Värdnamnet är satt till <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:147
+#: yali4/gui/ScrSummary.py:150
 msgid "Partition Settings"
 msgstr "Partitionering"
 
-#: yali4/gui/ScrSummary.py:149
+#: yali4/gui/ScrSummary.py:152
 msgid "Automatic Partitioning selected."
 msgstr "Automatisk partitionering vald"
 
-#: yali4/gui/ScrSummary.py:177
+#: yali4/gui/ScrSummary.py:180
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Automatisk partitionering (storleksändring) vald"
 
-#: yali4/gui/ScrSummary.py:193
+#: yali4/gui/ScrSummary.py:196
 #, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
@@ -1799,7 +1797,7 @@ msgstr ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>storleksändrad</b> till <b>"
 "%(resizeTo)s MB</b>, tidigare storlek var <b>%(currentSize)s MB</b>"
 
-#: yali4/gui/ScrSummary.py:195
+#: yali4/gui/ScrSummary.py:198
 #, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
@@ -1808,30 +1806,30 @@ msgstr ""
 "Partition <b>%(newPartition)s</b> <b>skapad</b> på enhet <b>%(device)s</b> "
 "med <b>%(size)s MB</b> som <b>%(fs)s</b>."
 
-#: yali4/gui/ScrSummary.py:196
+#: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr "Partition <b>%(newPartition)s</b> <b>vald</b> som <b>%(type)s</b>."
 
-#: yali4/gui/ScrSummary.py:211
+#: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
 msgstr "Starthanterarens inställningar"
 
-#: yali4/gui/ScrSummary.py:212
+#: yali4/gui/ScrSummary.py:215
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>"
 msgstr "GRUB kommer att installeras på <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:214
+#: yali4/gui/ScrSummary.py:217
 msgid "GRUB will not be installed"
 msgstr "GRUB kommer inte att installeras."
 
-#: yali4/gui/ScrSummary.py:238
+#: yali4/gui/ScrSummary.py:241
 #, fuzzy
 msgid "Before Starting"
 msgstr "Användare"
 
-#: yali4/gui/ScrSummary.py:239
+#: yali4/gui/ScrSummary.py:242
 #, fuzzy
 msgid ""
 "<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
@@ -1851,17 +1849,17 @@ msgstr ""
 "                   <b>Observera att den här åtgärden inte kan ångras! </b></"
 "p>"
 
-#: yali4/gui/ScrSummary.py:264 yali4/gui/ScrSummary.py:275
-#: yali4/gui/ScrSummary.py:291
+#: yali4/gui/ScrSummary.py:267 yali4/gui/ScrSummary.py:278
+#: yali4/gui/ScrSummary.py:294
 msgid "Formatting ..."
 msgstr "Formaterar..."
 
-#: yali4/gui/ScrSummary.py:270 yali4/gui/ScrSummary.py:282
+#: yali4/gui/ScrSummary.py:273 yali4/gui/ScrSummary.py:285
 #: yali4/installer.py:305
 msgid "Writing disk tables ..."
 msgstr "Skriver disktabeller"
 
-#: yali4/gui/ScrSummary.py:272
+#: yali4/gui/ScrSummary.py:275
 msgid "Resizing ..."
 msgstr "Ändrar storlek..."
 
@@ -2376,6 +2374,9 @@ msgstr "Användare <b>%s</b>s hemkatalog förbereds..."
 msgid "Not enough free space on %s to create new partition"
 msgstr ""
 "Försök att använda ledigt utrymme eller storleksändra befintliga partitioner"
+
+#~ msgid "Add More Users"
+#~ msgstr "Lägg till fler användare"
 
 #, fuzzy
 #~ msgid "Bootloader installation partition"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-26 21:42+0300\n"
+"POT-Creation-Date: 2009-07-01 10:12+0300\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -614,8 +614,8 @@ msgid "Do not ask any password to this user"
 msgstr "Bu kullanıcıya hiç parola sorma"
 
 #: yali4/gui/Ui/setupuserswidget.py:186
-msgid "Add More Users"
-msgstr "Daha fazla kullanıcı"
+msgid "Advanced"
+msgstr "Gelişmiş"
 
 #: yali4/gui/Ui/summarywidget.py:69
 msgid "Begin Install"
@@ -876,7 +876,7 @@ msgstr ""
 "Disk bölümü <b>%(partition)s</b>, <b>%(fsType)s</b> tipinde "
 "<b>biçimlendirilecek</b>."
 
-#: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:160
+#: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:163
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr "Disk bölümü <b>%(partition)s</b> <b>%(type)s</b> için <b>seçildi</b>."
@@ -906,7 +906,7 @@ msgstr ""
 msgid "Error !"
 msgstr "Hata !"
 
-#: yali4/gui/DiskWidgets.py:428 yali4/gui/ScrSummary.py:159
+#: yali4/gui/DiskWidgets.py:428 yali4/gui/ScrSummary.py:162
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -946,7 +946,7 @@ msgstr ""
 "                                  <b>Boyut:</b> %s<br>\n"
 "                                  <b>DosyaSistemi:</b> %s%s"
 
-#: yali4/gui/DiskWidgets.py:595 yali4/gui/ScrSummary.py:158
+#: yali4/gui/DiskWidgets.py:595 yali4/gui/ScrSummary.py:161
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Disk aygıtı <b>%(device)s</b> üzerindeki tüm disk bölümleri silindi."
@@ -1695,60 +1695,60 @@ msgstr "<b><p>Bu işlem bilgisayarınızı yeniden başlatacaktır !</p></b>"
 msgid "Install starts after : <b>%s sec.</b>"
 msgstr "Kurulum <b>%s saniye</b> içinde başlayacak."
 
-#: yali4/gui/ScrSummary.py:119
+#: yali4/gui/ScrSummary.py:122
 msgid "Keyboard Settings"
 msgstr "Klavye Ayarları"
 
-#: yali4/gui/ScrSummary.py:120
+#: yali4/gui/ScrSummary.py:123
 #, python-format
 msgid "Selected keyboard layout is <b>%s</b>"
 msgstr "Seçilen klavye haritası <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:124
+#: yali4/gui/ScrSummary.py:127
 msgid "Date/Time Settings"
 msgstr "Saat/Tarih Ayarları"
 
-#: yali4/gui/ScrSummary.py:125
+#: yali4/gui/ScrSummary.py:128
 #, python-format
 msgid "Selected TimeZone is <b>%s</b>"
 msgstr "Seçilen ZamanDilimi <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:130
+#: yali4/gui/ScrSummary.py:133
 msgid "User Settings"
 msgstr "Kullanıcı Ayarları"
 
-#: yali4/gui/ScrSummary.py:132
+#: yali4/gui/ScrSummary.py:135
 #, python-format
 msgid "User %s (<b>%s</b>) added."
 msgstr "Kullanıcı %s (<b>%s</b>) eklendi."
 
-#: yali4/gui/ScrSummary.py:134
+#: yali4/gui/ScrSummary.py:137
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
 msgstr "Kullanıcı %s (<b>%s</b>) <u>yönetici hakları ile</u> eklendi."
 
-#: yali4/gui/ScrSummary.py:140
+#: yali4/gui/ScrSummary.py:143
 msgid "Hostname Settings"
 msgstr "Makine Adı Ayarları"
 
-#: yali4/gui/ScrSummary.py:141
+#: yali4/gui/ScrSummary.py:144
 #, python-format
 msgid "Hostname is set as <b>%s</b>"
 msgstr "Makine adı <b>%s</b> olarak seçildi"
 
-#: yali4/gui/ScrSummary.py:147
+#: yali4/gui/ScrSummary.py:150
 msgid "Partition Settings"
 msgstr "Disk Bölümü Ayarları"
 
-#: yali4/gui/ScrSummary.py:149
+#: yali4/gui/ScrSummary.py:152
 msgid "Automatic Partitioning selected."
 msgstr "Otomatik kurulum seçildi."
 
-#: yali4/gui/ScrSummary.py:177
+#: yali4/gui/ScrSummary.py:180
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Otomatik kurulum (yeniden boyutlandırma yöntemi) seçildi."
 
-#: yali4/gui/ScrSummary.py:193
+#: yali4/gui/ScrSummary.py:196
 #, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
@@ -1757,7 +1757,7 @@ msgstr ""
 "Disk bölümü <b>%(partition)s - %(currentFs)s</b>, <b>%(resizeTo)s MB</b> 'a "
 "yeniden boyutlandırıldı.Eski boyut: <b>%(currentSize)s MB</b>."
 
-#: yali4/gui/ScrSummary.py:195
+#: yali4/gui/ScrSummary.py:198
 #, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
@@ -1766,30 +1766,30 @@ msgstr ""
 "Disk bölümü <b>%(newPartition)s</b>, <b>%(device)s</b> diskine <b>%(size)s "
 "MB</b> boyutuyla ve <b>%(fs)s</b> dosya sistemi ile eklendi."
 
-#: yali4/gui/ScrSummary.py:196
+#: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
 "Disk bölümü <b>%(newPartition)s</b> <b>%(type)s</b> için <b>seçildi</b>."
 
-#: yali4/gui/ScrSummary.py:211
+#: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
 msgstr "Açılış Yöneticisi Ayarları"
 
-#: yali4/gui/ScrSummary.py:212
+#: yali4/gui/ScrSummary.py:215
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>"
 msgstr "GRUB <b>%s</b> üzerine kurulacak"
 
-#: yali4/gui/ScrSummary.py:214
+#: yali4/gui/ScrSummary.py:217
 msgid "GRUB will not be installed"
 msgstr "GRUB kurulmayacak"
 
-#: yali4/gui/ScrSummary.py:238
+#: yali4/gui/ScrSummary.py:241
 msgid "Before Starting"
 msgstr "Başlamadan önce"
 
-#: yali4/gui/ScrSummary.py:239
+#: yali4/gui/ScrSummary.py:242
 msgid ""
 "<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
 "your partition,<br>\n"
@@ -1807,17 +1807,17 @@ msgstr ""
 "                   Bu disk bölümü için yedek aldığınıza emin olun.<br>\n"
 "                   <b>Bu işlem geri alınamaz.</b></p>"
 
-#: yali4/gui/ScrSummary.py:264 yali4/gui/ScrSummary.py:275
-#: yali4/gui/ScrSummary.py:291
+#: yali4/gui/ScrSummary.py:267 yali4/gui/ScrSummary.py:278
+#: yali4/gui/ScrSummary.py:294
 msgid "Formatting ..."
 msgstr "Biçimlendiriliyor ..."
 
-#: yali4/gui/ScrSummary.py:270 yali4/gui/ScrSummary.py:282
+#: yali4/gui/ScrSummary.py:273 yali4/gui/ScrSummary.py:285
 #: yali4/installer.py:305
 msgid "Writing disk tables ..."
 msgstr "Disk tablosu yazılıyor ..."
 
-#: yali4/gui/ScrSummary.py:272
+#: yali4/gui/ScrSummary.py:275
 msgid "Resizing ..."
 msgstr "Yeniden boyutlandırıyor.."
 
@@ -2319,6 +2319,9 @@ msgstr "<b>%s</b> kullanıcısının ev dizini ayarlanıyor.."
 msgid "Not enough free space on %s to create new partition"
 msgstr ""
 "%s aygıtı üzerinde yeni bir disk bölümü yaratmak için yeterli boş alan yok"
+
+#~ msgid "Add More Users"
+#~ msgstr "Daha fazla kullanıcı"
 
 #~ msgid "Bootloader installation disk"
 #~ msgstr "Açılış Yöneticisi Ayarları"
