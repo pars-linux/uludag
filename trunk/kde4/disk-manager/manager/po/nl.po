@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:50+0300\n"
-"PO-Revision-Date: 14/06/09 09:36\n"
+"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"PO-Revision-Date: 01/07/09 21:28\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Aankoppelpunt:"
 
 #: .tmp/ui_edit.py:69
 msgid "Filesystem Type:"
-msgstr "Bestandsysteemtype:"
+msgstr "Type bestandsysteem:"
 
 #: .tmp/ui_edit.py:70
 msgid "Options:"
@@ -36,9 +36,25 @@ msgstr "Opties:"
 msgid "Default Options"
 msgstr "Standaard opties"
 
+#: .tmp/ui_item.py:65
+msgid "Mount or unmount disk."
+msgstr "Schijf aankoppelen of niet aankoppelen."
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr "Bewerken"
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr "Verwijderen"
+
 #: .tmp/ui_main.py:77
 msgid "Add New"
-msgstr "Nieuw toevoegen"
+msgstr "Nieuwe toevoegen"
+
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Instellingen"
 
 #: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
 msgid "Disk Manager"
@@ -60,27 +76,28 @@ msgstr "Bahadır Kandemir"
 msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
 
-#: .tmp/diskmanager/main.py:83
+#: .tmp/diskmanager/main.py:86
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Er zijn geen pakketten die backend voor deze toepassing geven.\n"
 "Installeer de pakketten en stel ze correct in."
 
-#: .tmp/diskmanager/main.py:172
+#: .tmp/diskmanager/main.py:175
 msgid "Mounted at %1"
 msgstr "Aangekoppeld op %1"
 
-#: .tmp/diskmanager/main.py:191
+#: .tmp/diskmanager/main.py:194
 msgid "All Items"
 msgstr "Alle items"
 
-#: .tmp/diskmanager/main.py:202
+#: .tmp/diskmanager/main.py:205
 msgid "Add"
 msgstr "Toevoegen"
 
-#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:275
-msgid "Settings"
-msgstr "Instellingen"
+#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
+#: .tmp/diskmanager/main.py:321
+msgid "Access denied."
+msgstr "Toegang geweigerd."
 
