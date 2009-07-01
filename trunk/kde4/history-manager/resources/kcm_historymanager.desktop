@@ -13,5 +13,7 @@ X-KDE-Weight=70
 
 Name=History Manager
 Name[tr]=Geçmiş Yöneticisi
+Name[es]=Administrador de Históricos
+Name[de]=History Manager 
 Comment=History Manager
 X-KDE-Keywords=python history managers
