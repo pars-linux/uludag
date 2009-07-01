@@ -109,25 +109,29 @@ class PackageDelegate(QtGui.QItemDelegate):
             version = index.model().data(index, VersionRole)
 
             # Package Detail Label
-            position = top + ROW_HEIGHT + ICON_SIZE
+            position = top + ROW_HEIGHT
 
             p.setFont(boldDetailFont)
             p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, i18n("Description:"))
 
             p.setFont(normalDetailFont)
-            p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, description.toString())
+            
+            fontMetrics = QtGui.QFontMetrics(normalDetailFont)
+            rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, description.toString())
+            p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, rect.height(), Qt.TextWordWrap, description.toString())
 
             # Package Detail Version
-            position += DETAIL_LINE_OFFSET
+            position += rect.height()
 
             p.setFont(boldDetailFont)
             p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, i18n("Release:"))
 
             p.setFont(normalDetailFont)
-            p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, version.toString())
+            rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, version.toString())
+            p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, rect.height(), Qt.TextWordWrap, version.toString())
 
             # Package Detail Repository
-            position += DETAIL_LINE_OFFSET
+            position += rect.height()
 
             p.setFont(boldDetailFont)
             p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, i18n("Repository:"))
