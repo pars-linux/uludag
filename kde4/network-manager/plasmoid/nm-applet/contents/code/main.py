@@ -65,7 +65,7 @@ class NmApplet(plasmascript.Applet):
         self.setAspectRatioMode(Plasma.Square)
 
         self.loader = KIconLoader()
-        self.defaultIcon = WIRED
+        self.defaultIcon = ICONPATH % (self.package().path(), WIRED)
         self.emblem = DISCONNECTED["emblem"]
 
         self.icon = NmIcon(self)
@@ -148,7 +148,7 @@ class NmApplet(plasmascript.Applet):
                     icon = 1
                 self.defaultIcon = ICONPATH % (self.package().path(), icon)
             else:
-                self.defaultIcon = WIRED
+                self.defaultIcon = ICONPATH % (self.package().path(), WIRED)
             self.receiverBlinker.update(self.iface.stat(self.lastActiveDevice)[0])
             self.transmitterBlinker.update(self.iface.stat(self.lastActiveDevice)[1])
         else:
