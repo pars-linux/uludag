@@ -59,3 +59,6 @@ class PackageView(QtGui.QTreeView):
 
     def resetMoreInfoRow(self):
         self.itemDelegate().reset()
+
+    def search(self, text):
+        return self.model().sourceModel().search(text)
