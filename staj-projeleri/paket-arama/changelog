@@ -1,3 +1,8 @@
+2009-07-01  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
+
+	* Query is now sustained/re-generated depending on the url in the searchbox.
+	* Search box attracts the focus on page load.
+
 2009-06-30  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
 	* Now we remove old records before inserting new records into the

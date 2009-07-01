@@ -10,7 +10,8 @@
     <title>{% trans 'Package Search' %} - {% block title %}{% endblock %}</title>
     {% block extrahead %}{% endblock %}
   </head>
-  <body>
+  <body onLoad="document.forms.search_form.q.focus()">
+  
 	{% block header_menu %}
 	
 	<div id='header-bugzilla'>
@@ -38,8 +39,8 @@
 		<a href='javascript: history.go(-1)'>{% trans 'Back' %}</a>
 	
 		<div id="searchForm">
-			<form action="/search/{{current_version}}/" method="GET">
-				<input type="text" name="q" value="{{ term }}" checked="false" size="50" style="font-size:large;"/>&nbsp;<button type="submit">{% trans 'Search' %}</button><br />
+			<form name="search_form" action="/search/{{current_version}}/" method="GET">
+				<input type="text" name="q" value="{{ query }}" checked="false" size="50" style="font-size:large;"/>&nbsp;<button type="submit">{% trans 'Search' %}</button><br />
 
 			{% if group %}
 				<input type="checkbox" name="group" value="yes" checked="true"/>{% trans 'Group Packages' %}

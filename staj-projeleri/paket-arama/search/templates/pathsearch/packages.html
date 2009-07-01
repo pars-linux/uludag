@@ -4,6 +4,7 @@
 {% block title %}{% blocktrans %}Results for {{ package_name }}{% endblocktrans %}{% endblock %}
 {% block content %}
 	{% if entries %}
+		<!-- Results of search for packages -->
 		<div class="pagination">
 		    <p>{% blocktrans with entries.start_index as si and entries.end_index as ei%} {{ result_count }} results<br/>Showing results between {{ si }} and {{ ei }}{% endblocktrans %}</p>
 		</div>
