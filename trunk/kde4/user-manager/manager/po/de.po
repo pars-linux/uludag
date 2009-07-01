@@ -6,6 +6,7 @@
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Stefan Wilhelm <sw1976de at googlemail dot com>, 2009.
+
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
@@ -18,6 +19,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/ui_item.py:56
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: .tmp/ui_item.py:57
+msgid "Delete"
+msgstr "Löschen"
 
 #: .tmp/ui_edituser.py:176
 msgid "User Information"
