@@ -228,9 +228,13 @@ class Iface(Singleton):
         return False
 
     def search(self, terms, packages=None):
-        if self.source == self.REPO:
-            return self.pdb.search_in_packages(packages, terms)
-        else:
-            return self.idb.search_package(terms)
+        try:
+            if self.source == self.REPO:
+                return self.pdb.search_in_packages(packages, terms)
+            else:
+                return self.idb.search_package(terms)
+        except Exception:
+            return []
+
 
 
