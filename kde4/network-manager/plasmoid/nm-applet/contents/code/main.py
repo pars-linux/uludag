@@ -13,12 +13,12 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 
 # KDE Libs
-from PyKDE4.kdecore import i18n
+from PyKDE4.kdecore import i18n, KGlobal
 
 # Plasma Libs
 from PyKDE4 import plasmascript
 from PyKDE4.plasma import Plasma
-from PyKDE4.kdeui import KIconLoader
+from PyKDE4.kdeui import *
 
 # Custom Widgets
 from widgets.popup import Popup, NmIcon, Blinker
@@ -60,10 +60,12 @@ class NmApplet(plasmascript.Applet):
 
     def init(self):
         """ Const method for initializing the applet """
+        KGlobal.locale().insertCatalog("network-manager")
 
         self.iface = NetworkIface()
         self.notifyface = Notifier(dbus.get_default_main_loop())
         self.notifyface.registerNetwork()
+
         # Aspect ratio defined in Plasma
         self.setAspectRatioMode(Plasma.Square)
 
@@ -233,6 +235,37 @@ class NmApplet(plasmascript.Applet):
     def showDialog(self):
         self.dialog.show()
         self.dialog.move(self.popupPosition(self.dialog.sizeHint()))
+
+    def configAccepted(self):
+        gc = self.config()
+        gc.writeEntry("showTraffic", "true")
+        self.update
+
+    def configDenied(self):
+        self.iconConfig.deleteLater()
+        self.popupConfig.deleteLater()
+
+    def createConfigurationInterface(self, parent):
+        # Icon Config
+        self.iconConfig = QWidget()
+        p = parent.addPage(self.iconConfig, i18n("Icon Settings") )
+        p.setIcon( KIcon("network-wired") )
+
+        # Popup Config
+        self.popupConfig = QWidget()
+        p = parent.addPage(self.popupConfig, i18n("Popup Settings") )
+        p.setIcon( KIcon("preferences-desktop-notification") )
+
+        # Dailog Button signal mapping
+        self.connect(parent, SIGNAL("okClicked()"), self.configAccepted)
+        self.connect(parent, SIGNAL("cancelClicked()"), self.configDenied)
+
+    def showConfigurationInterface(self):
+        dialog = KPageDialog()
+        dialog.setFaceType(KPageDialog.List)
+        dialog.setButtons(KDialog.ButtonCode(KDialog.Ok | KDialog.Cancel))
+        self.createConfigurationInterface(dialog)
+        dialog.exec_()
 
 def CreateApplet(parent):
     return NmApplet(parent)
