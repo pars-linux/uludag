@@ -66,6 +66,11 @@ class Tray(KSystemTrayIcon):
 
     def showPopup(self):
         upgrades = self.iface.getUpdates()
+        if config.PMConfig().installUpdatesAutomatically():
+            if not self.appWindow.isVisible() and not self.iface.operationInProgress():
+                self.iface.upgradePackages(upgrades)
+            return
+
         newUpgrades = set(upgrades) - set(self.lastUpgrades)
         self.lastUpgrades = upgrades
         if not len(upgrades) or not newUpgrades:
