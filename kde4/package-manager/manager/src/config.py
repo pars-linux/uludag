@@ -16,6 +16,7 @@ from PyKDE4.kdecore import KConfig
 
 defaults = {"SystemTray":False,
             "UpdateCheck":False,
+            "InstallUpdatesAutomatically":False,
             "UpdateCheckInterval":60,
             }
 
@@ -55,6 +56,9 @@ class PMConfig(Config):
     def updateCheck(self):
         return self.getBoolValue(general, "UpdateCheck")
 
+    def installUpdatesAutomatically(self):
+        return self.getBoolValue(general, "InstallUpdatesAutomatically")
+
     def updateCheckInterval(self):
         return self.getNumValue(general, "UpdateCheckInterval")
 
@@ -66,6 +70,9 @@ class PMConfig(Config):
 
     def setUpdateCheck(self, enabled):
         self.setValue(general, "UpdateCheck", enabled)
+
+    def setInstallUpdatesAutomatically(self, enabled):
+        self.setValue(general, "InstallUpdatesAutomatically", enabled)
 
     def setUpdateCheckInterval(self, value):
         self.setValue(general, "UpdateCheckInterval", value)

@@ -53,6 +53,7 @@ class GeneralSettings(SettingsTab):
 
         self.settings.onlyGuiApp.setChecked(self.config.showOnlyGuiApp())
         self.settings.intervalCheck.setChecked(self.config.updateCheck())
+        self.settings.installUpdates.setChecked(self.config.installUpdatesAutomatically())
         self.settings.intervalSpin.setValue(self.config.updateCheckInterval())
         self.settings.systemTray.setChecked(self.config.systemTray())
         self.settings.updateCheckGroupBox.setEnabled(self.config.systemTray())
@@ -71,6 +72,7 @@ class GeneralSettings(SettingsTab):
     def connectSignals(self):
         self.connect(self.settings.onlyGuiApp, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.intervalCheck, SIGNAL("toggled(bool)"), self.markChanged)
+        self.connect(self.settings.installUpdates, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.useBandwidthLimit, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.intervalSpin, SIGNAL("valueChanged(int)"), self.markChanged)
         self.connect(self.settings.systemTray, SIGNAL("toggled(bool)"), self.markChanged)
@@ -85,6 +87,7 @@ class GeneralSettings(SettingsTab):
             self.config.setSystemTray(self.settings.systemTray.isChecked())
             self.settings.emit(SIGNAL("traySettingChanged()"))
 
+        self.config.setInstallUpdatesAutomatically(self.settings.installUpdates.isChecked())
         self.config.setUpdateCheck(self.settings.intervalCheck.isChecked())
         self.config.setUpdateCheckInterval(self.settings.intervalSpin.value())
 
