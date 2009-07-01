@@ -1,0 +1,58 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+
+\title{Ofis Bileşeni Test Aşamaları}
+\author{Semen Cirit}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+\subsection*{Dictionary}
+\begin{enumerate}
+ \item QstarDict dışındaki tüm sözlükler için ilgili text dosyasını aşağıda bulunan linkten indirebilirsiniz.
+\begin{verbatim}
+http://cekirdek.pardus.org.tr/~semen/dist/office/dictionary/
+\end{verbatim}
+İlgili sözlük için text dosyasını indirdikten sonra, bu dosyanın içinde, belirtilen dil ile ilgili, bir yanlış bir adette doğru olarak yazılmış kelime göreceksiniz.
+
+Aşağıda verilen komut çıktısında .dic uzantılı dosyalar bulunmakta:
+\begin{verbatim}
+# pisi info -F <ilgili sözlüğün paket adı> 
+\end{verbatim}
+
+Bu dosya adlarını aşağıda bulunan çıktı için kullanacağız
+\begin{verbatim}
+#  enchant -d <dic uzantılı dosya adının uzantısız hali> <indirilen dosya> -a
+\end{verbatim}
+
+Bu çıktının verilen yanlış kelime ile ilgili alternatif doğru kelimeler verdiğini, doğru kelime ile ilgili de bir bilgi vermediğini gözlemleyin.
+
+\begin{itemize}
+ \item Örnek olarak: 
+\begin{verbatim}
+#  enchant -d en_US english.txt -a
+\end{verbatim}
+
+\end{itemize}
+ \item Qstardict paketi için, contrib deposundan stardict-essential-turkish paketini kurun.
+
+	Qstardict uygulmasının düzgün bir şekilde çalıştığını gözlemleyin.
+\end{enumerate}
+
+\subsection*{Docbook}
+\begin{enumerate}
+ \item SGMLSpm paketi sadece kurulum testine tabidir.
+ \item asciidoc
+
+\end{enumerate}
+
+
+\end{document}
+
