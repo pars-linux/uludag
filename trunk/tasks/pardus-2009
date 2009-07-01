@@ -164,14 +164,10 @@
 * Paketler (Tüm paket sorumluları)
   * Bütün paketlerin yeni flaglar, toolchain vs. ile 2009 a uyumlu hale getirilmesi (/21)
 
-* Yalı4 (İşbaran Akçayır)
-  * Lvm & Raid Desteği eklenmesi (/10)
-
 * KDE4 (İşbaran Akçayır)
   * History-Manager (+)
 
 * E17 (H. İbrahim Güngör)
-  * bileşen adı değişecek - enlightenment -> e17 (X)
   * base/ bileşende eksik 2 paket review edilecek (+)
   * binding'ler paketlenecek (+)
   * binding bileşeni review sürecinden geçecek (-)
