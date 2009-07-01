@@ -112,7 +112,7 @@ class PackageDelegate(QtGui.QItemDelegate):
             position = top + ROW_HEIGHT + ICON_SIZE
 
             p.setFont(boldDetailFont)
-            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Açıklama:"))
+            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, i18n("Description:"))
 
             p.setFont(normalDetailFont)
             p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, description.toString())
@@ -121,7 +121,7 @@ class PackageDelegate(QtGui.QItemDelegate):
             position += DETAIL_LINE_OFFSET
 
             p.setFont(boldDetailFont)
-            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Sürüm:"))
+            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, i18n("Release:"))
 
             p.setFont(normalDetailFont)
             p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, version.toString())
@@ -130,7 +130,7 @@ class PackageDelegate(QtGui.QItemDelegate):
             position += DETAIL_LINE_OFFSET
 
             p.setFont(boldDetailFont)
-            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, unicode("Depo:"))
+            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, i18n("Repository:"))
 
             p.setFont(normalDetailFont)
             p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, repository.toString())
