@@ -22,7 +22,7 @@ from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.welcomewidget import Ui_WelcomeWidget
 import yali4.gui.context as ctx
 from yali4.gui.YaliDialog import Dialog
-import GUIGPL
+from yali4.gui.GUIAdditional import Gpl
 
 ##
 # Welcome screen is the first screen to be shown.
@@ -70,7 +70,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def showGPL(self):
         # make a GPL dialog
-        r = GUIGPL.Widget(self)
+        r = Gpl(self)
         d = Dialog("GPL", r, self)
         d.resize(500,400)
         d.exec_()

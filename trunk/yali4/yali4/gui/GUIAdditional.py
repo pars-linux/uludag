@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2008, TUBITAK/UEKAE
+# Copyright (C) 2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -12,6 +12,10 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
+
+import codecs
+from os.path import join, exists
+from yali4.gui.GUIException import *
 
 import gettext
 __trans = gettext.translation('yali4', fallback=True)
@@ -258,3 +262,41 @@ class ConnectionWidget(QtGui.QWidget):
 
         if self.needsExecute:
             self.rootWidget.execute_(True)
+
+
+class TextBrowser(QtGui.QTextBrowser):
+
+    def __init__(self, *args):
+        apply(QtGui.QTextBrowser.__init__, (self,) + args)
+
+        self.setStyleSheet("background:white;color:black;")
+
+        try:
+            self.setText(codecs.open(self.load_file(), "r", "UTF-8").read())
+        except Exception, e:
+            raise GUIException, e
+
+    def load_file(self):
+        pass
+
+class Gpl(TextBrowser):
+
+    def load_file(self):
+        f = join(ctx.consts.source_dir, "license/license-" + ctx.consts.lang + ".txt")
+
+        if not exists(f):
+            f = join(ctx.consts.source_dir, "license/license-en.txt")
+        if exists(f):
+            return f
+        raise GUIException, _("Can't open License file!")
+
+class ReleaseNotes(TextBrowser):
+
+    def load_file(self):
+        rel_path = join(ctx.consts.source_dir,"release-notes/releasenotes-" + ctx.consts.lang + ".html")
+
+        if not exists(rel_path):
+            rel_path = join(ctx.consts.source_dir, "release-notes/releasenotes-en.html")
+        if exists(rel_path):
+            return rel_path
+        raise GUIException, _("Can't open Release Notes!")
