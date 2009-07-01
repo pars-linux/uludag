@@ -68,6 +68,7 @@ def index(request, version=default_version):
 
 def list_package_contents(request, version, package_name):
     entry_list = Repo.objects.filter(repo = version.replace("-", "_"), package = package_name)
+    query = "in:%s" % package_name
     
     return render_to_response('pathsearch/results.html', {
 							  'entries'	    : pager(request, entry_list),
@@ -75,6 +76,7 @@ def list_package_contents(request, version, package_name):
                                                           'package_name'    : package_name,
                                                           'current_version' : version,
                                                           'versions'        : versions,
+							  'query'	    : query,
                                               })
 
 def search_for_package(request, version, package_name=""):
@@ -87,7 +89,7 @@ def search_for_package(request, version, package_name=""):
     
     #package_list = [p.package for p in package_list]
     package_list = [p[0] for p in package_list]
-     
+    query = "p:%s" % package_name
 
     # We have a sorting problem here!
     # package_list is the related package names.
@@ -98,13 +100,14 @@ def search_for_package(request, version, package_name=""):
                                 'package_name'          : package_name,
                                 'current_version'       : version,
                                 'versions'              : versions,
-                                'q'                     : request.GET.get('q'),
+                                'query'                 : query,
                                },
                                context_instance = RequestContext(request)
                               )
 def search_in_package(request, version, package_name, term):
     """Searches for term in the given package."""
     entry_list = Repo.objects.filter(repo = version.replace("-","_"), package = package_name, path__contains=term)
+    query = "%s in:%s" % (term, package_name)
     
     return render_to_response('pathsearch/results.html', {
 							  'entries'	    : pager(request, entry_list),
@@ -112,7 +115,8 @@ def search_in_package(request, version, package_name, term):
                                                           'package_name'    : package_name,
                                                           'term'            : term,
                                                           'current_version' : version,
-                                                          'versions'       :versions,
+                                                          'versions'        : versions,
+							  'query'	    : query,
                                               })
     
 def search_in_all_packages(request, version, term = ""):
@@ -120,9 +124,13 @@ def search_in_all_packages(request, version, term = ""):
     We have some problems here. If grouping is desired, that can't be combined with pagination.
     So we have to send entry_list instead of entries.    
     """
-    term = term or request.GET['q']    # If no URL term specified, get the GET data.
+    
+    #TODO: Delete the line below.
+    term = term or request.GET('q','')    # If no URL term specified, get the GET data.
     group = request.GET.get('group')   # Is grouping enabled?
 
+    query = term
+    
     too_short = group and (len(term) < 3)
     if too_short:
 	entry_list = []
@@ -142,5 +150,6 @@ def search_in_all_packages(request, version, term = ""):
                                                           'current_version' : version,
                                                           'versions'        : versions,
 							  'too_short'	    : too_short,
+							  'query'	    : query,
                                                           
                                               })
