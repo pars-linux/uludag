@@ -1,4 +1,4 @@
-# translation of es.po to spanish
+# translation of es.po to Spanish
 # Boot Manager.
 # Copyright (C) 2006-2009, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the Boot Manager package.
@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-30 11:24+0300\n"
-"PO-Revision-Date: 2009-06-26 18:46-0400\n"
+"PO-Revision-Date: 2009-06-30 21:13-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -88,10 +88,8 @@ msgid "Ramdisk File"
 msgstr "Archivo Ramdisk"
 
 #: .tmp/ui_edit.py:141
-msgid ""
-"File that contains a micro operating system for preloading kernel modules."
-msgstr ""
-"Archivo con un sistema operativo mínimo, para cargar los módulos del kernel."
+msgid "File that contains a micro operating system for preloading kernel modules."
+msgstr "Archivo con un sistema operativo mínimo, para cargar los módulos del kernel."
 
 #: .tmp/ui_edit.py:142
 msgid "Boot Options"
@@ -102,16 +100,17 @@ msgid "Boot options for operating system."
 msgstr "Opciones de arranque para el sistema operativo."
 
 #: .tmp/ui_item.py:65
+# favor revisar - o sencillamente "arranque por omision" ?
 msgid "Set or unset entry as default boot entry."
-msgstr ""
+msgstr "Marcar como arranque por omisión."
 
 #: .tmp/ui_item.py:66
 msgid "Edit"
-msgstr ""
+msgstr "Modificar"
 
 #: .tmp/ui_item.py:67
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
@@ -120,3 +119,4 @@ msgstr "Agregar Nuevo"
 #: .tmp/ui_options.py:36
 msgid "Boot menu display time:"
 msgstr "Duración de presentación del menú:"
+
