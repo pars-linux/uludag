@@ -1,0 +1,165 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+
+\title{Editör Bileşeni Test Aşamaları}
+\author{Semen Cirit}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Ed}
+
+Aşağıda örnek bir ed  oturumu bulunmaktadır. Burada yazanları ed komutu çalıştırıldıktan sonra uygulayarak, ed test edilebilir.
+
+\begin{verbatim}
+a
+ed standart bir text editorudur.
+Bu ikinci satirdir.
+.
+2i
+
+.
+%l
+ed standart bir text editorudur.$
+$
+Bu ikinci satirdir.$
+3s/ikinci/ucuncu/
+,l
+ed standart bir text editorudur.$
+$
+Bu ucuncu satirdir.$
+w text.txt
+54
+q
+\end{verbatim}
+Oluşan text.txt dosyasında aşağıdaki şekilde bir bilgi yazdığını gözlemleyin.
+\begin{verbatim}
+ed standart bir text editorudur.
+
+Bu ucuncu satirdir.
+\end{verbatim}
+
+
+\subsection*{Emacs}
+\begin{enumerate}
+\item Emacs paketi kurulumu sonrası:
+
+Menü $\rightarrow$ Uygulamalar $\rightarrow$ Yardımcı Programlar bölümünden Emacs'i açın.
+
+Sorunsuz bir şekilde açılabildiğini gözlemleyin.
+
+\item color-theme paketi kurulumu sonrası:
+
+
+Aşağıdaki komutu kullanarak, ev dizininizin altına .emacs dosyasını kaydedin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/editor/.emacs 
+\end{verbatim}
+
+Emacs uygulamasını açtıktan sonra, emacs komut satırından aşağıdaki komutu çalıştırın.
+\begin{verbatim}
+ M-x color-theme-aalto-dark
+\end{verbatim}
+
+Sorunsuz bir şekilde temanın değiştiğini gözlemleyin.
+
+\item emacs-muse paketi kurulumu sonrası:
+
+Aşağıdaki komutu kullanarak, ev dizininizin altına .emacs dosyasını kaydedin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/editor/.emacs 
+\end{verbatim}
+
+Emacs uygulamasını açtıktan sonra, aşağıdaki komutu tab tuşuna basarak ilgili muse seçeneklerinin geldiğini gözlemleyin
+\begin{verbatim}
+ M-x muse-
+\end{verbatim}
+
+
+\end{enumerate}
+
+
+\subsection*{Joe}
+
+Paketini kurduktan sonra, konsoldan aşağıdaki komutu çalıştırın.
+
+\begin{verbatim}
+ # joe ornek.txt
+\end{verbatim}
+
+Aşağıda bulunan bilgileri joe ile ne yazın.
+\begin{verbatim}
+Bu bir joe örnek testidir.
+Bu ikinci satırdır.
+\end{verbatim}
+
+Aşağıda bulunan komutları kullanarak dosyayı kaydedin ve çıkın.
+\begin{verbatim}
+C-kd tuşu dosyayı kaydetmek için.
+C-c dosyadan çıkmak için
+\end{verbatim}
+
+
+Sorunsuz bir şekilde dosyanın kaydedilmiş olduğunu, aşağıdaki komutu kullanarak gözlemleyin.
+\begin{verbatim}
+# joe ornek.txt 
+\end{verbatim}
+
+\subsection*{Vi}
+
+\begin{enumerate}
+
+\item Vi paketi
+
+Paketini kurduktan sonra, konsoldan aşağıdaki komutu çalıştırın.
+
+\begin{verbatim}
+ # vi ornek.txt
+\end{verbatim}
+
+Aşağıda bulunan bilgileri joe ile ne yazın.
+\begin{verbatim}
+Bu bir vi örnek testidir.
+Bu ikinci satırdır.
+\end{verbatim}
+
+Aşağıda bulunan komutları, vi editörü komut satırını kullanarak, dosyayı kaydedin ve çıkın.
+\begin{verbatim}
+:w tuşu dosyayı kaydetmek için.
+:q dosyadan çıkmak için
+\end{verbatim}
+
+Sorunsuz bir şekilde dosyanın kaydedilmiş olduğunu, aşağıdaki komutu kullanarak gözlemleyin.
+\begin{verbatim}
+# vi ornek.txt 
+\end{verbatim}
+
+\item vim-colorschemes paketi
+
+Aşağıda bulunanan dosyayı açın.
+\begin{verbatim}
+# vi ornek.py
+\end{verbatim}
+
+Daha sonra vi komut satırından 
+\begin{verbatim}
+:colorscheme Blacksea
+\end{verbatim}
+
+Renk temasının değiştiğini gözlemleyin.
+
+\item emacs-muse paketi kurulduktan sonra:
+
+
+\end{enumerate}
+
+\end{document}
+
