@@ -58,7 +58,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 self.connect(radio, SIGNAL("toggled(bool)"), ctx.mainScreen.enableNext)
 
         # Reboot Button
-        self.connect(self.ui.rebootButton, SIGNAL("clicked()"), yali4.sysutils.fastreboot)
+        self.connect(self.ui.rebootButton, SIGNAL("clicked()"), yali4.sysutils.reboot)
 
     def updateNext(self):
         for radio in self.radios:

@@ -93,10 +93,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
             ctx.debugger.log("Trying to eject the CD.")
             sysutils.ejectCdrom()
 
-        ctx.debugger.log("Yali, fastreboot calling..")
+        ctx.debugger.log("Yali, reboot calling..")
 
         ctx.mainScreen.processEvents()
         sysutils.run("sync")
         time.sleep(4)
-        sysutils.fastreboot()
+        sysutils.reboot()
 

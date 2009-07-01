@@ -71,7 +71,7 @@ Here you can see your install options and look at them again before installation
         reply = QuestionDialog(_("Reboot"),
                                _('''<b><p>This action will reboot your system !</p></b>'''))
         if reply == "yes":
-            yali4.sysutils.fastreboot()
+            yali4.sysutils.reboot()
 
     def startBombCounter(self):
         self.startTime = int(time.time())

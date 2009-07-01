@@ -91,9 +91,9 @@ don't you?
             ctx.debugger.log("Trying to eject the CD.")
             yali4.sysutils.ejectCdrom()
 
-        ctx.debugger.log("Yali, fastreboot calling..")
+        ctx.debugger.log("Yali, reboot calling..")
 
         ctx.mainScreen.processEvents()
         time.sleep(4)
-        yali4.sysutils.fastreboot()
+        yali4.sysutils.reboot()
 
