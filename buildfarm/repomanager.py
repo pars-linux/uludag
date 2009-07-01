@@ -90,7 +90,7 @@ class RepositoryManager:
 
 
         breaksABI = []
-        revBuildDeps = []
+        revBuildDeps = set()
 
         if not check():
             # No source repository
@@ -119,11 +119,19 @@ class RepositoryManager:
         # e.g. live555 breaks ABI, vlc and mplayer needs live555 during build
 
         for p in breaksABI:
-            for revdep, revdepObject in sdb.get_rev_deps(p):
-                # e.g. (revdep, revdepObject) = ('vlc', <pisi.dependency.Dependency object at 0xa3284cc>)
-                revBuildDeps.append(os.path.join(config.localPspecRepo, sdb.get_spec(revdep).source.partOf.replace(".", "/") + "/%s/pspec.xml" % revdep))
+            # FIXME: We also add the subpackages as we can't know which one needs revdepupdate.
+            # This may cause a lot of unneeded updates..
+            revdeps = []
+            for package in [_p.name for _p in sdb.get_spec(p).packages]:
+                srevdeps = sdb.get_rev_deps(package)
+                if srevdeps:
+                    revdeps.extend([d[0] for d in srevdeps])
 
-        return (breaksABI, revBuildDeps)
+            for revdep in set(revdeps):
+                # e.g. (revdep, revdepObject) = ('vlc', <pisi.dependency.Dependency object at 0xa3284cc>)
+                revBuildDeps.add(os.path.join(config.localPspecRepo, sdb.get_spec(sdb.pkgtosrc(revdep)).source.partOf.replace(".", "/") + "/%s/pspec.xml" % revdep))
+
+        return (breaksABI, list(revBuildDeps))
 
 
     def getRevision(self):
@@ -170,7 +178,7 @@ if __name__ == "__main__":
     for p in updatedPspecFiles + newPspecFiles:
         print "  * %s" % p
 
-    # Get 'reverseDepepdencypUpdate' containing package list
+    # Get 'reverseDependencyUpdate' containing package list
     # A brand new package can't have this property
     (breaksABI, revDepsToBeRecompiled) = r.getReverseDependencies(updatedPspecFiles)
 
