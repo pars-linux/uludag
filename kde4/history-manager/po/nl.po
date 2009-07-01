@@ -1,14 +1,14 @@
-# translation of history-manager-kde4-nl.po to Nederlands
+# translation of nl.po to Nederlands
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Antoon Tolboom <atolboo@gmail.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: history-manager-kde4-nl\n"
-"Report-Msgid-Bugs-To: isbaran@gmail.com\n"
-"POT-Creation-Date: 2009-03-23 17:04+0200\n"
-"PO-Revision-Date: 14/06/09 20:52\n"
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-29 23:11+0300\n"
+"PO-Revision-Date: 01/07/09 22:13\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,237 +16,195 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../src/about.py:20 ../src/about.py:22 ../src/ui_mainwindow.py:258
+#: .tmp/ui_configure.py:44
+msgid "Options"
+msgstr "Opties"
+
+#: .tmp/ui_configure.py:45
+msgid "Startup Load :"
+msgstr "Startup laden :"
+
+#: .tmp/ui_configure.py:46
+msgid " Operations"
+msgstr "Operaties"
+
+#: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
+#: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
 msgstr "Geschiedenisbeheer"
 
-#: ../src/about.py:24
+#: .tmp/historymanager/about.py:25
 msgid "(c) 2009 TUBITAK/UEKAE"
 msgstr "(c) 2009 TUBITAK/UEKAE"
 
-#: ../src/about.py:31
+#: .tmp/historymanager/about.py:32
 msgid "İşbaran Akçayır"
 msgstr "İşbaran Akçayır"
 
-#: ../src/about.py:31
+#: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
 
-#: ../src/listitem.py:117
-msgid "Date"
-msgstr "Datum"
+#: .tmp/historymanager/window.py:76
+msgid "%1 Operations Loaded"
+msgstr "%1 operaties geladen"
 
-#: ../src/listitem.py:119
-msgid "Time"
-msgstr "Tijd"
+#: .tmp/historymanager/window.py:118
+msgid "Loading operation details.."
+msgstr "Operatiedetails aan het laden.."
 
-#: ../src/listitem.py:147
-msgid "snapshot"
-msgstr "momentopname"
+#: .tmp/historymanager/window.py:124
+msgid "Details for operation on %1 at %2"
+msgstr "Details voor operatie op %1 bij %2"
 
-#: ../src/listitem.py:151
-msgid "upgrade"
-msgstr "opwaarderen"
+#: .tmp/historymanager/window.py:130
+msgid "There are %1 packages in this snapshot."
+msgstr "Er zijn %1 pakketten in deze momentopname."
 
-#: ../src/listitem.py:155
-msgid "remove"
-msgstr "verwijderen"
+#: .tmp/historymanager/window.py:146 .tmp/historymanager/window.py:198
+msgid "Ready .."
+msgstr "Gereed .."
 
-#: ../src/listitem.py:159
-msgid "install"
-msgstr "installeren"
+#: .tmp/historymanager/window.py:156
+msgid "Loading Operation Plan"
+msgstr "Operatieplan aan het laden"
 
-#: ../src/listitem.py:163
-msgid "takeback"
-msgstr "terugzetten"
-
-#: ../src/listitem.py:167
-msgid "unknown"
-msgstr "onbekend"
-
-#: ../src/mainwindow.py:74
-msgid "Select All"
-msgstr "Alles selecteren"
-
-#: ../src/mainwindow.py:91
-msgid "Ready"
-msgstr "Gereed"
-
-#: ../src/mainwindow.py:115
-msgid "No:"
-msgstr "Nr:"
-
-#: ../src/mainwindow.py:116
-msgid "Type:"
-msgstr "Type:"
-
-#: ../src/mainwindow.py:117
-msgid "Operation details"
-msgstr "Operatiedetails"
-
-#: ../src/mainwindow.py:124
-msgid "There are %1 packages in this snapshot"
-msgstr "Er zijn %1 pakketten in deze momentopname"
-
-#: ../src/mainwindow.py:137
-msgid "Finished succesfully"
-msgstr "Met succes voltooid"
-
-#: ../src/mainwindow.py:153
-msgid "Loading Plan"
-msgstr "Plan laden"
-
-#: ../src/mainwindow.py:159
+#: .tmp/historymanager/window.py:173
 msgid "Configuration files in snapshot:"
 msgstr "Instellen bestanden in momentopname:"
 
-#: ../src/mainwindow.py:165
-msgid "Takeback Plan for %1 operation on %2 <br><br>"
-msgstr "Terugzetplan voor %1 operatie op %2<br><br>"
-
-#: ../src/mainwindow.py:166
-msgid "Takeback Plan %1"
-msgstr "Terugzetplan %1"
-
-#: ../src/mainwindow.py:169
+#: .tmp/historymanager/window.py:181
 msgid "<br> These package(s) will be <b>installed</b> :<br>"
 msgstr "<br> Deze pakketten worden <b>geïnstalleerd</b> :<br>"
 
-#: ../src/mainwindow.py:174
+#: .tmp/historymanager/window.py:186
 msgid "<br> These package(s) will be <b>removed</b> :<br>"
 msgstr "<br> Deze pakketten worden <b>verwijderd</b> :<br>"
 
-#: ../src/mainwindow.py:183
-msgid "Listing %1 Operations"
-msgstr "%1 operaties tonen"
+#: .tmp/historymanager/window.py:192
+msgid "Takeback plan for Operation on %1 at %2"
+msgstr "Terugzetplan voor operatie op %1 bij %2"
 
-#: ../src/mainwindow.py:217
+#: .tmp/historymanager/window.py:224
 msgid "Takeback operation verification"
 msgstr "Terugzetoperatie verificatie"
 
-#: ../src/mainwindow.py:218
+#: .tmp/historymanager/window.py:225
 msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
 msgstr "<center>Dit zal het systeem terugzetten naar : <b>%1</b> - <b>%2</b><br>"
 
-#: ../src/mainwindow.py:219
+#: .tmp/historymanager/window.py:226
 msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
-msgstr "Indien u het niet zeker weet, kies Annuleren en zie het terugzetplan.</center>"
+msgstr "Indien u het niet zeker weet, kies Annuleren en bekijk het terugzetplan.</center>"
 
-#: ../src/mainwindow.py:223
+#: .tmp/historymanager/window.py:230
 msgid "Taking back to : %1"
 msgstr "Terugzetten naar :%1"
 
-#: ../src/mainwindow.py:230 ../src/mainwindow.py:248
-msgid "Authentication Failed"
-msgstr "Authenticatie mislukt"
-
-#: ../src/mainwindow.py:234
+#: .tmp/historymanager/window.py:237
 msgid "Start new snapshot"
 msgstr "Nieuwe momentopname starten"
 
-#: ../src/mainwindow.py:235
+#: .tmp/historymanager/window.py:238
 msgid ""
 "<center>This will take a snapshot of your system.<br>Click Ok when you're "
 "ready.</center>"
 msgstr "<center>Dit zal een momentopname van het systeem maken.<br>Kies OK.</center>"
 
-#: ../src/mainwindow.py:241
+#: .tmp/historymanager/window.py:244
 msgid "Taking New Snapshot"
-msgstr "Nieuwe momentopname maken"
+msgstr "Nieuwe momentopname aan het maken"
 
-#: ../src/ui_mainwindow.py:259
-msgid "- Loading Pisi History"
-msgstr "- Pisi-geschiedenis laden"
+#: .tmp/historymanager/window.py:251
+msgid "Authentication Failed"
+msgstr "Authenticatie is mislukt"
 
-#: ../src/ui_mainwindow.py:260
-msgid "%p%"
-msgstr "%p%"
+#: .tmp/historymanager/window.py:258
+msgid "Finished succesfully"
+msgstr "Met succes voltooid"
 
-#: ../src/ui_mainwindow.py:261 ../src/ui_mainwindow.py:266
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
-"p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
-"p></body></html>"
+#: .tmp/historymanager/window.py:262
+#, python-format
+msgid "Taking Snapshot : <b>%s</b>/100"
+msgstr "Momentopname aan het maken : <b>%s</b>/100"
 
-#: ../src/ui_mainwindow.py:271
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"size:10pt;\"></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"size:10pt;\"></p></body></html>"
+#: .tmp/historymanager/listitem.py:12
+msgid "Upgrade"
+msgstr "Opwaarderen"
 
-#: ../src/ui_mainwindow.py:276
-msgid "Takeback Plan"
-msgstr "Terugzetplan"
+#: .tmp/historymanager/listitem.py:12
+msgid "Removal"
+msgstr "Verwijdering"
 
-#: ../src/ui_mainwindow.py:277
-msgid "Click to see what will happen if you click restore button"
-msgstr "Klik om te bekijken wat er zal gebeuren bij het terugzetten"
+#: .tmp/historymanager/listitem.py:12
+msgid "Emerge"
+msgstr "Verschijnen"
 
-#: ../src/ui_mainwindow.py:278
-msgid "Operation Details"
-msgstr "Operatiedetails"
+#: .tmp/historymanager/listitem.py:13
+msgid "Installation"
+msgstr "Installatie"
 
-#: ../src/ui_mainwindow.py:279
-msgid "Click to see operation details"
-msgstr "Klik om de operatiedetails te bekijken"
+#: .tmp/historymanager/listitem.py:13
+msgid "Snapshot"
+msgstr "Momentopname"
 
-#: ../src/ui_mainwindow.py:280
-msgid "Help"
-msgstr "Help"
-
-#: ../src/ui_mainwindow.py:281
-msgid "New Snapshot"
-msgstr "Nieuwe momentopname"
-
-#: ../src/ui_mainwindow.py:282
+#: .tmp/historymanager/listitem.py:13
 msgid "Takeback"
 msgstr "Terugzetten"
 
-#: ../src/ui_mainwindow.py:283
+#: .tmp/historymanager/listitem.py:14
+msgid "Repository Update"
+msgstr "Repository bijwerken"
+
+#: .tmp/historymanager/listitem.py:54
+msgid "No: %1   Type: %2"
+msgstr "No: %1   Type: %2"
+
+#: .tmp/ui_uiitem.py:85
+msgid "History Date - Time /Label"
+msgstr "Geschiedenis datum - tijd/label"
+
+#: .tmp/ui_uiitem.py:86
+msgid "No: Type:"
+msgstr "No: Type:"
+
+#: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
 msgid "Take back to this point"
 msgstr "Terugzetten naar dit punt"
 
-#: ../src/ui_mainwindow.py:284
+#: .tmp/ui_uiitem.py:88
+msgid "Details"
+msgstr "Details"
+
+#: .tmp/ui_uiitem.py:89
+msgid "Show operation plan"
+msgstr "Operatieplan tonen"
+
+#: .tmp/ui_mainwindow.py:130
+msgid "New Snapshot"
+msgstr "Nieuwe momentopname"
+
+#: .tmp/ui_mainwindow.py:131
+msgid "History Settings"
+msgstr "Geschiedenisinstellingen"
+
+#: .tmp/ui_mainwindow.py:133
+msgid "Alias :"
+msgstr "Alias :"
+
+#: .tmp/ui_mainwindow.py:134
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: .tmp/ui_mainwindow.py:135
+msgid "- Loading Pisi History"
+msgstr "- Pisi-geschiedenis aan het laden"
+
+#: .tmp/ui_mainwindow.py:136
+msgid "%p%"
+msgstr "%p%"
+
+#: .tmp/ui_mainwindow.py:138
 msgid "Copy"
 msgstr "Kopiëren"
-
-#: ../src/utility.py:15
-msgid "Information"
-msgstr "Informatie"
 
