@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-25 15:31+0300\n"
-"PO-Revision-Date: 2009-06-30 11:25+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-07-01 22:18+0100\n"
+"Last-Translator: Stefan <sw1976de@googlemail.com>\n"
 "Language-Team: German <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,7 +60,7 @@ msgstr "Systematische Zeitdrift der hardware-clock ausgleichen"
 
 #: .tmp/ui_main.py:166
 msgid "Console Settings"
-msgstr "Configuración de la Consola"
+msgstr "Einstellungen"
 
 #: .tmp/ui_main.py:167
 msgid "Number of Real Consoles:"
