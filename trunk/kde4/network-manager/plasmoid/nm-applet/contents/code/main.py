@@ -9,15 +9,15 @@ import time
 import dbus
 
 # Qt Libs
-from PyQt4.QtCore import Qt, SIGNAL, SLOT, pyqtSignature, QString, QTimer, QRectF, QTimer
-from PyQt4.QtGui import QWidget, QFrame, QGraphicsLinearLayout, QPixmap, QColor, QPainterPath, QPainter, QIcon
+from PyQt4.QtGui import *
+from PyQt4.QtCore import *
 
 # KDE Libs
 from PyKDE4.kdecore import i18n
 
 # Plasma Libs
-from PyKDE4.plasma import Plasma
 from PyKDE4 import plasmascript
+from PyKDE4.plasma import Plasma
 from PyKDE4.kdeui import KIconLoader
 
 # Custom Widgets
@@ -53,6 +53,10 @@ class NmApplet(plasmascript.Applet):
 
     def __init__(self, parent):
         plasmascript.Applet.__init__(self, parent)
+        self.actions = []
+
+    def contextualActions(self):
+        return self.actions
 
     def init(self):
         """ Const method for initializing the applet """
@@ -60,7 +64,6 @@ class NmApplet(plasmascript.Applet):
         self.iface = NetworkIface()
         self.notifyface = Notifier(dbus.get_default_main_loop())
         self.notifyface.registerNetwork()
-
         # Aspect ratio defined in Plasma
         self.setAspectRatioMode(Plasma.Square)
 
@@ -98,12 +101,16 @@ class NmApplet(plasmascript.Applet):
         # It may cause crashes in PlasmoidViewer but luckly not in Plasma :)
         self.connect(Plasma.Theme.defaultTheme(), SIGNAL("themeChanged()"), self.updateTheme)
 
-        self.connect(self.popup.ui.nmButton, SIGNAL("clicked()"), self.openNM)
-
         # Listen network status from comar
         self.iface.listen(self.handler)
 
         QTimer.singleShot(4000, self.dataUpdated)
+
+        # Context Menu
+        icon = self.loader.loadIcon(WIRED, KIconLoader.NoGroup, 22)
+        openNm = QAction(QIcon(icon), i18n("Open Network Manager"), self)
+        self.actions.append(openNm)
+        self.connect(openNm, SIGNAL("triggered(bool)"), self.openNM)
 
     def paintInterface(self, painter, option, rect):
         size = min(rect.width(),rect.height())*2

@@ -121,11 +121,6 @@ class Ui_Connection(object):
         self.wirelessLayout.setObjectName("wirelessLayout")
         self.verticalLayout_4.addWidget(self.wirelessConnections)
         self.verticalLayout_5.addWidget(self.wireless_tools)
-        self.nmButton = QtGui.QPushButton(Connection)
-        self.nmButton.setMinimumSize(QtCore.QSize(0, 22))
-        self.nmButton.setStyleSheet("color:black;")
-        self.nmButton.setObjectName("nmButton")
-        self.verticalLayout_5.addWidget(self.nmButton)
 
         self.retranslateUi(Connection)
         QtCore.QMetaObject.connectSlotsByName(Connection)
@@ -136,6 +131,5 @@ class Ui_Connection(object):
         self.ethernetStatus.setText(QtGui.QApplication.translate("Connection", "Not connected.", None, QtGui.QApplication.UnicodeUTF8))
         self.labelWireless.setText(QtGui.QApplication.translate("Connection", "Wireless", None, QtGui.QApplication.UnicodeUTF8))
         self.wirelessStatus.setText(QtGui.QApplication.translate("Connection", "Not connected.", None, QtGui.QApplication.UnicodeUTF8))
-        self.nmButton.setText(QtGui.QApplication.translate("Connection", "Open Network Manager", None, QtGui.QApplication.UnicodeUTF8))
 
 import data_rc
