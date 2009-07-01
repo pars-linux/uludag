@@ -29,7 +29,7 @@ from pyaspects.weaver import *
 from yali4.gui.aspects import *
 
 # Release Notes
-import GUIRelNotes
+from yali4.gui.GUIAdditional import ReleaseNotes
 
 # QTerm
 import QTermWidget
@@ -266,8 +266,7 @@ class Widget(QtGui.QWidget):
 
     def showReleaseNotes(self):
         # make a release notes dialog
-        r = GUIRelNotes.Widget(self)
-        d = Dialog(_('Release Notes'), r, self)
+        d = Dialog(_('Release Notes'), ReleaseNotes(self), self)
         d.resize(500,400)
         d.exec_()
 
