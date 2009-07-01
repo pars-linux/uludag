@@ -70,8 +70,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def showGPL(self):
         # make a GPL dialog
-        r = Gpl(self)
-        d = Dialog("GPL", r, self)
+        d = Dialog("GPL", Gpl(self), self)
         d.resize(500,400)
         d.exec_()
 
