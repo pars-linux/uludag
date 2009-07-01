@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:39+0300\n"
-"PO-Revision-Date: 14/06/09 09:18\n"
+"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"PO-Revision-Date: 01/07/09 21:14\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,23 +36,83 @@ msgstr "Bahadır Kandemir"
 msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
 
-#: .tmp/bootmanager/main.py:83
+#: .tmp/bootmanager/main.py:99
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Er zijn geen pakketten die backend voor deze toepassing geven.\n"
 "Installeer de pakketten en stel ze correct in."
 
-#: .tmp/bootmanager/main.py:165
+#: .tmp/bootmanager/main.py:198
 msgid "All Items"
 msgstr "Alle items"
 
-#: .tmp/bootmanager/main.py:176
-msgid "Boot Entry"
-msgstr "Opstartkeuze"
+#: .tmp/bootmanager/main.py:303
+msgid "Do you want to delete '%1'?"
+msgstr "Wilt u '%1' verwijderen?"
+
+#: .tmp/bootmanager/main.py:334
+msgid "Access denied."
+msgstr "Toegang geweigerd."
+
+#: .tmp/ui_edit.py:134
+msgid "Title"
+msgstr "Titel"
+
+#: .tmp/ui_edit.py:135
+msgid "Name of the boot entry to be shown at the boot menu."
+msgstr "Naam van het bootitem dat in het bootmenu getoond wordt."
+
+#: .tmp/ui_edit.py:136
+msgid "Disk"
+msgstr "Schijf"
+
+#: .tmp/ui_edit.py:137
+msgid "Disk that contains operating system."
+msgstr "Schijf met het besturingssysteem."
+
+#: .tmp/ui_edit.py:138
+msgid "Kernel"
+msgstr "Kernel"
+
+#: .tmp/ui_edit.py:139
+msgid "Operating system kernel."
+msgstr "Kernel van besturingssysteem."
+
+#: .tmp/ui_edit.py:140
+msgid "Ramdisk File"
+msgstr "Ramdisk-bestand"
+
+#: .tmp/ui_edit.py:141
+msgid "File that contains a micro operating system for preloading kernel modules."
+msgstr "Bestand dat een micro besturingssysteem bevat voor het voorladen van kernelmodules."
+
+#: .tmp/ui_edit.py:142
+msgid "Boot Options"
+msgstr "Bootopties"
+
+#: .tmp/ui_edit.py:143
+msgid "Boot options for operating system."
+msgstr "Bootopties voor het besturingssysteem."
+
+#: .tmp/ui_item.py:65
+msgid "Set or unset entry as default boot entry."
+msgstr "Invoer als standaard bootinvoer aan-/uitzetten."
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr "Bewerken"
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr "Verwijderen"
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
 msgstr "Nieuwe toevoegen"
+
+#: .tmp/ui_options.py:36
+msgid "Boot menu display time:"
+msgstr "Weergavetijd bootmenu:"
 
