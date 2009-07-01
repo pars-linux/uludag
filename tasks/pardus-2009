@@ -29,7 +29,7 @@
   * DVD/USB çubuğu depo içeriği algılansın, soru sorulup öncelikli depo olarak eklensin (-)
   * Kurulum sonunda uygulama çalıştırma listesi çıksın (+)
   * Paket yöneticisi arayüzünde paketlerin hangi depoya ait olduğu gösterilsin (+)
-  * Güncellemeler arkada otomatik yapılabilsin (-)
+  * Güncellemeler arkada otomatik yapılabilsin (+)
   * "Service restart", "System reboot" sorguları (-)
   * Güncelleme çeşitleri gösterilsin [security, critical, bug, enhancement,...] (-)
   * Kurulum sırasında tray/plasmoid üzerinde ilerleme yüzdesi gösterilsin (-)
