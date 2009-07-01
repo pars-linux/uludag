@@ -24,7 +24,7 @@
   * Distribution no upgrade'de build no dan öncelikli olsun (+)
 
 * Paket Yöneticisi (Faik Uygur)
-  * KDE4 için yeniden yazılacak (/99)
+  * KDE4 için yeniden yazılacak (+)
   * Depolar aktif/deaktif yapılabilsin (+)
   * DVD/USB çubuğu depo içeriği algılansın, soru sorulup öncelikli depo olarak eklensin (-)
   * Kurulum sonunda uygulama çalıştırma listesi çıksın (+)
