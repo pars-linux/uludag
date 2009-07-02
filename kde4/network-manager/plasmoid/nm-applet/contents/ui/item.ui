@@ -1,67 +1,68 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>connectionItem</class>
- <widget class="QWidget" name="connectionItem" >
-  <property name="geometry" >
+ <widget class="QWidget" name="connectionItem">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>210</width>
+    <width>212</width>
     <height>28</height>
    </rect>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>0</width>
     <height>28</height>
    </size>
   </property>
-  <property name="maximumSize" >
+  <property name="maximumSize">
    <size>
     <width>16777215</width>
     <height>30</height>
    </size>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Form</string>
   </property>
-  <property name="styleSheet" >
-   <string notr="true" />
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
-  <layout class="QGridLayout" name="gridLayout" >
-   <property name="margin" >
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
     <number>0</number>
    </property>
-   <property name="spacing" >
+   <property name="spacing">
     <number>0</number>
    </property>
-   <item row="0" column="0" >
-    <widget class="QPushButton" name="button" >
-     <property name="minimumSize" >
+   <item row="0" column="0">
+    <widget class="QPushButton" name="button">
+     <property name="minimumSize">
       <size>
        <width>0</width>
        <height>28</height>
       </size>
      </property>
-     <property name="maximumSize" >
+     <property name="maximumSize">
       <size>
        <width>16777215</width>
        <height>28</height>
       </size>
      </property>
-     <property name="styleSheet" >
-      <string notr="true" >padding-left:4px;
+     <property name="styleSheet">
+      <string notr="true">padding-left:4px;
 padding-right:4px;
 text-align:left;
 border:1px solid rgba(0,0,0,0);</string>
      </property>
-     <property name="text" >
+     <property name="text">
       <string>PushButton</string>
      </property>
-     <property name="icon" >
-      <iconset resource="../code/icons/data.qrc" >
+     <property name="icon">
+      <iconset resource="../code/icons/data.qrc">
        <normaloff>:/icons/network-wireless_tools.png</normaloff>:/icons/network-wireless_tools.png</iconset>
      </property>
-     <property name="flat" >
+     <property name="flat">
       <bool>false</bool>
      </property>
     </widget>
@@ -69,8 +70,8 @@ border:1px solid rgba(0,0,0,0);</string>
   </layout>
  </widget>
  <resources>
-  <include location="../code/icons/data.qrc" />
-  <include location="../code/icons/data.qrc" />
+  <include location="../code/icons/data.qrc"/>
+  <include location="../code/icons/data.qrc"/>
  </resources>
  <connections/>
 </ui>

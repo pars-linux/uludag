@@ -59,9 +59,11 @@ class Popup(QWidget):
         self.connections = {"net_tools":{}, "wireless_tools":{}}
 
     def init(self):
+        hasProfile = False
         for package in self.connections.keys():
             connections = self.iface.connections(package)
             for connection in connections:
+                hasProfile = True
                 self.addConnectionItem(package, str(connection))
                 info = self.iface.info(package, connection)
                 if str(info['state']).startswith('up'):
@@ -74,14 +76,15 @@ class Popup(QWidget):
                 else:
                     self.connections[package][connection].setState(str(info['state']))
 
-        needSeperator = True
+        self.ui.nmButton.setHidden(hasProfile)
+        self.ui.noProfile.setHidden(hasProfile)
+        self.ui.warning.setHidden(hasProfile)
+        if not hasProfile:
+            self.parent.setMaximumHeight(100)
 
         for package in self.connections.keys():
             if len(self.connections[package]) == 0:
-                needSeperator = False
                 getattr(self.ui,package).hide()
-
-        self.ui.seperator.setVisible(needSeperator)
 
     def setConnectionStatus(self, package, message):
         if package == "wireless_tools":

@@ -90,15 +90,7 @@ class NmApplet(plasmascript.Applet):
         self.lastActiveDevice = None
         self.lastActivePackage = None
 
-        self.dialog = Plasma.Dialog()
-        self.dialog.setWindowFlags(Qt.Popup)
-
-        self.updateTheme()
-
-        self.popup = Popup(self.dialog, self)
-        self.popup.init()
-
-        self.dialog.resize(self.size().toSize())
+        self.initPopup()
 
         # It may cause crashes in PlasmoidViewer but luckly not in Plasma :)
         self.connect(Plasma.Theme.defaultTheme(), SIGNAL("themeChanged()"), self.updateTheme)
@@ -113,6 +105,18 @@ class NmApplet(plasmascript.Applet):
         openNm = QAction(QIcon(icon), i18n("Open Network Manager"), self)
         self.actions.append(openNm)
         self.connect(openNm, SIGNAL("triggered(bool)"), self.openNM)
+        self.connect(self.popup.ui.nmButton, SIGNAL("clicked()"), self.openNM)
+
+    def initPopup(self):
+        self.dialog = Plasma.Dialog()
+        self.dialog.setWindowFlags(Qt.Popup)
+
+        self.updateTheme()
+
+        self.popup = Popup(self.dialog, self)
+        self.popup.init()
+
+        self.dialog.resize(self.popup.size())
 
     def paintInterface(self, painter, option, rect):
         size = min(rect.width(),rect.height())*2
@@ -152,7 +156,7 @@ class NmApplet(plasmascript.Applet):
         if self.lastActiveDevice:
             if self.lastActivePackage == 'wireless_tools':
                 # Show SIGNAL Strength
-                icon =  self.iface.strength(self.lastActiveDevice)/17
+                icon =  self.iface.strength(self.lastActiveDevice)/18
                 if not icon in range(1,6):
                     icon = 1
                 self.defaultIcon = ICONPATH % (self.package().path(), icon)
@@ -224,10 +228,7 @@ class NmApplet(plasmascript.Applet):
 
         # ConnectionChanged
         elif signal == "connectionChanged":
-            if args[0] == 'deleted':
-                self.popup.connections[package][unicode(args[1])].hide()
-            if args[0] == 'added':
-                self.popup.addConnectionItem(package, unicode(args[1]))
+            self.initPopup()
 
     def updateTheme(self):
         self.dialog.setStyleSheet("padding-left:0;color: %s;" % Plasma.Theme.defaultTheme().color(Plasma.Theme.TextColor).name())
