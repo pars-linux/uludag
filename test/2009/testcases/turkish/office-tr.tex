@@ -37,7 +37,7 @@ Bu çıktının verilen yanlış kelime ile ilgili alternatif doğru kelimeler v
 \begin{itemize}
  \item Örnek olarak: 
 \begin{verbatim}
-#  enchant -d en_US english.txt -a
+#  enchant -d en_US hunspell-dict-en.txt -a
 \end{verbatim}
 
 \end{itemize}
@@ -48,8 +48,65 @@ Bu çıktının verilen yanlış kelime ile ilgili alternatif doğru kelimeler v
 
 \subsection*{Docbook}
 \begin{enumerate}
- \item SGMLSpm paketi sadece kurulum testine tabidir.
- \item asciidoc
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+build-docbook-catalog
+SGMLSpm
+docbook-dssl
+docbook-sgml3_1
+docbook-sgml4_1
+docbook-sgml4_2
+docbook-sgml4_3
+docbook-sgml4_4
+docbook-sgml4_5
+docbook-xml4_1_2
+docbook-xml4_2
+docbook-xml4_3
+docbook-xml4_4
+docbook-xml4_5
+docbook-xsl
+opensp
+\end{verbatim}
+ \item asciidoc paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/office/docbook/testasciidoc.txt
+# asciidoc testasciidoc.txt
+\end{verbatim}
+
+Sorunsuz bir şekilde testasciidoc.html dosyasının oluştuğunu gözlemleyin.
+
+\item docbook-utils paketi kurulumu sonrası:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/office/docbook/test.sgml
+# pisi info -F docbook-utils
+\end{verbatim}
+
+Pisi çıktısı docbook-utils paketinin dosyalarının sistemde nereye yerleştiği ile ilgili bilgi içermektedir. Bu çıktıda /usr/bin altında bulunan tüm dosyalar ile test.sgml dosyasını çalıştırın.
+
+örnek olarak:
+\begin{verbatim}
+#docbook2dvi test.sgml
+\end{verbatim}
+
+Tüm çalıştırılabilir dosyaların sorunsuz bir şekilde çalıştığını gözlemleyin.
+
+\item openjade paketi kurulumu sonrası:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/office/docbook/test.sgml
+# openjade -t sgml /usr/share/sgml/docbook/dsssl-stylesheets-1.79/html/docbook.dsl test.sgml
+\end{verbatim}
+
+openjade'ın sorunsuz bir şekilde çalıştığını gözlemleyin.
+
+\item sgml-common paketi kurulumu sonrası:
+\begin{verbatim}
+ # sudo install-catalog --add /etc/sgml/sgml-ent.cat /usr/share/sgml/sgml-iso-entities-8879.1986/catalog
+\end{verbatim}
+
+Sorunsuz bir şekilde çalıştığını gözlemleyin.
+
 
 \end{enumerate}
 
