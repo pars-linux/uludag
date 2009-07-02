@@ -160,8 +160,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def exceptionCaught(self, message):
         self.progressDialog.hide()
-        KMessageBox.error(self, message, i18n("Pisi Error"))
-        self.actionFinished(None)
+        self.messageBox = QtGui.QMessageBox(i18n("Pisi Error"), message, QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
+        self.messageBox.show()
 
     def actionFinished(self, operation):
         self.searchLine.clear()
