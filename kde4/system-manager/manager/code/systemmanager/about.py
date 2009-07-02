@@ -18,7 +18,7 @@ from PyKDE4.kdecore import KAboutData, ki18n
 appName     = "system-manager"
 modName     = "systemmanager"
 programName = ki18n("System Manager")
-version     = "0.9.2"
+version     = "0.9.3"
 description = ki18n("System Manager")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2009 TUBITAK/UEKAE")
