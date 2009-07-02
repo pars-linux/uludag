@@ -40,9 +40,9 @@ class NetworkIface:
 
     def connect(self, package, profile, handler=None):
         if handler:
-            self.setState(package, profile, "up", handler)
+            self.setState(package, profile, "up", handler, timeout=360)
         else:
-            self.setState(package, profile, "up", self.handler)
+            self.setState(package, profile, "up", self.handler, timeout=360)
 
     def disconnect(self, package, profile, handler=None):
         if handler:
