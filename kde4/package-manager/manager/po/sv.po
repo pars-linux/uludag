@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 15:18+0300\n"
+"POT-Creation-Date: 2009-07-02 14:39+0300\n"
 "PO-Revision-Date: 2009-06-28 12:58+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -24,7 +24,7 @@ msgstr "Korg"
 msgid "Selected package(s) for install:"
 msgstr "Valda paket för installation:"
 
-#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:97
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:98
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
@@ -38,7 +38,7 @@ msgstr "Sammanlagd storlek:"
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
-#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:56 .tmp/statemanager.py:72
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:60 .tmp/statemanager.py:73
 msgid "Install Package(s)"
 msgstr "Installera paket"
 
@@ -94,26 +94,26 @@ msgstr "Web Tarayıcı"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: .tmp/settingsdialog.py:117
+#: .tmp/settingsdialog.py:128
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Alla cachade paket kommer att raderas. Är du säker?"
 
-#: .tmp/settingsdialog.py:118
+#: .tmp/settingsdialog.py:129
 msgid "Warning"
 msgstr "Varning"
 
-#: .tmp/settingsdialog.py:119
+#: .tmp/settingsdialog.py:130
 msgid "Delete"
 msgstr "Ta bort"
 
-#: .tmp/settingsdialog.py:173
+#: .tmp/settingsdialog.py:184
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
 msgstr ""
 "<qt>Förrådsadresser ska sluta med xml eller xml.bz2.<p>Försök igen.</qt>"
 
-#: .tmp/settingsdialog.py:173
+#: .tmp/settingsdialog.py:184 .tmp/mainwidget.py:163
 msgid "Pisi Error"
 msgstr "Pisi-fel"
 
@@ -125,75 +125,95 @@ msgstr "Pakethanteraren"
 msgid "Package Manager Help"
 msgstr "Handbok Pakethanteraren"
 
-#: .tmp/ui_settingsdialog.py:319
+#: .tmp/ui_settingsdialog.py:325
 msgid "Package Manager Settings"
 msgstr "Anpassa - Pakethanteraren"
 
-#: .tmp/ui_settingsdialog.py:320
+#: .tmp/ui_settingsdialog.py:326
+msgid "&Help"
+msgstr "&Hjälp"
+
+#: .tmp/ui_settingsdialog.py:327
+msgid "&OK"
+msgstr "&OK"
+
+#: .tmp/ui_settingsdialog.py:328 .tmp/ui_progressdialog.py:164
+msgid "&Cancel"
+msgstr "&Avbryt"
+
+#: .tmp/ui_settingsdialog.py:329
 msgid "&Show only desktop applications"
 msgstr "Vi&sa enbart skrivbordsprogram"
 
-#: .tmp/ui_settingsdialog.py:321
+#: .tmp/ui_settingsdialog.py:330
 msgid "&Enable system tray icon"
 msgstr "Aktivera &systembrickan"
 
-#: .tmp/ui_settingsdialog.py:322 .tmp/ui_settingsdialog.py:331
+#: .tmp/ui_settingsdialog.py:331 .tmp/ui_settingsdialog.py:343
 msgid "Update check"
 msgstr "Uppdateringskontroll"
 
-#: .tmp/ui_settingsdialog.py:323
+#: .tmp/ui_settingsdialog.py:332
 msgid "Enable &periodic update check"
 msgstr "Aktivera automatisk kontroll"
 
-#: .tmp/ui_settingsdialog.py:324
+#: .tmp/ui_settingsdialog.py:333 .tmp/ui_settingsdialog.py:336
+msgid "padding-left:15px;"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:334
 msgid "Check interval:"
 msgstr "Intervall:"
 
-#: .tmp/ui_settingsdialog.py:325
+#: .tmp/ui_settingsdialog.py:335
 msgid " min"
 msgstr " min"
 
-#: .tmp/ui_settingsdialog.py:326
+#: .tmp/ui_settingsdialog.py:337
+msgid "Install updates automatically"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:338
 msgid "Bandwidth limit"
 msgstr "Maximal nerladdningshastighet"
 
-#: .tmp/ui_settingsdialog.py:327
+#: .tmp/ui_settingsdialog.py:339
 msgid "Use bandwidth limit"
 msgstr "Begränsa bandbredd"
 
-#: .tmp/ui_settingsdialog.py:328
+#: .tmp/ui_settingsdialog.py:340
 msgid " kb/s"
 msgstr " kb/s"
 
-#: .tmp/ui_settingsdialog.py:329
+#: .tmp/ui_settingsdialog.py:341
 msgid "Bandwidth limit:"
 msgstr "Maximal nerladdningshastighet:"
 
-#: .tmp/ui_settingsdialog.py:330
+#: .tmp/ui_settingsdialog.py:342
 msgid "&General Settings"
 msgstr "&Allmänna inställningar"
 
-#: .tmp/ui_settingsdialog.py:332
+#: .tmp/ui_settingsdialog.py:344
 msgid "&Use hard disk cache for downloaded software"
 msgstr "&Använd cache för hämtade paket"
 
-#: .tmp/ui_settingsdialog.py:333
+#: .tmp/ui_settingsdialog.py:345
 msgid "Maximum cache size:"
 msgstr "Cachestorlek på disk:"
 
-#: .tmp/ui_settingsdialog.py:334
+#: .tmp/ui_settingsdialog.py:346
 msgid " Mb"
 msgstr " Mb"
 
-#: .tmp/ui_settingsdialog.py:335
+#: .tmp/ui_settingsdialog.py:347
 msgid "(use 0 for no limit)"
 msgstr "(använd 0 för obegränsad)"
 
-#: .tmp/ui_settingsdialog.py:336
+#: .tmp/ui_settingsdialog.py:348
 msgid "Clear Cache"
 msgstr "Cachetömning"
 
-#: .tmp/ui_settingsdialog.py:337
+#: .tmp/ui_settingsdialog.py:349
 msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
@@ -201,96 +221,106 @@ msgstr ""
 "Genom att tömma cachen tas alla hämtade paket bort. \n"
 "Det påverkar varken installerade paket eller systemets stabilitet."
 
-#: .tmp/ui_settingsdialog.py:339
+#: .tmp/ui_settingsdialog.py:351
 msgid "C&lean disk cache now"
 msgstr "Töm cachen nu"
 
-#: .tmp/ui_settingsdialog.py:340
+#: .tmp/ui_settingsdialog.py:352
 msgid "C&ache"
 msgstr "C&ache"
 
-#: .tmp/ui_settingsdialog.py:341 .tmp/ui_repodialog.py:53
+#: .tmp/ui_settingsdialog.py:353 .tmp/ui_repodialog.py:53
 msgid "Repository Name"
 msgstr "Förrådsnamn"
 
-#: .tmp/ui_settingsdialog.py:342 .tmp/ui_repodialog.py:54
+#: .tmp/ui_settingsdialog.py:354 .tmp/ui_repodialog.py:54
 msgid "Repository Address"
 msgstr "Förrådsadress"
 
-#: .tmp/ui_settingsdialog.py:343
+#: .tmp/ui_settingsdialog.py:355
 msgid "&Add New Repository"
 msgstr "&Lägg till nytt förråd"
 
-#: .tmp/ui_settingsdialog.py:344
+#: .tmp/ui_settingsdialog.py:356
 msgid "Remove Repository"
 msgstr "&Ta bort förråd"
 
-#: .tmp/ui_settingsdialog.py:345
+#: .tmp/ui_settingsdialog.py:357
 msgid "Move &Up"
 msgstr "Flytta &upp"
 
-#: .tmp/ui_settingsdialog.py:346
+#: .tmp/ui_settingsdialog.py:358
 msgid "Move &Down"
 msgstr "Flytta &ner"
 
-#: .tmp/ui_settingsdialog.py:347
+#: .tmp/ui_settingsdialog.py:359
 msgid "&Repositories"
 msgstr "&Förråd"
 
-#: .tmp/ui_settingsdialog.py:348
+#: .tmp/ui_settingsdialog.py:360
 msgid "HTTP proxy server:"
 msgstr "HTTP:"
 
-#: .tmp/ui_settingsdialog.py:349 .tmp/ui_settingsdialog.py:352
-#: .tmp/ui_settingsdialog.py:354
+#: .tmp/ui_settingsdialog.py:361 .tmp/ui_settingsdialog.py:364
+#: .tmp/ui_settingsdialog.py:366
 msgid "Port:"
 msgstr "Port:"
 
-#: .tmp/ui_settingsdialog.py:350
+#: .tmp/ui_settingsdialog.py:362
 msgid "Use this proxy server for all protocols"
 msgstr "Använd den här proxyservern för alla protokoll"
 
-#: .tmp/ui_settingsdialog.py:351
+#: .tmp/ui_settingsdialog.py:363
 msgid "HTTPS proxy server:"
 msgstr "HTTPS:"
 
-#: .tmp/ui_settingsdialog.py:353
+#: .tmp/ui_settingsdialog.py:365
 msgid "FTP proxy server:"
 msgstr "FTP:"
 
-#: .tmp/ui_settingsdialog.py:355
+#: .tmp/ui_settingsdialog.py:367
 msgid "No  proxy server"
 msgstr "Anslut till internet direkt"
 
-#: .tmp/ui_settingsdialog.py:356
+#: .tmp/ui_settingsdialog.py:368
 msgid "Use proxy server"
 msgstr "Använd proxyserver"
 
-#: .tmp/ui_settingsdialog.py:357
+#: .tmp/ui_settingsdialog.py:369
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: .tmp/ui_settingsdialog.py:358
-msgid "&Help"
-msgstr "&Hjälp"
+#: .tmp/tray.py:46
+#, fuzzy
+msgid "Update"
+msgstr "Uppdateringskontroll"
 
-#: .tmp/ui_settingsdialog.py:359
-msgid "&OK"
-msgstr "&OK"
+#: .tmp/tray.py:49
+msgid "All"
+msgstr ""
 
-#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:164
-msgid "&Cancel"
-msgstr "&Avbryt"
+#: .tmp/tray.py:82
+msgid "There are <b>%1</b> updates available!"
+msgstr ""
 
-#: .tmp/ui_mainwidget.py:54
+#: .tmp/tray.py:83
+#, fuzzy
+msgid "Show Updates"
+msgstr "Visa paket med uppdateringar"
+
+#: .tmp/tray.py:83
+msgid "Ignore"
+msgstr ""
+
+#: .tmp/ui_mainwidget.py:58
 msgid "Form"
 msgstr "Form"
 
-#: .tmp/ui_mainwidget.py:55
+#: .tmp/ui_mainwidget.py:59
 msgid "Click to search"
 msgstr "Klicka för att söka"
 
-#: .tmp/ui_mainwidget.py:57
+#: .tmp/ui_mainwidget.py:61
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -314,6 +344,10 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Välj alla paket i den här "
 "gruppen</p></body></html>"
 
+#: .tmp/ui_mainwidget.py:66
+msgid "Search"
+msgstr ""
+
 #: .tmp/statemanager.py:65
 msgid "Installing Package(s)"
 msgstr "Installerar paket"
@@ -331,87 +365,92 @@ msgid "Applying Repository Changes"
 msgstr "Tillämpar förrådsändringar"
 
 #: .tmp/statemanager.py:69
+#, fuzzy
+msgid "Updating Repository"
+msgstr "Uppdaterar förråd"
+
+#: .tmp/statemanager.py:70
 msgid "Updating Repository(s)"
 msgstr "Uppdaterar förråd"
 
-#: .tmp/statemanager.py:73
+#: .tmp/statemanager.py:74
 msgid "Remove Package(s)"
 msgstr "Ta bort paket"
 
-#: .tmp/statemanager.py:74
+#: .tmp/statemanager.py:75
 msgid "Upgrade Package(s)"
 msgstr "Uppdatera paket"
 
-#: .tmp/statemanager.py:77
+#: .tmp/statemanager.py:78
 msgid "installed"
 msgstr "installerade"
 
-#: .tmp/statemanager.py:78
+#: .tmp/statemanager.py:79
 msgid "removed"
 msgstr "borttagna"
 
-#: .tmp/statemanager.py:79
+#: .tmp/statemanager.py:80
 msgid "upgraded"
 msgstr "uppdaterade"
 
-#: .tmp/statemanager.py:87
+#: .tmp/statemanager.py:88
 msgid "%1 new package(s) have been installed succesfully."
 msgstr "%1 paket har installerats."
 
-#: .tmp/statemanager.py:88
+#: .tmp/statemanager.py:89
 msgid "%1 package(s) have been removed succesfully."
 msgstr "%1 paket har tagits bort."
 
-#: .tmp/statemanager.py:89
+#: .tmp/statemanager.py:90
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 paket har uppdaterats."
 
-#: .tmp/statemanager.py:92
+#: .tmp/statemanager.py:93
 msgid "You have selected the following package(s) to install:"
 msgstr "Du har markerat följande paket för installation:"
 
-#: .tmp/statemanager.py:93
+#: .tmp/statemanager.py:94
 msgid "You have selected the following package(s) to removal:"
 msgstr "Du har markerat följande paket för borttagning:"
 
-#: .tmp/statemanager.py:94
+#: .tmp/statemanager.py:95
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Du har markerat följande paket för uppdatering:"
 
-#: .tmp/statemanager.py:98
+#: .tmp/statemanager.py:99
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
 msgstr "Omvända beroenden för markerade paket kommer också att tas bort:"
 
-#: .tmp/statemanager.py:99
+#: .tmp/statemanager.py:100
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr "Extra beroenden för markerade paket som också kommer att uppdateras:"
 
-#: .tmp/statemanager.py:125 .tmp/mainwindow.py:40 .tmp/mainwindow.py:45
+#: .tmp/statemanager.py:126 .tmp/mainwindow.py:65 .tmp/mainwindow.py:70
 msgid "Currently your basket is empty."
 msgstr "För närvarande är din korg tom."
 
-#: .tmp/statemanager.py:127
+#: .tmp/statemanager.py:128
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "För närvarande är <b>%1</b> paket valda om <b>%2</b> "
 
-#: .tmp/statemanager.py:130
+#: .tmp/statemanager.py:131
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "med <b>%1</b> omvända beroenden om <b>%2</b> "
 
-#: .tmp/statemanager.py:132
+#: .tmp/statemanager.py:133
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "med <b>%1</b> extra beroenden om <b>%2</b> "
 
-#: .tmp/statemanager.py:133
+#: .tmp/statemanager.py:134
 msgid "in your basket."
 msgstr "i din korg."
 
-#: .tmp/statemanager.py:152
+#: .tmp/statemanager.py:156
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
@@ -419,19 +458,19 @@ msgstr ""
 "Valda paket [%1] står i konflikt med varandra. Dessa paket kan inte "
 "installeras tillsammans."
 
-#: .tmp/statemanager.py:153 .tmp/statemanager.py:161
+#: .tmp/statemanager.py:157 .tmp/statemanager.py:165
 msgid "Conflict Error"
 msgstr "Konfliktfel"
 
-#: .tmp/statemanager.py:157
+#: .tmp/statemanager.py:161
 msgid "The following packages conflicts:\n"
 msgstr "Följande paket står i konflikt:\n"
 
-#: .tmp/statemanager.py:159
+#: .tmp/statemanager.py:163
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 i konflikt med: [%2]\n"
 
-#: .tmp/statemanager.py:160
+#: .tmp/statemanager.py:164
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -451,7 +490,7 @@ msgstr "Faik Uygur"
 msgid "Maintainer"
 msgstr "Underhållare"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:113
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:117
 msgid "downloading"
 msgstr "hämtar"
 
@@ -476,18 +515,32 @@ msgid ""
 "You can start the new installed application by double-clicking on the list "
 "below or later from the applications menu."
 msgstr ""
-"Du kan starta det nyinstallerade programmet genom att dubbelklicka "
-"på det i listan nedan, eller senare via programmenyn."
+"Du kan starta det nyinstallerade programmet genom att dubbelklicka på det i "
+"listan nedan, eller senare via programmenyn."
 
 #: .tmp/ui_summarydialog.py:56
 msgid "&Ok"
 msgstr "&Ok"
 
-#: .tmp/mainwidget.py:168
+#: .tmp/packagedelegate.py:115
+#, fuzzy
+msgid "Description:"
+msgstr "Åtgärd:"
+
+#: .tmp/packagedelegate.py:127
+msgid "Release:"
+msgstr ""
+
+#: .tmp/packagedelegate.py:137
+#, fuzzy
+msgid "Repository:"
+msgstr "Förrådsnamn"
+
+#: .tmp/mainwidget.py:193
 msgid "Select all packages in this group"
 msgstr "Välj alla paket i den här gruppen"
 
-#: .tmp/mainwidget.py:174
+#: .tmp/mainwidget.py:199
 msgid "Reverse package selections"
 msgstr "Invertera paketmarkering"
 
@@ -535,15 +588,15 @@ msgstr ""
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: .tmp/mainwindow.py:61
+#: .tmp/mainwindow.py:86
 msgid "Show Installable Packages"
 msgstr "Visa installerbara paket"
 
-#: .tmp/mainwindow.py:68
+#: .tmp/mainwindow.py:93
 msgid "Show Installed Packages"
 msgstr "Visa installerade paket"
 
-#: .tmp/mainwindow.py:74
+#: .tmp/mainwindow.py:99
 msgid "Show Upgradable Packages"
 msgstr "Visa paket med uppdateringar"
 
@@ -562,5 +615,3 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-04 13:12+0300\n"
+"POT-Creation-Date: 2009-07-02 14:39+0300\n"
 "PO-Revision-Date: 14/06/09 22:26\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
@@ -16,75 +16,207 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/ui_settingsdialog.py:319
+#: .tmp/ui_basketdialog.py:69
+msgid "Basket"
+msgstr "Mandje"
+
+#: .tmp/ui_basketdialog.py:70
+msgid "Selected package(s) for install:"
+msgstr "Geselecteerde pakket(ten) om te installeren:"
+
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:98
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook "
+"geïnstalleerd zullen worden:"
+
+#: .tmp/ui_basketdialog.py:72
+msgid "Total Size:"
+msgstr "Totale grootte:"
+
+#: .tmp/ui_basketdialog.py:73
+msgid "<b>2.2 MB</b>"
+msgstr "<b>2.2 MB</b>"
+
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:60 .tmp/statemanager.py:73
+msgid "Install Package(s)"
+msgstr "Installeer pakket(ten)"
+
+#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+msgid "configuring"
+msgstr "instellen"
+
+#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+msgid "extracting"
+msgstr "uitpakken"
+
+#: .tmp/progressdialog.py:45
+msgid "Downloading package list of %1"
+msgstr ""
+
+#: .tmp/progressdialog.py:47
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: .tmp/progressdialog.py:52
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 pakket %3"
+
+#: .tmp/progressdialog.py:58
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr "<p align='center'>%1 / %2, %3</p>"
+
+#: .tmp/progressdialog.py:70 .tmp/ui_progressdialog.py:153
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Voorbereiden PiSi...</h3>"
+
+#: .tmp/progressdialog.py:73 .tmp/ui_progressdialog.py:155
+msgid "--  / --"
+msgstr ""
+
+#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:156
+msgid "--:--:--"
+msgstr ""
+
+#: .tmp/progressdialog.py:77
+msgid "<b>Cancelling operation...</b>"
+msgstr ""
+
+#: .tmp/ui_appitem.py:52
+msgid "Application"
+msgstr ""
+
+#: .tmp/ui_appitem.py:53
+msgid "Web Tarayıcı"
+msgstr ""
+
+#: .tmp/ui_appitem.py:54
+msgid "Firefox"
+msgstr ""
+
+#: .tmp/settingsdialog.py:128
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr "Alle gebufferde pakketten worden verwijderd. Bent u zeker? "
+
+#: .tmp/settingsdialog.py:129
+msgid "Warning"
+msgstr "Waarschuwing"
+
+#: .tmp/settingsdialog.py:130
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: .tmp/settingsdialog.py:184
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Adres van installatiebron dient te eindigen op xml of xml.bz2. "
+"<p>Probeer opnieuw.</qt>"
+
+#: .tmp/settingsdialog.py:184 .tmp/mainwidget.py:163
+msgid "Pisi Error"
+msgstr "Pisi-fout"
+
+#: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
+msgid "Package Manager"
+msgstr "Pakketbeheer"
+
+#: .tmp/helpdialog.py:34
+msgid "Package Manager Help"
+msgstr "Pakketbeheer hulp"
+
+#: .tmp/ui_settingsdialog.py:325
 msgid "Package Manager Settings"
 msgstr "Pakketbeheer instellingen"
 
-#: .tmp/ui_settingsdialog.py:320
+#: .tmp/ui_settingsdialog.py:326
+msgid "&Help"
+msgstr "&Help"
+
+#: .tmp/ui_settingsdialog.py:327
+msgid "&OK"
+msgstr "&OK"
+
+#: .tmp/ui_settingsdialog.py:328 .tmp/ui_progressdialog.py:164
+msgid "&Cancel"
+msgstr "&Annuleren"
+
+#: .tmp/ui_settingsdialog.py:329
 msgid "&Show only desktop applications"
 msgstr "&Toon alleen desktop toepassingen"
 
-#: .tmp/ui_settingsdialog.py:321
+#: .tmp/ui_settingsdialog.py:330
 msgid "&Enable system tray icon"
 msgstr "Systeemvakpictogram inschak&elen"
 
-#: .tmp/ui_settingsdialog.py:322 .tmp/ui_settingsdialog.py:331
+#: .tmp/ui_settingsdialog.py:331 .tmp/ui_settingsdialog.py:343
 msgid "Update check"
 msgstr "Update controle"
 
-#: .tmp/ui_settingsdialog.py:323
+#: .tmp/ui_settingsdialog.py:332
 msgid "Enable &periodic update check"
 msgstr "&Periodieke updatecontrole inschakelen"
 
-#: .tmp/ui_settingsdialog.py:324
+#: .tmp/ui_settingsdialog.py:333 .tmp/ui_settingsdialog.py:336
+msgid "padding-left:15px;"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:334
 msgid "Check interval:"
 msgstr "Controle interval:"
 
-#: .tmp/ui_settingsdialog.py:325
+#: .tmp/ui_settingsdialog.py:335
 msgid " min"
 msgstr " min"
 
-#: .tmp/ui_settingsdialog.py:326
+#: .tmp/ui_settingsdialog.py:337
+msgid "Install updates automatically"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:338
 msgid "Bandwidth limit"
 msgstr "Bandbreedtelimiet"
 
-#: .tmp/ui_settingsdialog.py:327
+#: .tmp/ui_settingsdialog.py:339
 msgid "Use bandwidth limit"
 msgstr "Bandbreedtelimiet gebruiken"
 
-#: .tmp/ui_settingsdialog.py:328
+#: .tmp/ui_settingsdialog.py:340
 msgid " kb/s"
 msgstr " kb/s"
 
-#: .tmp/ui_settingsdialog.py:329
+#: .tmp/ui_settingsdialog.py:341
 msgid "Bandwidth limit:"
 msgstr "Bandbreedtelimiet:"
 
-#: .tmp/ui_settingsdialog.py:330
+#: .tmp/ui_settingsdialog.py:342
 msgid "&General Settings"
 msgstr "Al&gemene instellingen"
 
-#: .tmp/ui_settingsdialog.py:332
+#: .tmp/ui_settingsdialog.py:344
 msgid "&Use hard disk cache for downloaded software"
 msgstr "Gebr&uik hardeschijfbuffer voor gedownloade software"
 
-#: .tmp/ui_settingsdialog.py:333
+#: .tmp/ui_settingsdialog.py:345
 msgid "Maximum cache size:"
 msgstr "Maximum buffergrootte:"
 
-#: .tmp/ui_settingsdialog.py:334
+#: .tmp/ui_settingsdialog.py:346
 msgid " Mb"
 msgstr " Mb"
 
-#: .tmp/ui_settingsdialog.py:335
+#: .tmp/ui_settingsdialog.py:347
 msgid "(use 0 for no limit)"
 msgstr "(gebruik 0 voor geen limiet)"
 
-#: .tmp/ui_settingsdialog.py:336
+#: .tmp/ui_settingsdialog.py:348
 msgid "Clear Cache"
 msgstr "Buffer wissen"
 
-#: .tmp/ui_settingsdialog.py:337
+#: .tmp/ui_settingsdialog.py:349
 msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
@@ -93,134 +225,262 @@ msgstr ""
 "Het zal geen geïnstalleerde software verwijderen of de stabiliteit van uw "
 "systeem beïnvloeden."
 
-#: .tmp/ui_settingsdialog.py:339
+#: .tmp/ui_settingsdialog.py:351
 msgid "C&lean disk cache now"
 msgstr "Schijf&buffer nu opruimen"
 
-#: .tmp/ui_settingsdialog.py:340
+#: .tmp/ui_settingsdialog.py:352
 msgid "C&ache"
 msgstr "B&uffer"
 
-#: .tmp/ui_settingsdialog.py:341 .tmp/ui_repodialog.py:53
+#: .tmp/ui_settingsdialog.py:353 .tmp/ui_repodialog.py:53
 msgid "Repository Name"
 msgstr "Naam installatiebron"
 
-#: .tmp/ui_settingsdialog.py:342 .tmp/ui_repodialog.py:54
+#: .tmp/ui_settingsdialog.py:354 .tmp/ui_repodialog.py:54
 msgid "Repository Address"
 msgstr "Adres installatiebron"
 
-#: .tmp/ui_settingsdialog.py:343
+#: .tmp/ui_settingsdialog.py:355
 msgid "&Add New Repository"
 msgstr "Nieuwe installatiebron &toevoegen"
 
-#: .tmp/ui_settingsdialog.py:344
+#: .tmp/ui_settingsdialog.py:356
 msgid "Remove Repository"
 msgstr "Installatiebron verwijderen"
 
-#: .tmp/ui_settingsdialog.py:345
+#: .tmp/ui_settingsdialog.py:357
 msgid "Move &Up"
 msgstr "&Omhoog"
 
-#: .tmp/ui_settingsdialog.py:346
+#: .tmp/ui_settingsdialog.py:358
 msgid "Move &Down"
 msgstr "Om&laag"
 
-#: .tmp/ui_settingsdialog.py:347
+#: .tmp/ui_settingsdialog.py:359
 msgid "&Repositories"
 msgstr "&Installatiebronnen"
 
-#: .tmp/ui_settingsdialog.py:348
+#: .tmp/ui_settingsdialog.py:360
 msgid "HTTP proxy server:"
 msgstr "HTTP-proxyserver:"
 
-#: .tmp/ui_settingsdialog.py:349 .tmp/ui_settingsdialog.py:352
-#: .tmp/ui_settingsdialog.py:354
+#: .tmp/ui_settingsdialog.py:361 .tmp/ui_settingsdialog.py:364
+#: .tmp/ui_settingsdialog.py:366
 msgid "Port:"
 msgstr "Poort:"
 
-#: .tmp/ui_settingsdialog.py:350
+#: .tmp/ui_settingsdialog.py:362
 msgid "Use this proxy server for all protocols"
 msgstr "Deze proxyserver voor alle protocollen gebruiken"
 
-#: .tmp/ui_settingsdialog.py:351
+#: .tmp/ui_settingsdialog.py:363
 msgid "HTTPS proxy server:"
 msgstr "HTTPS-proxyserver:"
 
-#: .tmp/ui_settingsdialog.py:353
+#: .tmp/ui_settingsdialog.py:365
 msgid "FTP proxy server:"
 msgstr "FTP-proxyserver:"
 
-#: .tmp/ui_settingsdialog.py:355
+#: .tmp/ui_settingsdialog.py:367
 msgid "No  proxy server"
 msgstr "Geen proxyserver"
 
-#: .tmp/ui_settingsdialog.py:356
+#: .tmp/ui_settingsdialog.py:368
 msgid "Use proxy server"
 msgstr "Proxyserver gebruiken"
 
-#: .tmp/ui_settingsdialog.py:357
+#: .tmp/ui_settingsdialog.py:369
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: .tmp/ui_settingsdialog.py:358
-msgid "&Help"
-msgstr "&Help"
+#: .tmp/tray.py:46
+#, fuzzy
+msgid "Update"
+msgstr "Update controle"
 
-#: .tmp/ui_settingsdialog.py:359
-msgid "&OK"
-msgstr "&OK"
+#: .tmp/tray.py:49
+msgid "All"
+msgstr ""
 
-#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:160
-msgid "&Cancel"
-msgstr "&Annuleren"
+#: .tmp/tray.py:82
+msgid "There are <b>%1</b> updates available!"
+msgstr ""
 
-#: .tmp/mainwindow.py:36 .tmp/statemanager.py:97
+#: .tmp/tray.py:83
+#, fuzzy
+msgid "Show Updates"
+msgstr "Toon opwaardeerbare pakketten"
+
+#: .tmp/tray.py:83
+msgid "Ignore"
+msgstr ""
+
+#: .tmp/ui_mainwidget.py:58
+msgid "Form"
+msgstr "Vorm"
+
+#: .tmp/ui_mainwidget.py:59
+msgid "Click to search"
+msgstr "Klik om te zoeken"
+
+#: .tmp/ui_mainwidget.py:61
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
+"this group</p></body></html>"
+msgstr ""
+
+#: .tmp/ui_mainwidget.py:66
+msgid "Search"
+msgstr ""
+
+#: .tmp/statemanager.py:65
+msgid "Installing Package(s)"
+msgstr "Bezig met pakket(ten) installeren"
+
+#: .tmp/statemanager.py:66
+msgid "Removing Package(s)"
+msgstr "Bezig met pakket(ten) verwijderen"
+
+#: .tmp/statemanager.py:67
+msgid "Upgrading Package(s)"
+msgstr "Bezig met pakket(ten) opwaarderen"
+
+#: .tmp/statemanager.py:68
+msgid "Applying Repository Changes"
+msgstr "Bezig met installatiebronwijzigingen toepassen"
+
+#: .tmp/statemanager.py:69
+#, fuzzy
+msgid "Updating Repository"
+msgstr "Bezig met Installatiebron(nen) updaten"
+
+#: .tmp/statemanager.py:70
+msgid "Updating Repository(s)"
+msgstr "Bezig met Installatiebron(nen) updaten"
+
+#: .tmp/statemanager.py:74
+msgid "Remove Package(s)"
+msgstr "Verwijder pakket(ten)"
+
+#: .tmp/statemanager.py:75
+msgid "Upgrade Package(s)"
+msgstr "Opwaardeer pakket(ten)"
+
+#: .tmp/statemanager.py:78
+#, fuzzy
+msgid "installed"
+msgstr "installeren"
+
+#: .tmp/statemanager.py:79
+#, fuzzy
+msgid "removed"
+msgstr "verwijderen"
+
+#: .tmp/statemanager.py:80
+msgid "upgraded"
+msgstr ""
+
+#: .tmp/statemanager.py:88
+msgid "%1 new package(s) have been installed succesfully."
+msgstr ""
+
+#: .tmp/statemanager.py:89
+msgid "%1 package(s) have been removed succesfully."
+msgstr ""
+
+#: .tmp/statemanager.py:90
+msgid "%1 package(s) have been upgraded succesfully."
+msgstr ""
+
+#: .tmp/statemanager.py:93
+#, fuzzy
+msgid "You have selected the following package(s) to install:"
+msgstr "Geselecteerde pakket(ten) om te installeren:"
+
+#: .tmp/statemanager.py:94
+msgid "You have selected the following package(s) to removal:"
+msgstr ""
+
+#: .tmp/statemanager.py:95
+msgid "You have selected the following package(s) to upgrade:"
+msgstr ""
+
+#: .tmp/statemanager.py:99
+#, fuzzy
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr ""
+"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook "
+"geïnstalleerd zullen worden:"
+
+#: .tmp/statemanager.py:100
+#, fuzzy
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr ""
+"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook "
+"geïnstalleerd zullen worden:"
+
+#: .tmp/statemanager.py:126 .tmp/mainwindow.py:65 .tmp/mainwindow.py:70
 msgid "Currently your basket is empty."
 msgstr "Momenteel is uw mandje leeg."
 
-#: .tmp/mainwindow.py:53
-msgid "Show New Packages"
-msgstr "Toon nieuwe pakketten"
-
-#: .tmp/mainwindow.py:60
-msgid "Show Installed Packages"
-msgstr "Toon geïnstalleerde pakketten"
-
-#: .tmp/mainwindow.py:66
-msgid "Show Upgradable Packages"
-msgstr "Toon opwaardeerbare pakketten"
-
-#: .tmp/operationmanager.py:92 .tmp/commontext.py:15
-msgid "downloading"
-msgstr "downloaden"
-
-#: .tmp/settingsdialog.py:116
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Alle gebufferde pakketten worden verwijderd. Bent u zeker? "
-
-#: .tmp/settingsdialog.py:117
-msgid "Warning"
-msgstr "Waarschuwing"
-
-#: .tmp/settingsdialog.py:118
-msgid "Delete"
-msgstr "Verwijderen"
-
-#: .tmp/settingsdialog.py:169
+#: .tmp/statemanager.py:128
 msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
-"<qt>Adres van installatiebron dient te eindigen op xml of xml.bz2. <p>Probeer opnieuw."
-"</qt>"
+"Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
+"van <b>%2</b>"
 
-#: .tmp/settingsdialog.py:169
-msgid "Pisi Error"
-msgstr "Pisi-fout"
+#: .tmp/statemanager.py:131
+msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
+msgstr ""
+"met <b>%1</b> omgekeerde afhankelijkheden met een totale grootte van <b>%2</"
+"b>"
 
-#: .tmp/about.py:20 .tmp/about.py:22 .tmp/ui_mainwindow.py:29
-msgid "Package Manager"
-msgstr "Pakketbeheer"
+#: .tmp/statemanager.py:133
+msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
+msgstr ""
+"met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
+
+#: .tmp/statemanager.py:134
+msgid "in your basket."
+msgstr "in uw mandje."
+
+#: .tmp/statemanager.py:156
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+
+#: .tmp/statemanager.py:157 .tmp/statemanager.py:165
+msgid "Conflict Error"
+msgstr ""
+
+#: .tmp/statemanager.py:161
+msgid "The following packages conflicts:\n"
+msgstr ""
+
+#: .tmp/statemanager.py:163
+msgid "%1 conflicts with: [%2]\n"
+msgstr ""
+
+#: .tmp/statemanager.py:164
+msgid ""
+"\n"
+"Remove the conflicting packages from the system?"
+msgstr ""
 
 #: .tmp/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -234,55 +494,108 @@ msgstr "Faik Uygur"
 msgid "Maintainer"
 msgstr "Onderhouder"
 
-#: .tmp/statemanager.py:57
-msgid "Installing Package(s)"
-msgstr "Bezig met pakket(ten) installeren"
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:117
+msgid "downloading"
+msgstr "downloaden"
 
-#: .tmp/statemanager.py:58
-msgid "Removing Package(s)"
-msgstr "Bezig met pakket(ten) verwijderen"
+#: .tmp/commontext.py:15
+msgid "removing"
+msgstr "verwijderen"
 
-#: .tmp/statemanager.py:59
-msgid "Upgrading Package(s)"
-msgstr "Bezig met pakket(ten) opwaarderen"
+#: .tmp/commontext.py:15
+msgid "installing"
+msgstr "installeren"
 
-#: .tmp/statemanager.py:60
-msgid "Applying Repository Changes"
-msgstr "Bezig met installatiebronwijzigingen toepassen"
+#: .tmp/ui_summarydialog.py:53
+#, fuzzy
+msgid "Operation Summary"
+msgstr "Operatie:"
 
-#: .tmp/statemanager.py:61
-msgid "Updating Repository(s)"
-msgstr "Bezig met Installatiebron(nen) updaten"
+#: .tmp/ui_summarydialog.py:54
+#, fuzzy
+msgid "12 new packages are installed  succesfully."
+msgstr "2 / 20 pakketten geïnstalleerd."
 
-#: .tmp/statemanager.py:64 .tmp/ui_mainwidget.py:45 .tmp/ui_basketdialog.py:74
-msgid "Install Package(s)"
-msgstr "Installeer pakket(ten)"
-
-#: .tmp/statemanager.py:65
-msgid "Remove Package(s)"
-msgstr "Verwijder pakket(ten)"
-
-#: .tmp/statemanager.py:66
-msgid "Upgrade Package(s)"
-msgstr "Opwaardeer pakket(ten)"
-
-#: .tmp/statemanager.py:99
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+#: .tmp/ui_summarydialog.py:55
+msgid ""
+"You can start the new installed application by double-clicking on the list "
+"below or later from the applications menu."
 msgstr ""
-"Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
-"van <b>%2</b>"
 
-#: .tmp/statemanager.py:102
-msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "met <b>%1</b> omgekeerde afhankelijkheden met een totale grootte van <b>%2</b>"
+#: .tmp/ui_summarydialog.py:56
+#, fuzzy
+msgid "&Ok"
+msgstr "&OK"
 
-#: .tmp/statemanager.py:104
-msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
+#: .tmp/packagedelegate.py:115
+#, fuzzy
+msgid "Description:"
+msgstr "Operatie:"
 
-#: .tmp/statemanager.py:105
-msgid "in your basket."
-msgstr "in uw mandje."
+#: .tmp/packagedelegate.py:127
+msgid "Release:"
+msgstr ""
+
+#: .tmp/packagedelegate.py:137
+#, fuzzy
+msgid "Repository:"
+msgstr "Naam installatiebron"
+
+#: .tmp/mainwidget.py:193
+msgid "Select all packages in this group"
+msgstr ""
+
+#: .tmp/mainwidget.py:199
+msgid "Reverse package selections"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:152
+#, fuzzy
+msgid "Operation"
+msgstr "Operatie:"
+
+#: .tmp/ui_progressdialog.py:154
+msgid "Time remaining:"
+msgstr "Resterende tijd:"
+
+#: .tmp/ui_progressdialog.py:157
+msgid "Operation:"
+msgstr "Operatie:"
+
+#: .tmp/ui_progressdialog.py:158
+msgid "Status:"
+msgstr "Status:"
+
+#: .tmp/ui_progressdialog.py:159
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:165
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: .tmp/mainwindow.py:86
+#, fuzzy
+msgid "Show Installable Packages"
+msgstr "Toon geïnstalleerde pakketten"
+
+#: .tmp/mainwindow.py:93
+msgid "Show Installed Packages"
+msgstr "Toon geïnstalleerde pakketten"
+
+#: .tmp/mainwindow.py:99
+msgid "Show Upgradable Packages"
+msgstr "Toon opwaardeerbare pakketten"
 
 #: .tmp/ui_repodialog.py:51
 msgid "Add New Repository"
@@ -300,107 +613,17 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#: .tmp/helpdialog.py:34
-msgid "Package Manager Help"
-msgstr "Pakketbeheer hulp"
+#~ msgid "Show New Packages"
+#~ msgstr "Toon nieuwe pakketten"
 
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "extracting"
-msgstr "uitpakken"
+#~ msgid "Progress"
+#~ msgstr "Voortgang"
 
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:37
-msgid "configuring"
-msgstr "instellen"
+#~ msgid "amsn"
+#~ msgstr "amsn"
 
-#: .tmp/commontext.py:15
-msgid "removing"
-msgstr "verwijderen"
+#~ msgid "01:29"
+#~ msgstr "01:29"
 
-#: .tmp/commontext.py:15
-msgid "installing"
-msgstr "installeren"
-
-#: .tmp/ui_mainwidget.py:43
-msgid "Form"
-msgstr "Vorm"
-
-#: .tmp/ui_mainwidget.py:44
-msgid "Click to search"
-msgstr "Klik om te zoeken"
-
-#: .tmp/ui_progressdialog.py:151
-msgid "Progress"
-msgstr "Voortgang"
-
-#: .tmp/ui_progressdialog.py:152
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Voorbereiden PiSi...</h3>"
-
-#: .tmp/ui_progressdialog.py:153
-msgid "amsn"
-msgstr "amsn"
-
-#: .tmp/ui_progressdialog.py:154
-msgid "Time remaining:"
-msgstr "Resterende tijd:"
-
-#: .tmp/ui_progressdialog.py:155
-msgid "2 / 20 packages installed."
-msgstr "2 / 20 pakketten geïnstalleerd."
-
-#: .tmp/ui_progressdialog.py:156
-msgid "01:29"
-msgstr "01:29"
-
-#: .tmp/ui_progressdialog.py:157
-msgid "Operation:"
-msgstr "Operatie:"
-
-#: .tmp/ui_progressdialog.py:158
-msgid "Status:"
-msgstr "Status:"
-
-#: .tmp/ui_progressdialog.py:159
-msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-
-#: .tmp/ui_progressdialog.py:161
-msgid "Alt+C"
-msgstr "Alt+C"
-
-#: .tmp/ui_basketdialog.py:69
-msgid "Basket"
-msgstr "Mandje"
-
-#: .tmp/ui_basketdialog.py:70
-msgid "Selected package(s) for install:"
-msgstr "Geselecteerde pakket(ten) om te installeren:"
-
-#: .tmp/ui_basketdialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr ""
-"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook "
-"geïnstalleerd zullen worden:"
-
-#: .tmp/ui_basketdialog.py:72
-msgid "Total Size:"
-msgstr "Totale grootte:"
-
-#: .tmp/ui_basketdialog.py:73
-msgid "<b>2.2 MB</b>"
-msgstr "<b>2.2 MB</b>"
-
-#: .tmp/progressdialog.py:40
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: .tmp/progressdialog.py:44
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 pakket %3"
-
-#: .tmp/progressdialog.py:50
-msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr "<p align='center'>%1 / %2, %3</p>"
-
+#~ msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+#~ msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
