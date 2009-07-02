@@ -69,8 +69,8 @@ class NetworkIface:
                 "profile":profile}
         self.waitFunctions.append(data)
 
-    def setState(self, package, profile, state, func=None):
-        self.link.Network.Link[package].setState(profile, state, async=func)
+    def setState(self, package, profile, state, func=None, timeout=360):
+        self.link.Network.Link[package].setState(profile, state, async=func, timeout=timeout)
 
     def info(self, package, profile):
         return self.link.Network.Link[package].connectionInfo(str(profile))
