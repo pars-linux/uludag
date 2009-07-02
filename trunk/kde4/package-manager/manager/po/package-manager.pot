@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-18 15:18+0300\n"
+"POT-Creation-Date: 2009-07-02 14:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Selected package(s) for install:"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:97
+#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:98
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "<b>2.2 MB</b>"
 msgstr ""
 
-#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:56 .tmp/statemanager.py:72
+#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:60 .tmp/statemanager.py:73
 msgid "Install Package(s)"
 msgstr ""
 
@@ -94,25 +94,25 @@ msgstr ""
 msgid "Firefox"
 msgstr ""
 
-#: .tmp/settingsdialog.py:117
+#: .tmp/settingsdialog.py:128
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr ""
 
-#: .tmp/settingsdialog.py:118
+#: .tmp/settingsdialog.py:129
 msgid "Warning"
 msgstr ""
 
-#: .tmp/settingsdialog.py:119
+#: .tmp/settingsdialog.py:130
 msgid "Delete"
 msgstr ""
 
-#: .tmp/settingsdialog.py:173
+#: .tmp/settingsdialog.py:184
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
 msgstr ""
 
-#: .tmp/settingsdialog.py:173
+#: .tmp/settingsdialog.py:184 .tmp/mainwidget.py:163
 msgid "Pisi Error"
 msgstr ""
 
@@ -124,170 +124,198 @@ msgstr ""
 msgid "Package Manager Help"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:319
+#: .tmp/ui_settingsdialog.py:325
 msgid "Package Manager Settings"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:320
-msgid "&Show only desktop applications"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:321
-msgid "&Enable system tray icon"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:322 .tmp/ui_settingsdialog.py:331
-msgid "Update check"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:323
-msgid "Enable &periodic update check"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:324
-msgid "Check interval:"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:325
-msgid " min"
-msgstr ""
-
 #: .tmp/ui_settingsdialog.py:326
-msgid "Bandwidth limit"
+msgid "&Help"
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:327
-msgid "Use bandwidth limit"
+msgid "&OK"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:328
-msgid " kb/s"
+#: .tmp/ui_settingsdialog.py:328 .tmp/ui_progressdialog.py:164
+msgid "&Cancel"
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:329
-msgid "Bandwidth limit:"
+msgid "&Show only desktop applications"
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:330
-msgid "&General Settings"
+msgid "&Enable system tray icon"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:331 .tmp/ui_settingsdialog.py:343
+msgid "Update check"
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:332
-msgid "&Use hard disk cache for downloaded software"
+msgid "Enable &periodic update check"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:333
-msgid "Maximum cache size:"
+#: .tmp/ui_settingsdialog.py:333 .tmp/ui_settingsdialog.py:336
+msgid "padding-left:15px;"
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:334
-msgid " Mb"
+msgid "Check interval:"
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:335
-msgid "(use 0 for no limit)"
-msgstr ""
-
-#: .tmp/ui_settingsdialog.py:336
-msgid "Clear Cache"
+msgid " min"
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:337
+msgid "Install updates automatically"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:338
+msgid "Bandwidth limit"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:339
+msgid "Use bandwidth limit"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:340
+msgid " kb/s"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:341
+msgid "Bandwidth limit:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:342
+msgid "&General Settings"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:344
+msgid "&Use hard disk cache for downloaded software"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:345
+msgid "Maximum cache size:"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:346
+msgid " Mb"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:347
+msgid "(use 0 for no limit)"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:348
+msgid "Clear Cache"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:349
 msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:339
+#: .tmp/ui_settingsdialog.py:351
 msgid "C&lean disk cache now"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:340
+#: .tmp/ui_settingsdialog.py:352
 msgid "C&ache"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:341 .tmp/ui_repodialog.py:53
+#: .tmp/ui_settingsdialog.py:353 .tmp/ui_repodialog.py:53
 msgid "Repository Name"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:342 .tmp/ui_repodialog.py:54
+#: .tmp/ui_settingsdialog.py:354 .tmp/ui_repodialog.py:54
 msgid "Repository Address"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:343
+#: .tmp/ui_settingsdialog.py:355
 msgid "&Add New Repository"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:344
+#: .tmp/ui_settingsdialog.py:356
 msgid "Remove Repository"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:345
+#: .tmp/ui_settingsdialog.py:357
 msgid "Move &Up"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:346
+#: .tmp/ui_settingsdialog.py:358
 msgid "Move &Down"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:347
+#: .tmp/ui_settingsdialog.py:359
 msgid "&Repositories"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:348
+#: .tmp/ui_settingsdialog.py:360
 msgid "HTTP proxy server:"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:349 .tmp/ui_settingsdialog.py:352
-#: .tmp/ui_settingsdialog.py:354
+#: .tmp/ui_settingsdialog.py:361 .tmp/ui_settingsdialog.py:364
+#: .tmp/ui_settingsdialog.py:366
 msgid "Port:"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:350
+#: .tmp/ui_settingsdialog.py:362
 msgid "Use this proxy server for all protocols"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:351
+#: .tmp/ui_settingsdialog.py:363
 msgid "HTTPS proxy server:"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:353
+#: .tmp/ui_settingsdialog.py:365
 msgid "FTP proxy server:"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:355
+#: .tmp/ui_settingsdialog.py:367
 msgid "No  proxy server"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:356
+#: .tmp/ui_settingsdialog.py:368
 msgid "Use proxy server"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:357
+#: .tmp/ui_settingsdialog.py:369
 msgid "&Proxy"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:358
-msgid "&Help"
+#: .tmp/tray.py:46
+msgid "Update"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:359
-msgid "&OK"
+#: .tmp/tray.py:49
+msgid "All"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:360 .tmp/ui_progressdialog.py:164
-msgid "&Cancel"
+#: .tmp/tray.py:82
+msgid "There are <b>%1</b> updates available!"
 msgstr ""
 
-#: .tmp/ui_mainwidget.py:54
+#: .tmp/tray.py:83
+msgid "Show Updates"
+msgstr ""
+
+#: .tmp/tray.py:83
+msgid "Ignore"
+msgstr ""
+
+#: .tmp/ui_mainwidget.py:58
 msgid "Form"
 msgstr ""
 
-#: .tmp/ui_mainwidget.py:55
+#: .tmp/ui_mainwidget.py:59
 msgid "Click to search"
 msgstr ""
 
-#: .tmp/ui_mainwidget.py:57
+#: .tmp/ui_mainwidget.py:61
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -299,6 +327,10 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
 "this group</p></body></html>"
+msgstr ""
+
+#: .tmp/ui_mainwidget.py:66
+msgid "Search"
 msgstr ""
 
 #: .tmp/statemanager.py:65
@@ -318,105 +350,109 @@ msgid "Applying Repository Changes"
 msgstr ""
 
 #: .tmp/statemanager.py:69
+msgid "Updating Repository"
+msgstr ""
+
+#: .tmp/statemanager.py:70
 msgid "Updating Repository(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:73
+#: .tmp/statemanager.py:74
 msgid "Remove Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:74
+#: .tmp/statemanager.py:75
 msgid "Upgrade Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:77
+#: .tmp/statemanager.py:78
 msgid "installed"
 msgstr ""
 
-#: .tmp/statemanager.py:78
+#: .tmp/statemanager.py:79
 msgid "removed"
 msgstr ""
 
-#: .tmp/statemanager.py:79
+#: .tmp/statemanager.py:80
 msgid "upgraded"
 msgstr ""
 
-#: .tmp/statemanager.py:87
+#: .tmp/statemanager.py:88
 msgid "%1 new package(s) have been installed succesfully."
 msgstr ""
 
-#: .tmp/statemanager.py:88
+#: .tmp/statemanager.py:89
 msgid "%1 package(s) have been removed succesfully."
 msgstr ""
 
-#: .tmp/statemanager.py:89
+#: .tmp/statemanager.py:90
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr ""
 
-#: .tmp/statemanager.py:92
+#: .tmp/statemanager.py:93
 msgid "You have selected the following package(s) to install:"
 msgstr ""
 
-#: .tmp/statemanager.py:93
+#: .tmp/statemanager.py:94
 msgid "You have selected the following package(s) to removal:"
 msgstr ""
 
-#: .tmp/statemanager.py:94
+#: .tmp/statemanager.py:95
 msgid "You have selected the following package(s) to upgrade:"
 msgstr ""
 
-#: .tmp/statemanager.py:98
+#: .tmp/statemanager.py:99
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
 msgstr ""
 
-#: .tmp/statemanager.py:99
+#: .tmp/statemanager.py:100
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr ""
 
-#: .tmp/statemanager.py:125 .tmp/mainwindow.py:40 .tmp/mainwindow.py:45
+#: .tmp/statemanager.py:126 .tmp/mainwindow.py:65 .tmp/mainwindow.py:70
 msgid "Currently your basket is empty."
 msgstr ""
 
-#: .tmp/statemanager.py:127
+#: .tmp/statemanager.py:128
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:130
+#: .tmp/statemanager.py:131
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:132
+#: .tmp/statemanager.py:133
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:133
+#: .tmp/statemanager.py:134
 msgid "in your basket."
 msgstr ""
 
-#: .tmp/statemanager.py:152
+#: .tmp/statemanager.py:156
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
 msgstr ""
 
-#: .tmp/statemanager.py:153 .tmp/statemanager.py:161
+#: .tmp/statemanager.py:157 .tmp/statemanager.py:165
 msgid "Conflict Error"
 msgstr ""
 
-#: .tmp/statemanager.py:157
+#: .tmp/statemanager.py:161
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: .tmp/statemanager.py:159
+#: .tmp/statemanager.py:163
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: .tmp/statemanager.py:160
+#: .tmp/statemanager.py:164
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -434,7 +470,7 @@ msgstr ""
 msgid "Maintainer"
 msgstr ""
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:113
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:117
 msgid "downloading"
 msgstr ""
 
@@ -464,11 +500,23 @@ msgstr ""
 msgid "&Ok"
 msgstr ""
 
-#: .tmp/mainwidget.py:168
+#: .tmp/packagedelegate.py:115
+msgid "Description:"
+msgstr ""
+
+#: .tmp/packagedelegate.py:127
+msgid "Release:"
+msgstr ""
+
+#: .tmp/packagedelegate.py:137
+msgid "Repository:"
+msgstr ""
+
+#: .tmp/mainwidget.py:193
 msgid "Select all packages in this group"
 msgstr ""
 
-#: .tmp/mainwidget.py:174
+#: .tmp/mainwidget.py:199
 msgid "Reverse package selections"
 msgstr ""
 
@@ -506,15 +554,15 @@ msgstr ""
 msgid "Alt+C"
 msgstr ""
 
-#: .tmp/mainwindow.py:61
+#: .tmp/mainwindow.py:86
 msgid "Show Installable Packages"
 msgstr ""
 
-#: .tmp/mainwindow.py:68
+#: .tmp/mainwindow.py:93
 msgid "Show Installed Packages"
 msgstr ""
 
-#: .tmp/mainwindow.py:74
+#: .tmp/mainwindow.py:99
 msgid "Show Upgradable Packages"
 msgstr ""
 
