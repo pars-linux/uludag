@@ -70,25 +70,25 @@ class Iface(Singleton):
     def installPackages(self, packages):
         logger.debug("Installing packages: %s" % packages)
         packages = string.join(packages,",")
-        self.link.System.Manager["pisi"].installPackage(packages, async=self.handler)
+        self.link.System.Manager["pisi"].installPackage(packages, async=self.handler, quiet=True)
 
     def removePackages(self, packages):
         logger.debug("Removing packages: %s" % packages)
         packages = string.join(packages,",")
-        self.link.System.Manager["pisi"].removePackage(packages, async=self.handler)
+        self.link.System.Manager["pisi"].removePackage(packages, async=self.handler, quiet=True)
 
     def upgradePackages(self, packages):
         logger.debug("Upgrading packages: %s" % packages)
         packages = string.join(packages,",")
-        self.link.System.Manager["pisi"].updatePackage(packages, async=self.handler)
+        self.link.System.Manager["pisi"].updatePackage(packages, async=self.handler, quiet=True)
 
     def updateRepositories(self):
         logger.debug("Updating repositories...")
-        self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler)
+        self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler, quiet=True)
 
     def updateRepository(self, repo):
         logger.debug("Updating %s..." % repo)
-        self.link.System.Manager["pisi"].updateRepository(repo, async=self.handler)
+        self.link.System.Manager["pisi"].updateRepository(repo, async=self.handler, quiet=True)
 
     def clearCache(self, limit):
         logger.debug("Clearing cache with limit: %s" % limit)
