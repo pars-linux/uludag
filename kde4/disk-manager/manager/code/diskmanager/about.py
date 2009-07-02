@@ -18,7 +18,7 @@ from PyKDE4.kdecore import KAboutData, ki18n
 appName     = "disk-manager"
 modName     = "diskmanager"
 programName = ki18n("Disk Manager")
-version     = "2.9.3"
+version     = "2.9.4"
 description = ki18n("Disk Manager")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2006-2009 TUBITAK/UEKAE")
