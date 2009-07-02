@@ -1,0 +1,102 @@
+# translation of nl.po to Nederlands
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Antoon Tolboom <atolboo@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"PO-Revision-Date: 02/07/09 21:44\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/ui_main.py:156
+msgid "Language Settings"
+msgstr "Taalinstellingen"
+
+#: .tmp/ui_main.py:157
+msgid "System Language:"
+msgstr "Systeemtaal:"
+
+#: .tmp/ui_main.py:158
+msgid "Console Keyboard Layout:"
+msgstr "Console toetsenbordindeling:"
+
+#: .tmp/ui_main.py:159
+msgid ""
+"Note that these settings do not effect your desktop. Desktop settings can be "
+"changed in 'Regional & Language' module in System Settings."
+msgstr "Merk op dat deze instellingen geen effect hebben op het bureaublad hebben. Bureaublad-instellingen kunnen in het module Land/regio en taal in Systeeminstellingen gewijzigd worden."
+
+#: .tmp/ui_main.py:160
+msgid "Service Settings"
+msgstr "Dienstinstellingen"
+
+#: .tmp/ui_main.py:161
+msgid "First Service to Start:"
+msgstr "Eerste dienst om te starten:"
+
+#: .tmp/ui_main.py:162
+msgid ""
+"Although services are started parallel manner in boot process, users may "
+"want to start a single service before checking dependencies."
+msgstr "Ofschoon diensten tijdens het opstartproces parallel opgestart worden, kunnen gebruikers een enkel dienst opstarten voordat afhankelijkheden gecontroleerd worden."
+
+#: .tmp/ui_main.py:163
+msgid "Clock Settings"
+msgstr "Klokinstellingen"
+
+#: .tmp/ui_main.py:164
+msgid "Keep the hardware clock in UTC"
+msgstr "Houdt de hardwareklok op UTC"
+
+#: .tmp/ui_main.py:165
+msgid "Normalize systematic drift of the hardware clock"
+msgstr "Normaliseer systematische drift van de hardwareklok"
+
+#: .tmp/ui_main.py:166
+msgid "Console Settings"
+msgstr "Console-instellingen"
+
+#: .tmp/ui_main.py:167
+msgid "Number of Real Consoles:"
+msgstr "Aantal werkelijke consoles:"
+
+#: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
+msgid "System Manager"
+msgstr "Systeembeheer"
+
+#: .tmp/systemmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/systemmanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/systemmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/systemmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Huidige onderhouder"
+
+#: .tmp/systemmanager/main.py:70
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Er zijn geen pakketten die backend voor deze toepassing geven.\n"
+"Installeer de pakketten en stel ze correct in."
+
+#: .tmp/systemmanager/main.py:98
+msgid "None"
+msgstr "Geen"
+
