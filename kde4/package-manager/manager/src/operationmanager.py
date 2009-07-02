@@ -92,7 +92,7 @@ class OperationManager(QObject):
             self.desktopFiles.append(desktopFile)
 
     def exceptionHandler(self, exception):
-        self.emit(SIGNAL("exception(QString)"), unicode(exception).lstrip("tr.org.pardus.comar.Exception: "))
+        self.emit(SIGNAL("exception(QString)"), unicode(exception))
 
     def handler(self, package, signal, args):
 
