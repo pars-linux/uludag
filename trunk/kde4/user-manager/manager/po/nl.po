@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 13:54+0300\n"
-"PO-Revision-Date: 14/06/09 23:05\n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"PO-Revision-Date: 02/07/09 22:02\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
+#: .tmp/ui_item.py:56
+msgid "Edit"
+msgstr "Bewerken"
+
+#: .tmp/ui_item.py:57
+msgid "Delete"
+msgstr "Verwijderen"
+
 #: .tmp/ui_edituser.py:176
 msgid "User Information"
-msgstr "Gebruikersinformatie"
+msgstr "Gebruikerinformatie"
 
 #: .tmp/ui_edituser.py:177
 msgid "Full Name:"
@@ -38,11 +46,11 @@ msgstr "Nr.:"
 
 #: .tmp/ui_edituser.py:181 .tmp/ui_editgroup.py:81
 msgid "Auto"
-msgstr "Automatisch"
+msgstr "Auto"
 
 #: .tmp/ui_edituser.py:182
 msgid "Username:"
-msgstr "Gebruikersnaam:"
+msgstr "Gebruikernaam:"
 
 #: .tmp/ui_edituser.py:183
 msgid "Home Directory:"
@@ -54,19 +62,19 @@ msgstr "Shell:"
 
 #: .tmp/ui_edituser.py:185
 msgid "Give administrator rights."
-msgstr "Systeembeheerderrechten geven."
+msgstr "Geef systeembeheerderrechten."
 
 #: .tmp/ui_edituser.py:186
 msgid "Use system settings."
-msgstr "Systeeminstellingen gebruiken."
+msgstr "Gebruik systeeminstellingen."
 
 #: .tmp/ui_edituser.py:187
 msgid "Authorize user."
-msgstr "Gebruiker autoriseren."
+msgstr "Autoriseer gebruiker."
 
 #: .tmp/ui_edituser.py:188
 msgid "Deny user."
-msgstr "Gebruiker weigeren."
+msgstr "Weiger gebruiker."
 
 #: .tmp/ui_edituser.py:189
 msgid "Authorizations"
@@ -76,7 +84,7 @@ msgstr "Autorisaties"
 msgid "Main Group:"
 msgstr "Hoofdgroep:"
 
-#: .tmp/ui_edituser.py:191 .tmp/usermanager/main.py:193
+#: .tmp/ui_edituser.py:191 .tmp/usermanager/main.py:196
 msgid "Groups"
 msgstr "Groepen"
 
@@ -86,7 +94,7 @@ msgstr "Nieuwe toevoegen"
 
 #: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
 msgid "User Manager"
-msgstr "Gebruikersbeheer"
+msgstr "Gebruikerbeheer"
 
 #: .tmp/usermanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
@@ -104,66 +112,70 @@ msgstr "Bahadır Kandemir"
 msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
 
-#: .tmp/usermanager/main.py:91
+#: .tmp/usermanager/main.py:94
 msgid ""
 "There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
+"Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Er zijn geen pakketten die backend voor deze toepassing geven.\n"
 "Installeer de pakketten en stel ze correct in."
 
-#: .tmp/usermanager/main.py:192
+#: .tmp/usermanager/main.py:195
 msgid "Users"
 msgstr "Gebruikers"
 
-#: .tmp/usermanager/main.py:194
+#: .tmp/usermanager/main.py:197
 msgid "All Users"
 msgstr "Alle gebruikers"
 
-#: .tmp/usermanager/main.py:195
+#: .tmp/usermanager/main.py:198
 msgid "All Groups"
 msgstr "Alle groepen"
 
-#: .tmp/usermanager/main.py:206
+#: .tmp/usermanager/main.py:209
 msgid "Add User"
 msgstr "Gebruiker toevoegen"
 
-#: .tmp/usermanager/main.py:211
+#: .tmp/usermanager/main.py:214
 msgid "Add Group"
 msgstr "Groep toevoegen"
 
-#: .tmp/usermanager/main.py:232 .tmp/usermanager/main.py:246
-#: .tmp/usermanager/main.py:371
+#: .tmp/usermanager/main.py:235 .tmp/usermanager/main.py:249
+#: .tmp/usermanager/main.py:375
 msgid "Access denied."
 msgstr "Toegang geweigerd."
 
-#: .tmp/usermanager/main.py:314
+#: .tmp/usermanager/main.py:319
 msgid "Do you want to delete user '%1' (%2)?"
 msgstr "Wilt u gebruiker '%1' (%2) verwijderen?"
 
-#: .tmp/usermanager/main.py:321
+#: .tmp/usermanager/main.py:320
+msgid "Also remove user files. (This may take long.)"
+msgstr "Ook gebruikerbestanden verwijderen. (Dit kan lang duren.)"
+
+#: .tmp/usermanager/main.py:328
 msgid "Do you want to delete group '%1'?"
 msgstr "Wilt u groep '%1' verwijderen?"
 
 #: .tmp/usermanager/edit.py:236
 msgid "There has to be at least one group selected."
-msgstr "Selecteer ten minste één groep."
+msgstr "Ten minste één groep dient geselecteerd te zijn."
 
 #: .tmp/usermanager/edit.py:301
 msgid "Start with typing this user's full name."
-msgstr "Begin met het typen van de volledige naam van de gebruiker."
+msgstr "Begin met het typen van de volledige naam van deze gebruiker."
 
 #: .tmp/usermanager/edit.py:304
 msgid "You should enter a password for this user."
-msgstr "U zult een wachtwoord voor deze gebruiker moeten invoeren."
+msgstr "U dient een wachtwoord voor deze gebruiker op te geven."
 
 #: .tmp/usermanager/edit.py:309
 msgid "Password must be longer."
-msgstr "Wachtwoord moet langer zijn."
+msgstr "Wachtwoord dient langer zijn."
 
 #: .tmp/usermanager/edit.py:313
 msgid "Don't use your full name or user name as a password."
-msgstr "Gebruik niet uw eigen naam of gebruikersnaam als wachtwoord."
+msgstr "Gebruik niet uw eigen naam of naam van de gebruik als wachtwoord."
 
 #: .tmp/usermanager/edit.py:316
 msgid "Passwords don't match."
