@@ -23,6 +23,10 @@ from PyKDE4.kdeui import *
 # Custom Widgets
 from widgets.popup import Popup, NmIcon, Blinker
 
+
+# Configuration widgets
+from widgets.configs import *
+
 # KDE4 Notifier
 from widgets.notify import Notifier
 
@@ -61,7 +65,7 @@ class NmApplet(plasmascript.Applet):
     def init(self):
         """ Const method for initializing the applet """
         KGlobal.locale().insertCatalog("network-manager")
-
+        self.readEntries()
         self.iface = NetworkIface()
         self.notifyface = Notifier(dbus.get_default_main_loop())
         self.notifyface.registerNetwork()
@@ -98,7 +102,7 @@ class NmApplet(plasmascript.Applet):
         # Listen network status from comar
         self.iface.listen(self.handler)
 
-        QTimer.singleShot(4000, self.dataUpdated)
+        QTimer.singleShot(self._config['pollinterval'], self.dataUpdated)
 
         # Context Menu
         icon = self.loader.loadIcon(WIRED, KIconLoader.NoGroup, 22)
@@ -106,6 +110,14 @@ class NmApplet(plasmascript.Applet):
         self.actions.append(openNm)
         self.connect(openNm, SIGNAL("triggered(bool)"), self.openNM)
         self.connect(self.popup.ui.nmButton, SIGNAL("clicked()"), self.openNM)
+
+    def readEntries(self):
+        config = self.config()
+        self._config = {}
+        self._config["pollinterval"] = int(config.readEntry("pollinterval", "5")) * 1000
+        self._config["showtraffic"] = config.readEntry("showtraffic", "true")
+        self._config["showwifi"] = config.readEntry("showwifi", "true")
+        self._config["showstatus"] = config.readEntry("showstatus", "true")
 
     def initPopup(self):
         self.dialog = Plasma.Dialog()
@@ -145,7 +157,8 @@ class NmApplet(plasmascript.Applet):
             paint.fillPath(_path, self.transmitterBlinker.color)
 
         # Draw Emblem
-        paint.drawPixmap(0,0,emblem)
+        if self._config['showstatus'] == 'true':
+            paint.drawPixmap(0,0,emblem)
         paint.end()
 
         # Update the icon
@@ -155,20 +168,28 @@ class NmApplet(plasmascript.Applet):
     def dataUpdated(self):
         if self.lastActiveDevice:
             if self.lastActivePackage == 'wireless_tools':
-                # Show SIGNAL Strength
-                icon =  self.iface.strength(self.lastActiveDevice)/18
-                if not icon in range(1,6):
-                    icon = 1
-                self.defaultIcon = ICONPATH % (self.package().path(), icon)
+                if self._config['showwifi'] == 'true':
+                    # Show SIGNAL Strength
+                    icon =  self.iface.strength(self.lastActiveDevice)/18
+                    if not icon in range(1,6):
+                        icon = 1
+                    self.defaultIcon = ICONPATH % (self.package().path(), icon)
+                else:
+                    self.defaultIcon = ICONPATH % (self.package().path(), 5)
             else:
                 self.defaultIcon = ICONPATH % (self.package().path(), WIRED)
-            self.receiverBlinker.update(self.iface.stat(self.lastActiveDevice)[0])
-            self.transmitterBlinker.update(self.iface.stat(self.lastActiveDevice)[1])
+            if self._config['showtraffic'] == 'true':
+                self.receiverBlinker.update(self.iface.stat(self.lastActiveDevice)[0])
+                self.transmitterBlinker.update(self.iface.stat(self.lastActiveDevice)[1])
+            else:
+                self.receiverBlinker.stop()
+                self.transmitterBlinker.stop()
         else:
             self.receiverBlinker.stop()
             self.transmitterBlinker.stop()
         self.update()
-        QTimer.singleShot(5000, self.dataUpdated)
+        if self._config['showwifi'] == 'true' or self._config['showtraffic'] == 'true':
+            QTimer.singleShot(self._config['pollinterval'], self.dataUpdated)
 
     def constraintsEvent(self, constraints):
         self.setBackgroundHints(Plasma.Applet.NoBackground)
@@ -238,24 +259,29 @@ class NmApplet(plasmascript.Applet):
         self.dialog.move(self.popupPosition(self.dialog.sizeHint()))
 
     def configAccepted(self):
-        gc = self.config()
-        gc.writeEntry("showTraffic", "true")
+        conf = self.config()
+        self.iconConfig.writeConf(conf)
         self.update
+        self.readEntries()
+        self.dataUpdated()
 
     def configDenied(self):
         self.iconConfig.deleteLater()
-        self.popupConfig.deleteLater()
+        # self.popupConfig.deleteLater()
 
     def createConfigurationInterface(self, parent):
+        conf = self.config()
+
         # Icon Config
-        self.iconConfig = QWidget()
+        self.iconConfig = ConfigIcon(conf)
         p = parent.addPage(self.iconConfig, i18n("Icon Settings") )
         p.setIcon( KIcon("network-wired") )
 
         # Popup Config
-        self.popupConfig = QWidget()
-        p = parent.addPage(self.popupConfig, i18n("Popup Settings") )
-        p.setIcon( KIcon("preferences-desktop-notification") )
+        # FIXME Later
+        # self.popupConfig = ConfigPopup(conf)
+        # p = parent.addPage(self.popupConfig, i18n("Popup Settings") )
+        # p.setIcon( KIcon("preferences-desktop-notification") )
 
         # Dailog Button signal mapping
         self.connect(parent, SIGNAL("okClicked()"), self.configAccepted)
@@ -263,7 +289,7 @@ class NmApplet(plasmascript.Applet):
 
     def showConfigurationInterface(self):
         dialog = KPageDialog()
-        dialog.setFaceType(KPageDialog.List)
+        # dialog.setFaceType(KPageDialog.List)
         dialog.setButtons(KDialog.ButtonCode(KDialog.Ok | KDialog.Cancel))
         self.createConfigurationInterface(dialog)
         dialog.exec_()
