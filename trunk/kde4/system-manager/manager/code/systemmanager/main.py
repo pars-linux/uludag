@@ -86,8 +86,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.comboLanguage.setCurrentIndex(index)
         # All Keymaps
         self.comboKeyboard.clear()
-        for code, label in self.iface.listKeymaps():
-            self.comboKeyboard.addItem(label, QtCore.QVariant(code))
+        for code in self.iface.listKeymaps():
+            self.comboKeyboard.addItem(code, QtCore.QVariant(code))
         # Selected keymap
         keymap = QtCore.QVariant(self.iface.getKeymap())
         index = self.comboKeyboard.findData(keymap)

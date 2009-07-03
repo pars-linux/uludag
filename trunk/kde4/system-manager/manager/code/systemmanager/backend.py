@@ -44,7 +44,7 @@ class Interface:
         services = []
         for package in self.link.System.Service:
             services.append((package, self.link.System.Service[package].info()[1]))
-        #services.sort(key=lambda x: x[1])
+        services.sort(key=lambda x: x[1])
         return services
 
     def listLanguages(self):
@@ -52,7 +52,7 @@ class Interface:
             Returns list of languages."
         """
         languages = self.link.System.Settings[self.package].listLanguages()
-        #languages.sort(key=lambda x: x[1])
+        languages.sort(key=lambda x: x[1])
         return languages
 
     def getLanguage(self):
@@ -71,8 +71,11 @@ class Interface:
         """
             Returns list of keymaps."
         """
-        keymaps = self.link.System.Settings[self.package].listKeymaps(language)
-        #keymaps.sort(key=lambda x: x[1])
+        keymaps = []
+        for code, lang in self.link.System.Settings[self.package].listKeymaps(language):
+            if code not in keymaps:
+                keymaps.append(code)
+        keymaps.sort()
         return keymaps
 
     def getKeymap(self):
