@@ -18,7 +18,7 @@
 \begin{enumerate}
  \item QstarDict dışındaki tüm sözlükler için ilgili text dosyasını aşağıda bulunan linkten indirebilirsiniz.
 \begin{verbatim}
-http://cekirdek.pardus.org.tr/~semen/dist/office/dictionary/
+http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/
 \end{verbatim}
 İlgili sözlük için text dosyasını indirdikten sonra, bu dosyanın içinde, belirtilen dil ile ilgili, bir yanlış bir adette doğru olarak yazılmış kelime göreceksiniz.
 
@@ -71,7 +71,7 @@ opensp
 
 Aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/office/docbook/testasciidoc.txt
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/testasciidoc.txt
 # asciidoc testasciidoc.txt
 \end{verbatim}
 
@@ -79,7 +79,7 @@ Sorunsuz bir şekilde testasciidoc.html dosyasının oluştuğunu gözlemleyin.
 
 \item docbook-utils paketi kurulumu sonrası:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/office/docbook/test.sgml
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.sgml
 # pisi info -F docbook-utils
 \end{verbatim}
 
@@ -94,11 +94,11 @@ Tüm çalıştırılabilir dosyaların sorunsuz bir şekilde çalıştığını 
 
 \item openjade paketi kurulumu sonrası:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/office/docbook/test.sgml
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.sgml
 # openjade -t sgml /usr/share/sgml/docbook/dsssl-stylesheets-1.79/html/docbook.dsl test.sgml
 \end{verbatim}
 
-openjade'ın sorunsuz bir şekilde çalıştığını gözlemleyin.
+Yukarıdaki komutları çalıştırın, openjade'ın sorunsuz bir şekilde çalıştığını gözlemleyin.
 
 \item sgml-common paketi kurulumu sonrası:
 \begin{verbatim}
@@ -106,10 +106,16 @@ openjade'ın sorunsuz bir şekilde çalıştığını gözlemleyin.
 \end{verbatim}
 
 Sorunsuz bir şekilde çalıştığını gözlemleyin.
+\item xmlto paketi kurulumu sonrası:
 
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.xml
+# xmlto -o html_dir html test.xml
+\end{verbatim}
 
+Yukarıdaki komutları çalıştırın, xmlto paketinin sorunsuz bir şekilde çalıştığını gözlemleyin.
 \end{enumerate}
-
+\subsection*{Koffice}
 
 \end{document}
 
