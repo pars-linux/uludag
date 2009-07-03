@@ -176,9 +176,9 @@
   * öntanımlı gelen kısayol/pager/shelf ıvır zıvır elden geçirilecek (/75)
 
 * Xfce4 (Gökmen Görgen)
-  * Xfce4 paketleri 2009 deposu için hazırlanacak (/75)
-  * PolicyKit, Dbus ve Pulseaudio desteği tekrar denetlenecek (/25)
-  * default-pardus-settings-xfce paketi yapılacak (/25)
+  * Xfce4 paketleri 2009 deposu için hazırlanacak (+)
+  * PolicyKit, Dbus ve Pulseaudio desteği tekrar denetlenecek (+)
+  * default-pardus-settings-xfce paketi yapılacak (/75)
   * xfce.base bileşenindeki paketlerin bağımlılıkları tekrar düzenlenecek (+)
   * gtk-doc parametresi aktif edilecek (+)
 
