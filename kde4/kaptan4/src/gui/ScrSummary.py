@@ -176,7 +176,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 subcomponent = subgroup.readEntry('plugin')
                 subcomponent2 = subgroup.readEntry('screen')
                 if subcomponent == 'desktop' or subcomponent == 'folderview':
-                    if int(subcomponent2) == 1:
+                    if int(subcomponent2) == 0:
                         subgroup.writeEntry('plugin', self.styleSettings["desktopType"])
 
             config.sync()
