@@ -59,5 +59,11 @@ class Interface:
         """
         return "zorg"
 
+    def getDriver(self):
+        """
+        """
+
+        return self._info.driver
+
     def getOutputs(self):
         return self.ext.getOutputs()

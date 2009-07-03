@@ -28,8 +28,8 @@ from displaysettings.backend import Interface
 # Config
 #from displaysettings.config import
 
-# Item widget
 from displaysettings.item import ItemListWidgetItem, ItemWidget
+from displaysettings.carddialog import VideoCardDialog
 
 from displaysettings.device import Output
 
@@ -43,6 +43,9 @@ OUTPUT_TYPES = {
         }
 
 class MainWidget(QtGui.QWidget, Ui_devicesWidget):
+
+    configChanged = QtCore.pyqtSignal()
+
     def __init__(self, parent, embed=False):
         QtGui.QWidget.__init__(self, parent)
 
@@ -51,6 +54,8 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         else:
             self.setupUi(self)
 
+        self.configureCardButton.setIcon(kdeui.KIcon("configure"))
+
         # Backend
         self.iface = Interface()
         self.iface.listenSignals(self.signalHandler)
@@ -58,7 +63,12 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         # Fail if no packages provide backend
         self.checkBackend()
 
+        self.cardDialog = VideoCardDialog(self)
+        self.configureCardButton.clicked.connect(self.cardDialog.show)
+
         self.reset()
+
+        self.configChanged.connect(self.slotConfigChanged)
 
     def checkBackend(self):
         """
@@ -110,3 +120,15 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         for output in self.iface.getOutputs():
             desc, icon = OUTPUT_TYPES[output.outputType]
             self.addItem(output.name, output.name, desc, icon)
+
+    def slotConfigChanged(self):
+        print "*** Config changed"
+
+    def load(self):
+        print "** load"
+
+    def save(self):
+        print "** save"
+
+    def defaults(self):
+        print "** defaults"
