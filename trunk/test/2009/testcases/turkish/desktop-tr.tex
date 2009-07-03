@@ -1,0 +1,68 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+
+\title{Masaüstü Bileşeni Test Aşamaları}
+\author{Semen Cirit}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Qt ve Qt4}
+
+(Bu kısımda verilen paket adlarının qt ile başlayan bölümleri, 2008'de qt için qt, qt4 için qt4, 2009'da qt için qt3, qt4 için qt olacaktır.)
+\begin{enumerate}
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ qt-doc
+ qt-sql-ibase
+ qt-sql-odbc
+ qt-sql-postgresql
+\end{verbatim}
+ \item qt paketi kurulumu sonrası
+\begin{verbatim}
+ # mkdir test
+ # cd test
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/toolkit/test.cpp
+ # qmake-qt4 -project
+ # qmake-qt4
+ # make
+ # ./test
+\end{verbatim}
+
+"Hello qt4!" yazan bir pencerenin açıldığını gözlemleyin.
+\item qt-designer paketi kurulumu sonrası
+
+Menu $\rightarrow$ Programlar $\rightarrow$ Geliştirme yolunu izleyerek sorunsuz bir şekilde açıldığını gözlemleyin.
+
+\item qt-linguist paketi kurulumu sonrası
+
+Menu $\rightarrow$ Programlar $\rightarrow$ Geliştirme yolunu izleyerek sorunsuz bir şekilde açıldığını gözlemleyin.
+
+\item qt-sql-mysql, qt-sql-sqlite paketi kurulumu sonrası
+\begin{verbatim}
+ # mkdir test
+ # cd test
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/toolkit/test-qt-sql-<ilgilidata_base>.cpp
+ # qmake-qt -project
+ # qmake-qt
+\end{verbatim}
+qmake komutundan sonra oluşan .pro dosyanıza QT += sql satırını eklemelisiniz. Daha sonra aşağıdaki komutları çalıştırın.
+\begin{verbatim}
+ # make
+ # ./test
+\end{verbatim}
+
+Bağlamtının sorunsuz bir şekilde gerçekleştğini gözlemleyin.
+
+\end{enumerate}
+
+\end{document}
+
