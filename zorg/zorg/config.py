@@ -170,29 +170,6 @@ def getDeviceInfo(busId):
         mon.vref   = tag.getTagData("VertRefresh") or mon.vref
         device.monitors[output] = mon
 
-    outputTag = activeConfigTag.getTag("Output")
-    name = outputTag.firstChild().data()
-    activeOutputs.append(name)
-    mode = outputTag.getAttribute("mode")
-    if mode:
-        modes[name] = mode
-
-    monitorTag = activeConfigTag.getTag("Monitor")
-    if monitorTag:
-        addMonitor(name, monitorTag)
-
-    outputTag = activeConfigTag.getTag("SecondOutput")
-    if outputTag:
-        name = outputTag.firstChild().data()
-        activeOutputs.append(name)
-        mode = outputTag.getAttribute("mode")
-        if mode:
-            modes[name] = mode
-
-        monitorTag = activeConfigTag.getTag("SecondMonitor")
-        if monitorTag:
-            addMonitor(name, monitorTag)
-
     # Get output info
     outputsTag = cardTag.getTag("Outputs")
     for outputTag in outputsTag.tags("Output"):
@@ -232,7 +209,7 @@ def getDeviceInfo(busId):
         if monitorTag:
             addMonitor(name, monitorTag)
 
-    device.desktop_setup = activeConfigTag.getTagData("DesktopSetup")
+    # device.desktop_setup = activeConfigTag.getTagData("DesktopSetup")
 
     device.probe_result = probeResult
     device.active_outputs = activeOutputs
@@ -281,36 +258,7 @@ def saveDeviceInfo(card):
     else:
         if card.depth:
             addTag(config, "Depth", card.depth)
-        addTag(config, "DesktopSetup", card.desktop_setup)
-
-        def addMonitor(output, tagName):
-            mon = card.monitors[output]
-            monitor = config.insertTag(tagName)
-            monitor.insertTag("Vendor").insertData(mon.vendor)
-            monitor.insertTag("Model" ).insertData(mon.model )
-            monitor.insertTag("HorizSync"  ).insertData(mon.hsync)
-            monitor.insertTag("VertRefresh").insertData(mon.vref)
-
-        outName = card.active_outputs[0]
-        outMode = card.modes.get(outName)
-        output = config.insertTag("Output")
-        if outMode:
-            output.setAttribute("mode", outMode)
-        output.insertData(outName)
-
-        if card.monitors.has_key(outName):
-            addMonitor(outName, "Monitor")
-
-        if card.desktop_setup != "single":
-            outName = card.active_outputs[1]
-            outMode = card.modes.get(outName)
-            output = config.insertTag("SecondOutput")
-            if outMode:
-                output.setAttribute("mode", outMode)
-            output.insertData(outName)
-
-            if card.monitors.has_key(outName):
-                addMonitor(outName, "SecondMonitor")
+        #addTag(config, "DesktopSetup", card.desktop_setup)
 
     # Save output info
     outputs = cardTag.insertTag("Outputs")
