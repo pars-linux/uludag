@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-24 10:08+0300\n"
+"POT-Creation-Date: 2009-07-03 14:51+0300\n"
 "PO-Revision-Date: 2009-06-24 21:11-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -56,7 +56,8 @@ msgstr "Configuración del Sistema"
 
 #: .tmp/goodbyeWidget.py:97 .tmp/ui_goodbyeWidget.py:97
 msgid "System Settings is a configuration tool for Pardus."
-msgstr "Configuración del Sistema es una herramienta de configuración de Pardus."
+msgstr ""
+"Configuración del Sistema es una herramienta de configuración de Pardus."
 
 #: .tmp/goodbyeWidget.py:98 .tmp/goodbyeWidget.py:101
 #: .tmp/ui_goodbyeWidget.py:98 .tmp/ui_goodbyeWidget.py:101
@@ -103,8 +104,8 @@ msgstr "Terminar"
 msgid "Keyboard"
 msgstr "Teclado"
 
-#: .tmp/keyboardWidget.py:72 .tmp/ui_keyboardWidget.py:72
 # favor revisar, tal vez usar otra palabra
+#: .tmp/keyboardWidget.py:72 .tmp/ui_keyboardWidget.py:72
 msgid "Try:"
 msgstr "Pruebe:"
 
@@ -204,40 +205,68 @@ msgstr "Deslizamento inverso"
 msgid "Network"
 msgstr "Red"
 
-#: .tmp/packageWidget.py:61 .tmp/ui_packageWidget.py:61
+#: .tmp/packageWidget.py:70 .tmp/ui_packageWidget.py:70
 msgid "Package"
 msgstr "Paquete"
 
-#: .tmp/packageWidget.py:62 .tmp/ui_packageWidget.py:62
-msgid "Info about Pisi"
-msgstr "Información acerca de PiSi"
+#: .tmp/packageWidget.py:71 .tmp/ui_packageWidget.py:71
+#, fuzzy
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Package-manager is the graphical front-end of PiSi. You can "
+"easily install new programs and upgrade your system and also can see new "
+"upgrades of the programs periodically from the system tray with package "
+"manager.</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Seleccione un estilo de menú:</span></p></body></html>"
 
-#: .tmp/packageWidget.py:63 .tmp/ui_packageWidget.py:63
+#: .tmp/packageWidget.py:76 .tmp/ui_packageWidget.py:76
 msgid "picture label"
 msgstr "Rótulo de la imagen"
 
-#: .tmp/packageWidget.py:64 .tmp/ui_packageWidget.py:64
+#: .tmp/packageWidget.py:77 .tmp/ui_packageWidget.py:77
 msgid "Updates"
 msgstr "Actualizaciones"
 
-#: .tmp/packageWidget.py:65 .tmp/ui_packageWidget.py:65
+#: .tmp/packageWidget.py:78 .tmp/ui_packageWidget.py:78
 msgid "Show in system  tray"
 msgstr "Mostrar en la barra de tareas"
 
-#: .tmp/packageWidget.py:66 .tmp/ui_packageWidget.py:66
+#: .tmp/packageWidget.py:79 .tmp/ui_packageWidget.py:79
 msgid "Check updates automatically for every"
 msgstr "Comprobar actualizaciones automáticamente cada"
 
-#: .tmp/packageWidget.py:67 .tmp/ui_packageWidget.py:67
+#: .tmp/packageWidget.py:80 .tmp/ui_packageWidget.py:80
+msgid " hours"
+msgstr ""
+
+#: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:81
 msgid "Repo"
 msgstr "Repositorio"
 
 # favor verificar..
-#: .tmp/packageWidget.py:68 .tmp/ui_packageWidget.py:68
+#: .tmp/packageWidget.py:82 .tmp/ui_packageWidget.py:82
 msgid "Contrib repo includes extra packages."
 msgstr "Repositorio Contrib contiene paquetes opcionales."
 
-#: .tmp/packageWidget.py:69 .tmp/ui_packageWidget.py:69
+#: .tmp/packageWidget.py:83 .tmp/ui_packageWidget.py:83
 msgid "Add contrib repo"
 msgstr "Agregar repositorio contrib"
 
@@ -313,21 +342,13 @@ msgstr "Clic doble"
 msgid "Network Manager"
 msgstr "Administrador de Red"
 
-#: .tmp/ScrPackage.py:26
+#: .tmp/ScrPackage.py:29
 msgid "Package Manager"
 msgstr "Administrador de Paquetes"
 
-#: .tmp/ScrPackage.py:27
+#: .tmp/ScrPackage.py:30
 msgid "Configure package manager settings"
 msgstr "Configuración del administrador de paquetes"
-
-#: .tmp/ScrPackage.py:78
-msgid "You are not authorized for this operation."
-msgstr "No está autorizado para esta operación."
-
-#: .tmp/ScrPackage.py:79
-msgid "Authentication Error!"
-msgstr "Error de autenticación!"
 
 #: .tmp/ScrSearch.py:27
 msgid "Some catchy title about desktop search"
@@ -338,12 +359,12 @@ msgid "Some catchy description desktop search"
 msgstr ""
 
 # favor revisar,
-#: .tmp/ScrSearch.py:58
+#: .tmp/ScrSearch.py:59
 msgid "On"
 msgstr "Habilitar"
 
 # favor revisar
-#: .tmp/ScrSearch.py:60
+#: .tmp/ScrSearch.py:61
 msgid "Off"
 msgstr "Deshabilitar"
 
@@ -509,15 +530,6 @@ msgstr "Configuración de la Busqueda"
 msgid "Desktop search: <b>%s</b>"
 msgstr "Busqueda de Escritorio: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:97
-msgid "Smolt Settings"
-msgstr "Configuración de Smolt"
-
-#: .tmp/ScrSummary.py:98
-#, python-format
-msgid "Smolt profile: <b>%s</b>"
-msgstr "Perfil Smolt: <b>%s</b>"
-
 #: .tmp/ScrWallpaper.py:34
 msgid "Insert some catchy title about wallpapers.."
 msgstr ""
@@ -531,7 +543,7 @@ msgid "Desktop Search"
 msgstr "Busqueda de Escritorio"
 
 # no estoy seguro del "rating"
-#: .tmp/searchWidget.py:53 .tmp/ui_searchWidget.py:53
+#: .tmp/searchWidget.py:53
 msgid ""
 "Nepomuk  Semantic Desktop enables tagging and rating of files integrated "
 "with the Desktop Search."
@@ -539,7 +551,7 @@ msgstr ""
 "Escritorio Semántico Nepomuk realiza un indexado y una valorización de "
 "archivos, combinado con búsqueda de escritorio."
 
-#: .tmp/searchWidget.py:54 .tmp/ui_searchWidget.py:54
+#: .tmp/searchWidget.py:54
 msgid "Enable Nepomuk Semantic Desktop"
 msgstr "Habilitar Escritorio Semántico Nepomuk"
 
@@ -598,24 +610,40 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt enviará solamente información relacionado con hardware y información básica del sistema operativo al servidor smolt de Fedora (smoon). "
-"Lo único que vincula al remitente con la base de datos es el UUID de la PC del remitente. "
-"Mientras el remitente no publica su UUID, los datos enviados son anónimos. "
-"Si en algún momento el usuario desea eliminar su perfil de la base de datos, puede ejecutar sencillamente </p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt enviará solamente "
+"información relacionado con hardware y información básica del sistema "
+"operativo al servidor smolt de Fedora (smoon). Lo único que vincula al "
+"remitente con la base de datos es el UUID de la PC del remitente. Mientras "
+"el remitente no publica su UUID, los datos enviados son anónimos. Si en "
+"algún momento el usuario desea eliminar su perfil de la base de datos, puede "
+"ejecutar sencillamente </p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-"
 "style:italic;\">smoltDeleteProfile</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   La información enviada a la base de datos smolt se debe considerar pública, en la que cualquier persona puede ver datos estadísticas, perfiles de datos y recursos compartidos. "
-"Smolt fue diseñado para llamar la atención a los distintos fabricantes de hardware y de acesorios. Como tal, no solamente se va a compartir la información reunida con terceros, sino también se va a usar como herramienta para conseguir mejor soporte de los controladores libres y recibir mejor soporte en general.</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">   La información enviada "
+"a la base de datos smolt se debe considerar pública, en la que cualquier "
+"persona puede ver datos estadísticas, perfiles de datos y recursos "
+"compartidos. Smolt fue diseñado para llamar la atención a los distintos "
+"fabricantes de hardware y de acesorios. Como tal, no solamente se va a "
+"compartir la información reunida con terceros, sino también se va a usar "
+"como herramienta para conseguir mejor soporte de los controladores libres y "
+"recibir mejor soporte en general.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
-"decoration: underline;\">IP Logging:</span> Al instalar smolt de Fedora, todo el tráfico pasa por un servidor proxy. Esto es el único lugar donde se registra el IP, y se mantiene su registro durante 4 semanas, hasta que es eliminado por la rotación de los logs. Estos logs son privados, y no serán accesible por el público en general."
-"El Proyecto Fedora no almacena la dirección ip cen la base de datos smolt.</p>\n"
+"decoration: underline;\">IP Logging:</span> Al instalar smolt de Fedora, "
+"todo el tráfico pasa por un servidor proxy. Esto es el único lugar donde se "
+"registra el IP, y se mantiene su registro durante 4 semanas, hasta que es "
+"eliminado por la rotación de los logs. Estos logs son privados, y no serán "
+"accesible por el público en general.El Proyecto Fedora no almacena la "
+"dirección ip cen la base de datos smolt.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"> Usuarios a quienes no les agrada ésta política sencillamente no dberían usar smolt. Si hay dudas o preguntas sobre ésta política, debería contactar al equipo de la infraestructura Fedora Team en admin [at] fedoraproject.org. "
-"Recuerde que el usuario puede eliminar su perfil en cualquier momento con el comando"
-"\"<span style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"> Usuarios a quienes no les "
+"agrada ésta política sencillamente no dberían usar smolt. Si hay dudas o "
+"preguntas sobre ésta política, debería contactar al equipo de la "
+"infraestructura Fedora Team en admin [at] fedoraproject.org. Recuerde que el "
+"usuario puede eliminar su perfil en cualquier momento con el comando\"<span "
+"style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></body></html>"
 
 #: .tmp/styleitem.py:46 .tmp/uiitem.py:46 .tmp/ui_styleitem.py:46
 #: .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
@@ -691,11 +719,21 @@ msgstr ""
 msgid "wallpaperDesc"
 msgstr ""
 
+#: .tmp/ui_searchWidget.py:53
+msgid ""
+"Strigi desktop search allows searching for files by content instead of just "
+"by name."
+msgstr ""
+
+#: .tmp/ui_searchWidget.py:54
+msgid "Enable Strigi Desktop File Indexer"
+msgstr ""
+
 #: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
 msgid "Wallpaper"
 msgstr "Imagen de Fondo"
 
-#: .tmp/ui_wallpaperWidget.py:45
+#: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:45
 msgid "Choose Wallpaper From a File"
 msgstr "Elegir archivo para imagen de fondo "
 
@@ -724,7 +762,20 @@ msgstr ""
 "escritorio básico para un usuario de PC; Le ayuda conectar a internet, leer "
 "e-mails, trabajar con documentos de oficina y más!"
 
-#: .tmp/wallpaperWidget.py:45
-msgid "Choose Wallpaper"
-msgstr "Elegir imagen de fondo"
+#~ msgid "Info about Pisi"
+#~ msgstr "Información acerca de PiSi"
 
+#~ msgid "You are not authorized for this operation."
+#~ msgstr "No está autorizado para esta operación."
+
+#~ msgid "Authentication Error!"
+#~ msgstr "Error de autenticación!"
+
+#~ msgid "Smolt Settings"
+#~ msgstr "Configuración de Smolt"
+
+#~ msgid "Smolt profile: <b>%s</b>"
+#~ msgstr "Perfil Smolt: <b>%s</b>"
+
+#~ msgid "Choose Wallpaper"
+#~ msgstr "Elegir imagen de fondo"

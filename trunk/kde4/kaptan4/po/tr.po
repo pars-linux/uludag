@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-24 10:08+0300\n"
+"POT-Creation-Date: 2009-07-03 14:51+0300\n"
 "PO-Revision-Date: 2009-06-24 14:47+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -47,8 +47,9 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Tebrikler! Tüm adımları tamamladınız! Aşağıdaki uygulamalara bir göz atmanız tavsiye olunur:</"
-"span></p></body></html>"
+"size:12pt; font-weight:600;\">Tebrikler! Tüm adımları tamamladınız! "
+"Aşağıdaki uygulamalara bir göz atmanız tavsiye olunur:</span></p></body></"
+"html>"
 
 #: .tmp/goodbyeWidget.py:96 .tmp/ui_goodbyeWidget.py:96
 msgid "System Settings"
@@ -70,8 +71,7 @@ msgstr "Kullanıcı Paylaşım Grupları ve Yardım Sayfaları"
 #: .tmp/goodbyeWidget.py:100 .tmp/ui_goodbyeWidget.py:100
 msgid "Pardus community, user lists, IRC channels, wikis and more."
 msgstr ""
-"Pardus topluluğu, kullanıcı listeleri, IRC odaları, vikiler ve daha "
-"fazlası."
+"Pardus topluluğu, kullanıcı listeleri, IRC odaları, vikiler ve daha fazlası."
 
 #: .tmp/kaptanMain.py:130 .tmp/ui_kaptanMain.py:130
 msgid "Kaptan Desktop"
@@ -200,39 +200,67 @@ msgstr "Ters Kaydır"
 msgid "Network"
 msgstr "Ağ"
 
-#: .tmp/packageWidget.py:61 .tmp/ui_packageWidget.py:61
+#: .tmp/packageWidget.py:70 .tmp/ui_packageWidget.py:70
 msgid "Package"
 msgstr "Paket"
 
-#: .tmp/packageWidget.py:62 .tmp/ui_packageWidget.py:62
-msgid "Info about Pisi"
-msgstr "PiSi hakkında bilgi"
+#: .tmp/packageWidget.py:71 .tmp/ui_packageWidget.py:71
+#, fuzzy
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Package-manager is the graphical front-end of PiSi. You can "
+"easily install new programs and upgrade your system and also can see new "
+"upgrades of the programs periodically from the system tray with package "
+"manager.</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Bir menü stili seçin:</span></p></body></html>"
 
-#: .tmp/packageWidget.py:63 .tmp/ui_packageWidget.py:63
+#: .tmp/packageWidget.py:76 .tmp/ui_packageWidget.py:76
 msgid "picture label"
 msgstr "resim etiketi"
 
-#: .tmp/packageWidget.py:64 .tmp/ui_packageWidget.py:64
+#: .tmp/packageWidget.py:77 .tmp/ui_packageWidget.py:77
 msgid "Updates"
 msgstr "Güncellemeler"
 
-#: .tmp/packageWidget.py:65 .tmp/ui_packageWidget.py:65
+#: .tmp/packageWidget.py:78 .tmp/ui_packageWidget.py:78
 msgid "Show in system  tray"
 msgstr "Sistem tepsisinde göster"
 
-#: .tmp/packageWidget.py:66 .tmp/ui_packageWidget.py:66
+#: .tmp/packageWidget.py:79 .tmp/ui_packageWidget.py:79
 msgid "Check updates automatically for every"
 msgstr "Güncelleme kontrol sıklığı:"
 
-#: .tmp/packageWidget.py:67 .tmp/ui_packageWidget.py:67
+#: .tmp/packageWidget.py:80 .tmp/ui_packageWidget.py:80
+msgid " hours"
+msgstr ""
+
+#: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:81
 msgid "Repo"
 msgstr "Depo"
 
-#: .tmp/packageWidget.py:68 .tmp/ui_packageWidget.py:68
+#: .tmp/packageWidget.py:82 .tmp/ui_packageWidget.py:82
 msgid "Contrib repo includes extra packages."
 msgstr "Katkı deposu ek paketler içerir."
 
-#: .tmp/packageWidget.py:69 .tmp/ui_packageWidget.py:69
+#: .tmp/packageWidget.py:83 .tmp/ui_packageWidget.py:83
 msgid "Add contrib repo"
 msgstr "Katkı deposu ekle"
 
@@ -308,21 +336,13 @@ msgstr "Çift Tıklama"
 msgid "Network Manager"
 msgstr "Ağ Yöneticisi"
 
-#: .tmp/ScrPackage.py:26
+#: .tmp/ScrPackage.py:29
 msgid "Package Manager"
 msgstr "Paket Yöneticisi"
 
-#: .tmp/ScrPackage.py:27
+#: .tmp/ScrPackage.py:30
 msgid "Configure package manager settings"
 msgstr "Paket yöneticinizi yapılandırın"
-
-#: .tmp/ScrPackage.py:78
-msgid "You are not authorized for this operation."
-msgstr "Bu işlem için gerekli yetkilere sahip değilsiniz."
-
-#: .tmp/ScrPackage.py:79
-msgid "Authentication Error!"
-msgstr "Yetkilendirme Hatası!"
 
 #: .tmp/ScrSearch.py:27
 msgid "Some catchy title about desktop search"
@@ -332,11 +352,11 @@ msgstr "Masaüstü araması hakkında güzel bir başlık"
 msgid "Some catchy description desktop search"
 msgstr "Masaüstü araması hakkında güzel bir açıklama"
 
-#: .tmp/ScrSearch.py:58
+#: .tmp/ScrSearch.py:59
 msgid "On"
 msgstr "Açık"
 
-#: .tmp/ScrSearch.py:60
+#: .tmp/ScrSearch.py:61
 msgid "Off"
 msgstr "Kapalı"
 
@@ -502,15 +522,6 @@ msgstr "Arama Ayarları"
 msgid "Desktop search: <b>%s</b>"
 msgstr "Masaüstü araması: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:97
-msgid "Smolt Settings"
-msgstr "Smolt Ayarları"
-
-#: .tmp/ScrSummary.py:98
-#, python-format
-msgid "Smolt profile: <b>%s</b>"
-msgstr "Smolt profili: <b>%s</b>"
-
 #: .tmp/ScrWallpaper.py:34
 msgid "Insert some catchy title about wallpapers.."
 msgstr "Duvarkâğıtları hakkında güzel bir başlık"
@@ -523,13 +534,15 @@ msgstr "Muhteşem duvarkağıtları!\\m/"
 msgid "Desktop Search"
 msgstr "Masaüstü Araması"
 
-#: .tmp/searchWidget.py:53 .tmp/ui_searchWidget.py:53
+#: .tmp/searchWidget.py:53
 msgid ""
 "Nepomuk  Semantic Desktop enables tagging and rating of files integrated "
 "with the Desktop Search."
-msgstr "Nepomuk Semantik Masaüstü, Masaüstü Araması ile bütünleşik çalışarak dosyaların etiketlenmesini ve beğeni belirlemeyi etkinleştirir. "
+msgstr ""
+"Nepomuk Semantik Masaüstü, Masaüstü Araması ile bütünleşik çalışarak "
+"dosyaların etiketlenmesini ve beğeni belirlemeyi etkinleştirir. "
 
-#: .tmp/searchWidget.py:54 .tmp/ui_searchWidget.py:54
+#: .tmp/searchWidget.py:54
 msgid "Enable Nepomuk Semantic Desktop"
 msgstr "Nepomuk Semantik Masaüstü'nü etkinleştir"
 
@@ -588,19 +601,36 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt Pardus smolt sunucusuna sadece donanım ve temel işletim sistemi bilgilerini gönderir. Gönderenin bilgisayarıyla veritabanı arasındaki tek bağlantı UUID'dir. Gönderenler bu UUID'yi gizli tuttuğu sürece gönderim gizli kalır. Eğer kullanıcı veritabanından kendine ait verileri silmek isterse</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt Pardus smolt "
+"sunucusuna sadece donanım ve temel işletim sistemi bilgilerini gönderir. "
+"Gönderenin bilgisayarıyla veritabanı arasındaki tek bağlantı UUID'dir. "
+"Gönderenler bu UUID'yi gizli tuttuğu sürece gönderim gizli kalır. Eğer "
+"kullanıcı veritabanından kendine ait verileri silmek isterse</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-"
 "style:italic;\">smoltDeleteProfile</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">komutunu çalıştırmaları yeterlidir. Herkes istatistik ve verilere bakabildiği ve bilgisayar profillerini paylaşabildiği için smolt veritabanı sunucusuna gönderilen veri halka açık kabul edilmelidir. Pek çok yönden ve biz smolt'u açık kaynak sürücüler ve genel olarak daha iyi destek için kullanacağımız için smolt donanım üreticilerinin ve diğer üçüncü kişilerin faydasına sunulur, yani bu bilgiler üçüncü kişilerle paylaşılır.</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">komutunu çalıştırmaları "
+"yeterlidir. Herkes istatistik ve verilere bakabildiği ve bilgisayar "
+"profillerini paylaşabildiği için smolt veritabanı sunucusuna gönderilen veri "
+"halka açık kabul edilmelidir. Pek çok yönden ve biz smolt'u açık kaynak "
+"sürücüler ve genel olarak daha iyi destek için kullanacağımız için smolt "
+"donanım üreticilerinin ve diğer üçüncü kişilerin faydasına sunulur, yani bu "
+"bilgiler üçüncü kişilerle paylaşılır.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
-"decoration: underline;\">IP Günlükleme:</span>  Pardus'un smolt kurulumunda tüm internet trafiği önce bir vekil sunucudan geçer. Bu vekil sunucu IP adreslerini günlüğüne kaydeder ve arşivler. Pardus Projesi IP adreslerini smolt veritabanında tutmaz. Bu günlükler gizlidir ve halka açık değildir.</p>\n"
+"decoration: underline;\">IP Günlükleme:</span>  Pardus'un smolt kurulumunda "
+"tüm internet trafiği önce bir vekil sunucudan geçer. Bu vekil sunucu IP "
+"adreslerini günlüğüne kaydeder ve arşivler. Pardus Projesi IP adreslerini "
+"smolt veritabanında tutmaz. Bu günlükler gizlidir ve halka açık değildir.</"
+"p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   Bu politikadan hoşnut olmayan kullanıcıların smolt'u kullanmaması yeterli olacaktır. Bu politika hakkında soruları olan kullanıcılar ise Pardus Yönetim Ekibi'yle admin@pardus.org.tr'den iletişim kurabilirler. Ayrıca kullanıcılar"
-"\"<span style=\" font-style:italic;\">smoltDeleteProfile</span>\" vasıtasıyla profillerini istedikleri zaman silebilirler.</p></"
-"body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">   Bu politikadan hoşnut "
+"olmayan kullanıcıların smolt'u kullanmaması yeterli olacaktır. Bu politika "
+"hakkında soruları olan kullanıcılar ise Pardus Yönetim Ekibi'yle "
+"admin@pardus.org.tr'den iletişim kurabilirler. Ayrıca kullanıcılar\"<span "
+"style=\" font-style:italic;\">smoltDeleteProfile</span>\" vasıtasıyla "
+"profillerini istedikleri zaman silebilirler.</p></body></html>"
 
 #: .tmp/styleitem.py:46 .tmp/uiitem.py:46 .tmp/ui_styleitem.py:46
 #: .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
@@ -676,11 +706,21 @@ msgstr "duvarKâğıdıİsmi"
 msgid "wallpaperDesc"
 msgstr "duvarKâğıdıAçıklaması"
 
+#: .tmp/ui_searchWidget.py:53
+msgid ""
+"Strigi desktop search allows searching for files by content instead of just "
+"by name."
+msgstr ""
+
+#: .tmp/ui_searchWidget.py:54
+msgid "Enable Strigi Desktop File Indexer"
+msgstr ""
+
 #: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
 msgid "Wallpaper"
 msgstr "Duvarkağıdı"
 
-#: .tmp/ui_wallpaperWidget.py:45
+#: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:45
 msgid "Choose Wallpaper From a File"
 msgstr "Duvakâğıdını Dosyadan Seç"
 
@@ -698,11 +738,29 @@ msgid ""
 "basic desktop needs; helps you connect to internet, read e-mails, work with "
 "office documents and more!"
 msgstr ""
-"Kaptan Masaüstü isimli bu uygulama Pardus masaüstünüzün temel ayarlarını hızlı bir şekilde yapmanıza olanak verir. Masaüstünüzü özelleştirmeye başlamak için lütfen Sonraki'ne tıklayın.\n"
+"Kaptan Masaüstü isimli bu uygulama Pardus masaüstünüzün temel ayarlarını "
+"hızlı bir şekilde yapmanıza olanak verir. Masaüstünüzü özelleştirmeye "
+"başlamak için lütfen Sonraki'ne tıklayın.\n"
 "\n"
-"Pardus bilgisayar okur-yazarı kullanıcılarının temel ihtiyaçlarını kolayca karşılamalarını hedefleyen bir GNU/Linux dağıtımıdır. İnternete bağlanmanızı, epostalarınızı okumanızı, ofis belgeleriniz üzerinde çalışmanızı (ve çok daha fazlasını) kolaylaştırır!"
+"Pardus bilgisayar okur-yazarı kullanıcılarının temel ihtiyaçlarını kolayca "
+"karşılamalarını hedefleyen bir GNU/Linux dağıtımıdır. İnternete "
+"bağlanmanızı, epostalarınızı okumanızı, ofis belgeleriniz üzerinde "
+"çalışmanızı (ve çok daha fazlasını) kolaylaştırır!"
 
-#: .tmp/wallpaperWidget.py:45
-msgid "Choose Wallpaper"
-msgstr "Duvarkağıdı Seç"
+#~ msgid "Info about Pisi"
+#~ msgstr "PiSi hakkında bilgi"
 
+#~ msgid "You are not authorized for this operation."
+#~ msgstr "Bu işlem için gerekli yetkilere sahip değilsiniz."
+
+#~ msgid "Authentication Error!"
+#~ msgstr "Yetkilendirme Hatası!"
+
+#~ msgid "Smolt Settings"
+#~ msgstr "Smolt Ayarları"
+
+#~ msgid "Smolt profile: <b>%s</b>"
+#~ msgstr "Smolt profili: <b>%s</b>"
+
+#~ msgid "Choose Wallpaper"
+#~ msgstr "Duvarkağıdı Seç"
