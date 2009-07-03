@@ -6,7 +6,6 @@ import glob
 
 import comar
 from zorg import consts
-from zorg.parser import *
 from zorg.utils import *
 
 sysdir = "/sys/bus/pci/devices/"
