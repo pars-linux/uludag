@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import comar
 import zorg.probe
 from zorg import consts
 from zorg.utils import *
@@ -85,8 +86,9 @@ def getCompatibleDriverNames(vendor_id, product_id):
 def getAvailableDriverNames():
     drvlist = []
 
+    link = comar.Link()
+    availablePackages = list(link.Xorg.Driver)
     availableDrivers = zorg.probe.listAvailableDrivers()
-    availablePackages = zorg.probe.listDriverPackages()
 
     packages = [x.split(consts.package_sep) for x in drivers.keys() if consts.package_sep in x]
 

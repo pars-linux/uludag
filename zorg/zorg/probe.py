@@ -84,14 +84,7 @@ class VideoDevice:
         self.driver_options = {}
         self.monitors = {}
 
-        self._driver_packages = None
-
         self.outputs = {}
-
-    def _driverPackages(self):
-        if self._driver_packages is None:
-            self._driver_packages = listDriverPackages()
-        return self._driver_packages
 
     def getDict(self):
         info = {
@@ -160,16 +153,18 @@ class VideoDevice:
     def enableDriver(self):
         oldpackage = enabledPackage()
         if self.package != oldpackage:
-            if oldpackage and oldpackage.replace("-", "_") in self._driverPackages():
-                call(oldpackage, "Xorg.Driver", "disable")
+            link = comar.Link()
+            if oldpackage and oldpackage.replace("-", "_") in list(link.Xorg.Driver):
+                link.Xorg.Driver[oldpackage].disable(timeout=2**16-1)
 
             if self.package:
-                call(self.package, "Xorg.Driver", "enable")
+                link.Xorg.Driver[self.package].enable(timeout=2**16-1)
 
     def requestDriverOptions(self):
         if not self.package or self.package == "xorg-video":
             return
-        self.driver_options = call(self.package, "Xorg.Driver", "getOptions", self.getDict())
+        link = comar.Link()
+        self.driver_options = link.Xorg.Driver[self.package].getOptions(self.getDict())
 
     def isChanged(self):
         if self.saved_vendor_id and self.saved_product_id:
@@ -186,23 +181,6 @@ class Monitor:
 def pciInfo(dev, attr):
     return sysValue(sysdir, dev, attr)
 
-def call(package, model, method, *args):
-    "Calls Comar methods"
-
-    bus = dbus.SystemBus()
-    app = package.replace("-", "_")
-
-    try:
-        object = bus.get_object("tr.org.pardus.comar", "/package/%s" % app, introspect=False)
-        iface = dbus.Interface(object, "tr.org.pardus.comar.%s" % model)
-    except dbus.exceptions.DBusException, e:
-        print "Error:",
-        print e
-        return
-
-    cmethod = getattr(iface, method)
-    return cmethod(timeout=2**16-1, *args)
-
 def getKeymapList():
     return os.listdir(consts.xkb_symbols_dir)
 
@@ -217,18 +195,6 @@ def listAvailableDrivers(d = consts.drivers_dir):
                 if drv[:-7] not in a:
                     a.append(drv[:-7])
     return a
-
-def listDriverPackages():
-    try:
-        bus = dbus.SystemBus()
-        object = bus.get_object("tr.org.pardus.comar", "/", introspect=False)
-        iface = dbus.Interface(object, "tr.org.pardus.comar")
-
-    except dbus.exceptions.DBusException, e:
-        print "Error: %s" % e
-        return []
-
-    return iface.listModelApplications("Xorg.Driver")
 
 def enabledPackage():
     try:
