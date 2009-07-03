@@ -252,7 +252,7 @@ msgstr "Güncelleme kontrol sıklığı:"
 
 #: .tmp/packageWidget.py:80 .tmp/ui_packageWidget.py:80
 msgid " hours"
-msgstr ""
+msgstr " saat"
 
 #: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:81
 msgid "Repo"
