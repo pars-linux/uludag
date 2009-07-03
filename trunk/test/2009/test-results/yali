@@ -1,4 +1,5 @@
-- Bazı kurulumlarda yali krulduktan sonra tekrar başlatılıyor deyip takılı kalabiliyor.
+- Auto resize sorunlu
++ Bazı kurulumlarda yali krulduktan sonra tekrar başlatılıyor deyip takılı kalabiliyor.
 + Windows partition grub'da görülemiyor (grub paketinden de kaynaklanıyor olabilir.)
 + F8 basilinca ekran tamamiyle gri renge donusemiyor.
 
