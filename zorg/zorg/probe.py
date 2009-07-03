@@ -74,11 +74,9 @@ class VideoDevice:
         self.driver = None
         self.package = None
 
-        self.initial = False
-
         self.active_outputs = []
         self.modes = {}
-        self.depth = None
+        self.depth = 0
         self.desktop_setup = "single"
 
         self.driver_options = {}
