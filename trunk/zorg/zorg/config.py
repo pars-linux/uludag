@@ -82,10 +82,10 @@ def saveXorgConfig(card):
         secScr.set("Device", "VideoCard")
         if card.active_outputs:
             secScr.set("Monitor", "Monitor[%s]" % card.active_outputs[0])
-        secScr.set("DefaultDepth", atoi(card.depth))
+        secScr.set("DefaultDepth", card.depth)
 
         subsec = XorgSection("Display")
-        subsec.set("Depth", atoi(card.depth))
+        subsec.set("Depth", card.depth)
 
         if card.needsModesLine():
             output = card.active_outputs[0]
@@ -144,7 +144,7 @@ def getDeviceInfo(busId):
 
     depth = activeConfigTag.getTagData("Depth")
     if depth:
-        device.depth = depth
+        device.depth = int(depth)
 
     def addMonitor(output, tag):
         mon = Monitor()
@@ -227,7 +227,7 @@ def saveDeviceInfo(card):
         driver.insertData(card.driver)
 
     if card.depth:
-        addTag(config, "Depth", card.depth)
+        addTag(config, "Depth", str(card.depth))
 
     #addTag(config, "DesktopSetup", card.desktop_setup)
 
