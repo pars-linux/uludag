@@ -95,7 +95,7 @@ class VideoDevice:
         info = {
             "bus-id" : "PCI:%d:%d:%d" % self.bus,
             "driver" : self.driver or "",
-            "depth" : self.depth or "",
+            "depth" : str(self.depth) if self.depth else "",
             "desktop-setup" : self.desktop_setup,
             "active-outputs" : ",".join(self.active_outputs),
         }
@@ -198,7 +198,7 @@ class VideoDevice:
     def needsScreenSection(self):
         flags = self.flags()
 
-        return "norandr" in flags or self.depth is not None
+        return "norandr" in flags or self.depth != 0
 
     def needsModesLine(self):
         flags = self.flags()
