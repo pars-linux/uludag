@@ -12,11 +12,12 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n, KGlobal
+from PyKDE4.kdecore import ki18n, KGlobal, KConfig
 #from PyKDE4.kutils import KCModuleInfo, KCModuleProxy
 import subprocess
 from gui.ScreenWidget import ScreenWidget
 from gui.goodbyeWidget import Ui_goodbyeWidget
+#import gui.ScrSmolt as smoltWidget
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Goodbye")
@@ -28,6 +29,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         lang = KGlobal.locale().language()
+
+        '''self.smoltSettings = smoltWidget.Widget.screenSettings
+        self.setSmolt()'''
 
         if lang == "tr":
             self.helpPageUrl = "http://www.pardus.org.tr/iletisim.html"
@@ -45,6 +49,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.procSettings = QProcess()
         command = "kfmclient openURL " + self.helpPageUrl
         self.procSettings.start(command)
+
+    '''def setSmolt(self):
+        if self.smoltSettings["profileSend"] == False:
+            self.ui.smoltGroupBox.setVisible(False)'''
 
     def shown(self):
         pass
