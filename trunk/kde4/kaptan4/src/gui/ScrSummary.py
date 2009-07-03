@@ -140,12 +140,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # Search Settings
         if self.searchSettings["hasChanged"] == True:
             config = KConfig("nepomukserverrc")
-            group = config.group("Basic Settings")
+            group = config.group("Service-nepomukstrigiservice")
+            #group = config.group("Basic Settings")
 
             session = dbus.SessionBus()
             proxy = session.get_object( "org.kde.NepomukServer", "/nepomukserver")
+            group.writeEntry('autostart', str(self.searchSettings["state"]).lower())
 
-            group.writeEntry('Start Nepomuk', str(self.searchSettings["state"]).lower())
+            #group.writeEntry('Start Nepomuk', str(self.searchSettings["state"]).lower())
             proxy.reconfigure()
             proxy.enableNepomuk(self.searchSettings["state"])
 
