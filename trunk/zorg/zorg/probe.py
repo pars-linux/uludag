@@ -4,6 +4,7 @@ import os
 import dbus
 import glob
 
+import comar
 from zorg import consts
 from zorg.parser import *
 from zorg.utils import *
@@ -117,10 +118,23 @@ class VideoDevice:
             the driver is enabled.
         """
 
-        # XXX
-        self.driver = driver
-        self.xorg_module = driver
+        link = comar.Link()
+        packages = list(link.Xorg.Driver)
+        for package in packages:
+            try:
+                info = link.Xorg.Driver[package].getInfo()
+            except dbus.DBusException:
+                continue
+            alias = str(info["alias"])
+            if alias == driver:
+                self.xorg_module = str(info["xorg-module"])
+                self.package = package
+                break
+        else:
+            self.xorg_module = driver
+            self.package = ""
 
+        self.driver = driver
         self.enableDriver()
 
     def enableDriver(self):
