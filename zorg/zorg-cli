@@ -39,24 +39,20 @@ def probe(opts):
         print "An error occured while creating an initial configuration."
 
 def setDriver(driver):
-    # shortcuts for packages
-    shortcuts = {
-            "fglrx":        "fglrx/ati-drivers",
-            "nvidia-old":   "nvidia/nvidia-drivers-old",
-            "nvidia":       "nvidia/nvidia-drivers",
-            "nvidia-new":   "nvidia/nvidia-drivers-new"
+    # Needed for compatibility with old zorg versions
+    oldnames = {
+            "fglrx/ati-drivers":            "fglrx",
+            "nvidia/xorg-video-nvidia96":   "nvidia96",
+            "nvidia/xorg-video-nvidia173":  "nvidia173",
+            "nvidia/xorg-video-nvidia185":  "nvidia185",
             }
-    if shortcuts.has_key(driver):
-        driver = shortcuts[driver]
+    if oldnames.has_key(driver):
+        driver = oldnames[driver]
 
     if package_sep in driver:
         drv, pkg = driver.split(package_sep, 1)
         if pkg.replace("-", "_") not in zorg.probe.listDriverPackages():
             print "Package is not installed: %s" % pkg
-            sys.exit(1)
-    else:
-        if not zorg.probe.driverExists(driver):
-            print "Driver not found: %s" % driver
             sys.exit(1)
 
     link.Xorg.Display["zorg"].setDriver(driver)
