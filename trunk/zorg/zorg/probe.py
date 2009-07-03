@@ -73,7 +73,6 @@ class VideoDevice:
 
         self.driver = None
         self.package = None
-        self.xorg_module = None
 
         self.active_outputs = []
         self.modes = {}
@@ -141,10 +140,8 @@ class VideoDevice:
 
         if driver:
             info = self.driverInfo(driver)
-            self.xorg_module = info["xorg-module"]
             self.package = info["package"]
         else:
-            self.xorg_module = None
             self.package = None
 
         self.enableDriver()
