@@ -133,17 +133,6 @@ def getDeviceInfo(busId):
     device.saved_vendor_id  = cardTag.getTagData("VendorId")
     device.saved_product_id = cardTag.getTagData("ProductId")
 
-    probeResultTag = cardTag.getTag("ProbeResult")
-    probeResult = {}
-    for tag in probeResultTag.tags("Value"):
-        key = tag.getAttribute("key")
-        child = tag.firstChild()
-        if child:
-            value = child.data()
-        else:
-            value = ""
-        probeResult[key] = value
-
     activeConfigTag = cardTag.getTag("ActiveConfig")
 
     driverTag = activeConfigTag.getTag("Driver")
@@ -211,7 +200,6 @@ def getDeviceInfo(busId):
 
     # device.desktop_setup = activeConfigTag.getTagData("DesktopSetup")
 
-    device.probe_result = probeResult
     device.active_outputs = activeOutputs
     device.modes = modes
 
@@ -238,13 +226,6 @@ def saveDeviceInfo(card):
 
     addTag(cardTag, "VendorId", card.vendor_id)
     addTag(cardTag, "ProductId", card.product_id)
-
-    probeResult = cardTag.insertTag("ProbeResult")
-    for key, value in card.probe_result.items():
-        t = probeResult.insertTag("Value")
-        t.setAttribute("key", key)
-        if value:
-            t.insertData(value)
 
     config = cardTag.insertTag("ActiveConfig")
 
