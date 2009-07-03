@@ -142,14 +142,9 @@ def getDeviceInfo(busId):
     else:
         device.driver = None
 
-    initial = activeConfigTag.getAttribute("initial")
-    if initial and initial == "true":
-        return device
-
-    device.depth = activeConfigTag.getTagData("Depth")
-
-    activeOutputs = []
-    modes = {}
+    depth = activeConfigTag.getTagData("Depth")
+    if depth:
+        device.depth = depth
 
     def addMonitor(output, tag):
         mon = Monitor()
@@ -200,9 +195,6 @@ def getDeviceInfo(busId):
 
     # device.desktop_setup = activeConfigTag.getTagData("DesktopSetup")
 
-    device.active_outputs = activeOutputs
-    device.modes = modes
-
     return device
 
 def saveDeviceInfo(card):
@@ -234,12 +226,10 @@ def saveDeviceInfo(card):
         driver.setAttribute("package", card.package)
         driver.insertData(card.driver)
 
-    if card.initial:
-        config.setAttribute("initial", "true")
-    else:
-        if card.depth:
-            addTag(config, "Depth", card.depth)
-        #addTag(config, "DesktopSetup", card.desktop_setup)
+    if card.depth:
+        addTag(config, "Depth", card.depth)
+
+    #addTag(config, "DesktopSetup", card.desktop_setup)
 
     # Save output info
     outputs = cardTag.insertTag("Outputs")
