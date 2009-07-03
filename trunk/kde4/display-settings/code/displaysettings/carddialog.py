@@ -24,24 +24,63 @@ from displaysettings.ui_videocard import Ui_VideoCardDialog
 
 class VideoCardDialog(QtGui.QDialog, Ui_VideoCardDialog):
 
+    depths = (16, 24, 30)
     configChanged = QtCore.pyqtSignal()
 
-    def __init__(self, parent=None):
+    def __init__(self, parent, iface):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
 
-        if parent:
-            self.configChanged.connect(parent.configChanged)
+        self.iface = iface
+        self.configChanged.connect(parent.configChanged)
+
+    def load(self):
+        self.driver = self.iface.getDriver()
+        self.depth = self.iface.getDepth()
 
     def show(self):
-        print "-- show"
+        drivers = self.iface.listDrivers()
+        self.driverSelection.clear()
+        self.driverSelection.addItems(drivers)
+
+        if self.driver:
+            self.manualDriverButton.setChecked(True)
+            index = self.driverSelection.findText(self.driver)
+            if index > -1:
+                self.driverSelection.setCurrentIndex(index)
+        else:
+            self.autoDriverButton.setChecked(True)
+
+        if self.depth:
+            self.manualDepthButton.setChecked(True)
+            self.depthSelection.setCurrentIndex(self.depths.index(self.depth))
+        else:
+            self.autoDepthButton.setChecked(True)
+
         QtGui.QDialog.show(self)
 
     def accept(self):
-        print "-- accept"
-        self.configChanged.emit()
+        oldDriver = self.driver
+        oldDepth = self.depth
+
+        if self.autoDriverButton.isChecked():
+            self.driver = ""
+        else:
+            self.driver = str(self.driverSelection.currentText())
+
+        if self.autoDepthButton.isChecked():
+            self.depth = 0
+        else:
+            self.depth = self.depths[self.depthSelection.currentIndex()]
+
+        if (oldDriver, oldDepth) != (self.driver, self.depth):
+            self.configChanged.emit()
+
         QtGui.QDialog.accept(self)
 
     def reject(self):
-        print "-- reject"
         QtGui.QDialog.reject(self)
+
+    def apply(self):
+        self.iface.setDriver(self.driver)
+        self.iface.setDepth(self.depth)

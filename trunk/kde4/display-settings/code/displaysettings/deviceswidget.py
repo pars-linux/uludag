@@ -63,10 +63,8 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         # Fail if no packages provide backend
         self.checkBackend()
 
-        self.cardDialog = VideoCardDialog(self)
+        self.cardDialog = VideoCardDialog(self, self.iface)
         self.configureCardButton.clicked.connect(self.cardDialog.show)
-
-        self.reset()
 
         self.configChanged.connect(self.slotConfigChanged)
 
@@ -81,12 +79,6 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
 
     def signalHandler(self, package, signal, args):
         pass
-
-    def reset(self):
-        info = "<qt>%s<br><i>%s</i></qt>" % (self.iface.cardModel, self.iface.cardVendor)
-        self.cardInfoLabel.setText(info)
-
-        self.refreshOutputList()
 
     def makeItemWidget(self, id_, title="", description="", type_=None, icon=None, state=None):
         """
@@ -127,8 +119,19 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
     def load(self):
         print "** load"
 
+        self.newConfig = {}
+
+        # Card info
+        info = "<qt>%s<br><i>%s</i></qt>" % (self.iface.cardModel, self.iface.cardVendor)
+        self.cardInfoLabel.setText(info)
+        self.cardDialog.load()
+
+        # Output list
+        self.refreshOutputList()
+
     def save(self):
-        print "** save"
+        self.cardDialog.apply()
+        self.iface.sync()
 
     def defaults(self):
         print "** defaults"
