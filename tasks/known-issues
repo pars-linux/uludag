@@ -6,7 +6,6 @@
 * KDE
     - Some Turkish characters like İ,Ü,etc. are rendered as I, U even the translations
     are correct (dejavu-fonts problem),
-    - Logout pictures are not rendered correctly when effects are disabled,
     - kbluetooth4 has no translations, goes background when no device is available without
     notifying the user. It crashes when the dongle is suddenly unplugged,
     - KDE can't have backtrace information.
@@ -23,3 +22,6 @@
 
 * YALI (Gökmen GÖKSEL - Faik Uygur)
     - Pisi install whole packages from start after a package fail.
+
+* plasmoid-network-applet
+    - Crashes after removing it from the panel.
