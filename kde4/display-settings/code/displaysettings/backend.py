@@ -75,8 +75,7 @@ class Interface:
         self.link.Xorg.Display["zorg"].setDriver(driver)
 
     def getDepth(self):
-        depth = self._info.depth
-        return int(depth) if depth else 0
+        return self._info.depth
 
     def setDepth(self, depth):
         if depth == self.getDepth():
