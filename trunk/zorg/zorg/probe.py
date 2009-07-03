@@ -192,19 +192,6 @@ class VideoDevice:
             return (self.vendor_id, self.product_id) != (self.saved_vendor_id, self.saved_product_id)
         return False
 
-    def flags(self):
-        return []
-
-    def needsScreenSection(self):
-        flags = self.flags()
-
-        return "norandr" in flags or self.depth != 0
-
-    def needsModesLine(self):
-        flags = self.flags()
-
-        return "norandr" in flags or "no-modes-line" in flags
-
 class Monitor:
     def __init__(self):
         self.vendor = ""

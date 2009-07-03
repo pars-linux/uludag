@@ -20,10 +20,9 @@ def saveXorgConfig(card):
     parser.sections = [
         secFlags,
         secDevice,
+        secScr,
+        secLay
     ]
-
-    if card.needsScreenSection():
-        parser.sections.extend([secScr, secLay])
 
     if jailEnabled():
         jailOpts = {
@@ -33,14 +32,14 @@ def saveXorgConfig(card):
 
     info = card.getDict()
 
+    # Device section
     secDevice.set("Identifier", "VideoCard")
     if card.driver:
         secDevice.set("Driver", card.driver)
 
     secDevice.options.update(card.driver_options)
 
-    flags = card.flags()
-
+    # Monitor sections
     for name, output in card.outputs.items():
         identifier = "Monitor[%s]" % name
 
@@ -54,49 +53,52 @@ def saveXorgConfig(card):
             monSec.set("HorizSync",   unquoted(card.monitors[name].hsync))
             monSec.set("VertRefresh", unquoted(card.monitors[name].vref ))
 
-        if "norandr" not in flags:
-            secDevice.options["Monitor-%s" % name] = identifier
+        secDevice.options["Monitor-%s" % name] = identifier
 
-            if output.ignored:
-                monSec.options["Ignore"] = "true"
-                continue
+        if output.ignored:
+            monSec.options["Ignore"] = "true"
+            continue
 
-            monSec.options["Enable"] = "true" if output.enabled else "false"
+        monSec.options["Enable"] = "true" if output.enabled else "false"
 
-            if output.mode:
-                monSec.options["PreferredMode"] = output.mode
+        if output.mode:
+            monSec.options["PreferredMode"] = output.mode
 
-            if output.refresh_rate:
-                monSec.options["TargetRefresh"] = output.refresh_rate
+        if output.refresh_rate:
+            monSec.options["TargetRefresh"] = output.refresh_rate
 
-            if output.rotation:
-                monSec.options["Rotate"] = output.rotation
+        if output.rotation:
+            monSec.options["Rotate"] = output.rotation
 
-            if output.right_of:
-                monSec.options["RightOf"] = output.right_of
-            elif output.below:
-                monSec.options["Below"] = output.below
+        if output.right_of:
+            monSec.options["RightOf"] = output.right_of
+        elif output.below:
+            monSec.options["Below"] = output.below
 
-    if card.needsScreenSection():
-        secScr.set("Identifier", "Screen")
-        secScr.set("Device", "VideoCard")
-        if card.active_outputs:
-            secScr.set("Monitor", "Monitor[%s]" % card.active_outputs[0])
-        secScr.set("DefaultDepth", card.depth)
+    # Screen section
+    secScr.set("Identifier", "Screen")
+    secScr.set("Device", "VideoCard")
+    #if card.active_outputs:
+    #    secScr.set("Monitor", "Monitor[%s]" % card.active_outputs[0])
+    secScr.set("DefaultDepth", card.depth)
 
-        subsec = XorgSection("Display")
-        subsec.set("Depth", card.depth)
+    """
+    subsec = XorgSection("Display")
+    subsec.set("Depth", card.depth)
 
-        if card.needsModesLine():
-            output = card.active_outputs[0]
-            if card.modes.has_key(output):
-                subsec.set("Modes", card.modes[output], "800x600", "640x480")
+    if card.needsModesLine():
+        output = card.active_outputs[0]
+        if card.modes.has_key(output):
+            subsec.set("Modes", card.modes[output], "800x600", "640x480")
 
-            secScr.sections = [subsec]
+        secScr.sections = [subsec]
+    """
 
-        secLay.set("Identifier", "Layout")
-        secLay.set("Screen", "Screen")
+    # Layout section
+    secLay.set("Identifier", "Layout")
+    secLay.set("Screen", "Screen")
 
+    # Backup and save xorg.conf
     backup(consts.xorg_conf_file)
 
     f = open(consts.xorg_conf_file, "w")
