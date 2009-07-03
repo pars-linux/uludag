@@ -20,6 +20,9 @@
     - backspace doesn't work,
     - libbonobo, libgnomeui stuff can be merged to pardus/ for fully compatible firefox,
 
+* systemsettings
+    - Date & Time stuff should be ported to COMAR,
+
 * YALI (Gökmen GÖKSEL - Faik Uygur)
     - Pisi install whole packages from start after a package fail.
 
