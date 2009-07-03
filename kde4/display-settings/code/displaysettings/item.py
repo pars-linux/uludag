@@ -36,7 +36,7 @@ class ItemListWidgetItem(QtGui.QListWidgetItem):
 
 
 class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
-    def __init__(self, parent, id_, title="", description="", type_=None, icon=None, state=None):
+    def __init__(self, parent, id_, title="", description="", type_=None, icon=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
 
@@ -50,19 +50,12 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
             self.setIcon(icon)
         else:
             self.labelIcon.hide()
-        if state != None:
-            self.setState(state)
-        else:
-            self.checkState.hide()
 
         # Buttons
         self.pushEdit.setIcon(KIcon("preferences-other"))
-        self.pushDelete.setIcon(KIcon("edit-delete"))
 
         # Signals
-        self.connect(self.checkState, QtCore.SIGNAL("stateChanged(int)"), lambda: self.emit(QtCore.SIGNAL("stateChanged(int)"), self.checkState.checkState()))
         self.connect(self.pushEdit, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("editClicked()")))
-        self.connect(self.pushDelete, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("deleteClicked()")))
 
     def mouseDoubleClickEvent(self, event):
         self.pushEdit.animateClick(100)
@@ -88,18 +81,5 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
     def setIcon(self, icon):
         self.labelIcon.setPixmap(icon.pixmap(32, 32))
 
-    def getState(self):
-        return self.checkState.checkState()
-
-    def setState(self, state):
-        if state == True:
-            state = QtCore.Qt.Checked
-        elif state == False:
-            state = QtCore.Qt.Unchecked
-        return self.checkState.setCheckState(state)
-
     def hideEdit(self):
         self.pushEdit.hide()
-
-    def hideDelete(self):
-        self.pushDelete.hide()

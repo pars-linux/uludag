@@ -80,15 +80,13 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
     def signalHandler(self, package, signal, args):
         pass
 
-    def makeItemWidget(self, id_, title="", description="", type_=None, icon=None, state=None):
+    def makeItemWidget(self, id_, title="", description="", type_=None, icon=None):
         """
             Makes an item widget having given properties.
         """
-        widget = ItemWidget(self.outputList, id_, title, description, type_, icon, state)
+        widget = ItemWidget(self.outputList, id_, title, description, type_, icon)
 
-        #self.connect(widget, QtCore.SIGNAL("stateChanged(int)"), self.slotItemState)
         #self.connect(widget, QtCore.SIGNAL("editClicked()"), self.slotItemEdit)
-        #self.connect(widget, QtCore.SIGNAL("deleteClicked()"), self.slotItemDelete)
 
         return widget
 
@@ -100,7 +98,7 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         type_ = "user"
 
         # Build widget and widget item
-        widget = self.makeItemWidget(id_, name, description, type_, kdeui.KIcon(icon), None)
+        widget = self.makeItemWidget(id_, name, description, type_, kdeui.KIcon(icon))
         widgetItem = ItemListWidgetItem(self.outputList, widget)
 
         # Add to list
