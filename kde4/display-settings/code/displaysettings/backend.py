@@ -59,11 +59,30 @@ class Interface:
         """
         return "zorg"
 
-    def getDriver(self):
-        """
-        """
+    def listDrivers(self):
+        return map(str, self.link.Xorg.Display["zorg"].listDrivers())
 
-        return self._info.driver
+    def getDriver(self):
+        return self._info.driver if self._info.driver else ""
+
+    def setDriver(self, driver):
+        if driver == self.getDriver():
+            return
+
+        self.link.Xorg.Display["zorg"].setDriver(driver)
+
+    def getDepth(self):
+        depth = self._info.depth
+        return int(depth) if depth else 0
+
+    def setDepth(self, depth):
+        if depth == self.getDepth():
+            return
+
+        self.link.Xorg.Display["zorg"].setDepth(depth)
 
     def getOutputs(self):
         return self.ext.getOutputs()
+
+    def sync(self):
+        self.link.Xorg.Display["zorg"].syncConfigs()
