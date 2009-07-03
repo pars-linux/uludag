@@ -279,7 +279,8 @@ def saveDeviceInfo(card):
     if card.initial:
         config.setAttribute("initial", "true")
     else:
-        addTag(config, "Depth", card.depth)
+        if card.depth:
+            addTag(config, "Depth", card.depth)
         addTag(config, "DesktopSetup", card.desktop_setup)
 
         def addMonitor(output, tagName):
