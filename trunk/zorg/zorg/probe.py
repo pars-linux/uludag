@@ -75,7 +75,6 @@ class VideoDevice:
         self.package = None
 
         self.initial = False
-        self.probe_result = {"flags" : "", "depths" : "16,24"}
 
         self.active_outputs = []
         self.modes = {}
@@ -176,21 +175,6 @@ class VideoDevice:
 
         self.enableDriver()
 
-        if self.package:
-            self.probe_result = call(self.package, "Xorg.Driver", "probe", self.getDict())
-
-            if self.probe_result is None:
-                self.probe_result = {
-                    "flags":        "",
-                    "outputs":      "default",
-                    "tv-standards": ""
-                    }
-
-                self.probe_result["depths"] = "16,24"
-
-        depthlist = self.probe_result.get("depths", "16,24").split(",")
-        # self.depth = depthlist[0]
-
     def enableDriver(self):
         oldpackage = enabledPackage()
         if self.package != oldpackage:
@@ -211,7 +195,7 @@ class VideoDevice:
         return False
 
     def flags(self):
-        return self.probe_result.get("flags", "").split(",")
+        return []
 
     def needsScreenSection(self):
         flags = self.flags()
