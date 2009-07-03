@@ -80,7 +80,8 @@ def saveXorgConfig(card):
     secScr.set("Device", "VideoCard")
     #if card.active_outputs:
     #    secScr.set("Monitor", "Monitor[%s]" % card.active_outputs[0])
-    secScr.set("DefaultDepth", card.depth)
+    if card.depth:
+        secScr.set("DefaultDepth", card.depth)
 
     """
     subsec = XorgSection("Display")
