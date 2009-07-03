@@ -3,10 +3,10 @@
 import os
 import pisi
 
-def upgrade_2008_to_latest():
-    os.system("pisi up -y")
+def upgrade_pisi():
+    os.system("pisi up -y pisi")
 
-def remove_all_repos_and_add_2009_repository()():
+def remove_all_repos_and_add_2009_repository():
     for repo in pisi.api.list_repos():
         pisi.api.remove_repo(repo)
     pisi.api.add_repo("pardus-2009", "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2")
@@ -22,7 +22,7 @@ def install_other_missing_packages():
     os.system("pisi it -y pardus-default-settings")
 
 def migrate_2008_to_2009():
-    upgrade_2008_to_latest()
+    upgrade_pisi()
     remove_all_repos_and_add_2009_repository()
     upgrade_and_configure_packages()
     install_missing_x11_drivers()
