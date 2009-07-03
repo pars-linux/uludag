@@ -73,6 +73,7 @@ class VideoDevice:
 
         self.driver = None
         self.package = None
+        self.xorg_module = None
 
         self.active_outputs = []
         self.modes = {}
@@ -108,68 +109,17 @@ class VideoDevice:
 
         return info
 
-    def chooseDriver(self):
-        if isVirtual():
-            print "We are in domU. Using fbdev driver."
-            if os.path.exists("/dev/fb0"):
-                self.driver = "fbdev"
-            return
+    def setDriver(self, driver):
+        """
+            Change driver.
 
-        for line in loadFile(consts.drivers_file):
-            if line.startswith(self.vendor_id + self.product_id):
-                print "Device ID found in driver database."
+            Driver name can be an alias like "nvidia173". If needed,
+            the driver is enabled.
+        """
 
-                driverlist = line.rstrip("\n").split(" ")[1:]
-
-                for drv in driverlist:
-                    if consts.package_sep in drv:
-                        drvname, drvpackage = drv.split(consts.package_sep, 1)
-                        if drvpackage.replace("-", "_") in self._driverPackages():
-                            self.driver = drvname
-                            self.package = drvpackage
-                            break
-
-                    elif driverExists(drv):
-                        self.driver = drv
-                        break
-                else:
-                    self.driver = "vesa"
-
-                print "Driver '%s' selected from '%s' package." % (self.driver, self.package)
-                break
-        else:
-            # if could not find driver from driverlist try X -configure
-            print "Running X server to query driver..."
-            ret = run("/usr/bin/X", ":99", "-configure", "-logfile", "/var/log/xlog")
-            if ret == 0:
-                home = os.getenv("HOME", "")
-                p = XorgParser()
-                p.parseFile(home + "/xorg.conf.new")
-                unlink(home + "/xorg.conf.new")
-                sec = p.getSections("Device")
-                if sec:
-                    self.driver = sec[0].get("Driver")
-
-                    print "Driver reported by X server is %s." % self.driver
-
-    def query(self, withDriver=None):
-        self.package = None
-
-        if withDriver:
-            if consts.package_sep in withDriver:
-                drvname, drvpackage = withDriver.split(consts.package_sep, 1)
-                if drvpackage.replace("-", "_") in self._driverPackages():
-                    self.driver = drvname
-                    self.package = drvpackage
-
-            elif driverExists(withDriver):
-                self.driver = withDriver
-
-            else:
-                self.chooseDriver()
-
-        else:
-            self.chooseDriver()
+        # XXX
+        self.driver = driver
+        self.xorg_module = driver
 
         self.enableDriver()
 
