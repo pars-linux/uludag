@@ -22,7 +22,7 @@ from gui.searchWidget import Ui_searchWidget
 
 class Widget(QtGui.QWidget, ScreenWidget):
     screenSettings = {}
-    screenSettings["hasChanged"] = False
+    screenSettings["hasChanged"] = True
     # Set title and description for the information widget
     title = ki18n("Some catchy title about desktop search")
     desc = ki18n("Some catchy description desktop search")
@@ -33,6 +33,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         self.ui.labelSearchImage.setPixmap(QtGui.QPixmap(':/raw/pics/nepomuk.png'))
+
         config = KConfig("nepomukserverrc")
         group = config.group("Basic Settings")
         isNepomuk = str(group.readEntry('Start Nepomuk'))
