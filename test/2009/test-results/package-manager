@@ -1,1 +1,2 @@
 - Kurulu paketleri göster dedikten sonra, listedeki paketlerden birinin üzerine tıklandığında, açıklaması geliyor fakat yanındaki checkbox kayboluyor ve paketleri kaldır butonu disable duruma geçiyor. (Qt bug)
+- Kurulan paketlerin gösterildiği pencerede, kurulan uygulmanın desktop dosyasında bin uzantısı %U gibi değişkenler içeriyorsa, uygulama otomatik olarak açılamıyor. 
