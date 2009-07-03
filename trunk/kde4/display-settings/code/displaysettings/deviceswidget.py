@@ -30,6 +30,7 @@ from displaysettings.backend import Interface
 
 from displaysettings.item import ItemListWidgetItem, ItemWidget
 from displaysettings.carddialog import VideoCardDialog
+from displaysettings.outputdialog import OutputDialog
 
 from displaysettings.device import Output
 
@@ -86,7 +87,7 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         """
         widget = ItemWidget(self.outputList, id_, title, description, type_, icon)
 
-        #self.connect(widget, QtCore.SIGNAL("editClicked()"), self.slotItemEdit)
+        self.connect(widget, QtCore.SIGNAL("editClicked()"), self.slotOutputEdit)
 
         return widget
 
@@ -113,6 +114,11 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
 
     def slotConfigChanged(self):
         print "*** Config changed"
+
+    def slotOutputEdit(self):
+        widget = self.sender()
+        dlg = OutputDialog(self, self.iface, widget.getId())
+        dlg.exec_()
 
     def load(self):
         print "** load"
