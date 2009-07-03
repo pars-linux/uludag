@@ -11,6 +11,7 @@
 #
 
 import sys
+import pardus.netutils
 
 from PyQt4 import QtGui
 from PyQt4 import QtCore
@@ -36,6 +37,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         self.actions()
+        self.disableSend()
 
         self.profile = smolt.Hardware()
 
@@ -132,6 +134,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
                                       kdecore.i18n("SELinux Enforce") ]
 
         return self.sendable_host_labels
+
+    def disableSend(self):
+        if pardus.netutils.waitNet(3):
+            self.ui.checkBox.setEnabled(True)
 
     def shown(self):
         pass
