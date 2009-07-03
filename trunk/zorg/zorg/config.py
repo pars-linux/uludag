@@ -34,8 +34,9 @@ def saveXorgConfig(card):
 
     # Device section
     secDevice.set("Identifier", "VideoCard")
-    if card.driver:
-        secDevice.set("Driver", card.driver)
+    info = card.driverInfo()
+    if info:
+        secDevice.set("Driver", info["xorg-module"])
 
     secDevice.options.update(card.driver_options)
 
@@ -141,7 +142,7 @@ def getDeviceInfo(busId):
     driverTag = activeConfigTag.getTag("Driver")
     if driverTag:
         device.driver = driverTag.firstChild().data()
-        device.package = driverTag.getAttribute("package")
+        #device.package = driverTag.getAttribute("package")
     else:
         device.driver = None
 
@@ -226,7 +227,7 @@ def saveDeviceInfo(card):
 
     if card.driver:
         driver = config.insertTag("Driver")
-        driver.setAttribute("package", card.package)
+        #driver.setAttribute("package", card.package)
         driver.insertData(card.driver)
 
     if card.depth:

@@ -110,13 +110,12 @@ class VideoDevice:
 
         return info
 
-    def setDriver(self, driver):
-        """
-            Change driver.
+    def driverInfo(self, driver=None):
+        if driver is None:
+            driver = self.driver
 
-            Driver name can be an alias like "nvidia173". If needed,
-            the driver is enabled.
-        """
+        if driver is None:
+            return None
 
         link = comar.Link()
         packages = list(link.Xorg.Driver)
@@ -126,15 +125,36 @@ class VideoDevice:
             except dbus.DBusException:
                 continue
             alias = str(info["alias"])
-            if alias == driver:
-                self.xorg_module = str(info["xorg-module"])
-                self.package = package
-                break
+            if alias == self.driver:
+                if "package" not in info:
+                    info["package"] = package
+                return info
         else:
-            self.xorg_module = driver
-            self.package = ""
+            info = {
+                    "alias":        driver,
+                    "xorg-module":  driver,
+                    "package":      ""
+                    }
+            return info
+
+    def setDriver(self, driver):
+        """
+            Change driver.
+
+            Driver name can be an alias like "nvidia173". If needed,
+            the driver is enabled.
+        """
 
         self.driver = driver
+
+        if driver:
+            info = self.driverInfo(driver)
+            self.xorg_module = info["xorg-module"]
+            self.package = info["package"]
+        else:
+            self.xorg_module = None
+            self.package = None
+
         self.enableDriver()
 
     def enableDriver(self):
