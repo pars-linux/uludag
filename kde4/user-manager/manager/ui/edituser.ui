@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>616</width>
-    <height>432</height>
+    <width>529</width>
+    <height>434</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -271,6 +271,20 @@
         <widget class="QRadioButton" name="radioAuthNo">
          <property name="text">
           <string>Deny user.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="pushAuth">
+         <property name="text">
+          <string>Apply this policy to all actions.</string>
          </property>
         </widget>
        </item>

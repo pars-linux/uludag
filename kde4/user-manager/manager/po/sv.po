@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: user-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"POT-Creation-Date: 2009-07-03 13:56+0300\n"
 "PO-Revision-Date: 2009-06-30 18:56+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -24,67 +24,71 @@ msgstr "Redigera"
 msgid "Delete"
 msgstr "Ta bort"
 
-#: .tmp/ui_edituser.py:176
+#: .tmp/ui_edituser.py:184
 msgid "User Information"
 msgstr "Användarinformation"
 
-#: .tmp/ui_edituser.py:177
+#: .tmp/ui_edituser.py:185
 msgid "Full Name:"
 msgstr "Verkligt namn:"
 
-#: .tmp/ui_edituser.py:178
+#: .tmp/ui_edituser.py:186
 msgid "Password:"
 msgstr "Lösenord:"
 
-#: .tmp/ui_edituser.py:179
+#: .tmp/ui_edituser.py:187
 msgid "Password (Again):"
 msgstr "Lösenord (upprepa):"
 
-#: .tmp/ui_edituser.py:180 .tmp/ui_editgroup.py:80
+#: .tmp/ui_edituser.py:188 .tmp/ui_editgroup.py:80
 msgid "No.:"
 msgstr "ID"
 
-#: .tmp/ui_edituser.py:181 .tmp/ui_editgroup.py:81
+#: .tmp/ui_edituser.py:189 .tmp/ui_editgroup.py:81
 msgid "Auto"
 msgstr "Automatiskt"
 
-#: .tmp/ui_edituser.py:182
+#: .tmp/ui_edituser.py:190
 msgid "Username:"
 msgstr "Användarnamn:"
 
-#: .tmp/ui_edituser.py:183
+#: .tmp/ui_edituser.py:191
 msgid "Home Directory:"
 msgstr "Hemkatalog:"
 
-#: .tmp/ui_edituser.py:184
+#: .tmp/ui_edituser.py:192
 msgid "Shell:"
 msgstr "Skal:"
 
-#: .tmp/ui_edituser.py:185
+#: .tmp/ui_edituser.py:193
 msgid "Give administrator rights."
 msgstr "Tilldela administratörsrättighet."
 
-#: .tmp/ui_edituser.py:186
+#: .tmp/ui_edituser.py:194
 msgid "Use system settings."
 msgstr "Använd systeminställningar."
 
-#: .tmp/ui_edituser.py:187
+#: .tmp/ui_edituser.py:195
 msgid "Authorize user."
 msgstr "Tillåt användare."
 
-#: .tmp/ui_edituser.py:188
+#: .tmp/ui_edituser.py:196
 msgid "Deny user."
 msgstr "Neka användare."
 
-#: .tmp/ui_edituser.py:189
+#: .tmp/ui_edituser.py:197
+msgid "Apply this policy to all actions."
+msgstr ""
+
+#: .tmp/ui_edituser.py:198
 msgid "Authorizations"
 msgstr "Behörighet"
 
-#: .tmp/ui_edituser.py:190
+#: .tmp/ui_edituser.py:199
 msgid "Main Group:"
 msgstr "Primär grupp:"
 
-#: .tmp/ui_edituser.py:191 .tmp/usermanager/main.py:196
+#: .tmp/ui_edituser.py:200 .tmp/usermanager/main.py:196
 msgid "Groups"
 msgstr "Grupper"
 
@@ -158,39 +162,39 @@ msgstr "Radera användarens filer. (Det kan ta tid.)"
 msgid "Do you want to delete group '%1'?"
 msgstr "Vill du ta bort gruppen '%1'?"
 
-#: .tmp/usermanager/edit.py:236
+#: .tmp/usermanager/edit.py:248
 msgid "There has to be at least one group selected."
 msgstr "Minst en grupp måste väljas."
 
-#: .tmp/usermanager/edit.py:301
+#: .tmp/usermanager/edit.py:313
 msgid "Start with typing this user's full name."
 msgstr "Börja med att ange den här användarens verkliga namn."
 
-#: .tmp/usermanager/edit.py:304
+#: .tmp/usermanager/edit.py:316
 msgid "You should enter a password for this user."
 msgstr "Du bör ange ett lösenord för den här användaren."
 
-#: .tmp/usermanager/edit.py:309
+#: .tmp/usermanager/edit.py:321
 msgid "Password must be longer."
 msgstr "Lösenordet måste vara längre."
 
-#: .tmp/usermanager/edit.py:313
+#: .tmp/usermanager/edit.py:325
 msgid "Don't use your full name or user name as a password."
 msgstr "Använd inte ditt verkliga namn eller användarnamn som lösenord."
 
-#: .tmp/usermanager/edit.py:316
+#: .tmp/usermanager/edit.py:328
 msgid "Passwords don't match."
 msgstr "Lösenorden stämmer inte."
 
-#: .tmp/usermanager/edit.py:321
+#: .tmp/usermanager/edit.py:333
 msgid "You must enter a user name."
 msgstr "Du måste ange ett användarnamn."
 
-#: .tmp/usermanager/edit.py:324
+#: .tmp/usermanager/edit.py:336
 msgid "This user name is used by another user."
 msgstr "Användarnamnet är upptaget."
 
-#: .tmp/usermanager/edit.py:328
+#: .tmp/usermanager/edit.py:340
 msgid "User name must not start with a number."
 msgstr "Användarnamnet får inte börja med en siffra."
 
@@ -201,4 +205,3 @@ msgstr "Gruppinformation"
 #: .tmp/ui_editgroup.py:79
 msgid "Group Name:"
 msgstr "Gruppnamn"
-

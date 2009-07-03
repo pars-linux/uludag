@@ -76,6 +76,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.connect(self.radioAuthDefault, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
         self.connect(self.radioAuthYes, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
         self.connect(self.checkAdmin, QtCore.SIGNAL("stateChanged(int)"), self.slotAdmin)
+        self.connect(self.pushAuth, QtCore.SIGNAL("clicked()"), self.slotAuth)
 
         self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.linePassword, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
@@ -220,6 +221,17 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             self.spinId.setValue(-1)
         else:
             self.spinId.setEnabled(True)
+
+    def slotAuth(self):
+        if self.radioAuthNo.isChecked():
+            type_ = -1
+        elif self.radioAuthDefault.isChecked():
+            type_ = 0
+        elif self.radioAuthYes.isChecked():
+            type_ = 1
+        for index in xrange(self.treeAuthorizations.topLevelItemCount()):
+            item = self.treeAuthorizations.topLevelItem(index)
+            item.setType(type_)
 
     def slotFullnameChanged(self, name):
         if self.lineUsername.isEnabled() and not self.lineUsername.isModified():

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"POT-Creation-Date: 2009-07-03 13:56+0300\n"
 "PO-Revision-Date: 2009-06-30 21:06-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -26,68 +26,72 @@ msgstr "Modificar"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: .tmp/ui_edituser.py:176
+#: .tmp/ui_edituser.py:184
 msgid "User Information"
 msgstr "Información de usuario"
 
-#: .tmp/ui_edituser.py:177
+#: .tmp/ui_edituser.py:185
 msgid "Full Name:"
 msgstr "Nombre completo:"
 
-#: .tmp/ui_edituser.py:178
+#: .tmp/ui_edituser.py:186
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: .tmp/ui_edituser.py:179
+#: .tmp/ui_edituser.py:187
 msgid "Password (Again):"
 msgstr "Repetir contraseña:"
 
-#: .tmp/ui_edituser.py:180 .tmp/ui_editgroup.py:80
+#: .tmp/ui_edituser.py:188 .tmp/ui_editgroup.py:80
 msgid "No.:"
 msgstr ""
 
-#: .tmp/ui_edituser.py:181 .tmp/ui_editgroup.py:81
+#: .tmp/ui_edituser.py:189 .tmp/ui_editgroup.py:81
 msgid "Auto"
 msgstr "Automático"
 
-#: .tmp/ui_edituser.py:182
+#: .tmp/ui_edituser.py:190
 msgid "Username:"
 msgstr "Nombre de usuario:"
 
-#: .tmp/ui_edituser.py:183
+#: .tmp/ui_edituser.py:191
 msgid "Home Directory:"
 msgstr "Directorio home:"
 
-#: .tmp/ui_edituser.py:184
+#: .tmp/ui_edituser.py:192
 msgid "Shell:"
 msgstr ""
 
-#: .tmp/ui_edituser.py:185
+#: .tmp/ui_edituser.py:193
 msgid "Give administrator rights."
 msgstr "Derechos administrativos."
 
 # favor revisar, creo que debería ser cofiguración, valores preestablecidos o similar
-#: .tmp/ui_edituser.py:186
+#: .tmp/ui_edituser.py:194
 msgid "Use system settings."
 msgstr "Usar configuración del sistema."
 
-#: .tmp/ui_edituser.py:187
+#: .tmp/ui_edituser.py:195
 msgid "Authorize user."
 msgstr "Autorizar usuario."
 
-#: .tmp/ui_edituser.py:188
+#: .tmp/ui_edituser.py:196
 msgid "Deny user."
 msgstr "Denegar usuario."
 
-#: .tmp/ui_edituser.py:189
+#: .tmp/ui_edituser.py:197
+msgid "Apply this policy to all actions."
+msgstr ""
+
+#: .tmp/ui_edituser.py:198
 msgid "Authorizations"
 msgstr "Autorizaciones"
 
-#: .tmp/ui_edituser.py:190
+#: .tmp/ui_edituser.py:199
 msgid "Main Group:"
 msgstr "Grupo principal:"
 
-#: .tmp/ui_edituser.py:191 .tmp/usermanager/main.py:196
+#: .tmp/ui_edituser.py:200 .tmp/usermanager/main.py:196
 msgid "Groups"
 msgstr "Grupos"
 
@@ -156,46 +160,47 @@ msgstr "Desea eliminar usuario '%1' (%2)?"
 
 #: .tmp/usermanager/main.py:320
 msgid "Also remove user files. (This may take long.)"
-msgstr "Además remover archivos de los usuarios. (Esto puede tomar mucho tiempo.)"
+msgstr ""
+"Además remover archivos de los usuarios. (Esto puede tomar mucho tiempo.)"
 
 #: .tmp/usermanager/main.py:328
 msgid "Do you want to delete group '%1'?"
 msgstr "Desea eliminar grupo '%1'?"
 
-#: .tmp/usermanager/edit.py:236
+#: .tmp/usermanager/edit.py:248
 msgid "There has to be at least one group selected."
 msgstr "Se debe seleccionar al menos un grupo."
 
 # favor revisar, no traduje "start with"
-#: .tmp/usermanager/edit.py:301
+#: .tmp/usermanager/edit.py:313
 msgid "Start with typing this user's full name."
 msgstr "Ingrese el nombre completo del usuario."
 
-#: .tmp/usermanager/edit.py:304
+#: .tmp/usermanager/edit.py:316
 msgid "You should enter a password for this user."
 msgstr "Debería ingresar una contraseña para éste usuario."
 
-#: .tmp/usermanager/edit.py:309
+#: .tmp/usermanager/edit.py:321
 msgid "Password must be longer."
 msgstr "La contraseña debe ser más larga."
 
-#: .tmp/usermanager/edit.py:313
+#: .tmp/usermanager/edit.py:325
 msgid "Don't use your full name or user name as a password."
 msgstr "No use el nombre completo o el nombre de usuario para la contraseña."
 
-#: .tmp/usermanager/edit.py:316
+#: .tmp/usermanager/edit.py:328
 msgid "Passwords don't match."
 msgstr "Contraseñas no coinciden."
 
-#: .tmp/usermanager/edit.py:321
+#: .tmp/usermanager/edit.py:333
 msgid "You must enter a user name."
 msgstr "Debe ingresar un nombre de usuario."
 
-#: .tmp/usermanager/edit.py:324
+#: .tmp/usermanager/edit.py:336
 msgid "This user name is used by another user."
 msgstr "El nombre de usuario ya fue utilizado para otro usuario."
 
-#: .tmp/usermanager/edit.py:328
+#: .tmp/usermanager/edit.py:340
 msgid "User name must not start with a number."
 msgstr "El nombre de usuario no debe empezar con un número."
 
@@ -206,4 +211,3 @@ msgstr "Información del grupo"
 #: .tmp/ui_editgroup.py:79
 msgid "Group Name:"
 msgstr "Nombre del grupo:"
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"POT-Creation-Date: 2009-07-03 13:56+0300\n"
 "PO-Revision-Date: 02/07/09 22:02\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
@@ -24,67 +24,71 @@ msgstr "Bewerken"
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: .tmp/ui_edituser.py:176
+#: .tmp/ui_edituser.py:184
 msgid "User Information"
 msgstr "Gebruikerinformatie"
 
-#: .tmp/ui_edituser.py:177
+#: .tmp/ui_edituser.py:185
 msgid "Full Name:"
 msgstr "Volledige naam:"
 
-#: .tmp/ui_edituser.py:178
+#: .tmp/ui_edituser.py:186
 msgid "Password:"
 msgstr "Wachtwoord:"
 
-#: .tmp/ui_edituser.py:179
+#: .tmp/ui_edituser.py:187
 msgid "Password (Again):"
 msgstr "Wachtwoord (nogmaals):"
 
-#: .tmp/ui_edituser.py:180 .tmp/ui_editgroup.py:80
+#: .tmp/ui_edituser.py:188 .tmp/ui_editgroup.py:80
 msgid "No.:"
 msgstr "Nr.:"
 
-#: .tmp/ui_edituser.py:181 .tmp/ui_editgroup.py:81
+#: .tmp/ui_edituser.py:189 .tmp/ui_editgroup.py:81
 msgid "Auto"
 msgstr "Auto"
 
-#: .tmp/ui_edituser.py:182
+#: .tmp/ui_edituser.py:190
 msgid "Username:"
 msgstr "Gebruikernaam:"
 
-#: .tmp/ui_edituser.py:183
+#: .tmp/ui_edituser.py:191
 msgid "Home Directory:"
 msgstr "Persoonlijke map:"
 
-#: .tmp/ui_edituser.py:184
+#: .tmp/ui_edituser.py:192
 msgid "Shell:"
 msgstr "Shell:"
 
-#: .tmp/ui_edituser.py:185
+#: .tmp/ui_edituser.py:193
 msgid "Give administrator rights."
 msgstr "Geef systeembeheerderrechten."
 
-#: .tmp/ui_edituser.py:186
+#: .tmp/ui_edituser.py:194
 msgid "Use system settings."
 msgstr "Gebruik systeeminstellingen."
 
-#: .tmp/ui_edituser.py:187
+#: .tmp/ui_edituser.py:195
 msgid "Authorize user."
 msgstr "Autoriseer gebruiker."
 
-#: .tmp/ui_edituser.py:188
+#: .tmp/ui_edituser.py:196
 msgid "Deny user."
 msgstr "Weiger gebruiker."
 
-#: .tmp/ui_edituser.py:189
+#: .tmp/ui_edituser.py:197
+msgid "Apply this policy to all actions."
+msgstr ""
+
+#: .tmp/ui_edituser.py:198
 msgid "Authorizations"
 msgstr "Autorisaties"
 
-#: .tmp/ui_edituser.py:190
+#: .tmp/ui_edituser.py:199
 msgid "Main Group:"
 msgstr "Hoofdgroep:"
 
-#: .tmp/ui_edituser.py:191 .tmp/usermanager/main.py:196
+#: .tmp/ui_edituser.py:200 .tmp/usermanager/main.py:196
 msgid "Groups"
 msgstr "Groepen"
 
@@ -157,39 +161,39 @@ msgstr "Ook gebruikerbestanden verwijderen. (Dit kan lang duren.)"
 msgid "Do you want to delete group '%1'?"
 msgstr "Wilt u groep '%1' verwijderen?"
 
-#: .tmp/usermanager/edit.py:236
+#: .tmp/usermanager/edit.py:248
 msgid "There has to be at least one group selected."
 msgstr "Ten minste één groep dient geselecteerd te zijn."
 
-#: .tmp/usermanager/edit.py:301
+#: .tmp/usermanager/edit.py:313
 msgid "Start with typing this user's full name."
 msgstr "Begin met het typen van de volledige naam van deze gebruiker."
 
-#: .tmp/usermanager/edit.py:304
+#: .tmp/usermanager/edit.py:316
 msgid "You should enter a password for this user."
 msgstr "U dient een wachtwoord voor deze gebruiker op te geven."
 
-#: .tmp/usermanager/edit.py:309
+#: .tmp/usermanager/edit.py:321
 msgid "Password must be longer."
 msgstr "Wachtwoord dient langer zijn."
 
-#: .tmp/usermanager/edit.py:313
+#: .tmp/usermanager/edit.py:325
 msgid "Don't use your full name or user name as a password."
 msgstr "Gebruik niet uw eigen naam of naam van de gebruik als wachtwoord."
 
-#: .tmp/usermanager/edit.py:316
+#: .tmp/usermanager/edit.py:328
 msgid "Passwords don't match."
 msgstr "Wachtwoorden komen niet overeen."
 
-#: .tmp/usermanager/edit.py:321
+#: .tmp/usermanager/edit.py:333
 msgid "You must enter a user name."
 msgstr "U dient een gebruikersnaam op te geven."
 
-#: .tmp/usermanager/edit.py:324
+#: .tmp/usermanager/edit.py:336
 msgid "This user name is used by another user."
 msgstr "Deze gebruikersnaam wordt al gebruikt."
 
-#: .tmp/usermanager/edit.py:328
+#: .tmp/usermanager/edit.py:340
 msgid "User name must not start with a number."
 msgstr "Gebruikersnaam mag niet starten met een cijfer."
 
@@ -200,4 +204,3 @@ msgstr "Groepinformatie"
 #: .tmp/ui_editgroup.py:79
 msgid "Group Name:"
 msgstr "Groepnaam:"
-
