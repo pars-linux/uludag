@@ -10,13 +10,11 @@
 #
 # Please read the COPYING file.
 
-import os
 import sys
 import optparse
 
 import comar
 import zorg
-import zorg.probe
 from zorg.consts import package_sep
 from zorg.utils import *
 
@@ -51,7 +49,7 @@ def setDriver(driver):
 
     if package_sep in driver:
         drv, pkg = driver.split(package_sep, 1)
-        if pkg.replace("-", "_") not in zorg.probe.listDriverPackages():
+        if pkg.replace("-", "_") not in list(link.Xorg.Driver):
             print "Package is not installed: %s" % pkg
             sys.exit(1)
 
