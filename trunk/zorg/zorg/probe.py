@@ -209,36 +209,3 @@ def getPrimaryCard():
             return os.path.basename(dev_path)
 
     return None
-
-def XProbe(dev):
-    p = XorgParser()
-    sec = XorgSection("Device")
-    sec.set("Identifier", "Card0")
-    sec.set("Driver", dev["driver"])
-    sec.set("BusId", dev["bus-id"])
-
-    if dev.has_key("driver-options"):
-        sec.options.update(dev["driver-options"])
-
-    p.sections.append(sec)
-
-    sec = XorgSection("Screen")
-    sec.set("Identifier", "Screen0")
-    sec.set("Device", "Card0")
-
-    if dev.has_key("depth"):
-        sec.set("DefaultDepth", unquoted(dev["depth"]))
-
-    p.sections.append(sec)
-
-    open("/tmp/xorg.conf", "w").write(p.toString())
-
-    ret = run("/usr/bin/X", ":99", "-probeonly", "-allowMouseOpenFail", \
-            "-config", "/tmp/xorg.conf", \
-            "-logfile", "/var/log/xlog", \
-            "-logverbose", "6")
-    unlink("/tmp/xorg.conf")
-    if ret != 0:
-        return
-
-    return file("/var/log/xlog").readlines()
