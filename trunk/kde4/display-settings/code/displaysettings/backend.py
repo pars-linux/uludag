@@ -32,6 +32,11 @@ class Interface:
         if not self.ext.ready:
             self.ext = RRInterface()
 
+        self.readConfig()
+        self.cardVendor, self.cardModel = idsQuery(self._info.vendor_id,
+                                                   self._info.product_id)
+
+    def readConfig(self):
         self._bus = self.link.Xorg.Display["zorg"].activeDeviceID()
         self._info = zorg.config.getDeviceInfo(self._bus)
 
@@ -40,8 +45,6 @@ class Interface:
             print "corrupted config"
             return
 
-        self.cardVendor, self.cardModel = idsQuery(self._info.vendor_id,
-                                                   self._info.product_id)
         self.monitors = self._info.monitors
 
     def listenSignals(self, func):
@@ -86,3 +89,4 @@ class Interface:
 
     def sync(self):
         self.link.Xorg.Display["zorg"].syncConfigs()
+        self.readConfig()
