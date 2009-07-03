@@ -19,8 +19,8 @@ import gui.ScrMenu  as menuWidget
 import gui.ScrSearch  as searchWidget
 import gui.ScrSummary  as summaryWidget
 import gui.ScrKeyboard  as keyboardWidget
-#import gui.ScrSmolt  as smoltWidget
-#import gui.ScrPackage as packageWidget
+import gui.ScrPackage as packageWidget
+#import gui.ScrSmolt as smoltWidget
 
 def getKernelOpt(cmdopt=None):
     if cmdopt:
@@ -53,7 +53,7 @@ def isLiveCD():
 if isLiveCD():
     availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
 else:
-    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
+    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, packageWidget, summaryWidget, goodbyeWidget]
 
 class Kaptan(QtGui.QWidget):
     def __init__(self, parent=None):
@@ -82,7 +82,6 @@ class Kaptan(QtGui.QWidget):
 
         QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
         QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
-        #QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), self.slotFinished)
         QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
         QtCore.QObject.connect(self.ui.buttonCancel, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
 
