@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="raw" >
+    <file>pics/package.png</file>
     <file>pics/keyboards.png</file>
     <file>pics/kaptan-left.png</file>
     <file>pics/bg.svg</file>

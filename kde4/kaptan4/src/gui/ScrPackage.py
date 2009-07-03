@@ -14,11 +14,14 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KConfig, KProcess
 
+from PyKDE4 import kdeui
+
 from gui.ScreenWidget import ScreenWidget
 from gui.packageWidget import Ui_packageWidget
 
-import contribrepo
+import subprocess
 import pisi
+import comar
 
 isUpdateOn = False
 
@@ -35,13 +38,13 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         self.flagRepo = 0
-
         # set updateTime
         self.ui.updateInterval.setValue(self.updateTime)
 
         # set repo name and address
         self.repoName = "contrib"
-        self.repoAddress = "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+        self.repoAddress = "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+        self.ui.picturePackage.setPixmap(QtGui.QPixmap(':/raw/pics/package.png'))
 
         # set signals
         self.ui.showTray.connect(self.ui.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
@@ -74,56 +77,33 @@ class Widget(QtGui.QWidget, ScreenWidget):
             if self.addRepo(self.repoName, self.repoAddress) == False:
                 self.flagRepo = 1
                 self.ui.checkBoxContrib.setChecked(0)
-
-                message = ki18n("You are not authorized for this operation.")
-                KMessageBox.error(self, message, ki18n("Authentication Error!"))
+                kdeui.KMessageBox.error(self,("You are not authorized for this operation."), "Authentication Error")
         else:
             if self.flagRepo != 1:
                 self.removeRepo(self.repoName)
 
     def addRepo(self, r_name, r_address):
         try:
-            contribrepo.addRepo(r_name, r_address)
+            link = comar.Link()
+            link.setLocale()
+            link.System.Manager["pisi"].addRepository(r_name, r_address)
             return True
-        except Exception, e:
-            if e.get_dbus_name().endswith('policy.no'):
-                return False
-            elif e.get_dbus_name().endswith('policy.auth_admin'):
-                authResult = contribrepo.auth("addrepository")
-            elif e.get_dbus_name().endswith('policy.auth_user'):
-                authResult = contribrepo.auth("addrepository")
-            else:
-                return False
-            try:
-                if authResult:
-                    contribrepo.addRepo(r_name, r_address)
-                    return True
-                else:
-                    return False
-            except:
-                return False
+
+        except:
+            return False
+
+    def getRepos(self):
+        return repoList
+
 
     def removeRepo(self, r_name):
         try:
-            contribrepo.removeRepo(r_name)
+            link = comar.Link()
+            link.setLocale()
+            link.System.Manager["pisi"].removeRepository(r_name)
             return True
-        except Exception, e:
-            if e.get_dbus_name().endswith('policy.no'):
-                return False
-            elif e.get_dbus_name().endswith('policy.auth_admin'):
-                authResult = contribrepo.auth("removerepository")
-            elif e.get_dbus_name().endswith('policy.auth_user'):
-                authResult = contribrepo.auth("removerepository")
-            else:
-                return False
-            try:
-                if authResult:
-                    contribrepo.removeRepo(r_name)
-                    return True
-                else:
-                    return False
-            except:
-                return False
+        except:
+            return False
 
     def enableCheckTime(self):
         if self.ui.showTray.isChecked():
@@ -149,13 +129,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
         config.sync()
 
         if self.ui.showTray.isChecked():
-            proc = KProcess()
-            # call package manager
+            p = subprocess.Popen(["package-manager"], stdout=subprocess.PIPE)
+
 
     def shown(self):
         pass
 
     def execute(self):
         self.applySettings()
+        return True
 
 
