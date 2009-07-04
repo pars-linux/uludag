@@ -3,3 +3,4 @@
 x Kde dili ingilizce ve sistem dili türkçe olduğunda, Uygulamalar -> sistem altından uygulama çalıştırınca, uygulama türkçe açılıyor.
 x Kullanıcı bilgileri değiştirme sayfasına geindiğinde, kullanıcı ile ilgili herhengi bir bilgi değiştirip, uygula butonuna basıldıktan sonra, çıkan parola sorma sayfasına iptal denilince, yapılan değişiklikler geri alınamıyor.
     ? Doğru davranış, İptal sonrası ekranda kalındığında, kullanıcının yaptığı ancak kayıt etmediği değişikliklerin orada kalması.
+- Kullanıcı silme işleminde kullanıcı dosyaları silinmiyor, doğru davranış kullanıcı dosyaları da silinsin mi diye bir soru çıkması ve istenirse kullanıcı dosyalarının da silinmesi
