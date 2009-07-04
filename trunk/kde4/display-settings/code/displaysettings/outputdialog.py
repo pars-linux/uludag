@@ -24,6 +24,14 @@ from displaysettings.ui_output import Ui_OutputDialog
 
 from displaysettings.monitorbrowser import MonitorBrowser
 
+def splitRange(range):
+    range = range.replace(" ", "")
+
+    if "-" in range:
+        return map(float, range.split("-"))
+    else:
+        return (float(range),)*2
+
 class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
 
     configChanged = QtCore.pyqtSignal()
@@ -40,20 +48,52 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
         self.monitorType.currentIndexChanged.connect(self.slotTypeChanged)
         self.browseMonitorsButton.clicked.connect(self.slotBrowseMonitors)
 
-        self.slotTypeChanged(0)
+        self.lastStdMonitor = None
+        self.lastDBMonitor = None
 
     def slotTypeChanged(self, index):
-        isCustomMode = index == 2
-        self.browseMonitorsButton.setDisabled(isCustomMode)
-        self.hsyncMin.setEnabled(isCustomMode)
-        self.hsyncMax.setEnabled(isCustomMode)
-        self.vrefMin.setEnabled(isCustomMode)
-        self.vrefMax.setEnabled(isCustomMode)
+        notCustomMode = index != 2
+        self.browseMonitorsButton.setEnabled(notCustomMode)
+        self.hsyncMin.setReadOnly(notCustomMode)
+        self.hsyncMax.setReadOnly(notCustomMode)
+        self.vrefMin.setReadOnly(notCustomMode)
+        self.vrefMax.setReadOnly(notCustomMode)
+
+        if index == 0 and self.lastStdMonitor:
+            name, hsync, vref = self.lastStdMonitor
+            self.writeMonitorInfo(name, hsync, vref)
+        elif index == 1 and self.lastDBMonitor:
+            name, hsync, vref = self.lastDBMonitor
+            self.writeMonitorInfo(name, hsync, vref)
+        elif index == 2:
+            name = kdecore.i18n("Custom Monitor")
+            self.monitorName.setText(name)
+        else:
+            name = kdecore.i18n("<qt><i>Click the button to select a monitor</i></qt>")
+            self.monitorName.setText(name)
 
     def slotBrowseMonitors(self):
-        dlg = MonitorBrowser(self, self.monitorType.currentIndex() == 0)
+        std = self.monitorType.currentIndex() == 0
+        dlg = MonitorBrowser(self, std)
         if dlg.exec_() == QtGui.QDialog.Accepted:
-            print "Selected model: %s" % dlg.model
+            self.writeMonitorInfo(dlg.model, dlg.hsync, dlg.vref)
+            if std:
+                self.lastStdMonitor = (dlg.model, dlg.hsync, dlg.vref)
+            else:
+                self.lastDBMonitor = (dlg.model, dlg.hsync, dlg.vref)
+
+            self.vendor = dlg.vendor
+
+    def writeMonitorInfo(self, model, hsync, vref):
+        self.monitorName.setText(model)
+
+        hMin, hMax = splitRange(hsync)
+        self.hsyncMin.setValue(hMin)
+        self.hsyncMax.setValue(hMax)
+
+        vMin, vMax = splitRange(vref)
+        self.vrefMin.setValue(vMin)
+        self.vrefMax.setValue(vMax)
 
     def load(self):
         config = self.iface.getConfig()
@@ -71,13 +111,14 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
         else:
             self.hsync = "28-33"
             self.vref = "43-72"
-            self.vendor = "Generic"
-            self.model = "Monitor 800x600"
+            self.vendor = ""
+            self.model = ""
+
+        self.writeMonitorInfo(self.model, self.hsync, self.vref)
+
+        self.changeList = []
 
     def show(self):
-        self.ignoreOutputCheck.setChecked(self.ignored)
-        self.freqBox.setChecked(self.rangeSelected)
-
         if self.vendor.startswith("Generic"):
             self.monitorType.setCurrentIndex(0)
         elif self.vendor.startswith("Custom"):
@@ -85,23 +126,49 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
         else:
             self.monitorType.setCurrentIndex(1)
 
+        self.freqBox.setChecked(self.rangeSelected)
+        self.ignoreOutputCheck.setChecked(self.ignored)
+
         QtGui.QDialog.show(self)
 
     def accept(self):
-        changed = False
-
         ignored = self.ignoreOutputCheck.isChecked()
         if ignored != self.ignored:
-            changed = True
+            self.changeList.append("ignored")
             self.ignored = ignored
 
         if not ignored:
             rangeSelected = self.freqBox.isChecked()
             if rangeSelected != self.rangeSelected:
-                changed = True
+                self.changeList.append("monitor")
                 self.rangeSelected = rangeSelected
 
-        if changed:
+            if rangeSelected:
+                hMin = self.hsyncMin.value()
+                hMax = self.hsyncMax.value()
+                vMin = self.vrefMin.value()
+                vMax = self.vrefMax.value()
+                oldhsync = splitRange(self.hsync)
+                oldvref = splitRange(self.vref)
+
+                model = str(self.monitorName.text())
+
+                index = self.monitorType.currentIndex()
+                if index == 0:
+                    self.vendor = "Generic"
+                elif index == 2:
+                    self.vendor = "Custom"
+                    model = "Custom"
+
+                if model != self.model \
+                        or (hMin, hMax) != oldhsync \
+                        or (vMin, vMax) != oldvref:
+                    self.changeList.append("monitor")
+                    self.model = model
+                    self.hsync = str(hMin) if hMin == hMax else "%s-%s" % (hMin, hMax)
+                    self.vref = str(vMin) if vMin == vMax else "%s-%s" % (vMin, vMax)
+
+        if self.changeList:
             self.configChanged.emit()
 
         QtGui.QDialog.accept(self)
@@ -110,4 +177,15 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
         QtGui.QDialog.reject(self)
 
     def apply(self):
-        pass
+        if "ignored" in self.changeList:
+            self.iface.setOutput(self.outputName, ignored=self.ignored)
+
+        if "monitor" in self.changeList:
+            if self.rangeSelected:
+                self.iface.setMonitor(self.outputName,
+                                      self.vendor,
+                                      self.model,
+                                      self.hsync,
+                                      self.vref)
+            else:
+                self.iface.removeMonitor(self.outputName)

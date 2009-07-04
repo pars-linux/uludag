@@ -149,7 +149,11 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
 
     def save(self):
         self.cardDialog.apply()
+        for dlg in self.outputDialogs.values():
+            dlg.apply()
         self.iface.sync()
+        # XXX really needed?
+        self.load()
 
     def defaults(self):
         print "** defaults"

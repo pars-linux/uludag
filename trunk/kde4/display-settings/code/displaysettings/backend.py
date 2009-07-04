@@ -89,6 +89,30 @@ class Interface:
     def getOutputs(self):
         return self.ext.getOutputs()
 
+    def setOutput(self, name, enabled=None, ignored=None):
+        output = self._info.outputs.get(name)
+        if output:
+            if enabled is None:
+                enabled = output.enabled
+
+            if ignored is None:
+                ignored = output.ignored
+        else:
+            if enabled is None:
+                enabled = True
+
+            if ignored is None:
+                ignored = True
+
+        self.link.Xorg.Display["zorg"].setOutput(name, enabled, ignored)
+
+    def setMonitor(self, outputName, vendor, model, hsync, vref):
+        self.link.Xorg.Display["zorg"].setMonitor(outputName, vendor, model, \
+                                                    hsync, vref)
+
+    def removeMonitor(self, outputName):
+        self.link.Xorg.Display["zorg"].setMonitor(outputName, "", "", "", "")
+
     def sync(self):
         self.link.Xorg.Display["zorg"].syncConfigs()
         self.readConfig()
