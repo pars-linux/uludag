@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-04 19:28+0300\n"
-"PO-Revision-Date: 2009-07-04 21:30+0200\n"
+"PO-Revision-Date: 2009-07-04 22:01+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -170,7 +170,7 @@ msgid ""
 msgstr ""
 "<b>Installera starthanteraren (GRUB) till huvudstartsektorn?</b>\n"
 "\n"
-"<p>Du system kan inte starta utan en startladdare.</p>\n"
+"<p>Ditt system kan inte starta utan en starthanterare.</p>\n"
 "\n"
 "<p>Om du inte installerar en starthanterare eller väljer att installera till "
 "huvudpartitionen måste du konfigurera en befintlig starthanterare\n"
@@ -1547,9 +1547,8 @@ msgid "Rescue Mode for Password Recovery"
 msgstr "Räddningsläge för nollställning av lösenord"
 
 #: yali4/gui/ScrRescuePassword.py:43
-#, fuzzy
 msgid "You can recover your password ..."
-msgstr "Du kan enkelt ändra dina partitioner..."
+msgstr "Du kan nollställa ditt löseord..."
 
 #: yali4/gui/ScrRescuePassword.py:45
 msgid ""

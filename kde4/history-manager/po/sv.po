@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: history-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-29 23:11+0300\n"
-"PO-Revision-Date: 2009-07-04 14:41+0200\n"
+"PO-Revision-Date: 2009-07-04 22:28+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -87,7 +87,7 @@ msgstr "Återställningsplan för %1 den %2"
 
 #: .tmp/historymanager/window.py:224
 msgid "Takeback operation verification"
-msgstr "Återställningsverifikation"
+msgstr "Bekräfta återställning"
 
 #: .tmp/historymanager/window.py:225
 msgid ""
