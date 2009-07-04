@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: service-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-27 16:19+0300\n"
-"PO-Revision-Date: 2009-06-27 15:46+0200\n"
+"PO-Revision-Date: 2009-07-03 21:20+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "Kör vid uppstart"
 
 #: .tmp/ui_main.py:56
 msgid "type service name to search..."
-msgstr "skriv tjänstens namn för att söka..."
+msgstr "Sök"
 
 #: .tmp/ui_main.py:57
 msgid "Servers"
@@ -95,4 +95,5 @@ msgstr "Bahadır Kandemir"
 #: .tmp/servicemanager/about.py:33
 msgid "COMAR Author"
 msgstr "COMAR-utvecklare"
+
 

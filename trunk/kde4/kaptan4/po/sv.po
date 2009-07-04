@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-03 14:51+0300\n"
-"PO-Revision-Date: 2009-06-30 20:36+0200\n"
+"PO-Revision-Date: 2009-07-04 14:19+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -156,6 +156,10 @@ msgid ""
 "the \"Left handed\"option below. You can also select default click behaviour."
 "</p>"
 msgstr ""
+"<p align=\"left\">Om du är vänsterhänt kan du växla musknapparnas funktion "
+"genom att välja alternativet \"Vänsterhänt\" nedan. Du kan också välja "
+"klickbeteende."
+"</p>"
 
 #: .tmp/mouseWidget.py:85 .tmp/ui_mouseWidget.py:85
 msgid "mouse icon"
@@ -198,7 +202,6 @@ msgid "Package"
 msgstr "Paket"
 
 #: .tmp/packageWidget.py:71 .tmp/ui_packageWidget.py:71
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -223,7 +226,11 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Välj en menystil:</span></p></body></html>"
+"weight:600;\">Pkethanteraren är Pisis grafiska framände. Du kan enkelt "
+"installera "
+"nya program och uppdatera ditt system. Du kan också se information om "
+"periodiska "
+"uppdateringar via systembrickan.</span></p></body></html>"
 
 #: .tmp/packageWidget.py:76 .tmp/ui_packageWidget.py:76
 msgid "picture label"
@@ -243,7 +250,7 @@ msgstr "Automatisk kontroll av uppdateringar var"
 
 #: .tmp/packageWidget.py:80 .tmp/ui_packageWidget.py:80
 msgid " hours"
-msgstr ""
+msgstr " timmar"
 
 #: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:81
 msgid "Repo"
@@ -263,7 +270,7 @@ msgstr "Hej då från Kaptan :)"
 
 #: .tmp/ScrKeyboard.py:32
 msgid "Insert some catchy title about keyboards.."
-msgstr ""
+msgstr "Insert some catchy title about keyboards.."
 
 #: .tmp/ScrKeyboard.py:33
 msgid "Select your keyboard layout"
@@ -271,11 +278,11 @@ msgstr "Välj tangentbordslayout"
 
 #: .tmp/ScrMenu.py:26 .tmp/ScrStyle.py:34
 msgid "Some catchy title about styles"
-msgstr ""
+msgstr "Some catchy title about styles"
 
 #: .tmp/ScrMenu.py:27 .tmp/ScrStyle.py:35
 msgid "Some catchy description about styles"
-msgstr ""
+msgstr "Some catchy description about styles"
 
 #: .tmp/ScrMenu.py:41
 msgid "Kick-off Menu"
@@ -315,231 +322,234 @@ msgstr "Vänsterhänt"
 
 #: .tmp/ScrMouse.py:135
 msgid "Right Handed"
-msgstr ""
+msgstr "Högerhänt"
 
 #: .tmp/ScrMouse.py:136
 msgid "Single Click "
-msgstr ""
+msgstr "Enkelklick "
 
 #: .tmp/ScrMouse.py:136
 msgid "Double Click"
-msgstr ""
+msgstr "Dubbelklick"
 
 #: .tmp/ScrNetwork.py:23 .tmp/ScrNetwork.py:24
 msgid "Network Manager"
-msgstr ""
+msgstr "Nätverkshanteraren"
 
 #: .tmp/ScrPackage.py:29
 msgid "Package Manager"
-msgstr ""
+msgstr "Pakethanteraren"
 
 #: .tmp/ScrPackage.py:30
 msgid "Configure package manager settings"
-msgstr ""
+msgstr "Anpassa Pakethanterarens inställningar"
 
 #: .tmp/ScrSearch.py:27
 msgid "Some catchy title about desktop search"
-msgstr ""
+msgstr "Some catchy title about desktop search"
 
 #: .tmp/ScrSearch.py:28
 msgid "Some catchy description desktop search"
-msgstr ""
+msgstr "Some catchy description desktop search"
 
 #: .tmp/ScrSearch.py:59
 msgid "On"
-msgstr ""
+msgstr "På"
 
 #: .tmp/ScrSearch.py:61
 msgid "Off"
-msgstr ""
+msgstr "Av"
 
 #: .tmp/ScrSmolt.py:30 .tmp/smoltWidget.py:76 .tmp/ui_smoltWidget.py:76
 msgid "Smolt"
-msgstr ""
+msgstr "Smolt"
 
 #: .tmp/ScrSmolt.py:31
 msgid "Smolt Description"
-msgstr ""
+msgstr "Beskrivning av Smolt"
 
 #: .tmp/ScrSmolt.py:68
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
 #: .tmp/ScrSmolt.py:69
 msgid "Data"
-msgstr ""
+msgstr "Data"
 
 #: .tmp/ScrSmolt.py:108
 msgid "&Back"
-msgstr ""
+msgstr "&Back"
 
 #: .tmp/ScrSmolt.py:111 .tmp/smoltWidget.py:78 .tmp/ui_smoltWidget.py:78
 msgid "&Privacy policy"
-msgstr ""
+msgstr "Integritetspolicy"
 
 #: .tmp/ScrSmolt.py:114
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 #: .tmp/ScrSmolt.py:115
 msgid "OS"
-msgstr ""
+msgstr "OS"
 
 #: .tmp/ScrSmolt.py:116
 msgid "Default run level"
-msgstr ""
+msgstr "Standard körnivå"
 
 #: .tmp/ScrSmolt.py:117
 msgid "Language"
-msgstr ""
+msgstr "Språk"
 
 #: .tmp/ScrSmolt.py:118
 msgid "Platform"
-msgstr ""
+msgstr "Plattform"
 
 #: .tmp/ScrSmolt.py:119
 msgid "BogoMIPS"
-msgstr ""
+msgstr "BogoMIPS"
 
 #: .tmp/ScrSmolt.py:120
 msgid "CPU Vendor"
-msgstr ""
+msgstr "CPU-tillverkare"
 
 #: .tmp/ScrSmolt.py:121
 msgid "CPU Model"
-msgstr ""
+msgstr "CPU-modell"
 
 #: .tmp/ScrSmolt.py:122
 msgid "Number of CPUs"
-msgstr ""
+msgstr "Antal CPU"
 
 #: .tmp/ScrSmolt.py:123
 msgid "CPU Speed"
-msgstr ""
+msgstr "CPU-hastighet"
 
 #: .tmp/ScrSmolt.py:124
 msgid "System Memory"
-msgstr ""
+msgstr "Systemminne"
 
 #: .tmp/ScrSmolt.py:125
 msgid "System Swap"
-msgstr ""
+msgstr "Växling"
 
 #: .tmp/ScrSmolt.py:126
 msgid "Vendor"
-msgstr ""
+msgstr "Tillverkare"
 
 #: .tmp/ScrSmolt.py:127
 msgid "System"
-msgstr ""
+msgstr "System"
 
 #: .tmp/ScrSmolt.py:128
 msgid "Form Factor"
-msgstr ""
+msgstr "Formfaktor"
 
 #: .tmp/ScrSmolt.py:129
 msgid "Kernel"
-msgstr ""
+msgstr "Kärna"
 
 #: .tmp/ScrSmolt.py:130
 msgid "SELinux Enabled"
-msgstr ""
+msgstr "SELinux Enabled"
 
 #: .tmp/ScrSmolt.py:131
 msgid "SELinux Policy"
-msgstr ""
+msgstr "SELinux Policy"
 
 #: .tmp/ScrSmolt.py:132
 msgid "SELinux Enforce"
-msgstr ""
+msgstr "SELinux Enforce"
 
 #: .tmp/ScrStyle.py:58
 msgid "No name"
-msgstr ""
+msgstr "Inget namn"
 
 #: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
 #: .tmp/welcomeWidget.py:43
 msgid "Welcome"
-msgstr ""
+msgstr "Välkommen"
 
 #: .tmp/ScrSummary.py:38 .tmp/ScrWelcome.py:23
 msgid "Welcome to Kaptan Wizard :)"
-msgstr ""
+msgstr "Välkommen till Kaptan :)"
 
 #: .tmp/ScrSummary.py:63
 #, python-format
 msgid "Selected Mouse configuration: <b>%s</b>"
-msgstr ""
+msgstr "Vald musinställning: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:64
 #, python-format
 msgid "Selected clicking behaviour: <b>%s</b>"
-msgstr ""
+msgstr "Valt klickbeteende: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:68
 msgid "Menu Settings"
-msgstr ""
+msgstr "Menyinställningar"
 
 #: .tmp/ScrSummary.py:73
 msgid "Wallpaper Settings"
-msgstr ""
+msgstr "Skrivbordsunderlägg"
 
 #: .tmp/ScrSummary.py:75
 msgid "You haven't selected any wallpaper."
-msgstr ""
+msgstr "Du har inte valt något skrivbordsunderlägg"
 
 #: .tmp/ScrSummary.py:77
 #, python-format
 msgid "Selected Wallpaper: <b>%s</b>"
-msgstr ""
+msgstr "Valt skrivbordsunderlägg: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:81
 msgid "Style Settings"
-msgstr ""
+msgstr "Stil"
 
 #: .tmp/ScrSummary.py:84
 msgid "You haven't selected any style."
-msgstr ""
+msgstr "Du har inte valt någon stil."
 
 #: .tmp/ScrSummary.py:86
 #, python-format
 msgid "Selected Style: <b>%s</b>"
-msgstr ""
+msgstr "Vald stil: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:92
 msgid "Search Settings"
-msgstr ""
+msgstr "Sökinställningar"
 
 #: .tmp/ScrSummary.py:93
 #, python-format
 msgid "Desktop search: <b>%s</b>"
-msgstr ""
+msgstr "Skrivbordssökning: <b>%s</b>"
 
 #: .tmp/ScrWallpaper.py:34
 msgid "Insert some catchy title about wallpapers.."
-msgstr ""
+msgstr "Insert some catchy title about wallpapers.."
 
 #: .tmp/ScrWallpaper.py:35
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
-msgstr ""
+msgstr "Underbara, häftiga utsökta skrivbordsunderlägg! \\m/"
 
 #: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:52
 msgid "Desktop Search"
-msgstr ""
+msgstr "Skrivbordssökning"
 
 #: .tmp/searchWidget.py:53
 msgid ""
 "Nepomuk  Semantic Desktop enables tagging and rating of files integrated "
 "with the Desktop Search."
 msgstr ""
+"Nepomuk semantiskt skrivbord möjliggör märkning och klassificering "
+"integrerad "
+"med skrivbordssökningen."
 
 #: .tmp/searchWidget.py:54
 msgid "Enable Nepomuk Semantic Desktop"
-msgstr ""
+msgstr "Aktivera Nepomuk semantiskt skrivbord"
 
 #: .tmp/smoltWidget.py:77 .tmp/ui_smoltWidget.py:77
 msgid "&Send my profile"
-msgstr ""
+msgstr "&Skicka min profil"
 
 #: .tmp/smoltWidget.py:79 .tmp/ui_smoltWidget.py:79
 msgid ""
@@ -584,44 +594,86 @@ msgid ""
 "\"<span style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></"
 "body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt kommer bara att "
+"skicka"
+"hårdvaru- och grundläggande operativsystemet information till Fedora smolt "
+"server"
+"(smoon). Det enda koppling från databasen till en klientmaskin är UUID. "
+"Så länge klienten inte ger ut detta UUID är datat anonymt. Om en användare "
+"vid något tillfälle vill ta bort sin profil"
+"från databasen behöver denne bara köra</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-"
+"style:italic;\">smoltDeleteProfile</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">   The information sent to "
+"the smolt database server should be considered public in that anyone can "
+"view the statistics, data and share machine profiles.  In  many ways smolt "
+"is designed to get hardware vendors and other 3rd parties attention.  As "
+"such, not only will this information be shared with 3rd parties, we will be "
+"using smolt as leverage to gain better support for open source drivers and "
+"better support in general.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
+"decoration: underline;\">IP Logging:</span>  In Fedora's smolt install all "
+"web traffic goes through a proxy server first.  This is the only place IP "
+"addresses are being logged and they are kept on that server for a period of "
+"4 weeks at which time log rotation removes these logs.  The Fedora Project "
+"does not aggregate ip addresses in the smolt database.  These logs are "
+"private and will not be available to the general public.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">   Users unhappy with this "
+"policy should simply not use smolt.  Users with questions about this policy "
+"should contact the Fedora Infrastructure Team at admin [at] fedoraproject."
+"org  Also remember that users can delete their profiles at any time using "
+"\"<span style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></"
+"body></html>"
 
 #: .tmp/styleitem.py:46 .tmp/uiitem.py:46 .tmp/ui_styleitem.py:46
 #: .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
 #: .tmp/wallpaperuiitem.py:46
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: .tmp/styleitem.py:47 .tmp/ui_styleitem.py:47
 msgid "styleName"
-msgstr ""
+msgstr "styleName"
 
 #: .tmp/styleitem.py:48 .tmp/ui_styleitem.py:48
 msgid "styleDesc"
-msgstr ""
+msgstr "styleDesc"
 
 #: .tmp/styleWidget.py:65 .tmp/ui_styleWidget.py:65
 msgid "Themes"
-msgstr ""
+msgstr "Tema"
 
 #: .tmp/styleWidget.py:66 .tmp/ui_styleWidget.py:66
 msgid "<b>Desktop Type:</b>"
-msgstr ""
+msgstr "<b>Skrivbordstyp:</b>"
 
 #: .tmp/styleWidget.py:67 .tmp/ui_styleWidget.py:67
 msgid "Desktop"
-msgstr ""
+msgstr "Skrivbord"
 
 #: .tmp/styleWidget.py:68 .tmp/ui_styleWidget.py:68
 msgid "Folderview"
-msgstr ""
+msgstr "Katalogvy"
 
 #: .tmp/styleWidget.py:69 .tmp/ui_styleWidget.py:69
 msgid "<b>Number of Desktops:</b>"
-msgstr ""
+msgstr "<b>Antal skrivbord:</b>"
 
 #: .tmp/summaryWidget.py:49 .tmp/ui_summaryWidget.py:49
 msgid "Summary"
-msgstr ""
+msgstr "Sammanställning"
 
 #: .tmp/summaryWidget.py:50 .tmp/ui_summaryWidget.py:50
 msgid ""
@@ -637,38 +689,53 @@ msgid ""
 "size:12pt; font-weight:600;\">Your settings will be applied in next screen..."
 "</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Dina inställningar kommer att sparas i nästa "
+"steg..."
+"</span></p></body></html>"
 
 #: .tmp/uiitem.py:47 .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
 #: .tmp/wallpaperuiitem.py:47
 msgid "wallPaperName"
-msgstr ""
+msgstr "wallPaperName"
 
 #: .tmp/uiitem.py:48 .tmp/ui_uiitem.py:48 .tmp/ui_wallpaperuiitem.py:48
 #: .tmp/wallpaperuiitem.py:48
 msgid "wallpaperDesc"
-msgstr ""
+msgstr "wallpaperDesc"
 
 #: .tmp/ui_searchWidget.py:53
 msgid ""
 "Strigi desktop search allows searching for files by content instead of just "
 "by name."
 msgstr ""
+"Strigi skrivbordssökning möjliggör filsökning baserat på innehåll i stället "
+"för "
+"på namn."
 
 #: .tmp/ui_searchWidget.py:54
 msgid "Enable Strigi Desktop File Indexer"
-msgstr ""
+msgstr "Aktivera Strigi skrivbordssökning"
 
 #: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
 msgid "Wallpaper"
-msgstr ""
+msgstr "Skrivbordsunderlägg"
 
 #: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:45
 msgid "Choose Wallpaper From a File"
-msgstr ""
+msgstr "Välj skrivbordsunderlägg från en fil"
 
 #: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:46
 msgid "Don't change wallpaper"
-msgstr ""
+msgstr "Ändra inte skrivbordsunderlägg"
 
 #: .tmp/ui_welcomeWidget.py:44 .tmp/welcomeWidget.py:44
 msgid ""
@@ -680,6 +747,13 @@ msgid ""
 "basic desktop needs; helps you connect to internet, read e-mails, work with "
 "office documents and more!"
 msgstr ""
+"Detta program, Kaptan Desktop, hjälper dig snabbt och enkelt sätt med de "
+"grundläggande men tillräckliga inställningarna för ditt Pardusskrivbord. "
+"Klicka på Nästa för att anpassa skrivbordet.\n"
+"\n"
+"Pardus är en GNU/Linux- distribution med inriktning på "
+"datoranvändarens grundläggande behov, du kan bland annat ansluta till "
+"Internet, läsa e-post och arbeta med Office-dokument!"
 
 #~ msgid "Info about Pisi"
 #~ msgstr "Information om Pisi"
