@@ -116,6 +116,41 @@ Sorunsuz bir şekilde çalıştığını gözlemleyin.
 Yukarıdaki komutları çalıştırın, xmlto paketinin sorunsuz bir şekilde çalıştığını gözlemleyin.
 \end{enumerate}
 \subsection*{Koffice}
+\begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+
+\begin{verbatim}
+ koffice-devel 
+ koffice-filters
+ koffice-kchart
+\end{verbatim}
+\item koffice-core kurulumu sonrası.
+
+\begin{itemize}
+\item KThesaurus uygulamasını menüden açın ve ilişkisi bulunabilecek bir ingilizce kelime girin. (Çünkü kthearus sadece ingilizce dilini desteklemektedir)
+
+Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis $\rightarrow$ daha fazla uygulama yolunu izleyerek sorunsuz bir şekilde açıldığını ve ilgili kelimenin ilişkili olduüğu diğer kelime gruplarını bulabildiğini gözlemleyin.
+
+\item koconverter için:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.html
+# koconverter koconverter_test.html koconverter_test.pdf
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.xls
+# koconverter koconverter_test.xls koconverter_test.txt
+\end{verbatim}
+
+Çalıştırılan koconverter komutlarının sorunsuz bir şekilde dönüşümü gerçekleştirdiğini gözlemleyin.
+\end{itemize}
+\item koffice-karbon paketi kurulumu sonrası:
+
+Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis yolunu izleyerek Karbon14 uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.
+
+\item koffice-kplato paketi kurulumu sonrası:
+
+Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis yolunu izleyerek kplato uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.
+
+
+\end{enumerate}
 
 \end{document}
 
