@@ -52,6 +52,9 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
         self.lastStdMonitor = None
         self.lastDBMonitor = None
 
+        # Remove dimensions tab as it is not ready
+        self.tabWidget.removeTab(1)
+
     def slotTypeChanged(self, index):
         notCustomMode = index != 2
         self.browseMonitorsButton.setEnabled(notCustomMode)
