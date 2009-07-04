@@ -67,6 +67,8 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         self.cardDialog = VideoCardDialog(self, self.iface)
         self.configureCardButton.clicked.connect(self.cardDialog.show)
 
+        self.outputDialogs = {}
+
         self.configChanged.connect(self.slotConfigChanged)
 
     def checkBackend(self):
@@ -117,8 +119,16 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
 
     def slotOutputEdit(self):
         widget = self.sender()
-        dlg = OutputDialog(self, self.iface, widget.getId())
-        dlg.exec_()
+        outputName = widget.getId()
+
+        dlg = self.outputDialogs.get(outputName)
+
+        if dlg is None:
+            dlg = OutputDialog(self, self.iface, outputName)
+            dlg.load()
+            self.outputDialogs[outputName] = dlg
+
+        dlg.show()
 
     def load(self):
         print "** load"
@@ -129,6 +139,10 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         info = "<qt>%s<br><i>%s</i></qt>" % (self.iface.cardModel, self.iface.cardVendor)
         self.cardInfoLabel.setText(info)
         self.cardDialog.load()
+
+        # Output dialogs
+        for dlg in self.outputDialogs.values():
+            dlg.load()
 
         # Output list
         self.refreshOutputList()

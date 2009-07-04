@@ -48,20 +48,20 @@
             <item row="0" column="0">
              <widget class="QLabel" name="label_8">
               <property name="text">
-               <string>Source:</string>
+               <string/>
               </property>
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QComboBox" name="sourceBox">
+             <widget class="QComboBox" name="monitorType">
               <item>
                <property name="text">
-                <string>Standard monitors</string>
+                <string>Standard monitor</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>Vendor/model list</string>
+                <string>Monitor selected from database</string>
                </property>
               </item>
               <item>
@@ -81,7 +81,11 @@
             <item row="1" column="1">
              <layout class="QHBoxLayout" name="horizontalLayout_2">
               <item>
-               <widget class="QLineEdit" name="monitorName"/>
+               <widget class="QLineEdit" name="monitorName">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QToolButton" name="browseMonitorsButton">
@@ -106,6 +110,12 @@
                 <property name="suffix">
                  <string/>
                 </property>
+                <property name="decimals">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <double>200.000000000000000</double>
+                </property>
                </widget>
               </item>
               <item>
@@ -119,7 +129,14 @@
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="hsyncMax"/>
+               <widget class="QDoubleSpinBox" name="hsyncMax">
+                <property name="decimals">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <double>200.000000000000000</double>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QLabel" name="label_7">
@@ -140,7 +157,14 @@
             <item row="3" column="1">
              <layout class="QHBoxLayout" name="horizontalLayout_4">
               <item>
-               <widget class="QDoubleSpinBox" name="vrefMin"/>
+               <widget class="QDoubleSpinBox" name="vrefMin">
+                <property name="decimals">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <double>200.000000000000000</double>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QLabel" name="label_6">
@@ -153,7 +177,14 @@
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="vrefMax"/>
+               <widget class="QDoubleSpinBox" name="vrefMax">
+                <property name="decimals">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <double>200.000000000000000</double>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QLabel" name="label_9">
@@ -268,6 +299,12 @@
             <property name="suffix">
              <string> mm</string>
             </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="singleStep">
+             <number>10</number>
+            </property>
            </widget>
           </item>
           <item row="2" column="0">
@@ -287,6 +324,12 @@
            <widget class="QSpinBox" name="monitorHeight">
             <property name="suffix">
              <string> mm</string>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="singleStep">
+             <number>10</number>
             </property>
            </widget>
           </item>
