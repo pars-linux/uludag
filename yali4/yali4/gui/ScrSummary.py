@@ -46,7 +46,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 <font size="+2">Install Summary</font>
 <font size="+1">
 <p>
-Here you can see your install options and look at them again before installation starts.
+Here you can see your install options before installation starts.
 </p>
 </font>
 ''')
@@ -69,7 +69,7 @@ Here you can see your install options and look at them again before installation
 
     def slotReboot(self):
         reply = QuestionDialog(_("Reboot"),
-                               _('''<b><p>This action will reboot your system !</p></b>'''))
+                               _('''<b><p>This action will reboot your system.</p></b>'''))
         if reply == "yes":
             yali4.sysutils.reboot()
 
@@ -84,7 +84,7 @@ Here you can see your install options and look at them again before installation
 
     def updateCounter(self):
         remain = 20 - (int(time.time()) - self.startTime)
-        ctx.yali.info.updateAndShow(_("Install starts after : <b>%s sec.</b>") % remain)
+        ctx.yali.info.updateAndShow(_("Install starts in: <b>%s seconds</b>") % remain)
         if remain <= 0:
             self.timer.stop()
             ctx.mainScreen.slotNext()
@@ -134,7 +134,7 @@ Here you can see your install options and look at them again before installation
             for user in yali4.users.pending_users:
                 state = _("User %s (<b>%s</b>) added.")
                 if "wheel" in user.groups:
-                    state = _("User %s (<b>%s</b>) added with <u>admin privileges</u>.")
+                    state = _("User %s (<b>%s</b>) added with <u>administrator privileges</u>.")
                 content.append(item % state % (user.realname, user.username))
             content.append(end)
 
@@ -159,7 +159,7 @@ Here you can see your install options and look at them again before installation
 
             pardus_path = dev.getPath()+"1"
             content.append(item % _("All partitions on device <b>%(device)s</b> has been deleted.") % _sum)
-            content.append(item % _("Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MB</b> as <b>%(fs)s</b>.") % _sum)
+            content.append(item % _("Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MBs</b> as <b>%(fs)s</b>.") % _sum)
             content.append(item % _("Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>.") % _sum)
 
         elif ctx.installData.autoPartMethod == methodUseAvail:
@@ -193,9 +193,9 @@ Here you can see your install options and look at them again before installation
                         "currentSize":part.getMB(),
                         "resizeTo":resizeTo}
 
-                content.append(item % _("Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>") % _sum)
+                content.append(item % _("Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%(resizeTo)s MBs</b>, previous size was <b>%(currentSize)s MBs</b>.") % _sum)
 
-            content.append(item % _("Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MB</b> as <b>%(fs)s</b>.") % _sum)
+            content.append(item % _("Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MBs</b> as <b>%(fs)s</b>.") % _sum)
             content.append(item % _("Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>.") % _sum)
 
         else:
@@ -212,9 +212,9 @@ Here you can see your install options and look at them again before installation
 
         # Bootloader
         content.append(subject % _("Bootloader Settings"))
-        grub_str = _("GRUB will be installed to <b>%s</b>")
+        grub_str = _("GRUB will be installed to <b>%s</b>.")
         if ctx.installData.bootLoaderOption == B_DONT_INSTALL:
-            content.append(item % _("GRUB will not be installed"))
+            content.append(item % _("GRUB will not be installed."))
         elif ctx.installData.bootLoaderOption == B_INSTALL_PART:
             content.append(item % grub_str % pardus_path)
         elif ctx.installData.bootLoaderOption == B_INSTALL_MBR:
@@ -240,9 +240,9 @@ Here you can see your install options and look at them again before installation
         if self.resizeAction:
             reply = QuestionDialog(_("Before Starting"),
                                    _("""<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt your partition,<br>
-                                        rendering your data unreachable. <br>
+                                        rendering your data unreachable.<br>
                                         Make sure that you have a backup for this partition.<br>
-                                        <b>Note that this operation cannot be undone ! </b></p>"""))
+                                        <b>Note that this operation cannot be undone.</b></p>"""))
             if reply == "no":
                 ctx.mainScreen.moveInc = 0
                 return
@@ -264,34 +264,34 @@ Here you can see your install options and look at them again before installation
             if ctx.installData.autoPartMethod == methodEraseAll:
                 ctx.yali.autoPartDevice()
                 ctx.yali.checkSwap()
-                ctx.yali.info.updateMessage(_("Formatting ..."))
+                ctx.yali.info.updateMessage(_("Formatting..."))
                 ctx.mainScreen.processEvents()
                 ctx.partrequests.applyAll()
 
             elif ctx.installData.autoPartMethod == methodUseAvail:
                 if ctx.installData.autoPartPartition["partition"].isFreespace():
-                    ctx.yali.info.updateAndShow(_("Writing disk tables ..."))
+                    ctx.yali.info.updateAndShow(_("Writing disk tables..."))
                 else:
-                    ctx.yali.info.updateAndShow(_("Resizing ..."))
+                    ctx.yali.info.updateAndShow(_("Resizing..."))
                 ctx.yali.autoPartUseAvail()
                 ctx.yali.checkSwap()
-                ctx.yali.info.updateMessage(_("Formatting ..."))
+                ctx.yali.info.updateMessage(_("Formatting..."))
                 ctx.mainScreen.processEvents()
                 ctx.partrequests.applyAll()
 
         # Manual Partitioning
         else:
             ctx.debugger.log("Format Operation Started")
-            ctx.yali.info.updateAndShow(_("Writing disk tables ..."))
+            ctx.yali.info.updateAndShow(_("Writing disk tables..."))
             for dev in yali4.storage.devices:
                 ctx.mainScreen.processEvents()
                 if dev._needs_commit:
-                    ctx.debugger.log("Parted Device.commit() calling ...")
+                    ctx.debugger.log("Parted Device.commit() calling...")
                     dev.commit()
             # wait for udev to create device nodes
             time.sleep(2)
             ctx.yali.checkSwap()
-            ctx.yali.info.updateMessage(_("Formatting ..."))
+            ctx.yali.info.updateMessage(_("Formatting..."))
             ctx.mainScreen.processEvents()
             ctx.partrequests.applyAll()
             ctx.debugger.log("Format Operation Finished")
@@ -314,8 +314,8 @@ Here you can see your install options and look at them again before installation
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,request.mountRequestType)
         _ins_part = root_part_req.partition().getPath()
 
-        ctx.debugger.log("Pardus Root is : %s" % _ins_part)
-        ctx.debugger.log("GRUB will be installing to : %s" % ctx.installData.bootLoaderDev)
+        ctx.debugger.log("Pardus Root is %s" % _ins_part)
+        ctx.debugger.log("GRUB will be installed to %s" % ctx.installData.bootLoaderDev)
 
         ctx.mainScreen.moveInc = 1
         return True
