@@ -22,6 +22,8 @@ from PyKDE4 import kdecore
 # UI
 from displaysettings.ui_output import Ui_OutputDialog
 
+from displaysettings.monitorbrowser import MonitorBrowser
+
 class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
 
     configChanged = QtCore.pyqtSignal()
@@ -36,6 +38,7 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
         self.configChanged.connect(parent.configChanged)
 
         self.monitorType.currentIndexChanged.connect(self.slotTypeChanged)
+        self.browseMonitorsButton.clicked.connect(self.slotBrowseMonitors)
 
         self.slotTypeChanged(0)
 
@@ -47,9 +50,12 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
         self.vrefMin.setEnabled(isCustomMode)
         self.vrefMax.setEnabled(isCustomMode)
 
-    def load(self):
-        print "output %s load" % self.outputName
+    def slotBrowseMonitors(self):
+        dlg = MonitorBrowser(self, self.monitorType.currentIndex() == 0)
+        if dlg.exec_() == QtGui.QDialog.Accepted:
+            print "acc"
 
+    def load(self):
         config = self.iface.getConfig()
         output = config.outputs.get(self.outputName)
         monitor = config.monitors.get(self.outputName)
