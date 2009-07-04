@@ -12,9 +12,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-04 19:28+0300\n"
-"PO-Revision-Date: 02/07/09 15:50\n"
-"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"PO-Revision-Date: 2009-07-05 00:17+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,8 +44,7 @@ msgstr "X"
 
 #: yali4/gui/Ui/autopartquestion.py:81
 msgid "Automatically choose the partition to resize (recommended)"
-msgstr ""
-"Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
+msgstr "Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
 
 #: yali4/gui/Ui/autopartquestion.py:82
 msgid "I will choose the target"
@@ -113,15 +112,13 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
-msgstr ""
-"Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
+msgstr "Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
 
 #: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
 "This option will erase the entire disk. All the data on the disk will be "
 "lost."
-msgstr ""
-"Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
+msgstr "Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
@@ -610,8 +607,7 @@ msgid "Begin Install"
 msgstr "Begin installatie"
 
 #: yali4/gui/Ui/summarywidget.py:70
-msgid ""
-"If you check this, Yalı will install all language packages in this release"
+msgid "If you check this, Yalı will install all language packages in this release"
 msgstr "Markeer dit om alle taalpakketten installeren"
 
 #: yali4/gui/Ui/summarywidget.py:71
@@ -856,8 +852,7 @@ msgstr "Er is een verzoek voor het gelijke partitietype."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)"
 "s</b>."
@@ -1678,7 +1673,6 @@ msgid "Summary of your installation..."
 msgstr "Samenvatting van uw installatie..."
 
 #: yali4/gui/ScrSummary.py:45
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Install Summary</font>\n"
@@ -1692,20 +1686,19 @@ msgstr ""
 "<font size=\"+2\">Samenvatting van installatie</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Hier kunt u uw installatieopties bekijken en deze controleren voordat de "
+"Hier kunt u uw installatieopties bekijken voordat de "
 "installatie start.\n"
 "</p>\n"
 "</font>\n"
 
 #: yali4/gui/ScrSummary.py:72
-#, fuzzy
 msgid "<b><p>This action will reboot your system.</p></b>"
-msgstr "<b><p>Deze actie zal uw systeem herstarten !</p></b>"
+msgstr "<b><p>Deze actie zal uw systeem herstarten.</p></b>"
 
 #: yali4/gui/ScrSummary.py:87
-#, fuzzy, python-format
+#, python-format
 msgid "Install starts in: <b>%s seconds</b>"
-msgstr "Installatie start na : <b>%s sec.</b>"
+msgstr "Installatie start over: <b>%s seconden</b>"
 
 #: yali4/gui/ScrSummary.py:122
 msgid "Keyboard Settings"
@@ -1735,9 +1728,9 @@ msgid "User %s (<b>%s</b>) added."
 msgstr "Gebruiker %s (<b>%s</b>) toegevoegd."
 
 #: yali4/gui/ScrSummary.py:137
-#, fuzzy, python-format
+#, python-format
 msgid "User %s (<b>%s</b>) added with <u>administrator privileges</u>."
-msgstr "Gebruiker %s (<b>%s</b>) toegevoegd met <u>beheerdersrechten</u>."
+msgstr "Gebruiker %s (<b>%s</b>) is toegevoegd met <u>beheerdersrechten</u>."
 
 #: yali4/gui/ScrSummary.py:143
 msgid "Hostname Settings"
@@ -1757,7 +1750,7 @@ msgid "Automatic Partitioning selected."
 msgstr "Automatisch partitioneren geselecteerd."
 
 #: yali4/gui/ScrSummary.py:162
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MBs</b> as <b>%(fs)s</b>."
@@ -1770,16 +1763,16 @@ msgid "Automatic Partitioning (resize method) selected."
 msgstr "Automatisch partitioneren (grootte aanpassen methode) geselecteerd."
 
 #: yali4/gui/ScrSummary.py:196
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
 "(resizeTo)s MBs</b>, previous size was <b>%(currentSize)s MBs</b>."
 msgstr ""
-"Partitie <b>%(partition)s - %(currentFs)s</b> <b>in grootte aangepast</b> "
-"naar <b>%(resizeTo)s MB</b>, oude grootte was <b>%(currentSize)s MB</b>"
+"Partitie <b>%(partition)s - %(currentFs)s</b> <b>aangepast</b> "
+"naar <b>%(resizeTo)s MB</b>, oude grootte was <b>%(currentSize)s MB</b>."
 
 #: yali4/gui/ScrSummary.py:198
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
 "with <b>%(size)s MBs</b> as <b>%(fs)s</b>."
@@ -1790,29 +1783,26 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
 msgstr "Bootlader instellingen"
 
 #: yali4/gui/ScrSummary.py:215
-#, fuzzy, python-format
+#, python-format
 msgid "GRUB will be installed to <b>%s</b>."
 msgstr "GRUB zal geïnstalleerd worden op <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:217
-#, fuzzy
 msgid "GRUB will not be installed."
-msgstr "GRUB zal niet geïnstalleerd worden"
+msgstr "GRUB zal niet geïnstalleerd worden."
 
 #: yali4/gui/ScrSummary.py:241
 msgid "Before Starting"
 msgstr "Voor het starten"
 
 #: yali4/gui/ScrSummary.py:242
-#, fuzzy
 msgid ""
 "<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
 "your partition,<br>\n"
@@ -1823,28 +1813,26 @@ msgid ""
 "                                        <b>Note that this operation cannot "
 "be undone.</b></p>"
 msgstr ""
-"<p><b><u>Waarschuwing</u></b>: De grootte wordt aangepast wat uw partitie "
-"corrupt kan maken,<br>\n"
-"                   waarmee uw data onbereikbaar wordt. <br>\n"
-"                   Zorg dat u een backup hebt van deze patitie.<br>\n"
-"                   <b>Let op dat deze handeling niet ongedaan kan worden ! </"
+"<p><b><u>Waarschuwing</u></b>: De grootte wordt aangepast en het kan uw partitie "
+"defect maken,<br>\n"
+"                                        waarmee uw data onbereikbaar wordt. "
+"<br>\n"
+"                                        Zorg dat u een backup hebt van deze patitie.<br>\n"
+"                                        <b>Let op dat deze handeling niet ongedaan gemaakt kan worden.</"
 "b></p>"
 
 #: yali4/gui/ScrSummary.py:267 yali4/gui/ScrSummary.py:278
 #: yali4/gui/ScrSummary.py:294
-#, fuzzy
 msgid "Formatting..."
-msgstr "Formatteren ..."
+msgstr "Formatteren..."
 
 #: yali4/gui/ScrSummary.py:273 yali4/gui/ScrSummary.py:285
-#, fuzzy
 msgid "Writing disk tables..."
-msgstr "Schrijven schijftabellen ..."
+msgstr "Schrijven schijftabellen..."
 
 #: yali4/gui/ScrSummary.py:275
-#, fuzzy
 msgid "Resizing..."
-msgstr "Grootte aanpassen ..."
+msgstr "Grootte aanpassen..."
 
 #: yali4/gui/ScrUsers.py:32
 msgid "Set Users"
@@ -2360,17 +2348,3 @@ msgstr "De thuismap van gebruiker <b>%s</b> wordt gereed gemaakt.."
 msgid "Not enough free space on %s to create new partition"
 msgstr "Niet genoeg ruimte op %s voor het aanmaken van nieuwe partitie"
 
-#~ msgid "The analog clock widget displays the current time."
-#~ msgstr "De analoge klok widget toont de huidige tijd."
-
-#~ msgid "HH"
-#~ msgstr "UU"
-
-#~ msgid "mm"
-#~ msgstr "mm"
-
-#~ msgid "ss"
-#~ msgstr "ss"
-
-#~ msgid "TextLabel"
-#~ msgstr "Tekstlabel"
