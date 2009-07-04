@@ -23,6 +23,7 @@ install(TARGETS libksysinfopart DESTINATION ${PLUGIN_INSTALL_DIR})
 
 install( FILES sysinfo.protocol ksysinfopart.desktop DESTINATION  ${SERVICES_INSTALL_DIR} )
 install( FILES kfmclient_sysinfo.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
+install( FILES sysinfo.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
 
 find_package(SharedMimeInfo REQUIRED)
 install(FILES x-sysinfo.xml DESTINATION ${XDG_MIME_INSTALL_DIR})
