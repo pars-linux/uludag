@@ -57,11 +57,20 @@ class MonitorBrowser(QtGui.QDialog, Ui_MonitorBrowser):
                 ListItem(vendor, monitors, self.vendorList)
 
         self.vendorList.currentItemChanged.connect(self.slotVendorChanged)
+        self.vendorList.setCurrentRow(0)
 
     def slotVendorChanged(self, current, previous):
         self.modelList.clear()
         for monitor in current.data:
             ListItem(monitor["model"], monitor, self.modelList)
 
+        self.modelList.setCurrentRow(0)
+        self.vendor = current.text()
+
     def accept(self):
+        item = self.modelList.currentItem()
+        self.model = item.data["model"]
+        self.hsync = item.data["hsync"]
+        self.vref = item.data["vref"]
+
         QtGui.QDialog.accept(self)
