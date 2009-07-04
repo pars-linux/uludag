@@ -37,6 +37,7 @@ class VideoCardDialog(QtGui.QDialog, Ui_VideoCardDialog):
     def load(self):
         self.driver = self.iface.getDriver()
         self.depth = self.iface.getDepth()
+        self.changeList = []
 
     def show(self):
         drivers = self.iface.listDrivers()
@@ -60,20 +61,17 @@ class VideoCardDialog(QtGui.QDialog, Ui_VideoCardDialog):
         QtGui.QDialog.show(self)
 
     def accept(self):
-        oldDriver = self.driver
-        oldDepth = self.depth
+        driver = "" if self.autoDriverButton.isChecked() else str(self.driverSelection.currentText())
+        if driver != self.driver:
+            self.changeList.append("driver")
+            self.driver = driver
 
-        if self.autoDriverButton.isChecked():
-            self.driver = ""
-        else:
-            self.driver = str(self.driverSelection.currentText())
+        depth = 0 if self.autoDepthButton.isChecked() else self.depths[self.depthSelection.currentIndex()]
+        if depth != self.depth:
+            self.changeList.append("depth")
+            self.depth = depth
 
-        if self.autoDepthButton.isChecked():
-            self.depth = 0
-        else:
-            self.depth = self.depths[self.depthSelection.currentIndex()]
-
-        if (oldDriver, oldDepth) != (self.driver, self.depth):
+        if self.changeList:
             self.configChanged.emit()
 
         QtGui.QDialog.accept(self)
@@ -82,5 +80,8 @@ class VideoCardDialog(QtGui.QDialog, Ui_VideoCardDialog):
         QtGui.QDialog.reject(self)
 
     def apply(self):
-        self.iface.setDriver(self.driver)
-        self.iface.setDepth(self.depth)
+        if "driver" in self.changeList:
+            self.iface.setDriver(self.driver)
+
+        if "depth" in self.changeList:
+            self.iface.setDepth(self.depth)
