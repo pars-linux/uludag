@@ -79,22 +79,19 @@ def saveXorgConfig(card):
     # Screen section
     secScr.set("Identifier", "Screen")
     secScr.set("Device", "VideoCard")
-    #if card.active_outputs:
-    #    secScr.set("Monitor", "Monitor[%s]" % card.active_outputs[0])
     if card.depth:
         secScr.set("DefaultDepth", card.depth)
 
-    """
-    subsec = XorgSection("Display")
-    subsec.set("Depth", card.depth)
+    if "default" in card.outputs:
+        output = card.outputs["default"]
+        secScr.set("Monitor", "Monitor[default]")
 
-    if card.needsModesLine():
-        output = card.active_outputs[0]
-        if card.modes.has_key(output):
-            subsec.set("Modes", card.modes[output], "800x600", "640x480")
-
-        secScr.sections = [subsec]
-    """
+        if output.mode:
+            subsec = XorgSection("Display")
+            if card.depth:
+                subsec.set("Depth", card.depth)
+            subsec.set("Modes", output.mode, "800x600", "640x480")
+            secScr.sections = [subsec]
 
     # Layout section
     secLay.set("Identifier", "Layout")
