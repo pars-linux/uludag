@@ -97,9 +97,6 @@ alternate-background-color: rgba(255, 255, 255, 122);
      <property name="toolTip">
       <string>The current time</string>
      </property>
-     <property name="whatsThis">
-      <string>The analog clock widget displays the current time.</string>
-     </property>
     </widget>
    </item>
    <item row="1" column="4" rowspan="3">
@@ -120,7 +117,7 @@ alternate-background-color: rgba(255, 255, 255, 122);
      <item>
       <widget class="QTimeEdit" name="timeHours">
        <property name="displayFormat">
-        <string>HH</string>
+        <string notr="true">HH</string>
        </property>
       </widget>
      </item>
@@ -134,7 +131,7 @@ alternate-background-color: rgba(255, 255, 255, 122);
      <item>
       <widget class="QTimeEdit" name="timeMinutes">
        <property name="displayFormat">
-        <string>mm</string>
+        <string notr="true">mm</string>
        </property>
       </widget>
      </item>
@@ -148,7 +145,7 @@ alternate-background-color: rgba(255, 255, 255, 122);
      <item>
       <widget class="QTimeEdit" name="timeSeconds">
        <property name="displayFormat">
-        <string>ss</string>
+        <string notr="true">ss</string>
        </property>
       </widget>
      </item>
