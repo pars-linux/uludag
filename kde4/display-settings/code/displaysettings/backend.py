@@ -62,6 +62,9 @@ class Interface:
         """
         return "zorg"
 
+    def getConfig(self):
+        return self._info
+
     def listDrivers(self):
         return map(str, self.link.Xorg.Display["zorg"].listDrivers())
 
