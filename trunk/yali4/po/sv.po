@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-01 10:12+0300\n"
+"POT-Creation-Date: 2009-07-04 19:28+0300\n"
 "PO-Revision-Date: 2009-07-04 16:45+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
-#: yali4/gui/Ui/datetimewidget.py:83 yali4/gui/Ui/exception.py:58
+#: yali4/gui/Ui/datetimewidget.py:86 yali4/gui/Ui/exception.py:58
 #: yali4/gui/Ui/goodbyewidget.py:46 yali4/gui/Ui/partedit.py:153
 #: yali4/gui/Ui/summarywidget.py:67
 msgid "Form"
@@ -33,7 +33,7 @@ msgstr ""
 "någon partition ur listan eller låt YALI välja åt dig."
 
 #: yali4/gui/Ui/autopartquestion.py:80 yali4/gui/Ui/connectionlist.py:72
-#: yali4/gui/Ui/dialog.py:60
+#: yali4/gui/Ui/dialog.py:59
 msgid "X"
 msgstr "X"
 
@@ -227,37 +227,17 @@ msgstr ""
 msgid "Connect"
 msgstr "Anslut"
 
-#: yali4/gui/Ui/datetimewidget.py:84
+#: yali4/gui/Ui/datetimewidget.py:87
 msgid "The current time"
 msgstr "Aktuell tid"
 
-#: yali4/gui/Ui/datetimewidget.py:85
-msgid "The analog clock widget displays the current time."
-msgstr "Den analoga klockan visar aktuell tid."
-
-#: yali4/gui/Ui/datetimewidget.py:86
-msgid "HH"
-msgstr "HH"
-
-#: yali4/gui/Ui/datetimewidget.py:87 yali4/gui/Ui/datetimewidget.py:89
+#: yali4/gui/Ui/datetimewidget.py:88 yali4/gui/Ui/datetimewidget.py:89
 msgid ":"
 msgstr ":"
 
-#: yali4/gui/Ui/datetimewidget.py:88
-msgid "mm"
-msgstr "mm"
-
 #: yali4/gui/Ui/datetimewidget.py:90
-msgid "ss"
-msgstr "ss"
-
-#: yali4/gui/Ui/datetimewidget.py:91
 msgid "Time Zone"
 msgstr "Tidszon"
-
-#: yali4/gui/Ui/dialog.py:59
-msgid "TextLabel"
-msgstr "TextLabel"
 
 #: yali4/gui/Ui/exception.py:60 yali4/__init__.py:69
 msgid "Error"
@@ -335,7 +315,7 @@ msgstr "Skärmnamn"
 msgid "Details about the screen"
 msgstr "Detaljer om steget"
 
-#: yali4/gui/Ui/main.py:186 yali4/gui/YaliWindow.py:270
+#: yali4/gui/Ui/main.py:186 yali4/gui/YaliWindow.py:269
 msgid "Release Notes"
 msgstr "Versionsfakta"
 
@@ -448,9 +428,8 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
 "#ffffff;\">Dessa ändringar verkställs när du klickar \"</span><span style=\" "
-"text-decoration: underline; color:#ffffff;\">Ändra storlek</span><span "
-"style=\" "
-"color:#ffffff;\">\". Om du vill återgå, klicka \"</span><span style=\" "
+"text-decoration: underline; color:#ffffff;\">Ändra storlek</span><span style="
+"\" color:#ffffff;\">\". Om du vill återgå, klicka \"</span><span style=\" "
 "text-decoration: underline; color:#ffffff;\">Avbryt</span><span style=\" "
 "color:#ffffff;\">\".</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
@@ -461,8 +440,7 @@ msgstr ""
 "\" font-weight:600; text-decoration: underline;\">Varning:</span> En "
 "storleksändring kan förstöra din partition och göra dina filer oåtkomliga. "
 "Var säker på att du har en säkerhetskopia av denna partition.<span style=\" "
-"font-weight:600;"
-"\"> </span><span style=\" font-weight:600;\">Observera att "
+"font-weight:600;\"> </span><span style=\" font-weight:600;\">Observera att "
 "denna åtgärd inte kan ångras.</span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:68
@@ -811,9 +789,9 @@ msgid ""
 "Freenode server (and you can use Konversation for that).\n"
 msgstr ""
 "Du kan hitta guider, information om pakethantering och andra instruktioner "
-"på www.pardus.nu. Om du får problem med Pardus 2009 kan du få hjälp i "
-"det svenska forumet och i #pardus.nu på IRC, Freenodeservern "
-"(du kan använda Konversation till det).\n"
+"på www.pardus.nu. Om du får problem med Pardus 2009 kan du få hjälp i det "
+"svenska forumet och i #pardus.nu på IRC, Freenodeservern (du kan använda "
+"Konversation till det).\n"
 
 #: yali4/gui/DiskWidgets.py:87
 msgid "Manual Partitioning selected."
@@ -840,12 +818,12 @@ msgstr "%0.1f GB ledigt"
 msgid "%d MB free"
 msgstr "%d MB ledigt"
 
-#: yali4/gui/DiskWidgets.py:260 yali4/gui/GUIAdditional.py:162
+#: yali4/gui/DiskWidgets.py:260 yali4/gui/GUIAdditional.py:166
 #, python-format
 msgid "Partition %d"
 msgstr "Partition %d"
 
-#: yali4/gui/DiskWidgets.py:268 yali4/gui/GUIAdditional.py:160
+#: yali4/gui/DiskWidgets.py:268 yali4/gui/GUIAdditional.py:164
 #: yali4/partition.py:124
 msgid "Free Space"
 msgstr "Ledigt utrymme"
@@ -900,7 +878,7 @@ msgstr ""
 msgid "Error !"
 msgstr "Fel!"
 
-#: yali4/gui/DiskWidgets.py:428 yali4/gui/ScrSummary.py:162
+#: yali4/gui/DiskWidgets.py:428
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -945,7 +923,7 @@ msgstr ""
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Alla partitioner på enhet <b>%(device)s</b> har tagits bort."
 
-#: yali4/gui/GUIAdditional.py:71
+#: yali4/gui/GUIAdditional.py:75
 msgid ""
 "<p><span style=\"color:#FFF\"><b>It seems this partition is not ready for "
 "resizing.</b></span></p>"
@@ -953,16 +931,16 @@ msgstr ""
 "<p><span style=\"color:#FFF\"><b>Det verkar som om den här partitionen inte "
 "är klar för storleksändring.</b></span></p>"
 
-#: yali4/gui/GUIAdditional.py:84
+#: yali4/gui/GUIAdditional.py:88
 #, python-format
 msgid "Resizing to %s MB.."
 msgstr "Ändrar storlek till %s MB.."
 
-#: yali4/gui/GUIAdditional.py:93
+#: yali4/gui/GUIAdditional.py:97
 msgid "Filesystem Error"
 msgstr "Filsystemfel"
 
-#: yali4/gui/GUIAdditional.py:100
+#: yali4/gui/GUIAdditional.py:104
 #, python-format
 msgid ""
 "Partition <b>%(partition)s - %(fs)s</b> <b>resized</b> to <b>%(resizeTo)s "
@@ -971,42 +949,42 @@ msgstr ""
 "Partitionen <b>%(partition)s - %(fs)s</b> <b>storleksändrad</b> till <b>%"
 "(resizeTo)s MB</b>, den gamla storleken var <b>%(currentSize)s MB</b>"
 
-#: yali4/gui/GUIAdditional.py:163
+#: yali4/gui/GUIAdditional.py:167
 #, python-format
 msgid "(%s) [%s] Size : %s - Free : %s"
 msgstr "(%s) [%s] storlek : %s - ledigt : %s"
 
-#: yali4/gui/GUIAdditional.py:182
+#: yali4/gui/GUIAdditional.py:186
 #, python-format
 msgid "%s (Boot Disk)"
 msgstr "%s (Startdisk)"
 
-#: yali4/gui/GUIAdditional.py:242
+#: yali4/gui/GUIAdditional.py:246
 #, python-format
 msgid "Connecting to network <b>%s</b> ..."
 msgstr "Ansluter till nätverk <b>%s</b>..."
 
-#: yali4/gui/GUIAdditional.py:248 yali4/gui/GUIAdditional.py:249
+#: yali4/gui/GUIAdditional.py:252 yali4/gui/GUIAdditional.py:253
 msgid "Connection failed"
 msgstr "Anslutningen misslyckades"
 
-#: yali4/gui/GUIAdditional.py:252 yali4/gui/GUIAdditional.py:253
+#: yali4/gui/GUIAdditional.py:256 yali4/gui/GUIAdditional.py:257
 msgid "Connected"
 msgstr "Ansluten"
 
-#: yali4/gui/GUIGPL.py:52
+#: yali4/gui/GUIAdditional.py:291
 msgid "Can't open License file!"
 msgstr "Kan inte öppna licensfil!"
 
-#: yali4/gui/GUIRelNotes.py:49
+#: yali4/gui/GUIAdditional.py:302
 msgid "Can't open Release Notes!"
 msgstr "Kan inte öppna versionsfakta!"
 
-#: yali4/gui/runner.py:147
+#: yali4/gui/runner.py:150
 msgid "Error occured !"
 msgstr "Ett fel uppstod!"
 
-#: yali4/gui/runner.py:163
+#: yali4/gui/runner.py:166
 msgid "Unhandled exception occured!"
 msgstr "Ohanterat undantag uppstod!"
 
@@ -1316,11 +1294,13 @@ msgstr ""
 msgid "Packages are being installed.."
 msgstr "Installerar paket..."
 
-#: yali4/gui/ScrInstall.py:138, python-format
+#: yali4/gui/ScrInstall.py:138
+#, python-format
 msgid "Installing: <b>%s</b><br>%s"
 msgstr "Installerar: <b>%s</b><br>%s"
 
-#: yali4/gui/ScrInstall.py:143, python-format
+#: yali4/gui/ScrInstall.py:143
+#, python-format
 msgid "Configuring package: <b>%s</b>"
 msgstr "Konfigurerar paket: <b>%s</b>"
 
@@ -1328,7 +1308,8 @@ msgstr "Konfigurerar paket: <b>%s</b>"
 msgid "Warning"
 msgstr "Varning"
 
-#: yali4/gui/ScrInstall.py:166, python-format
+#: yali4/gui/ScrInstall.py:166
+#, python-format
 msgid "Package install failed : <b>%s</b>"
 msgstr "Paketinstallationen misslyckades: <b>%s</b>"
 
@@ -1679,13 +1660,13 @@ msgid "Summary of your installation..."
 msgstr "Installationssammanställning..."
 
 #: yali4/gui/ScrSummary.py:45
+#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Install Summary</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Here you can see your install options and look at them again before "
-"installation starts.\n"
+"Here you can see your install options before installation starts.\n"
 "</p>\n"
 "</font>\n"
 msgstr ""
@@ -1698,12 +1679,13 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrSummary.py:72
-msgid "<b><p>This action will reboot your system !</p></b>"
+#, fuzzy
+msgid "<b><p>This action will reboot your system.</p></b>"
 msgstr "<b><p>Denna åtgärd startar om datorn!</p></b>"
 
 #: yali4/gui/ScrSummary.py:87
-#, python-format
-msgid "Install starts after : <b>%s sec.</b>"
+#, fuzzy, python-format
+msgid "Install starts in: <b>%s seconds</b>"
 msgstr "Installationen startar om : <b>%s sek.</b>"
 
 #: yali4/gui/ScrSummary.py:122
@@ -1734,8 +1716,8 @@ msgid "User %s (<b>%s</b>) added."
 msgstr "Användare %s (<b>%s</b>) tillagd."
 
 #: yali4/gui/ScrSummary.py:137
-#, python-format
-msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
+#, fuzzy, python-format
+msgid "User %s (<b>%s</b>) added with <u>administrator privileges</u>."
 msgstr "Användare %s (<b>%s</b>) tillagd med <u>administratörsrättigheter</u>."
 
 #: yali4/gui/ScrSummary.py:143
@@ -1755,24 +1737,33 @@ msgstr "Partitionering"
 msgid "Automatic Partitioning selected."
 msgstr "Automatisk partitionering vald"
 
+#: yali4/gui/ScrSummary.py:162
+#, fuzzy, python-format
+msgid ""
+"Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
+"<b>%(size)s MBs</b> as <b>%(fs)s</b>."
+msgstr ""
+"Partition <b>%(partition)s</b> <b>skapad</b> på enhet <b>%(device)s</b> med "
+"<b>%(size)s MB</b> som <b>%(fs)s</b>."
+
 #: yali4/gui/ScrSummary.py:180
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Automatisk partitionering (storleksändring) vald"
 
 #: yali4/gui/ScrSummary.py:196
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
-"(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>"
+"(resizeTo)s MBs</b>, previous size was <b>%(currentSize)s MBs</b>."
 msgstr ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>storleksändrad</b> till <b>"
 "%(resizeTo)s MB</b>, tidigare storlek var <b>%(currentSize)s MB</b>"
 
 #: yali4/gui/ScrSummary.py:198
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
-"with <b>%(size)s MB</b> as <b>%(fs)s</b>."
+"with <b>%(size)s MBs</b> as <b>%(fs)s</b>."
 msgstr ""
 "Partition <b>%(newPartition)s</b> <b>skapad</b> på enhet <b>%(device)s</b> "
 "med <b>%(size)s MB</b> som <b>%(fs)s</b>."
@@ -1787,12 +1778,13 @@ msgid "Bootloader Settings"
 msgstr "Starthanterarens inställningar"
 
 #: yali4/gui/ScrSummary.py:215
-#, python-format
-msgid "GRUB will be installed to <b>%s</b>"
+#, fuzzy, python-format
+msgid "GRUB will be installed to <b>%s</b>."
 msgstr "GRUB kommer att installeras på <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:217
-msgid "GRUB will not be installed"
+#, fuzzy
+msgid "GRUB will not be installed."
 msgstr "GRUB kommer inte att installeras."
 
 #: yali4/gui/ScrSummary.py:241
@@ -1800,36 +1792,39 @@ msgid "Before Starting"
 msgstr "Före start"
 
 #: yali4/gui/ScrSummary.py:242
+#, fuzzy
 msgid ""
 "<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
 "your partition,<br>\n"
-"                                        rendering your data unreachable. "
+"                                        rendering your data unreachable."
 "<br>\n"
 "                                        Make sure that you have a backup for "
 "this partition.<br>\n"
 "                                        <b>Note that this operation cannot "
-"be undone ! </b></p>"
+"be undone.</b></p>"
 msgstr ""
 "<p><b><u>Varning</u></b>: Det finns en åtgärd för storleksändring och det "
 "kan förstöra din partition,<br>\n"
 "                   och göra dina filer oåtkomliga. <br>\n"
 "                   Var övertygad om att du har en säkerhetskopia för den här "
 "partitionen.<br>\n"
-"                   <b>Observera att den här åtgärden inte kan ångras! </b><"
-"/p>"
+"                   <b>Observera att den här åtgärden inte kan ångras! </b></"
+"p>"
 
 #: yali4/gui/ScrSummary.py:267 yali4/gui/ScrSummary.py:278
 #: yali4/gui/ScrSummary.py:294
-msgid "Formatting ..."
+#, fuzzy
+msgid "Formatting..."
 msgstr "Formaterar..."
 
 #: yali4/gui/ScrSummary.py:273 yali4/gui/ScrSummary.py:285
-#: yali4/installer.py:305
-msgid "Writing disk tables ..."
+#, fuzzy
+msgid "Writing disk tables..."
 msgstr "Skriver disktabeller"
 
 #: yali4/gui/ScrSummary.py:275
-msgid "Resizing ..."
+#, fuzzy
+msgid "Resizing..."
 msgstr "Ändrar storlek..."
 
 #: yali4/gui/ScrUsers.py:32
@@ -2014,11 +2009,12 @@ msgid ""
 "them.                                      You should restart the machine "
 "before starting the installation process !"
 msgstr ""
-"FSCheck hittade och lagade problem på partitionen %.                         "
-"             Du bör starta om datorn före du återupptar "
-"installationsprocessen!"
+"FSCheck hittade och lagade problem på partitionen "
+"%.                                      Du bör starta om datorn före du "
+"återupptar installationsprocessen!"
 
-#: yali4/filesystem.py:168, python-format
+#: yali4/filesystem.py:168
+#, python-format
 msgid "FSCheck failed on %s"
 msgstr "FSCheck misslyckades på %s"
 
@@ -2028,7 +2024,8 @@ msgstr ""
 "Partitionen är inte klar för storleksändring. Kontrollera den före "
 "installation."
 
-#: yali4/filesystem.py:477, python-format
+#: yali4/filesystem.py:477
+#, python-format
 msgid "Resize failed on %s "
 msgstr "Storleksändringen av %s misslyckades"
 
@@ -2086,6 +2083,10 @@ msgstr "Sparar tidsinställningar..."
 #: yali4/installer.py:247
 msgid "Disk analyze started.."
 msgstr "Diskanalysen påbörjad..."
+
+#: yali4/installer.py:305
+msgid "Writing disk tables ..."
+msgstr "Skriver disktabeller"
 
 #: yali4/installer.py:367
 msgid "Resize Finished ..."
@@ -2323,14 +2324,30 @@ msgstr "Arkiveringspartition"
 msgid "as Storage Area"
 msgstr "till lagringsutrymme"
 
-#: yali4/postinstall.py:173
+#: yali4/postinstall.py:180
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Användare <b>%s</b>s hemkatalog förbereds..."
 
-#: yali4/storage.py:375, python-format
+#: yali4/storage.py:375
+#, python-format
 msgid "Not enough free space on %s to create new partition"
 msgstr "Inte tillräckligt med ledigt utrymme på %s för att skapa ny partition"
+
+#~ msgid "The analog clock widget displays the current time."
+#~ msgstr "Den analoga klockan visar aktuell tid."
+
+#~ msgid "HH"
+#~ msgstr "HH"
+
+#~ msgid "mm"
+#~ msgstr "mm"
+
+#~ msgid "ss"
+#~ msgstr "ss"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
 
 #~ msgid "Add More Users"
 #~ msgstr "Lägg till fler användare"
