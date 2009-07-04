@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: user-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-03 13:56+0300\n"
-"PO-Revision-Date: 2009-06-30 18:56+0200\n"
+"PO-Revision-Date: 2009-07-04 14:46+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "Neka användare."
 
 #: .tmp/ui_edituser.py:197
 msgid "Apply this policy to all actions."
-msgstr ""
+msgstr "Tillämpa den här policyn på alla händelser."
 
 #: .tmp/ui_edituser.py:198
 msgid "Authorizations"
@@ -205,3 +205,4 @@ msgstr "Gruppinformation"
 #: .tmp/ui_editgroup.py:79
 msgid "Group Name:"
 msgstr "Gruppnamn"
+

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-02 14:39+0300\n"
-"PO-Revision-Date: 2009-06-28 12:58+0200\n"
+"PO-Revision-Date: 2009-07-04 15:02+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -44,11 +44,11 @@ msgstr "Installera paket"
 
 #: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "configuring"
-msgstr "konfigurerar"
+msgstr "Konfigurerar"
 
 #: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "extracting"
-msgstr "packar upp"
+msgstr "Packar upp"
 
 #: .tmp/progressdialog.py:45
 msgid "Downloading package list of %1"
@@ -88,7 +88,7 @@ msgstr "Program"
 
 #: .tmp/ui_appitem.py:53
 msgid "Web Tarayıcı"
-msgstr "Web Tarayıcı"
+msgstr "Webbläsare"
 
 #: .tmp/ui_appitem.py:54
 msgid "Firefox"
@@ -159,7 +159,7 @@ msgstr "Aktivera automatisk kontroll"
 
 #: .tmp/ui_settingsdialog.py:333 .tmp/ui_settingsdialog.py:336
 msgid "padding-left:15px;"
-msgstr ""
+msgstr "padding-left:15px;"
 
 #: .tmp/ui_settingsdialog.py:334
 msgid "Check interval:"
@@ -171,7 +171,7 @@ msgstr " min"
 
 #: .tmp/ui_settingsdialog.py:337
 msgid "Install updates automatically"
-msgstr ""
+msgstr "Installera uppdateringar automatiskt"
 
 #: .tmp/ui_settingsdialog.py:338
 msgid "Bandwidth limit"
@@ -291,26 +291,24 @@ msgid "&Proxy"
 msgstr "&Proxy"
 
 #: .tmp/tray.py:46
-#, fuzzy
 msgid "Update"
-msgstr "Uppdateringskontroll"
+msgstr "Uppdatera"
 
 #: .tmp/tray.py:49
 msgid "All"
-msgstr ""
+msgstr "Alla"
 
 #: .tmp/tray.py:82
 msgid "There are <b>%1</b> updates available!"
-msgstr ""
+msgstr "Det finns <b>%1</b> tillgängliga uppdateringar!"
 
 #: .tmp/tray.py:83
-#, fuzzy
 msgid "Show Updates"
-msgstr "Visa paket med uppdateringar"
+msgstr "Visa uppdateringar"
 
 #: .tmp/tray.py:83
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorera"
 
 #: .tmp/ui_mainwidget.py:58
 msgid "Form"
@@ -318,7 +316,7 @@ msgstr "Form"
 
 #: .tmp/ui_mainwidget.py:59
 msgid "Click to search"
-msgstr "Klicka för att söka"
+msgstr "Sök"
 
 #: .tmp/ui_mainwidget.py:61
 msgid ""
@@ -346,7 +344,7 @@ msgstr ""
 
 #: .tmp/ui_mainwidget.py:66
 msgid "Search"
-msgstr ""
+msgstr "Sök"
 
 #: .tmp/statemanager.py:65
 msgid "Installing Package(s)"
@@ -365,7 +363,6 @@ msgid "Applying Repository Changes"
 msgstr "Tillämpar förrådsändringar"
 
 #: .tmp/statemanager.py:69
-#, fuzzy
 msgid "Updating Repository"
 msgstr "Uppdaterar förråd"
 
@@ -492,15 +489,15 @@ msgstr "Underhållare"
 
 #: .tmp/commontext.py:15 .tmp/operationmanager.py:117
 msgid "downloading"
-msgstr "hämtar"
+msgstr "Hämtar"
 
 #: .tmp/commontext.py:15
 msgid "removing"
-msgstr "tar bort"
+msgstr "Tar bort"
 
 #: .tmp/commontext.py:15
 msgid "installing"
-msgstr "installerar"
+msgstr "Installerar"
 
 #: .tmp/ui_summarydialog.py:53
 msgid "Operation Summary"
@@ -523,18 +520,16 @@ msgid "&Ok"
 msgstr "&Ok"
 
 #: .tmp/packagedelegate.py:115
-#, fuzzy
 msgid "Description:"
-msgstr "Åtgärd:"
+msgstr "Beskrivning:"
 
 #: .tmp/packagedelegate.py:127
 msgid "Release:"
-msgstr ""
+msgstr "Utgåva:"
 
 #: .tmp/packagedelegate.py:137
-#, fuzzy
 msgid "Repository:"
-msgstr "Förrådsnamn"
+msgstr "Förråd:"
 
 #: .tmp/mainwidget.py:193
 msgid "Select all packages in this group"
@@ -615,3 +610,5 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+
+
