@@ -53,7 +53,7 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
     def slotBrowseMonitors(self):
         dlg = MonitorBrowser(self, self.monitorType.currentIndex() == 0)
         if dlg.exec_() == QtGui.QDialog.Accepted:
-            print "acc"
+            print "Selected model: %s" % dlg.model
 
     def load(self):
         config = self.iface.getConfig()
