@@ -39,6 +39,7 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
     def __init__(self, parent, iface, outputName):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
+        self.okButton = self.buttonBox.button(QtGui.QDialogButtonBox.Ok)
         self.setWindowTitle(kdecore.i18n("Settings for Output %1", outputName))
 
         self.iface = iface
@@ -60,17 +61,21 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
         self.vrefMax.setReadOnly(notCustomMode)
 
         if index == 0 and self.lastStdMonitor:
-            name, hsync, vref = self.lastStdMonitor
-            self.writeMonitorInfo(name, hsync, vref)
+            self.vendor, model, hsync, vref = self.lastStdMonitor
+            self.writeMonitorInfo(model, hsync, vref)
         elif index == 1 and self.lastDBMonitor:
-            name, hsync, vref = self.lastDBMonitor
-            self.writeMonitorInfo(name, hsync, vref)
+            self.vendor, model, hsync, vref = self.lastDBMonitor
+            self.writeMonitorInfo(model, hsync, vref)
         elif index == 2:
-            name = kdecore.i18n("Custom Monitor")
-            self.monitorName.setText(name)
+            self.vendor = "Custom"
+            model = kdecore.i18n("Custom Monitor")
+            self.monitorName.setText(model)
         else:
-            name = kdecore.i18n("<qt><i>Click the button to select a monitor</i></qt>")
-            self.monitorName.setText(name)
+            self.vendor = ""
+            model = kdecore.i18n("<qt><i>Click the button to select a monitor</i></qt>")
+            self.monitorName.setText(model)
+
+        self.okButton.setDisabled(self.vendor == "")
 
     def slotBrowseMonitors(self):
         std = self.monitorType.currentIndex() == 0
@@ -78,11 +83,12 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
         if dlg.exec_() == QtGui.QDialog.Accepted:
             self.writeMonitorInfo(dlg.model, dlg.hsync, dlg.vref)
             if std:
-                self.lastStdMonitor = (dlg.model, dlg.hsync, dlg.vref)
+                self.lastStdMonitor = (dlg.vendor, dlg.model, dlg.hsync, dlg.vref)
             else:
-                self.lastDBMonitor = (dlg.model, dlg.hsync, dlg.vref)
+                self.lastDBMonitor = (dlg.vendor, dlg.model, dlg.hsync, dlg.vref)
 
             self.vendor = dlg.vendor
+            self.okButton.setEnabled(True)
 
     def writeMonitorInfo(self, model, hsync, vref):
         self.monitorName.setText(model)

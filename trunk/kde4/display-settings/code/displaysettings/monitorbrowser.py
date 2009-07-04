@@ -41,14 +41,11 @@ class MonitorBrowser(QtGui.QDialog, Ui_MonitorBrowser):
             self.vendorsLabel.setText(kdecore.i18n("Type:"))
             self.modelsLabel.setText(kdecore.i18n("Monitors:"))
 
-            crtText = kdecore.i18n("CRT Monitor")
-            lcdText = kdecore.i18n("LCD Monitor")
-
             for mtype, monitors in generics.items():
                 if "CRT" in mtype:
-                    mtype = crtText
+                    mtype = "CRT"
                 elif "LCD" in mtype:
-                    mtype = lcdText
+                    mtype = "LCD"
 
                 ListItem(mtype, monitors, self.vendorList)
 
@@ -65,7 +62,7 @@ class MonitorBrowser(QtGui.QDialog, Ui_MonitorBrowser):
             ListItem(monitor["model"], monitor, self.modelList)
 
         self.modelList.setCurrentRow(0)
-        self.vendor = current.text()
+        self.vendor = str(current.text())
 
     def accept(self):
         item = self.modelList.currentItem()
