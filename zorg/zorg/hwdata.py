@@ -107,7 +107,6 @@ def getAvailableDriverNames():
 def getMonitorInfos():
     genericList = {}
     vendorList = {}
-    vendor = []
 
     for line in loadFile(consts.monitors_file):
         monitor = line.split(";")
@@ -149,7 +148,5 @@ def getMonitorInfos():
                                                 "vref":     monitor[4],
                                                 "is_dpms":  monitor[5]
                                                }])
-    vendor.append(genericList)
-    vendor.append(vendorList)
 
-    return vendor
+    return genericList, vendorList
