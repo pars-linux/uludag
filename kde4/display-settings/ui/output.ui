@@ -35,7 +35,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="freqBox">
          <property name="title">
           <string>Specify Ranges</string>
          </property>
@@ -53,7 +53,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QComboBox" name="comboBox">
+             <widget class="QComboBox" name="sourceBox">
               <item>
                <property name="text">
                 <string>Standard monitors</string>
@@ -81,10 +81,10 @@
             <item row="1" column="1">
              <layout class="QHBoxLayout" name="horizontalLayout_2">
               <item>
-               <widget class="QLineEdit" name="lineEdit"/>
+               <widget class="QLineEdit" name="monitorName"/>
               </item>
               <item>
-               <widget class="QToolButton" name="toolButton">
+               <widget class="QToolButton" name="browseMonitorsButton">
                 <property name="text">
                  <string>...</string>
                 </property>
@@ -102,7 +102,7 @@
             <item row="2" column="1">
              <layout class="QHBoxLayout" name="horizontalLayout_3">
               <item>
-               <widget class="QDoubleSpinBox" name="doubleSpinBox">
+               <widget class="QDoubleSpinBox" name="hsyncMin">
                 <property name="suffix">
                  <string/>
                 </property>
@@ -119,7 +119,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="doubleSpinBox_3"/>
+               <widget class="QDoubleSpinBox" name="hsyncMax"/>
               </item>
               <item>
                <widget class="QLabel" name="label_7">
@@ -140,7 +140,7 @@
             <item row="3" column="1">
              <layout class="QHBoxLayout" name="horizontalLayout_4">
               <item>
-               <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+               <widget class="QDoubleSpinBox" name="vrefMin"/>
               </item>
               <item>
                <widget class="QLabel" name="label_6">
@@ -153,7 +153,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="doubleSpinBox_4"/>
+               <widget class="QDoubleSpinBox" name="vrefMax"/>
               </item>
               <item>
                <widget class="QLabel" name="label_9">
@@ -203,7 +203,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_2">
+        <widget class="QGroupBox" name="dimensionsBox">
          <property name="title">
           <string>Specify Display Size</string>
          </property>
@@ -226,12 +226,12 @@
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
             <property name="buddy">
-             <cstring>comboBox_5</cstring>
+             <cstring>sizeList</cstring>
             </property>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QComboBox" name="comboBox_5">
+           <widget class="QComboBox" name="sizeList">
             <property name="sizePolicy">
              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -259,12 +259,12 @@
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
             <property name="buddy">
-             <cstring>spinBox</cstring>
+             <cstring>monitorWidth</cstring>
             </property>
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QSpinBox" name="spinBox">
+           <widget class="QSpinBox" name="monitorWidth">
             <property name="suffix">
              <string> mm</string>
             </property>
@@ -279,12 +279,12 @@
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
             <property name="buddy">
-             <cstring>spinBox_2</cstring>
+             <cstring>monitorHeight</cstring>
             </property>
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QSpinBox" name="spinBox_2">
+           <widget class="QSpinBox" name="monitorHeight">
             <property name="suffix">
              <string> mm</string>
             </property>
@@ -313,7 +313,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="ignoreOutputCheck">
        <property name="text">
         <string>Ignore this output</string>
        </property>
@@ -368,7 +368,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox</sender>
+   <sender>ignoreOutputCheck</sender>
    <signal>toggled(bool)</signal>
    <receiver>tabWidget</receiver>
    <slot>setDisabled(bool)</slot>
