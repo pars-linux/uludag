@@ -299,7 +299,11 @@ class MainManager(QtGui.QWidget):
 
     def fillProfileList(self, ignore = None):
         # Clear the entire list
-        self.ui.profileList.clear()
+        # FIXME Sip makes crash in here sometimes, I know this is not the right way of it.
+        # self.ui.profileList.clear()
+        for i in range(self.ui.profileList.count()):
+            it = self.ui.profileList.takeItem(0)
+            it.setHidden(True)
         self.widgets = {}
 
         # Fill the list with current connections
@@ -600,6 +604,7 @@ class MainManager(QtGui.QWidget):
 
     def handler(self, package, signal, args):
         args = map(lambda x: unicode(x), list(args))
+        # print "COMAR: ", signal
         if signal == "stateChanged":
             key = "%s-%s" % (package, args[0])
             if key in self.widgets:
