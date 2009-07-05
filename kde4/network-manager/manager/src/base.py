@@ -320,7 +320,6 @@ class MainManager(QtGui.QWidget):
                 self.widgets[key] = ConnectionItemWidget(package, connection, info, self, item)
                 if info["device_id"] not in self.probedDevices:
                     state = "unplugged"
-                    self.widgets[key].setEnabled(False)
                 self.widgets[key].updateData(state)
                 self.ui.profileList.setItemWidget(item, self.widgets[key])
                 del item
