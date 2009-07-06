@@ -237,7 +237,8 @@ class KernelModule:
             module = module[:-3]
 
         for line in self.allModules:
-            if line.endswith("/%s.ko" % module):
+            # FIXME: I still don't trust the _ versus - case, try to be sure of it in kernel
+            if line.endswith("/%s.ko" % module) or line.endswith("/%s.ko" % module.replace("_", "-") or line.endswith("/%s.ko" % module.replace("-", "_"):
                 self.modulesList.append(line)
                 return
 
