@@ -22,7 +22,7 @@ from PyKDE4.kdecore import i18n
 # Application Stuff
 from networkmanager.ui_main import Ui_mainManager
 from networkmanager.ui_item import Ui_ConnectionItemWidget
-from networkmnager.ui_wifi import Ui_WifiItemWidget
+from networkmanager.ui_wifi import Ui_WifiItemWidget
 from networkmanager.ui_nameserver import Ui_nameServer
 from networkmanager.ui_security import Ui_DialogSecurity
 from networkmanager.ui_securityitem import Ui_SecurityWidget
