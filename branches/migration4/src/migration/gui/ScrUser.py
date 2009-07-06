@@ -24,22 +24,40 @@ from migration.utils import partition
 from migration.utils import info
 import migration.gui.context as ctx
 
-class UserListItemWidget(QtGui.QWidget, Ui_usersWidget):
+class UserItemWidget(QtGui.QWidget, Ui_usersItemWidget):
 
-    def __init__(self, name, partition, icon, parent):
+    def __init__(self, parent, name, partition, icon):
         QtGui.QWidget.__init__(self, parent)
 
         self.setupUi(self)
 
         self.userName.setText( name )
-        self.part.setText( partition )
-        self.partIcon.setPixmap(icon.pixmap(32, 32))
-        
+        self.partition.setText( partition )
+        self.labelIcon.setPixmap(icon.pixmap(32, 32))
+        self.data = None
+
+        self.connect(self.checkState, SIGNAL("stateChanged(int)"), self.slotUserCheck)
+
+    def slotUserCheck(self):
+        print "ctx.user=%s" % self.getData()[2]
+        ctx.user = self.getData()
+
+    def setData(self, data):
+        self.data = data
+
+    def getData(self):
+        return self.data
+
+class UserItemList(QtGui.QListWidgetItem):
+    def __init__(self, parent, widget):
+        QtGui.QListWidgetItem.__init__(self, parent)
+        self.widget = widget
+        self.setSizeHint(QSize(300,48))
 
 class Widget(QtGui.QWidget, ScreenWidget):
     screenSettings = {}
     screenSettings["hasChanged"] = False
-    
+
     title = i18n("Selecting User")
     desc = i18n("User Profiles")
 
@@ -47,39 +65,42 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_usersWidget()
         self.ui.setupUi(self)
-        
-        item = QtGui.QListWidgetItem(self.ui.listUsers)    
-        self.addUsers(item)
-        item.setSizeHint(QSize(38,110))
-        
-        self.connect(self.ui.listUsers, SIGNAL("itemSelectionChanged()"), self.setUser)
-    
 
-    def addUsers(self, item):
+        self.addUsers()
+
+        self.connect(self.ui.listUsers, SIGNAL("itemSelectionChanged()"), self.setUser)
+
+
+    def addUsers(self):
         "Searches old users and adds them to UserListViewWidget"
         self.users = partition.allUsers()
+        print "len(users)=%d" % len(self.users)
         icon = KIcon("tux")
         for user in self.users:
             part, parttype, username, userdir = user
             if parttype == "Windows XP":
-                widget = UserListItemWidget(unicode(username), unicode(part), icon, self.ui.listUsers)
+                widget = UserItemWidget(self.ui.listUsers, unicode(username), unicode(part), icon)
             elif parttype =="Windows Vista":
-                widget = UserListItemWidget(unicode(username), unicode(part), icon, self.ui.listUsers)
-            
-            self.ui.listUsers.setItemWidget(item, widget)
-            item.setStatusTip(user)
-            
+                widget = UserItemWidget(self.ui.listUsers, unicode(username), unicode(part), icon)
+
+            widget.setData(user)
+
+            widgetItem = UserItemList(self.ui.listUsers, widget)
+            self.ui.listUsers.setItemWidget(widgetItem, widget)
+
+
     def setUser(self):
         self.screenSettings["selectedUser"] = self.ui.listUsers.currentItem().statusTip()
         self.screenSettings["hasChanged"] = True
-    
+
     def shown(self):
         pass
 
     def execute(self):
-        user = self.ui.listUsers.currentItem().statusTip()
+        user = ctx.user
         part, ostype, username, userdir = user
         sources = {"Partition":part, "OS Type":ostype, "User Name":username, "Home Path":userdir}
-        ctx.sources = info.userInfo(self.sources)
+        ctx.sources = info.userInfo(sources)
         ctx.destinations = info.localInfo()
-    
+        return True
+
