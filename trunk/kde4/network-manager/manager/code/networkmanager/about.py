@@ -16,7 +16,7 @@ from PyKDE4.kdecore import *
 
 # Application Data
 appName     = "network-manager"
-catalog     = ""
+modName     = "networkmanager"
 programName = ki18n("Network Manager")
 version     = "2.9.7"
 description = ki18n("Network Manager")
@@ -25,6 +25,7 @@ copyright   = ki18n("(c) 2009 TUBITAK/UEKAE")
 text        = ki18n(None)
 homePage    = "http://www.pardus.org.tr/eng/projects"
 bugEmail    = "bugs@pardus.org.tr"
+catalog     = appName
 aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
 # Authors

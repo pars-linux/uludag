@@ -59,9 +59,9 @@ class Build(build):
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
             os.system("/usr/kde/4/bin/pykde4uic -o build/%s/ui_%s.py ui/%s" % (about.modName, filename.split(".")[0], filename))
-        #print "Generating RCs..."
-        #for filename in glob.glob1("data", "*.qrc"):
-        #    os.system("/usr/bin/pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
+        print "Generating RCs..."
+        for filename in glob.glob1("icons", "*.qrc"):
+            os.system("/usr/bin/pyrcc4 icons/%s -o build/%s/%s_rc.py" % (filename, about.modName, filename.split(".")[0]))
 
 class Install(install):
     def run(self):

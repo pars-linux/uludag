@@ -26,7 +26,7 @@ from PyKDE4.kdecore import i18n
 
 # Application Stuff
 from networkmanager.backend import NetworkIface
-from network.ui_main import Ui_mainManager
+from networkmanager.ui_main import Ui_mainManager
 from networkmanager.widgets import ConnectionItemWidget, WifiPopup, NameServerDialog, SecurityDialog
 
 # Animation Definitions
