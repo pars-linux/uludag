@@ -36,12 +36,19 @@ class PolicyItem(QtGui.QTreeWidgetItem):
         self.action_id = action_id
         self.type = 0
         self.setText(0, text)
+        self.setIcon(0, kdeui.KIcon("security-medium"))
 
     def getAction(self):
         return self.action_id
 
     def setType(self, type_):
         self.type = type_
+        if type_ == -1:
+            self.setIcon(0, kdeui.KIcon("security-low"))
+        elif type_ == 0:
+            self.setIcon(0, kdeui.KIcon("security-medium"))
+        elif type_ == 1:
+            self.setIcon(0, kdeui.KIcon("security-high"))
 
     def getType(self):
         return self.type
