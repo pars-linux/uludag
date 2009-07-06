@@ -25,9 +25,9 @@ from PyKDE4.kdeui import KMessageBox
 from PyKDE4.kdecore import i18n
 
 # Application Stuff
-from backend import NetworkIface
-from ui import Ui_mainManager
-from widgets import ConnectionItemWidget, WifiPopup, NameServerDialog, SecurityDialog
+from networkmanager.backend import NetworkIface
+from network.ui_main import Ui_mainManager
+from networkmanager.widgets import ConnectionItemWidget, WifiPopup, NameServerDialog, SecurityDialog
 
 # Animation Definitions
 SHOW, HIDE     = range(2)

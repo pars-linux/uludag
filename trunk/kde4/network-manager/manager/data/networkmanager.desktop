@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Network Manager
+Name[tr]=Ağ Yöneticisi
+GenericName=Network Manager
+GenericName[tr]=Ağ Yöneticisi
+Comment=An application for managing network connections.
+Comment[tr]=Ağ bağlantılarını yönetmenizi sağlayan bir uygulama.
+Exec=network-manager
+Icon=applications-internet
+Type=Application
+Categories=Qt;KDE;System;

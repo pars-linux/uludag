@@ -24,16 +24,16 @@ from PyKDE4.kdeui import KUniqueApplication
 from PyKDE4.kdecore import KCmdLineArgs
 
 def CreatePlugin(widget_parent, parent, component_data):
-    from kcmodule import NetworkManager
+    from networkmanager.kcmodule import NetworkManager
     return NetworkManager(component_data, parent)
 
 if __name__ == '__main__':
 
     # Network Manager
-    from standalone import NetworkManager
+    from networkmanager.standalone import NetworkManager
 
     # Application Stuff
-    from about import aboutData
+    from networkmanager.about import aboutData
 
     # Set Command-line arguments
     KCmdLineArgs.init(sys.argv, aboutData)

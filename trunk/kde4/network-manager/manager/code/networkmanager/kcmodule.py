@@ -19,7 +19,7 @@ from PyKDE4.kdecore import KGlobal
 import dbus
 
 # Network Manager
-from base import MainManager
+from networkmanager.base import MainManager
 
 class NetworkManager(KCModule):
     def __init__(self, component_data, parent):

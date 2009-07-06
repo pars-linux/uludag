@@ -20,12 +20,12 @@ from PyKDE4.kdeui import KIcon, KUrlLabel, KMessageBox
 from PyKDE4.kdecore import i18n
 
 # Application Stuff
-from ui import Ui_mainManager
-from uiitem import Ui_ConnectionItemWidget
-from uiwifiitem import Ui_WifiItemWidget
-from uinameserver import Ui_nameServer
-from uisecurity import Ui_DialogSecurity
-from uisecurityitem import Ui_SecurityWidget
+from networkmanager.ui_main import Ui_mainManager
+from networkmanager.ui_item import Ui_ConnectionItemWidget
+from networkmnager.ui_wifi import Ui_WifiItemWidget
+from networkmanager.ui_nameserver import Ui_nameServer
+from networkmanager.ui_security import Ui_DialogSecurity
+from networkmanager.ui_securityitem import Ui_SecurityWidget
 
 iconForPackage = {
     "net_tools": "network-wired",

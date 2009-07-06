@@ -16,7 +16,7 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import KGlobal
 
 # Network Manager
-from base import MainManager
+from networkmanager.base import MainManager
 
 class NetworkManager(KMainWindow):
     def __init__ (self, app):
