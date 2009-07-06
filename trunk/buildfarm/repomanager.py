@@ -95,7 +95,7 @@ class RepositoryManager:
         if not check():
             # No source repository
             print "You should add a source repository for reverse dependency checking. Skipping.."
-            return (breaksABI, revBuildDeps)
+            return (breaksABI, list(revBuildDeps))
 
         # Create a source db instance
         sdb = SourceDB()
