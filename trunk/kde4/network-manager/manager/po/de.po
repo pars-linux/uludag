@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 20:03+0300\n"
+"POT-Creation-Date: 2009-07-06 09:32+0300\n"
 "PO-Revision-Date: 2009-06-30 11:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: German <es@li.org>\n"
@@ -18,211 +18,210 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/about.py:20
-#: .tmp/about.py:22
-msgid "Network Manager"
-msgstr "Netzwerk-Manager"
-
-#: .tmp/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/about.py:31
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/about.py:31
-msgid "Current Maintainer"
-msgstr "Aktueller Betreuer"
-
-#: .tmp/about.py:32
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/about.py:32
-msgid "Developer"
-msgstr "Entwickler"
-
-#: .tmp/base.py:172
-msgid "Available Profiles"
-msgstr "Vorhandene Profile"
-
-#: .tmp/base.py:199
-msgid "All Profiles"
-msgstr "Alle Profile"
-
-#: .tmp/base.py:201
-#: .tmp/base.py:203
-msgid "No Device Found"
-msgstr "Kein Gerät gefunden"
-
-#: .tmp/base.py:375
-msgid "No Authentication"
-msgstr "Ohne Authentifizierung"
-
-#: .tmp/base.py:587
-msgid "Do you really want to remove profile %1?"
-msgstr "Wollen Sie wirklich das Profil %1 löschen ?"
-
-#: .tmp/uiitem.py:103
-msgid "Edit connection"
-msgstr "Verbindung bearbeiten"
-
-#: .tmp/uiitem.py:104
-msgid "Delete connection"
-msgstr "Verbindung löschen"
-
-#: .tmp/uiitem.py:105
-#: .tmp/uiwifiitem.py:53
-msgid "Signal Strength"
-msgstr "Signalstärke"
-
-#: .tmp/uiitem.py:106
-msgid "  %p %"
-msgstr "  %p %"
-
-#: .tmp/uinameserver.py:42
-#: .tmp/ui.py:338
-msgid "Nameserver Settings"
-msgstr "Nameserver Einstellungen"
-
-#: .tmp/uinameserver.py:43
-msgid "Machine Name"
-msgstr "Computername"
-
-#: .tmp/uinameserver.py:44
-#: .tmp/ui.py:352
-msgid "Name Servers"
-msgstr "Name Server"
-
-#: .tmp/ui.py:336
-msgid "Form"
-msgstr "Form"
-
-#: .tmp/ui.py:337
-msgid "Create Profile"
-msgstr "Neues Profil"
-
-#: .tmp/ui.py:339
-#: .tmp/widgets.py:177
-msgid "Scanning..."
-msgstr "Suche..."
-
-#: .tmp/ui.py:340
-#: .tmp/widgets.py:148
+#: .tmp/networkmanager/widgets.py:148 .tmp/ui_main.py:340
 msgid "Refresh"
 msgstr "Neu laden"
 
-#: .tmp/ui.py:341
+#: .tmp/networkmanager/widgets.py:177 .tmp/ui_main.py:339
+msgid "Scanning..."
+msgstr "Suche..."
+
+#: .tmp/networkmanager/widgets.py:230
+msgid "Disconnected"
+msgstr "Nicht verbunden"
+
+#: .tmp/networkmanager/widgets.py:234
+#, python-format
+msgid "Connected: %s"
+msgstr "Verbunden: %s"
+
+#: .tmp/networkmanager/widgets.py:238
+msgid "Connecting"
+msgstr "Verbindungsaufbau"
+
+#: .tmp/networkmanager/widgets.py:244
+msgid "Cable or device is unplugged."
+msgstr "Kabel oder Gerät nicht angeschlossen."
+
+#: .tmp/networkmanager/widgets.py:255
+msgid "Access denied."
+msgstr ""
+
+#: .tmp/networkmanager/base.py:174
+msgid "Available Profiles"
+msgstr "Vorhandene Profile"
+
+#: .tmp/networkmanager/base.py:200
+msgid "All Profiles"
+msgstr "Alle Profile"
+
+#: .tmp/networkmanager/base.py:202 .tmp/networkmanager/base.py:204
+msgid "No Device Found"
+msgstr "Kein Gerät gefunden"
+
+#: .tmp/networkmanager/base.py:380
+msgid "No Authentication"
+msgstr "Ohne Authentifizierung"
+
+#: .tmp/networkmanager/base.py:592
+msgid "Do you really want to remove profile %1?"
+msgstr "Wollen Sie wirklich das Profil %1 löschen ?"
+
+#: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
+msgid "Network Manager"
+msgstr "Netzwerk-Manager"
+
+#: .tmp/networkmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/networkmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/networkmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Aktueller Betreuer"
+
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
+
+#: .tmp/networkmanager/about.py:33
+msgid "Developer"
+msgstr "Entwickler"
+
+#: .tmp/ui_item.py:103
+#, fuzzy
+msgid "Set connection state."
+msgstr "Verbindung löschen"
+
+#: .tmp/ui_item.py:104
+msgid "Edit connection"
+msgstr "Verbindung bearbeiten"
+
+#: .tmp/ui_item.py:105
+msgid "Delete connection"
+msgstr "Verbindung löschen"
+
+#: .tmp/ui_item.py:106 .tmp/ui_wifi.py:53
+msgid "Signal Strength"
+msgstr "Signalstärke"
+
+#: .tmp/ui_item.py:107
+msgid "  %p %"
+msgstr "  %p %"
+
+#: .tmp/ui_security.py:35
+msgid "Security Settings"
+msgstr "Sicherheit"
+
+#: .tmp/ui_main.py:336
+msgid "Form"
+msgstr "Form"
+
+#: .tmp/ui_main.py:337
+msgid "Create Profile"
+msgstr "Neues Profil"
+
+#: .tmp/ui_main.py:338 .tmp/ui_nameserver.py:42
+msgid "Nameserver Settings"
+msgstr "Nameserver Einstellungen"
+
+#: .tmp/ui_main.py:341
 msgid "Profile Name :"
 msgstr "Profilname :"
 
-#: .tmp/ui.py:342
+#: .tmp/ui_main.py:342
 msgid "Device : "
 msgstr "Gerät : "
 
-#: .tmp/ui.py:343
-#: .tmp/ui.py:357
+#: .tmp/ui_main.py:343 .tmp/ui_main.py:357
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: .tmp/ui.py:344
+#: .tmp/ui_main.py:344
 msgid "Network Settings"
 msgstr "Netzwerk Einstellungen"
 
-#: .tmp/ui.py:345
+#: .tmp/ui_main.py:345
 msgid "Use DHCP"
 msgstr "Automatisch beziehen (DHCP)"
 
-#: .tmp/ui.py:346
+#: .tmp/ui_main.py:346
 msgid "Use Manual Settings"
 msgstr "Manuell"
 
-#: .tmp/ui.py:347
+#: .tmp/ui_main.py:347
 msgid "Address :"
 msgstr "IP-Adresse :"
 
-#: .tmp/ui.py:348
-#: .tmp/ui.py:351
+#: .tmp/ui_main.py:348 .tmp/ui_main.py:351
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
-#: .tmp/ui.py:349
+#: .tmp/ui_main.py:349
 msgid "Network Mask :"
 msgstr "Netzmaske :"
 
-#: .tmp/ui.py:350
+#: .tmp/ui_main.py:350
 msgid "Default Gateway :"
 msgstr "Gateway :"
 
-#: .tmp/ui.py:353
+#: .tmp/ui_main.py:352 .tmp/ui_nameserver.py:44
+msgid "Name Servers"
+msgstr "Name Server"
+
+#: .tmp/ui_main.py:353
 msgid "Default"
 msgstr "Standard"
 
-#: .tmp/ui.py:354
+#: .tmp/ui_main.py:354
 msgid "Automatic"
 msgstr "Automatisch"
 
-#: .tmp/ui.py:355
+#: .tmp/ui_main.py:355
 msgid "Custom :"
 msgstr "Benutzerdefiniert :"
 
-#: .tmp/ui.py:356
+#: .tmp/ui_main.py:356
 msgid "Apply"
 msgstr "Übernehmen"
 
-#: .tmp/ui.py:358
+#: .tmp/ui_main.py:358
 msgid "Esc"
 msgstr "Esc"
 
 # Zweifel - wie wäre es am besten hier ??
 # Mein Vorschlag: Fernzugriff (Stefan)
-#: .tmp/ui.py:359
+#: .tmp/ui_main.py:359
 msgid "Remote"
 msgstr "Fernzugriff"
 
-#: .tmp/ui.py:360
+#: .tmp/ui_main.py:360
 msgid "Network Name (ESSID) :"
 msgstr "Netzwerkname (ESSID) :"
 
-#: .tmp/ui.py:361
+#: .tmp/ui_main.py:361
 msgid "Scan"
 msgstr "Suchen"
 
-#: .tmp/ui.py:362
+#: .tmp/ui_main.py:362
 msgid "Security Type :"
 msgstr "Sicherheits-Typ :"
 
-#: .tmp/ui.py:363
+#: .tmp/ui_main.py:363
 msgid "Settings"
 msgstr "Konfiguration"
 
-#: .tmp/ui.py:364
+#: .tmp/ui_main.py:364
 msgid "Key :"
 msgstr "Schlüssel :"
 
-#: .tmp/ui.py:365
+#: .tmp/ui_main.py:365
 msgid "Hide Password"
 msgstr "Passwort unsichtbar"
 
-#: .tmp/uisecurity.py:35
-msgid "Security Settings"
-msgstr "Sicherheit"
-
-#: .tmp/widgets.py:230
-msgid "Disconnected"
-msgstr "Nicht verbunden"
-
-#: .tmp/widgets.py:234
-#, python-format
-msgid "Connected: %s"
-msgstr "Verbunden: %s"
-
-#: .tmp/widgets.py:238
-msgid "Connecting"
-msgstr "Verbindungsaufbau"
-
-#: .tmp/widgets.py:244
-msgid "Cable or device is unplugged."
-msgstr "Kabel oder Gerät nicht angeschlossen."
-
+#: .tmp/ui_nameserver.py:43
+msgid "Machine Name"
+msgstr "Computername"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 20:03+0300\n"
+"POT-Creation-Date: 2009-07-06 09:32+0300\n"
 "PO-Revision-Date: 2009-07-04 16:25+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -16,200 +16,208 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/about.py:20 .tmp/about.py:22
-msgid "Network Manager"
-msgstr "Gestore di rete"
-
-#: .tmp/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/about.py:31
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/about.py:31
-msgid "Current Maintainer"
-msgstr "Maintainer corrente"
-
-#: .tmp/about.py:32
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/about.py:32
-msgid "Developer"
-msgstr "Sviluppatore"
-
-#: .tmp/base.py:172
-msgid "Available Profiles"
-msgstr "Profili disponibili"
-
-#: .tmp/base.py:199
-msgid "All Profiles"
-msgstr "Tutti i profili"
-
-#: .tmp/base.py:201 .tmp/base.py:203
-msgid "No Device Found"
-msgstr "Nessuna periferica trovata"
-
-#: .tmp/base.py:375
-msgid "No Authentication"
-msgstr "Nessuna autenticazione"
-
-#: .tmp/base.py:587
-msgid "Do you really want to remove profile %1?"
-msgstr "Vuoi rimuovere il profilo %1?"
-
-#: .tmp/uiitem.py:103
-msgid "Edit connection"
-msgstr "Modifica connessione"
-
-#: .tmp/uiitem.py:104
-msgid "Delete connection"
-msgstr "Elimina connessione"
-
-#: .tmp/uiitem.py:105 .tmp/uiwifiitem.py:53
-msgid "Signal Strength"
-msgstr "Forza segnale"
-
-#: .tmp/uiitem.py:106
-msgid "  %p %"
-msgstr "  %p %"
-
-#: .tmp/uinameserver.py:42 .tmp/ui.py:338
-msgid "Nameserver Settings"
-msgstr ""
-
-#: .tmp/uinameserver.py:43
-msgid "Machine Name"
-msgstr "Nome macchina"
-
-#: .tmp/uinameserver.py:44 .tmp/ui.py:352
-msgid "Name Servers"
-msgstr ""
-
-#: .tmp/ui.py:336
-msgid "Form"
-msgstr ""
-
-#: .tmp/ui.py:337
-msgid "Create Profile"
-msgstr "Crea profilo"
-
-#: .tmp/ui.py:339 .tmp/widgets.py:177
-msgid "Scanning..."
-msgstr "Scansione in corso..."
-
-#: .tmp/ui.py:340 .tmp/widgets.py:148
+#: .tmp/networkmanager/widgets.py:148 .tmp/ui_main.py:340
 msgid "Refresh"
 msgstr "Aggiorna"
 
-#: .tmp/ui.py:341
-msgid "Profile Name :"
-msgstr "Nome Profilo:"
+#: .tmp/networkmanager/widgets.py:177 .tmp/ui_main.py:339
+msgid "Scanning..."
+msgstr "Scansione in corso..."
 
-#: .tmp/ui.py:342
-msgid "Device : "
-msgstr "Periferica:"
-
-#: .tmp/ui.py:343 .tmp/ui.py:357
-msgid "Cancel"
-msgstr "Annulla"
-
-#: .tmp/ui.py:344
-msgid "Network Settings"
-msgstr "Impostazioni di rete"
-
-#: .tmp/ui.py:345
-msgid "Use DHCP"
-msgstr "Usa DHCP"
-
-#: .tmp/ui.py:346
-msgid "Use Manual Settings"
-msgstr "Usa impostazioni manuali"
-
-#: .tmp/ui.py:347
-msgid "Address :"
-msgstr "Indirizzo:"
-
-#: .tmp/ui.py:348 .tmp/ui.py:351
-msgid "Custom"
-msgstr ""
-
-#: .tmp/ui.py:349
-msgid "Network Mask :"
-msgstr "Maschera di rete:"
-
-#: .tmp/ui.py:350
-msgid "Default Gateway :"
-msgstr "Gateway predefinito:"
-
-#: .tmp/ui.py:353
-msgid "Default"
-msgstr "Predefinito"
-
-#: .tmp/ui.py:354
-msgid "Automatic"
-msgstr "Automatico"
-
-#: .tmp/ui.py:355
-msgid "Custom :"
-msgstr ""
-
-#: .tmp/ui.py:356
-msgid "Apply"
-msgstr "Applica"
-
-#: .tmp/ui.py:358
-msgid "Esc"
-msgstr "Esc"
-
-#: .tmp/ui.py:359
-msgid "Remote"
-msgstr ""
-
-#: .tmp/ui.py:360
-msgid "Network Name (ESSID) :"
-msgstr "Nome rete (ESSID):"
-
-#: .tmp/ui.py:361
-msgid "Scan"
-msgstr "Scansiona"
-
-#: .tmp/ui.py:362
-msgid "Security Type :"
-msgstr "Misure di sicurezza:"
-
-#: .tmp/ui.py:363
-msgid "Settings"
-msgstr "Impostazioni"
-
-#: .tmp/ui.py:364
-msgid "Key :"
-msgstr "Chiave:"
-
-#: .tmp/ui.py:365
-msgid "Hide Password"
-msgstr "Nascondi password"
-
-#: .tmp/uisecurity.py:35
-msgid "Security Settings"
-msgstr "Impostazioni di sicurezza"
-
-#: .tmp/widgets.py:230
+#: .tmp/networkmanager/widgets.py:230
 msgid "Disconnected"
 msgstr "Disconnesso"
 
-#: .tmp/widgets.py:234
+#: .tmp/networkmanager/widgets.py:234
 #, python-format
 msgid "Connected: %s"
 msgstr "Connesso: %s"
 
-#: .tmp/widgets.py:238
+#: .tmp/networkmanager/widgets.py:238
 msgid "Connecting"
 msgstr "Connessione in corso..."
 
-#: .tmp/widgets.py:244
+#: .tmp/networkmanager/widgets.py:244
 msgid "Cable or device is unplugged."
 msgstr "Il cavo di rete o la periferica è scollegata."
 
+#: .tmp/networkmanager/widgets.py:255
+msgid "Access denied."
+msgstr ""
+
+#: .tmp/networkmanager/base.py:174
+msgid "Available Profiles"
+msgstr "Profili disponibili"
+
+#: .tmp/networkmanager/base.py:200
+msgid "All Profiles"
+msgstr "Tutti i profili"
+
+#: .tmp/networkmanager/base.py:202 .tmp/networkmanager/base.py:204
+msgid "No Device Found"
+msgstr "Nessuna periferica trovata"
+
+#: .tmp/networkmanager/base.py:380
+msgid "No Authentication"
+msgstr "Nessuna autenticazione"
+
+#: .tmp/networkmanager/base.py:592
+msgid "Do you really want to remove profile %1?"
+msgstr "Vuoi rimuovere il profilo %1?"
+
+#: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
+msgid "Network Manager"
+msgstr "Gestore di rete"
+
+#: .tmp/networkmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/networkmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/networkmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Maintainer corrente"
+
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
+
+#: .tmp/networkmanager/about.py:33
+msgid "Developer"
+msgstr "Sviluppatore"
+
+#: .tmp/ui_item.py:103
+#, fuzzy
+msgid "Set connection state."
+msgstr "Elimina connessione"
+
+#: .tmp/ui_item.py:104
+msgid "Edit connection"
+msgstr "Modifica connessione"
+
+#: .tmp/ui_item.py:105
+msgid "Delete connection"
+msgstr "Elimina connessione"
+
+#: .tmp/ui_item.py:106 .tmp/ui_wifi.py:53
+msgid "Signal Strength"
+msgstr "Forza segnale"
+
+#: .tmp/ui_item.py:107
+msgid "  %p %"
+msgstr "  %p %"
+
+#: .tmp/ui_security.py:35
+msgid "Security Settings"
+msgstr "Impostazioni di sicurezza"
+
+#: .tmp/ui_main.py:336
+msgid "Form"
+msgstr ""
+
+#: .tmp/ui_main.py:337
+msgid "Create Profile"
+msgstr "Crea profilo"
+
+#: .tmp/ui_main.py:338 .tmp/ui_nameserver.py:42
+msgid "Nameserver Settings"
+msgstr ""
+
+#: .tmp/ui_main.py:341
+msgid "Profile Name :"
+msgstr "Nome Profilo:"
+
+#: .tmp/ui_main.py:342
+msgid "Device : "
+msgstr "Periferica:"
+
+#: .tmp/ui_main.py:343 .tmp/ui_main.py:357
+msgid "Cancel"
+msgstr "Annulla"
+
+#: .tmp/ui_main.py:344
+msgid "Network Settings"
+msgstr "Impostazioni di rete"
+
+#: .tmp/ui_main.py:345
+msgid "Use DHCP"
+msgstr "Usa DHCP"
+
+#: .tmp/ui_main.py:346
+msgid "Use Manual Settings"
+msgstr "Usa impostazioni manuali"
+
+#: .tmp/ui_main.py:347
+msgid "Address :"
+msgstr "Indirizzo:"
+
+#: .tmp/ui_main.py:348 .tmp/ui_main.py:351
+msgid "Custom"
+msgstr ""
+
+#: .tmp/ui_main.py:349
+msgid "Network Mask :"
+msgstr "Maschera di rete:"
+
+#: .tmp/ui_main.py:350
+msgid "Default Gateway :"
+msgstr "Gateway predefinito:"
+
+#: .tmp/ui_main.py:352 .tmp/ui_nameserver.py:44
+msgid "Name Servers"
+msgstr ""
+
+#: .tmp/ui_main.py:353
+msgid "Default"
+msgstr "Predefinito"
+
+#: .tmp/ui_main.py:354
+msgid "Automatic"
+msgstr "Automatico"
+
+#: .tmp/ui_main.py:355
+msgid "Custom :"
+msgstr ""
+
+#: .tmp/ui_main.py:356
+msgid "Apply"
+msgstr "Applica"
+
+#: .tmp/ui_main.py:358
+msgid "Esc"
+msgstr "Esc"
+
+#: .tmp/ui_main.py:359
+msgid "Remote"
+msgstr ""
+
+#: .tmp/ui_main.py:360
+msgid "Network Name (ESSID) :"
+msgstr "Nome rete (ESSID):"
+
+#: .tmp/ui_main.py:361
+msgid "Scan"
+msgstr "Scansiona"
+
+#: .tmp/ui_main.py:362
+msgid "Security Type :"
+msgstr "Misure di sicurezza:"
+
+#: .tmp/ui_main.py:363
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: .tmp/ui_main.py:364
+msgid "Key :"
+msgstr "Chiave:"
+
+#: .tmp/ui_main.py:365
+msgid "Hide Password"
+msgstr "Nascondi password"
+
+#: .tmp/ui_nameserver.py:43
+msgid "Machine Name"
+msgstr "Nome macchina"

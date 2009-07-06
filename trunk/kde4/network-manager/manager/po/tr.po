@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 20:03+0300\n"
+"POT-Creation-Date: 2009-07-06 09:32+0300\n"
 "PO-Revision-Date: 2009-06-24 15:00+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -19,200 +19,207 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1;plural=0;\n"
 
-#: .tmp/about.py:20 .tmp/about.py:22
-msgid "Network Manager"
-msgstr "Ağ Yöneticisi"
-
-#: .tmp/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/about.py:31
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/about.py:31
-msgid "Current Maintainer"
-msgstr "Güncel Bakıcı"
-
-#: .tmp/about.py:32
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/about.py:32
-msgid "Developer"
-msgstr "Geliştirici"
-
-#: .tmp/base.py:172
-msgid "Available Profiles"
-msgstr "Kullanılabilir Profiller"
-
-#: .tmp/base.py:199
-msgid "All Profiles"
-msgstr "Tüm Profiller"
-
-#: .tmp/base.py:201 .tmp/base.py:203
-msgid "No Device Found"
-msgstr "Herhangi Bir Aygıt Bulunamadı"
-
-#: .tmp/base.py:375
-msgid "No Authentication"
-msgstr "Doğrulama Yok"
-
-#: .tmp/base.py:587
-msgid "Do you really want to remove profile %1?"
-msgstr "'%1' profili silinsin mi?"
-
-#: .tmp/uiitem.py:103
-msgid "Edit connection"
-msgstr "Bağlantı ayarlarını değiştir"
-
-#: .tmp/uiitem.py:104
-msgid "Delete connection"
-msgstr "Bağlantıyı sil"
-
-#: .tmp/uiitem.py:105 .tmp/uiwifiitem.py:53
-msgid "Signal Strength"
-msgstr "Sinyal Gücü"
-
-#: .tmp/uiitem.py:106
-msgid "  %p %"
-msgstr " % %p"
-
-#: .tmp/uinameserver.py:42 .tmp/ui.py:338
-msgid "Nameserver Settings"
-msgstr "İsim Sunucusu Ayarları"
-
-#: .tmp/uinameserver.py:43
-msgid "Machine Name"
-msgstr "Makine İsmi"
-
-#: .tmp/uinameserver.py:44 .tmp/ui.py:352
-msgid "Name Servers"
-msgstr "İsim Sunucuları"
-
-#: .tmp/ui.py:336
-msgid "Form"
-msgstr "Form"
-
-#: .tmp/ui.py:337
-msgid "Create Profile"
-msgstr "Profil Oluştur"
-
-#: .tmp/ui.py:339 .tmp/widgets.py:177
-msgid "Scanning..."
-msgstr "Tarıyor..."
-
-#: .tmp/ui.py:340 .tmp/widgets.py:148
+#: .tmp/networkmanager/widgets.py:148 .tmp/ui_main.py:340
 msgid "Refresh"
 msgstr "Tazele"
 
-#: .tmp/ui.py:341
-msgid "Profile Name :"
-msgstr "Profil İsmi :"
+#: .tmp/networkmanager/widgets.py:177 .tmp/ui_main.py:339
+msgid "Scanning..."
+msgstr "Tarıyor..."
 
-#: .tmp/ui.py:342
-msgid "Device : "
-msgstr "Aygıt : "
-
-#: .tmp/ui.py:343 .tmp/ui.py:357
-msgid "Cancel"
-msgstr "İptal"
-
-#: .tmp/ui.py:344
-msgid "Network Settings"
-msgstr "Ağ Ayarları"
-
-#: .tmp/ui.py:345
-msgid "Use DHCP"
-msgstr "DHCP Kullan"
-
-#: .tmp/ui.py:346
-msgid "Use Manual Settings"
-msgstr "Özel Ayarları Kullan"
-
-#: .tmp/ui.py:347
-msgid "Address :"
-msgstr "Adres :"
-
-#: .tmp/ui.py:348 .tmp/ui.py:351
-msgid "Custom"
-msgstr "Özel"
-
-#: .tmp/ui.py:349
-msgid "Network Mask :"
-msgstr "Ağ Maskesi :"
-
-#: .tmp/ui.py:350
-msgid "Default Gateway :"
-msgstr "Öntanımlı Ağ Geçidi :"
-
-#: .tmp/ui.py:353
-msgid "Default"
-msgstr "Öntanımlı"
-
-#: .tmp/ui.py:354
-msgid "Automatic"
-msgstr "Otomatik"
-
-#: .tmp/ui.py:355
-msgid "Custom :"
-msgstr "Özel :"
-
-#: .tmp/ui.py:356
-msgid "Apply"
-msgstr "Uygula"
-
-#: .tmp/ui.py:358
-msgid "Esc"
-msgstr "Esc"
-
-#: .tmp/ui.py:359
-msgid "Remote"
-msgstr "Uzak"
-
-#: .tmp/ui.py:360
-msgid "Network Name (ESSID) :"
-msgstr "Ağ İsmi (ESSID) :"
-
-#: .tmp/ui.py:361
-msgid "Scan"
-msgstr "Tara"
-
-#: .tmp/ui.py:362
-msgid "Security Type :"
-msgstr "Güvenlik Türü :"
-
-#: .tmp/ui.py:363
-msgid "Settings"
-msgstr "Ayarlar"
-
-#: .tmp/ui.py:364
-msgid "Key :"
-msgstr "Anahtar :"
-
-#: .tmp/ui.py:365
-msgid "Hide Password"
-msgstr "Parolayı Gizle"
-
-#: .tmp/uisecurity.py:35
-msgid "Security Settings"
-msgstr "Güvenlik Ayarları"
-
-#: .tmp/widgets.py:230
+#: .tmp/networkmanager/widgets.py:230
 msgid "Disconnected"
 msgstr "Bağlı değil"
 
-#: .tmp/widgets.py:234
+#: .tmp/networkmanager/widgets.py:234
 #, python-format
 msgid "Connected: %s"
 msgstr "Bağlı: %s"
 
-#: .tmp/widgets.py:238
+#: .tmp/networkmanager/widgets.py:238
 msgid "Connecting"
 msgstr "Bağlanıyor"
 
-#: .tmp/widgets.py:244
+#: .tmp/networkmanager/widgets.py:244
 msgid "Cable or device is unplugged."
 msgstr "Kablo ya da aygıt takılı değil."
 
+#: .tmp/networkmanager/widgets.py:255
+msgid "Access denied."
+msgstr ""
+
+#: .tmp/networkmanager/base.py:174
+msgid "Available Profiles"
+msgstr "Kullanılabilir Profiller"
+
+#: .tmp/networkmanager/base.py:200
+msgid "All Profiles"
+msgstr "Tüm Profiller"
+
+#: .tmp/networkmanager/base.py:202 .tmp/networkmanager/base.py:204
+msgid "No Device Found"
+msgstr "Herhangi Bir Aygıt Bulunamadı"
+
+#: .tmp/networkmanager/base.py:380
+msgid "No Authentication"
+msgstr "Doğrulama Yok"
+
+#: .tmp/networkmanager/base.py:592
+msgid "Do you really want to remove profile %1?"
+msgstr "'%1' profili silinsin mi?"
+
+#: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
+msgid "Network Manager"
+msgstr "Ağ Yöneticisi"
+
+#: .tmp/networkmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/networkmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/networkmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Güncel Bakıcı"
+
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
+
+#: .tmp/networkmanager/about.py:33
+msgid "Developer"
+msgstr "Geliştirici"
+
+#: .tmp/ui_item.py:103
+msgid "Set connection state."
+msgstr "Bağlantı durumunu değiştir."
+
+#: .tmp/ui_item.py:104
+msgid "Edit connection"
+msgstr "Bağlantı ayarlarını değiştir"
+
+#: .tmp/ui_item.py:105
+msgid "Delete connection"
+msgstr "Bağlantıyı sil"
+
+#: .tmp/ui_item.py:106 .tmp/ui_wifi.py:53
+msgid "Signal Strength"
+msgstr "Sinyal Gücü"
+
+#: .tmp/ui_item.py:107
+msgid "  %p %"
+msgstr " % %p"
+
+#: .tmp/ui_security.py:35
+msgid "Security Settings"
+msgstr "Güvenlik Ayarları"
+
+#: .tmp/ui_main.py:336
+msgid "Form"
+msgstr "Form"
+
+#: .tmp/ui_main.py:337
+msgid "Create Profile"
+msgstr "Profil Oluştur"
+
+#: .tmp/ui_main.py:338 .tmp/ui_nameserver.py:42
+msgid "Nameserver Settings"
+msgstr "İsim Sunucusu Ayarları"
+
+#: .tmp/ui_main.py:341
+msgid "Profile Name :"
+msgstr "Profil İsmi :"
+
+#: .tmp/ui_main.py:342
+msgid "Device : "
+msgstr "Aygıt : "
+
+#: .tmp/ui_main.py:343 .tmp/ui_main.py:357
+msgid "Cancel"
+msgstr "İptal"
+
+#: .tmp/ui_main.py:344
+msgid "Network Settings"
+msgstr "Ağ Ayarları"
+
+#: .tmp/ui_main.py:345
+msgid "Use DHCP"
+msgstr "DHCP Kullan"
+
+#: .tmp/ui_main.py:346
+msgid "Use Manual Settings"
+msgstr "Özel Ayarları Kullan"
+
+#: .tmp/ui_main.py:347
+msgid "Address :"
+msgstr "Adres :"
+
+#: .tmp/ui_main.py:348 .tmp/ui_main.py:351
+msgid "Custom"
+msgstr "Özel"
+
+#: .tmp/ui_main.py:349
+msgid "Network Mask :"
+msgstr "Ağ Maskesi :"
+
+#: .tmp/ui_main.py:350
+msgid "Default Gateway :"
+msgstr "Öntanımlı Ağ Geçidi :"
+
+#: .tmp/ui_main.py:352 .tmp/ui_nameserver.py:44
+msgid "Name Servers"
+msgstr "İsim Sunucuları"
+
+#: .tmp/ui_main.py:353
+msgid "Default"
+msgstr "Öntanımlı"
+
+#: .tmp/ui_main.py:354
+msgid "Automatic"
+msgstr "Otomatik"
+
+#: .tmp/ui_main.py:355
+msgid "Custom :"
+msgstr "Özel :"
+
+#: .tmp/ui_main.py:356
+msgid "Apply"
+msgstr "Uygula"
+
+#: .tmp/ui_main.py:358
+msgid "Esc"
+msgstr "Esc"
+
+#: .tmp/ui_main.py:359
+msgid "Remote"
+msgstr "Uzak"
+
+#: .tmp/ui_main.py:360
+msgid "Network Name (ESSID) :"
+msgstr "Ağ İsmi (ESSID) :"
+
+#: .tmp/ui_main.py:361
+msgid "Scan"
+msgstr "Tara"
+
+#: .tmp/ui_main.py:362
+msgid "Security Type :"
+msgstr "Güvenlik Türü :"
+
+#: .tmp/ui_main.py:363
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: .tmp/ui_main.py:364
+msgid "Key :"
+msgstr "Anahtar :"
+
+#: .tmp/ui_main.py:365
+msgid "Hide Password"
+msgstr "Parolayı Gizle"
+
+#: .tmp/ui_nameserver.py:43
+msgid "Machine Name"
+msgstr "Makine İsmi"
