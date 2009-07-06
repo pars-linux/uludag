@@ -163,7 +163,6 @@ class MainManager(QtGui.QWidget):
             self.animatorFinishHook.append(self.refreshBrowser)
             return
         self.ui.filterBox.clear()
-        self.probedDevices = []
         menu = QtGui.QMenu(self)
         for package in self.packages:
             info = self.packages[package]
@@ -184,9 +183,6 @@ class MainManager(QtGui.QWidget):
                         menuItem.setData(QVariant("%s::%s" % (package,device)))
                         self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
                         menu.addAction(menuItem)
-                        # Store a list of probed devices
-                        if device not in self.probedDevices:
-                            self.probedDevices.append(device)
                 menu.addSeparator()
             if self.packages[package]['type'] == 'dialup':
                 pppMenu = QtGui.QMenu(self.packages[package]['name'], self)
@@ -318,12 +314,10 @@ class MainManager(QtGui.QWidget):
                 info = self.iface.info(package, connection)
                 state = str(info["state"])
                 item = QtGui.QListWidgetItem(self.ui.profileList)
-                item.setFlags(Qt.NoItemFlags | Qt.ItemIsEditable)
+                item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
                 item.setSizeHint(QSize(48,48))
                 key = "%s-%s" % (package, connection)
                 self.widgets[key] = ConnectionItemWidget(package, connection, info, self, item)
-                if info["device_id"] not in self.probedDevices:
-                    state = "unplugged"
                 self.widgets[key].updateData(state)
                 self.ui.profileList.setItemWidget(item, self.widgets[key])
                 del item
