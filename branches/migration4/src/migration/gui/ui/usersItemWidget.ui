@@ -6,94 +6,100 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>677</width>
-    <height>90</height>
+    <width>418</width>
+    <height>52</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>0</width>
-    <height>90</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">ItemWidget</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="QLabel" name="partIcon">
-     <property name="minimumSize">
-      <size>
-       <width>111</width>
-       <height>90</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>111</width>
-       <height>90</height>
-      </size>
+    <widget class="QCheckBox" name="checkState">
+     <property name="toolTip">
+      <string>Set or unset entry as default boot entry.</string>
      </property>
      <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../../../../../../../../../Pictures/hede.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
+      <string notr="true"/>
      </property>
     </widget>
    </item>
    <item row="0" column="1">
+    <widget class="QLabel" name="labelIcon">
+     <property name="minimumSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string notr="true"/>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLabel" name="userName">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
-        <string>userName</string>
+        <string notr="true">userName</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="part">
-       <property name="styleSheet">
-        <string notr="true"/>
+      <widget class="QLabel" name="partition">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
        <property name="text">
-        <string>part</string>
+        <string notr="true">partition</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
       </widget>
-     </item>
-     <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>
-   <item row="0" column="2">
+   <item row="0" column="3">
     <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>283</width>
-       <height>84</height>
+       <width>40</width>
+       <height>20</height>
       </size>
      </property>
     </spacer>
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>checkState</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
