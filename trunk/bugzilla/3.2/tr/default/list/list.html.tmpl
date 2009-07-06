@@ -31,7 +31,7 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = "$terms.Bug List" %]
+[% title = "$terms.Bug Listesi" %]
 [% IF searchname || defaultsavename %]
   [% title = title _ ": " _ (searchname OR defaultsavename) FILTER html %]
 [% END %]
