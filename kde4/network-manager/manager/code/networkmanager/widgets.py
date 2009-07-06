@@ -243,9 +243,18 @@ class ConnectionItemWidget(QtGui.QWidget):
         elif state == "inaccessible":
             self.ui.labelDesc.setText(unicode(detail))
             self.ui.labelStatus.setPixmap(KIcon("emblem-important").pixmap(32))
+            self.setState(True)
         elif state == "unplugged":
             self.ui.labelDesc.setText(i18n("Cable or device is unplugged."))
             self.ui.labelStatus.setPixmap(KIcon("dialog-warning").pixmap(32))
+            self.setState(False)
+
+    def setState(self, state):
+        # We need a delete button enabled always so we should disable others one by one..
+        self.ui.labelStatus.setEnabled(state)
+        self.ui.labelDesc.setEnabled(state)
+        self.ui.checkToggler.setEnabled(state)
+        self.ui.buttonEdit.setEnabled(state)
 
     def toggleConnection(self):
         def handler(package, exception, args):

@@ -18,7 +18,7 @@ from pardus.netutils import findInterface
 
 # Qt Stuff
 from PyQt4 import QtGui
-from PyQt4.QtCore import SIGNAL, Qt, QTimeLine, QSize, QVariant, QThread
+from PyQt4.QtCore import SIGNAL, Qt, QTimeLine, QSize, QVariant, QTimer
 
 # KDE Stuff
 from PyKDE4.kdeui import KMessageBox
@@ -160,9 +160,12 @@ class MainManager(QtGui.QWidget):
     def refreshBrowser(self):
         if self.animator.state() != 0:
             # Refreshing browser when animator is active causes blindness
-            self.animatorFinishHook.append(self.refreshBrowser)
+            if not self.refreshBrowser in self.animatorFinishHook:
+                self.animatorFinishHook.append(self.refreshBrowser)
             return
+        aa = time.time()
         self.ui.filterBox.clear()
+        self.probedDevices = []
         menu = QtGui.QMenu(self)
         for package in self.packages:
             info = self.packages[package]
@@ -182,6 +185,9 @@ class MainManager(QtGui.QWidget):
                         menuItem = QtGui.QAction("%s - %s" % (self.packages[package]['name'], findInterface(device).name), self)
                         menuItem.setData(QVariant("%s::%s" % (package,device)))
                         self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
+                        # Store a list of probed devices
+                        if device not in self.probedDevices:
+                            self.probedDevices.append(device)
                         menu.addAction(menuItem)
                 menu.addSeparator()
             if self.packages[package]['type'] == 'dialup':
@@ -321,6 +327,8 @@ class MainManager(QtGui.QWidget):
                 item.setSizeHint(QSize(48,48))
                 key = "%s-%s" % (package, connection)
                 self.widgets[key] = ConnectionItemWidget(package, connection, info, self, item)
+                if (info["device_id"] not in self.probedDevices) and not state.startswith("inaccessible"):
+                    state = "unplugged"
                 self.widgets[key].updateData(state)
                 self.ui.profileList.setItemWidget(item, self.widgets[key])
                 del item
@@ -349,10 +357,13 @@ class MainManager(QtGui.QWidget):
             self.ui.profileList.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
             self.ui.buttonCreate.setEnabled(True)
             self.ui.filterBox.setEnabled(True)
-            # Call waiting functions
-            for func in self.animatorFinishHook:
-                func()
-            self.animatorFinishHook = []
+            QTimer.singleShot(100, self.runFinishHook)
+
+    def runFinishHook(self):
+        # Call waiting functions
+        for func in self.animatorFinishHook:
+            func()
+        self.animatorFinishHook = []
 
     def hideEditBox(self):
         if self.lastAnimation == SHOW:
