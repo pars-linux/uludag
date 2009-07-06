@@ -21,19 +21,43 @@ from PyKDE4.kdecore import *
 
 import dbus
 
+import backend
 from about import aboutData
 from localedata import setSystemLocale
 from ui_pminstaller import Ui_PMInstaller
+
+class Operation(QObject):
+    def __init__(self):
+        QObject.__init__(self)
+        self.iface = backend.pm.Iface()
+        self.iface.setHandler(self.handler)
+        self.iface.setExceptionHandler(self.exceptionHandler)
+
+    def handler(self, package, signal, args):
+        if signal == "status":
+            signal = args[0]
+            args = args[1:]
+
+        if signal == "finished":
+            print "finished"
+        elif signal == "status" and args[0] in ["installing", "removing", "extracting", "configuring"]:
+            operation = args[0]
+            package = args[1]
+            print "%s - %s" % (operation, package)
+
+    def install(self, packages):
+        self.iface.installPackages(packages)
+    
+    def exceptionHandler(self, exception):
+        self.messageBox = QtGui.QMessageBox(i18n("Pisi Error"), unicode(exception), QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
+        self.messageBox.show()
 
 class PMInstaller(QtGui.QDialog, Ui_PMInstaller):
     def __init__(self, parent=None):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
-        self.setWindowFlags(Qt.Window)
+        self.operation = Operation()
 
-    def closeEvent(self, event):
-        event.ignore()
-    
 if __name__ == '__main__':
 
     KCmdLineArgs.init(sys.argv, aboutData)
@@ -47,8 +71,6 @@ if __name__ == '__main__':
         sys.exit()
 
     app = KUniqueApplication(True, True)
-    app.connect(app, SIGNAL('lastWindowClosed()'), app.quit)
-
     args = KCmdLineArgs.parsedArgs()
 
     if not dbus.get_default_main_loop():
