@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-03 13:56+0300\n"
-"PO-Revision-Date: 2009-06-30 21:06-0400\n"
+"PO-Revision-Date: 2009-07-06 18:55-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -81,7 +81,7 @@ msgstr "Denegar usuario."
 
 #: .tmp/ui_edituser.py:197
 msgid "Apply this policy to all actions."
-msgstr ""
+msgstr "Aplicar ésta política a todas acciones."
 
 #: .tmp/ui_edituser.py:198
 msgid "Authorizations"
@@ -160,8 +160,7 @@ msgstr "Desea eliminar usuario '%1' (%2)?"
 
 #: .tmp/usermanager/main.py:320
 msgid "Also remove user files. (This may take long.)"
-msgstr ""
-"Además remover archivos de los usuarios. (Esto puede tomar mucho tiempo.)"
+msgstr "Además remover archivos de los usuarios. (Esto puede tomar mucho tiempo.)"
 
 #: .tmp/usermanager/main.py:328
 msgid "Do you want to delete group '%1'?"
@@ -211,3 +210,4 @@ msgstr "Información del grupo"
 #: .tmp/ui_editgroup.py:79
 msgid "Group Name:"
 msgstr "Nombre del grupo:"
+
