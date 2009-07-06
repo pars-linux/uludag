@@ -75,7 +75,7 @@
      </item>
     </layout>
    </item>
-   <item row="4" column="0">
+   <item row="5" column="0">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -87,6 +87,13 @@
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="4" column="0">
+    <widget class="QCheckBox" name="checkBattery">
+     <property name="text">
+      <string>Dont poll anything while battery is discharging</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
