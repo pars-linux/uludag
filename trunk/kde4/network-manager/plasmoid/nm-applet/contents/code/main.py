@@ -65,7 +65,10 @@ class NmApplet(plasmascript.Applet):
     def init(self):
         """ Const method for initializing the applet """
         KGlobal.locale().insertCatalog("network-manager")
+
         self.readEntries()
+        self.followSolid()
+
         self.iface = NetworkIface()
         self.notifyface = Notifier(dbus.get_default_main_loop())
         self.notifyface.registerNetwork()
@@ -111,6 +114,30 @@ class NmApplet(plasmascript.Applet):
         self.connect(openNm, SIGNAL("triggered(bool)"), self.openNM)
         self.connect(self.popup.ui.nmButton, SIGNAL("clicked()"), self.openNM)
 
+    def solidState(self):
+        if self.hasBattery:
+            return (not self._config['followsolid'] == 'true') or \
+                    (self._config['followsolid'] == 'true' and self.chargeState == Solid.Battery.Charging)
+        return True
+
+    def batteryStateChanged(self, newstate, udi):
+        # print "Battery state changed to ", newstate
+        self.chargeState = newstate
+        if newstate == Solid.Battery.Charging:
+            self.dataUpdated()
+
+    def followSolid(self):
+        self.hasBattery = False
+        batteries = Solid.Device.listFromType(Solid.DeviceInterface.Battery, '')
+        for battery in batteries:
+            _battery = battery.asDeviceInterface(Solid.DeviceInterface.Battery)
+            if _battery.type() == Solid.Battery.PrimaryBattery:
+                # \o/ we have a battery
+                # print "Founded a battery "
+                self.hasBattery = True
+                self.connect(_battery, SIGNAL("chargeStateChanged(int, const QString &)"), self.batteryStateChanged)
+                self.chargeState = _battery.chargeState()
+
     def readEntries(self):
         config = self.config()
         self._config = {}
@@ -118,6 +145,7 @@ class NmApplet(plasmascript.Applet):
         self._config["showtraffic"] = config.readEntry("showtraffic", "true")
         self._config["showwifi"] = config.readEntry("showwifi", "true")
         self._config["showstatus"] = config.readEntry("showstatus", "true")
+        self._config["followsolid"] = config.readEntry("followsolid", "true")
 
     def initPopup(self):
         self.dialog = Plasma.Dialog()
@@ -168,7 +196,7 @@ class NmApplet(plasmascript.Applet):
     def dataUpdated(self):
         if self.lastActiveDevice:
             if self.lastActivePackage == 'wireless_tools':
-                if self._config['showwifi'] == 'true':
+                if self._config['showwifi'] == 'true' and self.solidState():
                     # Show SIGNAL Strength
                     icon =  self.iface.strength(self.lastActiveDevice)/18
                     if not icon in range(1,6):
@@ -178,7 +206,7 @@ class NmApplet(plasmascript.Applet):
                     self.defaultIcon = ICONPATH % (self.package().path(), 5)
             else:
                 self.defaultIcon = ICONPATH % (self.package().path(), WIRED)
-            if self._config['showtraffic'] == 'true':
+            if self._config['showtraffic'] == 'true' and self.solidState():
                 self.receiverBlinker.update(self.iface.stat(self.lastActiveDevice)[0])
                 self.transmitterBlinker.update(self.iface.stat(self.lastActiveDevice)[1])
             else:
@@ -189,7 +217,8 @@ class NmApplet(plasmascript.Applet):
             self.transmitterBlinker.stop()
         self.update()
         if self._config['showwifi'] == 'true' or self._config['showtraffic'] == 'true':
-            QTimer.singleShot(self._config['pollinterval'], self.dataUpdated)
+            if self.solidState():
+                QTimer.singleShot(self._config['pollinterval'], self.dataUpdated)
 
     def constraintsEvent(self, constraints):
         self.setBackgroundHints(Plasma.Applet.NoBackground)

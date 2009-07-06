@@ -21,11 +21,13 @@ class ConfigIcon(QtGui.QWidget):
         self.ui.checkTraffic.setChecked(config.readEntry("showtraffic", "true") == "true")
         self.ui.checkWifi.setChecked(config.readEntry("showwifi", "true") == "true")
         self.ui.checkStatus.setChecked(config.readEntry("showstatus", "true") == "true")
+        self.ui.checkBattery.setChecked(config.readEntry("followsolid", "true") == "true")
 
     def writeConf(self, config):
         config.writeEntry("showtraffic", str(self.ui.checkTraffic.isChecked()).lower())
         config.writeEntry("showwifi", str(self.ui.checkWifi.isChecked()).lower())
         config.writeEntry("showstatus", str(self.ui.checkStatus.isChecked()).lower())
+        config.writeEntry("followsolid", str(self.ui.checkBattery.isChecked()).lower())
         config.writeEntry("pollinterval", str(self.ui.spinInterval.value()))
 
 class ConfigPopup(QtGui.QWidget):
