@@ -77,26 +77,26 @@ class BaseSystem:
         self.baseDirs = ["bin", "sbin", "etc", "dev", "dev/loop", "lib", "newroot", "proc", "sys"]
 
         self.deviceNodes = {"null": ["c", 1, 3],
-                      "console": ["c", 5, 1],
-                      "tty": ["c", 5, 0],
-                      "tty0": ["c", 4, 0],
-                      "tty1": ["c", 4, 1],
-                      "ram0": ["b", 1, 0],
-                      "fb0": ["c", 29, 0],
-                      "urandom": ["c", 1, 9]
-        }
+                            "console": ["c", 5, 1],
+                            "tty": ["c", 5, 0],
+                            "tty0": ["c", 4, 0],
+                            "tty1": ["c", 4, 1],
+                            "ram0": ["b", 1, 0],
+                            "fb0": ["c", 29, 0],
+                            "urandom": ["c", 1, 9]
+                           }
 
         self.baseFileList = {"/lib/initramfs/busybox": "/bin/",
-                "/lib/initramfs/busybox.links": "/bin/",
-                "/usr/bin/disktype": "/bin/",
-                "/sbin/coolplug": "/bin/",
-                "/lib/initramfs/init": "/",
-                "/lib/initramfs/udhcpc.script": "/etc/"
-                }
+                             "/lib/initramfs/busybox.links": "/bin/",
+                             "/usr/bin/disktype": "/bin/",
+                             "/sbin/coolplug": "/bin/",
+                             "/lib/initramfs/init": "/",
+                             "/lib/initramfs/udhcpc.script": "/etc/"
+                            }
 
         self.suspendFileList = {"/etc/suspend.conf": "/etc/",
-                "/usr/sbin/resume": "/bin/"
-                }
+                                "/usr/sbin/resume": "/bin/"
+                               }
 
 
     def getNewRoot(self, dir):
@@ -203,7 +203,7 @@ class KernelModule:
     def findAllModules(self):
         foundModules = []
 
-        for root, dir, files in os.walk(self.modulesDir):
+        for root, directory, files in os.walk(self.modulesDir):
             for name in files:
                 if name.endswith(".ko"):
                     foundModules.append(os.path.join(root, name))
