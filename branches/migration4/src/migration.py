@@ -27,6 +27,8 @@ import migration.gui.ScrOptions as options
 import migration.gui.ScrSummary as summary
 import migration.gui.ScrProgress as progress
 
+import migration.gui.context as ctx
+
 
 def loadFile(_file):
     try:
@@ -58,9 +60,9 @@ def isLiveCD():
     return False
 
 if isLiveCD():
-    availableScreens = [welcome, user, userfiles, options, summary, progress]
+    availableScreens = [welcome, user, options, userfiles, summary, progress]
 else:
-    availableScreens = [welcome, user, userfiles, options, summary, progress]
+    availableScreens = [welcome, user, options, userfiles, summary, progress]
 
 class Migration(QtGui.QWidget):
     def __init__(self, parent=None):
@@ -176,7 +178,9 @@ class Migration(QtGui.QWidget):
             self.ui.mainStack.setCurrentIndex(id)
             _widget = self.ui.mainStack.currentWidget()
             _widget.update()
-            _widget.show()
+            print "_widget.shown() çağrılacak..."
+            print "_widget.title:%s" % _widget.title
+            _widget.shown()
 
         if self.ui.mainStack.currentIndex() == len(self.screens) - 1 :
             self.ui.buttonNext.hide()
