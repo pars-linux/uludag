@@ -27,11 +27,11 @@ import localedata
 import desktopparser
 
 class ApplicationItem(QtGui.QListWidgetItem):
-    def __init__(self, name, comment, icon, command, parent=None):
+    def __init__(self, name, genericName, icon, command, parent=None):
         QtGui.QListWidgetItem.__init__(self, parent)
 
         self.name = name
-        self.comment = comment
+        self.genericName = genericName
         self.icon = icon
         self.command = command
 
@@ -43,7 +43,7 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         self.initialize()
 
     def initialize(self):
-        self.appComment.setText(self.item.comment)
+        self.appGenericName.setText(self.item.genericName)
         self.appName.setText(self.item.name)
         self.appIcon.setPixmap(KIcon(self.item.icon).pixmap(32))
         self.appName.hide()
@@ -93,11 +93,12 @@ class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
         icon = parser.safe_get_locale('Desktop Entry', 'Icon', None)
         command = parser.safe_get_locale('Desktop Entry', 'Exec', None)
         name = unicode(parser.safe_get_locale('Desktop Entry', 'Name', self.lang))
-        comment = unicode(parser.safe_get_locale('Desktop Entry', 'Comment', self.lang))
-        if not comment:
-            comment = unicode(parser.safe_get_locale('Desktop Entry', 'GenericName', self.lang))
+        genericName = unicode(parser.safe_get_locale('Desktop Entry', 'GenericName', self.lang))
+        if not genericName:
+            genericName = name
+            name = ""
 
-        item = ApplicationItem(name, comment, icon, command, self.appList)
+        item = ApplicationItem(name, genericName, icon, command, self.appList)
         item.setFlags(Qt.NoItemFlags | Qt.ItemIsEnabled)
         item.setSizeHint(QSize(0,48))
         itemWidget = ApplicationItemWidget(item, self)
