@@ -19,7 +19,7 @@ from PyKDE4.kdecore import i18n, KGlobal
 from migration.gui.ScreenWidget import ScreenWidget
 from migration.gui.ui.userFilesWidget import Ui_userFilesWidget
 
-        
+
 class DirectoryViewItem(QtGui.QTreeWidgetItem):
     "an element of DirView which represents a file or directory"
     def __init__(self, parent, path):
@@ -38,16 +38,16 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
             self.size = os.path.getsize(self.path)
             self.writeSize()
         self.setPixmap(0, self.pix)
-    
+
     def setChecked(self, checked):
         if checked:
             self.setCheckState(0, Qt.Checked)
         else:
             self.setCheckState(0, Qt.Unchecked)
-    
+
     def isChecked(self):
         return self.checkState(0) == Qt.Checked
-    
+
     def expand(self):
         "calls when user expands the item"
         self.setOpen(1)
@@ -56,17 +56,17 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
         for child in self.children:
             if not child.childCount():
                 child.addChildren()
-    
+
     def collapse(self):
         "calls when user collapses the item"
         self.setPixmap(0, KGlobal.iconLoader().loadIcon("folder", KIcon.Small))
-    
+
     def activate(self):
         "calls when user click the checkbox"
         QtGui.QApplication.setOverrideCursor(QCursor(Qt.WaitCursor))
         self.setChecked(True)
         QtGui.QApplication.restoreOverrideCursor()
-    
+
     def addChildren(self):
         "adds child items of the item"
         QtGui.QApplication.setOverrideCursor(QCursor(Qt.WaitCursor))
@@ -81,7 +81,7 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
                     child.setChecked(True)
                 self.children.append(child)
         QtGui.QApplication.restoreOverrideCursor()
-    
+
     def compare(self, item2, col, asc):
         "overrides compare function to properly sort files"
         if self.type == "dir" and item2.type != "dir":
@@ -93,7 +93,7 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
                 return self.size-item2.size
             #else:
                 #TODO:TreeWidgetItem compare
-    
+
     def writeSize(self):
         "writes human readable version of items size to second column"
         if self.size >= 1024 * 1024:
@@ -102,7 +102,7 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
             self.setText(1, "%.1f KB" % (self.size / 1024.0))
         elif self.size:
             self.setText(1, "%d B" % self.size)
-    
+
     def selectedFiles(self):
         "returns a list of selected children of an item"
         files = []
@@ -134,12 +134,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_userFilesWidget()
         self.ui.setupUi(self)
-        
+
         self.connect(self.ui.copy, SIGNAL("clicked(bool checked = false)"), self.slotRadiosClicked)
         self.connect(self.ui.nothing, SIGNAL("clicked(bool checked = false)"), self.slotRadiosClicked)
         self.connect(self.ui.link, SIGNAL("clicked(bool checked = false)"), self.slotRadiosClicked)
-        
-        
+
+
     def slotRadiosClicked(self):
         if self.ui.copy.isClicked():
             self.ui.destination.setEnabled(True)
@@ -150,7 +150,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         elif self.ui.link.isClicked():
             self.ui.destination.setEnabled(False)
             self.ui.dirview.setEnabled(False)
-        
+
     def creator(self):
         # Add folders:
         folders = []
@@ -159,12 +159,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
                       ("My Music Path", "My Music", i18n("My Music")),
                       ("My Pictures Path", "My Pictures", i18n("My Pictures")),
                       ("My Video Path", "My Video", i18n("My Video"))]
-        
+
         for key, name, localname in acceptList:
             if sources.has_key(key):
                 path = sources[key]
                 folders.append((path, name, unicode(localname)))
-        
+
         # Check if one dir includes another:
         for index, (path, name, localname) in enumerate(folders):
             unique = True
@@ -175,7 +175,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                     break
             if unique:
                 DirectoryViewRoot(self.dirview, path, name, localname)
-    
+
     def getOptions(self):
         options = {}
         if self.ui.link.isChecked():
@@ -185,9 +185,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 if child.isChecked():
                     child.setHidden(False)
                     links.append({"path":child.path, "name":child.name, "localname":child.localname})
-            
+
             options["links"] = links
-        
+
         elif self.copy.isChecked():
             folders = []
             for index in xrange(self.ui.dirview.topLevelItemCount()):
@@ -200,7 +200,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             options["folders"] = folders
             options["copy destination"] = unicode(self.destination.text())
         return options
-    
+
     def shown(self):
         pass
 
