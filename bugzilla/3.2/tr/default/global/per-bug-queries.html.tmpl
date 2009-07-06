@@ -85,13 +85,16 @@
           </select>
         [% END %]
         <span id="lob_new_query_text">
-          [% " or create and add the tag" IF lists_of_bugs.size %]
+          [% " veya " IF lists_of_bugs.size %]
+          <input type="text" name="bug_ids" size="12" maxlength="80"
+          [%- " value=\"$bugids\"" IF bugids %]>
+          numaralı [%+ terms.bugsDat %]
           <input class="txt" type="text" id="lob_newqueryname"
                  size="20" maxlength="64" name="newqueryname"
                  onkeyup="manage_old_lists();">
+          [% " takısını oluşturup ekle." IF lists_of_bugs.size %]
         </span>
-        <span id="lob_direction">to</span>
-        [%+ terms.bugs %]
+        <!-- keep until the modification above is tried, delete after that <span id="lob_direction"></span> -->
         <input type="text" name="bug_ids" size="12" maxlength="80"
          [%- " value=\"$bugids\"" IF bugids %]>
         <input type="submit" value="Gönder" id="commit_list_of_bugs">

@@ -807,7 +807,7 @@
   [% IF user.id %]
     <tr>
         <td class="field_label">
-          <label for="newcc" accesskey="a"><b>Haber verilecekler listesi</b>:</label>
+          <label for="newcc" accesskey="a"><b>Haber verilecekler listesi (CC)</b>:</label>
         </td>
       <td>
         [% IF user.id %]
@@ -827,14 +827,10 @@
           [% END %]
         [% END %]
         [% bug.cc.size || 0  FILTER html %] 
-        [% IF bug.cc.size == 1 %]
-          user
-        [% ELSE %]
-          users
-        [% END %]
+        kullanıcı
         [% IF user.id %]
           [% IF bug.cc.contains( user.email ) %]
-            including you
+            siz dahil
           [% END %]
         [% END %]
         <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
