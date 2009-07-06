@@ -26,6 +26,7 @@ from about import aboutData
 from mainwindow import MainWindow
 from localedata import setSystemLocale
 from pmlogging import logger
+import config
 
 def handleException(exception, value, tb):
     logger.error("".join(traceback.format_exception(exception, value, tb)))
@@ -33,14 +34,24 @@ def handleException(exception, value, tb):
 if __name__ == '__main__':
 
     KCmdLineArgs.init(sys.argv, aboutData)
-    app = KApplication()
+    options = KCmdLineOptions()
+    options.add("show-mainwindow", ki18n("Show main window"))
+    KCmdLineArgs.addCmdLineOptions(options)
+
+    app = KUniqueApplication(True, True)
+
+    args = KCmdLineArgs.parsedArgs()
 
     if not dbus.get_default_main_loop():
         from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)
 
     manager = MainWindow()
-    manager.show()
+    if not config.PMConfig().systemTray():
+        manager.show()
+    else:
+        if args.isSet("show-mainwindow"):
+            manager.show()
 
     sys.excepthook = handleException
     setSystemLocale()
