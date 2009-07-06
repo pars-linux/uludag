@@ -19,6 +19,7 @@ def install_missing_x11_drivers():
     os.system("pisi it -y -c x11.driver")    
 
 def install_display_manager():
+    os.unlink('/etc/X11/kdm/kdmrc')
     os.system("pisi it -y kdm xdm")
 
 def install_other_missing_packages():
