@@ -391,17 +391,6 @@ class Config:
         self.kernelVersion = kver
 
 
-class Hede:
-    def __init__(self):
-        self.armut = "1 2 3"
-
-    def degis(self):
-        self.armut = config.tmpDir
-
-    def exit(self):
-        sys.exit()
-
-
 if __name__ == "__main__":
     config = Config()
     config.setKernelVersion()
