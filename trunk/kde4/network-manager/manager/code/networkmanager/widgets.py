@@ -160,14 +160,17 @@ class WifiPopup(QtGui.QMenu):
         self.parent.ui.lineRemote.setText(data['remote'])
         self.parent.ui.comboSecurityTypes.setCurrentIndex(self.parent.ui.comboSecurityTypes.findData(QVariant(data['encryption'])))
 
-    def fillList(self, *args):
-        self.refreshButton.show()
-        self.listWidget.clear()
-        for remote in args[2][0]:
-            item = QtGui.QListWidgetItem(self.listWidget)
-            item.setSizeHint(QSize(22,30))
-            wifi = WifiItemWidget(remote, self, item)
-            self.listWidget.setItemWidget(item, wifi)
+    def fillList(self, package, exception, args):
+        if not exception:
+            self.refreshButton.show()
+            self.listWidget.clear()
+            for remote in args[0]:
+                item = QtGui.QListWidgetItem(self.listWidget)
+                item.setSizeHint(QSize(22,30))
+                wifi = WifiItemWidget(remote, self, item)
+                self.listWidget.setItemWidget(item, wifi)
+        else:
+            print exception
 
     def rescan(self):
         self.listWidget.clear()

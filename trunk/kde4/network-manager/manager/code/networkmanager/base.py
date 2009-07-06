@@ -227,7 +227,8 @@ class MainManager(QtGui.QWidget):
             self.setCursor(Qt.ArrowCursor)
 
             # Update the GUI
-            self.app.processEvents()
+            if self.app:
+                self.app.processEvents()
 
             # Update List with found remote networks
             availableNetworks = {}
@@ -282,12 +283,14 @@ class MainManager(QtGui.QWidget):
             setHidden("wireless_tools", False, "essid")
 
             # Update the GUI
-            self.app.processEvents()
+            if self.app:
+                self.app.processEvents()
 
             # Scan for availableNetworks
             devices = self.iface.devices("wireless_tools")
             for device in devices.keys():
-                self.app.processEvents()
+                if self.app:
+                    self.app.processEvents()
                 self.iface.scanRemote(device, "wireless_tools", filterByScan)
         else:
             # Filter by given package
