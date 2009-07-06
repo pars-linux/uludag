@@ -233,11 +233,11 @@ class KernelModule:
         self.modulesList.extend(newModules)
 
     def addModule(self, module):
-        if not module.endswith(".ko"):
-            module = "%s.ko" % module
+        if module.endswith(".ko"):
+            module = module[:-3]
 
         for line in self.allModules:
-            if line.endswith(module):
+            if line.endswith("/%s.ko" % module):
                 self.modulesList.append(line)
                 return
 
