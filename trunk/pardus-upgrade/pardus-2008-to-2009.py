@@ -18,6 +18,9 @@ def upgrade_and_configure_packages():
 def install_missing_x11_drivers():
     os.system("pisi it -y -c x11.driver")    
 
+def install_display_manager():
+    os.system("pisi it -y kdm xdm")
+
 def install_other_missing_packages():
     os.system("pisi it -y pardus-default-settings")
 
@@ -26,6 +29,7 @@ def migrate_2008_to_2009():
     remove_all_repos_and_add_2009_repository()
     upgrade_and_configure_packages()
     install_missing_x11_drivers()
+    install_display_manager()
     install_other_missing_packages()
 
 if __name__ == '__main__':
