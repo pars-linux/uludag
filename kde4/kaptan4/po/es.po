@@ -1,4 +1,4 @@
-# translation of es.po to spanish
+# translation of es.po to Spanish
 # Kaptan
 # Copyright (C) 2009
 # This file is distributed under the same license as the Kaptan package.
@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-03 14:51+0300\n"
-"PO-Revision-Date: 2009-06-24 21:11-0400\n"
+"PO-Revision-Date: 2009-07-06 19:07-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -56,8 +56,7 @@ msgstr "Configuración del Sistema"
 
 #: .tmp/goodbyeWidget.py:97 .tmp/ui_goodbyeWidget.py:97
 msgid "System Settings is a configuration tool for Pardus."
-msgstr ""
-"Configuración del Sistema es una herramienta de configuración de Pardus."
+msgstr "Configuración del Sistema es una herramienta de configuración de Pardus."
 
 #: .tmp/goodbyeWidget.py:98 .tmp/goodbyeWidget.py:101
 #: .tmp/ui_goodbyeWidget.py:98 .tmp/ui_goodbyeWidget.py:101
@@ -210,7 +209,6 @@ msgid "Package"
 msgstr "Paquete"
 
 #: .tmp/packageWidget.py:71 .tmp/ui_packageWidget.py:71
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -235,7 +233,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Seleccione un estilo de menú:</span></p></body></html>"
+"weight:600;\">El Administrador de Paquetes es la interfaz gráfica del administrador de paquetes PiSi. Puede fácilmente instalar programas nuevas, actualizar el sistema y le permite ver a través de una comprobación periódica, en un icono en la barra del sistema, la cantidad de paquetes disponibles para actualizar el sistema.</span></p></body></html>"
 
 #: .tmp/packageWidget.py:76 .tmp/ui_packageWidget.py:76
 msgid "picture label"
@@ -255,7 +253,7 @@ msgstr "Comprobar actualizaciones automáticamente cada"
 
 #: .tmp/packageWidget.py:80 .tmp/ui_packageWidget.py:80
 msgid " hours"
-msgstr ""
+msgstr " horas"
 
 #: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:81
 msgid "Repo"
@@ -723,11 +721,11 @@ msgstr ""
 msgid ""
 "Strigi desktop search allows searching for files by content instead of just "
 "by name."
-msgstr ""
+msgstr "Strigi desktop search permite una búsqueda de archivos por su contenido en vez de simplemente por el nombre de archivo."
 
 #: .tmp/ui_searchWidget.py:54
 msgid "Enable Strigi Desktop File Indexer"
-msgstr ""
+msgstr "Habilitar motor de búsqueda Strigi Desktop"
 
 #: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
 msgid "Wallpaper"
@@ -762,20 +760,3 @@ msgstr ""
 "escritorio básico para un usuario de PC; Le ayuda conectar a internet, leer "
 "e-mails, trabajar con documentos de oficina y más!"
 
-#~ msgid "Info about Pisi"
-#~ msgstr "Información acerca de PiSi"
-
-#~ msgid "You are not authorized for this operation."
-#~ msgstr "No está autorizado para esta operación."
-
-#~ msgid "Authentication Error!"
-#~ msgstr "Error de autenticación!"
-
-#~ msgid "Smolt Settings"
-#~ msgstr "Configuración de Smolt"
-
-#~ msgid "Smolt profile: <b>%s</b>"
-#~ msgstr "Perfil Smolt: <b>%s</b>"
-
-#~ msgid "Choose Wallpaper"
-#~ msgstr "Elegir imagen de fondo"
