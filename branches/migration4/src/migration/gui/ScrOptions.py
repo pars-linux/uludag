@@ -241,3 +241,4 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def execute(self):
         print "len(self.options):%d" % len(self.getOptions())
         ctx.options = self.getOptions()
+        return True
