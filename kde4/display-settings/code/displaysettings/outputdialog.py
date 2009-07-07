@@ -75,7 +75,7 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
             self.monitorName.setText(model)
         else:
             self.vendor = ""
-            model = kdecore.i18n("<qt><i>Click the \"Choose\" button to select a monitor</i></qt>")
+            model = kdecore.i18n("<qt><i>Click \"Choose...\" button to select a monitor</i></qt>")
             self.monitorName.setText(model)
 
         self.okButton.setDisabled(self.vendor == "")
@@ -118,10 +118,10 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
             self.vendor = monitor.vendor
             self.model = monitor.model
         else:
-            self.hsync = "28-33"
-            self.vref = "43-72"
-            self.vendor = ""
-            self.model = ""
+            self.hsync = "31.5-35.1"
+            self.vref = "50-61"
+            self.vendor = "Generic"
+            self.model = "Monitor 800x600"
 
         self.writeMonitorInfo(self.model, self.hsync, self.vref)
 
@@ -129,10 +129,12 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
 
     def show(self):
         if self.vendor.startswith("Generic"):
+            self.lastStdMonitor = (self.vendor, self.model, self.hsync, self.vref)
             self.monitorType.setCurrentIndex(0)
         elif self.vendor.startswith("Custom"):
             self.monitorType.setCurrentIndex(2)
         else:
+            self.lastDBMonitor = (self.vendor, self.model, self.hsync, self.vref)
             self.monitorType.setCurrentIndex(1)
 
         self.freqBox.setChecked(self.rangeSelected)

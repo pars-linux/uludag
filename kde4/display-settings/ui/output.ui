@@ -48,7 +48,7 @@
             <item row="0" column="0">
              <widget class="QLabel" name="label_8">
               <property name="text">
-               <string/>
+               <string>Selection</string>
               </property>
              </widget>
             </item>
@@ -56,17 +56,17 @@
              <widget class="QComboBox" name="monitorType">
               <item>
                <property name="text">
-                <string>Standard monitor</string>
+                <string>Select a standard monitor</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>Monitor selected from database</string>
+                <string>Select from vendor/model list</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>Custom</string>
+                <string>Enter ranges manually</string>
                </property>
               </item>
              </widget>
@@ -99,7 +99,7 @@
               <item>
                <widget class="QToolButton" name="browseMonitorsButton">
                 <property name="text">
-                 <string>Choose</string>
+                 <string>Choose...</string>
                 </property>
                </widget>
               </item>
