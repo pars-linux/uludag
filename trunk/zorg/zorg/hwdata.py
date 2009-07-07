@@ -67,6 +67,14 @@ drivers = {
     "voodoo":       "Voodoo1 and Voodoo2 cards"
 }
 
+driverPackages = {
+        "fglrx":            "xorg-video-fglrx",
+        "nvidia71":         "xorg-video-nvidia71",
+        "nvidia96":         "xorg-video-nvidia96",
+        "nvidia173":        "xorg-video-nvidia173",
+        "nvidia-current":   "xorg-video-nvidia-current"
+        }
+
 def getCompatibleDriverNames(vendor_id, product_id):
     pci_id = vendor_id + product_id
     drvlist = []
