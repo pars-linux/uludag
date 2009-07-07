@@ -444,10 +444,17 @@ class MainManager(QtGui.QWidget):
 
         ui.lineConnectionName.setText(data["name"])
 
-        if "device_id" in data:
-            ui.labelDeviceDescription.setText(data["device_name"])
         if "device_name" in data:
-            ui.deviceList.setCurrentIndex(ui.deviceList.findText(data["device_id"]))
+            ui.labelDeviceDescription.setText(data["device_name"])
+        if "device_id" in data:
+            index = ui.deviceList.findText(data["device_id"])
+            if index != -1:
+                ui.deviceList.setCurrentIndex(index)
+            else:
+                ui.deviceList.addItem(data["device_id"])
+                ui.deviceList.setCurrentIndex(ui.deviceList.count() - 1)
+                ui.deviceList.show()
+                ui.labelDeviceDescription.hide()
 
         if "remote" in data:
             ui.lineRemote.setText(data["remote"])
