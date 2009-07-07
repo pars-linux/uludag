@@ -14,11 +14,12 @@
 import os
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import i18n, KGlobal
+from PyKDE4.kdecore import ki18n ,i18n
 
 
 from migration.gui.ScreenWidget import ScreenWidget
 from migration.gui.ui.summaryWidget import Ui_summaryWidget
+from migration.gui import context as ctx
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = i18n("Summary")
@@ -38,8 +39,28 @@ class Widget(QtGui.QWidget, ScreenWidget):
         content.append("""<html><body><ul>""")
 
         # Selected User
-        content.append(subject % i18n("Mouse Settings").toString())
+        content.append(subject % ki18n("User Settings").toString())
+        content.append(item % ki18n("Selected User: <b>%s</b>").toString() % ctx.user[2])
+        content.append(end)
 
+        # Selected Options
+        content.append(subject % ki18n("Options Settings").toString())
+        for option in ctx.options:
+            content.append(item % ki18n("Selected Options: <b>%s</b>").toString() % option)
+        content.append(end)
+
+        #Selected Files Destinations
+        content.append(subject % ki18n("Destination Settings").toString())
+        if ctx.fileOptions.has_key("links"):
+            for link in ctx.fileOptions["links"]:
+                content.append(item % ki18n("Selected Destination: <b>Copy Link to %s</b>").toString() % link)
+        elif ctx.fileOptions.has_key("copy destination"):
+            content.append(item % ki18n("Selected Destination: <b>Copy Destination to %s</b>").toString() % ctx.fileOptions["copy destination"])
+
+        content.append(end)
+
+        content.append("""</ul></body></html>""")
+        self.ui.textSummary.setHtml(content)
 
     def execute(self):
         return True
