@@ -32,6 +32,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         KXmlGuiWindow.__init__(self, parent)
         self.setupUi(self)
         self.iface = backend.pm.Iface()
+        self.setWindowIcon(KIcon(":/data/package-manager.png"))
         self.setCentralWidget(MainWidget(self))
         self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
