@@ -51,6 +51,12 @@ class VideoCardDialog(QtGui.QDialog, Ui_VideoCardDialog):
                 self.driverSelection.setCurrentIndex(index)
         else:
             self.autoDriverButton.setChecked(True)
+            config = self.iface.getConfig()
+            preferred = config.preferredDriver()
+            if preferred:
+                index = self.driverSelection.findText(preferred)
+                if index > -1:
+                    self.driverSelection.setCurrentIndex(index)
 
         if self.depth:
             self.manualDepthButton.setChecked(True)
