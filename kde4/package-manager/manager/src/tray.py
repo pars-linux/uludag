@@ -58,7 +58,10 @@ class Tray(KSystemTrayIcon):
     def updateRepo(self):
         if not self.iface.operationInProgress():
             repoName = unicode(self.sender().iconText())
-            self.iface.updateRepository(repoName)
+            if repoName == i18n("All"):
+                self.iface.updateRepositories()
+            else:
+                self.iface.updateRepository(repoName)
 
     def checkUpdate(self):
         if not self.appWindow.isVisible() and not self.iface.operationInProgress():
