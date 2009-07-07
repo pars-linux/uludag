@@ -30,7 +30,7 @@
 
 [% IF abuser %]
   <div class="throw_error">
-    <p>[% terms.BugzillaLoc %] bir yönetim formunu açtığınızda, yapmak istediğiniz değişikliklerin [% terms.Bugzilla %] kullanılarak yapıldığından emin olmak için rasgele bir katar oluşturulur ve hem veritabanında hem de açtığınız formda saklanır. Ancak şu an kullanılan özel katar geçerli bir katar değil, yani görünüşe göre buraya doğru sayfadan gelmemişsiniz. Kullanılan katar şu :</p>
+    <p>[% terms.BugzillaLoc %] bir yönetim formunu açtığınızda, yapmak istediğiniz değişikliklerin [% terms.Bugzilla %] kullanılarak yapıldığından emin olmak için rasgele bir dizge oluşturulur ve hem veritabanında hem de açtığınız formda saklanır. Ancak şu an kullanılan özel dizge geçerli bir dizge değil, yani görünüşe göre buraya doğru sayfadan gelmemişsiniz. Kullanılan dizge şu :</p>
     
 
     <table border="0" cellpadding="5" cellspacing="0">
@@ -55,7 +55,7 @@
         <tr>
           <th>&nbsp;</th>
           <td>
-            Bu katar tarafınızdan oluşturulmamış. Birinin sizi aldatmaya çalışmış olma ihtimali var!
+            Bu dizge tarafınızdan oluşturulmamış. Birinin sizi aldatmaya çalışmış olma ihtimali var!
           </td>
         </tr>
       [% END %]
@@ -65,10 +65,10 @@
   </div>
 [% ELSE %]
   <div class="throw_error">
-    Görünüşe göre doğru sayfadan gelmiyorsunuz ('[% script_name FILTER html%]' betiği işlenirken <em>[% expected_action FILTER html %]</em> eylemi için geçerli bir katara ulaşılamadı. Sebep şunlardan biri olabilir:<br>
+    Görünüşe göre doğru sayfadan gelmiyorsunuz ('[% script_name FILTER html%]' betiği işlenirken <em>[% expected_action FILTER html %]</em> eylemi için geçerli bir dizgeye ulaşılamadı. Sebep şunlardan biri olabilir:<br>
     <ul>
       <li>Başarıyla sonuçlanan değişiklikler yaptıktan sonra web tarayıcınızın "Geri" düğmesine tıkladınız (bu, zararsız olmakla birlikte, pek de iyi bir fikir değildir.</li>
-      <li>Adresi doğrudan web tarayıcınızın adres çubuğuna yazdınız (bu yöntem güvenli olmakla birlikte katar uyuşmaz).</li>
+      <li>Adresi doğrudan web tarayıcınızın adres çubuğuna yazdınız (bu yöntem güvenli olmakla birlikte dizge uyuşmaz).</li>
       <li>Siz doğrudan istemediğiniz halde, tıkladığınız bir bağlantı sizi bu sayfaya yönlendirdi (bu durum oldukça tehlikelidir).</li>
     </ul>
     Yine de bu değişiklikleri yapmak istiyor musunuz? Bu değişiklikler beklenmedik ve istenmeyen sonuçlar doğurabilir.

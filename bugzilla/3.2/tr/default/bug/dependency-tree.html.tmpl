@@ -80,7 +80,7 @@
     [% END %]
   </h3>
   [% IF ids.size %]
-    ([% IF maxdepth -%][% maxdepth %] seviye[% "s" IF maxdepth > 1 %] derinliğe katar | [% END -%]
+    ([% IF maxdepth -%][% maxdepth %] seviye derinliğe kadar | [% END -%]
     <a href="buglist.cgi?bug_id=[% ids.join(",") %]">[% terms.bug %] listesi olarak bak</a>
     [% IF user.groups.editbugs && ids.size > 1 %]
       | <a href="buglist.cgi?bug_id=[% ids.join(",") %]&amp;tweak=1">birkaç tane değiştir</a>
