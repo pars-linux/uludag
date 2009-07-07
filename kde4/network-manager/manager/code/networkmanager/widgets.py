@@ -233,13 +233,16 @@ class ConnectionItemWidget(QtGui.QWidget):
             self.ui.labelDesc.setText(i18n("Disconnected"))
             self.ui.checkToggler.setChecked(False)
             self.ui.labelStatus.setPixmap(KIcon(iconForPackage[self.package]).pixmap(32))
+            self.setState(True)
         elif state == "up":
             self.ui.labelDesc.setText(unicode(i18n("Connected: %s")) % detail)
             self.ui.checkToggler.setChecked(True)
             self.ui.labelStatus.setPixmap(KIcon("games-endturn").pixmap(32))
+            self.setState(True)
         elif state == "connecting":
             self.ui.labelDesc.setText(i18n("Connecting"))
             self.ui.labelStatus.setPixmap(KIcon("chronometer").pixmap(32))
+            self.setState(True)
         elif state == "inaccessible":
             self.ui.labelDesc.setText(unicode(detail))
             self.ui.labelStatus.setPixmap(KIcon("emblem-important").pixmap(32))
