@@ -22,31 +22,44 @@ from PyKDE4.kdecore import *
 import dbus
 
 import backend
-from about import aboutData
 from localedata import setSystemLocale
 from ui_pminstaller import Ui_PMInstaller
 
 class Operation(QObject):
     def __init__(self):
         QObject.__init__(self)
+        self.statusChanges = 0
+        self.packages = []
         self.iface = backend.pm.Iface()
         self.iface.setHandler(self.handler)
         self.iface.setExceptionHandler(self.exceptionHandler)
 
     def handler(self, package, signal, args):
+        print signal
+        print args
         if signal == "status":
             signal = args[0]
             args = args[1:]
 
         if signal == "finished":
             print "finished"
-        elif signal == "status" and args[0] in ["installing", "removing", "extracting", "configuring"]:
+        elif signal == "status" and args[0] in ["installing", "extracting", "configuring"]:
+            self.statusChanges += 1
             operation = args[0]
             package = args[1]
             print "%s - %s" % (operation, package)
 
+    def updateProgress(self):
+        try:
+            percent = (self.statusChanges * 100) / (len(self.packages) * 3)
+        except ZeroDivisionError:
+            percent = 0
+
+        self.emit(SIGNAL("progress(int)"), percent)
+
     def install(self, packages):
-        self.iface.installPackages(packages)
+        self.packages = packages
+        self.iface.installPackages(self.packages)
     
     def exceptionHandler(self, exception):
         self.messageBox = QtGui.QMessageBox(i18n("Pisi Error"), unicode(exception), QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
@@ -57,9 +70,19 @@ class PMInstaller(QtGui.QDialog, Ui_PMInstaller):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
         self.operation = Operation()
+        self.connect(self.operation, SIGNAL("progress(int)"), self.progressBar.setValue)
+
+    def install(self, packages):
+        self.operation.install(packages)
 
 if __name__ == '__main__':
 
+    appName     = "pm-install"
+    catalog     = ""
+    programName = ki18n("pm-install")
+    version     = "0.1"
+    aboutData   = KAboutData(appName, catalog, programName, version)
+    aboutData.setProgramIconName(":/data/package-manager.png")
     KCmdLineArgs.init(sys.argv, aboutData)
 
     options = KCmdLineOptions()
@@ -73,6 +96,13 @@ if __name__ == '__main__':
     app = KUniqueApplication(True, True)
     args = KCmdLineArgs.parsedArgs()
 
+    packages = []
+    for i in range(args.count()):
+        package = str(args.url(i).toLocalFile())
+        print package
+        if package.endswith(".pisi"):
+            packages.append(package)
+
     if not dbus.get_default_main_loop():
         from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)
@@ -80,6 +110,7 @@ if __name__ == '__main__':
     setSystemLocale()
 
     installer = PMInstaller()
-    installer.exec_()
+    installer.show()
+    installer.install(packages)
 
     app.exec_()
