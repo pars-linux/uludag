@@ -97,7 +97,7 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
             return
 
         preferredDriver = config.preferredDriver(installed=False)
-        if preferredDriver == self.iface.getDriver():
+        if preferredDriver is None or preferredDriver == self.iface.getDriver():
             return
 
         isInstalled = preferredDriver == config.preferredDriver()
