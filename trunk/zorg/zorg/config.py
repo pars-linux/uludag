@@ -98,14 +98,15 @@ def saveXorgConfig(card):
 
     # If this driver has an Xorg.Driver script,
     # call its methods to update sections.
-    pkg = info.get("package")
-    if pkg:
-        link = comar.Link()
-        try:
-            secDevice.options = link.Xorg.Driver[pkg].getDeviceOptions(
-                                    card.bus_id, secDevice.options)
-        except dbus.DBusException:
-            pass
+    if info:
+        pkg = info.get("package")
+        if pkg:
+            link = comar.Link()
+            try:
+                secDevice.options = link.Xorg.Driver[pkg].getDeviceOptions(
+                                        card.bus_id, secDevice.options)
+            except dbus.DBusException:
+                pass
 
     # Backup and save xorg.conf
     backup(consts.xorg_conf_file)
