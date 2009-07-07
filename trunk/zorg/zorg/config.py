@@ -2,6 +2,7 @@
 
 import os
 
+import comar
 import piksemel
 
 from zorg import consts
@@ -29,8 +30,6 @@ def saveXorgConfig(card):
                 "DontVTSwitch" : "true",
                 }
         secFlags.options.update(jailOpts)
-
-    info = card.getDict()
 
     # Device section
     secDevice.set("Identifier", "VideoCard")
@@ -96,6 +95,17 @@ def saveXorgConfig(card):
     # Layout section
     secLay.set("Identifier", "Layout")
     secLay.set("Screen", "Screen")
+
+    # If this driver has an Xorg.Driver script,
+    # call its methods to update sections.
+    pkg = info.get("package")
+    if pkg:
+        link = comar.Link()
+        try:
+            opts = link.Xorg.Driver[pkg].getDeviceOptions(card.bus_id, secDevice.options)
+            secDevice.options.update(opts)
+        except dbus.DBusException:
+            pass
 
     # Backup and save xorg.conf
     backup(consts.xorg_conf_file)
@@ -206,15 +216,13 @@ def saveDeviceInfo(card):
     except OSError:
         doc = piksemel.newDocument("ZORG")
 
-    info = card.getDict()
-
     for tag in doc.tags("Card"):
-        if tag.getAttribute("busId") == info["bus-id"]:
+        if tag.getAttribute("busId") == card.bus_id:
             tag.hide()
             break
 
     cardTag = doc.insertTag("Card")
-    cardTag.setAttribute("busId", info["bus-id"])
+    cardTag.setAttribute("busId", card.bus_id)
 
     addTag(cardTag, "VendorId", card.vendor_id)
     addTag(cardTag, "ProductId", card.product_id)
@@ -255,7 +263,7 @@ def saveDeviceInfo(card):
     f.write(doc.toPrettyString().replace("\n\n", ""))
 
     f = open(consts.configured_bus_file, "w")
-    f.write(info["bus-id"])
+    f.write(card.bus_id)
 
 def getKeymap():
     layout = None
