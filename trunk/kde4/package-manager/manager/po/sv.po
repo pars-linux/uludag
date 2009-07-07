@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-02 14:39+0300\n"
-"PO-Revision-Date: 2009-07-04 15:02+0200\n"
+"PO-Revision-Date: 2009-07-06 11:43+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -392,7 +392,7 @@ msgstr "uppdaterade"
 
 #: .tmp/statemanager.py:88
 msgid "%1 new package(s) have been installed succesfully."
-msgstr "%1 paket har installerats."
+msgstr "%1 paket har installerats framgångsrikt."
 
 #: .tmp/statemanager.py:89
 msgid "%1 package(s) have been removed succesfully."
@@ -505,7 +505,7 @@ msgstr "Sammanfattning"
 
 #: .tmp/ui_summarydialog.py:54
 msgid "12 new packages are installed  succesfully."
-msgstr "12 nya paket har installerats."
+msgstr "12 nya paket har installerats framgångsrikt."
 
 #: .tmp/ui_summarydialog.py:55
 msgid ""
@@ -525,7 +525,7 @@ msgstr "Beskrivning:"
 
 #: .tmp/packagedelegate.py:127
 msgid "Release:"
-msgstr "Utgåva:"
+msgstr "Version:"
 
 #: .tmp/packagedelegate.py:137
 msgid "Repository:"
