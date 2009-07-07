@@ -35,19 +35,19 @@ class Operation(QObject):
         self.iface.setExceptionHandler(self.exceptionHandler)
 
     def handler(self, package, signal, args):
-        print signal
-        print args
         if signal == "status":
-            signal = args[0]
+            signal = str(args[0])
             args = args[1:]
 
         if signal == "finished":
-            print "finished"
-        elif signal == "status" and args[0] in ["installing", "extracting", "configuring"]:
+            self.emit(SIGNAL("operationChanged(QString)"), "Succesfully finished installing %d package(s)." % len(self.packages))
+
+        elif signal in ["installing", "extracting", "configuring"]:
             self.statusChanges += 1
-            operation = args[0]
-            package = args[1]
-            print "%s - %s" % (operation, package)
+            operation = signal
+            package = args[0]
+            self.updateProgress()
+            self.emit(SIGNAL("operationChanged(QString)"), "Installing %s" % package)
 
     def updateProgress(self):
         try:
@@ -69,8 +69,10 @@ class PMInstaller(QtGui.QDialog, Ui_PMInstaller):
     def __init__(self, parent=None):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
+        self.operationText.setText("")
         self.operation = Operation()
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressBar.setValue)
+        self.connect(self.operation, SIGNAL("operationChanged(QString)"), self.operationText.setText)
 
     def install(self, packages):
         self.operation.install(packages)
