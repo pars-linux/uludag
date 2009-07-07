@@ -13,12 +13,14 @@
 import os
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import i18n, KGlobal
+from PyKDE4.kdecore import i18n
+from PyKDE4.kdeui import KIcon
 
 
 from migration.gui.ScreenWidget import ScreenWidget
 from migration.gui.ui.userFilesWidget import Ui_userFilesWidget
-
+from migration.gui import context as ctx
+from migration.utils import files
 
 class DirectoryViewItem(QtGui.QTreeWidgetItem):
     "an element of DirView which represents a file or directory"
@@ -31,13 +33,16 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
         self.size = 0
         if os.path.isdir(self.path):
             self.type = "dir"
-            self.pix = KGlobal.iconLoader().loadIcon("folder", KIcon.Small)
+            self.pix = KIcon("folder")
         elif os.path.isfile(self.path):
             self.type = "file"
-            self.pix = KGlobal.iconLoader().loadIcon("file", KIcon.Small)
+            self.pix = KIcon("text-plain")
             self.size = os.path.getsize(self.path)
             self.writeSize()
-        self.setPixmap(0, self.pix)
+        self.setIcon(0, self.pix)
+        self.setChecked(True)
+        self.addChildren()
+
 
     def setChecked(self, checked):
         if checked:
@@ -50,8 +55,11 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
 
     def expand(self):
         "calls when user expands the item"
-        self.setOpen(1)
-        self.setPixmap(0, KGlobal.iconLoader().loadIcon("fileopen", KIcon.Small))
+        self.setExpanded(True)
+        #if self.type == "dir":
+        #    self.setIcon(0, KIcon("diropen"))
+        #else:
+        #    self.setIcon(0, KIcon("fileopen"))
         # Add grand children:
         for child in self.children:
             if not child.childCount():
@@ -59,7 +67,8 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
 
     def collapse(self):
         "calls when user collapses the item"
-        self.setPixmap(0, KGlobal.iconLoader().loadIcon("folder", KIcon.Small))
+        self.setExpanded(False)
+        #self.setIcon(0, KIcon("folder"))
 
     def activate(self):
         "calls when user click the checkbox"
@@ -69,11 +78,12 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
 
     def addChildren(self):
         "adds child items of the item"
-        QtGui.QApplication.setOverrideCursor(QCursor(Qt.WaitCursor))
+        QtGui.QApplication.setOverrideCursor(QtGui.QCursor(Qt.WaitCursor))
         if os.path.isdir(self.path):
             filelist = os.listdir(self.path)
             for thefile in filelist:
-                if thefile in utility.files.ignoreList:
+                print "file:%s" % thefile
+                if thefile in files.ignoreList:
                     continue
                 realname = os.path.join(self.path, thefile)
                 child = DirectoryViewItem(self, realname)
@@ -102,6 +112,8 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
             self.setText(1, "%.1f KB" % (self.size / 1024.0))
         elif self.size:
             self.setText(1, "%d B" % self.size)
+        elif self.size == 0:
+            self.setText(1, "")
 
     def selectedFiles(self):
         "returns a list of selected children of an item"
@@ -124,7 +136,7 @@ class DirectoryViewRoot(DirectoryViewItem):
         self.name = name
         self.localname = localname
         self.path = path
-        self.addChildren()
+        #self.addChildren()
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = i18n("Selecting Files")
@@ -135,23 +147,30 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_userFilesWidget()
         self.ui.setupUi(self)
 
-        self.connect(self.ui.copy, SIGNAL("clicked(bool checked = false)"), self.slotRadiosClicked)
-        self.connect(self.ui.nothing, SIGNAL("clicked(bool checked = false)"), self.slotRadiosClicked)
-        self.connect(self.ui.link, SIGNAL("clicked(bool checked = false)"), self.slotRadiosClicked)
+        self.connect(self.ui.copy, SIGNAL("toggled(bool)"), self.slotRadiosClicked)
+        self.connect(self.ui.nothing, SIGNAL("toggled(bool checked)"), self.slotRadiosClicked)
+        self.connect(self.ui.link, SIGNAL("toggled(bool checked)"), self.slotRadiosClicked)
+        self.connect(self.ui.dirview, SIGNAL("itemCollapsed(QTreeWidgetItem *)"), self.collapse)
+        self.connect(self.ui.dirview, SIGNAL("itemExpanded(QTreeWidgetItem *)"), self.expand)
 
+    def collapse(self, item):
+        item.collapse()
+
+    def expand(self, item):
+        item.expand()
 
     def slotRadiosClicked(self):
-        if self.ui.copy.isClicked():
+        if self.ui.copy.isChecked():
             self.ui.destination.setEnabled(True)
             self.ui.dirview.setEnabled(True)
-        elif self.ui.nothing.isClicked():
+        elif self.ui.nothing.isChecked():
             self.ui.destination.setEnabled(False)
             self.ui.dirview.setEnabled(False)
-        elif self.ui.link.isClicked():
+        elif self.ui.link.isChecked():
             self.ui.destination.setEnabled(False)
             self.ui.dirview.setEnabled(False)
 
-    def creator(self):
+    def creator(self, sources):
         # Add folders:
         folders = []
         acceptList = [("Personal Path", "My Documents", i18n("My Documents")),
@@ -174,7 +193,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                     unique = False
                     break
             if unique:
-                DirectoryViewRoot(self.dirview, path, name, localname)
+                DirectoryViewRoot(self.ui.dirview, path, name, localname)
 
     def getOptions(self):
         options = {}
@@ -188,7 +207,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             options["links"] = links
 
-        elif self.copy.isChecked():
+        elif self.ui.copy.isChecked():
             folders = []
             for index in xrange(self.ui.dirview.topLevelItemCount()):
                 child = self.ui.dirview.topLevelItem(index)
@@ -198,11 +217,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
                     folders.append({"name":child.name, "localname":child.localname, "source":child.path, "files":files})
 
             options["folders"] = folders
-            options["copy destination"] = unicode(self.destination.text())
+            options["copy destination"] = unicode(self.ui.destination.text())
         return options
 
     def shown(self):
-        pass
-
+        self.creator(ctx.sources)
     def execute(self):
-        self.options = self.getOptions()
+        ctx.fileOptions = self.getOptions()
+        return True
