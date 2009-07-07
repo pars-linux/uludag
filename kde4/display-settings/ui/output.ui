@@ -99,7 +99,7 @@
               <item>
                <widget class="QToolButton" name="browseMonitorsButton">
                 <property name="text">
-                 <string>...</string>
+                 <string>Choose</string>
                 </property>
                </widget>
               </item>

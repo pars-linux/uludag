@@ -75,7 +75,7 @@ class OutputDialog(QtGui.QDialog, Ui_OutputDialog):
             self.monitorName.setText(model)
         else:
             self.vendor = ""
-            model = kdecore.i18n("<qt><i>Click the button to select a monitor</i></qt>")
+            model = kdecore.i18n("<qt><i>Click the \"Choose\" button to select a monitor</i></qt>")
             self.monitorName.setText(model)
 
         self.okButton.setDisabled(self.vendor == "")
