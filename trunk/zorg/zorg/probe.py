@@ -97,11 +97,14 @@ class VideoDevice:
                 info["package"] = package
                 return info
         else:
-            info = {
-                    "alias":        driver,
-                    "xorg-module":  driver,
-                    }
-            return info
+            if driverExists(driver):
+                info = {
+                        "alias":        driver,
+                        "xorg-module":  driver,
+                        }
+                return info
+            else:
+                return {}
 
     def setDriver(self, driver):
         """
@@ -126,14 +129,19 @@ class VideoDevice:
             if package:
                 link.Xorg.Driver[package].enable(timeout=2**16-1)
 
-    def preferredDriver(self):
+    def preferredDriver(self, installed=True):
         if isVirtual():
             return "fbdev" if os.path.exists("/dev/fb0") else None
 
         cardId = self.vendor_id + self.product_id
         for line in loadFile(consts.drivers_file):
             if line.startswith(cardId):
-                return line.split()[1]
+                driver = line.split()[1]
+                if installed:
+                    drvInfo = self.driverInfo(driver)
+                    if not drvInfo:
+                        return None
+                return driver
 
     def isChanged(self):
         if self.saved_vendor_id and self.saved_product_id:
