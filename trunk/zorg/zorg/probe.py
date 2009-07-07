@@ -74,34 +74,9 @@ class VideoDevice:
         self.saved_product_id = None
 
         self.driver = None
-        self.package = None
-
-        self.active_outputs = []
-        self.modes = {}
         self.depth = 0
-        self.desktop_setup = "single"
-
-        self.driver_options = {}
-        self.monitors = {}
-
         self.outputs = {}
-
-    def getDict(self):
-        info = {
-            "bus-id" : "PCI:%d:%d:%d" % self.bus,
-            "driver" : self.driver or "",
-            "depth" : str(self.depth) if self.depth else "",
-            "desktop-setup" : self.desktop_setup,
-            "active-outputs" : ",".join(self.active_outputs),
-        }
-
-        for output, mode in self.modes.items():
-            info["%s-mode" % output] = mode
-            if self.monitors.has_key(output):
-                info["%s-hsync" % output] = self.monitors[output].hsync
-                info["%s-vref"  % output] = self.monitors[output].vref
-
-        return info
+        self.monitors = {}
 
     def driverInfo(self, driver=None):
         if driver is None:
@@ -119,8 +94,7 @@ class VideoDevice:
                 continue
             alias = str(info["alias"])
             if alias == self.driver:
-                if "package" not in info:
-                    info["package"] = package
+                info["package"] = package
                 return info
         else:
             info = {
@@ -139,30 +113,19 @@ class VideoDevice:
         """
 
         self.driver = driver
-
-        if driver:
-            info = self.driverInfo(driver)
-            self.package = info["package"]
-        else:
-            self.package = None
-
+        self.outputs = {}
         self.enableDriver()
 
     def enableDriver(self):
+        package = self.driverInfo()["package"]
         oldpackage = enabledPackage()
-        if self.package != oldpackage:
+        if package != oldpackage:
             link = comar.Link()
             if oldpackage and oldpackage.replace("-", "_") in list(link.Xorg.Driver):
                 link.Xorg.Driver[oldpackage].disable(timeout=2**16-1)
 
-            if self.package:
-                link.Xorg.Driver[self.package].enable(timeout=2**16-1)
-
-    def requestDriverOptions(self):
-        if not self.package or self.package == "xorg-video":
-            return
-        link = comar.Link()
-        self.driver_options = link.Xorg.Driver[self.package].getOptions(self.getDict())
+            if package:
+                link.Xorg.Driver[package].enable(timeout=2**16-1)
 
     def isChanged(self):
         if self.saved_vendor_id and self.saved_product_id:

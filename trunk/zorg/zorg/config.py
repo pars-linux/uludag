@@ -38,8 +38,6 @@ def saveXorgConfig(card):
     if info:
         secDevice.set("Driver", info["xorg-module"])
 
-    secDevice.options.update(card.driver_options)
-
     # Monitor sections
     for name, output in card.outputs.items():
         identifier = "Monitor[%s]" % name
