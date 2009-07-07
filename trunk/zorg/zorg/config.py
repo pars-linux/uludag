@@ -102,8 +102,8 @@ def saveXorgConfig(card):
     if pkg:
         link = comar.Link()
         try:
-            opts = link.Xorg.Driver[pkg].getDeviceOptions(card.bus_id, secDevice.options)
-            secDevice.options.update(opts)
+            secDevice.options = link.Xorg.Driver[pkg].getDeviceOptions(
+                                    card.bus_id, secDevice.options)
         except dbus.DBusException:
             pass
 
