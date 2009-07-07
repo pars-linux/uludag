@@ -19,6 +19,10 @@ from PyQt4 import QtGui
 from PyKDE4 import kdeui
 from PyKDE4 import kdecore
 
+# zorg
+from zorg.hwdata import driverPackages
+from zorg.utils import run
+
 # UI
 from displaysettings.ui_devices import Ui_devicesWidget
 
@@ -71,6 +75,8 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
 
         self.configChanged.connect(self.slotConfigChanged)
 
+        QtCore.QTimer.singleShot(0, self.suggestDriver)
+
     def checkBackend(self):
         """
             Check if there are packages that provide required backend.
@@ -82,6 +88,51 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
 
     def signalHandler(self, package, signal, args):
         pass
+
+    def suggestDriver(self):
+        config = self.iface.getConfig()
+        dontAskAgainName = "Driver Suggestion"
+        shouldBeShown, answer = kdeui.KMessageBox.shouldBeShownYesNo(dontAskAgainName)
+        if not shouldBeShown or not config:
+            return
+
+        preferredDriver = config.preferredDriver(installed=False)
+        if preferredDriver == self.iface.getDriver():
+            return
+
+        isInstalled = preferredDriver == config.preferredDriver()
+
+        if isInstalled:
+            msg = kdecore.i18n("<qt>To get better performance, you may want to "
+                            "use <b>%1</b> driver provided by hardware vendor. "
+                            "Do you want to use this driver?</p></qt>",
+                            preferredDriver)
+            answer = kdeui.KMessageBox.questionYesNo(self, msg,
+                        QtCore.QString(),
+                        kdeui.KStandardGuiItem.yes(),
+                        kdeui.KStandardGuiItem.no(),
+                        dontAskAgainName)
+            if answer == kdeui.KMessageBox.Yes:
+                self.cardDialog.setDriver(preferredDriver)
+
+        else:
+            package = driverPackages.get(preferredDriver)
+            if package is None:
+                return
+            msg = kdecore.i18n("<qt>To get better performance, you may want to "
+                            "use <b>%1</b> driver provided by hardware vendor. "
+                            "To use it, you must install <b>%2</b> package and"
+                            " choose <b>%1</b> from video card options.</qt>",
+                            preferredDriver, package)
+            startPMButton = kdeui.KGuiItem(kdecore.i18n("Start Package Manager"),
+                                            kdeui.KIcon("package-manager"))
+            answer = kdeui.KMessageBox.questionYesNo(self, msg,
+                        QtCore.QString(),
+                        startPMButton,
+                        kdeui.KStandardGuiItem.cont(),
+                        dontAskAgainName)
+            if answer == kdeui.KMessageBox.Yes:
+                run("package-manager", "--show-mainwindow")
 
     def makeItemWidget(self, id_, title="", description="", type_=None, icon=None):
         """

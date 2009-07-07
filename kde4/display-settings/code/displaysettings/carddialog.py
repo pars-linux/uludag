@@ -85,6 +85,11 @@ class VideoCardDialog(QtGui.QDialog, Ui_VideoCardDialog):
     def reject(self):
         QtGui.QDialog.reject(self)
 
+    def setDriver(self, driver):
+        self.changeList.append("driver")
+        self.driver = driver
+        self.configChanged.emit()
+
     def apply(self):
         if "driver" in self.changeList:
             self.iface.setDriver(self.driver)
