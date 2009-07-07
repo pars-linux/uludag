@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import dbus
 
 import comar
 import piksemel
