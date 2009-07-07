@@ -34,9 +34,9 @@ def saveXorgConfig(card):
 
     # Device section
     secDevice.set("Identifier", "VideoCard")
-    info = card.driverInfo()
-    if info:
-        secDevice.set("Driver", info["xorg-module"])
+    drvInfo = card.driverInfo()
+    if drvInfo:
+        secDevice.set("Driver", drvInfo["xorg-module"])
 
     # Monitor sections
     for name, output in card.outputs.items():
@@ -97,16 +97,15 @@ def saveXorgConfig(card):
 
     # If this driver has an Xorg.Driver script,
     # call its methods to update sections.
-    if info:
-        pkg = info.get("package")
-        if pkg:
-            link = comar.Link()
-            opts = dbus.Dictionary(secDevice.options, signature="ss")
-            try:
-                secDevice.options = link.Xorg.Driver[pkg].getDeviceOptions(
-                                        card.bus_id, opts)
-            except dbus.DBusException:
-                pass
+    pkg = drvInfo.get("package")
+    if pkg:
+        link = comar.Link()
+        opts = dbus.Dictionary(secDevice.options, signature="ss")
+        try:
+            secDevice.options = link.Xorg.Driver[pkg].getDeviceOptions(
+                                    card.bus_id, opts)
+        except dbus.DBusException:
+            pass
 
     # Backup and save xorg.conf
     backup(consts.xorg_conf_file)
