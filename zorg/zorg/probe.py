@@ -66,6 +66,8 @@ class VideoDevice:
             self.bus = tuple(int(x) for x in busId.split(":")[1:4])
             deviceDir = "0000:%02x:%02x.%x" % self.bus
 
+        self.bus_id = "PCI:%d:%d:%d" % self.bus,
+
         self.vendor_id  = lremove(pciInfo(deviceDir, "vendor"), "0x").lower()
         self.product_id = lremove(pciInfo(deviceDir, "device"), "0x").lower()
         self.saved_vendor_id  = None
