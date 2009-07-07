@@ -69,6 +69,7 @@ class NmApplet(plasmascript.Applet):
         self.readEntries()
         self.followSolid()
 
+        self.connectedDevices = []
         self.iface = NetworkIface()
         self.notifyface = Notifier(dbus.get_default_main_loop())
         self.notifyface.registerNetwork()
@@ -240,11 +241,15 @@ class NmApplet(plasmascript.Applet):
             ip = None
             self.lastActiveDevice  = self.iface.info(package, args[0])['device_id']
             self.lastActivePackage = package
+            connection = '%s..%s' % (self.lastActivePackage, self.lastActiveDevice)
 
             # Network UP
             if (str(args[1]) == "up"):
                 msg = i18n("Connected to <b>%s</b> IP: %s" % (args[0], args[2]))
                 lastState = CONNECTED
+
+                if not connection in self.connectedDevices:
+                    self.connectedDevices.append(connection)
 
                 # Current Ip
                 ip = args[2]
@@ -256,14 +261,25 @@ class NmApplet(plasmascript.Applet):
 
             # Network DOWN
             else:
-                if self.lastActivePackage == 'wireless_tools':
-                    self.defaultIcon = ICONPATH % (self.package().path(), "off")
+                # remove connection from connected devices
+                if connection in self.connectedDevices:
+                    self.connectedDevices.remove(connection)
+                # check if connection remained in queue
+                if len(self.connectedDevices) > 0:
+                    connection = self.connectedDevices[0]
+                    self.lastActivePackage = connection.split('..')[0]
+                    self.lastActiveDevice = connection.split('..')[1]
+                    msg = i18n("Disconnected")
+                    lastState = CONNECTED
+                else:
+                    if self.lastActivePackage == 'wireless_tools':
+                        self.defaultIcon = ICONPATH % (self.package().path(), "off")
 
-                self.lastActiveDevice  = None
-                self.lastActivePackage = None
+                    self.lastActiveDevice  = None
+                    self.lastActivePackage = None
 
-                msg = i18n("Disconnected")
-                lastState = DISCONNECTED
+                    msg = i18n("Disconnected")
+                    lastState = DISCONNECTED
 
             # Update Connection
             self.popup.setConnectionStatus(package, lastState["title"])
