@@ -126,6 +126,15 @@ class VideoDevice:
             if package:
                 link.Xorg.Driver[package].enable(timeout=2**16-1)
 
+    def preferredDriver(self):
+        if isVirtual():
+            return "fbdev" if os.path.exists("/dev/fb0") else None
+
+        cardId = self.vendor_id + self.product_id
+        for line in loadFile(consts.drivers_file):
+            if line.startswith(cardId):
+                return line.split()[1]
+
     def isChanged(self):
         if self.saved_vendor_id and self.saved_product_id:
             return (self.vendor_id, self.product_id) != (self.saved_vendor_id, self.saved_product_id)
