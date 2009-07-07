@@ -108,10 +108,10 @@ function doOnSelectProduct(selectmode) {
 [% PROCESS global/variables.none.tmpl %]
 
 [% query_variants = [
-  { value => "allwordssubstr", description => "tüm kelimeleri-katarları içerir" },
-  { value => "anywordssubstr", description => "kelimelerin-katarların herhangi birini içerir" },
-  { value => "substring", description => "katarı içerir" },
-  { value => "casesubstring", description => "katarı içerir (büyük-küçük harf olarak aynısını)" },
+  { value => "allwordssubstr", description => "tüm kelimeleri-dizgeleri içerir" },
+  { value => "anywordssubstr", description => "kelimelerin-dizgelerin herhangi birini içerir" },
+  { value => "substring", description => "dizgeyi içerir" },
+  { value => "casesubstring", description => "dizgeyi içerir (büyük-küçük harf olarak aynısını)" },
   { value => "allwords", description => "tüm kelimeleri içerir" },
   { value => "anywords", description => "kelimelerin herhangi birini içerir" },
   { value => "regexp", description => "düzenli ifadeyle eşleşir" },
