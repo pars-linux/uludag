@@ -240,6 +240,7 @@ class RepositorySettings(SettingsTab):
             activities[name]=active
         self.iface.setRepositories(repos)
         self.iface.setRepoActivities(activities)
+        self.iface.updateRepositories()
 
 class ProxySettings(SettingsTab):
     def setupUi(self):
