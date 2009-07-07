@@ -83,7 +83,7 @@ class VideoDevice:
             driver = self.driver
 
         if driver is None:
-            return None
+            return {}
 
         link = comar.Link()
         packages = list(link.Xorg.Driver)
@@ -100,7 +100,6 @@ class VideoDevice:
             info = {
                     "alias":        driver,
                     "xorg-module":  driver,
-                    "package":      ""
                     }
             return info
 
@@ -117,7 +116,7 @@ class VideoDevice:
         self.enableDriver()
 
     def enableDriver(self):
-        package = self.driverInfo()["package"]
+        package = self.driverInfo().get("package")
         oldpackage = enabledPackage()
         if package != oldpackage:
             link = comar.Link()
