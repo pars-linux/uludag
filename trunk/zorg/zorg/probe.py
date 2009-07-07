@@ -93,7 +93,7 @@ class VideoDevice:
             except dbus.DBusException:
                 continue
             alias = str(info["alias"])
-            if alias == self.driver:
+            if alias == driver:
                 info["package"] = package
                 return info
         else:
