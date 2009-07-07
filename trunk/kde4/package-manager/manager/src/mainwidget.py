@@ -35,6 +35,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
+        self.searchButton.setIcon(KIcon("edit-find"))
         self.statusUpdater = StatusUpdater()
         self.state = StateManager(self)
         self.basket = BasketDialog(self.state)
