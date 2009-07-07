@@ -17,42 +17,50 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import KGlobal, i18n
 
 from migration.gui.ScreenWidget import ScreenWidget
-from migration.gui import context as ctx 
-from migration.utils import account
-from migration.utils import bookmark
+from migration.gui import context as ctx
+from migration.utils.account import *
+from migration.utils.bookmark import *
 from migration.utils import wallpaper
 from migration.utils import files
+import time
 import logging
 
 class ProgressPage(QtGui.QWidget):
     def __init__(self, parent):
         QtGui.QWidget.__init__(self, parent)
-        self.vbox = QtGui.QVBoxLayout(self)
+        #self.vbox = QtGui.QVBoxLayout(self)
+        self.layout = QtGui.QGridLayout(self)
         # Top Label:
         self.label = QtGui.QLabel(self)
         self.label.setText(i18n("Please wait while applying changes..."))
-        self.label.setAlignment(Qt.AlignLeft)
-        self.vbox.addWidget(self.label)
+        #self.label.setAlignment(Qt.AlignLeft)
+        self.layout.addWidget(self.label, 0, 0)
+
         # Progress Bar Grid Layout:
-        self.progresslayout = QtGui.QGridLayout(self)
-        self.vbox.addLayout(self.progresslayout)
+        #self.progresslayout = QtGui.QGridLayout(self)
+        #self.vbox.addLayout(self.progresslayout)
+
         # Progress 1:
         self.label1 = QtGui.QLabel(self)
         self.label1.setText(i18n("Prepare: "))
-        self.progresslayout.addWidget(self.label1, 0, 0)
+        self.layout.addWidget(self.label1, 1, 0)
         self.progressbar1 = QtGui.QProgressBar(self)
-        self.progresslayout.addWidget(self.progressbar1, 0, 1)
+        self.layout.addWidget(self.progressbar1, 1, 1)
+
         # Progress 2:
         self.label2 = QtGui.QLabel(self)
         self.label2.setText(i18n("Apply: "))
-        self.progresslayout.addWidget(self.label2, 1, 0)
+        self.layout.addWidget(self.label2, 2, 0)
         self.progressbar2 = QtGui.QProgressBar(self)
-        self.progresslayout.addWidget(self.progressbar2, 1, 1)
+        self.layout.addWidget(self.progressbar2, 2, 1)
+
         # Operation Lines:
-        self.operationlines = QtGui.QVBoxLayout()
-        self.vbox.addLayout(self.operationlines)
+        #self.operationlines = QtGui.QVBoxLayout()
+        #self.layout.addLayout(self.operationlines,)
         spacer = QtGui.QSpacerItem(5, 5, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
-        self.vbox.addItem(spacer)
+        self.layout.addItem(spacer)
+
+
         # Progress Variables:
         self.steps1 = 0
         self.steps2 = 0
@@ -72,6 +80,7 @@ class ProgressPage(QtGui.QWidget):
             self.progressbar2.setValue(0)
         else:
             self.progressbar2.setValue(100 * self.progress2 / self.steps2)
+
     def addProgress(self, number, bar=1):
         "Adds steps to progress bars"
         if bar == 1:
@@ -79,23 +88,27 @@ class ProgressPage(QtGui.QWidget):
         else:
             self.steps2 += number
         self.updateProgress()
+
     def makeProgress(self, number, bar=1):
         "Makes progress bar step"
         if bar == 1:
             self.progress1 += number
         else:
             self.progress2 += number
-        self.updateProgress()    
+        self.updateProgress()
+
     def addOperation(self, name, steps):
         "Adds a new operation to the progress page"
         op = Operation(self, name, steps)
         self.oplines.addLayout(op)
         self.operations.append(op)
         self.steps2 += steps
+
     def customEvent(self, event):
         # Show Warning Box:
         if event.type() == 65456:
-            self.warning = QtGui.QMessageBox.warning(self, i18n("Warning!"), event.message, QMessageBox.Ok, QMessageBox.Cancel, QMessageBox.NoButton)
+            self.warning = QtGui.QMessageBox.warning(self, i18n("Warning!"), event.message, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel, QtGui.QMessageBox.NoButton)
+
     def go(self, log, stat, steps):
         "increments progressbar, logs changes and modify icons"
         activeop = self.operations[self.active]
@@ -120,7 +133,7 @@ class Operation(QtGui.QHBoxLayout):
         self.warnings = 0
         self.errors = 0
         self.OKs = 0
-        self.icon = QLabel(parent)
+        self.icon = QtGui.QLabel(parent)
         self.icon.show()
         self.icon.setMinimumSize(QtGui.QSize(30, 30))
         self.icon.setMaximumSize(QtGui.QSize(30, 30))
@@ -129,9 +142,11 @@ class Operation(QtGui.QHBoxLayout):
         self.text.setText(title)
         self.text.show()
         self.addWidget(self.text)
+
     def start(self):
         pix = KGlobal.iconLoader().loadIcon("1rightarrow", KIcon.Toolbar)
         self.icon.setPixmap(pix)
+
     def go(self, log, stat, steps):
         self.progress += steps
         if stat == ctx.OK:
@@ -162,7 +177,7 @@ def warning(progresspage, message):
     "Shows a warning box and waits until box closes. This method should be used to become thread-safe"
     progresspage.warning = None
     event = WarningEvent(message)
-    QApplication.postEvent(progresspage, event)
+    QtGui.QApplication.postEvent(progresspage, event)
     # Wait until messagebox returns
     while progresspage.warning == None:
         time.sleep(0.2)
@@ -183,7 +198,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
         self.progresspage = ProgressPage(self)
-
+        self.vbox = QtGui.QVBoxLayout(self)
+        self.vbox.addWidget(self.progresspage)
 
     def run(self):
         if ctx.options.has_key("Wallpaper Path"):
@@ -206,9 +222,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.progresspage.addProgress(3, 1)
         if ctx.options.has_key("folders"):
             self.progresspage.addProgress(20, 1)
+
         # Initialization:
         account = Account()
         bookmark = Bookmark()
+
         # Control Settings and Set Second Progress Bar:
         # Wallpaper:
         if ctx.options.has_key("Wallpaper Path"):
@@ -414,7 +432,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         else:
             self.progresspage.label.setText(i18n("All operations completed. You can close the wizard..."))
     def shown(self):
-        pass
+        self.run()
 
     def execute(self):
-        self.run()
+        return True
