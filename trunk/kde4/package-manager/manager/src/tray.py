@@ -42,13 +42,16 @@ class Tray(KSystemTrayIcon):
 
     def initializePopup(self):
         self.setIcon(self.defaultIcon)
-
-        menu = KActionMenu(i18n("Update"), self)
-        for name, address in self.iface.getRepositories():
-            self.__addAction(name, menu)
-        self.__addAction(i18n("All"), menu)
-        self.contextMenu().addAction(menu)
+        self.actionMenu = KActionMenu(i18n("Update"), self)
+        self.populateRepositoryMenu()
+        self.contextMenu().addAction(self.actionMenu)
         self.contextMenu().addSeparator()
+
+    def populateRepositoryMenu(self):
+        self.actionMenu.menu().clear()
+        for name, address in self.iface.getRepositories():
+            self.__addAction(name, self.actionMenu)
+        self.__addAction(i18n("All"), self.actionMenu)
 
     def __addAction(self, name, menu):
         action = QtGui.QAction(name, self)
