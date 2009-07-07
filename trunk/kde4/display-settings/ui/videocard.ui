@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>439</width>
-    <height>227</height>
+    <height>229</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -97,11 +97,6 @@
           <item>
            <property name="text">
             <string>24 Bit</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>30 Bit</string>
            </property>
           </item>
          </widget>
