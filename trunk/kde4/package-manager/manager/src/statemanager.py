@@ -112,7 +112,7 @@ class StateManager(QObject):
             return list(set(self.packages()).intersection(self.iface.getGroupPackages(name)))
 
     def chainAction(self, operation):
-        chains = { "System.Manager.setRepoActivities":self.iface.updateRepositories }
+        chains = { "System.Manager.setRepositories":lambda:self.emit(SIGNAL("repositoriesChanged()")) }
         if chains.has_key(operation):
             chains[operation]()
 
