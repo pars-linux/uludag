@@ -26,6 +26,6 @@
 - Bir işlem yapılmakta iken parola sorgu sayfasına iptal denilince, yapılmakta olan işlemi geri alamıyor.
 + Kablosuz bir ağa bağlanılıp daha sonra modem fişi çekildiğinde, kablosuz ağ bağlantısını düzgün bir şekilde kesebiliyor, fakat tekrar bağlan denildiğinde 180 saniyeden uzun bir süre bekliyor ve daha sonra policykit hatası veriyor.
 
-- Modem restart edildiğinde otomatik olarak kablosuz ağa bağlanılamıyor.
+x Modem restart edildiğinde otomatik olarak kablosuz ağa bağlanılamıyor.
 ? Belirli aralıklarla bağlantı probe edilmeli.
 x Kde dili ingilizce ve sistem dili türkçe olduğunda, Uygulamalar -> sistem altından uygulama çalıştırınca, uygulama türkçe açılıyor.
