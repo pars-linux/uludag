@@ -11,6 +11,7 @@
 # Please read the COPYING file.
 #
 
+import os
 import sys
 
 from PyQt4 import QtGui
@@ -40,14 +41,14 @@ class Operation(QObject):
             args = args[1:]
 
         if signal == "finished":
-            self.emit(SIGNAL("operationChanged(QString)"), "Succesfully finished installing %d package(s)." % len(self.packages))
+            self.emit(SIGNAL("operationChanged(QString)"), "Succesfully finished installing %s" % os.path.basename(self.packages[0]))
 
         elif signal in ["installing", "extracting", "configuring"]:
             self.statusChanges += 1
-            operation = signal
-            package = args[0]
             self.updateProgress()
-            self.emit(SIGNAL("operationChanged(QString)"), "Installing %s" % package)
+            # operation = signal
+            # package = args[0]
+            # self.emit(SIGNAL("operationChanged(QString)"), "Installing %s" % package)
 
     def updateProgress(self):
         try:
@@ -75,6 +76,7 @@ class PMInstaller(QtGui.QDialog, Ui_PMInstaller):
         self.connect(self.operation, SIGNAL("operationChanged(QString)"), self.operationText.setText)
 
     def install(self, packages):
+        self.operationText.setText("Installing %s" % os.path.basename(packages[0]))
         self.operation.install(packages)
 
 if __name__ == '__main__':
