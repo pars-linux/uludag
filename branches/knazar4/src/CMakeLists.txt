@@ -6,8 +6,8 @@ knazar.cpp
 )
 qt4_add_dbus_adaptor(knazar_SRCS tr.org.pardus.knazar.xml knazar.h Knazar)
 
-kde4_add_executable(knazar4 ${knazar_SRCS})
-target_link_libraries(knazar4 ${KDE4_KDEUI_LIBS})
+kde4_add_executable(knazar ${knazar_SRCS})
+target_link_libraries(knazar ${KDE4_KDEUI_LIBS})
 
-install(PROGRAMS knazar4 DESTINATION ${BIN_INSTALL_DIR})
+install(PROGRAMS knazar DESTINATION ${BIN_INSTALL_DIR})
 install(FILES knazar.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
