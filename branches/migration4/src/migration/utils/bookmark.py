@@ -19,7 +19,7 @@ class Bookmark:
     def __init__(self):
         self.dom = xml.dom.minidom.getDOMImplementation()
         self.document = self.dom.createDocument(None, "bookmarks", None)
-    
+
     def getFFBookmarks(self, path):
         "Gets Firefox Bookmarks from a bookmarks.html file"
         filename = os.path.join(path, "bookmarks.html")
@@ -36,7 +36,7 @@ class Bookmark:
             mainnode.insertBefore(headernode, mainnode.firstChild)
         else:
             mainnode.appendChild(headernode)
-    
+
     def getOperaBookmarks(self, path):
         "Gets Opera Bookmarks from a opera6.adr file"
         # open file:
@@ -86,7 +86,7 @@ class Bookmark:
                 nodeurl = line.replace("URL=","",1)
             elif line == "-":
                 groupnode = groupnode.parentNode
-    
+
     def getIEBookmarks(self, directory):
         "Gets IE Bookmarks from a Favourites directory"
         def searchDirectory(directory, document, node):
@@ -124,7 +124,7 @@ class Bookmark:
         headernode.appendChild(textnode)
         self.document.documentElement.appendChild(groupnode)
         searchDirectory(directory, self.document, groupnode)
-    
+
     def setFFBookmarks(self, path):
         "Adds bookmarks to firefox"
         if os.path.lexists(os.path.join(path, "lock")):
@@ -138,7 +138,7 @@ class Bookmark:
             self.setFF2Bookmarks(filepath)
             return
         raise Exception, "Bookmark file cannot be found."
-        
+
     def setFF2Bookmarks(self, filepath):
         "Adds bookmarks to firefox using bookmarks.html file"
         def getText(nodelist):
@@ -147,7 +147,7 @@ class Bookmark:
                 if node.nodeType == node.TEXT_NODE:
                     rc = rc + node.data
             return rc
-        
+
         def handleNode(node):
             data = ""
             if node.tagName == "bookmarks":
@@ -166,7 +166,7 @@ class Bookmark:
                 url = node.getElementsByTagName("url")[0]
                 data += "<DT><A HREF=\"%s\">%s</A>\n" % (getText(url.childNodes), getText(name.childNodes))
             return data
-        
+
         bookmarkfile = open(filepath)
         data = bookmarkfile.read()
         bookmarkfile.close()
@@ -175,7 +175,7 @@ class Bookmark:
         bookmarkfile = open(filename, "w")
         bookmarkfile.write(pairs[0] + data + "</DL>" + pairs[1])
         bookmarkfile.close()
-    
+
     def setFF3Bookmarks(self, databasepath):
         "Adds bookmarks to firefox using places.sqlite database"
         def getText(nodelist):
@@ -184,7 +184,7 @@ class Bookmark:
                 if node.nodeType == node.TEXT_NODE:
                     rc = rc + node.data
             return rc
-        
+
         def handleNode(node, c, parentid, position):
             if node.tagName == "bookmarks":
                 # Handle children:
@@ -222,7 +222,7 @@ class Bookmark:
                     c.execute("INSERT INTO moz_places ('url','title') VALUES (?, ?)", (url, title))
                     fk = c.lastrowid
                 c.execute("INSERT INTO moz_bookmarks ('type', 'fk', 'parent', 'position', 'title') VALUES (1, ?, ?, ?, ?)", (fk, parentid, position, title))
-                
+
         # Connect to database:
         conn = sqlite.connect(databasepath, 5.0)
         c = conn.cursor()
@@ -238,17 +238,17 @@ class Bookmark:
         # Close database:
         conn.commit()
         c.close()
-    
+
     def saveXML(self, filename):
         "Saves Bookmarks to an XML file"
         xmlfile = open(filename, "w")
         data = self.document.toprettyxml()
         xmlfile.write(data)
         xmlfile.close()
-    
+
     def size(self):
         return len(self.document.getElementsByTagName("bookmark")) * 200
-        
+
 class FFBookmarkParser(HTMLParser.HTMLParser):
     def __init__(self, document):
         self.document = document
@@ -256,7 +256,7 @@ class FFBookmarkParser(HTMLParser.HTMLParser):
         self.datapart = ""
         self.mode = "item"
         HTMLParser.HTMLParser.__init__(self)
-    
+
     def handle_starttag(self, tag, attr):
         if self.mode == "get dd":
             self.mode = "item"
@@ -295,7 +295,7 @@ class FFBookmarkParser(HTMLParser.HTMLParser):
             self.mode = "get data"
         elif tag == "dd" and self.mode != "wait dl":
             self.mode = "get dd"
-    
+
     def handle_endtag(self, tag):
         if self.mode == "get dd":
             self.mode = "item"
@@ -318,15 +318,15 @@ class FFBookmarkParser(HTMLParser.HTMLParser):
             self.mode = "item"
         elif tag == "h3":
             self.mode = "wait dl"
-    
+
     def handle_data(self, data):
         if self.mode == "get data" or self.mode == "get dd":
             self.datapart += data
-    
+
     def handle_charref(self, data):
         if self.mode == "get data" or self.mode == "get dd":
             self.datapart += "&#%s;" % data
-    
+
     def handle_entitiyref(self, data):
         if self.mode == "get data" or self.mode == "get dd":
             self.datapart += "&%s;" % data
