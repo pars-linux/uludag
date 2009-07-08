@@ -1,7 +1,6 @@
 * Kernel/initramfs/drivers (Ozan Çağlayan)
     - Find a way for being able to ship saa7134-alsa kernel module (#3478),
     - s2disk problems/support,
-    - It seems that pardus logo on VTs aren't rendered when splash is enabled.
 
 * KDE
     - Some Turkish characters like İ,Ü,etc. are rendered as I, U even the translations
