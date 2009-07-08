@@ -16,6 +16,7 @@ import shutil
 
 # KDE Modules
 from PyKDE4.kdecore import i18n
+from migration.gui import context as ctx
 
 ignoreList = ["desktop.ini", "thumbs.db", "$Recycled.Bin"]
 
@@ -110,9 +111,9 @@ def copyItem(src, dst, progress):
         try:
             shutil.copy2(src, dst)
         except:
-            progress.go(unicode(i18n("file '%s' cannot be copied")) % unicode(src), progress.WARNING, os.path.getsize(src))
+            progress.go(unicode(i18n("file '%s' cannot be copied")) % unicode(src), ctx.WARNING, os.path.getsize(src))
         else:
-            progress.go(unicode(i18n("file '%s' copied")) % unicode(src), progress.OK, os.path.getsize(src))
+            progress.go(unicode(i18n("file '%s' copied")) % unicode(src), ctx.OK, os.path.getsize(src))
     elif os.path.isdir(src):
         if not os.path.exists(dst):
             os.makedirs(dst)
