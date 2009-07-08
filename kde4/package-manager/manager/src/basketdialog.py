@@ -47,6 +47,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         packageList.itemDelegate().setAnimatable(False)
 
     def __updateList(self, packageList, packages):
+        packageList.model().reset()
         packageList.model().setFilterPackages(packages)
         packageList.setColumnWidth(0, 32)
 
