@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-30 11:24+0300\n"
-"PO-Revision-Date: 2009-07-01 22:21+0100\n"
+"PO-Revision-Date: 2009-07-09 00:27+0100\n"
 "Last-Translator: Stefan <sw1976de@googlemail.com>\n"
 "Language-Team: GERMAN <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "Einhängepunkt:"
 
 #: .tmp/ui_edit.py:69
 msgid "Filesystem Type:"
-msgstr "Dateisystem Typ:"
+msgstr "Dateisystem:"
 
 #: .tmp/ui_edit.py:70
 msgid "Options:"
@@ -37,7 +37,7 @@ msgstr "Voreingestellte Optionen:"
 
 #: .tmp/ui_item.py:65
 msgid "Mount or unmount disk."
-msgstr "Medium Ein- oder Aushängen"
+msgstr "Medium ein- oder aushängen"
 
 #: .tmp/ui_item.py:66
 msgid "Edit"
@@ -49,7 +49,7 @@ msgstr "Löschen"
 
 #: .tmp/ui_main.py:77
 msgid "Add New"
-msgstr "Neu Hinzufügen"
+msgstr "Neu hinzufügen"
 
 #: .tmp/diskmanager/pagedialog.py:31
 #: .tmp/diskmanager/pagedialog.py:34
