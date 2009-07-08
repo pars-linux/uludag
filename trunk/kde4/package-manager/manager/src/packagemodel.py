@@ -145,6 +145,7 @@ class PackageModel(QAbstractTableModel):
         self.cached_extras = []
         self.cached_selected_size = 0
         self.cached_extras_size = 0
+        self.cached_package = None
 
     def selectPackages(self, packages):
         self.resetCachedInfos()
