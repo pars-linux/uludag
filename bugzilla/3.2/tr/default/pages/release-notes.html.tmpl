@@ -203,60 +203,29 @@
   <li><strong>Kimlik Doğrulama</strong>: [% terms.Bugzilla %] başarılı bir bağlantı sağlayana kadar denemek üzere bir LDAP sunucu listesi alabilir.</li>
   <li><strong>Kimlik Doğrulama</strong>: [% terms.Bugzilla %] artık RADIUS kimlik doğrulama yöntemini destekliyor.</li>
 
-  <li><strong>Security</strong>: The login cookies is now created as 
-    "HTTPOnly" so that it can't be read by possibly malicious scripts. 
-    Also, if SSL is enabled on your installation, the login cookie is
-    now only sent over SSL connections.</li>
-  <li><strong>Security</strong>: The <code>ssl</code> parameter now protects
-    every page a logged-in user accesses, when set to "authenticated sessions."
-    Also, SSL is now enforced appropriately in the WebServices interface when
-    the parameter is set.</li>
+  <li><strong>Güvenlik</strong>: Oturum çerezler kötü niyetli betikleri engellemek için "HTTPOnly" olarak oluşturuluyor. Ayrıca, eğer kurulumunuzda SSL açıksa oturum çerezi sadece SSL bağlantılarda gönderiliyor.</li>
+  <li><strong>Güvenlik</strong>: <code>ssl</code> parametresi "kimliği doğrulanmış oturumlar" olarak ayarlandığında oturum açmış kullanıcının açtığı tüm sayfalar korunur. Ayrıca, parametre atandığında WebServices arayüzünde SSL zorunlu kılınıyor.</li>
 
-  <li><strong>Database</strong>: [% terms.Bugzilla %] now uses transactions in 
-    the database instead of table locks. This should generally improve
-    performance with many concurrent users. It also means if there is
-    an unexpected error in the middle of a page, all database changes made
-    during that page will be rolled back.</li>
-  <li><strong>Database</strong>: You no longer have to set 
-    <code>max_packet_size</code> in MySQL to add large attachments. However,
-    you may need to set it manually if you restore a mysqldump into your
-    database.</li>
+  <li><strong>Veritabanı</strong>: [% terms.Bugzilla %] artık tablo kilitlemek yerine aktarım (transaction) kullanıyor. Bu değişiklik çok sayıda kullanıcı bağlı olduğunda performans kazanımı sağlayacaktır. Bu değişiklik ayrıca bir sayfanın herhangi bir yerinde beklenmedik bir problem yaşandığında o sayfada yapılan tüm veritabanı değişikliklerinin geri alınacağı anlamına da geliyor.</li>
+  <li><strong>Veritabanı</strong>: MySQL'de büyük ekler için artık <code>max_packet_size</code> kullanmanız gerekmiyor. Ancak, eğer veritabanınıza bir "mysqldump" yükleyecekseniz veritabanında bunu ayarlamanız gerekebilir.</li>
 
-  <li>New WebService functions:
+  <li>Yeni WebService fonksiyonları:
     <a href="[% docs_urlbase FILTER html %]api/Bugzilla/WebService/Bug.html">B<!-- -->ug.add_comment</a>
-    and <a href="[% docs_urlbase FILTER html %]api/Bugzilla/WebService/Bugzilla.html">Bugzilla.extensions</a>.</li>
+    ve <a href="[% docs_urlbase FILTER html %]api/Bugzilla/WebService/Bugzilla.html">Bugzilla.extensions</a>.</li>
 
-  <li>You can now delete custom fields, but only if they have never been
-    set on any [% terms.bug %].</li>
-  <li>There is now a <kbd>--reset-password</kbd> argument to 
-    <kbd>checksetup.pl</kbd> that allows you to reset a user's password
-    from the command line.</li>
-  <li>There is now a script called <kbd>sanitycheck.pl</kbd> that you can
-    run from the command line. It works just like <kbd>sanitycheck.cgi</kbd>.
-    By default, it only outputs anything if there's an error, so it's
-    ideal for administrators who want to run it nightly in a cron job.</li>
-  <li>The <kbd>strict_isolation</kbd> parameter now prevents you from setting
-    users who cannot see [% terms.abug %] as a CC, Assignee, or QA
-    Contact. Previously it only prevented you from adding users who
-    could not <em>edit</em> the [% terms.bug %].</li>
-  <li>Extensions can now add their own headers to the HTML &lt;head&gt;
-    for things like custom CSS and so on.</li>
-  <li><kbd>sanitycheck.cgi</kbd> has been templatized, meaning that the
-    entire [% terms.Bugzilla %] UI is now contained in templates.</li>
-  <li>When setting the <kbd>sslbase</kbd> parameter, you can now specify
-    a port number in the URL.</li>
-  <li>When importing [% terms.bugs %] using <kbd>importxml.pl</kbd>,
-    attachments will have their actual creator set as their creator,
-    instead of the person who exported the [% terms.bug %] from the other
-    system.</li>
-  <li>The voting system is off by default in new installs. This is to
-    prepare for the fact that it will be moved into an extension at
-    some point in the future.</li>
-  <li>The <code>shutdownhtml</code> parameter now works even when 
-    [% terms.Bugzilla %]'s database server is down.</li>
+  <li>Kendi oluşturduğunuz alanları, herhangi bir [% terms.bugLoc %] atanmadılarsa, silebilirsiniz.</li>
+  <li>Artık <kbd>checksetup.pl</kbd>'nin bir kullanıcının parolasını komut satırından sıfırlamak için <kbd>--reset-password</kbd> parametresi bulunuyor.</li>
+  <li><kbd>sanitycheck.cgi</kbd> ile aynı işi yapan bir komut satırı betiği eklendi: <kbd>sanitycheck.pl</kbd>. Öntanımlı olarak, sadece bir hata varsa çıktı üretir, dolayısıyla bir cron işi olarak her gece çalıştırılmak için gayet uygundur.</li>
+  <li><kbd>strict_isolation</kbd> parametresi artık sizin [% terms.abugLoc %] haber verilecekler, atanan veya Kalite Kontrol kişilerini görmenizi de engelliyor. Öncesinde sadece [% terms.bugLoc %] değişiklik yapamayacak kişileri eklemenize olanak veriyordu.</li>
+  <li>Eklentiler HTML &lt;head&gt;'e artık özel CSS ve benzeri kendi başlıklarını ekleyebiliyor.</li>
+  <li><kbd>sanitycheck.cgi</kbd> de tüm [% terms.Bugzilla %] arayüzü gibi şablonlarla çalışıyor.</li>
+  <li><kbd>sslbase</kbd> parametresine artık port numarası da verebiliyorsunuz.</li>
+  <li>[% terms.bugs %] using <kbd>importxml.pl</kbd> ile içeri aktarırken, eklerde diğer sistemden [% terms.bugAcc %] dışarı aktaran yerine ekleri oluşturanların kimliği korunuyor.</li>
+  <li>Yeni kurulumlarda öntanımlı olarak oylama sistemi kapalıdır. Bunu oylama sisteminin ileride bir eklenti haline getirilmesine hazırlık olarak kabul ediniz.</li>
+  <li><code>shutdownhtml</code> parametresi artık [% terms.Bugzilla %]'s veritabanı sunucusu çalışmıyor durumda olsa bile çalışır.</li>
 </ul>
 
-<h3>Enhancements for Localizers (or Localized Installations)</h3>
+<h3>Yerelleştirme Ekiplerine (ve Yerelleştirilmiş Kurulumlara) Yönelik İyileştirmeler</h3>
 
 <ul>
   <li>The documentation can now be localized--in other words, you can have
