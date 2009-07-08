@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-30 11:25+0300\n"
-"PO-Revision-Date: 2009-07-01 22:39+0100\n"
+"PO-Revision-Date: 2009-07-09 00:30+0100\n"
 "Last-Translator: Stefan <sw1976de@googlemail.com>\n"
 "Language-Team: LANGUAGE Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: .tmp/ui_item.py:65
 msgid "Active or deactivate module."
-msgstr "Aktiviere oder Deaktiviere das Modul."
+msgstr "Aktiviere oder deaktiviere das Modul."
 
 #: .tmp/ui_item.py:66
 msgid "Edit"
@@ -58,7 +58,7 @@ msgstr "Firewall ist deaktiviert."
 #: .tmp/firewallmanager/about.py:20
 #: .tmp/firewallmanager/about.py:22
 msgid "Firewall Manager"
-msgstr "Firewall Manager"
+msgstr ""
 
 #: .tmp/firewallmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
