@@ -405,12 +405,18 @@ if __name__ == "__main__":
     config.tmpDir = tempdir.tmpDir
 
     parser = OptionParser()
-    parser.add_option("-k", "--kernel", dest="kernelVersion", type="string", help="kernel version to create initramfs for")
-    parser.add_option("-t", "--type", dest="type", type="string", default="kernel", help="kernel type to create initramfs for")
-    parser.add_option("-o", "--output", dest="destdir", type="string", default="/boot", help="create initramfs in DIR", metavar="DIR")
-    parser.add_option("-f", "--filename", dest="filename", type="string", help="use FILE for initramfs file name", metavar="FILE")
-    parser.add_option("-d", "--debug", action="store_true", dest="debug", default=False, help="print extra debug info")
-    parser.add_option("-n", "--dry-run", action="store_true", dest="dryrun", default=False, help="do not perform any action, just show what will be done")
+    parser.add_option("-k", "--kernel", dest="kernelVersion", type="string",
+            help="kernel version to create initramfs for")
+    parser.add_option("-t", "--type", dest="type", type="string", default="kernel",
+            help="kernel type to create initramfs for")
+    parser.add_option("-o", "--output", dest="destdir", type="string", metavar="DIR", default="/boot",
+            help="create initramfs in DIR")
+    parser.add_option("-f", "--filename", dest="filename", type="string", metavar="FILE",
+            help="use FILE for initramfs file name")
+    parser.add_option("-d", "--debug", action="store_true", dest="debug", default=False,
+            help="print extra debug info")
+    parser.add_option("-n", "--dry-run", action="store_true", dest="dryrun", default=False,
+            help="do not perform any action, just show what will be done")
 
     (opts, args) = parser.parse_args()
     config.kernelVersion = opts.kernelVersion
