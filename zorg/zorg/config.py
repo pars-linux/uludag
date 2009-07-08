@@ -144,15 +144,15 @@ def getDeviceInfo(busId):
     device.saved_vendor_id  = cardTag.getTagData("VendorId")
     device.saved_product_id = cardTag.getTagData("ProductId")
 
-    driverTag = cardTag.getTag("Driver")
+    driver = cardTag.getTagData("Driver")
     activeConfigTag = cardTag.getTag("ActiveConfig")
 
-    if driverTag:
-        device.driver = driverTag.firstChild().data()
+    if driver:
+        device.driver = driver
     elif activeConfigTag:
-        driverTag = activeConfigTag.getTag("Driver")
-        if driverTag:
-            device.driver = driverTag.firstChild().data()
+        driver = activeConfigTag.getTagData("Driver")
+        if driver:
+            device.driver = driver
 
     depth = cardTag.getTagData("Depth")
     if depth:
@@ -168,42 +168,37 @@ def getDeviceInfo(busId):
 
     # Get output info
     outputsTag = cardTag.getTag("Outputs")
-    for outputTag in outputsTag.tags("Output"):
-        name = outputTag.getAttribute("name")
-        output = Output(name)
-        device.outputs[name] = output
+    if outputsTag:
+        for outputTag in outputsTag.tags("Output"):
+            name = outputTag.getAttribute("name")
+            output = Output(name)
+            device.outputs[name] = output
 
-        enabledTag = outputTag.getTag("Enabled")
-        if enabledTag:
-            output.setEnabled(enabledTag.firstChild().data() == "true")
-        ignoredTag = outputTag.getTag("Ignored")
-        if ignoredTag:
-            output.setIgnored(ignoredTag.firstChild().data() == "true")
+            enabled = outputTag.getTagData("Enabled")
+            if enabled:
+                output.setEnabled(enabled == "true")
+            ignored = outputTag.getTagData("Ignored")
+            if ignored:
+                output.setIgnored(ignored == "true")
 
-        mode = ""
-        rate = ""
-        modeTag = outputTag.getTag("Mode")
-        if modeTag:
-            mode = modeTag.firstChild().data()
-        rateTag = outputTag.getTag("RefreshRate")
-        if rateTag:
-            rate = rateTag.firstChild().data()
-        output.setMode(mode, rate)
+            mode = outputTag.getTagData("Mode") or ""
+            rate = outputTag.getTagData("RefreshRate") or ""
+            output.setMode(mode, rate)
 
-        rotationTag = outputTag.getTag("Rotation")
-        if rotationTag:
-            output.setOrientation(rotationTag.firstChild().data())
+            rotation = outputTag.getTagData("Rotation")
+            if rotation:
+                output.setOrientation(rotation)
 
-        rightOfTag = outputTag.getTag("RightOf")
-        belowTag = outputTag.getTag("Below")
-        if rightOfTag:
-            output.setPosition("RightOf", rightOfTag.firstChild().data())
-        elif belowTag:
-            output.setPosition("Below", belowTag.firstChild().data())
+            rightOf = outputTag.getTagData("RightOf")
+            below = outputTag.getTagData("Below")
+            if rightOf:
+                output.setPosition("RightOf", rightOf)
+            elif below:
+                output.setPosition("Below", below)
 
-        monitorTag = outputTag.getTag("Monitor")
-        if monitorTag:
-            addMonitor(name, monitorTag)
+            monitorTag = outputTag.getTag("Monitor")
+            if monitorTag:
+                addMonitor(name, monitorTag)
 
     return device
 
@@ -274,13 +269,8 @@ def getKeymap():
 
         keyboard = doc.getTag("Keyboard")
         if keyboard:
-            layoutTag = keyboard.getTag("Layout")
-            if layoutTag:
-                layout = layoutTag.firstChild().data()
-
-            variantTag = keyboard.getTag("Variant")
-            if variantTag:
-                variant = variantTag.firstChild().data()
+            layout = keyboard.getTagData("Layout")
+            variant = keyboard.getTagData("Variant") or ""
 
     except OSError:
         pass
