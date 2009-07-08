@@ -112,7 +112,9 @@ def saveXorgConfig(card):
 
     f = open(consts.xorg_conf_file, "w")
     f.write(parser.toString())
-    f.close()
+
+    f = open(consts.configured_bus_file, "w")
+    f.write(card.bus_id)
 
 def configuredBus():
     try:
@@ -256,9 +258,6 @@ def saveDeviceInfo(card):
 
     f = open(consts.config_file, "w")
     f.write(doc.toPrettyString().replace("\n\n", ""))
-
-    f = open(consts.configured_bus_file, "w")
-    f.write(card.bus_id)
 
 def getKeymap():
     layout = None
