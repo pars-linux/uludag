@@ -419,9 +419,16 @@ if __name__ == "__main__":
             help="do not perform any action, just show what will be done")
 
     (opts, args) = parser.parse_args()
-    config.kernelVersion = opts.kernelVersion
-    config.kernelType = opts.type
+
     config.destDir = os.path.abspath(opts.destdir)
+    config.debug = opts.debug
+    config.dryrun = opts.dryrun
+    config.kernelType = opts.type
+
+    if opts.kernelVersion:
+        config.kernelVersion = opts.kernelVersion
+    else:
+        config.setKernelVersion()
 
     basesystem = BaseSystem()
     basesystem.create()
