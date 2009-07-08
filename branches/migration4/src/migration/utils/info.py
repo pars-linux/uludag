@@ -15,7 +15,7 @@ import os
 import ConfigParser
 
 from migration.utils import registry
-from migration.utils import wallpaper
+from migration.utils import wallpaper as wall
 
 def userInfo(sources):
     "Collects information from given user"
