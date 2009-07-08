@@ -433,10 +433,7 @@ if __name__ == "__main__":
     splash.makeDefaults()
 
     initramfs = Initramfs()
-    # FIXME: for testing
-    initramfs.destDir = "/tmp/sil/sil"
     initramfs.create()
 
-    # FIXME: for testing
-#    tempdir.cleanup()
+    tempdir.cleanup()
 
