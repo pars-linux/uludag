@@ -146,7 +146,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_userFilesWidget()
         self.ui.setupUi(self)
-
+        self.ui.destination.setText(os.path.realpath("~"))
         self.connect(self.ui.copy, SIGNAL("toggled(bool)"), self.slotRadiosClicked)
         self.connect(self.ui.nothing, SIGNAL("toggled(bool checked)"), self.slotRadiosClicked)
         self.connect(self.ui.link, SIGNAL("toggled(bool checked)"), self.slotRadiosClicked)
@@ -205,7 +205,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
                     child.setHidden(False)
                     links.append({"path":child.path, "name":child.name, "localname":child.localname})
 
-            options["links"] = links
+            if links:
+                options["links"] = links
 
         elif self.ui.copy.isChecked():
             folders = []
@@ -215,9 +216,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
                     child.setHidden(False)
                     files = child.selectedFiles()
                     folders.append({"name":child.name, "localname":child.localname, "source":child.path, "files":files})
-
-            options["folders"] = folders
-            options["copy destination"] = unicode(self.ui.destination.text())
+            if folders:
+                options["folders"] = folders
+                options["copy destination"] = unicode(self.ui.destination.text())
         return options
 
     def shown(self):
