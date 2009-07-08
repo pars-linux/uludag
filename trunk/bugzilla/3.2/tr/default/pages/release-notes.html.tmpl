@@ -228,74 +228,39 @@
 <h3>Yerelleştirme Ekiplerine (ve Yerelleştirilmiş Kurulumlara) Yönelik İyileştirmeler</h3>
 
 <ul>
-  <li>The documentation can now be localized--in other words, you can have
-    documentation installed for multiple languages at once and
-    [%+ terms.Bugzilla %] will link to the correct language in its internal
-    documentation links.</li>
-  <li>[% terms.Bugzilla %] no longer uses the <kbd>languages</kbd> parameter.
-    Instead it reads the <kbd>template/</kbd> directory to see which
-    languages are available.</li>
-  <li>Some of the messages printed by <kbd>checksetup.pl</kbd> can now
-    be localized. See <kbd>template/en/default/setup/strings.txt.pl</kbd>.
+  <li>Belgelendirme yerelleştirilebilir oldu; diğer bir deyişle, birden fazla dil için belgelendirme yüklebilirsiniz ve [%+ terms.Bugzilla %] doğru dili çekip bağlantıları ona göre düzenler.</li>
+  <li>[% terms.Bugzilla %] artık <kbd>languages</kbd> parametresini kullanımıyor. Onun yerine hangi dillerin kullanılabilir olduğunu anlamak için <kbd>template/</kbd> dizinine bakıyor.</li>
+  <li><kbd>checksetup.pl</kbd> tarafından yazılan bazı dizgeler artık yerelleştirilebilir durumda. <kbd>template/en/default/setup/strings.txt.pl</kbd> dosyasına bakın.
 </ul>
 
-<h2><a name="v32_issues"></a>Outstanding Issues</h2>
+<h2><a name="v32_issues"></a>Problem Oluşturabilecek Noktalar</h2>
 
 <ul>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=423439">
-    [%- terms.Bug %] 423439</a>: Tabs in comments will be converted
-    to four spaces, due to a b<!-- -->ug in Perl as of Perl 5.8.8.</li>
+    [%- terms.Bug %] 423439</a>: Perl 5.8.8'deki bir hatadan ötürü yorumlardaki sekme karakterleri dört boşluk karakteriyle değiştirilir.</li>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=69621">
-    [%- terms.Bug %] 69621</a>: If you rename or remove a keyword that is
-    in use on [% terms.bugs %], you will need to rebuild the "keyword cache"
-    by running <a href="sanitycheck.cgi">sanitycheck.cgi</a> and choosing 
-    the option to rebuild the cache when it asks. Otherwise keywords may 
-    not show up properly in search results.</li>
+    [%- terms.Bug %] 69621</a>: Eğer [% terms.abugLoc %] kullanılan bir anahtarı siler ya da değiştirirseniz, <a href="sanitycheck.cgi">sanitycheck.cgi</a> dosyasını çalıştırıp sorduğunda önbelleği yeniden oluşturma işlemini onaylayarak "anahtar önbelleği"ni yeniden oluşturmanız gerekir. Aksi taktirde arama sonuçlarında anahtarlar doğru görüntülenmeyebilir.</li>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=89822">
-    [%- terms.Bug %] 89822</a>: When changing multiple [% terms.bugs %] at 
-    the same time, there is no "mid-air collision" protection.</li>
+    [%- terms.Bug %] 89822</a>: Aynı anda birden fazla [% terms.bugAcc %] değiştirirken "havada çarpışma" koruması yoktur.</li>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=276230">
-    [%- terms.Bug %] 276230</a>: The support for restricting access to 
-    particular Categories of New Charts is not complete. You should treat 
-    the 'chartgroup' Param as the only access mechanism available.<br>
-    However, charts migrated from Old Charts will be restricted to 
-    the groups that are marked MANDATORY for the corresponding Product.
-    There is currently no way to change this restriction, and the 
-    groupings will not be updated if the group configuration
-    for the Product changes.</li>
+    [%- terms.Bug %] 276230</a>: Belirli kategorilere ve yeni çizelgelere erişimi sınırlama desteği henüz tamamlanmadı. 'chartgroup' parametresini tek erişim mekanizması olarak kabul etmelisiniz.<br>
+    Ancak, eski çizelgelerden aktarılan çizelgeler ilgili ürün için ZORUNLU (MANDATORY) işaretli gruplarla sınırlı olr. Henüz bu sınırlandırmayı değiştirmek için herhangi bir yol yok ve ürünle ilgili grup yapılandırması değiştirilirken gruplamalar güncellenmez</li>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=370370">
-    [%- terms.Bug %] 370370</a>: mod_perl support is currently not
-    working on Windows machines.</li>
+    [%- terms.Bug %] 370370</a>: mod_perl desteği Windows makinelerde çalışmıyor.</li>
 </ul>
 
-<h2><a name="v32_upgrading"></a>How to Upgrade From An Older Version</h2>
+<h2><a name="v32_upgrading"></a>Önceki Sürümden Yükseltme</h2>
 
-<h3><a name="v32_upgrading_notes"></a>Notes For Upgraders</h3>
+<h3><a name="v32_upgrading_notes"></a>Yükseltenlere Notlar</h3>
 
 <ul>
-  <li>If you upgrade by CVS, the <kbd>extensions</kbd> and 
-    <kbd>skins/contrib</kbd> directories are now in CVS instead of
-    being created by <kbd>checksetup.pl</kbd> If you do a <kbd>cvs update</kbd>
-    from 3.0, you will be told that your directories are "in the way" and
-    you should delete (or move) them and then do <kbd>cvs update</kbd>
-    again. Also, the <kbd>docs</kbd> directory has been restructured
-    and after you <kbd>cvs update</kbd> you can delete the <kbd>docs/html</kbd>,
-    <kbd>docs/pdf</kbd>, <kbd>docs/txt</kbd>, and <kbd>docs/xml</kbd>
-    directories.</li>
-  <li>If you are using MySQL, you should know that [% terms.Bugzilla %]
-    now uses InnoDB for all tables. <kbd>checksetup.pl</kbd> will convert
-    your tables automatically, but if you have InnoDB disabled,
-    the upgrade will not be able to complete (and <kbd>checksetup.pl</kbd>
-    will tell you so).</li>
+  <li>CVS'den güncellerseniz, <kbd>extensions</kbd> ve <kbd>skins/contrib</kbd> dizinleri artık <kbd>checksetup.pl</kbd> tarafından oluşturulmak yerine CVS ile birlikte geliyor. 3.0 sürümünden <kbd>cvs update</kbd> yaparsanız o dizinleri silmeniz ya da güncellemeniz ve ondan sonra <kbdcvs update</kbd> yapmanız gerektiği bildirilir. Ek olarak, <kbd>docs</kbd> dizini yeniden yapılandırıldı ve <kbd>docs/html</kbd>, <kbd>docs/pdf</kbd>, <kbd>docs/txt</kbd>, ve <kbd>docs/xml</kbd> dizinlerini silebilirsiniz.</li>
+  <li>MySQL kullanıyorsanız, [% terms.BugzillaGen %] artık tüm tablolarda InnoDB kullandığını bilmelisiniz. <kbd>checksetup.pl</kbd> tüm tablolarınızı otomatik olarak dönüştürecektir, fakat InnoDB'yi kapattıysanız, yükseltme tamamlanamaz (ve <kbd>checksetup.pl</kbd> de size bunu raporlar).</li>
 
-  <li><strong>You should also read the 
-    <a href="#v30_upgrading_notes">[% terms.Bugzilla %] 3.0 Notes For Upgraders
-    section</a> of the 
-    <a href="#v32_previous">previous release notes</a> if you are upgrading
-    from a version before 3.0.</strong></li>
+  <li><strong>Ayrıca eğer 3.0 öncesi bir sürümden yükseltiyorsanız <a href="#v32_previous">önceki sürüm notları</a> bölümündeki <a href="#v30_upgrading_notes">Yükseltenler İçin [% terms.Bugzilla %] 3.0 Yükseltme Notları</a> kısmını da okumalısınız.</li>
 </ul>
 
-<h3>Steps For Upgrading</h3>
+<h3>Yükseltme Adımları</h3>
 
 <p>Once you have read the notes above, see the
   <a href="[% docs_urlbase FILTER html %]upgrade.html">Upgrading 
