@@ -14,7 +14,8 @@
 
 from PyQt4 import QtGui, QtCore
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import KGlobal, i18n
+from PyKDE4.kdecore import i18n
+from PyKDE4.kdeui import KIconLoader, KIcon
 
 from migration.gui.ScreenWidget import ScreenWidget
 from migration.gui import context as ctx
@@ -99,15 +100,18 @@ class ProgressPage(QtGui.QWidget):
 
     def addOperation(self, name, steps):
         "Adds a new operation to the progress page"
-        op = Operation(self, name, steps)
-        self.oplines.addLayout(op)
-        self.operations.append(op)
+        operation = Operation(self, name, steps)
+        self.layout.addLayout(operation, 3, 0)
+        self.operations.append(operation)
         self.steps2 += steps
 
-    def customEvent(self, event):
-        # Show Warning Box:
-        if event.type() == 65456:
-            self.warning = QtGui.QMessageBox.warning(self, i18n("Warning!"), event.message, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel, QtGui.QMessageBox.NoButton)
+    def message(self, event):
+        self.warning = QtGui.QMessageBox.warning(self, i18n("Warning!"), event, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel, QtGui.QMessageBox.NoButton)
+
+#    def customEvent(self, event):
+#        # Show Warning Box:
+#        if event.type() == 1000:
+#            self.warning = QtGui.QMessageBox.warning(self, i18n("Warning!"), event.message, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel, QtGui.QMessageBox.NoButton)
 
     def go(self, log, stat, steps):
         "increments progressbar, logs changes and modify icons"
@@ -135,8 +139,8 @@ class Operation(QtGui.QHBoxLayout):
         self.OKs = 0
         self.icon = QtGui.QLabel(parent)
         self.icon.show()
-        self.icon.setMinimumSize(QtGui.QSize(30, 30))
-        self.icon.setMaximumSize(QtGui.QSize(30, 30))
+        self.icon.setMinimumSize(QtCore.QSize(30, 30))
+        self.icon.setMaximumSize(QtCore.QSize(30, 30))
         self.addWidget(self.icon)
         self.text = QtGui.QLabel(parent)
         self.text.setText(title)
@@ -144,7 +148,7 @@ class Operation(QtGui.QHBoxLayout):
         self.addWidget(self.text)
 
     def start(self):
-        pix = KGlobal.iconLoader().loadIcon("1rightarrow", KIcon.Toolbar)
+        pix = KIconLoader().loadIcon("1rightarrow", KIconLoader.Toolbar)
         self.icon.setPixmap(pix)
 
     def go(self, log, stat, steps):
@@ -163,30 +167,31 @@ class Operation(QtGui.QHBoxLayout):
             self.errors += 1
         if self.progress >= self.steps:
             if self.errors > 0:
-                pix = KGlobal.iconLoader().loadIcon("cancel", KIcon.Toolbar)
+                pix = KIconLoader().loadIcon("dialog-cancel", KIconLoader.Toolbar)
             elif self.warnings > 0:
-                pix = KGlobal.iconLoader().loadIcon("messagebox_warning", KIcon.Toolbar)
+                pix = KIconLoader().loadIcon("emblem-important", KIconLoader.Toolbar)
             else:
-                pix = KGlobal.iconLoader().loadIcon("apply", KIcon.Toolbar)
+                pix = KIconLoader().loadIcon("dialog-ok-apply", KIconLoader.Toolbar)
             self.icon.setPixmap(pix)
             return True
         else:
             return False
 
-def warning(progresspage, message):
+def warning(progresspage, _msg):
     "Shows a warning box and waits until box closes. This method should be used to become thread-safe"
     progresspage.warning = None
-    event = WarningEvent(message)
-    QtGui.QApplication.postEvent(progresspage, event)
+    #event = WarningEvent(message)
+    #QtCore.QCoreApplication.postEvent(progresspage, event)
     # Wait until messagebox returns
-    while progresspage.warning == None:
-        time.sleep(0.2)
+    #while progresspage.warning == None:
+    #    time.sleep(0.2)
+    progresspage.message(_msg)
     return progresspage.warning
 
 
 class WarningEvent(QtCore.QEvent):
     def __init__(self, message):
-        QtCore.QEvent.__init__(self, 65456)
+        QtCore.QEvent.__init__(self, 1000)
         self.message = message
     def getMessage(self):
         return message
@@ -234,6 +239,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.progresspage.addOperation(i18n("Wallpaper"), size)
             self.progresspage.makeProgress(3)
 
+        print "Wallpaper:makeProgress eklendi!"
+
         # Firefox:
         if ctx.options.has_key("Firefox Profile Path"):
             try:
@@ -243,6 +250,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
             else:
                 logging.info(i18n("Firefox bookmarks loaded."))
             self.progresspage.makeProgress(10)
+
+        print "Firefox:makeProgress eklendi!"
 
         # Opera:
         if ctx.options.has_key("Opera Profile Path"):
@@ -254,6 +263,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 logging.info(i18n("Opera bookmarks loaded."))
             self.progresspage.makeProgress(10)
 
+        print "Opera:makeProgress eklendi!"
+
         # Internet Explorer:
         if ctx.options.has_key("Favorites Path"):
             try:
@@ -264,15 +275,21 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 logging.info(i18n("Internet Explorer favorites loaded."))
             self.progresspage.makeProgress(10)
 
+
+        print "IE:makeProgress eklendi!"
+
         # Bookmarks:
         size = bookmark.size()
         if size > 0:
             lockfile = os.path.join(ctx.destinations["Firefox Profile Path"], "lock")
             while os.path.lexists(lockfile):
-                if warning(self.progresspage, i18n("Firefox is open. Please close it first to continue...")) == 2:
-                    return
-
+                print "warning giriliyor..."
+                if warning(self.progresspage, i18n("Firefox is open. Please close it first to continue...")) == QtGui.QMessageBox.Cancel:
+                    #print "burayı geçti mi?"
+                    break
             self.progresspage.addOperation(i18n("Bookmarks"), size)
+
+        print "Bookmark:makeProgress eklendi!"
 
         # Windows Mail:
         if ctx.options.has_key("Windows Mail Path"):
@@ -282,7 +299,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 logging.warning(i18n("Windows Mail accounts cannot be loaded."))
             else:
                 logging.info(i18n("Windows Mail accounts loaded."))
+
             self.progresspage.makeProgress(15)
+
+        print "WindowsMail:makeProgress eklendi!"
+
         # Thunderbird:
         if ctx.options.has_key("Thunderbird Profile Path"):
             try:
@@ -292,6 +313,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
             else:
                 logging.info(i18n("Thunderbird accounts loaded."))
             self.progresspage.makeProgress(15)
+
+        print "Thunderbird:makeProgress eklendi!"
+
         # MSN Messenger Accounts:
         if ctx.options.has_key("Contacts Path"):
             try:
@@ -301,6 +325,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
             else:
                 logging.info(i18n("MSN accounts loaded."))
             self.progresspage.makeProgress(5)
+
+        print "MSN:makeProgress eklendi!"
+
         # GTalk Accounts:
         if ctx.options.has_key("GTalk Key"):
             try:
@@ -310,82 +337,111 @@ class Widget(QtGui.QWidget, ScreenWidget):
             else:
                 logging.info(i18n("GTalk accounts loaded."))
             self.progresspage.makeProgress(5)
+
+        print "GTalk:makeProgress eklendi!"
+
         # Mail Accounts:
         size = account.accountSize(["POP3", "IMAP", "SMTP"])
         if size > 0:
             # TODO: Control KMail to be closed
             self.progresspage.addOperation(i18n("E-Mail Accounts"), size)
+
+        print "Mail Accounts:makeProgress eklendi!"
+
         # E-Mails:
         if ctx.options.has_key("Copy E-Mails"):
             size = account.mailSize()
             if size > 0:
                 self.progresspage.addOperation(i18n("E-Mail Messages"), size)
+
+        print "E-mails:makeProgress eklendi!"
+
         # News Accounts:
         size = account.accountSize(["NNTP"])
         if size > 0:
             # TODO: Control KNode to be closed
             self.progresspage.addOperation(i18n("News Accounts"), size)
+
+        print "New Accounts:makeProgress eklendi!"
+
         # IM Accounts:
         size = account.accountSize(["Jabber", "MSN"])
         if size > 0:
             # TODO: Control Kopete to be closed
             self.progresspage.addOperation(i18n("Instant Messenger Accounts"), size)
+
+        print "IM Accounts:makeProgress eklendi!"
+
         # Files:
-        ctx.options.update(ctx.filespage.options)
-        if ctx.options.has_key("links"):
+        #print "ctx.fileOptions:%s" % ctx.fileOptions
+        #for k,v in ctx.fileOptions.items():
+        #     print "ctx.fileOptions[%s]=%s" %(k,v)
+        #ctx.options.update(ctx.filesOptions)
+        if ctx.fileOptions.has_key("links"):
             self.progresspage.makeProgress(3)
-            self.progresspage.addOperation(i18n("Desktop Links"), len(ctx.options["links"]) * 1000)
-        if ctx.options.has_key("folders"):
+            self.progresspage.addOperation(i18n("Desktop Links"), len(ctx.fileOptions["links"]) * 1000)
+        if ctx.fileOptions.has_key("folders"):
             # Existance of directory:
-            if not os.path.isdir(ctx.options["copy destination"]):
+            if not os.path.isdir(ctx.fileOptions["copy destination"]):
                 try:
-                    os.makedirs(ctx.options["copy destination"])
+                    os.makedirs(ctx.fileOptions["copy destination"])
                 except:
-                    warning(self.progresspage , unicode(i18n("Folder '%s' cannot be created, please choose another folder!")) % ctx.options["copy destination"])
+                    warning(self.progresspage , unicode(i18n("Folder '%s' cannot be created, please choose another folder!")) % ctx.fileOptions["copy destination"])
                     return
             # Write access:
-            if not os.access(ctx.options["copy destination"], os.W_OK):
-                warning(self.progresspage, unicode(i18n("You don't have permission to write to folder '%s', please choose another folder!")) % ctx.options["copy destination"])
+            if not os.access(ctx.fileOptions["copy destination"], os.W_OK):
+                warning(self.progresspage, unicode(i18n("You don't have permission to write to folder '%s', please choose another folder!")) % ctx.fileOptions["copy destination"])
                 return
             # File size:
-            for folder in ctx.options["folders"]:
-                size = utility.files.totalSize(folder["files"])
+            for folder in ctx.fileOptions["folders"]:
+                size = files.totalSize(folder["files"])
                 self.progresspage.addOperation(folder["localname"], size)
             self.progresspage.makeProgress(20)
         # Control total size
-        free = utility.files.freeSpace(os.path.expanduser("~"))
+        free = files.freeSpace(os.path.expanduser("~"))
         if self.progresspage.steps2 > free:
             arguments = {"size":self.progresspage.steps2 / 1024 / 1024, "free":free / 1024 / 1024}
             warning(self.progresspage, unicode(i18n("Total size of files you've chosen is %(size)d MB, but you have only %(free)d MB of free space!")) % arguments)
             return
+
+
         # Applying Changes:
         # Wallpaper:
         if ctx.options.has_key("Wallpaper Path"):
             size = os.path.getsize(ctx.options["Wallpaper Path"])
             try:
-                utility.wall.setWallpaper(ctx.options["Wallpaper Path"])
+                wall.setWallpaper(ctx.options["Wallpaper Path"])
             except Exception, err:
-                self.progresspage.go(err, self.progresspage.ERROR, size)
+                self.progresspage.go(err, ctx.ERROR, size)
             else:
-                self.progresspage.go(i18n("Wallpaper changed."), self.progresspage.OK, size)
+                self.progresspage.go(i18n("Wallpaper changed."), ctx.OK, size)
+
+        print "Wallpaper: apply!"
+
         # Bookmarks:
         size = bookmark.size()
         if size > 0:
             try:
-                bookmark.setFFBookmarks(wizard.destinations["Firefox Profile Path"])
+                print "ctx.destinations[\"Firefox Profile Path\"]:%s" % ctx.destinations["Firefox Profile Path"]
+                bookmark.setFFBookmarks(ctx.destinations["Firefox Profile Path"])
             except Exception, err:
-                self.progresspage.go(err, self.progresspage.ERROR, size)
+                self.progresspage.go(err, ctx.ERROR, size)
             else:
-                self.progresspage.go(i18n("Bookmarks saved."), self.progresspage.OK, size)
+                self.progresspage.go(i18n("Bookmarks saved."), ctx.OK, size)
+
+        print "BookMark: apply!"
+
         # Mail Accounts:
         size = account.accountSize(["POP3", "IMAP", "SMTP"])
         if size > 0:
             try:
                 account.setKMailAccounts()
             except Exception, err:
-                self.progresspage.go(err, self.progresspage.ERROR, size)
+                self.progresspage.go(err, ctx.ERROR, size)
             else:
-                self.progresspage.go(i18n("Mail Accounts saved."), self.progresspage.OK, size)
+                self.progresspage.go(i18n("Mail Accounts saved."), ctx.OK, size)
+
+        print "Mail: apply!"
         # E-Mails:
         if ctx.options.has_key("Copy E-Mails"):
             size = account.mailSize()
@@ -393,46 +449,57 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 try:
                     account.addKMailMessages(self.progresspage)
                 except Exception, err:
-                    self.progresspage.go(err, self.progresspage.ERROR, size)
+                    self.progresspage.go(err, ctx.ERROR, size)
                 else:
-                    self.progresspage.go(i18n("Accounts saved."), self.progresspage.OK, 0)
+                    self.progresspage.go(i18n("Accounts saved."), ctx.OK, 0)
+
+        print "E-mails: apply!"
         # News Accounts:
         size = account.accountSize(["NNTP"])
         if size > 0:
             try:
                 account.setKNodeAccounts()
             except Exception, err:
-                self.progresspage.go(err, self.progresspage.ERROR, size)
+                self.progresspage.go(err, ctx.ERROR, size)
             else:
-                self.progresspage.go(i18n("News Accounts saved."), self.progresspage.OK, size)
+                self.progresspage.go(i18n("News Accounts saved."), ctx.OK, size)
+
+        print "News: apply!"
         # IM Accounts:
         size = account.accountSize(["Jabber", "MSN"])
         if size > 0:
             try:
                 account.setKopeteAccounts()
             except Exception, err:
-                self.progresspage.go(err, self.progresspage.ERROR, size)
+                self.progresspage.go(err, ctx.ERROR, size)
             else:
-                self.progresspage.go(i18n("Instant Messenger Accounts saved."), self.progresspage.OK, size)
+                self.progresspage.go(i18n("Instant Messenger Accounts saved."), ctx.OK, size)
+
+        print "IM: apply!"
         # Links:
-        if ctx.options.has_key("links"):
-            links = ctx.options["links"]
+        if ctx.fileOptions.has_key("links"):
+            links = ctx.fileOptions["links"]
             for link in links:
                 files.createLink(link)
-                self.progresspage.go(unicode(i18n("Link '%s' created.")) % link["localname"], self.progresspage.OK, 1000)
+                self.progresspage.go(unicode(i18n("Link '%s' created.")) % link["localname"], ctx.OK, 1000)
+
+        print "LINKS: apply!"
         # Folders:
-        if ctx.options.has_key("folders"):
-            folders = ctx.options["folders"]
+        if ctx.fileOptions.has_key("folders"):
+            folders = ctx.fileOptions["folders"]
             for folder in folders:
-                foldername = os.path.join(ctx.options["copy destination"], folder["localname"])
-                files.copyFolder(folder, ctx.options["copy destination"], self.progresspage)
+                foldername = os.path.join(ctx.fileOptions["copy destination"], folder["localname"])
+                files.copyFolder(folder, ctx.fileOptions["copy destination"], self.progresspage)
+
+        print "Folders: apply!"
         # The end:
-        if self.progresspage.progressbar2.progress() == 0:
-            self.progresspage.label.setText(i18n("Nothing done, because no option selected. You can close the wizard..."))
+        if self.progresspage.progressbar2.value() == 0:
+            self.progresspage.label.setText(unicode(i18n("Nothing done, because no option selected. You can close the wizard...")))
         else:
-            self.progresspage.label.setText(i18n("All operations completed. You can close the wizard..."))
+            self.progresspage.label.setText(unicode(i18n("All operations completed. You can close the wizard...")))
+
     def shown(self):
         self.run()
-
+        print "self.run() bitti"
     def execute(self):
         return True
