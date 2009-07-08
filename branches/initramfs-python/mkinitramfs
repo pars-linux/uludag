@@ -6,12 +6,13 @@
 
 
 import os
+import sys
 import glob
 import stat
 import tempfile
 import shutil
 import subprocess
-import sys
+from optparse import OptionParser
 
 
 def loadFile(_file):
@@ -238,7 +239,7 @@ class KernelModule:
 
         for line in self.allModules:
             # FIXME: I still don't trust the _ versus - case, try to be sure of it in kernel
-            if line.endswith("/%s.ko" % module) or line.endswith("/%s.ko" % module.replace("_", "-") or line.endswith("/%s.ko" % module.replace("-", "_"):
+            if line.replace("-", "_").endswith("/%s.ko" % module.replace("-", "_")):
                 self.modulesList.append(line)
                 return
 
@@ -399,6 +400,17 @@ if __name__ == "__main__":
     tempdir = Tempdir()
     tempdir.create()
     config.tmpDir = tempdir.tmpDir
+
+    parser = OptionParser()
+    parser.add_option("-k", "--kernel", dest="kernelVersion", type="string", help="kernel version to create initramfs for")
+    parser.add_option("-t", "--type", dest="type", type="string", help="kernel type to create initramfs for")
+    parser.add_option("-o", "--output", dest="destdir", type="string", help="create initramfs in DIR", metavar="DIR")
+    parser.add_option("-f", "--filename", dest="filename", type="string", help="use FILE for initramfs file name", metavar="FILE")
+    parser.add_option("-d", "--debug", action="store_true", dest="debug", default=False, help="print extra debug info")
+    parser.add_option("-n", "--dry-run", action="store_true", dest="dryrun", default=False, help="do not perform any action, just show what will be done")
+
+    (opts, args) = parser.parse_args()
+
 
     basesystem = BaseSystem()
     basesystem.create()
