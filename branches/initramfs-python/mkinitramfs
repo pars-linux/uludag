@@ -358,7 +358,7 @@ class Initramfs:
         if not os.path.exists(self.destDir):
             mkdir(self.destDir)
 
-        cmd = "(cd %s && find . | cpio --quiet --dereference -o -H newc | gzip -9 > %s)"
+        cmd = "(cd %s && find . | cpio --quiet --dereference -o -H newc | gzip -6 > %s)"
         capture(cmd % (self.sourceDir, os.path.join(self.destDir, self.initramfs)))
 
 class Tempdir:
