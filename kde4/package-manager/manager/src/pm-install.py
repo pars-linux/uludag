@@ -42,6 +42,10 @@ class Operation(QObject):
 
         if signal == "finished":
             self.emit(SIGNAL("operationChanged(QString)"), "Succesfully finished installing %s" % os.path.basename(self.packages[0]))
+            self.emit(SIGNAL("finished()"))
+
+        if signal == "cancelled":
+            KApplication.kApplication().quit()
 
         elif signal in ["installing", "extracting", "configuring"]:
             self.statusChanges += 1
@@ -58,6 +62,9 @@ class Operation(QObject):
 
         self.emit(SIGNAL("progress(int)"), percent)
 
+    def cancel(self):
+        self.iface.cancel()
+
     def install(self, packages):
         self.packages = packages
         self.iface.installPackages(self.packages)
@@ -66,14 +73,32 @@ class Operation(QObject):
         self.messageBox = QtGui.QMessageBox(i18n("Pisi Error"), unicode(exception), QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
         self.messageBox.show()
 
-class PMInstaller(QtGui.QDialog, Ui_PMInstaller):
+class MainWindow(KMainWindow):
     def __init__(self, parent=None):
-        QtGui.QDialog.__init__(self, parent)
+        KMainWindow.__init__(self, parent)
+        self.setWindowTitle(i18n("Package Installer"))
+        widget = PMInstaller(self)
+        self.resize(widget.size())
+        self.setCentralWidget(widget)
+
+    def install(self, packages):
+        self.centralWidget().install(packages)
+
+class PMInstaller(QtGui.QWidget, Ui_PMInstaller):
+    def __init__(self, parent=None):
+        QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
+        self.parent = parent
         self.operationText.setText("")
         self.operation = Operation()
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressBar.setValue)
         self.connect(self.operation, SIGNAL("operationChanged(QString)"), self.operationText.setText)
+        self.connect(self.operation, SIGNAL("finished()"), self.finished)
+        self.connect(self.actionButton, SIGNAL("clicked()"), self.operation.cancel)
+
+    def finished(self):
+        self.actionButton.setText(i18n("Ok"))
+        self.connect(self.actionButton, SIGNAL("clicked()"), self.parent.close)
 
     def install(self, packages):
         self.operationText.setText("Installing %s" % os.path.basename(packages[0]))
@@ -113,7 +138,9 @@ if __name__ == '__main__':
 
     setSystemLocale()
 
-    installer = PMInstaller()
+    app.connect(app, SIGNAL('lastWindowClosed()'), app.quit)
+
+    installer = MainWindow()
     installer.show()
     installer.install(packages)
 
