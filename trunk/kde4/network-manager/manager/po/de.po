@@ -10,19 +10,21 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-06 09:32+0300\n"
-"PO-Revision-Date: 2009-06-30 11:04+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-07-09 01:56+0100\n"
+"Last-Translator: Stefan <sw1976de@googlemail.com>\n"
 "Language-Team: German <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/networkmanager/widgets.py:148 .tmp/ui_main.py:340
+#: .tmp/networkmanager/widgets.py:148
+#: .tmp/ui_main.py:340
 msgid "Refresh"
 msgstr "Neu laden"
 
-#: .tmp/networkmanager/widgets.py:177 .tmp/ui_main.py:339
+#: .tmp/networkmanager/widgets.py:177
+#: .tmp/ui_main.py:339
 msgid "Scanning..."
 msgstr "Suche..."
 
@@ -45,7 +47,7 @@ msgstr "Kabel oder Gerät nicht angeschlossen."
 
 #: .tmp/networkmanager/widgets.py:255
 msgid "Access denied."
-msgstr ""
+msgstr "Zugriff verweigert."
 
 #: .tmp/networkmanager/base.py:174
 msgid "Available Profiles"
@@ -55,7 +57,8 @@ msgstr "Vorhandene Profile"
 msgid "All Profiles"
 msgstr "Alle Profile"
 
-#: .tmp/networkmanager/base.py:202 .tmp/networkmanager/base.py:204
+#: .tmp/networkmanager/base.py:202
+#: .tmp/networkmanager/base.py:204
 msgid "No Device Found"
 msgstr "Kein Gerät gefunden"
 
@@ -67,17 +70,18 @@ msgstr "Ohne Authentifizierung"
 msgid "Do you really want to remove profile %1?"
 msgstr "Wollen Sie wirklich das Profil %1 löschen ?"
 
-#: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
+#: .tmp/networkmanager/about.py:20
+#: .tmp/networkmanager/about.py:22
 msgid "Network Manager"
-msgstr "Netzwerk-Manager"
+msgstr ""
 
 #: .tmp/networkmanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
 
 #: .tmp/networkmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
+msgstr ""
 
 #: .tmp/networkmanager/about.py:32
 msgid "Current Maintainer"
@@ -85,16 +89,15 @@ msgstr "Aktueller Betreuer"
 
 #: .tmp/networkmanager/about.py:33
 msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
+msgstr ""
 
 #: .tmp/networkmanager/about.py:33
 msgid "Developer"
 msgstr "Entwickler"
 
 #: .tmp/ui_item.py:103
-#, fuzzy
 msgid "Set connection state."
-msgstr "Verbindung löschen"
+msgstr "Setze Verbindungsstatus."
 
 #: .tmp/ui_item.py:104
 msgid "Edit connection"
@@ -104,7 +107,8 @@ msgstr "Verbindung bearbeiten"
 msgid "Delete connection"
 msgstr "Verbindung löschen"
 
-#: .tmp/ui_item.py:106 .tmp/ui_wifi.py:53
+#: .tmp/ui_item.py:106
+#: .tmp/ui_wifi.py:53
 msgid "Signal Strength"
 msgstr "Signalstärke"
 
@@ -124,7 +128,8 @@ msgstr "Form"
 msgid "Create Profile"
 msgstr "Neues Profil"
 
-#: .tmp/ui_main.py:338 .tmp/ui_nameserver.py:42
+#: .tmp/ui_main.py:338
+#: .tmp/ui_nameserver.py:42
 msgid "Nameserver Settings"
 msgstr "Nameserver Einstellungen"
 
@@ -136,7 +141,8 @@ msgstr "Profilname :"
 msgid "Device : "
 msgstr "Gerät : "
 
-#: .tmp/ui_main.py:343 .tmp/ui_main.py:357
+#: .tmp/ui_main.py:343
+#: .tmp/ui_main.py:357
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -156,7 +162,8 @@ msgstr "Manuell"
 msgid "Address :"
 msgstr "IP-Adresse :"
 
-#: .tmp/ui_main.py:348 .tmp/ui_main.py:351
+#: .tmp/ui_main.py:348
+#: .tmp/ui_main.py:351
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
@@ -168,7 +175,8 @@ msgstr "Netzmaske :"
 msgid "Default Gateway :"
 msgstr "Gateway :"
 
-#: .tmp/ui_main.py:352 .tmp/ui_nameserver.py:44
+#: .tmp/ui_main.py:352
+#: .tmp/ui_nameserver.py:44
 msgid "Name Servers"
 msgstr "Name Server"
 
@@ -225,3 +233,4 @@ msgstr "Passwort unsichtbar"
 #: .tmp/ui_nameserver.py:43
 msgid "Machine Name"
 msgstr "Computername"
+
