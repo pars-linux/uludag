@@ -26,9 +26,6 @@ from displaysettings.scene import DisplayScene
 # Backend
 from displaysettings.backend import Interface
 
-# Config
-#from displaysettings.config import
-
 from displaysettings.device import Output
 
 class MainWidget(QtGui.QWidget, Ui_screensWidget):
@@ -165,9 +162,6 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self.updateMenuStatus()
         self.refreshOutputsView()
         self.configChanged.emit()
-
-    def slotOutputSelected(self, action):
-        print action.data().toString(), "selected"
 
     def slotDetectClicked(self):
         self.load()
