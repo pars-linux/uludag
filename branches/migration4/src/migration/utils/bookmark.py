@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2007, TUBITAK/UEKAE
+# Copyright (C) 2006-2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -36,6 +36,8 @@ class Bookmark:
             mainnode.insertBefore(headernode, mainnode.firstChild)
         else:
             mainnode.appendChild(headernode)
+
+        print "Document:%s" % self.document.toxml()
 
     def getOperaBookmarks(self, path):
         "Gets Opera Bookmarks from a opera6.adr file"
@@ -126,7 +128,9 @@ class Bookmark:
         searchDirectory(directory, self.document, groupnode)
 
     def setFFBookmarks(self, path):
-        "Adds bookmarks to firefox"
+        """Adds bookmarks to firefox"""
+
+        print "setFFBookmarks.path:%s" % path
         if os.path.lexists(os.path.join(path, "lock")):
             raise Exception, "Firefox is in use. Bookmarks cannot be saved."
         filepath = os.path.join(path, "places.sqlite")
@@ -140,7 +144,8 @@ class Bookmark:
         raise Exception, "Bookmark file cannot be found."
 
     def setFF2Bookmarks(self, filepath):
-        "Adds bookmarks to firefox using bookmarks.html file"
+        """Adds bookmarks to firefox using bookmarks.html file"""
+
         def getText(nodelist):
             rc = ""
             for node in nodelist:
@@ -185,28 +190,38 @@ class Bookmark:
                     rc = rc + node.data
             return rc
 
-        def handleNode(node, c, parentid, position):
+        def handleNode(node, cursor, parentid, position):
+            print "!!!!handleNode!!!!!"
+            print "node.tagName:%s" % node.tagName
             if node.tagName == "bookmarks":
                 # Handle children:
                 children = node.childNodes
                 for child in children:
-                    handleNode(child, c, parentid, position)
+                    print "position:%d" % position
+                    handleNode(child, cursor, parentid, position)
                     position += 1
             elif node.tagName == "group":
                 # Get group title:
                 header = node.getElementsByTagName("header")[0]
                 title = getText(header.childNodes)
                 # Add group:
-                c.execute("INSERT INTO moz_bookmarks ('type', 'parent', 'position', 'title') VALUES (2, ?, ?, ?)", (parentid, position, title))
-                parentid = c.lastrowid
+                print "parentid1:%d" % parentid
+                print "position:%s" % position
+                print "title:%s" % title
+                cursor.execute("INSERT INTO moz_bookmarks ('type', 'parent', 'position', 'title') VALUES (2, ?, ?, ?)", (parentid, position, title))
+                parentid = cursor.lastrowid
+                #print "parentid2:%d" % parentid
                 if not parentid:    # Hack for lastrowid error
-                    result = c.execute("SELECT max(id) FROM moz_bookmarks")
+                    result = cursor.execute("SELECT max(id) FROM moz_bookmarks")
                     parentid = result.fetchone()[0]
+                    print "parentid3:%d" % parentid
+                print "parentid3 basılmadı...."
                 # Handle children:
                 children = node.childNodes
                 position = 0
                 for child in children:
-                    handleNode(child, c, parentid, position)
+                    handleNode(child, cursor, parentid, position)
+                    print "position:%d" % position
                     position += 1
             elif node.tagName == "bookmark":
                 # Get title and url:
@@ -215,29 +230,32 @@ class Bookmark:
                 title = getText(namenode.childNodes)
                 url = getText(urlnode.childNodes)
                 # Add bookmark:
-                result = c.execute("SELECT id FROM moz_places WHERE url=?", (url,)).fetchone()
+                print "url:%s" % url
+                result = cursor.execute("SELECT id FROM moz_places WHERE url=?", (url,)).fetchone()
                 if result:
                     fk = result[0]
                 else:
-                    c.execute("INSERT INTO moz_places ('url','title') VALUES (?, ?)", (url, title))
-                    fk = c.lastrowid
-                c.execute("INSERT INTO moz_bookmarks ('type', 'fk', 'parent', 'position', 'title') VALUES (1, ?, ?, ?, ?)", (fk, parentid, position, title))
+                    cursor.execute("INSERT INTO moz_places ('url','title') VALUES (?, ?)", (url, title))
+                    fk = cursor.lastrowid
+                cursor.execute("INSERT INTO moz_bookmarks ('type', 'fk', 'parent', 'position', 'title') VALUES (1, ?, ?, ?, ?)", (fk, parentid, position, title))
 
         # Connect to database:
         conn = sqlite.connect(databasepath, 5.0)
-        c = conn.cursor()
+        cursor = conn.cursor()
         # Find the maximum position:
-        result = c.execute("SELECT max(position) FROM moz_bookmarks WHERE parent=2")
+        result = cursor.execute("SELECT max(position) FROM moz_bookmarks WHERE parent=2")
         maxpos = result.fetchone()[0]
         if maxpos:
             newpos = maxpos+1
         else:
             newpos = 0
+        print "maxpos:%d" % maxpos
+
         # Hande bookmarks:
-        data = handleNode(self.document.documentElement, c, 2, newpos)
+        data = handleNode(self.document.documentElement, cursor, 2, newpos)
         # Close database:
         conn.commit()
-        c.close()
+        cursor.close()
 
     def saveXML(self, filename):
         "Saves Bookmarks to an XML file"
