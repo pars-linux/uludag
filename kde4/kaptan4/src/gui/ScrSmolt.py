@@ -37,7 +37,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         self.actions()
-        self.disableSend()
 
         self.profile = smolt.Hardware()
 
@@ -140,7 +139,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.ui.checkBox.setEnabled(True)
 
     def shown(self):
-        pass
+        self.disableSend()
 
     def execute(self):
         return True
