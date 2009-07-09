@@ -185,7 +185,7 @@
 * Smolt (Fethican Coşkuner)
   * Smolt server'ın tüm bağımlılıklarının depoya girmesi (+)
   * Pardus sunucusuna smolt-server kurulumunun yapılması (+)
-  * Smolt client için KDE4 arayüzü yazılması (/30)
+  * Smolt firstboot işleminin Kaptan'a yaptırılması  (/90)
 
 * Topluluk süreçleri (ozgurlukicin.com)
   * YALI'daki bilgi slaytlarının güncellenmesi (/50)
