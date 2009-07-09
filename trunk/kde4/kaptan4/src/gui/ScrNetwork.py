@@ -31,7 +31,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_networkWidget()
         self.ui.setupUi(self)
 
-        moduleInfo = KCModuleInfo("settings-network-manager.desktop")
+        moduleInfo = KCModuleInfo("kcm_networkmanager.desktop")
         nm = KCModuleProxy(moduleInfo)
         self.ui.layout.addWidget(nm)
 
