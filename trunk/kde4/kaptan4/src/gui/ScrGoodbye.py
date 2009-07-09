@@ -38,6 +38,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
         else:
             self.helpPageUrl = "http://www.pardus.org.tr/eng/contact.html"
 
+        self.smoltUrl = "http://smolt.pardus.org.tr:8090"
+
+        self.ui.buttonSystemSettings_2.connect(self.ui.buttonSystemSettings_2, SIGNAL("clicked()"), self.startSmolt)
         self.ui.buttonSystemSettings.connect(self.ui.buttonSystemSettings, SIGNAL("clicked()"), self.startSystemSettings)
         self.ui.buttonHelpPages.connect(self.ui.buttonHelpPages, SIGNAL("clicked()"), self.startHelpPages)
 
@@ -48,6 +51,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def startHelpPages(self):
         self.procSettings = QProcess()
         command = "kfmclient openURL " + self.helpPageUrl
+        self.procSettings.start(command)
+
+    def startSmolt(self):
+        self.procSettings = QProcess()
+        command = "kfmclient openURL " + self.smoltUrl
         self.procSettings.start(command)
 
     def setSmolt(self):
