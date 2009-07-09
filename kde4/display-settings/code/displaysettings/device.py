@@ -11,6 +11,9 @@
 # Please read the COPYING file.
 #
 
+from PyKDE4 import kdecore
+from PyKDE4 import kdeui
+
 from pardus.strutils import ascii_lower
 
 class Output:
@@ -46,3 +49,20 @@ class Output:
 
     def __repr__(self):
         return "<Output %s>" % self.name
+
+    def getTypeString(self):
+        names = {
+                Output.UnknownOutput:   "",
+                Output.LaptopPanel:     kdecore.i18n("Laptop Panel"),
+                Output.AnalogOutput:    kdecore.i18n("Analog Output"),
+                Output.DigitalOutput:   kdecore.i18n("Digital Output"),
+                Output.TVOutput:        kdecore.i18n("TV Output"),
+                }
+        return names[self.outputType]
+
+    def getIcon(self):
+        icons = {
+                Output.LaptopPanel:     "computer-laptop",
+                Output.TVOutput:        "video-television"
+                }
+        return kdeui.KIcon(icons.get(self.outputType, "video-display"))

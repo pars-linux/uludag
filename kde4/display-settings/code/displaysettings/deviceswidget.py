@@ -38,15 +38,6 @@ from displaysettings.outputdialog import OutputDialog
 
 from displaysettings.device import Output
 
-# Define descriptions and icons for output types
-OUTPUT_TYPES = {
-        Output.UnknownOutput:   ("",  "video-display"),
-        Output.LaptopPanel:     (kdecore.i18n("Laptop Panel"), "computer-laptop"),
-        Output.AnalogOutput:    (kdecore.i18n("Analog Output"), "video-display"),
-        Output.DigitalOutput:   (kdecore.i18n("Digital Output"), "video-display"),
-        Output.TVOutput:        (kdecore.i18n("TV Output"), "video-television"),
-        }
-
 class MainWidget(QtGui.QWidget, Ui_devicesWidget):
 
     configChanged = QtCore.pyqtSignal()
@@ -162,8 +153,8 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         self.outputList.clear()
 
         for output in self.iface.getOutputs():
-            desc, icon = OUTPUT_TYPES[output.outputType]
-            self.addItem(output.name, output.name, desc, icon)
+            self.addItem(output.name, output.name,
+                         output.getTypeString(), output.getIcon())
 
     def slotConfigChanged(self):
         print "*** Config changed"
@@ -182,10 +173,6 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         dlg.show()
 
     def load(self):
-        print "** load"
-
-        self.newConfig = {}
-
         # Card info
         info = "<qt>%s<br><i>%s</i></qt>" % (self.iface.cardModel, self.iface.cardVendor)
         self.cardInfoLabel.setText(info)

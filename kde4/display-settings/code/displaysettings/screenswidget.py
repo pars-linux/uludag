@@ -29,7 +29,12 @@ from displaysettings.backend import Interface
 # Config
 #from displaysettings.config import
 
+from displaysettings.device import Output
+
 class MainWidget(QtGui.QWidget, Ui_screensWidget):
+
+    configChanged = QtCore.pyqtSignal()
+
     def __init__(self, parent, embed=False):
         QtGui.QWidget.__init__(self, parent)
 
@@ -47,19 +52,53 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         # Fail if no packages provide backend
         self.checkBackend()
 
-        self.reset()
+        self.populateOutputsMenu()
 
     def checkBackend(self):
         """
             Check if there are packages that provide required backend.
         """
         if not len(self.iface.getPackages()):
-            kdeui.KMessageBox.error(self, kdecore.i18n("There are no packages that provide backend for this application.\nPlease be sure that packages are installed and configured correctly."))
+            kdeui.KMessageBox.error(self, kdecore.i18n(
+                "There are no packages that provide backend for this "
+                "application.\nPlease be sure that packages are installed "
+                "and configured correctly."))
             return False
         return True
 
     def signalHandler(self, package, signal, args):
         pass
 
-    def reset(self):
+    def populateOutputsMenu(self):
+        menu = QtGui.QMenu(self)
+        actionGroup = QtGui.QActionGroup(self)
+        actionGroup.triggered.connect(self.slotOutputSelected)
+
+        for output in self.iface.getOutputs():
+            text = kdecore.i18nc(
+                    "Shown in menus, lists, etc. "
+                    "%1 = localized output type, "
+                    "%2 = output name (LVDS, VGA, etc.)",
+                    "%1 (%2)", output.getTypeString(), output.name)
+            action = QtGui.QAction(text, self)
+            action.setIcon(output.getIcon())
+            action.setData(QtCore.QVariant(output.name))
+            action.setCheckable(True)
+            action.setActionGroup(actionGroup)
+            if output.connection == Output.Connected:
+                action.setChecked(True)
+            menu.addAction(action)
+
+        self.outputsButton.setMenu(menu)
+
+    def slotOutputSelected(self, action):
+        print action.data().toString(), "selected"
+
+    def load(self):
         pass
+
+    def save(self):
+        pass
+
+    def defaults(self):
+        print "** defaults"
