@@ -3,3 +3,4 @@
 + Kmail'de reply ve forward butonuna basıldığında karşımıza çıkan yeni mail penceresine eklenmiş olması gereken bilgiler, bu pencereye eklenemiyor.
 - Panel ayarları değiştirilip, kilitlendikten sonra tema değiştirilmeye çalışılınca kde çöküyor.
 - Bazen bilgisayar kapatılırken kde çökerek kapanıyor.
+- koffice-core kurulduğunda Kthesaurus kuruluyor, fakat paket yöneticisinde ikonu gözükmüyor.
