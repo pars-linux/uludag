@@ -24,6 +24,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QCheckBox" name="clonedCheckBox">
+       <property name="text">
+        <string>Cloned displays</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -71,12 +78,12 @@
              <string>Size:</string>
             </property>
             <property name="buddy">
-             <cstring>comboBox</cstring>
+             <cstring>modeList</cstring>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="comboBox">
+           <widget class="QComboBox" name="modeList">
             <item>
              <property name="text">
               <string>Auto</string>
@@ -109,12 +116,12 @@
              <string>Refresh Rate:</string>
             </property>
             <property name="buddy">
-             <cstring>comboBox_3</cstring>
+             <cstring>rateList</cstring>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="comboBox_3">
+           <widget class="QComboBox" name="rateList">
             <item>
              <property name="text">
               <string>Auto</string>
@@ -137,12 +144,12 @@
              <string>Rotation:</string>
             </property>
             <property name="buddy">
-             <cstring>comboBox_4</cstring>
+             <cstring>rotationList</cstring>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="comboBox_4">
+           <widget class="QComboBox" name="rotationList">
             <item>
              <property name="text">
               <string>No Rotation</string>
@@ -151,6 +158,16 @@
             <item>
              <property name="text">
               <string>Left (90 degrees)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Upside-Down (180 degrees)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Right (270 degrees)</string>
              </property>
             </item>
            </widget>
