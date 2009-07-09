@@ -52,7 +52,10 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         # Fail if no packages provide backend
         self.checkBackend()
 
+        self._outputs = self.iface.getOutputs()
+
         self.populateOutputsMenu()
+        self.refreshOutputsView()
 
     def checkBackend(self):
         """
@@ -74,7 +77,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         actionGroup = QtGui.QActionGroup(self)
         actionGroup.triggered.connect(self.slotOutputSelected)
 
-        for output in self.iface.getOutputs():
+        for output in self._outputs:
             text = kdecore.i18nc(
                     "Shown in menus, lists, etc. "
                     "%1 = localized output type, "
@@ -90,6 +93,27 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
             menu.addAction(action)
 
         self.outputsButton.setMenu(menu)
+
+    def refreshOutputsView(self):
+        config = self.iface.getConfig()
+        left = None
+        right = None
+        currentOutputNames = [x.name for x in self._outputs]
+
+        for output in self._outputs:
+            if left is None \
+                    and output.connection == Output.Connected:
+                    left = output.name
+
+            if output.name in config.outputs:
+                cfg = config.outputs[output.name]
+                if cfg.right_of \
+                        and cfg.right_of in currentOutputNames:
+                    right = output.name
+                    left = cfg.right_of
+                    break
+
+        self.scene.setOutputs(self._outputs, left, right)
 
     def slotOutputSelected(self, action):
         print action.data().toString(), "selected"
