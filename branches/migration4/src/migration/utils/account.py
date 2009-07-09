@@ -15,14 +15,14 @@
 import os
 import tempfile
 import xml.dom.minidom
-from PyKDE4.kdecore import KConfig, i18n
+from PyKDE4.kdecore import KConfig, KConfigGroup, i18n
 from dbus import *
 
 class Account:
     def __init__(self):
         self.accounts = []
         self.folders = []
-    
+
     def getTBAccounts(self, path):
         "Imports Thunderbird accounts using prefs.js file in TB profile directory"
         prefsfile = os.path.join(path, "prefs.js")
@@ -137,7 +137,7 @@ class Account:
             # Add new accounts:
             if accountdict:
                 self.accounts.append(accountdict)
-    
+
     def getMSNAccounts(self, path):
         "Imports MSN accounts using windows users's 'Contacts' directory"
         files = os.listdir(path)
@@ -145,7 +145,7 @@ class Account:
             if os.path.isdir(os.path.join(path, item)):
                 accountdict = {"type":"MSN", "mail":item}
                 self.accounts.append(accountdict)
-    
+
     def getGTalkAccounts(self, key):
         "Imports GTalk accounts using Windows registry key"
         # Open registry key of GTalk:
@@ -159,7 +159,7 @@ class Account:
             accountdict["port"] = accountkey.getValue("pt")
             accountdict["SSL"] = True
             self.accounts.append(accountdict)
-    
+
     def getOEAccounts(self, oepath):
         "Imports Outlook Express accounts using OE directory"
         for item in os.listdir(oepath):
@@ -220,7 +220,7 @@ class Account:
                         # Add SMTP
                         if accountdict:
                             self.accounts.append(accountdict)
-    
+
     def setKopeteAccounts(self):
         "Add imported accounts into Kopete"
         config = KConfig("kopeterc")
@@ -228,121 +228,143 @@ class Account:
             if account["type"] == "Jabber":
                 groupname = "Account_JabberProtocol_" + account["user"]
                 if not config.hasGroup(groupname):
-                    config.group("Plugins")
-                    config.writeEntry("kopete_jabberEnabled", "true")
-                    config.group(groupname)
-                    config.writeEntry("AccountId", account["user"])
-                    config.writeEntry("Protocol", "JabberProtocol")
-                    config.writeEntry("CustomServer", "true")
-                    config.writeEntry("Server", account["host"])
-                    config.writeEntry("Port", account["port"])
+                    pluginsGroup = config.group("Plugins")
+                    pluginsGroup.writeEntry("kopete_jabberEnabled", "true")
+                    accountGroup = config.group(groupname)
+                    accountGroup.writeEntry("AccountId", account["user"])
+                    accountGroup.writeEntry("Protocol", "JabberProtocol")
+                    accountGroup.writeEntry("CustomServer", "true")
+                    accountGroup.writeEntry("Server", account["host"])
+                    accountGroup.writeEntry("Port", account["port"])
                     if account["SSL"]:
-                        config.writeEntry("UseSSL", "true")
+                        accountGroup.writeEntry("UseSSL", "true")
             elif account["type"] == "MSN":
                 groupname = "Account_MSNProtocol_" + account["mail"]
                 if not config.hasGroup(groupname):
-                    config.group("Plugins")
-                    config.writeEntry("kopete_msnEnabled", "true")
-                    config.group(groupname)
-                    config.writeEntry("AccountId", account["mail"])
-                    config.writeEntry("Protocol", "MSNProtocol")
-                    config.writeEntry("serverName", "messenger.hotmail.com")
-                    config.writeEntry("serverPort", 1863)
+                    pluginsGroup = config.group("Plugins")
+                    pluginsGroup.writeEntry("kopete_msnEnabled", "true")
+                    accountGroup = config.group(groupname)
+                    accountGroup.writeEntry("AccountId", account["mail"])
+                    accountGroup.writeEntry("Protocol", "MSNProtocol")
+                    accountGroup.writeEntry("serverName", "messenger.hotmail.com")
+                    accountGroup.writeEntry("serverPort", 1863)
         config.sync()
 
     def setKMailAccounts(self):
-        "Add imported accounts into Kmail"
+        """Add imported accounts into Kmail"""
+
+        #Set default config and configGroup
         config = KConfig("kmailrc")
-        groupGeneral = config.group("Account")
-        accountno = group.readEntry("accounts") + 1
-        #config.group("General")
-        transportno = groupGeneral.readEntry("transports") + 1
+        newAccountGroup = config.group("Account")
+        configGroup = KConfigGroup(newAccountGroup)
+
+        def getResourceConfigGroup(account):
+            """Get Resource Config Groups for account type"""
+
+            accountGroups = []
+            if account["type"]="SMTP":
+                config = KConfig("mailtransports")
+                generalGroup = config("General")
+                defaultAccount = group.readEntry("default-transport")
+                transportGroup = config("Transport %s") % defaultAccount
+                accountGroups.append(transportGroup)
+            elif account["type"]="POP3":
+                config = KConfig("kmailrc")
+                for each in list(config.groupList()):
+                    if each.contains("Account") and not each.endWith("Wizard"):
+                        accountGroups.append(each)
+            return accountGroups
+
         for account in self.accounts:
-            if not isKMailAccountValid(config, account):
-                continue
             # Add POP3 Account:
             if account["type"] == "POP3":
-                #config.group("General")
-                groupGeneral.writeEntry("accounts", accountno)
-                groupAccount = config.group("Account " + str(accountno))
-                accountno += 1
-                groupAccount.writeEntry("trash", "trash")
-                groupAccount.writeEntry("Type", "pop")
-                groupAccount.writeEntry("Name", account["name"])
-                groupAccount.writeEntry("auth", "USER")
-                groupAccount.writeEntry("host", account["host"])
-                groupAccount.writeEntry("login", account["user"])
+                for accountGroup in getResourceConfigGroup():
+                    if not isKMailAccountValid(accountGroup, account):
+                        continue
+                    configGroup.writeEntry("trash", "trash")
+                    configGroup.writeEntry("Type", "Pop")
+                    configGroup.writeEntry("Name", account["name"])
+                    configGroup.writeEntry("auth", "USER")
+                    configGroup.writeEntry("host", account["host"])
+                    configGroup.writeEntry("login", account["user"])
 
-                # Set Inbox Folder:
-                inbox = account.get("inbox", "inbox")
-                folder = kMailFolderName(inbox)
-                groupAccount.writeEntry("Folder", folder)
+                    # Set Inbox Folder:
+                    inbox = account.get("inbox", "inbox")
+                    folder = kMailFolderName(inbox)
+                    configGroup.writeEntry("Folder", folder)
 
-                # Create inbox if not exists:
-                folders = inbox.split("/")
-                for i in xrange(len(folders)):
-                    foldername = "/".join(folders[:(i + 1)])
-                    foldername = kMailFolderName(foldername)
-                    folderpath = os.path.expanduser("~/.kde/share/apps/kmail/mail/" + foldername)
-                    if not os.path.exists(folderpath):
-                        os.makedirs(folderpath)
-                        os.makedirs(os.path.join(folderpath, "cur"))
-                        os.makedirs(os.path.join(folderpath, "new"))
-                        os.makedirs(os.path.join(folderpath, "tmp"))
+                    # Create inbox if not exists:
+                    folders = inbox.split("/")
+                    for i in xrange(len(folders)):
+                        foldername = "/".join(folders[:(i + 1)])
+                        foldername = kMailFolderName(foldername)
+                        folderpath = os.path.expanduser("~/.kde/share/apps/kmail/mail/" + foldername)
+                        if not os.path.exists(folderpath):
+                            os.makedirs(folderpath)
+                            os.makedirs(os.path.join(folderpath, "cur"))
+                            os.makedirs(os.path.join(folderpath, "new"))
+                            os.makedirs(os.path.join(folderpath, "tmp"))
 
-                if account.has_key("SSL") and account["SSL"]:
-                    groupAccount.writeEntry("use-ssl", "true")
-                    groupAccount.writeEntry("port", 995)
-                else:
-                    groupAccount.writeEntry("use-ssl", "false")
-                    groupAccount.writeEntry("port", 110)
-                if account.has_key("port") and account["port"]:
-                    config.writeEntry("port", account["port"])
-                config.writeEntry("use-tls", "false")
+                    if account.has_key("SSL") and account["SSL"]:
+                        configGroup.writeEntry("use-ssl", "true")
+                        configGroup.writeEntry("port", 995)
+                    else:
+                        configGroup.writeEntry("use-ssl", "false")
+                        configGroup.writeEntry("port", 110)
+
+                    if account.has_key("port") and account["port"]:
+                        configGroup.writeEntry("port", account["port"])
+
+                    configGroup.writeEntry("use-tls", "false")
+
             # Add IMAP Account:
             elif account["type"] == "IMAP":
-                config.group("General")
-                config.writeEntry("accounts", accountno)
-                config.group("Account " + str(accountno))
-                accountno += 1
-                config.writeEntry("Folder", "")
-                config.writeEntry("trash", "trash")
-                config.writeEntry("Type", "imap")
-                config.writeEntry("Name", account["name"])
-                config.writeEntry("auth", "*")
-                config.writeEntry("host", account["host"])
-                config.writeEntry("login", account["user"])
+                if not isKMailAccountValid(account):
+                    return
+
+                configGroup.writeEntry("Folder", "")
+                configGroup.writeEntry("trash", "trash")
+                configGroup.writeEntry("Type", "Pop")
+                configGroup.writeEntry("Name", account["name"])
+                configGroup.writeEntry("auth", "USER")
+                configGroup.writeEntry("host", account["host"])
+                configGroup.writeEntry("login", account["user"])
+
                 if account.has_key("SSL") and account["SSL"]:
-                    config.writeEntry("use-ssl", "true")
-                    config.writeEntry("port", 993)
+                    configGroup.writeEntry("use-ssl", "true")
+                    configGroup.writeEntry("port", 993)
                 else:
-                    config.writeEntry("use-ssl", "false")
-                    config.writeEntry("port", 143)
+                    configGroup.writeEntry("use-ssl", "false")
+                    configGroup.writeEntry("port", 143)
                 if account.has_key("port") and account["port"]:
-                    config.writeEntry("port", account["port"])
-                config.writeEntry("use-tls", "false")
+                    configGroup.writeEntry("port", account["port"])
+                configGroup.writeEntry("use-tls", "false")
+
             # Add SMTP Account:
             elif account["type"] == "SMTP":
-                config.group("General")
-                config.writeEntry("transports", transportno)
-                config.group("Transport " + str(transportno))
-                transportno += 1
+                config = KConfig("mailports")
+                configGroup = config.group("Transport")
+                configGroup = KConfigGroup(configGroup)
+
                 if account.get("auth", False) and account.has_key("user"):
-                    config.writeEntry("auth", "true")
-                    config.writeEntry("authtype", "PLAIN")
-                    config.writeEntry("user", account["user"])
-                config.writeEntry("name", account["host"])
-                config.writeEntry("host", account["host"])
+                    configGroup.writeEntry("auth", "true")
+                    configGroup.writeEntry("authtype", "PLAIN")
+                    configGroup.writeEntry("user", account["user"])
+
+                configGroup.writeEntry("name", account["host"])
+                configGroup.writeEntry("host", account["host"])
+
                 if account.has_key("SSL") and account["SSL"]:
-                    config.writeEntry("encryption", "SSL")
-                    config.writeEntry("port", 465)
+                    configGroup.writeEntry("encryption", "SSL")
+                    configGroup.writeEntry("port", 465)
                 else:
-                    config.writeEntry("port", 25)
+                    configGroup.writeEntry("port", 25)
                     if account.has_key("TLS") and account["TLS"]:
-                        config.writeEntry("encryption", "TLS")
+                        configGroup.writeEntry("encryption", "TLS")
                 if account.has_key("port") and account["port"]:
-                    config.writeEntry("port", account["port"])
-            config.sync()
+                    configGroup.writeEntry("port", account["port"])
+
+            configGroup.sync()
 
     def addKMailMessages(self, progress=None):
         # Information message:
@@ -401,7 +423,7 @@ class Account:
                     messagepath = box.next()
                 progress.go(unicode(i18n("Message Box %s copied")) % name, progress.OK, 0)
 
-    
+
     def setKNodeAccounts(self):
         for account in self.accounts:
             if account["type"] == "NNTP":
@@ -419,7 +441,7 @@ class Account:
                     if value:
                         infofile.write("%s=%s\n" % (fields[key], value))
                 infofile.close()
-    
+
     def write(self):
         "Prints accounts"
         for account in self.accounts:
@@ -429,7 +451,7 @@ class Account:
                     print "%15s : %s" % (key, account[key])
         for folder in self.folders:
             print "%30s : %s" % folder
-    
+
     def accountSize(self, accounttypes=None):
         "Size of accounts"
         if not accounttypes:
@@ -440,7 +462,7 @@ class Account:
                 if account.get("type", None) in accounttypes:
                     number += 1
             return number * 500
-    
+
     def mailSize(self):
         totalsize = 0
         for (name, path) in self.folders:
@@ -529,15 +551,15 @@ def kMailFolderName(folder):
 
 def isKMailAccountValid(group, account):
     "Check if the account is valid and not already in KMail accounts"
+
     if (not account.has_key("type")) or (not account.has_key("host")) or (not account.has_key("user")):
         return False
 
     # Check all accounts
     if account["type"] == "SMTP":
-        transport = config.group("Transport " + str(account))
-        host = transport.readEntry("host")
-        user = transport.readEntry("user")
-        if account["host"] == host and account["login"] == user:
+        host = group.readEntry("host")
+        user = group.readEntry("user")
+        if account["host"] == host and account["user"] == user:
             return False
     elif account["type"] == "POP3":
         type = group.readEntry("Type")
@@ -549,10 +571,9 @@ def isKMailAccountValid(group, account):
         type = group.readEntry("Type")
         host = group.readEntry("host")
         user = group.readEntry("login")
-        if "Imap" == type and account["host"] == host and account["login"] == user:
+        if ("Imap" == type or "DImap" == type) and account["host"] == host and account["login"] == user:
             return False
     return True
-
 
 def getOutlookExpressFolders(path, relative=""):
     "Returns OE mailbox folders under a path"
