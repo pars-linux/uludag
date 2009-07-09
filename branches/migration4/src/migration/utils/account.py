@@ -262,13 +262,14 @@ class Account:
             """Get Resource Config Groups for account type"""
 
             accountGroups = []
-            if account["type"]="SMTP":
+            if account["type"] =="SMTP":
                 config = KConfig("mailtransports")
-                generalGroup = config("General")
+                generalGroup = config.group("General")
                 defaultAccount = group.readEntry("default-transport")
+                print "defaultSMTPAccount:%d" % defaultAccount
                 transportGroup = config("Transport %s") % defaultAccount
                 accountGroups.append(transportGroup)
-            elif account["type"]="POP3":
+            elif account["type"] == "POP3":
                 config = KConfig("kmailrc")
                 for each in list(config.groupList()):
                     if each.contains("Account") and not each.endWith("Wizard"):
@@ -278,7 +279,7 @@ class Account:
         for account in self.accounts:
             # Add POP3 Account:
             if account["type"] == "POP3":
-                for accountGroup in getResourceConfigGroup():
+                for accountGroup in getResourceConfigGroup(account):
                     if not isKMailAccountValid(accountGroup, account):
                         continue
                     configGroup.writeEntry("trash", "trash")
@@ -319,7 +320,8 @@ class Account:
 
             # Add IMAP Account:
             elif account["type"] == "IMAP":
-                if not isKMailAccountValid(account):
+                accountGroup = getResourceConfigGroup(account)
+                if not isKMailAccountValid(accountGroup, account):
                     return
 
                 configGroup.writeEntry("Folder", "")
@@ -342,6 +344,10 @@ class Account:
 
             # Add SMTP Account:
             elif account["type"] == "SMTP":
+                accountGroup = getResourceConfigGroup(account)
+                if not isKMailAccountValid(accountGroup, account):
+                    return
+
                 config = KConfig("mailports")
                 configGroup = config.group("Transport")
                 configGroup = KConfigGroup(configGroup)
@@ -551,6 +557,11 @@ def kMailFolderName(folder):
 
 def isKMailAccountValid(group, account):
     "Check if the account is valid and not already in KMail accounts"
+    print "group%s" % group
+    print "account[\"type\"]:%s" % account["type"]
+
+    if len(group) == 0:
+        return False
 
     if (not account.has_key("type")) or (not account.has_key("host")) or (not account.has_key("user")):
         return False
@@ -558,19 +569,25 @@ def isKMailAccountValid(group, account):
     # Check all accounts
     if account["type"] == "SMTP":
         host = group.readEntry("host")
+        print "smptp.host%s" % host
         user = group.readEntry("user")
+        print "smtp.user:%s" % user
         if account["host"] == host and account["user"] == user:
             return False
     elif account["type"] == "POP3":
         type = group.readEntry("Type")
         host = group.readEntry("host")
+        print "pop.host:%s" % host
         user = group.readEntry("login")
+        print "pop.user:%s" % user
         if "Pop" == type and account["host"] == host and account[login] == user:
             return False
     elif account["type"] == "IMAP":
         type = group.readEntry("Type")
         host = group.readEntry("host")
+        print "imap.host:%s" % host
         user = group.readEntry("login")
+        print "imap.user:%s" % user
         if ("Imap" == type or "DImap" == type) and account["host"] == host and account["login"] == user:
             return False
     return True
