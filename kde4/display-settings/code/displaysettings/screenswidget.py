@@ -44,6 +44,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
             self.setupUi(self)
 
         self.scene = DisplayScene(self.graphicsView)
+        self.scene.outputsChanged.connect(self.slotChangeDisplays)
 
         # Backend
         self.iface = Interface()
@@ -52,10 +53,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         # Fail if no packages provide backend
         self.checkBackend()
 
-        self._outputs = self.iface.getOutputs()
-
-        self.populateOutputsMenu()
-        self.refreshOutputsView()
+        self.detectButton.clicked.connect(self.slotDetectClicked)
 
     def checkBackend(self):
         """
@@ -72,10 +70,33 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
     def signalHandler(self, package, signal, args):
         pass
 
+    def detectOutputs(self):
+        config = self.iface.getConfig()
+        self._outputs = self.iface.getOutputs()
+        currentOutputsDict = dict((x.name, x) for x in self._outputs)
+
+        self._left = None
+        self._right = None
+        self._cloned = True
+
+        for output in self._outputs:
+            output.config = config.outputs.get(output.name)
+
+            if output.connection == Output.Connected:
+                if output.config is None:
+                    if self._left is None:
+                        self._left = output
+                    elif self._right is None:
+                        self._right = output
+                elif output.config.enabled:
+                    if output.config.right_of and \
+                            output.config.right_of in currentOutputsDict:
+                        self._right = output
+                        self._left = currentOutputsDict[output.config.right_of]
+                        self._cloned = False
+
     def populateOutputsMenu(self):
         menu = QtGui.QMenu(self)
-        actionGroup = QtGui.QActionGroup(self)
-        actionGroup.triggered.connect(self.slotOutputSelected)
 
         for output in self._outputs:
             text = kdecore.i18nc(
@@ -87,39 +108,77 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
             action.setIcon(output.getIcon())
             action.setData(QtCore.QVariant(output.name))
             action.setCheckable(True)
-            action.setActionGroup(actionGroup)
-            if output.connection == Output.Connected:
+            if output in (self._left, self._right):
                 action.setChecked(True)
             menu.addAction(action)
 
+        menu.triggered.connect(self.slotOutputToggled)
         self.outputsButton.setMenu(menu)
 
+    def updateMenuStatus(self):
+        for act in self.outputsButton.menu().actions():
+            name = str(act.data().toString())
+            if (self._left and self._left.name == name) \
+                or (self._right and self._right.name == name):
+                act.setChecked(True)
+            else:
+                act.setChecked(False)
+
     def refreshOutputsView(self):
-        config = self.iface.getConfig()
-        left = None
-        right = None
-        currentOutputNames = [x.name for x in self._outputs]
+        self.scene.setOutputs(self._outputs, self._left, self._right)
 
-        for output in self._outputs:
-            if left is None \
-                    and output.connection == Output.Connected:
-                    left = output.name
+    def slotOutputToggled(self, action):
+        name = str(action.data().toString())
+        checked = action.isChecked()
+        currentOutputsDict = dict((x.name, x) for x in self._outputs)
+        output = currentOutputsDict[name]
 
-            if output.name in config.outputs:
-                cfg = config.outputs[output.name]
-                if cfg.right_of \
-                        and cfg.right_of in currentOutputNames:
-                    right = output.name
-                    left = cfg.right_of
-                    break
+        if checked:
+            if self._right:
+                self._left = self._right
 
-        self.scene.setOutputs(self._outputs, left, right)
+            self._right = output
+        elif self._right is None:
+            action.setChecked(True)
+            return
+        elif output.name == self._left.name:
+            self._left = self._right
+            if self._right:
+                self._right = None
+        else:
+            self._right = None
+
+        self.updateMenuStatus()
+        self.refreshOutputsView()
+        self.configChanged.emit()
+
+    def slotChangeDisplays(self, left, right):
+        currentOutputsDict = dict((x.name, x) for x in self._outputs)
+        left = str(left)
+        right = str(right)
+        if left:
+            self._left = currentOutputsDict.get(left)
+
+        if right:
+            self._right = currentOutputsDict.get(right)
+
+        self.updateMenuStatus()
+        self.refreshOutputsView()
+        self.configChanged.emit()
 
     def slotOutputSelected(self, action):
         print action.data().toString(), "selected"
 
+    def slotDetectClicked(self):
+        self.load()
+        self.configChanged.emit()
+
     def load(self):
-        pass
+        self.detectOutputs()
+        self.populateOutputsMenu()
+        self.refreshOutputsView()
+
+        self.clonedCheckBox.setChecked(self._cloned)
 
     def save(self):
         pass
