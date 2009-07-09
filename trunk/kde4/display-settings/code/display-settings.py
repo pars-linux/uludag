@@ -25,6 +25,7 @@ class Module(KCModule):
         KCModule.__init__(self, component_data, parent)
 
         KGlobal.locale().insertCatalog(catalog)
+        self.setButtons(KCModule.Apply)
 
         if not dbus.get_default_main_loop():
             from dbus.mainloop.qt import DBusQtMainLoop
