@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-09 16:34+0300\n"
-"PO-Revision-Date: 2009-07-04 14:19+0200\n"
+"PO-Revision-Date: 2009-07-09 17:33+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -278,14 +278,12 @@ msgid "Desktop search: <b>%s</b>"
 msgstr "Skrivbordssökning: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:97
-#, fuzzy
 msgid "Smolt Settings"
-msgstr "Stil"
+msgstr "Smoltinställningar"
 
-#: .tmp/ScrSummary.py:98
-#, fuzzy, python-format
+#: .tmp/ScrSummary.py:98, python-format
 msgid "Send my profile: <b>%s</b>"
-msgstr "&Skicka min profil"
+msgstr "Skicka min profil: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:99
 msgid ""
@@ -293,6 +291,10 @@ msgid ""
 "Smolt server and can take between 30 seconds to a minute. Kaptan may freeze "
 "during this time.</i>)"
 msgstr ""
+"(<i><u>Varning:</u> Att skicka profilen kräver kräver uppkopling mot "
+"smoltservern "
+" och kan ta mellan 30 sekunder och en minut. Kaptan kan låsa sig under tiden."
+"</i>)"
 
 #: .tmp/ScrWallpaper.py:34
 msgid "Insert some catchy title about wallpapers.."
@@ -332,11 +334,11 @@ msgstr ""
 
 #: .tmp/ui_goodbyeWidget.py:123
 msgid "My Smolt Page"
-msgstr ""
+msgstr "Min Smoltsida"
 
 #: .tmp/ui_goodbyeWidget.py:124
 msgid "Go to your Smolt page and rate your hardware components."
-msgstr ""
+msgstr "Gå till din Smoltsida och betygsätt din hårdvara."
 
 #: .tmp/ui_goodbyeWidget.py:125 .tmp/ui_goodbyeWidget.py:128
 #: .tmp/ui_goodbyeWidget.py:131
