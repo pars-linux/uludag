@@ -14,7 +14,7 @@
 \begin{document}
 
 \maketitle
-\subsection*{Dictionary}
+\section{Dictionary alt bileşeni}
 \begin{enumerate}
  \item QstarDict dışındaki tüm sözlükler için ilgili text dosyasını aşağıda bulunan linkten indirebilirsiniz.
 \begin{verbatim}
@@ -46,7 +46,7 @@ Bu çıktının verilen yanlış kelime ile ilgili alternatif doğru kelimeler v
 	Qstardict uygulmasının düzgün bir şekilde çalıştığını gözlemleyin.
 \end{enumerate}
 
-\subsection*{Docbook}
+\section{Docbook alt bileşeni}
 \begin{enumerate}
  \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
@@ -115,7 +115,8 @@ Sorunsuz bir şekilde çalıştığını gözlemleyin.
 
 Yukarıdaki komutları çalıştırın, xmlto paketinin sorunsuz bir şekilde çalıştığını gözlemleyin.
 \end{enumerate}
-\subsection*{Koffice}
+\section{Koffice alt bileşeni}
+\subsection*{base alt bileşeni}
 \begin{enumerate}
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 
@@ -145,15 +146,214 @@ Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis $\rightarrow$ daha fazla uygu
 
 Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis yolunu izleyerek Karbon14 uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.
 
+Bu uygulama ile basit bir çizim yapıp kaydetmeyi deneyin.
+
+Hatasız bir şekilde işlemi gerçekleştirdiğini gözlemleyin.
+
 \item koffice-kplato paketi kurulumu sonrası:
 
 Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis yolunu izleyerek kplato uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.
 
+\item koffice-kpresenter paketi kurulumu sonrası:
+
+Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis yolunu izleyerek kpresenter uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.
+
+Bu uygulamayı kullanarak slide içerisine bir resim bir text ekleyin, start presentation butonuna basın.
+
+Sorunsuz bir şekilde bu işlemlerin gerçekleştiğini gözlemleyin.
+
+\item koffice-krita paketi kurulumu sonrası:
+
+Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis yolunu izleyerek krita uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.
+
+Bu uygulama ile basit bir çizim yapıp kaydetmeyi deneyin.
+
+Hatasız bir şekilde işlemi gerçekleştirdiğini gözlemleyin.
+
+\item koffice-kspread paketi kurulumu sonrası:
+
+Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis yolunu izleyerek kspread uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.
+
+Bu uygulamada basit bir taslak açın, (örneğin öğrenci kartı taslağını), bu taslağa resim eklemeye ve bilgileri değiştirmeye çalışın.
+
+Hatasız bir şekilde işlemi gerçekleştirdiğini gözlemleyin.
+
+\item koffice-kword paketi kurulumu sonrası:
+
+Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis yolunu izleyerek kword uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.
+
+Bu uygulamada çıkan sayfaya bir resim ekleyin, yazı yazın ve kaydedin.
+
+Hatasız bir şekilde işlemi gerçekleştirdiğini gözlemleyin.
+\end{enumerate}
+\subsection*{l10n alt bileşeni}
+Aşağıda bulunan paketlerin kurulum sonrası testleri için. 
+
+Kword uygulamasını açın, yardım bölümünden uygulama dilini seçin, ve ilgili dili işaretleyin. 
+
+Daha sonra uygulamayı kapatıp yeniden açın. Uygulama dilinin sorunsuz olarak seçtiğiniz dile dönüştüğünü gözlemleyin.
+
+\begin{verbatim}
+koffice-l10n-ca
+koffice-l10n-cs
+koffice-l10n-da
+koffice-l10n-de
+koffice-l10n-el
+koffice-l10n-en_GB
+koffice-l10n-es
+koffice-l10n-et
+koffice-l10n-fr
+koffice-l10n-gl
+koffice-l10n-it
+koffice-l10n-ja
+koffice-l10n-nl
+koffice-l10n-pl
+koffice-l10n-pt
+koffice-l10n-pt_BR
+koffice-l10n-sv
+koffice-l10n-tr
+koffice-l10n-uk
+koffice-l10n-zh_CN
+koffice-l10n-zh_TW
+\end{verbatim}
+\section{Misc alt bileşeni}
+\begin{enumerate}
+\item Sadece kurulum testine tabidir:
+\begin{verbatim}
+iso-codes
+openclpart
+recode
+
+\end{verbatim}
+\item aiksaurus paketi kurulumu sonrası:
+\begin{verbatim}
+ # aiksaurus <ingilizce bir kelime>
+\end{verbatim}
+
+Verdiğiniz kelimeye benzer kelimeler bulduğunu gözlemleyin.
+
+\item antiword paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/antiword_test.doc
+ # antiword antiword_test.doc
+\end{verbatim}
+
+Komut çıktısının sorunsuz çalıştığını gözlemleyin.
+
+\item barcode paketi kurulumu sonrası:
+\begin{verbatim}
+ # barcode
+\end{verbatim}
+ Bu komudu çalıştırdıktan sonra bir kelime girin ve bu kelimenin barcode olarak sorunsuz bir şekilde kodlnadığını gözlemleyin.
+
+\item djview4, djvu paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/djvu_test.djvu
+\end{verbatim}
+
+İndirdiğiniz dosya üzerine sağ tıklayarak, birlikte aç bölümünden djview4 seçin. 
+
+Sorunsuz bir şekilde açıldığını gözlemleyin.
+
+\item dos2unix paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_dos2unix.txt
+ # dos2unix test_dos2unix.txt deneme1.txt
+ # vi deneme1.txt
+\end{verbatim}
+Text dosyasının sorunsuz bir şekilde dos formatından unix formatına geçtiğini gözlemleyin. (İlgili satırlar uygun satırlarda olmalıdır.)
+
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_mac2unix.txt
+ # mac2unix test_mac2unix.txt deneme2.txt
+ # vi deneme2.txt
+\end{verbatim}
+Text dosyasının sorunsuz bir şekilde mac formatından unix formatına geçtiğini gözlemleyin. (İlgili satırlar uygun satırlarda olmalıdır.)
+
+\item doxygen paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_doxgen.c
+ # doxygen -g test_doxygen.cfg test_doxygen.c
+ # doxygen test_doxygen.cfg
+\end{verbatim}
+
+Bulunduğunuz dizinde bir html ve bir de latex dizinin sorunsuz bir şekilde oluştuğunu gözlemleyin.
+
+\item htmldoc paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_htmldoc.html
+\end{verbatim}
+
+Menü $\rightarrow$ Uygulamalar $\rightarrow$ Ofis yolunu izleyerek htmldoc uygulmasını açın.
+
+Sorunsuz bir şekilde açıldığını gözlemleyin.
+
+Htmldoc uygulmasını kullanarak test\_htmldoc.html dosyasını pdf dosyasına dönüştürün.
+ 
+Düzgün bir şekilde dönüşümün gerçekleştiğini gözlemleyin.
+\item mftrace paketi kurulumu sonrası:
+\begin{verbatim}
+ # mftrace cmr10
+\end{verbatim}
+Sorunsuz bir şekilde cmrt10.pfa dosyasının oluştuğunu gözlemleyin.
+\item t1utils paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_t1utils.pfa
+ # t1ascii test_t1utils.pfa
+ # t1asm test_t1utils.pfa
+ # t1binary test_t1utils.pfa
+ # t1disasm test_t1utils.pfa
+ # t1mac test_t1utils.pfa
+ # t1unmac test_t1utils.pfa
+\end{verbatim}
+
+Sorunsuz bir şekilde bu komutların çalıştığını gözlemleyin. 
+\item tellico paketi kurulumu sonrası:
+
+Kurulumdan sonra sorunsuz bir şekilde bu uygulamanın açıldığını gözlemleyin.
+
+\item texi2html paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://svn.pardus.org.tr/uludag/trunk/test/2009/testcases/turkish/bug_report-tr.tex
+ # texi2html bug_report-tr.tex
+\end{verbatim}
+
+Sorunsuz bir şekilde bug\_report-tr.html dosyasının oluştuğunu gözlemleyin.
+
+\item wv paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://svn.pardus.org.tr/uludag/trunk/test/2009/testcases/turkish/test_wv.doc
+# wvAbw test_wv.doc deneme.abw                                
+# wvCleanLatex test_wv.doc deneme.tex                            
+# wvConvert  test_wv.doc                              
+# wvDVI   test_wv.doc deneme.dvi                                
+# wvDocBook test_wv.doc deneme.sgml                               
+# wvHtml test_wv.doc deneme.html                                 
+# wvLatex test_wv.doc deneme.tex                                
+# wvMime  test_wv.doc deneme.mime                                
+# wvPDF test_wv.doc deneme.pdf                                  
+# wvPS  test_wv.doc deneme.ps                                  
+# wvRTF test_wv.doc deneme.rtf                                  
+# wvSummary test_wv.doc            
+# wvText   test_wv.doc deneme.txt                               
+# wvVersion  test_wv.doc                             
+# wvWare  test_wv.doc -X deneme.xml                                
+# wvWml test_wv.doc deneme.wml       
+
+\end{verbatim}
+
+Tüm komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
+
 
 \end{enumerate}
-
-\subsection*{Openoffice}
+\section{Openoffice alt bileşeni}
 \begin{enumerate}
+ \item mdbtools paketi kurulumu sonrası:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb
+\end{verbatim}
+
+Yukarıda bulunan veritabanını Openoffice Veritabanı ile düzgün bir şekilde açılabildiğini gözlemleyin.
 
 \item openoffice paketi kurulumu sonrası:
 \begin{itemize}
@@ -206,7 +406,12 @@ Yukarıda linkleri verilen dosyaların düzgün bir şekilde açıldığını g�
 
 Yukarıda linki verilen dosyanın düzgün bir şekilde açıldığını gözlemleyin.
 
-Yeni bir rapor ekleyin.
+\item Web Sayfası Düzenleyici:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb
+\end{verbatim}
+
+Yukarıda linki verilen dosyanın düzgün bir şekilde açıldığını gözlemleyin.
 
 \end{itemize}
 
