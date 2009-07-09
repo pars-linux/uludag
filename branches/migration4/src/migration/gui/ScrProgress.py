@@ -27,6 +27,8 @@ import time
 import logging
 
 class ProgressPage(QtGui.QWidget):
+    #ProgressLayout Column Counter
+    column = 3
     def __init__(self, parent):
         QtGui.QWidget.__init__(self, parent)
         #self.vbox = QtGui.QVBoxLayout(self)
@@ -101,9 +103,10 @@ class ProgressPage(QtGui.QWidget):
     def addOperation(self, name, steps):
         "Adds a new operation to the progress page"
         operation = Operation(self, name, steps)
-        self.layout.addLayout(operation, 3, 0)
+        self.layout.addLayout(operation, self.column, 0)
         self.operations.append(operation)
         self.steps2 += steps
+        self.column += 1
 
     def message(self, event):
         self.warning = QtGui.QMessageBox.warning(self, i18n("Warning!"), event, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel, QtGui.QMessageBox.NoButton)
@@ -128,6 +131,7 @@ class ProgressPage(QtGui.QWidget):
                 self.active -= 1
 
 class Operation(QtGui.QHBoxLayout):
+
     def __init__(self, parent, title, steps):
         QtGui.QHBoxLayout.__init__(self, None)
         self.title = title
@@ -280,6 +284,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Bookmarks:
         size = bookmark.size()
+        print "bookmark.size():%d" % size
         if size > 0:
             lockfile = os.path.join(ctx.destinations["Firefox Profile Path"], "lock")
             while os.path.lexists(lockfile):
