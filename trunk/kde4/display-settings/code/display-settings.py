@@ -30,7 +30,15 @@ class Module(KCModule):
             from dbus.mainloop.qt import DBusQtMainLoop
             DBusQtMainLoop(set_as_default=True)
 
-        MainWidget(self, embed=True)
+        mw = MainWidget(self, embed=True)
+        self.load = mw.load
+        self.save = mw.save
+        self.defaults = mw.defaults
+
+        def configChanged():
+            self.changed.emit(True)
+
+        mw.configChanged.connect(configChanged)
 
 
 def CreatePlugin(widget_parent, parent, component_data):
