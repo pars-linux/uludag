@@ -64,7 +64,7 @@ class NmApplet(plasmascript.Applet):
 
     def init(self):
         """ Const method for initializing the applet """
-        KGlobal.locale().insertCatalog("network-manager")
+        KGlobal.locale().insertCatalog("nm-applet")
 
         self.readEntries()
         self.followSolid()
