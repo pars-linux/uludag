@@ -17,7 +17,7 @@ from PyKDE4.kdecore import ki18n, KGlobal, KConfig
 import subprocess
 from gui.ScreenWidget import ScreenWidget
 from gui.goodbyeWidget import Ui_goodbyeWidget
-#import gui.ScrSmolt as smoltWidget
+import gui.ScrSmolt as smoltWidget
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Goodbye")
@@ -50,12 +50,13 @@ class Widget(QtGui.QWidget, ScreenWidget):
         command = "kfmclient openURL " + self.helpPageUrl
         self.procSettings.start(command)
 
-    '''def setSmolt(self):
+    def setSmolt(self):
         if self.smoltSettings["profileSend"] == False:
-            self.ui.smoltGroupBox.setVisible(False)'''
+            self.ui.smoltGroupBox.setVisible(False)
 
     def shown(self):
-        pass
+       self.smoltSettings = smoltWidget.Widget.screenSettings
+       self.setSmolt()
 
     def execute(self): 
        return True
