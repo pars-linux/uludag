@@ -285,9 +285,9 @@ msgid "Smolt Settings"
 msgstr "Smolt Ayarları"
 
 #: .tmp/ScrSummary.py:98
-#, fuzzy, python-format
+#, python-format
 msgid "Send my profile: <b>%s</b>"
-msgstr "Smolt profili: <b>%s</b>"
+msgstr "Profilimi yolla: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:99
 msgid ""
@@ -295,6 +295,9 @@ msgid ""
 "Smolt server and can take between 30 seconds to a minute. Kaptan may freeze "
 "during this time.</i>)"
 msgstr ""
+"(<i><u>Uyarı:</u> Profil yollama işlemi sırasında "
+"Smolt sunucusuna bağlanma işlemi 30 saniyeden bir dakikaya kadar sürebilir.</i>)"
+
 
 #: .tmp/ScrWallpaper.py:34
 msgid "Insert some catchy title about wallpapers.."
@@ -334,11 +337,11 @@ msgstr ""
 
 #: .tmp/ui_goodbyeWidget.py:123
 msgid "My Smolt Page"
-msgstr ""
+msgstr "Smolt Sayfam"
 
 #: .tmp/ui_goodbyeWidget.py:124
 msgid "Go to your Smolt page and rate your hardware components."
-msgstr ""
+msgstr "Smolt sayfanızı ziyaret edin ve donanım bileşenlerinizi oylayın."
 
 #: .tmp/ui_goodbyeWidget.py:125 .tmp/ui_goodbyeWidget.py:128
 #: .tmp/ui_goodbyeWidget.py:131
