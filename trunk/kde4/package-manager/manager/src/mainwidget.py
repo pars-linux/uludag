@@ -140,7 +140,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.setSelectAll()
         self.packageList.resetMoreInfoRow()
         waitCursor()
-        packages = self.packageList.search(unicode(self.searchLine.text()).split())
+        packages = self.packageList.search(str(self.searchLine.text()).split())
         self.packageList.model().setFilterRole(GroupRole)
         self.packageList.model().setFilterPackages(packages)
         restoreCursor()
