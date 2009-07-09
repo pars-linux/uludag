@@ -46,7 +46,7 @@ msgstr "Kablo ya da aygıt takılı değil."
 
 #: .tmp/networkmanager/widgets.py:255
 msgid "Access denied."
-msgstr ""
+msgstr "Erişim engellendi."
 
 #: .tmp/networkmanager/base.py:174
 msgid "Available Profiles"
