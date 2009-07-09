@@ -6,7 +6,7 @@ from PyQt4 import QtCore, QtGui
 from PyKDE4 import kdeui
 from PyKDE4.kdecore import ki18n, KAboutData, KCmdLineArgs, KConfig
 
-import gui, subprocess, os
+import gui, subprocess, os, dbus
 
 from gui.kaptanMain import Ui_kaptanUI
 import gui.ScrWelcome as welcomeWidget
@@ -20,7 +20,7 @@ import gui.ScrSearch  as searchWidget
 import gui.ScrSummary  as summaryWidget
 import gui.ScrKeyboard  as keyboardWidget
 import gui.ScrPackage as packageWidget
-#import gui.ScrSmolt as smoltWidget
+import gui.ScrSmolt as smoltWidget
 
 def getKernelOpt(cmdopt=None):
     if cmdopt:
@@ -53,7 +53,7 @@ def isLiveCD():
 if isLiveCD():
     availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
 else:
-    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, packageWidget, summaryWidget, goodbyeWidget]
+    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, smoltWidget, packageWidget, summaryWidget, goodbyeWidget]
 
 class Kaptan(QtGui.QWidget):
     def __init__(self, parent=None):
@@ -247,6 +247,11 @@ if __name__ == "__main__":
 
     KCmdLineArgs.init(sys.argv, aboutData)
     app =  kdeui.KApplication()
+
+    if not dbus.get_default_main_loop():
+        from dbus.mainloop.qt import DBusQtMainLoop
+        DBusQtMainLoop(set_as_default = True)
+
     kaptan = Kaptan()
     kaptan.show()
     rect  = QtGui.QDesktopWidget().screenGeometry()
