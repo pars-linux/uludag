@@ -29,9 +29,6 @@ from displaysettings.ui_devices import Ui_devicesWidget
 # Backend
 from displaysettings.backend import Interface
 
-# Config
-#from displaysettings.config import
-
 from displaysettings.item import ItemListWidgetItem, ItemWidget
 from displaysettings.carddialog import VideoCardDialog
 from displaysettings.outputdialog import OutputDialog
