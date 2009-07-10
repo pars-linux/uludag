@@ -49,7 +49,7 @@
           </property>
           <item>
            <property name="text">
-            <string>radeon</string>
+            <string notr="true">radeon</string>
            </property>
           </item>
          </widget>

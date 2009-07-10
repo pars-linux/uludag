@@ -95,7 +95,7 @@
                  <enum>QFrame::StyledPanel</enum>
                 </property>
                 <property name="text">
-                 <string>Monitor 800x600</string>
+                 <string notr="true">Monitor 800x600</string>
                 </property>
                </widget>
               </item>
@@ -133,7 +133,7 @@
               <item>
                <widget class="QLabel" name="label_5">
                 <property name="text">
-                 <string>-</string>
+                 <string notr="true">-</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -181,7 +181,7 @@
               <item>
                <widget class="QLabel" name="label_6">
                 <property name="text">
-                 <string>-</string>
+                 <string notr="true">-</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
