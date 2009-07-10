@@ -87,6 +87,9 @@ class Interface:
         """
         return "zorg"
 
+    def query(self):
+        self.ext.query()
+
     def getConfig(self):
         return self._info
 

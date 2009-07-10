@@ -47,7 +47,7 @@ class Interface:
             n %= n + 1
 
     def queryCurrent(self):
-        self.query()
+        pass
 
     def getOutputs(self):
         self.queryCurrent()
