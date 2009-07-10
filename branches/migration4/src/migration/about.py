@@ -14,8 +14,8 @@
 from PyKDE4.kdecore import KAboutData, ki18n
 
 # Application Data
-appName     = "migration-tool"
-modName     = "migrationtool"
+appName     = "migration"
+modName     = "migration"
 programName = ki18n("Migration Tool")
 version     = "0.0.1"
 description = ki18n("Migration Tool")
