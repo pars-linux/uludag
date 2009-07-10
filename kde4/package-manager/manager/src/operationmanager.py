@@ -122,6 +122,9 @@ class OperationManager(QObject):
         elif signal == "updatingrepo":
             self.emit(SIGNAL("operationChanged(QString, QString)"), signal, args[0])
 
+        elif signal == "error":
+            self.emit(SIGNAL("exception(QString)"), unicode(args[0]))
+
         elif signal == "started":
             if args[0] in self.nop: # no operation
                 return
