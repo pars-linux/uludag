@@ -112,7 +112,11 @@ class Interface:
         self.link.Xorg.Display["zorg"].setDepth(depth)
 
     def getOutputs(self):
-        return self.ext.getOutputs()
+        outputs = self.ext.getOutputs()
+        if outputs:
+            return outputs
+        else:
+            return [Output("default")]
 
     def setOutput(self, name, enabled=None, ignored=None):
         output = self._info.outputs.get(name)
@@ -141,8 +145,22 @@ class Interface:
     def getModes(self, outputName):
         return MODES
 
+    def setMode(self, outputName, mode, rate):
+        self.link.Xorg.Display["zorg"].setMode(outputName, mode, rate)
+
     def getRates(self, outputName, mode):
         return ["60"]
+
+    def setRotation(self, outputName, rotation):
+        self.link.Xorg.Display["zorg"].setOrientation(outputName, rotation, "")
+
+    def setSimpleLayout(self, left, right, cloned):
+        self.link.Xorg.Display["zorg"].setPosition(left, "", "")
+
+        if right:
+            pos = "" if cloned else "RightOf"
+            arg = "" if cloned else left
+            self.link.Xorg.Display["zorg"].setPosition(right, pos, arg)
 
     def sync(self):
         self.link.Xorg.Display["zorg"].syncConfigs()
