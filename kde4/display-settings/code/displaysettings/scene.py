@@ -107,6 +107,17 @@ class DisplayItem(QtGui.QGraphicsRectItem):
         self._text.setPlainText(text)
         textRect = self._text.boundingRect()
         itemRect = self.rect()
+
+        font = self._text.font()
+        size = 48
+        while textRect.width() > itemRect.width():
+            size -= 8
+            if size < 0:
+                break
+            font.setPixelSize(size)
+            self._text.setFont(font)
+            textRect = self._text.boundingRect()
+
         textRect.moveCenter(itemRect.center())
         self._text.setPos(textRect.left(), textRect.top())
 
