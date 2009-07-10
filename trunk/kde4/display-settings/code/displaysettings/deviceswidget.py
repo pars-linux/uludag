@@ -170,6 +170,8 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         dlg.show()
 
     def load(self):
+        self.iface.query()
+
         # Card info
         info = "<qt>%s<br><i>%s</i></qt>" % (self.iface.cardModel, self.iface.cardVendor)
         self.cardInfoLabel.setText(info)
