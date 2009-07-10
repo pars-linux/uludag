@@ -4,14 +4,15 @@
 #
 # Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
+# Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-27 13:36+0200\n"
-"PO-Revision-Date: 2008-01-03 03:07+0200\n"
-"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
-"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
+"PO-Revision-Date: 2009-07-10 02:36+0100\n"
+"Last-Translator: Stefan <sw1976de@googlemail.com>\n"
+"Language-Team: Deutsch <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,7 +48,7 @@ msgid ""
 msgstr ""
 "Pardusman sagt:\n"
 "\n"
-"  Teh winnars dont use teh drugs!  \n"
+"  The winnars dont use the drugs!  \n"
 " "
 
 #: src/gui.py:104
@@ -70,7 +71,7 @@ msgid ""
 msgstr ""
 "Dieser Ordner hält lokalen Depot-Cache\n"
 "und temporäre Dateien, die während des\n"
-"ISO-Erstellungsprozesses generiert sind."
+"ISO-Erstellungsprozesses generiert werden."
 
 #: src/gui.py:126
 msgid "Repository:"
@@ -100,7 +101,7 @@ msgstr ""
 
 #: src/gui.py:148
 msgid "Extra Parameters:"
-msgstr "Extra Parametern:"
+msgstr "Extra Parameter:"
 
 #: src/gui.py:153
 msgid "This parameters will add to the install media's GRUB"
@@ -265,7 +266,7 @@ msgstr "Archiv-Grösse"
 
 #: src/browser.py:230
 msgid "Installed Size"
-msgstr "Installierter Grösse"
+msgstr "Installierte Grösse"
 
 #: src/browser.py:299
 msgid "No packages selected."
