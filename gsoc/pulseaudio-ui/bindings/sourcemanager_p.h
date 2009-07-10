@@ -17,7 +17,7 @@
 #include <QHash>
 #include <QPointer>
 
-#include "QtPulseAudioSourceManager.h"
+#include "sourcemanager.h"
 
 #include <pulse/pulseaudio.h>
 

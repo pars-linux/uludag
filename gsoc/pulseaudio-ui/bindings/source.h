@@ -11,20 +11,20 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef __QtPulseAudioSink_h__
-#define __QtPulseAudioSink_h__
+#ifndef __QtPulseAudioSource_h__
+#define __QtPulseAudioSource_h__
 
 #include <QObject>
 
 #include <pulse/pulseaudio.h>
 
-#include "QtPulseAudioStream.h"
+#include "stream.h"
 
 namespace QtPulseAudio {
 
-class SinkManager;
+class SourceManager;
 
-class Sink : public Stream {
+class Source : public Stream {
 	Q_OBJECT
 public:
 	bool isValid();
@@ -37,11 +37,11 @@ public:
 	uint32_t owner();
 	pa_cvolume volume();
 	int mute();
-	uint32_t monitorSource();
-	QString monitorSourceName();
+	uint32_t monitorSink();
+	QString monitorSinkName();
 	pa_usec_t latency();
 	QString driver();
-	pa_sink_flags_t flags();
+	pa_source_flags_t flags();
 
 signals:
 	/**
@@ -55,9 +55,9 @@ public slots:
     void setVolume(pa_cvolume);
 	
 protected:
-	friend class SinkManager;
-	Sink(int index, SinkManager *parent = NULL);
-	~Sink();
+	friend class SourceManager;
+	Source(int index, SourceManager *parent = NULL);
+	~Source();
 
 	class Private;
 	friend class Private;

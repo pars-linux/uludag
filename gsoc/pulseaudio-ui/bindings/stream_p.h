@@ -11,24 +11,13 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef __QtPulseAudioContext_p_h__
-#define __QtPulseAudioContext_p_h__
+#ifndef __QtPulseAudioStream_p_h__
+#define __QtPulseAudioStream_p_h__
 
-#include "QtPulseAudioContext.h"
 
-namespace QtPulseAudio
-{
+#include "stream.h"
 
-class Context::Private
-{
-public:
-	static void state_callback(pa_context *c, void *userdata);
-	static void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index, void *userdata);
-
-	pa_context *mContext;
-	SinkManager *mSinks;
-	SourceManager *mSources;
-};
+namespace QtPulseAudio {
 
 }
 

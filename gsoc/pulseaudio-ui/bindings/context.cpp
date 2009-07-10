@@ -19,12 +19,12 @@
 
 #include "../integrator/QtPulseAudioIntegrator.h"
 
-#include "QtPulseAudioContext.h"
-#include "QtPulseAudioContext_p.h"
-#include "QtPulseAudioSinkManager.h"
-#include "QtPulseAudioSinkManager_p.h"
-#include "QtPulseAudioSourceManager.h"
-#include "QtPulseAudioSourceManager_p.h"
+#include "context.h"
+#include "context_p.h"
+#include "sinkmanager.h"
+#include "sinkmanager_p.h"
+#include "sourcemanager.h"
+#include "sourcemanager_p.h"
 
 using namespace std;
 using namespace QtPulseAudio;

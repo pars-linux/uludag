@@ -13,7 +13,7 @@
 #ifndef PANDA_MAINWINDOW_H
 #define PANDA_MAINWINDOW_H
 #include "ui_mainwindow.h"
-#include "../bindings/QtPulseAudioContext.h"
+#include "../bindings/context.h"
 
 #include <Qt/QtGui>
 

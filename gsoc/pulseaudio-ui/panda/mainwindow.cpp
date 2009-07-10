@@ -13,8 +13,8 @@
 #include <iostream>
 #include "mainwindow.h"
 #include "streamstab.h"
-#include "../bindings/QtPulseAudioSourceManager.h"
-#include "../bindings/QtPulseAudioSinkManager.h"
+#include "../bindings/sourcemanager.h"
+#include "../bindings/sinkmanager.h"
 
 MainWindow::MainWindow(QtPulseAudio::Context *context, QMainWindow *parent):QMainWindow(parent)
 {

@@ -11,33 +11,53 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef __QtPulseAudioSinkManager_h__
-#define __QtPulseAudioSinkManager_h__
+#ifndef __QtPulseAudioSink_h__
+#define __QtPulseAudioSink_h__
 
 #include <QObject>
 
 #include <pulse/pulseaudio.h>
 
-#include "QtPulseAudioStreamManager.h"
+#include "stream.h"
 
 namespace QtPulseAudio {
 
-class Context;
-class Sink;
+class SinkManager;
 
-class SinkManager : public StreamManager {
+class Sink : public Stream {
 	Q_OBJECT
 public:
-	virtual Stream *stream(int index);
-	virtual Sink *sink(int index);
+	bool isValid();
+
+	QString name();
+	uint32_t index();
+	QString description();
+	pa_sample_spec sampleSpec();
+	pa_channel_map channelMap();
+	uint32_t owner();
+	pa_cvolume volume();
+	int mute();
+	uint32_t monitorSource();
+	QString monitorSourceName();
+	pa_usec_t latency();
+	QString driver();
+	pa_sink_flags_t flags();
+
+signals:
+	/**
+	 * Signal send when the server send an update on the stream status, either because,
+	 * it is was asked by the user, or because it was subscribe.
+	 */
+	void updated();
 
 public slots:
-	virtual void update();
-
+	void update();
+    void setVolume(pa_cvolume);
+	
 protected:
-	friend class Context;
-	SinkManager(Context *parent, bool autoUpdate = true);
-	~SinkManager();
+	friend class SinkManager;
+	Sink(int index, SinkManager *parent = NULL);
+	~Sink();
 
 	class Private;
 	friend class Private;
