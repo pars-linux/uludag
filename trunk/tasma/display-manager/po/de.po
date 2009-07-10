@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008, 2009.
+# Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-23 22:09+0200\n"
-"PO-Revision-Date: 2009-01-24 13:20+0100\n"
-"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
-"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
+"PO-Revision-Date: 2009-07-10 02:45+0100\n"
+"Last-Translator: Stefan <sw1976de@googlemail.com>\n"
+"Language-Team: Deutsch <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,7 +25,8 @@ msgstr "Monitor auswählen"
 msgid "Plug And Play Monitor"
 msgstr "Plug And Play Monitor"
 
-#: src/monitordialog.py:89 src/driverdialog.py:60
+#: src/monitordialog.py:89
+#: src/driverdialog.py:60
 msgid "Ok"
 msgstr "Ok"
 
@@ -40,7 +42,9 @@ msgstr "<p>Horizontaler Bereich:</p>"
 msgid "<p>Vertical Range:</p>"
 msgstr "<p>Vertikaler Bereich:</p>"
 
-#: src/display-manager.py:40 src/display-manager.py:621 src/dm_mainview.py:248
+#: src/display-manager.py:40
+#: src/display-manager.py:621
+#: src/dm_mainview.py:248
 msgid "Display Manager"
 msgstr "Anzeige-Manager"
 
@@ -61,23 +65,22 @@ msgid "Vendors"
 msgstr "Hersteller"
 
 #: src/display-manager.py:171
-msgid ""
-"<qt>The driver you selected is not installed on your system. In order to use "
-"this driver, you must install <b>%1</b> package.</qt>"
-msgstr ""
-"<qt>Der von Ihnen gewählte Treiber ist auf Ihr System nicht installiert.Wenn "
-"Sie diesen Treiber verwenden möchten, dann müssen Sie das Paket <b>%1</b> "
-"installieren.</qt>"
+msgid "<qt>The driver you selected is not installed on your system. In order to use this driver, you must install <b>%1</b> package.</qt>"
+msgstr "<qt>Der von Ihnen gewählte Treiber ist auf Ihr System nicht installiert. Wenn Sie diesen Treiber verwenden möchten, dann müssen Sie das Paket <b>%1</b> installieren.</qt>"
 
-#: src/display-manager.py:172 src/display-manager.py:491
+#: src/display-manager.py:172
+#: src/display-manager.py:491
 msgid "Start Package Manager"
 msgstr "Paket-Manager starten"
 
-#: src/display-manager.py:185 src/dm_mainview.py:250 src/dm_mainview.py:270
+#: src/display-manager.py:185
+#: src/dm_mainview.py:250
+#: src/dm_mainview.py:270
 msgid "Primary Screen"
 msgstr "Primärer Bildschirm"
 
-#: src/display-manager.py:185 src/dm_mainview.py:272
+#: src/display-manager.py:185
+#: src/dm_mainview.py:272
 msgid "Secondary Screen"
 msgstr "Sekundärer Bildschirm"
 
@@ -98,38 +101,29 @@ msgid "Plug and Play Monitor"
 msgstr "Plug and Play Monitor"
 
 #: src/display-manager.py:479
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
-"<qt>Um eine optimale Leistung zu erhalten, empfiehlt es sich den von dem "
-"Hardwarehersteller empfohlenen Treiber <b>%1</b> zu verwenden. Möchten Sie "
-"diesen Treiber verwenden?</p></qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr "<qt>Um eine optimale Leistung zu erhalten, empfiehlt es sich den von dem Hardwarehersteller empfohlenen Treiber <b>%1</b> zu verwenden. Möchten Sie diesen Treiber verwenden?</p></qt>"
 
 #: src/display-manager.py:490
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%3</b> from video card options.</qt>"
-msgstr ""
-"<qt>Um eine optimale Leistung zu erhalten, empfiehlt es sich den von dem "
-"Hardwarehersteller empfohlenen Treiber <b>%1</b> zu verwenden. Sie müssen "
-"das Paket <b>%2</b> installieren und <b>%3</b> aus den Grafikkarten-"
-"Optionenfrom wählen, falls Sie diesen verwenden möchten.</qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%3</b> from video card options.</qt>"
+msgstr "<qt>Um eine optimale Leistung zu erhalten, empfiehlt es sich den von dem Hardwarehersteller empfohlenen Treiber <b>%1</b> zu verwenden. Sie müssen das Paket <b>%2</b> installieren und <b>%3</b> aus den Grafikkarten-Optionenfrom wählen, falls Sie diesen verwenden möchten.</qt>"
 
 #: src/display-manager.py:609
 msgid "Display Manager is already started!"
 msgstr "Anzeige-Manager wird bereits ausführt!"
 
-#: src/driverdialog.py:43 src/driverdialog.py:64
+#: src/driverdialog.py:43
+#: src/driverdialog.py:64
 msgid "Driver Name"
 msgstr "Treibername"
 
-#: src/driverdialog.py:44 src/driverdialog.py:65
+#: src/driverdialog.py:44
+#: src/driverdialog.py:65
 msgid "Description"
 msgstr "Beschreibung"
 
-#: src/driverdialog.py:58 src/dm_mainview.py:268
+#: src/driverdialog.py:58
+#: src/dm_mainview.py:268
 msgid "Video Card"
 msgstr "Grafikkarte"
 
@@ -170,48 +164,22 @@ msgid ""
 "<p>\n"
 "<b><h3>Outputs </h3></b>\n"
 "\n"
-"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
-"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
-"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
-"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
-"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
-"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
 "<br><br>\n"
 "<b><h3>Resolution </h3></b>\n"
 "\n"
-"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
-"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
-"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
-"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
-"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
-"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
-"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
-"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
-"dignissim dui lectus et orci.\n"
+"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis dignissim dui lectus et orci.\n"
 "\n"
 "</p>"
 msgstr ""
 "<p>\n"
 "<b><h3>Ausgabe </h3></b>\n"
 "\n"
-"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
-"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
-"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
-"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
-"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
-"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
 "<br><br>\n"
 "<b><h3>Resolution </h3></b>\n"
 "\n"
-"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
-"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
-"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
-"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
-"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
-"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
-"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
-"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
-"dignissim dui lectus et orci.\n"
+"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis dignissim dui lectus et orci.\n"
 "\n"
 "</p>"
 
@@ -267,7 +235,9 @@ msgstr "Anzeigen ermitteln"
 msgid "Screens"
 msgstr "Bildschirme"
 
-#: src/dm_mainview.py:269 src/dm_mainview.py:271 src/dm_mainview.py:273
+#: src/dm_mainview.py:269
+#: src/dm_mainview.py:271
+#: src/dm_mainview.py:273
 msgid "Configure..."
 msgstr "Konfigurieren..."
 
@@ -275,7 +245,8 @@ msgstr "Konfigurieren..."
 msgid "Devices"
 msgstr "Geräte"
 
-#: src/displayconfig.py:73 src/displayconfig.py:103
+#: src/displayconfig.py:73
+#: src/displayconfig.py:103
 msgid "You are not authorized for this operation."
 msgstr "Sie sind für diesen Vorgang nicht berechtigt."
 
@@ -289,40 +260,23 @@ msgstr "Wartend auf DBus..."
 
 #: src/displayconfig.py:111
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
-"Verbindung zu DBus wurde unerwartet geschlossen, es wird versucht erneut zu "
-"verbinden..."
+msgstr "Verbindung zu DBus wurde unerwartet geschlossen, es wird versucht erneut zu verbinden..."
 
 #: src/displayconfig.py:127
-msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
-msgstr ""
-"Kann nicht mit DBus verbunden werden! Falls es nicht ausgeführt wird, "
-"dannsollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus start' "
-"ausführen."
+msgid "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."
+msgstr "Kann nicht mit DBus verbunden werden! Falls es nicht ausgeführt wird, dann sollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus start' ausführen."
 
 #: src/displayconfig.py:155
 msgid ""
-"Display manager cannot get configuration information. Configuration file may "
-"be corrupted or modified by another tool. If you want to use display manager "
-"to configure your video hardware, you must create a new configuration file.\n"
+"Display manager cannot get configuration information. Configuration file may be corrupted or modified by another tool. If you want to use display manager to configure your video hardware, you must create a new configuration file.\n"
 "Would you like to create a new configuration at the next boot?"
 msgstr ""
-"Anzeige-Manager konnte die Konfigurationsinformationen nicht erhalten. Die "
-"Konfigurationsdatei könnte beschädigt oder durch einem anderen Tool geändert "
-"worden sein. Wenn Sie mit dem Anzeige-Manager Ihre Grafikkarte konfigurieren "
-"möchten, dass müssen Sie eine neue Konfigurationsdatei erstellen. \n"
-"Möchten Sie beim nächsten Systemstart eine neue Konfiguartionsdatei "
-"erstellen?"
+"Anzeige-Manager konnte die Konfigurationsinformationen nicht erhalten. Die Konfigurationsdatei könnte beschädigt oder durch ein anderes Tool geändert worden sein. Wenn Sie mit dem Anzeige-Manager Ihre Grafikkarte konfigurieren möchten, müssen Sie eine neue Konfigurationsdatei erstellen. \n"
+"Möchten Sie beim nächsten Systemstart eine neue Konfiguartionsdatei erstellen?"
 
 #: src/displayconfig.py:388
-msgid ""
-"Configuration has been saved. Some changes may take effect after restarting "
-"your computer."
-msgstr ""
-"Konfiguration wurde gespeichert. Einige Änderungen können evtl. erst nach "
-"dem Neustart Ihres Computers wirksam werden."
+msgid "Configuration has been saved. Some changes may take effect after restarting your computer."
+msgstr "Konfiguration wurde gespeichert. Einige Änderungen können evtl. erst nach dem Neustart Ihres Computers wirksam werden."
 
 #: src/displayconfig.py:391
 msgid "Your hardware will be probed after restarting your computer."
