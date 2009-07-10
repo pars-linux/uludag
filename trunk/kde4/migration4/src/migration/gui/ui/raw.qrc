@@ -1,6 +1,8 @@
 <RCC>
   <qresource prefix="raw" >
+    <file>../pics/miglogo.png</file>
     <file>../pics/bg.svg</file>
+    <file>../pics/bg.png</file>
     <file>../pics/cr64-app-migration.png</file>
     <file>../pics/cr64-app-migration-left.png</file>
   </qresource>
