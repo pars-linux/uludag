@@ -73,6 +73,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         pass
 
     def detectOutputs(self):
+        self.iface.query()
         config = self.iface.getConfig()
         self._outputs = self.iface.getOutputs()
         currentOutputsDict = dict((x.name, x) for x in self._outputs)
