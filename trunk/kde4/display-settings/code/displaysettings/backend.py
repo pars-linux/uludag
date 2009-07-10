@@ -20,6 +20,31 @@ from displaysettings.device import Output
 from displaysettings.nv import Interface as NVInterface
 from displaysettings.randr import Interface as RRInterface
 
+MODES = [
+    "2048x1536",
+    "1920x1440",
+    "1920x1200",
+    "1680x1050",
+    "1600x1200",
+    "1600x1024",
+    "1440x900",
+    "1400x1050",
+    "1366x768",
+    "1360x1024",
+    "1360x768",
+    "1280x1024",
+    "1280x960",
+    "1280x800",
+    "1280x768",
+    "1280x720", # 720p
+    "1152x864",
+    "1152x768",
+    "1024x768",
+    "1024x600",
+    "800x600",
+    "640x480"
+]
+
 class Interface:
     def __init__(self):
         self.link = comar.Link()
@@ -112,6 +137,12 @@ class Interface:
 
     def removeMonitor(self, outputName):
         self.link.Xorg.Display["zorg"].setMonitor(outputName, "", "", "", "")
+
+    def getModes(self, outputName):
+        return MODES
+
+    def getRates(self, outputName, mode):
+        return ["60"]
 
     def sync(self):
         self.link.Xorg.Display["zorg"].syncConfigs()
