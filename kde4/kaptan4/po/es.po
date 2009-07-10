@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-09 16:34+0300\n"
-"PO-Revision-Date: 2009-07-06 19:07-0400\n"
+"PO-Revision-Date: 2009-07-09 19:58-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Kaptan Wizard se despide :)"
 
 #: .tmp/ScrKeyboard.py:32
 msgid "Insert some catchy title about keyboards.."
-msgstr ""
+msgstr "Elija el teclado de su sistema"
 
 #: .tmp/ScrKeyboard.py:33
 msgid "Select your keyboard layout"
@@ -36,7 +36,7 @@ msgstr "Seleccione su distribución de teclado"
 
 #: .tmp/ScrMenu.py:26 .tmp/ScrStyle.py:34
 msgid "Some catchy title about styles"
-msgstr ""
+msgstr "Estilo de Escritorio"
 
 #: .tmp/ScrMenu.py:27 .tmp/ScrStyle.py:35
 msgid "Some catchy description about styles"
@@ -104,11 +104,11 @@ msgstr "Configuración del administrador de paquetes"
 
 #: .tmp/ScrSearch.py:27
 msgid "Some catchy title about desktop search"
-msgstr ""
+msgstr "Busqueda de Escritorio"
 
 #: .tmp/ScrSearch.py:28
 msgid "Some catchy description desktop search"
-msgstr ""
+msgstr "El motor de busqueda le facilitará ubicar a sus archivos y datos"
 
 # favor revisar,
 #: .tmp/ScrSearch.py:59
@@ -282,14 +282,13 @@ msgid "Desktop search: <b>%s</b>"
 msgstr "Busqueda de Escritorio: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:97
-#, fuzzy
 msgid "Smolt Settings"
-msgstr "Configuración del Estilo"
+msgstr "Configuración de Smolt"
 
 #: .tmp/ScrSummary.py:98
-#, fuzzy, python-format
+#, python-format
 msgid "Send my profile: <b>%s</b>"
-msgstr "&Enviar mi perfil"
+msgstr "Enviar mi perfil: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:99
 msgid ""
@@ -297,14 +296,16 @@ msgid ""
 "Smolt server and can take between 30 seconds to a minute. Kaptan may freeze "
 "during this time.</i>)"
 msgstr ""
+"(<i><u>Alerta:</u> El envío del perfil requiere comunicación con el servidor de "
+"Smolt y puede durar entre 30 segundos hasta un minuto. Kaptan puede quedarse sin responder durante este lapso.</i>)"
 
 #: .tmp/ScrWallpaper.py:34
 msgid "Insert some catchy title about wallpapers.."
-msgstr ""
+msgstr "Elija su Fondo de Escritorio"
 
 #: .tmp/ScrWallpaper.py:35
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
-msgstr ""
+msgstr "Elija el fondo que más le guste, o seleccione uno de sus propios imágenes..."
 
 #: .tmp/ui_goodbyeWidget.py:118
 msgid ""
@@ -336,11 +337,12 @@ msgstr ""
 
 #: .tmp/ui_goodbyeWidget.py:123
 msgid "My Smolt Page"
-msgstr ""
+msgstr "Mi página Smolt"
 
 #: .tmp/ui_goodbyeWidget.py:124
+# favor revisar - rate - realmente capté la idea ?
 msgid "Go to your Smolt page and rate your hardware components."
-msgstr ""
+msgstr "Vaya a la página de Smolt y valore sus componentes de hardware."
 
 #: .tmp/ui_goodbyeWidget.py:125 .tmp/ui_goodbyeWidget.py:128
 #: .tmp/ui_goodbyeWidget.py:131
@@ -353,8 +355,7 @@ msgstr "Configuración del Sistema"
 
 #: .tmp/ui_goodbyeWidget.py:127
 msgid "System Settings is a configuration tool for Pardus."
-msgstr ""
-"Configuración del Sistema es una herramienta de configuración de Pardus."
+msgstr "Configuración del Sistema es una herramienta de configuración de Pardus."
 
 #: .tmp/ui_goodbyeWidget.py:129
 msgid "User Groups and Help Pages"
@@ -774,13 +775,3 @@ msgstr ""
 "escritorio básico para un usuario de PC; Le ayuda conectar a internet, leer "
 "e-mails, trabajar con documentos de oficina y más!"
 
-# no estoy seguro del "rating"
-#~ msgid ""
-#~ "Nepomuk  Semantic Desktop enables tagging and rating of files integrated "
-#~ "with the Desktop Search."
-#~ msgstr ""
-#~ "Escritorio Semántico Nepomuk realiza un indexado y una valorización de "
-#~ "archivos, combinado con búsqueda de escritorio."
-
-#~ msgid "Enable Nepomuk Semantic Desktop"
-#~ msgstr "Habilitar Escritorio Semántico Nepomuk"
