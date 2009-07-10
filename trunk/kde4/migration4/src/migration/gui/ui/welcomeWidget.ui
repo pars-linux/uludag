@@ -14,7 +14,7 @@
    <string>Welcome</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: white</string>
+   <string notr="true">color: black</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="1">
@@ -32,11 +32,17 @@
    </item>
    <item row="0" column="3" rowspan="3">
     <widget class="QLabel" name="pixMigrationLogo">
+     <property name="styleSheet">
+      <string/>
+     </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="raw.qrc">:/raw/pics/miglogo.png</pixmap>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -115,6 +121,8 @@ Pardus is a GNU/Linux distribution, targeting at computer literate users' basic 
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="raw.qrc"/>
+ </resources>
  <connections/>
 </ui>
