@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="raw" >
+    <file>../pics/migrationlogo.png</file>
     <file>../pics/miglogo.png</file>
     <file>../pics/bg.svg</file>
     <file>../pics/bg.png</file>
