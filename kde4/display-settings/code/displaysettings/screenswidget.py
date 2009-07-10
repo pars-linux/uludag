@@ -72,7 +72,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
     def signalHandler(self, package, signal, args):
         pass
 
-    def detectOutputs(self):
+    def detectOutputs(self, onlyConnected=False):
         self.iface.query()
         config = self.iface.getConfig()
         self._outputs = self.iface.getOutputs()
@@ -91,17 +91,23 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
 
         for output in self._outputs:
             output.config = config.outputs.get(output.name)
+            connected = output.connection == Output.Connected
 
-            if output.connection == Output.Connected:
+            if connected:
                 connectedList.append(output)
+            elif onlyConnected:
+                continue
 
             if output.config is None:
-                if self._left is None:
-                    self._left = output
-                elif self._right is None:
-                    self._right = output
+                if connected:
+                    print "Trying to add %s as it is connected and has no config." % output.name
+                    if self._left is None:
+                        self._left = output
+                    elif self._right is None:
+                        self._right = output
 
             elif output.config.enabled:
+                print "Trying to add %s as it is enabled by config." % output.name
                 if output.config.right_of and \
                         output.config.right_of in currentOutputsDict:
                     self._right = output
@@ -207,7 +213,10 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self.slotUpdateOutputProperties(output)
 
     def slotDetectClicked(self):
-        self.load()
+        self.detectOutputs(onlyConnected=True)
+        self.populateOutputsMenu()
+        self.refreshOutputsView()
+        self.slotUpdateOutputProperties(self._left)
         self.configChanged.emit()
 
     def slotUpdateOutputProperties(self, output):
