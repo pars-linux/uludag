@@ -95,8 +95,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Smolt Settings
         content.append(subject %ki18n("Smolt Settings").toString())
-        content.append(item % ki18n("Send my profile: <b>%s</b>").toString() % QVariant(self.smoltSettings["profileSend"]).toString())
-        content.append(ki18n("(<i><u>Warning:</u> Sending profile requires to set up communication with Smolt server and can take between 30 seconds to a minute. Kaptan may freeze during this time.</i>)").toString())
+        content.append(item % ki18n("Send my profile: <b>%s</b>").toString() % self.smoltSettings["summaryMessage"])
+        #content.append(ki18n("(<i><u>Warning:</u> Sending profile requires to set up communication with Smolt server and can take between 30 seconds to a minute. Kaptan may freeze during this time.</i>)").toString())
         content.append(end)
         content.append("""</ul></body></html>""")
         self.ui.textSummary.setHtml(content)
@@ -247,12 +247,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Smolt Settings
         if self.smoltSettings["profileSend"] == True:
-            profile = smolt.Hardware()
-            retvalue, pub_uuid, admin = profile.send(smoonURL=smolt.smoonURL)
-            url = urljoin(smolt.smoonURL, '/show?uuid=%s' % pub_uuid)
-            values = { "pub_uuid" : pub_uuid,
-                       "admin" : admin,
-                       "url" : url }
+            self.procSettings = QProcess()
+            command = "smoltSendProfile"
+            arguments = ["-a", "--submitOnly"]
+            self.procSettings.startDetached(command, arguments)
 
         if hasChanged == True:
             self.killPlasma()
