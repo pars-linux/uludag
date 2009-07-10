@@ -165,18 +165,6 @@ msgstr ""
 msgid "Display Configuration Tool"
 msgstr ""
 
-#: .tmp/displaysettings/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
-
-#: .tmp/displaysettings/about.py:25
-msgid " "
-msgstr ""
-
-#: .tmp/displaysettings/about.py:32
-msgid "Fatih Aşıcı"
-msgstr ""
-
 #: .tmp/displaysettings/about.py:32
 msgid "Current Maintainer"
 msgstr ""

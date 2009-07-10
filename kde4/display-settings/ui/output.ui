@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ui version="4.0">
+<ui version="4.0" >
  <class>OutputDialog</class>
- <widget class="QDialog" name="OutputDialog">
-  <property name="geometry">
+ <widget class="QDialog" name="OutputDialog" >
+  <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
@@ -10,197 +9,197 @@
     <height>343</height>
    </rect>
   </property>
-  <property name="windowTitle">
+  <property name="windowTitle" >
    <string>Output Configuration</string>
   </property>
-  <property name="modal">
+  <property name="modal" >
    <bool>true</bool>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_7">
+  <layout class="QVBoxLayout" name="verticalLayout_7" >
    <item>
-    <widget class="QTabWidget" name="tabWidget">
-     <property name="currentIndex">
+    <widget class="QTabWidget" name="tabWidget" >
+     <property name="currentIndex" >
       <number>0</number>
      </property>
-     <widget class="QWidget" name="freqTab">
-      <attribute name="title">
+     <widget class="QWidget" name="freqTab" >
+      <attribute name="title" >
        <string>Frequency Ranges</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout_2" >
        <item>
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Please, be careful while specifying these values. Wrong values can damage especially old monitors.</string>
+        <widget class="QLabel" name="label" >
+         <property name="text" >
+          <string>If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be extra careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model.</string>
          </property>
-         <property name="wordWrap">
+         <property name="wordWrap" >
           <bool>true</bool>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="freqBox">
-         <property name="title">
+        <widget class="QGroupBox" name="freqBox" >
+         <property name="title" >
           <string>Specify Ranges</string>
          </property>
-         <property name="checkable">
+         <property name="checkable" >
           <bool>true</bool>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout">
+         <layout class="QVBoxLayout" name="verticalLayout" >
           <item>
-           <layout class="QFormLayout" name="formLayout_2">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_8">
-              <property name="text">
+           <layout class="QFormLayout" name="formLayout_2" >
+            <item row="0" column="0" >
+             <widget class="QLabel" name="label_8" >
+              <property name="text" >
                <string>Selection</string>
               </property>
              </widget>
             </item>
-            <item row="0" column="1">
-             <widget class="QComboBox" name="monitorType">
+            <item row="0" column="1" >
+             <widget class="QComboBox" name="monitorType" >
               <item>
-               <property name="text">
+               <property name="text" >
                 <string>Select a standard monitor</string>
                </property>
               </item>
               <item>
-               <property name="text">
+               <property name="text" >
                 <string>Select from vendor/model list</string>
                </property>
               </item>
               <item>
-               <property name="text">
+               <property name="text" >
                 <string>Enter ranges manually</string>
                </property>
               </item>
              </widget>
             </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_2">
-              <property name="text">
+            <item row="1" column="0" >
+             <widget class="QLabel" name="label_2" >
+              <property name="text" >
                <string>Monitor:</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
-             <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item row="1" column="1" >
+             <layout class="QHBoxLayout" name="horizontalLayout_2" >
               <item>
-               <widget class="QLabel" name="monitorName">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <widget class="QLabel" name="monitorName" >
+                <property name="sizePolicy" >
+                 <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
-                <property name="frameShape">
+                <property name="frameShape" >
                  <enum>QFrame::StyledPanel</enum>
                 </property>
-                <property name="text">
+                <property name="text" >
                  <string notr="true">Monitor 800x600</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QToolButton" name="browseMonitorsButton">
-                <property name="text">
+               <widget class="QToolButton" name="browseMonitorsButton" >
+                <property name="text" >
                  <string>Choose...</string>
                 </property>
                </widget>
               </item>
              </layout>
             </item>
-            <item row="2" column="0">
-             <widget class="QLabel" name="label_3">
-              <property name="text">
+            <item row="2" column="0" >
+             <widget class="QLabel" name="label_3" >
+              <property name="text" >
                <string>Horizontal sync:</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="1">
-             <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item row="2" column="1" >
+             <layout class="QHBoxLayout" name="horizontalLayout_3" >
               <item>
-               <widget class="QDoubleSpinBox" name="hsyncMin">
-                <property name="suffix">
+               <widget class="QDoubleSpinBox" name="hsyncMin" >
+                <property name="suffix" >
                  <string/>
                 </property>
-                <property name="decimals">
+                <property name="decimals" >
                  <number>1</number>
                 </property>
-                <property name="maximum">
+                <property name="maximum" >
                  <double>200.000000000000000</double>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_5">
-                <property name="text">
+               <widget class="QLabel" name="label_5" >
+                <property name="text" >
                  <string notr="true">-</string>
                 </property>
-                <property name="alignment">
+                <property name="alignment" >
                  <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="hsyncMax">
-                <property name="decimals">
+               <widget class="QDoubleSpinBox" name="hsyncMax" >
+                <property name="decimals" >
                  <number>1</number>
                 </property>
-                <property name="maximum">
+                <property name="maximum" >
                  <double>200.000000000000000</double>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_7">
-                <property name="text">
+               <widget class="QLabel" name="label_7" >
+                <property name="text" >
                  <string>kHz</string>
                 </property>
                </widget>
               </item>
              </layout>
             </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="label_4">
-              <property name="text">
+            <item row="3" column="0" >
+             <widget class="QLabel" name="label_4" >
+              <property name="text" >
                <string>Vertical refresh:</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="1">
-             <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item row="3" column="1" >
+             <layout class="QHBoxLayout" name="horizontalLayout_4" >
               <item>
-               <widget class="QDoubleSpinBox" name="vrefMin">
-                <property name="decimals">
+               <widget class="QDoubleSpinBox" name="vrefMin" >
+                <property name="decimals" >
                  <number>1</number>
                 </property>
-                <property name="maximum">
+                <property name="maximum" >
                  <double>200.000000000000000</double>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_6">
-                <property name="text">
+               <widget class="QLabel" name="label_6" >
+                <property name="text" >
                  <string notr="true">-</string>
                 </property>
-                <property name="alignment">
+                <property name="alignment" >
                  <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="vrefMax">
-                <property name="decimals">
+               <widget class="QDoubleSpinBox" name="vrefMax" >
+                <property name="decimals" >
                  <number>1</number>
                 </property>
-                <property name="maximum">
+                <property name="maximum" >
                  <double>200.000000000000000</double>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_9">
-                <property name="text">
+               <widget class="QLabel" name="label_9" >
+                <property name="text" >
                  <string>Hz</string>
                 </property>
                </widget>
@@ -213,14 +212,14 @@
         </widget>
        </item>
        <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
+        <spacer name="verticalSpacer" >
+         <property name="orientation" >
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeType">
+         <property name="sizeType" >
           <enum>QSizePolicy::MinimumExpanding</enum>
          </property>
-         <property name="sizeHint" stdset="0">
+         <property name="sizeHint" stdset="0" >
           <size>
            <width>0</width>
            <height>16</height>
@@ -230,117 +229,117 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="dimensionsTab">
-      <attribute name="title">
+     <widget class="QWidget" name="dimensionsTab" >
+      <attribute name="title" >
        <string>Dimensions</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_21">
+      <layout class="QVBoxLayout" name="verticalLayout_21" >
        <item>
-        <widget class="QLabel" name="label_18">
-         <property name="text">
+        <widget class="QLabel" name="label_18" >
+         <property name="text" >
           <string>If your monitor's dimensions are not correctly detected, fonts and other visual objects might seem larger or smaller than normal. In order to fix this problem, you can specify your monitor's dimensions here.</string>
          </property>
-         <property name="wordWrap">
+         <property name="wordWrap" >
           <bool>true</bool>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="dimensionsBox">
-         <property name="title">
+        <widget class="QGroupBox" name="dimensionsBox" >
+         <property name="title" >
           <string>Specify Display Size</string>
          </property>
-         <property name="checkable">
+         <property name="checkable" >
           <bool>true</bool>
          </property>
-         <layout class="QFormLayout" name="formLayout">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_19">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <layout class="QFormLayout" name="formLayout" >
+          <item row="0" column="0" >
+           <widget class="QLabel" name="label_19" >
+            <property name="sizePolicy" >
+             <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="text">
+            <property name="text" >
              <string>Display size:</string>
             </property>
-            <property name="alignment">
+            <property name="alignment" >
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
-            <property name="buddy">
+            <property name="buddy" >
              <cstring>sizeList</cstring>
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="QComboBox" name="sizeList">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+          <item row="0" column="1" >
+           <widget class="QComboBox" name="sizeList" >
+            <property name="sizePolicy" >
+             <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
             <item>
-             <property name="text">
-              <string>15.4&quot; Wide Screen</string>
+             <property name="text" >
+              <string>15.4" Wide Screen</string>
              </property>
             </item>
             <item>
-             <property name="text">
+             <property name="text" >
               <string>Custom</string>
              </property>
             </item>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_20">
-            <property name="text">
+          <item row="1" column="0" >
+           <widget class="QLabel" name="label_20" >
+            <property name="text" >
              <string>Width:</string>
             </property>
-            <property name="alignment">
+            <property name="alignment" >
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
-            <property name="buddy">
+            <property name="buddy" >
              <cstring>monitorWidth</cstring>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QSpinBox" name="monitorWidth">
-            <property name="suffix">
+          <item row="1" column="1" >
+           <widget class="QSpinBox" name="monitorWidth" >
+            <property name="suffix" >
              <string> mm</string>
             </property>
-            <property name="maximum">
+            <property name="maximum" >
              <number>1000</number>
             </property>
-            <property name="singleStep">
+            <property name="singleStep" >
              <number>10</number>
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_21">
-            <property name="text">
+          <item row="2" column="0" >
+           <widget class="QLabel" name="label_21" >
+            <property name="text" >
              <string>Height:</string>
             </property>
-            <property name="alignment">
+            <property name="alignment" >
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
-            <property name="buddy">
+            <property name="buddy" >
              <cstring>monitorHeight</cstring>
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
-           <widget class="QSpinBox" name="monitorHeight">
-            <property name="suffix">
+          <item row="2" column="1" >
+           <widget class="QSpinBox" name="monitorHeight" >
+            <property name="suffix" >
              <string> mm</string>
             </property>
-            <property name="maximum">
+            <property name="maximum" >
              <number>1000</number>
             </property>
-            <property name="singleStep">
+            <property name="singleStep" >
              <number>10</number>
             </property>
            </widget>
@@ -349,11 +348,11 @@
         </widget>
        </item>
        <item>
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
+        <spacer name="verticalSpacer_2" >
+         <property name="orientation" >
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint" stdset="0">
+         <property name="sizeHint" stdset="0" >
           <size>
            <width>0</width>
            <height>0</height>
@@ -366,20 +365,20 @@
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="horizontalLayout" >
      <item>
-      <widget class="QCheckBox" name="ignoreOutputCheck">
-       <property name="text">
+      <widget class="QCheckBox" name="ignoreOutputCheck" >
+       <property name="text" >
         <string>Ignore this output</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QDialogButtonBox" name="buttonBox">
-       <property name="orientation">
+      <widget class="QDialogButtonBox" name="buttonBox" >
+       <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="standardButtons">
+       <property name="standardButtons" >
         <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
        </property>
       </widget>
@@ -396,11 +395,11 @@
    <receiver>OutputDialog</receiver>
    <slot>accept()</slot>
    <hints>
-    <hint type="sourcelabel">
+    <hint type="sourcelabel" >
      <x>224</x>
      <y>283</y>
     </hint>
-    <hint type="destinationlabel">
+    <hint type="destinationlabel" >
      <x>157</x>
      <y>274</y>
     </hint>
@@ -412,11 +411,11 @@
    <receiver>OutputDialog</receiver>
    <slot>reject()</slot>
    <hints>
-    <hint type="sourcelabel">
+    <hint type="sourcelabel" >
      <x>292</x>
      <y>289</y>
     </hint>
-    <hint type="destinationlabel">
+    <hint type="destinationlabel" >
      <x>286</x>
      <y>274</y>
     </hint>
@@ -428,11 +427,11 @@
    <receiver>tabWidget</receiver>
    <slot>setDisabled(bool)</slot>
    <hints>
-    <hint type="sourcelabel">
+    <hint type="sourcelabel" >
      <x>78</x>
      <y>280</y>
     </hint>
-    <hint type="destinationlabel">
+    <hint type="destinationlabel" >
      <x>81</x>
      <y>222</y>
     </hint>
