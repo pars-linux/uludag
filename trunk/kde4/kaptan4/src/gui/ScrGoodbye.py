@@ -30,9 +30,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         lang = KGlobal.locale().language()
 
-        '''self.smoltSettings = smoltWidget.Widget.screenSettings
-        self.setSmolt()'''
-
         if lang == "tr":
             self.helpPageUrl = "http://www.pardus.org.tr/iletisim.html"
         else:
@@ -66,7 +63,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
        self.smoltSettings = smoltWidget.Widget.screenSettings
        self.setSmolt()
 
-    def execute(self): 
+    def execute(self):
        return True
 
 
