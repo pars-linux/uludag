@@ -13,7 +13,10 @@ X-KDE-Weight=10
 
 Name=Screens
 Name[tr]=Ekranlar
+Name[sv]=Skärmar
 Comment=Resize and rotate displays
 Comment[tr]=Ekranları boyutlandır ve döndür
+Comment[sv]=Roterar och ändrar storlek
 X-KDE-Keywords=python display screen video monitor manager
 X-KDE-Keywords[tr]=python görüntü ekran video monitör yönetici
+X-KDE-Keywords[sv]=python bildskärm skärm monitor inställningar

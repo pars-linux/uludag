@@ -13,7 +13,10 @@ X-KDE-Weight=20
 
 Name=Devices
 Name[tr]=Aygıtlar
+Name[sv]=Enheter
 Comment=Configure display devices
 Comment[tr]=Görüntü aygıtlarını yapılandır
+Comment[sv]=Anpassar bildskärmsenheter
 X-KDE-Keywords=python display screen video monitor manager
 X-KDE-Keywords[tr]=python görüntü ekran video monitör yönetici
+X-KDE-Keywords[sv]=python bildskärm skärmar monitor inställningar
