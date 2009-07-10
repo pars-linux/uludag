@@ -5,20 +5,22 @@
 #
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 # Klemens Häckel <click3d_at_linuxmail_org>, 2008.
+# Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-27 12:27+0300\n"
-"PO-Revision-Date: 2008-06-26 21:16+0200\n"
-"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
-"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
+"PO-Revision-Date: 2009-07-10 02:53+0100\n"
+"Last-Translator: Stefan <sw1976de@googlemail.com>\n"
+"Language-Team: Deutsch <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/Progress.py:68 src/history_gui.py:376
+#: src/Progress.py:68
+#: src/history_gui.py:376
 msgid "Progress"
 msgstr "Fortschritt"
 
@@ -34,7 +36,9 @@ msgstr "Sicherungspunkt von dem jetztigen Zustand des Systems wird erstellt"
 msgid "History Manager is already running!"
 msgstr "Verlaufs-Manager wird bereits ausgeführt!"
 
-#: src/history-manager.py:59 src/utility.py:54 src/history_gui.py:57
+#: src/history-manager.py:59
+#: src/utility.py:54
+#: src/history_gui.py:57
 msgid "History Manager"
 msgstr "Verlaufs-Manager"
 
@@ -96,15 +100,8 @@ msgid "Date"
 msgstr "Datum"
 
 #: src/history_gui.py:73
-msgid ""
-"Your system will be restored to that date if you click Take Back button."
-"<br>These are the package installation and removals, also configuration "
-"files below (in snapshots) will overwrite your current configuration files."
-msgstr ""
-"Das System wird wieder in den Zustand dieses Datums zurückversetzt, wenn Sie "
-"Zurückversetzen anklicken.<br>Das berücksichtigt installierte und entfernte "
-"Programme, und die Konfigurationsdateien aus den Schnappschüssen werden die "
-"aktuelle Konfigurationsdateien überschreiben."
+msgid "Your system will be restored to that date if you click Take Back button.<br>These are the package installation and removals, also configuration files below (in snapshots) will overwrite your current configuration files."
+msgstr "Das System wird wieder in den Zustand dieses Datums zurückversetzt, wenn Sie Zurückversetzen anklicken.<br>Das berücksichtigt installierte und entfernte Programme, und die Konfigurationsdateien aus den Schnappschüssen werden die aktuellen Konfigurationsdateien überschreiben."
 
 # vielleicht gibt es etwas treffenderes fuer "restore"..
 #: src/history_gui.py:84
@@ -113,9 +110,7 @@ msgstr "Zustand auf diesen Punkt zurück versetzen"
 
 #: src/history_gui.py:132
 msgid "This will take a New Snapshot of your system"
-msgstr ""
-"Dieser Vorgang wird einen neuen Sicherungspunkt von dem jetztigen Zustand "
-"Ihres Systems erstellen"
+msgstr "Dieser Vorgang wird einen neuen Sicherungspunkt von dem jetztigen Zustand Ihres Systems erstellen"
 
 #: src/history_gui.py:147
 msgid ""
@@ -123,8 +118,7 @@ msgid ""
 "If you're unsure, click Cancel and see TakeBack Plan"
 msgstr ""
 "Dieses wird den Systemzustand wiederherstellen auf : %1 %2\n"
-"Wenn Sie sich nicht sicher sind, Abbrechen anklicken und schauen Sis sich "
-"den Zurückversetzungs-Plan an"
+"Wenn Sie sich nicht sicher sind, Abbrechen anklicken und schauen Sie sich den Zurückversetzungs-Plan an"
 
 #: src/history_gui.py:173
 msgid "Take Back operation completed"
@@ -156,7 +150,7 @@ msgstr "Erfolgreich abgeschlossen"
 
 #: src/history_gui.py:200
 msgid "Fetching %1"
-msgstr "Wird abgeruft %1"
+msgstr "Wird abgerufen %1"
 
 #: src/history_gui.py:244
 msgid "<b>Access Granted</b><br>"
@@ -198,7 +192,8 @@ msgstr "Sicherungspunkt von dem jetztigen Zustand des Systems wird erstellt"
 msgid "Taking System Back to %1 %2 <br>"
 msgstr "Systemzustand wird wiederhergestellt zu %1 %2 <br>"
 
-#: src/history_gui.py:292 src/history_gui.py:293
+#: src/history_gui.py:292
+#: src/history_gui.py:293
 msgid "Select an entry to view details"
 msgstr "Ein Eintrag auswählen um Details anzusehen"
 
@@ -275,3 +270,4 @@ msgstr "COMAR-Fehler"
 #: src/ComarIface.py:58
 msgid "You are not authorized for this operation."
 msgstr "Sie sind für diesen Vorgang nicht berechtigt."
+
