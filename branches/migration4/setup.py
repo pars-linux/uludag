@@ -21,7 +21,7 @@ from distutils.cmd import Command
 from distutils.command.build import build
 from distutils.command.install import install
 
-import about
+from src.migration import about as about
 
 def update_messages():
     # Create empty directory
