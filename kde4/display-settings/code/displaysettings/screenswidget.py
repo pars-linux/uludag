@@ -51,6 +51,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         # Fail if no packages provide backend
         self.checkBackend()
 
+        self.clonedCheckBox.toggled.connect(self.slotCloneToggled)
         self.detectButton.clicked.connect(self.slotDetectClicked)
         self.modeList.currentIndexChanged.connect(self.slotModeSelected)
         self.rateList.currentIndexChanged[int].connect(self.slotRateSelected)
@@ -80,25 +81,36 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self._right = None
         self._cloned = True
         self._modeLists = {}
+        self._rateList = []
         self._modes = {}
         self._rates = {}
         self._rotations = {}
+
+        connectedList = []
 
         for output in self._outputs:
             output.config = config.outputs.get(output.name)
 
             if output.connection == Output.Connected:
-                if output.config is None:
-                    if self._left is None:
-                        self._left = output
-                    elif self._right is None:
-                        self._right = output
-                elif output.config.enabled:
-                    if output.config.right_of and \
-                            output.config.right_of in currentOutputsDict:
-                        self._right = output
-                        self._left = currentOutputsDict[output.config.right_of]
-                        self._cloned = False
+                connectedList.append(output)
+
+            if output.config is None:
+                if self._left is None:
+                    self._left = output
+                elif self._right is None:
+                    self._right = output
+
+            elif output.config.enabled:
+                if output.config.right_of and \
+                        output.config.right_of in currentOutputsDict:
+                    self._right = output
+                    self._left = currentOutputsDict[output.config.right_of]
+                    self._cloned = False
+
+                elif self._left is None:
+                    self._left = output
+                elif self._right is None:
+                    self._right = output
 
             self._modeLists[output.name] = self.iface.getModes(output.name)
             if output.config is None:
@@ -109,6 +121,12 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
                 self._modes[output.name] = output.config.mode
                 self._rates[output.name] = output.config.refresh_rate
                 self._rotations[output.name] = output.config.rotation
+
+        if self._left is None:
+            if connectedList:
+                self._left = connectedList[0]
+            else:
+                self._left = self._outputs[0]
 
     def populateOutputsMenu(self):
         menu = QtGui.QMenu(self)
@@ -167,6 +185,9 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self.refreshOutputsView()
         self.configChanged.emit()
 
+    def slotCloneToggled(self, checked):
+        self.configChanged.emit()
+
     def slotChangeDisplays(self, left, right):
         currentOutputsDict = dict((x.name, x) for x in self._outputs)
         left = str(left)
@@ -181,12 +202,17 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self.refreshOutputsView()
         self.configChanged.emit()
 
+        output = self.scene.selectedOutput()
+        self.slotUpdateOutputProperties(output)
+
     def slotDetectClicked(self):
         self.load()
         self.configChanged.emit()
 
     def slotUpdateOutputProperties(self, output):
         self._selectedOutput = output
+        title = kdecore.i18n("Output Properties - %1", output.name)
+        self.propertiesBox.setTitle(title)
 
         self.modeList.currentIndexChanged.disconnect(self.slotModeSelected)
         self.modeList.clear()
@@ -204,10 +230,8 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
 
         currentRate = self._rates[output.name]
         if currentRate:
-            text = "%s Hz" % currentRate
-            index = self.rateList.findText(currentRate)
-            if index > -1:
-                self.rateList.setCurrentIndex(index)
+            index = self._rateList.index(currentRate)
+            self.rateList.setCurrentIndex(index+1)
         else:
             self.rateList.setCurrentIndex(0)
 
@@ -222,6 +246,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
     def slotModeSelected(self, index):
         if index < 0:
             return
+
         output = self._selectedOutput
         if output:
             currentMode = str(self.modeList.currentText()) if index else ""
@@ -231,21 +256,34 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
             self.rateList.clear()
             self.rateList.addItem(kdecore.i18n("Auto"))
             if currentMode:
-                rates = self.iface.getRates(output.name, currentMode)
-                self.rateList.addItems(map(lambda x: "%s Hz" % x, rates))
+                self._rateList = self.iface.getRates(output.name, currentMode)
+                rates = map(lambda x: "%s Hz" % x, self._rateList)
+                self.rateList.addItems(rates)
             self.rateList.currentIndexChanged.connect(self.slotRateSelected)
 
+            self.configChanged.emit()
+
     def slotRateSelected(self, index):
+        if index < 0:
+            return
+
         output = self._selectedOutput
         if output:
-            self._rates[output.name] = \
-                    str(self.rateList.currentText()) if index else ""
+            currentRate = self._rateList[index-1] if index else ""
+            self._rates[output.name] = currentRate
+
+            self.configChanged.emit()
 
     def slotRotationSelected(self, index):
+        if index < 0:
+            return
+
         output = self._selectedOutput
         if output:
             opts = ("normal", "left", "inverted", "right")
-            self._rotations[output.name] = opts[self.rotationList.currentIndex()]
+            self._rotations[output.name] = opts[index]
+
+            self.configChanged.emit()
 
     def load(self):
         self.detectOutputs()
@@ -256,7 +294,22 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self.clonedCheckBox.setChecked(self._cloned)
 
     def save(self):
-        pass
+        for output in self._outputs:
+            enabled = output in (self._left, self._right)
+            self.iface.setOutput(output.name, enabled, False)
+            if enabled:
+                self.iface.setMode(output.name,
+                                    self._modes[output.name],
+                                    self._rates[output.name])
+                self.iface.setRotation(output.name,
+                                    self._rotations[output.name])
+
+        left = self._left.name if self._left else None
+        right = self._right.name if self._right else None
+        cloned = self.clonedCheckBox.isChecked()
+        self.iface.setSimpleLayout(left, right, cloned)
+
+        self.iface.sync()
 
     def defaults(self):
         print "** defaults"

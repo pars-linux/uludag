@@ -63,7 +63,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox">
+    <widget class="QGroupBox" name="propertiesBox">
      <property name="title">
       <string>Output Properties</string>
      </property>
