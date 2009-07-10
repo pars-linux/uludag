@@ -112,14 +112,16 @@ class MainManager(QtGui.QWidget):
                 self.ui.progress.hide()
                 self.ui.listServices.setEnabled(True)
                 self.filterServices(self.ui.filterBox.currentIndex())
+                self.doSearch(self.ui.lineSearch.text())
 
     def getServices(self):
         self.iface.services(self.handleServices)
         self.iface.listen(self.handler)
 
     def handler(self, package, signal, args):
-        print "COMAR :", args, signal, package
+        # print "COMAR :", args, signal, package
         self.widgets[package].setState(args[1])
         self.filterServices(self.ui.filterBox.currentIndex())
+        self.doSearch(self.ui.lineSearch.text())
 
 
