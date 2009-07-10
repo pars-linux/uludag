@@ -28,10 +28,10 @@ import gui.ScrSearch  as searchWidget
 import gui.ScrSmolt  as smoltWidget
 
 # Smolt related headers
-import sys
-sys.path.append('/usr/share/smolt/client')
-import smolt
-from urlparse import urljoin
+#import sys
+#sys.path.append('/usr/share/smolt/client')
+#import smolt
+#from urlparse import urljoin
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Welcome")
