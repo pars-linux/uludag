@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="GZIP">
-    <Title>Pardus 2009 International RC</Title>
+    <Title>Pardus 2009 International RC2</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/CD-image-version-2009</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
@@ -11,25 +11,24 @@
         <SelectedPackage>kdenetwork</SelectedPackage>
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>artwork-pardus-release</SelectedPackage>
-        <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
-        <SelectedPackage>amarok</SelectedPackage>
+        <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>kdeplasma-addons</SelectedPackage>
         <SelectedPackage>mplayer</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
-        <SelectedPackage>flashplugin</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
-        <SelectedPackage>xscreensaver</SelectedPackage>
+        <SelectedPackage>flashplugin</SelectedPackage>
         <SelectedPackage>kipi-plugins</SelectedPackage>
+        <SelectedPackage>xscreensaver</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>PyKDE</SelectedPackage>
         <SelectedPackage>kdeutils</SelectedPackage>
         <SelectedPackage>alsa-firmware</SelectedPackage>
         <SelectedPackage>ffmpeg</SelectedPackage>
+        <SelectedPackage>icon-theme-milky-png</SelectedPackage>
         <SelectedPackage>kdepim</SelectedPackage>
         <SelectedPackage>droid-fonts</SelectedPackage>
         <SelectedPackage>dejavu-fonts</SelectedPackage>
-        <SelectedPackage>openoffice-extension-report-builder</SelectedPackage>
         <SelectedPackage>kdeartwork-styles</SelectedPackage>
         <SelectedPackage>sound-theme-pardus</SelectedPackage>
         <SelectedPackage>openoffice-langpack-nl</SelectedPackage>
@@ -39,9 +38,8 @@
         <SelectedPackage>openoffice-langpack-fr</SelectedPackage>
         <SelectedPackage>kde-l10n-de</SelectedPackage>
         <SelectedPackage>openoffice-langpack-pt-BR</SelectedPackage>
-        <SelectedPackage>firefox</SelectedPackage>
         <SelectedPackage>openoffice-langpack-sv</SelectedPackage>
-        <SelectedPackage>openoffice-langpack-tr</SelectedPackage>
+        <SelectedPackage>firefox</SelectedPackage>
         <SelectedPackage>kde-l10n-fr</SelectedPackage>
         <SelectedPackage>kde-l10n-nl</SelectedPackage>
         <SelectedPackage>kde-l10n-pl</SelectedPackage>
@@ -49,30 +47,27 @@
         <SelectedPackage>kde-l10n-it</SelectedPackage>
         <SelectedPackage>kde-l10n-es</SelectedPackage>
         <SelectedPackage>kde-l10n-sv</SelectedPackage>
-        <SelectedPackage>kde-l10n-tr</SelectedPackage>
         <SelectedPackage>kdm</SelectedPackage>
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>hunspell-dict-pt</SelectedPackage>
         <SelectedPackage>module-alsa-driver</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
-        <SelectedPackage>openoffice-extension-wiki-publisher</SelectedPackage>
-        <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>skanlite</SelectedPackage>
         <SelectedPackage>gst-plugins-bad</SelectedPackage>
         <SelectedPackage>p7zip</SelectedPackage>
-        <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>hunspell-dict-pl</SelectedPackage>
+        <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>aria2</SelectedPackage>
-        <SelectedPackage>hunspell-dict-nl</SelectedPackage>
         <SelectedPackage>module-gspca</SelectedPackage>
+        <SelectedPackage>hunspell-dict-nl</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>kdeadmin</SelectedPackage>
+        <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
         <SelectedPackage>cdrtools</SelectedPackage>
         <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
         <SelectedPackage>mdadm</SelectedPackage>
-        <SelectedPackage>kdm-pardus-theme</SelectedPackage>
         <SelectedPackage>ipython</SelectedPackage>
         <SelectedPackage>djview4</SelectedPackage>
         <SelectedPackage>partitionmanager</SelectedPackage>
@@ -80,37 +75,36 @@
         <SelectedPackage>screen</SelectedPackage>
         <SelectedPackage>zemberek-openoffice</SelectedPackage>
         <SelectedPackage>openoffice-extension-pdfimport</SelectedPackage>
-        <SelectedPackage>openoffice-extension-presenter-screen</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>hunspell-dict-de</SelectedPackage>
         <SelectedPackage>module-broadcom-wl</SelectedPackage>
+        <SelectedPackage>kdm-pardus-theme</SelectedPackage>
         <SelectedPackage>bespin-kde4-theme</SelectedPackage>
         <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>hunspell-dict-en</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
-        <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
-        <SelectedPackage>hunspell-dict-it</SelectedPackage>
         <SelectedPackage>iproute2</SelectedPackage>
+        <SelectedPackage>hunspell-dict-it</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>gtk-engines</SelectedPackage>
-        <SelectedPackage>openoffice-extension-presentation-minimizer</SelectedPackage>
         <SelectedPackage>hunspell-dict-ca</SelectedPackage>
         <SelectedPackage>suspend</SelectedPackage>
-        <SelectedPackage>iptraf</SelectedPackage>
         <SelectedPackage>ppp</SelectedPackage>
+        <SelectedPackage>iptraf</SelectedPackage>
+        <SelectedPackage>migration</SelectedPackage>
         <SelectedPackage>bogofilter</SelectedPackage>
         <SelectedPackage>hunspell-dict-es</SelectedPackage>
         <SelectedPackage>hunspell-dict-fr</SelectedPackage>
         <SelectedPackage>module-ltmodem</SelectedPackage>
-        <SelectedPackage>krename</SelectedPackage>
         <SelectedPackage>QtCurve-KDE4</SelectedPackage>
+        <SelectedPackage>krename</SelectedPackage>
         <SelectedPackage>module-uvcvideo</SelectedPackage>
-        <SelectedPackage>xorg-video-radeon</SelectedPackage>
         <SelectedPackage>jack-audio-connection-kit</SelectedPackage>
         <SelectedPackage>gst-plugins-ugly</SelectedPackage>
         <SelectedPackage>xorg-video-sis</SelectedPackage>
         <SelectedPackage>libvisual-plugins</SelectedPackage>
+        <SelectedPackage>xorg-video-radeon</SelectedPackage>
         <SelectedPackage>xorg-video-intel</SelectedPackage>
         <SelectedPackage>rsync</SelectedPackage>
         <SelectedPackage>hunspell-dict-sv</SelectedPackage>
@@ -122,46 +116,48 @@
         <SelectedPackage>xorg-video-radeonhd</SelectedPackage>
         <SelectedPackage>nfs-utils</SelectedPackage>
         <SelectedPackage>gimp-i18n-fr</SelectedPackage>
-        <SelectedPackage>gimp-i18n-de</SelectedPackage>
-        <SelectedPackage>gimp-i18n-es</SelectedPackage>
         <SelectedPackage>gimp-i18n-pt_BR</SelectedPackage>
+        <SelectedPackage>gimp-i18n-es</SelectedPackage>
+        <SelectedPackage>gimp-i18n-de</SelectedPackage>
         <SelectedPackage>gimp-i18n-ca</SelectedPackage>
         <SelectedPackage>gimp-i18n-it</SelectedPackage>
+        <SelectedPackage>plasmoid-network-applet</SelectedPackage>
         <SelectedPackage>gimp-i18n-nl</SelectedPackage>
         <SelectedPackage>gimp-i18n-pl</SelectedPackage>
-        <SelectedPackage>plasmoid-network-applet</SelectedPackage>
-        <SelectedPackage>alsa-headers</SelectedPackage>
         <SelectedPackage>gimp-i18n-sv</SelectedPackage>
+        <SelectedPackage>alsa-headers</SelectedPackage>
+        <SelectedPackage>package-manager</SelectedPackage>
         <SelectedPackage>kdebluetooth</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
-        <SelectedPackage>package-manager</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>xorg-video-nouveau</SelectedPackage>
         <SelectedPackage>xorg-video-openchrome</SelectedPackage>
         <SelectedPackage>phonon-xine</SelectedPackage>
         <SelectedPackage>ipw2100-firmware</SelectedPackage>
         <SelectedPackage>ipw2200-firmware</SelectedPackage>
-        <SelectedPackage>PolicyKit-kde</SelectedPackage>
         <SelectedPackage>rdesktop</SelectedPackage>
-        <SelectedPackage>kaudiocreator</SelectedPackage>
+        <SelectedPackage>PolicyKit-kde</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
-        <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
+        <SelectedPackage>kaudiocreator</SelectedPackage>
         <SelectedPackage>eciadsl</SelectedPackage>
-        <SelectedPackage>irda-utils</SelectedPackage>
+        <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
         <SelectedPackage>xorg-video-geode</SelectedPackage>
+        <SelectedPackage>irda-utils</SelectedPackage>
         <SelectedPackage>glibc-locales-sv</SelectedPackage>
         <SelectedPackage>bash-completion</SelectedPackage>
-        <SelectedPackage>ccid</SelectedPackage>
         <SelectedPackage>glibc-locales-en</SelectedPackage>
+        <SelectedPackage>ccid</SelectedPackage>
         <SelectedPackage>kwin-crystal-style</SelectedPackage>
-        <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-fr</SelectedPackage>
+        <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-ca</SelectedPackage>
         <SelectedPackage>module-ndiswrapper</SelectedPackage>
-        <SelectedPackage>glibc-locales-it</SelectedPackage>
-        <SelectedPackage>glibc-locales-nl</SelectedPackage>
-        <SelectedPackage>glibc-locales-pt</SelectedPackage>
         <SelectedPackage>xdm</SelectedPackage>
+        <SelectedPackage>glibc-locales-pt</SelectedPackage>
+        <SelectedPackage>glibc-locales-nl</SelectedPackage>
+        <SelectedPackage>glibc-locales-it</SelectedPackage>
+        <SelectedPackage>command-not-found</SelectedPackage>
+        <SelectedPackage>iscan</SelectedPackage>
         <SelectedPackage>module-r5u870</SelectedPackage>
         <SelectedPackage>pavucontrol</SelectedPackage>
         <SelectedPackage>unrar</SelectedPackage>
@@ -170,118 +166,117 @@
         <SelectedPackage>xorg-video-glint</SelectedPackage>
         <SelectedPackage>xorg-video-mach64</SelectedPackage>
         <SelectedPackage>xorg-video-mga</SelectedPackage>
-        <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>rp-pppoe</SelectedPackage>
-        <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
-        <SelectedPackage>command-not-found</SelectedPackage>
-        <SelectedPackage>history-manager</SelectedPackage>
-        <SelectedPackage>ltrace</SelectedPackage>
+        <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>xorg-video-nv</SelectedPackage>
-        <SelectedPackage>cdparanoia</SelectedPackage>
+        <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
+        <SelectedPackage>ltrace</SelectedPackage>
+        <SelectedPackage>history-manager</SelectedPackage>
         <SelectedPackage>phonon-gstreamer</SelectedPackage>
-        <SelectedPackage>gst-plugins-farsight</SelectedPackage>
-        <SelectedPackage>xdelta</SelectedPackage>
+        <SelectedPackage>cdparanoia</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
+        <SelectedPackage>xdelta</SelectedPackage>
+        <SelectedPackage>gst-plugins-farsight</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
+        <SelectedPackage>xorg-video-savage</SelectedPackage>
         <SelectedPackage>xorg-video-chips</SelectedPackage>
         <SelectedPackage>xorg-video-trident</SelectedPackage>
-        <SelectedPackage>xorg-video-savage</SelectedPackage>
         <SelectedPackage>module-ov51x-jpeg</SelectedPackage>
-        <SelectedPackage>alsa-plugins</SelectedPackage>
         <SelectedPackage>whois</SelectedPackage>
+        <SelectedPackage>alsa-plugins</SelectedPackage>
         <SelectedPackage>b43-firmware</SelectedPackage>
         <SelectedPackage>network-manager</SelectedPackage>
-        <SelectedPackage>psutils</SelectedPackage>
-        <SelectedPackage>recordmydesktop</SelectedPackage>
         <SelectedPackage>xorg-video-apm</SelectedPackage>
-        <SelectedPackage>netkit-ftp</SelectedPackage>
+        <SelectedPackage>recordmydesktop</SelectedPackage>
+        <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>paprefs</SelectedPackage>
+        <SelectedPackage>netkit-ftp</SelectedPackage>
         <SelectedPackage>xorg-video-siliconmotion</SelectedPackage>
-        <SelectedPackage>ed</SelectedPackage>
         <SelectedPackage>xorg-input-synaptics</SelectedPackage>
-        <SelectedPackage>ethtool</SelectedPackage>
-        <SelectedPackage>kdebase-emoticons</SelectedPackage>
+        <SelectedPackage>ed</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
+        <SelectedPackage>kdebase-emoticons</SelectedPackage>
+        <SelectedPackage>ethtool</SelectedPackage>
         <SelectedPackage>xorg-video-r128</SelectedPackage>
-        <SelectedPackage>glibc-locales-pl</SelectedPackage>
-        <SelectedPackage>module-omnibook</SelectedPackage>
         <SelectedPackage>xorg-input-joystick</SelectedPackage>
-        <SelectedPackage>apmd</SelectedPackage>
+        <SelectedPackage>module-omnibook</SelectedPackage>
+        <SelectedPackage>glibc-locales-pl</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
+        <SelectedPackage>apmd</SelectedPackage>
         <SelectedPackage>xorg-video-rendition</SelectedPackage>
         <SelectedPackage>xorg-video-sisusb</SelectedPackage>
-        <SelectedPackage>bluez-compat</SelectedPackage>
         <SelectedPackage>xorg-video-s3virge</SelectedPackage>
+        <SelectedPackage>bluez-compat</SelectedPackage>
         <SelectedPackage>hal-cups-utils</SelectedPackage>
-        <SelectedPackage>cursor-theme-oxygen-zion</SelectedPackage>
-        <SelectedPackage>min12xxw</SelectedPackage>
-        <SelectedPackage>module-microdia</SelectedPackage>
-        <SelectedPackage>sshfs</SelectedPackage>
-        <SelectedPackage>xorg-video-neomagic</SelectedPackage>
         <SelectedPackage>xorg-video-tdfx</SelectedPackage>
-        <SelectedPackage>acpid</SelectedPackage>
+        <SelectedPackage>xorg-video-neomagic</SelectedPackage>
+        <SelectedPackage>sshfs</SelectedPackage>
+        <SelectedPackage>module-microdia</SelectedPackage>
+        <SelectedPackage>min12xxw</SelectedPackage>
+        <SelectedPackage>cursor-theme-oxygen-zion</SelectedPackage>
+        <SelectedPackage>xorg-video-s3</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
+        <SelectedPackage>acpid</SelectedPackage>
         <SelectedPackage>xorg-video-cirrus</SelectedPackage>
-        <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>module-syntekdriver</SelectedPackage>
+        <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>ntp-client</SelectedPackage>
         <SelectedPackage>xorg-input-mouse</SelectedPackage>
-        <SelectedPackage>ifplugd</SelectedPackage>
-        <SelectedPackage>lsscsi</SelectedPackage>
-        <SelectedPackage>openoffice-kde</SelectedPackage>
         <SelectedPackage>tree</SelectedPackage>
-        <SelectedPackage>xorg-video-i128</SelectedPackage>
-        <SelectedPackage>xorg-video-s3</SelectedPackage>
-        <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
+        <SelectedPackage>openoffice-kde</SelectedPackage>
+        <SelectedPackage>lsscsi</SelectedPackage>
+        <SelectedPackage>ifplugd</SelectedPackage>
         <SelectedPackage>xorg-video-tga</SelectedPackage>
-        <SelectedPackage>xorg-video-ast</SelectedPackage>
+        <SelectedPackage>xorg-video-i128</SelectedPackage>
+        <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>xorg-video-tseng</SelectedPackage>
-        <SelectedPackage>xorg-video-i740</SelectedPackage>
+        <SelectedPackage>xorg-video-ast</SelectedPackage>
         <SelectedPackage>xorg-video-vmware</SelectedPackage>
+        <SelectedPackage>xorg-video-i740</SelectedPackage>
         <SelectedPackage>user-manager</SelectedPackage>
-        <SelectedPackage>djvu-plugin</SelectedPackage>
-        <SelectedPackage>poster</SelectedPackage>
-        <SelectedPackage>xorg-input-evdev</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
-        <SelectedPackage>netcat</SelectedPackage>
-        <SelectedPackage>setserial</SelectedPackage>
-        <SelectedPackage>unarj</SelectedPackage>
+        <SelectedPackage>xorg-input-evdev</SelectedPackage>
+        <SelectedPackage>poster</SelectedPackage>
+        <SelectedPackage>djvu-plugin</SelectedPackage>
         <SelectedPackage>yacpi</SelectedPackage>
-        <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
+        <SelectedPackage>unarj</SelectedPackage>
+        <SelectedPackage>setserial</SelectedPackage>
+        <SelectedPackage>netcat</SelectedPackage>
         <SelectedPackage>xorg-video-newport</SelectedPackage>
-        <SelectedPackage>irqbalance</SelectedPackage>
-        <SelectedPackage>vbetool</SelectedPackage>
+        <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
         <SelectedPackage>xorg-input-aiptek</SelectedPackage>
-        <SelectedPackage>xorg-video-voodoo</SelectedPackage>
-        <SelectedPackage>br2684ctl</SelectedPackage>
-        <SelectedPackage>xorg-input-kbd</SelectedPackage>
-        <SelectedPackage>acpi4asus</SelectedPackage>
-        <SelectedPackage>crda</SelectedPackage>
+        <SelectedPackage>vbetool</SelectedPackage>
+        <SelectedPackage>irqbalance</SelectedPackage>
         <SelectedPackage>disk-manager</SelectedPackage>
-        <SelectedPackage>firewall-manager</SelectedPackage>
-        <SelectedPackage>xorg-input-vmmouse</SelectedPackage>
+        <SelectedPackage>xorg-video-voodoo</SelectedPackage>
+        <SelectedPackage>xorg-input-kbd</SelectedPackage>
+        <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>xorg-video-vesa</SelectedPackage>
-        <SelectedPackage>acpi</SelectedPackage>
+        <SelectedPackage>xorg-input-vmmouse</SelectedPackage>
+        <SelectedPackage>firewall-manager</SelectedPackage>
+        <SelectedPackage>crda</SelectedPackage>
+        <SelectedPackage>acpi4asus</SelectedPackage>
         <SelectedPackage>ralink-firmware</SelectedPackage>
-        <SelectedPackage>microcode-ctl</SelectedPackage>
-        <SelectedPackage>xorg-input-acecad</SelectedPackage>
-        <SelectedPackage>xorg-input-elographics</SelectedPackage>
-        <SelectedPackage>xorg-input-mutouch</SelectedPackage>
-        <SelectedPackage>xorg-video-ark</SelectedPackage>
+        <SelectedPackage>acpi</SelectedPackage>
         <SelectedPackage>xorg-video-fbdev</SelectedPackage>
-        <SelectedPackage>plasmoid-service-applet</SelectedPackage>
+        <SelectedPackage>xorg-video-ark</SelectedPackage>
+        <SelectedPackage>xorg-input-mutouch</SelectedPackage>
+        <SelectedPackage>xorg-input-elographics</SelectedPackage>
+        <SelectedPackage>xorg-input-acecad</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
-        <SelectedPackage>xorg-input-hyperpen</SelectedPackage>
-        <SelectedPackage>xorg-video-v4l</SelectedPackage>
+        <SelectedPackage>microcode-ctl</SelectedPackage>
         <SelectedPackage>xvattr</SelectedPackage>
-        <SelectedPackage>liboldX</SelectedPackage>
-        <SelectedPackage>xorg-input-fpit</SelectedPackage>
+        <SelectedPackage>xorg-video-v4l</SelectedPackage>
+        <SelectedPackage>xorg-input-hyperpen</SelectedPackage>
+        <SelectedPackage>plasmoid-service-applet</SelectedPackage>
         <SelectedPackage>xorg-input-penmount</SelectedPackage>
+        <SelectedPackage>xorg-input-fpit</SelectedPackage>
+        <SelectedPackage>liboldX</SelectedPackage>
         <SelectedPackage>xorg-video-dummy</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
-        <SelectedPackage>enchant-zemberek</SelectedPackage>
         <SelectedPackage>xorg-input-void</SelectedPackage>
+        <SelectedPackage>enchant-zemberek</SelectedPackage>
         <SelectedPackage>module-ungrab-winmodem</SelectedPackage>
         <SelectedPackage>pardus-default-settings</SelectedPackage>
         <Package>samba</Package>
@@ -299,13 +294,12 @@
         <Package>mplayer</Package>
         <Package>kdegraphics</Package>
         <Package>gnu-gs-fonts-std</Package>
+        <Package>ksplash-pardus-theme</Package>
         <Package>sun-jre</Package>
-        <Package>kernel</Package>
-        <Package>qtscriptgenerator</Package>
         <Package>openexr</Package>
         <Package>mysql-lib</Package>
-        <Package>xscreensaver</Package>
         <Package>kipi-plugins</Package>
+        <Package>xscreensaver</Package>
         <Package>ruby</Package>
         <Package>opencv</Package>
         <Package>mysql-server</Package>
@@ -319,6 +313,7 @@
         <Package>PyQt</Package>
         <Package>ffmpeg</Package>
         <Package>qt</Package>
+        <Package>kernel</Package>
         <Package>kdeedu-marble</Package>
         <Package>kdebase-workspace</Package>
         <Package>icon-theme-oxygen-png</Package>
@@ -326,15 +321,14 @@
         <Package>soprano</Package>
         <Package>net-snmp</Package>
         <Package>tcl</Package>
+        <Package>google-gadgets</Package>
         <Package>coreutils</Package>
         <Package>tcltk</Package>
-        <Package>google-gadgets</Package>
         <Package>gettext</Package>
         <Package>kdemultimedia</Package>
         <Package>imagemagick</Package>
         <Package>nss</Package>
         <Package>kdepimlibs</Package>
-        <Package>mpeg4ip</Package>
         <Package>gpac</Package>
         <Package>openssl</Package>
         <Package>postgresql-lib</Package>
@@ -373,8 +367,8 @@
         <Package>bluez</Package>
         <Package>libgphoto2</Package>
         <Package>gst-plugins-good</Package>
-        <Package>libwpd</Package>
         <Package>poppler</Package>
+        <Package>libwpd</Package>
         <Package>ncurses</Package>
         <Package>hunspell-dict-nl</Package>
         <Package>gd</Package>
@@ -383,9 +377,9 @@
         <Package>mysql-client</Package>
         <Package>cracklib</Package>
         <Package>lcms</Package>
-        <Package>bootsplash-theme-pardus</Package>
         <Package>gnokii</Package>
         <Package>exiv2</Package>
+        <Package>iscan-firmware</Package>
         <Package>texinfo</Package>
         <Package>xfsprogs</Package>
         <Package>gawk</Package>
@@ -405,6 +399,7 @@
         <Package>unixODBC</Package>
         <Package>pilot-link</Package>
         <Package>dhcp</Package>
+        <Package>numeric</Package>
         <Package>imlib2</Package>
         <Package>pygtk</Package>
         <Package>slang</Package>
@@ -424,67 +419,69 @@
         <Package>spidermonkey</Package>
         <Package>xkeyboard-config</Package>
         <Package>parted</Package>
-        <Package>glibmm</Package>
         <Package>kernel-firmware</Package>
+        <Package>glibmm</Package>
         <Package>elfutils</Package>
         <Package>freetype</Package>
         <Package>vigra</Package>
         <Package>speedtouch-firmware</Package>
         <Package>redland</Package>
+        <Package>libvorbis</Package>
         <Package>hunspell-dict-de</Package>
         <Package>findutils</Package>
-        <Package>libvorbis</Package>
-        <Package>clucene</Package>
         <Package>sg3_utils</Package>
+        <Package>kdm-pardus-theme</Package>
+        <Package>clucene</Package>
         <Package>curl</Package>
-        <Package>libquicktime</Package>
         <Package>xvid</Package>
         <Package>gnome-mime-data</Package>
-        <Package>alsa-lib</Package>
         <Package>mina-core</Package>
+        <Package>alsa-lib</Package>
         <Package>nano</Package>
         <Package>cyrus-sasl</Package>
         <Package>hal</Package>
         <Package>libcdio</Package>
         <Package>exempi</Package>
         <Package>hunspell-dict-it</Package>
+        <Package>bootsplash-theme-pardus</Package>
         <Package>libpcre</Package>
-        <Package>sox</Package>
         <Package>sqlite</Package>
+        <Package>sox</Package>
         <Package>orbit2</Package>
+        <Package>libquicktime</Package>
         <Package>microcode-data</Package>
         <Package>live555</Package>
         <Package>pango</Package>
         <Package>enscript</Package>
         <Package>shared-mime-info</Package>
-        <Package>pisi</Package>
-        <Package>libexif</Package>
         <Package>sablotron</Package>
+        <Package>libexif</Package>
+        <Package>pisi</Package>
         <Package>man</Package>
-        <Package>iptables</Package>
-        <Package>libgcrypt</Package>
         <Package>openldap-client</Package>
+        <Package>libgcrypt</Package>
+        <Package>iptables</Package>
         <Package>acx-firmware</Package>
         <Package>grub</Package>
-        <Package>libcaca</Package>
         <Package>ppp</Package>
+        <Package>libcaca</Package>
         <Package>pam</Package>
         <Package>avahi</Package>
         <Package>sip</Package>
         <Package>hunspell-dict-es</Package>
         <Package>linux-atm</Package>
-        <Package>agg</Package>
-        <Package>dbus</Package>
-        <Package>hunspell-dict-fr</Package>
         <Package>libgpod</Package>
+        <Package>hunspell-dict-fr</Package>
+        <Package>dbus</Package>
+        <Package>agg</Package>
         <Package>vcdimager</Package>
         <Package>libsndfile</Package>
         <Package>cdrdao</Package>
         <Package>tunepimp</Package>
         <Package>rasqal</Package>
         <Package>libgcc</Package>
-        <Package>gnome-mplayer</Package>
         <Package>libmsn</Package>
+        <Package>gnome-mplayer</Package>
         <Package>tiff</Package>
         <Package>flac</Package>
         <Package>audit</Package>
@@ -492,369 +489,372 @@
         <Package>gst-plugins-ugly</Package>
         <Package>x264</Package>
         <Package>decibel</Package>
+        <Package>v4l-dvb-firmware</Package>
         <Package>foomatic-db-engine</Package>
         <Package>diffutils</Package>
         <Package>flex</Package>
-        <Package>libXt</Package>
         <Package>libsdl</Package>
+        <Package>libXt</Package>
         <Package>libical</Package>
         <Package>python-imaging</Package>
         <Package>hunspell-dict-sv</Package>
-        <Package>baselayout</Package>
         <Package>jpeg</Package>
+        <Package>baselayout</Package>
         <Package>glibc-zoneinfo</Package>
         <Package>libidn</Package>
         <Package>readline</Package>
         <Package>hunspell</Package>
         <Package>libxcb</Package>
         <Package>ctdb</Package>
-        <Package>pygobject</Package>
         <Package>taglib</Package>
+        <Package>pygobject</Package>
         <Package>net-tools</Package>
         <Package>pciutils</Package>
+        <Package>lirc</Package>
         <Package>atk</Package>
         <Package>accessrunner-firmware</Package>
-        <Package>amrnb</Package>
-        <Package>libXaw</Package>
-        <Package>libmp4v2</Package>
         <Package>schroedinger</Package>
+        <Package>libmp4v2</Package>
+        <Package>libXaw</Package>
+        <Package>amrnb</Package>
         <Package>libpng</Package>
         <Package>libmng</Package>
         <Package>neon</Package>
-        <Package>gpgme</Package>
-        <Package>libwpg</Package>
         <Package>raptor</Package>
-        <Package>dbus-java</Package>
-        <Package>lirc</Package>
+        <Package>libwpg</Package>
+        <Package>gpgme</Package>
         <Package>udev</Package>
+        <Package>dbus-java</Package>
         <Package>mpfr</Package>
         <Package>google-gadgets-qt</Package>
-        <Package>lua</Package>
         <Package>nspr</Package>
+        <Package>lua</Package>
         <Package>libtheora</Package>
         <Package>fontconfig</Package>
         <Package>libwmf</Package>
-        <Package>libvncserver</Package>
         <Package>libxslt</Package>
+        <Package>libvncserver</Package>
         <Package>dialog</Package>
         <Package>faad2</Package>
-        <Package>giflib</Package>
         <Package>lame</Package>
-        <Package>dnsmasq</Package>
-        <Package>libmatroska</Package>
-        <Package>libmodplug</Package>
+        <Package>giflib</Package>
         <Package>procps</Package>
+        <Package>libmodplug</Package>
+        <Package>libmatroska</Package>
+        <Package>dnsmasq</Package>
         <Package>jasper</Package>
         <Package>file</Package>
-        <Package>alsa-tools</Package>
         <Package>dbus-python</Package>
+        <Package>alsa-tools</Package>
         <Package>atmel-firmware</Package>
         <Package>cupsddk</Package>
-        <Package>librsvg</Package>
         <Package>sed</Package>
-        <Package>lensfun</Package>
+        <Package>librsvg</Package>
         <Package>openslp</Package>
-        <Package>libvisual</Package>
+        <Package>lensfun</Package>
         <Package>plasmoid-network-applet</Package>
         <Package>poppler-qt</Package>
+        <Package>libvisual</Package>
         <Package>phonon</Package>
-        <Package>perl-XML-Parser</Package>
         <Package>usbutils</Package>
-        <Package>libmtp</Package>
+        <Package>perl-XML-Parser</Package>
+        <Package>package-manager</Package>
         <Package>libpcap</Package>
         <Package>sdl-gfx</Package>
-        <Package>package-manager</Package>
         <Package>webkitkde</Package>
         <Package>vorbis-tools</Package>
-        <Package>dbus-glib</Package>
         <Package>libopenraw</Package>
+        <Package>dbus-glib</Package>
         <Package>ortp</Package>
-        <Package>jrtplib</Package>
         <Package>telepathy-qt</Package>
+        <Package>jrtplib</Package>
         <Package>pnm2ppa</Package>
-        <Package>fuse</Package>
-        <Package>gpm</Package>
         <Package>libsoup</Package>
+        <Package>gpm</Package>
+        <Package>fuse</Package>
         <Package>musicbrainz3</Package>
-        <Package>libfreebob</Package>
-        <Package>libnl</Package>
-        <Package>tomcat-servlet-api</Package>
         <Package>wavpack</Package>
-        <Package>libarchive</Package>
+        <Package>tomcat-servlet-api</Package>
+        <Package>libnl</Package>
+        <Package>libfreebob</Package>
         <Package>libdc1394</Package>
-        <Package>cpio</Package>
-        <Package>ipw2100-firmware</Package>
+        <Package>libarchive</Package>
         <Package>iwlwifi5000-ucode</Package>
+        <Package>ipw2100-firmware</Package>
+        <Package>cpio</Package>
         <Package>ipw2200-firmware</Package>
-        <Package>PolicyKit-kde</Package>
-        <Package>babl</Package>
-        <Package>ntfs_3g</Package>
         <Package>tapioca-qt</Package>
-        <Package>iwlwifi5150-ucode</Package>
+        <Package>ntfs_3g</Package>
+        <Package>babl</Package>
+        <Package>PolicyKit-kde</Package>
         <Package>wireless-tools</Package>
-        <Package>ilmbase</Package>
-        <Package>libXfont</Package>
+        <Package>iwlwifi5150-ucode</Package>
         <Package>unzip</Package>
-        <Package>grep</Package>
+        <Package>libXfont</Package>
+        <Package>ilmbase</Package>
         <Package>libgsf</Package>
+        <Package>grep</Package>
+        <Package>v4l-conexant-firmware</Package>
         <Package>smolt</Package>
         <Package>libmpeg3</Package>
         <Package>liboil</Package>
-        <Package>less</Package>
-        <Package>libcroco</Package>
-        <Package>lzo</Package>
         <Package>slf4j</Package>
-        <Package>libdrm</Package>
-        <Package>libksba</Package>
+        <Package>lzo</Package>
+        <Package>libcroco</Package>
+        <Package>less</Package>
         <Package>meanwhile</Package>
+        <Package>libksba</Package>
+        <Package>libdrm</Package>
         <Package>amrwb</Package>
         <Package>lm_sensors</Package>
-        <Package>python-xlib</Package>
         <Package>qzion</Package>
-        <Package>gst-ffmpeg</Package>
-        <Package>mdbtools</Package>
+        <Package>python-xlib</Package>
         <Package>pixman</Package>
-        <Package>ConsoleKit</Package>
+        <Package>mdbtools</Package>
+        <Package>gst-ffmpeg</Package>
         <Package>expat</Package>
-        <Package>foomatic-filters</Package>
-        <Package>libdca</Package>
+        <Package>ConsoleKit</Package>
         <Package>python-tk</Package>
-        <Package>lzma</Package>
+        <Package>libdca</Package>
+        <Package>foomatic-filters</Package>
         <Package>pth</Package>
-        <Package>PolicyKit</Package>
+        <Package>lzma</Package>
         <Package>zip</Package>
+        <Package>PolicyKit</Package>
         <Package>libssh2</Package>
-        <Package>pangomm</Package>
-        <Package>pcsc-lite</Package>
         <Package>qca2-ossl</Package>
-        <Package>cairomm</Package>
-        <Package>libotr</Package>
+        <Package>pcsc-lite</Package>
+        <Package>pangomm</Package>
         <Package>libtasn1</Package>
-        <Package>dvd+rw-tools</Package>
+        <Package>libotr</Package>
+        <Package>cairomm</Package>
         <Package>qedje</Package>
+        <Package>dvd+rw-tools</Package>
         <Package>libsigc++</Package>
-        <Package>aalib</Package>
-        <Package>libfame</Package>
         <Package>python-simplejson</Package>
+        <Package>libfame</Package>
+        <Package>aalib</Package>
         <Package>bzip2</Package>
-        <Package>gzip</Package>
         <Package>libevent</Package>
+        <Package>gzip</Package>
         <Package>unrar</Package>
-        <Package>musicbrainz</Package>
         <Package>zlib</Package>
+        <Package>musicbrainz</Package>
         <Package>twolame</Package>
         <Package>libmal</Package>
         <Package>libIDL</Package>
-        <Package>bc</Package>
-        <Package>libdv</Package>
-        <Package>pm-utils</Package>
         <Package>tcp-wrappers</Package>
-        <Package>acl</Package>
-        <Package>audiofile</Package>
-        <Package>check</Package>
+        <Package>pm-utils</Package>
+        <Package>libdv</Package>
+        <Package>bc</Package>
         <Package>glut</Package>
-        <Package>device-mapper</Package>
+        <Package>check</Package>
+        <Package>audiofile</Package>
+        <Package>acl</Package>
         <Package>libv4l</Package>
-        <Package>loudmouth</Package>
-        <Package>bluez-firmware</Package>
-        <Package>iwlwifi4965-ucode</Package>
-        <Package>qimageblitz</Package>
+        <Package>device-mapper</Package>
         <Package>rp-pppoe</Package>
-        <Package>zorg</Package>
-        <Package>libacpi</Package>
-        <Package>libmpeg2</Package>
+        <Package>qimageblitz</Package>
+        <Package>iwlwifi4965-ucode</Package>
+        <Package>bluez-firmware</Package>
         <Package>libwps</Package>
-        <Package>libassuan</Package>
-        <Package>libmad</Package>
+        <Package>libmpeg2</Package>
+        <Package>libacpi</Package>
+        <Package>openjpeg</Package>
         <Package>openal</Package>
+        <Package>libmad</Package>
+        <Package>libassuan</Package>
+        <Package>zorg</Package>
+        <Package>libogg</Package>
         <Package>gperf</Package>
         <Package>history-manager</Package>
-        <Package>cdparanoia</Package>
         <Package>libebml</Package>
-        <Package>libgadu</Package>
+        <Package>cdparanoia</Package>
         <Package>libxkbfile</Package>
-        <Package>module-lirc</Package>
-        <Package>psmisc</Package>
+        <Package>libgadu</Package>
         <Package>zd1201-firmware</Package>
-        <Package>libconfig</Package>
+        <Package>psmisc</Package>
         <Package>obex-data-server</Package>
+        <Package>libconfig</Package>
+        <Package>module-lirc</Package>
         <Package>libdvdread</Package>
-        <Package>eina</Package>
-        <Package>glitz</Package>
         <Package>libcanberra</Package>
-        <Package>taglib-extras</Package>
-        <Package>faac</Package>
-        <Package>hdparm</Package>
-        <Package>jbigkit</Package>
-        <Package>libgpg-error</Package>
-        <Package>libogg</Package>
-        <Package>attr</Package>
-        <Package>iputils</Package>
-        <Package>libcddb</Package>
-        <Package>memtest86</Package>
+        <Package>glitz</Package>
+        <Package>eina</Package>
         <Package>module-init-tools</Package>
+        <Package>libgpg-error</Package>
+        <Package>jbigkit</Package>
+        <Package>hdparm</Package>
+        <Package>faac</Package>
         <Package>sysvinit</Package>
-        <Package>iwlwifi3945-ucode</Package>
-        <Package>libraw1394</Package>
+        <Package>memtest86</Package>
+        <Package>libcddb</Package>
+        <Package>iputils</Package>
+        <Package>attr</Package>
         <Package>soundtouch</Package>
-        <Package>bootsplash</Package>
-        <Package>dmidecode</Package>
-        <Package>libffi</Package>
-        <Package>libmatthew-java</Package>
+        <Package>libraw1394</Package>
+        <Package>iwlwifi3945-ucode</Package>
         <Package>poppler-glib</Package>
-        <Package>c-ares</Package>
-        <Package>libnut</Package>
+        <Package>libmatthew-java</Package>
+        <Package>libffi</Package>
+        <Package>dmidecode</Package>
+        <Package>bootsplash</Package>
         <Package>popt</Package>
+        <Package>libnut</Package>
+        <Package>c-ares</Package>
         <Package>urlgrabber</Package>
-        <Package>libXmu</Package>
-        <Package>libofa</Package>
         <Package>pinentry</Package>
-        <Package>b43-firmware</Package>
+        <Package>libofa</Package>
+        <Package>libXmu</Package>
         <Package>eet</Package>
-        <Package>libdvdnav</Package>
+        <Package>b43-firmware</Package>
         <Package>polkit-qt</Package>
-        <Package>libcdaudio</Package>
-        <Package>libxklavier</Package>
         <Package>network-manager</Package>
+        <Package>libdvdnav</Package>
+        <Package>libxklavier</Package>
+        <Package>libcdaudio</Package>
         <Package>sysklogd</Package>
-        <Package>libglademm</Package>
-        <Package>liblqr</Package>
-        <Package>madplay</Package>
-        <Package>vixie-cron</Package>
+        <Package>ar9170-firmware</Package>
         <Package>xpyb</Package>
-        <Package>gconfmm</Package>
-        <Package>libXpm</Package>
+        <Package>vixie-cron</Package>
+        <Package>madplay</Package>
+        <Package>liblqr</Package>
+        <Package>libglademm</Package>
         <Package>xcb-util</Package>
-        <Package>cryptsetup-luks</Package>
-        <Package>libglade</Package>
-        <Package>libieee1284</Package>
-        <Package>pycups</Package>
+        <Package>libXpm</Package>
+        <Package>gconfmm</Package>
         <Package>xcb-proto</Package>
+        <Package>pycups</Package>
+        <Package>libieee1284</Package>
+        <Package>libglade</Package>
+        <Package>cryptsetup-luks</Package>
         <Package>comar</Package>
-        <Package>libgomp</Package>
         <Package>libspectre</Package>
+        <Package>libgomp</Package>
         <Package>libXft</Package>
-        <Package>libICE</Package>
-        <Package>libiec61883</Package>
         <Package>mudur</Package>
+        <Package>libiec61883</Package>
+        <Package>libICE</Package>
         <Package>sysfsutils</Package>
-        <Package>hal-info</Package>
-        <Package>keyutils</Package>
         <Package>openobex</Package>
-        <Package>ladspa-sdk</Package>
-        <Package>libXext</Package>
-        <Package>libzip</Package>
-        <Package>djbfft</Package>
-        <Package>libshout</Package>
+        <Package>keyutils</Package>
+        <Package>hal-info</Package>
+        <Package>pysqlite</Package>
         <Package>module-virtualbox-guest</Package>
-        <Package>chmlib</Package>
-        <Package>enchant</Package>
-        <Package>libXi</Package>
+        <Package>libzip</Package>
+        <Package>libXext</Package>
+        <Package>ladspa-sdk</Package>
+        <Package>libshout</Package>
+        <Package>djbfft</Package>
         <Package>libmms</Package>
-        <Package>a52dec</Package>
-        <Package>disktype</Package>
+        <Package>libXi</Package>
+        <Package>enchant</Package>
+        <Package>chmlib</Package>
         <Package>libtdb</Package>
+        <Package>disktype</Package>
+        <Package>a52dec</Package>
         <Package>libdvdcss</Package>
-        <Package>dhcpcd</Package>
-        <Package>gdbm</Package>
         <Package>libnotify</Package>
-        <Package>capseo</Package>
-        <Package>dmapi</Package>
-        <Package>gsm</Package>
-        <Package>libao</Package>
+        <Package>gdbm</Package>
+        <Package>dhcpcd</Package>
         <Package>libproxy</Package>
-        <Package>eject</Package>
-        <Package>hal-cups-utils</Package>
+        <Package>libao</Package>
+        <Package>gsm</Package>
+        <Package>dmapi</Package>
+        <Package>capseo</Package>
         <Package>libavc1394</Package>
-        <Package>libcap</Package>
+        <Package>hal-cups-utils</Package>
+        <Package>eject</Package>
         <Package>libid3tag</Package>
-        <Package>cursor-theme-oxygen-black</Package>
-        <Package>libXrandr</Package>
-        <Package>lpc10</Package>
-        <Package>xdg-utils</Package>
-        <Package>libusb</Package>
-        <Package>xdg-user-dirs</Package>
+        <Package>libcap</Package>
         <Package>display-settings</Package>
+        <Package>xdg-utils</Package>
+        <Package>lpc10</Package>
+        <Package>libXrandr</Package>
+        <Package>cursor-theme-oxygen-black</Package>
+        <Package>xdg-user-dirs</Package>
+        <Package>libusb</Package>
         <Package>libpciaccess</Package>
-        <Package>avahi-glib</Package>
-        <Package>ntp-client</Package>
-        <Package>qt-sql-mysql</Package>
-        <Package>xinit</Package>
         <Package>zemberek-server</Package>
-        <Package>iw</Package>
-        <Package>libFS</Package>
-        <Package>libXcursor</Package>
-        <Package>libdaemon</Package>
+        <Package>xinit</Package>
+        <Package>qt-sql-mysql</Package>
+        <Package>ntp-client</Package>
+        <Package>avahi-glib</Package>
         <Package>startup-notification</Package>
-        <Package>libcaptury</Package>
+        <Package>libdaemon</Package>
+        <Package>libXcursor</Package>
+        <Package>iw</Package>
         <Package>libmimic</Package>
-        <Package>foomatic-db-hpijs</Package>
-        <Package>pcmciautils</Package>
+        <Package>libcaptury</Package>
+        <Package>libFS</Package>
         <Package>pycairo</Package>
-        <Package>ebook-tools</Package>
-        <Package>libmpcdec</Package>
+        <Package>pcmciautils</Package>
+        <Package>foomatic-db-hpijs</Package>
         <Package>mingetty</Package>
-        <Package>libdiscid</Package>
-        <Package>pardus-python</Package>
+        <Package>libmpcdec</Package>
+        <Package>ebook-tools</Package>
         <Package>xorg-server-common</Package>
-        <Package>fxload</Package>
-        <Package>liblazy</Package>
-        <Package>libnfsidmap</Package>
-        <Package>portmap</Package>
-        <Package>udev-extras</Package>
         <Package>user-manager</Package>
-        <Package>libXrender</Package>
-        <Package>libspiro</Package>
-        <Package>qt-sql-sqlite</Package>
+        <Package>pardus-python</Package>
+        <Package>libdiscid</Package>
+        <Package>udev-extras</Package>
+        <Package>portmap</Package>
+        <Package>libnfsidmap</Package>
+        <Package>liblazy</Package>
+        <Package>fxload</Package>
         <Package>zd1211-firmware</Package>
-        <Package>libXv</Package>
-        <Package>liblrdf</Package>
-        <Package>piksemel</Package>
+        <Package>qt-sql-sqlite</Package>
+        <Package>libspiro</Package>
+        <Package>libXrender</Package>
         <Package>setserial</Package>
+        <Package>piksemel</Package>
+        <Package>liblrdf</Package>
+        <Package>libXv</Package>
         <Package>libSM</Package>
-        <Package>libdmx</Package>
-        <Package>libpaper</Package>
-        <Package>libtool-ltdl</Package>
-        <Package>nss-mdns</Package>
-        <Package>pysmbc</Package>
         <Package>pyusb</Package>
-        <Package>libXxf86dga</Package>
-        <Package>libuuid</Package>
+        <Package>pysmbc</Package>
+        <Package>nss-mdns</Package>
+        <Package>libtool-ltdl</Package>
+        <Package>libpaper</Package>
+        <Package>libdmx</Package>
         <Package>vbetool</Package>
-        <Package>boot-manager</Package>
-        <Package>libXtst</Package>
-        <Package>libfontenc</Package>
-        <Package>ncompress</Package>
-        <Package>which</Package>
+        <Package>libuuid</Package>
+        <Package>libXxf86dga</Package>
         <Package>disk-manager</Package>
-        <Package>firewall-manager</Package>
-        <Package>libXxf86vm</Package>
+        <Package>which</Package>
+        <Package>ncompress</Package>
+        <Package>libfontenc</Package>
+        <Package>libXtst</Package>
+        <Package>boot-manager</Package>
         <Package>pyparted</Package>
-        <Package>b43-fwcutter</Package>
-        <Package>comar-api</Package>
-        <Package>libXScrnSaver</Package>
-        <Package>libXdmcp</Package>
-        <Package>libXvMC</Package>
-        <Package>ralink-firmware</Package>
+        <Package>libXxf86vm</Package>
+        <Package>firewall-manager</Package>
         <Package>time</Package>
-        <Package>libXcomposite</Package>
-        <Package>libXfixes</Package>
-        <Package>pypolkit</Package>
-        <Package>python-fchksum</Package>
+        <Package>ralink-firmware</Package>
+        <Package>libXvMC</Package>
+        <Package>libXdmcp</Package>
+        <Package>libXScrnSaver</Package>
+        <Package>comar-api</Package>
+        <Package>b43-fwcutter</Package>
         <Package>system-manager</Package>
-        <Package>jthread</Package>
-        <Package>libXau</Package>
-        <Package>plasmoid-service-applet</Package>
-        <Package>pulseaudio-gconf</Package>
         <Package>service-manager</Package>
-        <Package>hicolor-icon-theme</Package>
-        <Package>lsb-release</Package>
+        <Package>python-fchksum</Package>
+        <Package>pypolkit</Package>
+        <Package>libXfixes</Package>
+        <Package>libXcomposite</Package>
+        <Package>pulseaudio-gconf</Package>
+        <Package>plasmoid-service-applet</Package>
+        <Package>libXau</Package>
+        <Package>jthread</Package>
+        <Package>icon-theme-milky-index</Package>
         <Package>utempter</Package>
-        <Package>avahi-qt</Package>
-        <Package>coolplug</Package>
-        <Package>libXdamage</Package>
-        <Package>libXinerama</Package>
+        <Package>lsb-release</Package>
+        <Package>hicolor-icon-theme</Package>
         <Package>libx86</Package>
+        <Package>libXinerama</Package>
+        <Package>libXdamage</Package>
+        <Package>coolplug</Package>
+        <Package>avahi-qt</Package>
         <Package>icon-theme-oxygen-index</Package>
         <Package>wireless-regdb</Package>
     </PackageSelection>
@@ -869,6 +869,5 @@
         <Language>pl_PL</Language>
         <Language>pt_BR</Language>
         <Language>sv_SE</Language>
-        <Language>tr_TR</Language>
     </LanguageSelection>
 </PardusmanProject>
