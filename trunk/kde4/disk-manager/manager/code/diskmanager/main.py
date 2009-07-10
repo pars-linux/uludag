@@ -263,6 +263,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         if state == QtCore.Qt.Checked:
             if widget.getId() not in self.iface.entryList():
                 widget.pushEdit.animateClick(100)
+                widget.setState(False)
                 return
             path = self.iface.getEntry(widget.getId())[0]
             try:
