@@ -13,7 +13,6 @@
 #ifndef PANDA_SINKSTAB_H
 #define PANDA_SINKSTAB_H
 #include <Qt/QtGui>
-#include "ui_sinkstab.h"
 
 namespace QtPulseAudio {class StreamManager;}
 

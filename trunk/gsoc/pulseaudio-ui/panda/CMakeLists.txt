@@ -11,7 +11,7 @@ set(panda_HDRS
     volumewidget.h
 )
 
-set(panda_UI mainwindow.ui sinkstab.ui)
+set(panda_UI mainwindow.ui)
 
 qt4_wrap_ui(panda_UIC_HDRS ${panda_UI})
 
