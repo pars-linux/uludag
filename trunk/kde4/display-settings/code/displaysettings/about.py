@@ -18,7 +18,7 @@ from PyKDE4.kdecore import KAboutData, ki18n
 appName     = "display-settings"
 modName     = "displaysettings"
 programName = ki18n("Display Settings")
-version     = "0.9.92"
+version     = "0.9.93"
 description = ki18n("Display Configuration Tool")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2009 TUBITAK/UEKAE")
