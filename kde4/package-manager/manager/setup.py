@@ -79,8 +79,8 @@ class Install(install):
         bin_dir = os.path.join(kde_dir, "bin")
         locale_dir = os.path.join(kde_dir, "share/locale")
         apps_dir = os.path.join(kde_dir, "share/applications/kde4")
-        mimelnk_dir = os.path.join(kde_dir, "share/mimelnk/application/mimetypes")
-        applnk_dir = os.path.join(kde_dir, "share/applnk/.hidden")
+        # mimelnk_dir = os.path.join(kde_dir, "share/mimelnk/application/mimetypes")
+        # applnk_dir = os.path.join(kde_dir, "share/applnk/.hidden")
         project_dir = os.path.join(kde_dir, "share/apps", about.appName)
         # Make directories
         print "Making directories..."
@@ -91,10 +91,11 @@ class Install(install):
         makeDirs(project_dir)
         # Install desktop files
         print "Installing desktop files..."
-        shutil.copy("data/package-manager.png", icon_dir)
         shutil.copy("data/package-manager.desktop", apps_dir)
-        shutil.copy("data/x-pisi.desktop", mimelnk_dir)
-        shutil.copy("data/packagemanager-helper.desktop", applnk_dir)
+        shutil.copy("data/package-manager.png", icon_dir)
+        # shutil.copy("data/x-pisi.desktop", mimelnk_dir)
+        # shutil.copy("data/packagemanager-helper.desktop", applnk_dir)
+
         # Install codes
         print "Installing codes..."
         os.system("cp -R build/* %s/" % project_dir)
