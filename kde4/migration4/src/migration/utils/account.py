@@ -450,13 +450,13 @@ class Account:
 
     def write(self):
         "Prints accounts"
-        for account in self.accounts:
-            print account["type"]
-            for key in account.keys():
-                if key not in ["type", "folders"]:
-                    print "%15s : %s" % (key, account[key])
-        for folder in self.folders:
-            print "%30s : %s" % folder
+#        for account in self.accounts:
+#            print account["type"]
+#            for key in account.keys():
+#                if key not in ["type", "folders"]:
+#                    print "%15s : %s" % (key, account[key])
+#        for folder in self.folders:
+#            print "%30s : %s" % folder
 
     def accountSize(self, accounttypes=None):
         "Size of accounts"
