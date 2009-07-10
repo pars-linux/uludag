@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-10 13:14+0300\n"
+"POT-Creation-Date: 2009-07-10 14:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -163,6 +163,14 @@ msgstr ""
 
 #: .tmp/displaysettings/about.py:22
 msgid "Display Configuration Tool"
+msgstr ""
+
+#: .tmp/displaysettings/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/displaysettings/about.py:32
+msgid "Fatih Aşıcı"
 msgstr ""
 
 #: .tmp/displaysettings/about.py:32
