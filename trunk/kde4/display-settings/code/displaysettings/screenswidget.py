@@ -93,6 +93,16 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
             output.config = config.outputs.get(output.name)
             connected = output.connection == Output.Connected
 
+            self._modeLists[output.name] = self.iface.getModes(output.name)
+            if output.config is None:
+                self._modes[output.name] = ""
+                self._rates[output.name] = ""
+                self._rotations[output.name] = "normal"
+            else:
+                self._modes[output.name] = output.config.mode
+                self._rates[output.name] = output.config.refresh_rate
+                self._rotations[output.name] = output.config.rotation
+
             if connected:
                 connectedList.append(output)
             elif onlyConnected:
@@ -118,16 +128,6 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
                     self._left = output
                 elif self._right is None:
                     self._right = output
-
-            self._modeLists[output.name] = self.iface.getModes(output.name)
-            if output.config is None:
-                self._modes[output.name] = ""
-                self._rates[output.name] = ""
-                self._rotations[output.name] = "normal"
-            else:
-                self._modes[output.name] = output.config.mode
-                self._rates[output.name] = output.config.refresh_rate
-                self._rotations[output.name] = output.config.rotation
 
         if self._left is None:
             if connectedList:
