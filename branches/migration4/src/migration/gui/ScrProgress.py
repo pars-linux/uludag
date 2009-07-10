@@ -62,7 +62,8 @@ class ProgressPage(QtGui.QWidget):
         #self.layout.addLayout(self.operationlines,)
         spacer = QtGui.QSpacerItem(5, 5, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
         self.layout.addItem(spacer)
-
+        self.progressLayout = QtGui.QVBoxLayout()
+        self.layout.addLayout(self.progressLayout, 3, 0)
 
         # Progress Variables:
         self.steps1 = 0
@@ -103,7 +104,7 @@ class ProgressPage(QtGui.QWidget):
     def addOperation(self, name, steps):
         "Adds a new operation to the progress page"
         operation = Operation(self, name, steps)
-        self.layout.addLayout(operation, self.column, 0)
+        self.progressLayout.addLayout(operation)
         self.operations.append(operation)
         self.steps2 += steps
         self.column += 1
