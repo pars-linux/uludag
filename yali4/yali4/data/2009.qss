@@ -1,8 +1,8 @@
 QWidget#Yali {
        background-image:url(':/images/background-2009.png');
        background-repeat: no-repeat;
-       background-position: center top;
-       background-color: #562032;
+       background-position: left top;
+       background-color: #642437;
        alternate-background-color: gray;
        selection-background-color: gray;
 }
@@ -31,8 +31,7 @@ QTextBrowser#helpContent {
      border-bottom-left-radius:12px;
      border-color: #744154;
      border-right:none;
-     background-image:url(':/gui/pics/helpback.png');
-     background-color: #744154;
+     background-color: rgba(255,255,255,30);
      background-repeat:none;
      padding:5px;
      padding-left:12px;
