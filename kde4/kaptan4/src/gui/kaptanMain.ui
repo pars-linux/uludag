@@ -55,7 +55,7 @@ QLabel#labelMenu{
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
        <layout class="QGridLayout" name="gridLayout">
-        <item row="1" column="0" rowspan="2" colspan="2">
+        <item row="1" column="0" rowspan="3" colspan="3">
          <widget class="QLabel" name="labelMenu">
           <property name="font">
            <font>
@@ -77,7 +77,7 @@ color: white</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
+        <item row="3" column="2">
          <widget class="QLabel" name="label">
           <property name="text">
            <string/>
@@ -90,7 +90,7 @@ color: white</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="0" colspan="2">
+        <item row="0" column="0" colspan="3">
          <widget class="QLabel" name="labelLogo">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -111,6 +111,22 @@ color: white</string>
            <pixmap resource="raw.qrc">:/raw/pics/kaptan-logo.png</pixmap>
           </property>
          </widget>
+        </item>
+        <item row="2" column="0">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </item>
