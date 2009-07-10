@@ -27,7 +27,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_welcomeWidget()
         self.ui.setupUi(self)
 
-        self.ui.pixMigrationLogo.setPixmap(QtGui.QPixmap(':/raw/pics/migration.png'))
 
     def shown(self):
         pass
