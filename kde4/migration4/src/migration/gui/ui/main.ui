@@ -73,7 +73,7 @@ QLabel#labelMenu{
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="raw.qrc">:/raw/pics/cr64-app-migration-left.png</pixmap>
+           <pixmap resource="raw.qrc">:/raw/pics/migrationlogo.png</pixmap>
           </property>
          </widget>
         </item>
