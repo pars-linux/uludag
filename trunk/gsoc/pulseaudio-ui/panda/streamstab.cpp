@@ -12,8 +12,8 @@
 */
 #include "streamstab.h"
 #include "volumewidget.h"
-#include "../bindings/QtPulseAudioStreamManager.h"
-#include "../bindings/QtPulseAudioStream.h"
+#include "../bindings/streammanager.h"
+#include "../bindings/stream.h"
 #include <iostream>
 
 StreamsTab::StreamsTab(QtPulseAudio::StreamManager *manager, QWidget *parent):QWidget(parent)

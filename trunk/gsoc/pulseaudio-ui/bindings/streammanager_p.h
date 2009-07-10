@@ -11,13 +11,13 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef __QtPulseAudioStream_p_h__
-#define __QtPulseAudioStream_p_h__
+#ifndef __QtPulseAudioStreamManager_p_h__
+#define __QtPulseAudioStreamManager_p_h__
 
-
-#include "QtPulseAudioStream.h"
+#include "streammanager.h"
 
 namespace QtPulseAudio {
+
 
 }
 

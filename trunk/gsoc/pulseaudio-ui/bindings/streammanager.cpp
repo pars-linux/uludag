@@ -13,12 +13,12 @@
 */
 #include <iostream>
 
-#include "QtPulseAudioStream.h"
-#include "QtPulseAudioStreamManager.h"
-#include "QtPulseAudioContext.h"
+#include "stream.h"
+#include "streammanager.h"
+#include "context.h"
 
-#include "QtPulseAudioStreamManager_p.h"
-#include "QtPulseAudioStream_p.h"
+#include "streammanager_p.h"
+#include "stream_p.h"
 
 using namespace std;
 

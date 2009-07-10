@@ -11,15 +11,12 @@
     *                                                                       *
     *************************************************************************
 */
-#include <QVector>
-
 #include <iostream>
 
-#include "QtPulseAudioSource.h"
-#include "QtPulseAudioSourceManager.h"
-#include "QtPulseAudioContext.h"
-
-#include "QtPulseAudioSource_p.h"
+#include "source.h"
+#include "sourcemanager.h"
+#include "context.h"
+#include "source_p.h"
 
 using namespace std;
 

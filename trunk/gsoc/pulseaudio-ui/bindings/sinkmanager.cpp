@@ -15,12 +15,12 @@
 
 #include <iostream>
 
-#include "QtPulseAudioSink.h"
-#include "QtPulseAudioSinkManager.h"
-#include "QtPulseAudioContext.h"
+#include "sink.h"
+#include "sinkmanager.h"
+#include "context.h"
 
-#include "QtPulseAudioSinkManager_p.h"
-#include "QtPulseAudioSink_p.h"
+#include "sinkmanager_p.h"
+#include "sink_p.h"
 
 using namespace std;
 

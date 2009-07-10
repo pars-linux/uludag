@@ -15,7 +15,7 @@
 #include "mainwindow.h"
 
 #include "../integrator/QtPulseAudioIntegrator.h"
-#include "../bindings/QtPulseAudioContext.h"
+#include "../bindings/context.h"
 
 #include <pulse/pulseaudio.h>
 

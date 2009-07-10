@@ -11,7 +11,7 @@
     *************************************************************************
 */
 #include <iostream>
-#include "../bindings/QtPulseAudioStream.h"
+#include "../bindings/stream.h"
 #include "volumewidget.h"
 
 VolumeWidget::VolumeWidget(QWidget *parent):QWidget(parent)
