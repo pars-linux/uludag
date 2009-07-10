@@ -142,4 +142,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.disableSend()
 
     def execute(self):
+        if self.__class__.screenSettings["profileSend"] == True:
+            self.__class__.screenSettings["summaryMessage"] = kdecore.i18n("Yes")
+        else:
+            self.__class__.screenSettings["summaryMessage"] = kdecore.i18n("No")
+
         return True
