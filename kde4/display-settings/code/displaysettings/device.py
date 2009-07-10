@@ -16,7 +16,7 @@ from PyKDE4 import kdeui
 
 from pardus.strutils import ascii_lower
 
-class Output:
+class Output(object):
     # Connection status
     Connected = 0
     Disconnected = 1

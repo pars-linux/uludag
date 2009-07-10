@@ -42,6 +42,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
 
         self.scene = DisplayScene(self.graphicsView)
         self.scene.outputsChanged.connect(self.slotChangeDisplays)
+        self.scene.outputSelected.connect(self.slotUpdateOutputProperties)
 
         # Backend
         self.iface = Interface()
@@ -51,6 +52,9 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self.checkBackend()
 
         self.detectButton.clicked.connect(self.slotDetectClicked)
+        self.modeList.currentIndexChanged.connect(self.slotModeSelected)
+        self.rateList.currentIndexChanged[int].connect(self.slotRateSelected)
+        self.rotationList.currentIndexChanged[int].connect(self.slotRotationSelected)
 
     def checkBackend(self):
         """
@@ -75,6 +79,10 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self._left = None
         self._right = None
         self._cloned = True
+        self._modeLists = {}
+        self._modes = {}
+        self._rates = {}
+        self._rotations = {}
 
         for output in self._outputs:
             output.config = config.outputs.get(output.name)
@@ -91,6 +99,16 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
                         self._right = output
                         self._left = currentOutputsDict[output.config.right_of]
                         self._cloned = False
+
+            self._modeLists[output.name] = self.iface.getModes(output.name)
+            if output.config is None:
+                self._modes[output.name] = ""
+                self._rates[output.name] = ""
+                self._rotations[output.name] = "normal"
+            else:
+                self._modes[output.name] = output.config.mode
+                self._rates[output.name] = output.config.refresh_rate
+                self._rotations[output.name] = output.config.rotation
 
     def populateOutputsMenu(self):
         menu = QtGui.QMenu(self)
@@ -167,10 +185,73 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self.load()
         self.configChanged.emit()
 
+    def slotUpdateOutputProperties(self, output):
+        self._selectedOutput = output
+
+        self.modeList.currentIndexChanged.disconnect(self.slotModeSelected)
+        self.modeList.clear()
+        self.modeList.addItem(kdecore.i18n("Auto"))
+        self.modeList.addItems(self._modeLists[output.name])
+        self.modeList.currentIndexChanged.connect(self.slotModeSelected)
+
+        currentMode = self._modes[output.name]
+        if currentMode:
+            index = self.modeList.findText(currentMode)
+            if index > -1:
+                self.modeList.setCurrentIndex(index)
+        else:
+            self.modeList.setCurrentIndex(0)
+
+        currentRate = self._rates[output.name]
+        if currentRate:
+            text = "%s Hz" % currentRate
+            index = self.rateList.findText(currentRate)
+            if index > -1:
+                self.rateList.setCurrentIndex(index)
+        else:
+            self.rateList.setCurrentIndex(0)
+
+        currentRotation = self._rotations[output.name]
+        if currentRotation:
+            opts = ("normal", "left", "inverted", "right")
+            index = opts.index(currentRotation)
+            self.rotationList.setCurrentIndex(index)
+        else:
+            self.rotationList.setCurrentIndex(0)
+
+    def slotModeSelected(self, index):
+        if index < 0:
+            return
+        output = self._selectedOutput
+        if output:
+            currentMode = str(self.modeList.currentText()) if index else ""
+            self._modes[output.name] = currentMode
+
+            self.rateList.currentIndexChanged.disconnect(self.slotRateSelected)
+            self.rateList.clear()
+            self.rateList.addItem(kdecore.i18n("Auto"))
+            if currentMode:
+                rates = self.iface.getRates(output.name, currentMode)
+                self.rateList.addItems(map(lambda x: "%s Hz" % x, rates))
+            self.rateList.currentIndexChanged.connect(self.slotRateSelected)
+
+    def slotRateSelected(self, index):
+        output = self._selectedOutput
+        if output:
+            self._rates[output.name] = \
+                    str(self.rateList.currentText()) if index else ""
+
+    def slotRotationSelected(self, index):
+        output = self._selectedOutput
+        if output:
+            opts = ("normal", "left", "inverted", "right")
+            self._rotations[output.name] = opts[self.rotationList.currentIndex()]
+
     def load(self):
         self.detectOutputs()
         self.populateOutputsMenu()
         self.refreshOutputsView()
+        self.slotUpdateOutputProperties(self._left)
 
         self.clonedCheckBox.setChecked(self._cloned)
 

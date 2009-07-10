@@ -9,6 +9,8 @@ from PyQt4 import QtGui
 from PyKDE4 import kdeui
 from PyKDE4 import kdecore
 
+from displaysettings.device import Output
+
 class DisplayItem(QtGui.QGraphicsRectItem):
     def __init__(self, scene):
         QtGui.QGraphicsRectItem.__init__(self)
@@ -59,7 +61,9 @@ class DisplayItem(QtGui.QGraphicsRectItem):
         action = self._menu.exec_(event.screenPos())
         if action:
             selection = str(action.data().toString())
-            self._scene.outputSelected.emit(self, selection)
+            self._scene.outputChanged.emit(self, selection)
+
+        self.setSelected(True)
 
     def hoverEnterEvent(self, event):
         if self._pos != 0:
@@ -111,7 +115,8 @@ class DisplayScene(QtGui.QGraphicsScene):
 
     outputsChanged = QtCore.pyqtSignal(str, str)
     swapClicked = QtCore.pyqtSignal()
-    outputSelected = QtCore.pyqtSignal(DisplayItem, str)
+    outputChanged = QtCore.pyqtSignal(DisplayItem, str)
+    outputSelected = QtCore.pyqtSignal(Output)
 
     def __init__(self, view, parent = None):
         QtGui.QGraphicsScene.__init__(self, parent)
@@ -133,9 +138,13 @@ class DisplayScene(QtGui.QGraphicsScene):
         self.addItem(self._right)
         self._left.hide()
         self._right.hide()
+        self._left.setSelected(True)
 
-        self.outputSelected.connect(self.slotOutputSelected)
-        self.swapClicked.connect(self.slotOutputSelected)
+        self._selectedItem = self._left
+
+        self.outputChanged.connect(self.slotOutputChanged)
+        self.swapClicked.connect(self.slotOutputChanged)
+        self.selectionChanged.connect(self.slotSelectionChanged)
 
     def updateDisplays(self):
         bRect = self.itemsBoundingRect()
@@ -144,16 +153,6 @@ class DisplayScene(QtGui.QGraphicsScene):
         bRect.setLeft(bRect.left() - 50)
         bRect.setRight(bRect.right() + 50)
         self._view.fitInView(bRect, QtCore.Qt.KeepAspectRatio)
-
-    def slotOutputSelected(self, item=None, name=None):
-        if item is None:
-            self.outputsChanged.emit(self._right._output.name,
-                                    self._left._output.name)
-        else:
-            if item._output == self._left._output:
-                self.outputsChanged.emit(name, "")
-            else:
-                self.outputsChanged.emit("", name)
 
     def mouseReleaseEvent(self, mouseEvent):
         self.updateDisplays()
@@ -177,3 +176,28 @@ class DisplayScene(QtGui.QGraphicsScene):
 
         if rightOutput is None:
             self._right.hide()
+
+        #self.selectionChanged.emit()
+
+    def slotOutputChanged(self, item=None, name=None):
+        if item is None:
+            self.outputsChanged.emit(self._right._output.name,
+                                    self._left._output.name)
+
+        elif item._output == self._left._output:
+            self.outputsChanged.emit(name, "")
+        else:
+            self.outputsChanged.emit("", name)
+
+    def slotSelectionChanged(self):
+        items = self.selectedItems()
+        if items:
+            selected = items.pop(-1)
+            for item in items:
+                item.setSelected(False)
+
+            self._selectedItem = selected
+            self.outputSelected.emit(selected._output)
+
+    def selectedOutput(self):
+        return self._selectedItem._output
