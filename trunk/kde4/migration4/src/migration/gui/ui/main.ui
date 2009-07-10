@@ -81,7 +81,7 @@ QLabel#labelMenu{
          <widget class="QLabel" name="labelMenu">
           <property name="font">
            <font>
-            <pointsize>11</pointsize>
+            <pointsize>10</pointsize>
            </font>
           </property>
           <property name="autoFillBackground">
@@ -126,7 +126,7 @@ p, li { white-space: pre-wrap; }
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+           <string notr="true">QStackedWidget#mainStack{background-color:white}</string>
           </property>
           <property name="currentIndex">
            <number>0</number>
