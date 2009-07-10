@@ -1,17 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Turkish translations of Display Settings.
+# Copyright (C) 2009
+# This file is distributed under the same license as the display-settings package.
+# Fatih Aşıcı <fatih@pardus.org.tr>, 2009.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-10 22:23+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2009-07-10 21:11+0300\n"
+"Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
+"Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,89 +19,89 @@ msgstr ""
 #: .tmp/ui_screens.py:93 .tmp/displaysettings/about.py:20
 #: .tmp/ui_devices.py:66
 msgid "Display Settings"
-msgstr ""
+msgstr "Ekran Ayarları"
 
 #: .tmp/ui_screens.py:94
 msgid "Outputs"
-msgstr ""
+msgstr "Çıkışlar"
 
 #: .tmp/ui_screens.py:95
 msgid "Cloned displays"
-msgstr ""
+msgstr "Aynı görüntü"
 
 #: .tmp/ui_screens.py:96
 msgid "Detect Outputs"
-msgstr ""
+msgstr "Çıkışları Algıla"
 
 #: .tmp/ui_screens.py:97
 msgid "Output Properties"
-msgstr ""
+msgstr "Çıkış Özellikleri"
 
 #: .tmp/ui_screens.py:98
 msgid "Size:"
-msgstr ""
+msgstr "Boyut:"
 
 #: .tmp/ui_screens.py:99 .tmp/ui_screens.py:101
 #: .tmp/displaysettings/screenswidget.py:219
 #: .tmp/displaysettings/screenswidget.py:257
 msgid "Auto"
-msgstr ""
+msgstr "Otomatik"
 
 #: .tmp/ui_screens.py:100
 msgid "Refresh Rate:"
-msgstr ""
+msgstr "Yenileme Oranı:"
 
 #: .tmp/ui_screens.py:102
 msgid "Rotation:"
-msgstr ""
+msgstr "Çevirme:"
 
 #: .tmp/ui_screens.py:103
 msgid "No Rotation"
-msgstr ""
+msgstr "Çevirme Yok"
 
 #: .tmp/ui_screens.py:104
 msgid "Left (90 degrees)"
-msgstr ""
+msgstr "Sola (90 derece)"
 
 #: .tmp/ui_screens.py:105
 msgid "Upside-Down (180 degrees)"
-msgstr ""
+msgstr "Yukarıdan Aşağıya (180 derece)"
 
 #: .tmp/ui_screens.py:106
 msgid "Right (270 degrees)"
-msgstr ""
+msgstr "Sağa (270 derece)"
 
 #: .tmp/ui_videocard.py:76
 msgid "Video Card Configuration"
-msgstr ""
+msgstr "Ekran Kartı Yapılandırması"
 
 #: .tmp/ui_videocard.py:77
 msgid "Video Driver"
-msgstr ""
+msgstr "Video Sürücüsü"
 
 #: .tmp/ui_videocard.py:78
 msgid "Use the default driver for the detected card."
-msgstr ""
+msgstr "Algılanan karta ait öntanımlı sürücüyü kullan."
 
 #: .tmp/ui_videocard.py:79 .tmp/ui_videocard.py:82
 msgid "Select from the list:"
-msgstr ""
+msgstr "Listeden seç:"
 
 #: .tmp/ui_videocard.py:80
 msgid "Color Depth"
-msgstr ""
+msgstr "Renk Derinliği"
 
 #: .tmp/ui_videocard.py:81
 msgid "Determined by the driver"
-msgstr ""
+msgstr "Sürücü karar versin"
 
 #: .tmp/ui_videocard.py:83
 msgid "16 Bit"
-msgstr ""
+msgstr "16 Bit"
 
 #: .tmp/ui_videocard.py:84
 msgid "24 Bit"
-msgstr ""
+msgstr "24 Bit"
 
 #: .tmp/displaysettings/deviceswidget.py:73
 #: .tmp/displaysettings/screenswidget.py:66
@@ -109,12 +109,17 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
+"Bu uygulama için arka uç sağlayan herhangi bir paket bulunamadı.\n"
+"Lütfen paketlerin kurulu ve düzgün yapılandırılmış olduğundan emin olun."
 
 #: .tmp/displaysettings/deviceswidget.py:94
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
 msgstr ""
+"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
+"b> sürücüsünü kullanmak isteyebilirsiniz. Bu sürücüyü kullanmak istiyor "
+"musunuz</qt>"
 
 #: .tmp/displaysettings/deviceswidget.py:110
 msgid ""
@@ -122,82 +127,86 @@ msgid ""
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
 "<b>%1</b> from video card options.</qt>"
 msgstr ""
+"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
+"b> sürücüsünü kullanmak isteyebilirsiniz. Kullanmak için <b>%2</b> paketini "
+"kurup daha sonra ekran kartı ayarlarından <b>%1</b> sürücüsünü seçmelisiniz."
+"</qt>"
 
 #: .tmp/displaysettings/deviceswidget.py:115
 msgid "Start Package Manager"
-msgstr ""
+msgstr "Paket Yöneticisini Başlat"
 
 #: .tmp/displaysettings/device.py:56
 msgid "Laptop Panel"
-msgstr ""
+msgstr "Dizüstü Paneli"
 
 #: .tmp/displaysettings/device.py:57
 msgid "Analog Output"
-msgstr ""
+msgstr "Analog Çıkış"
 
 #: .tmp/displaysettings/device.py:58
 msgid "Digital Output"
-msgstr ""
+msgstr "Sayısal Çıkış"
 
 #: .tmp/displaysettings/device.py:59
 msgid "TV Output"
-msgstr ""
+msgstr "TV Çıkışı"
 
 #: .tmp/displaysettings/monitorbrowser.py:41
 msgid "Type:"
-msgstr ""
+msgstr "Tür:"
 
 #: .tmp/displaysettings/monitorbrowser.py:42
 msgid "Monitors:"
-msgstr ""
+msgstr "Monitörler:"
 
 #: .tmp/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
-msgstr ""
+msgstr "%1 Çıkışı için Ayarlar"
 
 #: .tmp/displaysettings/outputdialog.py:74
 msgid "Custom Monitor"
-msgstr ""
+msgstr "Özel Monitör"
 
 #: .tmp/displaysettings/outputdialog.py:78
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
-msgstr ""
+msgstr "<qt><i>Monitör seçmek için \"Seç...\" düğmesine tıklayın</i></qt>"
 
 #: .tmp/displaysettings/screenswidget.py:214
 msgid "Output Properties - %1"
-msgstr ""
+msgstr "Çıkış Özellikleri - %1"
 
 #: .tmp/displaysettings/about.py:22
 msgid "Display Configuration Tool"
-msgstr ""
+msgstr "Ekran Yapılandırma Aracı"
 
 #: .tmp/displaysettings/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/displaysettings/about.py:32
 msgid "Fatih Aşıcı"
-msgstr ""
+msgstr "Fatih Aşıcı"
 
 #: .tmp/displaysettings/about.py:32
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Şu Anki Bakıcı"
 
 #: .tmp/ui_monitorbrowser.py:48
 msgid "Browse Monitors"
-msgstr ""
+msgstr "Monitörlere Gözat"
 
 #: .tmp/ui_monitorbrowser.py:49
 msgid "Vendors:"
-msgstr ""
+msgstr "Üreticiler:"
 
 #: .tmp/ui_monitorbrowser.py:50
 msgid "Models:"
-msgstr ""
+msgstr "Modeller:"
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
-msgstr ""
+msgstr "Çıkış Yapılandırması"
 
 #: .tmp/ui_output.py:225
 msgid ""
@@ -205,54 +214,58 @@ msgid ""
 "reason, you can specify them here. Be careful with these values, as an "
 "inaccurate value may damage your monitor, especially if it is an old model."
 msgstr ""
+"Herhangi bir nedenle monitörünüzün desteklediği frekans aralıkları "
+"algılanamazsa buradan elle belirleyebilirsiniz. Bu değerleri seçerken "
+"dikkatli olun. Özellikle eski model bir monitör ise yanlış bir değer "
+"monitörünüze zarar verebilir."
 
 #: .tmp/ui_output.py:226
 msgid "Specify Ranges"
-msgstr ""
+msgstr "Aralıkları Belirle"
 
 #: .tmp/ui_output.py:227
 msgid "Selection:"
-msgstr ""
+msgstr "Seçim:"
 
 #: .tmp/ui_output.py:228
 msgid "Select a standard monitor"
-msgstr ""
+msgstr "Standart bir monitör seç"
 
 #: .tmp/ui_output.py:229
 msgid "Select from vendor/model list"
-msgstr ""
+msgstr "Üretici/model listesinden seç"
 
 #: .tmp/ui_output.py:230
 msgid "Enter ranges manually"
-msgstr ""
+msgstr "Değerleri elle gir"
 
 #: .tmp/ui_output.py:231
 msgid "Monitor:"
-msgstr ""
+msgstr "Monitör:"
 
 #: .tmp/ui_output.py:232
 msgid "Choose..."
-msgstr ""
+msgstr "Seç..."
 
 #: .tmp/ui_output.py:233
 msgid "Horizontal sync:"
-msgstr ""
+msgstr "Yatay tarama aralığı:"
 
 #: .tmp/ui_output.py:234
 msgid "kHz"
-msgstr ""
+msgstr "kHz"
 
 #: .tmp/ui_output.py:235
 msgid "Vertical refresh:"
-msgstr ""
+msgstr "Dikey tarama aralığı:"
 
 #: .tmp/ui_output.py:236
 msgid "Hz"
-msgstr ""
+msgstr "Hz"
 
 #: .tmp/ui_output.py:237
 msgid "Frequency Ranges"
-msgstr ""
+msgstr "Frekans Aralıkları"
 
 #: .tmp/ui_output.py:238
 msgid ""
@@ -260,55 +273,58 @@ msgid ""
 "visual objects might seem larger or smaller than normal. In order to fix "
 "this problem, you can specify your monitor's dimensions here."
 msgstr ""
+"Eğer monitörünüzün fiziksel boyutları algılanmadıysa, yazı tipler ve diğer "
+"görsel nesneler olması gerekenden daha büyük ya da küçük görünebilit. Bu "
+"sorunu çözmek için monitörünüzün boyutlarını buradan seçebilirsiniz."
 
 #: .tmp/ui_output.py:239
 msgid "Specify Display Size"
-msgstr ""
+msgstr "Ekran Boyutunu Belirle"
 
 #: .tmp/ui_output.py:240
 msgid "Display size:"
-msgstr ""
+msgstr "Ekran boyutu:"
 
 #: .tmp/ui_output.py:241
 msgid "15.4\" Wide Screen"
-msgstr ""
+msgstr "15.4\" Geniş Ekran"
 
 #: .tmp/ui_output.py:242
 msgid "Custom"
-msgstr ""
+msgstr "Özel"
 
 #: .tmp/ui_output.py:243
 msgid "Width:"
-msgstr ""
+msgstr "Genişlik:"
 
 #: .tmp/ui_output.py:244 .tmp/ui_output.py:246
 msgid " mm"
-msgstr ""
+msgstr " mm"
 
 #: .tmp/ui_output.py:245
 msgid "Height:"
-msgstr ""
+msgstr "Yükseklik:"
 
 #: .tmp/ui_output.py:247
 msgid "Dimensions"
-msgstr ""
+msgstr "Boyutlar"
 
 #: .tmp/ui_output.py:248
 msgid "Ignore this output"
-msgstr ""
+msgstr "Bu çıkışı yoksay"
 
 #: .tmp/ui_devices.py:67
 msgid "Video Card:"
-msgstr ""
+msgstr "Ekran Kartı:"
 
 #: .tmp/ui_devices.py:68
 msgid "Card Info"
-msgstr ""
+msgstr "Kart Bilgisi"
 
 #: .tmp/ui_devices.py:69
 msgid "Configure..."
-msgstr ""
+msgstr "Yapılandır..."
 
 #: .tmp/ui_devices.py:70
 msgid "Outputs:"
-msgstr ""
+msgstr "Çıkışlar:"
