@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-09 16:34+0300\n"
+"POT-Creation-Date: 2009-07-10 09:26+0300\n"
 "PO-Revision-Date: 2009-06-22 15:38+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -16,9 +16,261 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/ScrGoodbye.py:23 .tmp/ui_goodbyeWidget.py:117
+#: .tmp/goodbyeWidget.py:117 .tmp/ScrGoodbye.py:23
+#: .tmp/ui_goodbyeWidget.py:117
 msgid "Goodbye"
 msgstr "Arrivederci"
+
+#: .tmp/goodbyeWidget.py:118 .tmp/ui_goodbyeWidget.py:118
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt; font-weight:600;\">Congratulations! You have finished all steps! "
+"Now you can continue to use Pardus or you can try the following applications:"
+"</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt; font-weight:600;\">Congratulazioni! Hai completato tutte le fasi! "
+"Ora puoi iniziare a usare Pardus oppure provare questi programmi:</span></"
+"p></body></html>"
+
+#: .tmp/goodbyeWidget.py:123 .tmp/ui_goodbyeWidget.py:123
+msgid "My Smolt Page"
+msgstr ""
+
+#: .tmp/goodbyeWidget.py:124 .tmp/ui_goodbyeWidget.py:124
+msgid "Go to your Smolt page and rate your hardware components."
+msgstr ""
+
+#: .tmp/goodbyeWidget.py:125 .tmp/goodbyeWidget.py:128
+#: .tmp/goodbyeWidget.py:131 .tmp/ui_goodbyeWidget.py:125
+#: .tmp/ui_goodbyeWidget.py:128 .tmp/ui_goodbyeWidget.py:131
+msgid "Start"
+msgstr "Avvia"
+
+#: .tmp/goodbyeWidget.py:126 .tmp/ui_goodbyeWidget.py:126
+msgid "System Settings"
+msgstr "Impostazioni di Sistema"
+
+#: .tmp/goodbyeWidget.py:127 .tmp/ui_goodbyeWidget.py:127
+msgid "System Settings is a configuration tool for Pardus."
+msgstr "Strumento di configurazione per Pardus."
+
+#: .tmp/goodbyeWidget.py:129 .tmp/ui_goodbyeWidget.py:129
+msgid "User Groups and Help Pages"
+msgstr "Gruppi di utenti e pagine di aiuto"
+
+#: .tmp/goodbyeWidget.py:130 .tmp/ui_goodbyeWidget.py:130
+msgid "Pardus community, user lists, IRC channels, wikis and more."
+msgstr "La comunità di pardus, mailing list, canali IRC e molto altro."
+
+#: .tmp/kaptanMain.py:130 .tmp/ui_kaptanMain.py:130
+msgid "Kaptan Desktop"
+msgstr "Kaptan Desktop"
+
+#: .tmp/kaptanMain.py:131 .tmp/ui_kaptanMain.py:131
+msgid "<b>Welcome to Kaptan!</b>"
+msgstr "<b>Benvenuto in Kaptan!</b>"
+
+#: .tmp/kaptanMain.py:132 .tmp/ui_kaptanMain.py:132
+msgid "Cancel"
+msgstr "Annulla"
+
+#: .tmp/kaptanMain.py:133 .tmp/ui_kaptanMain.py:133
+msgid "Back"
+msgstr "Indietro"
+
+#: .tmp/kaptanMain.py:134 .tmp/ui_kaptanMain.py:134
+msgid "Next"
+msgstr "Avanti"
+
+#: .tmp/kaptanMain.py:135 .tmp/ui_kaptanMain.py:135
+msgid "Finish"
+msgstr "Fine"
+
+#: .tmp/keyboardWidget.py:71 .tmp/ui_keyboardWidget.py:71
+msgid "Keyboard"
+msgstr ""
+
+#: .tmp/keyboardWidget.py:72 .tmp/ui_keyboardWidget.py:72
+msgid "Try:"
+msgstr ""
+
+#: .tmp/keyboardWidget.py:73 .tmp/ui_keyboardWidget.py:73
+#, fuzzy
+msgid "Configure your keyboard layout."
+msgstr "Configura il tuo muose"
+
+#: .tmp/menuWidget.py:77 .tmp/ui_menuWidget.py:77
+msgid "Menu"
+msgstr "Menu"
+
+#: .tmp/menuWidget.py:78 .tmp/ui_menuWidget.py:78
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Select a menu style:</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Seleziona uno stile di menù:</span></p></body></html>"
+
+#: .tmp/menuWidget.py:83 .tmp/ui_menuWidget.py:83
+msgid "Kick-off (Advanced Menu)"
+msgstr "Kick-off (Menu Avanzato)"
+
+#: .tmp/menuWidget.py:84 .tmp/ui_menuWidget.py:84
+msgid "Classic (Simple Menu)"
+msgstr "Menu classico (semplice)"
+
+#: .tmp/menuWidget.py:85 .tmp/ui_menuWidget.py:85
+msgid "Lancelot (Experimental Menu)"
+msgstr "Lancelot (Menu sperimentale)"
+
+#: .tmp/mouseWidget.py:83 .tmp/ui_mouseWidget.py:83
+msgid "Mouse"
+msgstr "Mouse"
+
+#: .tmp/mouseWidget.py:84 .tmp/ui_mouseWidget.py:84
+msgid ""
+"<p align=\"left\">If you are left-handed, you may prefer to swap the "
+"functions on the left and right buttons on your pointing device by choosing "
+"the \"Left handed\"option below. You can also select default click behaviour."
+"</p>"
+msgstr ""
+"<p align=\"left\">Se sei mancino/a, potresti preferire cambiare le "
+"impostazioni delle tue periferiche di puntamento scegliendo l'opzione "
+"\"Mancino\" qui sotto. Puoi anche scegliere il comportamento del click che "
+"preferisci.</p>"
+
+#: .tmp/mouseWidget.py:85 .tmp/ui_mouseWidget.py:85
+msgid "mouse icon"
+msgstr "Icona del mouse"
+
+#: .tmp/mouseWidget.py:86 .tmp/ui_mouseWidget.py:86
+msgid "Click Behaviour"
+msgstr "Comportamento click"
+
+#: .tmp/mouseWidget.py:87 .tmp/ui_mouseWidget.py:87
+msgid "Single-click to open files and folders"
+msgstr "Click singolo per aprire file e cartelle"
+
+#: .tmp/mouseWidget.py:88 .tmp/ui_mouseWidget.py:88
+msgid "Dou&ble-click to open files and folders"
+msgstr "Do&ppio click per aprire files e cartelle"
+
+#: .tmp/mouseWidget.py:89 .tmp/ui_mouseWidget.py:89
+msgid "Button Order"
+msgstr ""
+
+#: .tmp/mouseWidget.py:90 .tmp/ui_mouseWidget.py:90
+msgid "Right Hand"
+msgstr "Mano destra"
+
+#: .tmp/mouseWidget.py:91 .tmp/ui_mouseWidget.py:91
+msgid "Left Hand"
+msgstr "Mano sinistra"
+
+#: .tmp/mouseWidget.py:92 .tmp/ui_mouseWidget.py:92
+msgid "Reverse scrolling"
+msgstr "Scrolling inverso"
+
+#: .tmp/networkWidget.py:25 .tmp/ui_networkWidget.py:25
+msgid "Network"
+msgstr "Rete"
+
+#: .tmp/packageWidget.py:71 .tmp/ui_packageWidget.py:71
+msgid "Package"
+msgstr "Pacchetto"
+
+#: .tmp/packageWidget.py:72 .tmp/ui_packageWidget.py:72
+#, fuzzy
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Package-manager is the graphical front-end of PiSi. You can "
+"easily install new programs and upgrade your system and also can see new "
+"upgrades of the programs periodically from the system tray with package "
+"manager.</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Seleziona uno stile di menù:</span></p></body></html>"
+
+#: .tmp/packageWidget.py:77 .tmp/ui_packageWidget.py:77
+msgid "picture label"
+msgstr ""
+
+#: .tmp/packageWidget.py:78 .tmp/ui_packageWidget.py:78
+msgid "Updates"
+msgstr "Aggiornamenti"
+
+#: .tmp/packageWidget.py:79 .tmp/ui_packageWidget.py:79
+msgid "Show in system  tray"
+msgstr "Mostra nel vassoio di sistema"
+
+#: .tmp/packageWidget.py:80 .tmp/ui_packageWidget.py:80
+msgid "Check updates automatically for every"
+msgstr "Controlla nuovi aggiornamenti ogni:"
+
+#: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:81
+msgid " hours"
+msgstr ""
+
+#: .tmp/packageWidget.py:82 .tmp/ui_packageWidget.py:82
+msgid "Repo"
+msgstr "Repository"
+
+#: .tmp/packageWidget.py:83 .tmp/ui_packageWidget.py:83
+msgid "Contrib repo includes extra packages."
+msgstr "Il repository contrib include pacchetti extra."
+
+#: .tmp/packageWidget.py:84 .tmp/ui_packageWidget.py:84
+msgid "Add contrib repo"
+msgstr "Aggiungi repository contrtib"
 
 #: .tmp/ScrGoodbye.py:24
 msgid "Goodbye from Kaptan Wizard :)"
@@ -116,7 +368,7 @@ msgstr "On"
 msgid "Off"
 msgstr "Off"
 
-#: .tmp/ScrSmolt.py:31 .tmp/ui_smoltWidget.py:77
+#: .tmp/ScrSmolt.py:31 .tmp/smoltWidget.py:77 .tmp/ui_smoltWidget.py:77
 msgid "Smolt"
 msgstr ""
 
@@ -137,7 +389,7 @@ msgstr ""
 msgid "&Back"
 msgstr "Indietro"
 
-#: .tmp/ScrSmolt.py:112 .tmp/ui_smoltWidget.py:79
+#: .tmp/ScrSmolt.py:112 .tmp/smoltWidget.py:79 .tmp/ui_smoltWidget.py:79
 msgid "&Privacy policy"
 msgstr ""
 
@@ -218,11 +470,20 @@ msgstr ""
 msgid "SELinux Enforce"
 msgstr ""
 
+#: .tmp/ScrSmolt.py:146
+msgid "Yes"
+msgstr ""
+
+#: .tmp/ScrSmolt.py:148
+msgid "No"
+msgstr ""
+
 #: .tmp/ScrStyle.py:58
 msgid "No name"
 msgstr "Nessun nome"
 
 #: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
+#: .tmp/welcomeWidget.py:43
 msgid "Welcome"
 msgstr "Benvenuto"
 
@@ -289,13 +550,6 @@ msgstr "Impostazioni stile"
 msgid "Send my profile: <b>%s</b>"
 msgstr "Stile selezionato: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:99
-msgid ""
-"(<i><u>Warning:</u> Sending profile requires to set up communication with "
-"Smolt server and can take between 30 seconds to a minute. Kaptan may freeze "
-"during this time.</i>)"
-msgstr ""
-
 #: .tmp/ScrWallpaper.py:34
 msgid "Insert some catchy title about wallpapers.."
 msgstr ""
@@ -304,275 +558,25 @@ msgstr ""
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Sfondi meravigliosi, impressionanti, superbi! \\m/"
 
-#: .tmp/ui_goodbyeWidget.py:118
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:9pt; font-weight:600;\">Congratulations! You have finished all steps! "
-"Now you can continue to use Pardus or you can try the following applications:"
-"</span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:9pt; font-weight:600;\">Congratulazioni! Hai completato tutte le fasi! "
-"Ora puoi iniziare a usare Pardus oppure provare questi programmi:</span></"
-"p></body></html>"
-
-#: .tmp/ui_goodbyeWidget.py:123
-msgid "My Smolt Page"
-msgstr ""
-
-#: .tmp/ui_goodbyeWidget.py:124
-msgid "Go to your Smolt page and rate your hardware components."
-msgstr ""
-
-#: .tmp/ui_goodbyeWidget.py:125 .tmp/ui_goodbyeWidget.py:128
-#: .tmp/ui_goodbyeWidget.py:131
-msgid "Start"
-msgstr "Avvia"
-
-#: .tmp/ui_goodbyeWidget.py:126
-msgid "System Settings"
-msgstr "Impostazioni di Sistema"
-
-#: .tmp/ui_goodbyeWidget.py:127
-msgid "System Settings is a configuration tool for Pardus."
-msgstr "Strumento di configurazione per Pardus."
-
-#: .tmp/ui_goodbyeWidget.py:129
-msgid "User Groups and Help Pages"
-msgstr "Gruppi di utenti e pagine di aiuto"
-
-#: .tmp/ui_goodbyeWidget.py:130
-msgid "Pardus community, user lists, IRC channels, wikis and more."
-msgstr "La comunità di pardus, mailing list, canali IRC e molto altro."
-
-#: .tmp/ui_kaptanMain.py:130
-msgid "Kaptan Desktop"
-msgstr "Kaptan Desktop"
-
-#: .tmp/ui_kaptanMain.py:131
-msgid "<b>Welcome to Kaptan!</b>"
-msgstr "<b>Benvenuto in Kaptan!</b>"
-
-#: .tmp/ui_kaptanMain.py:132
-msgid "Cancel"
-msgstr "Annulla"
-
-#: .tmp/ui_kaptanMain.py:133
-msgid "Back"
-msgstr "Indietro"
-
-#: .tmp/ui_kaptanMain.py:134
-msgid "Next"
-msgstr "Avanti"
-
-#: .tmp/ui_kaptanMain.py:135
-msgid "Finish"
-msgstr "Fine"
-
-#: .tmp/ui_keyboardWidget.py:71
-msgid "Keyboard"
-msgstr ""
-
-#: .tmp/ui_keyboardWidget.py:72
-msgid "Try:"
-msgstr ""
-
-#: .tmp/ui_keyboardWidget.py:73
-#, fuzzy
-msgid "Configure your keyboard layout."
-msgstr "Configura il tuo muose"
-
-#: .tmp/ui_menuWidget.py:77
-msgid "Menu"
-msgstr "Menu"
-
-#: .tmp/ui_menuWidget.py:78
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Select a menu style:</span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Seleziona uno stile di menù:</span></p></body></html>"
-
-#: .tmp/ui_menuWidget.py:83
-msgid "Kick-off (Advanced Menu)"
-msgstr "Kick-off (Menu Avanzato)"
-
-#: .tmp/ui_menuWidget.py:84
-msgid "Classic (Simple Menu)"
-msgstr "Menu classico (semplice)"
-
-#: .tmp/ui_menuWidget.py:85
-msgid "Lancelot (Experimental Menu)"
-msgstr "Lancelot (Menu sperimentale)"
-
-#: .tmp/ui_mouseWidget.py:83
-msgid "Mouse"
-msgstr "Mouse"
-
-#: .tmp/ui_mouseWidget.py:84
-msgid ""
-"<p align=\"left\">If you are left-handed, you may prefer to swap the "
-"functions on the left and right buttons on your pointing device by choosing "
-"the \"Left handed\"option below. You can also select default click behaviour."
-"</p>"
-msgstr ""
-"<p align=\"left\">Se sei mancino/a, potresti preferire cambiare le "
-"impostazioni delle tue periferiche di puntamento scegliendo l'opzione "
-"\"Mancino\" qui sotto. Puoi anche scegliere il comportamento del click che "
-"preferisci.</p>"
-
-#: .tmp/ui_mouseWidget.py:85
-msgid "mouse icon"
-msgstr "Icona del mouse"
-
-#: .tmp/ui_mouseWidget.py:86
-msgid "Click Behaviour"
-msgstr "Comportamento click"
-
-#: .tmp/ui_mouseWidget.py:87
-msgid "Single-click to open files and folders"
-msgstr "Click singolo per aprire file e cartelle"
-
-#: .tmp/ui_mouseWidget.py:88
-msgid "Dou&ble-click to open files and folders"
-msgstr "Do&ppio click per aprire files e cartelle"
-
-#: .tmp/ui_mouseWidget.py:89
-msgid "Button Order"
-msgstr ""
-
-#: .tmp/ui_mouseWidget.py:90
-msgid "Right Hand"
-msgstr "Mano destra"
-
-#: .tmp/ui_mouseWidget.py:91
-msgid "Left Hand"
-msgstr "Mano sinistra"
-
-#: .tmp/ui_mouseWidget.py:92
-msgid "Reverse scrolling"
-msgstr "Scrolling inverso"
-
-#: .tmp/ui_networkWidget.py:25
-msgid "Network"
-msgstr "Rete"
-
-#: .tmp/ui_packageWidget.py:71
-msgid "Package"
-msgstr "Pacchetto"
-
-#: .tmp/ui_packageWidget.py:72
-#, fuzzy
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Package-manager is the graphical front-end of PiSi. You can "
-"easily install new programs and upgrade your system and also can see new "
-"upgrades of the programs periodically from the system tray with package "
-"manager.</span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Seleziona uno stile di menù:</span></p></body></html>"
-
-#: .tmp/ui_packageWidget.py:77
-msgid "picture label"
-msgstr ""
-
-#: .tmp/ui_packageWidget.py:78
-msgid "Updates"
-msgstr "Aggiornamenti"
-
-#: .tmp/ui_packageWidget.py:79
-msgid "Show in system  tray"
-msgstr "Mostra nel vassoio di sistema"
-
-#: .tmp/ui_packageWidget.py:80
-msgid "Check updates automatically for every"
-msgstr "Controlla nuovi aggiornamenti ogni:"
-
-#: .tmp/ui_packageWidget.py:81
-msgid " hours"
-msgstr ""
-
-#: .tmp/ui_packageWidget.py:82
-msgid "Repo"
-msgstr "Repository"
-
-#: .tmp/ui_packageWidget.py:83
-msgid "Contrib repo includes extra packages."
-msgstr "Il repository contrib include pacchetti extra."
-
-#: .tmp/ui_packageWidget.py:84
-msgid "Add contrib repo"
-msgstr "Aggiungi repository contrtib"
-
-#: .tmp/ui_searchWidget.py:52
+#: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:52
 msgid "Desktop Search"
 msgstr "Ricerca files"
 
-#: .tmp/ui_searchWidget.py:53
+#: .tmp/searchWidget.py:53 .tmp/ui_searchWidget.py:53
 msgid ""
 "Strigi desktop search allows searching for files by content instead of just "
 "by name."
 msgstr ""
 
-#: .tmp/ui_searchWidget.py:54
+#: .tmp/searchWidget.py:54 .tmp/ui_searchWidget.py:54
 msgid "Enable Strigi Desktop File Indexer"
 msgstr ""
 
-#: .tmp/ui_smoltWidget.py:78
+#: .tmp/smoltWidget.py:78 .tmp/ui_smoltWidget.py:78
 msgid "&Send my profile"
 msgstr ""
 
-#: .tmp/ui_smoltWidget.py:80
+#: .tmp/smoltWidget.py:80 .tmp/ui_smoltWidget.py:80
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -616,43 +620,45 @@ msgid ""
 "body></html>"
 msgstr ""
 
-#: .tmp/ui_styleitem.py:46 .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
+#: .tmp/styleitem.py:46 .tmp/uiitem.py:46 .tmp/ui_styleitem.py:46
+#: .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
+#: .tmp/wallpaperuiitem.py:46
 msgid "Form"
 msgstr ""
 
-#: .tmp/ui_styleitem.py:47
+#: .tmp/styleitem.py:47 .tmp/ui_styleitem.py:47
 msgid "styleName"
 msgstr ""
 
-#: .tmp/ui_styleitem.py:48
+#: .tmp/styleitem.py:48 .tmp/ui_styleitem.py:48
 msgid "styleDesc"
 msgstr ""
 
-#: .tmp/ui_styleWidget.py:65
+#: .tmp/styleWidget.py:65 .tmp/ui_styleWidget.py:65
 msgid "Themes"
 msgstr "Temi"
 
-#: .tmp/ui_styleWidget.py:66
+#: .tmp/styleWidget.py:66 .tmp/ui_styleWidget.py:66
 msgid "<b>Desktop Type:</b>"
 msgstr "<b>Tipo di desktop:</b>"
 
-#: .tmp/ui_styleWidget.py:67
+#: .tmp/styleWidget.py:67 .tmp/ui_styleWidget.py:67
 msgid "Desktop"
 msgstr "Desktop"
 
-#: .tmp/ui_styleWidget.py:68
+#: .tmp/styleWidget.py:68 .tmp/ui_styleWidget.py:68
 msgid "Folderview"
 msgstr "Vista cartelle"
 
-#: .tmp/ui_styleWidget.py:69
+#: .tmp/styleWidget.py:69 .tmp/ui_styleWidget.py:69
 msgid "<b>Number of Desktops:</b>"
 msgstr "<b>Numero di Desktop:</b>"
 
-#: .tmp/ui_summaryWidget.py:49
+#: .tmp/summaryWidget.py:49 .tmp/ui_summaryWidget.py:49
 msgid "Summary"
 msgstr "Riepilogo"
 
-#: .tmp/ui_summaryWidget.py:50
+#: .tmp/summaryWidget.py:50 .tmp/ui_summaryWidget.py:50
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -678,28 +684,30 @@ msgstr ""
 "size:12pt; font-weight:600;\">Le tue impostazioni verranno applicate nella "
 "prossima schermata...</span></p></body></html>"
 
-#: .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
+#: .tmp/uiitem.py:47 .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
+#: .tmp/wallpaperuiitem.py:47
 msgid "wallPaperName"
 msgstr ""
 
-#: .tmp/ui_uiitem.py:48 .tmp/ui_wallpaperuiitem.py:48
+#: .tmp/uiitem.py:48 .tmp/ui_uiitem.py:48 .tmp/ui_wallpaperuiitem.py:48
+#: .tmp/wallpaperuiitem.py:48
 msgid "wallpaperDesc"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:44
+#: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
 msgid "Wallpaper"
 msgstr "Sfondo"
 
-#: .tmp/ui_wallpaperWidget.py:45
+#: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:45
 #, fuzzy
 msgid "Choose Wallpaper From a File"
 msgstr "Scegli sfondo"
 
-#: .tmp/ui_wallpaperWidget.py:46
+#: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:46
 msgid "Don't change wallpaper"
 msgstr "Non cambiare lo sfondo"
 
-#: .tmp/ui_welcomeWidget.py:44
+#: .tmp/ui_welcomeWidget.py:44 .tmp/welcomeWidget.py:44
 msgid ""
 "This application, called Kaptan Desktop, will help you with your basic but "
 "sufficient setup for your Pardus desktop in a quick manner. Please click "
