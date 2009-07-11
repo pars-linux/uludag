@@ -21,10 +21,10 @@
 
 #include "context.h"
 #include "context_p.h"
+#include "streammanager.h"
 #include "sinkmanager.h"
-#include "sinkmanager_p.h"
 #include "sourcemanager.h"
-#include "sourcemanager_p.h"
+#include "streammanager_p.h"
 
 using namespace std;
 using namespace QtPulseAudio;
@@ -119,10 +119,10 @@ void Context::Private::subscribe_cb(pa_context *c, pa_subscription_event_type_t 
 
 	switch (facility) {
 		case PA_SUBSCRIPTION_EVENT_SINK:
-			qc->d->mSinks->d->sinkEvent(type, index);
+			qc->d->mSinks->event(type, index);
 			break;
 		case PA_SUBSCRIPTION_EVENT_SOURCE:
-			qc->d->mSources->d->sourceEvent(type, index);
+			qc->d->mSources->event(type, index);
 			break;
 		case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
 			//qc->d->mSinkInput->d->streamEvent(type, index);

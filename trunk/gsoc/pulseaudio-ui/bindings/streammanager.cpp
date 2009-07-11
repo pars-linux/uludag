@@ -18,69 +18,73 @@
 #include "context.h"
 
 #include "streammanager_p.h"
-#include "stream_p.h"
 
 using namespace std;
 
-namespace QtPulseAudio {
-
-StreamManager::StreamManager(Context *parent)
-	: QObject(parent)
+namespace QtPulseAudio
 {
+StreamManager::StreamManager(Context *parent, bool autoUpdate)
+	: QObject(parent), d(new Private)
+{
+    d->q = this;
+    d->autoUpdate = autoUpdate;
+    d->context = parent;
 }
 
 StreamManager::~StreamManager()
 {
+    delete d;
 }
 
-#if 0
-void StreamManager::update() {
-	cout << "StreamManager::update" << endl;
-	pa_operation *o;
-
-	if (!(o = pa_context_get_sink_info_list(d->mContext->cObject(), StreamManager::Private::sink_cb, this))) {
-		cout << "pa_context_get_sink_info_list() failed" << endl;
-		return;
-	}
-	pa_operation_unref(o);
+void StreamManager::add(Stream *s)
+{
+    d->streamsById.insert(s->index(), s);
+    if(s->isValid())
+	d->streamsByName.insert(s->name(), s);
 }
 
-void StreamManager::Private::streamEvent(int type, uint32_t index) {
-	cout << "StreamManager::Private::streamEvent(" << type << ", " << index << ")" << endl;
-	if (type == PA_SUBSCRIPTION_EVENT_REMOVE) {
-		that->removed(index);
-	} else if (type == PA_SUBSCRIPTION_EVENT_CHANGE) {
-		that->changed(index);
-		if (mAutoUpdate) mStreams[index]->update();
-	} else if (type == PA_SUBSCRIPTION_EVENT_NEW) {
-		mStreams[index] = new Stream(that);
-		mStreams[index]->d->mContext = mContext;
-		that->added(index);
-	} else {
-		that->unknow(index);
-	}
+void StreamManager::remove(Stream *s)
+{
+    d->streamsById.remove(s->index());
+    d->streamsByName.remove(s->name());
 }
 
-void StreamManager::Private::sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata) {
-	cout << "StreamManager::Private::sink_cb(" << i << ", " << eol << ")" << endl;
-
-	if (eol) return;
-
-	if (!i) {
-		cout << "Sink callback failure" << endl;
-		return;
-	}
-
-	int index = i->index;
-	StreamManager *sm = static_cast<StreamManager *>(userdata);
-
-	if ( sm->d->mStreams[index] == NULL ) {
-		sm->d->mStreams[index] = new Stream(sm);
-		sm->d->mStreams[index]->d->mContext = sm->d->mContext;
-		emit sm->added(index);
-	}
-
-	sm->d->mStreams[index]->d->sink_cb(sm->d->mContext->cObject(), i, eol, sm->d->mStreams[index]->d);
+Stream *StreamManager::stream(int id)
+{
+    return d->streamsById[id];
 }
-#endif
+
+Stream *StreamManager::stream(const QString &name)
+{
+    return d->streamsByName[name];
+}
+
+void StreamManager::event(int type, uint32_t index)
+{
+    cout << "StreamManager::event(" << type << ", " << index << ")" << endl;
+    Stream *s;
+    if (type == PA_SUBSCRIPTION_EVENT_REMOVE)
+    {
+	s = stream(index);
+	if(s != NULL)
+	{
+	    emit removed(index);
+	    remove(s);
+	}
+    }
+    else if (type == PA_SUBSCRIPTION_EVENT_CHANGE || type==PA_SUBSCRIPTION_EVENT_NEW) {
+	if((s = stream(index)) == 0)
+	{
+	    s = create(index);
+	    add(s);
+	    emit added(index);
+	}
+	else
+	{
+	    emit changed(index);
+	    if (d->autoUpdate)
+		s->update();
+	}
+    }
+}
 }

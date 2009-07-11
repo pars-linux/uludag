@@ -32,6 +32,7 @@ StreamsTab::StreamsTab(QtPulseAudio::StreamManager *manager, QWidget *parent):QW
     QObject::connect(this->manager, SIGNAL(added(int)), this, SLOT(streamAdded(int)));
     QObject::connect(this->manager, SIGNAL(removed(int)), this, SLOT(streamRemoved(int)));
     QObject::connect(this->manager, SIGNAL(changed(int)), this, SLOT(streamChanged(int)));
+    QObject::connect(this->streamComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(streamSelected(int)));
     manager->update();
 }
 

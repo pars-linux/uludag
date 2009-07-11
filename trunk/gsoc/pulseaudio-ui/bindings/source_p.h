@@ -11,44 +11,23 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef __QtPulseAudioSource_p_h__
-#define __QtPulseAudioSource_p_h__
+#ifndef QTPULSEAUDIO_SOURCE_P_H
+#define QTPULSEAUDIO_SOURCE_P_H
 
 #include <QVector>
 #include <QPointer>
 
 #include "source.h"
 
-namespace QtPulseAudio {
-
-class Source::Private {
-public:
-	static void source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata);
-    static void volume_cb(pa_context *, int success, void *userdata);
-
-	void triggerUpdateInfo();
-	void updateInfo(const pa_source_info &info);
-
-	Source *that;
-	Context *mContext;
-	uint32_t mIndex;
-	bool mIsValid;
-    
-    QString name;
-    QString description;
-    pa_sample_spec sampleSpec;
-    pa_channel_map channelMap;
-    uint32_t ownerModule;
-    pa_cvolume volume;
+namespace QtPulseAudio
+{
+class Context;
+class Source::Private
+{
+    public:
     pa_cvolume svolume;
-    int mute;
-    uint32_t monitorOfSink;
-    QString monitorOfSinkName;
-    pa_usec_t latency;
-    QString driver;
-    pa_source_flags_t flags;
+    Context *context;
 };
-
 }
 
 #endif

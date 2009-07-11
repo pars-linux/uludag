@@ -16,138 +16,99 @@
 #include "source.h"
 #include "sourcemanager.h"
 #include "context.h"
+#include "device_p.h"
 #include "source_p.h"
 
 using namespace std;
 
-namespace QtPulseAudio {
-
-Source::Source(int index, SourceManager *parent)
-	: Stream(parent)
+namespace QtPulseAudio
 {
-	d = new Private;
-	d->that = this;
-	d->mIsValid = false;
-	d->mIndex = index;
+
+Source::Source(int index, QtPulseAudio::SourceManager* parent, Context *context): Device(index, parent), d(new Private)
+{
+    d->context = context;
 }
 
 Source::~Source()
 {
-	delete d;
+    delete d;
 }
 
-bool Source::isValid() {
-	return d->mIsValid;
-}
-
-QString Source::name() {
-	return d->name;
-}
-
-uint32_t Source::index() {
-	return d->mIndex;
-}
-
-QString Source::description() {
-	return d->description;
-}
-
-pa_sample_spec Source::sampleSpec() {
-	return d->sampleSpec;
-}
-
-pa_channel_map Source::channelMap() {
-	return d->channelMap;
-}
-
-uint32_t Source::owner() {
-	return d->ownerModule;
-}
-
-pa_cvolume Source::volume() {
-	return d->volume;
-}
-
-int Source::mute() {
-	return d->mute;
-}
-
-uint32_t Source::monitorSink() {
-	return d->monitorOfSink;
-}
-
-QString Source::monitorSinkName() {
-	return d->monitorOfSinkName;
-}
-
-pa_usec_t Source::latency() {
-	return d->latency;
-}
-
-QString Source::driver() {
-	return d->driver;
-}
-
-pa_source_flags_t Source::flags() {
-	return d->flags;
-}
-
-void Source::update() {
-	pa_operation *o;
-	o = pa_context_get_source_info_by_index(d->mContext->cObject(), d->mIndex, Source::Private::source_cb, this->d);
-	if ( o == NULL ) return;
-	pa_operation_unref(o);
-}
-
-void Source::setVolume(pa_cvolume v) {
+void Source::update()
+{
     pa_operation *o;
-    this->d->svolume = v;
-    o = pa_context_set_source_volume_by_index(d->mContext->cObject(), d->mIndex, &this->d->svolume, Source::Private::volume_cb, this->d);
-    if ( o == NULL ) return;
+    o = pa_context_get_source_info_by_index(d->context->cObject(),
+			(Device::d)->index, Source::source_cb, this);
     pa_operation_unref(o);
 }
 
-
-void Source::Private::source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata) {
-	cout << "Source::Private::source_cb" << endl;
-    Source::Private *p = static_cast<Source::Private *>(userdata);
-
-	if (eol) { cout << "eol" << endl; return; }
-
-	if (!i) {
-		cout << "Source callback failure" << endl;
-		return;
-	}
-
-	if ( p->mIsValid ) assert ( i->index == p->mIndex );
-
-	//p->mSourceInfo = *i;
-    p->name = QString(i->name);
-    p->description = QString(i->description);
-    p->sampleSpec = i->sample_spec;
-    p->channelMap = i->channel_map;
-    p->ownerModule = i->owner_module;
-    p->volume = i->volume;
-    p->mute = i->mute;
-    p->monitorOfSink = i->monitor_of_sink;
-    p->monitorOfSinkName = QString(i->monitor_of_sink_name);
-    p->latency = i->latency;
-    p->driver = QString(i->driver);
-    p->flags = i->flags;
-	p->mIsValid = true;
-	emit p->that->updated();
+void Source::setVolume(pa_cvolume v)
+{
+    pa_operation *o;
+    this->d->svolume = v;
+    o = pa_context_set_source_volume_by_index(d->context->cObject(),
+			(Device::d)->index, &d->svolume, Source::volume_cb, this);
+    pa_operation_unref(o);
 }
 
+void Source::setMuted(int muted)
+{
+    pa_operation *o;
+    o = pa_context_set_source_mute_by_index(d->context->cObject(),
+			(Device::d)->index, muted, Source::volume_cb, this);
+    pa_operation_unref(o);
+}
 
-void Source::Private::volume_cb(pa_context *, int success, void *userdata) {
-    cout << "Source::Private::volume_cb" << endl;
-    Source::Private *p = static_cast<Source::Private *>(userdata);
+void Source::source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata)
+{
+    cout << "Source::source_cb" << endl;
+    Source *p = reinterpret_cast<Source *>(userdata);
+    Device::Private *dd = p->Device::d;
+
+    if (eol) return;
+
+    if (!i) {
+	    cout << "Source callback failure" << endl;
+	    return;
+    }
+
+    if ( dd->valid ) assert ( i->index == dd->index );
+
+    //p->mSourceInfo = *i;
+    cout << i->name << " " << i->description << endl;
+    
+    dd->name = QString(i->name);
+    dd->description = QString(i->description);
+    dd->sampleSpec = i->sample_spec;
+    dd->channelMap = i->channel_map;
+    dd->owner = i->owner_module;
+    dd->volume = i->volume;
+    dd->muted = i->mute;
+    dd->monitor= i->monitor_of_sink;
+    dd->monitorName = QString(i->monitor_of_sink_name);
+    dd->latency = i->latency;
+    dd->driver = QString(i->driver);
+    dd->baseVolume = i->base_volume;
+    dd->card = i->card;
+    dd->configuredLatency = i->configured_latency;
+    dd->valid = true;
+    emit p->updated();
+}
+
+void Source::volume_cb(pa_context *, int success, void *userdata)
+{
+    cout << "Source::volume_cb" << endl;
+    Source *p = reinterpret_cast<Source *>(userdata);
+    /*if(p->(Device::d)->volumeOperation != 0)
+    {
+	pa_operation_unref(p->(Device::d)->volumeOperation);
+	p->(Device::d)->volumeOperation = 0;
+    }*/
 
     if (!success) {
-        cout << "Volume change failure" << endl;
+        cout << "Volume/mute change failure" << endl;
         return;
     }
-    emit p->that->updated();
 }
 
 }

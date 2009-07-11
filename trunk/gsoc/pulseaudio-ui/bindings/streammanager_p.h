@@ -1,3 +1,4 @@
+
 /*
     Copyright (c) 2009      by Marcin Kurczych          <tharkang@gmail.com>
     Copyright (c) 2007      by Nicolas Peyron
@@ -11,14 +12,28 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef __QtPulseAudioStreamManager_p_h__
-#define __QtPulseAudioStreamManager_p_h__
+#ifndef QTPULSEAUDIO_STREAMMANAGER_P_H
+#define QTPULSEAUDIO_STREAMMANAGER_P_H
+
+#include <QString>
+#include <QHash>
 
 #include "streammanager.h"
 
-namespace QtPulseAudio {
+namespace QtPulseAudio
+{
 
+class Context;
+class Stream;
 
+class StreamManager::Private
+{
+public:
+    QHash<int, Stream *> streamsById;
+    QHash<QString, Stream *> streamsByName;
+    Context *context;
+    StreamManager *q;
+    bool autoUpdate;
+};
 }
-
 #endif

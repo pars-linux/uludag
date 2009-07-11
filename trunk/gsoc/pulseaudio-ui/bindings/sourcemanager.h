@@ -11,8 +11,8 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef __QtPulseAudioSourceManager_h__
-#define __QtPulseAudioSourceManager_h__
+#ifndef QTPULSEAUDIO_SOURCEMANAGER_H
+#define QTPULSEAUDIO_SOURCEMANAGER_H
 
 #include <QObject>
 
@@ -20,30 +20,26 @@
 
 #include "streammanager.h"
 
-namespace QtPulseAudio {
-
+namespace QtPulseAudio
+{
 class Context;
 class Source;
 
-class SourceManager : public StreamManager {
-	Q_OBJECT
-public:
-	virtual Stream *stream(int index);
-	virtual Source *sink(int index);
+class SourceManager : public StreamManager
+{
+    Q_OBJECT
+    public:
+    virtual Stream *create(int index);
+    static void source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata);
 
-public slots:
-	virtual void update();
+    public slots:
+    virtual void update();
 
-protected:
-	friend class Context;
-	SourceManager(Context *parent, bool autoUpdate = true);
-	~SourceManager();
-
-	class Private;
-	friend class Private;
-	Private *d;
+    protected:
+    friend class Context;
+    SourceManager(Context *parent, bool autoUpdate = true);
+    ~SourceManager();
 };
-
 }
 
 #endif
