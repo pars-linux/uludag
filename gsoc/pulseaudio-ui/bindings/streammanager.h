@@ -11,36 +11,45 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef __QtPulseAudioStreamManager_h__
-#define __QtPulseAudioStreamManager_h__
+#ifndef QTPULSEAUDIO_STREAMMANAGER_H
+#define QTPULSEAUDIO_STREAMMANAGER_H
 
 #include <QObject>
 
-namespace QtPulseAudio {
+namespace QtPulseAudio
+{
 
 class Context;
 class Stream;
 
-class StreamManager : public QObject {
-	Q_OBJECT
+class StreamManager : public QObject
+{
+    Q_OBJECT
 public:
-	virtual Stream *stream(int index) = 0;
+    Stream *stream(int index);
+    Stream *stream(const QString &name);
+    virtual Stream *create(int index) = 0;
 
 public slots:
-	virtual void update() = 0;
+    virtual void update() = 0;
 
 signals:
-	void removed(int index);
-	void changed(int index);
-	void added(int index);
-	void unknow(int index);
+    void removed(int index);
+    void changed(int index);
+    void added(int index);
+    void unknown(int index);
 
 protected:
-	friend class Context;
-	StreamManager(Context *parent = NULL);
-	~StreamManager();
+    void add(Stream *s);
+    void remove(Stream *s);
+    void event(int type, uint32_t index);
+    
+    class Private;
+    Private *d;
+    friend class Context;
+    friend class Private;
+    StreamManager(Context *parent = NULL, bool autoUpdate=true);
+    ~StreamManager();
 };
-
 }
-
 #endif

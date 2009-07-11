@@ -11,42 +11,52 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef QTPULSEAUDIO_SINK_H
-#define QTPULSEAUDIO_SINK_H
 
-#include <QObject>
+#ifndef QTPULSEAUDIO_DEVICE_H
+#define QTPULSEAUDIO_DEVICE_H
+#include <QString>
+#include "stream.h"
 
-#include <pulse/pulseaudio.h>
 
-#include "device.h"
+namespace QtPulseAudio
+{
 
-namespace QtPulseAudio {
-
-class SinkManager;
-class Context;
-
-class Sink: public Device
+class Device : public Stream
 {
     Q_OBJECT
+    public:
+    ~Device();
+    QString description();
+    pa_usec_t latency();
+    pa_usec_t configuredLatency();
+    uint32_t monitor();
+    QString monitorName();
+    pa_volume_t baseVolume();
+    uint32_t card();
+   
+    virtual bool isValid();
+
+    virtual uint32_t index();
+    virtual QString name();
+    virtual pa_sample_spec sampleSpec();
+    virtual pa_channel_map channelMap();
+    virtual uint32_t owner();
+    virtual pa_cvolume volume();
+    virtual int muted();
+    virtual QString driver();
+    
     signals:
     void updated();
     
     public slots:
-    virtual void update();
-    virtual void setVolume(pa_cvolume volume);
-    virtual void setMuted(int muted);
+    virtual void update() = 0;
+    virtual void setVolume(pa_cvolume volume) = 0;
+    virtual void setMuted(int muted) = 0;
     
     protected:
+    Device(int index, StreamManager *parent);
     class Private;
-    friend class Private;
     Private *d;
-    friend class SinkManager;
-    Sink(int index, SinkManager *parent = NULL, Context *context = NULL);
-    ~Sink();
-    static void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata);
-    static void volume_cb(pa_context *, int success, void *userdata);
 };
-
 }
-
 #endif

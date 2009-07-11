@@ -11,34 +11,37 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef __QtPulseAudioSinkManager_p_h__
-#define __QtPulseAudioSinkManager_p_h__
 
-#include <QHash>
-#include <QPointer>
+#include <QString>
+#include "device.h"
 
-#include "sinkmanager.h"
-
-#include <pulse/pulseaudio.h>
-
-namespace QtPulseAudio {
-
+namespace QtPulseAudio
+{
 class Sink;
+class Source;
+class Device::Private
+{
+    public:
+    bool valid;
+    
+    QString description;
+    pa_usec_t latency;
+    pa_usec_t configuredLatency;
+    uint32_t monitor;
+    QString monitorName;
+    pa_volume_t baseVolume;
+    uint32_t card;
+    uint32_t index;
+    QString name;
+    pa_sample_spec sampleSpec;
+    pa_channel_map channelMap;
+    uint32_t owner;
+    pa_cvolume volume;
+    int muted;
+    QString driver;
+    friend class Sink;
+    friend class Source;
 
-class SinkManager::Private {
-public:
-	static void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata);
-
-	Private();
-
-	void sinkEvent(int type, uint32_t index);
-
-	SinkManager *that;
-	Context *mContext;
-	bool mAutoUpdate;
-	QHash<int, Sink *> mSinks;
+    StreamManager* manager;
 };
-
 }
-
-#endif

@@ -11,57 +11,40 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef __QtPulseAudioSource_h__
-#define __QtPulseAudioSource_h__
+#ifndef QTPULSEAUDIO_SOURCE_H
+#define QTPULSEAUDIO_SOURCE_H
 
 #include <QObject>
 
 #include <pulse/pulseaudio.h>
 
-#include "stream.h"
+#include "device.h"
 
 namespace QtPulseAudio {
 
 class SourceManager;
+class Context;
 
-class Source : public Stream {
-	Q_OBJECT
-public:
-	bool isValid();
-
-	QString name();
-	uint32_t index();
-	QString description();
-	pa_sample_spec sampleSpec();
-	pa_channel_map channelMap();
-	uint32_t owner();
-	pa_cvolume volume();
-	int mute();
-	uint32_t monitorSink();
-	QString monitorSinkName();
-	pa_usec_t latency();
-	QString driver();
-	pa_source_flags_t flags();
-
-signals:
-	/**
-	 * Signal send when the server send an update on the stream status, either because,
-	 * it is was asked by the user, or because it was subscribe.
-	 */
-	void updated();
-
-public slots:
-	void update();
-    void setVolume(pa_cvolume);
-	
-protected:
-	friend class SourceManager;
-	Source(int index, SourceManager *parent = NULL);
-	~Source();
-
-	class Private;
-	friend class Private;
-	Private *d;
+class Source: public Device
+{
+    Q_OBJECT
+    signals:
+    void updated();
+    
+    public slots:
+    virtual void update();
+    virtual void setVolume(pa_cvolume volume);
+    virtual void setMuted(int muted);
+    
+    protected:
+    class Private;
+    friend class Private;
+    Private *d;
+    friend class SourceManager;
+    Source(int index, SourceManager *parent = NULL, Context *context = NULL);
+    ~Source();
+    static void source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata);
+    static void volume_cb(pa_context *, int success, void *userdata);
 };
 
 }

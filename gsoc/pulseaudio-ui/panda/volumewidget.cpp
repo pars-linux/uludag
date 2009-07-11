@@ -31,6 +31,8 @@ VolumeWidget::VolumeWidget(QWidget *parent):QWidget(parent)
 void VolumeWidget::bind(QtPulseAudio::Stream *s)
 {
     std::cout << "binding" << std::endl;
+    if(stream != 0)
+        unbind();
     stream = s;
     if(s->isValid())
         setup();
@@ -49,6 +51,7 @@ void VolumeWidget::unbind()
         slidersLayout->removeWidget(s);
         delete s;
     }
+    sliders.clear();
 }
 
 void VolumeWidget::setup()

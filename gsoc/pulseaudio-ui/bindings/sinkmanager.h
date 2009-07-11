@@ -11,8 +11,8 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef __QtPulseAudioSinkManager_h__
-#define __QtPulseAudioSinkManager_h__
+#ifndef QTPULSEAUDIO_SINKMANAGER_H
+#define QTPULSEAUDIO_SINKMANAGER_H
 
 #include <QObject>
 
@@ -20,30 +20,26 @@
 
 #include "streammanager.h"
 
-namespace QtPulseAudio {
-
+namespace QtPulseAudio
+{
 class Context;
 class Sink;
 
-class SinkManager : public StreamManager {
-	Q_OBJECT
-public:
-	virtual Stream *stream(int index);
-	virtual Sink *sink(int index);
+class SinkManager : public StreamManager
+{
+    Q_OBJECT
+    public:
+    virtual Stream *create(int index);
+    static void sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata);
 
-public slots:
-	virtual void update();
+    public slots:
+    virtual void update();
 
-protected:
-	friend class Context;
-	SinkManager(Context *parent, bool autoUpdate = true);
-	~SinkManager();
-
-	class Private;
-	friend class Private;
-	Private *d;
+    protected:
+    friend class Context;
+    SinkManager(Context *parent, bool autoUpdate = true);
+    ~SinkManager();
 };
-
 }
 
 #endif

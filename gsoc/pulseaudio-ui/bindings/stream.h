@@ -34,7 +34,7 @@ public:
 	virtual pa_channel_map channelMap() = 0;
 	virtual uint32_t owner() = 0;
 	virtual pa_cvolume volume() = 0;
-	virtual int mute() = 0;
+	virtual int muted() = 0;
 	//virtual uint32_t monitorSource();
 	//virtual const char *monitorSourceName();
 	virtual pa_usec_t latency() = 0;
