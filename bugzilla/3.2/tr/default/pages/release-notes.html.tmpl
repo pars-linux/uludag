@@ -262,343 +262,259 @@
 
 <h3>Yükseltme Adımları</h3>
 
-<p>Once you have read the notes above, see the
-  <a href="[% docs_urlbase FILTER html %]upgrade.html">Upgrading 
-  documentation</a> for instructions on how to upgrade.</p>
+<p>Yukarıdaki notları okuduktan sonra, nasıl yükselteceğiniz hakkında bilgi almak için
+  <a href="[% docs_urlbase FILTER html %]upgrade.html">Yükseltme belgesi</a>ni okuyun.</p>
 
-<h2><a name="v32_code_changes"></a>Code Changes Which May Affect 
-  Customizations</h2>
+<h2><a name="v32_code_changes"></a>Özelleştirmeleri Etkileyebilecek Kod Değişiklikleri</h2>
 
 <ul>
-  <li><a href="#v32_code_hooks">More Hooks!</a></li>
-  <li><a href="#v32_code_search">Search.pm Rearchitecture</a></li>
-  <li><a href="#v32_code_lib">lib Directory</a></li>
-  <li><a href="#v32_code_other">Other Changes</a></li>
+  <li><a href="#v32_code_hooks">Daha Fazla Kanca!</a></li>
+  <li><a href="#v32_code_search">Search.pm Mimari Değişiklikleri</a></li>
+  <li><a href="#v32_code_lib">lib Dizini</a></li>
+  <li><a href="#v32_code_other">Diğer Değişiklikler</a></li>
 </ul>
 
-<h3><a name="v32_code_hooks"></a>More Hooks!</h3>
+<h3><a name="v32_code_hooks"></a>Daha Fazla Kanca!</h3>
 
-<p>There are more code hooks in 3.2 than there were in 3.0. See the
-  documentation of <a href="[% docs_urlbase FILTER html %]api/Bugzilla/Hook.html">Bugzilla::Hook</a>
-  for more details.</p>
+<p>3.2'de 3.0'a göre daha fazla kanca var. Bu konuda bilgi için
+  <a href="[% docs_urlbase FILTER html %]api/Bugzilla/Hook.html">Bugzilla::Kanca</a>
+  bölümüne bakabilirsiniz.</p>
 
-<h3><a name="v32_code_search"></a>Search.pm Rearchitecture</h3>
+<h3><a name="v32_code_search"></a>Search.pm Mimari Değişiklikleri</h3>
 
-<p><kbd>Bugzilla/Search.pm</kbd> has been heavily modified, to be much
-  easier to read and use. It contains mostly the same code as it did in
-  3.0, but it has been moved around and reorganized significantly.</p>
+<p><kbd>Bugzilla/Search.pm</kbd> okuması ve kullanması daha kolay olsun diye büyük oranda değiştirildi. 3.0 ile arasında büyük kod değişiklikleri olmamasına rağmen, yapısı hatırı sayılır miktarda değiştirildi.</p>
 
-<h3><a name="v32_code_lib"></a>lib Directory</h3>
+<h3><a name="v32_code_lib"></a>lib Dizini</h3>
 
-<p>As part of implementing <a href="#v32_feat_install">install-module.pl</a>,
-  [%+ terms.Bugzilla %] was given a local <kbd>lib</kbd> directory which
-  it searches for modules, in addition to the standard system path.</p>
+<p><a href="#v32_feat_install">install-module.pl</a> dosyasına geçişin bir parçası olarak,
+  [%+ terms.BugzillaDat %] standart sistem yoluna ek olarak yüklenen modülleri aramada kullandığı yerel bir <kbd>lib</kbd> dizini verildi.</p>
 
-<p>This means that all [% terms.Bugzilla %] scripts now start with
-  <code>use lib qw(. lib);</code> as one of the first lines.</p>
+<p>Bu değişiklik, tüm [% terms.Bugzilla %] betiklerinin artık ilk satırlarından birinde <code>use lib qw(. lib);</code> ile geldiği anlamını da taşıyor.</p>
 
-<h3><a name="v32_code_other"></a>Other Changes</h3>
+<h3><a name="v32_code_other"></a>Diğer Değişiklikler</h3>
 
 <ul>
-  <li>You should now be using <code>get_status('NEW')</code> instead of
-    <code>status_descs.NEW</code> in templates.</li>
-  <li>The <code>[&#37;# version = 1.0 &#37;]</code> comment at the top of every
-    template file has been removed.</li>
+  <li>Şablonlarda artık <code>status_descs.NEW</code> yerine <code>get_status('NEW')</code> kullanmanız gerekiyor.</li>
+  <li>Her şablon dosyasının üzerinde bulunan <code>[&#37;# version = 1.0 &#37;]</code> yorumu kaldırıldı.</li>
 </ul>
 
-<h2><a name="v32_previous"></a>Release Notes For Previous Versions</h2>
+<h2><a name="v32_previous"></a>Önceki Sürümlerin Sürüm Notları</h2>
 
-<h1>[% terms.Bugzilla %] 3.0.x Release Notes</h1>
+<h1>[% terms.Bugzilla %] 3.0.x Sürüm Notları</h1>
 
-<h2>Table of Contents</h2>
+<h2>İçindekiler</h2>
 
 <ul class="bz_toc">
-  <li><a href="#v30_introduction">Introduction</a></li>
-  <li><a href="#v30_point">Updates In This 3.0.x Release</a></li>
-  <li><a href="#v30_req">Minimum Requirements</a></li>
-  <li><a href="#v30_feat">New Features and Improvements</a></li>
-  <li><a href="#v30_issues">Outstanding Issues</a></li>
-  <li><a href="#v30_security">Security Fixes In This Release</a></li>
-  <li><a href="#v30_upgrading">How to Upgrade From An Older Version</a></li>
-  <li><a href="#v30_code_changes">Code Changes Which May Affect 
-    Customizations</a></li>
-  <li><a href="#v30_previous">Release Notes for Previous Versions</a></li>
+  <li><a href="#v30_introduction">Giriş</a></li>
+  <li><a href="#v30_point">Bu 3.0.x Sürümündeki Güncellemeler</a></li>
+  <li><a href="#v30_req">En Düşük Gereksinimler</a></li>
+  <li><a href="#v30_feat">Yeni Özellikler ve Geliştirmeler</a></li>
+  <li><a href="#v30_issues">Problem Oluşturabilecek Noktalar</a></li>
+  <li><a href="#v30_security">Bu Sürümdeki Güvenlik Düzeltmeleri</a></li>
+  <li><a href="#v30_upgrading">Eski Bir Sürümden Nasıl Yükseltilir</a></li>
+  <li><a href="#v30_code_changes">Özelleştirmeleri Etkileyebilecek Değişiklikler</a></li>
+  <li><a href="#v30_previous">Önceki Sürümlerin Sürüm Notları</a></li>
 </ul>
 
-<h2><a name="v30_introduction"></a>Introduction</h2>
+<h2><a name="v30_introduction"></a>Giriş</h2>
 
-<p>Welcome to [% terms.Bugzilla %] 3.0! It's been over eight years since
-  we released [% terms.Bugzilla %] 2.0, and everything has changed since
-  then. Even just since our previous release, [% terms.Bugzilla %] 2.22,
-  we've added a <em>lot</em> of new features. So enjoy the release, we're
-  happy to bring it to you.</p>
+<p>[% terms.Bugzilla %] 3.0'a hoşgeldiniz! [% terms.Bugzilla %] 2.0'dan bu yana sekiz yıl geçti, ve o zamandan bu yana herşey değişti. Bir önceki sürümümüz olan  [% terms.Bugzilla %] 2.22'den beri bile <em>çok</em> sayıda yeni özellik ekledik. Bu sürümü size ulaştırabildiğimiz için mutluyuz, keyfini çıkarın.</p>
 
-<p>If you're upgrading, make sure to read <a href="#v30_upgrading">How to
-  Upgrade From An Older Version</a>. If you are upgrading from a release
-  before 2.22, make sure to read the release notes for all the 
-  <a href="#v30_previous">previous versions</a> in between your version 
-  and this one.</p>
+<p>Eğer yükseltiyorsanız <a href="#v30_upgrading">Önceki Sürümlerden Yükseltme</a> sayfasını okumayı unutmayın. Eğer 2.22 öncesi bir sürümden yükseltiyorsanız sizin kullanmakta olduğunuz sürümden itibaren olan <a href="#v30_previous">önceki tüm sürümler</a>in tamamının yükseltme notlarını okumayı unutmayın.</p>
 
-<h2><a name="v30_point">Updates in this 3.0.x Release</a></h2>
+<h2><a name="v30_point">Bu 3.0.x Sürümündeki Güncellemeler</a></h2>
 
-<p>This section describes what's changed in the most recent b<!-- -->ug-fix
-  releases of [% terms.Bugzilla %] after 3.0. We only list the
-  most important fixes in each release. If you want a detailed list of
-  <em>everything</em> that's changed in each version, you should use our
-  <a href="http://www.bugzilla.org/status/changes.html">Change Log Page</a>.</p>
+<p>Bu bölüm 3.0 sonrası hata düzeltme sürümlerinde [% terms.BugzillaLoc %] nelerin değiştiğini açıklar. Her sürüm için en önemli değişiklikleri listeliyoruz. Eğer her sürümde değişen <em>herşeyin</em> detaylı bir listesini isterseniz <a href="http://www.bugzilla.org/status/changes.html">Değişiklik Günlüğü Sayfası</a>nı kullanmalısınız.</p>
 
 <h3>3.0.6</h3>
 
 <ul>
-  <li>Before 3.0.6, unexpected fatal WebService errors would result in
-    a <code>faultCode</code> that was a string instead of a number.
+  <li>3.0.6 öncesinde sonlandırıcı düzeydeki WebService hataları numara yerine dizge olan bir <code>faultCode</code> döndürüyordu.
    (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=446327">[% terms.Bug %] 446327</a>)</li>
-  <li>If you created a product or component with the same name as one you
-    previously deleted, it would fail with an error about the series table.
-    (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=247936">[% terms.Bug %] 247936</a>)</li>
+  <li>Daha önce sildiğiniz bir ürün ya da bileşeni yeniden oluşturmaya kalktığınızda, seri tablosu hakkında bir hata vererek başarısızlıkla sonuçlanıyordu. (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=247936">[% terms.Bug %] 247936</a>)</li>
 </ul>
 
-<p>See also the <a href="#v30_security">Security Advisory</a> section for
-  information about a security issue fixed in this release.</p>
+<p>Ayrıca bu sürümde düzeltilen güvenlik problemleri ile ilgili olarak da <a href="#v30_security">Güvenlik Bildirileri</a> bölümüne bakın.</p>
 
 <h3>3.0.5</h3>
 
 <ul>
-  <li>If you don't have permission to set a flag, it will now appear
-    unchangeable in the UI.
+  <li>Eğer bir bayrağı atama izniniz yoksa, arayüzde artık değiştirilemez şekilde görüntüleniyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=433851">[% terms.Bug %] 433851</a>)</li>
-  <li>If you were running mod_perl, [% terms.Bugzilla %] was not correctly
-    closing its connections to the database since 3.0.3, and so sometimes
-    the DB would run out of connections.
+  <li>Eğer mod_perl çalıştırıyorsanız, [% terms.Bugzilla %] 3.0.3 sürümünden bu yana veritabanı bağlantılarını düzgün şekilde kapatmıyordu, dolayısıyla bazen veritabanına bağlantı sınırına ulaşılıyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=441592">[% terms.Bug %] 441592</a>)</li>
-  <li>The installation script is now clear about exactly which 
-    <code>Email::</code> modules are required in Perl, thus avoiding the
-    problem where emails show up with a body like 
-    <samp>SCALAR(0xBF126795)</samp>.
+  <li>Kurulum betiği artık Perl'de hangi <code>Email::</code> modüllerinin gerektiğini açık bir şekilde belirtiyor ve böylece 
+    <samp>SCALAR(0xBF126795)</samp> gibi eposta gövdeleri önlenebiliyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=441541">[% terms.Bug %] 441541</a>)</li>
   <li><a href="[% docs_urlbase FILTER html %]api/email_in.html">email_in.pl</a>
-    is no longer case-sensitive for values of <kbd>@product</kbd>.
+    artık <kbd>@product</kbd> değerlerini büyük-küçük harf duyarlı almıyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=365697">[% terms.Bug %] 365697</a>)</li>
 </ul>
 
-<p>See also the <a href="#v30_security">Security Advisory</a> section for
-  information about security issues fixed in this release.</p>
+<p>Ayrıca bu sürümde düzeltilen güvenlik problemleri ile ilgili olarak da <a href="#v30_security">Güvenlik Bildirileri</a> bölümüne bakın.</p>
 
 <h3>3.0.4</h3>
 
 <ul>
-  <li>[% terms.Bugzilla %] administrators were not being correctly notified
-    about new releases.
+  <li>[% terms.Bugzilla %] yöneticileri yeni sürümlerden haberdar edilmiyorlardı.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=414726">[% terms.Bug %] 414726</a>)</li>
 
-  <li>There could be extra whitespace in email subject lines.
+  <li>Eposta konu satırlarında ek boşluklar bulunabiliyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=411544">[% terms.Bug %] 411544</a>)</li>
 
-  <li>The priority, severity, OS, and platform fields were always required by
-    the <kbd>B<!-- -->ug.create</kbd> WebService function, even if they had
-    defaults specified.
+  <li><kbd>B<!-- -->ug.create</kbd> WebService fonksiyonu öncelik, önem, işletim sistemi ve platform alanlarının girilmesini bu alanların öntanımlı değerleri olsa bile zorunlu kılıyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=384009">[% terms.Bug %] 384009</a>)</li>
 
-  <li>Better threading of [% terms.bug %]mail in some email clients.
+  <li>Bazı eposta istemcilerinde [% terms.bug %] epostalarının daha düzgün dizilmesi.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=376453">[% terms.Bug %] 376453</a>)</li>
 
-  <li>There were many fixes to the Inbound Email Interface 
-    (<kbd>email_in.pl</kbd>).
+  <li>Gelen Eposta Arayüzü'nde (<kbd>email_in.pl</kbd>) çok sayıda düzeltme yapıldı.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=92274">[% terms.Bug %] 92274</a>,
      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=377025">[% terms.Bug %] 377025</a>,
      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=412943">[% terms.Bug %] 412943</a>,
-     <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=413672">[% terms.Bug %] 413672</a>, and
+     <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=413672">[% terms.Bug %] 413672</a> ve
      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=431721">[% terms.Bug %] 431721</a>)</li>
 
-  <li>checksetup.pl now handles UTF-8 conversion more reliably during upgrades.
+  <li>checksetup.pl artık yükseltme sırasında UTF-8 dönüşümünü daha düzgün yapıyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=374951">[% terms.Bug %] 374951</a>)</li>
 
-  <li>Comments written in CJK languages are now correctly word-wrapped.
+  <li>Uzak Doğu dillerinde yazılan yorumlar artık satır sonlarında doğru yerlerden kesiliyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=388723">[% terms.Bug %] 388723</a>)</li>
 
-  <li>All emails will now be sent in the correct language, when the user
-    has chosen a language for emails.
+  <li>Kullanıcı epostalar için bir dil seçtiğinde artık tüm epostalar doğru dilde gönderiliyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=405946">[% terms.Bug %] 405946</a>)
 
-  <li>On Windows, temporary files created when uploading attachments are now
-    correctly deleted when the upload is complete.
+  <li>Windowa'da ek yükleme sırasında oluşturulan geçici dosyalar yükleme işlemi tamamlandığında doğru şekilde siliniyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=414002">[% terms.Bug %] 414002</a>)</li>
 
-  <li><kbd>checksetup.pl</kbd> now prints correct installation instructions
-    for Windows users using Perl 5.10.
+  <li><kbd>checksetup.pl</kbd> artık Perl 5.10 kullanan Windows kullanıcıları için doğru yönergeler yazıyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=414430">[% terms.Bug %] 414430</a>)
 </ul>
 
-<p>See also the <a href="#v30_security">Security Advisory</a> section for
-  information about security issues fixed in this release.</p>
+<p>Ayrıca bu sürümde düzeltilen güvenlik problemleri ile ilgili olarak da <a href="#v30_security">Güvenlik Bildirileri</a> bölümüne bakın.</p>
 
 <h3>3.0.3</h3>
 
 <ul>
-  <li>mod_perl no longer compiles [% terms.Bugzilla %]'s code for each Apache
-    process individually. It now compiles code only once and shares it among
-    each Apache process. This greatly improves performance and highly 
-    decreases the memory footprint.
+  <li>mod_perl artık her Apache süreci için [% terms.Bugzilla %] kodu derlemiyor, sadece bir kez derleyip tüm süreçlerde aynı derlenmiş kodu kullanıyor. Bu performansı büyük oranda etkiliyor ve hafıza kullanımını azaltıyor.
    (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=398241">[% terms.Bug %] 398241</a>)</li>
 
-  <li>You can now search for '---' (without quotes) in versions and milestones.
+  <li>Artık sürüm ve aşamalarda '---' (tırnaksız olarak) arayabiliyorsunuz.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=362436">[% terms.Bug %] 362436</a>)</li>
 
-  <li>[% terms.Bugzilla %] should no longer break lines unnecessarily in 
-    email subjects. This was causing trouble with some email clients.
+  <li>[% terms.Bugzilla %] artık eposta konu kısımlarında satır bölmüyor. Önceki davranış bazı eposta istemcilerinde problemlere neden oluyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=374424">[% terms.Bug %] 374424</a>)</li>
 
-  <li>If you had selected "I'm added to or removed from this capacity" option
-    for the "CC" role in your email preferences, you wouldn't get mail when
-    more than one person was added to the CC list at once.
+  <li>Eğer eposta tercihlerinizde "haber verilecekler" rolü için "buna eklendiğimde ya da çıkarıldığımda" seçeneğini işaretlemişseniz, haber verilecekler listesine bir kerede birden fazla kişi eklendiğinde ilgili eposta gönderilmiyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=394796">[% terms.Bug %] 394796</a>)</li>
 
-  <li>Deleting a user account no longer deletes whines from another user who
-    has the deleted account as addressee. The schedule is simply removed, 
-    but the whine itself is left intact.
+  <li>Kullanıcı hesaplarını silmek artık o kullanıcıyı alıcı olarak belirlemiş kullanıcıların alarmlarını silmiyor. Takvim siliniyor fakat alarmlar tutuluyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=395924">[% terms.Bug %] 395924</a>)</li>
 
-  <li><kbd>contrib/merge-users.pl</kbd> now correctly merges all required
-    fields when merging two user accounts.
+  <li><kbd>contrib/merge-users.pl</kbd> artık iki kullanıcı hesabını birleştirirken zorunlu tüm alanları doğru şekilde birleştiriyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=400160">[% terms.Bug %] 400160</a>)</li>
 
-  <li>[% terms.Bugzilla %] no longer requires Apache::DBI to run under 
-    mod_perl. It caused troubles such as lost connections with the DB and
-    didn't give any important performance gain.
+  <li>[% terms.Bugzilla %] artık mod_perl altında çalışabilmek için Apache::DBI'a gerek duymuyor. Veritabanı bağlantılarının kaybedilmesi gibi problemlere neden oluyordu ve hatırı sayılır bir performans artışı katmıyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=408766">[% terms.Bug %] 408766</a>)</li>
 </ul>
 
 <h3>3.0.2</h3>
 
 <ul>
-  <li>[% terms.Bugzilla %] should now work on Perl 5.9.5 (and thus the
-    upcoming Perl 5.10.0).
+  <li>[% terms.Bugzilla %] Perl 5.9.5 (dolayısıyla da Perl 5.10.0) ile sorunsuz çalışıyor olmalı.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=390442">[% terms.Bug %] 390442</a>)</li>
 </ul>
 
-<p>See also the <a href="#v30_security">Security Advisory</a> section for
-  information about an important security issue fixed in this release.</p>
+<p>Ayrıca bu sürümde düzeltilen güvenlik problemleri ile ilgili olarak da <a href="#v30_security">Güvenlik Bildirileri</a> bölümüne bakın.</p>
 
 <h3>3.0.1</h3>
 
 <ul>
-  <li>For users of Firefox 2, the <code>show_bug.cgi</code> user interface
-    should no longer "collapse" after you modify a [% terms.bug %].
+  <li>Firefox 2 kullanırken, the <code>show_bug.cgi</code> artık [% terms.abugAcc %] değiştirdiğinizde dağılmamalı.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=370739">[% terms.Bug %] 370739</a>)</li>
-  <li>If you can bless a group, and you share a saved search with that
-    group, it will no longer automatically appear in all of that group's
-    footers unless you specifically request that it automatically appear
-    in their footers.
+  <li>Eğer bir grubu onaylayabiliyorsanız ve o grupla bir kayıtlı arama paylaşmışsınız artık siz özellikle istemedikten sonra o kayıtlı arama o grubun sayfa altlığında görünmüyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=365890">[% terms.Bug %] 365890</a>)</li>
-  <li>There is now a parameter to allow users to perform searches without
-    any search terms. (In other words, to search for just a Product
-    and Status on the Simple Search page.) The parameter is called
-    <code>specific_search_allow_empty_words</code>.
+  <li>Artık boş bir arama yapmaya, yani Basit Arama sayfasında sadece bir ürün ve durum aramaya olanak veren bir parametre bulunuyor. Parametre <code>specific_search_allow_empty_words</code>.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=385910">[% terms.Bug %] 385910</a>)</li>
-  <li>If you attach a file that has a MIME-type of <code>text/x-patch</code>
-    or <code>text/x-diff</code>, it will automatically be treated as a 
-    patch by [% terms.Bugzilla %].
+  <li><code>text/x-patch</code> ya da <code>text/x-diff</code> türünde bir dosya eklerseniz, [% terms.Bugzilla %] tarafından otomatik olarak bir yama kabul edilir.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=365756">[% terms.Bug %] 365756</a>)</li>
-  <li>Dependency Graphs now work correctly on all mod_perl installations.
-    There should now be no remaining signficant problems with running
-    [%+ terms.Bugzilla %] under mod_perl.
+  <li>Bağımlılık Grafikleri artık tüm mod_perl kurulumlarında düzgün çalışıyor. [%+ terms.Bugzilla %] mod_perl altında çalışırken kayda değer bir problem çıkarmaması gerekiyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=370398">[% terms.Bug %] 370398</a>)</li>
-  <li>If moving a [% terms.bug %] between products would remove groups
-    from the [% terms.bug %], you are now warned.
+  <li>Eğer [% terms.abugAcc %] ürünler arasında taşımak [% terms.bugAbl %] bazı grupları çıkaracaksa, artık bu konuda bir uyarı veriliyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=303183">[% terms.Bug %] 303183</a>)</li>
-  <li>On IIS, whenever [% terms.Bugzilla %] threw a warning, it would
-    actually appear on the web page. Now warnings are suppressed,
-    unless you have a file in the <code>data</code> directory called
-    <code>errorlog</code>, in which case warnings will be printed there.
+  <li>IIS'de, [% terms.Bugzilla %] bir uyarı verdiğinde, sayfada görünüyordu. Artık hatalar görüntülenmiyor; ama eğer <code>data</code> dizininde <code>errorlog</code> isminde bir dosya varsa, uyarılar oraya yazılıyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=390148">[% terms.Bug %] 390148</a>)</li>
-  <li>If you used <kbd>email_in.pl</kbd> to edit [% terms.abug %] that was
-    protected by groups, all of the groups would be cleared.
+  <li>Eğer gruplar tarafından korunan [% terms.abug %] üzerinde değişiklik yapmak için <kbd>email_in.pl</kbd> dosyasını kullandıysanız, tüm gruplar temizleniyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=385453">[% terms.Bug %] 385453</a>)</li>
-  <li>PostgreSQL users: New Charts were failing to collect data over time.
-    They will now start collecting data correctly.
+  <li>PostgreSQL kullanıcıları: Yeni Çizelgeler veri toplamayı başaramıyordu. Artık doğru şekilde veri toplayabiliyorlar.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=257351">[% terms.Bug %] 257351</a>)</li>
-  <li>Some flag mails didn't specify who the requestee was. 
+  <li>Bazı bayrak epostaları bayrağı isteyenin kim olduğunu belirtmiyordu. 
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=379787">[% terms.Bug %] 379787</a>)</li>
-  <li>Instead of throwing real errors, <kbd>collectstats.pl</kbd> would
-    just say that it couldn't find <code>ThrowUserError</code>.
+  <li><kbd>collectstats.pl</kbd> gerçek hatalar basmak yerine <code>ThrowUserError</code>'u bulamadığını söylüyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=380709">[% terms.Bug %] 380709</a>)</li>
-  <li>Logging into [% terms.Bugzilla %] from the home page works again
-    with IIS5. 
+  <li>IIS5'te ana sayfadan [% terms.BugzillaDat %] oturum açmak yeniden çalışıyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=364008">[% terms.Bug %] 364008</a>)</li>
-  <li>If you were using SMTP for sending email, sometimes emails would
-    be missing the <code>Date</code> header.
+  <li>Eposta göndermek için SMTP kullanıyorsanız, bazen epostalarda <code>Date</code> başlığı bulunmuyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=304999">[% terms.Bug %] 304999</a>).</li>
-  <li>In the XML-RPC WebService, <code>B<!-- -->ug.legal_values</code> now
-    correctly returns values for custom fields if you request values 
-    for custom fields.
+  <li>XML-RPC WebService'de, özel alanların değerini istediyseniz <code>B<!-- -->ug.legal_values</code> artık özel alanların değerlerini doğru döndürüyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=381737">[% terms.Bug %] 381737</a>)</li>
-  <li>The "[% terms.Bug %]-Writing Guidelines" page has been shortened
-    and re-written.
+  <li>"[% terms.Bug %] Yazma Kılavuzu" sayfası kısaltıldı ve yeniden yazıldı.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=378590">[% terms.Bug %] 378590</a>)</li>
-  <li>If your <code>urlbase</code> parameter included a port number,
-    like <code>www.domain.com:8080</code>, SMTP might have failed.
+  <li>Eğer <code>urlbase</code> parametresi <code>www.domain.com:8080</code> gibi bir port numarası içeriyorsa SMTP başarısızlıkla sonuçlanabiliyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=384501">[% terms.Bug %] 384501</a>)</li>
-  <li>For SMTP users, there is a new parameter, <code>smtp_debug</code>.
-    Turning on this parameter will log the full information about
-    every SMTP session to your web server's error log, to help with
-    debugging issues with SMTP.
+  <li>SMTP kullanıcıları için artık <code>smtp_debug</code> isminde yeni bir parametre bulunuyor. Bu parametre açıldığında, SMTP ile ilgili problemleri gidermek amacıyla, her SMTP oturumu hakkındaki tüm bilgi web sunucunun hata günlüğüne kaydediliyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=384497">[% terms.Bug %] 384497</a>)</li>
-  <li>If you are a "global watcher" (you get all mails from every 
-    [% terms.bug %]), you can now see that in your Email Preferences.
+  <li>Eğer "küresel" bir izleyici iseniz (her [% terms.bug %] hakkındaki tüm epostaları alıyorsanız, artık bu ayarı Eposta Tercihleri'nde görebiliyorsunuz.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=365302">[% terms.Bug %] 365302</a>)</li>
-  <li>The Status and Resolution of [% terms.bugs %] are now correctly
-    localized in CSV search results.
+  <li>[% terms.BugsGen %] durum ve kararları artık CSV arama sonuçlarında doğru şekilde yerelleştiriliyor.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=389517">[% terms.Bug %] 389517</a>)</li>
-  <li>The "Subject" line of an email was being mangled if it contained
-    non-Latin characters.
+  <li>Eğer bir epostanın "Konu" kısmında Latin alfabesi dışında karakterler bulunuyorsa konu parçalanıyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=387860">[% terms.Bug %] 387860</a>)</li>
-  <li>Editing the "languages" parameter using <kbd>editparams.cgi</kbd> would
-    sometimes fail, causing [% terms.Bugzilla %] to throw an error.
+  <li><kbd>editparams.cgi</kbd> kullanarak "languages" parametresini değiştirme işlemi bazen başarısız oluyordu ve [% terms.Bugzilla %] hata veriyordu.
     (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=335354">[% terms.Bug %] 335354</a>)</li>
 </ul>
 
-<h2><a name="v30_req"></a>Minimum Requirements</h2>
+<h2><a name="v30_req"></a>En Düşük Gereksinimler</h2>
 
-<p>Any requirements that are new since 2.22 will look like
-  <span class="req_new">this</span>.</p>
+<p>Sürüm 2.22'den sonra eklenen gereksinimler
+  <span class="req_new">böyle</span> görünür.</p>
 
 <ul>
   <li><a href="#v30_req_perl">Perl</a></li>
-  <li><a href="#v30_req_mysql">For MySQL Users</a></li>
-  <li><a href="#v30_req_pg">For PostgreSQL Users</a></li>
-  <li><a href="#v30_req_modules">Required Perl Modules</a></li>
-  <li><a href="#v30_req_optional_mod">Optional Perl
-    Modules</a></li>
+  <li><a href="#v30_req_mysql">MySQL Kullanıcıları İçin</a></li>
+  <li><a href="#v30_req_pg">PostgreSQL Kullanıcıları İçin</a></li>
+  <li><a href="#v30_req_modules">Gerekli Perl Modülleri</a></li>
+  <li><a href="#v30_req_optional_mod">İsteğe Bağlı Perl
+    Modülleri</a></li>
 </ul>
 
 
 <h3><a name="v30_req_perl"></a>Perl</h3>
 
 <ul>
-  <li>Perl <span class="req_new">v<strong>5.8.0</strong></span> (non-Windows 
-    platforms)</li>
-  <li>Perl v<strong>5.8.1</strong> (Windows platforms)</li>
+  <li>Perl <span class="req_new">sürüm <strong>5.8.0</strong></span> (Windows dışı platformlarda)</li>
+  <li>Perl v<strong>5.8.1</strong> (Windows platformunda)</li>
 </ul>
 
-<h3><a name="v30_req_mysql"></a>For MySQL Users</h3>
+<h3><a name="v30_req_mysql"></a>MySQL Kullanıcıları İçin</h3>
 
 <ul>
   <li>MySQL v4.1.2</li>
-  <li><strong>perl module:</strong> DBD::mysql v2.9003</li>
+  <li><strong>perl modülü:</strong> DBD::mysql v2.9003</li>
 </ul>
 
-<h3><a name="v30_req_pg"></a>For PostgreSQL Users</h3>
+<h3><a name="v30_req_pg"></a>PostgreSQL Kullanıcıları İçin</h3>
 
 <ul>
-  <li>PostgreSQL v8.00.0000</li>
-  <li><strong>perl module:</strong> DBD::Pg v1.45</li>
+  <li>PostgreSQL sürüm 8.00.0000</li>
+  <li><strong>perl modülü:</strong> DBD::Pg sürüm 1.45</li>
 </ul>
 
-<h3><a name="v30_req_modules"></a>Required Perl Modules</h3>
+<h3><a name="v30_req_modules"></a>Gerekli Perl Modülleri</h3>
 
 <table class="req_table" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <th>Module</th> <th>Version</th>
+    <th>Modül</th> <th>Sürüm</th>
   </tr>
     <tr><td>CGI</td> <td>2.93</td>
   </tr>
@@ -629,85 +545,84 @@
   </tr>
 </table>
 
-<h3><a name="v30_req_optional_mod"></a>Optional Perl Modules</h3>
+<h3><a name="v30_req_optional_mod"></a>İsteğe Bağlı Perl Modülleri</h3>
 
-<p>The following perl modules, if installed, enable various
-  features of [% terms.Bugzilla %]:</p>
+<p>Aşağıdaki Perl modülleri, eğer yüklüyseler, [% terms.BugzillaGen %] çeşitli özelliklerini açarlar:</p>
 
 <table class="req_table" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <th>Module</th> <th>Version</th>
-    <th>Enables Feature</th>
+    <th>Modül</th> <th>Sürüm</th>
+    <th>Açtığı Özellik</th>
   </tr>
    <tr>
      <td class="req_new">LWP::UserAgent</td> 
-     <td class="req_new">(Any)</td> 
-     <td>Automatic Update Notifications</td>
+     <td class="req_new">(Herhangi biri)</td> 
+     <td>Otomatik Güncelleme Bildirimleri</td>
   </tr>
   <tr>
     <td>Template::Plugin::GD::Image</td> 
-    <td>(Any)</td> 
-    <td>Graphical Reports</td>
+    <td>(Herhangi bir)</td> 
+    <td>Grafik Raporlar</td>
   </tr>
   <tr>
     <td>GD::Graph</td> 
-    <td>(Any)</td> 
-    <td>Graphical Reports</td>
+    <td>(Herhangi bir)</td> 
+    <td>Grafik Raporlar</td>
   </tr>
   <tr>
     <td>GD::Text</td> 
-    <td>(Any)</td> 
-    <td>Graphical Reports</td>
+    <td>(Herhangi biri)</td> 
+    <td>Grafik Raporlar</td>
   </tr>
   <tr>
     <td>GD</td> 
     <td>1.20</td> 
-    <td>Graphical Reports, New Charts, Old Charts</td>
+    <td>Grafik Raporlar, Yeni Çizelgeler, Eski Çizelgeler</td>
   </tr>
   <tr>
     <td class="req_new">Email::MIME::Attachment::Stripper</td> 
-    <td class="req_new">(Any)</td> 
-    <td>Inbound Email</td>
+    <td class="req_new">(Herhangi biri)</td> 
+    <td>Gelen Eposta</td>
   </tr>
   <tr>
     <td class="req_new">Email::Reply</td> 
-    <td class="req_new">(Any)</td> 
-    <td>Inbound Email</td>
+    <td class="req_new">(Herhangi biri)</td> 
+    <td>Gelen Eposta</td>
   </tr>
   <tr>
     <td>Net::LDAP</td> 
-    <td>(Any)</td> 
-    <td>LDAP Authentication</td>
+    <td>(Herhangi biri)</td> 
+    <td>LDAP Kimlik Doğrulama</td>
   </tr>
   <tr>
     <td>HTML::Parser</td> 
     <td>3.40</td> 
-    <td>More HTML in Product/Group Descriptions</td>
+    <td>Ürün ve Grup açıklamalarında daha fazla HTML</td>
   </tr>
   <tr>
     <td>HTML::Scrubber</td> 
-    <td>(Any)</td> 
-    <td>More HTML in Product/Group Descriptions</td>
+    <td>(Herhangi biri)</td> 
+    <td>Ürün ve Grup açıklamalarında daha fazla HTML</td>
   </tr>
   <tr>
     <td>XML::Twig</td> 
-    <td>(Any)</td> 
-    <td>Move [% terms.Bugs %] Between Installations</td>
+    <td>(Herhangi biri)</td> 
+    <td>[% terms.BugsPluAcc %] kurulumlar arasında taşıma</td>
   </tr>
   <tr>
     <td>MIME::Parser</td> 
     <td>5.406</td> 
-    <td>Move [% terms.Bugs %] Between Installations</td>
+    <td>[% terms.BugsPluAcc %] kurulumlar arasında taşıma</td>
   </tr>
   <tr>
     <td>Chart::Base</td> 
     <td>1.0</td> 
-    <td>New Charts, Old Charts</td>
+    <td>Yeni Çizelgeler, Eski Çizelgeler</td>
   </tr>
   <tr>
     <td>Image::Magick</td> 
-    <td>(Any)</td> 
-    <td>Optionally Convert BMP Attachments to PNGs</td>
+    <td>(Herhangi biri)</td> 
+    <td>BMP resimleri PNG'ye dönüştürme</td>
   </tr>
   <tr>
     <td>PatchReader</td> 
@@ -716,8 +631,8 @@
   </tr>
   <tr>
     <td class="req_new">SOAP::Lite</td> 
-    <td class="req_new">(Any)</td> 
-    <td>XML-RPC Interface</td>
+    <td class="req_new">(Herhangi biri)</td> 
+    <td>XML-RPC Arayüzü</td>
   </tr>
   <tr>
     <td class="req_new">mod_perl2</td> 
@@ -731,7 +646,7 @@
   </tr>
 </table>
 
-<h2><a name="v30_feat"></a>New Features and Improvements</h2>
+<h2><a name="v30_feat"></a>Yeni Özellikler ve Geliştirmeler</h2>
 
 <ul>
   <li><a href="#v30_feat_cf">Custom Fields</a></li>
@@ -1070,7 +985,7 @@
     installation.</li>
 </ul>
 
-<h2><a name="v30_issues"></a>Outstanding Issues</h2>
+<h2><a name="v30_issues"></a>Problem Oluşturabilecek Noktalar</h2>
 
 <ul>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=69621">
@@ -1087,9 +1002,9 @@
     the same time, there is no "mid-air collision" protection.</li>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=276230">
     [%- terms.Bug %] 276230</a>: The support for restricting access to 
-    particular Categories of New Charts is not complete. You should treat 
+    particular Categories of Yeni Çizelgeler is not complete. You should treat 
     the 'chartgroup' Param as the only access mechanism available.<br>
-    However, charts migrated from Old Charts will be restricted to 
+    However, charts migrated from Eski Çizelgeler will be restricted to 
     the groups that are marked MANDATORY for the corresponding Product.
     There is currently no way to change this restriction, and the 
     groupings will not be updated if the group configuration
@@ -1150,7 +1065,7 @@
   uncommonly-used template. For details, see the 
   <a href="http://www.bugzilla.org/security/2.20.4/">Security Advisory</a>.</p>
 
-<h2><a name="v30_upgrading"></a>How to Upgrade From An Older Version</h2>
+<h2><a name="v30_upgrading"></a>Eski Bir Sürümden Nasıl Yükseltilir</h2>
 
 <h3><a name="v30_upgrading_notes"></a>Notes For Upgraders</h3>
 
@@ -1172,9 +1087,9 @@
     the instructions of checksetup.pl.</li>
   <li>If you ever ran 2.23.3, 2.23.4, or 3.0rc1, you will have to run
     <kbd>./collectstats.pl --regenerate</kbd> at the command line, because
-    the data for your Old Charts is corrupted. This can take several days,
-    so you may only want to run it if you use Old Charts.</li>
-  <li>You should also read the Outstanding Issues sections of
+    the data for your Eski Çizelgeler is corrupted. This can take several days,
+    so you may only want to run it if you use Eski Çizelgeler.</li>
+  <li>You should also read the Problem Oluşturabilecek Noktalar sections of
     <a href="#v30_previous">older release notes</a> if you are upgrading
     from a version lower than 2.22.</li>
 </ul>
@@ -1343,7 +1258,7 @@ sub y { $var++ }</pre>
     still exists, but the file is empty.</li>
 </ul>
 
-<h2><a name="v30_previous"></a>Release Notes For Previous Versions</h2>
+<h2><a name="v30_previous"></a>Önceki Sürümlerin Sürüm Notları</h2>
 
 <p>Release notes for versions of [% terms.Bugzilla %] for versions
   prior to 3.0 are only available in text format: 
@@ -1385,7 +1300,7 @@ sub y { $var++ }</pre>
         <td [% 'class="req_new"' IF updated.contains(req.package) 
                                     OR new.contains(req.package) %]>
           [%- IF req.version == 0 %]
-            (Any)
+            (Herhangi biri)
           [% ELSE %]
             [%- req.version FILTER html %]
           [% END %]
