@@ -640,7 +640,7 @@
     <td>mod_perl</td>
   </tr>
   <tr>
-    <td> CGI</td> 
+    <td>CGI</td> 
     <td>3.11</td> 
     <td>mod_perl</td>
   </tr>
@@ -649,104 +649,71 @@
 <h2><a name="v30_feat"></a>Yeni Özellikler ve Geliştirmeler</h2>
 
 <ul>
-  <li><a href="#v30_feat_cf">Custom Fields</a></li>
-  <li><a href="#v30_feat_mp">mod_perl Support</a></li>
-  <li><a href="#v30_feat_sq">Shared Saved Searches</a></li>
+  <li><a href="#v30_feat_cf">Özel Alanlar</a></li>
+  <li><a href="#v30_feat_mp">mod_perl Desteği</a></li>
+  <li><a href="#v30_feat_sq">Paylaşılabilen Kayıtlı Aramalar</a></li>
   <li>
-    <a href="#v30_feat_afn">Attachments and Flags on New [% terms.Bugs %]</a>
+    <a href="#v30_feat_afn">Yeni [% terms.BugsPluLoc %] Ekler ve Bayraklar</a>
   </li>
-  <li><a href="#v30_feat_cr">Custom Resolutions</a></li>
-  <li><a href="#v30_feat_ppp">Per-Product Permissions</a></li>
-  <li><a href="#v30_feat_ui">User Interface Improvements</a></li>
-  <li><a href="#v30_feat_xml">XML-RPC Interface</a></li>
-  <li><a href="#v30_feat_skin">Skins</a></li>
-  <li><a href="#v30_feat_sbu">Unchangeable Fields Appear 
-    Unchangeable</a></li>
-  <li><a href="#v30_feat_et">All Emails in Templates</a></li>
-  <li><a href="#v30_feat_df">No More Double-Filed [% terms.Bugs %]</a></li>
-  <li><a href="#v30_feat_cc">Default CC List for Components</a></li>
-  <li><a href="#v30_feat_emi">File/Modify [% terms.Bugs %] By Email</a></li>
-  <li><a href="#v30_feat_gw">Users Who Get All [% terms.Bug %] 
-    Notifications</a></li>
+  <li><a href="#v30_feat_cr">Özel Kararlar</a></li>
+  <li><a href="#v30_feat_ppp">Ürüne Özel İzinler</a></li>
+  <li><a href="#v30_feat_ui">Kullanıcı Arayüzü İyileştirmeleri</a></li>
+  <li><a href="#v30_feat_xml">XML-RPC Arayüzü</a></li>
+  <li><a href="#v30_feat_skin">Deriler</a></li>
+  <li><a href="#v30_feat_sbu">Değiştirilemez Alanların Değiştirilemez Olarak Görünmesi</a></li>
+  <li><a href="#v30_feat_et">Tüm Epostaların Şablonlara Taşınması</a></li>
+  <li><a href="#v30_feat_df">[% terms.BugsPluGen %] İki Kez Kaydedilmemesi</a></li>
+  <li><a href="#v30_feat_cc">Bileşenlere Varsayılan Haber Verilecekler Listesi Atanabilmesi</a></li>
+  <li><a href="#v30_feat_emi">Epostayla [% terms.Bug %] Raporlayabilme ve Değiştirebilme</a></li>
+  <li><a href="#v30_feat_gw">Tüm [% terms.Bug %] Bildirimlerini Alan Kullanıcılar</a></li>
   <li><a href="#v30_feat_utf8">Geliştirilmiş UTF-8 Desteği</a></li>
-  <li><a href="#v30_feat_upda">Automatic Update Notification</a></li>
-  <li><a href="#v30_feat_welc">Welcome Page for New Installs</a></li>
+  <li><a href="#v30_feat_upda">Otomatik Güncelleme Bildirimi</a></li>
+  <li><a href="#v30_feat_welc">Yeni Kurulumlarda 'Hoşgeldiniz' Sayfası</a></li>
   <li><a href="#v30_feat_other">Diğer İyileştirmeler ve Değişiklikler</a></li>
 </ul>
 
-<h3><a name="v30_feat_cf"></a>Custom Fields</h3>
+<h3><a name="v30_feat_cf"></a>Özel Alanlar</h3>
 
-<p>[% terms.Bugzilla %] now includes very basic support for custom fields.</p>
+<p>[% terms.Bugzilla %] artık çok temel de olsa özel alan desteği içeriyor.</p>
 
-<p>Users in the <kbd>admin</kbd> group can add plain-text or drop-down
-  custom fields. You can edit the values available for drop-down fields
-  using the &quot;Field Values&quot; control panel.</p>
+<p><kbd>admin</kbd> grubundaki kullanıcılar salt metin ya da açılır listeli özel alanlar ekleyebiliyor. Açılır listeli alanların alabileceği değerleri &quot;Alan Değerleri&quot; yönetim panelinden değiştirebilirsiniz.</p>
 
-<p>Don't add too many custom fields! It can make [% terms.Bugzilla %]
-  very difficult to use. Try your best to get along with the default
-  fields, and then if you find that you can't live without custom fields
-  after a few weeks of using [% terms.Bugzilla %], only then should you
-  start your custom fields.</p>
+<p>Fazla özel alan eklemeyin! [% terms.BugzillaGen %] kullanımını zorlaştırabilir. Öntanımlı alanlarla idare etmek için elinizden geleni yapın ve [% terms.BugzillaAcc %] bu şekilde birkaç hafta kullandıktan sonra eğer o özel alanlar olmadan yapamayacağınıza eminseniz özel alanlar ekleyin.</p>
 
-<h3><a name="v30_feat_mp"></a>mod_perl Support</h3>
+<h3><a name="v30_feat_mp"></a>mod_perl Desteği</h3>
 
-<p>[% terms.Bugzilla %] 3.0 supports mod_perl, which allows for extremely
-  enhanced page-load performance. mod_perl trades memory usage for performance,
-  allowing near-instantaneous page loads, but using much more memory.</p>
+<p>[% terms.Bugzilla %] 3.0 mod_perl destekliyor ve bu da sayfa yükleme performansının çok artmasını sağlıyor. mod_perl daha fazla hafıza kullanarak performansın artmasını sağlıyor ve sayfaların neredeyse anında yüklenmesine olanak veriyor.</p>
 
-<p>If you want to enable mod_perl for your [% terms.Bugzilla %], we recommend
-  a minimum of 1.5GB of RAM, and for a site with heavy traffic, 4GB to 8GB.</p>
+<p>Eğer [% terms.Bugzilla %] kurulumunuzda mod_perl'ü açmak istiyorsanız, en az 1.5 GB RAM öneririz; eğer sitenizin trafiği oldukça yüksekse 4 ila 8 GB RAM tavsiye ediyoruz.</p>
 
-<p>If performance isn't that critical on your installation, you don't
-  have the memory, or you are running some other web server than
-  Apache, [% terms.Bugzilla %] still runs perfectly as a normal CGI
-  application, as well.</p>
+<p>Eğer kurulumunuzda performans o kadar önemli değilse, yeterli hafıza yoksa ya da Apache dışında bir web sunucu kullanıyorsanız bile, [% terms.Bugzilla %] normal bir CGI uygulaması olarak sorunsuz çalışacaktır.</p>
 
-<h3><a name="v30_feat_sq"></a>Shared Saved Searches</h3>
+<h3><a name="v30_feat_sq"></a>Paylaşılabilen Kayıtlı Aramalar</h3>
 
-<p>Users can now choose to &quot;share&quot; their saved searches
-  with a certain group. That group will then be able to 
-  &quot;subscribe&quot; to those searches, and have them appear
-  in their footer.</p>
+<p>Kullanıcılar artık &quot;share&quot; kayıtlı aramalarını belirli bir grupla paylaşabiliyor. O grup o aramalara &quot;abone&quot; olabiliyor ve sayfalarının altlığında görüntüleyebiliyorlar.</p>
 
-<p>If the sharer can &quot;bless&quot; the group he's sharing to,
-  (that is, if he can add users to that group), it's considered
-  that he's a manager of that group, and his queries show up
-  automatically in that group's footer (although they can
-  unsubscribe from any particular search, if they want.)</p>
+<p>Eğer paylaşan o gruba kullanıcı ekleyebiliyorsa, o grubun yöneticisi olarak kabul edilir ve sorguları otomatik olarak o grubun sayfa altlığında görünür. (Elbette istedikleri aramaların aboneliğinde çıkabilirler.)</p>
 
-<p>In order to allow a user to share their queries, they also
-  have to be a member of the group specified in the 
-  <code>querysharegroup</code> parameter.</p>
+<p>Kullanıcının sorgularını paylaşabilmesi için <code>querysharegroup</code> parametresindw belirtilen gruba üye olması gerekir.</p>
 
-<p>Users can control their shared and subscribed queries from
-  the &quot;Preferences&quot; screen.</p>
+<p>Kullanıcılar paylaştıkları ve abone oldukları sorguları &quot;Tercihler&quot; sayfasından değiştirebilirler.</p>
 
-<h3><a name="v30_feat_afn"></a>Attachments and Flags on New 
-  [% terms.Bugs %]</h3>
+<h3><a name="v30_feat_afn"></a>Yeni [% terms.BugsPluLoc %] Ekler ve Bayraklar</h3>
 
-<p>You can now add an attachment while you are filing a new 
-  [% terms.bug %].</p>
+<p>Artık yeni [% terms.abug %] raporlarken ekler oluşturabilirsiniz..</p>
 
-<p>You can also set flags on the [% terms.bug %] and on attachments, while
-  filing a new [% terms.bug %].</p>
+<p>Ayrıca yeni [% terms.abug %] raporlarken [% terms.bugDat %] ve eklere bayraklar atayabilirsiniz.</p>
 
-<h3><a name="v30_feat_cr"></a>Custom Resolutions</h3>
+<h3><a name="v30_feat_cr"></a>Özel Kararlar</h3>
 
-<p>You can now customize the list of resolutions available
-  in [% terms.Bugzilla %], including renaming the default resolutions.</p>
+<p>Artık (öntanımlı kararların ismini değiştirmek de dahil) [% terms.Bugzilla %] karar listesini özelleştirebilirsiniz.</p>
 
-<p>The resolutions <code>FIXED</code>, <code>DUPLICATE</code>
-  and <code>MOVED</code> have a special meaning to [% terms.Bugzilla %],
-  though, and cannot be renamed or deleted.</p>
+<p>Fakat <code>FIXED</code> (DÜZELTİLDİ), <code>DUPLICATE</code> (AYNISI)
+  ve <code>MOVED</code> (TAŞINDI) özel anlam içerdiği için isimleri değiştirilemez ve silinemez.</p>
 
-<h3><a name="v30_feat_ppp"></a>Per-Product Permissions</h3>
+<h3><a name="v30_feat_ppp"></a>Ürüne Özel İzinler</h3>
 
-<p>You can now grant users <kbd>editbugs</kbd> and <kbd>canconfirm</kbd>
-  for only certain products. You can also grant users <kbd>editcomponents</kbd>
-  on a product, which means they will be able to edit that product
-  including adding/removing components and other product-specific
-  controls.</p>
+<p>Artık kullanıcılara sadece belirli ürünler için <kbd>editbugs</kbd> ve <kbd>canconfirm</kbd> izinleri verebilirsiniz. Kullanıcılara üründe <kbd>editcomponents</kbd> izni de verebiliyorsunuz, böylece o ürüne bileşen ekleme ya da üründen bileşen silme gibi o ürünle ilgili işlemleri yapabiliyorlar.</p>
 
 <h3><a name="v30_feat_ui"></a>User Interface Improvements</h3>
 
