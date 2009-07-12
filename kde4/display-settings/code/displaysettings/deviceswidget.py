@@ -11,6 +11,8 @@
 # Please read the COPYING file.
 #
 
+import dbus
+
 # PyQt
 from PyQt4 import QtCore
 from PyQt4 import QtGui
@@ -185,12 +187,24 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         self.refreshOutputList()
 
     def save(self):
-        self.cardDialog.apply()
-        for dlg in self.outputDialogs.values():
-            dlg.apply()
-        self.iface.sync()
-        # XXX really needed?
-        self.load()
+        try:
+            self.cardDialog.apply()
+            for dlg in self.outputDialogs.values():
+                dlg.apply()
+            self.iface.sync()
+            # XXX really needed?
+            self.load()
+
+        except dbus.DBusException, exception:
+            if "Comar.PolicyKit" in exception._dbus_error_name:
+                kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+            else:
+                kdeui.KMessageBox.error(self, unicode(exception))
+
+            QtCore.QTimer.singleShot(0, self.emitConfigChanged)
+
+    def emitConfigChanged(self):
+        self.configChanged.emit()
 
     def defaults(self):
         print "** defaults"
