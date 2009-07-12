@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-02 14:39+0300\n"
-"PO-Revision-Date: 2009-07-06 11:43+0200\n"
+"PO-Revision-Date: 2009-07-12 16:26+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -111,7 +111,7 @@ msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
 msgstr ""
-"<qt>Förrådsadresser ska sluta med xml eller xml.bz2.<p>Försök igen.</qt>"
+"<qt>Förrådsadresser måste sluta på xml eller xml.bz2.<p>Försök igen.</qt>"
 
 #: .tmp/settingsdialog.py:184 .tmp/mainwidget.py:163
 msgid "Pisi Error"
@@ -175,7 +175,7 @@ msgstr "Installera uppdateringar automatiskt"
 
 #: .tmp/ui_settingsdialog.py:338
 msgid "Bandwidth limit"
-msgstr "Maximal nerladdningshastighet"
+msgstr "Bandbreddsbegränsning"
 
 #: .tmp/ui_settingsdialog.py:339
 msgid "Use bandwidth limit"
@@ -219,7 +219,7 @@ msgid ""
 "This will not delete installed software or affect your system stability."
 msgstr ""
 "Genom att tömma cachen tas alla hämtade paket bort. \n"
-"Det påverkar varken installerade paket eller systemets stabilitet."
+"Detta påverkar varken installerade paket eller systemets stabilitet."
 
 #: .tmp/ui_settingsdialog.py:351
 msgid "C&lean disk cache now"

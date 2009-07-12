@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: nm-applet\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-08 12:35+0300\n"
-"PO-Revision-Date: 2009-07-08 13:26+0200\n"
+"PO-Revision-Date: 2009-07-12 16:13+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr " sek."
 
 #: code/widgets/configIconui.py:59
 msgid "Dont poll anything while battery is discharging"
-msgstr ""
+msgstr "Undersök inte under batteridrift"
 
 #: code/widgets/configPopupui.py:38
 msgid "Show all profiles"
@@ -55,7 +55,7 @@ msgstr "Visa valda profiler ur listan"
 
 #: code/widgets/itemui.py:40
 msgid "PushButton"
-msgstr "PushButton"
+msgstr "Tryckknapp"
 
 #: code/widgets/popupui.py:152
 msgid "Ethernet"
@@ -76,4 +76,5 @@ msgstr "Ingen profil definierad"
 #: code/widgets/popupui.py:157
 msgid "Open Network Manager"
 msgstr "Starta Nätverkshanteraren"
+
 

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: display-settings\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-12 19:39+0300\n"
-"PO-Revision-Date: 2009-07-10 12:57+0200\n"
+"PO-Revision-Date: 2009-07-12 19:35+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -138,7 +138,7 @@ msgstr "Starta Pakethanteraren"
 #: .tmp/displaysettings/deviceswidget.py:200
 #: .tmp/displaysettings/screenswidget.py:329
 msgid "Access denied."
-msgstr ""
+msgstr "Åtkomst nekad."
 
 #: .tmp/displaysettings/device.py:56
 msgid "Laptop Panel"
@@ -177,9 +177,8 @@ msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr "<qt><i>Tryck \"Välj...\"-knappen för att välja en bildskärm</i></qt>"
 
 #: .tmp/displaysettings/screenswidget.py:226
-#, fuzzy
 msgid "Output Properties - %1"
-msgstr "Utgångsinställningar"
+msgstr "Utgångsinställningar - %1"
 
 #: .tmp/displaysettings/about.py:22
 msgid "Display Configuration Tool"
@@ -203,7 +202,7 @@ msgstr "Visa bildskärmar"
 
 #: .tmp/ui_monitorbrowser.py:49
 msgid "Vendors:"
-msgstr "Tillverkare"
+msgstr "Tillverkare:"
 
 #: .tmp/ui_monitorbrowser.py:50
 msgid "Models:"
@@ -211,27 +210,25 @@ msgstr "Modeller:"
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
-msgstr "Utgångsinställning:"
+msgstr "Utgångsinställning"
 
 #: .tmp/ui_output.py:225
-#, fuzzy
 msgid ""
 "If the frequency ranges that your monitor supports are not detected for some "
 "reason, you can specify them here. Be careful with these values, as an "
 "inaccurate value may damage your monitor, especially if it is an old model."
 msgstr ""
-"Om din bildskärms frekvensomfång inte upptäcks av grafikkortet kan du ange "
-"det här. Var försiktig när du anger dessa värden. Felaktiga värden kan skada "
-"i synnerhet äldre bildskärmar."
+"Om din bildskärms frekvensomfång inte upptäcks av någon orsak kan du ange "
+"det här. Var försiktig när du anger dessa värden, felaktiga värden kan skada "
+"din bildskärm, i synnerhet om den är av en äldre modell."
 
 #: .tmp/ui_output.py:226
 msgid "Specify Ranges"
 msgstr "Ange omfång"
 
 #: .tmp/ui_output.py:227
-#, fuzzy
 msgid "Selection:"
-msgstr "Val"
+msgstr "Urval:"
 
 #: .tmp/ui_output.py:228
 msgid "Select a standard monitor"

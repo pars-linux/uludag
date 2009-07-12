@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: user-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-03 13:56+0300\n"
-"PO-Revision-Date: 2009-07-04 14:46+0200\n"
+"PO-Revision-Date: 2009-07-12 17:01+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "Lösenord (upprepa):"
 
 #: .tmp/ui_edituser.py:188 .tmp/ui_editgroup.py:80
 msgid "No.:"
-msgstr "ID"
+msgstr "ID:"
 
 #: .tmp/ui_edituser.py:189 .tmp/ui_editgroup.py:81
 msgid "Auto"
@@ -205,4 +205,5 @@ msgstr "Gruppinformation"
 #: .tmp/ui_editgroup.py:79
 msgid "Group Name:"
 msgstr "Gruppnamn"
+
 

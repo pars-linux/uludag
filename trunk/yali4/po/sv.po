@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-04 19:28+0300\n"
-"PO-Revision-Date: 2009-07-04 22:01+0200\n"
+"PO-Revision-Date: 2009-07-12 18:49+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -549,7 +549,7 @@ msgstr "Lösenord:"
 
 #: yali4/gui/Ui/setupuserswidget.py:175
 msgid "User ID"
-msgstr "Användar-id:"
+msgstr "ID:"
 
 #: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:252
 #: yali4/gui/ScrUsers.py:294
@@ -1426,7 +1426,7 @@ msgstr ""
 "<font size=\"+1\">\n"
 "<p>\n"
 "Du kan installera Pardus om du har ett opartitionerat hårddiskutrymme eller\n"
-"en opartitionerad hårddiskpå 4GB (10 GB rekommenderas).\n"
+"en opartitionerad hårddisk på 4GB (10 GB rekommenderas).\n"
 "Det valda området kommer att formateras automatiskt. Därför råds du att\n"
 "göra en säkerhetskopia för att undvika framtida problem.\n"
 "</p>\n"
@@ -1730,7 +1730,7 @@ msgstr "Partitionering"
 
 #: yali4/gui/ScrSummary.py:152
 msgid "Automatic Partitioning selected."
-msgstr "Automatisk partitionering vald"
+msgstr "Automatisk partitionering vald."
 
 #: yali4/gui/ScrSummary.py:162, python-format
 msgid ""
@@ -1849,7 +1849,7 @@ msgstr ""
 "<font size=\"+1\">\n"
 "<p>\n"
 "Pardus 2009 låter flera användare dela på samma dator.\n"
-"Du kan ge administratörs- rättigheter till de användare du skapar; du kan\n"
+"Du kan ge administratörsrättigheter till de användare du skapar, du kan\n"
 "också anpassa användarnas rättigheter via olika åtgärder i TASMA.\n"
 "</p>\n"
 "<p>\n"
@@ -1912,7 +1912,8 @@ msgstr ""
 "<font size=\"+2\">Välkommen!</font>\n"
 "<font size=\"+1\"><p>Välkommen till Pardus 2009 som innehåller många "
 "lättanvända program. Du kan göra allt du behöver med Pardus 2009, bland "
-"annat, ansluta till Internet, skapa dokument, spela spel, lyssna på musik.</"
+"annat ansluta till Internet, skapa dokument, spela spel och lyssna på musik."
+"</"
 "p>\n"
 "<p>Det här programmet hjälper dig med installationen av Pardus 2009 på din "
 "dator i några få enkla steg och med identifieringen och konfigurationen av "
@@ -2116,7 +2117,7 @@ msgstr "Kopierar Pisiindex..."
 
 #: yali4/installer.py:522
 msgid "Setting misc. package configurations..."
-msgstr "Sparar diverse paketkonfigureringar..."
+msgstr "Sparar diverse paketkonfigurationer..."
 
 #: yali4/localedata.py:20
 msgid "Turkish"

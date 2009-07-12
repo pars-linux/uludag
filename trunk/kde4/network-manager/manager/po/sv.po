@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-06 09:32+0300\n"
-"PO-Revision-Date: 2009-07-06 09:52+0200\n"
+"PO-Revision-Date: 2009-07-12 19:58+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -127,7 +127,7 @@ msgstr "Namnserver"
 
 #: .tmp/ui_main.py:341
 msgid "Profile Name :"
-msgstr "Profilnamn:"
+msgstr "Profil:"
 
 #: .tmp/ui_main.py:342
 msgid "Device : "
@@ -219,5 +219,6 @@ msgstr "Dölj lösenord"
 
 #: .tmp/ui_nameserver.py:43
 msgid "Machine Name"
-msgstr "Värddatornamn"
+msgstr "Värdnamn"
+
 
