@@ -141,11 +141,14 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         menu = QtGui.QMenu(self)
 
         for output in self._outputs:
-            text = kdecore.i18nc(
-                    "Shown in menus, lists, etc. "
-                    "%1 = localized output type, "
-                    "%2 = output name (LVDS, VGA, etc.)",
-                    "%1 (%2)", output.getTypeString(), output.name)
+            if output.outputType == Output.UnknownOutput:
+                text = output.name
+            else:
+                text = kdecore.i18nc(
+                        "Shown in menus, lists, etc. "
+                        "%1 = localized output type, "
+                        "%2 = output name (LVDS, VGA, etc.)",
+                        "%1 (%2)", output.getTypeString(), output.name)
             action = QtGui.QAction(text, self)
             action.setIcon(output.getIcon())
             action.setData(QtCore.QVariant(output.name))
