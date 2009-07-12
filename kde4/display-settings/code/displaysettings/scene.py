@@ -27,6 +27,7 @@ class DisplayItem(QtGui.QGraphicsRectItem):
         btn = QtGui.QToolButton()
         btn.setIcon(kdeui.KIcon("arrow-right"))
         btn.setAutoRaise(True)
+        btn.setStyleSheet("background-color: rgba(0, 0, 0, 0)")
         btn.clicked.connect(scene.swapClicked)
         btn.hide()
         proxy = QtGui.QGraphicsProxyWidget(self)
