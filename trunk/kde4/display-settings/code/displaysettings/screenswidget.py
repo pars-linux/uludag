@@ -11,6 +11,8 @@
 # Please read the COPYING file.
 #
 
+import dbus
+
 # PyQt
 from PyQt4 import QtCore
 from PyQt4 import QtGui
@@ -304,22 +306,34 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self.clonedCheckBox.setChecked(self._cloned)
 
     def save(self):
-        for output in self._outputs:
-            enabled = output in (self._left, self._right)
-            self.iface.setOutput(output.name, enabled, False)
-            if enabled:
-                self.iface.setMode(output.name,
-                                    self._modes[output.name],
-                                    self._rates[output.name])
-                self.iface.setRotation(output.name,
-                                    self._rotations[output.name])
+        try:
+            for output in self._outputs:
+                enabled = output in (self._left, self._right)
+                self.iface.setOutput(output.name, enabled, False)
+                if enabled:
+                    self.iface.setMode(output.name,
+                                        self._modes[output.name],
+                                        self._rates[output.name])
+                    self.iface.setRotation(output.name,
+                                        self._rotations[output.name])
 
-        left = self._left.name if self._left else None
-        right = self._right.name if self._right else None
-        cloned = self.clonedCheckBox.isChecked()
-        self.iface.setSimpleLayout(left, right, cloned)
+            left = self._left.name if self._left else None
+            right = self._right.name if self._right else None
+            cloned = self.clonedCheckBox.isChecked()
+            self.iface.setSimpleLayout(left, right, cloned)
 
-        self.iface.sync()
+            self.iface.sync()
+
+        except dbus.DBusException, exception:
+            if "Comar.PolicyKit" in exception._dbus_error_name:
+                kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+            else:
+                kdeui.KMessageBox.error(self, unicode(exception))
+
+            QtCore.QTimer.singleShot(0, self.emitConfigChanged)
+
+    def emitConfigChanged(self):
+        self.configChanged.emit()
 
     def defaults(self):
         print "** defaults"
