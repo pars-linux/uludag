@@ -165,7 +165,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         if "urlopen error" in message or "Socket Error" in message:
             errorTitle = i18n("Network Error")
             errorMessage = i18n("Please check your network connections and try again.")
-        elif "Access denied" in exception.message:
+        elif "Access denied" in message or "tr.org.pardus.comar.Comar.PolicyKit" in message:
             errorTitle = i18n("Authorization Error")
             errorMessage = i18n("You are not authorized for this operation.")
         else:

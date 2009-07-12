@@ -92,7 +92,7 @@ class OperationManager(QObject):
             self.desktopFiles.append(desktopFile)
 
     def exceptionHandler(self, exception):
-        self.emit(SIGNAL("exception(QString)"), unicode(exception))
+        self.emit(SIGNAL("exception(QString)"), str(exception))
 
     def handler(self, package, signal, args):
 
