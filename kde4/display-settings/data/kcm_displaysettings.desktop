@@ -1,6 +1,6 @@
 [Desktop Entry]
 Exec=kcmshell4 display-settings
-Icon=preferences-desktop-display
+Icon=preferences-desktop-display-randr
 Type=Service
 X-KDE-ServiceTypes=KCModule
 
