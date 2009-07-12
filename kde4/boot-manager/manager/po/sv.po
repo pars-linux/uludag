@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-30 11:24+0300\n"
-"PO-Revision-Date: 2009-06-30 18:36+0200\n"
+"PO-Revision-Date: 2009-07-12 11:16+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -98,7 +98,7 @@ msgstr "Startalternativ"
 
 #: .tmp/ui_edit.py:143
 msgid "Boot options for operating system."
-msgstr "Startalternativ för operativsystem."
+msgstr "Startalternativ för operativsystemet."
 
 #: .tmp/ui_item.py:65
 msgid "Set or unset entry as default boot entry."
@@ -119,4 +119,5 @@ msgstr "Lägg till ny"
 #: .tmp/ui_options.py:36
 msgid "Boot menu display time:"
 msgstr "Visningstid för startmeny:"
+
 

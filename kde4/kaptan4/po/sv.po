@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-10 09:26+0300\n"
-"PO-Revision-Date: 2009-07-10 08:55+0200\n"
+"PO-Revision-Date: 2009-07-12 12:52+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -235,7 +235,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Pkethanteraren är Pisis grafiska framände. Du kan enkelt "
+"weight:600;\">Pakethanteraren är Pisis grafiska framände. Du kan enkelt "
 "installera nya program och uppdatera ditt system. Du kan också se "
 "information om periodiska uppdateringar via systembrickan.</span></p></"
 "body></html>"
@@ -258,7 +258,7 @@ msgstr "Automatisk kontroll av uppdateringar var"
 
 #: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:81
 msgid " hours"
-msgstr " timmar"
+msgstr ":e timme"
 
 #: .tmp/packageWidget.py:82 .tmp/ui_packageWidget.py:82
 msgid "Repo"
@@ -378,7 +378,7 @@ msgstr "Beskrivning av Smolt"
 
 #: .tmp/ScrSmolt.py:69
 msgid "Label"
-msgstr "Label"
+msgstr "Etikett"
 
 #: .tmp/ScrSmolt.py:70
 msgid "Data"
@@ -386,7 +386,7 @@ msgstr "Data"
 
 #: .tmp/ScrSmolt.py:109
 msgid "&Back"
-msgstr "&Back"
+msgstr "Bakåt"
 
 #: .tmp/ScrSmolt.py:112 .tmp/smoltWidget.py:79 .tmp/ui_smoltWidget.py:79
 msgid "&Privacy policy"
@@ -501,7 +501,7 @@ msgstr "Valt klickbeteende: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:68
 msgid "Menu Settings"
-msgstr "Menyinställningar"
+msgstr "Menyinställning"
 
 #: .tmp/ScrSummary.py:73
 msgid "Wallpaper Settings"
@@ -540,7 +540,7 @@ msgstr "Skrivbordssökning: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:97
 msgid "Smolt Settings"
-msgstr "Smoltinställningar"
+msgstr "Smoltinställning"
 
 #: .tmp/ScrSummary.py:98
 #, python-format
@@ -627,7 +627,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt kommer bara att "
-"skickahårdvaru- och grundläggande operativsystemet information till Fedora "
+"skickahårdvaru- och grundläggande operativsystemet information till Pardus "
 "smolt server(smoon). Det enda koppling från databasen till en klientmaskin "
 "är UUID. Så länge klienten inte ger ut detta UUID är datat anonymt. Om en "
 "användare vid något tillfälle vill ta bort sin profilfrån databasen behöver "
@@ -645,17 +645,17 @@ msgstr ""
 "better support in general.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
-"decoration: underline;\">IP Logging:</span>  In Fedora's smolt install all "
+"decoration: underline;\">IP Logging:</span>  In Pardus smolt install all "
 "web traffic goes through a proxy server first.  This is the only place IP "
 "addresses are being logged and they are kept on that server for a period of "
-"4 weeks at which time log rotation removes these logs.  The Fedora Project "
+"4 weeks at which time log rotation removes these logs.  The Pardus Project "
 "does not aggregate ip addresses in the smolt database.  These logs are "
 "private and will not be available to the general public.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">   Users unhappy with this "
 "policy should simply not use smolt.  Users with questions about this policy "
-"should contact the Fedora Infrastructure Team at admin [at] fedoraproject."
-"org  Also remember that users can delete their profiles at any time using "
+"should contact the Pardus Infrastructure Team at admin [at] pardus.org.tr"
+"  Also remember that users can delete their profiles at any time using "
 "\"<span style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></"
 "body></html>"
 
@@ -755,7 +755,7 @@ msgid ""
 "basic desktop needs; helps you connect to internet, read e-mails, work with "
 "office documents and more!"
 msgstr ""
-"Detta program, Kaptan Desktop, hjälper dig snabbt och enkelt sätt med de "
+"Detta program, Kaptan Skrivbord, hjälper dig snabbt och enkelt sätt med de "
 "grundläggande men tillräckliga inställningarna för ditt Pardusskrivbord. "
 "Klicka på Nästa för att anpassa skrivbordet.\n"
 "\n"
