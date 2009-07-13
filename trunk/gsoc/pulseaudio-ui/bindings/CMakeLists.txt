@@ -7,6 +7,8 @@ set(QtPulseAudioBindings_SRCS
     sink.cpp
     sourcemanager.cpp
     source.cpp
+    sinputmanager.cpp
+    sinput.cpp
    )
 
 set(QtPulseAudioBindings_HDR
@@ -18,6 +20,8 @@ set(QtPulseAudioBindings_HDR
     sink.h          sink_p.h
     sourcemanager.h #sourcemanager_p.h
     source.h        source_p.h
+    sinputmanager.h
+    sinput.h        sinput_p.h
    )
 
 qt4_wrap_cpp(QtPulseAudioBindings_MOC_SRCS ${QtPulseAudioBindings_HDR})

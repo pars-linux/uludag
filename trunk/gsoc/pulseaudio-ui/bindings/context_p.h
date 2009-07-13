@@ -28,6 +28,8 @@ public:
 	pa_context *mContext;
 	SinkManager *mSinks;
 	SourceManager *mSources;
+
+	SinkInputManager* mSinkInputs;
 };
 
 }

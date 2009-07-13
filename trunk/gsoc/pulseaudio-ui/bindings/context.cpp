@@ -24,6 +24,7 @@
 #include "streammanager.h"
 #include "sinkmanager.h"
 #include "sourcemanager.h"
+#include "sinputmanager.h"
 #include "streammanager_p.h"
 
 using namespace std;
@@ -37,6 +38,7 @@ Context::Context(Integrator *parent, const char *name)
 	d->mContext = pa_context_new(parent->api(), name);
 	d->mSinks = new SinkManager(this);
 	d->mSources = new SourceManager(this);
+	d->mSinkInputs = new SinkInputManager(this);
 	pa_context_set_state_callback(d->mContext, Context::Private::state_callback, this);
 }
 
@@ -125,7 +127,7 @@ void Context::Private::subscribe_cb(pa_context *c, pa_subscription_event_type_t 
 			qc->d->mSources->event(type, index);
 			break;
 		case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
-			//qc->d->mSinkInput->d->streamEvent(type, index);
+			qc->d->mSinkInputs->event(type, index);
 			break;
 	}
 }

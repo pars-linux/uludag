@@ -22,6 +22,7 @@ Device::Device(int index, QtPulseAudio::StreamManager* parent): Stream(parent), 
 {
     d->index = index;
     d->manager = parent;
+    d->proplist = 0;
 }
 
 Device::~Device()
@@ -110,6 +111,12 @@ pa_channel_map Device::channelMap()
 pa_sample_spec Device::sampleSpec()
 {
     return d->sampleSpec;
+}
+
+
+QString Device::getProperty(QString key)
+{
+    return QString(pa_proplist_gets(d->proplist, key.toUtf8().data()));
 }
 
 }

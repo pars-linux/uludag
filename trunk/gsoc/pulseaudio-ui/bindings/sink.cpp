@@ -92,6 +92,9 @@ void Sink::sink_cb(pa_context *, const pa_sink_info *i, int eol, void *userdata)
     dd->card = i->card;
     dd->configuredLatency = i->configured_latency;
     dd->valid = true;
+    if(dd->proplist != 0)
+	pa_proplist_free(dd->proplist);
+    dd->proplist = pa_proplist_copy(i->proplist);
     emit p->updated();
 }
 
