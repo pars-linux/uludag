@@ -1,0 +1,472 @@
+# translation of de.po to German
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Heiko Pardus Translator <miltonjohn@web.de>, 2009.
+# Klemens Häckel <click3d at linuxmail dot org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-10 09:54+0300\n"
+"PO-Revision-Date: 2009-07-13 18:53-0400\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
+"Language-Team: German <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: .tmp/ScrOptions.py:23
+msgid "Selecting Options"
+msgstr "Wähle die Funktion"
+
+#: .tmp/ScrOptions.py:24 .tmp/ScrProgress.py:205 .tmp/ScrSummary.py:26
+#: .tmp/ScrUserFiles.py:143 .tmp/ScrWelcome.py:23
+msgid "Welcome to Migration Tool Wizard :)"
+msgstr "Willkommen zum Migrations Assistenten"
+
+#: .tmp/ScrOptions.py:61
+msgid "Keep current wallpaper"
+msgstr "Behalte das aktuelle Wallpaper"
+
+#: .tmp/ScrOptions.py:63
+msgid "Don't use wallpaper"
+msgstr "Keinen Bildschirmhintergrund benutzen"
+
+#: .tmp/ScrOptions.py:64
+msgid "Does not change your wallpaper."
+msgstr "Keine Veränderung am Bildschirmhintergrund."
+
+#: .tmp/ScrOptions.py:84
+msgid "Use my old wallpaper"
+msgstr "Setze meinen alten Bildschirmhintergrund"
+
+#: .tmp/ScrOptions.py:85
+msgid "Copies your old wallpaper to Pardus and sets it as new background image."
+msgstr "Kopiere Ihren alten Wallpaper zu Pardus und benutzt ihn als neuer Bildschirmhintergrund."
+
+#: .tmp/ScrOptions.py:93 .tmp/ScrProgress.py:295
+msgid "Bookmarks"
+msgstr "Lesezeichen"
+
+#: .tmp/ScrOptions.py:105
+msgid "Firefox Bookmarks"
+msgstr "Firefox Lesezeichen"
+
+#: .tmp/ScrOptions.py:107
+msgid "Copies your old Firefox bookmarks to Firefox under Pardus."
+msgstr "Kopiere alte Firefox Lesezeichen zum neuen Firefox von Pardus."
+
+#: .tmp/ScrOptions.py:116
+msgid "Opera Bookmarks"
+msgstr "Opera Lesezeichen"
+
+#: .tmp/ScrOptions.py:118
+msgid "Copies your old Opera bookmarks to Firefox under Pardus."
+msgstr "Kopiere alte Opera Lesezeichen zum Firefox von Pardus."
+
+#: .tmp/ScrOptions.py:127
+msgid "Internet Explorer favorites"
+msgstr "Internet Explorer Lesezeichen"
+
+#: .tmp/ScrOptions.py:129
+msgid "Copies your old Internet Explorer favorites to Firefox under Pardus."
+msgstr "Kopiere alte Internet Explorer Lesezeichen zum Firefox von Pardus."
+
+#: .tmp/ScrOptions.py:138
+msgid "E-Mail and News Accounts"
+msgstr "E-Mail- und Newskonten"
+
+#: .tmp/ScrOptions.py:149
+msgid "Windows Mail accounts"
+msgstr "Windows E-mailkonten"
+
+#: .tmp/ScrOptions.py:151 .tmp/ScrOptions.py:162
+msgid "Copies your old mail and newsgroup accounts to KMail and KNode applications."
+msgstr "Kopiere alte E-mail- und Newsgroupkonten zu KMail und KNode."
+
+#: .tmp/ScrOptions.py:160
+msgid "Thunderbird accounts"
+msgstr "Thunderbirdkonten"
+
+#: .tmp/ScrOptions.py:168
+msgid "Copy e-mail messages from e-mail accounts"
+msgstr "Kopiere E-mailnachrichten von den E-mailkonten"
+
+#: .tmp/ScrOptions.py:170
+msgid "Copies your e-mail messages to KMail from selected applications above."
+msgstr "Kopiere E-mailnachrichten zu KMail von den obig ausgewählten Programmen."
+
+#: .tmp/ScrOptions.py:179 .tmp/ScrProgress.py:376
+msgid "Instant Messenger Accounts"
+msgstr "Instant Messenger Konten"
+
+#: .tmp/ScrOptions.py:190
+msgid "MSN accounts"
+msgstr "MSN Konten"
+
+#: .tmp/ScrOptions.py:192
+msgid "Copies your MSN Messenger accounts to Kopete."
+msgstr "Kopiere MSN Messenger Konten zu Kopete."
+
+#: .tmp/ScrOptions.py:201
+msgid "GTalk accounts"
+msgstr "GTalk Konten"
+
+#: .tmp/ScrOptions.py:203
+msgid "Copies your GTalk accounts to Kopete."
+msgstr "Kopiere GTalk Konten zu Kopete."
+
+#: .tmp/ScrProgress.py:38
+msgid "Please wait while applying changes..."
+msgstr "Bitte warten Sie bis alle Änderungen durchgeführt wurden..."
+
+#: .tmp/ScrProgress.py:48
+msgid "Prepare: "
+msgstr "Bereite vor:"
+
+#: .tmp/ScrProgress.py:55
+msgid "Apply: "
+msgstr "Bestätige:"
+
+#: .tmp/ScrProgress.py:112
+msgid "Warning!"
+msgstr "Warnung!"
+
+#: .tmp/ScrProgress.py:204
+msgid "Applying Changes"
+msgstr "Änderungen werden durchgeführt"
+
+#: .tmp/ScrProgress.py:243
+msgid "Wallpaper"
+msgstr "Bildschirmhintergrund"
+
+#: .tmp/ScrProgress.py:253
+msgid "Firefox bookmarks cannot be loaded."
+msgstr "Firefox Lesezeichen können nicht geladen werden."
+
+#: .tmp/ScrProgress.py:255
+msgid "Firefox bookmarks loaded."
+msgstr "Firefox Lesezeichen geladen."
+
+#: .tmp/ScrProgress.py:265
+msgid "Opera bookmarks cannot be loaded."
+msgstr "Opera Lesezeichen können nicht geladen werden."
+
+#: .tmp/ScrProgress.py:267
+msgid "Opera bookmarks loaded."
+msgstr "Opera Lesezeichen geladen."
+
+#: .tmp/ScrProgress.py:277
+msgid "Internet Explorer favorites cannot be loaded."
+msgstr "Internet Explorer Lesezeichen können nicht geladen werden."
+
+#: .tmp/ScrProgress.py:279
+msgid "Internet Explorer favorites loaded."
+msgstr "Internet Explorer Lesezeichen geladen."
+
+#: .tmp/ScrProgress.py:292
+#, fuzzy
+msgid "Firefox is open. Please close it first to continue..."
+msgstr "Firefox ist geöffnet. Bitte schließen Sie erst das Programm um weitermachen zu können... "
+
+#: .tmp/ScrProgress.py:304
+msgid "Windows Mail accounts cannot be loaded."
+msgstr "Windows E-mailkonten können nicht geladen werden."
+
+#: .tmp/ScrProgress.py:306
+msgid "Windows Mail accounts loaded."
+msgstr "Windows E-mailkonten geladen."
+
+#: .tmp/ScrProgress.py:317
+msgid "Thunderbird accounts cannot be loaded."
+msgstr "Thunderbird-konten können nicht geladen werden."
+
+#: .tmp/ScrProgress.py:319
+msgid "Thunderbird accounts loaded."
+msgstr "Thunderbird-konten geladen."
+
+#: .tmp/ScrProgress.py:329
+msgid "MSN accounts cannot be loaded."
+msgstr "MSN-konten können nicht geladen werden."
+
+#: .tmp/ScrProgress.py:331
+msgid "MSN accounts loaded."
+msgstr "MSN-konten geladen."
+
+#: .tmp/ScrProgress.py:341
+msgid "GTalk accounts cannot be loaded."
+msgstr "GTalk-konten können nicht geladen werden."
+
+#: .tmp/ScrProgress.py:343
+msgid "GTalk accounts loaded."
+msgstr "GTalk-konten geladen."
+
+#: .tmp/ScrProgress.py:352
+msgid "E-Mail Accounts"
+msgstr "E-Mail Konten"
+
+#: .tmp/ScrProgress.py:360
+msgid "E-Mail Messages"
+msgstr "E-Mail Nachrichten"
+
+#: .tmp/ScrProgress.py:368
+msgid "News Accounts"
+msgstr "News Konten"
+
+#: .tmp/ScrProgress.py:387
+msgid "Desktop Links"
+msgstr "Desktopverknüpfungen"
+
+#: .tmp/ScrProgress.py:394
+#, python-format
+msgid "Folder '%s' cannot be created, please choose another folder!"
+msgstr "Ordner '%s' kann nicht erstellt werden, bitte wählen Sie einen anderen Ordner!"
+
+#: .tmp/ScrProgress.py:398
+#, python-format
+#, fuzzy
+msgid ""
+"You don't have permission to write to folder '%s', please choose another "
+"folder!"
+msgstr "Sie haben nicht die Berechtigung, in diesen Ordner '%s' zu schreiben/speichern, bitte wählen Sie einen anderen Ordner!"
+
+#: .tmp/ScrProgress.py:409
+#, python-format
+msgid ""
+"Total size of files you've chosen is %(size)d MB, but you have only %(free)d "
+"MB of free space!"
+msgstr ""
+"Die Gesamtgröße der von Ihnen gewählten Dateien ist %(groß) MB, aber Sie haben nur %(freien) "
+"MB freien Speicherplatz zur Verfügung!"
+
+#: .tmp/ScrProgress.py:422
+msgid "Wallpaper changed."
+msgstr "Bildschirmhintergrund geändert."
+
+#: .tmp/ScrProgress.py:435
+msgid "Bookmarks saved."
+msgstr "Lesezeichen gesichert."
+
+#: .tmp/ScrProgress.py:447
+msgid "Mail Accounts saved."
+msgstr "E-Mail Konten gesichert."
+
+#: .tmp/ScrProgress.py:459
+msgid "Accounts saved."
+msgstr "Konten gesichert."
+
+#: .tmp/ScrProgress.py:470
+msgid "News Accounts saved."
+msgstr "News Konten gesichert."
+
+#: .tmp/ScrProgress.py:481
+msgid "Instant Messenger Accounts saved."
+msgstr "Instant Messenger Konten gesichert."
+
+#: .tmp/ScrProgress.py:489
+#, python-format
+msgid "Link '%s' created."
+msgstr "Link '%s' erstellt."
+
+#: .tmp/ScrProgress.py:502
+msgid "Nothing done, because no option selected. You can close the wizard..."
+msgstr "Nichts ausgeführt, da keine Option ausgewählt war. Sie können den Migrations Assistenten nun schließen..."
+
+#: .tmp/ScrProgress.py:504
+msgid "All operations completed. You can close the wizard..."
+msgstr "Alle Vorgänge abgeschlossen. Sie können den Migrations Assistenten nun schließen..."
+
+#: .tmp/ScrSummary.py:25 .tmp/ui_summaryWidget.py:54
+msgid "Summary"
+msgstr "Zusammenfassung"
+
+#: .tmp/ScrSummary.py:42
+msgid "User Settings"
+msgstr "Benutzereinstellungen"
+
+#: .tmp/ScrSummary.py:43
+#, python-format
+msgid "Selected User: <b>%s</b>"
+msgstr "Ausgewählter Benutzer: <b>%s</b>"
+
+#: .tmp/ScrSummary.py:47
+msgid "Options Settings"
+msgstr "Einstellungen"
+
+#: .tmp/ScrSummary.py:49
+#, python-format
+msgid "Selected Options: <b>%s</b>"
+msgstr "Ausgewählte Optionen: <b>%s</b>"
+
+#: .tmp/ScrSummary.py:53
+msgid "Destination Settings"
+msgstr "Zieleinstellung"
+
+#: .tmp/ScrSummary.py:56
+#, python-format
+msgid "Selected Destination: <b>Copy Link to %s</b>"
+msgstr ""
+
+#: .tmp/ScrSummary.py:58
+#, python-format
+msgid "Selected Destination: <b>Copy Destination to %s</b>"
+msgstr ""
+
+#: .tmp/ScrUserFiles.py:142
+msgid "Selecting Files"
+msgstr "Wähle Dateien"
+
+#: .tmp/ScrUserFiles.py:176
+msgid "My Documents"
+msgstr "Eigene Dateien"
+
+#: .tmp/ScrUserFiles.py:177
+msgid "Desktop"
+msgstr ""
+
+#: .tmp/ScrUserFiles.py:178
+msgid "My Music"
+msgstr "Eigene Musik"
+
+#: .tmp/ScrUserFiles.py:179
+msgid "My Pictures"
+msgstr "Eigene Bilder"
+
+#: .tmp/ScrUserFiles.py:180
+msgid "My Video"
+msgstr "Eigene Videos"
+
+#: .tmp/ScrUser.py:61
+msgid "Selecting User"
+msgstr "Wähle Benutzer"
+
+#: .tmp/ScrUser.py:62
+msgid "User Profiles"
+msgstr "Benutzerprofile"
+
+#: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
+msgid "Welcome"
+msgstr "Willkommen"
+
+#: .tmp/ui_main.py:130
+msgid "Migration Tool"
+msgstr "Migrations Assistent"
+
+#: .tmp/ui_main.py:131
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Welcome to Migration Tool!</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Willkommen zum Migrations - Assistenten !</span></p></body></html>"
+
+#: .tmp/ui_main.py:136
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: .tmp/ui_main.py:137
+msgid "Back"
+msgstr "Zurück"
+
+#: .tmp/ui_main.py:138
+msgid "Next"
+msgstr "Weiter"
+
+#: .tmp/ui_main.py:139
+msgid "Finish"
+msgstr "Beenden"
+
+#: .tmp/ui_summaryWidget.py:55
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Your settings will be applied in next screen..."
+"</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Ihre Einstellungen werden geschrieben, wenn Sie zum nächsten Screen weitergehen..."
+"</span></p></body></html>"
+
+#: .tmp/ui_userFilesWidget.py:45
+msgid "Form"
+msgstr ""
+
+#: .tmp/ui_userFilesWidget.py:46
+msgid "Do Nothing"
+msgstr "Nicht machen"
+
+#: .tmp/ui_userFilesWidget.py:47
+msgid "Put links to my desktop"
+msgstr "Setze Verknüfungen zum Desktop"
+
+#: .tmp/ui_userFilesWidget.py:48
+msgid "Copy files to directory :"
+msgstr "Kopiere Dateien ins Verzeichnis:"
+
+#: .tmp/ui_userFilesWidget.py:49
+msgid "~/Desktop"
+msgstr ""
+
+#: .tmp/ui_userFilesWidget.py:50
+msgid "Directtory"
+msgstr "Verzeichnis"
+
+#: .tmp/ui_userFilesWidget.py:51
+msgid "Size"
+msgstr "Größe"
+
+#: .tmp/ui_usersItemWidget.py:59
+msgid "Set or unset entry as default boot entry."
+msgstr "Markieren als standard Boot-Eintrag."
+
+#: .tmp/ui_usersWidget.py:36
+msgid "Users"
+msgstr "Benutzer"
+
+#: .tmp/ui_welcomeWidget.py:44
+msgid ""
+"This application, called Migration Tool, will help you transfer files and "
+"settings from your existing operating systems to Pardus with this "
+"application. Please click Next to personalize your desktop. \n"
+"\n"
+"Pardus is a GNU/Linux distribution, targeting at computer literate users' "
+"basic desktop needs; helps you connect to internet, read e-mails, work with "
+"office documents and more!"
+msgstr ""
+"Dieses Programm, genannt Migration Tool, wird Ihnen helfen Dateien und Einstellungen Ihres schon vorhandenen Betriebssystems zu Pardus zu überführen. Bitte klicken Sie auf Weiter um Ihren Desktop zu personalisieren. \n"
+"\n"
+"Pardus ist eine GNU/Linux Distribution, ausgerichtet auf die grundsätzlichen Anforderungen an ein PC-Betriebssystem für sämtliche Benutzerschichten. Pardus hilft Ihnen sich mit dem Internet zu verbinden, unterstützt Sie beim E-mail lesen, beim arbeiten mit Office Dokumenten und vielem mehr!"
+
