@@ -83,28 +83,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="modeList">
-            <item>
-             <property name="text">
-              <string>Auto</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">1280x800</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">1024x768</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">800x600</string>
-             </property>
-            </item>
-           </widget>
+           <widget class="QComboBox" name="modeList"/>
           </item>
          </layout>
         </item>
@@ -121,18 +100,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="rateList">
-            <item>
-             <property name="text">
-              <string>Auto</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">60 Hz</string>
-             </property>
-            </item>
-           </widget>
+           <widget class="QComboBox" name="rateList"/>
           </item>
          </layout>
         </item>
