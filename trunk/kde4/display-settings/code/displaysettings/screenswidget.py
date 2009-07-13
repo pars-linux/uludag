@@ -53,7 +53,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         # Fail if no packages provide backend
         self.checkBackend()
 
-        self.clonedCheckBox.toggled.connect(self.slotCloneToggled)
+        self.extendDisplays.toggled.connect(self.emitConfigChanged)
         self.detectButton.clicked.connect(self.slotDetectClicked)
         self.modeList.currentIndexChanged.connect(self.slotModeSelected)
         self.rateList.currentIndexChanged[int].connect(self.slotRateSelected)
@@ -197,9 +197,6 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self.refreshOutputsView()
         self.configChanged.emit()
 
-    def slotCloneToggled(self, checked):
-        self.configChanged.emit()
-
     def slotChangeDisplays(self, left, right):
         currentOutputsDict = dict((x.name, x) for x in self._outputs)
         left = str(left)
@@ -306,7 +303,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self.refreshOutputsView()
         self.slotUpdateOutputProperties(self._left)
 
-        self.clonedCheckBox.setChecked(self._cloned)
+        self.extendDisplays.setChecked(not self._cloned)
 
     def save(self):
         try:
@@ -322,7 +319,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
 
             left = self._left.name if self._left else None
             right = self._right.name if self._right else None
-            cloned = self.clonedCheckBox.isChecked()
+            cloned = not self.extendDisplays.isChecked()
             self.iface.setSimpleLayout(left, right, cloned)
 
             self.iface.sync()
@@ -331,7 +328,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
             if "Comar.PolicyKit" in exception._dbus_error_name:
                 kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
             else:
-                kdeui.KMessageBox.error(self, unicode(exception))
+                kdeui.KMessageBox.error(self, str(exception))
 
             QtCore.QTimer.singleShot(0, self.emitConfigChanged)
 

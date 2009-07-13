@@ -199,7 +199,7 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
             if "Comar.PolicyKit" in exception._dbus_error_name:
                 kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
             else:
-                kdeui.KMessageBox.error(self, unicode(exception))
+                kdeui.KMessageBox.error(self, str(exception))
 
             QtCore.QTimer.singleShot(0, self.emitConfigChanged)
 
