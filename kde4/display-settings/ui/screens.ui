@@ -24,9 +24,9 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="clonedCheckBox">
+      <widget class="QCheckBox" name="extendDisplays">
        <property name="text">
-        <string>Cloned displays</string>
+        <string>Extend desktop to all displays</string>
        </property>
       </widget>
      </item>
