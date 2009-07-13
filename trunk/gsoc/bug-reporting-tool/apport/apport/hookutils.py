@@ -393,7 +393,7 @@ def _get_module_license(module):
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out = modinfo.communicate()[0]
         if modinfo.returncode != 0:
-            return None
+            return 'invalid'
     except OSError:
         return None
     for l in out.splitlines():
