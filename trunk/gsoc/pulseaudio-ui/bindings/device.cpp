@@ -12,8 +12,11 @@
     *************************************************************************
 */
 
+#include <iostream>
 #include "device.h"
 #include "device_p.h"
+
+using namespace std;
 
 namespace QtPulseAudio
 {
@@ -23,6 +26,7 @@ Device::Device(int index, QtPulseAudio::StreamManager* parent): Stream(parent), 
     d->index = index;
     d->manager = parent;
     d->proplist = 0;
+    d->valid = false;
 }
 
 Device::~Device()
@@ -116,6 +120,8 @@ pa_sample_spec Device::sampleSpec()
 
 QString Device::getProperty(QString key)
 {
+    cerr << "getProperty " << key.toStdString() << endl;
+    cerr << " in stream " << index() << " valid " << isValid() << endl;
     return QString(pa_proplist_gets(d->proplist, key.toUtf8().data()));
 }
 

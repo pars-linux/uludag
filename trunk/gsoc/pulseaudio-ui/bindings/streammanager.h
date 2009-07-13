@@ -42,7 +42,7 @@ signals:
 protected:
     void add(Stream *s);
     void remove(Stream *s);
-    void event(int type, uint32_t index);
+    void streamEvent(int type, uint32_t index);
     
     class Private;
     Private *d;

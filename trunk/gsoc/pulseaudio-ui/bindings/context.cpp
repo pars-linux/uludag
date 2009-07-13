@@ -71,6 +71,9 @@ SourceManager *Context::sources() {
 	return d->mSources;
 }
 
+SinkInputManager *Context::sinkInputs() {
+	return d->mSinkInputs;
+}
 
 pa_context *Context::cObject() {
 	return d->mContext;
@@ -121,13 +124,13 @@ void Context::Private::subscribe_cb(pa_context *c, pa_subscription_event_type_t 
 
 	switch (facility) {
 		case PA_SUBSCRIPTION_EVENT_SINK:
-			qc->d->mSinks->event(type, index);
+			qc->d->mSinks->streamEvent(type, index);
 			break;
 		case PA_SUBSCRIPTION_EVENT_SOURCE:
-			qc->d->mSources->event(type, index);
+			qc->d->mSources->streamEvent(type, index);
 			break;
 		case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
-			qc->d->mSinkInputs->event(type, index);
+			qc->d->mSinkInputs->streamEvent(type, index);
 			break;
 	}
 }

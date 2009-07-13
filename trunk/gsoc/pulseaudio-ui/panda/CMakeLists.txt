@@ -3,27 +3,32 @@ set(panda_SRCS
     panda.cpp 
     streamstab.cpp
     volumewidget.cpp
-)
+    group.cpp
+    groupmanager.cpp
+    groupwidget.cpp
+    groupstab.cpp
+ )
 
-set(panda_HDRS
-    mainwindow.h
-    streamstab.h
-    volumewidget.h
-)
+kde4_add_ui_files(panda_SRCS mainwindow.ui)
 
+<<<<<<< .mine
+#kde4_add_kcfg_files(panda_SRCS settings.kcfgc )
+=======
 set(panda_UI mainwindow.ui)
+>>>>>>> .r24766
 
-qt4_wrap_ui(panda_UIC_HDRS ${panda_UI})
+kde4_add_executable(panda ${panda_SRCS})
 
-qt4_wrap_cpp(panda_MOC_SRCS ${panda_HDRS})
-qt4_wrap_cpp(panda_MOC_SRCS ${panda_UIC_HDRS})
-
-add_executable (panda ${panda_SRCS} ${panda_MOC_SRCS} ${panda_HDRS} ${panda_UIC_HDRS})
-
-target_link_libraries ( panda
-                        ${QT_QTCORE_LIBRARY}
-                        ${QT_QTGUI_LIBRARY}
+target_link_libraries(panda ${KDE4_KDEUI_LIBS} 
                         pulse
                         qtpulseaudiointegrator
-                        qtpulseaudiobindings
-                      )
+                        qtpulseaudiobindings)
+
+install(TARGETS panda ${INSTALL_TARGETS_DEFAULT_ARGS} )
+
+
+########### install files ###############
+
+#install( FILES testapp.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR} )
+#install( FILES testapp.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
+#install( FILES testappui.rc  DESTINATION  ${DATA_INSTALL_DIR}/testapp )

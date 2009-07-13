@@ -18,6 +18,8 @@
 #include <Qt/QtGui>
 
 class StreamsTab;
+class GroupsTab;
+class GroupManager;
 
 class MainWindow: public QMainWindow, private Ui::MainWindow
 {
@@ -31,5 +33,11 @@ class MainWindow: public QMainWindow, private Ui::MainWindow
     QTabWidget *tabWidget;
     StreamsTab *sinksTab;
     StreamsTab *sourcesTab;
+
+    private:
+    GroupsTab* groupsTab;
+
+    private:
+    GroupManager* groupManager;
 };
 #endif

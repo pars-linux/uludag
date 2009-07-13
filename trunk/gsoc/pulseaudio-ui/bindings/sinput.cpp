@@ -28,6 +28,8 @@ SinkInput::SinkInput(int index, StreamManager* parent, Context *context): Stream
     d->index = index;
     d->manager = parent;
     d->context = context;
+    d->valid = false;
+    d->proplist = 0;
 }
 
 SinkInput::~SinkInput()
@@ -86,6 +88,8 @@ pa_sample_spec SinkInput::sampleSpec()
 
 QString SinkInput::getProperty(QString key)
 {
+    cerr << "getProperty " << key.toStdString() << endl;
+    cerr << " in stream " << index() << " valid " << isValid() << endl;
     return QString(pa_proplist_gets(d->proplist, key.toUtf8().data()));
 }
 
