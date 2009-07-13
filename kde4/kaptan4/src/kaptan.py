@@ -50,8 +50,19 @@ def isLiveCD():
 
     return False
 
+def profileSended():
+    ''' Do not show smolt screen if profile was already sended.'''
+    size = os.path.getsize("/etc/smolt/pub-uuid-smolt.pardus.org.tr")
+
+    if size != 0:
+        return True
+
+    return False
+
 if isLiveCD():
     availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
+elif profileSended():
+    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, packageWidget, summaryWidget, goodbyeWidget]
 else:
     availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, smoltWidget, packageWidget, summaryWidget, goodbyeWidget]
 
