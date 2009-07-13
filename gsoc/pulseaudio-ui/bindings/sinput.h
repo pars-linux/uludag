@@ -1,3 +1,4 @@
+
 /*
     Copyright (c) 2009      by Marcin Kurczych          <tharkang@gmail.com>
     Copyright (c) 2007      by Nicolas Peyron
@@ -12,27 +13,21 @@
     *************************************************************************
 */
 
-#ifndef QTPULSEAUDIO_DEVICE_H
-#define QTPULSEAUDIO_DEVICE_H
+#ifndef QTPULSEAUDIO_SINPUT_H
+#define QTPULSEAUDIO_SINPUT_H
 #include <QString>
 #include "stream.h"
 
 
 namespace QtPulseAudio
 {
-
-class Device : public Stream
+class Context;
+class SinkInputManager;
+class SinkInput : public Stream
 {
     Q_OBJECT
     public:
-    ~Device();
-    QString description();
-    pa_usec_t latency();
-    pa_usec_t configuredLatency();
-    uint32_t monitor();
-    QString monitorName();
-    pa_volume_t baseVolume();
-    uint32_t card();
+    ~SinkInput();
    
     bool isValid();
 
@@ -50,14 +45,17 @@ class Device : public Stream
     void updated();
     
     public slots:
-    virtual void update() = 0;
-    virtual void setVolume(pa_cvolume volume) = 0;
-    virtual void setMuted(int muted) = 0;
+    virtual void update();
+    virtual void setVolume(pa_cvolume volume);
+    virtual void setMuted(int muted);
     
     protected:
-    Device(int index, StreamManager *parent);
+    friend class SinkInputManager;
+    SinkInput(int index, StreamManager *parent, Context *context);
     class Private;
     Private *d;
+    static void sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *userdata);
+    static void volume_cb(pa_context *, int success, void *userdata);
 };
 }
 #endif

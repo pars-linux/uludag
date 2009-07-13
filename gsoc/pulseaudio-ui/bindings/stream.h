@@ -29,7 +29,7 @@ public:
 
 	virtual QString name() = 0;
 	virtual uint32_t index() = 0;
-	virtual QString description() = 0;
+	//virtual QString description() = 0;
 	virtual pa_sample_spec sampleSpec() = 0;
 	virtual pa_channel_map channelMap() = 0;
 	virtual uint32_t owner() = 0;
@@ -37,9 +37,10 @@ public:
 	virtual int muted() = 0;
 	//virtual uint32_t monitorSource();
 	//virtual const char *monitorSourceName();
-	virtual pa_usec_t latency() = 0;
+	//virtual pa_usec_t latency() = 0;
 	virtual QString driver() = 0;
 	//pa_sink_flags_t flags();
+	virtual QString getProperty(QString key)=0;
 
 signals:
 	/**

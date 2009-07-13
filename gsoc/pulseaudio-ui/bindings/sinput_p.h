@@ -11,28 +11,19 @@
     *                                                                       *
     *************************************************************************
 */
-#ifndef QTPULSEAUDIO_DEVICE_P_H
-#define QTPULSEAUDIO_DEVICE_P_H
+#ifndef QTPULSEAUDIO_SINPUT_P_H
+#define QTPULSEAUDIO_SINPUT_P_H
 
 #include <QString>
-#include "device.h"
+#include "sinput.h"
 
 namespace QtPulseAudio
 {
-class Sink;
-class Source;
-class Device::Private
+class SinkInput::Private
 {
     public:
     bool valid;
     
-    QString description;
-    pa_usec_t latency;
-    pa_usec_t configuredLatency;
-    uint32_t monitor;
-    QString monitorName;
-    pa_volume_t baseVolume;
-    uint32_t card;
     uint32_t index;
     QString name;
     pa_sample_spec sampleSpec;
@@ -42,10 +33,10 @@ class Device::Private
     int muted;
     QString driver;
     pa_proplist *proplist;
-    friend class Sink;
-    friend class Source;
+    pa_cvolume svolume;
 
     StreamManager* manager;
+    Context *context;
 };
 }
 #endif

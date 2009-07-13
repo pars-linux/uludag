@@ -11,86 +11,133 @@
     *                                                                       *
     *************************************************************************
 */
+
 #include <iostream>
 
-#include "source.h"
-#include "sourcemanager.h"
+#include "sinput.h"
 #include "context.h"
-#include "device_p.h"
-#include "source_p.h"
+#include "sinput_p.h"
 
 using namespace std;
 
 namespace QtPulseAudio
 {
 
-Source::Source(int index, QtPulseAudio::SourceManager* parent, Context *context): Device(index, parent), d(new Private)
+SinkInput::SinkInput(int index, StreamManager* parent, Context *context): Stream(parent), d(new Private)
 {
+    d->index = index;
+    d->manager = parent;
     d->context = context;
 }
 
-Source::~Source()
+SinkInput::~SinkInput()
 {
     delete d;
 }
 
-void Source::update()
+uint32_t SinkInput::index()
+{
+    return d->index;
+}
+
+QString SinkInput::name()
+{
+    return d->name;
+}
+
+bool SinkInput::isValid()
+{
+    return d->valid;
+}
+
+
+int SinkInput::muted()
+{
+    return d->muted;
+}
+
+pa_cvolume SinkInput::volume()
+{
+    return d->volume;
+}
+
+
+uint32_t SinkInput::owner()
+{
+    return d->owner;
+}
+
+QString SinkInput::driver()
+{
+    return d->driver;
+}
+
+pa_channel_map SinkInput::channelMap()
+{
+    return d->channelMap;
+}
+
+
+pa_sample_spec SinkInput::sampleSpec()
+{
+    return d->sampleSpec;
+}
+
+
+QString SinkInput::getProperty(QString key)
+{
+    return QString(pa_proplist_gets(d->proplist, key.toUtf8().data()));
+}
+
+void SinkInput::update()
 {
     pa_operation *o;
-    o = pa_context_get_source_info_by_index(d->context->cObject(),
-			(Device::d)->index, Source::source_cb, this);
+    o = pa_context_get_sink_input_info(d->context->cObject(),
+			d->index, SinkInput::sink_input_cb, this);
     pa_operation_unref(o);
 }
 
-void Source::setVolume(pa_cvolume v)
+void SinkInput::setVolume(pa_cvolume v)
 {
     pa_operation *o;
     this->d->svolume = v;
-    o = pa_context_set_source_volume_by_index(d->context->cObject(),
-			(Device::d)->index, &d->svolume, Source::volume_cb, this);
+    o = pa_context_set_sink_input_volume(d->context->cObject(),
+			d->index, &d->svolume, SinkInput::volume_cb, this);
     pa_operation_unref(o);
 }
 
-void Source::setMuted(int muted)
+void SinkInput::setMuted(int muted)
 {
     pa_operation *o;
-    o = pa_context_set_source_mute_by_index(d->context->cObject(),
-			(Device::d)->index, muted, Source::volume_cb, this);
+    o = pa_context_set_sink_input_mute(d->context->cObject(),
+			d->index, muted, SinkInput::volume_cb, this);
     pa_operation_unref(o);
 }
 
-void Source::source_cb(pa_context *, const pa_source_info *i, int eol, void *userdata)
+void SinkInput::sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol, void *userdata)
 {
-    cout << "Source::source_cb" << endl;
-    Source *p = reinterpret_cast<Source *>(userdata);
-    Device::Private *dd = p->Device::d;
+    cout << "SinkInput::sink_cb" << endl;
+    SinkInput *p = reinterpret_cast<SinkInput *>(userdata);
+    SinkInput::Private *dd = p->d;
 
     if (eol) return;
 
     if (!i) {
-	    cout << "Source callback failure" << endl;
+	    cout << "Sink callback failure" << endl;
 	    return;
     }
 
     if ( dd->valid ) assert ( i->index == dd->index );
 
-    //p->mSourceInfo = *i;
-    cout << i->name << " " << i->description << endl;
+    //p->mSinkInfo = *i;
     
     dd->name = QString(i->name);
-    dd->description = QString(i->description);
     dd->sampleSpec = i->sample_spec;
     dd->channelMap = i->channel_map;
     dd->owner = i->owner_module;
     dd->volume = i->volume;
     dd->muted = i->mute;
-    dd->monitor= i->monitor_of_sink;
-    dd->monitorName = QString(i->monitor_of_sink_name);
-    dd->latency = i->latency;
     dd->driver = QString(i->driver);
-    dd->baseVolume = i->base_volume;
-    dd->card = i->card;
-    dd->configuredLatency = i->configured_latency;
     dd->valid = true;
     if(dd->proplist != 0)
 	pa_proplist_free(dd->proplist);
@@ -98,10 +145,10 @@ void Source::source_cb(pa_context *, const pa_source_info *i, int eol, void *use
     emit p->updated();
 }
 
-void Source::volume_cb(pa_context *, int success, void *userdata)
+void SinkInput::volume_cb(pa_context *, int success, void *userdata)
 {
-    cout << "Source::volume_cb" << endl;
-    Source *p = reinterpret_cast<Source *>(userdata);
+    cout << "Sink::volume_cb" << endl;
+    SinkInput *p = reinterpret_cast<SinkInput *>(userdata);
     /*if(p->(Device::d)->volumeOperation != 0)
     {
 	pa_operation_unref(p->(Device::d)->volumeOperation);

@@ -47,8 +47,8 @@ void StreamsTab::streamAdded(int stream_index)
 {
     QtPulseAudio::Stream *s = manager->stream(stream_index);
     bool first = streamComboBox->count() == 0;
-    std::cout << s->name().toStdString() << std::endl;
-    std::cout << s->description().toStdString() << std::endl;
+    //std::cout << s->name().toStdString() << std::endl;
+    //std::cout << s->description().toStdString() << std::endl;
     streamComboBox->addItem(s->name(), stream_index);
     if(first)
 	streamSelected(0);

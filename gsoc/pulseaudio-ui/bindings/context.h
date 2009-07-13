@@ -27,6 +27,7 @@ namespace QtPulseAudio
 class Integrator;
 class SinkManager;
 class SourceManager;
+class SinkInputManager;
 
 class Context : public QObject {
 	Q_OBJECT
@@ -41,6 +42,7 @@ public:
 
 	SinkManager *sinks();
 	SourceManager *sources();
+	SinkInputManager *sinkInputs();
 
 	pa_context *cObject();
 
