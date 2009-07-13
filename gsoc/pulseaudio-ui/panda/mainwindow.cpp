@@ -13,8 +13,11 @@
 #include <iostream>
 #include "mainwindow.h"
 #include "streamstab.h"
+#include "groupmanager.h"
+#include "groupstab.h"
 #include "../bindings/sourcemanager.h"
 #include "../bindings/sinkmanager.h"
+#include "../bindings/sinputmanager.h"
 
 MainWindow::MainWindow(QtPulseAudio::Context *context, QMainWindow *parent):QMainWindow(parent)
 {
@@ -40,6 +43,11 @@ void MainWindow::contextReady()
     pa_operation_unref(o);
     sinksTab = new StreamsTab(context->sinks(), this);
     sourcesTab = new StreamsTab(static_cast<QtPulseAudio::StreamManager *>(context->sources()), this);
+    
+    groupManager = new GroupManager(context->sinkInputs(), this);
+    groupsTab = new GroupsTab(groupManager, this);
+    
     tabWidget->addTab(sinksTab, QString("Output"));
     tabWidget->addTab(sourcesTab, QString("Input"));
+    tabWidget->addTab(groupsTab, QString("Applications"));
 }

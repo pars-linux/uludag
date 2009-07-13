@@ -72,7 +72,7 @@ void SinkInputManager::sink_input_cb(pa_context *, const pa_sink_input_info *i, 
 	fresh = true;
     }
     
-    SinkInputManager::sink_input_cb(sm->d->context->cObject(), i, eol, static_cast<SinkInput *>(sm->stream(index)));
+    SinkInput::sink_input_cb(sm->d->context->cObject(), i, eol, static_cast<SinkInput *>(sm->stream(index)));
     if(fresh)
 	emit sm->added(index);
     else

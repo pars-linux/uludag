@@ -59,7 +59,7 @@ Stream *StreamManager::stream(const QString &name)
     return d->streamsByName[name];
 }
 
-void StreamManager::event(int type, uint32_t index)
+void StreamManager::streamEvent(int type, uint32_t index)
 {
     cout << "StreamManager::event(" << type << ", " << index << ")" << endl;
     Stream *s;
