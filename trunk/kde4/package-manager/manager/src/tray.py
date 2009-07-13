@@ -34,6 +34,9 @@ class Tray(KSystemTrayIcon):
         self.lastUpgrades = []
         self.unread = 0
 
+        noUpgrades = len(self.iface.getUpdates())
+        self.slotSetUnread(noUpgrades)
+
     def initializeTimer(self):
         self.timer = QTimer()
         self.timer.connect(self.timer, SIGNAL("timeout()"), self.checkUpdate)
@@ -72,6 +75,8 @@ class Tray(KSystemTrayIcon):
 
     def showPopup(self):
         upgrades = self.iface.getUpdates()
+        self.slotSetUnread(len(upgrades))
+
         if config.PMConfig().installUpdatesAutomatically():
             if not self.appWindow.isVisible() and not self.iface.operationInProgress():
                 self.iface.upgradePackages(upgrades)
