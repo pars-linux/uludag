@@ -47,6 +47,11 @@ p, li { white-space: pre-wrap; }
    </item>
    <item row="1" column="0" colspan="2">
     <widget class="QGroupBox" name="groupBoxUpdates">
+     <property name="styleSheet">
+      <string notr="true"> QGroupBox::title { 
+color:white 
+}</string>
+     </property>
      <property name="title">
       <string>Updates</string>
      </property>
@@ -106,6 +111,12 @@ p, li { white-space: pre-wrap; }
    </item>
    <item row="2" column="0">
     <widget class="QGroupBox" name="groupBoxRepo">
+     <property name="styleSheet">
+      <string notr="true"> QGroupBox::title { 
+color:white 
+}
+</string>
+     </property>
      <property name="title">
       <string>Repo</string>
      </property>
