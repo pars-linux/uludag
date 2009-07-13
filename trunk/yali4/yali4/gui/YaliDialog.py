@@ -202,7 +202,6 @@ class InformationWindow(QtGui.QWidget):
 
         # Message
         self.label = QtGui.QLabel(self.frame)
-        self.label.setAlignment(Qt.AlignCenter)
         self.horizontalLayout.addWidget(self.label)
 
         self.gridlayout.addWidget(self.frame,0,0,1,1)

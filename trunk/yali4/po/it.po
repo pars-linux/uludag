@@ -110,7 +110,7 @@ msgstr ""
 "<p>Dopo esserti assicurato di aver salvato i dati importanti questo è in "
 "genere un modo sicuro\n"
 "e semplice per installare Pardus.</p>\n"
-"</b>\n"
+"</b>"
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
@@ -1856,7 +1856,7 @@ msgstr ""
 "<b>\n"
 "<p>Verifica dell'integrità dei pacchetti fallita. Sembra che il CD di "
 "installazione abbia dei problemi.</p>\n"
-"</b>\n"
+"</b>"
 
 #: yali4/installer.py:202
 msgid ""
