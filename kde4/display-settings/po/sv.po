@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: display-settings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-12 19:39+0300\n"
+"POT-Creation-Date: 2009-07-13 10:11+0300\n"
 "PO-Revision-Date: 2009-07-12 19:35+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -26,8 +26,8 @@ msgid "Outputs"
 msgstr "Utgångar"
 
 #: .tmp/ui_screens.py:95
-msgid "Cloned displays"
-msgstr "Klonad visning"
+msgid "Extend desktop to all displays"
+msgstr ""
 
 #: .tmp/ui_screens.py:96
 msgid "Detect Outputs"
@@ -331,6 +331,9 @@ msgstr "Anpassa..."
 #: .tmp/ui_devices.py:70
 msgid "Outputs:"
 msgstr "Utgångar:"
+
+#~ msgid "Cloned displays"
+#~ msgstr "Klonad visning"
 
 #~ msgid " "
 #~ msgstr " "
