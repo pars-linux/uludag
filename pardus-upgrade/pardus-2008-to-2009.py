@@ -9,14 +9,14 @@ def upgrade_pisi():
 def remove_all_repos_and_add_2009_repository():
     for repo in pisi.api.list_repos():
         pisi.api.remove_repo(repo)
-    pisi.api.add_repo("pardus-2009", "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2")
+    pisi.api.add_repo("pardus-2009", "http://packages.pardus.org.tr/pardus-2009/pisi-index.xml.bz2")
 
 def upgrade_and_configure_packages():
     os.system("pisi up --ignore-comar -y")
     os.system("pisi cp -y")
 
 def install_missing_x11_drivers():
-    os.system("pisi it -y -c x11.driver")    
+    os.system("pisi it -y -c x11.driver")
 
 def install_display_manager():
     os.unlink('/etc/X11/kdm/kdmrc')
