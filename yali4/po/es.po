@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-04 19:28+0300\n"
-"PO-Revision-Date: 2009-07-08 21:42-0400\n"
+"PO-Revision-Date: 2009-07-12 21:23-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -201,7 +201,7 @@ msgstr "Partición raíz (/) de Pardus"
 #: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:79
 # favor revisar - no debería ser particion ??
 msgid "Selected disk below"
-msgstr "Seleccione el disco abajo"
+msgstr "Disco seleccionado abajo"
 
 #: yali4/gui/Ui/bootloaderwidget.py:85
 msgid "Don't install bootloader"
@@ -314,7 +314,7 @@ msgstr "Seleccione una distribución de teclado:"
 
 #: yali4/gui/Ui/keyboardwidget.py:61
 msgid "Test selected layout:"
-msgstr "Probar teclado seleccionado:"
+msgstr "Probar el teclado:"
 
 #: yali4/gui/Ui/main.py:181
 msgid "Yali4"
@@ -360,7 +360,7 @@ msgstr "Partición 1 en FUJISTU - /dev/sda1"
 
 #: yali4/gui/Ui/partedit.py:155
 msgid "Use :"
-msgstr "Usado para :"
+msgstr "Usar para :"
 
 #: yali4/gui/Ui/partedit.py:156
 msgid "Size :"
@@ -816,8 +816,7 @@ msgid ""
 "Freenode server (and you can use Konversation for that).\n"
 msgstr ""
 "Puede encontrar HOW-TOs, tutoriales e introducciones a los paquetes entrando "
-"en nuestro portal de la comunidad www.ozgurlukicin.com o http://worldforum."
-"pardus-linux.nl/. Si tiene algún problema o inconveniente con Pardus 2009 "
+"en nuestro portal de la comunidad www.ozgurlukicin.com. Si tiene algún problema o inconveniente con Pardus 2009 "
 "puede recibir soporte usando el foro y la sala #pardus en el servidor "
 "Freenode IRC (puede usar el programa Konversation para este fin).\n"
 
@@ -865,12 +864,13 @@ msgstr ""
 "Partición <b>%(partition)s (%(size)s)</b> <b>eliminado</b>de dispositivo <b>%"
 "(device)s</b>."
 
-# please check the idea of this sentence, does it make sense ? 
+# please check the idea of this sentence, does it make sense ?
 # if there is a "second" sentence, it might get clearer, however if it is "alone" this should be improved
 # because it doesn't refer to "partition type" - better "mount point" or "purpose in the system" or the like..
+# in spanish i say (more or less): "There is already a partition destined for the same use"
 #: yali4/gui/DiskWidgets.py:326 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
-msgstr "Hay una petición para el mismo tipo de partición."
+msgstr "Ya hay una partición especificada para el mismo fin."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
@@ -882,7 +882,7 @@ msgstr "Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s
 #: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:163
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr "Usar partición <b>%(partition)s</b> <b>seleccionada</b> para <b>%(type)s</b>."
 
 #: yali4/gui/DiskWidgets.py:382
 msgid ""
@@ -1204,7 +1204,7 @@ msgstr "Detener la Verificación"
 
 #: yali4/gui/ScrDateTime.py:28
 msgid "Set your timezone"
-msgstr "Establecer zona horaria"
+msgstr "Zona horaria"
 
 #: yali4/gui/ScrDateTime.py:29
 msgid "You can change your timezone, time or date settings..."
@@ -1285,7 +1285,7 @@ msgstr "Presione el botón <b>Reiniciar</b> para reiniciar el sistema."
 
 #: yali4/gui/ScrGoodbye.py:87 yali4/gui/ScrRescueFinish.py:89
 msgid "<b>Rebooting system. Please wait!</b>"
-msgstr "<b>Rebooteando sistema. Espere..!</b>"
+msgstr "<b>Rebooteando. Por favor espere..!</b>"
 
 #: yali4/gui/ScrInstall.py:63
 msgid "Installing system..."
@@ -1372,7 +1372,7 @@ msgstr "Desea intentar de nuevo ?"
 # i shortened this message, i think it is a message of the bottom line..
 #: yali4/gui/ScrInstall.py:186
 msgid "Creating baselayout for your system!"
-msgstr "Configuración básica del sistema !"
+msgstr "Configuración de layout básico del sistema !"
 
 #: yali4/gui/ScrInstall.py:195
 msgid "Configuring packages.."
@@ -1563,7 +1563,7 @@ msgstr "Todos los cambios que realizó se anularán."
 
 #: yali4/gui/ScrRescueFinish.py:33 yali4/gui/ScrRescue.py:30
 msgid "Rescue Mode"
-msgstr "Modo de Recuperación"
+msgstr "Modo de Rescate"
 
 #: yali4/gui/ScrRescueFinish.py:34
 msgid "Final step of Rescue operations..."
@@ -1599,12 +1599,12 @@ msgstr "Modo de rescate del cargador de arranque"
 
 #: yali4/gui/ScrRescueGrub.py:33
 msgid "You can fix your bootloader..."
-msgstr "Puede solucionar el cargador de arranque..."
+msgstr "Puede solucionar problemas de arranque..."
 
 # favor verificar
 #: yali4/gui/ScrRescuePassword.py:42
 msgid "Rescue Mode for Password Recovery"
-msgstr "Modo de Rescate para Recuperación de Contraseña"
+msgstr "Modo de Rescate para la recuperación de contraseñas"
 
 # really recover ? or simply re-establish a new one ? or unset - delete the password ?
 #: yali4/gui/ScrRescuePassword.py:43
@@ -1661,7 +1661,7 @@ msgstr "Modo de rescate del registro histórico de PISI"
 
 #: yali4/gui/ScrRescuePisi.py:41
 msgid "You can take back your system ..."
-msgstr "Puede retroceder el sistema..."
+msgstr "Puede volver arrás el estado de su sistema..."
 
 #: yali4/gui/ScrRescuePisi.py:43
 msgid ""
@@ -1688,7 +1688,7 @@ msgid ""
 "You can reinstall your Grub or you can take back your system by using Pisi "
 "History..."
 msgstr ""
-"Puede reinstalar Grub o puede retroceder el sistema usando el registro "
+"Puede reinstalar Grub o puede volver atrás al sistema usando el registro "
 "histórico de Pisi..."
 
 #: yali4/gui/ScrRescue.py:33
@@ -1704,7 +1704,7 @@ msgstr ""
 # favor revisar, montar - conectar - adjuntar (agregando no)
 #: yali4/gui/ScrRescue.py:93
 msgid "Mounting selected partition..."
-msgstr "Montando (adjuntando) partición seleccionada..."
+msgstr "Montando partición seleccionada..."
 
 #: yali4/gui/ScrRescue.py:105
 msgid "Yali couldn't find a suitable partition on your system"
@@ -1716,11 +1716,11 @@ msgstr "Por favor seleccione una partición de la lista."
 
 #: yali4/gui/ScrSummary.py:42
 msgid "The last step before install"
-msgstr "Ultimo paso antes de la instalación"
+msgstr "Un paso antes de instalar"
 
 #: yali4/gui/ScrSummary.py:43
 msgid "Summary of your installation..."
-msgstr "Resumen de la instalación..."
+msgstr "Detalles de la instalación por realizarse..."
 
 #: yali4/gui/ScrSummary.py:45
 msgid ""
@@ -1776,21 +1776,21 @@ msgstr "Usuarios"
 #: yali4/gui/ScrSummary.py:135
 #, python-format
 msgid "User %s (<b>%s</b>) added."
-msgstr "Usuario %s (<b>%s</b>) agregado."
+msgstr "Añadir usuario %s (<b>%s</b>)."
 
 #: yali4/gui/ScrSummary.py:137
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>administrator privileges</u>."
-msgstr "Usuario %s (<b>%s</b>) agregado con <u>privilegios de administración</u>."
+msgstr "Añadir usuario %s (<b>%s</b>) con <u>privilegios de administración</u>."
 
 #: yali4/gui/ScrSummary.py:143
 msgid "Hostname Settings"
-msgstr "Nombre de la Máquina (hostname)"
+msgstr "Nombre de la Máquina"
 
 #: yali4/gui/ScrSummary.py:144
 #, python-format
 msgid "Hostname is set as <b>%s</b>"
-msgstr "Nombre de la Máquina (hostname) <b>%s</b>"
+msgstr "hostname: <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:150
 msgid "Partition Settings"
@@ -1836,7 +1836,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr "Usar partición <b>%(newPartition)s</b> <b>seleccionada</b> para <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -1845,7 +1845,7 @@ msgstr "Cargador de arranque"
 #: yali4/gui/ScrSummary.py:215
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>."
-msgstr "GRUB se va a instalar en <b>%s</b>."
+msgstr "Instalar GRUB en <b>%s</b>."
 
 #: yali4/gui/ScrSummary.py:217
 msgid "GRUB will not be installed."
@@ -1890,11 +1890,11 @@ msgstr "Redimensionando..."
 
 #: yali4/gui/ScrUsers.py:32
 msgid "Set Users"
-msgstr "Crear Usuarios"
+msgstr "Creación de Usuarios"
 
 #: yali4/gui/ScrUsers.py:33
 msgid "Create users to use Pardus..."
-msgstr "Crear usuarios de Pardus..."
+msgstr "Crear los usuarios, que usarán Pardus..."
 
 #: yali4/gui/ScrUsers.py:35
 msgid ""
