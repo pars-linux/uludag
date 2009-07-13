@@ -135,7 +135,11 @@ class Iface(Singleton):
             return pisi.api.list_installed()
 
     def getUpdates(self):
-        return pisi.api.list_upgradable()
+        lu = set(pisi.api.list_upgradable())
+        for replaced in self.replaces.keys():
+            lu.remove(replaced)
+            lu.add(self.replaces[replaced])
+        return lu
 
     def getGroup(self, name):
         return self.gdb.get_group(name)
