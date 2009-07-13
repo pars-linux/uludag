@@ -11,11 +11,7 @@ set(panda_SRCS
 
 kde4_add_ui_files(panda_SRCS mainwindow.ui)
 
-<<<<<<< .mine
 #kde4_add_kcfg_files(panda_SRCS settings.kcfgc )
-=======
-set(panda_UI mainwindow.ui)
->>>>>>> .r24766
 
 kde4_add_executable(panda ${panda_SRCS})
 
