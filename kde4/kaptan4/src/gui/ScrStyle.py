@@ -67,13 +67,30 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 #styleColorScheme = parser.get_locale('Style', 'colorScheme', '')
                 widgetStyle = parser.get_locale('Style', 'widgetStyle', '')
                 desktopTheme = parser.get_locale('Style', 'desktopTheme', '')
+                colorScheme = parser.get_locale('Style', 'colorScheme', '')
                 iconTheme = parser.get_locale('Style', 'iconTheme', '')
                 windowDecoration = parser.get_locale('Style', 'windowDecoration', '')
                 styleThumb = os.path.join("/usr/kde/4/share/apps/kaptan/gui/styles/",  parser.get_locale('Style', 'thumbnail',''))
 
+                # OMG, color schemes are messy!
+
+                colorDir = "/usr/kde/4/share/apps/color-schemes/"
+                #listColorSchemes = glob.glob1(colorDir, "*.colors")
+                listColorSchemes = ['CherryBlossom.colors']
+                for color in listColorSchemes:
+                    Config = ConfigParser()
+                    Config.read(colorDir + str(color))
+                    colorConfig= KConfig("kdeglobals")
+                    for i in Config.sections():
+                        colorGroup = colorConfig.group(str(i))
+                        for key, value in self.ConfigSectionMap(Config, i).items():
+                            print key, " => ", value
+                            colorGroup.writeEntry(str(key), str(value))
+
                 self.styleDetails[styleName] = {
                         "description": styleDesc, 
                         "widgetStyle": widgetStyle, 
+                        "colorScheme": colorScheme, 
                         "desktopTheme": desktopTheme, 
                         "iconTheme": iconTheme, 
                         "windowDecoration": windowDecoration, 
@@ -92,6 +109,19 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.comboBoxDesktopType.connect(self.ui.comboBoxDesktopType, SIGNAL("activated(const QString &)"), self.setDesktopType)
         self.ui.spinBoxDesktopNumbers.connect(self.ui.spinBoxDesktopNumbers, SIGNAL("valueChanged(const QString &)"), self.addDesktop)
         #self.ui.previewButton.connect(self.ui.previewButton, SIGNAL("clicked()"), self.previewStyle)
+
+    def ConfigSectionMap(self, Config, section):
+        dict1 = {}
+        options = Config.options(section)
+        for option in options:
+            try:
+                dict1[option] = Config.get(section, option)
+                if dict1[option] == -1:
+                    DebugPrint("skip: %s" % option)
+            except:
+                print("exception on %s!" % option)
+                dict1[option] = None
+        return dict1
 
     def addDesktop(self, numberOfDesktop):
         self.__class__.screenSettings["hasChangedDesktopNumber"] = True
