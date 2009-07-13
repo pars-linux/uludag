@@ -21,8 +21,9 @@ from PyKDE4.kdecore import KGlobal
 
 import string
 import backend
+from pmutils import humanReadableSize
 
-(SummaryRole, DescriptionRole, VersionRole, GroupRole, RepositoryRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, Qt.UserRole+4)
+(SummaryRole, DescriptionRole, VersionRole, GroupRole, RepositoryRole, SizeRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, Qt.UserRole+4, Qt.UserRole+5)
 
 class PackageModel(QAbstractTableModel):
 
@@ -57,6 +58,8 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.summary))
         elif role == DescriptionRole:
             return QVariant(unicode(package.description))
+        elif role == SizeRole:
+            return QVariant(unicode(humanReadableSize(self.iface.getPackageSize(package.name))))
         elif role == VersionRole:
             return QVariant(unicode(package.version))
         elif role == RepositoryRole:

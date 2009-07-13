@@ -86,6 +86,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         title = index.model().data(index, Qt.DisplayRole)
         summary = index.model().data(index, SummaryRole)
         description = index.model().data(index, DescriptionRole)
+        size = index.model().data(index, SizeRole)
 
         foregroundColor = option.palette.color(QtGui.QPalette.Text)
         normalFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 10, QtGui.QFont.Normal)
@@ -115,7 +116,7 @@ class PackageDelegate(QtGui.QItemDelegate):
             p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, i18n("Description:"))
 
             p.setFont(normalDetailFont)
-            
+
             fontMetrics = QtGui.QFontMetrics(normalDetailFont)
             rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, description.toString())
             p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, rect.height(), Qt.TextWordWrap, description.toString())
@@ -138,6 +139,15 @@ class PackageDelegate(QtGui.QItemDelegate):
 
             p.setFont(normalDetailFont)
             p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, repository.toString())
+
+            # Package Detail Size
+            position += rect.height()
+
+            p.setFont(boldDetailFont)
+            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, i18n("Package Size:"))
+
+            p.setFont(normalDetailFont)
+            p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, itemHeight / 2, Qt.TextWordWrap, size.toString())
 
         p.end()
         painter.drawPixmap(option.rect.topLeft(), pixmap)
