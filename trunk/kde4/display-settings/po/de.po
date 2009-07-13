@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-12 19:39+0300\n"
+"POT-Creation-Date: 2009-07-13 10:11+0300\n"
 "PO-Revision-Date: 2009-07-12 20:02-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <de@li.org>\n"
@@ -27,7 +27,7 @@ msgid "Outputs"
 msgstr "Ausgänge"
 
 #: .tmp/ui_screens.py:95
-msgid "Cloned displays"
+msgid "Extend desktop to all displays"
 msgstr ""
 
 #: .tmp/ui_screens.py:96
@@ -111,16 +111,19 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
-"Es sind keine Pakete installiert / vorhanden, um für diese Application eine grafische Oberfläche zu bieten.\n"
-"Bitte prüfen sie ob alle nötigen Pakete installiert und korrekt konfiguriert wurden."
+"Es sind keine Pakete installiert / vorhanden, um für diese Application eine "
+"grafische Oberfläche zu bieten.\n"
+"Bitte prüfen sie ob alle nötigen Pakete installiert und korrekt konfiguriert "
+"wurden."
 
 #: .tmp/displaysettings/deviceswidget.py:96
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
 msgstr ""
-"<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber verwenden, welcher "
-"vom Hardwarehersteller angeboten wird. Wollen Sie diesen Treiber verwenden?</p></qt>"
+"<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber "
+"verwenden, welcher vom Hardwarehersteller angeboten wird. Wollen Sie diesen "
+"Treiber verwenden?</p></qt>"
 
 #: .tmp/displaysettings/deviceswidget.py:112
 msgid ""
@@ -128,9 +131,10 @@ msgid ""
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
 "<b>%1</b> from video card options.</qt>"
 msgstr ""
-"<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber verwenden, welcher "
-"vom Hardwarehersteller angeboten wird. Um diesen zu nutzen, müssen Sie folgende Pakete installieren <b>%2</b> und wählen Sie "
-"<b>%1</b> bei den Grafikkartenoptionen aus.</qt>"
+"<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber "
+"verwenden, welcher vom Hardwarehersteller angeboten wird. Um diesen zu "
+"nutzen, müssen Sie folgende Pakete installieren <b>%2</b> und wählen Sie <b>%"
+"1</b> bei den Grafikkartenoptionen aus.</qt>"
 
 #: .tmp/displaysettings/deviceswidget.py:117
 msgid "Start Package Manager"
@@ -175,7 +179,9 @@ msgstr "Benutzerdefinierter Monitor"
 
 #: .tmp/displaysettings/outputdialog.py:78
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
-msgstr "<qt><i>klicken Sie den \"Wählen...\" Button um einen Monitor auszuwählen</i></qt>"
+msgstr ""
+"<qt><i>klicken Sie den \"Wählen...\" Button um einen Monitor auszuwählen</"
+"i></qt>"
 
 #: .tmp/displaysettings/screenswidget.py:226
 msgid "Output Properties - %1"
@@ -218,10 +224,14 @@ msgid ""
 "If the frequency ranges that your monitor supports are not detected for some "
 "reason, you can specify them here. Be careful with these values, as an "
 "inaccurate value may damage your monitor, especially if it is an old model."
-msgstr "Falls der mögliche höchste oder beste Frequenzbereich ihres Monitors nicht erkannt wird, können Sie hier die Frequenz einstellen. Bitte seien Sie besonders vorsichtig mit den neuen Parametern, da inkorrekte Eingaben Ihren Monitor beschädigen können, besonders bei älteren Modellen."
+msgstr ""
+"Falls der mögliche höchste oder beste Frequenzbereich ihres Monitors nicht "
+"erkannt wird, können Sie hier die Frequenz einstellen. Bitte seien Sie "
+"besonders vorsichtig mit den neuen Parametern, da inkorrekte Eingaben Ihren "
+"Monitor beschädigen können, besonders bei älteren Modellen."
 
-#: .tmp/ui_output.py:226
 # Zweifel: ist eigenlich nicht richtig übersetzt, kann aber trotzdem richtig passend sein. Müsste den Zusammenhang/Bildschirm dazu sehen..
+#: .tmp/ui_output.py:226
 msgid "Specify Ranges"
 msgstr "Spezifiziere Frequenzen"
 
@@ -274,7 +284,11 @@ msgid ""
 "If your monitor's dimensions are not correctly detected, fonts and other "
 "visual objects might seem larger or smaller than normal. In order to fix "
 "this problem, you can specify your monitor's dimensions here."
-msgstr "Falls die Bildschirmgröße Ihres Monitors nicht korrekt erkannt wurden, könnten Schriftarten und andere visuelle Objekte größer oder kleiner als normal erscheinen. Sie können dieses Problem lösen, indem sie hier die Größe Ihres Monitors angeben."
+msgstr ""
+"Falls die Bildschirmgröße Ihres Monitors nicht korrekt erkannt wurden, "
+"könnten Schriftarten und andere visuelle Objekte größer oder kleiner als "
+"normal erscheinen. Sie können dieses Problem lösen, indem sie hier die Größe "
+"Ihres Monitors angeben."
 
 #: .tmp/ui_output.py:239
 msgid "Specify Display Size"
@@ -327,4 +341,3 @@ msgstr "Konfiguriere..."
 #: .tmp/ui_devices.py:70
 msgid "Outputs:"
 msgstr "Ausgänge:"
-
