@@ -1,13 +1,10 @@
 [Desktop Entry]
 Name=Display Settings
-Name[tr]=Ekran Ayarları
 Name[sv]=Bildskärm
-GenericName=Display Settings
-GenericName[tr]=Ekran Ayarları
-GenericName[sv]=Bildskärm
+Name[tr]=Ekran Ayarları
 Comment=Configure display devices
-Comment[tr]=Görüntü aygıtlarını yapılandır
 Comment[sv]=Anpassar bildskärmen
+Comment[tr]=Görüntü aygıtlarını yapılandır
 Exec=display-settings
 Icon=preferences-desktop-display
 Type=Application
