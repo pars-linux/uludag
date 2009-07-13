@@ -40,7 +40,7 @@ while mask < (1 << 24):
         probed_displays.append("%s-%d" % (dtype, n))
 
     mask <<= 1
-    n %= n + 1
+    n = (n + 1) % 8
 
 for d in probed_displays:
     print d
