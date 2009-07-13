@@ -72,7 +72,10 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
             Check if there are packages that provide required backend.
         """
         if not len(self.iface.getPackages()):
-            kdeui.KMessageBox.error(self, kdecore.i18n("There are no packages that provide backend for this application.\nPlease be sure that packages are installed and configured correctly."))
+            kdeui.KMessageBox.error(self, kdecore.i18n(
+                "There are no packages that provide backend for this "
+                "application.\nPlease be sure that packages are installed "
+                "and configured correctly."))
             return False
         return True
 
@@ -192,6 +195,13 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
             for dlg in self.outputDialogs.values():
                 dlg.apply()
             self.iface.sync()
+
+            kdeui.KMessageBox.information(self,
+                    kdecore.i18n("You must restart your X session for the "
+                                 "changes to take effect."),
+                    QtCore.QString(),
+                    "Display Device Configuration Saved")
+
             # XXX really needed?
             self.load()
 

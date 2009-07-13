@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: display-settings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-13 10:11+0300\n"
+"POT-Creation-Date: 2009-07-13 15:28+0300\n"
 "PO-Revision-Date: 2009-07-12 19:35+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -16,58 +16,52 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/ui_screens.py:93 .tmp/displaysettings/about.py:20
+#: .tmp/ui_screens.py:83 .tmp/displaysettings/about.py:20
 #: .tmp/ui_devices.py:66
 msgid "Display Settings"
 msgstr "Bildskärm"
 
-#: .tmp/ui_screens.py:94
+#: .tmp/ui_screens.py:84
 msgid "Outputs"
 msgstr "Utgångar"
 
-#: .tmp/ui_screens.py:95
+#: .tmp/ui_screens.py:85
 msgid "Extend desktop to all displays"
 msgstr ""
 
-#: .tmp/ui_screens.py:96
+#: .tmp/ui_screens.py:86
 msgid "Detect Outputs"
 msgstr "Upptäck utgångar"
 
-#: .tmp/ui_screens.py:97
+#: .tmp/ui_screens.py:87
 msgid "Output Properties"
 msgstr "Utgångsinställningar"
 
-#: .tmp/ui_screens.py:98
+#: .tmp/ui_screens.py:88
 msgid "Size:"
 msgstr "Storlek:"
 
-#: .tmp/ui_screens.py:99 .tmp/ui_screens.py:101
-#: .tmp/displaysettings/screenswidget.py:231
-#: .tmp/displaysettings/screenswidget.py:269
-msgid "Auto"
-msgstr "Automatiskt"
-
-#: .tmp/ui_screens.py:100
+#: .tmp/ui_screens.py:89
 msgid "Refresh Rate:"
 msgstr "Uppdateringsfrekvens:"
 
-#: .tmp/ui_screens.py:102
+#: .tmp/ui_screens.py:90
 msgid "Rotation:"
 msgstr "Orientering:"
 
-#: .tmp/ui_screens.py:103
+#: .tmp/ui_screens.py:91
 msgid "No Rotation"
 msgstr "Ingen rotation"
 
-#: .tmp/ui_screens.py:104
+#: .tmp/ui_screens.py:92
 msgid "Left (90 degrees)"
 msgstr "Vänster (90 grader)"
 
-#: .tmp/ui_screens.py:105
+#: .tmp/ui_screens.py:93
 msgid "Upside-Down (180 degrees)"
 msgstr "Upp och ner (180 grader)"
 
-#: .tmp/ui_screens.py:106
+#: .tmp/ui_screens.py:94
 msgid "Right (270 degrees)"
 msgstr "Höger (270 grader)"
 
@@ -103,7 +97,7 @@ msgstr "16 bitar"
 msgid "24 Bit"
 msgstr "24 bitar"
 
-#: .tmp/displaysettings/deviceswidget.py:75
+#: .tmp/displaysettings/deviceswidget.py:76
 #: .tmp/displaysettings/screenswidget.py:68
 msgid ""
 "There are no packages that provide backend for this application.\n"
@@ -113,7 +107,7 @@ msgstr ""
 "programmet.\n"
 "Vänligen se till att paketen är rätt installerade och inställda."
 
-#: .tmp/displaysettings/deviceswidget.py:96
+#: .tmp/displaysettings/deviceswidget.py:99
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
@@ -121,7 +115,7 @@ msgstr ""
 "<qt>Du kan använda drivrutinen <b>%1</b> som tillhandahålls av tillverkaren "
 "för att få bättre prestande. Vill du använda den drivrutinen?</p></qt>"
 
-#: .tmp/displaysettings/deviceswidget.py:112
+#: .tmp/displaysettings/deviceswidget.py:115
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
@@ -131,12 +125,17 @@ msgstr ""
 "för att få bättre prestande. För att använda den måste du installera paketet "
 "<b>%2</b> och välja <b>%1</b> i grafikkortsinställningarna.</qt>"
 
-#: .tmp/displaysettings/deviceswidget.py:117
+#: .tmp/displaysettings/deviceswidget.py:120
 msgid "Start Package Manager"
 msgstr "Starta Pakethanteraren"
 
 #: .tmp/displaysettings/deviceswidget.py:200
-#: .tmp/displaysettings/screenswidget.py:329
+#: .tmp/displaysettings/screenswidget.py:336
+msgid "You must restart your X session for the changes to take effect."
+msgstr ""
+
+#: .tmp/displaysettings/deviceswidget.py:210
+#: .tmp/displaysettings/screenswidget.py:343
 msgid "Access denied."
 msgstr "Åtkomst nekad."
 
@@ -176,7 +175,12 @@ msgstr "Anpassad bildskärm"
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr "<qt><i>Tryck \"Välj...\"-knappen för att välja en bildskärm</i></qt>"
 
-#: .tmp/displaysettings/screenswidget.py:226
+#: .tmp/displaysettings/screenswidget.py:170
+#: .tmp/displaysettings/screenswidget.py:245
+msgid "Auto"
+msgstr "Automatiskt"
+
+#: .tmp/displaysettings/screenswidget.py:240
 msgid "Output Properties - %1"
 msgstr "Utgångsinställningar - %1"
 

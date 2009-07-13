@@ -332,6 +332,12 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
 
             self.iface.sync()
 
+            kdeui.KMessageBox.information(self,
+                    kdecore.i18n("You must restart your X session for the "
+                                 "changes to take effect."),
+                    QtCore.QString(),
+                    "Screen Configuration Saved")
+
         except dbus.DBusException, exception:
             if "Comar.PolicyKit" in exception._dbus_error_name:
                 kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
