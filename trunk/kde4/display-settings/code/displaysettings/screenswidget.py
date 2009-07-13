@@ -160,6 +160,20 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         menu.triggered.connect(self.slotOutputToggled)
         self.outputsButton.setMenu(menu)
 
+    def populateRateList(self):
+        output = self._selectedOutput
+        if output:
+            currentMode = self._modes[output.name]
+
+            self.rateList.currentIndexChanged.disconnect(self.slotRateSelected)
+            self.rateList.clear()
+            self.rateList.addItem(kdecore.i18n("Auto"))
+            if currentMode:
+                self._rateList = self.iface.getRates(output.name, currentMode)
+                rates = map(lambda x: "%s Hz" % x, self._rateList)
+                self.rateList.addItems(rates)
+            self.rateList.currentIndexChanged.connect(self.slotRateSelected)
+
     def updateMenuStatus(self):
         for act in self.outputsButton.menu().actions():
             name = str(act.data().toString())
@@ -240,6 +254,9 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         else:
             self.modeList.setCurrentIndex(0)
 
+        if self.rateList.currentIndex() < 0:
+            self.populateRateList()
+
         currentRate = self._rates[output.name]
         if currentRate:
             index = self._rateList.index(currentRate)
@@ -263,16 +280,7 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         if output:
             currentMode = str(self.modeList.currentText()) if index else ""
             self._modes[output.name] = currentMode
-
-            self.rateList.currentIndexChanged.disconnect(self.slotRateSelected)
-            self.rateList.clear()
-            self.rateList.addItem(kdecore.i18n("Auto"))
-            if currentMode:
-                self._rateList = self.iface.getRates(output.name, currentMode)
-                rates = map(lambda x: "%s Hz" % x, self._rateList)
-                self.rateList.addItems(rates)
-            self.rateList.currentIndexChanged.connect(self.slotRateSelected)
-
+            self.populateRateList()
             self.configChanged.emit()
 
     def slotRateSelected(self, index):

@@ -152,7 +152,7 @@ class Interface:
         self.link.Xorg.Display["zorg"].setMode(outputName, mode, rate)
 
     def getRates(self, outputName, mode):
-        return ["60"]
+        return ["60", "70", "75", "85"] if mode else []
 
     def setRotation(self, outputName, rotation):
         self.link.Xorg.Display["zorg"].setOrientation(outputName, rotation, "")
