@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-13 10:11+0300\n"
+"POT-Creation-Date: 2009-07-13 15:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,58 +16,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_screens.py:93 .tmp/displaysettings/about.py:20
+#: .tmp/ui_screens.py:83 .tmp/displaysettings/about.py:20
 #: .tmp/ui_devices.py:66
 msgid "Display Settings"
 msgstr ""
 
-#: .tmp/ui_screens.py:94
+#: .tmp/ui_screens.py:84
 msgid "Outputs"
 msgstr ""
 
-#: .tmp/ui_screens.py:95
+#: .tmp/ui_screens.py:85
 msgid "Extend desktop to all displays"
 msgstr ""
 
-#: .tmp/ui_screens.py:96
+#: .tmp/ui_screens.py:86
 msgid "Detect Outputs"
 msgstr ""
 
-#: .tmp/ui_screens.py:97
+#: .tmp/ui_screens.py:87
 msgid "Output Properties"
 msgstr ""
 
-#: .tmp/ui_screens.py:98
+#: .tmp/ui_screens.py:88
 msgid "Size:"
 msgstr ""
 
-#: .tmp/ui_screens.py:99 .tmp/ui_screens.py:101
-#: .tmp/displaysettings/screenswidget.py:231
-#: .tmp/displaysettings/screenswidget.py:269
-msgid "Auto"
-msgstr ""
-
-#: .tmp/ui_screens.py:100
+#: .tmp/ui_screens.py:89
 msgid "Refresh Rate:"
 msgstr ""
 
-#: .tmp/ui_screens.py:102
+#: .tmp/ui_screens.py:90
 msgid "Rotation:"
 msgstr ""
 
-#: .tmp/ui_screens.py:103
+#: .tmp/ui_screens.py:91
 msgid "No Rotation"
 msgstr ""
 
-#: .tmp/ui_screens.py:104
+#: .tmp/ui_screens.py:92
 msgid "Left (90 degrees)"
 msgstr ""
 
-#: .tmp/ui_screens.py:105
+#: .tmp/ui_screens.py:93
 msgid "Upside-Down (180 degrees)"
 msgstr ""
 
-#: .tmp/ui_screens.py:106
+#: .tmp/ui_screens.py:94
 msgid "Right (270 degrees)"
 msgstr ""
 
@@ -103,32 +97,37 @@ msgstr ""
 msgid "24 Bit"
 msgstr ""
 
-#: .tmp/displaysettings/deviceswidget.py:75
+#: .tmp/displaysettings/deviceswidget.py:76
 #: .tmp/displaysettings/screenswidget.py:68
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
 
-#: .tmp/displaysettings/deviceswidget.py:96
+#: .tmp/displaysettings/deviceswidget.py:99
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
 msgstr ""
 
-#: .tmp/displaysettings/deviceswidget.py:112
+#: .tmp/displaysettings/deviceswidget.py:115
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
 "<b>%1</b> from video card options.</qt>"
 msgstr ""
 
-#: .tmp/displaysettings/deviceswidget.py:117
+#: .tmp/displaysettings/deviceswidget.py:120
 msgid "Start Package Manager"
 msgstr ""
 
 #: .tmp/displaysettings/deviceswidget.py:200
-#: .tmp/displaysettings/screenswidget.py:329
+#: .tmp/displaysettings/screenswidget.py:336
+msgid "You must restart your X session for the changes to take effect."
+msgstr ""
+
+#: .tmp/displaysettings/deviceswidget.py:210
+#: .tmp/displaysettings/screenswidget.py:343
 msgid "Access denied."
 msgstr ""
 
@@ -168,7 +167,12 @@ msgstr ""
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr ""
 
-#: .tmp/displaysettings/screenswidget.py:226
+#: .tmp/displaysettings/screenswidget.py:170
+#: .tmp/displaysettings/screenswidget.py:245
+msgid "Auto"
+msgstr ""
+
+#: .tmp/displaysettings/screenswidget.py:240
 msgid "Output Properties - %1"
 msgstr ""
 

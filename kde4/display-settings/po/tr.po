@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-13 10:11+0300\n"
+"POT-Creation-Date: 2009-07-13 15:28+0300\n"
 "PO-Revision-Date: 2009-07-10 21:11+0300\n"
 "Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -16,58 +16,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_screens.py:93 .tmp/displaysettings/about.py:20
+#: .tmp/ui_screens.py:83 .tmp/displaysettings/about.py:20
 #: .tmp/ui_devices.py:66
 msgid "Display Settings"
 msgstr "Ekran Ayarları"
 
-#: .tmp/ui_screens.py:94
+#: .tmp/ui_screens.py:84
 msgid "Outputs"
 msgstr "Çıkışlar"
 
-#: .tmp/ui_screens.py:95
+#: .tmp/ui_screens.py:85
 msgid "Extend desktop to all displays"
 msgstr "Masaüstünü tüm ekranlara yay"
 
-#: .tmp/ui_screens.py:96
+#: .tmp/ui_screens.py:86
 msgid "Detect Outputs"
 msgstr "Çıkışları Algıla"
 
-#: .tmp/ui_screens.py:97
+#: .tmp/ui_screens.py:87
 msgid "Output Properties"
 msgstr "Çıkış Özellikleri"
 
-#: .tmp/ui_screens.py:98
+#: .tmp/ui_screens.py:88
 msgid "Size:"
 msgstr "Boyut:"
 
-#: .tmp/ui_screens.py:99 .tmp/ui_screens.py:101
-#: .tmp/displaysettings/screenswidget.py:231
-#: .tmp/displaysettings/screenswidget.py:269
-msgid "Auto"
-msgstr "Otomatik"
-
-#: .tmp/ui_screens.py:100
+#: .tmp/ui_screens.py:89
 msgid "Refresh Rate:"
 msgstr "Yenileme Oranı:"
 
-#: .tmp/ui_screens.py:102
+#: .tmp/ui_screens.py:90
 msgid "Rotation:"
 msgstr "Çevirme:"
 
-#: .tmp/ui_screens.py:103
+#: .tmp/ui_screens.py:91
 msgid "No Rotation"
 msgstr "Çevirme Yok"
 
-#: .tmp/ui_screens.py:104
+#: .tmp/ui_screens.py:92
 msgid "Left (90 degrees)"
 msgstr "Sola (90 derece)"
 
-#: .tmp/ui_screens.py:105
+#: .tmp/ui_screens.py:93
 msgid "Upside-Down (180 degrees)"
 msgstr "Yukarıdan Aşağıya (180 derece)"
 
-#: .tmp/ui_screens.py:106
+#: .tmp/ui_screens.py:94
 msgid "Right (270 degrees)"
 msgstr "Sağa (270 derece)"
 
@@ -103,7 +97,7 @@ msgstr "16 Bit"
 msgid "24 Bit"
 msgstr "24 Bit"
 
-#: .tmp/displaysettings/deviceswidget.py:75
+#: .tmp/displaysettings/deviceswidget.py:76
 #: .tmp/displaysettings/screenswidget.py:68
 msgid ""
 "There are no packages that provide backend for this application.\n"
@@ -112,7 +106,7 @@ msgstr ""
 "Bu uygulama için arka uç sağlayan herhangi bir paket bulunamadı.\n"
 "Lütfen paketlerin kurulu ve düzgün yapılandırılmış olduğundan emin olun."
 
-#: .tmp/displaysettings/deviceswidget.py:96
+#: .tmp/displaysettings/deviceswidget.py:99
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
@@ -121,7 +115,7 @@ msgstr ""
 "b> sürücüsünü kullanmak isteyebilirsiniz. Bu sürücüyü kullanmak istiyor "
 "musunuz</qt>"
 
-#: .tmp/displaysettings/deviceswidget.py:112
+#: .tmp/displaysettings/deviceswidget.py:115
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
@@ -132,12 +126,17 @@ msgstr ""
 "kurup daha sonra ekran kartı ayarlarından <b>%1</b> sürücüsünü seçmelisiniz."
 "</qt>"
 
-#: .tmp/displaysettings/deviceswidget.py:117
+#: .tmp/displaysettings/deviceswidget.py:120
 msgid "Start Package Manager"
 msgstr "Paket Yöneticisini Başlat"
 
 #: .tmp/displaysettings/deviceswidget.py:200
-#: .tmp/displaysettings/screenswidget.py:329
+#: .tmp/displaysettings/screenswidget.py:336
+msgid "You must restart your X session for the changes to take effect."
+msgstr "Değişikliklerin etkin olması için X oturumunuzu yeniden başlatmalısınız."
+
+#: .tmp/displaysettings/deviceswidget.py:210
+#: .tmp/displaysettings/screenswidget.py:343
 msgid "Access denied."
 msgstr "Erişim engellendi."
 
@@ -177,7 +176,12 @@ msgstr "Özel Monitör"
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr "<qt><i>Monitör seçmek için \"Seç...\" düğmesine tıklayın</i></qt>"
 
-#: .tmp/displaysettings/screenswidget.py:226
+#: .tmp/displaysettings/screenswidget.py:170
+#: .tmp/displaysettings/screenswidget.py:245
+msgid "Auto"
+msgstr "Otomatik"
+
+#: .tmp/displaysettings/screenswidget.py:240
 msgid "Output Properties - %1"
 msgstr "Çıkış Özellikleri - %1"
 
