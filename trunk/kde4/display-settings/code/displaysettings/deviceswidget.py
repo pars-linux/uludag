@@ -183,7 +183,11 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         self.cardDialog.load()
 
         # Output dialogs
-        for dlg in self.outputDialogs.values():
+        dialogs = self.outputDialogs.values()
+        if len(dialogs) == 1:
+            dialogs[0].ignoreOutputCheck.setDisabled(True)
+
+        for dlg in dialogs:
             dlg.load()
 
         # Output list
