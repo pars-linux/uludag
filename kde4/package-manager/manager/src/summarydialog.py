@@ -105,6 +105,11 @@ class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
         self.appList.setItemWidget(item, itemWidget)
 
     def show(self):
+        # Ugly hack for tray auto install updates.. total packages is not set when auto installing. do not
+        # show zero packages updated summary dialog.. auto install should update quietly
+        if not self.operation.totalPackages:
+            return
+
         self.setSummaryInfo()
         self.setStartAppInfoVisible(False)
         self.setDesktopFiles(self.operation.desktopFiles)
