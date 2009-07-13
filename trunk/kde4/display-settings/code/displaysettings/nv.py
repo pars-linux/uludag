@@ -44,7 +44,7 @@ class Interface:
                 output.connection = Output.Connected
 
             mask <<= 1
-            n %= n + 1
+            n = (n + 1) % 8
 
     def queryCurrent(self):
         pass
