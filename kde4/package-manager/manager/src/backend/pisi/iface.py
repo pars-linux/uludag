@@ -48,6 +48,7 @@ class Iface(Singleton):
         self.idb  = pisi.db.installdb.InstallDB()
         self.rdb  = pisi.db.repodb.RepoDB()
         self.gdb  = pisi.db.groupdb.GroupDB()
+        self.replaces = self.pdb.get_replaces()
 
     def setHandler(self, handler):
         self.link.listenSignals("System.Manager", handler)
@@ -129,7 +130,7 @@ class Iface(Singleton):
 
     def getPackageList(self):
         if self.source == self.REPO:
-            return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(pisi.api.list_replaces().values()) )
+            return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(self.replaces.values()) )
         else:
             return pisi.api.list_installed()
 
@@ -169,10 +170,8 @@ class Iface(Singleton):
             try:
                 return self.pdb.get_package(name)
             except  Exception, e: # Repo item not found
-                replaced = self.pdb.get_replaces()
-                # Handle replaced packages
-                if replaced.has_key(name):
-                    return self.pdb.get_package(replaced[name])
+                if self.replaces.has_key(name):
+                    return self.pdb.get_package(self.replaces[name])
                 else:
                     raise  e
         else:
