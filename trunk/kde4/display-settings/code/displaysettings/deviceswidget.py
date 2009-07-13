@@ -172,6 +172,34 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
             dlg.load()
             self.outputDialogs[outputName] = dlg
 
+        enableIgnoreButton = True
+        if not dlg.ignored:
+            config = self.iface.getConfig()
+            count = self.outputList.count()
+
+            def isIgnored(name):
+                d = self.outputDialogs.get(name)
+                if d is None:
+                    output = config.outputs.get(name)
+                    if output is None:
+                        return False
+                    else:
+                        return output.ignored
+                else:
+                    return d.ignored
+
+            for i in range(count):
+                item = self.outputList.item(i)
+                outputName = item.getId()
+                if outputName == dlg.outputName:
+                    continue
+
+                if not isIgnored(outputName):
+                    break
+            else:
+                enableIgnoreButton = False
+
+        dlg.ignoreOutputCheck.setEnabled(enableIgnoreButton)
         dlg.show()
 
     def load(self):
