@@ -55,5 +55,5 @@ if __name__ == '__main__':
 
     sys.excepthook = handleException
     setSystemLocale()
-    app.connect(app, SIGNAL('lastWindowClosed()'), app.quit)
+
     app.exec_()
