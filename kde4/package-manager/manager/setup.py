@@ -97,6 +97,10 @@ class Install(install):
         shutil.copy("data/packagemanager-helper.desktop", apps_dir)
         shutil.copy("data/package-manager.xml", mime_dir)
 
+        # Install icons
+        for size in ["16x16", "32x32", "48x48", "64x64"]:
+            shutil.copy("data/package-manager-%s.png" % size, "/usr/share/icons/hicolor/%s/mimetypes/application-x-pisi.png" % size)
+
         # Install codes
         print "Installing codes..."
         os.system("cp -R build/* %s/" % project_dir)
