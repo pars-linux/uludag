@@ -45,6 +45,8 @@ class Output:
         self.refresh_rate = rate
 
     def setOrientation(self, rotation, reflection=""):
+        if rotation not in ("inverted", "left", "right"):
+            rotation = ""
         self.rotation = rotation
 
     def setPosition(self, pos, arg):
