@@ -38,7 +38,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 <p>
 Pardus 2009 allows multiple users to share the same computer.
 You can assign management rights to the users you create; you can also
-configure permissions to users for various operations through TASMA.
+configure permissions to users for various operations through User Manager.
 </p>
 <p>
 To create a new user, fill in the form and press the "Create User" button.

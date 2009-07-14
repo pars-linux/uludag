@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-04 19:28+0300\n"
+"POT-Creation-Date: 2009-07-14 14:49+0300\n"
 "PO-Revision-Date: 2009-07-12 18:49+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -1680,7 +1680,8 @@ msgstr ""
 msgid "<b><p>This action will reboot your system.</p></b>"
 msgstr "<b><p>Denna åtgärd startar om datorn.</p></b>"
 
-#: yali4/gui/ScrSummary.py:87, python-format
+#: yali4/gui/ScrSummary.py:87
+#, python-format
 msgid "Install starts in: <b>%s seconds</b>"
 msgstr "Installationen startar om <b>%s sekunder</b>"
 
@@ -1711,7 +1712,8 @@ msgstr "Användare"
 msgid "User %s (<b>%s</b>) added."
 msgstr "Användare %s (<b>%s</b>) tillagd."
 
-#: yali4/gui/ScrSummary.py:137, python-format
+#: yali4/gui/ScrSummary.py:137
+#, python-format
 msgid "User %s (<b>%s</b>) added with <u>administrator privileges</u>."
 msgstr "Användare %s (<b>%s</b>) tillagd med <u>administratörsrättigheter</u>."
 
@@ -1732,7 +1734,8 @@ msgstr "Partitionering"
 msgid "Automatic Partitioning selected."
 msgstr "Automatisk partitionering vald."
 
-#: yali4/gui/ScrSummary.py:162, python-format
+#: yali4/gui/ScrSummary.py:162
+#, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MBs</b> as <b>%(fs)s</b>."
@@ -1744,7 +1747,8 @@ msgstr ""
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Automatisk partitionering (storleksändring) vald"
 
-#: yali4/gui/ScrSummary.py:196, python-format
+#: yali4/gui/ScrSummary.py:196
+#, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
 "(resizeTo)s MBs</b>, previous size was <b>%(currentSize)s MBs</b>."
@@ -1752,7 +1756,8 @@ msgstr ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>storleksändrad</b> till <b>"
 "%(resizeTo)s MB</b>, tidigare storlek var <b>%(currentSize)s MB</b>"
 
-#: yali4/gui/ScrSummary.py:198, python-format
+#: yali4/gui/ScrSummary.py:198
+#, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
 "with <b>%(size)s MBs</b> as <b>%(fs)s</b>."
@@ -1769,7 +1774,8 @@ msgstr "Partition <b>%(newPartition)s</b> <b>vald</b> som <b>%(type)s</b>."
 msgid "Bootloader Settings"
 msgstr "Starthanterarens inställningar"
 
-#: yali4/gui/ScrSummary.py:215, python-format
+#: yali4/gui/ScrSummary.py:215
+#, python-format
 msgid "GRUB will be installed to <b>%s</b>."
 msgstr "GRUB kommer att installeras på <b>%s</b>."
 
@@ -1797,8 +1803,7 @@ msgstr ""
 "                   och göra dina filer oåtkomliga. <br>\n"
 "                   Var övertygad om att du har en säkerhetskopia för den här "
 "partitionen.<br>\n"
-"                   <b>Observera att den här åtgärden inte kan ångras.</b></"
-"p>"
+"                   <b>Observera att den här åtgärden inte kan ångras.</b></p>"
 
 #: yali4/gui/ScrSummary.py:267 yali4/gui/ScrSummary.py:278
 #: yali4/gui/ScrSummary.py:294
@@ -1822,6 +1827,7 @@ msgid "Create users to use Pardus..."
 msgstr "Skapa användare i Pardus..."
 
 #: yali4/gui/ScrUsers.py:35
+#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -1829,7 +1835,7 @@ msgid ""
 "<p>\n"
 "Pardus 2009 allows multiple users to share the same computer.\n"
 "You can assign management rights to the users you create; you can also\n"
-"configure permissions to users for various operations through TASMA.\n"
+"configure permissions to users for various operations through User Manager.\n"
 "</p>\n"
 "<p>\n"
 "To create a new user, fill in the form and press the \"Create User\" "
@@ -1913,8 +1919,7 @@ msgstr ""
 "<font size=\"+1\"><p>Välkommen till Pardus 2009 som innehåller många "
 "lättanvända program. Du kan göra allt du behöver med Pardus 2009, bland "
 "annat ansluta till Internet, skapa dokument, spela spel och lyssna på musik."
-"</"
-"p>\n"
+"</p>\n"
 "<p>Det här programmet hjälper dig med installationen av Pardus 2009 på din "
 "dator i några få enkla steg och med identifieringen och konfigurationen av "
 "din hårdvara. Vi råder dig att säkerhetskopiera dina filer före du startar "
