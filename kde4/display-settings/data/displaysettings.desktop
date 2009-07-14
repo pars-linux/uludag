@@ -8,4 +8,4 @@ Comment[tr]=Görüntü aygıtlarını yapılandır
 Exec=display-settings
 Icon=preferences-desktop-display
 Type=Application
-Categories=Qt;KDE;System;
+Categories=Qt;KDE;Settings;
