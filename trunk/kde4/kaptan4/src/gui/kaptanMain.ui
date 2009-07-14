@@ -21,10 +21,10 @@
    <string notr="true">
 #kaptan{
 	
-       background-image:url(':/raw/pics/bg.svg');
+       background-image:url(':/raw/pics/bg.png');
        background-repeat: no-repeat;
-       background-position: center top;
-       background-color: #5A2848;
+       background-position: left top;
+       background-color: #642437;
        alternate-background-color: gray;
        selection-background-color: gray;
 
@@ -37,12 +37,6 @@ QStackedWidget#mainStack {
      border-radius: 14px;
      border-color: beige;
 
-}
-QLabel#labelMenu{
-     border-style: outset;
-     border-width: 2px;
-     border-radius: 14px;
-     border-color: beige;
 }
 </string>
   </property>
@@ -66,8 +60,7 @@ QLabel#labelMenu{
            <bool>false</bool>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgba(255, 255, 255, 122);
-color: white</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string/>
@@ -75,18 +68,8 @@ color: white</string>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
           </property>
-         </widget>
-        </item>
-        <item row="3" column="2">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap resource="raw.qrc">:/raw/pics/kaptan-left.png</pixmap>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
+          <property name="indent">
+           <number>10</number>
           </property>
          </widget>
         </item>
@@ -122,7 +105,7 @@ color: white</string>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
+            <width>140</width>
             <height>20</height>
            </size>
           </property>
@@ -133,14 +116,20 @@ color: white</string>
       <item row="0" column="1">
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <widget class="QLabel" name="labelDesc">
-          <property name="styleSheet">
-           <string notr="true">color: white</string>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
           </property>
-          <property name="text">
-           <string>&lt;b&gt;Welcome to Kaptan!&lt;/b&gt;</string>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
           </property>
-         </widget>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
         </item>
         <item>
          <widget class="QStackedWidget" name="mainStack">
@@ -151,7 +140,7 @@ color: white</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">QStackedWidget#mainStack{background-color:white}</string>
           </property>
           <property name="currentIndex">
            <number>0</number>
