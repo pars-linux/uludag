@@ -18,7 +18,7 @@ from PyKDE4.kdecore import KAboutData, ki18n
 appName     = "firewall-manager"
 modName     = "firewallmanager"
 programName = ki18n("Firewall Manager")
-version     = "2.9.4"
+version     = "2.9.5"
 description = ki18n("Firewall Manager")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2006-2009 TUBITAK/UEKAE")
