@@ -19,4 +19,5 @@ Comment=Firewall Manager
 Comment[sv]=Brandväggshanteraren
 Comment[es]=Configuración de Cortafuegos
 Comment[de]=Konfiguration des Firewalls
+Comment[tr]=Güvenlik Duvarı Yöneticisi
 X-KDE-Keywords=python security firewall managers

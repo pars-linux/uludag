@@ -21,4 +21,5 @@ Comment=Service Manager
 Comment[sv]=Tjänstehanteraren
 Comment[es]=Administrador de Servicios
 Comment[de]=Dienste-Manager
+Comment[tr]=Servis Yöneticisi
 X-KDE-Keywords=python service managers
