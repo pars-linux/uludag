@@ -2,7 +2,7 @@
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-04 19:28+0300\n"
+"POT-Creation-Date: 2009-07-14 14:49+0300\n"
 "PO-Revision-Date: 2009-07-10 00:25+0200\n"
 "Last-Translator: Heiko Pardus Translator <miltonjohn@web.de>\n"
 "Language-Team: Deutsch <pardus-translators@pardus.org.tr>\n"
@@ -627,7 +627,8 @@ msgid "Begin Install"
 msgstr "Installation beginnen"
 
 #: yali4/gui/Ui/summarywidget.py:70
-msgid "If you check this, Yalı will install all language packages in this release"
+msgid ""
+"If you check this, Yalı will install all language packages in this release"
 msgstr ""
 "Wenn markiert, wird Yali versuchen alle möglichen Sprachpakete für diese "
 "Version zu installieren"
@@ -819,7 +820,7 @@ msgstr ""
 
 # Klemens: Zweifel - habe hier frecherweise den deutschen Forumlink dazu ergänzt
 # Stefan: Ich hab Pardususer.de wieder entfernt, da ich den offiziellen Weg einschlagen habe (Bugtracking) - ich will Ärger vermeiden
-#Heiko
+# Heiko
 # Ich denke wir könnten aber Pardus-forum.org hinzufügen, da offiziell, (ausser LF verhandelt über den Offical-charakter für Pardususer.de) Ausserdem denke ich ist es für Neuankömmlinge vllt. abschreckend mit nur türkisch sprachigen Seiten abgesehen vom Worldforum.
 #  :-)
 #: yali4/gui/descSlide.py:44
@@ -884,7 +885,8 @@ msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%"
 "(fsType)s</b>."
@@ -1200,7 +1202,8 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr "<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
+msgstr ""
+"<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1833,7 +1836,8 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr ""
+"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -1900,6 +1904,7 @@ msgstr "Legen Sie Benutzer zur Verwendung von Pardus an..."
 
 # is this mention of TASMA still valid ?, is not now replaced by the KDE4 System Settings Center ??
 #: yali4/gui/ScrUsers.py:35
+#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -1907,7 +1912,7 @@ msgid ""
 "<p>\n"
 "Pardus 2009 allows multiple users to share the same computer.\n"
 "You can assign management rights to the users you create; you can also\n"
-"configure permissions to users for various operations through TASMA.\n"
+"configure permissions to users for various operations through User Manager.\n"
 "</p>\n"
 "<p>\n"
 "To create a new user, fill in the form and press the \"Create User\" "
@@ -1949,7 +1954,8 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:233
 msgid "Username exists, choose another one!"
-msgstr "Dieser Benutzername ist bereits vergeben, bitte wählen Sie einen anderen."
+msgstr ""
+"Dieser Benutzername ist bereits vergeben, bitte wählen Sie einen anderen."
 
 #: yali4/gui/ScrUsers.py:236
 msgid "Username contains invalid characters!"
@@ -2170,7 +2176,8 @@ msgstr "Neue Partition wird erstellt..."
 
 #: yali4/installer.py:392
 msgid "Failed to use partition for automatic installation "
-msgstr "Benutzung der Partition für automatische Partitionierung fehlgeschlagen "
+msgstr ""
+"Benutzung der Partition für automatische Partitionierung fehlgeschlagen "
 
 #: yali4/installer.py:514
 msgid "Setting Hostname..."
@@ -2405,4 +2412,3 @@ msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis wird erstellt.."
 #, python-format
 msgid "Not enough free space on %s to create new partition"
 msgstr "Nicht ausreichend Platz auf %s für eine neue Partition vorhanden"
-

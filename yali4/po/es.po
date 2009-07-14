@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-04 19:28+0300\n"
+"POT-Creation-Date: 2009-07-14 14:49+0300\n"
 "PO-Revision-Date: 2009-07-13 19:58-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -131,7 +131,8 @@ msgstr "Eliminar todas las particiones"
 # favor revisar, la ultima parte
 #: yali4/gui/Ui/autopartwidget.py:121
 msgid "This option allows partitioning the disk to your wishes."
-msgstr "Esta opción le permite realizar el particionamiento acorde a sus deseos."
+msgstr ""
+"Esta opción le permite realizar el particionamiento acorde a sus deseos."
 
 #: yali4/gui/Ui/autopartwidget.py:122
 msgid "No, I'll partition my disk manually."
@@ -198,8 +199,8 @@ msgstr "Primer disco apto para arranque (recomendado)"
 msgid "Pardus installed partition"
 msgstr "Partición raíz (/) de Pardus"
 
-#: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:79
 # favor revisar - no debería ser particion ??
+#: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:79
 msgid "Selected disk below"
 msgstr "Disco seleccionado abajo"
 
@@ -618,10 +619,11 @@ msgstr "Comenzar instalación"
 
 # favor revisar - release, version
 #: yali4/gui/Ui/summarywidget.py:70
-msgid "If you check this, Yalı will install all language packages in this release"
+msgid ""
+"If you check this, Yalı will install all language packages in this release"
 msgstr ""
-"Si marca aquí, Yali instalará los paquetes de todos los idiomas "
-"disponibles en esta versión"
+"Si marca aquí, Yali instalará los paquetes de todos los idiomas disponibles "
+"en esta versión"
 
 #: yali4/gui/Ui/summarywidget.py:71
 msgid "Install all language packages"
@@ -682,8 +684,8 @@ msgstr ""
 "establecer configuraciones básicas como el ratón, acceso a internet, fondo "
 "de pantalla y barras de menú y de tareas en el escritorio.\n"
 
-#: yali4/gui/descSlide.py:22
 # i suppose this is obsolete, since now everything is "melted" into the KDE contro center
+#: yali4/gui/descSlide.py:22
 msgid ""
 "Tasma is the management and settings center of Pardus. Configuration "
 "operations including but not limited to adding a new user or hardware (e.g. "
@@ -702,8 +704,9 @@ msgid ""
 "install, remove or update those packages and programs with just two clicks "
 "using the Package Manager!\n"
 msgstr ""
-"Hay miles de paquetes de software en los repositorios de Pardus. Puede "
-"usar el administrador de paquetes para instalar, remover o actualizar estos paquetes y programas de manera sencilla y con pocos clics de ratón!\n"
+"Hay miles de paquetes de software en los repositorios de Pardus. Puede usar "
+"el administrador de paquetes para instalar, remover o actualizar estos "
+"paquetes y programas de manera sencilla y con pocos clics de ratón!\n"
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -712,13 +715,13 @@ msgid ""
 "reconnect to cable or wireless connections used before, remembering the "
 "settings used.\n"
 msgstr ""
-"La miniaplicación de red le ayuda a conectarse a redes locales e internet "
-"de manera sencilla y segura. Gracias al soporte de perfiles le simplifica "
+"La miniaplicación de red le ayuda a conectarse a redes locales e internet de "
+"manera sencilla y segura. Gracias al soporte de perfiles le simplifica "
 "volver a conectarse a conexiones fijas o inalámbricas, eligiendo una de las "
 "configuraciones previas.\n"
 
-#: yali4/gui/descSlide.py:28
 # i changed the version of firefox in this text to 3.5 !!
+#: yali4/gui/descSlide.py:28
 msgid ""
 "Mozilla Firefox, with its speed, constant development and many advanced "
 "features, will help securely surf the Internet. Pardus 2009 includes Mozilla "
@@ -816,9 +819,10 @@ msgid ""
 "Freenode server (and you can use Konversation for that).\n"
 msgstr ""
 "Puede encontrar HOW-TOs, tutoriales e introducciones a los paquetes entrando "
-"en nuestro portal de la comunidad www.ozgurlukicin.com. Si tiene algún problema o inconveniente con Pardus 2009 "
-"puede recibir soporte usando el foro y la sala #pardus en el servidor "
-"Freenode IRC (puede usar el programa Konversation para este fin).\n"
+"en nuestro portal de la comunidad www.ozgurlukicin.com. Si tiene algún "
+"problema o inconveniente con Pardus 2009 puede recibir soporte usando el "
+"foro y la sala #pardus en el servidor Freenode IRC (puede usar el programa "
+"Konversation para este fin).\n"
 
 #: yali4/gui/DiskWidgets.py:87
 msgid "Manual Partitioning selected."
@@ -874,15 +878,18 @@ msgstr "Ya hay una partición especificada para el mismo fin."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr "Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr ""
+"Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
 
 # favor verificar contexto,
 # check context, should this say "format as.." instead o "selected as .." ?
 #: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:163
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Usar partición <b>%(partition)s</b> <b>seleccionada</b> para <b>%(type)s</b>."
+msgstr ""
+"Usar partición <b>%(partition)s</b> <b>seleccionada</b> para <b>%(type)s</b>."
 
 #: yali4/gui/DiskWidgets.py:382
 msgid ""
@@ -1165,17 +1172,18 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrCheckCD.py:29
 # in spanish this would need to be changed, if Pardus happens to be on DVD or multiple CDs..
+#: yali4/gui/ScrCheckCD.py:29
 msgid "Check your media"
 msgstr "Verifique el CD de instalación"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr ""
+"Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
-#: yali4/gui/ScrCheckCD.py:32
 # maybe i copied the CD from a friend ? so it would not be from an ISO...
+#: yali4/gui/ScrCheckCD.py:32
 msgid ""
 "\n"
 "<font size=\"+2\">Check CD Integrity!</font>\n"
@@ -1190,13 +1198,15 @@ msgstr ""
 "<font size=\"+1\"><p>\n"
 "Puede combrobar si los paquetes del CD están guardados corectamente en el "
 "CD. Esta verificación es muy importante para prevenir problemas durante la "
-"instalación. Si la falla la comprobación intente volver a grabar el CD a menor velocidad (ej. 12x o menos).</p></font>\n"
+"instalación. Si la falla la comprobación intente volver a grabar el CD a "
+"menor velocidad (ej. 12x o menos).</p></font>\n"
 
-#: yali4/gui/ScrCheckCD.py:50
 # if this is the message at the bottom line, i shoud shorten the text in spanish !!
 # could be set to: "Verificando CD, por favor espere."
+#: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr "<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
+msgstr ""
+"<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1226,8 +1236,8 @@ msgstr ""
 "La configuración ajustará el reloj del hardware. Continúe con la instalación "
 "luego de realizar los ajustes pertinentes.</p></font>\n"
 
-#: yali4/gui/ScrGoodbye.py:43
 # favor revisar
+#: yali4/gui/ScrGoodbye.py:43
 msgid "Goodbye from YALI"
 msgstr "Felicidades, fin de instalación con YALI"
 
@@ -1736,8 +1746,8 @@ msgstr ""
 "<font size=\"+2\">Resumen de Instalación</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Aquí puede ver las opciones establecidos para la instalación, para que "
-"las pueda verificar antes de iniciar el proceso de la instalación.\n"
+"Aquí puede ver las opciones establecidos para la instalación, para que las "
+"pueda verificar antes de iniciar el proceso de la instalación.\n"
 "</p>\n"
 "</font>\n"
 
@@ -1781,7 +1791,8 @@ msgstr "Añadir usuario %s (<b>%s</b>)."
 #: yali4/gui/ScrSummary.py:137
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>administrator privileges</u>."
-msgstr "Añadir usuario %s (<b>%s</b>) con <u>privilegios de administración</u>."
+msgstr ""
+"Añadir usuario %s (<b>%s</b>) con <u>privilegios de administración</u>."
 
 #: yali4/gui/ScrSummary.py:143
 msgid "Hostname Settings"
@@ -1800,9 +1811,9 @@ msgstr "Particiones"
 msgid "Automatic Partitioning selected."
 msgstr "Particionamiento automático."
 
+# i think plural of MB remains MB for me ;) (at least in english and spanish..)
 #: yali4/gui/ScrSummary.py:162
 #, python-format
-# i think plural of MB remains MB for me ;) (at least in english and spanish..)
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MBs</b> as <b>%(fs)s</b>."
@@ -1836,7 +1847,8 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partición <b>%(newPartition)s</b> <b>se usará</b> para <b>%(type)s</b>."
+msgstr ""
+"Partición <b>%(newPartition)s</b> <b>se usará</b> para <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -1897,6 +1909,7 @@ msgid "Create users to use Pardus..."
 msgstr "Crear los usuarios, que usarán Pardus..."
 
 #: yali4/gui/ScrUsers.py:35
+#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -1904,7 +1917,7 @@ msgid ""
 "<p>\n"
 "Pardus 2009 allows multiple users to share the same computer.\n"
 "You can assign management rights to the users you create; you can also\n"
-"configure permissions to users for various operations through TASMA.\n"
+"configure permissions to users for various operations through User Manager.\n"
 "</p>\n"
 "<p>\n"
 "To create a new user, fill in the form and press the \"Create User\" "
@@ -2156,8 +2169,8 @@ msgstr "Configurando reloj..."
 msgid "Disk analyze started.."
 msgstr "Analisis de disco iniciado.."
 
-#: yali4/installer.py:305
 # favir revisar, eventualmente acortar: "Guardando partitiones"
+#: yali4/installer.py:305
 msgid "Writing disk tables ..."
 msgstr "Guardando tablas de particiones..."
 
@@ -2203,8 +2216,8 @@ msgstr "Migrando configuración X.org ..."
 msgid "Copy Pisi index..."
 msgstr "Copiando índice de Pisi ..."
 
-#: yali4/installer.py:522
 # i shortened this like: "miscelaneous configurations" .. favor revisar
+#: yali4/installer.py:522
 msgid "Setting misc. package configurations..."
 msgstr "Configuraciones varios..."
 
@@ -2402,9 +2415,9 @@ msgstr "Partición de datos"
 msgid "as Storage Area"
 msgstr "Área de almacenamiento"
 
+# if this is a message at the bottom line - this string should be shortened..
 #: yali4/postinstall.py:180
 #, python-format
-# if this is a message at the bottom line - this string should be shortened..
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Preparando directorio home de usuario <b>%s</b>.."
 
@@ -2412,4 +2425,3 @@ msgstr "Preparando directorio home de usuario <b>%s</b>.."
 #, python-format
 msgid "Not enough free space on %s to create new partition"
 msgstr "No hay suficiente espacio libre en %s para crear una partición nueva"
-

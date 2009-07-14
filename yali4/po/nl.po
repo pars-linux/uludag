@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-04 19:28+0300\n"
+"POT-Creation-Date: 2009-07-14 14:49+0300\n"
 "PO-Revision-Date: 10/07/09 17:51\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
@@ -44,7 +44,8 @@ msgstr "X"
 
 #: yali4/gui/Ui/autopartquestion.py:81
 msgid "Automatically choose the partition to resize (recommended)"
-msgstr "Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
+msgstr ""
+"Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
 
 #: yali4/gui/Ui/autopartquestion.py:82
 msgid "I will choose the target"
@@ -112,13 +113,15 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
-msgstr "Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
+msgstr ""
+"Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
 
 #: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
 "This option will erase the entire disk. All the data on the disk will be "
 "lost."
-msgstr "Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
+msgstr ""
+"Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
@@ -607,7 +610,8 @@ msgid "Begin Install"
 msgstr "Begin installatie"
 
 #: yali4/gui/Ui/summarywidget.py:70
-msgid "If you check this, Yalı will install all language packages in this release"
+msgid ""
+"If you check this, Yalı will install all language packages in this release"
 msgstr "Markeer dit om alle taalpakketten installeren"
 
 #: yali4/gui/Ui/summarywidget.py:71
@@ -852,7 +856,8 @@ msgstr "Er is een verzoek voor het gelijke partitietype."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)"
 "s</b>."
@@ -1686,8 +1691,7 @@ msgstr ""
 "<font size=\"+2\">Samenvatting van installatie</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Hier kunt u uw installatieopties bekijken voordat de "
-"installatie start.\n"
+"Hier kunt u uw installatieopties bekijken voordat de installatie start.\n"
 "</p>\n"
 "</font>\n"
 
@@ -1768,8 +1772,8 @@ msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
 "(resizeTo)s MBs</b>, previous size was <b>%(currentSize)s MBs</b>."
 msgstr ""
-"Partitie <b>%(partition)s - %(currentFs)s</b> <b>aangepast</b> "
-"naar <b>%(resizeTo)s MB</b>, oude grootte was <b>%(currentSize)s MB</b>."
+"Partitie <b>%(partition)s - %(currentFs)s</b> <b>aangepast</b> naar <b>%"
+"(resizeTo)s MB</b>, oude grootte was <b>%(currentSize)s MB</b>."
 
 #: yali4/gui/ScrSummary.py:198
 #, python-format
@@ -1783,7 +1787,8 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr ""
+"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -1813,13 +1818,14 @@ msgid ""
 "                                        <b>Note that this operation cannot "
 "be undone.</b></p>"
 msgstr ""
-"<p><b><u>Waarschuwing</u></b>: De grootte wordt aangepast en het kan uw partitie "
-"defect maken,<br>\n"
+"<p><b><u>Waarschuwing</u></b>: De grootte wordt aangepast en het kan uw "
+"partitie defect maken,<br>\n"
 "                                        waarmee uw data onbereikbaar wordt. "
 "<br>\n"
-"                                        Zorg dat u een backup hebt van deze patitie.<br>\n"
-"                                        <b>Let op dat deze handeling niet ongedaan gemaakt kan worden.</"
-"b></p>"
+"                                        Zorg dat u een backup hebt van deze "
+"patitie.<br>\n"
+"                                        <b>Let op dat deze handeling niet "
+"ongedaan gemaakt kan worden.</b></p>"
 
 #: yali4/gui/ScrSummary.py:267 yali4/gui/ScrSummary.py:278
 #: yali4/gui/ScrSummary.py:294
@@ -1843,6 +1849,7 @@ msgid "Create users to use Pardus..."
 msgstr "Maak gebruikers voor Pardus..."
 
 #: yali4/gui/ScrUsers.py:35
+#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -1850,7 +1857,7 @@ msgid ""
 "<p>\n"
 "Pardus 2009 allows multiple users to share the same computer.\n"
 "You can assign management rights to the users you create; you can also\n"
-"configure permissions to users for various operations through TASMA.\n"
+"configure permissions to users for various operations through User Manager.\n"
 "</p>\n"
 "<p>\n"
 "To create a new user, fill in the form and press the \"Create User\" "
@@ -2347,4 +2354,3 @@ msgstr "De thuismap van gebruiker <b>%s</b> wordt gereed gemaakt.."
 #, python-format
 msgid "Not enough free space on %s to create new partition"
 msgstr "Niet genoeg ruimte op %s voor het aanmaken van nieuwe partitie"
-
