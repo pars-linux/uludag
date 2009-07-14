@@ -35,7 +35,7 @@ QStackedWidget#mainStack {
      border-style: outset;
      border-width: 2px;
      border-radius: 14px;
-     border-color: beige;
+     border-color: rgba(255, 255, 255, 122);
 
 }
 </string>
@@ -140,7 +140,9 @@ QStackedWidget#mainStack {
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">QStackedWidget#mainStack{background-color:white}</string>
+           <string notr="true">QStackedWidget#mainStack{background-color:rgba(255, 255, 255, 122);
+margin: 10px;
+}</string>
           </property>
           <property name="currentIndex">
            <number>0</number>
