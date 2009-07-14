@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "POT-Creation-Date: 2008-06-26 09:45+EEST\n"
-"PO-Revision-Date: 2009-07-14 15:09+0300\n"
+"PO-Revision-Date: 2009-07-14 16:53+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -359,7 +359,7 @@ msgstr "Tamam."
 
 #: pisi/atomicoperations.py:71 pisi/operations/history.py:63
 msgid "Package %s found in repository %s"
-msgstr "Paket %s, %s deposunda bulundu"
+msgstr "Paket %s, %s deposunda bulundu."
 
 #: pisi/atomicoperations.py:96
 msgid "Package URI: %s"
@@ -367,7 +367,7 @@ msgstr "Paket adresi: %s"
 
 #: pisi/atomicoperations.py:100
 msgid "Package %s not found in any active repository."
-msgstr "%s isimli paket hiç bir etkin depoda bulunamadı."
+msgstr "%s isimli paket etkin hiç bir depoda bulunamadı."
 
 #: pisi/atomicoperations.py:122
 msgid "Installing %s, version %s, release %s, build %s"
@@ -375,7 +375,7 @@ msgstr "%s paketi, versiyon %s, sürüm %s, inşa %s kuruluyor"
 
 #: pisi/atomicoperations.py:161
 msgid "%s package cannot be installed unless the dependencies are satisfied"
-msgstr "%s paketi bağımlılıkları sağlanmadan kurulamaz"
+msgstr "%s paketi bağımlılıkları sağlanmadan kurulamaz."
 
 #: pisi/atomicoperations.py:185
 msgid "/%s from %s package\n"
@@ -2110,6 +2110,8 @@ msgstr ""
 #: scripts/repostats.py:371
 msgid "Developer '%s <%s>' has another mail address '%s' in source package '%s'"
 msgstr ""
+"Geliştiricinin ('%s <%s>') başka bir eposta adresi var ('%s') (kaynak paket '%s' "
+"içerisinde)."
 
 #: scripts/repostats.py:467
 msgid ""
