@@ -72,25 +72,27 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 windowDecoration = parser.get_locale('Style', 'windowDecoration', '')
                 styleThumb = os.path.join("/usr/kde/4/share/apps/kaptan/gui/styles/",  parser.get_locale('Style', 'thumbnail',''))
 
-                # OMG, color schemes are messy!
-
+                colorDict = {}
                 colorDir = "/usr/kde/4/share/apps/color-schemes/"
-                #listColorSchemes = glob.glob1(colorDir, "*.colors")
-                listColorSchemes = ['CherryBlossom.colors']
-                for color in listColorSchemes:
-                    Config = ConfigParser()
-                    Config.read(colorDir + str(color))
-                    colorConfig= KConfig("kdeglobals")
-                    for i in Config.sections():
-                        colorGroup = colorConfig.group(str(i))
-                        for key, value in self.ConfigSectionMap(Config, i).items():
-                            print key, " => ", value
-                            colorGroup.writeEntry(str(key), str(value))
+                self.Config = ConfigParser()
+                self.Config.optionxform = str
+                color = colorDir + colorScheme + ".colors"
+                if not os.path.exists(color):
+                    color = colorDir + "Oxygen.colors"
+
+                self.Config.read(color)
+                #colorConfig= KConfig("kdeglobals")
+                for i in self.Config.sections():
+                    #colorGroup = colorConfig.group(str(i))
+                    colorDict[i] = {}
+                    for key, value in self.ConfigSectionMap(i).items():
+                        colorDict[i][key] = value
+                        #colorGroup.writeEntry(str(key), str(value))
 
                 self.styleDetails[styleName] = {
                         "description": styleDesc, 
                         "widgetStyle": widgetStyle, 
-                        "colorScheme": colorScheme, 
+                        "colorScheme": colorDict, 
                         "desktopTheme": desktopTheme, 
                         "iconTheme": iconTheme, 
                         "windowDecoration": windowDecoration, 
@@ -110,12 +112,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.spinBoxDesktopNumbers.connect(self.ui.spinBoxDesktopNumbers, SIGNAL("valueChanged(const QString &)"), self.addDesktop)
         #self.ui.previewButton.connect(self.ui.previewButton, SIGNAL("clicked()"), self.previewStyle)
 
-    def ConfigSectionMap(self, Config, section):
+    def ConfigSectionMap(self,section):
         dict1 = {}
-        options = Config.options(section)
+        options = self.Config.options(section)
         for option in options:
             try:
-                dict1[option] = Config.get(section, option)
+                dict1[option] = self.Config.get(section, option)
                 if dict1[option] == -1:
                     DebugPrint("skip: %s" % option)
             except:
@@ -138,6 +140,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.__class__.screenSettings["desktopType"] = self.selectedType
 
     def setStyle(self):
+
         styleName =  str(self.ui.listStyles.currentItem().statusTip())
         self.__class__.screenSettings["summaryMessage"] = styleName  + " : " + self.styleDetails[styleName]["description"]
         self.__class__.screenSettings["hasChanged"] = True
