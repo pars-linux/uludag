@@ -116,6 +116,9 @@ alternate-background-color: rgba(255, 255, 255, 122);
     <layout class="QHBoxLayout">
      <item>
       <widget class="QTimeEdit" name="timeHours">
+       <property name="wrapping">
+        <bool>true</bool>
+       </property>
        <property name="displayFormat">
         <string notr="true">HH</string>
        </property>
@@ -130,6 +133,9 @@ alternate-background-color: rgba(255, 255, 255, 122);
      </item>
      <item>
       <widget class="QTimeEdit" name="timeMinutes">
+       <property name="wrapping">
+        <bool>true</bool>
+       </property>
        <property name="displayFormat">
         <string notr="true">mm</string>
        </property>
@@ -144,6 +150,9 @@ alternate-background-color: rgba(255, 255, 255, 122);
      </item>
      <item>
       <widget class="QTimeEdit" name="timeSeconds">
+       <property name="wrapping">
+        <bool>true</bool>
+       </property>
        <property name="displayFormat">
         <string notr="true">ss</string>
        </property>
