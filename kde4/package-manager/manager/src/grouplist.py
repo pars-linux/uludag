@@ -32,6 +32,7 @@ class GroupList(QtGui.QListWidget):
     def addGroups(self, groups):
         for name in groups:
             self.createGroupItem(name)
+        self.sortItems()
         self.ensureGroupSelected()
 
     def createGroupItem(self, name):
