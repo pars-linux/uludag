@@ -509,16 +509,16 @@ msgstr "Menü Ayarları"
 
 #: .tmp/ScrSummary.py:73
 msgid "Wallpaper Settings"
-msgstr "Duvar kağıdı Ayarları"
+msgstr "Duvar kâğıdı Ayarları"
 
 #: .tmp/ScrSummary.py:75
 msgid "You haven't selected any wallpaper."
-msgstr "Duvar kağıdı seçmediniz."
+msgstr "Duvar kâğıdı seçmediniz."
 
 #: .tmp/ScrSummary.py:77
 #, python-format
 msgid "Selected Wallpaper: <b>%s</b>"
-msgstr "Seçilen duvar kağıdı: <b>%s</b>"
+msgstr "Seçilen duvar kâğıdı: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:81
 msgid "Style Settings"
@@ -557,7 +557,7 @@ msgstr "Duvar kâğıtları hakkında güzel bir başlık"
 
 #: .tmp/ScrWallpaper.py:35
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
-msgstr "Muhteşem duvar kağıtları!\\m/"
+msgstr "Muhteşem duvar kâğıtları!\\m/"
 
 #: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:52
 msgid "Desktop Search"
@@ -737,7 +737,7 @@ msgstr "duvarKâğıdıAçıklaması"
 
 #: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
 msgid "Wallpaper"
-msgstr "Duvar kağıdı"
+msgstr "Duvar kâğıdı"
 
 #: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:45
 msgid "Choose Wallpaper From a File"
