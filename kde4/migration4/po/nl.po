@@ -1,0 +1,469 @@
+# translation of nl.po to Nederlansd
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Antoon Tolboom <atolboo@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-10 09:54+0300\n"
+"PO-Revision-Date: 14/07/09 12:31\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: .tmp/ScrOptions.py:23
+msgid "Selecting Options"
+msgstr "Opties selecteren"
+
+#: .tmp/ScrOptions.py:24 .tmp/ScrProgress.py:205 .tmp/ScrSummary.py:26
+#: .tmp/ScrUserFiles.py:143 .tmp/ScrWelcome.py:23
+msgid "Welcome to Migration Tool Wizard :)"
+msgstr "Welkom bij de Migratie-assistent :)"
+
+#: .tmp/ScrOptions.py:61
+msgid "Keep current wallpaper"
+msgstr "Huidige achtergrond behouden"
+
+#: .tmp/ScrOptions.py:63
+msgid "Don't use wallpaper"
+msgstr "Geen achtergrond gebruiken"
+
+#: .tmp/ScrOptions.py:64
+msgid "Does not change your wallpaper."
+msgstr "Achtergrond niet veranderen."
+
+#: .tmp/ScrOptions.py:84
+msgid "Use my old wallpaper"
+msgstr "Mijn oude achtergrond gebruiken"
+
+#: .tmp/ScrOptions.py:85
+msgid "Copies your old wallpaper to Pardus and sets it as new background image."
+msgstr "Kopieert uw oude achtergrond naar Pardus en gebruikt het als nieuwe achtergrond."
+
+#: .tmp/ScrOptions.py:93 .tmp/ScrProgress.py:295
+msgid "Bookmarks"
+msgstr "Bladwijzers"
+
+#: .tmp/ScrOptions.py:105
+msgid "Firefox Bookmarks"
+msgstr "Firefox-bladwijzers"
+
+#: .tmp/ScrOptions.py:107
+msgid "Copies your old Firefox bookmarks to Firefox under Pardus."
+msgstr "Kopieert uw oude Firefox-bladwijzers naar Firefox van Pardus."
+
+#: .tmp/ScrOptions.py:116
+msgid "Opera Bookmarks"
+msgstr "Opera-bladwijzers"
+
+#: .tmp/ScrOptions.py:118
+msgid "Copies your old Opera bookmarks to Firefox under Pardus."
+msgstr "Kopieert uw oude Opera-bladwijzers naar Opera van Pardus."
+
+#: .tmp/ScrOptions.py:127
+msgid "Internet Explorer favorites"
+msgstr "Internet Explorer bladwijzers"
+
+#: .tmp/ScrOptions.py:129
+msgid "Copies your old Internet Explorer favorites to Firefox under Pardus."
+msgstr "Kopieert uw oude bladwijzers van Internet Explorer naar Firefox van Pardus."
+
+#: .tmp/ScrOptions.py:138
+msgid "E-Mail and News Accounts"
+msgstr "E-mail en nieuwsgroepen"
+
+#: .tmp/ScrOptions.py:149
+msgid "Windows Mail accounts"
+msgstr "Windows Mail accounts"
+
+#: .tmp/ScrOptions.py:151 .tmp/ScrOptions.py:162
+msgid "Copies your old mail and newsgroup accounts to KMail and KNode applications."
+msgstr "Kopieert uw oude e-mail en nieuwsgroepenaccounts naar KMail en KNode van Pardus."
+
+#: .tmp/ScrOptions.py:160
+msgid "Thunderbird accounts"
+msgstr "Thunderbird-accounts"
+
+#: .tmp/ScrOptions.py:168
+msgid "Copy e-mail messages from e-mail accounts"
+msgstr "Kopieert e-mail berichten van e-mailaccounts"
+
+#: .tmp/ScrOptions.py:170
+msgid "Copies your e-mail messages to KMail from selected applications above."
+msgstr "Kopieert uw e-mail berichten naar KMail van bovenstaande geselecteerde applicaties."
+
+#: .tmp/ScrOptions.py:179 .tmp/ScrProgress.py:376
+msgid "Instant Messenger Accounts"
+msgstr "Instant Messenger accounts"
+
+#: .tmp/ScrOptions.py:190
+msgid "MSN accounts"
+msgstr "MSN-accounts"
+
+#: .tmp/ScrOptions.py:192
+msgid "Copies your MSN Messenger accounts to Kopete."
+msgstr "Kopieert uw MSN Messenger accounts naar Kopete."
+
+#: .tmp/ScrOptions.py:201
+msgid "GTalk accounts"
+msgstr "GTalk-accounts"
+
+#: .tmp/ScrOptions.py:203
+msgid "Copies your GTalk accounts to Kopete."
+msgstr "Kopieert uw GTalk-accounts naar Kopete."
+
+#: .tmp/ScrProgress.py:38
+msgid "Please wait while applying changes..."
+msgstr "Even geduld, wijzigingen worden toegepast..."
+
+#: .tmp/ScrProgress.py:48
+msgid "Prepare: "
+msgstr "Voorbereiden: "
+
+#: .tmp/ScrProgress.py:55
+msgid "Apply: "
+msgstr "Toepassen: "
+
+#: .tmp/ScrProgress.py:112
+msgid "Warning!"
+msgstr "Waarschuwing!"
+
+#: .tmp/ScrProgress.py:204
+msgid "Applying Changes"
+msgstr "Wijzigingen toepassen"
+
+#: .tmp/ScrProgress.py:243
+msgid "Wallpaper"
+msgstr "Achtergrondafbeelding"
+
+#: .tmp/ScrProgress.py:253
+msgid "Firefox bookmarks cannot be loaded."
+msgstr "Firefox-bladwijzers kunnen niet geladen worden."
+
+#: .tmp/ScrProgress.py:255
+msgid "Firefox bookmarks loaded."
+msgstr "Firefox-bladwijzers geladen."
+
+#: .tmp/ScrProgress.py:265
+msgid "Opera bookmarks cannot be loaded."
+msgstr "Opera-bladwijzers kunnen niet geladen worden."
+
+#: .tmp/ScrProgress.py:267
+msgid "Opera bookmarks loaded."
+msgstr "Opera-bladwijzers geladen."
+
+#: .tmp/ScrProgress.py:277
+msgid "Internet Explorer favorites cannot be loaded."
+msgstr "Internet Explorer bladwijzers kunnen niet geladen worden."
+
+#: .tmp/ScrProgress.py:279
+msgid "Internet Explorer favorites loaded."
+msgstr "Internet Explorer bladwijzers geladen."
+
+#: .tmp/ScrProgress.py:292
+msgid "Firefox is open. Please close it first to continue..."
+msgstr "Firefox is actief. Sluit het eerst af om door te gaan..."
+
+#: .tmp/ScrProgress.py:304
+msgid "Windows Mail accounts cannot be loaded."
+msgstr "Windows Mail accounts kunnen niet geladen worden."
+
+#: .tmp/ScrProgress.py:306
+msgid "Windows Mail accounts loaded."
+msgstr "Windows Mail accounts geladen."
+
+#: .tmp/ScrProgress.py:317
+msgid "Thunderbird accounts cannot be loaded."
+msgstr "Thunderbird-accounts kunnen niet geladen worden."
+
+#: .tmp/ScrProgress.py:319
+msgid "Thunderbird accounts loaded."
+msgstr "Thunderbird-accounts geladen."
+
+#: .tmp/ScrProgress.py:329
+msgid "MSN accounts cannot be loaded."
+msgstr "MSN-accounts kunnen niet geladen worden."
+
+#: .tmp/ScrProgress.py:331
+msgid "MSN accounts loaded."
+msgstr "MSN-accounts geladen."
+
+#: .tmp/ScrProgress.py:341
+msgid "GTalk accounts cannot be loaded."
+msgstr "GTalk-accounts kunnen niet geladen worden."
+
+#: .tmp/ScrProgress.py:343
+msgid "GTalk accounts loaded."
+msgstr "GTalk-accounts geladen."
+
+#: .tmp/ScrProgress.py:352
+msgid "E-Mail Accounts"
+msgstr "E-Mail accounts"
+
+#: .tmp/ScrProgress.py:360
+msgid "E-Mail Messages"
+msgstr "E-Mail berichten"
+
+#: .tmp/ScrProgress.py:368
+msgid "News Accounts"
+msgstr "Nieuwsgroepen"
+
+#: .tmp/ScrProgress.py:387
+msgid "Desktop Links"
+msgstr "Bureaubladkoppelingen"
+
+#: .tmp/ScrProgress.py:394
+#, python-format
+msgid "Folder '%s' cannot be created, please choose another folder!"
+msgstr "Kan map '%s' niet aanmaken, kies een andere map!"
+
+#: .tmp/ScrProgress.py:398
+#, python-format
+msgid ""
+"You don't have permission to write to folder '%s', please choose another "
+"folder!"
+msgstr "U heeft geen toestemming om naar map '%s' te schrijven, kies een andere map!"
+
+#: .tmp/ScrProgress.py:409
+#, python-format
+msgid ""
+"Total size of files you've chosen is %(size)d MB, but you have only %(free)d "
+"MB of free space!"
+msgstr "Totale grootte van geselecteerde bestanden is %(size)d MB, maar er is slechts %(free)d MB vrije ruimte!"
+
+#: .tmp/ScrProgress.py:422
+msgid "Wallpaper changed."
+msgstr "Achtergrond gewijzigd."
+
+#: .tmp/ScrProgress.py:435
+msgid "Bookmarks saved."
+msgstr "Bladwijzers opgeslagen."
+
+#: .tmp/ScrProgress.py:447
+msgid "Mail Accounts saved."
+msgstr "Mail-accounts opgeslagen."
+
+#: .tmp/ScrProgress.py:459
+msgid "Accounts saved."
+msgstr "Accounts opgeslagen."
+
+#: .tmp/ScrProgress.py:470
+msgid "News Accounts saved."
+msgstr "Nieuwsgroepen opgeslagen."
+
+#: .tmp/ScrProgress.py:481
+msgid "Instant Messenger Accounts saved."
+msgstr "Instant Messenger accounts opgeslagen."
+
+#: .tmp/ScrProgress.py:489
+#, python-format
+msgid "Link '%s' created."
+msgstr "Koppeling '%s' aangemaakt."
+
+#: .tmp/ScrProgress.py:502
+msgid "Nothing done, because no option selected. You can close the wizard..."
+msgstr "Niets gedaan omdat geen optie geselecteerd is. U kunt de assistent nu sluiten..."
+
+#: .tmp/ScrProgress.py:504
+msgid "All operations completed. You can close the wizard..."
+msgstr "Alle bewerkingen zijn uitgevoerd. U kunt de assistent nu sluiten..."
+
+#: .tmp/ScrSummary.py:25 .tmp/ui_summaryWidget.py:54
+msgid "Summary"
+msgstr "Samenvatting"
+
+#: .tmp/ScrSummary.py:42
+msgid "User Settings"
+msgstr "Gebruikersinstellingen"
+
+#: .tmp/ScrSummary.py:43
+#, python-format
+msgid "Selected User: <b>%s</b>"
+msgstr "Geselecteerde gebruiker: <b>%s</b>"
+
+#: .tmp/ScrSummary.py:47
+msgid "Options Settings"
+msgstr "Instellingen"
+
+#: .tmp/ScrSummary.py:49
+#, python-format
+msgid "Selected Options: <b>%s</b>"
+msgstr "Geselecteerde opties: <b>%s</b>"
+
+#: .tmp/ScrSummary.py:53
+msgid "Destination Settings"
+msgstr "Bestemminginstellingen"
+
+#: .tmp/ScrSummary.py:56
+#, python-format
+msgid "Selected Destination: <b>Copy Link to %s</b>"
+msgstr "Geselecteerde bestemming: <b>Kopieer koppeling naar %s</b>"
+
+#: .tmp/ScrSummary.py:58
+#, python-format
+msgid "Selected Destination: <b>Copy Destination to %s</b>"
+msgstr "Geselecteerde bestemming: <b>Kopieer bestemming naar %s</b>"
+
+#: .tmp/ScrUserFiles.py:142
+msgid "Selecting Files"
+msgstr "Bestanden selecteren"
+
+#: .tmp/ScrUserFiles.py:176
+msgid "My Documents"
+msgstr "Mijn documenten"
+
+#: .tmp/ScrUserFiles.py:177
+msgid "Desktop"
+msgstr "Bureaublad"
+
+#: .tmp/ScrUserFiles.py:178
+msgid "My Music"
+msgstr "Mijn muziek"
+
+#: .tmp/ScrUserFiles.py:179
+msgid "My Pictures"
+msgstr "Mijn afbeeldingen"
+
+#: .tmp/ScrUserFiles.py:180
+msgid "My Video"
+msgstr "Mijn video"
+
+#: .tmp/ScrUser.py:61
+msgid "Selecting User"
+msgstr "Gebruiker selecteren"
+
+#: .tmp/ScrUser.py:62
+msgid "User Profiles"
+msgstr "Gebruikerprofielen"
+
+#: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
+msgid "Welcome"
+msgstr "Welkom"
+
+#: .tmp/ui_main.py:130
+msgid "Migration Tool"
+msgstr "Migratiegereedschap"
+
+#: .tmp/ui_main.py:131
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Welcome to Migration Tool!</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Welkom bij het migratiegereedschap!</span></p></body></html>"
+
+#: .tmp/ui_main.py:136
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: .tmp/ui_main.py:137
+msgid "Back"
+msgstr "Terug"
+
+#: .tmp/ui_main.py:138
+msgid "Next"
+msgstr "Volgende"
+
+#: .tmp/ui_main.py:139
+msgid "Finish"
+msgstr "Voltooien"
+
+#: .tmp/ui_summaryWidget.py:55
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Your settings will be applied in next screen..."
+"</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">Uw instellingen worden in het volgende scherm toegepast..."
+"</span></p></body></html>"
+
+#: .tmp/ui_userFilesWidget.py:45
+msgid "Form"
+msgstr "Form"
+
+#: .tmp/ui_userFilesWidget.py:46
+msgid "Do Nothing"
+msgstr "Niets doen"
+
+#: .tmp/ui_userFilesWidget.py:47
+msgid "Put links to my desktop"
+msgstr "Plaats koppelingen op mijn bureaublad"
+
+#: .tmp/ui_userFilesWidget.py:48
+msgid "Copy files to directory :"
+msgstr "Kopieer bestanden naar map:"
+
+#: .tmp/ui_userFilesWidget.py:49
+msgid "~/Desktop"
+msgstr "~/Desktop"
+
+#: .tmp/ui_userFilesWidget.py:50
+msgid "Directtory"
+msgstr "Map"
+
+#: .tmp/ui_userFilesWidget.py:51
+msgid "Size"
+msgstr "Grootte"
+
+#: .tmp/ui_usersItemWidget.py:59
+msgid "Set or unset entry as default boot entry."
+msgstr "Invoer als standaard opstartwaarde aan-/uitzetten."
+
+#: .tmp/ui_usersWidget.py:36
+msgid "Users"
+msgstr "Gebruikers"
+
+#: .tmp/ui_welcomeWidget.py:44
+msgid ""
+"This application, called Migration Tool, will help you transfer files and "
+"settings from your existing operating systems to Pardus with this "
+"application. Please click Next to personalize your desktop. \n"
+"\n"
+"Pardus is a GNU/Linux distribution, targeting at computer literate users' "
+"basic desktop needs; helps you connect to internet, read e-mails, work with "
+"office documents and more!"
+msgstr ""
+"Deze toepassing, genaamd Migratie-assistent, zal behulpzaam zijn bij het overzetten van bestanden en instellingen van het huidige besturingsysteem naar Pardus. "
+"Klik op Volgende om het te gebruiken. \n"
+"\n"
+"Pardus is een GNU/Linux distributie, gemaakt voor de gemiddelde computergebruiker, helpt bij het gebruik maken van het internet, e-mail, office documenten en nog veel meer toepassingen!"
+
