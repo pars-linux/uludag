@@ -75,6 +75,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         d.exec_()
 
     def slotReboot(self):
+        yali4.sysutils.ejectCdrom()
         yali4.sysutils.reboot()
 
     def shown(self):
