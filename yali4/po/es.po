@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-04 19:28+0300\n"
-"PO-Revision-Date: 2009-07-12 21:23-0400\n"
+"PO-Revision-Date: 2009-07-13 19:58-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1748,7 +1748,7 @@ msgstr "<b><p>Esta acción reiniciará su sistema.</p></b>"
 #: yali4/gui/ScrSummary.py:87
 #, python-format
 msgid "Install starts in: <b>%s seconds</b>"
-msgstr "Instalación comienza en : <b>%s segundos</b>"
+msgstr "Instalación comienza en: <b>%s segundos</b>"
 
 #: yali4/gui/ScrSummary.py:122
 msgid "Keyboard Settings"
@@ -1757,7 +1757,7 @@ msgstr "Teclado"
 #: yali4/gui/ScrSummary.py:123
 #, python-format
 msgid "Selected keyboard layout is <b>%s</b>"
-msgstr "Teclado seleccionado es <b>%s</b>"
+msgstr "Distribución de teclado <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:127
 msgid "Date/Time Settings"
@@ -1836,7 +1836,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Usar partición <b>%(newPartition)s</b> <b>seleccionada</b> para <b>%(type)s</b>."
+msgstr "Partición <b>%(newPartition)s</b> <b>se usará</b> para <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
