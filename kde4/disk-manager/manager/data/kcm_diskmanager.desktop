@@ -20,4 +20,5 @@ Comment=Disk Manager
 Comment[sv]=Hårddiskhanteraren
 Comment[es]=Administrador de Montaje de particiones
 Comment[de]=Disk-mount Manager
+Comment[tr]=Disk Yöneticisi
 X-KDE-Keywords=python disk managers
