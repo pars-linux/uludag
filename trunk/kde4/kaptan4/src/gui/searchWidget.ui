@@ -50,7 +50,7 @@
        <item>
         <widget class="QLabel" name="labelSearchDescription">
          <property name="styleSheet">
-          <string notr="true">color: white</string>
+          <string notr="true"/>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
@@ -91,7 +91,7 @@
      <item>
       <widget class="QCheckBox" name="checkBoxNepomuk">
        <property name="styleSheet">
-        <string notr="true">color: white</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>Enable Strigi Desktop File Indexer</string>

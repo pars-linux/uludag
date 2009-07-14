@@ -56,7 +56,7 @@
        <item>
         <widget class="QLabel" name="labelDesktopType">
          <property name="styleSheet">
-          <string notr="true">color: white</string>
+          <string notr="true"/>
          </property>
          <property name="text">
           <string>&lt;b&gt;Desktop Type:&lt;/b&gt;</string>
@@ -103,7 +103,7 @@
        <item>
         <widget class="QLabel" name="labelDesktopNumbers">
          <property name="styleSheet">
-          <string notr="true">color: white</string>
+          <string notr="true"/>
          </property>
          <property name="text">
           <string>&lt;b&gt;Number of Desktops:&lt;/b&gt;</string>

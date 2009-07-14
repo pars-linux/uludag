@@ -14,7 +14,7 @@
    <string>Goodbye</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: white</string>
+   <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout_4">
    <item row="0" column="1">
