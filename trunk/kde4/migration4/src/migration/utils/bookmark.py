@@ -22,6 +22,7 @@ class Bookmark:
 
     def getFFBookmarks(self, path):
         "Gets Firefox Bookmarks from a bookmarks.html file"
+        filename = os.path.join(path, "places.sqlite")
         filename = os.path.join(path, "bookmarks.html")
         bookmarkfile = open(filename)
         data = bookmarkfile.read()
@@ -133,15 +134,18 @@ class Bookmark:
         print "setFFBookmarks.path:%s" % path
         if os.path.lexists(os.path.join(path, "lock")):
             raise Exception, "Firefox is in use. Bookmarks cannot be saved."
+
         filepath = os.path.join(path, "places.sqlite")
         if os.path.exists(filepath):
             self.setFF3Bookmarks(filepath)
             return
-        filenpath = os.path.join(path, "bookmarks.html")
+
+        filepath = os.path.join(path, "bookmarks.html")
         if os.path.exists(filepath):
             self.setFF2Bookmarks(filepath)
             return
-        raise Exception, "Bookmark file cannot be found."
+        else:
+            raise Exception, "Bookmark file cannot be found."
 
     def setFF2Bookmarks(self, filepath):
         """Adds bookmarks to firefox using bookmarks.html file"""
@@ -183,6 +187,7 @@ class Bookmark:
 
     def setFF3Bookmarks(self, databasepath):
         "Adds bookmarks to firefox using places.sqlite database"
+        print "Firefox3 üzerinde işlem yapılıyor...."
         def getText(nodelist):
             rc = ""
             for node in nodelist:
@@ -208,6 +213,7 @@ class Bookmark:
                 print "parentid1:%d" % parentid
                 print "position:%s" % position
                 print "title:%s" % title
+                print "(parentid:%s, position:%s, title:%s)" % (parentid, position, title)
                 cursor.execute("INSERT INTO moz_bookmarks ('type', 'parent', 'position', 'title') VALUES (2, ?, ?, ?)", (parentid, position, title))
                 parentid = cursor.lastrowid
                 #print "parentid2:%d" % parentid
@@ -226,23 +232,42 @@ class Bookmark:
             elif node.tagName == "bookmark":
                 # Get title and url:
                 namenode = node.getElementsByTagName("name")[0]
+                #print "namenode:%s" % namenode
+
                 urlnode = node.getElementsByTagName("url")[0]
+                #print "urlnode:%s" % urlnode
                 title = getText(namenode.childNodes)
+                print "bookmark title%s" % title
                 url = getText(urlnode.childNodes)
+                print "bookmark url:%s" % url
                 # Add bookmark:
-                print "url:%s" % url
                 result = cursor.execute("SELECT id FROM moz_places WHERE url=?", (url,)).fetchone()
                 if result:
                     fk = result[0]
+                    print "select ile fk = result[0]:%s" % fk
                 else:
-                    cursor.execute("INSERT INTO moz_places ('url','title') VALUES (?, ?)", (url, title))
-                    fk = cursor.lastrowid
+                    print "INSERT INTO moz_places ('%s','%s')" % (url, title)
+                    result = cursor.execute("INSERT INTO moz_places ('url','title') VALUES (?, ?)", (url, title))
+                    if result:
+                        fk = cursor.lastrowid
+                        if not fk:    # Hack for lastrowid error
+                            result = cursor.execute("SELECT max(id) FROM moz_places")
+                            fk = result.fetchone()[0]
+                        print "insert ile fk = result[0]:%s" % fk
+                    else:
+                        print "result false düştü..."
+                    print "fk = cursor.lastrowid:%s" % fk
+                #print "INSERT INTO moz_bookmarks ('type', 'fk', 'parent', 'position', 'title') VALUES oldugu yerde...."
+                #print "(fk :%s, parentid:%s, position:%s, title:%s)" % (fk, parentid, position, title)
+
                 cursor.execute("INSERT INTO moz_bookmarks ('type', 'fk', 'parent', 'position', 'title') VALUES (1, ?, ?, ?, ?)", (fk, parentid, position, title))
+                #print "buraya gelindi ve eklenmiş olması grekkkk..."
 
         # Connect to database:
         conn = sqlite.connect(databasepath, 5.0)
         cursor = conn.cursor()
         # Find the maximum position:
+        conn.text_factory = str
         result = cursor.execute("SELECT max(position) FROM moz_bookmarks WHERE parent=2")
         maxpos = result.fetchone()[0]
         if maxpos:
