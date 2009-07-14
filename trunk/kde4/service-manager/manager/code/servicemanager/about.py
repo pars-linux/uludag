@@ -18,7 +18,7 @@ from PyKDE4.kdecore import *
 appName     = "service-manager"
 modName     = "servicemanager"
 programName = ki18n("Service Manager")
-version     = "2.9.1"
+version     = "2.9.2"
 description = ki18n("Service Manager")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2009 TUBITAK/UEKAE")
