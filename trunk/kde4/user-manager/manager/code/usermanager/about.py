@@ -18,7 +18,7 @@ from PyKDE4.kdecore import KAboutData, ki18n
 appName     = "user-manager"
 modName     = "usermanager"
 programName = ki18n("User Manager")
-version     = "2.9.5"
+version     = "2.9.6"
 description = ki18n("User Manager")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2006-2009 TUBITAK/UEKAE")
