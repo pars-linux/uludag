@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-14 14:49+0300\n"
-"PO-Revision-Date: 10/07/09 17:51\n"
+"PO-Revision-Date: 14/07/09 21:45\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -44,8 +44,7 @@ msgstr "X"
 
 #: yali4/gui/Ui/autopartquestion.py:81
 msgid "Automatically choose the partition to resize (recommended)"
-msgstr ""
-"Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
+msgstr "Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
 
 #: yali4/gui/Ui/autopartquestion.py:82
 msgid "I will choose the target"
@@ -113,15 +112,13 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
-msgstr ""
-"Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
+msgstr "Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
 
 #: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
 "This option will erase the entire disk. All the data on the disk will be "
 "lost."
-msgstr ""
-"Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
+msgstr "Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
@@ -610,8 +607,7 @@ msgid "Begin Install"
 msgstr "Begin installatie"
 
 #: yali4/gui/Ui/summarywidget.py:70
-msgid ""
-"If you check this, Yalı will install all language packages in this release"
+msgid "If you check this, Yalı will install all language packages in this release"
 msgstr "Markeer dit om alle taalpakketten installeren"
 
 #: yali4/gui/Ui/summarywidget.py:71
@@ -690,7 +686,7 @@ msgid ""
 msgstr ""
 "Er zijn duizenden pakketten in de Pardus software repositories "
 "(verzamelplaatsen). U kunt deze pakketten en programma's installeren, "
-"verwijderen of bijwerken met slechts twee muisklikken in Pakketbeheer!\n"
+"verwijderen of bijwerken met slechts een paar muisklikken in Pakketbeheer!\n"
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -700,8 +696,8 @@ msgid ""
 "settings used.\n"
 msgstr ""
 "Netwerk Applet helpt om veilig en gemakkelijk verbinding te maken met lokale "
-"netwerken en internet. Door profielondersteuning, is het makkelijker om "
-"opnieuw een kabel- of draadloze verbinding te maken, want de gebruikte "
+"netwerken en internet. Door profielondersteuning is het makkelijker om "
+"opnieuw een kabel of draadloze verbinding te maken omdat de gebruikte "
 "instellingen worden onthouden.\n"
 
 #: yali4/gui/descSlide.py:28
@@ -710,9 +706,9 @@ msgid ""
 "features, will help securely surf the Internet. Pardus 2009 includes Mozilla "
 "Firefox 3.0, and you can enrich Firefox with thousands of extensions.\n"
 msgstr ""
-"Mozilla Firefox zal u, met zijn snelheid, continue ontwikkeling en vele "
-"geavanceerde functies, veilig over het internet laten surfen. Pardus 2009 "
-"biedt u Mozilla Firefox 3.0, welk u kunt uitbreiden met duizenden "
+"Mozilla Firefox zal u met zijn snelheid, continue ontwikkeling en vele andere "
+"geavanceerde functies veilig over het internet laten surfen. Pardus 2009 "
+"biedt u Mozilla Firefox 3.0, welke u kunt uitbreiden met meerdere "
 "extensies.\n"
 
 #: yali4/gui/descSlide.py:30
@@ -721,10 +717,9 @@ msgid ""
 "RSS feeds, diaries, to-do listes and blog entries in one combined interface. "
 "Kontact, with its Groupware feature, will be your best friend at work.\n"
 msgstr ""
-"Kontact, KDE persoonlijke informatie beheerder, helpt u al uw emails, RSS "
+"Kontact, de persoonlijke informatie beheerdervan KDE, helpt u al uw e-mails, RSS "
 "feeds, agenda, te-doen lijstjes en weblogs te organiseren in één "
-"gecombineerd programma. Kontact, met Groupware functionaliteit, zal uw beste "
-"vriend op het werk worden.\n"
+"gecombineerd programma. Kontact, met Groupware functionaliteit, zal uw daarbij behulpzaam zijn.\n"
 
 #: yali4/gui/descSlide.py:32
 msgid ""
@@ -733,8 +728,8 @@ msgid ""
 "including a word processor, a spreadsheet application, a presentation viewer "
 "and editor, a graphics editor and a database application.\n"
 msgstr ""
-"OpenOffice.org, wereldwijd actief gebruikt door honderdduizenden instituten "
-"en miljoenen gebruikers, is een office pakket, met tekstverwerker, "
+"OpenOffice, wereldwijd actief gebruikt door honderdduizenden instituten "
+"en miljoenen gebruikers, is een office pakket, met tekstbewerker, "
 "spreadscheet applicatie, gereedschap voor presentaties, grafische editor en "
 "een database applicatie.\n"
 
@@ -745,10 +740,10 @@ msgid ""
 "extensive abilities that will meet professional graphic artists' and "
 "designers' needs.\n"
 msgstr ""
-"Gimp is een geavanceerde beeldbewerkingsprogramma dat standaard "
+"Gimp is een geavanceerd beeldbewerkingsprogramma dat standaard "
 "geïnstalleerd is in Pardus 2009. Gimp stelt u in staat alle gangbare "
 "grafische bestandformaten te bewerken, en heeft ongekende mogelijkheden voor "
-"zowel professionele grafische artiesten als voor ontwerpers.\n"
+"zowel professionele grafische artiesten als voor ontwerpers en de gewone gebruiker.\n"
 
 #: yali4/gui/descSlide.py:36
 msgid ""
@@ -767,9 +762,9 @@ msgid ""
 "including, but not limited to, MPEG, AVI and DivX. If you have a digital TV "
 "card, you can record your favourite TV programs using Kaffeine!\n"
 msgstr ""
-"Kaffiene is de standaard videospeler van Pardus 2009. Het kan in hoge "
+"Kaffeine is de standaard videospeler van Pardus 2009. Het kan in hoge "
 "kwaliteit DVD's, VCD's en ontelbare andere beeldformaten afspelen, "
-"inclusief, maar niet beperkt tot; MPEG, AVI en DivX. Als u toegang heeft tot "
+"inclusief, maar niet beperkt tot MPEG, AVI en DivX. Als u toegang heeft tot "
 "digitale televisie, dan kunt u uw favoriete TV programma's opnemen met "
 "Kaffeine!\n"
 
@@ -779,8 +774,8 @@ msgid ""
 "MSN, Yahoo!, ICQ, AIM, GTalk and Jabber, and can talk to your friends in "
 "different networks using Kopete.\n"
 msgstr ""
-"U kunt meerdere accounts gebruiken voor verschillende instant messengers als "
-"MSN, Yahoo!, ICO, AIM, Google Talk en Jabber, en met uw vrienden praten over "
+"U kunt meerdere accounts gebruiken voor verschillende instant messengers zoals "
+"MSN, Yahoo!, ICO, AIM, Google Talk en Jabber, en met uw vrienden chatten over "
 "verschillenden netwerken met Kopete.\n"
 
 #: yali4/gui/descSlide.py:42
@@ -789,9 +784,9 @@ msgid ""
 "burning CD/DVD images to discs are just a few of the things you can do with "
 "K3b.\n"
 msgstr ""
-"CD's (of DVD's) kopiëren; data en audio CD's maken, ISO images maken en het "
+"CD's of DVD's kopiëren, data en audio CD's maken, ISO images maken en het "
 "branden van CD/DVD images naar schijf zijn slechts enkele van de "
-"mogelijkheden die u hebt met K3b.\n"
+"mogelijkheden van K3b.\n"
 
 #: yali4/gui/descSlide.py:44
 msgid ""
@@ -803,8 +798,8 @@ msgstr ""
 "U kunt uitleg, handleidingen, en pakketbeschrijvingen vinden via onze "
 "community website www.pardus-linux.nl. Als u problemen met Pardus 2009 zou "
 "ondervinden, kunt u hulp krijgen via ons forum en de #pardus of #pardus-"
-"linux.nl chatbox op de IRC Freenode server (u kunt hier Konversation voor "
-"gebruiken).\n"
+"linux.nl chatbox op de IRC Freenode server (Konversation kan hiervoor "
+"gebruikt worden).\n"
 
 #: yali4/gui/DiskWidgets.py:87
 msgid "Manual Partitioning selected."
@@ -856,8 +851,7 @@ msgstr "Er is een verzoek voor het gelijke partitietype."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)"
 "s</b>."
@@ -1249,7 +1243,7 @@ msgstr "Bezig met post-installatie operaties.."
 
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
 msgid "Press <b>Reboot</b> button to restart your system."
-msgstr "Druk op <b>Herstart</b> om uw systeem opnieuw op te starten."
+msgstr "Druk op <b>Herstarten</b> om uw systeem opnieuw op te starten."
 
 #: yali4/gui/ScrGoodbye.py:87 yali4/gui/ScrRescueFinish.py:89
 msgid "<b>Rebooting system. Please wait!</b>"
@@ -1787,8 +1781,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -1797,7 +1790,7 @@ msgstr "Bootlader instellingen"
 #: yali4/gui/ScrSummary.py:215
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>."
-msgstr "GRUB zal geïnstalleerd worden op <b>%s</b>"
+msgstr "GRUB zal geïnstalleerd worden op <b>%s</b>."
 
 #: yali4/gui/ScrSummary.py:217
 msgid "GRUB will not be installed."
@@ -1849,7 +1842,6 @@ msgid "Create users to use Pardus..."
 msgstr "Maak gebruikers voor Pardus..."
 
 #: yali4/gui/ScrUsers.py:35
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -1876,22 +1868,16 @@ msgstr ""
 "<font size=\"+2\">Gebruiker instellen</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2009 staat toe om meerdere gebruikers dezelfde computer te laten "
-"delen.\n"
-"U kunt beheerdersrechten toestaan aan de gebruikers die u aanmaakt; en u "
-"kunt \n"
-"tevens toestemming geven aan gebruikers om verscheidene handelingen in "
-"TASMA\n"
-"te verrichten.\n"
+"Pardus 2009 staat toe om meerdere gebruikers dezelfde computer te laten delen.\n"
+"U kunt beheerdersrechten toestaan aan de gebruikers die u aanmaakt; en u kunt \n"
+"ook in Gebruikersbeheerder toestemming geven aan gebruikers om verscheidene \n"
+"handelingen te verrichten.\n"
 "</p>\n"
 "<p>\n"
 "Om een nieuwe gebruiker aan te maken,  vul het formulier in, en klik op \n"
-"\"Gebruiker toevoegen\". Indien u een gebruiker automatisch wilt laten "
-"inloggen;\n"
-" selecteer deze gebruiker in de lijst; als u een gebruiker wilt "
-"verwijderen;\n"
-"selecteer zijn of haar naam in de lijst en klik op \"Verwijder geselecteerde "
-"gebruiker\".\n"
+"\"Gebruiker toevoegen\". Indien u een gebruiker automatisch wilt laten inloggen;\n"
+" selecteer deze gebruiker in de lijst; als u een gebruiker wilt verwijderen;\n"
+"selecteer zijn of haar naam in de lijst en klik op \"Verwijder geselecteerde gebruiker\".\n"
 "Ga door met de installatie na het maken van uw keuze.\n"
 "</p>\n"
 "<p>\n"
@@ -2354,3 +2340,4 @@ msgstr "De thuismap van gebruiker <b>%s</b> wordt gereed gemaakt.."
 #, python-format
 msgid "Not enough free space on %s to create new partition"
 msgstr "Niet genoeg ruimte op %s voor het aanmaken van nieuwe partitie"
+
