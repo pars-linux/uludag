@@ -18,22 +18,26 @@ from pardus.strutils import ascii_lower
 
 class Output(object):
     # Connection status
-    Connected = 0
-    Disconnected = 1
-    Unknown = 2
+    Connected, \
+    Disconnected, \
+    Unknown, \
+    = range(3)
 
     # Output type
-    UnknownOutput = -1
-    LaptopPanel = 0
-    AnalogOutput = 1
-    DigitalOutput = 2
-    TVOutput = 3
+    UnknownOutput, \
+    DefaultOutput, \
+    LaptopPanel, \
+    AnalogOutput, \
+    DigitalOutput, \
+    TVOutput, \
+    = range(6)
 
     def __init__(self, name):
         self.name = name
         self.connection = self.Disconnected
 
         outputTypes = (
+            (self.DefaultOutput,   ("default")),
             (self.LaptopPanel,     ("lvds")),
             (self.AnalogOutput,    ("crt", "vga")),
             (self.DigitalOutput,   ("dfp", "dvi", "hdmi", "tmds")),
@@ -53,6 +57,7 @@ class Output(object):
     def getTypeString(self):
         names = {
                 Output.UnknownOutput:   "",
+                Output.DefaultOutput:   kdecore.i18n("Default Output"),
                 Output.LaptopPanel:     kdecore.i18n("Laptop Panel"),
                 Output.AnalogOutput:    kdecore.i18n("Analog Output"),
                 Output.DigitalOutput:   kdecore.i18n("Digital Output"),
