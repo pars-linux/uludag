@@ -44,7 +44,7 @@ QDialog {
         background-image: url(:/images/background-dialog.png);
         background-repeat: no-repeat;
         background-position: bottom center;
-        background-color: rgb(0,0,0);
+        background-color: #832F48;
 }
 
 QLabel {
