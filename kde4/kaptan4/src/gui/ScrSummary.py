@@ -94,10 +94,15 @@ class Widget(QtGui.QWidget, ScreenWidget):
         content.append(end)
 
         # Smolt Settings
-        content.append(subject %ki18n("Smolt Settings").toString())
-        content.append(item % ki18n("Send my profile: <b>%s</b>").toString() % self.smoltSettings["summaryMessage"])
-        #content.append(ki18n("(<i><u>Warning:</u> Sending profile requires to set up communication with Smolt server and can take between 30 seconds to a minute. Kaptan may freeze during this time.</i>)").toString())
-        content.append(end)
+        try:
+            if self.smoltSettings["summaryMessage"]:
+                content.append(subject %ki18n("Smolt Settings").toString())
+                content.append(item % ki18n("Send my profile: <b>%s</b>").toString() % self.smoltSettings["summaryMessage"])
+                #content.append(ki18n("(<i><u>Warning:</u> Sending profile requires to set up communication with Smolt server and can take between 30 seconds to a minute. Kaptan may freeze during this time.</i>)").toString())
+                content.append(end)
+        except:
+            print "WARNING: Your Smolt profile is already sent."
+
         content.append("""</ul></body></html>""")
         self.ui.textSummary.setHtml(content)
 
