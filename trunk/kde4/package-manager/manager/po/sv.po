@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-14 10:26+0300\n"
-"PO-Revision-Date: 2009-07-12 16:26+0200\n"
+"PO-Revision-Date: 2009-07-14 10:34+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -48,12 +48,11 @@ msgstr "Form"
 
 #: .tmp/ui_pminstaller.py:47
 msgid "TextLabel"
-msgstr ""
+msgstr "TextLabel"
 
 #: .tmp/ui_pminstaller.py:48
-#, fuzzy
 msgid "Cancel"
-msgstr "&Avbryt"
+msgstr "Avbryt"
 
 #: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "configuring"
@@ -498,7 +497,7 @@ msgstr "Underhållare"
 
 #: .tmp/main.py:38
 msgid "Show main window"
-msgstr ""
+msgstr "Visa huvudfönster"
 
 #: .tmp/commontext.py:15 .tmp/operationmanager.py:117
 msgid "downloading"
@@ -534,43 +533,39 @@ msgstr "&Ok"
 
 #: .tmp/pm-install.py:74 .tmp/mainwidget.py:166
 msgid "Network Error"
-msgstr ""
+msgstr "Nätverksfel"
 
 #: .tmp/pm-install.py:75 .tmp/mainwidget.py:167
 msgid "Please check your network connections and try again."
-msgstr ""
+msgstr "Kontrollera din nätverksanslutning och försök igen."
 
 #: .tmp/pm-install.py:77 .tmp/mainwidget.py:169
 msgid "Authorization Error"
-msgstr ""
+msgstr "Auktoriseringsfel"
 
 #: .tmp/pm-install.py:78 .tmp/mainwidget.py:170
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "Du har inte behörighet till den här åtgärden."
 
 #: .tmp/pm-install.py:89
-#, fuzzy
 msgid "Package Installer"
 msgstr "Pakethanteraren"
 
 #: .tmp/pm-install.py:110
-#, fuzzy
 msgid "Ok"
-msgstr "&Ok"
+msgstr "Ok"
 
 #: .tmp/pm-install.py:121
-#, fuzzy
 msgid "pm-install"
-msgstr "installerade"
+msgstr "pm-install"
 
 #: .tmp/pm-install.py:128
-#, fuzzy
 msgid "Packages to install"
-msgstr "Valda paket för installation:"
+msgstr "Paket att installera"
 
 #: .tmp/pm-install.py:132
 msgid "Package Installer is already started!"
-msgstr ""
+msgstr "Paketinstalleraren körs redan!"
 
 #: .tmp/packagedelegate.py:116
 msgid "Description:"
@@ -585,9 +580,8 @@ msgid "Repository:"
 msgstr "Förråd:"
 
 #: .tmp/packagedelegate.py:147
-#, fuzzy
 msgid "Package Size:"
-msgstr "Pakethanteraren"
+msgstr "Paketstorlek:"
 
 #: .tmp/mainwidget.py:205
 msgid "Select all packages in this group"
@@ -668,3 +662,4 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+
