@@ -146,9 +146,9 @@ if "update_messages" in sys.argv:
 setup(
       name              = about.appName,
       version           = about.version,
-      description       = unicode(about.description),
-      license           = unicode(about.license),
-      author            = "",
+      description       = str(about.description.toString()),
+      license           = str(about.aboutData.licenseName(about.aboutData.ShortName)),
+      author            = "Pardus Developers",
       author_email      = about.bugEmail,
       url               = about.homePage,
       packages          = [''],
