@@ -47,7 +47,7 @@ class GroupList(QtGui.QListWidget):
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
 
-        if str(self.lastSelected) == localName:
+        if str(self.lastSelected) == name:
             self.selectLastSelected(item)
 
     def selectLastSelected(self, item):
