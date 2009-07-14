@@ -69,7 +69,8 @@ class Operation(QObject):
         self.packages = packages
         self.iface.installPackages(self.packages)
 
-    def exceptionHandler(self, exception):
+    def exceptionHandler(self, message):
+        message = str(message)
         if "urlopen error" in message or "Socket Error" in message:
             errorTitle = i18n("Network Error")
             errorMessage = i18n("Please check your network connections and try again.")
@@ -79,9 +80,9 @@ class Operation(QObject):
         else:
             errorTitle = i18n("Pisi Error")
             errorMessage = message
-
         self.messageBox = QtGui.QMessageBox(errorTitle, errorMessage, QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
-        self.messageBox.show()
+        self.messageBox.exec_()
+        KApplication.kApplication().quit()
 
 class MainWindow(KMainWindow):
     def __init__(self, parent=None):
