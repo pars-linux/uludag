@@ -1,19 +1,22 @@
 # Service Manager Interfaca
 # Copyright (C) 2006, UEKAE/TÜBİTAK
 # This file is distributed under the same license as the Service-KGA package.
-# Bahadır Kandemir <bahadir@pardus.org.tr>, 2006
 #
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2006.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: service-manager 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-09 16:37+0300\n"
-"PO-Revision-Date: 2006-04-10 12:02+0200\n"
-"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
-"Language-Team: Turkish\n"
+"PO-Revision-Date: 2009-07-14 12:48+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/service-manager.py:33 src/service-manager.py:88
 #: src/service_manager.py:123
@@ -109,7 +112,7 @@ msgstr "Açılışta çalıştır."
 
 #: src/service_manager.py:126
 msgid "Don't run on startup."
-msgstr "Açılışta çalıştırma"
+msgstr "Açılışta çalıştırma."
 
 #: src/service_manager.py:139
 msgid "Reset Search"
@@ -121,11 +124,11 @@ msgstr "Ara:"
 
 #: src/service_manager.py:141
 msgid "&List servers only."
-msgstr "&Sadece sunucuları listele"
+msgstr "&Sadece sunucuları listele."
 
 #: src/service_manager.py:142
 msgid "Alt+L"
-msgstr "Alt+L"
+msgstr "Alt+S"
 
 #~ msgid "Access Denied"
 #~ msgstr "Erişim Engellendi"

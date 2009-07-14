@@ -172,12 +172,12 @@ msgid ""
 msgstr ""
 "<b>Sistem yükleyicisini (GRUB) sabit diskinize kurmak ister misiniz?</b>\n"
 "\n"
-"<p>Pardus'u açabilmek için bir açılış yöneticisi gerekir.</p>\n"
+"<p>Pardus'u açabilmek için bir sistem yükleyicisi gerekir.</p>\n"
 "\n"
-"<p>Eğer bir sistem yükleyicisi açılış diskinin başına kurmazsanız, (eğer "
+"<p>Eğer bir sistem yükleyicisini açılış diskinin başına kurmazsanız, (eğer "
 "kurulu bir tane varsa) \n"
 "diğer işletim sisteminizin yükleyicisini, kurulmuş olan Pardus'u başlatmak \n"
-"için yapılandırmanız gerekir</p>"
+"için yapılandırmanız gerekir.</p>"
 
 #: yali4/gui/Ui/bootloaderwidget.py:81 yali4/gui/Ui/rescuegrubwidget.py:76
 msgid "Select target to install boot loader"
@@ -718,8 +718,8 @@ msgid ""
 "Kontact, with its Groupware feature, will be your best friend at work.\n"
 msgstr ""
 "KDE Kişisel Bilgi Yönetimi aracı Kontact; tüm e-postalarınızı, RSS "
-"beslemelerini, ajandanızı, yapılacaklar listenizi ve günlük girdilerinizi "
-"tek elden yönetmenize yardımcı olur.Grup çalışma özellikleriyle Kontact, "
+"beslemelerinizi, ajandanızı, yapılacaklar listenizi ve günlük girdilerinizi "
+"tek elden yönetmenize yardımcı olur. Grup çalışma özellikleriyle Kontact, "
 "işyerinizde sizin en büyük yardımcınız olacak.\n"
 
 #: yali4/gui/descSlide.py:32
@@ -1691,7 +1691,7 @@ msgstr "Saat/Tarih Ayarları"
 #: yali4/gui/ScrSummary.py:128
 #, python-format
 msgid "Selected TimeZone is <b>%s</b>"
-msgstr "Seçilen ZamanDilimi <b>%s</b>"
+msgstr "Seçilen Zaman Dilimi <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:133
 msgid "User Settings"

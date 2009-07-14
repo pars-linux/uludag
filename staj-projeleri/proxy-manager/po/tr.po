@@ -3,22 +3,24 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # R. Bertan Gündoğdu <rmznbrtn@gmail.com>, 2007.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-11 13:36+0300\n"
-"PO-Revision-Date: 2007-07-13 00:09+0300\n"
-"Last-Translator: R. Bertan Gündoğdu <rmznbrtn@gmail.com>\n"
-"Language-Team: Türkçe\n"
+"PO-Revision-Date: 2009-07-14 12:30+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/proxy-manager.py:71
 msgid "Proxy Manager is already running!"
-msgstr "Uygulama zaten etkin."
+msgstr "Vekil Yöneticisi zaten açık!"
 
 #: src/proxy-manager.py:76
 msgid "Proxy Manager"
@@ -46,11 +48,11 @@ msgstr "En az bir tane protokol belirtin."
 
 #: src/profileHandler.py:152
 msgid "Please specify a host for http."
-msgstr "Http için bir sunucu belirtin."
+msgstr "HTTP için bir sunucu belirtin."
 
 #: src/profileHandler.py:155
 msgid "Please specify a host for ftp."
-msgstr "Ftp için bir sunucu belirtin."
+msgstr "FTP için bir sunucu belirtin."
 
 #: src/profileHandler.py:158
 msgid "Please specify a host for ssl."
@@ -99,7 +101,7 @@ msgstr "Ayarları otomatik al"
 
 #: src/profileDialog.py:255
 msgid "Use proxy server"
-msgstr "Farklı vekil sunucular kullan"
+msgstr "Vekil sunucu kullan"
 
 #: src/profileDialog.py:256 src/profile.py:20
 msgid "SOCKS"
@@ -107,7 +109,7 @@ msgstr "SOCKS"
 
 #: src/profileDialog.py:257
 msgid "Ftp"
-msgstr "Ftp"
+msgstr "FTP"
 
 #: src/profileDialog.py:259 src/profile.py:19
 msgid "SSL"
@@ -115,15 +117,15 @@ msgstr "SSL"
 
 #: src/profileDialog.py:261
 msgid "Http"
-msgstr "Http"
+msgstr "HTTP"
 
 #: src/browser.py:119
 msgid "Activate/Deactivate this proxy profile"
-msgstr "Profili etkinleştir"
+msgstr "Profili aç ya da kapat"
 
 #: src/browser.py:131
 msgid "Configure this profile"
-msgstr "Profili değiştir"
+msgstr "Profili yapılandır"
 
 #: src/browser.py:134
 msgid "Delete this profile"
@@ -137,7 +139,7 @@ msgid ""
 "proxy profile?"
 msgstr ""
 "'%s'\n"
-"adlı profili silmek istediğinizden emin misiniz?"
+"profilini silmek istediğinizden emin misiniz?"
 
 #: src/browser.py:152
 msgid "Delete proxy profile?"
@@ -145,15 +147,15 @@ msgstr "Profil silinsin mi?"
 
 #: src/browser.py:242
 msgid "Name:"
-msgstr "Ad:"
+msgstr "İsim:"
 
 #: src/profile.py:15
 msgid "Direct connection"
-msgstr "Vekil sunucu kullanmaz"
+msgstr "Doğrudan bağlantı"
 
 #: src/profile.py:16
 msgid "Global proxy: "
-msgstr "Vekil sunucu:"
+msgstr "Küresel vekil: "
 
 #: src/profile.py:17
 msgid "HTTP"
@@ -165,9 +167,10 @@ msgstr "FTP"
 
 #: src/profile.py:21
 msgid "Auto configuration file."
-msgstr "Otomatik ayar dosyası"
+msgstr "Otomatik ayar dosyası."
 
 #: src/profile.py:66
 msgid "No Proxy"
-msgstr "Doğrudan bağlantı"
+msgstr "Doğrudan Bağlantı"
+
 

@@ -1,23 +1,24 @@
 # translation of tr.po to Türkçe
+# translation of tr.po to
+# PiSi Translation
+# Copyright (C) 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
 # Eray Ozkural <eray@pardus.org.tr>, 2005,2006.
 # Furkan Duman <coderlord@gmail.com>, 2006.
 # Faik Uygur <faik@pardus.org.tr>, 2006, 2007, 2008.
 # Ahmet AYGÜN <ahmet@pardusman.org>, 2006.
-# translation of tr.po to
-# PiSi Translation
-# Copyright (C) 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "POT-Creation-Date: 2008-06-26 09:45+EEST\n"
-"PO-Revision-Date: 2008-06-26 09:46+0300\n"
-"Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
-"Language-Team: Türkçe <tr@li.org>\n"
+"PO-Revision-Date: 2009-07-14 15:09+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=1; plural=0;\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: pisi-cli:41
 msgid "Keyboard Interrupt: Exiting..."
@@ -37,11 +38,11 @@ msgstr ""
 
 #: pisi-cli:54
 msgid "System Error. Program Terminated."
-msgstr "Sistem Hatası: Program Sonlandırıldı. "
+msgstr "Sistem Hatası: Program Sonlandırıldı."
 
 #: pisi-cli:61
 msgid "Please use 'pisi help' for general help."
-msgstr "Genel yardım için lütfen 'pisi help' komutunu kullanınız. "
+msgstr "Genel yardım için 'pisi help' komutunu kullanınız."
 
 #: pisi-cli:64
 msgid "Traceback:"
@@ -49,7 +50,7 @@ msgstr "Geri-iz:"
 
 #: pisi-cli:68
 msgid "Use --debug to see a traceback."
-msgstr "Bir geri-iz (traceback) görmek için lütfen --debug seçeneğini kullanın."
+msgstr "Bir geri-iz (traceback) görmek için --debug kullanın."
 
 #: pisi/actionsapi/autotools.py:37 pisi/actionsapi/cmaketools.py:36
 msgid ""
@@ -123,11 +124,11 @@ msgstr "cmake için yapılandırma betiği bulunamadı."
 
 #: pisi/actionsapi/get.py:163
 msgid "Util %s cannot be found"
-msgstr "Araç %s bulunamıyor"
+msgstr "Araç %s bulunamıyor."
 
 #: pisi/actionsapi/get.py:165
 msgid "Warning: %s does not exist, using plain name %s"
-msgstr "Uyarı: %s yok, düz ad %s kullanılıyor"
+msgstr "Uyarı: %s yok, düz ad %s kullanılıyor."
 
 #: pisi/actionsapi/kde.py:34
 msgid ""
@@ -141,15 +142,15 @@ msgstr ""
 
 #: pisi/actionsapi/libtools.py:38
 msgid "Running ldconfig failed."
-msgstr "ldconfig çalıştırılamadı"
+msgstr "ldconfig çalıştırılamadı."
 
 #: pisi/actionsapi/libtools.py:49
 msgid "GNU Config Update Finished."
-msgstr "GNU yapılandırma güncellemesi bitti"
+msgstr "GNU yapılandırma güncellemesi bitti."
 
 #: pisi/actionsapi/libtools.py:53
 msgid "Running libtoolize failed."
-msgstr "libtoolize çalıştırılamadı"
+msgstr "libtoolize çalıştırılamadı."
 
 # pisi/actionsapi/autotools.py:119 :127
 #: pisi/actionsapi/perlmodules.py:66
@@ -163,30 +164,30 @@ msgstr "perl kurma işlemi başarısızlığa uğgradı."
 
 #: pisi/actionsapi/pisitools.py:128
 msgid "ActionsAPI [doman]: Wrong man page file: %s"
-msgstr "ActionsAPI [doman]: Yanlış kılavuz sayfası dosyası: %s"
+msgstr "ActionsAPI [doman]: Yanlış kılavuz sayfası dosyası (%s)."
 
 #: pisi/actionsapi/pisitools.py:166
 msgid "ActionsAPI [rename]: No such file or directory: %s"
-msgstr "ActionsAPI [rename]: Böyle bir dosya ya da dizin bulunamadı: %s"
+msgstr "ActionsAPI [rename]: %s isminde bir dosya ya da dizin bulunamadı."
 
 #: pisi/actionsapi/pisitools.py:183
 msgid "File does not exist or permission denied: %s"
-msgstr "Dosya yok ya da erişim engellendi: %s"
+msgstr "Dosya yok ya da erişim reddedildi: %s"
 
 #: pisi/actionsapi/pisitools.py:200
 msgid "ActionsAPI [dosym]: File exists: %s"
-msgstr "ActionsAPI [dosym]: %s dosyası sistemde var"
+msgstr "ActionsAPI [dosym]: Dosya zaten var: %s"
 
 # pisi/actionsapi/pisitoolsfunctions.py:46 :59
 #: pisi/actionsapi/pisitoolsfunctions.py:45
 #: pisi/actionsapi/pisitoolsfunctions.py:59
 #: pisi/actionsapi/pisitoolsfunctions.py:72
 msgid "Insufficient arguments."
-msgstr "Yetersiz argümanlar"
+msgstr "Parametreler yetersiz."
 
 #: pisi/actionsapi/pythonmodules.py:66
 msgid "Running %s failed."
-msgstr "%s çalıştırılamadı"
+msgstr "%s çalıştırılamadı."
 
 #: pisi/actionsapi/shelltools.py:49
 msgid "Cannot create directory %s"
@@ -194,11 +195,11 @@ msgstr "%s dizini yaratılamıyor."
 
 #: pisi/actionsapi/shelltools.py:57
 msgid "ActionsAPI [echo]: Can't append to file %s."
-msgstr "ActionsAPI [echo]: %s dosyasına eklenemiyor."
+msgstr "ActionsAPI [echo]: %s dosyasına ekleme yapılamıyor."
 
 #: pisi/actionsapi/shelltools.py:66
 msgid "ActionsAPI [chmod]: Operation not permitted: %s (mode: %s)"
-msgstr "ActionsAPI [chmod]: İşleme izin verilmedi: %s (mod: %s)"
+msgstr "ActionsAPI [chmod]: İşleme izin verilmedi: %s (kip: %s)."
 
 #: pisi/actionsapi/shelltools.py:69
 msgid "ActionsAPI [chmod]: File %s doesn't exists."
@@ -206,7 +207,7 @@ msgstr "ActionsAPI [chmod]: %s dosyası bulunamadı."
 
 #: pisi/actionsapi/shelltools.py:77
 msgid "ActionsAPI [chown]: Operation not permitted: %s (uid: %s, gid: %s)"
-msgstr "ActionsAPI [chown]: İşleme izin verilmedi: %s (uid: %s, gid: %s)"
+msgstr "ActionsAPI [chown]: İşleme izin verilmedi: %s (uid: %s, gid: %s)."
 
 #: pisi/actionsapi/shelltools.py:80
 msgid "ActionsAPI [chown]: File %s doesn't exists."
@@ -214,7 +215,7 @@ msgstr "ActionsAPI [chown]: %s dosyası bulunamadı."
 
 #: pisi/actionsapi/shelltools.py:87
 msgid "ActionsAPI [sym]: Permission denied: %s to %s"
-msgstr "ActionsAPI [sym]: Erişim engellendi: %s -> %s"
+msgstr "ActionsAPI [sym]: Erişim engellendi: %s -> %s."
 
 #: pisi/actionsapi/shelltools.py:95
 msgid "ActionsAPI [unlink]: Permission denied: %s."
@@ -226,7 +227,7 @@ msgstr "ActionsAPI [unlink]: %s dosyası bulunamadı."
 
 #: pisi/actionsapi/shelltools.py:107
 msgid "ActionsAPI [unlinkDir]: Operation not permitted: %s"
-msgstr "ActionsAPI [unlinkDir]: İşleme izin verilmedi: %s"
+msgstr "ActionsAPI [unlinkDir]: İşleme izin verilmedi: %s."
 
 #: pisi/actionsapi/shelltools.py:111
 msgid "ActionsAPI [unlinkDir]: Directory %s doesn't exists."
@@ -234,7 +235,7 @@ msgstr "ActionsAPI [unlinkDir]: %s dizini bulunamadı."
 
 #: pisi/actionsapi/shelltools.py:120
 msgid "ActionsAPI [move]: Permission denied: %s to %s"
-msgstr "ActionsAPI [move]: Erişim engellendi: %s -> %s"
+msgstr "ActionsAPI [move]: Erişim reddedildi: %s -> %s."
 
 #: pisi/actionsapi/shelltools.py:122
 msgid "ActionsAPI [move]: File %s doesn't exists."
@@ -242,7 +243,7 @@ msgstr "ActionsAPI [move]: %s dosyası bulunamadı."
 
 #: pisi/actionsapi/shelltools.py:132
 msgid "ActionsAPI [copy]: Permission denied: %s to %s"
-msgstr "ActionsAPI [copy]: Erişim engellendi: %s -> %s"
+msgstr "ActionsAPI [copy]: Erişim reddedildi: %s -> %s"
 
 #: pisi/actionsapi/shelltools.py:148
 msgid "ActionsAPI [copy]: File %s does not exist."
@@ -258,7 +259,7 @@ msgstr "ActionsAPI [copytree]: %s dizini bulunamadı."
 
 #: pisi/actionsapi/shelltools.py:177
 msgid "ActionsAPI [touch]: Permission denied: %s"
-msgstr "ActionsAPI [touch]: Erişim engellendi: %s"
+msgstr "ActionsAPI [touch]: Erişim reddedildi: %s"
 
 #: pisi/api.py:391
 msgid "Taking snapshot of the system"
@@ -266,7 +267,7 @@ msgstr "Sistemin görüntüsü alınıyor"
 
 #: pisi/api.py:501
 msgid "comar package is not fully installed"
-msgstr "comar paketi tam olarak kurulmamış"
+msgstr "comar paketi tam olarak kurulmamış."
 
 #: pisi/api.py:513
 msgid "File %s not found"
@@ -302,7 +303,7 @@ msgstr "* %s altındaki PiSi dosyalarının bir indeksi yapılıyor"
 
 #: pisi/api.py:580
 msgid "* Index file written"
-msgstr "* İndeks dosyası yazıldı"
+msgstr "* İndeks dosyası yazıldı."
 
 #: pisi/api.py:585
 msgid "Repo %s already present."
@@ -2133,4 +2134,5 @@ msgstr "Kaynak deposu taranıyor...\n"
 #: scripts/repostats.py:579
 msgid "Scanning binary packages...\n"
 msgstr "İkili dosyalar taranıyor...\n"
+
 
