@@ -282,7 +282,7 @@ msgstr "Kaptan Masaüstü size \"Hoşçakalın!\" diyor :)"
 
 #: .tmp/ScrKeyboard.py:32
 msgid "Insert some catchy title about keyboards.."
-msgstr "Klâvyeler hakkında bir başlık ekle.."
+msgstr "Klavyeler hakkında bir başlık ekle.."
 
 #: .tmp/ScrKeyboard.py:33
 msgid "Select your keyboard layout"
@@ -509,16 +509,16 @@ msgstr "Menü Ayarları"
 
 #: .tmp/ScrSummary.py:73
 msgid "Wallpaper Settings"
-msgstr "Duvarkağıdı Ayarları"
+msgstr "Duvar kağıdı Ayarları"
 
 #: .tmp/ScrSummary.py:75
 msgid "You haven't selected any wallpaper."
-msgstr "Duvarkağıdı seçmediniz."
+msgstr "Duvar kağıdı seçmediniz."
 
 #: .tmp/ScrSummary.py:77
 #, python-format
 msgid "Selected Wallpaper: <b>%s</b>"
-msgstr "Seçilen duvarkağıdı: <b>%s</b>"
+msgstr "Seçilen duvar kağıdı: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:81
 msgid "Style Settings"
@@ -553,11 +553,11 @@ msgstr "Profilimi yolla: <b>%s</b>"
 
 #: .tmp/ScrWallpaper.py:34
 msgid "Insert some catchy title about wallpapers.."
-msgstr "Duvarkâğıtları hakkında güzel bir başlık"
+msgstr "Duvar kâğıtları hakkında güzel bir başlık"
 
 #: .tmp/ScrWallpaper.py:35
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
-msgstr "Muhteşem duvarkağıtları!\\m/"
+msgstr "Muhteşem duvar kağıtları!\\m/"
 
 #: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:52
 msgid "Desktop Search"
@@ -737,15 +737,15 @@ msgstr "duvarKâğıdıAçıklaması"
 
 #: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
 msgid "Wallpaper"
-msgstr "Duvarkağıdı"
+msgstr "Duvar kağıdı"
 
 #: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:45
 msgid "Choose Wallpaper From a File"
-msgstr "Duvakâğıdını Dosyadan Seç"
+msgstr "Duvar Kâğıdını Dosyadan Seç"
 
 #: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:46
 msgid "Don't change wallpaper"
-msgstr "Duvarkağıdını değiştirme"
+msgstr "Duvar kâğıdını değiştirme"
 
 #: .tmp/ui_welcomeWidget.py:44 .tmp/welcomeWidget.py:44
 msgid ""
