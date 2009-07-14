@@ -253,11 +253,7 @@ class ConnectionItemWidget(QtGui.QWidget):
             self.setState(False)
 
     def setState(self, state):
-        # We need a delete button enabled always so we should disable others one by one..
-        self.ui.labelStatus.setEnabled(state)
-        self.ui.labelDesc.setEnabled(state)
-        # self.ui.checkToggler.setEnabled(state)
-        # self.ui.buttonEdit.setEnabled(state)
+        pass
 
     def toggleConnection(self):
         def handler(package, exception, args):
