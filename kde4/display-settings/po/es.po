@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-14 19:09+0300\n"
-"PO-Revision-Date: 2009-07-12 20:38-0400\n"
+"PO-Revision-Date: 2009-07-14 18:43-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Salidas"
 
 #: .tmp/ui_screens.py:85
 msgid "Extend desktop to all displays"
-msgstr ""
+msgstr "Extender escritorio a todos los monitores"
 
 #: .tmp/ui_screens.py:86
 msgid "Detect Outputs"
@@ -136,7 +136,7 @@ msgstr "Iniciar Administrador de Paquetes"
 #: .tmp/displaysettings/deviceswidget.py:228
 #: .tmp/displaysettings/screenswidget.py:336
 msgid "You must restart your X session for the changes to take effect."
-msgstr ""
+msgstr "Debe reiniciar su sesión gráfica X para que los cambios tengan efecto."
 
 #: .tmp/displaysettings/deviceswidget.py:238
 #: .tmp/displaysettings/screenswidget.py:343
@@ -145,7 +145,7 @@ msgstr "Acceso denegado."
 
 #: .tmp/displaysettings/device.py:60
 msgid "Default Output"
-msgstr ""
+msgstr "Salida predeterminada"
 
 #: .tmp/displaysettings/device.py:61
 msgid "Laptop Panel"
@@ -181,8 +181,7 @@ msgstr "Monitor Personalizado"
 
 #: .tmp/displaysettings/outputdialog.py:78
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
-msgstr ""
-"<qt><i>Presione el botón \"Elegir...\" para seleccionar un monitor</i></qt>"
+msgstr "<qt><i>Presione el botón \"Elegir...\" para seleccionar un monitor</i></qt>"
 
 #: .tmp/displaysettings/screenswidget.py:170
 #: .tmp/displaysettings/screenswidget.py:245
@@ -347,5 +346,3 @@ msgstr "Configurando..."
 msgid "Outputs:"
 msgstr "Salidas:"
 
-#~ msgid "Cloned displays"
-#~ msgstr "Pantallas clonadas"

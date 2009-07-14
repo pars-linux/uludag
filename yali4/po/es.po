@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-14 14:49+0300\n"
-"PO-Revision-Date: 2009-07-13 19:58-0400\n"
+"PO-Revision-Date: 2009-07-14 18:26-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -131,8 +131,7 @@ msgstr "Eliminar todas las particiones"
 # favor revisar, la ultima parte
 #: yali4/gui/Ui/autopartwidget.py:121
 msgid "This option allows partitioning the disk to your wishes."
-msgstr ""
-"Esta opción le permite realizar el particionamiento acorde a sus deseos."
+msgstr "Esta opción le permite realizar el particionamiento acorde a sus deseos."
 
 #: yali4/gui/Ui/autopartwidget.py:122
 msgid "No, I'll partition my disk manually."
@@ -619,8 +618,7 @@ msgstr "Comenzar instalación"
 
 # favor revisar - release, version
 #: yali4/gui/Ui/summarywidget.py:70
-msgid ""
-"If you check this, Yalı will install all language packages in this release"
+msgid "If you check this, Yalı will install all language packages in this release"
 msgstr ""
 "Si marca aquí, Yali instalará los paquetes de todos los idiomas disponibles "
 "en esta versión"
@@ -696,7 +694,7 @@ msgstr ""
 "Configuraciones abarcan agregar usuarios o hardware nuevo (ej. impresora, "
 "monitor) al sistema, administración de configuraciones visuales, desde "
 "iconos de escritorio hasta fuentes de letras, todo está reunido en la misma "
-"interfaz de Tasma.\n"
+"interfaz de Tasma .\n"
 
 #: yali4/gui/descSlide.py:24
 msgid ""
@@ -787,7 +785,7 @@ msgid ""
 msgstr ""
 "Kaffeine es el reproductor predeterminado de video en Pardus 2009. Tiene un "
 "alto rendimiento en la reproducción de DVDs, VCDs, y una serie de formatos "
-"de video, incluyendo, pero no limitado a, MPEG, AVI y DivX. Si posee una "
+"de video, MPEG, AVI y DivX entre otros. Si posee una "
 "tarjeta de TV digital puede grabar sus programas favoritos con Kaffeine!\n"
 
 #: yali4/gui/descSlide.py:40
@@ -878,18 +876,15 @@ msgstr "Ya hay una partición especificada para el mismo fin."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr ""
-"Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr "Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
 
 # favor verificar contexto,
 # check context, should this say "format as.." instead o "selected as .." ?
 #: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:163
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Usar partición <b>%(partition)s</b> <b>seleccionada</b> para <b>%(type)s</b>."
+msgstr "Usar partición <b>%(partition)s</b> <b>seleccionada</b> para <b>%(type)s</b>."
 
 #: yali4/gui/DiskWidgets.py:382
 msgid ""
@@ -1179,8 +1174,7 @@ msgstr "Verifique el CD de instalación"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr ""
-"Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 # maybe i copied the CD from a friend ? so it would not be from an ISO...
 #: yali4/gui/ScrCheckCD.py:32
@@ -1205,8 +1199,7 @@ msgstr ""
 # could be set to: "Verificando CD, por favor espere."
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
+msgstr "<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1791,8 +1784,7 @@ msgstr "Añadir usuario %s (<b>%s</b>)."
 #: yali4/gui/ScrSummary.py:137
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>administrator privileges</u>."
-msgstr ""
-"Añadir usuario %s (<b>%s</b>) con <u>privilegios de administración</u>."
+msgstr "Añadir usuario %s (<b>%s</b>) con <u>privilegios de administración</u>."
 
 #: yali4/gui/ScrSummary.py:143
 msgid "Hostname Settings"
@@ -1847,8 +1839,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partición <b>%(newPartition)s</b> <b>se usará</b> para <b>%(type)s</b>."
+msgstr "Partición <b>%(newPartition)s</b> <b>se usará</b> para <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -1909,7 +1900,6 @@ msgid "Create users to use Pardus..."
 msgstr "Crear los usuarios, que usarán Pardus..."
 
 #: yali4/gui/ScrUsers.py:35
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -1938,12 +1928,12 @@ msgstr ""
 "<p>\n"
 "Pardus 2009 permite compartir la misma computadora entre varios usuarios.\n"
 "Puede conceder derechos de administración del sistema; También puede\n"
-"configurar permisos para determinadas operaciones en TASMA.\n"
+"configurar permisos para determinadas operaciones en el Administrador de Usuarios.\n"
 "</p>\n"
 "<p>\n"
 "Para crear un usuario nuevo, complete los datos del formulario y presione "
 "\"Agregar Usuario\".\n"
-"Si desea que el sistema arranque automaticamente con un usuario determinado, "
+"Si desea que el sistema arranque automáticamente con un usuario determinado, "
 "seleccione\n"
 "al usuario de la lista; Si desea eliminar un usuario, \n"
 "seleccione su nombre en la lista y presione \"Eliminar\".\n"
@@ -2425,3 +2415,4 @@ msgstr "Preparando directorio home de usuario <b>%s</b>.."
 #, python-format
 msgid "Not enough free space on %s to create new partition"
 msgstr "No hay suficiente espacio libre en %s para crear una partición nueva"
+

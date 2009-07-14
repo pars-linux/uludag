@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-14 10:26+0300\n"
-"PO-Revision-Date: 2009-07-02 16:42-0400\n"
+"PO-Revision-Date: 2009-07-14 18:37-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr "Carrito"
 
 #: .tmp/ui_basketdialog.py:70
 msgid "Selected package(s) for install:"
-msgstr "Paquetes seleccionados a instalar:"
+msgstr "Paquetes a instalar:"
 
 # favor revisar, creo que breve es mejor, hay que ver las pantallas..
 #: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:98
@@ -52,9 +52,8 @@ msgid "TextLabel"
 msgstr ""
 
 #: .tmp/ui_pminstaller.py:48
-#, fuzzy
 msgid "Cancel"
-msgstr "&Cancelar"
+msgstr "Cancelar"
 
 #: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "configuring"
@@ -426,34 +425,32 @@ msgstr "Paquetes seleccionados para instalar:"
 
 #: .tmp/statemanager.py:94
 msgid "You have selected the following package(s) to removal:"
-msgstr "Paquetes seleccionados para remover:"
+msgstr "Paquetes a remover:"
 
 #: .tmp/statemanager.py:95
 msgid "You have selected the following package(s) to upgrade:"
-msgstr "Paquetes seleccionados para actualizar:"
+msgstr "Paquetes a actualizar:"
 
 #: .tmp/statemanager.py:99
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
 msgstr ""
-"Dependencias reversas de los paquetes seleccionados, que también se "
+"Dependencias reversas, que también se "
 "removerán:"
 
 #: .tmp/statemanager.py:100
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr ""
-"Dependencias de los paquetes seleccionados, que se actualizarán también:"
+msgstr "Dependencias, que se actualizarán también:"
 
 #: .tmp/statemanager.py:126 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
 msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
 #: .tmp/statemanager.py:128
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actualmente <b>%1</b> paquetes seleccionados, con un tamaño total de <b>%2</"
 "b>"
@@ -462,13 +459,11 @@ msgstr ""
 # please check if necessary use "total" again ?? because THIS is additional..
 #: .tmp/statemanager.py:131
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr ""
-"y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
+msgstr "y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:133
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr ""
-"y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
+msgstr "y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:134
 msgid "in your basket."
@@ -516,7 +511,7 @@ msgstr "Mantenedor"
 
 #: .tmp/main.py:38
 msgid "Show main window"
-msgstr ""
+msgstr "Mostrar Ventana principal"
 
 #: .tmp/commontext.py:15 .tmp/operationmanager.py:117
 msgid "downloading"
@@ -553,43 +548,39 @@ msgstr "&Ok"
 
 #: .tmp/pm-install.py:74 .tmp/mainwidget.py:166
 msgid "Network Error"
-msgstr ""
+msgstr "Error de red"
 
 #: .tmp/pm-install.py:75 .tmp/mainwidget.py:167
 msgid "Please check your network connections and try again."
-msgstr ""
+msgstr "Por favor verifique su conexión de red y luego intente de nuevo."
 
 #: .tmp/pm-install.py:77 .tmp/mainwidget.py:169
 msgid "Authorization Error"
-msgstr ""
+msgstr "Error de autenticación"
 
 #: .tmp/pm-install.py:78 .tmp/mainwidget.py:170
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "No tiene los permisos para esta operación."
 
 #: .tmp/pm-install.py:89
-#, fuzzy
 msgid "Package Installer"
-msgstr "Administrador de Paquetes"
+msgstr "Instalador de Paquetes"
 
 #: .tmp/pm-install.py:110
-#, fuzzy
 msgid "Ok"
-msgstr "&Ok"
+msgstr "Ok"
 
 #: .tmp/pm-install.py:121
-#, fuzzy
 msgid "pm-install"
-msgstr "instalado"
+msgstr ""
 
 #: .tmp/pm-install.py:128
-#, fuzzy
 msgid "Packages to install"
-msgstr "Paquetes seleccionados a instalar:"
+msgstr "Paquetes a instalar"
 
 #: .tmp/pm-install.py:132
 msgid "Package Installer is already started!"
-msgstr ""
+msgstr "Instalador de Paquetes ya se está ejecutando !"
 
 #: .tmp/packagedelegate.py:116
 msgid "Description:"
@@ -604,9 +595,8 @@ msgid "Repository:"
 msgstr "Repositorio:"
 
 #: .tmp/packagedelegate.py:147
-#, fuzzy
 msgid "Package Size:"
-msgstr "Administrador de Paquetes"
+msgstr "Tamaño de Paquete:"
 
 #: .tmp/mainwidget.py:205
 msgid "Select all packages in this group"
@@ -681,3 +671,4 @@ msgstr ""
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
+
