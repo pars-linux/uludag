@@ -222,7 +222,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
             for i in range(kdeui.KIconLoader.LastGroup):
                 kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.IconChanged, i)
 
-            # Change widget style
+            # Change widget style & color
+            for key, value in self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["colorScheme"].items():
+                colorGroup = configKdeGlobals.group(key)
+                for key2, value2 in value.items():
+                        colorGroup.writeEntry(str(key2), str(value2))
+
             kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.StyleChanged)
 
             configPlasmaRc = KConfig("plasmarc")
