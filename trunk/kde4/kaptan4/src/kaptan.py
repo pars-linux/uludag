@@ -52,9 +52,9 @@ def isLiveCD():
 
 def profileSended():
     ''' Do not show smolt screen if profile was already sended.'''
-    size = os.path.getsize("/etc/smolt/pub-uuid-smolt.pardus.org.tr")
+    file = open("/etc/smolt/pub-uuid-smolt.pardus.org.tr", 'r')
 
-    if size != 0:
+    if file.read() != '':
         return True
 
     return False
