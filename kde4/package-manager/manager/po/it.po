@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-02 14:39+0300\n"
+"POT-Creation-Date: 2009-07-14 10:26+0300\n"
 "PO-Revision-Date: 2009-07-04 14:42+0200\n"
 "Last-Translator: Siciliano Edivad <edivad95@gmail.com>\n"
 "Language-Team: italiano <it@li.org>\n"
@@ -29,7 +29,9 @@ msgstr "Seleziona il/i pacchetto/i per l'installazione:"
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
-msgstr "Verranno installate anche delle dipendenze extra per il/i pacchetto/i selezionato/i:"
+msgstr ""
+"Verranno installate anche delle dipendenze extra per il/i pacchetto/i "
+"selezionato/i:"
 
 #: .tmp/ui_basketdialog.py:72
 msgid "Total Size:"
@@ -42,6 +44,19 @@ msgstr "<b>2.2 MB</b>"
 #: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:60 .tmp/statemanager.py:73
 msgid "Install Package(s)"
 msgstr "Installa pacchetto/i"
+
+#: .tmp/ui_pminstaller.py:46 .tmp/ui_mainwidget.py:58
+msgid "Form"
+msgstr ""
+
+#: .tmp/ui_pminstaller.py:47
+msgid "TextLabel"
+msgstr ""
+
+#: .tmp/ui_pminstaller.py:48
+#, fuzzy
+msgid "Cancel"
+msgstr "A&nnulla"
 
 #: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "configuring"
@@ -111,9 +126,11 @@ msgstr "Elimina"
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
-msgstr "<qt>L'indirizzo del repository deve finire con il suffisso xml o xml.bz2.<p>Prova di nuovo.</qt>"
+msgstr ""
+"<qt>L'indirizzo del repository deve finire con il suffisso xml o xml.bz2."
+"<p>Prova di nuovo.</qt>"
 
-#: .tmp/settingsdialog.py:184 .tmp/mainwidget.py:163
+#: .tmp/settingsdialog.py:184 .tmp/pm-install.py:80 .tmp/mainwidget.py:172
 msgid "Pisi Error"
 msgstr "Errore PiSi!"
 
@@ -218,8 +235,10 @@ msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
 msgstr ""
-"Svuotare la cache sul disco rimuoverà tutti i pacchetti dei software scaricati. \n"
-"Questa operazione non rimuoverà il software installato e non influenzerà la stabilità del sistema."
+"Svuotare la cache sul disco rimuoverà tutti i pacchetti dei software "
+"scaricati. \n"
+"Questa operazione non rimuoverà il software installato e non influenzerà la "
+"stabilità del sistema."
 
 #: .tmp/ui_settingsdialog.py:351
 msgid "C&lean disk cache now"
@@ -290,29 +309,25 @@ msgstr "Usa proxy"
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: .tmp/tray.py:46
+#: .tmp/tray.py:48
 msgid "Update"
 msgstr "Aggiorna"
 
-#: .tmp/tray.py:49
+#: .tmp/tray.py:57 .tmp/tray.py:67
 msgid "All"
 msgstr "Tutti"
 
-#: .tmp/tray.py:82
+#: .tmp/tray.py:93
 msgid "There are <b>%1</b> updates available!"
 msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
 
-#: .tmp/tray.py:83
+#: .tmp/tray.py:94
 msgid "Show Updates"
 msgstr "Mostra aggiornamenti"
 
-#: .tmp/tray.py:83
+#: .tmp/tray.py:94
 msgid "Ignore"
 msgstr "Ignora"
-
-#: .tmp/ui_mainwidget.py:58
-msgid "Form"
-msgstr ""
 
 #: .tmp/ui_mainwidget.py:59
 msgid "Click to search"
@@ -339,7 +354,8 @@ msgstr ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Seleziona tutti i pacchetti in questo gruppo</p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Seleziona tutti i "
+"pacchetti in questo gruppo</p></body></html>"
 
 #: .tmp/ui_mainwidget.py:66
 msgid "Search"
@@ -425,13 +441,16 @@ msgid ""
 "upgraded:"
 msgstr ""
 
-#: .tmp/statemanager.py:126 .tmp/mainwindow.py:65 .tmp/mainwindow.py:70
+#: .tmp/statemanager.py:126 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
 msgid "Currently your basket is empty."
 msgstr "Il tuo cestino è vuoto."
 
 #: .tmp/statemanager.py:128
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Al momento ci sono <b>%1</b> pacchetto/i selezionato/i per un totale di <b>%2</b>."
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Al momento ci sono <b>%1</b> pacchetto/i selezionato/i per un totale di <b>%"
+"2</b>."
 
 #: .tmp/statemanager.py:131
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
@@ -449,7 +468,9 @@ msgstr "nel tuo cestino."
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr "I pacchetti selezionati [%1] sono in conflitto. Questi pacchetti non possono essere installati insieme."
+msgstr ""
+"I pacchetti selezionati [%1] sono in conflitto. Questi pacchetti non possono "
+"essere installati insieme."
 
 #: .tmp/statemanager.py:157 .tmp/statemanager.py:165
 msgid "Conflict Error"
@@ -483,6 +504,10 @@ msgstr "Faik Uygur"
 msgid "Maintainer"
 msgstr "Maintainer"
 
+#: .tmp/main.py:38
+msgid "Show main window"
+msgstr ""
+
 #: .tmp/commontext.py:15 .tmp/operationmanager.py:117
 msgid "downloading"
 msgstr "download in corso"
@@ -507,29 +532,76 @@ msgstr "12 nuovi pacchetti installati con successo."
 msgid ""
 "You can start the new installed application by double-clicking on the list "
 "below or later from the applications menu."
-msgstr "Puoi avviare un' applicazione facendo doppio click sulla lista qui sotto e scegliendola dal menù."
+msgstr ""
+"Puoi avviare un' applicazione facendo doppio click sulla lista qui sotto e "
+"scegliendola dal menù."
 
 #: .tmp/ui_summarydialog.py:56
 msgid "&Ok"
 msgstr "&Ok"
 
-#: .tmp/packagedelegate.py:115
+#: .tmp/pm-install.py:74 .tmp/mainwidget.py:166
+msgid "Network Error"
+msgstr ""
+
+#: .tmp/pm-install.py:75 .tmp/mainwidget.py:167
+msgid "Please check your network connections and try again."
+msgstr ""
+
+#: .tmp/pm-install.py:77 .tmp/mainwidget.py:169
+msgid "Authorization Error"
+msgstr ""
+
+#: .tmp/pm-install.py:78 .tmp/mainwidget.py:170
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: .tmp/pm-install.py:89
+#, fuzzy
+msgid "Package Installer"
+msgstr "Gestore di Pacchetti"
+
+#: .tmp/pm-install.py:110
+#, fuzzy
+msgid "Ok"
+msgstr "&Ok"
+
+#: .tmp/pm-install.py:121
+#, fuzzy
+msgid "pm-install"
+msgstr "installato"
+
+#: .tmp/pm-install.py:128
+#, fuzzy
+msgid "Packages to install"
+msgstr "Seleziona il/i pacchetto/i per l'installazione:"
+
+#: .tmp/pm-install.py:132
+msgid "Package Installer is already started!"
+msgstr ""
+
+#: .tmp/packagedelegate.py:116
 msgid "Description:"
 msgstr "Descrizione:"
 
-#: .tmp/packagedelegate.py:127
+#: .tmp/packagedelegate.py:128
 msgid "Release:"
 msgstr "Release:"
 
-#: .tmp/packagedelegate.py:137
+#: .tmp/packagedelegate.py:138
 msgid "Repository:"
 msgstr "Repository:"
 
-#: .tmp/mainwidget.py:193
+#: .tmp/packagedelegate.py:147
+#, fuzzy
+msgid "Package Size:"
+msgstr "Gestore di Pacchetti"
+
+#: .tmp/mainwidget.py:205
 msgid "Select all packages in this group"
 msgstr "Seleziona tutti i pacchetti di questo gruppo."
 
-#: .tmp/mainwidget.py:199
+#: .tmp/mainwidget.py:211
 msgid "Reverse package selections"
 msgstr "Inverti selezione pacchetti"
 
@@ -567,15 +639,15 @@ msgstr ""
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: .tmp/mainwindow.py:86
+#: .tmp/mainwindow.py:88
 msgid "Show Installable Packages"
 msgstr "Mostra pacchetti installabili"
 
-#: .tmp/mainwindow.py:93
+#: .tmp/mainwindow.py:95
 msgid "Show Installed Packages"
 msgstr "Mostra pacchetti installati"
 
-#: .tmp/mainwindow.py:99
+#: .tmp/mainwindow.py:101
 msgid "Show Upgradable Packages"
 msgstr "Mostra pacchetti aggiornabili"
 
@@ -594,4 +666,3 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-

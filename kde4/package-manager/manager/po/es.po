@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-02 14:39+0300\n"
+"POT-Creation-Date: 2009-07-14 10:26+0300\n"
 "PO-Revision-Date: 2009-07-02 16:42-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -42,6 +42,19 @@ msgstr ""
 #: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:60 .tmp/statemanager.py:73
 msgid "Install Package(s)"
 msgstr "Instalar Paquete(s)"
+
+#: .tmp/ui_pminstaller.py:46 .tmp/ui_mainwidget.py:58
+msgid "Form"
+msgstr ""
+
+#: .tmp/ui_pminstaller.py:47
+msgid "TextLabel"
+msgstr ""
+
+#: .tmp/ui_pminstaller.py:48
+#, fuzzy
+msgid "Cancel"
+msgstr "&Cancelar"
 
 #: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "configuring"
@@ -117,7 +130,7 @@ msgstr ""
 "<qt>Dirección del repositorio debe tener una terminación xml o xml.bz2."
 "<p>Por favor intente de nuevo.</qt>"
 
-#: .tmp/settingsdialog.py:184 .tmp/mainwidget.py:163
+#: .tmp/settingsdialog.py:184 .tmp/pm-install.py:80 .tmp/mainwidget.py:172
 msgid "Pisi Error"
 msgstr "Error Pisi"
 
@@ -297,29 +310,25 @@ msgstr "Usar servidor proxy"
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: .tmp/tray.py:46
+#: .tmp/tray.py:48
 msgid "Update"
 msgstr "Actualizar"
 
-#: .tmp/tray.py:49
+#: .tmp/tray.py:57 .tmp/tray.py:67
 msgid "All"
 msgstr "Todos"
 
-#: .tmp/tray.py:82
+#: .tmp/tray.py:93
 msgid "There are <b>%1</b> updates available!"
 msgstr "Hay <b>%1</b> actualizaciones disponibles!"
 
-#: .tmp/tray.py:83
+#: .tmp/tray.py:94
 msgid "Show Updates"
 msgstr "Mostrar actualizaciones"
 
-#: .tmp/tray.py:83
+#: .tmp/tray.py:94
 msgid "Ignore"
 msgstr "Ignorar"
-
-#: .tmp/ui_mainwidget.py:58
-msgid "Form"
-msgstr ""
 
 # i translated as "Write here to search", i think this is the idea
 #: .tmp/ui_mainwidget.py:59
@@ -435,14 +444,16 @@ msgstr ""
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr "Dependencias de los paquetes seleccionados, que se actualizarán también:"
+msgstr ""
+"Dependencias de los paquetes seleccionados, que se actualizarán también:"
 
-#: .tmp/statemanager.py:126 .tmp/mainwindow.py:65 .tmp/mainwindow.py:70
+#: .tmp/statemanager.py:126 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
 msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
 #: .tmp/statemanager.py:128
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actualmente <b>%1</b> paquetes seleccionados, con un tamaño total de <b>%2</"
 "b>"
@@ -451,11 +462,13 @@ msgstr ""
 # please check if necessary use "total" again ?? because THIS is additional..
 #: .tmp/statemanager.py:131
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
+msgstr ""
+"y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:133
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
+msgstr ""
+"y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:134
 msgid "in your basket."
@@ -501,6 +514,10 @@ msgstr ""
 msgid "Maintainer"
 msgstr "Mantenedor"
 
+#: .tmp/main.py:38
+msgid "Show main window"
+msgstr ""
+
 #: .tmp/commontext.py:15 .tmp/operationmanager.py:117
 msgid "downloading"
 msgstr "descargando"
@@ -534,24 +551,69 @@ msgstr ""
 msgid "&Ok"
 msgstr "&Ok"
 
-#: .tmp/packagedelegate.py:115
+#: .tmp/pm-install.py:74 .tmp/mainwidget.py:166
+msgid "Network Error"
+msgstr ""
+
+#: .tmp/pm-install.py:75 .tmp/mainwidget.py:167
+msgid "Please check your network connections and try again."
+msgstr ""
+
+#: .tmp/pm-install.py:77 .tmp/mainwidget.py:169
+msgid "Authorization Error"
+msgstr ""
+
+#: .tmp/pm-install.py:78 .tmp/mainwidget.py:170
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: .tmp/pm-install.py:89
+#, fuzzy
+msgid "Package Installer"
+msgstr "Administrador de Paquetes"
+
+#: .tmp/pm-install.py:110
+#, fuzzy
+msgid "Ok"
+msgstr "&Ok"
+
+#: .tmp/pm-install.py:121
+#, fuzzy
+msgid "pm-install"
+msgstr "instalado"
+
+#: .tmp/pm-install.py:128
+#, fuzzy
+msgid "Packages to install"
+msgstr "Paquetes seleccionados a instalar:"
+
+#: .tmp/pm-install.py:132
+msgid "Package Installer is already started!"
+msgstr ""
+
+#: .tmp/packagedelegate.py:116
 msgid "Description:"
 msgstr "Descripción:"
 
-#: .tmp/packagedelegate.py:127
+#: .tmp/packagedelegate.py:128
 msgid "Release:"
 msgstr "Versión:"
 
-#: .tmp/packagedelegate.py:137
+#: .tmp/packagedelegate.py:138
 msgid "Repository:"
 msgstr "Repositorio:"
 
-#: .tmp/mainwidget.py:193
+#: .tmp/packagedelegate.py:147
+#, fuzzy
+msgid "Package Size:"
+msgstr "Administrador de Paquetes"
+
+#: .tmp/mainwidget.py:205
 msgid "Select all packages in this group"
 msgstr "Seleccionar todos los paquetes de éste grupo"
 
 # favor revisar, creo que se trata de invertir las marcas de esta lista..
-#: .tmp/mainwidget.py:199
+#: .tmp/mainwidget.py:211
 msgid "Reverse package selections"
 msgstr "Invertir seleción de paquetes"
 
@@ -592,15 +654,15 @@ msgstr ""
 
 # favor revisar, paquetes o programas
 # maybe here we shoud speak about programs or applications ? the fact that it is a "package" is a tecnical detail.. well there are also those "auxiliar" libraries..
-#: .tmp/mainwindow.py:86
+#: .tmp/mainwindow.py:88
 msgid "Show Installable Packages"
 msgstr "Mostrar Paquetes a agregar"
 
-#: .tmp/mainwindow.py:93
+#: .tmp/mainwindow.py:95
 msgid "Show Installed Packages"
 msgstr "Mostrar Paquetes instalados"
 
-#: .tmp/mainwindow.py:99
+#: .tmp/mainwindow.py:101
 msgid "Show Upgradable Packages"
 msgstr "Mostrar Paquetes a actualizar"
 
@@ -619,4 +681,3 @@ msgstr ""
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
-
