@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-10 09:26+0300\n"
-"PO-Revision-Date: 2009-07-09 19:58-0400\n"
+"PO-Revision-Date: 2009-07-14 18:28-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -72,8 +72,7 @@ msgstr "Configuración del Sistema"
 
 #: .tmp/goodbyeWidget.py:127 .tmp/ui_goodbyeWidget.py:127
 msgid "System Settings is a configuration tool for Pardus."
-msgstr ""
-"Configuración del Sistema es una herramienta de configuración de Pardus."
+msgstr "Configuración del Sistema es una herramienta de configuración de Pardus."
 
 #: .tmp/goodbyeWidget.py:129 .tmp/ui_goodbyeWidget.py:129
 msgid "User Groups and Help Pages"
@@ -302,7 +301,7 @@ msgstr "Estilo de Escritorio"
 
 #: .tmp/ScrMenu.py:27 .tmp/ScrStyle.py:35
 msgid "Some catchy description about styles"
-msgstr ""
+msgstr "Configure el aspecto de su escritorio"
 
 #: .tmp/ScrMenu.py:41
 msgid "Kick-off Menu"
@@ -484,11 +483,11 @@ msgstr "Forzar SELinux"
 
 #: .tmp/ScrSmolt.py:146
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #: .tmp/ScrSmolt.py:148
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: .tmp/ScrStyle.py:58
 msgid "No name"
@@ -567,8 +566,7 @@ msgstr "Elija su Fondo de Escritorio"
 
 #: .tmp/ScrWallpaper.py:35
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
-msgstr ""
-"Elija el fondo que más le guste, o seleccione uno de sus propios imágenes..."
+msgstr "Elija el fondo que más le guste, o seleccione uno de sus propios imágenes..."
 
 #: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:52
 msgid "Desktop Search"
@@ -783,11 +781,3 @@ msgstr ""
 "escritorio básico para un usuario de PC; Le ayuda conectar a internet, leer "
 "e-mails, trabajar con documentos de oficina y más!"
 
-#~ msgid ""
-#~ "(<i><u>Warning:</u> Sending profile requires to set up communication with "
-#~ "Smolt server and can take between 30 seconds to a minute. Kaptan may "
-#~ "freeze during this time.</i>)"
-#~ msgstr ""
-#~ "(<i><u>Alerta:</u> El envío del perfil requiere comunicación con el "
-#~ "servidor de Smolt y puede durar entre 30 segundos hasta un minuto. Kaptan "
-#~ "puede quedarse sin responder durante este lapso.</i>)"
