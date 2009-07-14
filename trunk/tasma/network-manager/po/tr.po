@@ -4,18 +4,20 @@
 #
 # Gürer Özen <gurer@uludag.org.tr>, 2005.
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2008.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-06 08:20+0200\n"
-"PO-Revision-Date: 2008-06-20 10:17+0300\n"
-"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
-"Language-Team:  <tr@li.org>\n"
+"PO-Revision-Date: 2009-07-14 13:27+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: comariface.py:214
 msgid "You are not authorized for this operation."
@@ -88,7 +90,7 @@ msgstr "Uygun bir aygıt bulunamadı"
 
 #: newconn.py:120
 msgid "Install network packages!"
-msgstr "Ağ programlarını kurun!"
+msgstr "Ağ paketlerini kurun!"
 
 #: newconn.py:121
 msgid "No package with COMAR network scripts are installed yet."
@@ -147,7 +149,7 @@ msgstr "Bağlantıyı aç/kapa"
 
 #: browser.py:114
 msgid "Configure connection"
-msgstr "Bağlantıyı ayarla"
+msgstr "Bağlantıyı yapılandır"
 
 #: browser.py:117
 msgid "Delete connection"
@@ -229,7 +231,7 @@ msgstr "Kullan"
 
 #: connection.py:201
 msgid "Connection name:"
-msgstr "Bağlantı adı:"
+msgstr "Bağlantı ismi:"
 
 #: connection.py:208
 msgid "Connection"
@@ -241,7 +243,7 @@ msgstr "Aygıt:"
 
 #: connection.py:219
 msgid "Select"
-msgstr "Aygıt seç"
+msgstr "Seç"
 
 #: connection.py:237
 msgid "Scan"
@@ -253,7 +255,7 @@ msgstr "Güvenlik:"
 
 #: connection.py:280
 msgid "No authentication"
-msgstr "Doğrulama yok"
+msgstr "Kimlik doğrulama yok"
 
 #: connection.py:284
 msgid "Authentication:"
