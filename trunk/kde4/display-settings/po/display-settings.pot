@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-13 15:28+0300\n"
+"POT-Creation-Date: 2009-07-14 19:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,29 +121,33 @@ msgstr ""
 msgid "Start Package Manager"
 msgstr ""
 
-#: .tmp/displaysettings/deviceswidget.py:200
+#: .tmp/displaysettings/deviceswidget.py:228
 #: .tmp/displaysettings/screenswidget.py:336
 msgid "You must restart your X session for the changes to take effect."
 msgstr ""
 
-#: .tmp/displaysettings/deviceswidget.py:210
+#: .tmp/displaysettings/deviceswidget.py:238
 #: .tmp/displaysettings/screenswidget.py:343
 msgid "Access denied."
 msgstr ""
 
-#: .tmp/displaysettings/device.py:56
+#: .tmp/displaysettings/device.py:60
+msgid "Default Output"
+msgstr ""
+
+#: .tmp/displaysettings/device.py:61
 msgid "Laptop Panel"
 msgstr ""
 
-#: .tmp/displaysettings/device.py:57
+#: .tmp/displaysettings/device.py:62
 msgid "Analog Output"
 msgstr ""
 
-#: .tmp/displaysettings/device.py:58
+#: .tmp/displaysettings/device.py:63
 msgid "Digital Output"
 msgstr ""
 
-#: .tmp/displaysettings/device.py:59
+#: .tmp/displaysettings/device.py:64
 msgid "TV Output"
 msgstr ""
 
