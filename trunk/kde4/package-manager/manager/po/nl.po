@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-02 14:39+0300\n"
+"POT-Creation-Date: 2009-07-14 10:26+0300\n"
 "PO-Revision-Date: 02/07/09 21:19\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
@@ -43,6 +43,19 @@ msgstr "<b>2.2 MB</b>"
 #: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:60 .tmp/statemanager.py:73
 msgid "Install Package(s)"
 msgstr "Installeer pakket(ten)"
+
+#: .tmp/ui_pminstaller.py:46 .tmp/ui_mainwidget.py:58
+msgid "Form"
+msgstr "Form"
+
+#: .tmp/ui_pminstaller.py:47
+msgid "TextLabel"
+msgstr ""
+
+#: .tmp/ui_pminstaller.py:48
+#, fuzzy
+msgid "Cancel"
+msgstr "&Annuleren"
 
 #: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "configuring"
@@ -112,9 +125,11 @@ msgstr "Verwijderen"
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
-msgstr "<qt>Adres van repository dient te eindigen op xml of xml.bz2. <p>Probeer opnieuw.</qt>"
+msgstr ""
+"<qt>Adres van repository dient te eindigen op xml of xml.bz2. <p>Probeer "
+"opnieuw.</qt>"
 
-#: .tmp/settingsdialog.py:184 .tmp/mainwidget.py:163
+#: .tmp/settingsdialog.py:184 .tmp/pm-install.py:80 .tmp/mainwidget.py:172
 msgid "Pisi Error"
 msgstr "Pisi-fout"
 
@@ -292,29 +307,25 @@ msgstr "Gebruik proxyserver"
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: .tmp/tray.py:46
+#: .tmp/tray.py:48
 msgid "Update"
 msgstr "Update"
 
-#: .tmp/tray.py:49
+#: .tmp/tray.py:57 .tmp/tray.py:67
 msgid "All"
 msgstr "Alles"
 
-#: .tmp/tray.py:82
+#: .tmp/tray.py:93
 msgid "There are <b>%1</b> updates available!"
 msgstr "Er zijn <b>%1</b> updates beschikbaar!"
 
-#: .tmp/tray.py:83
+#: .tmp/tray.py:94
 msgid "Show Updates"
 msgstr "Toon updates"
 
-#: .tmp/tray.py:83
+#: .tmp/tray.py:94
 msgid "Ignore"
 msgstr "Negeren"
-
-#: .tmp/ui_mainwidget.py:58
-msgid "Form"
-msgstr "Form"
 
 #: .tmp/ui_mainwidget.py:59
 msgid "Click to search"
@@ -341,8 +352,8 @@ msgstr ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Selecteer alle pakketten in "
-"deze groep</p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Selecteer alle pakketten "
+"in deze groep</p></body></html>"
 
 #: .tmp/ui_mainwidget.py:66
 msgid "Search"
@@ -432,23 +443,27 @@ msgstr ""
 "Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook bijgewerkt "
 "zullen worden:"
 
-#: .tmp/statemanager.py:126 .tmp/mainwindow.py:65 .tmp/mainwindow.py:70
+#: .tmp/statemanager.py:126 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
 msgid "Currently your basket is empty."
 msgstr "Momenteel is uw mandje leeg."
 
 #: .tmp/statemanager.py:128
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
 "van <b>%2</b>"
 
 #: .tmp/statemanager.py:131
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "met <b>%1</b> omgekeerde afhankelijkheden met een totale grootte van <b>%2</b>"
+msgstr ""
+"met <b>%1</b> omgekeerde afhankelijkheden met een totale grootte van <b>%2</"
+"b>"
 
 #: .tmp/statemanager.py:133
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
+msgstr ""
+"met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
 
 #: .tmp/statemanager.py:134
 msgid "in your basket."
@@ -494,6 +509,10 @@ msgstr "Faik Uygur"
 msgid "Maintainer"
 msgstr "Onderhouder"
 
+#: .tmp/main.py:38
+msgid "Show main window"
+msgstr ""
+
 #: .tmp/commontext.py:15 .tmp/operationmanager.py:117
 msgid "downloading"
 msgstr "downloaden"
@@ -518,29 +537,76 @@ msgstr "12 nieuwe pakketten zijn met succes geïnstalleerd."
 msgid ""
 "You can start the new installed application by double-clicking on the list "
 "below or later from the applications menu."
-msgstr "De nieuw geïnstalleerde toepassing kan door dubbelklikken op onderstaande lijst gestart worden of later via het toepassingenmenu."
+msgstr ""
+"De nieuw geïnstalleerde toepassing kan door dubbelklikken op onderstaande "
+"lijst gestart worden of later via het toepassingenmenu."
 
 #: .tmp/ui_summarydialog.py:56
 msgid "&Ok"
 msgstr "&Ok"
 
-#: .tmp/packagedelegate.py:115
+#: .tmp/pm-install.py:74 .tmp/mainwidget.py:166
+msgid "Network Error"
+msgstr ""
+
+#: .tmp/pm-install.py:75 .tmp/mainwidget.py:167
+msgid "Please check your network connections and try again."
+msgstr ""
+
+#: .tmp/pm-install.py:77 .tmp/mainwidget.py:169
+msgid "Authorization Error"
+msgstr ""
+
+#: .tmp/pm-install.py:78 .tmp/mainwidget.py:170
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: .tmp/pm-install.py:89
+#, fuzzy
+msgid "Package Installer"
+msgstr "Pakketbeheer"
+
+#: .tmp/pm-install.py:110
+#, fuzzy
+msgid "Ok"
+msgstr "&Ok"
+
+#: .tmp/pm-install.py:121
+#, fuzzy
+msgid "pm-install"
+msgstr "geïnstalleerd"
+
+#: .tmp/pm-install.py:128
+#, fuzzy
+msgid "Packages to install"
+msgstr "Geselecteerde pakket(ten) om te installeren:"
+
+#: .tmp/pm-install.py:132
+msgid "Package Installer is already started!"
+msgstr ""
+
+#: .tmp/packagedelegate.py:116
 msgid "Description:"
 msgstr "Beschrijving:"
 
-#: .tmp/packagedelegate.py:127
+#: .tmp/packagedelegate.py:128
 msgid "Release:"
 msgstr "Uitgave:"
 
-#: .tmp/packagedelegate.py:137
+#: .tmp/packagedelegate.py:138
 msgid "Repository:"
 msgstr "Repository:"
 
-#: .tmp/mainwidget.py:193
+#: .tmp/packagedelegate.py:147
+#, fuzzy
+msgid "Package Size:"
+msgstr "Pakketbeheer"
+
+#: .tmp/mainwidget.py:205
 msgid "Select all packages in this group"
 msgstr "Selecteer alle pakketten in deze groep"
 
-#: .tmp/mainwidget.py:199
+#: .tmp/mainwidget.py:211
 msgid "Reverse package selections"
 msgstr "Keer pakketselectie om"
 
@@ -588,15 +654,15 @@ msgstr ""
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: .tmp/mainwindow.py:86
+#: .tmp/mainwindow.py:88
 msgid "Show Installable Packages"
 msgstr "Toon installeerbare pakketten"
 
-#: .tmp/mainwindow.py:93
+#: .tmp/mainwindow.py:95
 msgid "Show Installed Packages"
 msgstr "Toon geïnstalleerde pakketten"
 
-#: .tmp/mainwindow.py:99
+#: .tmp/mainwindow.py:101
 msgid "Show Upgradable Packages"
 msgstr "Toon opwaardeerbare pakketten"
 
@@ -615,4 +681,3 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-
