@@ -77,24 +77,25 @@ class Install(install):
             icon_dir = "/usr/share/icons/hicolor/128x128/apps"
             kde_dir = "/usr/kde/4"
         bin_dir = os.path.join(kde_dir, "bin")
+        mime_dir = os.path.join(kde_dir, "share/mime/packages")
         locale_dir = os.path.join(kde_dir, "share/locale")
         apps_dir = os.path.join(kde_dir, "share/applications/kde4")
-        # mimelnk_dir = os.path.join(kde_dir, "share/mimelnk/application/mimetypes")
-        # applnk_dir = os.path.join(kde_dir, "share/applnk/.hidden")
         project_dir = os.path.join(kde_dir, "share/apps", about.appName)
         # Make directories
         print "Making directories..."
         makeDirs(icon_dir)
+        makeDirs(mime_dir)
         makeDirs(bin_dir)
         makeDirs(locale_dir)
         makeDirs(apps_dir)
         makeDirs(project_dir)
+
         # Install desktop files
         print "Installing desktop files..."
         shutil.copy("data/package-manager.desktop", apps_dir)
         shutil.copy("data/package-manager.png", icon_dir)
-        # shutil.copy("data/x-pisi.desktop", mimelnk_dir)
-        # shutil.copy("data/packagemanager-helper.desktop", applnk_dir)
+        shutil.copy("data/packagemanager-helper.desktop", apps_dir)
+        shutil.copy("data/package-manager.xml", mime_dir)
 
         # Install codes
         print "Installing codes..."
