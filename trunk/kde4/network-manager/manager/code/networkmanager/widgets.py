@@ -237,7 +237,7 @@ class ConnectionItemWidget(QtGui.QWidget):
         elif state == "up":
             self.ui.labelDesc.setText(unicode(i18n("Connected: %s")) % detail)
             self.ui.checkToggler.setChecked(True)
-            self.ui.labelStatus.setPixmap(KIcon("games-endturn").pixmap(32))
+            self.ui.labelStatus.setPixmap(KIcon("dialog-ok-apply").pixmap(32))
             self.setState(True)
         elif state == "connecting":
             self.ui.labelDesc.setText(i18n("Connecting"))
