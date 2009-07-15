@@ -290,7 +290,6 @@ void kio_sysinfoProtocol::get( const KUrl &)
     content = content.arg( staticInfo );
     staticInfo = "";
 
-    kDebug(1242) << "CUSHHH :::: ";
     // CPU info
     cpuInfo();
     if ( !m_info[CPU_MODEL].isNull() )
