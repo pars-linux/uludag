@@ -150,7 +150,6 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
                         "%2 = output name (LVDS, VGA, etc.)",
                         "%1 (%2)", output.getTypeString(), output.name)
             action = QtGui.QAction(text, self)
-            action.setIcon(output.getIcon())
             action.setData(QtCore.QVariant(output.name))
             action.setCheckable(True)
             if output in (self._left, self._right):
