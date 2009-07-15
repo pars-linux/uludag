@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-14 19:09+0300\n"
+"POT-Creation-Date: 2009-07-15 23:10+0300\n"
 "PO-Revision-Date: 2009-07-10 21:11+0300\n"
 "Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -97,8 +97,8 @@ msgstr "16 Bit"
 msgid "24 Bit"
 msgstr "24 Bit"
 
-#: .tmp/displaysettings/deviceswidget.py:76
-#: .tmp/displaysettings/screenswidget.py:68
+#: .tmp/displaysettings/deviceswidget.py:79
+#: .tmp/displaysettings/screenswidget.py:70
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
@@ -106,7 +106,25 @@ msgstr ""
 "Bu uygulama için arka uç sağlayan herhangi bir paket bulunamadı.\n"
 "Lütfen paketlerin kurulu ve düzgün yapılandırılmış olduğundan emin olun."
 
-#: .tmp/displaysettings/deviceswidget.py:99
+#: .tmp/displaysettings/deviceswidget.py:86
+#: .tmp/displaysettings/screenswidget.py:77
+msgid ""
+"Cannot find a valid configuration. Display settings won't be enabled until "
+"you create a new configuration.\n"
+"Would you like to create a safe configuration now?"
+msgstr ""
+"Geçerli bir yapılandırma bulunamadı. Ekran ayarları yeni bir yapılandırma "
+"oluşturulmadıkça etkinleştirilmeyecek.\n"
+"Yeni bir güvenli yapılandırma oluşturmak ister misiniz?"
+
+#: .tmp/displaysettings/deviceswidget.py:95
+#: .tmp/displaysettings/deviceswidget.py:262
+#: .tmp/displaysettings/screenswidget.py:86
+#: .tmp/displaysettings/screenswidget.py:365
+msgid "Access denied."
+msgstr "Erişim engellendi."
+
+#: .tmp/displaysettings/deviceswidget.py:120
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
@@ -115,7 +133,7 @@ msgstr ""
 "b> sürücüsünü kullanmak isteyebilirsiniz. Bu sürücüyü kullanmak istiyor "
 "musunuz</qt>"
 
-#: .tmp/displaysettings/deviceswidget.py:115
+#: .tmp/displaysettings/deviceswidget.py:136
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
@@ -126,20 +144,15 @@ msgstr ""
 "kurup daha sonra ekran kartı ayarlarından <b>%1</b> sürücüsünü seçmelisiniz."
 "</qt>"
 
-#: .tmp/displaysettings/deviceswidget.py:120
+#: .tmp/displaysettings/deviceswidget.py:141
 msgid "Start Package Manager"
 msgstr "Paket Yöneticisini Başlat"
 
-#: .tmp/displaysettings/deviceswidget.py:228
-#: .tmp/displaysettings/screenswidget.py:336
+#: .tmp/displaysettings/deviceswidget.py:252
+#: .tmp/displaysettings/screenswidget.py:358
 msgid "You must restart your X session for the changes to take effect."
 msgstr ""
 "Değişikliklerin etkin olması için X oturumunuzu yeniden başlatmalısınız."
-
-#: .tmp/displaysettings/deviceswidget.py:238
-#: .tmp/displaysettings/screenswidget.py:343
-msgid "Access denied."
-msgstr "Erişim engellendi."
 
 #: .tmp/displaysettings/device.py:60
 msgid "Default Output"
@@ -181,12 +194,12 @@ msgstr "Özel Monitör"
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr "<qt><i>Monitör seçmek için \"Seç...\" düğmesine tıklayın</i></qt>"
 
-#: .tmp/displaysettings/screenswidget.py:170
-#: .tmp/displaysettings/screenswidget.py:245
+#: .tmp/displaysettings/screenswidget.py:189
+#: .tmp/displaysettings/screenswidget.py:264
 msgid "Auto"
 msgstr "Otomatik"
 
-#: .tmp/displaysettings/screenswidget.py:240
+#: .tmp/displaysettings/screenswidget.py:259
 msgid "Output Properties - %1"
 msgstr "Çıkış Özellikleri - %1"
 
