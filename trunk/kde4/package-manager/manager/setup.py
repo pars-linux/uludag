@@ -71,9 +71,11 @@ class Install(install):
         if not os.path.exists("build/"):
             os.system("./setup.py build")
         if self.root:
+            mime_icons_dir = "%s/usr/share/icons/hicolor" % self.root
             icon_dir = "%s/usr/share/icons/hicolor/128x128/apps" % self.root
             kde_dir = "%s/usr/kde/4" % self.root
         else:
+            mime_icons_dir = "/usr/share/icons/hicolor"
             icon_dir = "/usr/share/icons/hicolor/128x128/apps"
             kde_dir = "/usr/kde/4"
         bin_dir = os.path.join(kde_dir, "bin")
@@ -83,6 +85,7 @@ class Install(install):
         project_dir = os.path.join(kde_dir, "share/apps", about.appName)
         # Make directories
         print "Making directories..."
+        makeDirs(mime_icons_dir)
         makeDirs(icon_dir)
         makeDirs(mime_dir)
         makeDirs(bin_dir)
@@ -99,7 +102,9 @@ class Install(install):
 
         # Install icons
         for size in ["16x16", "32x32", "48x48", "64x64"]:
-            shutil.copy("data/package-manager-%s.png" % size, "/usr/share/icons/hicolor/%s/mimetypes/application-x-pisi.png" % size)
+            mime_size_dir = "%s/%s/mimetypes/" % (mime_icons_dir, size)
+            makeDirs(mime_size_dir)
+            shutil.copy("data/package-manager-%s.png" % size, "%s/application-x-pisi.png" % mime_size_dir)
 
         # Install codes
         print "Installing codes..."
