@@ -1,7 +1,7 @@
-# translation of de.po to Deutsch
+# translation of de.po to German
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 msgid ""
@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-14 10:26+0300\n"
-"PO-Revision-Date: 2009-07-09 22:53+0200\n"
-"Last-Translator: Heiko Pardus Translator <miltonjohn@web.de>\n"
-"Language-Team: Deutsch <pardus-translators@pardus.org.tr>\n"
+"PO-Revision-Date: 2009-07-14 20:05-0400\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
+"Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,9 +52,8 @@ msgid "TextLabel"
 msgstr ""
 
 #: .tmp/ui_pminstaller.py:48
-#, fuzzy
 msgid "Cancel"
-msgstr "&Abbrechen"
+msgstr "Abbrechen"
 
 #: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "configuring"
@@ -111,8 +110,7 @@ msgstr ""
 
 #: .tmp/settingsdialog.py:128
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-"Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
+msgstr "Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
 
 #: .tmp/settingsdialog.py:129
 msgid "Warning"
@@ -331,7 +329,7 @@ msgstr "Ignoriere"
 
 #: .tmp/ui_mainwidget.py:59
 msgid "Click to search"
-msgstr "Hier schreiben, um zu suchen"
+msgstr "Geben Sie Ihre Suche ein"
 
 #: .tmp/ui_mainwidget.py:61
 msgid ""
@@ -440,18 +438,15 @@ msgstr "Zu gewähltem Paket abhängige(s) Paket(e), die auch entfernt werden:"
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr ""
-"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
+msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
 
 #: .tmp/statemanager.py:126 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
 msgid "Currently your basket is empty."
 msgstr "Im Augenblick ist Ihr Korb leer."
 
 #: .tmp/statemanager.py:128
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Momentan <b>%1</b> Paket(e) ausgewählt mit einer Gesamtgrösse von <b>%2</b> "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Momentan <b>%1</b> Paket(e) ausgewählt mit einer Gesamtgrösse von <b>%2</b> "
 
 # zweifel reverse, "gegen" (original Tasma), "rückwärts", "höheren.." ?
 #: .tmp/statemanager.py:131
@@ -509,7 +504,7 @@ msgstr "Aktueller Betreuer"
 
 #: .tmp/main.py:38
 msgid "Show main window"
-msgstr ""
+msgstr "Hauptfenster zeigen"
 
 #: .tmp/commontext.py:15 .tmp/operationmanager.py:117
 msgid "downloading"
@@ -546,43 +541,39 @@ msgstr "&Ok"
 
 #: .tmp/pm-install.py:74 .tmp/mainwidget.py:166
 msgid "Network Error"
-msgstr ""
+msgstr "Netzwerkfehler"
 
 #: .tmp/pm-install.py:75 .tmp/mainwidget.py:167
 msgid "Please check your network connections and try again."
-msgstr ""
+msgstr "Bitte prüfen Sie Ihre Netzwerkverbindung und versuchen Sie es noch einmal."
 
 #: .tmp/pm-install.py:77 .tmp/mainwidget.py:169
 msgid "Authorization Error"
-msgstr ""
+msgstr "Authorisationsfehler"
 
 #: .tmp/pm-install.py:78 .tmp/mainwidget.py:170
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "Sie sind nicht für diesen Vorgang nicht autorisiert."
 
 #: .tmp/pm-install.py:89
-#, fuzzy
 msgid "Package Installer"
-msgstr "Paket Manager"
+msgstr "Paket Installer"
 
 #: .tmp/pm-install.py:110
-#, fuzzy
 msgid "Ok"
-msgstr "&Ok"
+msgstr "Ok"
 
 #: .tmp/pm-install.py:121
-#, fuzzy
 msgid "pm-install"
-msgstr "installiert"
+msgstr ""
 
 #: .tmp/pm-install.py:128
-#, fuzzy
 msgid "Packages to install"
-msgstr "Ausgewählte Pakete zur Installation:"
+msgstr "Pakete zu installaieren:"
 
 #: .tmp/pm-install.py:132
 msgid "Package Installer is already started!"
-msgstr ""
+msgstr "Paket Installer ist schon gestartet"
 
 #: .tmp/packagedelegate.py:116
 msgid "Description:"
@@ -598,9 +589,8 @@ msgid "Repository:"
 msgstr "Depot:"
 
 #: .tmp/packagedelegate.py:147
-#, fuzzy
 msgid "Package Size:"
-msgstr "Paket Manager"
+msgstr "Paketgrösse:"
 
 #: .tmp/mainwidget.py:205
 msgid "Select all packages in this group"
@@ -671,3 +661,4 @@ msgstr ""
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
+
