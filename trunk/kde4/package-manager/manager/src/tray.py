@@ -23,6 +23,8 @@ class Tray(KSystemTrayIcon):
     def __init__(self, parent):
         KSystemTrayIcon.__init__(self, parent)
         self.defaultIcon = KIcon(":/data/package-manager.png")
+        self.lastUpgrades = []
+        self.unread = 0
         self.iface = backend.pm.Iface()
         self.notification = None
         self.appWindow = parent
@@ -31,11 +33,6 @@ class Tray(KSystemTrayIcon):
         self.initializePopup()
 
         self.settingsChanged()
-        self.lastUpgrades = []
-        self.unread = 0
-
-        noUpgrades = len(self.iface.getUpdates())
-        self.slotSetUnread(noUpgrades)
 
     def initializeTimer(self):
         self.timer = QTimer()
@@ -110,6 +107,8 @@ class Tray(KSystemTrayIcon):
         cfg = config.PMConfig()
         if cfg.systemTray():
             self.show()
+            noUpgrades = len(self.iface.getUpdates())
+            self.slotSetUnread(noUpgrades)
         else:
             self.hide()
 
