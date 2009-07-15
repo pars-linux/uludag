@@ -156,7 +156,7 @@ msgstr "Bağlı değil"
 
 #: src/sysinfo.cpp:572
 msgid "%1 free of %2"
-msgstr "%1 / %2 boş"
+msgstr "%2'ın %1'ı boş"
 
 #~ msgid "Driver: "
 #~ msgstr "Sürücü: "
