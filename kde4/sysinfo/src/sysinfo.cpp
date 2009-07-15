@@ -290,6 +290,7 @@ void kio_sysinfoProtocol::get( const KUrl &)
     content = content.arg( staticInfo );
     staticInfo = "";
 
+    kDebug(1242) << "CUSHHH :::: ";
     // CPU info
     cpuInfo();
     if ( !m_info[CPU_MODEL].isNull() )
@@ -390,14 +391,6 @@ unsigned long int kio_sysinfoProtocol::memoryInfo()
         m_info[MEM_TOTALRAM] = formattedUnit( quint64(info.totalram) * mem_unit );
         quint64 totalFree = calculateFreeRam() * 1024;
         kDebug(1242) << "total " << totalFree << " free " << info.freeram << " unit " << mem_unit;
-        /* FIXME It causes crash with following message:
-         * glibc: corrupted double-linked list
-        if ( totalFree > info.freeram * info.mem_unit || true )
-            m_info[MEM_FREERAM] = i18n("%1 (+ %2 Caches)",
-                                       formattedUnit( quint64(info.freeram) * mem_unit ),
-                                       formattedUnit( totalFree - info.freeram * mem_unit ));
-        else
-        */
         m_info[MEM_FREERAM] = formattedUnit( quint64(info.freeram) * mem_unit );
 
         m_info[MEM_TOTALSWAP] = formattedUnit( quint64(info.totalswap) * mem_unit );
@@ -450,10 +443,14 @@ void kio_sysinfoProtocol::cpuInfo()
 
     // Use Solid to get Processor Information
     QList<Solid::Device> list = Solid::Device::listFromType(Solid::DeviceInterface::Processor, QString());
-    Solid::Device device = list[0];
-    m_info[CPU_CORES] = list.size();
-    m_info[CPU_MODEL] = device.product();
-
+    if ( list.size() == 0 ) {
+        m_info[CPU_CORES] = readFromFile( "/proc/cpuinfo", "cpu cores", ":" );
+        m_info[CPU_MODEL] = readFromFile( "/proc/cpuinfo", "model name", ":");
+    } else {
+        Solid::Device device = list[0];
+        m_info[CPU_CORES] = list.size();
+        m_info[CPU_MODEL] = device.product();
+    }
 }
 
 #include <GL/glx.h>
