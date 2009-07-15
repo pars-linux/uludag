@@ -14,9 +14,9 @@ msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-29 12:04+0300\n"
-"PO-Revision-Date: 2009-07-04 12:59+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2009-07-15 14:39+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +38,7 @@ msgstr "%1 KB"
 # include/ui/wizard_hw.ycp:48
 #: src/sysinfo.cpp:94
 msgid "Not Available"
-msgstr "Mevcut değil"
+msgstr "Kullanılabilir Değil"
 
 #: src/sysinfo.cpp:141
 msgid "Network is <strong>shutting down</strong>"
@@ -71,25 +71,24 @@ msgstr "Sistem"
 #: src/sysinfo.cpp:239
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
 msgstr ""
-"Dizinler, Sabit Disk Sürücüleri, Çıkarılabilir Aygıtlar, Sistem Bilgileri "
-"ve "
-"daha fazlası..."
+"Klasörler, Sabit Diskler, Çıkarılabilir Aygıtlar, Sistem Bilgisi ve daha "
+"fazlası..."
 
 #: src/sysinfo.cpp:246
 msgid "Common Folders"
-msgstr "Genel Dizinler"
+msgstr "Genel Klasörler"
 
 #: src/sysinfo.cpp:247
 msgid "My Home Folder"
-msgstr "Ev Dizinim"
+msgstr "Ev Klasörüm"
 
 #: src/sysinfo.cpp:248
 msgid "Root Folder"
-msgstr "Kök Dizin"
+msgstr "Kök Klasör"
 
 #: src/sysinfo.cpp:249
 msgid "Network Folders"
-msgstr "Ağ Dizinleri"
+msgstr "Ağ Klasörleri"
 
 #: src/sysinfo.cpp:254
 msgid "Network"
@@ -140,11 +139,11 @@ msgstr "Görüntü"
 
 #: src/sysinfo.cpp:545
 msgid "3D Not Supported"
-msgstr "3D Desteği Yok"
+msgstr "3B Desteği Yok"
 
 #: src/sysinfo.cpp:547
 msgid "3D Supported"
-msgstr "3D Destekli"
+msgstr "3B Destekli"
 
 #: src/sysinfo.cpp:563
 msgid "Mounted on %1"
@@ -156,7 +155,7 @@ msgstr "Bağlı değil"
 
 #: src/sysinfo.cpp:572
 msgid "%1 free of %2"
-msgstr "%2'ın %1'ı boş"
+msgstr "%1 / %2 boş"
 
 #~ msgid "Driver: "
 #~ msgstr "Sürücü: "
