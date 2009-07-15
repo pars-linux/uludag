@@ -120,10 +120,12 @@ def getHistory(limit=50):
     result = []
     i=0
     for op in pdb.get_last():
-        result.append(op)
-        i+=1
-        if i==limit:
-            break
+        # Dont add repo updates to history list
+        if not op.type == 'repoupdate':
+            result.append(op)
+            i+=1
+            if i==limit:
+                break
     return result
 
 def finalize():
