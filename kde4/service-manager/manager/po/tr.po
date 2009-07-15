@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 2.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-27 16:19+0300\n"
-"PO-Revision-Date: 2009-06-27 19:26+0300\n"
+"PO-Revision-Date: 2009-07-15 14:08+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +48,7 @@ msgstr "Açılışta çalıştır"
 
 #: .tmp/ui_main.py:56
 msgid "type service name to search..."
-msgstr "Servis ismini yazarak aramaya başlayın..."
+msgstr "aranacak servis ismini yazın"
 
 #: .tmp/ui_main.py:57
 msgid "Servers"
@@ -97,4 +97,5 @@ msgstr "Bahadır Kandemir"
 #: .tmp/servicemanager/about.py:33
 msgid "COMAR Author"
 msgstr "COMAR Yazarı"
+
 
