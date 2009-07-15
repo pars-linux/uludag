@@ -91,6 +91,13 @@ class MainWindow(KMainWindow):
         widget = PMInstaller(self)
         self.resize(widget.size())
         self.setCentralWidget(widget)
+        self.center()
+
+    def center(self):
+        desktop = QtGui.QApplication.desktop()
+        x = (desktop.width() - self.size().width()) / 2
+        y = (desktop.height() - self.size().height()) / 2 - 50
+        self.move(x, y)
 
     def install(self, packages):
         self.centralWidget().install(packages)
@@ -122,7 +129,7 @@ if __name__ == '__main__':
     programName = ki18n("pm-install")
     version     = "0.1"
     aboutData   = KAboutData(appName, catalog, programName, version)
-    aboutData.setProgramIconName(":/data/package-manager.png")
+    aboutData.setProgramIconName("package-manager")
     KCmdLineArgs.init(sys.argv, aboutData)
 
     options = KCmdLineOptions()
