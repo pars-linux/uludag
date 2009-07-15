@@ -4,18 +4,20 @@
 #
 # Gürer Özen <gurer@uludag.org.tr>, 2005.
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2008.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-28 10:59+0300\n"
-"PO-Revision-Date: 2008-06-20 10:17+0300\n"
-"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
-"Language-Team:  <tr@li.org>\n"
+"PO-Revision-Date: 2009-07-15 11:52+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: comariface.py:227
 msgid "COMAR Error"
@@ -27,13 +29,17 @@ msgstr "DBus Bekleniyor..."
 
 #: comariface.py:232 network-applet.py:175
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr "DBus bağlantısı sonlandı, tekrar bağlanılıyor..."
+msgstr ""
+"DBus bağlantısı beklenmedik bir şekilde sonlandı, yeniden bağlanmaya "
+"çalışıyor..."
 
 #: comariface.py:248 network-applet.py:191
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
-msgstr "DBus hizmetine bağlanılamadı! Eğer bu hizmet çalışmıyorsa, bir root konsolunda 'service dbus start' komutunu vererek hizmeti başlatın."
+msgstr ""
+"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa konsolda root "
+"kullanıcısı olarak 'service dbus start' komutunu deneyebilirsiniz."
 
 #: comariface.py:406
 msgid "new connection"
@@ -51,7 +57,7 @@ msgstr "Taranıyor..."
 #: autoswitch.py:80
 #, python-format
 msgid "Profile <b>%s</b> matched."
-msgstr "Profil <b>%s</b> bulundu."
+msgstr "<b>%s</b> profili bulundu."
 
 #: autoswitch.py:84
 msgid "There is no matched profile"
@@ -112,7 +118,7 @@ msgstr "Aygıt:"
 
 #: connection.py:195
 msgid "Select"
-msgstr "Aygıt seç"
+msgstr "Seç"
 
 #: connection.py:209
 msgid "Scan"
@@ -144,7 +150,7 @@ msgstr "Ağ ayarları"
 
 #: connection.py:304
 msgid "Automatic query (DHCP)"
-msgstr "Otomatik ayar (DHCP)"
+msgstr "Otomatik ayarla (DHCP)"
 
 #: connection.py:309
 msgid "Manual"
@@ -176,7 +182,7 @@ msgstr "Otomatik"
 
 #: connection.py:568
 msgid "Configure network connection"
-msgstr "Ağ bağlantısını ayarla"
+msgstr "Ağ bağlantısını yapılandır"
 
 #: network-manager.py:83
 msgid "Just try to connect automatically"
@@ -184,7 +190,7 @@ msgstr "Sadece otomatik bağlanmayı dene"
 
 #: network-manager.py:98
 msgid "Network manager module is already started!"
-msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
+msgstr "Ağ yöneticisi modülü zaten çalışıyor!"
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -306,7 +312,7 @@ msgstr "İsim Servisi Ayarları"
 
 #: browser.py:428
 msgid "Try Auto Connect on startup"
-msgstr "Açılışta Otomatik Bağlanmayı dene"
+msgstr "Açılışta otomatik bağlanmayı dene"
 
 #: browser.py:479
 msgid "Network Connections Help"
@@ -318,7 +324,7 @@ msgstr "Bilgisayar"
 
 #: nameconf.py:41
 msgid "Host name:"
-msgstr "Makina adı:"
+msgstr "Makina ismi:"
 
 #: nameconf.py:56
 msgid "Up"
@@ -335,4 +341,5 @@ msgstr "İsim Sunucusu Ekle"
 #: nameconf.py:172
 msgid "Name server:"
 msgstr "İsim sunucusu:"
+
 
