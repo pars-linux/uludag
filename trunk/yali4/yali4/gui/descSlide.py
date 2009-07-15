@@ -25,7 +25,7 @@ slideDesc = [
 """)},
 {"ag":_("""Network Applet helps connecting to local networks and Internet easily and securely. Thanks to the profile support it has, it will make it easier to reconnect to cable or wireless connections used before, remembering the settings used.
 """)},
-{"firefox":_("""Mozilla Firefox, with its speed, constant development and many advanced features, will help securely surf the Internet. Pardus 2009 includes Mozilla Firefox 3.0, and you can enrich Firefox with thousands of extensions.
+{"firefox":_("""Mozilla Firefox, with its speed, constant development and many advanced features, will help securely surf the Internet. Pardus 2009 includes Mozilla Firefox 3.5, and you can enrich Firefox with thousands of extensions.
 """)},
 {"kontact":_("""Kontact, KDE Personal Information Manager, helps you manage all your emails, RSS feeds, diaries, to-do listes and blog entries in one combined interface. Kontact, with its Groupware feature, will be your best friend at work.
 """)},

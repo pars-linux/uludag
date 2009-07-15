@@ -1,42 +1,43 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the net-kga package.
-# Gürer Özen <gurer@uludag.org.tr>, 2005.
 #
+# Gürer Özen <gurer@uludag.org.tr>, 2005.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-28 10:59+0300\n"
-"PO-Revision-Date: 2005-12-19 20:02+0200\n"
-"Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
-"Language-Team: tr <tr@li.org>\n"
+"PO-Revision-Date: 2009-07-15 11:48+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: comariface.py:227
 msgid "COMAR Error"
-msgstr ""
+msgstr "COMAR Hatası"
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
 msgid "Waiting DBus..."
-msgstr "ÇOMAR Bekleniyor..."
+msgstr "DBus Bekleniyor..."
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr "ÇOMAR bağlantısı kesildi, yeniden bağlanmayı deniyorum..."
+msgstr ""
+"DBus bağlantısı beklenmedik bir şekilde sonlandı, yeniden bağlanmaya "
+"çalışıyor..."
 
 #: comariface.py:248 network-applet.py:191
-#, fuzzy
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
-"ÇOMAR bağlantısı sağlanamadı! Eğer çalışmıyorsa bir yetkili kullanıcı "
-"konsolu açıp 'service comar start' komutu ile çalıştırın."
+"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa konsolda root "
+"kullanıcısı olarak 'service dbus start' komutunu deneyebilirsiniz."
 
 #: comariface.py:406
 msgid "new connection"
@@ -49,12 +50,12 @@ msgstr "Ağ Yöneticisi"
 
 #: autoswitch.py:58
 msgid "Scanning..."
-msgstr ""
+msgstr "Tarıyor..."
 
 #: autoswitch.py:80
 #, python-format
 msgid "Profile <b>%s</b> matched."
-msgstr "Profil <b>%s</b> bulundu."
+msgstr "<b>%s</b> profili bulundu."
 
 #: autoswitch.py:84
 msgid "There is no matched profile"
@@ -103,7 +104,7 @@ msgstr "Kullan"
 
 #: connection.py:177
 msgid "Connection name:"
-msgstr "Bağlantı adı:"
+msgstr "Bağlantı ismi:"
 
 #: connection.py:184
 msgid "Connection"
@@ -115,7 +116,7 @@ msgstr "Aygıt:"
 
 #: connection.py:195
 msgid "Select"
-msgstr "Aygıt seç"
+msgstr "Seç"
 
 #: connection.py:209
 msgid "Scan"
@@ -131,7 +132,7 @@ msgstr "Mod:"
 
 #: connection.py:234
 msgid "No authentication"
-msgstr "Doğrulama yok"
+msgstr "Kimlik doğrulama yok"
 
 #: connection.py:252 connection.py:264
 msgid "Password:"
@@ -147,7 +148,7 @@ msgstr "Ağ ayarları"
 
 #: connection.py:304
 msgid "Automatic query (DHCP)"
-msgstr "Otomatik ayar (DHCP)"
+msgstr "Otomatik ayarla (DHCP)"
 
 #: connection.py:309
 msgid "Manual"
@@ -187,7 +188,7 @@ msgstr "Sadece otomatik bağlanmayı dene"
 
 #: network-manager.py:98
 msgid "Network manager module is already started!"
-msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
+msgstr "Ağ yöneticisi modülü zaten çalışıyor!"
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -279,7 +280,7 @@ msgstr "Bağlantıyı aç/kapa"
 
 #: browser.py:106
 msgid "Configure connection"
-msgstr "Bağlantıyı ayarla"
+msgstr "Bağlantıyı yapılandır"
 
 #: browser.py:109
 msgid "Delete connection"
@@ -297,7 +298,7 @@ msgstr ""
 
 #: browser.py:132
 msgid "Delete connection?"
-msgstr "Bağlantıyı sil?"
+msgstr "Bağlantı silinsin mi?"
 
 #: browser.py:220
 msgid "No device!"
@@ -309,7 +310,7 @@ msgstr "İsim Servisi Ayarları"
 
 #: browser.py:428
 msgid "Try Auto Connect on startup"
-msgstr "Açılışta Otomatik Bağlanmayı dene"
+msgstr "Açılışta otomatik bağlanmayı dene"
 
 #: browser.py:479
 msgid "Network Connections Help"
@@ -321,7 +322,7 @@ msgstr "Bilgisayar"
 
 #: nameconf.py:41
 msgid "Host name:"
-msgstr "Makina adı:"
+msgstr "Makina ismi:"
 
 #: nameconf.py:56
 msgid "Up"

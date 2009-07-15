@@ -14,13 +14,14 @@ msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-14 14:49+0300\n"
-"PO-Revision-Date: 2009-07-04 19:28+0300\n"
-"Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
-"Language-Team: türkçe <tr@li.org>MIME-Version: 1.0\n"
+"PO-Revision-Date: 2009-07-15 12:23+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
 
 #: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
 #: yali4/gui/Ui/datetimewidget.py:86 yali4/gui/Ui/exception.py:58
@@ -79,14 +80,17 @@ msgid ""
 "\" font-size:12pt; font-weight:600;\">Partitioning method</span></p></body></"
 "html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Disk bölümlendirme yöntemi</span></p></body></"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Disk bölümlendirme yöntemi</span></p><"
+"/body></"
 "html>"
 
 #: yali4/gui/Ui/autopartwidget.py:115
@@ -147,14 +151,16 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
 "\" font-size:12pt; font-weight:600;\">Disk selection</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Disk seçimi:</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Disk seçimi</span></p></body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:128
 msgid "&nbsp;"
@@ -175,9 +181,8 @@ msgstr ""
 "<p>Pardus'u açabilmek için bir sistem yükleyicisi gerekir.</p>\n"
 "\n"
 "<p>Eğer bir sistem yükleyicisini açılış diskinin başına kurmazsanız, (eğer "
-"kurulu bir tane varsa) \n"
-"diğer işletim sisteminizin yükleyicisini, kurulmuş olan Pardus'u başlatmak \n"
-"için yapılandırmanız gerekir.</p>"
+"kurulu bir tane varsa) diğer işletim sisteminizin yükleyicisini, kurulmuş "
+"olan Pardus'u başlatmak için yapılandırmanız gerekir.</p>"
 
 #: yali4/gui/Ui/bootloaderwidget.py:81 yali4/gui/Ui/rescuegrubwidget.py:76
 msgid "Select target to install boot loader"
@@ -270,7 +275,7 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Lütfen <span style=\" font-"
 "weight:600;\">http://hata.pardus.org.tr</span> adresine aşağıdaki geri iz "
-"bilgilerini de kullanarak bu hatayı bildirin</p></body></html>"
+"bilgilerini de ekleyerek bu hatayı bildirin.</p></body></html>"
 
 #: yali4/gui/Ui/exception.py:66
 msgid "Show Backtrace"
@@ -280,7 +285,7 @@ msgstr "Geri İz Göster"
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
 #: yali4/gui/ScrSummary.py:71 yali4/installer.py:684
 msgid "Reboot"
-msgstr "Sistemi Yeniden Başlat!"
+msgstr "Sistemi Yeniden Başlat"
 
 #: yali4/gui/Ui/installwidget.py:71
 msgid "Form3"
@@ -300,11 +305,11 @@ msgstr "Kurulan Paket: "
 
 #: yali4/gui/Ui/keyboardwidget.py:60
 msgid "Choose a keyboard layout:"
-msgstr "Klavye haritanızı seçin"
+msgstr "Klavye haritası seçin:"
 
 #: yali4/gui/Ui/keyboardwidget.py:61
 msgid "Test selected layout:"
-msgstr "Klavyeyi test et: "
+msgstr "Seçili haritayı test et: "
 
 #: yali4/gui/Ui/main.py:181
 msgid "Yali4"
@@ -348,11 +353,11 @@ msgstr "FUJISTU - /dev/sda1 üzerinde Bölüm 1"
 
 #: yali4/gui/Ui/partedit.py:155
 msgid "Use :"
-msgstr "Kullan :"
+msgstr "Kullan:"
 
 #: yali4/gui/Ui/partedit.py:156
 msgid "Size :"
-msgstr "Boyut :"
+msgstr "Boyut:"
 
 #: yali4/gui/Ui/partedit.py:157 yali4/gui/Ui/partresize.py:89
 msgid " MB"
@@ -368,7 +373,7 @@ msgstr "Evet, bu disk bölümünü biçimlendir"
 
 #: yali4/gui/Ui/partedit.py:160
 msgid "File System :"
-msgstr "Dosya Sistemi :"
+msgstr "Dosya Sistemi:"
 
 #: yali4/gui/Ui/partedit.py:161
 msgid "Delete Partition"
@@ -380,7 +385,7 @@ msgstr "Bölümü Yeniden Boyutlandır"
 
 #: yali4/gui/Ui/partedit.py:163
 msgid "Changes will be applied after Summary Screen."
-msgstr "Değişiklikler Özet Ekranından sonra uygulanacaktır.."
+msgstr "Değişiklikler Özet ekranından sonra uygulanacaktır."
 
 #: yali4/gui/Ui/partedit.py:164
 msgid "Refresh Disks"
@@ -433,7 +438,8 @@ msgstr ""
 "weight:600; color:#ffffff;\">Uyarı!</span><span style=\" color:#ffffff;\"> "
 "Bu değişiklikler \"</span><span style=\" text-decoration: underline; color:"
 "#ffffff;\">Boyutlandır</span><span style=\" color:#ffffff;\">\" tuşuna "
-"bastığınızda uygulanır. Geri dönmek için \"</span><span style=\" text-"
+"bastığınızda uygulanır. Yaptığınız değişiklikleri sıfırlamak için \"</span><"
+"span style=\" text-"
 "decoration: underline; color:#ffffff;\">İptal</span><span style=\" color:"
 "#ffffff;\">\" tuşuna basabilirsiniz.</span></p><br><p style=\" margin-"
 "top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
@@ -483,7 +489,7 @@ msgid ""
 "profile."
 msgstr ""
 "Pisi Geçmiş desteğini kullanmak için internet bağlantısına ihtiyacınız "
-"olabilir, listedeki bağlantı profillerinizden birini kullanabilirsiniz"
+"olabilir, listedeki bağlantı profillerinizden birini kullanabilirsiniz."
 
 #: yali4/gui/Ui/rescuepisiwidget.py:70
 msgid "Select Connection"
@@ -503,7 +509,7 @@ msgstr "İşlemi seçin ve <b>İleri</b>'ye tıklayın..."
 
 #: yali4/gui/Ui/rescuewidget.py:86
 msgid "Reinstall GRUB (boot problems)"
-msgstr "GRUB 'ı tekrar kur (açılış problemleri)"
+msgstr "GRUB'ı tekrar kur (açılış problemleri)"
 
 #: yali4/gui/Ui/rescuewidget.py:87
 msgid "PiSi history (undo package operations)"
@@ -535,7 +541,7 @@ msgstr "Sistem yöneticisi parolası (tekrar):"
 
 #: yali4/gui/Ui/rootpasswidget.py:182
 msgid "Hostname:"
-msgstr "Makine Adı:"
+msgstr "Makine İsmi:"
 
 #: yali4/gui/Ui/setupuserswidget.py:172
 msgid "Real Name:"
@@ -551,7 +557,7 @@ msgstr "Parola:"
 
 #: yali4/gui/Ui/setupuserswidget.py:175
 msgid "User ID"
-msgstr "Kullanıcı ID"
+msgstr "Kullanıcı No"
 
 #: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:252
 #: yali4/gui/ScrUsers.py:294
@@ -572,7 +578,7 @@ msgstr "Seçili Kullanıcıyı Sil"
 
 #: yali4/gui/Ui/setupuserswidget.py:180
 msgid "Auto Login User :"
-msgstr "Otomatik Giriş Kullanıcısı :"
+msgstr "Otomatik Giriş Kullanıcısı:"
 
 #: yali4/gui/Ui/setupuserswidget.py:181
 msgid "Auto Login Disabled"
@@ -635,11 +641,11 @@ msgstr "Sistemi Yeniden Başlat"
 
 #: yali4/gui/Ui/welcomewidget.py:94
 msgid "Yes, I accept."
-msgstr "Evet, Kabul ediyorum."
+msgstr "Evet, kabul ediyorum."
 
 #: yali4/gui/Ui/welcomewidget.py:95
 msgid "No, I don't accept."
-msgstr "Hayır, Kabul etmiyorum."
+msgstr "Hayır, kabul etmiyorum."
 
 #: yali4/gui/debugger.py:28
 msgid "Debug"
@@ -708,7 +714,7 @@ msgid ""
 msgstr ""
 "Hızı, sürekli yenilenmesi ve diğer birçok gelişmiş özelliği ile Mozilla "
 "Firefox, İnternet'te güvenli bir şekilde gezinmenizi sağlar. Pardus 2009 ile "
-"gelen yeni nesil Mozilla Firefox 3.0'ı onlarca farklı eklenti ile "
+"gelen yeni nesil Mozilla Firefox 3.5'i onlarca farklı eklenti ile "
 "zenginleştirebilirsiniz.\n"
 
 #: yali4/gui/descSlide.py:30
