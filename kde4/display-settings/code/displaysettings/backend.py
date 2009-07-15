@@ -58,19 +58,22 @@ class Interface:
             self.ext = RRInterface()
 
         self.readConfig()
-        self.cardVendor, self.cardModel = idsQuery(self._info.vendor_id,
-                                                   self._info.product_id)
 
     def readConfig(self):
         self._bus = self.link.Xorg.Display["zorg"].activeDeviceID()
         self._info = zorg.config.getDeviceInfo(self._bus)
 
         if not self._info:
-            # XXX
-            print "corrupted config"
+            self._ready = False
             return
 
+        self._ready = True
+        self.cardVendor, self.cardModel = idsQuery(self._info.vendor_id,
+                                                   self._info.product_id)
         self.monitors = self._info.monitors
+
+    def isReady(self):
+        return self._ready
 
     def listenSignals(self, func):
         self.link.listenSignals("X.Y", func)
@@ -86,6 +89,9 @@ class Interface:
             Display Settings tool is heavily zorg dependent.
         """
         return "zorg"
+
+    def safeConfig(self):
+        self.link.Xorg.Display["zorg"].safeConfig()
 
     def query(self):
         self.ext.query()

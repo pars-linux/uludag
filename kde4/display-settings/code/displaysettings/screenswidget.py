@@ -50,8 +50,10 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
         self.iface = Interface()
         self.iface.listenSignals(self.signalHandler)
 
-        # Fail if no packages provide backend
-        self.checkBackend()
+        # Disable module if no packages provide backend or
+        # no valid configuration is found
+        if not self.checkBackend():
+            parent.setDisabled(True)
 
         self.extendDisplays.toggled.connect(self.emitConfigChanged)
         self.detectButton.clicked.connect(self.slotDetectClicked)
@@ -69,6 +71,24 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
                 "application.\nPlease be sure that packages are installed "
                 "and configured correctly."))
             return False
+
+        elif not self.iface.isReady():
+            answer = kdeui.KMessageBox.questionYesNo(self, kdecore.i18n(
+                "Cannot find a valid configuration. Display settings won't "
+                "be enabled until you create a new configuration.\n"
+                "Would you like to create a safe configuration now?"))
+            if answer == kdeui.KMessageBox.Yes:
+                try:
+                    self.iface.safeConfig()
+                    self.iface.readConfig()
+                except dbus.DBusException, exception:
+                    if "Comar.PolicyKit" in exception._dbus_error_name:
+                        kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+                    else:
+                        kdeui.KMessageBox.error(self, str(exception))
+
+            return self.iface.isReady()
+
         return True
 
     def signalHandler(self, package, signal, args):
@@ -305,6 +325,9 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
             self.configChanged.emit()
 
     def load(self):
+        if not self.iface.isReady():
+            return
+
         self.detectOutputs()
         self.populateOutputsMenu()
         self.refreshOutputsView()
