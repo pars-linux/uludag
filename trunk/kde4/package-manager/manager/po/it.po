@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-14 10:26+0300\n"
+"POT-Creation-Date: 2009-07-15 14:13+0300\n"
 "PO-Revision-Date: 2009-07-04 14:42+0200\n"
 "Last-Translator: Siciliano Edivad <edivad95@gmail.com>\n"
 "Language-Team: italiano <it@li.org>\n"
@@ -17,130 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/ui_basketdialog.py:69
-msgid "Basket"
-msgstr "cestino"
+#: .tmp/packagedelegate.py:116
+msgid "Description:"
+msgstr "Descrizione:"
 
-#: .tmp/ui_basketdialog.py:70
-msgid "Selected package(s) for install:"
-msgstr "Seleziona il/i pacchetto/i per l'installazione:"
+#: .tmp/packagedelegate.py:128
+msgid "Release:"
+msgstr "Release:"
 
-#: .tmp/ui_basketdialog.py:71 .tmp/statemanager.py:98
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr ""
-"Verranno installate anche delle dipendenze extra per il/i pacchetto/i "
-"selezionato/i:"
+#: .tmp/packagedelegate.py:138
+msgid "Repository:"
+msgstr "Repository:"
 
-#: .tmp/ui_basketdialog.py:72
-msgid "Total Size:"
-msgstr "Dimensioni totali:"
-
-#: .tmp/ui_basketdialog.py:73
-msgid "<b>2.2 MB</b>"
-msgstr "<b>2.2 MB</b>"
-
-#: .tmp/ui_basketdialog.py:74 .tmp/ui_mainwidget.py:60 .tmp/statemanager.py:73
-msgid "Install Package(s)"
-msgstr "Installa pacchetto/i"
-
-#: .tmp/ui_pminstaller.py:46 .tmp/ui_mainwidget.py:58
-msgid "Form"
-msgstr ""
-
-#: .tmp/ui_pminstaller.py:47
-msgid "TextLabel"
-msgstr ""
-
-#: .tmp/ui_pminstaller.py:48
+#: .tmp/packagedelegate.py:147
 #, fuzzy
-msgid "Cancel"
-msgstr "A&nnulla"
-
-#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
-msgid "configuring"
-msgstr "configurazione"
-
-#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
-msgid "extracting"
-msgstr "estrazione"
-
-#: .tmp/progressdialog.py:45
-msgid "Downloading package list of %1"
-msgstr "Download lista pacchetti di %1"
-
-#: .tmp/progressdialog.py:47
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: .tmp/progressdialog.py:52
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 pacchetto %3"
-
-#: .tmp/progressdialog.py:58
-msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr "<p align='center'>%1 / %2, %3</p>"
-
-#: .tmp/progressdialog.py:70 .tmp/ui_progressdialog.py:153
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Preparazione PiSi...</h3>"
-
-#: .tmp/progressdialog.py:73 .tmp/ui_progressdialog.py:155
-msgid "--  / --"
-msgstr "--  / --"
-
-#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:156
-msgid "--:--:--"
-msgstr "--:--:--"
-
-#: .tmp/progressdialog.py:77
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Annullamento operazione...</b>"
-
-#: .tmp/ui_appitem.py:52
-msgid "Application"
-msgstr "Applicazione"
-
-#: .tmp/ui_appitem.py:53
-msgid "Web Tarayıcı"
-msgstr "Web Tarayıcı"
-
-#: .tmp/ui_appitem.py:54
-msgid "Firefox"
-msgstr "Firefox"
-
-#: .tmp/settingsdialog.py:128
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Tutti i pacchetti nella cache verranno eliminati. Sei sicuro?"
-
-#: .tmp/settingsdialog.py:129
-msgid "Warning"
-msgstr "Avviso"
-
-#: .tmp/settingsdialog.py:130
-msgid "Delete"
-msgstr "Elimina"
-
-#: .tmp/settingsdialog.py:184
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>L'indirizzo del repository deve finire con il suffisso xml o xml.bz2."
-"<p>Prova di nuovo.</qt>"
-
-#: .tmp/settingsdialog.py:184 .tmp/pm-install.py:80 .tmp/mainwidget.py:172
-msgid "Pisi Error"
-msgstr "Errore PiSi!"
-
-#: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
-msgid "Package Manager"
+msgid "Package Size:"
 msgstr "Gestore di Pacchetti"
-
-#: .tmp/helpdialog.py:34
-msgid "Package Manager Help"
-msgstr ""
 
 #: .tmp/ui_settingsdialog.py:325
 msgid "Package Manager Settings"
@@ -309,57 +201,69 @@ msgstr "Usa proxy"
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: .tmp/tray.py:48
-msgid "Update"
-msgstr "Aggiorna"
+#: .tmp/mainwindow.py:67 .tmp/mainwindow.py:72 .tmp/statemanager.py:126
+msgid "Currently your basket is empty."
+msgstr "Il tuo cestino è vuoto."
 
-#: .tmp/tray.py:57 .tmp/tray.py:67
-msgid "All"
-msgstr "Tutti"
+#: .tmp/mainwindow.py:88
+msgid "Show Installable Packages"
+msgstr "Mostra pacchetti installabili"
 
-#: .tmp/tray.py:93
-msgid "There are <b>%1</b> updates available!"
-msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
+#: .tmp/mainwindow.py:95
+msgid "Show Installed Packages"
+msgstr "Mostra pacchetti installati"
 
-#: .tmp/tray.py:94
-msgid "Show Updates"
-msgstr "Mostra aggiornamenti"
+#: .tmp/mainwindow.py:101
+msgid "Show Upgradable Packages"
+msgstr "Mostra pacchetti aggiornabili"
 
-#: .tmp/tray.py:94
-msgid "Ignore"
-msgstr "Ignora"
-
-#: .tmp/ui_mainwidget.py:59
-msgid "Click to search"
-msgstr "Clicca per cercare"
-
-#: .tmp/ui_mainwidget.py:61
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
-"this group</p></body></html>"
+#: .tmp/main.py:38
+msgid "Show main window"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Seleziona tutti i "
-"pacchetti in questo gruppo</p></body></html>"
 
-#: .tmp/ui_mainwidget.py:66
-msgid "Search"
-msgstr "Cerca"
+#: .tmp/operationmanager.py:117 .tmp/commontext.py:15
+msgid "downloading"
+msgstr "download in corso"
+
+#: .tmp/settingsdialog.py:128
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr "Tutti i pacchetti nella cache verranno eliminati. Sei sicuro?"
+
+#: .tmp/settingsdialog.py:129
+msgid "Warning"
+msgstr "Avviso"
+
+#: .tmp/settingsdialog.py:130
+msgid "Delete"
+msgstr "Elimina"
+
+#: .tmp/settingsdialog.py:184
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>L'indirizzo del repository deve finire con il suffisso xml o xml.bz2."
+"<p>Prova di nuovo.</qt>"
+
+#: .tmp/settingsdialog.py:184 .tmp/pm-install.py:82 .tmp/mainwidget.py:172
+msgid "Pisi Error"
+msgstr "Errore PiSi!"
+
+#: .tmp/about.py:20 .tmp/about.py:22 .tmp/ui_mainwindow.py:29
+msgid "Package Manager"
+msgstr "Gestore di Pacchetti"
+
+#: .tmp/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/about.py:31
+msgid "Faik Uygur"
+msgstr "Faik Uygur"
+
+#: .tmp/about.py:31
+msgid "Maintainer"
+msgstr "Maintainer"
 
 #: .tmp/statemanager.py:65
 msgid "Installing Package(s)"
@@ -384,6 +288,10 @@ msgstr "Aggiornamento repository"
 #: .tmp/statemanager.py:70
 msgid "Updating Repository(s)"
 msgstr "Aggiornamento repository"
+
+#: .tmp/statemanager.py:73 .tmp/ui_mainwidget.py:60 .tmp/ui_basketdialog.py:74
+msgid "Install Package(s)"
+msgstr "Installa pacchetto/i"
 
 #: .tmp/statemanager.py:74
 msgid "Remove Package(s)"
@@ -429,6 +337,14 @@ msgstr "Hai selezionato i seguenti pacchetti per la rimoozione:"
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Hai selezionato i seguenti pacchetti per l'aggiornamento:"
 
+#: .tmp/statemanager.py:98 .tmp/ui_basketdialog.py:71
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+"Verranno installate anche delle dipendenze extra per il/i pacchetto/i "
+"selezionato/i:"
+
 #: .tmp/statemanager.py:99
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
@@ -440,10 +356,6 @@ msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr ""
-
-#: .tmp/statemanager.py:126 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
-msgid "Currently your basket is empty."
-msgstr "Il tuo cestino è vuoto."
 
 #: .tmp/statemanager.py:128
 msgid ""
@@ -492,33 +404,74 @@ msgstr ""
 "\n"
 "Rimuovere i pacchetti in conflitto dal sistema?"
 
-#: .tmp/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+#: .tmp/ui_repodialog.py:51
+msgid "Add New Repository"
+msgstr "Aggiungi nuovo repository"
 
-#: .tmp/about.py:31
-msgid "Faik Uygur"
-msgstr "Faik Uygur"
+#: .tmp/ui_repodialog.py:52
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Nome del repository, es. <b>pardus-devel</b>"
 
-#: .tmp/about.py:31
-msgid "Maintainer"
-msgstr "Maintainer"
+#: .tmp/ui_repodialog.py:55
+msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 
-#: .tmp/main.py:38
-msgid "Show main window"
+#: .tmp/ui_repodialog.py:56
+msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+
+#: .tmp/pm-install.py:44
+msgid "Succesfully finished installing %1"
 msgstr ""
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:117
-msgid "downloading"
-msgstr "download in corso"
+#: .tmp/pm-install.py:76 .tmp/mainwidget.py:166
+msgid "Network Error"
+msgstr ""
 
-#: .tmp/commontext.py:15
-msgid "removing"
-msgstr "rimozione in corso"
+#: .tmp/pm-install.py:77 .tmp/mainwidget.py:167
+msgid "Please check your network connections and try again."
+msgstr ""
 
-#: .tmp/commontext.py:15
-msgid "installing"
+#: .tmp/pm-install.py:79 .tmp/mainwidget.py:169
+msgid "Authorization Error"
+msgstr ""
+
+#: .tmp/pm-install.py:80 .tmp/mainwidget.py:170
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: .tmp/pm-install.py:92
+#, fuzzy
+msgid "Package Installer"
+msgstr "Gestore di Pacchetti"
+
+#: .tmp/pm-install.py:120
+#, fuzzy
+msgid "Ok"
+msgstr "&Ok"
+
+#: .tmp/pm-install.py:124
+#, fuzzy
+msgid "Installing %1"
 msgstr "installazione in corso"
+
+#: .tmp/pm-install.py:131
+#, fuzzy
+msgid "pm-install"
+msgstr "installato"
+
+#: .tmp/pm-install.py:138
+#, fuzzy
+msgid "Packages to install"
+msgstr "Seleziona il/i pacchetto/i per l'installazione:"
+
+#: .tmp/pm-install.py:142
+msgid "Package Installer is already started!"
+msgstr ""
+
+#: .tmp/helpdialog.py:34
+msgid "Package Manager Help"
+msgstr ""
 
 #: .tmp/ui_summarydialog.py:53
 msgid "Operation Summary"
@@ -540,62 +493,89 @@ msgstr ""
 msgid "&Ok"
 msgstr "&Ok"
 
-#: .tmp/pm-install.py:74 .tmp/mainwidget.py:166
-msgid "Network Error"
+#: .tmp/commontext.py:15 .tmp/progressdialog.py:41
+msgid "extracting"
+msgstr "estrazione"
+
+#: .tmp/commontext.py:15 .tmp/progressdialog.py:41
+msgid "configuring"
+msgstr "configurazione"
+
+#: .tmp/commontext.py:15
+msgid "removing"
+msgstr "rimozione in corso"
+
+#: .tmp/commontext.py:15
+msgid "installing"
+msgstr "installazione in corso"
+
+#: .tmp/ui_appitem.py:52
+msgid "Application"
+msgstr "Applicazione"
+
+#: .tmp/ui_appitem.py:53
+msgid "Web Tarayıcı"
+msgstr "Web Tarayıcı"
+
+#: .tmp/ui_appitem.py:54
+msgid "Firefox"
+msgstr "Firefox"
+
+#: .tmp/tray.py:48
+msgid "Update"
+msgstr "Aggiorna"
+
+#: .tmp/tray.py:57 .tmp/tray.py:67
+msgid "All"
+msgstr "Tutti"
+
+#: .tmp/tray.py:93
+msgid "There are <b>%1</b> updates available!"
+msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
+
+#: .tmp/tray.py:94
+msgid "Show Updates"
+msgstr "Mostra aggiornamenti"
+
+#: .tmp/tray.py:94
+msgid "Ignore"
+msgstr "Ignora"
+
+#: .tmp/ui_mainwidget.py:58 .tmp/ui_pminstaller.py:46
+msgid "Form"
 msgstr ""
 
-#: .tmp/pm-install.py:75 .tmp/mainwidget.py:167
-msgid "Please check your network connections and try again."
+#: .tmp/ui_mainwidget.py:59
+msgid "Click to search"
+msgstr "Clicca per cercare"
+
+#: .tmp/ui_mainwidget.py:61
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
+"this group</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Seleziona tutti i "
+"pacchetti in questo gruppo</p></body></html>"
 
-#: .tmp/pm-install.py:77 .tmp/mainwidget.py:169
-msgid "Authorization Error"
-msgstr ""
-
-#: .tmp/pm-install.py:78 .tmp/mainwidget.py:170
-msgid "You are not authorized for this operation."
-msgstr ""
-
-#: .tmp/pm-install.py:89
-#, fuzzy
-msgid "Package Installer"
-msgstr "Gestore di Pacchetti"
-
-#: .tmp/pm-install.py:110
-#, fuzzy
-msgid "Ok"
-msgstr "&Ok"
-
-#: .tmp/pm-install.py:121
-#, fuzzy
-msgid "pm-install"
-msgstr "installato"
-
-#: .tmp/pm-install.py:128
-#, fuzzy
-msgid "Packages to install"
-msgstr "Seleziona il/i pacchetto/i per l'installazione:"
-
-#: .tmp/pm-install.py:132
-msgid "Package Installer is already started!"
-msgstr ""
-
-#: .tmp/packagedelegate.py:116
-msgid "Description:"
-msgstr "Descrizione:"
-
-#: .tmp/packagedelegate.py:128
-msgid "Release:"
-msgstr "Release:"
-
-#: .tmp/packagedelegate.py:138
-msgid "Repository:"
-msgstr "Repository:"
-
-#: .tmp/packagedelegate.py:147
-#, fuzzy
-msgid "Package Size:"
-msgstr "Gestore di Pacchetti"
+#: .tmp/ui_mainwidget.py:66
+msgid "Search"
+msgstr "Cerca"
 
 #: .tmp/mainwidget.py:205
 msgid "Select all packages in this group"
@@ -609,9 +589,21 @@ msgstr "Inverti selezione pacchetti"
 msgid "Operation"
 msgstr "Operazione"
 
+#: .tmp/ui_progressdialog.py:153 .tmp/progressdialog.py:70
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Preparazione PiSi...</h3>"
+
 #: .tmp/ui_progressdialog.py:154
 msgid "Time remaining:"
 msgstr "Tempo rimanente:"
+
+#: .tmp/ui_progressdialog.py:155 .tmp/progressdialog.py:73
+msgid "--  / --"
+msgstr "--  / --"
+
+#: .tmp/ui_progressdialog.py:156 .tmp/progressdialog.py:74
+msgid "--:--:--"
+msgstr "--:--:--"
 
 #: .tmp/ui_progressdialog.py:157
 msgid "Operation:"
@@ -639,30 +631,47 @@ msgstr ""
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: .tmp/mainwindow.py:88
-msgid "Show Installable Packages"
-msgstr "Mostra pacchetti installabili"
+#: .tmp/ui_basketdialog.py:69
+msgid "Basket"
+msgstr "cestino"
 
-#: .tmp/mainwindow.py:95
-msgid "Show Installed Packages"
-msgstr "Mostra pacchetti installati"
+#: .tmp/ui_basketdialog.py:70
+msgid "Selected package(s) for install:"
+msgstr "Seleziona il/i pacchetto/i per l'installazione:"
 
-#: .tmp/mainwindow.py:101
-msgid "Show Upgradable Packages"
-msgstr "Mostra pacchetti aggiornabili"
+#: .tmp/ui_basketdialog.py:72
+msgid "Total Size:"
+msgstr "Dimensioni totali:"
 
-#: .tmp/ui_repodialog.py:51
-msgid "Add New Repository"
-msgstr "Aggiungi nuovo repository"
+#: .tmp/ui_basketdialog.py:73
+msgid "<b>2.2 MB</b>"
+msgstr "<b>2.2 MB</b>"
 
-#: .tmp/ui_repodialog.py:52
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Nome del repository, es. <b>pardus-devel</b>"
+#: .tmp/progressdialog.py:45
+msgid "Downloading package list of %1"
+msgstr "Download lista pacchetti di %1"
 
-#: .tmp/ui_repodialog.py:55
-msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+#: .tmp/progressdialog.py:47
+msgid "%1 %2"
+msgstr "%1 %2"
 
-#: .tmp/ui_repodialog.py:56
-msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#: .tmp/progressdialog.py:52
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 pacchetto %3"
+
+#: .tmp/progressdialog.py:58
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr "<p align='center'>%1 / %2, %3</p>"
+
+#: .tmp/progressdialog.py:77
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>Annullamento operazione...</b>"
+
+#: .tmp/ui_pminstaller.py:47
+msgid "TextLabel"
+msgstr ""
+
+#: .tmp/ui_pminstaller.py:48
+#, fuzzy
+msgid "Cancel"
+msgstr "A&nnulla"

@@ -41,7 +41,7 @@ class Operation(QObject):
             args = args[1:]
 
         if signal == "finished":
-            self.emit(SIGNAL("operationChanged(QString)"), "Succesfully finished installing %s" % os.path.basename(self.packages[0]))
+            self.emit(SIGNAL("operationChanged(QString)"), i18n("Succesfully finished installing %1", os.path.basename(self.packages[0])))
             self.emit(SIGNAL("finished()"))
 
         if signal == "cancelled":
@@ -71,6 +71,7 @@ class Operation(QObject):
 
     def exceptionHandler(self, message):
         message = str(message)
+
         if "urlopen error" in message or "Socket Error" in message:
             errorTitle = i18n("Network Error")
             errorMessage = i18n("Please check your network connections and try again.")
@@ -80,6 +81,7 @@ class Operation(QObject):
         else:
             errorTitle = i18n("Pisi Error")
             errorMessage = message
+
         self.messageBox = QtGui.QMessageBox(errorTitle, errorMessage, QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
         self.messageBox.exec_()
         KApplication.kApplication().quit()
@@ -119,13 +121,13 @@ class PMInstaller(QtGui.QWidget, Ui_PMInstaller):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.parent.close)
 
     def install(self, packages):
-        self.operationText.setText("Installing %s" % os.path.basename(packages[0]))
+        self.operationText.setText(i18n("Installing %1", os.path.basename(packages[0])))
         self.operation.install(packages)
 
 if __name__ == '__main__':
 
     appName     = "pm-install"
-    catalog     = ""
+    catalog     = "package-manager"
     programName = ki18n("pm-install")
     version     = "0.1"
     aboutData   = KAboutData(appName, catalog, programName, version)
