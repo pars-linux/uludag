@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>SummaryDialog</class>
- <widget class="QDialog" name="SummaryDialog" >
-  <property name="geometry" >
+ <widget class="QDialog" name="SummaryDialog">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,68 +10,50 @@
     <height>391</height>
    </rect>
   </property>
-  <property name="sizePolicy" >
-   <sizepolicy vsizetype="Minimum" hsizetype="Minimum" >
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Operation Summary</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout" >
-   <item row="0" column="0" colspan="2" >
-    <widget class="QLabel" name="summaryInfo" >
-     <property name="font" >
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text" >
-      <string>12 new packages are installed  succesfully.</string>
-     </property>
-     <property name="alignment" >
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="margin" >
-      <number>3</number>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0" colspan="2" >
-    <widget class="QLabel" name="startAppInfo" >
-     <property name="enabled" >
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="startAppInfo">
+     <property name="enabled">
       <bool>true</bool>
      </property>
-     <property name="font" >
+     <property name="font">
       <font>
        <stylestrategy>PreferDefault</stylestrategy>
        <kerning>true</kerning>
       </font>
      </property>
-     <property name="text" >
+     <property name="text">
       <string>You can start the new installed application by double-clicking on the list below or later from the applications menu.</string>
      </property>
-     <property name="textFormat" >
+     <property name="textFormat">
       <enum>Qt::AutoText</enum>
      </property>
-     <property name="alignment" >
+     <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="2" >
-    <widget class="QListWidget" name="appList" />
+   <item row="1" column="0" colspan="2">
+    <widget class="QListWidget" name="appList"/>
    </item>
-   <item row="3" column="0" >
-    <spacer name="horizontalSpacer" >
-     <property name="orientation" >
+   <item row="2" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>307</width>
        <height>23</height>
@@ -78,9 +61,9 @@
      </property>
     </spacer>
    </item>
-   <item row="3" column="1" >
-    <widget class="QPushButton" name="closeButton" >
-     <property name="text" >
+   <item row="2" column="1">
+    <widget class="QPushButton" name="closeButton">
+     <property name="text">
       <string>&amp;Ok</string>
      </property>
     </widget>
@@ -95,11 +78,11 @@
    <receiver>SummaryDialog</receiver>
    <slot>reject()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>326</x>
      <y>351</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>280</x>
      <y>339</y>
     </hint>

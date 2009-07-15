@@ -99,9 +99,6 @@ class StateManager(QObject):
                 self.REMOVE :i18n("Reverse dependencies of the selected package(s) that are also going to be removed:"),
                 self.UPGRADE:i18n("Extra dependencies of the selected package(s) that are also going to be upgraded:")}[self.state]
 
-    def infoNeeded(self, operation):
-        return operation in ["System.Manager.installPackage", "System.Manager.removePackage", "System.Manager.updatePackage"]
-
     def groups(self):
         return self.iface.getGroups()
 

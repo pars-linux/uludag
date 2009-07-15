@@ -12,3 +12,8 @@ Action=Popup
 Name=Reboot Required
 Comment=Reboot is required
 Action=Popup
+
+[Event/Summary]
+Name=Operation Summary
+Comment=Finished Operation
+Action=Sound|Popup

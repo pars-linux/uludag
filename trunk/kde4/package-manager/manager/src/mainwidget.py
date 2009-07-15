@@ -44,7 +44,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.actionButton.setIcon(self.state.getActionIcon())
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
-        self.summaryDialog = SummaryDialog(self.operation, self.state)
+        self.summaryDialog = SummaryDialog()
         self.connectMainSignals()
         self.connectOperationSignals()
 
@@ -179,9 +179,25 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.searchLine.clear()
         self.state.reset()
         self.progressDialog.hide()
-        if self.state.infoNeeded(operation):
-            self.summaryDialog.show()
+        if operation == "System.Manager.installPackage":
+            self.showSummary()
+        if operation in ["System.Manager.installPackage", "System.Manager.removePackage", "System.Manager.updatePackage"]:
+            self.notifyFinished()
         self.initialize()
+
+    def notifyFinished(self):
+        KNotification.event("Summary",
+                self.state.getSummaryInfo(self.operation.totalPackages),
+                QtGui.QPixmap(),
+                None,
+                KNotification.CloseOnTimeout,
+                KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration)
+                )
+
+    def showSummary(self):
+        self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)
+        if self.summaryDialog.hasApplication():
+            self.summaryDialog.show()
 
     def setActionEnabled(self):
         enabled = self.packageList.isSelected()

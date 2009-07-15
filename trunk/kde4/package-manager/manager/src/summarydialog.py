@@ -58,26 +58,16 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         KRun.runCommand(self.item.command, None)
 
 class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
-    def __init__(self, operation, state, parent=None):
+    def __init__(self, parent=None):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
         self.iface = backend.pm.Iface()
         self.lang = localedata.getKDELocale()
-        self.operation = operation
-        self.state = state
-
-    def setSummaryInfo(self):
-        text = self.state.getSummaryInfo(self.operation.totalPackages)
-        self.summaryInfo.setText(text)
 
     def setDesktopFiles(self, desktopFiles):
         self.appList.clear()
         for desktopFile in desktopFiles:
             self.addApplication(desktopFile)
-
-    def setStartAppInfoVisible(self, visible):
-        self.appList.setVisible(visible)
-        self.startAppInfo.setVisible(visible)
 
     def addApplication(self, desktopFile):
         parser = desktopparser.DesktopParser()
@@ -87,8 +77,6 @@ class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
         terminal = unicode(parser.safe_get_locale('Desktop Entry', 'Terminal', None))
         if nodisplay == "true" or terminal == "true":
             return
-
-        self.setStartAppInfoVisible(True)
 
         icon = parser.safe_get_locale('Desktop Entry', 'Icon', None)
         command = parser.safe_get_locale('Desktop Entry', 'Exec', None)
@@ -104,14 +92,5 @@ class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
         itemWidget = ApplicationItemWidget(item, self)
         self.appList.setItemWidget(item, itemWidget)
 
-    def show(self):
-        # Ugly hack for tray auto install updates.. total packages is not set when auto installing. do not
-        # show zero packages updated summary dialog.. auto install should update quietly
-        if not self.operation.totalPackages:
-            return
-
-        self.setSummaryInfo()
-        self.setStartAppInfoVisible(False)
-        self.setDesktopFiles(self.operation.desktopFiles)
-        self.adjustSize()
-        QtGui.QDialog.show(self)
+    def hasApplication(self):
+        return bool(self.appList.count())
