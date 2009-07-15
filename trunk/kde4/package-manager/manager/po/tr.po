@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-14 10:26+0300\n"
-"PO-Revision-Date: 2009-07-14 10:29+0300\n"
-"Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
+"PO-Revision-Date: 2009-07-15 12:42+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,7 +51,7 @@ msgstr "Form"
 
 #: .tmp/ui_pminstaller.py:47
 msgid "TextLabel"
-msgstr ""
+msgstr "TextLabel"
 
 #: .tmp/ui_pminstaller.py:48
 msgid "Cancel"
@@ -59,11 +59,11 @@ msgstr "İptal"
 
 #: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "configuring"
-msgstr "ayarlanıyor"
+msgstr "yapılandırılıyor"
 
 #: .tmp/progressdialog.py:41 .tmp/commontext.py:15
 msgid "extracting"
-msgstr "açılıyor"
+msgstr "çıkarılıyor"
 
 #: .tmp/progressdialog.py:45
 msgid "Downloading package list of %1"
@@ -83,7 +83,7 @@ msgstr "<p align='center'>%1 / %2, %3</p>"
 
 #: .tmp/progressdialog.py:70 .tmp/ui_progressdialog.py:153
 msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>PİSİ Hazırlanıyor...</h3>"
+msgstr "<h3>PiSi Hazırlanıyor...</h3>"
 
 #: .tmp/progressdialog.py:73 .tmp/ui_progressdialog.py:155
 msgid "--  / --"
@@ -126,8 +126,8 @@ msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
 msgstr ""
-"<qt>Depo adresleri xml veya xml.bz2 uzantısı ile bitmelidir. <p>Lütfen "
-"tekrar deneyin.</qt>"
+"<qt>Depo adresleri xml veya xml.bz2 uzantısı ile bitmelidir.<p>Lütfen tekrar "
+"deneyin.</qt>"
 
 #: .tmp/settingsdialog.py:184 .tmp/pm-install.py:80 .tmp/mainwidget.py:172
 msgid "Pisi Error"
@@ -207,11 +207,11 @@ msgstr "Bant genişliği sınırı:"
 
 #: .tmp/ui_settingsdialog.py:342
 msgid "&General Settings"
-msgstr "&Genel Ayarlar"
+msgstr "Genel &Ayarlar"
 
 #: .tmp/ui_settingsdialog.py:344
 msgid "&Use hard disk cache for downloaded software"
-msgstr "İ&ndirilen yazılımlar için sabit disk önbelleği kullan"
+msgstr "İndirilen yazılımlar için sabit disk önbelleği &kullan"
 
 #: .tmp/ui_settingsdialog.py:345
 msgid "Maximum cache size:"
@@ -240,7 +240,7 @@ msgstr ""
 
 #: .tmp/ui_settingsdialog.py:351
 msgid "C&lean disk cache now"
-msgstr "Önbelleği şimdi temiz&le"
+msgstr "Önbelleği şimdi &temizle"
 
 #: .tmp/ui_settingsdialog.py:352
 msgid "C&ache"
@@ -666,4 +666,5 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+
 
