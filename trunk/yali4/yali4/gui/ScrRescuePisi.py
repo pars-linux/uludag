@@ -74,6 +74,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         return True
 
     def shown(self):
+        ctx.mainScreen.disableBack()
         self.ui.buttonSelectConnection.setEnabled(False)
         ctx.yali.info.show()
         self.steps.slotRunOperations()

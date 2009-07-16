@@ -121,6 +121,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.ui.updatePassword.setEnabled(True)
 
     def shown(self):
+        ctx.mainScreen.disableBack()
         ctx.yali.info.show()
         self.steps.slotRunOperations()
         ctx.yali.info.hide()
