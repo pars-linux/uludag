@@ -56,16 +56,18 @@ class Iface(Singleton):
     def setExceptionHandler(self, handler):
         self.exceptionHandler = handler
 
+    def invalidate_db_caches(self):
+        pisi.db.invalidate_caches()
+        self.initDB()
+
     def signalHandler(self, package, signal, args):
         if signal == "finished":
-            pisi.db.invalidate_caches()
-            self.initDB()
+            self.invalidate_db_caches()
 
     def handler(self, package, exception, args):
         if exception:
             logger.debug("Exception caught by COMAR: %s" % exception)
-            pisi.db.invalidate_caches()
-            self.initDB()
+            self.invalidate_db_caches()
             self.exceptionHandler(exception)
 
     def installPackages(self, packages):
