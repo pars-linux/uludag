@@ -108,8 +108,6 @@ Click Next button to proceed.
                      self.slotAdvanced)
         self.connect(self.ui.userList, SIGNAL("itemDoubleClicked(QListWidgetItem*)"),
                      self.slotEditUser)
-        self.connect(self.ui.userList, SIGNAL("itemClicked(QListWidgetItem*)"),
-                     self.checkUsers)
         self.connect(self.ui.pass2, SIGNAL("returnPressed()"),
                      self.slotReturnPressed)
 
@@ -204,6 +202,7 @@ Click Next button to proceed.
             self.ui.createButton.setEnabled(True)
             if not self.ui.addMoreUsers.isChecked():
                 ctx.mainScreen.enableNext()
+                ctx.mainScreen.enableBack()
         else:
             self.ui.createButton.setEnabled(False)
             if not self.ui.addMoreUsers.isChecked():
@@ -332,10 +331,12 @@ Click Next button to proceed.
 
     def checkUsers(self):
         if self.ui.userList.count() > 0:
+            self.ui.userList.setCurrentRow(0)
             self.ui.deleteButton.setEnabled(True)
             self.ui.editButton.setEnabled(True)
             self.ui.autoLogin.setEnabled(True)
             ctx.mainScreen.enableNext()
+            ctx.mainScreen.enableBack()
             return True
         # there is no user in list so noting to delete
         self.ui.deleteButton.setEnabled(False)
