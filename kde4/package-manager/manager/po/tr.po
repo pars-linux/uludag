@@ -243,7 +243,7 @@ msgstr "(Sınırı kaldırmak için 0 kullanın)"
 
 #: .tmp/ui_settingsdialog.py:348
 msgid "Clear Cache"
-msgstr "&Önbelleği Temizle"
+msgstr "Önbelleği Temizle"
 
 #: .tmp/ui_settingsdialog.py:349
 msgid ""
@@ -252,7 +252,7 @@ msgid ""
 msgstr ""
 "Sabit disk önbelleğinin temizlenmesi ile indirilen ve depolanan \n"
 "tüm paketler silinecektir. Bu işlem sistemde kurulu olan paketleri \n"
-"silmez ve bilgisayarınızın çalışmasını etkilemez."
+"silmeyecek veya bilgisayarınızın çalışmasını etkilemeyecektir."
 
 #: .tmp/ui_settingsdialog.py:351
 msgid "C&lean disk cache now"
@@ -433,27 +433,27 @@ msgstr "%1 paket başarılı şekilde güncellendi."
 
 #: .tmp/statemanager.py:93
 msgid "You have selected the following package(s) to install:"
-msgstr "Aşağıdaki paketleri kurmak üzere seçtiniz:"
+msgstr "Aşağıdaki paket(ler)i kurmak üzere seçtiniz:"
 
 #: .tmp/statemanager.py:94
 msgid "You have selected the following package(s) to removal:"
-msgstr "Aşağıdaki paketleri kaldırmak üzere seçtiniz:"
+msgstr "Aşağıdaki paket(ler)i kaldırmak üzere seçtiniz:"
 
 #: .tmp/statemanager.py:95
 msgid "You have selected the following package(s) to upgrade:"
-msgstr "Aşağıdaki paketleri güncellemek üzere seçtiniz:"
+msgstr "Aşağıdaki paket(ler)i güncellemek üzere seçtiniz:"
 
 #: .tmp/statemanager.py:99
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr "Seçili paketlerin ayrıca kaldırılacak olan ters bağımlılıkları:"
+msgstr "Seçili paket(ler)in ayrıca kaldırılacak olan ters bağımlılıkları:"
 
 #: .tmp/statemanager.py:100
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr "Seçili paketlerin ayrıca güncellenecek olan ek bağımlılıkları:"
+msgstr "Seçili paket(ler)in ayrıca güncellenecek olan ek bağımlılıkları:"
 
 #: .tmp/statemanager.py:123 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
 msgid "Currently your basket is empty."
