@@ -1,8 +1,8 @@
-# translation of de.po to Deutsch
+# translation of de.po to German
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
@@ -16,9 +16,9 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-15 16:23+0300\n"
-"PO-Revision-Date: 2009-07-10 00:25+0200\n"
-"Last-Translator: Heiko Pardus Translator <miltonjohn@web.de>\n"
-"Language-Team: Deutsch <pardus-translators@pardus.org.tr>\n"
+"PO-Revision-Date: 2009-07-15 22:08-0400\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
+"Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -627,8 +627,7 @@ msgid "Begin Install"
 msgstr "Installation beginnen"
 
 #: yali4/gui/Ui/summarywidget.py:70
-msgid ""
-"If you check this, Yalı will install all language packages in this release"
+msgid "If you check this, Yalı will install all language packages in this release"
 msgstr ""
 "Wenn markiert, wird Yali versuchen alle möglichen Sprachpakete für diese "
 "Version zu installieren"
@@ -679,14 +678,17 @@ msgid ""
 "installation. It is now time to relax and learn about some of the features "
 "of Pardus 2009 while it is being installed."
 msgstr ""
+"Hallo, das super-einfache Installations Tool YALI hat soeben mit der Installation von Pardus "
+"begonnen. Jetzt ist es an der Zeit sich zu entspannen und einige Einzelheiten über Pardus 2009 zu erfahren, während die Installation läuft."
 
 #: yali4/gui/descSlide.py:19
+# Zweifel - statt Infrastruktur:  Architektur ? (oder Design)
 msgid ""
 "Pardus 2009 is a Linux distribution that everybody can easily install and "
 "use. With Pardus 2009, you can do anything that you could otherwise do with "
 "other operating systems. With its fast, secure and stable infrastructure, "
 "Pardus opens the path to software libre."
-msgstr ""
+msgstr "Pardus 2009 ist eine Linux Distribution, die jedermann einfach installieren und benutzen kann. Mit Pardus 2009 können Sie alles das machen, was sie auch mit einem anderen Betriebssystem machen könnten. Durch seine schnelle, sichere und stabile Infrastruktur eröffnet Pardus den Weg in Richtung der freien Software."
 
 #: yali4/gui/descSlide.py:20
 msgid ""
@@ -698,7 +700,7 @@ msgid ""
 "add interesting functionality to your view. You can have an analog clock on "
 "your desktop; even more, you can have a real-time weather report, your notes "
 "and RSS feeds right on your desktop."
-msgstr ""
+msgstr "Pardus 2009 bringt den Open Source Desktop KDE in Version 4.2 vorinstalliert. Er bietet ein viel besseres Desktop Erlebnis als Sie es bisher kennen. Nach beenden der Installation können Sie die klassische Ansicht wählen, mit Ikonen für Programme, Dateien, oder Verzeichnisse oder Sie können einige der interessanten Plasma Widgets auf dem Desktop plazieren. Dadurch können Sie Ihren Desktop mit zusätzlichen Funktionen, wie z.B. einer Analoguhr, dem aktuellen Wetterbericht, Notizen, oder RSS Nachrichten, anreichern."
 
 #: yali4/gui/descSlide.py:21
 msgid ""
@@ -708,6 +710,8 @@ msgid ""
 "functionality like grouping and detailed information right on the spot. "
 "Anything you may need on viewing folders, you have it with Dolphin."
 msgstr ""
+"In der Version KDE 4.2 wurde Konqueror durch einen neuen und sehr vielseitigen Dateimanager 'Dolphin' ersetzt. Dolphin ist einfach in der Benutzung, und die Verzeichnisansicht hat mehrere Optionen zur Sortierung, ermöglicht eine Gruppierung ähnlicher Dateien, und zeigt direkt diverse Detailinformationen an. "
+"Mit Dolphin haben Sie alles was Sie benötigen um Dateien und Verzeichnisse zu verwalten."
 
 #: yali4/gui/descSlide.py:22
 msgid ""
@@ -715,13 +719,15 @@ msgid ""
 "formats and you can view all your files without any additional software, "
 "take notes on bookmarks on them."
 msgstr ""
+"In Pardus 2009 wurde Kpdf durch Okular abgelöst. Okular unterstützt viele Dateiformate und ermöglicht das Betrachten der Dateien ohne zusätzliche Programme, "
+"erlaubt Notizen und das Setzen von Lesezeichen."
 
 #: yali4/gui/descSlide.py:23
 msgid ""
 "Pardus 2009 also includes other components updated with KDE 4.2. If you have "
 "used Pardus before, you may want to check out the welcome tour to see what "
 "those changes are."
-msgstr ""
+msgstr "Pardus 2009 beinhaltet auch andere Aktualisierungen im Zusammenhang mit der Version KDE 4.2. Wenn Sie schon vorher Pardus benutzt haben, laden wir Sie zur Willkommens-Tour ein, um die Neuerungen zu erfahren."
 
 #: yali4/gui/descSlide.py:24
 msgid ""
@@ -729,7 +735,7 @@ msgid ""
 "management. TASMA has been replaced with System Manager in Pardus 2009, but "
 "you will still find all these management tools built into the System Manager "
 "interface."
-msgstr ""
+msgstr "Pardus enthält viele eigene Technologien ausgerichtet für die einfache Bedienung und einfaches System-Management. TASMA ist  in Pardus 2009 durch den System Manager ersetzt worden, aber Sie werden immer noch alle diese Management-Tools im neuen System Manager finden."
 
 #: yali4/gui/descSlide.py:25
 msgid ""
@@ -740,6 +746,8 @@ msgid ""
 "package management settings. Even more, Kaptan includes options to set "
 "intelligent search and an online Pardus Beginner's Tour."
 msgstr ""
+"Kaptan (Türkisch für 'Kapitän') begrüsst Sie nach der erfolgten Pardus Installation. "
+"Mit Kaptan können Sie den Desktop konfigurieren: Die Position der Programmleiste festlegen, Wallpaper und Desktop Thema, und Netzwerk Verbindung. Mit Kaptan können Sie auch das Contrib-Depot zur Konfiguration des Paket Managers hinzufügen. Ausserdem können Sie die intelligente Schreibtischsuche aktivieren, und an einer Online Pardus Beginner's Tour teilnehmen."
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -749,6 +757,8 @@ msgid ""
 "after screen of detailed configuration options. After package installations, "
 "all you need to do is to start the applications. It is all that easy!"
 msgstr ""
+"In den Paket-Depots von Pardus haben Sie die Auswahl von hunderten von Paketen, aus denen Sie die gewünschten mit wenigen Mausklicks einfach installieren können. Mit dem Paketmanager können Sie "
+"PiSi-Pakete mit einem Mausklick installieren, und brauchen nicht durch Bildschirme mit umfangreichen Konfigurationseinstellungen zu gehen. Das einzige, was Sie nach der Installation machen können, ist einfach das Programm zu benutzen. So einfach !"
 
 #: yali4/gui/descSlide.py:27
 msgid ""
@@ -757,6 +767,8 @@ msgid ""
 "easier. You can use the system managers for that and you can even add to "
 "your desktop as widgets managers that you use frequently."
 msgstr ""
+"Neue Benutzer einzurichten, Bootreihenfolge ändern, Systemdienste starten oder anhalten, oder das System in einen früheren Zustand zurück zu versetzen, ist nie einfacher gewesen. "
+"Sie können den entsprechenden Manager aus dem System-Manager aufrufen, und wenn Sie ihn oft benutzen können Sie ihn auch auf dem Desktop als Widget ablegen."
 
 #: yali4/gui/descSlide.py:28
 msgid ""
@@ -766,6 +778,8 @@ msgid ""
 "server) for different connections with the profiles you create. Choosing a "
 "different connection profile requires just two clicks."
 msgstr ""
+"Sich mit einem Funk- oder Kabel-Netzwerk zu verbinden ist in Pardus 2009 ganz einfach mit der Auswahl des entsprechenden Verbindungsprofils erledigt. "
+"Der Netzwerk Manager ermöglicht das speichern unterschiedlicher Konfigurationen (z.B. statischer IP, verschiedene DNS Server) unter verschiedenen Profilen. Die Auswahl eines anderen Profils ist mit nur zwei Mausklicks getan."
 
 #: yali4/gui/descSlide.py:29
 msgid ""
@@ -777,6 +791,8 @@ msgid ""
 "player devices, you can drag and drop songs to your players without the need "
 "for any external device drivers."
 msgstr ""
+"In Pardus 2009 hat Amarok nicht nur ein neues Äusseres bekommen, es hat sich auch im Inneren viel geändert. Man kann mit ihm viel mehr machen, als nur Musik hören. "
+"Während man die Musik hört kann man jetzt die Lyrics lesen und, mit Hilfe der Wikipedia, mehr über den Sänger oder Komponist erfahren, oder das Feature der intelligenten Playliste benutzen, um Lieder zu auf mehrere Weise zu sortieren. Da Amarok transparent mit den meisten Musikplayern funktioniert, können Sie die Lieder mit 'drag and drop' einfach auf den Player kopieren, ohne zusätzliche Gerätetreiber installieren zu müssen."
 
 #: yali4/gui/descSlide.py:30
 msgid ""
@@ -787,6 +803,8 @@ msgid ""
 "Pardus default installation. Enjoy a fast and secure internet with the new "
 "Mozilla Firefox 3.5."
 msgstr ""
+"Mozilla Firefox ist der bevorzugte Webbrowser, wegen seiner Schnelligkeit, Sicherheit und Flexibilität. Durch den Addon - Support und einer *SEHR* reichen Auswahl von Plugins, können Sie die Funktionalität von Mozilla Firefox leicht erweitern. "
+"Viele populäre Webseiten und auch Pardus-bezogene Webseiten sind schon in den Lesezeichen bei der Standardinstallation in Pardus enthalten. Geniessen Sie ein schnelles und sicheres Internet mit Mozilla Firefox 3.5."
 
 #: yali4/gui/descSlide.py:31
 msgid ""
@@ -796,6 +814,8 @@ msgid ""
 "and follow RSS feeds. Using Kopete, you can connect to popular networks like "
 "MSN and GTalk, and chat online with your friends."
 msgstr ""
+"Kontakt zu Freunden und Bekannten zu erhalten ist in Pardus 2009 wirklich einfach und transparent integriert in den Desktop. Mit dem Programm 'Kontact' können Sie Emails senden und empfangen, Termine verwalten, Adressbücher einrichten, Notizen machen, und Nachrichten mit RSS Feeds verfolgen. "
+"Mit 'Kopete' können Sie sich mit populären Netzwerken, wie MSN und GTalk verbinden, und online mit Ihren Freunden chatten."
 
 #: yali4/gui/descSlide.py:32
 msgid ""
@@ -805,27 +825,26 @@ msgid ""
 "workplace or school. With OpenOffice.org, you can view and edit documents "
 "created in other office suites and share your documents with friends and "
 "contacts that are using other office applications."
-msgstr ""
+msgstr "Die weltführende freie Office Suite OpenOffice.org bringt Textverarbeitung, Tabellenkalkulation, ein Präsentationsprogramm, Datenbank, Formeleditor und ein Grafiktool, auf den Desktop und hilft Ihnen zu Hause, bei der Arbeit, oder für die Schule. Mit OpenOffice.org können Sie Dokumente anschauen und ändern, die in anderen Office -Suites erstellt wurden, und sie können Ihre Dokumente austauschen mit Freunden und Kontakten, die andere Office Programme benutzen."
 
 #: yali4/gui/descSlide.py:33
-#, fuzzy
+# Zweifel - umfangreichen Funktionsumfang - klingt nicht so gut
 msgid ""
 "Gimp is an advanced image editing software. Allowing creation and editing of "
 "common graphics and image file formats, it has abilities that professional "
 "graphics artists and designers need and an ability to integrate new filters "
 "easily with its addon system."
 msgstr ""
-"Gimp ist ein leistungsstarkes Bildbearbeitungsprogramm und ist bei Pardus "
-"2009 vorinstalliert. Gimp ermöglicht die Bearbeitung aller gängigen "
-"Bildformate. Durch den umfangreichen Funktionsumfang, erfüllt GIMP sogar die "
-"Anforderungen professioneller Künstler und Designer .\n"
+"Gimp ist ein leistungsstarkes Bildbearbeitungsprogramm, welches die Bearbeitung aller gängigen "
+"Bildformate ermöglicht. Es hat einen grossen Funktionsumfang und erfüllt die "
+"Anforderungen professioneller Künstler und Designer, und kann zusätzliche Filter leicht mit seinem AddOn System einbinden."
 
 #: yali4/gui/descSlide.py:34
 msgid ""
 "Pardus, along with the preinstalled games, has many games in its "
 "repositories, allowing hours of fun with various kinds of games available "
 "through the package manager."
-msgstr ""
+msgstr "Pardus hat ausser den vorinstallierten Spielen in den Depots noch viele mehr zu bieten. Mit der einfachen Installation durch den Paket-Manager kann man sich auf diese Weise viele spannende Stunden sichern."
 
 #: yali4/gui/descSlide.py:35
 msgid ""
@@ -837,6 +856,9 @@ msgid ""
 "printer in, and it is set. Pardus will install the correct driver and set "
 "everything accordingly right away."
 msgstr ""
+"Pardus 2009 ist darauf ausgerichtet, die meiste PC-Hardware sofort zu unterstützen. "
+"Nach der Installation, wenn Sie Pardus hochfahren, wird die Grafikkarte und Soundkarte erkannt, und die Netzwerk Hardware, sei es Kabellos oder per kabel, bereit für eine Verbindung. "
+"Einen Drucker anzuschliessen kann auch nicht einfacher sein. Alles was Sie tun müssen ist, ihn anzuschliessen, schon wird er konfiguriert. Pardus wird automatisch den korrekten Gerätetreiber installieren und sofort die entsprechende Konfiguration durchführen."
 
 #: yali4/gui/descSlide.py:36
 msgid ""
@@ -847,6 +869,8 @@ msgid ""
 "you. If you need support, or if you want to support, your first stop should "
 "be www.ozgurlukicin.com"
 msgstr ""
+"Wir haben ein Support Portal das Ihnen für Pardus zur Seite steht und eventuell Hilfestellung leisten kann, falls Sie ein Problem haben. Im Portal 'Özgürlükİçin', das von Freiwilligen betrieben wird, finden Sie Anleitungen, und Informationen zu Programmen und Spielen. Falls Sie eine Frage haben, steht Ihnen ein Forum zur Verfügung. "
+"Wenn Sie Hilfe benötigen, oder wenn Sie anderen helfen möchten, sollte Ihr erster Anlaufpunkt www.ozgurlukicin.com sein."
 
 #: yali4/gui/DiskWidgets.py:87
 msgid "Manual Partitioning selected."
@@ -898,8 +922,7 @@ msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%"
 "(fsType)s</b>."
@@ -1215,8 +1238,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
+msgstr "<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1737,7 +1759,6 @@ msgid "Summary of your installation..."
 msgstr "Zusammenfassung von Ihrer Installation..."
 
 #: yali4/gui/ScrSummary.py:45
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Install Summary</font>\n"
@@ -1751,20 +1772,19 @@ msgstr ""
 "<font size=\"+2\">Installationszusammenfassung</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Hier können Sie die von Ihnen gewählten Installtionsoptionen sehen, bevor "
-"die Installation startet.\n"
+"Hier können Sie die von Ihnen gewählten Installationsoptionen sehen, bevor "
+"die Installation durchgeführt wird.\n"
 "</p>\n"
 "</font>\n"
 
 #: yali4/gui/ScrSummary.py:72
-#, fuzzy
 msgid "<b><p>This action will reboot your system.</p></b>"
-msgstr "<b><p>Dieser <b> klick</b> wird Ihr System neu starten!</p></b>"
+msgstr "<b><p>System neu starten!</p></b>"
 
 #: yali4/gui/ScrSummary.py:87
-#, fuzzy, python-format
+#, python-format
 msgid "Install starts in: <b>%s seconds</b>"
-msgstr "Installation startet nach: <b>%s Sek.</b>"
+msgstr "Installation startet in: <b>%s Sekunden</b>"
 
 #: yali4/gui/ScrSummary.py:122
 msgid "Keyboard Settings"
@@ -1794,7 +1814,7 @@ msgid "User %s (<b>%s</b>) added."
 msgstr "Benutzer %s (<b>%s</b>) hinzugefügt."
 
 #: yali4/gui/ScrSummary.py:137
-#, fuzzy, python-format
+#, python-format
 msgid "User %s (<b>%s</b>) added with <u>administrator privileges</u>."
 msgstr "Benutzer %s (<b>%s</b>) mit <u>Adminrechten</u> hinzugefügt."
 
@@ -1816,55 +1836,53 @@ msgid "Automatic Partitioning selected."
 msgstr "Automatische Partitionierung ausgewählt."
 
 #: yali4/gui/ScrSummary.py:162
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MBs</b> as <b>%(fs)s</b>."
 msgstr ""
 "Partition <b>%(partition)s</b> zu Gerät <b>%(device)s</b> mit <b>%(size)s "
-"MB</b> als <b>%(fs)s</b><b>hinzugefügt</b>."
+"MBs</b> als <b>%(fs)s</b><b>hinzugefügt</b>."
 
 #: yali4/gui/ScrSummary.py:180
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Automatische Partitionierung (Grössenänderungs-Methode) ausgewählt."
 
 #: yali4/gui/ScrSummary.py:196
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
 "(resizeTo)s MBs</b>, previous size was <b>%(currentSize)s MBs</b>."
 msgstr ""
 "Grösse der Partition <b>%(partition)s - %(currentFs)s</b> <b>geändert</b> zu "
-"<b>%(resizeTo)s MB</b>, vorherige Grösse war <b>%(currentSize)s MB</b>"
+"<b>%(resizeTo)s MBs</b>, vorherige Grösse war <b>%(currentSize)s MBs</b>"
 
 #: yali4/gui/ScrSummary.py:198
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
 "with <b>%(size)s MBs</b> as <b>%(fs)s</b>."
 msgstr ""
 "Partition <b>%(newPartition)s</b> zu Gerät <b>%(device)s</b> mit <b>%(size)s "
-"MB</b> als <b>%(fs)s</b> <b>hinzugefügt</b>."
+"MBs</b> als <b>%(fs)s</b> <b>hinzugefügt</b>."
 
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
 msgstr "Bootloader-Einstellungen"
 
 #: yali4/gui/ScrSummary.py:215
-#, fuzzy, python-format
+#, python-format
 msgid "GRUB will be installed to <b>%s</b>."
-msgstr "GRUB wird installiert nach <b>%s</b>"
+msgstr "GRUB wird installiert nach <b>%s</b>."
 
 #: yali4/gui/ScrSummary.py:217
-#, fuzzy
 msgid "GRUB will not be installed."
-msgstr "GRUB wird nicht installiert"
+msgstr "GRUB wird nicht installiert."
 
 #: yali4/gui/ScrSummary.py:241
 msgid "Before Starting"
@@ -1898,9 +1916,8 @@ msgid "Formatting..."
 msgstr "Am formatieren..."
 
 #: yali4/gui/ScrSummary.py:273 yali4/gui/ScrSummary.py:285
-#, fuzzy
 msgid "Writing disk tables..."
-msgstr "Laufwerktabellen werden beschrieben..."
+msgstr "Laufwerktabellen werden geschrieben..."
 
 #: yali4/gui/ScrSummary.py:275
 #, fuzzy
@@ -1967,8 +1984,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:233
 msgid "Username exists, choose another one!"
-msgstr ""
-"Dieser Benutzername ist bereits vergeben, bitte wählen Sie einen anderen."
+msgstr "Dieser Benutzername ist bereits vergeben, bitte wählen Sie einen anderen."
 
 #: yali4/gui/ScrUsers.py:236
 msgid "Username contains invalid characters!"
@@ -2189,8 +2205,7 @@ msgstr "Neue Partition wird erstellt..."
 
 #: yali4/installer.py:392
 msgid "Failed to use partition for automatic installation "
-msgstr ""
-"Benutzung der Partition für automatische Partitionierung fehlgeschlagen "
+msgstr "Benutzung der Partition für automatische Partitionierung fehlgeschlagen "
 
 #: yali4/installer.py:514
 msgid "Setting Hostname..."
@@ -2426,147 +2441,3 @@ msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis wird erstellt.."
 msgid "Not enough free space on %s to create new partition"
 msgstr "Nicht ausreichend Platz auf %s für eine neue Partition vorhanden"
 
-# habe "integriert" dazugeschrieben, damit sie nicht glauben, sie muessten VORHER ein anderes Programm ausfuehren
-#~ msgid ""
-#~ "Welcome! Our improved setup tool YALI will help you with the installation "
-#~ "of Pardus 2009. YALI will help install Pardus 2009 quickly and easily "
-#~ "following the partitioning of disk(s) using the intelligent partitioning "
-#~ "tool.\n"
-#~ msgstr ""
-#~ "Willkommen! Unser verbessertes Installations-Tool YALI wird Ihnen bei der "
-#~ "Installation von Pardus 2009 helfen. Mit YALI können Sie Pardus 2009 "
-#~ "schnell und einfach installieren, nachdem Sie die Festplatte(n) mit dem "
-#~ "integrierten intelligenten Partitions-Tool vorbereitet haben.\n"
-
-#~ msgid ""
-#~ "Our Kaptan will show you the way after the installation. You can easily "
-#~ "add additional repositories and manage basic settings like mouse, "
-#~ "wallpaper and panel using in Kaptan.\n"
-#~ msgstr ""
-#~ "Unser Kaptan wird Sie nach der Installation führen. Sie können mit Kaptan "
-#~ "auf leichte Weise weitere Depots hinzufügen und die Grundeinstellungen "
-#~ "wie Maus, Hintergrundbild, Webcam und Panel verwalten.\n"
-
-#~ msgid ""
-#~ "Tasma is the management and settings center of Pardus. Configuration "
-#~ "operations including but not limited to adding a new user or hardware (e."
-#~ "g. printer, monitor) to the system, management of visual settings ranging "
-#~ "from desktop icons to fonts are all brought together under Tasma's "
-#~ "interface.\n"
-#~ msgstr ""
-#~ "Tasma ist das Management- und Konfigurationscenter von Pardus. Sie können "
-#~ "mit Tasma vielfältige Konfigurationen vornehmen. So ist das Hinzufügen "
-#~ "von neuen Benutzern, das Verwalten von Hardware (z.B. Drucker, Monitor), "
-#~ "das Management von optischen Einstellungen von den Desktop-Icons bis zu "
-#~ "den Schriftarten alles in Tasma untergebracht. Und noch vieles mehr!\n"
-
-#~ msgid ""
-#~ "There are thousands of packages in Pardus software repositories. You can "
-#~ "install, remove or update those packages and programs with just two "
-#~ "clicks using the Package Manager!\n"
-#~ msgstr ""
-#~ "Es gibt tausende Pakete in den Pardus Software-Depots. Durch nur zwei "
-#~ "Mausklicks können Sie mit dem Paket-Manager Programme installieren, "
-#~ "deinstallieren oder aktualisieren!\n"
-
-#~ msgid ""
-#~ "Network Applet helps connecting to local networks and Internet easily and "
-#~ "securely. Thanks to the profile support it has, it will make it easier to "
-#~ "reconnect to cable or wireless connections used before, remembering the "
-#~ "settings used.\n"
-#~ msgstr ""
-#~ "Das Netzwerk-Applet hilft, sich auf einfache und sichere Weise mit dem "
-#~ "lokalen Netzwerk oder Internet zu verbinden. Es können Profile "
-#~ "gespeichert werden, die es einfacher machen, sich wieder mit zuvor "
-#~ "benutzten Netzen zu verbinden.\n"
-
-#~ msgid ""
-#~ "Mozilla Firefox, with its speed, constant development and many advanced "
-#~ "features, will help securely surf the Internet. Pardus 2009 includes "
-#~ "Mozilla Firefox 3.0, and you can enrich Firefox with thousands of "
-#~ "extensions.\n"
-#~ msgstr ""
-#~ "Mozilla Firefox, mit seiner Schnelligkeit, ständigen Weiterentwicklung "
-#~ "und vielen neuen Funktionen wird Ihnen helfen im Internet sicher zu "
-#~ "surfen. Sie können den in Pardus 2009 enthaltenen Mozilla Firefox 3.0 mit "
-#~ "tausenden von Erweiterungen anreichern.\n"
-
-#~ msgid ""
-#~ "Kontact, KDE Personal Information Manager, helps you manage all your "
-#~ "emails, RSS feeds, diaries, to-do listes and blog entries in one combined "
-#~ "interface. Kontact, with its Groupware feature, will be your best friend "
-#~ "at work.\n"
-#~ msgstr ""
-#~ "Kontact, der persönliche Informations-Manager von KDE, hilft Ihnen bei "
-#~ "der Verwaltung Ihrer E-Mail-Nachrichten, RSS-Abos, Aufgaben, (TODO)-"
-#~ "Listen und Blogeinträgen durch eine kombinierte Benutzerschnittstelle. "
-#~ "Durch die Groupware-Funktionalität wird Kontact Ihr bester Freund bei der "
-#~ "Arbeit.\n"
-
-#~ msgid ""
-#~ "OpenOffice.org, actively being used by hundreds of thousands of "
-#~ "institutes and millions of users around the world, is an office software "
-#~ "package including a word processor, a spreadsheet application, a "
-#~ "presentation viewer and editor, a graphics editor and a database "
-#~ "application.\n"
-#~ msgstr ""
-#~ "OpenOffice.org, ein von tausenden Instituten und Millionen Anwendern "
-#~ "genutztes Office-Paket, enthält einen Word-Prozessor, eine "
-#~ "Tabellenkalkulation, einen Präsentations-Viewer und -Editor, einen "
-#~ "grafischen Editor und eine Datenbank-Anwendung.\n"
-
-#~ msgid ""
-#~ "Amarok is a convenient, functional, and advanced media player. It can "
-#~ "fetch album covers and lyrics for you, and thanks to its Last.FM support, "
-#~ "can suggest similar media, bringing even more possibilities.\n"
-#~ msgstr ""
-#~ "Amarok ist ein komfortabler, funktioneller und leistungsstarker Media "
-#~ "Player. Er ruft für Sie Album Cover und Songtexte ab, und dank der Last."
-#~ "FM-Unterstützung können gleichartige Musikstücke angezeigt werden. \n"
-
-#~ msgid ""
-#~ "Kaffeine is the default video player of Pardus 2009. It has a high "
-#~ "performance in playing DVDs, VCDs, and countless video file formats, "
-#~ "including, but not limited to, MPEG, AVI and DivX. If you have a digital "
-#~ "TV card, you can record your favourite TV programs using Kaffeine!\n"
-#~ msgstr ""
-#~ "Kaffeine ist der Standard-Videoplayer in Pardus 2009. Er ist "
-#~ "leistungsstark bei der Wiedergabe von DVDs, VCDs und vielen zahlreichen "
-#~ "Videoformaten wie z.B. MPEG, AVI und DivX. Falls Sie eine digitale TV-"
-#~ "Karte haben, können Sie mit Kaffeine Ihre TV-Programme aufzeichnen!\n"
-
-#~ msgid ""
-#~ "You can use multiple accounts in various instant messaging services like "
-#~ "MSN, Yahoo!, ICQ, AIM, GTalk and Jabber, and can talk to your friends in "
-#~ "different networks using Kopete.\n"
-#~ msgstr ""
-#~ "Mit Kopete kann man sich über verschiedene Instant Messenger-Dienste wie "
-#~ "MSN, Yahoo!, ICQ, AIM, GTalk und Jabber mit Freunden unterhalten. Das "
-#~ "gleichzeitige Verwalten von mehreren Konten stellt für Kopete kein "
-#~ "Problem dar. \n"
-
-#~ msgid ""
-#~ "Copying CDs (or DVDs), creating data or audio CDs, creating ISO images "
-#~ "and burning CD/DVD images to discs are just a few of the things you can "
-#~ "do with K3b.\n"
-#~ msgstr ""
-#~ "Kopieren Sie CDs (oder DVDs), erstellen Sie Daten- oder Audio-CDs, "
-#~ "erstellen und brennenSie ISO-Image- und CD/DVD-Image-Dateien auf Discs .\n"
-
-# Klemens: Zweifel - habe hier frecherweise den deutschen Forumlink dazu ergänzt
-# Stefan: Ich hab Pardususer.de wieder entfernt, da ich den offiziellen Weg einschlagen habe (Bugtracking) - ich will Ärger vermeiden
-# Heiko
-# Ich denke wir könnten aber Pardus-forum.org hinzufügen, da offiziell, (ausser LF verhandelt über den Offical-charakter für Pardususer.de) Ausserdem denke ich ist es für Neuankömmlinge vllt. abschreckend mit nur türkisch sprachigen Seiten abgesehen vom Worldforum.
-#  :-)
-#~ msgid ""
-#~ "You can find HOW-TOs, tutorials and package introductions in our "
-#~ "community portal www.ozgurlukicin.com. If you happen to have any problems "
-#~ "with Pardus 2009, you can get support using the forum pages and the "
-#~ "#pardus room in IRC Freenode server (and you can use Konversation for "
-#~ "that).\n"
-#~ msgstr ""
-#~ "Sie können auf unserer Community www.ozgurlukicin.com Anleitungen, "
-#~ "Tutorials und Paket-Vorstellungen finden. Sollten Sie Probleme mit Pardus "
-#~ "2009 bekommen, dann können Sie Support auf unseren Forum-Seiten und "
-#~ "#pardus Raum im IRC Freenode Server erhalten (z.B. mit dem Programm "
-#~ "Konversation).\n"
