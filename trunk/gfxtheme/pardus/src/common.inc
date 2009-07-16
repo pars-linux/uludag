@@ -407,6 +407,15 @@
       } if
     } ifelse
 
+    v_impaired 1 ge {
+      "braille=1 " bc.cmd dup length add sprintf
+    } if
+
+    v_impaired 2 ge {
+      "linemode=1 " bc.cmd dup length add sprintf
+    } if
+  } if
+
     config.lang {
       %config.lang "en_US" ne {
       %  % config.lang "lang=%s " bc.cmd dup length add sprintf
@@ -460,15 +469,6 @@
       } if
 
     } if
-
-    v_impaired 1 ge {
-      "braille=1 " bc.cmd dup length add sprintf
-    } if
-
-    v_impaired 2 ge {
-      "linemode=1 " bc.cmd dup length add sprintf
-    } if
-  } if
 
   xmenu.dud {
     xmenu.dud .xm_current get .dud_url eq {
