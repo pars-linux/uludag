@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-16 15:36+0300\n"
-"PO-Revision-Date: 2009-07-16 11:24+0200\n"
+"PO-Revision-Date: 2009-07-16 14:52+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -642,7 +642,6 @@ msgid "Debug"
 msgstr "Felsök"
 
 #: yali4/gui/descSlide.py:18
-#, fuzzy
 msgid ""
 "Hello, there. The easiest-ever install tool YALI has begun Pardus "
 "installation. It is now time to relax and learn about some of the features "
