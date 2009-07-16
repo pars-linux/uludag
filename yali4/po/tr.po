@@ -2049,7 +2049,7 @@ msgstr "Devam etmek istiyor musunuz ?"
 
 #: yali4/gui/YaliDialog.py:153
 msgid "Eject CD"
-msgstr ""
+msgstr "CD'yi çıkart"
 
 #: yali4/gui/YaliDialog.py:179 yali4/gui/YaliDialog.py:196
 msgid "Ok"
@@ -2057,11 +2057,11 @@ msgstr "Tamam"
 
 #: yali4/gui/YaliDialog.py:180
 msgid "Please insert a new CD and then click Ok"
-msgstr ""
+msgstr "Lütfen yeni bir CD taktıktan sonra Tamam'a basın"
 
 #: yali4/gui/YaliDialog.py:182
 msgid "Insert New CD"
-msgstr ""
+msgstr "Yeni CD"
 
 #: yali4/gui/YaliDialog.py:194
 msgid "Information"
