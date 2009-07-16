@@ -74,6 +74,7 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.statusInfo.setText(i18n("--  / --"))
         self.timeLabel.setText(i18n("Time remaining:"))
         self.timeRemaining.setText(i18n("--:--:--"))
+        self.timeRemaining.show()
 
     def cancel(self):
         self.actionLabel.setText(i18n("<b>Cancelling operation...</b>"))
@@ -83,3 +84,4 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
     def repoOperationView(self):
         for widget in [self.statusLabel, self.statusInfo, self.timeLabel, self.timeRemaining]:
             widget.setText("")
+        self.timeRemaining.hide()
