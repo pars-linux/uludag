@@ -245,7 +245,7 @@ class NmApplet(plasmascript.Applet):
 
             # Network UP
             if (str(args[1]) == "up"):
-                msg = i18n("Connected to <b>%1</b> IP: %2" , args[0], args[2])
+                msg = i18n("Connected to <b>%1</b> IP: %2" , unicode(args[0]), args[2])
                 lastState = CONNECTED
 
                 if not connection in self.connectedDevices:
@@ -256,7 +256,7 @@ class NmApplet(plasmascript.Applet):
 
             # Network CONNECTING
             elif (str(args[1]) == "connecting"):
-                msg = i18n("Connecting to <b>%s</b> .." % args[0])
+                msg = i18n("Connecting to <b>%s</b> .." % unicode(args[0]))
                 lastState = CONNECTING
 
             # Network DOWN
