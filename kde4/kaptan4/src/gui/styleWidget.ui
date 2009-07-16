@@ -86,12 +86,12 @@
          </property>
          <item>
           <property name="text">
-           <string>Desktop</string>
+           <string>Desktop view (KDE4 Style)</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>Folderview</string>
+           <string>Folder view (KDE3 Style)</string>
           </property>
          </item>
         </widget>

@@ -33,9 +33,9 @@
 QStackedWidget#mainStack {
 	color: white;
      border-style: outset;
-     border-width: 2px;
-     border-radius: 14px;
-     border-color: rgba(255, 255, 255, 122);
+     border-width: 1px;
+     border-radius: 10px;
+     border-color: rgba(255, 255, 255, 152);
 
 }
 </string>
@@ -87,6 +87,9 @@ QStackedWidget#mainStack {
             <height>80</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">margin-left:14px;</string>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -105,7 +108,7 @@ QStackedWidget#mainStack {
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>140</width>
+            <width>120</width>
             <height>20</height>
            </size>
           </property>
@@ -140,9 +143,12 @@ QStackedWidget#mainStack {
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">QStackedWidget#mainStack{background-color:rgba(255, 255, 255, 122);
+           <string notr="true">QStackedWidget#mainStack{background-color:rgba(255, 255, 255,200);
 margin: 10px;
 }</string>
+          </property>
+          <property name="lineWidth">
+           <number>0</number>
           </property>
           <property name="currentIndex">
            <number>0</number>
@@ -157,8 +163,7 @@ margin: 10px;
         <item>
          <widget class="QPushButton" name="buttonCancel">
           <property name="styleSheet">
-           <string notr="true">background-color: rgba(255, 255, 255, 122);
-</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Cancel</string>
@@ -181,8 +186,7 @@ margin: 10px;
         <item>
          <widget class="QPushButton" name="buttonBack">
           <property name="styleSheet">
-           <string notr="true">background-color: rgba(255, 255, 255, 122);
-</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Back</string>
@@ -192,8 +196,7 @@ margin: 10px;
         <item>
          <widget class="QPushButton" name="buttonNext">
           <property name="styleSheet">
-           <string notr="true">background-color: rgba(255, 255, 255, 122);
-</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Next</string>
@@ -203,8 +206,7 @@ margin: 10px;
         <item>
          <widget class="QPushButton" name="buttonFinish">
           <property name="styleSheet">
-           <string notr="true">background-color: rgba(255, 255, 255, 122);
-</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Finish</string>
