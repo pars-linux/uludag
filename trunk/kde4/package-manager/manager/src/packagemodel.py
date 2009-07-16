@@ -164,3 +164,6 @@ class PackageModel(QAbstractTableModel):
 
     def search(self, text):
         return self.iface.search(text, self.packages)
+
+    def downloadSize(self):
+        return self.iface.calculate_download_size(self.selectedPackages() + self.extraPackages())
