@@ -36,7 +36,10 @@ class ServiceIface:
     def restart(self, service):
         # some services does not have reload method in their service
         # scripts, so it should be fixed in Comar itself.
-        self.link.System.Service[service].reload( async=self.handler )
+        def handler(package, exception, args):
+            if not exception:
+                self.link.System.Service[service].start(async=self.handler)
+        self.link.System.Service[service].stop(async=handler)
 
     def setEnable(self, service, state):
         states = {True:'on', False:'off'}
