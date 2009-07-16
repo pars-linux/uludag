@@ -107,7 +107,7 @@
       </widget>
      </item>
      <item row="2" column="0">
-      <widget class="QLabel" name="completedInfo_3">
+      <widget class="QLabel" name="timeLabel">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -167,7 +167,7 @@
       </widget>
      </item>
      <item row="0" column="0">
-      <widget class="QLabel" name="completedInfo_3_2_2">
+      <widget class="QLabel" name="operationLabel">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>

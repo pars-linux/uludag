@@ -156,6 +156,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.progressDialog.reset()
         self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
         if self.isVisible():
+            if operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
+                self.progressDialog.repoOperationView()
             self.progressDialog.show()
         self.progressDialog.enableCancel()
 
