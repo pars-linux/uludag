@@ -104,10 +104,9 @@ class ProgressPage(QtGui.QWidget):
     def addOperation(self, name, steps):
         "Adds a new operation to the progress page"
         operation = Operation(self, name, steps)
-        self.progressLayout.addLayout(operation)
+        self.progressLayout.addWidget(operation)
         self.operations.append(operation)
         self.steps2 += steps
-        self.column += 1
 
     def message(self, event):
         self.warning = QtGui.QMessageBox.warning(self, i18n("Warning!"), event, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel, QtGui.QMessageBox.NoButton)
@@ -131,10 +130,11 @@ class ProgressPage(QtGui.QWidget):
             else:
                 self.active -= 1
 
-class Operation(QtGui.QHBoxLayout):
+class Operation(QtGui.QWidget):
 
     def __init__(self, parent, title, steps):
-        QtGui.QHBoxLayout.__init__(self, None)
+        QtGui.QWidget.__init__(self, parent)
+        self.horizantalLayout = QtGui.QHBoxLayout(self)
         self.title = title
         self.steps = steps
         self.mother = parent
@@ -142,15 +142,15 @@ class Operation(QtGui.QHBoxLayout):
         self.warnings = 0
         self.errors = 0
         self.OKs = 0
-        self.icon = QtGui.QLabel(parent)
+        self.icon = QtGui.QLabel(self)
         self.icon.show()
         self.icon.setMinimumSize(QtCore.QSize(30, 30))
         self.icon.setMaximumSize(QtCore.QSize(30, 30))
-        self.addWidget(self.icon)
-        self.text = QtGui.QLabel(parent)
+        self.horizantalLayout.addWidget(self.icon)
+        self.text = QtGui.QLabel(self)
         self.text.setText(title)
         self.text.show()
-        self.addWidget(self.text)
+        self.horizantalLayout.addWidget(self.text)
 
     def start(self):
         pix = KIconLoader().loadIcon("1rightarrow", KIconLoader.Toolbar)
@@ -410,7 +410,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
             warning(self.progresspage, unicode(i18n("Total size of files you've chosen is %(size)d MB, but you have only %(free)d MB of free space!")) % arguments)
             return
 
-
+        spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.progresspage.progressLayout.addItem(spacerItem)
         # Applying Changes:
         # Wallpaper:
         if ctx.options.has_key("Wallpaper Path"):
