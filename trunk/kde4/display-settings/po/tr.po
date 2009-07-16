@@ -301,7 +301,7 @@ msgid ""
 "this problem, you can specify your monitor's dimensions here."
 msgstr ""
 "Eğer monitörünüzün fiziksel boyutları algılanmadıysa, yazı tipler ve diğer "
-"görsel nesneler olması gerekenden daha büyük ya da küçük görünebilit. Bu "
+"görsel nesneler olması gerekenden daha büyük ya da küçük görünebilir. Bu "
 "sorunu çözmek için monitörünüzün boyutlarını buradan seçebilirsiniz."
 
 #: .tmp/ui_output.py:239
