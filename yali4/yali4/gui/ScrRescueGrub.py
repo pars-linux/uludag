@@ -72,6 +72,7 @@ loader.
         self.connect(self.ui.deviceList, SIGNAL("itemClicked(QListWidgetItem*)"), self.slotSelect)
 
     def shown(self):
+        ctx.mainScreen.disableBack()
         yali4.storage.setOrderedDiskList()
         ctx.debugger.log("Disks BIOS Boot order : %s " % ','.join(ctx.installData.orderedDiskList))
 
