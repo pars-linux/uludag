@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-16 23:40+0300\n"
-"PO-Revision-Date: 2009-07-16 14:52+0200\n"
+"PO-Revision-Date: 2009-07-16 22:47+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -2061,7 +2061,7 @@ msgstr "Vill du fortsätta?"
 
 #: yali4/gui/YaliDialog.py:153
 msgid "Eject CD"
-msgstr ""
+msgstr "Mata ut skivan"
 
 #: yali4/gui/YaliDialog.py:179 yali4/gui/YaliDialog.py:196
 msgid "Ok"
@@ -2069,11 +2069,11 @@ msgstr "Ok"
 
 #: yali4/gui/YaliDialog.py:180
 msgid "Please insert a new CD and then click Ok"
-msgstr ""
+msgstr "Vänligen sätt i en ny CD och klicka sedan Ok"
 
 #: yali4/gui/YaliDialog.py:182
 msgid "Insert New CD"
-msgstr ""
+msgstr "Sätt i en ny CD"
 
 #: yali4/gui/YaliDialog.py:194
 msgid "Information"
