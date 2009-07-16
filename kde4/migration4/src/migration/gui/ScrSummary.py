@@ -45,17 +45,17 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Selected Options
         content.append(subject % ki18n("Options Settings").toString())
-        for option in ctx.options:
-            content.append(item % ki18n("Selected Options: <b>%s</b>").toString() % option)
+        for key,value in ctx.options.items():
+            content.append(item % ki18n("Selected Option %s : <b>%s</b>").toString() % (key, value))
         content.append(end)
 
         #Selected Files Destinations
         content.append(subject % ki18n("Destination Settings").toString())
         if ctx.fileOptions.has_key("links"):
             for link in ctx.fileOptions["links"]:
-                content.append(item % ki18n("Selected Destination: <b>Copy Link to %s</b>").toString() % link)
+                content.append(item % ki18n("Linked Destination to: <b> %s </b>").toString() % link)
         elif ctx.fileOptions.has_key("copy destination"):
-            content.append(item % ki18n("Selected Destination: <b>Copy Destination to %s</b>").toString() % ctx.fileOptions["copy destination"])
+            content.append(item % ki18n("Copied Destination to: <b> %s </b>").toString() % ctx.fileOptions["copy destination"])
 
         content.append(end)
 
@@ -63,4 +63,4 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.textSummary.setHtml(content)
 
     def execute(self):
-        return True
+        return (True, None)
