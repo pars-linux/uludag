@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-15 14:13+0300\n"
+"POT-Creation-Date: 2009-07-16 15:58+0300\n"
 "PO-Revision-Date: 2009-07-14 20:05-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <de@li.org>\n"
@@ -17,22 +17,146 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/packagedelegate.py:116
-msgid "Description:"
-msgstr "Beschreibung:"
+#: .tmp/ui_basketdialog.py:75
+msgid "Basket"
+msgstr "Korb"
 
-# oder Version?
-#: .tmp/packagedelegate.py:128
-msgid "Release:"
-msgstr "Veröffentlichung:"
+#: .tmp/ui_basketdialog.py:76
+msgid "Selected package(s) for install:"
+msgstr "Ausgewählte Pakete zur Installation:"
 
-#: .tmp/packagedelegate.py:138
-msgid "Repository:"
-msgstr "Depot:"
+#: .tmp/ui_basketdialog.py:77 .tmp/statemanager.py:98
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr "Zusätzlich erforderliche Pakete:"
 
-#: .tmp/packagedelegate.py:147
-msgid "Package Size:"
-msgstr "Paketgrösse:"
+#: .tmp/ui_basketdialog.py:78
+msgid "Total Size:"
+msgstr "Gesamtgrösse:"
+
+#: .tmp/ui_basketdialog.py:79
+msgid "<b>2.2 MB</b>"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:80 .tmp/ui_mainwidget.py:60 .tmp/statemanager.py:73
+msgid "Install Package(s)"
+msgstr "Pakete installieren"
+
+#: .tmp/ui_basketdialog.py:81
+#, fuzzy
+msgid "Download Size:"
+msgstr "wird heruntergeladen"
+
+#: .tmp/ui_basketdialog.py:82
+msgid "<b>2.0 MB</"
+msgstr ""
+
+#: .tmp/ui_pminstaller.py:46 .tmp/ui_mainwidget.py:58
+msgid "Form"
+msgstr ""
+
+#: .tmp/ui_pminstaller.py:47
+msgid "TextLabel"
+msgstr ""
+
+#: .tmp/ui_pminstaller.py:48
+msgid "Ok"
+msgstr "Ok"
+
+#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+msgid "configuring"
+msgstr "konfigurieren"
+
+#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+msgid "extracting"
+msgstr "auspacken"
+
+#: .tmp/progressdialog.py:45
+msgid "Downloading package list of %1"
+msgstr "Paketliste wird von %1 heruntergeladen"
+
+#: .tmp/progressdialog.py:47
+msgid "%1 %2"
+msgstr "%1 %2"
+
+# could You put a comment with an example string, maybe in foreign language it sounds better when inverting some positions ?
+#: .tmp/progressdialog.py:52
+msgid "%1 / %2 package %3"
+msgstr "Paket %1 / %2: %3"
+
+#: .tmp/progressdialog.py:58
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr ""
+
+#: .tmp/progressdialog.py:70 .tmp/ui_progressdialog.py:147
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Vorbereitung PiSi...</h3>"
+
+#: .tmp/progressdialog.py:73 .tmp/ui_progressdialog.py:152
+msgid "Status:"
+msgstr "Status:"
+
+#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:149
+msgid "--  / --"
+msgstr ""
+
+#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:148
+msgid "Time remaining:"
+msgstr "Verbleibende Zeit:"
+
+#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:150
+msgid "--:--:--"
+msgstr ""
+
+#: .tmp/progressdialog.py:79
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>Vorgang wird abgebrochen...</b>"
+
+#: .tmp/ui_appitem.py:52
+msgid "Application"
+msgstr "Programm"
+
+#: .tmp/ui_appitem.py:53
+msgid "Web Tarayıcı"
+msgstr "Webbrowser"
+
+#: .tmp/ui_appitem.py:54
+msgid "Firefox"
+msgstr ""
+
+#: .tmp/settingsdialog.py:128
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr ""
+"Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
+
+#: .tmp/settingsdialog.py:129
+msgid "Warning"
+msgstr "Warnung"
+
+#: .tmp/settingsdialog.py:130
+msgid "Delete"
+msgstr "Löschen"
+
+#: .tmp/settingsdialog.py:184
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Die Adresse des Depots sollte mit xml oder xml.bz2 enden. <p>Bitte "
+"erneut versuchen.</qt>"
+
+#: .tmp/settingsdialog.py:184 .tmp/pm-install.py:79 .tmp/mainwidget.py:174
+msgid "Pisi Error"
+msgstr "Pisi Error"
+
+#: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
+msgid "Package Manager"
+msgstr "Paket Manager"
+
+#: .tmp/helpdialog.py:34
+msgid "Package Manager Help"
+msgstr "Hilfe des Paket Managers"
 
 #: .tmp/ui_settingsdialog.py:325
 msgid "Package Manager Settings"
@@ -46,7 +170,7 @@ msgstr "&Hilfe"
 msgid "&OK"
 msgstr "&OK"
 
-#: .tmp/ui_settingsdialog.py:328 .tmp/ui_progressdialog.py:164
+#: .tmp/ui_settingsdialog.py:328 .tmp/ui_progressdialog.py:158
 msgid "&Cancel"
 msgstr "&Abbrechen"
 
@@ -201,70 +325,57 @@ msgstr "Proxy-Server verwenden"
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: .tmp/mainwindow.py:67 .tmp/mainwindow.py:72 .tmp/statemanager.py:126
-msgid "Currently your basket is empty."
-msgstr "Im Augenblick ist Ihr Korb leer."
-
-#: .tmp/mainwindow.py:88
-msgid "Show Installable Packages"
-msgstr "Neue Pakete anzeigen"
-
-#: .tmp/mainwindow.py:95
-msgid "Show Installed Packages"
-msgstr "Installierte Pakete anzeigen"
-
-#: .tmp/mainwindow.py:101
-msgid "Show Upgradable Packages"
-msgstr "Upgrades anzeigen"
-
-#: .tmp/main.py:38
-msgid "Show main window"
-msgstr "Hauptfenster zeigen"
-
-#: .tmp/operationmanager.py:117 .tmp/commontext.py:15
-msgid "downloading"
-msgstr "wird heruntergeladen"
-
-#: .tmp/settingsdialog.py:128
-msgid "All the cached packages will be deleted. Are you sure? "
+#: .tmp/tray.py:45
+msgid "Update"
 msgstr ""
-"Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
 
-#: .tmp/settingsdialog.py:129
-msgid "Warning"
-msgstr "Warnung"
+#: .tmp/tray.py:54 .tmp/tray.py:64
+msgid "All"
+msgstr "Gesamt"
 
-#: .tmp/settingsdialog.py:130
-msgid "Delete"
-msgstr "Löschen"
+#: .tmp/tray.py:90
+msgid "There are <b>%1</b> updates available!"
+msgstr "Es sind <b>%1</b> updates verfügbar!"
 
-#: .tmp/settingsdialog.py:184
+#: .tmp/tray.py:91
+msgid "Show Updates"
+msgstr "Updates anzeigen"
+
+#: .tmp/tray.py:91
+msgid "Ignore"
+msgstr "Ignoriere"
+
+#: .tmp/ui_mainwidget.py:59
+msgid "Click to search"
+msgstr "Geben Sie Ihre Suche ein"
+
+#: .tmp/ui_mainwidget.py:61
 msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
+"this group</p></body></html>"
 msgstr ""
-"<qt>Die Adresse des Depots sollte mit xml oder xml.bz2 enden. <p>Bitte "
-"erneut versuchen.</qt>"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Alle Pakete aus dieser "
+"Gruppe auswählen</p></body></html>"
 
-#: .tmp/settingsdialog.py:184 .tmp/pm-install.py:82 .tmp/mainwidget.py:172
-msgid "Pisi Error"
-msgstr "Pisi Error"
-
-#: .tmp/about.py:20 .tmp/about.py:22 .tmp/ui_mainwindow.py:29
-msgid "Package Manager"
-msgstr "Paket Manager"
-
-#: .tmp/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
-
-#: .tmp/about.py:31
-msgid "Faik Uygur"
-msgstr ""
-
-#: .tmp/about.py:31
-msgid "Maintainer"
-msgstr "Aktueller Betreuer"
+#: .tmp/ui_mainwidget.py:66
+msgid "Search"
+msgstr "Suche"
 
 #: .tmp/statemanager.py:65
 msgid "Installing Package(s)"
@@ -289,10 +400,6 @@ msgstr "Depot wird aktualisiert"
 #: .tmp/statemanager.py:70
 msgid "Updating Repository(s)"
 msgstr "Depot wird aktualisiert"
-
-#: .tmp/statemanager.py:73 .tmp/ui_mainwidget.py:60 .tmp/ui_basketdialog.py:74
-msgid "Install Package(s)"
-msgstr "Pakete installieren"
 
 #: .tmp/statemanager.py:74
 msgid "Remove Package(s)"
@@ -338,12 +445,6 @@ msgstr "Ausgewählte Pakete zu entfernen:"
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Ausgewählte Pakete zu aktualisieren:"
 
-#: .tmp/statemanager.py:98 .tmp/ui_basketdialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr "Zusätzlich erforderliche Pakete:"
-
 # Zweifel - hier is das "reverse" nicht korekt ausgedrückt, ist vielleicht auch nicht so wichtig..
 #: .tmp/statemanager.py:99
 msgid ""
@@ -358,26 +459,30 @@ msgid ""
 msgstr ""
 "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
 
-#: .tmp/statemanager.py:128
+#: .tmp/statemanager.py:123 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
+msgid "Currently your basket is empty."
+msgstr "Im Augenblick ist Ihr Korb leer."
+
+#: .tmp/statemanager.py:125
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Momentan <b>%1</b> Paket(e) ausgewählt mit einer Gesamtgrösse von <b>%2</b> "
 
 # zweifel reverse, "gegen" (original Tasma), "rückwärts", "höheren.." ?
-#: .tmp/statemanager.py:131
+#: .tmp/statemanager.py:128
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "und <b>%1</b> rückwärts abhängige Pakete mit Gesamtgrösse <b>%2</b>"
 
-#: .tmp/statemanager.py:133
+#: .tmp/statemanager.py:130
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "und <b>%1</b> abhängige Pakete mit Gesamtgrösse <b>%2</b>"
 
-#: .tmp/statemanager.py:134
+#: .tmp/statemanager.py:131
 msgid "in your basket."
 msgstr "in Ihrem Korb."
 
-#: .tmp/statemanager.py:156
+#: .tmp/statemanager.py:153
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
@@ -385,26 +490,176 @@ msgstr ""
 "Ausgewählte Pakete [%1] stehen in Konflikt miteinander. Diese Pakete können "
 "nicht zusammen installiert werden."
 
-#: .tmp/statemanager.py:157 .tmp/statemanager.py:165
+#: .tmp/statemanager.py:154 .tmp/statemanager.py:162
 msgid "Conflict Error"
 msgstr "Konfliktfehler"
 
-#: .tmp/statemanager.py:161
+#: .tmp/statemanager.py:158
 msgid "The following packages conflicts:\n"
 msgstr "Es bestehen Konflikte zwischen folgenden Paketen:\n"
 
 # Zweifel - einfach "incompatible" schreiben ?
-#: .tmp/statemanager.py:163
+#: .tmp/statemanager.py:160
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 in Konflikt mit: [%2]\n"
 
-#: .tmp/statemanager.py:164
+#: .tmp/statemanager.py:161
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
 msgstr ""
 "\n"
 "Konfliktverursachende Pakete vom System entfernen?"
+
+#: .tmp/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/about.py:31
+msgid "Faik Uygur"
+msgstr ""
+
+#: .tmp/about.py:31
+msgid "Maintainer"
+msgstr "Aktueller Betreuer"
+
+#: .tmp/main.py:38
+msgid "Show main window"
+msgstr "Hauptfenster zeigen"
+
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:117
+msgid "downloading"
+msgstr "wird heruntergeladen"
+
+#: .tmp/commontext.py:15
+msgid "removing"
+msgstr "wird entfernt"
+
+#: .tmp/commontext.py:15
+msgid "installing"
+msgstr "wird installiert"
+
+# Zweifel - oder Vorgangs/Aktions-Report/ Bericht ? Zusammenfassung finde ich nicht gut
+#: .tmp/ui_summarydialog.py:45
+msgid "Operation Summary"
+msgstr "Aktions-Report"
+
+#: .tmp/ui_summarydialog.py:46
+msgid ""
+"You can start the new installed application by double-clicking on the list "
+"below or later from the applications menu."
+msgstr ""
+"Sie können die neu installierten Programme mit einem Doppelklick in der "
+"Liste unten starten, oder Sie können sie vom Systemmanü aus aufrufen."
+
+#: .tmp/ui_summarydialog.py:47
+msgid "&Ok"
+msgstr "&Ok"
+
+#: .tmp/pm-install.py:44
+msgid "Succesfully finished installing %1"
+msgstr ""
+
+#: .tmp/pm-install.py:73 .tmp/mainwidget.py:168
+msgid "Network Error"
+msgstr "Netzwerkfehler"
+
+#: .tmp/pm-install.py:74 .tmp/mainwidget.py:169
+msgid "Please check your network connections and try again."
+msgstr ""
+"Bitte prüfen Sie Ihre Netzwerkverbindung und versuchen Sie es noch einmal."
+
+#: .tmp/pm-install.py:76 .tmp/mainwidget.py:171
+msgid "Authorization Error"
+msgstr "Authorisationsfehler"
+
+#: .tmp/pm-install.py:77 .tmp/mainwidget.py:172
+msgid "You are not authorized for this operation."
+msgstr "Sie sind nicht für diesen Vorgang nicht autorisiert."
+
+#: .tmp/pm-install.py:89
+msgid "Package Installer"
+msgstr "Paket Installer"
+
+#: .tmp/pm-install.py:120
+#, fuzzy
+msgid "Installing %1"
+msgstr "wird installiert"
+
+#: .tmp/pm-install.py:127
+msgid "pm-install"
+msgstr ""
+
+#: .tmp/pm-install.py:134
+msgid "Packages to install"
+msgstr "Pakete zu installaieren:"
+
+#: .tmp/pm-install.py:138
+msgid "Package Installer is already started!"
+msgstr "Paket Installer ist schon gestartet"
+
+#: .tmp/packagedelegate.py:116
+msgid "Description:"
+msgstr "Beschreibung:"
+
+# oder Version?
+#: .tmp/packagedelegate.py:128
+msgid "Release:"
+msgstr "Veröffentlichung:"
+
+#: .tmp/packagedelegate.py:138
+msgid "Repository:"
+msgstr "Depot:"
+
+#: .tmp/packagedelegate.py:147
+msgid "Package Size:"
+msgstr "Paketgrösse:"
+
+#: .tmp/mainwidget.py:226
+msgid "Select all packages in this group"
+msgstr "Alle Pakete in dieser Gruppe auswählen"
+
+#: .tmp/mainwidget.py:232
+msgid "Reverse package selections"
+msgstr "Paketmarkierungen invertieren"
+
+#: .tmp/ui_progressdialog.py:146
+msgid "Operation"
+msgstr "Vorgang"
+
+#: .tmp/ui_progressdialog.py:151
+msgid "Operation:"
+msgstr "Vorgang:"
+
+#: .tmp/ui_progressdialog.py:153
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:159
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: .tmp/mainwindow.py:88
+msgid "Show Installable Packages"
+msgstr "Neue Pakete anzeigen"
+
+#: .tmp/mainwindow.py:95
+msgid "Show Installed Packages"
+msgstr "Installierte Pakete anzeigen"
+
+#: .tmp/mainwindow.py:101
+msgid "Show Upgradable Packages"
+msgstr "Upgrades anzeigen"
 
 #: .tmp/ui_repodialog.py:51
 msgid "Add New Repository"
@@ -422,256 +677,8 @@ msgstr ""
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
 
-#: .tmp/pm-install.py:44
-msgid "Succesfully finished installing %1"
-msgstr ""
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 neue Pakete mit Erfolg installiert."
 
-#: .tmp/pm-install.py:76 .tmp/mainwidget.py:166
-msgid "Network Error"
-msgstr "Netzwerkfehler"
-
-#: .tmp/pm-install.py:77 .tmp/mainwidget.py:167
-msgid "Please check your network connections and try again."
-msgstr ""
-"Bitte prüfen Sie Ihre Netzwerkverbindung und versuchen Sie es noch einmal."
-
-#: .tmp/pm-install.py:79 .tmp/mainwidget.py:169
-msgid "Authorization Error"
-msgstr "Authorisationsfehler"
-
-#: .tmp/pm-install.py:80 .tmp/mainwidget.py:170
-msgid "You are not authorized for this operation."
-msgstr "Sie sind nicht für diesen Vorgang nicht autorisiert."
-
-#: .tmp/pm-install.py:92
-msgid "Package Installer"
-msgstr "Paket Installer"
-
-#: .tmp/pm-install.py:120
-msgid "Ok"
-msgstr "Ok"
-
-#: .tmp/pm-install.py:124
-#, fuzzy
-msgid "Installing %1"
-msgstr "wird installiert"
-
-#: .tmp/pm-install.py:131
-msgid "pm-install"
-msgstr ""
-
-#: .tmp/pm-install.py:138
-msgid "Packages to install"
-msgstr "Pakete zu installaieren:"
-
-#: .tmp/pm-install.py:142
-msgid "Package Installer is already started!"
-msgstr "Paket Installer ist schon gestartet"
-
-#: .tmp/helpdialog.py:34
-msgid "Package Manager Help"
-msgstr "Hilfe des Paket Managers"
-
-# Zweifel - oder Vorgangs/Aktions-Report/ Bericht ? Zusammenfassung finde ich nicht gut
-#: .tmp/ui_summarydialog.py:53
-msgid "Operation Summary"
-msgstr "Aktions-Report"
-
-#: .tmp/ui_summarydialog.py:54
-msgid "12 new packages are installed  succesfully."
-msgstr "12 neue Pakete mit Erfolg installiert."
-
-#: .tmp/ui_summarydialog.py:55
-msgid ""
-"You can start the new installed application by double-clicking on the list "
-"below or later from the applications menu."
-msgstr ""
-"Sie können die neu installierten Programme mit einem Doppelklick in der "
-"Liste unten starten, oder Sie können sie vom Systemmanü aus aufrufen."
-
-#: .tmp/ui_summarydialog.py:56
-msgid "&Ok"
-msgstr "&Ok"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:41
-msgid "extracting"
-msgstr "auspacken"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:41
-msgid "configuring"
-msgstr "konfigurieren"
-
-#: .tmp/commontext.py:15
-msgid "removing"
-msgstr "wird entfernt"
-
-#: .tmp/commontext.py:15
-msgid "installing"
-msgstr "wird installiert"
-
-#: .tmp/ui_appitem.py:52
-msgid "Application"
-msgstr "Programm"
-
-#: .tmp/ui_appitem.py:53
-msgid "Web Tarayıcı"
-msgstr "Webbrowser"
-
-#: .tmp/ui_appitem.py:54
-msgid "Firefox"
-msgstr ""
-
-#: .tmp/tray.py:48
-msgid "Update"
-msgstr ""
-
-#: .tmp/tray.py:57 .tmp/tray.py:67
-msgid "All"
-msgstr "Gesamt"
-
-#: .tmp/tray.py:93
-msgid "There are <b>%1</b> updates available!"
-msgstr "Es sind <b>%1</b> updates verfügbar!"
-
-#: .tmp/tray.py:94
-msgid "Show Updates"
-msgstr "Updates anzeigen"
-
-#: .tmp/tray.py:94
-msgid "Ignore"
-msgstr "Ignoriere"
-
-#: .tmp/ui_mainwidget.py:58 .tmp/ui_pminstaller.py:46
-msgid "Form"
-msgstr ""
-
-#: .tmp/ui_mainwidget.py:59
-msgid "Click to search"
-msgstr "Geben Sie Ihre Suche ein"
-
-#: .tmp/ui_mainwidget.py:61
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
-"this group</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Alle Pakete aus dieser "
-"Gruppe auswählen</p></body></html>"
-
-#: .tmp/ui_mainwidget.py:66
-msgid "Search"
-msgstr "Suche"
-
-#: .tmp/mainwidget.py:205
-msgid "Select all packages in this group"
-msgstr "Alle Pakete in dieser Gruppe auswählen"
-
-#: .tmp/mainwidget.py:211
-msgid "Reverse package selections"
-msgstr "Paketmarkierungen invertieren"
-
-#: .tmp/ui_progressdialog.py:152
-msgid "Operation"
-msgstr "Vorgang"
-
-#: .tmp/ui_progressdialog.py:153 .tmp/progressdialog.py:70
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Vorbereitung PiSi...</h3>"
-
-#: .tmp/ui_progressdialog.py:154
-msgid "Time remaining:"
-msgstr "Verbleibende Zeit:"
-
-#: .tmp/ui_progressdialog.py:155 .tmp/progressdialog.py:73
-msgid "--  / --"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:156 .tmp/progressdialog.py:74
-msgid "--:--:--"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:157
-msgid "Operation:"
-msgstr "Vorgang:"
-
-#: .tmp/ui_progressdialog.py:158
-msgid "Status:"
-msgstr "Status:"
-
-#: .tmp/ui_progressdialog.py:159
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:165
-msgid "Alt+C"
-msgstr "Alt+C"
-
-#: .tmp/ui_basketdialog.py:69
-msgid "Basket"
-msgstr "Korb"
-
-#: .tmp/ui_basketdialog.py:70
-msgid "Selected package(s) for install:"
-msgstr "Ausgewählte Pakete zur Installation:"
-
-#: .tmp/ui_basketdialog.py:72
-msgid "Total Size:"
-msgstr "Gesamtgrösse:"
-
-#: .tmp/ui_basketdialog.py:73
-msgid "<b>2.2 MB</b>"
-msgstr ""
-
-#: .tmp/progressdialog.py:45
-msgid "Downloading package list of %1"
-msgstr "Paketliste wird von %1 heruntergeladen"
-
-#: .tmp/progressdialog.py:47
-msgid "%1 %2"
-msgstr "%1 %2"
-
-# could You put a comment with an example string, maybe in foreign language it sounds better when inverting some positions ?
-#: .tmp/progressdialog.py:52
-msgid "%1 / %2 package %3"
-msgstr "Paket %1 / %2: %3"
-
-#: .tmp/progressdialog.py:58
-msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr ""
-
-#: .tmp/progressdialog.py:77
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Vorgang wird abgebrochen...</b>"
-
-#: .tmp/ui_pminstaller.py:47
-msgid "TextLabel"
-msgstr ""
-
-#: .tmp/ui_pminstaller.py:48
-msgid "Cancel"
-msgstr "Abbrechen"
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"

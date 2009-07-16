@@ -76,6 +76,10 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def updateTotal(self):
         selectedSize, extraSize = self.model.selectedPackagesSize(), self.model.extraPackagesSize()
         self.totalSize.setText("<b>%s</b>" % humanReadableSize(selectedSize + extraSize))
+        downloadSize = self.model.downloadSize()
+        if not downloadSize:
+            downloadSize = selectedSize + extraSize
+        self.downloadSize.setText("<b>%s</b>" % humanReadableSize(downloadSize))
 
     def setActionButton(self):
         self.actionButton.setText(self.state.getActionName())
@@ -92,8 +96,17 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.state.operationAction(self.model.selectedPackages())
         self.close()
 
+    def showHideDownloadInfo(self):
+        if self.state.inRemove():
+            self.downloadSize.hide()
+            self.downloadSizeLabel.hide()
+        else:
+            self.downloadSize.show()
+            self.downloadSizeLabel.show()
+
     def show(self):
         waitCursor()
+        self.showHideDownloadInfo()
         self.__updateList(self.packageList, self.model.selectedPackages())
         self.filterExtras()
         self.updateTotal()

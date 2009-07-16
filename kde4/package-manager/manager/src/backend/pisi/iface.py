@@ -130,6 +130,13 @@ class Iface(Singleton):
         except Exception:
             return "N/A"
 
+    def calculate_download_size(self, packages):
+        try:
+            total, cached = pisi.api.calculate_download_size(packages)
+            return total - cached
+        except OSError, e:
+            return None
+
     def getPackageList(self):
         if self.source == self.REPO:
             return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(self.replaces.values()) )

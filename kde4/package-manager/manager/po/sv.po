@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-15 14:13+0300\n"
+"POT-Creation-Date: 2009-07-16 15:58+0300\n"
 "PO-Revision-Date: 2009-07-15 23:23+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -16,21 +16,144 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/packagedelegate.py:116
-msgid "Description:"
-msgstr "Beskrivning:"
+#: .tmp/ui_basketdialog.py:75
+msgid "Basket"
+msgstr "Korg"
 
-#: .tmp/packagedelegate.py:128
-msgid "Release:"
-msgstr "Version:"
+#: .tmp/ui_basketdialog.py:76
+msgid "Selected package(s) for install:"
+msgstr "Valda paket för installation:"
 
-#: .tmp/packagedelegate.py:138
-msgid "Repository:"
-msgstr "Förråd:"
+#: .tmp/ui_basketdialog.py:77 .tmp/statemanager.py:98
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr "Extra beroenden för valda paket som också kommer att installeras:"
 
-#: .tmp/packagedelegate.py:147
-msgid "Package Size:"
-msgstr "Paketstorlek:"
+#: .tmp/ui_basketdialog.py:78
+msgid "Total Size:"
+msgstr "Sammanlagd storlek:"
+
+#: .tmp/ui_basketdialog.py:79
+msgid "<b>2.2 MB</b>"
+msgstr "<b>2.2 MB</b>"
+
+#: .tmp/ui_basketdialog.py:80 .tmp/ui_mainwidget.py:60 .tmp/statemanager.py:73
+msgid "Install Package(s)"
+msgstr "Installera paket"
+
+#: .tmp/ui_basketdialog.py:81
+#, fuzzy
+msgid "Download Size:"
+msgstr "Hämtar"
+
+#: .tmp/ui_basketdialog.py:82
+#, fuzzy
+msgid "<b>2.0 MB</"
+msgstr "<b>2.2 MB</b>"
+
+#: .tmp/ui_pminstaller.py:46 .tmp/ui_mainwidget.py:58
+msgid "Form"
+msgstr "Form"
+
+#: .tmp/ui_pminstaller.py:47
+msgid "TextLabel"
+msgstr "TextLabel"
+
+#: .tmp/ui_pminstaller.py:48
+msgid "Ok"
+msgstr "Ok"
+
+#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+msgid "configuring"
+msgstr "Konfigurerar"
+
+#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+msgid "extracting"
+msgstr "Packar upp"
+
+#: .tmp/progressdialog.py:45
+msgid "Downloading package list of %1"
+msgstr "Hämtar paketlista för %1"
+
+#: .tmp/progressdialog.py:47
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: .tmp/progressdialog.py:52
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 paket %3"
+
+#: .tmp/progressdialog.py:58
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr "<p align='center'>%1 / %2, %3</p>"
+
+#: .tmp/progressdialog.py:70 .tmp/ui_progressdialog.py:147
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Förbereder PiSi...</h3>"
+
+#: .tmp/progressdialog.py:73 .tmp/ui_progressdialog.py:152
+msgid "Status:"
+msgstr "Status:"
+
+#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:149
+msgid "--  / --"
+msgstr "--  / --"
+
+#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:148
+msgid "Time remaining:"
+msgstr "Återstående tid:"
+
+#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:150
+msgid "--:--:--"
+msgstr "--:--:--"
+
+#: .tmp/progressdialog.py:79
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>Avbryter åtgärd...</b>"
+
+#: .tmp/ui_appitem.py:52
+msgid "Application"
+msgstr "Program"
+
+#: .tmp/ui_appitem.py:53
+msgid "Web Tarayıcı"
+msgstr "Webbläsare"
+
+#: .tmp/ui_appitem.py:54
+msgid "Firefox"
+msgstr "Firefox"
+
+#: .tmp/settingsdialog.py:128
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr "Alla cachade paket kommer att raderas. Är du säker?"
+
+#: .tmp/settingsdialog.py:129
+msgid "Warning"
+msgstr "Varning"
+
+#: .tmp/settingsdialog.py:130
+msgid "Delete"
+msgstr "Ta bort"
+
+#: .tmp/settingsdialog.py:184
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Förrådsadresser måste sluta på xml eller xml.bz2.<p>Försök igen.</qt>"
+
+#: .tmp/settingsdialog.py:184 .tmp/pm-install.py:79 .tmp/mainwidget.py:174
+msgid "Pisi Error"
+msgstr "Pisi-fel"
+
+#: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
+msgid "Package Manager"
+msgstr "Pakethanteraren"
+
+#: .tmp/helpdialog.py:34
+msgid "Package Manager Help"
+msgstr "Handbok Pakethanteraren"
 
 #: .tmp/ui_settingsdialog.py:325
 msgid "Package Manager Settings"
@@ -44,7 +167,7 @@ msgstr "&Hjälp"
 msgid "&OK"
 msgstr "&OK"
 
-#: .tmp/ui_settingsdialog.py:328 .tmp/ui_progressdialog.py:164
+#: .tmp/ui_settingsdialog.py:328 .tmp/ui_progressdialog.py:158
 msgid "&Cancel"
 msgstr "&Avbryt"
 
@@ -197,68 +320,57 @@ msgstr "Använd proxyserver"
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: .tmp/mainwindow.py:67 .tmp/mainwindow.py:72 .tmp/statemanager.py:126
-msgid "Currently your basket is empty."
-msgstr "För närvarande är din korg tom."
+#: .tmp/tray.py:45
+msgid "Update"
+msgstr "Uppdatera"
 
-#: .tmp/mainwindow.py:88
-msgid "Show Installable Packages"
-msgstr "Visa installerbara paket"
+#: .tmp/tray.py:54 .tmp/tray.py:64
+msgid "All"
+msgstr "Alla"
 
-#: .tmp/mainwindow.py:95
-msgid "Show Installed Packages"
-msgstr "Visa installerade paket"
+#: .tmp/tray.py:90
+msgid "There are <b>%1</b> updates available!"
+msgstr "Det finns <b>%1</b> tillgängliga uppdateringar!"
 
-#: .tmp/mainwindow.py:101
-msgid "Show Upgradable Packages"
-msgstr "Visa paket med uppdateringar"
+#: .tmp/tray.py:91
+msgid "Show Updates"
+msgstr "Visa uppdateringar"
 
-#: .tmp/main.py:38
-msgid "Show main window"
-msgstr "Visa huvudfönster"
+#: .tmp/tray.py:91
+msgid "Ignore"
+msgstr "Ignorera"
 
-#: .tmp/operationmanager.py:117 .tmp/commontext.py:15
-msgid "downloading"
-msgstr "Hämtar"
+#: .tmp/ui_mainwidget.py:59
+msgid "Click to search"
+msgstr "Sök"
 
-#: .tmp/settingsdialog.py:128
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Alla cachade paket kommer att raderas. Är du säker?"
-
-#: .tmp/settingsdialog.py:129
-msgid "Warning"
-msgstr "Varning"
-
-#: .tmp/settingsdialog.py:130
-msgid "Delete"
-msgstr "Ta bort"
-
-#: .tmp/settingsdialog.py:184
+#: .tmp/ui_mainwidget.py:61
 msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
+"this group</p></body></html>"
 msgstr ""
-"<qt>Förrådsadresser måste sluta på xml eller xml.bz2.<p>Försök igen.</qt>"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Välj alla paket i den här "
+"gruppen</p></body></html>"
 
-#: .tmp/settingsdialog.py:184 .tmp/pm-install.py:82 .tmp/mainwidget.py:172
-msgid "Pisi Error"
-msgstr "Pisi-fel"
-
-#: .tmp/about.py:20 .tmp/about.py:22 .tmp/ui_mainwindow.py:29
-msgid "Package Manager"
-msgstr "Pakethanteraren"
-
-#: .tmp/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/about.py:31
-msgid "Faik Uygur"
-msgstr "Faik Uygur"
-
-#: .tmp/about.py:31
-msgid "Maintainer"
-msgstr "Underhållare"
+#: .tmp/ui_mainwidget.py:66
+msgid "Search"
+msgstr "Sök"
 
 #: .tmp/statemanager.py:65
 msgid "Installing Package(s)"
@@ -283,10 +395,6 @@ msgstr "Uppdaterar förråd"
 #: .tmp/statemanager.py:70
 msgid "Updating Repository(s)"
 msgstr "Uppdaterar förråd"
-
-#: .tmp/statemanager.py:73 .tmp/ui_mainwidget.py:60 .tmp/ui_basketdialog.py:74
-msgid "Install Package(s)"
-msgstr "Installera paket"
 
 #: .tmp/statemanager.py:74
 msgid "Remove Package(s)"
@@ -332,12 +440,6 @@ msgstr "Du har markerat följande paket för borttagning:"
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Du har markerat följande paket för uppdatering:"
 
-#: .tmp/statemanager.py:98 .tmp/ui_basketdialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr "Extra beroenden för valda paket som också kommer att installeras:"
-
 #: .tmp/statemanager.py:99
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
@@ -350,24 +452,28 @@ msgid ""
 "upgraded:"
 msgstr "Extra beroenden för markerade paket som också kommer att uppdateras:"
 
-#: .tmp/statemanager.py:128
+#: .tmp/statemanager.py:123 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
+msgid "Currently your basket is empty."
+msgstr "För närvarande är din korg tom."
+
+#: .tmp/statemanager.py:125
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "För närvarande är <b>%1</b> paket valda om <b>%2</b> "
 
-#: .tmp/statemanager.py:131
+#: .tmp/statemanager.py:128
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "med <b>%1</b> omvända beroenden om <b>%2</b> "
 
-#: .tmp/statemanager.py:133
+#: .tmp/statemanager.py:130
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "med <b>%1</b> extra beroenden om <b>%2</b> "
 
-#: .tmp/statemanager.py:134
+#: .tmp/statemanager.py:131
 msgid "in your basket."
 msgstr "i din korg."
 
-#: .tmp/statemanager.py:156
+#: .tmp/statemanager.py:153
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
@@ -375,25 +481,181 @@ msgstr ""
 "Valda paket [%1] står i konflikt med varandra. Dessa paket kan inte "
 "installeras tillsammans."
 
-#: .tmp/statemanager.py:157 .tmp/statemanager.py:165
+#: .tmp/statemanager.py:154 .tmp/statemanager.py:162
 msgid "Conflict Error"
 msgstr "Konfliktfel"
 
-#: .tmp/statemanager.py:161
+#: .tmp/statemanager.py:158
 msgid "The following packages conflicts:\n"
 msgstr "Följande paket står i konflikt:\n"
 
-#: .tmp/statemanager.py:163
+#: .tmp/statemanager.py:160
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 i konflikt med: [%2]\n"
 
-#: .tmp/statemanager.py:164
+#: .tmp/statemanager.py:161
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
 msgstr ""
 "\n"
 "Ta bort paket i konflikt från systemet?"
+
+#: .tmp/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/about.py:31
+msgid "Faik Uygur"
+msgstr "Faik Uygur"
+
+#: .tmp/about.py:31
+msgid "Maintainer"
+msgstr "Underhållare"
+
+#: .tmp/main.py:38
+msgid "Show main window"
+msgstr "Visa huvudfönster"
+
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:117
+msgid "downloading"
+msgstr "Hämtar"
+
+#: .tmp/commontext.py:15
+msgid "removing"
+msgstr "Tar bort"
+
+#: .tmp/commontext.py:15
+msgid "installing"
+msgstr "Installerar"
+
+#: .tmp/ui_summarydialog.py:45
+msgid "Operation Summary"
+msgstr "Sammanfattning"
+
+#: .tmp/ui_summarydialog.py:46
+msgid ""
+"You can start the new installed application by double-clicking on the list "
+"below or later from the applications menu."
+msgstr ""
+"Du kan starta det nyinstallerade programmet genom att dubbelklicka på det i "
+"listan nedan, eller senare via programmenyn."
+
+#: .tmp/ui_summarydialog.py:47
+msgid "&Ok"
+msgstr "&Ok"
+
+#: .tmp/pm-install.py:44
+msgid "Succesfully finished installing %1"
+msgstr "Installerade %1 framgångsrikt"
+
+#: .tmp/pm-install.py:73 .tmp/mainwidget.py:168
+msgid "Network Error"
+msgstr "Nätverksfel"
+
+#: .tmp/pm-install.py:74 .tmp/mainwidget.py:169
+msgid "Please check your network connections and try again."
+msgstr "Kontrollera din nätverksanslutning och försök igen."
+
+#: .tmp/pm-install.py:76 .tmp/mainwidget.py:171
+msgid "Authorization Error"
+msgstr "Auktoriseringsfel"
+
+#: .tmp/pm-install.py:77 .tmp/mainwidget.py:172
+msgid "You are not authorized for this operation."
+msgstr "Du har inte behörighet till den här åtgärden."
+
+#: .tmp/pm-install.py:89
+msgid "Package Installer"
+msgstr "Pakethanteraren"
+
+#: .tmp/pm-install.py:120
+msgid "Installing %1"
+msgstr "Installerar %1"
+
+#: .tmp/pm-install.py:127
+msgid "pm-install"
+msgstr "pm-install"
+
+#: .tmp/pm-install.py:134
+msgid "Packages to install"
+msgstr "Paket att installera"
+
+#: .tmp/pm-install.py:138
+msgid "Package Installer is already started!"
+msgstr "Paketinstalleraren körs redan!"
+
+#: .tmp/packagedelegate.py:116
+msgid "Description:"
+msgstr "Beskrivning:"
+
+#: .tmp/packagedelegate.py:128
+msgid "Release:"
+msgstr "Version:"
+
+#: .tmp/packagedelegate.py:138
+msgid "Repository:"
+msgstr "Förråd:"
+
+#: .tmp/packagedelegate.py:147
+msgid "Package Size:"
+msgstr "Paketstorlek:"
+
+#: .tmp/mainwidget.py:226
+msgid "Select all packages in this group"
+msgstr "Välj alla paket i den här gruppen"
+
+#: .tmp/mainwidget.py:232
+msgid "Reverse package selections"
+msgstr "Invertera paketmarkering"
+
+#: .tmp/ui_progressdialog.py:146
+msgid "Operation"
+msgstr "Åtgärd"
+
+#: .tmp/ui_progressdialog.py:151
+msgid "Operation:"
+msgstr "Åtgärd:"
+
+#: .tmp/ui_progressdialog.py:153
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+
+#: .tmp/ui_progressdialog.py:159
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: .tmp/mainwindow.py:88
+msgid "Show Installable Packages"
+msgstr "Visa installerbara paket"
+
+#: .tmp/mainwindow.py:95
+msgid "Show Installed Packages"
+msgstr "Visa installerade paket"
+
+#: .tmp/mainwindow.py:101
+msgid "Show Upgradable Packages"
+msgstr "Visa paket med uppdateringar"
 
 #: .tmp/ui_repodialog.py:51
 msgid "Add New Repository"
@@ -411,263 +673,8 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#: .tmp/pm-install.py:44
-msgid "Succesfully finished installing %1"
-msgstr "Installerade %1 framgångsrikt"
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nya paket har installerats framgångsrikt."
 
-#: .tmp/pm-install.py:76 .tmp/mainwidget.py:166
-msgid "Network Error"
-msgstr "Nätverksfel"
-
-#: .tmp/pm-install.py:77 .tmp/mainwidget.py:167
-msgid "Please check your network connections and try again."
-msgstr "Kontrollera din nätverksanslutning och försök igen."
-
-#: .tmp/pm-install.py:79 .tmp/mainwidget.py:169
-msgid "Authorization Error"
-msgstr "Auktoriseringsfel"
-
-#: .tmp/pm-install.py:80 .tmp/mainwidget.py:170
-msgid "You are not authorized for this operation."
-msgstr "Du har inte behörighet till den här åtgärden."
-
-#: .tmp/pm-install.py:92
-msgid "Package Installer"
-msgstr "Pakethanteraren"
-
-#: .tmp/pm-install.py:120
-msgid "Ok"
-msgstr "Ok"
-
-#: .tmp/pm-install.py:124
-msgid "Installing %1"
-msgstr "Installerar %1"
-
-#: .tmp/pm-install.py:131
-msgid "pm-install"
-msgstr "pm-install"
-
-#: .tmp/pm-install.py:138
-msgid "Packages to install"
-msgstr "Paket att installera"
-
-#: .tmp/pm-install.py:142
-msgid "Package Installer is already started!"
-msgstr "Paketinstalleraren körs redan!"
-
-#: .tmp/helpdialog.py:34
-msgid "Package Manager Help"
-msgstr "Handbok Pakethanteraren"
-
-#: .tmp/ui_summarydialog.py:53
-msgid "Operation Summary"
-msgstr "Sammanfattning"
-
-#: .tmp/ui_summarydialog.py:54
-msgid "12 new packages are installed  succesfully."
-msgstr "12 nya paket har installerats framgångsrikt."
-
-#: .tmp/ui_summarydialog.py:55
-msgid ""
-"You can start the new installed application by double-clicking on the list "
-"below or later from the applications menu."
-msgstr ""
-"Du kan starta det nyinstallerade programmet genom att dubbelklicka på det i "
-"listan nedan, eller senare via programmenyn."
-
-#: .tmp/ui_summarydialog.py:56
-msgid "&Ok"
-msgstr "&Ok"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:41
-msgid "extracting"
-msgstr "Packar upp"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:41
-msgid "configuring"
-msgstr "Konfigurerar"
-
-#: .tmp/commontext.py:15
-msgid "removing"
-msgstr "Tar bort"
-
-#: .tmp/commontext.py:15
-msgid "installing"
-msgstr "Installerar"
-
-#: .tmp/ui_appitem.py:52
-msgid "Application"
-msgstr "Program"
-
-#: .tmp/ui_appitem.py:53
-msgid "Web Tarayıcı"
-msgstr "Webbläsare"
-
-#: .tmp/ui_appitem.py:54
-msgid "Firefox"
-msgstr "Firefox"
-
-#: .tmp/tray.py:48
-msgid "Update"
-msgstr "Uppdatera"
-
-#: .tmp/tray.py:57 .tmp/tray.py:67
-msgid "All"
-msgstr "Alla"
-
-#: .tmp/tray.py:93
-msgid "There are <b>%1</b> updates available!"
-msgstr "Det finns <b>%1</b> tillgängliga uppdateringar!"
-
-#: .tmp/tray.py:94
-msgid "Show Updates"
-msgstr "Visa uppdateringar"
-
-#: .tmp/tray.py:94
-msgid "Ignore"
-msgstr "Ignorera"
-
-#: .tmp/ui_mainwidget.py:58 .tmp/ui_pminstaller.py:46
-msgid "Form"
-msgstr "Form"
-
-#: .tmp/ui_mainwidget.py:59
-msgid "Click to search"
-msgstr "Sök"
-
-#: .tmp/ui_mainwidget.py:61
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
-"this group</p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Välj alla paket i den här "
-"gruppen</p></body></html>"
-
-#: .tmp/ui_mainwidget.py:66
-msgid "Search"
-msgstr "Sök"
-
-#: .tmp/mainwidget.py:205
-msgid "Select all packages in this group"
-msgstr "Välj alla paket i den här gruppen"
-
-#: .tmp/mainwidget.py:211
-msgid "Reverse package selections"
-msgstr "Invertera paketmarkering"
-
-#: .tmp/ui_progressdialog.py:152
-msgid "Operation"
-msgstr "Åtgärd"
-
-#: .tmp/ui_progressdialog.py:153 .tmp/progressdialog.py:70
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Förbereder PiSi...</h3>"
-
-#: .tmp/ui_progressdialog.py:154
-msgid "Time remaining:"
-msgstr "Återstående tid:"
-
-#: .tmp/ui_progressdialog.py:155 .tmp/progressdialog.py:73
-msgid "--  / --"
-msgstr "--  / --"
-
-#: .tmp/ui_progressdialog.py:156 .tmp/progressdialog.py:74
-msgid "--:--:--"
-msgstr "--:--:--"
-
-#: .tmp/ui_progressdialog.py:157
-msgid "Operation:"
-msgstr "Åtgärd:"
-
-#: .tmp/ui_progressdialog.py:158
-msgid "Status:"
-msgstr "Status:"
-
-#: .tmp/ui_progressdialog.py:159
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
-
-#: .tmp/ui_progressdialog.py:165
-msgid "Alt+C"
-msgstr "Alt+C"
-
-#: .tmp/ui_basketdialog.py:69
-msgid "Basket"
-msgstr "Korg"
-
-#: .tmp/ui_basketdialog.py:70
-msgid "Selected package(s) for install:"
-msgstr "Valda paket för installation:"
-
-#: .tmp/ui_basketdialog.py:72
-msgid "Total Size:"
-msgstr "Sammanlagd storlek:"
-
-#: .tmp/ui_basketdialog.py:73
-msgid "<b>2.2 MB</b>"
-msgstr "<b>2.2 MB</b>"
-
-#: .tmp/progressdialog.py:45
-msgid "Downloading package list of %1"
-msgstr "Hämtar paketlista för %1"
-
-#: .tmp/progressdialog.py:47
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: .tmp/progressdialog.py:52
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 paket %3"
-
-#: .tmp/progressdialog.py:58
-msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr "<p align='center'>%1 / %2, %3</p>"
-
-#: .tmp/progressdialog.py:77
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Avbryter åtgärd...</b>"
-
-#: .tmp/ui_pminstaller.py:47
-msgid "TextLabel"
-msgstr "TextLabel"
-
-#: .tmp/ui_pminstaller.py:48
-msgid "Cancel"
-msgstr "Avbryt"
-
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
