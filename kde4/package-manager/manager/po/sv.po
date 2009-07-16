@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-16 15:58+0300\n"
-"PO-Revision-Date: 2009-07-15 23:23+0200\n"
+"PO-Revision-Date: 2009-07-16 15:07+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -43,9 +43,8 @@ msgid "Install Package(s)"
 msgstr "Installera paket"
 
 #: .tmp/ui_basketdialog.py:81
-#, fuzzy
 msgid "Download Size:"
-msgstr "Hämtar"
+msgstr "Hämtningsstorlek:"
 
 #: .tmp/ui_basketdialog.py:82
 #, fuzzy
