@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: File di testo_1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 15:36+0300\n"
+"POT-Creation-Date: 2009-07-16 23:40+0300\n"
 "PO-Revision-Date: 2009-07-16 21:55+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -56,7 +56,7 @@ msgstr ""
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rescuegrubwidget.py:75
 #: yali4/gui/Ui/rescuepasswordwidget.py:101
 #: yali4/gui/Ui/rescuepisiwidget.py:66 yali4/gui/Ui/rescuewidget.py:83
-#: yali4/gui/Ui/rootpasswidget.py:170 yali4/gui/Ui/setupuserswidget.py:171
+#: yali4/gui/Ui/rootpasswidget.py:170 yali4/gui/Ui/setupuserswidget.py:174
 #: yali4/gui/Ui/welcomewidget.py:90
 msgid "Form1"
 msgstr "Form1"
@@ -96,7 +96,8 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
-msgstr "Prova a usare lo spazio non allocato o ridimensiona le partizioni esistenti"
+msgstr ""
+"Prova a usare lo spazio non allocato o ridimensiona le partizioni esistenti"
 
 #: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
@@ -392,7 +393,8 @@ msgid ""
 "be undone.</span></p></body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:68
+#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/setupuserswidget.py:190
+#: yali4/gui/Ui/summarywidget.py:68
 msgid "Cancel"
 msgstr "Annulla"
 
@@ -483,73 +485,74 @@ msgstr "Password amministratore di sistema (di nuovo):"
 msgid "Hostname:"
 msgstr "Nome dell'host:"
 
-#: yali4/gui/Ui/setupuserswidget.py:172
+#: yali4/gui/Ui/setupuserswidget.py:175
 msgid "Real Name:"
 msgstr "Nome reale:"
 
-#: yali4/gui/Ui/setupuserswidget.py:173
+#: yali4/gui/Ui/setupuserswidget.py:176
 msgid "User Name:"
 msgstr "Nome utente:"
 
-#: yali4/gui/Ui/setupuserswidget.py:174
+#: yali4/gui/Ui/setupuserswidget.py:177
 msgid "Password:"
 msgstr "Password:"
 
-#: yali4/gui/Ui/setupuserswidget.py:175
-msgid "User ID"
-msgstr "ID utente:"
-
-#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:252
-#: yali4/gui/ScrUsers.py:294
-msgid "Create User"
-msgstr "Crea utente"
-
-#: yali4/gui/Ui/setupuserswidget.py:177
-msgid "Give administrator privileges to this user"
-msgstr "Concedi i diritti di amministratore a questo utente"
-
 #: yali4/gui/Ui/setupuserswidget.py:178
-msgid "Edit Selected User"
-msgstr "Modifica l'utente selezionato"
-
-#: yali4/gui/Ui/setupuserswidget.py:179
-msgid "Delete Selected User"
-msgstr "Elimina l'utente selezionato"
-
-#: yali4/gui/Ui/setupuserswidget.py:180
-msgid "Auto Login User :"
-msgstr "Utente per login automatico :"
-
-#: yali4/gui/Ui/setupuserswidget.py:181
-msgid "Auto Login Disabled"
-msgstr "Login automatico disattivato"
-
-#: yali4/gui/Ui/setupuserswidget.py:182
-msgid "Users:"
-msgstr "Utenti:"
-
-#: yali4/gui/Ui/setupuserswidget.py:183
 msgid "Password (again):"
 msgstr "Password (di nuovo):"
 
-#: yali4/gui/Ui/setupuserswidget.py:184
+#: yali4/gui/Ui/setupuserswidget.py:179
+msgid "User ID"
+msgstr "ID utente:"
+
+#: yali4/gui/Ui/setupuserswidget.py:180
+msgid "Give administrator privileges to this user"
+msgstr "Concedi i diritti di amministratore a questo utente"
+
+#: yali4/gui/Ui/setupuserswidget.py:181
 msgid "Not recommended"
 msgstr "Non consigliato"
 
-#: yali4/gui/Ui/setupuserswidget.py:185
+#: yali4/gui/Ui/setupuserswidget.py:182
 msgid "Do not ask any password to this user"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:186
+#: yali4/gui/Ui/setupuserswidget.py:183
 msgid "Advanced"
 msgstr "Avanzato"
+
+#: yali4/gui/Ui/setupuserswidget.py:184
+msgid "Edit Selected User"
+msgstr "Modifica l'utente selezionato"
+
+#: yali4/gui/Ui/setupuserswidget.py:185
+msgid "Delete Selected User"
+msgstr "Elimina l'utente selezionato"
+
+#: yali4/gui/Ui/setupuserswidget.py:186
+msgid "Auto Login User :"
+msgstr "Utente per login automatico :"
+
+#: yali4/gui/Ui/setupuserswidget.py:187
+msgid "Auto Login Disabled"
+msgstr "Login automatico disattivato"
+
+#: yali4/gui/Ui/setupuserswidget.py:188
+msgid "Users:"
+msgstr "Utenti:"
+
+#: yali4/gui/Ui/setupuserswidget.py:189 yali4/gui/ScrUsers.py:262
+#: yali4/gui/ScrUsers.py:304 yali4/gui/ScrUsers.py:363
+msgid "Create User"
+msgstr "Crea utente"
 
 #: yali4/gui/Ui/summarywidget.py:69
 msgid "Begin Install"
 msgstr "Comincia l'installazione"
 
 #: yali4/gui/Ui/summarywidget.py:70
-msgid "If you check this, Yalı will install all language packages in this release"
+msgid ""
+"If you check this, Yalı will install all language packages in this release"
 msgstr ""
 "Se selezioni questa opzioone, YALI installerà tutti i pacchetti della lingua "
 "contenuti in questa release."
@@ -603,10 +606,10 @@ msgid ""
 "other operating systems. With its fast, secure and stable infrastructure, "
 "Pardus opens the path to software libre."
 msgstr ""
-"Pardus 2009 è una distro linux che chiunque può installare facilmente e usare. "
-"Con Pardus 2009, puoi fare  tutto quello che faresti altrimenti con altri sistemi "
-"operativi. Con la sua velocità, sicurezza, e una base solida,  Pardus apre la "
-"strada al mondo del software libero."
+"Pardus 2009 è una distro linux che chiunque può installare facilmente e "
+"usare. Con Pardus 2009, puoi fare  tutto quello che faresti altrimenti con "
+"altri sistemi operativi. Con la sua velocità, sicurezza, e una base solida,  "
+"Pardus apre la strada al mondo del software libero."
 
 #: yali4/gui/descSlide.py:20
 msgid ""
@@ -619,12 +622,12 @@ msgid ""
 "your desktop; even more, you can have a real-time weather report, your notes "
 "and RSS feeds right on your desktop."
 msgstr ""
-"Pardus 2009 include come Desktop Environment KDE 4.2: Avrai un desktop "
-"molto migliore rispetto a prima. Durante l'installazione, potrai scegliere se "
-"usare la visualizzazone classica, con file e cartelle, oppure la visualizzazione "
-"che usa dei plasmoidi e altri gadget, che consentono di avere un orologio "
-"analogico sul desktop, le previsioni del tempo, i tuoi appunti e i tuoi feed RSS, "
-"direttamente sul tuo desktop."
+"Pardus 2009 include come Desktop Environment KDE 4.2: Avrai un desktop molto "
+"migliore rispetto a prima. Durante l'installazione, potrai scegliere se "
+"usare la visualizzazone classica, con file e cartelle, oppure la "
+"visualizzazione che usa dei plasmoidi e altri gadget, che consentono di "
+"avere un orologio analogico sul desktop, le previsioni del tempo, i tuoi "
+"appunti e i tuoi feed RSS, direttamente sul tuo desktop."
 
 #: yali4/gui/descSlide.py:21
 msgid ""
@@ -634,10 +637,11 @@ msgid ""
 "functionality like grouping and detailed information right on the spot. "
 "Anything you may need on viewing folders, you have it with Dolphin."
 msgstr ""
-"Con l'arrivo di KDE 4.2, Konqueror è stato sostituito con Dolphin, un nuovo file manager. Dolphin è "
-"semplice da usare e aggiunge nuove funzionalità come l'ordinare delle cartelle in vari modi, o come "
-"la visualizzaione delle informazioni sulla parte destra della finestra.Per qualunque cosa tu abbia bisogno "
-"per visualizzare file e cartelle, c'è Dolphin."
+"Con l'arrivo di KDE 4.2, Konqueror è stato sostituito con Dolphin, un nuovo "
+"file manager. Dolphin è semplice da usare e aggiunge nuove funzionalità come "
+"l'ordinare delle cartelle in vari modi, o come la visualizzaione delle "
+"informazioni sulla parte destra della finestra.Per qualunque cosa tu abbia "
+"bisogno per visualizzare file e cartelle, c'è Dolphin."
 
 #: yali4/gui/descSlide.py:22
 msgid ""
@@ -645,9 +649,10 @@ msgid ""
 "formats and you can view all your files without any additional software, "
 "take notes on bookmarks on them."
 msgstr ""
-"Con Pardus 2009, Kpdf è stato sostituito con Okular, che supporta molti formati, "
-" ti permette di vedere tutti i tuoi files senza nessun altro software addizionale, "
-"e consente anche di prendere degli appunti e mettere dei segnalibri su di essi."
+"Con Pardus 2009, Kpdf è stato sostituito con Okular, che supporta molti "
+"formati,  ti permette di vedere tutti i tuoi files senza nessun altro "
+"software addizionale, e consente anche di prendere degli appunti e mettere "
+"dei segnalibri su di essi."
 
 #: yali4/gui/descSlide.py:23
 msgid ""
@@ -665,10 +670,10 @@ msgid ""
 "you will still find all these management tools built into the System Manager "
 "interface."
 msgstr ""
-"Pardus include molte tecnologie pensate per un utilizzo e una gestione"
-"semplice del sistema. In Pardus 2009 TASMA è stato sostituito con il Gestore "
-"di Sistema, ma puoi ancora trovare gli strumenti di TASMA integrati all'interno "
-" del Gestore di Sistema."
+"Pardus include molte tecnologie pensate per un utilizzo e una "
+"gestionesemplice del sistema. In Pardus 2009 TASMA è stato sostituito con il "
+"Gestore di Sistema, ma puoi ancora trovare gli strumenti di TASMA integrati "
+"all'interno  del Gestore di Sistema."
 
 #: yali4/gui/descSlide.py:25
 msgid ""
@@ -683,8 +688,8 @@ msgstr ""
 "nell'installazione di Pardus. Con Kaptan puoi configurare il tuo desktop, "
 "cambiare la posizione della barra, lo sfondo, il tema e configurare le "
 "connessioni di rete. Kaptan ti consente anche di aggiungere i repository "
-"contrib a Pardus 2009. Inoltre con Kaptan puoi guardare un tour di "
-"benvenuto online."
+"contrib a Pardus 2009. Inoltre con Kaptan puoi guardare un tour di benvenuto "
+"online."
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -694,10 +699,11 @@ msgid ""
 "after screen of detailed configuration options. After package installations, "
 "all you need to do is to start the applications. It is all that easy!"
 msgstr ""
-"Nei repository di Pardus ci sono migliaia di pacchetti. Usando il package "
-" manager puoi installare, rimuovere o aggiornare i pacchetti con un solo click, "
-"senza avere a che fare con impostazioni avanzate. Dopo aver installato i "
-"pacchetti, tutto ciò che devi fare è avviare i programmi! Semplice, no?"
+"Nei repository di Pardus ci sono migliaia di pacchetti. Usando il package  "
+"manager puoi installare, rimuovere o aggiornare i pacchetti con un solo "
+"click, senza avere a che fare con impostazioni avanzate. Dopo aver "
+"installato i pacchetti, tutto ciò che devi fare è avviare i programmi! "
+"Semplice, no?"
 
 #: yali4/gui/descSlide.py:27
 msgid ""
@@ -706,11 +712,11 @@ msgid ""
 "easier. You can use the system managers for that and you can even add to "
 "your desktop as widgets managers that you use frequently."
 msgstr ""
-"Aggiungere nuovi utenti, cambiare le impostazioni del boot, avviare o fermare "
-"dei servizi di sistema o effettuare un ripristino delle configurazioni non è mai "
-"stato così semplice. Per queste operazioni puoi usare i Gestori di Sistema, "
-"e puoi anche aggiungere dei widget al tuo desktop per le operazioni chge ripeti "
-"spesso."
+"Aggiungere nuovi utenti, cambiare le impostazioni del boot, avviare o "
+"fermare dei servizi di sistema o effettuare un ripristino delle "
+"configurazioni non è mai stato così semplice. Per queste operazioni puoi "
+"usare i Gestori di Sistema, e puoi anche aggiungere dei widget al tuo "
+"desktop per le operazioni chge ripeti spesso."
 
 #: yali4/gui/descSlide.py:28
 msgid ""
@@ -722,8 +728,9 @@ msgid ""
 msgstr ""
 "Con Pardus 2009 connettersi a una rete senza fili o cablata è semplice come "
 "scegliere un profilo.Con le opzioni avanzate del gestore di rete, puoi avere "
-"differenti impostazioni(ad es., IP statico, o un server DNS diverso) per ogni rete,"
-"semplicemente creando dei profili. Scegliere un profilo richiede solo due click."
+"differenti impostazioni(ad es., IP statico, o un server DNS diverso) per "
+"ogni rete,semplicemente creando dei profili. Scegliere un profilo richiede "
+"solo due click."
 
 #: yali4/gui/descSlide.py:29
 msgid ""
@@ -735,12 +742,12 @@ msgid ""
 "player devices, you can drag and drop songs to your players without the need "
 "for any external device drivers."
 msgstr ""
-"Con Pardus 2009, Amarok è cambiato non solo fuori, ma anche dentro. "
-"Adesso puoi anche leggere i testi o ottenere informazioni prese da Wikipedia "
-"sul cantante o sul compositore, mentre ascolti la musica, oppure usare una "
-"caratteristica che crea delle playlist in diverse maniere. Con Amorok puoi anche "
-"copiare la tua musica sul tuo lettore MP3 con un comodo sistema di drag'n drop, "
-"senza bisogno di driver."
+"Con Pardus 2009, Amarok è cambiato non solo fuori, ma anche dentro. Adesso "
+"puoi anche leggere i testi o ottenere informazioni prese da Wikipedia sul "
+"cantante o sul compositore, mentre ascolti la musica, oppure usare una "
+"caratteristica che crea delle playlist in diverse maniere. Con Amorok puoi "
+"anche copiare la tua musica sul tuo lettore MP3 con un comodo sistema di "
+"drag'n drop, senza bisogno di driver."
 
 #: yali4/gui/descSlide.py:30
 msgid ""
@@ -751,11 +758,12 @@ msgid ""
 "Pardus default installation. Enjoy a fast and secure internet with the new "
 "Mozilla Firefox 3.5."
 msgstr ""
-"Mozilla Firefox è il browser di default con la sua velocità,sicurezza e flessibilità. "
-"Grazie al suo supporto per componenti aggiuntivi e un vastissimo repository "
-"di add-on, potrai aggiungere svariate funzioni al tuo browser. "
-"Con l'installazione standard di Pardus, ai segnalibri verranno aggiunti alcuni "
-"siti su Pardus. Goditi una navigazione veloce e sicura con Mozilla Firefox 3.5."
+"Mozilla Firefox è il browser di default con la sua velocità,sicurezza e "
+"flessibilità. Grazie al suo supporto per componenti aggiuntivi e un "
+"vastissimo repository di add-on, potrai aggiungere svariate funzioni al tuo "
+"browser. Con l'installazione standard di Pardus, ai segnalibri verranno "
+"aggiunti alcuni siti su Pardus. Goditi una navigazione veloce e sicura con "
+"Mozilla Firefox 3.5."
 
 #: yali4/gui/descSlide.py:31
 msgid ""
@@ -775,11 +783,11 @@ msgid ""
 "created in other office suites and share your documents with friends and "
 "contacts that are using other office applications."
 msgstr ""
-"La suite d'ufficio gratuita OpenOffice.org include un word processor, un foglio "
-"di calcolo, un programma per le presentazioni, uno per i database, un programma "
-"per la creazione di formule e un'applicazione per il disegno, in modo da soddisfare "
-"le tue esigenze a scuola, a casa o al lavoro. OpenOffice.org è compatibile con le "
-"altre suite."
+"La suite d'ufficio gratuita OpenOffice.org include un word processor, un "
+"foglio di calcolo, un programma per le presentazioni, uno per i database, un "
+"programma per la creazione di formule e un'applicazione per il disegno, in "
+"modo da soddisfare le tue esigenze a scuola, a casa o al lavoro. OpenOffice."
+"org è compatibile con le altre suite."
 
 #: yali4/gui/descSlide.py:33
 msgid ""
@@ -788,9 +796,9 @@ msgid ""
 "graphics artists and designers need and an ability to integrate new filters "
 "easily with its addon system."
 msgstr ""
-"Gimp è un programma avanzato per la modifica e la creazione di immagini, "
-"in grado di soddisfare le esigenze di grafici e designer. Supporta la creazione "
-" e la modifica di tutti i formati di immagine più diffusi, "
+"Gimp è un programma avanzato per la modifica e la creazione di immagini, in "
+"grado di soddisfare le esigenze di grafici e designer. Supporta la "
+"creazione  e la modifica di tutti i formati di immagine più diffusi, "
 "consente la creazione di filtri e pennelli grazie a un sistema di add-on."
 
 #: yali4/gui/descSlide.py:34
@@ -799,8 +807,9 @@ msgid ""
 "repositories, allowing hours of fun with various kinds of games available "
 "through the package manager."
 msgstr ""
-"Pardus, oltre ai giochi preinstallati, dispone di una grande quantità di giochi"
-"di diversi generi presenti nei repository, che consentono ore di divertimento."
+"Pardus, oltre ai giochi preinstallati, dispone di una grande quantità di "
+"giochidi diversi generi presenti nei repository, che consentono ore di "
+"divertimento."
 
 #: yali4/gui/descSlide.py:35
 msgid ""
@@ -813,10 +822,11 @@ msgid ""
 "everything accordingly right away."
 msgstr ""
 "Pardus 2009 supporta la maggior parte dell'hardware. Alla fine "
-"dell'installazione, al primo avvio di Pardus, le schede audio e video verranno "
-"riconosciute automaticamente e le schede di rete, siano esse senza fili o cablate, "
-"verranno preparate alla connessione. Anche aggiungere una stampante sarà "
-"molto semplice: tutto quello che devi fare è accendere la stampante e collegarla."
+"dell'installazione, al primo avvio di Pardus, le schede audio e video "
+"verranno riconosciute automaticamente e le schede di rete, siano esse senza "
+"fili o cablate, verranno preparate alla connessione. Anche aggiungere una "
+"stampante sarà molto semplice: tutto quello che devi fare è accendere la "
+"stampante e collegarla."
 
 #: yali4/gui/descSlide.py:36
 msgid ""
@@ -827,9 +837,10 @@ msgid ""
 "you. If you need support, or if you want to support, your first stop should "
 "be www.ozgurlukicin.com"
 msgstr ""
-"Nel portale di supporto Özgürlükİçin, i cui contenuti sono creati da volontari, "
-"troverai guide, pacchetti e introduzioni. Se hai delle domande, il forum ti aspetta. "
-"Se hai bisogno di aiuto, o vuoi dare aiuto, la tua prima fermata è su www.ozgurlukicin.com."
+"Nel portale di supporto Özgürlükİçin, i cui contenuti sono creati da "
+"volontari, troverai guide, pacchetti e introduzioni. Se hai delle domande, "
+"il forum ti aspetta. Se hai bisogno di aiuto, o vuoi dare aiuto, la tua "
+"prima fermata è su www.ozgurlukicin.com."
 
 #: yali4/gui/DiskWidgets.py:87
 msgid "Manual Partitioning selected."
@@ -879,7 +890,8 @@ msgstr ""
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 
 #: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:163
@@ -1057,12 +1069,12 @@ msgid "<center>Caps Lock is on!</center>"
 msgstr "<font color=\"#FF6D19\">Bloc maiusc attivato!</font>"
 
 #: yali4/gui/ScrAdmin.py:120 yali4/gui/ScrRescuePassword.py:114
-#: yali4/gui/ScrUsers.py:187
+#: yali4/gui/ScrUsers.py:196
 msgid "Password is too short!"
 msgstr "<font color=\"#FF6D19\">La password è troppo breve!</font>"
 
 #: yali4/gui/ScrAdmin.py:129 yali4/gui/ScrRescuePassword.py:111
-#: yali4/gui/ScrUsers.py:184
+#: yali4/gui/ScrUsers.py:193
 msgid "Passwords do not match!"
 msgstr "<font color=\"#FF6D19\">Le password non corrispondono!</font>"
 
@@ -1074,7 +1086,8 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:154
 msgid "Hostname contains invalid characters!"
-msgstr "<font color=\"#FF6D19\">L'hostname contiene caratteri non validi!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">L'hostname contiene caratteri non validi!</font>"
 
 #: yali4/gui/ScrBootloader.py:37
 msgid "Bootloader Choice"
@@ -1314,24 +1327,24 @@ msgstr "Configurazione pacchetto <b> %s </b>"
 msgid "Warning"
 msgstr "Avviso"
 
-#: yali4/gui/ScrInstall.py:166
+#: yali4/gui/ScrInstall.py:167
 #, python-format
 msgid "Package install failed : <b>%s</b>"
 msgstr ""
 
-#: yali4/gui/ScrInstall.py:166
+#: yali4/gui/ScrInstall.py:168
 msgid "Do you want to retry ?"
 msgstr ""
 
-#: yali4/gui/ScrInstall.py:186
+#: yali4/gui/ScrInstall.py:189
 msgid "Creating baselayout for your system!"
 msgstr ""
 
-#: yali4/gui/ScrInstall.py:195
+#: yali4/gui/ScrInstall.py:198
 msgid "Configuring packages.."
 msgstr "Configurazione pacchetti..."
 
-#: yali4/gui/ScrInstall.py:218
+#: yali4/gui/ScrInstall.py:221
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1543,7 +1556,7 @@ msgstr ""
 "<font size=\"+2\">Recupero Password</font>\n"
 "<font size=\"+1\"></font>\n"
 
-#: yali4/gui/ScrRescuePassword.py:57 yali4/gui/ScrUsers.py:71
+#: yali4/gui/ScrRescuePassword.py:57 yali4/gui/ScrUsers.py:72
 msgid "Caps Lock is on!"
 msgstr ""
 
@@ -1568,13 +1581,13 @@ msgstr "Password cambiata."
 msgid "Info"
 msgstr ""
 
-#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:181
+#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:190
 msgid "Don't use your user name or name as a password."
 msgstr ""
 "<font color=\"#FF6D19\">Non utilizzare il tuo nome utente o il tuo nome come "
 "password.</font>"
 
-#: yali4/gui/ScrRescuePassword.py:147
+#: yali4/gui/ScrRescuePassword.py:148
 msgid "Super User"
 msgstr "Amministratore (root)"
 
@@ -1600,7 +1613,7 @@ msgstr ""
 msgid "Getting history ..."
 msgstr ""
 
-#: yali4/gui/ScrRescuePisi.py:122
+#: yali4/gui/ScrRescuePisi.py:123
 #, python-format
 msgid "Operation %s : %s - %s"
 msgstr ""
@@ -1742,13 +1755,16 @@ msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
 "with <b>%(size)s MBs</b> as <b>%(fs)s</b>."
 msgstr ""
-"La partizione <b>%(newPartition)s</b> <b>è stata aggiunta</b> alla periferica <b>%(device)s</b> "
-"della dimensione di <b>%(size)s MBs</b>come <b>%(fs)s</b>."
+"La partizione <b>%(newPartition)s</b> <b>è stata aggiunta</b> alla "
+"periferica <b>%(device)s</b> della dimensione di <b>%(size)s MBs</b>come <b>%"
+"(fs)s</b>."
 
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "La partizione <b>%(newPartition)s</b> <b>è stata selezionata</b> come <b>%(type)s</b>."
+msgstr ""
+"La partizione <b>%(newPartition)s</b> <b>è stata selezionata</b> come <b>%"
+"(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -1778,14 +1794,14 @@ msgid ""
 "                                        <b>Note that this operation cannot "
 "be undone.</b></p>"
 msgstr ""
-"<p><b><u>Attenzione</u></b>: le operazioni di ridimensionamento della partizione "
-"sono rischiose, e possono danneggiare la tua partizione,<br>\n"
-"                                        <b>rendendo i tuoi dati impossibili da recuperare."
-"<br>\n"
-"                                        Assicurati di avere un backup "
-"di questa partizione<br>\n"
-"                                        <b>Attenzione: questa operazione non può "
-"essere annullata.</b></p>"
+"<p><b><u>Attenzione</u></b>: le operazioni di ridimensionamento della "
+"partizione sono rischiose, e possono danneggiare la tua partizione,<br>\n"
+"                                        <b>rendendo i tuoi dati impossibili "
+"da recuperare.<br>\n"
+"                                        Assicurati di avere un backup di "
+"questa partizione<br>\n"
+"                                        <b>Attenzione: questa operazione non "
+"può essere annullata.</b></p>"
 
 #: yali4/gui/ScrSummary.py:267 yali4/gui/ScrSummary.py:278
 #: yali4/gui/ScrSummary.py:294
@@ -1835,42 +1851,48 @@ msgstr ""
 "<font size=\"+2\">Impostazioni utenti</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2009 permette di creare utenti multipli, che condividono lo stesso computer.\n"
-"Puoi assegnare agli utenti diversi permessi di gestione e configurare i permessi dei vari\n"
+"Pardus 2009 permette di creare utenti multipli, che condividono lo stesso "
+"computer.\n"
+"Puoi assegnare agli utenti diversi permessi di gestione e configurare i "
+"permessi dei vari\n"
 "utenti tramite il Gestore Utenti.\n"
 "</p>\n"
 "<p>\n"
-"Per creare un nuovo utente, riempi il form e premi il pulsante \"Crea Utente\" \n"
-"Se vuoi che un utente acceda automaticamente, seleziona il suo nome utente dalla lista.\n"
-"Se vuoi cancellare un utente, seleziona iul nome utente dalla lista e premi \"Elimina Utente Selezionato\".\n"
-"Quando hai finito, procedi con l'installazione."
-"</p>\n"
+"Per creare un nuovo utente, riempi il form e premi il pulsante \"Crea Utente"
+"\" \n"
+"Se vuoi che un utente acceda automaticamente, seleziona il suo nome utente "
+"dalla lista.\n"
+"Se vuoi cancellare un utente, seleziona iul nome utente dalla lista e premi "
+"\"Elimina Utente Selezionato\".\n"
+"Quando hai finito, procedi con l'installazione.</p>\n"
 "<p>\n"
 "Clicca sul pulsante Avanti per procedere.\n"
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrUsers.py:233
+#: yali4/gui/ScrUsers.py:154 yali4/gui/ScrUsers.py:329
+msgid "Update User"
+msgstr "Aggiorna utente"
+
+#: yali4/gui/ScrUsers.py:243
 msgid "Username exists, choose another one!"
 msgstr ""
 "<font color=\"#FF6D19\">Questo nome utente esiste già, scegline un altro!</"
 "font>"
 
-#: yali4/gui/ScrUsers.py:236
+#: yali4/gui/ScrUsers.py:246
 msgid "Username contains invalid characters!"
-msgstr "<font color=\"#FF6D19\">Il nome utente contiene caratteri non validi!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Il nome utente contiene caratteri non validi!</font>"
 
-#: yali4/gui/ScrUsers.py:239
+#: yali4/gui/ScrUsers.py:249
 msgid "Realname contains invalid characters!"
-msgstr "<font color=\"#FF6D19\">Il nome reale contiene caratteri non validi!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Il nome reale contiene caratteri non validi!</font>"
 
-#: yali4/gui/ScrUsers.py:247
+#: yali4/gui/ScrUsers.py:257
 msgid "User ID used before, choose another one!"
 msgstr "ID Utente già in uso, per favore, scegline un altro!"
-
-#: yali4/gui/ScrUsers.py:318
-msgid "Update User"
-msgstr "Aggiorna utente"
 
 #: yali4/gui/ScrWelcome.py:30
 msgid "Welcome !! "
@@ -1898,20 +1920,22 @@ msgid ""
 msgstr ""
 "\n"
 "<font size=\"+2\">Benvenuto!</font>\n"
-"<font size=\"+1\"><p>Benvenuto in Pardus 2009, che contiene molti "
-"programmi semplici da usare. Con Pardus 2009 puoi connetterti a Internet, "
-"creare documenti, giocare, ascoltare musica e molto altro!</p>\n"
-"<p>Questo programma ti aiuterà a installare Pardus 2009 in pochi e semplici passi "
-"e a riconoscere e installare il tuo hardware. Ti consigliamo di effettuare un backup dei "
-"tuoi dischi prima di iniziare l'installazione. </p>\n"
-"<p>Puoi cominciare l'installazione (e il tuo cammino nel mondo del sofware libero) premendo il pulsantw Avanti.</p>\n"
+"<font size=\"+1\"><p>Benvenuto in Pardus 2009, che contiene molti programmi "
+"semplici da usare. Con Pardus 2009 puoi connetterti a Internet, creare "
+"documenti, giocare, ascoltare musica e molto altro!</p>\n"
+"<p>Questo programma ti aiuterà a installare Pardus 2009 in pochi e semplici "
+"passi e a riconoscere e installare il tuo hardware. Ti consigliamo di "
+"effettuare un backup dei tuoi dischi prima di iniziare l'installazione. </"
+"p>\n"
+"<p>Puoi cominciare l'installazione (e il tuo cammino nel mondo del sofware "
+"libero) premendo il pulsantw Avanti.</p>\n"
 "</font>\n"
 
-#: yali4/gui/YaliDialog.py:127
+#: yali4/gui/YaliDialog.py:127 yali4/gui/YaliDialog.py:154
 msgid "Yes"
 msgstr "Sì"
 
-#: yali4/gui/YaliDialog.py:128
+#: yali4/gui/YaliDialog.py:128 yali4/gui/YaliDialog.py:155
 msgid "No"
 msgstr "No"
 
@@ -1923,13 +1947,25 @@ msgstr "Non chiederlo di nuovo"
 msgid "Do you want to continue ?"
 msgstr "Vuoi continuare?"
 
-#: yali4/gui/YaliDialog.py:152
-msgid "Information"
-msgstr "Informazioni"
+#: yali4/gui/YaliDialog.py:153
+msgid "Eject CD"
+msgstr ""
 
-#: yali4/gui/YaliDialog.py:154
+#: yali4/gui/YaliDialog.py:179 yali4/gui/YaliDialog.py:196
 msgid "Ok"
 msgstr "Ok"
+
+#: yali4/gui/YaliDialog.py:180
+msgid "Please insert a new CD and then click Ok"
+msgstr ""
+
+#: yali4/gui/YaliDialog.py:182
+msgid "Insert New CD"
+msgstr ""
+
+#: yali4/gui/YaliDialog.py:194
+msgid "Information"
+msgstr "Informazioni"
 
 #: yali4/gui/YaliWindow.py:72 yali4/gui/YaliWindow.py:161
 msgid "Show Help"
@@ -1990,7 +2026,9 @@ msgstr "Controllo filesystem fallito su %s"
 
 #: yali4/filesystem.py:380 yali4/filesystem.py:471
 msgid "Partition is not ready for resizing. Check it before installation."
-msgstr "La partizione non è pronta per il ridimensionamento. Controllala prima di installare Pardus."
+msgstr ""
+"La partizione non è pronta per il ridimensionamento. Controllala prima di "
+"installare Pardus."
 
 #: yali4/filesystem.py:477
 #, python-format
@@ -2006,7 +2044,9 @@ msgstr "Backtrace:"
 msgid ""
 "Plugin (%s) not found or error occurred while loading. Switching to normal "
 "installation process."
-msgstr "Plugin (%s) non trovato, oppure c'è stato un errore duraante il caricamento. Passaggio all'installazione normale in corso..."
+msgstr ""
+"Plugin (%s) non trovato, oppure c'è stato un errore duraante il caricamento. "
+"Passaggio all'installazione normale in corso..."
 
 #: yali4/installer.py:156
 msgid "YALI Is Working..."
@@ -2299,5 +2339,5 @@ msgstr "Preparazione in corso della home directory di <b>%s</b>..."
 #: yali4/storage.py:375
 #, python-format
 msgid "Not enough free space on %s to create new partition"
-msgstr "Non c'è abbastanza spazio libero su %s per creare una nuova partizione!"
-
+msgstr ""
+"Non c'è abbastanza spazio libero su %s per creare una nuova partizione!"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: yali\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 15:36+0300\n"
+"POT-Creation-Date: 2009-07-16 23:40+0300\n"
 "PO-Revision-Date: 2007-03-18 14:13+0100\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@ns1.uludag.org.tr>\n"
@@ -54,7 +54,7 @@ msgstr "Esborra l'usuari sel·leccionat"
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rescuegrubwidget.py:75
 #: yali4/gui/Ui/rescuepasswordwidget.py:101
 #: yali4/gui/Ui/rescuepisiwidget.py:66 yali4/gui/Ui/rescuewidget.py:83
-#: yali4/gui/Ui/rootpasswidget.py:170 yali4/gui/Ui/setupuserswidget.py:171
+#: yali4/gui/Ui/rootpasswidget.py:170 yali4/gui/Ui/setupuserswidget.py:174
 #: yali4/gui/Ui/welcomewidget.py:90
 #, fuzzy
 msgid "Form1"
@@ -405,7 +405,8 @@ msgid ""
 "be undone.</span></p></body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:68
+#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/setupuserswidget.py:190
+#: yali4/gui/Ui/summarywidget.py:68
 msgid "Cancel"
 msgstr "Cancel·la"
 
@@ -502,68 +503,68 @@ msgstr "Mot de pas de l'administrador del sistema (una altra vegada):"
 msgid "Hostname:"
 msgstr "Nom de l'ordinador:"
 
-#: yali4/gui/Ui/setupuserswidget.py:172
+#: yali4/gui/Ui/setupuserswidget.py:175
 msgid "Real Name:"
 msgstr "Nom real:"
 
-#: yali4/gui/Ui/setupuserswidget.py:173
+#: yali4/gui/Ui/setupuserswidget.py:176
 msgid "User Name:"
 msgstr "Nom de l'usuari:"
 
-#: yali4/gui/Ui/setupuserswidget.py:174
+#: yali4/gui/Ui/setupuserswidget.py:177
 msgid "Password:"
 msgstr "Mot de pas:"
 
-#: yali4/gui/Ui/setupuserswidget.py:175
+#: yali4/gui/Ui/setupuserswidget.py:178
+msgid "Password (again):"
+msgstr "Mot de pas (una altra vegada);"
+
+#: yali4/gui/Ui/setupuserswidget.py:179
 #, fuzzy
 msgid "User ID"
 msgstr "Usuaris:"
 
-#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:252
-#: yali4/gui/ScrUsers.py:294
-msgid "Create User"
-msgstr "Crea un usuari"
-
-#: yali4/gui/Ui/setupuserswidget.py:177
+#: yali4/gui/Ui/setupuserswidget.py:180
 msgid "Give administrator privileges to this user"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:178
+#: yali4/gui/Ui/setupuserswidget.py:181
+msgid "Not recommended"
+msgstr ""
+
+#: yali4/gui/Ui/setupuserswidget.py:182
+msgid "Do not ask any password to this user"
+msgstr ""
+
+#: yali4/gui/Ui/setupuserswidget.py:183
+msgid "Advanced"
+msgstr ""
+
+#: yali4/gui/Ui/setupuserswidget.py:184
 #, fuzzy
 msgid "Edit Selected User"
 msgstr "Esborra l'usuari sel·leccionat"
 
-#: yali4/gui/Ui/setupuserswidget.py:179
+#: yali4/gui/Ui/setupuserswidget.py:185
 msgid "Delete Selected User"
 msgstr "Esborra l'usuari sel·leccionat"
 
-#: yali4/gui/Ui/setupuserswidget.py:180
+#: yali4/gui/Ui/setupuserswidget.py:186
 msgid "Auto Login User :"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:181
+#: yali4/gui/Ui/setupuserswidget.py:187
 msgid "Auto Login Disabled"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:182
+#: yali4/gui/Ui/setupuserswidget.py:188
 msgid "Users:"
 msgstr "Usuaris:"
 
-#: yali4/gui/Ui/setupuserswidget.py:183
-msgid "Password (again):"
-msgstr "Mot de pas (una altra vegada);"
-
-#: yali4/gui/Ui/setupuserswidget.py:184
-msgid "Not recommended"
-msgstr ""
-
-#: yali4/gui/Ui/setupuserswidget.py:185
-msgid "Do not ask any password to this user"
-msgstr ""
-
-#: yali4/gui/Ui/setupuserswidget.py:186
-msgid "Advanced"
-msgstr ""
+#: yali4/gui/Ui/setupuserswidget.py:189 yali4/gui/ScrUsers.py:262
+#: yali4/gui/ScrUsers.py:304 yali4/gui/ScrUsers.py:363
+msgid "Create User"
+msgstr "Crea un usuari"
 
 #: yali4/gui/Ui/summarywidget.py:69
 msgid "Begin Install"
@@ -1014,13 +1015,13 @@ msgid "<center>Caps Lock is on!</center>"
 msgstr "<font color=\"#FF6D19\">Tens les majúscules activades!</font>"
 
 #: yali4/gui/ScrAdmin.py:120 yali4/gui/ScrRescuePassword.py:114
-#: yali4/gui/ScrUsers.py:187
+#: yali4/gui/ScrUsers.py:196
 #, fuzzy
 msgid "Password is too short!"
 msgstr "<font color=\"#FF6D19\">Els mots de pas no coinideixen!</font>"
 
 #: yali4/gui/ScrAdmin.py:129 yali4/gui/ScrRescuePassword.py:111
-#: yali4/gui/ScrUsers.py:184
+#: yali4/gui/ScrUsers.py:193
 #, fuzzy
 msgid "Passwords do not match!"
 msgstr "<font color=\"#FF6D19\">Els mots de pas no coinideixen!</font>"
@@ -1279,26 +1280,26 @@ msgstr "Configuració del programari: %s"
 msgid "Warning"
 msgstr "Compte"
 
-#: yali4/gui/ScrInstall.py:166
+#: yali4/gui/ScrInstall.py:167
 #, python-format
 msgid "Package install failed : <b>%s</b>"
 msgstr ""
 
-#: yali4/gui/ScrInstall.py:166
+#: yali4/gui/ScrInstall.py:168
 msgid "Do you want to retry ?"
 msgstr ""
 
-#: yali4/gui/ScrInstall.py:186
+#: yali4/gui/ScrInstall.py:189
 #, fuzzy
 msgid "Creating baselayout for your system!"
 msgstr "Configuració del programari del teu sistema!"
 
-#: yali4/gui/ScrInstall.py:195
+#: yali4/gui/ScrInstall.py:198
 #, fuzzy
 msgid "Configuring packages.."
 msgstr "Configuració del programari: %s"
 
-#: yali4/gui/ScrInstall.py:218
+#: yali4/gui/ScrInstall.py:221
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1525,7 +1526,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrRescuePassword.py:57 yali4/gui/ScrUsers.py:71
+#: yali4/gui/ScrRescuePassword.py:57 yali4/gui/ScrUsers.py:72
 msgid "Caps Lock is on!"
 msgstr ""
 
@@ -1552,13 +1553,13 @@ msgstr "Mot de pas (una altra vegada);"
 msgid "Info"
 msgstr ""
 
-#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:181
+#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:190
 #, fuzzy
 msgid "Don't use your user name or name as a password."
 msgstr ""
 "<font color=\"#FF6D19\">Preparació del teu disc per a la instal·lació!</font>"
 
-#: yali4/gui/ScrRescuePassword.py:147
+#: yali4/gui/ScrRescuePassword.py:148
 #, fuzzy
 msgid "Super User"
 msgstr "Nou usuari:"
@@ -1592,7 +1593,7 @@ msgstr ""
 msgid "Getting history ..."
 msgstr ""
 
-#: yali4/gui/ScrRescuePisi.py:122
+#: yali4/gui/ScrRescuePisi.py:123
 #, python-format
 msgid "Operation %s : %s - %s"
 msgstr ""
@@ -1834,35 +1835,35 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:233
+#: yali4/gui/ScrUsers.py:154 yali4/gui/ScrUsers.py:329
+#, fuzzy
+msgid "Update User"
+msgstr "Crea un usuari"
+
+#: yali4/gui/ScrUsers.py:243
 #, fuzzy
 msgid "Username exists, choose another one!"
 msgstr ""
 "<font color=\"#FF6D19\">Mmmh, aquest usuari (nom) ja existeix. Tria un "
 "d'altre, si et plau.</font>"
 
-#: yali4/gui/ScrUsers.py:236
+#: yali4/gui/ScrUsers.py:246
 #, fuzzy
 msgid "Username contains invalid characters!"
 msgstr ""
 "<font color=\"#FF6D19\">Ho sent. El nom que has triat per a l'usuari conté "
 "caràcters no vàlids.</font>"
 
-#: yali4/gui/ScrUsers.py:239
+#: yali4/gui/ScrUsers.py:249
 #, fuzzy
 msgid "Realname contains invalid characters!"
 msgstr ""
 "<font color=\"#FF6D19\">Ho sent. El nom autèntic conté caràcters no vàlids.</"
 "font>"
 
-#: yali4/gui/ScrUsers.py:247
+#: yali4/gui/ScrUsers.py:257
 msgid "User ID used before, choose another one!"
 msgstr ""
-
-#: yali4/gui/ScrUsers.py:318
-#, fuzzy
-msgid "Update User"
-msgstr "Crea un usuari"
 
 #: yali4/gui/ScrWelcome.py:30
 msgid "Welcome !! "
@@ -1890,11 +1891,11 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/YaliDialog.py:127
+#: yali4/gui/YaliDialog.py:127 yali4/gui/YaliDialog.py:154
 msgid "Yes"
 msgstr ""
 
-#: yali4/gui/YaliDialog.py:128
+#: yali4/gui/YaliDialog.py:128 yali4/gui/YaliDialog.py:155
 msgid "No"
 msgstr ""
 
@@ -1906,12 +1907,24 @@ msgstr ""
 msgid "Do you want to continue ?"
 msgstr ""
 
-#: yali4/gui/YaliDialog.py:152
-msgid "Information"
+#: yali4/gui/YaliDialog.py:153
+msgid "Eject CD"
 msgstr ""
 
-#: yali4/gui/YaliDialog.py:154
+#: yali4/gui/YaliDialog.py:179 yali4/gui/YaliDialog.py:196
 msgid "Ok"
+msgstr ""
+
+#: yali4/gui/YaliDialog.py:180
+msgid "Please insert a new CD and then click Ok"
+msgstr ""
+
+#: yali4/gui/YaliDialog.py:182
+msgid "Insert New CD"
+msgstr ""
+
+#: yali4/gui/YaliDialog.py:194
+msgid "Information"
 msgstr ""
 
 #: yali4/gui/YaliWindow.py:72 yali4/gui/YaliWindow.py:161

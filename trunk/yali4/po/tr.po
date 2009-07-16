@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 15:36+0300\n"
+"POT-Creation-Date: 2009-07-16 23:40+0300\n"
 "PO-Revision-Date: 2009-07-15 17:22+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -61,7 +61,7 @@ msgstr "Seçiliyi Kullan"
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rescuegrubwidget.py:75
 #: yali4/gui/Ui/rescuepasswordwidget.py:101
 #: yali4/gui/Ui/rescuepisiwidget.py:66 yali4/gui/Ui/rescuewidget.py:83
-#: yali4/gui/Ui/rootpasswidget.py:170 yali4/gui/Ui/setupuserswidget.py:171
+#: yali4/gui/Ui/rootpasswidget.py:170 yali4/gui/Ui/setupuserswidget.py:174
 #: yali4/gui/Ui/welcomewidget.py:90
 msgid "Form1"
 msgstr "Form1"
@@ -449,7 +449,8 @@ msgstr ""
 "span><span style=\" font-weight:600;\">Unutmayın ki yeniden boyutlandırma "
 "işlemi geri alınamaz.</span></p></body></html>"
 
-#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:68
+#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/setupuserswidget.py:190
+#: yali4/gui/Ui/summarywidget.py:68
 msgid "Cancel"
 msgstr "İptal"
 
@@ -541,66 +542,66 @@ msgstr "Sistem yöneticisi parolası (tekrar):"
 msgid "Hostname:"
 msgstr "Makine İsmi:"
 
-#: yali4/gui/Ui/setupuserswidget.py:172
+#: yali4/gui/Ui/setupuserswidget.py:175
 msgid "Real Name:"
 msgstr "Gerçek İsim:"
 
-#: yali4/gui/Ui/setupuserswidget.py:173
+#: yali4/gui/Ui/setupuserswidget.py:176
 msgid "User Name:"
 msgstr "Kullanıcı Adı:"
 
-#: yali4/gui/Ui/setupuserswidget.py:174
+#: yali4/gui/Ui/setupuserswidget.py:177
 msgid "Password:"
 msgstr "Parola:"
 
-#: yali4/gui/Ui/setupuserswidget.py:175
-msgid "User ID"
-msgstr "Kullanıcı No"
-
-#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:252
-#: yali4/gui/ScrUsers.py:294
-msgid "Create User"
-msgstr "Kullanıcı Ekle"
-
-#: yali4/gui/Ui/setupuserswidget.py:177
-msgid "Give administrator privileges to this user"
-msgstr "Bu kullanıcıya yönetici hakları ver"
-
 #: yali4/gui/Ui/setupuserswidget.py:178
-msgid "Edit Selected User"
-msgstr "Seçili Kullanıcıyı Düzenle"
-
-#: yali4/gui/Ui/setupuserswidget.py:179
-msgid "Delete Selected User"
-msgstr "Seçili Kullanıcıyı Sil"
-
-#: yali4/gui/Ui/setupuserswidget.py:180
-msgid "Auto Login User :"
-msgstr "Otomatik Giriş Kullanıcısı:"
-
-#: yali4/gui/Ui/setupuserswidget.py:181
-msgid "Auto Login Disabled"
-msgstr "Otomatik Giriş Kapalı"
-
-#: yali4/gui/Ui/setupuserswidget.py:182
-msgid "Users:"
-msgstr "Kullanıcılar:"
-
-#: yali4/gui/Ui/setupuserswidget.py:183
 msgid "Password (again):"
 msgstr "Parola (tekrar):"
 
-#: yali4/gui/Ui/setupuserswidget.py:184
+#: yali4/gui/Ui/setupuserswidget.py:179
+msgid "User ID"
+msgstr "Kullanıcı No"
+
+#: yali4/gui/Ui/setupuserswidget.py:180
+msgid "Give administrator privileges to this user"
+msgstr "Bu kullanıcıya yönetici hakları ver"
+
+#: yali4/gui/Ui/setupuserswidget.py:181
 msgid "Not recommended"
 msgstr "Önerilmez"
 
-#: yali4/gui/Ui/setupuserswidget.py:185
+#: yali4/gui/Ui/setupuserswidget.py:182
 msgid "Do not ask any password to this user"
 msgstr "Bu kullanıcıya hiç parola sorma"
 
-#: yali4/gui/Ui/setupuserswidget.py:186
+#: yali4/gui/Ui/setupuserswidget.py:183
 msgid "Advanced"
 msgstr "Gelişmiş"
+
+#: yali4/gui/Ui/setupuserswidget.py:184
+msgid "Edit Selected User"
+msgstr "Seçili Kullanıcıyı Düzenle"
+
+#: yali4/gui/Ui/setupuserswidget.py:185
+msgid "Delete Selected User"
+msgstr "Seçili Kullanıcıyı Sil"
+
+#: yali4/gui/Ui/setupuserswidget.py:186
+msgid "Auto Login User :"
+msgstr "Otomatik Giriş Kullanıcısı:"
+
+#: yali4/gui/Ui/setupuserswidget.py:187
+msgid "Auto Login Disabled"
+msgstr "Otomatik Giriş Kapalı"
+
+#: yali4/gui/Ui/setupuserswidget.py:188
+msgid "Users:"
+msgstr "Kullanıcılar:"
+
+#: yali4/gui/Ui/setupuserswidget.py:189 yali4/gui/ScrUsers.py:262
+#: yali4/gui/ScrUsers.py:304 yali4/gui/ScrUsers.py:363
+msgid "Create User"
+msgstr "Kullanıcı Ekle"
 
 #: yali4/gui/Ui/summarywidget.py:69
 msgid "Begin Install"
@@ -739,10 +740,11 @@ msgstr ""
 "Sistem Yöneticisi arayüzünde bulabilirsiniz."
 
 #: yali4/gui/descSlide.py:25
+#, fuzzy
 msgid ""
 "Kaptan (Turkish for 'Captain') is what welcomes you to your Pardus "
 "installation. Using Kaptan, you can configure your desktop, changing the "
-"taskbar's location, wallpaper and desktop theme, and İnternet connection "
+"taskbar's location, wallpaper and desktop theme, and internet connection "
 "settings. Kaptan also allows you to add the Contribution Repository to your "
 "package management settings. Even more, Kaptan includes options to set "
 "intelligent search and an online Pardus Beginner's Tour."
@@ -765,8 +767,8 @@ msgstr ""
 "Pardus'un paket depolarında bulunan yüzlerce yazılımı tek bir tıkla "
 "bilgisayarınıza kurmanız mümkün. Hiçbir ayar yapmadan ve uğraşmadan, paket "
 "yöneticisini kullanarak PiSi paketlerini tek tuşla bilgisayarınıza "
-"yükleyebilirsiniz. Tek yapmanız gereken, yeni kurduğunuz programı çalıştırmak. "
-"Hepsi bu kadar kolay!"
+"yükleyebilirsiniz. Tek yapmanız gereken, yeni kurduğunuz programı "
+"çalıştırmak. Hepsi bu kadar kolay!"
 
 #: yali4/gui/descSlide.py:27
 msgid ""
@@ -813,12 +815,13 @@ msgstr ""
 "taşınabilir müzikçalarınıza da kopyalayabilirsiniz."
 
 #: yali4/gui/descSlide.py:30
+#, fuzzy
 msgid ""
 "Mozilla Firefox is the preferred browser with its speed, security and "
 "flexibility. With its addon support and a *very* rich addon repository, you "
 "can add new functionality to Mozilla Firefox. You will find many of the most "
 "visited websites along with Pardus-related websites in your bookmarks in its "
-"Pardus default installation. Enjoy a fast and secure İnternet with the new "
+"Pardus default installation. Enjoy a fast and secure internet with the new "
 "Mozilla Firefox 3.5."
 msgstr ""
 "Mozilla Firefox, hızı, güvenliği ve esnekliğiyle en çok tercih edilen özgür "
@@ -1168,12 +1171,12 @@ msgid "<center>Caps Lock is on!</center>"
 msgstr "<center>Caps Lock açık!</center>"
 
 #: yali4/gui/ScrAdmin.py:120 yali4/gui/ScrRescuePassword.py:114
-#: yali4/gui/ScrUsers.py:187
+#: yali4/gui/ScrUsers.py:196
 msgid "Password is too short!"
 msgstr "Parola çok kısa!"
 
 #: yali4/gui/ScrAdmin.py:129 yali4/gui/ScrRescuePassword.py:111
-#: yali4/gui/ScrUsers.py:184
+#: yali4/gui/ScrUsers.py:193
 msgid "Passwords do not match!"
 msgstr "Parolalar aynı değil!"
 
@@ -1416,24 +1419,24 @@ msgstr "Yapılandırılan paket: <b>%s</b>"
 msgid "Warning"
 msgstr "Uyarı"
 
-#: yali4/gui/ScrInstall.py:166
+#: yali4/gui/ScrInstall.py:167
 #, python-format
 msgid "Package install failed : <b>%s</b>"
 msgstr "Paket kurulumu sırasında hata : <b>%s</b>"
 
-#: yali4/gui/ScrInstall.py:166
+#: yali4/gui/ScrInstall.py:168
 msgid "Do you want to retry ?"
 msgstr "Tekrar denemek ister misiniz ?"
 
-#: yali4/gui/ScrInstall.py:186
+#: yali4/gui/ScrInstall.py:189
 msgid "Creating baselayout for your system!"
 msgstr "Sisteminiz için temel bileşenler yaratılıyor!"
 
-#: yali4/gui/ScrInstall.py:195
+#: yali4/gui/ScrInstall.py:198
 msgid "Configuring packages.."
 msgstr "Paketler yapılandırılıyor.."
 
-#: yali4/gui/ScrInstall.py:218
+#: yali4/gui/ScrInstall.py:221
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1493,8 +1496,9 @@ msgstr ""
 "<font size=\"+1\">\n"
 "<p>\n"
 "Klavyenizin türü ve kullanmak istediğiniz dil haritasına uygun olan seçeneği "
-"buradan seçebilirsiniz. Tercihinizi yaptıktan sonra test kutusunda yaptığınız "
-"seçimi test edebilirsiniz. Seçiminizi yaptıktan sonra lütfen ilerleyin.</p>\n"
+"buradan seçebilirsiniz. Tercihinizi yaptıktan sonra test kutusunda "
+"yaptığınız seçimi test edebilirsiniz. Seçiminizi yaptıktan sonra lütfen "
+"ilerleyin.</p>\n"
 "</font>\n"
 
 #: yali4/gui/ScrPartitionAuto.py:37
@@ -1662,7 +1666,7 @@ msgstr ""
 "<font size=\"+2\">Parola Değiştirme</font>\n"
 "<font size=\"+1\"></font>\n"
 
-#: yali4/gui/ScrRescuePassword.py:57 yali4/gui/ScrUsers.py:71
+#: yali4/gui/ScrRescuePassword.py:57 yali4/gui/ScrUsers.py:72
 msgid "Caps Lock is on!"
 msgstr "Caps Lock açık!"
 
@@ -1687,11 +1691,11 @@ msgstr "Parola değiştirildi"
 msgid "Info"
 msgstr "Bilgi"
 
-#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:181
+#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:190
 msgid "Don't use your user name or name as a password."
 msgstr "Kullanıcı adınızı parola olarak kullanmayın."
 
-#: yali4/gui/ScrRescuePassword.py:147
+#: yali4/gui/ScrRescuePassword.py:148
 msgid "Super User"
 msgstr "Yetkili Kullanıcı"
 
@@ -1717,7 +1721,7 @@ msgstr ""
 msgid "Getting history ..."
 msgstr "Geçmiş bilgisi getiriliyor ..."
 
-#: yali4/gui/ScrRescuePisi.py:122
+#: yali4/gui/ScrRescuePisi.py:123
 #, python-format
 msgid "Operation %s : %s - %s"
 msgstr "İşlem %s : %s - %s"
@@ -1969,25 +1973,25 @@ msgstr ""
 "yaptıktan sonra lütfen ilerleyin.</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrUsers.py:233
+#: yali4/gui/ScrUsers.py:154 yali4/gui/ScrUsers.py:329
+msgid "Update User"
+msgstr "Kullanıcıyı Güncelle"
+
+#: yali4/gui/ScrUsers.py:243
 msgid "Username exists, choose another one!"
 msgstr "Bu kullanıcı adı zaten var, başka bir tane seçin!"
 
-#: yali4/gui/ScrUsers.py:236
+#: yali4/gui/ScrUsers.py:246
 msgid "Username contains invalid characters!"
 msgstr "Kullanıcı adı geçersiz karakterler içeriyor!"
 
-#: yali4/gui/ScrUsers.py:239
+#: yali4/gui/ScrUsers.py:249
 msgid "Realname contains invalid characters!"
 msgstr "Gerçek İsim bölümü geçersiz karakterler içeriyor!"
 
-#: yali4/gui/ScrUsers.py:247
+#: yali4/gui/ScrUsers.py:257
 msgid "User ID used before, choose another one!"
 msgstr "Kullanıcı ID'si daha önce kullanılmış, başka bir tane seçin!"
-
-#: yali4/gui/ScrUsers.py:318
-msgid "Update User"
-msgstr "Kullanıcıyı Güncelle"
 
 #: yali4/gui/ScrWelcome.py:30
 msgid "Welcome !! "
@@ -2027,11 +2031,11 @@ msgstr ""
 "başlatabilirsiniz.</p>\n"
 "</font>\n"
 
-#: yali4/gui/YaliDialog.py:127
+#: yali4/gui/YaliDialog.py:127 yali4/gui/YaliDialog.py:154
 msgid "Yes"
 msgstr "Evet"
 
-#: yali4/gui/YaliDialog.py:128
+#: yali4/gui/YaliDialog.py:128 yali4/gui/YaliDialog.py:155
 msgid "No"
 msgstr "Hayır"
 
@@ -2043,13 +2047,25 @@ msgstr "Tekrar sorma"
 msgid "Do you want to continue ?"
 msgstr "Devam etmek istiyor musunuz ?"
 
-#: yali4/gui/YaliDialog.py:152
-msgid "Information"
-msgstr "Bilgi"
+#: yali4/gui/YaliDialog.py:153
+msgid "Eject CD"
+msgstr ""
 
-#: yali4/gui/YaliDialog.py:154
+#: yali4/gui/YaliDialog.py:179 yali4/gui/YaliDialog.py:196
 msgid "Ok"
 msgstr "Tamam"
+
+#: yali4/gui/YaliDialog.py:180
+msgid "Please insert a new CD and then click Ok"
+msgstr ""
+
+#: yali4/gui/YaliDialog.py:182
+msgid "Insert New CD"
+msgstr ""
+
+#: yali4/gui/YaliDialog.py:194
+msgid "Information"
+msgstr "Bilgi"
 
 #: yali4/gui/YaliWindow.py:72 yali4/gui/YaliWindow.py:161
 msgid "Show Help"
