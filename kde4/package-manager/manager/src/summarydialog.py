@@ -33,7 +33,7 @@ class ApplicationItem(QtGui.QListWidgetItem):
         self.name = name
         self.genericName = genericName
         self.icon = icon
-        self.command = command
+        self.command = command.split()[0]
 
 class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
     def __init__(self, item, parent=None):
