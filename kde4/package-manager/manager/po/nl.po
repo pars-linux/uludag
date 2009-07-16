@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-16 15:58+0300\n"
-"PO-Revision-Date: 15/07/09 16:30\n"
+"PO-Revision-Date: 16/07/09 23:48\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -46,14 +46,12 @@ msgid "Install Package(s)"
 msgstr "Installeer pakket(ten)"
 
 #: .tmp/ui_basketdialog.py:81
-#, fuzzy
 msgid "Download Size:"
-msgstr "downloaden"
+msgstr "Downloadgrootte:"
 
 #: .tmp/ui_basketdialog.py:82
-#, fuzzy
 msgid "<b>2.0 MB</"
-msgstr "<b>2.2 MB</b>"
+msgstr "<b>2.0 MB</"
 
 #: .tmp/ui_pminstaller.py:46 .tmp/ui_mainwidget.py:58
 msgid "Form"
@@ -466,8 +464,7 @@ msgid "Currently your basket is empty."
 msgstr "Momenteel is uw mandje leeg."
 
 #: .tmp/statemanager.py:125
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
 "van <b>%2</b>"
@@ -480,8 +477,7 @@ msgstr ""
 
 #: .tmp/statemanager.py:130
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr ""
-"met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
+msgstr "met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
 
 #: .tmp/statemanager.py:131
 msgid "in your basket."
@@ -687,8 +683,3 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nieuwe pakketten zijn met succes geïnstalleerd."
-
-#~ msgid "Cancel"
-#~ msgstr "Annuleren"
