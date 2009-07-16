@@ -399,6 +399,10 @@
   syslinux {
     video.modes.list xmenu.video .xm_current get get .vm_mode get
 
+    % Make sure we boot as livecd even 
+    % FIXME: this can be defined in config
+    "mudur=livecd " bc.cmd dup length add sprintf
+
     dup 0 ge {
       0x200 add "vga=0x%x " bc.cmd dup length add sprintf
     } {
@@ -425,47 +429,47 @@
       %} ifelse
 
       config.lang "ca_ES" eq {
-        "mudur=livecd,language:ca " bc.cmd dup length add sprintf
+        "mudur=language:ca " bc.cmd dup length add sprintf
       } if
 
       config.lang "de_DE" eq {
-        "mudur=livecd,language:de " bc.cmd dup length add sprintf
+        "mudur=language:de " bc.cmd dup length add sprintf
       } if
 
       config.lang "en_US" eq {
-        "mudur=livecd,language:en " bc.cmd dup length add sprintf
+        "mudur=language:en " bc.cmd dup length add sprintf
       } if
 
       config.lang "es_ES" eq {
-        "mudur=livecd,language:es " bc.cmd dup length add sprintf
+        "mudur=language:es " bc.cmd dup length add sprintf
       } if
 
       config.lang "fr_FR" eq {
-        "mudur=livecd,language:fr " bc.cmd dup length add sprintf
+        "mudur=language:fr " bc.cmd dup length add sprintf
       } if
 
       config.lang "it_IT" eq {
-        "mudur=livecd,language:it " bc.cmd dup length add sprintf
+        "mudur=language:it " bc.cmd dup length add sprintf
       } if
 
       config.lang "nl_NL" eq {
-        "mudur=livecd,language:nl " bc.cmd dup length add sprintf
+        "mudur=language:nl " bc.cmd dup length add sprintf
       } if
 
       config.lang "pl_PL" eq {
-        "mudur=livecd,language:pl " bc.cmd dup length add sprintf
+        "mudur=language:pl " bc.cmd dup length add sprintf
       } if
 
       config.lang "pt_BR" eq {
-        "mudur=livecd,language:pt_BR " bc.cmd dup length add sprintf
+        "mudur=language:pt_BR " bc.cmd dup length add sprintf
       } if
 
       config.lang "sv_SE" eq {
-        "mudur=livecd,language:sv " bc.cmd dup length add sprintf
+        "mudur=language:sv " bc.cmd dup length add sprintf
       } if
 
       config.lang "tr_TR" eq {
-        "mudur=livecd,language:tr " bc.cmd dup length add sprintf
+        "mudur=language:tr " bc.cmd dup length add sprintf
       } if
 
     } if
