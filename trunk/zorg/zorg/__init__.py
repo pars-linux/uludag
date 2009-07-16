@@ -10,7 +10,7 @@
 # Please read the COPYING file.
 #
 
-__version__ = "1.86"
+__version__ = "2.0"
 
 def versionString():
     return __version__
