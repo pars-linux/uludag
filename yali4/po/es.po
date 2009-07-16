@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 15:36+0300\n"
+"POT-Creation-Date: 2009-07-16 23:40+0300\n"
 "PO-Revision-Date: 2009-07-15 20:04-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -59,7 +59,7 @@ msgstr "Use Seleccionado"
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rescuegrubwidget.py:75
 #: yali4/gui/Ui/rescuepasswordwidget.py:101
 #: yali4/gui/Ui/rescuepisiwidget.py:66 yali4/gui/Ui/rescuewidget.py:83
-#: yali4/gui/Ui/rootpasswidget.py:170 yali4/gui/Ui/setupuserswidget.py:171
+#: yali4/gui/Ui/rootpasswidget.py:170 yali4/gui/Ui/setupuserswidget.py:174
 #: yali4/gui/Ui/welcomewidget.py:90
 msgid "Form1"
 msgstr "Form1"
@@ -460,7 +460,8 @@ msgstr ""
 "datos !<span style=\" font-weight:600;\"> </span><span style=\" font-"
 "weight:600;\">Esta operación no se puede deshacer !</span></p></body></html>"
 
-#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:68
+#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/setupuserswidget.py:190
+#: yali4/gui/Ui/summarywidget.py:68
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -552,66 +553,66 @@ msgstr "Repetir Contraseña:"
 msgid "Hostname:"
 msgstr "Nombre de la máquina (hostname):"
 
-#: yali4/gui/Ui/setupuserswidget.py:172
+#: yali4/gui/Ui/setupuserswidget.py:175
 msgid "Real Name:"
 msgstr "Nombre Real:"
 
-#: yali4/gui/Ui/setupuserswidget.py:173
+#: yali4/gui/Ui/setupuserswidget.py:176
 msgid "User Name:"
 msgstr "Nombre de Usuario:"
 
-#: yali4/gui/Ui/setupuserswidget.py:174
+#: yali4/gui/Ui/setupuserswidget.py:177
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: yali4/gui/Ui/setupuserswidget.py:175
-msgid "User ID"
-msgstr "ID de Usuario"
-
-#: yali4/gui/Ui/setupuserswidget.py:176 yali4/gui/ScrUsers.py:252
-#: yali4/gui/ScrUsers.py:294
-msgid "Create User"
-msgstr "Crear Usuario"
-
-#: yali4/gui/Ui/setupuserswidget.py:177
-msgid "Give administrator privileges to this user"
-msgstr "Con derechos administrativos"
-
 #: yali4/gui/Ui/setupuserswidget.py:178
-msgid "Edit Selected User"
-msgstr "Modificar Usuario Seleccionado"
-
-#: yali4/gui/Ui/setupuserswidget.py:179
-msgid "Delete Selected User"
-msgstr "Eliminar Usuario Seleccionado"
-
-#: yali4/gui/Ui/setupuserswidget.py:180
-msgid "Auto Login User :"
-msgstr "Iniciar sesión automáticamente como usuario:"
-
-#: yali4/gui/Ui/setupuserswidget.py:181
-msgid "Auto Login Disabled"
-msgstr "No iniciar sesión automáticamente"
-
-#: yali4/gui/Ui/setupuserswidget.py:182
-msgid "Users:"
-msgstr "Usuarios:"
-
-#: yali4/gui/Ui/setupuserswidget.py:183
 msgid "Password (again):"
 msgstr "Repetir Contraseña:"
 
-#: yali4/gui/Ui/setupuserswidget.py:184
+#: yali4/gui/Ui/setupuserswidget.py:179
+msgid "User ID"
+msgstr "ID de Usuario"
+
+#: yali4/gui/Ui/setupuserswidget.py:180
+msgid "Give administrator privileges to this user"
+msgstr "Con derechos administrativos"
+
+#: yali4/gui/Ui/setupuserswidget.py:181
 msgid "Not recommended"
 msgstr "No recomendado"
 
-#: yali4/gui/Ui/setupuserswidget.py:185
+#: yali4/gui/Ui/setupuserswidget.py:182
 msgid "Do not ask any password to this user"
 msgstr "No pedir contraseña a éste usuario"
 
-#: yali4/gui/Ui/setupuserswidget.py:186
+#: yali4/gui/Ui/setupuserswidget.py:183
 msgid "Advanced"
 msgstr "Avanzado"
+
+#: yali4/gui/Ui/setupuserswidget.py:184
+msgid "Edit Selected User"
+msgstr "Modificar Usuario Seleccionado"
+
+#: yali4/gui/Ui/setupuserswidget.py:185
+msgid "Delete Selected User"
+msgstr "Eliminar Usuario Seleccionado"
+
+#: yali4/gui/Ui/setupuserswidget.py:186
+msgid "Auto Login User :"
+msgstr "Iniciar sesión automáticamente como usuario:"
+
+#: yali4/gui/Ui/setupuserswidget.py:187
+msgid "Auto Login Disabled"
+msgstr "No iniciar sesión automáticamente"
+
+#: yali4/gui/Ui/setupuserswidget.py:188
+msgid "Users:"
+msgstr "Usuarios:"
+
+#: yali4/gui/Ui/setupuserswidget.py:189 yali4/gui/ScrUsers.py:262
+#: yali4/gui/ScrUsers.py:304 yali4/gui/ScrUsers.py:363
+msgid "Create User"
+msgstr "Crear Usuario"
 
 #: yali4/gui/Ui/summarywidget.py:69
 msgid "Begin Install"
@@ -1217,12 +1218,12 @@ msgid "<center>Caps Lock is on!</center>"
 msgstr "<center>Mayusculas están activadas !</center>"
 
 #: yali4/gui/ScrAdmin.py:120 yali4/gui/ScrRescuePassword.py:114
-#: yali4/gui/ScrUsers.py:187
+#: yali4/gui/ScrUsers.py:196
 msgid "Password is too short!"
 msgstr "Contraseña es muy corta!"
 
 #: yali4/gui/ScrAdmin.py:129 yali4/gui/ScrRescuePassword.py:111
-#: yali4/gui/ScrUsers.py:184
+#: yali4/gui/ScrUsers.py:193
 msgid "Passwords do not match!"
 msgstr "Contraseñas no coinciden!"
 
@@ -1486,26 +1487,26 @@ msgstr "Configurando paquete: <b>%s</b>"
 msgid "Warning"
 msgstr "Alerta"
 
-#: yali4/gui/ScrInstall.py:166
+#: yali4/gui/ScrInstall.py:167
 #, python-format
 msgid "Package install failed : <b>%s</b>"
 msgstr "Instalación de paquete falló : <b>%s</b>"
 
-#: yali4/gui/ScrInstall.py:166
+#: yali4/gui/ScrInstall.py:168
 msgid "Do you want to retry ?"
 msgstr "Desea intentar de nuevo ?"
 
 # favor verificar, traduccion libre, no estoy seguro a que se refiere
 # i shortened this message, i think it is a message of the bottom line..
-#: yali4/gui/ScrInstall.py:186
+#: yali4/gui/ScrInstall.py:189
 msgid "Creating baselayout for your system!"
 msgstr "Configuración de layout básico del sistema !"
 
-#: yali4/gui/ScrInstall.py:195
+#: yali4/gui/ScrInstall.py:198
 msgid "Configuring packages.."
 msgstr "Configurando paquetes.."
 
-#: yali4/gui/ScrInstall.py:218
+#: yali4/gui/ScrInstall.py:221
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1748,7 +1749,7 @@ msgstr ""
 "<font size=\"+2\">Recuperación de Contraseña</font>\n"
 "<font size=\"+1\"></font>\n"
 
-#: yali4/gui/ScrRescuePassword.py:57 yali4/gui/ScrUsers.py:71
+#: yali4/gui/ScrRescuePassword.py:57 yali4/gui/ScrUsers.py:72
 msgid "Caps Lock is on!"
 msgstr "Mayúsculas están activados!"
 
@@ -1773,11 +1774,11 @@ msgstr "Contraseña cambiada"
 msgid "Info"
 msgstr "Info"
 
-#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:181
+#: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:190
 msgid "Don't use your user name or name as a password."
 msgstr "No use su nombre de usuario o su nombre real para la contraseña."
 
-#: yali4/gui/ScrRescuePassword.py:147
+#: yali4/gui/ScrRescuePassword.py:148
 msgid "Super User"
 msgstr "Super Usuario"
 
@@ -1804,7 +1805,7 @@ msgstr ""
 msgid "Getting history ..."
 msgstr "Obteniendo registro histórico ..."
 
-#: yali4/gui/ScrRescuePisi.py:122
+#: yali4/gui/ScrRescuePisi.py:123
 #, python-format
 msgid "Operation %s : %s - %s"
 msgstr "Operación %s : %s - %s"
@@ -2070,25 +2071,25 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrUsers.py:233
+#: yali4/gui/ScrUsers.py:154 yali4/gui/ScrUsers.py:329
+msgid "Update User"
+msgstr "Actualizar Usuario"
+
+#: yali4/gui/ScrUsers.py:243
 msgid "Username exists, choose another one!"
 msgstr "El nombre del usuario ya existe, por favor elija otro!"
 
-#: yali4/gui/ScrUsers.py:236
+#: yali4/gui/ScrUsers.py:246
 msgid "Username contains invalid characters!"
 msgstr "El nombre de usuario contiene caracteres no válidos!"
 
-#: yali4/gui/ScrUsers.py:239
+#: yali4/gui/ScrUsers.py:249
 msgid "Realname contains invalid characters!"
 msgstr "Nombre real contiene caracteres no válidos!"
 
-#: yali4/gui/ScrUsers.py:247
+#: yali4/gui/ScrUsers.py:257
 msgid "User ID used before, choose another one!"
 msgstr "ID de usuario ya está en uso, elija otro!"
-
-#: yali4/gui/ScrUsers.py:318
-msgid "Update User"
-msgstr "Actualizar Usuario"
 
 #: yali4/gui/ScrWelcome.py:30
 msgid "Welcome !! "
@@ -2129,11 +2130,11 @@ msgstr ""
 "libertad) presionando el botón Siguiente.</p>\n"
 "</font>\n"
 
-#: yali4/gui/YaliDialog.py:127
+#: yali4/gui/YaliDialog.py:127 yali4/gui/YaliDialog.py:154
 msgid "Yes"
 msgstr "Si"
 
-#: yali4/gui/YaliDialog.py:128
+#: yali4/gui/YaliDialog.py:128 yali4/gui/YaliDialog.py:155
 msgid "No"
 msgstr "No"
 
@@ -2146,13 +2147,25 @@ msgstr "Ya no me preguntes más"
 msgid "Do you want to continue ?"
 msgstr "Desea continuar ?"
 
-#: yali4/gui/YaliDialog.py:152
-msgid "Information"
-msgstr "Información"
+#: yali4/gui/YaliDialog.py:153
+msgid "Eject CD"
+msgstr ""
 
-#: yali4/gui/YaliDialog.py:154
+#: yali4/gui/YaliDialog.py:179 yali4/gui/YaliDialog.py:196
 msgid "Ok"
 msgstr ""
+
+#: yali4/gui/YaliDialog.py:180
+msgid "Please insert a new CD and then click Ok"
+msgstr ""
+
+#: yali4/gui/YaliDialog.py:182
+msgid "Insert New CD"
+msgstr ""
+
+#: yali4/gui/YaliDialog.py:194
+msgid "Information"
+msgstr "Información"
 
 #: yali4/gui/YaliWindow.py:72 yali4/gui/YaliWindow.py:161
 msgid "Show Help"
