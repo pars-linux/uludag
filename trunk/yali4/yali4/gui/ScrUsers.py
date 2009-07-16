@@ -65,6 +65,7 @@ Click Next button to proceed.
 
         self.ui.advancedList.setVisible(False)
         self.ui.createButton.setVisible(False)
+        self.ui.cancelButton.setVisible(False)
         self.ui.userIDCheck.setVisible(False)
         self.ui.userID.setVisible(False)
 
@@ -97,6 +98,8 @@ Click Next button to proceed.
                      self.slotTextChanged)
         self.connect(self.ui.createButton, SIGNAL("clicked()"),
                      self.slotCreateUser)
+        self.connect(self.ui.cancelButton, SIGNAL("clicked()"),
+                     self.resetWidgets)
         self.connect(self.ui.deleteButton, SIGNAL("clicked()"),
                      self.slotDeleteUser)
         self.connect(self.ui.editButton, SIGNAL("clicked()"),
@@ -116,6 +119,7 @@ Click Next button to proceed.
         self.usedIDs = []
 
     def shown(self):
+        self.ui.cancelButton.hide()
         self.ui.realname.setFocus()
         if len(yali4.users.pending_users) > 0 and self.ui.userList.count() == 0:
             for u in yali4.users.pending_users:
@@ -133,6 +137,7 @@ Click Next button to proceed.
 
     def backCheck(self):
         self.refill()
+        self.ui.cancelButton.hide()
         return True
 
     def refill(self):
@@ -145,13 +150,19 @@ Click Next button to proceed.
 
     def execute(self):
 
+        if self.checkUsers():
+            self.refill()
+            ctx.installData.autoLoginUser = str(self.ui.autoLogin.currentText())
+            if self.ui.createButton.text() == _("Update User"):
+                return self.slotCreateUser()
+            return True
+
         if not self.ui.addMoreUsers.isChecked():
             if not self.slotCreateUser():
                 ctx.mainScreen.moveInc = 0
                 return True
 
         self.refill()
-
         ctx.installData.autoLoginUser = str(self.ui.autoLogin.currentText())
         return True
 
@@ -170,7 +181,7 @@ Click Next button to proceed.
         self.ui.createButton.setEnabled(False)
 
     def slotAdvanced(self):
-        pass
+        self.checkUsers()
 
     def slotTextChanged(self):
         p1 = self.ui.pass1.text()
@@ -250,6 +261,7 @@ Click Next button to proceed.
             u.uid = uid
 
         self.ui.createButton.setText(_("Create User"))
+        self.ui.cancelButton.hide()
         updateItem = None
 
         try:
@@ -259,8 +271,6 @@ Click Next button to proceed.
             updateItem = self.edititemindex
             # nothing wrong. just adding a new user...
             pass
-
-        self.edititemindex = None
 
         i = UserItem(self.ui.userList, pix, user = u)
 
@@ -279,6 +289,7 @@ Click Next button to proceed.
         # give focus to realname widget for a new user. #3280
         self.ui.realname.setFocus()
         self.checkUsers()
+        self.userNameChanged = False
         return True
 
     def slotDeleteUser(self):
@@ -292,6 +303,7 @@ Click Next button to proceed.
         self.ui.userList.takeItem(_cur)
         self.ui.autoLogin.removeItem(_cur + 1)
         self.ui.createButton.setText(_("Create User"))
+        self.ui.cancelButton.hide()
         self.checkUsers()
 
     def slotEditUser(self, item=None):
@@ -316,6 +328,7 @@ Click Next button to proceed.
 
         self.edititemindex = self.ui.userList.currentRow()
         self.ui.createButton.setText(_("Update User"))
+        self.ui.cancelButton.setVisible(self.ui.createButton.isVisible())
 
     def checkUsers(self):
         if self.ui.userList.count() > 0:
@@ -323,15 +336,18 @@ Click Next button to proceed.
             self.ui.editButton.setEnabled(True)
             self.ui.autoLogin.setEnabled(True)
             ctx.mainScreen.enableNext()
-        else:
-            # there is no user in list so noting to delete
-            self.ui.deleteButton.setEnabled(False)
-            self.ui.editButton.setEnabled(False)
-            self.ui.autoLogin.setEnabled(False)
-            ctx.mainScreen.disableNext()
+            return True
+        # there is no user in list so noting to delete
+        self.ui.deleteButton.setEnabled(False)
+        self.ui.editButton.setEnabled(False)
+        self.ui.autoLogin.setEnabled(False)
+        ctx.mainScreen.disableNext()
+        return False
+
 
     def resetWidgets(self):
         # clear all
+        self.edititemindex = None
         self.ui.username.clear()
         self.ui.realname.clear()
         self.ui.pass1.clear()
@@ -340,6 +356,10 @@ Click Next button to proceed.
         self.ui.noPass.setChecked(False)
         self.ui.userIDCheck.setChecked(False)
         self.ui.createButton.setEnabled(False)
+        if self.ui.cancelButton.isVisible():
+            self.ui.cancelButton.setHidden(self.sender() == self.ui.cancelButton)
+            self.checkUsers()
+        self.ui.createButton.setText(_("Create User"))
 
     def slotReturnPressed(self):
         if self.ui.createButton.isEnabled() and self.ui.addMoreUsers.isChecked():
