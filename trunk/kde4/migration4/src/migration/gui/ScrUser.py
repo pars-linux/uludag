@@ -14,7 +14,7 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import i18n
-from PyKDE4.kdeui import KIcon
+from PyKDE4.kdeui import KIcon, KMessageBox
 
 from migration.gui.ui.usersItemWidget import Ui_usersItemWidget
 from migration.gui.ui.usersWidget import Ui_usersWidget
@@ -65,7 +65,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_usersWidget()
         self.ui.setupUi(self)
-
+        self.users = None
         self.addUsers()
 
         self.connect(self.ui.listUsers, SIGNAL("itemSelectionChanged()"), self.setUser)
@@ -94,13 +94,17 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.screenSettings["hasChanged"] = True
 
     def shown(self):
-        pass
+        if not self.users :
+            KMessageBox.error(self, i18n("There isn't any windows partition to migrate! Please check your mounted partitions..."))
 
     def execute(self):
-        user = ctx.user
-        part, ostype, username, userdir = user
-        sources = {"Partition":part, "OS Type":ostype, "User Name":username, "Home Path":userdir}
-        ctx.sources = info.userInfo(sources)
-        ctx.destinations = info.localInfo()
-        return True
+        if ctx.user:
+            part, ostype, username, userdir = ctx.user
+            sources = {"Partition":part, "OS Type":ostype, "User Name":username, "Home Path":userdir}
+            ctx.sources = info.userInfo(sources)
+            ctx.destinations = info.localInfo()
+            return (True, None)
+        else:
+            return (False, "There isn't any selected user on Selecting User Screen!")
+
 
