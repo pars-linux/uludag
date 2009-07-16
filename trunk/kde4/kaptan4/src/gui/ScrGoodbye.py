@@ -38,12 +38,17 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.smoltUrl = "http://smolt.pardus.org.tr:8090"
 
         self.ui.buttonSystemSettings_2.connect(self.ui.buttonSystemSettings_2, SIGNAL("clicked()"), self.startSmolt)
+        self.ui.buttonMigration.connect(self.ui.buttonMigration, SIGNAL("clicked()"), self.startMigration)
         self.ui.buttonSystemSettings.connect(self.ui.buttonSystemSettings, SIGNAL("clicked()"), self.startSystemSettings)
         self.ui.buttonHelpPages.connect(self.ui.buttonHelpPages, SIGNAL("clicked()"), self.startHelpPages)
 
     def startSystemSettings(self):
         self.procSettings = QProcess()
         self.procSettings.start("systemsettings")
+
+    def startMigration(self):
+        self.procSettings = QProcess()
+        self.procSettings.start("migration")
 
     def startHelpPages(self):
         self.procSettings = QProcess()

@@ -22,6 +22,22 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>25</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QLabel" name="labelMouseDesc">
          <property name="text">
           <string>&lt;p align=&quot;left&quot;&gt;If you are left-handed, you may prefer to swap the functions on the left and right buttons on your pointing device by choosing the &quot;Left handed&quot;option below. You can also select default click behaviour.&lt;/p&gt;</string>
