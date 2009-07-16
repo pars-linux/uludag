@@ -62,9 +62,6 @@ class Operation(QObject):
 
         self.emit(SIGNAL("progress(int)"), percent)
 
-    def cancel(self):
-        self.iface.cancel()
-
     def install(self, packages):
         self.packages = packages
         self.iface.installPackages(self.packages)
@@ -114,10 +111,9 @@ class PMInstaller(QtGui.QWidget, Ui_PMInstaller):
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressBar.setValue)
         self.connect(self.operation, SIGNAL("operationChanged(QString)"), self.operationText.setText)
         self.connect(self.operation, SIGNAL("finished()"), self.finished)
-        self.connect(self.actionButton, SIGNAL("clicked()"), self.operation.cancel)
 
     def finished(self):
-        self.actionButton.setText(i18n("Ok"))
+        self.actionButton.setEnabled(True)
         self.connect(self.actionButton, SIGNAL("clicked()"), self.parent.close)
 
     def install(self, packages):

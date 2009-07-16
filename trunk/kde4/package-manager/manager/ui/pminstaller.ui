@@ -79,13 +79,13 @@
    <item row="2" column="1">
     <widget class="QPushButton" name="actionButton">
      <property name="enabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string/>
      </property>
      <property name="text">
-      <string>Cancel</string>
+      <string>Ok</string>
      </property>
     </widget>
    </item>
