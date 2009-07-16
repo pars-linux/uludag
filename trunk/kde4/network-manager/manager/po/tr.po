@@ -82,7 +82,7 @@ msgstr "Bahadır Kandemir"
 
 #: .tmp/networkmanager/about.py:32
 msgid "Current Maintainer"
-msgstr "Güncel Bakıcı"
+msgstr "Şimdiki Geliştirici"
 
 #: .tmp/networkmanager/about.py:33
 msgid "Gökmen GÖKSEL"
