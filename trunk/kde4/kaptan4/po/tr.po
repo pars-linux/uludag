@@ -89,7 +89,7 @@ msgstr "Kaptan Masaüstü"
 
 #: .tmp/kaptanMain.py:131 .tmp/ui_kaptanMain.py:131
 msgid "<b>Welcome to Kaptan!</b>"
-msgstr "<b>Kaptan'a hoşgeldiniz</b>"
+msgstr "<b>Kaptan'a hoşgeldiniz!</b>"
 
 #: .tmp/kaptanMain.py:132 .tmp/ui_kaptanMain.py:132
 msgid "Cancel"
@@ -240,7 +240,7 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Paket Yöneticisi PiSi'nin grafik önyüzüdür. Paket "
-"Yöneticisi'yle Kolayca yeni programlar yükleyebilir, sisteminizi "
+"Yöneticisi'yle kolayca yeni programlar yükleyebilir, sisteminizi "
 "güncelleyebilir ve programların güncellemelerini sistem tepsisinden "
 "görebilirsiniz.</span></p></body></html>"
 
@@ -274,7 +274,7 @@ msgstr "Katkı deposu ek paketler içerir."
 
 #: .tmp/packageWidget.py:84 .tmp/ui_packageWidget.py:84
 msgid "Add contrib repo"
-msgstr "Katkı deposu ekle"
+msgstr "Katkı deposunu ekle"
 
 #: .tmp/ScrGoodbye.py:24
 msgid "Goodbye from Kaptan Wizard :)"
@@ -430,7 +430,7 @@ msgstr "İşlemci Modeli"
 
 #: .tmp/ScrSmolt.py:123
 msgid "Number of CPUs"
-msgstr "İşlemci sayısı"
+msgstr "İşlemci Sayısı"
 
 #: .tmp/ScrSmolt.py:124
 msgid "CPU Speed"
@@ -438,7 +438,7 @@ msgstr "İşlemci Hızı"
 
 #: .tmp/ScrSmolt.py:125
 msgid "System Memory"
-msgstr "Hafıza"
+msgstr "Sistem Belleği"
 
 #: .tmp/ScrSmolt.py:126
 msgid "System Swap"
@@ -474,11 +474,11 @@ msgstr "SELinux Mecburi"
 
 #: .tmp/ScrSmolt.py:146
 msgid "Yes"
-msgstr ""
+msgstr "Evet"
 
 #: .tmp/ScrSmolt.py:148
 msgid "No"
-msgstr ""
+msgstr "Hayır"
 
 #: .tmp/ScrStyle.py:58
 msgid "No name"
@@ -573,7 +573,7 @@ msgstr ""
 
 #: .tmp/searchWidget.py:54 .tmp/ui_searchWidget.py:54
 msgid "Enable Strigi Desktop File Indexer"
-msgstr "Strigi Masaüstü Dosya Indeskleyicisini çalıştır"
+msgstr "Strigi Masaüstü Dosya İndeskleyicisini çalıştır"
 
 #: .tmp/smoltWidget.py:78 .tmp/ui_smoltWidget.py:78
 msgid "&Send my profile"
@@ -689,7 +689,7 @@ msgstr "Masaüstü"
 
 #: .tmp/styleWidget.py:68 .tmp/ui_styleWidget.py:68
 msgid "Folderview"
-msgstr "Dizin görünümü"
+msgstr "Dizin Görünümü"
 
 #: .tmp/styleWidget.py:69 .tmp/ui_styleWidget.py:69
 msgid "<b>Number of Desktops:</b>"
@@ -761,9 +761,9 @@ msgstr ""
 "hızlı bir şekilde yapmanıza olanak verir. Masaüstünüzü özelleştirmeye "
 "başlamak için lütfen İleri düğmesine tıklayın.\n"
 "\n"
-"Pardus bilgisayar okur-yazarı kullanıcılarının temel ihtiyaçlarını kolayca "
-"karşılamalarını hedefleyen bir GNU/Linux dağıtımıdır. İnternete "
-"bağlanmanızı, epostalarınızı okumanızı, ofis belgeleriniz üzerinde "
+"Pardus bilişim okur-yazarı kullanıcılarının temel ihtiyaçlarını kolayca "
+"karşılamalarını hedefleyen bir GNU/Linux dağıtımıdır. İnternet'e "
+"bağlanmanızı, e-postalarınızı okumanızı, ofis belgeleriniz üzerinde "
 "çalışmanızı (ve çok daha fazlasını) kolaylaştırır!"
 
 #~ msgid ""
