@@ -65,7 +65,7 @@ knazar::knazar()
 	// Initialize variables
 	protection_working = true;
 	number_of_attacks = defated_attacks = 0;
-	QToolTip::add( this, i18n( "knazar - No Harmfull look allowed!" ));
+	QToolTip::add( this, i18n( "knazar - No harmful looks allowed!" ));
 }
 
 // Slots
@@ -73,11 +73,11 @@ void knazar::protect_from_harmfull_looks()
 {
 	if ( !is_protecting() )
 	{
-		KMessageBox::information( 0, i18n( "KNazar is starting to protect your Pardus Linux from harmfull looks..." ));
+		KMessageBox::information( 0, i18n( "KNazar is protecting your Pardus Linux from harmful looks..." ));
 
 		setPixmap( trayIcon );
 		protection_working = true;
-		QToolTip::add( this, i18n( "knazar - No Harmfull look allowed!" ));
+		QToolTip::add( this, i18n( "knazar - No armful looks allowed!" ));
 	}
 }
 
@@ -86,7 +86,7 @@ void knazar::release_the_protection()
 
 	if ( is_protecting() )
 	{
-		KMessageBox::sorry( 0, i18n( "KNazar is stoping to protect your Pardus Linux from harmfull looks..." ));
+		KMessageBox::sorry( 0, i18n( "KNazar is not protecting your Pardus Linux from harmful looks..." ));
 
 		// Convert trayIcon to gray
 		QImage iconImage = trayIcon.convertToImage();
@@ -107,17 +107,17 @@ void knazar::send_nazar()
 	if ( is_protecting() )
 	{
 		++defated_attacks;
-		balloon = new KNazarBalloon( i18n( "<qt><nobr><b>Nazar Received and eliminated successfuly</b></nobr><br><nobr></nobr></qt>" ), QString::null );
+		balloon = new KNazarBalloon( i18n( "<qt><nobr><b>Nazar received and eliminated successfuly</b></nobr><br><nobr></nobr></qt>" ), QString::null );
 	}
 	else
-		balloon = new KNazarBalloon( i18n( "<qt><nobr><b>Nazar Received and it HARMED!</b></nobr><br><nobr></nobr></qt>" ), QString::null );
+		balloon = new KNazarBalloon( i18n( "<qt><nobr><b>Nazar received and it HARMED!</b></nobr><br><nobr></nobr></qt>" ), QString::null );
 	
 	balloon->setAnchor( mapToGlobal( pos() ));
 	balloon->show();
 	
 	KWin::setOnAllDesktops( balloon->winId(), true );
 	
-	QToolTip::add(this, i18n( "knazar - %1 attacks received so far, %2 are defated and %3 are received...")
+	QToolTip::add(this, i18n( "knazar - %1 attacks received so far, %2 of them are eliminated and %3 of them harmed us...")
 					.arg( number_of_attacks)
 					.arg( defated_attacks )
 					.arg( number_of_attacks - defated_attacks ));
@@ -130,7 +130,7 @@ bool knazar::is_protecting()
 
 void knazar::about()
 {
-	KMessageBox::information( 0, i18n( "KNazar is a usefull part of the Pardus Linux" ));
+	KMessageBox::information( 0, i18n( "KNazar is a useful part of the Pardus Linux" ));
 }
 
 #include "knazar.moc"
