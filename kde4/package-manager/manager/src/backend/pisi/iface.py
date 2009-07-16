@@ -67,7 +67,7 @@ class Iface(Singleton):
             pisi.db.invalidate_caches()
             self.initDB()
             self.exceptionHandler(exception)
-            
+
     def installPackages(self, packages):
         logger.debug("Installing packages: %s" % packages)
         packages = string.join(packages,",")
@@ -232,6 +232,3 @@ class Iface(Singleton):
                 return self.idb.search_package(terms)
         except Exception:
             return []
-
-
-
