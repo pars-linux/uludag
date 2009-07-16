@@ -186,6 +186,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.initialize()
 
     def notifyFinished(self):
+        # Since we can not identify the caller yet
+        if not self.operation.totalPackages:
+            return
         KNotification.event("Summary",
                 self.state.getSummaryInfo(self.operation.totalPackages),
                 QtGui.QPixmap(),
