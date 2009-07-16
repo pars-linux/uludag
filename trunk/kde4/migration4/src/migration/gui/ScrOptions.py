@@ -14,9 +14,9 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import i18n
+from PyKDE4.kdeui import KMessageBox
 
 from migration.gui.ScreenWidget import ScreenWidget
-#from migration.gui.ui.optionsWidget import Ui_optionWidget
 import migration.gui.context as ctx
 
 class Widget(QtGui.QWidget, ScreenWidget):
@@ -235,10 +235,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def shown(self):
         print "ScrOptions.shown() çağrldı..."
         print "ctx.sources:%s" % ctx.sources
-        self.creator(ctx.sources)
-        #self.gridlayout.addWidget(self.vbox)
+        if ctx.sources:
+            self.creator(ctx.sources)
 
     def execute(self):
-        print "len(self.options):%d" % len(self.getOptions())
-        ctx.options = self.getOptions()
-        return True
+        if self.getOptions():
+            ctx.options = self.getOptions()
+            return (True, None)
