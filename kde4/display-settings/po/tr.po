@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the display-settings package.
 # Fatih Aşıcı <fatih@pardus.org.tr>, 2009.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
