@@ -14,7 +14,7 @@ import os
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import i18n
-from PyKDE4.kdeui import KIcon
+from PyKDE4.kdeui import KIcon, KMessageBox
 
 
 from migration.gui.ScreenWidget import ScreenWidget
@@ -223,7 +223,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
         return options
 
     def shown(self):
-        self.creator(ctx.sources)
+        if ctx.sources:
+            self.creator(ctx.sources)
+        else:
+            KMessageBox.error(self, "There isn't any Windows User Sources to migrate! Check your Windows Partition...")
+
     def execute(self):
-        ctx.fileOptions = self.getOptions()
-        return True
+        if self.getOptions():
+            ctx.fileOptions = self.getOptions()
+            return (True, None)
+        else:
+            return (False, "There isn't selected any Options...")
