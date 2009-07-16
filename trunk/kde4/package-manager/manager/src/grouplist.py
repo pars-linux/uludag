@@ -33,6 +33,7 @@ class GroupList(QtGui.QListWidget):
         for name in groups:
             self.createGroupItem(name)
         self.sortItems()
+        self.moveAllToFirstLine()
         self.ensureGroupSelected()
 
     def createGroupItem(self, name):
@@ -53,6 +54,15 @@ class GroupList(QtGui.QListWidget):
 
     def selectLastSelected(self, item):
         self.setCurrentItem(item)
+
+    def moveAllToFirstLine(self):
+        if not self.count():
+            return
+        for i in range(self.count()):
+            if self.item(i).data(Qt.UserRole).toString() == "all":
+                item = self.takeItem(i)
+                self.insertItem(0, item)
+                return
 
     def ensureGroupSelected(self):
         if self.currentRow() == -1 and self.count():
