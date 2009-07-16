@@ -428,49 +428,110 @@
       %  config.lang "mudur=livecd,language:en " bc.cmd dup length add sprintf
       %} ifelse
 
-      config.lang "ca_ES" eq {
-        "mudur=language:ca " bc.cmd dup length add sprintf
-      } if
+      syslinux {
+        config.lang "ca_ES" eq {
+          "mudur=language:ca " bc.cmd dup length add sprintf
+        } if
 
-      config.lang "de_DE" eq {
-        "mudur=language:de " bc.cmd dup length add sprintf
-      } if
+        config.lang "de_DE" eq {
+          "mudur=language:de " bc.cmd dup length add sprintf
+        } if
 
-      config.lang "en_US" eq {
-        "mudur=language:en " bc.cmd dup length add sprintf
-      } if
+        config.lang "en_US" eq {
+          "mudur=language:en " bc.cmd dup length add sprintf
+        } if
 
-      config.lang "es_ES" eq {
-        "mudur=language:es " bc.cmd dup length add sprintf
-      } if
+        config.lang "es_ES" eq {
+          "mudur=language:es " bc.cmd dup length add sprintf
+        } if
 
-      config.lang "fr_FR" eq {
-        "mudur=language:fr " bc.cmd dup length add sprintf
-      } if
+        config.lang "fr_FR" eq {
+          "mudur=language:fr " bc.cmd dup length add sprintf
+        } if
 
-      config.lang "it_IT" eq {
-        "mudur=language:it " bc.cmd dup length add sprintf
-      } if
+        config.lang "it_IT" eq {
+          "mudur=language:it " bc.cmd dup length add sprintf
+        } if
 
-      config.lang "nl_NL" eq {
-        "mudur=language:nl " bc.cmd dup length add sprintf
-      } if
+        config.lang "nl_NL" eq {
+          "mudur=language:nl " bc.cmd dup length add sprintf
+        } if
 
-      config.lang "pl_PL" eq {
-        "mudur=language:pl " bc.cmd dup length add sprintf
-      } if
+        config.lang "pl_PL" eq {
+          "mudur=language:pl " bc.cmd dup length add sprintf
+        } if
 
-      config.lang "pt_BR" eq {
-        "mudur=language:pt_BR " bc.cmd dup length add sprintf
-      } if
+        config.lang "pt_BR" eq {
+          "mudur=language:pt_BR " bc.cmd dup length add sprintf
+        } if
 
-      config.lang "sv_SE" eq {
-        "mudur=language:sv " bc.cmd dup length add sprintf
-      } if
+        config.lang "sv_SE" eq {
+          "mudur=language:sv " bc.cmd dup length add sprintf
+        } if
 
-      config.lang "tr_TR" eq {
-        "mudur=language:tr " bc.cmd dup length add sprintf
-      } if
+        config.lang "tr_TR" eq {
+          "mudur=language:tr " bc.cmd dup length add sprintf
+        } if
+
+      } {
+
+        "lang" findfile dup {
+          /tmp over length 1 add 2 max string def
+          tmp exch {
+            dup ' ' eq over '\n' eq or { pop pop exit } if
+            over exch 0 exch put
+            1 add
+          } forall
+        } if
+
+        config.lang tmp ne {
+          config.lang "ca_ES" eq {
+            "mudur=language:ca " bc.cmd dup length add sprintf
+          } if
+
+          config.lang "de_DE" eq {
+            "mudur=language:de " bc.cmd dup length add sprintf
+          } if
+
+          config.lang "en_US" eq {
+            "mudur=language:en " bc.cmd dup length add sprintf
+          } if
+
+          config.lang "es_ES" eq {
+            "mudur=language:es " bc.cmd dup length add sprintf
+          } if
+
+          config.lang "fr_FR" eq {
+            "mudur=language:fr " bc.cmd dup length add sprintf
+          } if
+
+          config.lang "it_IT" eq {
+            "mudur=language:it " bc.cmd dup length add sprintf
+          } if
+
+          config.lang "nl_NL" eq {
+            "mudur=language:nl " bc.cmd dup length add sprintf
+          } if
+
+          config.lang "pl_PL" eq {
+            "mudur=language:pl " bc.cmd dup length add sprintf
+          } if
+
+          config.lang "pt_BR" eq {
+            "mudur=language:pt_BR " bc.cmd dup length add sprintf
+          } if
+
+          config.lang "sv_SE" eq {
+            "mudur=language:sv " bc.cmd dup length add sprintf
+          } if
+
+          config.lang "tr_TR" eq {
+            "mudur=language:tr " bc.cmd dup length add sprintf
+          } if
+
+        } if
+
+      } ifelse
 
     } if
 
