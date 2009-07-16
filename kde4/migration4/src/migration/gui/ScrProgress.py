@@ -506,6 +506,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def shown(self):
         self.run()
-        print "self.run() bitti"
+
     def execute(self):
-        return True
+        return (True,None)
