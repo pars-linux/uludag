@@ -15,7 +15,7 @@ __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
 slideDesc = [
-{"01":_("""Hello, there. The easiest-evet install tool YALI has begun Pardus installation. It is now time to relax and learn about some of the features of Pardus 2009 while it is being installed.""")},
+{"01":_("""Hello, there. The easiest-ever install tool YALI has begun Pardus installation. It is now time to relax and learn about some of the features of Pardus 2009 while it is being installed.""")},
 {"02":_("""Pardus 2009 is a Linux distribution that everybody can easily install and use. With Pardus 2009, you can do anything that you could otherwise do with other operating systems. With its fast, secure and stable infrastructure, Pardus opens the path to software libre.""")},
 {"03":_("""Pardus 2009 comes preinstalled with the open source desktop environment KDE 4.2. You will have a much better desktop experience compared to what you have seen so far. Following the installation, you can choose to use the classical desktop view that includes icons to your files and folders, or you can have any number of the preinstalled plasma widgets on your desktop and add interesting functionality to your view. You can have an analog clock on your desktop; even more, you can have a real-time weather report, your notes and RSS feeds right on your desktop.""")},
 {"04":_("""With the arrival of KDE 4.2, Konqueror is replaced with a new and very talented file manager, Dolphin. Dolphin is easy to use, and when it comes to viewing folders, it allows you to sort them in various ways, adding functionality like grouping and detailed information right on the spot. Anything you may need on viewing folders, you have it with Dolphin.""")},
