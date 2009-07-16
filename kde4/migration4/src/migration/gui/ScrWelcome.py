@@ -32,6 +32,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        return True
+        return (True, None)
 
 
