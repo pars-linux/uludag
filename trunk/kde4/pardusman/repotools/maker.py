@@ -158,7 +158,7 @@ label pardus
 
 label rescue
     kernel /boot/kernel
-    append initrd=/boot/initrd root=/dev/ram0 vga=791 splash=silent quiet %(exparams)s yali4=rescue
+    append initrd=/boot/initrd root=/dev/ram0 vga=791 splash=silent quiet yali4=rescue %(exparams)s
 
 label harddisk
     localboot 0x80
