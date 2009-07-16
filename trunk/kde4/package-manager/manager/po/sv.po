@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-15 14:13+0300\n"
-"PO-Revision-Date: 2009-07-14 10:34+0200\n"
+"PO-Revision-Date: 2009-07-15 23:23+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -413,7 +413,7 @@ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
 #: .tmp/pm-install.py:44
 msgid "Succesfully finished installing %1"
-msgstr ""
+msgstr "Installerade %1 framgångsrikt"
 
 #: .tmp/pm-install.py:76 .tmp/mainwidget.py:166
 msgid "Network Error"
@@ -440,9 +440,8 @@ msgid "Ok"
 msgstr "Ok"
 
 #: .tmp/pm-install.py:124
-#, fuzzy
 msgid "Installing %1"
-msgstr "Installerar"
+msgstr "Installerar %1"
 
 #: .tmp/pm-install.py:131
 msgid "pm-install"
@@ -671,3 +670,4 @@ msgstr "TextLabel"
 #: .tmp/ui_pminstaller.py:48
 msgid "Cancel"
 msgstr "Avbryt"
+
