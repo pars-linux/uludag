@@ -32,7 +32,6 @@ class UserItemWidget(QtGui.QWidget, Ui_usersItemWidget):
         QtGui.QWidget.__init__(self, parent)
 
         self.setupUi(self)
-        icon.addPixMap(, QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.userName.setText( name )
         self.partition.setText( partition )
         if icon == iconVista:
