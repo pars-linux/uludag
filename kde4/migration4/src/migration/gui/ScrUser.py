@@ -24,16 +24,21 @@ from migration.utils import partition
 from migration.utils import info
 import migration.gui.context as ctx
 
+iconXP, iconVista = range(2)
+
 class UserItemWidget(QtGui.QWidget, Ui_usersItemWidget):
 
     def __init__(self, parent, name, partition, icon):
         QtGui.QWidget.__init__(self, parent)
 
         self.setupUi(self)
-
+        icon.addPixMap(, QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.userName.setText( name )
         self.partition.setText( partition )
-        self.labelIcon.setPixmap(icon.pixmap(32, 32))
+        if icon == iconVista:
+            self.labelIcon.setPixmap(QtGui.QPixmap(":raw/pics/vista.png"))
+        elif icon == iconXP:
+             self.labelIcon.setPixmap(QtGui.QPixmap(":raw/pics/xp.png"))
         self.data = None
 
         self.connect(self.checkState, SIGNAL("stateChanged(int)"), self.slotUserCheck)
@@ -75,13 +80,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
         "Searches old users and adds them to UserListViewWidget"
         self.users = partition.allUsers()
         print "len(users)=%d" % len(self.users)
-        icon = KIcon("tux")
         for user in self.users:
             part, parttype, username, userdir = user
             if parttype == "Windows XP":
-                widget = UserItemWidget(self.ui.listUsers, unicode(username), unicode(part), icon)
+                widget = UserItemWidget(self.ui.listUsers, unicode(username), unicode(part), iconXP)
             elif parttype =="Windows Vista":
-                widget = UserItemWidget(self.ui.listUsers, unicode(username), unicode(part), icon)
+                widget = UserItemWidget(self.ui.listUsers, unicode(username), unicode(part), iconVista)
 
             widget.setData(user)
 
