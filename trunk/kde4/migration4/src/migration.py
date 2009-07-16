@@ -14,7 +14,7 @@
 import sys
 from PyQt4 import QtCore, QtGui
 from PyKDE4 import kdeui
-from PyKDE4.kdecore import ki18n, KAboutData, KConfig, KCmdLineArgs
+from PyKDE4.kdecore import i18n, KAboutData, KConfig, KCmdLineArgs
 
 from migration.gui.ui.main import Ui_MigrationUI
 from migration.about import aboutData
@@ -109,9 +109,11 @@ class Migration(QtGui.QWidget):
         _widget = self.ui.mainStack.currentWidget()
         _return = _widget.execute()
 
-        if _return:
+        if _return[0]:
             self.stackMove(self.getCurrentStackId(self.moveInc))
             self.moveInc = 1
+        else:
+            kdeui.KMessageBox.error(self, i18n(_return[1]))
 
     def slotBack(self):
         self.menuText = ""
