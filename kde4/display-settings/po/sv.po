@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: display-settings\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-15 23:10+0300\n"
-"PO-Revision-Date: 2009-07-13 14:54+0200\n"
+"PO-Revision-Date: 2009-07-15 23:28+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -114,6 +114,10 @@ msgid ""
 "you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
+"Kan inte hitta giltig konfiguration. Bildskärmsinställningar är inte "
+"tillgängliga "
+"före du skapat en ny konfiguration.\n"
+"Vill du skapa en säker konfiguration nu?"
 
 #: .tmp/displaysettings/deviceswidget.py:95
 #: .tmp/displaysettings/deviceswidget.py:262
@@ -151,7 +155,7 @@ msgstr "Du måste starta om X för att ändringarna skall börja gälla."
 
 #: .tmp/displaysettings/device.py:60
 msgid "Default Output"
-msgstr ""
+msgstr "Standardutgång"
 
 #: .tmp/displaysettings/device.py:61
 msgid "Laptop Panel"
