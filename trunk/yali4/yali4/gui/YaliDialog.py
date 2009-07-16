@@ -147,6 +147,48 @@ def QuestionDialog(title, text, info = None, dontAsk = False):
         return answers[msgBox.clickedButton()]
     return "no"
 
+def EjectAndRetryDialog(title, text, info):
+    msgBox = QtGui.QMessageBox()
+
+    buttonEject = msgBox.addButton(_("Eject CD"), QtGui.QMessageBox.ActionRole)
+    buttonYes = msgBox.addButton(_("Yes"), QtGui.QMessageBox.ActionRole)
+    buttonNo = msgBox.addButton(_("No"), QtGui.QMessageBox.ActionRole)
+
+    answers = {buttonYes:"yes",
+               buttonNo :"no",
+               buttonEject:"eject"}
+
+    msgBox.setText(text)
+    msgBox.setInformativeText(info)
+
+    dialog = Dialog(_(title), msgBox, closeButton = False, isDialog = True, icon="question")
+    dialog.resize(300,120)
+    dialog.exec_()
+
+    ctx.mainScreen.processEvents()
+    if msgBox.clickedButton() in answers.keys():
+        if msgBox.clickedButton() == buttonEject:
+            # Eject CD and wait for the new one
+            import os
+            import time
+
+            os.system("echo 3 > /proc/sys/vm/drop_caches")
+            os.system("eject -m")
+
+            waitBox = QtGui.QMessageBox()
+            waitBox.addButton(_("Ok"), QtGui.QMessageBox.ActionRole)
+            waitBox.setText(_("Please insert a new CD and then click Ok"))
+
+            dialog = Dialog(_("Insert New CD"), waitBox, closeButton = False, isDialog = True, icon="info")
+            dialog.resize(300,120)
+            dialog.exec_()
+
+            time.sleep(4)
+            return "yes"
+        return answers[msgBox.clickedButton()]
+    return "no"
+
+
 def InfoDialog(text, button=None, title=None, icon="info"):
     if not title:
         title = _("Information")

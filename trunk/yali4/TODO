@@ -22,6 +22,7 @@
      + Dont install not needed Language Packages support
      + Do not update user home dir if one have same id
      + Support for installing only system.base packages
+     + Add eject cd-rom support when pisi fails
 
      - Show a progress bar for Pisi HS Rescue operations
      - Show a proper (Human Readable) dialog when Fs Check failed
@@ -30,9 +31,6 @@
          > Needs a network settings screen
      - Fix GRUB issue about wrong order of sd's
          > example; hd0:sdb, hd1:sda from bios but system gives opposite, like hd0:sda, hd1:sdb
-     - Add eject cd-rom support when pisi fails
-         > Clear cache before ejecting the cd with : "echo 3 > /proc/sys/vm/drop_caches"
-         > Use "eject -m" for ejecting without umount
 
  Partitioning
  --------------------------------------------------------
