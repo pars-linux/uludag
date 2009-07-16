@@ -350,10 +350,13 @@ Tüm komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 \begin{enumerate}
  \item mdbtools paketi kurulumu sonrası:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_mdbtools.mdb
+# mdb-ver test_mdbtools.mdb
+# mdb-tables test_mdbtools.mdb
+# mdb-ver test_mdbtools.mdb Client
 \end{verbatim}
 
-Yukarıda bulunan veritabanını Openoffice Veritabanı ile düzgün bir şekilde açılabildiğini gözlemleyin.
+Yukarıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 
 \item openoffice paketi kurulumu sonrası:
 \begin{itemize}
@@ -485,7 +488,7 @@ Yeni bir rapor yazmaya çalışın, sorunsuz bir şekilde yazılabildiğinizi g�
 Sorunsuz bir şekilde iptal edebildiğinizi gözlemleyin.
 \end{itemize}
 
-\item openoffice-extension-report-builder paketi kurulumu sonrası.
+\item openoffice-extension-wiki-publisher paketi kurulumu sonrası.
 
 Openoffice Kelime İşlemci'yi açın. Dosya $\rightarrow$ Gönder $\rightarrow$ MediaWiki'ye seçeneğini tıklayın. Wiki sunucusu olarak http://tr.pardus-wiki.org/ adresini ekleyip bağlanmaya çalışın.
 
@@ -523,7 +526,14 @@ Aşağıda çıkan ikon penceresinde openoffice uygulamaları ile ilgili ikonlar
 Bir open office ikonu seçin ve tamam deyin.
 
 İkonun sol bölüme sorunsuz bir şekilde eklendiğini gözlemleyin.
-  
+
+\item zemberek-openoffice
+
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test-zemberek-openoffice.odt
+\end{verbatim}
+
+Yukarıda bulunan dosyayı açın ve imla denetiminin gerçekleştiğini gözlemleyin.
 \end{enumerate}
 
 \end{document}
