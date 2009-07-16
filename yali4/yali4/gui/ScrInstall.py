@@ -33,7 +33,7 @@ import yali4.partitionrequest as request
 
 from yali4.gui.descSlide import slideDesc
 from yali4.gui.ScreenWidget import ScreenWidget
-from yali4.gui.YaliDialog import QuestionDialog
+from yali4.gui.YaliDialog import QuestionDialog, EjectAndRetryDialog
 from yali4.gui.Ui.installwidget import Ui_InstallWidget
 
 EventPisi, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished, EventRetry = range(1001,1007)
@@ -163,7 +163,10 @@ Have fun!
         elif qevent.eventType() == EventRetry:
             package = qevent.data()
             self.timer.stop()
-            ctx.yali.retryAnswer = QuestionDialog(_("Warning"), _("Package install failed : <b>%s</b>") % package, _("Do you want to retry ?"))
+            ctx.yali.retryAnswer = EjectAndRetryDialog(_("Warning"),
+                                                       _("Package install failed : <b>%s</b>") % package,
+                                                       _("Do you want to retry ?"))
+
             self.timer.start(1000 * 30)
             ctx.yali.waitCondition.wakeAll()
 
