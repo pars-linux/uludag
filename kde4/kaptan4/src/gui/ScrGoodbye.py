@@ -34,9 +34,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
         lang = KGlobal.locale().language()
 
         if lang == "tr":
-            self.helpPageUrl = "http://www.pardus.org.tr/iletisim.html"
+            self.helpPageUrl = "http://www.pardus.org.tr/destek"
         else:
-            self.helpPageUrl = "http://www.pardus.org.tr/eng/contact.html"
+            self.helpPageUrl = "http://www.pardus.org.tr/eng/support"
 
         self.smoltUrl = "http://smolt.pardus.org.tr:8090"
 
