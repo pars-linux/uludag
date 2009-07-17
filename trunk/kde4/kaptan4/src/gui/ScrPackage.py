@@ -43,7 +43,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # set repo name and address
         self.repoName = "contrib"
-        self.repoAddress = "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+        self.repoAddress = "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
         self.ui.picturePackage.setPixmap(QtGui.QPixmap(':/raw/pics/package.png'))
 
         # set signals
