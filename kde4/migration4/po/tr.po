@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 17:05+0300\n"
+"POT-Creation-Date: 2009-07-17 17:56+0300\n"
 "PO-Revision-Date: 2009-07-15 13:43+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -44,7 +44,8 @@ msgstr "Eski duvar kağıdı kullan"
 #: .tmp/ScrOptions.py:85
 msgid ""
 "Copies your old wallpaper to Pardus and sets it as new background image."
-msgstr "Eski duvar kağıdınızı Pardus'a kopyalar ve onu yeni duvar kağıdı olarak atar."
+msgstr ""
+"Eski duvar kağıdınızı Pardus'a kopyalar ve onu yeni duvar kağıdı olarak atar."
 
 #: .tmp/ScrOptions.py:93 .tmp/ScrProgress.py:296
 msgid "Bookmarks"
@@ -297,9 +298,8 @@ msgid "Options Settings"
 msgstr "Tercihler"
 
 #: .tmp/ScrSummary.py:49
-#, python-format
-msgid "Option %s : <b>%s</b>"
-msgstr "Seçenek %s: <b>%s</b>"
+msgid "Option %1 : <b>%2</b>"
+msgstr "Seçenek %1: <b>%2</b>"
 
 #: .tmp/ScrSummary.py:54
 msgid "Destination Settings"
@@ -351,7 +351,9 @@ msgstr "Kullanıcı Profilleri"
 msgid ""
 "There aren't any Microsoft Windows partitions to migrate! Please check your "
 "mounted partitions..."
-msgstr "Göç ettirilecek Microsoft Window bölümü bulunmamakta! Bağlı bölümlerinizi kontrol edin..."
+msgstr ""
+"Göç ettirilecek Microsoft Window bölümü bulunmamakta! Bağlı bölümlerinizi "
+"kontrol edin..."
 
 #: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:44
 msgid "Welcome"
@@ -433,7 +435,9 @@ msgstr "Boyut"
 
 #: .tmp/ui_usersItemWidget.py:59
 msgid "Set or unset entry as default boot entry."
-msgstr "Kaydı öntanımlı açılış girişi olarak olarak ata ya da öntanımlı durumunu kaldır."
+msgstr ""
+"Kaydı öntanımlı açılış girişi olarak olarak ata ya da öntanımlı durumunu "
+"kaldır."
 
 #: .tmp/ui_usersWidget.py:36
 msgid "Users"
@@ -449,8 +453,8 @@ msgid ""
 "basic desktop needs; helps you connect to internet, read e-mails, work with "
 "office documents and more!"
 msgstr ""
-"Göç Aracı diğer işletim sistemlerindeki dosya ve ayarlarınızı Pardus'a aktarmanıza "
-"yardımcı olur. İşleme başlamak için İleri'ye tıklayın."
+"Göç Aracı diğer işletim sistemlerindeki dosya ve ayarlarınızı Pardus'a "
+"aktarmanıza yardımcı olur. İşleme başlamak için İleri'ye tıklayın."
 
 #~ msgid "Selected Destination: <b>Copy Destination to %s</b>"
 #~ msgstr "Seili Hedef: <b>Hedefi %s konumuna kopyala</b>"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 17:05+0300\n"
+"POT-Creation-Date: 2009-07-17 17:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -293,8 +293,7 @@ msgid "Options Settings"
 msgstr ""
 
 #: .tmp/ScrSummary.py:49
-#, python-format
-msgid "Option %s : <b>%s</b>"
+msgid "Option %1 : <b>%2</b>"
 msgstr ""
 
 #: .tmp/ScrSummary.py:54
