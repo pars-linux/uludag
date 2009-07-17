@@ -39,6 +39,7 @@ from PyKDE4.solid import Solid
 from backend.pardusBackend import NetworkIface
 
 WIRED           = "network-wired"
+WIRELESS        = "network-wireless"
 
 CONNECTED       = {"title"  :i18n("Connected"),
                    "emblem" :"dialog-ok-apply",
@@ -70,6 +71,8 @@ class NmApplet(plasmascript.Applet):
         self.followSolid()
 
         self.connectedDevices = []
+        self.maxQuality = 100.0
+
         self.iface = NetworkIface()
         self.notifyface = Notifier(dbus.get_default_main_loop())
         self.notifyface.registerNetwork()
@@ -78,7 +81,7 @@ class NmApplet(plasmascript.Applet):
         self.setAspectRatioMode(Plasma.Square)
 
         self.loader = KIconLoader()
-        self.defaultIcon = ICONPATH % (self.package().path(), WIRED)
+        self.defaultIcon = WIRED
         self.emblem = DISCONNECTED["emblem"]
 
         self.icon = NmIcon(self)
@@ -199,14 +202,14 @@ class NmApplet(plasmascript.Applet):
             if self.lastActivePackage == 'wireless_tools':
                 if self._config['showwifi'] == 'true' and self.solidState():
                     # Show SIGNAL Strength
-                    icon =  self.iface.strength(self.lastActiveDevice)/18
-                    if not icon in range(1,6):
-                        icon = 1
-                    self.defaultIcon = ICONPATH % (self.package().path(), icon)
+                    strength = int(round((self.iface.strength(self.lastActiveDevice)*5) / self.maxQuality))
+                    if not strength in range(1,6):
+                        strength = 1
+                    self.defaultIcon = "network-applet-%s" % strength
                 else:
-                    self.defaultIcon = ICONPATH % (self.package().path(), 5)
+                    self.defaultIcon = WIRELESS
             else:
-                self.defaultIcon = ICONPATH % (self.package().path(), WIRED)
+                self.defaultIcon = WIRED
             if self._config['showtraffic'] == 'true' and self.solidState():
                 self.receiverBlinker.update(self.iface.stat(self.lastActiveDevice)[0])
                 self.transmitterBlinker.update(self.iface.stat(self.lastActiveDevice)[1])
@@ -251,6 +254,11 @@ class NmApplet(plasmascript.Applet):
                 if not connection in self.connectedDevices:
                     self.connectedDevices.append(connection)
 
+                # Update Max Quality value
+                # FIXME needs COMAR Wireless Tools update
+                # if self.lastActivePackage == 'wireless_tools' and self.config['showwifi'] == 'true':
+                #     self.maxQuality = self.iface.getMaxQuality(self.lastActiveDevice)
+
                 # Current Ip
                 ip = args[2]
 
@@ -273,7 +281,7 @@ class NmApplet(plasmascript.Applet):
                     lastState = CONNECTED
                 else:
                     if self.lastActivePackage == 'wireless_tools':
-                        self.defaultIcon = ICONPATH % (self.package().path(), "off")
+                        self.defaultIcon = WIRELESS
 
                     self.lastActiveDevice  = None
                     self.lastActivePackage = None
