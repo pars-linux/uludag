@@ -111,7 +111,7 @@ def copyItem(src, dst, progress):
         try:
             shutil.copy2(src, dst)
         except:
-            progress.go(unicode(i18n("file '%s' cannot be copied")) % unicode(src), ctx.WARNING, os.path.getsize(src))
+            progress.go(unicode(i18n("file '%s' could not be copied")) % unicode(src), ctx.WARNING, os.path.getsize(src))
         else:
             progress.go(unicode(i18n("file '%s' copied")) % unicode(src), ctx.OK, os.path.getsize(src))
     elif os.path.isdir(src):
