@@ -46,7 +46,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # Selected Options
         content.append(subject % ki18n("Options Settings").toString())
         for key,value in ctx.options.items():
-            content.append(item % ki18n("Selected Option %s : <b>%s</b>").toString() % (key, value))
+            content.append(item % ki18n("Option %s : <b>%s</b>").toString() % (key, value))
         content.append(end)
 
         if ctx.filesOptions:
