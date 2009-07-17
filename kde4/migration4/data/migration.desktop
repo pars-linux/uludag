@@ -3,10 +3,6 @@ Exec=migration
 Icon=migration
 Type=Application
 
-X-KDE-StartupNotify=true
-X-KDE-autostart-after=plasma
-X-KDE-autostart-condition=migrationrc:General:RunOnStart:true
-
 Name=Migation Tool
 Name[de]=Migation Tool
 Name[tr]=Göç Aracı
