@@ -254,9 +254,9 @@ class Bookmark:
                             result = cursor.execute("SELECT max(id) FROM moz_places")
                             fk = result.fetchone()[0]
                         print "insert ile fk = result[0]:%s" % fk
-                    else:
-                        print "result false düştü..."
-                    print "fk = cursor.lastrowid:%s" % fk
+                    #else:
+                    #    print "result false düştü..."
+                    #print "fk = cursor.lastrowid:%s" % fk
                 #print "INSERT INTO moz_bookmarks ('type', 'fk', 'parent', 'position', 'title') VALUES oldugu yerde...."
                 #print "(fk :%s, parentid:%s, position:%s, title:%s)" % (fk, parentid, position, title)
 
