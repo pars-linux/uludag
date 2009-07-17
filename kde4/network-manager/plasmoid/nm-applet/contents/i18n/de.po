@@ -104,8 +104,7 @@ msgid "Connected to <b>%1</b> IP: %2"
 msgstr ""
 
 #: code/main.py:266
-#, python-format
-msgid "Connecting to <b>%s</b> .."
+msgid "Connecting to <b>%1</b> .."
 msgstr ""
 
 #: code/main.py:329
