@@ -230,7 +230,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def execute(self):
         if self.getOptions():
-            ctx.fileOptions = self.getOptions()
+            ctx.filesOptions = self.getOptions()
             return (True, None)
         else:
             return (False, None)
