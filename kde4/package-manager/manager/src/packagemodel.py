@@ -72,7 +72,7 @@ class PackageModel(QAbstractTableModel):
             if icon_path and not icon_path.endsWith("unknown.png"):
                 return QVariant(icon_path)
             else:
-                return QVariant(":/data/package.png")
+                return QVariant()
         elif role == GroupRole:
             # TODO
             return QVariant()
