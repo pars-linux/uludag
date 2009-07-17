@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 20:37+0300\n"
+"POT-Creation-Date: 2009-07-17 14:03+0300\n"
 "PO-Revision-Date: 2009-06-22 15:38+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/ScrGoodbye.py:23 .tmp/ui_goodbyeWidget.py:199
+#: .tmp/ScrGoodbye.py:26 .tmp/ui_goodbyeWidget.py:208
 msgid "Goodbye"
 msgstr "Arrivederci"
 
-#: .tmp/ScrGoodbye.py:24
+#: .tmp/ScrGoodbye.py:27
 msgid "Goodbye from Kaptan Wizard :)"
 msgstr "Arrivederci da Kaptan Wizard :)"
 
@@ -226,11 +226,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: .tmp/ScrStyle.py:58
-msgid "No name"
-msgstr "Nessun nome"
-
-#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:42
+#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
 msgid "Welcome"
 msgstr "Benvenuto"
 
@@ -305,7 +301,7 @@ msgstr ""
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Sfondi meravigliosi, impressionanti, superbi! \\m/"
 
-#: .tmp/ui_goodbyeWidget.py:200
+#: .tmp/ui_goodbyeWidget.py:209
 #, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -340,62 +336,62 @@ msgstr ""
 "Ora puoi iniziare a usare Pardus oppure provare questi programmi:</span></"
 "p></body></html>"
 
-#: .tmp/ui_goodbyeWidget.py:207
+#: .tmp/ui_goodbyeWidget.py:216
 msgid "My Smolt Page"
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:208
+#: .tmp/ui_goodbyeWidget.py:217
 msgid "Go to your Smolt page and rate your hardware components."
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:209 .tmp/ui_goodbyeWidget.py:212
-#: .tmp/ui_goodbyeWidget.py:215 .tmp/ui_goodbyeWidget.py:218
+#: .tmp/ui_goodbyeWidget.py:218 .tmp/ui_goodbyeWidget.py:221
+#: .tmp/ui_goodbyeWidget.py:224 .tmp/ui_goodbyeWidget.py:227
 msgid "Start"
 msgstr "Avvia"
 
-#: .tmp/ui_goodbyeWidget.py:210
+#: .tmp/ui_goodbyeWidget.py:219
 msgid "Migration Wizard"
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:211
+#: .tmp/ui_goodbyeWidget.py:220
 msgid ""
 "A wizard to transfer files and settings from existing operating systems (e."
 "g. Windows) to Pardus."
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:213
+#: .tmp/ui_goodbyeWidget.py:222
 msgid "System Settings"
 msgstr "Impostazioni di Sistema"
 
-#: .tmp/ui_goodbyeWidget.py:214
+#: .tmp/ui_goodbyeWidget.py:223
 msgid "System Settings is a configuration tool for Pardus."
 msgstr "Strumento di configurazione per Pardus."
 
-#: .tmp/ui_goodbyeWidget.py:216
+#: .tmp/ui_goodbyeWidget.py:225
 msgid "User Groups and Help Pages"
 msgstr "Gruppi di utenti e pagine di aiuto"
 
-#: .tmp/ui_goodbyeWidget.py:217
+#: .tmp/ui_goodbyeWidget.py:226
 msgid "Pardus community, user lists, IRC channels, wikis and more."
 msgstr "La comunità di pardus, mailing list, canali IRC e molto altro."
 
-#: .tmp/ui_kaptanMain.py:115
+#: .tmp/ui_kaptanMain.py:120
 msgid "Kaptan Desktop"
 msgstr "Kaptan Desktop"
 
-#: .tmp/ui_kaptanMain.py:116
+#: .tmp/ui_kaptanMain.py:121
 msgid "Cancel"
 msgstr "Annulla"
 
-#: .tmp/ui_kaptanMain.py:117
+#: .tmp/ui_kaptanMain.py:122
 msgid "Back"
 msgstr "Indietro"
 
-#: .tmp/ui_kaptanMain.py:118
+#: .tmp/ui_kaptanMain.py:123
 msgid "Next"
 msgstr "Avanti"
 
-#: .tmp/ui_kaptanMain.py:119
+#: .tmp/ui_kaptanMain.py:124
 msgid "Finish"
 msgstr "Fine"
 
@@ -712,7 +708,7 @@ msgstr "Scegli sfondo"
 msgid "Don't change wallpaper"
 msgstr "Non cambiare lo sfondo"
 
-#: .tmp/ui_welcomeWidget.py:43
+#: .tmp/ui_welcomeWidget.py:44
 msgid ""
 "This application, called Kaptan Desktop, will help you with your basic but "
 "sufficient setup for your Pardus desktop in a quick manner. Please click "
@@ -729,6 +725,9 @@ msgstr ""
 "Pardus è una distribuzione GNU/Linux, ideata per un uso di base del "
 "computer; con Pardus puoi connetterti a Internet, leggere le tue e-mail, "
 "lavorare sui tuoi documenti, e molto, molto altro!"
+
+#~ msgid "No name"
+#~ msgstr "Nessun nome"
 
 #~ msgid "<b>Welcome to Kaptan!</b>"
 #~ msgstr "<b>Benvenuto in Kaptan!</b>"
