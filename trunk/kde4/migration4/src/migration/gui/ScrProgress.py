@@ -251,7 +251,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 bookmark.getFFBookmarks(ctx.options["Firefox Profile Path"])
             except:
-                logging.warning(i18n("Firefox bookmarks cannot be loaded."))
+                logging.warning(i18n("Firefox bookmarks could not be loaded."))
             else:
                 logging.info(i18n("Firefox bookmarks loaded."))
             self.progresspage.makeProgress(10)
@@ -263,7 +263,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 bookmark.getOperaBookmarks(ctx.options["Opera Profile Path"])
             except:
-                logging.warning(i18n("Opera bookmarks cannot be loaded."))
+                logging.warning(i18n("Opera bookmarks could not be loaded."))
             else:
                 logging.info(i18n("Opera bookmarks loaded."))
             self.progresspage.makeProgress(10)
@@ -275,7 +275,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 bookmark.getIEBookmarks(ctx.options["Favorites Path"])
             except:
-                logging.warning(i18n("Internet Explorer favorites cannot be loaded."))
+                logging.warning(i18n("Internet Explorer favorites could not be loaded."))
             else:
                 logging.info(i18n("Internet Explorer favorites loaded."))
             self.progresspage.makeProgress(10)
@@ -302,7 +302,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 account.getOEAccounts(ctx.options["Windows Mail Path"])
             except:
-                logging.warning(i18n("Windows Mail accounts cannot be loaded."))
+                logging.warning(i18n("Windows Mail accounts could not be loaded."))
             else:
                 logging.info(i18n("Windows Mail accounts loaded."))
 
@@ -315,7 +315,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 account.getTBAccounts(ctx.options["Thunderbird Profile Path"])
             except:
-                logging.warning(i18n("Thunderbird accounts cannot be loaded."))
+                logging.warning(i18n("Thunderbird accounts could be loaded."))
             else:
                 logging.info(i18n("Thunderbird accounts loaded."))
             self.progresspage.makeProgress(15)
@@ -327,7 +327,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 account.getMSNAccounts(ctx.options["Contacts Path"])
             except:
-                logging.warning(i18n("MSN accounts cannot be loaded."))
+                logging.warning(i18n("MSN accounts could be loaded."))
             else:
                 logging.info(i18n("MSN accounts loaded."))
             self.progresspage.makeProgress(5)
@@ -339,7 +339,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 account.getGTalkAccounts(ctx.options["GTalk Key"])
             except:
-                logging.warning(i18n("GTalk accounts cannot be loaded."))
+                logging.warning(i18n("GTalk accounts could not be loaded."))
             else:
                 logging.info(i18n("GTalk accounts loaded."))
             self.progresspage.makeProgress(5)
@@ -393,7 +393,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                     try:
                         os.makedirs(ctx.filesOptions["copy destination"])
                     except:
-                        warning(self.progresspage , unicode(i18n("Folder '%s' cannot be created, please choose another folder!")) % ctx.filesOptions["copy destination"])
+                        warning(self.progresspage , unicode(i18n("Folder '%s' could not be created, please choose another folder!")) % ctx.filesOptions["copy destination"])
                         return
                 # Write access:
                 if not os.access(ctx.filesOptions["copy destination"], os.W_OK):
