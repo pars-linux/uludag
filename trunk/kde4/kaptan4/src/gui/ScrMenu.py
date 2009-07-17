@@ -40,7 +40,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 "menuIndex": 0,
                 "summaryMessage": ki18n("Kick-off Menu"),
                 "image": QtGui.QPixmap(':/raw/pics/kickoff.png'),
-                "description": ki18n("A modern menu for KDE")
+                "description": ki18n("Default menu of Pardus GNU/Linux.")
                 }
         self.menuNames["simplelauncher"] = {
                 "menuIndex": 1,
@@ -52,7 +52,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 "menuIndex": 2,
                 "summaryMessage": ki18n("Lancelot Menu"),
                 "image": QtGui.QPixmap(':/raw/pics/lancelot.png'),
-                "description": ki18n("An experimental menu for KDE4")
+                "description": ki18n("An advanced menu for KDE4.")
                 }
 
         for each in list(group.groupList()):

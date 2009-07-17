@@ -75,17 +75,17 @@ p, li { white-space: pre-wrap; }
          </property>
          <item>
           <property name="text">
-           <string>Kick-off </string>
+           <string>Kick-off Menu</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>Simple</string>
+           <string>Simple Menu</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>Lancelot</string>
+           <string>Lancelot Menu</string>
           </property>
          </item>
         </widget>

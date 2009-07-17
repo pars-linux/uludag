@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 14:03+0300\n"
+"POT-Creation-Date: 2009-07-17 14:43+0300\n"
 "PO-Revision-Date: 2009-07-17 01:52+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -43,15 +43,15 @@ msgstr "Biçemler hakkında bir başlık ekle"
 msgid "Some catchy description about styles"
 msgstr "Biçemler hakkında güzel bir açıklama"
 
-#: .tmp/ScrMenu.py:41
+#: .tmp/ScrMenu.py:41 .tmp/ui_menuWidget.py:83
 msgid "Kick-off Menu"
 msgstr "Kick-off Menü"
 
 #: .tmp/ScrMenu.py:43
-msgid "A modern menu for KDE"
-msgstr "Modern KDE menü biçimi"
+msgid "Default menu of Pardus GNU/Linux."
+msgstr "Pardus GNU/Linux'un öntanımlı menü biçimi"
 
-#: .tmp/ScrMenu.py:47
+#: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:84
 msgid "Simple Menu"
 msgstr "Basit Menü"
 
@@ -59,13 +59,13 @@ msgstr "Basit Menü"
 msgid "And old style menu from KDE 3."
 msgstr "KDE 3'ten alışkın olduğumuz eski menü biçimi"
 
-#: .tmp/ScrMenu.py:53
+#: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:85
 msgid "Lancelot Menu"
 msgstr "Lancelot Menü"
 
 #: .tmp/ScrMenu.py:55
-msgid "An experimental menu for KDE4"
-msgstr "Deneysel KDE 4 menüsü"
+msgid "An advanced menu for KDE4."
+msgstr "KDE4 için gelişmiş bir  menü biçimi"
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
 msgid "Mouse Settings"
@@ -414,11 +414,11 @@ msgstr "Dene:"
 msgid "Configure your keyboard layout."
 msgstr "Klavye düzenini ayarla."
 
-#: .tmp/ui_menuWidget.py:76
+#: .tmp/ui_menuWidget.py:77
 msgid "Menu"
 msgstr "Menü"
 
-#: .tmp/ui_menuWidget.py:77
+#: .tmp/ui_menuWidget.py:78
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -442,23 +442,11 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Bir menü stili seçin:</span></p></body></html>"
 
-#: .tmp/ui_menuWidget.py:82
-msgid "Kick-off (Advanced Menu)"
-msgstr "Kick-off (Gelişmiş)"
-
-#: .tmp/ui_menuWidget.py:83
-msgid "Classic (Simple Menu)"
-msgstr "Klasik (Basit)"
-
-#: .tmp/ui_menuWidget.py:84
-msgid "Lancelot (Experimental Menu)"
-msgstr "Lancelot (Deneysel)"
-
-#: .tmp/ui_mouseWidget.py:84
+#: .tmp/ui_mouseWidget.py:88
 msgid "Mouse"
 msgstr "Fare"
 
-#: .tmp/ui_mouseWidget.py:85
+#: .tmp/ui_mouseWidget.py:89
 msgid ""
 "<p align=\"left\">If you are left-handed, you may prefer to swap the "
 "functions on the left and right buttons on your pointing device by choosing "
@@ -469,35 +457,35 @@ msgstr ""
 "\"Sol El\" seçeneğini işaretleyerek değiştirmeyi tercih edebilirsiniz. "
 "Ayrıca varsayılan tıklama davranışını da değiştirebilirsiniz.</p>"
 
-#: .tmp/ui_mouseWidget.py:86
+#: .tmp/ui_mouseWidget.py:90
 msgid "mouse icon"
 msgstr "fare simgesi"
 
-#: .tmp/ui_mouseWidget.py:87
+#: .tmp/ui_mouseWidget.py:91
 msgid "Click Behaviour"
 msgstr "Tıklama Davranışı"
 
-#: .tmp/ui_mouseWidget.py:88
+#: .tmp/ui_mouseWidget.py:92
 msgid "Single-click to open files and folders"
 msgstr "Dosya ve dizinleri açmak için tek tıkla"
 
-#: .tmp/ui_mouseWidget.py:89
+#: .tmp/ui_mouseWidget.py:93
 msgid "Dou&ble-click to open files and folders"
 msgstr "Dosya ve dizinleri açmak için &çift tıkla"
 
-#: .tmp/ui_mouseWidget.py:90
+#: .tmp/ui_mouseWidget.py:94
 msgid "Button Order"
 msgstr "Düğme Sırası"
 
-#: .tmp/ui_mouseWidget.py:91
+#: .tmp/ui_mouseWidget.py:95
 msgid "Right Hand"
 msgstr "Sağ El"
 
-#: .tmp/ui_mouseWidget.py:92
+#: .tmp/ui_mouseWidget.py:96
 msgid "Left Hand"
 msgstr "Sol El"
 
-#: .tmp/ui_mouseWidget.py:93
+#: .tmp/ui_mouseWidget.py:97
 msgid "Reverse scrolling"
 msgstr "Ters Kaydır"
 
@@ -505,11 +493,11 @@ msgstr "Ters Kaydır"
 msgid "Network"
 msgstr "Ağ"
 
-#: .tmp/ui_packageWidget.py:68
+#: .tmp/ui_packageWidget.py:71
 msgid "Package"
 msgstr "Paket"
 
-#: .tmp/ui_packageWidget.py:69
+#: .tmp/ui_packageWidget.py:72
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -539,43 +527,43 @@ msgstr ""
 "güncelleyebilir ve programların güncellemelerini sistem tepsisinden "
 "görebilirsiniz.</span></p></body></html>"
 
-#: .tmp/ui_packageWidget.py:74
+#: .tmp/ui_packageWidget.py:77
 msgid "picture label"
 msgstr "resim etiketi"
 
-#: .tmp/ui_packageWidget.py:75
+#: .tmp/ui_packageWidget.py:78
 msgid "Updates"
 msgstr "Güncellemeler"
 
-#: .tmp/ui_packageWidget.py:76
+#: .tmp/ui_packageWidget.py:79
 msgid "Show in system  tray"
 msgstr "Sistem tepsisinde göster"
 
-#: .tmp/ui_packageWidget.py:77
+#: .tmp/ui_packageWidget.py:80
 msgid "Check updates automatically for every"
 msgstr "Güncelleme kontrol sıklığı:"
 
-#: .tmp/ui_packageWidget.py:78
+#: .tmp/ui_packageWidget.py:81
 msgid " hours"
 msgstr " saat"
 
-#: .tmp/ui_packageWidget.py:79
+#: .tmp/ui_packageWidget.py:82
 msgid "Repo"
 msgstr "Depo"
 
-#: .tmp/ui_packageWidget.py:80
+#: .tmp/ui_packageWidget.py:83
 msgid "Contrib repo includes extra packages."
 msgstr "Katkı deposu ek paketler içerir."
 
-#: .tmp/ui_packageWidget.py:81
+#: .tmp/ui_packageWidget.py:84
 msgid "Add contrib repo"
 msgstr "Katkı deposunu ekle"
 
-#: .tmp/ui_searchWidget.py:50
+#: .tmp/ui_searchWidget.py:52
 msgid "Desktop Search"
 msgstr "Masaüstü Araması"
 
-#: .tmp/ui_searchWidget.py:51
+#: .tmp/ui_searchWidget.py:53
 msgid ""
 "Strigi desktop search allows searching for files by content instead of just "
 "by name."
@@ -583,7 +571,7 @@ msgstr ""
 "Strigi masaüstü araması ile dosyaları sadece isimlerine göre degil içeriğine "
 "göre de arayabilirsiniz."
 
-#: .tmp/ui_searchWidget.py:52
+#: .tmp/ui_searchWidget.py:54
 msgid "Enable Strigi Desktop File Indexer"
 msgstr "Strigi Masaüstü Dosya İndeskleyicisini çalıştır"
 
@@ -684,31 +672,31 @@ msgstr "biçemİsmi"
 msgid "styleDesc"
 msgstr "biçemAçıklaması"
 
-#: .tmp/ui_styleWidget.py:63
+#: .tmp/ui_styleWidget.py:65
 msgid "Themes"
 msgstr "Temalar"
 
-#: .tmp/ui_styleWidget.py:64
+#: .tmp/ui_styleWidget.py:66
 msgid "<b>Desktop Type:</b>"
 msgstr "<b>Masaüstü Türü:</b>"
 
-#: .tmp/ui_styleWidget.py:65
+#: .tmp/ui_styleWidget.py:67
 msgid "Desktop view (KDE4 Style)"
 msgstr "Masaüstü görünümü (KDE4 Biçemi)"
 
-#: .tmp/ui_styleWidget.py:66
+#: .tmp/ui_styleWidget.py:68
 msgid "Folder view (KDE3 Style)"
 msgstr "Klasör görünümü (KDE3 Biçemi)"
 
-#: .tmp/ui_styleWidget.py:67
+#: .tmp/ui_styleWidget.py:69
 msgid "<b>Number of Desktops:</b>"
 msgstr "<b>Masaüstü Sayısı:</b>"
 
-#: .tmp/ui_summaryWidget.py:48
+#: .tmp/ui_summaryWidget.py:49
 msgid "Summary"
 msgstr "Özet"
 
-#: .tmp/ui_summaryWidget.py:49
+#: .tmp/ui_summaryWidget.py:50
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -742,15 +730,15 @@ msgstr "duvarKâğıdıİsmi"
 msgid "wallpaperDesc"
 msgstr "duvarKâğıdıAçıklaması"
 
-#: .tmp/ui_wallpaperWidget.py:43
+#: .tmp/ui_wallpaperWidget.py:44
 msgid "Wallpaper"
 msgstr "Duvar kâğıdı"
 
-#: .tmp/ui_wallpaperWidget.py:44
+#: .tmp/ui_wallpaperWidget.py:45
 msgid "Choose Wallpaper From a File"
 msgstr "Duvar Kâğıdını Dosyadan Seç"
 
-#: .tmp/ui_wallpaperWidget.py:45
+#: .tmp/ui_wallpaperWidget.py:46
 msgid "Don't change wallpaper"
 msgstr "Duvar kâğıdını değiştirme"
 
@@ -772,6 +760,27 @@ msgstr ""
 "karşılamalarını hedefleyen bir GNU/Linux dağıtımıdır. İnternet'e "
 "bağlanmanızı, e-postalarınızı okumanızı, ofis belgeleriniz üzerinde "
 "çalışmanızı (ve çok daha fazlasını) kolaylaştırır!"
+
+#~ msgid "Kick-off "
+#~ msgstr "Kick-off"
+
+#~ msgid "Simple"
+#~ msgstr "Basit Menü"
+
+#~ msgid "Lancelot"
+#~ msgstr "Lancelot"
+
+#~ msgid "An experimental menu for KDE4"
+#~ msgstr "Deneysel KDE 4 menüsü"
+
+#~ msgid "Kick-off (Advanced Menu)"
+#~ msgstr "Kick-off (Gelişmiş)"
+
+#~ msgid "Classic (Simple Menu)"
+#~ msgstr "Klasik (Basit)"
+
+#~ msgid "Lancelot (Experimental Menu)"
+#~ msgstr "Lancelot (Deneysel)"
 
 #~ msgid "No name"
 #~ msgstr "İsimsiz"
