@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nm-applet\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-08 12:35+0300\n"
+"POT-Creation-Date: 2009-07-17 17:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,6 +73,39 @@ msgstr ""
 msgid "No profile defined"
 msgstr ""
 
-#: code/widgets/popupui.py:157
+#: code/widgets/popupui.py:157 code/main.py:116
 msgid "Open Network Manager"
+msgstr ""
+
+#: code/main.py:44
+msgid "Connected"
+msgstr ""
+
+#: code/main.py:47 code/main.py:279 code/main.py:288
+msgid "Disconnected"
+msgstr ""
+
+#: code/main.py:50
+msgid "Connecting"
+msgstr ""
+
+#: code/main.py:88
+msgid "Click here to show connections.."
+msgstr ""
+
+#: code/main.py:240
+msgid "Unknown"
+msgstr ""
+
+#: code/main.py:251
+msgid "Connected to <b>%1</b> IP: %2"
+msgstr ""
+
+#: code/main.py:266
+#, python-format
+msgid "Connecting to <b>%s</b> .."
+msgstr ""
+
+#: code/main.py:329
+msgid "Icon Settings"
 msgstr ""
