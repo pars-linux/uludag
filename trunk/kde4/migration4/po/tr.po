@@ -146,7 +146,6 @@ msgid "Wallpaper"
 msgstr "Duvar kağıdı"
 
 #: .tmp/ScrProgress.py:254
-#, fuzzy
 msgid "Firefox bookmarks could not be loaded."
 msgstr "Firefox yer imleri yüklenemedi."
 
@@ -155,7 +154,6 @@ msgid "Firefox bookmarks loaded."
 msgstr "Firefox yer imleri yüklendi."
 
 #: .tmp/ScrProgress.py:266
-#, fuzzy
 msgid "Opera bookmarks could not be loaded."
 msgstr "Opera yer imleri yüklenemedi."
 
@@ -164,7 +162,6 @@ msgid "Opera bookmarks loaded."
 msgstr "Firefox yer imleri yüklendi."
 
 #: .tmp/ScrProgress.py:278
-#, fuzzy
 msgid "Internet Explorer favorites could not be loaded."
 msgstr "Internet Explorer sk kullanlanlar yklenemedi."
 
@@ -177,7 +174,6 @@ msgid "Firefox is open. Please close it first to continue..."
 msgstr "Firefox açık. Devam etmek için Firefox'u kapatn."
 
 #: .tmp/ScrProgress.py:305
-#, fuzzy
 msgid "Windows Mail accounts could not be loaded."
 msgstr "Windows Mail hesaplar yüklenemedi."
 
@@ -186,7 +182,6 @@ msgid "Windows Mail accounts loaded."
 msgstr "Windows Mail hesaplar yüklendi."
 
 #: .tmp/ScrProgress.py:318
-#, fuzzy
 msgid "Thunderbird accounts could be loaded."
 msgstr "Thunderbird hesaplar yklenemedi."
 
@@ -195,7 +190,6 @@ msgid "Thunderbird accounts loaded."
 msgstr "Thunderbird hesaplar yüklendi."
 
 #: .tmp/ScrProgress.py:330
-#, fuzzy
 msgid "MSN accounts could be loaded."
 msgstr "MSN hesaplar yüklenemedi."
 
@@ -204,7 +198,6 @@ msgid "MSN accounts loaded."
 msgstr "MSN hesaplar yüklendi."
 
 #: .tmp/ScrProgress.py:342
-#, fuzzy
 msgid "GTalk accounts could not be loaded."
 msgstr "GTalk hesaplar yüklenemedi."
 
@@ -229,7 +222,7 @@ msgid "Desktop Links"
 msgstr "Masast Bağlantılar"
 
 #: .tmp/ScrProgress.py:396
-#, fuzzy, python-format
+#, python-format
 msgid "Folder '%s' could not be created, please choose another folder!"
 msgstr "'%s' klasör oluşturulamadı, lütfen başka bir klasör seçin."
 
@@ -241,7 +234,7 @@ msgid ""
 msgstr "'%s' klasörüne yazma izniniz yok, lütfen başka bir klasör seçin."
 
 #: .tmp/ScrProgress.py:411
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Total size of files you've selected is %(size)d MB, but you have only %(free)"
 "d MB of free space!"
@@ -304,21 +297,21 @@ msgid "Options Settings"
 msgstr "Tercihler"
 
 #: .tmp/ScrSummary.py:49
-#, fuzzy, python-format
+#, python-format
 msgid "Option %s : <b>%s</b>"
-msgstr "Seçili Tercihler: <b>%s</b>"
+msgstr "Seçenek %s: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:54
 msgid "Destination Settings"
 msgstr "Hedef Ayarlar"
 
 #: .tmp/ScrSummary.py:57
-#, fuzzy, python-format
+#, python-format
 msgid "Linked Destination to: <b> %s </b>"
 msgstr "Seili Hedef: <b>Bağlantıyı %s konumuna kopyala</b>"
 
 #: .tmp/ScrSummary.py:59
-#, fuzzy, python-format
+#, python-format
 msgid "Copied Destination to: <b> %s </b>"
 msgstr "Seçili Hedef: <b>Bağlantıyı %s konumuna kopyala</b>"
 
@@ -431,7 +424,6 @@ msgid "~/Desktop"
 msgstr "~/Desktop"
 
 #: .tmp/ui_userFilesWidget.py:50
-#, fuzzy
 msgid "Directory"
 msgstr "Dizin"
 
@@ -448,7 +440,6 @@ msgid "Users"
 msgstr "Kullanıcılar"
 
 #: .tmp/ui_welcomeWidget.py:45
-#, fuzzy
 msgid ""
 "This application, called Migration Tool, helps you transfer files and "
 "settings from other operating systems to Pardus. Please click Next to "
