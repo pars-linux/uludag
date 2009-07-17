@@ -682,12 +682,12 @@ class OutlookExpressBox:
 def connectKMail():
     # Run KMail:
     if not os.system("kmail") == 0:
-        raise Exception, "KMail cannot be started"
+        raise Exception, "KMail could not be started"
     # Create a dbus object:
     bus = dbus.SessionBus()
     kmail =  bus.get_object('org.kde.kmail', '/KMail', 'org.kde.kmail.kmail')
     if not kmail:
-        raise Exception, "Cannot connected to KMail"
+        raise Exception, "Could not connected to KMail"
     return kmail
 
 
@@ -697,21 +697,21 @@ def addMessage(folder, message, kmail=None):
         # Create a dbus object:
        kmail =  connectKMail()
        if not kmail:
-            raise Exception, "Message cannot be added"
+            raise Exception, "Message could not be added"
     # Add Message:
     ok, status = kmail.dbusAddMessage(str(folder), message, "")
     if not ok:
         raise DBusException, "Can not connect to kmail with DBus"
     elif status == -4:
-        raise DuplicateMessage, "Message in %s cannot be added: duplicate message" % folder
+        raise DuplicateMessage, "Message in %s could not be added: duplicate message" % folder
     elif status == -2:
-        raise MailError, "Message in %s cannot be added: cannot add message to folder" % folder
+        raise MailError, "Message in %s could not be added: could not add message to folder" % folder
     elif status == -1:
-        raise MailError, "Message in %s cannot be added: cannot make folder" % folder
+        raise MailError, "Message in %s could not be added: could not make folder" % folder
     elif status == 0:
-        raise MailError, "Message in %s cannot be added: error while adding message" % folder
+        raise MailError, "Message in %s could not be added: error while adding message" % folder
     elif status != 1:
-        raise MailError, "Message in %s cannot be added, status: %d" % (folder, status)
+        raise MailError, "Message in %s could not be added, status: %d" % (folder, status)
     else:
         return True
 
@@ -724,4 +724,3 @@ class MailError(Exception):
 
 class DuplicateMessage(Exception):
     pass
-
