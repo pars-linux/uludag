@@ -7,6 +7,9 @@ import dbus
 # Solid
 from PyKDE4.solid import Solid
 
+# KDE
+from PyKDE4.kdecore import i18n
+
 class Notifier:
 
     def __init__(self, loop):
@@ -57,7 +60,7 @@ class Notifier:
             id = self.lastId
             self.lastId = None
         if self.proxy:
-            self.notifier.Notify("NM", id, "", "applications-internet", "Network Manager", message, [], {}, timeout, reply_handler=self.handler, error_handler=self.handler)
+            self.notifier.Notify("NM", id, "", "applications-internet", i18n("Network Manager"), message, [], {}, timeout, reply_handler=self.handler, error_handler=self.handler)
         else:
             print "Notifier is not working, message was : %s" % message
             self.init()
