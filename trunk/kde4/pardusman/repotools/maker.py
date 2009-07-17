@@ -154,11 +154,11 @@ ui gfxboot.com /boot/isolinux/init
 
 label pardus
     kernel /boot/kernel
-    append initrd=/boot/initrd root=/dev/ram0 vga=791 splash=silent quiet %(exparams)s
+    append initrd=/boot/initrd root=/dev/ram0 splash=silent quiet %(exparams)s
 
 label rescue
     kernel /boot/kernel
-    append initrd=/boot/initrd root=/dev/ram0 vga=791 splash=silent quiet yali4=rescue %(exparams)s
+    append initrd=/boot/initrd root=/dev/ram0 yali4=rescue splash=silent quiet %(exparams)s
 
 label harddisk
     localboot 0x80
