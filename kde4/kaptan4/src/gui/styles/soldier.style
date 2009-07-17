@@ -1,0 +1,15 @@
+[Style]
+name = Soldier
+name[tr] = Asker
+
+description = A green theme with a panel on top
+description[tr]= Paneli üstte olan yeşil bir tema
+
+panelPosition = 3
+widgetStyle = qtc_klearlooks
+colorScheme = EveningLilac
+desktopTheme = Aya
+thumbnail = sample1.png
+iconTheme = milky
+windowDecoration = kwin3_qtcurve
+

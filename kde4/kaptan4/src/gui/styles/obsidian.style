@@ -1,0 +1,15 @@
+[Style]
+name = Obsidian
+name[tr] = Beyaz Düşler
+
+description = A light theme with a panel on right
+description[tr]= Paneli sağda olan açık renk bir tema
+
+panelPosition = 6
+widgetStyle = oxygen
+colorScheme = Zion
+desktopTheme = air
+thumbnail = sample1.png
+iconTheme = milky
+windowDecoration = kwin3_oxygen
+
