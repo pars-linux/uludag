@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 14:43+0300\n"
-"PO-Revision-Date: 2009-07-12 12:52+0200\n"
+"PO-Revision-Date: 2009-07-17 13:59+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "Kick-off-menyn"
 
 #: .tmp/ScrMenu.py:43
 msgid "Default menu of Pardus GNU/Linux."
-msgstr ""
+msgstr "Standardmeny för Pardus GNU/Linux."
 
 #: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:84
 msgid "Simple Menu"
@@ -61,9 +61,8 @@ msgid "Lancelot Menu"
 msgstr "Menyn Lancelot"
 
 #: .tmp/ScrMenu.py:55
-#, fuzzy
 msgid "An advanced menu for KDE4."
-msgstr "En modern meny för KDE"
+msgstr "En sofistikerad meny för KDE4."
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
 msgid "Mouse Settings"
@@ -300,7 +299,6 @@ msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Underbara, häftiga utsökta skrivbordsunderlägg! \\m/"
 
 #: .tmp/ui_goodbyeWidget.py:209
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -330,9 +328,16 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:9pt; font-weight:600;\">Gratulerar! Du har nu klarat av alla steg! Nu "
+"size:11pt; font-weight:600;\">Grattis! </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:11pt; font-weight:600;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt; font-weight:600;\">Du har nu klarat av alla steg! Nu "
 "kan du fortsätta med att använda Pardus eller så kan du prova följande "
-"program:</span></p></body></html>"
+"program:</span></"
+"p></body></html>"
 
 #: .tmp/ui_goodbyeWidget.py:216
 msgid "My Smolt Page"
@@ -349,13 +354,15 @@ msgstr "Kör"
 
 #: .tmp/ui_goodbyeWidget.py:219
 msgid "Migration Wizard"
-msgstr ""
+msgstr "Migreringsguiden"
 
 #: .tmp/ui_goodbyeWidget.py:220
 msgid ""
 "A wizard to transfer files and settings from existing operating systems (e."
 "g. Windows) to Pardus."
 msgstr ""
+"En guide som överför filer och inställningar från befintliga operativsystem "
+"(t.ex. Windows) till Pardus."
 
 #: .tmp/ui_goodbyeWidget.py:222
 msgid "System Settings"
@@ -571,7 +578,6 @@ msgid "&Send my profile"
 msgstr "&Skicka min profil"
 
 #: .tmp/ui_smoltWidget.py:80
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -631,17 +637,17 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-"
 "style:italic;\">smoltDeleteProfile</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   The information sent to "
-"the smolt database server should be considered public in that anyone can "
-"view the statistics, data and share machine profiles.  In  many ways smolt "
-"is designed to get hardware vendors and other 3rd parties attention.  As "
-"such, not only will this information be shared with 3rd parties, we will be "
-"using smolt as leverage to gain better support for open source drivers and "
-"better support in general.</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">   Informationen som "
+"skickas till smoltdatabasen skall anses vara offentlig på så sätt att vem "
+"som helst kan se statistik och data och dela maskinprofiler. Smolt är "
+"utformad för att för att fånga försäljarnas och andra parters uppmärksamhet. "
+"Informationen kommer inte bara att delas med andra parter utan också "
+"användas som ett påtrycksmedel för att få bättre stöd och öppna drivrutiner "
+"för att få bättre stöd överlag.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
-"decoration: underline;\">IP Logging:</span>  In Pardus smolt install all web "
-"traffic goes through a proxy server first.  This is the only place IP "
+"decoration: underline;\">IP-loggning:</span>  In Pardus's smolt install all "
+"web traffic goes through a proxy server first.  This is the only place IP "
 "addresses are being logged and they are kept on that server for a period of "
 "4 weeks at which time log rotation removes these logs.  The Pardus Project "
 "does not aggregate ip addresses in the smolt database.  These logs are "
@@ -675,11 +681,11 @@ msgstr "<b>Skrivbordstyp:</b>"
 
 #: .tmp/ui_styleWidget.py:67
 msgid "Desktop view (KDE4 Style)"
-msgstr ""
+msgstr "Skrivbordsvy (KDE4-stil)"
 
 #: .tmp/ui_styleWidget.py:68
 msgid "Folder view (KDE3 Style)"
-msgstr ""
+msgstr "Katalogvy (KDE3-stil)"
 
 #: .tmp/ui_styleWidget.py:69
 msgid "<b>Number of Desktops:</b>"
