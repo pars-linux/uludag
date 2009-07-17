@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 15:58+0300\n"
+"POT-Creation-Date: 2009-07-17 15:50+0300\n"
 "PO-Revision-Date: 2009-07-04 14:42+0200\n"
 "Last-Translator: Siciliano Edivad <edivad95@gmail.com>\n"
 "Language-Team: italiano <it@li.org>\n"
@@ -96,23 +96,23 @@ msgstr "<p align='center'>%1 / %2, %3</p>"
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Preparazione PiSi...</h3>"
 
-#: .tmp/progressdialog.py:73 .tmp/ui_progressdialog.py:152
+#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:152
 msgid "Status:"
 msgstr "Stato:"
 
-#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:149
+#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:149
 msgid "--  / --"
 msgstr "--  / --"
 
-#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:148
+#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:148
 msgid "Time remaining:"
 msgstr "Tempo rimanente:"
 
-#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:150
+#: .tmp/progressdialog.py:77 .tmp/ui_progressdialog.py:150
 msgid "--:--:--"
 msgstr "--:--:--"
 
-#: .tmp/progressdialog.py:79
+#: .tmp/progressdialog.py:81
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Annullamento operazione...</b>"
 
@@ -598,19 +598,19 @@ msgstr "Seleziona il/i pacchetto/i per l'installazione:"
 msgid "Package Installer is already started!"
 msgstr ""
 
-#: .tmp/packagedelegate.py:116
+#: .tmp/packagedelegate.py:117
 msgid "Description:"
 msgstr "Descrizione:"
 
-#: .tmp/packagedelegate.py:128
+#: .tmp/packagedelegate.py:129
 msgid "Release:"
 msgstr "Release:"
 
-#: .tmp/packagedelegate.py:138
+#: .tmp/packagedelegate.py:139
 msgid "Repository:"
 msgstr "Repository:"
 
-#: .tmp/packagedelegate.py:147
+#: .tmp/packagedelegate.py:148
 #, fuzzy
 msgid "Package Size:"
 msgstr "Gestore di Pacchetti"

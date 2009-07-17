@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 15:58+0300\n"
+"POT-Creation-Date: 2009-07-17 15:50+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,23 +90,23 @@ msgstr ""
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr ""
 
-#: .tmp/progressdialog.py:73 .tmp/ui_progressdialog.py:152
+#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:152
 msgid "Status:"
 msgstr ""
 
-#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:149
+#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:149
 msgid "--  / --"
 msgstr ""
 
-#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:148
+#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:148
 msgid "Time remaining:"
 msgstr ""
 
-#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:150
+#: .tmp/progressdialog.py:77 .tmp/ui_progressdialog.py:150
 msgid "--:--:--"
 msgstr ""
 
-#: .tmp/progressdialog.py:79
+#: .tmp/progressdialog.py:81
 msgid "<b>Cancelling operation...</b>"
 msgstr ""
 
@@ -564,19 +564,19 @@ msgstr ""
 msgid "Package Installer is already started!"
 msgstr ""
 
-#: .tmp/packagedelegate.py:116
+#: .tmp/packagedelegate.py:117
 msgid "Description:"
 msgstr ""
 
-#: .tmp/packagedelegate.py:128
+#: .tmp/packagedelegate.py:129
 msgid "Release:"
 msgstr ""
 
-#: .tmp/packagedelegate.py:138
+#: .tmp/packagedelegate.py:139
 msgid "Repository:"
 msgstr ""
 
-#: .tmp/packagedelegate.py:147
+#: .tmp/packagedelegate.py:148
 msgid "Package Size:"
 msgstr ""
 

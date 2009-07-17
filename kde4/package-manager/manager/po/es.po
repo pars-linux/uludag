@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 15:58+0300\n"
+"POT-Creation-Date: 2009-07-17 15:50+0300\n"
 "PO-Revision-Date: 2009-07-16 20:00-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -47,8 +47,8 @@ msgstr "Instalar Paquete(s)"
 msgid "Download Size:"
 msgstr "Tamaño de descarga:"
 
-#: .tmp/ui_basketdialog.py:82
 # is here a problem in english ? the closing tag seems to be defect !!
+#: .tmp/ui_basketdialog.py:82
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</b>"
 
@@ -93,23 +93,23 @@ msgstr ""
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Preparando PiSi...</h3>"
 
-#: .tmp/progressdialog.py:73 .tmp/ui_progressdialog.py:152
+#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:152
 msgid "Status:"
 msgstr "Estado:"
 
-#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:149
+#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:149
 msgid "--  / --"
 msgstr ""
 
-#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:148
+#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:148
 msgid "Time remaining:"
 msgstr "Tiempo restante:"
 
-#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:150
+#: .tmp/progressdialog.py:77 .tmp/ui_progressdialog.py:150
 msgid "--:--:--"
 msgstr ""
 
-#: .tmp/progressdialog.py:79
+#: .tmp/progressdialog.py:81
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Cancelando operación...</b>"
 
@@ -465,7 +465,8 @@ msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
 #: .tmp/statemanager.py:125
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actualmente <b>%1</b> paquetes seleccionados, con un tamaño total de <b>%2</"
 "b>"
@@ -474,11 +475,13 @@ msgstr ""
 # please check if necessary use "total" again ?? because THIS is additional..
 #: .tmp/statemanager.py:128
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
+msgstr ""
+"y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:130
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
+msgstr ""
+"y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:131
 msgid "in your basket."
@@ -557,8 +560,8 @@ msgstr ""
 msgid "&Ok"
 msgstr "&Ok"
 
-#: .tmp/pm-install.py:44
 # favor revisar contexto..
+#: .tmp/pm-install.py:44
 msgid "Succesfully finished installing %1"
 msgstr "Instalación de %1 terminado con éxito"
 
@@ -598,19 +601,19 @@ msgstr "Paquetes a instalar"
 msgid "Package Installer is already started!"
 msgstr "Instalador de Paquetes ya se está ejecutando !"
 
-#: .tmp/packagedelegate.py:116
+#: .tmp/packagedelegate.py:117
 msgid "Description:"
 msgstr "Descripción:"
 
-#: .tmp/packagedelegate.py:128
+#: .tmp/packagedelegate.py:129
 msgid "Release:"
 msgstr "Versión:"
 
-#: .tmp/packagedelegate.py:138
+#: .tmp/packagedelegate.py:139
 msgid "Repository:"
 msgstr "Repositorio:"
 
-#: .tmp/packagedelegate.py:147
+#: .tmp/packagedelegate.py:148
 msgid "Package Size:"
 msgstr "Tamaño de Paquete:"
 
@@ -679,4 +682,3 @@ msgstr ""
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
-
