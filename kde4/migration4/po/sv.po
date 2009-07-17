@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: migration\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 17:56+0300\n"
+"POT-Creation-Date: 2009-07-17 18:15+0300\n"
 "PO-Revision-Date: 2009-07-17 17:13+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -355,6 +355,10 @@ msgid ""
 msgstr ""
 "Det finns inte någon Windowsinstallation att migrera! Vänligen kontrollera "
 "dina monterade partitioner..."
+
+#: .tmp/ScrUser.py:111
+msgid "There isn't any selected user on User Selection Window!"
+msgstr ""
 
 #: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:44
 msgid "Welcome"
