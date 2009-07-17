@@ -7,23 +7,15 @@
     are correct (dejavu-fonts problem),
     - kbluetooth4 has no translations, goes background when no device is available without
     notifying the user. It crashes when the dongle is suddenly unplugged,
-    - KDE can't have backtrace information.
-
-* gfxboot (Onur Küçük)
-    - vga= entry appears twice on /proc/cmdline.
 
 * Disk stuff (Ozan Çağlayan)
     - Written data to vfat partitions gets flushed upon umount which is bad.
 
 * Firefox
     - backspace doesn't work,
-    - libbonobo, libgnomeui stuff can be merged to pardus/ for fully compatible firefox,
 
 * systemsettings
     - Date & Time stuff should be ported to COMAR,
-
-* YALI (Gökmen GÖKSEL - Faik Uygur)
-    - Pisi install whole packages from start after a package fail.
 
 * plasmoid-network-applet
     - Crashes after removing it from the panel.
