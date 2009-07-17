@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 20:37+0300\n"
+"POT-Creation-Date: 2009-07-17 14:03+0300\n"
 "PO-Revision-Date: 2009-07-17 01:52+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1;plural=0;\n"
 
-#: .tmp/ScrGoodbye.py:23 .tmp/ui_goodbyeWidget.py:199
+#: .tmp/ScrGoodbye.py:26 .tmp/ui_goodbyeWidget.py:208
 msgid "Goodbye"
 msgstr "Hoşçakalın"
 
-#: .tmp/ScrGoodbye.py:24
+#: .tmp/ScrGoodbye.py:27
 msgid "Goodbye from Kaptan Wizard :)"
 msgstr "Kaptan Masaüstü size \"Hoşçakalın!\" diyor :)"
 
@@ -227,11 +227,7 @@ msgstr "Evet"
 msgid "No"
 msgstr "Hayır"
 
-#: .tmp/ScrStyle.py:58
-msgid "No name"
-msgstr "İsimsiz"
-
-#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:42
+#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
 msgid "Welcome"
 msgstr "Hoşgeldiniz"
 
@@ -305,7 +301,7 @@ msgstr "Duvar kâğıtları hakkında güzel bir başlık"
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Muhteşem duvar kâğıtları!\\m/"
 
-#: .tmp/ui_goodbyeWidget.py:200
+#: .tmp/ui_goodbyeWidget.py:209
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -344,65 +340,65 @@ msgstr ""
 "size:9pt; font-weight:600;\">Tüm adımları tamamladınız! Aşağıdaki "
 "uygulamalara bir göz atmanızı tavsiye ederiz:</span></p></body></html>"
 
-#: .tmp/ui_goodbyeWidget.py:207
+#: .tmp/ui_goodbyeWidget.py:216
 msgid "My Smolt Page"
 msgstr "Smolt Sayfam"
 
-#: .tmp/ui_goodbyeWidget.py:208
+#: .tmp/ui_goodbyeWidget.py:217
 msgid "Go to your Smolt page and rate your hardware components."
 msgstr "Smolt sayfanızı ziyaret edin ve donanım bileşenlerinizi oylayın."
 
-#: .tmp/ui_goodbyeWidget.py:209 .tmp/ui_goodbyeWidget.py:212
-#: .tmp/ui_goodbyeWidget.py:215 .tmp/ui_goodbyeWidget.py:218
+#: .tmp/ui_goodbyeWidget.py:218 .tmp/ui_goodbyeWidget.py:221
+#: .tmp/ui_goodbyeWidget.py:224 .tmp/ui_goodbyeWidget.py:227
 msgid "Start"
 msgstr "Başlat"
 
-#: .tmp/ui_goodbyeWidget.py:210
+#: .tmp/ui_goodbyeWidget.py:219
 msgid "Migration Wizard"
 msgstr "Göç Sihirbazı"
 
-#: .tmp/ui_goodbyeWidget.py:211
+#: .tmp/ui_goodbyeWidget.py:220
 msgid ""
 "A wizard to transfer files and settings from existing operating systems (e."
 "g. Windows) to Pardus."
 msgstr ""
-"Kurulu diğer işletim sistemlerinden (örn. Windows) Pardus'a dosyalarınızı "
-"ve ayarlarınızı aktarmak için kullanabileceğiniz bir sihirbaz."
+"Kurulu diğer işletim sistemlerinden (örn. Windows) Pardus'a dosyalarınızı ve "
+"ayarlarınızı aktarmak için kullanabileceğiniz bir sihirbaz."
 
-#: .tmp/ui_goodbyeWidget.py:213
+#: .tmp/ui_goodbyeWidget.py:222
 msgid "System Settings"
 msgstr "Sistem Ayarları"
 
-#: .tmp/ui_goodbyeWidget.py:214
+#: .tmp/ui_goodbyeWidget.py:223
 msgid "System Settings is a configuration tool for Pardus."
 msgstr "Sistem Ayarları Pardus yapılandırma aracıdır."
 
-#: .tmp/ui_goodbyeWidget.py:216
+#: .tmp/ui_goodbyeWidget.py:225
 msgid "User Groups and Help Pages"
 msgstr "Kullanıcı Paylaşım Grupları ve Yardım Sayfaları"
 
-#: .tmp/ui_goodbyeWidget.py:217
+#: .tmp/ui_goodbyeWidget.py:226
 msgid "Pardus community, user lists, IRC channels, wikis and more."
 msgstr ""
 "Pardus topluluğu, kullanıcı listeleri, IRC odaları, vikiler ve daha fazlası."
 
-#: .tmp/ui_kaptanMain.py:115
+#: .tmp/ui_kaptanMain.py:120
 msgid "Kaptan Desktop"
 msgstr "Kaptan Masaüstü"
 
-#: .tmp/ui_kaptanMain.py:116
+#: .tmp/ui_kaptanMain.py:121
 msgid "Cancel"
 msgstr "İptal"
 
-#: .tmp/ui_kaptanMain.py:117
+#: .tmp/ui_kaptanMain.py:122
 msgid "Back"
 msgstr "Geri"
 
-#: .tmp/ui_kaptanMain.py:118
+#: .tmp/ui_kaptanMain.py:123
 msgid "Next"
 msgstr "İleri"
 
-#: .tmp/ui_kaptanMain.py:119
+#: .tmp/ui_kaptanMain.py:124
 msgid "Finish"
 msgstr "Bitir"
 
@@ -671,11 +667,10 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">   Bu politikadan hoşnut "
 "olmayan kullanıcıların smolt'u kullanmaması yeterli olacaktır. Bu politika "
-"hakkında soruları olan kullanıcılar ise Pardus Yönetim Ekibi'yle "
-"admin [at] pardus.org.tr'den iletişim kurabilirler. Ayrıca kullanıcılar\"<"
-"span "
-"style=\" font-style:italic;\">smoltDeleteProfile</span>\" vasıtasıyla "
-"profillerini istedikleri zaman silebilirler.</p></body></html>"
+"hakkında soruları olan kullanıcılar ise Pardus Yönetim Ekibi'yle admin [at] "
+"pardus.org.tr'den iletişim kurabilirler. Ayrıca kullanıcılar\"<span style=\" "
+"font-style:italic;\">smoltDeleteProfile</span>\" vasıtasıyla profillerini "
+"istedikleri zaman silebilirler.</p></body></html>"
 
 #: .tmp/ui_styleitem.py:46 .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
@@ -759,7 +754,7 @@ msgstr "Duvar Kâğıdını Dosyadan Seç"
 msgid "Don't change wallpaper"
 msgstr "Duvar kâğıdını değiştirme"
 
-#: .tmp/ui_welcomeWidget.py:43
+#: .tmp/ui_welcomeWidget.py:44
 msgid ""
 "This application, called Kaptan Desktop, will help you with your basic but "
 "sufficient setup for your Pardus desktop in a quick manner. Please click "
@@ -777,6 +772,9 @@ msgstr ""
 "karşılamalarını hedefleyen bir GNU/Linux dağıtımıdır. İnternet'e "
 "bağlanmanızı, e-postalarınızı okumanızı, ofis belgeleriniz üzerinde "
 "çalışmanızı (ve çok daha fazlasını) kolaylaştırır!"
+
+#~ msgid "No name"
+#~ msgstr "İsimsiz"
 
 #~ msgid "<b>Welcome to Kaptan!</b>"
 #~ msgstr "<b>Kaptan'a hoşgeldiniz!</b>"

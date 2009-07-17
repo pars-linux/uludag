@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 20:37+0300\n"
+"POT-Creation-Date: 2009-07-17 14:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ScrGoodbye.py:23 .tmp/ui_goodbyeWidget.py:199
+#: .tmp/ScrGoodbye.py:26 .tmp/ui_goodbyeWidget.py:208
 msgid "Goodbye"
 msgstr ""
 
-#: .tmp/ScrGoodbye.py:24
+#: .tmp/ScrGoodbye.py:27
 msgid "Goodbye from Kaptan Wizard :)"
 msgstr ""
 
@@ -224,11 +224,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: .tmp/ScrStyle.py:58
-msgid "No name"
-msgstr ""
-
-#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:42
+#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
 msgid "Welcome"
 msgstr ""
 
@@ -302,7 +298,7 @@ msgstr ""
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:200
+#: .tmp/ui_goodbyeWidget.py:209
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -324,62 +320,62 @@ msgid ""
 "p></body></html>"
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:207
+#: .tmp/ui_goodbyeWidget.py:216
 msgid "My Smolt Page"
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:208
+#: .tmp/ui_goodbyeWidget.py:217
 msgid "Go to your Smolt page and rate your hardware components."
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:209 .tmp/ui_goodbyeWidget.py:212
-#: .tmp/ui_goodbyeWidget.py:215 .tmp/ui_goodbyeWidget.py:218
+#: .tmp/ui_goodbyeWidget.py:218 .tmp/ui_goodbyeWidget.py:221
+#: .tmp/ui_goodbyeWidget.py:224 .tmp/ui_goodbyeWidget.py:227
 msgid "Start"
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:210
+#: .tmp/ui_goodbyeWidget.py:219
 msgid "Migration Wizard"
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:211
+#: .tmp/ui_goodbyeWidget.py:220
 msgid ""
 "A wizard to transfer files and settings from existing operating systems (e."
 "g. Windows) to Pardus."
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:213
+#: .tmp/ui_goodbyeWidget.py:222
 msgid "System Settings"
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:214
+#: .tmp/ui_goodbyeWidget.py:223
 msgid "System Settings is a configuration tool for Pardus."
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:216
+#: .tmp/ui_goodbyeWidget.py:225
 msgid "User Groups and Help Pages"
 msgstr ""
 
-#: .tmp/ui_goodbyeWidget.py:217
+#: .tmp/ui_goodbyeWidget.py:226
 msgid "Pardus community, user lists, IRC channels, wikis and more."
 msgstr ""
 
-#: .tmp/ui_kaptanMain.py:115
+#: .tmp/ui_kaptanMain.py:120
 msgid "Kaptan Desktop"
 msgstr ""
 
-#: .tmp/ui_kaptanMain.py:116
+#: .tmp/ui_kaptanMain.py:121
 msgid "Cancel"
 msgstr ""
 
-#: .tmp/ui_kaptanMain.py:117
+#: .tmp/ui_kaptanMain.py:122
 msgid "Back"
 msgstr ""
 
-#: .tmp/ui_kaptanMain.py:118
+#: .tmp/ui_kaptanMain.py:123
 msgid "Next"
 msgstr ""
 
-#: .tmp/ui_kaptanMain.py:119
+#: .tmp/ui_kaptanMain.py:124
 msgid "Finish"
 msgstr ""
 
@@ -658,7 +654,7 @@ msgstr ""
 msgid "Don't change wallpaper"
 msgstr ""
 
-#: .tmp/ui_welcomeWidget.py:43
+#: .tmp/ui_welcomeWidget.py:44
 msgid ""
 "This application, called Kaptan Desktop, will help you with your basic but "
 "sufficient setup for your Pardus desktop in a quick manner. Please click "

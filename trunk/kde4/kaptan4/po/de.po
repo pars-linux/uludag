@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 20:37+0300\n"
+"POT-Creation-Date: 2009-07-17 14:03+0300\n"
 "PO-Revision-Date: 2009-07-16 20:32-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <de@li.org>\n"
@@ -19,16 +19,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/ScrGoodbye.py:23 .tmp/ui_goodbyeWidget.py:199
+#: .tmp/ScrGoodbye.py:26 .tmp/ui_goodbyeWidget.py:208
 msgid "Goodbye"
 msgstr "Auf Wiedersehen"
 
-#: .tmp/ScrGoodbye.py:24
+#: .tmp/ScrGoodbye.py:27
 msgid "Goodbye from Kaptan Wizard :)"
 msgstr "Kaptan verabschiedet sich :)"
 
-#: .tmp/ScrKeyboard.py:32
 # Zweifel - habe ich nur gefüllt, damit es nicht neudeutsch herausleuchtet
+#: .tmp/ScrKeyboard.py:32
 msgid "Insert some catchy title about keyboards.."
 msgstr "Tastaturlayout einstellen.."
 
@@ -40,8 +40,8 @@ msgstr "Wählen Sie Ihr Tastaturlayout"
 msgid "Some catchy title about styles"
 msgstr "Desktop Stil"
 
-#: .tmp/ScrMenu.py:27 .tmp/ScrStyle.py:35
 # Zweifel - habe ich nur gefüllt, damit es nicht neudeutsch herausleuchtet
+#: .tmp/ScrMenu.py:27 .tmp/ScrStyle.py:35
 msgid "Some catchy description about styles"
 msgstr "Wählen sie den Stil des Desktops nach Ihrem Geschmack.."
 
@@ -105,15 +105,17 @@ msgstr "Paket Manager"
 msgid "Configure package manager settings"
 msgstr "Paket Manager konfigurieren"
 
-#: .tmp/ScrSearch.py:27
 # Zweifel - habe ich nur gefüllt, damit es nicht neudeutsch herausleuchtet
+#: .tmp/ScrSearch.py:27
 msgid "Some catchy title about desktop search"
 msgstr "Automatische Desktop Suche"
 
-#: .tmp/ScrSearch.py:28
 # Zweifel - habe ich nur gefüllt, damit es nicht neudeutsch herausleuchtet
+#: .tmp/ScrSearch.py:28
 msgid "Some catchy description desktop search"
-msgstr "Die intelligente Desktopsuche kann ihnen helfen Ihre Dokumente einfacher zu finden"
+msgstr ""
+"Die intelligente Desktopsuche kann ihnen helfen Ihre Dokumente einfacher zu "
+"finden"
 
 #: .tmp/ScrSearch.py:59
 msgid "On"
@@ -129,7 +131,8 @@ msgstr ""
 
 #: .tmp/ScrSmolt.py:32
 msgid "Smolt Description"
-msgstr "Datenbank für Ihre Hardwareinfo und Statistiken der Pardus-Installationen"
+msgstr ""
+"Datenbank für Ihre Hardwareinfo und Statistiken der Pardus-Installationen"
 
 #: .tmp/ScrSmolt.py:69
 msgid "Label"
@@ -231,11 +234,7 @@ msgstr "Ja"
 msgid "No"
 msgstr "Nein"
 
-#: .tmp/ScrStyle.py:58
-msgid "No name"
-msgstr "ohne Name"
-
-#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:42
+#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
 msgid "Welcome"
 msgstr "Willkommen"
 
@@ -309,7 +308,7 @@ msgstr "Bildschirmhintergründe"
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Wählen Sie den schönsten Bildschirmhintergrund für Ihren Desktop! \\m/"
 
-#: .tmp/ui_goodbyeWidget.py:200
+#: .tmp/ui_goodbyeWidget.py:209
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -345,65 +344,69 @@ msgstr ""
 "size:11pt; font-weight:600;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:9pt; font-weight:600;\">Sie sind am Ende des Assistenten angekommen! Jetzt können Sie ganz normal fortfahren und Pardus benutzen, oder eines der unten aufgeführten Programme aufrufen:</span></"
-"p></body></html>"
+"size:9pt; font-weight:600;\">Sie sind am Ende des Assistenten angekommen! "
+"Jetzt können Sie ganz normal fortfahren und Pardus benutzen, oder eines der "
+"unten aufgeführten Programme aufrufen:</span></p></body></html>"
 
-#: .tmp/ui_goodbyeWidget.py:207
+#: .tmp/ui_goodbyeWidget.py:216
 msgid "My Smolt Page"
 msgstr "Meine Smolt Seite"
 
-#: .tmp/ui_goodbyeWidget.py:208
+#: .tmp/ui_goodbyeWidget.py:217
 msgid "Go to your Smolt page and rate your hardware components."
-msgstr "In die eigene Smolt-Webseite eintreten und die Hardwarekomponenten bewerten."
+msgstr ""
+"In die eigene Smolt-Webseite eintreten und die Hardwarekomponenten bewerten."
 
-#: .tmp/ui_goodbyeWidget.py:209 .tmp/ui_goodbyeWidget.py:212
-#: .tmp/ui_goodbyeWidget.py:215 .tmp/ui_goodbyeWidget.py:218
+#: .tmp/ui_goodbyeWidget.py:218 .tmp/ui_goodbyeWidget.py:221
+#: .tmp/ui_goodbyeWidget.py:224 .tmp/ui_goodbyeWidget.py:227
 msgid "Start"
 msgstr "Anfang"
 
-#: .tmp/ui_goodbyeWidget.py:210
+#: .tmp/ui_goodbyeWidget.py:219
 msgid "Migration Wizard"
 msgstr "Migrations-Assistent"
 
-#: .tmp/ui_goodbyeWidget.py:211
+#: .tmp/ui_goodbyeWidget.py:220
 msgid ""
 "A wizard to transfer files and settings from existing operating systems (e."
 "g. Windows) to Pardus."
-msgstr "Ein Assistent für die Übertragung von Dateien und Einstellungen von vorhandenen Betriebssystemen (z.B. Windows) nach Pardus."
+msgstr ""
+"Ein Assistent für die Übertragung von Dateien und Einstellungen von "
+"vorhandenen Betriebssystemen (z.B. Windows) nach Pardus."
 
-#: .tmp/ui_goodbyeWidget.py:213
+#: .tmp/ui_goodbyeWidget.py:222
 msgid "System Settings"
 msgstr "Systemeinstellungen"
 
-#: .tmp/ui_goodbyeWidget.py:214
+#: .tmp/ui_goodbyeWidget.py:223
 msgid "System Settings is a configuration tool for Pardus."
 msgstr "Systemeinstellungen ist ein Tool für die Konfiguration von Pardus."
 
-#: .tmp/ui_goodbyeWidget.py:216
+#: .tmp/ui_goodbyeWidget.py:225
 msgid "User Groups and Help Pages"
 msgstr "Benutzergruppen und Hilfe Seiten"
 
-#: .tmp/ui_goodbyeWidget.py:217
+#: .tmp/ui_goodbyeWidget.py:226
 msgid "Pardus community, user lists, IRC channels, wikis and more."
 msgstr "Pardus Community, Listen, IRC Räume, Wikis und mehr."
 
-#: .tmp/ui_kaptanMain.py:115
+#: .tmp/ui_kaptanMain.py:120
 msgid "Kaptan Desktop"
 msgstr ""
 
-#: .tmp/ui_kaptanMain.py:116
+#: .tmp/ui_kaptanMain.py:121
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: .tmp/ui_kaptanMain.py:117
+#: .tmp/ui_kaptanMain.py:122
 msgid "Back"
 msgstr "Zurück"
 
-#: .tmp/ui_kaptanMain.py:118
+#: .tmp/ui_kaptanMain.py:123
 msgid "Next"
 msgstr "Weiter"
 
-#: .tmp/ui_kaptanMain.py:119
+#: .tmp/ui_kaptanMain.py:124
 msgid "Finish"
 msgstr "Beenden"
 
@@ -541,7 +544,10 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Paket-manager ist das graphische Front-End für PiSi. Sie können auf einfache Weise neue Programme installieren oder aktualisieren, und Sie können regelmässig Neuerscheinungen abfragen lassen, und sich in der Taskleiste anzeigen lassen.</span></p></body></html>"
+"weight:600;\">Paket-manager ist das graphische Front-End für PiSi. Sie "
+"können auf einfache Weise neue Programme installieren oder aktualisieren, "
+"und Sie können regelmässig Neuerscheinungen abfragen lassen, und sich in der "
+"Taskleiste anzeigen lassen.</span></p></body></html>"
 
 #: .tmp/ui_packageWidget.py:74
 msgid "picture label"
@@ -669,17 +675,17 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
 "decoration: underline;\">IP Speichrung:</span> In den Pardus Einrichtungen "
-"geht der gesamte Web-Verkehr zu Smolt über einen Proxy-Server. Dieser Proxy Server "
-"ist der einzige Punkt, wo die IP-Adressen im log gespeichert werden, wo sie "
-"dann nach 4 Wochen durch Logrotation wieder gelöscht werden. Das Pardus "
-"Projekt speichert die IP-Adresse nicht in der smolt-Datenbank. Diese Logs "
-"sind privat und werden nicht der Öffentlichkeit zugänglich sein.</p>\n"
+"geht der gesamte Web-Verkehr zu Smolt über einen Proxy-Server. Dieser Proxy "
+"Server ist der einzige Punkt, wo die IP-Adressen im log gespeichert werden, "
+"wo sie dann nach 4 Wochen durch Logrotation wieder gelöscht werden. Das "
+"Pardus Projekt speichert die IP-Adresse nicht in der smolt-Datenbank. Diese "
+"Logs sind privat und werden nicht der Öffentlichkeit zugänglich sein.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"> Benutzer denen diese "
 "Politik nicht gefällt, können sich an das Pardu Infrastructure Team wenden "
-"an: admin [at] pardus.org.tr. Ausserdem gibt es jederzeit die "
-"Möglichkeit sein Profil zu löschen mit dem Befehl\"<span style=\" font-style:"
-"italic;\">smoltDeleteProfile</span>\"</p></body></html>"
+"an: admin [at] pardus.org.tr. Ausserdem gibt es jederzeit die Möglichkeit "
+"sein Profil zu löschen mit dem Befehl\"<span style=\" font-style:italic;"
+"\">smoltDeleteProfile</span>\"</p></body></html>"
 
 #: .tmp/ui_styleitem.py:46 .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
@@ -763,7 +769,7 @@ msgstr "Bilddatei suchen für Hintergrundbild"
 msgid "Don't change wallpaper"
 msgstr "Hintergrundbild nicht ändern"
 
-#: .tmp/ui_welcomeWidget.py:43
+#: .tmp/ui_welcomeWidget.py:44
 msgid ""
 "This application, called Kaptan Desktop, will help you with your basic but "
 "sufficient setup for your Pardus desktop in a quick manner. Please click "
@@ -782,3 +788,5 @@ msgstr ""
 "um sich mit dem Internet zu verbinden, Emails und Office-Dokumente zu lesen "
 "und noch vieles mehr!"
 
+#~ msgid "No name"
+#~ msgstr "ohne Name"

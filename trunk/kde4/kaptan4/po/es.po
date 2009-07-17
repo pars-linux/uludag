@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 20:37+0300\n"
+"POT-Creation-Date: 2009-07-17 14:03+0300\n"
 "PO-Revision-Date: 2009-07-16 19:57-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/ScrGoodbye.py:23 .tmp/ui_goodbyeWidget.py:199
+#: .tmp/ScrGoodbye.py:26 .tmp/ui_goodbyeWidget.py:208
 msgid "Goodbye"
 msgstr "Adiós"
 
-#: .tmp/ScrGoodbye.py:24
+#: .tmp/ScrGoodbye.py:27
 msgid "Goodbye from Kaptan Wizard :)"
 msgstr "Kaptan Wizard se despide :)"
 
@@ -228,11 +228,7 @@ msgstr "Si"
 msgid "No"
 msgstr "No"
 
-#: .tmp/ScrStyle.py:58
-msgid "No name"
-msgstr "Sin nombre"
-
-#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:42
+#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
 msgid "Welcome"
 msgstr "Bienvenido"
 
@@ -304,9 +300,10 @@ msgstr "Elija su Fondo de Escritorio"
 
 #: .tmp/ScrWallpaper.py:35
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
-msgstr "Elija el fondo que más le guste, o seleccione uno de sus propios imágenes..."
+msgstr ""
+"Elija el fondo que más le guste, o seleccione uno de sus propios imágenes..."
 
-#: .tmp/ui_goodbyeWidget.py:200
+#: .tmp/ui_goodbyeWidget.py:209
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -342,70 +339,74 @@ msgstr ""
 "size:11pt; font-weight:600;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:9pt; font-weight:600;\">Ha terminado todos los pasos de éste asistente ! Ahora puede continuar de usar Pardus o puede usar uno de los siguientes programas:</span></"
-"p></body></html>"
+"size:9pt; font-weight:600;\">Ha terminado todos los pasos de éste "
+"asistente ! Ahora puede continuar de usar Pardus o puede usar uno de los "
+"siguientes programas:</span></p></body></html>"
 
-#: .tmp/ui_goodbyeWidget.py:207
+#: .tmp/ui_goodbyeWidget.py:216
 msgid "My Smolt Page"
 msgstr "Mi página Smolt"
 
 # favor revisar - rate - realmente capté la idea ?
-#: .tmp/ui_goodbyeWidget.py:208
+#: .tmp/ui_goodbyeWidget.py:217
 msgid "Go to your Smolt page and rate your hardware components."
 msgstr "Vaya a la página de Smolt y valore sus componentes de hardware."
 
-#: .tmp/ui_goodbyeWidget.py:209 .tmp/ui_goodbyeWidget.py:212
-#: .tmp/ui_goodbyeWidget.py:215 .tmp/ui_goodbyeWidget.py:218
+#: .tmp/ui_goodbyeWidget.py:218 .tmp/ui_goodbyeWidget.py:221
+#: .tmp/ui_goodbyeWidget.py:224 .tmp/ui_goodbyeWidget.py:227
 msgid "Start"
 msgstr "Inicio"
 
-#: .tmp/ui_goodbyeWidget.py:210
+#: .tmp/ui_goodbyeWidget.py:219
 msgid "Migration Wizard"
 msgstr "Asistente de Migración"
 
-#: .tmp/ui_goodbyeWidget.py:211
+#: .tmp/ui_goodbyeWidget.py:220
 msgid ""
 "A wizard to transfer files and settings from existing operating systems (e."
 "g. Windows) to Pardus."
-msgstr "Un asistente que le ayuda transferir archivos y configuraciones de sistemas operativos existentes (p.ej. Windows) a Pardus."
+msgstr ""
+"Un asistente que le ayuda transferir archivos y configuraciones de sistemas "
+"operativos existentes (p.ej. Windows) a Pardus."
 
-#: .tmp/ui_goodbyeWidget.py:213
+#: .tmp/ui_goodbyeWidget.py:222
 msgid "System Settings"
 msgstr "Configuración del Sistema"
 
-#: .tmp/ui_goodbyeWidget.py:214
+#: .tmp/ui_goodbyeWidget.py:223
 msgid "System Settings is a configuration tool for Pardus."
-msgstr "Configuración del Sistema es una herramienta de configuración de Pardus."
+msgstr ""
+"Configuración del Sistema es una herramienta de configuración de Pardus."
 
-#: .tmp/ui_goodbyeWidget.py:216
+#: .tmp/ui_goodbyeWidget.py:225
 msgid "User Groups and Help Pages"
 msgstr "Grupos de usuarios y páginas de ayuda"
 
-#: .tmp/ui_goodbyeWidget.py:217
+#: .tmp/ui_goodbyeWidget.py:226
 msgid "Pardus community, user lists, IRC channels, wikis and more."
 msgstr "Comunidad Pardus, listas de usuarios, canales IRC, wikis y más."
 
 # i am not sure if it is good to translate this, maybe it should remain in english (for the spanish version at least)
 # favor revisar
-#: .tmp/ui_kaptanMain.py:115
+#: .tmp/ui_kaptanMain.py:120
 msgid "Kaptan Desktop"
 msgstr "Asistente de Escritorio Kaptan"
 
-#: .tmp/ui_kaptanMain.py:116
+#: .tmp/ui_kaptanMain.py:121
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: .tmp/ui_kaptanMain.py:117
+#: .tmp/ui_kaptanMain.py:122
 msgid "Back"
 msgstr "Retroceder"
 
-#: .tmp/ui_kaptanMain.py:118
+#: .tmp/ui_kaptanMain.py:123
 msgid "Next"
 msgstr "Siguiente"
 
 # is this in the sense "end" (position) or "finish" (do - action) ?
 # favor revisar..
-#: .tmp/ui_kaptanMain.py:119
+#: .tmp/ui_kaptanMain.py:124
 msgid "Finish"
 msgstr "Terminar"
 
@@ -673,19 +674,19 @@ msgstr ""
 "recibir mejor soporte en general.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
-"decoration: underline;\">IP Logging:</span> En la implementación del servidor Smolt de Pardus, "
-"todo el tráfico pasa por un servidor proxy. Esto es el único lugar donde se "
-"registra el IP, y se mantiene su registro durante 4 semanas, hasta que es "
-"eliminado por la rotación de los logs. El Proyecto Pardus no almacena la "
-"dirección ip en la base de datos smolt. Los archivos log son privados, y no estarán"
-"accesible por el público en general.</p>\n"
+"decoration: underline;\">IP Logging:</span> En la implementación del "
+"servidor Smolt de Pardus, todo el tráfico pasa por un servidor proxy. Esto "
+"es el único lugar donde se registra el IP, y se mantiene su registro durante "
+"4 semanas, hasta que es eliminado por la rotación de los logs. El Proyecto "
+"Pardus no almacena la dirección ip en la base de datos smolt. Los archivos "
+"log son privados, y no estaránaccesible por el público en general.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"> Usuarios a quienes no les "
 "agrada ésta política sencillamente no deberían usar smolt. Si hay dudas o "
 "preguntas sobre ésta política, debería contactar al equipo de la "
-"infraestructura Pardus en admin [at] pardus.org.tr. Recuerde que el "
-"usuario puede eliminar su perfil en cualquier momento con el comando\"<span "
-"style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></body></html>"
+"infraestructura Pardus en admin [at] pardus.org.tr. Recuerde que el usuario "
+"puede eliminar su perfil en cualquier momento con el comando\"<span style=\" "
+"font-style:italic;\">smoltDeleteProfile</span>\"</p></body></html>"
 
 #: .tmp/ui_styleitem.py:46 .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
@@ -772,7 +773,7 @@ msgstr "No cambiar imagen de fondo"
 # favor revisar aqui la ultima parte, no sé si está bien presentado así
 # maybe the second part could be more explicit - or left out (here in Kaptan) ?
 # .. because it NOT only for beginners ! I use it every day - and also for graphics, and some web-development..
-#: .tmp/ui_welcomeWidget.py:43
+#: .tmp/ui_welcomeWidget.py:44
 msgid ""
 "This application, called Kaptan Desktop, will help you with your basic but "
 "sufficient setup for your Pardus desktop in a quick manner. Please click "
@@ -790,3 +791,5 @@ msgstr ""
 "escritorio básico para un usuario de PC; Le ayuda conectar a internet, leer "
 "e-mails, trabajar con documentos de oficina y más!"
 
+#~ msgid "No name"
+#~ msgstr "Sin nombre"
