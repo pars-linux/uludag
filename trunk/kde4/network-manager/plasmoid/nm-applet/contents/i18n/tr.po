@@ -102,9 +102,8 @@ msgid "Connected to <b>%1</b> IP: %2"
 msgstr "<b>%1</b> ağına bağlandı, IP: %2"
 
 #: code/main.py:266
-#, python-format
-msgid "Connecting to <b>%s</b> .."
-msgstr "<b>%s</b> ağına bağlanıyor .."
+msgid "Connecting to <b>%1</b> .."
+msgstr "<b>%1</b> ağına bağlanıyor .."
 
 #: code/main.py:329
 msgid "Icon Settings"

@@ -38,6 +38,8 @@ from PyKDE4.solid import Solid
 # itself to the current dbus mainloop if exists
 from backend.pardusBackend import NetworkIface
 
+KGlobal.locale().insertCatalog("nm-applet")
+
 WIRED           = "network-wired"
 WIRELESS        = "network-wireless"
 
@@ -65,7 +67,6 @@ class NmApplet(plasmascript.Applet):
 
     def init(self):
         """ Const method for initializing the applet """
-        KGlobal.locale().insertCatalog("nm-applet")
 
         self.readEntries()
         self.followSolid()
@@ -263,7 +264,7 @@ class NmApplet(plasmascript.Applet):
 
             # Network CONNECTING
             elif (str(args[1]) == "connecting"):
-                msg = i18n("Connecting to <b>%s</b> .." % unicode(args[0]))
+                msg = i18n("Connecting to <b>%1</b> .." , unicode(args[0]))
                 lastState = CONNECTING
 
             # Network DOWN

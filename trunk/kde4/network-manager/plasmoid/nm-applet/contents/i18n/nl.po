@@ -103,9 +103,8 @@ msgid "Connected to <b>%1</b> IP: %2"
 msgstr "Verbonden met <b>%1</b> IP: %2"
 
 #: code/main.py:266
-#, python-format
-msgid "Connecting to <b>%s</b> .."
-msgstr "Verbinding maken met <b>%s</b> .."
+msgid "Connecting to <b>%1</b> .."
+msgstr "Verbinding maken met <b>%1</b> .."
 
 #: code/main.py:329
 msgid "Icon Settings"

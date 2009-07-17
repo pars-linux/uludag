@@ -102,9 +102,8 @@ msgid "Connected to <b>%1</b> IP: %2"
 msgstr "Ansluten till <b>%1</b> IP: %2"
 
 #: code/main.py:266
-#, python-format
-msgid "Connecting to <b>%s</b> .."
-msgstr "Ansluter till <b>%s</b>..."
+msgid "Connecting to <b>%1</b> .."
+msgstr "Ansluter till <b>%1</b>..."
 
 #: code/main.py:329
 msgid "Icon Settings"
