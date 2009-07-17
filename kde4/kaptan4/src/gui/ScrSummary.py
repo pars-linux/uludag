@@ -228,6 +228,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 for key2, value2 in value.items():
                         colorGroup.writeEntry(str(key2), str(value2))
 
+            configKdeGlobals.sync()
             kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.StyleChanged)
 
             configPlasmaRc = KConfig("plasmarc")
