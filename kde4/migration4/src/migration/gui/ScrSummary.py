@@ -49,15 +49,16 @@ class Widget(QtGui.QWidget, ScreenWidget):
             content.append(item % ki18n("Selected Option %s : <b>%s</b>").toString() % (key, value))
         content.append(end)
 
-        #Selected Files Destinations
-        content.append(subject % ki18n("Destination Settings").toString())
-        if ctx.fileOptions.has_key("links"):
-            for link in ctx.fileOptions["links"]:
-                content.append(item % ki18n("Linked Destination to: <b> %s </b>").toString() % link)
-        elif ctx.fileOptions.has_key("copy destination"):
-            content.append(item % ki18n("Copied Destination to: <b> %s </b>").toString() % ctx.fileOptions["copy destination"])
+        if ctx.filesOptions:
+            #Selected Files Destinations
+            content.append(subject % ki18n("Destination Settings").toString())
+            if ctx.filesOptions.has_key("links"):
+                for link in ctx.fileOptions["links"]:
+                    content.append(item % ki18n("Linked Destination to: <b> %s </b>").toString() % link)
+            elif ctx.filesOptions.has_key("copy destination"):
+                content.append(item % ki18n("Copied Destination to: <b> %s </b>").toString() % ctx.fileOptions["copy destination"])
 
-        content.append(end)
+            content.append(end)
 
         content.append("""</ul></body></html>""")
         self.ui.textSummary.setHtml(content)
