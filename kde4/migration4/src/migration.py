@@ -137,22 +137,22 @@ class Migration(QtGui.QWidget):
         self.moveInc = 1
 
     def enableNext(self):
-        self.buttonNext.setEnabled(True)
+        self.ui.buttonNext.setEnabled(True)
 
     def disableNext(self):
-        self.buttonNext.setEnabled(False)
+        self.ui.buttonNext.setEnabled(False)
 
     def enableBack(self):
-        self.buttonBack.setEnabled(True)
+        self.ui.buttonBack.setEnabled(True)
 
     def disableBack(self):
-        self.buttonBack.setEnabled(False)
+        self.ui.buttonBack.setEnabled(False)
 
     def isNextEnabled(self):
-        return self.buttonNext.isEnabled()
+        return self.ui.buttonNext.isEnabled()
 
     def isBackEnabled(self):
-        return self.buttonBack.isEnabled()
+        return self.ui.buttonBack.isEnabled()
 
     def putBr(self, item):
         return unicode("» ") + item + "<br>"
@@ -198,6 +198,7 @@ class Migration(QtGui.QWidget):
         if self.ui.mainStack.currentIndex() == 0:
             self.ui.buttonBack.hide()
         else:
+            self.ui.buttonBack.hide()
             self.ui.buttonBack.show()
 
     def __del__(self):
