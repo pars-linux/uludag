@@ -255,9 +255,8 @@ class NmApplet(plasmascript.Applet):
                     self.connectedDevices.append(connection)
 
                 # Update Max Quality value
-                # FIXME needs COMAR Wireless Tools update
-                # if self.lastActivePackage == 'wireless_tools' and self.config['showwifi'] == 'true':
-                #     self.maxQuality = self.iface.getMaxQuality(self.lastActiveDevice)
+                if self.lastActivePackage == 'wireless_tools' and self._config['showwifi'] == 'true':
+                    self.maxQuality = self.iface.getMaxQuality(self.lastActiveDevice)
 
                 # Current Ip
                 ip = args[2]
