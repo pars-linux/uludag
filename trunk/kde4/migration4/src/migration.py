@@ -80,6 +80,7 @@ class Migration(QtGui.QWidget):
 
         for each in self.screens:
             title = each.Widget().title
+            title = i18n(title)
             self.screenId.append(title)
             if self.screens.index(each) == 0:
                 self.menuText += self.putBold(title)
