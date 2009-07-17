@@ -9,7 +9,7 @@ panelPosition = 3
 widgetStyle = oxygen
 colorScheme = Carbon
 desktopTheme = Carbon
-thumbnail = sample1.png
+thumbnail = agent.png
 iconTheme = milky
 windowDecoration = kwin3_oxygen
 

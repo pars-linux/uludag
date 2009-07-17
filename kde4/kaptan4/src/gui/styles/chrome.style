@@ -9,7 +9,7 @@ panelPosition = 4
 widgetStyle = oxygen
 colorScheme = Chrome
 desktopTheme = air
-thumbnail = sample1.png
+thumbnail = chrome.png
 iconTheme = milky
 windowDecoration = kwin3_plastik
 
