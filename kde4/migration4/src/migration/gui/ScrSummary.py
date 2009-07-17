@@ -53,10 +53,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
             #Selected Files Destinations
             content.append(subject % ki18n("Destination Settings").toString())
             if ctx.filesOptions.has_key("links"):
-                for link in ctx.fileOptions["links"]:
+                for link in ctx.filesOptions["links"]:
                     content.append(item % ki18n("Linked Destination to: <b> %s </b>").toString() % link)
             elif ctx.filesOptions.has_key("copy destination"):
-                content.append(item % ki18n("Copied Destination to: <b> %s </b>").toString() % ctx.fileOptions["copy destination"])
+                content.append(item % ki18n("Copied Destination to: <b> %s </b>").toString() % ctx.filesOptions["copy destination"])
 
             content.append(end)
 
