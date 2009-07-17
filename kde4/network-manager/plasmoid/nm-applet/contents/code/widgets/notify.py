@@ -60,7 +60,7 @@ class Notifier:
             id = self.lastId
             self.lastId = None
         if self.proxy:
-            self.notifier.Notify("NM", id, "", "applications-internet", i18n("Network Manager"), message, [], {}, timeout, reply_handler=self.handler, error_handler=self.handler)
+            self.notifier.Notify("NM", id, "", "applications-internet", i18n("Network Manager").toString(), message, [], {}, timeout, reply_handler=self.handler, error_handler=self.handler)
         else:
             print "Notifier is not working, message was : %s" % message
             self.init()
