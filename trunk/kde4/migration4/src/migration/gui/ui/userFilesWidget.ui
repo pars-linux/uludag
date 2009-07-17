@@ -72,7 +72,7 @@
        </property>
        <column>
         <property name="text">
-         <string>Directtory</string>
+         <string>Directory</string>
         </property>
        </column>
        <column>
