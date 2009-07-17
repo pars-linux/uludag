@@ -9,7 +9,7 @@ panelPosition = 3
 widgetStyle = qtcurve
 colorScheme = Desert
 desktopTheme = slim-glow
-thumbnail = sample1.png
+thumbnail = desert.png
 iconTheme = milky
 windowDecoration = kwin3_bespin
 

@@ -1,15 +1,15 @@
 [Style]
 name = Obsidian
-name[tr] = Beyaz Düşler
+name[tr] = Lav Taşı
 
 description = A light theme with a panel on right
 description[tr]= Paneli sağda olan açık renk bir tema
 
 panelPosition = 6
 widgetStyle = oxygen
-colorScheme = Zion
-desktopTheme = air
-thumbnail = sample1.png
+colorScheme = Norway
+desktopTheme = slim-glow
+thumbnail = obsidian.png
 iconTheme = milky
 windowDecoration = kwin3_oxygen
 
