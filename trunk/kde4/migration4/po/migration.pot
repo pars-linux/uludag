@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-10 09:54+0300\n"
+"POT-Creation-Date: 2009-07-17 17:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Selecting Options"
 msgstr ""
 
-#: .tmp/ScrOptions.py:24 .tmp/ScrProgress.py:205 .tmp/ScrSummary.py:26
+#: .tmp/ScrOptions.py:24 .tmp/ScrProgress.py:206 .tmp/ScrSummary.py:26
 #: .tmp/ScrUserFiles.py:143 .tmp/ScrWelcome.py:23
 msgid "Welcome to Migration Tool Wizard :)"
 msgstr ""
@@ -46,7 +46,7 @@ msgid ""
 "Copies your old wallpaper to Pardus and sets it as new background image."
 msgstr ""
 
-#: .tmp/ScrOptions.py:93 .tmp/ScrProgress.py:295
+#: .tmp/ScrOptions.py:93 .tmp/ScrProgress.py:296
 msgid "Bookmarks"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Copies your e-mail messages to KMail from selected applications above."
 msgstr ""
 
-#: .tmp/ScrOptions.py:179 .tmp/ScrProgress.py:376
+#: .tmp/ScrOptions.py:179 .tmp/ScrProgress.py:377
 msgid "Instant Messenger Accounts"
 msgstr ""
 
@@ -135,143 +135,143 @@ msgstr ""
 msgid "Warning!"
 msgstr ""
 
-#: .tmp/ScrProgress.py:204
+#: .tmp/ScrProgress.py:205
 msgid "Applying Changes"
 msgstr ""
 
-#: .tmp/ScrProgress.py:243
+#: .tmp/ScrProgress.py:244
 msgid "Wallpaper"
 msgstr ""
 
-#: .tmp/ScrProgress.py:253
-msgid "Firefox bookmarks cannot be loaded."
+#: .tmp/ScrProgress.py:254
+msgid "Firefox bookmarks could not be loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:255
+#: .tmp/ScrProgress.py:256
 msgid "Firefox bookmarks loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:265
-msgid "Opera bookmarks cannot be loaded."
+#: .tmp/ScrProgress.py:266
+msgid "Opera bookmarks could not be loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:267
+#: .tmp/ScrProgress.py:268
 msgid "Opera bookmarks loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:277
-msgid "Internet Explorer favorites cannot be loaded."
+#: .tmp/ScrProgress.py:278
+msgid "Internet Explorer favorites could not be loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:279
+#: .tmp/ScrProgress.py:280
 msgid "Internet Explorer favorites loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:292
+#: .tmp/ScrProgress.py:293
 msgid "Firefox is open. Please close it first to continue..."
 msgstr ""
 
-#: .tmp/ScrProgress.py:304
-msgid "Windows Mail accounts cannot be loaded."
+#: .tmp/ScrProgress.py:305
+msgid "Windows Mail accounts could not be loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:306
+#: .tmp/ScrProgress.py:307
 msgid "Windows Mail accounts loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:317
-msgid "Thunderbird accounts cannot be loaded."
+#: .tmp/ScrProgress.py:318
+msgid "Thunderbird accounts could be loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:319
+#: .tmp/ScrProgress.py:320
 msgid "Thunderbird accounts loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:329
-msgid "MSN accounts cannot be loaded."
+#: .tmp/ScrProgress.py:330
+msgid "MSN accounts could be loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:331
+#: .tmp/ScrProgress.py:332
 msgid "MSN accounts loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:341
-msgid "GTalk accounts cannot be loaded."
+#: .tmp/ScrProgress.py:342
+msgid "GTalk accounts could not be loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:343
+#: .tmp/ScrProgress.py:344
 msgid "GTalk accounts loaded."
 msgstr ""
 
-#: .tmp/ScrProgress.py:352
+#: .tmp/ScrProgress.py:353
 msgid "E-Mail Accounts"
 msgstr ""
 
-#: .tmp/ScrProgress.py:360
+#: .tmp/ScrProgress.py:361
 msgid "E-Mail Messages"
 msgstr ""
 
-#: .tmp/ScrProgress.py:368
+#: .tmp/ScrProgress.py:369
 msgid "News Accounts"
 msgstr ""
 
-#: .tmp/ScrProgress.py:387
+#: .tmp/ScrProgress.py:389
 msgid "Desktop Links"
 msgstr ""
 
-#: .tmp/ScrProgress.py:394
+#: .tmp/ScrProgress.py:396
 #, python-format
-msgid "Folder '%s' cannot be created, please choose another folder!"
+msgid "Folder '%s' could not be created, please choose another folder!"
 msgstr ""
 
-#: .tmp/ScrProgress.py:398
+#: .tmp/ScrProgress.py:400
 #, python-format
 msgid ""
 "You don't have permission to write to folder '%s', please choose another "
 "folder!"
 msgstr ""
 
-#: .tmp/ScrProgress.py:409
+#: .tmp/ScrProgress.py:411
 #, python-format
 msgid ""
-"Total size of files you've chosen is %(size)d MB, but you have only %(free)d "
-"MB of free space!"
+"Total size of files you've selected is %(size)d MB, but you have only %(free)"
+"d MB of free space!"
 msgstr ""
 
-#: .tmp/ScrProgress.py:422
+#: .tmp/ScrProgress.py:425
 msgid "Wallpaper changed."
 msgstr ""
 
-#: .tmp/ScrProgress.py:435
+#: .tmp/ScrProgress.py:438
 msgid "Bookmarks saved."
 msgstr ""
 
-#: .tmp/ScrProgress.py:447
+#: .tmp/ScrProgress.py:450
 msgid "Mail Accounts saved."
 msgstr ""
 
-#: .tmp/ScrProgress.py:459
+#: .tmp/ScrProgress.py:462
 msgid "Accounts saved."
 msgstr ""
 
-#: .tmp/ScrProgress.py:470
+#: .tmp/ScrProgress.py:473
 msgid "News Accounts saved."
 msgstr ""
 
-#: .tmp/ScrProgress.py:481
+#: .tmp/ScrProgress.py:484
 msgid "Instant Messenger Accounts saved."
 msgstr ""
 
-#: .tmp/ScrProgress.py:489
+#: .tmp/ScrProgress.py:493
 #, python-format
 msgid "Link '%s' created."
 msgstr ""
 
-#: .tmp/ScrProgress.py:502
+#: .tmp/ScrProgress.py:506
 msgid "Nothing done, because no option selected. You can close the wizard..."
 msgstr ""
 
-#: .tmp/ScrProgress.py:504
+#: .tmp/ScrProgress.py:508
 msgid "All operations completed. You can close the wizard..."
 msgstr ""
 
@@ -294,90 +294,82 @@ msgstr ""
 
 #: .tmp/ScrSummary.py:49
 #, python-format
-msgid "Selected Options: <b>%s</b>"
+msgid "Option %s : <b>%s</b>"
 msgstr ""
 
-#: .tmp/ScrSummary.py:53
+#: .tmp/ScrSummary.py:54
 msgid "Destination Settings"
 msgstr ""
 
-#: .tmp/ScrSummary.py:56
+#: .tmp/ScrSummary.py:57
 #, python-format
-msgid "Selected Destination: <b>Copy Link to %s</b>"
+msgid "Linked Destination to: <b> %s </b>"
 msgstr ""
 
-#: .tmp/ScrSummary.py:58
+#: .tmp/ScrSummary.py:59
 #, python-format
-msgid "Selected Destination: <b>Copy Destination to %s</b>"
+msgid "Copied Destination to: <b> %s </b>"
 msgstr ""
 
 #: .tmp/ScrUserFiles.py:142
 msgid "Selecting Files"
 msgstr ""
 
-#: .tmp/ScrUserFiles.py:176
+#: .tmp/ScrUserFiles.py:177
 msgid "My Documents"
 msgstr ""
 
-#: .tmp/ScrUserFiles.py:177
+#: .tmp/ScrUserFiles.py:178
 msgid "Desktop"
 msgstr ""
 
-#: .tmp/ScrUserFiles.py:178
+#: .tmp/ScrUserFiles.py:179
 msgid "My Music"
 msgstr ""
 
-#: .tmp/ScrUserFiles.py:179
+#: .tmp/ScrUserFiles.py:180
 msgid "My Pictures"
 msgstr ""
 
-#: .tmp/ScrUserFiles.py:180
+#: .tmp/ScrUserFiles.py:181
 msgid "My Video"
 msgstr ""
 
-#: .tmp/ScrUser.py:61
+#: .tmp/ScrUser.py:65
 msgid "Selecting User"
 msgstr ""
 
-#: .tmp/ScrUser.py:62
+#: .tmp/ScrUser.py:66
 msgid "User Profiles"
 msgstr ""
 
-#: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
+#: .tmp/ScrUser.py:101
+msgid ""
+"There aren't any Microsoft Windows partitions to migrate! Please check your "
+"mounted partitions..."
+msgstr ""
+
+#: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:44
 msgid "Welcome"
 msgstr ""
 
-#: .tmp/ui_main.py:130
+#: .tmp/ui_main.py:118
 msgid "Migration Tool"
 msgstr ""
 
-#: .tmp/ui_main.py:131
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Welcome to Migration Tool!</span></p></body></html>"
-msgstr ""
-
-#: .tmp/ui_main.py:136
+#: .tmp/ui_main.py:119
 msgid "Cancel"
 msgstr ""
 
-#: .tmp/ui_main.py:137
+#: .tmp/ui_main.py:120
 msgid "Back"
 msgstr ""
 
-#: .tmp/ui_main.py:138
+#: .tmp/ui_main.py:121
 msgid "Next"
 msgstr ""
 
-#: .tmp/ui_main.py:139
+#: .tmp/ui_main.py:122
 msgid "Finish"
 msgstr ""
 
@@ -417,7 +409,7 @@ msgid "~/Desktop"
 msgstr ""
 
 #: .tmp/ui_userFilesWidget.py:50
-msgid "Directtory"
+msgid "Directory"
 msgstr ""
 
 #: .tmp/ui_userFilesWidget.py:51
@@ -432,11 +424,11 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
-#: .tmp/ui_welcomeWidget.py:44
+#: .tmp/ui_welcomeWidget.py:45
 msgid ""
-"This application, called Migration Tool, will help you transfer files and "
-"settings from your existing operating systems to Pardus with this "
-"application. Please click Next to personalize your desktop. \n"
+"This application, called Migration Tool, helps you transfer files and "
+"settings from other operating systems to Pardus. Please click Next to "
+"transfer your files. \n"
 "\n"
 "Pardus is a GNU/Linux distribution, targeting at computer literate users' "
 "basic desktop needs; helps you connect to internet, read e-mails, work with "
