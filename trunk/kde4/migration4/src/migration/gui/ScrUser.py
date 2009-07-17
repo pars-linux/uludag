@@ -98,7 +98,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def shown(self):
         if not self.users :
-            KMessageBox.error(self, i18n("There isn't any windows partition to migrate! Please check your mounted partitions..."))
+            KMessageBox.error(self, i18n("There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."))
 
     def execute(self):
         if ctx.user:
@@ -108,6 +108,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             ctx.destinations = info.localInfo()
             return (True, None)
         else:
-            return (False, "There isn't any selected user on Selecting User Screen!")
+            return (False, "There isn't any selected user on User Selection Window!")
 
 
