@@ -39,6 +39,9 @@
        </item>
        <item>
         <widget class="QLabel" name="labelMouseDesc">
+         <property name="styleSheet">
+          <string notr="true">color:black</string>
+         </property>
          <property name="text">
           <string>&lt;p align=&quot;left&quot;&gt;If you are left-handed, you may prefer to swap the functions on the left and right buttons on your pointing device by choosing the &quot;Left handed&quot;option below. You can also select default click behaviour.&lt;/p&gt;</string>
          </property>
@@ -66,6 +69,9 @@
        </property>
        <property name="autoFillBackground">
         <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:black</string>
        </property>
        <property name="title">
         <string>Click Behaviour</string>
@@ -124,6 +130,9 @@
          <bold>true</bold>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color:black</string>
+       </property>
        <property name="title">
         <string>Button Order</string>
        </property>
@@ -147,6 +156,9 @@
         </item>
         <item row="2" column="0">
          <widget class="QCheckBox" name="checkReverse">
+          <property name="styleSheet">
+           <string notr="true">color:black</string>
+          </property>
           <property name="text">
            <string>Reverse scrolling</string>
           </property>

@@ -57,7 +57,7 @@ QLabel#labelMenuDescription{
        <item>
         <widget class="QLabel" name="menuLabel">
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">color:black</string>
          </property>
          <property name="text">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -75,17 +75,17 @@ p, li { white-space: pre-wrap; }
          </property>
          <item>
           <property name="text">
-           <string>Kick-off (Advanced Menu)</string>
+           <string>Kick-off </string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>Classic (Simple Menu)</string>
+           <string>Simple</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>Lancelot (Experimental Menu)</string>
+           <string>Lancelot</string>
           </property>
          </item>
         </widget>
@@ -111,7 +111,7 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelMenuDescription">
          <property name="styleSheet">
           <string notr="true">background-color: rgba(255, 255, 255, 122);
-</string>
+color:black</string>
          </property>
          <property name="text">
           <string/>

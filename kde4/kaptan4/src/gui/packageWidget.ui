@@ -35,7 +35,7 @@
      <item>
       <widget class="QLabel" name="labelKaptanIntro">
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">color:black</string>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
@@ -64,7 +64,7 @@ p, li { white-space: pre-wrap; }
    <item row="1" column="0" colspan="2">
     <widget class="QGroupBox" name="groupBoxUpdates">
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">color:black</string>
      </property>
      <property name="title">
       <string>Updates</string>
@@ -126,7 +126,7 @@ p, li { white-space: pre-wrap; }
    <item row="2" column="0">
     <widget class="QGroupBox" name="groupBoxRepo">
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">color:black</string>
      </property>
      <property name="title">
       <string>Repo</string>
