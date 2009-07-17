@@ -133,7 +133,7 @@ class Bookmark:
 
         print "setFFBookmarks.path:%s" % path
         if os.path.lexists(os.path.join(path, "lock")):
-            raise Exception, "Firefox is in use. Bookmarks cannot be saved."
+            raise Exception, "Firefox is in use. Bookmarks could not be saved."
 
         filepath = os.path.join(path, "places.sqlite")
         if os.path.exists(filepath):
