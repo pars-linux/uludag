@@ -3,18 +3,13 @@
     <WorkDir>/tmp/iso</WorkDir>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
-        <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
         <Package>zlib</Package>
         <Package>zip</Package>
-        <Package>zd1211-firmware</Package>
-        <Package>zd1201-firmware</Package>
         <Package>wireless-tools</Package>
         <Package>which</Package>
         <Package>vixie-cron</Package>
-        <Package>v4l-dvb-firmware</Package>
-        <Package>v4l-conexant-firmware</Package>
         <Package>util-linux</Package>
         <Package>usbutils</Package>
         <Package>urlgrabber</Package>
@@ -29,12 +24,10 @@
         <Package>sysklogd</Package>
         <Package>sysfsutils</Package>
         <Package>sqlite</Package>
-        <Package>speedtouch-firmware</Package>
         <Package>slang</Package>
         <Package>shadow</Package>
         <Package>sed</Package>
         <Package>readline</Package>
-        <Package>ralink-firmware</Package>
         <Package>python-fchksum</Package>
         <Package>python</Package>
         <Package>pypolkit</Package>
@@ -89,16 +82,8 @@
         <Package>libICE</Package>
         <Package>less</Package>
         <Package>lcms</Package>
-        <Package>kernel-firmware</Package>
         <Package>kbd</Package>
         <Package>jpeg</Package>
-        <Package>iwlwifi5150-ucode</Package>
-        <Package>iwlwifi5000-ucode</Package>
-        <Package>iwlwifi4965-ucode</Package>
-        <Package>iwlwifi3945-ucode</Package>
-        <Package>iscan-firmware</Package>
-        <Package>ipw2200-firmware</Package>
-        <Package>ipw2100-firmware</Package>
         <Package>iputils</Package>
         <Package>hdparm</Package>
         <Package>gzip</Package>
@@ -111,14 +96,11 @@
         <Package>gettext</Package>
         <Package>gdbm</Package>
         <Package>gawk</Package>
-        <Package>fxload</Package>
         <Package>freetype</Package>
-        <Package>foo2zjs-firmware</Package>
         <Package>flex</Package>
         <Package>findutils</Package>
         <Package>file</Package>
         <Package>expat</Package>
-        <Package>eagle-firmware</Package>
         <Package>e2fsprogs</Package>
         <Package>dnsmasq</Package>
         <Package>disktype</Package>
@@ -138,22 +120,12 @@
         <Package>bzip2</Package>
         <Package>bootsplash-theme-pardus</Package>
         <Package>bootsplash</Package>
-        <Package>bluez-firmware</Package>
         <Package>bc</Package>
         <Package>bash</Package>
         <Package>baselayout</Package>
-        <Package>b43-fwcutter</Package>
-        <Package>b43-firmware</Package>
         <Package>audit</Package>
         <Package>attr</Package>
-        <Package>atmel-firmware</Package>
-        <Package>ar9170-firmware</Package>
-        <Package>alsa-tools</Package>
-        <Package>alsa-lib</Package>
-        <Package>alsa-firmware</Package>
-        <Package>acx-firmware</Package>
         <Package>acl</Package>
-        <Package>accessrunner-firmware</Package>
         <Package>PolicyKit</Package>
         <Package>ConsoleKit</Package>
     </PackageSelection>
