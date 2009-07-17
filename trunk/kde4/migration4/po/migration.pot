@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 17:56+0300\n"
+"POT-Creation-Date: 2009-07-17 18:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -346,6 +346,10 @@ msgstr ""
 msgid ""
 "There aren't any Microsoft Windows partitions to migrate! Please check your "
 "mounted partitions..."
+msgstr ""
+
+#: .tmp/ScrUser.py:111
+msgid "There isn't any selected user on User Selection Window!"
 msgstr ""
 
 #: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:44
