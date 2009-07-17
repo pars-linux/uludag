@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 14:03+0300\n"
+"POT-Creation-Date: 2009-07-17 14:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,15 +40,15 @@ msgstr ""
 msgid "Some catchy description about styles"
 msgstr ""
 
-#: .tmp/ScrMenu.py:41
+#: .tmp/ScrMenu.py:41 .tmp/ui_menuWidget.py:83
 msgid "Kick-off Menu"
 msgstr ""
 
 #: .tmp/ScrMenu.py:43
-msgid "A modern menu for KDE"
+msgid "Default menu of Pardus GNU/Linux."
 msgstr ""
 
-#: .tmp/ScrMenu.py:47
+#: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:84
 msgid "Simple Menu"
 msgstr ""
 
@@ -56,12 +56,12 @@ msgstr ""
 msgid "And old style menu from KDE 3."
 msgstr ""
 
-#: .tmp/ScrMenu.py:53
+#: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:85
 msgid "Lancelot Menu"
 msgstr ""
 
 #: .tmp/ScrMenu.py:55
-msgid "An experimental menu for KDE4"
+msgid "An advanced menu for KDE4."
 msgstr ""
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
@@ -391,11 +391,11 @@ msgstr ""
 msgid "Configure your keyboard layout."
 msgstr ""
 
-#: .tmp/ui_menuWidget.py:76
+#: .tmp/ui_menuWidget.py:77
 msgid "Menu"
 msgstr ""
 
-#: .tmp/ui_menuWidget.py:77
+#: .tmp/ui_menuWidget.py:78
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -409,23 +409,11 @@ msgid ""
 "weight:600;\">Select a menu style:</span></p></body></html>"
 msgstr ""
 
-#: .tmp/ui_menuWidget.py:82
-msgid "Kick-off (Advanced Menu)"
-msgstr ""
-
-#: .tmp/ui_menuWidget.py:83
-msgid "Classic (Simple Menu)"
-msgstr ""
-
-#: .tmp/ui_menuWidget.py:84
-msgid "Lancelot (Experimental Menu)"
-msgstr ""
-
-#: .tmp/ui_mouseWidget.py:84
+#: .tmp/ui_mouseWidget.py:88
 msgid "Mouse"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:85
+#: .tmp/ui_mouseWidget.py:89
 msgid ""
 "<p align=\"left\">If you are left-handed, you may prefer to swap the "
 "functions on the left and right buttons on your pointing device by choosing "
@@ -433,35 +421,35 @@ msgid ""
 "</p>"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:86
+#: .tmp/ui_mouseWidget.py:90
 msgid "mouse icon"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:87
+#: .tmp/ui_mouseWidget.py:91
 msgid "Click Behaviour"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:88
+#: .tmp/ui_mouseWidget.py:92
 msgid "Single-click to open files and folders"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:89
+#: .tmp/ui_mouseWidget.py:93
 msgid "Dou&ble-click to open files and folders"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:90
+#: .tmp/ui_mouseWidget.py:94
 msgid "Button Order"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:91
+#: .tmp/ui_mouseWidget.py:95
 msgid "Right Hand"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:92
+#: .tmp/ui_mouseWidget.py:96
 msgid "Left Hand"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:93
+#: .tmp/ui_mouseWidget.py:97
 msgid "Reverse scrolling"
 msgstr ""
 
@@ -469,11 +457,11 @@ msgstr ""
 msgid "Network"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:68
+#: .tmp/ui_packageWidget.py:71
 msgid "Package"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:69
+#: .tmp/ui_packageWidget.py:72
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -490,49 +478,49 @@ msgid ""
 "manager.</span></p></body></html>"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:74
+#: .tmp/ui_packageWidget.py:77
 msgid "picture label"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:75
+#: .tmp/ui_packageWidget.py:78
 msgid "Updates"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:76
+#: .tmp/ui_packageWidget.py:79
 msgid "Show in system  tray"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:77
+#: .tmp/ui_packageWidget.py:80
 msgid "Check updates automatically for every"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:78
+#: .tmp/ui_packageWidget.py:81
 msgid " hours"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:79
+#: .tmp/ui_packageWidget.py:82
 msgid "Repo"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:80
+#: .tmp/ui_packageWidget.py:83
 msgid "Contrib repo includes extra packages."
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:81
+#: .tmp/ui_packageWidget.py:84
 msgid "Add contrib repo"
 msgstr ""
 
-#: .tmp/ui_searchWidget.py:50
+#: .tmp/ui_searchWidget.py:52
 msgid "Desktop Search"
 msgstr ""
 
-#: .tmp/ui_searchWidget.py:51
+#: .tmp/ui_searchWidget.py:53
 msgid ""
 "Strigi desktop search allows searching for files by content instead of just "
 "by name."
 msgstr ""
 
-#: .tmp/ui_searchWidget.py:52
+#: .tmp/ui_searchWidget.py:54
 msgid "Enable Strigi Desktop File Indexer"
 msgstr ""
 
@@ -595,31 +583,31 @@ msgstr ""
 msgid "styleDesc"
 msgstr ""
 
-#: .tmp/ui_styleWidget.py:63
+#: .tmp/ui_styleWidget.py:65
 msgid "Themes"
 msgstr ""
 
-#: .tmp/ui_styleWidget.py:64
+#: .tmp/ui_styleWidget.py:66
 msgid "<b>Desktop Type:</b>"
 msgstr ""
 
-#: .tmp/ui_styleWidget.py:65
+#: .tmp/ui_styleWidget.py:67
 msgid "Desktop view (KDE4 Style)"
 msgstr ""
 
-#: .tmp/ui_styleWidget.py:66
+#: .tmp/ui_styleWidget.py:68
 msgid "Folder view (KDE3 Style)"
 msgstr ""
 
-#: .tmp/ui_styleWidget.py:67
+#: .tmp/ui_styleWidget.py:69
 msgid "<b>Number of Desktops:</b>"
 msgstr ""
 
-#: .tmp/ui_summaryWidget.py:48
+#: .tmp/ui_summaryWidget.py:49
 msgid "Summary"
 msgstr ""
 
-#: .tmp/ui_summaryWidget.py:49
+#: .tmp/ui_summaryWidget.py:50
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -642,15 +630,15 @@ msgstr ""
 msgid "wallpaperDesc"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:43
+#: .tmp/ui_wallpaperWidget.py:44
 msgid "Wallpaper"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:44
+#: .tmp/ui_wallpaperWidget.py:45
 msgid "Choose Wallpaper From a File"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:45
+#: .tmp/ui_wallpaperWidget.py:46
 msgid "Don't change wallpaper"
 msgstr ""
 

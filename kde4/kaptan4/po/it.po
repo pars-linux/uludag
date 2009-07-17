@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 14:03+0300\n"
+"POT-Creation-Date: 2009-07-17 14:43+0300\n"
 "PO-Revision-Date: 2009-06-22 15:38+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -40,15 +40,15 @@ msgstr ""
 msgid "Some catchy description about styles"
 msgstr ""
 
-#: .tmp/ScrMenu.py:41
+#: .tmp/ScrMenu.py:41 .tmp/ui_menuWidget.py:83
 msgid "Kick-off Menu"
 msgstr "Menù Kick-off"
 
 #: .tmp/ScrMenu.py:43
-msgid "A modern menu for KDE"
-msgstr "Un menù moderno per KDE"
+msgid "Default menu of Pardus GNU/Linux."
+msgstr ""
 
-#: .tmp/ScrMenu.py:47
+#: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:84
 msgid "Simple Menu"
 msgstr "Menù Semplice"
 
@@ -56,13 +56,14 @@ msgstr "Menù Semplice"
 msgid "And old style menu from KDE 3."
 msgstr "Un menù vecchio stile da KDE3"
 
-#: .tmp/ScrMenu.py:53
+#: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:85
 msgid "Lancelot Menu"
 msgstr "Menù Lancelot"
 
 #: .tmp/ScrMenu.py:55
-msgid "An experimental menu for KDE4"
-msgstr "Un menù sperimentale per KDE4"
+#, fuzzy
+msgid "An advanced menu for KDE4."
+msgstr "Un menù moderno per KDE"
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
 msgid "Mouse Settings"
@@ -408,11 +409,11 @@ msgstr ""
 msgid "Configure your keyboard layout."
 msgstr "Configura il tuo muose"
 
-#: .tmp/ui_menuWidget.py:76
+#: .tmp/ui_menuWidget.py:77
 msgid "Menu"
 msgstr "Menu"
 
-#: .tmp/ui_menuWidget.py:77
+#: .tmp/ui_menuWidget.py:78
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -436,23 +437,11 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Seleziona uno stile di menù:</span></p></body></html>"
 
-#: .tmp/ui_menuWidget.py:82
-msgid "Kick-off (Advanced Menu)"
-msgstr "Kick-off (Menu Avanzato)"
-
-#: .tmp/ui_menuWidget.py:83
-msgid "Classic (Simple Menu)"
-msgstr "Menu classico (semplice)"
-
-#: .tmp/ui_menuWidget.py:84
-msgid "Lancelot (Experimental Menu)"
-msgstr "Lancelot (Menu sperimentale)"
-
-#: .tmp/ui_mouseWidget.py:84
+#: .tmp/ui_mouseWidget.py:88
 msgid "Mouse"
 msgstr "Mouse"
 
-#: .tmp/ui_mouseWidget.py:85
+#: .tmp/ui_mouseWidget.py:89
 msgid ""
 "<p align=\"left\">If you are left-handed, you may prefer to swap the "
 "functions on the left and right buttons on your pointing device by choosing "
@@ -464,35 +453,35 @@ msgstr ""
 "\"Mancino\" qui sotto. Puoi anche scegliere il comportamento del click che "
 "preferisci.</p>"
 
-#: .tmp/ui_mouseWidget.py:86
+#: .tmp/ui_mouseWidget.py:90
 msgid "mouse icon"
 msgstr "Icona del mouse"
 
-#: .tmp/ui_mouseWidget.py:87
+#: .tmp/ui_mouseWidget.py:91
 msgid "Click Behaviour"
 msgstr "Comportamento click"
 
-#: .tmp/ui_mouseWidget.py:88
+#: .tmp/ui_mouseWidget.py:92
 msgid "Single-click to open files and folders"
 msgstr "Click singolo per aprire file e cartelle"
 
-#: .tmp/ui_mouseWidget.py:89
+#: .tmp/ui_mouseWidget.py:93
 msgid "Dou&ble-click to open files and folders"
 msgstr "Do&ppio click per aprire files e cartelle"
 
-#: .tmp/ui_mouseWidget.py:90
+#: .tmp/ui_mouseWidget.py:94
 msgid "Button Order"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:91
+#: .tmp/ui_mouseWidget.py:95
 msgid "Right Hand"
 msgstr "Mano destra"
 
-#: .tmp/ui_mouseWidget.py:92
+#: .tmp/ui_mouseWidget.py:96
 msgid "Left Hand"
 msgstr "Mano sinistra"
 
-#: .tmp/ui_mouseWidget.py:93
+#: .tmp/ui_mouseWidget.py:97
 msgid "Reverse scrolling"
 msgstr "Scrolling inverso"
 
@@ -500,11 +489,11 @@ msgstr "Scrolling inverso"
 msgid "Network"
 msgstr "Rete"
 
-#: .tmp/ui_packageWidget.py:68
+#: .tmp/ui_packageWidget.py:71
 msgid "Package"
 msgstr "Pacchetto"
 
-#: .tmp/ui_packageWidget.py:69
+#: .tmp/ui_packageWidget.py:72
 #, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -532,49 +521,49 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Seleziona uno stile di menù:</span></p></body></html>"
 
-#: .tmp/ui_packageWidget.py:74
+#: .tmp/ui_packageWidget.py:77
 msgid "picture label"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:75
+#: .tmp/ui_packageWidget.py:78
 msgid "Updates"
 msgstr "Aggiornamenti"
 
-#: .tmp/ui_packageWidget.py:76
+#: .tmp/ui_packageWidget.py:79
 msgid "Show in system  tray"
 msgstr "Mostra nel vassoio di sistema"
 
-#: .tmp/ui_packageWidget.py:77
+#: .tmp/ui_packageWidget.py:80
 msgid "Check updates automatically for every"
 msgstr "Controlla nuovi aggiornamenti ogni:"
 
-#: .tmp/ui_packageWidget.py:78
+#: .tmp/ui_packageWidget.py:81
 msgid " hours"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:79
+#: .tmp/ui_packageWidget.py:82
 msgid "Repo"
 msgstr "Repository"
 
-#: .tmp/ui_packageWidget.py:80
+#: .tmp/ui_packageWidget.py:83
 msgid "Contrib repo includes extra packages."
 msgstr "Il repository contrib include pacchetti extra."
 
-#: .tmp/ui_packageWidget.py:81
+#: .tmp/ui_packageWidget.py:84
 msgid "Add contrib repo"
 msgstr "Aggiungi repository contrtib"
 
-#: .tmp/ui_searchWidget.py:50
+#: .tmp/ui_searchWidget.py:52
 msgid "Desktop Search"
 msgstr "Ricerca files"
 
-#: .tmp/ui_searchWidget.py:51
+#: .tmp/ui_searchWidget.py:53
 msgid ""
 "Strigi desktop search allows searching for files by content instead of just "
 "by name."
 msgstr ""
 
-#: .tmp/ui_searchWidget.py:52
+#: .tmp/ui_searchWidget.py:54
 msgid "Enable Strigi Desktop File Indexer"
 msgstr ""
 
@@ -637,31 +626,31 @@ msgstr ""
 msgid "styleDesc"
 msgstr ""
 
-#: .tmp/ui_styleWidget.py:63
+#: .tmp/ui_styleWidget.py:65
 msgid "Themes"
 msgstr "Temi"
 
-#: .tmp/ui_styleWidget.py:64
+#: .tmp/ui_styleWidget.py:66
 msgid "<b>Desktop Type:</b>"
 msgstr "<b>Tipo di desktop:</b>"
 
-#: .tmp/ui_styleWidget.py:65
+#: .tmp/ui_styleWidget.py:67
 msgid "Desktop view (KDE4 Style)"
 msgstr ""
 
-#: .tmp/ui_styleWidget.py:66
+#: .tmp/ui_styleWidget.py:68
 msgid "Folder view (KDE3 Style)"
 msgstr ""
 
-#: .tmp/ui_styleWidget.py:67
+#: .tmp/ui_styleWidget.py:69
 msgid "<b>Number of Desktops:</b>"
 msgstr "<b>Numero di Desktop:</b>"
 
-#: .tmp/ui_summaryWidget.py:48
+#: .tmp/ui_summaryWidget.py:49
 msgid "Summary"
 msgstr "Riepilogo"
 
-#: .tmp/ui_summaryWidget.py:49
+#: .tmp/ui_summaryWidget.py:50
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -695,16 +684,16 @@ msgstr ""
 msgid "wallpaperDesc"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:43
+#: .tmp/ui_wallpaperWidget.py:44
 msgid "Wallpaper"
 msgstr "Sfondo"
 
-#: .tmp/ui_wallpaperWidget.py:44
+#: .tmp/ui_wallpaperWidget.py:45
 #, fuzzy
 msgid "Choose Wallpaper From a File"
 msgstr "Scegli sfondo"
 
-#: .tmp/ui_wallpaperWidget.py:45
+#: .tmp/ui_wallpaperWidget.py:46
 msgid "Don't change wallpaper"
 msgstr "Non cambiare lo sfondo"
 
@@ -725,6 +714,30 @@ msgstr ""
 "Pardus è una distribuzione GNU/Linux, ideata per un uso di base del "
 "computer; con Pardus puoi connetterti a Internet, leggere le tue e-mail, "
 "lavorare sui tuoi documenti, e molto, molto altro!"
+
+#, fuzzy
+#~ msgid "Kick-off "
+#~ msgstr "Menù Kick-off"
+
+#, fuzzy
+#~ msgid "Simple"
+#~ msgstr "Menù Semplice"
+
+#, fuzzy
+#~ msgid "Lancelot"
+#~ msgstr "Menù Lancelot"
+
+#~ msgid "An experimental menu for KDE4"
+#~ msgstr "Un menù sperimentale per KDE4"
+
+#~ msgid "Kick-off (Advanced Menu)"
+#~ msgstr "Kick-off (Menu Avanzato)"
+
+#~ msgid "Classic (Simple Menu)"
+#~ msgstr "Menu classico (semplice)"
+
+#~ msgid "Lancelot (Experimental Menu)"
+#~ msgstr "Lancelot (Menu sperimentale)"
 
 #~ msgid "No name"
 #~ msgstr "Nessun nome"
