@@ -53,24 +53,24 @@ class Widget(QtGui.QWidget, ScreenWidget):
             parser = DesktopParser()
             parser.read("/usr/kde/4/share/apps/kaptan/gui/styles/" +str(desktopFiles))
             try:
-                styleName = parser.get_locale('Style', 'name[%s]'%self.catLang, '')
+                styleName = unicode(parser.get_locale('Style', 'name[%s]'%self.catLang, ''))
             except:
-                styleName = parser.get_locale('Style', 'name', '')
+                styleName = unicode(parser.get_locale('Style', 'name', ''))
             try:
-                styleDesc = parser.get_locale('Style', 'description[%s]'%self.catLang, '')
+                styleDesc = unicode(parser.get_locale('Style', 'description[%s]'%self.catLang, ''))
             except:
-                styleDesc = parser.get_locale('Style', 'description', '')
+                styleDesc = unicode(parser.get_locale('Style', 'description', ''))
             try:
                 # TODO find a fallback values for these & handle exceptions seperately.
                 #styleApplet = parser.get_locale('Style', 'applets', '')
                 panelPosition = parser.get_locale('Style', 'panelPosition', '')
                 #styleColorScheme = parser.get_locale('Style', 'colorScheme', '')
-                widgetStyle = parser.get_locale('Style', 'widgetStyle', '')
-                desktopTheme = parser.get_locale('Style', 'desktopTheme', '')
-                colorScheme = parser.get_locale('Style', 'colorScheme', '')
-                iconTheme = parser.get_locale('Style', 'iconTheme', '')
-                windowDecoration = parser.get_locale('Style', 'windowDecoration', '')
-                styleThumb = os.path.join("/usr/kde/4/share/apps/kaptan/gui/styles/",  parser.get_locale('Style', 'thumbnail',''))
+                widgetStyle = unicode(parser.get_locale('Style', 'widgetStyle', ''))
+                desktopTheme = unicode(parser.get_locale('Style', 'desktopTheme', ''))
+                colorScheme = unicode(parser.get_locale('Style', 'colorScheme', ''))
+                iconTheme = unicode(parser.get_locale('Style', 'iconTheme', ''))
+                windowDecoration = unicode(parser.get_locale('Style', 'windowDecoration', ''))
+                styleThumb = unicode(os.path.join("/usr/kde/4/share/apps/kaptan/gui/styles/",  parser.get_locale('Style', 'thumbnail','')))
 
                 colorDict = {}
                 colorDir = "/usr/kde/4/share/apps/color-schemes/"
@@ -140,9 +140,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.__class__.screenSettings["desktopType"] = self.selectedType
 
     def setStyle(self):
-
         styleName =  str(self.ui.listStyles.currentItem().statusTip())
-        self.__class__.screenSettings["summaryMessage"] = styleName  + " : " + self.styleDetails[styleName]["description"]
+        self.__class__.screenSettings["summaryMessage"] = unicode(styleName)
         self.__class__.screenSettings["hasChanged"] = True
 
         self.__class__.screenSettings["styleDetails"] = self.styleDetails
