@@ -383,32 +383,33 @@ class Widget(QtGui.QWidget, ScreenWidget):
         #for k,v in ctx.fileOptions.items():
         #     print "ctx.fileOptions[%s]=%s" %(k,v)
         #ctx.options.update(ctx.filesOptions)
-        if ctx.fileOptions.has_key("links"):
-            self.progresspage.makeProgress(3)
-            self.progresspage.addOperation(i18n("Desktop Links"), len(ctx.fileOptions["links"]) * 1000)
-        if ctx.fileOptions.has_key("folders"):
-            # Existance of directory:
-            if not os.path.isdir(ctx.fileOptions["copy destination"]):
-                try:
-                    os.makedirs(ctx.fileOptions["copy destination"])
-                except:
-                    warning(self.progresspage , unicode(i18n("Folder '%s' cannot be created, please choose another folder!")) % ctx.fileOptions["copy destination"])
+        if ctx.filesOptions:
+            if ctx.filesOptions.has_key("links"):
+                self.progresspage.makeProgress(3)
+                self.progresspage.addOperation(i18n("Desktop Links"), len(ctx.filesOptions["links"]) * 1000)
+            if ctx.filesOptions.has_key("folders"):
+                # Existance of directory:
+                if not os.path.isdir(ctx.filesOptions["copy destination"]):
+                    try:
+                        os.makedirs(ctx.filesOptions["copy destination"])
+                    except:
+                        warning(self.progresspage , unicode(i18n("Folder '%s' cannot be created, please choose another folder!")) % ctx.filesOptions["copy destination"])
+                        return
+                # Write access:
+                if not os.access(ctx.filesOptions["copy destination"], os.W_OK):
+                    warning(self.progresspage, unicode(i18n("You don't have permission to write to folder '%s', please choose another folder!")) % ctx.filesOptions["copy destination"])
                     return
-            # Write access:
-            if not os.access(ctx.fileOptions["copy destination"], os.W_OK):
-                warning(self.progresspage, unicode(i18n("You don't have permission to write to folder '%s', please choose another folder!")) % ctx.fileOptions["copy destination"])
+                # File size:
+                for folder in ctx.filesOptions["folders"]:
+                    size = files.totalSize(folder["files"])
+                    self.progresspage.addOperation(folder["localname"], size)
+                self.progresspage.makeProgress(20)
+            # Control total size
+            free = files.freeSpace(os.path.expanduser("~"))
+            if self.progresspage.steps2 > free:
+                arguments = {"size":self.progresspage.steps2 / 1024 / 1024, "free":free / 1024 / 1024}
+                warning(self.progresspage, unicode(i18n("Total size of files you've chosen is %(size)d MB, but you have only %(free)d MB of free space!")) % arguments)
                 return
-            # File size:
-            for folder in ctx.fileOptions["folders"]:
-                size = files.totalSize(folder["files"])
-                self.progresspage.addOperation(folder["localname"], size)
-            self.progresspage.makeProgress(20)
-        # Control total size
-        free = files.freeSpace(os.path.expanduser("~"))
-        if self.progresspage.steps2 > free:
-            arguments = {"size":self.progresspage.steps2 / 1024 / 1024, "free":free / 1024 / 1024}
-            warning(self.progresspage, unicode(i18n("Total size of files you've chosen is %(size)d MB, but you have only %(free)d MB of free space!")) % arguments)
-            return
 
         spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
         self.progresspage.progressLayout.addItem(spacerItem)
@@ -484,19 +485,20 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         print "IM: apply!"
         # Links:
-        if ctx.fileOptions.has_key("links"):
-            links = ctx.fileOptions["links"]
-            for link in links:
-                files.createLink(link)
-                self.progresspage.go(unicode(i18n("Link '%s' created.")) % link["localname"], ctx.OK, 1000)
+        if ctx.filesOptions:
+            if ctx.filesOptions.has_key("links"):
+                links = ctx.filesOptions["links"]
+                for link in links:
+                    files.createLink(link)
+                    self.progresspage.go(unicode(i18n("Link '%s' created.")) % link["localname"], ctx.OK, 1000)
 
-        print "LINKS: apply!"
-        # Folders:
-        if ctx.fileOptions.has_key("folders"):
-            folders = ctx.fileOptions["folders"]
-            for folder in folders:
-                foldername = os.path.join(ctx.fileOptions["copy destination"], folder["localname"])
-                files.copyFolder(folder, ctx.fileOptions["copy destination"], self.progresspage)
+            print "LINKS: apply!"
+            # Folders:
+            if ctx.filesOptions.has_key("folders"):
+                folders = ctx.filesOptions["folders"]
+                for folder in folders:
+                    foldername = os.path.join(ctx.filesOptions["copy destination"], folder["localname"])
+                    files.copyFolder(folder, ctx.filesOptions["copy destination"], self.progresspage)
 
         print "Folders: apply!"
         # The end:
