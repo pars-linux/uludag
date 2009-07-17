@@ -72,7 +72,7 @@ def getWindowsUsers(partition):
             subkeys = key.subKeys()
             logging.debug("registry opened: " + hivefile)
         except:
-            logging.debug("registry cannot be opened: " + hivefile)
+            logging.debug("registry could not be opened: " + hivefile)
             return []
         # Control each profile:
         for subkey in subkeys:
