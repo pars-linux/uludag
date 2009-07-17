@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-16 23:40+0300\n"
-"PO-Revision-Date: 2009-07-15 22:08-0400\n"
+"PO-Revision-Date: 2009-07-16 20:09-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -628,8 +628,7 @@ msgid "Begin Install"
 msgstr "Installation beginnen"
 
 #: yali4/gui/Ui/summarywidget.py:70
-msgid ""
-"If you check this, Yalı will install all language packages in this release"
+msgid "If you check this, Yalı will install all language packages in this release"
 msgstr ""
 "Wenn markiert, wird Yali versuchen alle möglichen Sprachpakete für diese "
 "Version zu installieren"
@@ -675,7 +674,6 @@ msgid "Debug"
 msgstr "Debuggen"
 
 #: yali4/gui/descSlide.py:18
-#, fuzzy
 msgid ""
 "Hello, there. The easiest-ever install tool YALI has begun Pardus "
 "installation. It is now time to relax and learn about some of the features "
@@ -1006,8 +1004,7 @@ msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%"
 "(fsType)s</b>."
@@ -1323,8 +1320,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
+msgstr "<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1955,8 +1951,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -1976,7 +1971,6 @@ msgid "Before Starting"
 msgstr "Bevor es los geht"
 
 #: yali4/gui/ScrSummary.py:242
-#, fuzzy
 msgid ""
 "<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
 "your partition,<br>\n"
@@ -1993,12 +1987,11 @@ msgstr ""
 "sein. <br>\n"
 "                   Erstellen Sie sicherheitshalber für diese Partition ein "
 "Backup.<br>\n"
-"                   <b>Bitte beachten Sie, dass dieser Vorgang nicht mehr "
+"                   <b>Bitte beachten Sie, dass dieser Vorgang nicht "
 "rückgängig gemacht werden kann!</b></p>"
 
 #: yali4/gui/ScrSummary.py:267 yali4/gui/ScrSummary.py:278
 #: yali4/gui/ScrSummary.py:294
-#, fuzzy
 msgid "Formatting..."
 msgstr "Am formatieren..."
 
@@ -2007,7 +2000,6 @@ msgid "Writing disk tables..."
 msgstr "Laufwerktabellen werden geschrieben..."
 
 #: yali4/gui/ScrSummary.py:275
-#, fuzzy
 msgid "Resizing..."
 msgstr "Grössenänderung wird vorgenommen..."
 
@@ -2021,7 +2013,6 @@ msgstr "Legen Sie Benutzer zur Verwendung von Pardus an..."
 
 # is this mention of TASMA still valid ?, is not now replaced by the KDE4 System Settings Center ??
 #: yali4/gui/ScrUsers.py:35
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -2048,10 +2039,10 @@ msgstr ""
 "<font size=\"+2\">Benutzer-Einrichtung</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2009 ermöglicht mehreren Benutzern die gemeinsame Nutzung eines "
+"Pardus 2009 ermöglicht mehreren Benutzern die gemeinsame Nutzung des"
 "Computers.\n"
 "Sie können den von Ihnen angelegten Benutzern Verwaltungsrechte zuteilen, "
-"und auch die Rechte der Benutzer für diverse Tätigkeiten durch TASMA "
+"und auch die Rechte der Benutzer für diverse Tätigkeiten durch den Benutzer-Manager"
 "konfigurieren.\n"
 "</p>\n"
 "<p>\n"
@@ -2075,8 +2066,7 @@ msgstr "Benutzer aktualisieren"
 
 #: yali4/gui/ScrUsers.py:243
 msgid "Username exists, choose another one!"
-msgstr ""
-"Dieser Benutzername ist bereits vergeben, bitte wählen Sie einen anderen."
+msgstr "Dieser Benutzername ist bereits vergeben, bitte wählen Sie einen anderen."
 
 #: yali4/gui/ScrUsers.py:246
 msgid "Username contains invalid characters!"
@@ -2147,7 +2137,7 @@ msgstr "Möchten Sie weitermachen ?"
 
 #: yali4/gui/YaliDialog.py:153
 msgid "Eject CD"
-msgstr ""
+msgstr "CD auswerfen"
 
 #: yali4/gui/YaliDialog.py:179 yali4/gui/YaliDialog.py:196
 msgid "Ok"
@@ -2155,11 +2145,11 @@ msgstr "Ok"
 
 #: yali4/gui/YaliDialog.py:180
 msgid "Please insert a new CD and then click Ok"
-msgstr ""
+msgstr "Bitte legen Sie eine neue CD ein, und klicken dann Ok"
 
 #: yali4/gui/YaliDialog.py:182
 msgid "Insert New CD"
-msgstr ""
+msgstr "Neue CD einlegen"
 
 #: yali4/gui/YaliDialog.py:194
 msgid "Information"
@@ -2305,8 +2295,7 @@ msgstr "Neue Partition wird erstellt..."
 
 #: yali4/installer.py:392
 msgid "Failed to use partition for automatic installation "
-msgstr ""
-"Benutzung der Partition für automatische Partitionierung fehlgeschlagen "
+msgstr "Benutzung der Partition für automatische Partitionierung fehlgeschlagen "
 
 #: yali4/installer.py:514
 msgid "Setting Hostname..."
@@ -2541,3 +2530,4 @@ msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis wird erstellt.."
 #, python-format
 msgid "Not enough free space on %s to create new partition"
 msgstr "Nicht ausreichend Platz auf %s für eine neue Partition vorhanden"
+
