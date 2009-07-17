@@ -88,6 +88,7 @@
         <SelectedPackage>splix</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>sound-theme-pardus</SelectedPackage>
+        <SelectedPackage>smplayer</SelectedPackage>
         <SelectedPackage>skanlite</SelectedPackage>
         <SelectedPackage>setserial</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
@@ -170,6 +171,7 @@
         <SelectedPackage>kdeartwork-styles</SelectedPackage>
         <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
         <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
+        <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
         <SelectedPackage>kdeadmin</SelectedPackage>
         <SelectedPackage>kdeaccessibility</SelectedPackage>
         <SelectedPackage>kde-l10n-tr</SelectedPackage>
@@ -566,6 +568,9 @@
         <Package>libgphoto2</Package>
         <Package>libgpg-error</Package>
         <Package>libgomp</Package>
+        <Package>libgnomeui</Package>
+        <Package>libgnomecanvas</Package>
+        <Package>libgnome</Package>
         <Package>libglademm</Package>
         <Package>libglade</Package>
         <Package>libgcrypt</Package>
@@ -597,8 +602,11 @@
         <Package>libcap</Package>
         <Package>libcanberra</Package>
         <Package>libcaca</Package>
+        <Package>libbonoboui</Package>
+        <Package>libbonobo</Package>
         <Package>libavc1394</Package>
         <Package>libassuan</Package>
+        <Package>libart_lgpl</Package>
         <Package>libarchive</Package>
         <Package>libao</Package>
         <Package>libacpi</Package>
@@ -703,6 +711,7 @@
         <Package>gnome-vfs</Package>
         <Package>gnome-mplayer</Package>
         <Package>gnome-mime-data</Package>
+        <Package>gnome-keyring</Package>
         <Package>gnokii</Package>
         <Package>gmp</Package>
         <Package>glut</Package>
