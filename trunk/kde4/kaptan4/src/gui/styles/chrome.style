@@ -1,0 +1,15 @@
+[Style]
+name = Chrome
+name[tr] = Krom
+
+description = A light theme with a panel on bottom
+description[tr]= Paneli üstte olan pembe bir tema
+
+panelPosition = 4
+widgetStyle = oxygen
+colorScheme = Chrome
+desktopTheme = air
+thumbnail = sample1.png
+iconTheme = milky
+windowDecoration = kwin3_plastik
+
