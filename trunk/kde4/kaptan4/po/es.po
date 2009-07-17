@@ -1,4 +1,4 @@
-# translation of es.po to Spanish
+# translation of es.po to spanish
 # Kaptan
 # Copyright (C) 2009
 # This file is distributed under the same license as the Kaptan package.
@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-16 20:37+0300\n"
-"PO-Revision-Date: 2009-07-14 18:28-0400\n"
+"PO-Revision-Date: 2009-07-16 19:57-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -130,7 +130,7 @@ msgstr "Descripción Smolt"
 
 #: .tmp/ScrSmolt.py:69
 msgid "Label"
-msgstr ""
+msgstr "Etiqueta"
 
 #: .tmp/ScrSmolt.py:70
 msgid "Data"
@@ -304,11 +304,9 @@ msgstr "Elija su Fondo de Escritorio"
 
 #: .tmp/ScrWallpaper.py:35
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
-msgstr ""
-"Elija el fondo que más le guste, o seleccione uno de sus propios imágenes..."
+msgstr "Elija el fondo que más le guste, o seleccione uno de sus propios imágenes..."
 
 #: .tmp/ui_goodbyeWidget.py:200
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -338,9 +336,14 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:9pt; font-weight:600;\">Felicidades! Terminó todos los pasos del "
-"asistente! Ahora puede pasar a usar Pardus o puede probar uno de los "
-"siguientes programas:</span></p></body></html>"
+"size:11pt; font-weight:600;\">Felicidades! </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:11pt; font-weight:600;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt; font-weight:600;\">Ha terminado todos los pasos de éste asistente ! Ahora puede continuar de usar Pardus o puede usar uno de los siguientes programas:</span></"
+"p></body></html>"
 
 #: .tmp/ui_goodbyeWidget.py:207
 msgid "My Smolt Page"
@@ -358,13 +361,13 @@ msgstr "Inicio"
 
 #: .tmp/ui_goodbyeWidget.py:210
 msgid "Migration Wizard"
-msgstr ""
+msgstr "Asistente de Migración"
 
 #: .tmp/ui_goodbyeWidget.py:211
 msgid ""
 "A wizard to transfer files and settings from existing operating systems (e."
 "g. Windows) to Pardus."
-msgstr ""
+msgstr "Un asistente que le ayuda transferir archivos y configuraciones de sistemas operativos existentes (p.ej. Windows) a Pardus."
 
 #: .tmp/ui_goodbyeWidget.py:213
 msgid "System Settings"
@@ -372,8 +375,7 @@ msgstr "Configuración del Sistema"
 
 #: .tmp/ui_goodbyeWidget.py:214
 msgid "System Settings is a configuration tool for Pardus."
-msgstr ""
-"Configuración del Sistema es una herramienta de configuración de Pardus."
+msgstr "Configuración del Sistema es una herramienta de configuración de Pardus."
 
 #: .tmp/ui_goodbyeWidget.py:216
 msgid "User Groups and Help Pages"
@@ -601,7 +603,6 @@ msgid "&Send my profile"
 msgstr "&Enviar mi perfil"
 
 #: .tmp/ui_smoltWidget.py:80
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -653,8 +654,8 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt enviará solamente "
 "información relacionado con hardware y información básica del sistema "
-"operativo al servidor smolt de Fedora (smoon). Lo único que vincula al "
-"remitente con la base de datos es el UUID de la PC del remitente. Mientras "
+"operativo al servidor smolt de Pardus (smoon). Lo único que vincula al "
+"remitente con la base de datos, es el UUID de la PC del remitente. Mientras "
 "el remitente no publica su UUID, los datos enviados son anónimos. Si en "
 "algún momento el usuario desea eliminar su perfil de la base de datos, puede "
 "ejecutar sencillamente </p>\n"
@@ -672,17 +673,17 @@ msgstr ""
 "recibir mejor soporte en general.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
-"decoration: underline;\">IP Logging:</span> Al instalar smolt de Fedora, "
+"decoration: underline;\">IP Logging:</span> En la implementación del servidor Smolt de Pardus, "
 "todo el tráfico pasa por un servidor proxy. Esto es el único lugar donde se "
 "registra el IP, y se mantiene su registro durante 4 semanas, hasta que es "
-"eliminado por la rotación de los logs. Estos logs son privados, y no serán "
-"accesible por el público en general.El Proyecto Fedora no almacena la "
-"dirección ip cen la base de datos smolt.</p>\n"
+"eliminado por la rotación de los logs. El Proyecto Pardus no almacena la "
+"dirección ip en la base de datos smolt. Los archivos log son privados, y no estarán"
+"accesible por el público en general.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"> Usuarios a quienes no les "
-"agrada ésta política sencillamente no dberían usar smolt. Si hay dudas o "
+"agrada ésta política sencillamente no deberían usar smolt. Si hay dudas o "
 "preguntas sobre ésta política, debería contactar al equipo de la "
-"infraestructura Fedora Team en admin [at] fedoraproject.org. Recuerde que el "
+"infraestructura Pardus en admin [at] pardus.org.tr. Recuerde que el "
 "usuario puede eliminar su perfil en cualquier momento con el comando\"<span "
 "style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></body></html>"
 
@@ -708,11 +709,11 @@ msgstr "<b>Tipo de Escritorio:</b>"
 
 #: .tmp/ui_styleWidget.py:65
 msgid "Desktop view (KDE4 Style)"
-msgstr ""
+msgstr "Vista de Escritorio (Estilo KDE4)"
 
 #: .tmp/ui_styleWidget.py:66
 msgid "Folder view (KDE3 Style)"
-msgstr ""
+msgstr "Vista de Directorios (Estilo KDE3)"
 
 #: .tmp/ui_styleWidget.py:67
 msgid "<b>Number of Desktops:</b>"
@@ -789,11 +790,3 @@ msgstr ""
 "escritorio básico para un usuario de PC; Le ayuda conectar a internet, leer "
 "e-mails, trabajar con documentos de oficina y más!"
 
-#~ msgid "<b>Welcome to Kaptan!</b>"
-#~ msgstr "<b>Bienvenido a Kaptan!</b>"
-
-#~ msgid "Desktop"
-#~ msgstr "Escritorio"
-
-#~ msgid "Folderview"
-#~ msgstr "Vista de directorios"

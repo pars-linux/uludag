@@ -1,4 +1,4 @@
-# translation of es.po to Spanish
+# translation of es.po to spanish
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -13,9 +13,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-16 23:40+0300\n"
-"PO-Revision-Date: 2009-07-15 20:04-0400\n"
+"PO-Revision-Date: 2009-07-16 19:47-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -131,8 +131,7 @@ msgstr "Eliminar todas las particiones"
 # favor revisar, la ultima parte
 #: yali4/gui/Ui/autopartwidget.py:121
 msgid "This option allows partitioning the disk to your wishes."
-msgstr ""
-"Esta opción le permite realizar el particionamiento acorde a sus deseos."
+msgstr "Esta opción le permite realizar el particionamiento acorde a sus deseos."
 
 #: yali4/gui/Ui/autopartwidget.py:122
 msgid "No, I'll partition my disk manually."
@@ -620,8 +619,7 @@ msgstr "Comenzar instalación"
 
 # favor revisar - release, version
 #: yali4/gui/Ui/summarywidget.py:70
-msgid ""
-"If you check this, Yalı will install all language packages in this release"
+msgid "If you check this, Yalı will install all language packages in this release"
 msgstr ""
 "Si marca aquí, Yali instalará los paquetes de todos los idiomas disponibles "
 "en esta versión"
@@ -664,14 +662,13 @@ msgid "Debug"
 msgstr "Depurar"
 
 #: yali4/gui/descSlide.py:18
-#, fuzzy
 msgid ""
 "Hello, there. The easiest-ever install tool YALI has begun Pardus "
 "installation. It is now time to relax and learn about some of the features "
 "of Pardus 2009 while it is being installed."
 msgstr ""
 "Hola, la herramienta de instalación de Pardus más fácil denominado YALI "
-"acaba de empezar su proceso de instalación. Ahora es momento de relajarse y "
+"acaba de empezar su proceso de instalación. Ahora es el momento de relajarse y "
 "averiguar más acerca de las características de Pardus 2009, mientras procede "
 "la instalación."
 
@@ -996,18 +993,15 @@ msgstr "Ya hay una partición especificada para el mismo fin."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr ""
-"Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr "Partición <b>%(partition)s</b> se <b>formateará</b> como <b>%(fsType)s</b>."
 
 # favor verificar contexto,
 # check context, should this say "format as.." instead o "selected as .." ?
 #: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:163
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Usar partición <b>%(partition)s</b> <b>seleccionada</b> para <b>%(type)s</b>."
+msgstr "Usar partición <b>%(partition)s</b> <b>seleccionada</b> para <b>%(type)s</b>."
 
 #: yali4/gui/DiskWidgets.py:382
 msgid ""
@@ -1297,8 +1291,7 @@ msgstr "Verifique el CD de instalación"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr ""
-"Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 # maybe i copied the CD from a friend ? so it would not be from an ISO...
 #: yali4/gui/ScrCheckCD.py:32
@@ -1323,8 +1316,7 @@ msgstr ""
 # could be set to: "Verificando CD, por favor espere."
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
+msgstr "<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1909,8 +1901,7 @@ msgstr "Añadir usuario %s (<b>%s</b>)."
 #: yali4/gui/ScrSummary.py:137
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>administrator privileges</u>."
-msgstr ""
-"Añadir usuario %s (<b>%s</b>) con <u>privilegios de administración</u>."
+msgstr "Añadir usuario %s (<b>%s</b>) con <u>privilegios de administración</u>."
 
 #: yali4/gui/ScrSummary.py:143
 msgid "Hostname Settings"
@@ -1965,8 +1956,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partición <b>%(newPartition)s</b> <b>se usará</b> para <b>%(type)s</b>."
+msgstr "Partición <b>%(newPartition)s</b> <b>se usará</b> para <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -2149,7 +2139,7 @@ msgstr "Desea continuar ?"
 
 #: yali4/gui/YaliDialog.py:153
 msgid "Eject CD"
-msgstr ""
+msgstr "Expulsar CD"
 
 #: yali4/gui/YaliDialog.py:179 yali4/gui/YaliDialog.py:196
 msgid "Ok"
@@ -2157,11 +2147,11 @@ msgstr ""
 
 #: yali4/gui/YaliDialog.py:180
 msgid "Please insert a new CD and then click Ok"
-msgstr ""
+msgstr "Por favor inserte un nuevo CD y presione Ok"
 
 #: yali4/gui/YaliDialog.py:182
 msgid "Insert New CD"
-msgstr ""
+msgstr "Inserte CD nuevo"
 
 #: yali4/gui/YaliDialog.py:194
 msgid "Information"
@@ -2555,3 +2545,4 @@ msgstr "Preparando directorio home de usuario <b>%s</b>.."
 #, python-format
 msgid "Not enough free space on %s to create new partition"
 msgstr "No hay suficiente espacio libre en %s para crear una partición nueva"
+
