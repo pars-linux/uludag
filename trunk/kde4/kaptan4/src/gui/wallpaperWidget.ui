@@ -84,7 +84,7 @@
      <item>
       <widget class="QCheckBox" name="checkBox">
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">color:black</string>
        </property>
        <property name="text">
         <string>Don't change wallpaper</string>

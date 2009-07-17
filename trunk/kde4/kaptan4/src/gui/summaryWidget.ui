@@ -92,7 +92,7 @@
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">color:black</string>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
