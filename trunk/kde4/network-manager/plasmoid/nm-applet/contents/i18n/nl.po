@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 17:14+0300\n"
-"PO-Revision-Date: 15/07/09 15:58\n"
+"PO-Revision-Date: 17/07/09 16:40\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -79,36 +79,35 @@ msgid "Open Network Manager"
 msgstr "Netwerkbeheer openen"
 
 #: code/main.py:44
-#, fuzzy
 msgid "Connected"
-msgstr "Niet verbonden."
+msgstr "Verbonden"
 
 #: code/main.py:47 code/main.py:279 code/main.py:288
-#, fuzzy
 msgid "Disconnected"
-msgstr "Niet verbonden."
+msgstr "Niet verbonden"
 
 #: code/main.py:50
 msgid "Connecting"
-msgstr ""
+msgstr "Verbinding maken"
 
 #: code/main.py:88
 msgid "Click here to show connections.."
-msgstr ""
+msgstr "Klik hier om verbindingen te tonen.."
 
 #: code/main.py:240
 msgid "Unknown"
-msgstr ""
+msgstr "Onbekend"
 
 #: code/main.py:251
 msgid "Connected to <b>%1</b> IP: %2"
-msgstr ""
+msgstr "Verbonden met <b>%1</b> IP: %2"
 
 #: code/main.py:266
 #, python-format
 msgid "Connecting to <b>%s</b> .."
-msgstr ""
+msgstr "Verbinding maken met <b>%s</b> .."
 
 #: code/main.py:329
 msgid "Icon Settings"
-msgstr ""
+msgstr "Pictograminstellingen"
+
