@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 17:56+0300\n"
+"POT-Creation-Date: 2009-07-17 18:15+0300\n"
 "PO-Revision-Date: 2009-07-15 13:43+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgstr "Göç Aracına hoşgeldiniz"
 
 #: .tmp/ScrOptions.py:61
 msgid "Keep current wallpaper"
-msgstr "Mevcut duvar kadn koru"
+msgstr "Mevcut duvar kağıdını koru"
 
 #: .tmp/ScrOptions.py:63
 msgid "Don't use wallpaper"
@@ -69,16 +69,16 @@ msgstr "Eski Opera yer imlerinizi Pardus'daki Firefox'a kopyalar."
 
 #: .tmp/ScrOptions.py:127
 msgid "Internet Explorer favorites"
-msgstr "Internet Explorer sk kullanlanlar"
+msgstr "Internet Explorer sık kullanılanları"
 
 #: .tmp/ScrOptions.py:129
 msgid "Copies your old Internet Explorer favorites to Firefox under Pardus."
 msgstr ""
-"Eski Internet Explorer sık kullanlanlarnz Pardus'daki Firefox'a kopyalar."
+"Eski Internet Explorer sık kullanılanlarınzı Pardus'daki Firefox'a kopyalar."
 
 #: .tmp/ScrOptions.py:138
 msgid "E-Mail and News Accounts"
-msgstr "E-Posta ve Haber Hesaplar"
+msgstr "E-Posta ve Haber Hesapları"
 
 #: .tmp/ScrOptions.py:149
 msgid "Windows Mail accounts"
@@ -92,7 +92,7 @@ msgstr ""
 
 #: .tmp/ScrOptions.py:160
 msgid "Thunderbird accounts"
-msgstr "Thunderbird hesaplar"
+msgstr "Thunderbird hesapları"
 
 #: .tmp/ScrOptions.py:168
 msgid "Copy e-mail messages from e-mail accounts"
@@ -124,7 +124,7 @@ msgstr "GTalk hesaplarnz Kopete'ye kopyalar."
 
 #: .tmp/ScrProgress.py:38
 msgid "Please wait while applying changes..."
-msgstr "Değişiklikler uygulanyor..."
+msgstr "Değişiklikler uygulanıyor..."
 
 #: .tmp/ScrProgress.py:48
 msgid "Prepare: "
@@ -140,7 +140,7 @@ msgstr "Uyarı"
 
 #: .tmp/ScrProgress.py:205
 msgid "Applying Changes"
-msgstr "Deiiklikler Uygulanyor"
+msgstr "Değişiklikler Uygulanyor"
 
 #: .tmp/ScrProgress.py:244
 msgid "Wallpaper"
@@ -164,11 +164,11 @@ msgstr "Firefox yer imleri yüklendi."
 
 #: .tmp/ScrProgress.py:278
 msgid "Internet Explorer favorites could not be loaded."
-msgstr "Internet Explorer sk kullanlanlar yklenemedi."
+msgstr "Internet Explorer sık kullanılanlar yüklenemedi."
 
 #: .tmp/ScrProgress.py:280
 msgid "Internet Explorer favorites loaded."
-msgstr "Internet Explorer sk kullanlanlar yklendi."
+msgstr "Internet Explorer sık kullanılanlar yüklendi."
 
 #: .tmp/ScrProgress.py:293
 msgid "Firefox is open. Please close it first to continue..."
@@ -184,7 +184,7 @@ msgstr "Windows Mail hesaplar yüklendi."
 
 #: .tmp/ScrProgress.py:318
 msgid "Thunderbird accounts could be loaded."
-msgstr "Thunderbird hesaplar yklenemedi."
+msgstr "Thunderbird hesaplar yüklenemedi."
 
 #: .tmp/ScrProgress.py:320
 msgid "Thunderbird accounts loaded."
@@ -220,7 +220,7 @@ msgstr "Haber Hesaplar"
 
 #: .tmp/ScrProgress.py:389
 msgid "Desktop Links"
-msgstr "Masast Bağlantılar"
+msgstr "Masaüstü Bağlantıları"
 
 #: .tmp/ScrProgress.py:396
 #, python-format
@@ -270,7 +270,7 @@ msgstr "Anında Mesajlama hesaplar kaydedildi."
 #: .tmp/ScrProgress.py:493
 #, python-format
 msgid "Link '%s' created."
-msgstr "'%s' bağlantısı oluturuldu."
+msgstr "'%s' bağlantısı oluşturuldu."
 
 #: .tmp/ScrProgress.py:506
 msgid "Nothing done, because no option selected. You can close the wizard..."
@@ -308,7 +308,7 @@ msgstr "Hedef Ayarlar"
 #: .tmp/ScrSummary.py:57
 #, python-format
 msgid "Linked Destination to: <b> %s </b>"
-msgstr "Seili Hedef: <b>Bağlantıyı %s konumuna kopyala</b>"
+msgstr "Seçili Hedef: <b>Bağlantıyı %s konumuna kopyala</b>"
 
 #: .tmp/ScrSummary.py:59
 #, python-format
@@ -354,6 +354,10 @@ msgid ""
 msgstr ""
 "Göç ettirilecek Microsoft Window bölümü bulunmamakta! Bağlı bölümlerinizi "
 "kontrol edin..."
+
+#: .tmp/ScrUser.py:111
+msgid "There isn't any selected user on User Selection Window!"
+msgstr "Kullanıcı Seçim Ekranında seçilmiş kullanıcı bulunamadı!"
 
 #: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:44
 msgid "Welcome"
