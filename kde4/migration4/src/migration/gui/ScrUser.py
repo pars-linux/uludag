@@ -108,6 +108,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             ctx.destinations = info.localInfo()
             return (True, None)
         else:
-            return (False, "There isn't any selected user on User Selection Window!")
+            return (False, i18n("There isn't any selected user on User Selection Window!"))
 
 
