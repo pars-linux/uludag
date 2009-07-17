@@ -408,7 +408,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             free = files.freeSpace(os.path.expanduser("~"))
             if self.progresspage.steps2 > free:
                 arguments = {"size":self.progresspage.steps2 / 1024 / 1024, "free":free / 1024 / 1024}
-                warning(self.progresspage, unicode(i18n("Total size of files you've chosen is %(size)d MB, but you have only %(free)d MB of free space!")) % arguments)
+                warning(self.progresspage, unicode(i18n("Total size of files you've selected is %(size)d MB, but you have only %(free)d MB of free space!")) % arguments)
                 return
 
         spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
