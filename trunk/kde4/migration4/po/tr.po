@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-10 09:54+0300\n"
+"POT-Creation-Date: 2009-07-17 17:05+0300\n"
 "PO-Revision-Date: 2009-07-15 13:43+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -20,14 +20,14 @@ msgstr ""
 msgid "Selecting Options"
 msgstr "Tercihler"
 
-#: .tmp/ScrOptions.py:24 .tmp/ScrProgress.py:205 .tmp/ScrSummary.py:26
+#: .tmp/ScrOptions.py:24 .tmp/ScrProgress.py:206 .tmp/ScrSummary.py:26
 #: .tmp/ScrUserFiles.py:143 .tmp/ScrWelcome.py:23
 msgid "Welcome to Migration Tool Wizard :)"
-msgstr "Göç Aracı'na hoş geldiniz"
+msgstr "Göç Aracına hoşgeldiniz"
 
 #: .tmp/ScrOptions.py:61
 msgid "Keep current wallpaper"
-msgstr "Mevcut duvar kağıdını koru"
+msgstr "Mevcut duvar kadn koru"
 
 #: .tmp/ScrOptions.py:63
 msgid "Don't use wallpaper"
@@ -35,25 +35,24 @@ msgstr "Duvar kağıdı kullanma"
 
 #: .tmp/ScrOptions.py:64
 msgid "Does not change your wallpaper."
-msgstr "Duvar kağıdınızı değiştirmez."
+msgstr "Duvar kağıdınız değiştirmez."
 
 #: .tmp/ScrOptions.py:84
 msgid "Use my old wallpaper"
-msgstr "Eski duvar kağıdımı kullan"
+msgstr "Eski duvar kağıdı kullan"
 
 #: .tmp/ScrOptions.py:85
 msgid ""
 "Copies your old wallpaper to Pardus and sets it as new background image."
-msgstr ""
-"Eski duvar kağıdınızı Pardus'a kopyalar ve onu duvar kağıdı olarak atar."
+msgstr "Eski duvar kağıdınızı Pardus'a kopyalar ve onu yeni duvar kağıdı olarak atar."
 
-#: .tmp/ScrOptions.py:93 .tmp/ScrProgress.py:295
+#: .tmp/ScrOptions.py:93 .tmp/ScrProgress.py:296
 msgid "Bookmarks"
-msgstr "Yer İmleri"
+msgstr "Yer imleri"
 
 #: .tmp/ScrOptions.py:105
 msgid "Firefox Bookmarks"
-msgstr "Firefox Yer İmleri"
+msgstr "Firefox Yerimleri"
 
 #: .tmp/ScrOptions.py:107
 msgid "Copies your old Firefox bookmarks to Firefox under Pardus."
@@ -61,7 +60,7 @@ msgstr "Eski Firefox yer imlerinizi Pardus'daki Firefox'a kopyalar."
 
 #: .tmp/ScrOptions.py:116
 msgid "Opera Bookmarks"
-msgstr "Opera Yer İmleri"
+msgstr "Opera Yer imleri"
 
 #: .tmp/ScrOptions.py:118
 msgid "Copies your old Opera bookmarks to Firefox under Pardus."
@@ -69,67 +68,66 @@ msgstr "Eski Opera yer imlerinizi Pardus'daki Firefox'a kopyalar."
 
 #: .tmp/ScrOptions.py:127
 msgid "Internet Explorer favorites"
-msgstr "Internet Explorer sık kullanılanları"
+msgstr "Internet Explorer sk kullanlanlar"
 
 #: .tmp/ScrOptions.py:129
 msgid "Copies your old Internet Explorer favorites to Firefox under Pardus."
 msgstr ""
-"Eski Internet Explorer sık kullanılanlarınızı Pardus'daki Firefox'a kopyalar."
+"Eski Internet Explorer sık kullanlanlarnz Pardus'daki Firefox'a kopyalar."
 
 #: .tmp/ScrOptions.py:138
 msgid "E-Mail and News Accounts"
-msgstr "E-Posta ve Haber Hesapları"
+msgstr "E-Posta ve Haber Hesaplar"
 
 #: .tmp/ScrOptions.py:149
 msgid "Windows Mail accounts"
-msgstr "Windows Mail hesapları"
+msgstr "Windows Mail hesaplar"
 
 #: .tmp/ScrOptions.py:151 .tmp/ScrOptions.py:162
 msgid ""
 "Copies your old mail and newsgroup accounts to KMail and KNode applications."
 msgstr ""
-"Eski posta ve haber grubu hesaplarınızı KMail ve KNode uygulamalarına "
-"kopyalar."
+"Eski posta ve haber grubu hesaplarnz KMail ve KNode uygulamalarna kopyalar."
 
 #: .tmp/ScrOptions.py:160
 msgid "Thunderbird accounts"
-msgstr "Thunderbird hesapları"
+msgstr "Thunderbird hesaplar"
 
 #: .tmp/ScrOptions.py:168
 msgid "Copy e-mail messages from e-mail accounts"
-msgstr "E-posta hesaplarındaki epostaları kopyala"
+msgstr "E-posta hesaplarndaki epostalar kopyala"
 
 #: .tmp/ScrOptions.py:170
 msgid "Copies your e-mail messages to KMail from selected applications above."
-msgstr "Yukarıda seçili olan uygulamalardaki epostaları KMail'e kopyalar."
+msgstr "Yukarıda seçili olan uygulamalardaki epostalar KMail'e kopyalar."
 
-#: .tmp/ScrOptions.py:179 .tmp/ScrProgress.py:376
+#: .tmp/ScrOptions.py:179 .tmp/ScrProgress.py:377
 msgid "Instant Messenger Accounts"
-msgstr "Anında Mesajlaşma Hesapları"
+msgstr "Anında Mesajlama Hesaplar"
 
 #: .tmp/ScrOptions.py:190
 msgid "MSN accounts"
-msgstr "MSN hesapları"
+msgstr "MSN hesaplar"
 
 #: .tmp/ScrOptions.py:192
 msgid "Copies your MSN Messenger accounts to Kopete."
-msgstr "MSN Messenger hesaplarınızı Kopete'ye kopyalar."
+msgstr "MSN Messenger hesaplarnz Kopete'ye kopyalar."
 
 #: .tmp/ScrOptions.py:201
 msgid "GTalk accounts"
-msgstr "GTalk hesapları"
+msgstr "GTalk hesaplar"
 
 #: .tmp/ScrOptions.py:203
 msgid "Copies your GTalk accounts to Kopete."
-msgstr "GTalk hesaplarınızı Kopete'ye kopyalar."
+msgstr "GTalk hesaplarnz Kopete'ye kopyalar."
 
 #: .tmp/ScrProgress.py:38
 msgid "Please wait while applying changes..."
-msgstr "Değişiklikler uygulanıyor..."
+msgstr "Değişiklikler uygulanyor..."
 
 #: .tmp/ScrProgress.py:48
 msgid "Prepare: "
-msgstr "Hazırla: "
+msgstr "Hazrla: "
 
 #: .tmp/ScrProgress.py:55
 msgid "Apply: "
@@ -139,147 +137,154 @@ msgstr "Uygula: "
 msgid "Warning!"
 msgstr "Uyarı"
 
-#: .tmp/ScrProgress.py:204
+#: .tmp/ScrProgress.py:205
 msgid "Applying Changes"
-msgstr "Değişiklikler Uygulanıyor"
+msgstr "Deiiklikler Uygulanyor"
 
-#: .tmp/ScrProgress.py:243
+#: .tmp/ScrProgress.py:244
 msgid "Wallpaper"
 msgstr "Duvar kağıdı"
 
-#: .tmp/ScrProgress.py:253
-msgid "Firefox bookmarks cannot be loaded."
+#: .tmp/ScrProgress.py:254
+#, fuzzy
+msgid "Firefox bookmarks could not be loaded."
 msgstr "Firefox yer imleri yüklenemedi."
 
-#: .tmp/ScrProgress.py:255
+#: .tmp/ScrProgress.py:256
 msgid "Firefox bookmarks loaded."
 msgstr "Firefox yer imleri yüklendi."
 
-#: .tmp/ScrProgress.py:265
-msgid "Opera bookmarks cannot be loaded."
+#: .tmp/ScrProgress.py:266
+#, fuzzy
+msgid "Opera bookmarks could not be loaded."
 msgstr "Opera yer imleri yüklenemedi."
 
-#: .tmp/ScrProgress.py:267
+#: .tmp/ScrProgress.py:268
 msgid "Opera bookmarks loaded."
 msgstr "Firefox yer imleri yüklendi."
 
-#: .tmp/ScrProgress.py:277
-msgid "Internet Explorer favorites cannot be loaded."
-msgstr "Internet Explorer sık kullanılanları yüklenemedi."
+#: .tmp/ScrProgress.py:278
+#, fuzzy
+msgid "Internet Explorer favorites could not be loaded."
+msgstr "Internet Explorer sk kullanlanlar yklenemedi."
 
-#: .tmp/ScrProgress.py:279
+#: .tmp/ScrProgress.py:280
 msgid "Internet Explorer favorites loaded."
-msgstr "Internet Explorer sık kullanılanları yüklendi."
+msgstr "Internet Explorer sk kullanlanlar yklendi."
 
-#: .tmp/ScrProgress.py:292
+#: .tmp/ScrProgress.py:293
 msgid "Firefox is open. Please close it first to continue..."
-msgstr "Firefox açık. Devam etmek için Firefox'u kapatın."
+msgstr "Firefox açık. Devam etmek için Firefox'u kapatn."
 
-#: .tmp/ScrProgress.py:304
-msgid "Windows Mail accounts cannot be loaded."
-msgstr "Windows Mail hesapları yüklenemedi."
+#: .tmp/ScrProgress.py:305
+#, fuzzy
+msgid "Windows Mail accounts could not be loaded."
+msgstr "Windows Mail hesaplar yüklenemedi."
 
-#: .tmp/ScrProgress.py:306
+#: .tmp/ScrProgress.py:307
 msgid "Windows Mail accounts loaded."
-msgstr "Windows Mail hesapları yüklendi."
+msgstr "Windows Mail hesaplar yüklendi."
 
-#: .tmp/ScrProgress.py:317
-msgid "Thunderbird accounts cannot be loaded."
-msgstr "Thunderbird hesapları yüklenemedi."
+#: .tmp/ScrProgress.py:318
+#, fuzzy
+msgid "Thunderbird accounts could be loaded."
+msgstr "Thunderbird hesaplar yklenemedi."
 
-#: .tmp/ScrProgress.py:319
+#: .tmp/ScrProgress.py:320
 msgid "Thunderbird accounts loaded."
-msgstr "Thunderbird hesapları yüklendi."
+msgstr "Thunderbird hesaplar yüklendi."
 
-#: .tmp/ScrProgress.py:329
-msgid "MSN accounts cannot be loaded."
-msgstr "MSN hesapları yüklenemedi."
+#: .tmp/ScrProgress.py:330
+#, fuzzy
+msgid "MSN accounts could be loaded."
+msgstr "MSN hesaplar yüklenemedi."
 
-#: .tmp/ScrProgress.py:331
+#: .tmp/ScrProgress.py:332
 msgid "MSN accounts loaded."
-msgstr "MSN hesapları yüklendi."
+msgstr "MSN hesaplar yüklendi."
 
-#: .tmp/ScrProgress.py:341
-msgid "GTalk accounts cannot be loaded."
-msgstr "GTalk hesapları yüklenemedi."
+#: .tmp/ScrProgress.py:342
+#, fuzzy
+msgid "GTalk accounts could not be loaded."
+msgstr "GTalk hesaplar yüklenemedi."
 
-#: .tmp/ScrProgress.py:343
+#: .tmp/ScrProgress.py:344
 msgid "GTalk accounts loaded."
-msgstr "GTalk hesapları yüklendi."
+msgstr "GTalk hesaplar yüklendi."
 
-#: .tmp/ScrProgress.py:352
+#: .tmp/ScrProgress.py:353
 msgid "E-Mail Accounts"
-msgstr "E-Posta Hesapları"
+msgstr "E-Posta Hesaplar"
 
-#: .tmp/ScrProgress.py:360
+#: .tmp/ScrProgress.py:361
 msgid "E-Mail Messages"
 msgstr "Epostalar"
 
-#: .tmp/ScrProgress.py:368
+#: .tmp/ScrProgress.py:369
 msgid "News Accounts"
-msgstr "Haber Hesapları"
+msgstr "Haber Hesaplar"
 
-#: .tmp/ScrProgress.py:387
+#: .tmp/ScrProgress.py:389
 msgid "Desktop Links"
-msgstr "Masaüstü Bağlantıları"
+msgstr "Masast Bağlantılar"
 
-#: .tmp/ScrProgress.py:394
-#, python-format
-msgid "Folder '%s' cannot be created, please choose another folder!"
-msgstr "'%s' klasörü oluşturulamadı, lütfen başka bir klasör seçin."
+#: .tmp/ScrProgress.py:396
+#, fuzzy, python-format
+msgid "Folder '%s' could not be created, please choose another folder!"
+msgstr "'%s' klasör oluşturulamadı, lütfen başka bir klasör seçin."
 
-#: .tmp/ScrProgress.py:398
+#: .tmp/ScrProgress.py:400
 #, python-format
 msgid ""
 "You don't have permission to write to folder '%s', please choose another "
 "folder!"
 msgstr "'%s' klasörüne yazma izniniz yok, lütfen başka bir klasör seçin."
 
-#: .tmp/ScrProgress.py:409
-#, python-format
+#: .tmp/ScrProgress.py:411
+#, fuzzy, python-format
 msgid ""
-"Total size of files you've chosen is %(size)d MB, but you have only %(free)d "
-"MB of free space!"
+"Total size of files you've selected is %(size)d MB, but you have only %(free)"
+"d MB of free space!"
 msgstr ""
-"Seçtiğiniz dosyaların toplam boyutu %(size)d MB, fakat sadece %(free)d MB "
-"boş yer var."
+"Seçtiğiniz dosyalarn toplam boyutu %(size)d MB, fakat sadece %(free)d MB boş "
+"yer var."
 
-#: .tmp/ScrProgress.py:422
+#: .tmp/ScrProgress.py:425
 msgid "Wallpaper changed."
 msgstr "Duvar kağıdı değiştirildi."
 
-#: .tmp/ScrProgress.py:435
+#: .tmp/ScrProgress.py:438
 msgid "Bookmarks saved."
 msgstr "Yer imleri kaydedildi."
 
-#: .tmp/ScrProgress.py:447
+#: .tmp/ScrProgress.py:450
 msgid "Mail Accounts saved."
-msgstr "E-posta Hesapları kaydedildi."
+msgstr "E-posta Hesaplar kaydedildi."
 
-#: .tmp/ScrProgress.py:459
+#: .tmp/ScrProgress.py:462
 msgid "Accounts saved."
-msgstr "Hesapları kaydedildi."
+msgstr "Hesaplar kaydedildi."
 
-#: .tmp/ScrProgress.py:470
+#: .tmp/ScrProgress.py:473
 msgid "News Accounts saved."
-msgstr "Haber hesapları kaydedildi."
+msgstr "Haber hesaplar kaydedildi."
 
-#: .tmp/ScrProgress.py:481
+#: .tmp/ScrProgress.py:484
 msgid "Instant Messenger Accounts saved."
-msgstr "Anında Mesajlaşma hesapları kaydedildi."
+msgstr "Anında Mesajlama hesaplar kaydedildi."
 
-#: .tmp/ScrProgress.py:489
+#: .tmp/ScrProgress.py:493
 #, python-format
 msgid "Link '%s' created."
-msgstr "'%s' bağlantısı oluşturuldu."
+msgstr "'%s' bağlantısı oluturuldu."
 
-#: .tmp/ScrProgress.py:502
+#: .tmp/ScrProgress.py:506
 msgid "Nothing done, because no option selected. You can close the wizard..."
-msgstr "Herhangi bir işlem yapılmadı. Sihirbazı kapatabilirsiniz."
+msgstr "Herhangi bir işlem yaplmadı. Sihirbaz kapatabilirsiniz."
 
-#: .tmp/ScrProgress.py:504
+#: .tmp/ScrProgress.py:508
 msgid "All operations completed. You can close the wizard..."
-msgstr "Tüm işlemler tamamlandı. Sihirbazı kapatabilirsiniz."
+msgstr "Tüm işlemler tamamlandı. Sihirbaz kapatabilirsiniz."
 
 #: .tmp/ScrSummary.py:25 .tmp/ui_summaryWidget.py:54
 msgid "Summary"
@@ -299,101 +304,83 @@ msgid "Options Settings"
 msgstr "Tercihler"
 
 #: .tmp/ScrSummary.py:49
-#, python-format
-msgid "Selected Options: <b>%s</b>"
+#, fuzzy, python-format
+msgid "Option %s : <b>%s</b>"
 msgstr "Seçili Tercihler: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:53
+#: .tmp/ScrSummary.py:54
 msgid "Destination Settings"
-msgstr "Hedef Ayarları"
+msgstr "Hedef Ayarlar"
 
-#: .tmp/ScrSummary.py:56
-#, python-format
-msgid "Selected Destination: <b>Copy Link to %s</b>"
+#: .tmp/ScrSummary.py:57
+#, fuzzy, python-format
+msgid "Linked Destination to: <b> %s </b>"
+msgstr "Seili Hedef: <b>Bağlantıyı %s konumuna kopyala</b>"
+
+#: .tmp/ScrSummary.py:59
+#, fuzzy, python-format
+msgid "Copied Destination to: <b> %s </b>"
 msgstr "Seçili Hedef: <b>Bağlantıyı %s konumuna kopyala</b>"
-
-#: .tmp/ScrSummary.py:58
-#, python-format
-msgid "Selected Destination: <b>Copy Destination to %s</b>"
-msgstr "Seçili Hedef: <b>Hedefi %s konumuna kopyala</b>"
 
 #: .tmp/ScrUserFiles.py:142
 msgid "Selecting Files"
 msgstr "Dosya Seçimi"
 
-#: .tmp/ScrUserFiles.py:176
+#: .tmp/ScrUserFiles.py:177
 msgid "My Documents"
 msgstr "Belgelerim"
 
-#: .tmp/ScrUserFiles.py:177
-msgid "Desktop"
-msgstr "Masaüstü"
-
 #: .tmp/ScrUserFiles.py:178
+msgid "Desktop"
+msgstr "Masasüstü"
+
+#: .tmp/ScrUserFiles.py:179
 msgid "My Music"
 msgstr "Müziğim"
 
-#: .tmp/ScrUserFiles.py:179
+#: .tmp/ScrUserFiles.py:180
 msgid "My Pictures"
 msgstr "Resimlerim"
 
-#: .tmp/ScrUserFiles.py:180
+#: .tmp/ScrUserFiles.py:181
 msgid "My Video"
-msgstr "Videolarım"
+msgstr "Videolarm"
 
-#: .tmp/ScrUser.py:61
+#: .tmp/ScrUser.py:65
 msgid "Selecting User"
 msgstr "Kullanıcı Seçimi"
 
-#: .tmp/ScrUser.py:62
+#: .tmp/ScrUser.py:66
 msgid "User Profiles"
 msgstr "Kullanıcı Profilleri"
 
-#: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
+#: .tmp/ScrUser.py:101
+msgid ""
+"There aren't any Microsoft Windows partitions to migrate! Please check your "
+"mounted partitions..."
+msgstr "Göç ettirilecek Microsoft Window bölümü bulunmamakta! Bağlı bölümlerinizi kontrol edin..."
+
+#: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:44
 msgid "Welcome"
 msgstr "Hoş geldiniz"
 
-#: .tmp/ui_main.py:130
+#: .tmp/ui_main.py:118
 msgid "Migration Tool"
 msgstr "Göç Aracı"
 
-#: .tmp/ui_main.py:131
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Welcome to Migration Tool!</span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Göç Aracı'na Hoş Geldiniz</span></p></body></html>"
-
-#: .tmp/ui_main.py:136
+#: .tmp/ui_main.py:119
 msgid "Cancel"
 msgstr "İptal"
 
-#: .tmp/ui_main.py:137
+#: .tmp/ui_main.py:120
 msgid "Back"
 msgstr "Geri"
 
-#: .tmp/ui_main.py:138
+#: .tmp/ui_main.py:121
 msgid "Next"
 msgstr "İleri"
 
-#: .tmp/ui_main.py:139
+#: .tmp/ui_main.py:122
 msgid "Finish"
 msgstr "Bitir"
 
@@ -420,8 +407,8 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda uygulanacak."
-"</span></p></body></html>"
+"size:12pt; font-weight:600;\">Ayarlarnz bir sonraki ekranda uygulanacak.</"
+"span></p></body></html>"
 
 #: .tmp/ui_userFilesWidget.py:45
 msgid "Form"
@@ -437,14 +424,15 @@ msgstr "Bağlantıları masaüstüme koy"
 
 #: .tmp/ui_userFilesWidget.py:48
 msgid "Copy files to directory :"
-msgstr "Dosyaları dizine kopyala:"
+msgstr "Dosyalar dizine kopyala:"
 
 #: .tmp/ui_userFilesWidget.py:49
 msgid "~/Desktop"
 msgstr "~/Desktop"
 
 #: .tmp/ui_userFilesWidget.py:50
-msgid "Directtory"
+#, fuzzy
+msgid "Directory"
 msgstr "Dizin"
 
 #: .tmp/ui_userFilesWidget.py:51
@@ -453,23 +441,48 @@ msgstr "Boyut"
 
 #: .tmp/ui_usersItemWidget.py:59
 msgid "Set or unset entry as default boot entry."
-msgstr ""
-"Kaydı öntanımlı açılış kaydı olarak ata ya da atanmışlık durumunu kaldır."
+msgstr "Kaydı öntanımlı açılış girişi olarak olarak ata ya da öntanımlı durumunu kaldır."
 
 #: .tmp/ui_usersWidget.py:36
 msgid "Users"
 msgstr "Kullanıcılar"
 
-#: .tmp/ui_welcomeWidget.py:44
+#: .tmp/ui_welcomeWidget.py:45
+#, fuzzy
 msgid ""
-"This application, called Migration Tool, will help you transfer files and "
-"settings from your existing operating systems to Pardus with this "
-"application. Please click Next to personalize your desktop. \n"
+"This application, called Migration Tool, helps you transfer files and "
+"settings from other operating systems to Pardus. Please click Next to "
+"transfer your files. \n"
 "\n"
 "Pardus is a GNU/Linux distribution, targeting at computer literate users' "
 "basic desktop needs; helps you connect to internet, read e-mails, work with "
 "office documents and more!"
 msgstr ""
-"Göç Aracı diğer işletim sistemlerindeki dosya ve ayarlarınızı Pardus'a "
-"aktarmanıza yardımcı olur. İşleme başlamak için İleri'ye tıklayın."
+"Göç Aracı diğer işletim sistemlerindeki dosya ve ayarlarınızı Pardus'a aktarmanıza "
+"yardımcı olur. İşleme başlamak için İleri'ye tıklayın."
 
+#~ msgid "Selected Destination: <b>Copy Destination to %s</b>"
+#~ msgstr "Seili Hedef: <b>Hedefi %s konumuna kopyala</b>"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">Welcome to Migration Tool!</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600;\">G Arac'na Ho Geldiniz</span></p></body></html>"
