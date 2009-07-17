@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: migration\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 17:56+0300\n"
-"PO-Revision-Date: 2009-07-10 12:09+0200\n"
+"PO-Revision-Date: 2009-07-17 17:13+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -149,27 +149,24 @@ msgid "Wallpaper"
 msgstr "Skrivbordsunderlägg"
 
 #: .tmp/ScrProgress.py:254
-#, fuzzy
 msgid "Firefox bookmarks could not be loaded."
-msgstr "Kan inte läsa in bokmärken från Firefox."
+msgstr "Kunde inte läsa bokmärken från Firefox."
 
 #: .tmp/ScrProgress.py:256
 msgid "Firefox bookmarks loaded."
 msgstr "Firefox bokmärken inlästa."
 
 #: .tmp/ScrProgress.py:266
-#, fuzzy
 msgid "Opera bookmarks could not be loaded."
-msgstr "Kan inte läsa in bokmärken från Opera."
+msgstr "Kunde inte läsa bokmärken från Opera."
 
 #: .tmp/ScrProgress.py:268
 msgid "Opera bookmarks loaded."
 msgstr "Operas bokmärken inlästa."
 
 #: .tmp/ScrProgress.py:278
-#, fuzzy
 msgid "Internet Explorer favorites could not be loaded."
-msgstr "Kan inte läsa in bokmärken från Internet Explorer."
+msgstr "Kunde inte läsa bokmärken från Internet Explorer."
 
 #: .tmp/ScrProgress.py:280
 msgid "Internet Explorer favorites loaded."
@@ -180,7 +177,6 @@ msgid "Firefox is open. Please close it first to continue..."
 msgstr "Firefox körs, vänligen avsluta det för att fortsätta..."
 
 #: .tmp/ScrProgress.py:305
-#, fuzzy
 msgid "Windows Mail accounts could not be loaded."
 msgstr "Konton från Windows Mail kunde inte läsas in."
 
@@ -189,7 +185,6 @@ msgid "Windows Mail accounts loaded."
 msgstr "Konton från Windows Mail lästes in."
 
 #: .tmp/ScrProgress.py:318
-#, fuzzy
 msgid "Thunderbird accounts could be loaded."
 msgstr "Konton från Thunderbird kunde inte läsas in."
 
@@ -198,7 +193,6 @@ msgid "Thunderbird accounts loaded."
 msgstr "Konton från Thunderbird lästes in."
 
 #: .tmp/ScrProgress.py:330
-#, fuzzy
 msgid "MSN accounts could be loaded."
 msgstr "Konton från MSN kunde inte läsas in."
 
@@ -207,7 +201,6 @@ msgid "MSN accounts loaded."
 msgstr "Konton från MSN lästes in."
 
 #: .tmp/ScrProgress.py:342
-#, fuzzy
 msgid "GTalk accounts could not be loaded."
 msgstr "Konton från GTalk kunde inte läsas in."
 
@@ -231,8 +224,7 @@ msgstr "Nyhetskonton"
 msgid "Desktop Links"
 msgstr "Skrivbordsgenvägar"
 
-#: .tmp/ScrProgress.py:396
-#, fuzzy, python-format
+#: .tmp/ScrProgress.py:396, python-format
 msgid "Folder '%s' could not be created, please choose another folder!"
 msgstr "Kunde inte skapa katalogen '%s', vänligen välj en annan katalog!"
 
@@ -245,8 +237,7 @@ msgstr ""
 "Du är inte behörig att skriva till katalogen '%s', vänligen välj en annan "
 "katalog!"
 
-#: .tmp/ScrProgress.py:411
-#, fuzzy, python-format
+#: .tmp/ScrProgress.py:411, python-format
 msgid ""
 "Total size of files you've selected is %(size)d MB, but you have only %(free)"
 "d MB of free space!"
@@ -310,23 +301,20 @@ msgid "Options Settings"
 msgstr "Inställningar"
 
 #: .tmp/ScrSummary.py:49
-#, fuzzy
 msgid "Option %1 : <b>%2</b>"
-msgstr "Valda åtgärder: <b>%s</b>"
+msgstr "Alternativ %1: <b>%2</b>"
 
 #: .tmp/ScrSummary.py:54
 msgid "Destination Settings"
 msgstr "Målinställningar"
 
-#: .tmp/ScrSummary.py:57
-#, fuzzy, python-format
+#: .tmp/ScrSummary.py:57, python-format
 msgid "Linked Destination to: <b> %s </b>"
-msgstr "Valt mål: <b>Kopiera länkar till %s</b>"
+msgstr "Länkade till: <b> %s </b>"
 
-#: .tmp/ScrSummary.py:59
-#, fuzzy, python-format
+#: .tmp/ScrSummary.py:59, python-format
 msgid "Copied Destination to: <b> %s </b>"
-msgstr "Valt mål: <b>Kopiera länkar till %s</b>"
+msgstr "Kopierade till: <b> %s </b>"
 
 #: .tmp/ScrUserFiles.py:142
 msgid "Selecting Files"
@@ -365,6 +353,8 @@ msgid ""
 "There aren't any Microsoft Windows partitions to migrate! Please check your "
 "mounted partitions..."
 msgstr ""
+"Det finns inte någon Windowsinstallation att migrera! Vänligen kontrollera "
+"dina monterade partitioner..."
 
 #: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:44
 msgid "Welcome"
@@ -437,7 +427,6 @@ msgid "~/Desktop"
 msgstr "~/Desktop"
 
 #: .tmp/ui_userFilesWidget.py:50
-#, fuzzy
 msgid "Directory"
 msgstr "Katalog"
 
@@ -454,7 +443,6 @@ msgid "Users"
 msgstr "Användare"
 
 #: .tmp/ui_welcomeWidget.py:45
-#, fuzzy
 msgid ""
 "This application, called Migration Tool, helps you transfer files and "
 "settings from other operating systems to Pardus. Please click Next to "
@@ -464,9 +452,9 @@ msgid ""
 "basic desktop needs; helps you connect to internet, read e-mails, work with "
 "office documents and more!"
 msgstr ""
-"Det här programmet, Migreringsverktyget hjälper dig med överföring av filer "
+"Det här programmet, Migreringsverktyget, hjälper dig med överföring av filer "
 "och inställningar från ditt befintliga operativsystem till Pardus. Vänligen "
-"tryck Nästa för att anpassa ditt skrivbord.\n"
+"tryck Nästa för att överföra filer.\n"
 "\n"
 "Pardus är en GNU/Linux-distribution med inriktning på datoranvändarens "
 "grundläggande behov, du kan bland annat ansluta till Internet, läsa e-post "
