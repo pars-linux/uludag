@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 15:58+0300\n"
+"POT-Creation-Date: 2009-07-17 15:50+0300\n"
 "PO-Revision-Date: 2009-07-16 20:36-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <de@li.org>\n"
@@ -43,8 +43,8 @@ msgstr ""
 msgid "Install Package(s)"
 msgstr "Pakete installieren"
 
-#: .tmp/ui_basketdialog.py:81
 # Zweifel..
+#: .tmp/ui_basketdialog.py:81
 msgid "Download Size:"
 msgstr "Download Grösse:"
 
@@ -93,23 +93,23 @@ msgstr ""
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Vorbereitung PiSi...</h3>"
 
-#: .tmp/progressdialog.py:73 .tmp/ui_progressdialog.py:152
+#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:152
 msgid "Status:"
 msgstr "Status:"
 
-#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:149
+#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:149
 msgid "--  / --"
 msgstr ""
 
-#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:148
+#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:148
 msgid "Time remaining:"
 msgstr "Verbleibende Zeit:"
 
-#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:150
+#: .tmp/progressdialog.py:77 .tmp/ui_progressdialog.py:150
 msgid "--:--:--"
 msgstr ""
 
-#: .tmp/progressdialog.py:79
+#: .tmp/progressdialog.py:81
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Vorgang wird abgebrochen...</b>"
 
@@ -127,7 +127,8 @@ msgstr ""
 
 #: .tmp/settingsdialog.py:128
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
+msgstr ""
+"Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
 
 #: .tmp/settingsdialog.py:129
 msgid "Warning"
@@ -328,8 +329,8 @@ msgstr "&Proxy"
 msgid "Update"
 msgstr "Aktualisieren"
 
-#: .tmp/tray.py:54 .tmp/tray.py:64
 # Zweifel - habe hier Gesamt gelöscht, und Alle hineingeschrieben (kh)
+#: .tmp/tray.py:54 .tmp/tray.py:64
 msgid "All"
 msgstr "Alle"
 
@@ -456,15 +457,18 @@ msgstr "Zu gewähltem Paket abhängige(s) Paket(e), die auch entfernt werden:"
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
+msgstr ""
+"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
 
 #: .tmp/statemanager.py:123 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
 msgid "Currently your basket is empty."
 msgstr "Im Augenblick ist Ihr Korb leer."
 
 #: .tmp/statemanager.py:125
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Momentan <b>%1</b> Paket(e) ausgewählt mit einer Gesamtgrösse von <b>%2</b> "
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Momentan <b>%1</b> Paket(e) ausgewählt mit einer Gesamtgrösse von <b>%2</b> "
 
 # zweifel reverse, "gegen" (original Tasma), "rückwärts", "höheren.." ?
 #: .tmp/statemanager.py:128
@@ -563,7 +567,8 @@ msgstr "Netzwerkfehler"
 
 #: .tmp/pm-install.py:74 .tmp/mainwidget.py:169
 msgid "Please check your network connections and try again."
-msgstr "Bitte prüfen Sie Ihre Netzwerkverbindung und versuchen Sie es noch einmal."
+msgstr ""
+"Bitte prüfen Sie Ihre Netzwerkverbindung und versuchen Sie es noch einmal."
 
 #: .tmp/pm-install.py:76 .tmp/mainwidget.py:171
 msgid "Authorization Error"
@@ -593,20 +598,20 @@ msgstr "Pakete zu installaieren:"
 msgid "Package Installer is already started!"
 msgstr "Paket Installer ist schon gestartet"
 
-#: .tmp/packagedelegate.py:116
+#: .tmp/packagedelegate.py:117
 msgid "Description:"
 msgstr "Beschreibung:"
 
 # oder Version?
-#: .tmp/packagedelegate.py:128
+#: .tmp/packagedelegate.py:129
 msgid "Release:"
 msgstr "Veröffentlichung:"
 
-#: .tmp/packagedelegate.py:138
+#: .tmp/packagedelegate.py:139
 msgid "Repository:"
 msgstr "Depot:"
 
-#: .tmp/packagedelegate.py:147
+#: .tmp/packagedelegate.py:148
 msgid "Package Size:"
 msgstr "Paketgrösse:"
 
@@ -671,4 +676,3 @@ msgstr ""
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
-
