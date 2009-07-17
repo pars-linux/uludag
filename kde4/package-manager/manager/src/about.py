@@ -18,7 +18,7 @@ from PyKDE4.kdecore import *
 appName     = "package-manager"
 catalog     = appName
 programName = ki18n("Package Manager")
-version     = "2.0_rc2"
+version     = "2.0"
 description = ki18n("Package Manager")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2009 TUBITAK/UEKAE")
