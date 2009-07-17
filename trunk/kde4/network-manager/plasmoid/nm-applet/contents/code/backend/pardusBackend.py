@@ -41,6 +41,9 @@ class NetworkIface:
     def info(self, package, profile):
         return self.link.Network.Link[package].connectionInfo(str(profile))
 
+    def getMaxQuality(self, device):
+        return int(self.link.Network.Link['wireless_tools'].scanRemote(device)['max_quality'])
+
     def handler(self, *args):
         pass
 
