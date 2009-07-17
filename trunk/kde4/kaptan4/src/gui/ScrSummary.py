@@ -83,7 +83,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         if self.styleSettings["hasChanged"] == False:
             content.append(item % ki18n("You haven't selected any style.").toString())
         else:
-            content.append(item % ki18n("Selected Style: <b>%s</b>").toString() % self.styleSettings["summaryMessage"])
+            content.append(item % ki18n("Selected Style: <b>%s</b>").toString() % unicode(self.styleSettings["summaryMessage"]))
 
         content.append(end)
 
@@ -208,10 +208,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
             hasChanged = True
             configKdeGlobals = KConfig("kdeglobals")
             group = configKdeGlobals.group("General")
-            group.writeEntry("widgetStyle", self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["widgetStyle"])
+            group.writeEntry("widgetStyle", self.styleSettings["styleDetails"][unicode(self.styleSettings["styleName"])]["widgetStyle"])
 
             groupIconTheme = configKdeGlobals.group("Icons")
-            groupIconTheme.writeEntry("Theme", self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["iconTheme"])
+            groupIconTheme.writeEntry("Theme", self.styleSettings["styleDetails"][unicode(self.styleSettings["styleName"])]["iconTheme"])
 
             configKdeGlobals.sync()
 
@@ -223,7 +223,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.IconChanged, i)
 
             # Change widget style & color
-            for key, value in self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["colorScheme"].items():
+            for key, value in self.styleSettings["styleDetails"][unicode(self.styleSettings["styleName"])]["colorScheme"].items():
                 colorGroup = configKdeGlobals.group(key)
                 for key2, value2 in value.items():
                         colorGroup.writeEntry(str(key2), str(value2))
@@ -233,7 +233,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             configPlasmaRc = KConfig("plasmarc")
             groupDesktopTheme = configPlasmaRc.group("Theme")
-            groupDesktopTheme.writeEntry("name", self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["desktopTheme"])
+            groupDesktopTheme.writeEntry("name", self.styleSettings["styleDetails"][unicode(self.styleSettings["styleName"])]["desktopTheme"])
             configPlasmaRc.sync()
 
             configPlasmaApplet = KConfig("plasma-appletsrc")
@@ -243,13 +243,13 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 subcomponent = subgroup.readEntry('plugin')
                 if subcomponent == 'panel':
                     print subcomponent
-                    subgroup.writeEntry('location', self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["panelPosition"])
+                    subgroup.writeEntry('location', self.styleSettings["styleDetails"][unicode(self.styleSettings["styleName"])]["panelPosition"])
 
             configPlasmaApplet.sync()
 
             configKwinRc = KConfig("kwinrc")
             groupWindowDecoration = configKwinRc.group("Style")
-            groupWindowDecoration.writeEntry("PluginLib", self.styleSettings["styleDetails"][self.styleSettings["styleName"]]["windowDecoration"])
+            groupWindowDecoration.writeEntry("PluginLib", self.styleSettings["styleDetails"][unicode(self.styleSettings["styleName"])]["windowDecoration"])
             configKwinRc.sync()
 
             session = dbus.SessionBus()
