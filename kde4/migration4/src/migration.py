@@ -112,8 +112,12 @@ class Migration(QtGui.QWidget):
         if _return[0]:
             self.stackMove(self.getCurrentStackId(self.moveInc))
             self.moveInc = 1
-        else:
-            kdeui.KMessageBox.error(self, i18n(_return[1]))
+        elif not _return[0]:
+            if not _return[1]:
+                self.stackMove(self.getCurrentStackId(self.moveInc))
+                self.moveInc = 1
+            else:
+                kdeui.KMessageBox.error(self, i18n(_return[1]))
 
     def slotBack(self):
         self.menuText = ""
