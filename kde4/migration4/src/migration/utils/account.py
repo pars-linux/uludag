@@ -287,7 +287,7 @@ class Account:
             # Add POP3 Account:
             if account["type"] == "POP3":
                 validAccount = None
-                if getResourceConfigGroup():
+                if getResourceConfigGroup(account):
                     for accountGroup in getResourceConfigGroup(account):
                         if not isKMailAccountValid(accountGroup, account):
                             continue
