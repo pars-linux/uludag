@@ -233,4 +233,4 @@ class Widget(QtGui.QWidget, ScreenWidget):
             ctx.fileOptions = self.getOptions()
             return (True, None)
         else:
-            return (False, "There isn't selected any Options...")
+            return (False, None)
