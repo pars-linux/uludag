@@ -70,6 +70,7 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.actionLabel.setText(i18n("<h3>Preparing PiSi...</h3>"))
         self.progressBar.setValue(0)
         self.operationInfo.setText("")
+        self.completedInfo.setText("")
         self.statusLabel.setText(i18n("Status:"))
         self.statusInfo.setText(i18n("--  / --"))
         self.timeLabel.setText(i18n("Time remaining:"))
