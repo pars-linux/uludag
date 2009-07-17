@@ -46,6 +46,9 @@
       <layout class="QGridLayout" name="gridLayout_5">
        <item row="0" column="0">
         <widget class="QLabel" name="labelGoodbye">
+         <property name="styleSheet">
+          <string notr="true">color:black</string>
+         </property>
          <property name="text">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -90,6 +93,9 @@ p, li { white-space: pre-wrap; }
            <strikeout>false</strikeout>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">v</string>
+         </property>
          <property name="title">
           <string>My Smolt Page</string>
          </property>
@@ -110,6 +116,9 @@ p, li { white-space: pre-wrap; }
               <weight>50</weight>
               <bold>false</bold>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:black</string>
             </property>
             <property name="text">
              <string>Go to your Smolt page and rate your hardware components.</string>
@@ -179,6 +188,9 @@ p, li { white-space: pre-wrap; }
            <strikeout>false</strikeout>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color:black</string>
+         </property>
          <property name="title">
           <string>Migration Wizard</string>
          </property>
@@ -199,6 +211,9 @@ p, li { white-space: pre-wrap; }
               <weight>50</weight>
               <bold>false</bold>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:black</string>
             </property>
             <property name="text">
              <string>A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus.</string>
@@ -268,6 +283,9 @@ p, li { white-space: pre-wrap; }
            <strikeout>false</strikeout>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color:black</string>
+         </property>
          <property name="title">
           <string>System Settings</string>
          </property>
@@ -281,25 +299,6 @@ p, li { white-space: pre-wrap; }
           <bool>false</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
-          <item row="0" column="0">
-           <widget class="QLabel" name="labelSystemSettings">
-            <property name="font">
-             <font>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>System Settings is a configuration tool for Pardus.</string>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
           <item row="0" column="1">
            <spacer name="horizontalSpacer">
             <property name="orientation">
@@ -315,6 +314,28 @@ p, li { white-space: pre-wrap; }
              </size>
             </property>
            </spacer>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelSystemSettings">
+            <property name="font">
+             <font>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:black</string>
+            </property>
+            <property name="text">
+             <string>System Settings is a configuration tool for Pardus.</string>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
           <item row="0" column="2">
            <widget class="QPushButton" name="buttonSystemSettings">
@@ -345,9 +366,6 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
          </layout>
-         <zorder>labelSystemSettings</zorder>
-         <zorder>buttonSystemSettings</zorder>
-         <zorder>labelKaptanIntro_3</zorder>
         </widget>
        </item>
        <item>
@@ -357,6 +375,9 @@ p, li { white-space: pre-wrap; }
            <weight>75</weight>
            <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:black</string>
          </property>
          <property name="title">
           <string>User Groups and Help Pages</string>
@@ -369,6 +390,9 @@ p, li { white-space: pre-wrap; }
               <weight>50</weight>
               <bold>false</bold>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:black</string>
             </property>
             <property name="text">
              <string>Pardus community, user lists, IRC channels, wikis and more.</string>

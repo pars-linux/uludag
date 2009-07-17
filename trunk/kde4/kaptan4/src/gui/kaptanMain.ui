@@ -60,7 +60,7 @@ QStackedWidget#mainStack {
            <bool>false</bool>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">color:black</string>
           </property>
           <property name="text">
            <string/>
@@ -163,7 +163,7 @@ margin: 10px;
         <item>
          <widget class="QPushButton" name="buttonCancel">
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">color:black</string>
           </property>
           <property name="text">
            <string>Cancel</string>
@@ -186,7 +186,7 @@ margin: 10px;
         <item>
          <widget class="QPushButton" name="buttonBack">
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">color:black</string>
           </property>
           <property name="text">
            <string>Back</string>
@@ -196,7 +196,7 @@ margin: 10px;
         <item>
          <widget class="QPushButton" name="buttonNext">
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">color:black</string>
           </property>
           <property name="text">
            <string>Next</string>
@@ -206,7 +206,7 @@ margin: 10px;
         <item>
          <widget class="QPushButton" name="buttonFinish">
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">color:black</string>
           </property>
           <property name="text">
            <string>Finish</string>

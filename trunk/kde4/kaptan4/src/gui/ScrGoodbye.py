@@ -14,10 +14,13 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KGlobal, KConfig
 #from PyKDE4.kutils import KCModuleInfo, KCModuleProxy
-import subprocess
+import subprocess, sys
 from gui.ScreenWidget import ScreenWidget
 from gui.goodbyeWidget import Ui_goodbyeWidget
 import gui.ScrSmolt as smoltWidget
+
+sys.path.append('/usr/kde/4/share/apps/migration/')
+from migration.utils import partition
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Goodbye")
@@ -36,6 +39,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.helpPageUrl = "http://www.pardus.org.tr/eng/contact.html"
 
         self.smoltUrl = "http://smolt.pardus.org.tr:8090"
+
+        users = partition.allUsers()
+        if not users:
+            self.ui.migrationGroupBox.hide()
 
         self.ui.buttonSystemSettings_2.connect(self.ui.buttonSystemSettings_2, SIGNAL("clicked()"), self.startSmolt)
         self.ui.buttonMigration.connect(self.ui.buttonMigration, SIGNAL("clicked()"), self.startMigration)

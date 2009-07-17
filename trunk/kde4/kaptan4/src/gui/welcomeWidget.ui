@@ -61,6 +61,9 @@
    </item>
    <item row="1" column="1">
     <widget class="QLabel" name="labelKaptanIntro">
+     <property name="styleSheet">
+      <string notr="true">color:black</string>
+     </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>

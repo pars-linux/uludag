@@ -53,9 +53,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
             parser = DesktopParser()
             parser.read("/usr/kde/4/share/apps/kaptan/gui/styles/" +str(desktopFiles))
             try:
-                styleName = parser.get_locale('Style', 'name', '')
+                styleName = parser.get_locale('Style', 'name[%s]'%self.catLang, '')
             except:
-                styleName = ki18n("No name")
+                styleName = parser.get_locale('Style', 'name', '')
             try:
                 styleDesc = parser.get_locale('Style', 'description[%s]'%self.catLang, '')
             except:
