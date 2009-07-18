@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 17:52+0300\n"
-"PO-Revision-Date: 17/07/09 16:40\n"
+"PO-Revision-Date: 18/07/09 15:31\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -59,9 +59,8 @@ msgid "PushButton"
 msgstr "Drukknop"
 
 #: code/widgets/notify.py:63
-#, fuzzy
 msgid "Network Manager"
-msgstr "Netwerkbeheer openen"
+msgstr "Netwerkbeheer"
 
 #: code/widgets/popupui.py:152
 msgid "Ethernet"
@@ -114,3 +113,4 @@ msgstr "Verbinding maken met <b>%1</b> .."
 #: code/main.py:330
 msgid "Icon Settings"
 msgstr "Pictograminstellingen"
+
