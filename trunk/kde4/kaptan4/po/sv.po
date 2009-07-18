@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 14:43+0300\n"
+"POT-Creation-Date: 2009-07-18 09:26+0300\n"
 "PO-Revision-Date: 2009-07-17 13:59+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -16,9 +16,282 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/ScrGoodbye.py:26 .tmp/ui_goodbyeWidget.py:208
+#: .tmp/goodbyeWidget.py:199 .tmp/ScrGoodbye.py:26
+#: .tmp/ui_goodbyeWidget.py:208
 msgid "Goodbye"
 msgstr "Hej då"
+
+#: .tmp/goodbyeWidget.py:200 .tmp/ui_goodbyeWidget.py:209
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:11pt; font-weight:600;\">Congratulations! </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:11pt; font-weight:600;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt; font-weight:600;\">You have finished all steps! Now you can "
+"continue to use Pardus or you can try the following applications:</span></"
+"p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:11pt; font-weight:600;\">Grattis! </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:11pt; font-weight:600;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt; font-weight:600;\">Du har nu klarat av alla steg! Nu kan du "
+"fortsätta med att använda Pardus eller så kan du prova följande program:</"
+"span></p></body></html>"
+
+#: .tmp/goodbyeWidget.py:207 .tmp/ui_goodbyeWidget.py:216
+msgid "My Smolt Page"
+msgstr "Min Smoltsida"
+
+#: .tmp/goodbyeWidget.py:208 .tmp/ui_goodbyeWidget.py:217
+msgid "Go to your Smolt page and rate your hardware components."
+msgstr "Gå till din Smoltsida och betygsätt din hårdvara."
+
+#: .tmp/goodbyeWidget.py:209 .tmp/goodbyeWidget.py:212
+#: .tmp/goodbyeWidget.py:215 .tmp/goodbyeWidget.py:218
+#: .tmp/ui_goodbyeWidget.py:218 .tmp/ui_goodbyeWidget.py:221
+#: .tmp/ui_goodbyeWidget.py:224 .tmp/ui_goodbyeWidget.py:227
+msgid "Start"
+msgstr "Kör"
+
+#: .tmp/goodbyeWidget.py:210 .tmp/ui_goodbyeWidget.py:219
+msgid "Migration Wizard"
+msgstr "Migreringsguiden"
+
+#: .tmp/goodbyeWidget.py:211 .tmp/ui_goodbyeWidget.py:220
+msgid ""
+"A wizard to transfer files and settings from existing operating systems (e."
+"g. Windows) to Pardus."
+msgstr ""
+"En guide som överför filer och inställningar från befintliga operativsystem "
+"(t.ex. Windows) till Pardus."
+
+#: .tmp/goodbyeWidget.py:213 .tmp/ui_goodbyeWidget.py:222
+msgid "System Settings"
+msgstr "Systeminställningar"
+
+#: .tmp/goodbyeWidget.py:214 .tmp/ui_goodbyeWidget.py:223
+msgid "System Settings is a configuration tool for Pardus."
+msgstr "Systeminställningar är ett verktyg för att anpassa Pardus."
+
+#: .tmp/goodbyeWidget.py:216 .tmp/ui_goodbyeWidget.py:225
+msgid "User Groups and Help Pages"
+msgstr "Användargrupper och hjälpsidor"
+
+#: .tmp/goodbyeWidget.py:217 .tmp/ui_goodbyeWidget.py:226
+msgid "Pardus community, user lists, IRC channels, wikis and more."
+msgstr "Pardusgemenskap, användarförteckningar, IRC-kanaler, wikis med mera."
+
+#: .tmp/kaptanMain.py:115 .tmp/ui_kaptanMain.py:120
+msgid "Kaptan Desktop"
+msgstr "Kaptan Skrivbord"
+
+#: .tmp/kaptanMain.py:116 .tmp/ui_kaptanMain.py:121
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: .tmp/kaptanMain.py:117 .tmp/ui_kaptanMain.py:122
+msgid "Back"
+msgstr "Bakåt"
+
+#: .tmp/kaptanMain.py:118 .tmp/ui_kaptanMain.py:123
+msgid "Next"
+msgstr "Nästa"
+
+#: .tmp/kaptanMain.py:119 .tmp/ui_kaptanMain.py:124
+msgid "Finish"
+msgstr "Avsluta"
+
+#: .tmp/keyboardWidget.py:69 .tmp/ui_keyboardWidget.py:69
+msgid "Keyboard"
+msgstr "Tangentbord"
+
+#: .tmp/keyboardWidget.py:70 .tmp/ui_keyboardWidget.py:70
+msgid "Try:"
+msgstr "Testa:"
+
+#: .tmp/keyboardWidget.py:71 .tmp/ui_keyboardWidget.py:71
+msgid "Configure your keyboard layout."
+msgstr "Anpassa tangentbordets layout."
+
+#: .tmp/menuWidget.py:76 .tmp/ui_menuWidget.py:77
+msgid "Menu"
+msgstr "Meny"
+
+#: .tmp/menuWidget.py:77 .tmp/ui_menuWidget.py:78
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Select a menu style:</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Välj en menystil:</span></p></body></html>"
+
+#: .tmp/menuWidget.py:82
+msgid "Kick-off (Advanced Menu)"
+msgstr "Kick-off (avancerad meny)"
+
+#: .tmp/menuWidget.py:83
+msgid "Classic (Simple Menu)"
+msgstr "Klassisk (enkel meny)"
+
+#: .tmp/menuWidget.py:84
+msgid "Lancelot (Experimental Menu)"
+msgstr "Lancelot (experimentell meny)"
+
+#: .tmp/mouseWidget.py:85 .tmp/ui_mouseWidget.py:89
+msgid "Mouse"
+msgstr "Mus"
+
+#: .tmp/mouseWidget.py:86 .tmp/ui_mouseWidget.py:90
+msgid ""
+"<p align=\"left\">If you are left-handed, you may prefer to swap the "
+"functions on the left and right buttons on your pointing device by choosing "
+"the \"Left handed\"option below. You can also select default click behaviour."
+"</p>"
+msgstr ""
+"<p align=\"left\">Om du är vänsterhänt kan du växla musknapparnas funktion "
+"genom att välja alternativet \"Vänsterhänt\" nedan. Du kan också välja "
+"klickbeteende.</p>"
+
+#: .tmp/mouseWidget.py:87 .tmp/ui_mouseWidget.py:91
+msgid "mouse icon"
+msgstr "Muspekare"
+
+#: .tmp/mouseWidget.py:88 .tmp/ui_mouseWidget.py:92
+msgid "Click Behaviour"
+msgstr "Klickbeteende"
+
+#: .tmp/mouseWidget.py:89 .tmp/ui_mouseWidget.py:93
+msgid "Single-click to open files and folders"
+msgstr "Enkelklicka för att öppna filer och dialoger"
+
+#: .tmp/mouseWidget.py:90 .tmp/ui_mouseWidget.py:94
+msgid "Dou&ble-click to open files and folders"
+msgstr "Dubbelklicka för att öppna filer och dialoger"
+
+#: .tmp/mouseWidget.py:91 .tmp/ui_mouseWidget.py:95
+msgid "Button Order"
+msgstr "Knappordning"
+
+#: .tmp/mouseWidget.py:92 .tmp/ui_mouseWidget.py:96
+msgid "Right Hand"
+msgstr "Högerhänt"
+
+#: .tmp/mouseWidget.py:93 .tmp/ui_mouseWidget.py:97
+msgid "Left Hand"
+msgstr "Vänsterhänt"
+
+#: .tmp/mouseWidget.py:94 .tmp/ui_mouseWidget.py:98
+msgid "Reverse scrolling"
+msgstr "Omvänd rullningsriktning"
+
+#: .tmp/networkWidget.py:25 .tmp/ui_networkWidget.py:25
+msgid "Network"
+msgstr "Nätverk"
+
+#: .tmp/packageWidget.py:68 .tmp/ui_packageWidget.py:71
+msgid "Package"
+msgstr "Paket"
+
+#: .tmp/packageWidget.py:69 .tmp/ui_packageWidget.py:72
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Package-manager is the graphical front-end of PiSi. You can "
+"easily install new programs and upgrade your system and also can see new "
+"upgrades of the programs periodically from the system tray with package "
+"manager.</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Pakethanteraren är Pisis grafiska framände. Du kan enkelt "
+"installera nya program och uppdatera ditt system. Du kan också se "
+"information om periodiska uppdateringar via systembrickan.</span></p></"
+"body></html>"
+
+#: .tmp/packageWidget.py:74 .tmp/ui_packageWidget.py:77
+msgid "picture label"
+msgstr "picture label"
+
+#: .tmp/packageWidget.py:75 .tmp/ui_packageWidget.py:78
+msgid "Updates"
+msgstr "Uppdateringar"
+
+#: .tmp/packageWidget.py:76 .tmp/ui_packageWidget.py:79
+msgid "Show in system  tray"
+msgstr "Visa i systembrickan"
+
+#: .tmp/packageWidget.py:77 .tmp/ui_packageWidget.py:80
+msgid "Check updates automatically for every"
+msgstr "Automatisk kontroll av uppdateringar var"
+
+#: .tmp/packageWidget.py:78 .tmp/ui_packageWidget.py:81
+msgid " hours"
+msgstr ":e timme"
+
+#: .tmp/packageWidget.py:79 .tmp/ui_packageWidget.py:82
+msgid "Repo"
+msgstr "Förråd"
+
+#: .tmp/packageWidget.py:80 .tmp/ui_packageWidget.py:83
+msgid "Contrib repo includes extra packages."
+msgstr "Contrib-förrådet innehåller extra paket."
+
+#: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:84
+msgid "Add contrib repo"
+msgstr "Lägg till contrib-förrådet"
 
 #: .tmp/ScrGoodbye.py:27
 msgid "Goodbye from Kaptan Wizard :)"
@@ -53,7 +326,8 @@ msgid "Simple Menu"
 msgstr "Enkel meny"
 
 #: .tmp/ScrMenu.py:49
-msgid "And old style menu from KDE 3."
+#, fuzzy
+msgid "An old style menu from KDE 3."
 msgstr "En äldre typ av meny från KDE 3."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:85
@@ -116,7 +390,7 @@ msgstr "På"
 msgid "Off"
 msgstr "Av"
 
-#: .tmp/ScrSmolt.py:31 .tmp/ui_smoltWidget.py:77
+#: .tmp/ScrSmolt.py:31 .tmp/smoltWidget.py:77 .tmp/ui_smoltWidget.py:77
 msgid "Smolt"
 msgstr "Smolt"
 
@@ -136,7 +410,7 @@ msgstr "Data"
 msgid "&Back"
 msgstr "Bakåt"
 
-#: .tmp/ScrSmolt.py:112 .tmp/ui_smoltWidget.py:79
+#: .tmp/ScrSmolt.py:112 .tmp/smoltWidget.py:79 .tmp/ui_smoltWidget.py:79
 msgid "&Privacy policy"
 msgstr "Integritetspolicy"
 
@@ -225,6 +499,7 @@ msgid "No"
 msgstr "Nej"
 
 #: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
+#: .tmp/welcomeWidget.py:42
 msgid "Welcome"
 msgstr "Välkommen"
 
@@ -298,270 +573,11 @@ msgstr "Insert some catchy title about wallpapers.."
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Underbara, häftiga utsökta skrivbordsunderlägg! \\m/"
 
-#: .tmp/ui_goodbyeWidget.py:209
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:11pt; font-weight:600;\">Congratulations! </span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"size:11pt; font-weight:600;\"></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:9pt; font-weight:600;\">You have finished all steps! Now you can "
-"continue to use Pardus or you can try the following applications:</span></"
-"p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:11pt; font-weight:600;\">Grattis! </span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"size:11pt; font-weight:600;\"></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:9pt; font-weight:600;\">Du har nu klarat av alla steg! Nu "
-"kan du fortsätta med att använda Pardus eller så kan du prova följande "
-"program:</span></"
-"p></body></html>"
-
-#: .tmp/ui_goodbyeWidget.py:216
-msgid "My Smolt Page"
-msgstr "Min Smoltsida"
-
-#: .tmp/ui_goodbyeWidget.py:217
-msgid "Go to your Smolt page and rate your hardware components."
-msgstr "Gå till din Smoltsida och betygsätt din hårdvara."
-
-#: .tmp/ui_goodbyeWidget.py:218 .tmp/ui_goodbyeWidget.py:221
-#: .tmp/ui_goodbyeWidget.py:224 .tmp/ui_goodbyeWidget.py:227
-msgid "Start"
-msgstr "Kör"
-
-#: .tmp/ui_goodbyeWidget.py:219
-msgid "Migration Wizard"
-msgstr "Migreringsguiden"
-
-#: .tmp/ui_goodbyeWidget.py:220
-msgid ""
-"A wizard to transfer files and settings from existing operating systems (e."
-"g. Windows) to Pardus."
-msgstr ""
-"En guide som överför filer och inställningar från befintliga operativsystem "
-"(t.ex. Windows) till Pardus."
-
-#: .tmp/ui_goodbyeWidget.py:222
-msgid "System Settings"
-msgstr "Systeminställningar"
-
-#: .tmp/ui_goodbyeWidget.py:223
-msgid "System Settings is a configuration tool for Pardus."
-msgstr "Systeminställningar är ett verktyg för att anpassa Pardus."
-
-#: .tmp/ui_goodbyeWidget.py:225
-msgid "User Groups and Help Pages"
-msgstr "Användargrupper och hjälpsidor"
-
-#: .tmp/ui_goodbyeWidget.py:226
-msgid "Pardus community, user lists, IRC channels, wikis and more."
-msgstr "Pardusgemenskap, användarförteckningar, IRC-kanaler, wikis med mera."
-
-#: .tmp/ui_kaptanMain.py:120
-msgid "Kaptan Desktop"
-msgstr "Kaptan Skrivbord"
-
-#: .tmp/ui_kaptanMain.py:121
-msgid "Cancel"
-msgstr "Avbryt"
-
-#: .tmp/ui_kaptanMain.py:122
-msgid "Back"
-msgstr "Bakåt"
-
-#: .tmp/ui_kaptanMain.py:123
-msgid "Next"
-msgstr "Nästa"
-
-#: .tmp/ui_kaptanMain.py:124
-msgid "Finish"
-msgstr "Avsluta"
-
-#: .tmp/ui_keyboardWidget.py:69
-msgid "Keyboard"
-msgstr "Tangentbord"
-
-#: .tmp/ui_keyboardWidget.py:70
-msgid "Try:"
-msgstr "Testa:"
-
-#: .tmp/ui_keyboardWidget.py:71
-msgid "Configure your keyboard layout."
-msgstr "Anpassa tangentbordets layout."
-
-#: .tmp/ui_menuWidget.py:77
-msgid "Menu"
-msgstr "Meny"
-
-#: .tmp/ui_menuWidget.py:78
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Select a menu style:</span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Välj en menystil:</span></p></body></html>"
-
-#: .tmp/ui_mouseWidget.py:88
-msgid "Mouse"
-msgstr "Mus"
-
-#: .tmp/ui_mouseWidget.py:89
-msgid ""
-"<p align=\"left\">If you are left-handed, you may prefer to swap the "
-"functions on the left and right buttons on your pointing device by choosing "
-"the \"Left handed\"option below. You can also select default click behaviour."
-"</p>"
-msgstr ""
-"<p align=\"left\">Om du är vänsterhänt kan du växla musknapparnas funktion "
-"genom att välja alternativet \"Vänsterhänt\" nedan. Du kan också välja "
-"klickbeteende.</p>"
-
-#: .tmp/ui_mouseWidget.py:90
-msgid "mouse icon"
-msgstr "Muspekare"
-
-#: .tmp/ui_mouseWidget.py:91
-msgid "Click Behaviour"
-msgstr "Klickbeteende"
-
-#: .tmp/ui_mouseWidget.py:92
-msgid "Single-click to open files and folders"
-msgstr "Enkelklicka för att öppna filer och dialoger"
-
-#: .tmp/ui_mouseWidget.py:93
-msgid "Dou&ble-click to open files and folders"
-msgstr "Dubbelklicka för att öppna filer och dialoger"
-
-#: .tmp/ui_mouseWidget.py:94
-msgid "Button Order"
-msgstr "Knappordning"
-
-#: .tmp/ui_mouseWidget.py:95
-msgid "Right Hand"
-msgstr "Högerhänt"
-
-#: .tmp/ui_mouseWidget.py:96
-msgid "Left Hand"
-msgstr "Vänsterhänt"
-
-#: .tmp/ui_mouseWidget.py:97
-msgid "Reverse scrolling"
-msgstr "Omvänd rullningsriktning"
-
-#: .tmp/ui_networkWidget.py:25
-msgid "Network"
-msgstr "Nätverk"
-
-#: .tmp/ui_packageWidget.py:71
-msgid "Package"
-msgstr "Paket"
-
-#: .tmp/ui_packageWidget.py:72
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Package-manager is the graphical front-end of PiSi. You can "
-"easily install new programs and upgrade your system and also can see new "
-"upgrades of the programs periodically from the system tray with package "
-"manager.</span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Pakethanteraren är Pisis grafiska framände. Du kan enkelt "
-"installera nya program och uppdatera ditt system. Du kan också se "
-"information om periodiska uppdateringar via systembrickan.</span></p></"
-"body></html>"
-
-#: .tmp/ui_packageWidget.py:77
-msgid "picture label"
-msgstr "picture label"
-
-#: .tmp/ui_packageWidget.py:78
-msgid "Updates"
-msgstr "Uppdateringar"
-
-#: .tmp/ui_packageWidget.py:79
-msgid "Show in system  tray"
-msgstr "Visa i systembrickan"
-
-#: .tmp/ui_packageWidget.py:80
-msgid "Check updates automatically for every"
-msgstr "Automatisk kontroll av uppdateringar var"
-
-#: .tmp/ui_packageWidget.py:81
-msgid " hours"
-msgstr ":e timme"
-
-#: .tmp/ui_packageWidget.py:82
-msgid "Repo"
-msgstr "Förråd"
-
-#: .tmp/ui_packageWidget.py:83
-msgid "Contrib repo includes extra packages."
-msgstr "Contrib-förrådet innehåller extra paket."
-
-#: .tmp/ui_packageWidget.py:84
-msgid "Add contrib repo"
-msgstr "Lägg till contrib-förrådet"
-
-#: .tmp/ui_searchWidget.py:52
+#: .tmp/searchWidget.py:50 .tmp/ui_searchWidget.py:52
 msgid "Desktop Search"
 msgstr "Skrivbordssökning"
 
-#: .tmp/ui_searchWidget.py:53
+#: .tmp/searchWidget.py:51 .tmp/ui_searchWidget.py:53
 msgid ""
 "Strigi desktop search allows searching for files by content instead of just "
 "by name."
@@ -569,15 +585,15 @@ msgstr ""
 "Strigi skrivbordssökning möjliggör filsökning baserat på innehåll i stället "
 "för på namn."
 
-#: .tmp/ui_searchWidget.py:54
+#: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:54
 msgid "Enable Strigi Desktop File Indexer"
 msgstr "Aktivera Strigi skrivbordssökning"
 
-#: .tmp/ui_smoltWidget.py:78
+#: .tmp/smoltWidget.py:78 .tmp/ui_smoltWidget.py:78
 msgid "&Send my profile"
 msgstr "&Skicka min profil"
 
-#: .tmp/ui_smoltWidget.py:80
+#: .tmp/smoltWidget.py:80 .tmp/ui_smoltWidget.py:80
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -659,43 +675,45 @@ msgstr ""
 "Also remember that users can delete their profiles at any time using \"<span "
 "style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></body></html>"
 
-#: .tmp/ui_styleitem.py:46 .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
+#: .tmp/styleitem.py:46 .tmp/uiitem.py:46 .tmp/ui_styleitem.py:46
+#: .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
+#: .tmp/wallpaperuiitem.py:46
 msgid "Form"
 msgstr "Form"
 
-#: .tmp/ui_styleitem.py:47
+#: .tmp/styleitem.py:47 .tmp/ui_styleitem.py:47
 msgid "styleName"
 msgstr "styleName"
 
-#: .tmp/ui_styleitem.py:48
+#: .tmp/styleitem.py:48 .tmp/ui_styleitem.py:48
 msgid "styleDesc"
 msgstr "styleDesc"
 
-#: .tmp/ui_styleWidget.py:65
+#: .tmp/styleWidget.py:63 .tmp/ui_styleWidget.py:65
 msgid "Themes"
 msgstr "Tema"
 
-#: .tmp/ui_styleWidget.py:66
+#: .tmp/styleWidget.py:64 .tmp/ui_styleWidget.py:66
 msgid "<b>Desktop Type:</b>"
 msgstr "<b>Skrivbordstyp:</b>"
 
-#: .tmp/ui_styleWidget.py:67
+#: .tmp/styleWidget.py:65 .tmp/ui_styleWidget.py:67
 msgid "Desktop view (KDE4 Style)"
 msgstr "Skrivbordsvy (KDE4-stil)"
 
-#: .tmp/ui_styleWidget.py:68
+#: .tmp/styleWidget.py:66 .tmp/ui_styleWidget.py:68
 msgid "Folder view (KDE3 Style)"
 msgstr "Katalogvy (KDE3-stil)"
 
-#: .tmp/ui_styleWidget.py:69
+#: .tmp/styleWidget.py:67 .tmp/ui_styleWidget.py:69
 msgid "<b>Number of Desktops:</b>"
 msgstr "<b>Antal skrivbord:</b>"
 
-#: .tmp/ui_summaryWidget.py:49
+#: .tmp/summaryWidget.py:48 .tmp/ui_summaryWidget.py:49
 msgid "Summary"
 msgstr "Sammanställning"
 
-#: .tmp/ui_summaryWidget.py:50
+#: .tmp/summaryWidget.py:49 .tmp/ui_summaryWidget.py:50
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -721,27 +739,29 @@ msgstr ""
 "size:12pt; font-weight:600;\">Dina inställningar kommer att sparas i nästa "
 "steg...</span></p></body></html>"
 
-#: .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
+#: .tmp/uiitem.py:47 .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
+#: .tmp/wallpaperuiitem.py:47
 msgid "wallPaperName"
 msgstr "wallPaperName"
 
-#: .tmp/ui_uiitem.py:48 .tmp/ui_wallpaperuiitem.py:48
+#: .tmp/uiitem.py:48 .tmp/ui_uiitem.py:48 .tmp/ui_wallpaperuiitem.py:48
+#: .tmp/wallpaperuiitem.py:48
 msgid "wallpaperDesc"
 msgstr "wallpaperDesc"
 
-#: .tmp/ui_wallpaperWidget.py:44
+#: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:43
 msgid "Wallpaper"
 msgstr "Skrivbordsunderlägg"
 
-#: .tmp/ui_wallpaperWidget.py:45
+#: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:44
 msgid "Choose Wallpaper From a File"
 msgstr "Välj skrivbordsunderlägg från en fil"
 
-#: .tmp/ui_wallpaperWidget.py:46
+#: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:45
 msgid "Don't change wallpaper"
 msgstr "Ändra inte skrivbordsunderlägg"
 
-#: .tmp/ui_welcomeWidget.py:44
+#: .tmp/ui_welcomeWidget.py:44 .tmp/welcomeWidget.py:43
 msgid ""
 "This application, called Kaptan Desktop, will help you with your basic but "
 "sufficient setup for your Pardus desktop in a quick manner. Please click "
@@ -773,15 +793,6 @@ msgstr ""
 
 #~ msgid "An experimental menu for KDE4"
 #~ msgstr "En experimentell meny för KDE 4"
-
-#~ msgid "Kick-off (Advanced Menu)"
-#~ msgstr "Kick-off (avancerad meny)"
-
-#~ msgid "Classic (Simple Menu)"
-#~ msgstr "Klassisk (enkel meny)"
-
-#~ msgid "Lancelot (Experimental Menu)"
-#~ msgstr "Lancelot (experimentell meny)"
 
 #~ msgid "No name"
 #~ msgstr "Inget namn"
