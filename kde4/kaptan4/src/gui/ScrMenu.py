@@ -46,7 +46,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 "menuIndex": 1,
                 "summaryMessage": ki18n("Simple Menu"),
                 "image": QtGui.QPixmap(':/raw/pics/simple.png'),
-                "description": ki18n("And old style menu from KDE 3.")
+                "description": ki18n("An old style menu from KDE 3.")
                 }
         self.menuNames["lancelot_launcher"] = {
                 "menuIndex": 2,
