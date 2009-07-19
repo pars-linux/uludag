@@ -66,7 +66,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Menu Settings
         content.append(subject % ki18n("Menu Settings").toString())
-        content.append(item % ("Selected Menu: <b>%s</b>") % self.menuSettings["summaryMessage"].toString())
+        content.append(item % ki18n("Selected Menu: <b>%s</b>").toString() % self.menuSettings["summaryMessage"].toString())
         content.append(end)
 
         # Wallpaper Settings

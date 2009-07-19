@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-18 09:26+0300\n"
+"POT-Creation-Date: 2009-07-19 19:33+0300\n"
 "PO-Revision-Date: 2009-07-17 01:52+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -522,6 +522,11 @@ msgstr "Seçilen tıklama davranışı: <b>%s</b>"
 #: .tmp/ScrSummary.py:68
 msgid "Menu Settings"
 msgstr "Menü Ayarları"
+
+#: .tmp/ScrSummary.py:69
+#, python-format
+msgid "Selected Menu: <b>%s</b>"
+msgstr "Seçilen Menü: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:73
 msgid "Wallpaper Settings"
