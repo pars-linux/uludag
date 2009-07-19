@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-18 09:26+0300\n"
+"POT-Creation-Date: 2009-07-19 19:33+0300\n"
 "PO-Revision-Date: 2009-07-16 20:32-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <de@li.org>\n"
@@ -535,6 +535,11 @@ msgstr "Gewähltes Klickverhalten: <b>%s</b>"
 #: .tmp/ScrSummary.py:68
 msgid "Menu Settings"
 msgstr "Einstellung des Menüs"
+
+#: .tmp/ScrSummary.py:69
+#, fuzzy, python-format
+msgid "Selected Menu: <b>%s</b>"
+msgstr "Gewählter Stil: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:73
 msgid "Wallpaper Settings"

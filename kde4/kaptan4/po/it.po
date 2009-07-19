@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-18 09:26+0300\n"
+"POT-Creation-Date: 2009-07-19 19:33+0300\n"
 "PO-Revision-Date: 2009-06-22 15:38+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -516,6 +516,11 @@ msgstr "Comportamento del clic selezionato: <b>%s</b>"
 #: .tmp/ScrSummary.py:68
 msgid "Menu Settings"
 msgstr "Impostazioni Menu"
+
+#: .tmp/ScrSummary.py:69
+#, fuzzy, python-format
+msgid "Selected Menu: <b>%s</b>"
+msgstr "Stile selezionato: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:73
 msgid "Wallpaper Settings"
