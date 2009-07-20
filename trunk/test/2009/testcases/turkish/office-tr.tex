@@ -20,6 +20,21 @@
 \begin{verbatim}
 http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/
 \end{verbatim}
+
+Diğer sözlükler:
+\begin{verbatim}
+ hunspell-dict-ca
+ hunspell-dict-de
+ hunspell-dict-en
+ hunspell-dict-es
+ hunspell-dict-fr
+ hunspell-dict-it
+ hunspell-dict-nl
+ hunspell-dict-pl
+ hunspell-dict-pt
+ hunspell-dict-sv
+\end{verbatim}
+
 İlgili sözlük için text dosyasını indirdikten sonra, bu dosyanın içinde, belirtilen dil ile ilgili, bir yanlış bir adette doğru olarak yazılmış kelime göreceksiniz.
 
 Aşağıda verilen komut çıktısında .dic uzantılı dosyalar bulunmakta:
@@ -130,7 +145,7 @@ Yukarıdaki komutları çalıştırın, xmlto paketinin sorunsuz bir şekilde ç
 \begin{itemize}
 \item KThesaurus uygulamasını menüden açın ve ilişkisi bulunabilecek bir ingilizce kelime girin. (Çünkü kthearus sadece ingilizce dilini desteklemektedir)
 
-Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis $\rightarrow$ daha fazla uygulama yolunu izleyerek sorunsuz bir şekilde açıldığını ve ilgili kelimenin ilişkili olduüğu diğer kelime gruplarını bulabildiğini gözlemleyin.
+Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis $\rightarrow$ daha fazla uygulama yolunu izleyerek sorunsuz bir şekilde açıldığını ve ilgili kelimenin ilişkili olduğu diğer kelime gruplarını bulabildiğini gözlemleyin.
 
 \item koconverter için:
 \begin{verbatim}
@@ -535,6 +550,102 @@ Bir open office ikonu seçin ve tamam deyin.
 
 Yukarıda bulunan dosyayı açın ve Araçlar $\rightarrow$ İmla denetimi ve Dil bilgisi bölümünden imla denetiminin gerçekleştiğini gözlemleyin.
 \end{enumerate}
+\section{ Postscript alt bileşeni}
+\begin{enumerate}
+\item a2ps paketi kurulumu sonrası:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_a2ps.tex
+# a2ps -o test_a2ps.ps test_a2ps.tex
+# a2ps test_a2ps.tex
+\end{verbatim}
+
+Yukarıda bulunan ikinci komut çıktısının test\_a2ps.ps dosyasını sorunsuz bir şekilde oluşturduğunu gözlemleyin.
+
+Eğer bir yazıcınınz var ise 3. komut ile sorunsuz bir şekilde çıktı alınabildiğini gözlemleyin.
+
+\item ghostscript paketi kurulumu sonrası:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.ps
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.dvi
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.pdf
+# gs test_ghostscript.ps
+# dvipdf  test_ghostscript.dvi test.pdf
+# eps2eps test_ghostscript.ps test.eps
+# font2c test_ghostscript.ps test.c
+# pdf2dsc test_ghostscript.pdf test.dsc
+# pdfopt test_ghostscript.pdf test.pdf
+# printafm test_ghostscript.ps
+# ps2ascii test_ghostscript.ps test
+# ps2pdf test_ghostscript.ps test.pdf
+# ps2ps test_ghostscript.ps test.ps
+\end{verbatim}
+
+"gs" komutu ile ilgili dosyanın sorunsuz bir şekilde görüntülenebildiğini, diğer komutların da sorunsuz bir şekilde uygun uzantılı dosyalar ürettiğini gözlemleyin. (Bu üretilen dosyalara okular ile bakabilirsiniz.)
+
+\item gv paketi kurulumu sonrası:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
+# gv test_gv.pdf
+\end{verbatim}
+
+Pdf dosyasının düzgün bir şekilde görüntülendiğini gözlemleyin.
+
+\item poppler paketi kurulumu sonrası:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_poppler.pdf
+# pdffonts test_gv.pdf
+# pdfinfo test_gv.pdf
+# pdftohtml test_gv.pdf test.html
+# pdftoppm test_gv.pdf test.ppm
+# pdftops test_gv.pdf test.ps
+# pdftotext test_gv.pdf test
+# pdfimages -f 1 test_poppler.pdf test
+\end{verbatim}
+
+Yukarıda bulunan komutların sorunsuz bir şekilde uygun çıktıları ürettiğini gözlemleyin.
+\end{enumerate}
+
+\section{ Spellcheck alt bileşeni}
+\begin{enumerate}
+\item Aşağıda bulunan paketler aynı şekilde test edilecektir.
+\begin{verbatim}
+aspell
+aspell-de
+aspell-en
+aspell-es
+aspell-fr
+aspell-it
+aspell-nl
+aspell-sv 
+\end{verbatim}
+
+Aşağıdaki ikinci komutu kullanarak kurmuş olduğunuz sözlüğü listeleyin, daha sonra üçüncü komut ile bu sözlüğü kullanarak dosya içerisinde bulunan kelimenin ilgili dildeki karşılığını bulabildiğini gözlemleyin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/spellcheck/test_aspell
+# aspell dicts
+# aspell -l <ilgili listelenen sözlük> -c test_aspell
+\end{verbatim}
+\item enchant paleti kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt
+ # sudo pisi it hunspell-dict-en
+ # enchant -d en_US ct -a
+\end{verbatim}
+Enchant komutunun yanlış olan sözcük için düzgün bir alternatif ürettiğini gözlemleyin.
+
+\item enchant paleti kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt
+ # sudo pisi it hunspell-dict-en
+ # hunspell -d en_US -l hunspell-dict
+ # hunspell -G -d en_US -l hunspell-dict
+\end{verbatim}
+Üçüncü komutun yanlış olan kelimeyi, dördüncü komutun ise düzgün olan kelimeyi bulduğunu gözlemleyin.
+
+\item zpspell sadece kurulum testine tabidir.
+\end{enumerate}
+
 
 \end{document}
 
