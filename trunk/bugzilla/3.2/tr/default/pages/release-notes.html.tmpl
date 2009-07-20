@@ -715,80 +715,51 @@
 
 <p>Artık kullanıcılara sadece belirli ürünler için <kbd>editbugs</kbd> ve <kbd>canconfirm</kbd> izinleri verebilirsiniz. Kullanıcılara üründe <kbd>editcomponents</kbd> izni de verebiliyorsunuz, böylece o ürüne bileşen ekleme ya da üründen bileşen silme gibi o ürünle ilgili işlemleri yapabiliyorlar.</p>
 
-<h3><a name="v30_feat_ui"></a>User Interface Improvements</h3>
+<h3><a name="v30_feat_ui"></a>Kullanıcı Arayüzü İyileştirmeleri</h3>
 
-<p>There has been some work on the user interface for [% terms.Bugzilla %] 3.0,
-  including:</p>
+<p>[% terms.Bugzilla %] 3.0 kullanıcı arayüzünde bazı iyileştirmele yapıldı:</p>
 
 <ul>
-  <li>There is now navigation and a search box a the <em>top</em> of
-    each page, in addition to the bar at the bottom of the page.</li>
-  <li>A re-designed &quot;Format for Printing&quot; page for 
-    [% terms.bugs %].</li>
-  <li>The layout of <kbd>show_bug.cgi</kbd> (the [% terms.bug %] editing 
-    page) has been changed, and the attachment table has been redesigned.</li>
+  <li>Sayfanın altındaki çubuğa ek olarak, her sayfanın <em>üst</em> kısmına bir dolaşma paneli ve arama kutusu eklenti.</li>
+  <li>[% terms.BugsPluGen %] &quot;Yazıcı Dostu Görüntüleme&quot; sayfası yeniden tasarlandı.</li>
+  <li><kbd>show_bug.cgi</kbd> ([% terms.bug %] görüntüleme sayfası) yerleşimi değiştirildi ve ek tablosu yeniden tasarlandı.</li>
 </ul>
 
-<h3><a name="v30_feat_xml"></a>XML-RPC Interface</h3>
+<h3><a name="v30_feat_xml"></a>XML-RPC Arayüzü</h3>
 
-<p>[% terms.Bugzilla %] now has a Web Services interface using the XML-RPC
-  protocol. It can be accessed by external applications by going
-  to the <kbd>xmlrpc.cgi</kbd> on your installation.</p>
+<p>[% terms.BugzillaGen %] artık XML-RPC protokülünü kullanan bir web servisleri (Web Services) arayüzü bulunuyor. Harici uygulamalar kurulumunuzdaki <kbd>xmlrpc.cgi</kbd> üzerinden servise ulaşabilirler.</p>
 
-<p>Documentation can be found in the 
-  <a href="[% docs_urlbase FILTER html %]api/">[% terms.Bugzilla %] 
-  API Docs</a>, in the various <kbd>Bugzilla::WebService</kbd> modules.</p>
+<p>İlgili belgelendirmeye <a href="[% docs_urlbase FILTER html %]api/">[% terms.Bugzilla %] 
+  API Belgeleri</a>'nde <kbd>Bugzilla::WebService</kbd> modüllerinde ulaşabilirsiniz.</p>
 
-<h3><a name="v30_feat_skin"></a>Skins</h3>
+<h3><a name="v30_feat_skin"></a>Deriler</h3>
 
-<p>[% terms.Bugzilla %] can have multiple &quot;skins&quot; installed,
-  and users can pick between them. To write a skin, you just have to
-  write several CSS files. See the <a href="[% docs_urlbase FILTER html %]cust-skins.html">Custom
-  Skins Documentation</a> for more details.</p>
+<p>[% terms.BugzillaLoc %] birden fazla &quot;deri&quot; bulunabilir ve kullanıcılar bu derilerden istediklerini seçebilirler. Bir deri hazırlamak için, birkaç CSS dosyası hazırlamanız yeterli olacaktır. Bu konuda daha fazla bilgi için <a href="[% docs_urlbase FILTER html %]cust-skins.html">Özel Deriler Belgelendirmesi</a>'ne bakabilirsiniz.</p>
 
-<p>We currently don't have any alternate skins shipping with
-  [% terms.Bugzilla %]. If you write an alternate skin, please
-  let us know!</p>
+<p>Henüz [% terms.Bugzilla %] ile yüklü gelen deriler bulunmuyor. Eğer siz bir deri yazarsanız, lütfen bize haber verin!</p>
 
-<h3><a name="v30_feat_sbu"></a>Unchangeable Fields Appear
-  Unchangeable</h3>
+<h3><a name="v30_feat_sbu"></a>Değiştirilemez Alanların Değiştirilemez Olarak Görünmesi</h3>
 
-<p>As long as you are logged in, when viewing [% terms.abug %], if you 
-  cannot change a field, it will not look like you can change it. That 
-  is, the value will just appear as plain text.</p>
+<p>Oturumunuz açık olduğu süre zarfında, [% terms.abugDat %] bakarken, eğer bir alanı değiştiremiyorsanız, değiştirebiliyormuşsunuz gibi görünmeyecek, yani onu düz metin olarak göreceksiniz.</p>
 
-<h3><a name="v30_feat_et"></a>All Emails in Templates</h3>
+<h3><a name="v30_feat_et"></a>Tüm Epostaların Şablonlara Taşınması</h3>
 
-<p>All outbound emails are now controlled by the templating system.
-  What used to be the <code>passwordmail</code>, <code>whinemail</code>,
-  <code>newchangedmail</code> and <code>voteremovedmail</code>
-  parameters are now all templates in the <kbd>template/</kbd> directory.</p>
+<p>Artık gönderilen epostaların tamamı şablon sistemiyle kontrol ediliyor. Eskiden birer parametre olan <code>passwordmail</code>, <code>whinemail</code>,
+  <code>newchangedmail</code> ve <code>voteremovedmail</code> artık <kbd>template/</kbd> dizininde birer şablon olarak bulunuyor.</p>
 
-<p>This means that it's now much easier to customize your outbound
-  emails, and it's also possible for localizers to have more
-  localized emails as part of their language packs, if they want.</p>
+<p>Bu, gönderilen epostaları istediğiniz şekilde özelleştirmenin çok daha kolay olduğu anlamına geliyor. Ayrıca yerelleştirme ekipleri de dil paketlerinin bir parçası olarak epostaları daha iyi yerelleştirebiliyorlar.</p>
 
-<p>We also added a <code>mailfrom</code> parameter to let you set
-  who shows up in the <code>From</code> field on all emails that
-  [%+ terms.Bugzilla %] sends.</p>
+<p>Ayrıca [%+ terms.BugzillaGen %] gönderdiği tüm epostalarda <code>Gönderen</code> alanında görünecek kişiyi belirleyebilmeniz için bir de code>mailfrom</code> parametresi ekledik.</p>
 
-<h3><a name="v30_feat_df"></a>No More Double-Filed [% terms.Bugs %]</h3>
+<h3><a name="v30_feat_df"></a>[% terms.BugsPluGen %] İki Kez Kaydedilmemesi</h3>
 
-<p>Users of [% terms.Bugzilla %] will sometimes accidentally submit 
-  [% terms.abug %] twice, either by going back in their web browser, 
-  or just by refreshing a page. In the past, this could file the same 
-  [% terms.bug %] twice (or even three times) in a row, irritating 
-  developers and confusing users.</p>
+<p>[% terms.Bugzilla %] kullanıcıları bazen web tarayıcılarında bir önceki sayfaya giderek ya da sayfayı tazeleyerek [% terms.abugGen %] iki kere gönderebilir. Geçmişte, bu geliştiricileri rahatsız edecek ve kullanıcıların kafasını karıştıracak şekilde aynı [% terms.bugGen %] arka arkaya iki kere (hâttâ bazen üç kere) gönderilmesine neden olabiliyordu.</p>
 
-<p>Now, if you try to submit [% terms.abug %] twice from the same screen 
-  (by going back or by refreshing the page), [% terms.Bugzilla %] will warn 
-  you about what you're doing, before it actually submits the duplicate
-  [%+ terms.bug %].</p>
+<p>Artık, eğer [% terms.abugAcc %] aynı ekrandan (bir önceki sayfaya giderek ya da sayfayı tazeleyerek) iki kere göndermeye kalktığınızda [% terms.Bugzilla %] aynı [%+ terms.bugAbl %] ikinci bir kopya oluşturmadan önce kullanıcıyı uyarıyor.</p>
 
-<h3><a name="v30_feat_cc"></a>Default CC List for Components</h3>
+<h3><a name="v30_feat_cc"></a>Bileşenlere Varsayılan Haber Verilecekler Listesi Atanabilmesi</h3>
 
-<p>You can specify a list of users who will <em>always</em> be added to
-  the CC list of new [% terms.bugs %] in a component.</p>
+<p>Bir bileşendeki tüm yeni [% terms.bugsPluGen %] haber verilecekler listesine <em>her zaman</em> eklenecek kullanıcılar belirtebilirsiniz.</p>
 
 <h3><a name="v30_feat_emi"></a>File/Modify [% terms.Bugs %] By Email</h3>
 
