@@ -800,47 +800,23 @@
 <h4>[% terms.Bugzilla %] Kullanıcılarını Etkileyen İyileştirmeler</h4>
 
 <ul>
-  <li>In comments, quoted text (lines that start with <kbd>&gt;</kbd>)
-    will be a different color from normal text.</li>
-  <li>There is now a user preference that will add you to the CC list
-    of any [% terms.bug %] you modify. Note that it's <strong>on</strong> 
-    by default.</li>
-  <li>[% terms.Bugs %] can now be filed with an initial state of 
-    <kbd>ASSIGNED</kbd>, if you are in the <kbd>editbugs</kbd> group.</li>
-  <li>By default, comment fields will zoom large when you are typing in them,
-    and become small when you move out of them. You can disable this
-    in your user preferences.</li>
-  <li>You can hide obsolete attachments on [% terms.abug %] by clicking
-    &quot;Hide Obsolete&quot; at the bottom of the attachment table.</li>
-  <li>If a [% terms.bug %] has flags set, and you move it to a different 
-    product that has flags with the same name, the flags will be 
-    preserved.</li>
-  <li>You now can't request a flag to be set by somebody who can't set it
-    ([% terms.Bugzilla %] will throw an error if you try).</li>
-  <li>Many new headers have been added to outbound [% terms.Bugzilla %]
-    [%+ terms.bug %] emails: <code>X-Bugzilla-Status</code>,
+  <li>Yorumlarda, alıntılanan metin (<kbd>&gt;</kbd> ile başlayan satırlar) normal metinden farklı bir renk olacak.</li>
+  <li>Artık kullanıcı tercihlerinde sizi otomatik olarak değiştirdiğiniz her [% terms.bugGen %] haber verilecekler listesine ekleyen bir seçenek bulunuyor. Bu seçenek öntanımlı olarak <strong>açık</strong>.</li>
+  <li>Eğer <kbd>editbugs</kbd> grubundaysanız, [% terms.bugs %] artık ilk açıldıklarında <kbd>ATANMIŞ</kbd> durumda olabiliyor.</li>
+  <li>Öntanımlı olarak yorum alanları odak aldıklarında büyüyor ve odak kaybettiklerinde küçülüyor. Bu özelliği kullanıcı tercihlerinden kapatabilirsiniz.</li>
+  <li>Eski ekleri ekler tablosunun altında bulunan &quot;Eskileri Gizle&quot; ile gizleyebilirsiniz.</li>
+  <li>Eğer [% terms.abugLoc %] atanmış bayraklar varsa ve o [% terms.bugAcc%] aynı isme sahip bayrakların olduğu başka bir ürüne taşırsanız, bayraklar korunuyor.</li>
+  <li>Artık belirli bir bayrağı atama izni olmayan birisinden o bayrağı atamasını isteyemiyorsunuz ([% terms.Bugzilla %] bu durumda hata veriyor).</li>
+  <li>Giden [% terms.Bugzilla %] [%+ terms.bug %] epostalarına çok sayıda başlık eklendi: <code>X-Bugzilla-Status</code>,
     <code>X-Bugzilla-Priority</code>, <code>X-Bugzilla-Assigned-To</code>,
-    <code>X-Bugzilla-Target-Milestone</code>, and 
+    <code>X-Bugzilla-Target-Milestone</code>, ve 
     <code>X-Bugzilla-Changed-Fields</code>, <code>X-Bugzilla-Who</code>.
-    You can look at an email to get an idea of what they contain.</li>
-  <li>In addition to the old <code>X-Bugzilla-Reason</code> email header
-    which tells you why you got an email, if you got an email because
-    you were watching somebody, there is now an 
-    <code>X-Bugzilla-Watch-Reason</code> header that tells you who you
-    were watching and what role they had.</li>
-  <li>If you hover your mouse over a full URL (like 
-    <code>http://bugs.mycompany.com/show_bug.cgi?id=1212</code>) that 
-    links to [% terms.abug %], you will see the title of the 
-    [%+ terms.bug %]. Of course, this only works for [% terms.bugs %] in your
-    [%+ terms.Bugzilla %] installation.</li>
-  <li>If your installation has user watching enabled, you will now see
-    the users that you can remove from your watch-list as a multi-select
-    box, much like the current CC list. (Previously it was just a text
-    box.)</li>
-  <li>When a user creates their own account in [% terms.Bugzilla %], the 
-    account is now not actually created until they verify their email
-    address by clicking on a link that is emailed to them.</li>
-  <li>You can change [% terms.abug %]'s resolution without reopening it.</li>
+    Bu başlık alanlarının neler içerdiği ile ilgili olarak epostalara bakabilirsiniz.</li>
+  <li>O epostayı neden aldığınızı açıklayan eski <code>X-Bugzilla-Reason</code> eposta başlığına ek olarak, eğer bir epostayı birisini izlediğiniz için aldıysanız, ek olarak kimi izlediğinizi ve görevlerinin ne olduğunu açıklayan bir <code>X-Bugzilla-Watch-Reason</code> başlığı eklendi.</li>
+  <li>Eğer fareyle [% terms.abugDat %] işaret eden tam bir adresin (örneğin <code>http://bugs.sirketim.com/show_bug.cgi?id=1212</code>) üzerine giderseniz o [%+ terms.bugGen %] başlığını görebilirsiniz. Elbette bu özellik sadece kendi [%+ terms.Bugzilla %] kurulumunuzdaki [%+ terms.bugsPluLoc %] çalışıyor.</li>
+  <li>Eğer kurulumunuzda kullanıcı izleme açıksa, izleme listenizden çıkarabileceğiniz kullanıcıları güncel haber verilecekler listesine benzer olarak bir çoklu seçim kutusu şekilde göreceksiniz. (Geçmişte bir metin kutusu şeklindeydi.)</li>
+  <li>Bir kullanıcı [% terms.BugzillaLoc %] yeni bir hesap oluşturduğunda, hesap o kullanıcı kendisine epostayla gönderilen bağlantıya tıklayıp eposta adresini onaylayana kadar oluşturulmuyor.</li>
+  <li>[% terms.AbugGen %] kararını o [% terms.bugAcc %] yeniden açmadan değiştirebilirsiniz.</li>
   <li>When you view the dependency tree on [% terms.abug %], resolved 
     [%+ terms.bugs %] will be hidden by default. (In previous versions,
     resolved [% terms.bugs %] were shown by default.)</li>
