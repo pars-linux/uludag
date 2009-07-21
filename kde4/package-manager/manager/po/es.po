@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 15:50+0300\n"
-"PO-Revision-Date: 2009-07-16 20:00-0400\n"
+"PO-Revision-Date: 2009-07-20 20:37-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -465,8 +465,7 @@ msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
 #: .tmp/statemanager.py:125
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actualmente <b>%1</b> paquetes seleccionados, con un tamaño total de <b>%2</"
 "b>"
@@ -475,13 +474,11 @@ msgstr ""
 # please check if necessary use "total" again ?? because THIS is additional..
 #: .tmp/statemanager.py:128
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr ""
-"y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
+msgstr "y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:130
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr ""
-"y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
+msgstr "y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:131
 msgid "in your basket."
@@ -614,8 +611,9 @@ msgid "Repository:"
 msgstr "Repositorio:"
 
 #: .tmp/packagedelegate.py:148
+# i shortened this, it does not fit otherwise
 msgid "Package Size:"
-msgstr "Tamaño de Paquete:"
+msgstr "Tamaño:"
 
 #: .tmp/mainwidget.py:226
 msgid "Select all packages in this group"
@@ -682,3 +680,4 @@ msgstr ""
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
+
