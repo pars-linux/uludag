@@ -817,47 +817,23 @@
   <li>Eğer kurulumunuzda kullanıcı izleme açıksa, izleme listenizden çıkarabileceğiniz kullanıcıları güncel haber verilecekler listesine benzer olarak bir çoklu seçim kutusu şekilde göreceksiniz. (Geçmişte bir metin kutusu şeklindeydi.)</li>
   <li>Bir kullanıcı [% terms.BugzillaLoc %] yeni bir hesap oluşturduğunda, hesap o kullanıcı kendisine epostayla gönderilen bağlantıya tıklayıp eposta adresini onaylayana kadar oluşturulmuyor.</li>
   <li>[% terms.AbugGen %] kararını o [% terms.bugAcc %] yeniden açmadan değiştirebilirsiniz.</li>
-  <li>When you view the dependency tree on [% terms.abug %], resolved 
-    [%+ terms.bugs %] will be hidden by default. (In previous versions,
-    resolved [% terms.bugs %] were shown by default.)</li>
-  <li>When viewing [% terms.bug %] activity, fields that hold [% terms.bug %] 
-    numbers (such as &quot;Blocks&quot;) will have the [% terms.bug %] numbers
-    displayed as links to those [% terms.bugs %].</li>
-  <li>When viewing the &quot;Keywords&quot; field in a [% terms.bug %] list,
-    it will be sorted alphabetically, so you can sanely sort a list on
-    that field.</li>
-  <li>In most places, the Version field is now sorted using a version-sort
-    (so 1.10 is greater than 1.2) instead of an alphabetical sort.</li>
-  <li>Options for flags will only appear if you can set them. So, for
-    example, if you can't grant <kbd>+</kbd> on a flag, that option
-    won't appear for you.</li>
-  <li>You can limit the product-related output of <kbd>config.cgi</kbd>
-    by specifying a <kbd>product=</kbd> URL argument, containing the name
-    of a product. You can specify the argument more than once for multiple
-    products.</li>
-  <li>You can now search the boolean charts on whether or not a comment
-    is private.</li>
+  <li>[% terms.AbugGen %] bağımlılık ağacına bakarken, öntanımlı olarak karara bağlanmış [%+ terms.bugs %] gizli olur. (Önceki sürümlerde öntanımlı davranış olarak karara bağlanmış [% terms.bugs %] da gösteriliyordu.)</li>
+  <li>[% terms.Bug %] hareketlerine bakarken, [% terms.bug %] numarası içeren alanlar (&quot;Blocks&quot; gibi) o [% terms.bug %] numaralarını o [% terms.bugsPluDat %] bağlantı olarak gösterir.</li>
+  <li>[% terms.Bug %] listelerinde &quot;Anahtarlar&quot; alanı alfabetik olarak sıralanıyor, böylece listeyi o alana göre sıralamak mümkün oluyor.</li>
+  <li>Çoğu yerde Sürüm alanı harf sırası yerine sürüm sıralama yöntemi kullanılarak (örneğin 1.10 1.2'den büyük olacak şekilde) sıralanır.</li>
+  <li>Bayrak seçenekleri sadece bayrak atayabiliyorsanız görünür olur. Dolayısıyla, örneğin eğer bir bayrağa <kbd>+</kbd> atayamıyorsanız o seçeneği hiç görmezsiniz.</li>
+  <li><kbd>config.cgi</kbd>'nin ürünlerle ilgili çıktısını adrese parametre olarak <kbd>product=</kbd> geçerek kısıtlayabilirsiniz. Birden falza ürün belirtmek için parametreyi birden fazla kez kullanabilirsiniz.</li>
+  <li>Artık Boole çizelgeleri bir yorumun gizli olup olmadığına göre arayabilirsiniz.</li>
 </ul>
 
-<h4>Enhancements For Administrators</h4>
+<h4>Yöneticilere Yönelik İyileştirmeler</h4>
 
 <ul>
-  <li>Administrators can now delete attachments, making them disappear
-    entirely from [% terms.Bugzilla %].</li>
-  <li><kbd>sanitycheck.cgi</kbd> can now only be accessed by users
-    in the <kbd>editcomponents</kbd> group.</li>
-  <li>The &quot;Field Values&quot; control panel can now only be accessed
-    by users in the <kbd>admin</kbd> group. (Previously it was accessible
-    to anybody in the <kbd>editcomponents</kbd> group.)</li>
-  <li>There is a new parameter <kbd>announcehtml</kbd>, that will allow
-    you to enter some HTML that will be displayed at the top of every
-    page, as an announcement.</li>
-  <li>The <kbd>loginnetmask</kbd> parameter now defaults to 0 for new
-    installations, meaning that as long as somebody has the right
-    login cookie, they can log in from any IP address. This makes
-    life a lot easier for dial-up users or other users whose IP
-    changes a lot. This could be done because the login cookie is now
-    very random, and thus secure.</li>
+  <li>Yöneticiler artık ekleri silerek [% terms.BugzillaAbl %] tamamen yok olmalarını sağlayabiliyorlar.</li>
+  <li><kbd>sanitycheck.cgi</kbd> artık sadece <kbd>editcomponents</kbd> grubundaki kullanıcılar tarafından erişilebilir.</li>
+  <li>&quot;Alan Değerleri&quot; yönetim paneli artık sadece <kbd>admin</kbd> grubundaki kullanıcılar tarafından erişilebilir. (Önceden <kbd>editcomponents</kbd> grubundaki herkes tarafından erişilebilirdi.)</li>
+  <li><kbd>announcehtml</kbd> isminde yeni bir parametre var ve bu parametreye her sayfanın üstünde bir bildiri olarak yayınlanacak HTML metin girebiliyorsunuz.</li>
+  <li><kbd>loginnetmask</kbd> parametresi yeni kurulumlarda öntanımlı olarak 0 değerini alıyor. Böylece doğru oturum çerezine sahip herkes herhangi bir IP adresinden oturum açabiliyor. Bu çevirmeli bağlantı sahibi kullanıcıları ve IP'si sık değişen kullanıcıların hayatını çok kolaylaştırıyor. Oturum çerezi artık tamamen rasgele değerler aldığı için bu güvenlikten birşey kaybedilmesini engelliyor.</li>
   <li>Classifications now have sortkeys, so they can be sorted in an
     order that isn't alphabetical.</li>
   <li>Authentication now supports LDAP over SSL (LDAPS) or TLS (using
