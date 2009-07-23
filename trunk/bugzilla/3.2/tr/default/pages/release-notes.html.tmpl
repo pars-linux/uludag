@@ -834,99 +834,59 @@
   <li>&quot;Alan Değerleri&quot; yönetim paneli artık sadece <kbd>admin</kbd> grubundaki kullanıcılar tarafından erişilebilir. (Önceden <kbd>editcomponents</kbd> grubundaki herkes tarafından erişilebilirdi.)</li>
   <li><kbd>announcehtml</kbd> isminde yeni bir parametre var ve bu parametreye her sayfanın üstünde bir bildiri olarak yayınlanacak HTML metin girebiliyorsunuz.</li>
   <li><kbd>loginnetmask</kbd> parametresi yeni kurulumlarda öntanımlı olarak 0 değerini alıyor. Böylece doğru oturum çerezine sahip herkes herhangi bir IP adresinden oturum açabiliyor. Bu çevirmeli bağlantı sahibi kullanıcıları ve IP'si sık değişen kullanıcıların hayatını çok kolaylaştırıyor. Oturum çerezi artık tamamen rasgele değerler aldığı için bu güvenlikten birşey kaybedilmesini engelliyor.</li>
-  <li>Classifications now have sortkeys, so they can be sorted in an
-    order that isn't alphabetical.</li>
-  <li>Authentication now supports LDAP over SSL (LDAPS) or TLS (using
-    the STARTLS command) in addition to plain LDAP.</li>
-  <li>LDAP users can have their LDAP username be their email address,
-    instead of having the LDAP <kbd>mail</kbd> attribute be their
-    email address. You may wish to set the <kbd>emailsuffix</kbd>
-    parameter if you do this.</li>
-  <li>Administrators can now see what has changed in a user account,
-    when using the &quot;Users&quot; control panel.</li>
-  <li><code>REMIND</code> and <code>LATER</code> are no longer part
-    of the default list of resolutions. Upgrading installations will
-    not be affected--they will still have these resolutions.</li>
-  <li><kbd>editbugs</kbd> is now the default for the <kbd>timetrackinggroup</kbd>
-    parameter, meaning that time-tracking will be on by default in a new
-    installation.</li>
+  <li>Tasnifler artık sıralama anahtarları içeriyor, böylece alfabetik olmayan bir şekilde sıralanabiliyorlar.</li>
+  <li>Kimlik doğrulama artık düz LDAP'nin yanında SSL üzerinden LDAP (LDAPS) ve TLS (STARTLS komutuyla) de destekliyor.</li>
+  <li>LDAP kullanıcıları LDAP <kbd>mail</kbd> niteliği yerine eposta adreslerini LDAP kullanıcı adı olarak kullanabilirler. Eğer bu şekilde kullanacaksanız <kbd>emailsuffix</kbd> parametresini ayarlamak isteyebilirsiniz.</li>
+  <li>Yöneticiler artık &quot;Kullanıcılar&quot; yönetim panelinde kullanıcı hesaplarında nelerin değiştiğini görebiliyorlar.</li>
+  <li><code>REMIND</code> (HATIRLAT) ve <code>LATER</code> (SONRA) artık öntanımlı karar listesinin bir parçası değil. Yükseltilen kurulumlar bu durumdan etkilenmiyor - onlarda bu kararlar halen geçerliliğini koruyor.</li>
+  <li><kbd>editbugs</kbd> artık <kbd>timetrackinggroup</kbd> parametresinin öntanımlı değeri. Böylece yeni kurulumlarda tarihe ve zamana göre takip öntanımlı olarak açık oluyor.</li>
 </ul>
 
 <h2><a name="v30_issues"></a>Problem Oluşturabilecek Noktalar</h2>
 
 <ul>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=69621">
-    [%- terms.Bug %] 69621</a>: If you rename or remove a keyword that is
-    in use on [% terms.bugs %], you will need to rebuild the "keyword cache"
-    by running <a href="sanitycheck.cgi">sanitycheck.cgi</a> and choosing 
-    the option to rebuild the cache when it asks. Otherwise keywords may 
-    not show up properly in search results.</li>
+    [%- terms.Bug %] 69621</a>: Eğer [% terms.bugsPluLoc %] kullanımda olan bir anahtarın ismini değiştirirseniz veya anahtarı silerseniz <a href="sanitycheck.cgi">sanitycheck.cgi</a>'ı yeniden çalıştırarak "anahtar önbelleği"ni yeniden oluşturmanız gerekir. Aksi taktirde arama sonuçlarında anahtarlar doğru şekilde görüntülenmez.</li>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=99215">
-    [%- terms.Bug %] 99215</a>: Flags are not protected by "mid-air 
-    collision" detection. Nor are any attachment changes.</li>
+    [%- terms.Bug %] 99215</a>: Bayraklar ve eklerde yapılan değişiklikler "havada çarpışma" korumasına tabi değil.</li>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=89822">
-    [%- terms.Bug %] 89822</a>: When changing multiple [% terms.bugs %] at 
-    the same time, there is no "mid-air collision" protection.</li>
+    [%- terms.Bug %] 89822</a>: Bir kerede birden fazla [% terms.bug %] değiştirirken "havada çarpışma" koruması yok.</li>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=276230">
-    [%- terms.Bug %] 276230</a>: The support for restricting access to 
-    particular Categories of Yeni Çizelgeler is not complete. You should treat 
-    the 'chartgroup' Param as the only access mechanism available.<br>
-    However, charts migrated from Eski Çizelgeler will be restricted to 
-    the groups that are marked MANDATORY for the corresponding Product.
-    There is currently no way to change this restriction, and the 
-    groupings will not be updated if the group configuration
-    for the Product changes.</li>
+    [%- terms.Bug %] 276230</a>: Belirtli Yeni Çizelge Kategorileri'ne erişim kısıtlama desteği tamamlanmadı. 'chartgroup' parametresini tek erişim mekanizması kabul edip ona göre hareket etmelisiniz. Ancak, eski çizelgelerden alınan çizelgeler iligli ürün için ZORUNLU olarak işaretlenirler. Şu anda bu kısıtlamayı değiştirmenin bir yolu yok ve ürünün grup yapılandırması değiştirilse bile gruplamalar güncellenmez.</li>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=370370">
-    [%- terms.Bug %] 370370</a>: mod_perl support is currently not
-    working on Windows machines.</li>
+    [%- terms.Bug %] 370370</a>: mod_perl desteği şu anda Windows bilgisayarlarda çalışmıyor.</li>
   <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=361149">
-    [%- terms.Bug %] 361149</a>: If you are using Perl 5.8.0, you may
-    get a lot of warnings in your Apache error_log about "deprecated
-    pseudo-hashes." These are harmless--they are a b[%# fool test %]ug in 
-    Perl 5.8.0. Perl 5.8.1 and later do not have this problem.</li>
-  <li>[% terms.Bugzilla %] 3.0rc1 allowed custom field column names in 
-    the database to be mixed-case. [% terms.Bugzilla %] 3.0 only allows
-    lowercase column names. It will fix any column names that you have
-    made mixed-case, but if you have custom fields that previously were
-    mixed-case in any Saved Search, you will have to re-create that Saved
-    Search yourself.</li>
+    [%- terms.Bug %] 361149</a>: Perl 5.8.0 kullanıyorsanız, Apache error_log dosyasında "deprecated
+    pseudo-hashes" şeklinde çok sayıda uyarı alabilirsiniz. Bu "eskimiş ara değer"ler zararsızdır ve Perl 5.8.0'daki bir hatadan kaynaklanır. Perl 5.8.1 ve sonrasında bu problem yoktur.</li>
+  <li>[% terms.Bugzilla %] 3.0rc1 oluşturulan özel alanların isimlerinde büyük harf-küçük harf kullanımı ayrımı yapmıyordu. [% terms.Bugzilla %] 3.0 ise sadece küçük harf isimlere müsaade eder. İsimleri farklı girseniz bile hepsini küçük harf haline getirir. Ama eğer kayıtlı aramalarınızda isimleri farklı girilmiş bu alanlar geçiyorsa, o kayıtlı aramaları yeniden oluşturmanız gerekir.</li>
 </ul>
 
-<h2><a name="v30_security"></a>Security Updates in This Release</h2>
+<h2><a name="v30_security"></a>Bu Sürümdeki Güvenlik Güncellemeleri</h2>
 
 <h3>3.0.6</h3>
 
-<p>[% terms.Bugzilla %] contains a minor security fix. For details, see the
-  <a href="http://www.bugzilla.org/security/2.20.6/">Security Advisory</a>.</p>
+<p>[% terms.Bugzilla %] küçük bir güvenlik güncellemesi içeriyor. Detayları için <a href="http://www.bugzilla.org/security/2.20.6/">Güvenlik Güncellemeleri</a>ne bakın.</p>
 
 <h3>3.0.5</h3>
 
-<p>[% terms.Bugzilla %] contains one security fix for 
-  <a href="[% docs_urlbase FILTER html %]api/importxml.html">importxml.pl</a>.
-  For details, see the 
-  <a href="http://www.bugzilla.org/security/2.22.4/">Security Advisory</a>.</p>
+<p>[% terms.Bugzilla %] <a href="[% docs_urlbase FILTER html %]api/importxml.html">importxml.pl</a> için bir güvenlik güncellemesi içeriyor. Detaylar için <a href="http://www.bugzilla.org/security/2.22.4/">Güvenlik Güncellemeleri</a>ne bakın.</p>
 
 <h3>3.0.4</h3>
 
-<p>[% terms.Bugzilla %] 3.0.4 contains three security fixes.
-  For details, see the
-  <a href="http://www.bugzilla.org/security/2.20.5/">Security Advisory</a>.</p>
+<p>[% terms.Bugzilla %] 3.0.4 üç güvenlik güncellemesi içeriyor. Detaylar için <a href="http://www.bugzilla.org/security/2.20.5/">Güvenlik Güncellemeleri</a>ne bakın.</p>
 </p>
 
 <h3>3.0.3</h3>
 
-<p>No security fixes in this release.</p>
+<p>Bu sürümde güvenlik güncellemesi bulunmuyor.</p>
 
 <h3>3.0.2</h3>
 
-<p>[% terms.Bugzilla %] 3.0.1 had an important security fix that is
-  critical for public installations with "requirelogin" turned on.
-  For details, see the
-  <a href="http://www.bugzilla.org/security/3.0.1/">Security Advisory</a></p>
+<p>[% terms.Bugzilla %] 3.0.1 halka açık olan ve "requirelogin" parametresi açık kurulumlar için kritik olan önemli bir güvenlik güncellemesi içeriyordu. Detaylar için <a href="http://www.bugzilla.org/security/3.0.1/">Güvenlik Güncellemeleri</a>ne bakın.</p>
 
 <h3>3.0.1</h3>
 
-<p>[% terms.Bugzilla %] 3.0 had three security issues that have been
+<p>[% terms.Bugzilla %] 3.0 bu sürümde düzeltilen üç güvenlik problemi içeriyordu. had three security issues that have been
   fixed in this release: one minor information leak, one hole only
   exploitable by an admin or using <code>email_in.pl</code>, and one in an
   uncommonly-used template. For details, see the 
@@ -934,58 +894,36 @@
 
 <h2><a name="v30_upgrading"></a>Eski Bir Sürümden Nasıl Yükseltilir</h2>
 
-<h3><a name="v30_upgrading_notes"></a>Notes For Upgraders</h3>
+<h3><a name="v30_upgrading_notes"></a>Yükseltenlere Notlar</h3>
 
 <ul>
-  <li>If you upgrade by CVS, there are several .cvsignore files
-    that are now in CVS instead of being locally created by 
-    <kbd>checksetup.pl</kbd>. This means that you will have to
-    delete those files when CVS tells you there's a conflict, and
-    then run <kbd>cvs update</kbd> again.</li>
-  <li>In this version of [% terms.Bugzilla %], the Summary field
-    is now limited to 255 characters. When you upgrade, any Summary
-    longer than that will be truncated, and the old summary will be
-    preserved in a comment.</li>
-  <li>If you have the <kbd>utf8</kbd> parameter turned on, at some
-    point you will have to convert your database. <kbd>checksetup.pl</kbd>
-    will tell you when this is, and it will give you certain instructions
-    at that time, that you have to follow before you can complete
-    the upgrade. Don't do the conversion yourself manually--follow
-    the instructions of checksetup.pl.</li>
-  <li>If you ever ran 2.23.3, 2.23.4, or 3.0rc1, you will have to run
-    <kbd>./collectstats.pl --regenerate</kbd> at the command line, because
-    the data for your Eski Çizelgeler is corrupted. This can take several days,
-    so you may only want to run it if you use Eski Çizelgeler.</li>
-  <li>You should also read the Problem Oluşturabilecek Noktalar sections of
-    <a href="#v30_previous">older release notes</a> if you are upgrading
-    from a version lower than 2.22.</li>
+  <li>CVS üzerinden yükseltirseniz <kbd>checksetup.pl</kbd> tarafından oluşturulmak yerine artık CVS'de bulunan birkaç .cvsignore dosyası var. Bu şu anlama geliyor: CVS size bir uyuşmazlık olduğunu söylediğinde o dosyaları silmeniz ve ardından yeniden <kbd>cvs update</kbd> çalıştırmanız gerek.</li>
+  <li>[% terms.BugzillaGen %] bu sürümünde, Özet (Summary) alanı 255 karakterle sınırlı. Yükselttiğinizde 255 karakteri aşan Özet alanları kısaltılır ve eski (kısaltılmamış) özet bir yorum olarak tutulur.</li>
+  <li><kbd>utf8</kbd> parametresi açıksa, zamanı geldiğinde veritabanınızı dönüştürmek zorunda kalacaksanız. <kbd>checksetup.pl</kbd> bunu ne zaman yapacağınızı söyleyecek ve yükseltme işlemini tamamlamadan önce yapmanız gereken işlemleri sıralayacak. Dönüştürme işlemini kendi istediğiniz şekilde yapmayın, checksetup.pl'nin yönergelerini takip edin.</li>
+  <li>Eğer 2.23.3, 2.23.4, veya 3.0rc1 çalıştırdıysanız, komut satırında <kbd>./collectstats.pl --regenerate</kbd> çalıştırmanız gerekecek, çünkü eski çizelgeler için tutulan veriler bozuk olacak. Bu birkaç gün sürebilir, o yüzden sadece eski çizelgeleri kullanıyorsanız çalıştırmanızı tavsiye ederiz.</li>
+  <li>Ayrıca eğer 2.22 öncesi bir sürümden yüseltiyorsanız <a href="#v30_previous">daha önceki sürüm notları</a>nın Problem Oluşturabilecek Noktalar bölümlerini de okumanız tavsiye edilir.</li>
 </ul>
 
-<h3>Steps For Upgrading</h3>
+<h3>Yükseltme Aşamaları</h3>
 
-<p>Once you have read the notes above, see the 
-  <a href="[% docs_urlbase FILTER html %]upgrade.html">Upgrading 
-  documentation</a> for instructions on how to upgrade.</p>
+<p>Nasıl yükselteceğinize dair yönergeler için (yukarıdaki notları okuduktan sonra) <a href="[% docs_urlbase FILTER html %]upgrade.html">Yükseltme belgeleri</a>ni okuyun.</p>
 
-<h2><a name="v30_code_changes"></a>Code Changes Which May Affect 
-  Customizations</h2>
+<h2><a name="v30_code_changes"></a>Özelleştirmeleri Etkileyebilecek Kod Değişiklikleri</h2>
 
 <ul>
-  <li><a href="#v30_code_loc"><strong>Packagers:</strong> Location
-    Variables Have Moved</a></li>
-  <li><a href="#v30_code_hooks">Hooks!</a></li>
-  <li><a href="#v30_code_api">API Documentation</a></li>
-  <li><a href="#v30_code_globals">Elimination of globals.pl</a></li>
-  <li><a href="#v30_code_scope">Cleaned Up Variable Scoping Issues</a></li>
-  <li><a href="#v30_code_sql">No More SendSQL</a></li>
-  <li><a href="#v30_code_auth">Auth Re-write</a></li>
+  <li><a href="#v30_code_loc"><strong>Paketçiler:</strong> Konum Değişkenleri Taşındı</a></li>
+  <li><a href="#v30_code_hooks">Kancalar!</a></li>
+  <li><a href="#v30_code_api">API Belgeleri</a></li>
+  <li><a href="#v30_code_globals">globals.pl'nin Yokoluşu</a></li>
+  <li><a href="#v30_code_scope">Temizlenen Değişken Kapsam Mevzuları</a></li>
+  <li><a href="#v30_code_sql">SendSQL'in Sonu</a></li>
+  <li><a href="#v30_code_auth">Auth Yeniden Yazımı</a></li>
   <li><a href="#v30_code_obj">Bugzilla::Object</a></li>
   <li><a href="#v30_code_req">Bugzilla-&gt;request_cache</a></li>
-  <li><a href="#v30_code_other">Other Changes</a></li>
+  <li><a href="#v30_code_other">Diğer Değişiklikler</a></li>
 </ul>
 
-<h3><a name="v30_code_loc"></a><strong>Packagers:</strong> Location
-    Variables Have Moved</h3>
+<h3><a name="v30_code_loc"></a><strong>Paketçiler:</strong> Konum Değişkenleri Taşındı</h3>
 
 <p>In previous versions of [% terms.Bugzilla %], <kbd>Bugzilla::Config</kbd>
   held all the paths for different things, such as the path to localconfig
@@ -998,7 +936,7 @@
   <em>absolute</em> (not relative) paths. There is already code in that
   subroutine to help you with this.</p>
 
-<h3><a name="v30_code_hooks"></a>Hooks!</h3>
+<h3><a name="v30_code_hooks"></a>Kancalar!</h3>
 
 <p>[% terms.Bugzilla %] now supports a code hook mechanism. See the 
   documentation for 
@@ -1015,15 +953,15 @@
   <a href="http://www.bugzilla.org/developers/reporting_bugs.html">File a
   bug</a>!</p>
 
-<h3><a name="v30_code_api"></a>API Documentation</h3>
+<h3><a name="v30_code_api"></a>API Belgeleri</h3>
 
 <p>[% terms.Bugzilla %] now ships with all of its perldoc built
   as HTML. Go ahead and read the
-  <a href="[% docs_urlbase FILTER html %]api/">API Documentation</a>
+  <a href="[% docs_urlbase FILTER html %]api/">API Belgeleri</a>
   for all of the [% terms.Bugzilla %] modules now! Even scripts like
   <kbd>checksetup.pl</kbd> have HTML documentation.</p>
 
-<h3><a name="v30_code_globals"></a>Elimination of globals.pl</h3>
+<h3><a name="v30_code_globals"></a>globals.pl'nin Yokoluşu</h3>
 
 <p>The old file <kbd>globals.pl</kbd> has been eliminated.
   Its code is now in various modules. Each function went to the module
@@ -1035,7 +973,7 @@
   the function, and that should get you the information about what
   it's called now and where it lives.</p>
 
-<h3><a name="v30_code_scope"></a>Cleaned Up Variable Scoping Issues</h3>
+<h3><a name="v30_code_scope"></a>Temizlenen Değişken Kapsam Mevzuları</h3>
 
 <p>In normal perl, you can have code like this:</p>
 <pre>my $var = 0;
@@ -1045,7 +983,7 @@ sub y { $var++ }</pre>
   longer &quot;shared&quot; with subroutines--instead all variables
   that a subroutine needs must be declared inside the subroutine itself.</p>
 
-<h3><a name="v30_code_sql"></a>No More SendSQL</h3>
+<h3><a name="v30_code_sql"></a>SendSQL'in Sonu</h3>
 
 <p>The old <kbd>SendSQL</kbd> function and all of its companions are
   <strong>gone</strong>. Instead, we now use DBI for all database
@@ -1057,7 +995,7 @@ sub y { $var++ }</pre>
   <a href="http://www.bugzilla.org/docs/developer.html#sql-sendreceive">Developer's
   Guide Section About DBI</a></p>
 
-<h3><a name="v30_code_auth"></a>Auth Re-write</h3>
+<h3><a name="v30_code_auth"></a>Auth Yeniden Yazımı</h3>
 
 <p>The <kbd>Bugzilla::Auth</kbd> family of modules have been completely
   re-written. For details on how the new structure of authentication,
@@ -1089,7 +1027,7 @@ sub y { $var++ }</pre>
   that they cache, so to reset the template object, you'd do:
   <code>delete Bugzilla-&gt;request_cache-&gt;{template};</code>.</p>
 
-<h3><a name="v30_code_other"></a>Other Changes</h3>
+<h3><a name="v30_code_other"></a>Diğer Değişiklikler</h3>
 
 <ul>
   <li><code>checksetup.pl</code> has been completely re-written, and most
