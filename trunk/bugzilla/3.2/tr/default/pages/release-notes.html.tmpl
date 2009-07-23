@@ -925,97 +925,58 @@
 
 <h3><a name="v30_code_loc"></a><strong>Paketçiler:</strong> Konum Değişkenleri Taşındı</h3>
 
-<p>In previous versions of [% terms.Bugzilla %], <kbd>Bugzilla::Config</kbd>
-  held all the paths for different things, such as the path to localconfig
-  and the path to the <kbd>data/</kbd> directory.</p>
+<p>Önceki [% terms.Bugzilla %] sürümlerinde, <kbd>Bugzilla::Config</kbd>
+  yerel yapılandırma (localconfig) ve <kbd>data/</kbd> dizininin yolu gibi birbirinden farklı pek çok şeyin yolunu tutuyordu.</p>
 
-<p>Now, all of this data is stored in a subroutine,
-  <kbd>Bugzilla::Constants::bz_locations</kbd>.</p>
+<p>Artık, tüm bu veri <kbd>Bugzilla::Constants::bz_locations</kbd> altyordamında tutuluyor.</p>
 
-<p>Also, note that for mod_perl, <kbd>bz_locations</kbd> must return
-  <em>absolute</em> (not relative) paths. There is already code in that
-  subroutine to help you with this.</p>
+<p>Ayrıca, mod_perl söz konusu olduğunda <kbd>bz_locations</kbd>'ın bağıl değil <em>tam</em> yolu tutması gerektiğini unutmayın. O altyordamda bunu elde etmeniz için gereken kod halihazırda mevcut.</p>
 
 <h3><a name="v30_code_hooks"></a>Kancalar!</h3>
 
-<p>[% terms.Bugzilla %] now supports a code hook mechanism. See the 
-  documentation for 
-  <a href="[% docs_urlbase FILTER html %]api/Bugzilla/Hook.html">Bugzilla::Hook</a>
-  for more details.</p>
+<p>[% terms.Bugzilla %] artık bir kod kanca mekanizması içeriyor. Daha fazla bilgi için <a href="[% docs_urlbase FILTER html %]api/Bugzilla/Hook.html">Bugzilla::Hook</a> konusuna bakabilirsiniz.</p>
 
-<p>This gives [% terms.Bugzilla %] very advanced plugin support. You can
-  hook templates, hook code, add new parameters, and use the XML-RPC
-  interface. So we'd like to see some [% terms.Bugzilla %] plugins
-  written! Let us know on the <a href="http://bugzilla.org/cgi-bin/mj_wwwusr?func=lists-long-full&amp;extra=developers">developers&#64;bugzilla.org</a>
-  mailing list if you write a plugin.</p>
+<p>Bu yaklaşım [% terms.BugzillaDat %] ileri düzeyde eklenti desteği sağlıyor. Şablonlara, koda ve yeni parametrelere kanca bağlayabilirsiniz. [% terms.Bugzilla %] eklentilerinizi bekliyoruz! Eğer bir eklenti yazarsanız, bize <a href="http://bugzilla.org/cgi-bin/mj_wwwusr?func=lists-long-full&amp;extra=developers">developers&#64;bugzilla.org</a> posta listesinde haber verebilirsiniz.</p>
 
-<p>If you need more hooks, please 
-  <a href="http://www.bugzilla.org/developers/reporting_bugs.html">File a
-  bug</a>!</p>
+<p>Daha fazla kancaya ihtiyacınız olursa, çekinmeden <a href="http://www.bugzilla.org/developers/reporting_bugs.html">bir hata girebilirsiniz</a>.</p>
 
 <h3><a name="v30_code_api"></a>API Belgeleri</h3>
 
-<p>[% terms.Bugzilla %] now ships with all of its perldoc built
-  as HTML. Go ahead and read the
-  <a href="[% docs_urlbase FILTER html %]api/">API Belgeleri</a>
-  for all of the [% terms.Bugzilla %] modules now! Even scripts like
-  <kbd>checksetup.pl</kbd> have HTML documentation.</p>
+<p>[% terms.Bugzilla %] artık tüm perldoc'u HTML olarak inşa edilmiş şekilde geliyor. Tüm [% terms.Bugzilla %] modülleriyle ilgili açıklamaları <a href="[% docs_urlbase FILTER html %]api/">API Belgeleri</a> bölümünden okuyabilirsiniz. Orada <kbd>checksetup.pl</kbd> gibi betikler için bile HTML belgelendirmesi bulacaksınız.</p>
 
 <h3><a name="v30_code_globals"></a>globals.pl'nin Yokoluşu</h3>
 
-<p>The old file <kbd>globals.pl</kbd> has been eliminated.
-  Its code is now in various modules. Each function went to the module
-  that was appropriate for it.</p>
+<p>Eski <kbd>globals.pl</kbd> dosyası kaldırıldı. İçerdiği kod birkaç modüle dağıtıldı. Her fonksiyon uygun ilgili modüle aktarıldı.</p>
 
-<p>Usually we filed [% terms.abug %] in 
-  <a href="https://bugzilla.mozilla.org">bugzilla.mozilla.org</a> for
-  each function we moved. You can search there for the old name of
-  the function, and that should get you the information about what
-  it's called now and where it lives.</p>
+<p>Genellikle taşıdığımız her fonksiyon için <a href="https://bugzilla.mozilla.org">bugzilla.mozilla.org</a>'da [% terms.abug %] açtık. Orada fonksiyonun eski adını arayarak yeni ismini ve yerini öğrenebilirsiniz.</p>
 
 <h3><a name="v30_code_scope"></a>Temizlenen Değişken Kapsam Mevzuları</h3>
 
-<p>In normal perl, you can have code like this:</p>
+<p>Normal perl'de şuna benzer kodlar bulundurabilirsiniz:</p>
 <pre>my $var = 0;
 sub y { $var++ }</pre>
 
-<p>However, under mod_perl that doesn't work. So variables are no
-  longer &quot;shared&quot; with subroutines--instead all variables
-  that a subroutine needs must be declared inside the subroutine itself.</p>
+<p>Fakat bu kod mod_perl altında çalışmaz. Yani değişkenler artık altyordamlarla &quot;paylaşılmıyor&quot;, onun yerine her altyordamın ihtiyaç duyduğu değişkenler o altyordamın içinde tanımlanıyor.</p>
 
 <h3><a name="v30_code_sql"></a>SendSQL'in Sonu</h3>
 
-<p>The old <kbd>SendSQL</kbd> function and all of its companions are
-  <strong>gone</strong>. Instead, we now use DBI for all database
-  interaction.</p>
+<p>Eski <kbd>SendSQL</kbd> fonksiyonu ve 'arkadaş'ları <strong>silindi</strong>. Onun yerine artık tüm veritabanı etkileşimi için DBI kullanıyoruz.</p>
 
-<p>For more information about how to use 
-  <a href="http://search.cpan.org/perldoc?DBI">DBI</a> with 
-  [% terms.Bugzilla %], see the 
-  <a href="http://www.bugzilla.org/docs/developer.html#sql-sendreceive">Developer's
-  Guide Section About DBI</a></p>
+<p>[% terms.BugzillaLoc %] <a href="http://search.cpan.org/perldoc?DBI">DBI</a> kullanımı ile ilgili daha fazla bilgi için <a href="http://www.bugzilla.org/docs/developer.html#sql-sendreceive">Geliştiricinin DBI Kılavuzu</a>'na bakabilirsiniz.</p>
 
 <h3><a name="v30_code_auth"></a>Auth Yeniden Yazımı</h3>
 
-<p>The <kbd>Bugzilla::Auth</kbd> family of modules have been completely
-  re-written. For details on how the new structure of authentication,
-  read the 
-  <a href="[% docs_urlbase FILTER html %]api/Bugzilla/Auth.html">Bugzilla::Auth
-  API docs</a>.</p>
+<p>The <kbd>Bugzilla::Auth</kbd> modül ailesi tamamen baştan yazıldı. Kimlik doğrulamanın yeni yapısı ile ilgili olarak <a href="[% docs_urlbase FILTER html %]api/Bugzilla/Auth.html">Bugzilla::Auth API belgesi</a>ne bakabilirsiniz.</p>
 
-<p>It should be very easy to write new authentication plugins, now.</p>
+<p>Yeni yapılandırmayla yeni kimlik doğrulama eklentileri yazmak çok kolay olacaktır.</p>
 
 <h3><a name="v30_code_obj"></a>Bugzilla::Object</h3>
 
-<p>There is a new base class for most of our objects, 
-  <a href="[% docs_urlbase FILTER html %]api/Bugzilla/Object.html">Bugzilla::Object</a>.
-  It makes it really easy to create new objects based on things that are 
-  in the database.</p>
+<p>Nesnelerimizin çoğu için artık <a href="[% docs_urlbase FILTER html %]api/Bugzilla/Object.html">Bugzilla::Object</a> isminde bir temel sınıf bulunuyor. Bu yapı veritabanındakilerden yeni nesneler oluşturma işlemini gerçekten kolaylaştırıyor.</p>
 
 <h3><a name="v30_code_req"></a>Bugzilla-&gt;request-cache</h3>
 
-<p><kbd>Bugzilla.pm</kbd> used to cache things like the database
-  connection in package-global variables (like <kbd>$_dbh</kbd>).
+<p><kbd>Bugzilla.pm</kbd> eskiden veritabanı bağlantısı gibi bazı şeyleri package-global değişkenlerinde (mesela <kbd>$_dbh</kbd>) önbellekliyordu.
   That doesn't work in mod_perl, so instead now there's a hash
   that can be accessed through <code>Bugzilla-&gt;request_cache</code>
   to store things for the rest of the current page request.</p>
