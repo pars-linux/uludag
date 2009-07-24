@@ -1,0 +1,42 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+
+\title{Util Bileşeni Test Aşamaları}
+\author{Semen Cirit}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+\section{Antivirus alt bileşeni}
+\begin{enumerate}
+\item Klamav paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı belirli bir dizin içerisine kopyalayın. 
+\begin{verbatim}
+# wget https://secure.eicar.org/eicar.com.txt
+\end{verbatim}
+
+Klamav uygulamasını kullanarak, bu dizini virüs taramasından geçirin, ve klamavın bu virüsü bulup karantinaya almak itediğini gözlemleyin.
+
+\item Clamav paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı belirli bir dizin içerisine kopyalayın. 
+\begin{verbatim}
+# wget https://secure.eicar.org/eicar.com.txt
+# clamscan eicar.com.txt
+\end{verbatim}
+
+Yukarıda verilen ikinci komutun, virüsü tespit edebildiğini gözlemleyin.
+
+\end{enumerate}
+
+
+\end{document}
+

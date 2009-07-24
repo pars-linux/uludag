@@ -1,0 +1,38 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+
+\title{Programming Bileşeni Test Aşamaları}
+\author{Semen Cirit}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+\section{Language alt bileşeni}
+\subsection{Language alt bileşeni}
+\begin{enumerate}
+\item perl-IO-Socket-SSL paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve açın.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/IO-Socket-SSL-1.26.tar.gz
+\end{verbatim}
+
+Konsoldan;
+\begin{verbatim}
+# cd IO-Socket-SSL-1.26/
+# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+\end{enumerate}
+
+
+\end{document}
+

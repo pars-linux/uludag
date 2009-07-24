@@ -1,0 +1,44 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+
+\title{Server Bileşeni Test Aşamaları}
+\author{Semen Cirit}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+\section{Web alt bileşeni}
+\begin{enumerate}
+\item Apache paketi kurulumu sonrası:
+\begin{itemize}
+\item Servis yöneticisinden apache sunucusunu başlatın. Aşağıda bulunan komutu kullanarak sunucunun başlatılmıl olduğunu gözlemleyin.
+\item Firefox üzerinden http://localhost adresine bağlanın ve sorunsuz bir şekilde bağlanabildiğinizi gözlemleyin. 
+\item Aşağıdaki komutu çalıştırın ve komut çıktısında `Syntax Ok` aldığınzı gözlemleyin.
+\begin{verbatim}
+# apachectl -M 
+\end{verbatim}
+
+\end{itemize}
+
+\end{enumerate}
+\begin{itemize}
+ \item dhcp paketi kurulumu sonrası:
+
+Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra konsoldan aşağıda bulunan komutu çalıştırın ve ağa bağlı olduğununuzu gözlemleyin.
+\begin{verbatim}
+# ping 4.2.2.1
+\end{verbatim}
+
+
+\end{itemize}
+
+
+\end{document}
+
