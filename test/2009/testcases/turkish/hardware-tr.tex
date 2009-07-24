@@ -1,0 +1,33 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+
+\title{Hardware Bileşeni Test Aşamaları}
+\author{Semen Cirit}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+
+\section{Scanner alt Bileşeni}
+\begin{enumerate}
+\item sane-backends paketi kurulumu sonrası:
+
+Eğer bir tarayıcınız var ise bu paketi test edebilirsiniz!!
+\begin{verbatim}
+# sane-find-scanner
+# scanimage 
+\end{verbatim}
+
+İlk komutun sorunsuz olarak tarayıcınızı bulduğunu gözlemleyin.
+İkinci komutun ise düzgün bir şekilde tarama yaptığını ve bir .pnm uzantılı bir resim dosyası ürettiğini gözlemleyin.
+\end{enumerate}
+
+\end{document}
+

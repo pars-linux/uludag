@@ -1,0 +1,47 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+
+\title{Library Test Aşamaları}
+\author{Semen Cirit}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+\begin{enumerate}
+\item exempi paketi kurulumu sonrası:
+
+Listen paketini kurun. Uygulamayı açın dosya sistemi bölümünden /usr/kde/3.5/share/sounds/ dizinine girin ve sorunsuz bir şekilde müziklerin listelendiğini ve müzikleri çalabildiğini gözlemleyin.
+
+\item yaz paketi kurulumu sonrası:
+
+tellico paketini kurun, ve internet araması tuşuna basın (ucunda yıldız bulunan bir asa olan ikon), arama kaynağı olarak amazonu şeçin ve arama kutusuna bir şarkı adı girin, listelenen albümlerden birini seçin ve bunu kolleksiyonunuza ekleyin. 
+
+Tüm bu işlemlerin sorunsuz olarak gerçekleştiğini gözlemleyin.
+
+
+\item eet ve eina paketi kurulumu sonrası
+
+edb paketini kurun. Aşağıda buluna komutların sorunsuz bir şekilde çalıştığını ve sonuç olarak "default" diye bir çıktı döndürdüğünü gözlemleyin.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/test_edb
+ # chmod 755 test_edb
+ # ./test_edb
+ # edb_ed test.db get /foo/theme str
+\end{verbatim}
+
+\item geoip paketi kurulumu sonrası:
+\begin{verbatim}
+geoiplookup www.google.com 
+\end{verbatim}
+
+\end{enumerate}
+
+\end{document}
+
