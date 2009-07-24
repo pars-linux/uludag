@@ -38,6 +38,9 @@ def saveXorgConfig(card):
     if drvInfo:
         secDevice.set("Driver", drvInfo["xorg-module"])
 
+    if card.driver == "fglrx":
+        card.depth = 24
+
     # Monitor sections
     for name, output in card.outputs.items():
         identifier = "Monitor[%s]" % name
