@@ -1,0 +1,99 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+
+%opening
+\title{X11 Test Aşamaları}
+\author{Semen Cirit}
+
+\begin{document}
+
+\maketitle
+
+ Note:	
+  	Tüm X hataları için  aşağıdaki dosyaya göz atabilirsiniz:
+	/var/log/Xorg.0.log  
+
+\section{Server alt Bileşeni}
+
+Zorg ve xorg-server paketleri kurulumu sonrası aşağıda bulunan aşamalar uygulanmalıdır.
+
+\begin{enumerate}
+  \item Direct rendering testi
+    \begin{enumerate}
+    \item Eğer xterm paketi sisteminizde kurulu değil ise bu test için ilk olarak bu paketi kurunuz.
+    \item   $Ctrl+Alt+F1$ tuşlarına aynı anda olacak şekilde basın.
+
+	    X'in çökmediğini gözlemlemleyin.
+    \item  Daha sonra bu komutu çalıştırın.
+	  \begin{verbatim}
+	  xinit -- :2
+	  \end{verbatim}
+	  Karşınıza koyu gri bir masaüstü, x işareti şeklinde bir fare imleci ve bir terminal penceresi çıktığını gözlemleyiniz..
+    \item Grafik arayüzüne geçebilmek için \texttt{Ctrl+Alt+F7} tuşlarına aynı anda olacak şekilde basın.    
+	   X'in çökmediğini gözlemlemleyin.
+    \item "glxgears" ve "glxgears -fullscreen" komutlarını konsoldan çalıştırın.
+
+	  Hiçbir problem olmadan çalışabildiklerini gözlemleyin.
+    \end{enumerate}
+
+  \item DPI (Dots Per Inch)testi
+    
+        Menüden bir openoffice yazıcı çalıştırın ve 100\% büyütülmüş bir A4 kağıt seçin. Aynı zamanda gerçek bir A4 kağıdı elinize alın.
+
+        Gerçek A4 kağıdının boyutları ile openoffice yazıcıda açtığınız A4 kağıdının boyutlarının aynı olduğunu gözlemleyin.
+  \item Çözünürlük testi
+     \begin{enumerate}
+      \item Menüden Sistem ayarları $\rightarrow$ Ekran yolunu izleyin
+
+	Gerçek çözünürlük ile seçilmiş çözünürlüğün aynı olduğunu gözlemleyin.
+
+      \item Gerçek ve seçilmiş çözünürlüğünüzü "xrandr" komutunu kullanarak bulabilirsiniz.
+	  
+	  Örnek komut çıktısı:
+	  
+	  1440x900  50.0*+
+	  
+	  Bu bilgi:
+	  \begin{table}[h]
+	  \centering
+	  \begin{tabular}{|c|c|c|}
+		  \hline
+		  $1440x900$ & $\rightarrow$ & çözünürlük \\
+		  50.0       & $\rightarrow$ & tazelenme sıklığı \\
+		  $*$        & $\rightarrow$ & örnek çözünürlüğün seçilmiş çözünürlük olduğu \\
+		  $+$        & $\rightarrow$ & örnek çözünürlüğün gerçek çözünürlük olduğu\\
+		  \hline
+	  \end{tabular} 
+	  \label{tab:tbl}
+	  \end{table}
+
+	  Bu $+$ ve $*$ işaretlerinin aynı çözünürlüğe ait olduğunu gözlemleyin. 
+
+    \item Bilgisayarınızı yeniden başlatıp, açılış ekranından F4 fonksiyon tuşu ile güvenli kipi seçerek bilgisayarınızı açın.  
+
+	  Daha sonra ise tekar restart ederek F4 fonksiyon tuşu ile tekrar tanıyı seçerek açın.
+
+	  Grafiksel olarak bir sorun yaşamadığınızı gözlemleyin.
+    \end{enumerate}
+ 
+ \item  Bir medya oynatıcıyı tam ekran olarak açın. 
+
+      X'in çökmediğini gözlemleyin.
+ \item(2009 için) Menüden Sistem ayarları $\rightarrow$ masaüstü yolunu izleyerek efektlerinizi açın
+ 
+  X'in çökmediğini gözlemleyin.
+  \item 2D (iki boyut) testi 
+      
+      Bir program penceresi açın (örneğin mplayer, dolphin, firefox) ve sağa sola hızlıca sallayın.
+        
+      Hiçbir problem olmadan sallandığını gözlemleyin.
+
+ \item (2009 için)3D (üç boyut)testi
+   %(For Pardus 2008 first execute glxinfo and find the Direct rendering is yes.)
+
+    Menüden uygulamalar $\rightarrow$ eğitim $\rightarrow$ bilim $\rightarrow$ marble yolunu izleyin.
+	
+    Uygulamanın grafiksel olarak düzgün çalıştığını gözlemleyin.
+    \end{enumerate}
+\end{document}

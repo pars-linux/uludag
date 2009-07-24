@@ -31,7 +31,37 @@ Konsoldan;
 \end{verbatim}
 
 Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+\item perl-Compress-Zlib paketi kurulumu sonrası:
+
+git paketini kurun ve aşağıdaki komutları çalıştırın. Ve sorunsuz bir şekilde Git deposu oluşturduğunu ve klonladğını gözlemleyin.
+\begin{verbatim}
+ # cd ~
+ # mkdir test_git
+ # cd test_git
+ # git init
+ # cd ..
+ # git clone test_git test_clone
+\end{verbatim}
+
 \end{enumerate}
+\begin{itemize}
+ \item R paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları çalıştırın ve bir grafiğin oluştuğunu gözlemleyin.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test_R.R
+ # R --vanilla --slave < test_R.R
+\end{verbatim}
+\item R-mathlib paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalıştıklarını gözlemleyin.	
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test_r-mathlib.c
+ # gcc -o test_r-matlib test_r-matlib.c -lm -lRmath
+\end{verbatim}
+
+
+\end{itemize}
 
 
 \end{document}

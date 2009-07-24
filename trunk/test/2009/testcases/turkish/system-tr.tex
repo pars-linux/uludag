@@ -1,0 +1,33 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+
+\title{System Bileşeni Test Aşamaları}
+\author{Semen Cirit}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\begin{document}
+
+\maketitle
+
+\section{Base alt Bileşeni}
+\begin{enumerate}
+\item mudur paketi kurulumu sonrası:
+
+\begin{itemize}
+  \item Makinenizi yeniden başlatın ve sistemin düzgün bir şekilde açıldığını  gözlemleyin.
+ \item Ctrl+Alt+F1 tuşuna basıp sistem konsoluna geçin ve sistem dilinizin daha önceki dil ve kalvye düzeni ile aynı olduğunu gözlemleyin.
+  \item /etc/mudur/ altında bulunan locale, language, keymap dosyalarının sistem dil ve klavye dilinize eskisi gibi uygun olduğunu gözlemleyin.
+ \item Pisi komutlarının düzgün bir şekilde çalıştığını gözlemleyin. 
+
+\end{itemize}
+
+\end{enumerate}
+
+\end{document}
+
