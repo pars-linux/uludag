@@ -2,9 +2,11 @@
 Name=Display Settings
 Name[sv]=Bildskärm
 Name[tr]=Ekran Ayarları
+Name[nl]=Beeldscherminstellingen
 Comment=Configure display devices
 Comment[sv]=Anpassar bildskärmen
 Comment[tr]=Görüntü aygıtlarını yapılandır
+Comment[nl]=Beeldapparaten instellen
 Exec=display-settings
 Icon=preferences-desktop-display
 Type=Application

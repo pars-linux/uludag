@@ -16,10 +16,13 @@ Name[tr]=Ağ Yöneticisi
 Name[sv]=Nätverkshanteraren
 Name[es]=Administrador de Red
 Name[de]=Netzwerk Manager
+
 Comment=Network Manager
 Comment[sv]=Nätverkshanteraren
 Comment[es]=Administrador de Red
 Comment[de]=Netzwerk Manager
 Comment[tr]=Ağ Yöneticisi
+Comment[nl]=Beheerder voor netwerk
 X-KDE-Keywords=python network manager dns ethernet wireless ip dhcp internet
 X-KDE-Keywords[tr]=python ağ yönetici dns ethernet kablosuz ip dhcp internet
+X-KDE-Keywords[nl]=python netwerkbeheer dns ethernet draadloos ip dhcp internet
