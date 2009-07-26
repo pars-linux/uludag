@@ -92,7 +92,7 @@ class PiSiPackageInfo:
         Throw ValueError if package does not exist.
         '''
         try:
-            return self.installdb.get_files(package).list
+            return [f.path for f in self.installdb.get_files(package).list]
         except:
             raise ValueError, "Unable to find package '%s'" % package
 
@@ -121,7 +121,7 @@ class PiSiPackageInfo:
         '''
         #TODO: implement the uninstalled flag
         if not uninstalled:
-            package, files = pisi.api.search_file(file)
+            package, files = pisi.api.search_file(file)[0]
             return package
         else:
             repodb = pisi.db.repodb.RepoDB()

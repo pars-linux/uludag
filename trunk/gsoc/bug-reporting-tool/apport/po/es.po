@@ -1,23 +1,21 @@
-# translation of es.po to Spanish
 # Spanish translation for apport
 # Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
 # This file is distributed under the same license as the apport package.
-#
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
-# Klemens Häckel <click3d at linuxmail dot org>, 2009.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: es\n"
+"Project-Id-Version: apport\n"
 "Report-Msgid-Bugs-To: martin.pitt@ubuntu.com\n"
 "POT-Creation-Date: 2009-06-14 23:21+0200\n"
-"PO-Revision-Date: 2009-07-12 21:33-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
+"PO-Revision-Date: 2009-04-04 07:51+0000\n"
+"Last-Translator: Ricardo Pérez López <ricpelo@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2009-04-20 13:20+0000\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Launchpad (build Unknown)\n"
 
 #: ../gtk/apport-gtk.py:66 ../gtk/apport-gtk.py:70
 #, python-format
@@ -141,7 +139,8 @@ msgid "Uploading problem information"
 msgstr "Enviando la información del problema"
 
 #: ../gtk/apport-gtk.ui.h:22 ../cli/apport-cli.py:169
-msgid "You can help the developers to fix the package by reporting the problem."
+msgid ""
+"You can help the developers to fix the package by reporting the problem."
 msgstr ""
 "Puede ayudar a los desarrolladores a corregir el paquete informando del "
 "problema."
@@ -247,7 +246,8 @@ msgstr "&Ver informe"
 
 #: ../cli/apport-cli.py:234
 msgid "&Keep report file for sending later or copying to somewhere else"
-msgstr "&Guardar el informe para enviar luego, o para copiarlo en algún otro lugar."
+msgstr ""
+"&Guardar el informe para enviar luego, o para copiarlo en algún otro lugar."
 
 #: ../cli/apport-cli.py:263
 msgid "Problem report file:"
@@ -286,37 +286,38 @@ msgstr ""
 
 #: ../cli/apport-cli.py:345
 msgid "&Done"
-msgstr "&Hecho"
+msgstr ""
 
 #: ../cli/apport-cli.py:351
 msgid "none"
-msgstr "ninguno"
+msgstr ""
 
 #: ../cli/apport-cli.py:352
 #, python-format
 msgid "Selected: %s. Multiple choices:"
-msgstr "Seleccionado: %s. Selección múltiple:"
+msgstr ""
 
 #: ../cli/apport-cli.py:368
-# favor revisar
 msgid "Choices:"
-msgstr "Seleccionados:"
+msgstr ""
 
 #: ../cli/apport-cli.py:382
 msgid "Path to file (Enter to cancel):"
-msgstr "Ruta a archivo (presione Enter para cancelar):"
+msgstr ""
 
 #: ../cli/apport-cli.py:387
+#, fuzzy
 msgid "File does not exist."
-msgstr "Archivo no existe."
+msgstr "El paquete %s no existe"
 
 #: ../cli/apport-cli.py:389
 msgid "This is a directory."
-msgstr "Esto es un directorio."
+msgstr ""
 
 #: ../cli/apport-cli.py:396
 msgid "No pending crash reports. Try --help for more information."
-msgstr "No hay informes de errores pendientes. Intente --help para mas información."
+msgstr ""
+"No hay informes de errores pendientes. Intente --help para mas información."
 
 #. TRANS: %s is the name of the operating system
 #: ../apport/ui.py:60
@@ -393,25 +394,30 @@ msgstr "Error"
 
 #: ../apport/ui.py:248
 msgid "There is not enough disk space available to process this report."
-msgstr "No hay suficiente espacio de disco disponible para procesar este informe."
+msgstr ""
+"No hay suficiente espacio de disco disponible para procesar este informe."
 
 #: ../apport/ui.py:268
 msgid "No package specified"
 msgstr "No se especificó ningún paquete"
 
 #: ../apport/ui.py:269
-msgid "You need to specify a package or a PID. See --help for more information."
+msgid ""
+"You need to specify a package or a PID. See --help for more information."
 msgstr ""
 "Necesita especificar un paquete o un PID. Consulte --help para más "
 "información."
 
 #: ../apport/ui.py:278
 msgid "Invalid PID"
-msgstr "PID inválido"
+msgstr ""
 
 #: ../apport/ui.py:279
+#, fuzzy
 msgid "The specified process ID does not belong to a program."
-msgstr "No existe programa con el ID de proceso especificado."
+msgstr ""
+"El proceso especificado no le pertenece. Ejecute este programa como "
+"propietario del proceso o como superusuario."
 
 #: ../apport/ui.py:287
 msgid "Permission denied"
@@ -449,7 +455,8 @@ msgstr "Problemas con la red"
 
 #: ../apport/ui.py:600
 msgid "Could not upload report data to crash database"
-msgstr "No se han podido enviar los datos del informe a la base de datos de fallos"
+msgstr ""
+"No se han podido enviar los datos del informe a la base de datos de fallos"
 
 #: ../apport/ui.py:624
 msgid "Memory exhaustion"
@@ -479,3 +486,58 @@ msgstr ""
 "mostrado en el navegador web. Por favor, compruebe si puede añadir cualquier "
 "información adicional que pudiera resultar de utilidad a los desarrolladores."
 
+#~ msgid "&Details..."
+#~ msgstr "&Detalles..."
+
+#~ msgid "Sorry, %s closed unexpectedly."
+#~ msgstr "Disculpe: %s se ha cerrado inesperadamente."
+
+#~ msgid "Sorry, the program \"%s\" closed unexpectedly."
+#~ msgstr "Disculpe: el programa «%s» se ha cerrado inesperadamente."
+
+#~ msgid "&Ignore future crashes of this program version"
+#~ msgstr "&Ignorar futuros errores de esta versión del programa"
+
+#~ msgid "Restart &Program"
+#~ msgstr "Reiniciar el &programa"
+
+#~ msgid "Sorry, the package \"%s\" failed to install or upgrade."
+#~ msgstr "Disculpe: el paquete «%s» no se pudo instalar o actualizar."
+
+#~ msgid "Generic error"
+#~ msgstr "Error genérico"
+
+#~ msgid ""
+#~ "After the problem report has been sent, please fill out the form in the "
+#~ "automatically opened web browser."
+#~ msgstr ""
+#~ "Una vez se haya enviado el informe del problema, por favor, complete el "
+#~ "formulario que aparecerá automáticamente en el navegador."
+
+#~ msgid "&Send"
+#~ msgstr "&Enviar"
+
+#~ msgid "Collecting Problem Information"
+#~ msgstr "Recopilando información del problema"
+
+#~ msgid ""
+#~ "The collected information can be sent to the developers to improve the "
+#~ "application. This might take a few minutes."
+#~ msgstr ""
+#~ "La información recopilada se puede enviar a los desarrolladores para "
+#~ "mejorar la aplicación. Esto puede tardar algunos minutos."
+
+#~ msgid "Uploading Problem Information"
+#~ msgstr "Enviando información del problema"
+
+#~ msgid "Unreportable problem"
+#~ msgstr "Problema no informable"
+
+#~ msgid ""
+#~ "The current configuration cannot be supported:\n"
+#~ "\n"
+#~ "%s"
+#~ msgstr ""
+#~ "La configuración actual no está soportada:\n"
+#~ "\n"
+#~ "%s"
