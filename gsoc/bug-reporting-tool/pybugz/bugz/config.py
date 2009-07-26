@@ -103,12 +103,12 @@ class BugzConfig:
 		},
 
 		'modify': {
-		#	'delta_ts': '%Y-%m-%d %H:%M:%S',
+		#    'delta_ts': '%Y-%m-%d %H:%M:%S',
 		'longdesclength': '1',
 		'id': '',
 		'newcc': '',
 		'removecc': '',  # remove selected cc's if set
-		'cc': '',		# only if there are already cc's
+		'cc': '',        # only if there are already cc's
 		'bug_file_loc': '',
 		'bug_severity': '',
 		'bug_status': '',
@@ -126,7 +126,7 @@ class BugzConfig:
 		'blocked': '',
 		'knob': ('none', 'assigned', 'resolve', 'duplicate', 'reassign'),
 		'resolution': '', # only valid for knob=resolve
-		'dup_id': '',	 # only valid for knob=duplicate
+		'dup_id': '',     # only valid for knob=duplicate
 		'assigned_to': '',# only valid for knob=reassign
 		'form_name': 'process_bug',
 		'comment':''

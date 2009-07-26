@@ -407,7 +407,7 @@ class PrettyBugz(Bugz):
 			#
 			#  Check all bug fields.
 			#  XXX: We use "if not <field>" for mandatory fields
-			#	   and "if <field> is None" for optional ones.
+			#       and "if <field> is None" for optional ones.
 			#
 
 			# check for product
@@ -541,19 +541,19 @@ class PrettyBugz(Bugz):
 
 		# print submission confirmation
 		print '-' * (self.columns - 1)
-		print 'Product	 : ' + product
-		print 'Version	 : ' + prodversion
+		print 'Product     : ' + product
+		print 'Version     : ' + prodversion
 		print 'Component   : ' + component
-		print 'priority	: ' + priority
-		print 'severity	: ' + severity
+		print 'priority    : ' + priority
+		print 'severity    : ' + severity
 		print 'Assigned to : ' + assigned_to
-		print 'CC		  : ' + cc
-		print 'URL		 : ' + url
-		print 'Title	   : ' + title
+		print 'CC          : ' + cc
+		print 'URL         : ' + url
+		print 'Title       : ' + title
 		print 'Description : ' + description
-		print 'Keywords	: ' + keywords
+		print 'Keywords    : ' + keywords
 		print 'Depends on  : ' + dependson
-		print 'Blocks	  : ' + blocked
+		print 'Blocks      : ' + blocked
 		print '-' * (self.columns - 1)
 
 		if not batch:
@@ -756,13 +756,13 @@ class PrettyBugz(Bugz):
 		print 'Usage: bugz <subcommand> [parameter(s)] [options..]'
 		print
 		print 'Subcommands:'
-		print '  search	  Search for bugs in bugzilla'
-		print '  get		 Get a bug from bugzilla'
+		print '  search      Search for bugs in bugzilla'
+		print '  get         Get a bug from bugzilla'
 		print '  attachment  Get an attachment from bugzilla'
-		print '  post		Post a new bug into bugzilla'
-		print '  modify	  Modify a bug (eg. post a comment)'
-		print '  attach	  Attach file to a bug'
-		print '  namedcmd	Run a stored search,'
+		print '  post        Post a new bug into bugzilla'
+		print '  modify      Modify a bug (eg. post a comment)'
+		print '  attach      Attach file to a bug'
+		print '  namedcmd    Run a stored search,'
 		print
 		print 'Examples:'
 		print '  bugz get 12345'

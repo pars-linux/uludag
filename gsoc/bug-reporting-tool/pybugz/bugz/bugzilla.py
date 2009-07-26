@@ -154,13 +154,13 @@ class Bugz:
 		@param base: base url of the bugzilla
 		@type  base: string
 		@keyword user: username for authenticated actions.
-		@type	user: string
+		@type    user: string
 		@keyword password: password for authenticated actions.
-		@type	password: string
+		@type    password: string
 		@keyword forget: forget login session after termination.
-		@type	forget: bool
+		@type    forget: bool
 		@keyword skip_auth: do not authenticate
-		@type	skip_auth: bool
+		@type    skip_auth: bool
 		"""
 		self.base = base
 		scheme, self.host, self.path, query, frag  = urlsplit(self.base)
@@ -219,17 +219,15 @@ class Bugz:
 		"""
 		return ''
 
-	def auth(self):
-		"""Authenticate a session.
-		"""
-		# check if we need to authenticate
+	def try_auth(self):
+		"""Check whether the user is already authenticated."""
 		if self.authenticated:
-			return
+			return True
 
 		# try seeing if we really need to request login
 		if not self.forget:
 			try:
-				self.cookiejar.load(ignore_discard=True)
+				self.cookiejar.load()
 			except IOError:
 				pass
 
@@ -244,6 +242,13 @@ class Bugz:
 		if not re_request_login.search(resp.read()):
 			self.log('Already logged in.')
 			self.authenticated = True
+			return True
+		return False
+
+	def auth(self):
+		"""Authenticate a session.
+		"""
+		if self.try_auth():
 			return
 
 		# prompt for username if we were not supplied with it
@@ -270,7 +275,7 @@ class Bugz:
 		if resp.info().has_key('Set-Cookie'):
 			self.authenticated = True
 			if not self.forget:
-				self.cookiejar.save(ignore_discard=True)
+				self.cookiejar.save()
 				os.chmod(self.cookiejar.filename, 0700)
 			return True
 		else:
@@ -315,32 +320,32 @@ class Bugz:
 		@type  order: string
 
 		@keyword assigned_to: email address which the bug is assigned to.
-		@type	assigned_to: string
+		@type    assigned_to: string
 		@keyword reporter: email address matching the bug reporter.
-		@type	reporter: string
+		@type    reporter: string
 		@keyword cc: email that is contained in the CC list
-		@type	cc: string
+		@type    cc: string
 		@keyword commenter: email of a commenter.
-		@type	commenter: string
+		@type    commenter: string
 
 		@keyword whiteboard: string to search in status whiteboard (gentoo?)
-		@type	whiteboard: string
+		@type    whiteboard: string
 		@keyword keywords: keyword to search for
-		@type	keywords: string
+		@type    keywords: string
 
 		@keyword status: bug status to match. default is ['NEW', 'ASSIGNED',
 						 'REOPENED'].
-		@type	status: list
+		@type    status: list
 		@keyword severity: severity to match, empty means all.
-		@type	severity: list
+		@type    severity: list
 		@keyword priority: priority levels to patch, empty means all.
-		@type	priority: list
+		@type    priority: list
 		@keyword comments: search comments instead of just bug title.
-		@type	comments: bool
+		@type    comments: bool
 		@keyword product: search within products. empty means all.
-		@type	product: list
+		@type    product: list
 		@keyword component: search within components. empty means all.
-		@type	component: list
+		@type    component: list
 
 		@return: list of bugs, each bug represented as a dict
 		@rtype: list of dicts
@@ -470,40 +475,40 @@ class Bugz:
 		@param bugid: bug id
 		@type  bugid: int
 		@keyword title: new title for bug
-		@type	title: string
+		@type    title: string
 		@keyword comment: comment to add
-		@type	comment: string
+		@type    comment: string
 		@keyword url: new url
-		@type	url: string
+		@type    url: string
 		@keyword status: new status (note, if you are changing it to RESOLVED, you need to set {resolution} as well.
-		@type	status: string
+		@type    status: string
 		@keyword resolution: new resolution (if status=RESOLVED)
-		@type	resolution: string
+		@type    resolution: string
 		@keyword assigned_to: email (needs to exist in bugzilla)
-		@type	assigned_to: string
+		@type    assigned_to: string
 		@keyword duplicate: bug id to duplicate against (if resolution = DUPLICATE)
-		@type	duplicate: int
+		@type    duplicate: int
 		@keyword priority: new priority for bug
-		@type	priority: string
+		@type    priority: string
 		@keyword severity: new severity for bug
-		@type	severity: string
+		@type    severity: string
 		@keyword add_cc: list of emails to add to the cc list
-		@type	add_cc: list of strings
+		@type    add_cc: list of strings
 		@keyword remove_cc: list of emails to remove from cc list
-		@type	remove_cc: list of string.
+		@type    remove_cc: list of string.
 		@keyword add_dependson: list of bug ids to add to the depend list
-		@type	add_dependson: list of strings
+		@type    add_dependson: list of strings
 		@keyword remove_dependson: list of bug ids to remove from depend list
-		@type	remove_dependson: list of strings
+		@type    remove_dependson: list of strings
 		@keyword add_blocked: list of bug ids to add to the blocked list
-		@type	add_blocked: list of strings
+		@type    add_blocked: list of strings
 		@keyword remove_blocked: list of bug ids to remove from blocked list
-		@type	remove_blocked: list of strings
+		@type    remove_blocked: list of strings
 
 		@keyword whiteboard: set status whiteboard
-		@type	whiteboard: string
+		@type    whiteboard: string
 		@keyword keywords: set keywords
-		@type	keywords: string
+		@type    keywords: string
 
 		@return: list of fields modified.
 		@rtype: list of strings
@@ -523,9 +528,10 @@ class Bugz:
 
 		# copy existing fields
 		FIELDS = ('bug_file_loc', 'bug_severity', 'short_desc', 'bug_status',
-				'status_whiteboard', 'keywords',
-				'op_sys', 'priority', 'version', 'target_milestone',
-				'assigned_to', 'rep_platform', 'product', 'component')
+				  'status_whiteboard', 'keywords',
+				  'op_sys', 'priority', 'version', 'target_milestone',
+				  'assigned_to', 'rep_platform', 'product', 'component',
+				  'delta_ts')
 
 		FIELDS_MULTI = ('blocked', 'dependson')
 
@@ -545,9 +551,9 @@ class Bugz:
 		if resolution:
 			resolution = resolution.upper()
 
+		qparams['bug_status'] = status
 		if status == 'RESOLVED' and status != qparams['bug_status']:
 			qparams['knob'] = 'resolve'
-			qparams['bug_status'] = status
 			if resolution:
 				qparams['resolution'] = resolution
 			else:
@@ -557,17 +563,12 @@ class Bugz:
 			modified.append(('resolution', qparams['resolution']))
 		elif status == 'REOPENED' and status != qparams['bug_status']:
 			qparams['knob'] = 'reopen'
-			qparams['bug_status'] = status
 			modified.append(('status', status))
 		elif status == 'VERIFIED' and status != qparams['bug_status']:
 			qparams['knob'] = 'verified'
-			qparams['bug_status'] = status
 			modified.append(('status', status))
 		elif status == 'CLOSED' and status != qparams['bug_status']:
 			qparams['knob'] = 'closed'
-			qparams['bug_status'] = status
-			if resolution:
-				qparams['resolution'] = resolution
 			modified.append(('status', status))
 		elif duplicate:
 			qparams['knob'] = 'duplicate'
