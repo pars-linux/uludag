@@ -20,6 +20,9 @@ if len(sys.argv) >= 2 and sys.argv[1] != 'sdist' and not os.path.exists('apport/
     elif os.path.exists('/usr/bin/rpm'):
         print 'Installing RPM packaging backend.'
         shutil.copy('backends/packaging_rpm.py', 'apport/packaging_impl.py')
+    elif os.path.exists('/usr/bin/pisi'):
+        print 'Installing PiSi packaging backend.'
+        shutil.copy('backends/packaging_pisi.py', 'apport/packaging_impl.py')
     else:
         print >> sys.stderr, 'Could not determine system package manager. Copy appropriate backends/packaging* to apport/packaging_impl.py'
         sys.exit(1)
@@ -30,12 +33,12 @@ DistUtilsExtra.auto.setup(name='apport',
       url='https://wiki.ubuntu.com/Apport',
       license='gpl',
       description='intercept, process, and report crashes and bug reports',
-      version='1.5',
+      version='1.6',
 
       data_files=[('share/mime/packages', glob('xdg-mime/*')),
-                  ('share/apport', glob('kde/*.ui')), #TODO: use pykdeuic modules
+                  ('share/apport', glob('kde/*.ui') + ['kde/apport-kde']), #TODO: use pykdeuic modules
                   ('share/apport/testsuite/', glob('test/*')),
                   ('share/doc/apport/', glob('doc/*.txt')),
                   ],
-      scripts=['gtk/apport-gtk', 'kde/apport-kde', 'cli/apport-cli'],
+      #scripts=['gtk/apport-gtk', 'kde/apport-kde', 'cli/apport-cli'],
 )

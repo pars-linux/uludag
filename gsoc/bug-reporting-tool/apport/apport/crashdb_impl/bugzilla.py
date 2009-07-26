@@ -15,24 +15,21 @@ from StringIO import StringIO
 from urlparse import urljoin
 
 
-BUGZILLA_URL = 'http://localhost/bugzilla/'
-MYUSERNAME = 'asd@asd.com'
-MYPASSWORD = 'asd'
 
 # FIXME: importing from apport.crashdb_impl.launchpad creates a requirement
 #        of launchpadlib, which is not needed when using the Bugzilla backend
-#        perhaps the best choice here is creating a common_data module to be
-#        used by every crashdb.
+#        perhaps the best choice here is adding common data on crashdb.py
 APPORT_FILES = ('Dependencies.txt', 'CoreDump.gz', 'ProcMaps.txt',
         'Traceback.txt', 'Disassembly.txt', 'Registers.txt', 'Stacktrace.txt',
         'ThreadStacktrace.txt', 'DpkgTerminalLog.txt', 'DpkgTerminalLog.gz')
 
+# Helper classes {{{
 class Bug(object):
     """
     This class abstracts operations on the ElementTree returned by bugz for a
     bug entry.
     Some attributes as lazilly evaluated to avoid a performance hit every time
-    we instantiate a bug objetc.
+    we instantiate a bug object.
     """
 
     def __init__(self, bug_id, node):
@@ -147,7 +144,7 @@ class Bug(object):
             }
             self._attachments.append(attachment)
         return self._attachments
-
+#}}}
 
 class CrashDatabase(apport.crashdb.CrashDatabase):
     """
@@ -171,6 +168,8 @@ class CrashDatabase(apport.crashdb.CrashDatabase):
 
         self._bugzilla = None
         self._baseurl = None
+        self.username = None
+        self.password = None
 
 
     @property
@@ -183,12 +182,25 @@ class CrashDatabase(apport.crashdb.CrashDatabase):
             return self._bugzilla
 
         self._baseurl = self.options.get('baseurl')
-        self._bugzilla = Bugz(self._baseurl, MYUSERNAME, MYPASSWORD)
-        #FIXME: login should be handled elsewhere
-        if not self._bugzilla:
-            print >> sys.stderr, 'Error acquiring Bugzilla instance'
-            sys.exit(1)
+        self._bugzilla = Bugz(self._baseurl)
+        if self.username is None or self.password is None:
+            if not self._bugzilla.try_auth():
+                self._bugzilla = None
+                raise apport.crashdb.NeedsCredentials, 'ZOMG!'
+        else:
+            self._bugzilla = Bugz(self._baseurl, self.username, self.password)
+            try:
+                self._bugzilla.auth()
+            except RuntimeError:
+                # Happens when the username/password pair is invalid.
+                raise apport.crashdb.NeedsCredentials, 'BBQ!'
         return self._bugzilla
+
+
+    def set_credentials(self, username, password):
+        """Sets username and password to be used on log-in."""
+        self.username = username
+        self.password = password
 
 
     def upload(self, report, progress_callback = None):
@@ -201,12 +213,11 @@ class CrashDatabase(apport.crashdb.CrashDatabase):
         bytes already sent, and the total number of bytes to send. This can be
         used to provide a proper upload progress indication on frontends.'''
         data = {}
+        data.update(self.options['default_options'])
 
         # PyBugz mandatory args
-        product = 'TestProduct'
-        component = 'TestComponent'
-        #product = 'FoodReplicator'
-        #component = 'SpiceDispenser'
+        product = data.pop('product')
+        component = data.pop('component')
         title = report.get('Title', report.standard_title())
         description = ''
 
@@ -230,17 +241,18 @@ class CrashDatabase(apport.crashdb.CrashDatabase):
         report.write_mime(mime, extra_headers=hdr)
         mime.flush()
         mime.seek(0)
-        #TODO: decide whether to implement multipart upload#}}}
-        # Reding MIME data and uploading each file
+        #}}}
+        # Reding MIME data and uploading each file {{{
+        #FIXME: there should be a standard way of getting this
         message = Parser().parse(mime)
         attachables = []
         for item in message.walk():
             filename = item.get_filename()
             # If "Content-Disposition" is inline, filename will be None
             if filename is not None:
-                data = b64decode(item.get_payload())
+                bdata = b64decode(item.get_payload())
                 filetype = item.get_content_type()
-                attachable = (filename, filetype, data)
+                attachable = (filename, filetype, bdata)
                 attachables.append(attachable)
             else:
                 # Bug description is `inline`
@@ -248,21 +260,14 @@ class CrashDatabase(apport.crashdb.CrashDatabase):
                     description += b64decode(item.get_payload())
                 except:
                     pass
-        mime.close()
+        mime.close() # }}}
 
         # optional args
-        data = {
-            #'url': '',
-            #'assigned_to': '',
-            #'cc': '',
-            'keywords': hdr['Tags'],
-            'version': 'unspecified',
-            #'version': '1.0',
-            #'dependson': '',
-            #'blocked': '',
-            #'priority': 'P2',
-            #'severity': 'minor',
-        }
+        if 'keywords' in data:
+            data['keywords'] += hdr['Tags']
+        else:
+            data['keywords'] = hdr['Tags']
+        #data.pop('keywords')
 
         bug_id = self.bugzilla.post(product, component, title, description,
                                     **data)
@@ -883,7 +888,24 @@ NameError: global name 'weird' is not defined'''
         # Bugzilla implementation
         @classmethod
         def _get_instance(klass):
-            return CrashDatabase(None,None,{'baseurl': BUGZILLA_URL})
+            url = 'http://localhost/bugzilla/'
+            defaultopts = {
+                'product': 'FoodReplicator',
+                'component': 'SpiceDispenser',
+                'version': '1.0',
+                #'url': '',
+                #'assigned_to': '',
+                #'cc': '',
+                #'keywords': '',
+                #'version': '1.0',
+                #'dependson': '',
+                #'blocked': '',
+                #'priority': 'P2',
+                #'severity': 'minor',
+            }
+
+            return CrashDatabase(None,None,{'baseurl': url,
+                                            'default_options': defaultopts})
 
         def _mark_needs_retrace(self, id):
             '''Mark a report ID as needing retrace.'''
