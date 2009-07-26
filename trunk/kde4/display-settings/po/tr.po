@@ -130,7 +130,7 @@ msgid ""
 msgstr ""
 "<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
 "b> sürücüsünü kullanmak isteyebilirsiniz. Bu sürücüyü kullanmak istiyor "
-"musunuz</qt>"
+"musunuz?</qt>"
 
 #: .tmp/displaysettings/deviceswidget.py:136
 msgid ""
