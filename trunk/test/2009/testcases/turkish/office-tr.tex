@@ -508,7 +508,7 @@ Openoffice Kelime İşlemci'yi açın. Dosya $\rightarrow$ Gönder $\rightarrow$
 
 Sorunsuz bir şekilde bağlandığınız gözlemleyin.
 
-\item Aşağıda bulunan paketlerin kurulumu sonrasında, bir open office uygulması açın ve yardım dosyasının ilgili dilde olduğunu gözlemleyin.
+\item Aşağıda bulunan paketlerin kurulumu sonrasında, yerel dilinizi değiştirip, konsoldan aynı dizinde bir open office uygulması açın ve yardım dosyasının ilgili dilde olduğunu gözlemleyin.
 \begin{verbatim}
 openoffice-help-en 
 openoffice-help-de
@@ -519,9 +519,6 @@ openoffice-help-nl
 openoffice-help-pt-BR
 openoffice-help-sv
 openoffice-help-tr
-\end{verbatim}
-\item Aşağıda bulunan paketlerin kurulumu sonrasında, bir open office uygulması açın ve uygulamanın ilgili dilde açıldığını gözlemleyin.
-\begin{verbatim}
 openoffice-langpack-de
 openoffice-langpack-es
 openoffice-langpack-fr
@@ -530,7 +527,18 @@ openoffice-langpack-nl
 openoffice-langpack-pt-BR
 openoffice-langpack-sv
 openoffice-langpack-tr
+
 \end{verbatim}
+
+Yerel dili değiştirmek için:
+\begin{verbatim}
+export LC_ALL= <lang_LANG>
+\end{verbatim}
+
+lang\_LANG şeklinde yazılmış olan, pt-BT için pt\_BT, diğer diller için örneğin de\_DE olacaktır.
+
+Daha sonra bu çalıştırdığınız komut dizininde oowriter komutunu çalıştırın, paket eğer help ile ilgili ise help dosyasının, uygulama dili ise uygulamanın sorunsuz bir şekilde istenilen dilde açıldığını gözlemleyin.
+
 
 \item openoffice-kde paketi kurulumu sonrası:
 
