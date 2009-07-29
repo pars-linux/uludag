@@ -14,6 +14,62 @@
 \begin{document}
 
 \maketitle
+
+\section{Base alt bileşeni}
+\begin{enumerate}
+ \item texlive-basic paketi kurulumu sonrası:
+ texlive-latex paketini kurun ve aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.
+
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/base/test_texlivelatex.tex
+# pdflatex test_texlivelatex.tex
+# okular test_texlivelatex.pdf
+\end{verbatim}
+
+\item texlive-core paketi kurulumu sonrası:
+ texlive-latex paketini kurun ve aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.
+
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/base/test_texlivelatex.tex
+# pdflatex test_texlivelatex.tex
+# okular test_texlivelatex.pdf
+\end{verbatim}
+\item texlive-documentation-base paketi kurulumu sonrası:
+
+Aşağıda bulunan paketlerin sorunsuz bir şekilde kurulduğunu gözlemleyin.	
+\begin{verbatim}
+ texlive-documentation-greek
+ texlive-documentation-italian
+ texlive-documentation-japanese
+\end{verbatim}
+\item texlive-latex paketi kurulumu sonrası:
+
+Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve QuickBuild  seçeneğini tıklayın ve sorunsuz olarak pdf dosyasının oluşturğunu gözlemleyin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/base/test_texlivelatex.tex
+\end{verbatim}
+
+\item texlive-latexrecommended paketi kurulumu sonrası:
+
+latex-leaflet paketini kurun
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_latexleaflet.tex
+\end{verbatim}
+
+Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve QuickBuild  seçeneğini tıklayın ve sorunsuz olarak pdf dosyasının oluşturğunu gözlemleyin.
+
+\item texlive-metapost paketi kurulumu sonrası:
+
+latex-feynmf paketini kurun
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_latexfeynmf.tex
+\end{verbatim}
+
+Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve QuickBuild  seçeneğini tıklayın ve sorunsuz olarak pdf dosyasının oluşturğunu gözlemleyin.
+
+\end{enumerate}
+
+
 \section{Addon alt bileşeni}
 \begin{enumerate}
 \item  latex-beamer kurulumu sonrası:
@@ -176,6 +232,20 @@ Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve QuickBuild 
 \end{verbatim}
 
 Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve QuickBuild  seçeneğini tıklayın ve sorunsuz olarak pdf dosyasının oluşturğunu gözlemleyin.
+
+\item texlive-xetex kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivexetex.tex
+\end{verbatim}
+
+Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve QuickBuild  seçeneğini tıklayın ve sorunsuz olarak pdf dosyasının oluşturğunu gözlemleyin.
+\item texlive-science kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivescience.tex
+\end{verbatim}
+
+Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve QuickBuild  seçeneğini tıklayın ve sorunsuz olarak pdf dosyasının oluşturğunu gözlemleyin.
+
 \item texlive-genericrecommended kurulumu sonrası:
 \begin{verbatim}
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivegenericrecommended.tex
@@ -197,6 +267,16 @@ Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve sırasıyla
 
 Yukarıda bulunan komutun düzgün bir şekilde pdf çıktısı ürettiğini gözlemleyin.
 
+\item texlive-texinfo kurulumu sonrası:
+
+Asymptote paketini kurun ve aşağıda bulunan komutları çalıştırın.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_asymptote.asy
+ # asy test_asymptote.asy
+ # okular test_asymptote.eps
+\end{verbatim}
+
+Eps dosyasının sorunsuz bir şekilde üretildiğini gözlemleyin.
 
 \item Aşağıdaki paketler kurulum testine tabidir.
 texlive-genericextra
@@ -204,6 +284,81 @@ texlive-htmlxml
 texlive-context
 texlive-omega
 texlive-psutils
+\end{enumerate}
+\section{Doc alt bileşeni} 
+\begin{enumerate}
+\item  Aşağıda bulunan dosyalar sadece kurulum testine tabidir.
+
+\begin{verbatim}
+ texlive-documentation-bulgarian
+ texlive-documentation-chinese
+ texlive-documentation-czechslovak
+ texlive-documentation-dutch
+ texlive-documentation-english
+ texlive-documentation-finnish
+ texlive-documentation-french
+ texlive-documentation-german
+ texlive-documentation-greek
+ texlive-documentation-italian
+ texlive-documentation-japanese
+ texlive-documentation-korean
+ texlive-documentation-mongolian
+ texlive-documentation-polish
+ texlive-documentation-portuguese
+ texlive-documentation-russian
+ texlive-documentation-slovenian
+ texlive-documentation-spanish
+ texlive-documentation-thai
+ texlive-documentation-turkish
+ texlive-documentation-ukrainian
+ texlive-documentation-vietnamese
+\end{verbatim}
+
+\end{enumerate}
+
+\section{Doc alt bileşeni} 
+\begin{enumerate}
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ texlive-langafrican
+ texlive-langarab
+ texlive-langarmenian
+ texlive-langcjk
+ texlive-langcroatian
+ texlive-langczechslovak
+ texlive-langdanish
+ texlive-langdutch
+ texlive-langfinnish
+ texlive-langfrench
+ texlive-langhebrew
+ texlive-langhungarian
+ texlive-langindic
+ texlive-langitalian
+ texlive-langlatin
+ texlive-langmongolian
+ texlive-langnorwegian
+ texlive-langpolish
+ texlive-langportuguese
+ texlive-langspanish
+ texlive-langswedish
+ texlive-langtibetan
+ texlive-langukenglish
+ texlive-langvietnamese
+\end{verbatim}
+\item  texlive-langgerman, texlive-langgreek, texlive-langother, texlive-langcyrillic paketleri kurulumu sonrası:
+
+texlive-latex paketini kurun kile ile aşağıda verilen dosyayı çalıştırın ve sorunsuz bir şekilde pdf dosyasına dönüştüğünü gözlemleyin.
+
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/base/test_texlivelatex.tex
+\end{verbatim}
+
+\end{enumerate}
+
+\section{Tool alt bileşeni}
+\begin{enumerate}
+ \item auctex paketi kurulumu sonrası:
+
 \end{enumerate}
 
 
