@@ -77,15 +77,20 @@ generateDelta    = True
 # delta packages for them.
 
 deltaBlacklist   = ["skype",
-                    "kernel",
-                    "flashplugin",
-                    "kernel-debug",
-                    "openarena-data",
-                    "vdrift-data-full",
                     "eclipse-jdt-binary",
+                    "flashplugin",
+                    "kernel",
+                    "kernel-pae",
+                    "kernel-debug",
+                    "kernel-firmware",
+                    "lzma",
                     "module-nvidia173",
                     "module-nvidia185",
                     "module-nvidia71",
                     "module-nvidia96",
-                    "kernel-firmware",
-                    "nvidia-drivers-old"]
+                    "nvidia-drivers-old",
+                    "openarena-data",
+                    "pisi",
+                    "package-manager",
+                    "vdrift-data-full"]
+
