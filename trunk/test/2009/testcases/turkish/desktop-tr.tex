@@ -65,6 +65,39 @@ qmake komutundan sonra oluşan .pro dosyanıza QT += sql satırını eklemelisin
 Bağlamtının sorunsuz bir şekilde gerçekleştğini gözlemleyin.
 
 \end{enumerate}
+\section{Kde4 alt Bileşeni}
+\subsection*{Base alt bileşeni}
+
+2008'de tüm kde4 paketleri 4 versiyon numarasını içermekte iken, 2009'da bu versiyon numarasını içermemektedir.
+\begin{enumerate} 
+ \item kdelibs ve kdelibs-devel paketleri kurulumu sonrası:
+\begin{itemize}
+ \item choqok paketini kurun: 
+
+Uygulamayı açın ve bir twitter üyeliğiniz var ise, bu üyelik bilgilerinizi kaydedin ve sorunsuz bir şekilde twitter'a bağlanabildiğinizi gözlemleyin.
+ \item kdegraphics paketini kurun: (2008 içi kdegraphics4)
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/circus-bw_hats.jpg
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/tepecik_01.png
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/tool/test_texlivelatex.dvi
+\end{verbatim}
+Yukarıda bulunan dosyaların okular ve gwenview ile açıldığını gözlemleyin.
+\item amarok paketini kurun: (2008 için amarok-kde4) 
+
+\begin{verbatim}
+/sda1/usr/kde/4/share/sounds/k3b_error1.wav
+/sda1/usr/kde/4/share/sounds/KDE-Im-Irc-Event.ogg
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/music.mp3
+\end{verbatim}
+
+Dosyalarının düzgün bir şekilde amarok ile açıldığını gözlemleyin.
+
+\item yakuake paketini kurun: (2008 içi yakuake4)
+
+F12 tuşuna basıldığında sorunsuz bir şekilde yakuake'nin açıldığını gözlemleyin.
+\end{itemize}
+
+\end{enumerate}
 
 \end{document}
 
