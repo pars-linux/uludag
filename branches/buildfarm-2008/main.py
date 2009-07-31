@@ -165,7 +165,7 @@ def buildPackages():
                     for pa in deltaPackages+newBinaryPackages:
                         if pa in deltasToInstall:
                             deltasToInstall.remove(pa)
-                        else:
+                        elif pa in newBinaryPackages:
                             newBinaryPackages.remove(pa)
                         logger.info("*** (Cleanup) Removing %s from %s" % (pa, config.workDir))
                         removeBinaryPackageFromWorkDir(pa)
