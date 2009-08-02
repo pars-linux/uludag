@@ -35,6 +35,8 @@ drivers = {
                     "nVIDIA drivers for GeForce 6xxx and newer NVIDIA cards",
     "nvidia/nvidia-drivers180":
                     "nVIDIA drivers for GeForce 6xxx and newer NVIDIA cards",
+    "nvidia/nvidia-drivers-current":
+                    "nVIDIA drivers for GeForce 6xxx and newer NVIDIA cards",
     "openchrome":   "VIA/S3G UniChrome, UniChrome Pro and Chrome9 graphics chipsets",
     "r128":         "ATI Rage128 cards, including Rage Fury, XPERT 128, and XPERT 99",
     "radeon":       "ATI Radeon cards, including Radeon Mobility and FireGL",
