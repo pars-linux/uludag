@@ -933,9 +933,11 @@
 10de05e1 nvidia/nvidia-drivers-current nv
 10de05e2 nvidia/nvidia-drivers-current nv
 10de05e3 nvidia/nvidia-drivers-current
+10de05e6 nvidia/nvidia-drivers-current
 10de05f9 nvidia/nvidia-drivers-current nv
 10de05fd nvidia/nvidia-drivers-current nv
 10de05fe nvidia/nvidia-drivers-current nv
+10de05ff nvidia/nvidia-drivers-current
 10de0600 nvidia/nvidia-drivers-current nv
 10de0601 nvidia/nvidia-drivers-current nv
 10de0602 nvidia/nvidia-drivers-current nv
@@ -944,6 +946,7 @@
 10de0606 nvidia/nvidia-drivers-current nv
 10de0608 nvidia/nvidia-drivers-current nv
 10de0609 nvidia/nvidia-drivers-current nv
+10de060a nvidia/nvidia-drivers-current
 10de060b nvidia/nvidia-drivers-current nv
 10de060c nvidia/nvidia-drivers-current nv
 10de060d nvidia/nvidia-drivers-current nv
@@ -954,6 +957,7 @@
 10de0614 nvidia/nvidia-drivers-current nv
 10de0615 nvidia/nvidia-drivers-current nv
 10de0617 nvidia/nvidia-drivers-current
+10de0618 nvidia/nvidia-drivers-current
 10de061a nvidia/nvidia-drivers-current nv
 10de061c nvidia/nvidia-drivers-current nv
 10de061e nvidia/nvidia-drivers-current
@@ -966,10 +970,12 @@
 10de062a nvidia/nvidia-drivers-current nv
 10de062b nvidia/nvidia-drivers-current nv
 10de062c nvidia/nvidia-drivers-current nv
+10de0638 nvidia/nvidia-drivers-current
 10de063a nvidia/nvidia-drivers-current nv
 10de0640 nvidia/nvidia-drivers-current nv
 10de0641 nvidia/nvidia-drivers-current nv
 10de0643 nvidia/nvidia-drivers-current nv
+10de0644 nvidia/nvidia-drivers-current
 10de0646 nvidia/nvidia-drivers-current
 10de0647 nvidia/nvidia-drivers-current nv
 10de0648 nvidia/nvidia-drivers-current nv
@@ -977,7 +983,10 @@
 10de064a nvidia/nvidia-drivers-current nv
 10de064b nvidia/nvidia-drivers-current nv
 10de064c nvidia/nvidia-drivers-current nv
+10de0652 nvidia/nvidia-drivers-current
 10de0656 nvidia/nvidia-drivers-current nv
+10de0658 nvidia/nvidia-drivers-current
+10de0659 nvidia/nvidia-drivers-current
 10de065c nvidia/nvidia-drivers-current nv
 10de06e0 nvidia/nvidia-drivers-current
 10de06e1 nvidia/nvidia-drivers-current nv
@@ -988,6 +997,7 @@
 10de06e9 nvidia/nvidia-drivers-current nv
 10de06ea nvidia/nvidia-drivers-current nv
 10de06eb nvidia/nvidia-drivers-current nv
+10de06ef nvidia/nvidia-drivers-current
 10de06f8 nvidia/nvidia-drivers-current
 10de06f9 nvidia/nvidia-drivers-current nv
 10de06fa nvidia/nvidia-drivers-current nv
@@ -1007,8 +1017,14 @@
 10de084f nvidia/nvidia-drivers-current
 10de0862 nvidia/nvidia-drivers-current
 10de0863 nvidia/nvidia-drivers-current
+10de086c nvidia/nvidia-drivers-current
 10de087a nvidia/nvidia-drivers-current
 10de087f nvidia/nvidia-drivers-current
+10de0a2a nvidia/nvidia-drivers-current
+10de0a34 nvidia/nvidia-drivers-current
+10de0a74 nvidia/nvidia-drivers-current
+10de0ca8 nvidia/nvidia-drivers-current
+10de0ca9 nvidia/nvidia-drivers-current
 10e09128 imstt
 10e09135 imstt
 10ea2010 fbdev
