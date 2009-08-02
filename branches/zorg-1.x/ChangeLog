@@ -1,3 +1,10 @@
+2009-08-02  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* data/DriversDB:
+		Prefer nvidia-drivers-current over nvidia-drivers180.
+		Add new PCI ids.
+	* zorg/hwdata.py:
+		Add nvidia-drivers-current to the list of drivers.
+
 2009-05-21  Fatih Aşıcı  <fatih@pardus.org.tr>
 	* data/DriversDB:
 		Make nvidia-drivers180 default for new cards.
