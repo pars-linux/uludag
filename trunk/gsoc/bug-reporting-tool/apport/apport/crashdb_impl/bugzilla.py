@@ -10,9 +10,11 @@ import tempfile
 from base64 import b64decode
 from bugz.bugzilla import Bugz
 from bugz.config import config
+from cookiepot import CookiePot
 from email.parser import Parser
 from StringIO import StringIO
 from urlparse import urljoin
+from urllib2 import build_opener, HTTPCookieProcessor
 
 
 
@@ -183,6 +185,9 @@ class CrashDatabase(apport.crashdb.CrashDatabase):
 
         self._baseurl = self.options.get('baseurl')
         self._bugzilla = Bugz(self._baseurl)
+        cj = CookiePot(self._bugzilla.cookiejar.filename, self._bugzilla.host)
+        self._bugzilla.cookiejar = cj
+        self._bugzilla.opener = build_opener(HTTPCookieProcessor(cj))
         if self.username is None or self.password is None:
             if not self._bugzilla.try_auth():
                 self._bugzilla = None
