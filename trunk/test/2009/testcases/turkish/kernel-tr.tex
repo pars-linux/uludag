@@ -1,0 +1,54 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[turkish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
+
+\title{Kernel Test Aşamaları}
+\author{Semen Cirit}
+
+\begin{document}
+
+\maketitle
+
+\section{Default ve Pae alt bileşeni}
+\begin{enumerate}
+ \item  Aşağıda bulunan paketlerin kurulumundan sonrası:
+ \begin{verbatim}
+ kernel
+ kernel-firmware
+ kernel-module-headers
+ kernel-headers
+ kernel-doc
+ kernel-source 
+ kernel-pae
+ kernel-module-headers-pae
+\end{verbatim}
+
+İlk olarak bilgisyarınızı yeniden başlatınız.
+\begin{itemize}
+\item Açılış ekranın görüntüsünün titremediğini gözlemleyiniz
+\item Bilgisayarınızın yeni kernel ile düzgün bir şekilde açılabildiğini gözlemleyiniz.
+\item Eğer dizüstü bilgisayar kullanıyorsanız kablonuzu çıkarıp taktığınızda uyarı verdiğini ve pil seviyesinin düzgün bir şekilde görüntülendiğini gözlemleyiniz.
+\item USB bellek takınız ve algılandığını gözlemleyiniz.
+\end{itemize}
+
+\item module-alsa-driver ve module-alsa-driver-userspace paketleri kurulumu sonrası.
+
+Bilgisayarınız yeniden başlatınız.
+\item Açılış sesinin düzgün bir şekilde takılmadan çalıştığını gözlemleyiniz.
+
+\item Amarok ile aşağıdaki bağlantıda bulunan ses dosyalrından birkaçını deneyiniz. Sorunsuz bir şekilde çalıştıklarını gözlemleyiniz.
+\begin{verbatim}
+http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar 
+\end{verbatim}
+
+\end{enumerate}
+
+\end{document}
+
