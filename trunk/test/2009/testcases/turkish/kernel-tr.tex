@@ -41,7 +41,7 @@ Bilgisayarınızı açtıktan sonra konsoldan aşağıda bulunan komutu çalış
 \item USB bellek takınız ve algılandığını gözlemleyiniz.
 \end{itemize}
 
-\item module-alsa-driver ve module-alsa-driver-userspace paketleri kurulumu sonrası.
+\item module-alsa-driver kurulumu sonrası.
 
 Bilgisayarınız yeniden başlatınız.
 \begin{itemize}
@@ -51,7 +51,132 @@ Bilgisayarınız yeniden başlatınız.
 \begin{verbatim}
 http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar 
 \end{verbatim}
+
 \end{itemize}
+
+\item module-broadcom-wl kurulumu sonrası: 
+
+(Eğer boradcom kablosuz kartınız var ise test edebilirsiniz, kartınızın ne olduğuna bakabilmek için gerekli komut 'lspci')
+
+Bilgisayarınız yeniden başlatınız.
+
+Ağ yöneticisi ile ağa bağlanabildiğinizi gözlemleyiniz.
+
+Aşağıdaki komutu kullanarak ağa bağlı olduğunuzu gözlemleyiniz.
+\begin{verbatim}
+# ping 4.2.2.1 
+\end{verbatim}
+
+\item module-fglrx kurulumu sonrası: 
+
+(Eğer ATI ekran kartınız var ise test edebilirsiniz, kartınızın ne olduğuna bakabilmek için gerekli komut lspci)
+
+Bilgisayarınız yeniden başlatınız. x11-tr.tex altında bulunan test aşamalarını gerçekleştiriniz.
+
+\item module-gspca kurulumu sonrası:
+
+Eğer bağlı veya entegre bir kameranız var ise aşağıdaki komutu kullanarak kameranızın çalıştığını gözlemleyiniz.
+\begin{verbatim}
+# test-webcam
+\end{verbatim}
+
+\item module-kvm kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırarak, bilgisayarınızın sanallaştırma destekleyip desteklemediğine bakınız. Eğer destekliyor ise testi gerçekleştirebilirsiniz. 
+\begin{verbatim}
+# egrep '^flags.*(vmx|svm)' /proc/cpuinfo
+\end{verbatim}
+
+Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyiniz.
+\begin{verbatim}
+# lsmod | grep kvm
+\end{verbatim}
+
+\item module-kqemu  kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırarak, bilgisayarınızın sanallaştırma destekleyip desteklemediğine bakınız. Eğer destekliyor ise testi gerçekleştirebilirsiniz. 
+\begin{verbatim}
+# egrep '^flags.*(vmx|svm)' /proc/cpuinfo
+\end{verbatim}
+
+Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyiniz.
+\begin{verbatim}
+# lsmod | grep kqemu
+\end{verbatim}
+
+\item module-lirc kurulumu sonrası:
+
+(Eğer bilgisayarınız infrared destekliyor ise test edebilirsiniz.)
+
+Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyiniz.
+\begin{verbatim}
+# lsmod | grep lirc
+\end{verbatim}
+
+\item module-ltmodem kurulumu sonrası:
+
+(Eğer bilgisayarınızda entegre bir modem bulunuyor ise test edebilirsiniz.)
+
+
+\item Aşağıda bulunan paketlerin kurulumu sonrası:
+\begin{verbatim}
+ module-microdia
+ module-ov51x-jpeg
+ module-r5u870
+ module-syntekdriver
+ module-uvcvideo
+\end{verbatim}
+
+Eğer açıklamalarda bahsedilen sürücülerde kameraya sahip iseniz testleri gerçekleştirebilirsiniz.
+Paketin açıklamasına ve kameranızın sürücüsüne bakabilmeniz için gerekli komutlar:
+\begin{verbatim}
+ # pisi info <paketadı>
+ # lsusb
+\end{verbatim}
+
+Aşağıdaki komutu kullanarak kameranızın çalıştığını gözlemleyiniz.
+\begin{verbatim}
+# test-webcam
+\end{verbatim}
+
+\item module-ndiswrapper kurulumu sonrası:
+
+(Eğer kablosuz kartınız için windows xp sürücüleri kullanıyorsanız. Kartınız henüz linux'u desteklemiyor ise.)
+
+\begin{itemize}
+ \item Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyiniz.
+ \begin{verbatim}
+ # lsmod | grep ltmodem
+ \end{verbatim}
+\item Ağ yöneticisinden ağa bağlanabildiğinizi gözlemleyiniz.
+\end{itemize}
+
+\item Aşağıda bulunan paketlerin kurulumu sonrası:
+ \begin{verbatim}
+ module-nvidia-current
+ module-nvidia173
+ module-nvidia71
+ module-nvidia96
+\end{verbatim}
+(Eğer NVIDIA ekran kartınız var ise test edebilirsiniz, kartınızın ne olduğuna bakabilmek için gerekli komut lspci)
+
+Bilgisayarınız yeniden başlatınız. x11-tr.tex altında bulunan test aşamalarını gerçekleştiriniz.
+
+\item module-onibook kurulumu sonrası: 
+
+Eğer HP Omnibook/Pavillon, Toshiba Satellite (with Phoenix BIOS) dizüstü bilgisayarınız var ise test edebilirsiniz. 
+
+Çeşitli fonksiyon ve multimedya kısayol tuşlarının çalıştığını gözlemleyiniz.
+
+\item module-ungrab-winmodem kurulumu sonrası: 
+
+Eğer smartlink mode kullanıyorsanız test edebilirsiniz.
+
+Ağ yöneticisinden ağa bağlanabildiğinizi gözlemleyiniz.
+
+\item module-virtualbox ve module-virtualbox-guest kurulumu sonrası: 
+
+VirtualBox paketini kurup sorunsuz bir şekilde çalıştığını gözlemleyiniz.
 
 \end{enumerate}
 
@@ -82,18 +207,31 @@ Bilgisayarınızı açtıktan sonra konsoldan aşağıda bulunan komutu çalış
 \item USB bellek takınız ve algılandığını gözlemleyiniz.
 \end{itemize}
 
-\item module-pae-alsa-driver kurulumu sonrası.
+\item Aşağıda bulunan paketleri Default bileşeni altında bulunan benzer paketlerin test aşamalarını kullanarak test edebilirsiniz.
 
-Bilgisayarınız yeniden başlatınız.
-\begin{itemize}
-\item Açılış sesinin düzgün bir şekilde takılmadan çalıştığını gözlemleyiniz.
-
-\item Amarok ile aşağıdaki bağlantıda bulunan ses dosyalrından birkaçını deneyiniz. Sorunsuz bir şekilde çalıştıklarını gözlemleyiniz.
 \begin{verbatim}
-http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar 
+ module-pae-alsa-driver
+ module-pae-broadcom-wl
+ module-pae-gspca
+ module-pae-kqemu
+ module-pae-kvm
+ module-pae-lirc
+ module-pae-ltmodem
+ module-pae-microdia
+ module-pae-ndiswrapper
+ module-pae-nvidia-current
+ module-pae-nvidia173
+ module-pae-nvidia71
+ module-pae-nvidia96
+ module-pae-omnibook
+ module-pae-ov51x-jpeg
+ module-pae-r5u870
+ module-pae-syntekdriver
+ module-pae-ungrab-winmodem
+ module-pae-uvcvideo
+ module-pae-virtualbox
+ module-pae-virtualbox-guest
 \end{verbatim}
-\end{itemize}
-
 \end{enumerate}
 
 \end{document}
