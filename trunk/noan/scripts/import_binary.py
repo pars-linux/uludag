@@ -29,7 +29,7 @@ def updateDB(path_repo, repo_type, newRelease):
     # Get latest builds only
     packages_farm = {}
     for filename in os.listdir(path_repo):
-        if not filename.endswith('.pisi'):
+        if not filename.endswith('.pisi') or filename.endswith(".delta.pisi"):
             continue
         filename = filename[:-5]
         package_name, package_version, package_release, package_build = filename.rsplit('-', 3)
