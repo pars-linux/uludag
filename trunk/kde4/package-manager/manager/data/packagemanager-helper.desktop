@@ -11,4 +11,4 @@ Type=Application
 StartupNotify=False
 MimeType=application/x-pisi
 Exec=pm-install %u
-
+NoDisplay=true
