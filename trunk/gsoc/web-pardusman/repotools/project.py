@@ -123,6 +123,8 @@ class Project:
     def reset(self):
         self.filename = None
         self.title = ""
+	self.username=""
+	self.password=""
         self.work_dir = ""
         self.release_files = ""
         self.repo = ""
@@ -172,13 +174,23 @@ class Project:
         self.wallpaper = doc.getTagData("Wallpaper")
         if not self.wallpaper:
             self.wallpaper = ""
+
+        self.username = doc.getTagData("Username")
+        if not self.username:
+            self.username = ""
+
+        self.password = doc.getTagData("Password")
+        if not self.password:
+            self.password = ""
+
         self.hostname = doc.getTagData("Hostname")
         if not self.hostname:
             self.hostname = ""
 
-        self.extra_params = doc.getTagData("UserContents")
+        self.user_contents = doc.getTagData("UserContents")
         if not self.user_contents:
             self.user_contents = ""
+
         self.extra_params = doc.getTagData("ExtraParameters")
         if not self.extra_params:
             self.extra_params = ""
@@ -220,6 +232,11 @@ class Project:
         doc.setAttribute("type", self.type)
         doc.setAttribute("media", str(self.media))
 
+	selected_components = []
+
+        for comp in self.selected_components:
+            selected_components.append(comp.replace('-','.'))
+
         if self.title:
             doc.insertTag("Title").insertData(self.title)
         if self.work_dir:
@@ -230,6 +247,12 @@ class Project:
             doc.insertTag("PluginPackage").insertData(self.plugin_package)
         if self.extra_params:
             doc.insertTag("ExtraParameters").insertData(self.extra_params)
+
+        if self.username:
+            doc.insertTag("Username").insertData(self.username)
+
+        if self.password:
+            doc.insertTag("Password").insertData(self.password)
 
         if self.wallpaper:
             doc.insertTag("Wallpaper").insertData(self.wallpaper)
@@ -243,7 +266,7 @@ class Project:
             package_selection.setAttribute("repo", self.repo)
 
             # Insert components if any
-            for item in self.selected_components:
+            for item in selected_components:
                 package_selection.insertTag("SelectedComponent").insertData(item)
 
             for item in self.selected_packages:
