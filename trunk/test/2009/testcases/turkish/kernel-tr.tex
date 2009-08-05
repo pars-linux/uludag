@@ -197,7 +197,11 @@ VirtualBox paketini kurup sorunsuz bir şekilde çalıştığını gözlemleyini
 
 \section{Pae alt bileşeni}
 
-Bu bölümde bulunan paketleri Pentium 4 ve üzeri bilgisayara sahip olanlar test edebilecektir. (4GB RAM ve üzeri bilgisayarlar için)
+Eğer aşağıda bulunan çıktı pae işaretli bir liste döndürüyor ise bu bölümü test edebilirsiniz.
+\begin{verbatim}
+cat /proc/cpuinfo | grep pae 
+\end{verbatim}
+
 \begin{enumerate}
 
  \item Kernel-pae paketi kurulumu sonrası:
