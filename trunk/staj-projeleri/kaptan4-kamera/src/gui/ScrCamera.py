@@ -19,7 +19,7 @@ from gui.ScreenWidget import ScreenWidget
 from gui.cameraWidget import Ui_cameraWidget
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = ki18n("Welcome")
+    title = ki18n("Camera")
     desc = ki18n("Welcome to Kaptan Wizard :)")
 
     def __init__(self, *args):
