@@ -41,7 +41,7 @@ Bilgisayarınızı açtıktan sonra konsoldan aşağıda bulunan komutu çalış
 \item USB bellek takınız ve algılandığını gözlemleyiniz.
 \end{itemize}
 
-\item module-alsa-driver kurulumu sonrası.
+\item module-alsa-driver ve module-alsa-driver-userspace kurulumu sonrası.
 
 Bilgisayarınız yeniden başlatınız.
 \begin{itemize}
@@ -54,7 +54,7 @@ http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
 
 \end{itemize}
 
-\item module-broadcom-wl kurulumu sonrası: 
+\item module-broadcom-wl ve module-broadcom-wl-userspacekurulumu sonrası: 
 
 (Eğer boradcom kablosuz kartınız var ise test edebilirsiniz, kartınızın ne olduğuna bakabilmek için gerekli komut 'lspci')
 
@@ -67,7 +67,7 @@ Aşağıdaki komutu kullanarak ağa bağlı olduğunuzu gözlemleyiniz.
 # ping 4.2.2.1 
 \end{verbatim}
 
-\item module-fglrx kurulumu sonrası: 
+\item module-fglrx ve module-fglrx-userspace kurulumu sonrası: 
 
 (Eğer ATI ekran kartınız var ise test edebilirsiniz, kartınızın ne olduğuna bakabilmek için gerekli komut lspci)
 
@@ -80,7 +80,7 @@ Eğer bağlı veya entegre bir kameranız var ise aşağıdaki komutu kullanarak
 # test-webcam
 \end{verbatim}
 
-\item module-kvm kurulumu sonrası:
+\item module-kvm ve module-kvm-userspace kurulumu sonrası:
 
 Aşağıda bulunan komutu çalıştırarak, bilgisayarınızın sanallaştırma destekleyip desteklemediğine bakınız. Eğer destekliyor ise testi gerçekleştirebilirsiniz. 
 \begin{verbatim}
@@ -92,7 +92,7 @@ Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyiniz.
 # lsmod | grep kvm
 \end{verbatim}
 
-\item module-kqemu  kurulumu sonrası:
+\item module-kqemu ve module-kqemu-userspace kurulumu sonrası:
 
 Aşağıda bulunan komutu çalıştırarak, bilgisayarınızın sanallaştırma destekleyip desteklemediğine bakınız. Eğer destekliyor ise testi gerçekleştirebilirsiniz. 
 \begin{verbatim}
@@ -104,7 +104,7 @@ Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyiniz.
 # lsmod | grep kqemu
 \end{verbatim}
 
-\item module-lirc kurulumu sonrası:
+\item module-lirc ve module-lirc-userspace kurulumu sonrası:
 
 (Eğer bilgisayarınız infrared destekliyor ise test edebilirsiniz.)
 
@@ -113,7 +113,7 @@ Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyiniz.
 # lsmod | grep lirc
 \end{verbatim}
 
-\item module-ltmodem kurulumu sonrası:
+\item module-ltmodem ve module-ltmodem-userspace kurulumu sonrası:
 
 (Eğer bilgisayarınızda entegre bir modem bulunuyor ise test edebilirsiniz.)
 
@@ -121,10 +121,15 @@ Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyiniz.
 \item Aşağıda bulunan paketlerin kurulumu sonrası:
 \begin{verbatim}
  module-microdia
+ module-microdia-userspace
  module-ov51x-jpeg
+ module-ov51x-jpeg-userspace
  module-r5u870
+ module-r5u870-userspace
  module-syntekdriver
+ module-syntekdriver-userspace
  module-uvcvideo
+ module-uvcvideo-userspace
 \end{verbatim}
 
 Eğer açıklamalarda bahsedilen sürücülerde kameraya sahip iseniz testleri gerçekleştirebilirsiniz.
@@ -139,7 +144,7 @@ Aşağıdaki komutu kullanarak kameranızın çalıştığını gözlemleyiniz.
 # test-webcam
 \end{verbatim}
 
-\item module-ndiswrapper kurulumu sonrası:
+\item module-ndiswrapper ve module-ndiswrapper-userspace kurulumu sonrası:
 
 (Eğer kablosuz kartınız için windows xp sürücüleri kullanıyorsanız. Kartınız henüz linux'u desteklemiyor ise.)
 
@@ -154,27 +159,37 @@ Aşağıdaki komutu kullanarak kameranızın çalıştığını gözlemleyiniz.
 \item Aşağıda bulunan paketlerin kurulumu sonrası:
  \begin{verbatim}
  module-nvidia-current
+ module-nvidia-current-userspace
  module-nvidia173
+ module-nvidia173-userspace
  module-nvidia71
+ module-nvidia71-userspace
  module-nvidia96
+ module-nvidia96-userspace
 \end{verbatim}
 (Eğer NVIDIA ekran kartınız var ise test edebilirsiniz, kartınızın ne olduğuna bakabilmek için gerekli komut lspci)
 
 Bilgisayarınız yeniden başlatınız. x11-tr.tex altında bulunan test aşamalarını gerçekleştiriniz.
 
-\item module-onibook kurulumu sonrası: 
+\item module-omnibook ve module-omnibook-userspace  kurulumu sonrası: 
 
 Eğer HP Omnibook/Pavillon, Toshiba Satellite (with Phoenix BIOS) dizüstü bilgisayarınız var ise test edebilirsiniz. 
 
 Çeşitli fonksiyon ve multimedya kısayol tuşlarının çalıştığını gözlemleyiniz.
 
-\item module-ungrab-winmodem kurulumu sonrası: 
+\item module-ungrab-winmodem ve module-ungrab-winmodem-userspace kurulumu sonrası: 
 
 Eğer smartlink mode kullanıyorsanız test edebilirsiniz.
 
 Ağ yöneticisinden ağa bağlanabildiğinizi gözlemleyiniz.
 
-\item module-virtualbox ve module-virtualbox-guest kurulumu sonrası: 
+\item  Aşağıdaki paketlerin kurulumu sonrası: 
+\begin{verbatim}
+ module-virtualbox
+ module-virtualbox-userspace
+ module-virtualbox-guest
+ module-virtualbox-guest-userspace
+\end{verbatim}
 
 VirtualBox paketini kurup sorunsuz bir şekilde çalıştığını gözlemleyiniz.
 
@@ -182,7 +197,7 @@ VirtualBox paketini kurup sorunsuz bir şekilde çalıştığını gözlemleyini
 
 \section{Pae alt bileşeni}
 
-Bu bölümde bulunan paketleri Pentium 4 ve üzeri bilgisayara sahip olanlar test edebilecektir.
+Bu bölümde bulunan paketleri Pentium 4 ve üzeri bilgisayara sahip olanlar test edebilecektir. (4GB RAM ve üzeri bilgisayarlar için)
 \begin{enumerate}
 
  \item Kernel-pae paketi kurulumu sonrası:
@@ -193,6 +208,13 @@ Aşağıdaki komut çıktısı ile listelenen sisteminizde kurulu tüm paketleri
 \begin{verbatim}
  # pisi li -c kernel.pae
 \end{verbatim}
+
+Eğer daha önce kernel pae kullanmadıysanız yukarıda bulunan komut çıktısı boş dönecektir. Bu durumda aşağıdaki komut çıktısında listelenen paketlerin pae'ye özgü olanlarını sisteminize kurup bu paketler ile ilgili testleri gerçekleştirebilirsiniz. Bu listeye 2.2 bölümünden ulaşabilirsiniz.
+
+\begin{verbatim}
+ # pisi li -c kernel.default
+\end{verbatim}
+
 
 \item Bilgisayarınızı kapatınız ve düzgün bir şekilde kapanabildiğini gözlemleyiniz.
 \item Açılış ekranın görüntüsünün (Arka tarafında Pardus logosu bulunan grub menüsü) Sorunsuz bir şekilde açıldığını gözlemleyiniz.
@@ -210,29 +232,50 @@ Bilgisayarınızı açtıktan sonra konsoldan aşağıda bulunan komutu çalış
 \item Aşağıda bulunan paketleri Default bileşeni altında bulunan benzer paketlerin test aşamalarını kullanarak test edebilirsiniz.
 
 \begin{verbatim}
- module-pae-alsa-driver
- module-pae-broadcom-wl
- module-pae-gspca
- module-pae-kqemu
- module-pae-kvm
- module-pae-lirc
- module-pae-ltmodem
- module-pae-microdia
- module-pae-ndiswrapper
- module-pae-nvidia-current
- module-pae-nvidia173
- module-pae-nvidia71
- module-pae-nvidia96
- module-pae-omnibook
- module-pae-ov51x-jpeg
- module-pae-r5u870
- module-pae-syntekdriver
- module-pae-ungrab-winmodem
- module-pae-uvcvideo
- module-pae-virtualbox
- module-pae-virtualbox-guest
+module-pae-alsa-driver
+module-pae-alsa-driver-userspace
+module-pae-virtualbox-guest
+module-pae-virtualbox-guest-userspace
+module-pae-broadcom-wl
+module-pae-broadcom-wl-userspace
+module-pae-lirc
+module-pae-lirc-userspace
+module-pae-nvidia173
+module-pae-nvidia173-userspace
+module-pae-omnibook
+module-pae-omnibook-userspace
+module-pae-ungrab-winmodem
+module-pae-ungrab-winmodem-userspace
+module-pae-gspca
+module-pae-gspca-userspace
+module-pae-ltmodem
+module-pae-ltmodem-userspace
+module-pae-nvidia71
+module-pae-nvidia71-userspace
+module-pae-ov51x-jpeg
+module-pae-ov51x-jpeg-userspace
+module-pae-uvcvideo
+module-pae-uvcvideo-userspace
+module-pae-kqemu
+module-pae-kqemu-userspace
+module-pae-microdia
+module-pae-microdia-userspace
+module-pae-nvidia96
+module-pae-nvidia96-userspace
+module-pae-r5u870
+module-pae-r5u870-userspace
+module-pae-virtualbox
+module-pae-virtualbox-userspace
+module-pae-kvm
+module-pae-kvm-userspace
+module-pae-ndiswrapper
+module-pae-ndiswrapper-userspace
+module-pae-nvidia-current
+module-pae-nvidia-current-userspace
+module-pae-syntekdriver   
+module-pae-syntekdriver-userspace
+
 \end{verbatim}
 \end{enumerate}
-
 \end{document}
 
