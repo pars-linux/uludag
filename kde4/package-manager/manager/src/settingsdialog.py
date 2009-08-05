@@ -10,6 +10,8 @@
 #
 # Please read the COPYING file
 
+import re
+
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
@@ -21,6 +23,7 @@ from ui_settingsdialog import Ui_SettingsDialog
 import config
 import helpdialog
 import repodialog
+import pmutils
 import backend
 
 class SettingsTab(QObject):
@@ -180,8 +183,11 @@ class RepositorySettings(SettingsTab):
     def __addRepository(self):
         repoName = self.repoDialog.repoName.text()
         repoAddress = self.repoDialog.repoAddress.currentText()
+        if not re.match("^[0-9%s\-\\_\\.\s]*$" % str(pmutils.letters()), str(repoName)):
+            KMessageBox.error(self.settings, i18n("Not a valid repository name"), i18n("Pisi Error"))
+            return
         if not repoAddress.endsWith("xml") and not repoAddress.endsWith("xml.bz2"):
-            KMessageBox.error(self,i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
+            KMessageBox.error(self.settings, i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
         self.__insertRow(repoName, repoAddress)
         self.markChanged()

@@ -11,9 +11,11 @@
 # Please read the COPYING file.
 #
 
+import sys
+import unicodedata
+
 from PyQt4 import QtGui
 from PyQt4.QtCore import Qt, QEventLoop
-
 
 def waitCursor():
     QtGui.QApplication.setOverrideCursor(QtGui.QCursor(Qt.WaitCursor))
@@ -36,3 +38,23 @@ def humanReadableSize(size, precision=".1"):
 
     fmt = "%%%sf %%s" % precision
     return fmt % (size, symbols[depth])
+
+# Python regex sucks
+# http://mail.python.org/pipermail/python-list/2009-January/523704.html
+def letters():
+    start = end = None
+    result = []
+    for index in xrange(sys.maxunicode + 1):
+        c = unichr(index)
+        if unicodedata.category(c)[0] == 'L':
+            if start is None:
+                start = end = c
+            else:
+                end = c
+        elif start:
+            if start == end:
+                result.append(start)
+            else:
+                result.append(start + "-" + end)
+            start = None
+    return ''.join(result)
