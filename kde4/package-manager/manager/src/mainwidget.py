@@ -170,6 +170,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         elif "Access denied" in message or "tr.org.pardus.comar.Comar.PolicyKit" in message:
             errorTitle = i18n("Authorization Error")
             errorMessage = i18n("You are not authorized for this operation.")
+        elif "HTTP Error 404":
+            errorTitle = i18n("Pisi Error")
+            errorMessage = i18n("Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations.")
         else:
             errorTitle = i18n("Pisi Error")
             errorMessage = message
