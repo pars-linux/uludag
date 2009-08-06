@@ -1,0 +1,24 @@
+diff -Nuar PackageKit-0.4.9-orig/Makefile.in PackageKit-0.4.9/Makefile.in
+--- PackageKit-0.4.9-orig/Makefile.in	2009-08-03 15:48:06.000000000 +0300
++++ PackageKit-0.4.9/Makefile.in	2009-08-04 14:50:45.853396509 +0300
+@@ -38,7 +38,7 @@
+ 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
+ 	$(top_srcdir)/configure AUTHORS COPYING ChangeLog INSTALL NEWS \
+ 	TODO compile config.guess config.sub depcomp install-sh \
+-	ltmain.sh missing py-compile
++	ltmain.sh missing
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
+ 	$(top_srcdir)/configure.ac
+diff -Nuar PackageKit-0.4.9-orig/src/Makefile.in PackageKit-0.4.9/src/Makefile.in
+--- PackageKit-0.4.9-orig/src/Makefile.in	2009-08-03 15:48:06.000000000 +0300
++++ PackageKit-0.4.9/src/Makefile.in	2009-08-04 14:46:57.704396613 +0300
+@@ -2131,7 +2131,7 @@
+ install-data-hook:
+ 	if test -w $(DESTDIR)$(prefix)/; then \
+ 		mkdir -p $(DESTDIR)$(localstatedir)/cache/PackageKit/downloads; \
+-		mkdir -p $(PK_LOG_DIR); \
++		#mkdir -p $(PK_LOG_DIR); \
+ 	fi
+ 
+ clean-local:
