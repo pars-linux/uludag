@@ -178,12 +178,25 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
             else:
                 group = GROUP_UNKNOWN
 
-            self.details("%s-%s" % (pkg.name, self.__get_package_version(pkg)),
-                            pkg.license,
-                            group,
-                            pkg.description,
-                            pkg.packageURI,
-                            pkg.packageSize)
+
+            if self.installdb.has_package(package):
+                pkg_status = "installed"
+            elif self.packagedb.get_package(package):
+                pkg_status = "available"
+            else:
+                pkg_status = "unknown"
+
+            my_package_id = "%s;%s;%s;%s" % (pkg.name,
+                                            self.__get_package_version(pkg),
+                                            pkg.architecture,
+                                            pkg_status)
+
+            self.details(my_package_id,
+                         pkg.license,
+                         group,
+                         pkg.description,
+                         pkg.packageURI,
+                         pkg.packageSize)
         else:
             self.error(ERROR_PACKAGE_NOT_FOUND, "Package was not found")
 
@@ -212,7 +225,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         for repo in pisi.api.list_repos():
             # Internal FIXME: What an ugly way to get repo uri
             # FIXME: Use repository enabled/disabled state
-            self.repo_detail(repo, self.repodb.get_repo(repo).indexuri.get_uri(), True)
+            self.repo_detail(repo, self.repodb.get_repo(repo).indexuri.get_uri(), "true")
 
     def get_requires(self, filters, package_ids, recursive):
         """ Prints a list of requires for a given package """
@@ -245,11 +258,8 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
             else:
                 self.package(id, INFO_NORMAL, pkg.summary)
 
-    def install_files(self, only_trusted, files):
+    def install_files(self, trusted, files):
         """ Installs given package into system"""
-
-        # FIXME: use only_trusted
-
         # FIXME: install progress
         self.allow_cancel(False)
         self.percentage(None)
@@ -262,13 +272,11 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
             # Force needed?
             self.error(ERROR_PACKAGE_ALREADY_INSTALLED, e)
 
-    def install_packages(self, only_trusted, package_ids):
+    def install_packages(self, package_ids):
         """ Installs given package into system"""
         # FIXME: fetch/install progress
         self.allow_cancel(False)
         self.percentage(None)
-
-        # FIXME: use only_trusted
 
         package = self.get_package_from_id(package_ids[0])[0]
 
@@ -281,9 +289,8 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         else:
             self.error(ERROR_PACKAGE_NOT_INSTALLED, "Package is already installed")
 
-    def refresh_cache(self, force):
+    def refresh_cache(self):
         """ Updates repository indexes """
-        # TODO: use force ?
         self.allow_cancel(False)
         self.percentage(0)
         self.status(STATUS_REFRESH_CACHE)
@@ -298,11 +305,10 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
 
         self.percentage(100)
 
-    def remove_packages(self, allowdeps, autoremove, package_ids):
+    def remove_packages(self, deps, package_ids):
         """ Removes given package from system"""
         self.allow_cancel(False)
         self.percentage(None)
-        # TODO: use autoremove
 
         package = self.get_package_from_id(package_ids[0])[0]
 
@@ -392,11 +398,8 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         for pkg in pisi.api.search_package([package]):
             self.__get_package(pkg, filters)
 
-    def update_packages(self, only_trusted, package_ids):
+    def update_packages(self, package_ids):
         """ Updates given package to its latest version """
-
-        # FIXME: use only_trusted
-
         # FIXME: fetch/install progress
         self.allow_cancel(False)
         self.percentage(None)
@@ -411,11 +414,8 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         else:
             self.error(ERROR_PACKAGE_NOT_INSTALLED, "Package is already installed")
 
-    def update_system(self, only_trusted):
+    def update_system(self):
         """ Updates all available packages """
-
-        # FIXME: use only_trusted
-
         # FIXME: fetch/install progress
         self.allow_cancel(False)
         self.percentage(None)
