@@ -53,19 +53,33 @@ Yukarıda bulunan dosyayı indirdikten sonra, uygulamayı her türlü dosya form
  \begin{itemize}
   \item Firefox $\rightarrow$ Düzen $\rightarrow$ Seçenekler $\rightarrow$ Eklentileri Yönet $\rightarrow$ Yan Uygulamalar bölümünde VLC eklentisinin eklenmiş olduğunu gözlemleyin.
   \item Aşağıda bulunan uzantıdaki videoları firefox üzerinden açınız. Ve düzgün bir şekilde çalıştıklarını gözlemleyiniz.
-
-\begin{verbatim}
-http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/  
-\end{verbatim}
-
-
+  \begin{verbatim}
+  http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/  
+  \end{verbatim}
  \end{itemize}
+\item ffmpeg paketi kurulumu sonrası:
+ 
+Aşağıda bulunan ikinci komutun düzgün çıktılar ürettiğini ve üçüncü komutun da bu çıktıları çalıştırabildiğini gözlemleyin.
+\begin{verbatim}
+  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar 
+  # ffmpeg -i <multimedia dosyası> -r 24 <test dosyası>
+  # ffplay <multimedia dosyası>
+  \end{verbatim}
 
-	\end{enumerate}
+
+  
+
+
+\end{enumerate}
 
 
 \section{Converter alt Bileşeni}
 \begin{enumerate}
+ \item Aşağıdaki paketler sadece kurulum testine tabidir:
+\begin{verbatim}
+ nrg2iso
+\end{verbatim}
+
  \item amrwb ve amrnb paketleri kurulumu sonrası:
 
  multimedia-tr.pdf sox ve mplayer testlerini gerçekleştiriniz.
@@ -139,11 +153,42 @@ Sorunsuz bir şekilde çalışıp CD'de bulunan dosyalarını listeleyebildiğin
 Dosyaları seçin ve Rip butonuna basın ve bu işlemi düzgün bir şekilde yaptığını gözlemleyin.
 
 Ev dizininiz altında rip ettiğiniz format adı (mp3, wav, ogg, flac olabilir) ile bir dizin yaratıldığını gözlemleyin, ve mplayer ile bu dosyaların sorunsuz bir şekilde çalıştığını gözlemleyin.
-
-
 \end{itemize}
 
+\item libnut paketi kurulumu sonrası:
 
+multimedia-tr.pdf mplayer ve ffmeg testlerini gerçekleştirin.
+
+\item mkvtoolnix paketi kurulumu sonrası:
+
+Uygulamalar $\rightarrow$ Çokluortam $\rightarrow$ mkvmerge GUI uygulamasını açın:
+
+Aşağıdaki bağlantıda bulunan dosyaları, uygulamayı kullanarak .mkv dosyasına dönüştürün ve mplayer ile bu dosyaların düzgün bir şekilde oluştuklarını gözlemleyin: (Ekle tuşuna basarak ilgili dosyayı ekleyin ve muxing'e başla tuşuna basın.)
+\begin{verbatim}
+  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
+ \end{verbatim}
+
+\item mpeg2vidcodec paketi kurulumu sonrası:
+\begin{verbatim}
+  # mkdir flower
+  # cd flower
+  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/flowgard.mpg
+  # mpeg2decode -b flowgard.mpg -f -r -o0 sflowg.%d
+  # cd ..
+  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/flower2.par
+  # mpeg2encode flower2.par flowgard.m2v
+  # mplayer flowgard.m2v
+\end{verbatim}
+
+Yukarıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
+\item ogmtools paketi kurulumu sonrası:
+
+Aşağıdaki komutların düzgün bir şekilde çalıştıklarını gözlemleyin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/music.mp3 
+# ogmmerge music.mp3 -o test.ogg
+# mplayer test.ogg
+\end{verbatim}
 
 \end{enumerate}
 \section{Graphics alt Bileşeni}
