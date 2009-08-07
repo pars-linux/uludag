@@ -1,7 +1,9 @@
 [Global]
 IconName=package-manager
 Name=Package Manager
+Name[tr]=Paket Yöneticisi
 Comment=Package Manager
+Comment[tr]=Paket Yöneticisi
 
 [Event/Updates]
 Name=Software Updates
