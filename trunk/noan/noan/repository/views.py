@@ -15,9 +15,14 @@ def page_index(request):
     if len(distributions) == 1:
         return HttpResponseRedirect(distributions[0].get_url())
 
-    context = {
-        'distributions': distributions,
-    }
+    updates= []
+    context= {}
+    for dist in distributions:
+        up = Update.objects.filter(source__distribution__exact=dist.id).order_by("-updated_on")[:9]
+        updates.append((dist, up))
+    context["updates"] = updates
+
+    context['distributions'] = distributions
     return render_to_response('repository/index.html', context, context_instance=RequestContext(request))
 
 
@@ -140,3 +145,34 @@ def page_user(request, userName):
         'pending': pending,
     }
     return render_to_response('repository/user.html', context, context_instance=RequestContext(request))
+
+
+
+def search_form(request):
+    context= {}
+    distributions = Distribution.objects.all()
+    if 'question' in request.GET:
+        keyword = request.GET['question']
+        search_area = request.GET['search_area']
+        distro = request.GET['distro']
+        results = []
+        if search_area == "package":
+            if distro != "null":
+                results = Package.objects.filter(source__distribution__id=distro).filter(name__contains=keyword)
+            else:
+                results = Package.objects.filter(name__contains=keyword)
+        elif search_area == "descript":
+            result = Package.objects.filter(source__distribution__id=distro).filter(source__name__contains=keyword)
+        else :
+            result = results = Package.objects.filter(source__name__contains=keyword)
+        context['results'] = results
+
+    context['distributions'] = distributions
+    return render_to_response('repository/search.html', context, context_instance=RequestContext(request))
+
+
+
+
+
+
+
