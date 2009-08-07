@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ binary }}</h1>
+    <ul>
+        <li><strong>Distribution:</strong> <a href="{{ binary.package.source.distribution.get_url }}">{{ binary.package.source.distribution }}</a></li>
+        <li><strong>Source:</strong> <a href="{{ binary.package.source.get_url }}">{{ binary.package.source.name }}</a></li>
+        <li><strong>Package:</strong> <a href="{{ binary.package.get_url }}">{{ binary.package.name }}</a></li>
+        <li><strong>Updated By:</strong> <a href="/repository/users/{{ binary.update.updated_by.username }}/">{{ binary.update.updated_by.get_full_name }}</a></li>
+    </ul>
+
+    <h2>Runtime Dependencies</h2>
+    <ul>
+        {% for dep in binary.package.runtimedependency_set.all %}
+        <li>{{ dep }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Difference</h2>
+    <ul>
+        {% for update in binary.get_difference %}
+        <li>
+            <p>{{ update }}</p>
+            <p>{{ update.comment|linebreaks }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
