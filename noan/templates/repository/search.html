@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% block content %}
+{%ifequal  results [] %}
+<h1>Searching</h1>
+<form action="" method="get">
+    <table>
+        <tr>
+            <td>Keyword</td>
+            <td>:<input type="text" name="question"/></td>
+        </tr>
+        <tr>
+            <td>Search on</td>
+            <td>:<input type="radio" name="search_area" value="package" checked="checked"/>Package Name
+                <input type="radio" name="search_area" value="descript"/>Description
+                <input type="radio" name="search_area" value="source"/>Source name
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Distributions
+            </td>
+            <td>
+                :<select name="distro">
+                    <option value="null" selected="selected">any</option>
+                    {% for distro in distributions  %}
+                    <option value="{{distro.id}}">{{distro}}</option>
+                    {% endfor %}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Search"/></td>
+            <td><input type="reset" value="Reset"/></td>
+        </tr>
+    </table>
+</form>
+{%else%}<table>
+<ul>{%for distro in distributions  %}
+    <tr><td></td><td><h2> {{distro}} </h2><td></td><td></td></tr>
+        <tr><td><b>name </b></td><td><b>resolution </b></td><td><b>Update time</b></td><td><b>maintainer </b></td></tr>
+    {%for result in results %}
+{%ifequal result.source.distribution distro%}
+{%for binary in result.binary_set.all%}
+<tr>
+    <td>{{binary}}</td>
+    <td>{{binary.resolution}}</td>
+    <td>{{binary.update.updated_on}}</td>
+    <td>{{result.source.maintained_by}}</td>
+</tr>{%endfor%}
+{%endifequal%}
+{%endfor%}
+{%endfor%}</table>
+</ul>
+{% endifequal %}
+{%endblock%}
