@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Distributions</h1>
+    <ul>
+        {% for dist in distributions %}
+        <a href="{{ dist.get_url }}">{{ dist }}</a>
+        <ul>
+            <li>Sources: {{ dist.source_set.count }}</li>
+            <dl><li>updates:</li><table>
+        <tr>
+                <td>
+                    <b>Package name</b>
+            </td>
+            <td><b>Version no</b></td>
+            <td><b>Update time</b></td>
+            <td><b>M. name</b></td>
+            <td><b>M. last name</b></td>
+        </tr>
+                    {%for repo , packages in updates%}
+                    {%ifequal repo dist %}
+                    {%for package in packages%}
+                    <tr>
+                    <td>{{ package.source.name }}</td>
+                    <td>{{package.version_no}}</td>
+                    <td>{{package.updated_on }}</td>
+                    <td><a href="/repository/users/{{package.source.maintained_by.username}}">{{package.source.maintained_by.first_name}}</td></a>
+                    <td>{{package.source.maintained_by.last_name}}</td>
+                    </tr>
+                    {%endfor%}
+                    {%endifequal%}
+                    {% for aaa in package %}
+                    {% endfor %}
+                    {% endfor %}
+            </table>
+            </dl>
+        </ul>
+        {% endfor %}
+    </ul>
+{% endblock %}

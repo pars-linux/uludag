@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Distributions</h1>
+<h2></h2>
+    <ul>
+        {% for dist in distributions %}
+        <li>
+            <a href="/repository/pending/{{ dist.name }}-{{ dist.release }}">{{ dist }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
