@@ -16,6 +16,7 @@
 \maketitle
 \section{Language alt bileşeni}
 \subsection{Language alt bileşeni}
+\subsubsection{Perl alt bileşeni}
 \begin{enumerate}
 \item perl-IO-Socket-SSL paketi kurulumu sonrası:
 
@@ -44,6 +45,50 @@ git paketini kurun ve aşağıdaki komutları çalıştırın. Ve sorunsuz bir �
 \end{verbatim}
 
 \end{enumerate}
+\subsubsection{Python alt bileşeni}
+\begin{enumerate}
+ \item Django paketi kurulumu sonrası:
+\begin{itemize}
+ \item Aşağıda bulunan komutu çalıştırın:
+ \begin{verbatim}
+ # django-admin.py startproject test
+ # cd test
+ \end{verbatim}
+ test adında bir dizinin oluştuğunu ve bu dizin altında aşağıda bulunan dosyaların oluştuğunu gözlemleyin.
+  \begin{verbatim}
+  __init__.py
+  manage.py
+  settings.py
+  urls.py 
+  \end{verbatim}
+ \item Aşağıdaki komutu çalıştırın ve daha sonra firefox'tan http://localhost:8080/ adresini girin ve sunucuya bağlanabildiğinizi gözlemleyin
+  \begin{verbatim}
+  # python manage.py runserver 8080
+  \end{verbatim}
+ \item settings.py içerisinde DATABASE\_ENGINE DATABASE\_NAME değişkenlerini aşağıdaki database değişkenlerini atayın:
+  \begin{verbatim}
+   DATABASE_ENGINE = 'sqlite3'
+   DATABASE_NAME = 'sqlite3_'   
+  \end{verbatim}
+\item Aşağıdaki komutu çalıştırın ve istemiş olduğu işlemleri sırasıyla gerçekleştirin ve sorunsuz bir şekilde Django onay sisteminin kurulduğunu gözlemleyin:
+\begin{verbatim}
+# python manage.py syncdb 
+\end{verbatim}
+\item Aşağıdaki komutu çalıştırın ve polls adında bir dizinin oluştuğunu gözlemleyin:
+\begin{verbatim}
+# python manage.py startapp polls 
+\end{verbatim}
+\item Ve dizin içerişinde aşağıdaki dosyaların oluştuğunu gözlemleyin:
+\begin{verbatim}
+ __init__.py
+ models.py
+ views.py
+\end{verbatim}
+
+\end{itemize}
+
+\end{enumerate}
+
 \begin{itemize}
  \item R paketi kurulumu sonrası:
 

@@ -15,30 +15,32 @@
 
 \maketitle
 \begin{enumerate}
-\item exempi paketi kurulumu sonrası:
+\item exempi ve yaz paketi kurulumu sonrası:
 
-listen paketini kurun. Uygulamayı açın dosya sistemi bölümünden /usr/kde/3.5/share/sounds/ dizinine girin ve sorunsuz bir şekilde müziklerin listelendiğini ve müzikleri çalabildiğini gözlemleyin.
-
-\item yaz paketi kurulumu sonrası:
-
-tellico paketini kurun, ve internet araması tuşuna basın (ucunda yıldız bulunan bir asa olan ikon), arama kaynağı olarak amazonu şeçin ve arama kutusuna bir şarkı adı girin, listelenen albümlerden birini seçin ve bunu kolleksiyonunuza ekleyin. 
-
-Tüm bu işlemlerin sorunsuz olarak gerçekleştiğini gözlemleyin.
-
+office-tr.pdf tellico paketi testini gerçekleştiriniz.
 
 \item eet ve eina paketi kurulumu sonrası
-
-edb paketini kurun. Aşağıda buluna komutların sorunsuz bir şekilde çalıştığını ve sonuç olarak "default" diye bir çıktı döndürdüğünü gözlemleyin.
+\begin{itemize}
+ \item [2008 için] edb paketini kurun. Aşağıda buluna komutların sorunsuz bir şekilde çalıştığını ve sonuç olarak "default" diye bir çıktı döndürdüğünü gözlemleyin.
 \begin{verbatim}
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/test_edb
  # chmod 755 test_edb
  # ./test_edb
  # edb_ed test.db get /foo/theme str
 \end{verbatim}
+\item [2009 için] library-tr.pdf qedje paketi testini gerçekleştiriniz.
+\end{itemize}
+
+\item qedje kurulumu sonrası:
+
+Aşağıdaki komutu çalıştırdığınızda hata vermeden çalıştığını gözlemleyiniz.
+\begin{verbatim}
+# qedje_viewer
+\end{verbatim}
 
 \item geoip paketi kurulumu sonrası:
 \begin{verbatim}
-geoiplookup www.google.com 
+# geoiplookup www.google.com 
 \end{verbatim}
 "GeoIP Country Edition: US, United States" gibi bir sonuç döndürdüğünü gözlemleyin.
 
@@ -56,7 +58,6 @@ network-tr.pdf firefox ve office-tr.pdf openoffice testlerini gerçekleştiriniz
 \end{itemize}
 
 \end{enumerate}
-
 
 \end{document}
 
