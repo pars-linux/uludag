@@ -25,15 +25,21 @@ Yukarıda bulunan dosyayı frescobaldi ile açıp, uygulamanın sol tarafında b
 \item pulseaudio paketi kurulumu sonrası:
 \begin{itemize}
  \item Sisteminizi tekrar başlatın ve açılış sesinin düzgün bir şekilde çıktığını gözlemleyin. 
- \item Amarok uygulamasını kurun ve aşağıda bulunan zip dosyasını indirdikten sonra seslerin düzgün çıktığını gözlemleyin.
- \begin{verbatim}
-  # wget wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
- \end{verbatim}
+ \item multimedia-tr.pdf amarok paketi testini gerçekleştiriniz.
 \end{itemize}
 \item sox paketi kurulumu sonrası:
 
 hardware-tr.pdf k3b testini gerçekleştiriniz.
+\item amarok paketi kurulumu sonrası:
+ 
+Aşağıda bulunan zip dosyasını indirdikten sonra seslerin düzgün çıktığını gözlemleyin.
+ \begin{verbatim}
+  # wget wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
+ \end{verbatim}
 
+\item listen paketi kurulumu sonrası: 
+
+Uygulamayı açın dosya sistemi bölümünden /usr/kde/3.5/share/sounds/ dizinine girin ve sorunsuz bir şekilde müziklerin listelendiğini ve müzikleri çalabildiğini gözlemleyin.
 \end{enumerate}
 
 \section{Video alt Bileşeni}
@@ -70,7 +76,74 @@ http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/
  # ccd2iso default.img test.iso
 \end{verbatim}
 
+test.iso dosyasının sorunsuz bir şekilde oluştuğunu gözlemleyin.
+
 Sorunsuz bir şekilde iso dosyasının oluştuğunu gözlemleyin.
+\item dvdbackup paketi kurulumu sonrası:
+\begin{itemize}
+ \item Aşağıdaki bağlantıda bulunan iso'yu DVD'ye yazdırın. 
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+\end{verbatim}
+ \item Eğer DVD yeniden yazdırabilir bir DVD ise /dev/dvdrw değil ise /dev/dvd girdilerini kullanarak aşağıdaki bulunan komutu çalıştırın ve sorunsuz bir şekilde DVD'nin yedeklendiğini gözlemleyin.
+\begin{verbatim}
+ # dvdbackup -i <girdiyolu> -o <çıktıyolu> -M
+ Örnek 
+ # dvdbackup -i /dev/dvdrw -o /home/pardus/dvd -M
+\end{verbatim}
+ 
+\end{itemize}
+\item emovix paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/default.img
+\end{verbatim}
+ 
+Komutların sorunsuz bir şeklilde çalıştıklarını gözlemleyin.
+\begin{verbatim}
+ # movix-version
+ # movix-files
+ # movix-conf
+ # mkmovixiso default.img --output-file=default.iso
+\end{verbatim}
+
+\item ffmpeg2theora paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
+ # ffmpeg2theora DVD.mpg
+\end{verbatim}
+\begin{itemize}
+ \item Yukarıda bulunan komutun sorunsuz bir şekilde DVD.ogv dosyasını oluşturduğunu gözlemleyin.
+ \item mplayer ile bu dosyayı çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
+\end{itemize}
+\item ffmpeg2theora paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/lazarus.png
+ # icns2png lazarus.icns
+\end{verbatim}
+\begin{itemize}
+ \item Yukarıda bulunan komutun sorunsuz bir şekilde lazarus.png dosyasını oluşturduğunu gözlemleyin.
+ \item gwenview ile bu dosyayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.
+\end{itemize}
+\item kaudiocreator paketi kurulumu sonrası:
+\begin{itemize}
+ \item Aşağıdaki bağlantıda bulunan ses dosyalarını k3b ile audio CD olarak yazdırın.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/
+\end{verbatim}
+ \item kaudiocreator uygulamasını çalıştırın:
+
+Sorunsuz bir şekilde çalışıp CD'de bulunan dosyalarını listeleyebildiğini gözlemleyin.
+
+Dosyaları seçin ve Rip butonuna basın ve bu işlemi düzgün bir şekilde yaptığını gözlemleyin.
+
+Ev dizininiz altında rip ettiğiniz format adı (mp3, wav, ogg, flac olabilir) ile bir dizin yaratıldığını gözlemleyin, ve mplayer ile bu dosyaların sorunsuz bir şekilde çalıştığını gözlemleyin.
+
+
+\end{itemize}
+
+
 
 \end{enumerate}
 \section{Graphics alt Bileşeni}
@@ -82,8 +155,6 @@ Sorunsuz bir şekilde iso dosyasının oluştuğunu gözlemleyin.
 
  Yukarıda bulunan farklı formattaki dosyaları gimp ile açınız, sorunsuz bir şekilde açıldıklarını gözlemleyiniz.
 \item digikam kurulumu sonrası:
-
-
 
   \begin{verbatim}
    http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
