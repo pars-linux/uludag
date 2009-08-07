@@ -44,6 +44,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # set repo name and address
         self.repoName = "contrib"
         self.repoAddress = "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+        self.repoAddress2 = "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
         self.ui.picturePackage.setPixmap(QtGui.QPixmap(':/raw/pics/package.png'))
 
         # set signals
@@ -57,7 +58,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # control if we already have contrib repo
         # if so, hide configuration box
-        if self.repodb.has_repo_url(self.repoAddress):
+        if self.repodb.has_repo_url(self.repoAddress) or self.repodb.has_repo_url(self.repoAddress2):
             self.ui.groupBoxRepo.hide()
         else:
             # control if we already have the same repo name
