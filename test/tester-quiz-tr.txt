@@ -1,0 +1,159 @@
+Revision 1.0 - 03/06/2009
+Author: Semen Cirit
+
+Pardus test ekibi üyeliği eğitim sürecinin başlangıcını belirleyecek olan
+küçük bir bilgilendirme sınavı.
+
+Bu dökümanın adının sınav olması kesinlikle gözünüzü korkutmamalıdır.
+Burada bulunan sorular, test sorumlusu veya sorumluları eşliğinde
+yapılacak olup,test ekibi üyesi olma isteğinizi bildirdiğiniz andan itibaren
+başlayacak olan sürecin ilk aşamasıdır.
+
+Bu sorular, Pardus linux dağıtımının alt yapısını yakından anlamanızı ve
+gelecekte yapacağınız testlerde karşılaşılaştığınız hatalar için yetkin bir şekilde
+cevap vermenizi ve hata raporlamanızı sağlayacaktır.
+
+Aşağıdaki soruların hepsine olabildiğince cevap vermeniz bizim için çok
+önemlidir. Takıldığınız noktalar ve cevabını tam olarak bilmediğiniz sorular
+için lütfen test sorumlusu veya sorumlularına
+danışınız.
+
+*** Organizasyonel Yapı ile İlgili Sorular ***
+
+1. Pardus proje yapılaşmasının amacı nedir?
+
+2. Aşağıda bulunan pardusun mail listelerinin amçları nelerdir?
+gelistirici, pardus-devel, paketler, paketler-commits, stable, projeler-commits,
+uludag-commits, bugzilla, turkce,  oi-commits, pardus-translators, pardus-guvenlik,
+pardus-security, pardus-mirrors, testci?
+
+3. Pardus Projesi için büyük bir atılım gerçekleştireceğini düşündüğünüz bir
+özelliği veya uygulamayı önermenin en iyi yöntemi nedir? Bu özellik veya
+uygulamanın onaylanması ve geliştirilmeye başlanması için gerekli süreci
+ayrıntılı bir şekilde anlatınız.
+
+4. Özgürlük İçin kurumunun amacı nedir?
+
+5. Pardus hangi sürüm takip sistemini kullanmaktadır. Sürüm takip sisteminde
+kullanılan depoların yapısı nasıldır?
+
+Aşağıda bulunan Pardus Depolarının amaçlarını açıklayınız.
+    Pisi Paketleri Deposu,
+    Katkı Deposu,
+    Özgürlükİçin Deposu,
+    Uludag Deposu,
+    Harici Projeler Deposu
+
+*** Test ile İlgili Genel  Sorular*****
+1. Blackbox ve whitebox testleri arasındaki fark nedir?
+
+2. Aşağıda bulunan test türlerinin genel tanımlarını yapınız. Pardus linux
+dağıtımı ile birlikte bu testleri düşündüğümüzde, geliştirme aşamalarının ve
+paketlerin hangi durumlarında hangi testlerin uygulanacağına dair birer örnek
+veriniz.
+    - Konfigurasyon testi
+    - Kurulum testi
+    - Performans testi
+    - Güvenlik testi
+    - İşlev testi
+    - Regresyon testi
+    - Ad-hoc testing
+
+3. Beta ve Alfa testlerinde hangi test çeşitleri uygulanmaktadır?
+
+4. Pardus depo işleyiş süreci ile ilgili:
+
+    a) Hangi depolar test sürecine tabidir?
+    b) Bir uygulmanın depoya alınmaya karar verilmesinden, kararlı depoya
+    geçmesine kadar devam eden süreç nasıl işler?
+        - Review (gözden geçirme) süreci nasıl işler?
+        - Test ve testçi depolarının amacı nedir? Ack-Nack süreci nasıl işler?
+
+5. Pisi paket adlarında bulunan rakamlar neleri ifade eder?
+
+örnek: x-paketi-0.3.0-13-6.pisi
+
+6. Paket bileşeni ne demektir? Pardus paketleri bileşen yapısı nasıl oluşturulmuştur?
+
+7. Test aşamalarının (testcase) amacı nedir? 
+    a) Sürüm içi testleri için gerekli test aşamaları hangi yapıya göre oluşturulmuştur?
+    b) Pardusa özgü yazılımların test aşamaları nasıl oluşturulmuştur?
+
+8. Düzgün ve yetkin hata raporlama neden çok önemlidir?
+    - Pardus Bugzilla hata rapolama taslağını kullanarak bir hata raporu
+      örneği veriniz.
+
+
+****** Hata Bulma ve Etkin Raporlama için Sorular *****
+
+1. Pardus linux dağıtımına özgü uygulamalar nelerdir? Ne işe yararlar kısaca
+açıklayınız.
+
+2. COMAR ve MUDUR nedir? Hangi uygulamalar COMAR veya MUDUR'ü kullanır?
+
+3. Ne zaman aşağıda bulunan dosyayı incelememiz gerekebilir? Örnekler veriniz.
+    # su
+    # tail /var/log/comar3/trace.log
+
+3. Aşağıda bulunan linux komutları ne işe yarar? ayrıntılı bir biçimde
+açıklayınız.
+    - lspci
+    - lsmod
+    - fdisk
+    - mount
+    - blkid
+    - ssh
+    - groups
+    - xrandr
+        - Çözünürlüklerin yanında bulunan "*" ve "+" işaretleri hangi anlama
+          gelmektedir.
+    - xinit
+    - glxgears
+    - dmesg
+    - lsusb
+    - alsa-info
+    - test-webcam
+    - service
+        - Kullanılabilir servisleri nasıl listeleyebiliriz?
+    - iptables
+        - Güvenlik duvarı yöneticisi ile ilgili kuralları nasıl
+          gözlemleyebiliriz?
+    - pisi
+        - Sisteme ekli depoları nasıl görebiliriz?
+        - Bir bileşene ait güncellenebilir paketler nasıl listelenebilir?
+        - Bir bileşene ait kurulmuş paketler nasıl listelenebilir?
+        - Bir bileşene ait yeni paketler nasıl listelenebilir?
+        - Paketler ile ilgili geçmişte yapılmış işlemler hangi komut ile
+          gözlemlenebilir?
+        - Sistemde bulunan belirli bir dosya yolunun hangi pakete ait olduğu
+          nasıl bulunabilir?
+
+4. Aşağıda bulunan dosyalar nelerdir? Ayrıntılı olarak açıklayınız.
+    /proc/cpuinfo
+    /proc/meminfo
+    /boot/grub/grub.conf
+    /etc/fstab
+    /etc/pisi/pisi.conf
+    /etc/passwd
+    /etc/group
+    /var/log/syslog
+    /var/lib/PolicyKit/user-<username>.auths
+    .kde/share/config/<application>rc
+
+*** Lütfen aşağıda bulunan bilgileri cevaplandırınız:
+
+* Doğum tarihiniz.
+
+* Nerede yaşadığınız.
+
+* Mesleğiniz.
+
+* Programlama ve test ile ilgili tecrübeleriniz.
+
+* Diğer ilgilendiğiniz alanlar.
+
+* Eğer varsa diğer katkıda bulunduğunuz projeler.
+
+* Bize kendinizden kısaca bahsedin. Bunun sadece bilgisayar ile ilgili olması
+gerekmemektedir; hobilerinizden yapmaktan zevk aldığınız diğer şeylerden kısaca bahsediniz.
+
