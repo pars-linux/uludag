@@ -181,7 +181,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
 
             if self.installdb.has_package(package):
                 pkg_status = "installed"
-            elif self.packagedb.get_package(package):
+            elif self.packagedb.has_package(package):
                 pkg_status = "available"
             else:
                 pkg_status = "unknown"
