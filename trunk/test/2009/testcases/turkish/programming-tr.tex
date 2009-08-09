@@ -15,8 +15,7 @@
 
 \maketitle
 \section{Language alt bileşeni}
-\subsection{Language alt bileşeni}
-\subsubsection{Perl alt bileşeni}
+\subsection{Perl alt bileşeni}
 \begin{enumerate}
 \item perl-IO-Socket-SSL paketi kurulumu sonrası:
 
@@ -34,18 +33,18 @@ Konsoldan;
 Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
 \item perl-Compress-Zlib paketi kurulumu sonrası:
 
-git paketini kurun ve aşağıdaki komutları çalıştırın. Ve sorunsuz bir şekilde Git deposu oluşturduğunu ve klonladğını gözlemleyin.
+programming-tr.pdf git testini gerçekleştirin.
+
+\item perl-Email-MIME-Encodings paketi kurulumu sonrası:
 \begin{verbatim}
- # cd ~
- # mkdir test_git
- # cd test_git
- # git init
- # cd ..
- # git clone test_git test_clone
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Email-MIME-Encodings.t
+ # perl Email-MIME-Encodings.t
 \end{verbatim}
 
+Tüm sonuçların "ok" döndürdüğünü gözlemleyin. 
+
 \end{enumerate}
-\subsubsection{Python alt bileşeni}
+\subsection{Python alt bileşeni}
 \begin{enumerate}
  \item Django paketi kurulumu sonrası:
 \begin{itemize}
@@ -88,6 +87,20 @@ git paketini kurun ve aşağıdaki komutları çalıştırın. Ve sorunsuz bir �
 \end{itemize}
 
 \end{enumerate}
+\subsection{vcs alt bileşeni}
+\begin{enumarate}
+\item git paketi kurulumu sonrası:
+Aşağıdaki komutları çalıştırın. Ve sorunsuz bir şekilde Git deposu oluşturduğunu ve klonlandığını gözlemleyin.
+\begin{verbatim}
+ # cd ~
+ # mkdir test_git
+ # cd test_git
+ # git init
+ # cd ..
+ # git clone test_git test_clone
+\end{verbatim}
+ 
+\end{enumarate}
 
 \begin{itemize}
  \item R paketi kurulumu sonrası:
