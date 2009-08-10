@@ -1,7 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[turkish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=2cm]{geometry}
 
 \title{Hardware Bileşeni Test Aşamaları}
 \author{Semen Cirit}
@@ -50,13 +50,20 @@ Yazdırdığınız CD veya DVD'den video veya müziklerinizi açın, ses ve gör
 \end{itemize}
 
 \end{enumerate}
-\section{Scanner alt Bileşeni}
+\section{Emulator alt Bileşeni}
 \begin{enumerate}
+
  \item wine ve wine-devel paketleri kurulumu sonrası:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/emulator/egyptianball_setup.exe
+# wine  egyptianball_setup.exe
+\end{verbatim}
+\begin{itemize}
+ \item Düzgün bir şekilde oyunun kurulduğunu gözlemleyin.
+ \item Menü $\rightarrow$ Wine $\rightarrow$ Programs $\rightarrow$ MyPlayCity.com $\rightarrow$ Egyptian Ball yolunu izleyerek oyunu açın ve düzgün bir şekilde çalıştığını gözlemleyin.
+\end{itemize}
 
 \end{enumerate}
-
-
 
 \end{document}
 
