@@ -1,7 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[turkish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=2cm]{geometry}
 
 \title{Multimedia Bileşeni Test Aşamaları}
 \author{Semen Cirit}
@@ -263,7 +263,7 @@ Sorunsuz bir şekilde .shn uzantılı dosyanın oluştuğunu ve çalıştırıla
  Digikam uygulaması için seçtiğiniz dosya dizinine yukarıda klasör içinde bulunan dosyaları kopyalayınız ve sorunsuz bir şekilde çalıştığını gözlemleyiniz.
 \item imagemagick kurulumu sonrası:
   \begin{verbatim}
-   http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
+   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
   \end{verbatim}
 
 Yukarıdaki bağlantıda bulunan dosyaların aşağıda bulunan komutlar ile düzgün çalıştığını gözlemleyiniz.
@@ -271,7 +271,43 @@ Yukarıdaki bağlantıda bulunan dosyaların aşağıda bulunan komutlar ile dü
    # animate test_animate.gif
    # diplay test.*
   \end{verbatim}
+\item tuxpaint, tuxpaint-stamps ve tuxpaint-doc paketleri kurulumu sonrası:
+  \begin{itemize}
+   \item  Uygulamayı açın çeşitli izimler yapın ve kaydedin, sorunsuz bir şekilde çalıştığını ve ilgili yerlerde ses dosyaları çalıştırdığını gözlemleyin.
+   \item Stamps butonuna basın ve sağ tarafta bulunan pullardan birini eklemeye çalışın sorunsuz bir şekilde eklendiğini gözlemleyin.
+   \item Aşağıda bulunan komutu çalıştırın ve daha sonra uygulamanın sol tarafında bulunan open butonuna basın ve import ettiğiniz resmin uygulmada görüntülenmiş olduğunu gözlemleyin.
+\begin{verbatim}
+   # tuxpaint-import /usr/share/tuxpaint/stamps/vehicles/ship/walnutBoat.png
+\end{verbatim}
+
+ 
+  \end{itemize}
+
 
 \end{enumerate}
+\section{Editor alt Bileşeni}
+\begin{enumerate}
+ \item avidemux-common paketi kurulumu sonrası:
+ 
+ multimedia-tr.pdf avidemux testini gerçekleştiriniz.
+
+ \item avidemux ve avidemux-qt paketleri kurulumu sonrası:
+
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_VCD_extensions.mpeg
+\end{verbatim}
+Yukarıda bulunan dosyaları ilgili uygulama ile açın. Go $\rightarrow$ Play/Stop düymesine basın ve açtığınız videonun ses ve görüntü bakımından sorunsuz bir şekilde çalıştığını gözlemleyin.
+\item avidemux-cli paketi kurulumu sonrası:
+
+video.mpeg dosyasının sorunsuz bir şekilde oluşmuş olduğunu gözlemleyin.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+ # avidemux2_cli --force-alt-h264 --load "Lake_dance_XviD.AVI" --save "video.mpeg" --output-format MPEG --quit 
+ # mplayer video.mpeg
+\end{verbatim}
+
+\end{enumerate}
+
 \end{document}
 
