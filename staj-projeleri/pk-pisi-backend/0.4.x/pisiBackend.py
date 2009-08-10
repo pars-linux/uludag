@@ -222,10 +222,14 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         self.allow_cancel(True)
         self.percentage(None)
 
-        for repo in pisi.api.list_repos():
+        repo_order = pisi.db.repodb.RepoOrder()
+
+        for repo in pisi.api.list_repos(False):
             # Internal FIXME: What an ugly way to get repo uri
-            # FIXME: Use repository enabled/disabled state
-            self.repo_detail(repo, self.repodb.get_repo(repo).indexuri.get_uri(), "true")
+            if repo_order.get_status(repo) == 'active':
+                self.repo_detail(repo, self.repodb.get_repo(repo).indexuri.get_uri(), "true")
+            else:
+                self.repo_detail(repo, self.repodb.get_repo(repo).indexuri.get_uri(), "false")
 
     def get_requires(self, filters, package_ids, recursive):
         """ Prints a list of requires for a given package """
