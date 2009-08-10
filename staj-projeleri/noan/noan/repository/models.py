@@ -225,3 +225,19 @@ class TaskDescription(models.Model):
     class Meta:
         verbose_name = _('task description')
         verbose_name_plural = _('task descriptions')
+
+
+class StateOfTest(models.Model):
+    binary = models.OneToOneField(Binary, verbose_name=_('binary'))
+    maintained_by = models.ForeignKey(User, verbose_name=_('maintained by'))
+    update = models.ForeignKey(Update, verbose_name=_('update'), default='',  blank=True)
+    state = models.CharField(max_length=4, verbose_name=_('state'), default='', blank=True)
+
+    def __unicode__(self):
+        return self.state
+
+    class Meta:
+        verbose_name = _('state')
+        verbose_name_plural = _('states')
+#    def GetAck(self):
+

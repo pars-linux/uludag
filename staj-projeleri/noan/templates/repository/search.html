@@ -37,15 +37,15 @@
 {%else%}<table>
 <ul>{%for distro in distributions  %}
     <tr><td></td><td><h2> {{distro}} </h2><td></td><td></td></tr>
-        <tr><td><b>name </b></td><td><b>resolution </b></td><td><b>Update time</b></td><td><b>maintainer </b></td></tr>
+        <tr><td><b>Name </b></td><td><b>Resolution </b></td><td><b>Update time</b></td><td><b>Maintainer </b></td></tr>
     {%for result in results %}
-{%ifequal result.source.distribution distro%}
+    {%ifequal result.source.distribution distro%}
 {%for binary in result.binary_set.all%}
 <tr>
-    <td>{{binary}}</td>
-    <td>{{binary.resolution}}</td>
-    <td>{{binary.update.updated_on}}</td>
-    <td>{{result.source.maintained_by}}</td>
+    <td><a href="{{ binary.get_url }}">{{ binary }}</a></td>
+    <td>{{ binary.resolution }}</td>
+    <td>{{ binary.update.updated_on }}</td>
+    <td><a href="/repository/users/{{ result.source.maintained_by }}">{{ result.source.maintained_by }}</a></td>
 </tr>{%endfor%}
 {%endifequal%}
 {%endfor%}
