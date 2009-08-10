@@ -74,7 +74,16 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
     source = Source.objects.get(name=sourceName, distribution=distribution)
     package = Package.objects.get(name=packageName, source=source)
     binary = Binary.objects.get(no=binaryNo, package=package)
-
+    if 'statu' in request.POST:
+        if request.POST['statu'] == "nack":
+            State = "nack"
+        else:
+            State = "ack"
+        state = StateOfTest.objects.get(binary = binary)
+        print state.state
+        state.state = State
+        state.save()
+        print state.state
     context = {
         'binary': binary,
     }
@@ -151,7 +160,7 @@ def page_user(request, userName):
 def search_form(request):
     context= {}
     distributions = Distribution.objects.all()
-    if 'question' in request.GET:
+    if 'question' in request.GET and request.GET['question'] != "":
         keyword = request.GET['question']
         search_area = request.GET['search_area']
         distro = request.GET['distro']
