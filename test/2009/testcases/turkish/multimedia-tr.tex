@@ -78,6 +78,7 @@ Aşağıda bulunan ikinci komutun düzgün çıktılar ürettiğini ve üçünc�
  \item Aşağıdaki paketler sadece kurulum testine tabidir:
 \begin{verbatim}
  nrg2iso
+ vnc2swf
 \end{verbatim}
 
  \item amrwb ve amrnb paketleri kurulumu sonrası:
@@ -189,6 +190,60 @@ Aşağıdaki komutların düzgün bir şekilde çalıştıklarını gözlemleyin
 # ogmmerge music.mp3 -o test.ogg
 # mplayer test.ogg
 \end{verbatim}
+
+\item potrace paketi kurulumu sonrası:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/tepecik_01.pbm 
+# potrace tepecik_01.pbm -o test.png
+# gwenview test.png
+\end{verbatim}
+
+Sorunsuz bir şekilde png dosyasının oluştuğunu ve görüntülenebildiğini gözlemleyin.
+
+\item shntool paketi kurulumu sonrası:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/11k16bitpcm.wav
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/11k16bitpcm2.wav
+# shncat 11k16bitpcm.wav
+# shncmp 11k16bitpcm.wav 11k16bitpcm2.wav
+\end{verbatim}
+\item shorten paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/11k16bitpcm.wav
+ # shorten 11k16bitpcm.wav
+ # mplayer 11k16bitpcm.shn
+\end{verbatim}
+
+Sorunsuz bir şekilde .shn uzantılı dosyanın oluştuğunu ve çalıştırılabildiğini  gözlemleyin.
+\item transcode paketi kurulumu sonrası:
+
+\begin{itemize}
+ \item hardware-tr.pdf k3b paketini test ediniz.
+ \item Aşağıdaki komutları çalıştırın:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+# transcode -i Lake_dance_XviD.AVI -y xvid -o test.avi -k -z
+# mplayer test.avi
+\end{verbatim}
+ Oluşan .avi uzantılı dosyanın baş aşağı çalıştığını gözlemleyin.
+\end{itemize}
+
+\item vcdimager paketi kurulumu sonrası:
+
+\begin{itemize}
+ \item hardware-tr.pdf k3b paketini test ediniz.
+ \item Aşağıdaki komutları çalıştırın ve sorunsuz bir şekilde çalıştıklarını gözlemleyin:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
+# vcdimager DVD.mpg
+# vcd-info -b videocd.bin
+# vcdxgen DVD.mpg
+# vcdxminfo -i DVD.mpg
+\end{verbatim}
+
+\end{itemize}
+\item vobcopy paketi kurulımu sonrası:
+
 
 \end{enumerate}
 \section{Graphics alt Bileşeni}

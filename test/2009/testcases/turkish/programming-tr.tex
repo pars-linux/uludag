@@ -14,6 +14,38 @@
 \begin{document}
 
 \maketitle
+\section{vcs alt bileşeni}
+\begin{enumerate}
+\item git paketi kurulumu sonrası:
+
+Aşağıdaki komutları çalıştırın. Ve sorunsuz bir şekilde Git deposu oluşturduğunu ve klonlandığını gözlemleyin.
+\begin{verbatim}
+ # cd ~
+ # mkdir test_git
+ # cd test_git
+ # git init
+ # cd ..
+ # git clone test_git test_clone
+\end{verbatim}
+
+\item subversion paketi kurulumu sonrası:
+
+test dizininin sorunsuz bir şekilde eklenmiş olduğunu gözlemleyin:
+\begin{verbatim}
+  # svn co http://svn.pardus.org.tr/uludag/trunk/test/2009/testguide/turkish/
+  # cd turkish
+  # svn mkdir test
+  # svn st
+ \end{verbatim}
+testfile dosyası içerisine bir kaç kelime yazın ve kaydedin. Yapılan değişiklik farkının alınabildiğini gözlemleyin:
+\begin{verbatim}
+  # vi testfile
+  # svn add testfile
+  # svn diff
+ \end{verbatim}
+\end{enumerate}
+
+
 \section{Language alt bileşeni}
 \subsection{Perl alt bileşeni}
 \begin{enumerate}
@@ -87,20 +119,26 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
 \end{itemize}
 
 \end{enumerate}
-\subsection{vcs alt bileşeni}
-\begin{enumarate}
-\item git paketi kurulumu sonrası:
-Aşağıdaki komutları çalıştırın. Ve sorunsuz bir şekilde Git deposu oluşturduğunu ve klonlandığını gözlemleyin.
+
+\subsection{Java alt bileşeni}
+\begin{enumerate}
+ \item Aşağıdaki paketlerin kurulumu sonrası:
 \begin{verbatim}
- # cd ~
- # mkdir test_git
- # cd test_git
- # git init
- # cd ..
- # git clone test_git test_clone
+ sun-jre
+ sun-jdk
+ sun-jdk-demo
+ sun-jdk-samples
+ sun-jdk-doc
 \end{verbatim}
- 
-\end{enumarate}
+
+Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözlemleyin.
+\begin{verbatim}
+# java -version
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/java/test.java
+# javac test.java
+# java test
+\end{verbatim}
+\end{enumerate}
 
 \begin{itemize}
  \item R paketi kurulumu sonrası:
@@ -117,10 +155,6 @@ Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalışt
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test_r-mathlib.c
  # gcc -o test_r-matlib test_r-matlib.c -lm -lRmath
 \end{verbatim}
-
-
 \end{itemize}
-
-
 \end{document}
 
