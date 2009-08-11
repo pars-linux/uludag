@@ -1,7 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[turkish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=2cm]{geometry}
 
 \title{Library Test Aşamaları}
 \author{Semen Cirit}
@@ -61,8 +61,7 @@ network-tr.pdf firefox ve office-tr.pdf openoffice testlerini gerçekleştiriniz
 \begin{verbatim}
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/component.xml
  # ikslint -s component.xml
- # iksperf -a component.xml
- 
+ # iksperf -a component.xml 
 \end{verbatim}
 
 \begin{itemize}
@@ -76,8 +75,27 @@ network-tr.pdf firefox ve office-tr.pdf openoffice testlerini gerçekleştiriniz
 \item network-tr.pdf firefox testlerini gerçekleştirin.
 \item network-tr.pdf gecko-mediaplayer testlerini gerçekleştirin.
 \item multimedia-tr.pdf vlc-firefox testlerini gerçekleştirin.
-\item desktop-tr.pdf google-gadgets-qt ve google-gadgets-gtk testlerini gerçekleştirin.
 \end{itemize}
+
+\item libvorbis paketi kurulumu sonrası:
+
+multimedia-tr.pdf vorbis-tools testini gerçekleştirin.
+
+\item xerces-c paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyaları aynı dizin içeridine indirin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/shiporder.xml
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/shiporder.xsd
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/test-xerces-c.sh
+\end{verbatim}
+
+./test-xerces-c.sh dosyasının çıktısında hata çıktısı olup olmadığını gözlemleyin:
+\begin{verbatim}
+# chmod 755 test-xerces-c.sh
+# ./test-xerces-c.sh | less
+\end{verbatim}
+
 
 \end{enumerate}
 
