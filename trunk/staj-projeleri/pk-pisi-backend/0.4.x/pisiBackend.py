@@ -181,12 +181,6 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         if self.packagedb.has_package(package):
             pkg = self.packagedb.get_package(package)
 
-            if self.groups.has_key(pkg.partOf):
-                group = self.groups[pkg.partOf]
-            else:
-                group = GROUP_UNKNOWN
-
-
             if self.installdb.has_package(package):
                 pkg_status = "installed"
             elif self.packagedb.has_package(package):
@@ -201,7 +195,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
 
             self.details(my_package_id,
                          pkg.license,
-                         group,
+                         self.__get_group(pkg),
                          pkg.description,
                          pkg.packageURI,
                          pkg.packageSize)
