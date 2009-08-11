@@ -16,6 +16,8 @@ from PyQt4.QtCore import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
+from pmutils import *
+
 import config
 import backend
 
@@ -107,12 +109,17 @@ class Tray(KSystemTrayIcon):
         cfg = config.PMConfig()
         if cfg.systemTray():
             self.show()
-            noUpgrades = len(self.iface.getUpdates())
-            self.slotSetUnread(noUpgrades)
+            self.updateTrayUnread()
         else:
             self.hide()
 
         self.updateInterval(cfg.updateCheckInterval())
+
+    def updateTrayUnread(self):
+        waitCursor()
+        noUpgrades = len(self.iface.getUpdates())
+        self.slotSetUnread(noUpgrades)
+        restoreCursor()
 
     # stolen from Akregator
     def slotSetUnread(self, unread):
