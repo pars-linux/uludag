@@ -108,7 +108,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         self.installdb = pisi.db.installdb.InstallDB()
         self.packagedb = pisi.db.packagedb.PackageDB()
         self.repodb = pisi.db.repodb.RepoDB()
-        self.componentdb = pisi.db.componentdb.ComponentDB()
+        self.groupdb = pisi.db.groupdb.GroupDB()
 
         # Do not ask any question to users
         self.options = pisi.config.Options()
@@ -401,10 +401,9 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         self.status(STATUS_INFO)
 
         try:
-            for key in self.groups.keys():
-                if self.groups[key] == group:
-                    for pkg in self.componentdb.get_packages(key, walk = True):
-                        self.__get_package(pkg, filters)
+            for key in self.groupdb.get_group_components(group):
+                for pkg in self.componentdb.get_packages(key, walk = True):
+                    self.__get_package(pkg, filters)
         except:
             self.error(ERROR_GROUP_NOT_FOUND, "Component %s was not found" % group)
 
