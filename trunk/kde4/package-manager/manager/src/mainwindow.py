@@ -48,7 +48,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
     def initializeTray(self):
         self.tray = Tray(self)
-        self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayShow)
+        self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayAction)
         self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
 
     def trayShowUpdates(self):
@@ -59,9 +59,13 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.show()
         self.raise_()
 
-    def trayShow(self, operation):
+    def trayAction(self, operation):
         if not self.isVisible() and operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
             self.tray.showPopup()
+        if self.tray.isVisible() and operation in ["System.Manager.updatePackage",
+                                                   "System.Manager.installPackage",
+                                                   "System.Manager.removePackage"]:
+            self.tray.updateTrayUnread()
 
     def initializeStatusBar(self):
         self.statusLabel = QtGui.QLabel(i18n("Currently your basket is empty."), self.statusBar())
