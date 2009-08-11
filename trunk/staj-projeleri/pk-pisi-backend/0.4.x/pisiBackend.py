@@ -267,7 +267,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
 
         try:
             self.status(STATUS_INSTALL)
-            pisi.api.install([file])
+            pisi.api.install(files)
         except pisi.Error,e:
             # FIXME: Error: internal-error : Package re-install declined
             # Force needed?
