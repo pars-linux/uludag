@@ -231,12 +231,15 @@ class StateOfTest(models.Model):
     binary = models.OneToOneField(Binary, verbose_name=_('binary'))
     maintained_by = models.ForeignKey(User, verbose_name=_('maintained by'))
     update = models.ForeignKey(Update, verbose_name=_('update'), default='',  blank=True)
+    #updated_on = models.DateField(verbose_name=_('updated on'),blank=True)
     state = models.CharField(max_length=4, verbose_name=_('state'), default='', blank=True)
 
     def __unicode__(self):
-        return self.state
+        return _('%(state)s (%(binary)s source: %(source)s, distro: %(distro)s)') % {'state': self.state, 'binary': self.binary, 'source': self.binary.package.source.name, 'distro': self.binary.package.source.distribution}
 
     class Meta:
+        ordering = ['id']
+        #ordering = ['binary__package__name']
         verbose_name = _('state')
         verbose_name_plural = _('states')
 #    def GetAck(self):
