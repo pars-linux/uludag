@@ -199,6 +199,8 @@ class PrettyBugz(Bugz):
 		"""Performs a search on the bugzilla database with the keywords given on the title (or the body if specified).
 		"""
 		search_term = ' '.join(args).strip()
+		show_status = kwds['show_status']
+		del kwds['show_status']
 		show_url = kwds['show_url']
 		del kwds['show_url']
 		search_opts = sorted([(opt, val) for opt, val in kwds.items()
@@ -228,7 +230,7 @@ class PrettyBugz(Bugz):
 			self.log('No bugs found.')
 			return
 
-		self.listbugs(result, show_url)
+		self.listbugs(result, show_url, show_status)
 
 	search.args = "<search term> [options..]"
 	search.options = {
@@ -259,11 +261,13 @@ class PrettyBugz(Bugz):
 		'keywords': make_option('-k', '--keywords', help = 'Bug keywords'),
 		'whiteboard': make_option('-w', '--whiteboard',
 								help = 'Status whiteboard'),
+		'show_status': make_option('--show-status', help='show status of bugs',
+								action = 'store_true', default = False),
 		'show_url': make_option('--show-url', help='Show bug id as a url.',
 								action = 'store_true', default = False),
 	}
 
-	def namedcmd(self, command, show_url = False):
+	def namedcmd(self, command, show_status=False, show_url=False):
 		"""Run a command stored in Bugzilla by name."""
 		log_msg = 'Running namedcmd \'%s\''%command
 		result = Bugz.namedcmd(self, command)
@@ -274,10 +278,12 @@ class PrettyBugz(Bugz):
 			self.log('No result from command')
 			return
 
-		self.listbugs(result, show_url)
+		self.listbugs(result, show_url, show_status)
 
 	namedcmd.args = "<command name>"
 	namedcmd.options = {
+		'show_status': make_option('--show-status', help='show status of bugs',
+								action = 'store_true', default = False),
 		'show_url': make_option('--show-url', help='Show bug id as a url.',
 								action = 'store_true', default = False),
 	}
@@ -732,17 +738,21 @@ class PrettyBugz(Bugz):
 									help = 'A description of the attachment.')
 	}
 
-	def listbugs(self, buglist, show_url = False):
+	def listbugs(self, buglist, show_url=False, show_status=False):
 		for row in buglist:
-			desc = row['desc']
 			bugid = row['bugid']
 			if show_url:
 				bugid = '%s%s?id=%s'%(self.base, config.urls['show'], bugid)
+			status = row['status']
+			desc = row['desc']
+			line = '%s' % (bugid)
+			if show_status:
+				line = '%s %s' % (line, status)
 			if row.has_key('assignee'): # Novell does not have 'assignee' field
 				assignee = row['assignee'].split('@')[0]
-				line = '%s %-20s %s' % (bugid, assignee, desc)
-			else:
-				line = '%s %s' % (bugid, desc)
+				line = '%s %-20s' % (line, assignee)
+
+			line = '%s %s' % (line, desc)
 
 			try:
 				print line.encode(self.enc)[:self.columns]
