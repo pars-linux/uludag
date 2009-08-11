@@ -33,12 +33,12 @@ DistUtilsExtra.auto.setup(name='apport',
       url='https://wiki.ubuntu.com/Apport',
       license='gpl',
       description='intercept, process, and report crashes and bug reports',
-      version='1.6',
+      version='1.7',
 
       data_files=[('share/mime/packages', glob('xdg-mime/*')),
-                  ('share/apport', glob('kde/*.ui') + ['kde/apport-kde']), #TODO: use pykdeuic modules
+                  ('share/apport', glob('kde/*.ui')), #TODO: use pykdeuic modules
                   ('share/apport/testsuite/', glob('test/*')),
                   ('share/doc/apport/', glob('doc/*.txt')),
                   ],
-      #scripts=['gtk/apport-gtk', 'kde/apport-kde', 'cli/apport-cli'],
+      scripts=['gtk/apport-gtk', 'kde/apport-kde', 'cli/apport-cli'],
 )
