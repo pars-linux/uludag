@@ -114,9 +114,9 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         self.options = pisi.config.Options()
         self.options.yes_all = True
 
-    def __get_groups(self, package):
+    def __get_group(self, package):
         try:
-            pkg_component = self.componnetdb.get_component(package.partOf)
+            pkg_component = self.componentdb.get_component(package.partOf)
             return pkg_component.group
         except:
             return "unknown"
