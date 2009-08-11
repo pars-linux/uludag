@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<html xmlns="http://www.w3.org/1999/xhtml" >
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <title>noan</title>
@@ -65,7 +65,16 @@
                     <li><a href="/repository/users/">Developers</a></li>
                     <li><a href="/repository/">Repository</a></li>
                     <li><a href="/repository/search/">Search</a></li>
+                    {% if not  user.is_authenticated %}
+                    <li><a href="/repository/login">login</a></li>
                 </ul>
+                {%else%}
+
+                <li><a href="/repository/ack_nack/">Ack/nack list</a></li>
+                <li><a href="/repository/logout">Logout</a></li>
+                </ul>
+                User: {{user}}
+                {%endif%}
             </div>
             <div id="content">
                 {% block content %}

@@ -6,12 +6,23 @@ from django.contrib.auth.models import User
 from django.utils import simplejson
 from django.template import RequestContext
 from noan.repository.models import *
+from django.contrib.auth import authenticate, login, logout
+
 
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
-
+"""def is_login(request):
+    print "login_start"
+    if not request.user.is_authenticated():
+        print "login section"
+        if request.method == "POST" and request.POST["login"]:
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                if user.is_active:
+                    login(request, user)"""
 def page_index(request):
     distributions = Distribution.objects.all()
-
     if len(distributions) == 1:
         return HttpResponseRedirect(distributions[0].get_url())
 
@@ -28,7 +39,6 @@ def page_index(request):
 
 def page_sources(request, distName, distRelease):
     distribution = Distribution.objects.get(name=distName, release=distRelease)
-
     sources = Source.objects.filter(distribution=distribution)
 
     # Pagination
@@ -62,7 +72,6 @@ def page_package(request, distName, distRelease, sourceName, packageName):
     distribution = Distribution.objects.get(name=distName, release=distRelease)
     source = Source.objects.get(name=sourceName, distribution=distribution)
     package = Package.objects.get(name=packageName, source=source)
-
     context = {
         'package': package,
     }
@@ -92,7 +101,6 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
 
 def page_pending_index(request):
     distributions = Distribution.objects.all()
-
     if len(distributions) == 1:
         dist = '%s-%s' % (distributions[0].name, distributions[0].release)
         return HttpResponseRedirect('/repository/pending/%s/' % dist)
@@ -105,7 +113,6 @@ def page_pending_index(request):
 
 def page_pending(request, distName, distRelease):
     distribution = Distribution.objects.get(name=distName, release=distRelease)
-
     binaries = Binary.objects.filter(resolution='pending', package__source__distribution=distribution)
 
     # Pagination
@@ -127,7 +134,6 @@ def page_pending(request, distName, distRelease):
 
 def page_users(request):
     users = User.objects.all().order_by('first_name', 'last_name')
-
     # Pagination
     paginator = Paginator(users, 25)
     try:
@@ -148,7 +154,6 @@ def page_users(request):
 def page_user(request, userName):
     developer = User.objects.get(username=userName)
     pending = Binary.objects.filter(resolution='pending', update__updated_by=developer)
-
     context = {
         'developer': developer,
         'pending': pending,
@@ -179,9 +184,32 @@ def search_form(request):
     context['distributions'] = distributions
     return render_to_response('repository/search.html', context, context_instance=RequestContext(request))
 
-
-
-
-
-
+@login_required
+def AckNackList(request):
+    stateBinary = StateOfTest.objects.filter(binary__package__source__maintained_by= request.user)
+    stateBinaryOfUpdate = StateOfTest.objects.filter(binary__update__updated_by = request.user).order_by('binary__package__name')
+    if request.POST:
+        package = StateOfTest.objects.all()
+        for list in request.POST.lists():
+            try:
+                int(list[0])
+                package[int(list[0])-1].state = str(list[1])
+                print str(package[int(list[0])-1].state)+" "+list[0]
+            except:
+                print 'hobele'
+    if stateBinary or stateBinaryOfUpdate:
+        distributions = Distribution.objects.all()
+    else:
+        distributions = ""
+    context = {
+            'distributions' : distributions,
+            'stateBinarys' : stateBinary,
+            'stateBinarysOfUpdate' : stateBinaryOfUpdate,
+    }
+    return render_to_response('repository/ack_nack.html', context, context_instance=RequestContext(request))
+@login_required
+def log_out(request):
+    logout(request)
+    context = {}
+    return HttpResponseRedirect('/')
 
