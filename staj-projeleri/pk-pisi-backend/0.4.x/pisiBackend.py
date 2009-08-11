@@ -210,10 +210,12 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         if self.installdb.has_package(package):
             pkg = self.installdb.get_files(package)
 
-            # FIXME: Add "/" as suffix
             files = map(lambda y: y.path, pkg.list)
 
-            file_list = ";".join(files)
+            # Reformat for PackageKit
+            # And add "/" for every file.
+            file_list = ";/".join(files)
+            file_list = "/%s" % file_list
 
             self.files(package, file_list)
 
