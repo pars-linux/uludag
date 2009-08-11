@@ -108,10 +108,18 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         self.installdb = pisi.db.installdb.InstallDB()
         self.packagedb = pisi.db.packagedb.PackageDB()
         self.repodb = pisi.db.repodb.RepoDB()
+        self.componentdb = pisi.db.componentdb.ComponentDB()
 
         # Do not ask any question to users
         self.options = pisi.config.Options()
         self.options.yes_all = True
+
+    def __get_groups(self, package):
+        try:
+            pkg_component = self.componnetdb.get_component(package.partOf)
+            return pkg_component.group
+        except:
+            return "unknown"
 
     def __get_package_version(self, package):
         """ Returns version string of given package """
