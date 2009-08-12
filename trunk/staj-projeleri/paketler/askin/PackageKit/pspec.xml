@@ -25,6 +25,7 @@
       <Dependency>xmlto</Dependency>
       <Dependency>xulrunner-devel</Dependency>
       <Dependency>cppunit</Dependency>
+      <Dependency>qt</Dependency>
     </BuildDependencies>
     <Patches>
       <Patch level="1">sandbox.patch</Patch>
