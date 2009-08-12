@@ -75,20 +75,18 @@ generateDelta    = True
 
 # Blacklist for delta packages. Buildfarm will never build
 # delta packages for them.
+# module-* will match all package names starting with module-
 
 deltaBlacklist   = ["skype",
                     "eclipse-jdt-binary",
                     "flashplugin",
                     "kernel",
+                    "kernel-rt",
                     "kernel-pae",
                     "kernel-debug",
                     "kernel-firmware",
                     "lzma",
-                    "module-nvidia173",
-                    "module-nvidia185",
-                    "module-nvidia71",
-                    "module-nvidia96",
-                    "nvidia-drivers-old",
+                    "module-*",
                     "openarena-data",
                     "pisi",
                     "package-manager",
