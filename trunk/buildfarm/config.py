@@ -68,7 +68,7 @@ smtpServer       = "mail.pardus.org.tr"
 
 # Create and edit mailauth.py for authentication if needed
 # Set this to 'False' for not authenticating on the SMTP server
-useSmtpAuth      = True
+useSmtpAuth      = sendEmail and True
 
 # Set this to 'False' if you don't want to generate delta packages
 generateDelta    = True
