@@ -100,17 +100,17 @@ def updateDB(path_repo, repo_type, newRelease):
             for bin in binaries:
                 bin.resolution = 'reverted'
                 bin.save()
-        if resolution == 'pending':
-            print    '    pending start'
-            try:
-                #state = StateOfTest.objects.get(binary=binary)
-                print    '   Get binary//'
-                stat = StateOfTest(binary=binary, update=update, maintained_by=source.maintained_by, state='')
-                print    '    get info in statues'
-                stat.save()
-                print    '    New ack list '
-            except StateOfTest.DoesNotExist:
-                print    '    Not in Ack list '
+       # if resolution == 'pending':
+        #    print    '    pending start'
+        #    try:
+        #        #state = StateOfTest.objects.get(binary=binary)
+        #        print    '   Get binary//'
+        #        stat = StateOfTest(binary=binary, update=update, maintained_by=source.maintained_by, state='')
+        #        print    '    get info in statues'
+        #        stat.save()
+        #        print    '    New ack list '
+        #    except StateOfTest.DoesNotExist:
+        #        print    '    Not in Ack list ' 
     print 'Done'
 
 

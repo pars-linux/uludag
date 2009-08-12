@@ -186,14 +186,13 @@ def search_form(request):
 
 @login_required
 def AckNackList(request):
-    stateBinary = StateOfTest.objects.filter(binary__package__source__maintained_by= request.user)
-    stateBinaryOfUpdate = StateOfTest.objects.filter(binary__update__updated_by = request.user).order_by('binary__package__name')
+    
+    stateBinary = Binary.objects.filter(resolution='pending').filter(package__source__maintained_by= request.user)
+    stateBinaryOfUpdate = Binary.objects.filter(resolution='pending').filter(update__updated_by = request.user).order_by('package__name')
     if request.POST:
         package = StateOfTest.objects.all()
         for list in request.POST.lists():
             try:
-                int(list[0])
-                package[int(list[0])-1].state = str(list[1])
                 print str(package[int(list[0])-1].state)+" "+list[0]
             except:
                 print 'hobele'
