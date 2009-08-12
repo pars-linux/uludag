@@ -7,6 +7,7 @@ from django.utils import simplejson
 from django.template import RequestContext
 from noan.repository.models import *
 from django.contrib.auth import authenticate, login, logout
+from django.forms.formsets import formset_factory
 
 
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
@@ -186,16 +187,19 @@ def search_form(request):
 
 @login_required
 def AckNackList(request):
-    
     stateBinary = Binary.objects.filter(resolution='pending').filter(package__source__maintained_by= request.user)
     stateBinaryOfUpdate = Binary.objects.filter(resolution='pending').filter(update__updated_by = request.user).order_by('package__name')
     if request.POST:
-        package = StateOfTest.objects.all()
         for list in request.POST.lists():
             try:
-                print str(package[int(list[0])-1].state)+" "+list[0]
+                post_info = list[0].split("-")
+                binary_id = int(post_info[0])
+                if (post_info[1] == "radio"):
+                    pass
+                print post_info,list[1]
+
             except:
-                print 'hobele'
+                print "middleware"
     if stateBinary or stateBinaryOfUpdate:
         distributions = Distribution.objects.all()
     else:
@@ -206,9 +210,27 @@ def AckNackList(request):
             'stateBinarysOfUpdate' : stateBinaryOfUpdate,
     }
     return render_to_response('repository/ack_nack.html', context, context_instance=RequestContext(request))
+
 @login_required
 def log_out(request):
     logout(request)
     context = {}
     return HttpResponseRedirect('/')
 
+#################################################################################
+#   testing form model 
+
+
+def acknack(request):
+    ArticleFormSet = formset_factory(AckNackForm, extra=2)
+    if request.method == 'POST':
+        formset = ArticleFormSet(request.POST)
+        if formset.is_valid():
+            # do something with the formset.cleaned_data
+            print formset
+            print "aaa"
+    else:
+        formset = ArticleFormSet()
+    return render_to_response('repository/acknack.html', {'formset': formset})
+
+##################################################################################3

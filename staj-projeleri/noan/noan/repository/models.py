@@ -248,12 +248,9 @@ class StateOfTest(models.Model):
         verbose_name_plural = _('states')
 #    def GetAck(self):
 
-
-
 class CommentOfStatement(models.Model):
     state_of_test_id = models.ForeignKey(StateOfTest, verbose_name=_('id'))
     comment = models.CharField(max_length=256, verbose_name=_('comment'))
-
     def __unicode__(self):
         return _('%(binary)s (statement: %(state)s, %(comment)s)') % {'binary': self.stateoftest.binary, 'state': self.stateoftest.state, 'comment': self.comment }
     class Meta:
@@ -261,5 +258,12 @@ class CommentOfStatement(models.Model):
         verbose_name = _('comment of statement')
         verbose_name_plural = _('comments of statement')
 
-#class AckNackForm(froms.form):
+STATEMENT = (
+        ('ack', 'Ack'),
+        ('nack', 'Nack'),
+        ('null', 'Null'),
+)
 
+class AckNackForm(forms.Form):
+    state = forms.ChoiceField(choices=STATEMENT)
+    comment = forms.CharField()

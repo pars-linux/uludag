@@ -20,10 +20,19 @@
                     {% ifequal stateBinary.package.source.distribution distro %}
                         <tr>
                         <td>{{stateBinary}}</td>
-                        <td><input type="radio" name="{{stateBinary.id}}" value="ack"/>Ack
-                            <input type="radio" name="{{stateBinary.id}}" value="nack"/>Nack
-                            <input type="radio" name="{{stateBinary.id}}" value=""/>Null
+                        <td><input type="radio" name="{{stateBinary.id}}-radio" value="ack"/>Ack
+                            <input type="radio" name="{{stateBinary.id}}-radio" value="nack"/>Nack
+                            <input type="radio" name="{{stateBinary.id}}-radio" value=""/>Null
                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Commit:
+                        </td>
+                        <td>
+                            <input type="text" name="{{stateBinary.id}}-commit" />
+                        </td>
+                    </tr>
                     {% endifequal %}
                 {% endfor %}
             {% endfor %}
@@ -48,12 +57,17 @@
         </tr>
         {% for stateBinary in stateBinarysOfUpdate %}
             {% ifequal stateBinary.package.source.distribution distro %}
-                <tr>
+            <tr>
                 <td>{{stateBinary}}</td>
-                <td><input type="radio" name="{{stateBinary.id}}" value="ack"/>Ack
-                    <input type="radio" name="{{stateBinary.id}}" value="nack"/>Nack
-                    <input type="radio" name="{{stateBinary.id}}" value=""/>Null
+                <td><input type="radio" name="{{stateBinary.id}}-radio" value="ack"/>Ack
+                    <input type="radio" name="{{stateBinary.id}}-radio" value="nack"/>Nack
+                    <input type="radio" name="{{stateBinary.id}}-radio" value=""/>Null
                 </td>
+            </tr>
+            <tr>
+                <td>commit: </td>
+                <td><input type="text" name="{{stateBinary.id}}-commit" /></td>
+            </tr>
             {% endifequal %}
         {% endfor %}
     {% endfor %}
