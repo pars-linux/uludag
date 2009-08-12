@@ -117,7 +117,9 @@ class PisiApi:
             # Parse the name of the new package
             name = getName(os.path.basename(pl[1]))
 
-            if name in config.deltaBlacklist:
+            # globs are supported in blacklist delta e.g. module-*
+            if name in config.deltaBlacklist or name.startswith(tuple([d.split("*")[0] \
+                                                        for d in config.deltaBlacklist if "*" in d])):
                 logger.debug("Skipping %s as it's blacklisted.." % name)
                 blacklisted_packages.append(os.path.basename(pl[1]))
                 continue
