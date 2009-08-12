@@ -119,7 +119,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
                                             pkg_status)
 
             self.details(my_package_id,
-                         pkg.license,
+                         " ".join(pkg.license),
                          self.__get_group(pkg),
                          pkg.description,
                          pkg.packageURI,
