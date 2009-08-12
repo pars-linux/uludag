@@ -3,6 +3,9 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from noan.middleware.threadlocals import get_current_lang
 import datetime
+from django import forms
+
+
 
 TEST_TIMEOUT = 24 # hours
 TEST_RESULTS = (
@@ -226,16 +229,17 @@ class TaskDescription(models.Model):
         verbose_name = _('task description')
         verbose_name_plural = _('task descriptions')
 
-
+# StateOfTest is table of pending packages. that table relative with CommentOfStatement 
+# because some ack nack job makes some comment.
 class StateOfTest(models.Model):
-    binary = models.OneToOneField(Binary, verbose_name=_('binary'))
-    maintained_by = models.ForeignKey(User, verbose_name=_('maintained by'))
-    update = models.ForeignKey(Update, verbose_name=_('update'), default='',  blank=True)
-    #updated_on = models.DateField(verbose_name=_('updated on'),blank=True)
+    binary = models.ForeignKey(Binary, verbose_name=_('binary'))
+    Changed_by = models.ForeignKey(User, verbose_name=_('maintained by'))
+    #update = models.ForeignKey(Update, verbose_name=_('update'), default='',  blank=True)
+    updated = models.DateField(verbose_name=_('updated'),blank=True)
     state = models.CharField(max_length=4, verbose_name=_('state'), default='', blank=True)
 
     def __unicode__(self):
-        return _('%(state)s (%(binary)s source: %(source)s, distro: %(distro)s)') % {'state': self.state, 'binary': self.binary, 'source': self.binary.package.source.name, 'distro': self.binary.package.source.distribution}
+        return _('%(state)s (binary: %(binary)s source: %(source)s, distro: %(distro)s)') % {'state': self.state, 'binary': self.binary, 'source': self.binary.package.source.name, 'distro': self.binary.package.source.distribution}
 
     class Meta:
         ordering = ['id']
@@ -243,4 +247,19 @@ class StateOfTest(models.Model):
         verbose_name = _('state')
         verbose_name_plural = _('states')
 #    def GetAck(self):
+
+
+
+class CommentOfStatement(models.Model):
+    state_of_test_id = models.ForeignKey(StateOfTest, verbose_name=_('id'))
+    comment = models.CharField(max_length=256, verbose_name=_('comment'))
+
+    def __unicode__(self):
+        return _('%(binary)s (statement: %(state)s, %(comment)s)') % {'binary': self.stateoftest.binary, 'state': self.stateoftest.state, 'comment': self.comment }
+    class Meta:
+        ordering = ['id']
+        verbose_name = _('comment of statement')
+        verbose_name_plural = _('comments of statement')
+
+#class AckNackForm(froms.form):
 

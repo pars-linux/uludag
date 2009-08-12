@@ -17,9 +17,9 @@
             </td>
         </tr>
                 {% for stateBinary in stateBinarys %}
-                    {% ifequal stateBinary.binary.package.source.distribution distro %}
+                    {% ifequal stateBinary.package.source.distribution distro %}
                         <tr>
-                        <td>{{stateBinary.binary}}</td>
+                        <td>{{stateBinary}}</td>
                         <td><input type="radio" name="{{stateBinary.id}}" value="ack"/>Ack
                             <input type="radio" name="{{stateBinary.id}}" value="nack"/>Nack
                             <input type="radio" name="{{stateBinary.id}}" value=""/>Null
@@ -47,9 +47,9 @@
             </td>
         </tr>
         {% for stateBinary in stateBinarysOfUpdate %}
-            {% ifequal stateBinary.binary.package.source.distribution distro %}
+            {% ifequal stateBinary.package.source.distribution distro %}
                 <tr>
-                <td>{{stateBinary.binary}}</td>
+                <td>{{stateBinary}}</td>
                 <td><input type="radio" name="{{stateBinary.id}}" value="ack"/>Ack
                     <input type="radio" name="{{stateBinary.id}}" value="nack"/>Nack
                     <input type="radio" name="{{stateBinary.id}}" value=""/>Null
