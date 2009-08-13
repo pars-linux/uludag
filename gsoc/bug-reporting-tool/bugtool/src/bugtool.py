@@ -9,9 +9,14 @@ from PyKDE4.kdecore import ki18n, KAboutData, KCmdLineArgs
 import gui, subprocess, os, dbus
 
 from gui.bugtoolMain import Ui_bugtoolUI
-import gui.ScrBug as bugWidget
+import gui.welcomeScreen as welcomeWidget
+import gui.credentialsScreen as credentialsWidget
+import gui.progressScreen as progressWidget
+import gui.attachScreen as attachmentsWidget
+import gui.goodbyeScreen as goodbyeWidget
 
-availableScreens = [bugWidget]
+availableScreens = [welcomeWidget, credentialsWidget, progressWidget,
+                    attachmentsWidget, goodbyeWidget]
 
 class BugTool(QtGui.QWidget):
     def __init__(self, parent=None):
@@ -97,10 +102,10 @@ class BugTool(QtGui.QWidget):
         self.moveInc = 1
 
     def putBr(self, item):
-        return unicode("» ") + item + "<br>"
+        return unicode(u"» ") + item + "<br>"
 
     def putBold(self, item):
-        return "<b>" + unicode("» ") + item + "</b><br>"
+        return "<b>" + unicode(u"» ") + item + "</b><br>"
 
     # move to id numbered stack
     def stackMove(self, id):
