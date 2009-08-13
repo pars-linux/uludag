@@ -1,7 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[turkish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=2cm]{geometry}
 
 \title{System Bileşeni Test Aşamaları}
 \author{Semen Cirit}
@@ -49,10 +49,25 @@ Resimlerin üzerine sağ tıklayarak gwenview, kolourPaint, gimp, showfoto ile a
       2008 için: http://svn.pardus.org.tr/pardus/2008/stable/system/base/baselayout/pspec.xml linkinde bulunan en son eklenmiş history tag'i yorumuna (comment) bakınız.
 
    Bu her iki durumda da yorumlarda belirtilmiş olan kullanıcının /etc/passwd dosyasına eklenmiş olduğunu gözlemleyin.
+
 \end{itemize}
+\item libxml2 paketi kurulumu sonrası:
 
-
+\begin{itemize}
+\item Aşağıda bulunan komutun bir katalog oluşturduğunu gözlemleyin.
+  \begin{verbatim}
+   #  xmlcatalog --create
+  \end{verbatim}
+\item multimedia-tr.pdf avidemux-qt, avidemux ve inkscape testlerini gerçekleştirin.
+\end{itemize}
 \end{enumerate}
+\section{Service alt Bileşeni}
+\begin{enumerate}
+ \item memcached paketi kurulumu sonrası:
+  programming-tr.pdf python-memcached testini gerçekleştirin. 
+\end{enumerate}
+
+
 
 \end{document}
 
