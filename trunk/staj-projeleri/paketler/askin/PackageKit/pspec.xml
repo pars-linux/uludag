@@ -24,7 +24,7 @@
       <Dependency>docbook-utils</Dependency>
       <Dependency>xmlto</Dependency>
       <Dependency>xulrunner-devel</Dependency>
-      <Dependency>cppunit</Dependency>
+      <Dependency>cppunit-devel</Dependency>
       <Dependency>qt</Dependency>
     </BuildDependencies>
     <Patches>
