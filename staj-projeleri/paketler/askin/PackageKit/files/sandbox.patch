@@ -1,6 +1,31 @@
+diff -Nuar PackageKit-0.4.9-orig/lib/python/packagekit/Makefile.in PackageKit-0.4.9/lib/python/packagekit/Makefile.in
+--- PackageKit-0.4.9-orig/lib/python/packagekit/Makefile.in	2009-08-12 09:40:16.575986347 +0300
++++ PackageKit-0.4.9/lib/python/packagekit/Makefile.in	2009-08-13 10:17:14.881777635 +0300
+@@ -75,7 +75,6 @@
+   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
+   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+ am__installdirs = "$(DESTDIR)$(packagekitpythondir)"
+-py_compile = $(top_srcdir)/py-compile
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ ACLOCAL = @ACLOCAL@
+ ALL_LINGUAS = @ALL_LINGUAS@
+@@ -391,13 +390,6 @@
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(packagekitpythondir)'"; \
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(packagekitpythondir)" || exit $$?; \
+ 	done || exit $$?; \
+-	if test -n "$$dlist"; then \
+-	  if test -z "$(DESTDIR)"; then \
+-	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(packagekitpythondir)" $$dlist; \
+-	  else \
+-	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(packagekitpythondir)" $$dlist; \
+-	  fi; \
+-	else :; fi
+ 
+ uninstall-packagekitpythonPYTHON:
+ 	@$(NORMAL_UNINSTALL)
 diff -Nuar PackageKit-0.4.9-orig/Makefile.in PackageKit-0.4.9/Makefile.in
---- PackageKit-0.4.9-orig/Makefile.in	2009-08-03 15:48:06.000000000 +0300
-+++ PackageKit-0.4.9/Makefile.in	2009-08-04 14:50:45.853396509 +0300
+--- PackageKit-0.4.9-orig/Makefile.in	2009-08-12 09:40:16.614986218 +0300
++++ PackageKit-0.4.9/Makefile.in	2009-08-13 10:18:22.518777614 +0300
 @@ -38,7 +38,7 @@
  	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
  	$(top_srcdir)/configure AUTHORS COPYING ChangeLog INSTALL NEWS \
@@ -11,14 +36,13 @@ diff -Nuar PackageKit-0.4.9-orig/Makefile.in PackageKit-0.4.9/Makefile.in
  am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
  	$(top_srcdir)/configure.ac
 diff -Nuar PackageKit-0.4.9-orig/src/Makefile.in PackageKit-0.4.9/src/Makefile.in
---- PackageKit-0.4.9-orig/src/Makefile.in	2009-08-03 15:48:06.000000000 +0300
-+++ PackageKit-0.4.9/src/Makefile.in	2009-08-04 14:46:57.704396613 +0300
-@@ -2131,7 +2131,7 @@
+--- PackageKit-0.4.9-orig/src/Makefile.in	2009-08-12 09:40:16.613986071 +0300
++++ PackageKit-0.4.9/src/Makefile.in	2009-08-13 10:30:20.100778002 +0300
+@@ -2131,7 +2131,6 @@
  install-data-hook:
  	if test -w $(DESTDIR)$(prefix)/; then \
  		mkdir -p $(DESTDIR)$(localstatedir)/cache/PackageKit/downloads; \
 -		mkdir -p $(PK_LOG_DIR); \
-+		#mkdir -p $(PK_LOG_DIR); \
  	fi
  
  clean-local:

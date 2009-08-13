@@ -52,10 +52,22 @@
       <Path fileType="doc">/usr/share/doc</Path>
       <Path fileType="data">/usr/share</Path>
       <Path fileType="data">/var/lib</Path>
+      <Path fileType="data">/var/log</Path>
+      <Path fileType="data">/var/cache/PackageKit/downloads</Path>
     </Files>
   </Package>
 
   <History>
+    <Update release="7">
+      <Date>2009-08-13</Date>
+      <Version>0.4.9</Version>
+      <Comment>
+	* FIXED:deps
+	* FIXED:directories
+      </Comment>
+      <Name>Aşkın Yollu</Name>
+      <Email>askin@askin.ws</Email>
+    </Update>
     <Update release="6">
       <Date>2009-08-04</Date>
       <Version>0.4.9</Version>
