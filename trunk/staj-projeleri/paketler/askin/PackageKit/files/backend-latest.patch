@@ -1,6 +1,6 @@
 diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py PackageKit-0.4.9/backends/pisi/pisiBackend.py
---- PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py	2009-08-12 09:40:16.570986637 +0300
-+++ PackageKit-0.4.9/backends/pisi/pisiBackend.py	2009-08-12 11:51:06.726860539 +0300
+--- PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py	2009-08-13 13:58:30.408652741 +0300
++++ PackageKit-0.4.9/backends/pisi/pisiBackend.py	2009-08-13 13:58:54.194653320 +0300
 @@ -25,81 +25,6 @@
  
  class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
@@ -129,7 +129,7 @@ diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py PackageKit-0.4.9/b
 +                                            pkg_status)
 +
 +            self.details(my_package_id,
-+                         pkg.license,
++                         " ".join(pkg.license),
 +                         self.__get_group(pkg),
 +                         pkg.description,
 +                         pkg.packageURI,
@@ -213,8 +213,8 @@ diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py PackageKit-0.4.9/b
              self.error(ERROR_GROUP_NOT_FOUND, "Component %s was not found" % group)
  
 diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pk-backend-pisi.c PackageKit-0.4.9/backends/pisi/pk-backend-pisi.c
---- PackageKit-0.4.9-orig/backends/pisi/pk-backend-pisi.c	2009-08-12 09:40:16.570986637 +0300
-+++ PackageKit-0.4.9/backends/pisi/pk-backend-pisi.c	2009-08-12 13:47:34.210860965 +0300
+--- PackageKit-0.4.9-orig/backends/pisi/pk-backend-pisi.c	2009-08-13 13:58:30.408652741 +0300
++++ PackageKit-0.4.9/backends/pisi/pk-backend-pisi.c	2009-08-13 13:59:00.774652286 +0300
 @@ -55,28 +55,40 @@
  static PkBitfield
  backend_get_groups (PkBackend *backend)
