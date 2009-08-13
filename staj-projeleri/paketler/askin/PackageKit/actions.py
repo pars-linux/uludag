@@ -10,6 +10,7 @@ from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
 def setup():
+    autotools.autoreconf('-vif')
     autotools.configure("--with-dbus-sys=/etc/dbus-1 \
                          --with-dbus-services=/usr/share/dbus-1/system-services \
                          --with-default-backend=pisi \
