@@ -229,12 +229,13 @@ class TaskDescription(models.Model):
         verbose_name = _('task description')
         verbose_name_plural = _('task descriptions')
 
-# StateOfTest is table of pending packages. that table relative with CommentOfStatement 
-# because some ack nack job makes some comment.
+
+""" StateOfTest is table of pending packages. that table relative with CommentOfStatement 
+ because some ack nack job makes some comment."""
+
 class StateOfTest(models.Model):
     binary = models.ForeignKey(Binary, verbose_name=_('binary'))
     Changed_by = models.ForeignKey(User, verbose_name=_('maintained by'))
-    #update = models.ForeignKey(Update, verbose_name=_('update'), default='',  blank=True)
     updated = models.DateField(verbose_name=_('updated'),blank=True)
     state = models.CharField(max_length=4, verbose_name=_('state'), default='', blank=True)
 
@@ -243,10 +244,10 @@ class StateOfTest(models.Model):
 
     class Meta:
         ordering = ['id']
-        #ordering = ['binary__package__name']
         verbose_name = _('state')
         verbose_name_plural = _('states')
 #    def GetAck(self):
+
 
 class CommentOfStatement(models.Model):
     state_of_test_id = models.ForeignKey(StateOfTest, verbose_name=_('id'))
@@ -258,12 +259,3 @@ class CommentOfStatement(models.Model):
         verbose_name = _('comment of statement')
         verbose_name_plural = _('comments of statement')
 
-STATEMENT = (
-        ('ack', 'Ack'),
-        ('nack', 'Nack'),
-        ('null', 'Null'),
-)
-
-class AckNackForm(forms.Form):
-    state = forms.ChoiceField(choices=STATEMENT)
-    comment = forms.CharField()

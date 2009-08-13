@@ -7,34 +7,18 @@
     <form action="." method="post">
         <h2>maintained</h2>
         <table>
-        {% for distro in distributions %}
-        <tr>
-            <td>
-                <h4>{{distro}}
-                </h4>
-            </td>
-            <td>
-            </td>
-        </tr>
-                {% for stateBinary in stateBinarys %}
-                    {% ifequal stateBinary.package.source.distribution distro %}
-                        <tr>
-                        <td>{{stateBinary}}</td>
-                        <td><input type="radio" name="{{stateBinary.id}}-radio" value="ack"/>Ack
-                            <input type="radio" name="{{stateBinary.id}}-radio" value="nack"/>Nack
-                            <input type="radio" name="{{stateBinary.id}}-radio" value=""/>Null
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Commit:
-                        </td>
-                        <td>
-                            <input type="text" name="{{stateBinary.id}}-commit" />
-                        </td>
-                    </tr>
-                    {% endifequal %}
-                {% endfor %}
+            {% for distro in distributions %}
+            <tr>
+                <td>
+                    <h4>{{distro}}</h4>
+                </td>
+                <td>
+                </td>
+            </tr>
+            {% for form in formset.forms %}
+                    {{ form.as_table }}
+                            {% endfor %}
+
             {% endfor %}
             <tr><td><input type="submit"/></td><td></td></tr>
         </table>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Contact us</h1>
+<form method="POST" action=".">
+    <table>
+        {% for form in formset.forms %}
+        {{form.fields.binary}}
+        {% endfor %}
+    </table>
+<input type="submit"/>
+</form>
+{% endblock %}
