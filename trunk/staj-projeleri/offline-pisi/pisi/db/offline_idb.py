@@ -15,6 +15,9 @@
 
 import re
 import gzip
+import gettext
+__trans = gettext.translation('pisi', fallback=True)
+_ = __trans.ugettext
 
 import piksemel
 
@@ -46,7 +49,7 @@ class Offline_InstallDB():
 
     def __add_to_revdeps(self, package, revdeps):
         # Denenmedi
-        doc = gzip.zlib.decompress(self.installed_db[package])
+        doc = self.package_data(package)
         name = doc.getTag("Package").getTagData('Name')
         deps = doc.getTag("Package").getTag('RuntimeDependencies')
         if deps:
@@ -54,7 +57,7 @@ class Offline_InstallDB():
                 revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep.toString()))
 
     def get_package(self, name):
-        pkg = gzip.zlib.decompress(self.installed_db[name])
+        pkg = self.package_data(name)
         package = pisi.metadata.Package()
         package.parse(pkg)
         return package
@@ -124,3 +127,10 @@ class Offline_InstallDB():
         # !! DENENMEDI !!
         if self.installed_db.has_key(package_name):
             del self.installed_db[package_name]
+
+    def package_data(self, package):
+        if self.installed_db.has_key(package):
+            pkg = gzip.zlib.decompress(self.installed_db[package])
+            return pkg
+
+        raise Exception(_('Package %s is not installed') % package)
