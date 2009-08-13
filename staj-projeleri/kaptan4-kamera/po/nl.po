@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-19 19:33+0300\n"
+"POT-Creation-Date: 2009-08-13 15:33+0300\n"
 "PO-Revision-Date: 21/07/09 14:01\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
@@ -17,12 +17,22 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/goodbyeWidget.py:199 .tmp/ScrGoodbye.py:26
+#: .tmp/cameraWidget.py:25 .tmp/ScrCamera2.py:145 .tmp/ScrCamera.py:183
+#: .tmp/ui_cameraWidget.py:51
+msgid "Camera"
+msgstr ""
+
+#: .tmp/cameraWidget.py:26
+#, fuzzy
+msgid "TextLabel"
+msgstr "Label"
+
+#: .tmp/goodbyeWidget.py:208 .tmp/ScrGoodbye.py:26
 #: .tmp/ui_goodbyeWidget.py:208
 msgid "Goodbye"
 msgstr "Tot ziens"
 
-#: .tmp/goodbyeWidget.py:200 .tmp/ui_goodbyeWidget.py:209
+#: .tmp/goodbyeWidget.py:209 .tmp/ui_goodbyeWidget.py:209
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -62,66 +72,66 @@ msgstr ""
 "doorgaan met het gebruiken van Pardus of u kunt de volgende toepassing "
 "proberen:</span></p></body></html>"
 
-#: .tmp/goodbyeWidget.py:207 .tmp/ui_goodbyeWidget.py:216
+#: .tmp/goodbyeWidget.py:216 .tmp/ui_goodbyeWidget.py:216
 msgid "My Smolt Page"
 msgstr "Mijn Smolt-pagina"
 
-#: .tmp/goodbyeWidget.py:208 .tmp/ui_goodbyeWidget.py:217
+#: .tmp/goodbyeWidget.py:217 .tmp/ui_goodbyeWidget.py:217
 msgid "Go to your Smolt page and rate your hardware components."
 msgstr "Ga naar je Smolt-pagina en waardeer je hardwarecomponenten."
 
-#: .tmp/goodbyeWidget.py:209 .tmp/goodbyeWidget.py:212
-#: .tmp/goodbyeWidget.py:215 .tmp/goodbyeWidget.py:218
+#: .tmp/goodbyeWidget.py:218 .tmp/goodbyeWidget.py:221
+#: .tmp/goodbyeWidget.py:224 .tmp/goodbyeWidget.py:227
 #: .tmp/ui_goodbyeWidget.py:218 .tmp/ui_goodbyeWidget.py:221
 #: .tmp/ui_goodbyeWidget.py:224 .tmp/ui_goodbyeWidget.py:227
 msgid "Start"
 msgstr "Starten"
 
-#: .tmp/goodbyeWidget.py:210 .tmp/ui_goodbyeWidget.py:219
+#: .tmp/goodbyeWidget.py:219 .tmp/ui_goodbyeWidget.py:219
 msgid "Migration Wizard"
 msgstr "Migratie-assistent"
 
-#: .tmp/goodbyeWidget.py:211 .tmp/ui_goodbyeWidget.py:220
+#: .tmp/goodbyeWidget.py:220 .tmp/ui_goodbyeWidget.py:220
 msgid ""
 "A wizard to transfer files and settings from existing operating systems (e."
 "g. Windows) to Pardus."
 msgstr ""
-"Een assistent voor het overzetten van bestanden en instellingen van het huidige "
-"besturingsysteem (bijv. Windows) naar Pardus."
+"Een assistent voor het overzetten van bestanden en instellingen van het "
+"huidige besturingsysteem (bijv. Windows) naar Pardus."
 
-#: .tmp/goodbyeWidget.py:213 .tmp/ui_goodbyeWidget.py:222
+#: .tmp/goodbyeWidget.py:222 .tmp/ui_goodbyeWidget.py:222
 msgid "System Settings"
 msgstr "Systeeminstellingen"
 
-#: .tmp/goodbyeWidget.py:214 .tmp/ui_goodbyeWidget.py:223
+#: .tmp/goodbyeWidget.py:223 .tmp/ui_goodbyeWidget.py:223
 msgid "System Settings is a configuration tool for Pardus."
 msgstr "Systeeminstellingen is het configuratiegereedschap voor Pardus."
 
-#: .tmp/goodbyeWidget.py:216 .tmp/ui_goodbyeWidget.py:225
+#: .tmp/goodbyeWidget.py:225 .tmp/ui_goodbyeWidget.py:225
 msgid "User Groups and Help Pages"
 msgstr "Gebruikersgroepen en Help pagina' s"
 
-#: .tmp/goodbyeWidget.py:217 .tmp/ui_goodbyeWidget.py:226
+#: .tmp/goodbyeWidget.py:226 .tmp/ui_goodbyeWidget.py:226
 msgid "Pardus community, user lists, IRC channels, wikis and more."
 msgstr "Pardus gemeenschap, gebruikers lijsten, IRC kanalen, Wiki's en meer."
 
-#: .tmp/kaptanMain.py:115 .tmp/ui_kaptanMain.py:120
+#: .tmp/kaptanMain.py:120 .tmp/ui_kaptanMain.py:120
 msgid "Kaptan Desktop"
 msgstr "Kaptan Desktop"
 
-#: .tmp/kaptanMain.py:116 .tmp/ui_kaptanMain.py:121
+#: .tmp/kaptanMain.py:121 .tmp/ui_kaptanMain.py:121
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: .tmp/kaptanMain.py:117 .tmp/ui_kaptanMain.py:122
+#: .tmp/kaptanMain.py:122 .tmp/ui_kaptanMain.py:122
 msgid "Back"
 msgstr "Terug"
 
-#: .tmp/kaptanMain.py:118 .tmp/ui_kaptanMain.py:123
+#: .tmp/kaptanMain.py:123 .tmp/ui_kaptanMain.py:123
 msgid "Next"
 msgstr "Volgende"
 
-#: .tmp/kaptanMain.py:119 .tmp/ui_kaptanMain.py:124
+#: .tmp/kaptanMain.py:124 .tmp/ui_kaptanMain.py:124
 msgid "Finish"
 msgstr "Voltooien"
 
@@ -137,11 +147,11 @@ msgstr "Probeer:"
 msgid "Configure your keyboard layout."
 msgstr "Stel uw toetenbordindeling in."
 
-#: .tmp/menuWidget.py:76 .tmp/ui_menuWidget.py:77
+#: .tmp/menuWidget.py:77 .tmp/ui_menuWidget.py:77
 msgid "Menu"
 msgstr "Menu"
 
-#: .tmp/menuWidget.py:77 .tmp/ui_menuWidget.py:78
+#: .tmp/menuWidget.py:78 .tmp/ui_menuWidget.py:78
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -165,23 +175,23 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Kies een menustijl:</span></p></body></html>"
 
-#: .tmp/menuWidget.py:82
-msgid "Kick-off (Advanced Menu)"
-msgstr "Kick-off (Geavanceerd menu)"
+#: .tmp/menuWidget.py:83 .tmp/ScrMenu.py:41 .tmp/ui_menuWidget.py:83
+msgid "Kick-off Menu"
+msgstr "Kickoff-menu"
 
-#: .tmp/menuWidget.py:83
-msgid "Classic (Simple Menu)"
-msgstr "Klassiek (Eenvoudig menu)"
+#: .tmp/menuWidget.py:84 .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:84
+msgid "Simple Menu"
+msgstr "Eenvoudig menu"
 
-#: .tmp/menuWidget.py:84
-msgid "Lancelot (Experimental Menu)"
-msgstr "Lancelot (Experimenteel menu)"
+#: .tmp/menuWidget.py:85 .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:85
+msgid "Lancelot Menu"
+msgstr "Lancelot-menu"
 
-#: .tmp/mouseWidget.py:85 .tmp/ui_mouseWidget.py:89
+#: .tmp/mouseWidget.py:88 .tmp/ui_mouseWidget.py:88
 msgid "Mouse"
 msgstr "Muis"
 
-#: .tmp/mouseWidget.py:86 .tmp/ui_mouseWidget.py:90
+#: .tmp/mouseWidget.py:89 .tmp/ui_mouseWidget.py:89
 msgid ""
 "<p align=\"left\">If you are left-handed, you may prefer to swap the "
 "functions on the left and right buttons on your pointing device by choosing "
@@ -192,35 +202,35 @@ msgstr ""
 "en rechter muisknop verwisselen door het kiezen van de optie \"Linkshandig"
 "\". U kunt ook het standaard klikgedrag kiezen.</p>"
 
-#: .tmp/mouseWidget.py:87 .tmp/ui_mouseWidget.py:91
+#: .tmp/mouseWidget.py:90 .tmp/ui_mouseWidget.py:90
 msgid "mouse icon"
 msgstr "muispictogram"
 
-#: .tmp/mouseWidget.py:88 .tmp/ui_mouseWidget.py:92
+#: .tmp/mouseWidget.py:91 .tmp/ui_mouseWidget.py:91
 msgid "Click Behaviour"
 msgstr "Klikgedrag"
 
-#: .tmp/mouseWidget.py:89 .tmp/ui_mouseWidget.py:93
+#: .tmp/mouseWidget.py:92 .tmp/ui_mouseWidget.py:92
 msgid "Single-click to open files and folders"
 msgstr "Enkele klik opent bestanden en mappen"
 
-#: .tmp/mouseWidget.py:90 .tmp/ui_mouseWidget.py:94
+#: .tmp/mouseWidget.py:93 .tmp/ui_mouseWidget.py:93
 msgid "Dou&ble-click to open files and folders"
 msgstr "Du&bbel kikken opent bestanden en mappen"
 
-#: .tmp/mouseWidget.py:91 .tmp/ui_mouseWidget.py:95
+#: .tmp/mouseWidget.py:94 .tmp/ui_mouseWidget.py:94
 msgid "Button Order"
 msgstr "Knopvolgorde"
 
-#: .tmp/mouseWidget.py:92 .tmp/ui_mouseWidget.py:96
+#: .tmp/mouseWidget.py:95 .tmp/ui_mouseWidget.py:95
 msgid "Right Hand"
 msgstr "Rechtshandig"
 
-#: .tmp/mouseWidget.py:93 .tmp/ui_mouseWidget.py:97
+#: .tmp/mouseWidget.py:96 .tmp/ui_mouseWidget.py:96
 msgid "Left Hand"
 msgstr "Linkshandig"
 
-#: .tmp/mouseWidget.py:94 .tmp/ui_mouseWidget.py:98
+#: .tmp/mouseWidget.py:97 .tmp/ui_mouseWidget.py:97
 msgid "Reverse scrolling"
 msgstr "Omgekeerd scrollen"
 
@@ -228,11 +238,11 @@ msgstr "Omgekeerd scrollen"
 msgid "Network"
 msgstr "Netwerk"
 
-#: .tmp/packageWidget.py:68 .tmp/ui_packageWidget.py:71
+#: .tmp/packageWidget.py:71 .tmp/ui_packageWidget.py:71
 msgid "Package"
 msgstr "Pakket"
 
-#: .tmp/packageWidget.py:69 .tmp/ui_packageWidget.py:72
+#: .tmp/packageWidget.py:72 .tmp/ui_packageWidget.py:72
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -262,37 +272,46 @@ msgstr ""
 "periodiek nieuwe opwaarderingen van programma's in het systeemvak laten "
 "tonen.</span></p></body></html>"
 
-#: .tmp/packageWidget.py:74 .tmp/ui_packageWidget.py:77
+#: .tmp/packageWidget.py:77 .tmp/ui_packageWidget.py:77
 msgid "picture label"
 msgstr "afbeeldingslabel"
 
-#: .tmp/packageWidget.py:75 .tmp/ui_packageWidget.py:78
+#: .tmp/packageWidget.py:78 .tmp/ui_packageWidget.py:78
 msgid "Updates"
 msgstr "Opwaarderingen"
 
-#: .tmp/packageWidget.py:76 .tmp/ui_packageWidget.py:79
+#: .tmp/packageWidget.py:79 .tmp/ui_packageWidget.py:79
 msgid "Show in system  tray"
 msgstr "Toon in systeemvak"
 
-#: .tmp/packageWidget.py:77 .tmp/ui_packageWidget.py:80
+#: .tmp/packageWidget.py:80 .tmp/ui_packageWidget.py:80
 msgid "Check updates automatically for every"
 msgstr "Controleer op opwaarderingen elke "
 
-#: .tmp/packageWidget.py:78 .tmp/ui_packageWidget.py:81
+#: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:81
 msgid " hours"
 msgstr " uren"
 
-#: .tmp/packageWidget.py:79 .tmp/ui_packageWidget.py:82
+#: .tmp/packageWidget.py:82 .tmp/ui_packageWidget.py:82
 msgid "Repo"
 msgstr "Repo"
 
-#: .tmp/packageWidget.py:80 .tmp/ui_packageWidget.py:83
+#: .tmp/packageWidget.py:83 .tmp/ui_packageWidget.py:83
 msgid "Contrib repo includes extra packages."
 msgstr "Contrib repo bevat extra pakketten."
 
-#: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:84
+#: .tmp/packageWidget.py:84 .tmp/ui_packageWidget.py:84
 msgid "Add contrib repo"
 msgstr "Contrib repo toevoegen"
+
+#: .tmp/ScrCamera2.py:146 .tmp/ScrCamera.py:184 .tmp/ScrSummary.py:38
+#: .tmp/ScrWelcome.py:23
+msgid "Welcome to Kaptan Wizard :)"
+msgstr "Welkom bij de Kaptan wizard :)"
+
+#: .tmp/ScrCamera.py:225
+msgid "Recapture"
+msgstr ""
 
 #: .tmp/ScrGoodbye.py:27
 msgid "Goodbye from Kaptan Wizard :)"
@@ -314,25 +333,13 @@ msgstr "Enigszins pakkende titel over stijlen"
 msgid "Some catchy description about styles"
 msgstr "Enigszins pakkende beschrijving over stijlen"
 
-#: .tmp/ScrMenu.py:41 .tmp/ui_menuWidget.py:83
-msgid "Kick-off Menu"
-msgstr "Kickoff-menu"
-
 #: .tmp/ScrMenu.py:43
 msgid "Default menu of Pardus GNU/Linux."
 msgstr "Standaard menu van Pardus GNU/Linux."
 
-#: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:84
-msgid "Simple Menu"
-msgstr "Eenvoudig menu"
-
 #: .tmp/ScrMenu.py:49
 msgid "An old style menu from KDE 3."
 msgstr "Een oude stijlmenu van KDE 3."
-
-#: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:85
-msgid "Lancelot Menu"
-msgstr "Lancelot-menu"
 
 #: .tmp/ScrMenu.py:55
 msgid "An advanced menu for KDE4."
@@ -499,13 +506,9 @@ msgid "No"
 msgstr "Nee"
 
 #: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
-#: .tmp/welcomeWidget.py:42
+#: .tmp/welcomeWidget.py:43
 msgid "Welcome"
 msgstr "Welkom"
-
-#: .tmp/ScrSummary.py:38 .tmp/ScrWelcome.py:23
-msgid "Welcome to Kaptan Wizard :)"
-msgstr "Welkom bij de Kaptan wizard :)"
 
 #: .tmp/ScrSummary.py:63
 #, python-format
@@ -578,11 +581,11 @@ msgstr "Voeg een enigzins pakkende titel over achtergronden toe.."
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Prachtige, overweldigende, schitterende achtergronden! \\m/"
 
-#: .tmp/searchWidget.py:50 .tmp/ui_searchWidget.py:52
+#: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:52
 msgid "Desktop Search"
 msgstr "Desktop-zoekactie"
 
-#: .tmp/searchWidget.py:51 .tmp/ui_searchWidget.py:53
+#: .tmp/searchWidget.py:53 .tmp/ui_searchWidget.py:53
 msgid ""
 "Strigi desktop search allows searching for files by content instead of just "
 "by name."
@@ -590,7 +593,7 @@ msgstr ""
 "Met Strigi bureaublad-zoekopdracht kunt u naar bestanden zoeken op inhoud in "
 "plaats van alleen op naam."
 
-#: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:54
+#: .tmp/searchWidget.py:54 .tmp/ui_searchWidget.py:54
 msgid "Enable Strigi Desktop File Indexer"
 msgstr "Strigi Desktop Bestandenindexering activeren"
 
@@ -648,12 +651,13 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt zal alleen hardware- en "
-"standaard informatie over het besturingssysteem naar de smoltserver (smoon) "
-"van Pardus versturen.De enige identiteitinformatie tussen de database en deze "
-"computer is het UUID (unieke naam voor een computer).  Zolang de indiener deze "
-"UUID niet opgeeft, zal dit anoniem gebeuren.  Voor het verwijderen van dit profiel "
-"van de database, op enige moment in de toekomst, volstaat het starten van</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt zal alleen "
+"hardware- en standaard informatie over het besturingssysteem naar de "
+"smoltserver (smoon) van Pardus versturen.De enige identiteitinformatie "
+"tussen de database en deze computer is het UUID (unieke naam voor een "
+"computer).  Zolang de indiener deze UUID niet opgeeft, zal dit anoniem "
+"gebeuren.  Voor het verwijderen van dit profiel van de database, op enige "
+"moment in de toekomst, volstaat het starten van</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-"
 "style:italic;\">smoltDeleteProfile</span></p>\n"
@@ -661,22 +665,24 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">   De informatie die naar "
 "de smoltserver verstuurd wordt is openbaar en kan door iedereen ingezien "
 "worden. Het zal hoofdzakelijk door hardware fabrikanten en andere gebruikt "
-"worden. En kan ook gebruikt worden om een betere ondersteuning van open-source "
-"stuurprogramma's en betere ondersteuning in het algemeen te verkrijgen.</p>\n"
+"worden. En kan ook gebruikt worden om een betere ondersteuning van open-"
+"source stuurprogramma's en betere ondersteuning in het algemeen te "
+"verkrijgen.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
 "decoration: underline;\">IP Logging:</span>  Met de smolt van Pardus gaat al "
 "het  web-verkeer eerst door een proxy server.  Dit is de enigste plaats waar "
-"IP-adressen gedurende 4 weken opgeslagen worden, waarna ze verwijderd worden.  "
-"Het Pardus-project verzamelt geen ip-adressen in de smolt database.  Deze "
-"logs zijn privé en zullen niet voor iedereen beschikbaar zijn.</p>\n"
+"IP-adressen gedurende 4 weken opgeslagen worden, waarna ze verwijderd "
+"worden.  Het Pardus-project verzamelt geen ip-adressen in de smolt "
+"database.  Deze logs zijn privé en zullen niet voor iedereen beschikbaar "
+"zijn.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">   Indien U niet eens bent "
 "met dit beleid, gebruik smolt dan niet.  Voor vragen over dit beleid kunt u "
-"contact opnemen met het Pardus Infrastructure Team op admin [at] "
-"pardus.org.tr  Denk er ook aan dat het verwijderen van het profiel op ieder "
-"moment kan door het starten van \"<span "
-"style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></body></html>"
+"contact opnemen met het Pardus Infrastructure Team op admin [at] pardus.org."
+"tr  Denk er ook aan dat het verwijderen van het profiel op ieder moment kan "
+"door het starten van \"<span style=\" font-style:italic;"
+"\">smoltDeleteProfile</span>\"</p></body></html>"
 
 #: .tmp/styleitem.py:46 .tmp/uiitem.py:46 .tmp/ui_styleitem.py:46
 #: .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
@@ -692,31 +698,31 @@ msgstr "Stijlnaam"
 msgid "styleDesc"
 msgstr "Stijlbeschrijving"
 
-#: .tmp/styleWidget.py:63 .tmp/ui_styleWidget.py:65
+#: .tmp/styleWidget.py:65 .tmp/ui_styleWidget.py:65
 msgid "Themes"
 msgstr "Thema's"
 
-#: .tmp/styleWidget.py:64 .tmp/ui_styleWidget.py:66
+#: .tmp/styleWidget.py:66 .tmp/ui_styleWidget.py:66
 msgid "<b>Desktop Type:</b>"
 msgstr "<b>Bureaubladtype:</b>"
 
-#: .tmp/styleWidget.py:65 .tmp/ui_styleWidget.py:67
+#: .tmp/styleWidget.py:67 .tmp/ui_styleWidget.py:67
 msgid "Desktop view (KDE4 Style)"
 msgstr "Bureaublad-weergave (KDE4-stijl)"
 
-#: .tmp/styleWidget.py:66 .tmp/ui_styleWidget.py:68
+#: .tmp/styleWidget.py:68 .tmp/ui_styleWidget.py:68
 msgid "Folder view (KDE3 Style)"
 msgstr "Mapweergave (KDE3-stijl)"
 
-#: .tmp/styleWidget.py:67 .tmp/ui_styleWidget.py:69
+#: .tmp/styleWidget.py:69 .tmp/ui_styleWidget.py:69
 msgid "<b>Number of Desktops:</b>"
 msgstr "<b>Aantal bureaubladen:</b>"
 
-#: .tmp/summaryWidget.py:48 .tmp/ui_summaryWidget.py:49
+#: .tmp/summaryWidget.py:49 .tmp/ui_summaryWidget.py:49
 msgid "Summary"
 msgstr "Samenvatting"
 
-#: .tmp/summaryWidget.py:49 .tmp/ui_summaryWidget.py:50
+#: .tmp/summaryWidget.py:50 .tmp/ui_summaryWidget.py:50
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -742,6 +748,14 @@ msgstr ""
 "size:12pt; font-weight:600;\">De instellingen worden in het volgende scherm "
 "toegepast...</span></p></body></html>"
 
+#: .tmp/ui_cameraWidget.py:52
+msgid "Take your photo through your webcam and use it as avatar in system."
+msgstr ""
+
+#: .tmp/ui_cameraWidget.py:53
+msgid "Capture"
+msgstr ""
+
 #: .tmp/uiitem.py:47 .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
 #: .tmp/wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -752,19 +766,19 @@ msgstr "Achtergrondnaam"
 msgid "wallpaperDesc"
 msgstr "Achtergrondbeschrijving"
 
-#: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:43
+#: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
 msgid "Wallpaper"
 msgstr "Achtergrond"
 
-#: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:44
+#: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:45
 msgid "Choose Wallpaper From a File"
 msgstr "Achtergrond uit een bestand kiezen"
 
-#: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:45
+#: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:46
 msgid "Don't change wallpaper"
 msgstr "Achtergrond niet wijzigen"
 
-#: .tmp/ui_welcomeWidget.py:44 .tmp/welcomeWidget.py:43
+#: .tmp/ui_welcomeWidget.py:44 .tmp/welcomeWidget.py:44
 msgid ""
 "This application, called Kaptan Desktop, will help you with your basic but "
 "sufficient setup for your Pardus desktop in a quick manner. Please click "
@@ -782,3 +796,11 @@ msgstr ""
 "verbinding maken met het internet, lezen/schrijven van e-mails, werken met "
 "office documenten en meer!"
 
+#~ msgid "Kick-off (Advanced Menu)"
+#~ msgstr "Kick-off (Geavanceerd menu)"
+
+#~ msgid "Classic (Simple Menu)"
+#~ msgstr "Klassiek (Eenvoudig menu)"
+
+#~ msgid "Lancelot (Experimental Menu)"
+#~ msgstr "Lancelot (Experimenteel menu)"

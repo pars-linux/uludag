@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-19 19:33+0300\n"
+"POT-Creation-Date: 2009-08-13 15:33+0300\n"
 "PO-Revision-Date: 2009-07-16 20:32-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <de@li.org>\n"
@@ -19,12 +19,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/goodbyeWidget.py:199 .tmp/ScrGoodbye.py:26
+#: .tmp/cameraWidget.py:25 .tmp/ScrCamera2.py:145 .tmp/ScrCamera.py:183
+#: .tmp/ui_cameraWidget.py:51
+msgid "Camera"
+msgstr ""
+
+#: .tmp/cameraWidget.py:26
+msgid "TextLabel"
+msgstr ""
+
+#: .tmp/goodbyeWidget.py:208 .tmp/ScrGoodbye.py:26
 #: .tmp/ui_goodbyeWidget.py:208
 msgid "Goodbye"
 msgstr "Auf Wiedersehen"
 
-#: .tmp/goodbyeWidget.py:200 .tmp/ui_goodbyeWidget.py:209
+#: .tmp/goodbyeWidget.py:209 .tmp/ui_goodbyeWidget.py:209
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -64,27 +73,27 @@ msgstr ""
 "Jetzt können Sie ganz normal fortfahren und Pardus benutzen, oder eines der "
 "unten aufgeführten Programme aufrufen:</span></p></body></html>"
 
-#: .tmp/goodbyeWidget.py:207 .tmp/ui_goodbyeWidget.py:216
+#: .tmp/goodbyeWidget.py:216 .tmp/ui_goodbyeWidget.py:216
 msgid "My Smolt Page"
 msgstr "Meine Smolt Seite"
 
-#: .tmp/goodbyeWidget.py:208 .tmp/ui_goodbyeWidget.py:217
+#: .tmp/goodbyeWidget.py:217 .tmp/ui_goodbyeWidget.py:217
 msgid "Go to your Smolt page and rate your hardware components."
 msgstr ""
 "In die eigene Smolt-Webseite eintreten und die Hardwarekomponenten bewerten."
 
-#: .tmp/goodbyeWidget.py:209 .tmp/goodbyeWidget.py:212
-#: .tmp/goodbyeWidget.py:215 .tmp/goodbyeWidget.py:218
+#: .tmp/goodbyeWidget.py:218 .tmp/goodbyeWidget.py:221
+#: .tmp/goodbyeWidget.py:224 .tmp/goodbyeWidget.py:227
 #: .tmp/ui_goodbyeWidget.py:218 .tmp/ui_goodbyeWidget.py:221
 #: .tmp/ui_goodbyeWidget.py:224 .tmp/ui_goodbyeWidget.py:227
 msgid "Start"
 msgstr "Anfang"
 
-#: .tmp/goodbyeWidget.py:210 .tmp/ui_goodbyeWidget.py:219
+#: .tmp/goodbyeWidget.py:219 .tmp/ui_goodbyeWidget.py:219
 msgid "Migration Wizard"
 msgstr "Migrations-Assistent"
 
-#: .tmp/goodbyeWidget.py:211 .tmp/ui_goodbyeWidget.py:220
+#: .tmp/goodbyeWidget.py:220 .tmp/ui_goodbyeWidget.py:220
 msgid ""
 "A wizard to transfer files and settings from existing operating systems (e."
 "g. Windows) to Pardus."
@@ -92,39 +101,39 @@ msgstr ""
 "Ein Assistent für die Übertragung von Dateien und Einstellungen von "
 "vorhandenen Betriebssystemen (z.B. Windows) nach Pardus."
 
-#: .tmp/goodbyeWidget.py:213 .tmp/ui_goodbyeWidget.py:222
+#: .tmp/goodbyeWidget.py:222 .tmp/ui_goodbyeWidget.py:222
 msgid "System Settings"
 msgstr "Systemeinstellungen"
 
-#: .tmp/goodbyeWidget.py:214 .tmp/ui_goodbyeWidget.py:223
+#: .tmp/goodbyeWidget.py:223 .tmp/ui_goodbyeWidget.py:223
 msgid "System Settings is a configuration tool for Pardus."
 msgstr "Systemeinstellungen ist ein Tool für die Konfiguration von Pardus."
 
-#: .tmp/goodbyeWidget.py:216 .tmp/ui_goodbyeWidget.py:225
+#: .tmp/goodbyeWidget.py:225 .tmp/ui_goodbyeWidget.py:225
 msgid "User Groups and Help Pages"
 msgstr "Benutzergruppen und Hilfe Seiten"
 
-#: .tmp/goodbyeWidget.py:217 .tmp/ui_goodbyeWidget.py:226
+#: .tmp/goodbyeWidget.py:226 .tmp/ui_goodbyeWidget.py:226
 msgid "Pardus community, user lists, IRC channels, wikis and more."
 msgstr "Pardus Community, Listen, IRC Räume, Wikis und mehr."
 
-#: .tmp/kaptanMain.py:115 .tmp/ui_kaptanMain.py:120
+#: .tmp/kaptanMain.py:120 .tmp/ui_kaptanMain.py:120
 msgid "Kaptan Desktop"
 msgstr ""
 
-#: .tmp/kaptanMain.py:116 .tmp/ui_kaptanMain.py:121
+#: .tmp/kaptanMain.py:121 .tmp/ui_kaptanMain.py:121
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: .tmp/kaptanMain.py:117 .tmp/ui_kaptanMain.py:122
+#: .tmp/kaptanMain.py:122 .tmp/ui_kaptanMain.py:122
 msgid "Back"
 msgstr "Zurück"
 
-#: .tmp/kaptanMain.py:118 .tmp/ui_kaptanMain.py:123
+#: .tmp/kaptanMain.py:123 .tmp/ui_kaptanMain.py:123
 msgid "Next"
 msgstr "Weiter"
 
-#: .tmp/kaptanMain.py:119 .tmp/ui_kaptanMain.py:124
+#: .tmp/kaptanMain.py:124 .tmp/ui_kaptanMain.py:124
 msgid "Finish"
 msgstr "Beenden"
 
@@ -140,11 +149,11 @@ msgstr "Probieren Sie:"
 msgid "Configure your keyboard layout."
 msgstr "Auswahl des Tastatur-Layouts."
 
-#: .tmp/menuWidget.py:76 .tmp/ui_menuWidget.py:77
+#: .tmp/menuWidget.py:77 .tmp/ui_menuWidget.py:77
 msgid "Menu"
 msgstr "Menü"
 
-#: .tmp/menuWidget.py:77 .tmp/ui_menuWidget.py:78
+#: .tmp/menuWidget.py:78 .tmp/ui_menuWidget.py:78
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -168,23 +177,23 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Menüstil auswählen:</span></p></body></html>"
 
-#: .tmp/menuWidget.py:82
-msgid "Kick-off (Advanced Menu)"
-msgstr "Kick-off Stil"
+#: .tmp/menuWidget.py:83 .tmp/ScrMenu.py:41 .tmp/ui_menuWidget.py:83
+msgid "Kick-off Menu"
+msgstr "Kick-off Menü"
 
-#: .tmp/menuWidget.py:83
-msgid "Classic (Simple Menu)"
-msgstr "Klassisch (einfach)"
+#: .tmp/menuWidget.py:84 .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:84
+msgid "Simple Menu"
+msgstr "einfaches Menü"
 
-#: .tmp/menuWidget.py:84
-msgid "Lancelot (Experimental Menu)"
-msgstr "Lancelot (experimental)"
+#: .tmp/menuWidget.py:85 .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:85
+msgid "Lancelot Menu"
+msgstr "Lancelot Menü"
 
-#: .tmp/mouseWidget.py:85 .tmp/ui_mouseWidget.py:89
+#: .tmp/mouseWidget.py:88 .tmp/ui_mouseWidget.py:88
 msgid "Mouse"
 msgstr "Maus"
 
-#: .tmp/mouseWidget.py:86 .tmp/ui_mouseWidget.py:90
+#: .tmp/mouseWidget.py:89 .tmp/ui_mouseWidget.py:89
 msgid ""
 "<p align=\"left\">If you are left-handed, you may prefer to swap the "
 "functions on the left and right buttons on your pointing device by choosing "
@@ -196,36 +205,36 @@ msgstr ""
 "die Option \"Linkshänder\" auswählen. Auch können Sie hier das "
 "Klickverhalten der Maustasten konfigurieren.</p>"
 
-#: .tmp/mouseWidget.py:87 .tmp/ui_mouseWidget.py:91
+#: .tmp/mouseWidget.py:90 .tmp/ui_mouseWidget.py:90
 msgid "mouse icon"
 msgstr "Mauszeiger"
 
-#: .tmp/mouseWidget.py:88 .tmp/ui_mouseWidget.py:92
+#: .tmp/mouseWidget.py:91 .tmp/ui_mouseWidget.py:91
 msgid "Click Behaviour"
 msgstr "Klickverhalten"
 
-#: .tmp/mouseWidget.py:89 .tmp/ui_mouseWidget.py:93
+#: .tmp/mouseWidget.py:92 .tmp/ui_mouseWidget.py:92
 msgid "Single-click to open files and folders"
 msgstr "Dateien und Verzeichnisse mit einfachem Klick öffnen"
 
-#: .tmp/mouseWidget.py:90 .tmp/ui_mouseWidget.py:94
+#: .tmp/mouseWidget.py:93 .tmp/ui_mouseWidget.py:93
 msgid "Dou&ble-click to open files and folders"
 msgstr "Dateien und Verzeichnisse mit Doppelklick öffnen"
 
-#: .tmp/mouseWidget.py:91 .tmp/ui_mouseWidget.py:95
+#: .tmp/mouseWidget.py:94 .tmp/ui_mouseWidget.py:94
 msgid "Button Order"
 msgstr "Reihenfolge der Tasten"
 
-#: .tmp/mouseWidget.py:92 .tmp/ui_mouseWidget.py:96
+#: .tmp/mouseWidget.py:95 .tmp/ui_mouseWidget.py:95
 msgid "Right Hand"
 msgstr "Rechtshänder"
 
-#: .tmp/mouseWidget.py:93 .tmp/ui_mouseWidget.py:97
+#: .tmp/mouseWidget.py:96 .tmp/ui_mouseWidget.py:96
 msgid "Left Hand"
 msgstr "Linkshänder"
 
 # Zweifel.. scroll.. ??
-#: .tmp/mouseWidget.py:94 .tmp/ui_mouseWidget.py:98
+#: .tmp/mouseWidget.py:97 .tmp/ui_mouseWidget.py:97
 msgid "Reverse scrolling"
 msgstr "entgegengesetztes Scrollen"
 
@@ -233,11 +242,11 @@ msgstr "entgegengesetztes Scrollen"
 msgid "Network"
 msgstr "Netzwerk"
 
-#: .tmp/packageWidget.py:68 .tmp/ui_packageWidget.py:71
+#: .tmp/packageWidget.py:71 .tmp/ui_packageWidget.py:71
 msgid "Package"
 msgstr "Paket"
 
-#: .tmp/packageWidget.py:69 .tmp/ui_packageWidget.py:72
+#: .tmp/packageWidget.py:72 .tmp/ui_packageWidget.py:72
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -267,38 +276,47 @@ msgstr ""
 "und Sie können regelmässig Neuerscheinungen abfragen lassen, und sich in der "
 "Taskleiste anzeigen lassen.</span></p></body></html>"
 
-#: .tmp/packageWidget.py:74 .tmp/ui_packageWidget.py:77
+#: .tmp/packageWidget.py:77 .tmp/ui_packageWidget.py:77
 msgid "picture label"
 msgstr "Bildüberschrift"
 
-#: .tmp/packageWidget.py:75 .tmp/ui_packageWidget.py:78
+#: .tmp/packageWidget.py:78 .tmp/ui_packageWidget.py:78
 msgid "Updates"
 msgstr "Aktualisierung"
 
-#: .tmp/packageWidget.py:76 .tmp/ui_packageWidget.py:79
+#: .tmp/packageWidget.py:79 .tmp/ui_packageWidget.py:79
 msgid "Show in system  tray"
 msgstr "In Systemleiste anzeigen"
 
-#: .tmp/packageWidget.py:77 .tmp/ui_packageWidget.py:80
+#: .tmp/packageWidget.py:80 .tmp/ui_packageWidget.py:80
 msgid "Check updates automatically for every"
 msgstr "Automatisch nach updates suchen, alle"
 
-#: .tmp/packageWidget.py:78 .tmp/ui_packageWidget.py:81
+#: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:81
 msgid " hours"
 msgstr " Stunden"
 
-#: .tmp/packageWidget.py:79 .tmp/ui_packageWidget.py:82
+#: .tmp/packageWidget.py:82 .tmp/ui_packageWidget.py:82
 msgid "Repo"
 msgstr "Depot"
 
 # favor verificar..
-#: .tmp/packageWidget.py:80 .tmp/ui_packageWidget.py:83
+#: .tmp/packageWidget.py:83 .tmp/ui_packageWidget.py:83
 msgid "Contrib repo includes extra packages."
 msgstr "Das Contrib-Depot enthält optionale Pakete."
 
-#: .tmp/packageWidget.py:81 .tmp/ui_packageWidget.py:84
+#: .tmp/packageWidget.py:84 .tmp/ui_packageWidget.py:84
 msgid "Add contrib repo"
 msgstr "Contrib-Depot hinzufügen"
+
+#: .tmp/ScrCamera2.py:146 .tmp/ScrCamera.py:184 .tmp/ScrSummary.py:38
+#: .tmp/ScrWelcome.py:23
+msgid "Welcome to Kaptan Wizard :)"
+msgstr "Willkommen beim Assistenten Kaptan :)"
+
+#: .tmp/ScrCamera.py:225
+msgid "Recapture"
+msgstr ""
 
 #: .tmp/ScrGoodbye.py:27
 msgid "Goodbye from Kaptan Wizard :)"
@@ -322,26 +340,14 @@ msgstr "Desktop Stil"
 msgid "Some catchy description about styles"
 msgstr "Wählen sie den Stil des Desktops nach Ihrem Geschmack.."
 
-#: .tmp/ScrMenu.py:41 .tmp/ui_menuWidget.py:83
-msgid "Kick-off Menu"
-msgstr "Kick-off Menü"
-
 #: .tmp/ScrMenu.py:43
 msgid "Default menu of Pardus GNU/Linux."
 msgstr ""
-
-#: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:84
-msgid "Simple Menu"
-msgstr "einfaches Menü"
 
 #: .tmp/ScrMenu.py:49
 #, fuzzy
 msgid "An old style menu from KDE 3."
 msgstr "Ein Menü im Stil von KDE 3."
-
-#: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:85
-msgid "Lancelot Menu"
-msgstr "Lancelot Menü"
 
 #: .tmp/ScrMenu.py:55
 #, fuzzy
@@ -514,13 +520,9 @@ msgid "No"
 msgstr "Nein"
 
 #: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:43
-#: .tmp/welcomeWidget.py:42
+#: .tmp/welcomeWidget.py:43
 msgid "Welcome"
 msgstr "Willkommen"
-
-#: .tmp/ScrSummary.py:38 .tmp/ScrWelcome.py:23
-msgid "Welcome to Kaptan Wizard :)"
-msgstr "Willkommen beim Assistenten Kaptan :)"
 
 #: .tmp/ScrSummary.py:63
 #, python-format
@@ -593,11 +595,11 @@ msgstr "Bildschirmhintergründe"
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Wählen Sie den schönsten Bildschirmhintergrund für Ihren Desktop! \\m/"
 
-#: .tmp/searchWidget.py:50 .tmp/ui_searchWidget.py:52
+#: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:52
 msgid "Desktop Search"
 msgstr "Desktopsuche"
 
-#: .tmp/searchWidget.py:51 .tmp/ui_searchWidget.py:53
+#: .tmp/searchWidget.py:53 .tmp/ui_searchWidget.py:53
 msgid ""
 "Strigi desktop search allows searching for files by content instead of just "
 "by name."
@@ -605,7 +607,7 @@ msgstr ""
 "Strigi Desktopsuche erlaubt eine Suche nach dem Inhalt von Dateien und nicht "
 "nur nach dem Dateinamen."
 
-#: .tmp/searchWidget.py:52 .tmp/ui_searchWidget.py:54
+#: .tmp/searchWidget.py:54 .tmp/ui_searchWidget.py:54
 msgid "Enable Strigi Desktop File Indexer"
 msgstr "Aktiviere Strigi Desktop File Indexer"
 
@@ -712,31 +714,31 @@ msgstr ""
 msgid "styleDesc"
 msgstr ""
 
-#: .tmp/styleWidget.py:63 .tmp/ui_styleWidget.py:65
+#: .tmp/styleWidget.py:65 .tmp/ui_styleWidget.py:65
 msgid "Themes"
 msgstr "Themas"
 
-#: .tmp/styleWidget.py:64 .tmp/ui_styleWidget.py:66
+#: .tmp/styleWidget.py:66 .tmp/ui_styleWidget.py:66
 msgid "<b>Desktop Type:</b>"
 msgstr "<b>Desktop-Typ:</b>"
 
-#: .tmp/styleWidget.py:65 .tmp/ui_styleWidget.py:67
+#: .tmp/styleWidget.py:67 .tmp/ui_styleWidget.py:67
 msgid "Desktop view (KDE4 Style)"
 msgstr ""
 
-#: .tmp/styleWidget.py:66 .tmp/ui_styleWidget.py:68
+#: .tmp/styleWidget.py:68 .tmp/ui_styleWidget.py:68
 msgid "Folder view (KDE3 Style)"
 msgstr ""
 
-#: .tmp/styleWidget.py:67 .tmp/ui_styleWidget.py:69
+#: .tmp/styleWidget.py:69 .tmp/ui_styleWidget.py:69
 msgid "<b>Number of Desktops:</b>"
 msgstr "<b>Anzahl der Desktops:</b>"
 
-#: .tmp/summaryWidget.py:48 .tmp/ui_summaryWidget.py:49
+#: .tmp/summaryWidget.py:49 .tmp/ui_summaryWidget.py:49
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: .tmp/summaryWidget.py:49 .tmp/ui_summaryWidget.py:50
+#: .tmp/summaryWidget.py:50 .tmp/ui_summaryWidget.py:50
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -762,6 +764,14 @@ msgstr ""
 "size:12pt; font-weight:600;\">Die Einstellungen werden auf dem nächsten "
 "Bildschirm übernommen ...</span></p></body></html>"
 
+#: .tmp/ui_cameraWidget.py:52
+msgid "Take your photo through your webcam and use it as avatar in system."
+msgstr ""
+
+#: .tmp/ui_cameraWidget.py:53
+msgid "Capture"
+msgstr ""
+
 #: .tmp/uiitem.py:47 .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
 #: .tmp/wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -772,19 +782,19 @@ msgstr ""
 msgid "wallpaperDesc"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:43
+#: .tmp/ui_wallpaperWidget.py:44 .tmp/wallpaperWidget.py:44
 msgid "Wallpaper"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:44
+#: .tmp/ui_wallpaperWidget.py:45 .tmp/wallpaperWidget.py:45
 msgid "Choose Wallpaper From a File"
 msgstr "Bilddatei suchen für Hintergrundbild"
 
-#: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:45
+#: .tmp/ui_wallpaperWidget.py:46 .tmp/wallpaperWidget.py:46
 msgid "Don't change wallpaper"
 msgstr "Hintergrundbild nicht ändern"
 
-#: .tmp/ui_welcomeWidget.py:44 .tmp/welcomeWidget.py:43
+#: .tmp/ui_welcomeWidget.py:44 .tmp/welcomeWidget.py:44
 msgid ""
 "This application, called Kaptan Desktop, will help you with your basic but "
 "sufficient setup for your Pardus desktop in a quick manner. Please click "
@@ -802,6 +812,15 @@ msgstr ""
 "Bedürfnisse von Computernutzern zugeschnitten ist. Pardus ist ausgestattet, "
 "um sich mit dem Internet zu verbinden, Emails und Office-Dokumente zu lesen "
 "und noch vieles mehr!"
+
+#~ msgid "Kick-off (Advanced Menu)"
+#~ msgstr "Kick-off Stil"
+
+#~ msgid "Classic (Simple Menu)"
+#~ msgstr "Klassisch (einfach)"
+
+#~ msgid "Lancelot (Experimental Menu)"
+#~ msgstr "Lancelot (experimental)"
 
 #, fuzzy
 #~ msgid "Kick-off "
