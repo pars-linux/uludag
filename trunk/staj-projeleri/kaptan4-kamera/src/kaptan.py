@@ -82,7 +82,8 @@ class Kaptan(QtGui.QWidget):
 
         self.screenId = []
         for each in self.screens:
-            title = each.Widget().windowTitle()
+            #title = each.Widget().windowTitle()
+            title="camera"
             self.screenId.append(title)
 
             if self.screens.index(each) == 0:
