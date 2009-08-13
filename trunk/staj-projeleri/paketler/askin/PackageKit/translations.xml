@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+  <Source>
+    <Name></Name>
+    <Summary xml:lang="tr">Yazılım kurmayı ve güncelleştirmeyi basitleştirmek için tasarlanmış bir sistem</Summary>
+    <Description xml:lang="tr">Birincil amacı farklı dağıtımlarda kullanılan grafiksel yazılım araçlarını birleştirmek ve PolicyKit gibi güncel teknolojileri kullanarak eksiklikleri gidermektir.</Description>
+  </Source>
+</PISI>
