@@ -194,8 +194,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
 	self.isTaken = False
 	
 	self.camindex = -1
-	#self.ui.cameraCombo.hide()
-	if (self.detector.count() >= 1): ####DEGISECEK
+	self.ui.cameraCombo.hide()
+	if (self.detector.count() > 1): ####DEGISECEK
 	    cams = self.detector.listDevices()[0]
 	    for cam in cams:
 		self.ui.cameraCombo.addItem(cam)

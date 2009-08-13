@@ -59,13 +59,37 @@ def profileSended():
         return True
 
     return False
+    
+def isCameraAvailable():
+    try:
+	bus = dbus.SystemBus()
 
+	proxy = bus.get_object('org.freedesktop.Hal', '/org/freedesktop/Hal/Manager')
+	iface = dbus.Interface(proxy, dbus_interface='org.freedesktop.Hal.Manager')
+
+	devices = iface.FindDeviceByCapability("video4linux")
+
+	for dev in devices:
+	    d_proxy = bus.get_object('org.freedesktop.Hal', dev)
+	    d_iface = dbus.Interface(d_proxy, dbus_interface='org.freedesktop.Hal.Device')
+
+	    capa = [h for h in d_iface.GetProperty("info.capabilities") if "." in h]
+	    if len(capa) == 1 and capa[0] == "video4linux.video_capture":
+		return True
+	return False
+    except dbus.DBusException as err:
+	print("err")
+	return False
+	
 if isLiveCD():
     availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
 elif profileSended():
-    availableScreens = [welcomeWidget, cameraWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, packageWidget, summaryWidget, goodbyeWidget]
+    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, packageWidget, summaryWidget, goodbyeWidget]
 else:
-    availableScreens = [welcomeWidget, cameraWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, smoltWidget, packageWidget, summaryWidget, goodbyeWidget]
+    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, smoltWidget, packageWidget, summaryWidget, goodbyeWidget]
+
+if isCameraAvailable():
+    availableScreens.insert(1,cameraWidget)
 
 class Kaptan(QtGui.QWidget):
     def __init__(self, parent=None):
@@ -268,6 +292,6 @@ if __name__ == "__main__":
     kaptan = Kaptan()
     kaptan.show()
     rect  = QtGui.QDesktopWidget().screenGeometry()
-    kaptan.move(rect.width()/2 - kaptan.width()/2, rect.height()/2 - kaptan.height()/2)
+    kaptan.move((rect.width() - kaptan.width()) / 2, (rect.height() - kaptan.height()) / 2)
     app.exec_()
 
