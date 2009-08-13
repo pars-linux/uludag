@@ -33,6 +33,7 @@ import pisi.db.historydb
 import pisi.db.sourcedb
 import pisi.db.componentdb
 import pisi.db.groupdb
+import pisi.db.offline_idb
 import pisi.index
 import pisi.config
 import pisi.metadata
