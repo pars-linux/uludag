@@ -27,4 +27,5 @@ urlpatterns = patterns('',
     (r'^logout/$','repository.views.log_out'),
     #login
     (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'registration/login.html'}),
+    (r'^ack/$','noan.repository.views.acknack'),
 )
