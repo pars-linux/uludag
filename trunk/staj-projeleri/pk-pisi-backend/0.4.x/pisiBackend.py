@@ -164,9 +164,12 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
 
         package = self.get_package_from_id(package_ids[0])[0]
 
-        # FIXME: Handle packages which is not installed from repository
-        for pkg in self.packagedb.get_rev_deps(package):
-            self.__get_package(pkg[0])
+        if self.installdb.has_package(package):
+            for pkg in self.installdb.get_rev_deps(package):
+                self.__get_package(pkg[0])
+        else:
+            for pkg in self.packagedb.get_rev_deps(package):
+                self.__get_package(pkg[0])
 
     def get_updates(self, filter):
         """ Prints available updates and types """
