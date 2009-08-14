@@ -26,11 +26,25 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_bugWidget()
         self.ui.setupUi(self)
+        QObject.connect(self.ui.comboBox,
+                               SIGNAL("currentIndexChanged(int)"),
+                               self.checkChoices)
 
     def shown(self):
+        self.checkChoices(self.ui.comboBox.currentIndex())
         pass
 
     def execute(self):
         return True
+
+    def checkChoices(self, value):
+        if int(value) != 0:
+            self.mainwindow.enableNext()
+        else:
+            self.mainwindow.disableNext()
+
+    @property
+    def mainwindow(self):
+        return self.parentWidget().parentWidget().parentWidget()
 
 

@@ -62,8 +62,15 @@ class BugTool(QtGui.QWidget):
 
     # execute next step
     def slotNext(self,dryRun=False):
+        _w = self.ui.mainStack.currentWidget()
+        ret = _w.execute()
+        if not ret:
+            return
+
+        self.stackMove(self.getCur(self.moveInc))
+        self.moveInc = 1
         self.menuText = ""
-        curIndex = self.ui.mainStack.currentIndex() +1
+        curIndex = self.ui.mainStack.currentIndex()
 
         for each in self.screenId:
             i = self.screenId.index(each)
@@ -74,12 +81,6 @@ class BugTool(QtGui.QWidget):
                     self.menuText += self.putBr(self.screenId[i])
 
         self.ui.labelMenu.setText(self.menuText)
-
-        _w = self.ui.mainStack.currentWidget()
-        ret = _w.execute()
-        if ret:
-            self.stackMove(self.getCur(self.moveInc))
-            self.moveInc = 1
 
     # execute previous step
     def slotBack(self):
@@ -108,9 +109,9 @@ class BugTool(QtGui.QWidget):
         return "<b>" + unicode(u"» ") + item + "</b><br>"
 
     # move to id numbered stack
-    def stackMove(self, id):
-        if not id == self.ui.mainStack.currentIndex() or id==0:
-            self.ui.mainStack.setCurrentIndex(id)
+    def stackMove(self, wid):
+        if wid != self.ui.mainStack.currentIndex() or wid == 0:
+            self.ui.mainStack.setCurrentIndex(wid)
             _w = self.ui.mainStack.currentWidget()
             _w.update()
             _w.shown()
@@ -137,22 +138,22 @@ class BugTool(QtGui.QWidget):
         self.stackMove(0)
 
     def disableNext(self):
-        self.buttonNext.setEnabled(False)
+        self.ui.buttonNext.setEnabled(False)
 
     def disableBack(self):
-        self.buttonBack.setEnabled(False)
+        self.ui.buttonBack.setEnabled(False)
 
     def enableNext(self):
-        self.buttonNext.setEnabled(True)
+        self.ui.buttonNext.setEnabled(True)
 
     def enableBack(self):
-        self.buttonBack.setEnabled(True)
+        self.ui.buttonBack.setEnabled(True)
 
     def isNextEnabled(self):
-        return self.buttonNext.isEnabled()
+        return self.ui.buttonNext.isEnabled()
 
     def isBackEnabled(self):
-        return self.buttonBack.isEnabled()
+        return self.ui.buttonBack.isEnabled()
 
 if __name__ == "__main__":
     # About data

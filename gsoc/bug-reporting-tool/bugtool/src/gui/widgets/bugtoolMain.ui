@@ -214,7 +214,7 @@ margin: 10px;
   </layout>
  </widget>
  <resources>
-  <include location="raw.qrc"/>
+  <include location="../raw.qrc"/>
  </resources>
  <connections/>
 </ui>
