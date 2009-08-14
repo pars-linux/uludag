@@ -87,6 +87,16 @@ class Offline_InstallDB():
         files = pisi.files.Files()
         return files
 
+    def get_isa_packages(self, isa):
+        # DENENMEDI
+        risa = '<IsA>%s</IsA>' % isa
+        packages = []
+        for name in self.list_installed():
+            xml = self.package_data(name)
+            if re.compile(risa).search(xml):
+                packages.append(name)
+        return packages
+
     def get_rev_deps(self, name):
 
         rev_deps = []
