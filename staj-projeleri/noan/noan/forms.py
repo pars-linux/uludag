@@ -16,4 +16,7 @@ class AckNackForm(forms.Form):
     comment = forms.CharField(max_length=256, help_text=_('256 characters max.'), required= False)
     binary = forms.CharField(widget = forms.HiddenInput())
     distro = forms.CharField(widget = forms.HiddenInput())
-
+    def get_label(self):
+        return self.fields["binary"]
+    def set_label(self,label):
+        self.fields["binary"].data=label

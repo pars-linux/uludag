@@ -7,9 +7,11 @@ from django.utils import simplejson
 from django.template import RequestContext
 from noan.repository.models import *
 from django.contrib.auth import authenticate, login, logout
-from django.forms.formsets import formset_factory
-from django import forms
-from noan.forms import *
+
+from  datetime import date
+# from django.forms.formsets import formset_factory
+# from django import forms
+# from noan.forms import *
 
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
@@ -178,40 +180,55 @@ def search_form(request):
     context['distributions'] = distributions
     return render_to_response('repository/search.html', context, context_instance=RequestContext(request))
 
+
 @login_required
 def AckNackList(request):
     list=[]
-    stateBinary = Binary.objects.filter(resolution='pending').filter(package__source__maintained_by= request.user)
-    stateBinaryOfUpdate = Binary.objects.filter(resolution='pending').filter(update__updated_by = request.user).order_by('package__name')
-    for binary in stateBinary:
-            list.append({'binary': binary.get_filename(),
-                    'distro' : binary.package.source.distribution
-                })
-    ArticleFormSet = formset_factory(AckNackForm, extra=0)
-  #  if request.method == 'POST':
+    stateBinary = Binary.objects.filter(resolution = 'pending').filter(package__source__maintained_by = request.user)
+    stateBinaryOfUpdate = Binary.objects.filter(resolution = 'pending').filter(update__updated_by = request.user).order_by('package__name')
 
-  #      for list in request.POST.lists()
-  #          try:
-  #              post_info = list[0].split("-")
-  #              binary_id = int(post_info[0])
-  #              if (post_info[1] == "radio"):
-  #                  pass
-  #              print post_info,list[1]
-  #
-  #          except:
-  #              print "middleware"""
+# For Django 1.1 with getting hidden input value. Form in forms.py in noan
+
+########################################################################################3
+    #for binary in stateBinary:
+    #        list.append({'binary': binary.get_filename(),
+    #                'distro' : binary.package.source.distribution
+    #            })
+    #ArticleFormSet = formset_factory(AckNackForm, extra=0)
+################################################################################################
+    #if request.method == 'POST':
+     #   formset = ArticleFormSet(request.POST)
+      #  if formset.is_valid():
+      #      for form in formset.cleaned_data:
+      #          print form
+    #formset = ArticleFormSet(initial = list)
     if request.method == 'POST':
-        formset = ArticleFormSet(request.POST)
-        if formset.is_valid():
-            for form in formset.cleaned_data:
-                print form
-    formset = ArticleFormSet(initial = list)
+        radio = {}
+        comment = {}
+        for list in request.POST.lists():
+            try:
+                post_info = list[0].split("-")
+                binary_id = int(post_info[0])
+                if (post_info[1] == "radio"):
+                    radio[post_info[0]] = list[1]
+                if (post_info[1] == "comment"):
+                    comment[post_info[0]] = list[1]
+            except:
+                print "middleware"
+        for binary_id in  radio:
+            a = binary_id
+            print radio[binary_id][0]
+            Add_State = StateOfTest(binary = Binary.objects.get(id=binary_id), changed_by = request.user, updated=date.today(), state = radio[binary_id][0])
+            Add_State.save()
+            if comment[binary_id][0]:
+                Add_Comment = CommentOfStatement(state_of_test_id = Add_State, comment = comment[binary_id][0])
+                Add_Comment.save()
+            print Add_State
     if stateBinary or stateBinaryOfUpdate:
         distributions = Distribution.objects.all()
     else:
         distributions = ""
     context = {
-            'formset' : formset,
             'distributions' : distributions,
             'stateBinarys' : stateBinary,
             'stateBinarysOfUpdate' : stateBinaryOfUpdate,

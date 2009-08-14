@@ -182,7 +182,13 @@ class Binary(models.Model):
         verbose_name_plural = _('binaries')
         ordering = ['package__name', '-no']
         unique_together = ('no', 'package')
-
+    def is_Ack(self):
+        RunTimeDep = self.package.runtimedependency_set.filter(package__exact=self.package)
+        for dep in RunTimeDep:
+            a = Package.objects.filter(name__exact=dep.dep_package).filter(source__distribution = self.package.source.distribution).filter(binary__resolution__exact="testing")
+            if a:
+                print dep
+        return
 
 class Task(models.Model):
     package = models.ForeignKey(Package, verbose_name=_('package'))
@@ -235,7 +241,7 @@ class TaskDescription(models.Model):
 
 class StateOfTest(models.Model):
     binary = models.ForeignKey(Binary, verbose_name=_('binary'))
-    Changed_by = models.ForeignKey(User, verbose_name=_('maintained by'))
+    changed_by = models.ForeignKey(User, verbose_name=_('changed by'))
     updated = models.DateField(verbose_name=_('updated'),blank=True)
     state = models.CharField(max_length=4, verbose_name=_('state'), default='', blank=True)
 
@@ -246,7 +252,7 @@ class StateOfTest(models.Model):
         ordering = ['id']
         verbose_name = _('state')
         verbose_name_plural = _('states')
-#    def GetAck(self):
+
 
 
 class CommentOfStatement(models.Model):
