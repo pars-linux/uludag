@@ -13,5 +13,7 @@
 
 BACKEND = "pisi"
 
-import pisi.iface as pm
+#import pisi.iface as pm
+#import pisi.offline_iface as offline_pm
 
+import pisi.offline_iface as pm

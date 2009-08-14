@@ -6,6 +6,8 @@
       <Action name="showInstallAction" />
       <Action name="showRemoveAction" />
       <Action name="showUpgradeAction" />
+      <Action name="importIndexAction" />
+      <Action name="exportIndexAction" />
     </Menu>
   </MenuBar>
   <ToolBar iconSize="16" name="mainToolBar" >

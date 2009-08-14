@@ -16,6 +16,7 @@ from PyQt4.QtCore import *
 
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
+from PyKDE4.kio import KFileDialog, KFile  # to open an open dialog for importing index action
 
 from ui_mainwindow import Ui_MainWindow
 
@@ -26,6 +27,8 @@ from tray import Tray
 
 import backend
 import config
+
+import pisi
 
 class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -103,6 +106,18 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
         actionGroup.addAction(self.showUpgradeAction)
 
+        self.importIndexAction = KToggleAction(KIcon("list-add"), "Import Index", self)
+        self.actionCollection().addAction("importIndexAction", self.importIndexAction)
+        #self.connect(self.importIndexAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.OFFLINE))
+        self.connect(self.importIndexAction, SIGNAL("triggered()"), self.importIndex)
+        #actionGroup.addAction(self.importIndexAction)
+
+        self.exportIndexAction = KToggleAction(KIcon("list-remove"), "Export Index", self)
+        self.actionCollection().addAction("exportIndexAction", self.exportIndexAction)
+        #self.connect(self.exportIndexAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
+        self.connect(self.exportIndexAction, SIGNAL("triggered()"), self.importIndex)
+        #actionGroup.addAction(self.exportIndexAction)
+
     def statusWaiting(self):
         self.statusLabel.setMovie(self.wheelMovie)
         self.wheelMovie.start()
@@ -127,3 +142,25 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def slotQuit(self):
         if self.iface.operationInProgress():
             return
+
+    def importIndex(self):
+        print "Hello world"
+        filename = KFileDialog.getOpenFileName(KUrl("."), "*.xml", self, i18n("Select project file"))
+        if filename:
+            print filename
+
+    def exportIndex(self):
+        idb = pisi.db.installdb.InstallDB()
+        idb.list_installed()
+        for name in idb.list_installed():
+            pkg = idb.get_package(name)
+            pkg
+        index = pisi.index.Index()
+        for name in idb.list_installed():
+            index.packages.append(idb.get_package(name))
+        #for name in idb.list_installed():
+        #    index.add_package(idb.get_package(name))
+        index.add_components("/home/volkan/components.xml")
+        index.add_groups("/home/volkan/groups.xml")
+        index.add_distro("/home/volkan/distribution.xml")
+        index.write("/home/volkan/pisi-installed.xml.bz2", sha1sum=True, compress=pisi.file.File.bz2, sign=None)
