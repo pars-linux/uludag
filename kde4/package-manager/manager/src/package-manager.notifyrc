@@ -2,20 +2,28 @@
 IconName=package-manager
 Name=Package Manager
 Name[tr]=Paket Yöneticisi
+Name[sv]=Pakethanteraren
 Comment=Package Manager
 Comment[tr]=Paket Yöneticisi
+Comment[sv]=Pakethanteraren
 
 [Event/Updates]
 Name=Software Updates
 Comment=Software updates are available
+Name[sv]=Programuppdateringar
+Comment[sv]=Det finns tillgängliga programuppdateringar
 Action=Popup
 
 [Event/Reboot]
 Name=Reboot Required
 Comment=Reboot is required
+Name[sv]=Omstart krävs
+Comment[sv]=Omstart krävs
 Action=Popup
 
 [Event/Summary]
 Name=Operation Summary
 Comment=Finished Operation
+Name[sv]=Åtgärdssammanställning
+Comment[sv]=Åtgärd slutförd
 Action=Sound|Popup

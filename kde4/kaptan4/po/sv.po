@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-19 19:33+0300\n"
-"PO-Revision-Date: 2009-07-17 13:59+0200\n"
+"PO-Revision-Date: 2009-07-28 03:27+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -326,7 +326,6 @@ msgid "Simple Menu"
 msgstr "Enkel meny"
 
 #: .tmp/ScrMenu.py:49
-#, fuzzy
 msgid "An old style menu from KDE 3."
 msgstr "En äldre typ av meny från KDE 3."
 
@@ -521,10 +520,9 @@ msgstr "Valt klickbeteende: <b>%s</b>"
 msgid "Menu Settings"
 msgstr "Menyinställning"
 
-#: .tmp/ScrSummary.py:69
-#, fuzzy, python-format
+#: .tmp/ScrSummary.py:69, python-format
 msgid "Selected Menu: <b>%s</b>"
-msgstr "Vald stil: <b>%s</b>"
+msgstr "Vald meny: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:73
 msgid "Wallpaper Settings"
