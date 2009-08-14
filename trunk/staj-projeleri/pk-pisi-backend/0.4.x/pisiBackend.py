@@ -159,17 +159,30 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
 
     def get_requires(self, filters, package_ids, recursive):
         """ Prints a list of requires for a given package """
+        # Shows package's reverse dependencies.
+        # If packege will be removed, shows packages will be removed (rev deps).
+
         self.allow_cancel(True)
         self.percentage(None)
 
         package = self.get_package_from_id(package_ids[0])[0]
 
-        if self.installdb.has_package(package):
-            for pkg in self.installdb.get_rev_deps(package):
-                self.__get_package(pkg[0])
+        if filters == 'installed':
+            # show removed packages
+            rev_dep_list = pisi.api.get_remove_order([package])
+            rev_dep_list.pop()
+            for pkg in rev_dep_list:
+                self.__get_package(pkg)
         else:
-            for pkg in self.packagedb.get_rev_deps(package):
-                self.__get_package(pkg[0])
+            # show reverse dependencies
+            if self.installdb.has_package(package):
+                for pkg in self.installdb.get_rev_deps(package):
+                    self.__get_package(pkg[0])
+            else:
+                for pkg in self.packagedb.get_rev_deps(package):
+                    self.__get_package(pkg[0])
+
+
 
     def get_updates(self, filter):
         """ Prints available updates and types """
