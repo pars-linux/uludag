@@ -232,7 +232,8 @@ Sorunsuz bir şekilde .shn uzantılı dosyanın oluştuğunu ve çalıştırıla
  \item hardware-tr.pdf k3b paketini test ediniz.
  \item Aşağıdaki komutları çalıştırın:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/
+Lake_dance_XviD.AVI
 # transcode -i Lake_dance_XviD.AVI -y xvid -o test.avi -k -z
 # mplayer test.avi
 \end{verbatim}
@@ -311,7 +312,8 @@ Aşağida bulunan dosyayı inkscape uygulaması ile açın ve üzerinde birkaç 
 
 \begin{verbatim}
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_VCD_extensions.mpeg
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_
+VCD_extensions.mpeg
 \end{verbatim}
 Yukarıda bulunan dosyaları ilgili uygulama ile açın. Go $\rightarrow$ Play/Stop düymesine basın ve açtığınız videonun ses ve görüntü bakımından sorunsuz bir şekilde çalıştığını gözlemleyin.
 \item avidemux-cli paketi kurulumu sonrası:
@@ -319,7 +321,8 @@ Yukarıda bulunan dosyaları ilgili uygulama ile açın. Go $\rightarrow$ Play/S
 video.mpeg dosyasının sorunsuz bir şekilde oluşmuş olduğunu gözlemleyin.
 \begin{verbatim}
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
- # avidemux2_cli --force-alt-h264 --load "Lake_dance_XviD.AVI" --save "video.mpeg" --output-format MPEG --quit 
+ # avidemux2_cli --force-alt-h264 --load "Lake_dance_XviD.AVI" --save "video.mpeg" 
+--output-format MPEG --quit 
  # mplayer video.mpeg
 \end{verbatim}
 
