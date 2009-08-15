@@ -94,7 +94,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
 
         for pkg in self.packagedb.get_package(package).runtimeDependencies():
             # Internal FIXME: PiSi API has really inconsistent for return types and arguments!
-            self.__get_package(pkg.package)
+            self.__get_package(pkg.package, filters)
 
     def get_details(self, package_ids):
         """ Prints a detailed description for a given package """
@@ -333,7 +333,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         key = key.lstrip("/")
 
         for pkg, files in pisi.api.search_file(key):
-            self.__get_package(pkg)
+            self.__get_package(pkg, filters)
 
     def search_group(self, filters, group):
         """ Prints a list of packages belongs to searched group """
