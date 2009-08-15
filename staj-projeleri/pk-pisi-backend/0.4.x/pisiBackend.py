@@ -177,10 +177,10 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
             # show reverse dependencies
             if self.installdb.has_package(package):
                 for pkg in self.installdb.get_rev_deps(package):
-                    self.__get_package(pkg[0])
+                    self.__get_package(pkg[0], filters)
             else:
                 for pkg in self.packagedb.get_rev_deps(package):
-                    self.__get_package(pkg[0])
+                    self.__get_package(pkg[0], filters)
 
 
 
