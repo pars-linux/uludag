@@ -21,7 +21,8 @@ from urllib2 import build_opener, HTTPCookieProcessor
 from gui.ScreenWidget import ScreenWidget
 from gui.credentialsWidget import Ui_bugWidget
 
-BUGZILLA_URL = 'http://bugs.pardus.org.tr'
+#BUGZILLA_URL = 'http://bugs.pardus.org.tr'
+BUGZILLA_URL = 'http://landfill.bugzilla.org/bugzilla-3.0-branch/'
 LOGOUT_URL = 'http://bugs.pardus.org.tr/relogin.cgi'
 
 class Widget(QtGui.QWidget, ScreenWidget):
@@ -36,7 +37,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
                         self.logout)
         self.bugzilla = Bugz(BUGZILLA_URL)
         cj = CookiePot().make_lwp_cookiejar(self.bugzilla.cookiejar.filename,
-                                            'bugs.pardus.org.tr')
+                                            #'bugs.pardus.org.tr')
+                                            'landfill.bugzilla.org')
         self.bugzilla.cookiejar = cj
         self.bugzilla.opener = build_opener(HTTPCookieProcessor(cj))
         self.is_logged_in = False
@@ -74,8 +76,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 except RuntimeError:
                     print 'Invalid user/pass pair!'
                     return False
-                return True
-        else:
-            return True
+        self.shared['bugzilla'] = self.bugzilla
+        return True
 
-
+    @property
+    def shared(self):
+        return self.parent().parent().parent().shared_data

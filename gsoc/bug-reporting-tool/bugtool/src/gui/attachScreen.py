@@ -11,6 +11,7 @@
 #
 
 
+import mimetypes
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n
@@ -37,35 +38,42 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def add_file(self):
         filename = QtGui.QFileDialog.getOpenFileName(self,
                                                      'Choose a file to attach')
+        filename = str(filename)
         try:
             f = open(filename)
+            mime, encoding = mimetypes.guess_type(filename)
+            if mime is None:
+                mime = 'text/plain'
             content = f.read()
             desc, result = QtGui.QInputDialog.getText(self, 'File description',
                                                       'Describe %s briefly:' %\
-                                                      basename(str(filename)))
+                                                      basename(filename))
             if len(desc) == 0:
-                desc = basename(str(filename))
+                desc = basename(filename)
         except OSError:
             QtGui.QMessageBox.critical(self, 'Unable to read %s' % filename)
 
         item = QtGui.QStandardItem(desc)
-        self.files[item] = content
+        self.files[str(item.text())] = (basename(filename), mime, content)
         self.model.appendRow(item)
 
     def remove_file(self):
         for item in self.ui.filelist.selectedIndexes():
-            col = item.column()
             row = item.row()
-            it = self.model.item(row, col)
+            it = str(self.model.item(row, col).text())
             if it in self.files:
                 self.files.pop(it)
                 self.model.removeRow(row)
-        pass
 
     def shown(self):
+        # TODO: search for patterns on description and summary to for
+        # auto-attaching
         pass
 
     def execute(self):
+        self.shared['attachments'] = self.files
         return True
 
-
+    @property
+    def shared(self):
+        return self.parent().parent().parent().shared_data
