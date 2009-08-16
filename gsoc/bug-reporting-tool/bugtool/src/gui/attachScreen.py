@@ -14,6 +14,7 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n
+from os.path import basename
 
 from gui.ScreenWidget import ScreenWidget
 from gui.attachmentsWidget import Ui_bugWidget
@@ -26,6 +27,33 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_bugWidget()
         self.ui.setupUi(self)
+        QObject.connect(self.ui.addButton, SIGNAL("clicked()"), self.add_file)
+        QObject.connect(self.ui.removeButton, SIGNAL("clicked()"),
+                        self.remove_file)
+        self.files = {}
+        self.model = QtGui.QStandardItemModel()
+        self.ui.filelist.setModel(self.model)
+
+    def add_file(self):
+        filename = QtGui.QFileDialog.getOpenFileName(self,
+                                                     'Choose a file to attach')
+        try:
+            f = open(filename)
+            content = f.read()
+            desc, result = QtGui.QInputDialog.getText(self, 'File description',
+                                                      'Describe %s briefly:' %\
+                                                      basename(str(filename)))
+            if len(desc) == 0:
+                desc = basename(filename)
+        except OSError:
+            QtGui.QMessageBox.critical(self, 'Unable to read %s' % filename)
+
+        item = QtGui.QStandardItem(desc)
+        self.files[desc] = content
+        self.model.appendRow(item)
+
+    def remove_file(self):
+        pass
 
     def shown(self):
         pass
