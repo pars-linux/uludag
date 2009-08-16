@@ -18,6 +18,7 @@ from PyKDE4.kdecore import ki18n
 from gui.ScreenWidget import ScreenWidget
 from gui.progressWidget import Ui_bugWidget
 
+
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Bug Reporting Tool")
     desc = ki18n("Progress Screen")
@@ -31,10 +32,15 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        if len(self.ui.summary.text()) == 0 or\
-           len(self.ui.description.toPlainText()) == 0:
+        summary = self.ui.summary.text()
+        description = self.ui.description.toPlainText()
+        if len(summary) == 0 or len(description) == 0:
             return False
         else:
+            self.shared['summary'] = str(summary)
+            self.shared['description'] = str(description)
             return True
 
-
+    @property
+    def shared(self):
+        return self.parent().parent().parent().shared_data

@@ -29,6 +29,7 @@ class BugTool(QtGui.QWidget):
         self.moveInc = 1
         self.menuText = ""
         self.createWidgets(self.screens)
+        self.shared_data = {}
 
         self.screenId = []
         for each in self.screens:

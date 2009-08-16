@@ -35,6 +35,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
+        if self.ui.comboBox.currentIndex() == 1:
+            self.shared['type'] = 'bug'
+        else:
+            self.shared['type'] = 'feature'
         return True
 
     def checkChoices(self, value):
@@ -46,5 +50,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
     @property
     def mainwindow(self):
         return self.parentWidget().parentWidget().parentWidget()
+
+    @property
+    def shared(self):
+        return self.parent().parent().parent().shared_data
 
 
