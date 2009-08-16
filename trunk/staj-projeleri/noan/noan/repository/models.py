@@ -185,9 +185,11 @@ class Binary(models.Model):
     def is_Ack(self):
         RunTimeDep = self.package.runtimedependency_set.filter(package__exact=self.package)
         for dep in RunTimeDep:
-            a = Package.objects.filter(name__exact=dep.dep_package).filter(source__distribution = self.package.source.distribution).filter(binary__resolution__exact="testing")
+            a = Package.objects.filter(name__exact=dep.dep_package).filter(source__distribution = self.package.source.distribution).filter(binary__resolution__exact="pending")
             if a:
-                print dep
+                print "dep %s - %s" %(dep,a)
+            else:
+                print "in stable repo %s" %(dep)
         return
 
 class Task(models.Model):
