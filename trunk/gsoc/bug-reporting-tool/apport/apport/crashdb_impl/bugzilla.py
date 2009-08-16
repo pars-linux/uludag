@@ -185,7 +185,8 @@ class CrashDatabase(apport.crashdb.CrashDatabase):
 
         self._baseurl = self.options.get('baseurl')
         self._bugzilla = Bugz(self._baseurl)
-        cj = CookiePot(self._bugzilla.cookiejar.filename, self._bugzilla.host)
+        cj = CookiePot().make_lwp_cookiejar(self._bugzilla.cookiejar.filename,
+                                            self._bugzilla.host)
         self._bugzilla.cookiejar = cj
         self._bugzilla.opener = build_opener(HTTPCookieProcessor(cj))
         if self.username is None or self.password is None:
