@@ -31,6 +31,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        return True
+        if len(self.ui.summary.text()) == 0 or\
+           len(self.ui.description.toPlainText()) == 0:
+            return False
+        else:
+            return True
 
 
