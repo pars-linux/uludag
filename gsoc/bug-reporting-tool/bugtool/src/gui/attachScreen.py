@@ -44,15 +44,22 @@ class Widget(QtGui.QWidget, ScreenWidget):
                                                       'Describe %s briefly:' %\
                                                       basename(str(filename)))
             if len(desc) == 0:
-                desc = basename(filename)
+                desc = basename(str(filename))
         except OSError:
             QtGui.QMessageBox.critical(self, 'Unable to read %s' % filename)
 
         item = QtGui.QStandardItem(desc)
-        self.files[desc] = content
+        self.files[item] = content
         self.model.appendRow(item)
 
     def remove_file(self):
+        for item in self.ui.filelist.selectedIndexes():
+            col = item.column()
+            row = item.row()
+            it = self.model.item(row, col)
+            if it in self.files:
+                self.files.pop(it)
+                self.model.removeRow(row)
         pass
 
     def shown(self):
