@@ -114,6 +114,12 @@
          </item>
          <item>
           <widget class="QSpinBox" name="spinBox">
+           <property name="suffix">
+            <string> dpi</string>
+           </property>
+           <property name="prefix">
+            <string/>
+           </property>
            <property name="minimum">
             <number>72</number>
            </property>

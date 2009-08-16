@@ -42,6 +42,9 @@ class DpiPreview(QtGui.QLabel):
         self.repaint()
 
 class Widget(QtGui.QWidget, ScreenWidget):
+    screenSettings = {}
+    screenSettings["hasChanged"] = False
+
     title = ki18n("Welcome")
     desc = ki18n("Welcome to Kaptan Wizard :)")
 
@@ -64,10 +67,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         self.ui.horizontalSlider.setValue(currentDpi)
         self.ui.spinBox.setValue(currentDpi)
+
     def shown(self):
         pass
 
     def execute(self):
+        self.__class__.screenSettings["hasChanged"] = True
+        self.__class__.screenSettings["dpi"] = self.ui.horizontalSlider.value()
         return True
-
 
