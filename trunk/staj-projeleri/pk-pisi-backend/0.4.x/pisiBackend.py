@@ -146,6 +146,15 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
 
             self.files(package, file_list)
 
+    def get_packages(self, filters):
+        """
+        List all instaled package
+        It is used with list-{create-diff-install}
+        """
+        for repo in self.repodb.list_repos():
+            for pkg in self.packagedb.list_packages(repo):
+                self.__get_package(pkg, filters)
+
     def get_repo_list(self, filters):
         """ Prints available repositories """
         self.allow_cancel(True)
