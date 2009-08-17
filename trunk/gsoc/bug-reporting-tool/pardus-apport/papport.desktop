@@ -1,0 +1,10 @@
+[Desktop Entry]
+Exec=papport
+Icon=papport
+Type=Application
+
+X-KDE-StartupNotify=true
+
+Name=Pardus' Apport KDE GUI
+
+
