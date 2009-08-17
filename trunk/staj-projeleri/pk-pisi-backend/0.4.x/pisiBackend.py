@@ -249,6 +249,34 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         else:
             self.error(ERROR_PACKAGE_NOT_INSTALLED, "Package is already installed")
 
+    def download_packages(self, directory, package_ids):
+        '''
+        Implement the {backend}-download-packages functionality
+        '''
+
+        self.status(STATUS_DOWNLOAD)
+        fileList = []
+
+        for package_id in package_ids:
+            package = self.get_package_from_id(package_id)[0]
+            if self.packagedb.has_package(package):
+                try:
+                    self.percentage(0)
+                    pisi.api.fetch([package], directory)
+                    self.percentage(100)
+                    pkg = self.packagedb.get_package(package)
+                    filePath = directory + '/' + pkg.packageURI
+                    fileList.append(filePath)
+                    self.package(self.__get_package_id(package), INFO_DOWNLOADING, '')
+
+                except pisi.Error, e:
+                    self.error(ERROR_PACKAGE_DOWNLOAD_FAILED, e)
+            else:
+                self.message(MESSAGE_COULD_NOT_FIND_PACKAGE, "Could not find a match for package %s" % package)
+
+            self.files(package_ids[0], ";".join(fileList))
+
+
     def refresh_cache(self):
         """ Updates repository indexes """
         self.allow_cancel(False)
