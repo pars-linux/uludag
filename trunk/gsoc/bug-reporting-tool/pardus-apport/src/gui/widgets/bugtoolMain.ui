@@ -177,32 +177,12 @@ margin: 10px;
          </spacer>
         </item>
         <item>
-         <widget class="QPushButton" name="buttonBack">
-          <property name="styleSheet">
-           <string notr="true">color:black</string>
-          </property>
-          <property name="text">
-           <string>Back</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QPushButton" name="buttonNext">
           <property name="styleSheet">
            <string notr="true">color:black</string>
           </property>
           <property name="text">
            <string>Next</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="buttonFinish">
-          <property name="styleSheet">
-           <string notr="true">color:black</string>
-          </property>
-          <property name="text">
-           <string>Finish</string>
           </property>
          </widget>
         </item>
