@@ -1,7 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[turkish]{babel}
 \usepackage[utf8]{inputenc}
- \usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+ \usepackage[left=1cm,top=1cm,right=2cm,bottom=2cm]{geometry}
 
 \title{Server Bileşeni Test Aşamaları}
 \author{Semen Cirit}
@@ -31,6 +31,30 @@
 \end{itemize}
 
 \end{enumerate}
+
+\section{Database alt bileşeni}
+\begin{enumerate}
+ \item firebird-superserver ve firebird-client
+
+Bilgisayarınızı yeniden başlatın,
+
+Servis yöneticisinden firebird-superserver'ı başlatın.
+
+Aşağıda bulunan komutları sırası ile çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin:
+\begin{verbatim}
+# cd /opt/firebird/examples/empbuild
+# isql (2008 için)
+# fb_isql (2009 için)
+
+SQL> CONNECT employee.fdb user sysdba password masterkey;
+SQL> show tables;
+SQL> select *from COUNTRY
+\end{verbatim}
+
+\end{enumerate}
+
+\section{Diğerleri}
+
 \begin{itemize}
  \item dhcp paketi kurulumu sonrası:
 
@@ -46,8 +70,6 @@ Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra ko
 Yukarıda bulunan komutun düzgün bir şekilde dns sunucuları listelediğini gözlemleyin.
 
 \end{itemize}
-
-\item openldap-server paketi kurulumu sonrası:
 
 
 \end{document}
