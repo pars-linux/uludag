@@ -18,7 +18,16 @@
         {% for stateBinary in stateBinarys %}
             {% ifequal stateBinary.package.source.distribution distro %}
             <tr onmouseover="this.style.backgroundColor='#d4e3e5';" onmouseout="this.style.backgroundColor='#ffffff';" >
-                <td>{{stateBinary}} {{stateBinary.is_Ack}}</td>
+                <td>{%ifequal stateBinary.is_Ack 0 %}
+                    <div style="color:#ba0000" >
+                        {{stateBinary}}
+                    </div>
+                    {% else %}
+                    <div >
+                        {{stateBinary}}
+                    </div>
+                    {% endifequal %}
+                </td>
                 <td>
                     <input type="radio" name="{{stateBinary.id}}-radio" value="ack"/>
                 </td>
@@ -53,7 +62,17 @@
         {% for stateBinary in stateBinarysOfUpdate %}
             {% ifequal stateBinary.package.source.distribution distro %}
             <tr onmouseover="this.style.backgroundColor='#d4e3e5';" onmouseout="this.style.backgroundColor='#ffffff';" >
-                <td>{{stateBinary}}</td>
+                <td>
+                    {%ifequal stateBinary.is_Ack 0 %}
+                    <div style="color:#ba0000">
+                        {{stateBinary}}
+                    </div>
+                    {% else %}
+                    <div >
+                        {{stateBinary}}
+                    </div>
+                    {% endifequal %}
+                </td>
                 <td>
                     <input type="radio" name="{{stateBinary.id}}-radio" value="ack"/>
                 </td>
