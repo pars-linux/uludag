@@ -26,33 +26,17 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_bugWidget()
         self.ui.setupUi(self)
-        QObject.connect(self.ui.comboBox,
-                               SIGNAL("currentIndexChanged(int)"),
-                               self.checkChoices)
+        self.ui.checkBox.setVisible(False)
 
     def shown(self):
-        self.checkChoices(self.ui.comboBox.currentIndex())
         pass
 
     def execute(self):
-        if self.ui.comboBox.currentIndex() == 1:
-            self.shared['type'] = 'bug'
-        else:
-            self.shared['type'] = 'feature'
         return True
 
-    def checkChoices(self, value):
-        if int(value) != 0:
-            self.mainwindow.enableNext()
-        else:
-            self.mainwindow.disableNext()
-
-    @property
-    def mainwindow(self):
-        return self.parentWidget().parentWidget().parentWidget()
-
-    @property
-    def shared(self):
-        return self.parent().parent().parent().shared_data
+    def setCheckBox(self, text=None):
+        if text is not None:
+            self.ui.checkBox.setVisible(True)
+            self.ui.checkBox.setText(text)
 
 

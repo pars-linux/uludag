@@ -24,7 +24,7 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
 
         self.ui.setupUi(self)
         self.screens = availableScreens
-        self.active_screens = []
+        self.active_widgets = []
         self.screenData = None
         self.moveInc = 1
         self.app = app
@@ -36,29 +36,28 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
 
         QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"),
                                self.slotNext)
-        QtCore.QObject.connect(self.ui.buttonFinish,
-                               QtCore.SIGNAL("clicked()"),
-                               self._doQuit)
         QtCore.QObject.connect(self.ui.buttonCancel,
                                QtCore.SIGNAL("clicked()"),
-                               self._doQuit)
+                               self.closeEvent)
 
         self.run_argv()
 
     def slotNext(self):
         self.waitNextClick.wakeAll()
 
-    def _doQuit(self):
+    def closeEvent(self, event=None):
         self.running = False
         self.waitNextClick.wakeAll()
+        if event is not None:
+            event.accept()
         self.app.quit()
 
     def _updateMenu(self):
         self.menuText = ""
         current = self.ui.mainStack.currentIndex()
-        for each in self.active_screens:
-            title = each.Widget().windowTitle()
-            if self.active_screens.index(each) == current:
+        for each in self.active_widgets:
+            title = each.windowTitle()
+            if self.active_widgets.index(each) == current:
                 self.menuText += self.putBold(title)
             else:
                 self.menuText += self.putBr(title)
@@ -76,12 +75,16 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
             self.stackMove(wid)
 
     def appendScreen(self, screen):
-        self.active_screens.append(screen)
         widget = screen.Widget()
+        self.active_widgets.append(widget)
         self.ui.mainStack.addWidget(widget)
         #index = self.ui.mainStack.count()
         #self.ui.mainStack.setCurrentIndex(index)
         self.ui.mainStack.setCurrentWidget(widget)
+        self._updateMenu()
+
+    def set_current_title(self, title):
+        self.current.setWindowTitle(title)
         self._updateMenu()
 
     def putBr(self, item):
@@ -102,10 +105,65 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         if not self.running:
             sys.exit(0)
 
+    @property
+    def current(self):
+        return self.ui.mainStack.currentWidget()
+
     # Apport interface
     def ui_present_crash(self, desktop_entry):
         self.appendScreen(errorScreen)
+
+        if desktop_entry:
+            name = desktop_entry.getName()
+            heading = 'Sorry, %s closed unexpectedly' % name
+        elif self.report.has_key('ExecutablePath'):
+            name = os.path.basename(self.report['ExecutablePath'])
+            heading = 'Sorry, the program "%s" closed unexpectedly.' % name
+        else:
+            name = self.cur_package
+            heading = 'Sorry, %s closed unexpectedly.' % name
+
+        self.set_current_title(name)
+        self.current.ui.heading.setText(heading)
+        self.current.ui.text.setText('If you were not doing anything '
+                                     'confidential (entering passwords or '
+                                     'other private information), you can help'
+                                     'to improve the application by reporting'
+                                     'the problem.')
+        self.current.setCheckBox('&Ignore future crashes of this program'
+                                 ' version')
         self.wait_user_input()
+
+        blacklist = self.current.ui.checkBox.isChecked()
+        return {'action': 'report', 'blacklist': blacklist}
+
+    def ui_present_kernel_error(self):
+        self.appendScreen(errorScreen)
+
+        message = 'Your system encountered a serious kernel problem.'
+        annotate = ''
+        if self.report.has_key('Annotation'):
+            annotate = self.report['Annotation'] + '\n\n'
+        annotate += ('You can help the developers to fix the problem by '
+                     'reporting it.')
+
+        self.set_current_title('Kernel problem')
+        self.current.ui.heading.setText(message)
+        self.current.ui.text.setText(annotate)
+
+        self.wait_user_input()
+        return 'report'
+
+    def ui_persent_package_error(self):
+        self.appendScreen(errorScreen)
+
+        name = self.report['Package']
+        heading = 'Sorry, the package "%s" failed to install or upgrade.' % name
+        text = ('You can help the developers to fix the package by reporting'\
+                ' the problem')
+
+        self.wait_user_input()
+        return 'report'
 
 
 
@@ -137,7 +195,5 @@ if __name__ == "__main__":
     rect  = QtGui.QDesktopWidget().screenGeometry()
     papport.move(rect.width()/2 - papport.width()/2, rect.height()/2 -\
                  papport.height()/2)
-    papport.ui_present_crash(None)
-    #papport.appendScreen(goodbyeWidget)
     app.exec_()
 
