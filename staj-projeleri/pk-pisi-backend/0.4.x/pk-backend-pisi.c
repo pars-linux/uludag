@@ -162,6 +162,18 @@ backend_get_files (PkBackend *backend, gchar **package_ids)
 }
 
 /**
+ * backend_get_packages:
+ */
+static void
+backend_get_packages (PkBackend *backend, PkBitfield filters)
+{
+	gchar *filters_text;
+	filters_text = pk_filter_bitfield_to_text (filters);
+	pk_backend_spawn_helper (spawn, "pisiBackend.py", "get-packages", filters_text, NULL);
+	g_free (filters_text);
+}
+
+/**
  * backend_get_requires:
  */
 static void
@@ -394,7 +406,7 @@ PK_BACKEND_OPTIONS (
 	backend_get_details,			/* get_details */
 	NULL,					/* get_distro_upgrades */
 	backend_get_files,			/* get_files */
-	NULL,					/* get_packages */
+	backend_get_packages,			/* get_packages */
 	backend_get_repo_list,			/* get_repo_list */
 	backend_get_requires,			/* get_requires */
 	NULL,					/* get_update_detail */
