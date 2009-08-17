@@ -150,9 +150,9 @@ class Ui_Connection(object):
     def retranslateUi(self, Connection):
         Connection.setWindowTitle(kdecore.i18n("Form"))
         self.labelEthernet.setText(kdecore.i18n("Ethernet"))
-        self.ethernetStatus.setText(kdecore.i18n("Not connected."))
+        self.ethernetStatus.setText(kdecore.i18n("Not connected"))
         self.labelWireless.setText(kdecore.i18n("Wireless"))
-        self.wirelessStatus.setText(kdecore.i18n("Not connected."))
+        self.wirelessStatus.setText(kdecore.i18n("Not connected"))
         self.noProfile.setText(kdecore.i18n("No profile defined"))
         self.nmButton.setText(kdecore.i18n("Open Network Manager"))
 
