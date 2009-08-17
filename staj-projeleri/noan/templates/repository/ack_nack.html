@@ -12,13 +12,13 @@
             <tr>
                 <th colspan="5">
                     <u><strong>{{distro}}</strong></u>
-        </th>
+                </th>
             </tr>
             <tr><th>Package Name</th><th>Ack</th><th>Nack</th><th>Null</th><th>Comment</th></tr>
         {% for stateBinary in stateBinarys %}
             {% ifequal stateBinary.package.source.distribution distro %}
             <tr onmouseover="this.style.backgroundColor='#d4e3e5';" onmouseout="this.style.backgroundColor='#ffffff';" >
-                <td>{{stateBinary}}</td>
+                <td>{{stateBinary}} {{stateBinary.is_Ack}}</td>
                 <td>
                     <input type="radio" name="{{stateBinary.id}}-radio" value="ack"/>
                 </td>
@@ -44,28 +44,27 @@
     <form action="." method="post">
     <table class="altrowstable" id="alternatecolor" >
     {% for distro in distributions %}
-        <tr>
-            <td>
-                <strong>{{distro}}</strong>
-            </td>
-            <td>
-            </td>
-        </tr><tr><td></td><td></td><td></td><td></td></tr>
+            <tr>
+                <th colspan="5">
+                    <u><strong>{{distro}}</strong></u>
+                </th>
+            </tr>
+            <tr><th>Package Name</th><th>Ack</th><th>Nack</th><th>Null</th><th>Comment</th></tr>
         {% for stateBinary in stateBinarysOfUpdate %}
             {% ifequal stateBinary.package.source.distribution distro %}
-            <tr>
-                <td><b>{{stateBinary}}</b></td>
-                <td><input type="radio" name="{{stateBinary.id}}-radio" value="ack"/>Ack
-                    <input type="radio" name="{{stateBinary.id}}-radio" value="nack"/>Nack
-                    <input type="radio" name="{{stateBinary.id}}-radio" value=""/>Null
+            <tr onmouseover="this.style.backgroundColor='#d4e3e5';" onmouseout="this.style.backgroundColor='#ffffff';" >
+                <td>{{stateBinary}}</td>
+                <td>
+                    <input type="radio" name="{{stateBinary.id}}-radio" value="ack"/>
                 </td>
+                <td>
+                    <input type="radio" name="{{stateBinary.id}}-radio" value="nack"/>
+                </td>
+                <td>
+                    <input type="radio" name="{{stateBinary.id}}-radio" value=""/>
+                 </td>
+                 <td><input type="text" name="{{stateBinary.id}}-comment" /></td>
             </tr>
-            <tr>
-                <td>commit: </td>
-                <td><input type="text" name="{{stateBinary.id}}-commit" /></td>
-            </tr>
-            <tr><td>{{ stateBinary.is_Ack}}
-            </td><td></td><td></td><td></td></tr>
             {% endifequal %}
         {% endfor %}
     {% endfor %}
