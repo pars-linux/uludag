@@ -55,6 +55,11 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
             version = "%s-%s" % (package.version, package.release)
         return version
 
+    def __get_package_id(self, package):
+        """ Returns package id string of given package """
+        pkg = self.packagedb.get_package(package)
+        return self.get_package_id(pkg.name, self.__get_package_version(pkg), pkg.architecture, "")
+
     def __get_package(self, package, filters = None):
         """ Returns package object suitable for other methods """
         if self.installdb.has_package(package):
