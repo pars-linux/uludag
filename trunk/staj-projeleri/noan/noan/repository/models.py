@@ -186,24 +186,33 @@ class Binary(models.Model):
     def is_Ack(self):
         ok = 1
         RunTimeDep = self.package.runtimedependency_set.filter(package__exact=self.package).filter(package__binary__resolution__exact = "pending")
-       # print RunTimeDep
-        for dep in RunTimeDep:
-            #print dep
-            #package = Package.objects.filter(name__exact=dep.dep_package).filter(source__distribution = self.package.source.distribution)
-            binary = Binary.objects.filter(package__name__exact = dep.dep_package).filter(package__source__distribution = self.package.source.distribution) # .filter(package__binary__resolution__exact = "pending")
-            #print binary
+        BuildTimeDep = self.package.source.builddependency_set.filter(source__package__exact=self.package).filter(source__package__binary__resolution__exact = "pending")
+        for dep in BuildTimeDep:
+            binary = Binary.objects.filter(package__name__exact = dep.dep_package).filter(package__source__distribution = self.package.source.distribution)
             if dep.version != '':
                 binary = binary.filter(update__version_no__exact = dep.version)
             if dep.version_from != '':
                 binary = binary.filter(update__version_no__gte = dep.version_from)
             if dep.version_to != '':
                 binary = binary.filter(update__version_no__lte = dep.version_to)
-            print "binary: %s dep: %s  package: %s" %(binary, dep, self.package)
             binary = binary.filter(stateoftest__state__exact = "nack")
             if binary:
                 ok = 0
             else:
-                #print "%s / %s" %(dep,self)
+                pass
+
+        for dep in RunTimeDep:
+            binary = Binary.objects.filter(package__name__exact = dep.dep_package).filter(package__source__distribution = self.package.source.distribution)
+            if dep.version != '':
+                binary = binary.filter(update__version_no__exact = dep.version)
+            if dep.version_from != '':
+                binary = binary.filter(update__version_no__gte = dep.version_from)
+            if dep.version_to != '':
+                binary = binary.filter(update__version_no__lte = dep.version_to)
+            binary = binary.filter(stateoftest__state__exact = "nack")
+            if binary:
+                ok = 0
+            else:
                 pass
         if ok == 1:
             return 1
