@@ -184,8 +184,8 @@ def search_form(request):
 @login_required
 def AckNackList(request):
     list=[]
-    stateBinary = Binary.objects.filter(resolution = 'pending').filter(package__source__maintained_by = request.user)
-    stateBinaryOfUpdate = Binary.objects.filter(resolution = 'pending').filter(update__updated_by = request.user).order_by('package__name')
+    stateBinary = Binary.objects.filter(resolution = 'pending').filter(package__source__maintained_by = request.user).filter(stateoftest__isnull=True)
+    stateBinaryOfUpdate = Binary.objects.filter(resolution = 'pending').filter(update__updated_by = request.user).filter(stateoftest__isnull=True)
 
 # For Django 1.1 with getting hidden input value. Form in forms.py in noan
 
@@ -214,16 +214,15 @@ def AckNackList(request):
                 if (post_info[1] == "comment"):
                     comment[post_info[0]] = list[1]
             except:
-                print "middleware"
+                pass
         for binary_id in  radio:
             a = binary_id
-            print radio[binary_id][0]
-            Add_State = StateOfTest(binary = Binary.objects.get(id=binary_id), changed_by = request.user, updated=date.today(), state = radio[binary_id][0])
-            Add_State.save()
-            if comment[binary_id][0]:
-                Add_Comment = CommentOfStatement(state_of_test_id = Add_State, comment = comment[binary_id][0])
-                Add_Comment.save()
-            print Add_State
+            if radio[binary_id][0]:
+                Add_State = StateOfTest(binary = Binary.objects.get(id=binary_id), changed_by = request.user, updated=date.today(), state = radio[binary_id][0])
+                Add_State.save()
+                if comment[binary_id][0]:
+                    Add_Comment = CommentOfStatement(state_of_test_id = Add_State, comment = comment[binary_id][0])
+                    Add_Comment.save()
     if stateBinary or stateBinaryOfUpdate:
         distributions = Distribution.objects.all()
     else:

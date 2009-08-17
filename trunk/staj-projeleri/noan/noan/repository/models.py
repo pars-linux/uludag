@@ -182,15 +182,33 @@ class Binary(models.Model):
         verbose_name_plural = _('binaries')
         ordering = ['package__name', '-no']
         unique_together = ('no', 'package')
+
     def is_Ack(self):
-        RunTimeDep = self.package.runtimedependency_set.filter(package__exact=self.package)
+        ok = 1
+        RunTimeDep = self.package.runtimedependency_set.filter(package__exact=self.package).filter(package__binary__resolution__exact = "pending")
+       # print RunTimeDep
         for dep in RunTimeDep:
-            a = Package.objects.filter(name__exact=dep.dep_package).filter(source__distribution = self.package.source.distribution).filter(binary__resolution__exact="pending")
-            if a:
-                print "dep %s - %s" %(dep,a)
+            #print dep
+            #package = Package.objects.filter(name__exact=dep.dep_package).filter(source__distribution = self.package.source.distribution)
+            binary = Binary.objects.filter(package__name__exact = dep.dep_package).filter(package__source__distribution = self.package.source.distribution) # .filter(package__binary__resolution__exact = "pending")
+            #print binary
+            if dep.version != '':
+                binary = binary.filter(update__version_no__exact = dep.version)
+            if dep.version_from != '':
+                binary = binary.filter(update__version_no__gte = dep.version_from)
+            if dep.version_to != '':
+                binary = binary.filter(update__version_no__lte = dep.version_to)
+            print "binary: %s dep: %s  package: %s" %(binary, dep, self.package)
+            binary = binary.filter(stateoftest__state__exact = "nack")
+            if binary:
+                ok = 0
             else:
-                print "in stable repo %s" %(dep)
-        return
+                #print "%s / %s" %(dep,self)
+                pass
+        if ok == 1:
+            return 1
+        else:
+            return 0
 
 class Task(models.Model):
     package = models.ForeignKey(Package, verbose_name=_('package'))
