@@ -285,10 +285,10 @@ class StateOfTest(models.Model):
 
 
 class CommentOfStatement(models.Model):
-    state_of_test_id = models.ForeignKey(StateOfTest, verbose_name=_('id'))
+    state_of_test_id = models.OneToOneField(StateOfTest, verbose_name=_('id'))
     comment = models.CharField(max_length=256, verbose_name=_('comment'))
     def __unicode__(self):
-        return _('%(binary)s (statement: %(state)s, %(comment)s)') % {'binary': self.stateoftest.binary, 'state': self.stateoftest.state, 'comment': self.comment }
+        return _('%(binary)s (statement: %(state)s, %(comment)s)') % {'binary': self.state_of_test_id.binary, 'state': self.state_of_test_id.state, 'comment': self.comment }
     class Meta:
         ordering = ['id']
         verbose_name = _('comment of statement')

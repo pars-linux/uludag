@@ -19,13 +19,17 @@ urlpatterns = patterns('',
     (r'^(?P<distName>[^/]+)-(?P<distRelease>[^/]+)/(?P<sourceName>[^/]+)/(?P<packageName>[^/]+)/$', 'noan.repository.views.page_package'),
     # Binary
     (r'^(?P<distName>[^/]+)-(?P<distRelease>[^/]+)/(?P<sourceName>[^/]+)/(?P<packageName>[^/]+)/(?P<binaryNo>\d+)/$', 'noan.repository.views.page_binary'),
-    #search
+    # search
     (r'^search/$', 'noan.repository.views.search_form'),
-    #ack/nack list
+    # Maintainer ack/nack list
     (r'^ack_nack/$','noan.repository.views.AckNackList'),
-    #logout
+    # all list of ack/nack
+    (r'^statelist/$','noan.repository.views.ListAllAckNack'),
+
+
+    # logout
     (r'^logout/$','repository.views.log_out'),
-    #login
+    # login
     (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'registration/login.html'}),
-    (r'^ack/$','noan.repository.views.acknack'),
+
 )
