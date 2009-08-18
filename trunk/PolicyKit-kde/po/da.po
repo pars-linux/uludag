@@ -1,8 +1,7 @@
-# translation of sv.po to Svenska
+# translation of sv.po to danish
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Patrik Karlsson <patrik@pardus.nu>, 2008, 2009.
 # Peter Lyberth <peterjensen84@gmail.com>, 2009.
 msgid ""
 msgstr ""
