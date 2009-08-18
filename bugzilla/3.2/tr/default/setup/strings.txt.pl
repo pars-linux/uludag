@@ -49,6 +49,11 @@ UYARI: ##table##.##column## sütunundaki verinin bir kısmı yeni uzunluk sını
 
 EOT
     install_module => '##module## sürüm ##version## yükleniyor...',
+    max_allowed_packet => <<EOT,
+UYARI: MySQL konfigürasyon dosyasında  max_allowed_packet parametresini
+en az ##needed## olacak şekilde düzenlemelisiz. Şu anki değer: ##current##.
+MySQL konfigürasyon dosyasındaki [mysqld] kısmında gerekli düzenlemeyi yapabilirsiniz.
+EOT
     module_found => "s##ver## bulundu",
     module_not_found => "bulunamadı",
     module_ok => 'tamam',
