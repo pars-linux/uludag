@@ -9,13 +9,7 @@ from noan.repository.models import *
 from django.contrib.auth import authenticate, login, logout
 
 from  datetime import date
-# from django.forms.formsets import formset_factory
-# from django import forms
-# from noan.forms import *
-
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
-
-
 
 def page_index(request):
     distributions = Distribution.objects.all()
@@ -186,22 +180,6 @@ def AckNackList(request):
     list=[]
     stateBinary = Binary.objects.filter(resolution = 'pending').filter(package__source__maintained_by = request.user).filter(stateoftest__isnull=True)
     stateBinaryOfUpdate = Binary.objects.filter(resolution = 'pending').filter(update__updated_by = request.user).filter(stateoftest__isnull=True)
-
-# For Django 1.1 with getting hidden input value. Form in forms.py in noan
-
-########################################################################################3
-    #for binary in stateBinary:
-    #        list.append({'binary': binary.get_filename(),
-    #                'distro' : binary.package.source.distribution
-    #            })
-    #ArticleFormSet = formset_factory(AckNackForm, extra=0)
-################################################################################################
-    #if request.method == 'POST':
-     #   formset = ArticleFormSet(request.POST)
-      #  if formset.is_valid():
-      #      for form in formset.cleaned_data:
-      #          print form
-    #formset = ArticleFormSet(initial = list)
     if request.method == 'POST':
         radio = {}
         comment = {}
@@ -240,20 +218,11 @@ def log_out(request):
     context = {}
     return HttpResponseRedirect('/')
 
-#################################################################################
-#   testing form model 
-
-
-def acknack(request):
-    ArticleFormSet = formset_factory(AckNackForm, extra=2)
-    if request.method == 'POST':
-        formset = ArticleFormSet(request.POST)
-        if formset.is_valid():
-            for form in formset.cleaned_data:
-                print form['binary']
-            # do something with the formset.cleaned_data
-    else:
-        formset = ArticleFormSet()
-    return render_to_response('repository/acknack.html', {'formset': formset})
-
-##################################################################################3
+def ListAllAckNack(request):
+    AckNackList = StateOfTest.objects.all()
+    distributions = Distribution.objects.all()
+    context = {
+            'distributions' : distributions,
+            'AckNackList' : AckNackList,
+    }
+    return render_to_response('repository/acks_nacks.html', context, context_instance=RequestContext(request))
