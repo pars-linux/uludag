@@ -74,15 +74,13 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
     package = Package.objects.get(name=packageName, source=source)
     binary = Binary.objects.get(no=binaryNo, package=package)
     if 'statu' in request.POST:
-        if request.POST['statu'] == "nack":
-            State = "nack"
-        else:
-            State = "ack"
-        state = StateOfTest.objects.get(binary = binary)
-        print state.state
-        state.state = State
-        state.save()
-        print state.state
+        if request.method == "POST":
+            pass
+        #state = StateOfTest.objects.get(binary = binary)
+        #print state.state
+        #state.state = State
+        #state.save()
+        #print state.state
     context = {
         'binary': binary,
     }
@@ -180,6 +178,9 @@ def AckNackList(request):
     list=[]
     stateBinary = Binary.objects.filter(resolution = 'pending').filter(package__source__maintained_by = request.user).filter(stateoftest__isnull=True)
     stateBinaryOfUpdate = Binary.objects.filter(resolution = 'pending').filter(update__updated_by = request.user).filter(stateoftest__isnull=True)
+#    for updated in stateBinaryOfUpdate:
+#        if update in stateBinary:
+#            stateBinaryOfUpdate.remove(update)
     if request.method == 'POST':
         radio = {}
         comment = {}
@@ -216,7 +217,7 @@ def AckNackList(request):
 def log_out(request):
     logout(request)
     context = {}
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/repository')
 
 def ListAllAckNack(request):
     AckNackList = StateOfTest.objects.all()
