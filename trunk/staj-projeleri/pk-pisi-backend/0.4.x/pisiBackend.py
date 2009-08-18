@@ -64,6 +64,9 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         if self.installdb.has_package(package):
             status = INFO_INSTALLED
             pkg = self.installdb.get_package(package)
+            pkg2 = self.packagedb.get_package(package)
+            if pkg2.history[0].release > pkg.release:
+                status = INFO_UPDATING
         elif self.packagedb.has_package(package):
             status = INFO_AVAILABLE
             pkg = self.packagedb.get_package(package)
@@ -83,11 +86,11 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
                 if FILTER_NOT_GUI in filterlist and "app:gui" in pkg.isA:
                     return
 
-        version = self.__get_package_version(pkg)
-
-        id = self.get_package_id(pkg.name, version, pkg.architecture, "")
-
-        return self.package(id, status, pkg.summary)
+        if status == INFO_UPDATNG:
+            self.package(self.__get_package_id(pkg), INFO_INSTALLED, pkg.summary)
+            self.package(self.__get_package_id(pkg2), status, pkg2.summary)
+        else:
+            self.package(self.__get_package_id(pkg), status, pkg.summary)
 
     def get_depends(self, filters, package_ids, recursive):
         """ Prints a list of depends for a given package """
@@ -130,6 +133,27 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
                          pkg.packageSize)
         else:
             self.error(ERROR_PACKAGE_NOT_FOUND, "Package was not found")
+
+    def get_update_detail(self, package_ids):
+        ''' Implement the {backend}-get-update_detail functionality '''
+        self.allow_cancel(True)
+        self.percentage(None)
+        self.status(STATUS_INFO)
+
+        package = self.get_package_from_id(package_ids[0])[0]
+
+        if package in pisi.api.list_upgradable():
+            installed_package = self.installdb.get_package(package)
+            update_package    = self.packagedb.get_package(package)
+            desc              = update_package.history[0].comment
+            issued            = update_package.history[0].date
+
+            desc = desc.replace("\n", "")
+            desc = desc.split()
+
+        self.update_detail(self.__get_package_id(installed_package),
+                           self.__get_package_id(update_package),
+                           '', 'http://www.pardus.org.tr', 'http://bugs.pardus.org.tr', '', '', " ".join(desc), '', '', issued, '')
 
     def get_files(self, package_ids):
         """ Prints a file list for a given package """
