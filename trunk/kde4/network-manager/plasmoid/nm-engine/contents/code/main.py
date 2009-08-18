@@ -38,7 +38,9 @@ class NMEngine(plasmascript.DataEngine):
         link.listenSignals("Network.Link", self.handler)
 
     def handler(self, package, signal, args):
-        self.updateSourceEvent("%s.%s" % (package, args[0]))
+        if str(signal) == "stateChanged" :
+            # Other signals don't interest us 
+            self.updateSourceEvent("%s.%s" % (package, args[0]))
 
     def sources(self):
         sources = []
