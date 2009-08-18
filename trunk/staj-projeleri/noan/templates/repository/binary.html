@@ -7,13 +7,17 @@
         <li><strong>Package:</strong> <a href="{{ binary.package.get_url }}">{{ binary.package.name }}</a></li>
         <li><strong>Updated By:</strong> <a href="/repository/users/{{ binary.update.updated_by.username }}/">{{ binary.update.updated_by.get_full_name }}</a></li>
     </ul>
-    {%ifequal binary.resolution "pending" %}
+    {% if user.is_authenticated %}
+    {% ifequal binary.resolution "pending" %}
+    {% if not binary.stateoftest_set.all%}
     <h2>ACK/NACK</h2>
     <form action="" method="post">
-        <button type="submit" name="statu" value="ack" >ack</button>
-        <button type="submit" name="statu" value="nack">nack</button>
+        <button type="submit" name="state" value="ack" >ack</button>
+        <button type="submit" name="state" value="nack">nack</button>
     </form>
-    {%endifequal%}
+    {% endif %}
+    {% endifequal %}
+    {% endif %}
     <h2>Runtime Dependencies</h2>
     <ul>
         {% for dep in binary.package.runtimedependency_set.all %}
