@@ -1,0 +1,106 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2009.
+# Peter Lyberth <peterjensen84@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: disk-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"PO-Revision-Date: 2009-08-18 22:38+0200\n"
+"Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
+"Language-Team: Danish <  pardus-translators@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .tmp/ui_edit.py:67
+msgid "Mount Disk Automatically"
+msgstr "Monter Enheden Automatisk"
+
+#: .tmp/ui_edit.py:68
+msgid "Mount Point:"
+msgstr "Monteringspunkt:"
+
+#: .tmp/ui_edit.py:69
+msgid "Filesystem Type:"
+msgstr "Filsystem:"
+
+#: .tmp/ui_edit.py:70
+msgid "Options:"
+msgstr "Muligheder:"
+
+#: .tmp/ui_edit.py:71
+msgid "Default Options"
+msgstr "Standard muligheder"
+
+#: .tmp/ui_item.py:65
+msgid "Mount or unmount disk."
+msgstr "Monter eller afmonter enhed."
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr "Rediger"
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr "Slet"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Tilføj ny"
+
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Indstillinger"
+
+#: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
+msgid "Disk Manager"
+msgstr "Enheds håndtering"
+
+#: .tmp/diskmanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/diskmanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/diskmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/diskmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Nuværende vedligeholder"
+
+#: .tmp/diskmanager/main.py:86
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Der er ikke nogen pakker der kan agere backend for dette program.\n"
+"Kontroller venligst at de nødvendige pakker er installeret og "
+"konfigureret korrekt."
+
+#: .tmp/diskmanager/main.py:175
+msgid "Mounted at %1"
+msgstr "Monteret som %1"
+
+#: .tmp/diskmanager/main.py:194
+msgid "All Items"
+msgstr "Alle elementer"
+
+#: .tmp/diskmanager/main.py:205
+msgid "Add"
+msgstr "Tilføj"
+
+#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
+#: .tmp/diskmanager/main.py:321
+msgid "Access denied."
+msgstr "Adgang nægtet."
+
+
