@@ -24,7 +24,6 @@ if not dbus.get_default_main_loop():
     from dbus.mainloop.qt import DBusQtMainLoop
     DBusQtMainLoop(set_as_default = True)
 
-net_packages = ["net_tools", "wireless_tools"]
 link = comar.Link()
 
 def asString(lst, pkg):
@@ -43,7 +42,9 @@ class NMEngine(plasmascript.DataEngine):
 
     def sources(self):
         sources = []
-        for package in net_packages:
+
+        # Iterate through network backends
+        for package in link.Network.Link:
             profiles = asString(list(link.Network.Link[package].connections()), package)
             for profile in profiles:
                 sources.append(profile)
