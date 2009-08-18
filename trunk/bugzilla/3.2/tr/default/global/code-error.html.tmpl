@@ -33,7 +33,7 @@
   # in this file; if you do not wish to change it, use the "none" filter.
   #%]
 
-[% PROCESS global/variables.none.tmpl %]
+[% PROCESS "global/field-descs.none.tmpl" %]
 
 [% DEFAULT title = "İç Hata" %]
 
@@ -284,6 +284,11 @@
 
   [% ELSIF error == "no_manual_moved" %]
     [% terms.BugAcc %] taşımadan durumunu TAŞINDI olarak değiştiremezsiniz.
+
+  [% ELSIF error == "no_open_bug_status" %]
+    [% title = "$terms.Bug Cannot Be Confirmed" %]
+    There is no valid transition from
+    [%+ get_status("UNCONFIRMED") FILTER html %] to an open state.
 
   [% ELSIF error == "param_must_be_numeric" %]
     [% title = "Geçersiz Parametre" %]
