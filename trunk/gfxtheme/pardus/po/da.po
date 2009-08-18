@@ -2,18 +2,20 @@
 # translation of bootloader.pot_[g4TXCa].po to Dansk
 # LANGUAGE translations for boot loader
 # Copyright (C) 2005 SUSE Linux GmbH
-# Martin Møller <martin@martinm-76.dk>, 2005.
 #
+# Martin Møller <martin@martinm-76.dk>, 2005.
+# Peter Lyberth <peterjensen84@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: bootloader\n"
-"PO-Revision-Date: 2008-05-17 13:08+0100\n"
-"Last-Translator: Jan Madsen <jan.madsen.pt@gmail.com>\n"
-"Language-Team: dansk <opensuse-translation@opensuse.org>\n"
+"PO-Revision-Date: 2009-08-18 11:38+0200\n"
+"Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
+"Language-Team: Danish <peterjensen84@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. ok button label
 #. txt_ok
@@ -407,25 +409,26 @@ msgstr "Tjek installationsmedie"
 
 #. txt_zorg
 msgid "Graphical Display"
-msgstr ""
+msgstr "Grafisk visning"
 
 #. txt_zorg_default
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #. txt_zorg_safe
 msgid "Failsafe"
-msgstr ""
+msgstr "Fejlsikker"
 
 #. txt_zorg_probe
 msgid "Probe Again"
-msgstr ""
+msgstr "Test igen"
 
 #. txt_zorg_off
 msgid "Off"
-msgstr ""
+msgstr "Slået fra"
 
 #. txt_hdt
 msgid "Hardware info"
-msgstr ""
+msgstr "Hardware information"
+
 
