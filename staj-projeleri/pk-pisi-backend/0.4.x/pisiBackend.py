@@ -57,8 +57,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
 
     def __get_package_id(self, package):
         """ Returns package id string of given package """
-        pkg = self.packagedb.get_package(package)
-        return self.get_package_id(pkg.name, self.__get_package_version(pkg), pkg.architecture, "")
+        return self.get_package_id(package.name, self.__get_package_version(package), package.architecture, "")
 
     def __get_package(self, package, filters = None):
         """ Returns package object suitable for other methods """
@@ -267,7 +266,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
                     pkg = self.packagedb.get_package(package)
                     filePath = directory + '/' + pkg.packageURI
                     fileList.append(filePath)
-                    self.package(self.__get_package_id(package), INFO_DOWNLOADING, '')
+                    self.package(self.__get_package_id(pkg), INFO_DOWNLOADING, '')
 
                 except pisi.Error, e:
                     self.error(ERROR_PACKAGE_DOWNLOAD_FAILED, e)
