@@ -13,6 +13,12 @@ TEST_RESULTS = (
     ('no', _('No')),
 )
 
+STATE_OF_TEST = (
+    ('ack', _('Acknowledgment')),
+    ('nack', _('Not Acknowledgment')),
+    ('', _('Unknown')),
+)
+
 RELEASE_RESOLUTIONS = (
     ('pending', _('Pending')),
     ('released', _('Released')),
@@ -184,10 +190,14 @@ class Binary(models.Model):
         unique_together = ('no', 'package')
 
     def is_Ack(self):
+# ok is showing to us what is have got no nack run time or build time dependecy
         ok = 1
+        # getting runtime dep to binary in pending
         RunTimeDep = self.package.runtimedependency_set.filter(package__exact=self.package).filter(package__binary__resolution__exact = "pending")
         BuildTimeDep = self.package.source.builddependency_set.filter(source__package__exact=self.package).filter(source__package__binary__resolution__exact = "pending")
+
         for dep in BuildTimeDep:
+            # get the binary which is build dep. on package name
             binary = Binary.objects.filter(package__name__exact = dep.dep_package).filter(package__source__distribution = self.package.source.distribution)
             if dep.version != '':
                 binary = binary.filter(update__version_no__exact = dep.version)
@@ -195,6 +205,7 @@ class Binary(models.Model):
                 binary = binary.filter(update__version_no__gte = dep.version_from)
             if dep.version_to != '':
                 binary = binary.filter(update__version_no__lte = dep.version_to)
+            # if find a binary which is in build dep. and its state nack ok = 0 and getting this info into template
             binary = binary.filter(stateoftest__state__exact = "nack")
             if binary:
                 ok = 0
@@ -272,7 +283,7 @@ class StateOfTest(models.Model):
     binary = models.ForeignKey(Binary, verbose_name=_('binary'))
     changed_by = models.ForeignKey(User, verbose_name=_('changed by'))
     updated = models.DateField(verbose_name=_('updated'),blank=True)
-    state = models.CharField(max_length=4, verbose_name=_('state'), default='', blank=True)
+    state = models.CharField(max_length=4, choices=STATE_OF_TEST, verbose_name=_('state'), default='', blank=True)
 
     def __unicode__(self):
         return _('%(state)s (binary: %(binary)s source: %(source)s, distro: %(distro)s)') % {'state': self.state, 'binary': self.binary, 'source': self.binary.package.source.name, 'distro': self.binary.package.source.distribution}

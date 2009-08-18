@@ -1,24 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load mytags %}
 <h1>Ack/Nack</h1>
-{%if stateBinarys %}
-<div>
+{% if stateBinarys  or stateBinarysOfUpdate %}
 <div style="float:left;padding-left:10px">
     <form action="." method="post">
-        <h2>maintained</h2>
         <table class="altrowstable">
             {% for distro in distributions %}
 
             <tr>
-                <th colspan="5">
+                <th colspan="6">
                     <u><strong>{{distro}}</strong></u>
                 </th>
             </tr>
-            <tr><th>Package Name</th><th>Ack</th><th>Nack</th><th>Null</th><th>Comment</th></tr>
+            <tr><th>Maintained<br/>or Updated</th><th>Package Name</th><th>Ack</th><th>Nack</th><th>Null</th><th>Comment</th></tr>
+        {% if stateBinarys %}
         {% for stateBinary in stateBinarys %}
             {% ifequal stateBinary.package.source.distribution distro %}
             <tr onmouseover="this.style.backgroundColor='#d4e3e5';" onmouseout="this.style.backgroundColor='#ffffff';" >
-                <td>{%ifequal stateBinary.is_Ack 0 %}
+                <td>M</td>
+                <td>
+                    {% ifequal stateBinary.is_Ack 0 %}
                     <div style="color:#ba0000" >
                         {{stateBinary}}
                     </div>
@@ -41,59 +43,43 @@
             </tr>
             {% endifequal %}
         {% endfor %}
+        {% endif %}
+        {% if stateBinarysOfUpdate %}
+        {% for stateBinary in stateBinarysOfUpdate %}
+            {% ifequal stateBinary.package.source.distribution distro %}
+                {% if not stateBinary|IN:stateBinarys %}
+                    <tr onmouseover="this.style.backgroundColor='#d4e3e5';" onmouseout="this.style.backgroundColor='#ffffff';" >
+                        <td>U</td>
+                        <td>
+                            {% ifequal stateBinary.is_Ack 0 %}
+                                <div style="color:#ba0000">
+                                    {{stateBinary}}
+                                </div>
+                            {% else %}
+                                <div >
+                                    {{stateBinary}}
+                                </div>
+                            {% endifequal %}
+                        </td>
+                        <td>
+                            <input type="radio" name="{{stateBinary.id}}-radio" value="ack"/>
+                        </td>
+                        <td>
+                            <input type="radio" name="{{stateBinary.id}}-radio" value="nack"/>
+                        </td>
+                        <td>
+                            <input type="radio" name="{{stateBinary.id}}-radio" value=""/>
+                        </td>
+                        <td><input type="text" name="{{stateBinary.id}}-comment" /></td>
+                    </tr>
+                {% endif  %}
+            {% endifequal %}
+        {% endfor %}
+        {% endif %}
 {% endfor %}
 <tr><td colspan="5"><input type="submit"/></tr>
         </table>
     </form>
-</div>
-{% endif %}
-{%if stateBinarysOfUpdate %}
-<div style="float:left;padding-left:10px">
-    <h2>Updated</h2>
-    <form action="." method="post">
-    <table class="altrowstable" id="alternatecolor" >
-    {% for distro in distributions %}
-            <tr>
-                <th colspan="5">
-                    <u><strong>{{distro}}</strong></u>
-                </th>
-            </tr>
-            <tr><th>Package Name</th><th>Ack</th><th>Nack</th><th>Null</th><th>Comment</th></tr>
-        {% for stateBinary in stateBinarysOfUpdate %}
-            {% ifequal stateBinary.package.source.distribution distro %}
-            <tr onmouseover="this.style.backgroundColor='#d4e3e5';" onmouseout="this.style.backgroundColor='#ffffff';" >
-                <td>
-                    {%ifequal stateBinary.is_Ack 0 %}
-                    <div style="color:#ba0000">
-                        {{stateBinary}}
-                    </div>
-                    {% else %}
-                    <div >
-                        {{stateBinary}}
-                    </div>
-                    {% endifequal %}
-                </td>
-                <td>
-                    <input type="radio" name="{{stateBinary.id}}-radio" value="ack"/>
-                </td>
-                <td>
-                    <input type="radio" name="{{stateBinary.id}}-radio" value="nack"/>
-                </td>
-                <td>
-                    <input type="radio" name="{{stateBinary.id}}-radio" value=""/>
-                 </td>
-                 <td><input type="text" name="{{stateBinary.id}}-comment" /></td>
-            </tr>
-            {% endifequal %}
-        {% endfor %}
-    {% endfor %}
-        <tr>
-            <td><input type="submit"/></td>
-            <td></td>
-        </tr>
-    </table>
-    </form>
-</div>
 {% endif %}
 </div>
 {% endblock %}
