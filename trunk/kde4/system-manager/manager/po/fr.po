@@ -1,0 +1,110 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: system-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"PO-Revision-Date: 2009-08-19 00:46+0200\n"
+"Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .tmp/ui_main.py:156
+msgid "Language Settings"
+msgstr "Paramètres linguistiques"
+
+#: .tmp/ui_main.py:157
+msgid "System Language:"
+msgstr "Langue du système"
+
+#: .tmp/ui_main.py:158
+msgid "Console Keyboard Layout:"
+msgstr "Disposition du clavier pour la console"
+
+#: .tmp/ui_main.py:159
+msgid ""
+"Note that these settings do not effect your desktop. Desktop settings can be "
+"changed in 'Regional & Language' module in System Settings."
+msgstr ""
+"Notez que ces paramètres n'affectent pas votre bureau. Les paramètres du "
+"bureau peuvent être "
+"changés dans le module 'Région & langue' de la configuration du système."
+
+#: .tmp/ui_main.py:160
+msgid "Service Settings"
+msgstr "Paramètres de service"
+
+#: .tmp/ui_main.py:161
+msgid "First Service to Start:"
+msgstr "Premier service à lancer :"
+
+#: .tmp/ui_main.py:162
+msgid ""
+"Although services are started parallel manner in boot process, users may "
+"want to start a single service before checking dependencies."
+msgstr ""
+"Bien que les services soient lancés en parallèles pendant le démarrage de "
+"l'ordinateur, "
+"les utilisateurs peuvent souhaiter démarrer un service unique avant de "
+"vérifier les dépendances."
+
+#: .tmp/ui_main.py:163
+msgid "Clock Settings"
+msgstr "Paramètres de l'horloge"
+
+#: .tmp/ui_main.py:164
+msgid "Keep the hardware clock in UTC"
+msgstr "Conserver l'horloge machine en UTC"
+
+#: .tmp/ui_main.py:165
+msgid "Normalize systematic drift of the hardware clock"
+msgstr "Normaliser le décalage systématique de l'horloge matérielle"
+
+#: .tmp/ui_main.py:166
+msgid "Console Settings"
+msgstr "Paramètres de console"
+
+#: .tmp/ui_main.py:167
+msgid "Number of Real Consoles:"
+msgstr "Nombre de consoles réelles :"
+
+#: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
+msgid "System Manager"
+msgstr "Gestionnaire du système"
+
+#: .tmp/systemmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/systemmanager/about.py:25
+msgid " "
+msgstr ""
+
+#: .tmp/systemmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/systemmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mainteneur actuel"
+
+#: .tmp/systemmanager/main.py:70
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Cette application n'existe pas en version utilisable dans une console.\n"
+"Merci de vous assurer que les paquets sont correctement installés et "
+"configurés."
+
+#: .tmp/systemmanager/main.py:98
+msgid "None"
+msgstr "Aucun"
+
