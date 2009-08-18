@@ -11,9 +11,9 @@ from threading import Thread
 import gui, subprocess, os, dbus
 
 from gui.bugtoolMain import Ui_bugtoolUI
-from gui import errorScreen
+from gui import errorScreen, reportScreen
 
-availableScreens = [errorScreen, ]
+availableScreens = [errorScreen, reportScreen]
 
 class PApport(QtGui.QWidget, apport.ui.UserInterface):
 
@@ -164,6 +164,60 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
 
         self.wait_user_input()
         return 'report'
+
+    def ui_present_report_details(self):
+        self.appendScreen(reportScreen)
+
+        name = self.report.get('Package')
+        if name is not None:
+            name = name.split()[0]
+        else:
+            name = 'Generic Error'
+        heading = 'Send problem report to the developers?'
+        text = ('You may check below the data that will be sent to the '
+                'developers as well as choose whether you want to send a '
+                'complete report or a reduced one.')
+
+        self.set_current_title(name)
+        self.current.ui.heading.setText(heading)
+        self.current.ui.text.setText(text)
+
+        # complete/reduce radio buttons
+        if self.report.has_key('CoreDump') and \
+                self.report.has_useful_stacktrace():
+            complete_size = self.format_filesize(self.get_complete_size())
+            reduced_size = self.format_filesize(self.get_reduced_size())
+            self.current.ui.setText('Complete report (recommended; %s)' %
+                                    complete_size)
+            self.current.ui.setText('Reduced report (slow Internet connection;'
+                                    ' %s)' % reduced_size)
+        else:
+            self.current.ui.options.hide()
+
+        # Filling report details
+        details = self.current.ui.details
+        for key in self.report:
+            item = QtGui.QTreeWidgetItem([key])
+            details.addTopLevelItem(item)
+
+            if not hasattr(self.report[key], 'gzipvalue') and \
+               hasattr(self.report[key], 'isspace') and \
+               not self.report._is_binary(self.report[key]):
+                lines = self.report[key].splitlines()
+                for line in lines:
+                    QTreeWidgetItem(item, [line])
+                if len(lines) < 4:
+                    item.setExpanded(True)
+            else:
+                QTreeWidgetItem(item, ['(binary data)'])
+        details.header().hide()
+
+        self.wait_user_input()
+
+        if self.current.ui.reduced.isChecked():
+            return 'reduced'
+        else:
+            return 'full'
 
 
 
