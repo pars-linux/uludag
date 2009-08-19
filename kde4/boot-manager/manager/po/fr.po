@@ -1,0 +1,123 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: boot-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"PO-Revision-Date: 2009-08-19 02:04+0200\n"
+"Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
+msgid "Boot Manager"
+msgstr "Gestionnaire de démarrage"
+
+#: .tmp/bootmanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/bootmanager/about.py:25
+msgid " "
+msgstr ""
+
+#: .tmp/bootmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/bootmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mainteneur actuel"
+
+#: .tmp/bootmanager/main.py:99
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Cette application n'existe pas en version utilisable dans une console.\n"
+"Merci de vous assurer que les paquets sont correctement installés et "
+"configurés."
+
+#: .tmp/bootmanager/main.py:198
+msgid "All Items"
+msgstr "Tous les items"
+
+#: .tmp/bootmanager/main.py:303
+msgid "Do you want to delete '%1'?"
+msgstr "Voulez-vous supprimer '%1' ?"
+
+#: .tmp/bootmanager/main.py:334
+msgid "Access denied."
+msgstr "Accès refusé."
+
+#: .tmp/ui_edit.py:134
+msgid "Title"
+msgstr "Titre"
+
+#: .tmp/ui_edit.py:135
+msgid "Name of the boot entry to be shown at the boot menu."
+msgstr "Nom de l'entrée à afficher dans le menu de démarrage."
+
+#: .tmp/ui_edit.py:136
+msgid "Disk"
+msgstr "Disque"
+
+#: .tmp/ui_edit.py:137
+msgid "Disk that contains operating system."
+msgstr "Disque contenant le système d'exploitation."
+
+#: .tmp/ui_edit.py:138
+msgid "Kernel"
+msgstr "Noyau"
+
+#: .tmp/ui_edit.py:139
+msgid "Operating system kernel."
+msgstr "Noyau du système d'exploitation."
+
+#: .tmp/ui_edit.py:140
+msgid "Ramdisk File"
+msgstr "Fichier RAM-disque"
+
+#: .tmp/ui_edit.py:141
+msgid ""
+"File that contains a micro operating system for preloading kernel modules."
+msgstr ""
+"Fichier contenant un micro système d'exploitation pour précharger les "
+"modules du noyau."
+
+#: .tmp/ui_edit.py:142
+msgid "Boot Options"
+msgstr "Options de démarrage du PC"
+
+#: .tmp/ui_edit.py:143
+msgid "Boot options for operating system."
+msgstr "Options de démarrage du système d'exploitation."
+
+#: .tmp/ui_item.py:65
+msgid "Set or unset entry as default boot entry."
+msgstr "Marquer comme entrée de démarrage par défaut."
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr "Modifier"
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr "Supprimer"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Ajouter un nouveau"
+
+#: .tmp/ui_options.py:36
+msgid "Boot menu display time:"
+msgstr "Durée d'affichage du menu de démarrage :"
+
+
