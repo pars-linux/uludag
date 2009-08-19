@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from noan.middleware.threadlocals import get_current_lang
 import datetime
 from django import forms
+from pisi.version import Version as Pisi_Version
 
 
 
