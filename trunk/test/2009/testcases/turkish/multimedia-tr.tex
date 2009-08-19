@@ -50,12 +50,21 @@ Uygulamayı açın dosya sistemi bölümünden /usr/kde/3.5/share/sounds/ dizini
   # mpleyer game.ogg
  \end{verbatim}
 
+\item qpitch paketi kurulumu sonrası:
+
+Kmenüden uygulamayı açın düzgün bir şekilde çalıştığını gözlemleyin.
+
+\item  qjackctl paketi kurulumu sonrası: 
+
+Kmenüden qjackct uygulamasını açın. (Bu sırada hiçbir ses aygıtının açıkolmadığından emin olun)
+
+Başla butonuna basın, status ve mesajlardan Jack ses sunucusunun başlatılmış olduğunu gözlemleyin.
 
 \end{enumerate}
 
 \section{Video alt Bileşeni}
 \begin{enumerate}
- \item mplayer ve vlc paketleri kurulumu sonrası:
+ \item mplayer, vlc, kaffeine paketleri kurulumu sonrası:
  \begin{verbatim}
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
  \end{verbatim}
@@ -76,11 +85,6 @@ Aşağıda bulunan ikinci komutun düzgün çıktılar ürettiğini ve üçünc�
   # ffmpeg -i <multimedia dosyası> -r 24 <test dosyası>
   # ffplay <multimedia dosyası>
   \end{verbatim}
-
-
-  
-
-
 \end{enumerate}
 
 
@@ -301,6 +305,16 @@ Aşağida bulunan dosyayı inkscape uygulaması ile açın ve üzerinde birkaç 
 \end{verbatim}
 
 \item asymptote paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_asymptote.tex
+# latex test_asymptote
+# asy test_asymptote
+# latex test_asymptote
+# okular test_asymptote.dvi
+\end{verbatim}
+
 
 \end{enumerate}
 \section{Editor alt Bileşeni}

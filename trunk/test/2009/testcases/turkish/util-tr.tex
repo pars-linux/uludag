@@ -1,7 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[turkish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=2cm]{geometry}
 
 \title{Util Bileşeni Test Aşamaları}
 \author{Semen Cirit}
@@ -45,8 +45,32 @@ Aşağıda bulunan komutu çalıştırın ve sistemde çalışan tüm uygulamala
  # iotop
 \end{verbatim}
 
+\end{enumerate}
+\section{Shell alt bileşeni}
+\begin{enumerate}
+ \item bash-completion paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun hata alınmadan çalıştığını gözlemleyin.
+\begin{verbatim}
+ # pisi --help
+\end{verbatim}
+
+\item command-not-found paketi kurulumu sonrası:
+
+Amsn paketi sisteminizde kurulu değil ise, aşağıda bulunan komutu yazdığınızda:
+\begin{verbatim}
+ # amsn
+\end{verbatim}
+
+Aşağıda bulunan çıktıyı verdiğini gözlemleyiniz:
+\begin{verbatim}
+'amsn' uygulaması sisteminizde kurulu değil. Bu paketi, paket yöneticisini kullanarak ya da aşağıdaki komutu çalıştırarak kurabilirsiniz:
+sudo pisi it amsn
+bash: amsn: command not found
+\end{verbatim}
 
 \end{enumerate}
+
 
 
 \end{document}
