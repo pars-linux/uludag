@@ -196,6 +196,7 @@ class Binary(models.Model):
             for y in x:
                 if y not in dependencies:
                     dependencies.append(y)
+        # version
         for dep in self.package.runtimedependency_set.all():
             binaries = Binary.objects.filter(package__source__distribution = self.package.source.distribution, package__name=dep.dep_package)
             if dep.version != "" and binaries.filter(update__version_no=dep.version, resolution="released").count() == 0:
@@ -216,6 +217,13 @@ class Binary(models.Model):
                         break
                 if not in_stable:
                     _extend(binaries.filter(resolution="pending"))
+            # release
+            if dep.release != "" and binaries.filter(update__no=dep.release, resolution="released").count() == 0:
+                _extend(binaries.filter(resolution="pending"))
+            if dep.release_from != "" and binaries.filter(update__no__gte=dep.release, resolution="released").count() == 0:
+                _extend(binaries.filter(resolution="pending"))
+            if dep.release_to != "" and binaries.filter(update__no__lte=dep.release, resolution="released").count() == 0:
+                _extend(binaries.filter(resolution="pending"))
         return dependencies
 
     #  FIXME check version first
