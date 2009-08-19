@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 15:50+0300\n"
-"PO-Revision-Date: 2009-07-15 18:20+0200\n"
+"PO-Revision-Date: 2009-08-19 10:57+0200\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,21 +38,19 @@ msgstr "Taille totale :"
 
 #: .tmp/ui_basketdialog.py:79
 msgid "<b>2.2 MB</b>"
-msgstr "<b>2.2 Mo</b>"
+msgstr "<b>2,2 Mo</b>"
 
 #: .tmp/ui_basketdialog.py:80 .tmp/ui_mainwidget.py:60 .tmp/statemanager.py:73
 msgid "Install Package(s)"
 msgstr "Installer le(s) paquet(s)"
 
 #: .tmp/ui_basketdialog.py:81
-#, fuzzy
 msgid "Download Size:"
-msgstr "téléchargement"
+msgstr "Taille de téléchargement :"
 
 #: .tmp/ui_basketdialog.py:82
-#, fuzzy
 msgid "<b>2.0 MB</"
-msgstr "<b>2.2 Mo</b>"
+msgstr "<b>2 Mo</b>"
 
 #: .tmp/ui_pminstaller.py:46 .tmp/ui_mainwidget.py:58
 msgid "Form"
@@ -192,7 +190,7 @@ msgstr "Autoriser la vérification &périodique des mises-à-jour"
 
 #: .tmp/ui_settingsdialog.py:333 .tmp/ui_settingsdialog.py:336
 msgid "padding-left:15px;"
-msgstr ""
+msgstr "padding-left:15px;"
 
 #: .tmp/ui_settingsdialog.py:334
 msgid "Check interval:"
@@ -669,7 +667,7 @@ msgstr "Montrer les mises-à-jour disponibles"
 
 #: .tmp/ui_repodialog.py:51
 msgid "Add New Repository"
-msgstr "Ajouter un nuveau dépôt"
+msgstr "Ajouter un nouveau dépôt"
 
 #: .tmp/ui_repodialog.py:52
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
