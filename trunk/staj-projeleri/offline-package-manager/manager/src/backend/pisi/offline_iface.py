@@ -16,11 +16,19 @@ import string
 import comar
 import pisi
 
-from pmlogging import logger
+import os
+import piksemel
 
 # for rewrited pisi.api functions
+#--------------------------------
 import pisi.context as ctx
 import pisi.pgraph as pgraph
+import pisi.util as util
+
+import gettext
+__trans = gettext.translation('pisi', fallback=True)
+_ = __trans.ugettext
+#--------------------------------
 
 class Singleton(object):
     def __new__(type):
@@ -74,21 +82,60 @@ class Iface(Singleton):
             self.invalidate_db_caches()
             self.exceptionHandler(exception)
 
+    def writeFile(self, packages, operation):
+        home = os.getenv("HOME")
+        directory = ("/offlinePISI")
+        main_path = home + directory
+        operation_info = main_path + "/last_operation.info"
+
+        all_packages = packages + self.depends_list
+
+        try:
+            os.mkdir(main_path)
+
+        except OSError:
+            pass
+
+
+        try:
+            fi = open(operation_info, "r")
+            process = fi.read()
+            fi.close
+            fi = open(operation_info, "w")
+
+        except IOError:
+            fi = open(operation_info, "w")
+            process = "1"
+
+        fi.write(str(int(process) + 1))
+        fi.close
+        os.mkdir(main_path + "/" + process)
+
+
+        process_path = main_path + "/" + process + "/"
+        f = open(process_path + "%s.list"% process, "w")
+        pisi.api.fetch(all_packages, process_path + "/")
+        for pkg in all_packages:
+            f.write(pkg + "\n")
+        f.close()
+
     def installPackages(self, packages):
-        print packages
+        for pkg in packages + self.depends_list:
+            self.oidb.add_package(pkg)
+        self.writeFile(packages, "Install")
 
     def removePackages(self, packages):
-        print packages
+        #print packages
+        #print self.requires_list
+        self.writeFile(packages, "Remove")
 
     def upgradePackages(self, packages):
-        print packages
+        self.installPackages(packages)
 
     def updateRepositories(self):
-        logger.debug("Updating repositories...")
         self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler, timeout=2**16-1)
 
     def updateRepository(self, repo):
-        logger.debug("Updating %s..." % repo)
         self.link.System.Manager["pisi"].updateRepository(repo, async=self.handler, timeout=2**16-1)
 
     def clearCache(self, limit):
@@ -183,19 +230,17 @@ class Iface(Singleton):
             return self.oidb.get_package(name)
 
     def getDepends(self, packages):
-        depends_list = []
         base = self.get_base_upgrade_order(packages)
         if not self.oidb.has_package(packages[0]):
             deps = pisi.api.get_install_order(packages)
         else:
             deps = self.get_upgrade_order(packages)
-        depends_list.append(list(set(deps + base) - set(packages)))
-        for i in depends_list:
-            print i
-        return list(set(deps + base) - set(packages))
+        self.depends_list = list(set(deps) - set(packages))
+        return list(set(deps) - set(packages))
 
     def getRequires(self, packages):
         revDeps = set(self.get_remove_order(packages))
+        requires_list = list(set(revDeps) - set(packages))
         return list(set(revDeps) - set(packages))
 
     def getExtras(self, packages):
@@ -315,7 +360,7 @@ class Iface(Singleton):
                 if extra_upgrades:
                     ctx.ui.warning(_('Safety switch: Following packages in system.base will be upgraded: ') +
                             util.strlist(extra_upgrades))
-                    G_f, upgrade_order = plan_upgrade(extra_upgrades)
+                    G_f, upgrade_order = self.plan_upgrade(extra_upgrades)
                 # return packages that must be added to any installation
                 return set(install_order + upgrade_order)
             else:
@@ -430,3 +475,5 @@ class Iface(Singleton):
             G_f.write_graphviz(sys.stdout)
         order = G_f.topological_sort()
         return G_f, order
+
+# ----------------------------------------------------------------------------------
