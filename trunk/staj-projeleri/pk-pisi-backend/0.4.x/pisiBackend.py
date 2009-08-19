@@ -77,7 +77,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
             if "none" not in filters:
                 filterlist = filters.split(';')
 
-                if FILTER_INSTALLED in filterlist and status != INFO_INSTALLED:
+                if FILTER_INSTALLED in filterlist and not (status == INFO_INSTALLED or status == INFO_UPDATING):
                     return
                 if FILTER_NOT_INSTALLED in filterlist and status == INFO_INSTALLED:
                     return
@@ -86,9 +86,9 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
                 if FILTER_NOT_GUI in filterlist and "app:gui" in pkg.isA:
                     return
 
-        if status == INFO_UPDATNG:
+        if status == INFO_UPDATING:
             self.package(self.__get_package_id(pkg), INFO_INSTALLED, pkg.summary)
-            self.package(self.__get_package_id(pkg2), status, pkg2.summary)
+            self.package(self.__get_package_id(pkg2), INFO_AVAILABLE, pkg2.summary)
         else:
             self.package(self.__get_package_id(pkg), status, pkg.summary)
 
