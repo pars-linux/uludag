@@ -200,7 +200,7 @@ class Binary(models.Model):
                 return False
         # check dependencies
         # TODO: optimize this query later
-        for dep in self.package.runtimedependency_set.all():
+        """for dep in self.package.runtimedependency_set.all():
             binaries = Binary.objects.filter(package__name=dep.dep_package, package__source__distribution=dep.source__distribution, resolution="pending")
             for bin in binaries:
                 # if any dependency is not tested yet, return None
@@ -209,7 +209,7 @@ class Binary(models.Model):
                 # if any dependency test is "nack", return False
                 if bin.is_ack() == False:
                     return False
-        # else, package is "ack"ed, return True
+        # else, package is "ack"ed, return True"""
         return True
 
     def is_Ack(self):
@@ -219,16 +219,14 @@ class Binary(models.Model):
         RunTimeDep = self.package.runtimedependency_set.filter(package__exact=self.package).filter(package__binary__resolution__exact = "pending")
         BuildTimeDep = self.package.source.builddependency_set.filter(source__package__exact=self.package).filter(source__package__binary__resolution__exact = "pending")
         all_binary = Binary.objects.all()
-        for dep in BuildTimeDep:
-            # get the binary which is build dep. on package name
-            binary = all_binary.filter(package__name__exact = dep.dep_package).filter(package__source__distribution = self.package.source.distribution)
+        for dep in RunTimeDep:
+            binary = Binary.objects.filter(package__name__exact = dep.dep_package).filter(package__source__distribution = self.package.source.distribution)
             if dep.version != '':
                 binary = binary.filter(update__version_no__exact = dep.version)
             if dep.version_from != '':
                 binary = binary.filter(update__version_no__gte = dep.version_from)
             if dep.version_to != '':
                 binary = binary.filter(update__version_no__lte = dep.version_to)
-            # if find a binary which is in build dep. and its state nack ok = 0 and getting this info into template
             binary = binary.filter(stateoftest__state__exact = "nack")
             if binary:
                 ok = 0
