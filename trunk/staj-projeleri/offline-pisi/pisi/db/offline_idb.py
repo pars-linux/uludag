@@ -28,6 +28,8 @@ import pisi.dependency
 class Offline_InstallDB():
 
     def __init__(self):
+        self.pdb = pisi.db.packagedb.PackageDB()
+
         index_xml = "/home/volkan/index/pardus-2009/pisi-installed.xml"
         doc = piksemel.parse(index_xml)
 
@@ -48,10 +50,11 @@ class Offline_InstallDB():
         return revdeps
 
     def __add_to_revdeps(self, package, revdeps):
-        # Denenmedi
-        doc = self.package_data(package)
-        name = doc.getTag("Package").getTagData('Name')
-        deps = doc.getTag("Package").getTag('RuntimeDependencies')
+        data = gzip.zlib.decompress(self.installed_db[package])
+        doc = piksemel.parseString(data)
+        name = doc.getTag('Name')
+        deps = doc.getTag('RuntimeDependencies')
+
         if deps:
             for dep in deps.tags("Dependency"):
                 revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep.toString()))
@@ -83,7 +86,7 @@ class Offline_InstallDB():
         return pkg.version, pkg.release, pkg.build
 
     def get_files(self, package):
-        # Bos donduruyoruz!
+        # return empty
         files = pisi.files.Files()
         return files
 
@@ -127,14 +130,12 @@ class Offline_InstallDB():
                 found.append(name)
         return found
 
-    def add_package(self, pkginfo):
-        # !! DENENMEDI !!
-        self.installed_db[pkginfo.name] = "%s-%s" % (pkginfo.version, pkginfo.release)
-        gzip.zlib.compress(self.installed_db[pkginfo.name])
-        self.__add_to_revdeps(pkginfo.name, self.rev_deps_db)
+    def add_package(self, name):
+        pkg = self.pdb.pdb.get_item(name)
+        self.installed_db.setdefault(name, gzip.zlib.compress(pkg))
+        self.__add_to_revdeps(name, self.rev_deps_db)
 
     def remove_package(self, package_name):
-        # !! DENENMEDI !!
         if self.installed_db.has_key(package_name):
             del self.installed_db[package_name]
 
