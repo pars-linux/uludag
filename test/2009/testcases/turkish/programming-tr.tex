@@ -16,7 +16,7 @@
 \maketitle
 \section{vcs alt bileşeni}
 \begin{enumerate}
-\item mod_dav_svn paketi sadece kurulum testine tabidir.
+\item mod\_dav\_svn paketi sadece kurulum testine tabidir.
 \item git paketi kurulumu sonrası:
 
 Aşağıdaki komutları çalıştırın. Ve sorunsuz bir şekilde Git deposu oluşturduğunu ve klonlandığını gözlemleyin.
@@ -74,6 +74,16 @@ export LC_ALL= <lang_LANG>
 lang\_LANG şeklinde yazılmış olan, pt-BT için pt\_BT, diğer diller için örneğin de\_DE olacaktır.
 
 Daha sonra bu çalıştırdığınız komut dizininde eric4 komutunu çalıştırın, paket eğer help ile ilgili ise help dosyasının, uygulama dili ise uygulamanın sorunsuz bir şekilde istenilen dilde açıldığını gözlemleyin.
+
+\item ipython paketi kurulumu sonrası: 
+
+Aşağıda bulunan komutları çalıştırdığınızda, bulunduğunuz dizinde test adında bir dosya oluştuğunu ve içerisinde "test ipython" yazdığını gözlemleyin:
+\begin{verbatim}
+ # ipython
+ a = open("test", "a")
+ a.write("test ipyton")
+\end{verbatim}
+
 \end{enumerate}
 
 
@@ -160,6 +170,14 @@ python/test_python-memcache.py
  # python test_python-memcache.py
 \end{verbatim}
 
+\item pygtk paketi kurulumu sonrası: 
+
+Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde bir pencerenin açıldığını gözlemleyin.
+
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/toolkit/test_pango.py
+ # python test_pango.py
+\end{verbatim}
 
 \end{enumerate}
 

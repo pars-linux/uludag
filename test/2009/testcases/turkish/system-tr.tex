@@ -70,8 +70,35 @@ Resimlerin üzerine sağ tıklayarak gwenview, kolourPaint, gimp, showfoto ile a
 \end{verbatim}
 
 \item network-tr.pdf sylpheed testini geçekleştirin.
-
 \end{itemize}
+
+\item glib2 paketi kurulumu sonrası:
+\begin{itemize}
+ \item system-tr.pdf openssh testini gerçekleştirin.
+\item system-tr.pdf getext testini gerçekleştirin.
+\end{itemize}
+
+\item gettext paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun "network-manager.pot" dosyasını oluşturduğunu gözlemleyin.
+\begin{verbatim}
+ # svn co http://svn.pardus.org.tr/uludag/trunk/kde4/network-manager/
+ # cd network-manager/manager
+ # rm -rf po
+ # mkdir po
+ # xgettext setup.py 
+ # ./setup.py update_messages
+\end{verbatim}
+
+
+\item openssh paketi kurulumu sonrası:
+
+Servis yöneticisinden openssh'ı çalıştırın ve aşağıda bulunan komutun çıktısında openssh'ın çalıştığını gözlemleyin:
+\begin{verbatim}
+ # service list 
+\end{verbatim}
+
+
 \end{enumerate}
 \section{Service alt Bileşeni}
 \begin{enumerate}
