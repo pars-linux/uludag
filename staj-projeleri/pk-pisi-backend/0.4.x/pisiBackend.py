@@ -111,26 +111,34 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         package = self.get_package_from_id(package_ids[0])[0]
 
         if self.packagedb.has_package(package):
+            pkg_status = "available"
             pkg = self.packagedb.get_package(package)
-
+            print "%s-%s-%s" % (pkg.version, pkg.release, pkg.build)
+            print package_ids[0].split(";")[1]
             if self.installdb.has_package(package):
                 pkg_status = "installed"
-            elif self.packagedb.has_package(package):
-                pkg_status = "available"
-            else:
-                pkg_status = "unknown"
+                if "%s-%s-%s" % (pkg.version, pkg.release, pkg.build) != package_ids[0].split(";")[1]:
+                    pkg = self.installdb.get_package(package)
 
             my_package_id = "%s;%s;%s;%s" % (pkg.name,
-                                            self.__get_package_version(pkg),
-                                            pkg.architecture,
-                                            pkg_status)
+                                             self.__get_package_version(pkg),
+                                             pkg.architecture,
+                                             pkg_status)
 
+            #FIXME: pisi.installdb must be provide pkg.packageSize
+            if pkg.packageSize == None:
+                packageSize = 0
+            else:
+                packageSize = pkg.packageSize
+
+            print my_package_id
+            print pkg.packageSize
             self.details(my_package_id,
                          " ".join(pkg.license),
                          self.__get_group(pkg),
                          pkg.description,
                          pkg.packageURI,
-                         pkg.packageSize)
+                         packageSize)
         else:
             self.error(ERROR_PACKAGE_NOT_FOUND, "Package was not found")
 
