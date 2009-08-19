@@ -75,9 +75,8 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
     binary = Binary.objects.get(no=binaryNo, package=package)
     if request.method == "POST":
         print request.POST['state']
-        if not StateOfTest.objects.filter(binary = binary):
-            Add_State = StateOfTest(binary = binary, changed_by = request.user, updated=date.today(), state = request.POST['state'])
-            Add_State.save()
+        Add_State = StateOfTest(binary = binary, changed_by = request.user, updated=date.today(), state = request.POST['state'])
+        Add_State.save()
     context = {
         'binary': binary,
     }
@@ -173,34 +172,47 @@ def search_form(request):
 @login_required
 def AckNackList(request):
     list=[]
+    error = ()
     stateBinary = Binary.objects.filter(resolution = 'pending').filter(package__source__maintained_by = request.user).filter(stateoftest__isnull=True)
     stateBinaryOfUpdate = Binary.objects.filter(resolution = 'pending').filter(update__updated_by = request.user).filter(stateoftest__isnull=True)
     if request.method == 'POST':
         radio = {}
         comment = {}
+        # have two dict for form data in post. formating data to meaningful info for db. (iterater all post data because not sort of key in post method.)
         for list in request.POST.lists():
             try:
-                post_info = list[0].split("-")
-                binary_id = int(post_info[0])
-                if (post_info[1] == "radio"):
-                    radio[post_info[0]] = list[1]
-                if (post_info[1] == "comment"):
-                    comment[post_info[0]] = list[1]
-            except:
-                pass
+                # catch the csrfmiddlewaretoken in post
+                if list[0] == "csrfmiddlewaretoken":
+                    pass
+                else:
+                    post_info = list[0].split("-")
+                    binary_id = int(post_info[0])
+                    if (post_info[1] == "radio"):
+                        radio[post_info[0]] = list[1]
+                    if (post_info[1] == "comment"):
+                        comment[post_info[0]] = list[1]
+            except Exception, err:
+                print "Error: %s" %(err)
+                error += err
+        # Gettin binary id in radio dict. iteratior radio for add value to StateOfTest db.
         for binary_id in  radio:
             a = binary_id
             if radio[binary_id][0]:
                 Add_State = StateOfTest(binary = Binary.objects.get(id=binary_id), changed_by = request.user, updated=date.today(), state = radio[binary_id][0])
-                Add_State.save()
-                if comment[binary_id][0]:
-                    Add_Comment = CommentOfStatement(state_of_test_id = Add_State, comment = comment[binary_id][0])
-                    Add_Comment.save()
+                try:
+                    Add_State.save()
+                    # have got a comment of this pending packages. If it have got, add comment to CommentOfStatement db
+                    if comment[binary_id][0]:
+                        Add_Comment = CommentOfStatement(state_of_test_id = Add_State, comment = comment[binary_id][0])
+                        Add_Comment.save()
+                except Exception, err:
+                    error += err
     if stateBinary or stateBinaryOfUpdate:
         distributions = Distribution.objects.all()
     else:
         distributions = ""
     context = {
+            'error' : error,
             'distributions' : distributions,
             'stateBinarys' : stateBinary,
             'stateBinarysOfUpdate' : stateBinaryOfUpdate,

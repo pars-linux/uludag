@@ -8,15 +8,20 @@
         <li><strong>Updated By:</strong> <a href="/repository/users/{{ binary.update.updated_by.username }}/">{{ binary.update.updated_by.get_full_name }}</a></li>
     </ul>
     {% if user.is_authenticated %}
+    {% comment %}
     {% ifequal binary.resolution "pending" %}
     {% if not binary.stateoftest_set.all%}
+    {% endcomment %}
     <h2>ACK/NACK</h2>
     <form action="" method="post">
         <button type="submit" name="state" value="ack" >ack</button>
         <button type="submit" name="state" value="nack">nack</button>
     </form>
+    {{ binary.is_ack }}
+    {% comment %}
     {% endif %}
     {% endifequal %}
+    {% endcomment %}
     {% endif %}
     <h2>Runtime Dependencies</h2>
     <ul>
