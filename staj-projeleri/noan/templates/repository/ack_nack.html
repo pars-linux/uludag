@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load mytags %}
+{% if error %}
+Get some Error :<br/> {{error}}
+{% endif %}
 <h1>Ack/Nack</h1>
 {% if stateBinarys  or stateBinarysOfUpdate %}
 <div style="float:left;padding-left:10px">
@@ -18,8 +21,8 @@
         {% for stateBinary in stateBinarys %}
             {% ifequal stateBinary.package.source.distribution distro %}
             <tr onmouseover="this.style.backgroundColor='#d4e3e5';" onmouseout="this.style.backgroundColor='#ffffff';" >
-                <td>M</td>
-                <td>
+                <td>Maintained</td>
+                <td>{{stateBinary.is_ack}}
                     {% ifequal stateBinary.is_Ack 0 %}
                     <div style="color:#ba0000" >
                         {{stateBinary}}
@@ -49,7 +52,7 @@
             {% ifequal stateBinary.package.source.distribution distro %}
                 {% if not stateBinary|IN:stateBinarys %}
                     <tr onmouseover="this.style.backgroundColor='#d4e3e5';" onmouseout="this.style.backgroundColor='#ffffff';" >
-                        <td>U</td>
+                        <td>Updated</td>
                         <td>
                             {% ifequal stateBinary.is_Ack 0 %}
                                 <div style="color:#ba0000">

@@ -189,16 +189,39 @@ class Binary(models.Model):
         ordering = ['package__name', '-no']
         unique_together = ('no', 'package')
 
+    #  FIXME check version first
+    def is_ack(self):
+        # if package is not tested yet, return None
+        if self.stateoftest_set.count() == 0:
+            return None
+        # if any of tests is "nack" return False
+        for state in self.stateoftest_set.all():
+            if state.state == "nack":
+                return False
+        # check dependencies
+        # TODO: optimize this query later
+        for dep in self.package.runtimedependency_set.all():
+            binaries = Binary.objects.filter(package__name=dep.dep_package, package__source__distribution=dep.source__distribution, resolution="pending")
+            for bin in binaries:
+                # if any dependency is not tested yet, return None
+                if bin.stateoftest_set.count() == 0:
+                    return None
+                # if any dependency test is "nack", return False
+                if bin.is_ack() == False:
+                    return False
+        # else, package is "ack"ed, return True
+        return True
+
     def is_Ack(self):
 # ok is showing to us what is have got no nack run time or build time dependecy
         ok = 1
         # getting runtime dep to binary in pending
         RunTimeDep = self.package.runtimedependency_set.filter(package__exact=self.package).filter(package__binary__resolution__exact = "pending")
         BuildTimeDep = self.package.source.builddependency_set.filter(source__package__exact=self.package).filter(source__package__binary__resolution__exact = "pending")
-
+        all_binary = Binary.objects.all()
         for dep in BuildTimeDep:
             # get the binary which is build dep. on package name
-            binary = Binary.objects.filter(package__name__exact = dep.dep_package).filter(package__source__distribution = self.package.source.distribution)
+            binary = all_binary.filter(package__name__exact = dep.dep_package).filter(package__source__distribution = self.package.source.distribution)
             if dep.version != '':
                 binary = binary.filter(update__version_no__exact = dep.version)
             if dep.version_from != '':
@@ -211,24 +234,7 @@ class Binary(models.Model):
                 ok = 0
             else:
                 pass
-
-        for dep in RunTimeDep:
-            binary = Binary.objects.filter(package__name__exact = dep.dep_package).filter(package__source__distribution = self.package.source.distribution)
-            if dep.version != '':
-                binary = binary.filter(update__version_no__exact = dep.version)
-            if dep.version_from != '':
-                binary = binary.filter(update__version_no__gte = dep.version_from)
-            if dep.version_to != '':
-                binary = binary.filter(update__version_no__lte = dep.version_to)
-            binary = binary.filter(stateoftest__state__exact = "nack")
-            if binary:
-                ok = 0
-            else:
-                pass
-        if ok == 1:
-            return 1
-        else:
-            return 0
+        return ok
 
 class Task(models.Model):
     package = models.ForeignKey(Package, verbose_name=_('package'))
@@ -298,8 +304,10 @@ class StateOfTest(models.Model):
 class CommentOfStatement(models.Model):
     state_of_test_id = models.OneToOneField(StateOfTest, verbose_name=_('id'))
     comment = models.CharField(max_length=256, verbose_name=_('comment'))
+
     def __unicode__(self):
         return _('%(binary)s (statement: %(state)s, %(comment)s)') % {'binary': self.state_of_test_id.binary, 'state': self.state_of_test_id.state, 'comment': self.comment }
+
     class Meta:
         ordering = ['id']
         verbose_name = _('comment of statement')
