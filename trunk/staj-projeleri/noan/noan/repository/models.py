@@ -189,6 +189,34 @@ class Binary(models.Model):
         ordering = ['package__name', '-no']
         unique_together = ('no', 'package')
 
+    def get_pending_dependencies(self):
+        dependencies = []
+        def _extend(x):
+            for y in x:
+                if y not in dependencies:
+                    dependencies.append(y)
+        for dep in self.package.runtimedependency_set.all():
+            binaries = Binary.objects.filter(package__source__distribution = self.package.source.distribution, package__name=dep.dep_package)
+            if dep.version != "" and binaries.filter(update__version_no=dep.version, resolution="released").count() == 0:
+                _extend(binaries.filter(resolution="pending"))
+            if dep.version_from != "":
+                in_stable = False
+                for bin in binaries.filter(resolution="released"):
+                    if Pisi_Version(bin.update.version_no) >= Pisi_Version(dep.version_from):
+                        in_stable = True
+                        break
+                if not in_stable:
+                    _extend(binaries.filter(resolution="pending"))
+            if dep.version_to != "":
+                in_stable = False
+                for bin in binaries.filter(resolution="released"):
+                    if Pisi_Version(bin.update.version_no) <= Pisi_Version(dep.version_to):
+                        in_stable = True
+                        break
+                if not in_stable:
+                    _extend(binaries.filter(resolution="pending"))
+        return dependencies
+
     #  FIXME check version first
     def is_ack(self):
         # if package is not tested yet, return None
