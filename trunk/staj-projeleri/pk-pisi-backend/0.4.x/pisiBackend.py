@@ -150,18 +150,20 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
 
         package = self.get_package_from_id(package_ids[0])[0]
 
-        if package in pisi.api.list_upgradable():
+        if self.installdb.has_package(package):
             installed_package = self.installdb.get_package(package)
             update_package    = self.packagedb.get_package(package)
-            desc              = update_package.history[0].comment
-            issued            = update_package.history[0].date
+            if update_package.release > installed_package.release:
+                desc   = update_package.history[0].comment
+                issued = update_package.history[0].date
+                desc   = desc.replace("\n", "")
+                desc   = desc.split()
 
-            desc = desc.replace("\n", "")
-            desc = desc.split()
-
-        self.update_detail(self.__get_package_id(installed_package),
-                           self.__get_package_id(update_package),
-                           '', 'http://www.pardus.org.tr', 'http://bugs.pardus.org.tr', '', '', " ".join(desc), '', '', issued, '')
+                self.update_detail(self.__get_package_id(installed_package),
+                                   #FIXME: format to 'git-1.6.3.4-81-5-i686' from git;1.6.3.4-81-5;i686;
+                                   "'%s'" % ("-".join(self.__get_package_id(update_package).split(";")))[0:-1],
+                                   '', 'http://www.pardus.org.tr', 'http://bugs.pardus.org.tr',
+                                   '', 'none', " ".join(desc), '', '', issued, '')
 
     def get_files(self, package_ids):
         """ Prints a file list for a given package """
