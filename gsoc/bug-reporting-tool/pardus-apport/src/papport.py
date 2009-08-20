@@ -11,9 +11,11 @@ from threading import Thread
 import gui, subprocess, os, dbus
 
 from gui.bugtoolMain import Ui_bugtoolUI
-from gui import errorScreen, reportScreen, messageScreen
+from gui import (errorScreen, reportScreen, messageScreen, choicesScreen,
+                 userpassScreen)
 
-availableScreens = [errorScreen, reportScreen, messageScreen,]
+availableScreens = [errorScreen, reportScreen, messageScreen, choicesScreen,
+                    userpassScreen]
 
 class PApport(QtGui.QWidget, apport.ui.UserInterface):
 
@@ -43,7 +45,8 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         self.run_argv()
 
     def slotNext(self):
-        self.waitNextClick.wakeAll()
+        if self.current.execute():
+            self.waitNextClick.wakeAll()
 
     def closeEvent(self, event=None):
         self.running = False
@@ -78,8 +81,6 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         widget = screen.Widget()
         self.active_widgets.append(widget)
         self.ui.mainStack.addWidget(widget)
-        #index = self.ui.mainStack.count()
-        #self.ui.mainStack.setCurrentIndex(index)
         self.ui.mainStack.setCurrentWidget(widget)
         self._updateMenu()
 
@@ -205,11 +206,11 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
                not self.report._is_binary(self.report[key]):
                 lines = self.report[key].splitlines()
                 for line in lines:
-                    QTreeWidgetItem(item, [line])
+                    QtGui.QTreeWidgetItem(item, [line])
                 if len(lines) < 4:
-                    item.setExpanded(True)
+                    QtGui.item.setExpanded(True)
             else:
-                QTreeWidgetItem(item, ['(binary data)'])
+                QtGui.QTreeWidgetItem(item, ['(binary data)'])
         details.header().hide()
 
         self.wait_user_input()
@@ -237,6 +238,59 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
 
         self.wait_user_input()
 
+    def ui_question_yesno(self, text):
+        # TODO: check if this would be better when stacked in the wizard
+        response = kdeui.KMessageBox.questionYesNoCancel(None, text,
+                                      QtCore.QString(),
+                                      kdeui.KStandardGuiItem.yes(),
+                                      kdeui.KStandardGuiItem.no(),
+                                      kdeui.KStandardGuiItem.cancel())
+        if response == kdeui.KMessageBox.Yes:
+            return True
+        if response == kdeui.KMessageBox.No:
+            return False
+        return None
+
+    def ui_question_file(self, text):
+        # TODO: check if this would be better when stacked in the wizard
+        response = QtGui.QFileDialog.getOpenFileName(None, text)
+        if response.length() == 0:
+            return None
+        return str(response)
+
+    def ui_question_choice(self, text, options, multiple):
+        ''' Show a question with predefined choices.
+
+        @options is a list of strings to present.
+        @multiple - if True, choices should be QCheckBoxes, if False then
+        should be QRadioButtons.
+
+        Return list of selected option indexes, or None if the user cancelled.
+        If multiple is False, the list will always have one element.
+        '''
+        self.appendScreen(choicesScreen)
+
+        self.set_current_title('Apport Choices')
+        self.current.ui.text.setText(text)
+
+        for option in options:
+            self.current.add_choice(option, multiple)
+
+        self.wait_user_input()
+        return self.current.get_response()
+
+    def ui_question_userpass(self, text):
+        '''Show a Username/Password dialog.
+
+        Return a tuple (user, pass) or None if cancelled.
+        '''
+        self.appendScreen(userpassScreen)
+
+        self.set_current_title('Credentials')
+        self.current.ui.text.setText(text)
+
+        self.wait_user_input()
+        return self.current.get_userpass()
 
 
 if __name__ == "__main__":
