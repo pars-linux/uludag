@@ -12,4 +12,7 @@ urlpatterns = patterns('',
     # Enable the admin interface:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/(.*)', admin.site.root),
+
+    # login
+    (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'registration/login.html'}),
 )
