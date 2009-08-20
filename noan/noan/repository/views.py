@@ -79,7 +79,7 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
             result.save()
 
     user_result = "unknown"
-    if request.user:
+    if request.user and request.user.is_authenticated():
         results = binary.testresult_set.filter(created_by=request.user)
         if len(results):
             user_result = results[0].result
