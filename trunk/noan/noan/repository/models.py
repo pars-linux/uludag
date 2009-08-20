@@ -293,11 +293,10 @@ class Binary(models.Model):
 
     def get_result_str(self):
         result = self.get_result()
-        return result
         for name, label in TEST_RESULTS:
             if name == result:
                 return label
-        return "-%s-" % result
+        return result
 
     class Meta:
         verbose_name = _('binary')
