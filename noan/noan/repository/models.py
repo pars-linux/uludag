@@ -6,9 +6,9 @@ import datetime
 from pisi.version import Version as Pisi_Version
 
 TEST_RESULTS = (
-    ('yes', _('Yes')),
-    ('no', _('No')),
-    ('unknown', _('Not Tested')),
+    ('yes', _('Can go to stable')),
+    ('no', _('Package has problems')),
+    ('unknown', _('Not Tested or Incomplete')),
 )
 
 RELEASE_RESOLUTIONS = (
@@ -277,19 +277,25 @@ class Binary(models.Model):
     def get_result(self):
         for dep in self.get_pending_dependencies():
             if dep.testresult_set.count() == 0:
-                return None
-            if dep.get_result() == False:
-                return False
+                return "unknown"
+            if dep.get_result() == "no":
+                return "no"
         if self.testresult_set.count() == 0:
-            return None
+            return "unknown"
         else:
             for result in self.testresult_set.all():
                 if result.result == "no":
-                    return False
+                    return "no"
             for result in self.testresult_set.all():
                 if result.result == "yes":
-                    return True
-            return None
+                    return "yes"
+            return "unknown"
+
+    def get_result_str(self):
+        result = self.get_result()
+        for name, label in TEST_RESULTS:
+            if name == result:
+                return label
 
     class Meta:
         verbose_name = _('binary')

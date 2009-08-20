@@ -17,7 +17,7 @@ def printUsage():
     sys.exit(1)
 
 
-def updateDB(path_repo, repo_type, newRelease):
+def updateDB(path_repo, repo_type, options):
     from django.contrib.auth.models import User
     from noan.repository.models import Distribution, Source, Package, Binary, Update
 
@@ -47,14 +47,14 @@ def updateDB(path_repo, repo_type, newRelease):
     for filename in files_new:
         fullpath = os.path.join(path_repo, filename)
 
-        print '  Importing %s' % fullpath
+        print '  Found unindexed binary: %s' % fullpath
 
         pisi_file = pisi.package.Package(fullpath)
         pisi_meta = pisi_file.get_metadata()
         pisi_package = pisi_meta.package
 
-        if newRelease:
-            release = newRelease
+        if options.release:
+            release = options.release
         else:
             release = pisi_package.distributionRelease
 
@@ -109,6 +109,9 @@ def main():
     parser = optparse.OptionParser(usage=usage)
     parser.add_option("-r", "--release", dest="release",
                       help="use RELEASE as ditro version instead", metavar="RELEASE")
+    parser.add_option("-i", "--ignore-redundant",
+                      action="store_true", dest="ignore_redundant", default=False,
+                      help="Ignore redundant binaries")
 
     (options, args) = parser.parse_args()
     if len(args) != 3:
@@ -123,8 +126,8 @@ def main():
     except ImportError:
         printUsage()
 
-    updateDB(path_stable, 'stable', options.release)
-    updateDB(path_test, 'test', options.release)
+    updateDB(path_stable, 'stable', options)
+    updateDB(path_test, 'test', options)
 
 
 if __name__ == '__main__':
