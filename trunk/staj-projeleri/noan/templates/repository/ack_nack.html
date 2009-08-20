@@ -22,16 +22,10 @@ Get some Error :<br/> {{error}}
             {% ifequal stateBinary.package.source.distribution distro %}
             <tr onmouseover="this.style.backgroundColor='#d4e3e5';" onmouseout="this.style.backgroundColor='#ffffff';" >
                 <td>Maintained</td>
-                <td>{{ stateBinary.is_ack }}
-                    {% ifequal stateBinary.is_Ack 0 %}
-                    <div style="color:#ba0000" >
+                <td>
+                    <div class="test_{{stateBinary.is_ack}}" >
                         {{stateBinary}}
                     </div>
-                    {% else %}
-                    <div >
-                        {{stateBinary}}
-                    </div>
-                    {% endifequal %}
                 </td>
                 <td>
                     <input type="radio" name="{{stateBinary.id}}-radio" value="ack"/>

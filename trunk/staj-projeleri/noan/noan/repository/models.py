@@ -226,28 +226,29 @@ class Binary(models.Model):
                 _extend(binaries.filter(resolution="pending"))
         return dependencies
 
-    #  FIXME check version first
-    def is_ack(self):
-        # if package is not tested yet, return None
-        if self.stateoftest_set.count() == 0:
-            return None
-        # if any of tests is "nack" return False
+    #  FIXED check version first
+    def is_ack(self,recursive = 0):
+        print "aaa"
+        dependencies = self.get_pending_dependencies()
+        if not dependencies :
+            if self.stateoftest_set.count() == 0:
+                if recursive == 0:
+                    return True
+                else:
+                    return "not ack/nack dep."
+            else:
+                for state in self.stateoftest_set.all():
+                    if state.state == "nack":
+                        return False
+                return True
         for state in self.stateoftest_set.all():
             if state.state == "nack":
                 return False
-        # check dependencies
-        # TODO: optimize this query later
-        """for dep in self.package.runtimedependency_set.all():
-            binaries = Binary.objects.filter(package__name=dep.dep_package, package__source__distribution=dep.source__distribution, resolution="pending")
-            for bin in binaries:
-                # if any dependency is not tested yet, return None
-                if bin.stateoftest_set.count() == 0:
-                    return None
-                # if any dependency test is "nack", return False
-                if bin.is_ack() == False:
-                    return False
-        # else, package is "ack"ed, return True"""
-        return True
+        result = None
+        for bin in dependencies:
+            if (bin.is_ack(1) == False ):
+                result = False
+        return result
 
     def is_Ack(self):
 # ok is showing to us what is have got no nack run time or build time dependecy
