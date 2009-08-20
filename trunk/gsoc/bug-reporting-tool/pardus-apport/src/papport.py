@@ -12,10 +12,8 @@ import gui, subprocess, os, dbus
 
 from gui.bugtoolMain import Ui_bugtoolUI
 from gui import (errorScreen, reportScreen, messageScreen, choicesScreen,
-                 userpassScreen)
+                 userpassScreen, progressScreen)
 
-availableScreens = [errorScreen, reportScreen, messageScreen, choicesScreen,
-                    userpassScreen]
 
 class PApport(QtGui.QWidget, apport.ui.UserInterface):
 
@@ -25,13 +23,13 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         self.ui = Ui_bugtoolUI()
 
         self.ui.setupUi(self)
-        self.screens = availableScreens
         self.active_widgets = []
         self.screenData = None
         self.moveInc = 1
         self.app = app
         self.app.setQuitOnLastWindowClosed(True)
         self.running = True
+        self.is_active = False
 
         self.waitNextClick = QtCore.QWaitCondition()
         self.mutex = QtCore.QMutex()
@@ -45,22 +43,21 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         self.run_argv()
 
     def slotNext(self):
-        if self.current.execute():
+        if not self.is_active:
+            sys.exit(0)
+        if hasattr(self.current, 'execute') and self.current.execute():
+            self.is_active = False
             self.waitNextClick.wakeAll()
 
     def closeEvent(self, event=None):
-        self.running = False
-        self.waitNextClick.wakeAll()
-        if event is not None:
-            event.accept()
-        self.app.quit()
+        sys.exit(0)
 
     def _updateMenu(self):
         self.menuText = ""
-        current = self.ui.mainStack.currentIndex()
-        for each in self.active_widgets:
+        current = self.ui.mainStack.currentIndex() - 1
+        for index, each in enumerate(self.active_widgets):
             title = each.windowTitle()
-            if self.active_widgets.index(each) == current:
+            if index  == current:
                 self.menuText += self.putBold(title)
             else:
                 self.menuText += self.putBr(title)
@@ -79,6 +76,7 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
 
     def appendScreen(self, screen):
         widget = screen.Widget()
+        self.is_active = True
         self.active_widgets.append(widget)
         self.ui.mainStack.addWidget(widget)
         self.ui.mainStack.setCurrentWidget(widget)
@@ -103,8 +101,6 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         t.start()
         while t.is_alive():
             self.app.processEvents()
-        if not self.running:
-            sys.exit(0)
 
     @property
     def current(self):
@@ -291,6 +287,40 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
 
         self.wait_user_input()
         return self.current.get_userpass()
+
+    def ui_start_info_collection_progress(self):
+        self.appendScreen(progressScreen)
+
+        self.set_current_title('Collecting data')
+        self.current.ui.heading.setText('Collecting Problem Information')
+        self.current.ui.text.setText('The collected information can be sent '
+                                     'to the developers to improve the '
+                                     'application. This might take a few '
+                                     'minutes.')
+        self.current.set_progress()
+        self.ui.buttonNext.setEnabled(False)
+
+    def ui_pulse_info_collection_progress(self):
+        self.current.set_progress()
+
+    def ui_stop_info_collection_progress(self):
+        self.ui.buttonNext.setEnabled(True)
+
+    def ui_start_upload_progress(self):
+        self.appendScreen(progressScreen)
+
+        self.set_current_title('Uploading Report')
+        self.current.ui.heading.setText('Uploading Problem Information')
+        self.current.ui.text.setText('The collected information is being sent'
+                                     ' to the bug tracking system. This might'
+                                     ' take a few minutes.')
+        self.ui.buttonNext.setEnabled(False)
+
+    def ui_set_upload_progress(self, progress):
+        self.current.set_progress(progress)
+
+    def ui_stop_upload_progress(self):
+        self.ui.buttonNext.setEnabled(True)
 
 
 if __name__ == "__main__":
