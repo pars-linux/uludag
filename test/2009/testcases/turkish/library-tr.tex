@@ -15,7 +15,14 @@
 
 \maketitle
 \begin{enumerate}
-\item yazpp sadece kurulum testine tabidir.
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+
+\begin{verbatim}
+yazpp
+
+\end{verbatim}
+
+
 \item exempi ve yaz paketi kurulumu sonrası:
 
 office-tr.pdf tellico paketi testini gerçekleştiriniz.
@@ -101,6 +108,33 @@ programming-tr.pdf subversion testini gerçekleştirin.
 \item portaudio paketi kurulumu sonrası:
 
 multimedia-tr.pdf qpitch testini gerçekleştirin.
+
+\item libv4l paketi kurulumu sonrası: (Kamerası olanlar test edebilecektir.)
+
+Tüm kamera ile ilgili diğer ugulamaların kapalı olduğundan emin olduktan sonra aşağıda bulunan komutun düzgün çalıştığını gözlemleyin:
+\begin{verbatim}
+ test-webcam
+\end{verbatim}
+
+\item qca2 ve qca2-apidocs paketi kurulumu sonrası:
+\begin{itemize}
+ \item Aşağıda bulunan komutu çalıştırın:
+\begin{verbatim}
+# qcatool2 plugins 
+\end{verbatim}
+\item network-tr.pdf konversation testini gerçekleştirin.
+\end{itemize}
+
+
+\item icu4c paketi kurulumu sonrası:
+
+programming-tr.pdf PyICU testini gerçekleştirin.
+
+\item raptor ve redland paketleri kurulumu sonrası:
+
+office-tr.pdf openoffice yazıcı testini gerçekleştirin.
+
+desktop-tr.pdf kdegraphics testini gerçekleştirin.
 \end{enumerate}
 
 \end{document}

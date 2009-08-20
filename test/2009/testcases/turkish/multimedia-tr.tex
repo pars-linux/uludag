@@ -54,11 +54,29 @@ Uygulamayı açın dosya sistemi bölümünden /usr/kde/3.5/share/sounds/ dizini
 
 Kmenüden uygulamayı açın düzgün bir şekilde çalıştığını gözlemleyin.
 
-\item  qjackctl paketi kurulumu sonrası: 
+\item qjackctl paketi kurulumu sonrası: 
 
 Kmenüden qjackct uygulamasını açın. (Bu sırada hiçbir ses aygıtının açıkolmadığından emin olun)
 
 Başla butonuna basın, status ve mesajlardan Jack ses sunucusunun başlatılmış olduğunu gözlemleyin.
+
+\item lame ve lame-docs paketleri kurulumu sonrası: 
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/music.mp3
+# lame music.mp3 music.mpeg
+# mplayer music.mpeg
+\end{verbatim}
+
+\item mpg123 paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
+ \begin{verbatim}
+  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/music.mp3
+  # mpg123 music.mp3
+ \end{verbatim}
+
 
 \end{enumerate}
 
@@ -85,6 +103,18 @@ Aşağıda bulunan ikinci komutun düzgün çıktılar ürettiğini ve üçünc�
   # ffmpeg -i <multimedia dosyası> -r 24 <test dosyası>
   # ffplay <multimedia dosyası>
   \end{verbatim}
+\item x264 paketi kurulumu sonrası:
+
+Aşağıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
+\begin{verbatim}
+# wget  http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/example.y4m.bz2
+# x264 -o test.mp4 example.y4m.bz2 300x300 
+# mplayer test.mp4
+\end{verbatim}
+
+
+
+
 \end{enumerate}
 
 
@@ -314,6 +344,15 @@ Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözleml
 # latex test_asymptote
 # okular test_asymptote.dvi
 \end{verbatim}
+\item  dcmtk paketi kurulumu sonrası:
+
+Aşağıda bulunan komutlaruın düzgün bir şekilde çalıştırğını gözlemleyin:
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcmtk.dcm 
+# dcmj2pnm test_dcmtk.dcm  test.png
+# gwenview test.png
+\end{verbatim}
+
 
 
 \end{enumerate}
