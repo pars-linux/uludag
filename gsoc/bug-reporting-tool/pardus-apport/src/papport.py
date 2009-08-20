@@ -11,9 +11,9 @@ from threading import Thread
 import gui, subprocess, os, dbus
 
 from gui.bugtoolMain import Ui_bugtoolUI
-from gui import errorScreen, reportScreen
+from gui import errorScreen, reportScreen, messageScreen
 
-availableScreens = [errorScreen, reportScreen]
+availableScreens = [errorScreen, reportScreen, messageScreen,]
 
 class PApport(QtGui.QWidget, apport.ui.UserInterface):
 
@@ -218,6 +218,24 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
             return 'reduced'
         else:
             return 'full'
+
+    def ui_info_message(self, title, text):
+        self.appendScreen(messageScreen)
+
+        self.set_current_title('Information')
+        self.current.ui.heading.setText(title)
+        self.current.ui.text.setText(text)
+
+        self.wait_user_input()
+
+    def ui_error_message(self, title, text):
+        self.appendScreen(messageScreen)
+
+        self.set_current_title('Error!')
+        self.current.ui.heading.setText(title)
+        self.current.ui.text.setText(text)
+
+        self.wait_user_input()
 
 
 
