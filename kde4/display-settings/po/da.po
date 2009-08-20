@@ -1,0 +1,367 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2009.
+# Peter Lyberth <peterjensen84@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: display-settings\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-15 23:10+0300\n"
+"PO-Revision-Date: 2009-08-20 11:29+0200\n"
+"Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
+"Language-Team: Danish <  pardus-translators@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .tmp/ui_screens.py:83 .tmp/displaysettings/about.py:20
+#: .tmp/ui_devices.py:66
+msgid "Display Settings"
+msgstr "Indstillinger for skærm"
+
+#: .tmp/ui_screens.py:84
+msgid "Outputs"
+msgstr "Udgange"
+
+#: .tmp/ui_screens.py:85
+msgid "Extend desktop to all displays"
+msgstr "Udvid skrivebordet til alle skærme"
+
+#: .tmp/ui_screens.py:86
+msgid "Detect Outputs"
+msgstr "Detektér udgange"
+
+#: .tmp/ui_screens.py:87
+msgid "Output Properties"
+msgstr "Egenskaber for udgange"
+
+#: .tmp/ui_screens.py:88
+msgid "Size:"
+msgstr "Størrelse:"
+
+#: .tmp/ui_screens.py:89
+msgid "Refresh Rate:"
+msgstr "Opdaterings frekvens:"
+
+#: .tmp/ui_screens.py:90
+msgid "Rotation:"
+msgstr "Rotation:"
+
+#: .tmp/ui_screens.py:91
+msgid "No Rotation"
+msgstr "Ingen rotation"
+
+#: .tmp/ui_screens.py:92
+msgid "Left (90 degrees)"
+msgstr "Venstre (90 grader)"
+
+#: .tmp/ui_screens.py:93
+msgid "Upside-Down (180 degrees)"
+msgstr "På hovedet (180 grader)"
+
+#: .tmp/ui_screens.py:94
+msgid "Right (270 degrees)"
+msgstr "Højre (270 grader)"
+
+#: .tmp/ui_videocard.py:76
+msgid "Video Card Configuration"
+msgstr "Konfiguration for graffikkortet"
+
+#: .tmp/ui_videocard.py:77
+msgid "Video Driver"
+msgstr "Video driver"
+
+#: .tmp/ui_videocard.py:78
+msgid "Use the default driver for the detected card."
+msgstr "Anvend standard driver for det detekterede kort."
+
+#: .tmp/ui_videocard.py:79 .tmp/ui_videocard.py:82
+msgid "Select from the list:"
+msgstr "Vælg fra listen:"
+
+#: .tmp/ui_videocard.py:80
+msgid "Color Depth"
+msgstr "Farvedybde"
+
+#: .tmp/ui_videocard.py:81
+msgid "Determined by the driver"
+msgstr "Bestemt af driveren"
+
+#: .tmp/ui_videocard.py:83
+msgid "16 Bit"
+msgstr "16 bit"
+
+#: .tmp/ui_videocard.py:84
+msgid "24 Bit"
+msgstr "24 bit"
+
+#: .tmp/displaysettings/deviceswidget.py:79
+#: .tmp/displaysettings/screenswidget.py:70
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"Der er ikke nogen pakker der kan agere backend for dette program.\n"
+"Kontroller venligst at de nødvendige pakker er installeret og konfigureret "
+"korrekt."
+
+#: .tmp/displaysettings/deviceswidget.py:86
+#: .tmp/displaysettings/screenswidget.py:77
+msgid ""
+"Cannot find a valid configuration. Display settings won't be enabled until "
+"you create a new configuration.\n"
+"Would you like to create a safe configuration now?"
+msgstr ""
+"Kan ikke finde en gyldig konfiguration. Skærmindstillingerne vil ikke blive "
+"a "
+"nvendt indtil du opretter en ny konfiguration.\n"
+"Vil du oprette en sikker konfiguration nu?"
+
+#: .tmp/displaysettings/deviceswidget.py:95
+#: .tmp/displaysettings/deviceswidget.py:262
+#: .tmp/displaysettings/screenswidget.py:86
+#: .tmp/displaysettings/screenswidget.py:365
+msgid "Access denied."
+msgstr "Adgang nægtet."
+
+#: .tmp/displaysettings/deviceswidget.py:120
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr ""
+"<qt>For at få en bedre ydelse bør du måske benytte <b>%1</b> driveren som er "
+"udgivet af hardware producenten. VIl du anvende denne driver?</p></qt>"
+
+#: .tmp/displaysettings/deviceswidget.py:136
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
+"<b>%1</b> from video card options.</qt>"
+msgstr ""
+"<qt>For at få en bedre ydelse bør du måske benytte <b>%1</b> driveren som er "
+"udgivet af hardware producenten. For at anvende driver, skal du installere <"
+"b>%2</b> pakken og"
+"vælge <b>%1</b> i indstillingerne for graffikkortet.</qt>"
+
+#: .tmp/displaysettings/deviceswidget.py:141
+msgid "Start Package Manager"
+msgstr "Start pakkehåndteringen"
+
+#: .tmp/displaysettings/deviceswidget.py:252
+#: .tmp/displaysettings/screenswidget.py:358
+msgid "You must restart your X session for the changes to take effect."
+msgstr ""
+"Du skal genstarte din X session før at ændringerne bliver taget i brug."
+
+#: .tmp/displaysettings/device.py:60
+msgid "Default Output"
+msgstr "Standard udgang"
+
+#: .tmp/displaysettings/device.py:61
+msgid "Laptop Panel"
+msgstr "Laptop panel"
+
+#: .tmp/displaysettings/device.py:62
+msgid "Analog Output"
+msgstr "Analog udgang"
+
+#: .tmp/displaysettings/device.py:63
+msgid "Digital Output"
+msgstr "Digital udgang"
+
+#: .tmp/displaysettings/device.py:64
+msgid "TV Output"
+msgstr "TV-udgang"
+
+#: .tmp/displaysettings/monitorbrowser.py:41
+msgid "Type:"
+msgstr "Type:"
+
+#: .tmp/displaysettings/monitorbrowser.py:42
+msgid "Monitors:"
+msgstr "Skærme:"
+
+#: .tmp/displaysettings/outputdialog.py:43
+msgid "Settings for Output %1"
+msgstr "Indstillinger for udgang %1"
+
+#: .tmp/displaysettings/outputdialog.py:74
+msgid "Custom Monitor"
+msgstr "Tilpasset skærm"
+
+#: .tmp/displaysettings/outputdialog.py:78
+msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
+msgstr "<qt><i>Klik på \"vælg...\"-for at vælge en skærm</i></qt>"
+
+#: .tmp/displaysettings/screenswidget.py:189
+#: .tmp/displaysettings/screenswidget.py:264
+msgid "Auto"
+msgstr "Automatisk"
+
+#: .tmp/displaysettings/screenswidget.py:259
+msgid "Output Properties - %1"
+msgstr "Egenskaber for udgang - %1"
+
+#: .tmp/displaysettings/about.py:22
+msgid "Display Configuration Tool"
+msgstr "Værktøj til indstilling af skærm"
+
+#: .tmp/displaysettings/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/displaysettings/about.py:32
+msgid "Fatih Aşıcı"
+msgstr "Fatih Aşıcı"
+
+#: .tmp/displaysettings/about.py:32
+msgid "Current Maintainer"
+msgstr "Nuværende vedligeholder"
+
+#: .tmp/ui_monitorbrowser.py:48
+msgid "Browse Monitors"
+msgstr "Gennemse skærme"
+
+#: .tmp/ui_monitorbrowser.py:49
+msgid "Vendors:"
+msgstr "Producenter:"
+
+#: .tmp/ui_monitorbrowser.py:50
+msgid "Models:"
+msgstr "Modeller:"
+
+#: .tmp/ui_output.py:224
+msgid "Output Configuration"
+msgstr "Konfiguration af udgange"
+
+#: .tmp/ui_output.py:225
+msgid ""
+"If the frequency ranges that your monitor supports are not detected for some "
+"reason, you can specify them here. Be careful with these values, as an "
+"inaccurate value may damage your monitor, especially if it is an old model."
+msgstr ""
+"Hvis det frekvensområde din skærm understøtter af en eller anden grund ikke "
+"bliver detekteret, "
+"kan du specificere det her . Vær dog forsigtig da forkerte værdier kan skade "
+"din skærm, "
+"især hvis skærmen er af ældre dato."
+
+#: .tmp/ui_output.py:226
+msgid "Specify Ranges"
+msgstr "Angiv  frekvensområde"
+
+#: .tmp/ui_output.py:227
+msgid "Selection:"
+msgstr "Udvalg:"
+
+#: .tmp/ui_output.py:228
+msgid "Select a standard monitor"
+msgstr "Vælg en standard skærm"
+
+#: .tmp/ui_output.py:229
+msgid "Select from vendor/model list"
+msgstr "Vælg fra liste af producenter/modeller"
+
+#: .tmp/ui_output.py:230
+msgid "Enter ranges manually"
+msgstr "Indtast frekvensområde manuelt"
+
+#: .tmp/ui_output.py:231
+msgid "Monitor:"
+msgstr "Skærm:"
+
+#: .tmp/ui_output.py:232
+msgid "Choose..."
+msgstr "Vælg..."
+
+#: .tmp/ui_output.py:233
+msgid "Horizontal sync:"
+msgstr "Horisontal synk:"
+
+#: .tmp/ui_output.py:234
+msgid "kHz"
+msgstr "kHz"
+
+#: .tmp/ui_output.py:235
+msgid "Vertical refresh:"
+msgstr "Vertikal opdateringsfrekvens:"
+
+#: .tmp/ui_output.py:236
+msgid "Hz"
+msgstr "Hz"
+
+#: .tmp/ui_output.py:237
+msgid "Frequency Ranges"
+msgstr "Frekvensområder"
+
+#: .tmp/ui_output.py:238
+msgid ""
+"If your monitor's dimensions are not correctly detected, fonts and other "
+"visual objects might seem larger or smaller than normal. In order to fix "
+"this problem, you can specify your monitor's dimensions here."
+msgstr ""
+"Hvis din skræms dimensioner ikke er blevet detekteret korrekt, "
+"kan skrifttyper og andre visuelle objekter se mindre eller større ud end "
+"normalt. "
+"For at rette problemet, kan du angive din skærms dimensioner her."
+
+#: .tmp/ui_output.py:239
+msgid "Specify Display Size"
+msgstr "Angiv skærmstørrelse"
+
+#: .tmp/ui_output.py:240
+msgid "Display size:"
+msgstr "Skærmstørrelse:"
+
+#: .tmp/ui_output.py:241
+msgid "15.4\" Wide Screen"
+msgstr "15.4\" Wide screen"
+
+#: .tmp/ui_output.py:242
+msgid "Custom"
+msgstr "Tilpasset"
+
+#: .tmp/ui_output.py:243
+msgid "Width:"
+msgstr "Bredde:"
+
+#: .tmp/ui_output.py:244 .tmp/ui_output.py:246
+msgid " mm"
+msgstr "mm"
+
+#: .tmp/ui_output.py:245
+msgid "Height:"
+msgstr "Højde:"
+
+#: .tmp/ui_output.py:247
+msgid "Dimensions"
+msgstr "Dimensioner"
+
+#: .tmp/ui_output.py:248
+msgid "Ignore this output"
+msgstr "Ignorer denne udgang"
+
+#: .tmp/ui_devices.py:67
+msgid "Video Card:"
+msgstr "Grafikkort:"
+
+#: .tmp/ui_devices.py:68
+msgid "Card Info"
+msgstr "Kort information"
+
+#: .tmp/ui_devices.py:69
+msgid "Configure..."
+msgstr "Tilpas..."
+
+#: .tmp/ui_devices.py:70
+msgid "Outputs:"
+msgstr "Udgange:"
+
+#~ msgid "Cloned displays"
+#~ msgstr "Klonad visning"
+
+#~ msgid " "
+#~ msgstr " "
