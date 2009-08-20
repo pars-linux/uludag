@@ -71,15 +71,22 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
     binary = Binary.objects.get(no=binaryNo, package=package)
 
     if request.method == "POST" and request.user and request.user.is_authenticated():
-        if request.POST['result'] == "unkown":
+        if request.POST['result'] == "unknown":
             TestResult.objects.filter(binary=binary, created_by=request.user).delete()
         elif request.POST['result'] in ("yes", "no"):
             result, created = TestResult.objects.get_or_create(binary=binary, created_by=request.user)
             result.result = request.POST['result']
             result.save()
 
+    user_result = "unknown"
+    if request.user:
+        results = binary.testresult_set.filter(created_by=request.user)
+        if len(results):
+            user_result = results[0].result
+
     context = {
         'binary': binary,
+        'user_result': user_result,
     }
     return render_to_response('repository/binary.html', context, context_instance=RequestContext(request))
 

@@ -106,7 +106,7 @@ def updateDB(path_source, full_import, newRelease):
         for dep in BuildDependency.objects.filter(source=source):
             dep.delete()
         for dep in pspec.source.buildDependencies:
-            dependency = BuildDependency(source=source, dep_package=dep.package, version=toString(dep.version), version_to=toString(dep.versionTo), version_from=toString(dep.versionFrom), release=toInt(dep.release), release_to=toInt(dep.releaseTo), release_from=toInt(dep.releaseFrom))
+            dependency = BuildDependency(source=source, name=dep.package, version=toString(dep.version), version_to=toString(dep.versionTo), version_from=toString(dep.versionFrom), release=toInt(dep.release), release_to=toInt(dep.releaseTo), release_from=toInt(dep.releaseFrom))
             dependency.save()
 
         # Add or update package info
@@ -123,7 +123,7 @@ def updateDB(path_source, full_import, newRelease):
             for dep in RuntimeDependency.objects.filter(package=package):
                 dep.delete()
             for dep in pack.runtimeDependencies():
-                dependency = RuntimeDependency(package=package, dep_package=dep.package, version=toString(dep.version), version_to=toString(dep.versionTo), version_from=toString(dep.versionFrom), release=toInt(dep.release), release_to=toInt(dep.releaseTo), release_from=toInt(dep.releaseFrom))
+                dependency = RuntimeDependency(package=package, name=dep.package, version=toString(dep.version), version_to=toString(dep.versionTo), version_from=toString(dep.versionFrom), release=toInt(dep.release), release_to=toInt(dep.releaseTo), release_from=toInt(dep.releaseFrom))
                 dependency.save()
 
         up_count = 0
@@ -148,6 +148,7 @@ def updateDB(path_source, full_import, newRelease):
 
     # Handle SSL warnings
     def cbSSL(trust_dict):
+        print "ssh shit"
         # No username/password are available
         retcode = False
         # Accept SVN_AUTH_SSL_NOTYETVALID, SVN_AUTH_SSL_EXPIRED, SVN_AUTH_SSL_CNMISMATCH, SVN_AUTH_SSL_UNKNOWNCA, SVN_AUTH_SSL_OTHER
