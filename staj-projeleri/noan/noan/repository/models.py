@@ -3,21 +3,12 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from noan.middleware.threadlocals import get_current_lang
 import datetime
-from django import forms
 from pisi.version import Version as Pisi_Version
 
-
-
-TEST_TIMEOUT = 24 # hours
 TEST_RESULTS = (
-    ('yes', _('Yes')),
-    ('no', _('No')),
-)
-
-STATE_OF_TEST = (
-    ('ack', _('Acknowledgment')),
-    ('nack', _('Not Acknowledgment')),
-    ('', _('Unknown')),
+    ('yes', _('Can go to stable')),
+    ('no', _('Package has problems')),
+    ('unknown', _('Not tested or incomplete')),
 )
 
 RELEASE_RESOLUTIONS = (
@@ -28,6 +19,12 @@ RELEASE_RESOLUTIONS = (
 
 
 class Distribution(models.Model):
+    """
+        Database model for distributions.
+
+        name: Name of distribution (Pardus, Pardus x64, ...)
+        release: Distribution release (2008, 2009, ...)
+    """
     name = models.CharField(max_length=64, verbose_name=_('name'))
     release = models.CharField(max_length=64, verbose_name=_('release'))
 
@@ -45,6 +42,13 @@ class Distribution(models.Model):
 
 
 class Source(models.Model):
+    """
+        Database model for sources in repository.
+
+        name: Name of the source
+        distribution: Distribution that contains the source
+        maintained_by: Source maintainer
+    """
     name = models.CharField(max_length=64, verbose_name=_('name'))
     distribution = models.ForeignKey(Distribution, verbose_name=_('distribution'))
     maintained_by = models.ForeignKey(User, verbose_name=_('maintained by'))
@@ -63,6 +67,12 @@ class Source(models.Model):
 
 
 class Package(models.Model):
+    """
+        Database model for package in repository.
+
+        name: Name of the package
+        source: Source that contains the package
+    """
     name = models.CharField(max_length=64, verbose_name=_('name'))
     source = models.ForeignKey(Source, verbose_name=_('source'))
 
@@ -80,20 +90,28 @@ class Package(models.Model):
 
 
 class BuildDependency(models.Model):
-    source = models.ForeignKey(Source, verbose_name=_('dependent'))
-    dep_package = models.CharField(max_length=64, verbose_name=_('package'))
+    """
+        Database model for build dependencies of a source.
+
+        name: Package name of the dependency
+        version*: Version range
+        release*: Release range
+        source: Dependent source
+    """
+    name = models.CharField(max_length=64, verbose_name=_('name'))
     version = models.CharField(max_length=32, verbose_name=_('version'), default='', blank=True)
     version_from = models.CharField(max_length=32, verbose_name=_('version from'), default='', blank=True)
     version_to = models.CharField(max_length=32, verbose_name=_('version to'), default='', blank=True)
     release = models.IntegerField(verbose_name=_('release'), default=0, blank=True)
     release_from = models.IntegerField(verbose_name=_('release from'), default=0, blank=True)
     release_to = models.IntegerField(verbose_name=_('release to'), default=0, blank=True)
+    source = models.ForeignKey(Source, verbose_name=_('dependent source'))
 
     def __unicode__(self):
         if self.release != 0:
-            return u'%s == r%s' % (self.dep_package, self.release)
+            return u'%s == r%s' % (self.name, self.release)
         if self.version != '':
-            return u'%s == %s' % (self.dep_package, self.version)
+            return u'%s == %s' % (self.name, self.version)
         dep = []
         if self.version_from != '':
             dep.append('>= %s' % self.version_from)
@@ -103,29 +121,37 @@ class BuildDependency(models.Model):
             dep.append('>= r%s' % self.release_from)
         if self.release_to != 0:
             dep.append('<= r%s' % self.release_to)
-        return u'%s %s' % (self.dep_package, ' '.join(dep))
+        return u'%s %s' % (self.name, ' '.join(dep))
 
     class Meta:
         verbose_name = _('build dependency')
         verbose_name_plural = _('build depencencies')
-        ordering = ['dep_package']
+        ordering = ['name']
 
 
 class RuntimeDependency(models.Model):
-    package = models.ForeignKey(Package, verbose_name=_('dependent'))
-    dep_package = models.CharField(max_length=64, verbose_name=_('package'))
+    """
+        Database model for runtime depencencies of a package.
+
+        name: Package name of the depencency
+        version*: Version range
+        release*: Release range
+        package: Dependent package
+    """
+    name = models.CharField(max_length=64, verbose_name=_('name'))
     version = models.CharField(max_length=32, verbose_name=_('version'), default='', blank=True)
     version_from = models.CharField(max_length=32, verbose_name=_('version from'), default='', blank=True)
     version_to = models.CharField(max_length=32, verbose_name=_('version to'), default='', blank=True)
     release = models.IntegerField(verbose_name=_('release'), default=0, blank=True)
     release_from = models.IntegerField(verbose_name=_('release from'), default=0, blank=True)
     release_to = models.IntegerField(verbose_name=_('release to'), default=0, blank=True)
+    package = models.ForeignKey(Package, verbose_name=_('dependent package'))
 
     def __unicode__(self):
         if self.release != 0:
-            return u'%s == r%s' % (self.dep_package, self.release)
+            return u'%s == r%s' % (self.name, self.release)
         if self.version != '':
-            return u'%s == %s' % (self.dep_package, self.version)
+            return u'%s == %s' % (self.name, self.version)
         dep = []
         if self.version_from != '':
             dep.append('>= %s' % self.version_from)
@@ -135,15 +161,25 @@ class RuntimeDependency(models.Model):
             dep.append('>= r%s' % self.release_from)
         if self.release_to != 0:
             dep.append('<= r%s' % self.release_to)
-        return u'%s %s' % (self.dep_package, ' '.join(dep))
+        return u'%s %s' % (self.name, ' '.join(dep))
 
     class Meta:
         verbose_name = _('runtime dependency')
         verbose_name_plural = _('runtime depencencies')
-        ordering = ['dep_package']
+        ordering = ['name']
 
 
 class Update(models.Model):
+    """
+        Database model for updates of a source.
+
+        no: Release number
+        source: Source
+        version_no: Version string
+        updated_by: Updater
+        updated_on: Update date
+        comment: Updater's comment
+    """
     no = models.IntegerField(verbose_name=_('release no'))
     source = models.ForeignKey(Source, verbose_name=_('source'))
     version_no = models.CharField(max_length=32, verbose_name=_('version no'))
@@ -162,6 +198,14 @@ class Update(models.Model):
 
 
 class Binary(models.Model):
+    """
+        Database model for binary package.
+
+        no: Build no
+        package: Package
+        update: Update
+        resolution: 'pending', 'released' or 'reverted'. Import scripts set this value.
+    """
     no = models.IntegerField(verbose_name=_('build no'))
     package = models.ForeignKey(Package, verbose_name=_('package'))
     update = models.ForeignKey(Update, verbose_name=_('update'))
@@ -177,6 +221,11 @@ class Binary(models.Model):
         return '%s.pisi' % unicode(self)
 
     def get_difference(self):
+        """
+            Find next to last binary and generates a list of update difference between these two binaries.
+
+            This is an expensive method. Don't use this in pacakge lists.
+        """
         binaries = self.package.binary_set.filter(no__lt=self.no).order_by('-no')
         if len(binaries) == 0:
             update_last = 0
@@ -184,21 +233,20 @@ class Binary(models.Model):
             update_last = binaries[0].update.no
         return self.package.source.update_set.filter(no__lte=self.update.no, no__gt=update_last)
 
-    class Meta:
-        verbose_name = _('binary')
-        verbose_name_plural = _('binaries')
-        ordering = ['package__name', '-no']
-        unique_together = ('no', 'package')
-
     def get_pending_dependencies(self):
+        """
+            Returns a list of dependencies that stay in test repository.
+
+            This is a *very* expensive method. Don't use this in package lists.
+        """
         dependencies = []
         def _extend(x):
             for y in x:
                 if y not in dependencies:
                     dependencies.append(y)
-        # version
         for dep in self.package.runtimedependency_set.all():
-            binaries = Binary.objects.filter(package__source__distribution = self.package.source.distribution, package__name=dep.dep_package)
+            binaries = Binary.objects.filter(package__source__distribution = self.package.source.distribution, package__name=dep.name)
+            # version
             if dep.version != "" and binaries.filter(update__version_no=dep.version, resolution="released").count() == 0:
                 _extend(binaries.filter(resolution="pending"))
             if dep.version_from != "":
@@ -226,16 +274,38 @@ class Binary(models.Model):
                 _extend(binaries.filter(resolution="pending"))
         return dependencies
 
-    #  FIXED check version first
+    def get_result(self):
+        for dep in self.get_pending_dependencies():
+            if dep.testresult_set.count() == 0:
+                return "unknown"
+            if dep.get_result() == "no":
+                return "no"
+        if self.testresult_set.count() == 0:
+            return "unknown"
+        else:
+            for result in self.testresult_set.all():
+                if result.result == "no":
+                    return "no"
+            for result in self.testresult_set.all():
+                if result.result == "yes":
+                    return "yes"
+            return "unknown"
+
+    def get_result_str(self):
+        result = self.get_result()
+        for name, label in TEST_RESULTS:
+            if name == result:
+                return label
+        return result
+
     def is_ack(self,recursive = 0):
-        print "aaa"
         dependencies = self.get_pending_dependencies()
         if not dependencies :
             if self.stateoftest_set.count() == 0:
                 if recursive == 0:
                     return True
                 else:
-                    return "not ack/nack dep."
+                    return None
             else:
                 for state in self.stateoftest_set.all():
                     if state.state == "nack":
@@ -250,102 +320,33 @@ class Binary(models.Model):
                 result = False
         return result
 
-    def is_Ack(self):
-# ok is showing to us what is have got no nack run time or build time dependecy
-        ok = 1
-        # getting runtime dep to binary in pending
-        RunTimeDep = self.package.runtimedependency_set.filter(package__exact=self.package).filter(package__binary__resolution__exact = "pending")
-        BuildTimeDep = self.package.source.builddependency_set.filter(source__package__exact=self.package).filter(source__package__binary__resolution__exact = "pending")
-        all_binary = Binary.objects.all()
-        for dep in RunTimeDep:
-            binary = Binary.objects.filter(package__name__exact = dep.dep_package).filter(package__source__distribution = self.package.source.distribution)
-            if dep.version != '':
-                binary = binary.filter(update__version_no__exact = dep.version)
-            if dep.version_from != '':
-                binary = binary.filter(update__version_no__gte = dep.version_from)
-            if dep.version_to != '':
-                binary = binary.filter(update__version_no__lte = dep.version_to)
-            binary = binary.filter(stateoftest__state__exact = "nack")
-            if binary:
-                ok = 0
-            else:
-                pass
-        return ok
-
-class Task(models.Model):
-    package = models.ForeignKey(Package, verbose_name=_('package'))
-    description_en = models.CharField(max_length=256, verbose_name=_('description [en]'))
-
-    def __unicode__(self):
-        return u'[%s] - %s' % (self.package.name, self.get_description())
-
-    def get_description(self):
-        lang = get_current_lang()
-        if lang == 'en':
-            return self.description_en
-        descriptions = self.taskdescription_set.filter(language__code=lang)
-        if len(descriptions) > 0:
-            return descriptions[0].description
-        return self.description_en
-
     class Meta:
-        verbose_name = _('task')
-        verbose_name_plural = _('tasks')
+        verbose_name = _('binary')
+        verbose_name_plural = _('binaries')
+        ordering = ['package__name', '-no']
+        unique_together = ('no', 'package')
 
 
-class Language(models.Model):
-    code = models.CharField(max_length=6, verbose_name=_('code'))
-    name = models.CharField(max_length=32, verbose_name=_('name'))
+class TestResult(models.Model):
+    """
+        Database model for test results.
 
-    def __unicode__(self):
-        return u'[%s] %s' % (self.code, self.name)
-
-    class Meta:
-        verbose_name = _('language')
-        verbose_name_plural = _('languages')
-
-
-class TaskDescription(models.Model):
-    task = models.ForeignKey(Task, verbose_name=_('task'))
-    language = models.ForeignKey(Language, verbose_name=_('language'))
-    description = models.CharField(max_length=256, verbose_name=_('description'))
-
-    def __unicode__(self):
-        return self.description
-
-    class Meta:
-        verbose_name = _('task description')
-        verbose_name_plural = _('task descriptions')
-
-
-""" StateOfTest is table of pending packages. that table relative with CommentOfStatement 
- because some ack nack job makes some comment."""
-
-class StateOfTest(models.Model):
+        binary: Binary
+        created_by: Tester
+        created_on: Test date
+        result: Test result
+        comment: Tester's comment
+    """
     binary = models.ForeignKey(Binary, verbose_name=_('binary'))
-    changed_by = models.ForeignKey(User, verbose_name=_('changed by'))
-    updated = models.DateField(verbose_name=_('updated'),blank=True)
-    state = models.CharField(max_length=4, choices=STATE_OF_TEST, verbose_name=_('state'), default='', blank=True)
+    created_by = models.ForeignKey(User, verbose_name=_('created by'))
+    created_on = models.DateField(verbose_name=_('created on'), auto_now=True)
+    result = models.CharField(max_length=32, choices=TEST_RESULTS, verbose_name=_('result'))
+    comment = models.CharField(max_length=256, verbose_name=_('comment'), default='')
 
     def __unicode__(self):
-        return _('%(state)s (binary: %(binary)s source: %(source)s, distro: %(distro)s)') % {'state': self.state, 'binary': self.binary, 'source': self.binary.package.source.name, 'distro': self.binary.package.source.distribution}
+        return _('%(result)s (binary: %(binary)s source: %(source)s, distro: %(distro)s)') % {'result': self.result, 'binary': self.binary, 'source': self.binary.package.source.name, 'distro': self.binary.package.source.distribution}
 
     class Meta:
-        ordering = ['id']
-        verbose_name = _('state')
-        verbose_name_plural = _('states')
-
-
-
-class CommentOfStatement(models.Model):
-    state_of_test_id = models.OneToOneField(StateOfTest, verbose_name=_('id'))
-    comment = models.CharField(max_length=256, verbose_name=_('comment'))
-
-    def __unicode__(self):
-        return _('%(binary)s (statement: %(state)s, %(comment)s)') % {'binary': self.state_of_test_id.binary, 'state': self.state_of_test_id.state, 'comment': self.comment }
-
-    class Meta:
-        ordering = ['id']
-        verbose_name = _('comment of statement')
-        verbose_name_plural = _('comments of statement')
-
+        ordering = ['-created_on']
+        verbose_name = _('test result')
+        verbose_name_plural = _('test results')

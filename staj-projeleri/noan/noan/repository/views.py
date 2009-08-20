@@ -73,12 +73,23 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
     source = Source.objects.get(name=sourceName, distribution=distribution)
     package = Package.objects.get(name=packageName, source=source)
     binary = Binary.objects.get(no=binaryNo, package=package)
-    if request.method == "POST":
-        print request.POST['state']
-        Add_State = StateOfTest(binary = binary, changed_by = request.user, updated=date.today(), state = request.POST['state'])
-        Add_State.save()
+    if request.method == "POST" and request.user and request.user.is_authenticated():
+        if request.POST['result'] == "unknown":
+            TestResult.objects.filter(binary=binary, created_by=request.user).delete()
+        elif request.POST['result'] in ("yes", "no"):
+            result, created = TestResult.objects.get_or_create(binary=binary, created_by=request.user)
+            result.result = request.POST['result']
+            result.save()
+
+    user_result = "unknown"
+    if request.user and request.user.is_authenticated():
+        results = binary.testresult_set.filter(created_by=request.user)
+        if len(results):
+            user_result = results[0].result
+
     context = {
         'binary': binary,
+        'user_result': user_result,
     }
     return render_to_response('repository/binary.html', context, context_instance=RequestContext(request))
 
@@ -173,8 +184,8 @@ def search_form(request):
 def AckNackList(request):
     list=[]
     error = ()
-    stateBinary = Binary.objects.filter(resolution = 'pending').filter(package__source__maintained_by = request.user).filter(stateoftest__isnull=True)
-    stateBinaryOfUpdate = Binary.objects.filter(resolution = 'pending').filter(update__updated_by = request.user).filter(stateoftest__isnull=True)
+    stateBinary = Binary.objects.filter(resolution = 'pending').filter(package__source__maintained_by = request.user).filter(testresult__isnull=True)
+    stateBinaryOfUpdate = Binary.objects.filter(resolution = 'pending').filter(update__updated_by = request.user).filter(testresult__isnull=True)
     if request.method == 'POST':
         radio = {}
         comment = {}
@@ -192,21 +203,25 @@ def AckNackList(request):
                     if (post_info[1] == "comment"):
                         comment[post_info[0]] = list[1]
             except Exception, err:
-                print "Error: %s" %(err)
+                print "Error: %s" %(str(err))
                 error += err
         # Gettin binary id in radio dict. iteratior radio for add value to StateOfTest db.
         for binary_id in  radio:
             a = binary_id
+            if binary_id in comment:
+                Add_Comment = TestResult(binary = Binary.objects.get(id=binary_id), created_by = request.user, created_on=date.today(), result = radio[binary_id][0], comment = comment[binary_id][-1])
+                Add_Comment.save()
+            else:
+                Add_Comment = TestResult(binary = Binary.objects.get(id=binary_id), created_by = request.user, created_on=date.today(), result = radio[binary_id][0])
+                Add_Comment.save()
+            """
             if radio[binary_id][0]:
-                Add_State = StateOfTest(binary = Binary.objects.get(id=binary_id), changed_by = request.user, updated=date.today(), state = radio[binary_id][0])
-                try:
-                    Add_State.save()
-                    # have got a comment of this pending packages. If it have got, add comment to CommentOfStatement db
-                    if comment[binary_id][0]:
-                        Add_Comment = CommentOfStatement(state_of_test_id = Add_State, comment = comment[binary_id][0])
+                Add_State = TestResult(binary = Binary.objects.get(id=binary_id), changed_by = request.user, updated=date.today(), state = radio[binary_id][0])
+                        Add_Comment = CommentOfStatement(state_of_test_id = Add_State, comment = comment[binary_id][-1])
                         Add_Comment.save()
                 except Exception, err:
-                    error += err
+                    error += err 
+            """
     if stateBinary or stateBinaryOfUpdate:
         distributions = Distribution.objects.all()
     else:
@@ -226,7 +241,7 @@ def log_out(request):
     return HttpResponseRedirect('/repository')
 
 def ListAllAckNack(request):
-    AckNackList = StateOfTest.objects.all()
+    AckNackList = TestResult.objects.all()
     distributions = Distribution.objects.all()
     context = {
             'distributions' : distributions,
