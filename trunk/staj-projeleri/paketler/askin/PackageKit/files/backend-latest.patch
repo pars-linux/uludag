@@ -1,6 +1,6 @@
 diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py PackageKit-0.4.9/backends/pisi/pisiBackend.py
---- PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py	2009-08-14 16:15:23.570719921 +0300
-+++ PackageKit-0.4.9/backends/pisi/pisiBackend.py	2009-08-14 16:15:57.022844102 +0300
+--- PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py	2009-08-17 11:10:19.022786262 +0300
++++ PackageKit-0.4.9/backends/pisi/pisiBackend.py	2009-08-18 10:32:08.031491854 +0300
 @@ -25,81 +25,6 @@
  
  class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
@@ -103,7 +103,27 @@ diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py PackageKit-0.4.9/b
      def __get_package_version(self, package):
          """ Returns version string of given package """
          # Internal FIXME: PiSi may provide this
-@@ -173,17 +106,24 @@
+@@ -122,6 +55,10 @@
+             version = "%s-%s" % (package.version, package.release)
+         return version
+ 
++    def __get_package_id(self, package):
++        """ Returns package id string of given package """
++        return self.get_package_id(package.name, self.__get_package_version(package), package.architecture, "")
++
+     def __get_package(self, package, filters = None):
+         """ Returns package object suitable for other methods """
+         if self.installdb.has_package(package):
+@@ -161,7 +98,7 @@
+ 
+         for pkg in self.packagedb.get_package(package).runtimeDependencies():
+             # Internal FIXME: PiSi API has really inconsistent for return types and arguments!
+-            self.__get_package(pkg.package)
++            self.__get_package(pkg.package, filters)
+ 
+     def get_details(self, package_ids):
+         """ Prints a detailed description for a given package """
+@@ -173,20 +110,45 @@
          if self.packagedb.has_package(package):
              pkg = self.packagedb.get_package(package)
  
@@ -137,7 +157,28 @@ diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py PackageKit-0.4.9/b
          else:
              self.error(ERROR_PACKAGE_NOT_FOUND, "Package was not found")
  
-@@ -197,10 +137,12 @@
++    def get_update_detail(self, package_ids):
++        ''' Implement the {backend}-get-update_detail functionality '''
++        self.allow_cancel(True)
++        self.percentage(None)
++        self.status(STATUS_INFO)
++
++        package = self.get_package_from_id(package_ids[0])[0]
++
++        if package in pisi.api.list_upgradable():
++            installed_package = self.installdb.get_package(package)
++            update_package    = self.packagedb.get_package(package)
++            desc              = update_package.history[0].comment
++            issued            = update_package.history[0].date
++
++        self.update_detail(self.__get_package_id(installed_package),
++                           self.__get_package_id(update_package),
++                           '', '', 'http://bugs.pardus.org.tr', '', '', desc, '', '', issued, '')
++
+     def get_files(self, package_ids):
+         """ Prints a file list for a given package """
+         self.allow_cancel(True)
+@@ -197,33 +159,61 @@
          if self.installdb.has_package(package):
              pkg = self.installdb.get_files(package)
  
@@ -152,7 +193,17 @@ diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py PackageKit-0.4.9/b
  
              self.files(package, file_list)
  
-@@ -209,21 +151,38 @@
++    def get_packages(self, filters):
++        """
++        List all instaled package
++        It is used with list-{create-diff-install}
++        """
++        for repo in self.repodb.list_repos():
++            for pkg in self.packagedb.list_packages(repo):
++                self.__get_package(pkg, filters)
++
+     def get_repo_list(self, filters):
+         """ Prints available repositories """
          self.allow_cancel(True)
          self.percentage(None)
  
@@ -189,16 +240,16 @@ diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py PackageKit-0.4.9/b
 +            # show reverse dependencies
 +            if self.installdb.has_package(package):
 +                for pkg in self.installdb.get_rev_deps(package):
-+                    self.__get_package(pkg[0])
++                    self.__get_package(pkg[0], filters)
 +            else:
 +                for pkg in self.packagedb.get_rev_deps(package):
-+                    self.__get_package(pkg[0])
++                    self.__get_package(pkg[0], filters)
 +
 +
  
      def get_updates(self, filter):
          """ Prints available updates and types """
-@@ -253,7 +212,7 @@
+@@ -253,7 +243,7 @@
  
          try:
              self.status(STATUS_INSTALL)
@@ -207,7 +258,42 @@ diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py PackageKit-0.4.9/b
          except pisi.Error,e:
              # FIXME: Error: internal-error : Package re-install declined
              # Force needed?
-@@ -309,6 +268,20 @@
+@@ -276,6 +266,34 @@
+         else:
+             self.error(ERROR_PACKAGE_NOT_INSTALLED, "Package is already installed")
+ 
++    def download_packages(self, directory, package_ids):
++        '''
++        Implement the {backend}-download-packages functionality
++        '''
++
++        self.status(STATUS_DOWNLOAD)
++        fileList = []
++
++        for package_id in package_ids:
++            package = self.get_package_from_id(package_id)[0]
++            if self.packagedb.has_package(package):
++                try:
++                    self.percentage(0)
++                    pisi.api.fetch([package], directory)
++                    self.percentage(100)
++                    pkg = self.packagedb.get_package(package)
++                    filePath = directory + '/' + pkg.packageURI
++                    fileList.append(filePath)
++                    self.package(self.__get_package_id(pkg), INFO_DOWNLOADING, '')
++
++                except pisi.Error, e:
++                    self.error(ERROR_PACKAGE_DOWNLOAD_FAILED, e)
++            else:
++                self.message(MESSAGE_COULD_NOT_FIND_PACKAGE, "Could not find a match for package %s" % package)
++
++            self.files(package_ids[0], ";".join(fileList))
++
++
+     def refresh_cache(self):
+         """ Updates repository indexes """
+         self.allow_cancel(False)
+@@ -309,6 +327,20 @@
          else:
              self.error(ERROR_PACKAGE_NOT_INSTALLED, "Package is not installed")
  
@@ -228,7 +314,16 @@ diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py PackageKit-0.4.9/b
      def repo_set_data(self, repo_id, parameter, value):
          """ Sets a parameter for the repository specified """
          self.allow_cancel(False)
-@@ -369,10 +342,9 @@
+@@ -360,7 +392,7 @@
+         key = key.lstrip("/")
+ 
+         for pkg, files in pisi.api.search_file(key):
+-            self.__get_package(pkg)
++            self.__get_package(pkg, filters)
+ 
+     def search_group(self, filters, group):
+         """ Prints a list of packages belongs to searched group """
+@@ -369,10 +401,9 @@
          self.status(STATUS_INFO)
  
          try:
@@ -243,8 +338,8 @@ diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pisiBackend.py PackageKit-0.4.9/b
              self.error(ERROR_GROUP_NOT_FOUND, "Component %s was not found" % group)
  
 diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pk-backend-pisi.c PackageKit-0.4.9/backends/pisi/pk-backend-pisi.c
---- PackageKit-0.4.9-orig/backends/pisi/pk-backend-pisi.c	2009-08-14 16:15:23.570719921 +0300
-+++ PackageKit-0.4.9/backends/pisi/pk-backend-pisi.c	2009-08-14 16:16:02.974844219 +0300
+--- PackageKit-0.4.9-orig/backends/pisi/pk-backend-pisi.c	2009-08-17 11:10:19.021786357 +0300
++++ PackageKit-0.4.9/backends/pisi/pk-backend-pisi.c	2009-08-18 10:39:10.966492733 +0300
 @@ -55,28 +55,40 @@
  static PkBitfield
  backend_get_groups (PkBackend *backend)
@@ -324,7 +419,66 @@ diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pk-backend-pisi.c PackageKit-0.4.
   * pk_backend_cancel:
   */
  static void
-@@ -231,6 +252,18 @@
+@@ -102,6 +123,20 @@
+ }
+ 
+ /**
++ * backend_download_packages:
++ */
++static void
++backend_download_packages (PkBackend *backend, gchar **package_ids, const gchar *directory)
++{
++	gchar *package_ids_temp;
++
++	/* send the complete list as stdin */
++	package_ids_temp = pk_package_ids_to_text (package_ids);
++	pk_backend_spawn_helper (spawn, "pisiBackend.py", "download-packages", directory, package_ids_temp, NULL);
++	g_free (package_ids_temp);
++}
++
++/**
+  * backend_get_depends:
+  */
+ static void
+@@ -141,6 +176,18 @@
+ }
+ 
+ /**
++ * backend_get_packages:
++ */
++static void
++backend_get_packages (PkBackend *backend, PkBitfield filters)
++{
++	gchar *filters_text;
++	filters_text = pk_filter_bitfield_to_text (filters);
++	pk_backend_spawn_helper (spawn, "pisiBackend.py", "get-packages", filters_text, NULL);
++	g_free (filters_text);
++}
++
++/**
+  * backend_get_requires:
+  */
+ static void
+@@ -156,6 +203,18 @@
+ }
+ 
+ /**
++ * backend_get_update_detail:
++ */
++static void
++backend_get_update_detail (PkBackend *backend, gchar **package_ids)
++{
++	gchar *package_ids_temp;
++	package_ids_temp = pk_package_ids_to_text (package_ids);
++	pk_backend_spawn_helper (spawn, "pisiBackend.py", "get-update-detail", package_ids_temp, NULL);
++	g_free (package_ids_temp);
++}
++
++/**
+  * backend_get_updates:
+  */
+ static void
+@@ -231,6 +290,18 @@
  	pk_backend_spawn_helper (spawn, "pisiBackend.py", "remove-packages", pk_backend_bool_to_text (allow_deps), package_ids_temp, NULL);
  	g_free (package_ids_temp);
  }
@@ -343,16 +497,29 @@ diff -Nuar PackageKit-0.4.9-orig/backends/pisi/pk-backend-pisi.c PackageKit-0.4.
  
  /**
   * pk_backend_search_details:
-@@ -353,7 +386,7 @@
+@@ -353,25 +424,25 @@
  	backend_destroy,			/* destroy */
  	backend_get_groups,			/* get_groups */
  	backend_get_filters,			/* get_filters */
 -	NULL,					/* get_mime_types */
 +	backend_get_mime_types,			/* get_mime_types */
  	backend_cancel,				/* cancel */
- 	NULL,					/* download_packages */
+-	NULL,					/* download_packages */
++	backend_download_packages,		/* download_packages */
  	NULL,					/* get_categories */
-@@ -371,7 +404,7 @@
+ 	backend_get_depends,			/* get_depends */
+ 	backend_get_details,			/* get_details */
+ 	NULL,					/* get_distro_upgrades */
+ 	backend_get_files,			/* get_files */
+-	NULL,					/* get_packages */
++	backend_get_packages,			/* get_packages */
+ 	backend_get_repo_list,			/* get_repo_list */
+ 	backend_get_requires,			/* get_requires */
+-	NULL,					/* get_update_detail */
++	backend_get_update_detail,		/* get_update_detail */
+ 	backend_get_updates,			/* get_updates */
+ 	backend_install_files,			/* install_files */
+ 	backend_install_packages,		/* install_packages */
  	NULL,					/* install_signature */
  	backend_refresh_cache,			/* refresh_cache */
  	backend_remove_packages,		/* remove_packages */

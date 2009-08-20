@@ -36,9 +36,7 @@
   <Package>
     <Name>PackageKit</Name>
     <RuntimeDependencies>
-      <Dependency>docbook-utils</Dependency>
       <Dependency>xmlto</Dependency>
-      <Dependency>xulrunner-devel</Dependency>
       <Dependency>cppunit</Dependency>
     </RuntimeDependencies>
     <Files>
