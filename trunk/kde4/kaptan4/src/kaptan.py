@@ -21,7 +21,6 @@ import gui.ScrSummary  as summaryWidget
 import gui.ScrKeyboard  as keyboardWidget
 import gui.ScrPackage as packageWidget
 import gui.ScrSmolt as smoltWidget
-import gui.ScrDpi as dpiWidget
 
 def getKernelOpt(cmdopt=None):
     if cmdopt:
@@ -63,9 +62,9 @@ def profileSended():
 if isLiveCD():
     availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, summaryWidget, goodbyeWidget]
 elif profileSended():
-    availableScreens = [welcomeWidget, mouseWidget, dpiWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, packageWidget, summaryWidget, goodbyeWidget]
+    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, packageWidget, summaryWidget, goodbyeWidget]
 else:
-    availableScreens = [welcomeWidget, mouseWidget, dpiWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, smoltWidget, packageWidget, summaryWidget, goodbyeWidget]
+    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, smoltWidget, packageWidget, summaryWidget, goodbyeWidget]
 
 class Kaptan(QtGui.QWidget):
     def __init__(self, parent=None):

@@ -26,7 +26,6 @@ import gui.ScrStyle  as styleWidget
 import gui.ScrMenu  as menuWidget
 import gui.ScrSearch  as searchWidget
 import gui.ScrSmolt  as smoltWidget
-import gui.ScrDpi  as dpiWidget
 
 # Smolt related headers
 #import sys
@@ -44,7 +43,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
     def shown(self):
-        self.dpiSettings = dpiWidget.Widget.screenSettings
         self.wallpaperSettings = wallpaperWidget.Widget.screenSettings
         self.mouseSettings = mouseWidget.Widget.screenSettings
         self.menuSettings = menuWidget.Widget.screenSettings
@@ -58,12 +56,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         content = QString("")
 
         content.append("""<html><body><ul>""")
-
-        # DPI Settings
-        content.append(subject % ki18n("DPI Settings").toString())
-
-        content.append(item % ki18n("Selected DPI configuration: <b>%s</b>").toString() % self.dpiSettings["dpi"])
-        content.append(end)
 
         # Mouse Settings
         content.append(subject % ki18n("Mouse Settings").toString())
@@ -133,17 +125,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def execute(self):
         hasChanged = False
-
-        # Dpi Settings
-        if self.dpiSettings["hasChanged"] == True:
-            hasChanged = True
-            configDpi = KConfig("kcmfonts")
-            groupDpi = configDpi.group("General")
-            groupDpi.writeEntry("forceFontDPI", str(self.dpiSettings["dpi"]))
-
-            configDpi.sync()
-            kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.FontChanged)
-
 
         # Wallpaper Settings
         if self.wallpaperSettings["hasChanged"] == True:
