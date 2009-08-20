@@ -16,8 +16,7 @@ import string
 import comar
 import pisi
 
-import os
-import piksemel
+import operations
 
 # for rewrited pisi.api functions
 #--------------------------------
@@ -45,6 +44,8 @@ class Iface(Singleton):
             self.source = source
             self.initComar()
             self.initDB()
+
+        self.operation = operations.Operations()
 
     def initialized(self):
         return "link" in self.__dict__
@@ -82,52 +83,18 @@ class Iface(Singleton):
             self.invalidate_db_caches()
             self.exceptionHandler(exception)
 
-    def writeFile(self, packages, operation):
-        home = os.getenv("HOME")
-        directory = ("/offlinePISI")
-        main_path = home + directory
-        operation_info = main_path + "/last_operation.info"
-
-        all_packages = packages + self.depends_list
-
-        try:
-            os.mkdir(main_path)
-
-        except OSError:
-            pass
-
-
-        try:
-            fi = open(operation_info, "r")
-            process = fi.read()
-            fi.close
-            fi = open(operation_info, "w")
-
-        except IOError:
-            fi = open(operation_info, "w")
-            process = "1"
-
-        fi.write(str(int(process) + 1))
-        fi.close
-        os.mkdir(main_path + "/" + process)
-
-
-        process_path = main_path + "/" + process + "/"
-        f = open(process_path + "%s.list"% process, "w")
-        pisi.api.fetch(all_packages, process_path + "/")
-        for pkg in all_packages:
-            f.write(pkg + "\n")
-        f.close()
-
     def installPackages(self, packages):
         for pkg in packages + self.depends_list:
             self.oidb.add_package(pkg)
-        self.writeFile(packages, "Install")
+
+        all_packages = packages + self.depends_list
+
+        self.operation.create(all_packages, "install")
 
     def removePackages(self, packages):
-        #print packages
-        #print self.requires_list
-        self.writeFile(packages, "Remove")
+        all_packages = packages + self.requires_list
+
+        self.operation.create(all_packages, "remove")
 
     def upgradePackages(self, packages):
         self.installPackages(packages)
@@ -241,6 +208,7 @@ class Iface(Singleton):
     def getRequires(self, packages):
         revDeps = set(self.get_remove_order(packages))
         requires_list = list(set(revDeps) - set(packages))
+        self.requires_list = list(set(revDeps) - set(packages))
         return list(set(revDeps) - set(packages))
 
     def getExtras(self, packages):
