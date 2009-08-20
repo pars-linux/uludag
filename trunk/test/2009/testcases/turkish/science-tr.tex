@@ -1,7 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[turkish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=2cm]{geometry}
 
 \title{Science Bileşeni Test Aşamaları}
 \author{Semen Cirit}
@@ -22,6 +22,32 @@
 Uygulamayı açın ve Uygulama paneli üzerinden Plots bölümünü tıklayın, Barplot'u seçin ve burada listelenen verilerden birini seçin, ekleyin ve onaylayın. 
 
 Bu durumun sonunda ilgili grafiğin sorunsuz bir şekilde oluştuğunu gözlemleyin.
+
+\item maxima paketi kurulumu sonrası:
+
+Aşağıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
+\begin{verbatim}
+ # maxima
+ 144*17 - 9;
+ 144^25;
+\end{verbatim}
+
+\item gfan paketi kurulum testine tabidir.
+
+\end{enumerate}
+
+\section{Robotics alt Bileşeni}
+\begin{enumerate}
+ \item opencv paketi kurulumu sonrası: (kamerası olanlar test edebilecektir.)
+
+Resim çek butonuna basın sorunsuz bir şekilde ekranınyenilendiğini gözlemleyin
+\begin{verbatim}
+# wget http://svn.pardus.org.tr/projeler/facelock/pardus.py
+# wget http://svn.pardus.org.tr/projeler/facelock/pardus.png
+# python pardus.py
+\end{verbatim}
+
+
 \end{enumerate}
 
 \end{document}

@@ -14,6 +14,11 @@
 \begin{document}
 
 \maketitle
+\section{Tool alt bileşeni}
+\begin{enumerate}
+ \item fcgi sadece kurulum testine tabidir.
+\end{enumerate}
+
 \section{vcs alt bileşeni}
 \begin{enumerate}
 \item mod\_dav\_svn paketi sadece kurulum testine tabidir.
@@ -84,6 +89,13 @@ Aşağıda bulunan komutları çalıştırdığınızda, bulunduğunuz dizinde t
  a.write("test ipyton")
 \end{verbatim}
 
+\item drscheme paketi kurulumu sonrası:
+
+Kmenüden uygulamayı açın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
+
+\item qt-creator paketi kurulumu sonrası:
+
+Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.
 \end{enumerate}
 
 
@@ -115,6 +127,15 @@ programming-tr.pdf git testini gerçekleştirin.
 \end{verbatim}
 
 Tüm sonuçların "ok" döndürdüğünü gözlemleyin. 
+
+\item perl-Email-MIME-Encodings paketi kurulumu sonrası:
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/test_perl_Test_Simple.t
+ # perl test_perl_Test_Simple.t
+\end{verbatim}
+
+Tüm sonuçların "ok" döndürdüğünü gözlemleyin. 
+
 
 \end{enumerate}
 \subsection{Python alt bileşeni}
@@ -179,6 +200,86 @@ Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde bir pence
  # python test_pango.py
 \end{verbatim}
 
+\item mpmath paketi kurulumu sonrası:  
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import mpmath
+\end{verbatim}
+
+\item mpmath paketi kurulumu sonrası:  
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import mpmath
+\end{verbatim}
+
+\item python-M2Crypto paketi kurulumu sonrası:  
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import M2Crypto
+\end{verbatim}
+
+\item winpdb paketi kurulumu sonrası:  
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import winpdb
+\end{verbatim}
+(DeprecationWarning önemli değildir.)
+
+\item cython paketi kurulumu sonrası:  
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import cython
+\end{verbatim}
+
+\item lxml paketi kurulumu sonrası:  
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import lxm
+\end{verbatim}
+\item python-RuleDispatch paketi kurulumu sonrası:  
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import dispatch
+\end{verbatim}
+
+\item python-nose paketi kurulumu sonrası:  
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import nose
+\end{verbatim}
+
+\item PyICU paketi kurulumu sonrası:  
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import PyICU
+\end{verbatim}
+
+\item python-simplejson paketi kurulumu sonrası:  
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import simplejson
+\end{verbatim}
+
 \end{enumerate}
 
 \subsection{Java alt bileşeni}
@@ -200,6 +301,28 @@ Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözleml
 # java test
 \end{verbatim}
 \end{enumerate}
+\subsection{Lisp alt bileşeni}
+\begin{enumerate}
+ \item clisp paketi kurulumu sonrası: (Warningleri önemsemeyiniz.)
+
+Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/lisp/test_clisp.lisp 
+# clisp -c test_clisp.lisp
+\end{verbatim}
+
+\end{enumerate}
+\subsection{Dotnet alt bileşeni}
+\begin{enumerate}
+ \item mono paketi kurulumu sonrası:
+Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/test_mono.cs
+# mcs test_mono.cs
+# mopno test_mono.exe
+\end{verbatim}
+\end{enumerate}
+
 
 \begin{itemize}
  \item R paketi kurulumu sonrası:

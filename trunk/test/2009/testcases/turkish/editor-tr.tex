@@ -1,7 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[turkish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=2cm]{geometry}
 
 \title{Editör Bileşeni Test Aşamaları}
 \author{Semen Cirit}
@@ -113,7 +113,7 @@ Sorunsuz bir şekilde dosyanın kaydedilmiş olduğunu, aşağıdaki komutu kull
 # joe ornek.txt 
 \end{verbatim}
 
-\subsection*{Vi}
+\subsection*{Vi alt bileşeni}
 
 \begin{enumerate}
 
@@ -149,14 +149,29 @@ Aşağıda bulunanan dosyayı açın.
 # vi ornek.py
 \end{verbatim}
 
-Daha sonra vi komut satırından 
+Daha sonra vi komutunu çalıştırın:
 \begin{verbatim}
 :colorscheme Blacksea
 \end{verbatim}
 
 Renk temasının değiştiğini gözlemleyin.
 
-\item emacs-muse paketi kurulduktan sonra:
+
+\item gvim paketi kurulduktan sonra:
+
+Aşağıda bulunan komutları çalıştırın ve bir vi penceresinin açıldığını gözlemleyin.
+\begin{verbatim}
+ # eview
+ # evim
+\end{verbatim}
+
+Daha sonra bu pencereler üzerinden editor-tr.pdf vi testini gerçekleştirin.
+
+\item zile paketi kurulumu sonrası:
+Aşağıda bulunan komutu çalıştırın ve bir vi penceresinin açıldığını gözlemleyin.
+\begin{verbatim}
+ # zile
+\end{verbatim}
 
 
 \end{enumerate}

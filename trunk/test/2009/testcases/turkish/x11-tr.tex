@@ -1,6 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[utf8x]{inputenc}
-\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=2cm]{geometry}
 
 %opening
 \title{X11 Test Aşamaları}
@@ -16,7 +16,14 @@
 
 \section{Server alt Bileşeni}
 
-Zorg ve xorg-server paketleri kurulumu sonrası aşağıda bulunan aşamalar uygulanmalıdır.
+Aşağıda bulunan paketlerin kurulumu sonrasında aşağıdaki testler uygulanmalıdır. 
+\begin{verbatim}
+zorg    
+xorg-server
+libdrm
+mesa
+\end{verbatim}
+
 
 \begin{enumerate}
   \item Direct rendering testi
@@ -102,6 +109,25 @@ Zorg ve xorg-server paketleri kurulumu sonrası aşağıda bulunan aşamalar uyg
  \item virtualbox-guest-utils paketi kurulumu sonrası:
 
 hardware-tr.pdf virtualbox testini gerçekleştirin.
+\end{enumerate}
+
+\section{Terminal alt Bileşeni}
+\begin{enumerate}
+ \item rxvt-unicode paketi kurulumu sonrası:
+
+Bir x konsol penceresi açıldığını gözlemleyin.
+  \begin{verbatim}
+   # urxvt
+  \end{verbatim}
+
+Aşağıda bulunan ilk komut sunucuyu başlatmaktadır, bir konsolda sunucuyu başlatın diğer konsola geçip ikinci satırda bulunan komutu çalıştırın ve bir x konsol penceresi açıldığını gözlemleyin.
+  \begin{verbatim}
+   # urxvtd (sunucuyu çalıştırın)
+   # urxvtc
+  \end{verbatim}
+
+   
+
 \end{enumerate}
 
 

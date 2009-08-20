@@ -14,11 +14,48 @@
 \begin{document}
 
 \maketitle
+
+\section{Look and Feel alt Bileşeni}
+\begin{itemize}
+ \item Aşağıdaki paketler aynı şekilde test edilecektir.
+\begin{verbatim}
+cursor-theme-oxygen-black
+cursor-theme-oxygen-black-big
+cursor-theme-oxygen-blue
+cursor-theme-oxygen-blue-big
+cursor-theme-oxygen-white
+cursor-theme-oxygen-white-big
+cursor-theme-oxygen-yellow
+cursor-theme-oxygen-yellow-big
+cursor-theme-oxygen-zion
+cursor-theme-oxygen-zion-big
+\end{verbatim}
+
+Sistem ayarları $\rightarrow$  Klavye ve Fare $\rightarrow$ İmleç teması altında listelendiğini gözlemleyin. İmleç temasını değiştirin ve sorunsuz bir şekilde değiştiğini gözlemleyin.
+
+\end{itemize}
+
+
+\section{Font alt Bileşeni}
+\begin{itemize}
+ \item fontforge paketi kurulumu sonrası:
+
+aquafont paketini kurun, kmenü'den fontforge uygulamasını açın ve /usr/share/fonts/aquafont/aquafont.ttf uzantısını seçin ve listelenen aquafont.ttf  dosyası üzerine çift tıklayın ve sorunsuz bir şekilde bu fontun karakterleri ile ilgili bir pencere açıldıpını gözlemleyin.
+\item liberation-fonts paketi kurulumu sonrası:
+
+Open ofis yazıcı açın ve LiberationMono, LiberationSans, LiberationSerif fontlarının ekli olduğunu gözlemleyin.
+\end{itemize}
+
 \section{Misc alt Bileşeni}
 \begin{itemize}
-\item  google-gadgets-qt ve google-gadgets-gtk paketleri kurulumu sonrası:
+\item google-gadgets, google-gadgets-qt ve google-gadgets-gtk paketleri kurulumu sonrası:
 
 Uygulamalar $\rightarrow$ İnternet yolunu izleyerek uygulamanızı çalıştırın ve programcığın efektler bozulmadan eklendiğini gözlemleyin.
+
+\item basket paketi kurulumu sonrası:
+
+Uygulamanın kemenüden güzgün bir şekilde çalıştığını gözlemleyin.
+
 \end{itemize}
 
 \section{Toolkit Bileşeni}
@@ -128,7 +165,7 @@ Dosyalarının düzgün bir şekilde amarok ile açıldığını gözlemleyin.
 
 F12 tuşuna basıldığında sorunsuz bir şekilde yakuake'nin açıldığını gözlemleyin.
 \end{itemize}
-\item kdebase-workspace paketi kurulumu sonrası:
+\item kdebase-workspace ve kdebase-workspace-doc paketi kurulumu sonrası:
 \begin{itemize}
 
  \item Bilgisayarınızı kapatın ve yeniden başlatın ve düzgün bir şekilde kde'yi kapattığını ve başlattığını gözlemleyin.
@@ -143,6 +180,67 @@ F12 tuşuna basıldığında sorunsuz bir şekilde yakuake'nin açıldığını 
 
 \end{itemize}
 
+\item kdebase-wallpapers paketi kurulumu sonrası:
+
+masaüstüne sağ tıklayıp, görünüm ayarlarından duvar kağıdını değiştiri seçiniz. Red Leaf ve Vector Sunset duvar kağıtlarının eklenmiş olduğunu gözlemleyiniz.
+
+\item kdm paketi kurulumu sonrası:
+
+Bilgisayarınızı yeniden başlatın. Açılışta, çıkışta ve kullanıcı değiştirirken çıkan grafiksel giriş ekranınının düzgün bir şekilde açıldığını gözlemleyin.
+
+\item kdeplasma-addons paketi kurulumu sonrası:
+
+Masaüstüne sağ tıklayarak programcık kilidini açın.
+
+Panel Üzerine sağ tıklayarak, programcık ekleyi seçin ve lacelot'u programcık olarak eklemeye çalışın. Düzgün bir şekilde eklenediğini ve çalıştığını gözlemleyin.
+
+Aynı şekilde LCD Weather Station, Twitter Microblogging, RSSNOW, Blue Marble programcıklarını da deneyiniz.
+
+\item kdegraphics paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyaların gwenview  ile çalıştıklarını gözlemleyin.  
+\begin{verbatim} 
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.jpg
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.mng
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.png
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.ps
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.tif
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.xcf
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-extension-pdfimport.pdf
+ # gwenview
+\end{verbatim}
+Aşapıda bulunan dosyaların okular ile düzgün çalıştığını gözlemleyin:
+\begin{verbatim} 
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.dvi
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-extension-pdfimport.pdf
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.ps
+ # okular
+ \end{verbatim}
+
+Aşağıda bulunan ugulamaların düzgün çalıştığını gözlemleyin.
+\begin{verbatim}
+ # kcolorchooser
+ # kruller
+ # ksnapshot
+\end{verbatim}
+
+
 \end{enumerate}
+
+\subsection*{Addon alt bileşeni}
+\begin{enumerate}
+ \item kshutdown paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırın ve kapatma penceresinin açıldığını gözlemleyin.
+\begin{verbatim}
+ # kshutdown 
+\end{verbatim}
+
+ \item kaptan paketi kurulumu sonrası:
+
+  http://svn.pardus.org.tr/uludag/trunk/test/2009/testguide/turkish/alfabeta/kaptan-tr.pdf testini gerçekleştirin.
+
+\end{enumerate}
+
 \end{document}
 
