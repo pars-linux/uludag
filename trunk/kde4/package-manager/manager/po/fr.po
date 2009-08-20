@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 15:50+0300\n"
-"PO-Revision-Date: 2009-08-19 10:57+0200\n"
+"PO-Revision-Date: 2009-08-21 00:10+0200\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -182,11 +182,11 @@ msgstr "&Afficher l'icône dans le tableau de bord"
 
 #: .tmp/ui_settingsdialog.py:331 .tmp/ui_settingsdialog.py:343
 msgid "Update check"
-msgstr "Vérifier les mises-à-jour"
+msgstr "Vérifier les mises à jour"
 
 #: .tmp/ui_settingsdialog.py:332
 msgid "Enable &periodic update check"
-msgstr "Autoriser la vérification &périodique des mises-à-jour"
+msgstr "Autoriser la vérification &périodique des mises à jour"
 
 #: .tmp/ui_settingsdialog.py:333 .tmp/ui_settingsdialog.py:336
 msgid "padding-left:15px;"
@@ -202,7 +202,7 @@ msgstr "minutes"
 
 #: .tmp/ui_settingsdialog.py:337
 msgid "Install updates automatically"
-msgstr "Installer les mises-à-jour automatiquement"
+msgstr "Installer les mises à jour automatiquement"
 
 #: .tmp/ui_settingsdialog.py:338
 msgid "Bandwidth limit"
@@ -324,7 +324,7 @@ msgstr "&Proxy"
 
 #: .tmp/tray.py:45
 msgid "Update"
-msgstr "Mise-à-jour"
+msgstr "Mise à jour"
 
 #: .tmp/tray.py:54 .tmp/tray.py:64
 msgid "All"
@@ -332,11 +332,11 @@ msgstr "Tout"
 
 #: .tmp/tray.py:90
 msgid "There are <b>%1</b> updates available!"
-msgstr "Il y a <b>%1</b> mises-à-jour disponibles !"
+msgstr "Il y a <b>%1</b> mises à jour disponibles !"
 
 #: .tmp/tray.py:91
 msgid "Show Updates"
-msgstr "Montrer les mises-à-jour"
+msgstr "Montrer les mises à jour"
 
 #: .tmp/tray.py:91
 msgid "Ignore"
@@ -384,7 +384,7 @@ msgstr "Désinstallation des paquets"
 
 #: .tmp/statemanager.py:67
 msgid "Upgrading Package(s)"
-msgstr "Mise-à-jour des paquets"
+msgstr "Mise à jour des paquets"
 
 #: .tmp/statemanager.py:68
 msgid "Applying Repository Changes"
@@ -392,11 +392,11 @@ msgstr "Valider les modifications des dépôts"
 
 #: .tmp/statemanager.py:69
 msgid "Updating Repository"
-msgstr "Mise-à-jour du dépôt"
+msgstr "Mise à jour du dépôt"
 
 #: .tmp/statemanager.py:70
 msgid "Updating Repository(s)"
-msgstr "Mise-à-jour des dépôts"
+msgstr "Mise à jour des dépôts"
 
 #: .tmp/statemanager.py:74
 msgid "Remove Package(s)"
@@ -440,7 +440,7 @@ msgstr "Vous avez sélectionné les paquets suivants pour désinstallation :"
 
 #: .tmp/statemanager.py:95
 msgid "You have selected the following package(s) to upgrade:"
-msgstr "Vous avez sélectionné les paquets suivants pour mise-à-jour :"
+msgstr "Vous avez sélectionné les paquets suivants pour mise à jour :"
 
 #: .tmp/statemanager.py:99
 msgid ""
@@ -663,7 +663,7 @@ msgstr "Montrer les paquets installés"
 
 #: .tmp/mainwindow.py:101
 msgid "Show Upgradable Packages"
-msgstr "Montrer les mises-à-jour disponibles"
+msgstr "Montrer les mises à jour disponibles"
 
 #: .tmp/ui_repodialog.py:51
 msgid "Add New Repository"
