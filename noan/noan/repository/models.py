@@ -3,11 +3,12 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from noan.middleware.threadlocals import get_current_lang
 import datetime
+from pisi.version import Version as Pisi_Version
 
-TEST_TIMEOUT = 24 # hours
 TEST_RESULTS = (
     ('yes', _('Yes')),
     ('no', _('No')),
+    ('unknown', _('Not Tested')),
 )
 
 RELEASE_RESOLUTIONS = (
@@ -18,6 +19,12 @@ RELEASE_RESOLUTIONS = (
 
 
 class Distribution(models.Model):
+    """
+        Database model for distributions.
+
+        name: Name of distribution (Pardus, Pardus x64, ...)
+        release: Distribution release (2008, 2009, ...)
+    """
     name = models.CharField(max_length=64, verbose_name=_('name'))
     release = models.CharField(max_length=64, verbose_name=_('release'))
 
@@ -35,6 +42,13 @@ class Distribution(models.Model):
 
 
 class Source(models.Model):
+    """
+        Database model for sources in repository.
+
+        name: Name of the source
+        distribution: Distribution that contains the source
+        maintained_by: Source maintainer
+    """
     name = models.CharField(max_length=64, verbose_name=_('name'))
     distribution = models.ForeignKey(Distribution, verbose_name=_('distribution'))
     maintained_by = models.ForeignKey(User, verbose_name=_('maintained by'))
@@ -53,6 +67,12 @@ class Source(models.Model):
 
 
 class Package(models.Model):
+    """
+        Database model for package in repository.
+
+        name: Name of the package
+        source: Source that contains the package
+    """
     name = models.CharField(max_length=64, verbose_name=_('name'))
     source = models.ForeignKey(Source, verbose_name=_('source'))
 
@@ -70,20 +90,28 @@ class Package(models.Model):
 
 
 class BuildDependency(models.Model):
-    source = models.ForeignKey(Source, verbose_name=_('dependent'))
-    dep_package = models.CharField(max_length=64, verbose_name=_('package'))
+    """
+        Database model for build dependencies of a source.
+
+        name: Package name of the dependency
+        version*: Version range
+        release*: Release range
+        source: Dependent source
+    """
+    name = models.CharField(max_length=64, verbose_name=_('name'))
     version = models.CharField(max_length=32, verbose_name=_('version'), default='', blank=True)
     version_from = models.CharField(max_length=32, verbose_name=_('version from'), default='', blank=True)
     version_to = models.CharField(max_length=32, verbose_name=_('version to'), default='', blank=True)
     release = models.IntegerField(verbose_name=_('release'), default=0, blank=True)
     release_from = models.IntegerField(verbose_name=_('release from'), default=0, blank=True)
     release_to = models.IntegerField(verbose_name=_('release to'), default=0, blank=True)
+    source = models.ForeignKey(Source, verbose_name=_('dependent source'))
 
     def __unicode__(self):
         if self.release != 0:
-            return u'%s == r%s' % (self.dep_package, self.release)
+            return u'%s == r%s' % (self.name, self.release)
         if self.version != '':
-            return u'%s == %s' % (self.dep_package, self.version)
+            return u'%s == %s' % (self.name, self.version)
         dep = []
         if self.version_from != '':
             dep.append('>= %s' % self.version_from)
@@ -93,29 +121,37 @@ class BuildDependency(models.Model):
             dep.append('>= r%s' % self.release_from)
         if self.release_to != 0:
             dep.append('<= r%s' % self.release_to)
-        return u'%s %s' % (self.dep_package, ' '.join(dep))
+        return u'%s %s' % (self.name, ' '.join(dep))
 
     class Meta:
         verbose_name = _('build dependency')
         verbose_name_plural = _('build depencencies')
-        ordering = ['dep_package']
+        ordering = ['name']
 
 
 class RuntimeDependency(models.Model):
-    package = models.ForeignKey(Package, verbose_name=_('dependent'))
-    dep_package = models.CharField(max_length=64, verbose_name=_('package'))
+    """
+        Database model for runtime depencencies of a package.
+
+        name: Package name of the depencency
+        version*: Version range
+        release*: Release range
+        package: Dependent package
+    """
+    name = models.CharField(max_length=64, verbose_name=_('name'))
     version = models.CharField(max_length=32, verbose_name=_('version'), default='', blank=True)
     version_from = models.CharField(max_length=32, verbose_name=_('version from'), default='', blank=True)
     version_to = models.CharField(max_length=32, verbose_name=_('version to'), default='', blank=True)
     release = models.IntegerField(verbose_name=_('release'), default=0, blank=True)
     release_from = models.IntegerField(verbose_name=_('release from'), default=0, blank=True)
     release_to = models.IntegerField(verbose_name=_('release to'), default=0, blank=True)
+    package = models.ForeignKey(Package, verbose_name=_('dependent package'))
 
     def __unicode__(self):
         if self.release != 0:
-            return u'%s == r%s' % (self.dep_package, self.release)
+            return u'%s == r%s' % (self.name, self.release)
         if self.version != '':
-            return u'%s == %s' % (self.dep_package, self.version)
+            return u'%s == %s' % (self.name, self.version)
         dep = []
         if self.version_from != '':
             dep.append('>= %s' % self.version_from)
@@ -125,15 +161,25 @@ class RuntimeDependency(models.Model):
             dep.append('>= r%s' % self.release_from)
         if self.release_to != 0:
             dep.append('<= r%s' % self.release_to)
-        return u'%s %s' % (self.dep_package, ' '.join(dep))
+        return u'%s %s' % (self.name, ' '.join(dep))
 
     class Meta:
         verbose_name = _('runtime dependency')
         verbose_name_plural = _('runtime depencencies')
-        ordering = ['dep_package']
+        ordering = ['name']
 
 
 class Update(models.Model):
+    """
+        Database model for updates of a source.
+
+        no: Release number
+        source: Source
+        version_no: Version string
+        updated_by: Updater
+        updated_on: Update date
+        comment: Updater's comment
+    """
     no = models.IntegerField(verbose_name=_('release no'))
     source = models.ForeignKey(Source, verbose_name=_('source'))
     version_no = models.CharField(max_length=32, verbose_name=_('version no'))
@@ -152,6 +198,14 @@ class Update(models.Model):
 
 
 class Binary(models.Model):
+    """
+        Database model for binary package.
+
+        no: Build no
+        package: Package
+        update: Update
+        resolution: 'pending', 'released' or 'reverted'. Import scripts set this value.
+    """
     no = models.IntegerField(verbose_name=_('build no'))
     package = models.ForeignKey(Package, verbose_name=_('package'))
     update = models.ForeignKey(Update, verbose_name=_('update'))
@@ -167,12 +221,75 @@ class Binary(models.Model):
         return '%s.pisi' % unicode(self)
 
     def get_difference(self):
+        """
+            Find next to last binary and generates a list of update difference between these two binaries.
+
+            This is an expensive method. Don't use this in pacakge lists.
+        """
         binaries = self.package.binary_set.filter(no__lt=self.no).order_by('-no')
         if len(binaries) == 0:
             update_last = 0
         else:
             update_last = binaries[0].update.no
         return self.package.source.update_set.filter(no__lte=self.update.no, no__gt=update_last)
+
+    def get_pending_dependencies(self):
+        """
+            Returns a list of dependencies that stay in test repository.
+
+            This is a *very* expensive method. Don't use this in package lists.
+        """
+        dependencies = []
+        def _extend(x):
+            for y in x:
+                if y not in dependencies:
+                    dependencies.append(y)
+        for dep in self.package.runtimedependency_set.all():
+            binaries = Binary.objects.filter(package__source__distribution = self.package.source.distribution, package__name=dep.name)
+            # version
+            if dep.version != "" and binaries.filter(update__version_no=dep.version, resolution="released").count() == 0:
+                _extend(binaries.filter(resolution="pending"))
+            if dep.version_from != "":
+                in_stable = False
+                for bin in binaries.filter(resolution="released"):
+                    if Pisi_Version(bin.update.version_no) >= Pisi_Version(dep.version_from):
+                        in_stable = True
+                        break
+                if not in_stable:
+                    _extend(binaries.filter(resolution="pending"))
+            if dep.version_to != "":
+                in_stable = False
+                for bin in binaries.filter(resolution="released"):
+                    if Pisi_Version(bin.update.version_no) <= Pisi_Version(dep.version_to):
+                        in_stable = True
+                        break
+                if not in_stable:
+                    _extend(binaries.filter(resolution="pending"))
+            # release
+            if dep.release != "" and binaries.filter(update__no=dep.release, resolution="released").count() == 0:
+                _extend(binaries.filter(resolution="pending"))
+            if dep.release_from != "" and binaries.filter(update__no__gte=dep.release, resolution="released").count() == 0:
+                _extend(binaries.filter(resolution="pending"))
+            if dep.release_to != "" and binaries.filter(update__no__lte=dep.release, resolution="released").count() == 0:
+                _extend(binaries.filter(resolution="pending"))
+        return dependencies
+
+    def get_result(self):
+        for dep in self.get_pending_dependencies():
+            if dep.testresult_set.count() == 0:
+                return None
+            if dep.get_result() == False:
+                return False
+        if self.testresult_set.count() == 0:
+            return None
+        else:
+            for result in self.testresult_set.all():
+                if result.result == "no":
+                    return False
+            for result in self.testresult_set.all():
+                if result.result == "yes":
+                    return True
+            return None
 
     class Meta:
         verbose_name = _('binary')
@@ -181,47 +298,26 @@ class Binary(models.Model):
         unique_together = ('no', 'package')
 
 
-class Task(models.Model):
-    package = models.ForeignKey(Package, verbose_name=_('package'))
-    description_en = models.CharField(max_length=256, verbose_name=_('description [en]'))
+class TestResult(models.Model):
+    """
+        Database model for test results.
+
+        binary: Binary
+        created_by: Tester
+        created_on: Test date
+        result: Test result
+        comment: Tester's comment
+    """
+    binary = models.ForeignKey(Binary, verbose_name=_('binary'))
+    created_by = models.ForeignKey(User, verbose_name=_('created by'))
+    created_on = models.DateField(verbose_name=_('created on'), auto_now=True)
+    result = models.CharField(max_length=32, choices=TEST_RESULTS, verbose_name=_('result'))
+    comment = models.CharField(max_length=256, verbose_name=_('comment'), default='')
 
     def __unicode__(self):
-        return u'[%s] - %s' % (self.package.name, self.get_description())
-
-    def get_description(self):
-        lang = get_current_lang()
-        if lang == 'en':
-            return self.description_en
-        descriptions = self.taskdescription_set.filter(language__code=lang)
-        if len(descriptions) > 0:
-            return descriptions[0].description
-        return self.description_en
+        return _('%(result)s (binary: %(binary)s source: %(source)s, distro: %(distro)s)') % {'result': self.result, 'binary': self.binary, 'source': self.binary.package.source.name, 'distro': self.binary.package.source.distribution}
 
     class Meta:
-        verbose_name = _('task')
-        verbose_name_plural = _('tasks')
-
-
-class Language(models.Model):
-    code = models.CharField(max_length=6, verbose_name=_('code'))
-    name = models.CharField(max_length=32, verbose_name=_('name'))
-
-    def __unicode__(self):
-        return u'[%s] %s' % (self.code, self.name)
-
-    class Meta:
-        verbose_name = _('language')
-        verbose_name_plural = _('languages')
-
-
-class TaskDescription(models.Model):
-    task = models.ForeignKey(Task, verbose_name=_('task'))
-    language = models.ForeignKey(Language, verbose_name=_('language'))
-    description = models.CharField(max_length=256, verbose_name=_('description'))
-
-    def __unicode__(self):
-        return self.description
-
-    class Meta:
-        verbose_name = _('task description')
-        verbose_name_plural = _('task descriptions')
+        ordering = ['-created_on']
+        verbose_name = _('test result')
+        verbose_name_plural = _('test results')
