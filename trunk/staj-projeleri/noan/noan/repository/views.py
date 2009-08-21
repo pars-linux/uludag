@@ -237,8 +237,7 @@ def AckNackList(request):
 @login_required
 def log_out(request):
     logout(request)
-    context = {}
-    return HttpResponseRedirect('/repository')
+    return HttpResponseRedirect('/repository/')
 
 def ListAllAckNack(request):
     AckNackList = TestResult.objects.all()

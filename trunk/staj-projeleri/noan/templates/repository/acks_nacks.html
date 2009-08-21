@@ -19,17 +19,16 @@
                                     {{ list.binary }}
                                 </div>
                             {% else %}
-                                <div >
+                            <div class="test_{{list.binary.is_ack}}">
                                 {{ list.binary }}
                                 </div>
                             {% endifequal %}
-                            [{{ list.binary.is_ack }}]
                         </td>
                         <td>
-                            {{list.state}}
+                            {{list.result}}
                         </td>
                         <td>
-                            {{list.commentofstatement.comment}}
+                            {{list.comment}}
                         </td>
                     </tr>
                 {% endifequal %}
