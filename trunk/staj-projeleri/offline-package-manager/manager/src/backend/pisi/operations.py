@@ -16,6 +16,7 @@
 import os
 import time
 import piksemel
+import tarfile
 
 import pisi # !! Change this !! This module just needs db.installdb.fetch function.
 
@@ -101,3 +102,9 @@ class Operations:
         files.sort(lambda x,y:int(x.split("_")[0]) - int(y.split("_")[0]))
         no, opxml = files[-1].split("_")
         return "%03d" % (int(no) + 1)
+
+    def closeOfflineMode(self, filename):
+        # This function make a tar file from offline PISI files
+        tar = tarfile.open(filename, "w")
+        tar.add(self.path)
+        tar.close

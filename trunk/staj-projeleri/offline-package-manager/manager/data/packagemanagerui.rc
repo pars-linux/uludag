@@ -8,6 +8,8 @@
       <Action name="showUpgradeAction" />
       <Action name="importIndexAction" />
       <Action name="exportIndexAction" />
+      <Action name="importOfflineJobsAction" />
+      <Action name="closeOfflineModeAction" />
     </Menu>
   </MenuBar>
   <ToolBar iconSize="16" name="mainToolBar" >
@@ -16,5 +18,9 @@
       <Action name="showRemoveAction" />
       <Action name="showUpgradeAction" />
       <ActionList name="dynamicActionlist" />
+  </ToolBar>
+  <ToolBar iconSize="16" name="offlineToolBar" >
+    <text>Offline Mode Toolbar</text>
+    <Action name="closeOfflineModeAction" />
   </ToolBar>
 </gui>
