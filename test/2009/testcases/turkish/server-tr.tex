@@ -34,7 +34,8 @@
 
 \section{Database alt bileşeni}
 \begin{enumerate}
- \item firebird-superserver ve firebird-client
+
+ \item firebird-superserver ve firebird-client paketleri kurulumu sonrası:
 
 Bilgisayarınızı yeniden başlatın,
 
@@ -50,6 +51,27 @@ SQL> CONNECT employee.fdb user sysdba password masterkey;
 SQL> show tables;
 SQL> select *from COUNTRY
 \end{verbatim}
+
+ \item mysql-client, mysql-server, mysql-lib paketleri kurulumu sonrası:
+\begin{itemize}
+ \item Servise yöneticisinden Mysql'i başlatın ve  aşağıda bulunan komutu kullanarak başlatılmış olduğundan emin olun:
+
+\begin{verbatim}
+ # service list
+\end{verbatim}
+ \item desktop-tr.pdf qt-sql-mysql testini gerçekleştirin.
+
+\end{itemize}
+
+\item mysql-man-pages paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun man sayfasını düzgün açtığından emin olun.
+\begin{verbatim}
+# man myisampack 
+\end{verbatim}
+
+
+
 
 \end{enumerate}
 
