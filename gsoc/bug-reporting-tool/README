@@ -52,6 +52,11 @@ Testing the BugTool wizard
 Testing the Apport Front-End
 ============================
 
+Since papport will be called by the system when there's a crash, the easiest
+way to test it is installing via setup.py. The procedure bellow *won't* work
+unless the PYTHONPATH is set accordingly for **every user** in the system
+(i.e.: setting up /etc/profile, for example).
+
     ulimit -S -c unlimited # enable coredumps
     cd pardus-apport/src
     python temporal-generate.py && chmod a+x papport.py
