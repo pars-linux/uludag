@@ -415,6 +415,20 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         self.allow_cancel(True)
         self.percentage(None)
         self.status(STATUS_INFO)
+        # FIXME: pisi must provide
+        if group == "desktop-gnome":
+            group = "gnome.desktop"
+        elif group == "desktop-kde":
+            group = "kde.desktop"
+        elif group == "desktop-xfce":
+            group = "xfce.desktop"
+        elif group == "desktop-other":
+            group = "other.desktop"
+        elif group == "admin-tools":
+            group = "admin.tools"
+        elif group == "power-management":
+            group = "power.management"
+
         package_list = []
 
         try:
