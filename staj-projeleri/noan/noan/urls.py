@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-
+from noan.repository.views import log_out
 # Enable the admin interface:
 from django.contrib import admin
 admin.autodiscover()
@@ -15,5 +15,5 @@ urlpatterns = patterns('',
     #login
     (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'registration/login.html'}),
     # logout
-    (r'^logout/$','repository.views.log_out'),
+    (r'^logout/$',log_out),
 )
