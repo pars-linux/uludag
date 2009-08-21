@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
-#ifndef BUILD.PY
-#define BUILD.PY
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
+
+'''This is the Build Queue file. This controls the build queue for images.
+This is to be run as service externally.
+
+buildfarm_queue is database class in which build requests for a project by user is added. buildfarm_queue consists of orders to be processed
+onprogress_queue is list consists of currently processing build projects. At a time, No of builds can be carried out on the server is limited to BUILD_LIMIT.
+If less that BUILD_LIMIT no of projects occur on onprogress_queue, we will move a project from buildfarm_queue to onprogress_queue.
+
+'''
 
 import sys,os
 sys.path.insert(1,'/home/mycode/pardusman')
@@ -18,6 +24,8 @@ from pardusman.wizard.models import Userlogs, buildfarm_queue, onprogress_queue,
 import time,os, threading, subprocess, tempfile
 
 
+# /sbin/mkpardus is a symlink to pardusman/buildfarm/pardusman/pardusman.py
+
 
 def make_image(project_file,work_dir,queue_object):
     process = subprocess.Popen(['/sbin/mkpardus','make',project_file,work_dir, \
@@ -25,7 +33,7 @@ def make_image(project_file,work_dir,queue_object):
 
     stdout,stderr = process.communicate()
 
-
+    # For generating log file
     logfile_name = tempfile.mkstemp(prefix='buildlog_',dir=os.path.join(settings.BUILD_LOGS))[1]
     logfile = file(logfile_name,'w+')
     logfile.write("\n#Standard Output\n\n")
@@ -39,6 +47,7 @@ def make_image(project_file,work_dir,queue_object):
     return os.path.basename(logfile_name)
 
 
+#Threading class for starting each project build thread
 class Buildfarm(threading.Thread):
     def __init__(self,project_file,work_dir,queue_object):
         self.project_file = project_file
@@ -108,10 +117,8 @@ def build_engine_add(project):
     project.delete()
 
 
-i=0
+# Loop for checking onprogress_queue < BUILD_LIMIT, to add new projects to onprogress_queue
 while True:
-    print i
-    i+=1
 
     if(onprogress_queue.objects.count() < settings.BUILD_LIMIT):
 
