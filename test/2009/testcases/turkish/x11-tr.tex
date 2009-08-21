@@ -16,7 +16,23 @@
 
 \section{Server alt Bileşeni}
 
-Aşağıda bulunan paketlerin kurulumu sonrasında aşağıdaki testler uygulanmalıdır. 
+\begin{itemize}
+ \item Aşağıda bulunan paketler kurulum testine tabidir.
+\begin{verbatim}
+ xorg-server-common
+ xorg-server-devel
+ xorg-server-xdmx
+ xorg-server-xvfb
+\end{verbatim}
+
+ \item xorg-server-xephyr paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz bir şekilde konsol açtığını gözlemleyin.
+\begin{verbatim}
+ xinit -- /usr/bin/Xephyr :1
+\end{verbatim}
+
+\item  Aşağıda bulunan paketlerin kurulumu sonrasında aşağıdaki testler uygulanmalıdır. 
 \begin{verbatim}
 zorg    
 xorg-server
@@ -104,11 +120,83 @@ mesa
     Uygulamanın grafiksel olarak düzgün çalıştığını gözlemleyin.
     \end{enumerate}
 
+\end{itemize}
+
+
+
 \section{Driver alt Bileşeni}
 \begin{enumerate}
  \item virtualbox-guest-utils paketi kurulumu sonrası:
 
 hardware-tr.pdf virtualbox testini gerçekleştirin.
+
+ \item xorg-input-synaptics  paketi kurulumu sonrası:
+
+Eğer aşağıda bulunan komut bir çıktı üretiyor ise bu testi gerçekleştirebilirsiniz.
+  \begin{verbatim}
+   # grep -i synap /proc/bus/input/devices
+  \end{verbatim}
+
+Bilgisayırınızı yeniden başlatın ve mousepad'inizin düzgün çalıştığını gözlemleyin. 
+
+\item xorg-input-vmmouse paketi kurulumu sonrası:
+
+Eğer vmware sanal makine kullanıyor iseniz bu testi gerçekleştirebilirsiniz. 
+
+VMware sanal makinelesinde fare uyumunu test ediniz.
+
+\item xorg-input-wacom paketi kurulumu sonrası:
+
+Wacom tabletiniz var ise bu testi gerçekleştirebilirsiniz.
+
+Wacom tabletinizi takın ve çalışıp çalışmadığını gözlemleyin.
+
+\item Aşağıda bulunan ekran kartı sürücüsü paketleri aynı şekilde test edilecektir elinizde bulunan ekran kartınına göre testlerimizi gerçekleştireceğiz. 
+
+Örneğin: xorg-video-apm paketini Alliance Promotion ekran kartınız var ise test edebilirsiniz.
+
+Paket hakkında ayrıntılı bilgiye aşağıda bulunan komut ile bakıp hangi ekran kartı ile ilgili olduğuna bakabilirsiniz.
+\begin{verbatim}
+ # pisi info <paketadı>
+\end{verbatim}
+
+Ekran kartınızın ne olduğuna dair bilgiye aşağıda bulunan komut ile ulaşabilirsiniz.
+\begin{verbatim}
+ # lspci
+\end{verbatim}
+
+\begin{verbatim}
+ xorg-video-apm 
+ xorg-video-ast
+ xorg-video-cirru
+ xorg-video-fbdev (bu sürücü ekran kartından bağımsızdır ve direk teste tabidir.)
+ xorg-video-glint
+ xorg-video-i128
+ xorg-video-i740
+ xorg-video-intel
+ xorg-video-mach64
+ xorg-video-mga
+ xorg-video-neomagic
+ xorg-video-r128
+ xorg-video-radeon
+ xorg-video-radeonhd
+ xorg-video-s3
+ xorg-video-s3virge
+ xorg-video-savage
+ xorg-video-siliconmotion
+ xorg-video-sis
+ xorg-video-sisusb
+ xorg-video-tdfx
+ xorg-video-trident,
+ xorg-video-vesa (bu sürücü tüm testçiler tarafından yapılabilir, bilgisayarınızı güvenli kipte açarak, daha sonra diğer paketler ile aynı şekilde test edebilirsiniz.)
+ xorg-video-vmware (vmware kullanıyor iseniz test edebilirsiniz.)
+ xorg-video-voodoo
+\end{verbatim}
+
+\begin{itemize}
+ \item Bilgisayarınızı yeniden başlatın
+\end{itemize}
+
 \end{enumerate}
 
 \section{Terminal alt Bileşeni}
@@ -126,7 +214,12 @@ Aşağıda bulunan ilk komut sunucuyu başlatmaktadır, bir konsolda sunucuyu ba
    # urxvtc
   \end{verbatim}
 
-   
+\item xterm paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun bir konsol çalıştırdığını gözlemleyin.
+ \begin{verbatim}
+  # xterm
+ \end{verbatim}
 
 \end{enumerate}
 
