@@ -28,8 +28,8 @@ def update_messages():
     os.system("rm -rf .tmp")
     os.makedirs(".tmp")
     # Collect UI files
-    for filename in glob.glob1("src/gui", "*.ui"):
-        os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py src/gui/%s" % (filename.split(".")[0], filename))
+    for filename in glob.glob1("src/gui/widgets/", "*.ui"):
+        os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py src/gui/widgets/%s" % (filename.split(".")[0], filename))
     # Collect Python files
     for filename in glob.glob1("src/gui", "*.py"):
         shutil.copy("src/gui/%s" % filename, ".tmp")
@@ -58,8 +58,8 @@ class Build(build):
         os.system("cp -R src build/")
         # Copy compiled UIs and RCs
         print "Generating UIs..."
-        for filename in glob.glob1("src/gui", "*.ui"):
-            os.system("/usr/kde/4/bin/pykde4uic -o build/gui/%s.py src/gui/%s" % (filename.split(".")[0], filename))
+        for filename in glob.glob1("src/gui/widgets/", "*.ui"):
+            os.system("/usr/kde/4/bin/pykde4uic -o build/gui/%s.py src/gui/widgets/%s" % (filename.split(".")[0], filename))
         print "Generating RCs..."
         for filename in glob.glob1("src/gui", "*.qrc"):
             os.system("/usr/bin/pyrcc4 src/gui/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))

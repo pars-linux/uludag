@@ -39,6 +39,9 @@ to the PYTHONPATH environment variable.
 
     cd /path/to/bug-reporting-tool/
     for d in "apport cookiepot pybugz"; do export PYTHONPATH=$(pwd)${d}:${PYTHONPATH}; done
+    # as root
+    mkdir /var/crash
+    chmod 777 /var/crash
 
 Testing the BugTool wizard
 ==========================
@@ -49,7 +52,7 @@ Testing the BugTool wizard
 Testing the Apport Front-End
 ============================
 
-    ulimit unlimited # enable coredumps
+    ulimit -S -c unlimited # enable coredumps
     cd pardus-apport/src
     python temporal-generate.py && chmod a+x papport.py
     export PYTHONPATH=$(pwd):${PYTHONPATH}

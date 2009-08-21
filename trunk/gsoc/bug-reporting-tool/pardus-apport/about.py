@@ -15,7 +15,7 @@
 from PyKDE4.kdecore import KAboutData, ki18n
 
 # Application Data
-appName     = "paapport"
+appName     = "papport"
 programName = ki18n("Pardus' Apport KDE GUI")
 modName     = "papport"
 version     = "4.0"
