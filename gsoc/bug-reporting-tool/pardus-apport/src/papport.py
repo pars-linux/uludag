@@ -97,7 +97,7 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         self.waitNextClick.wait(self.mutex)
 
     def wait_user_input(self):
-        t = Thread(None, self.wait_for_next_click, 'waiter', (), None)
+        t = Thread(target=self.wait_for_next_click)
         t.start()
         while t.is_alive():
             self.app.processEvents()
@@ -218,20 +218,16 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
 
     def ui_info_message(self, title, text):
         self.appendScreen(messageScreen)
-
         self.set_current_title('Information')
         self.current.ui.heading.setText(title)
         self.current.ui.text.setText(text)
-
         self.wait_user_input()
 
     def ui_error_message(self, title, text):
         self.appendScreen(messageScreen)
-
         self.set_current_title('Error!')
         self.current.ui.heading.setText(title)
         self.current.ui.text.setText(text)
-
         self.wait_user_input()
 
     def ui_question_yesno(self, text):

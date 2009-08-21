@@ -1,13 +1,80 @@
-==========
-= Apport =
-==========
+Google Summer of Code
+---------------------
+
+ * Student: Caio Romão <caioromao@gmail.com>
+ * Mentor: Pinar Yanardag <pinar@pardus.org.tr>
+
+Instalation
+-----------
+
+Dependencies
+============
+
+ * distutils-extra: https://launchpad.net/python-distutils-extra
+
+Steps
+=====
+
+Just issue *python setup.py install* on each python library directory
+
+
+Apport Configuration
+--------------------
+
+Set the default database options in /etc/apport/crashdb.conf. There should
+already be a Pardus entry with dummy options.
+
+The kernel must have core_pattern enabled so that /proc/sys/kernel/core_pattern
+reads "|/path/to/papport.py %p %s %c".
+
+
+Step-by-Step Testing Guide
+--------------------------
+
+Initial Setup
+=============
+
+To avoid installing every package, simply add every python library directory
+to the PYTHONPATH environment variable.
+
+    cd /path/to/bug-reporting-tool/
+    for d in "apport cookiepot pybugz"; do export PYTHONPATH=$(pwd)${d}:${PYTHONPATH}; done
+
+Testing the BugTool wizard
+==========================
+
+    cd bugtool/src
+    python temporal-generate.py && python bugtool.py
+
+Testing the Apport Front-End
+============================
+
+    ulimit unlimited # enable coredumps
+    cd pardus-apport/src
+    python temporal-generate.py && chmod a+x papport.py
+    export PYTHONPATH=$(pwd):${PYTHONPATH}
+    # as root
+    echo "|/path/to/papport.py %p %s %c" > /proc/sys/kernel/core_pattern
+    # back to normal user
+    bash -c 'kill -SEGV $$' # forcing a segfault to trigger apport
+
+
+External Projects
+-----------------
+
+Apport
+======
 
 Apport development is being made of a Bazaar branch:
-* https://code.launchpad.net/~caioromao/apport/pardus-bugzilla
+ * https://code.launchpad.net/~caioromao/apport/pardus-bugzilla
 
-==========
-= PyBugz =
-==========
+PyBugz
+======
 
 PyBugz was forked from original. Source can be found here:
-* http://github.com/caio/pybugz
+ * http://github.com/caio/pybugz
+
+CookiePot
+=========
+
+Yet-to-be-hosted
