@@ -71,12 +71,14 @@ Uygulamanın kemenüden güzgün bir şekilde çalıştığını gözlemleyin.
  qt-sql-postgresql
 \end{verbatim}
  \item qt paketi kurulumu sonrası
+
 \begin{verbatim}
+ # sudo pisi it -c system.devel
  # mkdir test
  # cd test
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/toolkit/test.cpp
- # qmake-qt -project
- # qmake-qt
+ # qmake-qt4 -project
+ # qmake-qt4
  # make
  # ./test
 \end{verbatim}
@@ -91,13 +93,15 @@ Menu $\rightarrow$ Programlar $\rightarrow$ Geliştirme yolunu izleyerek sorunsu
 Menu $\rightarrow$ Programlar $\rightarrow$ Geliştirme yolunu izleyerek sorunsuz bir şekilde açıldığını gözlemleyin.
 
 \item qt-sql-mysql, qt-sql-sqlite paketi kurulumu sonrası
+
+qt-sql-mysql için Mysql'i servis yöneticisinden başaltınız.
 \begin{verbatim}
  # mkdir test
  # cd test
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/ 
 toolkit/test-qt-sql-<ilgili_veritabanı>.cpp
- # qmake-qt -project
- # qmake-qt
+ # qmake-qt4 -project
+ # qmake-qt4	
 \end{verbatim}
 qmake komutundan sonra oluşan .pro dosyanıza QT += sql satırını eklemelisiniz. Daha sonra aşağıdaki komutları çalıştırın.
 \begin{verbatim}
