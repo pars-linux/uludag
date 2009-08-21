@@ -301,18 +301,18 @@ class Binary(models.Model):
     def is_ack(self,recursive = 0):
         dependencies = self.get_pending_dependencies()
         if not dependencies :
-            if self.stateoftest_set.count() == 0:
+            if self.testresult_set.count() == 0:
                 if recursive == 0:
                     return True
                 else:
                     return None
             else:
-                for state in self.stateoftest_set.all():
-                    if state.state == "nack":
+                for state in self.testresult_set.all():
+                    if state.result == "no":
                         return False
                 return True
-        for state in self.stateoftest_set.all():
-            if state.state == "nack":
+        for state in self.testresult_set.all():
+            if state.result == "no":
                 return False
         result = None
         for bin in dependencies:
@@ -350,3 +350,9 @@ class TestResult(models.Model):
         ordering = ['-created_on']
         verbose_name = _('test result')
         verbose_name_plural = _('test results')
+
+class RepoAdmin(models.Model):
+    class Meta:
+        permissions = (
+                ('can_submit','Can submit'),
+        )

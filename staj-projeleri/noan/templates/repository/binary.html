@@ -21,6 +21,13 @@
     <p>
         Current result: {{ binary.get_result_str }}
     </p>
+    <h2>Results</h2>
+    <table>
+        <tr><th>User</th><th>Result</th><th>Time</th></tr>
+        {% for results in binary.testresult_set.all %}
+        <tr><td>{{results.created_by}}</td><td>{{results.result}}</td><td>{{results.created_on}}</td></tr>
+        {% endfor %}
+    </table>
     <h2>Your Report</h2>
         {{ test }}
         {% if user.is_authenticated %}

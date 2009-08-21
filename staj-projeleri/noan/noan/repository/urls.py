@@ -25,11 +25,4 @@ urlpatterns = patterns('',
     (r'^ack_nack/$','noan.repository.views.AckNackList'),
     # all list of ack/nack
     (r'^statelist/$','noan.repository.views.ListAllAckNack'),
-
-
-    # logout
-    (r'^logout/$','repository.views.log_out'),
-    # login
-    (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'registration/login.html'}),
-
 )
