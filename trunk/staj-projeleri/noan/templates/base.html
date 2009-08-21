@@ -50,15 +50,11 @@
             table.package_list a {
                 color: #4c6187;
             }
-
-            .package_list .failed td {
+            .package_list .test_no td {
                 background: #ffc2c2;
             }
-            .package_list .passed td {
+            .package_list .test_yes td {
                 background: #b9ffb8;
-            }
-            .package_list .incomplete td {
-                background: #fffaba;
             }
             table.altrowstable {
                 font-family: verdana,arial,sans-serif;
@@ -93,12 +89,12 @@
                     <li><a href="/repository/statelist/">List of Ack/Nack</a></li>
 
                     {% if not  user.is_authenticated %}
-                    <li><a href="/repository/login">login</a></li>
+                    <li><a href="/login">login</a></li>
                 </ul>
                 {%else%}
 
                 <li><a href="/repository/ack_nack/">Ack/nack list</a></li>
-                <li><a href="/repository/logout">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
                 </ul>
                 User: {{user}}
                 {%endif%}
