@@ -415,11 +415,15 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         self.allow_cancel(True)
         self.percentage(None)
         self.status(STATUS_INFO)
+        package_list = []
 
         try:
             for key in self.groupdb.get_group_components(group):
                 for pkg in self.componentdb.get_packages(key, walk = True):
-                    self.__get_package(pkg, filters)
+                    package_list.append(pkg)
+            package_list = list(set(package_list))
+            for pkg in package_list:
+                self.__get_package(pkg, filters)
         except:
             self.error(ERROR_GROUP_NOT_FOUND, "Component %s was not found" % group)
 
