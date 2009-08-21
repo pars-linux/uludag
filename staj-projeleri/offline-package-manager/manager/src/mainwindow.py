@@ -24,6 +24,7 @@ from mainwidget import MainWidget
 from statemanager import StateManager
 from settingsdialog import SettingsDialog
 from tray import Tray
+from backend.pisi.operations import Operations
 
 import backend
 import config
@@ -38,6 +39,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
         self.setCentralWidget(MainWidget(self))
         self.settingsDialog = SettingsDialog(self)
+        self.offlineOperations = Operations()
         self.initializeActions()
         self.initializeStatusBar()
         self.initializeTray()
@@ -118,6 +120,14 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.connect(self.exportIndexAction, SIGNAL("triggered()"), self.importIndex)
         #actionGroup.addAction(self.exportIndexAction)
 
+        self.importOfflineJobsAction = KToggleAction(KIcon("list-add"), "Import Offline Jobs", self)
+        self.actionCollection().addAction("importOfflineJobsAction", self.importOfflineJobsAction)
+        self.connect(self.importOfflineJobsAction, SIGNAL("trigged()"), self.importOfflineJobs)
+
+        self.closeOfflineModeAction = KToggleAction(KIcon("list-remove"), "Close Offline Mode", self)
+        self.actionCollection().addAction("closeOfflineModeAction", self.closeOfflineModeAction)
+        self.connect(self.closeOfflineModeAction, SIGNAL("triggered()"), self.closeOfflineModer)
+
     def statusWaiting(self):
         self.statusLabel.setMovie(self.wheelMovie)
         self.wheelMovie.start()
@@ -164,3 +174,12 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         index.add_groups("/home/volkan/groups.xml")
         index.add_distro("/home/volkan/distribution.xml")
         index.write("/home/volkan/pisi-installed.xml.bz2", sha1sum=True, compress=pisi.file.File.bz2, sign=None)
+
+    def importOfflineJobs(self):
+        print "Offline jobs are running..."
+        filename = KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file"))
+        print filename
+
+    def closeOfflineModer(self):
+        filename = KFileDialog.getSaveFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file"))
+        self.offlineOperations.closeOfflineMode(filename)
