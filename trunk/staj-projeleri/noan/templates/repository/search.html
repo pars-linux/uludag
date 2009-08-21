@@ -11,7 +11,6 @@
         <tr>
             <td>Search on</td>
             <td>:<input type="radio" name="search_area" value="package" checked="checked"/>Package Name
-                <input type="radio" name="search_area" value="descript"/>Description
                 <input type="radio" name="search_area" value="source"/>Source name
             </td>
         </tr>
@@ -35,7 +34,7 @@
     </table>
 </form>
 {%else%}<table>
-<ul>{%for distro in distributions  %}
+    <ul>{%for distro in distributions  %}{{post}}
     <tr><td></td><td><h2> {{distro}} </h2><td></td><td></td></tr>
         <tr><td><b>Name </b></td><td><b>Resolution </b></td><td><b>Update time</b></td><td><b>Maintainer </b></td></tr>
     {%for result in results %}

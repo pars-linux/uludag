@@ -160,7 +160,7 @@ def page_user(request, userName):
 def search_form(request):
     context= {}
     distributions = Distribution.objects.all()
-    if 'question' in request.GET and request.GET['question'] != "":
+    if request.method == 'POST' and request.POST["question"]:
         keyword = request.GET['question']
         search_area = request.GET['search_area']
         distro = request.GET['distro']
@@ -170,10 +170,8 @@ def search_form(request):
                 results = Package.objects.filter(source__distribution__id=distro).filter(name__contains=keyword)
             else:
                 results = Package.objects.filter(name__contains=keyword)
-        elif search_area == "descript":
-            result = Package.objects.filter(source__distribution__id=distro).filter(source__name__contains=keyword)
-        else :
-            result = results = Package.objects.filter(source__name__contains=keyword)
+        elif search_area == "source":
+                results = Package.objects.filter(source__name__contains=keyword)
         context['results'] = results
 
     context['distributions'] = distributions
@@ -209,10 +207,10 @@ def AckNackList(request):
         for binary_id in  radio:
             a = binary_id
             if binary_id in comment:
-                Add_Comment = TestResult(binary = Binary.objects.get(id=binary_id), created_by = request.user, created_on=date.today(), result = radio[binary_id][0], comment = comment[binary_id][-1])
+                Add_Comment = TestResult(binary = Binary.objects.get(id=binary_id), created_by = request.user, result = radio[binary_id][0], comment = comment[binary_id][-1])
                 Add_Comment.save()
             else:
-                Add_Comment = TestResult(binary = Binary.objects.get(id=binary_id), created_by = request.user, created_on=date.today(), result = radio[binary_id][0])
+                Add_Comment = TestResult(binary = Binary.objects.get(id=binary_id), created_by = request.user, result = radio[binary_id][0])
                 Add_Comment.save()
             """
             if radio[binary_id][0]:
