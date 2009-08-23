@@ -18,6 +18,7 @@
 #include "context.h"
 #include "sinput_p.h"
 
+
 using namespace std;
 
 namespace QtPulseAudio
@@ -146,6 +147,7 @@ void SinkInput::sink_input_cb(pa_context *, const pa_sink_input_info *i, int eol
     if(dd->proplist != 0)
 	pa_proplist_free(dd->proplist);
     dd->proplist = pa_proplist_copy(i->proplist);
+    //std::cout << pa_proplist_to_string(dd->proplist) << std::endl;
     emit p->updated();
 }
 

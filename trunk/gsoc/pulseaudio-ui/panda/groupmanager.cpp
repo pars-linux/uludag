@@ -1,6 +1,10 @@
 #include <iostream>
+#include <ksharedconfig.h>
+#include "kglobal.h"
+
 #include "groupmanager.h"
 #include "group.h"
+#include "groupsdata.h"
 #include "../bindings/streammanager.h"
 
 using namespace std;
@@ -8,18 +12,24 @@ using namespace std;
 GroupManager::GroupManager(QtPulseAudio::StreamManager* manager, QObject* parent): QObject(parent)
 {
     this->manager = manager;
-    createGroup("");
-    createGroup("video");
-    createGroup("music");
-    //createGroup("game");
-    createGroup("event");
-    //createGroup("phone");
-    //createGroup("animation");
-    //createGroup("production");
-    createGroup("a11y");
     QObject::connect(manager, SIGNAL(added(int)), this, SLOT(addStream(int)));
     QObject::connect(manager, SIGNAL(removed(int)), this, SLOT(removeStream(int)));
+    reloadConfig();
     manager->update();
+}
+
+void GroupManager::reloadConfig()
+{
+    foreach(Group *g, groups.values())
+	delete g;
+    groups.clear();
+    QList<GroupData> gl = load_groups(KGlobal::config().data());
+    foreach(GroupData gd, gl)
+	groups[gd.name] = new Group(gd, manager, this);
+    
+    rules = load_rules(KGlobal::config().data()).toVector();
+    foreach(QtPulseAudio::Stream *s, streams)
+	dispatchStream(s);
 }
 
 void GroupManager::addStream(int index)
@@ -29,6 +39,7 @@ void GroupManager::addStream(int index)
     if(s->isValid())
     {
 	dispatchStream(s);
+	streams.insert(s);
     }
     else
     {
@@ -44,23 +55,28 @@ void GroupManager::streamReady()
     if(s->isValid())
     {
 	dispatchStream(s);
+	streams.insert(s);
     }
 }
 
 void GroupManager::dispatchStream(QtPulseAudio::Stream *s)
 {
-    QString gname = s->getProperty("media.role");
-    QString aname = s->getProperty("application.name");
-    
-    /* rather dirty */
-    if(aname == "amarok")
-	gname = "music";
-    else if(aname == "kaffeine" || aname == "dragon")
-	gname = "video";
-    
     int index = s->index();
-    streamGroup[index] = gname;
-    groups[gname]->addStream(index);
+    QString group;
+    foreach(RuleData rd, rules)
+    {
+	if(s->getProperty(rd.key) == rd.value)
+	{
+	    group = rd.group;
+	    break;
+	}
+    }
+    
+    if(!groups.contains(group))
+	group = "default";
+    
+    streamGroup[index] = group;
+    groups[group]->addStream(index);
     QObject::disconnect(s, SIGNAL(updated()), this, SLOT(streamReady()));
 }
 
@@ -79,10 +95,4 @@ QList< QString > GroupManager::groupNames()
 Group *GroupManager::group(const QString &name)
 {
     return groups[name];
-}
-
-
-void GroupManager::createGroup(const QString &name)
-{
-    groups[name] = new Group(manager, this);
 }

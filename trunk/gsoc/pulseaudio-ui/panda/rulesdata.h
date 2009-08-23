@@ -1,3 +1,4 @@
+
 /*
     Copyright (c) 2009      by Marcin Kurczych          <tharkang@gmail.com>
 
@@ -10,35 +11,22 @@
     *                                                                       *
     *************************************************************************
 */
-#include <QApplication>
+#ifndef PANDA_RULESDATA_H
+#define PANDA_RULESDATA_H
 
-#include "mainwindow.h"
+#include <QString>
+#include <QList>
+#include <kconfig.h>
 
-#include "../integrator/QtPulseAudioIntegrator.h"
-#include "../bindings/context.h"
-
-#include <pulse/pulseaudio.h>
-
-#include <iostream>
-#include <assert.h>
-
-int main(int argc, char *argv[])
+struct RuleData
 {
-	//Q_INIT_RESOURCE(systray);
-	QApplication app(argc, argv);
+    QString key;
+    QString value;
+    QString group;
+    QString name;
+};
 
-	QtPulseAudio::Integrator pai;
+void save_rules(const QList<RuleData> &rules, KConfig *config);
+QList<RuleData> load_rules(KConfig *config);
 
-	QtPulseAudio::Context *context = new QtPulseAudio::Context(&pai,"PulseAudio Qt Volume Manager");
-	QApplication::setQuitOnLastWindowClosed(false);
-	MainWindow * mw = new MainWindow(context);
-
-	if ( context->connectToPulse(NULL, (pa_context_flags_t) 0, NULL) < 0) {
-		std::cout << "Unable to connect pulse context" << std::endl;
-    }
-
-	mw->show();
-	app.exec();
-
-	return 0;
-}
+#endif

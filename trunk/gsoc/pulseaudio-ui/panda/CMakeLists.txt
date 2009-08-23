@@ -7,6 +7,12 @@ set(panda_SRCS
     groupmanager.cpp
     groupwidget.cpp
     groupstab.cpp
+    groupsdata.cpp
+    groupsconfig.cpp
+    rulesdata.cpp
+    rulesconfig.cpp
+    trayicon.cpp
+    slideraction.cpp
  )
 
 kde4_add_ui_files(panda_SRCS mainwindow.ui)
@@ -15,7 +21,7 @@ kde4_add_ui_files(panda_SRCS mainwindow.ui)
 
 kde4_add_executable(panda ${panda_SRCS})
 
-target_link_libraries(panda ${KDE4_KDEUI_LIBS} 
+target_link_libraries(panda ${KDE4_KDEUI_LIBS} ${KDE4_KFILE_LIBS}
                         pulse
                         qtpulseaudiointegrator
                         qtpulseaudiobindings)
