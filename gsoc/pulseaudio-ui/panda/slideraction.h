@@ -10,35 +10,30 @@
     *                                                                       *
     *************************************************************************
 */
-#include <QApplication>
+#ifndef PANDA_SLIDERACTION_H
+#define PANDA_SLIDERACTION_H
+#include<QWidgetAction>
+#include<QBoxLayout>
 
-#include "mainwindow.h"
+class QSlider;
+class QLabel;
 
-#include "../integrator/QtPulseAudioIntegrator.h"
-#include "../bindings/context.h"
-
-#include <pulse/pulseaudio.h>
-
-#include <iostream>
-#include <assert.h>
-
-int main(int argc, char *argv[])
+class SliderAction: public QWidgetAction
 {
-	//Q_INIT_RESOURCE(systray);
-	QApplication app(argc, argv);
-
-	QtPulseAudio::Integrator pai;
-
-	QtPulseAudio::Context *context = new QtPulseAudio::Context(&pai,"PulseAudio Qt Volume Manager");
-	QApplication::setQuitOnLastWindowClosed(false);
-	MainWindow * mw = new MainWindow(context);
-
-	if ( context->connectToPulse(NULL, (pa_context_flags_t) 0, NULL) < 0) {
-		std::cout << "Unable to connect pulse context" << std::endl;
-    }
-
-	mw->show();
-	app.exec();
-
-	return 0;
-}
+    Q_OBJECT
+    public:
+    SliderAction(QObject* parent);
+    void setWidgetToolTip(const QString &);
+    void setWidgetIcon(const QIcon &);
+    signals:
+    void valueChanged(int);
+    public slots:
+    void setValue(int);
+    protected:
+    //virtual QWidget* createWidget(QWidget* parent);
+    private:
+    QSlider *slider;
+    QLabel *iconLabel;
+    QWidget* widget;
+};
+#endif

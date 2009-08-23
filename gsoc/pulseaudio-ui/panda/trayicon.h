@@ -10,35 +10,26 @@
     *                                                                       *
     *************************************************************************
 */
-#include <QApplication>
-
-#include "mainwindow.h"
-
-#include "../integrator/QtPulseAudioIntegrator.h"
+#ifndef PANDA_TRAYICON_H
+#define PANDA_TRAYICON_H
 #include "../bindings/context.h"
 
-#include <pulse/pulseaudio.h>
+#include <Qt/QtGui>
+#include <ksystemtrayicon.h>
 
-#include <iostream>
-#include <assert.h>
+class MainWindow;
 
-int main(int argc, char *argv[])
+class PandaTrayIcon: public KSystemTrayIcon
 {
-	//Q_INIT_RESOURCE(systray);
-	QApplication app(argc, argv);
+    Q_OBJECT
+    public:
+    PandaTrayIcon(MainWindow *parent);
+    void createActions();
+    
+    private slots:
+    void trayActivated(QSystemTrayIcon::ActivationReason);
+    private:
+    MainWindow* mainWindow;
+};
 
-	QtPulseAudio::Integrator pai;
-
-	QtPulseAudio::Context *context = new QtPulseAudio::Context(&pai,"PulseAudio Qt Volume Manager");
-	QApplication::setQuitOnLastWindowClosed(false);
-	MainWindow * mw = new MainWindow(context);
-
-	if ( context->connectToPulse(NULL, (pa_context_flags_t) 0, NULL) < 0) {
-		std::cout << "Unable to connect pulse context" << std::endl;
-    }
-
-	mw->show();
-	app.exec();
-
-	return 0;
-}
+#endif

@@ -1,6 +1,11 @@
 #include <QObject>
 #include <QHash>
 #include <QMap>
+#include <QVector>
+#include <QSet>
+
+#include "groupsdata.h"
+#include "rulesdata.h"
 
 namespace QtPulseAudio
 {
@@ -20,6 +25,7 @@ class GroupManager: public QObject
     void addStream(int index);
     void removeStream(int index);
     QList<QString> groupNames();
+    void reloadConfig();
     Group *group(const QString &name);
     signals:
     void groupCreated(QString name);
@@ -27,8 +33,9 @@ class GroupManager: public QObject
     protected:
     void createGroup(const QString &name);
     void dispatchStream(QtPulseAudio::Stream *s);
+    QVector<RuleData> rules;
     QMap<QString, Group *> groups;
     QMap<int, QString> streamGroup;
+    QSet<QtPulseAudio::Stream *> streams;
     QtPulseAudio::StreamManager *manager;
-    
 };

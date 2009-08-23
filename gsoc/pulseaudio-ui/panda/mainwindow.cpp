@@ -11,10 +11,14 @@
     *************************************************************************
 */
 #include <iostream>
+
 #include "mainwindow.h"
 #include "streamstab.h"
 #include "groupmanager.h"
 #include "groupstab.h"
+#include "trayicon.h"
+#include "groupsconfig.h"
+#include "rulesconfig.h"
 #include "../bindings/sourcemanager.h"
 #include "../bindings/sinkmanager.h"
 #include "../bindings/sinputmanager.h"
@@ -26,6 +30,14 @@ MainWindow::MainWindow(QtPulseAudio::Context *context, QMainWindow *parent):QMai
     tabWidget = new QTabWidget(this);
     setCentralWidget(tabWidget);
     QObject::connect(this->context, SIGNAL(ready()), this, SLOT(contextReady()));
+    QObject::connect(actionSettings, SIGNAL(triggered(bool)), this, SLOT(showSettings(bool)));
+    createTray();
+}
+
+void MainWindow::createTray()
+{
+    trayIcon = new PandaTrayIcon(this);
+    trayIcon->show();
 }
 
 void MainWindow::contextReady()
@@ -50,4 +62,46 @@ void MainWindow::contextReady()
     tabWidget->addTab(sinksTab, QString("Output"));
     tabWidget->addTab(sourcesTab, QString("Input"));
     tabWidget->addTab(groupsTab, QString("Applications"));
+    trayIcon->createActions();
+}
+
+void MainWindow::toggleVisibility()
+{
+    if(isVisible())
+	hide();
+    else
+	show();
+}
+
+void MainWindow::showSettings(bool val)
+{
+    std::cout << "Show settings" << std::endl;
+    KPageDialog *kpd = new KPageDialog(this);
+    KPageWidgetItem *groupsItem = new KPageWidgetItem(new GroupsConfigWidget);
+    groupsItem->setHeader("Groups");
+    groupsItem->setName("Groups");
+    groupsItem->setIcon(KIcon("document-folder-open"));;
+    kpd->addPage(groupsItem);
+    KPageWidgetItem *rulesItem = new KPageWidgetItem(new RulesConfigWidget);
+    rulesItem->setHeader("Rules");
+    rulesItem->setName("Rules");
+    rulesItem->setIcon(KIcon("code-class"));
+    kpd->addPage(rulesItem);
+    kpd->setButtons( KDialog::Ok | KDialog::Cancel | KDialog::Apply );
+    QObject::connect(kpd, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)),
+		     this, SLOT(settingsPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
+    kpd->show();
+    settingsDialog = kpd;
+}
+
+
+void MainWindow::settingsPageChanged(KPageWidgetItem *current, KPageWidgetItem *prev)
+{
+    if(prev)
+    {
+	QObject::disconnect(settingsDialog, SIGNAL(applyClicked()), prev->widget(), SLOT(save()));
+	QObject::disconnect(settingsDialog, SIGNAL(okClicked()), prev->widget(), SLOT(save()));
+    }
+    QObject::connect(settingsDialog, SIGNAL(applyClicked()), current->widget(), SLOT(save()));
+    QObject::connect(settingsDialog, SIGNAL(okClicked()), current->widget(), SLOT(save()));
 }

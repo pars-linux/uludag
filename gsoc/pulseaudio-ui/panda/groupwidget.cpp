@@ -22,6 +22,7 @@ GroupWidget::GroupWidget(Group* g, QWidget *parent):QWidget(parent)
     QObject::connect(group, SIGNAL(streamAdded(int)), this, SLOT(streamAdded(int)));
     QObject::connect(group, SIGNAL(streamRemoved(int)), this, SLOT(streamRemoved(int)));
     QObject::connect(volumeSlider, SIGNAL(sliderMoved(int)), group, SLOT(setVolume(int)));
+    QObject::connect(group, SIGNAL(volumeChanged(int)), volumeSlider, SLOT(setValue(int)));
 }
 
 
