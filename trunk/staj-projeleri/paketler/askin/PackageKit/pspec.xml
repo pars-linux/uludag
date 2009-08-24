@@ -14,9 +14,7 @@
     <Summary>
       A system designed to make installing and updating software on your computer easier
     </Summary>
-    <Description>
-      The primary design goal is to unify all the software graphical tools used in different distributions, and use some of the latest technology like PolicyKit to make the process suck less. The actual nuts-and-bolts distro tool (yum, apt, conary, etc) is used by PackageKit using compiled and scripted helpers. PackageKit isn't meant to replace these tools, instead providing a common set of abstractions that can be used by standard GUI and text mode package managers.
-    </Description>
+    <Description>The primary design goal is to unify all the software graphical tools used in different distributions, and use some of the latest technology like PolicyKit to make the process suck less.</Description>
     <Archive sha1sum="1778b941bf9b8209b5ddbb8f1dbdcaeaa70f2650" type="targz">http://www.packagekit.org/releases/PackageKit-0.4.9.tar.gz</Archive>
     <BuildDependencies>
       <Dependency>intltool</Dependency>
