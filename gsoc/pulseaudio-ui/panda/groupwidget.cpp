@@ -3,14 +3,18 @@
 #include "groupwidget.h"
 #include "group.h"
 
-
 GroupWidget::GroupWidget(Group* g, QWidget *parent):QWidget(parent)
 {
     group = g;
     listWidget = new QListWidget(this);
     listWidget->setViewMode(QListView::IconMode);
     listWidget->setIconSize(QSize(16, 16));
-    listWidget->setMinimumHeight(40);
+    listWidget->setSortingEnabled(true);
+    listWidget->setMaximumHeight(40);
+    listWidget->setGridSize(QSize(60, 40));
+    listWidget->setMovement(QListView::Snap);
+    listWidget->setDragEnabled(true);
+    listWidget->setAcceptDrops(true);
     volumeSlider = new QSlider(this);
     volumeSlider->setOrientation(Qt::Horizontal);
     volumeSlider->setMinimum(0);
@@ -23,6 +27,7 @@ GroupWidget::GroupWidget(Group* g, QWidget *parent):QWidget(parent)
     QObject::connect(group, SIGNAL(streamRemoved(int)), this, SLOT(streamRemoved(int)));
     QObject::connect(volumeSlider, SIGNAL(sliderMoved(int)), group, SLOT(setVolume(int)));
     QObject::connect(group, SIGNAL(volumeChanged(int)), volumeSlider, SLOT(setValue(int)));
+    
 }
 
 

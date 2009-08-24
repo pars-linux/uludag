@@ -3,6 +3,7 @@
 #include "rulesconfig.h"
 #include <kinputdialog.h>
 #include <ksharedconfig.h>
+#include <klocalizedstring.h>
 #include <pulse/proplist.h>
 
 
@@ -14,25 +15,25 @@ RulesConfigWidget::RulesConfigWidget(QWidget* parent): QWidget(parent)
     leftLayout = new QVBoxLayout(leftWidget);
     rulesList = new QListWidget(this);
     leftLayout->addWidget(rulesList);
-    QPushButton* upButton = new QPushButton("Up", leftWidget);
+    QPushButton* upButton = new QPushButton(i18n("Up"), leftWidget);
     leftLayout->addWidget(upButton);
-    QPushButton* downButton = new QPushButton("Down", leftWidget);
+    QPushButton* downButton = new QPushButton(i18n("Down"), leftWidget);
     leftLayout->addWidget(downButton);
-    newRuleButton = new QPushButton("New");
+    newRuleButton = new QPushButton(i18n("New"));
     leftLayout->addWidget(newRuleButton);
-    deleteRuleButton = new QPushButton("Delete");
+    deleteRuleButton = new QPushButton(i18n("Delete"));
     leftLayout->addWidget(deleteRuleButton);
     layout->addWidget(leftWidget);
     
     rightWidget = new QWidget(this);
     rightLayout = new QFormLayout(rightWidget);
-    QLabel *groupLabel = new QLabel("Group");
+    QLabel *groupLabel = new QLabel(i18n("Group"));
     groupSelect = new QComboBox(rightWidget);
     rightLayout->addRow(groupLabel, groupSelect);
-    QLabel *keyLabel = new QLabel("Key");
+    QLabel *keyLabel = new QLabel(i18n("Key"));
     keySelect = new QComboBox;
     rightLayout->addRow(keyLabel, keySelect);
-    QLabel *valueLabel = new QLabel("Value");
+    QLabel *valueLabel = new QLabel(i18n("Value"));
     valueInput = new QLineEdit;
     rightLayout->addRow(valueLabel, valueInput);
     layout->addWidget(rightWidget);
@@ -59,15 +60,15 @@ void RulesConfigWidget::reconfigureGroups()
 
 void RulesConfigWidget::configureKeys()
 {
-    keySelect->addItem(QString("Application name"), QString(PA_PROP_APPLICATION_NAME));
-    keySelect->addItem(QString("Application binary"), QString(PA_PROP_APPLICATION_PROCESS_BINARY));
-    keySelect->addItem(QString("Process user"), QString(PA_PROP_APPLICATION_PROCESS_USER));
+    keySelect->addItem(QString(i18n("Application name")), QString(PA_PROP_APPLICATION_NAME));
+    keySelect->addItem(QString(i18n("Application binary")), QString(PA_PROP_APPLICATION_PROCESS_BINARY));
+    keySelect->addItem(QString(i18n("Process user")), QString(PA_PROP_APPLICATION_PROCESS_USER));
 }
 
 
 void RulesConfigWidget::createRule()
 {
-    QString name = KInputDialog::getText("Rule name", "Rule name");
+    QString name = KInputDialog::getText(i18n("Rule name"), i18n("Rule name"));
     RuleData rd;
     rd.name = name;
     rd.group = QString("default");

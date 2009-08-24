@@ -1,6 +1,7 @@
 #include "groupsconfig.h"
 #include <kinputdialog.h>
 #include <ksharedconfig.h>
+#include <klocalizedstring.h>
 
 GroupsConfigWidget::GroupsConfigWidget(QWidget* parent): QWidget(parent)
 {
@@ -9,16 +10,16 @@ GroupsConfigWidget::GroupsConfigWidget(QWidget* parent): QWidget(parent)
     layout = new QHBoxLayout(this);
     groupsList = new QListWidget(leftWidget);
     leftLayout->addWidget(groupsList);
-    newGroupButton = new QPushButton("New", leftWidget);
-    deleteGroupButton = new QPushButton("Remove", leftWidget);
+    newGroupButton = new QPushButton(i18n("New"), leftWidget);
+    deleteGroupButton = new QPushButton(i18n("Remove"), leftWidget);
     leftLayout->addWidget(newGroupButton);
     leftLayout->addWidget(deleteGroupButton);
     rightWidget = new QWidget(this);
     QFormLayout *rightLayout = new QFormLayout(rightWidget);
-    QLabel *iconLabel = new QLabel("Icon", rightWidget);
+    QLabel *iconLabel = new QLabel(i18n("Icon"), rightWidget);
     iconButton = new KIconButton(rightWidget);
     iconButton->setIconType(KIconLoader::Desktop, KIconLoader::Any);
-    nameLabel = new QLabel("Name", rightWidget);
+    nameLabel = new QLabel(i18n("Name"), rightWidget);
     nameVLabel = new QLabel("", rightWidget);
     rightLayout->addRow(nameLabel, nameVLabel);
     rightLayout->addRow(iconLabel, iconButton);
@@ -57,7 +58,7 @@ void GroupsConfigWidget::dataToWidget(QString name)
 void GroupsConfigWidget::createGroup()
 {
     //TODO: create validator
-    QString name = KInputDialog::getText("Group name", "Group name");
+    QString name = KInputDialog::getText(i18n("Group name"), i18n("Group name"));
     groupsList->addItem(name);
     GroupData gd;
     gd.name = name;
