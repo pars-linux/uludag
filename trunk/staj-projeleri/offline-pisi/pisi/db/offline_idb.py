@@ -30,7 +30,10 @@ class Offline_InstallDB():
     def __init__(self):
         self.pdb = pisi.db.packagedb.PackageDB()
 
-        index_xml = "/home/volkan/index/pardus-2009/pisi-installed.xml"
+        #index_xml = "/home/volkan/index/pardus-2009/pisi-installed.xml"
+        f = open("/tmp/offline-pm.data", "r")
+        index_xml = f.read()
+        f.close()
         doc = piksemel.parse(index_xml)
 
         self.installed_db = self.__generate_installed_pkgs(doc)
