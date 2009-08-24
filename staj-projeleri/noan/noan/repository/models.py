@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from noan.middleware.threadlocals import get_current_lang
-import datetime
+import time
 from pisi.version import Version as Pisi_Version
 
 TEST_RESULTS = (
@@ -206,6 +206,7 @@ class Binary(models.Model):
         update: Update
         resolution: 'pending', 'released' or 'reverted'. Import scripts set this value.
     """
+    created_on = models.DateField(verbose_name=_('created on'), auto_now=True)
     no = models.IntegerField(verbose_name=_('build no'))
     package = models.ForeignKey(Package, verbose_name=_('package'))
     update = models.ForeignKey(Update, verbose_name=_('update'))
@@ -298,26 +299,37 @@ class Binary(models.Model):
                 return label
         return result
 
-    def is_ack(self,recursive = 0):
+    def is_Ack(self,recursive = 0):
+        #start = time.clock()
+        print time.clock()
         dependencies = self.get_pending_dependencies()
+        #print "binary: ", self, " ", time.clock() - start
+        testresult = self.testresult_set.all()
         if not dependencies :
-            if self.testresult_set.count() == 0:
+            if testresult.count() == 0:
                 if recursive == 0:
+                    print "return time ", self, " ", time.clock() #- start
                     return True
                 else:
+                    print "return time ", self, " ", time.clock() #- start
                     return None
             else:
-                for state in self.testresult_set.all():
+                for state in testresult :
                     if state.result == "no":
+                        print "return time ", self, " ", time.clock() #- start
                         return False
+                print "return time ", self, " ", time.clock() #- start
                 return True
-        for state in self.testresult_set.all():
+        for state in testresult:
+            print "return time ", self, " ", time.clock() #- start
             if state.result == "no":
+                print "return time ", self, " ", time.clock() #- start
                 return False
         result = None
         for bin in dependencies:
-            if (bin.is_ack(1) == False ):
+            if (bin.is_Ack(1) == False ):
                 result = False
+        print "return time ", self, " ", time.clock() #- start
         return result
 
     class Meta:
