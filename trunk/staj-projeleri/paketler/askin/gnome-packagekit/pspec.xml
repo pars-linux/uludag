@@ -24,6 +24,7 @@
       <Dependency>PackageKit</Dependency>
       <Dependency>PackageKit-glib</Dependency>
       <Dependency>PolicyKit-gnome</Dependency>
+      <Dependency releaseFrom="5">docbook-utils</Dependency>
     </BuildDependencies>
     <Patches>
       <Patch level="1">sandbox.patch</Patch>
