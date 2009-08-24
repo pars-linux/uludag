@@ -22,6 +22,7 @@
       <Dependency>gtk2</Dependency>
       <Dependency>gnome-doc-utils</Dependency>
       <Dependency>PackageKit</Dependency>
+      <Dependency>PackageKit-glib</Dependency>
       <Dependency>PolicyKit-gnome</Dependency>
     </BuildDependencies>
     <Patches>
