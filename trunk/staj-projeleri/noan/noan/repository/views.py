@@ -182,8 +182,7 @@ def search_form(request):
 def AckNackList(request):
     list=[]
     error = ()
-    stateBinary = Binary.objects.filter(resolution = 'pending').filter(package__source__maintained_by = request.user).filter(testresult__isnull=True)
-    stateBinaryOfUpdate = Binary.objects.filter(resolution = 'pending').filter(update__updated_by = request.user).filter(testresult__isnull=True)
+    stateBinary = Binary.objects.filter(Q(resolution = 'pending'), Q(package__source__maintained_by = request.user) | Q(update__updated_by = request.user),Q(testresult__isnull=True))
     if request.method == 'POST':
         radio = {}
         comment = {}
@@ -212,23 +211,24 @@ def AckNackList(request):
             else:
                 Add_Comment = TestResult(binary = Binary.objects.get(id=binary_id), created_by = request.user, result = radio[binary_id][0])
                 Add_Comment.save()
-            """
-            if radio[binary_id][0]:
-                Add_State = TestResult(binary = Binary.objects.get(id=binary_id), changed_by = request.user, updated=date.today(), state = radio[binary_id][0])
-                        Add_Comment = CommentOfStatement(state_of_test_id = Add_State, comment = comment[binary_id][-1])
-                        Add_Comment.save()
-                except Exception, err:
-                    error += err 
-            """
     if stateBinary or stateBinaryOfUpdate:
         distributions = Distribution.objects.all()
+
     else:
         distributions = ""
+    paginator = Paginator(stateBinary, 10)
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+    try:
+        stateBinary = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        stateBinary = paginator.page(paginator.num_pages)
     context = {
             'error' : error,
             'distributions' : distributions,
             'stateBinarys' : stateBinary,
-            'stateBinarysOfUpdate' : stateBinaryOfUpdate,
     }
     return render_to_response('repository/ack_nack.html', context, context_instance=RequestContext(request))
 
@@ -245,3 +245,6 @@ def ListAllAckNack(request):
             'AckNackList' : AckNackList,
     }
     return render_to_response('repository/acks_nacks.html', context, context_instance=RequestContext(request))
+
+
+
