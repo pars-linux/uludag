@@ -12,7 +12,7 @@
     <IsA>app:console</IsA>
     <IsA>library</IsA>
     <PartOf>none</PartOf>
-    <Summary>PolicyKit is a framework for defining policy for system-wide components and for desktop pieces to configure it. It is currently used by HAL</Summary>
+    <Summary>PolicyKit-gnome includes GNOME specific code and tools for using PolicyKit from GTK+ applications</Summary>
     <Description>PolicyKit is a framework for defining policy for system-wide components and for desktop pieces to configure it. It is currently used by HAL.</Description>
     <Archive sha1sum="de0393b7b87840c086df8b9342dce8f73cec402d" type="tarbz2">
       http://hal.freedesktop.org/releases/PolicyKit-gnome-0.9.tar.bz2
