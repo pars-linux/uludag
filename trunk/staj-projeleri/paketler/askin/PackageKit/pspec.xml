@@ -10,7 +10,6 @@
     </Packager>
     <License>GPLv2</License>
     <IsA>app:console</IsA>
-    <IsA>library</IsA>
     <PartOf>none</PartOf>
     <Summary>
       A system designed to make installing and updating software on your computer easier
@@ -22,10 +21,8 @@
     <BuildDependencies>
       <Dependency>intltool</Dependency>
       <Dependency>docbook-utils</Dependency>
-      <Dependency>xmlto</Dependency>
       <Dependency>xulrunner-devel</Dependency>
       <Dependency>cppunit-devel</Dependency>
-      <Dependency>qt</Dependency>
     </BuildDependencies>
     <Patches>
       <Patch level="1">sandbox.patch</Patch>
@@ -36,7 +33,7 @@
   <Package>
     <Name>PackageKit</Name>
     <RuntimeDependencies>
-      <Dependency>xmlto</Dependency>
+      <Dependency>libarchive</Dependency>
       <Dependency>cppunit</Dependency>
     </RuntimeDependencies>
     <Files>
@@ -47,7 +44,6 @@
       <Path fileType="library">/usr/lib</Path>
       <Path fileType="localedata">/usr/share/locale</Path>
       <Path fileType="man">/usr/share/man</Path>
-      <Path fileType="doc">/usr/share/doc</Path>
       <Path fileType="data">/usr/share</Path>
       <Path fileType="data">/var/lib</Path>
       <Path fileType="data">/var/log</Path>
@@ -55,7 +51,63 @@
     </Files>
   </Package>
 
+  <Package>
+    <Name>PackageKit-qt</Name>
+    <IsA>library</IsA>
+    <Summary>PackageKit Qt Libraries</Summary>
+    <RuntimeDependencies>
+      <Dependency>PackageKit</Dependency>
+      <Dependency>qt</Dependency>
+    </RuntimeDependencies>
+    <Files>
+      <Path fileType="library">/usr/lib/libpackagekit-qt*</Path>
+      <Path fileType="header">/usr/lib/include/PackageKit/packagekit-qt</Path>
+      <Path fileType="data">/usr/lib/pkgconfig/packagekit-qt.pc</Path>
+    </Files>
+  </Package>
+
+  <Package>
+    <Name>PackageKit-glib</Name>
+    <IsA>library</IsA>
+    <Summary>PackageKit Glib and Gtk+ libraries</Summary>
+    <RuntimeDependencies>
+      <Dependency>PackageKit</Dependency>
+      <Dependency>gtk2</Dependency>
+      <Dependency>pango</Dependency>
+    </RuntimeDependencies>
+    <Files>
+      <Path fileType="library">/usr/lib/libpackagekit-glib*</Path>
+      <Path fileType="library">/usr/lib/gtk-2.0/*</Path>
+      <Path fileType="header">/usr/include/PackageKit/packagekit-glib</Path>
+      <Path fileType="data">/usr/lib/pkgconfig/packagekit-glib.pc</Path>
+    </Files>
+  </Package>
+
+  <Package>
+    <Name>PackageKit-docs</Name>
+    <IsA>data:doc</IsA>
+    <Summary>PackageKit reference documents</Summary>
+    <RuntimeDependencies>
+      <Dependency>PackageKit</Dependency>
+    </RuntimeDependencies>
+    <Files>
+      <Path fileType="doc">/usr/share/doc</Path>
+      <Path fileType="doc">/usr/share/gtk-doc</Path>
+    </Files>
+  </Package>
+
   <History>
+    <Update release="8">
+      <Date>2009-08-24</Date>
+      <Version>0.4.9</Version>
+      <Comment>
+	* FIXED:deps
+	* FIXED:directories
+	* split packages (qt, glib, docs)
+      </Comment>
+      <Name>Aşkın Yollu</Name>
+      <Email>askin@askin.ws</Email>
+    </Update>
     <Update release="7">
       <Date>2009-08-13</Date>
       <Version>0.4.9</Version>
