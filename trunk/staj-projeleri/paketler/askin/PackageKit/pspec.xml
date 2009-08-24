@@ -21,6 +21,8 @@
       <Dependency>docbook-utils</Dependency>
       <Dependency>xulrunner-devel</Dependency>
       <Dependency>cppunit-devel</Dependency>
+      <Dependency>gtk-doc</Dependency>
+      <Dependency>qt</Dependency>
     </BuildDependencies>
     <Patches>
       <Patch level="1">sandbox.patch</Patch>
