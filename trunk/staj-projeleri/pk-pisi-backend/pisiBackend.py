@@ -28,6 +28,14 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
     def __init__(self, args):
         PackageKitBaseBackend.__init__(self, args)
 
+        # init required db
+        self.__init_db()
+
+        # Do not ask any question to users
+        self.options = pisi.config.Options()
+        self.options.yes_all = True
+
+    def __init_db(self):
         self.componentdb = pisi.db.componentdb.ComponentDB()
         self.filesdb = pisi.db.filesdb.FilesDB()
         self.installdb = pisi.db.installdb.InstallDB()
@@ -35,9 +43,10 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         self.repodb = pisi.db.repodb.RepoDB()
         self.groupdb = pisi.db.groupdb.GroupDB()
 
-        # Do not ask any question to users
-        self.options = pisi.config.Options()
-        self.options.yes_all = True
+    # refresh all db
+    def __invalidate_db_caches(self):
+        pisi.db.invalidate_caches()
+        self.__init_db()
 
     def __get_group(self, package):
         try:
