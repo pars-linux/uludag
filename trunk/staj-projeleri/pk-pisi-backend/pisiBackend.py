@@ -282,14 +282,23 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         """ Installs given package into system"""
         # FIXME: fetch/install progress
         self.allow_cancel(False)
-        self.percentage(None)
+        self.percentage(0)
+        percentage = 5
 
         package = self.get_package_from_id(package_ids[0])[0]
 
         if self.packagedb.has_package(package):
+            self.percentage(percentage)
             self.status(STATUS_INSTALL)
             try:
-                pisi.api.install([package])
+                install_order = pisi.api.get_install_order([package])
+                slice = 90 / len(install_order)
+                for pkg in install_order:
+                    pisi.api.install([pkg])
+                    percentage += slice
+                    self.percentage(percentage)
+                self.__invalidate_db_caches()
+                self.percentage(100)
             except pisi.Error,e:
                 self.error(ERROR_UNKNOWN, e)
         else:
