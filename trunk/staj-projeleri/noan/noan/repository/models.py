@@ -9,12 +9,14 @@ TEST_RESULTS = (
     ('yes', _('Can go to stable')),
     ('no', _('Package has problems')),
     ('unknown', _('Not tested or incomplete')),
+    ('unknown', _('Not tested')),
 )
 
 RELEASE_RESOLUTIONS = (
     ('pending', _('Pending')),
     ('released', _('Released')),
     ('reverted', _('Reverted')),
+    ('removed', _('Removed')),
 )
 
 
@@ -250,7 +252,7 @@ class Binary(models.Model):
             # version
             if dep.version != "" and binaries.filter(update__version_no=dep.version, resolution="released").count() == 0:
                 _extend(binaries.filter(resolution="pending"))
-            if dep.version_from != "":
+            elif dep.version_from != "":
                 in_stable = False
                 for bin in binaries.filter(resolution="released"):
                     if Pisi_Version(bin.update.version_no) >= Pisi_Version(dep.version_from):
@@ -258,7 +260,7 @@ class Binary(models.Model):
                         break
                 if not in_stable:
                     _extend(binaries.filter(resolution="pending"))
-            if dep.version_to != "":
+            elif dep.version_to != "":
                 in_stable = False
                 for bin in binaries.filter(resolution="released"):
                     if Pisi_Version(bin.update.version_no) <= Pisi_Version(dep.version_to):
@@ -266,31 +268,34 @@ class Binary(models.Model):
                         break
                 if not in_stable:
                     _extend(binaries.filter(resolution="pending"))
+            elif binaries.filter(resolution="released").count() == 0:
+                _extend(binaries.filter(resolution="pending"))
             # release
             if dep.release != "" and binaries.filter(update__no=dep.release, resolution="released").count() == 0:
                 _extend(binaries.filter(resolution="pending"))
-            if dep.release_from != "" and binaries.filter(update__no__gte=dep.release, resolution="released").count() == 0:
+            elif dep.release_from != "" and binaries.filter(update__no__gte=dep.release, resolution="released").count() == 0:
                 _extend(binaries.filter(resolution="pending"))
-            if dep.release_to != "" and binaries.filter(update__no__lte=dep.release, resolution="released").count() == 0:
+            elif dep.release_to != "" and binaries.filter(update__no__lte=dep.release, resolution="released").count() == 0:
+                _extend(binaries.filter(resolution="pending"))
+            elif binaries.filter(resolution="released").count() == 0:
                 _extend(binaries.filter(resolution="pending"))
         return dependencies
 
     def get_result(self):
+        if self.testresult_set.count() == 0:
+            return "unknown"
         for dep in self.get_pending_dependencies():
             if dep.testresult_set.count() == 0:
                 return "unknown"
             if dep.get_result() == "no":
                 return "no"
-        if self.testresult_set.count() == 0:
-            return "unknown"
-        else:
-            for result in self.testresult_set.all():
-                if result.result == "no":
-                    return "no"
-            for result in self.testresult_set.all():
-                if result.result == "yes":
-                    return "yes"
-            return "unknown"
+        for result in self.testresult_set.all():
+            if result.result == "no":
+                return "no"
+        for result in self.testresult_set.all():
+            if result.result == "yes":
+                return "yes"
+        return "unknown"
 
     def get_result_str(self):
         result = self.get_result()
