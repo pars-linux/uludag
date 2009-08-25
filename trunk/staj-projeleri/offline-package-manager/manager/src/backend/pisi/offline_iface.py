@@ -43,6 +43,7 @@ class Iface(Singleton):
         if not self.initialized():
             self.source = source
             self.initComar()
+            self.oidb = pisi.db.offline_idb.Offline_InstallDB()
             self.initDB()
 
         self.operation = operations.Operations()
@@ -58,7 +59,6 @@ class Iface(Singleton):
     def initDB(self):
         self.pdb  = pisi.db.packagedb.PackageDB()
         self.cdb  = pisi.db.componentdb.ComponentDB()
-        self.oidb = pisi.db.offline_idb.Offline_InstallDB()
         self.rdb  = pisi.db.repodb.RepoDB()
         self.gdb  = pisi.db.groupdb.GroupDB()
         self.replaces = self.pdb.get_replaces()

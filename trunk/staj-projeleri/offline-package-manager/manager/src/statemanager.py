@@ -28,16 +28,15 @@ class StateManager(QObject):
     def __init__(self, parent=None):
         QObject.__init__(self)
         self.state = self.INSTALL
-        self.iface = backend.pm.Iface()
         self.cached_packages = None
 
     def setState(self, state):
         self.state = state
         self.cached_packages = None
         if self.state == self.REMOVE:
-            self.iface.setSource(self.iface.SYSTEM)
+            backend.pm.Iface().setSource(backend.pm.Iface().SYSTEM)
         else:
-            self.iface.setSource(self.iface.REPO)
+            backend.pm.Iface().setSource(backend.pm.Iface().REPO)
 
     def reset(self):
         self.cached_packages = None
@@ -48,12 +47,12 @@ class StateManager(QObject):
     def packages(self):
         if self.cached_packages == None:
             if self.state == self.UPGRADE:
-                self.cached_packages = self.iface.getUpdates()
+                self.cached_packages = backend.pm.Iface().getUpdates()
             else:
-                self.cached_packages = self.iface.getPackageList()
+                self.cached_packages = backend.pm.Iface().getPackageList()
 
                 if self.onlyGuiInState():
-                    self.cached_packages = set(self.cached_packages).intersection(self.iface.getIsaPackages("app:gui"))
+                    self.cached_packages = set(self.cached_packages).intersection(backend.pm.Iface().getIsaPackages("app:gui"))
 
         return list(self.cached_packages)
 
@@ -100,13 +99,13 @@ class StateManager(QObject):
                 self.UPGRADE:i18n("Extra dependencies of the selected package(s) that are also going to be upgraded:")}[self.state]
 
     def groups(self):
-        return self.iface.getGroups()
+        return backend.pm.Iface().getGroups()
 
     def groupPackages(self, name):
         if self.state == self.UPGRADE and name == "all":
             return self.packages()
         else:
-            return list(set(self.packages()).intersection(self.iface.getGroupPackages(name)))
+            return list(set(self.packages()).intersection(backend.pm.Iface().getGroupPackages(name)))
 
     def chainAction(self, operation):
         chains = { "System.Manager.setRepositories":lambda:self.emit(SIGNAL("repositoriesChanged()")) }
@@ -116,7 +115,7 @@ class StateManager(QObject):
     def stateAction(self):
         return {self.INSTALL:lambda:None,
                 self.REMOVE:lambda:None,
-                self.UPGRADE:self.iface.updateRepositories}[self.state]()
+                self.UPGRADE:backend.pm.Iface().updateRepositories}[self.state]()
 
     def statusText(self, packages, packagesSize, extraPackages, extraPackagesSize):
         if not packages:
@@ -135,18 +134,18 @@ class StateManager(QObject):
     def operationAction(self, packages):
         if self.state is not self.REMOVE and not self.conflictCheckPasses(packages):
             return
-        return {self.INSTALL:self.iface.installPackages,
-                self.REMOVE:self.iface.removePackages,
-                self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
+        return {self.INSTALL:backend.pm.Iface().installPackages,
+                self.REMOVE:backend.pm.Iface().removePackages,
+                self.UPGRADE:backend.pm.Iface().upgradePackages}[self.state](packages)
 
     def setActionHandler(self, handler):
-        self.iface.setHandler(handler)
+        backend.pm.Iface().setHandler(handler)
 
     def setExceptionHandler(self, handler):
-        self.iface.setExceptionHandler(handler)
+        backend.pm.Iface().setExceptionHandler(handler)
 
     def conflictCheckPasses(self, packages):
-        (C, D, pkg_conflicts) = self.iface.getConflicts(packages)
+        (C, D, pkg_conflicts) = backend.pm.Iface().getConflicts(packages)
 
         conflicts_within = list(D)
         if conflicts_within:

@@ -19,10 +19,13 @@ import piksemel
 import tarfile
 
 import pisi # !! Change this !! This module just needs db.installdb.fetch function.
+# and pisi.api.install is necessary.
 
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
+
+from pisi.db.packagedb import PackageDB
 
 
 class Operations:
@@ -30,6 +33,7 @@ class Operations:
     def __init__(self):
         self.path = os.getenv("HOME") + "/offlinePISI"
         self.pkgs_path = self.path + "/packages"
+        self.pdb = PackageDB()
 
     def checkDir(self):
         # This function checks if the working path exists or not.
@@ -45,7 +49,7 @@ class Operations:
         if operation not in ["install", "remove"]:
             raise Exception("Unknown package operation")
 
-        opno = self._get_lastest()
+        opno = self._get_latest()
         self.doc_path = "%s_%s.xml" % (opno, operation)
         self.filename = self.path + "/" + self.doc_path
 
@@ -61,39 +65,33 @@ class Operations:
 
     def write(self):
 
-        # Put the constant header
-        xmlHeader =  '''<?xml version="1.0" encoding="utf-8"?>
-'''
-        self.doc = piksemel.newDocument("PISI-Offline-Operations")
-        self.doc.setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance")
-        self.doc.setAttribute("xsi:noNamespaceSchemaLocation","Offline-PISI.xsd")
+        self.doc = piksemel.newDocument("PISI-Offline")
 
         newOp = self.doc.insertTag("Operation")
-
-        info = newOp.insertTag("Info")
-        info.setAttribute("Number", self.op_no)
-        info.setAttribute("Type", self.op_type)
-        info.setAttribute("Date", self.op_date)
-        info.setAttribute("Time", self.op_time)
+        newOp.setAttribute("Type", self.op_type)
+        newOp.setAttribute("Date", self.op_date)
+        newOp.setAttribute("Time", self.op_time)
 
         if self.op_type == "install":
             pisi.api.fetch(self.pkgs, self.pkgs_path)
 
         Packages = newOp.insertTag("Packages")
         for pkg in self.pkgs:
-            Packages.insertTag("Name").insertData(pkg)
+            Packages.insertTag("URI").insertData(self.pdb.get_package(pkg).packageURI)
 
         try:
             f = open(self.filename, "w")
-            f.write(xmlHeader + self.doc.toPrettyString())
+            f.write(self.doc.toPrettyString())
             f.close()
             return True
         except:
             print "Dosyaya yazılamadı!"
 
-    def _get_lastest(self):
+    def _get_latest(self):
 
         self.checkDir()
+
+        print "hello get_latest"
 
         files = filter(lambda h:h.endswith(".xml"), os.listdir(self.path))
         if not files:
@@ -105,6 +103,55 @@ class Operations:
 
     def closeOfflineMode(self, filename):
         # This function make a tar file from offline PISI files
-        tar = tarfile.open(filename, "w")
-        tar.add(self.path)
-        tar.close
+        os.chdir(os.getenv("HOME"))
+        tar = tarfile.open(str(filename), "w")
+        tar.add("offlinePISI")
+        tar.close()
+
+    ### Below codes are about doing offline jobs (install or remove pkgs)
+
+    def startOperations(self, filename):
+        self.openArchive(filename)
+        self.handleOperation()
+
+    def openArchive(self, filename):
+        tar = tarfile.open(filename)
+        tar.extractall(os.getenv("HOME"))
+        tar.close()
+
+    def handleOperation(self):
+
+        files = filter(lambda x:x.endswith(".xml"), os.listdir(self.path))
+        list = []
+
+        for file in files:
+            list.append([file, (file.split("_")[1]).split(".")[0]])
+
+        list.sort()
+
+        for p in range(0, list.__len__()):
+
+            doc = piksemel.parse(self.path + "/" + list[p][0])
+            parent = doc.getTag("Operation")
+
+            for i in parent.tags("Packages"):
+                packages = []
+
+                for x in i.tags("URI"):
+                    packages.append(x.firstChild().data())
+
+                self.doOperation(packages, list[p][1])
+
+
+    def doOperation(self, packages, operation):
+
+        if operation == "install":
+            pisi.api.install(packages)
+            print "Paketler başarı ile kuruldu."
+
+        elif operation == "remove":
+            pisi.api.remove(packages)
+            print "Paketler başarı ile kaldırıldı."
+
+        else:
+            raise Exception("Unknown package operation")

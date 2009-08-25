@@ -25,7 +25,6 @@ class Tray(KSystemTrayIcon):
         self.defaultIcon = KIcon(":/data/package-manager.png")
         self.lastUpgrades = []
         self.unread = 0
-        self.iface = backend.pm.Iface()
         self.notification = None
         self.appWindow = parent
 
@@ -49,7 +48,7 @@ class Tray(KSystemTrayIcon):
 
     def populateRepositoryMenu(self):
         self.actionMenu.menu().clear()
-        for name, address in self.iface.getRepositories():
+        for name, address in backend.pm.Iface().getRepositories():
             self.__addAction(name, self.actionMenu)
         self.__addAction(i18n("All"), self.actionMenu)
 
@@ -59,24 +58,24 @@ class Tray(KSystemTrayIcon):
         self.connect(action, SIGNAL("triggered()"), self.updateRepo)
 
     def updateRepo(self):
-        if not self.iface.operationInProgress():
+        if not backend.pm.Iface().operationInProgress():
             repoName = unicode(self.sender().iconText())
             if repoName == i18n("All"):
-                self.iface.updateRepositories()
+                backend.pm.Iface().updateRepositories()
             else:
-                self.iface.updateRepository(repoName)
+                backend.pm.Iface().updateRepository(repoName)
 
     def checkUpdate(self):
-        if not self.appWindow.isVisible() and not self.iface.operationInProgress():
-            self.iface.updateRepositories()
+        if not self.appWindow.isVisible() and not backend.pm.Iface().operationInProgress():
+            backend.pm.Iface().updateRepositories()
 
     def showPopup(self):
-        upgrades = self.iface.getUpdates()
+        upgrades = backend.pm.Iface().getUpdates()
         self.slotSetUnread(len(upgrades))
 
         if config.PMConfig().installUpdatesAutomatically():
-            if not self.appWindow.isVisible() and not self.iface.operationInProgress():
-                self.iface.upgradePackages(upgrades)
+            if not self.appWindow.isVisible() and not backend.pm.Iface().operationInProgress():
+                backend.pm.Iface().upgradePackages(upgrades)
             return
 
         newUpgrades = set(upgrades) - set(self.lastUpgrades)
@@ -107,7 +106,7 @@ class Tray(KSystemTrayIcon):
         cfg = config.PMConfig()
         if cfg.systemTray():
             self.show()
-            noUpgrades = len(self.iface.getUpdates())
+            noUpgrades = len(backend.pm.Iface().getUpdates())
             self.slotSetUnread(noUpgrades)
         else:
             self.hide()

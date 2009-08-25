@@ -21,7 +21,6 @@ import backend
 class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
     def __init__(self, state, parent=None):
         QtGui.QDialog.__init__(self, parent)
-        self.iface = backend.pm.Iface()
         self.state = state
         self.setupUi(self)
         self.setModal(True)
@@ -80,7 +79,7 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
     def cancel(self):
         self.actionLabel.setText(i18n("<b>Cancelling operation...</b>"))
         self.disableCancel()
-        self.iface.cancel()
+        backend.pm.Iface().cancel()
 
     def repoOperationView(self):
         for widget in [self.statusLabel, self.statusInfo, self.timeLabel, self.timeRemaining]:

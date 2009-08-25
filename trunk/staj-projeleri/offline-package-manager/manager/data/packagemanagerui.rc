@@ -9,7 +9,7 @@
       <Separator />
       <Action name="importIndexAction" />
       <Action name="exportIndexAction" />
-      <Action name="importOfflineJobsAction" />
+      <Action name="denemeAction" />
       <Action name="closeOfflineModeAction" />
     </Menu>
   </MenuBar>

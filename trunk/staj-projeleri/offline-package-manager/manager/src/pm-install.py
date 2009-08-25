@@ -31,9 +31,8 @@ class Operation(QObject):
         QObject.__init__(self)
         self.statusChanges = 0
         self.packages = []
-        self.iface = backend.pm.Iface()
-        self.iface.setHandler(self.handler)
-        self.iface.setExceptionHandler(self.exceptionHandler)
+        backend.pm.Iface().setHandler(self.handler)
+        backend.pm.Iface().setExceptionHandler(self.exceptionHandler)
 
     def handler(self, package, signal, args):
         if signal == "status":
@@ -64,7 +63,7 @@ class Operation(QObject):
 
     def install(self, packages):
         self.packages = packages
-        self.iface.installPackages(self.packages)
+        backend.pm.Iface().installPackages(self.packages)
 
     def exceptionHandler(self, message):
         message = str(message)

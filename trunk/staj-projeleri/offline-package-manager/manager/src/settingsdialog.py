@@ -30,7 +30,6 @@ class SettingsTab(QObject):
     def __init__(self, settings):
         self.settings = settings
         self.config = config.PMConfig()
-        self.iface = backend.pm.Iface()
         self.setupUi()
         self.connectSignals()
         self.changed = False
@@ -63,7 +62,7 @@ class GeneralSettings(SettingsTab):
         self.__getBandwidthSettings()
 
     def __getBandwidthSettings(self):
-        config = self.iface.getConfig()
+        config = backend.pm.Iface().getConfig()
         bandwidth_limit = config.get("general", "bandwidth_limit")
         bandwidth_limit = int(bandwidth_limit) if bandwidth_limit else 0
 
@@ -95,16 +94,16 @@ class GeneralSettings(SettingsTab):
         self.config.setUpdateCheckInterval(self.settings.intervalSpin.value())
 
         if self.settings.useBandwidthLimit.isChecked():
-            self.iface.setConfig("general", "bandwidth_limit", str(self.settings.bandwidthSpin.value()))
+            backend.pm.Iface().setConfig("general", "bandwidth_limit", str(self.settings.bandwidthSpin.value()))
         else:
-            self.iface.setConfig("general", "bandwidth_limit", "0")
+            backend.pm.Iface().setConfig("general", "bandwidth_limit", "0")
 
 class CacheSettings(SettingsTab):
     def setupUi(self):
         self.__getCacheSettings()
 
     def __getCacheSettings(self):
-        config = self.iface.getConfig()
+        config = backend.pm.Iface().getConfig()
 
         cache = config.get("general", "package_cache")
         cache_limit = config.get("general", "package_cache_limit")
@@ -133,10 +132,10 @@ class CacheSettings(SettingsTab):
                                                        KGuiItem(i18n("Delete"), "trash-empty"),
                                                        KStandardGuiItem.cancel()
                                                        ):
-            self.iface.clearCache(0)
+            backend.pm.Iface().clearCache(0)
 
     def save(self):
-        self.iface.setCacheLimit(self.settings.useCacheCheck.isChecked(), self.settings.useCacheSpin.value())
+        backend.pm.Iface().setCacheLimit(self.settings.useCacheCheck.isChecked(), self.settings.useCacheSpin.value())
 
 class RepositorySettings(SettingsTab):
     def setupUi(self):
@@ -153,7 +152,7 @@ class RepositorySettings(SettingsTab):
         self.connect(self.settings.repoListView, SIGNAL("itemChanged(QTableWidgetItem*)"), self.markChanged)
 
     def __getRepositories(self):
-        repositories = self.iface.getRepositories()
+        repositories = backend.pm.Iface().getRepositories()
         for name, address in repositories:
             self.__insertRow(name, address)
 
@@ -163,7 +162,7 @@ class RepositorySettings(SettingsTab):
         checkbox = QtGui.QCheckBox(self.settings.repoListView)
         self.connect(checkbox, SIGNAL("toggled(bool)"), self.markChanged)
         self.settings.repoListView.setCellWidget(currentRow, 0, checkbox)
-        self.settings.repoListView.cellWidget(currentRow, 0).setChecked(self.iface.isRepoActive(repoName))
+        self.settings.repoListView.cellWidget(currentRow, 0).setChecked(backend.pm.Iface().isRepoActive(repoName))
 
         repoNameItem = QtGui.QTableWidgetItem()
         repoNameItem.setText(repoName)
@@ -244,9 +243,9 @@ class RepositorySettings(SettingsTab):
             name, address, active = self.getRepo(row)
             repos.append((name, address))
             activities[name]=active
-        self.iface.setRepositories(repos)
-        self.iface.setRepoActivities(activities)
-        self.iface.updateRepositories()
+        backend.pm.Iface().setRepositories(repos)
+        backend.pm.Iface().setRepoActivities(activities)
+        backend.pm.Iface().updateRepositories()
 
 class ProxySettings(SettingsTab):
     def setupUi(self):
@@ -254,7 +253,7 @@ class ProxySettings(SettingsTab):
         self.__getProxySettings()
 
     def __getProxySettings(self):
-        config = self.iface.getConfig()
+        config = backend.pm.Iface().getConfig()
         httpProxy = httpProxyPort = ftpProxy = ftpProxyPort = httpsProxy = httpsProxyPort = None
 
         http = config.get("general", "http_proxy")
@@ -327,19 +326,19 @@ class ProxySettings(SettingsTab):
             httpProxy = httpsProxy = ftpProxy = None
 
         if httpProxy:
-            self.iface.setConfig("general", "http_proxy", "http://%s:%s" % (httpProxy, httpProxyPort))
+            backend.pm.Iface().setConfig("general", "http_proxy", "http://%s:%s" % (httpProxy, httpProxyPort))
         else:
-            self.iface.setConfig("general", "http_proxy", "None")
+            backend.pm.Iface().setConfig("general", "http_proxy", "None")
 
         if httpsProxy:
-            self.iface.setConfig("general", "https_proxy", "https://%s:%s" % (httpsProxy, httpsProxyPort))
+            backend.pm.Iface().setConfig("general", "https_proxy", "https://%s:%s" % (httpsProxy, httpsProxyPort))
         else:
-            self.iface.setConfig("general", "https_proxy", "None")
+            backend.pm.Iface().setConfig("general", "https_proxy", "None")
 
         if ftpProxy:
-            self.iface.setConfig("general", "ftp_proxy", "ftp://%s:%s" % (ftpProxy, ftpProxyPort))
+            backend.pm.Iface().setConfig("general", "ftp_proxy", "ftp://%s:%s" % (ftpProxy, ftpProxyPort))
         else:
-            self.iface.setConfig("general", "ftp_proxy", "None")
+            backend.pm.Iface().setConfig("general", "ftp_proxy", "None")
 
 class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
     def __init__(self, parent=None):
