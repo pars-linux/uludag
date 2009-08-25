@@ -16,6 +16,7 @@ Steps
 =====
 
 Just issue *python setup.py install* on each python library directory
+Note: In some cases, installing apport though setup.py may require passing the _--root /_ option.
 
 
 Apport Configuration
