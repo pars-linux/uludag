@@ -211,7 +211,7 @@ def AckNackList(request):
             else:
                 Add_Comment = TestResult(binary = Binary.objects.get(id=binary_id), created_by = request.user, result = radio[binary_id][0])
                 Add_Comment.save()
-    if stateBinary or stateBinaryOfUpdate:
+    if stateBinary:
         distributions = Distribution.objects.all()
 
     else:
