@@ -8,8 +8,7 @@ from pisi.version import Version as Pisi_Version
 TEST_RESULTS = (
     ('yes', _('Can go to stable')),
     ('no', _('Package has problems')),
-    ('unknown', _('Not tested or incomplete')),
-    ('unknown', _('Not tested')),
+    ('unknown', _('Tests are incomplete')),
 )
 
 RELEASE_RESOLUTIONS = (
@@ -213,6 +212,7 @@ class Binary(models.Model):
     package = models.ForeignKey(Package, verbose_name=_('package'))
     update = models.ForeignKey(Update, verbose_name=_('update'))
     resolution = models.CharField(max_length=32, choices=RELEASE_RESOLUTIONS, verbose_name=_('resolution'))
+    linked_binary = models.ManyToManyField('Binary')
 
     def __unicode__(self):
         return u'%s-%s-%s-%s' % (self.package.name, self.update.version_no, self.update.no, self.no)
@@ -237,11 +237,12 @@ class Binary(models.Model):
         return self.package.source.update_set.filter(no__lte=self.update.no, no__gt=update_last)
 
     def get_pending_dependencies(self):
+        return self.linked_binary.all()
         """
             Returns a list of dependencies that stay in test repository.
 
             This is a *very* expensive method. Don't use this in package lists.
-        """
+        
         dependencies = []
         def _extend(x):
             for y in x:
@@ -279,7 +280,8 @@ class Binary(models.Model):
                 _extend(binaries.filter(resolution="pending"))
             elif binaries.filter(resolution="released").count() == 0:
                 _extend(binaries.filter(resolution="pending"))
-        return dependencies
+        return dependencies 
+    """
 
     def get_result(self):
         if self.testresult_set.count() == 0:
