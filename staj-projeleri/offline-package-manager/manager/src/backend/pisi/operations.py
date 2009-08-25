@@ -18,6 +18,7 @@ import time
 import piksemel
 import tarfile
 
+import comar
 import pisi # !! Change this !! This module just needs db.installdb.fetch function.
 # and pisi.api.install is necessary.
 
@@ -34,6 +35,37 @@ class Operations:
         self.path = os.getenv("HOME") + "/offlinePISI"
         self.pkgs_path = self.path + "/packages"
         self.pdb = PackageDB()
+
+        if not self.initialized():
+            self.source = source
+            self.initComar()
+            self.initDB()
+
+     def initialized(self):
+        return "link" in self.__dict__
+
+    def initComar(self):
+        self.link = comar.Link()
+        self.link.setLocale()
+        self.link.listenSignals("System.Manager", self.signalHandler)
+
+    def setHandler(self, handler):
+        self.link.listenSignals("System.Manager", handler)
+
+    def setExceptionHandler(self, handler):
+        self.exceptionHandler = handler
+
+    def signalHandler(self, package, signal, args):
+        if signal == "finished":
+            self.invalidate_db_caches()
+
+    def handler(self, package, exception, args):
+        if exception:
+            logger.debug("Exception caught by COMAR: %s" % exception)
+            self.invalidate_db_caches()
+            self.exceptionHandler(exception)
+
+    #--------------------------------------------------------
 
     def checkDir(self):
         # This function checks if the working path exists or not.
@@ -146,6 +178,7 @@ class Operations:
     def doOperation(self, packages, operation):
 
         if operation == "install":
+            self.link.System.Manager["pisi"].installPackage(packages, async=self.handler, timeout=2**16-1)
             pisi.api.install(packages)
             print "Paketler başarı ile kuruldu."
 
