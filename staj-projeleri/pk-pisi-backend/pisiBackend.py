@@ -338,14 +338,24 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
     def remove_packages(self, deps, package_ids):
         """ Removes given package from system"""
         self.allow_cancel(False)
-        self.percentage(None)
+        percentage = 0;
+        self.percentage(percentage)
 
         package = self.get_package_from_id(package_ids[0])[0]
 
+        percentage = 5
+        self.percentage(percentage)
         if self.installdb.has_package(package):
             self.status(STATUS_REMOVE)
             try:
-                pisi.api.remove([package])
+                remove_order = pisi.api.get_remove_order([package])
+                slice = 90 / len(remove_order)
+                for pkg in remove_order:
+                    pisi.api.remove([pkg])
+                    percentage += slice
+                    self.percentage(percentage)
+                self.__invalidate_db_caches()
+                self.percentage(100)
             except pisi.Error,e:
                 # system.base packages cannot be removed from system
                 self.error(ERROR_CANNOT_REMOVE_SYSTEM_PACKAGE, e)
