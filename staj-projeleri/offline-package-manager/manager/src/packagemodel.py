@@ -29,7 +29,6 @@ class PackageModel(QAbstractTableModel):
 
     def __init__(self, parent=None):
         QAbstractTableModel.__init__(self, parent)
-        self.iface = backend.pm.Iface()
         self._flags = Qt.ItemIsSelectable | Qt.ItemIsEnabled | Qt.ItemIsUserCheckable
         self.resetCachedInfos()
         self.cached_package = None
@@ -59,11 +58,11 @@ class PackageModel(QAbstractTableModel):
         elif role == DescriptionRole:
             return QVariant(unicode(package.description))
         elif role == SizeRole:
-            return QVariant(unicode(humanReadableSize(self.iface.getPackageSize(package.name))))
+            return QVariant(unicode(humanReadableSize(backend.pm.Iface().getPackageSize(package.name))))
         elif role == VersionRole:
             return QVariant(unicode(package.version))
         elif role == RepositoryRole:
-            return QVariant(unicode(self.iface.getPackageRepository(package.name)))
+            return QVariant(unicode(backend.pm.Iface().getPackageRepository(package.name)))
         elif role == Qt.DecorationRole:
             if package.icon:
                 icon_path = KIconLoader().iconPath(package.icon, KIconLoader.Panel)
@@ -110,7 +109,7 @@ class PackageModel(QAbstractTableModel):
         if self.cached_package and self.cached_package.name == self.packages[index.row()]:
             return self.cached_package
         else:
-            self.cached_package = self.iface.getPackage(self.packages[index.row()])
+            self.cached_package = backend.pm.Iface().getPackage(self.packages[index.row()])
             return self.cached_package
 
     # FIXME: There should really be a better way to get this from proxy. Proxy's selectedIndexes only
@@ -124,13 +123,13 @@ class PackageModel(QAbstractTableModel):
 
     def extraPackages(self):
         if not self.cached_extras:
-            self.cached_extras = self.iface.getExtras(self.selectedPackages())
+            self.cached_extras = backend.pm.Iface().getExtras(self.selectedPackages())
         return self.cached_extras
 
     def __packagesSize(self, packages):
         size = 0
         for name in packages:
-            size += self.iface.getPackageSize(name)
+            size += backend.pm.Iface().getPackageSize(name)
         return size
 
     def selectedPackagesSize(self):
@@ -163,7 +162,7 @@ class PackageModel(QAbstractTableModel):
             self.package_selections[index] = Qt.Checked if checked == Qt.Unchecked else Qt.Unchecked
 
     def search(self, text):
-        return self.iface.search(text, self.packages)
+        return backend.pm.Iface().search(text, self.packages)
 
     def downloadSize(self):
-        return self.iface.calculate_download_size(self.selectedPackages() + self.extraPackages())
+        return backend.pm.Iface().calculate_download_size(self.selectedPackages() + self.extraPackages())

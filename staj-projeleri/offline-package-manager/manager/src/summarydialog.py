@@ -61,7 +61,6 @@ class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
     def __init__(self, parent=None):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
-        self.iface = backend.pm.Iface()
         self.lang = localedata.getKDELocale()
 
     def setDesktopFiles(self, desktopFiles):

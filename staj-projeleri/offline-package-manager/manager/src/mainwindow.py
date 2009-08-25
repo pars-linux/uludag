@@ -35,7 +35,6 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         KXmlGuiWindow.__init__(self, parent)
         self.setupUi(self)
-        self.iface = backend.pm.Iface()
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
         self.setCentralWidget(MainWidget(self))
         self.settingsDialog = SettingsDialog(self)
@@ -110,19 +109,15 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         self.importIndexAction = KToggleAction(KIcon("list-add"), "Import Index", self)
         self.actionCollection().addAction("importIndexAction", self.importIndexAction)
-        #self.connect(self.importIndexAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.OFFLINE))
         self.connect(self.importIndexAction, SIGNAL("triggered()"), self.importIndex)
-        #actionGroup.addAction(self.importIndexAction)
 
         self.exportIndexAction = KToggleAction(KIcon("list-remove"), "Export Index", self)
         self.actionCollection().addAction("exportIndexAction", self.exportIndexAction)
-        #self.connect(self.exportIndexAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
-        self.connect(self.exportIndexAction, SIGNAL("triggered()"), self.importIndex)
-        #actionGroup.addAction(self.exportIndexAction)
+        self.connect(self.exportIndexAction, SIGNAL("triggered()"), self.exportIndex)
 
-        self.importOfflineJobsAction = KToggleAction(KIcon("list-add"), "Import Offline Jobs", self)
-        self.actionCollection().addAction("importOfflineJobsAction", self.importOfflineJobsAction)
-        self.connect(self.importOfflineJobsAction, SIGNAL("trigged()"), self.importOfflineJobs)
+        self.denemeAction = KToggleAction(KIcon("list-add"), "Import Offline Jobs", self)
+        self.actionCollection().addAction("denemeAction", self.denemeAction)
+        self.connect(self.denemeAction, SIGNAL("triggered()"), self.importOfflineJobs)
 
         self.closeOfflineModeAction = KToggleAction(KIcon("list-remove"), "Close Offline Mode", self)
         self.actionCollection().addAction("closeOfflineModeAction", self.closeOfflineModeAction)
@@ -143,21 +138,27 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         return True
 
     def queryExit(self):
-        if not self.iface.operationInProgress():
+        if not backend.pm.Iface().operationInProgress():
             if self.tray.notification:
                 self.tray.notification.close()
             return True
         return False
 
     def slotQuit(self):
-        if self.iface.operationInProgress():
+        if backend.pm.Iface().operationInProgress():
             return
 
     def importIndex(self):
-        print "Hello world"
-        filename = KFileDialog.getOpenFileName(KUrl("."), "*.xml", self, i18n("Select project file"))
+        print "Index file is importing.."
+        filename = str(KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.xml", self, i18n("Select project file")))
         if filename:
             print filename
+
+            f = open("/tmp/offline-pm.data", "w")
+            f.write(filename)
+            f.close
+
+            backend.pm = backend.offline_pm
 
     def exportIndex(self):
         idb = pisi.db.installdb.InstallDB()
@@ -177,9 +178,14 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
     def importOfflineJobs(self):
         print "Offline jobs are running..."
-        filename = KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file"))
+        filename = str(KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file")))
         print filename
+        if filename:
+            self.offlineOperations.doOperations(filename)
 
     def closeOfflineModer(self):
         filename = KFileDialog.getSaveFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file"))
+
+        print filename
+
         self.offlineOperations.closeOfflineMode(filename)

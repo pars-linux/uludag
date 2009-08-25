@@ -23,7 +23,6 @@ class GroupList(QtGui.QListWidget):
     def __init__(self, parent=None):
         QtGui.QListWidget.__init__(self, parent)
         self.lastSelected = None
-        self.iface = backend.pm.Iface()
         self.connect(self, SIGNAL("itemClicked(QListWidgetItem*)"), self.groupChanged)
 
     def setState(self, state):
@@ -37,7 +36,7 @@ class GroupList(QtGui.QListWidget):
         self.ensureGroupSelected()
 
     def createGroupItem(self, name):
-        group = self.iface.getGroup(name)
+        group = backend.pm.Iface().getGroup(name)
         localName, icon_path = unicode(group.localName), group.icon
 
         package_count = len(self.state.groupPackages(name))
