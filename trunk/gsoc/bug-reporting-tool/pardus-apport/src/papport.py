@@ -40,7 +40,14 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
                                QtCore.SIGNAL("clicked()"),
                                self.closeEvent)
 
+        # Forcing show() on __init__() since run_argv() may block the UI
+        self.show()
+        rect  = QtGui.QDesktopWidget().screenGeometry()
+        self.move(rect.width()/2 - self.width()/2, rect.height()/2 -\
+                  self.height()/2)
+        self.app.exec_()
         self.run_argv()
+
 
     def slotNext(self):
         if not self.is_active:
@@ -204,7 +211,7 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
                 for line in lines:
                     QtGui.QTreeWidgetItem(item, [line])
                 if len(lines) < 4:
-                    QtGui.item.setExpanded(True)
+                    item.setExpanded(True)
             else:
                 QtGui.QTreeWidgetItem(item, ['(binary data)'])
         details.header().hide()
@@ -335,7 +342,7 @@ if __name__ == "__main__":
     aboutData   = KAboutData(appName,catalog, programName, version, description,
                                 license, copyright,text, homePage, bugEmail)
 
-    KCmdLineArgs.init(sys.argv, aboutData)
+    KCmdLineArgs.init([''], aboutData)
     app =  kdeui.KApplication()
 
     if not dbus.get_default_main_loop():
@@ -343,9 +350,5 @@ if __name__ == "__main__":
         DBusQtMainLoop(set_as_default = True)
 
     papport = PApport(app)
-    papport.show()
-    rect  = QtGui.QDesktopWidget().screenGeometry()
-    papport.move(rect.width()/2 - papport.width()/2, rect.height()/2 -\
-                 papport.height()/2)
-    app.exec_()
+    #app.exec_()
 

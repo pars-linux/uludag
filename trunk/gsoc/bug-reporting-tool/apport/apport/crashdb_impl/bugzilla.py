@@ -192,14 +192,14 @@ class CrashDatabase(apport.crashdb.CrashDatabase):
         if self.username is None or self.password is None:
             if not self._bugzilla.try_auth():
                 self._bugzilla = None
-                raise apport.crashdb.NeedsCredentials, self.options.distro
+                raise apport.crashdb.NeedsCredentials, self.distro
         else:
             self._bugzilla = Bugz(self._baseurl, self.username, self.password)
             try:
                 self._bugzilla.auth()
             except RuntimeError:
                 # Happens when the username/password pair is invalid.
-                raise apport.crashdb.NeedsCredentials, self.options.distro
+                raise apport.crashdb.NeedsCredentials, self.distro
         return self._bugzilla
 
 
