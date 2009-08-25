@@ -5,6 +5,8 @@ import optparse
 import os
 import sys
 
+from pisi.version import Version as Pisi_Version
+
 try:
     import pisi
 except ImportError:
@@ -26,6 +28,7 @@ def updateDB(path_repo, repo_type, options):
 
     print 'Scanning %s...' % (path_repo)
 
+    """
     # Get latest builds only
     packages_farm = {}
     for filename in os.listdir(path_repo):
@@ -44,6 +47,7 @@ def updateDB(path_repo, repo_type, options):
     files_db = [x.get_filename() for x in Binary.objects.all()]
     files_new = set(files_farm) - set(files_db)
 
+    # Index binaries
     for filename in files_new:
         fullpath = os.path.join(path_repo, filename)
 
@@ -100,6 +104,48 @@ def updateDB(path_repo, repo_type, options):
             for bin in binaries:
                 bin.resolution = 'reverted'
                 bin.save()
+    """
+
+    # Write pending dependencies of a package to it's model
+    for bin in Binary.objects.filter(resolution='pending'):
+        dependencies = []
+        for dep in bin.package.runtimedependency_set.all():
+            binaries = Binary.objects.filter(package__source__distribution = bin.package.source.distribution, package__name=dep.name)
+            # version
+            if dep.version != "" and binaries.filter(update__version_no=dep.version, resolution="released").count() == 0:
+                dependencies.extend(binaries.filter(resolution="pending"))
+            elif dep.version_from != "":
+                in_stable = False
+                for bin_released in binaries.filter(resolution="released"):
+                    if Pisi_Version(bin_released.update.version_no) >= Pisi_Version(dep.version_from):
+                        in_stable = True
+                        break
+                if not in_stable:
+                    dependencies.extend(binaries.filter(resolution="pending"))
+            elif dep.version_to != "":
+                in_stable = False
+                for bin_released in binaries.filter(resolution="released"):
+                    if Pisi_Version(bin_released.update.version_no) <= Pisi_Version(dep.version_to):
+                        in_stable = True
+                        break
+                if not in_stable:
+                    dependencies.extend(binaries.filter(resolution="pending"))
+            elif binaries.filter(resolution="released").count() == 0:
+                dependencies.extend(binaries.filter(resolution="pending"))
+            # release
+            if dep.release != "" and binaries.filter(update__no=dep.release, resolution="released").count() == 0:
+                dependencies.extend(binaries.filter(resolution="pending"))
+            elif dep.release_from != "" and binaries.filter(update__no__gte=dep.release, resolution="released").count() == 0:
+                dependencies.extend(binaries.filter(resolution="pending"))
+            elif dep.release_to != "" and binaries.filter(update__no__lte=dep.release, resolution="released").count() == 0:
+                dependencies.extend(binaries.filter(resolution="pending"))
+            elif binaries.filter(resolution="released").count() == 0:
+                dependencies.extend(binaries.filter(resolution="pending"))
+        if len(dependencies):
+            print '  Found %d pending dependencies of %s' % (len(dependencies), unicode(bin))
+        bin.linked_binary.clear()
+        for dep in dependencies:
+            bin.linked_binary.add(dep)
 
     print 'Done'
 

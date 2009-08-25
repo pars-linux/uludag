@@ -211,6 +211,7 @@ class Binary(models.Model):
     package = models.ForeignKey(Package, verbose_name=_('package'))
     update = models.ForeignKey(Update, verbose_name=_('update'))
     resolution = models.CharField(max_length=32, choices=RELEASE_RESOLUTIONS, verbose_name=_('resolution'))
+    linked_binary = models.ManyToManyField('Binary')
 
     def __unicode__(self):
         return u'%s-%s-%s-%s' % (self.package.name, self.update.version_no, self.update.no, self.no)
@@ -235,49 +236,7 @@ class Binary(models.Model):
         return self.package.source.update_set.filter(no__lte=self.update.no, no__gt=update_last)
 
     def get_pending_dependencies(self):
-        """
-            Returns a list of dependencies that stay in test repository.
-
-            This is a *very* expensive method. Don't use this in package lists.
-        """
-        dependencies = []
-        def _extend(x):
-            for y in x:
-                if y not in dependencies:
-                    dependencies.append(y)
-        for dep in self.package.runtimedependency_set.all():
-            binaries = Binary.objects.filter(package__source__distribution = self.package.source.distribution, package__name=dep.name)
-            # version
-            if dep.version != "" and binaries.filter(update__version_no=dep.version, resolution="released").count() == 0:
-                _extend(binaries.filter(resolution="pending"))
-            elif dep.version_from != "":
-                in_stable = False
-                for bin in binaries.filter(resolution="released"):
-                    if Pisi_Version(bin.update.version_no) >= Pisi_Version(dep.version_from):
-                        in_stable = True
-                        break
-                if not in_stable:
-                    _extend(binaries.filter(resolution="pending"))
-            elif dep.version_to != "":
-                in_stable = False
-                for bin in binaries.filter(resolution="released"):
-                    if Pisi_Version(bin.update.version_no) <= Pisi_Version(dep.version_to):
-                        in_stable = True
-                        break
-                if not in_stable:
-                    _extend(binaries.filter(resolution="pending"))
-            elif binaries.filter(resolution="released").count() == 0:
-                _extend(binaries.filter(resolution="pending"))
-            # release
-            if dep.release != "" and binaries.filter(update__no=dep.release, resolution="released").count() == 0:
-                _extend(binaries.filter(resolution="pending"))
-            elif dep.release_from != "" and binaries.filter(update__no__gte=dep.release, resolution="released").count() == 0:
-                _extend(binaries.filter(resolution="pending"))
-            elif dep.release_to != "" and binaries.filter(update__no__lte=dep.release, resolution="released").count() == 0:
-                _extend(binaries.filter(resolution="pending"))
-            elif binaries.filter(resolution="released").count() == 0:
-                _extend(binaries.filter(resolution="pending"))
-        return dependencies
+        return self.linked_binary.all()
 
     def get_result(self):
         if self.testresult_set.count() == 0:
