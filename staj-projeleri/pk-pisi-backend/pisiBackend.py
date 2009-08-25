@@ -442,7 +442,7 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
 
         try:
             for key in self.groupdb.get_group_components(group):
-                for pkg in self.componentdb.get_packages(key, walk = True):
+                for pkg in self.componentdb.get_packages(key, walk = False):
                     package_list.append(pkg)
             package_list = list(set(package_list))
             for pkg in package_list:
