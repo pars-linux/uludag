@@ -181,7 +181,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         filename = str(KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file")))
         print filename
         if filename:
-            self.offlineOperations.doOperations(filename)
+            self.offlineOperations.startOperations(filename)
 
     def closeOfflineModer(self):
         filename = KFileDialog.getSaveFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file"))
