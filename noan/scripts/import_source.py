@@ -119,6 +119,14 @@ def updateDB(path_source, full_import, newRelease):
                 package.save()
                 print '    New package: %s' % package.name
 
+            for rep in pack.replaces:
+                count = 0
+                for bin in Binary.objects.filter(package__name=str(rep), package__source__distribution=distribution):
+                    bin.resolution = 'removed'
+                    bin.save()
+                    count += 1
+                print '    Replaces package: %s (%d binaries)' % (rep, count)
+
             # Update runtime dependencies
             for dep in RuntimeDependency.objects.filter(package=package):
                 dep.delete()
