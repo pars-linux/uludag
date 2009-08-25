@@ -8,8 +8,7 @@ from pisi.version import Version as Pisi_Version
 TEST_RESULTS = (
     ('yes', _('Can go to stable')),
     ('no', _('Package has problems')),
-    ('unknown', _('Not tested or incomplete')),
-    ('unknown', _('Not tested')),
+    ('unknown', _('Tests are incomplete')),
 )
 
 RELEASE_RESOLUTIONS = (
