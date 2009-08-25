@@ -264,11 +264,15 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         """ Installs given package into system"""
         # FIXME: install progress
         self.allow_cancel(False)
-        self.percentage(None)
+        self.percentage(0)
 
         try:
+            self.percentage(5)
             self.status(STATUS_INSTALL)
+
             pisi.api.install(files)
+            self.percentage(100)
+            self.__invalidate_db_caches()
         except pisi.Error,e:
             # FIXME: Error: internal-error : Package re-install declined
             # Force needed?
