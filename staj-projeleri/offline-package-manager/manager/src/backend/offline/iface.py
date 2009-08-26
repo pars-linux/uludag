@@ -37,11 +37,11 @@ class Singleton(object):
             type._the_instance = object.__new__(type)
         return type._the_instance
 
-class Iface(Singleton, state=None):
+class Iface(Singleton):
 
     (SYSTEM, REPO) = range(2)
 
-    def __init__(self, source=REPO):
+    def __init__(self, source=REPO, state=None):
         if not self.initialized():
             self.source = source
             self.initComar()
