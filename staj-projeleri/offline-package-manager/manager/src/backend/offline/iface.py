@@ -16,6 +16,8 @@ import string
 import comar
 import pisi
 
+from pmlogging import logger
+
 import operations
 
 # for rewrited pisi.api functions
@@ -259,6 +261,23 @@ class Iface(Singleton):
                 return self.oidb.search_package(terms)
         except Exception:
             return []
+
+
+    # Install and Remove package actions above
+
+    def startOperations(self, filename):
+        print "startOperations function is running..."
+        self.operation.startOperations(filename)
+
+    def install(self, packages):
+        print "paketler yüklenecek"
+        self.link.System.Manager["pisi"].installPackage(packages, async=self.handler, timeout=2**16-1)
+        print "paketler yüklendi"
+
+    def remove(self, packages):
+        print "paketler kaldırılacak"
+        self.link.System.Manager["pisi"].removePackage(packages, async=self.handler, timeout=2**16-1)
+        print "paketler yüklendi"
 
 # --------------------------------------------------------------
 # Rewrited pisi.api functions are below with their requirements.

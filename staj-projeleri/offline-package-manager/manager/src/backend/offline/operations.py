@@ -27,6 +27,7 @@ _ = __trans.ugettext
 
 from pisi.db.packagedb import PackageDB
 
+import backend
 
 class Operations:
 
@@ -142,9 +143,13 @@ class Operations:
 
                 self.doOperation(packages, list[p][1])
 
-
     def doOperation(self, packages, operation):
+        if operation == "install":
+            backend.pm.Iface().install(packages)
 
+        elif operation == "remove":
+            backend.pm.Iface().remove(packages)
+        '''
         if operation == "install":
             self.link.System.Manager["pisi"].installPackage(packages, async=self.handler, timeout=2**16-1)
             pisi.api.install(packages)
@@ -156,3 +161,4 @@ class Operations:
 
         else:
             raise Exception("Unknown package operation")
+        '''
