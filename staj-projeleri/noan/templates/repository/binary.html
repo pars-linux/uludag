@@ -27,11 +27,14 @@
         <tr><th>User</th><th>Result</th><th>Time</th></tr>
         {% for results in binary.testresult_set.all %}
 
-        <form action="." method="post" id="{{results.created_by}}" >
+        <form action="." method="post"  >
+            <input type="hidden" name="tested_by" value="{{results.created_by}}">
             <tr><td>{{results.created_by}}</td><td>{{results.result}}</td><td>{{results.created_on}}</td>
-                <td><button {% ifequal results.result "yes" %}style="background-color: #0b0;"{% endifequal %} type="submit" name="{{ results.created_by }} " value="yes" >Yes</button></td>
-                <td><button {% ifequal results.result "no" %}style="background-color: #b00;"{% endifequal %} type="submit" name="{{ results.created_by }}" value="no" >No</button></td>
-                <td><button {% ifequal results.result "unknown" %}style="background-color: #bbb;"{% endifequal %} type="submit" name="{{ results.created_by }}" value="unknown" >Delete</button></td>
+                {% if perms.repository.can_submit %}
+                <td><button {% ifequal results.result "yes" %}style="background-color: #0b0;"{% endifequal %} type="submit" name="RepoAdminResult" value="yes" >Yes</button></td>
+                <td><button {% ifequal results.result "no" %}style="background-color: #b00;"{% endifequal %} type="submit" name="RepoAdminResult" value="no" >No</button></td>
+                <td><button {% ifequal results.result "unknown" %}style="background-color: #bbb;"{% endifequal %} type="submit" name="RepoAdminResult" value="unknown" >Delete</button></td>
+                {% endif %}
             </tr>
         </form>
         {% endfor %}

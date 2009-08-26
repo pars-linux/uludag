@@ -82,7 +82,13 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
                 result, created = TestResult.objects.get_or_create(binary=binary, created_by=request.user)
                 result.result = request.POST['result']
                 result.save()
-        print request.POST
+        if "tested_by" in request.POST:
+            if request.POST['RepoAdminResult'] == "unknown":
+                TestResult.objects.filter(binary=binary, created_by__username=request.POST['tested_by']).delete()
+            elif request.POST['RepoAdminResult'] in ("yes", "no"):
+                result, created = TestResult.objects.get_or_create(binary=binary, created_by__username=request.POST['tested_by'])
+                result.result = request.POST['RepoAdminResult']
+                result.save()
     #"csrfmiddlewaretoken"
     user_result = "unknown"
     if request.user and request.user.is_authenticated():
@@ -185,7 +191,7 @@ def search_form(request):
 def AckNackList(request):
     list=[]
     error = ()
-    stateBinary = Binary.objects.filter(Q(resolution = 'pending'), Q(package__source__maintained_by = request.user) | Q(update__updated_by = request.user), Q(testresult__isnull=True))
+    stateBinary = Binary.objects.select_related().filter(Q(resolution = 'pending'), Q(package__source__maintained_by = request.user) | Q(update__updated_by = request.user), Q(testresult__isnull=True))
     if request.method == 'POST':
         radio = {}
         comment = {}
