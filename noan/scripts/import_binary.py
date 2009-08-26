@@ -28,7 +28,6 @@ def updateDB(path_repo, repo_type, options):
 
     print 'Scanning %s...' % (path_repo)
 
-    """
     # Get latest builds only
     packages_farm = {}
     for filename in os.listdir(path_repo):
@@ -51,7 +50,7 @@ def updateDB(path_repo, repo_type, options):
     for filename in files_new:
         fullpath = os.path.join(path_repo, filename)
 
-        print '  Found unindexed binary: %s' % fullpath
+        print '  Found binary: %s' % fullpath
 
         pisi_file = pisi.package.Package(fullpath)
         pisi_meta = pisi_file.get_metadata()
@@ -65,19 +64,19 @@ def updateDB(path_repo, repo_type, options):
         try:
             distribution = Distribution.objects.get(name=pisi_package.distribution, release=release)
         except Distribution.DoesNotExist:
-            print  '    No such distribution in database: %s-%s' % (pisi_package.distribution, release)
+            print  '    Distribution (%s-%s) not found database, old binary probably.' % (pisi_package.distribution, release)
             continue
 
         try:
             source = Source.objects.get(name=pisi_package.source.name, distribution=distribution)
         except Source.DoesNotExist:
-            print  '    No such source in database: %s' % (pisi_package.source.name)
+            print  '    Source (%s) not found database, old binary probably.' % (pisi_package.source.name)
             continue
 
         try:
             package = Package.objects.get(name=pisi_package.name, source=source)
         except Package.DoesNotExist:
-            print  '    No such package in database: %s' % (pisi_package.name)
+            print  '    Package (%s) not found database, old binary probably.' % (pisi_package.name)
             continue
 
         if repo_type == 'test':
@@ -87,7 +86,7 @@ def updateDB(path_repo, repo_type, options):
 
         updates = Update.objects.filter(source=source, no=pisi_package.history[0].release)
         if len(updates) == 0:
-            print  '    No package update in database: %s' % (pisi_package.name)
+            print  '    Release information for %s not found database, source import not completed probably.' % (pisi_package.name)
             continue
 
         update = updates[0]
@@ -96,7 +95,7 @@ def updateDB(path_repo, repo_type, options):
         except Binary.DoesNotExist:
             binary = Binary(no=pisi_package.build, package=package, update=update, resolution=resolution)
             binary.save()
-            print '    New binary'
+            print '    Saving binary to database.'
 
         if repo_type == 'test':
             # Mark other 'pending' binaries as 'reverted'
@@ -104,7 +103,13 @@ def updateDB(path_repo, repo_type, options):
             for bin in binaries:
                 bin.resolution = 'reverted'
                 bin.save()
-    """
+
+    print
+
+    if repo_type != "test":
+        return
+
+    print "Saving pending dependencies of all pending binaries..."
 
     # Write pending dependencies of a package to it's model
     for bin in Binary.objects.filter(resolution='pending'):
@@ -146,6 +151,8 @@ def updateDB(path_repo, repo_type, options):
         bin.linked_binary.clear()
         for dep in dependencies:
             bin.linked_binary.add(dep)
+
+    print
 
     print 'Done'
 
