@@ -145,10 +145,10 @@ class Operations:
 
     def doOperation(self, packages, operation):
         if operation == "install":
-            backend.pm.Iface().install(packages)
+            backend.pm.Iface(state="inAction").install(packages)
 
         elif operation == "remove":
-            backend.pm.Iface().remove(packages)
+            backend.pm.Iface(state="inAction").remove(packages)
         '''
         if operation == "install":
             self.link.System.Manager["pisi"].installPackage(packages, async=self.handler, timeout=2**16-1)
