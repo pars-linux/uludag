@@ -106,11 +106,14 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         self.allow_cancel(True)
         self.percentage(None)
 
-        package = self.get_package_from_id(package_ids[0])[0]
+        packages = []
+        for package_id in package_ids:
+            packages.append(self.get_package_from_id(package_id)[0])
 
-        for pkg in self.packagedb.get_package(package).runtimeDependencies():
-            # Internal FIXME: PiSi API has really inconsistent for return types and arguments!
-            self.__get_package(pkg.package, filters)
+        for package in packages:
+            for pkg in self.packagedb.get_package(package).runtimeDependencies():
+                # Internal FIXME: PiSi API has really inconsistent for return types and arguments!
+                self.__get_package(pkg.package, filters)
 
     def get_details(self, package_ids):
         """ Prints a detailed description for a given package """
