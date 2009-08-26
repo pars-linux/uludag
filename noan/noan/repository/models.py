@@ -211,7 +211,7 @@ class Binary(models.Model):
     package = models.ForeignKey(Package, verbose_name=_('package'))
     update = models.ForeignKey(Update, verbose_name=_('update'))
     resolution = models.CharField(max_length=32, choices=RELEASE_RESOLUTIONS, verbose_name=_('resolution'))
-    linked_binary = models.ManyToManyField('Binary')
+    linked_binary = models.ManyToManyField('Binary', symmetrical=False)
 
     def __unicode__(self):
         return u'%s-%s-%s-%s' % (self.package.name, self.update.version_no, self.update.no, self.no)
