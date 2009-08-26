@@ -10,10 +10,3 @@
 #
 # Please read the COPYING file.
 #
-
-BACKEND = "pisi"
-
-import pisi.iface as normal_pm
-import offline.iface as offline_pm
-
-pm = normal_pm
