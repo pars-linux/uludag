@@ -2,7 +2,6 @@
 {% block content %}
     <h1>Distributions</h1>
     <ul>
-        {{ perms.repository.can_submit }}
         {% for dist in distributions %}
         <a href="{{ dist.get_url }}">{{ dist }}</a>
         <ul>
