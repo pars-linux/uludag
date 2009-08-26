@@ -212,7 +212,7 @@ class Binary(models.Model):
     package = models.ForeignKey(Package, verbose_name=_('package'))
     update = models.ForeignKey(Update, verbose_name=_('update'))
     resolution = models.CharField(max_length=32, choices=RELEASE_RESOLUTIONS, verbose_name=_('resolution'))
-    linked_binary = models.ManyToManyField('Binary')
+    linked_binary = models.ManyToManyField('Binary', symmetrical=False)
 
     def __unicode__(self):
         return u'%s-%s-%s-%s' % (self.package.name, self.update.version_no, self.update.no, self.no)
@@ -291,13 +291,14 @@ class Binary(models.Model):
                 return "unknown"
             if dep.get_result() == "no":
                 return "no"
-        for result in self.testresult_set.all():
-            if result.result == "no":
-                return "no"
-        for result in self.testresult_set.all():
-            if result.result == "yes":
-                return "yes"
-        return "unknown"
+        else:
+            for result in self.testresult_set.all():
+                if result.result == "no":
+                    return "no"
+            for result in self.testresult_set.all():
+                if result.result == "yes":
+                    return "yes"
+            return "unknown"
 
     def get_result_str(self):
         result = self.get_result()
@@ -306,39 +307,53 @@ class Binary(models.Model):
                 return label
         return result
 
-    def is_Ack(self,recursive = 0):
-        #start = time.clock()
-        print time.clock()
+    def is_Ack(self):
         dependencies = self.get_pending_dependencies()
-        #print "binary: ", self, " ", time.clock() - start
+        dep_count = dependencies.count()
+        print self," - ",dependencies
         testresult = self.testresult_set.all()
-        if not dependencies :
+        if  dep_count == 0 :
             if testresult.count() == 0:
-                if recursive == 0:
-                    print "return time ", self, " ", time.clock() #- start
-                    return True
-                else:
-                    print "return time ", self, " ", time.clock() #- start
-                    return None
-            else:
-                for state in testresult :
-                    if state.result == "no":
-                        print "return time ", self, " ", time.clock() #- start
-                        return False
-                print "return time ", self, " ", time.clock() #- start
                 return True
-        for state in testresult:
-            print "return time ", self, " ", time.clock() #- start
-            if state.result == "no":
-                print "return time ", self, " ", time.clock() #- start
-                return False
-        result = None
-        for bin in dependencies:
-            if (bin.is_Ack(1) == False ):
-                result = False
-        print "return time ", self, " ", time.clock() #- start
-        return result
-
+            else:
+                for results in testresult:
+                    if  results == "no":
+                        return False
+                return True
+        else:
+            #print " 1 ", self, "-", dependencies
+            if  testresult.count() != 0 :
+                for results in testresult:
+                    #print self, " - ", results.result
+                    if results.result == "no":
+                        return False
+                for dependency in dependencies:
+                    print "1 ", self," - ",dependency
+                    dep_count -= 1
+                    dep_result = dependency.testresult_set.all()
+                    if  dep_result.count() != 0 :
+                        for results in dep_result:
+                            print "2 ", self," - ",dependency, " - ", results.result
+                            if  results.result == "no" :
+                                return False
+                    elif dep_count == 0:
+                        return None
+                return True
+            else:
+                print "2 ", self, "-", dependencies
+                for dependency in dependencies:
+                    dep_count -= 1
+                    dep_result = dependency.testresult_set.all()
+                    print "3 ", self, "-", dep_result, "-", dependency
+                    if  dep_result.count() != 0 :
+                        #print "4 ", self, "-", dep_result
+                        for results in dep_result:
+                            print "5 ", self, "-", results.result
+                            if  results.result == "no" :
+                                return False
+                    elif dep_count == 0:
+                        return None
+                return True
     class Meta:
         verbose_name = _('binary')
         verbose_name_plural = _('binaries')
@@ -370,6 +385,7 @@ class TestResult(models.Model):
         verbose_name = _('test result')
         verbose_name_plural = _('test results')
 
+# for repo admins to change ack nack comment and submit to pending packages to stable.
 class RepoAdmin(models.Model):
     class Meta:
         permissions = (
