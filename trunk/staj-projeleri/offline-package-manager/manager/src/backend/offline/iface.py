@@ -37,7 +37,7 @@ class Singleton(object):
             type._the_instance = object.__new__(type)
         return type._the_instance
 
-class Iface(Singleton):
+class Iface(Singleton, state=None):
 
     (SYSTEM, REPO) = range(2)
 
@@ -45,7 +45,8 @@ class Iface(Singleton):
         if not self.initialized():
             self.source = source
             self.initComar()
-            self.oidb = pisi.db.offline_idb.Offline_InstallDB()
+            if not state == "inAction":  # if not doing any install or remove action
+                self.oidb = pisi.db.offline_idb.Offline_InstallDB()
             self.initDB()
 
         self.operation = operations.Operations()
