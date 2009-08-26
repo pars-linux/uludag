@@ -307,7 +307,7 @@ class Binary(models.Model):
                 return label
         return result
 
-    def is_Ack(self):
+    def is_ack(self):
         dependencies = self.get_pending_dependencies()
         dep_count = dependencies.count()
         print self," - ",dependencies
@@ -354,6 +354,48 @@ class Binary(models.Model):
                     elif dep_count == 0:
                         return None
                 return True
+
+    def is_Ack(self,recursive = 0):
+        dependencies = self.get_pending_dependencies()
+        testresult = self.testresult_set.all()
+        if testresult.count != 0:
+            for state in testresult:
+                #print "return time ", self, " ", time.clock() #- start
+                if state.result == "no":
+                    #print "return time ", self, " ", time.clock() #- start
+                    return False
+        if not dependencies:
+            if testresult.count() == 0:
+                if recursive == 0:
+                    #print "return time ", self, " ", time.clock() #- start
+                    return True
+                else:
+                    #print "return time ", self, " ", time.clock() #- start
+                    return None
+            else:
+                for state in testresult :
+                    if state.result == "no":
+                        #print "return time ", self, " ", time.clock() #- start
+                        return False
+                #print "return time ", self, " ", time.clock() #- start
+                return True
+        result_false = ""
+        result_true = 0
+        for bin in dependencies:
+            TestResult = bin.is_Ack(1)
+            print bin, " - ", TestResult
+            if (TestResult == False ):
+                result_false = False
+            if TestResult == True :
+                result_true += 1
+        #print "return time ", self, " ", time.clock() #- start
+        if result_false == False :
+            return False
+        if result_true == dependencies.count():
+            return True
+        else:
+            return None
+
     class Meta:
         verbose_name = _('binary')
         verbose_name_plural = _('binaries')
