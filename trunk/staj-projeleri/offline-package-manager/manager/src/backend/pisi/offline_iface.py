@@ -84,15 +84,18 @@ class Iface(Singleton):
             self.exceptionHandler(exception)
 
     def installPackages(self, packages):
-        for pkg in packages + self.depends_list:
-            self.oidb.add_package(pkg)
-
         all_packages = packages + self.depends_list
+
+        for pkg in all_packages:
+            self.oidb.add_package(pkg)
 
         self.operation.create(all_packages, "install")
 
     def removePackages(self, packages):
         all_packages = packages + self.requires_list
+
+        for pkg in all_packages:
+            self.oidb.remove_package(pkg)
 
         self.operation.create(all_packages, "remove")
 
