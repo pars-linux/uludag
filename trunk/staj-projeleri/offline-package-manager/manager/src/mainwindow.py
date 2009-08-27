@@ -24,7 +24,7 @@ from mainwidget import MainWidget
 from statemanager import StateManager
 from settingsdialog import SettingsDialog
 from tray import Tray
-from backend.pisi.operations import Operations
+from backend.offline.operations import Operations
 
 import backend
 import config
@@ -181,9 +181,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         filename = str(KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file")))
         print filename
         if filename:
-            backend.pm = backend.offline_pm
-            backend.pm.Iface().startOperations(filename)
-            #backend.pm = backend.normal_pm
+            self.offlineOperations.startOperations(filename)
 
     def closeOfflineModer(self):
         filename = KFileDialog.getSaveFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file"))
