@@ -46,7 +46,6 @@ class Iface(Singleton):
             self.source = source
             self.initComar()
             self.oidb = pisi.db.offline_idb.Offline_InstallDB()
-            self.oidb = ""
             self.initDB()
 
         self.operation = operations.Operations()
