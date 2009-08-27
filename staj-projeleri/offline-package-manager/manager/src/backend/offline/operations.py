@@ -139,26 +139,21 @@ class Operations:
                 packages = []
 
                 for x in i.tags("URI"):
-                    packages.append(x.firstChild().data())
+                    packages.append(self.pkgs_path + "/" + str(x.firstChild().data()))
 
-                self.doOperation(packages, list[p][1])
+            self.doOperation(packages, list[p][1])
 
     def doOperation(self, packages, operation):
+
+        # iface installPackage function can callable only one time.
+        # when second operation started, it fails and comar does not give permission or want pass from user.
+        # FIX ME!
+
         if operation == "install":
-            backend.pm.Iface(state="inAction").install(packages)
+            backend.pm.Iface().installPackages(packages)
 
         elif operation == "remove":
-            backend.pm.Iface(state="inAction").remove(packages)
-        '''
-        if operation == "install":
-            self.link.System.Manager["pisi"].installPackage(packages, async=self.handler, timeout=2**16-1)
-            pisi.api.install(packages)
-            print "Paketler başarı ile kuruldu."
-
-        elif operation == "remove":
-            pisi.api.remove(packages)
-            print "Paketler başarı ile kaldırıldı."
+            backend.pm.Iface().removePackages(packages)
 
         else:
             raise Exception("Unknown package operation")
-        '''

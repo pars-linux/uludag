@@ -45,8 +45,8 @@ class Iface(Singleton):
         if not self.initialized():
             self.source = source
             self.initComar()
-            if not state == "inAction":  # if not doing any install or remove action
-                self.oidb = pisi.db.offline_idb.Offline_InstallDB()
+            self.oidb = pisi.db.offline_idb.Offline_InstallDB()
+            self.oidb = ""
             self.initDB()
 
         self.operation = operations.Operations()
