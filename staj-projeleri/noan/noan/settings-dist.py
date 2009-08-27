@@ -37,8 +37,8 @@ ADMIN_MEDIA_PREFIX = '/admin-media/'
 
 # URL that handle to redirect for login and logout.
 
-LOGIN_URL = '/repository/login/'
-LOGOUT_URL = '/repository/logout/'
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout/'
 LOGIN_REDIRECT_URL = '/repository/'
 
 # Make this unique, and don't share it with anybody.

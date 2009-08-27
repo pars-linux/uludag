@@ -75,6 +75,7 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
     binary = Binary.objects.get(no=binaryNo, package=package)
     if request.method == "POST" and request.user and request.user.is_authenticated():
         copy = request.POST
+        # Commit result for binary on own page.
         if "result" in request.POST:
             if request.POST['result'] == "unknown":
                 TestResult.objects.filter(binary=binary, created_by=request.user).delete()
@@ -82,6 +83,7 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
                 result, created = TestResult.objects.get_or_create(binary=binary, created_by=request.user)
                 result.result = request.POST['result']
                 result.save()
+        # for repo admin to change result of someone. and commit this.
         if "tested_by" in request.POST:
             if request.POST['RepoAdminResult'] == "unknown":
                 TestResult.objects.filter(binary=binary, created_by__username=request.POST['tested_by']).delete()
@@ -188,7 +190,7 @@ def search_form(request):
 
 
 @login_required
-def AckNackList(request):
+def user_test_list(request):
     list=[]
     error = ()
     stateBinary = Binary.objects.select_related().filter(Q(resolution = 'pending'), Q(package__source__maintained_by = request.user) | Q(update__updated_by = request.user), Q(testresult__isnull=True))
@@ -245,7 +247,7 @@ def log_out(request):
     logout(request)
     return HttpResponseRedirect('/repository/')
 
-def ListAllAckNack(request):
+def test_results(request):
     AckNackList = TestResult.objects.all()
     distributions = Distribution.objects.all()
     context = {

@@ -86,14 +86,12 @@
                     <li><a href="/repository/users/">Developers</a></li>
                     <li><a href="/repository/">Repository</a></li>
                     <li><a href="/repository/search/">Search</a></li>
-                    <li><a href="/repository/statelist/">List of Ack/Nack</a></li>
-
+                    <li><a href="/repository/test_results/">Test results</a></li>
                     {% if not  user.is_authenticated %}
                     <li><a href="/login">login</a></li>
                 </ul>
                 {%else%}
-
-                <li><a href="/repository/ack_nack/">Ack/nack list</a></li>
+                <li><a href="/repository/test_list/">Own test list</a></li>
                 <li><a href="/logout">Logout</a></li>
                 </ul>
                 User: {{user}}
