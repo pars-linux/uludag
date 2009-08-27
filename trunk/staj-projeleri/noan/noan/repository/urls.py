@@ -22,7 +22,7 @@ urlpatterns = patterns('',
     # search
     (r'^search/$', 'noan.repository.views.search_form'),
     # Maintainer ack/nack list
-    (r'^ack_nack/$','noan.repository.views.AckNackList'),
+    (r'^test_list/$','noan.repository.views.user_test_list'),
     # all list of ack/nack
-    (r'^statelist/$','noan.repository.views.ListAllAckNack'),
+    (r'^test_results/$','noan.repository.views.test_results'),
 )
