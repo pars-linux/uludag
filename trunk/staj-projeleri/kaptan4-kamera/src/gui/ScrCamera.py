@@ -10,10 +10,7 @@
 #
 # Please read the COPYING file.
 #
-# camerayi release et
-# eger camera bulunamazsa bir sonraki pencereye gec
-# resmi crop et+
-# birden cok kamerayi handle et+
+
 import os
 import sys
 import signal
@@ -55,9 +52,9 @@ class WebcamDetector:
 		self.cameradevicenums.append(int((d_iface.GetProperty("video4linux.device"))[-1]))
 		self.cameradevices.append(d_iface.GetProperty("info.product"))
     def count(self):
-	return len(self.cameradevices)
+    	return len(self.cameradevices)
     def listDevices(self):
-	return (self.cameradevices,self.cameradevicenums)
+	    return (self.cameradevices,self.cameradevicenums)
 
 class FaceDetector:
     cascade_path = "/usr/share/opencv/haarcascades/haarcascade_frontalface_alt.xml" 		# Haar algoritması için önden yüz verisi
@@ -81,7 +78,8 @@ class FaceDetector:
     def detect(self,camera):
         # Kamera veya görüntüden bir kare al
         frame = cvQueryFrame(camera)
-	
+	if not frame:
+	    return (None,None)
 	cropped = cvCreateImage( cvSize(240, 240), 8, 3)
 	src_region = cvGetSubRect(frame, opencv.cvRect(0, 0, 240, 240) )
 	cvCopy(src_region, cropped)
@@ -141,128 +139,143 @@ class FaceDetector:
 
 class camThread(QtCore.QThread):
     def __init__(self,cam):
-	QtCore.QThread.__init__(self)
-	self.camera = cam
-	self.camTimer = QTimer(self)
-	QtCore.QObject.connect(self.camTimer, SIGNAL("timeout()"), self.update)
-    def ol(self):
-	self.camTimer.stop()
-	#self.quit(self)
+        QtCore.QThread.__init__(self)
+        self.camera = cam
+        self.camTimer = QTimer(self)
+        QtCore.QObject.connect(self.camTimer, SIGNAL("timeout()"), self.update)
+    def stopThread(self):
+        self.camTimer.stop()
+        #self.quit(self)
     def run(self):
-	cvSetCaptureProperty(self.camera, CV_CAP_PROP_FRAME_WIDTH, 320)
-	cvSetCaptureProperty(self.camera, CV_CAP_PROP_FRAME_HEIGHT, 240)
-	
-	self.detector = FaceDetector()
-	
-	self.camTimer.start(40)
-	self.exec_()
+        #alttaki iki satir calismiyor, calissa program daha hizli isleyecek..
+    	cvSetCaptureProperty(self.camera, CV_CAP_PROP_FRAME_WIDTH, 320)
+    	cvSetCaptureProperty(self.camera, CV_CAP_PROP_FRAME_HEIGHT, 240)
+    	self.detector = FaceDetector()
+        self.camTimer.start(40) #25 fps olarak varsayilmis. TODO: fps yi ogren ona gore yap
+    	self.exec_()
     def update(self):
-	
-	frame, faces = self.detector.detect(self.camera)
-	originalFrame = cvCloneImage(frame)
-	#processedImage = cvCloneImage(frame)
-	#copy = cvCloneImage(frame)
-	#processedImage = cvCreateImage(cvSize(64,48), 8, copy.nChannels)
-	#cvResize(copy, processedImage, CV_INTER_LINEAR)
-	scale = self.detector.image_scale
-	thickness = 1	
-	if faces:
-	    for face in faces:
-		x = int(face.x * scale)- thickness
-		y = int(face.y * scale)- thickness
-		x2 = int((face.x + face.width) * scale) + thickness
-		y2 = int((face.y + face.height) * scale) + thickness
-		p1 = cvPoint(x, y)
-		p2 = cvPoint(x2, y2)
-		
-		cvRectangle(frame, p1, p2, CV_RGB(255,0,0), thickness, 8, 0)
-		
-	self.emit(QtCore.SIGNAL("image"), (originalFrame ,frame))
+        frame, faces = self.detector.detect(self.camera)
+    	if not frame:
+    	    self.emit(QtCore.SIGNAL("noimage"))
+    	    return
+    	originalFrame = cvCloneImage(frame)
+    	#processedImage = cvCloneImage(frame)
+    	#copy = cvCloneImage(frame)
+    	#processedImage = cvCreateImage(cvSize(64,48), 8, copy.nChannels)
+    	#cvResize(copy, processedImage, CV_INTER_LINEAR)
+    	scale = self.detector.image_scale
+    	thickness = 1	
+    	if faces:
+            for face in faces:
+                #yuzun etrafina cizilecek dikdortgenin koselerin koordinatlarini bul
+                x = int(face.x * scale)- thickness
+                y = int(face.y * scale)- thickness
+                x2 = int((face.x + face.width) * scale) + thickness
+                y2 = int((face.y + face.height) * scale) + thickness
+                p1 = cvPoint(x, y)
+                p2 = cvPoint(x2, y2)
+                #kirmizi dikdortgen
+                cvRectangle(frame, p1, p2, CV_RGB(255,0,0), thickness, 8, 0)
+        self.emit(QtCore.SIGNAL("image"), (originalFrame ,frame))
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Camera")
     desc = ki18n("Welcome to Kaptan Wizard :)")
     
     def __init__(self, *args):
-	QtGui.QWidget.__init__(self,None)
-	self.ui = Ui_cameraWidget()
-	self.ui.setupUi(self)	
-	self.detector = WebcamDetector()
-	signal.signal(signal.SIGINT, signal.SIG_DFL)
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_cameraWidget()
+        self.ui.setupUi(self)	
+        self.detector = WebcamDetector()
+        signal.signal(signal.SIGINT, signal.SIG_DFL)
+        self.isCaptureFlag = False
+        self.isTaken = False
+        #populate cameras combo box. if there is only one camera, don't show the combobox.
+        self.ui.cameraCombo.hide()
+        if (self.detector.count() > 1): ####DEGISECEK
+            cams = self.detector.listDevices()[0]
+            for cam in cams:
+                self.ui.cameraCombo.addItem(cam)
+            self.ui.cameraCombo.show()
+        self.camindex = (self.detector.listDevices()[1][0])	
+        #create camera
+        self.camera = cvCreateCameraCapture(self.camindex)
+        #signal/slot connections
+        QtGui.QWidget.connect(self.ui.captureButton,QtCore.SIGNAL("clicked(bool)"),self.takePhoto)
+        QtGui.QWidget.connect(self.ui.cameraCombo,QtCore.SIGNAL("currentIndexChanged(int)"), self.slotCameraChanged)
 	
-	self.isCaptureFlag = False
-	self.isTaken = False
-	
-	self.camindex = -1
-	self.ui.cameraCombo.hide()
-	if (self.detector.count() > 1): ####DEGISECEK
-	    cams = self.detector.listDevices()[0]
-	    for cam in cams:
-		self.ui.cameraCombo.addItem(cam)
-	    self.ui.cameraCombo.show()	
-	self.camera = cvCreateCameraCapture(-1)
-	
-	QtGui.QWidget.connect(self.ui.captureButton,QtCore.SIGNAL("clicked(bool)"),self.takePhoto)
-	QtGui.QWidget.connect(self.ui.cameraCombo,QtCore.SIGNAL("currentIndexChanged(int)"), self.slotCameraChanged)
     def slotCameraChanged(self,index):
-	self.camindex = detector.listDevices[1][index]
-    def takePhoto(self):
-	if self.isCaptureFlag:
-	    self.isCaptureFlag = False
-	    self.isTaken = True
-	    
-	    self.image = ImageQt.ImageQt(opencv.adaptors.Ipl2PIL(self.originalFrame).transpose(Image.FLIP_LEFT_RIGHT))
-	    self.ui.displayLabel.setPixmap(QtGui.QPixmap.fromImage(self.image))
-	    
-	    processedImage = cvCreateImage(cvSize(60,60), 8, self.originalFrame.nChannels)
-	    cvResize(self.originalFrame, processedImage, CV_INTER_LINEAR)
-	    
-	    homedir = os.path.expanduser("~")
-
-	    ImageQt.ImageQt(opencv.adaptors.Ipl2PIL(processedImage).transpose(Image.FLIP_LEFT_RIGHT)).save(homedir + "/kaptantmp.png")	   
-	    os.rename(homedir + "/kaptantmp.png",homedir + "/.face.icon")
-
-	    self.ui.captureButton.setText(ki18n("Recapture").toString())
-	    
-	    self.terminateCam()
-	else:
-	    self.isCaptureFlag = True
-	    self.isTaken = False
-	    self.initializeCam()
-	    self.ui.captureButton.setText("Capture")
-	pass
-    
-    def initializeCam(self):
-	#print("caminitializeCam",self.camera)
+        self.terminateCam()
+        self.camindex = (self.detector.listDevices()[1][index])
+        #self.camera = None
+        #self.camera = cvCreateCameraCapture(self.camindex)
+        self.initializeCam()
 	
-	self.camThread = camThread(self.camera)
-	self.connect(self.camThread, QtCore.SIGNAL("image"), self.showImage)
-	self.connect(self,QtCore.SIGNAL('kapan'),self.camThread.ol)
-	self.camThread.start()	
+    def takePhoto(self):
+        if self.isCaptureFlag:
+            self.isCaptureFlag = False
+            self.isTaken = True
+            #change the image from Ipl to PIL for being able to use it in Qt
+            self.image = ImageQt.ImageQt(opencv.adaptors.Ipl2PIL(self.originalFrame).transpose(Image.FLIP_LEFT_RIGHT))
+            self.ui.displayLabel.setPixmap(QtGui.QPixmap.fromImage(self.image))
+            #resize photo for avatar
+            processedImage = cvCreateImage(cvSize(60,60), 8, self.originalFrame.nChannels)
+            cvResize(self.originalFrame, processedImage, CV_INTER_LINEAR)
+            #find homedir
+            homedir = os.path.expanduser("~")
+            #save the image
+            ImageQt.ImageQt(opencv.adaptors.Ipl2PIL(processedImage).transpose(Image.FLIP_LEFT_RIGHT)).save(homedir + "/kaptantmp.png")
+            os.rename(homedir + "/kaptantmp.png",homedir + "/.face.icon")
+            
+            self.ui.captureButton.setText(ki18n("Recapture").toString())
+
+            self.terminateCam()
+        else:
+            self.isCaptureFlag = True
+            self.isTaken = False
+            #self.camera = cvCreateCameraCapture(self.camindex)
+            self.initializeCam()
+            self.ui.captureButton.setText(ki18n("Capture").toString())
+
+    def initializeCam(self):
+        #print("caminitializeCam",self.camera)
+        self.camThread = camThread(self.camera)
+        self.connect(self.camThread, QtCore.SIGNAL("image"), self.showImage)
+        self.connect(self.camThread, QtCore.SIGNAL("noimage"), self.handleCameraProblem)
+        self.connect(self,QtCore.SIGNAL('kapan'),self.camThread.stopThread)
+        self.camThread.start()	
+
+    def handleCameraProblem(self):
+        self.terminateCam()
+        self.ui.displayLabel.setText(ki18n("A Problem has occurred. Either your camera is unrecognized or there is a transmisson error").toString())
 	
     def showImage(self, image):
+        try:
+            self.originalFrame = image[0]
+            resizedImage = image[1]
+    
+            self.image = ImageQt.ImageQt(opencv.adaptors.Ipl2PIL(resizedImage).transpose(Image.FLIP_LEFT_RIGHT))
 
-	self.originalFrame = image[0]
-	resizedImage = image[1]
+            self.ui.displayLabel.setPixmap(QtGui.QPixmap.fromImage(self.image))
+        except TypeError:
+            print("No CAM")
+            self.terminateCam()
 
-	self.image = ImageQt.ImageQt(opencv.adaptors.Ipl2PIL(resizedImage).transpose(Image.FLIP_LEFT_RIGHT))
-	
-	self.ui.displayLabel.setPixmap(QtGui.QPixmap.fromImage(self.image))
-	
     def shown(self):
-
-	if not self.isTaken and not self.isCaptureFlag:
-	    self.initializeCam()
-	    self.isCaptureFlag = True
-	pass
+        if not self.isTaken and not self.isCaptureFlag:
+            self.initializeCam()
+            self.isCaptureFlag = True
+        pass
+    
     def terminateCam(self):
-	self.emit(QtCore.SIGNAL("kapan"))
-	self.camThread.terminate()
-	self.camThread = None
-	
+        #cvReleaseCapture(self.camindex)
+        self.emit(QtCore.SIGNAL("kapan"))
+        if self.camThread:
+            self.camThread.terminate()
+        self.camThread = None
     def execute(self):
-	if not self.isTaken:
-	    self.terminateCam()
-	    self.isCaptureFlag = False
+        if not self.isTaken:
+            self.terminateCam()
+            self.isCaptureFlag = False
 
-	return True
+        return True
