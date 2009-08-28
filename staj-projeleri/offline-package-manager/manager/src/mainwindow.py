@@ -29,8 +29,6 @@ from backend.offline.operations import Operations
 import backend
 import config
 
-import pisi
-
 class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         KXmlGuiWindow.__init__(self, parent)
@@ -121,7 +119,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         self.closeOfflineModeAction = KToggleAction(KIcon("list-remove"), "Close Offline Mode", self)
         self.actionCollection().addAction("closeOfflineModeAction", self.closeOfflineModeAction)
-        self.connect(self.closeOfflineModeAction, SIGNAL("triggered()"), self.closeOfflineModer)
+        self.connect(self.closeOfflineModeAction, SIGNAL("triggered()"), self.closeOfflineMode)
 
     def statusWaiting(self):
         self.statusLabel.setMovie(self.wheelMovie)
@@ -149,43 +147,25 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
             return
 
     def importIndex(self):
-        print "Index file is importing.."
         filename = str(KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.xml", self, i18n("Select project file")))
+
         if filename:
-            print filename
-
-            f = open("/tmp/offline-pm.data", "w")
-            f.write(filename)
-            f.close
-
-            backend.pm = backend.offline_pm
+            self.offlineOperations.importIndex(filename)
 
     def exportIndex(self):
-        idb = pisi.db.installdb.InstallDB()
-        idb.list_installed()
-        for name in idb.list_installed():
-            pkg = idb.get_package(name)
-            pkg
-        index = pisi.index.Index()
-        for name in idb.list_installed():
-            index.packages.append(idb.get_package(name))
-        #for name in idb.list_installed():
-        #    index.add_package(idb.get_package(name))
-        index.add_components("/home/volkan/components.xml")
-        index.add_groups("/home/volkan/groups.xml")
-        index.add_distro("/home/volkan/distribution.xml")
-        index.write("/home/volkan/pisi-installed.xml.bz2", sha1sum=True, compress=pisi.file.File.bz2, sign=None)
+        filename = str(KFileDialog.getSaveFileName(KUrl("pisi-installed"), "*.xml", self, i18n("Select project file")))
+
+        if filename:
+            self.offlineOperations.exportIndex(filename)
 
     def importOfflineJobs(self):
-        print "Offline jobs are running..."
         filename = str(KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file")))
-        print filename
+
         if filename:
             self.offlineOperations.startOperations(filename)
 
-    def closeOfflineModer(self):
-        filename = KFileDialog.getSaveFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file"))
+    def closeOfflineMode(self):
+        filename = str(KFileDialog.getSaveFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file")))
 
-        print filename
-
-        self.offlineOperations.closeOfflineMode(filename)
+        if filename:
+            self.offlineOperations.closeOfflineMode(filename)

@@ -18,8 +18,7 @@ import time
 import piksemel
 import tarfile
 
-import pisi # !! Change this !! This module just needs db.installdb.fetch function.
-# and pisi.api.install is necessary.
+import pisi
 
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
@@ -77,8 +76,12 @@ class Operations:
             pisi.api.fetch(self.pkgs, self.pkgs_path)
 
         Packages = newOp.insertTag("Packages")
-        for pkg in self.pkgs:
-            Packages.insertTag("URI").insertData(self.pdb.get_package(pkg).packageURI)
+        if self.op_type == "install":
+            for pkg in self.pkgs:
+                Packages.insertTag("PackageURI").insertData(self.pdb.get_package(pkg).packageURI)
+        else:
+            for pkg in self.pkgs:
+                Packages.insertTag("Package").insertData(pkg)
 
         try:
             f = open(self.filename, "w")
@@ -105,9 +108,104 @@ class Operations:
     def closeOfflineMode(self, filename):
         # This function make a tar file from offline PISI files
         os.chdir(os.getenv("HOME"))
-        tar = tarfile.open(str(filename), "w")
+        tar = tarfile.open(filename, "w")
         tar.add("offlinePISI")
         tar.close()
+
+
+    ### Below codes are about importing and exporting index
+
+    def importIndex(self, filename):
+        f = open("/tmp/offline-pm.data", "w")
+        f.write(filename)
+        f.close
+
+        backend.pm = backend.offline_pm
+
+    def exportIndex(self, filename):
+        idb = pisi.db.installdb.InstallDB()
+        index = pisi.index.Index()
+
+        for name in idb.list_installed():
+            index.packages.append(idb.get_package(name))
+
+        self.getComponents()
+        self.getGroups()
+        self.getDistro()
+
+        index.add_components("/tmp/components.xml")
+        index.add_groups("/tmp/groups.xml")
+        index.add_distro("/tmp/distro.xml")
+
+        index.write(filename, sha1sum=True, compress=pisi.file.File.bz2, sign=None)
+
+        print "Index file exported."
+
+    # clean extra information in groups, components and distro (return empty formatted data)
+    def getGroups(self):
+        gdb = pisi.db.groupdb.GroupDB()
+
+        doc = piksemel.newDocument("PISI")
+        newGroup = doc.insertTag("Groups")
+        for grp in gdb.list_groups():
+            group = newGroup.insertTag("Group")
+            group.insertTag("Name").insertData(grp)
+
+            g = gdb.get_group(grp)
+            for l in g.localName.keys():
+                ln = group.insertTag("LocalName")
+                ln.setAttribute("xml:lang", l)
+                ln.insertData(g.localName[l])
+
+        f = open("/tmp/groups.xml", "w")
+        f.write(doc.toPrettyString())
+        f.close()
+
+    def getComponents(self):
+        cdb = pisi.db.componentdb.ComponentDB()
+
+        doc = piksemel.newDocument("PISI")
+        newComponent = doc.insertTag("Components")
+
+        for cpt in cdb.list_components():
+            comp = newComponent.insertTag("Component")
+            comp.insertTag("Name").insertData(cpt)
+
+            c = cdb.get_component(cpt)
+            i = comp.insertTag("LocalName")
+            i.setAttribute("xml:lang", c.localName.items()[0][0])
+            i.insertData(c.localName.items()[0][1])
+
+            i = comp.insertTag("Summary")
+            i.setAttribute("xml:lang", c.summary.items()[0][0])
+            i.insertData(c.localName.items()[0][1])
+
+            i = comp.insertTag("Description")
+            i.setAttribute("xml:lang", c.description.items()[0][0])
+            i.insertData(c.description.items()[0][1])
+            comp.insertTag("Group").insertData(c.group)
+            # If any error, add packager info here.
+
+        f = open("/tmp/components.xml", "w")
+        f.write(doc.toPrettyString())
+        f.close()
+
+    def getDistro(self):
+        info = dict(pisi.context.config.values.general.items)
+
+        doc = piksemel.newDocument("PISI")
+        doc.insertTag("SourceName").insertData(info["distribution"])
+        doc.insertTag("Version").insertData(info["distribution_release"])
+
+        d = doc.insertTag("Description")
+        d.setAttribute("xml:lang", "en")
+        d.insertData("Pardus-2009 Repository")
+
+        doc.insertTag("Type").insertData("Core")
+
+        f = open("/tmp/distribution.xml", "w")
+        f.write(doc.toPrettyString())
+        f.close()
 
     ### Below codes are about doing offline jobs (install or remove pkgs)
 
@@ -132,16 +230,24 @@ class Operations:
 
         for p in range(0, list.__len__()):
 
-            doc = piksemel.parse(self.path + "/" + list[p][0])
+            op_number = list[p][0]
+            op_type = list[p][1]
+
+            doc = piksemel.parse(self.path + "/" + op_number)
             parent = doc.getTag("Operation")
 
             for i in parent.tags("Packages"):
                 packages = []
 
-                for x in i.tags("URI"):
-                    packages.append(self.pkgs_path + "/" + str(x.firstChild().data()))
+                # find a better way to split install and remove functions
+                if op_type == "install":
+                    for x in i.tags("PackageURI"):
+                        packages.append(self.pkgs_path + "/" + str(x.firstChild().data()))
+                else:
+                    for x in i.tags("Package"):
+                        packages.append(str(x.firstChild().data()))
 
-            self.doOperation(packages, list[p][1])
+            self.doOperation(packages, op_type)
 
     def doOperation(self, packages, operation):
 
