@@ -171,14 +171,14 @@ def page_user(request, userName):
 def search_form(request):
     context= {}
     distributions = Distribution.objects.all()
-    if request.method == 'POST' and request.POST["question"]:
-        keyword = request.GET['question']
-        search_area = request.GET['search_area']
-        distro = request.GET['distro']
+    if request.method == 'POST' and "question" in request.POST:
+        keyword = request.POST['question']
+        search_area = request.POST['search_area']
+        distro = request.POST['distro']
         results = []
         if search_area == "package":
             if distro != "null":
-                results = Package.objects.filter(source__distribution__id=distro).filter(name__contains=keyword)
+                results = Package.objects.filter(source__distribution__id=distro, name__contains=keyword)
             else:
                 results = Package.objects.filter(name__contains=keyword)
         elif search_area == "source":

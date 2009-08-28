@@ -9,7 +9,6 @@
             * {
                 font-family: Droid Sans, Verdana Sans, Sans;
             }
-
             #menu {
                 float: left;
                 width: 200px;
@@ -17,10 +16,7 @@
             #content {
                 padding-left: 220px;
             }
-
-            #menu h2 {
-            }
-            #menu li a {
+            a {
                 color: #4c6187;
             }
             .test_False {
@@ -29,9 +25,15 @@
             .test_True {
                 color: #007f00;
             }
+            ul {
+                margin: 0;
+                padding: 0;
+                display: inline;
+            }
+
             table.package_list {
                 border: 1px solid #4c6187;
-                width: 100%;
+                width: 95%;
             }
             table.package_list th {
                 text-align: left;
@@ -47,30 +49,27 @@
                 color: #000;
                 padding: 3px;
             }
-            table.package_list a {
-                color: #4c6187;
-            }
             .package_list .test_no td {
                 background: #ffc2c2;
             }
             .package_list .test_yes td {
                 background: #b9ffb8;
             }
-            table.altrowstable {
+            table {
                 font-family: verdana,arial,sans-serif;
-                font-size:12px;
+                font-size:13px;
                 color:#333333;
                 border-width: 1px;
                 border-color: #a9c6c9;
                 border-collapse: collapse;
             }
-            table.altrowstable th {
+            table th {
                 border-width: 1px;
                 padding: 8px;
                 border-style: solid;
                 border-color: #fffffd;
             }
-            table.altrowstable td {
+            table td {
                 border-width: 1px;
                 padding: 5px;
                 border-style: solid;
@@ -79,6 +78,8 @@
         </style>
     </head>
     <body>
+        <div id="header">
+        </div>
         <div id="container">
             <div id="menu">
                 <ul>
@@ -101,6 +102,8 @@
                 {% block content %}
                 {% endblock %}
             </div>
+        </div>
+        <div id="footer">
         </div>
     </body>
 </html>
