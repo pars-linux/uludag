@@ -29,6 +29,28 @@ import migration.gui.ScrProgress as progress
 
 import migration.gui.context as ctx
 
+import logging
+
+def initializeLogging():
+    logger = logging.getLogger("migration4")
+    logger.setLevel(logging.DEBUG)
+
+    file_handler = logging.FileHandler("/var/log/migration4.log")
+    file_handler.setLevel(logging.DEBUG)
+
+    stream_handler = logging.StreamHandler()
+    stream_handler.setLevel(logging.ERROR)
+
+    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+
+    file_handler.setFormatter(formatter)
+    stream_handler.setFormatter(formatter)
+
+    logger.addHandler(stream_handler)
+    logger.addHandler(file_handler)
+
+    return logger
+
 
 def loadFile(_file):
     try:
@@ -207,7 +229,8 @@ class Migration(QtGui.QWidget):
         group.writeEntry("RunOnStart", "False")
 
 if __name__ =="__main__":
-
+    logger = initializeLogging()
+    logger.info(i18n("Logging Started").toString())
     KCmdLineArgs.init(sys.argv, aboutData)
     application = kdeui.KApplication()
     migration = Migration()
