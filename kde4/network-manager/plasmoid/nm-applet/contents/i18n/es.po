@@ -3,18 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 17:52+0300\n"
-"PO-Revision-Date: 2009-07-09 19:48-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"PO-Revision-Date: 2009-08-30 07:14-0400\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: code/widgets/configIconui.py:53 code/widgets/configPopupui.py:37
 #: code/widgets/itemui.py:39 code/widgets/popupui.py:151
@@ -59,9 +61,8 @@ msgid "PushButton"
 msgstr ""
 
 #: code/widgets/notify.py:63
-#, fuzzy
 msgid "Network Manager"
-msgstr "Abrir el administrador de red"
+msgstr "Administrador de red"
 
 #: code/widgets/popupui.py:152
 msgid "Ethernet"
@@ -84,35 +85,34 @@ msgid "Open Network Manager"
 msgstr "Abrir el administrador de red"
 
 #: code/main.py:46
-#, fuzzy
 msgid "Connected"
-msgstr "No conectado."
+msgstr "Conectado"
 
 #: code/main.py:49 code/main.py:280 code/main.py:289
-#, fuzzy
 msgid "Disconnected"
-msgstr "No conectado."
+msgstr "No conectado"
 
 #: code/main.py:52
 msgid "Connecting"
-msgstr ""
+msgstr "Estableciendo conexión"
 
 #: code/main.py:89
 msgid "Click here to show connections.."
-msgstr ""
+msgstr "Presione aquí para mostrar conexiones.."
 
 #: code/main.py:241
 msgid "Unknown"
-msgstr ""
+msgstr "Desconocido"
 
 #: code/main.py:252
 msgid "Connected to <b>%1</b> IP: %2"
-msgstr ""
+msgstr "Conectado a <b>%1</b> IP: %2"
 
 #: code/main.py:267
 msgid "Connecting to <b>%1</b> .."
-msgstr ""
+msgstr "Conectando con <b>%1</b> .."
 
 #: code/main.py:330
 msgid "Icon Settings"
-msgstr ""
+msgstr "Configuración de íconos"
+

@@ -4,18 +4,20 @@
 #
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 18:15+0300\n"
-"PO-Revision-Date: 2009-07-13 19:31-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"PO-Revision-Date: 2009-08-30 07:28-0400\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/ScrOptions.py:23
 msgid "Selecting Options"
@@ -147,71 +149,64 @@ msgid "Wallpaper"
 msgstr "Fondo de Escritorio"
 
 #: .tmp/ScrProgress.py:254
-#, fuzzy
 msgid "Firefox bookmarks could not be loaded."
-msgstr "No posible cargar los marcadores de Firefox."
+msgstr "No posible importar los marcadores de Firefox."
 
 #: .tmp/ScrProgress.py:256
 msgid "Firefox bookmarks loaded."
-msgstr "Marcadores de Firefox cargados."
+msgstr "Marcadores de Firefox importados."
 
 #: .tmp/ScrProgress.py:266
-#, fuzzy
 msgid "Opera bookmarks could not be loaded."
-msgstr "No posible cargar los marcadores de Opera."
+msgstr "No posible importar los marcadores de Opera."
 
 #: .tmp/ScrProgress.py:268
 msgid "Opera bookmarks loaded."
-msgstr "Marcadores de Opera cargados."
+msgstr "Marcadores de Opera importados."
 
 #: .tmp/ScrProgress.py:278
-#, fuzzy
 msgid "Internet Explorer favorites could not be loaded."
-msgstr "No posible cargar los marcadores de Internet Explorer."
+msgstr "No posible importar los favoritos de Internet Explorer."
 
 #: .tmp/ScrProgress.py:280
 msgid "Internet Explorer favorites loaded."
-msgstr "Marcadores de Internet Explorer cargados."
+msgstr "Favoritos de Internet Explorer importados."
 
 #: .tmp/ScrProgress.py:293
 msgid "Firefox is open. Please close it first to continue..."
-msgstr "Firefox se está ejecutando. Favor cierre lo antes de continuar..."
+msgstr "Firefox se está ejecutando. Favor cierrelo antes de continuar..."
 
 #: .tmp/ScrProgress.py:305
-#, fuzzy
 msgid "Windows Mail accounts could not be loaded."
-msgstr "No posible cargar las cuentas email de Windows."
+msgstr "No posible importar las cuentas de email de Windows."
 
 #: .tmp/ScrProgress.py:307
 msgid "Windows Mail accounts loaded."
-msgstr "Cuentas email de Windows cargados."
+msgstr "Cuentas email de Windows importados."
 
 #: .tmp/ScrProgress.py:318
-#, fuzzy
 msgid "Thunderbird accounts could be loaded."
-msgstr "No posible cargar las cuentas de Thunderbird."
+msgstr "No posible importar cuentas de email Thunderbird."
 
 #: .tmp/ScrProgress.py:320
 msgid "Thunderbird accounts loaded."
-msgstr "Cuentas de Thunderbird cargados."
+msgstr "Cuentas de Thunderbird importados."
 
 #: .tmp/ScrProgress.py:330
-#, fuzzy
 msgid "MSN accounts could be loaded."
-msgstr "No posible cargar las cuentas del MSN."
+msgstr "No posible importar las cuentas del MSN."
 
 #: .tmp/ScrProgress.py:332
 msgid "MSN accounts loaded."
-msgstr "Cuentas de MSN cargados."
+msgstr "Cuentas de MSN importados."
 
 #: .tmp/ScrProgress.py:342
-#, fuzzy
 msgid "GTalk accounts could not be loaded."
-msgstr "No posible cargar las cuentas de GTalk."
+msgstr "No posible importar las cuentas de GTalk."
 
 #: .tmp/ScrProgress.py:344
 msgid "GTalk accounts loaded."
-msgstr "Cuentas de GTalk cargados."
+msgstr "Cuentas de GTalk importados."
 
 #: .tmp/ScrProgress.py:353
 msgid "E-Mail Accounts"
@@ -230,8 +225,7 @@ msgstr "Cuentas de Noticias"
 msgid "Desktop Links"
 msgstr "Enlaces de Escritorio"
 
-#: .tmp/ScrProgress.py:396
-#, fuzzy, python-format
+#: .tmp/ScrProgress.py:396, python-format
 msgid "Folder '%s' could not be created, please choose another folder!"
 msgstr "No posible crear directorio '%s', por favor elija otro directorio!"
 
@@ -244,13 +238,13 @@ msgstr ""
 "No tiene permisos de escritura en el directorio '%s', por favor elija otro "
 "directorio!"
 
-#: .tmp/ScrProgress.py:411
-#, fuzzy, python-format
+#: .tmp/ScrProgress.py:411, python-format
 msgid ""
 "Total size of files you've selected is %(size)d MB, but you have only %(free)"
 "d MB of free space!"
 msgstr ""
-"El tamaño total según la elección es %(size)d MB, pero tiene solamente %"
+"El tamaño total de los archivos seleccionados es %(size)d MB, pero tiene "
+"solamente %"
 "(free)d MB espacio libre!"
 
 #: .tmp/ScrProgress.py:425
@@ -309,9 +303,8 @@ msgid "Options Settings"
 msgstr "Opciones"
 
 #: .tmp/ScrSummary.py:49
-#, fuzzy
 msgid "Option %1 : <b>%2</b>"
-msgstr "Opciones seleccionados: <b>%s</b>"
+msgstr "Opción %1 : <b>%2</b>"
 
 #: .tmp/ScrSummary.py:54
 msgid "Destination Settings"
@@ -320,12 +313,12 @@ msgstr "Configuración de Destino"
 #: .tmp/ScrSummary.py:57
 #, python-format
 msgid "Linked Destination to: <b> %s </b>"
-msgstr ""
+msgstr "Destino enlazado con: <b> %s </b>"
 
 #: .tmp/ScrSummary.py:59
 #, python-format
 msgid "Copied Destination to: <b> %s </b>"
-msgstr ""
+msgstr "Destino copiado a: <b> %s </b>"
 
 #: .tmp/ScrUserFiles.py:142
 msgid "Selecting Files"
@@ -364,10 +357,12 @@ msgid ""
 "There aren't any Microsoft Windows partitions to migrate! Please check your "
 "mounted partitions..."
 msgstr ""
+"No hay partición con Microsoft Windows para la migración ! Por favor "
+"verifique las particiones de disco montadas..."
 
 #: .tmp/ScrUser.py:111
 msgid "There isn't any selected user on User Selection Window!"
-msgstr ""
+msgstr "Favor seleccione un usuario !"
 
 #: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:44
 msgid "Welcome"
@@ -440,7 +435,6 @@ msgid "~/Desktop"
 msgstr ""
 
 #: .tmp/ui_userFilesWidget.py:50
-#, fuzzy
 msgid "Directory"
 msgstr "Directorio"
 
@@ -457,7 +451,6 @@ msgid "Users"
 msgstr "Usuarios"
 
 #: .tmp/ui_welcomeWidget.py:45
-#, fuzzy
 msgid ""
 "This application, called Migration Tool, helps you transfer files and "
 "settings from other operating systems to Pardus. Please click Next to "
@@ -468,8 +461,8 @@ msgid ""
 "office documents and more!"
 msgstr ""
 "Este programa llamado Asistente de Migración, le ayudará transferir archivos "
-"y configuraciones de su sistema existente a Pardus. Por favor presione "
-"Siguiente para personalizar su escritorio. \n"
+"y configuraciones desde otro sistema operativo a Pardus. Por favor presione "
+"Siguiente para transferir los archivos respectivos. \n"
 "\n"
 "Pardus es una distribución GNU/Linux, que trata de cubrir las necesidades "
 "básicas de todo tipo de usuarios de una PC de escritorio; le ayuda conectar "
