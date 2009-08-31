@@ -1,0 +1,250 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-21 01:44+0300\n"
+"PO-Revision-Date: 2009-05-22 03:25+0200\n"
+"Last-Translator: Gökmen Görgen <gkmngrgn@gmail.com>\n"
+"Language-Team: Turkish <gkmngrgn@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Turkish\n"
+"X-Poedit-Country: TURKEY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: puic.py:21
+msgid "create Pardus USB image from console"
+msgstr "uçbirimde Pardus USB kalıbı oluştur"
+
+#: puic.py:23
+msgid "show program's license info and exit"
+msgstr "uygulamanın lisans bilgisini göster ve çık"
+
+#: puic.py:40
+msgid "Invalid usage. Example:"
+msgstr "Geçersiz kullanım. Örnek:"
+
+#: puic.py:47
+#, python-format
+msgid "%s: Missing argument."
+msgstr "%s: Eksik parametre."
+
+#: puic.py:48
+#, python-format
+msgid "For more information, type '%s --help'."
+msgstr "Daha fazla bilgi için, '%s --help' yazın."
+
+#: puic.py:55
+msgid ""
+"\n"
+"Quit."
+msgstr ""
+"\n"
+"Çıkış yapıldı."
+
+#: puic/const.py:9
+msgid "Pardus USB Image Creator"
+msgstr "Pardus USB Kalıbı Oluşturucu"
+
+#: puic/const.py:12
+msgid "An USB Image Creator For Pardus Linux."
+msgstr "Pardus Linux İçin Yazılmış USB Kalıbı Oluşturucusu"
+
+#: puic/const.py:17
+msgid "Copyright"
+msgstr "Telif Hakkı"
+
+#: puic/const.py:18
+#, python-format
+msgid ""
+"Puic is an USB image creator for Pardus Linux.\n"
+"%s\n"
+"\n"
+"Puic is a free software; you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation; either version 3 of the License, or\n"
+"(at your option) any later version.\n"
+"\n"
+"Pati is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program.  If not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+"Puic, Pardus Linux için yazılmış bir USB kalıp oluşturucudur.\n"
+"%s\n"
+"\n"
+"Puic is a free software; you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation; either version 3 of the License, or\n"
+"(at your option) any later version.\n"
+"\n"
+"Pati is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program.  If not, see <http://www.gnu.org/licenses/>."
+
+#: puic/main.py:46
+msgid "USB disk infos:"
+msgstr "USB bellek bilgileri:"
+
+#: puic/main.py:47
+#, python-format
+msgid "\tFilesystem : %s"
+msgstr "\tDosya Sistemi  : %s"
+
+#: puic/main.py:48
+#, python-format
+msgid "\tMounted On : %s"
+msgstr "\tBağlanılan     : %s"
+
+#: puic/main.py:49
+#, python-format
+msgid "\tSize       : %s"
+msgstr "\tBoyut          : %s"
+
+#: puic/main.py:50
+#, python-format
+msgid "\tUsed       : %s"
+msgstr "\tKullanılan     : %s"
+
+#: puic/main.py:51
+#, python-format
+msgid "\tAvailable  : %s"
+msgstr "\tBoş           : %s"
+
+#: puic/main.py:52
+#, python-format
+msgid "\tUse Rating : %s"
+msgstr "\tKullanım Oranı : %s"
+
+#: puic/main.py:66
+#, python-format
+msgid "Copying %s.."
+msgstr "%s, kopyalanıyor.."
+
+#: puic/main.py:90
+#, python-format
+msgid "Mounting %s.."
+msgstr "%s, bağlanılıyor.."
+
+#: puic/main.py:97
+#, python-format
+msgid "Unmounting %s.."
+msgstr "%s, ayrılıyor.."
+
+#: puic/main.py:105
+#, python-format
+msgid "Could not unmount, %s."
+msgstr "%s ayrılamadı."
+
+#: puic/main.py:108
+msgid "Creating ldlinux.sys.."
+msgstr "ldlinux.sys oluşturuluyor.."
+
+#: puic/main.py:112
+msgid "Could not create, ldlinux.sys."
+msgstr "ldlinux.sys oluşturulamadı."
+
+#: puic/main.py:118
+#, python-format
+msgid "Concatenating MBR to %s"
+msgstr "%s sürücüsüne MBR yazılıyor"
+
+#: puic/main.py:122
+msgid "Could not concatenate, MBR."
+msgstr "MBR yazılamadı."
+
+#: puic/main.py:136
+msgid "Could not mounted CD image."
+msgstr "CD kalıbı bağlanılamadı"
+
+#: puic/main.py:142
+msgid "Copying CD image.."
+msgstr "CD kalıbı kopyalanıyor.."
+
+#: puic/main.py:149
+msgid "Renaming boot/isolinux to boot/syslinux.."
+msgstr "boot/isolinux, boot/syslinux olarak yeniden adlandırılıyor.."
+
+#: puic/main.py:153
+msgid "Renaming boot/syslinux/isolinux.cfg to boot/syslinux/syslinux.cfg and configuring.."
+msgstr "boot/syslinux/isolinux.cfg, boot/syslinux/syslinux.cfg olarak yeniden adlandırılıp düzenleniyor.."
+
+#: puic/main.py:159
+msgid "MBR written, USB disk is ready for Pardus installation."
+msgstr "MBR yazıldı, USB belleğiniz Pardus kurulumu için hazır."
+
+#: puic/main.py:164
+msgid "Could not write MBR to USB disk."
+msgstr "MBR, USB belleğe yazılamadı."
+
+#: puic/ui_cmd.py:19
+msgid "You need superuser permissions to run this application."
+msgstr "Bu uygulamayı çalıştırmak için, yetkili kullanıcı olmalısınız."
+
+#: puic/ui_cmd.py:30
+msgid "An error occured. Check the parameters please."
+msgstr "Bir sorun oluştu. Parametreleri denetleyin."
+
+#: puic/ui_cmd.py:44
+msgid "Path to the source file is invalid, try again."
+msgstr "Kaynak yol geçersiz, tekrar deneyin."
+
+#: puic/ui_cmd.py:53
+msgid "The file you have specified is not an ISO image. If you think it's an ISO image, change the extension to \".iso\""
+msgstr "Belirttiğiniz dosya bir ISO kalıbı değil. Eğer bunun ISO kalıbı olduğunu düşünüyorsanız, uzantısını \".iso\" yapın."
+
+#: puic/ui_cmd.py:58
+#, python-format
+msgid ""
+"\n"
+"CD image: %s"
+msgstr ""
+"\n"
+"CD kalıbı: %s"
+
+#: puic/ui_cmd.py:63
+msgid "The file you have specified is invalid. It's a CD image, use \".iso\" extension. e.g. Pardus_2009_Prealpha3.iso"
+msgstr "Belirttiğiniz dosya geçersiz. Eğer bir CD kalıbıysa, \".iso\" uzantısını kullanın. Örnek: Pardus_2009_Prealpha3.iso"
+
+#: puic/ui_cmd.py:76
+#, python-format
+msgid "The path you have typed is invalid. If you think the path is valid, make sure you have mounted USB stick to the path you gave. To check the path, you can use: mount | grep %s"
+msgstr "Belirttiğiniz yol geçersiz. Eğer yolun geçerli olduğunu düşünüyorsanız, USB belleğinizin, vermiş olduğunuz yola bağlanıp bağlanmadığını denetleyin. Bunun için şu komutu deneyebilirsiniz: mount | grep %s"
+
+#: puic/ui_cmd.py:82
+msgid "Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?"
+msgstr "Lütfen belirttiğiniz bilgilerin doğruluğunu denetleyin. Eğer USB belleğin yolunu doğru belirtmemişseniz, sisteminizin güvenliği tehlikede olabilir. Devam etmek istiyor musunuz?"
+
+#: puic/ui_cmd.py:84
+msgid "Please type CONFIRM to continue: "
+msgstr "Devam etmek için TAMAM yazın:"
+
+#: puic/ui_cmd.py:86
+msgid "CONFIRM"
+msgstr "TAMAM"
+
+#: puic/ui_cmd.py:86
+msgid "confirm"
+msgstr "tamam"
+
+#: puic/ui_cmd.py:87
+msgid "Writing CD image data to USB stick!"
+msgstr "USB belleğe CD yazdırma işlemi başlatıldı!"
+
+#: puic/ui_cmd.py:92
+msgid "You did not type CONFIRM. Exiting.."
+msgstr "TAMAM yaz(a)madınız. Çıkılıyor.."
+

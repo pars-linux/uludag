@@ -1,0 +1,17 @@
+prompt 1
+timeout 200
+
+ui gfxboot.com /boot/syslinux/init
+
+label pardus
+    kernel /boot/kernel
+    append initrd=/boot/initrd root=/dev/ram0 mudur=livedisk vga=791 splash=silent quiet
+
+label harddisk
+    localboot 0x80
+
+label memtest
+    kernel /boot/memtest
+
+label hardware
+    kernel hdt.c32
