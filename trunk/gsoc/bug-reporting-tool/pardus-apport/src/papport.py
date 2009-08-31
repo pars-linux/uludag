@@ -45,7 +45,7 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         rect  = QtGui.QDesktopWidget().screenGeometry()
         self.move(rect.width()/2 - self.width()/2, rect.height()/2 -\
                   self.height()/2)
-        self.app.exec_()
+        #self.app.exec_()
         self.run_argv()
 
 
@@ -191,10 +191,10 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
                 self.report.has_useful_stacktrace():
             complete_size = self.format_filesize(self.get_complete_size())
             reduced_size = self.format_filesize(self.get_reduced_size())
-            self.current.ui.setText('Complete report (recommended; %s)' %
-                                    complete_size)
-            self.current.ui.setText('Reduced report (slow Internet connection;'
-                                    ' %s)' % reduced_size)
+            self.current.ui.complete.setText('Complete report (recommended; '
+                                             '%s)' % complete_size)
+            self.current.ui.reduced.setText('Reduced report (slow Internet '
+                                            'connection; %s)' % reduced_size)
         else:
             self.current.ui.options.hide()
 
