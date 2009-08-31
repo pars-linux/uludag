@@ -1,0 +1,3 @@
+#!/bin/bash
+kdesu -c 'python -c "import puma"'
+
