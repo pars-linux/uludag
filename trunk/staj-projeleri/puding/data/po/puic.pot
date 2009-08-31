@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-02 18:56+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../puic.py:25
+msgid "create Pardus USB image from console"
+msgstr ""
+
+#: ../puic.py:27
+msgid "show program's license info and exit"
+msgstr ""
+
+#: ../puic.py:44
+msgid "Invalid usage. Example:"
+msgstr ""
+
+#: ../puic.py:52
+#, python-format
+msgid "%s: Missing argument."
+msgstr ""
+
+#: ../puic.py:53
+#, python-format
+msgid "For more information, type '%s --help'."
+msgstr ""
+
+#: ../puic.py:60
+msgid ""
+"\n"
+"Quit."
+msgstr ""
+
+#: ../puic/const.py:9
+msgid "Pardus USB Image Creator"
+msgstr ""
+
+#: ../puic/const.py:12
+msgid "An USB Image Creator For Pardus Linux."
+msgstr ""
+
+#: ../puic/const.py:17
+msgid "Copyright"
+msgstr ""
+
+#: ../puic/const.py:18
+#, python-format
+msgid ""
+"Puic is an USB image creator for Pardus Linux.\n"
+"%s\n"
+"\n"
+"Puic is a free software; you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation; either version 3 of the License, or\n"
+"(at your option) any later version.\n"
+"\n"
+"Pati is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program.  If not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+
+#: ../puic/main.py:54
+msgid "USB disk infos:"
+msgstr ""
+
+#: ../puic/main.py:55
+#, python-format
+msgid "\tFilesystem : %s"
+msgstr ""
+
+#: ../puic/main.py:56
+#, python-format
+msgid "\tMounted On : %s"
+msgstr ""
+
+#: ../puic/main.py:57
+#, python-format
+msgid "\tSize       : %s"
+msgstr ""
+
+#: ../puic/main.py:58
+#, python-format
+msgid "\tUsed       : %s"
+msgstr ""
+
+#: ../puic/main.py:59
+#, python-format
+msgid "\tAvailable  : %s"
+msgstr ""
+
+#: ../puic/main.py:60
+#, python-format
+msgid "\tUse Rating : %s"
+msgstr ""
+
+#: ../puic/main.py:68
+#, python-format
+msgid ""
+"\n"
+"Created \"repo\" directory in %s."
+msgstr ""
+
+#: ../puic/main.py:72 ../puic/main.py:80
+#, python-format
+msgid "Copying %s.."
+msgstr ""
+
+#: ../puic/main.py:75
+#, python-format
+msgid ""
+"\n"
+"Created \"boot\" directory in %s."
+msgstr ""
+
+#: ../puic/main.py:83
+#, python-format
+msgid ""
+"\n"
+"And copying pardus.img to %s.."
+msgstr ""
+
+#: ../puic/main.py:145
+#, python-format
+msgid "Mounting %s.."
+msgstr ""
+
+#: ../puic/main.py:152
+#, python-format
+msgid "Unmounting %s.."
+msgstr ""
+
+#: ../puic/main.py:160
+#, python-format
+msgid "Could not unmount, %s."
+msgstr ""
+
+#: ../puic/main.py:163
+msgid "Creating ldlinux.sys.."
+msgstr ""
+
+#: ../puic/main.py:167
+msgid "Could not create, ldlinux.sys."
+msgstr ""
+
+#: ../puic/main.py:173
+#, python-format
+msgid "Concatenating MBR to %s"
+msgstr ""
+
+#: ../puic/main.py:177
+msgid "Could not concatenate, MBR."
+msgstr ""
+
+#: ../puic/main.py:191
+msgid "Could not mounted CD image."
+msgstr ""
+
+#: ../puic/main.py:197
+msgid "Copying CD image.."
+msgstr ""
+
+#: ../puic/main.py:203
+msgid "Copying syslinux files.."
+msgstr ""
+
+#: ../puic/main.py:208
+msgid "MBR written, USB disk is ready for Pardus installation."
+msgstr ""
+
+#: ../puic/main.py:213
+msgid "Could not write MBR to USB disk."
+msgstr ""
+
+#: ../puic/ui_cmd.py:20
+msgid "You need superuser permissions to run this application."
+msgstr ""
+
+#: ../puic/ui_cmd.py:31
+msgid "An error occured. Check the parameters please."
+msgstr ""
+
+#: ../puic/ui_cmd.py:45
+msgid "Path to the source file is invalid, try again."
+msgstr ""
+
+#: ../puic/ui_cmd.py:54
+msgid ""
+"The file you have specified is not an ISO image. If you think it's an ISO "
+"image, change the extension to \".iso\""
+msgstr ""
+
+#: ../puic/ui_cmd.py:59
+#, python-format
+msgid ""
+"\n"
+"CD image: %s"
+msgstr ""
+
+#: ../puic/ui_cmd.py:64
+msgid ""
+"The file you have specified is invalid. It's a CD image, use \".iso\" "
+"extension. e.g. Pardus_2009_Prealpha3.iso"
+msgstr ""
+
+#: ../puic/ui_cmd.py:78
+msgid ""
+"Please double check your path information. If you don't type the path to the "
+"USB stick correctly, you may damage your computer. Would you like to "
+"continue?"
+msgstr ""
+
+#: ../puic/ui_cmd.py:80
+msgid "Please type CONFIRM to continue: "
+msgstr ""
+
+#: ../puic/ui_cmd.py:82
+msgid "CONFIRM"
+msgstr ""
+
+#: ../puic/ui_cmd.py:82
+msgid "confirm"
+msgstr ""
+
+#: ../puic/ui_cmd.py:83
+msgid "Writing CD image data to USB stick!"
+msgstr ""
+
+#: ../puic/ui_cmd.py:88
+msgid "You did not type CONFIRM. Exiting.."
+msgstr ""
+
+#: ../puic/ui_cmd.py:93
+#, python-format
+msgid ""
+"The path you have typed is invalid. If you think the path is valid, make "
+"sure you have mounted USB stick to the path you gave. To check the path, you "
+"can use: mount | grep %s"
+msgstr ""

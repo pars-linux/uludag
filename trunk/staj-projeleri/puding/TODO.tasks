@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<gtodo>
+  <category title="Ki&#x15F;isel" place="1"/>
+  <category title="&#x130;&#x15F;" place="2"/>
+  <category title="puding" place="0">
+    <item>
+      <attribute id="1250953836" priority="2" done="1" start_date="733641" completed_date="733642" notify="0" last_edited="1250989890"/>
+      <summary>fix func, __askDestination</summary>
+      <comment>__askDestination bir de&#x11F;er d&#xF6;nd&#xFC;r&#xFC;yor. O de&#x11F;eri alarak sonraki i&#x15F;leme ge&#xE7;melisin.</comment>
+    </item>
+    <item>
+      <attribute id="1250981099" priority="1" done="1" start_date="733642" completed_date="733642" notify="0" last_edited="1250989902"/>
+      <summary>ui_cmd.py i&#xE7;in dst parametresi yeniden</summary>
+      <comment>E&#x11F;er dst parametresi verilmi&#x15F;se, askDestination fonksiyonunu ge&#xE7;erek, do&#x11F;rudan ikinci parametrenin do&#x11F;rulu&#x11F;unu s&#x131;nama a&#x15F;amas&#x131;na ge&#xE7;ebiliriz. Pratiklik.</comment>
+    </item>
+    <item>
+      <attribute id="1251021909" priority="1" done="0" start_date="733642" enddate="99999999" notify="0" endtime="-60" last_edited="1251021909"/>
+      <summary>Sadece Pardus yazabilecek &#x15F;ekilde kitle</summary>
+      <comment>Ba&#x15F;ka bir imaj yolu g&#xF6;sterilmi&#x15F;se, "Bu Pardus imaj&#x131; de&#x11F;il" uyar&#x131;s&#x131; vermeli.</comment>
+    </item>
+    <item>
+      <attribute id="1251153539" priority="1" done="1" start_date="733644" completed_date="733645" notify="0" last_edited="1251240711"/>
+      <summary>Archlinux'ta Mtools paketi sorunlu.</summary>
+      <comment>Archlinux'ta mtools paketiyle ilgili sorunu d&#xFC;zeltmek i&#xE7;in debian-tracker veya pardus'taki yamalara bak.</comment>
+    </item>
+    <item>
+      <attribute id="1251240745" priority="1" done="0" start_date="733645" enddate="99999999" notify="0" endtime="-60" last_edited="1251240745"/>
+      <summary>runCommand fonksiyonu kald&#x131;r&#x131;lacak.</summary>
+      <comment>runCommand kullanan t&#xFC;m fonksiyonlar run kullanacak &#x15F;ekilde d&#xFC;zeltilecek.</comment>
+    </item>
+    <item>
+      <attribute id="1251242214" priority="1" done="1" start_date="733645" completed_date="733646" notify="0" last_edited="1251368554"/>
+      <summary>Dizinler USB bellekte de &#xF6;nceden olu&#x15F;turulsun</summary>
+      <comment>createDirs fonksiyonunun bir benzeri, usb bellek i&#xE7;in de yap&#x131;lmal&#x131;.</comment>
+    </item>
+    <item>
+      <attribute id="1250989965" priority="1" done="1" start_date="733642" completed_date="733646" notify="0" last_edited="1251391020"/>
+      <summary>Ba&#x11F;lanmam&#x131;&#x15F; diskin ba&#x11F;lanmas&#x131;</summary>
+      <comment>Disk e&#x11F;er ba&#x11F;l&#x131; de&#x11F;ilse, &#xF6;nce o diski ba&#x11F;lay&#x131;p, sonra ba&#x11F;land&#x131;&#x11F;&#x131; dizinin de&#x11F;erini d&#xF6;nd&#xFC;recek bir fonksiyon yazmam&#x131;z gerekiyor. Hatta bu fonksiyonun common.py dosyas&#x131;na yaz&#x131;lmas&#x131; olas&#x131;.</comment>
+    </item>
+  </category>
+</gtodo>
