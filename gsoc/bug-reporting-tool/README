@@ -26,7 +26,7 @@ Set the default database options in /etc/apport/crashdb.conf. There should
 already be a Pardus entry with dummy options.
 
 The kernel must have core_pattern enabled so that /proc/sys/kernel/core_pattern
-reads "|/path/to/papport.py %p %s %c".
+reads "|/usr/bin/apport %p %s %c".
 
 
 Step-by-Step Testing Guide
@@ -53,6 +53,10 @@ Testing the BugTool wizard
 Testing the Apport Front-End
 ============================
 
+NOTE: This test procedure is not working on Pardus2009 ATM. The process info
+on /proc is getting deleted before apport is able to kick-in and grab the
+needed information. Pardus2008 is working fine.
+
 Since papport will be called by the system when there's a crash, the easiest
 way to test it is installing via setup.py. The procedure bellow *won't* work
 unless the PYTHONPATH is set accordingly for **every user** in the system
@@ -63,9 +67,11 @@ unless the PYTHONPATH is set accordingly for **every user** in the system
     python temporal-generate.py && chmod a+x papport.py
     export PYTHONPATH=$(pwd):${PYTHONPATH}
     # as root
-    echo "|/path/to/papport.py %p %s %c" > /proc/sys/kernel/core_pattern
+    echo "|/usr/bin/apport %p %s %c" > /proc/sys/kernel/core_pattern
     # back to normal user
     bash -c 'kill -SEGV $$' # forcing a segfault to trigger apport
+    # this should create a file in /var/crash named something like _bin_bash*
+    /path/to/papport -c /var/crash/_bin_bash*
 
 
 External Projects

@@ -133,6 +133,9 @@
            <property name="text">
             <string>complete</string>
            </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
         </layout>
@@ -140,6 +143,11 @@
       </item>
       <item>
        <widget class="QTreeWidget" name="details">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <column>
          <property name="text">
           <string notr="true">1</string>
