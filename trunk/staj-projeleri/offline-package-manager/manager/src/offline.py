@@ -35,7 +35,7 @@ class Operations:
         self.pkgs_path = self.path + "/packages"
         self.pdb = PackageDB()
 
-    def checkDir(self):
+    def __checkDir(self):
         # This function checks if the working path exists or not.
         try:
             os.mkdir(self.path)
@@ -44,7 +44,17 @@ class Operations:
         except OSError:
             pass
 
-    def create(self, packages, operation):
+    def saveProcess(self, packages, operation):
+        """
+        This function saves the done process to the process file
+        with its process number. It gets the list of packages and
+        operation type as parameter. Operation type can be just
+        'install' or 'remove'.
+        """
+        self.__create(packages, operation)
+        self.__write()
+
+    def __create(self, packages, operation):
 
         if operation not in ["install", "remove"]:
             raise Exception("Unknown package operation")
@@ -61,9 +71,7 @@ class Operations:
         self.op_no = opno
         self.pkgs = packages
 
-        self.write()
-
-    def write(self):
+    def __write(self):
 
         self.doc = piksemel.newDocument("PISI-Offline")
 
@@ -93,9 +101,7 @@ class Operations:
 
     def _get_latest(self):
 
-        self.checkDir()
-
-        print "hello get_latest"
+        self.__checkDir()
 
         files = filter(lambda h:h.endswith(".xml"), os.listdir(self.path))
         if not files:
@@ -105,17 +111,32 @@ class Operations:
         no, opxml = files[-1].split("_")
         return "%03d" % (int(no) + 1)
 
-    def closeOfflineMode(self, filename):
-        # This function make a tar file from offline PISI files
+    def writeCatalog(self, filename):
+        """
+        This function writes the catalog file to the given
+        path. It gets the full filename of catalog file
+        like '/home/user/a.tar' as a parameter.
+        This function should be call after all install and remove
+        processes done on online machine.
+        """
+        # This function makes a tar file from offline PISI files
         os.chdir(os.getenv("HOME"))
         tar = tarfile.open(filename, "w")
         tar.add("offlinePISI")
         tar.close()
 
+        print "Catalog file writed."
+
 
     ### Below codes are about importing and exporting index
 
     def importIndex(self, filename):
+        """
+        This function imports the index file of offline machine
+        and change the mode of 'Package Manager' as offline.
+        It gets the full filename of index file like
+        '/home/user/pisi-installed.xml' as a parameter.
+        """
         f = open("/tmp/offline-pm.data", "w")
         f.write(filename)
         f.close
@@ -123,26 +144,32 @@ class Operations:
         backend.pm = backend.offline_pm
 
     def exportIndex(self, filename):
+        """
+        This function exports the index (list of installed packages)
+        of offline machine to the given path. It gets the full
+        filename of index file like '/home/user/pisi-installed.xml'
+        as a parameter.
+        """
         idb = pisi.db.installdb.InstallDB()
         index = pisi.index.Index()
 
         for name in idb.list_installed():
             index.packages.append(idb.get_package(name))
 
-        self.getComponents()
-        self.getGroups()
-        self.getDistro()
+        self.__getComponents()
+        self.__getGroups()
+        self.__getDistro()
 
         index.add_components("/tmp/components.xml")
         index.add_groups("/tmp/groups.xml")
-        index.add_distro("/tmp/distro.xml")
+        index.add_distro("/tmp/distribution.xml")
 
         index.write(filename, sha1sum=True, compress=pisi.file.File.bz2, sign=None)
 
         print "Index file exported."
 
     # clean extra information in groups, components and distro (return empty formatted data)
-    def getGroups(self):
+    def __getGroups(self):
         gdb = pisi.db.groupdb.GroupDB()
 
         doc = piksemel.newDocument("PISI")
@@ -161,7 +188,7 @@ class Operations:
         f.write(doc.toPrettyString())
         f.close()
 
-    def getComponents(self):
+    def __getComponents(self):
         cdb = pisi.db.componentdb.ComponentDB()
 
         doc = piksemel.newDocument("PISI")
@@ -184,13 +211,12 @@ class Operations:
             i.setAttribute("xml:lang", c.description.items()[0][0])
             i.insertData(c.description.items()[0][1])
             comp.insertTag("Group").insertData(c.group)
-            # If any error, add packager info here.
 
         f = open("/tmp/components.xml", "w")
         f.write(doc.toPrettyString())
         f.close()
 
-    def getDistro(self):
+    def __getDistro(self):
         info = dict(pisi.context.config.values.general.items)
 
         doc = piksemel.newDocument("PISI")
@@ -209,16 +235,23 @@ class Operations:
 
     ### Below codes are about doing offline jobs (install or remove pkgs)
 
-    def startOperations(self, filename):
-        self.openArchive(filename)
-        self.handleOperation()
+    def startProcesses(self, filename):
+        """
+        This function reads the catalog file, handles
+        the process files and do all install and remove
+        operations on offline machine. It gets the full
+        filename of catalog file like '/home/user/a.tar'
+        as parameter.
+        """
+        self.__openArchive(filename)
+        self.__handleProcesses()
 
-    def openArchive(self, filename):
+    def __openArchive(self, filename):
         tar = tarfile.open(filename)
         tar.extractall(os.getenv("HOME"))
         tar.close()
 
-    def handleOperation(self):
+    def __handleProcesses(self):
 
         files = filter(lambda x:x.endswith(".xml"), os.listdir(self.path))
         list = []
@@ -247,9 +280,9 @@ class Operations:
                     for x in i.tags("Package"):
                         packages.append(str(x.firstChild().data()))
 
-            self.doOperation(packages, op_type)
+            self._doOperation(packages, op_type)
 
-    def doOperation(self, packages, operation):
+    def _doOperation(self, packages, operation):
 
         # iface installPackage function can callable only one time.
         # when second operation started, it fails and comar does not give permission or want pass from user.

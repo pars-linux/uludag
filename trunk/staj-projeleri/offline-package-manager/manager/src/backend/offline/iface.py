@@ -18,7 +18,7 @@ import pisi
 
 from pmlogging import logger
 
-import operations
+import offline
 
 # for rewrited pisi.api functions
 #--------------------------------
@@ -48,7 +48,7 @@ class Iface(Singleton):
             self.oidb = pisi.db.offline_idb.Offline_InstallDB()
             self.initDB()
 
-        self.operation = operations.Operations()
+        self.operation = offline.Operations()
 
     def initialized(self):
         return "link" in self.__dict__
@@ -91,7 +91,7 @@ class Iface(Singleton):
         for pkg in all_packages:
             self.oidb.add_package(pkg)
 
-        self.operation.create(all_packages, "install")
+        self.operation.saveProcess(all_packages, "install")
 
     def removePackages(self, packages):
         all_packages = packages + self.requires_list
@@ -99,7 +99,7 @@ class Iface(Singleton):
         for pkg in all_packages:
             self.oidb.remove_package(pkg)
 
-        self.operation.create(all_packages, "remove")
+        self.operation.saveProcess(all_packages, "remove")
 
     def upgradePackages(self, packages):
         self.installPackages(packages)
@@ -261,23 +261,6 @@ class Iface(Singleton):
                 return self.oidb.search_package(terms)
         except Exception:
             return []
-
-
-    # Install and Remove package actions above
-
-    def startOperations(self, filename):
-        print "startOperations function is running..."
-        self.operation.startOperations(filename)
-
-    def install(self, packages):
-        print "paketler yüklenecek"
-        self.link.System.Manager["pisi"].installPackage(packages, async=self.handler, timeout=2**16-1)
-        print "paketler yüklendi"
-
-    def remove(self, packages):
-        print "paketler kaldırılacak"
-        self.link.System.Manager["pisi"].removePackage(packages, async=self.handler, timeout=2**16-1)
-        print "paketler yüklendi"
 
 # --------------------------------------------------------------
 # Rewrited pisi.api functions are below with their requirements.
