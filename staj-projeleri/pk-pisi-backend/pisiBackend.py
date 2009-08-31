@@ -125,8 +125,6 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
         if self.packagedb.has_package(package):
             pkg_status = "available"
             pkg = self.packagedb.get_package(package)
-            print "%s-%s-%s" % (pkg.version, pkg.release, pkg.build)
-            print package_ids[0].split(";")[1]
             if self.installdb.has_package(package):
                 pkg_status = "installed"
                 if "%s-%s-%s" % (pkg.version, pkg.release, pkg.build) != package_ids[0].split(";")[1]:
@@ -143,8 +141,6 @@ class PackageKitPisiBackend(PackageKitBaseBackend, PackagekitPackage):
             else:
                 packageSize = pkg.packageSize
 
-            print my_package_id
-            print pkg.packageSize
             self.details(my_package_id,
                          " ".join(pkg.license),
                          self.__get_group(pkg),
