@@ -1,3 +1,8 @@
+2009-09-01  İşbaran Akçayır  <isbaran@gmail.com>
+	* Release as 0.2.7
+	* Additional translations added, supporting da, de, en, es, fr, it, nl, sv, tr
+	* Fixed status update bug after operations
+
 2009-07-28  İşbaran Akçayır  <isbaran@gmail.com>
 	* Release as 0.2.6.1
 	* Additional translations added, supporting sv, de, nl, it, es, en, tr
