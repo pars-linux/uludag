@@ -100,7 +100,6 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         return "<b>" + unicode(u"» ") + item + "</b><br>"
 
     def wait_for_next_click(self):
-        self.mutex.lock()
         self.waitNextClick.wait(self.mutex)
 
     def wait_user_input(self):
@@ -198,24 +197,7 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         else:
             self.current.ui.options.hide()
 
-        # Filling report details
-        details = self.current.ui.details
-        for key in self.report:
-            item = QtGui.QTreeWidgetItem([key])
-            details.addTopLevelItem(item)
-
-            if not hasattr(self.report[key], 'gzipvalue') and \
-               hasattr(self.report[key], 'isspace') and \
-               not self.report._is_binary(self.report[key]):
-                lines = self.report[key].splitlines()
-                for line in lines:
-                    QtGui.QTreeWidgetItem(item, [line])
-                if len(lines) < 4:
-                    item.setExpanded(True)
-            else:
-                QtGui.QTreeWidgetItem(item, ['(binary data)'])
-        details.header().hide()
-
+        self.current.load_report(self.report)
         self.wait_user_input()
 
         if self.current.ui.reduced.isChecked():
@@ -302,12 +284,15 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
                                      'minutes.')
         self.current.set_progress()
         self.ui.buttonNext.setEnabled(False)
+        self.app.processEvents()
 
     def ui_pulse_info_collection_progress(self):
         self.current.set_progress()
+        self.app.processEvents()
 
     def ui_stop_info_collection_progress(self):
         self.ui.buttonNext.setEnabled(True)
+        self.app.processEvents()
 
     def ui_start_upload_progress(self):
         self.appendScreen(progressScreen)
@@ -318,12 +303,15 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
                                      ' to the bug tracking system. This might'
                                      ' take a few minutes.')
         self.ui.buttonNext.setEnabled(False)
+        self.app.processEvents()
 
     def ui_set_upload_progress(self, progress):
         self.current.set_progress(progress)
+        self.app.processEvents()
 
     def ui_stop_upload_progress(self):
         self.ui.buttonNext.setEnabled(True)
+        self.app.processEvents()
 
 
 if __name__ == "__main__":

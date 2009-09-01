@@ -27,6 +27,24 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_bugWidget()
         self.ui.setupUi(self)
 
+    def load_report(self, report):
+        details = self.ui.details
+        for key in report:
+            item = QtGui.QTreeWidgetItem([key])
+            details.addTopLevelItem(item)
+
+            if not hasattr(report[key], 'gzipvalue') and \
+               hasattr(report[key], 'isspace') and \
+               not report._is_binary(report[key]):
+                lines = report[key].splitlines()
+                for line in lines:
+                    QtGui.QTreeWidgetItem(item, [line])
+                if len(lines) < 4:
+                    item.setExpanded(True)
+            else:
+                QtGui.QTreeWidgetItem(item, ['(binary data)'])
+        details.header().hide()
+
     def shown(self):
         pass
 

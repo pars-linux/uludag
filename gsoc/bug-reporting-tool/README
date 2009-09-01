@@ -16,7 +16,7 @@ Steps
 =====
 
 Just issue *python setup.py install* on each python library directory
-Note: In some cases, installing apport though setup.py may require passing the _--root /_ option.
+Note: In some cases, installing apport though setup.py may require passing the "--root /" option.
 
 
 Apport Configuration
@@ -53,14 +53,9 @@ Testing the BugTool wizard
 Testing the Apport Front-End
 ============================
 
-NOTE: This test procedure is not working on Pardus2009 ATM. The process info
-on /proc is getting deleted before apport is able to kick-in and grab the
-needed information. Pardus2008 is working fine.
-
-Since papport will be called by the system when there's a crash, the easiest
-way to test it is installing via setup.py. The procedure bellow *won't* work
-unless the PYTHONPATH is set accordingly for **every user** in the system
-(i.e.: setting up /etc/profile, for example).
+It may be possible to run the crash-generating procedure now, and running
+papport as a single user after it will go through the bug-reporting procedure
+correctly.
 
     ulimit -S -c unlimited # enable coredumps
     cd pardus-apport/src
@@ -71,7 +66,7 @@ unless the PYTHONPATH is set accordingly for **every user** in the system
     # back to normal user
     bash -c 'kill -SEGV $$' # forcing a segfault to trigger apport
     # this should create a file in /var/crash named something like _bin_bash*
-    /path/to/papport -c /var/crash/_bin_bash*
+    /path/to/papport # Usually, /usr/kde/4/bin/papport
 
 
 External Projects
