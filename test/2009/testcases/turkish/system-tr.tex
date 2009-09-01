@@ -16,7 +16,7 @@
 \maketitle
 
 
-\section{Base alt Bileşeni}
+\section{Devel alt Bileşeni}
 \begin{enumerate}
  \item xtrans paketi kurulum testine tabidir.
 \end{enumerate}
@@ -24,6 +24,26 @@
 
 \section{Base alt Bileşeni}
 \begin{enumerate}
+\item file paketi kurulumu sonrası:
+
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.mng
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.odg
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.jpg
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.gif
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.png
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.tif
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.txt
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.ps
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/
+   test_openoffice-extension-pdfimport.pdf
+\end{verbatim}
+
+Yukarıda bulunan dosyaları aşağıda bulunan komut ile çalıştırın, dosya formatlarını düzgün bir şekilde bulduğunu gözlemleyin.
+\begin{verbatim}
+ # file <dosya adı>
+\end{verbatim}
+
 \item mudur paketi kurulumu sonrası:
 
 \begin{itemize}

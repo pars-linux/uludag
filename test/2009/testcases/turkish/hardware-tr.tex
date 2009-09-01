@@ -100,6 +100,53 @@ Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. A
 Partitionmanager'ı kmenüden açın ve diskinizin küçük bir kısmını bölmeye çelışın sorunsuz bir şekilde bölünebildiğini gözlemleyin.
 
 USB bellek takarak, bu bellek üzerinden de işlem yapabilirsiniz.
+
+\item reiserfsprogs paketi kurulumu sonrası:
+
+Bir usb disk takın ve /dev dizini altında bulunan uzantısını kullanarak aşağıda bulunan komutları çalıştırın. Düzgün bir şekilde çalıştıklarını gözlemleyin. 
+
+\begin{verbatim}
+ # mkreiserfs /dev/<aygıt uzantısı> -f
+ # reiserfsck /dev/<aygıt uzantısı>
+\end{verbatim}
+
+\end{enumerate}
+\section{Sound alt Bileşeni}
+\begin{enumerate}
+ \item alsa-driver, alsa-headers paketleri kurulumu sonrası:
+\begin{itemize}
+ \item Bilgisayarınızı yeniden başlatın ve açılış sesinin sorunsuz bir şekilde çalıştığını gözlemleyin.
+ \item Aşağıda bulunan dosyanın düzgün çalıştığını gözlemleyin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/music.mp3
+# mplayer music.mp3
+\end{verbatim}
+
+\end{itemize}
+
+
+\end{enumerate}
+\section{Mobile alt Bileşeni}
+\begin{enumerate}
+ \item libopensync-plugin-google-calendar paketi kurulumu sonrası:
+
+Eğer bir gmail üyeliğiniz var ise bu testi gerçekleştirebilirsiniz.
+\begin{itemize}
+ \item msynctool paketini kurun.
+ \item http://www.google.com/calendar/feeds/ adresinden google üyeliğinize girin ve takviminizi aktive edin.
+ \item Aşağıda bulunan komutları çalıştırın, üçüncü ve dördüncü komutlarda gmail ile üyeliğiniz ile ilgili istenen bilgileri girin.
+
+\begin{verbatim}
+ msynctool --addgroup GoogleCalendar
+ msynctool --addmember GoogleCalendar google-calendar
+ msynctool --configure GoogleCalendar 1
+ msynctool --configure GoogleCalendar 2
+ msynctool --sync GoogleCalendar	
+\end{verbatim}
+
+\end{itemize}
+
+Sorunsuz bir şekilde takvimlerin senkronize olduklarını gözlemleyin.
 \end{enumerate}
 
 
