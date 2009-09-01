@@ -9,6 +9,8 @@ Burada bulunan sorular, test sorumlusu veya sorumluları eşliğinde
 yapılacak olup,test ekibi üyesi olma isteğinizi bildirdiğiniz andan itibaren
 başlayacak olan sürecin ilk aşamasıdır.
 
+İhtiyaç duyduğunuzda ulaşabileceğiniz mail adresi pardus-test@pardus.org.tr.
+
 Bu sorular, Pardus linux dağıtımının alt yapısını yakından anlamanızı ve
 gelecekte yapacağınız testlerde karşılaşılaştığınız hatalar için yetkin bir şekilde
 cevap vermenizi ve hata raporlamanızı sağlayacaktır.
