@@ -125,13 +125,6 @@ f.write("""BEGIN;
 /*DROP TABLE IF EXISTS packages;*/
 
 DELETE FROM packages WHERE repo="%(repo)s";
-CREATE TABLE `packages` (
-    `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    `repo` varchar(30) NOT NULL,
-    `package` varchar(60) NOT NULL,
-    `path` varchar(200) NOT NULL
-)
-;
 COMMIT;
 """ % {'repo': underscorize(repo)} )
 f.close()
