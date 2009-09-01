@@ -82,10 +82,9 @@ class PisiIface(QThread):
     def getLastOperation(self):
         op = self.pdb.get_last()
         op = op.next()
-        return [int(op.no), str(op.type), str(op.date), str(op.time), [ i.__str__() for i in op.packages ]]
+        return [int(op.no), str(op.type), str(op.date), str(op.time), [ i.__str__() for i in op.packages ], [ i.__str__() for i in op.repos ]]
 
     def deinit(self):
         if self.pdb:
-            self.pdb.invalidate()
             del self.pdb
             self.initDb()
