@@ -269,10 +269,10 @@ class CrashDatabase(apport.crashdb.CrashDatabase):
         mime.close() # }}}
 
         # optional args
-        if 'keywords' in data:
-            data['keywords'] += hdr['Tags']
-        else:
-            data['keywords'] = hdr['Tags']
+        #if 'keywords' in data:
+        #    data['keywords'] += hdr['Tags']
+        #else:
+        #    data['keywords'] = hdr['Tags']
         #data.pop('keywords')
 
         bug_id = self.bugzilla.post(product, component, title, description,
