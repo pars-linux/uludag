@@ -69,7 +69,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             for k in files:
                 tmp = tempfile.NamedTemporaryFile()
                 filename, mime, content = files[k]
-                tmp.write(k)
+                tmp.write(content)
                 tmp.flush()
                 tmp.seek(0)
                 res = bugz.attach(bid, filename, k, tmp.name, mime, filename)

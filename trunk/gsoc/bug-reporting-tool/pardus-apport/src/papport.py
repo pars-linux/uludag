@@ -103,6 +103,7 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         self.waitNextClick.wait(self.mutex)
 
     def wait_user_input(self):
+        self.during_progress = False
         t = Thread(target=self.wait_for_next_click)
         t.start()
         while t.is_alive():
@@ -126,7 +127,7 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
             name = self.cur_package
             heading = 'Sorry, %s closed unexpectedly.' % name
 
-        self.set_current_title(name)
+        self.set_current_title("Program Crash")
         self.current.ui.heading.setText(heading)
         self.current.ui.text.setText('If you were not doing anything '
                                      'confidential (entering passwords or '
@@ -150,7 +151,7 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         annotate += ('You can help the developers to fix the problem by '
                      'reporting it.')
 
-        self.set_current_title('Kernel problem')
+        self.set_current_title('Kernel Problem')
         self.current.ui.heading.setText(message)
         self.current.ui.text.setText(annotate)
 
@@ -164,6 +165,10 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         heading = 'Sorry, the package "%s" failed to install or upgrade.' % name
         text = ('You can help the developers to fix the package by reporting'\
                 ' the problem')
+
+        self.set_current_title('Package Error')
+        self.current.ui.heading.setText(heading)
+        self.current.ui.text.setText(text)
 
         self.wait_user_input()
         return 'report'
@@ -181,7 +186,7 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
                 'developers as well as choose whether you want to send a '
                 'complete report or a reduced one.')
 
-        self.set_current_title(name)
+        self.set_current_title('%s Details' % name)
         self.current.ui.heading.setText(heading)
         self.current.ui.text.setText(text)
 
@@ -266,6 +271,8 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
         Return a tuple (user, pass) or None if cancelled.
         '''
         self.appendScreen(userpassScreen)
+        # Forcing this because this method may be called any time.
+        self.ui.buttonNext.setEnabled(True)
 
         self.set_current_title('Credentials')
         self.current.ui.text.setText(text)
@@ -284,14 +291,18 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
                                      'minutes.')
         self.current.set_progress()
         self.ui.buttonNext.setEnabled(False)
+        self.during_progress = True
         self.app.processEvents()
 
     def ui_pulse_info_collection_progress(self):
+        if not self.during_progress:
+            self.ui_start_info_collection_progress()
         self.current.set_progress()
         self.app.processEvents()
 
     def ui_stop_info_collection_progress(self):
         self.ui.buttonNext.setEnabled(True)
+        self.during_progress = False
         self.app.processEvents()
 
     def ui_start_upload_progress(self):
@@ -303,14 +314,18 @@ class PApport(QtGui.QWidget, apport.ui.UserInterface):
                                      ' to the bug tracking system. This might'
                                      ' take a few minutes.')
         self.ui.buttonNext.setEnabled(False)
+        self.during_progress = True
         self.app.processEvents()
 
     def ui_set_upload_progress(self, progress):
+        if not self.during_progress:
+            self.ui_start_upload_progress()
         self.current.set_progress(progress)
         self.app.processEvents()
 
     def ui_stop_upload_progress(self):
         self.ui.buttonNext.setEnabled(True)
+        self.during_progress = False
         self.app.processEvents()
 
 
