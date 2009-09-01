@@ -55,7 +55,7 @@ msgstr "Chargement des détails de l'opération.."
 
 #: .tmp/historymanager/window.py:124
 msgid "Details for operation on %1 at %2"
-msgstr "Détails de l\'opération du %1 à %2"
+msgstr "Détails de l'opération du %1 à %2"
 
 #: .tmp/historymanager/window.py:130
 msgid "There are %1 packages in this snapshot."
