@@ -56,7 +56,7 @@ def usage():
     
     Arguments:
     -r REPO_NAME
-    --repo=REPONAME
+    --repo=REPO_NAME
     repo=REPO_NAME
     
     -i REPO_INDEX_PATH
@@ -121,11 +121,10 @@ assert len(version)==4
 
 # -------- SQL HEADER ---------------------
 f = open(output, "w")
-f.write("""BEGIN;
-/*DROP TABLE IF EXISTS packages;*/
+f.write("""/* BEGIN;
 
 DELETE FROM packages WHERE repo="%(repo)s";
-COMMIT;
+COMMIT; */
 """ % {'repo': underscorize(repo)} )
 f.close()
 # ------------------------------------------
@@ -173,8 +172,8 @@ for package in installed_packages:
 
     # For each file, generate an INSERT INTO statement and append it
     for thefile in files:
-        to_be_added = '''INSERT INTO packages VALUES(%d, "%s",  "%s", "/%s");
-''' % (record_index,underscorize(repo), package, thefile)
+        to_be_added = '''INSERT INTO packages VALUES("", "%s",  "%s", "/%s");
+''' % (underscorize(repo), package, thefile)
         statements += to_be_added
         record_index += 1
     # Package FINISHED!
@@ -194,11 +193,13 @@ if version == '2007':
     pisi.installdb.finalize()
     pisi.api.finalize()
 
-# Add index and make it faster!
-if verbose: print 'Adding index'
+#FIXME: Must be executed once
+#Add index and make it faster!
+#if verbose: print 'Adding index'
 f = open(output, "a")
-f.write('CREATE INDEX package_index USING BTREE on packages(package);\n')
-f.write('CREATE INDEX repo_index USING BTREE on packages(repo);\nCOMMIT;\n')
+#f.write('CREATE INDEX package_index USING BTREE on packages(package);\n')
+#f.write('CREATE INDEX repo_index USING BTREE on packages(repo);\nCOMMIT;\n')
+f.write('COMMIT;\n')
 f.close()
 
 # Compress the SQL file.
