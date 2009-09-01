@@ -16,7 +16,7 @@
 \maketitle
 \section{Web alt bileşeni}
 \begin{enumerate}
-\item Apache paketi kurulumu sonrası:
+\item apache paketi kurulumu sonrası:
 \begin{itemize}
 \item Servis yöneticisinden apache sunucusunu başlatın. Aşağıda bulunan komutu kullanarak sunucunun başlatılmıl olduğunu gözlemleyin.
 \begin{verbatim}
@@ -29,6 +29,16 @@
 \end{verbatim}
 
 \end{itemize}
+
+\item mod\_php paketi kurulumu sonrası:
+
+\begin{itemize}
+ \item Contrib deposunda bulunan phpmyadmin paketini kurun.
+ \item Apache ve mysql sunucularını servis yöneticisinden başlatın.
+ \item http://localhost/phpmyadmin/ adresine firefox kullanarak girin. (Kullanıcı adı için root yazın, parola ise boş kalacak)
+ \item Mysql bağlantı sayfasınının sorunsuz açıldığını gözlemleyin.
+\end{itemize}
+
 
 \end{enumerate}
 
@@ -69,9 +79,6 @@ Aşağıda bulunan komutun man sayfasını düzgün açtığından emin olun.
 \begin{verbatim}
 # man myisampack 
 \end{verbatim}
-
-
-
 
 \end{enumerate}
 
