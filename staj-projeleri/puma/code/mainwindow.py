@@ -15,6 +15,7 @@
 import sys
 import os
 import shutil
+import subprocess
 
 # Qt Stuff
 from PyQt4 import QtGui
@@ -25,7 +26,7 @@ from PyKDE4.kdeui import KApplication, KAboutApplicationDialog, KSystemTrayIcon,
 from PyKDE4.kdecore import KAboutData, KCmdLineArgs
 
 from ui_mainwindow import Ui_MainWindow
-from globals import *
+from about import *
 
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
@@ -40,6 +41,16 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         size = self.geometry()
         self.move((screen.width() - size.width()) / 2, (screen.height() - size.height()) / 2)
 
+    def connect(self):
+        subprocess.call("/usr/sbin/br2684ctl -c 0 -b -a 8.35", shell=True)
+        sonuc = os.popen("/usr/sbin/adsl-start")
+        sonuc = sonuc.read().lower()
+        if "connected" in sonuc:
+            tray.showMessage((u"Puma Info"), (u"Connected"), QtGui.QSystemTrayIcon.Information, 3000)
+        else:
+            tray.showMessage((u"Puma Info"), (u"Connected failed"), QtGui.QSystemTrayIcon.Information, 3000)
+
+
     # for automatic connect
 #    def localstart(self):
  #       file = open("/etc/conf.d/local.start", "a")
@@ -49,6 +60,13 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
      #   file.write("/usr/sbin/adsl-start")
       #  file.close()
 
+    def disconnect(self):
+        result = os.popen("/usr/sbin/adsl-stop")
+        result = result.read().lower()
+        if "disconnected" in result:
+            tray.showMessage((u"Puma Info"), (u"Disconnected"), QtGui.QSystemTrayIcon.Information, 3000)
+        else:
+            tray.showMessage((u"Puma Info"), (u"Disconnected failed. You not connect anyway!"), QtGui.QSystemTrayIcon.Information, 3000)
 
 
     # pppoe.conf, chap-secrets and pap-secrets files
@@ -102,9 +120,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 
     @QtCore.pyqtSignature("bool")
     def on_pushButton_clicked(self):
-        os.system("/usr/sbin/br2684ctl -c 0 -b -a 8.35")
-        os.system("/usr/sbin/adsl-start")
-        tray.showMessage((u"Puma Info"), (u"Connected"), QtGui.QSystemTrayIcon.Information, 3000)
+        self.connect()
 
     @QtCore.pyqtSignature("bool")
     def on_actionExit_triggered(self):
@@ -131,8 +147,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 
     @QtCore.pyqtSignature("bool")
     def on_actionDisconnect_triggered(self):
-        os.system("/usr/sbin/adsl-stop")
-        tray.showMessage((u"Puma Info"), (u"Disconnected"), QtGui.QSystemTrayIcon.Information, 3000)
+        self.disconnect()
 
 aboutData = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
@@ -141,6 +156,7 @@ app = KApplication()
 app.setQuitOnLastWindowClosed(False)
 mw = MainWindow()
 mw.show()
+
 
 aboutData.setProgramIconName(":/icons/icons/manager.png")
 aboutData.addAuthor(ki18n("Cihan Okyay"), ki18n("Current Maintainer"), "okyaycihan@gmail.com")
