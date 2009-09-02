@@ -189,7 +189,7 @@ menu.addAction(exitAction)
 tray = KSystemTrayIcon(QtGui.QIcon(":/icons/icons/manager.png"))
 
 QtCore.QObject.connect(tray, QtCore.SIGNAL("activated(QSystemTrayIcon::ActivationReason)"), showw)
-#tray.setContextMenu(menu)
+tray.setContextMenu(menu)
 
 tray.show()
 import pumaicons_rc
