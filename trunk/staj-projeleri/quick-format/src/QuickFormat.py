@@ -44,15 +44,6 @@ class Ui_MainWindow(object):
         
         ui.progressBar.setMaximum(1)
         ui.lbl_progress = "Formatted Successfully!"
-#        print commands.getoutput("mkfs -t " + fs + " -Q /dev/sdb1")
-        
-#        proc = Popen("mkfs -t " + fs + " -Q /dev/sdb1", shell=True, stdout=PIPE,)
-#        output = proc.communicate()[0]
-#        print output
-#        
-##        while(True):
-##            print output
-
     
 
     def setupUi(self, MainWindow):
