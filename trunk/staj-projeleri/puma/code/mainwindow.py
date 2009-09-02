@@ -177,22 +177,21 @@ connectAction = QtGui.QAction(QtGui.QIcon(":/icons/icons/ok.png"), (u"Connect"),
 disconnectAction = QtGui.QAction(QtGui.QIcon(":/icons/icons/disconnet.png"), (u"Disconnect"), None)
 
 QtCore.QObject.connect(exitAction, QtCore.SIGNAL("triggered(bool)"), app.exit)
-QtCore.QObject.connect(connectAction, QtCore.SIGNAL("triggered(bool)"), connect)
-QtCore.QObject.connect(disconnectAction, QtCore.SIGNAL("triggered(bool)"), disconnect)
+QtCore.QObject.connect(connectAction, QtCore.SIGNAL("triggered(bool)"), mw.connect)
+QtCore.QObject.connect(disconnectAction, QtCore.SIGNAL("triggered(bool)"), mw.disconnect)
 
 menu.addAction(connectAction)
 menu.addAction(disconnectAction)
 menu.addSeparator()
 menu.addAction(exitAction)
 
-tray.setContextMenu(menu)
 
-from icon import *
 tray = KSystemTrayIcon(QtGui.QIcon(":/icons/icons/manager.png"))
-tray.show()
 
 QtCore.QObject.connect(tray, QtCore.SIGNAL("activated(QSystemTrayIcon::ActivationReason)"), showw)
+#tray.setContextMenu(menu)
 
+tray.show()
 import pumaicons_rc
 
 app.exec_()
