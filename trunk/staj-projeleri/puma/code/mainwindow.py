@@ -169,6 +169,24 @@ def showw(event):
             mw.hide()
 
 
+
+menu = QtGui.QMenu()
+
+exitAction = QtGui.QAction(QtGui.QIcon(":/icons/icons/exit.png"), (u"Exit"), None)
+connectAction = QtGui.QAction(QtGui.QIcon(":/icons/icons/ok.png"), (u"Connect"), None)
+disconnectAction = QtGui.QAction(QtGui.QIcon(":/icons/icons/disconnet.png"), (u"Disconnect"), None)
+
+QtCore.QObject.connect(exitAction, QtCore.SIGNAL("triggered(bool)"), app.exit)
+QtCore.QObject.connect(connectAction, QtCore.SIGNAL("triggered(bool)"), connect)
+QtCore.QObject.connect(disconnectAction, QtCore.SIGNAL("triggered(bool)"), disconnect)
+
+menu.addAction(connectAction)
+menu.addAction(disconnectAction)
+menu.addSeparator()
+menu.addAction(exitAction)
+
+tray.setContextMenu(menu)
+
 from icon import *
 tray = KSystemTrayIcon(QtGui.QIcon(":/icons/icons/manager.png"))
 tray.show()
