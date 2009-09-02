@@ -1,0 +1,275 @@
+<!DOCTYPE QtCreatorProject>
+<qtcreator>
+ <data>
+  <variable>RunConfiguration0-CommandLineArguments</variable>
+  <valuelist type="QVariantList" />
+ </data>
+ <data>
+  <variable>RunConfiguration0-ProFile</variable>
+  <value type="QString" >tv-manager2.pro</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-RunConfiguration.name</variable>
+  <value type="QString" >tv-manager2</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UseDyldImageSuffix</variable>
+  <value type="bool" >false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UseTerminal</variable>
+  <value type="bool" >false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserEnvironmentChanges</variable>
+  <valuelist type="QVariantList" />
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserSetName</variable>
+  <value type="bool" >false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-type</variable>
+  <value type="QString" >Qt4ProjectManager.Qt4RunConfiguration</value>
+ </data>
+ <data>
+  <variable>activeRunConfiguration</variable>
+  <value type="int" >0</value>
+ </data>
+ <data>
+  <variable>activebuildconfiguration</variable>
+  <value type="QString" >Debug</value>
+ </data>
+ <data>
+  <variable>buildConfiguration-Debug</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <value key="QtVersionId" type="int" >0</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildConfiguration-Release</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
+   <value key="QtVersionId" type="int" >0</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-buildstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >CVS_RSH=ssh</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-bHifBHjQzS,guid=d1110f1665bf900b54176cdf4a9bc31b</value>
+    <value type="QString" >DESKTOP_SESSION=default</value>
+    <value type="QString" >DESKTOP_STARTUP_ID=</value>
+    <value type="QString" >DISPLAY=:0.0</value>
+    <value type="QString" >DM_CONTROL=/var/run/xdmctl</value>
+    <value type="QString" >DVDCSS_CACHE=/home/albayenes/.dvdcss/</value>
+    <value type="QString" >DVDCSS_METHOD=key</value>
+    <value type="QString" >DVDCSS_RAW_DEVICE=/dev/rdvd</value>
+    <value type="QString" >DVDCSS_VERBOSE=0</value>
+    <value type="QString" >EDITOR=/bin/nano</value>
+    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-Yjidjp/S.gpg-agent:1306:1</value>
+    <value type="QString" >GS_LIB=/home/albayenes/.fonts</value>
+    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/albayenes/.gtkrc-2.0::/home/albayenes/.kde4/share/config/gtkrc-2.0</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/albayenes/.gtkrc::/home/albayenes/.kde4/share/config/gtkrc</value>
+    <value type="QString" >GUILE_LOAD_PATH=/usr/share/guile/1.8</value>
+    <value type="QString" >HOME=/home/albayenes</value>
+    <value type="QString" >HOSTNAME=albayenesUEKAE</value>
+    <value type="QString" >INFOPATH=/usr/share/info</value>
+    <value type="QString" >JAVA_HOME=/opt/sun-jre</value>
+    <value type="QString" >KDE_FULL_SESSION=true</value>
+    <value type="QString" >KDE_MULTIHEAD=false</value>
+    <value type="QString" >KDE_SESSION_UID=1000</value>
+    <value type="QString" >KDE_SESSION_VERSION=4</value>
+    <value type="QString" >LADSPA_PATH=/usr/lib/ladspa</value>
+    <value type="QString" >LANG=tr_TR.UTF-8</value>
+    <value type="QString" >LANGUAGE=</value>
+    <value type="QString" >LC_ALL=tr_TR.UTF-8</value>
+    <value type="QString" >LD_BIND_DIRECT=1</value>
+    <value type="QString" >LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
+    <value type="QString" >LESS=-R -M --shift 5</value>
+    <value type="QString" >LESSCOLOR=yes</value>
+    <value type="QString" >LESSOPEN=|lesspipe.sh %s</value>
+    <value type="QString" >LOGNAME=albayenes</value>
+    <value type="QString" >MANPATH=/usr/local/share/man:/usr/share/man:/opt/sun-jre/man:/usr/kde/4/share/man</value>
+    <value type="QString" >PAGER=/usr/bin/less</value>
+    <value type="QString" >PATH=/usr/qt/4/bin:/usr/qt/4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/bin:/opt/sun-jre/bin:/usr/kde/4/bin</value>
+    <value type="QString" >PKG_CONFIG_PATH=/usr/kde/4/lib/pkgconfig:/usr/qt/4/lib/pkgconfig</value>
+    <value type="QString" >PWD=/home/albayenes/Belgeler</value>
+    <value type="QString" >PYTHONSTARTUP=/etc/pythonstart</value>
+    <value type="QString" >QTDIR=/usr/qt/4</value>
+    <value type="QString" >QT_PLUGIN_PATH=/home/albayenes/.kde4/lib/kde4/plugins/:/usr/kde/4/lib/kde4/plugins/</value>
+    <value type="QString" >SANE_CONFIG_DIR=/etc/sane.d</value>
+    <value type="QString" >SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/1353,unix/unix:/tmp/.ICE-unix/1353</value>
+    <value type="QString" >SHELL=/bin/bash</value>
+    <value type="QString" >SHLVL=2</value>
+    <value type="QString" >SSH_AGENT_PID=1281</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-AFqYdI1221/agent.1221</value>
+    <value type="QString" >STRIGI_PLUGIN_PATH=/usr/lib/strigi:/usr/kde/4/lib/strigi</value>
+    <value type="QString" >USER=albayenes</value>
+    <value type="QString" >WINDOWPATH=7</value>
+    <value type="QString" >XCURSOR_PATH=/usr/kde/4/share/icons::~/.icons:/usr/share/icons:/usr/share/pixmaps:/usr/X11R6/lib/X11/icons</value>
+    <value type="QString" >XCURSOR_THEME=Oxygen_Black</value>
+    <value type="QString" >XDG_DATA_DIRS=/usr/kde/4/share:/usr/share</value>
+    <value type="QString" >XDG_SESSION_COOKIE=ab6d1794aad3830f01284d064a9b89a5-1251722010.986180-424018961</value>
+    <value type="QString" >XDM_MANAGED=method=classic</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >/home/albayenes/programming/projects/tvManager/tv-manager2/tv-manager2.pro</value>
+    <value type="QString" >-spec</value>
+    <value type="QString" >linux-g++</value>
+    <value type="QString" >-r</value>
+    <value type="QString" >CONFIG+=debug</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >/usr/qt/4/bin/qmake</value>
+   <value key="abstractProcess.enabled" type="bool" >false</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/albayenes/programming/projects/tvManager/tv-manager2</value>
+   <value key="buildConfiguration" type="int" >2</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-buildstep1</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList" >
+    <value type="QString" >CVS_RSH=ssh</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-bHifBHjQzS,guid=d1110f1665bf900b54176cdf4a9bc31b</value>
+    <value type="QString" >DESKTOP_SESSION=default</value>
+    <value type="QString" >DESKTOP_STARTUP_ID=</value>
+    <value type="QString" >DISPLAY=:0.0</value>
+    <value type="QString" >DM_CONTROL=/var/run/xdmctl</value>
+    <value type="QString" >DVDCSS_CACHE=/home/albayenes/.dvdcss/</value>
+    <value type="QString" >DVDCSS_METHOD=key</value>
+    <value type="QString" >DVDCSS_RAW_DEVICE=/dev/rdvd</value>
+    <value type="QString" >DVDCSS_VERBOSE=0</value>
+    <value type="QString" >EDITOR=/bin/nano</value>
+    <value type="QString" >GPG_AGENT_INFO=/tmp/gpg-Yjidjp/S.gpg-agent:1306:1</value>
+    <value type="QString" >GS_LIB=/home/albayenes/.fonts</value>
+    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/albayenes/.gtkrc-2.0::/home/albayenes/.kde4/share/config/gtkrc-2.0</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/albayenes/.gtkrc::/home/albayenes/.kde4/share/config/gtkrc</value>
+    <value type="QString" >GUILE_LOAD_PATH=/usr/share/guile/1.8</value>
+    <value type="QString" >HOME=/home/albayenes</value>
+    <value type="QString" >HOSTNAME=albayenesUEKAE</value>
+    <value type="QString" >INFOPATH=/usr/share/info</value>
+    <value type="QString" >JAVA_HOME=/opt/sun-jre</value>
+    <value type="QString" >KDE_FULL_SESSION=true</value>
+    <value type="QString" >KDE_MULTIHEAD=false</value>
+    <value type="QString" >KDE_SESSION_UID=1000</value>
+    <value type="QString" >KDE_SESSION_VERSION=4</value>
+    <value type="QString" >LADSPA_PATH=/usr/lib/ladspa</value>
+    <value type="QString" >LANG=tr_TR.UTF-8</value>
+    <value type="QString" >LANGUAGE=</value>
+    <value type="QString" >LC_ALL=tr_TR.UTF-8</value>
+    <value type="QString" >LD_BIND_DIRECT=1</value>
+    <value type="QString" >LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
+    <value type="QString" >LESS=-R -M --shift 5</value>
+    <value type="QString" >LESSCOLOR=yes</value>
+    <value type="QString" >LESSOPEN=|lesspipe.sh %s</value>
+    <value type="QString" >LOGNAME=albayenes</value>
+    <value type="QString" >MANPATH=/usr/local/share/man:/usr/share/man:/opt/sun-jre/man:/usr/kde/4/share/man</value>
+    <value type="QString" >PAGER=/usr/bin/less</value>
+    <value type="QString" >PATH=/usr/qt/4/bin:/usr/qt/4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/bin:/opt/sun-jre/bin:/usr/kde/4/bin</value>
+    <value type="QString" >PKG_CONFIG_PATH=/usr/kde/4/lib/pkgconfig:/usr/qt/4/lib/pkgconfig</value>
+    <value type="QString" >PWD=/home/albayenes/Belgeler</value>
+    <value type="QString" >PYTHONSTARTUP=/etc/pythonstart</value>
+    <value type="QString" >QTDIR=/usr/qt/4</value>
+    <value type="QString" >QT_PLUGIN_PATH=/home/albayenes/.kde4/lib/kde4/plugins/:/usr/kde/4/lib/kde4/plugins/</value>
+    <value type="QString" >SANE_CONFIG_DIR=/etc/sane.d</value>
+    <value type="QString" >SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/1353,unix/unix:/tmp/.ICE-unix/1353</value>
+    <value type="QString" >SHELL=/bin/bash</value>
+    <value type="QString" >SHLVL=2</value>
+    <value type="QString" >SSH_AGENT_PID=1281</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-AFqYdI1221/agent.1221</value>
+    <value type="QString" >STRIGI_PLUGIN_PATH=/usr/lib/strigi:/usr/kde/4/lib/strigi</value>
+    <value type="QString" >USER=albayenes</value>
+    <value type="QString" >WINDOWPATH=7</value>
+    <value type="QString" >XCURSOR_PATH=/usr/kde/4/share/icons::~/.icons:/usr/share/icons:/usr/share/pixmaps:/usr/X11R6/lib/X11/icons</value>
+    <value type="QString" >XCURSOR_THEME=Oxygen_Black</value>
+    <value type="QString" >XDG_DATA_DIRS=/usr/kde/4/share:/usr/share</value>
+    <value type="QString" >XDG_SESSION_COOKIE=ab6d1794aad3830f01284d064a9b89a5-1251722010.986180-424018961</value>
+    <value type="QString" >XDM_MANAGED=method=classic</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList" >
+    <value type="QString" >-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString" >/usr/bin/make</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/albayenes/programming/projects/tvManager/tv-manager2</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-cleanstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-buildstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
+   <value key="buildConfiguration" type="int" >0</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-buildstep1</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-cleanstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfigurations</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >Debug</value>
+   <value type="QString" >Release</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>buildstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+   <value key="mkspec" type="QString" ></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildstep1</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildsteps</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >trolltech.qt4projectmanager.qmake</value>
+   <value type="QString" >trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>cleanstep0</variable>
+  <valuemap type="QVariantMap" >
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" ></value>
+   <value key="clean" type="bool" >true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>cleansteps</variable>
+  <valuelist type="QVariantList" >
+   <value type="QString" >trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>defaultFileEncoding</variable>
+  <value type="QByteArray" >UTF-8</value>
+ </data>
+ <data>
+  <variable>project</variable>
+  <valuemap type="QVariantMap" />
+ </data>
+</qtcreator>
