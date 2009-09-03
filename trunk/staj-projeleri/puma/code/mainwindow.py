@@ -48,7 +48,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         if "connected" in sonuc:
             tray.showMessage((u"Puma Info"), (u"Connected"), QtGui.QSystemTrayIcon.Information, 3000)
         else:
-            tray.showMessage((u"Puma Info"), (u"Connected failed"), QtGui.QSystemTrayIcon.Information, 3000)
+            tray.showMessage((u"Puma Info"), (u"Connect failed"), QtGui.QSystemTrayIcon.Information, 3000)
 
 
     # for automatic connect
@@ -66,7 +66,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         if "disconnected" in result:
             tray.showMessage((u"Puma Info"), (u"Disconnected"), QtGui.QSystemTrayIcon.Information, 3000)
         else:
-            tray.showMessage((u"Puma Info"), (u"Disconnected failed. You not connect anyway!"), QtGui.QSystemTrayIcon.Information, 3000)
+            tray.showMessage((u"Puma Info"), (u"Disconnect failed. You not connect anyway!"), QtGui.QSystemTrayIcon.Information, 3000)
 
 
     # pppoe.conf, chap-secrets and pap-secrets files
@@ -123,16 +123,16 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.connect()
 
     @QtCore.pyqtSignature("bool")
+    def on_pushButton_2_clicked(self):
+        self.close()
+
+    @QtCore.pyqtSignature("bool")
     def on_actionExit_triggered(self):
         app.exit()
 
     @QtCore.pyqtSignature("bool")
     def on_actionAbout_triggered(self):
         KAboutApplicationDialog(aboutData, self).show()
-
-    @QtCore.pyqtSignature("bool")
-    def on_actionpushButton_2_clicked(self):
-        self.close()
 
     @QtCore.pyqtSignature("bool")
     def on_actionSave_triggered(self):
@@ -148,6 +148,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     @QtCore.pyqtSignature("bool")
     def on_actionDisconnect_triggered(self):
         self.disconnect()
+
 
 aboutData = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
