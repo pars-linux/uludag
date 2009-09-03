@@ -50,14 +50,14 @@ class Utils:
 class Create:
     def __init__(self, src, dst):
         self.utils = Utils()
-        
+
         if dst == None:
             self.partutils = PartitionUtils()
 
             if not self.partutils.detectRemovableDrives():
                 self.utils.cprint("USB device not found.", "red")
                 sys.exit()
-                
+
             else:
                 device, dst = self.__askDestination()
 
@@ -65,9 +65,6 @@ class Create:
                     cmd = "mount -t vfat %s %s" % (device, MOUNT_USB)
                     runCommand(cmd)
                     dst = MOUNT_USB
-
-                print("dst: %s" % dst)
-                sys.exit()
 
         if self.__checkSource(src) and self.__checkDestination(dst):
             self.__createImage(src, dst)
@@ -103,7 +100,7 @@ class Create:
 
     def __askDestination(self):
         self.drives = self.partutils.returnDrives()
-        
+
         if len(self.drives) == 1:
             # FIX ME: If disk is unmounted, you should mount it before return process!
             # It returns mount point directory.
@@ -147,7 +144,7 @@ class Create:
 
             except ValueError:
                self.cprint("You must enter a number between 0 - %d!" % drive_no + 1, "red")
-               
+
                return False
 
         destination = self.drives[device]["mount"]
@@ -211,7 +208,11 @@ USB disk informations:
             return False
 
         self.utils.cprint("Copying syslinux files..", "yellow")
-        createConfigFile(dst)
+        try:
+            createConfigFile(dst)
+
+        except:
+            pass
 
         self.utils.cprint("Creating ldlinux.sys..", "yellow")
         # Shit! There's upstream bug on mtools..
@@ -237,7 +238,7 @@ USB disk informations:
 
     def __copyImage(self, src, dst):
         # create required directories
-        createUSBDIRS(dst)
+        createUSBDirs(dst)
 
         # Pardus Image
         self.utils.cprint("Copying pardus.img to %s.." % dst, "green")
@@ -256,4 +257,8 @@ USB disk informations:
         for file in glob.glob("%s/repo/*" % src):
             pisi = os.path.split(file)[1]
             self.utils.cprint("Copying: ", "green", True)
-            self.utils.cprint(copyPisiPackage(file, dst, pisi), "brightyellow")
+            if os.path.exists("%s/repo/%s" % (dst, pisi)):
+                self.utils.cprint("%s is already exist." % pisi, "brightyellow")
+
+            else:
+                self.utils.cprint(copyPisiPackage(file, dst, pisi), "brightyellow")
