@@ -67,6 +67,7 @@ class Create:
                     dst = MOUNT_USB
 
         if self.__checkSource(src) and self.__checkDestination(dst):
+            createUSBDirs(dst)
             self.__createImage(src, dst)
 
         # FIX ME: Is it required?
@@ -212,6 +213,7 @@ USB disk informations:
             createConfigFile(dst)
 
         except:
+            # Files are already exists..
             pass
 
         self.utils.cprint("Creating ldlinux.sys..", "yellow")
@@ -237,9 +239,6 @@ USB disk informations:
         return True
 
     def __copyImage(self, src, dst):
-        # create required directories
-        createUSBDirs(dst)
-
         # Pardus Image
         self.utils.cprint("Copying pardus.img to %s.." % dst, "green")
         shutil.copy('%s/pardus.img' % src, '%s/pardus.img' % dst)
