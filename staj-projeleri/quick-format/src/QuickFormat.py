@@ -19,7 +19,6 @@ fileSystems = {"Extended 4":"ext4",
                "NTFS":"ntfs",
                "Reiser FS":"reiserfs",
                "XFS":"xfs"}
-
     
 class Ui_MainWindow(object):
     
