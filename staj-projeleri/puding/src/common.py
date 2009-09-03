@@ -80,7 +80,7 @@ def createDirs():
 
 def createUSBDirs(dst):
     dirs = ("repo", "boot/syslinux")
-    
+
     for d in dirs:
         path = "%s/%s" % (dst, d)
         if not os.path.exists(path):
@@ -103,13 +103,13 @@ class PartitionUtils:
 
     def getDevice(self, device):
         dev_obj = self.bus.get_object("org.freedesktop.Hal", device)
-        
+
         return dbus.Interface(dev_obj, "org.freedesktop.Hal.Device")
-    
+
     def addDevice(self, dev, parent = None):
         mount = str(dev.GetProperty("volume.mount_point"))
         device = str(dev.GetProperty("block.device"))
-        
+
         self.drives[device] = {
             "label" : str(dev.GetProperty("volume.label")).replace(" ", "_"),
             "fstype"   : str(dev.GetProperty("volume.fstype")),
@@ -121,14 +121,14 @@ class PartitionUtils:
             "device"   : device,
             "parent"   : parent.GetProperty("block.device")
             }
-    
+
     def detectRemovableDrives(self):
         hal_obj = self.bus.get_object("org.freedesktop.Hal",
                                  "/org/freedesktop/Hal/Manager")
         hal = dbus.Interface(hal_obj, "org.freedesktop.Hal.Manager")
-    
+
         devices = hal.FindDeviceByCapability("storage")
-    
+
         for device in devices:
             dev = self.getDevice(device)
 
@@ -140,10 +140,10 @@ class PartitionUtils:
 
                 else:
                     children = hal.FindDeviceStringMatch("info.parent", device)
-    
+
                     for child in children:
                         child = self.getDevice(child)
-    
+
                         if child.GetProperty("block.is_volume"):
                             self.addDevice(child, parent = dev)
 
