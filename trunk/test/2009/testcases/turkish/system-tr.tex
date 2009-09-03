@@ -23,7 +23,21 @@
 
 
 \section{Base alt Bileşeni}
+
 \begin{enumerate}
+\item dnsmasq paketi kurulumu sonrası:
+
+\begin{itemize}
+ \item Service yöneticinizden dnsmasq servisini başlatın.
+ \item Ağ yöneticisinden bağlantınızı durdurun ve yeniden başlatın.
+ \item Aşağıdaki komutu çalıştırın ve sorunsuz bir şekilde sorfu zamanını döndürdüğünü gözlemleyin.
+\begin{verbatim}
+ # dig http://archlinux.org | grep "Query time"
+\end{verbatim}
+
+\end{itemize}
+
+
 \item file paketi kurulumu sonrası:
 
 \begin{verbatim}
