@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'usb_format.ui'
-#
-# Created: Tue Sep  1 13:05:58 2009
-#      by: PyQt4 UI code generator 4.5.2
-#
-# WARNING! All changes made in this file will be lost!
+# Author: Renan Cakirerk <pardus@cakirerk.org>
 
 from PyQt4 import QtCore, QtGui
 import sys,os
 from subprocess import Popen, PIPE, STDOUT, call
-
+from time import time
+from PyQt4.QtCore import *
 
 fileSystems = {"Extended 4":"ext4", 
                "Extended 3":"ext3",
@@ -22,29 +18,6 @@ fileSystems = {"Extended 4":"ext4",
     
 class Ui_MainWindow(object):
     
-    def addFileSystems(self):
-        for fs in fileSystems:
-            ui.cmb_fileSystem.addItem(fs)
-            
-    def formatDisk(self): 
-        print "deem"
-       
-        fs = fileSystems[str(ui.cmb_fileSystem.itemText(ui.cmb_fileSystem.currentIndex()))]
-        if fs == "ntfs":
-            option = "-Q"
-        else:
-            option = ""
-        
-        ui.progressBar.setMaximum(0)
-        ui.lbl_progress = "Please wait while formatting..."
-        
-        proc = Popen("mkfs -t " + fs + " " + option + " /dev/sdb1", shell=True, stdout=PIPE,)
-        print proc.communicate()[0]
-        
-        ui.progressBar.setMaximum(1)
-        ui.lbl_progress = "Formatted Successfully!"
-    
-
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(270, 278)
@@ -105,11 +78,19 @@ class Ui_MainWindow(object):
         self.lineEdit.setObjectName("lineEdit")
         self.verticalLayout_2.addWidget(self.lineEdit)
         self.verticalLayout.addWidget(self.grpBoxDeviceName)
+        
+
         self.lbl_progress = QtGui.QLabel(self.centralwidget)
+        font = QtGui.QFont()
+        font.setWeight(50)
+        font.setBold(False)
+        self.lbl_progress.setFont(font)
+        
         self.lbl_progress.setMaximumSize(QtCore.QSize(16777215, 20))
         self.lbl_progress.setAlignment(QtCore.Qt.AlignCenter)
         self.lbl_progress.setObjectName("lbl_progress")
         self.verticalLayout.addWidget(self.lbl_progress)
+        
         self.progressBar = QtGui.QProgressBar(self.centralwidget)
         self.progressBar.setMinimumSize(QtCore.QSize(0, 0))
         self.progressBar.setMaximumSize(QtCore.QSize(16777215, 20))
@@ -142,8 +123,10 @@ class Ui_MainWindow(object):
         MainWindow.setMenuBar(self.menubar)
 
         self.retranslateUi(MainWindow)
-        QtCore.QObject.connect(self.btn_format, QtCore.SIGNAL("clicked()"), self.formatDisk)
+        QtCore.QObject.connect(self.btn_format, QtCore.SIGNAL("clicked()"), quickFormat.start)
         QtCore.QObject.connect(self.btn_cancel, QtCore.SIGNAL("clicked()"), MainWindow.close)
+        QtCore.QObject.connect(quickFormat,SIGNAL("formatStarted()"),formatStarted)
+        QtCore.QObject.connect(quickFormat,SIGNAL("formatSuccessful()"),formatSuccessful)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -155,15 +138,63 @@ class Ui_MainWindow(object):
         self.btn_format.setText(QtGui.QApplication.translate("MainWindow", "Format", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_cancel.setText(QtGui.QApplication.translate("MainWindow", "Cancel", None, QtGui.QApplication.UnicodeUTF8))
 
+
+class QuickFormat(QtCore.QThread):
+
+    def __init__(self):
+        QtCore.QThread.__init__(self)
+
+    def addFileSystems(self):
+        for fs in fileSystems:
+            ui.cmb_fileSystem.addItem(fs)
+            
+    def formatDisk(self): 
+       
+        fs = fileSystems[str(ui.cmb_fileSystem.itemText(ui.cmb_fileSystem.currentIndex()))]
+        if fs == "ntfs":
+            option = "-Q"
+        else:
+            option = ""
+        
+        proc = Popen("mkfs -t " + fs + " " + option + " /dev/sdb1", shell=True, stdout=PIPE,)
+        print proc.communicate()[0]
+    
+    def run(self):
+        self.emit(SIGNAL("formatStarted()"))
+        self.formatDisk()
+        self.emit(SIGNAL("formatEnded()"))
+
+
+
+
+def formatStarted():
+    ui.btn_format.setDisabled(True)
+    ui.progressBar.setMaximum(0)
+    ui.lbl_progress.setText("Please wait while formatting...") 
+
+def formatSuccessful():
+    ui.progressBar.setMaximum(1)
+    ui.progressBar.setValue(1)
+    ui.lbl_progress.setText("Format Completed Successfully")
+    ui.btn_format.setDisabled(False)
+    
+def formatFailed():
+    ui.progressBar.setMaximum(1)
+    ui.progressBar.setValue(0)
+    ui.lbl_progress.setText("Device is in use. Unmount it and try again.") 
+
+
 if __name__ == "__main__":
+    
+    quickFormat = QuickFormat()
+
     app = QtGui.QApplication(sys.argv)
     MainWindow = QtGui.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
-    ui.addFileSystems()
-
+    
+    quickFormat.addFileSystems()
     
     MainWindow.show()
-        
     
     sys.exit(app.exec_())
