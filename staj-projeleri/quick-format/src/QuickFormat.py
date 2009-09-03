@@ -8,6 +8,13 @@ from subprocess import Popen, PIPE, STDOUT, call
 from time import time
 from PyQt4.QtCore import *
 
+import comar
+
+import ReReadPartitionTable
+
+
+
+
 fileSystems = {"Extended 4":"ext4", 
 			   "Extended 3":"ext3",
 			   "Extended 2":"ext2",
@@ -186,6 +193,7 @@ class QuickFormat(QtCore.QThread):
 	def run(self):
 		self.emit(SIGNAL("formatStarted()"))
 		self.formatDisk()
+		ReReadPartitionTable.reReadPartitionTable(deviceName[:8])
 		self.emit(SIGNAL("formatSuccessful()"))
 
 
