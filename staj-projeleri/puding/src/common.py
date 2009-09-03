@@ -47,9 +47,6 @@ def copyPisiPackage(file, dst, pisi):
     return pisi
 
 def createConfigFile(dst):
-    # Her seyden once syslinux dizinini olusturmak gerek
-    os.mkdir('%s/boot/syslinux' % dst)
-
     syslinux_conf_file = '%s/syslinux.cfg.pardus' % SHARE
 
     shutil.copy('%s/gfxboot.com' % SYSLINUX,
