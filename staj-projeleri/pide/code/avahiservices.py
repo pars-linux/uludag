@@ -17,6 +17,7 @@ C_ADDRESS, C_PORT, C_BARE_NAME, C_TXT = range(9)
 class Zeroconf:
     def __init__(self, name, host, port):
         self.avahi = None
+        self.debugmode = False
         self.domain = None   # specific domain to browse
         self.stype = '_ssh._tcp'
         self.port = port     # listening port that gets announced
@@ -35,6 +36,8 @@ class Zeroconf:
         self.contacts = {}    # all current local contacts with data
         self.entrygroup = None
         self.connected = False
+        self.users = []
+        self.NetworkUsers = []
         self.announced = False
         self.invalid_self_contact = {}
 
@@ -48,7 +51,8 @@ class Zeroconf:
             self.disconnect()
 
     def new_service_callback(self, interface, protocol, name, stype, domain, flags):
-        self.log.debug('Found service %s in domain %s on %i.%i.' % (name, domain, interface, protocol))
+        if self.debugmode:
+            self.log.debug('Found service %s in domain %s on %i.%i.' % (name, domain, interface, protocol))
         if not self.connected:
             return
 
@@ -59,7 +63,8 @@ class Zeroconf:
 
 
     def remove_service_callback(self, interface, protocol, name, stype, domain, flags):
-        self.log.debug('Service %s in domain %s on %i.%i disappeared.' % (name, domain, interface, protocol))
+        if self.debugmode:
+            self.log.debug('Service %s in domain %s on %i.%i disappeared.' % (name, domain, interface, protocol))
         if not self.connected:
             return
         if name != self.name:
@@ -105,8 +110,10 @@ class Zeroconf:
         return txt_dict
 
     def service_resolved_callback(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
-        self.log.debug('Service data for service %s in domain %s on %i.%i:' % (name, domain, interface, protocol))
-        self.log.debug('Host %s (%s), port %i, TXT data: %s' % (host, address, port, self.txt_array_to_dict(txt)))
+        if self.debugmode:
+            self.log.debug('Service data for service %s in domain %s on %i.%i:' % (name, domain, interface, protocol))
+            self.log.debug('Host %s (%s), port %i, TXT data: %s' % (host, address, port, self.txt_array_to_dict(txt)))
+        self.networkUsers(name, address)
         if not self.connected:
             return
         bare_name = name
@@ -118,6 +125,12 @@ class Zeroconf:
             self.contacts[name] = (name, domain, interface, protocol, host, address, port, bare_name, txt)
         else:
             self.invalid_self_contact[name] = (name, domain, interface, protocol, host, address, port, bare_name, txt)
+
+    def networkUsers(self, name, address):
+        self.users.append('%s (%s)' % (name, address))
+        self.NetworkUsers = self.users
+        print self.NetworkUsers
+
 
     def service_resolved_all_callback(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
         if not self.connected:
