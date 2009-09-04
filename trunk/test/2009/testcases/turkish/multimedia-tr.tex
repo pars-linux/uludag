@@ -117,7 +117,6 @@ Aşağıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
 
 \end{enumerate}
 
-
 \section{Converter alt Bileşeni}
 \begin{enumerate}
  \item Aşağıdaki paketler sadece kurulum testine tabidir:
@@ -290,7 +289,6 @@ Lake_dance_XviD.AVI
 \end{itemize}
 \item vobcopy paketi kurulımu sonrası:
 
-
 \end{enumerate}
 \section{Graphics alt Bileşeni}
 \begin{enumerate}
@@ -353,11 +351,67 @@ Aşağıda bulunan komutlaruın düzgün bir şekilde çalıştırğını gözle
 # gwenview test.png
 \end{verbatim}
 
-
-
 \end{enumerate}
+
 \section{Editor alt Bileşeni}
+
 \begin{enumerate}
+
+\item lilypond paketi kurulumu sonrası:
+
+  multimedia-tr.pdf frescobaldi testini gerçaklaştiriniz.
+
+\item lilycomp paketi kurulumu sonrası:
+   
+ Kmenüden uygulamayı çalıştırın ve uygulamanın yukarısında bulunan notalara basın ve alt bölümde bu notaların kodlarının basıldığını gözlemleyin.
+
+\item kino paketi kurulumu sonrası:
+
+  Kmenüden uygulamayı çalıştırın ve aşağıda bulunan dosyayı açın ve trim butonuna basarak çeşitli noktalardan kesmeye çalışın.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/sample.dv
+\end{verbatim}
+
+
+\item kid3 paketi kurulumu sonrası:
+
+Kmenüden uygulamayı çalıştırın ve aşağıda bulunan dosyayı Dosya $\rightarrow$ Aç yolunu izleyerek açın ve tag bölümünü editlemeye çalışın, editleyebildiğinizi gözlemleyin.
+
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/linux.mp3 
+\end{verbatim}
+
+
+
+ 
+ \item blender paketi kurulumu sonrası:
+
+  Kmenü üzerinden uygulamayı açın ve masaüstü ikonunun eksik olmadığını ve düzgün bir şekilde açıldığını gözlemleyin. 
+
+ \item dvd-slideshow paketi kurulumu sonrası:
+
+Aşağıdaki komutları çalıştırın ve bir slideshow oluştuğunu gözlemleyin.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/image.tar.gz
+ # dir2slideshow -n test -s "slide test" image
+ # dvd-slideshow image.txt
+ # mplayer image.vob 
+\end{verbatim}
+\item kdenlive paketi kurulumu sonrası:
+
+Kdenlive uygulamasını açın ve Projeler $\rightarrow$ Klip ekle yolunu izleyerek aşağıda bulunan dosyayı ekleyin ve çalıştırın sesinin ve görüntüsünün sorunsuz olduğunu gözlemleyin.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
+\end{verbatim}
+
+\item kiconedit paketi kurulumu sonrası:
+
+Menüden uygulamayı açın, Dosya $\rightarrow$ Aç yolunu izleyerek /usr/kde/4/share/apps/amarok/icons/hicolor/16x16/actions/ dizini altından bir ikonu açın ve düzgün bir şekilde açılabildiğini gözlemleyin.
+
+\item dvdauthor paketi kurulumu sonrası:
+
+multimedia-tr.pdf dvd-slideshow ve kdenlive testini gerçekleştiriniz.
+
  \item avidemux-common paketi kurulumu sonrası:
 
  multimedia-tr.pdf avidemux testini gerçekleştiriniz.
