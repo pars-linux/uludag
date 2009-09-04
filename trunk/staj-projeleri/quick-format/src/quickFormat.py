@@ -9,11 +9,8 @@ from time import time
 from PyQt4.QtCore import *
 
 import comar
-
-import ReReadPartitionTable
-
-
-
+import refreshPartitionTable
+import diskTools
 
 fileSystems = {"Extended 4":"ext4", 
 			   "Extended 3":"ext3",
@@ -150,6 +147,10 @@ class QuickFormat(QtCore.QThread):
 	def __init__(self):
 		QtCore.QThread.__init__(self)
 
+	def isDeviceMounted(self):
+		for mountPoint in dt.mountList():
+			if deviceName==mountPoint[0]:
+				return True
 
 	def addFileSystems(self):
 		
@@ -171,7 +172,18 @@ class QuickFormat(QtCore.QThread):
 			
 	def formatDisk(self): 
   
-		self.fs = fileSystems[str(ui.cmb_fileSystem.itemText(ui.cmb_fileSystem.currentIndex()))]
+		self.fs = fileSystems[str(
+								ui.cmb_fileSystem.itemText(
+															ui.cmb_fileSystem.currentIndex()))]
+		
+		# if device is mounted then unmount it
+		if self.isDeviceMounted()==True:
+			try:
+				dt.umount(deviceName)
+			except:
+				print "Cannot unmount device"
+
+		
 		if self.fs == "ntfs":
 			option = "-Q"
 		else:
@@ -193,7 +205,7 @@ class QuickFormat(QtCore.QThread):
 	def run(self):
 		self.emit(SIGNAL("formatStarted()"))
 		self.formatDisk()
-		ReReadPartitionTable.reReadPartitionTable(deviceName[:8])
+		refreshPartitionTable.refreshPartitionTable(deviceName[:8])
 		self.emit(SIGNAL("formatSuccessful()"))
 
 
@@ -219,7 +231,6 @@ def formatFailed():
 
 if __name__ == "__main__":
 	
-	
 	deviceName = "/dev/sdb1" #sys.argv[1]
 	
 	quickFormat = QuickFormat()
@@ -232,6 +243,10 @@ if __name__ == "__main__":
 	quickFormat.addFileSystems()
 	ui.txt_volumeLabel.setText("MyDisk")
 	
+	dt = diskTools.DiskTools()
+#	for disk in dt.deviceList():
+#		for partition in dt.partitionList(disk):
+#			print partition
 	
 	MainWindow.show()
 	

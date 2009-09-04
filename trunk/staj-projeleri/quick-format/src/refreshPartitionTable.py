@@ -77,7 +77,7 @@ def BLKRRPART():
     return _IO(0x12, 95)
 # -------------------------------------------
 
-def reReadPartitionTable(device):
+def refreshPartitionTable(device):
     """Re-Read partition table on device."""
 
     try:
@@ -121,8 +121,8 @@ def main():
         print('Usage: %s device1 [device2] [device3] ...'%(sys.argv[0]))
     else:
         for dev in sys.argv[1:]:
-            reReadPartitionTable(dev)
-
+            refreshPartitionTable(dev)
 
 if __name__ == "__main__":
     main()
+    
