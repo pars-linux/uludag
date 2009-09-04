@@ -14,7 +14,7 @@
 # Comar
 import comar
 
-class Interface:
+class DiskTools:
     def __init__(self):
         self.link = comar.Link()
         self.link.setLocale()
@@ -101,6 +101,4 @@ class Interface:
 
     def deneme(self):
 		self.link.Disk.Manager[self.package].deneme()
-
-interface = Interface()
-interface.deneme()
+		
