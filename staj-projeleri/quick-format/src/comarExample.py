@@ -99,6 +99,8 @@ class Interface:
     def umount(self, device):
         self.link.Disk.Manager[self.package].umount(device)
 
+    def deneme(self):
+		self.link.Disk.Manager[self.package].deneme()
 
 interface = Interface()
-interface.umount("/dev/sdb1")
+interface.deneme()
