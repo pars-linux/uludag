@@ -10,8 +10,7 @@ Simple command-line interface to bugzilla to allow:
 
 Requirements
 ------------
- - Python 2.4 or later
- - ElementTree (only for Python 2.4)
+ - Python 2.5 or later
 
 Classes
 -------
@@ -20,7 +19,7 @@ Classes
 
 """
 
-__version__ = '0.8.0_rc2'
+__version__ = '0.8.0'
 __author__ = 'Alastair Tse <http://www.liquidx.net/>'
 __contributors__ = ['Santiago M. Mola <cooldwind@gmail.com']
 __revision__ = '$Id: $'
