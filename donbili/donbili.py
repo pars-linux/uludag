@@ -30,17 +30,24 @@ class Hardware(object):
                          "USB Devices", \
                          "Driver Informations", \
                          "Sound Devices", \
-                         "Printing Informations", \
+                         "Video Devices", \
+                         "Printer Configuration", \
+                         "Printer Queues", \
                          "X11 Server Informations", \
                          "Video Devices", \
                          "Scanner Devices", \
                          "Disk Usage", \
                          "Memory Usage", \
+                         "COMAR Log", \
+                         "Kernel Log", \
                          "KDE4 Informations", \
                          "YALI Installation Log"]
 
         # Mapping for final report generation
         self.layout = dict(zip(self.sections, map(lambda x: "_get_%s" % x.lower().replace(" ", "_"), self.sections)))
+
+        # Set today's date
+        self.today = time.strftime("%F")
 
 
     # Private methods
@@ -50,9 +57,39 @@ class Hardware(object):
         return "%s-%s-%s" % ("donbili", time.strftime("%Y%m%d"), \
                              hashlib.sha1(open(tmpfile, "r").read()).hexdigest()[:10])
 
-    def __gather_output(self, cmd, params=[]):
+    def __gather_output(self, cmd, params=[], excludes=[], includes=[], date=False, indent=False):
         """Capture the output of cmd and return it as a string."""
-        return os.popen("%s %s" % (cmd, " ".join(params))).read().rstrip()
+
+        def matches(text, date, i_patterns, e_patterns):
+            result = True
+            if date and not text.startswith(self.today):
+                return False
+
+            for p in i_patterns:
+                if p in text:
+                    break
+                result = False
+
+            for p in e_patterns:
+                if p in text:
+                    result = False
+                    break
+
+            return result
+
+        output = ind = ""
+
+        if os.path.exists(cmd) and not os.access(cmd, os.X_OK):
+            # Assume that we're trying to read the contents of cmd, not to execute it
+            output = open(cmd, "r").read().strip().split("\n")
+        else:
+            # Run it and get the output
+            output = os.popen("%s %s" % (cmd, " ".join(params))).read().rstrip().split("\n")
+
+        if indent:
+            ind = "  "
+
+        return "\n".join(["%s%s" % (ind,l) for l in output if matches(l, date, includes, excludes)])
 
 
     def __format_msg(self, msg, sep, up=False):
@@ -66,7 +103,7 @@ class Hardware(object):
     def __format_section(self, d):
         section = ""
         if d:
-            if isinstance(d, str):
+            if isinstance(d, str) or isinstance(d, unicode):
                 # Directly dump it
                 section += "%s\n" % d
             elif isinstance(d, dict):
@@ -77,7 +114,7 @@ class Hardware(object):
                     elif isinstance(d[k], str):
                         section += "%s%s : %s\n" % (k, ((max_section_name-len(k))*' '), d[k])
                     elif isinstance(d[k], list):
-                        section += "%s%s\n\t%s" % (k, ((max_section_name-len(k))*' '), "\n\t".join(d[k]))
+                        section += "%s%s\n  %s" % (k, ((max_section_name-len(k))*' '), "\n  ".join(d[k]))
                         section += "\n"
         return section
 
@@ -88,7 +125,8 @@ class Hardware(object):
         d['Kernel version'] = self.__gather_output("uname", ["-o", "-r", "-s"])
 
         for dmi_data in ("bios_date",    "bios_vendor",  "bios_version", \
-                         "board_vendor", "product_name", "sys_vendor"):
+                         "board_vendor", "product_name", "sys_vendor", \
+                         "modalias"):
             d[dmi_data.replace("_", " ").capitalize()] = open("/sys/class/dmi/id/%s" % dmi_data, "r").read().strip()
 
         return d
@@ -111,14 +149,14 @@ class Hardware(object):
 
     def _get_driver_informations(self):
         d = {}
-        probed_modules = [m.split()[0] for m in self.__gather_output("lsmod").split("\n")[1:]]
+        probed_modules = [m.split()[0] for m in self.__gather_output("lsmod", excludes=["snd_", "sound"]).split("\n")[1:]]
         for m in probed_modules:
             # Collect parameter informations about modules
             d[m] = []
             try:
                 for param in os.listdir("/sys/module/%s/parameters" % m):
                     try:
-                        d[m].append("%s -> %s" % (param, open("/sys/module/%s/parameters/%s" % (m, param)).read().strip()))
+                        d[m].append("%s: %s" % (param, open("/sys/module/%s/parameters/%s" % (m, param)).read().strip()))
                     except IOError:
                         # Can't read it, pass
                         pass
@@ -127,6 +165,14 @@ class Hardware(object):
                 pass
 
         return d
+
+    def _get_sound_devices(self):
+        return self.__gather_output("alsa-info", ["--stdout"],
+                                    excludes=["upload="],
+                                    indent=True)
+
+    def _get_video_devices(self):
+        return self.__gather_output("scanimage", ["-L", "-v"])
 
     def _get_pci_devices(self):
         return self.__gather_output("lspci", ["-nn"])
@@ -139,6 +185,33 @@ class Hardware(object):
 
     def _get_memory_usage(self):
         return self.__gather_output("free", ["-mt"])
+
+    def _get_printer_queues(self):
+        import cups
+        c = cups.Connection()
+
+        result = ""
+        for p, pattr in c.getPrinters().items():
+            result += "[%s]\n  " % p
+
+            result += "\n  ".join(["%s: %s" % (k, v) for k,v in pattr.items()])
+            result += "\n\n"
+
+        return result
+
+    def _get_printer_configuration(self):
+        return self.__gather_output("/var/log/syslog",
+                                    includes=["hal_lpadmin", "udev-configure-printer"])
+
+    def _get_kernel_log(self):
+        # Filter out ALSA too big adjustment messages
+        return self.__gather_output("dmesg", excludes=["Too big adjustment"])
+
+    def _get_comar_log(self):
+        return self.__gather_output("/var/log/comar3/trace.log",
+                                    excludes=["Missing - Method"],
+                                    date=True)
+
 
     # Public methods
 
