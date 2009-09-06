@@ -1,2 +1,5 @@
+2009-09-06 Ozan Çağlayan <ozan_at_pardus.org.tr>
+	* donbili.py: Implement more collectors.
+
 2009-06-21 Ozan Çağlayan <ozan_at_pardus.org.tr>
-	* donbili: Initial commit.
+	* donbili.py: Initial commit.
