@@ -91,10 +91,6 @@ def thread_collect_info(report, reportfile, package, ui, symptom_script=None):
 versions installed. Please upgrade the following packages and check if the \
 problem still occurs:\n\n%s') % ', '.join(old_pkgs)
 
-    # if we have a SIGABRT without an assertion message, declare as unreportable
-    if report.get('Signal') == '6' and 'AssertionMessage' not in report:
-        report['UnreportableReason'] = _('The program crashed on an assertion failure, but the message could not be retrieved. Apport does not support reporting these crashes.')
-
     report.anonymize()
 
     if reportfile:
@@ -483,12 +479,15 @@ free memory to automatically analyze the problem and send a report to the develo
     def get_complete_size(self):
         '''Return the size of the complete report.'''
 
-        # report wasn't loaded, so count manually
-        size = 0
-        for k in self.report:
-            if self.report[k]:
-                size += len(self.report[k])
-        return size
+        try:
+            return self.complete_size
+        except AttributeError:
+            # report wasn't loaded, so count manually
+            size = 0
+            for k in self.report:
+                if self.report[k]:
+                    size += len(self.report[k])
+            return size
 
     def get_reduced_size(self):
         '''Return the size of the reduced report.'''
@@ -696,12 +695,13 @@ free memory to automatically analyze the problem and send a report to the develo
             self.ui_set_upload_progress(__upload_progress)
             try:
                 upthread.join(0.1)
+                upthread.exc_raise()
             except KeyboardInterrupt:
                 sys.exit(1)
             except NeedsCredentials, e:
                 message = _('Please enter your account information for the '
                             '%s bug tracking system')
-                data = self.ui_question_userpass(message % e.message)
+                data = self.ui_question_userpass(message % str(e))
                 if data is not None:
                     user, password = data
                     self.crashdb.set_credentials(user, password)
@@ -734,8 +734,6 @@ free memory to automatically analyze the problem and send a report to the develo
         try:
             self.report = apport.Report()
             self.report.load(open(path), binary='compressed')
-            if 'ProblemType' not in self.report:
-                raise ValueError, 'Report does not contain "ProblemType" field'
         except MemoryError:
             self.report = None
             self.ui_error_message(_('Memory exhaustion'),
@@ -758,16 +756,17 @@ free memory to automatically analyze the problem and send a report to the develo
         else:
             self.cur_package = apport.fileutils.find_file_package(self.report.get('ExecutablePath', ''))
 
-        # ensure that the crashed program is still installed:
-        if self.report['ProblemType'] == 'Crash':
-            exe_path = self.report.get('InterpreterPath', self.report.get('ExecutablePath'))
-            if not exe_path or not os.path.exists(exe_path):
-                msg = _('This problem report applies to a program which is not installed any more.')
-                if self.report.has_key('ExecutablePath'):
-                    msg = '%s (%s)' % (msg, self.report['ExecutablePath'])
-                self.report = None
-                self.ui_info_message(_('Invalid problem report'), msg)
-                return False
+        exe_path = self.report.get('InterpreterPath', self.report.get('ExecutablePath'))
+        if not self.cur_package and self.report['ProblemType'] != 'KernelCrash' and self.report['ProblemType'] != 'KernelOops' or (
+            exe_path and not os.path.exists(exe_path)):
+            msg = _('This problem report does not apply to a packaged program.')
+            if self.report.has_key('ExecutablePath'):
+                msg = '%s (%s)' % (msg, self.report['ExecutablePath'])
+            self.report = None
+            self.ui_info_message(_('Invalid problem report'), msg)
+            return False
+
+        self.complete_size = os.path.getsize(path)
 
         return True
 
@@ -1202,7 +1201,6 @@ databases = {
 
             # demo report
             self.report = apport.Report()
-            self.report['ExecutablePath'] = '/bin/bash'
             self.report['Package'] = 'libfoo1 1-1'
             self.report['SourcePackage'] = 'foo'
             self.report['Foo'] = 'A' * 1000
@@ -1262,23 +1260,11 @@ databases = {
 
             self.ui.load_report(self.report_file.name)
 
-            fsize = os.path.getsize(self.report_file.name)
-            complete_ratio = float(self.ui.get_complete_size()) / fsize
-            self.assert_(complete_ratio >= 0.99 and complete_ratio <= 1.01)
-                
+            self.assertEqual(self.ui.get_complete_size(),
+                os.path.getsize(self.report_file.name))
             rs = self.ui.get_reduced_size()
             self.assert_(rs > 1000)
             self.assert_(rs < 10000)
-
-            # now add some information (e. g. from package hooks)
-            self.ui.report['ExtraInfo'] = 'A' * 50000
-            s = self.ui.get_complete_size()
-            self.assert_(s >= fsize + 49900)
-            self.assert_(s < fsize + 60000)
-
-            rs = self.ui.get_reduced_size()
-            self.assert_(rs > 51000)
-            self.assert_(rs < 60000)
 
         def test_get_size_constructed(self):
             '''get_complete_size() and get_reduced_size() for on-the-fly Reports.'''
@@ -1303,7 +1289,6 @@ databases = {
             # report without Package
             del self.report['Package']
             del self.report['SourcePackage']
-            del self.report['ExecutablePath']
             self.update_report_file()
             self.ui.load_report(self.report_file.name)
 
@@ -1666,21 +1651,6 @@ CoreDump: base64
             self.assertEqual(self.ui.ic_progress_pulses, 0)
 
             self.assert_(self.ui.report.check_ignored())
-
-        def test_run_crash_abort(self):
-            '''run_crash() for an unreportable abort()'''
-
-            self.report['Signal'] = '6'
-            self.report['ExecutablePath'] = '/bin/bash'
-            self.report['Package'] = 'bash 1'
-            self.update_report_file()
-            self.ui.present_crash_response = {'action': 'report', 'blacklist': False }
-            self.ui.present_details_response = 'full'
-            self.ui.run_crash(self.report_file.name)
-
-            self.assert_('assert' in self.ui.msg_text, '%s: %s' %
-                (self.ui.msg_title, self.ui.msg_text))
-            self.assertEqual(self.ui.msg_severity, 'info')
 
         def test_run_crash_argv_file(self):
             '''run_crash() through a file specified on the command line.'''
