@@ -48,7 +48,7 @@ def likely_packaged(file):
     database.
     '''
     pkg_whitelist = ['/bin/', '/boot', '/etc/', '/initrd', '/lib', '/sbin/',
-    '/usr/', '/var'] # packages only ship files in these directories
+    '/usr/', '/var'] # packages only ship executables in these directories
 
     whitelist_match = False
     for i in pkg_whitelist:
@@ -56,7 +56,7 @@ def likely_packaged(file):
             whitelist_match = True
             break
     return whitelist_match and not file.startswith('/usr/local/') and not \
-        file.startswith('/var/lib/schroot')
+        file.startswith('/var/lib/')
 
 def find_file_package(file):
     '''Return the package that ships the given file.
@@ -202,7 +202,7 @@ def make_report_path(report, uid=None):
     if not uid:
         uid = os.getuid()
 
-    return os.path.join(report_dir, '%s.%i.crash' % (subject, uid))
+    return os.path.join(report_dir, '%s.%s.crash' % (subject, str(uid)))
 
 def check_files_md5(sumfile):
     '''Check file integrity against md5 sum file.
@@ -333,11 +333,8 @@ class _ApportUtilsTest(unittest.TestCase):
         self.assertEqual(likely_packaged('/usr/local/bin/foo'), False)
         self.assertEqual(likely_packaged('/home/test/bin/foo'), False)
         self.assertEqual(likely_packaged('/tmp/foo'), False)
-        # err on the side of caution for /var
-        self.assertEqual(likely_packaged('/var/lib/foo'), True)
-        # but ignore temporary schroot session chroots
-        # (https://launchpad.net/bugs/122859)
-        self.assertEqual(likely_packaged('/var/lib/schroot/bin/bash'), False)
+        # ignore crashes in /var/lib (LP#122859, LP#414368)
+        self.assertEqual(likely_packaged('/var/lib/foo'), False)
 
     def test_find_file_package(self):
         '''find_file_package().'''
