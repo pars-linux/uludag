@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 15:50+0300\n"
-"PO-Revision-Date: 2009-09-07 23:38+0200\n"
+"PO-Revision-Date: 2009-09-07 23:40+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -484,6 +484,7 @@ msgid "in your basket."
 msgstr "i din kurv"
 
 #: .tmp/statemanager.py:153
+#, fuzzy
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
@@ -492,18 +493,22 @@ msgstr ""
 "installeres sammen."
 
 #: .tmp/statemanager.py:154 .tmp/statemanager.py:162
+#, fuzzy
 msgid "Conflict Error"
 msgstr "Konflikt fejl"
 
 #: .tmp/statemanager.py:158
+#, fuzzy
 msgid "The following packages conflicts:\n"
 msgstr "Følgende pakker er i konflikt med:\n"
 
 #: .tmp/statemanager.py:160
+#, fuzzy
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 er i konflikt med: [%2]\n"
 
 #: .tmp/statemanager.py:161
+#, fuzzy
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -517,31 +522,31 @@ msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/about.py:31
 msgid "Faik Uygur"
-msgstr ""
+msgstr "Faik Uygur"
 
 #: .tmp/about.py:31
 msgid "Maintainer"
-msgstr ""
+msgstr "Vedligeholder"
 
 #: .tmp/main.py:38
 msgid "Show main window"
-msgstr ""
+msgstr "Vis hoved vinduet"
 
 #: .tmp/commontext.py:15 .tmp/operationmanager.py:117
 msgid "downloading"
-msgstr ""
+msgstr "downloader"
 
 #: .tmp/commontext.py:15
 msgid "removing"
-msgstr ""
+msgstr "fjerner"
 
 #: .tmp/commontext.py:15
 msgid "installing"
-msgstr ""
+msgstr "installerer"
 
 #: .tmp/ui_summarydialog.py:45
 msgid "Operation Summary"
-msgstr ""
+msgstr "Handlings sammendrag"
 
 #: .tmp/ui_summarydialog.py:46
 msgid ""
@@ -551,7 +556,7 @@ msgstr ""
 
 #: .tmp/ui_summarydialog.py:47
 msgid "&Ok"
-msgstr ""
+msgstr "&OK"
 
 #: .tmp/pm-install.py:44
 msgid "Succesfully finished installing %1"
