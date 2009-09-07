@@ -113,7 +113,6 @@ class Zeroconf:
         if self.debugmode:
             self.log.debug('Service data for service %s in domain %s on %i.%i:' % (name, domain, interface, protocol))
             self.log.debug('Host %s (%s), port %i, TXT data: %s' % (host, address, port, self.txt_array_to_dict(txt)))
-        self.networkUsers(name, address)
         if not self.connected:
             return
         bare_name = name
@@ -123,14 +122,9 @@ class Zeroconf:
         # we don't want to see ourselves in the list
         if name != self.name:
             self.contacts[name] = (name, domain, interface, protocol, host, address, port, bare_name, txt)
+            #print self.contacts[name]
         else:
             self.invalid_self_contact[name] = (name, domain, interface, protocol, host, address, port, bare_name, txt)
-
-    def networkUsers(self, name, address):
-        self.users.append('%s (%s)' % (name, address))
-        self.NetworkUsers = self.users
-        print self.NetworkUsers
-
 
     def service_resolved_all_callback(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
         if not self.connected:
@@ -139,7 +133,6 @@ class Zeroconf:
         if name.find('@') == -1:
             name = name + '@' + name
         self.contacts[name] = (name, domain, interface, protocol, host, address, port, bare_name, txt)
-
 
     def service_added_callback(self):
         self.log.debug('Service successfully added')
@@ -382,7 +375,6 @@ class Zeroconf:
             return True
         else:
             return False
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv) 

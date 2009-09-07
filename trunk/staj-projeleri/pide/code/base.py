@@ -24,33 +24,39 @@ class MainWindow(QtGui.QMainWindow, mainWindow.Ui_MainWindow):
     def __init__(self, parent=None):
         QtGui.QMainWindow.__init__(self, parent)
         self.setupUi(self)
+        
+        # Should not be here
+        self.instance = avahiservices.Zeroconf("moon", gethostname(), "_presence._tcp")
+        self.instance.connect_dbus()
+        self.instance.connect_avahi()
+        self.instance.connect()
+            print "Self Connected"
 
-        DBusQtMainLoop(set_as_default=True)
+        # Filling Window
+        self.connect(self.pushButton, SIGNAL("clicked()"),self.fillWidget)
 
-        instance = avahiservices.Zeroconf("moon", gethostname(), "_presence._tcp")
-        instance.connect_dbus()
-        instance.connect_avahi()
-        instance.connect()
+    def fillWidget(self):
+        if self.instance.get_contacts():
+            print "Service found Yeehaaaa"
+        else:
+            print "Service not found o_O"
 
-        self.interface = iface.Iface()
-        print self.interface
+        self.listWidget.clear()
+        self.connect(self.listWidget, SIGNAL("itemClicked(QListWidgetItem*)"), self.connectHost)
+        for contact in self.instance.get_contacts():
+            item = QtGui.QListWidgetItem("%s" % (contact), self.listWidget)
+            item.setData(Qt.UserRole, QVariant(unicode(contact)))
 
-#        self.connect(self.listWidget, SIGNAL("itemClicked(QListWidgetItem*)"), self.itemDetail)
-#        for package in self.interface.getInstalledPackageList():
-#            item = QtGui.QListWidgetItem("%s" % (package), self.listWidget)
-#            item.setData(Qt.UserRole, QVariant(unicode(package)))
-#    def itemDetail(self, item):
-#        self.pkg = self.interface.getPackage(str(item.data(Qt.UserRole).toString()))
-#        self.lineEdit_2.setText(unicode(self.pkg.name))
-#        self.textEdit.setText(unicode(self.pkg.summary))
-#        self.textEdit_2.setText(unicode(self.pkg.description))
-
-
-
+    def connectHost(self, item):
+        self.pkg = self.interface.getPackage(str(item.data(Qt.UserRole).toString()))
+        self.lineEdit_2.setText(unicode(self.pkg.name))
+        self.textEdit.setText(unicode(self.pkg.summary))
+        self.textEdit_2.setText(unicode(self.pkg.description))
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
 
+    DBusQtMainLoop(set_as_default=True)
     # Create Main Widget
     main = MainWindow()
     main.show()
