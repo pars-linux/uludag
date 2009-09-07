@@ -151,6 +151,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         if filename:
             self.offlineOperations.importIndex(filename)
+            backend.pm = backend.offline_pm
 
     def exportIndex(self):
         filename = str(KFileDialog.getSaveFileName(KUrl("pisi-installed"), "*.xml", self, i18n("Select project file")))
@@ -169,3 +170,4 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         if filename:
             self.offlineOperations.writeCatalog(filename)
+            backend.pm = backend.normal_pm
