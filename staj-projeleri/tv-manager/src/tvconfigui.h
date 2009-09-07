@@ -10,7 +10,7 @@ namespace Ui
 
 class TvConfigUI : public QWidget
 {
-    Q_OBJECT
+    //Q_OBJECT
 
 public:
     TvConfigUI(QWidget *parent = 0);

@@ -1,0 +1,128 @@
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]:`/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp' dizinine giriliyor
+/usr/bin/cmake -E cmake_progress_report /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -I/usr/qt/4/include   -o CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o   -c /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function 'main':
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: error: 'Q_WS_WIN' undeclared (first use in this function)
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: error: (Each undeclared identifier is reported only once
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: error: for each function it appears in.)
+
+*** 3 errors, 0 warnings
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o] Hata 1
+gmake[1]: `/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp' dizininden çıkılıyor
+gmake: *** [cmTryCompileExec/fast] Hata 2
+
+File /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <QtCore/qglobal.h>
+
+void cmakeRequireSymbol(int dummy,...){(void)dummy;}
+int main()
+{
+#ifndef Q_WS_WIN
+  cmakeRequireSymbol(0,&Q_WS_WIN);
+#endif
+  return 0;
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]:`/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp' dizinine giriliyor
+/usr/bin/cmake -E cmake_progress_report /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -I/usr/qt/4/include   -o CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o   -c /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function 'main':
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: error: 'Q_WS_QWS' undeclared (first use in this function)
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: error: (Each undeclared identifier is reported only once
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: error: for each function it appears in.)
+
+*** 3 errors, 0 warnings
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o] Hata 1
+gmake[1]: `/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp' dizininden çıkılıyor
+gmake: *** [cmTryCompileExec/fast] Hata 2
+
+File /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <QtCore/qglobal.h>
+
+void cmakeRequireSymbol(int dummy,...){(void)dummy;}
+int main()
+{
+#ifndef Q_WS_QWS
+  cmakeRequireSymbol(0,&Q_WS_QWS);
+#endif
+  return 0;
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]:`/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp' dizinine giriliyor
+/usr/bin/cmake -E cmake_progress_report /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -I/usr/qt/4/include   -o CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o   -c /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function 'main':
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: error: 'Q_WS_MAC' undeclared (first use in this function)
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: error: (Each undeclared identifier is reported only once
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: error: for each function it appears in.)
+
+*** 3 errors, 0 warnings
+gmake[1]: `/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp' dizininden çıkılıyor
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o] Hata 1
+gmake: *** [cmTryCompileExec/fast] Hata 2
+
+File /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <QtCore/qglobal.h>
+
+void cmakeRequireSymbol(int dummy,...){(void)dummy;}
+int main()
+{
+#ifndef Q_WS_MAC
+  cmakeRequireSymbol(0,&Q_WS_MAC);
+#endif
+  return 0;
+}
+
+Performing C++ SOURCE FILE Test _OFFT_IS_64BIT failed with the following output:
+Change Dir: /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]:`/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp' dizinine giriliyor
+/usr/bin/cmake -E cmake_progress_report /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -D_OFFT_IS_64BIT   -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/src.cxx
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/src.cxx:9: warning: left shift count >= width of type
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/src.cxx:9: warning: left shift count >= width of type
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/src.cxx:9: warning: left shift count >= width of type
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/src.cxx:9: warning: left shift count >= width of type
+/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp/src.cxx:9: error: size of array 'off_t_is_large' is negative
+
+*** 1 errors, 4 warnings
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Hata 1
+gmake[1]: `/home/albayenes/svn/uludag/trunk/staj-projeleri/tv-manager/src/build/CMakeFiles/CMakeTmp' dizininden çıkılıyor
+gmake: *** [cmTryCompileExec/fast] Hata 2
+
+Source file was:
+
+#include <sys/types.h>
+ /* Check that off_t can represent 2**63 - 1 correctly.
+    We can't simply define LARGE_OFF_T to be 9223372036854775807,
+    since some C++ compilers masquerading as C compilers
+    incorrectly reject 9223372036854775807.  */
+#define LARGE_OFF_T (((off_t) 1 << 62) - 1 + ((off_t) 1 << 62))
+
+  int off_t_is_large[(LARGE_OFF_T % 2147483629 == 721 && LARGE_OFF_T % 2147483647 == 1) ? 1 : -1];
+  int main() { return 0; }
+
