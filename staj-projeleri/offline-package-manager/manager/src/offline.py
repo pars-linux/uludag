@@ -11,12 +11,14 @@
 # Please read the COPYING file.
 #
 
-# This module makes some operations for offline part of package manager
+''' This module makes some operations for offline part of package manager'''
 
 import os
 import time
 import piksemel
 import tarfile
+
+import comar
 
 import pisi
 
@@ -28,7 +30,13 @@ from pisi.db.packagedb import PackageDB
 
 import backend
 
-class Operations:
+class Singleton(object):
+    def __new__(type):
+        if not '_the_instance' in type.__dict__:
+            type._the_instance = object.__new__(type)
+        return type._the_instance
+
+class Operations(Singleton):
 
     def __init__(self):
         self.path = os.getenv("HOME") + "/offlinePISI"
@@ -119,7 +127,6 @@ class Operations:
         This function should be call after all install and remove
         processes done on online machine.
         """
-        # This function makes a tar file from offline PISI files
         os.chdir(os.getenv("HOME"))
         tar = tarfile.open(filename, "w")
         tar.add("offlinePISI")
@@ -140,8 +147,6 @@ class Operations:
         f = open("/tmp/offline-pm.data", "w")
         f.write(filename)
         f.close
-
-        backend.pm = backend.offline_pm
 
     def exportIndex(self, filename):
         """
@@ -253,6 +258,9 @@ class Operations:
 
     def __handleProcesses(self):
 
+        doOperations = DoOperations()
+        operationPool = []
+
         files = filter(lambda x:x.endswith(".xml"), os.listdir(self.path))
         list = []
 
@@ -280,13 +288,53 @@ class Operations:
                     for x in i.tags("Package"):
                         packages.append(str(x.firstChild().data()))
 
-            self._doOperation(packages, op_type)
+            operationPool.append([op_type, packages])
+
+        doOperations.handlePool(operationPool)
+
+class DoOperations(Singleton):
+    def __init__(self):
+        if not self.initialized():
+            self.initComar()
+            self.signalCounter = 0
+
+    def initialized(self):
+        return "link" in self.__dict__
+
+    def initComar(self):
+        self.link = comar.Link()
+        self.link.setLocale()
+        self.link.listenSignals("System.Manager", self.signalHandler)
+
+    def setHandler(self, handler):
+        self.link.listenSignals("System.Manager", handler)
+
+    def setExceptionHandler(self, handler):
+        self.exceptionHandler = handler
+
+    def signalHandler(self, package, signal, args):
+        if signal == "finished":
+            if self.signalCounter == 1:
+                self.handlePool(self.operationPool)
+                self.signalCounter = 0
+            else:
+                self.signalCounter += 1
+
+    def handlePool(self, operationPool):
+        try:
+            operation = operationPool[0][0]
+            packages = operationPool[0][1]
+
+            operationPool.pop(0)
+
+            self.operationPool = operationPool
+
+            self._doOperation(packages, operation)
+
+        except IndexError:
+            pass
 
     def _doOperation(self, packages, operation):
-
-        # iface installPackage function can callable only one time.
-        # when second operation started, it fails and comar does not give permission or want pass from user.
-        # FIX ME!
 
         if operation == "install":
             backend.pm.Iface().installPackages(packages)
