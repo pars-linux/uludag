@@ -18,8 +18,9 @@ import time
 import piksemel
 import tarfile
 
-import comar
+from shutil import rmtree
 
+import comar
 import pisi
 
 import gettext
@@ -51,6 +52,10 @@ class Operations(Singleton):
 
         except OSError:
             pass
+
+    def __removeDir(self):
+        # This function removes if the working path exists.
+        rmtree(self.path)
 
     def saveProcess(self, packages, operation):
         """
@@ -132,6 +137,7 @@ class Operations(Singleton):
         tar.add("offlinePISI")
         tar.close()
 
+        self.__removeDir()
         print "Catalog file writed."
 
 
@@ -248,6 +254,8 @@ class Operations(Singleton):
         filename of catalog file like '/home/user/a.tar'
         as parameter.
         """
+        self.__removeDir()
+
         self.__openArchive(filename)
         self.__handleProcesses()
 
