@@ -1,4 +1,0 @@
-# Hashes of file build rules.
-b2527279a82f61699e475d02f637f1f8 CMakeFiles/uninstall
-b71fe7779304516311815e93a1e8b60e tv-manager.moc
-f71a9e87db90f2dedf742a5ffffeee3a tvconfig.moc
