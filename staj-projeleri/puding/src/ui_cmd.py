@@ -11,7 +11,8 @@ import shutil
 import subprocess
 
 from common import (_, runCommand, copyPisiPackage, \
-                    createConfigFile, createUSBDirs, getMounted)
+                    createConfigFile, createUSBDirs, \
+                    verifyIsoChecksum, getMounted)
 from common import PartitionUtils
 from constants import (HOME, MOUNT_ISO, MOUNT_USB, NAME, SHARE)
 
@@ -69,10 +70,9 @@ class Create:
         if self.__checkSource(src) and self.__checkDestination(dst):
             createUSBDirs(dst)
             self.__createImage(src, dst)
-
-        # FIX ME: Is it required?
+            
         else:
-            self.utils.cprint("An error occured. Check the parameters please.", "red")
+            sys.exit(1)
 
     def __checkSource(self, src):
         if not os.path.isfile(src):
@@ -90,9 +90,21 @@ class Create:
                     return False
 
                 else:
-                    self.utils.cprint("\nCD image: %s" % src)
+                    self.utils.cprint("Calculating checksum..", "red")
+                    # If checksum wrong, it returns False.
+                    try:
+                        (name, md5, url) = verifyIsoChecksum(src)
 
-                    return True
+                    # FIX ME: Bad Code..
+                    except TypeError:
+                        self.utils.cprint("The checksum of the source cannot be validated. Please specify a correct source or be sure that you have downloaded the source correctly.", "red")
+                        
+                        return False
+
+                    self.utils.cprint("\nCD image path: %s" % src)
+                    self.utils.cprint("         Name: %s" % name)
+                    self.utils.cprint("       Md5sum: %s" % md5)
+                    self.utils.cprint(" Download URL: %s\n" % url)
 
             except IndexError:
                 self.utils.cprint("The file you have specified is invalid. It's a CD image, use \".iso\" extension. e.g. Pardus_2009_Prealpha3.iso", "red")
