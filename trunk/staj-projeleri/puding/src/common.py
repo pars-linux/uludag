@@ -5,12 +5,13 @@
 # license: GPLv3
 
 import dbus
-import os
 import gettext
 import glob
+import os
 import shutil
 import subprocess
 
+from releases import releases
 from constants import (HOME, MOUNT_ISO, MOUNT_USB, \
                        NAME, LOCALE, SHARE, SYSLINUX)
 
@@ -26,6 +27,28 @@ def getDiskInfo(dst):
     used = int(disk_info.f_bsize * (disk_info.f_blocks - disk_info.f_bavail) / pow(1024, 3))
 
     return [capacity, available, used]
+
+def verifyIsoChecksum(src):
+    import hashlib
+
+    checksum = hashlib.md5()
+    isofile = file(src, "rb")
+    bytes = 1024**2
+    total = 0
+
+    while bytes:
+        data = isofile.read(bytes)
+        checksum.update(data)
+        bytes = len(data)
+        total += bytes
+        
+    src_md5 = checksum.hexdigest()
+
+    for release in releases:
+        if src_md5 in release['md5']:
+            return release['name'], release['md5'], release['url']
+
+    return False
 
 def runCommand(cmd):
     process = subprocess.call(cmd, shell = True)
@@ -147,6 +170,6 @@ class PartitionUtils:
 
         if not len(self.drives):
             return False
-    
+
         else:
-        	return True
+            return True
