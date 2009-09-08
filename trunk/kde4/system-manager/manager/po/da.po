@@ -1,0 +1,109 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Peter Lyberth <peterjensen84@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: da\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"PO-Revision-Date: 2009-09-08 11:56+0200\n"
+"Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
+"Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .tmp/ui_main.py:156
+msgid "Language Settings"
+msgstr "Sprog indstillinger"
+
+#: .tmp/ui_main.py:157
+msgid "System Language:"
+msgstr "System sprog:"
+
+#: .tmp/ui_main.py:158
+msgid "Console Keyboard Layout:"
+msgstr "Konsol tastatur layout:"
+
+#: .tmp/ui_main.py:159
+msgid ""
+"Note that these settings do not effect your desktop. Desktop settings can be "
+"changed in 'Regional & Language' module in System Settings."
+msgstr ""
+"Bemærk venligst at disse indstillinger ikke vil påvirke dit skrivebords "
+"miljø. "
+"Indstillinger for skrivebords miljøet kan ændres i 'Region & Sprog' modulet "
+"i System Indstillinger."
+
+#: .tmp/ui_main.py:160
+msgid "Service Settings"
+msgstr "Indstillinger for tjenester"
+
+#: .tmp/ui_main.py:161
+msgid "First Service to Start:"
+msgstr "Første tjeneste at starte:"
+
+#: .tmp/ui_main.py:162
+msgid ""
+"Although services are started parallel manner in boot process, users may "
+"want to start a single service before checking dependencies."
+msgstr ""
+"Selvom tjenester kan startes parallelt under opstarten, vil nogle brugere "
+"måske starte en enkelt tjeneste først. "
+
+#: .tmp/ui_main.py:163
+msgid "Clock Settings"
+msgstr "Indstillinger for tid"
+
+#: .tmp/ui_main.py:164
+msgid "Keep the hardware clock in UTC"
+msgstr "Behold hardwaretiden i UTC"
+
+#: .tmp/ui_main.py:165
+msgid "Normalize systematic drift of the hardware clock"
+msgstr "Normaliser systematisk afvigelse af hardwaretiden"
+
+#: .tmp/ui_main.py:166
+msgid "Console Settings"
+msgstr "Konsol indstillinger"
+
+#: .tmp/ui_main.py:167
+msgid "Number of Real Consoles:"
+msgstr "Antal rigtige konsoller:"
+
+#: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
+msgid "System Manager"
+msgstr "System håndtering"
+
+#: .tmp/systemmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/systemmanager/about.py:25
+msgid " "
+msgstr ""
+
+#: .tmp/systemmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/systemmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Nuværende vedligeholder"
+
+#: .tmp/systemmanager/main.py:70
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Der er ikke nogen pakker der kan agere backend for dette program.\n"
+"Kontroller venligst at de nødvendige pakker er installeret og konfigureret "
+"korrekt."
+
+#: .tmp/systemmanager/main.py:98
+msgid "None"
+msgstr "Ingen"
+
