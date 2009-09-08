@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 15:50+0300\n"
-"PO-Revision-Date: 2009-09-07 23:40+0200\n"
+"PO-Revision-Date: 2009-09-08 11:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -553,6 +553,9 @@ msgid ""
 "You can start the new installed application by double-clicking on the list "
 "below or later from the applications menu."
 msgstr ""
+"Du kan starte det installerede program ved at dobbeltklikke på det i listen "
+"forneden "
+"eller senere fra programmenuen."
 
 #: .tmp/ui_summarydialog.py:47
 msgid "&Ok"
@@ -560,75 +563,75 @@ msgstr "&OK"
 
 #: .tmp/pm-install.py:44
 msgid "Succesfully finished installing %1"
-msgstr ""
+msgstr "Installerede %1 succesfuldt"
 
 #: .tmp/pm-install.py:73 .tmp/mainwidget.py:168
 msgid "Network Error"
-msgstr ""
+msgstr "Netværks fejl"
 
 #: .tmp/pm-install.py:74 .tmp/mainwidget.py:169
 msgid "Please check your network connections and try again."
-msgstr ""
+msgstr "Kontroller venligst dine netværks indstillinger og forsøg igen."
 
 #: .tmp/pm-install.py:76 .tmp/mainwidget.py:171
 msgid "Authorization Error"
-msgstr ""
+msgstr "Godkendelses fejl"
 
 #: .tmp/pm-install.py:77 .tmp/mainwidget.py:172
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "Du har ikke rettigheder til at foretage denne handling"
 
 #: .tmp/pm-install.py:89
 msgid "Package Installer"
-msgstr ""
+msgstr "Pakke håndtering"
 
 #: .tmp/pm-install.py:120
 msgid "Installing %1"
-msgstr ""
+msgstr "Installerer %1"
 
 #: .tmp/pm-install.py:127
 msgid "pm-install"
-msgstr ""
+msgstr "pm-installation"
 
 #: .tmp/pm-install.py:134
 msgid "Packages to install"
-msgstr ""
+msgstr "Pakker til installation"
 
 #: .tmp/pm-install.py:138
 msgid "Package Installer is already started!"
-msgstr ""
+msgstr "Pakke håndteringer kører allerede!"
 
 #: .tmp/packagedelegate.py:117
 msgid "Description:"
-msgstr ""
+msgstr "Beskrivelse:"
 
 #: .tmp/packagedelegate.py:129
 msgid "Release:"
-msgstr ""
+msgstr "Udgivelse:"
 
 #: .tmp/packagedelegate.py:139
 msgid "Repository:"
-msgstr ""
+msgstr "Pakkearkiv:"
 
 #: .tmp/packagedelegate.py:148
 msgid "Package Size:"
-msgstr ""
+msgstr "Pakke størrelse:"
 
 #: .tmp/mainwidget.py:226
 msgid "Select all packages in this group"
-msgstr ""
+msgstr "Vælg alle pakker i denne gruppe"
 
 #: .tmp/mainwidget.py:232
 msgid "Reverse package selections"
-msgstr ""
+msgstr "Fjern markering af pakker"
 
 #: .tmp/ui_progressdialog.py:146
 msgid "Operation"
-msgstr ""
+msgstr "Handling"
 
 #: .tmp/ui_progressdialog.py:151
 msgid "Operation:"
-msgstr ""
+msgstr "Handling:"
 
 #: .tmp/ui_progressdialog.py:153
 msgid ""
@@ -643,37 +646,47 @@ msgid ""
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
 #: .tmp/ui_progressdialog.py:159
 msgid "Alt+C"
-msgstr ""
+msgstr "Alt+C"
 
 #: .tmp/mainwindow.py:88
 msgid "Show Installable Packages"
-msgstr ""
+msgstr "Vis pakker der kan installeres"
 
 #: .tmp/mainwindow.py:95
 msgid "Show Installed Packages"
-msgstr ""
+msgstr "Vis installerede pakker"
 
 #: .tmp/mainwindow.py:101
 msgid "Show Upgradable Packages"
-msgstr ""
+msgstr "Vis pakker der kan opdateres "
 
 #: .tmp/ui_repodialog.py:51
 msgid "Add New Repository"
-msgstr ""
+msgstr "Tilføj nyt pakkearkiv"
 
 #: .tmp/ui_repodialog.py:52
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr ""
+msgstr "Navn på pakkearkiv, eks <b>pardus-devel</b>"
 
 #: .tmp/ui_repodialog.py:55
 msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
-msgstr ""
+msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-msgstr ""
+msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
 
