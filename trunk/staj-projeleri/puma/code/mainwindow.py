@@ -16,6 +16,7 @@ import sys
 import os
 import shutil
 import subprocess
+import dbus
 
 # Qt Stuff
 from PyQt4 import QtGui
@@ -28,6 +29,10 @@ from PyKDE4.kdecore import KAboutData, KCmdLineArgs
 from ui_mainwindow import Ui_MainWindow
 from about import *
 
+import comar
+
+# Backend
+import backend
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -50,15 +55,6 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         else:
             tray.showMessage((u"Puma Info"), (u"Connect failed"), QtGui.QSystemTrayIcon.Information, 3000)
 
-
-    # for automatic connect
-#    def localstart(self):
- #       file = open("/etc/conf.d/local.start", "a")
-  #      file.write("br2684ctl -c 0 -b -a 8.35\n")
-   #     file.write("adsl-start\n")
-    #    file.write("/usr/sbin/br2684ctl -c 0 -b -a 8.35\n")
-     #   file.write("/usr/sbin/adsl-start")
-      #  file.close()
 
     def disconnect(self):
         result = os.popen("/usr/sbin/adsl-stop")
@@ -149,6 +145,9 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def on_actionDisconnect_triggered(self):
         self.disconnect()
 
+if not dbus.get_default_main_loop():
+    from dbus.mainloop.qt import DBusQtMainLoop
+    DBusQtMainLoop(set_as_default=True)
 
 aboutData = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
@@ -168,7 +167,6 @@ def showw(event):
             mw.show()
         else:
             mw.hide()
-
 
 
 menu = QtGui.QMenu()
@@ -194,6 +192,10 @@ tray.setContextMenu(menu)
 
 tray.show()
 import pumaicons_rc
+
+intface = Interface()
+intface.deneme()
+
 
 app.exec_()
 
