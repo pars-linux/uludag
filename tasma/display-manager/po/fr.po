@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: display-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-23 22:09+0200\n"
-"PO-Revision-Date: 2009-09-02 22:13+0200\n"
+"PO-Revision-Date: 2009-09-08 17:54+0200\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -272,7 +272,7 @@ msgstr "Configurer..."
 
 #: src/dm_mainview.py:274
 msgid "Devices"
-msgstr "Appareils"
+msgstr "Périphériques"
 
 #: src/displayconfig.py:73 src/displayconfig.py:103
 msgid "You are not authorized for this operation."
@@ -325,4 +325,5 @@ msgstr ""
 #: src/displayconfig.py:391
 msgid "Your hardware will be probed after restarting your computer."
 msgstr "Votre matériel sera examiné après redémarrage de l'ordinateur."
+
 
