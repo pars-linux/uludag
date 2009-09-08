@@ -99,6 +99,6 @@ class DiskTools:
     def umount(self, device):
         self.link.Disk.Manager[self.package].umount(device)
 
-    def deneme(self):
-		self.link.Disk.Manager[self.package].deneme()
+    def refreshPartitionTable(self, device):
+		self.link.Disk.Manager[self.package].refreshPartitionTable(device)
 		

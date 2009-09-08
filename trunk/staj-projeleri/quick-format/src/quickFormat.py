@@ -195,17 +195,23 @@ class QuickFormat(QtCore.QThread):
 			volumeLabel="MyDisk"
 
 		if self.fs == "vfat":
-			proc = Popen("mkfs -t " + self.fs + " -n " + volumeLabel + " " + option + " " + deviceName, shell=True, stdout=PIPE,)
+			self.labelingCommand = "-n"
 		
 		else:
-			proc = Popen("mkfs -t " + self.fs + " -L " + volumeLabel + " " + option + " " + deviceName, shell=True, stdout=PIPE,)
+			self.labelingCommand = "-L"
 			
+			
+		proc = Popen("mkfs -t " + self.fs + " " + self.labelingCommand + " " + volumeLabel + " " + option + " " + deviceName, shell=True, stdout=PIPE,)	
 		print proc.communicate()[0]
+		
+
 	
 	def run(self):
 		self.emit(SIGNAL("formatStarted()"))
 		self.formatDisk()
-		refreshPartitionTable.refreshPartitionTable(deviceName[:8])
+		
+		dt.refreshPartitionTable(deviceName[:8])
+		
 		self.emit(SIGNAL("formatSuccessful()"))
 
 
@@ -244,9 +250,6 @@ if __name__ == "__main__":
 	ui.txt_volumeLabel.setText("MyDisk")
 	
 	dt = diskTools.DiskTools()
-#	for disk in dt.deviceList():
-#		for partition in dt.partitionList(disk):
-#			print partition
 	
 	MainWindow.show()
 	
