@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mainwindow.ui'
 #
-# Created: Thu Sep  3 11:38:34 2009
+# Created: Thu Sep  3 15:05:39 2009
 #      by: PyQt4 UI code generator 4.5.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,7 +12,7 @@ from PyQt4 import QtCore, QtGui
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(408, 331)
+        MainWindow.resize(408, 359)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.layoutWidget = QtGui.QWidget(self.centralwidget)
@@ -52,6 +52,9 @@ class Ui_MainWindow(object):
         self.pushButton_2 = QtGui.QPushButton(self.layoutWidget2)
         self.pushButton_2.setObjectName("pushButton_2")
         self.horizontalLayout.addWidget(self.pushButton_2)
+        self.checkBox = QtGui.QCheckBox(self.centralwidget)
+        self.checkBox.setGeometry(QtCore.QRect(40, 280, 241, 23))
+        self.checkBox.setObjectName("checkBox")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 408, 23))
@@ -109,6 +112,7 @@ class Ui_MainWindow(object):
         self.label_2.setText(QtGui.QApplication.translate("MainWindow", "Adsl Password : ", None, QtGui.QApplication.UnicodeUTF8))
         self.pushButton.setText(QtGui.QApplication.translate("MainWindow", "OK", None, QtGui.QApplication.UnicodeUTF8))
         self.pushButton_2.setText(QtGui.QApplication.translate("MainWindow", "Cancel", None, QtGui.QApplication.UnicodeUTF8))
+        self.checkBox.setText(QtGui.QApplication.translate("MainWindow", "        Automatic Connect", None, QtGui.QApplication.UnicodeUTF8))
         self.menuFile.setTitle(QtGui.QApplication.translate("MainWindow", "File", None, QtGui.QApplication.UnicodeUTF8))
         self.menuHelp.setTitle(QtGui.QApplication.translate("MainWindow", "Help", None, QtGui.QApplication.UnicodeUTF8))
         self.actionSave.setText(QtGui.QApplication.translate("MainWindow", "Save", None, QtGui.QApplication.UnicodeUTF8))
