@@ -14,60 +14,18 @@ class Create(QtGui.QMainWindow):
     def __init__(self, parent = None):
         super(Create, self).__init__(parent)
         uic.loadUi("%s/ui/qtMain.ui" % SHARE, self)
-        self.text_src = self.label_src.text()
-        self.text_dst = self.label_dst.text()
 
         self.connect(self.button_quit, QtCore.SIGNAL("clicked()"), QtCore.SLOT("close()"))
 
-        self.button_prev.hide()
-        self.button_ok.hide()
+    @QtCore.pyqtSignature("bool")
+    def on_button_browse_image_clicked(self):
+        filename = QtGui.QFileDialog.getOpenFileName(self, "Select ISO Image", os.environ["HOME"], "Images (*.iso *.img)")
+
+        self.line_image.setText(filename)
 
     @QtCore.pyqtSignature("bool")
-    def on_button_next_clicked(self):
-        src = self.line_src.displayText()
-        dst = self.line_dst.displayText()
-
-        if not self.__checkSource(src):
-            self.label_warning.setText("<font color=\"red\">The ISO path you have specified is invalid!</font>")
-
-            return False
-
-        if not self.__checkDestination(dst):
-            self.label_warning.setText("<font color=\"red\">The USB disk path you have specified is invalid!</font>")
-
-            return False
-
-        self.label_warning.setText("<i>The paths you have specified are valid..</i>")
-
-        id = self.stackedWidget.currentIndex()
-
-        if id == 0:
-            self.button_next.hide()
-            self.button_ok.show()
-            self.button_prev.show()
-
-            self.__checkInformation(src, dst)
-            self.stackedWidget.setCurrentIndex(id + 1)
-
-        return True
-
-    @QtCore.pyqtSignature("bool")
-    def on_button_prev_clicked(self):
-        id = self.stackedWidget.currentIndex()
-
-        if id > 0:
-            self.stackedWidget.setCurrentIndex(id - 1)
-
-        if id == 1:
-            self.button_prev.hide()
-            self.button_ok.hide()
-            self.button_next.show()
-
-    @QtCore.pyqtSignature("bool")
-    def on_button_ok_clicked(self):
-        id = self.stackedWidget.currentIndex()
-
-        self.stackedWidget.setCurrentIndex(id + 1)
+    def on_button_browse_disk_clicked(self):
+        print("disk clicked")
 
     def __checkSource(self, src):
         if QtCore.QString(src).isEmpty():

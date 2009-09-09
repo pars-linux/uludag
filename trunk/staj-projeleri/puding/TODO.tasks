@@ -34,7 +34,7 @@
       <comment>Ba&#x15F;ka bir imaj yolu g&#xF6;sterilmi&#x15F;se, "Bu Pardus imaj&#x131; de&#x11F;il" uyar&#x131;s&#x131; vermeli.</comment>
     </item>
     <item>
-      <attribute id="1250953836" priority="2" done="0" start_date="733641" notify="0" last_edited="1252399236"/>
+      <attribute id="1250953836" priority="2" done="1" start_date="733641" completed_date="733658" notify="0" last_edited="1252409711"/>
       <summary>fix func, __askDestination</summary>
       <comment>__askDestination bir de&#x11F;er d&#xF6;nd&#xFC;r&#xFC;yor. O de&#x11F;eri alarak sonraki i&#x15F;leme ge&#xE7;melisin.</comment>
     </item>
