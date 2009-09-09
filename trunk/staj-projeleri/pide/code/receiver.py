@@ -3,6 +3,7 @@
 
 import socket, time, string, sys, urlparse
 from threading import *
+from PyQt4.QtGui import QApplication
 
 
 class StreamHandler ( Thread ):
@@ -15,9 +16,9 @@ class StreamHandler ( Thread ):
 
     def bindmsock( this ):
         this.msock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        this.msock.bind(('', 9090))
+        this.msock.bind(('', 9081))
         this.msock.listen(1)
-        print '[Media] Listening on port 9090'
+        print '[Media] Listening on port 9081'
 
     def acceptmsock( this ):
         this.mconn, this.maddr = this.msock.accept()
