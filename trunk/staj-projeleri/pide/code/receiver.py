@@ -4,7 +4,6 @@
 import socket, time, string, sys, urlparse
 from threading import *
 
-#------------------------------------------------------------------------
 
 class StreamHandler ( Thread ):
 
@@ -69,7 +68,8 @@ class StreamHandler ( Thread ):
             this.transfer()
             this.close()
 
-#------------------------------------------------------------------------
-
-s = StreamHandler()
-s.start()
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    instance = StreamHandler() 
+    instance.start()
+    app.exec_()

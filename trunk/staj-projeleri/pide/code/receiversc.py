@@ -18,18 +18,22 @@ username = "pidetester"
 localFileName = "test.txt"
 remoteFileName = "test.txt"
 
+
 # Socket connection to remote host
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.connect((host, 9091))
+print "Socket Connection Done!"
 
 # Build a SSH transport
 t = paramiko.Transport(sock)
 t.start_client()
 t.auth_password(username, getpass.getpass('Password: '))
+print "SSH Transport Built"
 
 # Start a scp channel
 scp_channel = t.open_session()
-          
+print "SCP Channed Started"
+
 f = file(localFileName, 'rb')
 scp_channel.exec_command('scp -v -t %s\n'
                          % '/'.join(sys.argv[4].split('/')[:-1]))
