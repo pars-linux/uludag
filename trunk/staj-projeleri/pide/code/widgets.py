@@ -1,5 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+# System
+import sys
+
 # Qt Stuff
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
@@ -8,36 +11,31 @@ from PyQt4.QtCore import *
 from PyKDE4 import kdeui
 
 # Application Stuff
-
-class ServiceItem(QtGui.QListWidgetItem):
-
-    def __init__(self, package, parent):
-        QtGui.QListWidgetItem.__init__(self, parent)
-        self.package = package
+from dbus.mainloop.qt import DBusQtMainLoop
+from socket import gethostname
+from item import Ui_ServiceItemWidget
+import avahiservices
 
 class ServiceItemWidget(QtGui.QWidget):
 
-    def __init__(self, package, parent, item):
+    def __init__(self):
         QtGui.QWidget.__init__(self, None)
-
+        
         self.ui = Ui_ServiceItemWidget()
         self.ui.setupUi(self)
 
-        self.ui.labelName.setText(package)
+    def fillWidget(self, contact):
+        self.ui.labelName.setText(contact)
 
-        self.toggleButtons()
+if __name__ == '__main__':
+    app = QtGui.QApplication(sys.argv)
 
-        self.ui.buttonStart.setIcon(kdeui.KIcon("media-playback-start"))
-        self.ui.buttonStop.setIcon(kdeui.KIcon("media-playback-stop"))
-        self.ui.buttonReload.setIcon(kdeui.KIcon("view-refresh"))
+    DBusQtMainLoop(set_as_default=True)
+    # Create Main Widget
+    main = ServiceItemWidget()
+    main.show()
 
-        self.toggled = False
-        self.iface = parent.iface
-        self.item = item
-        self.package = package
-        self.type = None
-        self.desc = None
-        self.connect(self.ui.buttonStart, SIGNAL("clicked()"), self.setService)
-        self.connect(self.ui.buttonStop, SIGNAL("clicked()"), self.setService)
-        self.connect(self.ui.buttonReload, SIGNAL("clicked()"), self.setService)
-        self.connect(self.ui.checkStart, SIGNAL("clicked()"), self.setService)
+    # Run the application
+    app.exec_()
+
+
