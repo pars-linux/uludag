@@ -18,6 +18,17 @@ class FileSender:
         self.cs.connect((self.host, self.CPORT))
         self.cs.send("SEND " + self.file)
 
+    def waitforcheck(self)
+        self.rs = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.rs.bind(('', 9071))
+        self.rs.listen(1)
+        print '[Media] Listening on port 9081'
+        self.rconn, self.raddr = this.rs.accept()
+        if self.rconn:
+            print "Requested"
+        else:
+            print "Not Requested"
+
     def sendContent(self):
         self.ms.connect((self.host, self.MPORT))
         f = open(self.file, "rb")
@@ -30,11 +41,11 @@ class FileSender:
         self.ms.close()
 
 
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    instance = FileSender('text.txt', '10.10.1.57')
+    instance = FileSender('text.txt', '10.10.1.26')
     instance.sendFile()
+    insatnce.waitforcheck()
     instance.sendContent()
     instance.close()
     app.exec_()
