@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mainwindow.ui'
 #
-# Created: Tue Sep  8 15:59:27 2009
+# Created: Wed Sep  9 16:07:19 2009
 #      by: PyQt4 UI code generator 4.5.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -14,7 +14,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(272, 209)
         MainWindow.setMinimumSize(QtCore.QSize(272, 209))
-        MainWindow.setMaximumSize(QtCore.QSize(272, 209))
+        MainWindow.setMaximumSize(QtCore.QSize(298, 209))
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtGui.QGridLayout(self.centralwidget)
@@ -39,7 +39,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addWidget(self.lineEdit_2)
         self.gridLayout.addLayout(self.verticalLayout_2, 1, 0, 1, 1)
         spacerItem = QtGui.QSpacerItem(290, 0, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
-        self.gridLayout.addItem(spacerItem, 3, 0, 1, 1)
+        self.gridLayout.addItem(spacerItem, 2, 0, 1, 1)
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
@@ -53,10 +53,7 @@ class Ui_MainWindow(object):
         self.pushButton_2 = QtGui.QPushButton(self.centralwidget)
         self.pushButton_2.setObjectName("pushButton_2")
         self.horizontalLayout.addWidget(self.pushButton_2)
-        self.gridLayout.addLayout(self.horizontalLayout, 4, 0, 1, 1)
-        self.checkBox = QtGui.QCheckBox(self.centralwidget)
-        self.checkBox.setObjectName("checkBox")
-        self.gridLayout.addWidget(self.checkBox, 2, 0, 1, 1)
+        self.gridLayout.addLayout(self.horizontalLayout, 3, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 272, 23))
@@ -96,7 +93,6 @@ class Ui_MainWindow(object):
         icon5.addPixmap(QtGui.QPixmap(":/icons/icons/help.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.actionHelp.setIcon(icon5)
         self.actionHelp.setObjectName("actionHelp")
-        self.menuFile.addAction(self.actionSave)
         self.menuFile.addAction(self.actionDisconnect)
         self.menuFile.addAction(self.actionExit)
         self.menuHelp.addAction(self.actionAbout)
@@ -114,7 +110,6 @@ class Ui_MainWindow(object):
         self.label_2.setText(QtGui.QApplication.translate("MainWindow", "Adsl Password : ", None, QtGui.QApplication.UnicodeUTF8))
         self.pushButton.setText(QtGui.QApplication.translate("MainWindow", "OK", None, QtGui.QApplication.UnicodeUTF8))
         self.pushButton_2.setText(QtGui.QApplication.translate("MainWindow", "Cancel", None, QtGui.QApplication.UnicodeUTF8))
-        self.checkBox.setText(QtGui.QApplication.translate("MainWindow", "Automatic Connect", None, QtGui.QApplication.UnicodeUTF8))
         self.menuFile.setTitle(QtGui.QApplication.translate("MainWindow", "File", None, QtGui.QApplication.UnicodeUTF8))
         self.menuHelp.setTitle(QtGui.QApplication.translate("MainWindow", "Help", None, QtGui.QApplication.UnicodeUTF8))
         self.actionSave.setText(QtGui.QApplication.translate("MainWindow", "Save", None, QtGui.QApplication.UnicodeUTF8))
