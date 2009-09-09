@@ -29,10 +29,10 @@ from PyKDE4.kdecore import KAboutData, KCmdLineArgs
 from ui_mainwindow import Ui_MainWindow
 from about import *
 
-import comar
+#import comar
 
 # Backend
-import backend
+#import backend
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -109,7 +109,6 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         file.write("\"" + username + "\"" + " * " + "\"" + password + "\"")
         file.close()
 
-
     @QtCore.pyqtSignature("bool")
     def on_actionQt_About_triggered(self):
         QtGui.QMessageBox.aboutQt(self)
@@ -134,6 +133,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def on_actionSave_triggered(self):
         self.save()
 
+
     @QtCore.pyqtSignature("bool")
     def on_actionHelp_triggered(self):
         QtGui.QMessageBox.question(self,
@@ -152,6 +152,7 @@ if not dbus.get_default_main_loop():
 aboutData = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
 KCmdLineArgs.init(sys.argv, aboutData)
+
 app = KApplication()
 app.setQuitOnLastWindowClosed(False)
 mw = MainWindow()
@@ -192,10 +193,6 @@ tray.setContextMenu(menu)
 
 tray.show()
 import pumaicons_rc
-
-intface = Interface()
-intface.deneme()
-
 
 app.exec_()
 
