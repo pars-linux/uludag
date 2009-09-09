@@ -18,6 +18,7 @@ from socket import gethostname
 import mainWindow
 import avahiservices
 import iface
+from widgets import ServiceItemWidget
 
 
 class MainWindow(QtGui.QMainWindow, mainWindow.Ui_MainWindow):
@@ -25,23 +26,25 @@ class MainWindow(QtGui.QMainWindow, mainWindow.Ui_MainWindow):
         QtGui.QMainWindow.__init__(self, parent)
         self.setupUi(self)
 
+        self.iface = ServiceItemWidget()
         # Should not be here
         self.instance = avahiservices.Zeroconf("moon", gethostname(), "_presence._tcp")
         self.instance.connect_dbus()
         self.instance.connect_avahi()
         self.instance.connect()
+        self.contacts={}
 
         # Filling Window
-        self.connect(self.pushButton, SIGNAL("clicked()"),self.fillWidget)
+        self.connect(self.pushButton, SIGNAL("clicked()"), self.allWidgets)
 
-    def fillWidget(self):
+    def allWidgets(self):
         self.instance.get_contacts()
 
         self.listWidget.clear()
         self.connect(self.listWidget, SIGNAL("itemClicked(QListWidgetItem*)"), self.connectHost)
         for contact in self.instance.get_contacts():
-            item = QtGui.QListWidgetItem("%s" % (contact), self.listWidget)
-            item.setData(Qt.UserRole, QVariant(unicode(contact)))
+            self.contacts[contact] = self.iface.fillWidget(contact)
+
 
     def connectHost(self, item):
         self.pkg = self.interface.getPackage(str(item.data(Qt.UserRole).toString()))

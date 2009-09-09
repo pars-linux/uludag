@@ -33,20 +33,23 @@ class StreamHandler ( Thread ):
     def acceptcsock( this ):
         this.cconn, this.maddr = this.csock.accept()
         print '[Control] Got connection from', this.maddr
-        
-        while 1:
-            data = this.cconn.recv(1024)
-            if not data: break
-            if data[0:4] == "SEND": this.filename = data[5:]
-            print '[Control] Getting ready to receive "%s"' % this.filename
+
+        data = this.cconn.recv(1024)
+        if data[0:4] == "SEND": this.filename = data[5:]
+        print '[Control] Getting ready to receive "%s"' % this.filename
 
     def checkrequest ( this ):
-        requestCheck = raw_input('Are You Sure? ')
-        if requestCheck == "yes":
-            this.rsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            this.rsock.connect(('10.10.1.57', 9071))
-            this.rconn, this.raddr = this.rsock.accept()
-            print '[Control] Using New Socket For Checking'
+        print "Checking......"
+        this.requestCheck = raw_input('Are You Sure(yes/no)? ')
+        this.requestSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        this.requestSock.connect(('10.10.1.57', 9071))
+        if this.requestCheck == "yes":
+            this.requestSock.send('1')
+            print '[Control] Accepted'
+        else:
+            this.requestSock.connect(('10.10.1.57', 9061))
+            this.requestSock.send('0')
+            print '[Control] Denied'
 
     def transfer( this ):
         print '[Media] Starting media transfer for "%s"' % this.filename
@@ -71,7 +74,7 @@ class StreamHandler ( Thread ):
         while 1:
             this.bindcsock()
             this.acceptcsock()
-            #this.checkrequest()
+            this.checkrequest()
             this.bindmsock()
             this.acceptmsock()
             this.transfer()
