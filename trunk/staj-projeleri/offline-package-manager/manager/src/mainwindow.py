@@ -44,6 +44,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
     def connectMainSignals(self):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
+        self.connect(self, SIGNAL("modeChanged(QString)"), self.centralWidget().actionFinished)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
         self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
@@ -146,12 +147,23 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         if backend.pm.Iface().operationInProgress():
             return
 
+    def changeMode(self, mode):
+        if mode == "normal":
+            backend.pm = backend.normal_pm
+        elif mode == "offline":
+            backend.pm = backend.offline_pm
+        else:
+            raise Exception("Unknown Package Manager mode")
+
+        self.emit(SIGNAL("modeChanged(QString)"), "modeChanged")
+        self.showInstallAction.setChecked(True)
+
     def importIndex(self):
         filename = str(KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.xml", self, i18n("Select project file")))
 
         if filename:
             self.offlineOperations.importIndex(filename)
-            backend.pm = backend.offline_pm
+            self.changeMode("offline")
 
     def exportIndex(self):
         filename = str(KFileDialog.getSaveFileName(KUrl("pisi-installed"), "*.xml", self, i18n("Select project file")))
@@ -170,4 +182,4 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         if filename:
             self.offlineOperations.writeCatalog(filename)
-            backend.pm = backend.normal_pm
+            self.changeMode("normal")
