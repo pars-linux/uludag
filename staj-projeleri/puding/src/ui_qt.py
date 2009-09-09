@@ -25,7 +25,8 @@ class Create(QtGui.QMainWindow):
 
     @QtCore.pyqtSignature("bool")
     def on_button_browse_disk_clicked(self):
-        print("disk clicked")
+        self.browse_disk = SelectDisk()
+        self.browse_disk.exec_()
 
     def __checkSource(self, src):
         if QtCore.QString(src).isEmpty():
@@ -51,3 +52,14 @@ class Create(QtGui.QMainWindow):
         self.label_info_capacity.setText(str(capacity))
         self.label_info_available.setText(str(available))
         self.label_info_used.setText(str(used))
+
+class SelectDisk(QtGui.QDialog):
+    def __init__(self, parent = None):
+        super(SelectDisk, self).__init__(parent)
+        uic.loadUi("%s/ui/qtSelectDisk.ui" % SHARE, self)
+
+    @QtCore.pyqtSignature("bool")
+    def on_button_browse_clicked(self):
+        dirname = QtGui.QFileDialog.getExistingDirectory(self, "Choose Mount Disk Path")
+
+        self.line_directory.setText(dirname)
