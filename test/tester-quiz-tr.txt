@@ -78,7 +78,7 @@ veriniz.
 6. Paket bileşeni ne demektir? Pardus paketleri bileşen yapısı nasıl oluşturulmuştur?
 
 7. Test aşamalarının (testcase) amacı nedir? 
-    a) Sürüm içi testleri için gerekli test aşamaları hangi yapıya göre oluşturulmuştur?
+    a) Kararlı sürüm testleri için gerekli test aşamaları hangi yapıya göre oluşturulmuştur?
     b) Pardusa özgü yazılımların test aşamaları nasıl oluşturulmuştur?
 
 8. Düzgün ve yetkin hata raporlama neden çok önemlidir?
