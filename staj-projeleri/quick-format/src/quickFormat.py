@@ -1,256 +1,186 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Author: Renan Cakirerk <pardus@cakirerk.org>
-
 from PyQt4 import QtCore, QtGui
-import sys,os
-from subprocess import Popen, PIPE, STDOUT, call
-from time import time
 from PyQt4.QtCore import *
 
-import comar
-import refreshPartitionTable
-import diskTools
+from subprocess import Popen, PIPE, STDOUT, call
+from time import time
 
-fileSystems = {"Extended 4":"ext4", 
-			   "Extended 3":"ext3",
-			   "Extended 2":"ext2",
-			   "FAT 16/32":"vfat",
-			   "NTFS":"ntfs",
-			   "XFS":"xfs"}
+from quickFormatUI import Ui_MainWindow
+from diskTools import DiskTools
 
-class Ui_MainWindow(object):
-	
-	def setupUi(self, MainWindow):
-		MainWindow.setObjectName("MainWindow")
-		MainWindow.resize(270, 278)
-		sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
-		sizePolicy.setHorizontalStretch(0)
-		sizePolicy.setVerticalStretch(0)
-		sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
-		MainWindow.setSizePolicy(sizePolicy)
-		MainWindow.setMinimumSize(QtCore.QSize(270, 278))
-		MainWindow.setMaximumSize(QtCore.QSize(270, 278))
-		MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
-		MainWindow.setDockOptions(QtGui.QMainWindow.AllowTabbedDocks|QtGui.QMainWindow.AnimatedDocks)
-		self.centralwidget = QtGui.QWidget(MainWindow)
-		self.centralwidget.setEnabled(True)
-		self.centralwidget.setObjectName("centralwidget")
-		self.verticalLayout = QtGui.QVBoxLayout(self.centralwidget)
-		self.verticalLayout.setObjectName("verticalLayout")
-		self.grpBoxDeviceName = QtGui.QGroupBox(self.centralwidget)
-		self.grpBoxDeviceName.setMinimumSize(QtCore.QSize(0, 150))
-		self.grpBoxDeviceName.setMaximumSize(QtCore.QSize(16777215, 150))
-		font = QtGui.QFont()
-		font.setWeight(75)
-		font.setBold(True)
-		self.grpBoxDeviceName.setFont(font)
-		self.grpBoxDeviceName.setObjectName("grpBoxDeviceName")
-		self.verticalLayoutWidget = QtGui.QWidget(self.grpBoxDeviceName)
-		self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 25, 241, 106))
-		self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-		self.verticalLayout_2 = QtGui.QVBoxLayout(self.verticalLayoutWidget)
-		self.verticalLayout_2.setObjectName("verticalLayout_2")
-		self.lbl_fileSystem = QtGui.QLabel(self.verticalLayoutWidget)
-		font = QtGui.QFont()
-		font.setWeight(50)
-		font.setBold(False)
-		self.lbl_fileSystem.setFont(font)
-		self.lbl_fileSystem.setObjectName("lbl_fileSystem")
-		self.verticalLayout_2.addWidget(self.lbl_fileSystem)
-		self.cmb_fileSystem = QtGui.QComboBox(self.verticalLayoutWidget)
-		font = QtGui.QFont()
-		font.setWeight(50)
-		font.setBold(False)
-		self.cmb_fileSystem.setFont(font)
-		self.cmb_fileSystem.setObjectName("cmb_fileSystem")
-		self.verticalLayout_2.addWidget(self.cmb_fileSystem)
-		self.lbl_volumeLabel = QtGui.QLabel(self.verticalLayoutWidget)
-		font = QtGui.QFont()
-		font.setWeight(50)
-		font.setBold(False)
-		self.lbl_volumeLabel.setFont(font)
-		self.lbl_volumeLabel.setObjectName("lbl_volumeLabel")
-		self.verticalLayout_2.addWidget(self.lbl_volumeLabel)
-		self.txt_volumeLabel = QtGui.QLineEdit(self.verticalLayoutWidget)
-		self.txt_volumeLabel.setMinimumSize(QtCore.QSize(0, 25))
-		font = QtGui.QFont()
-		font.setWeight(50)
-		font.setBold(False)
-		self.txt_volumeLabel.setFont(font)
-		self.txt_volumeLabel.setObjectName("txt_volumeLabel")
-		self.verticalLayout_2.addWidget(self.txt_volumeLabel)
-		self.verticalLayout.addWidget(self.grpBoxDeviceName)
-		
+import sys, os
 
-		self.lbl_progress = QtGui.QLabel(self.centralwidget)
-		font = QtGui.QFont()
-		font.setWeight(50)
-		font.setBold(False)
-		self.lbl_progress.setFont(font)
-		
-		self.lbl_progress.setMaximumSize(QtCore.QSize(16777215, 20))
-		self.lbl_progress.setAlignment(QtCore.Qt.AlignCenter)
-		self.lbl_progress.setObjectName("lbl_progress")
-		self.verticalLayout.addWidget(self.lbl_progress)
-		
-		self.progressBar = QtGui.QProgressBar(self.centralwidget)
-		self.progressBar.setMinimumSize(QtCore.QSize(0, 0))
-		self.progressBar.setMaximumSize(QtCore.QSize(16777215, 20))
-		self.progressBar.setAutoFillBackground(False)
-		self.progressBar.setMaximum(1)
-		self.progressBar.setProperty("value", QtCore.QVariant(55973))
-		self.progressBar.setTextVisible(False)
-		self.progressBar.setOrientation(QtCore.Qt.Horizontal)
-		self.progressBar.setInvertedAppearance(False)
-		self.progressBar.setTextDirection(QtGui.QProgressBar.TopToBottom)
-		self.progressBar.setObjectName("progressBar")
-		self.verticalLayout.addWidget(self.progressBar)
-		spacerItem = QtGui.QSpacerItem(20, 20, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Fixed)
-		self.verticalLayout.addItem(spacerItem)
-		self.horizontalLayout = QtGui.QHBoxLayout()
-		self.horizontalLayout.setObjectName("horizontalLayout")
-		spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-		self.horizontalLayout.addItem(spacerItem1)
-		self.btn_format = QtGui.QPushButton(self.centralwidget)
-		self.btn_format.setObjectName("btn_format")
-		self.horizontalLayout.addWidget(self.btn_format)
-		self.btn_cancel = QtGui.QPushButton(self.centralwidget)
-		self.btn_cancel.setObjectName("btn_cancel")
-		self.horizontalLayout.addWidget(self.btn_cancel)
-		self.verticalLayout.addLayout(self.horizontalLayout)
-		MainWindow.setCentralWidget(self.centralwidget)
-		self.menubar = QtGui.QMenuBar(MainWindow)
-		self.menubar.setGeometry(QtCore.QRect(0, 0, 270, 23))
-		self.menubar.setObjectName("menubar")
-		MainWindow.setMenuBar(self.menubar)
+fileSystems = {"Extended 4":"ext4",
+        "Extended 3":"ext3",
+        "Extended 2":"ext2",
+        "FAT 16 / 32":"vfat",
+        "NTFS":"ntfs"}
 
-		self.retranslateUi(MainWindow)
-		QtCore.QObject.connect(self.btn_format, QtCore.SIGNAL("clicked()"), quickFormat.start)
-		QtCore.QObject.connect(self.btn_cancel, QtCore.SIGNAL("clicked()"), MainWindow.close)
-		QtCore.QObject.connect(quickFormat,SIGNAL("formatStarted()"),formatStarted)
-		QtCore.QObject.connect(quickFormat,SIGNAL("formatSuccessful()"),formatSuccessful)
-		QtCore.QMetaObject.connectSlotsByName(MainWindow)
+class QuickFormat():
+    def __init__(self):
+        self.addFileSystems()
+        self.addDisks()
 
-	def retranslateUi(self, MainWindow):
-		MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Disk Formatting Utility", None, QtGui.QApplication.UnicodeUTF8))
-		self.grpBoxDeviceName.setTitle(QtGui.QApplication.translate("MainWindow", "Kingston USB 2.0 4GB", None, QtGui.QApplication.UnicodeUTF8))
-		self.lbl_fileSystem.setText(QtGui.QApplication.translate("MainWindow", "File System", None, QtGui.QApplication.UnicodeUTF8))
-		self.lbl_volumeLabel.setText(QtGui.QApplication.translate("MainWindow", "Volume Label", None, QtGui.QApplication.UnicodeUTF8))
-		self.lbl_progress.setText(QtGui.QApplication.translate("MainWindow", "Progress", None, QtGui.QApplication.UnicodeUTF8))
-		self.btn_format.setText(QtGui.QApplication.translate("MainWindow", "Format", None, QtGui.QApplication.UnicodeUTF8))
-		self.btn_cancel.setText(QtGui.QApplication.translate("MainWindow", "Cancel", None, QtGui.QApplication.UnicodeUTF8))
+    def addFileSystems(self):
+        # Temporary sapce for file system list
+        self.tempFileSystems = []
+
+        # Get file system list
+        for fs in fileSystems:
+            self.tempFileSystems.append(fs)
+
+        # Sort file system list
+        self.tempFileSystems.sort()
+        self.sortedFileSystems = self.tempFileSystems
+
+        # Display file system list in combobox
+        for fs in self.sortedFileSystems:
+            ui.cmb_fileSystem.addItem(fs)
+
+    def addDisks(self):
+        # Execute
+        proc = Popen("blkid -s LABEL", shell = True, stdout = PIPE,)
+        output = proc.communicate()[0]
+
+        diskPathsAndLabels = output.splitlines()
+        
+        for diskPathAndLabel in diskPathsAndLabels:
+            diskPath = diskPathAndLabel.split(':')[0]
+            diskLabel = diskPathAndLabel.split(':')[1]
+            diskLabel = diskLabel.__getslice__(8, diskLabel.__len__()-2)
+            
+            diskPathAndLabel = diskLabel + " (" + diskPath + ")"
+            print diskPathAndLabel
+
+            ui.cmb_deviceName.addItem(diskPathAndLabel)
+            
+            print diskLabel, diskPath
+        #print output
+        #print "->>", diskPathsAndLabels
 
 
-class QuickFormat(QtCore.QThread):
+    def formatStarted(self):
+        ui.btn_format.setDisabled(True)
+        ui.progressBar.setMaximum(0)
+        ui.lbl_progress.setText("Please wait while formatting...")
 
-	def __init__(self):
-		QtCore.QThread.__init__(self)
+    def formatSuccessful(self):
+        ui.progressBar.setMaximum(1)
+        ui.progressBar.setValue(1)
+        ui.lbl_progress.setText("Format completed successfully")
+        ui.btn_format.setDisabled(False)
+        ui.btn_cancel.setText("Close")
 
-	def isDeviceMounted(self):
-		for mountPoint in dt.mountList():
-			if deviceName==mountPoint[0]:
-				return True
+    def formatFailed(self):
+        ui.progressBar.setMaximum(1)
+        ui.progressBar.setValue(0)
+        ui.lbl_progress.setText("Device is in use. Please try again")
+        ui.btn_format.setDisabled(False)
+        ui.btn_cancel.setText("Close")
 
-	def addFileSystems(self):
-		
-		# temporary space for file systems
-		tempFileSystems = []
-		
-		# get file systems
-		for fs in fileSystems:
-			tempFileSystems.append(fs)
-		
-		# sort file systems	
-		tempFileSystems.sort()
-		sortedFileSystems = tempFileSystems
-		
-		# display file systems in combobox
-		for fs in sortedFileSystems:
-			ui.cmb_fileSystem.addItem(fs)	
-			
-			
-	def formatDisk(self): 
-  
-		self.fs = fileSystems[str(
-								ui.cmb_fileSystem.itemText(
-															ui.cmb_fileSystem.currentIndex()))]
-		
-		# if device is mounted then unmount it
-		if self.isDeviceMounted()==True:
-			try:
-				dt.umount(deviceName)
-			except:
-				print "Cannot unmount device"
 
-		
-		if self.fs == "ntfs":
-			option = "-Q"
-		else:
-			option = ""
-		
-		volumeLabel = str(ui.txt_volumeLabel.text())
-#		volumeLabel = "Deneme"
-		if volumeLabel=="":
-			volumeLabel="MyDisk"
+class Formatter(QtCore.QThread):
+    def __init__(self):
+        QtCore.QThread.__init__(self)
 
-		if self.fs == "vfat":
-			self.labelingCommand = "-n"
-		
-		else:
-			self.labelingCommand = "-L"
-			
-			
-		proc = Popen("mkfs -t " + self.fs + " " + self.labelingCommand + " " + volumeLabel + " " + option + " " + deviceName, shell=True, stdout=PIPE,)	
-		print proc.communicate()[0]
-		
+    def run(self):
+        self.emit(SIGNAL("formatStarted()"))
+        
+        self.formatted = self.formatDisk()
+        
+        try:
+            diskTools.refreshPartitionTable(deviceName[:8])
+        except:
+            pass
 
-	
-	def run(self):
-		self.emit(SIGNAL("formatStarted()"))
-		self.formatDisk()
-		
-		dt.refreshPartitionTable(deviceName[:8])
-		
-		self.emit(SIGNAL("formatSuccessful()"))
+        if self.formatted==False:
+            self.emit(SIGNAL("formatFailed()"))
+        else:
+            self.emit(SIGNAL("formatSuccessful()"))
+
+
+    def isDeviceMounted(self):
+        for mountPoint in diskTools.mountList():
+            if deviceName == mountPoint[0]:
+                return True
+
+    def formatDisk(self):
+        deviceName = str(ui.cmb_deviceName.itemText(ui.cmb_deviceName.currentIndex()))
+        deviceName = deviceName.__getslice__(deviceName.__len__() - 10, deviceName.__len__() - 1)
+
+        self.fs = fileSystems[str(
+            ui.cmb_fileSystem.itemText(
+                ui.cmb_fileSystem.currentIndex()))]
+
+        # If device is mounted then unmount
+        if self.isDeviceMounted() == True:
+            try:
+                diskTools.umount(deviceName)
+            except:
+                return False
+
+        # If NTFS is selected then activate quick format
+        if self.fs == "ntfs":
+            self.quickOption = " -Q "
+        else:
+            self.quickOption = ""
+
+        self.volumeLabel = str(ui.txt_volumeLabel.text())
+        
+        # If volume label empty
+        if self.volumeLabel == "":
+            self.volumeLabel = "My Disk"
+
+        # If VFAT then labeling parameter changes
+        if self.fs == "vfat":
+            self.labelingCommand = "-n"
+        else:
+            self.labelingCommand = "-L"
+
+
+        # Command to execute
+        command = "mkfs -t " + self.fs + self.quickOption + " " + self.labelingCommand + " '" + self.volumeLabel + "' " + deviceName
+        print command
+
+        # Execute
+        proc = Popen(command, shell = True, stdout = PIPE,)
+        
+        # If theres an error then emmit error signal
+        output = proc.communicate()[0]
+        
+        ### TODO:
+        ### if output contains these words emmit signal
+        ### errorWords = ["error", "Error", "cannot", "Cannot"] ...
+
+
+app = QtGui.QApplication(sys.argv)
+MainWindow = QtGui.QMainWindow()
+
+deviceName = "/dev/sdb1"
+
+ui = Ui_MainWindow()
+ui.setupUi(MainWindow)
+
+ui.progressBar.setMaximum(1)
+ui.progressBar.setValue(0)
+ui.lbl_progress.setText("")
+
+quickFormat = QuickFormat()
+diskTools = DiskTools()
+formatter = Formatter()
+
+QtCore.QObject.connect(ui.btn_format, QtCore.SIGNAL("clicked()"), formatter.start)
+QtCore.QObject.connect(ui.btn_cancel, QtCore.SIGNAL("clicked()"), MainWindow.close)
+QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatStarted()"), quickFormat.formatStarted)
+QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatSuccessful()"), quickFormat.formatSuccessful)
+QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatFailed()"), quickFormat.formatFailed)
+
+
+MainWindow.show()
+
+app.exec_()
 
 
 
-
-def formatStarted():
-	ui.btn_format.setDisabled(True)
-	ui.progressBar.setMaximum(0)
-	ui.lbl_progress.setText("Please wait while formatting...") 
-
-def formatSuccessful():
-	ui.progressBar.setMaximum(1)
-	ui.progressBar.setValue(1)
-	ui.lbl_progress.setText("Format Completed Successfully")
-	ui.btn_format.setDisabled(False)
-	ui.btn_cancel.setText("Close")
-	
-def formatFailed():
-	ui.progressBar.setMaximum(1)
-	ui.progressBar.setValue(0)
-	ui.lbl_progress.setText("Device is in use. Unmount it and try again.") 
-
-
-if __name__ == "__main__":
-	
-	deviceName = "/dev/sdb1" #sys.argv[1]
-	
-	quickFormat = QuickFormat()
-
-	app = QtGui.QApplication(sys.argv)
-	MainWindow = QtGui.QMainWindow()
-	ui = Ui_MainWindow()
-	ui.setupUi(MainWindow)
-	
-	quickFormat.addFileSystems()
-	ui.txt_volumeLabel.setText("MyDisk")
-	
-	dt = diskTools.DiskTools()
-	
-	MainWindow.show()
-	
-	sys.exit(app.exec_())
