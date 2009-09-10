@@ -12,11 +12,11 @@ from diskTools import DiskTools
 
 import sys, os
 
-fileSystems = {"Extended 4":"ext4",
-        "Extended 3":"ext3",
-        "Extended 2":"ext2",
-        "FAT 16 / 32":"vfat",
-        "NTFS":"ntfs"}
+fileSystems = {"Ext4":"ext4",
+               "Ext3":"ext3",
+               "Ext2":"ext2",
+               "FAT 16 / 32":"vfat",
+               "NTFS":"ntfs"}
 
 class QuickFormat():
     def __init__(self):
@@ -45,17 +45,17 @@ class QuickFormat():
         output = proc.communicate()[0]
 
         diskPathsAndLabels = output.splitlines()
-        
+
         for diskPathAndLabel in diskPathsAndLabels:
             diskPath = diskPathAndLabel.split(':')[0]
             diskLabel = diskPathAndLabel.split(':')[1]
             diskLabel = diskLabel.__getslice__(8, diskLabel.__len__()-2)
-            
+
             diskPathAndLabel = diskLabel + " (" + diskPath + ")"
             print diskPathAndLabel
 
             ui.cmb_deviceName.addItem(diskPathAndLabel)
-            
+
             print diskLabel, diskPath
         #print output
         #print "->>", diskPathsAndLabels
@@ -87,9 +87,9 @@ class Formatter(QtCore.QThread):
 
     def run(self):
         self.emit(SIGNAL("formatStarted()"))
-        
+
         self.formatted = self.formatDisk()
-        
+
         try:
             diskTools.refreshPartitionTable(deviceName[:8])
         except:
@@ -128,7 +128,7 @@ class Formatter(QtCore.QThread):
             self.quickOption = ""
 
         self.volumeLabel = str(ui.txt_volumeLabel.text())
-        
+
         # If volume label empty
         if self.volumeLabel == "":
             self.volumeLabel = "My Disk"
@@ -146,41 +146,40 @@ class Formatter(QtCore.QThread):
 
         # Execute
         proc = Popen(command, shell = True, stdout = PIPE,)
-        
+
         # If theres an error then emmit error signal
         output = proc.communicate()[0]
-        
+
         ### TODO:
         ### if output contains these words emmit signal
         ### errorWords = ["error", "Error", "cannot", "Cannot"] ...
 
+if __name__ == "__main__":
+    app = QtGui.QApplication(sys.argv)
+    MainWindow = QtGui.QMainWindow()
 
-app = QtGui.QApplication(sys.argv)
-MainWindow = QtGui.QMainWindow()
+    deviceName = "/dev/sdb1"
 
-deviceName = "/dev/sdb1"
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
 
-ui = Ui_MainWindow()
-ui.setupUi(MainWindow)
+    ui.progressBar.setMaximum(1)
+    ui.progressBar.setValue(0)
+    ui.lbl_progress.setText("")
 
-ui.progressBar.setMaximum(1)
-ui.progressBar.setValue(0)
-ui.lbl_progress.setText("")
+    quickFormat = QuickFormat()
+    diskTools = DiskTools()
+    formatter = Formatter()
 
-quickFormat = QuickFormat()
-diskTools = DiskTools()
-formatter = Formatter()
+    QtCore.QObject.connect(ui.btn_format, QtCore.SIGNAL("clicked()"), formatter.start)
+    QtCore.QObject.connect(ui.btn_cancel, QtCore.SIGNAL("clicked()"), MainWindow.close)
+    QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatStarted()"), quickFormat.formatStarted)
+    QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatSuccessful()"), quickFormat.formatSuccessful)
+    QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatFailed()"), quickFormat.formatFailed)
 
-QtCore.QObject.connect(ui.btn_format, QtCore.SIGNAL("clicked()"), formatter.start)
-QtCore.QObject.connect(ui.btn_cancel, QtCore.SIGNAL("clicked()"), MainWindow.close)
-QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatStarted()"), quickFormat.formatStarted)
-QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatSuccessful()"), quickFormat.formatSuccessful)
-QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatFailed()"), quickFormat.formatFailed)
+    MainWindow.show()
 
-
-MainWindow.show()
-
-app.exec_()
+    app.exec_()
 
 
 
