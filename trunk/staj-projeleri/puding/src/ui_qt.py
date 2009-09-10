@@ -8,6 +8,7 @@ import os
 import sys
 
 from common import (SHARE, getDiskInfo)
+from constants import DESCRIPTION
 from PyQt4 import (QtCore, QtGui, uic)
 
 class Create(QtGui.QMainWindow):
@@ -16,6 +17,7 @@ class Create(QtGui.QMainWindow):
         uic.loadUi("%s/ui/qtMain.ui" % SHARE, self)
 
         self.connect(self.button_quit, QtCore.SIGNAL("clicked()"), QtCore.SLOT("close()"))
+        self.connect(self.actionQuit, QtCore.SIGNAL("triggered()"), QtCore.SLOT("close()"))
 
     @QtCore.pyqtSignature("bool")
     def on_button_browse_image_clicked(self):
@@ -27,6 +29,10 @@ class Create(QtGui.QMainWindow):
     def on_button_browse_disk_clicked(self):
         self.browse_disk = SelectDisk()
         self.browse_disk.exec_()
+
+    @QtCore.pyqtSignature("bool")
+    def on_actionAbout_triggered(self):
+         QtGui.QMessageBox.about(self, "About Puding", DESCRIPTION)
 
     def __checkSource(self, src):
         if QtCore.QString(src).isEmpty():

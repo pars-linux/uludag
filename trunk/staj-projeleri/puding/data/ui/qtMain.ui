@@ -139,7 +139,7 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
-    <addaction name="action_QUit"/>
+    <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -151,7 +151,7 @@
    <addaction name="menu_Help"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action_QUit">
+  <action name="actionQuit">
    <property name="text">
     <string>&amp;Quit</string>
    </property>
