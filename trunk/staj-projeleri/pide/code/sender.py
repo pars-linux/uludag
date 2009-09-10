@@ -20,25 +20,44 @@ class FileSender:
 
     def waitforcheck(self):
         self.acceptedSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        if self.acceptedSocket.bind(('', 9071)):
-            self.acceptedSocket.listen(1)
-            #self.deniedSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            #self.deniedSocket.bind(('', 9061))
-            #self.deniedSocket.listen(1)
-            print '[Media] Listening on port 9071'
-            self.raconn, self.raddr = self.acceptedSocket.accept()
-            if self.raddr:
-                print '[Media] Got Connection from:', self.raddr
-                #self.rdconn = self.deniedSocket.accept()
-                #if self.rdconn:
-                #    print "Not Requested"
+        self.acceptedSocket.bind(('', 9071))
+        self.acceptedSocket.listen(1)
+        #self.deniedSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        #self.deniedSocket.bind(('', 9061))
+        #self.deniedSocket.listen(1)
+        print '[Media] Listening on port 9071'
+        self.raconn, self.raddr = self.acceptedSocket.accept()
+        if self.raddr:
+            print '[Media] Got Connection from:', self.raddr
+        #self.rdconn = self.deniedSocket.accept()
+        #if self.rdconn:
+        #    print "Not Requested"
 
     def sendContent(self):
-        if self.ms.connect((self.host, self.MPORT)):
-            f = open(self.file, "rb")
-            self.data = f.read()
-            f.close()
-            self.ms.send(self.data)
+        self.ms.connect((self.host, self.MPORT))
+        f = open(self.file, "rb")
+        self.data = f.read()
+        f.close()
+        self.ms.send(self.data)
+
+
+    def infoSocket(self):
+        self.host = '10.10.0.26'
+        self.port = 9001
+        self.addr = (self.host, self.port)
+        msgSocket = socket(AF_INET,SOCK_DGRAM)
+        msgSocket.bind(addr)
+        print "[Control] Connected To 9001"
+
+    def getInfo(self):
+        self.msg = "test 123"
+        while (1):
+            self.data = raw_input('>>')
+            if not data:
+                    break
+            else:
+                if(UDPSock.sendto(self.data,self.addr)):
+                    print "Sending message '",data,"'....."
 
     def close(self):
         self.cs.close()
