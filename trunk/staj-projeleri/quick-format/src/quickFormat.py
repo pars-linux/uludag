@@ -93,7 +93,7 @@ class Formatter(QtCore.QThread):
         try:
             diskTools.refreshPartitionTable(deviceName[:8])
         except:
-            pass
+            print "ERROR: ======= Cannot refresh partition ======="
 
         if self.formatted==False:
             self.emit(SIGNAL("formatFailed()"))
