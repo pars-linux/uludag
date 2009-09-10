@@ -112,9 +112,6 @@ Aşağıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
 # mplayer test.mp4
 \end{verbatim}
 
-
-
-
 \end{enumerate}
 
 \section{Converter alt Bileşeni}
@@ -292,7 +289,133 @@ Lake_dance_XviD.AVI
 \end{enumerate}
 \section{Graphics alt Bileşeni}
 \begin{enumerate}
- \item gimp kurulumu sonrası:
+\item jasper paketi kurulumu sonrası:
+
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_jasper.jpg
+ # jiv test_jasper.jpg
+ # jasper --input test_jasper.jpg --output test.jp2 --output-format jp2
+ # jiv test.jp2
+\end{verbatim}
+
+
+ \item gocr paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları çalıştırın ve uygulamanın karakterleri taryabildiğini ve test adında bir dosyaya yazabildiğini gözlemleyin.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/font1.pbm.gz
+ # gocr -i font1.pbm.gz -o test
+ # vi test
+\end{verbatim}
+
+\item graphviz paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz olarak çalıştığını gözlemleyin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_graphviz.mm
+# mm2gv  test_graphviz.mm -o test.gv
+# dotty test.gv
+# gv2gxl test.gv -o test.gxl 
+# gxl2dot test.gxl test.dot
+# acyclic test.dot test_asyclic.dot
+# lneato test.dot
+# vimdot test.dot
+\end{verbatim}
+
+
+
+ \item gimp-data-extras paketi kurulum testine tabidir.
+ \item Aşağıda bulunan paketlerin kurulumu sonrasında, yerel dilinizi değiştirip, konsoldan aynı dizinde gimp uygulamasını açın ve uygulamanın ilgili dilde olduğunu gözlemleyin.
+
+Yerel dili değiştirmek için:
+\begin{verbatim}
+export LC_ALL= <lang_LANG>
+\end{verbatim}
+
+lang\_LANG şeklinde yazılmış olan, pt-BT için pt\_BT, diğer diller için örneğin de\_DE olacaktır.
+
+Daha sonra bu çalıştırdığınız komut dizininde gimp komutunu çalıştırın, uygulamanın sorunsuz bir şekilde istenilen dilde açıldığını gözlemleyin.
+\begin{verbatim}
+gimp-i18n-es
+gimp-i18n-sk
+gimp-i18n-sl
+gimp-i18n-sr
+gimp-i18n-sr_Latn
+gimp-i18n-sv
+gimp-i18n-ta
+gimp-i18n-th
+gimp-i18n-tt
+gimp-i18n-uk
+gimp-i18n-vi
+gimp-i18n-et
+gimp-i18n-eu
+gimp-i18n-fa
+gimp-i18n-fi
+gimp-i18n-fr
+gimp-i18n-ga
+gimp-i18n-gl
+gimp-i18n-gu
+gimp-i18n-he
+gimp-i18n-hi
+gimp-i18n-xh
+gimp-i18n-yi
+gimp-i18n-zh_CN
+gimp-i18n-zh_HK
+gimp-i18n-zh_TW
+gimp-i18n-hr
+gimp-i18n-hu
+gimp-i18n-id
+gimp-i18n-is
+gimp-i18n-it
+gimp-i18n-ja
+gimp-i18n-ka
+gimp-i18n-km
+gimp-i18n-kn
+gimp-i18n-ko
+gimp-i18n-lt
+gimp-i18n-lv
+gimp-i18n-mk
+gimp-i18n-ml
+gimp-i18n-mr
+gimp-i18n-ms
+gimp-i18n-nb
+gimp-i18n-ne
+gimp-i18n-nl
+gimp-i18n-nn
+gimp-i18n-oc
+gimp-i18n-or
+gimp-i18n-pa
+gimp-i18n-pl
+gimp-i18n-pt
+gimp-i18n-pt_BR
+gimp-i18n-ro
+gimp-i18n-ru
+gimp-i18n-rw
+gimp-i18n-si 
+\end{verbatim}
+
+
+ \item GraphicsMagick paketi kurulumu sonras:
+
+office-tr.pdf koffice-krita testinin gerçekleştiriniz.
+
+ \item İmageJ paketi kurulumu sonrası:
+
+ Kmenüden uygulamayı çalıştırın ve Dosya $\rightarrow$ Aç yolunu izleyerek aşağıda bulunan dosyanın açılabildiğini gözlemleyin.
+  \begin{verbatim}
+   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.jpg
+  \end{verbatim}
+
+\item autotrace paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
+  \begin{verbatim}
+   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/bmp_24.bmp
+   # autotrace bmp_24.bmp -output-file test.eps  -output-format eps
+   # gwenview test.eps 
+  \end{verbatim}
+
+ \item gimp ve gimp-devel kurulumu sonrası:
   \begin{verbatim}
    http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
   \end{verbatim}
@@ -349,6 +472,14 @@ Aşağıda bulunan komutlaruın düzgün bir şekilde çalıştırğını gözle
 # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcmtk.dcm 
 # dcmj2pnm test_dcmtk.dcm  test.png
 # gwenview test.png
+\end{verbatim}
+
+\item dcraw paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların düzgün bir şekilde çalıştıklarını gözlemleyin.  
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcraw.jpg 
+# dcparse test_dcraw.jpg 
 \end{verbatim}
 
 \end{enumerate}
