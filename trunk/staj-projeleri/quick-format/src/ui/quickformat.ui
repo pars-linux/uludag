@@ -66,7 +66,7 @@
        <string/>
       </property>
       <property name="title">
-       <string>Kingston USB 2.0 4GB</string>
+       <string/>
       </property>
       <widget class="QWidget" name="verticalLayoutWidget">
        <property name="geometry">
@@ -92,7 +92,14 @@
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="cmb_deviceName"/>
+         <widget class="QComboBox" name="cmb_deviceName">
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="lbl_fileSystem">
@@ -131,7 +138,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="txt_volumeLabel">
           <property name="minimumSize">
            <size>
             <width>0</width>
@@ -224,7 +231,7 @@
          <number>0</number>
         </property>
         <property name="value">
-         <number>192831</number>
+         <number>326823</number>
         </property>
         <property name="textVisible">
          <bool>true</bool>
@@ -290,38 +297,5 @@
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>btn_format</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>142</x>
-     <y>300</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>117</x>
-     <y>217</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_cancel</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>243</x>
-     <y>300</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>210</x>
-     <y>212</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

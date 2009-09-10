@@ -84,8 +84,9 @@ class QuickFormat():
 
 
 class Formatter(QtCore.QThread):
-    def __init__(self):
+    def __init__(self, fileSystems):
         QtCore.QThread.__init__(self)
+        self.fileSystems = fileSystems
 
     def run(self):
         self.emit(SIGNAL("formatStarted()"))
@@ -112,7 +113,7 @@ class Formatter(QtCore.QThread):
         deviceName = str(ui.cmb_deviceName.itemText(ui.cmb_deviceName.currentIndex()))
         deviceName = deviceName.__getslice__(deviceName.__len__() - 10, deviceName.__len__() - 1)
 
-        self.fs = fileSystems[str(
+        self.fs = self.fileSystems[str(
             ui.cmb_fileSystem.itemText(
                 ui.cmb_fileSystem.currentIndex()))]
 
@@ -156,32 +157,35 @@ class Formatter(QtCore.QThread):
         ### if output contains these words emmit signal
         ### errorWords = ["error", "Error", "cannot", "Cannot"] ...
 
-if __name__ == "__main__":
-    app = QtGui.QApplication(sys.argv)
-    MainWindow = QtGui.QMainWindow()
+###if __name__ == "__main__":
+app = QtGui.QApplication(sys.argv)
+_MainWindow = QtGui.QMainWindow()
 
-    deviceName = "/dev/sdb1"
+deviceName = "/dev/sdb1"
 
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+ui = Ui_MainWindow()
+ui.setupUi(_MainWindow)
 
-    ui.progressBar.setMaximum(1)
-    ui.progressBar.setValue(0)
-    ui.lbl_progress.setText("")
+ui.progressBar.setMaximum(1)
+ui.progressBar.setValue(0)
+ui.lbl_progress.setText("")
 
-    quickFormat = QuickFormat()
-    diskTools = DiskTools()
-    formatter = Formatter()
 
-    QtCore.QObject.connect(ui.btn_format, QtCore.SIGNAL("clicked()"), formatter.start)
-    QtCore.QObject.connect(ui.btn_cancel, QtCore.SIGNAL("clicked()"), MainWindow.close)
-    QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatStarted()"), quickFormat.formatStarted)
-    QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatSuccessful()"), quickFormat.formatSuccessful)
-    QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatFailed()"), quickFormat.formatFailed)
 
-    MainWindow.show()
+quickFormat = QuickFormat()
+diskTools = DiskTools()
+formatter = Formatter(fileSystems)
 
-    app.exec_()
+QtCore.QObject.connect(ui.btn_format, QtCore.SIGNAL("clicked()"), formatter.start)
+QtCore.QObject.connect(ui.btn_cancel, QtCore.SIGNAL("clicked()"), _MainWindow.close)
+QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatStarted()"), quickFormat.formatStarted)
+QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatSuccessful()"), quickFormat.formatSuccessful)
+QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatFailed()"), quickFormat.formatFailed)
+
+_MainWindow.show()
+
+app.exec_()
+#sys.exit(app.exec_())
 
 
 
