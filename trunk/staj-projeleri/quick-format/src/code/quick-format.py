@@ -159,33 +159,30 @@ class Formatter(QtCore.QThread):
 
 ###if __name__ == "__main__":
 app = QtGui.QApplication(sys.argv)
-_MainWindow = QtGui.QMainWindow()
+MainWindow = QtGui.QMainWindow()
 
 deviceName = "/dev/sdb1"
 
 ui = Ui_MainWindow()
-ui.setupUi(_MainWindow)
+ui.setupUi(MainWindow)
 
 ui.progressBar.setMaximum(1)
 ui.progressBar.setValue(0)
 ui.lbl_progress.setText("")
-
-
 
 quickFormat = QuickFormat()
 diskTools = DiskTools()
 formatter = Formatter(fileSystems)
 
 QtCore.QObject.connect(ui.btn_format, QtCore.SIGNAL("clicked()"), formatter.start)
-QtCore.QObject.connect(ui.btn_cancel, QtCore.SIGNAL("clicked()"), _MainWindow.close)
+QtCore.QObject.connect(ui.btn_cancel, QtCore.SIGNAL("clicked()"), MainWindow.close)
 QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatStarted()"), quickFormat.formatStarted)
 QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatSuccessful()"), quickFormat.formatSuccessful)
 QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatFailed()"), quickFormat.formatFailed)
 
-_MainWindow.show()
+MainWindow.show()
 
 app.exec_()
-#sys.exit(app.exec_())
 
 
 
