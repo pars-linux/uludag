@@ -14,7 +14,7 @@ from PyKDE4.kdecore import KAboutData, ki18n
 
 # Application Data
 appName     = "quick-format"
-modName     = "displaysettings"
+modName     = "quickformat"
 programName = ki18n("Display Settings")
 version     = "0.9.95"
 description = ki18n("Display Configuration Tool")

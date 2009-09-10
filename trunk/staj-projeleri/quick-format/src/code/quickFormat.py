@@ -7,8 +7,8 @@ from PyQt4.QtCore import *
 from subprocess import Popen, PIPE, STDOUT, call
 from time import time
 
-from quickFormatUI import Ui_MainWindow
-from diskTools import DiskTools
+from quickformat.ui_quickformat import Ui_MainWindow
+from quickformat.diskTools import DiskTools
 
 import sys, os
 
