@@ -40,7 +40,7 @@ def update_messages():
             os.system("msgmerge -q -o .tmp/temp.po po/%s po/%s.pot" % (item, about.catalog))
             os.system("cp .tmp/temp.po po/%s" % item)
     # Remove temporary directory
-    os.system("rm -rf .tmp")
+    #os.system("rm -rf .tmp")
 
 def makeDirs(dir):
     try:
@@ -58,7 +58,7 @@ class Build(build):
         # Copy compiled UIs and RCs
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
-            os.system("/usr/kde/4/bin/pykde4uic -o build/%s/%s.py ui/%s" % (about.modName, filename.split(".")[0], filename))
+            os.system("/usr/kde/4/bin/pykde4uic -o build/%s/ui_%s.py ui/%s" % (about.modName, filename.split(".")[0], filename))
         #print "Generating RCs..."
         #for filename in glob.glob1("data", "*.qrc"):
         #    os.system("/usr/bin/pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
@@ -86,7 +86,6 @@ class Install(install):
 
         # Install desktop files
         print "Installing desktop files..."
-        shutil.copy("resources/kcm_%s.desktop" % about.modName, service_dir)
         shutil.copy("resources/%s.desktop" % about.modName, apps_dir)
 
         # Install codes
