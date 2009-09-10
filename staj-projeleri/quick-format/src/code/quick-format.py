@@ -4,6 +4,8 @@
 from PyQt4 import QtCore, QtGui
 from PyQt4.QtCore import *
 
+from PyKDE4.kdecore import i18n
+
 from subprocess import Popen, PIPE, STDOUT, call
 from time import time
 
@@ -64,7 +66,7 @@ class QuickFormat():
     def formatStarted(self):
         ui.btn_format.setDisabled(True)
         ui.progressBar.setMaximum(0)
-        ui.lbl_progress.setText("Please wait while formatting...")
+        ui.lbl_progress.setText(i18n("Please wait while formatting..."))
 
     def formatSuccessful(self):
         ui.progressBar.setMaximum(1)

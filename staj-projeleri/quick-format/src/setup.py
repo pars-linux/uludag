@@ -86,7 +86,7 @@ class Install(install):
 
         # Install desktop files
         print "Installing desktop files..."
-        shutil.copy("resources/%s.desktop" % about.modName, apps_dir)
+        #shutil.copy("resources/%s.desktop" % about.modName, apps_dir)
 
         # Install codes
         print "Installing codes..."
@@ -94,12 +94,12 @@ class Install(install):
 
         # Install rc file
         print "Installing resource file"
-        os.system("pyrcc4 resources/data.qrc > %s/data_rc.py" % project_dir)
+        #os.system("pyrcc4 resources/data.qrc > %s/data_rc.py" % project_dir)
 
         # Install pics
         print "Installing pics..."
-        os.system("cp -R resources/pics %s" % project_dir)
-        os.system("cp -R resources/icons %s" % project_dir)
+        #os.system("cp -R resources/pics %s" % project_dir)
+        #os.system("cp -R resources/icons %s" % project_dir)
 
         # Install locales
         print "Installing locales..."
