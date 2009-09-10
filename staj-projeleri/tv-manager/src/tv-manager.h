@@ -12,7 +12,8 @@
 #ifndef __TASMATV_H__
 #define __TASMATV_H__
 
-#include <KCModule>
+#include <QWidget>
+// #include <KCModule>
 #include "tvconfig.h"
 
 #define AUTO_CARD 0
@@ -21,24 +22,24 @@
 class KAboutData;
 class TvConfigUI;
 
-class TasmaTv : public KCModule
+class TasmaTv : public QWidget// : public KCModule
 {
-    Q_OBJECT
+   Q_OBJECT
 
     public:
         // TasmaTv(QWidget *parent = 0, const char *name = 0, const QStringList &lst = QStringList());
         TasmaTv(QWidget *parent = 0, const QStringList &lst = QStringList());
         ~TasmaTv() {}
 
-        /*virtual void load();
+        virtual void load();
         virtual void save();
         virtual void defaults();
-        virtual QString quickHelp() const;*/
+        virtual QString quickHelp() const;
 
     public slots:
-        /*void configChanged();
+        void configChanged();
         void tvVendorChanged();
-        void tunerVendorChanged();*/
+        void tunerVendorChanged();
 
     private:
         TvConfig *mainWidget;

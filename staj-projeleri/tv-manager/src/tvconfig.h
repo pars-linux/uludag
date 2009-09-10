@@ -15,8 +15,8 @@
 #include <KDialog>
 
 #include "tvconfigui.h"
-// #include "cards-db.h"
-// #include "tuners-db.h"
+#include "cards-db.h"
+#include "tuners-db.h"
 
 #define AUTO_TUNER  4
 
@@ -28,12 +28,12 @@ public:
     TvConfig(QWidget *parent);
     ~TvConfig();
 
-    /*void loadModule();
-    //void removeModule();
-    //void saveOptions();
+    void loadModule();
+    void removeModule();
+    void saveOptions();
 
-    void tunerVendorChanged();
-    void tvVendorChanged();
+    void tunerManListChanged();
+    void cardManListChanged();
 
     void selectCard(int card_id);
     void selectTuner(int tuner_id);
@@ -44,8 +44,8 @@ private:
     int getCard();
     int getTuner();
 
-    // CardsDB cardsDB;
-    // TunersDB tunersDB;*/
+    CardsDB cardsDB;
+    TunersDB tunersDB;
 };
 
 #endif // TV_CONFIG_H
