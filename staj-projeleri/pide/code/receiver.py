@@ -5,11 +5,14 @@ import socket, time, string, sys, urlparse
 from threading import *
 from PyQt4.QtGui import QApplication
 
+# Application
+from knotify import KNotification
 
 class StreamHandler ( Thread ):
 
     def __init__( this ):
         Thread.__init__( this )
+        this.KdeN = KNotification()
 
     def run(this):
         this.process()
@@ -40,16 +43,35 @@ class StreamHandler ( Thread ):
 
     def checkrequest ( this ):
         print "Checking......"
-        this.requestCheck = raw_input('Are You Sure(yes/no)? ')
+        m = " kullanıcısı size dosya göndermek istiyor:"
+        this.KdeN.Notify(this.filename, this.maddr, m)
+        this.requestCheck = raw_input('Are You Sure (yes/no)? ')
         this.requestSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         this.requestSock.connect(('10.10.1.57', 9071))
         if this.requestCheck == "yes":
             this.requestSock.send('1')
             print '[Control] Accepted'
-        else:
+        if this.requestCheck == "no":
             this.requestSock.connect(('10.10.1.57', 9061))
             this.requestSock.send('0')
             print '[Control] Denied'
+
+
+    def infoSocket ( this ):
+        this.host = '10.10.0.26'
+        this.port = 9001
+        this.addr = (this.host, this.port)
+        msgSocket = socket(AF_INET,SOCK_DGRAM)
+        msgSocket.bind(addr)
+        print "[Control] Connected To 9001"
+
+    def getInfo ( this ):
+        this.buf = 1024
+        this.data, this.addr = this.msgSocket.recvfrom(this.buf)
+        if not data:
+            print "Client has exited!"
+        else:
+            print "\n Received message :", data
 
     def transfer( this ):
         print '[Media] Starting media transfer for "%s"' % this.filename
@@ -74,11 +96,13 @@ class StreamHandler ( Thread ):
         while 1:
             this.bindcsock()
             this.acceptcsock()
-            this.checkrequest()
-            this.bindmsock()
-            this.acceptmsock()
-            this.transfer()
-            this.close()
+            this.infoSocket()
+            this.getInfo()
+            #this.checkrequest()
+            #this.bindmsock()
+            #this.acceptmsock()
+            #this.transfer()
+            #this.close()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
