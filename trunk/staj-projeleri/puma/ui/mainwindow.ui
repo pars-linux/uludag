@@ -130,7 +130,6 @@
      <string>Help</string>
     </property>
     <addaction name="actionAbout"/>
-    <addaction name="actionQt_About"/>
     <addaction name="actionHelp"/>
    </widget>
    <addaction name="menuFile"/>
