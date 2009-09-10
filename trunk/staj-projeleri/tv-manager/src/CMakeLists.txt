@@ -37,6 +37,8 @@ set(
     tvconfig.cpp
     tvconfigui.cpp
     tv-manager.cpp
+    tuners-db.cpp
+    cards-db.cpp
     )
 
 # tell cmake to create .moc files for all files in the variable tv-manager_SRCS that require such a file.

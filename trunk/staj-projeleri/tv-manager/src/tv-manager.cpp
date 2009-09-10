@@ -20,18 +20,20 @@
 #include <QCheckBox>
 #include <QFile>
 #include <QLayout>
+#include <iostream>
 
 #include "tv-manager.h"
 #include "tv-manager.moc"
 
-typedef KGenericFactory<TasmaTv, QWidget> TasmaTvFactory;
+// typedef KGenericFactory<TasmaTv, QWidget> TasmaTvFactory;
 //typedef KGenericFactory<TasmaTv, QWidget> TasmaTvFactory;
-K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("tasmatv"))
+//K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("tasmatv"))
 //K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("tasmatv"))
 
-TasmaTv::TasmaTv(QWidget *parent,const QStringList &)
-    : KCModule(TasmaTvFactory::componentData(), parent)
+TasmaTv::TasmaTv(QWidget *parent,const QStringList &) : QWidget(parent)
+   // : KCModule(TasmaTvFactory::componentData(), parent)
 {
+    std::cout << "tv-manager signaling" << std::endl;
     KGlobal::locale()->setMainCatalog("tasma");  // Changed 2008 to 2009
     mainWidget = new TvConfig(this);
 
@@ -45,16 +47,17 @@ TasmaTv::TasmaTv(QWidget *parent,const QStringList &)
 
     TasmaTvAbout->addAuthor( ki18n("Enes Albay"),  ki18n( "Current Maintainer" ), "albayenes@gmail.com", "");   // Ported to kde4
 
-    /*connect(mainWidget->tvModel, SIGNAL(selectionChanged()), SLOT(configChanged()));
+    connect(mainWidget->tvModel, SIGNAL(selectionChanged()), SLOT(configChanged()));
     connect(mainWidget->tvVendor, SIGNAL(selectionChanged()), SLOT(tvVendorChanged()));
     connect(mainWidget->tunerModel, SIGNAL(selectionChanged()), SLOT(configChanged()));
     connect(mainWidget->tunerVendor, SIGNAL(selectionChanged()), SLOT(tunerVendorChanged()));
     connect(mainWidget->pllGroup, SIGNAL(pressed(int)), SLOT(configChanged()));
     connect(mainWidget->radioCard, SIGNAL(stateChanged(int)), SLOT(configChanged()));
-    load();*/
+    load();
+    std::cout << "tv-manager awakened" << std::endl;
 }
 
-/*void TasmaTv::load()
+void TasmaTv::load()
 {
     KConfig *config = new KConfig("kcmtasmatvrc", true);
     config->setGroup("System");
@@ -96,4 +99,4 @@ void TasmaTv::tunerVendorChanged()
 void TasmaTv::tvVendorChanged()
 {
     mainWidget->tvVendorChanged();
-}*/
+}
