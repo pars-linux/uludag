@@ -26,6 +26,7 @@
 #include <QtGui/QTabWidget>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
+#include <QtGui/QGroupBox>
 #include <iostream>
 
 QT_BEGIN_NAMESPACE
@@ -55,19 +56,14 @@ public:
     QListWidget *tunerManList;
     QListWidget *tunerModList;
     QWidget *tab_3;
-    // QVBoxLayout *verticalLayout_5;
-    // QVBoxLayout *verticalLayout_3;
-    // QSplitter *splitter;
     QButtonGroup *pllGroup;
-    // QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QRadioButton *pllButton;
     QRadioButton *mhz28Button;
     QRadioButton *mhz35Button;
     QButtonGroup *addOnsGroup;
-    // QVBoxLayout *verticalLayout_4;
-    QGridLayout *tab3GridLay;
     QCheckBox *radioCard;
+    QGroupBox *groupBox;
     QSpacerItem *verticalSpacer;
     QSpacerItem *verticalSpacer_2;
 
@@ -162,76 +158,32 @@ public:
         tvCard->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
-        // tab3GridLay = new QGridLayout(tab_3);
-        /*verticalLayout_5 = new QVBoxLayout(tab_3);
-        verticalLayout_5->setSpacing(6);
-        verticalLayout_5->setMargin(11);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        splitter = new QSplitter(tab_3);
-        splitter->setObjectName(QString::fromUtf8("splitter"));
-        splitter->setOrientation(Qt::Horizontal);*/
+        groupBox = new QGroupBox(tab_3);
         pllGroup = new QButtonGroup();
         pllGroup->setObjectName(QString::fromUtf8("pllGroup"));
-        // tab3GridLay->addWidget(pllGroup, 0, 0);
-        /*verticalLayout_2 = new QVBoxLayout(pllGroup);
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setMargin(11);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));*/
-        //verticalLayout = new QVBoxLayout();
-        //verticalLayout->setSpacing(6);
-        //verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        pllButton = new QRadioButton();
+        pllButton = new QRadioButton(groupBox);
         pllButton->setObjectName(QString::fromUtf8("pllButton"));
 
         pllGroup->addButton(pllButton);
-        //verticalLayout->addWidget(pllButton);
 
-        mhz28Button = new QRadioButton();
+        mhz28Button = new QRadioButton(groupBox);
         mhz28Button->setObjectName(QString::fromUtf8("mhz28Button"));
         pllGroup->addButton(mhz28Button);
 
-        //verticalLayout->addWidget(mhz28Button);
 
-        mhz35Button = new QRadioButton();
+        mhz35Button = new QRadioButton(groupBox);
         mhz35Button->setObjectName(QString::fromUtf8("mhz35Button"));
         pllGroup->addButton(mhz35Button);
 
-        //verticalLayout->addWidget(mhz35Button);
-
-
-        // verticalLayout_2->addLayout(verticalLayout);
-
-        // splitter->addWidget(pllGroup);
         addOnsGroup = new QButtonGroup();
         addOnsGroup->setObjectName(QString::fromUtf8("addOnsGroup"));
-        //tab3GridLay->addWidget(addOnsGroup, 1, 0);
-        /*verticalLayout_4 = new QVBoxLayout(addOnsGroup);
-        verticalLayout_4->setSpacing(6);
-        verticalLayout_4->setMargin(11);
-        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));*/
         radioCard = new QCheckBox();
         radioCard->setObjectName(QString::fromUtf8("radioCard"));
         addOnsGroup->addButton(radioCard);
 
-        // verticalLayout_4->addWidget(radioCard);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        // verticalLayout_4->addItem(verticalSpacer);
-
-        // splitter->addWidget(addOnsGroup);
-
-        // verticalLayout_3->addWidget(splitter);
-
-        // verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        // verticalLayout_3->addItem(verticalSpacer_2);
-
-
-        // verticalLayout_5->addLayout(verticalLayout_3);
 
         tvCard->addTab(tab_3, QString());
 
@@ -296,16 +248,13 @@ public:
         mhz28Button->setText(QApplication::translate("TvConfigUI", "28 Mhz Crystal", 0, QApplication::UnicodeUTF8));
         mhz35Button->setText(QApplication::translate("TvConfigUI", "35 Mhz Crystal", 0, QApplication::UnicodeUTF8));
         // addOnsGroup->setTitle(QApplication::translate("TvConfigUI", "Eklentiler", 0, QApplication::UnicodeUTF8));
-        radioCard->setText(QApplication::translate("TvConfigUI", "Radyo Kart\304\261", 0, QApplication::UnicodeUTF8));
+         radioCard->setText(QApplication::translate("TvConfigUI", "Radyo Kart\304\261", 0, QApplication::UnicodeUTF8));
         tvCard->setTabText(tvCard->indexOf(tab_3), QApplication::translate("TvConfigUI", "Se\303\247enekler", 0, QApplication::UnicodeUTF8));
         Q_UNUSED(TvConfigUI);
     } // retranslateUi
 
 };
 
-/*namespace Ui {
-    class TvConfigUI: public Ui_TvConfigUI {};
-} // namespace Ui*/
 
 QT_END_NAMESPACE
 

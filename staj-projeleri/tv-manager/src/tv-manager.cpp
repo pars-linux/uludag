@@ -12,6 +12,7 @@
 #include <KAboutData>
 #include <KDialog>
 #include <KGenericFactory>
+#include <KPluginFactory>
 // #include <KSimpleConfig>
 
 #include <Q3ListBox>
@@ -27,10 +28,11 @@
 #include "tv-manager.h"
 #include "tv-manager.moc"
 
- typedef KGenericFactory<TasmaTv, QWidget> TasmaTvFactory;
-K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("tasmatv"))
+// typedef KGenericFactory<TasmaTv, QWidget>::create(parent, &lst) TasmaTvFactory;
+// K_EXPORT_COMPONENT_FACTORY(kcm_tvManager, TasmaTvFactory("tv-manager"))
 
-TasmaTv::TasmaTv(QWidget *parent, const QStringList &) : KCModule(TasmaTvFactory::componentData(), parent)
+TasmaTv::TasmaTv(QWidget *parent/*, const QVariantList &lst*/) : QWidget(parent)
+   // : KCModule(TasmaTvFactory::componentData(), parent, lst)
 {
     std::cout << "tv-manager signaling" << std::endl;
     KGlobal::locale()->setMainCatalog("tasma");  // Changed 2008 to 2009
@@ -39,18 +41,18 @@ TasmaTv::TasmaTv(QWidget *parent, const QStringList &) : KCModule(TasmaTvFactory
     QVBoxLayout *v = new QVBoxLayout(this);    // Ported
     v->addWidget(mainWidget);
 
-    TasmaTvAbout = new KAboutData("tasmatv", 0, ki18n(  "TASMA Tv Card Configuration Module" ),  "0.1",
+    TasmaTvAbout = new KAboutData("tv-manager", 0, ki18n(  "TASMA Tv Card Configuration Module" ),  "0.1",
 				     ki18n("TASMA Tv Card Configuration Module" ),
 				     KAboutData::License_GPL,
 				     ki18n("(c) 2005-2006, TUBITAK - UEKAE" ) );  // Ported to kde4
 
     TasmaTvAbout->addAuthor( ki18n("Enes Albay"),  ki18n( "Current Maintainer" ), "albayenes@gmail.com", "");   // Ported to kde4
 
-    connect(mainWidget->cardModList, SIGNAL(selectionChanged()), SLOT(configChanged()));
-    connect(mainWidget->cardManList, SIGNAL(selectionChanged()), SLOT(cardManListChanged()));
-    connect(mainWidget->tunerModList, SIGNAL(selectionChanged()), SLOT(configChanged()));
-    connect(mainWidget->tunerManList, SIGNAL(selectionChanged()), SLOT(tunerManListChanged()));
-    connect(mainWidget->pllGroup, SIGNAL(pressed(int)), SLOT(configChanged()));
+    connect(mainWidget->cardModList, SIGNAL(currentItemChanged(QListWidgetItem*, QListWidgetItem*)), SLOT(configChanged()));
+    connect(mainWidget->cardManList, SIGNAL(currentItemChanged(QListWidgetItem*, QListWidgetItem*)), SLOT(cardManListChanged()));
+    connect(mainWidget->tunerModList, SIGNAL(currentItemChanged(QListWidgetItem*, QListWidgetItem*)), SLOT(configChanged()));
+    connect(mainWidget->tunerManList, SIGNAL(currentItemChanged(QListWidgetItem*, QListWidgetItem*)), SLOT(tunerManListChanged()));
+    connect(mainWidget->pllGroup, SIGNAL(buttonClicked(int)), SLOT(configChanged()));
     connect(mainWidget->radioCard, SIGNAL(stateChanged(int)), SLOT(configChanged()));
     load();
     std::cout << "tv-manager awakened" << std::endl;
@@ -89,7 +91,7 @@ QString TasmaTv::quickHelp() const
 
 void TasmaTv::configChanged()
 {
-    emit changed(true);
+//    emit changed(true);
 }
 
 void TasmaTv::tunerManListChanged()
