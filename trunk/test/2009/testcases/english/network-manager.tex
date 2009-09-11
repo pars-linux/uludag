@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
 \title{Network Manager Test Cases}	
 \author{Semen Cirit}
 
@@ -68,7 +68,7 @@
 	64 bytes from 4.2.2.1: icmp_seq=2 ttl=244 time=83.9 ms
       	\end{verbatim}
 
-	  \item Network settings
+	  \item Network settings and name servers
 
 	    Execute this command for listing IP address and network mask:
 		  \begin{verbatim}
@@ -88,7 +88,7 @@
 	      \begin{enumerate} 
 	      \item Use DHCP
 		\begin{itemize}
-		  \item Use automatic IP
+		  \item Select default or automatic for the name server.
 				      
 		   Execute the above two command and observe that your related device takes the automatic settings. 
 
@@ -104,23 +104,6 @@
 		    
 		      Execute the above two command and observe that your related device takes the settings that you gave. 
 	    \end{enumerate}
-	  \item Name servers
-	    \begin{itemize}
-		 \item Use Default
-		 
-		  Observe the situation
-		 \item Use Automatic
-		  Observe the situation
-	  
-		 \item Use Custom
-
-		  Give a custom nameserver and observe it from:
-		   \begin{verbatim}
-		     cat /etc/resolv.conf
-		  \end{verbatim}
-	     \end{itemize}
-   
-	  
 	
       \end{enumerate}
       \item Try to remove a profile. ((Push the remove button on the right part of each profile.) )
@@ -131,5 +114,45 @@
 	    \end{verbatim}
 	    And observe that it was removed from the output of this command.
 
+	\item During some operation, cancel the authorization window.
+
+	Observe that the network manager reamin in its early state.
+
+	\item During some operation select always remember password.
+	
+	Try to make an operatin from network manager.
+	
+ 	During the operation, observe that the authorization ignored.
+
+	\item Listing profiles (The right up part of the manager)
+	\begin{itemize}
+	 \item Choose wireless networks from dropbox.
+	
+	 Observe that the manager can list the wireless networks properly.
+	
+ 	\item Choose all profiles from dropbox.
+	
+	Observe that it can be list the appropriate profiles.
+	
+	\item Choose Ethernet profiles from dropbox.
+	
+    Observe that it can list the ethernet profiles properly.
+	
+	\end{itemize}
+	\item When your internet connction is up, unplug the ethernet cable.
+
+	Observe that the related device is signed with "Cable or Device Unplugged".
+
+	\item If you use an external wireless device and unplugged it.
+
+    Observe that the related device is signed with "Cable or Device Unplugged".
+
+	\item Close the modem, when the network connection has already established.
+
+	Observe that the related profile is down in 180 seconds.
+
+	\item Try to connect to modem, when the modem is off.
+
+	 Observe that a warning message given in 180 seconds. (Warning message about the connection can not be establish).
 \end{enumerate}
 \end{document}

@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-
+\usepackage[left=1cm,top=2cm,right=2cm,bottom=1cm]{geometry}
 \title{Service Manager Test Cases}
 \author{Semen Cirit}
 
@@ -23,17 +23,25 @@ Execute the following command:
 
 Observe whether the selected service has made the desirable option.
 
-
-
 \item Try to search a service.
+
+Executing the above command, observe that the searched service is exist.
 
 \item Choose a stopped service and try to start it.
 
+Executing the above command, observe that the selected service removed.
+
 \item Choose a started service and try to stop  it.
+
+Executing the above command, observe that the selected service started.
 
 \item Choose a service and try to reload it.
 
+Executing the above command, observe that the selected service restarted.
+
 \item Choose a service and try to put it to autostart.
+
+Executing the above command, observe that the selected service is in autostart.
 
 \end{enumerate}
 \end{document}
