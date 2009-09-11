@@ -47,10 +47,10 @@ TasmaTv::TasmaTv(QWidget *parent,const QStringList &) : QWidget(parent)
 
     TasmaTvAbout->addAuthor( ki18n("Enes Albay"),  ki18n( "Current Maintainer" ), "albayenes@gmail.com", "");   // Ported to kde4
 
-    connect(mainWidget->tvModel, SIGNAL(selectionChanged()), SLOT(configChanged()));
-    connect(mainWidget->tvVendor, SIGNAL(selectionChanged()), SLOT(tvVendorChanged()));
-    connect(mainWidget->tunerModel, SIGNAL(selectionChanged()), SLOT(configChanged()));
-    connect(mainWidget->tunerVendor, SIGNAL(selectionChanged()), SLOT(tunerVendorChanged()));
+    connect(mainWidget->cardModList, SIGNAL(selectionChanged()), SLOT(configChanged()));
+    connect(mainWidget->cardManList, SIGNAL(selectionChanged()), SLOT(cardManListChanged()));
+    connect(mainWidget->tunerModList, SIGNAL(selectionChanged()), SLOT(configChanged()));
+    connect(mainWidget->tunerManList, SIGNAL(selectionChanged()), SLOT(tunerManListChanged()));
     connect(mainWidget->pllGroup, SIGNAL(pressed(int)), SLOT(configChanged()));
     connect(mainWidget->radioCard, SIGNAL(stateChanged(int)), SLOT(configChanged()));
     load();
@@ -91,12 +91,12 @@ void TasmaTv::configChanged()
     emit changed(true);
 }
 
-void TasmaTv::tunerVendorChanged()
+void TasmaTv::tunerManListChanged()
 {
-    mainWidget->tunerVendorChanged();
+    mainWidget->tunerManListChanged();
 }
 
-void TasmaTv::tvVendorChanged()
+void TasmaTv::cardManListChanged()
 {
-    mainWidget->tvVendorChanged();
+    mainWidget->cardManListChanged();
 }

@@ -2,7 +2,7 @@
 #include "tvconfigui.h"
 //#include "ui_tvconfigui.h"
 
-TvConfigUI::TvConfigUI(QWidget *parent) : QWidget(*parent)
+TvConfigUI::TvConfigUI(QWidget *parent) : QWidget(parent)
 //    : QWidget(parent), ui(new Ui::TvConfigUI)
 {
     std::cout << "tv-configui signaling" << std::endl;
