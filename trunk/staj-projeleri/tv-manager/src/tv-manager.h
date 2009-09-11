@@ -13,6 +13,7 @@
 #define __TASMATV_H__
 
 #include <QWidget>
+#include <QVariantList>
  #include <KCModule>
 #include "tvconfig.h"
 
@@ -22,12 +23,13 @@
 class KAboutData;
 class TvConfigUI;
 
-class TasmaTv :  public KCModule
+class TasmaTv :  public QWidget // public KCModule
 {
    Q_OBJECT
 
     public:
-        TasmaTv(QWidget *parent = 0, const QStringList &lst = QStringList());
+        // TasmaTv(QWidget *parent = 0, const QVariantList &lst = QVariantList());
+         TasmaTv(QWidget *parent = 0);
         //TasmaTv(QWidget *parent = 0, const QStringList &lst = QStringList());
         ~TasmaTv() {}
 
