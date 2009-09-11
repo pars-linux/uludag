@@ -20,18 +20,17 @@
 #include <QCheckBox>
 #include <QFile>
 #include <QLayout>
+#include <QVariant>
+#include <QAction>
 #include <iostream>
 
 #include "tv-manager.h"
 #include "tv-manager.moc"
 
-// typedef KGenericFactory<TasmaTv, QWidget> TasmaTvFactory;
-//typedef KGenericFactory<TasmaTv, QWidget> TasmaTvFactory;
-//K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("tasmatv"))
-//K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("tasmatv"))
+ typedef KGenericFactory<TasmaTv, QWidget> TasmaTvFactory;
+K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("tasmatv"))
 
-TasmaTv::TasmaTv(QWidget *parent,const QStringList &) : QWidget(parent)
-   // : KCModule(TasmaTvFactory::componentData(), parent)
+TasmaTv::TasmaTv(QWidget *parent, const QStringList &) : KCModule(TasmaTvFactory::componentData(), parent)
 {
     std::cout << "tv-manager signaling" << std::endl;
     KGlobal::locale()->setMainCatalog("tasma");  // Changed 2008 to 2009
@@ -59,12 +58,14 @@ TasmaTv::TasmaTv(QWidget *parent,const QStringList &) : QWidget(parent)
 
 void TasmaTv::load()
 {
-    KConfig *config = new KConfig("kcmtasmatvrc", true);
-    config->setGroup("System");
-    mainWidget->selectCard(config->readNumEntry("Card"));
-    mainWidget->selectTuner(config->readNumEntry("Tuner"));
-    mainWidget->pllGroup->setButton(config->readNumEntry("Pll"));
-    mainWidget->radioCard->setChecked(config->readBoolEntry("Radio"));
+    QVariant def;
+    bool ok = true;
+    KConfig *config = new KConfig("kcmtasmatvrc");
+    KConfigGroup *group = new KConfigGroup(config, "System");
+    mainWidget->selectCard(group->readEntry("Card", def).toInt(&ok));
+    mainWidget->selectTuner(group->readEntry("Tuner", def).toInt(&ok));
+    // mainWidget->pllGroup->setButton(group->readEntry("Pll", def).toInt(&ok));
+    mainWidget->radioCard->setChecked(group->readEntry("Radio", def).toBool());
     delete config;
 }
 

@@ -9,7 +9,7 @@
   Please read the COPYING file.
 */
 
-#include <QListbox>
+#include <QListWidget>
 #include <QStringList>
 #include <KLocale>
 #include <KDebug>
@@ -30,7 +30,7 @@ CardsDB::~CardsDB()
 {
     CardVendors::Iterator it;
     for (it = m_vendors.begin(); it != m_vendors.end(); ++it) {
-	delete(it.data());
+	delete(it.value());
     }
 }
 
@@ -58,7 +58,7 @@ int CardsDB::getCard(QString card_name)
     Cards::ConstIterator c_it;
 
     for (v_it = m_vendors.begin(); v_it != m_vendors.end(); ++v_it) {
-	for (c_it = v_it.data()->begin(); c_it != v_it.data()->end(); ++c_it) {
+	for (c_it = v_it.value()->begin(); c_it != v_it.value()->end(); ++c_it) {
 	    if (card_name.compare(c_it->card_name) == 0)
 		return c_it->card_id;
 	}
@@ -73,7 +73,7 @@ int CardsDB::getCard(unsigned int card_id, ChipSet chipset, QString &vendor_name
     Cards::ConstIterator c_it;
 
     for (v_it = m_vendors.begin(); v_it != m_vendors.end(); ++v_it) {
-	for (c_it = v_it.data()->begin(); c_it != v_it.data()->end(); ++c_it) {
+	for (c_it = v_it.value()->begin(); c_it != v_it.value()->end(); ++c_it) {
 	    if (c_it->card_id == card_id && c_it->chipset == chipset) {
 		vendor_name = v_it.key();
 		card_name = c_it->card_name;

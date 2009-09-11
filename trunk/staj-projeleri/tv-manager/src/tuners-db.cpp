@@ -9,7 +9,7 @@
   Please read the COPYING file.
 */
 
-#include <QListBox>
+#include <QListWidget>
 #include <QStringList>
 #include <KLocale>
 #include <KDebug>
@@ -104,7 +104,7 @@ TunersDB::~TunersDB()
 {
     TunerVendors::Iterator it;
     for (it = m_vendors.begin(); it != m_vendors.end(); ++it) {
-	delete(it.data());
+	delete(it.value());
     }
 }
 
@@ -132,7 +132,7 @@ int TunersDB::getTuner(QString tuner_name)
     Tuners::ConstIterator t_it;
 
     for (v_it = m_vendors.begin(); v_it != m_vendors.end(); ++v_it) {
-	for (t_it = v_it.data()->begin(); t_it != v_it.data()->end(); ++t_it) {
+	for (t_it = v_it.value()->begin(); t_it != v_it.value()->end(); ++t_it) {
 	    if (tuner_name.compare(t_it->tuner_name) == 0)
 		return t_it->tuner_id;
 	}
@@ -147,7 +147,7 @@ int TunersDB::getTuner(unsigned int tuner_id, QString &vendor_name, QString &tun
     Tuners::ConstIterator t_it;
     
     for (v_it = m_vendors.begin(); v_it != m_vendors.end(); ++v_it) {
-	for (t_it = v_it.data()->begin(); t_it != v_it.data()->end(); ++t_it) {
+	for (t_it = v_it.value()->begin(); t_it != v_it.value()->end(); ++t_it) {
 	    if (t_it->tuner_id == tuner_id) {
 		vendor_name = v_it.key();
 		tuner_name = t_it->tuner_name;
