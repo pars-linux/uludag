@@ -25,7 +25,7 @@ class TvConfig : public TvConfigUI
     Q_OBJECT
 
 public:
-    TvConfig(QWidget *parent);
+    TvConfig(QWidget *parent = 0);
     ~TvConfig();
 
     void loadModule();

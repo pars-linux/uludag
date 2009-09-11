@@ -57,17 +57,17 @@ public:
     QWidget *tab_3;
     // QVBoxLayout *verticalLayout_5;
     // QVBoxLayout *verticalLayout_3;
-    QSplitter *splitter;
+    // QSplitter *splitter;
     QButtonGroup *pllGroup;
     // QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
-    QRadioButton *radioButton_3;
+    QRadioButton *pllButton;
+    QRadioButton *mhz28Button;
+    QRadioButton *mhz35Button;
     QButtonGroup *addOnsGroup;
     // QVBoxLayout *verticalLayout_4;
     QGridLayout *tab3GridLay;
-    QCheckBox *checkBox;
+    QCheckBox *radioCard;
     QSpacerItem *verticalSpacer;
     QSpacerItem *verticalSpacer_2;
 
@@ -173,7 +173,7 @@ public:
         splitter = new QSplitter(tab_3);
         splitter->setObjectName(QString::fromUtf8("splitter"));
         splitter->setOrientation(Qt::Horizontal);*/
-        pllGroup = new QButtonGroup(splitter);
+        pllGroup = new QButtonGroup();
         pllGroup->setObjectName(QString::fromUtf8("pllGroup"));
         // tab3GridLay->addWidget(pllGroup, 0, 0);
         /*verticalLayout_2 = new QVBoxLayout(pllGroup);
@@ -183,46 +183,46 @@ public:
         //verticalLayout = new QVBoxLayout();
         //verticalLayout->setSpacing(6);
         //verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        radioButton = new QRadioButton();
-        radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        pllButton = new QRadioButton();
+        pllButton->setObjectName(QString::fromUtf8("pllButton"));
 
-        pllGroup->addButton(radioButton);
-        //verticalLayout->addWidget(radioButton);
+        pllGroup->addButton(pllButton);
+        //verticalLayout->addWidget(pllButton);
 
-        radioButton_2 = new QRadioButton();
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
-        pllGroup->addButton(radioButton_2);
+        mhz28Button = new QRadioButton();
+        mhz28Button->setObjectName(QString::fromUtf8("mhz28Button"));
+        pllGroup->addButton(mhz28Button);
 
-        //verticalLayout->addWidget(radioButton_2);
+        //verticalLayout->addWidget(mhz28Button);
 
-        radioButton_3 = new QRadioButton();
-        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
-        pllGroup->addButton(radioButton_3);
+        mhz35Button = new QRadioButton();
+        mhz35Button->setObjectName(QString::fromUtf8("mhz35Button"));
+        pllGroup->addButton(mhz35Button);
 
-        //verticalLayout->addWidget(radioButton_3);
+        //verticalLayout->addWidget(mhz35Button);
 
 
         // verticalLayout_2->addLayout(verticalLayout);
 
-        splitter->addWidget(pllGroup);
-        addOnsGroup = new QButtonGroup(splitter);
+        // splitter->addWidget(pllGroup);
+        addOnsGroup = new QButtonGroup();
         addOnsGroup->setObjectName(QString::fromUtf8("addOnsGroup"));
         //tab3GridLay->addWidget(addOnsGroup, 1, 0);
         /*verticalLayout_4 = new QVBoxLayout(addOnsGroup);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setMargin(11);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));*/
-        checkBox = new QCheckBox();
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        addOnsGroup->addButton(checkBox);
+        radioCard = new QCheckBox();
+        radioCard->setObjectName(QString::fromUtf8("radioCard"));
+        addOnsGroup->addButton(radioCard);
 
-        // verticalLayout_4->addWidget(checkBox);
+        // verticalLayout_4->addWidget(radioCard);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         // verticalLayout_4->addItem(verticalSpacer);
 
-        splitter->addWidget(addOnsGroup);
+        // splitter->addWidget(addOnsGroup);
 
         // verticalLayout_3->addWidget(splitter);
 
@@ -291,12 +291,12 @@ public:
         tunerModList->setSortingEnabled(__sortingEnabled3);
 
         tvCard->setTabText(tvCard->indexOf(tab_2), QApplication::translate("TvConfigUI", "Tuner", 0, QApplication::UnicodeUTF8));
-        pllGroup->setTitle(QApplication::translate("TvConfigUI", "Phase Locked Loop(PLL)", 0, QApplication::UnicodeUTF8));
-        radioButton->setText(QApplication::translate("TvConfigUI", "Do not use PLL", 0, QApplication::UnicodeUTF8));
-        radioButton_2->setText(QApplication::translate("TvConfigUI", "28 Mhz Crystal", 0, QApplication::UnicodeUTF8));
-        radioButton_3->setText(QApplication::translate("TvConfigUI", "35 Mhz Crystal", 0, QApplication::UnicodeUTF8));
-        addOnsGroup->setTitle(QApplication::translate("TvConfigUI", "Eklentiler", 0, QApplication::UnicodeUTF8));
-        checkBox->setText(QApplication::translate("TvConfigUI", "Radyo Kart\304\261", 0, QApplication::UnicodeUTF8));
+        // pllGroup->setTitle(QApplication::translate("TvConfigUI", "Phase Locked Loop(PLL)", 0, QApplication::UnicodeUTF8));
+        pllButton->setText(QApplication::translate("TvConfigUI", "Do not use PLL", 0, QApplication::UnicodeUTF8));
+        mhz28Button->setText(QApplication::translate("TvConfigUI", "28 Mhz Crystal", 0, QApplication::UnicodeUTF8));
+        mhz35Button->setText(QApplication::translate("TvConfigUI", "35 Mhz Crystal", 0, QApplication::UnicodeUTF8));
+        // addOnsGroup->setTitle(QApplication::translate("TvConfigUI", "Eklentiler", 0, QApplication::UnicodeUTF8));
+        radioCard->setText(QApplication::translate("TvConfigUI", "Radyo Kart\304\261", 0, QApplication::UnicodeUTF8));
         tvCard->setTabText(tvCard->indexOf(tab_3), QApplication::translate("TvConfigUI", "Se\303\247enekler", 0, QApplication::UnicodeUTF8));
         Q_UNUSED(TvConfigUI);
     } // retranslateUi
