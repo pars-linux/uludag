@@ -9,6 +9,6 @@ int main(int argc, char *argv[])
     std::cout << "Main Hello"   << std::endl;
     TasmaTv w;
     // TvConfigUI w;
-    w.show();
+    w.QWidget::show();
     return a.exec();
 }
