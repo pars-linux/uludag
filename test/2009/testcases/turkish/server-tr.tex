@@ -44,6 +44,31 @@
 
 \section{Database alt bileşeni}
 \begin{enumerate}
+ \item Aşağıda bulunan paketlerin kurulumu sonrası:
+\begin{verbatim}
+ postgresql-doc
+ postgresql-lib
+ postgresql-pl
+ postgresql-server
+\end{verbatim}
+
+Servis yöneticisinden postgreql sunucusunu başlatın. Aşağıdaki komut ile sunucunun başlatılmış olduğunu gözlemleyin.
+\begin{verbatim}
+ # service postgresql-server status
+\end{verbatim}
+
+Süreçlerin postgres kullanıcısı ile çalıştığını gözlemleyin:
+\begin{verbatim}
+# ps aux|grep postgres 
+\end{verbatim}
+
+Aşağıdaki komutu kullanarak sql komut satırına geçin ve ikinci satırdaki sql komutunu çalıştırın:
+\begin{verbatim}
+# psql -h localhost -d postgres -U postgres
+# select * from information_schema.tables ;
+\end{verbatim}
+
+İşlemlerin sorunsuz olarak gerçekleştiğini gözlemleyin.
 
  \item firebird-superserver ve firebird-client paketleri kurulumu sonrası:
 
