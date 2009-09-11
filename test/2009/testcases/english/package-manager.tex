@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=1cm]{geometry}
 \title{Package Manager Test Cases}
 \author{Semen Cirit}
 
@@ -19,33 +19,43 @@
 
     The box on the left shows the package groups and each group contain related components' packages.
 
-    To see which component belongs to which group execute this command:
-    \begin{verbatim}
-    $ grep -A 167 "component_group_mappings " /usr/kde/4/share/apps/package-
-    manager/backend/pisi/groups.py > /tmp/listofgroups
-    \end{verbatim} ,
-  \item Toolboxes:
+    These group-component couple examples is important for the following testcases.
+      \begin{table}[h]
+ 	  \centering
+ 	  \begin{tabular}{|c|c|}
+ 		  \hline
+ 		  Group & Component \\
+ 		  Virtualization & hardware.virtualization \\
+ 		  Servers & server.database \\
+ 		  \hline
+ 	  \end{tabular} 
+ 	  \label{tab:tbl}
+     \end{table}
+  
+   \item Toolboxes:
     \begin{enumerate}
         \item File toolbox
     
         Dropdown alternatives
-        Select a component from /tmp/listofgroups file
         \begin{enumerate}
             \item Try to Show new packages
-            Type
+            
+            Execute the following commands, with the example components above in the table.
             \begin{verbatim}
             $ pisi la -Uc <component>
             \end{verbatim}
             Compare package-manager and console results for related component.
             \item Try to Show installed packages
-            Type
+            
+            Execute the following commands, with the example components above in the table.
             \begin{verbatim}
             $ pisi li -c <component>
             \end{verbatim}
             Compare package-manager and console results for related component.
     
             \item Try to Show upgradable packages
-            Type
+            
+            Execute the following commands, with the example components above in the table.
             \begin{verbatim}
             $ pisi lu -c <component>
             \end{verbatim}
@@ -130,7 +140,6 @@
                         Execute the following commands: 
                         \begin{verbatim}
                         # ls -l /var/pisi
-                        # ls -l /var/cache/pisi
                         \end{verbatim}
 
                         Look at size of them 
@@ -140,18 +149,17 @@
                         Execute the following commands again:
 
                         \begin{verbatim}
-                        # ls -l /var/pisi
                         # ls -l /var/cache/pisi
                         \end{verbatim}
 
-                        Observe that these directories are empty.
+                        If you install any debug package, this directory will contain a packages-debug directory, if not it will be empty.
                     \end{itemize}
                 \end{itemize} 
                 \item Repositories tab
                 \begin{itemize}
-                    \item Try to add a repository from 
+                    \item Try to add a repository
                     \item Try to remove a repository
-                    \item Try to take up a repository 
+                    \item Try to take up a repository
                     \item Try to take down a repository 
 
                     Observe all situations.
@@ -231,13 +239,35 @@
             \item After showing new packages. 
             \begin{itemize}
                 \item Select a package from package list, try to install.
+
+                Observe that the dependencies is listed on the installation window.
+
                 \item Select all, try to install all
+
+Use below command in order to see the selected packages were installed.
+	\begin{verbatim}
+	 pisi hs
+	\end{verbatim}
+                
             \end{itemize}
             \item After showing upgradable packages.
             \begin{itemize}
                 \item Select a package from package list, try to install.
+Use below command in order to see the selected packages were installed.
+	\begin{verbatim}
+	 pisi hs
+	\end{verbatim}
                 \item Select all, try to install all
+Use below command in order to see the selected packages were installed.
+	\begin{verbatim}
+	 pisi hs
+	\end{verbatim}
             \end{itemize}
+
+	\item During some operation, cancel the authentication window.
+
+	Observe that the operation remain in the previous state.
+
 	\item After installing some package try to install a gui application (for example kaffein)and for this time enable remembering password when the system policykit screen open.
 		
 		Observe that after installing this package a screen is opened which contains this package icon. Click on it and try to open it.

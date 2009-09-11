@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-
+ \usepackage[left=1cm,top=1cm,right=2cm,bottom=2 cm]{geometry}
 \title{Firewall Manager Test Cases}
 \author{Semen Cirit}
 
@@ -56,7 +56,7 @@ Execute the following command:
 \begin{enumerate}
      \item After adding a port from firewall manager.
         \begin{enumerate}
-        \item Enable limited content serving
+        \item Enable block incoming connections:
             	Observe that the output of the above command contains these: 
 \begin{verbatim}
 -A PARDUS-IN-MOD-SERVING -p tcp -m multiport --dports <addedPORT> \
@@ -136,11 +136,9 @@ Execute the following command:
     \item Block incoming connections: 
 
 	
-	
+		(If you have a static ip or your two machine is in the same network, you can test this case, if not skip it)
     \begin{enumerate}
         \item Disable block incoming connections
-
-		(If you have a static ip or your two machine is in the same network, you can test this case, if not skip it)
 
               Try to make a remote connection from an other computer to your computer.
 

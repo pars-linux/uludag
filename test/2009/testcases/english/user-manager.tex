@@ -1,5 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 
+ \usepackage[left=1cm,top=1cm,right=2cm,bottom=2 cm]{geometry}
 \title{User Manager Test Cases}
 \author{Semen Cirit}
 
@@ -111,6 +112,22 @@
 
 \item Try to list all users.
 \item Try to list all groups.
+
+\item During some operation, cancel the authorization window.
+
+After operation canceled, observe that the user manager remain in previous state.
+
+\item During an operation, select always remember user password.
+
+Make an other operation from user manager.
+
+Observe that the autorization is ignored.
+
+
+\end{enumerate}
+
+\end{document}
+
 
 \end{enumerate}
 

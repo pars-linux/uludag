@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=2cm]{geometry}
 \title{Kaptan Test Cases}
 \author{Semen Cirit}
 
@@ -15,6 +15,12 @@
 \begin{enumerate}
 
 \item Try Kaptan for all resolutions. 1440*900 to 800*600.
+
+Observe that kaptan can open for each resolution.
+
+\item Try Kaptan with 4:3 and 16:9 screen.
+
+Observe that kaptan can open for each resolution.
 
 \item Create a new user, and open this account.
 \begin{enumerate}
@@ -56,15 +62,32 @@
     \item Theme and desktop type
         \begin{enumerate}
         \item Select each theme and observe each situation.
+
+        After the operations of Kaptan finish, observe that these themes selected.
+
+        The selected theme can be observed from System Settings $\rightarrow$ Appearance $\rightarrow$ Style $\rightarrow$ Widget Style.
+
+        
+        The selected theme can be observed from System Settings $\rightarrow$ Icons.
+
+
+        The selected theme can be observed from System Settings $\rightarrow$ Windows $\rightarrow$ Windows Decoration.
+        
         \item Observe the situation when Desktop is selected for desktop type.
+
         \item Observe the situation when  Folder view is selected for desktop type.
+
+        These two type can be observed from right click on desktop $\rightarrow$ Appearance Settings 
+        $\rightarrow$ Desktop Activity.
+
         \item Change number of desktops and observe the stuation.
+
+        After Kaptan operations finish observe that the desktop number. 
         \end{enumerate}
 
-    \item Menu Style.
-        \begin{enumerate}
-        \item Observe each situation.
-        \end{enumerate}
+    \item Select a menu Style.
+
+    Observe that this style is selected after Kaptan is finished.
 
     \item Wallpaper
         \begin{enumerate}
@@ -80,6 +103,8 @@
         \begin{enumerate}
         \item Enable it and  observe the situation.
         \item Disable it and  observe the situation.
+
+        If it is enabled, its icon should be on system tray.
         \end{enumerate}
 
     \item Network configuration
@@ -92,12 +117,16 @@
         \item Updates
             \begin{enumerate}
             \item Enable show package manager on system tray.
+
                 Observe that it is on system tray.
             \item Disable show package manager on system tray.
+
                 Observe that it is not on system tray.
             \item Enable control updates periodicly and give a short observable period.
+
                 Observe that package manager gives warnings for updates from system tray.
             \item Disable control updates periodicly and give a short observable period.
+
                 Observe that package manager doesn't give warnings for updates from system tray.
             \end{enumerate}
         \end{enumerate}
@@ -123,7 +152,9 @@
     \item Pardus settings
         \begin{enumerate}
         \item Try to start systems settings
+        
         \item Try to start user groups and help pages.
+
         \end{enumerate}
 
     \item Smolt hardware profiler
