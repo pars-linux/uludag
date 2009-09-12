@@ -8,6 +8,7 @@ import os
 import sys
 
 from common import (SHARE, getDiskInfo)
+from common import PartitionUtils
 from constants import DESCRIPTION
 from PyQt4 import (QtCore, QtGui, uic)
 
@@ -61,8 +62,17 @@ class Create(QtGui.QMainWindow):
 
 class SelectDisk(QtGui.QDialog):
     def __init__(self, parent = None):
+        self.partutils = PartitionUtils()
+        self.partutils.detectRemovableDrives()
+        self.drives = self.partutils.returnDrives()
+
+        #print(self.drives)
+
         super(SelectDisk, self).__init__(parent)
         uic.loadUi("%s/ui/qtSelectDisk.ui" % SHARE, self)
+
+        for drive in self.drives:
+            self.listWidget.addItem(self.drives[drive]["label"])
 
     @QtCore.pyqtSignature("bool")
     def on_button_browse_clicked(self):
