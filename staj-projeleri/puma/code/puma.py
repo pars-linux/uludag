@@ -26,13 +26,8 @@ from PyQt4 import QtCore
 from PyKDE4.kdeui import KApplication, KAboutApplicationDialog, KSystemTrayIcon, KMessageBox
 from PyKDE4.kdecore import KAboutData, KCmdLineArgs
 
-from ui_mainwindow import Ui_MainWindow
+from ui_puma import Ui_MainWindow
 from about import *
-
-#import comar
-
-# Backend
-#import backend
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self):
