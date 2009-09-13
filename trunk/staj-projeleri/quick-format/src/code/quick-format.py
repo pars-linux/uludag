@@ -5,6 +5,7 @@ from PyQt4 import QtCore, QtGui
 from PyQt4.QtCore import *
 
 from PyKDE4.kdecore import i18n
+from PyKDE4.solid import Solid
 
 from subprocess import Popen, PIPE, STDOUT, call
 from time import time
@@ -14,18 +15,22 @@ from quickformat.diskTools import DiskTools
 
 import sys, os
 
-fileSystems = {"Ext4":"ext4",
-               "Ext3":"ext3",
-               "Ext2":"ext2",
-               "FAT 16 / 32":"vfat",
-               "NTFS":"ntfs"}
+# volumeList = {listIndex:'VolumePath', ..}
+
+volumeList = {'':''}
+
+fileSystems = { "Ext4":"ext4",
+                "Ext3":"ext3",
+                "Ext2":"ext2",
+                "FAT 16/32":"vfat",
+                "NTFS":"ntfs"}
 
 class QuickFormat():
     def __init__(self):
-        self.addFileSystems()
-        self.addDisks()
+        self.generateVolumeList()
+        self.generateFileSystemList()
 
-    def addFileSystems(self):
+    def generateFileSystemList(self):
         # Temporary sapce for file system list
         self.tempFileSystems = []
 
@@ -41,26 +46,34 @@ class QuickFormat():
         for fs in self.sortedFileSystems:
             ui.cmb_fileSystem.addItem(fs)
 
-    def addDisks(self):
-        # Execute
-        proc = Popen("blkid -s LABEL", shell = True, stdout = PIPE,)
-        output = proc.communicate()[0]
 
-        diskPathsAndLabels = output.splitlines()
+    def generateVolumeList(self):
+        selectedIndex = 0
+        currentIndex = 0
 
-        for diskPathAndLabel in diskPathsAndLabels:
-            diskPath = diskPathAndLabel.split(':')[0]
-            diskLabel = diskPathAndLabel.split(':')[1]
-            diskLabel = diskLabel.__getslice__(8, diskLabel.__len__()-2)
+        volumeList.clear()
 
-            diskPathAndLabel = diskLabel + " (" + diskPath + ")"
-            print diskPathAndLabel
+        volumes = Solid.Device.listFromType(Solid.StorageDrive.StorageVolume)
 
-            ui.cmb_deviceName.addItem(diskPathAndLabel)
+        for volume in volumes:
+            volumeName = volume.product()
+            volumePath = volume.asDeviceInterface(Solid.Block.Block).device()
+            volumeFsType = volume.asDeviceInterface(Solid.StorageVolume.StorageVolume).fsType()
 
-            print diskLabel, diskPath
-        #print output
-        #print "->>", diskPathsAndLabels
+            if volumeFsType!="" and not str(volumeFsType).startswith("iso")and not str(volumeFsType).startswith("swap"):
+                comboboxItem = volumeName + " (" + volumePath + ") " + volumeFsType
+                ui.cmb_deviceName.addItem(comboboxItem)
+
+                if volumePath == volumePathArg:
+                    selectedIndex = currentIndex
+
+                # append volumeList
+                volumeList[currentIndex] = volumePath
+
+                currentIndex += 1
+
+        # select the appropriate volume from list
+        ui.cmb_deviceName.setCurrentIndex(selectedIndex)
 
 
     def formatStarted(self):
@@ -84,19 +97,22 @@ class QuickFormat():
 
 
 class Formatter(QtCore.QThread):
-    def __init__(self, fileSystems):
+    def __init__(self):
         QtCore.QThread.__init__(self)
-        self.fileSystems = fileSystems
 
     def run(self):
+        self.volumeToFormat = str(volumeList[ui.cmb_deviceName.currentIndex()])
+
+        self.fs = fileSystems[str(ui.cmb_fileSystem.currentText())]
+
         self.emit(SIGNAL("formatStarted()"))
 
         self.formatted = self.formatDisk()
 
         try:
-            diskTools.refreshPartitionTable(deviceName[:8])
+            diskTools.refreshPartitionTable(self.volumeToFormat[:8])
         except:
-            print "ERROR: ======= Cannot refresh partition ======="
+            print "ERROR: Cannot refresh partition"
 
         if self.formatted==False:
             self.emit(SIGNAL("formatFailed()"))
@@ -104,23 +120,16 @@ class Formatter(QtCore.QThread):
             self.emit(SIGNAL("formatSuccessful()"))
 
 
-    def isDeviceMounted(self):
+    def isDeviceMounted(self, volumePath):
         for mountPoint in diskTools.mountList():
-            if deviceName == mountPoint[0]:
+            if self.volumeToFormat == mountPoint[0]:
                 return True
 
     def formatDisk(self):
-        deviceName = str(ui.cmb_deviceName.itemText(ui.cmb_deviceName.currentIndex()))
-        deviceName = deviceName.__getslice__(deviceName.__len__() - 10, deviceName.__len__() - 1)
-
-        self.fs = self.fileSystems[str(
-            ui.cmb_fileSystem.itemText(
-                ui.cmb_fileSystem.currentIndex()))]
-
         # If device is mounted then unmount
-        if self.isDeviceMounted() == True:
+        if self.isDeviceMounted(self.volumeToFormat) == True:
             try:
-                diskTools.umount(deviceName)
+                diskTools.umount(str(self.volumeToFormat))
             except:
                 return False
 
@@ -144,7 +153,7 @@ class Formatter(QtCore.QThread):
 
 
         # Command to execute
-        command = "mkfs -t " + self.fs + self.quickOption + " " + self.labelingCommand + " '" + self.volumeLabel + "' " + deviceName
+        command = "mkfs -t " + self.fs + self.quickOption + " " + self.labelingCommand + " '" + self.volumeLabel + "' " + self.volumeToFormat
         print command
 
         # Execute
@@ -161,7 +170,12 @@ class Formatter(QtCore.QThread):
 app = QtGui.QApplication(sys.argv)
 MainWindow = QtGui.QMainWindow()
 
-deviceName = "/dev/sdb1"
+volumePathArg = ""
+
+if len(sys.argv) == 2:
+    volumePathArg = sys.argv[1]
+
+print "-" + volumePathArg + "-"
 
 ui = Ui_MainWindow()
 ui.setupUi(MainWindow)
@@ -172,7 +186,7 @@ ui.lbl_progress.setText("")
 
 quickFormat = QuickFormat()
 diskTools = DiskTools()
-formatter = Formatter(fileSystems)
+formatter = Formatter()
 
 QtCore.QObject.connect(ui.btn_format, QtCore.SIGNAL("clicked()"), formatter.start)
 QtCore.QObject.connect(ui.btn_cancel, QtCore.SIGNAL("clicked()"), MainWindow.close)
