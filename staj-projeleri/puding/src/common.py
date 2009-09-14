@@ -28,8 +28,18 @@ def getDiskInfo(dst):
 
     return [capacity, available, used]
 
-def verifyIsoChecksum(src):
+def verifyIsoChecksum(src, progress = None):
     import hashlib
+
+    if not progress:
+        class DummyProgress:
+            def set_max_progress(self, value): pass
+            def update_progress(self, value): pass
+            
+        progress = DummyProgress()
+
+    iso_size = os.stat(src).st_size
+    progress.set_max_progress(iso_size / 1024)
 
     checksum = hashlib.md5()
     isofile = file(src, "rb")
@@ -41,6 +51,7 @@ def verifyIsoChecksum(src):
         checksum.update(data)
         bytes = len(data)
         total += bytes
+        progress.update_progress(total / 1024)
         
     src_md5 = checksum.hexdigest()
 

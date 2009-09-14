@@ -7,7 +7,7 @@
 import os
 import sys
 
-from common import (SHARE, getDiskInfo)
+from common import (SHARE, getDiskInfo, verifyIsoChecksum)
 from common import PartitionUtils
 from constants import DESCRIPTION
 from PyQt4 import (QtCore, QtGui, uic)
@@ -29,28 +29,54 @@ class Create(QtGui.QMainWindow):
     @QtCore.pyqtSignature("bool")
     def on_button_browse_disk_clicked(self):
         self.browse_disk = SelectDisk()
-        self.browse_disk.exec_()
+        if self.browse_disk.exec_() == QtGui.QDialog.Accepted:
+            dirname = self.browse_disk.getSelectedDirectory()
+
+            if not dirname:
+                self.warningDialog("Warning", "You should select a valid directory.")
+
+            else:
+                self.line_disk.setText(QtCore.QString(dirname))
 
     @QtCore.pyqtSignature("bool")
     def on_actionAbout_triggered(self):
          QtGui.QMessageBox.about(self, "About Puding", DESCRIPTION)
 
+    @QtCore.pyqtSignature("bool")
+    def on_button_create_clicked(self):
+        if not self.__checkDestination(self.line_disk.displayText()):
+            self.warningDialog("Directory is Invalid", "Please check the USB disk path.")
+
+        if not self.__checkSource(self.line_image.displayText()):
+            self.warningDialog("ISO Image is Invalid", "Please check the ISO image path.")
+
+    def warningDialog(self, title, message):
+        QtGui.QMessageBox.warning(self, title, message, QtGui.QMessageBox.Ok)
+
+    def progressDialog(self, src):
+        progress_dialog = QtGui.QProgressDialog("Checking md5 value", "Cancel", 0, 100)
+
     def __checkSource(self, src):
         if QtCore.QString(src).isEmpty():
-
             return False
 
-        else:
-            src_extension = os.path.splitext(str(src))[1] == ".iso"
+        if not os.path.isfile(src):
+            return False
 
-            return os.path.isfile(src) and src_extension
+        try:
+            (name, md5, url) = verifyIsoChecksum(src)
+
+        except TypeError:
+            self.warningDialog("""\
+The checksum of the source cannot be validated.
+Please specify a correct source or be sure that
+you have downloaded the source correctly.""")
 
     def __checkDestination(self, dst):
         if QtCore.QString(dst).isEmpty():
             return False
 
-        else:
-            return os.path.ismount(str(dst))
+        return os.path.ismount(str(dst))
 
     def __checkInformation(self, src, dst):
         (capacity, available, used) = getDiskInfo(str(dst))
@@ -74,8 +100,17 @@ class SelectDisk(QtGui.QDialog):
         for drive in self.drives:
             self.listWidget.addItem(self.drives[drive]["label"])
 
+        # print(self.listWidget.currentItem())
+
     @QtCore.pyqtSignature("bool")
     def on_button_browse_clicked(self):
         dirname = QtGui.QFileDialog.getExistingDirectory(self, "Choose Mount Disk Path")
 
-        self.line_directory.setText(dirname)
+        if not dirname == "":
+            self.line_directory.setText(dirname)
+
+    def getSelectedDirectory(self):
+        if self.line_directory.displayText() == "":
+            return False
+
+        return self.line_directory.displayText()
