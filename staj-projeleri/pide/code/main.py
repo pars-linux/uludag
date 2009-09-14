@@ -36,35 +36,22 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.pushNew, QtCore.SIGNAL("clicked()"), self.fillWindow)
 
         self.iface = Zeroconf("moon", gethostname(), "_pide._tcp")
-        if self.iface:
-            print "[NOTICE] iface done!"
-        if self.iface.connect_dbus():
-            if self.iface.connect_avahi():
-                if self.iface.connect():
-                    print "All Connections Done"
+        self.iface.connect_dbus()
+        self.iface.connect_avahi()
+        self.iface.connect()
 
     def fillWindow(self):
-        print "[NOTICE] Filling Window..."
         self.buildItemList()
 
 
     def clearItemList(self):
-        """
-            Clears item list.
-        """
         self.listItems.clear()
 
     def makeItemWidget(self, name, address):
-        """
-            Makes an item widget having given properties.
-        """
         widget = ItemWidget(name, address)
         return widget
 
     def addItem(self, name, address):
-        """
-            Adds an item to list.
-        """
         # Build widget and widget item
         widget = self.makeItemWidget(name, address)
         widgetItem = ItemListWidgetItem(self.listItems, widget)
@@ -73,17 +60,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.listItems.setItemWidget(widgetItem, widget)
 
     def buildItemList(self):
-        print "[NOTICE] Building Item List..."
-        # Clear list
         self.clearItemList()
-        print "[NOTICE] Item List Cleared:" 
 
         # Lists of all contacts
         self.users=[]
-        print "[NOTICE] Contacts Defined As Nil: ", self.users
 
-        if self.iface.get_contacts():
-            print "[NOTICE] Contacts Gathered!"
+        self.iface.get_contacts()
 
         contacts = self.iface.get_contacts()
         for name in contacts.keys():
