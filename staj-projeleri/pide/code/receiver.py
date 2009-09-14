@@ -49,6 +49,7 @@ class StreamHandler ( Thread ):
         print '[Media] Starting media transfer for "%s"' % this.filename
         this.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         this.dataSock.bind(('', 9092))
+        print "[Media] Listenin port 9092"
         this.dataSock.listen(1)
 
         f = open(this.filename,"wb")
