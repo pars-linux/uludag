@@ -379,7 +379,7 @@ class Zeroconf:
 if __name__ == "__main__":
     app = QApplication(sys.argv) 
     DBusQtMainLoop(set_as_default=True)
-    instance = Zeroconf("moon", gethostname(), "_presence._tcp")
+    instance = Zeroconf("moon", gethostname(), "_pide._tcp")
     instance.connect_dbus()
     instance.connect_avahi()
     instance.connect()
