@@ -14,13 +14,13 @@ class StreamHandler ( Thread ):
         Thread.__init__( this )
         this.KdeN = KNotification()
         this.receiverSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        this.receiverSock.bind(('', 9091))
         this.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     def run(this):
         this.process()
 
     def bindcsock( this ):
-        this.receiverSock.bind(('', 9091))
         this.receiverSock.listen(1)
         print '[Control] Listening on port 9091'
         this.senderConn, this.senderAddr = this.receiverSock.accept()
@@ -46,7 +46,7 @@ class StreamHandler ( Thread ):
         this.senderSock.send(this.requestCheck)
 
     def transfer( this ):
-        this.senderSock.listen(1)
+        this.receiverSock.listen(1)
         f = open(this.filename,"wb")
         while 1:
             data = this.receiverSock.recv(1024)

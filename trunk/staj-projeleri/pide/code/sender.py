@@ -24,6 +24,7 @@ class FileSender:
         self.selfSocket.listen(1)
         self.senderConn, self.senderAddr = self.selfSocket.accept()
         if self.senderAddr:
+            self.visitorSocket.connect((self.host, self.port))
             print '[Media] Yep Accepted! Starting File Transfer...'
             f = open(self.file, "rb")
             self.data = f.read()
