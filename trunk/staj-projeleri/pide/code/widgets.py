@@ -23,6 +23,8 @@ class ServiceItemWidget(QtGui.QWidget):
         
         self.ui = Ui_ServiceItemWidget()
         self.ui.setupUi(self)
+        self.ui.fillWidget(contact)
+
 
     def fillWidget(self, contact):
         self.ui.labelName.setText(contact)

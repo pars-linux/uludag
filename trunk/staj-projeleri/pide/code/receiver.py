@@ -36,7 +36,7 @@ class StreamHandler ( Thread ):
             this.requestCheck = raw_input('Are You Sure (yes/no)? ')
             if this.requestCheck == "yes":
                 this.sendInfo()
-                #this.transfer()
+                this.transfer()
             else:
                 print "Denied!"
 
@@ -47,7 +47,9 @@ class StreamHandler ( Thread ):
 
     def transfer( this ):
         print '[Media] Starting media transfer for "%s"' % this.filename
-        this.receiverSock.listen(1)
+        this.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        this.dataSock.bind(('', 9092))
+        this.dataSock.listen(1)
 
         f = open(this.filename,"wb")
         while 1:
