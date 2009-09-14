@@ -13,12 +13,13 @@ class StreamHandler ( Thread ):
     def __init__( this ):
         Thread.__init__( this )
         this.KdeN = KNotification()
+        this.receiverSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        this.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     def run(this):
         this.process()
 
     def bindcsock( this ):
-        this.receiverSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         this.receiverSock.bind(('', 9091))
         this.receiverSock.listen(1)
         print '[Control] Listening on port 9091'
@@ -41,12 +42,11 @@ class StreamHandler ( Thread ):
                 print "Denied!"
 
     def sendInfo( this ):
-        this.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         this.senderSock.connect(('10.10.1.26', 9091))
         this.senderSock.send(this.requestCheck)
 
     def transfer( this ):
-        this.receiverSock.listen(1)
+        this.senderSock.listen(1)
         f = open(this.filename,"wb")
         while 1:
             data = this.receiverSock.recv(1024)
