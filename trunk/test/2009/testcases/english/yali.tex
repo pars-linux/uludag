@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-
+\usepackage[left=1cm,top=1cm,right=2cm,bottom=2cm]{geometry}
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
@@ -15,36 +15,76 @@
 \item Check Release Notes and License files
 \item Check different keyboard layouts and note the selected one to test after install
     \begin{enumerate}
-        \item Test it in tty and X
+      \item Type the texbox under the options of keyboard layout and observe that the selected layout is correct.
+      \item Press $CTRL+ALt+F1$ at the same time and pass the system console then type and observe the selected keybord layout is correct.
     \end{enumerate}
 \item Set Date and Time, select a timezone and note it to test after install
     \begin{enumerate}
         \item Compare selected Timezone in /usr/share/zoneinfo/TIMEZONE with /etc/localtime
+    Execute this command in order to observe the time and date:
+	\begin{verbatim}
+	 # date
+	\end{verbatim}
     \end{enumerate}
 \item Add two users; one of with root privileges, one of without
     \begin{enumerate}
-        \item Delete one and edit the other one and update it
+        \item Delete one and edit the other one and update it.
+
+        Observe that you can make them without any problem.
+
         \item Delete other user and try to add a new one with same name
-        \item Try to use not acceptable chars for inputs
+
+        Observe that you can make them without any problem.
+        \item Try to use not acceptable chars for inputs (ş,ı,ğ etc)
+
+        Observe that YALI give warning about it.
         \item Try to use wrong passwords in password inputs
-        \item Try to select do not ask password to this user
-        \item After the installation finished
-            Type as root
-            \begin{verbatim}
-            # nano /var/lib/PolicyKit/user-pardusman.auths
-            \end{verbatim}
-            Observe that all authentications added for this user.
+
+        Observe that YALI give warning about it.
+        \item Try to select do not ask password and give root privilegies to one of the users.
+
+        After than select also autologin for this user.
+
+        \item For the other user do not select ask password and give root priveligies.
+
     \end{enumerate}
 
 \item Enter root password and machine name
+
+When you come the related window, observe  that a default name given to machine name.
     \begin{enumerate}
         \item Try to use not acceptable chars for inputs
+
+        Observe that YALI give warning about it.
         \item Try to use wrong passwords in password inputs
+
+        Observe that YALI give warning about it.
     \end{enumerate}
 
-\item Add users then select one of them for autologin.
+\item Kurulum bittikten sonra
 
-\item Do each of these options;
+	The user which can have autologin and root privilegies:
+	\begin{enumerate}
+	\item Observe that he can autologin.
+	\item Observe that the network manager operations do not ask password for this user on Kaptan.
+	\item Observe that he can be login aas root.
+	Execute this command:
+	\begin{verbatim}
+	 # su
+	\end{verbatim}
+	\end{enumerate}
+	For the other user:
+	\begin{enumerate}
+	\item Observe that he can not be autologin.
+	\item Observe that the network manager ask password on Kaptan.
+	\item Observe that he can not be root.
+	Exacute command:
+	\begin{verbatim}
+	 # su
+	\end{verbatim}
+	\end{enumerate}
+
+\item For the partitioning part apply all of these options:
     \begin{enumerate}
         \item Select automatic partitioning to test resizing
         \begin{enumerate}
@@ -52,15 +92,33 @@
             \item Check both filesystem after installation, old one and new one
         \end{enumerate}
         \item Select Erase all partitions to format all partitions
-        \item Use Manual partitioning and create some partitions with all supported filesystems
+
+        After the installation finished observed that your machine has one partition and start normally.
+        \item Use Manual partitioning and for all filesystem types do the followings separately.
         \begin{enumerate}
+            \item For each file system type create swap, archive and Pardus root.
+
+            Observe that two different archive part can not be allocated at the same time.
             \item Delete each one and add again
+
+            Observe that the selected parts deleted.
             \item Delete all
+
+            Observe that all partitions deleted.
             \item Revert all changes
+
+            Observe that all of the partitions reverted.
             \item Resize some of them
+
+            Observe that the resizing done without any problem.
             \item Plug a new usb disk and click refresh disk
+
+            Observe that the partitioning table of this disk is added to general partitioning table as a tab.
             \item Try to create same partitions type with different partitions
+
+
             \item Try to give different filesystems to already applied partitions
+
         \end{enumerate}
         \item First select  automatic partitioning,  then turn back and select manual partitioning and do the manual partitioning testcases.
         \item Select manual partitioning then try to create different partitions with different filesystems, then try to turn back.
@@ -72,14 +130,38 @@
     \end{enumerate}
 
 \item Select each grub options with new disks
+
+After installation, observe grub.conf for selected grub option.
+
+Execute this command:
+   \begin{verbatim}
+    cat /boot/grub/grub.conf 
+   \end{verbatim}
+
     \begin{enumerate}
-        \item Check debugger log for bios boot orders
-        \item Check other partitions grub.conf after installation
+        \item Install Pardus to first bootable disk.
+
+        Execute the above command in order to see that the system is installed the head of the firs bootable disk.
+        \item Don't install boot loader option.
+
+        Execute the above command and observe thay the system not added to this file.
+
+        \item If you have more than one harddisk observe that all of them listed fr grub process.
+            
+            Select disk below option and execute the above command observe that this selected part is added to grub.conf.
     \end{enumerate}
 
+\item  After installation finished, observe that the system can open automatically.
+
+\item After installation observe that the system open in selected language.
+
 \item Check whole log file before restart, yali doesn't stores grub logs in yaliInstall.log because of some (mount,grub-install) problems
-\item Check is AutoLogin working
+
 \item Prepare a wrong CD and test the check CD part.
+
+Observe that it gives a warning message about it.
+
+Ok this message and observe that the yalı restarted.
 
 \end{enumerate}
 
