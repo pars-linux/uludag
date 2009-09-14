@@ -32,9 +32,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         self.setupUi(self)
 
-        # User/group edit widgets
-        layout = QtGui.QVBoxLayout(self.frameWidget)
-
         # Filling Window
         self.connect(self.pushNew, QtCore.SIGNAL("clicked()"), self.fillWindow)
 
