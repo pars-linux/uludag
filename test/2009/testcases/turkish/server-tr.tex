@@ -14,8 +14,76 @@
 \begin{document}
 
 \maketitle
+\section{Auth alt bileşeni}
+\begin{enumerate}
+ \item ypserv paketi kurulumu sonrası:
+
+Servis yöneticisinden ypserv başlatın, aşağıdaki kout ile başlatıldığına emin olun:
+\begin{verbatim}
+ # service ypserv status
+\end{verbatim}
+
+\item yp-tools paketi kurulumu sonrası:
+
+Servis yöneticisinden ypserv başlatıldıktan sonra:
+\begin{verbatim}
+ # su -
+ # domainname localdomain
+ # domainname
+ # nisdomainname
+\end{verbatim}
+
+\item ypbind paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı /etc altına kopylayın,
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/server/auth/yp.conf 
+# sudo cp yp.conf /etc/
+# sudo domainname localdomain
+\end{verbatim}
+
+Daha sonra ypbind servisini servis yöneticisinden başlatın.
+
+\end{enumerate}
+
+\section{Mta alt bileşeni}
+\begin{enumerate}
+ \item dovecot paketi kurulumu sonrası:
+
+Servis yöneticisinde dovecot başlatılır.
+Aşağıdaki komut ile başlatıldığını gözlemleyin:
+\begin{verbatim}
+ # service dovecot status
+\end{verbatim}
+Aşağıdaki komut ile dovecot kullanıcısı tarafından servisin başlatıldığını gözlemleyin.
+\begin{verbatim}
+# ps aux|grep dovecot 
+\end{verbatim}
+
+Aşağıda bulunan komutlar ile imap ve pop3 paketlerini kontrol edin:
+\begin{verbatim}
+# netstat -ln|grep 110
+# netstat -ln|grep 143
+\end{verbatim}
+
+\end{enumerate}
+
 \section{Web alt bileşeni}
 \begin{enumerate}
+\item webalizer paketi kurulumu sonrası:
+
+Service yöneticisinden apache servisini başlatın.
+
+Aşağıda bulunan dosyayı /var/log/apache2 altına kopyalayın.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/server/web/access_log
+\end{verbatim}
+
+Aşağıda bulunan komutu çalıştırın ve daha sonra http://localhost/webalizer/ bağlantısına firefox ile bağlanın. Ve apache kullanım grafiklerini gözlemleyin.
+\begin{verbatim}
+ # sudo webalizer
+\end{verbatim}
+
 \item apache paketi kurulumu sonrası:
 \begin{itemize}
 \item Servis yöneticisinden apache sunucusunu başlatın. Aşağıda bulunan komutu kullanarak sunucunun başlatılmıl olduğunu gözlemleyin.
