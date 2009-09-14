@@ -15,14 +15,14 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QListWidget" name="listWidget"/>
-   </item>
-   <item>
     <widget class="QLabel" name="label">
      <property name="text">
       <string>Available Disks:</string>
      </property>
     </widget>
+   </item>
+   <item>
+    <widget class="QListWidget" name="listWidget"/>
    </item>
    <item>
     <widget class="QLabel" name="label_2">

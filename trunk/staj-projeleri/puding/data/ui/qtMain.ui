@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>448</width>
-    <height>204</height>
+    <width>439</width>
+    <height>184</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>448</width>
-    <height>204</height>
+    <width>439</width>
+    <height>184</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -87,13 +87,6 @@
      </spacer>
     </item>
     <item>
-     <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <spacer name="horizontalSpacer">
@@ -131,8 +124,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>448</width>
-     <height>27</height>
+     <width>439</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
