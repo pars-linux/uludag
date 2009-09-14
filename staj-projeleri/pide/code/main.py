@@ -14,6 +14,7 @@ from ui_main import Ui_MainWidget
 
 # Backend
 from avahiservices import Zeroconf
+from receiver import StreamHandler
 
 # Item widget
 from item import ItemListWidgetItem, ItemWidget
@@ -39,6 +40,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.iface.connect_dbus()
         self.iface.connect_avahi()
         self.iface.connect()
+
+        #self.listen = StreamHandler()
+        #self.listen.start()
 
     def fillWindow(self):
         self.buildItemList()
@@ -71,8 +75,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         for name in contacts.keys():
             name, domain, interface, protocol, host, address, port, bare_name, txt = contacts[name]
             name = self.splitName(name)
-            self.users.append([name, address])
-            self.addItem(name, address)
+            if name == "saturn":
+                self.users.append([name, address])
+                self.addItem(name, address)
 
     def splitName(self, name):
         first, second = name.split("@")

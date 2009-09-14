@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>193</width>
+    <width>263</width>
     <height>48</height>
    </rect>
   </property>
@@ -69,6 +69,13 @@
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="0" column="3">
+    <widget class="QPushButton" name="sendButton">
+     <property name="text">
+      <string>Gönder</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
