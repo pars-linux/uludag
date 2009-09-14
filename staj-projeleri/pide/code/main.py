@@ -102,11 +102,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         contacts = self.iface.get_contacts()
         for name in contacts.keys():
             name, domain, interface, protocol, host, address, port, bare_name, txt = contacts[name]
-            print "Name: ", name
-            print "Address: ", address
+            name = self.splitName(name)
             self.users.append([name, address])
             self.addItem(name, address)
 
+    def splitName(self, name):
+        first, second = name.split("@")
+        return first
 
     def slotAnimate(self, frame):
         """
