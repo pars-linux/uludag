@@ -42,7 +42,7 @@ class StreamHandler ( Thread ):
 
     def sendInfo( this ):
         this.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        this.senderSock.connect(('10.10.1.57', 9091))
+        this.senderSock.connect(('10.10.1.26', 9091))
         this.senderSock.send(this.requestCheck)
 
     def transfer( this ):
