@@ -10,27 +10,25 @@ class FileSender:
         self.port = 9091
         self.file = FILE
         self.host = HOST
+        
+        self.visitorSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.selfSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     def sendFile(self):
-        self.visitorSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.visitorSocket.connect((self.host, self.port))
         self.visitorSocket.send("SEND " + self.file)
 
     def waitforcheck(self):
         print '[Media] Waiting For Acception On Visitor'
-        self.selfSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.selfSocket.bind(('', self.port))
         self.selfSocket.listen(1)
         self.senderConn, self.senderAddr = self.selfSocket.accept()
         if self.senderAddr:
-            print '[Media] Yep Accepted!'
-            self.sendContent()
-
-    def sendContent(self):
-        f = open(self.file, "rb")
-        self.data = f.read()
-        f.close()
-        self.visitorSocket.send(self.data)
+            print '[Media] Yep Accepted! Starting File Transfer...'
+            f = open(self.file, "rb")
+            self.data = f.read()
+            f.close()
+            self.visitorSocket.send(self.data)
 
     def close(self):
         self.visitorSocket.close()
@@ -41,5 +39,5 @@ if __name__ == "__main__":
     instance = FileSender('text.txt', '10.10.1.26')
     instance.sendFile()
     instance.waitforcheck()
-    #instance.close()
+    instance.close()
     app.exec_()
