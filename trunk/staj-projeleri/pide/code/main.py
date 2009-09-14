@@ -32,19 +32,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         self.setupUi(self)
 
-        # Animation
-        self.animator = QtCore.QTimeLine(ANIM_TIME, self)
-        self.animationLast = ANIM_HIDE
-
-        # Initialize heights of animated widgets
-        self.slotAnimationFinished()
-
         # User/group edit widgets
         layout = QtGui.QVBoxLayout(self.frameWidget)
-
-        # Signals
-        self.connect(self.animator, QtCore.SIGNAL("frameChanged(int)"), self.slotAnimate)
-        self.connect(self.animator, QtCore.SIGNAL("finished()"), self.slotAnimationFinished)
 
         # Filling Window
         self.connect(self.pushNew, QtCore.SIGNAL("clicked()"), self.fillWindow)
@@ -109,26 +98,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def splitName(self, name):
         first, second = name.split("@")
         return first
-
-    def slotAnimate(self, frame):
-        """
-            Animation frame changed.
-        """
-        self.frameEdit.setMaximumHeight(frame)
-        self.frameList.setMaximumHeight(self.height() - frame)
-        self.update()
-
-    def slotAnimationFinished(self):
-        """
-            Animation is finished.
-        """
-        if self.animationLast == ANIM_SHOW:
-            self.frameEdit.setMaximumHeight(ANIM_DEFAULT)
-            self.frameList.setMaximumHeight(ANIM_TARGET)
-        else:
-            self.frameEdit.setMaximumHeight(ANIM_TARGET)
-            self.frameList.setMaximumHeight(ANIM_DEFAULT)
-
 
 
 if __name__ == '__main__':
