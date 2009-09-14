@@ -8,7 +8,6 @@ from PyQt4.QtGui import QApplication
 class FileSender:
     def __init__(self, FILE, HOST):
         self.port = 9091
-        self.cport = 9092
         self.file = FILE
         self.host = HOST
 
@@ -25,16 +24,13 @@ class FileSender:
         self.senderConn, self.senderAddr = self.selfSocket.accept()
         if self.senderAddr:
             print '[Media] Yep Accepted!'
+            self.sendContent()
 
     def sendContent(self):
-        self.contentSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.contentSocket.connect((self.host, self.cport))
-
         f = open(self.file, "rb")
         self.data = f.read()
         f.close()
-
-        self.contentSocket.send(self.data)
+        self.visitorSocket.send(self.data)
 
     def close(self):
         self.visitorSocket.close()
