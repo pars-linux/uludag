@@ -35,24 +35,18 @@ QT_BEGIN_NAMESPACE
 class TvConfigUI : public QWidget
 {
 public:
-    QGridLayout *gridLayout_2;
+    QGridLayout *mainLayout;
     QTabWidget *tvCard;
     QWidget *tab;
     QGridLayout *gridLayout;
-    QSplitter *splitter_4;
-    QSplitter *splitter_2;
     QLabel *cardManufacturer;
     QLabel *cardModel;
-    QSplitter *splitter_3;
     QListWidget *cardManList;
     QListWidget *cardModList;
     QWidget *tab_2;
     QGridLayout *gridLayout_3;
-    QSplitter *splitter_7;
-    QSplitter *splitter_5;
     QLabel *cardManufacturer_2;
     QLabel *cardModel_2;
-    QSplitter *splitter_6;
     QListWidget *tunerManList;
     QListWidget *tunerModList;
     QWidget *tab_3;
@@ -63,123 +57,103 @@ public:
     QRadioButton *mhz35Button;
     QButtonGroup *addOnsGroup;
     QCheckBox *radioCard;
-    QGroupBox *groupBox;
+    QGroupBox *pllGroupBox;
+    QGroupBox *addOnsGroupBox;
     QSpacerItem *verticalSpacer;
     QSpacerItem *verticalSpacer_2;
+    QVBoxLayout *pllLayout;
+    QVBoxLayout *tab3Layout;
+    QVBoxLayout *addOnsLayout;
 
     TvConfigUI(QWidget *parent = 0);
     ~TvConfigUI();
 
     void setupUi(QWidget *TvConfigUI)
     {
-        std::cout << "Hello from setupUi" << std::endl;
+        int i = 0;
+        std::cout << "Hello from setupUi " << ++i << std::endl;
         if (TvConfigUI->objectName().isEmpty())
             TvConfigUI->setObjectName(QString::fromUtf8("TvConfigUI"));
         TvConfigUI->resize(600, 400);
-        gridLayout_2 = new QGridLayout(TvConfigUI);
-        gridLayout_2->setSpacing(6);
-        gridLayout_2->setMargin(11);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        mainLayout = new QGridLayout(TvConfigUI);
+        mainLayout->setObjectName(QString::fromUtf8("mainLayout"));
         tvCard = new QTabWidget(TvConfigUI);
         tvCard->setObjectName(QString::fromUtf8("tvCard"));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
         gridLayout = new QGridLayout(tab);
-        gridLayout->setSpacing(6);
-        gridLayout->setMargin(11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        splitter_4 = new QSplitter(tab);
-        splitter_4->setObjectName(QString::fromUtf8("splitter_4"));
-        splitter_4->setOrientation(Qt::Vertical);
-        splitter_2 = new QSplitter(splitter_4);
-        splitter_2->setObjectName(QString::fromUtf8("splitter_2"));
-        splitter_2->setOrientation(Qt::Horizontal);
-        cardManufacturer = new QLabel(splitter_2);
+        cardManufacturer = new QLabel();
         cardManufacturer->setObjectName(QString::fromUtf8("cardManufacturer"));
-        splitter_2->addWidget(cardManufacturer);
-        cardModel = new QLabel(splitter_2);
+        gridLayout->addWidget(cardManufacturer, 0, 0);
+        cardModel = new QLabel();
         cardModel->setObjectName(QString::fromUtf8("cardModel"));
-        splitter_2->addWidget(cardModel);
-        splitter_4->addWidget(splitter_2);
-        splitter_3 = new QSplitter(splitter_4);
-        splitter_3->setObjectName(QString::fromUtf8("splitter_3"));
-        splitter_3->setOrientation(Qt::Horizontal);
-        cardManList = new QListWidget(splitter_3);
-        new QListWidgetItem(cardManList);
-        new QListWidgetItem(cardManList);
+        gridLayout->addWidget(cardModel, 0, 1);
+        cardManList = new QListWidget();
         cardManList->setObjectName(QString::fromUtf8("cardManList"));
-        splitter_3->addWidget(cardManList);
-        cardModList = new QListWidget(splitter_3);
-        new QListWidgetItem(cardModList);
-        new QListWidgetItem(cardModList);
+        gridLayout->addWidget(cardManList, 1, 0);
+        cardModList = new QListWidget();
         cardModList->setObjectName(QString::fromUtf8("cardModList"));
-        splitter_3->addWidget(cardModList);
-        splitter_4->addWidget(splitter_3);
-
-        gridLayout->addWidget(splitter_4, 0, 0, 1, 1);
+        gridLayout->addWidget(cardModList, 1, 1);
 
         tvCard->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         gridLayout_3 = new QGridLayout(tab_2);
-        gridLayout_3->setSpacing(6);
-        gridLayout_3->setMargin(11);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        splitter_7 = new QSplitter(tab_2);
-        splitter_7->setObjectName(QString::fromUtf8("splitter_7"));
-        splitter_7->setOrientation(Qt::Vertical);
-        splitter_5 = new QSplitter(splitter_7);
-        splitter_5->setObjectName(QString::fromUtf8("splitter_5"));
-        splitter_5->setOrientation(Qt::Horizontal);
-        cardManufacturer_2 = new QLabel(splitter_5);
+        cardManufacturer_2 = new QLabel();
         cardManufacturer_2->setObjectName(QString::fromUtf8("cardManufacturer_2"));
-        splitter_5->addWidget(cardManufacturer_2);
-        cardModel_2 = new QLabel(splitter_5);
+        gridLayout_3->addWidget(cardManufacturer_2, 0, 0);
+        cardModel_2 = new QLabel();
         cardModel_2->setObjectName(QString::fromUtf8("cardModel_2"));
-        splitter_5->addWidget(cardModel_2);
-        splitter_7->addWidget(splitter_5);
-        splitter_6 = new QSplitter(splitter_7);
-        splitter_6->setObjectName(QString::fromUtf8("splitter_6"));
-        splitter_6->setOrientation(Qt::Horizontal);
-        tunerManList = new QListWidget(splitter_6);
-        new QListWidgetItem(tunerManList);
-        new QListWidgetItem(tunerManList);
+        gridLayout_3->addWidget(cardModel_2, 0, 1);
+        tunerManList = new QListWidget();
         tunerManList->setObjectName(QString::fromUtf8("tunerManList"));
-        splitter_6->addWidget(tunerManList);
-        tunerModList = new QListWidget(splitter_6);
-        new QListWidgetItem(tunerModList);
-        new QListWidgetItem(tunerModList);
+        gridLayout_3->addWidget(tunerManList, 1, 0);
+        tunerModList = new QListWidget();
         tunerModList->setObjectName(QString::fromUtf8("tunerModList"));
-        splitter_6->addWidget(tunerModList);
-        splitter_7->addWidget(splitter_6);
-
-        gridLayout_3->addWidget(splitter_7, 0, 0, 1, 1);
+        gridLayout_3->addWidget(tunerModList, 1, 1);
 
         tvCard->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
-        groupBox = new QGroupBox(tab_3);
-        pllGroup = new QButtonGroup();
+        pllGroupBox = new QGroupBox(tab_3);
+        pllGroupBox->setTitle("Phase Locked Loop (PLL)");
+        addOnsGroupBox = new QGroupBox("Addons", tab_3);
+        pllGroup = new QButtonGroup(pllGroupBox);
         pllGroup->setObjectName(QString::fromUtf8("pllGroup"));
-        pllButton = new QRadioButton(groupBox);
+        pllButton = new QRadioButton(pllGroupBox);
         pllButton->setObjectName(QString::fromUtf8("pllButton"));
 
         pllGroup->addButton(pllButton);
 
-        mhz28Button = new QRadioButton(groupBox);
+        mhz28Button = new QRadioButton(pllGroupBox);
         mhz28Button->setObjectName(QString::fromUtf8("mhz28Button"));
         pllGroup->addButton(mhz28Button);
 
 
-        mhz35Button = new QRadioButton(groupBox);
+        mhz35Button = new QRadioButton(pllGroupBox);
         mhz35Button->setObjectName(QString::fromUtf8("mhz35Button"));
         pllGroup->addButton(mhz35Button);
+        pllLayout = new QVBoxLayout;
+        pllLayout->addWidget(pllButton);
+        pllLayout->addWidget(mhz28Button);
+        pllLayout->addWidget(mhz35Button);
+        pllGroupBox->setLayout(pllLayout);
 
-        addOnsGroup = new QButtonGroup();
+        addOnsGroup = new QButtonGroup(addOnsGroupBox);
         addOnsGroup->setObjectName(QString::fromUtf8("addOnsGroup"));
-        radioCard = new QCheckBox();
+        radioCard = new QCheckBox(addOnsGroupBox);
         radioCard->setObjectName(QString::fromUtf8("radioCard"));
+        addOnsGroup->setExclusive(false);
         addOnsGroup->addButton(radioCard);
+        addOnsLayout = new QVBoxLayout;
+        addOnsLayout->addWidget(radioCard);
+        addOnsGroupBox->setLayout(addOnsLayout);
+
+        tab3Layout = new QVBoxLayout(tab_3);
+        tab3Layout->addWidget(pllGroupBox);
+        tab3Layout->addWidget(addOnsGroupBox);
 
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
@@ -187,7 +161,7 @@ public:
 
         tvCard->addTab(tab_3, QString());
 
-        gridLayout_2->addWidget(tvCard, 0, 0, 1, 1);
+        mainLayout->addWidget(tvCard, 0, 0, 1, 1);
 
 
         retranslateUi(TvConfigUI);
@@ -206,19 +180,11 @@ public:
 
         const bool __sortingEnabled = cardManList->isSortingEnabled();
         cardManList->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem = cardManList->item(0);
-        ___qlistwidgetitem->setText(QApplication::translate("TvConfigUI", "New Item", 0, QApplication::UnicodeUTF8));
-        QListWidgetItem *___qlistwidgetitem1 = cardManList->item(1);
-        ___qlistwidgetitem1->setText(QApplication::translate("TvConfigUI", "New Item", 0, QApplication::UnicodeUTF8));
         cardManList->setSortingEnabled(__sortingEnabled);
 
 
         const bool __sortingEnabled1 = cardModList->isSortingEnabled();
         cardModList->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem2 = cardModList->item(0);
-        ___qlistwidgetitem2->setText(QApplication::translate("TvConfigUI", "New Item", 0, QApplication::UnicodeUTF8));
-        QListWidgetItem *___qlistwidgetitem3 = cardModList->item(1);
-        ___qlistwidgetitem3->setText(QApplication::translate("TvConfigUI", "New Item", 0, QApplication::UnicodeUTF8));
         cardModList->setSortingEnabled(__sortingEnabled1);
 
         tvCard->setTabText(tvCard->indexOf(tab), QApplication::translate("TvConfigUI", "TV Kart\304\261", 0, QApplication::UnicodeUTF8));
@@ -227,19 +193,11 @@ public:
 
         const bool __sortingEnabled2 = tunerManList->isSortingEnabled();
         tunerManList->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem4 = tunerManList->item(0);
-        ___qlistwidgetitem4->setText(QApplication::translate("TvConfigUI", "New Item", 0, QApplication::UnicodeUTF8));
-        QListWidgetItem *___qlistwidgetitem5 = tunerManList->item(1);
-        ___qlistwidgetitem5->setText(QApplication::translate("TvConfigUI", "New Item", 0, QApplication::UnicodeUTF8));
         tunerManList->setSortingEnabled(__sortingEnabled2);
 
 
         const bool __sortingEnabled3 = tunerModList->isSortingEnabled();
         tunerModList->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem6 = tunerModList->item(0);
-        ___qlistwidgetitem6->setText(QApplication::translate("TvConfigUI", "New Item", 0, QApplication::UnicodeUTF8));
-        QListWidgetItem *___qlistwidgetitem7 = tunerModList->item(1);
-        ___qlistwidgetitem7->setText(QApplication::translate("TvConfigUI", "New Item", 0, QApplication::UnicodeUTF8));
         tunerModList->setSortingEnabled(__sortingEnabled3);
 
         tvCard->setTabText(tvCard->indexOf(tab_2), QApplication::translate("TvConfigUI", "Tuner", 0, QApplication::UnicodeUTF8));
