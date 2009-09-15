@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>496</width>
+    <width>450</width>
     <height>420</height>
    </rect>
   </property>
@@ -43,7 +43,7 @@
       <number>40</number>
      </property>
      <item>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="step1_icon">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
          <horstretch>0</horstretch>
@@ -68,7 +68,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="step1_label">
        <property name="text">
         <string>Preparing to upgrade</string>
        </property>
@@ -95,7 +95,7 @@
       <number>40</number>
      </property>
      <item>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="step2_icon">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
          <horstretch>0</horstretch>
@@ -120,7 +120,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="step2_label">
        <property name="font">
         <font>
          <weight>50</weight>
@@ -153,7 +153,7 @@
       <number>40</number>
      </property>
      <item>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="step3_icon">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
          <horstretch>0</horstretch>
@@ -178,7 +178,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_6">
+      <widget class="QLabel" name="step3_label">
        <property name="font">
         <font>
          <weight>75</weight>
@@ -211,7 +211,7 @@
       <number>40</number>
      </property>
      <item>
-      <widget class="QLabel" name="label_7">
+      <widget class="QLabel" name="step4_icon">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
          <horstretch>0</horstretch>
@@ -233,7 +233,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_8">
+      <widget class="QLabel" name="step4_label">
        <property name="text">
         <string>Installing upgrades</string>
        </property>
@@ -260,7 +260,7 @@
       <number>40</number>
      </property>
      <item>
-      <widget class="QLabel" name="label_9">
+      <widget class="QLabel" name="step5_icon">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
          <horstretch>0</horstretch>
@@ -282,7 +282,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_10">
+      <widget class="QLabel" name="step5_label">
        <property name="text">
         <string>Cleaning up</string>
        </property>
@@ -309,7 +309,7 @@
       <number>40</number>
      </property>
      <item>
-      <widget class="QLabel" name="label_11">
+      <widget class="QLabel" name="step6_icon">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -334,7 +334,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_12">
+      <widget class="QLabel" name="step6_label">
        <property name="text">
         <string>Restarting the computer </string>
        </property>
@@ -363,7 +363,7 @@
     </widget>
    </item>
    <item row="8" column="0">
-    <widget class="QLabel" name="label_13">
+    <widget class="QLabel" name="operationStatus">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
        <horstretch>0</horstretch>
@@ -374,6 +374,30 @@
       <string>Downloading 3 of 40 packages at 83.1 kb/s</string>
      </property>
     </widget>
+   </item>
+   <item row="9" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <spacer name="horizontalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
