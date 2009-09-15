@@ -37,11 +37,11 @@ TasmaTv::TasmaTv(QWidget *parent/*, const QVariantList &lst*/) : QWidget(parent)
     std::cout << "tv-manager signaling" << std::endl;
     KGlobal::locale()->setMainCatalog("tasma");  // Changed 2008 to 2009
     mainWidget = new TvConfig(this);
-
+setWindowTitle("TV Manager");
     QVBoxLayout *v = new QVBoxLayout(this);    // Ported
     v->addWidget(mainWidget);
 
-    TasmaTvAbout = new KAboutData("tv-manager", 0, ki18n(  "TASMA Tv Card Configuration Module" ),  "0.1",
+    TasmaTvAbout = new KAboutData("tv-managera", 0, ki18n(  "TASMA Tv Card Configuration Module" ),  "0.1",
 				     ki18n("TASMA Tv Card Configuration Module" ),
 				     KAboutData::License_GPL,
 				     ki18n("(c) 2005-2006, TUBITAK - UEKAE" ) );  // Ported to kde4
