@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainDialog</class>
+ <class>Dialog</class>
  <widget class="QDialog" name="Dialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>443</width>
-    <height>361</height>
+    <width>496</width>
+    <height>420</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>450</width>
+    <height>420</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Distribution Upgrade Manager</string>
@@ -43,6 +49,12 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>18</width>
+         <height>0</height>
+        </size>
        </property>
        <property name="text">
         <string/>
@@ -90,6 +102,12 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>18</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -103,6 +121,12 @@
      </item>
      <item>
       <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
        <property name="text">
         <string>Setting up repositories</string>
        </property>
@@ -136,11 +160,17 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>18</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../data/data.qrc">:/data/check.png</pixmap>
+        <pixmap resource="../data/data.qrc">:/data/arrow.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -149,6 +179,12 @@
      </item>
      <item>
       <widget class="QLabel" name="label_6">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
         <string>Downloading new packages</string>
        </property>
@@ -182,11 +218,14 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>18</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="../data/data.qrc">:/data/check.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -228,11 +267,14 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>18</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="../data/data.qrc">:/data/check.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -277,11 +319,14 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>18</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="../data/data.qrc">:/data/check.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -313,7 +358,7 @@
    <item row="7" column="0">
     <widget class="QProgressBar" name="progressBar">
      <property name="value">
-      <number>24</number>
+      <number>68</number>
      </property>
     </widget>
    </item>
@@ -326,7 +371,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Downloading 3/40 at 83.1 kb/s</string>
+      <string>Downloading 3 of 40 packages at 83.1 kb/s</string>
      </property>
     </widget>
    </item>
