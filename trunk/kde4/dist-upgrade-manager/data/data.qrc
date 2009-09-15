@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="data" >
+    <file>check.png</file>
+    <file>package-manager.png</file>
+  </qresource>
+</RCC>
