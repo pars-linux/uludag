@@ -7,7 +7,7 @@
 import os
 import sys
 
-from common import (SHARE, getDiskInfo, verifyIsoChecksum)
+from common import (SHARE, getDiskInfo, getIsoSize, verifyIsoChecksum)
 from common import PartitionUtils
 from constants import DESCRIPTION
 from PyQt4 import (QtCore, QtGui, uic)
@@ -65,14 +65,12 @@ class Create(QtGui.QMainWindow):
             self.warningDialog("ISO Image is Invalid", "Please check the ISO image path.")
 
         try:
-            #(name, md5, url) = verifyIsoChecksum(src)
-            check_iso = ProgressBar("Verify Checksum", "The checksum of the source is checking now...")
-            progressbar = check_iso.progressBar
-            pi = ProgressIncrement(progressbar, check_iso)
-            pi.start()
+            check_iso = ProgressBar("Verify Checksum",
+                                    "The checksum of the source is checking now...")
 
-            QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgressBar()"), pi.incrementProgress)
+
             check_iso.exec_()
+            # pi.exit()
 
         except TypeError:
             self.warningDialog("Checksum invalid", """\
@@ -124,25 +122,40 @@ class SelectDisk(QtGui.QDialog):
         return self.line_directory.displayText()
 
 class ProgressIncrement(QtCore.QThread):
-    def __init__(self, progressbar, dialog):
+    def __init__(self, progressbar, src):
         QtCore.QThread.__init__(self)
 
         self.pbar = progressbar
-        self.dialog = dialog
+        self.src = src
+
+    def set_data(self, size):
+        self.emit(QtCore.SIGNAL("maxprogress(int)"), size)
 
     def run(self):
-        import time
+        import hashlib
 
-        for i in range(0, 101):
-            if i == 100:
-                self.dialog.close()
-            else:
-                self.emit(QtCore.SIGNAL("incrementProgressBar()"))
-                time.sleep(0.04)
+        checksum = hashlib.md5()
+        isofile = file(self.src, "rb")
+        bytes = 1024**2
+        total = 0
+
+        while bytes:
+            data = isofile.read(bytes)
+            checksum.update(data)
+            bytes = len(data)
+            total += bytes
+            self.emit(QtCore.SIGNAL("incrementProgressBar()"))
+
+        src_md5 = checksum.hexdigest()
+        print(src_md5)
+        print(total)
 
     def incrementProgress(self):
         current_value = self.pbar.value()
         self.pbar.setValue(current_value + 1)
+
+    def maxprogress(self, value):
+        self.pbar.setMaximum(value)
 
 class ProgressBar(QtGui.QDialog):
     def __init__(self, title, message, parent = None):
@@ -151,6 +164,13 @@ class ProgressBar(QtGui.QDialog):
 
         self.setWindowTitle(title)
         self.label.setText(message)
-        self.progressBar.setMaximum(100)
+
+        pi = ProgressIncrement(self.progressBar, src)
+        iso_size = getIsoSize(src)
+        pi.set_data(size = iso_size)
+        pi.start()
 
         self.connect(self.button_cancel, QtCore.SIGNAL("clicked(bool)"), QtCore.SLOT("close()"))
+        self.connect(pi, QtCore.SIGNAL("maxprogress(int)"), pi.maxprogress)
+        self.connect(pi, QtCore.SIGNAL("incrementProgressBar()"), pi.incrementProgress)
+
