@@ -47,8 +47,9 @@ class Create(QtGui.QMainWindow):
         if not self.__checkDestination(self.line_disk.displayText()):
             self.warningDialog("Directory is Invalid", "Please check the USB disk path.")
 
-        if not self.__checkSource(self.line_image.displayText()):
-            self.warningDialog("ISO Image is Invalid", "Please check the ISO image path.")
+        elif not self.__checkSource(self.line_image.displayText()):
+            # FIX ME: ...
+            pass
 
     def warningDialog(self, title, message):
         QtGui.QMessageBox.warning(self, title, message, QtGui.QMessageBox.Ok)
@@ -58,16 +59,23 @@ class Create(QtGui.QMainWindow):
 
     def __checkSource(self, src):
         if QtCore.QString(src).isEmpty():
-            return False
+            self.warningDialog("ISO Image is Invalid", "Please check the ISO image path.")
 
         if not os.path.isfile(src):
-            return False
+            self.warningDialog("ISO Image is Invalid", "Please check the ISO image path.")
 
         try:
-            (name, md5, url) = verifyIsoChecksum(src)
+            #(name, md5, url) = verifyIsoChecksum(src)
+            check_iso = ProgressBar("Verify Checksum", "The checksum of the source is checking now...")
+            progressbar = check_iso.progressBar
+            pi = ProgressIncrement(progressbar, check_iso)
+            pi.start()
+
+            QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgressBar()"), pi.incrementProgress)
+            check_iso.exec_()
 
         except TypeError:
-            self.warningDialog("""\
+            self.warningDialog("Checksum invalid", """\
 The checksum of the source cannot be validated.
 Please specify a correct source or be sure that
 you have downloaded the source correctly.""")
@@ -114,3 +122,35 @@ class SelectDisk(QtGui.QDialog):
             return False
 
         return self.line_directory.displayText()
+
+class ProgressIncrement(QtCore.QThread):
+    def __init__(self, progressbar, dialog):
+        QtCore.QThread.__init__(self)
+
+        self.pbar = progressbar
+        self.dialog = dialog
+
+    def run(self):
+        import time
+
+        for i in range(0, 101):
+            if i == 100:
+                self.dialog.close()
+            else:
+                self.emit(QtCore.SIGNAL("incrementProgressBar()"))
+                time.sleep(0.04)
+
+    def incrementProgress(self):
+        current_value = self.pbar.value()
+        self.pbar.setValue(current_value + 1)
+
+class ProgressBar(QtGui.QDialog):
+    def __init__(self, title, message, parent = None):
+        super(ProgressBar, self).__init__(parent)
+        uic.loadUi("%s/ui/qtProgressBar.ui" % SHARE, self)
+
+        self.setWindowTitle(title)
+        self.label.setText(message)
+        self.progressBar.setMaximum(100)
+
+        self.connect(self.button_cancel, QtCore.SIGNAL("clicked(bool)"), QtCore.SLOT("close()"))
