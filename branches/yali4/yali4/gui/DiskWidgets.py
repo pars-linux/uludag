@@ -230,6 +230,11 @@ class DiskList(QtGui.QWidget):
         ctx.partrequests.remove_all()
         self.update()
 
+    def addVolumeGroup(self, vg):
+        _str = u"Volume Group %s" % vg.name
+        freespace = vg.freeSpace
+        vgitem = VGItem()
+        
     def addDevice(self, dev):
 
         # get the size as human readable
@@ -282,7 +287,11 @@ class DiskList(QtGui.QWidget):
 
     def slotDeletePart(self):
         """Creates delete request for selected partition"""
-        dev = self.partEdit.currentPart.getDevice()
+        if self.partEdit.currentPart._type == parteddata.partitionType:
+            parent = self.partEdit.currentPart.getDevice()
+        else:
+            parent = self.partEdit.currentPart.vg 
+            
         currentPart = self.partEdit.currentPart
         ctx.partrequests.removeRequest(currentPart, request.mountRequestType)
         ctx.partrequests.removeRequest(currentPart, request.formatRequestType)
@@ -374,7 +383,7 @@ class DiskList(QtGui.QWidget):
         size = self.partEdit.ui.partitionSize.value()
 
         # This is a new partition request
-        if partition._parted_type & parteddata.freeSpaceType:
+        if partition._type & parteddata.freeSpaceType:
             type = parteddata.PARTITION_PRIMARY
             extendedPartition = device.getExtendedPartition()
 
@@ -569,7 +578,7 @@ class DiskItem(QtGui.QWidget):
         # Modify partition
         partition.setFocusPolicy(Qt.NoFocus)
 
-        if data._parted_type == parteddata.freeSpaceType:
+        if data._type == parteddata.freeSpaceType:
             partition.setStyleSheet("background-image:none;")
         else:
             meta = getFSMeta(data.getFSName())
@@ -604,7 +613,12 @@ class DiskItem(QtGui.QWidget):
             i+=1
 
     def deleteAll(self):
-        for p in self._data.getPartitions():
+        if self._data._type == parteddata.volumeGroup:
+            partitions = self._data.lvs
+        else:
+            partitions = self._data.getPartitions()
+            
+        for p in self._data.partitions:
             ctx.partrequests.removeRequest(p, request.mountRequestType)
             ctx.partrequests.removeRequest(p, request.formatRequestType)
             ctx.partrequests.removeRequest(p, request.labelRequestType)
@@ -682,7 +696,7 @@ class PartEdit(QtGui.QWidget):
         self.ui.formatType.setCurrentIndex(0)
         self.ui.formatCheck.setChecked(True)
 
-        if part._parted_type == parteddata.freeSpaceType:
+        if part._type == parteddata.freeSpaceType:
             self.ui.deletePartition.setVisible(False)
             self.ui.resizePartition.setVisible(False)
             self.ui.partitionSize.setEnabled(True)

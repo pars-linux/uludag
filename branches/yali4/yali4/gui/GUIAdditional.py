@@ -24,6 +24,13 @@ from yali4.gui.Ui.partresize import Ui_PartResizeWidget
 from yali4.gui.Ui.autopartquestion import Ui_autoPartQuestion
 from yali4.gui.Ui.connectionlist import Ui_connectionWidget
 
+class VGItem(QtGui.QListWidgetItem):
+    
+    def __init__(self, parent, vg):
+        text = u"%s" % vg.name
+        self._vg = vg
+        QtGui.QListWidgetItem.__init__(self, text, parent)
+        
 class ResizeWidget(QtGui.QWidget):
 
     def __init__(self, dev, part, rootWidget):
