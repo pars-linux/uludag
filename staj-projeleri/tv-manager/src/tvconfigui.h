@@ -67,6 +67,8 @@ public:
     QVBoxLayout *tab3Layout;
     QVBoxLayout *addOnsLayout;
     QDialogButtonBox *buttonBox;
+    QPushButton *applyButton;
+    QPushButton *reDefaultButton;
 
     TvConfigUI(QWidget *parent = 0);
     ~TvConfigUI();
