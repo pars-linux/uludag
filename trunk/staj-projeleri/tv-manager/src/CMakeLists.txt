@@ -2,10 +2,10 @@ project(tvManager) # the name of your project
 
 cmake_minimum_required(VERSION 2.4.0)
 
-find_package(Qt4)
+#find_package(Qt4)
 find_package(Qt4 REQUIRED) # find and setup Qt4 for this project
 find_package(KDE4 REQUIRED)
-SET(QT_USE_QTXML 1)
+# SET(QT_USE_QTXML 1)
 
 # the next line sets up include and link directories and defines some variables that we will use.
 # you can modify the behavior by setting some variables, e.g.
@@ -63,10 +63,8 @@ add_dependencies(tvManager translations_target)
 target_link_libraries(
     tvManager
     ${QT_LIBRARIES}
-    ${QT_QTCORE_LIBRARY}
-    ${QT_QTGUI_LIBRARY}
     ${KDE4_KDEUI_LIBS}
-    ${KDE4_KDECORE_LIBS} 
+    ${KDE4_KDECORE_LIBS}
     pci
     )
 
