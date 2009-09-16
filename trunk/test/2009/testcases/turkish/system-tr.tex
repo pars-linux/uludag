@@ -18,13 +18,30 @@
 
 \section{Devel alt Bileşeni}
 \begin{enumerate}
- \item xtrans paketi kurulum testine tabidir.
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ xtrans
+ automake
+ dietlibc 
+\end{verbatim}
+ \item icecream ve icecream scheduler paketleri kurulumu sonrası:
+
+Servis yöneticisinden icecream servisini başlatın.
+
+Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olun.
+ \begin{verbatim}
+  service icercream status
+ \end{verbatim}
+
 \end{enumerate}
 
 
 \section{Base alt Bileşeni}
 
 \begin{enumerate}
+\item e2fsprogs paketi kurulum testine tabidir.
+
+
 \item dnsmasq paketi kurulumu sonrası:
 
 \begin{itemize}
@@ -151,6 +168,7 @@ Bilgisayarınızı yeniden başlatın. Düzgün bir şekilde açıldığını g�
 \section{Service alt Bileşeni}
 \begin{enumerate}
  \item memcached paketi kurulumu sonrası:
+
   programming-tr.pdf python-memcached testini gerçekleştirin. 
 \end{enumerate}
 

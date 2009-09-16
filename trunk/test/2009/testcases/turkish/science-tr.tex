@@ -14,6 +14,43 @@
 \begin{document}
 
 \maketitle
+\section{Gis alt Bileşeni}
+\begin{enumerate}
+ \item gpsd paketi kurulumu sonrası:
+
+Eğer gps'iniz var ise bu testi gerçekleştirebilirsiniz.
+
+Gps'inizi takın. Servis yöneticisinden gpsd servisini başlatın.
+
+Aşağıda bulunan komut ile servisin başlatıldığını gözlemleyin.
+\begin{verbatim}
+ service gpsd status
+\end{verbatim}
+
+
+\end{enumerate}
+
+
+\section{Astronomy alt Bileşeni}
+\begin{enumerate}
+ \item stellarium paketi kurulumu sonrası:
+
+Kmenüden uygulamayı açın ve düzgün bir şekilde açılabildiğini gözlemleyin. 
+\end{enumerate}
+
+\section{Chemistry alt Bileşeni}
+\begin{enumerate}
+ \item openbabel paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları çalıştırın ve test.smi dosyasında "c1cccc(c1C(=O)O)OC(=O)C·C9H8O4" formülünün yazılmış olduğunu gözlemleyin.
+\begin{verbatim}
+ # babel -H sdf
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/science/aspirin.sdf
+ # babel -isdf 'aspirin.sdf' -osmi 'test.smi'
+ # vi test.smi
+\end{verbatim}
+
+\end{enumerate}
 
 \section{Mathematics alt Bileşeni}
 \begin{enumerate}

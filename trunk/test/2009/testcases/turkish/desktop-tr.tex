@@ -17,6 +17,13 @@
 
 \section{Look and Feel alt Bileşeni}
 \begin{itemize}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ icon-theme-oxygen-svg-4.2.4-39-6.pisi
+\end{verbatim}
+\item icon-theme-oxygen-index ve icon-theme-oxygen-png paketleri kurulumu sonrası:
+
+Bilgisayarınızı yeniden başlatın ve ikonların düzgün bir şekilde görüntülendiğni gözlemleyin.
  \item Aşağıdaki paketler aynı şekilde test edilecektir.
 \begin{verbatim}
 cursor-theme-oxygen-black
@@ -40,10 +47,17 @@ Sistem ayarları $\rightarrow$  Klavye ve Fare $\rightarrow$ İmleç teması alt
 \begin{itemize}
  \item fontforge paketi kurulumu sonrası:
 
-aquafont paketini kurun, kmenü'den fontforge uygulamasını açın ve /usr/share/fonts/aquafont/aquafont.ttf uzantısını seçin ve listelenen aquafont.ttf  dosyası üzerine çift tıklayın ve sorunsuz bir şekilde bu fontun karakterleri ile ilgili bir pencere açıldıpını gözlemleyin.
+aquafont paketini kurun, kmenü'den fontforge uygulamasını açın ve /usr/share/fonts/aquafont/aquafont.ttf uzantısını seçin ve listelenen aquafont.ttf  dosyası üzerine çift tıklayın ve sorunsuz bir şekilde bu fontun karakterleri ile ilgili bir pencere açıldıpğını gözlemleyin.
 \item liberation-fonts paketi kurulumu sonrası:
 
 Open ofis yazıcı açın ve LiberationMono, LiberationSans, LiberationSerif fontlarının ekli olduğunu gözlemleyin.
+
+\item ecofont paketi kurulumu sonrası:
+
+Open ofis yazıcı açın ve Sproanq eco sans fontunun ekli olduğunu gözlemleyin.
+\item gbfed paketi kurulumu sonrası:
+
+Kmenüden uygulamayı açın ve sorunsuz bir şekilde açılabildiğini gözlemleyin.
 \end{itemize}
 
 \section{Misc alt Bileşeni}
@@ -145,11 +159,18 @@ Drawing Area, Clipboard, Color Selector bölümlerine çift tıklayarak çalış
 
 2008'de tüm kde4 paketleri 4 versiyon numarasını içermekte iken, 2009'da bu versiyon numarasını içermemektedir.
 \begin{enumerate} 
+\item kdebase-runtime ve kdebase-runtime-doc paketleri kurulumu sonrası:
+\item network-tr.pdf choqok testini gerçekleştirin
+\begin{verbatim}
+ # nepomukserver
+\end{verbatim}
+
+
  \item kdelibs ve kdelibs-devel paketleri kurulumu sonrası:
 \begin{itemize}
- \item choqok paketini kurun: 
+ \item network-tr.pdf choqok testini gerçekleştirin
 
-Uygulamayı açın ve bir twitter üyeliğiniz var ise, bu üyelik bilgilerinizi kaydedin ve sorunsuz bir şekilde twitter'a bağlanabildiğinizi gözlemleyin.
+
  \item kdegraphics paketini kurun: (2008 için kdegraphics4)
 \begin{verbatim}
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/circus-bw_hats.jpg
@@ -233,6 +254,11 @@ Aşağıda bulunan ugulamaların düzgün çalıştığını gözlemleyin.
 
 \subsection*{Addon alt bileşeni}
 \begin{enumerate}
+ \item plasmoid-translatoid paketi kurulumu sonrası:
+
+Panel üzerine sağ tıklayıp programcık ekleyi seçin. Translatoid'in eklenmiş olduğunu gözlemleyin.
+
+Programcığı açın ve türkçeden ingilizceye bir çeviri yapmayı deneyin.
  \item kshutdown paketi kurulumu sonrası:
 
 Aşağıda bulunan komutu çalıştırın ve kapatma penceresinin açıldığını gözlemleyin.
