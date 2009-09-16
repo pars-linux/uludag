@@ -73,13 +73,9 @@ class Options:
             print(LICENSE)
 
         elif opts.with_qt:
-            from puding import ui_qt
-            from PyQt4 import QtGui
+            from puding.ui_qt import main
 
-            app = QtGui.QApplication(sys.argv)
-            form = ui_qt.Create()
-            form.show()
-            sys.exit(app.exec_())
+            main()
 
         else:
             parser.print_help()

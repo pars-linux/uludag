@@ -12,6 +12,10 @@ from common import PartitionUtils
 from constants import DESCRIPTION
 from PyQt4 import (QtCore, QtGui, uic)
 
+# General variables
+bytes = 1024**2
+
+
 class Create(QtGui.QMainWindow):
     def __init__(self, parent = None):
         super(Create, self).__init__(parent)
@@ -54,9 +58,6 @@ class Create(QtGui.QMainWindow):
     def warningDialog(self, title, message):
         QtGui.QMessageBox.warning(self, title, message, QtGui.QMessageBox.Ok)
 
-    def progressDialog(self, src):
-        progress_dialog = QtGui.QProgressDialog("Checking md5 value", "Cancel", 0, 100)
-
     def __checkSource(self, src):
         if QtCore.QString(src).isEmpty():
             self.warningDialog("ISO Image is Invalid", "Please check the ISO image path.")
@@ -65,9 +66,14 @@ class Create(QtGui.QMainWindow):
             self.warningDialog("ISO Image is Invalid", "Please check the ISO image path.")
 
         try:
-            check_iso = ProgressBar("Verify Checksum",
-                                    "The checksum of the source is checking now...")
+            check_iso = ProgressBar(title = "Verify Checksum",
+                                    message = "The checksum of the source is checking now...",
+                                    src = src)
+            progressbar = check_iso.progressBar
+            pi = ProgressIncrement(progressbar, src)
+            pi.start()
 
+            QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgressBar()"), pi.incrementProgress)
 
             check_iso.exec_()
             # pi.exit()
@@ -121,56 +127,52 @@ class SelectDisk(QtGui.QDialog):
 
         return self.line_directory.displayText()
 
-class ProgressIncrement(QtCore.QThread):
-    def __init__(self, progressbar, src):
-        QtCore.QThread.__init__(self)
-
-        self.pbar = progressbar
-        self.src = src
-
-    def set_data(self, size):
-        self.emit(QtCore.SIGNAL("maxprogress(int)"), size)
-
-    def run(self):
-        import hashlib
-
-        checksum = hashlib.md5()
-        isofile = file(self.src, "rb")
-        bytes = 1024**2
-        total = 0
-
-        while bytes:
-            data = isofile.read(bytes)
-            checksum.update(data)
-            bytes = len(data)
-            total += bytes
-            self.emit(QtCore.SIGNAL("incrementProgressBar()"))
-
-        src_md5 = checksum.hexdigest()
-        print(src_md5)
-        print(total)
-
-    def incrementProgress(self):
-        current_value = self.pbar.value()
-        self.pbar.setValue(current_value + 1)
-
-    def maxprogress(self, value):
-        self.pbar.setMaximum(value)
-
 class ProgressBar(QtGui.QDialog):
-    def __init__(self, title, message, parent = None):
+    def __init__(self, title, message, src = None, parent = None):
         super(ProgressBar, self).__init__(parent)
         uic.loadUi("%s/ui/qtProgressBar.ui" % SHARE, self)
 
         self.setWindowTitle(title)
         self.label.setText(message)
 
-        pi = ProgressIncrement(self.progressBar, src)
         iso_size = getIsoSize(src)
-        pi.set_data(size = iso_size)
-        pi.start()
+
+        # FIX ME: It should not use src parameter.
+        self.progressBar.setMinimum(0)
+        self.progressBar.setMaximum(iso_size / bytes)
 
         self.connect(self.button_cancel, QtCore.SIGNAL("clicked(bool)"), QtCore.SLOT("close()"))
-        self.connect(pi, QtCore.SIGNAL("maxprogress(int)"), pi.maxprogress)
-        self.connect(pi, QtCore.SIGNAL("incrementProgressBar()"), pi.incrementProgress)
 
+class ProgressIncrement(QtCore.QThread):
+    def __init__(self, progressbar, source):
+        QtCore.QThread.__init__(self)
+
+        self.progressBar = progressbar
+        self.src = source
+
+    def run(self):
+        import hashlib
+
+        global bytes
+        checksum = hashlib.md5()
+        isofile = file(self.src, "rb")
+
+        while bytes:
+            data = isofile.read(bytes)
+            checksum.update(data)
+            bytes = len(data)
+            self.emit(QtCore.SIGNAL("incrementProgressBar()"))
+
+        src_md5 = checksum.hexdigest()
+        print(src_md5)
+
+    def incrementProgress(self):
+        current_value = self.progressBar.value()
+        self.progressBar.setValue(current_value + 1)
+
+# And last..
+def main():
+    app = QtGui.QApplication(sys.argv)
+    form = Create()
+    form.show()
+    sys.exit(app.exec_())
