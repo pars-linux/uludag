@@ -17,7 +17,7 @@ C_ADDRESS, C_PORT, C_BARE_NAME, C_TXT = range(9)
 class Zeroconf:
     def __init__(self, name, host, port):
         self.avahi = None
-        self.debugmode = False 
+        self.debugmode = False
         self.domain = None   # specific domain to browse
         self.stype = '_ssh._tcp'
         self.port = port     # listening port that gets announced
@@ -192,7 +192,6 @@ class Zeroconf:
             txt['version'] = 1
             txt['txtvers'] = 1
 
-            # replace gajim's show messages with compatible ones
             if 'status' in self.txt:
                 txt['status'] = self.replace_show(self.txt['status'])
             else:
