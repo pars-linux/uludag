@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2009 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -23,8 +23,11 @@ class NetworkIface:
         self.waitFunctions = []
         #self.link.listenSignals("Network.Link", self.postProcessor)
 
-    def connections(self):
-        return self.link.Network.Link['net_tools'].linkInfo()
+    def adslstop(self):
+        return self.link.Network.Link['usbmodem_tools'].adslStop()
 
-nt = NetworkIface()
-print nt.connections()
+    def adslstart(self):
+        return self.link.Network.Link['usbmodem_tools'].adslStart()
+
+    def saveconf(self):
+        return self.link.Network.Link['usbmodem_tools'].saveConf()

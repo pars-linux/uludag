@@ -29,6 +29,9 @@ from PyKDE4.kdecore import KAboutData, KCmdLineArgs
 from ui_puma import Ui_MainWindow
 from about import *
 
+from backend import NetworkIface
+
+
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
@@ -41,25 +44,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         size = self.geometry()
         self.move((screen.width() - size.width()) / 2, (screen.height() - size.height()) / 2)
 
-    def connect(self):
-        subprocess.call("/usr/sbin/br2684ctl -c 0 -b -a 8.35", shell=True)
-        sonuc = os.popen("/usr/sbin/adsl-start")
-        sonuc = sonuc.read().lower()
-        if "connected" in sonuc:
-            tray.showMessage((u"Puma Info"), (u"Connected"), QtGui.QSystemTrayIcon.Information, 3000)
-        else:
-            tray.showMessage((u"Puma Info"), (u"Connect failed"), QtGui.QSystemTrayIcon.Information, 3000)
-
-
-    def disconnect(self):
-        result = os.popen("/usr/sbin/adsl-stop")
-        result = result.read().lower()
-        if "disconnected" in result:
-            tray.showMessage((u"Puma Info"), (u"Disconnected"), QtGui.QSystemTrayIcon.Information, 3000)
-        else:
-            tray.showMessage((u"Puma Info"), (u"Disconnect failed. You not connect anyway!"), QtGui.QSystemTrayIcon.Information, 3000)
-
-
+        self.ni = NetworkIface()
     # pppoe.conf, chap-secrets and pap-secrets files
     def save(self):
         username = str(self.lineEdit.text())
@@ -104,13 +89,14 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         file.write("\"" + username + "\"" + " * " + "\"" + password + "\"")
         file.close()
 
+
     @QtCore.pyqtSignature("bool")
     def on_actionQt_About_triggered(self):
         QtGui.QMessageBox.aboutQt(self)
 
     @QtCore.pyqtSignature("bool")
     def on_pushButton_clicked(self):
-        self.connect()
+        print self.ni.adslstop()
 
     @QtCore.pyqtSignature("bool")
     def on_pushButton_2_clicked(self):
