@@ -7,7 +7,7 @@
 import os
 import sys
 
-from common import (SHARE, getDiskInfo, getIsoSize, verifyIsoChecksum)
+from common import (SHARE, getDiskInfo, getIsoSize)
 from common import PartitionUtils
 from constants import DESCRIPTION
 from PyQt4 import (QtCore, QtGui, uic)
@@ -71,14 +71,17 @@ class Create(QtGui.QMainWindow):
             check_iso = ProgressBar(title = "Verify Checksum",
                                     message = "The checksum of the source is checking now...",
                                     max_value = iso_size_progress)
-            progressbar = check_iso.progressBar
-            pi = ProgressIncrement(progressbar, src)
+            pi = ProgressIncrement(check_iso, src)
             pi.start()
 
-            QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgressBar()"), pi.incrementProgress)
+            def closeDialog():
+                pi.quit()
+                check_iso.close()
+
+            QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgress()"), check_iso.incrementProgress)
+            QtCore.QObject.connect(pi, QtCore.SIGNAL("closeProgressDialog()"), closeDialog)
 
             check_iso.exec_()
-            # pi.exit() Is it required?
 
         except TypeError:
             self.warningDialog("Checksum invalid", """\
@@ -140,15 +143,19 @@ class ProgressBar(QtGui.QDialog):
         self.progressBar.setMinimum(0)
         self.progressBar.setMaximum(max_value)
 
-        self.connect(self.button_cancel, QtCore.SIGNAL("clicked(bool)"), QtCore.SLOT("close()"))
+    def incrementProgress(self):
+        current_value = self.progressBar.value()
+        self.progressBar.setValue(current_value + 1)
 
 class ProgressIncrement(QtCore.QThread):
-    def __init__(self, progressbar, source):
+    def __init__(self, dialog, source):
         QtCore.QThread.__init__(self)
 
-        self.progressBar = progressbar
-        self.progressBar.setValue(0)
+        self.progressBar = dialog.progressBar
+        self.dialog = dialog
         self.src = source
+
+        self.progressBar.setValue(0)
 
     def run(self):
         import hashlib
@@ -161,14 +168,12 @@ class ProgressIncrement(QtCore.QThread):
             data = isofile.read(bytes)
             checksum.update(data)
             bytes = len(data)
-            self.emit(QtCore.SIGNAL("incrementProgressBar()"))
+            self.emit(QtCore.SIGNAL("incrementProgress()"))
 
         src_md5 = checksum.hexdigest()
         print(src_md5)
 
-    def incrementProgress(self):
-        current_value = self.progressBar.value()
-        self.progressBar.setValue(current_value + 1)
+        self.emit(QtCore.SIGNAL("closeProgressDialog()"))
 
 # And last..
 def main():
