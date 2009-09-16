@@ -41,9 +41,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.iface.connect_avahi()
         self.iface.connect()
 
-        #self.listen = StreamHandler()
-        #self.listen.start()
-
     def fillWindow(self):
         self.buildItemList()
 

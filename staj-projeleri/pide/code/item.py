@@ -40,8 +40,6 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         self.labelDescription.setText(unicode(description))
 
     def widgetClicked(self):
-        print "Widget Clicked!", self.getAddress()
-        print "Sending File............"
         self.connectReceiver(self.getAddress())
 
     def getAddress(self):
@@ -51,4 +49,4 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         instance = FileSender("text.txt", address)
         instance.sendFile()
         instance.waitforcheck()
-        #instance.close()
+        instance.close()
