@@ -45,16 +45,18 @@ class StreamHandler ( Thread ):
 
     def sendInfo( this ):
         this.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        this.senderSock.connect(('10.10.1.26', 9091))
+        this.senderSock.connect((this.dataAddr[0], 9091))
         this.senderSock.send(this.requestCheck)
 
     def transfer( this ):
         f = open(this.filename,"wb")
+        this.KdeN.Notify(this.filename, this.dataAddr, "Dosya karşı taraftan alınıyor...")
         while 1:
             data = this.dataConn.recv(1024)
             if not data: break
             f.write(data)
         f.close()
+        this.KdeN.Notify(this.filename, this.dataAddr, "Dosya karşı taraftan başarıyla alındı.")
 
         print '[Media] Got "%s"' % this.filename
         print '[Media] Closing media transfer for "%s"' % this.filename

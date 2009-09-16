@@ -47,6 +47,4 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
 
     def connectReceiver(self, address):
         instance = FileSender("text.txt", address)
-        instance.sendFile()
-        instance.waitforcheck()
-        instance.close()
+        instance.start()
