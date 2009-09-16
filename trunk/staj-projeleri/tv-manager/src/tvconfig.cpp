@@ -29,7 +29,6 @@
 TvConfig::TvConfig( QWidget *parent)
     : TvConfigUI(parent)
 {
-    std::cout << "tv-config signaling" << std::cout;
     QStringList cardVendors, tunerManLists;
 
     cardsDB.getVendors(&cardVendors);
@@ -41,7 +40,6 @@ TvConfig::TvConfig( QWidget *parent)
     tunerManList->clear();
     tunerModList->clear();
     tunerManList->addItems(tunerManLists);
-    std::cout << "tv-config awakened" << std::endl;
 }
 
 TvConfig::~TvConfig()

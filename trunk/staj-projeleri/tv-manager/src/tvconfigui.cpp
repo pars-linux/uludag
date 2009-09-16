@@ -3,9 +3,6 @@
 
 TvConfigUI::TvConfigUI(QWidget *parent) : QWidget(parent)
 {
-    std::cout << "tv-configui signaling" << std::endl;
-    int i = 0;
-    std::cout << "Hello from setupUi " << ++i << std::endl;
     resize(600, 400);
     mainLayout = new QGridLayout(this);
     tvCard = new QTabWidget(this);
@@ -124,7 +121,6 @@ TvConfigUI::TvConfigUI(QWidget *parent) : QWidget(parent)
     addOnsGroupBox->setTitle(QObject::tr("Addons"));
     radioCard->setText(QObject::tr("Radio Card"));
     tvCard->setTabText(tvCard->indexOf(tab_3), QObject::tr("Options"));
-    std::cout << "tv-configui awakened" << std::endl;
 }
 
 TvConfigUI::~TvConfigUI()
