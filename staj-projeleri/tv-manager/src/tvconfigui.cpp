@@ -114,7 +114,7 @@ TvConfigUI::TvConfigUI(QWidget *parent) : QWidget(parent)
     tunerModList->setSortingEnabled(__sortingEnabled3);
 
     tvCard->setTabText(tvCard->indexOf(tab_2), QObject::tr("Tuner"));
-    pllGroupBox->setTitle(QObject::tr("Phase Locked Loop(PLL)"));
+    pllGroupBox->setTitle(QObject::tr("Phase Locked Loop (PLL)"));
     pllButton->setText(QObject::tr("Do not use PLL"));
     mhz28Button->setText(QObject::tr("28 Mhz Crystal"));
     mhz35Button->setText(QObject::tr("35 Mhz Crystal"));

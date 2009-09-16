@@ -27,8 +27,8 @@
     </message>
     <message>
         <location filename="../tvconfigui.cpp" line="120"/>
-        <source>Phase Locked Loop(PLL)</source>
-        <translation>Faz Kilitlemeli Çevrim(PLL)</translation>
+        <source>Phase Locked Loop (PLL)</source>
+        <translation>Faz Kilitlemeli Çevrim (PLL)</translation>
     </message>
     <message>
         <location filename="../tvconfigui.cpp" line="121"/>
