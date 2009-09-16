@@ -1,4 +1,4 @@
-project(tv-manager) # the name of your project
+project(tvManager) # the name of your project
 
 cmake_minimum_required(VERSION 2.4.0)
 
@@ -13,9 +13,13 @@ SET(QT_USE_QTXML 1)
 # -> this will cause cmake to include and link against the OpenGL module
 include(${QT_USE_FILE})
 include (KDE4Defaults)
-include_directories (${QT_INCLUDES})
-include_directories (${QT_DEFINITIONS})
-include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDE_DIR})
+include_directories(
+    ${KDE4_INCLUDES}
+    ${KDE4_INCLUDE_DIR}
+    ${QT_INCLUDE_DIR}
+    ${QT_INCLUDES}
+    ${QT_DEFINITIONS}
+    )
 
 
 # Don't forget to include output directory, otherwise
@@ -23,16 +27,16 @@ include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR} "/usr/include/pci")
 LINK_DIRECTORIES(${KDE4_LIB_DIR})
 
-SET(
-    tv-manager_UIS
-    tvconfigui.ui
-    )
+#SET(
+#   tvManager_UIS
+#   tvconfigui.ui
+#   )
 
-QT4_WRAP_UI(tv-manager_UIS_H ${tv-manager_UIS})
+#QT4_WRAP_UI(tvManager_UIS_H ${tvManager_UIS})
 
-# the variable "tv-manager_SRCS" contains all .cpp files of this project
+# the variable "tvManager_SRCS" contains all .cpp files of this project
 set(
-    tv-manager_SRCS
+    tvManager_SRCS
     main.cpp
     tvconfig.cpp
     tvconfigui.cpp
@@ -41,20 +45,32 @@ set(
     cards-db.cpp
     )
 
-# tell cmake to create .moc files for all files in the variable tv-manager_SRCS that require such a file.
+file (GLOB tvManager_TS translations/*.ts)
+
+qt4_add_translation(tvManager_QM ${tvManager_TS})
+
+# tell cmake to create .moc files for all files in the variable tvManager_SRCS that require such a file.
 # note: this assumes that you use #include "header.moc" in your files
-qt4_automoc(${tv-manager_SRCS})
+qt4_automoc(${tvManager_SRCS})
+# create an executable file named "tvManager" from the source files in the variable "tvManager_SRCS".
+add_executable(tvManager ${tvManager_SRCS})
 
-# create an executable file named "tv-manager" from the source files in the variable "tv-manager_SRCS".
-add_executable(tv-manager ${tv-manager_SRCS})
-
-# link the "tv-manager" target against the Qt libraries. which libraries exactly, is defined by the "include(${QT_USE_FILE})" line above, which sets up this variable.
-target_link_libraries(tv-manager ${QT_LIBRARIES} ${KDE4_KDEUI_LIBS}
-    ${KDE4_KDECORE_LIBS} pci)
+add_custom_target(translations_target DEPENDS ${tvManager_QM})
+add_dependencies(tvManager translations_target)
 
 
+# link the "tvManager" target against the Qt libraries. which libraries exactly, is defined by the "include(${QT_USE_FILE})" line above, which sets up this variable.
+target_link_libraries(
+    tvManager
+    ${QT_LIBRARIES}
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTGUI_LIBRARY}
+    ${KDE4_KDEUI_LIBS}
+    ${KDE4_KDECORE_LIBS} 
+    pci
+    )
 
 #Now add these generated files to the ADD_EXECUTABLE step
 # If this is NOT done, then the ui_*.h files will not be generated
-##add_executable(tv-manager ${tv-manager_SRCS} ${tv-manager_UIS_H} )
-
+##add_executable(tvManager ${tvManager_SRCS} ${tvManager_UIS_H} )
+install( FILES ${tvManager_QM} DESTINATION ${QT_TRANSLATIONS_DIR} )

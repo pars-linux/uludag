@@ -78,8 +78,15 @@ TvConfigUI::TvConfigUI(QWidget *parent) : QWidget(parent)
     tvCard->addTab(tab_3, QString());
 
     tvCard->setCurrentIndex(0);
+
+    reDefaultButton = new QPushButton(tr("Restore Defaults"));
+    applyButton = new QPushButton(tr("Apply"));
+    applyButton->setDefault(true);
+
     
-    buttonBox = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::RestoreDefaults, Qt::Horizontal, tab_3);
+    buttonBox = new QDialogButtonBox(Qt::Horizontal, tab_3);
+    buttonBox->addButton(reDefaultButton, QDialogButtonBox::ActionRole);
+    buttonBox->addButton(applyButton, QDialogButtonBox::ActionRole);
 
     mainLayout->addWidget(tvCard, 0, 0, 1, 1);
     mainLayout->addWidget(buttonBox, 1, 0, 1, 1);
