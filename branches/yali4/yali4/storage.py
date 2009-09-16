@@ -94,7 +94,7 @@ class Device:
         self._disklabel = ""
         self._length = 0       # total sectors
         self._sector_size = 0
-        self._parted_type = deviceType
+        self._type = deviceType
         self._needs_commit = False
 
         dev = parted.PedDevice.get(device_path)
@@ -140,7 +140,7 @@ class Device:
 
 
     def getType(self):
-        return self._parted_type
+        return self._type
 
     ##
     # get device capacity in bytes
@@ -216,7 +216,7 @@ class Device:
     def hasBootablePartition(self):
         flag = parted.PARTITION_BOOT
         for p in self.getPartitions():
-            if not p._parted_type == freeSpaceType:
+            if not p._type == freeSpaceType:
                 ped = p.getPartition()
                 if ped.is_flag_available(flag) and ped.get_flag(flag):
                     return True
@@ -253,7 +253,7 @@ class Device:
 
     def isLVMPartition(self, part):
         flag = parted.PARTITION_LVM
-        if not part._parted_type == freeSpaceType:
+        if not part._type == freeSpaceType:
             ped = part.getPartition()
             if ped.is_flag_available(flag) and ped.get_flag(flag):
                 return True

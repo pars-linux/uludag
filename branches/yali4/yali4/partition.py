@@ -32,7 +32,7 @@ class Partition:
         self._start = start
         self._end = end
         self._fsname = fs_name or _("unknown")
-        self._parted_type = parteddata.partitionType
+        self._type = parteddata.partitionType
         self._fs_ready = fs_ready
         self._temp_label = ''
         self._is_file_system_changed = False
@@ -109,7 +109,7 @@ class Partition:
 
     
     def getType(self):
-        return self._parted_type
+        return self._type
 
     def setType(self, _type):
         self._parted_type = _type
@@ -135,7 +135,7 @@ class Partition:
     ##
     # partition path (eg. /dev/sda1)
     def getPath(self):
-        if self._parted_type == parteddata.freeSpaceType:
+        if self._type == parteddata.freeSpaceType:
             return "N/A"
         if self.getDevicePath().find("cciss") > 0:
             # HP Smart array controller
@@ -235,6 +235,6 @@ class FreeSpace(Partition):
                            end,
                            _("free space"))
         
-        self._parted_type = parteddata.freeSpaceType
+        self._type = parteddata.freeSpaceType
 
 
