@@ -13,14 +13,15 @@ class StreamHandler ( Thread ):
     def __init__( this ):
         Thread.__init__( this )
         this.KdeN = KNotification()
+        this.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        this.dataSock.bind(('', 9091))
 
     def run(this):
         this.process()
 
     def bindcsock( this ):
         print '[Control] Listening on port 9091...'
-        this.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        this.dataSock.bind(('', 9091))
+
         this.dataSock.listen(1)
 
         this.dataConn, this.dataAddr = this.dataSock.accept()
@@ -33,8 +34,8 @@ class StreamHandler ( Thread ):
 
     def checkrequest ( this ):
         m = "message"
-        this.KdeN.Notify(this.filename, this.senderAddr, m)
-        if this.senderConn:
+        this.KdeN.Notify(this.filename, this.dataAddr, m)
+        if this.dataConn:
             this.requestCheck = raw_input('Are You Sure (yes/no)? ')
             if this.requestCheck == "yes":
                 this.sendInfo()
@@ -43,26 +44,25 @@ class StreamHandler ( Thread ):
                 print "Denied!"
 
     def sendInfo( this ):
+        this.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         this.senderSock.connect(('10.10.1.26', 9091))
         this.senderSock.send(this.requestCheck)
 
     def transfer( this ):
-        this.receiverSock.listen(1)
         f = open(this.filename,"wb")
         while 1:
-            data = this.receiverSock.recv(1024)
+            data = this.dataConn.recv(1024)
             if not data: break
             f.write(data)
         f.close()
 
         print '[Media] Got "%s"' % this.filename
         print '[Media] Closing media transfer for "%s"' % this.filename
-    
 
     def process( this ):
         while 1:
             this.bindcsock()
-            #this.checkrequest()
+            this.checkrequest()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

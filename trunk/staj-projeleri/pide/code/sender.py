@@ -10,8 +10,9 @@ class FileSender:
         self.port = 9091
         self.file = FILE
         self.host = HOST
-        
+
         self.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.selfSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     def sendFile(self):
         self.senderSock.connect((self.host, self.port))
@@ -19,25 +20,17 @@ class FileSender:
 
     def waitforcheck(self):
         print '[Media] Waiting For Acception On Visitor'
-        self.selfSocket.bind(('', self.port))
-        self.selfSocket.listen(1)
-        self.senderConn, self.senderAddr = self.selfSocket.accept()
-        print self.senderAddr
-        if self.senderAddr:
-            print '[Media] Yep Accepted! Starting File Transfer...'
+        self.selfSock.bind(('', self.port))
+        self.selfSock.listen(1)
+        self.selfConn, self.selfAddr = self.selfSock.accept()
+        print self.selfAddr
+        if self.selfAddr:
             f = open(self.file, "rb")
+            print '[Media] Yep Accepted! Starting File Transfer...'
             self.data = f.read()
+            self.senderSock.send(self.data)
             f.close()
-            self.visitorSocket.send(self.data)
 
     def close(self):
-        self.visitorSocket.close()
-        self.selfSocket.close()
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    instance = FileSender('text.txt', '10.10.1.26')
-    instance.sendFile()
-    #instance.waitforcheck()
-    instance.close()
-    app.exec_()
+        self.senderSock.close()
+        self.selfSock.close()
