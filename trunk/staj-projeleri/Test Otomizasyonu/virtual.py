@@ -15,9 +15,10 @@ class virtual:
   def __init__(self):
     self.ip = ""
     self.revdepOutput = ""
+    
     self.revdep_outfile = open("revdep_outfile","w")
     self.broken_outfile = open("broken","w")
-    self.current_broken = ""
+    
     self.machineName = ""
     self.machineNames = []
     self.userPass = sys.argv[3]
@@ -248,13 +249,14 @@ class virtual:
       self.sendCommand("su -","root")
       self.sendCommand("pisi it " + line + " -y")
       self.sendCommand("revdep-rebuild","parse")
-      self.sendCommand("exit","cikis")
+      self.sendCommand("exit","close")
       self.parseOutput()
       self.shutdownVm()
       
   def parseOutput(self):
     cikti = self.revdepOutput
     self.revdep_outfile.write(cikti)
+    self.revdep_outfile.flush()
     
     splitted = cikti.split("\n")
     i = -1
