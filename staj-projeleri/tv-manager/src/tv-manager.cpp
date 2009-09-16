@@ -34,7 +34,6 @@
 TasmaTv::TasmaTv(QWidget *parent/*, const QVariantList &lst*/) : QWidget(parent)
    // : KCModule(TasmaTvFactory::componentData(), parent, lst)
 {
-    std::cout << "tv-manager signaling" << std::endl;
     KGlobal::locale()->setMainCatalog("tasma");  // Changed 2008 to 2009
     mainWidget = new TvConfig(this);
 setWindowTitle("TV Manager");
@@ -55,7 +54,6 @@ setWindowTitle("TV Manager");
     connect(mainWidget->pllGroup, SIGNAL(buttonClicked(int)), SLOT(configChanged()));
     connect(mainWidget->radioCard, SIGNAL(stateChanged(int)), SLOT(configChanged()));
     load();
-    std::cout << "tv-manager awakened" << std::endl;
 }
 
 void TasmaTv::load()
