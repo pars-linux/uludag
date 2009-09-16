@@ -13,22 +13,23 @@ class StreamHandler ( Thread ):
     def __init__( this ):
         Thread.__init__( this )
         this.KdeN = KNotification()
-        this.receiverSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        this.receiverSock.bind(('', 9091))
-        this.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     def run(this):
         this.process()
 
     def bindcsock( this ):
-        this.receiverSock.listen(1)
-        print '[Control] Listening on port 9091'
-        this.senderConn, this.senderAddr = this.receiverSock.accept()
-        print '[Control] Got connection from', this.senderAddr
+        print '[Control] Listening on port 9091...'
+        this.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        this.dataSock.bind(('', 9091))
+        this.dataSock.listen(1)
 
-        data = this.senderConn.recv(1024)
+        this.dataConn, this.dataAddr = this.dataSock.accept()
+        print '[Control] Got connection from', this.dataAddr
+
+        data = this.dataConn.recv(1024)
         if data[0:4] == "SEND": this.filename = data[5:]
         print '[Control] Getting ready to receive "%s"' % this.filename
+
 
     def checkrequest ( this ):
         m = "message"
@@ -61,7 +62,7 @@ class StreamHandler ( Thread ):
     def process( this ):
         while 1:
             this.bindcsock()
-            this.checkrequest()
+            #this.checkrequest()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
