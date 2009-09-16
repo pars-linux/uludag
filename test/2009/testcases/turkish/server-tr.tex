@@ -18,7 +18,7 @@
 \begin{enumerate}
  \item ypserv paketi kurulumu sonrası:
 
-Servis yöneticisinden ypserv başlatın, aşağıdaki kout ile başlatıldığına emin olun:
+Servis yöneticisinden ypserv başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 \begin{verbatim}
  # service ypserv status
 \end{verbatim}
@@ -42,7 +42,10 @@ Aşağıda bulunan dosyayı /etc altına kopylayın,
 # sudo domainname localdomain
 \end{verbatim}
 
-Daha sonra ypbind servisini servis yöneticisinden başlatın.
+Servis yöneticisinden ypbind başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+\begin{verbatim}
+ # service ypbind status
+\end{verbatim}
 
 \end{enumerate}
 

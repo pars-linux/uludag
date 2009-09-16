@@ -16,12 +16,22 @@
 \maketitle
 \begin{enumerate}
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
-
 \begin{verbatim}
 yazpp
 xmlsec
+libftdi
 \end{verbatim}
 
+\item gstreamer, gst-plugin-ugly, gst-plugin-bad, gst-plugin-base ve gst-ffmeg paketleri kurulumu sonrası:
+
+Sistem ayarları $\rightarrow$ multimedia $\rightarrow$ gstreamer seçilir. 
+
+dragon player ve kaffein ile aşağıda bulunan dosyaları çalıştırın ve sesin düzgün bir şekilde çıktığını gözlemleyin.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/niceday.asf
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_VCD_extensions.mpeg
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+\end{verbatim}
 
 \item exempi ve yaz paketi kurulumu sonrası:
 

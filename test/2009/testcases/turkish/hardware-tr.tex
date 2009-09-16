@@ -14,6 +14,43 @@
 \begin{document}
 
 \maketitle
+\section{Printer alt Bileşeni}
+\begin{enumerate}
+ \item gutenprint paketi kurlum testine tabidir.
+\end{enumerate}
+
+\section{Smart Card alt Bileşeni}
+\begin{enumerate}
+ \item ccid paketi kurulum testine tabidir.
+
+
+\end{enumerate}
+
+\section{Info alt Bileşeni}
+\begin{enumerate}
+ \item gkrellm paketi kurulumu sonrası:
+
+Servis yöneticisinden gkrellm servisini başlatın.
+
+Aşağıda bulunan komut ile başlatıldığından emin olun.
+\begin{verbatim}
+ service gkrellm status
+\end{verbatim}
+
+\end{enumerate}
+
+\section{Powermanagement alt Bileşeni}
+\begin{enumerate}
+ \item lm_sensors paketi kurulumu sonrası:
+
+hardware-tr.pdf gkrellm testini gerçekleştirin.
+
+Aşağıda bulunan komutunun voltaj ve cpu fanı gibi bilgileri hatasız bir şekilde listelediğini gözlemleyin.
+\begin{verbatim}
+ # sensors 
+\end{verbatim}
+
+\end{enumerate}
 
 \section{Scanner alt Bileşeni}
 \begin{enumerate}
@@ -31,7 +68,22 @@ Eğer bir tarayıcınız var ise bu paketi test edebilirsiniz!!
 
 \section{Optical alt Bileşeni}
 \begin{enumerate}
- \item k3b paketi kurulumu sonrası:
+ \item cdparanoia paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyaları k3b ile bir audio cd olarak yazdırın. Yazdırabildiğinizi gözlemleyin.
+ \begin{verbatim}
+  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/11k16bitpcm.wav
+  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/music.mp3
+  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/linux.ogg
+ \end{verbatim}
+
+Audio CD'yi mount edin ve daha sonra aşağıda bulunan klomutları çalıştırın:
+\begin{verbatim}
+ # cdparanoia -vsQ
+ # cdparanoia -B
+\end{verbatim}
+
+\item k3b paketi kurulumu sonrası:
 \begin{itemize}
 \item Aşağıdaki bağlantıda bulunan iso'yu DVD ve CD'ye yazdırın. 
 \begin{verbatim}
@@ -40,7 +92,7 @@ Eğer bir tarayıcınız var ise bu paketi test edebilirsiniz!!
 
 Bilgisayarınızı CD/DVD sürücünüzden başlatın ve iso'nun düzgün bir şekilde boot ettiğini gözlemleyin.
 
-\item Aşağıdaki bağlantıda bulunan video ve müzikleri DVD ve CD'ye yazdırın. 
+\item Aşağıdaki bağlantıda bulunan video ve müzikleri DVD ve CD'ye audio olarak yazdırın. 
 \begin{verbatim}
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
@@ -52,6 +104,12 @@ Yazdırdığınız CD veya DVD'den video veya müziklerinizi açın, ses ve gör
 \end{enumerate}
 \section{Emulator alt Bileşeni}
 \begin{enumerate}
+ \item zsnes paketi kurulumu sonrası:
+
+Aşağıda bulunan nintendo oyununu uygulama ile açın ve çalıştırın, sorunsuz bir şekilde çalıştırğını gözlemleyin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/emulator/10%20Yard%20Fight%20(A&S%20NES%20Hack).smc 
+\end{verbatim}
 
  \item wine ve wine-devel paketleri kurulumu sonrası:
 \begin{verbatim}
@@ -67,6 +125,9 @@ Yazdırdığınız CD veya DVD'den video veya müziklerinizi açın, ses ve gör
 
 \section{Virtalization alt Bileşeni}
 \begin{enumerate}
+ \item libvirt paketi kurulumu sonrası:
+
+hardware-tr.pdf virtualbox testini gerçekleştiriniz.
  \item virtualbox, virtualbox-guestadditions ve virt-wrapper paketleri kurulumu sonrası:
  
 Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. Aşağida bulunan iso'yu bu sanal sisteme kurun ve çalıştığını gözlemleyin.
@@ -85,6 +146,13 @@ Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. A
 \section{Bluetooth alt Bileşeni}
 \begin{enumerate}
  \item obexd paketi kurulum testine tabidir.
+ \item cwiid paketi kurulumu sonrası: (Nintendo video oyun kumandanız var ise bu testi gerçekleştirebilirsiniz.)
+
+wiimote uygulamasını açın ve Nintendo kumandanızı aktif hale getirmeye çalışın.
+
+\item blueman paketi kurulumu sonrası:
+
+Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın, ve taratın ceptelefonunuzu bulabildiğini gözlemleyin.
 \end{enumerate}
 
 \section{Mobile alt Bileşeni}
@@ -95,6 +163,9 @@ Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. A
 
 \section{Disk alt Bileşeni}
 \begin{enumerate}
+ \item mountmanager paketi kurulumu sonrası:
+
+Uygulamayı kmenuden açın ve daha sonra bir usb stick takın ve mountmanager'a bu aygıtın eklendiğini gözlemleyin.
  \item partitionmanager paketi kurulumu sonrası:
 
 Partitionmanager'ı kmenüden açın ve diskinizin küçük bir kısmını bölmeye çelışın sorunsuz bir şekilde bölünebildiğini gözlemleyin.
@@ -113,7 +184,7 @@ Bir usb disk takın ve /dev dizini altında bulunan uzantısını kullanarak aş
 \end{enumerate}
 \section{Sound alt Bileşeni}
 \begin{enumerate}
- \item alsa-driver, alsa-headers paketleri kurulumu sonrası:
+ \item alsa-driver, alsa-headers, alsa-lib, alsa-plugins, alsa-plugins-pulseaudio, alsa-tools, alsa-utils paketleri kurulumu sonrası.
 \begin{itemize}
  \item Bilgisayarınızı yeniden başlatın ve açılış sesinin sorunsuz bir şekilde çalıştığını gözlemleyin.
  \item Aşağıda bulunan dosyanın düzgün çalıştığını gözlemleyin.
@@ -122,6 +193,17 @@ Bir usb disk takın ve /dev dizini altında bulunan uzantısını kullanarak aş
 # mplayer music.mp3
 \end{verbatim}
 
+\item alsa-tools-gui paketi kurulumu sonrası:
+
+Eğer  EchoAudio, Envy24, Hammerfall HDSP, RMedigicontrol ses kartlarından birini kullanıyorsanız bu testi gerçekleştirebilirsiniz.
+
+Echomixer uygulaması EchoAudio aygıtı için.
+
+Envy24control uygulaması Envy24 aygıtı için.
+
+HDSPconf ve HDSPmixer uygulaması Hammerfall HDSP aygıtı için.
+
+Rmedigicontrol uygulaması RMedigicontrol aygıtı için.
 \end{itemize}
 
 
