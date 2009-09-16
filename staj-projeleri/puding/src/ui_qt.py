@@ -11,6 +11,7 @@ from common import (SHARE, getDiskInfo, getIsoSize)
 from common import PartitionUtils
 from constants import DESCRIPTION
 from PyQt4 import (QtCore, QtGui, uic)
+from releases import releases
 
 # General variables
 increment_value = 1024**2
@@ -50,40 +51,40 @@ class Create(QtGui.QMainWindow):
         if not self.__checkDestination(self.line_disk.displayText()):
             self.warningDialog("Directory is Invalid", "Please check the USB disk path.")
 
-        elif not self.__checkSource(self.line_image.displayText()):
+        elif not self.__getSourceInfo(self.line_image.displayText()):
             # FIX ME: ...
             pass
 
     def warningDialog(self, title, message):
         QtGui.QMessageBox.warning(self, title, message, QtGui.QMessageBox.Ok)
 
-    def __checkSource(self, src):
+    def __getSourceInfo(self, src):
         if QtCore.QString(src).isEmpty():
-            self.warningDialog("ISO Image is Invalid", "Please check the ISO image path.")
+            self.warningDialog("ISO Image is Invalid", "Please set an ISO image path.")
 
         if not os.path.isfile(src):
             self.warningDialog("ISO Image is Invalid", "Please check the ISO image path.")
 
-        try:
-            iso_size = getIsoSize(src)
-            iso_size_progress = iso_size / increment_value
+        iso_size = getIsoSize(src)
+        iso_size_progress = iso_size / increment_value
 
-            check_iso = ProgressBar(title = "Verify Checksum",
-                                    message = "The checksum of the source is checking now...",
-                                    max_value = iso_size_progress)
-            pi = ProgressIncrement(check_iso, src)
-            pi.start()
+        check_iso = ProgressBar(title = "Verify Checksum",
+                                message = "The checksum of the source is checking now...",
+                                max_value = iso_size_progress)
+        pi = ProgressIncrement(check_iso, src)
+        pi.start()
 
-            def closeDialog():
-                pi.quit()
-                check_iso.close()
+        # FIX ME: Why is it in here?
+        def closeDialog():
+            pi.quit()
+            check_iso.close()
 
-            QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgress()"), check_iso.incrementProgress)
-            QtCore.QObject.connect(pi, QtCore.SIGNAL("closeProgressDialog()"), closeDialog)
+        QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgress()"), check_iso.incrementProgress)
+        QtCore.QObject.connect(pi, QtCore.SIGNAL("closeProgressDialog()"), closeDialog)
 
-            check_iso.exec_()
+        check_iso.exec_()
 
-        except TypeError:
+        if not pi.checksum():
             self.warningDialog("Checksum invalid", """\
 The checksum of the source cannot be validated.
 Please specify a correct source or be sure that
@@ -94,14 +95,6 @@ you have downloaded the source correctly.""")
             return False
 
         return os.path.ismount(str(dst))
-
-    def __checkInformation(self, src, dst):
-        (capacity, available, used) = getDiskInfo(str(dst))
-
-        self.label_info_source.setText(src)
-        self.label_info_capacity.setText(str(capacity))
-        self.label_info_available.setText(str(available))
-        self.label_info_used.setText(str(used))
 
 class SelectDisk(QtGui.QDialog):
     def __init__(self, parent = None):
@@ -170,10 +163,16 @@ class ProgressIncrement(QtCore.QThread):
             bytes = len(data)
             self.emit(QtCore.SIGNAL("incrementProgress()"))
 
-        src_md5 = checksum.hexdigest()
-        print(src_md5)
+        self.src_md5 = checksum.hexdigest()
 
         self.emit(QtCore.SIGNAL("closeProgressDialog()"))
+
+    def checksum(self):
+        for release in releases:
+            if self.src_md5 in release['md5']:
+                return release['name'], release['md5'], release['url']
+
+        return False
 
 # And last..
 def main():
