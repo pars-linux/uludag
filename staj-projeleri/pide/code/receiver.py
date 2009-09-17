@@ -8,7 +8,7 @@ from PyKDE4.kdecore import *
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyQt4.QtGui import QApplication
-
+from about import aboutData
 
 
 class StreamHandler ( Thread ):
@@ -17,6 +17,7 @@ class StreamHandler ( Thread ):
         Thread.__init__( self )
         self.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.dataSock.bind(('', 9091))
+        KCmdLineArgs.init(sys.argv, aboutData)
 
     def run(self):
         self.process()
