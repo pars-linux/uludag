@@ -46,5 +46,7 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         return unicode(self.labelDescription.text())
 
     def connectReceiver(self, address):
-        instance = FileSender("img.jpg", address)
-        instance.start()
+        self.instance = FileSender("img.jpg", address)
+        self.instance.start()
+
+

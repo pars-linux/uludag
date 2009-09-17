@@ -18,6 +18,8 @@ class ProgressBar(QtGui.QWidget, Ui_MainWindow):
         self.connect(self.pushButton, QtCore.SIGNAL('clicked()'), self.onStart)
         self.timer = QtCore.QBasicTimer()
         self.step = 0;
+        self.fileSize = fileSize
+        self.transferSize = transferSize
 
     def timerEvent(self, event):
         if self.step >= 100:
@@ -37,4 +39,12 @@ class ProgressBar(QtGui.QWidget, Ui_MainWindow):
             self.pushButton.setText('Stop')
             self.label.setText("Sending...")
 
+if __name__ == '__main__':
+    app = QtGui.QApplication(sys.argv)
+
+    progressDialog = ProgressBar(50000,1000)
+    progressDialog.show()
+
+    # Run the application
+    app.exec_()
 
