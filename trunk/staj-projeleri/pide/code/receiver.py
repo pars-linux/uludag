@@ -5,9 +5,6 @@ import socket, time, string, sys, urlparse
 from threading import *
 from PyQt4.QtGui import QApplication
 
-# Application
-from knotify import KNotification
-
 class StreamHandler ( Thread ):
 
     def __init__( self ):
@@ -33,15 +30,24 @@ class StreamHandler ( Thread ):
 
 
     def checkrequest ( self ):
-        m = "message"
-        self.KdeN.Notify(self.filename, self.dataAddr, m)
         if self.dataConn:
-            self.requestCheck = raw_input('Are You Sure (yes/no)? ')
-            if self.requestCheck == "yes":
-                self.sendInfo()
-                self.transfer()
-            else:
-                print "Denied!"
+            if self.notification:
+                self.notification.close()
+            self.notification = KNotification("Updates")
+            self.notification.setText(i18n("There are <b>%s</b> waiting for answer!", self.filename))
+            self.notification.setActions(QStringList((i18n("Yes"), i18n("Ignore"))))
+            self.notification.setFlags(KNotification.Persistent)
+            self.notification.setComponentData(KComponentData("package-manager","package-manager"))
+            self.connect(self.notification, SIGNAL("action1Activated()"), self.receiverAccepted)
+            self.notification.sendEvent()
+
+    def receiverAccepted( self ):
+        print "Accepted!"
+        self.sendInfo()
+        self.transfer()
+
+    def receiverDenied( self ):
+        print "Denied!"
 
     def sendInfo( self ):
         self.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
