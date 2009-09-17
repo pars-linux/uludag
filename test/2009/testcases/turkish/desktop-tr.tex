@@ -14,6 +14,14 @@
 \begin{document}
 
 \maketitle
+\section{Gnome alt Bileşeni}
+\begin{itemize}
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ libgnomecanvasmm
+\end{verbatim}
+
+\end{itemize}
 
 \section{Look and Feel alt Bileşeni}
 \begin{itemize}
@@ -129,6 +137,9 @@ Bağlamtının sorunsuz bir şekilde gerçekleştğini gözlemleyin.
 
 \subsection*{Gtk}
 \begin{enumerate}
+ \item libglademm paketi kurulumu sonrası:
+
+multimedia-tr.pdf pavucontrol testini gerçekleştiriniz.
  \item gtk2-docs ve pango-docs paketi kurulum testine tabidir.
  \item gtk2 ve gtk2-demo paketi kurulumu sonrası: 
 
@@ -159,12 +170,22 @@ Drawing Area, Clipboard, Color Selector bölümlerine çift tıklayarak çalış
 
 2008'de tüm kde4 paketleri 4 versiyon numarasını içermekte iken, 2009'da bu versiyon numarasını içermemektedir.
 \begin{enumerate} 
+\item kdebase-emoticons paketi kurulumu sonrası:
+
+Sistem ayarları $\rightarrow$ Görünüm $\rightarrow$ Emoticon yolunu izleyin ve kde4 için emoticon eklendiğini gözlemleyin.
+\item kdebase-sound paketi kurulumu sonrası:
+
+Sistemi yeniden başlatın bitiş ve başlangıç seslerinin çıktığını gözlemleyin.
+
+K3b ile bir cd yazdırın ve sesin cd yazdırma bitiş muziğinin çıktığını gözlemleyin.
 \item kdebase-runtime ve kdebase-runtime-doc paketleri kurulumu sonrası:
-\item network-tr.pdf choqok testini gerçekleştirin
+
+network-tr.pdf choqok testini gerçekleştirin
+
+Aşağıda bulunan komutu çalıştırın ve sorunsuz bir şekilde çalıştırğını gözlemleyin:
 \begin{verbatim}
  # nepomukserver
 \end{verbatim}
-
 
  \item kdelibs ve kdelibs-devel paketleri kurulumu sonrası:
 \begin{itemize}
@@ -254,6 +275,10 @@ Aşağıda bulunan ugulamaların düzgün çalıştığını gözlemleyin.
 
 \subsection*{Addon alt bileşeni}
 \begin{enumerate}
+ \item  QtCurve-KDE4 paketi kurulumu sonrası:
+
+Sistem ayarları $\rightarrow$ Görünüm $\rightarrow$ Stil yolunu izleyerek QtCurve stilini seçiniz ve stilin sorunsuz bir şekilde değiştiğini gözlemleyiniz.
+
  \item plasmoid-translatoid paketi kurulumu sonrası:
 
 Panel üzerine sağ tıklayıp programcık ekleyi seçin. Translatoid'in eklenmiş olduğunu gözlemleyin.

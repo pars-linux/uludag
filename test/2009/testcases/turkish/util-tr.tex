@@ -14,10 +14,22 @@
 \begin{document}
 
 \maketitle
-\section{Archive alt bileşeni}
+\section{Crypt alt bileşeni}
 \begin{enumerate}
- 
+ \item mcrypt paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ # mcrypt --list
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/test_mcrypt
+ # mcrypt -a blowfish test_mcrypt
+ # mcrypt -d test_mcrypt.nc
+ # vi test_mcrypt
+\end{verbatim}
+
+
 \end{enumerate}
+
 
 \section{Antivirus alt bileşeni}
 \begin{enumerate}
@@ -43,7 +55,20 @@ Yukarıda verilen ikinci komutun, virüsü tespit edebildiğini gözlemleyin.
 \end{enumerate}
 \section{Admin alt bileşeni}
 \begin{enumerate}
- \item iotop paketi kurulumu sonrası
+ \item phpmyadmin paketi kurulumu sonrası:
+\begin{itemize}
+ \item Apache ve mysql sunucularını servis yöneticisinden başlatın. Aşağıda bulunan komutu çalıştırın ve root parolasını "test" yapın:
+\begin{verbatim}
+ mysqladmin -u root password 'test'
+\end{verbatim}
+
+ \item http://localhost/phpmyadmin/ adresine firefox kullanarak girin. (Kullanıcı adı için root yazın, parola ise test olacak)
+ \item Mysql bağlantı sayfasınının sorunsuz açıldığını gözlemleyin.
+\end{itemize}
+
+
+
+ \item iotop paketi kurulumu sonrası:
 
 Aşağıda bulunan komutu çalıştırın ve sistemde çalışan tüm uygulamaların I/O bant genişliğini listelediğini gözlemleyin.
 \begin{verbatim}
@@ -77,6 +102,11 @@ bash: amsn: command not found
 \end{enumerate}
 \section{Misc alt bileşeni}
 \begin{enumerate}
+ \item fslint paketi kurulumu sonrası:
+
+Kmenüden açılabildiğini gözlemleyin.
+
+İki farklı dizine birer dosya kopyalayın ve uygulamaya bu iki farlı dizini ekleyin, kopya dosyalara tıklayıp bul tuşuna basın kopyalamış olduğunuz dosyanın listelenmiş olduğunu gözlemleyin.
  \item ltrace paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun hatasız çalıştığını gözlemleyin:

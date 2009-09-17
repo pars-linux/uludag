@@ -14,20 +14,48 @@
 \begin{document}
 
 \maketitle
+\section{Firmware alt Bileşeni}
+\begin{enumerate}
+ \item Aşağıda bulunan paketler kurulum testine tabidir.
+\begin{verbatim}
+ql2x00-firmware
+\end{verbatim}
+\end{enumerate}
+
 \section{Printer alt Bileşeni}
 \begin{enumerate}
- \item gutenprint paketi kurlum testine tabidir.
+ \item Aşağıda bulunan paketler kurulum testine tabidir.
+\begin{verbatim}
+gutenprint 
+\end{verbatim}
+
+
 \end{enumerate}
 
 \section{Smart Card alt Bileşeni}
 \begin{enumerate}
- \item ccid paketi kurulum testine tabidir.
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ccid 
+mozilla-opensc-signer
+openct
+opensc
+pcsc-lite
+\end{verbatim}
 
 
 \end{enumerate}
 
 \section{Info alt Bileşeni}
 \begin{enumerate}
+ \item  x86info paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun x86 mimarisi ile oluşturulmuş cpu'ları listelediğini gözlemleyin.
+\begin{verbatim}
+ # x86info
+\end{verbatim}
+
+
  \item gkrellm paketi kurulumu sonrası:
 
 Servis yöneticisinden gkrellm servisini başlatın.
@@ -145,19 +173,32 @@ Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. A
 
 \section{Bluetooth alt Bileşeni}
 \begin{enumerate}
- \item obexd paketi kurulum testine tabidir.
+
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir. 
+\begin{verbatim}
+  obexd
+\end{verbatim}
+
  \item cwiid paketi kurulumu sonrası: (Nintendo video oyun kumandanız var ise bu testi gerçekleştirebilirsiniz.)
 
 wiimote uygulamasını açın ve Nintendo kumandanızı aktif hale getirmeye çalışın.
 
-\item blueman paketi kurulumu sonrası:
+\item Aşağıda bulunan paketler aynı şekilde test edilecektir.
+\begin{verbatim}
+blueman
+kdebluetooth 
+\end{verbatim}
 
-Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın, ve taratın ceptelefonunuzu bulabildiğini gözlemleyin.
+Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın, ve taratın; uygulamanın cep telefonunuzu bulabildiğini gözlemleyin.
 \end{enumerate}
 
 \section{Mobile alt Bileşeni}
 \begin{enumerate}
- \item gobi\_loader kurulum testine tabidir.
+ \item Aşağıda bulunan uygulamalar sadece kurulum testine tabidir:
+\begin{verbatim}
+ gobi_loader
+ usb-modeswitch
+\end{verbatim}
 
 \end{enumerate}
 

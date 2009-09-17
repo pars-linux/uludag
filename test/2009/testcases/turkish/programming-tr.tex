@@ -166,7 +166,25 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
 
 \end{enumerate}
 \subsection{Python alt bileşeni}
+
 \begin{enumerate}
+\item PyX paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import pyx
+\end{verbatim}
+
+\item pyNotifier paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import pynotify
+\end{verbatim}
+
+
 \item httplib2 paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
@@ -348,6 +366,21 @@ Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
 \end{enumerate}
 \subsection{Dotnet alt bileşeni}
 \begin{enumerate}
+
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir
+\begin{verbatim}
+taglib-sharp 
+\end{verbatim}
+
+ \item gmime, gmime-docs, gmime-sharp paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun jpeg dosyasını encode ettiğini gözlemleyin.
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcraw.jpg
+ # gmime-uuencode -m test_dcraw.jpg jpeg
+\end{verbatim}
+
+
  \item mono paketi kurulumu sonrası:
 Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
 \begin{verbatim}

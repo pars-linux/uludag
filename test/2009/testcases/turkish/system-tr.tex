@@ -23,6 +23,7 @@
  xtrans
  automake
  dietlibc 
+ quilt
 \end{verbatim}
  \item icecream ve icecream scheduler paketleri kurulumu sonrası:
 
@@ -30,7 +31,7 @@ Servis yöneticisinden icecream servisini başlatın.
 
 Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olun.
  \begin{verbatim}
-  service icercream status
+   # service icercream status
  \end{verbatim}
 
 \end{enumerate}
@@ -39,7 +40,50 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
 \section{Base alt Bileşeni}
 
 \begin{enumerate}
-\item e2fsprogs paketi kurulum testine tabidir.
+\item openssl paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
+\begin{verbatim}
+  # openssl ciphers -v 
+  # openssl ciphers -v -tls1
+  # openssl speed
+  # openssl req  -new -newkey rsa:1024 -nodes -keyout mykey.pem -out myreq.pem
+  // verify signature
+  # openssl req -in myreq.pem -noout -verify -key mykey.pem
+  // check info
+  # openssl req -in myreq.pem -noout -text
+
+\end{verbatim}
+
+
+\item usbutils paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların düzgün çalıştığını gözlemleyin:
+\begin{verbatim}
+# usb-devices
+# lsusb
+\end{verbatim}
+
+
+\item udev paketi kurulumu sonrası:
+
+Bilgisayarınızı yeniden başlatın ve düzgün bir şekilde açıldığını gözlemleyin. 
+
+Ses, kamera, mount, görüntü gibi işlemlerin düzgün çalıştığını gözlemleyin.
+\item Aşağıda bulunan paketler kurulum testine tabidir.
+\begin{verbatim}
+e2fsprogs 
+\end{verbatim}
+\item module-init-tools paketi kurulumu sonrası:
+
+Bilgisayarınızı yeniden başlatınız:
+Ses, kablosuz ağ, bluetooth, kamera gibi şeylerin çalıştığını gözlemleyiniz.
+
+Aşağıda bulunan komutların sorunsuz olarak çalıştığını gözlemleyiniz.
+\begin{verbatim}
+ # lsmod
+ # modinfo ahci
+\end{verbatim}
 
 
 \item dnsmasq paketi kurulumu sonrası:

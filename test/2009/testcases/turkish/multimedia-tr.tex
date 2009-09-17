@@ -14,9 +14,24 @@
 \begin{document}
 
 \maketitle
+\section{Plugin alt Bileşeni}
+\begin{enumerate}
+ \item kipi-plugins paketi kurulumu sonrası:
+
+Menü $\rightarrow$ digikam $\rightarrow$ import $\rightarrow$ Import from facebook yolunu izleyerek facebook hesabınızdan fotoğraf indirmeye çalışın. Sorunsuz bir şekilde indirebildiğinizi gözlemleyin. (Digikam uygulamasını ilk defa açıyorsanız bir albüm oluşturunuz.)
+\end{enumerate}
 
 \section{Sound alt Bileşeni}
 \begin{enumerate}
+\item pavucontrol paketi kurulumu sonrası:
+
+Uygulamayı Kmenüden açın ve daha sonra amarok ile aşağıda bulunan müzik dosyasını çalıştırın, çalma bölümünde titreşimlerin olduğunu gözlemleyin.
+Aşağıda bulunan
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/music.mp3 
+\end{verbatim}
+
+
 \item jamin paketi kurulumu sonrası:
 
 Kmenüden uygulamayı açın ve /usr/share/jamin/examples dosyası altında bulunan .jam uzantılı dosyalardan birini açın ve sorunsuz olarak açıldığını gözlemleyin.
@@ -25,8 +40,9 @@ Kmenüden uygulamayı açın ve /usr/share/jamin/examples dosyası altında bulu
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/test_frescobaldi.ly
  \end{verbatim}
 Yukarıda bulunan dosyayı frescobaldi ile açıp, uygulamanın sol tarafında bulunan Lilypond butonuna basın ve sorunsuz bir şekilde pdf dökümanının oluştuğunu gözlemleyin.
-\item pulseaudio paketi kurulumu sonrası:
+\item pulseaudio, pulseaudio-docs, pulseaudio-gconf, pulseaudio-jack paketi kurulumu sonrası:
 \begin{itemize}
+ \item multimedia-tr.pdf pavucontrol testini gerçekleştirin.
  \item Sisteminizi tekrar başlatın ve açılış sesinin düzgün bir şekilde çıktığını gözlemleyin. 
  \item multimedia-tr.pdf amarok paketi testini gerçekleştiriniz.
 \end{itemize}
@@ -85,7 +101,7 @@ Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözleml
 
 \section{Video alt Bileşeni}
 \begin{enumerate}
- \item mplayer, vlc, kaffeine paketleri kurulumu sonrası:
+ \item mplayer, vlc, kaffeine, smplpayer paketleri kurulumu sonrası:
  \begin{verbatim}
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
  \end{verbatim}
@@ -292,6 +308,9 @@ Lake_dance_XviD.AVI
 \end{enumerate}
 \section{Graphics alt Bileşeni}
 \begin{enumerate}
+\item yafaray ve yafaray-blender paketleri kurulumu sonrası:
+
+multimedia-tr.pdf blender testini gerçekleştiriniz.
 \item jasper paketi kurulumu sonrası:
 
 \begin{verbatim}
@@ -515,12 +534,12 @@ Kmenüden uygulamayı çalıştırın ve aşağıda bulunan dosyayı Dosya $\rig
 # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/linux.mp3 
 \end{verbatim}
 
-
-
- 
  \item blender paketi kurulumu sonrası:
 
-  Kmenü üzerinden uygulamayı açın ve masaüstü ikonunun eksik olmadığını ve düzgün bir şekilde açıldığını gözlemleyin. 
+Aşağıda bulunan dosyayı blender ile açın ve Render butonuna basın. Resmi render edebildiğinizi gözlemleyin.
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/MATtests1.blend 
+\end{verbatim}
 
  \item dvd-slideshow paketi kurulumu sonrası:
 

@@ -73,6 +73,11 @@ Aşağıda bulunan komutlar ile imap ve pop3 paketlerini kontrol edin:
 
 \section{Web alt bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir:
+\begin{verbatim}
+mod_dav_svn 
+\end{verbatim}
+
 \item webalizer paketi kurulumu sonrası:
 
 Service yöneticisinden apache servisini başlatın.
@@ -103,13 +108,7 @@ Aşağıda bulunan komutu çalıştırın ve daha sonra http://localhost/webaliz
 
 \item mod\_php paketi kurulumu sonrası:
 
-\begin{itemize}
- \item Contrib deposunda bulunan phpmyadmin paketini kurun.
- \item Apache ve mysql sunucularını servis yöneticisinden başlatın.
- \item http://localhost/phpmyadmin/ adresine firefox kullanarak girin. (Kullanıcı adı için root yazın, parola ise boş kalacak)
- \item Mysql bağlantı sayfasınının sorunsuz açıldığını gözlemleyin.
-\end{itemize}
-
+util-tr.pdf phpmyadmin testini gerçekleştiriniz.
 
 \end{enumerate}
 
@@ -181,6 +180,7 @@ Aşağıda bulunan komutun man sayfasını düzgün açtığından emin olun.
 \section{Diğerleri}
 
 \begin{itemize}
+
  \item dhcp paketi kurulumu sonrası:
 
 Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra konsoldan aşağıda bulunan komutu çalıştırın ve ağa bağlı olduğununuzu gözlemleyin.
@@ -193,6 +193,42 @@ Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra ko
 # dig www.google.com
 \end{verbatim}
 Yukarıda bulunan komutun düzgün bir şekilde dns sunucuları listelediğini gözlemleyin.
+\item samba paketi kurulumu sonrası:
+
+Servis yöneticisinden samba servisini başlatın.
+
+Aşağıda bulunan komut ile servisin başlatıldığını gözlemleyin.
+\begin{verbatim}
+ # service samba status 
+\end{verbatim}
+
+ Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin:
+\begin{verbatim}
+# sudo testparm /etc/samba/smb.conf
+\end{verbatim}
+
+/etc/samba/smb.conf dosyasına aşağıda bulunanları ekleyin.
+\begin{verbatim}
+[public]
+   path = /tmp
+   public = yes
+   only guest = yes
+   writable = yes
+   printable = no
+\end{verbatim}
+
+Servis yöneticisinden yeniden başlatın. 
+
+Aşağıdaki komutların hatasız bir şekilde çalıştığını gözlemleyin.
+\begin{verbatim}
+smbclient //localhost/public 
+ls
+\end{verbatim}
+
+
+
+
+
 
 \end{itemize}
 

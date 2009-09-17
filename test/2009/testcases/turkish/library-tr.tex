@@ -20,6 +20,8 @@
 yazpp
 xmlsec
 libftdi
+libp11
+libuuid
 \end{verbatim}
 
 \item gstreamer, gst-plugin-ugly, gst-plugin-bad, gst-plugin-base ve gst-ffmeg paketleri kurulumu sonrası:
@@ -149,6 +151,23 @@ desktop-tr.pdf kdegraphics testini gerçekleştirin.
 \item libnice paketi kurulumu sonrası:
 
 network-tr.pdf pidgin testtini gerçekleştiriniz.
+
+\item libtdb paketi kurulumu sonrası:
+
+samba paketini kurunuz. Servis yöneticisinden samba servisini başlatınız.
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyiniz.
+\begin{verbatim}
+ # tdbtool
+ # create test
+ # open test 
+ # insert testkey testdata
+ # show testkey
+\end{verbatim}
+\item qzion paketi kurulumu sonrası:
+
+library-tr.pdf qedje testini gerçekleştiriniz.
+
 \end{enumerate}
 
 \end{document}
