@@ -4,7 +4,7 @@
 #
 # Written By : Şükrü BEZEN
 #
-# Email : bunnyynnub@gmail.com
+# Email : sukru@sukrubezen.com
 #
 ####################################
 

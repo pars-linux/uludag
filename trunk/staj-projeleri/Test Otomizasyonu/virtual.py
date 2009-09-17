@@ -4,7 +4,7 @@
 #
 # Written By : Şükrü BEZEN
 #
-# Email : bunnyynnub@gmail.com
+# Email : sukru@sukrubezen.com
 #
 ####################################
 
@@ -418,9 +418,9 @@ obje.connectTo()
 obje.connectTo("extreme")
 obje.sendCommand("su -","root")
 obje.sendCommand("pisi up --ignore-safety -y")
-#obje.sendCommand("pisi rr pardus-2009 -y")
-#obje.sendCommand("pisi rr contrib -y")
-#obje.repoWorks()
+obje.sendCommand("pisi rr pardus-2009 -y")
+obje.sendCommand("pisi rr contrib -y")
+obje.repoWorks()
 obje.sendCommand("pisi up --ignore-safety -y")
 obje.takeSnapshot()
 obje.sendCommand("exit","close")
