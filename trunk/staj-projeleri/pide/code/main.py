@@ -73,9 +73,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             name, domain, interface, protocol, host, address, port, bare_name, txt = contacts[name]
             name = self.splitName(name)
             # For Safety :D
-            if name == "saturn":
-                self.users.append([name, address])
-                self.addItem(name, address)
+            #if name == "saturn":
+            self.users.append([name, address])
+            self.addItem(name, address)
 
     def splitName(self, name):
         first, second = name.split("@")

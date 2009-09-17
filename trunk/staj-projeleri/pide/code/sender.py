@@ -8,39 +8,39 @@ from PyQt4.QtGui import QApplication
 
 class FileSender( Thread ):
 
-    def __init__(this, FILE, HOST):
-        Thread.__init__( this )
-        this.port = 9091
-        this.file = FILE
-        this.host = HOST
+    def __init__(self, FILE, HOST):
+        Thread.__init__( self )
+        self.port = 9091
+        self.file = FILE
+        self.host = HOST
 
-        this.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        this.selfSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.selfSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    def run(this):
-        this.process()
+    def run(self):
+        self.process()
 
-    def sendFile( this ):
-        this.senderSock.connect((this.host, this.port))
-        this.senderSock.send("SEND " + this.file)
+    def sendFile( self ):
+        self.senderSock.connect((self.host, self.port))
+        self.senderSock.send("SEND " + self.file)
 
-    def waitforcheck( this ):
+    def waitforcheck( self ):
         print '[Media] Waiting For Acception On Visitor'
-        this.selfSock.bind(('', this.port))
-        this.selfSock.listen(1)
-        this.selfConn, this.selfAddr = this.selfSock.accept()
-        if this.selfAddr:
-            f = open(this.file, "rb")
+        self.selfSock.bind(('', self.port))
+        self.selfSock.listen(1)
+        self.selfConn, self.selfAddr = self.selfSock.accept()
+        if self.selfAddr:
+            f = open(self.file, "rb")
             print '[Media] Accepted! Starting File Transfer...'
-            this.data = f.read()
-            this.senderSock.send(this.data)
+            self.data = f.read()
+            self.senderSock.send(self.data)
             f.close()
 
-    def process( this ):
+    def process( self ):
         while 1:
-            this.sendFile()
-            this.waitforcheck()
+            self.sendFile()
+            self.waitforcheck()
 
-    def close( this ):
-        this.senderSock.close()
-        this.selfSock.close()
+    def close( self ):
+        self.senderSock.close()
+        self.selfSock.close()
