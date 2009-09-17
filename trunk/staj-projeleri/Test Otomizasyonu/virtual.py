@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 
-import os, sys
+####################################
+#
+# Written By : Şükrü BEZEN
+#
+# Email : bunnyynnub@gmail.com
+#
+####################################
+
+import os, sys, glob
 
 try:
   import pexpect 
@@ -18,6 +26,7 @@ class virtual:
     
     self.revdep_outfile = open("revdep_outfile","w")
     self.broken_outfile = open("broken","w")
+    self.ldd_outfile    = open("ldd_outfile","w")
     
     self.machineName = ""
     self.machineNames = []
@@ -136,17 +145,28 @@ class virtual:
       if(self.showState() == state):break
       else: continue
       
-  def connectTo(self):
-    self.foo = pexpect.spawn("ssh " + str(sys.argv[1]) + "@" + self.ip , timeout=None)
+  def connectTo(self,mode="normal"):
+    if(mode == "normal"):
+      self.foo = pexpect.spawn("ssh " + str(sys.argv[1]) + "@" + self.ip , timeout=None)
     
-    if(self.checkKnownHosts() == False):
-      self.foo.expect('(yes/no)?')
-      self.foo.sendline('yes')
+      if(self.checkKnownHosts(self.ip) == False):
+	self.foo.expect('(yes/no)?')
+	self.foo.sendline('yes')
     
-    self.foo.expect('.*ssword:')
-    self.foo.sendline(self.userPass)
-    
-        
+      self.foo.expect('.*ssword:')
+      self.foo.sendline(self.userPass)
+    else:
+      self.woo = pexpect.spawn("scp /home/sukru/Virtual/ldd.py " + str(sys.argv[1]) + "@" + self.ip + ":/home/sukru" , timeout=None)
+      
+      if(self.checkKnownHosts(self.ip) == False):
+	self.woo.expect('(yes/no)?')
+	self.woo.sendline('yes')
+   
+      self.woo.expect('.*ssword:')
+      self.woo.sendline(self.userPass)
+      
+      cikti = self.woo.readline()           
+
     
   def sendCommand(self, command,mode="not_root"):
     
@@ -186,19 +206,22 @@ class virtual:
       cikti = self.foo.readline()
       
       if(cikti.find(self.virtualName) != -1):break
-           
+      
       if((cikti.find("uname") == -1) and (cikti.find(self.virtualName) == -1) ):
 	if(mode == "parse"):
 	  self.revdepOutput += cikti
+	elif(mode == "ldd"):
+	  self.ldd_outfile.write(cikti)
+	
 	sys.stdout.write(cikti)
     
     self.foo.readline()  #read the output of uname
       
       
-  def checkKnownHosts(self):
+  def checkKnownHosts(self, what):
     file = open("/home/" + str(sys.argv[1]) + "/.ssh/known_hosts")
     content = file.read()
-    itr = content.find(self.ip)
+    itr = content.find(what)
     if(itr == -1): return False
     else: return True
     
@@ -235,7 +258,12 @@ class virtual:
 	  rhs += 1
 	  
       self.sendCommand("pisi ar " + chose[lhs:rhs] + " " + chose + " -y")
-      
+  
+  def lddWorks(self,package):
+    self.sendCommand("python /home/" + str(sys.argv[1]) + "/ldd.py start " + str(sys.argv[1]) + " " + package)
+    self.sendCommand("python /home/" + str(sys.argv[1]) + "/ldd.py end " + str(sys.argv[1]) ,"ldd")
+  
+  
   def reverseChecker(self):
     
     _file = open("ack")
@@ -249,6 +277,7 @@ class virtual:
       self.sendCommand("su -","root")
       self.sendCommand("pisi it " + line + " -y")
       self.sendCommand("revdep-rebuild","parse")
+      self.lddWorks(line)
       self.sendCommand("exit","close")
       self.parseOutput()
       self.shutdownVm()
@@ -257,7 +286,6 @@ class virtual:
     cikti = self.revdepOutput
     self.revdep_outfile.write(cikti)
     self.revdep_outfile.flush()
-    
     splitted = cikti.split("\n")
     i = -1
     
@@ -364,7 +392,7 @@ class virtual:
       
       temphtml = temphtml[itr:]
      
-      itr = temphtml.find("<td>") + 4
+      itr = temphtml.find("<td>") + len("<td>")
       
       itl = temphtml.find("</td>")
       
@@ -375,7 +403,9 @@ class virtual:
       
 
 
+
 obje = virtual()
+
 
 if(not (obje.showBridge() == "bridged")):
   print "It seems you still did not configure your Network property into \"bridged\" \n program will exit now"
@@ -385,8 +415,11 @@ obje.startVm()
 print "After you open your OS check your opendns server,and write your ip address (/sbin/ifconfig) and enter to continue"
 obje.ip = raw_input()
 obje.connectTo()
+obje.connectTo("extreme")
 obje.sendCommand("su -","root")
 obje.sendCommand("pisi up --ignore-safety -y")
+#obje.sendCommand("pisi rr pardus-2009 -y")
+#obje.sendCommand("pisi rr contrib -y")
 #obje.repoWorks()
 obje.sendCommand("pisi up --ignore-safety -y")
 obje.takeSnapshot()

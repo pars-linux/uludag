@@ -1,0 +1,50 @@
+////////////////////////////////////
+
+Written By : Şükrü BEZEN
+
+Email : bunnyynnub@gmail.com
+
+
+////////////////////////////////////
+
+
+Otomization Of Test Process With VirtualBox Images 
+
+This project is based on a need for an otomization in the test process of Pardus.
+Needs were finding broken reverse dependecies and unused direct dependecies.
+
+"virtual.py" python file includes "virtual" class. This class's methods and definitions are below:
+
+Method Name            Definition
+----------------------------------
+get_machineNames        This method gathers all the machines' names that is installed in the current system.
+chooseMachine           This method selects the machine to be used.
+startVm                 This method starts the chosen virtual machine
+shutdownVm              This method shutdowns the chosen virtual machine
+takeSnapshot            This method takes a snapshot of current running virtual machine
+goBack                  This method only works if there is no running machine. This method takes the machine into the  the last taken snapshot.
+showBridge              This method checks if chosen machine has the attribute "bridged" in network settings. If not, exits.
+showState               This method returns the current state of virtual machine. Example: "poweroff" , "running", ...
+checkState              This method takes a string as an argument and checks with the output of "showState" method to see whether the machine is in this state or not. Useful for conditions.
+connectTo               This method is critical. By using "normal" mode in this method, we can connect to virtual machine by using ssh. By using some mode different than "normal", we can copy
+                        "ldd.py" file into the home directory of given user in the virtual machine.
+sendCommand             This method is used for sending commands into the virtual machine. Since "pexpect" module does not provide any help in reading outputs of commands, 
+                        to be able to see the end of an output, we send another command. It is crucial that if the second command exists in the output of first command, 
+                        try another command as second command.
+checkKnownHosts         This method checks whether this is out first connection to the destination or not. If first, this method will return True.
+repoWorks               This methods allow us to add a repository to the system.
+lddWorks                This method runs "ldd.py" file that we sent to the virtual machine before and gives the output.
+reverseChecker          This method handles the cycle. For every package name in "ack" file, this method "takes the snapshot back", "starts the virtual machine", "connects to machine with ssh", 
+			"becomes root," "installs the current package," "checks reverse dependicies and if there is any: it checks from internet  the related packages," "unused direct dependecies,"
+			than exits.
+parseOutput             This method parses the output of reverse dependicies and if there is any it checks from internet the related packages.
+findPackage             This method checks reverse dependency of package from internet.
+
+
+
+Before running this program, please make sure you have "pexpect" module installed and "ack" file exist in the same directory with this script
+
+Feel free to change the way this program runs.
+
+Any help is appreciated.
+
