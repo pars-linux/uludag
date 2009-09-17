@@ -1,9 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import sys, socket
+import sys, socket, os
 from threading import *
 from PyQt4.QtGui import QApplication
+from preloader import ProgressBar
 
 
 class FileSender( Thread ):
@@ -13,6 +14,9 @@ class FileSender( Thread ):
         self.port = 9091
         self.file = FILE
         self.host = HOST
+        self.transferSize = 1024
+        self.fileSize = 86687
+
 
         self.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.selfSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
