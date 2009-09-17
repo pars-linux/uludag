@@ -2,21 +2,21 @@
 # -*- coding: utf-8 -*-
 
 import sys, socket, os
-from threading import *
+from PyQt4 import QtGui
+from PyQt4 import QtCore
 from PyQt4.QtGui import QApplication
 from preloader import ProgressBar
 
 
-class FileSender( Thread ):
+class FileSender(QtCore.QThread):
 
     def __init__(self, FILE, HOST):
-        Thread.__init__( self )
+        QtCore.QThread.__init__(self)
         self.port = 9091
         self.file = FILE
         self.host = HOST
         self.transferSize = 1024
         self.fileSize = 86687
-
 
         self.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.selfSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -24,11 +24,11 @@ class FileSender( Thread ):
     def run(self):
         self.process()
 
-    def sendFile( self ):
+    def sendFile(self):
         self.senderSock.connect((self.host, self.port))
         self.senderSock.send("SEND " + self.file)
 
-    def waitforcheck( self ):
+    def waitforcheck(self):
         print '[Media] Waiting For Acception On Visitor'
         self.selfSock.bind(('', self.port))
         self.selfSock.listen(1)
@@ -40,11 +40,11 @@ class FileSender( Thread ):
             self.senderSock.send(self.data)
             f.close()
 
-    def process( self ):
+    def process(self):
         while 1:
             self.sendFile()
             self.waitforcheck()
 
-    def close( self ):
+    def close(self):
         self.senderSock.close()
         self.selfSock.close()
