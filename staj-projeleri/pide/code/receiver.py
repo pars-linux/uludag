@@ -10,61 +10,61 @@ from knotify import KNotification
 
 class StreamHandler ( Thread ):
 
-    def __init__( this ):
-        Thread.__init__( this )
-        this.KdeN = KNotification()
-        this.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        this.dataSock.bind(('', 9091))
+    def __init__( self ):
+        Thread.__init__( self )
+        self.KdeN = KNotification()
+        self.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.dataSock.bind(('', 9091))
 
-    def run(this):
-        this.process()
+    def run(self):
+        self.process()
 
-    def bindcsock( this ):
+    def bindcsock( self ):
         print '[Control] Listening on port 9091...'
 
-        this.dataSock.listen(1)
+        self.dataSock.listen(1)
 
-        this.dataConn, this.dataAddr = this.dataSock.accept()
-        print '[Control] Got connection from', this.dataAddr
+        self.dataConn, self.dataAddr = self.dataSock.accept()
+        print '[Control] Got connection from', self.dataAddr
 
-        data = this.dataConn.recv(1024)
-        if data[0:4] == "SEND": this.filename = data[5:]
-        print '[Control] Getting ready to receive "%s"' % this.filename
+        data = self.dataConn.recv(1024)
+        if data[0:4] == "SEND": self.filename = data[5:]
+        print '[Control] Getting ready to receive "%s"' % self.filename
 
 
-    def checkrequest ( this ):
+    def checkrequest ( self ):
         m = "message"
-        this.KdeN.Notify(this.filename, this.dataAddr, m)
-        if this.dataConn:
-            this.requestCheck = raw_input('Are You Sure (yes/no)? ')
-            if this.requestCheck == "yes":
-                this.sendInfo()
-                this.transfer()
+        self.KdeN.Notify(self.filename, self.dataAddr, m)
+        if self.dataConn:
+            self.requestCheck = raw_input('Are You Sure (yes/no)? ')
+            if self.requestCheck == "yes":
+                self.sendInfo()
+                self.transfer()
             else:
                 print "Denied!"
 
-    def sendInfo( this ):
-        this.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        this.senderSock.connect((this.dataAddr[0], 9091))
-        this.senderSock.send(this.requestCheck)
+    def sendInfo( self ):
+        self.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.senderSock.connect((self.dataAddr[0], 9091))
+        self.senderSock.send(self.requestCheck)
 
-    def transfer( this ):
-        f = open(this.filename,"wb")
-        this.KdeN.Notify(this.filename, this.dataAddr, "Dosya karşı taraftan alınıyor...")
+    def transfer( self ):
+        f = open(self.filename,"wb")
+        self.KdeN.Notify(self.filename, self.dataAddr, "Dosya karşı taraftan alınıyor...")
         while 1:
-            data = this.dataConn.recv(1024)
+            data = self.dataConn.recv(1024)
             if not data: break
             f.write(data)
         f.close()
-        this.KdeN.Notify(this.filename, this.dataAddr, "Dosya karşı taraftan başarıyla alındı.")
+        self.KdeN.Notify(self.filename, self.dataAddr, "Dosya karşı taraftan başarıyla alındı.")
 
-        print '[Media] Got "%s"' % this.filename
-        print '[Media] Closing media transfer for "%s"' % this.filename
+        print '[Media] Got "%s"' % self.filename
+        print '[Media] Closing media transfer for "%s"' % self.filename
 
-    def process( this ):
+    def process( self ):
         while 1:
-            this.bindcsock()
-            this.checkrequest()
+            self.bindcsock()
+            self.checkrequest()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
