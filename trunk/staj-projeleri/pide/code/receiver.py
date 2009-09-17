@@ -3,13 +3,18 @@
 
 import socket, time, string, sys, urlparse
 from threading import *
+from PyKDE4.kdeui import *
+from PyKDE4.kdecore import *
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
 from PyQt4.QtGui import QApplication
+
+
 
 class StreamHandler ( Thread ):
 
     def __init__( self ):
         Thread.__init__( self )
-        self.KdeN = KNotification()
         self.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.dataSock.bind(('', 9091))
 
@@ -31,14 +36,12 @@ class StreamHandler ( Thread ):
 
     def checkrequest ( self ):
         if self.dataConn:
-            if self.notification:
-                self.notification.close()
             self.notification = KNotification("Updates")
-            self.notification.setText(i18n("There are <b>%s</b> waiting for answer!", self.filename))
-            self.notification.setActions(QStringList((i18n("Yes"), i18n("Ignore"))))
+            self.notification.setText(i18n("<b> %s </b> size <b> %s </b> göndermek istiyor!" % (self.senderName(self.dataAddr), self.filename)))
+            self.notification.setActions(QStringList((i18n("Kabul Et"), i18n("Yoksay"))))
             self.notification.setFlags(KNotification.Persistent)
             self.notification.setComponentData(KComponentData("package-manager","package-manager"))
-            self.connect(self.notification, SIGNAL("action1Activated()"), self.receiverAccepted)
+            #self.connect(self.notification, SIGNAL("action1Activated()"), self.receiverAccepted)
             self.notification.sendEvent()
 
     def receiverAccepted( self ):
@@ -71,6 +74,9 @@ class StreamHandler ( Thread ):
         while 1:
             self.bindcsock()
             self.checkrequest()
+
+    def senderName( self , addr):
+        return addr[0]
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
