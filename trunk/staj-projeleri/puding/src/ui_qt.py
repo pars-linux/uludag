@@ -51,19 +51,44 @@ class Create(QtGui.QMainWindow):
         if not self.__checkDestination(self.line_disk.displayText()):
             self.warningDialog("Directory is Invalid", "Please check the USB disk path.")
 
-        elif not self.__getSourceInfo(self.line_image.displayText()):
-            # FIX ME: ...
+        try:
+            (self.name, self.md5, self.url) = self.__getSourceInfo(self.line_image.displayText())
+
+            confirm_message = """\
+Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?
+
+CD Image Path: %s
+USB Device: %s (%s)
+
+Release Name: %s
+Md5sum: %s
+Download URL: %s""" % (self.line_image.displayText(),
+                       self.line_disk.displayText(),
+                       "NULL",
+                       self.name, self.md5, self.url)
+
+            confirm_informations = self.warningDialog("Confirm Informations",
+                                                      confirm_message,
+                                                      QtGui.QMessageBox.Cancel |
+                                                      QtGui.QMessageBox.Ok)
+
+        except TypeError: # 'bool' object is not iterable
+            # FIX ME: what is pass?
             pass
 
-    def warningDialog(self, title, message):
-        QtGui.QMessageBox.warning(self, title, message, QtGui.QMessageBox.Ok)
+    def warningDialog(self, title, message, buttons = QtGui.QMessageBox.Ok):
+        QtGui.QMessageBox.warning(self, title, message, buttons)
 
     def __getSourceInfo(self, src):
         if QtCore.QString(src).isEmpty():
             self.warningDialog("ISO Image is Invalid", "Please set an ISO image path.")
 
+            return False
+
         if not os.path.isfile(src):
             self.warningDialog("ISO Image is Invalid", "Please check the ISO image path.")
+
+            return False
 
         iso_size = getIsoSize(src)
         iso_size_progress = iso_size / increment_value
@@ -89,6 +114,10 @@ class Create(QtGui.QMainWindow):
 The checksum of the source cannot be validated.
 Please specify a correct source or be sure that
 you have downloaded the source correctly.""")
+
+            return False
+
+        return pi.checksum()
 
     def __checkDestination(self, dst):
         if QtCore.QString(dst).isEmpty():
