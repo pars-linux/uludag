@@ -7,7 +7,9 @@ from PyQt4.QtGui import QApplication
 
 
 class FileSender( Thread ):
+
     def __init__(this, FILE, HOST):
+        Thread.__init__( this )
         this.port = 9091
         this.file = FILE
         this.host = HOST
@@ -38,7 +40,6 @@ class FileSender( Thread ):
         while 1:
             this.sendFile()
             this.waitforcheck()
-            this.close()
 
     def close( this ):
         this.senderSock.close()
