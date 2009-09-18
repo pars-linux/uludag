@@ -51,7 +51,7 @@ class Options:
                 sys.exit(0)
 
             try:
-                from puding import ui_cmd
+                from puding import uiCmd
 
                 source = os.path.realpath(args[0])
 
@@ -73,7 +73,7 @@ class Options:
             print(LICENSE)
 
         elif opts.with_qt:
-            from puding.ui_qt import main
+            from puding.uiQt import main
 
             main()
 
