@@ -67,17 +67,26 @@ Download URL: %s""" % (self.line_image.displayText(),
                        "NULL",
                        self.name, self.md5, self.url)
 
-            confirm_informations = self.warningDialog("Confirm Informations",
-                                                      confirm_message,
-                                                      QtGui.QMessageBox.Cancel |
-                                                      QtGui.QMessageBox.Ok)
+            confirm_infos = self.questionDialog("Confirm Informations",
+                                                       confirm_message)
+
+            if confirm_infos == QtGui.QMessageBox.Ok:
+                print("Ok")
+            else:
+                print("Cancel")
 
         except TypeError: # 'bool' object is not iterable
             # FIX ME: what is pass?
             pass
 
-    def warningDialog(self, title, message, buttons = QtGui.QMessageBox.Ok):
-        QtGui.QMessageBox.warning(self, title, message, buttons)
+    def warningDialog(self, title, message,):
+        QtGui.QMessageBox.warning(self, title, message, QtGui.QMessageBox.Ok)
+
+    def questionDialog(self, title, message):
+        return QtGui.QMessageBox.question(self, title, message,
+                                          QtGui.QMessageBox.Cancel |
+                                          QtGui.QMessageBox.Ok)
+
 
     def __getSourceInfo(self, src):
         if QtCore.QString(src).isEmpty():
@@ -96,7 +105,7 @@ Download URL: %s""" % (self.line_image.displayText(),
         check_iso = ProgressBar(title = "Verify Checksum",
                                 message = "The checksum of the source is checking now...",
                                 max_value = iso_size_progress)
-        pi = ProgressIncrement(check_iso, src)
+        pi = ProgressIncrementChecksum(check_iso, src)
         pi.start()
 
         # FIX ME: Why is it in here?
@@ -169,7 +178,7 @@ class ProgressBar(QtGui.QDialog):
         current_value = self.progressBar.value()
         self.progressBar.setValue(current_value + 1)
 
-class ProgressIncrement(QtCore.QThread):
+class ProgressIncrementChecksum(QtCore.QThread):
     def __init__(self, dialog, source):
         QtCore.QThread.__init__(self)
 
@@ -202,6 +211,10 @@ class ProgressIncrement(QtCore.QThread):
                 return release['name'], release['md5'], release['url']
 
         return False
+
+class ProgressIncrementCreate(QtCore.QThread):
+    def __init__(self):
+        QtCore.QThread.__init__(self)
 
 # And last..
 def main():
