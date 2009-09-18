@@ -93,13 +93,22 @@ lang\_LANG şeklinde yazılmış olan, pt-BT için pt\_BT, diğer diller için �
 
 Daha sonra bu çalıştırdığınız komut dizininde eric4 komutunu çalıştırın, paket eğer help ile ilgili ise help dosyasının, uygulama dili ise uygulamanın sorunsuz bir şekilde istenilen dilde açıldığını gözlemleyin.
 
+\item ipython-gui paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları çalıştırdığınızda ipython guilerinin sorunsuz bir şekilde açıldığını gözlemleyin.
+\begin{verbatim}
+ # ipython-wx
+ # ipythonx
+\end{verbatim}
+
+
 \item ipython paketi kurulumu sonrası: 
 
 Aşağıda bulunan komutları çalıştırdığınızda, bulunduğunuz dizinde test adında bir dosya oluştuğunu ve içerisinde "test ipython" yazdığını gözlemleyin:
 \begin{verbatim}
  # ipython
  a = open("test", "a")
- a.write("test ipyton")
+ a.write("test ipython")
 \end{verbatim}
 
 \item drscheme paketi kurulumu sonrası:
@@ -168,6 +177,55 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
 \subsection{Python alt bileşeni}
 
 \begin{enumerate}
+\item pyFltk paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import fltk
+\end{verbatim}
+
+
+\item python-turboflot paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import turboflot
+\end{verbatim}
+
+\item python-ldap paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import ldap
+\end{verbatim}
+
+\item python-iptables paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import iptables
+\end{verbatim}
+
+\item sympy paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırdığınızda testlerden ok sonucu döndüğünü gözlemleyin.
+\begin{verbatim}
+ # python -c "import sympy;print sympy.test()"
+\end{verbatim}
+
+python -c "import scipy;print scipy.test()"
+
+\item scipy paketi kurulumu sonrası:
+
+Aşğıda bulunan komutu çalıştırdığınızda <nose.result.TextTestResult run=XXXX errors=0 failures=0> gibi bir çıktı ürettiğini gözlemleyin.
+\begin{verbatim}
+ # python -c "import scipy;print scipy.test()"
+\end{verbatim}
+
 \item PyX paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
