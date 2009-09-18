@@ -62,6 +62,7 @@ class Create:
             else:
                 device, dst = self.__askDestination()
 
+                # FIX ME: You should not use it.
                 if dst == "":
                     cmd = "mount -t vfat %s %s" % (device, MOUNT_USB)
                     runCommand(cmd)
@@ -70,7 +71,7 @@ class Create:
         if self.__checkSource(src) and self.__checkDestination(dst):
             createUSBDirs(dst)
             self.__createImage(src, dst)
-            
+
         else:
             sys.exit(1)
 
@@ -98,13 +99,15 @@ class Create:
                     # FIX ME: Bad Code..
                     except TypeError:
                         self.utils.cprint("The checksum of the source cannot be validated. Please specify a correct source or be sure that you have downloaded the source correctly.", "red")
-                        
+
                         return False
 
                     self.utils.cprint("\nCD image path: %s" % src)
                     self.utils.cprint("         Name: %s" % name)
                     self.utils.cprint("       Md5sum: %s" % md5)
                     self.utils.cprint(" Download URL: %s\n" % url)
+
+                    return True
 
             except IndexError:
                 self.utils.cprint("The file you have specified is invalid. It's a CD image, use \".iso\" extension. e.g. Pardus_2009_Prealpha3.iso", "red")
@@ -204,7 +207,7 @@ USB disk informations:
     def __createImage(self, src, dst):
         self.utils.cprint("Mounting %s.." % src, "green")
 
-        cmd = "mount -o loop %s %s" % (src, MOUNT_ISO)
+        cmd = "fuseiso %s %s" % (src, MOUNT_ISO)
         if runCommand(cmd):
             self.utils.cprint("Could not mounted CD image.", "red")
 
@@ -213,7 +216,7 @@ USB disk informations:
         self.__copyImage(MOUNT_ISO, dst)
 
         self.utils.cprint("\nUnmounting %s.." % MOUNT_ISO, "green")
-        cmd = "umount %s" % MOUNT_ISO
+        cmd = "fusermount -u %s" % MOUNT_ISO
 
         if runCommand(cmd):
             self.utils.cprint("Could not unmounted CD image.", "red")
