@@ -33,12 +33,12 @@ class virtual:
     self.userPass = sys.argv[3]
     self.rootPass = sys.argv[4]
     
-    if(len(sys.argv) == 5):
+    if(len(sys.argv) == 6):
       self.get_machineNames()
       self.chooseMachine()
       self.virtualName = str(sys.argv[1]) + "@" + str(sys.argv[2])
     else:
-      print "You need  to provide at least 4 arguments to be able to run this script\n Tip: username machineName userPassword rootPassword VirtualMachineName "
+      print "You need  to provide at least 5 arguments to be able to run this script\n Tip: username machineName userPassword rootPassword VirtualMachineName "
       exit()
       
     self.depolar = []
@@ -156,7 +156,7 @@ class virtual:
       self.foo.expect('.*ssword:')
       self.foo.sendline(self.userPass)
     else:
-      self.woo = pexpect.spawn("scp /home/sukru/Virtual/ldd.py " + str(sys.argv[1]) + "@" + self.ip + ":/home/sukru" , timeout=None)
+      self.woo = pexpect.spawn("scp ldd.py " + str(sys.argv[1]) + "@" + self.ip + ":/home/" + str(sys.argv[1])  , timeout=None)
       
       if(self.checkKnownHosts(self.ip) == False):
 	self.woo.expect('(yes/no)?')
@@ -219,7 +219,7 @@ class virtual:
       
       
   def checkKnownHosts(self, what):
-    file = open("/home/" + str(sys.argv[1]) + "/.ssh/known_hosts")
+    file = open("/home/" + str(sys.argv[5]) + "/.ssh/known_hosts")
     content = file.read()
     itr = content.find(what)
     if(itr == -1): return False
