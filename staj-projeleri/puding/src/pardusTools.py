@@ -7,20 +7,12 @@ class PardusTools:
     def __init__(self):
         self.link = comar.Link()
         self.link.setLocale()
-        self.package = self.getMainPackage()
-
-    def getPackages(self):
-        return list(self.link.User.Manager)
-
-    def getMainPackage(self):
-        #FIX ME: This function is hardcoded.
-        packages = self.getPackages()
-        if not len(packages):
-            return None
-        return "mudur"
 
     def mount(self, device, path):
-        self.link.Disk.Manager[self.package].mount(device, path)
+        self.link.Disk.Manager["mudur"].mount(device, path)
 
     def umount(self, device):
-        self.link.Disk.Manager[self.package].umount(device)
+        self.link.Disk.Manager["mudur"].umount(device)
+
+    def createSyslinux(self, device):
+        self.link.Disk.Manager["puding"].createSyslinux(device)

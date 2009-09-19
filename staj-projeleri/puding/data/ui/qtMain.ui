@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Puding</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="qtMain.qrc">
+    <normaloff>:/logo/puding.png</normaloff>:/logo/puding.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -131,7 +135,7 @@
      <x>0</x>
      <y>0</y>
      <width>439</width>
-     <height>27</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -156,11 +160,17 @@
    </property>
   </action>
   <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="qtMain.qrc">
+     <normaloff>:/logo/puding.png</normaloff>:/logo/puding.png</iconset>
+   </property>
    <property name="text">
     <string>About</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="qtMain.qrc"/>
+ </resources>
  <connections/>
 </ui>
