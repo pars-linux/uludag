@@ -4,10 +4,20 @@
 # author: Gökmen Görgen
 # license: GPLv3
 
+import glob
 import os
+import shutil
 import sys
 
-from common import (SHARE, getDiskInfo, getIsoSize)
+from common import (MOUNT_ISO, \
+                    SHARE, \
+                    getDiskInfo, \
+                    getMounted, \
+                    getIsoSize, \
+                    createConfigFile, \
+                    createUSBDirs, \
+                    runCommand)
+
 from common import PartitionUtils
 from constants import DESCRIPTION
 from PyQt4 import (QtCore, QtGui, uic)
@@ -48,11 +58,14 @@ class Create(QtGui.QMainWindow):
 
     @QtCore.pyqtSignature("bool")
     def on_button_create_clicked(self):
-        if not self.__checkDestination(self.line_disk.displayText()):
+        dst = str(self.line_disk.displayText())
+        src = str(self.line_image.displayText())
+
+        if not self.__checkDestination(dst):
             self.warningDialog("Directory is Invalid", "Please check the USB disk path.")
 
         try:
-            (self.name, self.md5, self.url) = self.__getSourceInfo(self.line_image.displayText())
+            (self.name, self.md5, self.url) = self.__getSourceInfo(src)
 
             confirm_message = """\
 Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?
@@ -71,7 +84,11 @@ Download URL: %s""" % (self.line_image.displayText(),
                                                        confirm_message)
 
             if confirm_infos == QtGui.QMessageBox.Ok:
+                createUSBDirs(dst)
+                self.__createImage(src, dst)
+
                 print("Ok")
+
             else:
                 print("Cancel")
 
@@ -133,6 +150,65 @@ you have downloaded the source correctly.""")
             return False
 
         return os.path.ismount(str(dst))
+
+    def __createImage(self, src, dst):
+        # First of all, mount iso
+        cmd = "fuseiso %s %s" % (src, MOUNT_ISO)
+        if runCommand(cmd):
+            # FIX ME: Should use warning dialog.
+            return False
+
+        # Copy image
+        self.__copyImage(MOUNT_ISO, dst)
+
+        # Unmount iso
+        cmd = "fusermount -u %s" % MOUNT_ISO
+        if runCommand(cmd):
+            # FIX ME: Should use warning dialog.
+            return False
+
+        # Create config file
+        # FIX ME: Embed try - except to createConfigFile func.
+        try:
+            createConfigFile(dst)
+
+        except:
+            # File are already exists (?! Why is it required?)
+            pass
+
+        # Upstream bug. Follow this.
+        cmd = "LC_ALL=C syslinux %s" % getMounted(dst)
+        if runCommand(cmd):
+            # FIX ME: Should use warning dialog.
+            return False
+
+        # FIX ME: Should use PartitionUtils
+        device = os.path.split(getMounted(dst))[1][:3]
+        cmd = "cat /usr/lib/syslinux/mbr.bin > /dev/%s" % device
+        if runCommand(cmd):
+            # FIX ME: Should use warning dialog.
+            return False
+
+        return True
+
+    def __copyImage(self, src, dst):
+        # Pardus image
+        shutil.copy("%s/pardus.img" % src, "%s/pardus.img" % dst)
+        print("copied pardus.img")
+
+        # Boot directory
+        for file in glob.glob("%s/boot/*" % src):
+            if not os.path.isdir(file):
+                file_name = os.path.split(file)[1]
+                shutil.copy(file, "%s/boot/%s" % (dst, file_name))
+                print(file_name)
+
+        # Pisi packages
+        for file in glob.glob("%s/repo/*" % src):
+            pisi = os.path.split(file)[1]
+            if not os.path.exists("%s/repo/%s" % (dst, pisi)):
+                shutil.copy(file, "%s/repo/%s" % (dst, pisi))
+                print(pisi)
 
 class SelectDisk(QtGui.QDialog):
     def __init__(self, parent = None):

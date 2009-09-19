@@ -59,6 +59,7 @@ def removeBuildFiles():
 data = [
     ("share/doc/%s" % NAME, ["AUTHORS", "ChangeLog", "COPYING", "NOTES", "README"]),
     ("share/%s" % NAME, glob.glob("data/syslinux.cfg.*")),
+    ("share/%s" % NAME, glob.glob("data/puding.png")),
     ("share/%s/gfxtheme" % NAME, glob.glob("data/gfxtheme/*")),
     ("share/%s/ui" % NAME, glob.glob("data/ui/*"))]
 #    ("share/%s/ui" % NAME, glob.glob("data/ui/*")),
