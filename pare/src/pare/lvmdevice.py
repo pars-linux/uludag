@@ -24,21 +24,21 @@ from pare.errors import *
 
 class PhysicalVolume(object):
     _type = physicalVolume
-    
+
     def __init__(self, parent, size=None, uuid=None, peSize=None, peCount=None, peFree=None, existing=0):
         """
             name   -- device node's basename
             peSize -- Physical extents size (in MB) Must be power of 2!
             existing -- indicates whether this is a existing device
-            
+
         Existing PV
-            
+
             size -- size of VG (in MB)
             uuid -- Physical Volume UUID
             peCount -- number of PE in this PV
             peFree -- number of free PE in this PV
         """
-        
+
         self._exists = existing
         self._parent = parent
         self._size = size
@@ -46,60 +46,60 @@ class PhysicalVolume(object):
         self._peSize = peSize
         self._peCount = peCount
         self._peFree = peFree
-    
+
         if self._peSize is None:
             self._peSize = 4
-    
+
     @property
     def type(self):
         return self._type
-    
+
     def create(self):
         if self.exists:
             raise PhysicalVolumeError("Physical Volume already exists!")
-        
+
         lvm.pvcreate(self.path)
         self._exists = True
-        
+
     def destory(self):
         if not self.exists:
             raise PhysicalVolumeError("Physical Volume doesnt exists!")
-        
+
         try:
             lvm.pvremove(self.path)
         except LVMError:
             raise PhysicalVolumeError("Couldnt destroy physical volume!")
         finally:
             self._exists = False
-            
+
     def setup(self):
         if self.exists:
             raise PhysicalVolumeError("Physical Volume already exists!")
-        
+
         if not self._parent.status:
             self._parent.setup()
-        
+
     def teardown(self):
         if not self.exists:
             raise PhysicalVolumeError("Physical Volume doesnt exists!")
-        
+
         if self._parent.status:
             self._parent.teardown()
-    
+
     @property
     def path(self):
         return self._parent.path
-    
+
     @property
     def exists(self):
         return self._exists
-    
+
     @property
     def status(self):
         if not self.exists:
             return False
         return os.access(self.path, os.W_OK)
-    
+
     @property
     def freeExtents(self):
         return self._peFree
@@ -152,9 +152,9 @@ class VolumeGroup(object):
 
         if self._peSize is None:
             self._peSize = 4 # MB units 
-        
+
         self._update()
-            
+
     def _update(self):
         lvs = lvm.lvlist(self.name)
         for lv in lvs:
@@ -164,7 +164,7 @@ class VolumeGroup(object):
     @property
     def type(self):
         return self._type
-    
+
     def create(self):
         if self.exists:
             raise VolumeGroupError("Device is already exist")

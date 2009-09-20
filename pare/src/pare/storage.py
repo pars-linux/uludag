@@ -30,7 +30,7 @@ class Storage(object):
 
     def __init__(self):
         self.populate()
-    
+
     def _vgs(self):
         """ VGs' Name dict to access VG"""
         vgs = {}
@@ -38,9 +38,9 @@ class Storage(object):
             if vg.name in vgs:
                 raise ValueError("Duplicate VG in Volume Groups")
             vgs[vg.name] = vg
-        
+
         return vgs
-     
+
     def populate(self):
         if sysblock.init_disks():
             for disk in sysblock.disks:
@@ -48,7 +48,7 @@ class Storage(object):
                     self._devices.append(disk)
                 else:
                     raise PareError("Filling Disk failed!")
-                
+
         if sysblock.init_vgs():
             print "LVM BULUNDU"
             for vg in sysblock.vgs:
@@ -61,33 +61,33 @@ class Storage(object):
     @property
     def disks(self):
         return [d for d in self._devices if d.type == parteddata.disk]
-    
+
     @property
     def volumeGroups(self):
         return [d for d in self._devices if d.type == parteddata.volumeGroup]
-    
+
     @property
     def logicalVolumes(self):
         lvs = []
         for vg in self.volumeGroups:
             lvs.extend(vg.lvs)
         return lvs
-    
+
     def physicalVolumes(self, disk):
         _physicalVolumes = []
-       
+
         for part in disk.partitions:
             if parteddata.physicalVolume == part.type:
                 print "disk.name %s part.name %s" % (disk.name,part.name)
                 _physicalVolumes.append(part)
-        
+
         return _physicalVolumes
-   
+
 
 
     def diskPartitions(self, disk):
         return disk.partitions
-    
+
     def getPartition(self, disk, num):
         for part in self.diskPartitions(disk):
             if part.minor == num:
@@ -138,7 +138,7 @@ class Storage(object):
     def deletePartition(self, pareDisk, parePartition):
         if not pareDisk.deletePartition(parePartition.partition):
             raise PareError("Partition delete failed!")
-        
+
         return True
 
     def deleteAllPartitions(self, pareDisk):
@@ -166,7 +166,7 @@ class Storage(object):
 
     def removeVG(self, vg):
         pass
-    
+
     def removeLV(self, lv):
         """
             logicalVolume -- LV' name
@@ -175,5 +175,5 @@ class Storage(object):
             raise ValueError("lv parameter must be type of lvmdevice.LogicalVolume")
         else:
             lv.destroy()
-        
-        
+
+
