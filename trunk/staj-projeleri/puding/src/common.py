@@ -31,6 +31,22 @@ def getDiskInfo(dst):
 def getIsoSize(src):
     return os.stat(src).st_size
 
+def getFilesSize(src):
+    all_files = []
+    all_files.extend(glob.glob("%s/repo/*" % src))
+    boot_files = glob.glob("%s/boot/*" % src)
+    for file in boot_files:
+        if os.path.isfile(file):
+            all_files.append(file)
+    all_files.append("%s/pardus.img" % src)
+    total_size = 0
+
+    for file in all_files:
+        size = os.stat(file).st_size
+        total_size = total_size + size # LOL!
+
+    return total_size
+
 def verifyIsoChecksum(src):
     import hashlib
 
