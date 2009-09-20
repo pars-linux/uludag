@@ -42,7 +42,6 @@ class Disk:
     """A disk."""
 
     _type = disk
-    
     # @param device_path: Device node (eg. /dev/hda, /dev/sda)
     # @param arch: Architecture that we're partition for (defaults to 'x86')
     def __init__(self, path, arch="x86"):
@@ -107,21 +106,20 @@ class Disk:
         elif part.type & parted.PARTITION_FREESPACE and size >= 10:
             return FreeSpace(self, part, size, geom.start, geom.end)
             #print "FreeSpace disk %s partition.name:%s" % (disk.path, part.name)
-    
+
     def _addPartition(self, part):
         self._partitions.append(self._getParePartition(part))
-    
+
     def _update(self):
         self._partitions = []
         for part in self.getAllPartitions():
                 #print "part.path name:%s" % part.path
                 self._addPartition(part)
-
     @property
     def partitions(self):
         #print "disk %s len(self._partitions)=%d" % (self.path,len(self._partitions))
         return self._partitions
-    
+
     ##
     # do we have room for another primary partition?
     # @returns: boolean
@@ -290,9 +288,9 @@ class Disk:
             return self._disk.addPartition(part, constraint)
         except parted.error, e:
             raise DeviceError, e
-        
+
         self._update()
-        
+
         return True
 
     ##
