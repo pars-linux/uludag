@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 15:50+0300\n"
-"PO-Revision-Date: 2009-08-30 07:11-0400\n"
+"PO-Revision-Date: 2009-09-20 06:39-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -615,7 +615,7 @@ msgstr "Repositorio:"
 #: .tmp/packagedelegate.py:148
 # i shortened this, it does not fit otherwise
 msgid "Package Size:"
-msgstr "Tamaño:"
+msgstr "Descarga:"
 
 #: .tmp/mainwidget.py:226
 msgid "Select all packages in this group"
