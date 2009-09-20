@@ -344,35 +344,35 @@ def lvlist(vg_name):
     lvs = []
     args = ["lvs", "--noheadings",
             "--nosuffix", "--options", "vg_name,lv_name"]
-    
+
     info = {}
     lines = None
     lines = _lvmcapture(args).strip().split("\n")
     print lines
     for line in lines:
         buffer = line.split()
-        
+
         print "len(buffer) %d" % len(buffer)
         (info['vg_name'], info['lv_name']) = buffer 
         #print "vg:%s lv:%s" % (info['vg_name'],info['lv_name'])
         if vg_name == info['vg_name']:
             lvs.append(info['lv_name'])
-    
+
     return lvs
 
 def pvlist():
     pvs = []
-    
+
     args = ["pvdisplay", "-C", "--noheadings", "--units", "m", "--nosuffix", "--options", "pv_name,vg_name,dev_size"]
-        
+
     lines = _lvmcapture(args).strip().split("\n")
     for line in lines:
         buffer = line.split()
-        
+
         (dev, vg, size) = buffer
-         
+
         pvs.append((dev, vg, size))
-        
+
     return pvs
 
 def vglist():
@@ -380,12 +380,12 @@ def vglist():
     args = ["vgdisplay", "--noheadings", "--units", "m",
             "--nosuffix", "--options",
             "vg_name,vg_size,vg_extent_size,vg_free"]
-    
+
     lines = _lvmcapture(args).strip().split("\n")
     for line in lines:
         buffer = line.split()
-        
+
         (vg, size, pesize, free) = line
         vgs.append((vg, size, pesize, free))
-    
+
     return vgs

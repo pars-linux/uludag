@@ -160,7 +160,7 @@ def deactivate(device):
 
     if return_code:
         raise MDRaidError("raid.deactivate failed for %s" % device)
-    
+
 def examine(device):
     # XXX NOTUSED: we grab metadata from udev, which ran 'mdadm -E --export'
     #
