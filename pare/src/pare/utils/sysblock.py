@@ -34,7 +34,6 @@ def _comp(x, y):
 # initialize all devices and fill devices list
 def init_disks(force = False):
     global disks
-      
     if disks and not force:
         return True
 
@@ -46,7 +45,7 @@ def init_disks(force = False):
         disks.append(d)
 
     disks.sort(_comp,reverse=True)
-    
+
     if disks:
         return True
 
@@ -54,10 +53,10 @@ def init_disks(force = False):
 
 def init_vgs():
     global vgs
-    
+
     clear_vgs()
-    
-    
+
+
     volumegroups = detect_vgs()
     if len(volumegroups) > 0:
         for vg in volumegroups:
@@ -65,14 +64,14 @@ def init_vgs():
             if info:
                 volumegroup = VolumeGroup(name=info['name'], size=info['size'], uuid=info['uuid'], maxPV=info['max_pv'], pvCount=info['pv_count'], peSize=info['vg_extent_size'], peCount=info['vg_extent_count'], peFree=info['vg_free_count'], freespace=info['vg_free'], maxLV= info['max_lv'], existing=1)
                 vgs.append(volumegroup)
-    
+
     vgs.sort(_comp, reverse=True)
-    
+
     if vgs:
         return True
-    
+
     return False
-    
+
 def clearAll():
     clear_disks()
     clear_lvs()
@@ -130,7 +129,7 @@ def detect_procPartitions():
 def detect_disks():
 
     partitions = detect_procPartitions()
-    
+
     _devices = []
     # Scan sysfs for the device types.
     #FIXME:Developer PreventeR:Added glob.glob("/sys/block/sda*") for unhandled parition table destroy test later it will erased
@@ -158,12 +157,12 @@ def _lvmNameParser(name):
     lvm = tmp.split("-")
     vg = lvm[0].replace(".", "-")
     lv = lvm[1].replace(".", "-")
-    
+
     return (vg,lv)
-    
+
 def detect_vgs():
     partitions = detect_procPartitions()
-    
+
     _vgs = []
     blacklistDEVS = glob.glob("/sys/block/ram*") + glob.glob("/sys/block/loop*") + glob.glob("/sys/block/sd*")
     sysfs = set(glob.glob("/sys/block/*")) - set(blacklistDEVS)
@@ -184,6 +183,6 @@ def detect_vgs():
                     continue
                 _vgs.append(vg)
                 #_lvm.append((_lvmNameParser(name)[0],_lvmNameParser(name)[1], uuid))
-    
+
     return _vgs
-        
+
