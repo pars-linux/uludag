@@ -6,6 +6,8 @@ REQUIREMENTS
   python >= 2.5
   syslinux > 3.82.1
   mtools
+  fuseiso
+  fuse
 
 INSTALLATION
   Now, puic is not stable and still it has not any graphical

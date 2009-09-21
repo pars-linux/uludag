@@ -89,19 +89,27 @@ def copyPisiPackage(file, dst, pisi):
     return pisi
 
 def createConfigFile(dst):
-    syslinux_conf_file = '%s/syslinux.cfg.pardus' % SHARE
+    conf_dir = "%s/boot/syslinux" % dst
+    conf_files = ["%s/gfxboot.com" % SYSLINUX, "%s/hdt.c32" % SYSLINUX]
+    conf_files.extend(glob.glob("%s/gfxtheme/*" % SHARE))
 
-    shutil.copy('%s/gfxboot.com' % SYSLINUX,
-                '%s/boot/syslinux/gfxboot.com' % dst)
-
-    shutil.copy('%s/hdt.c32' % SYSLINUX,
-                '%s/boot/syslinux/hdt.c32' % dst)
-
-    for file in glob.glob('%s/gfxtheme/*' % SHARE):
+    for file in conf_files:
         file_name = os.path.split(file)[1]
-        shutil.copy(file, '%s/boot/syslinux/%s' % (dst, file_name))
+        if not os.path.exists("%s/%s" % (conf_dir, file_name)):
+            shutil.copy(file, "%s/%s" % (conf_dir, file_name))
 
-    shutil.copy(syslinux_conf_file, '%s/boot/syslinux/syslinux.cfg' % dst)
+    syslinux_conf_file = "%s/syslinux.cfg" % conf_dir
+    if not os.path.exists(syslinux_conf_file):
+        shutil.copy("%s/syslinux.cfg.pardus" % SHARE, syslinux_conf_file)
+
+def createSyslinux(dst):
+    sys_file = "%s/ldlinux.sys" % dst
+    if os.path.exists(sys_file):
+        os.remove(sys_file)
+
+    cmd = "LC_ALL=C syslinux %s" % getMounted(dst)
+
+    return runCommand(cmd)
 
 def getMounted(disk_path):
     parts = {}
