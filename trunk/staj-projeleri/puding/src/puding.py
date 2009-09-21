@@ -61,7 +61,7 @@ class Options:
                 except:
                     destination = None
 
-                ui_cmd.Create(source, destination)
+                uiCmd.Create(source, destination)
 
             except IndexError:
                 print(_("Invalid usage. Example:"))

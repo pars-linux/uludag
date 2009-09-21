@@ -10,9 +10,14 @@ import sys
 import shutil
 import subprocess
 
-from common import (_, runCommand, copyPisiPackage, \
-                    createConfigFile, createUSBDirs, \
-                    verifyIsoChecksum, getMounted)
+from common import (_, \
+                    runCommand, \
+                    copyPisiPackage, \
+                    createConfigFile, \
+                    createSyslinux, \
+                    createUSBDirs, \
+                    verifyIsoChecksum, \
+                    getMounted)
 from common import PartitionUtils
 from constants import (HOME, MOUNT_ISO, MOUNT_USB, NAME, SHARE)
 
@@ -206,10 +211,18 @@ USB disk informations:
 
     def __createImage(self, src, dst):
         self.utils.cprint("Mounting %s.." % src, "green")
-
         cmd = "fuseiso %s %s" % (src, MOUNT_ISO)
         if runCommand(cmd):
             self.utils.cprint("Could not mounted CD image.", "red")
+
+            return False
+
+        self.utils.cprint("Copying syslinux files..", "yellow")
+        createConfigFile(dst)
+
+        self.utils.cprint("Creating ldlinux.sys..", "yellow")
+        if createSyslinux(dst):
+            self.utils.cprint("Could not create, ldlinux.sys.", "red")
 
             return False
 
@@ -220,23 +233,6 @@ USB disk informations:
 
         if runCommand(cmd):
             self.utils.cprint("Could not unmounted CD image.", "red")
-
-            return False
-
-        self.utils.cprint("Copying syslinux files..", "yellow")
-        try:
-            createConfigFile(dst)
-
-        except:
-            # Files are already exists..
-            pass
-
-        self.utils.cprint("Creating ldlinux.sys..", "yellow")
-        # Shit! There's upstream bug on mtools..
-        cmd = "LC_ALL=C syslinux %s" % getMounted(dst)
-
-        if runCommand(cmd):
-            self.utils.cprint("Could not create, ldlinux.sys.", "red")
 
             return False
 
