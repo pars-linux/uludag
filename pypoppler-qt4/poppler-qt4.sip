@@ -176,6 +176,10 @@ class Document {
                   const QByteArray &ownerPassword=QByteArray(),
                   const QByteArray &userPassword=QByteArray());
 
+    static Poppler::Document *loadFromData(const QByteArray & fileContents,
+                    const QByteArray &ownerPassword=QByteArray(),
+                    const QByteArray &userPassword=QByteArray());
+
 
     Poppler::Page *page(int index) const;
 
