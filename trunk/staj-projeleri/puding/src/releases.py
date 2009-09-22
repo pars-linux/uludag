@@ -12,4 +12,8 @@ releases = (
         { "name" : "Pardus 2009 International",
           "url"  : "ftp://ftp.pardus.org.tr/pub/pardus/kurulan/2009/Pardus_2009_International.iso",
           "md5"  : "c678272118c3ac3e1df7e24f8d782e44" },
+
+        { "name" : "Pardus 2008.2",
+          "url"  : "ftp://ftp.pardus.org.tr/pub/pardus/kurulan/2008.2/Pardus-2008.2-Canis-aureus.iso",
+          "md5"  : "a287d9435eee314a55fdf94db9a86e35" },
           )
