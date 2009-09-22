@@ -10,16 +10,68 @@ import sys
 import shutil
 import subprocess
 
-from common import (_, \
-                    runCommand, \
-                    copyPisiPackage, \
-                    createConfigFile, \
-                    createSyslinux, \
-                    createUSBDirs, \
-                    verifyIsoChecksum, \
-                    getMounted)
+from common import _
+from common import runCommand
+from common import copyPisiPackage
+from common import createConfigFile
+from common import createSyslinux
+from common import createUSBDirs
+from common import getIsoSize
+from common import getMounted
 from common import PartitionUtils
-from constants import (HOME, MOUNT_ISO, MOUNT_USB, NAME, SHARE)
+
+from constants import HOME
+from constants import MOUNT_ISO
+from constants import MOUNT_USB
+from constants import NAME
+from constants import SHARE
+
+from releases import releases
+
+class ProgressBar:
+    def __init__(self, src):
+        self.wheel = ("\\", "|", "/", "-")
+        self.tour = 52 - 2
+        iso_size = getIsoSize(src)
+        self.bytes = iso_size / 50
+
+    def fWheel(self, wheel, digit):
+        return wheel[digit%4]
+
+    def fSpaces(self, tour, digit):
+        return "[" + digit * "=" + (tour - digit - 1) * " " + "]"
+
+    def fProgressbar(self, wheel, tour, digit):
+        sys.stdout.write("\r%s\t%s " % (self.fSpaces(tour, digit),
+                         self.fWheel(wheel, digit)))
+        sys.stdout.flush()
+
+    # FIX ME: This function should be src/common.py
+    def verifyIsoChecksum(self, src):
+        import hashlib
+
+        checksum = hashlib.md5()
+        isofile = file(src, "rb")
+        bytes = self.bytes
+        total = 0
+
+        while bytes:
+            data = isofile.read(bytes)
+            checksum.update(data)
+            bytes = len(data)
+            total += bytes
+            digit  = total / self.bytes
+            self.fProgressbar(self.wheel, self.tour, digit)
+
+        print("\b\bFinished.")
+
+        src_md5 = checksum.hexdigest()
+
+        for release in releases:
+            if src_md5 in release['md5']:
+                return release['name'], release['md5'], release['url']
+
+        return False
 
 class Utils:
     def colorize(self, output, color):
@@ -56,6 +108,7 @@ class Utils:
 class Create:
     def __init__(self, src, dst):
         self.utils = Utils()
+        self.progressbar = ProgressBar(src)
 
         if dst == None:
             self.partutils = PartitionUtils()
@@ -96,10 +149,10 @@ class Create:
                     return False
 
                 else:
-                    self.utils.cprint("Calculating checksum..", "red")
+                    self.utils.cprint("Calculating checksum..")
                     # If checksum wrong, it returns False.
                     try:
-                        (name, md5, url) = verifyIsoChecksum(src)
+                        (name, md5, url) = self.progressbar.verifyIsoChecksum(src)
 
                     # FIX ME: Bad Code..
                     except TypeError:
