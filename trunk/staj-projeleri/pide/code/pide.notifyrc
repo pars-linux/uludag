@@ -1,23 +1,15 @@
 [Global]
+IconName=pide
 Name=Pide
 Name[tr]=Pide
-Name[sv]=Pakethanteraren
-Name[fr]=Gestionnaire de paquets
-Name[nl]=Pakketbeheer
-Comment=Package Manager
-Comment[tr]=Paket Yöneticisi
-Comment[sv]=Pakethanteraren
-Comment[fr]=Gestionnaire de paquets
-Comment[nl]=Pakketbeheer
+Comment=Pide
+Comment[tr]=Pide
 
-[Event/Receive]
-Name=File Received
-Comment=Software updates are available
-Name[sv]=Programuppdateringar
-Comment[sv]=Det finns tillgängliga programuppdateringar
-Name[fr]=Mises-à-jour de programmes
-Comment[fr]=Des mises-à-jour de programmes sont disponibles
-Name[nl]=Software-opwaarderingen
-Comment[nl]=Software-opwaarderingen zijn beschikbaar
+[Event/Request]
+Name=File Send Request
+Comment=File Send Request
+Name[tr]=Dosya Gönderme İsteği
+Comment[tr]=Dosya Gönderme İsteği
 Action=Popup
+
 

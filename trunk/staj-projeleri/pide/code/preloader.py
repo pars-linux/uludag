@@ -8,9 +8,9 @@
 import sys
 from PyQt4 import QtGui
 from PyQt4 import QtCore
-from ui_progressbar import Ui_MainWindow
+from ui_progressbar import Ui_Dialog
 
-class ProgressBar(QtGui.QWidget, Ui_MainWindow):
+class ProgressBar(QtGui.QWidget, Ui_Dialog):
     def __init__(self, fileSize, transferSize):
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
