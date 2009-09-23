@@ -6,18 +6,20 @@ from threading import *
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 from PyQt4 import QtGui
-from PyQt4.QtCore import *
 from PyQt4.QtGui import QApplication
 from about import aboutData
+from PyQt4.QtCore import *
 
 
-class StreamHandler ( Thread ):
 
-    def __init__( self ):
-        Thread.__init__( self )
+class StreamHandler (QThread):
+
+    def __init__(self):
+        QThread.__init__(self)
         self.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.dataSock.bind(('', 9091))
         KCmdLineArgs.init(sys.argv, aboutData)
+
 
     def run(self):
         self.process()
@@ -26,7 +28,6 @@ class StreamHandler ( Thread ):
         print '[Control] Listening on port 9091...'
 
         self.dataSock.listen(1)
-
         self.dataConn, self.dataAddr = self.dataSock.accept()
         print '[Control] Got connection from', self.dataAddr
 
@@ -39,16 +40,16 @@ class StreamHandler ( Thread ):
         if self.dataConn:
             self.notification = KNotification("Updates")
             self.notification.setText(i18n("<b> %s </b> size <b> %s </b> göndermek istiyor!" % (self.senderName(self.dataAddr), self.filename)))
-            self.notification.setActions(QStringList((i18n("Kabul Et"), i18n("Yoksay"))))
+            self.notification.setActions(QStringList((i18n("Accept"), i18n("Reject"))))
             self.notification.setFlags(KNotification.Persistent)
             self.notification.setComponentData(KComponentData("package-manager","package-manager"))
-            #self.connect(self.notification, SIGNAL("action1Activated()"), self.receiverAccepted)
+            self.connect(self.notification, SIGNAL("action1Activated()"), self.receiverAccepted)
             self.notification.sendEvent()
 
-    def receiverAccepted( self ):
+    def receiverAccepted(self):
         print "Accepted!"
-        self.sendInfo()
-        self.transfer()
+        #self.sendInfo()
+        #self.transfer()
 
     def receiverDenied( self ):
         print "Denied!"
