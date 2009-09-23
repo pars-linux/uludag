@@ -13,15 +13,13 @@
 
 import comar
 
-class NetworkIface:
-    """ Network Interface """
+class Interface:
 
     def __init__(self):
         self.link = comar.Link()
         self.link.setLocale()
         self.link.useAgent()
         self.waitFunctions = []
-        #self.link.listenSignals("Network.Link", self.postProcessor)
 
     def adslstop(self):
         return self.link.Network.Link['usbmodem_tools'].adslStop()
