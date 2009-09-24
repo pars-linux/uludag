@@ -98,9 +98,6 @@ class Install(install):
             except OSError:
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % about.catalog))
-        # Rename
-        #print "Renaming application.py..."
-        #shutil.move(os.path.join(project_dir, "application.py"), os.path.join(project_dir, "%s.py" % about.appName))
         # Modes
         print "Changing file modes..."
         os.chmod(os.path.join(project_dir, "%s.py" % about.appName), 0755)
