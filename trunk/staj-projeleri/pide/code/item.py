@@ -31,7 +31,7 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
 
         self.setTitle(name)
         self.setDescription(address)
-        self.connect(self.sendButton, QtCore.SIGNAL("clicked()"), self.showDialog)
+        self.connect(self.sendButton, QtCore.SIGNAL("clicked()"), self.connectReceiver)
 
     def setTitle(self, title):
         self.labelTitle.setText(unicode(title))
@@ -39,16 +39,12 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
     def setDescription(self, description):
         self.labelDescription.setText(unicode(description))
 
-    def showDialog(self):
-        file = QtGui.QFileDialog.getOpenFileName(self, 'Open file', '/home')
-        if file:
-            self.connectReceiver(self.getAddress())
+    def connectReceiver(self):
+        filename = QtGui.QFileDialog.getOpenFileName(self, 'Open file', '/home')
+        if filename:
+            self.instance = FileSender(filename, address)
+            self.instance.start()
 
     def getAddress(self):
         return unicode(self.labelDescription.text())
-
-    def connectReceiver(self, address):
-        self.instance = FileSender(filename, address)
-        self.instance.start()
-
 

@@ -45,8 +45,6 @@ class StreamHandler (QThread):
 
     def receiverAccepted(self):
         print "Accepted!"
-        #self.sendInfo()
-        #self.transfer()
 
     def receiverDenied( self ):
         print "Denied!"
@@ -63,21 +61,3 @@ class StreamHandler (QThread):
 
     def senderName( self , addr):
         return addr[0]
-
-    def transfer():
-        f = open(self.filename,"wb")
-        while 1:
-            data = self.dataConn.recv(1024)
-            if not data: break
-            f.write(data)
-        f.close()
-
-        print '[Media] Got "%s"' % self.filename
-        print '[Media] Closing media transfer for "%s"' % self.filename
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    instance = StreamHandler()
-    #instance.connect(instance, SIGNAL("requestReceived()"), lambda:initiate(instance))
-    instance.start()
-    app.exec_()
