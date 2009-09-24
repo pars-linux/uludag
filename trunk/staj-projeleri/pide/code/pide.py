@@ -1,8 +1,9 @@
 #!/usr/bin/python
 # System
-import sys
+import socket, time, string, sys, urlparse
 
 # PyQt
+from PyQt4.QtCore import *
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 
@@ -81,12 +82,28 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         return first
 
 
+    def test(self):
+        print "hobaaa!"
+
+    def initiate(self, instance):
+        QObject.connect(instance.notification, SIGNAL("action1Activated()"), self.test)
+        instance.notification.sendEvent()
+
+
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
 
+    instance = StreamHandler()
+    instance.start()
+
     DBusQtMainLoop(set_as_default=True)
+
     # Create Main Widget
     main = MainWidget()
+
+    instance.connect(instance, SIGNAL("requestReceived()"), lambda:main.initiate(instance))
+
+    # Show Application
     main.show()
 
     # Run the application
