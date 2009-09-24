@@ -43,7 +43,7 @@ def convertToPy(file_list):
     for i in file_list:
         file_name = os.path.split(i)[1]
         if os.path.splitext(i)[1] == ".qrc":
-            os.system("/usr/bin/pyrcc4 %s -o puding/%s" % (i, file_name.replace(".qrc", "Rc.py")))
+            os.system("/usr/bin/pyrcc4 %s -o puding/%s" % (i, file_name.replace(".qrc", "_rc.py")))
 
         if os.path.splitext(i)[1] == ".ui":
             # FIX ME: It should go to true directory.
@@ -57,6 +57,7 @@ os.remove("%s.py" % script)
 
 # Convert Qt files
 qt_files = ["data/icons.qrc"]
+qt_files.extend(glob.glob("data/ui/qt*.ui"))
 convertToPy(qt_files)
 
 #LANGS = ["tr"]
@@ -82,8 +83,8 @@ data = [
     ("share/doc/%s" % NAME, ["AUTHORS", "ChangeLog", "COPYING", "NOTES", "README"]),
     ("share/%s" % NAME, glob.glob("data/syslinux.cfg.*")),
     ("share/pixmaps", ["data/images/puding.png"]),
-    ("share/%s/gfxtheme" % NAME, glob.glob("data/gfxtheme/*")),
-    ("share/%s/ui" % NAME, glob.glob("data/ui/*"))]
+    ("share/%s/gfxtheme" % NAME, glob.glob("data/gfxtheme/*"))]
+#    ("share/%s/ui" % NAME, glob.glob("data/ui/*"))]
 #    ("share/%s/ui" % NAME, glob.glob("data/ui/*")),
 #    locale("tr")]
 
