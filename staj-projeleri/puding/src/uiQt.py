@@ -23,21 +23,22 @@ from common import PartitionUtils
 
 from constants import DESCRIPTION
 
-from puding import iconsRc
+from puding import qtMain
+from puding import qtProgressBar
+from puding import qtSelectDisk
 
 from PyQt4 import QtCore
 from PyQt4 import QtGui
-from PyQt4 import uic
 
 from releases import releases
 
 # General variables
 increment_value = 1024**2
 
-class Create(QtGui.QMainWindow):
+class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
     def __init__(self, parent = None):
         super(Create, self).__init__(parent)
-        uic.loadUi("%s/ui/qtMain.ui" % SHARE, self)
+        self.setupUi(self)
 
         self.connect(self.button_quit, QtCore.SIGNAL("clicked()"), QtCore.SLOT("close()"))
         self.connect(self.actionQuit, QtCore.SIGNAL("triggered()"), QtCore.SLOT("close()"))
@@ -179,7 +180,7 @@ you have downloaded the source correctly.""")
 
         return True
 
-class SelectDisk(QtGui.QDialog):
+class SelectDisk(QtGui.QDialog, qtSelectDisk.Ui_Dialog):
     def __init__(self, parent = None):
         self.partutils = PartitionUtils()
         self.partutils.detectRemovableDrives()
@@ -188,7 +189,7 @@ class SelectDisk(QtGui.QDialog):
         #print(self.drives)
 
         super(SelectDisk, self).__init__(parent)
-        uic.loadUi("%s/ui/qtSelectDisk.ui" % SHARE, self)
+        self.setupUi(self)
 
         for drive in self.drives:
             self.listWidget.addItem(self.drives[drive]["label"])
@@ -208,10 +209,10 @@ class SelectDisk(QtGui.QDialog):
 
         return self.line_directory.displayText()
 
-class ProgressBar(QtGui.QDialog):
+class ProgressBar(QtGui.QDialog, qtProgressBar.Ui_Dialog):
     def __init__(self, title, message, max_value, parent = None):
         super(ProgressBar, self).__init__(parent)
-        uic.loadUi("%s/ui/qtProgressBar.ui" % SHARE, self)
+        self.setupUi(self)
 
         self.setWindowTitle(title)
         self.label.setText(message)

@@ -13,7 +13,7 @@ import subprocess
 
 from constants import HOME
 from constants import MOUNT_ISO
-from constants import MOUN_USB
+from constants import MOUNT_USB
 from constants import NAME
 from constants import LOCALE
 from constants import SHARE
