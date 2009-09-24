@@ -20,8 +20,8 @@
    <string>Puding</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="qtMain.qrc">
-    <normaloff>:/logo/puding.png</normaloff>:/logo/puding.png</iconset>
+   <iconset resource="../icons.qrc">
+    <normaloff>:/icons/images/puding.png</normaloff>:/icons/images/puding.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -161,8 +161,8 @@
   </action>
   <action name="actionAbout">
    <property name="icon">
-    <iconset resource="qtMain.qrc">
-     <normaloff>:/logo/puding.png</normaloff>:/logo/puding.png</iconset>
+    <iconset resource="../icons.qrc">
+     <normaloff>:/icons/images/puding.png</normaloff>:/icons/images/puding.png</iconset>
    </property>
    <property name="text">
     <string>About</string>
@@ -170,7 +170,7 @@
   </action>
  </widget>
  <resources>
-  <include location="qtMain.qrc"/>
+  <include location="../icons.qrc"/>
  </resources>
  <connections/>
 </ui>

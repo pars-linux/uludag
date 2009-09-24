@@ -21,9 +21,17 @@ import getopt
 import os
 import sys
 
-from optparse import (OptionParser, OptionGroup)
-from puding.common import (_, createDirs)
-from puding.constants import (HOME, LICENSE, NAME, USAGE, VERSION)
+from optparse import OptionParser
+from optparse import OptionGroup
+
+from puding.common import _
+from puding.common import createDirs
+
+from puding.constants import HOME
+from puding.constants import LICENSE
+from puding.constants import NAME
+from puding.constants import USAGE
+from puding.constants import VERSION
 
 class Options:
     def parseArgs(self, parser):
