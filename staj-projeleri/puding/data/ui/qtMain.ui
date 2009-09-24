@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>439</width>
-    <height>221</height>
+    <height>184</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -105,6 +105,13 @@
      </spacer>
     </item>
     <item>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <spacer name="horizontalSpacer">
@@ -120,17 +127,6 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="button_quit">
-        <property name="text">
-         <string>&amp;Quit</string>
-        </property>
-        <property name="icon">
-         <iconset resource="../icons.qrc">
-          <normaloff>:/icons/images/exit.png</normaloff>:/icons/images/exit.png</iconset>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QPushButton" name="button_create">
         <property name="text">
          <string>&amp;Create</string>
@@ -138,6 +134,17 @@
         <property name="icon">
          <iconset resource="../icons.qrc">
           <normaloff>:/icons/images/create.png</normaloff>:/icons/images/create.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="button_quit">
+        <property name="text">
+         <string>&amp;Quit</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../icons.qrc">
+          <normaloff>:/icons/images/exit.png</normaloff>:/icons/images/exit.png</iconset>
         </property>
        </widget>
       </item>
@@ -151,7 +158,7 @@
      <x>0</x>
      <y>0</y>
      <width>439</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -169,7 +176,6 @@
    <addaction name="menuFile"/>
    <addaction name="menu_Help"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionQuit">
    <property name="icon">
     <iconset resource="../icons.qrc">
