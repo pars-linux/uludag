@@ -15,13 +15,14 @@ MOUNT_USB = "%s/usb_mount_dir" % HOME
 SHARE = "/usr/share/%s" % NAME
 SYSLINUX = "/usr/lib/syslinux"
 URL = "http://www.gokmengorgen.net/puding"
-LICENSE_NAME = "GPLv3"
 CORE_DEVELOPER = "Gökmen Görgen"
 CORE_EMAIL = "gkmngrgn@gmail.com"
 SUMMARY = "An USB Image Creator For Pardus Linux."
 DESCRIPTION = "Puding is an USB image creator for Pardus Linux."
-COPYRIGHT = u"Copyright (c) 2009 Gökmen Görgen, <%s>" % CORE_EMAIL
+YEAR = "2009"
+COPYRIGHT = u"Copyright (c) %s TUBITAK / UEKAE" % YEAR
 USAGE = "%s\n%s\n\nUsage: %s [options]" % (DESCRIPTION, COPYRIGHT, NAME)
+LICENSE_NAME = "GPLv3"
 LICENSE = """%s
 
 Puding is a free software; you can redistribute it and/or modify

@@ -82,10 +82,9 @@ convertToPy(qt_files)
 data = [
     ("share/doc/%s" % NAME, ["AUTHORS", "ChangeLog", "COPYING", "NOTES", "README"]),
     ("share/%s" % NAME, glob.glob("data/syslinux.cfg.*")),
-    ("share/pixmaps", ["data/images/puding.png"]),
+    ("share/pixmaps", ["data/images/%s.png" % NAME]),
+    ("share/applications", ["data/%s.desktop" % NAME]),
     ("share/%s/gfxtheme" % NAME, glob.glob("data/gfxtheme/*"))]
-#    ("share/%s/ui" % NAME, glob.glob("data/ui/*"))]
-#    ("share/%s/ui" % NAME, glob.glob("data/ui/*")),
 #    locale("tr")]
 
 setup(
