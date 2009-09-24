@@ -10,8 +10,6 @@ from PyQt4.QtGui import QApplication
 from about import aboutData
 from PyQt4.QtCore import *
 
-
-
 class StreamHandler (QThread):
 
     def __init__(self):
@@ -20,6 +18,10 @@ class StreamHandler (QThread):
         self.dataSock.bind(('', 9091))
         KCmdLineArgs.init(sys.argv, aboutData)
 
+        self.notification = KNotification("Request")
+        self.notification.setActions(QStringList((i18n("Accept"), i18n("Reject"))))
+        self.notification.setFlags(KNotification.Persistent)
+        self.notification.setComponentData(KComponentData("pide","pide"))
 
     def run(self):
         self.process()
@@ -38,13 +40,8 @@ class StreamHandler (QThread):
 
     def checkrequest ( self ):
         if self.dataConn:
-            self.notification = KNotification("Updates")
             self.notification.setText(i18n("<b> %s </b> size <b> %s </b> göndermek istiyor!" % (self.senderName(self.dataAddr), self.filename)))
-            self.notification.setActions(QStringList((i18n("Accept"), i18n("Reject"))))
-            self.notification.setFlags(KNotification.Persistent)
-            self.notification.setComponentData(KComponentData("package-manager","package-manager"))
-            self.connect(self.notification, SIGNAL("action1Activated()"), self.receiverAccepted)
-            self.notification.sendEvent()
+            self.emit(SIGNAL("requestReceived()"))
 
     def receiverAccepted(self):
         print "Accepted!"
@@ -59,19 +56,6 @@ class StreamHandler (QThread):
         self.senderSock.connect((self.dataAddr[0], 9091))
         self.senderSock.send(self.requestCheck)
 
-    def transfer( self ):
-        f = open(self.filename,"wb")
-        self.KdeN.Notify(self.filename, self.dataAddr, "Dosya karşı taraftan alınıyor...")
-        while 1:
-            data = self.dataConn.recv(1024)
-            if not data: break
-            f.write(data)
-        f.close()
-        self.KdeN.Notify(self.filename, self.dataAddr, "Dosya karşı taraftan başarıyla alındı.")
-
-        print '[Media] Got "%s"' % self.filename
-        print '[Media] Closing media transfer for "%s"' % self.filename
-
     def process( self ):
         while 1:
             self.bindcsock()
@@ -80,8 +64,20 @@ class StreamHandler (QThread):
     def senderName( self , addr):
         return addr[0]
 
+    def transfer():
+        f = open(self.filename,"wb")
+        while 1:
+            data = self.dataConn.recv(1024)
+            if not data: break
+            f.write(data)
+        f.close()
+
+        print '[Media] Got "%s"' % self.filename
+        print '[Media] Closing media transfer for "%s"' % self.filename
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    instance = StreamHandler() 
+    instance = StreamHandler()
+    #instance.connect(instance, SIGNAL("requestReceived()"), lambda:initiate(instance))
     instance.start()
     app.exec_()
