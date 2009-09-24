@@ -21,7 +21,14 @@ from common import createUSBDirs
 from common import runCommand
 from common import PartitionUtils
 
+from constants import COPYRIGHT
+from constants import CORE_DEVELOPER
+from constants import CORE_EMAIL
 from constants import DESCRIPTION
+from constants import LICENSE_NAME
+from constants import NAME
+from constants import VERSION
+from constants import URL
 
 from puding import qtMain
 from puding import qtProgressBar
@@ -63,7 +70,14 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
 
     @QtCore.pyqtSignature("bool")
     def on_actionAbout_triggered(self):
-         QtGui.QMessageBox.about(self, "About Puding", DESCRIPTION)
+         QtGui.QMessageBox.about(self, "About Puding", """\
+<b>%s</b> - %s<br />
+%s<br /><br />
+%s<br />
+%s<br />
+%s, <i>%s</i><br />
+<a href="%s">%s</a>""" % (NAME, VERSION, DESCRIPTION, LICENSE_NAME, \
+                          COPYRIGHT, CORE_DEVELOPER, CORE_EMAIL, URL, URL))
 
     @QtCore.pyqtSignature("bool")
     def on_button_create_clicked(self):
@@ -73,6 +87,8 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
         if not self.__checkDestination(dst):
             self.warningDialog("Directory is Invalid", "Please check the USB disk path.")
 
+            return False
+
         try:
             confirm_infos = self.confirmDialog(src, dst)
 
@@ -80,9 +96,10 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
                 createUSBDirs(dst)
                 self.__createImage(src, dst)
 
+            return True
+
         except TypeError: # 'bool' object is not iterable
-            # FIX ME: what is pass?
-            pass
+            return False
 
     def confirmDialog(self, src, dst):
         (name, md5, url) = self.__getSourceInfo(src)
@@ -127,7 +144,6 @@ Download URL: %s""" % (src, dst, "NULL", name, md5, url)
                                 message = "The checksum of the source is checking now...",
                                 max_value = iso_size_progress)
         pi = ProgressIncrementChecksum(check_iso, src)
-        pi.start()
 
         # FIX ME: Why is it in here?
         def closeDialog():
@@ -137,6 +153,7 @@ Download URL: %s""" % (src, dst, "NULL", name, md5, url)
         QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgress()"), check_iso.incrementProgress)
         QtCore.QObject.connect(pi, QtCore.SIGNAL("closeProgressDialog()"), closeDialog)
 
+        pi.start()
         check_iso.exec_()
 
         if not pi.checksum():
@@ -165,17 +182,17 @@ you have downloaded the source correctly.""")
         create_image = ProgressBar(title = "Creating Image",
                                 message = "Creating image..",
                                 max_value = getFilesSize(MOUNT_ISO))
-
         pi = ProgressIncrementCopy(create_image, MOUNT_ISO, dst)
-        pi.start()
 
         def closeDialog():
             pi.quit()
             create_image.close()
 
         QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgress()"), pi.incrementProgress)
-        #QtCore.QObject.connect(pi, QtCore.SIGNAL("closeProgressDialog()"), closeDialog)
+        QtCore.QObject.connect(pi, QtCore.SIGNAL("updateLabel"), pi.updateLabel)
+        QtCore.QObject.connect(pi, QtCore.SIGNAL("closeProgressDialog()"), closeDialog)
 
+        pi.start()
         create_image.exec_()
 
         return True
@@ -263,14 +280,16 @@ class ProgressIncrementCopy(QtCore.QThread):
         QtCore.QThread.__init__(self)
 
         self.progressBar = dialog.progressBar
+        self.label = dialog.label
         self.src = source
         self.dst = destination
-
-        self.progressBar.setValue(0)
         self.completed = 0
+        self.progressBar.setValue(0)
 
     def run(self):
         # Create config file
+        self.message = "Creating config files for boot loader..."
+        self.emit(QtCore.SIGNAL("updateLabel"), self.message)
         createConfigFile(self.dst)
 
         # Create ldlinux.sys file
@@ -286,7 +305,8 @@ class ProgressIncrementCopy(QtCore.QThread):
         # Pardus image
         pardus_image = "%s/pardus.img" % self.src
         self.size = os.stat(pardus_image).st_size
-
+        self.message = "Copying pardus.img file..."
+        self.emit(QtCore.SIGNAL("updateLabel"), self.message)
         shutil.copy(pardus_image, "%s/pardus.img" % self.dst)
         self.emit(QtCore.SIGNAL("incrementProgress()"))
 
@@ -295,6 +315,8 @@ class ProgressIncrementCopy(QtCore.QThread):
             if not os.path.isdir(file):
                 file_name = os.path.split(file)[1]
                 self.size = os.stat(file).st_size
+                self.message = "Copying %s..." % file_name
+                self.emit(QtCore.SIGNAL("updateLabel"), self.message)
                 shutil.copy(file, "%s/boot/%s" % (self.dst, file_name))
                 self.emit(QtCore.SIGNAL("incrementProgress()"))
 
@@ -303,6 +325,8 @@ class ProgressIncrementCopy(QtCore.QThread):
             pisi = os.path.split(file)[1]
             if not os.path.exists("%s/repo/%s" % (self.dst, pisi)):
                 self.size = os.stat(file).st_size
+                self.message = "Copying %s..." % pisi
+                self.emit(QtCore.SIGNAL("updateLabel"), self.message)
                 shutil.copy(file, "%s/repo/%s" % (self.dst, pisi))
                 self.emit(QtCore.SIGNAL("incrementProgress()"))
 
@@ -311,10 +335,14 @@ class ProgressIncrementCopy(QtCore.QThread):
         if runCommand(cmd):
             # FIX ME: Should use warning dialog.
             return False
+        print("and unmount iso is OK")
 
     def incrementProgress(self):
         current_value = self.progressBar.value()
         self.progressBar.setValue(current_value + self.size)
+
+    def updateLabel(self):
+        self.label.setText(self.message)
 
 # And last..
 def main():
