@@ -11,9 +11,15 @@ import os
 import shutil
 import subprocess
 
+from constants import HOME
+from constants import MOUNT_ISO
+from constants import MOUN_USB
+from constants import NAME
+from constants import LOCALE
+from constants import SHARE
+from constants import SYSLINUX
+
 from releases import releases
-from constants import (HOME, MOUNT_ISO, MOUNT_USB, \
-                       NAME, LOCALE, SHARE, SYSLINUX)
 
 t = gettext.translation(NAME, LOCALE, fallback = True)
 _ = t.ugettext

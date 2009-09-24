@@ -14,19 +14,13 @@ from distutils.core import setup
 if not os.path.exists("puding/"):
     shutil.copytree("src/", "puding/")
 
-from puding.constants import (NAME, VERSION, DESCRIPTION, CORE_DEVELOPER, \
-                            CORE_EMAIL, URL, LICENSE_NAME)
-
-script = "%s/%s" % (NAME, NAME)
-shutil.copyfile("%s.py" % script, script)
-os.chmod(script, 0755)
-
-#LANGS = ["tr"]
-
-# General installation functions
-# def locale(lang):
-#    return("share/locale/%s/LC_MESSAGES" % lang,
-#            ["data/po/locale/%s/%s.mo" % (lang, NAME)])
+from puding.constants import NAME
+from puding.constants import VERSION
+from puding.constants import DESCRIPTION
+from puding.constants import CORE_DEVELOPER
+from puding.constants import CORE_EMAIL
+from puding.constants import URL
+from puding.constants import LICENSE_NAME
 
 def removeBuildFiles():
     rmDir = ["build", "data/po/locale", NAME]
@@ -36,6 +30,7 @@ def removeBuildFiles():
         try:
             print("Removing directory, %s.." % dir)
             shutil.rmtree(dir)
+
         except:
             pass
 
@@ -43,6 +38,33 @@ def removeBuildFiles():
     for file in os.listdir("./"):
         if file.endswith(".pyc"):
             os.remove(file)
+
+def convertToPy(file_list):
+    for i in file_list:
+        file_name = os.path.split(i)[1]
+        if os.path.splitext(i)[1] == ".qrc":
+            os.system("/usr/bin/pyrcc4 %s -o puding/%s" % (i, file_name.replace(".qrc", "Rc.py")))
+
+        if os.path.splitext(i)[1] == ".ui":
+            # FIX ME: It should go to true directory.
+            os.system("/usr/bin/pyuic4 %s -o puding/%s" % (i, file_name.replace(".ui", ".py")))
+
+# Edit script
+script = "%s/%s" % (NAME, NAME)
+shutil.copyfile("%s.py" % script, script)
+os.chmod(script, 0755)
+os.remove("%s.py" % script)
+
+# Convert Qt files
+qt_files = ["data/icons.qrc"]
+convertToPy(qt_files)
+
+#LANGS = ["tr"]
+
+# General installation functions
+# def locale(lang):
+#    return("share/locale/%s/LC_MESSAGES" % lang,
+#            ["data/po/locale/%s/%s.mo" % (lang, NAME)])
 
 # Create .mo files
 # if not os.path.exists("data/po/locale"):
@@ -59,7 +81,7 @@ def removeBuildFiles():
 data = [
     ("share/doc/%s" % NAME, ["AUTHORS", "ChangeLog", "COPYING", "NOTES", "README"]),
     ("share/%s" % NAME, glob.glob("data/syslinux.cfg.*")),
-    ("share/%s" % NAME, glob.glob("data/puding.png")),
+    ("share/pixmaps", ["data/images/puding.png"]),
     ("share/%s/gfxtheme" % NAME, glob.glob("data/gfxtheme/*")),
     ("share/%s/ui" % NAME, glob.glob("data/ui/*"))]
 #    ("share/%s/ui" % NAME, glob.glob("data/ui/*")),

@@ -9,20 +9,26 @@ import os
 import shutil
 import sys
 
-from common import (MOUNT_ISO, \
-                    SHARE, \
-                    getDiskInfo, \
-                    getMounted, \
-                    getIsoSize, \
-                    getFilesSize, \
-                    createConfigFile, \
-                    createSyslinux, \
-                    createUSBDirs, \
-                    runCommand)
-
+from common import MOUNT_ISO
+from common import SHARE
+from common import getDiskInfo
+from common import getMounted
+from common import getIsoSize
+from common import getFilesSize
+from common import createConfigFile
+from common import createSyslinux
+from common import createUSBDirs
+from common import runCommand
 from common import PartitionUtils
+
 from constants import DESCRIPTION
-from PyQt4 import (QtCore, QtGui, uic)
+
+from puding import iconsRc
+
+from PyQt4 import QtCore
+from PyQt4 import QtGui
+from PyQt4 import uic
+
 from releases import releases
 
 # General variables
