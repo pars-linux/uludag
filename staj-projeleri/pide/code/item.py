@@ -40,7 +40,7 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         self.labelDescription.setText(unicode(description))
 
     def showDialog(self):
-        filen = QtGui.QFileDialog.getOpenFileName(self, 'Open file', '/home')
+        file = QtGui.QFileDialog.getOpenFileName(self, 'Open file', '/home')
         if file:
             self.connectReceiver(self.getAddress())
 
