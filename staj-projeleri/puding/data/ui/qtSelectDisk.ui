@@ -45,6 +45,10 @@
        <property name="text">
         <string>Browse</string>
        </property>
+       <property name="icon">
+        <iconset resource="../icons.qrc">
+         <normaloff>:/icons/images/folderopen.png</normaloff>:/icons/images/folderopen.png</iconset>
+       </property>
       </widget>
      </item>
     </layout>

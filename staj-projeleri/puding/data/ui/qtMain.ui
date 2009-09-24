@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>439</width>
-    <height>206</height>
+    <height>221</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -58,6 +58,10 @@
          <property name="text">
           <string>Browse</string>
          </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
+         </property>
         </widget>
        </item>
        <item row="1" column="0">
@@ -77,6 +81,10 @@
         <widget class="QPushButton" name="button_browse_disk">
          <property name="text">
           <string>Browse</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../icons.qrc">
+           <normaloff>:/icons/images/folderopen.png</normaloff>:/icons/images/folderopen.png</iconset>
          </property>
         </widget>
        </item>
@@ -116,12 +124,20 @@
         <property name="text">
          <string>&amp;Quit</string>
         </property>
+        <property name="icon">
+         <iconset resource="../icons.qrc">
+          <normaloff>:/icons/images/exit.png</normaloff>:/icons/images/exit.png</iconset>
+        </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="button_create">
         <property name="text">
          <string>&amp;Create</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../icons.qrc">
+          <normaloff>:/icons/images/create.png</normaloff>:/icons/images/create.png</iconset>
         </property>
        </widget>
       </item>
@@ -155,6 +171,10 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/icons/images/exit.png</normaloff>:/icons/images/exit.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Quit</string>
    </property>
