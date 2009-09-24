@@ -4,7 +4,6 @@ import socket, time, string, sys, urlparse
 
 # PyQt
 from PyQt4.QtCore import *
-from PyQt4 import QtCore
 from PyQt4 import QtGui
 
 # PyKDE
@@ -17,6 +16,7 @@ from ui_main import Ui_MainWidget
 # Backend
 from avahiservices import Zeroconf
 from receiver import StreamHandler
+from transfer import TransferHandler
 
 # Item widget
 from item import ItemListWidgetItem, ItemWidget
@@ -36,7 +36,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.setupUi(self)
 
         # Filling Window
-        self.connect(self.pushNew, QtCore.SIGNAL("clicked()"), self.fillWindow)
+        self.connect(self.pushNew, SIGNAL("clicked()"), self.fillWindow)
 
         self.iface = Zeroconf("moon", gethostname(), "_pide._tcp")
         self.iface.connect_dbus()
@@ -82,26 +82,28 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         return first
 
 
-    def test(self):
-        print "hobaaa!"
+    def getFile(self):
+        print instance.filename
 
     def initiate(self, instance):
-        QObject.connect(instance.notification, SIGNAL("action1Activated()"), self.test)
+        QObject.connect(instance.notification, SIGNAL("action1Activated()"), self.getFile)
         instance.notification.sendEvent()
 
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
 
+    # Listen port 9091
     instance = StreamHandler()
     instance.start()
+
+    instance.connect(instance, SIGNAL("requestReceived()"), lambda:main.initiate(instance))
 
     DBusQtMainLoop(set_as_default=True)
 
     # Create Main Widget
     main = MainWidget()
 
-    instance.connect(instance, SIGNAL("requestReceived()"), lambda:main.initiate(instance))
 
     # Show Application
     main.show()
