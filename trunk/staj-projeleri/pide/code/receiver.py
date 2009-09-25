@@ -34,8 +34,10 @@ class StreamHandler (QThread):
         print '[Control] Got connection from', self.dataAddr
 
         data = self.dataConn.recv(1024)
-        if data[0:4] == "SEND": self.filename = data[5:]
-        print '[Control] Getting ready to receive "%s"' % self.filename
+        if data[0:4] == "SEND": 
+            print "data received!"
+            self.filename = data[5:]
+            print '[Control] Getting ready to receive "%s"' % self.filename
 
 
     def checkrequest ( self ):

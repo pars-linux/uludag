@@ -6,7 +6,7 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 from PyQt4.QtGui import QApplication
 from preloader import ProgressBar
-
+from receiver import StreamHandler
 
 class FileSender(QtCore.QThread):
 
@@ -15,11 +15,7 @@ class FileSender(QtCore.QThread):
         self.port = 9091
         self.file = FILE
         self.host = HOST
-        self.transferSize = 1024
-        self.fileSize = 86687
-
         self.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.selfSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     def run(self):
         self.process()
@@ -30,9 +26,8 @@ class FileSender(QtCore.QThread):
 
     def waitforcheck(self):
         print '[Media] Waiting For Acception On Visitor'
-        self.selfSock.bind(('', self.port))
-        self.selfSock.listen(1)
-        self.selfConn, self.selfAddr = self.selfSock.accept()
+        self.StreamHandler.dataSock.listen(1)
+        self.selfConn, self.selfAddr = self.StreamHandler.dataSock.accept()
         if self.selfAddr:
             f = open(self.file, "rb")
             print '[Media] Accepted! Starting File Transfer...'
@@ -47,4 +42,3 @@ class FileSender(QtCore.QThread):
 
     def close(self):
         self.senderSock.close()
-        self.selfSock.close()
