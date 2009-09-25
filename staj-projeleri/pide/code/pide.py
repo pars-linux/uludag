@@ -37,8 +37,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         # Filling Window
         self.connect(self.pushNew, SIGNAL("clicked()"), self.fillWindow)
-
         self.iface = Zeroconf("moon", gethostname(), "_pide._tcp")
+        
+        self.instance = StreamHandler()
+        self.instance.start()
+        
+        self.instance.connect(self.instance, SIGNAL("requestReceived()"), lambda:main.initiate(self.instance))
         self.iface.connect_dbus()
         self.iface.connect_avahi()
         self.iface.connect()
@@ -82,9 +86,23 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         return first
 
     def sendInfo( self ):
+        self.requestCheck = "yes"
         self.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.senderSock.connect((self.address, 9091))
+        self.senderSock.connect((self.instance.senderAddress, 9091))
         self.senderSock.send(self.requestCheck)
+        self.transfer()
+
+    def transfer( self ):
+        f = open(self.instance.filename,"wb")
+        while 1:
+            data = self.instance.dataConn.recv(1024)
+            if not data: break
+            f.write(data)
+        f.close()
+
+        print '[Media] Got "%s"' % self.filename
+        print '[Media] Closing media transfer for "%s"' % self.filename
+
 
     def getFile(self):
         self.sendInfo()
@@ -97,17 +115,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
 
-    # Listen port 9091
-    instance = StreamHandler()
-    instance.start()
-
-    instance.connect(instance, SIGNAL("requestReceived()"), lambda:main.initiate(instance))
-
     DBusQtMainLoop(set_as_default=True)
 
     # Create Main Widget
     main = MainWidget()
-
 
     # Show Application
     main.show()
