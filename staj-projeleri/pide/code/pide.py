@@ -81,9 +81,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         first, second = name.split("@")
         return first
 
+    def sendInfo( self ):
+        self.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.senderSock.connect((self.address, 9091))
+        self.senderSock.send(self.requestCheck)
 
     def getFile(self):
-        print instance.filename
+        self.sendInfo()
 
     def initiate(self, instance):
         QObject.connect(instance.notification, SIGNAL("action1Activated()"), self.getFile)
