@@ -9,7 +9,6 @@ import os
 import shutil
 import sys
 
-from common import MOUNT_ISO
 from common import SHARE
 from common import getDiskInfo
 from common import getMounted
@@ -27,6 +26,8 @@ from constants import CORE_EMAIL
 from constants import DESCRIPTION
 from constants import LICENSE_NAME
 from constants import NAME
+from constants import MOUNT_ISO
+from constants import MOUNT_USB
 from constants import VERSION
 from constants import URL
 
@@ -211,14 +212,26 @@ class SelectDisk(QtGui.QDialog, qtSelectDisk.Ui_Dialog):
         for drive in self.drives:
             self.listWidget.addItem(self.drives[drive]["label"])
 
-        # print(self.listWidget.currentItem())
-
     @QtCore.pyqtSignature("bool")
     def on_button_browse_clicked(self):
         dirname = QtGui.QFileDialog.getExistingDirectory(self, "Choose Mount Disk Path")
 
         if not dirname == "":
             self.line_directory.setText(dirname)
+
+    def on_listWidget_itemClicked(self):
+        item = self.listWidget.currentItem()
+        label = item.text()
+
+        for drive in self.drives:
+            if self.drives[drive]["label"] == label:
+                mount_directory = self.drives[drive]["mount"]
+                break
+
+        if not mount_directory:
+            mount_directory = MOUNT_USB
+
+        self.line_directory.setText(mount_directory)
 
     def getSelectedDirectory(self):
         if self.line_directory.displayText() == "":
