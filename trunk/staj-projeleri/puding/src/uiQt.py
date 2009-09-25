@@ -210,13 +210,15 @@ class SelectDisk(QtGui.QDialog, qtSelectDisk.Ui_Dialog):
         self.setupUi(self)
 
         for drive in self.drives:
-            self.listWidget.addItem(self.drives[drive]["label"])
+            label = QtGui.QListWidgetItem(QtCore.QString(self.drives[drive]["label"]))
+            label.setIcon(QtGui.QIcon(":/icons/images/usb.png"))
+            self.listWidget.addItem(label)
 
     @QtCore.pyqtSignature("bool")
     def on_button_browse_clicked(self):
         dirname = QtGui.QFileDialog.getExistingDirectory(self, "Choose Mount Disk Path")
 
-        if not dirname == "":
+        if not dirname:
             self.line_directory.setText(dirname)
 
     def on_listWidget_itemClicked(self):
