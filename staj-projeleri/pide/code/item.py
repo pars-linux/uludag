@@ -42,9 +42,6 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
     def connectReceiver(self):
         filename = QtGui.QFileDialog.getOpenFileName(self, 'Open file', '/home')
         if filename:
-            self.instance = FileSender(filename, address)
+            self.instance = FileSender(filename, unicode(self.labelDescription.text()))
             self.instance.start()
-
-    def getAddress(self):
-        return unicode(self.labelDescription.text())
 
