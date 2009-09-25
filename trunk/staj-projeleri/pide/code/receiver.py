@@ -17,7 +17,6 @@ class StreamHandler (QThread):
         self.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.dataSock.bind(('', 9091))
         KCmdLineArgs.init(sys.argv, aboutData)
-
         self.notification = KNotification("Request")
         self.notification.setActions(QStringList((i18n("Accept"), i18n("Reject"))))
         self.notification.setFlags(KNotification.Persistent)
@@ -34,15 +33,14 @@ class StreamHandler (QThread):
         print '[Control] Got connection from', self.dataAddr
 
         data = self.dataConn.recv(1024)
-        if data[0:4] == "SEND": 
-            print "data received!"
-            self.filename = data[5:]
-            print '[Control] Getting ready to receive "%s"' % self.filename
+        self.filename = self.getFileName(data)
+        print '[Control] Getting ready to receive "%s"' % self.filename
 
 
     def checkrequest ( self ):
         if self.dataConn:
-            self.notification.setText(i18n("<b> %s </b> size <b> %s </b> göndermek istiyor!" % (self.senderName(self.dataAddr), self.filename)))
+            message = i18n("%1 size %2 isimli dosyayı göndermek istiyor!", self.senderName(), self.filename)
+            self.notification.setText(message)
             self.emit(SIGNAL("requestReceived()"))
 
     def receiverAccepted(self):
@@ -51,15 +49,15 @@ class StreamHandler (QThread):
     def receiverDenied( self ):
         print "Denied!"
 
-    def sendInfo( self ):
-        self.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.senderSock.connect((self.dataAddr[0], 9091))
-        self.senderSock.send(self.requestCheck)
+    def senderName(self):
+        return self.dataAddr[0]
 
     def process( self ):
         while 1:
             self.bindcsock()
             self.checkrequest()
 
-    def senderName( self , addr):
-        return addr[0]
+    def getFileName( self, data ):
+        name = data.split('/')
+        return name[-1]
+

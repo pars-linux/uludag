@@ -16,18 +16,19 @@ class FileSender(QtCore.QThread):
         self.file = FILE
         self.host = HOST
         self.senderSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.dataSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     def run(self):
         self.process()
 
     def sendFile(self):
         self.senderSock.connect((self.host, self.port))
-        self.senderSock.send("SEND " + self.file)
+        self.senderSock.send(str(self.file))
 
     def waitforcheck(self):
         print '[Media] Waiting For Acception On Visitor'
-        self.StreamHandler.dataSock.listen(1)
-        self.selfConn, self.selfAddr = self.StreamHandler.dataSock.accept()
+        self.dataSock.listen(1)
+        self.selfConn, self.selfAddr = self.dataSock.accept()
         if self.selfAddr:
             f = open(self.file, "rb")
             print '[Media] Accepted! Starting File Transfer...'
