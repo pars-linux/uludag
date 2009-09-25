@@ -30,6 +30,7 @@ from ui_puma import Ui_MainWindow
 from about import *
 
 from backend import Interface
+from pumaconf import *
 
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
