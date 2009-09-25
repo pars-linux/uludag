@@ -27,10 +27,10 @@ from optparse import OptionGroup
 from puding.common import _
 from puding.common import createDirs
 
+from puding.constants import DESCRIPTION
 from puding.constants import HOME
 from puding.constants import LICENSE
 from puding.constants import NAME
-from puding.constants import USAGE
 from puding.constants import VERSION
 
 class Options:
@@ -49,7 +49,7 @@ class Options:
         return parser.parse_args()
 
     def main(self):
-        parser = OptionParser(usage = USAGE, version = VERSION)
+        parser = OptionParser(description = DESCRIPTION, version = VERSION)
         (opts, args) = self.parseArgs(parser)
 
         if opts.create:

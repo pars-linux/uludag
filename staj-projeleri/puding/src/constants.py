@@ -21,7 +21,6 @@ SUMMARY = "An USB Image Creator For Pardus Linux."
 DESCRIPTION = "Puding is an USB image creator for Pardus Linux."
 YEAR = "2009"
 COPYRIGHT = u"Copyright (c) %s TUBITAK / UEKAE" % YEAR
-USAGE = "%s\n%s\n\nUsage: %s [options]" % (DESCRIPTION, COPYRIGHT, NAME)
 LICENSE_NAME = "GPLv3"
 LICENSE = """%s
 
