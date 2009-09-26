@@ -1,0 +1,331 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR GPLv3
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: puding TRUNK\n"
+"Report-Msgid-Bugs-To: gkmngrgn@gmail.com\n"
+"POT-Creation-Date: 2009-09-26 11:42+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../src/puding.py:39
+msgid "show program's license info and exit"
+msgstr ""
+
+#: ../../src/puding.py:41
+msgid "create Pardus USB image from console"
+msgstr ""
+
+#: ../../src/puding.py:43
+msgid "Graphical Interface Options"
+msgstr ""
+
+#: ../../src/puding.py:45
+msgid "run Puding with Qt4 graphical interface"
+msgstr ""
+
+#: ../../src/puding.py:57
+msgid "You need superuser permissions to run this application."
+msgstr ""
+
+#: ../../src/puding.py:75
+msgid "Invalid usage. Example:"
+msgstr ""
+
+#: ../../src/puding.py:98
+msgid ""
+"\n"
+"Quit."
+msgstr ""
+
+#: ../../src/uiCmd.py:66
+msgid "Finished."
+msgstr ""
+
+#: ../../src/uiCmd.py:117
+msgid "USB device not found."
+msgstr ""
+
+#: ../../src/uiCmd.py:138
+msgid "The path is invalid, please specify an CD image path."
+msgstr ""
+
+#: ../../src/uiCmd.py:142
+msgid "Calculating checksum..."
+msgstr ""
+
+#: ../../src/uiCmd.py:147
+#, python-format
+msgid ""
+"\n"
+"CD image path: %s"
+msgstr ""
+
+#: ../../src/uiCmd.py:148
+#, python-format
+msgid "         Name: %s"
+msgstr ""
+
+#: ../../src/uiCmd.py:149
+#, python-format
+msgid "       Md5sum: %s"
+msgstr ""
+
+#: ../../src/uiCmd.py:150
+#, python-format
+msgid " Download URL: %s\n"
+msgstr ""
+
+#: ../../src/uiCmd.py:156
+msgid ""
+"The checksum of the source cannot be validated. Please specify a correct "
+"source or be sure that you have downloaded the source correctly."
+msgstr ""
+
+#: ../../src/uiCmd.py:171
+msgid "Devices:"
+msgstr ""
+
+#: ../../src/uiCmd.py:178
+msgid "    Label\t\t:"
+msgstr ""
+
+#: ../../src/uiCmd.py:181
+msgid "    Parent\t\t:"
+msgstr ""
+
+#: ../../src/uiCmd.py:184
+msgid "    Mount Point\t\t:"
+msgstr ""
+
+#: ../../src/uiCmd.py:187
+msgid "    Unmount\t\t:"
+msgstr ""
+
+#: ../../src/uiCmd.py:190
+msgid "    UUID\t\t:"
+msgstr ""
+
+#: ../../src/uiCmd.py:193
+msgid "    File System Version\t:"
+msgstr ""
+
+#: ../../src/uiCmd.py:196
+msgid "    File System Type\t:"
+msgstr ""
+
+#: ../../src/uiCmd.py:200
+msgid "USB devices or partitions have found more than one. Please choose one: "
+msgstr ""
+
+#: ../../src/uiCmd.py:205
+#, python-format
+msgid "You must enter a number between 0 - %d!"
+msgstr ""
+
+#: ../../src/uiCmd.py:216
+msgid ""
+"Please double check your path information. If you don't type the path to the "
+"USB stick correctly, you may damage your computer. Would you like to "
+"continue?"
+msgstr ""
+
+#: ../../src/uiCmd.py:218
+msgid "Please type CONFIRM to continue: "
+msgstr ""
+
+#: ../../src/uiCmd.py:220
+msgid "CONFIRM"
+msgstr ""
+
+#: ../../src/uiCmd.py:220
+msgid "confirm"
+msgstr ""
+
+#: ../../src/uiCmd.py:221
+msgid "Writing CD image data to USB stick!"
+msgstr ""
+
+#: ../../src/uiCmd.py:226
+msgid "You did not type CONFIRM. Exiting.."
+msgstr ""
+
+#: ../../src/uiCmd.py:232
+#, python-format
+msgid ""
+"The path you have typed is invalid. If you think the path is valid, make "
+"sure you have mounted USB stick to the path you gave. To check the path, you "
+"can use: mount | grep %s"
+msgstr ""
+
+#: ../../src/uiCmd.py:241
+#, python-format
+msgid ""
+"USB disk informations:\n"
+"    Capacity  : %dG\n"
+"    Available : %dG\n"
+"    Used      : %dG"
+msgstr ""
+
+#: ../../src/uiCmd.py:250
+#, python-format
+msgid "Mounting %s.."
+msgstr ""
+
+#: ../../src/uiCmd.py:253
+msgid "Could not mounted CD image."
+msgstr ""
+
+#: ../../src/uiCmd.py:257
+msgid "Copying syslinux files.."
+msgstr ""
+
+#: ../../src/uiCmd.py:260
+msgid "Creating ldlinux.sys.."
+msgstr ""
+
+#: ../../src/uiCmd.py:262
+msgid "Could not create, ldlinux.sys."
+msgstr ""
+
+#: ../../src/uiCmd.py:268
+#, python-format
+msgid ""
+"\n"
+"Unmounting %s.."
+msgstr ""
+
+#: ../../src/uiCmd.py:272
+msgid "Could not unmounted CD image."
+msgstr ""
+
+#: ../../src/uiCmd.py:277
+#, python-format
+msgid "Concatenating MBR to %s"
+msgstr ""
+
+#: ../../src/uiCmd.py:281
+msgid "Could not concatenate, MBR."
+msgstr ""
+
+#: ../../src/uiCmd.py:285
+msgid "MBR written, USB disk is ready for Pardus installation."
+msgstr ""
+
+#: ../../src/uiCmd.py:291
+#, python-format
+msgid "Copying pardus.img to %s.."
+msgstr ""
+
+#: ../../src/uiCmd.py:298 ../../src/uiCmd.py:306
+msgid "Copying: "
+msgstr ""
+
+#: ../../src/uiCmd.py:308
+#, python-format
+msgid "%s is already exist."
+msgstr ""
+
+#: ../../src/uiQt.py:57
+msgid "Select ISO Image"
+msgstr ""
+
+#: ../../src/uiQt.py:58
+msgid "Images"
+msgstr ""
+
+#: ../../src/uiQt.py:69
+msgid "Warning"
+msgstr ""
+
+#: ../../src/uiQt.py:69
+msgid "You should select a valid directory."
+msgstr ""
+
+#: ../../src/uiQt.py:76
+msgid "About Puding"
+msgstr ""
+
+#: ../../src/uiQt.py:91
+msgid "Directory is Invalid"
+msgstr ""
+
+#: ../../src/uiQt.py:91
+msgid "Please check the USB disk path."
+msgstr ""
+
+#: ../../src/uiQt.py:110
+#, python-format
+msgid ""
+"Please double check your path information. If you don't type the path to the "
+"USB stick correctly, you may damage your computer. Would you like to "
+"continue?\n"
+"\n"
+"CD Image Path: %s\n"
+"USB Device: %s (%s)\n"
+"\n"
+"Release Name: %s\n"
+"Md5sum: %s\n"
+"Download URL: %s"
+msgstr ""
+
+#: ../../src/uiQt.py:120
+msgid "Confirm Informations"
+msgstr ""
+
+#: ../../src/uiQt.py:134 ../../src/uiQt.py:139
+msgid "ISO Image is Invalid"
+msgstr ""
+
+#: ../../src/uiQt.py:134
+msgid "Please set an ISO image path."
+msgstr ""
+
+#: ../../src/uiQt.py:139
+msgid "Please check the ISO image path."
+msgstr ""
+
+#: ../../src/uiQt.py:146
+msgid "Verify Checksum"
+msgstr ""
+
+#: ../../src/uiQt.py:147
+msgid "The checksum of the source is checking now..."
+msgstr ""
+
+#: ../../src/uiQt.py:167
+msgid "Checksum invalid"
+msgstr ""
+
+#: ../../src/uiQt.py:186
+msgid "Creating Image"
+msgstr ""
+
+#: ../../src/uiQt.py:187
+msgid "Creating image..."
+msgstr ""
+
+#: ../../src/uiQt.py:222
+msgid "Choose Mount Disk Path"
+msgstr ""
+
+#: ../../src/uiQt.py:309
+msgid "Creating config files for boot loader..."
+msgstr ""
+
+#: ../../src/uiQt.py:326
+msgid "Copying pardus.img file..."
+msgstr ""
+
+#: ../../src/uiQt.py:336 ../../src/uiQt.py:346
+#, python-format
+msgid "Copying %s..."
+msgstr ""

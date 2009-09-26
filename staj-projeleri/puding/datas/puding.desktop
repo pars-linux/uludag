@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Puding
+Comment=Puding USB image creator
+GenericName=USB image creator
+Exec=puding --with-qt
+Icon=puding
+Terminal=false
+Type=Application
+X-MultipleArgs=false
+Categories=Application;Utility;
