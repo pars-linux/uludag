@@ -37,6 +37,11 @@ def getDiskInfo(dst):
 def getIsoSize(src):
     return os.stat(src).st_size
 
+def getFileSize(file):
+    file_size = os.stat(file).st_size / 1024**2
+
+    return file_size
+
 def getFilesSize(src):
     all_files = []
     all_files.extend(glob.glob("%s/repo/*" % src))
@@ -48,8 +53,8 @@ def getFilesSize(src):
     total_size = 0
 
     for file in all_files:
-        size = os.stat(file).st_size
-        total_size = total_size + size # LOL!
+        size = getFileSize(file)
+        total_size += size
 
     return total_size
 
@@ -87,6 +92,22 @@ def createConfigFile(dst):
         shutil.copy("%s/syslinux.cfg.pardus" % SHARE, syslinux_conf_file)
 
 def createSyslinux(dst):
+    createConfigFile(dst)
+
+    sys_file = "%s/ldlinux.sys" % dst
+    if os.path.exists(sys_file):
+        os.remove(sys_file)
+
+    # FIX ME: Should use PartitionUtils
+    device = os.path.split(getMounted(dst))[1][:3]
+    cmd = "cat /usr/lib/syslinux/mbr.bin > /dev/%s" % device
+    if runCommand(cmd):
+        return False
+
+    cmd = "LC_ALL=C syslinux %s" % getMounted(dst)
+    return runCommand(cmd)
+
+def createSyslinux_old(dst):
     sys_file = "%s/ldlinux.sys" % dst
     if os.path.exists(sys_file):
         os.remove(sys_file)

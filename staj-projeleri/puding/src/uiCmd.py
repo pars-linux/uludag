@@ -14,7 +14,7 @@ from common import _
 from common import runCommand
 from common import copyPisiPackage
 from common import createConfigFile
-from common import createSyslinux
+from common import createSyslinux_old
 from common import createUSBDirs
 from common import getIsoSize
 from common import getMounted
@@ -258,7 +258,7 @@ USB disk informations:
         createConfigFile(dst)
 
         self.utils.cprint(_("Creating ldlinux.sys.."), "yellow")
-        if createSyslinux(dst):
+        if createSyslinux_old(dst):
             self.utils.cprint(_("Could not create, ldlinux.sys."), "red")
 
             return False
