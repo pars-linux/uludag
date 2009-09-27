@@ -159,8 +159,7 @@ class Create:
 
     def __askDestination(self):
         self.drives = self.partutils.returnDrives()
-
-        if len(self.drives):
+        if len(self.drives) == 1:
             # FIX ME: If disk is unmounted, you should mount it before return process!
             # It returns mount point directory.
             device = self.drives.keys()[0]
@@ -182,10 +181,14 @@ class Create:
                 self.utils.cprint(str(self.drives[drive]["parent"]), "yellow")
 
                 self.utils.cprint(_("    Mount Point\t\t:"), "green", True)
-                self.utils.cprint(self.drives[drive]["mount"], "yellow")
+                mount_dir = self.drives[drive]["mount"]
+                if not mount_dir:
+                    self.utils.cprint("%s (%s)" % (MOUNT_ISO,  _("not mounted")), "yellow")
+                else:
+                    self.utils.cprint(mount_dir, "yellow")
 
                 self.utils.cprint(_("    Unmount\t\t:"), "green", True)
-                self.utils.cprint(self.drives[drive]["unmount"], "yellow")
+                self.utils.cprint(str(self.drives[drive]["unmount"]), "yellow")
 
                 self.utils.cprint(_("    UUID\t\t:"), "green", True)
                 self.utils.cprint(self.drives[drive]["uuid"], "yellow")

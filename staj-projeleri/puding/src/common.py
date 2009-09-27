@@ -85,11 +85,11 @@ def createConfigFile(dst):
     for file in conf_files:
         file_name = os.path.split(file)[1]
         if not os.path.exists("%s/%s" % (conf_dir, file_name)):
-            shutil.copy(file, "%s/%s" % (conf_dir, file_name))
+            shutil.copyfile(file, "%s/%s" % (conf_dir, file_name))
 
     syslinux_conf_file = "%s/syslinux.cfg" % conf_dir
     if not os.path.exists(syslinux_conf_file):
-        shutil.copy("%s/syslinux.cfg.pardus" % SHARE, syslinux_conf_file)
+        shutil.copyfile("%s/syslinux.cfg.pardus" % SHARE, syslinux_conf_file)
 
 def createSyslinux(dst):
     createConfigFile(dst)
