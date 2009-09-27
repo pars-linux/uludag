@@ -10,7 +10,6 @@ import shutil
 import sys
 
 from common import getDiskInfo
-from common import getMounted
 from common import getIsoSize
 from common import getFileSize
 from common import getFilesSize
@@ -85,6 +84,13 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
     def on_button_create_clicked(self):
         src = str(self.line_image.displayText())
         dst = str(self.line_disk.displayText())
+
+        if dst.startswith("/dev/"):
+            from puding.pardusTools import PardusTools
+
+            pt = PardusTools()
+            pt.mount(dst, MOUNT_USB)
+            dst = MOUNT_USB
 
         if not self.__checkDestination(dst):
             self.warningDialog(self.tr("Directory is Invalid"), self.tr("Please check the USB disk path."))
@@ -232,13 +238,12 @@ class SelectDisk(QtGui.QDialog, qtSelectDisk.Ui_Dialog):
 
         for drive in self.drives:
             if self.drives[drive]["label"] == label:
-                mount_directory = self.drives[drive]["mount"]
+                device = self.drives[drive]["mount"]
+                if not device:
+                    device = drive
                 break
 
-        if not mount_directory:
-            mount_directory = MOUNT_USB
-
-        self.line_directory.setText(mount_directory)
+        self.line_directory.setText(device)
 
     def getSelectedDirectory(self):
         if self.line_directory.displayText() == "":
@@ -319,7 +324,7 @@ class ProgressIncrementCopy(QtCore.QThread):
         self.size = getFileSize(pardus_image)
         self.message = self.tr("Copying pardus.img file...")
         self.emit(QtCore.SIGNAL("updateLabel"), self.message)
-        shutil.copy(pardus_image, "%s/pardus.img" % self.dst)
+        shutil.copyfile(pardus_image, "%s/pardus.img" % self.dst)
         self.emit(QtCore.SIGNAL("incrementProgress()"))
 
         # Boot directory
@@ -329,7 +334,7 @@ class ProgressIncrementCopy(QtCore.QThread):
                 self.size = getFileSize(file)
                 self.message = self.tr("Copying %s..." % file_name)
                 self.emit(QtCore.SIGNAL("updateLabel"), self.message)
-                shutil.copy(file, "%s/boot/%s" % (self.dst, file_name))
+                shutil.copyfile(file, "%s/boot/%s" % (self.dst, file_name))
                 self.emit(QtCore.SIGNAL("incrementProgress()"))
 
         # Pisi packages
@@ -339,7 +344,7 @@ class ProgressIncrementCopy(QtCore.QThread):
                 self.size = getFileSize(file)
                 self.message = self.tr("Copying %s..." % pisi)
                 self.emit(QtCore.SIGNAL("updateLabel"), self.message)
-                shutil.copy(file, "%s/repo/%s" % (self.dst, pisi))
+                shutil.copyfile(file, "%s/repo/%s" % (self.dst, pisi))
                 self.emit(QtCore.SIGNAL("incrementProgress()"))
 
         # Unmount iso
