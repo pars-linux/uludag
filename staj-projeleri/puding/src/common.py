@@ -38,11 +38,11 @@ def getIsoSize(src):
     return os.stat(src).st_size
 
 def getFileSize(file):
-    file_size = os.stat(file).st_size / 1024**2
+    file_size = os.stat(file).st_size
 
     return file_size
 
-def getFilesSize(src):
+def getNumberOfFiles(src):
     all_files = []
     all_files.extend(glob.glob("%s/repo/*" % src))
     boot_files = glob.glob("%s/boot/*" % src)
@@ -50,13 +50,8 @@ def getFilesSize(src):
         if os.path.isfile(file):
             all_files.append(file)
     all_files.append("%s/pardus.img" % src)
-    total_size = 0
 
-    for file in all_files:
-        size = getFileSize(file)
-        total_size += size
-
-    return total_size
+    return len(all_files)
 
 def runCommand(cmd):
     process = subprocess.call(cmd, shell = True)

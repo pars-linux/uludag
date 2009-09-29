@@ -41,7 +41,7 @@ class Options:
                           help = _("create Pardus USB image from console"))
 
         group = OptionGroup(parser, _("Graphical Interface Options"))
-        group.add_option("--with-qt", dest = "with_qt", action = "store_true",
+        group.add_option("--qt", dest = "with_qt", action = "store_true",
                           help = _("run Puding with Qt4 graphical interface"))
 
         parser.add_option_group(group)

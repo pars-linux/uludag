@@ -12,7 +12,7 @@ import sys
 from common import getDiskInfo
 from common import getIsoSize
 from common import getFileSize
-from common import getFilesSize
+from common import getNumberOfFiles
 from common import createSyslinux
 from common import createUSBDirs
 from common import runCommand
@@ -104,6 +104,9 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
                 createUSBDirs(dst)
                 self.__createImage(src, dst)
 
+                if dst == MOUNT_USB:
+                    pt.umount(dst)
+
             return True
 
         except TypeError: # 'bool' object is not iterable
@@ -188,7 +191,7 @@ you have downloaded the source correctly."""
                 # FIX ME: Should use warning dialog.
                 return False
 
-        max_value = getFilesSize(MOUNT_ISO)
+        max_value = getNumberOfFiles(MOUNT_ISO)
         create_image = ProgressBar(title = self.tr("Creating Image"),
                 message = self.tr("Creating image..."),
                 max_value = max_value)
@@ -198,12 +201,18 @@ you have downloaded the source correctly."""
             pi.quit()
             create_image.close()
 
-        QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgress()"), pi.incrementProgress)
+        QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgress()"), create_image.incrementProgress)
         QtCore.QObject.connect(pi, QtCore.SIGNAL("updateLabel"), pi.updateLabel)
         QtCore.QObject.connect(pi, QtCore.SIGNAL("closeProgressDialog()"), closeDialog)
 
         pi.start()
         create_image.exec_()
+
+        # Unmount iso
+        cmd = "fusermount -u %s" % MOUNT_ISO
+        if runCommand(cmd):
+            # FIX ME: Should use warning dialog.
+            return False
 
         self.warningDialog(self.tr("USB Image is Ready"), self.tr("Your USB image is ready. Now you can install or run Pardus from USB storage."))
 
@@ -305,60 +314,29 @@ class ProgressIncrementCopy(QtCore.QThread):
         QtCore.QThread.__init__(self)
 
         self.progressBar = dialog.progressBar
+        self.progressBar.setValue(0)
         self.label = dialog.label
         self.src = source
         self.dst = destination
-
-        self.progressBar.setValue(0)
+        self.file_list = ["%s/pardus.img" % self.src]
+        for file in glob.glob("%s/boot/*" % self.src):
+            if os.path.isfile(file):
+                self.file_list.append(file)
+        self.file_list.extend(glob.glob("%s/repo/*" % self.src))
 
     def run(self):
         # Create config file
-        self.message = self.tr("Creating config files for boot loader...")
-        self.emit(QtCore.SIGNAL("updateLabel"), self.message)
-
-        # Boot loader
         createSyslinux(self.dst)
 
-        # Pardus image
-        pardus_image = "%s/pardus.img" % self.src
-        self.size = getFileSize(pardus_image)
-        self.message = self.tr("Copying pardus.img file...")
-        self.emit(QtCore.SIGNAL("updateLabel"), self.message)
-        shutil.copyfile(pardus_image, "%s/pardus.img" % self.dst)
-        self.emit(QtCore.SIGNAL("incrementProgress()"))
-
-        # Boot directory
-        for file in glob.glob("%s/boot/*" % self.src):
-            if os.path.isfile(file):
-                file_name = os.path.split(file)[1]
-                self.size = getFileSize(file)
-                self.message = self.tr("Copying %s..." % file_name)
-                self.emit(QtCore.SIGNAL("updateLabel"), self.message)
-                shutil.copyfile(file, "%s/boot/%s" % (self.dst, file_name))
-                self.emit(QtCore.SIGNAL("incrementProgress()"))
-
-        # Pisi packages
-        for file in glob.glob("%s/repo/*" % self.src):
-            pisi = os.path.split(file)[1]
-            if not os.path.exists("%s/repo/%s" % (self.dst, pisi)):
-                self.size = getFileSize(file)
-                self.message = self.tr("Copying %s..." % pisi)
-                self.emit(QtCore.SIGNAL("updateLabel"), self.message)
-                shutil.copyfile(file, "%s/repo/%s" % (self.dst, pisi))
-                self.emit(QtCore.SIGNAL("incrementProgress()"))
-
-        # Unmount iso
-        cmd = "fusermount -u %s" % MOUNT_ISO
-        if runCommand(cmd):
-            # FIX ME: Should use warning dialog.
-            return False
+        for file in self.file_list:
+            size = getFileSize(file)
+            file_name = os.path.split(file)[1]
+            self.message = self.tr("Copying %s (%0.2fMB)..." % (file_name, size))
+            self.emit(QtCore.SIGNAL("updateLabel"), self.message)
+            shutil.copyfile(file, "%s/%s" % (self.dst, file.split(self.src)[-1]))
+            self.emit(QtCore.SIGNAL("incrementProgress()"))
 
         self.emit(QtCore.SIGNAL("closeProgressDialog()"))
-
-    def incrementProgress(self):
-        current_value = self.progressBar.value()
-
-        return self.progressBar.setValue(current_value + self.size)
 
     def updateLabel(self, message):
         self.label.setText(message)
