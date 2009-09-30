@@ -14,9 +14,40 @@
 \begin{document}
 
 \maketitle
+\section{Stream sub component}
+\begin{enumerate}
+ \item After installation streamripper package:
+
+Run the below commands, observe that the songs converted to stream.mp3 file and run correctly:
+\begin{verbatim}
+streamripper http://yp.shoutcast.com/sbin/tunein-station.pls?id=509645 -a stream 
+mplayer stream.mp3
+\end{verbatim}
+
+\end{enumerate}
+
+
+\section{Plugin alt Bileşeni}
+\begin{enumerate}
+ \item After installation kipi-plugins package:
+
+Follow menu $\rightarrow$ digikam $\rightarrow$ import $\rightarrow$ Import from facebook path and try to download photos from your facebook account. Observe that they are downloaded without any problem. (If this is the first use of digikam, please create a new album.)
+\end{enumerate}
 
 \section{Sound sub component}
 \begin{enumerate}
+\item After installation pavucontrol package:
+
+Open the application from Kmenu and after that run the below file with amarok. Observe that the pavucontrol player part has some vibrations.
+
+\begin{verbatim}
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/music.mp3 
+\end{verbatim}
+
+\item After installation jamin package:
+
+Open the application from Kmenu and run the a .jam file under /usr/share/jamin/examples directory. Observe that this file runs without any problem.
+
 \item After installation frescobaldi package:
  \begin{verbatim}
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/test_frescobaldi.ly
@@ -87,6 +118,7 @@ Observe following commands are worked correctly:
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
  \end{verbatim}
 Download the file and run all type files with the program. Observe it work correctly.
+
  \item After installation vlc-firefox package:
  \begin{itemize}
   \item Observe vlc plugin is being added on Firefox $\rightarrow$ Edit $\rightarrow$ Options $\rightarrow$ Manage add-ons $\rightarrow$ Plugins.
@@ -116,7 +148,7 @@ Observe following commands are worked correctly:
 
 \section{Converter sub component}
 \begin{enumerate}
- \item Following packages are related only installation test:
+ \item Following packages are subject to installation test:
 \begin{verbatim}
  nrg2iso
  vnc2swf
@@ -288,6 +320,14 @@ Lake_dance_XviD.AVI
 \end{enumerate}
 \section{Graphics sub component}
 \begin{enumerate}
+\item Following packages are subject to installation test:
+\begin{verbatim}
+gimp-data-extras 
+\end{verbatim}
+\item After installation yafaray ve yafaray-blender packages:
+
+Do the multimedia-eng.pdf blender package test.
+
 \item After installation jasper package:
 
 \begin{verbatim}
@@ -322,9 +362,7 @@ Execute following commands and observe they work correctly.
 \end{verbatim}
 
 
-
- \item Do only installation for gimp-data-extras package.
- \item After installation packages below, change your local language and open gimp at same directory on console and observe language is changed.
+\item After installation packages below, change your local language and open gimp at same directory on console and observe language is changed.
 
 For change local language:
 \begin{verbatim}
@@ -333,7 +371,7 @@ export LC_ALL= <lang_LANG>
 
 lang\_LANG is format, for example: pt-BT is pt\_BT.
 
-After taht, execute gimp command and observe laguage is changed to which you decide.
+After that, execute gimp command and observe laguage is changed to which you decide.
 \begin{verbatim}
 gimp-i18n-es
 gimp-i18n-sk
@@ -394,11 +432,11 @@ gimp-i18n-si
 \end{verbatim}
 
 
- \item After installation GraphicsMagick package:
+\item After installation GraphicsMagick package:
 
 Do the office-eng.pdf koffice-krita test.
 
- \item After installation İmageJ package:
+\item After installation İmageJ package:
 
  Run the program from Kmenu and observe the file below is openable by following File $\rightarrow$ Open path.
   \begin{verbatim}
@@ -510,9 +548,6 @@ Run the program on Kmenu and open the file below with following File $\rightarro
 \begin{verbatim}
 # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/linux.mp3 
 \end{verbatim}
-
-
-
  
  \item After installation blender package:
 

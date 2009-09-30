@@ -16,9 +16,9 @@
 \maketitle
 \section{Archive sub Component}
 \begin{enumerate}
- \item After the install of lrzip package:
+ \item After installation  lrzip package:
 
-check that: Commands below first compress then open the file.
+Observe that the following commands first compress then uncompress the test\_lrzip file.
 \begin{verbatim}
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/test_lrzip
  # lrzip test_lrzip
@@ -32,9 +32,9 @@ check that: Commands below first compress then open the file.
 
 \section{Crypt sub component}
 \begin{enumerate}
- \item After the install of mcrypt package:
+ \item After installation  mcrypt package:
 
-check that: Commands below run without any errors.
+Observe that commands below run without any errors.
 \begin{verbatim}
  # mcrypt --list
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/test_mcrypt
@@ -49,7 +49,7 @@ check that: Commands below run without any errors.
 
 \section{Antivirus sub component}
 \begin{enumerate}
-\item After the install of Klamav package:
+\item After installation  Klamav package:
 
 Copy the file below into a directory. 
 \begin{verbatim}
@@ -58,7 +58,7 @@ Copy the file below into a directory.
 
 By using Klamav application, scan this directory, and check that: Klamav finds the virus and wants to take it into quarantine.
 
-\item After the install of Clamav package:
+\item After installation  Clamav package:
 
 Copy the file below into a directory. 
 \begin{verbatim}
@@ -66,12 +66,12 @@ Copy the file below into a directory.
 # clamscan eicar.com.txt
 \end{verbatim}
 
-Check that: Second command above can detect virus.
+Observe that second command above can detect virus.
 
 \end{enumerate}
 \section{Admin sub component}
 \begin{enumerate}
- \item After the install of phpmyadmin package:
+ \item After installation  phpmyadmin package:
 \begin{itemize}
  \item Start Apache and mysql services from service manager. Run the command below and make the root password "test":
 \begin{verbatim}
@@ -84,7 +84,7 @@ Check that: Second command above can detect virus.
 
 
 
- \item After the install of iotop package:
+ \item After installation  iotop package:
 
 Run the command below and check that: It lists I/O band width of all the applications that's running on the system.
 \begin{verbatim}
@@ -94,14 +94,14 @@ Run the command below and check that: It lists I/O band width of all the applica
 \end{enumerate}
 \section{Shell sub component}
 \begin{enumerate}
- \item After the install of bash-completion package:
+ \item After installation  bash-completion package:
 
 Check that: The command below runs without any errors.
 \begin{verbatim}
  # pisi --help
 \end{verbatim}
 
-\item After the install of command-not-found package:
+\item After installation  command-not-found package:
 
 If Amsn package is not installed in your system, when you run the command below:
 \begin{verbatim}
@@ -118,18 +118,18 @@ bash: amsn: command not found
 \end{enumerate}
 \section{Misc sub component}
 \begin{enumerate}
- \item After the install of fslint package:
+ \item After installation  fslint package:
 
 Check that: It can be opened from KMenu.
 
 Copy two files into two different directories and add these two different directories into the application, Click into copied files and press find button and check that: Copied files are listed.
- \item After the install of ltrace package:
+ \item After installation  ltrace package:
 
 Check that: The command below runs without any errors:
 \begin{verbatim}
  # ltrace ls
 \end{verbatim}
-\item After the install of elfutils package:
+\item After installation  elfutils package:
 
 Run util-tr.pdf ltrace test.
 \end{enumerate}
