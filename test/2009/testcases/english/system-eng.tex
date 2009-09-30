@@ -18,14 +18,14 @@
 
 \section{Devel sub Component}
 \begin{enumerate}
- \item Packages below will only be tested by installing them.
+ \item Following packages subject to installation test:
 \begin{verbatim}
  xtrans
  automake
  dietlibc 
  quilt
 \end{verbatim}
- \item After the install of icecream and icecream scheduler packages:
+ \item After installation  icecream and icecream scheduler packages:
 
 Start icecream service from Service manager.
 
@@ -40,9 +40,17 @@ To learn whether service is started or not, execute the command below.
 \section{Base sub Component}
 
 \begin{enumerate}
-\item After the install of openssl package:
+\item After installation python package:
+\begin{itemize}
+ \item Do the system-eng.pdf pisi package test.
+ \item Do the programming-eng.pdf sympy package test.
+ \item Do the programming-eng.pdf python-iptables package test.
+\end{itemize}
 
-Check that: Commands below run without any errors:
+
+\item After installation  openssl package:
+
+Observe that commands below run without any errors:
 \begin{verbatim}
   # openssl ciphers -v 
   # openssl ciphers -v -tls1
@@ -56,37 +64,37 @@ Check that: Commands below run without any errors:
 \end{verbatim}
 
 
-\item After the install of usbutils package:
+\item After installation  usbutils package:
 
-Check that: Commands below run without any errors:
+Observe that commands below run without any errors:
 \begin{verbatim}
 # usb-devices
 # lsusb
 \end{verbatim}
 
 
-\item After the install of udev package:
+\item After installation  udev package:
 
 Restart your computer and then check that: it opens without any errors. 
 
-Check that: Sound, camera, mount, display works without any errors.
+Observe that sound, camera, mount, display works without any errors.
 \item Packages below will only be tested by installing them.
 \begin{verbatim}
 e2fsprogs 
 \end{verbatim}
-\item After the install of module-init-tools package:
+\item After installation  module-init-tools package:
 
 Restart your computer:
 check that: Sound, wireless, bluetooth, camera works without any errors.
 
-Check that: Commands below run without any errors:
+Observe that commands below run without any errors:
 \begin{verbatim}
  # lsmod
  # modinfo ahci
 \end{verbatim}
 
 
-\item After the install of dnsmasq package:
+\item After installation  dnsmasq package:
 
 \begin{itemize}
  \item Start dnsmasq from your service manager.
@@ -99,7 +107,7 @@ Check that: Commands below run without any errors:
 \end{itemize}
 
 
-\item After the install of file package:
+\item After installation  file package:
 
 \begin{verbatim}
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.mng
@@ -119,26 +127,26 @@ Run the command below with the files above, check that: it finds file types with
  # file <dosya adı>
 \end{verbatim}
 
-\item After the install of mudur package:
+\item After installation  mudur package:
 
 \begin{itemize}
   \item Restart your computer and check that: system is opened without any errors.
  \item Press Ctrl+Alt+F1 and switch to system console and check that: your system's language and keyboard settings are same with the ones before.
-  \item Check that: Files locale, language, keymap, which are in /etc/mudur/ directory  are synchronized with your system language and keyboard.
- \item Check that: Pisi commands run without any errors. 
+  \item Observe that files locale, language, keymap, which are in /etc/mudur/ directory  are synchronized with your system language and keyboard.
+ \item Observe that pisi commands run without any errors. 
 
 \end{itemize}
-\item After the install of tiff package:
+\item After installation  tiff package:
 \begin{verbatim}
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/doga.tiff
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/istanbul.tiff
 \end{verbatim}
 
 By right clicking on the images,open them with gwenview, kolourPaint, gimp, showfoto and check that: They can be opened without any errors.
-\item After the install of pisi package:
+\item After installation  pisi package:
 \begin{itemize}
- \item package-manager-tr.pdf run test cases for this file.
- \item history-manager-tr.pdf run test cases for this file.
+ \item Do package-manager-eng.pdf test cases.
+ \item Do history-manager-eng.pdf test cases.
 \end{itemize}
 \item After tha install of baselayout package:
 \begin{itemize}
@@ -153,34 +161,34 @@ By right clicking on the images,open them with gwenview, kolourPaint, gimp, show
    For both of the situations, check that: the user that's mentioned in the comments is added into the /etc/passwd file.
 
 \end{itemize}
-\item After the install of libxml2 package:
+\item After installation  libxml2 package:
 
 \begin{itemize}
-\item Check that: the command below creates a catalog.
+\item Observe that the command below creates a catalog.
   \begin{verbatim}
    #  xmlcatalog --create
   \end{verbatim}
-\item Run multimedia-tr.pdf avidemux-qt, avidemux and inkscape tests.
+\item Run multimedia-eng.pdf avidemux-qt, avidemux and inkscape tests.
 \end{itemize}
-\item After the install of curl package:
+\item After installation  curl package:
 
 \begin{itemize}
-\item Check that: http://pardus.org.tr this address's content can be taken without an any error.
+\item Observe that http://pardus.org.tr this address's content can be taken without an any error.
 \begin{verbatim}
 # wget http://cekirdek.pardus.org.tr/~semen/dist/test/system/base/test_curl.php
 # php test_curl.php
 \end{verbatim}
 
-\item Run network-tr.pdf sylpheed tests.
+\item Run network-eng.pdf sylpheed tests.
 \end{itemize}
 
-\item After the install of glib2 package:
+\item After installation  glib2 package:
 \begin{itemize}
- \item Run system-tr.pdf openssh test.
-\item Run system-tr.pdf getext test.
+ \item Do system-eng.pdf openssh package test.
+\item Do system-eng.pdf getext package test.
 \end{itemize}
 
-\item After the install of gettext package:
+\item After installation  gettext package:
 
 check that: The command below creates "network-manager.pot" file.
 \begin{verbatim}
@@ -193,16 +201,16 @@ check that: The command below creates "network-manager.pot" file.
 \end{verbatim}
 
 
-\item After the install of openssh package:
+\item After installation  openssh package:
 
 Start openssh from service manager and check that: in the output of command below, openssh is working:
 \begin{verbatim}
  # service list 
 \end{verbatim}
 
-\item After the install of mkinitramfs package:
+\item After installation  mkinitramfs package:
 
-Restart your computer. Check that: it is opened without any errors.
+Restart your computer. Observe that it is opened without any errors.
 
 In /boot/ directory check that: the current kernel's initramfs file exists.
 
@@ -211,9 +219,9 @@ In /boot/ directory check that: the current kernel's initramfs file exists.
 \end{enumerate}
 \section{Service sub Component}
 \begin{enumerate}
- \item After the install of memcached package:
+ \item After installation  memcached package:
 
-  Run programming-tr.pdf python-memcached tests. 
+  Do programming-eng.pdf python-memcached tests. 
 \end{enumerate}
 
 
