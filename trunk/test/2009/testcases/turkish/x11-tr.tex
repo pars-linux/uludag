@@ -10,134 +10,93 @@
 
 \maketitle
 
- Note:	
-  	Tüm X hataları için  aşağıdaki dosyaya göz atabilirsiniz:
-	/var/log/Xorg.0.log  
+Not: Burada yer alan hataları bildirirken /var/log dizini altında yer alan Xorg.0.log
+dosyasını iletmeyi unutmayınız.
 
-\section{Server alt Bileşeni}
+\section{Server Alt Bileşeni}
 
 \begin{itemize}
- \item Aşağıda bulunan paketler kurulum testine tabidir.
-\begin{verbatim}
- xorg-server-common
- xorg-server-devel
- xorg-server-xdmx
- xorg-server-xvfb
-\end{verbatim}
+  \item Aşağıdaki paketler için kurulum testi uygulanacaktır.
+  \begin{verbatim}
+  xorg-server-common
+  xorg-server-devel
+  xorg-server-xdmx
+  xorg-server-xvfb
+  \end{verbatim}
 
- \item xorg-server-xephyr paketi kurulumu sonrası:
+  \item xorg-server-xephyr paketi kurulduktan sonra aşağıda bulunan komut ile sorunsuz bir şekilde konsol
+  açıldığını gözlemleyin.
+  \begin{verbatim}
+  xinit -- /usr/bin/Xephyr :1
+  \end{verbatim}
 
-Aşağıda bulunan komutun sorunsuz bir şekilde konsol açtığını gözlemleyin.
-\begin{verbatim}
- xinit -- /usr/bin/Xephyr :1
-\end{verbatim}
-
-\item  Aşağıda bulunan paketlerin kurulumu sonrasında aşağıdaki testler uygulanmalıdır. 
-\begin{verbatim}
-zorg    
-xorg-server
-libdrm
-mesa
-\end{verbatim}
+  \item Kurulumu yapılacak diğer paketler ve uygulanacak testler aşağıda verilmiştir.
+  \begin{verbatim}
+  zorg    
+  xorg-server
+  libdrm
+  mesa
+  \end{verbatim}
 
 
-\begin{enumerate}
-  \item Direct rendering testi
+  \begin{enumerate}
+  \item Temel işlevler
     \begin{enumerate}
-    \item Eğer xterm paketi sisteminizde kurulu değil ise bu test için ilk olarak bu paketi kurunuz.
-    \item   $Ctrl+Alt+F1$ tuşlarına aynı anda olacak şekilde basın.
-
-	    X'in çökmediğini gözlemlemleyin.
-    \item  Daha sonra bu komutu çalıştırın.
-	  \begin{verbatim}
-	  xinit -- :2
-	  \end{verbatim}
-	  Karşınıza koyu gri bir masaüstü, x işareti şeklinde bir fare imleci ve bir terminal penceresi çıktığını gözlemleyiniz..
-    \item Grafik arayüzüne geçebilmek için \texttt{Ctrl+Alt+F7} tuşlarına aynı anda olacak şekilde basın.    
-	   X'in çökmediğini gözlemlemleyin.
-    \item "glxgears" ve "glxgears -fullscreen" komutlarını konsoldan çalıştırın.
-
-	  Hiçbir problem olmadan çalışabildiklerini gözlemleyin.
+    \item Sisteminiz yeniden başlatın ve grafiksel oturum açma ekranının sorunsuz bir şekilde açıldığını gözlemleyin.
+    \item Yukarıdaki testi açılış ekranında "Grafik Ekran (F4)" menüsünden "Yeniden Tanı" seçeneğini seçerek tekrarlayın.
+    \item xterm paketinin sisteminizde kurulu olduğundan emin olun ve şu komutu verin:
+      \begin{verbatim}
+xinit -- :2
+      \end{verbatim}
+      Yeni bir X ekranı içinde bir terminal penceresi açıldığını gözlemleyin. Fare imlecini terminal penceresi üzerine getirip "exit" komutunu vererek çıkabilirsiniz.
+    \item Herhangi bir uygulama penceresini taşıyın ve boyutlandırın. Bu işlemlerin hızlı bir şekilde gerçekleştiğini gözlemleyin.
     \end{enumerate}
 
-  \item DPI (Dots Per Inch)testi
-    
-        Menüden bir openoffice yazıcı çalıştırın ve 100\% büyütülmüş bir A4 kağıt seçin. Aynı zamanda gerçek bir A4 kağıdı elinize alın.
+  \item 3B desteği
+    \begin{enumerate}
+    \item "glxgears" ve "glxgears -fullscreen" komutlarını konsoldan çalıştırın. Karşınıza dönen üç dişlinin sorunsuz bir şekilde geldiğini gözlemleyin.
+    \end{enumerate}
 
-        Gerçek A4 kağıdının boyutları ile openoffice yazıcıda açtığınız A4 kağıdının boyutlarının aynı olduğunu gözlemleyin.
+  \item VT değiştirme
+    \begin{enumerate}
+    \item Grafiksel arayüzde iken \texttt{Ctrl+Alt+F1} tuşlarına aynı anda basın. TTY konsol ekranına sorunsuz bir şekilde geçtiğini gözlemleyin.
+    \item Grafik arayüzüne geri dönmek için \texttt{Ctrl+Alt+F7} tuşlarına aynı anda basın. Bu aşamada da sorun çıkmadığını gözlemleyin.
+    \end{enumerate}
+
   \item Çözünürlük testi
-     \begin{enumerate}
-      \item Menüden Sistem ayarları $\rightarrow$ Ekran yolunu izleyin
-
-	Gerçek çözünürlük ile seçilmiş çözünürlüğün aynı olduğunu gözlemleyin.
-
-      \item Gerçek ve seçilmiş çözünürlüğünüzü "xrandr" komutunu kullanarak bulabilirsiniz.
-	  
-	  Örnek komut çıktısı:
-	  
-	  1440x900  50.0*+
-	  
-	  Bu bilgi:
-	  \begin{table}[h]
-	  \centering
-	  \begin{tabular}{|c|c|c|}
-		  \hline
-		  $1440x900$ & $\rightarrow$ & çözünürlük \\
-		  50.0       & $\rightarrow$ & tazelenme sıklığı \\
-		  $*$        & $\rightarrow$ & örnek çözünürlüğün seçilmiş çözünürlük olduğu \\
-		  $+$        & $\rightarrow$ & örnek çözünürlüğün gerçek çözünürlük olduğu\\
-		  \hline
-	  \end{tabular} 
-	  \label{tab:tbl}
-	  \end{table}
-
-	  Bu $+$ ve $*$ işaretlerinin aynı çözünürlüğe ait olduğunu gözlemleyin. 
-
-    \item Bilgisayarınızı yeniden başlatıp, açılış ekranından F4 fonksiyon tuşu ile güvenli kipi seçerek bilgisayarınızı açın.  
-
-	  Daha sonra ise tekar restart ederek F4 fonksiyon tuşu ile tekrar tanıyı seçerek açın.
-
-	  Grafiksel olarak bir sorun yaşamadığınızı gözlemleyin.
+    \begin{enumerate}
+    \item Menüden, Ayarlar $\rightarrow$ Ekran Ayarları (2008 için TASMA'da Görüntü Yöneticisi) yolunu izleyin.
+    \item Ekranlar bölümünde kullandığınız çıkış aygıtı için bir çözünürlük seçin ve uygulayın.
+    \item Yeniden oturum açın ve "xrandr" komutu ile o anki çözünürlüğün seçtiğiniz çözünürlük
+          ile aynı olup olmadığını kontrol edin. Etkin çözünürlüğün yanında * işareti bulunacaktır.
     \end{enumerate}
  
- \item  Bir medya oynatıcıyı tam ekran olarak açın. 
-
-      X'in çökmediğini gözlemleyin.
- \item(2009 için) Menüden Sistem ayarları $\rightarrow$ masaüstü yolunu izleyerek efektlerinizi açın
- 
-  X'in çökmediğini gözlemleyin.
-  \item 2D (iki boyut) testi 
-      
-      Bir program penceresi açın (örneğin mplayer, dolphin, firefox) ve sağa sola hızlıca sallayın.
-        
-      Hiçbir problem olmadan sallandığını gözlemleyin.
-
- \item (2009 için)3D (üç boyut)testi
-   %(For Pardus 2008 first execute glxinfo and find the Direct rendering is yes.)
-
-    Menüden uygulamalar $\rightarrow$ eğitim $\rightarrow$ bilim $\rightarrow$ marble yolunu izleyin.
-	
-    Uygulamanın grafiksel olarak düzgün çalıştığını gözlemleyin.
+  \item Video testi
+    \begin{enumerate}
+    \item Herhangi bir medya oynatıcıyı kullanarak tam ekranda bir video dosyası açın ve sorunsuz bir şekilde oynattığını gözlemleyin.
     \end{enumerate}
-
+ 
+  \item (2009 için) Efekt testi
+    \begin{enumerate}
+    \item Menüden Sistem Ayarları $\rightarrow$ Masaüstü yolunu izleyerek efektlerinizi açın/kapatın. Bu sırada herhangi bir sorun yaşanmadığını gözlemleyin.
+    \end{enumerate}
+  \end{enumerate}
 \end{itemize}
 
-
-
-\section{Driver alt Bileşeni}
+\section{Driver Alt Bileşeni}
 \begin{enumerate}
- \item virtualbox-guest-utils paketi kurulumu sonrası:
+  \item virtualbox-guest-utils paketi kurulumu sonrası:
 
 hardware-tr.pdf virtualbox testini gerçekleştirin.
 
- \item xorg-input-synaptics  paketi kurulumu sonrası:
+  \item xorg-input-synaptics  paketi kurulumu sonrası:
 
 Eğer aşağıda bulunan komut bir çıktı üretiyor ise bu testi gerçekleştirebilirsiniz.
   \begin{verbatim}
    # grep -i synap /proc/bus/input/devices
   \end{verbatim}
 
-Bilgisayırınızı yeniden başlatın ve mousepad'inizin düzgün çalıştığını gözlemleyin. 
+Bilgisayarınızı yeniden başlatın ve dokunmatik giriş aygıtının (touchpad) düzgün çalıştığını gözlemleyin.
 
 \item xorg-input-vmmouse paketi kurulumu sonrası:
 
@@ -166,71 +125,68 @@ Ekran kartınızın ne olduğuna dair bilgiye aşağıda bulunan komut ile ulaş
 \end{verbatim}
 
 \begin{verbatim}
- xorg-video-apm 
- xorg-video-ast
- xorg-video-cirru
- xorg-video-fbdev (bu sürücü ekran kartından bağımsızdır ve direk teste tabidir.)
- xorg-video-glint
- xorg-video-i128
- xorg-video-i740
- xorg-video-intel
- xorg-video-mach64
- xorg-video-mga
- xorg-video-neomagic
- xorg-video-r128
- xorg-video-radeon
- xorg-video-radeonhd
- xorg-video-s3
- xorg-video-s3virge
- xorg-video-savage
- xorg-video-siliconmotion
- xorg-video-sis
- xorg-video-sisusb
- xorg-video-tdfx
- xorg-video-trident,
- xorg-video-vesa (bu sürücü tüm testçiler tarafından yapılabilir, bilgisayarınızı güvenli kipte açarak, daha sonra diğer paketler ile aynı şekilde test edebilirsiniz.)
- xorg-video-vmware (vmware kullanıyor iseniz test edebilirsiniz.)
- xorg-video-voodoo
- xorg-video-chips
+  xorg-video-apm 
+  xorg-video-ast
+  xorg-video-cirru
+  xorg-video-fbdev (Bu sürücü ekran kartından bağımsızdır ve direk teste tabidir.)
+  xorg-video-glint
+  xorg-video-i128
+  xorg-video-i740
+  xorg-video-intel
+  xorg-video-mach64
+  xorg-video-mga
+  xorg-video-neomagic
+  xorg-video-r128
+  xorg-video-radeon
+  xorg-video-radeonhd
+  xorg-video-s3
+  xorg-video-s3virge
+  xorg-video-savage
+  xorg-video-siliconmotion
+  xorg-video-sis
+  xorg-video-sisusb
+  xorg-video-tdfx
+  xorg-video-trident,
+  xorg-video-vesa (Bu sürücü tüm testçiler tarafından test edilebilir. Bilgisayarınızı güvenli kipte
+                   açarak, diğer paketler ile aynı şekilde test edebilirsiniz.)
+  xorg-video-vmware (vmware kullanıyor iseniz test edebilirsiniz.)
+  xorg-video-voodoo
+  xorg-video-chips
 \end{verbatim}
 
 \begin{itemize}
- \item Bilgisayarınızı yeniden başlatın, ve açtığınızda çözünürlüğün düzgün olduğunu gözlemleyin.
+  \item Bilgisayarınızı yeniden başlatın, ve açtığınızda çözünürlüğün düzgün olduğunu gözlemleyin.
 
- Bilgisayarınızda bir yavaşlık olmadığını gözlemleyin
- \item Aşağıda bulunan viedoyu mplayer, kaffeine gibi bir oynatıcı ile oynatın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
- \begin{verbatim}
+  Bilgisayarınızda bir yavaşlık olmadığını gözlemleyin
+  \item Aşağıda bulunan viedoyu mplayer, kaffeine gibi bir oynatıcı ile oynatın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
+  \begin{verbatim}
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
- \end{verbatim}
-
-
+  \end{verbatim}
 \end{itemize}
 
 \end{enumerate}
 
 \section{Terminal alt Bileşeni}
 \begin{enumerate}
- \item rxvt-unicode paketi kurulumu sonrası:
+  \item rxvt-unicode paketi kurulumu sonrası:
 
-Bir x konsol penceresi açıldığını gözlemleyin.
+  Bir x konsol penceresi açıldığını gözlemleyin.
   \begin{verbatim}
-   # urxvt
+  # urxvt
   \end{verbatim}
 
-Aşağıda bulunan ilk komut sunucuyu başlatmaktadır, bir konsolda sunucuyu başlatın diğer konsola geçip ikinci satırda bulunan komutu çalıştırın ve bir x konsol penceresi açıldığını gözlemleyin.
+  Aşağıda bulunan ilk komut sunucuyu başlatmaktadır, bir konsolda sunucuyu başlatın diğer konsola geçip ikinci satırda bulunan komutu çalıştırın ve bir x konsol penceresi açıldığını gözlemleyin.
   \begin{verbatim}
-   # urxvtd (sunucuyu çalıştırın)
-   # urxvtc
+  # urxvtd (sunucuyu çalıştırın)
+  # urxvtc
   \end{verbatim}
 
-\item xterm paketi kurulumu sonrası:
+  \item xterm paketi kurulumu sonrası:
 
-Aşağıda bulunan komutun bir konsol çalıştırdığını gözlemleyin.
- \begin{verbatim}
+  Aşağıda bulunan komutun bir konsol çalıştırdığını gözlemleyin.
+  \begin{verbatim}
   # xterm
- \end{verbatim}
-
+  \end{verbatim}
 \end{enumerate}
-
 
 \end{document}
