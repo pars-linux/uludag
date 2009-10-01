@@ -8,3 +8,20 @@
 # any later version.
 #
 # Please read the COPYING file.
+
+__version__ = "0.1.1"
+
+__all__ = ["diskdevice",
+           "erros",
+           "filesystems",
+           "lvmdevice",
+           "parteddata",
+           "partition",
+           "storage",
+           "udev",
+           "utils"]
+
+
+def versionString():
+    return __version__
+
