@@ -1,0 +1,27 @@
+<!DOCTYPE lewis SYSTEM "lewis.dtd">
+
+<document>
+<title>Game Component Test Cases</title>
+<author>Semen Cirit</author>
+<testcase>
+<order>Packages below will be tested with the same method.</order>
+<package>
+rocksndiamonds 
+blobAndConquer
+blobwars
+freecol
+xmoto
+wormux
+eboard
+ppracer
+AssaultCube
+glest ve glest-data
+connectagram
+btanks
+</package>
+
+<text>Run the games.</text>
+
+<text>Observe that the games sound and visualisation are problem free.</text>
+</testcase>
+</document>
