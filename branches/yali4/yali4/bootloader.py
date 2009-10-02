@@ -85,10 +85,10 @@ def getMinor(dev_path):
 def filterLiveDiskInstallation(path):
     options = get_kernel_option("mudur")
     if options.has_key("livedisk"):
-        if path.startwith("/dev/"):
-            return path.replace(path[7],chr(ord(path[7]-1))
+        if path.startswith("/dev/"):
+            return path.replace(path[7],chr(ord(path[7])-1))
         else:
-            return path.replace(path[2],chr(ord(path[2]-1))
+            return path.replace(path[2],chr(ord(path[2])-1))
     else:
         return path
 
