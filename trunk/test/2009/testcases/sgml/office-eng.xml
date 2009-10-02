@@ -176,34 +176,36 @@
 </testcase>
 
 <testcase test="functional">
-<package>koffice-kpresenter</package>
+<package>koffice-krita</package>
+<case>
+    <text>Menu -> applications -> office, by following this path, check that: krita application opens without any errors.</text>
+    <text>By using this application, draw  something and try to save it.</text>
+    <text>Check that : It completes the work without any errors.</text>
+</case>
+</testcase>
+
+<testcase test="functional">
+<package>koffice-kspread</package>
+<case>
+    <text>Menu -> applications -> office, by following this path, check that: kspread application opens without any errors.</text>
+    <text>Open a template in this application, (For example student card template), Try to add image into the template and change the information on it.</text>
+    <text>Observe that all those works are done without any errors.</text>
+</case>
+</testcase>
+
+<testcase test="functional">
+<package>koffice-kword</package>
+<case>
+    <text>Menu -> applications -> office, by following this path, check that: kword application opens without any errors.</text>
+    <text>In this application, add image, write text into the file and save it.</text>
+    <text>Observe that all those works are done without any errors.</text>
+</case>
+</testcase>
+
+<testcase test="functional">
+<package>koffice-kword</package>
 <case>
 
-\item After installation koffice-krita package:
-
-Menu $\rightarrow$ applications $\rightarrow$ office, by following this path, check that: krita application opens without any errors.
-
-By using this application, draw  something and try to save it.
-
-Check that : It completes the work without any errors.
-
-\item After installation koffice-kspread package:
-
-Menu $\rightarrow$ applications $\rightarrow$ office, by following this path, check that: kspread application opens without any errors.
-
-Open a template in this application, (For example student card template), Try to add image into the template and change the information on it.
-
-Observe that all those works are done without any errors.
-
-\item After installation koffice-kword package:
-
-Menu $\rightarrow$ applications $\rightarrow$ office, by following this path, check that: kword application opens without any errors.
-
-In this application, add image, write text into the file and save it.
-
-Observe that all those works are done without any errors.
-\end{enumerate}
-\subsection*{l10n sub component}
 After installation of the packages below do the following: 
 
 Open Kword application, from help tab select application language, and select related language. 
