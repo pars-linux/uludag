@@ -15,12 +15,6 @@
 <package>usb-modeswitch</package>
 </testcase>
 
-</testcase>
-
-</testcase>
-
-</testcase>
-
 <testcase test="functional">
 <package>x86info</package>
 <case>
