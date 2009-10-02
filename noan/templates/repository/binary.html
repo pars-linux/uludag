@@ -10,12 +10,14 @@
     </ul>
 
     {% ifequal binary.resolution "pending" %}
+    {% if binary.get_pending_dependencies %}
     <h2>Pending Dependencies</h2>
     <ul>
         {% for dep in binary.get_pending_dependencies %}
         <li><a href="{{ dep.get_url }}">{{ dep }}</a> [Test Result: {{ dep.get_result_str }}]</li>
         {% endfor %}
     </ul>
+    {% endif %}
 
     <h2>Test Result</h2>
     <p>
@@ -32,7 +34,7 @@
         {% endif %}
     {% endifequal %}
 
-    <h2>Difference</h2>
+    <h2>Difference from Previously Released Binary</h2>
     <ul>
         {% for update in binary.get_difference %}
         <li>

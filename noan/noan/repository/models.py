@@ -239,16 +239,16 @@ class Binary(models.Model):
         return self.linked_binary.all()
 
     def get_result(self):
-        if self.testresult_set.count() == 0:
-            return "unknown"
+        for result in self.testresult_set.all():
+            if result.result == "no":
+                return "no"
         for dep in self.get_pending_dependencies():
             if dep.testresult_set.count() == 0:
                 return "unknown"
             if dep.get_result() == "no":
                 return "no"
-        for result in self.testresult_set.all():
-            if result.result == "no":
-                return "no"
+        if self.testresult_set.count() == 0:
+            return "unknown"
         for result in self.testresult_set.all():
             if result.result == "yes":
                 return "yes"

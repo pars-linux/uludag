@@ -9,13 +9,16 @@
             {{ distro }}
             <ul>
                 {% for binary in pending %}
+                {% ifequal binary.package.source.distribution distro %}
                 <li><a href="{{ binary.get_url }}">{{ binary.get_filename }}</a></li>
+                {% endifequal %}
                 {% endfor %}
             </ul>
         </li>
         {% endfor %}
     </ul>
 
+    {% comment %}
     <h2>Sources</h2>
     <ul>
         {% for distro in distros %}
@@ -51,4 +54,5 @@
         </li>
         {% endfor %}
     </ul>
+    {% endcomment %}
 {% endblock %}
