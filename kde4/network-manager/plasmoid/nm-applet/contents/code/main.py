@@ -11,6 +11,7 @@ import dbus
 # Qt Libs
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
+from PyQt4.Qt import QVariant
 
 # KDE Libs
 from PyKDE4.kdecore import i18n, KGlobal
@@ -144,13 +145,20 @@ class NmApplet(plasmascript.Applet):
                 self.chargeState = _battery.chargeState()
 
     def readEntries(self):
+        def readEntry(config, entryName, default):
+            entry = config.readEntry(entryName, default)
+            if type(entry) == type(QVariant()):
+                return entry.toString()
+            else:
+                return entry
+
         config = self.config()
         self._config = {}
-        self._config["pollinterval"] = int(config.readEntry("pollinterval", "5")) * 1000
-        self._config["showtraffic"] = config.readEntry("showtraffic", "true")
-        self._config["showwifi"] = config.readEntry("showwifi", "true")
-        self._config["showstatus"] = config.readEntry("showstatus", "true")
-        self._config["followsolid"] = config.readEntry("followsolid", "true")
+        self._config["pollinterval"] = int(readEntry(config, "pollinterval", "5")) * 1000
+        self._config["showtraffic"] = readEntry(config, "showtraffic", "true")
+        self._config["showwifi"] = readEntry(config, "showwifi", "true")
+        self._config["showstatus"] = readEntry(config, "showstatus", "true")
+        self._config["followsolid"] = readEntry(config, "followsolid", "true")
 
     def initPopup(self):
         self.dialog = Plasma.Dialog()

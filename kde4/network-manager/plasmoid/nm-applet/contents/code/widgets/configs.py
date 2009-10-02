@@ -3,6 +3,7 @@
 
 # Qt
 from PyQt4 import QtGui
+from PyQt4.Qt import QVariant
 
 # Configuration widgets
 from configIconui import Ui_configIcon
@@ -17,11 +18,18 @@ class ConfigIcon(QtGui.QWidget):
         self.parseConf(config)
 
     def parseConf(self, config):
-        self.ui.spinInterval.setValue(int(config.readEntry("pollinterval", "5")))
-        self.ui.checkTraffic.setChecked(config.readEntry("showtraffic", "true") == "true")
-        self.ui.checkWifi.setChecked(config.readEntry("showwifi", "true") == "true")
-        self.ui.checkStatus.setChecked(config.readEntry("showstatus", "true") == "true")
-        self.ui.checkBattery.setChecked(config.readEntry("followsolid", "true") == "true")
+        def readEntry(config, entryName, default):
+            entry = config.readEntry(entryName, default)
+            if type(entry) == type(QVariant()):
+                return entry.toString()
+            else:
+                return entry
+
+        self.ui.spinInterval.setValue(int(readEntry(config, "pollinterval", "5")))
+        self.ui.checkTraffic.setChecked(readEntry(config, "showtraffic", "true") == "true")
+        self.ui.checkWifi.setChecked(readEntry(config, "showwifi", "true") == "true")
+        self.ui.checkStatus.setChecked(readEntry(config, "showstatus", "true") == "true")
+        self.ui.checkBattery.setChecked(readEntry(config, "followsolid", "true") == "true")
 
     def writeConf(self, config):
         config.writeEntry("showtraffic", str(self.ui.checkTraffic.isChecked()).lower())
