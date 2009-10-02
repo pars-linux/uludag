@@ -25,6 +25,7 @@ import yali4.partitiontype as parttype
 import yali4.partitionrequest as request
 from yali4.partitionrequest import partrequests
 import yali4.gui.context as ctx
+from pardus.sysutils import get_kernel_option
 
 grub_conf_tmp = """\
 default 0
@@ -80,6 +81,17 @@ def findGrubDev(dev_path, device_map=None):
 def getMinor(dev_path):
     return str(int(filter(lambda d: d.isdigit(), dev_path)) -1)
 
+#@param path 'sdb1'
+def filterLiveDiskInstallation(path):
+    options = get_kernel_option("mudur")
+    if options.has_key("livedisk"):
+        if path.startwith("/dev/"):
+            return path.replace(path[7],chr(ord(path[7]-1))
+        else:
+            return path.replace(path[2],chr(ord(path[2]-1))
+    else:
+        return path
+
 class BootLoader:
     """ Bootloader Operations 
         Default bootlader is GRUB """
@@ -95,7 +107,9 @@ class BootLoader:
                 # (hd0)   /dev/hda
                 d = l[1]
                 return d
-
+    ##
+    #@param install_root_path gives installed root partition path
+    #@param install_dev grub installation path
     def writeGrubConf(self, install_root_path, install_dev, install_root_path_label):
         """ Check configurations and write grub.conf to the installed system.
             Default path is /mnt/target/boot/grub.conf """
@@ -104,6 +118,8 @@ class BootLoader:
 
         # some paths has own directories like (/dev/cciss/c0d0p1)
         # it removes /dev/ and gets the device.
+        # First filter mudur=livedisk installation
+        install_root_path = filterLiveDiskInstallation(install_root_path)
         install_root = install_root_path[5:]
         ctx.debugger.log("WGC: Given install_root_path is : %s" % install_root_path)
         ctx.debugger.log("WGC: Final install_root is : %s" % install_root)
@@ -121,17 +137,17 @@ class BootLoader:
 
         # if install root is equal with grub root
         # force install root to be hd0
-        if install_root.startswith(ctx.installData.bootLoaderDev):
+        if install_root.startswith(filterLiveDiskInstallation(ctx.installData.bootLoaderDev)):
             # create device map
             for disk in ctx.installData.orderedDiskList:
-                if install_root.startswith(disk[5:]):
-                    deviceMap.write("(hd%d)\t%s\n" % (i,disk))
+                if install_root.startswith(filterLiveDiskInstallation(disk[5:])):
+                    deviceMap.write("(hd%d)\t%s\n" % (i,filterLiveDiskInstallation(disk)))
                     diskList.remove(disk)
                     i+=1
 
         # create device map
         for disk in diskList:
-            deviceMap.write("(hd%d)\t%s\n" % (i,disk))
+            deviceMap.write("(hd%d)\t%s\n" % (i,filterLiveDiskInstallation(disk)))
             i+=1
         deviceMap.close()
 
@@ -178,7 +194,7 @@ class BootLoader:
             pt = parttype.swap
             swap_part_req = partrequests.searchPartTypeAndReqType(pt, rt)
             if swap_part_req:
-                s.append("resume=%s" %(swap_part_req.partition().getPath()))
+                s.append("resume=%s" %(filterLiveDiskInstallation(swap_part_req.partition().getPath())))
 
             return " ".join(s).strip()
 
@@ -225,9 +241,15 @@ class BootLoader:
                                                "fs": win_fs}
 
         open(self.grub_conf, "a").write(s)
-
+    ##
+    #@param grub_install_root = boot loader device
+    #@param root_path = root installation path
     def installGrub(self, grub_install_root=None, root_path=None):
         """ Install GRUB to the given device or partition """
+
+        #Filter usb installation device node
+        root_path = filterLiveDiskInstallation(root_path)
+        grub_install_root = filterLiveDiskInstallation(grub_install_root)
 
         major = findGrubDev(root_path)
         minor = getMinor(root_path)
