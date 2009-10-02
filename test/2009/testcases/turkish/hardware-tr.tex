@@ -14,6 +14,32 @@
 \begin{document}
 
 \maketitle
+\section{Irda alt Bileşeni}
+\begin{enumerate}
+ \item lirc paketi kurulumu sonrası:
+
+(Eğer bilgisayarınız infrared destekliyor ise test edebilirsiniz.)
+
+Aşağıda bulunan komutaları çalıştırın ve daha sonra uzaktan kumanda düğmelerinize basın ve kumandanın tanınmış olduğunu gözlemleyin.
+\begin{verbatim}
+# modprobe lirc_gpio
+# lircd
+# irw  
+\end{verbatim}
+
+\end{enumerate}
+
+
+\section{Graphics alt Bileşeni}
+\begin{enumerate}
+ \item ati-control-center paketi kurulumu sonrası:
+
+(sadece ati ekran kartı sürücüsü olanlar test edebilecektir.)
+ 
+Kmenu'den Ati Graphics Adapter Settings'i açın ve ati kartınızı bulabildiğini ve tanıdığını gözlemleyin.
+\end{enumerate}
+
+
 \section{Firmware alt Bileşeni}
 \begin{enumerate}
  \item Aşağıda bulunan paketler kurulum testine tabidir.

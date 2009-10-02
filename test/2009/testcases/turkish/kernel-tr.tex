@@ -55,7 +55,7 @@ http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
 
 \end{itemize}
 
-\item module-broadcom-wl ve module-broadcom-wl-userspacekurulumu sonrası: 
+\item module-broadcom-wl ve module-broadcom-wl-userspace kurulumu sonrası: 
 
 (Eğer boradcom kablosuz kartınız var ise test edebilirsiniz, kartınızın ne olduğuna bakabilmek için gerekli komut 'lspci')
 
@@ -68,7 +68,7 @@ Aşağıdaki komutu kullanarak ağa bağlı olduğunuzu gözlemleyiniz.
 # ping 4.2.2.1 
 \end{verbatim}
 
-\item module-fglrx ve module-fglrx-userspace kurulumu sonrası: 
+\item module-fglrx, module-fglrx-userspace ve xorg-video-fglrx kurulumu sonrası: 
 
 (Eğer ATI ekran kartınız var ise test edebilirsiniz, kartınızın ne olduğuna bakabilmek için gerekli komut lspci)
 
@@ -114,6 +114,12 @@ Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyiniz.
 # lsmod | grep lirc
 \end{verbatim}
 
+Aşağıda bulunan komutaları çalıştırın ve daha sonra uzaktan kumanda düğmelerinize basın ve kumandanın tanınmış olduğunu gözlemleyin.
+\begin{verbatim}
+# modprobe lirc_gpio
+# lircd
+# irw  
+\end{verbatim}
 \item module-ltmodem ve module-ltmodem-userspace kurulumu sonrası:
 
 (Eğer bilgisayarınızda entegre bir modem bulunuyor ise test edebilirsiniz.)
@@ -167,6 +173,13 @@ Aşağıdaki komutu kullanarak kameranızın çalıştığını gözlemleyiniz.
  module-nvidia71-userspace
  module-nvidia96
  module-nvidia96-userspace
+ xorg-video-nouveau
+ xorg-video-nvidia71
+ xorg-video-nvidia96
+ xorg-video-nvidia-current
+ module-nvidia173
+ module-nvidia173-userspace
+ xorg-video-nvidia173
 \end{verbatim}
 (Eğer NVIDIA ekran kartınız var ise test edebilirsiniz, kartınızın ne olduğuna bakabilmek için gerekli komut lspci)
 
