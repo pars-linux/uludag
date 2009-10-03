@@ -1,8 +1,7 @@
-../../src/common.py
-../../src/constants.py
-../../src/pardusTools.py
-../../src/puding.py
-../../src/releases.py
-../../src/uiCmd.py
-../../src/uiQt.py
+../src/common.py
+../src/constants.py
+../src/pardusTools.py
+../src/puding.py
+../src/releases.py
+../src/uiCmd.py
 
