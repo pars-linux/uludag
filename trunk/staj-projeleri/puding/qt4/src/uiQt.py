@@ -114,16 +114,17 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
 
     def confirmDialog(self, src, dst):
         (name, md5, url) = self.__getSourceInfo(src)
+        drives = self.partutils.returnDrives()
 
         confirm_message = self.tr("""\
 Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?
 
-CD Image Path: %s
-USB Device: %s (%s)
+<b>CD Image Path:</b> %s
+<b>USB Disk Path:</b> %s (%s)
 
-Release Name: %s
-Md5sum: %s
-Download URL: %s""" % (src, dst, "NULL", name, md5, url))
+<b>Release Name:</b> %s
+<b>Md5sum:</b> %s
+<b>Download URL:</b> %s""" % (src, drives[dst]["mount"], dst, name, md5, url))
 
         confirm_infos = self.questionDialog(self.tr("Confirm Informations"), confirm_message)
 
