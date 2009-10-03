@@ -284,6 +284,14 @@ class Create:
 
         self.utils.cprint(_("MBR written, USB disk is ready for Pardus installation."), "brightgreen")
 
+        if dst == MOUNT_USB:
+            cmd = "umount %s" % MOUNT_USB
+
+            if runCommand(cmd):
+                self.utils.cprint(_("Could not unmounted USB disk."), "red")
+
+                return False
+
         return True
 
     def __copyImage(self, src, dst):
