@@ -12,6 +12,7 @@ import sys
 from common import getDiskInfo
 from common import getIsoSize
 from common import getFileSize
+from common import getMounted
 from common import getNumberOfFiles
 from common import createSyslinux
 from common import createUSBDirs
@@ -114,17 +115,9 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
 
     def confirmDialog(self, src, dst):
         (name, md5, url) = self.__getSourceInfo(src)
-        drives = self.partutils.returnDrives()
+        mount_point = getMounted(dst)
 
-        confirm_message = self.tr("""\
-Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?
-
-<b>CD Image Path:</b> %s
-<b>USB Disk Path:</b> %s (%s)
-
-<b>Release Name:</b> %s
-<b>Md5sum:</b> %s
-<b>Download URL:</b> %s""" % (src, drives[dst]["mount"], dst, name, md5, url))
+        confirm_message = self.tr("<font color=\"red\"><b>Warning:</b></font> Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?<br /><br /><b>CD Image Path:</b> %s<br /><b>USB Disk Path:</b> %s (%s)<br /><b>Release Name:</b> %s<br /><b>Md5sum:</b> %s" % (src, dst, mount_point, name, md5))
 
         confirm_infos = self.questionDialog(self.tr("Confirm Informations"), confirm_message)
 
@@ -229,6 +222,7 @@ class SelectDisk(QtGui.QDialog, qtSelectDisk.Ui_Dialog):
 
         super(SelectDisk, self).__init__(parent)
         self.setupUi(self)
+        self.setWindowTitle(self.tr("Select USB Disk Path"))
 
         for drive in self.drives:
             label = QtGui.QListWidgetItem(QtCore.QString(self.drives[drive]["label"]))
