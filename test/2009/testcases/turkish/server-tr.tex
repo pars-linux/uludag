@@ -207,24 +207,6 @@ Aşağıda bulunan komut ile servisin başlatıldığını gözlemleyin.
 # sudo testparm /etc/samba/smb.conf
 \end{verbatim}
 
-/etc/samba/smb.conf dosyasına aşağıda bulunanları ekleyin.
-\begin{verbatim}
-[public]
-   path = /tmp
-   public = yes
-   only guest = yes
-   writable = yes
-   printable = no
-\end{verbatim}
-
-Servis yöneticisinden yeniden başlatın. 
-
-Aşağıdaki komutların hatasız bir şekilde çalıştığını gözlemleyin.
-\begin{verbatim}
-smbclient //localhost/public 
-ls
-\end{verbatim}
-
 \end{itemize}
 
 
