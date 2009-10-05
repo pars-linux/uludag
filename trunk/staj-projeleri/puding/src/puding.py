@@ -27,7 +27,6 @@ from optparse import OptionGroup
 from puding.common import _
 from puding.common import createDirs
 
-from puding.constants import DESCRIPTION
 from puding.constants import HOME
 from puding.constants import LICENSE
 from puding.constants import NAME
@@ -49,7 +48,8 @@ class Options:
         return parser.parse_args()
 
     def main(self):
-        parser = OptionParser(description = DESCRIPTION, version = VERSION)
+        description = _("Puding is an USB image creator for Pardus Linux.")
+        parser = OptionParser(description = description, version = VERSION)
         (opts, args) = self.parseArgs(parser)
 
         if opts.create:

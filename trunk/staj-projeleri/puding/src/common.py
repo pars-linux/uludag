@@ -192,7 +192,6 @@ class PartitionUtils:
                         if child.GetProperty("block.is_volume"):
                             self.addDevice(child, parent = dev)
 
-
         if not len(self.drives):
             return False
 

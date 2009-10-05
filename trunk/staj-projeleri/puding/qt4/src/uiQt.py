@@ -19,17 +19,16 @@ from common import createUSBDirs
 from common import runCommand
 from common import PartitionUtils
 
-from constants import COPYRIGHT
 from constants import CORE_DEVELOPER
 from constants import CORE_EMAIL
-from constants import DESCRIPTION
 from constants import LICENSE_NAME
 from constants import NAME
 from constants import MOUNT_ISO
 from constants import MOUNT_USB
 from constants import SHARE
-from constants import VERSION
 from constants import URL
+from constants import VERSION
+from constants import YEAR
 
 from puding import qtMain
 from puding import qtConfirmDialog
@@ -73,14 +72,17 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
 
     @QtCore.pyqtSignature("bool")
     def on_actionAbout_triggered(self):
-         QtGui.QMessageBox.about(self, self.tr("About Puding"), """\
+        description = self.tr("Puding is an USB image creator for Pardus Linux.")
+        copyright = self.tr("Copyright (c) %s TUBITAK / UEKAE" % YEAR)
+
+        QtGui.QMessageBox.about(self, self.tr("About Puding"), """\
 <b>%s</b> - %s<br />
 %s<br /><br />
 %s<br />
 %s<br />
 %s, <i>%s</i><br />
-<a href="%s">%s</a>""" % (NAME, VERSION, DESCRIPTION, LICENSE_NAME, \
-                          COPYRIGHT, CORE_DEVELOPER, CORE_EMAIL, URL, URL))
+<a href="%s">%s</a>""" % (NAME, VERSION, description, LICENSE_NAME, \
+                          copyright, CORE_DEVELOPER, CORE_EMAIL, URL, URL))
 
     @QtCore.pyqtSignature("bool")
     def on_button_create_clicked(self):
@@ -260,8 +262,6 @@ class ConfirmDialog(QtGui.QDialog, qtConfirmDialog.Ui_Dialog):
         self.label_name.setText(name)
         self.label_md5.setText(md5)
         self.label_url.setText(url)
-
-
 
 class ProgressBar(QtGui.QDialog, qtProgressBar.Ui_Dialog):
     def __init__(self, title, message, max_value, parent = None):
