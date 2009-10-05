@@ -33,6 +33,7 @@ import yali4.gui.context as ctx
 import yali4.localeutils
 import yali4.sysutils
 import yali4.fstab
+from pardus.sysutils import get_kernel_option
 
 # pisi base
 import pisi.ui
@@ -404,7 +405,11 @@ class Yali:
 
     def guessBootLoaderDevice(self, root_part=None):
         if len(yali4.storage.devices) > 1 or ctx.isEddFailed:
-            ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.orderedDiskList[0])
+            opts = get_kernel_option("mudur")
+            if opts.has_key("livedisk"):
+                ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.orderedDiskList[1])
+            else:
+                ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.orderedDiskList[0])
         else:
             if root_part:
                 pardus_path = root_part
