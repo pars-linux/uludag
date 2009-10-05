@@ -32,6 +32,7 @@ from constants import VERSION
 from constants import URL
 
 from puding import qtMain
+from puding import qtConfirmDialog
 from puding import qtProgressBar
 from puding import qtSelectDisk
 
@@ -83,7 +84,8 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
 
     @QtCore.pyqtSignature("bool")
     def on_button_create_clicked(self):
-        src = str(self.line_image.displayText())
+        # FIXED issue: #1
+        src = unicode(str(self.line_image.displayText()))
         dst = str(self.line_disk.displayText())
 
         if dst.startswith("/dev/"):
@@ -99,29 +101,22 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
             return False
 
         try:
-            confirm_infos = self.confirmDialog(src, dst)
-
-            if confirm_infos == QtGui.QMessageBox.Ok:
+            (name, md5, url) = self.__getSourceInfo(src)
+            mount_point = getMounted(dst)
+            self.confirm_infos = ConfirmDialog(src, dst, mount_point, name, md5, url)
+            if self.confirm_infos.exec_() == QtGui.QDialog.Accepted:
                 createUSBDirs(dst)
                 self.__createImage(src, dst)
 
                 if dst == MOUNT_USB:
                     pt.umount(dst)
 
-            return True
+                return True
+
+            return False
 
         except TypeError: # 'bool' object is not iterable
             return False
-
-    def confirmDialog(self, src, dst):
-        (name, md5, url) = self.__getSourceInfo(src)
-        mount_point = getMounted(dst)
-
-        confirm_message = self.tr("<font color=\"red\"><b>Warning:</b></font> Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?<br /><br /><b>CD Image Path:</b> %s<br /><b>USB Disk Path:</b> %s (%s)<br /><b>Release Name:</b> %s<br /><b>Md5sum:</b> %s" % (src, dst, mount_point, name, md5))
-
-        confirm_infos = self.questionDialog(self.tr("Confirm Informations"), confirm_message)
-
-        return confirm_infos
 
     def warningDialog(self, title, message,):
         QtGui.QMessageBox.warning(self, title, message, QtGui.QMessageBox.Ok)
@@ -222,7 +217,6 @@ class SelectDisk(QtGui.QDialog, qtSelectDisk.Ui_Dialog):
 
         super(SelectDisk, self).__init__(parent)
         self.setupUi(self)
-        self.setWindowTitle(self.tr("Select USB Disk Path"))
 
         for drive in self.drives:
             label = QtGui.QListWidgetItem(QtCore.QString(self.drives[drive]["label"]))
@@ -254,6 +248,20 @@ class SelectDisk(QtGui.QDialog, qtSelectDisk.Ui_Dialog):
             return False
 
         return self.line_directory.displayText()
+
+class ConfirmDialog(QtGui.QDialog, qtConfirmDialog.Ui_Dialog):
+    def __init__(self, src, dst, mount_point, name, md5, url, parent = None):
+        super(ConfirmDialog, self).__init__(parent)
+        self.setupUi(self)
+        dst_info = "%s (%s)" % (dst, mount_point)
+
+        self.label_src.setText(src)
+        self.label_dst.setText(dst_info)
+        self.label_name.setText(name)
+        self.label_md5.setText(md5)
+        self.label_url.setText(url)
+
+
 
 class ProgressBar(QtGui.QDialog, qtProgressBar.Ui_Dialog):
     def __init__(self, title, message, max_value, parent = None):
@@ -326,7 +334,7 @@ class ProgressIncrementCopy(QtCore.QThread):
         for file in self.file_list:
             size = getFileSize(file)
             file_name = os.path.split(file)[1]
-            self.message = self.tr("Copying %s (%0.2fMB)..." % (file_name, size))
+            self.message = self.tr("Copying %s (%0.2fMB)" % (file_name, size))
             self.emit(QtCore.SIGNAL("updateLabel"), self.message)
             shutil.copyfile(file, "%s/%s" % (self.dst, file.split(self.src)[-1]))
             self.emit(QtCore.SIGNAL("incrementProgress()"))

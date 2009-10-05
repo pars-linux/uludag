@@ -36,7 +36,7 @@ def getIsoSize(src):
     return os.stat(src).st_size
 
 def getFileSize(file):
-    file_size = os.stat(file).st_size
+    file_size = os.stat(file).st_size / 1024.0**2
 
     return file_size
 
