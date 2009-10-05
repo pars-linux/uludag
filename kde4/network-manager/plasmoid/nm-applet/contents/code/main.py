@@ -11,7 +11,6 @@ import dbus
 # Qt Libs
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
-from PyQt4.Qt import QVariant
 
 # KDE Libs
 from PyKDE4.kdecore import i18n, KGlobal
@@ -122,8 +121,8 @@ class NmApplet(plasmascript.Applet):
 
     def solidState(self):
         if self.hasBattery:
-            return (not self._config['followsolid'] == 'true') or \
-                    (self._config['followsolid'] == 'true' and self.chargeState == Solid.Battery.Charging)
+            return (not self._config['followsolid']) or \
+                    (self._config['followsolid'] and self.chargeState == Solid.Battery.Charging)
         return True
 
     def batteryStateChanged(self, newstate, udi):
@@ -145,20 +144,13 @@ class NmApplet(plasmascript.Applet):
                 self.chargeState = _battery.chargeState()
 
     def readEntries(self):
-        def readEntry(config, entryName, default):
-            entry = config.readEntry(entryName, default)
-            if type(entry) == type(QVariant()):
-                return entry.toString()
-            else:
-                return entry
-
         config = self.config()
         self._config = {}
-        self._config["pollinterval"] = int(readEntry(config, "pollinterval", "5")) * 1000
-        self._config["showtraffic"] = readEntry(config, "showtraffic", "true")
-        self._config["showwifi"] = readEntry(config, "showwifi", "true")
-        self._config["showstatus"] = readEntry(config, "showstatus", "true")
-        self._config["followsolid"] = readEntry(config, "followsolid", "true")
+        self._config["pollinterval"] = config.readEntry("pollinterval", QVariant("5")).toInt()[0] * 1000
+        self._config["showtraffic"] = config.readEntry("showtraffic", QVariant("true")).toBool()
+        self._config["showwifi"] = config.readEntry("showwifi", QVariant("true")).toBool()
+        self._config["showstatus"] = config.readEntry("showstatus", QVariant("true")).toBool()
+        self._config["followsolid"] = config.readEntry("followsolid", QVariant("true")).toBool()
 
     def initPopup(self):
         self.dialog = Plasma.Dialog()
@@ -198,7 +190,7 @@ class NmApplet(plasmascript.Applet):
             paint.fillPath(_path, self.transmitterBlinker.color)
 
         # Draw Emblem
-        if self._config['showstatus'] == 'true':
+        if self._config['showstatus']:
             paint.drawPixmap(0,0,emblem)
         paint.end()
 
@@ -209,7 +201,7 @@ class NmApplet(plasmascript.Applet):
     def dataUpdated(self):
         if self.lastActiveDevice:
             if self.lastActivePackage == 'wireless_tools':
-                if self._config['showwifi'] == 'true' and self.solidState():
+                if self._config['showwifi'] and self.solidState():
                     # Show SIGNAL Strength
                     strength = int(round((self.iface.strength(self.lastActiveDevice)*5) / self.maxQuality))
                     if not strength in range(1,6):
@@ -219,7 +211,7 @@ class NmApplet(plasmascript.Applet):
                     self.defaultIcon = WIRELESS
             else:
                 self.defaultIcon = WIRED
-            if self._config['showtraffic'] == 'true' and self.solidState():
+            if self._config['showtraffic'] and self.solidState():
                 self.receiverBlinker.update(self.iface.stat(self.lastActiveDevice)[0])
                 self.transmitterBlinker.update(self.iface.stat(self.lastActiveDevice)[1])
             else:
@@ -229,7 +221,7 @@ class NmApplet(plasmascript.Applet):
             self.receiverBlinker.stop()
             self.transmitterBlinker.stop()
         self.update()
-        if self._config['showwifi'] == 'true' or self._config['showtraffic'] == 'true':
+        if self._config['showwifi'] or self._config['showtraffic']:
             if self.solidState():
                 QTimer.singleShot(self._config['pollinterval'], self.dataUpdated)
 
@@ -264,7 +256,7 @@ class NmApplet(plasmascript.Applet):
                     self.connectedDevices.append(connection)
 
                 # Update Max Quality value
-                if self.lastActivePackage == 'wireless_tools' and self._config['showwifi'] == 'true':
+                if self.lastActivePackage == 'wireless_tools' and self._config['showwifi']:
                     self.maxQuality = self.iface.getMaxQuality(self.lastActiveDevice)
 
                 # Current Ip

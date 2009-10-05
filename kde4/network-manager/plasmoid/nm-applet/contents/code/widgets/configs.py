@@ -18,25 +18,18 @@ class ConfigIcon(QtGui.QWidget):
         self.parseConf(config)
 
     def parseConf(self, config):
-        def readEntry(config, entryName, default):
-            entry = config.readEntry(entryName, default)
-            if type(entry) == type(QVariant()):
-                return entry.toString()
-            else:
-                return entry
-
-        self.ui.spinInterval.setValue(int(readEntry(config, "pollinterval", "5")))
-        self.ui.checkTraffic.setChecked(readEntry(config, "showtraffic", "true") == "true")
-        self.ui.checkWifi.setChecked(readEntry(config, "showwifi", "true") == "true")
-        self.ui.checkStatus.setChecked(readEntry(config, "showstatus", "true") == "true")
-        self.ui.checkBattery.setChecked(readEntry(config, "followsolid", "true") == "true")
+        self.ui.spinInterval.setValue(int(config.readEntry("pollinterval", QVariant("5")).toInt()[0]))
+        self.ui.checkTraffic.setChecked(config.readEntry("showtraffic", QVariant("true")).toBool())
+        self.ui.checkWifi.setChecked(config.readEntry("showwifi", QVariant("true")).toBool())
+        self.ui.checkStatus.setChecked(config.readEntry("showstatus", QVariant("true")).toBool())
+        self.ui.checkBattery.setChecked(config.readEntry("followsolid", QVariant("true")).toBool())
 
     def writeConf(self, config):
-        config.writeEntry("showtraffic", str(self.ui.checkTraffic.isChecked()).lower())
-        config.writeEntry("showwifi", str(self.ui.checkWifi.isChecked()).lower())
-        config.writeEntry("showstatus", str(self.ui.checkStatus.isChecked()).lower())
-        config.writeEntry("followsolid", str(self.ui.checkBattery.isChecked()).lower())
-        config.writeEntry("pollinterval", str(self.ui.spinInterval.value()))
+        config.writeEntry("showtraffic", self.ui.checkTraffic.isChecked())
+        config.writeEntry("showwifi", self.ui.checkWifi.isChecked())
+        config.writeEntry("showstatus", self.ui.checkStatus.isChecked())
+        config.writeEntry("followsolid", self.ui.checkBattery.isChecked())
+        config.writeEntry("pollinterval", self.ui.spinInterval.value())
 
 class ConfigPopup(QtGui.QWidget):
 
