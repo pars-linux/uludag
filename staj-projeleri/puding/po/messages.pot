@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: puding TRUNK\n"
 "Report-Msgid-Bugs-To: gkmngrgn@gmail.com\n"
-"POT-Creation-Date: 2009-09-30 17:51+0300\n"
+"POT-Creation-Date: 2009-10-06 00:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,20 +16,24 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/puding.py:39
+#: ../src/puding.py:38
 msgid "show program's license info and exit"
 msgstr ""
 
-#: ../src/puding.py:41
+#: ../src/puding.py:40
 msgid "create Pardus USB image from console"
 msgstr ""
 
-#: ../src/puding.py:43
+#: ../src/puding.py:42
 msgid "Graphical Interface Options"
 msgstr ""
 
-#: ../src/puding.py:45
+#: ../src/puding.py:44
 msgid "run Puding with Qt4 graphical interface"
+msgstr ""
+
+#: ../src/puding.py:51
+msgid "Puding is an USB image creator for Pardus Linux."
 msgstr ""
 
 #: ../src/puding.py:57
@@ -232,15 +236,19 @@ msgid "MBR written, USB disk is ready for Pardus installation."
 msgstr ""
 
 #: ../src/uiCmd.py:291
+msgid "Could not unmounted USB disk."
+msgstr ""
+
+#: ../src/uiCmd.py:299
 #, python-format
 msgid "Copying pardus.img to %s.."
 msgstr ""
 
-#: ../src/uiCmd.py:298 ../src/uiCmd.py:306
+#: ../src/uiCmd.py:306 ../src/uiCmd.py:314
 msgid "Copying: "
 msgstr ""
 
-#: ../src/uiCmd.py:308
+#: ../src/uiCmd.py:316
 #, python-format
 msgid "%s is already exist."
 msgstr ""
