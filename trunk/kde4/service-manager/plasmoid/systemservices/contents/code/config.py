@@ -16,7 +16,7 @@ class SystemServicesConfig(QWidget, Ui_ServiceConfig):
         self.config = config
 
         # Get enabled services from config
-        self.enabledServices = str(self.config.readEntry("services", '')).split(',')
+        self.enabledServices = self.config.readEntry("services", QVariant('')).toString().split(',')
 
         # Show descriptions if showDesc is checked
         self.showDesc.setChecked(self.config.readEntry("showdesc", QVariant(True)).toBool())
