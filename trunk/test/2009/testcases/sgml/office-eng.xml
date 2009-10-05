@@ -21,6 +21,12 @@
     <package>koffice-devel</package>
     <package>koffice-filters</package>
     <package>koffice-kchart</package>
+    <package>iso-codes</package>
+    <package>openclipart</package>
+    <package>recode</package>
+    <package>openoffice-python</package>
+    <package>openoffice-clipart</package>
+    <package>zpspell</package>
 </testcase>
 
 <testcase test="functional">
@@ -203,482 +209,463 @@
 </testcase>
 
 <testcase test="functional">
-<package>koffice-kword</package>
+    <package> koffice-l10n-ca</package>
+    <package>koffice-l10n-cs</package>
+    <package>koffice-l10n-da</package>
+    <package>koffice-l10n-de</package>
+    <package>koffice-l10n-el</package>
+    <package>koffice-l10n-en_GB</package>
+    <package>koffice-l10n-es</package>
+    <package>koffice-l10n-et</package>
+    <package>koffice-l10n-fr</package>
+    <package>koffice-l10n-gl</package>
+    <package>koffice-l10n-it</package>
+    <package>koffice-l10n-ja</package>
+    <package>koffice-l10n-nl</package>
+    <package>koffice-l10n-pl</package>
+    <package>koffice-l10n-pt</package>
+    <package>koffice-l10n-pt_BR</package>
+    <package>koffice-l10n-sv</package>
+    <package>koffice-l10n-tr</package>
+    <package>koffice-l10n-uk</package>
+    <package>koffice-l10n-zh_CN</package>
+    <package>koffice-l10n-zh_TW</package>
 <case>
 
-After installation of the packages below do the following: 
-
-Open Kword application, from help tab select application language, and select related language. 
-
-Then restart application. Observe that application language changed into the language you have chosen.
-
-\begin{verbatim}
-koffice-l10n-ca
-koffice-l10n-cs
-koffice-l10n-da
-koffice-l10n-de
-koffice-l10n-el
-koffice-l10n-en_GB
-koffice-l10n-es
-koffice-l10n-et
-koffice-l10n-fr
-koffice-l10n-gl
-koffice-l10n-it
-koffice-l10n-ja
-koffice-l10n-nl
-koffice-l10n-pl
-koffice-l10n-pt
-koffice-l10n-pt_BR
-koffice-l10n-sv
-koffice-l10n-tr
-koffice-l10n-uk
-koffice-l10n-zh_CN
-koffice-l10n-zh_TW
-\end{verbatim}
-
-\section{Misc sub component}
-\begin{enumerate}
-\item After installation noor package:
-
-Open the application from Kmenu, Select a verse and press show button and check that: verse's meaning can be seen.
-\item Install only test:
-\begin{verbatim}
-iso-codes
-openclipart
-recode
-
-\end{verbatim}
-\item After installation aiksaurus package:
-\begin{verbatim}
- # aiksaurus <An english word>
-\end{verbatim}
-
-Observe that it finds words that look like the input word.
-
-\item After installation antiword package:
-\begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/antiword_test.doc
- # antiword antiword_test.doc
-\end{verbatim}
-
-Observe that Command output works without any errors.
-
-\item After installation barcode package:
-\begin{verbatim}
- # barcode
-\end{verbatim}
- After running this command,enter a word and check that: this word is encoded as a barcode without any errors.
-
-\item After installation djview4, djvu package:
-\begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/djvu_test.djvu
-\end{verbatim}
-
-By right clicking on the file you downloaded, from open with part choose djview4. 
-
-Observe that it opens without any errors.
-
-\item After installation dos2unix package:
-\begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_dos2unix.txt
- # dos2unix test_dos2unix.txt deneme1.txt
- # vi deneme1.txt
-\end{verbatim}
-Check that : Text file is changed from dos type to unix type without any error. (Related lines must be in  correct places.)
-
-\begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_mac2unix.txt
- # mac2unix test_mac2unix.txt deneme2.txt
- # vi deneme2.txt
-\end{verbatim}
-Check that : Text file is changed from mac type to unix type without any error. (Related lines must be in  correct places.)
-
-\item After installation doxygen package:
-\begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_doxgen.c
- # doxygen -g test_doxygen.cfg test_doxygen.c
- # doxygen test_doxygen.cfg
-\end{verbatim}
-
-Observe that in the current directory, there existed two new directories without any errors : html and latex.
-
-\item After installation htmldoc package:
-\begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_htmldoc.html
-\end{verbatim}
-
-Menu $\rightarrow$ Applications $\rightarrow$ Office, by following this path, open htmldoc application.
-
-Observe that it opens without any errors.
-
-By using Htmldoc application change the test\_htmldoc.html file into pdf file. (For input, choose webpage and then add test file. Pass into PDF part and press generate button, you will be prompted to enter a file name. Give a name with PDF type and press generate button.)
- 
-Observe that transformation is done correctly.
-\item After installation mftrace package:
-\begin{verbatim}
- # mftrace cmr10
-\end{verbatim}
-Observe that cmrt10.pfa file is created without any errors.
-\item After installation t1utils package:
-\begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_t1utils.pfa
- # t1ascii test_t1utils.pfa
- # t1asm test_t1utils.pfa
- # t1binary test_t1utils.pfa
- # t1disasm test_t1utils.pfa
- # t1mac test_t1utils.pfa
- # t1unmac test_t1utils.pfa
-\end{verbatim}
-
-Observe that those commands run without any errors. 
-\item After installation tellico package:
-
-
-\begin{itemize}
- \item Observe that after the install, this application opens without any errors.
- \item Edit $\rightarrow$ Follow the Internet search path, do a search from the current window. Observe that search results are listed without any errors. From the data from the list choose one of them and add it. Observe that It is added without any errors.
-\end{itemize}
-
-\item After installation  texi2html package:
-\begin{verbatim}
- # wget http://svn.pardus.org.tr/uludag/trunk/test/2009/testcases/turkish/bug_report-tr.tex
- # texi2html bug_report-tr.tex
-\end{verbatim}
-
-Observe that bug\_report-tr.html file is created without any errors.
-
-\item After installation wv package:
-\begin{verbatim}
- # wget http://svn.pardus.org.tr/uludag/trunk/test/2009/testcases/turkish/test_wv.doc
-# wvAbw test_wv.doc deneme.abw                                
-# wvCleanLatex test_wv.doc deneme.tex                            
-# wvConvert  test_wv.doc                              
-# wvDVI   test_wv.doc deneme.dvi                                
-# wvDocBook test_wv.doc deneme.sgml                               
-# wvHtml test_wv.doc deneme.html                                 
-# wvLatex test_wv.doc deneme.tex                                
-# wvMime  test_wv.doc deneme.mime                                
-# wvPDF test_wv.doc deneme.pdf                                  
-# wvPS  test_wv.doc deneme.ps                                  
-# wvRTF test_wv.doc deneme.rtf                                  
-# wvSummary test_wv.doc            
-# wvText   test_wv.doc deneme.txt                               
-# wvVersion  test_wv.doc                             
-# wvWare  test_wv.doc -X deneme.xml                                
-# wvWml test_wv.doc deneme.wml       
-
-\end{verbatim}
-
-Observe that all the commands run without any errors.
-
-
-\end{enumerate}
-\section{Openoffice sub component}
-\begin{enumerate}
- \item After installation imposter package:
-\begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.ppt
- # imposter test_ooimpress.odp
- # imposter test_ooimpress.ppt
-\end{verbatim}
-Open the files above with the imposter application and then tam Bakış $\rightarrow$ Full Screen, by following this path, make full screen the files. Observe that They can be done without any error.
-
- \item After installation mdbtools package:
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_mdbtools.mdb
-# mdb-ver test_mdbtools.mdb
-# mdb-tables test_mdbtools.mdb
-# mdb-ver test_mdbtools.mdb Client
-\end{verbatim}
-
-Observe that commands above run without any error
-
-\item openoffice paketi kurulumu sonrası:
-\begin{itemize}
-\item Openoffice Kelime işlemcisi:
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.doc
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.odt
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.sxw
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.txt
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.ott
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.html
-\end{verbatim}
-
-Observe that files which are represented by links above can be opened without any error.
-
-\item Openoffice Impress:
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.ppt
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.pot
-\end{verbatim}
-
-Observe that files which are represented by links above can be opened without any error.
-
-\item Openoffice Calc:
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oocalc.xls
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oocalc.xlt
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oocalc.ods
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oocalc.ots
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oocalc.csv	
-\end{verbatim}
-
-Observe that files which are represented by links above can be opened without any error.
-
-\item Openoffice Draw:
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.gif
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.jpg
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.png
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.tif
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.odg
-\end{verbatim}
-
-Observe that files which are represented by links above can be opened without any error.
-\item Openoffice Base:
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb
-\end{verbatim}
-
-Observe that files which are represented by links above can be opened without any error.
-
-\item Openoffice Writer/Web:
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb
-\end{verbatim}
-
-Observe that files which are represented by links above can be opened without any error.
-
-\end{itemize}
-
- \item The packages below will only be tested by installing them.
-\begin{verbatim}
-openoffice-python
-openoffice-clipart
-\end{verbatim}
-
- \item After installation openoffice-extension-pdfimport package.
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/
-test_openoffice-extension-pdfimport.pdf
-\end{verbatim}
-
-\begin{itemize}
-\item Openoffice Impress Tools $\rightarrow$ Addon Manager, from this path, check that: related addon is installed..
-
-\item Menu $\rightarrow$ applications $\rightarrow$ office, by following this path,open openoffice Draw application.
-
-Observe that the above pdf file can be opened without any errors.
-\item Make some changes on it, save it and reopen it.
-
-Observe that the file can be opened without any errors and includes the changes.
-
-\end{itemize}
- 
-\item After installation openoffice-extension-presentation-minimizer package.
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
-\end{verbatim}
-
-\begin{itemize}
-\item openoffice Impress Tools $\rightarrow$ Addon Manager, from this path, check that: Related addon is installed.
-
-\item Open file above with openoffice Impress application. Tools  $\rightarrow$  Minimize presentation , from this path, do all necessary steps.
-
-Observe that file with .mini.p type is created without any errors.
-
-\item Right click to the created file and open with openoffice Draw application.
-
-Observe that it opens without any error.
-
-\end{itemize}
- 
-\item After installation openoffice-extension-presenter-screen package.
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
-\end{verbatim}
-
-\begin{itemize}
-
-
-\item Open the file above with the openoffice Impress application. Add one note from Notes part. 
-
-Press F5 button and check that: Last added note is not seen.
-
-\end{itemize}
-\item After installation openoffice-extension-report-builder package.
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb
-\end{verbatim}
-
-\begin{itemize}
-\item openoffice Impress Tools $\rightarrow$ Addon Manager, from this path, check that: related addon is installed.
-
-\item Open the file above with the openoffice Base application. Tools $\rightarrow$ Report, follow this path.
-
-Try to write a new report, check that: It can be written without any errors.
-
-\end{itemize}
-\item openoffice Impress Tools $\rightarrow$ Addon Manager, from this path, check that: related addon is installed.
-
-\item After installation openoffice-extension-wiki-publisher package.
-
-Open Openoffice writer. File $\rightarrow$ Send $\rightarrow$ MediaWiki, follow the path. Choose http://tr.pardus-wiki.org/ as the Wiki server   and try to connect.
-
-Observe that you can connect without any errors.
-
-\item After installation the packages below, change your language, open an openoffice application in the same directory and check that: help file's language is the language we chose.
-\begin{verbatim}
-openoffice-help-en 
-openoffice-help-de
-openoffice-help-es
-openoffice-help-fr
-openoffice-help-it
-openoffice-help-nl
-openoffice-help-pt-BR
-openoffice-help-sv
-openoffice-help-tr
-openoffice-langpack-de
-openoffice-langpack-es
-openoffice-langpack-fr
-openoffice-langpack-fr
-openoffice-langpack-nl
-openoffice-langpack-pt-BR
-openoffice-langpack-sv
-openoffice-langpack-tr
-
-\end{verbatim}
-
-To change the language:
-\begin{verbatim}
-export LC_ALL= <lang_LANG>
-\end{verbatim}
-
-lang\_LANG means, for pt-BT : pt\_BT, and for other languages : de\_DE .
-
-Then in the current directory run oowriter command, if the package is related with help check the help file, if the package is related with application language check application runs in the chosen language without any errors.
-
-
-\item After installation openoffice-kde package:
-
-Open Dolphin application, right click on the left part of the application and choose add new. Choose an icon, click on the icon and choose other icons. Write oo into the search part.
-
-Observe that in the icon window, there exists icons related with openoffice.
-
-Choose an openoffice icon and apply it.
-
-Observe that icon is added into the left part of the Dolphin application.
-
-\item zemberek-openoffice
-
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test-zemberek-openoffice.odt
-\end{verbatim}
-
-Open the file above and Tools $\rightarrow$ SpellCheck, from this path, check that: spellcheck is working.
-\end{enumerate}
-\section{ Postscript sub component}
-\begin{enumerate}
-\item After installation a2ps package:
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_a2ps.tex
-# a2ps -o test_a2ps.ps test_a2ps.tex
-# a2ps test_a2ps.tex
-\end{verbatim}
-
-check that: Second command above creates the file test\_a2ps.ps without any errors.
-
-If you have a printer, after running third command above  check that: you can take printout without any errors.
-
-\item After installation ghostscript and ghostscript-doc packages:
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.ps
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.dvi
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.pdf
-# gs test_ghostscript.ps
-# dvipdf  test_ghostscript.dvi test.pdf
-# eps2eps test_ghostscript.ps test.eps
-# font2c test_ghostscript.ps test.c
-# pdf2dsc test_ghostscript.pdf test.dsc
-# pdfopt test_ghostscript.pdf test.pdf
-# printafm test_ghostscript.ps
-# ps2ascii test_ghostscript.ps test
-# ps2pdf test_ghostscript.ps test.pdf
-# ps2ps test_ghostscript.ps test.ps
-\end{verbatim}
-
-Observe that by using "gs" command, related file can be viewed without any errors and other commands create files with correct types without any errors. (You can view these files with okular)
-
-\item After installation gv package:
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
-# gv test_gv.pdf
-\end{verbatim}
-
-Observe that pdf file can be viewed without any errors.
-
-\item After installation poppler package:
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_poppler.pdf
-# pdffonts test_gv.pdf
-# pdfinfo test_gv.pdf
-# pdftohtml test_gv.pdf test.html
-# pdftoppm test_gv.pdf test.ppm
-# pdftops test_gv.pdf test.ps
-# pdftotext test_gv.pdf test
-# pdfimages -f 1 test_poppler.pdf test
-\end{verbatim}
-
-check that: Commands above produce correct outputs  without any errors.
-\end{enumerate}
-
-\section{ Spellcheck sub component}
-\begin{enumerate}
-\item Packages below will be tested with the same method.
-\begin{verbatim}
-aspell
-aspell-de
-aspell-en
-aspell-es
-aspell-fr
-aspell-it
-aspell-nl
-aspell-sv 
-\end{verbatim}
-
-Bu using the second command below, list the dictionary you built, then by using third command with this dictionary check that: the word ,that's in the file, translation  into the related language can be found without any errors.
-\begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/spellcheck/test_aspell
-# aspell dicts
-# aspell -l <ilgili listelenen sözlük> -c test_aspell
-\end{verbatim}
-\item After installation enchant package:
-\begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt
- # sudo pisi it hunspell-dict-en
- # enchant -d en_US ct -a
-\end{verbatim}
-check that: Enchant command creates a correct alternative for the wrong word.
-
-\item After installation enchant package:
-\begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt
- # sudo pisi it hunspell-dict-en
- # hunspell -d en_US -l hunspell-dict
- # hunspell -G -d en_US -l hunspell-dict
-\end{verbatim}
-check that: Third command finds the wrong word and fourth command finds the correct word.
-
-\item Following packages subject to installation test:
-\begin{verbatim}
- zpspell
-\end{verbatim}
-\end{enumerate}
-
-
-\end{document}
+    <text>After installation of the packages below do the following: </text>
+    <text>Open Kword application, from help tab select application language, and select related language.</text>
+
+    <text>Then restart application. Observe that application language changed into the language you have chosen.</text>
+</case>
+</testcase>
+
+<testcase test="functional">
+    <package>noor</package>
+    <case>
+        <text>Open the application from Kmenu, Select a verse and press show button and check that: verse's meaning can be seen.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>aiksaurus</package>
+    <case>
+        <text>Observe that the application finds words that similar to the input word.</text>
+        <command> # aiksaurus "An english word"</command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>antiword</package>
+    <case>
+        <text>Observe that command works without any errors.</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/antiword_test.doc</download>
+        <command> # antiword antiword_test.doc</command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>barcode</package>
+    <case>
+        <text>After running this command,enter a word and check that: this word is encoded as a barcode without any errors.</text>
+        <command> # barcode</command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>djview4</package>
+    <package>djvu</package>
+    <case>
+        <text>Download the following file. By right clicking on the file you downloaded, choose djview4 from open with part.</text>
+        <download># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/djvu_test.djvu</download>
+        <text>Observe that it opens without any errors.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>dos2unix</package>
+    <case>
+        <text>Observe that text file is changed from dos type to unix type without any error. (Related lines must be in  correct places.)</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_dos2unix.txt</download>
+        <command> # dos2unix test_dos2unix.txt deneme1.txt</command>
+        <command> # vi deneme1.txt</command>
+        <text>Check that : Text file is changed from mac type to unix type without any error. (Related lines must be in  correct places.)</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_mac2unix.txt</download>
+        <command> # mac2unix test_mac2unix.txt deneme2.txt</command>
+        <command> # vi deneme2.txt</command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>doxygen</package>
+    <case>
+        <text>Observe that the configuration and xml file were created without any problem.</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_doxgen.c</download>
+        <command> 
+        # doxygen -g test_doxygen.cfg test_doxygen.c
+        # doxygen test_doxygen.cfg
+        </command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>htmldoc</package>
+    <case>
+
+        <text>Menu, Applications, Office, by following this path, open htmldoc application.</text>
+        <text>Observe that it opens without any errors.</text>
+        <text>Download the below file</text>
+        <download> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_htmldoc.html</download>
+        <text>By using Htmldoc application change the test_htmldoc.html file into pdf file. (For input, choose webpage and then add test file. Pass into PDF part and press generate button, you will be prompted to enter a file name. Give a name with PDF type and press generate button.) Observe that transformation is done correctly.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>mftrace</package>
+    <case>
+        <text>Observe that cmrt10.pfa file is created without any errors.</text>
+        <command> # mftrace cmr10</command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>t1utils</package>
+    <case>
+        <text>Observe that those commands run without any errors.</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_t1utils.pfa</download>
+        <command> 
+            # t1ascii test_t1utils.pfa
+            # t1asm test_t1utils.pfa
+            # t1binary test_t1utils.pfa
+            # t1disasm test_t1utils.pfa
+            # t1mac test_t1utils.pfa
+            # t1unmac test_t1utils.pfa
+    </command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>tellico</package>
+    <case>
+        <text>Observe that after the install, this application opens without any errors.</text>
+        <text> Follow Edit, Internet search path, do a search from the current window. Observe that search results are listed without any errors. From the list data, choose one of them and add it. Observe that It is added without any errors.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>texi2hml</package>
+    <case>
+        <text>Observe that bug_report-tr.html file is created without any errors.</text>
+        <download>http://svn.pardus.org.tr/uludag/trunk/test/2009/testcases/turkish/bug_report-tr.tex</download>
+        <command> # texi2html bug_report-tr.tex</command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>wv</package>
+    <case>
+        <text>Observe that all the commands run without any errors.</text>
+
+
+        <download>http://svn.pardus.org.tr/uludag/trunk/test/2009/testcases/turkish/test_wv.doc</download>
+        <command>
+        # wvAbw test_wv.doc deneme.abw
+        # wvCleanLatex test_wv.doc deneme.tex
+        # wvConvert  test_wv.doc
+        # wvDVI   test_wv.doc deneme.dvi
+        # wvDocBook test_wv.doc deneme.sgml
+        # wvHtml test_wv.doc deneme.html
+        # wvLatex test_wv.doc deneme.tex
+        # wvMime  test_wv.doc deneme.mime
+        # wvPDF test_wv.doc deneme.pdf
+        # wvPS  test_wv.doc deneme.ps
+        # wvRTF test_wv.doc deneme.rtf
+        # wvSummary test_wv.doc
+        # wvText   test_wv.doc deneme.txt
+        # wvVersion  test_wv.doc
+        # wvWare  test_wv.doc -X deneme.xml
+        # wvWml test_wv.doc deneme.wml
+    </command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>imposter</package>
+    <case>
+        <text>Open the files below with the imposter application and follow Bakış, Tam Ekran path. Make full screen the files. Observe that They can be done without any error.</text>
+
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.ppt</download>
+        <command>
+            # imposter test_ooimpress.odp
+            # imposter test_ooimpress.ppt
+        </command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>mdbtools</package>
+    <case>
+        <text>Observe that commands below run without any error.</text>
+
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_mdbtools.mdb</download>
+        <command>
+        # mdb-ver test_mdbtools.mdb
+        # mdb-tables test_mdbtools.mdb
+        # mdb-ver test_mdbtools.mdb Client
+        </command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>openoffice</package>
+    <case>
+        <text>Openoffice writer:</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.doc</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.odt</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.sxw</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.txt</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.ott</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.html</download>
+        <text>Observe that files which are represented by links above can be opened without any error.</text>
+
+        <text>Openoffice Impress:</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.ppt</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.pot</download>
+        <text>Observe that files which are represented by links above can be opened without any error.</text>
+
+        <text>Openoffice Calc:</text>
+        <download># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oocalc.xls</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oocalc.xlt</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oocalc.ods</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oocalc.ots</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oocalc.csv</download>
+        <text>Observe that files which are represented by links above can be opened without any error.</text>
+
+        <text> Openoffice Draw:</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.gif</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.jpg</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.png</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.tif</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.odg</download>
+        <text>Observe that files which are represented by links above can be opened without any error.</text>
+
+        <text> Openoffice Base:</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb</download>
+        <text>Observe that files which are represented by links above can be opened without any error.</text>
+
+        <text>Openoffice Writer/Web:</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb</text>
+        <text>Observe that files which are represented by links above can be opened without any error.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>openoffice-extension-pdfimport</package>
+    <case>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-extension-pdfimport.pdf</download>
+        <text>Follow Openoffice Impress, Tools, Addon Manager path, observe that related addon is installed.</text>
+        <text>Open openoffice draw application. Observe that the above file can be opened without any errors.</text>
+        <text>Make some changes on it, save it and reopen it.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>openoffice-extension-presentation-minimizer</package>
+    <case>
+        <text>Follow Openoffice Impress, Tools, Addon Manager path, observe that the related addon is installed.</text>
+        <download># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp</download>
+        <text>Open file above with openoffice Impress application. Foloow Tools, Minimize presentation path, do all necessary steps.</text>
+        <text>Observe that  .mini.p file is created without any errors.</text>
+        <text>Right click to the created file and open with openoffice Draw application.</text>
+        <text>Observe that it opens without any error.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>openoffice-extension-presenter-screen</package>
+    <case>
+        <text>Open the file below with the openoffice Impress application. Add one note from Notes part. Press F5 button and check that: Last added note is not seen.</text> 
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp</download>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>openoffice-extension-report-builder</package>
+    <case>
+        <text>Follow Openoffice Base, Tools, Addon Manager path, observe that the related addon is installed.</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb</download>
+        <text>Open the file above with the openoffice Base application. Follow Tools, Report path. Try to write a new report. Observe that, it can be written without any errors.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>openoffice-extension-wiki-publisher</package>
+    <case>
+        <text>Follow Openoffice Writer, Tools, Addon Manager path, observe that the related addon is installed.</text>
+        <text>Open Openoffice writer. Follow File, Send, MediaWiki path. Choose http://tr.pardus-wiki.org/ as the Wiki server and try to connect. Observe that you can connect without any errors.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>openoffice-help-en</package>
+    <package>openoffice-help-de</package>
+    <package>openoffice-help-es</package>
+    <package>openoffice-help-fr</package>
+    <package>openoffice-help-it</package>
+    <package>openoffice-help-nl</package>
+    <package>openoffice-help-pt-BR</package>
+    <package>openoffice-help-sv</package>
+    <package>openoffice-help-tr</package>
+    <package>openoffice-langpack-de</package>
+    <package>openoffice-langpack-es</package>
+    <package>openoffice-langpack-fr</package>
+    <package>openoffice-langpack-fr</package>
+    <package>openoffice-langpack-nl</package>
+    <package>openoffice-langpack-pt-BR</package>
+    <package>openoffice-langpack-sv</package>
+    <package>openoffice-langpack-tr</package>
+    <case>
+
+        <text>After installation the packages above, change your language, open an openoffice application in the same directory and check that: help file's language is the language we chose.</text>
+
+        <text>To change the language:</text>
+        <command># export LC_ALL= "lang_LANG"</text>
+
+    </text>lang_LANG means, for pt-BT : pt_BT, and for other languages : de_DE.</text>
+
+    <text>Then in the current directory run oowriter command, if the package is related with help check the help file, if the package is related with application language check application runs in the chosen language without any errors.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>openoffice-kde</package>
+    <case>
+
+        <text>Open Dolphin application, right click on the left part of the application and choose add new. Choose an icon, click on the icon and choose other icons. Write oo into the search part.</text>
+        <text>Observe that in the icon window, there exists icons related with openoffice.</text>
+        <text>Choose an openoffice icon and apply it.</text>
+        <text>Observe that icon is added into the left part of the Dolphin application.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>zemberek-openoffice</package>
+    <case>
+        <text>Open the file below with openoffice wirter and follow Tools, SpellCheck path. Observe that spellcheck is working.</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test-zemberek-openoffice.odt</download>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>a2ps</package>
+    <case>
+        <text>Observe that, second command below creates the file test_a2ps.ps without any errors.</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_a2ps.tex</download>
+        <command>
+            # a2ps -o test_a2ps.ps test_a2ps.tex
+            # a2ps test_a2ps.tex
+        </command>
+        <text>If you have a printer, after running third command above  check that: you can take printout without any errors.</text>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>ghostscript</package>
+    <package>ghostscript-doc</package>
+    <case>
+        <text>Observe that by using "gs" command, related file can be viewed without any errors and other commands create files with correct types without any errors. (You can view these files with okular)</text>
+
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.ps</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.dvi</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.pdf</download>
+        <command>
+        # gs test_ghostscript.ps
+        # dvipdf  test_ghostscript.dvi test.pdf
+        # eps2eps test_ghostscript.ps test.eps
+        # font2c test_ghostscript.ps test.c
+        # pdf2dsc test_ghostscript.pdf test.dsc
+        # pdfopt test_ghostscript.pdf test.pdf
+        # printafm test_ghostscript.ps
+        # ps2ascii test_ghostscript.ps test
+        # ps2pdf test_ghostscript.ps test.pdf
+        # ps2ps test_ghostscript.ps test.ps
+        </command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>gv</package>
+    <case>
+        <text>Observe that pdf file can be viewed without any errors.</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf</download>
+        <command># gv test_gv.pdf</command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>poppler</package>
+    <case>
+        <text>Observe that commands below produce correct outputs  without any errors.</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf</download>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_poppler.pdf</download>
+        <command>
+            # pdffonts test_gv.pdf
+            # pdfinfo test_gv.pdf
+            # pdftohtml test_gv.pdf test.html
+            # pdftoppm test_gv.pdf test.ppm
+            # pdftops test_gv.pdf test.ps
+            # pdftotext test_gv.pdf test
+            # pdfimages -f 1 test_poppler.pdf test
+        </command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+        <package>aspell</package>
+        <package>aspell-de</package>
+        <package>aspell-en</package>
+        <package>aspell-es</package>
+        <package>aspell-fr</package>
+        <package>aspell-it</package>
+        <package>aspell-nl</package>
+        <package>aspell-sv</package>
+    <case>
+        <text>Packages below will be tested with the same method.</text>
+
+        <text>By using the second command below, list the dictionary you built. Then by using third command with the dictionary observe that the word, that's in the file, can be translated into the related language can be found without any errors.</text>
+
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/spellcheck/test_aspell</download>
+        <command>
+            # aspell dicts
+            # aspell -l "the dictionary" -c test_aspell
+        </command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>enchant</package>
+    <case>
+        <text>Observe that enchant command creates a correct alternative for the wrong word.</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt</download>
+        <command>
+             # sudo pisi it hunspell-dict-en
+             # enchant -d en_US ct -a
+         </command>
+    </case>
+</testcase>
+
+<testcase test="functional">
+    <package>hunspell</package>
+    <case>
+        <text>Observe that third command finds the wrong word and fourth command finds the correct word.</text>
+        <download>http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt</download>
+        <command>
+             # sudo pisi it hunspell-dict-en
+             # hunspell -d en_US -l hunspell-dict
+             # hunspell -G -d en_US -l hunspell-dict
+     </command>
+    </case>
+</testcase>
+</document>
 
