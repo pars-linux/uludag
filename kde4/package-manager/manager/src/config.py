@@ -11,6 +11,7 @@
 # Please read the COPYING file
 
 from PyKDE4.kdecore import KConfig
+from PyQt4.Qt import QVariant
 
 (general) = ("General")
 
@@ -27,16 +28,16 @@ class Config:
 
     def setValue(self, group, option, value):
         self.group = self.config.group(group)
-        self.group.writeEntry(option, str(value))
+        self.group.writeEntry(option, QVariant(value))
         self.config.sync()
 
     def getBoolValue(self, group, option):
         default = self._initValue(group, option, False)
-        return self.group.readEntry(option, str(default)) == "True"
+        return self.group.readEntry(option, QVariant(default)).toBool()
 
     def getNumValue(self, group, option):
         default = self._initValue(group, option, 0)
-        return int(self.group.readEntry(option, str(default)))
+        return self.group.readEntry(option, QVariant(default)).toInt()[0]
 
     def _initValue(self, group, option, value):
         self.group = self.config.group(group)
