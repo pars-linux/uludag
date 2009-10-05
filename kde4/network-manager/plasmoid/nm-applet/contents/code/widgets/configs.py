@@ -25,11 +25,11 @@ class ConfigIcon(QtGui.QWidget):
         self.ui.checkBattery.setChecked(config.readEntry("followsolid", QVariant("true")).toBool())
 
     def writeConf(self, config):
-        config.writeEntry("showtraffic", self.ui.checkTraffic.isChecked())
-        config.writeEntry("showwifi", self.ui.checkWifi.isChecked())
-        config.writeEntry("showstatus", self.ui.checkStatus.isChecked())
-        config.writeEntry("followsolid", self.ui.checkBattery.isChecked())
-        config.writeEntry("pollinterval", self.ui.spinInterval.value())
+        config.writeEntry("showtraffic", QVariant(self.ui.checkTraffic.isChecked()))
+        config.writeEntry("showwifi", QVariant(self.ui.checkWifi.isChecked()))
+        config.writeEntry("showstatus", QVariant(self.ui.checkStatus.isChecked()))
+        config.writeEntry("followsolid", QVariant(self.ui.checkBattery.isChecked()))
+        config.writeEntry("pollinterval", QVariant(self.ui.spinInterval.value()))
 
 class ConfigPopup(QtGui.QWidget):
 
