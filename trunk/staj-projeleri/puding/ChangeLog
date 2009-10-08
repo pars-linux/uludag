@@ -1,4 +1,10 @@
--- 0.1
+-- 0.0.92
+    * in console interface:
+      - rewrite __copyImage function. now it's more simple.
+      - fix progressBar error.
+      - update translations.
+
+-- 0.0.91
 	- Fix some functions.
 
 -- 0.0.5

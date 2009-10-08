@@ -24,3 +24,6 @@ TRANSLATION
 
         $ cd $(PUDING)/qt4
         $ pylupdate4 /usr/lib/python*/site-packages/puding/qt*.py src/*.py -ts messages.ts
+
+ARCHIVING (For Developers)
+    $ python setup.py sdist --formats=bztar

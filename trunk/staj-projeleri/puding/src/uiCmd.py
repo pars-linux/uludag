@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 #
 # author: Gökmen Görgen
-# license: GPLv3
+# license: GPLv3 (Read COPYING file.)
+#
 
 import os
 import glob
@@ -12,9 +13,8 @@ import subprocess
 
 from common import _
 from common import runCommand
-from common import copyPisiPackage
 from common import createConfigFile
-from common import createSyslinux_old
+from common import createSyslinux
 from common import createUSBDirs
 from common import getIsoSize
 from common import getMounted
@@ -39,7 +39,7 @@ class ProgressBar:
         return wheel[digit%4]
 
     def fSpaces(self, tour, digit):
-        return "[" + digit * "=" + (tour - digit - 1) * " " + "]"
+        return "[" + digit * "=" + (tour - digit) * " " + "]"
 
     def fProgressbar(self, wheel, tour, digit):
         sys.stdout.write("\r%s\t%s " % (self.fSpaces(tour, digit),
@@ -63,7 +63,7 @@ class ProgressBar:
             digit  = total / self.bytes
             self.fProgressbar(self.wheel, self.tour, digit)
 
-        print("\b\b%s" % _("Finished."))
+        print("\b\b%s." % _("Finished"))
 
         src_md5 = checksum.hexdigest()
 
@@ -121,7 +121,7 @@ class Create:
                 device, dst = self.__askDestination()
 
                 # FIX ME: You should not use it.
-                if dst == "":
+                if not dst:
                     cmd = "mount -t vfat %s %s" % (device, MOUNT_USB)
                     runCommand(cmd)
                     dst = MOUNT_USB
@@ -135,7 +135,7 @@ class Create:
 
     def __checkSource(self, src):
         if not os.path.isfile(src):
-            self.utils.cprint(_("The path is invalid, please specify an CD image path."), "red")
+            self.utils.cprint(_("The path is invalid, please specify an image path."), "red")
 
             return False
 
@@ -144,7 +144,7 @@ class Create:
         try:
             (name, md5, url) = self.progressbar.verifyIsoChecksum(src)
 
-            self.utils.cprint(_("\nCD image path: %s" % src))
+            self.utils.cprint(_("\n   Image path: %s" % src))
             self.utils.cprint(_("         Name: %s" % name))
             self.utils.cprint(_("       Md5sum: %s" % md5))
             self.utils.cprint(_(" Download URL: %s\n" % url))
@@ -200,12 +200,12 @@ class Create:
                 self.utils.cprint(self.drives[drive]["fstype"], "yellow")
 
             try:
-                id = int(raw_input(_("USB devices or partitions have found more than one. Please choose one: ")))
+                id = int(raw_input("%s " % _("USB devices or partitions have found more than one. Please choose one:")))
 
                 device = self.drives.keys()[id - 1]
 
             except ValueError:
-               self.cprint(_("You must enter a number between 0 - %d!" % drive_no + 1), "red")
+               self.cprint(_("You must enter a number between 0 - %d." % drive_no + 1), "red")
 
                return False
 
@@ -218,10 +218,10 @@ class Create:
             self.__printDiskInfo(dst)
             self.utils.cprint(_("Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?"))
 
-            answer = raw_input(_("Please type CONFIRM to continue: "))
+            answer = raw_input("%s " % _("Please type CONFIRM to continue:"))
 
             if answer in (_('CONFIRM'), _('confirm')):
-                self.utils.cprint(_("Writing CD image data to USB stick!"), "green")
+                self.utils.cprint(_("Writing image data to USB stick!"), "green")
 
                 return True
 
@@ -231,7 +231,6 @@ class Create:
                 return False
 
         else:
-            # FIX ME: is it required?
             self.utils.cprint(_("The path you have typed is invalid. If you think the path is valid, make sure you have mounted USB stick to the path you gave. To check the path, you can use: mount | grep %s" % dst), "red")
 
             return False
@@ -247,44 +246,31 @@ class Create:
         print("%s: %dMB" % (_("\tUsed\t\t"), used))
 
     def __createImage(self, src, dst):
-        self.utils.cprint(_("Mounting %s.." % src), "green")
+        self.utils.cprint(_("Mounting image..."), "green")
         cmd = "fuseiso %s %s" % (src, MOUNT_ISO)
         if runCommand(cmd):
-            self.utils.cprint(_("Could not mounted CD image."), "red")
+            self.utils.cprint(_("Could not mounted image."), "red")
 
             return False
 
-        self.utils.cprint(_("Copying syslinux files.."), "yellow")
-        createConfigFile(dst)
-
-        self.utils.cprint(_("Creating ldlinux.sys.."), "yellow")
-        if createSyslinux_old(dst):
-            self.utils.cprint(_("Could not create, ldlinux.sys."), "red")
+        self.utils.cprint(_("Creating boot manager..."), "yellow")
+        if createSyslinux(dst):
+            self.utils.cprint(_("Could not create boot manager."), "red")
 
             return False
 
         self.__copyImage(MOUNT_ISO, dst)
 
-        self.utils.cprint(_("\nUnmounting %s.." % MOUNT_ISO), "green")
+        self.utils.cprint(_("Unmounting image..."), "green")
         cmd = "fusermount -u %s" % MOUNT_ISO
 
         if runCommand(cmd):
-            self.utils.cprint(_("Could not unmounted CD image."), "red")
+            self.utils.cprint(_("Could not unmounted image."), "red")
 
             return False
-
-        device = os.path.split(getMounted(dst))[1][:3]
-        self.utils.cprint(_("Concatenating MBR to %s" % device), "yellow")
-        cmd = "cat /usr/lib/syslinux/mbr.bin > /dev/%s" % device
-
-        if runCommand(cmd):
-            self.utils.cprint(_("Could not concatenate, MBR."), "red")
-
-            return False
-
-        self.utils.cprint(_("MBR written, USB disk is ready for Pardus installation."), "brightgreen")
 
         if dst == MOUNT_USB:
+            self.utils.cprint(_("Unmounting USB disk..."), "green")
             cmd = "umount %s" % MOUNT_USB
 
             if runCommand(cmd):
@@ -292,28 +278,19 @@ class Create:
 
                 return False
 
+        self.utils.cprint(_("USB disk is ready. Now you can install or run Pardus from your USB disk."), "brightgreen")
+
         return True
 
     def __copyImage(self, src, dst):
-        # Pardus Image
-        self.utils.cprint(_("Copying pardus.img to %s..") % dst, "green")
-        shutil.copy('%s/pardus.img' % src, '%s/pardus.img' % dst)
+        # FIX ME: Now, Puding supports only Pardus..
+        from puding.pardusTools import Main
 
-        # Boot directory
-        for file in glob.glob("%s/boot/*" % src):
-            if not os.path.isdir(file):
-                file_name = os.path.split(file)[1]
-                self.utils.cprint(_("Copying: "), "green", True)
-                self.utils.cprint(file_name, "cyan")
+        tools = Main(src, dst)
+        file_list = tools.file_list
 
-                shutil.copy(file, "%s/boot/%s" % (dst, file_name))
-
-        # Pisi Packages
-        for file in glob.glob("%s/repo/*" % src):
-            pisi = os.path.split(file)[1]
-            self.utils.cprint(_("Copying: "), "green", True)
-            if os.path.exists("%s/repo/%s" % (dst, pisi)):
-                self.utils.cprint(_("%s is already exist.") % pisi, "brightyellow")
-
-            else:
-                self.utils.cprint(copyPisiPackage(file, dst, pisi), "brightyellow")
+        for path in file_list:
+            file_name = os.path.split(path)[-1]
+            self.utils.cprint("%s:" % _("Copying"), "green", True)
+            self.utils.cprint(file_name, "brightyellow")
+            tools.copyFile(path)
