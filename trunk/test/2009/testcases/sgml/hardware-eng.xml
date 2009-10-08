@@ -129,6 +129,7 @@
 <package>virtualbox</package>
 <package>virtualbox-guestadditions</package>
 <package>virt-wrapper</package>
+
 <case>
 <text>Run Virtualbox application and create a new virtual system. Observe that the above system run the below bootable iso without any problem.</text>
 <download>http://cekirdek.pardus.org.tr/~gokmen/Pardus_Minimal_2009.iso</download>

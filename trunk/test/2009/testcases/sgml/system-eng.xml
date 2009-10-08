@@ -133,8 +133,8 @@
     <testcase test="functional">,
         <package>pisi</package>
         <case>
-            <text>Do package-manager-eng.pdf test cases.</text>
-            <text>Do history-manager-eng.pdf test cases.</text>
+            <text>Do http://svn.pardus.org.tr/uludag/trunk/test/2009/testguide/english/alphabeta/package-manager-eng.pdf test cases.</text>
+            <text>Do http://svn.pardus.org.tr/uludag/trunk/test/2009/testguide/english/alphabeta/history-manager-eng.pdf test cases.</text>
         </case>
     </testcase>
 
