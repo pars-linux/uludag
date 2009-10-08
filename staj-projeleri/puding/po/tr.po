@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: puding TRUNK\n"
 "Report-Msgid-Bugs-To: gkmngrgn@gmail.com\n"
-"POT-Creation-Date: 2009-10-06 00:38+0300\n"
-"PO-Revision-Date: 2009-10-06 00:54+0200\n"
+"POT-Creation-Date: 2009-10-08 03:27+0300\n"
+"PO-Revision-Date: 2009-10-08 03:29+0200\n"
 "Last-Translator: Gökmen Görgen <gkmngrgn@gmail.com>\n"
 "Language-Team: Turkish\n"
 "MIME-Version: 1.0\n"
@@ -16,35 +16,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../src/puding.py:38
+#: ../src/puding.py:39
 msgid "show program's license info and exit"
 msgstr "uygulamanın lisansını göster ve çık"
 
-#: ../src/puding.py:40
+#: ../src/puding.py:41
 msgid "create Pardus USB image from console"
 msgstr "uçbirimden Pardus USB kalıbını oluştur"
 
-#: ../src/puding.py:42
+#: ../src/puding.py:43
 msgid "Graphical Interface Options"
 msgstr "Grafiksel Arayüz Seçenekleri"
 
-#: ../src/puding.py:44
+#: ../src/puding.py:45
 msgid "run Puding with Qt4 graphical interface"
 msgstr "Puding'i Qt4 arayüzüyle çalıştır"
 
-#: ../src/puding.py:51
+#: ../src/puding.py:52
 msgid "Puding is an USB image creator for Pardus Linux."
 msgstr "Puding, Pardus için yazılmış bir USB kalıp oluşturucudur."
 
-#: ../src/puding.py:57
+#: ../src/puding.py:58
 msgid "You need superuser permissions to run this application."
 msgstr "Uygulamayı çalıştırmak için yetkili kullanıcı olmalısınız."
 
-#: ../src/puding.py:75
+#: ../src/puding.py:76
 msgid "Invalid usage. Example:"
 msgstr "Geçersiz kullanım. Örnek:"
 
-#: ../src/puding.py:98
+#: ../src/puding.py:99
 msgid ""
 "\n"
 "Quit."
@@ -53,16 +53,16 @@ msgstr ""
 "Çıkış yapıldı."
 
 #: ../src/uiCmd.py:66
-msgid "Finished."
-msgstr "Bitti."
+msgid "Finished"
+msgstr "Bitti"
 
 #: ../src/uiCmd.py:117
 msgid "USB device not found."
 msgstr "USB sürücü bulunamadı."
 
 #: ../src/uiCmd.py:138
-msgid "The path is invalid, please specify an CD image path."
-msgstr "Yol geçersiz, lütfen CD kalıbı yolunu belirtin."
+msgid "The path is invalid, please specify an image path."
+msgstr "Yol geçersiz, lütfen kalıp yolunu doğru belirtin."
 
 #: ../src/uiCmd.py:142
 msgid "Calculating checksum..."
@@ -72,10 +72,10 @@ msgstr "Kaynak doğrulaması yapılıyor..."
 #, python-format
 msgid ""
 "\n"
-"CD image path: %s"
+"   Image path: %s"
 msgstr ""
 "\n"
-"CD kalıbı yolu: %s"
+"    Kalıp yolu: %s"
 
 #: ../src/uiCmd.py:148
 #, python-format
@@ -133,20 +133,20 @@ msgid "    File System Type\t:"
 msgstr "    Dosya Sistemi Tipi\t:"
 
 #: ../src/uiCmd.py:203
-msgid "USB devices or partitions have found more than one. Please choose one: "
+msgid "USB devices or partitions have found more than one. Please choose one:"
 msgstr "Birden fazla USB sürücü ve bölüm bulundu. Lütfen birini seçin:"
 
 #: ../src/uiCmd.py:208
 #, python-format
-msgid "You must enter a number between 0 - %d!"
-msgstr "0 ile %d arasında bir değer girmelisiniz!"
+msgid "You must enter a number between 0 - %d."
+msgstr "0 ile %d arasında bir değer girmelisiniz."
 
 #: ../src/uiCmd.py:219
 msgid "Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?"
 msgstr "Lütfen bilgilerinizi kontrol ediniz. Eğer USB bellek bilgileriniz doğru değilse, sisteminize ve dosyalarınıza zarar verebilirsiniz. Devam etmek istiyor musunuz?"
 
 #: ../src/uiCmd.py:221
-msgid "Please type CONFIRM to continue: "
+msgid "Please type CONFIRM to continue:"
 msgstr "Devam etmek için ONAYLA yazın:"
 
 #: ../src/uiCmd.py:223
@@ -158,100 +158,90 @@ msgid "confirm"
 msgstr "onayla"
 
 #: ../src/uiCmd.py:224
-msgid "Writing CD image data to USB stick!"
-msgstr "CD kalıbı USB belleğinize yazılıyor!"
+msgid "Writing image data to USB stick!"
+msgstr "Kalıp USB belleğinize yazılıyor!"
 
 #: ../src/uiCmd.py:229
 msgid "You did not type CONFIRM. Exiting.."
 msgstr "ONAYLA yaz(a)madığınız için çıkılıyor.."
 
-#: ../src/uiCmd.py:235
+#: ../src/uiCmd.py:234
 #, python-format
 msgid "The path you have typed is invalid. If you think the path is valid, make sure you have mounted USB stick to the path you gave. To check the path, you can use: mount | grep %s"
 msgstr "Girmiş olduğunuz yol geçersiz. Eğer yolun geçerli olduğunu düşünüyorsanız, USB belleğin belirttiğiniz dizine bağlı olup olmadığını kontrol edin. Kontrol etmek için şu komut dizisini kullanabilirsiniz: mount | grep %s"
 
-#: ../src/uiCmd.py:244
+#: ../src/uiCmd.py:243
 msgid "USB disk informations:"
 msgstr "USB bellek bilgileri:"
 
-#: ../src/uiCmd.py:245
+#: ../src/uiCmd.py:244
 msgid "\tCapacity\t"
 msgstr "\tKapasite\t"
 
-#: ../src/uiCmd.py:246
+#: ../src/uiCmd.py:245
 msgid "\tAvailable\t"
 msgstr "\tBoş Alan\t"
 
-#: ../src/uiCmd.py:247
+#: ../src/uiCmd.py:246
 msgid "\tUsed\t\t"
 msgstr "\tKullanılan\t"
 
-#: ../src/uiCmd.py:250
-#, python-format
-msgid "Mounting %s.."
-msgstr "%s bağlanıyor.."
+#: ../src/uiCmd.py:249
+msgid "Mounting image..."
+msgstr "Kalıp bağlanıyor..."
 
-#: ../src/uiCmd.py:253
-msgid "Could not mounted CD image."
-msgstr "CD kalıbı bağlanamadı."
+#: ../src/uiCmd.py:252
+msgid "Could not mounted image."
+msgstr "Kalıp bağlanamadı."
 
-#: ../src/uiCmd.py:257
-msgid "Copying syslinux files.."
-msgstr "Syslinux dosyaları kopyalanıyor.."
+#: ../src/uiCmd.py:256
+msgid "Creating boot manager..."
+msgstr "Açılış yöneticisi oluşturuluyor..."
 
-#: ../src/uiCmd.py:260
-msgid "Creating ldlinux.sys.."
-msgstr "\"ldlinux.sys\" oluşturuluyor.."
+#: ../src/uiCmd.py:258
+msgid "Could not create boot manager."
+msgstr "Açılış yöneticisi oluşturulamadı."
 
-#: ../src/uiCmd.py:262
-msgid "Could not create, ldlinux.sys."
-msgstr "\"ldlinux.sys\" dosyası oluşturulamadı."
+#: ../src/uiCmd.py:264
+msgid "Unmounting image..."
+msgstr "Kalıp kaldırılıyor..."
 
 #: ../src/uiCmd.py:268
-#, python-format
-msgid ""
-"\n"
-"Unmounting %s.."
-msgstr ""
-"\n"
-"%s kaldırılıyor.."
+msgid "Could not unmounted image."
+msgstr "Kalıp ayırma işlemi başarısızlıkla sonuçlandı."
 
-#: ../src/uiCmd.py:272
-msgid "Could not unmounted CD image."
-msgstr "CD kalıbı ayırma işlemi başarısızlıkla sonuçlandı."
+#: ../src/uiCmd.py:273
+msgid "Unmounting USB disk..."
+msgstr "USB bellek kaldırılıyor..."
 
 #: ../src/uiCmd.py:277
-#, python-format
-msgid "Concatenating MBR to %s"
-msgstr "MBR şuraya yazılıyor: %s"
-
-#: ../src/uiCmd.py:281
-msgid "Could not concatenate, MBR."
-msgstr "MBR yazılamadı."
-
-#: ../src/uiCmd.py:285
-msgid "MBR written, USB disk is ready for Pardus installation."
-msgstr "MBR yazıldı, USB belleğiniz Pardus kurulumu için hazır."
-
-#: ../src/uiCmd.py:291
 msgid "Could not unmounted USB disk."
 msgstr "USB bellek ayırma işlemi başarısızlıkla sonuçlandı."
 
-#: ../src/uiCmd.py:299
-#, python-format
-msgid "Copying pardus.img to %s.."
-msgstr "\"pardus.img\" dosyası şuraya kopyalanıyor: %s"
+#: ../src/uiCmd.py:281
+msgid "USB disk is ready. Now you can install or run Pardus from your USB disk."
+msgstr "USB belleğiniz hazır. Şimdi, Pardus'unuzu USB belleğinizden kurabilir veya çalıştırabilirsiniz."
 
-#: ../src/uiCmd.py:306
-#: ../src/uiCmd.py:314
-msgid "Copying: "
-msgstr "Kopyalanıyor: "
+#: ../src/uiCmd.py:294
+msgid "Copying"
+msgstr "Kopyalanıyor"
 
-#: ../src/uiCmd.py:316
-#, python-format
-msgid "%s is already exist."
-msgstr "%s zaten var."
-
+#~ msgid "Copying syslinux files.."
+#~ msgstr "Syslinux dosyaları kopyalanıyor.."
+#~ msgid "Creating ldlinux.sys.."
+#~ msgstr "\"ldlinux.sys\" oluşturuluyor.."
+#~ msgid "Could not create, ldlinux.sys."
+#~ msgstr "\"ldlinux.sys\" dosyası oluşturulamadı."
+#~ msgid "Concatenating MBR to %s"
+#~ msgstr "MBR şuraya yazılıyor: %s"
+#~ msgid "Could not concatenate, MBR."
+#~ msgstr "MBR yazılamadı."
+#~ msgid "MBR written, USB disk is ready for Pardus installation."
+#~ msgstr "MBR yazıldı, USB belleğiniz Pardus kurulumu için hazır."
+#~ msgid "Copying pardus.img to %s.."
+#~ msgstr "\"pardus.img\" dosyası şuraya kopyalanıyor: %s"
+#~ msgid "%s is already exist."
+#~ msgstr "%s zaten var."
 #~ msgid "Select ISO Image"
 #~ msgstr "ISO kalıbı seçin"
 

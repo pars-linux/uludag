@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 #
 # author: Gökmen Görgen
-# license: GPLv3
+# license: GPLv3 (Read COPYING file.)
+#
 
 import dbus
 import gettext
@@ -65,11 +66,6 @@ def run(cmd):
 
     return process, result
 
-def copyPisiPackage(file, dst, pisi):
-    shutil.copy(file, "%s/repo/%s" % (dst, pisi))
-
-    return pisi
-
 def createConfigFile(dst):
     conf_dir = "%s/boot/syslinux" % dst
     conf_files = ["%s/gfxboot.com" % SYSLINUX, "%s/hdt.c32" % SYSLINUX]
@@ -83,6 +79,15 @@ def createConfigFile(dst):
     syslinux_conf_file = "%s/syslinux.cfg" % conf_dir
     if not os.path.exists(syslinux_conf_file):
         shutil.copyfile("%s/syslinux.cfg.pardus" % SHARE, syslinux_conf_file)
+
+def getMounted(disk_path):
+    parts = {}
+    for line in open("/proc/mounts"):
+        if line.startswith("/dev/"):
+            device, path, other = line.split(" ", 2)
+            parts[path] = device
+
+    return parts[disk_path.replace(" ", "\\040")]
 
 def createSyslinux(dst):
     createConfigFile(dst)
@@ -99,24 +104,6 @@ def createSyslinux(dst):
 
     cmd = "LC_ALL=C syslinux %s" % getMounted(dst)
     return runCommand(cmd)
-
-def createSyslinux_old(dst):
-    sys_file = "%s/ldlinux.sys" % dst
-    if os.path.exists(sys_file):
-        os.remove(sys_file)
-
-    cmd = "LC_ALL=C syslinux %s" % getMounted(dst)
-
-    return runCommand(cmd)
-
-def getMounted(disk_path):
-    parts = {}
-    for line in open("/proc/mounts"):
-        if line.startswith("/dev/"):
-            device, path, other = line.split(" ", 2)
-            parts[path] = device
-
-    return parts[disk_path]
 
 def createDirs():
     if not os.path.exists(HOME):

@@ -92,7 +92,7 @@ qt_files.extend(glob.glob("qt4/ts/puding*.ts"))
 convertQtFiles(qt_files)
 
 data = [
-    ("share/doc/puding", ["AUTHORS", "ChangeLog", "COPYING", "NOTES", "README"]),
+    ("share/doc/puding", ["AUTHORS", "ChangeLog", "COPYING", "NOTES", "README", "TODO"]),
     ("share/puding", glob.glob("datas/syslinux.cfg.*")),
     ("share/puding/qm", glob.glob("locale/qm/puding*.qm")),
     ("share/applications", ["datas/puding.desktop"]),

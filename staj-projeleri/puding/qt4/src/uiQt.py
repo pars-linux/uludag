@@ -91,10 +91,10 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
         dst = str(self.line_disk.displayText())
 
         if dst.startswith("/dev/"):
-            from puding.pardusTools import PardusTools
+            from puding.pardusTools import Authorization
 
-            pt = PardusTools()
-            pt.mount(dst, MOUNT_USB)
+            auth = Authorization()
+            auth.mount(dst, MOUNT_USB)
             dst = MOUNT_USB
 
         if not self.__checkDestination(dst):
@@ -111,7 +111,7 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
                 self.__createImage(src, dst)
 
                 if dst == MOUNT_USB:
-                    pt.umount(dst)
+                    auth.umount(dst)
 
                 return True
 

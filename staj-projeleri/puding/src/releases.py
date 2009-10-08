@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 #
 # author: Gökmen Görgen
-# license: GPLv3
+# license: GPLv3 (Read COPYING file.)
+#
 
 releases = (
         { "name" : "Pardus 2009 Kurulan",

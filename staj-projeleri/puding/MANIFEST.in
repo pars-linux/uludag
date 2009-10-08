@@ -4,4 +4,4 @@ recursive-include po *
 recursive-include qt4 *
 recursive-include src *
 prune puding
-include AUTHORS ChangeLog COPYING NOTES README
+include AUTHORS ChangeLog COPYING NOTES README TODO
