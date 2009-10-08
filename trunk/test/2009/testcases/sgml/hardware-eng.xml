@@ -122,7 +122,7 @@
 
 <testcase test="functional">
 <package>libvirt</package>
-<reversedeptest>Do hardware-eng.pdf virtualbox test.</reversedeptest>
+<reversedeptest>virtualbox</reversedeptest>
 </testcase>
 
 <testcase test="functional">
