@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: gkmngrgn@gmail.com\n"
 "POT-Creation-Date: 2009-10-08 03:27+0300\n"
-"PO-Revision-Date: 11/10/09 22:00\n"
+"PO-Revision-Date: 12/10/09 12:55\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -236,7 +236,7 @@ msgstr "Kan USB-schijf niet afkoppelen."
 
 #: ../src/uiCmd.py:281
 msgid "USB disk is ready. Now you can install or run Pardus from your USB disk."
-msgstr "USB-schijf is klaar voor gebruik. U kunt nu Pardus vanaf de USB-schijf installeren of opstarten."
+msgstr "USB-schijf is gereed. U kunt nu Pardus vanaf de USB-schijf installeren of opstarten."
 
 #: ../src/uiCmd.py:294
 msgid "Copying"
