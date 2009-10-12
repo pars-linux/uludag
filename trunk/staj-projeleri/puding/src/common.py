@@ -41,17 +41,6 @@ def getFileSize(file):
 
     return file_size
 
-def getNumberOfFiles(src):
-    all_files = []
-    all_files.extend(glob.glob("%s/repo/*" % src))
-    boot_files = glob.glob("%s/boot/*" % src)
-    for file in boot_files:
-        if os.path.isfile(file):
-            all_files.append(file)
-    all_files.append("%s/pardus.img" % src)
-
-    return len(all_files)
-
 def runCommand(cmd):
     process = subprocess.call(cmd, shell = True)
 
@@ -71,10 +60,10 @@ def createConfigFile(dst):
     conf_files = ["%s/gfxboot.com" % SYSLINUX, "%s/hdt.c32" % SYSLINUX]
     conf_files.extend(glob.glob("%s/gfxtheme/*" % SHARE))
 
-    for file in conf_files:
-        file_name = os.path.split(file)[1]
+    for i in conf_files:
+        file_name = os.path.split(i)[1]
         if not os.path.exists("%s/%s" % (conf_dir, file_name)):
-            shutil.copyfile(file, "%s/%s" % (conf_dir, file_name))
+            shutil.copyfile(i, "%s/%s" % (conf_dir, file_name))
 
     syslinux_conf_file = "%s/syslinux.cfg" % conf_dir
     if not os.path.exists(syslinux_conf_file):

@@ -77,7 +77,7 @@ def createMoFiles(langs):
         os.system("msgfmt %s -o %s" % (pofile, mofile))
 
 # Create .mo files
-createMoFiles(["tr", ])
+createMoFiles(["nl", "tr"])
 
 # Edit script
 script = "%s/%s" % (NAME, NAME)
@@ -98,6 +98,7 @@ data = [
     ("share/applications", ["datas/puding.desktop"]),
     ("share/puding/gfxtheme", glob.glob("datas/gfxtheme/*")),
     ("share/pixmaps", ["images/puding.png"]),
+    locale("nl"),
     locale("tr")]
 
 setup(

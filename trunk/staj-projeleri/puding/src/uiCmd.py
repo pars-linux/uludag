@@ -52,14 +52,14 @@ class ProgressBar:
 
         checksum = hashlib.md5()
         isofile = file(src, "rb")
-        bytes = self.bytes
+        size = self.bytes
         total = 0
 
-        while bytes:
-            data = isofile.read(bytes)
+        while size:
+            data = isofile.read(size)
             checksum.update(data)
-            bytes = len(data)
-            total += bytes
+            size = len(data)
+            total += size
             digit  = total / self.bytes
             self.fProgressbar(self.wheel, self.tour, digit)
 
@@ -123,6 +123,7 @@ class Create:
                 # FIX ME: You should not use it.
                 if not dst:
                     cmd = "mount -t vfat %s %s" % (device, MOUNT_USB)
+                    self.utils.cprint(_("Mounting USB device..."), "green")
                     runCommand(cmd)
                     dst = MOUNT_USB
 
@@ -200,9 +201,9 @@ class Create:
                 self.utils.cprint(self.drives[drive]["fstype"], "yellow")
 
             try:
-                id = int(raw_input("%s " % _("USB devices or partitions have found more than one. Please choose one:")))
+                part_number = int(raw_input("%s " % _("USB devices or partitions have found more than one. Please choose one:")))
 
-                device = self.drives.keys()[id - 1]
+                device = self.drives.keys()[part_number - 1]
 
             except ValueError:
                self.cprint(_("You must enter a number between 0 - %d." % drive_no + 1), "red")
@@ -284,7 +285,7 @@ class Create:
 
     def __copyImage(self, src, dst):
         # FIX ME: Now, Puding supports only Pardus..
-        from puding.pardusTools import Main
+        from pardusTools import Main
 
         tools = Main(src, dst)
         file_list = tools.file_list
