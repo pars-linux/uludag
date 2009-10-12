@@ -1,8 +1,10 @@
--- 0.0.92
+-- 0.0.92 (2009-10-12)
     * in console interface:
       - rewrite __copyImage function. now it's more simple.
       - fix progressBar error.
       - update translations.
+      - add Dutch translation.
+      - move getNumberOfFiles function to pardusTools.py.
 
 -- 0.0.91
 	- Fix some functions.

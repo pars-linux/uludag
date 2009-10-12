@@ -9,7 +9,7 @@ from os import getenv
 
 NAME = "puding"
 LOCALE = "/usr/share/locale"
-VERSION = "0.0.91"
+VERSION = "0.0.92"
 HOME = "%s/.%s" % (getenv("HOME"), NAME)
 MOUNT_ISO = "%s/iso_mount_dir" % HOME
 MOUNT_USB = "%s/usb_mount_dir" % HOME
