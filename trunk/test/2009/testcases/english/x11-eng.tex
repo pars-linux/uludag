@@ -12,7 +12,7 @@ Note: Please provide /var/log/Xorg.0.log file while reporting errors related to 
 \section{Server Subcomponent}
 
 \begin{itemize}
-  \item For the following packages, just the installation will be tested for now.
+  \item Following packages subject to installation test:
   \begin{verbatim}
   xorg-server-common
   xorg-server-devel
@@ -42,24 +42,24 @@ Note: Please provide /var/log/Xorg.0.log file while reporting errors related to 
     \item Repeat the test with the option "Probe Again" selected in "Graphical Display (F4)" menu of boot loader.
     \item Ensure that xterm package is installed and type the following command:
       \begin{verbatim}
-xinit -- :2
+	xinit -- :2
       \end{verbatim}
       Observe that a terminal window is started in a new X screen. Move mouse cursor over the terminal window and type "exit" to return.
     \item Move and resize an application window. Observe that these operations are performed smoothly and fast.
     \end{enumerate}
 
-  \item 3D support
+  \item 3D support:
     \begin{enumerate}
     \item Run "glxgears" and "glxgears -fullscreen" in a console window. Observe that three rotating gears appear without a problem.
     \end{enumerate}
 
-  \item VT switch
+  \item VT switch:
     \begin{enumerate}
     \item Press \texttt{Ctrl+Alt+F1} in the graphical screen. Observe that it switches to TTY console without a problem.
     \item Use \texttt{Ctrl+Alt+F7} buttons to go back. Observe that no problems appear with this switch.
     \end{enumerate}
 
-  \item Resolution test
+  \item Resolution test:
     \begin{enumerate}
     \item Run Settings $\rightarrow$ Display Settings (for 2008, Display Manager in TASMA).
     \item On the screens module, choose a resolution for your output device.
@@ -67,12 +67,12 @@ xinit -- :2
           There will be a * symbol near the current resolution.
     \end{enumerate}
  
-  \item Video test
+  \item Video test:
     \begin{enumerate}
     \item Open a video file using one of the media players and observe that it plays without a problem.
     \end{enumerate}
  
-  \item (For 2009) Efect test
+  \item (For 2009) Efect test:
     \begin{enumerate}
     \item Toggle the effects using the module in System Settings $\rightarrow$ Desktop. Observe that no problems appear.
     \end{enumerate}
@@ -81,11 +81,11 @@ xinit -- :2
 
 \section{Driver Subcomponent}
 \begin{enumerate}
-  \item After the installation of virtualbox-guest-utils package:
+  \item After installation virtualbox-guest-utils package:
 
 Perform the tests given in hardware-tr.pdf.
 
-  \item After the installation of xorg-input-synaptics package:
+  \item After installation xorg-input-synaptics package:
 
 You can test this package if the following command produces an output.
   \begin{verbatim}
@@ -94,13 +94,13 @@ You can test this package if the following command produces an output.
 
 Reboot your computer and observe that your touchpad device works correctly.
 
-\item After the installation of xorg-input-vmmouse package:
+\item After installation  xorg-input-vmmouse package:
 
 You can test this package if you use a Pardus guest machine on vmware.
 
 Test the integration works correctly in the guest machine.
 
-\item After the installation of xorg-input-wacom package:
+\item After installation  xorg-input-wacom package:
 
 You can test this package if you have a Wacom tablet.
 
@@ -165,7 +165,7 @@ In order to learn the video card you are using, see the output of the command be
 
 \section{Terminal Subcomponent}
 \begin{enumerate}
-  \item After the installation of rxvt-unicode package:
+  \item After installation  rxvt-unicode package:
 
   Observe that an X console window appears.
   \begin{verbatim}
@@ -179,7 +179,7 @@ Observe that an X console window appears.
   # urxvtc
   \end{verbatim}
 
-  \item After the installation of xterm package:
+  \item After installation  xterm package:
 
   Observe that the following command open a new console window.
   \begin{verbatim}
