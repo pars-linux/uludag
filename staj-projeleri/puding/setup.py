@@ -25,10 +25,6 @@ from puding.constants import URL
 from puding.constants import LICENSE_NAME
 
 # General installation functions
-def locale(lang):
-    return("share/locale/%s/LC_MESSAGES" % lang,
-            ["locale/mo/%s/%s.mo" % (lang, NAME)])
-
 def removeBuildFiles():
     rmDir = ["build", "locale", "puding"]
 
@@ -63,21 +59,32 @@ def convertQtFiles(file_list):
         if os.path.splitext(i)[1] == ".ts":
             os.system("/usr/bin/lrelease-qt4 %s -qm locale/qm/%s" % (i, file_name.replace(".ts", ".qm")))
 
-def createMoFiles(langs):
+def createMoFiles():
     mo_dir = "locale/mo/"
     if not os.path.exists(mo_dir):
         os.makedirs(mo_dir)
 
-    for lang in langs:
-        pofile = "po/" + lang + ".po"
-        mofile = mo_dir + lang + "/%s.mo" % NAME
+    po_list = glob.glob("po/*.po")
+    data_list = []
+    for path in po_list:
+        po_file = os.path.split(path)[-1]
+        lang = po_file.split(".")[0]
+        mo_file = mo_dir + lang + "/%s.mo" % NAME
 
         os.mkdir(mo_dir + lang + "/")
-        print("generating %s" % mofile)
-        os.system("msgfmt %s -o %s" % (pofile, mofile))
+        print("generating %s" % mo_file)
+        os.system("msgfmt %s -o %s" % (path, mo_file))
 
-# Create .mo files
-createMoFiles(["nl", "tr"])
+        data_list.append(("share/locale/%s/LC_MESSAGES" % lang, ["locale/mo/%s/%s.mo" % (lang, NAME)]))
+
+    return data_list
+
+#def locale(lang):
+#    return("share/locale/%s/LC_MESSAGES" % lang,
+#            ["locale/mo/%s/%s.mo" % (lang, NAME)])
+#
+## Create .mo files
+#createMoFiles()
 
 # Edit script
 script = "%s/%s" % (NAME, NAME)
@@ -97,9 +104,9 @@ data = [
     ("share/puding/qm", glob.glob("locale/qm/puding*.qm")),
     ("share/applications", ["datas/puding.desktop"]),
     ("share/puding/gfxtheme", glob.glob("datas/gfxtheme/*")),
-    ("share/pixmaps", ["images/puding.png"]),
-    locale("nl"),
-    locale("tr")]
+    ("share/pixmaps", ["images/puding.png"])]
+
+data.extend(createMoFiles())
 
 setup(
     name = NAME,
