@@ -13,7 +13,6 @@ from common import getDiskInfo
 from common import getIsoSize
 from common import getFileSize
 from common import getMounted
-from common import getNumberOfFiles
 from common import createSyslinux
 from common import createUSBDirs
 from common import runCommand
@@ -182,7 +181,12 @@ you have downloaded the source correctly."""
                 # FIX ME: Should use warning dialog.
                 return False
 
-        max_value = getNumberOfFiles(MOUNT_ISO)
+        # FIX ME: Now Puding supports only Pardus.
+        from pardusTools import Main
+
+        tools = Main(MOUNT_ISO, dst)
+        file_list = tools.file_list
+        max_value = tools.getNumberOfFiles()
         create_image = ProgressBar(title = self.tr("Creating Image"),
                 message = self.tr("Creating image..."),
                 max_value = max_value)

@@ -26,6 +26,11 @@ class Main:
 
         return file_list
 
+    def getNumberOfFiles(self):
+        file_list = self.getFileList()
+
+        return len(file_list)
+
     def copyFile(self, path):
         shutil.copyfile(path, "%s/%s" % (self.dst, path.split(self.src)[-1]))
 
