@@ -22,7 +22,7 @@ locales = {
     "fr" : "fr_FR.UTF-8",
     "it" : "it_IT.UTF-8",
     "es" : "es_ES.UTF-8",
-    "sv" : "sv_SV.UTF-8",
+    "sv" : "sv_SE.UTF-8",
     }
 
 def getKDELocale():
