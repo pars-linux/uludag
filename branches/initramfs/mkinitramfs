@@ -180,6 +180,8 @@ class BaseSystem:
         self.createNodes()
         self.createBaseSymlinks()
         self.addRaid()
+        self.addLvm()
+        self.addCryptSetup()
         self.addSuspend()
 
 class KernelModule:
