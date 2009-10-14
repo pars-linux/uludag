@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: puding TRUNK\n"
-"Report-Msgid-Bugs-To: gkmngrgn@gmail.com\n"
-"POT-Creation-Date: 2009-10-13 19:15+0300\n"
-"PO-Revision-Date: 2009-10-13 23:04+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-14 14:31+0300\n"
+"PO-Revision-Date: 2009-10-14 14:32+0200\n"
 "Last-Translator: Gökmen Görgen <gkmngrgn@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -127,8 +127,8 @@ msgid "You must enter a number between 0 - %d."
 msgstr "0 ile %d arasında bir sayı girmelisiniz."
 
 #: ../src/uiCmd.py:215
-msgid "Sorry, there is no available disk on your USB disk partition. Please remove unrequired files from USB disk."
-msgstr "Üzgünüm, USB bellek bölümünüzde yeteri kadar yer yok. Lütfen gereksiz verileri USB bellekten silin."
+msgid "There is not enough space left on your USB stick for the image."
+msgstr "USB belleğinizde imaj için yeterli alan yok."
 
 #: ../src/uiCmd.py:217
 #: ../src/uiCmd.py:284
@@ -235,6 +235,12 @@ msgstr "USB bellek hazr. Artk Pardus'u USB bellekten kurabilir ya da altrabilirs
 msgid "Copying"
 msgstr "Kopyalanıyor"
 
+#~ msgid ""
+#~ "Sorry, there is no available disk on your USB disk partition. Please "
+#~ "remove unrequired files from USB disk."
+#~ msgstr ""
+#~ "Üzgünüm, USB bellek bölümünüzde yeteri kadar yer yok. Lütfen gereksiz "
+#~ "verileri USB bellekten silin."
 #~ msgid "         Name: %s"
 #~ msgstr "         sim: %s"
 #~ msgid "       Md5sum: %s"
