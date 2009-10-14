@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-13 19:15+0300\n"
+"POT-Creation-Date: 2009-10-14 14:31+0300\n"
 "PO-Revision-Date: 12/10/09 12:55\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
@@ -142,9 +142,7 @@ msgid "You must enter a number between 0 - %d."
 msgstr "Geef een nummer op tussen 0 - %d."
 
 #: ../src/uiCmd.py:215
-msgid ""
-"Sorry, there is no available disk on your USB disk partition. Please remove "
-"unrequired files from USB disk."
+msgid "There is not enough space left on your USB stick for the image."
 msgstr ""
 
 #: ../src/uiCmd.py:217 ../src/uiCmd.py:284

@@ -1,101 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="de_DE">
+<!DOCTYPE TS><TS version="1.1" language="de_DE">
 <context>
     <name>Create</name>
     <message>
-        <location filename="uiQt.py" line="55"/>
+        <location filename="uiQt.py" line="54"/>
         <source>Select CD Image</source>
         <translation>Wähle CD Image</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="56"/>
+        <location filename="uiQt.py" line="55"/>
         <source>Images</source>
         <translation>Images</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="67"/>
+        <location filename="uiQt.py" line="66"/>
         <source>Warning</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="67"/>
+        <location filename="uiQt.py" line="66"/>
         <source>You should select a valid directory.</source>
         <translation>Wählen sie ein gültiges Verzeichnis.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="75"/>
+        <location filename="uiQt.py" line="74"/>
         <source>Puding is an USB image creator for Pardus Linux.</source>
         <translation>Puding ist ein Tool um USB Images für Pardus zu erstellen.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="75"/>
+        <location filename="uiQt.py" line="74"/>
         <source>Copyright (c) %s TUBITAK / UEKAE</source>
         <translation>Copyright (c) %s TUBITAK / UEKAE</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="77"/>
+        <location filename="uiQt.py" line="76"/>
         <source>About Puding</source>
         <translation>Über Puding</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="100"/>
+        <location filename="uiQt.py" line="99"/>
         <source>Directory is Invalid</source>
         <translation>Verzeichnis ist ungültig</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="100"/>
+        <location filename="uiQt.py" line="99"/>
         <source>Please check the USB disk path.</source>
         <translation>Bitte überprüfen sie den Pfad des USB Mediums.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="136"/>
+        <location filename="uiQt.py" line="159"/>
         <source>CD Image is Invalid</source>
         <translation>CD Image ist ungültig</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="131"/>
+        <location filename="uiQt.py" line="154"/>
         <source>Please set an CD image path.</source>
         <translation>Pfad zum CD Image eingeben.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="136"/>
+        <location filename="uiQt.py" line="159"/>
         <source>Please check the CD image path.</source>
         <translation>Bitte überprüfen sie den Pfad zum CD Image.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="143"/>
+        <location filename="uiQt.py" line="166"/>
         <source>Verify Checksum</source>
-        <translatorcomment>Berechne oder Vergleiche?</translatorcomment>
         <translation type="unfinished">Vergleiche Prüfsumme</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="144"/>
+        <location filename="uiQt.py" line="167"/>
         <source>The checksum of the source is checking now...</source>
         <translation>Die Prüfsumme der Quelldatei wird überprüft...</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="164"/>
+        <location filename="uiQt.py" line="187"/>
         <source>Checksum invalid</source>
         <translation>Prüfsumme ungültig</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="185"/>
+        <location filename="uiQt.py" line="202"/>
         <source>Creating Image</source>
         <translation>Erstelle Image</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="186"/>
+        <location filename="uiQt.py" line="202"/>
         <source>Creating image...</source>
         <translation>Erstelle Image...</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="207"/>
+        <location filename="uiQt.py" line="216"/>
         <source>USB Image is Ready</source>
         <translation>USB Image ist fertig</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="207"/>
+        <location filename="uiQt.py" line="216"/>
         <source>Your USB image is ready. Now you can install or run Pardus from USB storage.</source>
         <translation>Ihr USB Image ist fertiggestellt. Sie können nun mit dem USB Meduim Pardus starten oder installieren.</translation>
     </message>
@@ -103,24 +101,24 @@
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="qtConfirmDialog.py" line="76"/>
+        <location filename="qtConfirmDialog.py" line="103"/>
         <source>Confirm Informations</source>
         <translation>Bestätige Informationen</translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="79"/>
+        <location filename="qtConfirmDialog.py" line="110"/>
         <source>&lt;b&gt;USB Disk Path:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Pfad USB Medium:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="80"/>
+        <location filename="qtConfirmDialog.py" line="108"/>
         <source>&lt;b&gt;Release Name:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Name:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="qtConfirmDialog.py" line="82"/>
         <source>&lt;b&gt;Download URL:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Download URL:&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Download URL:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="qtProgressBar.py" line="35"/>
@@ -148,19 +146,49 @@
         <translation>Durchsuche</translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="77"/>
+        <location filename="qtConfirmDialog.py" line="104"/>
         <source>&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Warning:&lt;/b&gt;&lt;/font&gt; Please double check your path information. If you don&apos;t type the path to the USB stick correctly, you may damage your computer. Would you like to continue?&lt;br /&gt;</source>
         <translation>&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Warnung:&lt;/b&gt;&lt;/font&gt; Bitte überprüfen sie den Pfad! Falls der Pfad zu dem USB-Stick nicht korrekt eingegeben wurde, kann Datenverlust die Folge sein. Wollen sie fortfahren?&lt;br /&gt;</translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="78"/>
+        <location filename="qtConfirmDialog.py" line="105"/>
         <source>&lt;b&gt;Image Path:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Image Pfad:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="qtConfirmDialog.py" line="81"/>
         <source>&lt;b&gt;Checksum Value:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Prüfsumme:&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Prüfsumme:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="qtConfirmDialog.py" line="106"/>
+        <source>&lt;b&gt;Capacity:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qtConfirmDialog.py" line="107"/>
+        <source>&lt;b&gt;Available:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qtConfirmDialog.py" line="109"/>
+        <source>&lt;i&gt;&lt;b&gt;USB Disk Informations&lt;/b&gt;&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qtConfirmDialog.py" line="111"/>
+        <source>&lt;i&gt;&lt;b&gt;Source Informations&lt;/b&gt;&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qtConfirmDialog.py" line="112"/>
+        <source>&lt;b&gt;Used:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qtConfirmDialog.py" line="113"/>
+        <source>&lt;b&gt;Image Size:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -214,7 +242,7 @@
 <context>
     <name>ProgressIncrementCopy</name>
     <message>
-        <location filename="uiQt.py" line="336"/>
+        <location filename="uiQt.py" line="348"/>
         <source>Copying %s (%0.2fMB)</source>
         <translation>Kopiere %s (%0.2fMB)</translation>
     </message>
@@ -222,7 +250,7 @@
 <context>
     <name>SelectDisk</name>
     <message>
-        <location filename="uiQt.py" line="229"/>
+        <location filename="uiQt.py" line="238"/>
         <source>Choose Mount Disk Path</source>
         <translation>Wähle Einhängepfad</translation>
     </message>

@@ -212,7 +212,7 @@ class Create:
     def __checkDiskInfo(self, dst, total_size):
         (capacity, available, used) = getDiskInfo(str(dst))
         if available < total_size:
-            self.utils.cprint(_("Sorry, there is no available disk on your USB disk partition. Please remove unrequired files from USB disk."), "red")
+            self.utils.cprint(_("There is not enough space left on your USB stick for the image."), "red")
 
             self.utils.cprint(_("Unmounting image..."), "red")
             runCommand("fusermount -u %s" % MOUNT_ISO)
