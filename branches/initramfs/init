@@ -16,6 +16,7 @@ CDROOT=0
 NFSROOT=0
 QUIET=0
 RAID=0
+LVM=0
 VIRTIO=0
 
 FS_TYPE=""
@@ -55,22 +56,11 @@ probe_raid() {
 }
 
 probe_lvm() {
-    info "Probing LVM devices"
+    info "Probing Logical Volume devices"
     modprobe dm-mod
     /sbin/lvm vgscan --ignorelockingfailure
     /sbin/lvm vgchange -ay --ignorelockingfailure
 }
-
-probe_crypto() {
-    info "Probing Crypto devices"
-    modprobe dm-mod
-    modprobe dm-crypt
-    modprobe aes
-    modprobe sha256
-    modprobe sha1
-
-}
-
 probe_virtio() {
     info "Probing Virtio devices"
     modprobe virtio_pci
@@ -122,6 +112,9 @@ parse_cmdline() {
                         ;;
                         raid)
                             RAID=1
+                        ;;
+                        lvm)
+                            LVM=1
                         ;;
                         thin)
                             NFSROOT=1
@@ -304,6 +297,11 @@ probe_devices
 if [ "${RAID}" -eq "1" ]
 then
     probe_raid
+fi
+
+if [ "${LVM}" -eq "1" ]
+then
+    probe_lvm
 fi
 
 if [ "${VIRTIO}" -eq "1" ]
