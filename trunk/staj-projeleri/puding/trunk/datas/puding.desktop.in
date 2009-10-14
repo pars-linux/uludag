@@ -2,8 +2,8 @@
 Encoding=UTF-8
 Version=1.0
 Name=Puding
-Comment=Puding USB image creator
-GenericName=USB image creator
+_Comment=Puding USB image creator
+_GenericName=USB image creator
 Exec=puding --qt
 Icon=puding
 Terminal=false

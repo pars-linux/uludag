@@ -42,6 +42,9 @@ def removeBuildFiles():
         if file.endswith(".pyc"):
             os.remove(file)
 
+    # and remove desktop file.
+    os.remove("datas/puding.desktop")
+
 def convertQtFiles(file_list):
     qm_dir = "locale/qm"
     if not os.path.exists(qm_dir):
@@ -79,18 +82,14 @@ def createMoFiles():
 
     return data_list
 
-#def locale(lang):
-#    return("share/locale/%s/LC_MESSAGES" % lang,
-#            ["locale/mo/%s/%s.mo" % (lang, NAME)])
-#
-## Create .mo files
-#createMoFiles()
-
 # Edit script
 script = "%s/%s" % (NAME, NAME)
 shutil.copyfile("%s.py" % script, script)
 os.chmod(script, 0755)
 os.remove("%s.py" % script)
+
+# Convert desktop.in
+os.system("intltool-merge -d po datas/puding.desktop.in datas/puding.desktop")
 
 # Convert Qt files
 qt_files = ["qt4/icons.qrc"]

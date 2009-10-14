@@ -27,9 +27,15 @@ class Main:
         return file_list
 
     def getNumberOfFiles(self):
-        file_list = self.getFileList()
+        return len(self.file_list)
 
-        return len(file_list)
+    def getTotalSize(self):
+        total_size = 0
+        for i in self.file_list:
+            file_size = os.stat(i).st_size
+            total_size += file_size
+
+        return total_size / 1024 ** 2
 
     def copyFile(self, path):
         shutil.copyfile(path, "%s/%s" % (self.dst, path.split(self.src)[-1]))

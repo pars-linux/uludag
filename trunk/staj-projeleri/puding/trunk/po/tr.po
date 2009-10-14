@@ -1,251 +1,248 @@
-# Turkish translations for PACKAGE package.
-# Copyright (C) 2009 GPLv3
+# Copyright (C) YEAR GPLv3
 # This file is distributed under the same license as the PACKAGE package.
-# GÃ¶kmen GÃ¶rgen <gkmngrgn@gmail.com>, 2009.
 #
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: puding TRUNK\n"
 "Report-Msgid-Bugs-To: gkmngrgn@gmail.com\n"
-"POT-Creation-Date: 2009-10-08 12:22+0300\n"
-"PO-Revision-Date: 2009-10-08 12:24+0200\n"
+"POT-Creation-Date: 2009-10-13 19:15+0300\n"
+"PO-Revision-Date: 2009-10-13 23:04+0200\n"
 "Last-Translator: Gökmen Görgen <gkmngrgn@gmail.com>\n"
-"Language-Team: Turkish\n"
+"Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/puding.py:39
-msgid "show program's license info and exit"
-msgstr "uygulamanın lisansını göster ve çık"
+#: ../datas/puding.desktop.in.h:1
+msgid "Puding USB image creator"
+msgstr "Pardus USB imaj oluşturucu"
+
+#: ../datas/puding.desktop.in.h:2
+msgid "USB image creator"
+msgstr "USB imaj oluşturucu"
 
 #: ../src/puding.py:41
-msgid "create Pardus USB image from console"
-msgstr "uçbirimden Pardus USB kalıbını oluştur"
+msgid "show program's license info and exit"
+msgstr "programın lisans bilgisini göster ve çık"
 
-#: ../src/puding.py:43
+#: ../src/puding.py:42
+msgid "create Pardus USB image from console"
+msgstr "konsoldan Pardus USB imajı oluştur"
+
+#: ../src/puding.py:44
 msgid "Graphical Interface Options"
-msgstr "Grafiksel Arayüz Seçenekleri"
+msgstr "Grafik Arayüz Seçenekleri"
 
 #: ../src/puding.py:45
 msgid "run Puding with Qt4 graphical interface"
-msgstr "Puding'i Qt4 arayüzüyle çalıştır"
+msgstr "Puding'i Qt4 grafik arayüzüyle çalıştır"
 
 #: ../src/puding.py:52
 msgid "Puding is an USB image creator for Pardus Linux."
-msgstr "Puding, Pardus için yazılmış bir USB kalıp oluşturucudur."
+msgstr "Puding, Pardus için hazırlanmış bir imaj oluşturucudur."
 
 #: ../src/puding.py:58
 msgid "You need superuser permissions to run this application."
-msgstr "Uygulamayı çalıştırmak için yetkili kullanıcı olmalısınız."
+msgstr "Bu uygulamayı çalıştırmak için yetkili kullanıcı olmalısınız."
 
 #: ../src/puding.py:76
 msgid "Invalid usage. Example:"
 msgstr "Geçersiz kullanım. Örnek:"
 
-#: ../src/puding.py:99
+#: ../src/puding.py:104
 msgid ""
 "\n"
 "Quit."
 msgstr ""
 "\n"
-"Çıkış yapıldı."
+"Çık."
 
-#: ../src/uiCmd.py:66
+#: ../src/uiCmd.py:67
 msgid "Finished"
-msgstr "Bitti"
+msgstr "Tamamlandı"
 
-#: ../src/uiCmd.py:117
+#: ../src/uiCmd.py:118
 msgid "USB device not found."
-msgstr "USB sürücü bulunamadı."
+msgstr "USB aygıtı bulunamadı."
 
-#: ../src/uiCmd.py:126
+#: ../src/uiCmd.py:127
 msgid "Mounting USB device..."
-msgstr "USB bellek bağlanıyor..."
+msgstr "USB aygıt bağlanıyor..."
 
-#: ../src/uiCmd.py:139
-msgid "The path is invalid, please specify an image path."
-msgstr "Yol geçersiz, lütfen kalıp yolunu doğru belirtin."
+#: ../src/uiCmd.py:131
+msgid "Mounting image..."
+msgstr "İmaj bağlanıyor..."
 
-#: ../src/uiCmd.py:143
-msgid "Calculating checksum..."
-msgstr "Kaynak doğrulaması yapılıyor..."
+#: ../src/uiCmd.py:134
+msgid "Could not mounted image."
+msgstr "İmaj bağlanamadı."
 
-#: ../src/uiCmd.py:148
+#: ../src/uiCmd.py:146
 #, python-format
-msgid ""
-"\n"
-"   Image path: %s"
-msgstr ""
-"\n"
-"    Kalıp yolu: %s"
+msgid "The path you have typed is invalid. If you think the path is valid, make sure you have mounted USB stick to the path you gave. To check the path, you can use: mount | grep %s"
+msgstr "Yazdığınız yol geçersiz. Eğer geçersiz değilse, lütfen USB belleği verdiğiniz yola bağladığınızdan emin olun. Yolu kontrol etmek için 'mount | grep %s' kullanabilirsiniz."
 
-#: ../src/uiCmd.py:149
-#, python-format
-msgid "         Name: %s"
-msgstr "            İsim: %s"
-
-#: ../src/uiCmd.py:150
-#, python-format
-msgid "       Md5sum: %s"
-msgstr "          Md5sum: %s"
-
-#: ../src/uiCmd.py:151
-#, python-format
-msgid " Download URL: %s\n"
-msgstr "  İndirme adresi: %s\n"
-
-#: ../src/uiCmd.py:157
-msgid "The checksum of the source cannot be validated. Please specify a correct source or be sure that you have downloaded the source correctly."
-msgstr "Veri doğrulaması başarısız oldu. Lütfen doğru CD kalıbını belirtin veya CD kalıbını doğru indirmiş olduğunuzdan emin olun."
-
-#: ../src/uiCmd.py:171
+#: ../src/uiCmd.py:160
 msgid "Devices:"
-msgstr "Sürücüler:"
+msgstr "Aygıtlar:"
 
-#: ../src/uiCmd.py:178
-msgid "    Label\t\t:"
-msgstr "    Etiket\t\t:"
+#: ../src/uiCmd.py:167
+msgid "Label"
+msgstr "Etiket"
 
-#: ../src/uiCmd.py:181
-msgid "    Parent\t\t:"
-msgstr "    Desen\t\t:"
+#: ../src/uiCmd.py:170
+msgid "Parent"
+msgstr "Ebeveyn"
 
-#: ../src/uiCmd.py:184
-msgid "    Mount Point\t\t:"
-msgstr "    Bağlama Noktası\t:"
+#: ../src/uiCmd.py:173
+msgid "Mount Point"
+msgstr "Bağlama Noktası"
 
-#: ../src/uiCmd.py:187
+#: ../src/uiCmd.py:176
 msgid "not mounted"
 msgstr "bağlı değil"
 
-#: ../src/uiCmd.py:191
-msgid "    Unmount\t\t:"
-msgstr "    Ayırma\t\t:"
+#: ../src/uiCmd.py:180
+msgid "Unmount"
+msgstr "Bağlı Değil"
 
-#: ../src/uiCmd.py:194
-msgid "    UUID\t\t:"
-msgstr "    UUID\t\t:"
+#: ../src/uiCmd.py:186
+msgid "File System Version"
+msgstr "Dosya Sistemi Sürümü"
 
-#: ../src/uiCmd.py:197
-msgid "    File System Version\t:"
-msgstr "    Dosya Sistemi Sürümü\t:"
+#: ../src/uiCmd.py:189
+msgid "File System Type"
+msgstr "Dosya Sistemi Türü"
 
-#: ../src/uiCmd.py:200
-msgid "    File System Type\t:"
-msgstr "    Dosya Sistemi Tipi\t:"
-
-#: ../src/uiCmd.py:204
+#: ../src/uiCmd.py:193
 msgid "USB devices or partitions have found more than one. Please choose one:"
-msgstr "Birden fazla USB sürücü ve bölüm bulundu. Lütfen birini seçin:"
+msgstr "Birden fazla USB aygıt ya da bölüm bulundu. Lütfen birini seçin:"
 
-#: ../src/uiCmd.py:209
+#: ../src/uiCmd.py:198
 #, python-format
 msgid "You must enter a number between 0 - %d."
-msgstr "0 ile %d arasında bir değer girmelisiniz."
+msgstr "0 ile %d arasında bir sayı girmelisiniz."
 
-#: ../src/uiCmd.py:220
-msgid "Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?"
-msgstr "Lütfen bilgilerinizi kontrol ediniz. Eğer USB bellek bilgileriniz doğru değilse, sisteminize ve dosyalarınıza zarar verebilirsiniz. Devam etmek istiyor musunuz?"
+#: ../src/uiCmd.py:215
+msgid "Sorry, there is no available disk on your USB disk partition. Please remove unrequired files from USB disk."
+msgstr "Üzgünüm, USB bellek bölümünüzde yeteri kadar yer yok. Lütfen gereksiz verileri USB bellekten silin."
+
+#: ../src/uiCmd.py:217
+#: ../src/uiCmd.py:284
+msgid "Unmounting image..."
+msgstr "İmaj ayrılıyor..."
 
 #: ../src/uiCmd.py:222
-msgid "Please type CONFIRM to continue:"
-msgstr "Devam etmek için ONAYLA yazın:"
+msgid "USB disk informations:"
+msgstr "USB disk bilgisi:"
 
-#: ../src/uiCmd.py:224
+#: ../src/uiCmd.py:223
+msgid "Capacity"
+msgstr "Kapasite"
+
+#: ../src/uiCmd.py:226
+msgid "Available"
+msgstr "Boş"
+
+#: ../src/uiCmd.py:229
+msgid "Used"
+msgstr "Kullanılan"
+
+#: ../src/uiCmd.py:232
+msgid ""
+"\n"
+"Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?"
+msgstr ""
+"\n"
+"Lütfen yol bilgisini iki kez kontrol edin. Eğer USB belleğin yolu yanlış olursa, bilgisayarınıza ve dosyalarınıza zarar gelebilir. Devam etmek istiyor musunuz?"
+
+#: ../src/uiCmd.py:234
+msgid "Please type CONFIRM to continue:"
+msgstr "Lütfen devam etmek için ONAYLA yazınız:"
+
+#: ../src/uiCmd.py:235
 msgid "CONFIRM"
 msgstr "ONAYLA"
 
-#: ../src/uiCmd.py:224
+#: ../src/uiCmd.py:235
 msgid "confirm"
 msgstr "onayla"
 
-#: ../src/uiCmd.py:225
+#: ../src/uiCmd.py:236
 msgid "Writing image data to USB stick!"
-msgstr "Kalıp USB belleğinize yazılıyor!"
+msgstr "İmaj verisi USB belleğe yazılıyor!"
 
-#: ../src/uiCmd.py:230
+#: ../src/uiCmd.py:240
 msgid "You did not type CONFIRM. Exiting.."
-msgstr "ONAYLA yaz(a)madığınız için çıkılıyor.."
-
-#: ../src/uiCmd.py:235
-#, python-format
-msgid "The path you have typed is invalid. If you think the path is valid, make sure you have mounted USB stick to the path you gave. To check the path, you can use: mount | grep %s"
-msgstr "Girmiş olduğunuz yol geçersiz. Eğer yolun geçerli olduğunu düşünüyorsanız, USB belleğin belirttiğiniz dizine bağlı olup olmadığını kontrol edin. Kontrol etmek için şu komut dizisini kullanabilirsiniz: mount | grep %s"
-
-#: ../src/uiCmd.py:244
-msgid "USB disk informations:"
-msgstr "USB bellek bilgileri:"
-
-#: ../src/uiCmd.py:245
-msgid "\tCapacity\t"
-msgstr "\tKapasite\t"
+msgstr "ONAYLA yazmadınız. Program kapatılıyor.."
 
 #: ../src/uiCmd.py:246
-msgid "\tAvailable\t"
-msgstr "\tBoş Alan\t"
-
-#: ../src/uiCmd.py:247
-msgid "\tUsed\t\t"
-msgstr "\tKullanılan\t"
+msgid "The path is invalid, please specify an image path."
+msgstr "Yol geçersiz, lütfen bir imaj yolu belirtin."
 
 #: ../src/uiCmd.py:250
-msgid "Mounting image..."
-msgstr "Kalıp bağlanıyor..."
+msgid "Calculating checksum..."
+msgstr "Kontrol toplam hesaplanıyor..."
 
-#: ../src/uiCmd.py:253
-msgid "Could not mounted image."
-msgstr "Kalıp bağlanamadı."
+#: ../src/uiCmd.py:255
+msgid "Source Informations:"
+msgstr "Kaynak Bilgisi:"
 
-#: ../src/uiCmd.py:257
+#: ../src/uiCmd.py:256
+msgid "Image Path"
+msgstr "İmaj Yolu"
+
+#: ../src/uiCmd.py:258
+msgid "Name"
+msgstr "İsim"
+
+#: ../src/uiCmd.py:262
+msgid "Download URL"
+msgstr "İndirme Adresi"
+
+#: ../src/uiCmd.py:269
+msgid "The checksum of the source cannot be validated. Please specify a correct source or be sure that you have downloaded the source correctly."
+msgstr "Kaynağın kontrol toplamı doğrulanamadı. Lütfen geçerli bir kaynak belirtin, ya da kontrol toplamını kendiniz kontrol edin."
+
+#: ../src/uiCmd.py:276
 msgid "Creating boot manager..."
 msgstr "Açılış yöneticisi oluşturuluyor..."
 
-#: ../src/uiCmd.py:259
+#: ../src/uiCmd.py:278
 msgid "Could not create boot manager."
 msgstr "Açılış yöneticisi oluşturulamadı."
 
-#: ../src/uiCmd.py:265
-msgid "Unmounting image..."
-msgstr "Kalıp kaldırılıyor..."
-
-#: ../src/uiCmd.py:269
+#: ../src/uiCmd.py:288
 msgid "Could not unmounted image."
-msgstr "Kalıp ayırma işlemi başarısızlıkla sonuçlandı."
+msgstr "Imaj ayrılamadı."
 
-#: ../src/uiCmd.py:274
+#: ../src/uiCmd.py:293
 msgid "Unmounting USB disk..."
-msgstr "USB bellek kaldırılıyor..."
+msgstr "USB bellek ayrılıyor..."
 
-#: ../src/uiCmd.py:278
+#: ../src/uiCmd.py:297
 msgid "Could not unmounted USB disk."
-msgstr "USB bellek ayırma işlemi başarısızlıkla sonuçlandı."
+msgstr "USB bellek ayrılamadı."
 
-#: ../src/uiCmd.py:282
+#: ../src/uiCmd.py:301
 msgid "USB disk is ready. Now you can install or run Pardus from your USB disk."
-msgstr "USB belleğiniz hazır. Şimdi, Pardus'unuzu USB belleğinizden kurabilir veya çalıştırabilirsiniz."
+msgstr "USB bellek hazr. Artk Pardus'u USB bellekten kurabilir ya da altrabilirsiniz."
 
-#: ../src/uiCmd.py:295
+#: ../src/uiCmd.py:314
 msgid "Copying"
 msgstr "Kopyalanıyor"
 
-#~ msgid "Copying syslinux files.."
-#~ msgstr "Syslinux dosyaları kopyalanıyor.."
-#~ msgid "Creating ldlinux.sys.."
-#~ msgstr "\"ldlinux.sys\" oluşturuluyor.."
-#~ msgid "Could not create, ldlinux.sys."
-#~ msgstr "\"ldlinux.sys\" dosyası oluşturulamadı."
-#~ msgid "Concatenating MBR to %s"
-#~ msgstr "MBR şuraya yazılıyor: %s"
-#~ msgid "Could not concatenate, MBR."
-#~ msgstr "MBR yazılamadı."
-#~ msgid "MBR written, USB disk is ready for Pardus installation."
-#~ msgstr "MBR yazıldı, USB belleğiniz Pardus kurulumu için hazır."
-#~ msgid "Copying pardus.img to %s.."
-#~ msgstr "\"pardus.img\" dosyası şuraya kopyalanıyor: %s"
-#~ msgid "%s is already exist."
-#~ msgstr "%s zaten var."
-#~ msgid "Select ISO Image"
-#~ msgstr "ISO kalıbı seçin"
+#~ msgid "         Name: %s"
+#~ msgstr "         sim: %s"
+#~ msgid "       Md5sum: %s"
+#~ msgstr "       Md5 toplam: %s"
+#~ msgid "    Label\t\t:"
+#~ msgstr "    Etiket\t\t:"
+#~ msgid "    Unmount\t\t:"
+#~ msgstr "    z\t\t:"
+#~ msgid "    UUID\t\t:"
+#~ msgstr "    UUID\t\t:"
 
