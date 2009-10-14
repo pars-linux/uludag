@@ -16,12 +16,19 @@ INSTALLATION
 TRANSLATION
     - For translators:
         $ cd $(PUDING)/po
+
+        - To create new translation file:
         $ msginit -l $(LANG)
 
-    - For developers:
-        $ cd $(PUDING)/po
-        $ xgettext -f POTFILES.in -L Python --copyright-holder=GPLv3 --package-name=puding --package-version=TRUNK --msgid-bugs-address=gkmngrgn@gmail.com -o messages.pot
+        - To update translation file:
+        $ msgmerge -U ${LANG}.po messages.pot
 
+    - For developers:
+        - To update main translation file:
+        $ cd $(PUDING)/po
+        $ intltool-update -p
+
+        - For Qt translation file:
         $ cd $(PUDING)/qt4
         $ pylupdate4 /usr/lib/python*/site-packages/puding/qt*.py src/*.py -ts messages.ts
 

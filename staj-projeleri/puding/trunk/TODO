@@ -1,4 +1,1 @@
 * Kullanıcılar kendi hazırladığı Pardus sürümlerini de yazdırabilmeliler. Checksum değeri tutmayınca False değeri vermek yerine uyarmalı.
-* Konsolda progressBar'da bir çubuk fazla basıyor. çubuğu bir karakter artırman gerekli.
-* USB bellek boşsa kullanılan alanı -1MB göstermesin.
-* "Devam etmek için ONAYLA yazın:" satırının sonunda bir boşluk olmalı, veya koda boşluk ekle.

@@ -16,6 +16,7 @@ from common import runCommand
 from common import createConfigFile
 from common import createSyslinux
 from common import createUSBDirs
+from common import getDiskInfo
 from common import getIsoSize
 from common import getMounted
 from common import PartitionUtils
@@ -127,36 +128,24 @@ class Create:
                     runCommand(cmd)
                     dst = MOUNT_USB
 
-        if self.__checkSource(src) and self.__checkDestination(dst):
-            createUSBDirs(dst)
-            self.__createImage(src, dst)
+        self.utils.cprint(_("Mounting image..."), "green")
+        cmd = "fuseiso %s %s" % (src, MOUNT_ISO)
+        if runCommand(cmd):
+            self.utils.cprint(_("Could not mounted image."), "red")
 
-        else:
             sys.exit(1)
 
-    def __checkSource(self, src):
-        if not os.path.isfile(src):
-            self.utils.cprint(_("The path is invalid, please specify an image path."), "red")
+        if self.__checkSource(src) and self.__checkDestination(dst):
+            from pardusTools import Main
 
-            return False
+            tools = Main(MOUNT_ISO, dst)
+            if self.__checkDiskInfo(dst, tools.getTotalSize()):
+                self.__createImage(src, dst)
 
-        self.utils.cprint(_("Calculating checksum..."))
+        else:
+            self.utils.cprint(_("The path you have typed is invalid. If you think the path is valid, make sure you have mounted USB stick to the path you gave. To check the path, you can use: mount | grep %s" % dst), "red")
 
-        try:
-            (name, md5, url) = self.progressbar.verifyIsoChecksum(src)
-
-            self.utils.cprint(_("\n   Image path: %s" % src))
-            self.utils.cprint(_("         Name: %s" % name))
-            self.utils.cprint(_("       Md5sum: %s" % md5))
-            self.utils.cprint(_(" Download URL: %s\n" % url))
-
-            return True
-
-        # FIX ME: Bad Code..
-        except TypeError:
-            self.utils.cprint(_("The checksum of the source cannot be validated. Please specify a correct source or be sure that you have downloaded the source correctly."), "red")
-
-            return False
+            sys.exit(1)
 
     def __askDestination(self):
         self.drives = self.partutils.returnDrives()
@@ -168,37 +157,37 @@ class Create:
         else:
             drive_no = 0
 
-            self.utils.cprint(_("Devices:"), "brightcyan")
+            self.utils.cprint(_("Devices:"), "brightwhite")
 
             for drive in self.drives:
                 drive_no += 1
 
                 # FIX ME: Bad coding..
-                self.utils.cprint("\n%d) %s:" % (drive_no, drive), "brightcyan")
-                self.utils.cprint(_("    Label\t\t:"), "green", True)
-                self.utils.cprint(self.drives[drive]["label"], "yellow")
+                self.utils.cprint("%d) %s:" % (drive_no, drive), "brightgreen")
+                self.utils.cprint("    %s:" % _("Label"), "green", True)
+                print(self.drives[drive]["label"])
 
-                self.utils.cprint(_("    Parent\t\t:"), "green", True)
-                self.utils.cprint(str(self.drives[drive]["parent"]), "yellow")
+                self.utils.cprint("    %s:" % _("Parent"), "green", True)
+                print(str(self.drives[drive]["parent"]))
 
-                self.utils.cprint(_("    Mount Point\t\t:"), "green", True)
+                self.utils.cprint("    %s:" % _("Mount Point"), "green", True)
                 mount_dir = self.drives[drive]["mount"]
                 if not mount_dir:
-                    self.utils.cprint("%s (%s)" % (MOUNT_ISO,  _("not mounted")), "yellow")
+                    print("%s (%s)" % (MOUNT_ISO,  _("not mounted")))
                 else:
-                    self.utils.cprint(mount_dir, "yellow")
+                    print(mount_dir)
 
-                self.utils.cprint(_("    Unmount\t\t:"), "green", True)
-                self.utils.cprint(str(self.drives[drive]["unmount"]), "yellow")
+                self.utils.cprint("    %s:" % _("Unmount"), "green", True)
+                print(str(self.drives[drive]["unmount"]))
 
-                self.utils.cprint(_("    UUID\t\t:"), "green", True)
-                self.utils.cprint(self.drives[drive]["uuid"], "yellow")
+                self.utils.cprint("    UUID:", "green", True)
+                print(self.drives[drive]["uuid"])
 
-                self.utils.cprint(_("    File System Version\t:"), "green", True)
-                self.utils.cprint(self.drives[drive]["fsversion"], "yellow")
+                self.utils.cprint("    %s:" % _("File System Version"), "green", True)
+                print(self.drives[drive]["fsversion"])
 
-                self.utils.cprint(_("    File System Type\t:"), "green", True)
-                self.utils.cprint(self.drives[drive]["fstype"], "yellow")
+                self.utils.cprint("    %s:" % _("File System Type"), "green", True)
+                print("%s\n" % self.drives[drive]["fstype"])
 
             try:
                 part_number = int(raw_input("%s " % _("USB devices or partitions have found more than one. Please choose one:")))
@@ -216,43 +205,73 @@ class Create:
 
     def __checkDestination(self, dst):
         if os.path.isdir(dst) and os.path.ismount(dst):
-            self.__printDiskInfo(dst)
-            self.utils.cprint(_("Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?"))
+            return True
 
-            answer = raw_input("%s " % _("Please type CONFIRM to continue:"))
+        return False
 
-            if answer in (_('CONFIRM'), _('confirm')):
-                self.utils.cprint(_("Writing image data to USB stick!"), "green")
+    def __checkDiskInfo(self, dst, total_size):
+        (capacity, available, used) = getDiskInfo(str(dst))
+        if available < total_size:
+            self.utils.cprint(_("Sorry, there is no available disk on your USB disk partition. Please remove unrequired files from USB disk."), "red")
 
-                return True
-
-            else:
-                self.utils.cprint(_("You did not type CONFIRM. Exiting.."), "red")
-
-                return False
-
-        else:
-            self.utils.cprint(_("The path you have typed is invalid. If you think the path is valid, make sure you have mounted USB stick to the path you gave. To check the path, you can use: mount | grep %s" % dst), "red")
+            self.utils.cprint(_("Unmounting image..."), "red")
+            runCommand("fusermount -u %s" % MOUNT_ISO)
 
             return False
 
-    def __printDiskInfo(self, dst):
-        from common import getDiskInfo
+        self.utils.cprint(_("USB disk informations:"), "brightgreen")
+        self.utils.cprint("    %s:" % _("Capacity"), "green", True)
+        print("%dMB" % capacity)
 
-        (capacity, available, used) = getDiskInfo(str(dst))
+        self.utils.cprint("    %s:" % _("Available"), "green", True)
+        print("%dMB" % available)
 
-        print(_("USB disk informations:"))
-        print("%s: %dMB" % (_("\tCapacity\t"), capacity))
-        print("%s: %dMB" % (_("\tAvailable\t"), available))
-        print("%s: %dMB" % (_("\tUsed\t\t"), used))
+        self.utils.cprint("    %s:" % _("Used"), "green", True)
+        print("%dMB" % used)
+
+        print(_("\nPlease double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?"))
+
+        answer = raw_input("%s " % _("Please type CONFIRM to continue:"))
+        if answer in (_('CONFIRM'), _('confirm')):
+            self.utils.cprint(_("Writing image data to USB stick!"), "green")
+
+            return True
+
+        self.utils.cprint(_("You did not type CONFIRM. Exiting.."), "red")
+
+        return False
+
+    def __checkSource(self, src):
+        if not os.path.isfile(src):
+            self.utils.cprint(_("The path is invalid, please specify an image path."), "red")
+
+            return False
+
+        self.utils.cprint(_("Calculating checksum..."), "green")
+
+        try:
+            (name, md5, url) = self.progressbar.verifyIsoChecksum(src)
+
+            self.utils.cprint(_("Source Informations:"), "brightgreen")
+            self.utils.cprint("    %s:" % _("Image Path"), "green", True)
+            print(src)
+            self.utils.cprint("    %s:" % _("Name"), "green", True)
+            print(name)
+            self.utils.cprint("    Md5sum:", "green", True)
+            print(md5)
+            self.utils.cprint("    %s:" % _("Download URL"), "green", True)
+            print(url)
+
+            return True
+
+        # FIX ME: Bad Code..
+        except TypeError:
+            self.utils.cprint(_("The checksum of the source cannot be validated. Please specify a correct source or be sure that you have downloaded the source correctly."), "red")
+
+            return False
 
     def __createImage(self, src, dst):
-        self.utils.cprint(_("Mounting image..."), "green")
-        cmd = "fuseiso %s %s" % (src, MOUNT_ISO)
-        if runCommand(cmd):
-            self.utils.cprint(_("Could not mounted image."), "red")
-
-            return False
+        createUSBDirs(dst)
 
         self.utils.cprint(_("Creating boot manager..."), "yellow")
         if createSyslinux(dst):

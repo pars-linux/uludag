@@ -103,8 +103,33 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
 
         try:
             (name, md5, url) = self.__getSourceInfo(src)
-            mount_point = getMounted(dst)
-            self.confirm_infos = ConfirmDialog(src, dst, mount_point, name, md5, url)
+
+        except TypeError: # 'bool' object is not iterable
+            # It's not true way, you should warn to the users with WarningDialog.
+            return False
+
+        mount_point = getMounted(dst)
+        (capacity, available, used) = getDiskInfo(dst)
+
+        # Mount iso
+        if not os.path.ismount(MOUNT_ISO):
+            cmd = "fuseiso %s %s" % (src, MOUNT_ISO)
+            if runCommand(cmd):
+                # FIX ME: Should use warning dialog.
+                return False
+
+        # FIX ME: Now Puding supports only Pardus.
+        from pardusTools import Main
+
+        self.tools = Main(MOUNT_ISO, dst)
+        total_size = self.tools.getTotalSize()
+
+        if available < total_size:
+            self.warningDialog("Warning", "There is not enough space left on your USB stick for the image.")
+
+        else:
+            self.confirm_infos = ConfirmDialog(src, dst, mount_point, name, total_size, capacity, available, used)
+
             if self.confirm_infos.exec_() == QtGui.QDialog.Accepted:
                 createUSBDirs(dst)
                 self.__createImage(src, dst)
@@ -112,11 +137,10 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
                 if dst == MOUNT_USB:
                     auth.umount(dst)
 
-                return True
-
-            return False
-
-        except TypeError: # 'bool' object is not iterable
+        # Unmount iso
+        cmd = "fusermount -u %s" % MOUNT_ISO
+        if runCommand(cmd):
+            # FIX ME: Should use warning dialog.
             return False
 
     def warningDialog(self, title, message,):
@@ -174,22 +198,9 @@ you have downloaded the source correctly."""
         return os.path.ismount(str(dst))
 
     def __createImage(self, src, dst):
-        # Mount iso
-        if not os.path.ismount(MOUNT_ISO):
-            cmd = "fuseiso %s %s" % (src, MOUNT_ISO)
-            if runCommand(cmd):
-                # FIX ME: Should use warning dialog.
-                return False
-
-        # FIX ME: Now Puding supports only Pardus.
-        from pardusTools import Main
-
-        tools = Main(MOUNT_ISO, dst)
-        file_list = tools.file_list
-        max_value = tools.getNumberOfFiles()
-        create_image = ProgressBar(title = self.tr("Creating Image"),
-                message = self.tr("Creating image..."),
-                max_value = max_value)
+        file_list = self.tools.file_list
+        max_value = self.tools.getNumberOfFiles()
+        create_image = ProgressBar(title = self.tr("Creating Image"), message = self.tr("Creating image..."), max_value = max_value)
         pi = ProgressIncrementCopy(create_image, MOUNT_ISO, dst)
 
         def closeDialog():
@@ -202,12 +213,6 @@ you have downloaded the source correctly."""
 
         pi.start()
         create_image.exec_()
-
-        # Unmount iso
-        cmd = "fusermount -u %s" % MOUNT_ISO
-        if runCommand(cmd):
-            # FIX ME: Should use warning dialog.
-            return False
 
         self.warningDialog(self.tr("USB Image is Ready"), self.tr("Your USB image is ready. Now you can install or run Pardus from USB storage."))
 
@@ -256,16 +261,19 @@ class SelectDisk(QtGui.QDialog, qtSelectDisk.Ui_Dialog):
         return self.line_directory.displayText()
 
 class ConfirmDialog(QtGui.QDialog, qtConfirmDialog.Ui_Dialog):
-    def __init__(self, src, dst, mount_point, name, md5, url, parent = None):
+    def __init__(self, src, dst, mount_point, name, total_size, capacity, available, used, parent = None):
         super(ConfirmDialog, self).__init__(parent)
         self.setupUi(self)
         dst_info = "%s (%s)" % (dst, mount_point)
 
-        self.label_src.setText(src)
-        self.label_dst.setText(dst_info)
         self.label_name.setText(name)
-        self.label_md5.setText(md5)
-        self.label_url.setText(url)
+        self.label_src.setText(src)
+        self.label_src_size.setText("%dMB" % total_size)
+        self.label_dst.setText(dst_info)
+
+        self.label_capacity.setText("%dMB" % capacity)
+        self.label_available.setText("%dMB" % available)
+        self.label_used.setText("%dMB" % used)
 
 class ProgressBar(QtGui.QDialog, qtProgressBar.Ui_Dialog):
     def __init__(self, title, message, max_value, parent = None):
