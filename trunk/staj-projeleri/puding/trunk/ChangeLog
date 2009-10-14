@@ -1,4 +1,4 @@
--- 0.0.93
+-- 0.1 (2009-10-14)
 	- Update translations.
 	- Add German translations.
 	- If available space size is not enough, don't start to create image
