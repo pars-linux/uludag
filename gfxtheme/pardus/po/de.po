@@ -433,3 +433,11 @@ msgstr "Aus"
 msgid "Hardware info"
 msgstr ""
 
+#. txt_mudur
+msgid "Boot"
+msgstr ""
+
+#. txt_mudur_forcefsck
+msgid "FS check"
+msgstr ""
+

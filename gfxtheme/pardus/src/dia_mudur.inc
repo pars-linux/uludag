@@ -29,8 +29,9 @@
 
   xmenu .xm_current mudur.default put
   xmenu .xm_list [
-    /txt_mudur_default
-    /txt_mudur_safe
+    % steal some translations from zorg
+    /txt_zorg_default
+    /txt_zorg_safe
     /txt_mudur_forcefsck
   ] put
   xmenu .xm_title /txt_mudur put

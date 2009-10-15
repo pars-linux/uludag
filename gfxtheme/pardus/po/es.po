@@ -437,3 +437,11 @@ msgstr "Apagar"
 msgid "Hardware info"
 msgstr "Información de hardware"
 
+#. txt_mudur
+msgid "Boot"
+msgstr ""
+
+#. txt_mudur_forcefsck
+msgid "FS check"
+msgstr ""
+
