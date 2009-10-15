@@ -233,7 +233,7 @@ class AnyDependency(AutoPiksemel):
 
 
 class Component(AutoPiksemel):
-    name = tag("Name")
+    name = tag_data()
 
 
 class RuntimeDependencies(AutoPiksemel):
