@@ -228,6 +228,20 @@ class Dependency(AutoPiksemel):
     releaseTo   = optional_attribute("releaseTo")
 
 
+class AnyDependency(AutoPiksemel):
+    dependencies = one_or_more_tag("Dependency", t_class=Dependency)
+
+
+class Component(AutoPiksemel):
+    name = tag("Name")
+
+
+class RuntimeDependencies(AutoPiksemel):
+    dependencies    = zero_or_more_tag("Dependency", t_class=Dependency)
+    anyDependencies = zero_or_more_tag("AnyDependency", t_class=AnyDependency)
+    components      = zero_or_more_tag("Component", t_class=Component)
+
+
 class Archive(AutoPiksemel):
     uri     = tag_data()
     type    = attribute("type")
@@ -262,10 +276,6 @@ class AdditionalFile(AutoPiksemel):
 class ComarProvide(AutoPiksemel):
     om     = tag_data()
     script = attribute("script")
-
-
-class Component(AutoPiksemel):
-    name = tag("Name")
 
 
 class Source(AutoPiksemel):
@@ -434,10 +444,7 @@ class Package(AutoPiksemel):
     partof                = optional_tag("PartOf")
     icon                  = optional_tag("Icon")
     license               = zero_or_more_tag("License")
-    packageDependencies   = optional_tag("RuntimeDependencies",
-                                        contains=one_or_more_tag("Dependency", t_class=Dependency))
-    componentDependencies = optional_tag("RuntimeDependencies",
-                                        contains=one_or_more_tag("Component", t_class=Component))
+    runtimeDependencies   = optional_tag("RuntimeDependencies", t_class=RuntimeDependencies)
     files                 = tag("Files", contains=one_or_more_tag("Path", t_class=Path))
     conflicts             = optional_tag("Conflicts", contains=one_or_more_tag("Package"))
     replaces              = optional_tag("Replaces", contains=one_or_more_tag("Package"))
@@ -476,7 +483,10 @@ class SpecFile(AutoPiksemel):
     def all_deps(self):
         deps = self.source.build_deps[:]
         for pak in self.packages:
-            deps.extend(pak.packageDependencies)
+            if pak.runtimeDependencies:
+                deps.extend(pak.runtimeDependencies.dependencies)
+                for anyDep in pak.runtimeDependencies.anyDependencies:
+                    deps.extend(anyDep.dependencies)
         return deps
 
     def validate(self, doc, errors):
@@ -502,9 +512,14 @@ class SpecFile(AutoPiksemel):
             deps = map(lambda x: x.package, self.source.build_deps)
             if pak.name in deps:
                 piksError(doc, errors, "Package name '%s' is in source '%s' build dependencies" % (pak.name, self.source.name))
-            deps = map(lambda x: x.package, pak.packageDependencies)
-            if pak.name in deps:
-                piksError(doc, errors, "Package name '%s' is in self dependencies" % pak.name)
+
+            if pak.runtimeDependencies:
+                deps = pak.runtimeDependencies.dependencies
+                for anyDep in pak.runtimeDependencies.anyDependencies:
+                    deps.extend(anyDep.dependencies)
+                deps = map(lambda x: x.package, deps)
+                if pak.name in deps:
+                    piksError(doc, errors, "Package name '%s' is in self dependencies" % pak.name)
 
 
 def all_pspecs(path):
