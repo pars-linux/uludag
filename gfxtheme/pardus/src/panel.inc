@@ -73,8 +73,8 @@
     } {
 
       [ keyF2 0 "F2" /panel.lang /panel.lang.width /panel.lang.update /lang.init ]
+      [ keyF4 0 "F3" /panel.mudur /panel.mudur.width /panel.mudur.update /mudur.init ]
       [ keyF4 0 "F4" /panel.zorg /panel.zorg.width /panel.zorg.update /zorg.init ]
-      [ keyF4 0 "F5" /panel.mudur /panel.mudur.width /panel.mudur.update /mudur.init ]
       "profiles" findfile dup {
         /profile.data exch def
         [ keyF4 0 "F6" /panel.profile /panel.profile.width /panel.profile.update /profile.init ]
