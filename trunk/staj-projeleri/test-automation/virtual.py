@@ -58,6 +58,7 @@ class revdepRebuildAndLddResults:
         repoName = splitRepos[3]
         self.repoNames.append(repoName)
 
+""" This function gets the virtual box machine names in order to list the machines to user."""
   def get_machineNames(self):
     getMachineNamesCommand  = os.popen("VBoxManage list vms")
     outMachine  = getMachineNamesCommand.read()
@@ -75,6 +76,7 @@ class revdepRebuildAndLddResults:
       self.machineNames.append(outMachine[lhs+2:rhs])
       outMachine = outMachine[rhs+3:]
 
+""" This function enables user to choose the machine that he/she wants to work."""
   def chooseMachine(self):
     count = 1
     for machine in self.machineNames:
@@ -89,21 +91,26 @@ class revdepRebuildAndLddResults:
       else:
           print "Please write a correct number !"
 
+""" This function starts the virtual machine that the user has chosen."""
   def startVm(self):
     os.popen("VBoxManage startvm " + self.machineName)
     self.checkState("running")
 
+""" This function shutdowns the virtual machine that the user has chosen."""
   def shutdownVm(self):
     os.popen("VBoxManage controlvm " + self.machineName + " poweroff")
     self.checkState("poweroff")
 
+""" This function takes the snapshot of the virtual machine the user has chosen."""
   def takeSnapshot(self):
     os.popen("VBoxManage snapshot " + self.machineName + " take TestSnapshot")
     time.sleep(0.5)
 
+""" This function revert the current snapshot to its previous state."""
   def goBack(self):
     os.popen("VBoxManage snapshot " + self.machineName + " discardcurrent --state")
 
+""" This function shows if the selected virtual machine network is in Bridged Adapter state."""
   def showBridge(self):
     showBridgeCommand = os.popen("VBoxManage showvminfo "+ self.machineName +" --machinereadable")
     outShowBridge = showBridgeCommand.read()
@@ -118,6 +125,7 @@ class revdepRebuildAndLddResults:
     nic = outShowBridge[lhs:rhs]
     return nic
 
+""" This function returns """
   def showState(self):
     showStateCommand = os.popen("VBoxManage showvminfo "+ self.machineName +" --machinereadable")
     outShowState = showStateCommand.read()
