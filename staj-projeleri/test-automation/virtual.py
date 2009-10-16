@@ -125,7 +125,7 @@ class revdepRebuildAndLddResults:
     nic = outShowBridge[lhs:rhs]
     return nic
 
-""" This function returns """
+""" This function returns several different states of selected virtaul machine."""
   def showState(self):
     showStateCommand = os.popen("VBoxManage showvminfo "+ self.machineName +" --machinereadable")
     outShowState = showStateCommand.read()
@@ -140,6 +140,7 @@ class revdepRebuildAndLddResults:
     print state
     return state
 
+""" This function checks if state is changed."""
   def checkState(self,state):
     while(1):
       if(self.showState() == state):
@@ -147,6 +148,7 @@ class revdepRebuildAndLddResults:
       else:
           time.sleep(0.5)
 
+""" This function makes a remote connection to selected virtual machine from user machine."""
   def connectTo(self,mode="normal"):
     print "Connection start..."
     if(mode == "normal"):
