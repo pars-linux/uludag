@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-16 23:40+0300\n"
-"PO-Revision-Date: 2009-10-13 22:16+0400\n"
+"PO-Revision-Date: 2009-10-17 19:50+0400\n"
 "Last-Translator: \n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "MIME-Version: 1.0\n"
@@ -888,6 +888,9 @@ msgid ""
 "repositories, allowing hours of fun with various kinds of games available "
 "through the package manager."
 msgstr ""
+"Pardus, вместе с уже установленными играми, имеет множество игр в своих "
+"репозитариях. Вы сможете отдыхать много часов, потратив совсем немного "
+"времени на установку игр различных жанров через пакетный менеджер."
 
 #: yali4/gui/descSlide.py:35
 msgid ""
@@ -899,6 +902,14 @@ msgid ""
 "printer in, and it is set. Pardus will install the correct driver and set "
 "everything accordingly right away."
 msgstr ""
+"Pardus 2009 поддерживает почти любое аппаратное обеспечение прямо "
+"сейчас. В конце установки, когда вы в первый раз запустите Pardus, "
+"графическая и звуковая карты вашего компьютера будут автоматически "
+"определены, сетевые карты будут подготовлены для соединения, независимо "
+"от того, являются они беспроводными или нет. Установка принтера в "
+"вашей системе также будет очень простой. Все, что вам нужно будет сделать "
+"это включить его и он будет установлен. Pardus сам установит правильный "
+"драйвер и все настроит так как нужно."
 
 #: yali4/gui/descSlide.py:36
 msgid ""
@@ -909,41 +920,46 @@ msgid ""
 "you. If you need support, or if you want to support, your first stop should "
 "be www.ozgurlukicin.com"
 msgstr ""
+"У нас есть портал поддержки для того, чтобы решить ваши проблемы "
+"с системе. На портале Özgürlükİçin, где содержимое разработано нашими "
+"добровольными помощниками, вы найдете гиды и всю необходимую "
+"помощь. Если у вас будут вопросы наш форум ждет вас. И если вам "
+"нужна поддержка, то ваша первая остановка - это www.ozgurlukicin.com"
 
 #: yali4/gui/DiskWidgets.py:87
 msgid "Manual Partitioning selected."
-msgstr ""
+msgstr "Выбрано Ручное разбиение на разделы"
 
 #: yali4/gui/DiskWidgets.py:192
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
-msgstr ""
+msgstr "Размер 'Install Root' должен быть больше чем %s MB."
 
 #: yali4/gui/DiskWidgets.py:222 yali4/gui/ScrBootloader.py:68
 #: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:71
 #: yali4/gui/ScrRescue.py:48
 msgid "Can't find a storage device!"
-msgstr ""
+msgstr "Невозможно найти запоминающее устройство!"
 
 #: yali4/gui/DiskWidgets.py:238
 #, python-format
 msgid "%0.1f GB free"
-msgstr ""
+msgstr "%0.1f GB свободно"
 
 #: yali4/gui/DiskWidgets.py:240
 #, python-format
 msgid "%d MB free"
-msgstr ""
+msgstr "%d MB свободно"
 
 #: yali4/gui/DiskWidgets.py:260 yali4/gui/GUIAdditional.py:166
 #, python-format
 msgid "Partition %d"
-msgstr ""
+msgstr "Раздел %d"
 
 #: yali4/gui/DiskWidgets.py:268 yali4/gui/GUIAdditional.py:164
 #: yali4/partition.py:124
 msgid "Free Space"
-msgstr ""
+msgstr "Свободное Место"
 
 #: yali4/gui/DiskWidgets.py:296
 #, python-format
@@ -951,41 +967,49 @@ msgid ""
 "Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%"
 "(device)s</b>."
 msgstr ""
+"Раздел <b>%(partition)s (%(size)s)</b> <b>удален</b> с устройства <b>%"
+"(device)s</b>."
 
 #: yali4/gui/DiskWidgets.py:326 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
-msgstr ""
+msgstr "Есть запрос на тот же самый Тип Раздела."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
+"Раздел <b>%(partition)s</b> будет <b>отформатирован</b> как <b>%(fsType)s</b>"
+"."
 
 #: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:163
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
+msgstr "Раздел <b>%(partition)s</b> <b>выбран</b> как <b>%(type)s</b>."
 
 #: yali4/gui/DiskWidgets.py:382
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
+"Таблицы GPT не поддерживают расширенные разделы.\n"
+"Вам нужно удалить один из первичных разделов!"
 
 #: yali4/gui/DiskWidgets.py:384 yali4/gui/DiskWidgets.py:407
 msgid "Too many primary partitions !"
-msgstr ""
+msgstr "Слишком много первичных разделов !"
 
 #: yali4/gui/DiskWidgets.py:406
 msgid ""
 "You need to delete one of the primary or extended(if exists) partition from "
 "your disk table !"
 msgstr ""
+"Вам нужно удалить один из ваших первичных или расширенных (если есть) "
+"разделов с вашего диска !"
 
 #: yali4/gui/DiskWidgets.py:418
 msgid "Error !"
-msgstr ""
+msgstr "Ошибка !"
 
 #: yali4/gui/DiskWidgets.py:428
 #, python-format
@@ -993,26 +1017,29 @@ msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
+"Раздел <b>%(partition)s</b> <b>добавлен</b> на устройство <b>%(device)s</b> "
+"с "
+"<b>%(size)s MB</b> как <b>%(fs)s</b>."
 
 #: yali4/gui/DiskWidgets.py:454
 msgid "Delete All Partitions"
-msgstr ""
+msgstr "Удалить Все Разделы"
 
 #: yali4/gui/DiskWidgets.py:534
 msgid "Pardus will install here"
-msgstr ""
+msgstr "Pardus будет установлен здесь"
 
 #: yali4/gui/DiskWidgets.py:537
 msgid "User files will store here"
-msgstr ""
+msgstr "Пользовательские файлы будут храниться здесь"
 
 #: yali4/gui/DiskWidgets.py:540
 msgid "Swap will be here"
-msgstr ""
+msgstr "Виртуальная память будет размещена здесь"
 
 #: yali4/gui/DiskWidgets.py:543
 msgid "Backup or archive files will store here"
-msgstr ""
+msgstr "Резервные копии или архивные файлы будут храниться здесь"
 
 #: yali4/gui/DiskWidgets.py:562
 #, python-format
@@ -1021,6 +1048,9 @@ msgid ""
 "                                  <b>Size:</b> %s<br>\n"
 "                                  <b>FileSystem:</b> %s%s"
 msgstr ""
+"<b>Путь:</b> %s<br>\n"
+"                                  <b>Размер:</b> %s<br>\n"
+"                                  <b>Файловая система:</b> %s%s"
 
 #: yali4/gui/DiskWidgets.py:595 yali4/gui/ScrSummary.py:161
 #, python-format
