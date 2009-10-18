@@ -24,6 +24,9 @@ def started(operation=""):
 def finished(operation=""):
    notify("System.Upgrader", "finished", operation)
 
+def cancelled(operation=""):
+   notify("System.Upgrader", "cancelled", operation)
+
 def step(func):
     """
     Decorator for synchronizing privileged functions
@@ -32,7 +35,6 @@ def step(func):
         operation = "System.Upgrader.%s" % func.func_name
 
         started(operation)
-        _init_pisi()
         try:
             func(*__args,**__kw)
         except KeyboardInterrupt:
@@ -103,4 +105,3 @@ def upgrade():
 @step
 def cleanup(self):
    reboot()
-
