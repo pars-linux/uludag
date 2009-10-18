@@ -45,7 +45,7 @@ def step(func):
 
     return wrapper
 
-def reboot(self):
+def reboot():
    notify("System.Upgrader", "needsreboot")
    sys.exit(0)
    # dbus-send --system --dest=org.freedesktop.Hal --type=method_call --print-reply /org/freedesktop/Hal/devices/computer  org.freedesktop.Hal.Device.SystemPowerManagement.Reboot
@@ -55,11 +55,11 @@ PACKAGES = ["kdm", "xdm", "pardus-default-settings"]
 COMPONENTS = ["x11.driver"]
 
 @step
-def prepare(self):
+def prepare():
     pisi.api.upgrade(["pisi"])
 
 @step
-def setrepos(self):
+def setrepos():
    for name in pisi.api.list_repos():
       pisi.api.remove_repo(name)
 
@@ -67,27 +67,24 @@ def setrepos(self):
    pisi.api.add_repo("contrib-2009", "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2")
 
 @step
-def download(self):
-   packages = set(self.pisi.upgrade_order() + PACKAGES)
+def download():
+   packages = set(pisi.api.get_upgrade_order() + PACKAGES)
    for component in COMPONENTS:
       packages = packages.union(pisi.db.componentdb.ComponentDB().get_union_packages(component))
 
    for package in packages:
-      pisi.api.fetch(package, "/var/cache/pisi/package")
+      pisi.api.fetch(package, "/var/cache/pisi/packages")
 
 @step
-def upgrade(self):
-    # Upgrade and configure packages
-    pisi.api.upgrade(ignore_comar=True)
-    pisi.configure_pending()
+def upgrade():
+   pisi.api.upgrade(ignore_comar=True)
+   pisi.api.configure_pending()
 
-    # Install missing x11 drivers
-    self.pisi.install(pisi.db.componentdb.ComponentDB().get_union_packages("x11.drivers"))
+   pisi.api.install(pisi.db.componentdb.ComponentDB().get_union_packages("x11.drivers"))
 
-    # Reinstall kdm
-    os.unlink('/etc/X11/kdm/kdmrc')
-    pisi.api.install(["kdm", "xdm"])
-    pisi.api.install(["pardus-default-settings"])
+   os.unlink('/etc/X11/kdm/kdmrc')
+   pisi.api.install(["kdm", "xdm"])
+   pisi.api.install(["pardus-default-settings"])
 
 @step
 def cleanup(self):
