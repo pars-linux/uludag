@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-15 23:10+0300\n"
-"PO-Revision-Date: 2009-08-30 07:32-0400\n"
+"PO-Revision-Date: 2009-10-17 21:28-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -164,7 +164,7 @@ msgstr "Salida predeterminada"
 
 #: .tmp/displaysettings/device.py:61
 msgid "Laptop Panel"
-msgstr ""
+msgstr "Monitor de Notebook"
 
 #: .tmp/displaysettings/device.py:62
 msgid "Analog Output"
@@ -281,7 +281,7 @@ msgstr "Elija..."
 
 #: .tmp/ui_output.py:233
 msgid "Horizontal sync:"
-msgstr ""
+msgstr "Sinc. horizontal:"
 
 #: .tmp/ui_output.py:234
 msgid "kHz"
@@ -289,7 +289,7 @@ msgstr ""
 
 #: .tmp/ui_output.py:235
 msgid "Vertical refresh:"
-msgstr ""
+msgstr "Refresh vetical:"
 
 #: .tmp/ui_output.py:236
 msgid "Hz"
@@ -320,7 +320,7 @@ msgstr "Tamaño de monitor:"
 
 #: .tmp/ui_output.py:241
 msgid "15.4\" Wide Screen"
-msgstr ""
+msgstr "15.4\" Pantalla ancha"
 
 #: .tmp/ui_output.py:242
 msgid "Custom"
@@ -361,4 +361,5 @@ msgstr "Configurando..."
 #: .tmp/ui_devices.py:70
 msgid "Outputs:"
 msgstr "Salidas:"
+
 
