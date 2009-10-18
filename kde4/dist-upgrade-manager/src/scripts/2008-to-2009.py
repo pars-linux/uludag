@@ -13,7 +13,6 @@
 
 import sys
 import os
-import locale
 import pisi
 
 STATEFILE = "/var/pisi/pisiUpgradeState"
