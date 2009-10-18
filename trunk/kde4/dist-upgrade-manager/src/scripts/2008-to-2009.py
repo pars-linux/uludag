@@ -16,7 +16,10 @@ import os
 import locale
 import pisi
 
-STATE = 0
+STATEFILE = "/var/pisi/pisiUpgradeState"
+
+def set_step(step):
+   open(STATEFILE, "w").write(step)
 
 def started(operation=""):
    notify("System.Upgrader", "started", operation)
@@ -34,6 +37,7 @@ def step(func):
     def wrapper(*__args,**__kw):
         operation = "System.Upgrader.%s" % func.func_name
 
+        set_step(func.func_name)
         started(operation)
         try:
             func(*__args,**__kw)
