@@ -55,7 +55,10 @@ class Operations(Singleton):
 
     def __removeDir(self):
         # This function removes if the working path exists.
-        rmtree(self.path)
+        try:
+            rmtree(self.path)
+        except OSError:
+            pass
 
     def saveProcess(self, packages, operation):
         """
