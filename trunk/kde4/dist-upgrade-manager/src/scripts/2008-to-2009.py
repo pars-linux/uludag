@@ -61,7 +61,7 @@ COMPONENTS = ["x11.driver"]
 
 @step
 def prepare():
-    pisi.api.upgrade(["pisi"])
+    pass
 
 @step
 def setrepos():
