@@ -77,15 +77,30 @@ def download():
 
 @step
 def upgrade():
-   pisi.api.upgrade(ignore_comar=True)
-   pisi.api.configure_pending()
 
-   pisi.api.install(pisi.db.componentdb.ComponentDB().get_union_packages("x11.drivers"))
+   def install_packages():
+      pisi.api.upgrade(ignore_comar=True)
 
-   os.unlink('/etc/X11/kdm/kdmrc')
-   pisi.api.install(["kdm", "xdm"])
-   pisi.api.install(["pardus-default-settings"])
+   def configure_packages():
+      pisi.api.configure_pending()
+
+   def install_missing_x_drivers():
+      pisi.api.install(pisi.db.componentdb.ComponentDB().get_union_packages("x11.drivers"))
+
+   def fix_kdm():
+      os.unlink('/etc/X11/kdm/kdmrc')
+      pisi.api.install(["kdm", "xdm"])
+
+   def install_missing_defaults_package():
+      pisi.api.install(["pardus-default-settings"])
+
+   install_packages()
+   configure_packages()
+   install_missing_x_drivers()
+   fix_kdm()
+   install_missing_defaults_package()
 
 @step
 def cleanup(self):
-    pass
+   reboot()
+
