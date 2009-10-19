@@ -11,39 +11,45 @@
 # Please read the COPYING .
 #
 
+import comariface
+
+STEPS = ["prepare", "setRepositories", "download", "upgrade", "cleanup"]
+
 class State:
 
     def __init__(self):
-        pass
+        self.comar = comariface.ComarIface()
+        self.current = self.__get_state() or "prepare"
 
     def prepare(self):
-        pass
+        self.comar.prepare()
 
     def setRepositories(self):
-        pass
+        self.comar.setRepositories()
 
     def download(self):
-        pass
+        self.comar.download()
 
     def upgrade(self):
-        pass
+        self.comar.upgrade()
 
     def cleanup(self):
-        pass
-
-    def migrate(self):
-        self.prepare()
-        self.setrepos()
-        self.download()
-        self.install()
-        self.cleanup()
+        self.comar.cleanup()
 
     def __get_state(self):
         stateFile = os.path.join("/var/log/", "pisiUpgradeState")
         if not os.path.exists(stateFile):
             return None
-        return open(stateFile, "r").read()
+
+        step = open(stateFile, "r").read()
+        if step in STEPS:
+            return step
+
+        return None
 
     def run(self):
-        pass
+        for step in STEPS:
+            if step == self.current:
+                method = getattr(self, step)
+                method()
 
