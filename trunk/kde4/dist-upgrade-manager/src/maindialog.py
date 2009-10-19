@@ -28,7 +28,7 @@ class MainDialog(QtGui.QDialog, Ui_MainDialog):
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
         self.resetAllSteps()
         self.setFonts()
-        self.state = state.State()
+        self.state = state.State(self)
 
     def setFonts(self):
         self.normalFont = QtGui.QFont()
@@ -42,7 +42,7 @@ class MainDialog(QtGui.QDialog, Ui_MainDialog):
     def resetAllSteps(self):
         for step in range(1, 5):
             step_icon = getattr(self, "step%d_icon" % step)
-            step_icon.setPixmap(QtGui.QPixmap(None))
+            step_icon.setPixmap(QtGui.QPixmap(""))
 
     def step_selected(self, step):
         step_icon = getattr(self, "step%d_icon" % step)
