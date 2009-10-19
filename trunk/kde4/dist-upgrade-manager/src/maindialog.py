@@ -24,3 +24,17 @@ class MainDialog(QtGui.QDialog, Ui_MainDialog):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
+        self.resetAllSteps()
+
+    def resetAllSteps(self):
+        for step in range(1, 5):
+            step_icon = getattr(self, "step%d_icon" % step)
+            step_icon.setPixmap(QtGui.QPixmap(None))
+
+    def step_selected(self, step):
+        step_icon = getattr(self, "step%d_icon" % step)
+        step_icon.setPixmap(":/data/arrow.png")
+
+    def step_finished(self, step):
+        step_icon = getattr(self, "step%d_icon" % step)
+        step_icon.setPixmap(":/data/check.png")
