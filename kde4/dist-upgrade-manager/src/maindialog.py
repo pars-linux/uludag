@@ -19,6 +19,8 @@ from PyKDE4.kdecore import *
 
 from ui_maindialog import Ui_MainDialog
 
+import state
+
 class MainDialog(QtGui.QDialog, Ui_MainDialog):
     def __init__(self, parent=None):
         QtGui.QDialog.__init__(self, parent)
@@ -26,6 +28,7 @@ class MainDialog(QtGui.QDialog, Ui_MainDialog):
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
         self.resetAllSteps()
         self.setFonts()
+        self.state = state.State()
 
     def setFonts(self):
         self.normalFont = QtGui.QFont()

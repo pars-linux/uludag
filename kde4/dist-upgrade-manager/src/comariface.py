@@ -10,7 +10,7 @@
 #
 # Please read the COPYING file
 
-from PyQt4.QtCore import QSocketNotifier, QObject
+from PyQt4.QtCore import QSocketNotifier, QObject, SIGNAL
 
 import comar
 import pisi
@@ -45,14 +45,22 @@ class ComarIface(QObject):
         if reply.command == "notify":
             (notification, script, data) = (reply.notify, reply.script, reply.data)
             data = unicode(data)
+
             if notification == "System.Upgrader.error":
                 pass
+
             elif notification == "System.Upgrader.notify":
                 pass
+
             elif notification == "System.Upgrader.progress":
                 pass
+
+            elif notification == "System.Upgrader.started":
+                self.emit(SIGNAL("stepStarted(QString)", data))
+
             elif notification == "System.Upgrader.finished":
-                pass
+                self.emit(SIGNAL("stepFinished(QString)", data))
+
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
 
