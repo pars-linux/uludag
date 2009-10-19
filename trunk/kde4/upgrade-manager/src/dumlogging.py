@@ -23,7 +23,7 @@ class Logger:
         self.__setupLogFile()
 
     def __initLogger(self):
-        self.logger = logging.getLogger('dist-upgrade-manager')
+        self.logger = logging.getLogger('upgrade-manager')
         self.formatter = logging.Formatter('%(asctime)s %(levelname)s\t%(message)s')
         self.logger.setLevel(logging.DEBUG)
 
@@ -33,7 +33,7 @@ class Logger:
         self.logger.addHandler(handler)
 
     def __setupLogFile(self):
-        logfile = os.path.join(os.environ['HOME'], ".dist-upgrade-manager.log")
+        logfile = os.path.join(os.environ['HOME'], ".upgrade-manager.log")
         handler = logging.FileHandler(logfile)
         handler.setFormatter(self.formatter)
         self.logger.addHandler(handler)
