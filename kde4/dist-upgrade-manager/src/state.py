@@ -19,13 +19,13 @@ class State:
     def prepare(self):
         pass
 
-    def setrepos(self):
+    def setRepositories(self):
         pass
 
     def download(self):
         pass
 
-    def install(self):
+    def upgrade(self):
         pass
 
     def cleanup(self):
@@ -38,12 +38,12 @@ class State:
         self.install()
         self.cleanup()
 
-    def __set_state(self, state):
-        stateFile = os.path.join("/var/log/", "upgradeState")
-        open(stateFile, "w").write(state)
-
     def __get_state(self):
-        stateFile = os.path.join("/var/log/", "upgradeState")
+        stateFile = os.path.join("/var/log/", "pisiUpgradeState")
         if not os.path.exists(stateFile):
             return None
         return open(stateFile, "r").read()
+
+    def run(self):
+        pass
+
