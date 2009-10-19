@@ -18,8 +18,7 @@ import pisi
 from dumlogging import logger
 
 class ComarIface(QObject):
-    def __init__(self, parent):
-        self.parent = parent
+    def __init__(self):
         self.com = comar.Link()
 
         # Notification
@@ -63,7 +62,6 @@ class ComarIface(QObject):
         sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         timeout = 5
         while timeout > 0:
-            self.parent.processEvents()
             try:
                 if pisi.api.ctx.comar_sockname:
                     sock.connect(pisi.api.ctx.comar_sockname)
