@@ -46,13 +46,13 @@ class ComarIface(QObject):
         if reply.command == "notify":
             (notification, script, data) = (reply.notify, reply.script, reply.data)
             data = unicode(data)
-            if notification == "System.Manager.error":
+            if notification == "System.Upgrader.error":
                 pass
-            elif notification == "System.Manager.notify":
+            elif notification == "System.Upgrader.notify":
                 pass
-            elif notification == "System.Manager.progress":
+            elif notification == "System.Upgrader.progress":
                 pass
-            elif notification == "System.Manager.finished":
+            elif notification == "System.Upgrader.finished":
                 pass
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
