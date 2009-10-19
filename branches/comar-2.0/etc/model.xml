@@ -604,6 +604,23 @@
         <signal name="takingBack"/>
     </interface>
 
+    <!-- System.Upgrader -->
+    <interface name="System.Upgrader">
+        <method name="prepare"/>
+        <method name="setRepositories"/>
+        <method name="download"/>
+        <method name="upgrade"/>
+        <method name="cleanup"/>
+
+        <signal name="started"/>
+        <signal name="finished"/>
+        <signal name="cancelled"/>
+        <signal name="progress"/>
+        <signal name="error"/>
+        <signal name="warning"/>
+        <signal name="status"/>
+    </interface>
+
     <!-- Disk.Manager -->
     <interface name="Disk.Manager">
         <method name="getDevices" access_label="get">
