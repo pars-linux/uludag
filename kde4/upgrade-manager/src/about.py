@@ -15,7 +15,7 @@
 from PyKDE4.kdecore import *
 
 # Application Data
-appName     = "dist-upgrade-manager"
+appName     = "upgrade-manager"
 catalog     = appName
 programName = ki18n("Distribution Upgrade Manager")
 version     = "0.1"
