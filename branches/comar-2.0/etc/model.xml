@@ -606,11 +606,11 @@
 
     <!-- System.Upgrader -->
     <interface name="System.Upgrader">
-        <method name="prepare" access_label="set"/>
-        <method name="setRepositories" access_label="set"/>
-        <method name="download" access_label="set"/>
-        <method name="upgrade" access_label="set"/>
-        <method name="cleanup" access_label="set"/>
+        <method name="prepare" access_label="run"/>
+        <method name="setRepositories" access_label="run"/>
+        <method name="download" access_label="run"/>
+        <method name="upgrade" access_label="run"/>
+        <method name="cleanup" access_label="run"/>
 
         <signal name="started"/>
         <signal name="finished"/>
