@@ -8,6 +8,7 @@ import glob
 import os
 import shutil
 import sys
+import tempfile
 
 from common import getDiskInfo
 from common import getIsoSize
@@ -22,8 +23,6 @@ from constants import CORE_DEVELOPER
 from constants import CORE_EMAIL
 from constants import LICENSE_NAME
 from constants import NAME
-from constants import MOUNT_ISO
-from constants import MOUNT_USB
 from constants import SHARE
 from constants import URL
 from constants import VERSION
@@ -44,6 +43,8 @@ increment_value = 1024**2
 
 class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
     def __init__(self, parent = None):
+        self.iso_dir = tempfile.mkdtemp(suffix="_isoPuding")
+
         super(Create, self).__init__(parent)
         self.setupUi(self)
 
@@ -90,11 +91,13 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
         dst = str(self.line_disk.displayText())
 
         if dst.startswith("/dev/"):
+            device = dst
+            dst = tempfile.mkdtemp(suffix="_usbPuding")
+
             from puding.pardusTools import Authorization
 
             auth = Authorization()
-            auth.mount(dst, MOUNT_USB)
-            dst = MOUNT_USB
+            auth.mount(device, dst)
 
         if not self.__checkDestination(dst):
             self.warningDialog(self.tr("Directory is Invalid"), self.tr("Please check the USB disk path."))
@@ -112,8 +115,8 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
         (capacity, available, used) = getDiskInfo(dst)
 
         # Mount iso
-        if not os.path.ismount(MOUNT_ISO):
-            cmd = "fuseiso %s %s" % (src, MOUNT_ISO)
+        if not os.path.ismount(self.iso_dir):
+            cmd = "fuseiso %s %s" % (src, self.iso_dir)
             if runCommand(cmd):
                 # FIX ME: Should use warning dialog.
                 return False
@@ -121,7 +124,7 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
         # FIX ME: Now Puding supports only Pardus.
         from pardusTools import Main
 
-        self.tools = Main(MOUNT_ISO, dst)
+        self.tools = Main(self.iso_dir, dst)
         total_size = self.tools.getTotalSize()
 
         if available < total_size:
@@ -134,14 +137,10 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
                 createUSBDirs(dst)
                 self.__createImage(src, dst)
 
-                if dst == MOUNT_USB:
+                if dst.endswith("Puding"):
                     auth.umount(dst)
 
-        # Unmount iso
-        cmd = "fusermount -u %s" % MOUNT_ISO
-        if runCommand(cmd):
-            # FIX ME: Should use warning dialog.
-            return False
+        runCommand("fusermount -u %s" % self.iso_dir)
 
     def warningDialog(self, title, message,):
         QtGui.QMessageBox.warning(self, title, message, QtGui.QMessageBox.Ok)
@@ -201,7 +200,7 @@ you have downloaded the source correctly."""
         file_list = self.tools.file_list
         max_value = self.tools.getNumberOfFiles()
         create_image = ProgressBar(title = self.tr("Creating Image"), message = self.tr("Creating image..."), max_value = max_value)
-        pi = ProgressIncrementCopy(create_image, MOUNT_ISO, dst)
+        pi = ProgressIncrementCopy(create_image, self.iso_dir, dst)
 
         def closeDialog():
             pi.quit()

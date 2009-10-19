@@ -1,3 +1,9 @@
+-- 0.2
+	- Remove argument, --qt. If puding has not taken an argument, it starts
+	Qt gui as default.
+	- Use tempfile module instead of static mount directories.
+	- Fix some bugs.
+
 -- 0.1 (2009-10-14)
 	- Update translations.
 	- Add German translations.

@@ -11,10 +11,8 @@ import glob
 import os
 import shutil
 import subprocess
+import tempfile
 
-from constants import HOME
-from constants import MOUNT_ISO
-from constants import MOUNT_USB
 from constants import NAME
 from constants import LOCALE
 from constants import SHARE
@@ -41,19 +39,19 @@ def getFileSize(file):
 
     return file_size
 
+def getMounted(disk_path):
+    parts = {}
+    for line in open("/proc/mounts"):
+        if line.startswith("/dev/"):
+            device, path, other = line.split(" ", 2)
+            parts[path] = device
+
+    return parts[disk_path.replace(" ", "\\040")]
+
 def runCommand(cmd):
     process = subprocess.call(cmd, shell = True)
 
     return process
-
-def run(cmd):
-    process = subprocess.Popen(cmd, stdout = subprocess.PIPE,
-                               stderr = subprocess.PIPE,
-                               stdin = subprocess.PIPE)
-
-    result = process.communicate()
-
-    return process, result
 
 def createConfigFile(dst):
     conf_dir = "%s/boot/syslinux" % dst
@@ -68,15 +66,6 @@ def createConfigFile(dst):
     syslinux_conf_file = "%s/syslinux.cfg" % conf_dir
     if not os.path.exists(syslinux_conf_file):
         shutil.copyfile("%s/syslinux.cfg.pardus" % SHARE, syslinux_conf_file)
-
-def getMounted(disk_path):
-    parts = {}
-    for line in open("/proc/mounts"):
-        if line.startswith("/dev/"):
-            device, path, other = line.split(" ", 2)
-            parts[path] = device
-
-    return parts[disk_path.replace(" ", "\\040")]
 
 def createSyslinux(dst):
     createConfigFile(dst)
@@ -94,11 +83,6 @@ def createSyslinux(dst):
     cmd = "LC_ALL=C syslinux %s" % getMounted(dst)
     return runCommand(cmd)
 
-def createDirs():
-    if not os.path.exists(HOME):
-        os.makedirs(MOUNT_ISO)
-        os.mkdir(MOUNT_USB)
-
 def createUSBDirs(dst):
     dirs = ("repo", "boot/syslinux")
 
@@ -106,6 +90,17 @@ def createUSBDirs(dst):
         path = "%s/%s" % (dst, d)
         if not os.path.exists(path):
             os.makedirs(path)
+
+def unmountDirs():
+    # BAD CODE:
+    for line in open("/proc/mounts"):
+        path = line.split(" ", 2)[1]
+        if path.endswith("Puding"):
+            runCommand("umount %s" % path)
+
+    tempdir = tempfile.gettempdir()
+    for puding_dir in glob.glob("%s/*Puding" % tempdir):
+        os.rmdir(puding_dir)
 
 class PartitionUtils:
     def __init__(self):
