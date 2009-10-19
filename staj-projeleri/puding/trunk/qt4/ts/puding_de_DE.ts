@@ -3,97 +3,97 @@
 <context>
     <name>Create</name>
     <message>
-        <location filename="uiQt.py" line="54"/>
+        <location filename="uiQt.py" line="55"/>
         <source>Select CD Image</source>
         <translation>Wähle CD Image</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="55"/>
+        <location filename="uiQt.py" line="56"/>
         <source>Images</source>
         <translation>Images</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="66"/>
+        <location filename="uiQt.py" line="67"/>
         <source>Warning</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="66"/>
+        <location filename="uiQt.py" line="67"/>
         <source>You should select a valid directory.</source>
         <translation>Wählen sie ein gültiges Verzeichnis.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="74"/>
+        <location filename="uiQt.py" line="75"/>
         <source>Puding is an USB image creator for Pardus Linux.</source>
         <translation>Puding ist ein Tool um USB Images für Pardus zu erstellen.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="74"/>
+        <location filename="uiQt.py" line="75"/>
         <source>Copyright (c) %s TUBITAK / UEKAE</source>
         <translation>Copyright (c) %s TUBITAK / UEKAE</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="76"/>
+        <location filename="uiQt.py" line="77"/>
         <source>About Puding</source>
         <translation>Über Puding</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="99"/>
+        <location filename="uiQt.py" line="102"/>
         <source>Directory is Invalid</source>
         <translation>Verzeichnis ist ungültig</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="99"/>
+        <location filename="uiQt.py" line="102"/>
         <source>Please check the USB disk path.</source>
         <translation>Bitte überprüfen sie den Pfad des USB Mediums.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="159"/>
+        <location filename="uiQt.py" line="158"/>
         <source>CD Image is Invalid</source>
         <translation>CD Image ist ungültig</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="154"/>
+        <location filename="uiQt.py" line="153"/>
         <source>Please set an CD image path.</source>
         <translation>Pfad zum CD Image eingeben.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="159"/>
+        <location filename="uiQt.py" line="158"/>
         <source>Please check the CD image path.</source>
         <translation>Bitte überprüfen sie den Pfad zum CD Image.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="166"/>
+        <location filename="uiQt.py" line="165"/>
         <source>Verify Checksum</source>
         <translation type="unfinished">Vergleiche Prüfsumme</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="167"/>
+        <location filename="uiQt.py" line="166"/>
         <source>The checksum of the source is checking now...</source>
         <translation>Die Prüfsumme der Quelldatei wird überprüft...</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="187"/>
+        <location filename="uiQt.py" line="186"/>
         <source>Checksum invalid</source>
         <translation>Prüfsumme ungültig</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="202"/>
+        <location filename="uiQt.py" line="201"/>
         <source>Creating Image</source>
         <translation>Erstelle Image</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="202"/>
+        <location filename="uiQt.py" line="201"/>
         <source>Creating image...</source>
         <translation>Erstelle Image...</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="216"/>
+        <location filename="uiQt.py" line="215"/>
         <source>USB Image is Ready</source>
         <translation>USB Image ist fertig</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="216"/>
+        <location filename="uiQt.py" line="215"/>
         <source>Your USB image is ready. Now you can install or run Pardus from USB storage.</source>
         <translation>Ihr USB Image ist fertiggestellt. Sie können nun mit dem USB Meduim Pardus starten oder installieren.</translation>
     </message>
@@ -242,7 +242,7 @@
 <context>
     <name>ProgressIncrementCopy</name>
     <message>
-        <location filename="uiQt.py" line="348"/>
+        <location filename="uiQt.py" line="347"/>
         <source>Copying %s (%0.2fMB)</source>
         <translation>Kopiere %s (%0.2fMB)</translation>
     </message>
@@ -250,7 +250,7 @@
 <context>
     <name>SelectDisk</name>
     <message>
-        <location filename="uiQt.py" line="238"/>
+        <location filename="uiQt.py" line="237"/>
         <source>Choose Mount Disk Path</source>
         <translation>Wähle Einhängepfad</translation>
     </message>

@@ -26,13 +26,10 @@ from optparse import OptionParser
 from optparse import OptionGroup
 
 from puding.common import _
-from puding.common import createDirs
 from puding.common import runCommand
+from puding.common import unmountDirs
 
-from puding.constants import HOME
 from puding.constants import LICENSE
-from puding.constants import MOUNT_ISO
-from puding.constants import MOUNT_USB
 from puding.constants import NAME
 from puding.constants import VERSION
 
@@ -40,11 +37,6 @@ class Options:
     def parseArgs(self, parser):
         parser.add_option("-l", "--license", dest = "license", action = "store_true", help = _("show program's license info and exit"))
         parser.add_option("-c", "--create", dest = "create", action = "store_true", help = _("create Pardus USB image from console"))
-
-        group = OptionGroup(parser, _("Graphical Interface Options"))
-        group.add_option("--qt", dest = "with_qt", action = "store_true", help = _("run Puding with Qt4 graphical interface"))
-
-        parser.add_option_group(group)
 
         return parser.parse_args()
 
@@ -75,30 +67,21 @@ class Options:
             except IndexError:
                 print(_("Invalid usage. Example:"))
                 print("\t%s --create /mnt/archive/Pardus-2009.iso\n" % NAME)
-                print("(If you know directory path that is your USB device mount point)\n\
-\t%s --create /mnt/archive/Pardus-2009.iso /media/disk" % NAME)
+                print(_("(If you know directory path that is your USB device mount point)"))
+                print("\t%s --create /mnt/archive/Pardus-2009.iso /media/disk" % NAME)
 
         elif opts.license:
             print(LICENSE)
 
-        elif opts.with_qt:
+        else:
             from puding.uiQt import main
 
             main()
 
-        else:
-            parser.print_help()
-
 if __name__ == "__main__":
-    createDirs()
-
     try:
         Options().main()
 
     except KeyboardInterrupt:
-        if os.path.ismount(MOUNT_ISO):
-            runCommand("fusermount -u %s" % MOUNT_ISO)
-        if os.path.ismount(MOUNT_USB):
-            runCommand("umount %s" % MOUNT_USB)
-
-        print(_("\nQuit."))
+        print(_("\nQuitting, please wait."))
+        unmountDirs()

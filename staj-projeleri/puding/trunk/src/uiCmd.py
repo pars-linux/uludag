@@ -10,6 +10,7 @@ import glob
 import sys
 import shutil
 import subprocess
+import tempfile
 
 from common import _
 from common import runCommand
@@ -19,11 +20,10 @@ from common import createUSBDirs
 from common import getDiskInfo
 from common import getIsoSize
 from common import getMounted
+from common import unmountDirs
 from common import PartitionUtils
 
 from constants import HOME
-from constants import MOUNT_ISO
-from constants import MOUNT_USB
 from constants import NAME
 from constants import SHARE
 
@@ -110,8 +110,9 @@ class Create:
     def __init__(self, src, dst):
         self.utils = Utils()
         self.progressbar = ProgressBar(src)
+        self.iso_dir = tempfile.mkdtemp(suffix="_isoPuding")
 
-        if dst == None:
+        if not dst:
             self.partutils = PartitionUtils()
 
             if not self.partutils.detectRemovableDrives():
@@ -123,13 +124,13 @@ class Create:
 
                 # FIX ME: You should not use it.
                 if not dst:
-                    cmd = "mount -t vfat %s %s" % (device, MOUNT_USB)
+                    dst = tempfile.mkdtemp(suffix="_usbPuding")
+                    cmd = "mount -t vfat %s %s" % (device, dst)
                     self.utils.cprint(_("Mounting USB device..."), "green")
                     runCommand(cmd)
-                    dst = MOUNT_USB
 
         self.utils.cprint(_("Mounting image..."), "green")
-        cmd = "fuseiso %s %s" % (src, MOUNT_ISO)
+        cmd = "fuseiso %s %s" % (src, self.iso_dir)
         if runCommand(cmd):
             self.utils.cprint(_("Could not mounted image."), "red")
 
@@ -138,12 +139,13 @@ class Create:
         if self.__checkSource(src) and self.__checkDestination(dst):
             from pardusTools import Main
 
-            tools = Main(MOUNT_ISO, dst)
+            tools = Main(self.iso_dir, dst)
             if self.__checkDiskInfo(dst, tools.getTotalSize()):
                 self.__createImage(src, dst)
 
         else:
-            self.utils.cprint(_("The path you have typed is invalid. If you think the path is valid, make sure you have mounted USB stick to the path you gave. To check the path, you can use: mount | grep %s" % dst), "red")
+            self.utils.cprint(_("The path you have typed as second argument is invalid. Please check the USB directory."), "red")
+            unmountDirs()
 
             sys.exit(1)
 
@@ -173,7 +175,7 @@ class Create:
                 self.utils.cprint("    %s:" % _("Mount Point"), "green", True)
                 mount_dir = self.drives[drive]["mount"]
                 if not mount_dir:
-                    print("%s (%s)" % (MOUNT_ISO,  _("not mounted")))
+                    print("%s (%s)" % (self.iso_dir,  _("not mounted")))
                 else:
                     print(mount_dir)
 
@@ -190,14 +192,20 @@ class Create:
                 print("%s\n" % self.drives[drive]["fstype"])
 
             try:
-                part_number = int(raw_input("%s " % _("USB devices or partitions have found more than one. Please choose one:")))
-
-                device = self.drives.keys()[part_number - 1]
+                part_number = int(raw_input(_("USB devices or partitions have found more than one. Please choose one:") + " "))
 
             except ValueError:
-               self.cprint(_("You must enter a number between 0 - %d." % drive_no + 1), "red")
+                self.utils.cprint(_("Please enter a number between 0 - %d." % (drive_no + 1)), "red")
 
-               return False
+                sys.exit(1)
+
+            try:
+                device = self.drives.keys()[part_number - 1]
+
+            except IndexError:
+                self.utils.cprint(_("You must enter a number between 0 - %d." % (drive_no + 1)), "red")
+
+                sys.exit(1)
 
         destination = self.drives[device]["mount"]
 
@@ -214,8 +222,8 @@ class Create:
         if available < total_size:
             self.utils.cprint(_("There is not enough space left on your USB stick for the image."), "red")
 
-            self.utils.cprint(_("Unmounting image..."), "red")
-            runCommand("fusermount -u %s" % MOUNT_ISO)
+            self.utils.cprint(_("Unmounting directories..."), "red")
+            unmountDirs()
 
             return False
 
@@ -238,6 +246,7 @@ class Create:
             return True
 
         self.utils.cprint(_("You did not type CONFIRM. Exiting.."), "red")
+        unmountDirs()
 
         return False
 
@@ -279,24 +288,10 @@ class Create:
 
             return False
 
-        self.__copyImage(MOUNT_ISO, dst)
+        self.__copyImage(self.iso_dir, dst)
 
-        self.utils.cprint(_("Unmounting image..."), "green")
-        cmd = "fusermount -u %s" % MOUNT_ISO
-
-        if runCommand(cmd):
-            self.utils.cprint(_("Could not unmounted image."), "red")
-
-            return False
-
-        if dst == MOUNT_USB:
-            self.utils.cprint(_("Unmounting USB disk..."), "green")
-            cmd = "umount %s" % MOUNT_USB
-
-            if runCommand(cmd):
-                self.utils.cprint(_("Could not unmounted USB disk."), "red")
-
-                return False
+        self.utils.cprint(_("Unmounting image and USB disk..."), "green")
+        unmountDirs()
 
         self.utils.cprint(_("USB disk is ready. Now you can install or run Pardus from your USB disk."), "brightgreen")
 
