@@ -32,6 +32,8 @@ def handleException(exception, value, tb):
 
 if __name__ == '__main__':
 
+    sys.excepthook = handleException
+
     KCmdLineArgs.init(sys.argv, aboutData)
 
     app = KUniqueApplication(True, True, True)
@@ -40,8 +42,9 @@ if __name__ == '__main__':
     dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
 
     manager = MainDialog()
+    app.setMainWidget(manager)
+    manager.setCaption(i18n('Upgrade Manager'))
+    manager.setIcon(KGlobal.iconLoader().loadIcon("package-manager", KIcon.Small))
     manager.show()
-
-    sys.excepthook = handleException
 
     sys.exit(app.exec_loop())
