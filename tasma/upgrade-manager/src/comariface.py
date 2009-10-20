@@ -95,19 +95,19 @@ class ComarIface:
         ch.call(*args)
 
     def prepare(self):
-        self.callMethod("prepare", "tr.org.pardus.comar.system.upgrader.prepare", None, handleErrors, True)
+        self.callMethod("prepare", "tr.org.pardus.comar.system.upgrader.prepare", None, True, True)
 
     def setRepositories(self):
-        self.callMethod("setRepositories", "tr.org.pardus.comar.system.upgrader.setRepositories", None, handleErrors, True)
+        self.callMethod("setRepositories", "tr.org.pardus.comar.system.upgrader.setRepositories", None, True, True)
 
     def download(self):
-        self.callMethod("download", "tr.org.pardus.comar.system.upgrader.download", None, handleErrors, True)
+        self.callMethod("download", "tr.org.pardus.comar.system.upgrader.download", None, True, True)
 
     def upgrade(self):
-        self.callMethod("upgrade", "tr.org.pardus.comar.system.upgrader.upgrade", None, handleErrors, True)
+        self.callMethod("upgrade", "tr.org.pardus.comar.system.upgrader.upgrade", None, True, True)
 
     def cleanup(self):
-        self.callMethod("cleanup", "tr.org.pardus.comar.system.upgrader.cleanup", None, handleErrors, True)
+        self.callMethod("cleanup", "tr.org.pardus.comar.system.upgrader.cleanup", None, True, True)
 
     def cancel(self):
         obj = self.sysBus.get_object("tr.org.pardus.comar", "/", introspect=False)
