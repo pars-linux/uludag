@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1"> 
+<!DOCTYPE TS><TS version="1.1" language="fr_FR">
 <context>
     <name>Create</name>
     <message>
@@ -211,7 +211,7 @@
     <message>
         <location filename="qtMain.py" line="114"/>
         <source>&amp;Quit</source>
-        <translation">&amp;Quitter</translation>
+        <translation>&amp;Quitter</translation>
     </message>
     <message>
         <location filename="qtMain.py" line="112"/>
