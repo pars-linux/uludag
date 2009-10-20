@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-10-19 21:22+0300\n"
-"PO-Revision-Date: 12/10/09 12:55\n"
+"PO-Revision-Date: 20/10/09 11:33\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,13 +18,12 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../datas/puding.desktop.in.h:1
-#, fuzzy
 msgid "Puding USB image creator"
-msgstr "Puding maakt een USB-image aan voor Pardus Linux."
+msgstr "Puding USB-image maker"
 
 #: ../datas/puding.desktop.in.h:2
 msgid "USB image creator"
-msgstr ""
+msgstr "USB-image maker"
 
 #: ../src/puding.py:38
 msgid "show program's license info and exit"
@@ -40,8 +39,7 @@ msgstr "Puding maakt een USB-image aan voor Pardus Linux."
 
 #: ../src/puding.py:50
 msgid "You need superuser permissions to run this application."
-msgstr ""
-"Voor het uitvoeren van deze toepassing zijn systeemrechten noodzakelijk."
+msgstr "Voor het uitvoeren van deze toepassing zijn systeemrechten noodzakelijk."
 
 #: ../src/puding.py:68
 msgid "Invalid usage. Example:"
@@ -49,13 +47,15 @@ msgstr "Ongeldig gebruik. Bijvoorbeeld:"
 
 #: ../src/puding.py:70
 msgid "(If you know directory path that is your USB device mount point)"
-msgstr ""
+msgstr "(indien het pad naar de map bekend is, dat is het aankoppelpunt van het USB-apparaat)"
 
 #: ../src/puding.py:86
 msgid ""
 "\n"
 "Quitting, please wait."
 msgstr ""
+"\n"
+"Bezig met afsluiten, even geduld a.u.b."
 
 #: ../src/uiCmd.py:67
 msgid "Finished"
@@ -66,9 +66,8 @@ msgid "USB device not found."
 msgstr "USB-apparaat niet gevonden."
 
 #: ../src/uiCmd.py:129
-#, fuzzy
 msgid "Mounting USB device..."
-msgstr "USB-schijf wordt afgekoppeld..."
+msgstr "USB-apparaat wordt aangekoppeld..."
 
 #: ../src/uiCmd.py:132
 msgid "Mounting image..."
@@ -82,7 +81,7 @@ msgstr "Kan image niet aankoppelen."
 msgid ""
 "The path you have typed as second argument is invalid. Please check the USB "
 "directory."
-msgstr ""
+msgstr "Het pad ingevoerd als tweede argument is ongeldig. Controleer de USB-map."
 
 #: ../src/uiCmd.py:162
 msgid "Devices:"
@@ -90,45 +89,40 @@ msgstr "Apparaten:"
 
 #: ../src/uiCmd.py:169
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
 #: ../src/uiCmd.py:172
-#, fuzzy
 msgid "Parent"
-msgstr "    Bovenliggende map\t\t:"
+msgstr "Bovenliggend"
 
 #: ../src/uiCmd.py:175
-#, fuzzy
 msgid "Mount Point"
-msgstr "    Aankoppelpunt\t\t:"
+msgstr "Aankoppelpunt"
 
 #: ../src/uiCmd.py:178
 msgid "not mounted"
 msgstr "niet aangekoppeld"
 
 #: ../src/uiCmd.py:182
-#, fuzzy
 msgid "Unmount"
-msgstr "niet aangekoppeld"
+msgstr "Afkoppelen"
 
 #: ../src/uiCmd.py:188
-#, fuzzy
 msgid "File System Version"
-msgstr "    Bestandsysteemversie\t:"
+msgstr "Versie bestandsysteem"
 
 #: ../src/uiCmd.py:191
-#, fuzzy
 msgid "File System Type"
-msgstr "    Bestandsysteemtype\t:"
+msgstr "Type bestandsysteem"
 
 #: ../src/uiCmd.py:195
 msgid "USB devices or partitions have found more than one. Please choose one:"
 msgstr "Meer dan een USB-apparaat of partitie gevonden. Selecteer er een:"
 
 #: ../src/uiCmd.py:198
-#, fuzzy, python-format
+#, python-format
 msgid "Please enter a number between 0 - %d."
-msgstr "Geef een nummer op tussen 0 - %d."
+msgstr "Voer een nummer in tussen 0 - %d."
 
 #: ../src/uiCmd.py:206
 #, python-format
@@ -137,40 +131,36 @@ msgstr "Geef een nummer op tussen 0 - %d."
 
 #: ../src/uiCmd.py:223
 msgid "There is not enough space left on your USB stick for the image."
-msgstr ""
+msgstr "Er is voor het image op de USB-stick niet voldoende vrije ruimte over."
 
 #: ../src/uiCmd.py:225
-#, fuzzy
 msgid "Unmounting directories..."
-msgstr "Image wordt afgekoppeld..."
+msgstr "Mappen worden afgekoppeld..."
 
 #: ../src/uiCmd.py:230
 msgid "USB disk informations:"
 msgstr "USB-schijfinformatie:"
 
 #: ../src/uiCmd.py:231
-#, fuzzy
 msgid "Capacity"
-msgstr "\tCapaciteit\t"
+msgstr "Capaciteit"
 
 #: ../src/uiCmd.py:234
-#, fuzzy
 msgid "Available"
-msgstr "\tBeschikbaar\t"
+msgstr "Beschikbaar"
 
 #: ../src/uiCmd.py:237
-#, fuzzy
 msgid "Used"
-msgstr "\tGebruikt\t\t"
+msgstr "Gebruikt"
 
 #: ../src/uiCmd.py:240
-#, fuzzy
 msgid ""
 "\n"
 "Please double check your path information. If you don't type the path to the "
 "USB stick correctly, you may damage your computer. Would you like to "
 "continue?"
 msgstr ""
+"\n "
 "Wees er zeker van dat de padinformatie juist is. Wanneer het pad naar de USB-"
 "stick niet juist is, kan het de computer beschadigen. Doorgaan?"
 
@@ -203,25 +193,20 @@ msgid "Calculating checksum..."
 msgstr "Controlesom aan het bereken..."
 
 #: ../src/uiCmd.py:264
-#, fuzzy
 msgid "Source Informations:"
-msgstr "USB-schijfinformatie:"
+msgstr "Broninformatie:"
 
 #: ../src/uiCmd.py:265
-#, fuzzy
 msgid "Image Path"
-msgstr ""
-"\n"
-"   Pad naar image: %s"
+msgstr "Pad naar image"
 
 #: ../src/uiCmd.py:267
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: ../src/uiCmd.py:271
-#, fuzzy
 msgid "Download URL"
-msgstr "URL downloaden: %s\n"
+msgstr "URL downloaden"
 
 #: ../src/uiCmd.py:278
 msgid ""
@@ -240,13 +225,11 @@ msgid "Could not create boot manager."
 msgstr "Kan opstartbeheerder niet aanmaken."
 
 #: ../src/uiCmd.py:293
-#, fuzzy
 msgid "Unmounting image and USB disk..."
-msgstr "USB-schijf wordt afgekoppeld..."
+msgstr "Image en USB-schijf worden afgekoppeld..."
 
 #: ../src/uiCmd.py:296
-msgid ""
-"USB disk is ready. Now you can install or run Pardus from your USB disk."
+msgid "USB disk is ready. Now you can install or run Pardus from your USB disk."
 msgstr ""
 "USB-schijf is gereed. U kunt nu Pardus vanaf de USB-schijf installeren of "
 "opstarten."
@@ -255,45 +238,3 @@ msgstr ""
 msgid "Copying"
 msgstr "Bezig met kopiëren"
 
-#~ msgid "Graphical Interface Options"
-#~ msgstr "Grafische interface-opties"
-
-#~ msgid "run Puding with Qt4 graphical interface"
-#~ msgstr "Puding met Qt4 grafische interface uitvoeren"
-
-#~ msgid ""
-#~ "\n"
-#~ "Quit."
-#~ msgstr ""
-#~ "\n"
-#~ "Afsluiten."
-
-#~ msgid ""
-#~ "The path you have typed is invalid. If you think the path is valid, make "
-#~ "sure you have mounted USB stick to the path you gave. To check the path, "
-#~ "you can use: mount | grep %s"
-#~ msgstr ""
-#~ "Het opgegeven pad is ongeldig. Indien U denkt dat het goed is, wees er "
-#~ "zeker van dat het USB-stick aangekoppeld is en controleer het pad door "
-#~ "middelvan: mount | grep %s"
-
-#~ msgid "Could not unmounted image."
-#~ msgstr "Kan image niet afkoppelen."
-
-#~ msgid "Could not unmounted USB disk."
-#~ msgstr "Kan USB-schijf niet afkoppelen."
-
-#~ msgid "         Name: %s"
-#~ msgstr "         Naam: %s"
-
-#~ msgid "       Md5sum: %s"
-#~ msgstr "       Md5sum: %s"
-
-#~ msgid "    Label\t\t:"
-#~ msgstr "    Label\t\t:"
-
-#~ msgid "    Unmount\t\t:"
-#~ msgstr "    Afkoppelen\t\t:"
-
-#~ msgid "    UUID\t\t:"
-#~ msgstr "    UUID\t\t:"
