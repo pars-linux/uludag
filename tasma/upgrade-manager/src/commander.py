@@ -13,7 +13,7 @@ import string
 
 from kdeui import KMessageBox
 from kdecore import i18n
-from qt import QObject, QTimer
+from qt import QObject, QTimer, PYSIGNAL
 import comariface
 
 class Commander(QObject):
@@ -36,7 +36,10 @@ class Commander(QObject):
 
         if signal == "finished":
             command = data[0]
-            print "finished"
+            self.emit(PYSIGNAL("stepFinished"), command)
+        elif signal == "started":
+            command = data[0]
+            self.emit(PYSIGNAL("stepStarted"), command)
         elif signal == "progress":
             print "progress"
         elif signal == "error":
