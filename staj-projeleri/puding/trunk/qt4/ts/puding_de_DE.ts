@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="de_DE">
+<!DOCTYPE TS>
+<TS version="2.0" language="de_DE">
 <context>
     <name>Create</name>
     <message>
@@ -65,7 +66,7 @@
     <message>
         <location filename="uiQt.py" line="165"/>
         <source>Verify Checksum</source>
-        <translation type="unfinished">Vergleiche Prüfsumme</translation>
+        <translation>Vergleiche Prüfsumme</translation>
     </message>
     <message>
         <location filename="uiQt.py" line="166"/>
@@ -163,32 +164,32 @@
     <message>
         <location filename="qtConfirmDialog.py" line="106"/>
         <source>&lt;b&gt;Capacity:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Größe:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="qtConfirmDialog.py" line="107"/>
         <source>&lt;b&gt;Available:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Verfügbar:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="qtConfirmDialog.py" line="109"/>
         <source>&lt;i&gt;&lt;b&gt;USB Disk Informations&lt;/b&gt;&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;&lt;b&gt;Informationen des USB Mediums &lt;/b&gt;&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="qtConfirmDialog.py" line="111"/>
         <source>&lt;i&gt;&lt;b&gt;Source Informations&lt;/b&gt;&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;&lt;b&gt;Informationen der Quelldatei&lt;/b&gt;&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="qtConfirmDialog.py" line="112"/>
         <source>&lt;b&gt;Used:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Belegt:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="qtConfirmDialog.py" line="113"/>
         <source>&lt;b&gt;Image Size:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Imagegröße:&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
