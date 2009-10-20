@@ -7,9 +7,9 @@ msgstr ""
 "Project-Id-Version: puding TRUNK\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-10-19 21:22+0300\n"
-"PO-Revision-Date: 2009-10-14 14:32+0200\n"
-"Last-Translator: Gökmen Görgen <gkmngrgn@gmail.com>\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"PO-Revision-Date: 2009-10-20 06:18+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,13 +46,15 @@ msgstr "Geçersiz kullanım. Örnek:"
 
 #: ../src/puding.py:70
 msgid "(If you know directory path that is your USB device mount point)"
-msgstr ""
+msgstr "(USB aygıtınızın bağlanma noktasını biliyorsanız)"
 
 #: ../src/puding.py:86
 msgid ""
 "\n"
 "Quitting, please wait."
 msgstr ""
+"\n"
+"Çıkıyor, lütfen bekleyin."
 
 #: ../src/uiCmd.py:67
 msgid "Finished"
@@ -79,6 +81,8 @@ msgid ""
 "The path you have typed as second argument is invalid. Please check the USB "
 "directory."
 msgstr ""
+"İkinci parametre olarak yazdığınız yol geçersiz. Lütfen USB dizinini kontrol "
+"edin."
 
 #: ../src/uiCmd.py:162
 msgid "Devices:"
@@ -116,10 +120,9 @@ msgstr "Dosya Sistemi Türü"
 msgid "USB devices or partitions have found more than one. Please choose one:"
 msgstr "Birden fazla USB aygıt ya da bölüm bulundu. Lütfen birini seçin:"
 
-#: ../src/uiCmd.py:198
-#, fuzzy, python-format
+#: ../src/uiCmd.py:198, python-format
 msgid "Please enter a number between 0 - %d."
-msgstr "0 ile %d arasında bir sayı girmelisiniz."
+msgstr "Lütfen 0 ile %d arasında bir sayı girin."
 
 #: ../src/uiCmd.py:206
 #, python-format
@@ -131,9 +134,8 @@ msgid "There is not enough space left on your USB stick for the image."
 msgstr "USB belleğinizde imaj için yeterli alan yok."
 
 #: ../src/uiCmd.py:225
-#, fuzzy
 msgid "Unmounting directories..."
-msgstr "İmaj ayrılıyor..."
+msgstr "Dizinler ayrılıyor..."
 
 #: ../src/uiCmd.py:230
 msgid "USB disk informations:"
@@ -189,7 +191,7 @@ msgstr "Yol geçersiz, lütfen bir imaj yolu belirtin."
 
 #: ../src/uiCmd.py:259
 msgid "Calculating checksum..."
-msgstr "Kontrol toplam hesaplanıyor..."
+msgstr "Kontrol toplamı hesaplanıyor..."
 
 #: ../src/uiCmd.py:264
 msgid "Source Informations:"
@@ -213,7 +215,7 @@ msgid ""
 "source or be sure that you have downloaded the source correctly."
 msgstr ""
 "Kaynağın kontrol toplamı doğrulanamadı. Lütfen geçerli bir kaynak belirtin, "
-"ya da kontrol toplamını kendiniz kontrol edin."
+"ya da doğru kaynağı indirdiğinizden emin olun."
 
 #: ../src/uiCmd.py:285
 msgid "Creating boot manager..."
@@ -224,15 +226,15 @@ msgid "Could not create boot manager."
 msgstr "Açılış yöneticisi oluşturulamadı."
 
 #: ../src/uiCmd.py:293
-#, fuzzy
 msgid "Unmounting image and USB disk..."
-msgstr "USB bellek ayrılıyor..."
+msgstr "İmaj ve USB bellek ayrılıyor..."
 
 #: ../src/uiCmd.py:296
 msgid ""
 "USB disk is ready. Now you can install or run Pardus from your USB disk."
 msgstr ""
-"USB bellek hazr. Artk Pardus'u USB bellekten kurabilir ya da altrabilirsiniz."
+"USB bellek hazır. Artk Pardus'u USB bellekten kurabilir ya da "
+"çalıştrabilirsiniz."
 
 #: ../src/uiCmd.py:309
 msgid "Copying"
