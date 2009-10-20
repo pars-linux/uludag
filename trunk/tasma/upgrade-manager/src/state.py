@@ -11,9 +11,10 @@
 # Please read the COPYING .
 #
 
-from PyQt4.QtCore import QObject, SIGNAL
+from qt import QObject, SIGNAL
 
-import comariface
+import os
+import commander
 
 STEPS = ["prepare", "setRepositories", "download", "upgrade", "cleanup"]
 
@@ -21,7 +22,7 @@ class State(QObject):
 
     def __init__(self, parent):
         self.parent = parent
-        self.comar = comariface.ComarIface()
+        self.comar = commander.Commander()
         self.connect(self.comar, SIGNAL("stepStarted(QString)"), self.stepStarted)
         self.connect(self.comar, SIGNAL("stepFinished(QString)"), self.stepFinished)
         self.current = self.__get_state() or "prepare"

@@ -16,15 +16,13 @@ from qt import *
 from kdeui import *
 from kdecore import *
 
-from ui_maindialog import Ui_MainDialog
+from ui_maindialog import UI_MainDialog
 
 import state
 
-class MainDialog(QDialog, Ui_MainDialog):
+class MainDialog(UI_MainDialog):
     def __init__(self, parent=None):
-        QDialog.__init__(self, parent)
-        self.setupUi(self)
-        self.setWindowIcon(KIcon(":/data/package-manager.png"))
+        UI_MainDialog.__init__(self, parent)
         self.resetAllSteps()
         self.setFonts()
         self.state = state.State(self)

@@ -12,12 +12,16 @@
 #
 
 import sys
+import traceback
+
 import dbus
+import dbus.mainloop.qt3
 
 from qt import *
 
 from kdecore import *
 from kdeui import *
+import kdedesigner
 
 from maindialog import MainDialog
 from about import aboutData
@@ -40,4 +44,4 @@ if __name__ == '__main__':
 
     sys.excepthook = handleException
 
-    app.exec_()
+    sys.exit(app.exec_loop())
