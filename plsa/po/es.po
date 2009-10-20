@@ -7,18 +7,20 @@
 # Willem Gielen <w.gielen@gmail.com>, 2007.
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007.
 # klemens <click3d at linuxmail org>, 2007.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-05 16:50+0200\n"
-"PO-Revision-Date: 2007-05-27 18:23-0400\n"
-"Last-Translator: klemens <click3d at linuxmail org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2009-10-20 20:08-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: plsa/__init__.py:112
 #, python-format
@@ -68,7 +70,7 @@ msgstr "todas versiones"
 #: plsa/__init__.py:151
 #, python-format
 msgid "all before %s"
-msgstr "todos antes %s"
+msgstr "todos antes de %s"
 
 #: plsa/__init__.py:158 plsa/__init__.py:159
 msgid "Resolution"
@@ -88,7 +90,7 @@ msgstr "Referencias"
 #: plsa-cli:40
 #, python-format
 msgid "generate advisory for locale LANG (default: %s)"
-msgstr "generar recomendación para idioma LANG (por omisión: %s)"
+msgstr "generar recomendación para idioma LANG (predeterminado: %s)"
 
 #: plsa-cli:40
 msgid "LANG"
@@ -111,4 +113,5 @@ msgstr "No posible leer %s."
 #: plsa-cli:67
 msgid "XML file has errors:"
 msgstr "archivo XML tiene errores:"
+
 
