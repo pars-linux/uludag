@@ -11,7 +11,7 @@
 # Please read the COPYING .
 #
 
-from qt import QObject, SIGNAL
+from qt import QObject, PYSIGNAL
 
 import os
 import commander
@@ -23,8 +23,8 @@ class State(QObject):
     def __init__(self, parent):
         self.parent = parent
         self.comar = commander.Commander()
-        self.connect(self.comar, SIGNAL("stepStarted(QString)"), self.stepStarted)
-        self.connect(self.comar, SIGNAL("stepFinished(QString)"), self.stepFinished)
+        self.connect(self.comar, PYSIGNAL("stepStarted"), self.stepStarted)
+        self.connect(self.comar, PYSIGNAL("stepFinished"), self.stepFinished)
         self.current = self.__get_state() or "prepare"
 
     def prepare(self):
