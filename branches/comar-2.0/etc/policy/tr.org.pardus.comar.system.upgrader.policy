@@ -18,7 +18,7 @@
         </defaults>
     </action>
 
-    <action id="tr.org.pardus.comar.system.upgrader.setRepositories">
+    <action id="tr.org.pardus.comar.system.upgrader.setrepositories">
         <description>Distribution upgrader repository setup</description>
         <description xml:lang="tr">Dağıtım güncelleme depo ayarları</description>
         <message>System policy prevents distribution upgrade operation</message>
