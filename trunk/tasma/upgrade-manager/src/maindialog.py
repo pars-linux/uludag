@@ -36,19 +36,22 @@ class MainDialog(UI_MainDialog):
         self.boldFont.setWeight(50)
         self.boldFont.setBold(True)
 
+    def loadIcon(self, name, group=KIcon.Desktop, size=16):
+        return KGlobal.iconLoader().loadIcon(name, group, size)
+
     def resetAllSteps(self):
         for step in range(1, 5):
             step_icon = getattr(self, "step%d_icon" % step)
-            step_icon.setPixmap(QPixmap(""))
+            step_icon.setPixmap(self.loadIcon("arrow", KIcon.Small))
 
     def step_selected(self, step):
         step_icon = getattr(self, "step%d_icon" % step)
-        step_icon.setPixmap(":/data/arrow.png")
+        step_icon.setPixmap(self.loadIcon("arrow", KIcon.Small))
         step_label = getattr(self, "step%d_label" % step)
         step_label.setFont(self.boldFont)
 
     def step_finished(self, step):
         step_icon = getattr(self, "step%d_icon" % step)
-        step_icon.setPixmap(":/data/check.png")
+        step_icon.setPixmap(self.loadIcon("check", KIcon.Small))
         step_label = getattr(self, "step%d_label" % step)
         step_label.setFont(self.normalFont)
