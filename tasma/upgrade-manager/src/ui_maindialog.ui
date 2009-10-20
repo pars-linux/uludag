@@ -59,9 +59,6 @@
                     <property name="text">
                         <string></string>
                     </property>
-                    <property name="pixmap">
-                        <pixmap>image0</pixmap>
-                    </property>
                 </widget>
                 <widget class="QLabel">
                     <property name="name">
@@ -110,9 +107,6 @@
                     </property>
                     <property name="text">
                         <string></string>
-                    </property>
-                    <property name="pixmap">
-                        <pixmap>image0</pixmap>
                     </property>
                 </widget>
                 <widget class="QLabel">
@@ -163,18 +157,10 @@
                     <property name="text">
                         <string></string>
                     </property>
-                    <property name="pixmap">
-                        <pixmap>image1</pixmap>
-                    </property>
                 </widget>
                 <widget class="QLabel">
                     <property name="name">
                         <cstring>step3_label</cstring>
-                    </property>
-                    <property name="font">
-                        <font>
-                            <bold>1</bold>
-                        </font>
                     </property>
                     <property name="text">
                         <string>Downloading new packages</string>
@@ -396,13 +382,5 @@
         </widget>
     </grid>
 </widget>
-<images>
-    <image name="image0">
-        <data format="PNG" length="491">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000001b249444154388d8dd2bd6b54411405f0dfbc99b79b6c8c907f40b4d45e2c023696968241fcc046adc4345a68110b2d6c8dd1c242d2d8890a014148a985606d6763ad88889becfb188b7dbbac4682072e6718e6dc7be6de1bfc0fd6f7dc04e4c9617f3cf98738c8f23849b1aff8291226afdea2326fe4904ad6103cdb6beb0fb41d67851dadc2435cc0323e154a9482beac14a4ae6a429c72546bf53c105d172d49369552a14225db754c65d1b7cecd445c886a8d9e7ba25b4a8dd250b426aa8baeda09d147d1ba3e7a5d82206a35fad62477946a492d3a2b79232a92a8c423cce19283760c5d3310658d9edbb2bba89165e7045b2a51d014a24a7443f25dd24aae1a782c6b946e8aee4b6a49109d577a298b92464df062dafd93822d1ce87aff0ec7d1efa67051f05c25a231c4c2380144a506a704af31df0db41524d9656caa4485c68feec32864244d676b5b7446b2db8d3789ae4836a7458e62a9f3b53259e5656ce0b36851a3755af04ab62adaf055b2a2eebcd2cc6e5a9e8906bfb08af70efb2082edbfdecd20cc7030defac211d14f95819e2fb2563b236f67782a9c1bf7d402069897cc75a66b8cb03313c38e47bf01cef08a826ca490ed0000000049454e44ae426082</data>
-    </image>
-    <image name="image1">
-        <data format="PNG" length="466">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000019949444154388da593bf4b5b7114c5cffdfe7849be46a5a6a958b268067110aa502160c742c9a416416c2633d45971163711842e5dea222e8ea5ff8583ff40536c29853669d2c68af145dff7fbae8b504c5e12d2def170cf07ee395c6266fccf88568116289f789928fc33008cc2e6abcda3a195a103da21ea1f00c03c34545c2eae8d7d193ba5e734d21f2001942fca7071279616969e6427b31f294f339d00aa4d1900ca8d3240808212b9f95cca0c9a135aa4d7fc9e0f7b028491b2622b08c3100a0ada6aca4c643c1dd307deaa970b268375defe5b5d3b202e648d6a082880761a2a5090be844e68353d3e5d2c7dfb344b44737cd77f24a04425d8d0023e407f08e25cc0551dccb5e1d084f79a690b517a5a88b400520086014e325ccce1c1e888b5a9f0b8f9b8f994b9db099e509c16c025000be886e6805d506f9e6ff01bf7b66788a4499226808024922eee9bcb9a5f7fc1fb3727adbb9100a995e41f168f1aa3d67e0dcf6adf7f3ee33dae46992333104ac8f15f595c7dbef9f0bb5e9de2ddce6600a0d66f547bb14510a5ed56f35d37634740bf730b7f4b95334d4ee6a20000000049454e44ae426082</data>
-    </image>
-</images>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

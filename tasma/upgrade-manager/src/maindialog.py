@@ -23,7 +23,6 @@ import state
 class MainDialog(UI_MainDialog):
     def __init__(self, parent=None):
         UI_MainDialog.__init__(self, parent)
-        self.resetAllSteps()
         self.setFonts()
         self.state = state.State(self)
 
@@ -38,11 +37,6 @@ class MainDialog(UI_MainDialog):
 
     def loadIcon(self, name, group=KIcon.Desktop, size=16):
         return KGlobal.iconLoader().loadIcon(name, group, size)
-
-    def resetAllSteps(self):
-        for step in range(1, 5):
-            step_icon = getattr(self, "step%d_icon" % step)
-            step_icon.setPixmap(self.loadIcon("arrow", KIcon.Small))
 
     def step_selected(self, step):
         step_icon = getattr(self, "step%d_icon" % step)
