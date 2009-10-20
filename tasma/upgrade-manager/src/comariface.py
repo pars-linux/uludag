@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009 TUBITAK/UEKAE
+# Copyright (C) 2005, 2006 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -10,93 +10,105 @@
 #
 # Please read the COPYING file
 
-from qt import QSocketNotifier, QObject, SIGNAL
+from qt import QString, QMutex, SIGNAL
+from kdeui import KMessageBox
+from kdecore import i18n
 
-import comar
-import pisi
+# DBus
+import dbus
+import dbus.mainloop.qt3
 
-from dumlogging import logger
+from handler import CallHandler
 
-class ComarIface(QObject):
-    def __init__(self):
-        self.com = comar.Link()
+class ComarIface:
+    def __init__(self, handler=None, errHandler=None):
+        self.errHandler = errHandler
+        self.handler = handler
 
-        # Notification
-        self.com.ask_notify("System.Upgrader.progress")
-        self.com.ask_notify("System.Upgrader.error")
-        self.com.ask_notify("System.Upgrader.warning")
-        self.com.ask_notify("System.Upgrader.notify")
-        self.com.ask_notify("System.Upgrader.started")
-        self.com.ask_notify("System.Upgrader.finished")
-        self.com.ask_notify("System.Upgrader.cancelled")
+        # setup dbus stuff
+        self.setupBusses()
+        self.setupSignals()
 
-        self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
-
-        self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
-
-    def slotComar(self, sock):
+    def setupBusses(self):
         try:
-            reply = self.comar.com.read_cmd()
-        except:
-            if not self.wait_comar():
-                logger.error("Can not connect to comar daemon")
-            return
+            self.sysBus = dbus.SystemBus()
+            self.sesBus = dbus.SessionBus()
+        except dbus.DBusException:
+            KMessageBox.error(None, i18n("Unable to connect to DBus."), i18n("DBus Error"))
+            return False
+        return True
 
-        if reply.command == "notify":
-            (notification, script, data) = (reply.notify, reply.script, reply.data)
-            data = unicode(data)
+    def setupSignals(self):
+        self.sysBus.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.System.Upgrader", member_keyword="signal", path_keyword="path")
 
-            if notification == "System.Upgrader.error":
-                pass
+    def handleSignals(self, *args, **kwargs):
+        signal = kwargs["signal"]
+        # use args here
+        if self.handler:
+            self.handler(signal, args)
 
-            elif notification == "System.Upgrader.notify":
-                pass
+    def busError(self, exception):
+        KMessageBox.error(None, str(exception), i18n("D-Bus Error"))
+        self.setupBusses()
+        self.errHandler()
 
-            elif notification == "System.Upgrader.progress":
-                pass
+    def comarAuthError(self, exception):
+        KMessageBox.error(None, str(exception), i18n("COMAR Auth Error"))
+        self.errHandler()
 
-            elif notification == "System.Upgrader.started":
-                self.emit(SIGNAL("stepStarted(QString)", data))
+    def comarError(self, exception):
+        if "urlopen error" in exception.message or "Socket Error" in exception.message:
+            KMessageBox.error(None, i18n("Network error. Please check your network connections and try again."), i18n("COMAR Error"))
+        elif "Access denied" in exception.message:
+            message = i18n("You are not authorized for this operation.")
+            KMessageBox.sorry(None, message, i18n("Error"))
+        else:
+            KMessageBox.error(None, QString.fromUtf8(str(exception)), i18n("COMAR Error"))
 
-            elif notification == "System.Upgrader.finished":
-                self.emit(SIGNAL("stepFinished(QString)", data))
+        self.errHandler()
 
-            else:
-                print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
+    def cancelError(self):
+        message = i18n("You are not authorized for this operation.")
+        self.errHandler()
+        KMessageBox.sorry(None, message, i18n("Error"))
 
-    def wait_comar(self):
-        self.notifier.setEnabled(False)
-        import socket, time
-        sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-        timeout = 5
-        while timeout > 0:
-            try:
-                if pisi.api.ctx.comar_sockname:
-                    sock.connect(pisi.api.ctx.comar_sockname)
-                    return True
-                else:
-                    self.comar.notifier.setEnabled(True)
-                    sock.connect("/var/run/comar.socket")
-                    return True
-            except socket.error:
-                timeout -= 0.2
-            time.sleep(0.2)
-        return False
+    def callSyncMethod(self, method, *args):
+        ch = CallHandler("pisi", "System.Upgrader", method,
+                         None,
+                         self.sysBus, self.sesBus)
+
+    def callMethod(self, method, action, handler, handleErrors, async = True, *args):
+        print "Method: %s      Action: %s" % (method, action)
+        ch = CallHandler("pisi", "System.Upgrader", method,
+                         action, async,
+                         self.sysBus, self.sesBus)
+
+        if handleErrors:
+            ch.registerError(self.comarError)
+            ch.registerAuthError(self.comarAuthError)
+            ch.registerDBusError(self.busError)
+            ch.registerCancel(self.cancelError)
+
+        if handler:
+            ch.registerDone(handler)
+
+        ch.call(*args)
 
     def prepare(self):
-        self.com.call("System.Upgrader.prepare")
+        self.callMethod("prepare", "tr.org.pardus.comar.system.upgrader.prepare", None, handleErrors, True)
 
     def setRepositories(self):
-        self.com.call("System.Upgrader.setRepositories")
+        self.callMethod("setRepositories", "tr.org.pardus.comar.system.upgrader.setRepositories", None, handleErrors, True)
 
     def download(self):
-        self.com.call("System.Upgrader.download")
+        self.callMethod("download", "tr.org.pardus.comar.system.upgrader.download", None, handleErrors, True)
 
     def upgrade(self):
-        self.com.call("System.Upgrader.upgrade")
+        self.callMethod("upgrade", "tr.org.pardus.comar.system.upgrader.upgrade", None, handleErrors, True)
 
     def cleanup(self):
-        self.com.call("System.Upgrader.cleanup")
+        self.callMethod("cleanup", "tr.org.pardus.comar.system.upgrader.cleanup", None, handleErrors, True)
 
     def cancel(self):
-        self.com.cancel()
+        obj = self.sysBus.get_object("tr.org.pardus.comar", "/", introspect=False)
+        obj.cancel(dbus_interface="tr.org.pardus.comar")

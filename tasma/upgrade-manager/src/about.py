@@ -13,20 +13,22 @@
 
 from kdecore import *
 
+# Workaround the fact that PyKDE provides no I18N_NOOP as KDE
+def I18N_NOOP(str):
+    return str
+
 # Application Data
 appName     = "upgrade-manager"
 catalog     = appName
-programName = ki18n("Distribution Upgrade Manager")
+programName = i18n("Distribution Upgrade Manager")
 version     = "0.1"
-description = ki18n("Distribution Update Manager")
+description = i18n("Distribution Update Manager")
 license     = KAboutData.License_GPL
-copyright   = ki18n("(c) 2009 TUBITAK/UEKAE")
-text        = ki18n(None)
+copyright   = i18n("(c) 2009 TUBITAK/UEKAE")
+text        = i18n(None)
 homePage    = "http://www.pardus.org.tr/eng/projects"
 bugEmail    = "bugs@pardus.org.tr"
-aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
+aboutData   = KAboutData(appName, programName, version, description, license, copyright, text, homePage, bugEmail)
 
 # Authors
-aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("Maintainer"))
-
-aboutData.setProgramIconName(":/data/package-manager.png")
+aboutData.addAuthor (I18N_NOOP("Faik Uygur"), i18n("Maintainer"))
