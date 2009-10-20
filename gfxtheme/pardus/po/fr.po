@@ -56,11 +56,11 @@ msgstr "Installation--ACPI Désactivé"
 
 #. txt_safe_install
 msgid "Installation--Safe Settings"
-msgstr "Installation--Paramètres Sécurisés"
+msgstr "Installation--Paramètres sûrs"
 
 #. txt_safe_linux
 msgid "Linux--Safe Settings"
-msgstr "Linux--Paramètres sécurisés"
+msgstr "Linux--Paramètres sûrs"
 
 #. txt_boot_harddisk
 msgid "Boot from Hard Disk"
@@ -130,7 +130,7 @@ msgstr "Chargeur d'amorçage"
 #. error box title
 #. txt_error_title
 msgid "I/O Error"
-msgstr "Erreur d'Entrée/Sortie"
+msgstr "Erreur d'E/S"
 
 #. boot disk change dialog title
 #. txt_change_disk_title
@@ -158,7 +158,7 @@ msgid ""
 "This is not a <product> boot disk.\n"
 "Insert boot disk %u."
 msgstr ""
-"Il ne s'agit pas d'un disque d'amorçage pour <product>.\n"
+"ce n'est pas un disque d'amorçage pour <product>.\n"
 "Insérez le disque d'amorçage %u."
 
 #. password dialog title
@@ -181,7 +181,7 @@ msgid ""
 "\n"
 "Turn the DVD over then continue."
 msgstr ""
-"Il s'agit d'un DVD double face. Vous avez effectué l'amorçage à partir de la seconde face.\n"
+"C'est un DVD double face. Vous avez amorçé à partir de la seconde face.\n"
 "\n"
 "Retournez le DVD, puis continuez."
 
@@ -336,7 +336,7 @@ msgstr "Mode Texte"
 #. menu item, like 'memory test'
 #. txt_firmware
 msgid "Firmware Test"
-msgstr "Test de Microprogramme (firmware)"
+msgstr "Test de firmware"
 
 #. txt_dud_file_msg
 msgid ""
@@ -364,7 +364,7 @@ msgstr "Mode Vidéo"
 #. -> txt_dud_file_msg
 #. txt_driver_update2
 msgid "Driver Update"
-msgstr "Mise à jour des pilotes"
+msgstr "Mise à jour du pilote"
 
 #. menu label for selecting (cpu) architecture
 #. like i386, x86-64, ppc
@@ -388,7 +388,7 @@ msgstr "Par défaut"
 #. -> like in txt_safe_linux
 #. txt_kernel_safe
 msgid "Safe Settings"
-msgstr "Paramètres sécurisés"
+msgstr "Paramètres sûrs"
 
 #. menu item for kernel variant (cf. txt_kernel)
 #. -> similar to txt_noacpi_install
@@ -422,11 +422,11 @@ msgstr "Par Défaut"
 
 #. txt_zorg_safe
 msgid "Failsafe"
-msgstr "Mode Sécurisé"
+msgstr "Mode sûr"
 
 #. txt_zorg_probe
 msgid "Probe Again"
-msgstr "Sonder à Nouveau"
+msgstr "Sonder à nouveau"
 
 #. txt_zorg_off
 msgid "Off"
@@ -436,4 +436,10 @@ msgstr "Fermé"
 msgid "Hardware info"
 msgstr "Informations sur le matériel"
 
+#. txt_mudur
+msgid "Boot"
+msgstr "Démarrage"
 
+#. txt_mudur_forcefsck
+msgid "FS check"
+msgstr "Vérification du FS"
