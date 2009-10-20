@@ -25,18 +25,18 @@ kdedistutils.setup(
                         # sources
                         'src/about.py',
                         'src/comariface.py',
+                        'src/commander.py',
                         'src/dumlogging.py',
+                        'src/handler.py',
                         'src/maindialog.py',
                         'src/main.py',
                         'src/state.py',
 
                         # ui files
-                        'src/maindialog.ui',
+                        'src/ui_maindialog.ui',
 
                         # data
-                        'data/arrow.png',
-                        'data/check.png',
-                        'data/data.qrc',
+                        ("/usr/kde/3.5/share/apps/upgrade-manager/pics", ["data/arrow.png", "data/check.png"]),
                         ("/usr/kde/3.5/share/icons/hicolor/128x128/apps", ["data/package-manager.png"]),
 
                         # desktop files
