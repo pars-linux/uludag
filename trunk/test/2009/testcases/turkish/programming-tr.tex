@@ -37,7 +37,12 @@ fcgi
 
 \section{vcs alt bileşeni}
 \begin{enumerate}
-\item mod\_dav\_svn paketi sadece kurulum testine tabidir.
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ mod_dav_svn
+ abicheck
+\end{verbatim}
+
 \item git paketi kurulumu sonrası:
 
 Aşağıdaki komutları çalıştırın. Ve sorunsuz bir şekilde Git deposu oluşturduğunu ve klonlandığını gözlemleyin.
@@ -180,6 +185,13 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
 \subsection{Python alt bileşeni}
 
 \begin{enumerate}
+\item gst-python paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import pygst
+\end{verbatim}
+
 \item pyFltk paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
@@ -213,14 +225,19 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  import iptables
 \end{verbatim}
 
+\item numpy paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırdığınızda testlerden ok sonucu döndüğünü gözlemleyin.
+\begin{verbatim}
+ # python -c "import numpy;print numpy.test()"
+\end{verbatim}
+
 \item sympy paketi kurulumu sonrası:
 
 Aşağıda bulunan komutu çalıştırdığınızda testlerden ok sonucu döndüğünü gözlemleyin.
 \begin{verbatim}
  # python -c "import sympy;print sympy.test()"
 \end{verbatim}
-
-python -c "import scipy;print scipy.test()"
 
 \item scipy paketi kurulumu sonrası:
 
