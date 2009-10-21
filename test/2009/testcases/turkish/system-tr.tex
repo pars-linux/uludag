@@ -14,7 +14,18 @@
 \begin{document}
 
 \maketitle
+\section{Boot alt Bileşeni}
+\begin{enumerate}
+ \item Aşağıda bulunan paketler kurulum testine tabidir.
+\begin{verbatim}
+ gfxboot
+ gfxtheme-pardus-install
+\end{verbatim}
 
+\item gfxtheme-base ve gfxtheme-pardus-boot paketleri kurulumu sonrası.
+
+Bilgisayarınızı yeniden başlatın ve açılış ekranının düzgün bir şekilde görüntülendiğini gözlemleyin.
+\end{enumerate}
 
 \section{Devel alt Bileşeni}
 \begin{enumerate}
@@ -24,6 +35,11 @@
  automake
  dietlibc 
  quilt
+ gcc
+ libgfortran
+ libgomp
+ libobjc
+ nasm
 \end{verbatim}
  \item icecream ve icecream scheduler paketleri kurulumu sonrası:
 
@@ -40,6 +56,33 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
 \section{Base alt Bileşeni}
 
 \begin{enumerate}
+\item Aşağıda bulunan paketler kurulum testine tabidir.
+\begin{verbatim}
+ libgcc
+\end{verbatim}
+
+\item less paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+pisi info -F python | less 
+\end{verbatim}
+
+
+\item bootsplash-theme-pardus paketi kurulumu sonrası:
+
+Bilgisayarınızı yeniden başlatın ve açılış ekranının sorunsuz bir şekilde açıldığını gözlemleyiniz.
+
+\item coreutils paketi kurulumu sonrası:
+
+Aşğıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
+\begin{verbatim}
+ # date
+ # pwd
+ # uname -a
+\end{verbatim}
+
+
 \item python paketi kurulumu sonrası:
 \begin{itemize}
  \item system-tr.pdf pisi testini gerçekleştiriniz.
