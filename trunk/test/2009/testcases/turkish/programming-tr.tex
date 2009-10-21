@@ -33,6 +33,15 @@
 \begin{verbatim}
 fcgi 
 \end{verbatim}
+
+\item cdecl paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun düzgün çalıştığını gözlemleyin.
+\begin{verbatim}
+ # cdecl
+ cdecl> #include <string.h>
+\end{verbatim}
+
 \end{enumerate}
 
 \section{vcs alt bileşeni}
@@ -183,8 +192,81 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
 
 \end{enumerate}
 \subsection{Python alt bileşeni}
-
 \begin{enumerate}
+\item python-twitter paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import twitter
+\end{verbatim}
+
+
+\item python-cx_freeze paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import cx_Freeze
+\end{verbatim}
+
+Aşağıda bulunan komutları çalıştırın ve küçük bir pencerenin açıldığını gözlemleyin.
+\begin{verbatim}
+ cd /usr/lib/python2.6/site-packages/cx_Freeze/samples/wx
+ sudo python setup.py build
+ sudo python setup.py install
+ python wxapp.py
+\end{verbatim}
+
+
+\item pybluez paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import bluetooth
+\end{verbatim}
+
+Eğer bluetooth aygıtınız var ise aşağıda bulunan komutları çalıştırın ve hatasız bir şekilde çalıştığını gözlemleyiniz.
+\begin{verbatim}
+ # cd /usr/share/doc/pybluez/examples/advanced
+ # python inquiry-with-rssi.py
+\end{verbatim}
+
+
+
+\item pylirc paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import pylirc
+\end{verbatim}
+
+Eğer infrared bir kumandanız var ise bu kumandayı aktive ettikten sonra aşağıda bulunan testi çalıştırınız ve hatasız bir şekilde çalıştığını gözlemleyiniz.
+\begin{verbatim}
+  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/python/pylirc_test.py
+  # python pylirc_test.py
+\end{verbatim}
+
+
+\item pygobject ve pygobject-docs paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import codegen
+ import gio
+ import glib
+\end{verbatim}
+\item pygame ve pygame-doc paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import pygame
+\end{verbatim}
+
 \item gst-python paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}

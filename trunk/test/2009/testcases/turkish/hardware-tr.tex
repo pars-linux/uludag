@@ -14,6 +14,15 @@
 \begin{document}
 
 \maketitle
+\section{CPU alt Bileşeni}
+\begin{enumerate}
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+  \begin{verbatim}
+   microcode-data
+  \end{verbatim}
+
+\end{enumerate}
+
 \section{Irda alt Bileşeni}
 \begin{enumerate}
  \item lirc paketi kurulumu sonrası:
@@ -55,7 +64,10 @@ ql2x00-firmware
 gutenprint 
 \end{verbatim}
 
+\item hplip-gui, hplip-doc ve hplip kurulumu sonrası:
 
+kmenu'den HP aygıt yöneticisini açın ve bir HP yazıcınız var ise aygıtı bulduğunu, yok ise aygıt bulunmamaktadır uyarısı verdiğini gözlemleyiniz.
+    
 \end{enumerate}
 
 \section{Smart Card alt Bileşeni}
@@ -95,6 +107,11 @@ Aşağıda bulunan komut ile başlatıldığından emin olun.
 
 \section{Powermanagement alt Bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ acpid
+\end{verbatim}
+
  \item lm\_sensors paketi kurulumu sonrası:
 
 hardware-tr.pdf gkrellm testini gerçekleştirin.
@@ -209,10 +226,18 @@ Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. A
 
 \section{Bluetooth alt Bileşeni}
 \begin{enumerate}
-
- \item Aşağıda bulunan paketler sadece kurulum testine tabidir. 
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir. 
 \begin{verbatim}
   obexd
+  bluez-compat
+\end{verbatim}
+ \item bluez paketi kurulumu sonrası: 
+ 
+(Eğer bluetooth aygıtınız var ise bu testi gerçekleştirebilirsiniz.)
+
+Bluetooth aygıtınızı bilgisayarınıza takınız ve aşağıda bulunan komutun bu aygıtı listelediğini gözlemleyiniz.
+\begin{verbatim}
+ list-devices
 \end{verbatim}
 
  \item cwiid paketi kurulumu sonrası: (Nintendo video oyun kumandanız var ise bu testi gerçekleştirebilirsiniz.)
@@ -298,6 +323,21 @@ Rmedigicontrol uygulaması RMedigicontrol aygıtı için.
 \end{enumerate}
 \section{Mobile alt Bileşeni}
 \begin{enumerate}
+\item libopensync-plugin-kdepim paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun kdepim-sync eklentisini listelediğini gözlemleyin.
+\begin{verbatim}
+ msynctool --listplugins
+\end{verbatim}
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
+
+\begin{verbatim}
+ msynctool --addgroup sync2kontact
+ msynctool --addmember sync2kontact kdepim-sync
+\end{verbatim}
+
+
  \item libopensync-plugin-google-calendar paketi kurulumu sonrası:
 
 Eğer bir gmail üyeliğiniz var ise bu testi gerçekleştirebilirsiniz.
