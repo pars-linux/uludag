@@ -64,6 +64,8 @@ class Mod:
 
     def get_timers(self):
         timers = self.locals.get("timers", {})
+        if callable(timers):
+            timers = timers()
         if isinstance(timers, dict):
             return timers
         return {}
