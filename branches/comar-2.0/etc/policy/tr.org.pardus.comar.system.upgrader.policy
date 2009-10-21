@@ -7,8 +7,8 @@
     <icon_name>preferences-desktop-default-applications</icon_name>
 
     <action id="tr.org.pardus.comar.system.upgrader.run">
-        <description>Distribution upgrader run operation</description>
-        <description xml:lang="tr">Dağıtım güncelleme çalıştırma işlemi</description>
+        <description>Distribution upgrader operation run</description>
+        <description xml:lang="tr">Dağıtım güncelleme işlemini çalıştır</description>
         <message>System policy prevents distribution upgrade operation</message>
         <message xml:lang="tr">Sistem politikası dağıtım güncelleme işlemini engelliyor</message>
         <defaults>
