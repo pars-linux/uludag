@@ -25,7 +25,6 @@ class State(QObject):
         self.comar = commander.Commander()
         self.connect(self.comar, PYSIGNAL("stepStarted(QString)"), self.stepStarted)
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.stepFinished)
-        self.current = self.__get_state() or "prepare"
 
     def prepare(self):
         self.comar.prepare()
@@ -51,19 +50,7 @@ class State(QObject):
         step = operation.split(".")[-1]
         self.parent.step_finished(STEPS.index(step) + 1)
 
-    def __get_state(self):
-        stateFile = os.path.join("/var/log/", "pisiUpgradeState")
-        if not os.path.exists(stateFile):
-            return None
-
-        step = open(stateFile, "r").read()
-        if step in STEPS:
-            return step
-
-        return None
-
     def run(self):
         for step in STEPS:
-            if step == self.current:
-                method = getattr(self, step)
-                method()
+            method = getattr(self, step)
+            method()
