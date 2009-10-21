@@ -24,7 +24,7 @@ if __name__ == "__main__":
     parser.add_option("-p", "--pidfile", dest="pidfile", default="/var/run/ahenk-ajan.pid",
                       help="Use alternate PID file", metavar="FILE")
     parser.add_option("-v", "--verbose", dest="verbose", action="store_true",
-                      help="Use alternate PID file", metavar="FILE")
+                      help="Verbose mode")
 
     (options, args) = parser.parse_args()
 
