@@ -23,8 +23,8 @@ class State(QObject):
     def __init__(self, parent):
         self.parent = parent
         self.comar = commander.Commander()
-        self.connect(self.comar, PYSIGNAL("stepStarted"), self.stepStarted)
-        self.connect(self.comar, PYSIGNAL("stepFinished"), self.stepFinished)
+        self.connect(self.comar, PYSIGNAL("stepStarted(QString)"), self.stepStarted)
+        self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.stepFinished)
         self.current = self.__get_state() or "prepare"
 
     def prepare(self):

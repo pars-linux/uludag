@@ -35,11 +35,11 @@ class Commander(QObject):
             args = None
 
         if signal == "finished":
-            command = data[0]
-            self.emit(PYSIGNAL("stepFinished"), command)
+            command = str(data[0])
+            self.emit(PYSIGNAL("stepFinished(QString)"), (command,))
         elif signal == "started":
             command = data[0]
-            self.emit(PYSIGNAL("stepStarted"), command)
+            self.emit(PYSIGNAL("stepStarted(QString)"), (command,))
         elif signal == "progress":
             print "progress"
         elif signal == "error":
