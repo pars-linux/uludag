@@ -23,8 +23,10 @@ class State(QObject):
     def __init__(self, parent):
         self.parent = parent
         self.comar = commander.Commander()
+        self.step = 0
         self.connect(self.comar, PYSIGNAL("stepStarted(QString)"), self.stepStarted)
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.stepFinished)
+        self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.runNextStep)
 
     def stepStarted(self, operation):
         # System.Upgrader.{prepare, setRepositories...}
@@ -34,8 +36,8 @@ class State(QObject):
     def stepFinished(self, operation):
         step = operation.split(".")[-1]
         self.parent.step_finished(STEPS.index(step) + 1)
+        self.step += 1
 
-    def run(self):
-        for step in STEPS:
-            method = getattr(self.comar, step)
-            method()
+    def runNextStep(self):
+        method = getattr(self.comar, STEPS[self.step])
+        method()
