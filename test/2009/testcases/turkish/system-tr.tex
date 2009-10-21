@@ -14,12 +14,22 @@
 \begin{document}
 
 \maketitle
+\section{Auth alt Bileşeni}
+\begin{enumerate}
+  \item Aşağıda bulunan paketler kurulum testine tabidir.
+\begin{verbatim}
+ pam_krb5
+\end{verbatim}
+
+\end{enumerate}
+
 \section{Boot alt Bileşeni}
 \begin{enumerate}
  \item Aşağıda bulunan paketler kurulum testine tabidir.
 \begin{verbatim}
  gfxboot
  gfxtheme-pardus-install
+ syslinux
 \end{verbatim}
 
 \item gfxtheme-base ve gfxtheme-pardus-boot paketleri kurulumu sonrası.
@@ -60,6 +70,15 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
 \begin{verbatim}
  libgcc
 \end{verbatim}
+
+\item man-pages paketi kurulumu sonrası:
+
+Aşağıda bulunan sayfaların sorunsuz bir şekilde çalıştırklarını gözlemleyin.
+\begin{verbatim}
+ man tcp
+ man getspent
+\end{verbatim}
+
 
 \item less paketi kurulumu sonrası:
 
