@@ -26,21 +26,6 @@ class State(QObject):
         self.connect(self.comar, PYSIGNAL("stepStarted(QString)"), self.stepStarted)
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.stepFinished)
 
-    def prepare(self):
-        self.comar.prepare()
-
-    def setRepositories(self):
-        self.comar.setRepositories()
-
-    def download(self):
-        self.comar.download()
-
-    def upgrade(self):
-        self.comar.upgrade()
-
-    def cleanup(self):
-        self.comar.cleanup()
-
     def stepStarted(self, operation):
         # System.Upgrader.{prepare, setRepositories...}
         step = operation.split(".")[-1]
@@ -52,5 +37,5 @@ class State(QObject):
 
     def run(self):
         for step in STEPS:
-            method = getattr(self, step)
+            method = getattr(self.comar, step)
             method()
