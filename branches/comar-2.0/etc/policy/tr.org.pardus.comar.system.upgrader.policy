@@ -6,6 +6,18 @@
     <vendor_url>http://www.pardus.org.tr</vendor_url>
     <icon_name>preferences-desktop-default-applications</icon_name>
 
+    <action id="tr.org.pardus.comar.system.upgrader.run">
+        <description>Distribution upgrader run operation</description>
+        <description xml:lang="tr">Dağıtım güncelleme çalıştırma işlemi</description>
+        <message>System policy prevents distribution upgrade operation</message>
+        <message xml:lang="tr">Sistem politikası dağıtım güncelleme işlemini engelliyor</message>
+        <defaults>
+            <allow_any>auth_admin_keep_always</allow_any>
+            <allow_active>auth_admin_keep_always</allow_active>
+            <allow_inactive>auth_admin_keep_always</allow_inactive>
+        </defaults>
+    </action>
+
     <action id="tr.org.pardus.comar.system.upgrader.prepare">
         <description>Distribution upgrader preparation</description>
         <description xml:lang="tr">Dağıtım güncelleme hazırlıkları</description>
