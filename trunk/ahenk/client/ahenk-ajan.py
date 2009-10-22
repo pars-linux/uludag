@@ -43,7 +43,7 @@ if __name__ == "__main__":
             daemon.stop()
         else:
             daemon.start()
-    elif not options.kill::
+    elif not options.kill:
         # Interactive mode for debugging
         daemon = mainloop.Ajan(options)
         daemon.run()
