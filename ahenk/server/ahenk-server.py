@@ -31,7 +31,7 @@ index         objectClass eq"""
 TEMP_LDIF = """dn: %(domain)s
 objectclass: dcObject
 objectclass: organization
-o: Domain
+o: %(title)s
 dc: %(dc)s
 
 dn: cn=%(root_account)s, %(domain)s
@@ -68,7 +68,7 @@ def makeLDIF(domain, root_account):
     if "dc=" not in domain:
         domain = "dc=" + domain.replace(".", ", dc=")
     dc = domain.split(",")[0].split("dc=")[1]
-    return TEMP_LDIF % {"domain": domain, "dc": dc, "root_account": root_account}
+    return TEMP_LDIF % {"domain": domain, "title": dc.capitalize(),  "dc": dc, "root_account": root_account}
 
 
 def importLDIF(domain, root_account, root_password):
@@ -128,6 +128,7 @@ if __name__ == "__main__":
     if not options.dryrun:
         file("/etc/openldap/slapd.conf", "w").write(conf)
     else:
+        print
         print "    " + conf.replace("\n", "\n    ")
         print
 
@@ -141,5 +142,8 @@ if __name__ == "__main__":
         importLDIF(domain, options.username, options.password)
     else:
         ldif = makeLDIF(domain, options.username)
+        print
         print "    " + ldif.replace("\n", "\n    ")
         print
+
+    print "Server is ready."
