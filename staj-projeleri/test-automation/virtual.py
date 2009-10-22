@@ -58,7 +58,7 @@ class revdepRebuildAndLddResults:
         repoName = splitRepos[3]
         self.repoNames.append(repoName)
 
-""" This function gets the virtual box machine names in order to list the machines to user."""
+  """ This function gets the virtual box machine names in order to list the machines to user."""
   def get_machineNames(self):
     getMachineNamesCommand  = os.popen("VBoxManage list vms")
     outMachine  = getMachineNamesCommand.read()
@@ -76,7 +76,7 @@ class revdepRebuildAndLddResults:
       self.machineNames.append(outMachine[lhs+2:rhs])
       outMachine = outMachine[rhs+3:]
 
-""" This function enables user to choose the machine that he/she wants to work."""
+  """ This function enables user to choose the machine that he/she wants to work."""
   def chooseMachine(self):
     count = 1
     for machine in self.machineNames:
@@ -91,26 +91,26 @@ class revdepRebuildAndLddResults:
       else:
           print "Please write a correct number !"
 
-""" This function starts the virtual machine that the user has chosen."""
+  """ This function starts the virtual machine that the user has chosen."""
   def startVm(self):
     os.popen("VBoxManage startvm " + self.machineName)
     self.checkState("running")
 
-""" This function shutdowns the virtual machine that the user has chosen."""
+  """ This function shutdowns the virtual machine that the user has chosen."""
   def shutdownVm(self):
     os.popen("VBoxManage controlvm " + self.machineName + " poweroff")
     self.checkState("poweroff")
 
-""" This function takes the snapshot of the virtual machine the user has chosen."""
+  """ This function takes the snapshot of the virtual machine the user has chosen."""
   def takeSnapshot(self):
     os.popen("VBoxManage snapshot " + self.machineName + " take TestSnapshot")
     time.sleep(0.5)
 
-""" This function revert the current snapshot to its previous state."""
+  """ This function revert the current snapshot to its previous state."""
   def goBack(self):
     os.popen("VBoxManage snapshot " + self.machineName + " discardcurrent --state")
 
-""" This function shows if the selected virtual machine network is in Bridged Adapter state."""
+  """ This function shows if the selected virtual machine network is in Bridged Adapter state."""
   def showBridge(self):
     showBridgeCommand = os.popen("VBoxManage showvminfo "+ self.machineName +" --machinereadable")
     outShowBridge = showBridgeCommand.read()
@@ -125,7 +125,7 @@ class revdepRebuildAndLddResults:
     nic = outShowBridge[lhs:rhs]
     return nic
 
-""" This function returns several different states of selected virtaul machine."""
+  """ This function returns several different states of selected virtaul machine."""
   def showState(self):
     showStateCommand = os.popen("VBoxManage showvminfo "+ self.machineName +" --machinereadable")
     outShowState = showStateCommand.read()
@@ -140,7 +140,7 @@ class revdepRebuildAndLddResults:
     print state
     return state
 
-""" This function checks if state is changed."""
+  """ This function checks if state is changed."""
   def checkState(self,state):
     while(1):
       if(self.showState() == state):
@@ -148,7 +148,7 @@ class revdepRebuildAndLddResults:
       else:
           time.sleep(0.5)
 
-""" This function makes a remote connection to selected virtual machine from user machine."""
+  """ This function makes a remote connection to selected virtual machine from user machine."""
   def connectTo(self,mode="normal"):
     print "Connection start..."
     if(mode == "normal"):
@@ -220,8 +220,9 @@ class revdepRebuildAndLddResults:
               self.execute.readline()  #read the output of uname
           elif(mode == "pisilr"):
               print outSendCommand
-              if not "bz2" in outSendCommand:
+              if not "bz2" in outSendCommand and not "contrib" in outSendCommand:
                 self.pisilrResult = outSendCommand.split(" ")
+                print self.pisilrResult
 
   def checkKnownHosts(self, what):
     file = open("/home/" + str(sys.argv[5]) + "/.ssh/known_hosts")
@@ -262,7 +263,7 @@ class revdepRebuildAndLddResults:
       self.connectTo()
       self.sendCommand("su -","root")
       self.sendCommand("pisi it " + line.strip() + " -y")
-      #self.sendCommand("revdep-rebuild","parse")
+      self.sendCommand("revdep-rebuild","parse")
       self.lddWorks(line)
       self.sendCommand("exit","close")
       self.parseOutput()
