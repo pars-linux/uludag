@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import ldap
 import os
 import time
 
@@ -90,3 +91,18 @@ class ModManager:
 
     def get_timers(self, filename):
         return self.modules[filename].get_timers()
+
+
+class LDAP:
+    def __init__(self, hostname, domain, username, password):
+        self.dc = "dc=" + domain.replace(".", ", dc=")
+        self.cn = "cn=" + username + ", " + self.dc
+        self.connection = ldap.open(hostname)
+        self.connection.simple_bind(self.cn, password)
+
+    def getAll(self):
+        return self.connection.search_s(self.dc, ldap.SCOPE_SUBTREE)
+
+    def close(self):
+        self.connection.unbind_s()
+        self.connection.close()
