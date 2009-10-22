@@ -80,7 +80,7 @@ def importLDIF(domain, root_account, root_password):
     ldif = makeLDIF(domain, root_account)
 
     cmd = ["/usr/bin/ldapadd", "-x", "-D", cn, "-w", root_password]
-    proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+    proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     proc.communicate(input=ldif)
 
 
@@ -134,11 +134,6 @@ if __name__ == "__main__":
     print "Starting openldap-server"
     if not options.dryrun:
         os.system("service openldap_server start")
-
-    print "Writing new /etc/openldap/slapd.conf"
-    conf = makeLDAPConf(domain, options.username, options.password)
-    if options.dryrun:
-        pass
 
     print "Loading inital database components"
     if not options.dryrun:
