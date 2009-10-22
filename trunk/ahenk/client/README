@@ -1,0 +1,11 @@
+Ahenk-Ajan (Agent)
+=================
+
+Ahenk-Ajan is a daemon for fetching and applying policies to the system.
+
+
+Requirements
+------------
+
+  Python
+  Python LDAP module
