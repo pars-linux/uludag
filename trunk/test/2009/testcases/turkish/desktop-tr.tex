@@ -19,6 +19,9 @@
  \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  libgnomecanvasmm
+ gnome-keyring
+ gnome-keyring-docs
+ gnome-doc-utils
 \end{verbatim}
 
 \end{itemize}
@@ -53,6 +56,15 @@ Sistem ayarları $\rightarrow$  Klavye ve Fare $\rightarrow$ İmleç teması alt
 
 \section{Font alt Bileşeni}
 \begin{itemize}
+
+\item  urw-fonts paketi kurulumu sonrası:
+
+Open ofis yazıcı açın ve URW fontunun ekli olduğunu gözlemleyin.
+
+
+\item  dejavu-fonts paketi kurulumu sonrası:
+
+Open ofis yazıcı açın ve Dejavu fontlarının ekli olduğunu gözlemleyin.
  \item fontforge paketi kurulumu sonrası:
 
 aquafont paketini kurun, kmenü'den fontforge uygulamasını açın ve /usr/share/fonts/aquafont/aquafont.ttf uzantısını seçin ve listelenen aquafont.ttf  dosyası üzerine çift tıklayın ve sorunsuz bir şekilde bu fontun karakterleri ile ilgili bir pencere açıldıpğını gözlemleyin.
@@ -73,8 +85,12 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açılabildiğini gözleml
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir:
 \begin{verbatim}
  iTest
+ shared-mime-info
 \end{verbatim}
 
+\item krename paketi kurulumu sonrası:
+
+Kmenüden uygulamayı açın, aşağıda bulunan resim dosyalarını Ekle butonuna basarak ekleyin. Daha sonra Dosya adı tab'ına gidip Örnek düşen kutusundan sayıyı seçin ve bitir butonuna basın ve sorunsuz bir şekilde yeni ismlendirmelerin yapıldığını gözlemleyin.
 
 \item google-gadgets, google-gadgets-qt ve google-gadgets-gtk paketleri kurulumu sonrası:
 
@@ -146,6 +162,7 @@ Bağlamtının sorunsuz bir şekilde gerçekleştğini gözlemleyin.
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir:
 \begin{verbatim}
 gtk+extra
+gtk-doc
 \end{verbatim}
 \item libglademm paketi kurulumu sonrası:
 
@@ -196,6 +213,14 @@ science-tr.pdf wxMaxima testini gerçekleştirin.
 \end{enumerate}
 
 \section{Kde4 alt Bileşeni}
+\subsection*{Admin alt bileşeni}
+
+\begin{enumerate} 
+ \item history-manager paketi kurulumu sonrası:
+
+ http://svn.pardus.org.tr/uludag/trunk/test/2009/testguide/turkish/alfabeta/history-manager-tr.pdf  testini gerçekleştiriniz.
+\end{enumerate}
+
 \subsection*{Base alt bileşeni}
 
 
@@ -315,10 +340,20 @@ Aşağıda bulunan ugulamaların düzgün çalıştığını gözlemleyin.
  \item  QtCurve-KDE4 paketi kurulumu sonrası:
 
 Sistem ayarları $\rightarrow$ Görünüm $\rightarrow$ Stil yolunu izleyerek QtCurve stilini seçiniz ve stilin sorunsuz bir şekilde değiştiğini gözlemleyiniz.
+\item plasmoid-daisy paketi kurulumu sonrası:
+
+Masaüstüne sağ tıklayıp programcık ekleyi seçin. Daisy'un eklenmiş olduğunu gözlemleyin.
+
+Panele eklenen boşluk üzerine sağ tıklayın ve panel ayarlarını seçin. Daha sonra plasmoid üzerinde çıkan ok üzerine tıklayın ve daisy ayarlarının açıldığını gözlemleyin.
+
+ \item plasmoid-adjustable-clock paketi kurulumu sonrası:
+
+Masaüstüne sağ tıklayıp programcık ekleyi seçin. Adjustable Clock'un eklenmiş olduğunu gözlemleyin.
+
 
  \item plasmoid-translatoid paketi kurulumu sonrası:
 
-Panel üzerine sağ tıklayıp programcık ekleyi seçin. Translatoid'in eklenmiş olduğunu gözlemleyin.
+Masaüstüne sağ tıklayıp programcık ekleyi seçin. Translatoid'in eklenmiş olduğunu gözlemleyin.
 
 Programcığı açın ve türkçeden ingilizceye bir çeviri yapmayı deneyin.
  \item kshutdown paketi kurulumu sonrası:

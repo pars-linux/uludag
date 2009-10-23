@@ -22,6 +22,8 @@ dosyasını iletmeyi unutmayınız.
   xorg-server-devel
   xorg-server-xdmx
   xorg-server-xvfb
+  xorg-server-xephyr
+  xorg-server-xvnc
   \end{verbatim}
 
   \item xorg-server-xephyr paketi kurulduktan sonra aşağıda bulunan komut ile sorunsuz bir şekilde konsol
@@ -172,6 +174,7 @@ Ekran kartınızın ne olduğuna dair bilgiye aşağıda bulunan komut ile ulaş
 
 \end{enumerate}
 
+
 \section{Terminal alt Bileşeni}
 \begin{enumerate}
   \item rxvt-unicode paketi kurulumu sonrası:
@@ -194,5 +197,35 @@ Ekran kartınızın ne olduğuna dair bilgiye aşağıda bulunan komut ile ulaş
   # xterm
   \end{verbatim}
 \end{enumerate}
+\section{Library alt Bileşeni}
+\begin{enumerate}
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+  \begin{verbatim}
+libXdamage
+libXft
+libXmu
+libpciaccess
+libvdpau
+libxkbfile
+xcb-util
+  \end{verbatim}
+
+\end{enumerate}
+
+\section{Misc alt Bileşeni}
+\begin{enumerate}
+ \item xorg-app paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+  \begin{verbatim}
+   bitmap
+   editres
+   appres
+   
+  \end{verbatim}
+
+
+\end{enumerate}
+
 
 \end{document}

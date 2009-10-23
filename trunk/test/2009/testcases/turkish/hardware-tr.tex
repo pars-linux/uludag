@@ -265,6 +265,43 @@ Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın, ve tara
 
 \section{Disk alt Bileşeni}
 \begin{enumerate}
+\item fuse paketi kurulumu sonrası:
+hardware-tr.pdf fuse-python testini gerçekleştirin.
+
+\item fuse-python paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import fuse
+\end{verbatim}
+
+\item sg3_utils  paketi kurulumu sonrası:
+
+Eğer bir SCSI disk kullanıyorsanız, aşağıda bulunan komutları ilgili SCSI disk bölümünüzü kullanarak çalıştırın.
+\begin{verbatim}
+ sg_modes <SCSIdisk>
+ sg_logs <SCSIdisk>
+\end{verbatim}
+
+Örnek:
+\begin{verbatim}
+ sg_logs /dev/sda1
+\end{verbatim}
+
+\item sdparm paketi kurulumu sonrası:
+
+Eğer bir SCSI disk kullanıyorsanız, aşağıda bulunan komutu ilgili SCSI disk bölümünüzü kullanarak çalıştırın.
+\begin{verbatim}
+ sdparm <SCSIdisk>
+\end{verbatim}
+
+Örnek:
+\begin{verbatim}
+ sdparm /dev/sda1
+\end{verbatim}
+
+
 \item filelight paketi kurulumu sonrası:
 
 Uygulamayı kmenuden açın ve disk kullanımının görsel olarak yapıldığını gözlemleyin. Tara $\rightarrow$ Ev dizinini tara bölümünden dizininizi taratın ve surunsuz bir şekilde tarandığını gözlemleyin.
@@ -323,6 +360,12 @@ Rmedigicontrol uygulaması RMedigicontrol aygıtı için.
 \end{enumerate}
 \section{Mobile alt Bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ usb-modeswitch
+\end{verbatim}
+
+
 \item libopensync-plugin-kdepim paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun kdepim-sync eklentisini listelediğini gözlemleyin.
