@@ -28,6 +28,9 @@ class State(QObject):
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.stepFinished)
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.runNextStep)
 
+    def reset(self):
+        self.step = 0
+
     def stepStarted(self, operation):
         # System.Upgrader.{prepare, setRepositories...}
         step = operation.split(".")[-1]
