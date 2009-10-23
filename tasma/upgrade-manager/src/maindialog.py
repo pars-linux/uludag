@@ -25,8 +25,20 @@ class MainDialog(UI_MainDialog):
         UI_MainDialog.__init__(self, parent)
         self.setFonts()
         self.state = state.State(self)
-        self.connect(self.upgradeButton, SIGNAL("clicked()"), self.state.runNextStep)
-        self.connect(self.cancelButton, SIGNAL("clicked()"), self.state.comar.cancel)
+        self.connect(self.upgradeButton, SIGNAL("clicked()"), self.upgrade)
+        self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
+
+    def upgrade(self):
+        self.state.runNextStep()
+        self.upgradeButton.setEnabled(False)
+        self.cancelButton.setEnabled(True)
+
+    def cancel(self):
+        self.state.comar.cancel()
+        self.state.reset()
+        self.cancelButton.setEnabled(False)
+        self.upgradeButton.setEnabled(True)
+        self.resetSteps()
 
     def setFonts(self):
         self.normalFont = QFont()
@@ -39,6 +51,13 @@ class MainDialog(UI_MainDialog):
 
     def loadIcon(self, name, group=KIcon.Desktop, size=16):
         return KGlobal.iconLoader().loadIcon(name, group, size)
+
+    def resetSteps(self):
+        for step in range(1, 5):
+            step_icon = getattr(self, "step%d_icon" % step)
+            step_icon.setPixmap(QPixmap(""))
+            step_label = getattr(self, "step%d_label" % step)
+            step_label.setFont(self.normalFont)
 
     def step_selected(self, step):
         step_icon = getattr(self, "step%d_icon" % step)
