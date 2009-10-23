@@ -12,11 +12,14 @@
 #
 
 from qt import QObject, PYSIGNAL
+from kdecore import i18n
+from kdeui import KMessageBox, KGuiItem
 
 import os
 import commander
+import pisiiface
 
-STEPS = ["prepare", "setRepositories", "download", "upgrade", "cleanup"]
+STEPS = ["prepare", "setRepositories", "download", "upgrade"]
 
 class State(QObject):
 
@@ -41,6 +44,23 @@ class State(QObject):
         self.parent.step_finished(STEPS.index(step) + 1)
         self.step += 1
 
+    def checkObsoletes(self):
+        obsoletes = pisiiface.getObsoletedList()
+        message = i18n("<qt>Following packages are obsoleted and are not maintained anymore in Pardus 2009. These packages are going to be removed from your system: %1").arg(", ".join(obsoletes))
+        message += i18n("<br>Do you want to continue?</qt>")
+
+        if KMessageBox.Yes == KMessageBox.warningYesNo(self.parent,
+                                                       message,
+                                                       i18n("Warning"),
+                                                       KGuiItem(i18n("Continue"), "ok"),
+                                                       KGuiItem(i18n("Cancel"), "no"),
+                                                       ):
+            return True
+
     def runNextStep(self):
+        if STEPS[self.step] == "download":
+            if not self.checkObsoletes():
+                self.parent.cancel()
+                return
         method = getattr(self.comar, STEPS[self.step])
         method()

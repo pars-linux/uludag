@@ -26,6 +26,7 @@ kdedistutils.setup(
                         'src/about.py',
                         'src/comariface.py',
                         'src/commander.py',
+                        'src/pisiiface.py',
                         'src/dumlogging.py',
                         'src/handler.py',
                         'src/maindialog.py',
