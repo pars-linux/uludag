@@ -365,11 +365,19 @@
                     </property>
                     <property name="sizeHint">
                         <size>
-                            <width>320</width>
+                            <width>260</width>
                             <height>20</height>
                         </size>
                     </property>
                 </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>upgradeButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Start Upgrading</string>
+                    </property>
+                </widget>
                 <widget class="QPushButton">
                     <property name="name">
                         <cstring>cancelButton</cstring>

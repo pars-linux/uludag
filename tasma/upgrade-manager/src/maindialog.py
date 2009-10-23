@@ -25,7 +25,8 @@ class MainDialog(UI_MainDialog):
         UI_MainDialog.__init__(self, parent)
         self.setFonts()
         self.state = state.State(self)
-        self.connect(self.cancelButton, SIGNAL("clicked()"), self.state.runNextStep)
+        self.connect(self.upgradeButton, SIGNAL("clicked()"), self.state.runNextStep)
+        self.connect(self.cancelButton, SIGNAL("clicked()"), self.state.comar.cancel)
 
     def setFonts(self):
         self.normalFont = QFont()
