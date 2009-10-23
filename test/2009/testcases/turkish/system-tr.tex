@@ -19,6 +19,7 @@
   \item Aşağıda bulunan paketler kurulum testine tabidir.
 \begin{verbatim}
  pam_krb5
+ pam_ldap
 \end{verbatim}
 
 \end{enumerate}
@@ -50,6 +51,9 @@ Bilgisayarınızı yeniden başlatın ve açılış ekranının düzgün bir şe
  libgomp
  libobjc
  nasm
+ patch
+ util-macros
+ xorg-proto
 \end{verbatim}
  \item icecream ve icecream scheduler paketleri kurulumu sonrası:
 
@@ -69,7 +73,30 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
 \item Aşağıda bulunan paketler kurulum testine tabidir.
 \begin{verbatim}
  libgcc
+ libXau
+ hdparm
 \end{verbatim}
+
+\item freetype paketi kurulumu sonrası: 
+
+Bilgisayarınızı yeniden başlatın ve ilk açılış ekranında fontların düzgün olduğunu gözlemleyin.
+\item texinfo paketi kurulumu sonrası:
+\begin{verbatim}
+ wget http://svn.pardus.org.tr/uludag/trunk/test/2009/testcases/turkish/editor-tr.tex
+ texi2dvi editor-tr.tex
+ okular editor-tr.dvi
+\end{verbatim}
+
+
+\item pcmciautils paketi kurulumu sonrası:
+
+Eğer takılı bir PCIA kartınız bulunmakta ise, aşağıda bulunan komutun bu kartı listelediğini gözlemleyiniz.
+\begin{verbatim}
+ su -
+ lspcmcia
+\end{verbatim}
+
+
 
 \item man-pages paketi kurulumu sonrası:
 
@@ -281,6 +308,13 @@ Bilgisayarınızı yeniden başlatın. Düzgün bir şekilde açıldığını g�
 \end{enumerate}
 \section{Service alt Bileşeni}
 \begin{enumerate}
+\item omniORB paketi kurulumu sonrası:
+
+Servis yöneticisinden omniORB başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+\begin{verbatim}
+ # service omniORB status
+\end{verbatim}
+
  \item memcached paketi kurulumu sonrası:
 
   programming-tr.pdf python-memcached testini gerçekleştirin. 

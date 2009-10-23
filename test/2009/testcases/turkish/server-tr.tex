@@ -14,6 +14,30 @@
 \begin{document}
 
 \maketitle
+\section{Proxy alt bileşeni}
+\begin{enumerate}
+\item squid paketi kurulumu sonrası:
+
+Servis yöneticisinden squid başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+\begin{verbatim}
+ # service squid status
+\end{verbatim}
+ \item dansguardian paketi kurulumu sonrası:
+
+Servis yöneticisinden dansguardian başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+\begin{verbatim}
+ # service dansguardian status
+\end{verbatim}
+\item ntlmaps paketi kurulumu sonrası:
+
+Servis yöneticisinden ntlmaps başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+\begin{verbatim}
+ # service ntlmaps status
+\end{verbatim}
+\end{enumerate}
+
+\end{enumerate}
+
 \section{Auth alt bileşeni}
 \begin{enumerate}
  \item ypserv paketi kurulumu sonrası:
@@ -75,7 +99,8 @@ Aşağıda bulunan komutlar ile imap ve pop3 paketlerini kontrol edin:
 \begin{enumerate}
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir:
 \begin{verbatim}
-mod_dav_svn 
+mod_dav_svn
+gitweb
 \end{verbatim}
 
 \item webalizer paketi kurulumu sonrası:
@@ -114,12 +139,25 @@ util-tr.pdf phpmyadmin testini gerçekleştiriniz.
 
 \section{Database alt bileşeni}
 \begin{enumerate}
+\item memcached paketi kurulumu sonrası:
+
+programming-tr.pdf python-memcached testini gerçekleştirin.
+
+\item postgreql-python paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.
+ \begin{verbatim}
+  ipython
+  import pgdb \end{verbatim}
+
+
  \item Aşağıda bulunan paketlerin kurulumu sonrası:
 \begin{verbatim}
  postgresql-doc
  postgresql-lib
  postgresql-pl
  postgresql-server
+ postgresql-odbc
 \end{verbatim}
 
 Servis yöneticisinden postgreql sunucusunu başlatın. Aşağıdaki komut ile sunucunun başlatılmış olduğunu gözlemleyin.

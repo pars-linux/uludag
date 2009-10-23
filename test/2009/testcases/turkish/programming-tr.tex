@@ -15,6 +15,25 @@
 \begin{document}
 
 \maketitle
+\section{Debug alt bileşeni}
+\begin{enumerate}
+ \item gdb paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları çalıştırın ve gdb-test.c'in derlendiğini ve daha sonra gdb-test ile ilgili gdb'nin bir hata bulduğunu gözlemleyin.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/debug/gdb-test.c
+gcc -g gdb-test.c -o gdb-test
+./gdb-test
+gdb gdb-example
+run
+backtrace
+quit
+\end{verbatim}
+
+
+\end{enumerate}
+
+
 \section{Microcontroller alt bileşeni}
 \begin{enumerate}
  \item Aşağıda bulunan paketler kurulum testine tabidir.
@@ -31,12 +50,13 @@
 \begin{enumerate}
  \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
-fcgi 
+fcgi
+mcpp
 \end{verbatim}
 
 \item cdecl paketi kurulumu sonrası:
 
-Aşağıda bulunan komutun düzgün çalıştığını gözlemleyin.
+Aşağıda bulunan kopmutun düzgün çalıştığını gözlemleyin.
 \begin{verbatim}
  # cdecl
  cdecl> #include <string.h>
@@ -48,8 +68,36 @@ Aşağıda bulunan komutun düzgün çalıştığını gözlemleyin.
 \begin{enumerate}
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
- mod_dav_svn
- abicheck
+mod_dav_svn
+abicheck
+git-cvs
+git-emacs
+git-gui
+git-svn
+gitk
+\end{verbatim}
+\item mercurial paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyiniz.
+\begin{verbatim}
+ hg clone http://selenic.com/hg mercurial-repo
+ cd mercurial-repo
+ hg parents
+\end{verbatim}
+
+
+\item gitk paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırın ve hatasız bir şekilde bir git deposu bulamadım penceresi açıldığını gözlemleyin.
+\begin{verbatim}
+ gitk 
+\end{verbatim}
+
+\item git-daemon paketi kurulumu sonrası:
+
+Servis yöneticisinden git_daemon başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+\begin{verbatim}
+ # service git_daemon status
 \end{verbatim}
 
 \item git paketi kurulumu sonrası:
@@ -193,6 +241,103 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
 \end{enumerate}
 \subsection{Python alt bileşeni}
 \begin{enumerate}
+\item PyQt paketi kurulumu sonrası:
+
+Aşağıdaki komutları çalıştırın ve bir pencerenin açıldığını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/python/pyqt-test.py
+ python pyqt-test.py
+\end{verbatim}
+
+
+\item sip paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import sip
+\end{verbatim}
+
+\item python-configobj paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import configobj
+\end{verbatim}
+\item python-decorator paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import decorator
+\end{verbatim}
+\item python-mako paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import mako
+\end{verbatim}
+
+\item python-FormEncode paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import formencode
+\end{verbatim}
+
+\item cheetah  paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import Cheetah
+\end{verbatim}
+
+
+\item SQLObject  paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import sqlobject
+\end{verbatim}
+
+\item PyOpenGL  paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import OpenGL
+\end{verbatim}
+
+\item imdbpy  paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import imdb
+\end{verbatim}
+
+\item mutagen  paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz bir şekilde müzik dosyası etiklerini listelediğini gözlemleyin.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/linux.mp3 
+mutagen-inspect linux.mp3
+\end{verbatim}
+
+
+\item python-libcap-ng  paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import capng
+\end{verbatim}
+
 \item python-twitter paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
@@ -403,14 +548,13 @@ python/test_python-memcache.py
  # python test_python-memcache.py
 \end{verbatim}
 
-\item pygtk paketi kurulumu sonrası: 
+\item pygtk, pygtk-docs ve pygtk-demo paketi kurulumu sonrası: 
 
-Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde bir pencerenin açıldığını gözlemleyin.
-
+Aşağıda bulunan komutu çalıştırın ve çıkan listeden bir uygulama seçip çift tıklayın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/toolkit/test_pango.py
- # python test_pango.py
+ pygtk-demo
 \end{verbatim}
+
 
 \item mpmath paketi kurulumu sonrası:  
 
@@ -529,7 +673,9 @@ Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
 
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir
 \begin{verbatim}
-taglib-sharp 
+taglib-sharp
+ndesk-dbus
+ndesk-dbus-glib
 \end{verbatim}
 
  \item gmime, gmime-docs, gmime-sharp paketi kurulumu sonrası:

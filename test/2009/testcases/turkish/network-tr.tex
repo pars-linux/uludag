@@ -16,6 +16,10 @@
 \maketitle
 \section{analyzer alt Bileşeni}
 \begin{enumerate}
+\item aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ aircrack-ng
+\end{verbatim}
 
 \item zniper paketi kurulumu sonrası:
 
@@ -83,6 +87,13 @@ Uygulamayı açın kullanıcısı fazla olan public hublardan birine bağlanmaya
 
 \section{Download alt Bileşeni}
 \begin{enumerate}
+\item aria2 paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun boot.iso'yu sorunsuz bir şekilde indirdiğini gözlemleyin.
+\begin{verbatim}
+ aria2c http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+\end{verbatim}
+
  \item youtube-dl paketi kurulumu sonrası:
 
 Aşağıdaki komutu çalıştırdığınızda .flv uzantılı bir dosyanın indirildiğini gözlemleyin.
@@ -142,6 +153,15 @@ Bu dosyayı indirin ve indirme penceresinin düzgün bir şekilde açıldığın
 
 \end{itemize}
 
+
+\end{enumerate}
+
+\section{Share alt Bileşeni}
+\begin{enumerate}
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ smbldap-tools
+\end{verbatim}
 
 \end{enumerate}
 
@@ -233,6 +253,20 @@ Yukarıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemle
 
 \section{Connection alt Bileşeni}
 \begin{enumerate}
+\item kvpnc paketi kurulumu sonrası:
+
+Kmenüden uygulamanın düzgün çalıştığını gözlemleyin.
+\item wireless-regdb paketi kurulumu sonrası:
+
+networ-tr.pdf crda testini gerçekleştirin.
+\item crda paketi kurulumu sonrası:
+
+Eğer bir edimax kablosuz aygıtınız var ise aşağıda bulunan komutu çalıştırın.
+\begin{verbatim}
+ su -
+ setregdomain TR
+\end{verbatim}
+
 \item ifplugd paketi kurulumu sonrası:
 
 Ağ yöneticisinin kablolu kablosuz tüm ağları listeleyip, otomatik olarak ağları etkinleştirebildiğini ve kapatabildiğini gözlemleyiniz.
