@@ -24,9 +24,17 @@ class MainDialog(UI_MainDialog):
     def __init__(self, parent=None):
         UI_MainDialog.__init__(self, parent)
         self.setFonts()
+        self.setTitle()
         self.state = state.State(self)
         self.connect(self.upgradeButton, SIGNAL("clicked()"), self.upgrade)
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
+
+    def setTitle(self):
+        try:
+            currentRelease = " ".join(open("/etc/pardus-release", "r").readline().split()[0:2])
+        except Exception, e:
+            currentRelease = "Pardus 2008"
+        self.versionTo.setText(i18n("Upgrading from %1 to version 2009.1").arg(currentRelease))
 
     def upgrade(self):
         self.state.runNextStep()
