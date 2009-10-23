@@ -15,6 +15,21 @@
 \begin{document}
 
 \maketitle
+\section{Profiler alt bileşeni}
+\begin{enumerate}
+ \item oprofile paketi kurulumu sonrası
+
+Aşağıda bulunan komutların hatasız çalıştığını gözlemleyin.
+  \begin{verbatim}
+   su -
+   opcontrol --no-vmlinux
+   opcontrol --start
+   opcontrol --dump
+   opreport
+  \end{verbatim}
+
+\end{enumerate}
+
 \section{Debug alt bileşeni}
 \begin{enumerate}
  \item gdb paketi kurulumu sonrası:
@@ -52,6 +67,13 @@ quit
 \begin{verbatim}
 fcgi
 mcpp
+\end{verbatim}
+\item translate-toolkit paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import translate
 \end{verbatim}
 
 \item cdecl paketi kurulumu sonrası:
@@ -95,7 +117,7 @@ Aşağıda bulunan komutu çalıştırın ve hatasız bir şekilde bir git depos
 
 \item git-daemon paketi kurulumu sonrası:
 
-Servis yöneticisinden git_daemon başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+Servis yöneticisinden git\_daemon başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 \begin{verbatim}
  # service git_daemon status
 \end{verbatim}
@@ -189,6 +211,8 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemle
 \section{Language alt bileşeni}
 \subsection{Php alt bileşeni}
 \begin{enumerate}
+
+
  \item php-cli ve php-common paketleri kurulumu sonrası:
 
 Aşağıda bulunan komutları çalıştırdıktan sonra http://localhost/test.php adresine firefox ile girin ve php ile ilgili bilgilerin sayfalandığını gözlemleyin.
@@ -203,6 +227,155 @@ Aşağıda bulunan komutları çalıştırdıktan sonra http://localhost/test.ph
 
 \subsection{Perl alt bileşeni}
 \begin{enumerate}
+\item perl-libwww paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve açın.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/libwww-perl.tar.gz
+\end{verbatim}
+
+Konsoldan;
+\begin{verbatim}
+# cd libwww-perl
+# perl t/TEST
+\end{verbatim}
+
+Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+
+\item perl-Yaml paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/perl-yaml-test.pm
+ perl perl-yaml-test.pm
+\end{verbatim}
+
+\item perl-TimeDate paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve açın.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/TimeDate.tar.gz
+\end{verbatim}
+
+Konsoldan;
+\begin{verbatim}
+# cd TimeDate
+# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+
+\item perl-Storable paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve açın.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Storable.tar.gz
+\end{verbatim}
+
+Konsoldan;
+\begin{verbatim}
+# cd Storable
+# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+
+\item perl-RPC-XML paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve açın.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/RPC-XML.tar.gz
+\end{verbatim}
+
+Konsoldan;
+\begin{verbatim}
+# cd RPC-XML
+# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+
+\item perl-IP-Country paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve açın.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/IP-Country.tar.gz
+\end{verbatim}
+
+Konsoldan;
+\begin{verbatim}
+# cd IP-Country
+# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+
+\item perl-HTML-Parser paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve açın.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/HTML-Parser.tar.gz
+\end{verbatim}
+
+Konsoldan;
+\begin{verbatim}
+# cd HTML-Parser
+# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ perl-Git
+\end{verbatim}
+
+\item perl-Date-Calc paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve açın.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Date-Calc.tar.gz
+\end{verbatim}
+
+Konsoldan;
+\begin{verbatim}
+# cd Date-Calc
+# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+
+\item perl-Class-ISA paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve açın.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Class-ISA.tar.gz
+\end{verbatim}
+
+Konsoldan;
+\begin{verbatim}
+# cd Class-ISA
+# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+
+\item perl-Class-Accessor paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve açın.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Class-Accessor.tar.gz
+\end{verbatim}
+
+Konsoldan;
+\begin{verbatim}
+# cd Class-Accessor
+# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+
+
 \item perl-IO-Socket-SSL paketi kurulumu sonrası:
 
 Aşağıda bulunan dosyayı indirin ve açın.
@@ -347,7 +520,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \end{verbatim}
 
 
-\item python-cx_freeze paketi kurulumu sonrası:
+\item python-cx\_freeze paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
@@ -698,6 +871,14 @@ Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
 
 
 \begin{itemize}
+\item ocaml paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz bir şekilde çalıştırğını gözlemleyin.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/ocaml-test.ml 
+ocaml ocaml-test.ml
+\end{verbatim}
+
  \item R paketi kurulumu sonrası:
 
 Aşağıda bulunan komutları çalıştırın ve bir grafiğin oluştuğunu gözlemleyin.
