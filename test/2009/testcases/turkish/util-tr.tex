@@ -16,6 +16,11 @@
 \maketitle
 \section{Archive alt bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ unshield
+\end{verbatim}
+
 \item rar paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun sorunsuz bir şekilde test.tar dosyasını oluşturduğunu gözlemleyin.
@@ -139,6 +144,14 @@ bash: amsn: command not found
 \end{enumerate}
 \section{Misc alt bileşeni}
 \begin{enumerate}
+\item pax-utils paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları çalıştırın sorunsuz çalıştıklarını gözlemleyin.
+\begin{verbatim}
+ scanelf -lqtmyR /
+ dumpelf /bin/hostname
+\end{verbatim}
+
  \item fslint paketi kurulumu sonrası:
 
 Kmenüden açılabildiğini gözlemleyin.
