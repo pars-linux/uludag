@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 xorgConf = "/etc/X11/xorg.conf"
