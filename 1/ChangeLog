@@ -1,0 +1,68 @@
+2009-08-02  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* data/DriversDB:
+		Prefer nvidia-drivers-current over nvidia-drivers180.
+		Add new PCI ids.
+	* zorg/hwdata.py:
+		Add nvidia-drivers-current to the list of drivers.
+
+2009-05-21  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* data/DriversDB:
+		Make nvidia-drivers180 default for new cards.
+		Add new PCI ids.
+
+2009-03-30  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* data/DriversDB:
+		Prefer nvidia-drivers package for 10de:0242.
+
+2009-03-28  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* zorg/parser.py:
+		Do case-insensitive comparison for entry names.
+	* zorg/config.py:
+		Remove no-modes-line as randr12 implies that.
+		Do not create wacom sections.
+
+2009-02-19  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* zorg/hwdata.py:
+		Copy hwdata module from display manager.
+		Add vboxvideo driver to the driver list.
+
+2009-02-02  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* data/DriversDB, zorg/{config,probe}.py:
+		Add support for VirtualBox video and mouse drivers.
+
+2009-01-22  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* zorg/parser.py:
+		Fix a regression introduced with
+		type/instance changes.
+
+2009-01-21  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* zorg/probe.py:
+		Fixed framebuffer device node name.
+	* data/DriversDB:
+		Added new PCI IDs for nvidia-180.
+
+2008-11-01  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* data/DriversDB:
+		Renamed nvidia packages.
+		Added new cards.
+	* data/modprobe.d/zorg:
+		Added new module names for nvidia.
+	* zorg/__init__.py:
+		Bumped version to 1.1.1.
+
+2008-10-04  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* zorg/__init__.py:
+		Bumped version to 1.1.
+	* zorg/config.py:
+		Added support to create InputDevice sections
+		for wacom devices.
+
+2008-09-24  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* zorg/probe.py:
+		Added a high timeout value for dbus calls since
+		enabling a driver package might take a long time on slow
+		machines.
+
+2008-09-17  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* AUTHORS, ChangeLog:
+		Added AUTHORS and ChangeLog.
