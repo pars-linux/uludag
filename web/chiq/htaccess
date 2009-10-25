@@ -1,6 +1,0 @@
-PythonPath "['/var/www/pardus.org.tr'] + sys.path"
-
-PythonHandler django.core.handlers.modpython
-SetEnv DJANGO_SETTINGS_MODULE chiq.settings
-SetHandler python-program
-PythonDebug On
