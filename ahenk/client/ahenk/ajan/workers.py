@@ -56,14 +56,16 @@ class Fetcher(threading.Thread):
         self.active = True
         self.options = options
         self.queue_fetcher = queue_fetcher
+        self.ldap = utils.LDAP(options.hostname, options.domain)
 
     def run(self):
         while self.active:
-            # FIXME: Fetch policy
-            import random
-            if random.randint(0, 10) < 5:
-                logging.debug("New policy fetched.")
+            logging.debug("Checking policy...")
+            policy = self.ldap.searchComputer()
+            if len(policy):
+                logging.debug("New policy fetched: %s" % policy)
                 self.queue_fetcher.put(("policy", "x"))
-                time.sleep(3)
-            # FIXME: Fetch policy
-            time.sleep(0.5)
+            c = 0
+            while c < self.options.interval and self.active:
+                c += 0.5
+                time.sleep(0.5)
