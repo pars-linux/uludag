@@ -21,9 +21,10 @@ from PyQt4.QtCore import SIGNAL
 import QTermWidget
 
 # PyKDE
-from PyKDE4.kdeui import KIcon, KMessageBox, KMainWindow
-from PyKDE4.kdecore import i18n, KUrl
-from PyKDE4.kio import KFileDialog, KFile
+from PyQt4.QtGui import QIcon, QMessageBox, QMainWindow,QFileDialog
+from PyKDE4.kdecore import i18n
+from PyQt4.QtCore import QFile
+
 
 # UI
 from gui.ui.main import Ui_MainWindow
@@ -40,9 +41,9 @@ from repotools.packages import Repository, ExIndexBogus, ExPackageCycle, ExPacka
 from repotools.project import Project, ExProjectMissing, ExProjectBogus
 
 
-class MainWindow(KMainWindow, Ui_MainWindow):
+class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, args):
-        KMainWindow.__init__(self)
+        QMainWindow.__init__(self)
         self.setupUi(self)
 
         # Terminal
@@ -94,17 +95,17 @@ class MainWindow(KMainWindow, Ui_MainWindow):
 
     def setIcons(self):
         # Top toolbar
-        self.pushNew.setIcon(KIcon("document-new"))
-        self.pushOpen.setIcon(KIcon("document-open"))
-        self.pushSave.setIcon(KIcon("document-save"))
-        self.pushSaveAs.setIcon(KIcon("document-save-as"))
-        self.pushExit.setIcon(KIcon("dialog-close"))
+        self.pushNew.setIcon(QIcon("document-new"))
+        self.pushOpen.setIcon(QIcon("document-open"))
+        self.pushSave.setIcon(QIcon("document-save"))
+        self.pushSaveAs.setIcon(QIcon("document-save-as"))
+        self.pushExit.setIcon(QIcon("dialog-close"))
 
         # Bottom toolbar
-        self.pushUpdateRepo.setIcon(KIcon("view-refresh"))
-        self.pushSelectPackages.setIcon(KIcon("games-solve"))
-        self.pushSelectLanguages.setIcon(KIcon("applications-education-language"))
-        self.pushMakeImage.setIcon(KIcon("media-playback-start"))
+        self.pushUpdateRepo.setIcon(QIcon("view-refresh"))
+        self.pushSelectPackages.setIcon(QIcon("games-solve"))
+        self.pushSelectLanguages.setIcon(QIcon("applications-education-language"))
+        self.pushMakeImage.setIcon(QIcon("media-playback-start"))
 
     def slotNew(self):
         """
@@ -118,16 +119,16 @@ class MainWindow(KMainWindow, Ui_MainWindow):
             Open button fires this function.
         """
         if not filename:
-            filename = KFileDialog.getOpenFileName(KUrl("."), "*.xml", self, i18n("Select project file"))
+            filename = QFileDialog.getOpenFileName(self, i18n("Select project file"), ".", "*.xml")
         if filename:
             self.project = Project()
             try:
                 self.project.open(unicode(filename))
             except ExProjectMissing:
-                KMessageBox.error(self, i18n("Project file is missing."))
+                QMessageBox.error(self, i18n("Project file is missing."))
                 return
             except ExProjectBogus:
-                KMessageBox.error(self, i18n("Project file is corrupt."))
+                QMessageBox.error(self, i18n("Project file is corrupt."))
                 return
             self.loadProject()
 
@@ -145,7 +146,7 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         """
             Save as button fires this function.
         """
-        filename = KFileDialog.getSaveFileName(KUrl(""), "", self, i18n("Save project"))
+        filename = QFileDialog.getSaveFileName(self, i18n("Save project"), "", "*.xml")
         if filename:
             self.project.filename = unicode(filename)
             self.slotSave()
@@ -154,7 +155,7 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         """
             Browse repository button fires this function.
         """
-        filename = KFileDialog.getOpenFileName(KUrl("."), "pisi-index.xml*", self, i18n("Select repository index"))
+        filename = QFileDialog.getOpenFileName(self, i18n("Select repository index"), ".", "pisi-index.xml*")
         if filename:
             filename = unicode(filename)
             if filename.startswith("/"):
@@ -165,7 +166,7 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         """
             Browse plugin package button fires this function.
         """
-        filename = KFileDialog.getOpenFileName(KUrl("."), "*.pisi", self, i18n("Select plugin package"))
+        filename = QFileDialog.getOpenFileName(self, i18n("Select plugin package"), ".", "*.pisi")
         if filename:
             self.linePluginPackage.setText(filename)
 
@@ -173,7 +174,7 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         """
             Browse release files button fires this function.
         """
-        directory = KFileDialog.getExistingDirectory(KUrl(), self)
+        directory = QFileDialog.getExistingDirectory(self, "")
         if directory:
             self.lineReleaseFiles.setText(directory)
 
@@ -181,7 +182,7 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         """
             Browse work folder button fires this function.
         """
-        directory = KFileDialog.getExistingDirectory(KUrl(),  self)
+        directory = QFileDialog.getExistingDirectory(self, "")
         if directory:
             self.lineWorkFolder.setText(directory)
 
@@ -245,13 +246,13 @@ class MainWindow(KMainWindow, Ui_MainWindow):
             Checks required fields for the project.
         """
         if not len(self.lineTitle.text()):
-            KMessageBox.error(self, i18n("Image title is missing."))
+            QMessageBox.error(self, i18n("Image title is missing."))
             return False
         if not len(self.lineRepository.text()):
-            KMessageBox.error(self, i18n("Repository URL is missing."))
+            QMessageBox.error(self, i18n("Repository URL is missing."))
             return False
         if not len(self.lineWorkFolder.text()):
-            KMessageBox.error(self, i18n("Work folder is missing."))
+            QMessageBox.error(self, i18n("Work folder is missing."))
             return False
         return True
 
@@ -296,26 +297,26 @@ class MainWindow(KMainWindow, Ui_MainWindow):
             self.repo = self.project.get_repo(self.progress, update_repo=update_repo)
         except ExIndexBogus, e:
             self.progress.finished()
-            KMessageBox.error(self, i18n("Unable to load package index. URL is wrong, or file is corrupt."))
+            QMessageBox.error(self, i18n("Unable to load package index. URL is wrong, or file is corrupt."))
             return False
         except ExPackageCycle, e:
             self.progress.finished()
             cycle = " > ".join(e.args[0])
-            KMessageBox.error(self, unicode(i18n("Package index has errors. Cyclic dependency found:\n  %s.")) % cycle)
+            QMessageBox.error(self, unicode(i18n("Package index has errors. Cyclic dependency found:\n  %s.")) % cycle)
             return False
         except ExPackageMissing, e:
             self.progress.finished()
-            KMessageBox.error(self, unicode(i18n("Package index has errors. '%s' depends on non-existing '%s'.")) % e.args)
+            QMessageBox.error(self, unicode(i18n("Package index has errors. '%s' depends on non-existing '%s'.")) % e.args)
             return False
         missing_components, missing_packages = self.project.get_missing()
         if len(missing_components):
-            KMessageBox.information(self, i18n("There are missing components. Removing."))
+            QMessageBox.information(self, i18n("There are missing components. Removing."))
             for component in missing_components:
                 if component in self.project.selected_components:
                     self.project.selected_components.remove(component)
             return self.updateRepo(update_repo=False)
         if len(missing_packages):
-            KMessageBox.information(self, i18n("There are missing packages. Removing."))
+            QMessageBox.information(self, i18n("There are missing packages. Removing."))
             for package in missing_packages:
                 if package in self.project.selected_packages:
                     self.project.selected_packages.remove(package)
