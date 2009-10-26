@@ -42,6 +42,7 @@ class MainDialog(UI_MainDialog):
         self.cancelButton.setEnabled(True)
 
     def cancel(self):
+        self.operationStatus.setText("")
         self.state.comar.cancel()
         self.state.reset()
         self.cancelButton.setEnabled(False)
