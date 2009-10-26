@@ -46,8 +46,8 @@ class State(QObject):
 
     def checkObsoletes(self):
         obsoletes = pisiiface.getObsoletedList()
-        message = i18n("<qt>Following packages are obsoleted and are not maintained anymore in Pardus 2009. These packages are going to be removed from your system: %1").arg(", ".join(obsoletes))
-        message += i18n("<br>Do you want to continue?</qt>")
+        message = i18n("<qt>Following packages are obsoleted and are not maintained anymore in Pardus 2009 repositories. These packages are going to be removed from your system:<br><br> %1").arg(", ".join(obsoletes))
+        message += i18n("<br><br>Do you want to continue?</qt>")
 
         if KMessageBox.Yes == KMessageBox.warningYesNo(self.parent,
                                                        message,
