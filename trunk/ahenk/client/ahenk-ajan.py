@@ -4,6 +4,7 @@
 import optparse
 import os
 import sys
+import ConfigParser
 
 from ahenk.ajan import mainloop
 
@@ -17,12 +18,6 @@ if __name__ == "__main__":
                       help="Run as a daemon.")
     parser.add_option("-k", "--kill", action="store_true", dest="kill",
                       help="Kill running daemon.")
-    parser.add_option("-l", "--logfile", dest="logfile", default="/var/log/ahenk-ajan.log",
-                      help="Use alternate log file", metavar="FILE")
-    parser.add_option("-m", "--moddir", dest="moddir", default="/var/lib/ahenk-ajan",
-                      help="Use alternate module directory", metavar="DIR")
-    parser.add_option("-p", "--pidfile", dest="pidfile", default="/var/run/ahenk-ajan.pid",
-                      help="Use alternate PID file", metavar="FILE")
     parser.add_option("-v", "--verbose", dest="verbose", action="store_true",
                       help="Verbose mode")
 
@@ -33,9 +28,44 @@ if __name__ == "__main__":
         sys.exit(1)
 
     options.conffile = os.path.realpath(options.conffile)
-    options.logfile = os.path.realpath(options.logfile)
-    options.moddir = os.path.realpath(options.moddir)
-    options.pidfile = os.path.realpath(options.pidfile)
+
+    cp = ConfigParser.ConfigParser()
+    cp.read(options.conffile)
+
+    if not cp.has_option("server", "hostname"):
+        print "No Ahenk-Server address defined in %s" % options.conffile
+        sys.exit(1)
+    if not cp.has_option("server", "domain"):
+        print "No domainname defined in %s" % options.conffile
+        sys.exit(1)
+
+    options.hostname = cp.get("server", "hostname")
+    options.domain = cp.get("server", "domain")
+
+    if cp.has_option("server", "interval"):
+        options.interval = int(cp.get("server", "interval"))
+    else:
+        options.interval = 60
+
+    if cp.has_option("general", "pidfile"):
+        options.pidfile = cp.get("general", "pidfile")
+    else:
+        options.pidfile = "/var/run/ahenk-ajan.pid"
+
+    if cp.has_option("general", "logfile"):
+        options.logfile = cp.get("general", "logfile")
+    else:
+        options.logfile = "/var/run/ahenk-ajan.pid"
+
+    if cp.has_option("general", "moddir"):
+        options.moddir = cp.get("general", "moddir")
+    else:
+        options.moddir = "/var/lib/ahenk-ajan/"
+
+    if cp.has_option("general", "policydir"):
+        options.policydir = cp.get("general", "policydir")
+    else:
+        options.policydir = "/var/db/ahenk-ajan/"
 
     if options.daemon:
         daemon = mainloop.Ajan(options)

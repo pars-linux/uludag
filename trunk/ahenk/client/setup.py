@@ -18,6 +18,7 @@ distfiles = """
     ahenk/*.py
     ahenk/ajan/*.py
     modules/*.py
+    etc/ahenk-ajan.conf
 """
 
 def make_dist():
@@ -59,9 +60,18 @@ setup(
     name="ahenk-ajan",
     version=version,
     license = "GPL",
-    packages = ['ahenk', "ahenk.ajan"],
+    packages = [
+        # Main module
+        "ahenk",
+        # Agent module
+        "ahenk.ajan"
+    ],
     data_files = [
+        # Main application
         ('/sbin', ['ahenk-ajan.py']),
+        # Configuration file
+        ('/etc', ['etc/ahenk-ajan.conf']),
+        # Modules
         ('/var/lib/ahenk-ajan', ['modules/mod_test.py']),
     ],
     cmdclass = {

@@ -94,14 +94,20 @@ class ModManager:
 
 
 class LDAP:
-    def __init__(self, hostname, domain, username, password):
+    def __init__(self, hostname, domain, username=None, password=None):
         self.dc = "dc=" + domain.replace(".", ", dc=")
-        self.cn = "cn=" + username + ", " + self.dc
         self.connection = ldap.open(hostname)
-        self.connection.simple_bind(self.cn, password)
+        if username:
+            self.cn = "cn=" + username + ", " + self.dc
+            self.connection.simple_bind(self.cn, password)
 
     def getAll(self):
         return self.connection.search_s(self.dc, ldap.SCOPE_SUBTREE)
+
+    def searchComputer(self, hostname=None):
+        if not hostname:
+            hostname = os.uname()[1]
+        return self.connection.search_s(self.dc, ldap.SCOPE_SUBTREE, "(&(objectClass=pardusComputer)(cn=%s))" % hostname)
 
     def close(self):
         self.connection.unbind_s()
