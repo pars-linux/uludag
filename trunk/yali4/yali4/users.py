@@ -102,22 +102,50 @@ class User:
 
         if not os.path.exists(confFile):
             import yali4.gui.context as ctx
-            ctx.debugger.log("SAL: Failed, kdmrc not found; possibly KDE is not installed !")
+            ctx.debugger.log("setAutoLogin: Failed, kdmrc not found; possibly KDE is not installed !")
             return False
 
-        import ConfigParser
-        section = 'X-:0-Core'
-        kdmrc = ConfigParser.ConfigParser()
-        kdmrc.optionxform = str
-        kdmrc.readfp(open(confFile))
-        for opt in self.autoLoginDefaults.keys():
-            kdmrc.set(section,opt,self.autoLoginDefaults[opt])
-        # Set State
-        kdmrc.set(section,'AutoLoginEnable',str(state).lower())
-        # Set User
-        kdmrc.set(section,'AutoLoginUser',self.username)
-        kdmrc.write(open(confFile,'w'))
+        # We shouldn't use ConfigParser for changing kdmrc: 1- It removes all useful comments 2- KConfig confuses when it sees assignments including space characters like ' = ' 
+        # Bugs: #9144 and #10034
 
+        import re
+
+        def setKey(section, key, value, rc):
+            sectionEscaped = re.escape(section)
+
+            if not re.compile('^%s$' % sectionEscaped, re.MULTILINE).search(kdmrc):
+                import yali4.gui.context as ctx
+                ctx.debugger.log("setAutoLogin: Failed, '%s' section not found in kdmrc." % section)
+                return False
+
+            result = re.compile('^%s=(.*)$' % key, re.MULTILINE)
+            if result.search(rc):
+                return result.sub('%s=%s' % (key, value), rc)
+
+            result = re.compile('^#%s=(.*)$' % key, re.MULTILINE)
+            if result.search(rc):
+                return result.sub('%s=%s' % (key, value), rc)
+
+            # If key can not be found, insert key=value right below the section
+            return re.compile('^%s$' % sectionEscaped, re.MULTILINE).sub("%s\n%s=%s" % (section, key, value), rc)
+
+        kdmrc = open(confFile).read()
+        section = "[X-:0-Core]"
+
+        # Get a deep copy of default option dictionary and add AutoLoginEnable and AutoLoginuser options
+        import copy
+        autoLoginDefaults = copy.deepcopy(self.autoLoginDefaults)
+        autoLoginDefaults['AutoLoginEnable'] = str(state).lower()
+        autoLoginDefaults['AutoLoginUser'] = self.username
+
+        for opt in autoLoginDefaults.keys():
+            kdmrc = setKey(section, opt, autoLoginDefaults[opt], kdmrc)
+            if kdmrc is False:
+                return False
+
+        kdmrcfp = open(confFile, 'w')
+        kdmrcfp.write(kdmrc)
+        kdmrcfp.close()
 
 nickmap = {
     u"ğ": u"g",
