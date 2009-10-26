@@ -42,7 +42,8 @@ class State(QObject):
 
     def statusInstalling(self, total, current):
         message = i18n("<qt>Installing %1 of %2 packages</qt>").arg(current).arg(total)
-        self.parent.operationStatus.setText(message)
+        if current <= total:
+            self.parent.operationStatus.setText(message)
 
     def stepStarted(self, operation):
         # System.Upgrader.{prepare, setRepositories...}
