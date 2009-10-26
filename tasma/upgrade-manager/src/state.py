@@ -31,7 +31,8 @@ class State(QObject):
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.stepFinished)
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), lambda:QTimer.singleShot(1000, self.runNextStep))
         self.connect(self.comar, PYSIGNAL("statusDownloading(int, int)"), self.statusDownloading)
-        self.connect(self.comar, PYSIGNAL("statusInstalling(int, int)"), self.statusInstalling)
+        self.connect(self.comar, PYSIGNAL("statusInstalling(QString, int, int)"), self.statusInstalling)
+        self.connect(self.comar, PYSIGNAL("statusConfiguring(QString, int, int)"), self.statusConfiguring)
 
     def reset(self):
         self.step = 0
@@ -40,8 +41,13 @@ class State(QObject):
         message = i18n("<qt>Downloading %1 of %2 packages</qt>").arg(current).arg(total)
         self.parent.operationStatus.setText(message)
 
-    def statusInstalling(self, total, current):
-        message = i18n("<qt>Installing %1 of %2 packages</qt>").arg(current).arg(total)
+    def statusInstalling(self, package, total, current):
+        message = i18n("<qt>Installing (%1) %2 of %3 packages</qt>").arg(package).arg(current).arg(total)
+        if current <= total:
+            self.parent.operationStatus.setText(message)
+
+    def statusConfiguring(self, package, total, current):
+        message = i18n("<qt>Configuring (%1) %2 of %3 packages</qt>").arg(package).arg(current).arg(total)
         if current <= total:
             self.parent.operationStatus.setText(message)
 
