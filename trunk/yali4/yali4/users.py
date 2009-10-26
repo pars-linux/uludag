@@ -147,6 +147,8 @@ class User:
         kdmrcfp.write(kdmrc)
         kdmrcfp.close()
 
+        return True
+
 nickmap = {
     u"ğ": u"g",
     u"ü": u"u",
