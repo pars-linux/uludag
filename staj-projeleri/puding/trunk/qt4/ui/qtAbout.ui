@@ -48,7 +48,7 @@ border: none;</string>
    <item row="2" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -57,8 +57,8 @@ border: none;</string>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
         <widget class="QPlainTextEdit" name="plaintext_authors">
-         <property name="plainText">
-          <string/>
+         <property name="textInteractionFlags">
+          <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
          </property>
         </widget>
        </item>
@@ -70,7 +70,11 @@ border: none;</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
-        <widget class="QPlainTextEdit" name="plaintext_translators"/>
+        <widget class="QPlainTextEdit" name="plaintext_translators">
+         <property name="textInteractionFlags">
+          <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -80,7 +84,11 @@ border: none;</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <widget class="QPlainTextEdit" name="plaintext_artwork"/>
+        <widget class="QPlainTextEdit" name="plaintext_artwork">
+         <property name="textInteractionFlags">
+          <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
