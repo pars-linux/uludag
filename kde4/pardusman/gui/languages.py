@@ -15,10 +15,6 @@
 from PyQt4.QtCore import SIGNAL
 from PyQt4.QtGui import QDialog, QListWidgetItem
 
-# PyKDE
-from PyKDE4.kdeui import KIcon
-from PyKDE4.kdecore import i18n
-
 # UI
 from gui.ui.languages import Ui_LanguagesDialog
 
