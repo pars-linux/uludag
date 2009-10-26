@@ -1,3 +1,7 @@
+2009-10-26  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* data/DriversDB:
+		Add new ATI cards.
+
 2009-05-01  Fatih Aşıcı  <fatih@pardus.org.tr>
 	* zorg/probe.py:
 		Implement a simplified version of getPrimaryCard.
