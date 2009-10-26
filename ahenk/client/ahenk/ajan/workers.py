@@ -23,7 +23,7 @@ class Applier(threading.Thread):
             if not self.queue_applier.empty():
                 policy = self.queue_applier.get()
                 # FIXME: Apply policy
-                logging.debug("Applying policy...")
+                logging.debug("Applying policy: %s" % policy)
                 # FIXME: Apply policy
             else:
                 # Update modules
@@ -63,8 +63,13 @@ class Fetcher(threading.Thread):
             logging.debug("Checking policy...")
             policy = self.ldap.searchComputer()
             if len(policy):
-                logging.debug("New policy fetched: %s" % policy)
-                self.queue_fetcher.put(("policy", "x"))
+                ldif = self.ldap.getLDIF(policy[0])
+                fn_policy = os.path.join(self.options.policydir, "latest_policy")
+                hash = utils.getFileHash(fn_policy)
+                if hash != utils.getStrHash(ldif):
+                    file(fn_policy, "w").write(ldif)
+                    logging.debug("New policy fetched: %s" % policy[0][1])
+                    self.queue_fetcher.put(("policy", policy[0][1]))
             c = 0
             while c < self.options.interval and self.active:
                 c += 0.5

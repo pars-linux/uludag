@@ -1,8 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import hashlib
 import ldap
+import ldif
 import os
+import StringIO
 import time
 
 
@@ -112,3 +115,20 @@ class LDAP:
     def close(self):
         self.connection.unbind_s()
         self.connection.close()
+
+    def getLDIF(self, value):
+        output = StringIO.StringIO()
+        writer = ldif.LDIFWriter(output)
+        writer.unparse(value[0], value[1])
+        text = output.getvalue()
+        output.close()
+        return text
+
+
+def getStrHash(s):
+    return hashlib.sha1(s).hexdigest()
+
+def getFileHash(f):
+    if not os.path.exists(f):
+        return ""
+    return hashlib.sha1(file(f).read()).hexdigest()
