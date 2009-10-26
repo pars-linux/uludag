@@ -342,7 +342,7 @@
                 <cstring>operationStatus</cstring>
             </property>
             <property name="text">
-                <string>Downloading 3 of 40 packages at 83.1 kb/s</string>
+                <string>Downloading 3 of 40 packages</string>
             </property>
         </widget>
         <widget class="QLayoutWidget" row="9" column="0">
