@@ -77,5 +77,9 @@ class State(QObject):
             if not self.checkObsoletes():
                 self.parent.cancel()
                 return
+
+        if STEPS[self.step] in ["upgrade", "download"]:
+            self.parent.operationStatus.setText(i18n("Resolving dependencies..."))
+
         method = getattr(self.comar, STEPS[self.step])
         method()
