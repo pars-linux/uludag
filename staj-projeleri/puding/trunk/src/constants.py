@@ -9,7 +9,7 @@ from os import getenv
 
 NAME = "puding"
 LOCALE = "/usr/share/locale"
-VERSION = "0.1"
+VERSION = "0.2"
 HOME = "%s/.%s" % (getenv("HOME"), NAME)
 SHARE = "/usr/share/%s" % NAME
 SYSLINUX = "/usr/lib/syslinux"
