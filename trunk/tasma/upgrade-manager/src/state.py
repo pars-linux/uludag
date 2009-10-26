@@ -31,12 +31,17 @@ class State(QObject):
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.stepFinished)
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), lambda:QTimer.singleShot(1000, self.runNextStep))
         self.connect(self.comar, PYSIGNAL("statusDownloading(int, int)"), self.statusDownloading)
+        self.connect(self.comar, PYSIGNAL("statusInstalling(int, int)"), self.statusInstalling)
 
     def reset(self):
         self.step = 0
 
     def statusDownloading(self, total, current):
         message = i18n("<qt>Downloading %1 of %2 packages</qt>").arg(current).arg(total)
+        self.parent.operationStatus.setText(message)
+
+    def statusInstalling(self, total, current):
+        message = i18n("<qt>Installing %1 of %2 packages</qt>").arg(current).arg(total)
         self.parent.operationStatus.setText(message)
 
     def stepStarted(self, operation):
