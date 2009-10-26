@@ -60,7 +60,7 @@ def convertQtFiles(file_list):
             os.system("/usr/bin/pyuic4 %s -o puding/%s" % (i, file_name.replace(".ui", ".py")))
 
         if os.path.splitext(i)[1] == ".ts":
-            os.system("/usr/bin/lrelease-qt4 %s -qm locale/qm/%s" % (i, file_name.replace(".ts", ".qm")))
+            os.system("/usr/bin/lrelease %s -qm locale/qm/%s" % (i, file_name.replace(".ts", ".qm")))
 
 def createMoFiles():
     mo_dir = "locale/mo/"

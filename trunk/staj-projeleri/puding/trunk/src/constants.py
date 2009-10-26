@@ -14,8 +14,17 @@ HOME = "%s/.%s" % (getenv("HOME"), NAME)
 SHARE = "/usr/share/%s" % NAME
 SYSLINUX = "/usr/lib/syslinux"
 URL = "http://www.gokmengorgen.net/puding"
-CORE_DEVELOPER = "Gökmen Görgen"
-CORE_EMAIL = "gkmngrgn@gmail.com"
+CORE_DEVELOPER = u"Gökmen Görgen"
+CORE_EMAIL = "gkmngrgn [at] gmail.com"
+ART_CONTRIBUTOR = u"Yasin Özcan, hamfindik [at] gmail.com"
+TRANSLATORS = u"""\
+de: Stefan Wilhelm, sw1976de [at] googlemail.com<br />
+es: Klemens Häckel click3d [at] linuxmail. org<br />
+fr: Philippe Svetoslavsky, philsvet [at] gmail.com<br />
+nl: Anton Tolboom, atolboo [at] gmail.com<br />
+sv: Patrik Karlsson, patrik [at] pardus.nu<br />
+tr: Necmettin Begiter, necmettin.begiter [at] gmail.com
+"""
 SUMMARY = "An USB Image Creator For Pardus Linux."
 DESCRIPTION = "Puding is an USB image creator for Pardus Linux."
 YEAR = "2009"
