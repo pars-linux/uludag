@@ -27,9 +27,12 @@ from constants import SHARE
 from constants import URL
 from constants import VERSION
 from constants import YEAR
+from constants import ART_CONTRIBUTOR
+from constants import TRANSLATORS
 
-from puding import qtMain
+from puding import qtAbout
 from puding import qtConfirmDialog
+from puding import qtMain
 from puding import qtProgressBar
 from puding import qtSelectDisk
 
@@ -72,17 +75,8 @@ class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
 
     @QtCore.pyqtSignature("bool")
     def on_actionAbout_triggered(self):
-        description = self.tr("Puding is an USB image creator for Pardus Linux.")
-        copyright = self.tr("Copyright (c) %s TUBITAK / UEKAE" % YEAR)
-
-        QtGui.QMessageBox.about(self, self.tr("About Puding"), """\
-<b>%s</b> - %s<br />
-%s<br /><br />
-%s<br />
-%s<br />
-%s, <i>%s</i><br />
-<a href="%s">%s</a>""" % (NAME, VERSION, description, LICENSE_NAME, \
-                          copyright, CORE_DEVELOPER, CORE_EMAIL, URL, URL))
+        about_puding = About()
+        about_puding.exec_()
 
     @QtCore.pyqtSignature("bool")
     def on_button_create_clicked(self):
@@ -288,6 +282,24 @@ class ProgressBar(QtGui.QDialog, qtProgressBar.Ui_Dialog):
     def incrementProgress(self):
         current_value = self.progressBar.value()
         self.progressBar.setValue(current_value + 1)
+
+class About(QtGui.QDialog, qtAbout.Ui_Dialog):
+    def __init__(self, parent = None):
+        super(About, self).__init__(parent)
+        self.setupUi(self)
+
+        description = self.tr("Puding is an USB image creator for Pardus Linux.")
+        copyright = self.tr("Copyright (c) %s TUBITAK / UEKAE" % YEAR)
+
+        about_text = "<b>puding</b> - %s<br>%s<br>%s<br><br><a href=\"%s\">%s</a><br>" % (VERSION, description, copyright, URL, URL)
+        self.label_description.setText(about_text)
+
+        authors = "%s, %s" % (CORE_DEVELOPER, CORE_EMAIL)
+        translators = TRANSLATORS
+        art_contributor = ART_CONTRIBUTOR
+        self.textbrowser_authors.setHtml(authors)
+        self.textbrowser_translator.setHtml(translators)
+        self.textbrowser_artwork.setHtml(art_contributor)
 
 class ProgressIncrementChecksum(QtCore.QThread):
     def __init__(self, dialog, source):
