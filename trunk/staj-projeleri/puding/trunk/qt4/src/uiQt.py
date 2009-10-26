@@ -297,9 +297,9 @@ class About(QtGui.QDialog, qtAbout.Ui_Dialog):
         authors = "%s, %s" % (CORE_DEVELOPER, CORE_EMAIL)
         translators = TRANSLATORS
         art_contributor = ART_CONTRIBUTOR
-        self.textbrowser_authors.setHtml(authors)
-        self.textbrowser_translator.setHtml(translators)
-        self.textbrowser_artwork.setHtml(art_contributor)
+        self.plaintext_authors.setPlainText(authors)
+        self.plaintext_translators.setPlainText(translators)
+        self.plaintext_artwork.setPlainText(art_contributor)
 
 class ProgressIncrementChecksum(QtCore.QThread):
     def __init__(self, dialog, source):
