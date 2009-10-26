@@ -11,7 +11,7 @@
 # Please read the COPYING .
 #
 
-from qt import QObject, PYSIGNAL
+from qt import QObject, PYSIGNAL, QTimer
 from kdecore import i18n
 from kdeui import KMessageBox, KGuiItem
 
@@ -29,7 +29,7 @@ class State(QObject):
         self.step = 0
         self.connect(self.comar, PYSIGNAL("stepStarted(QString)"), self.stepStarted)
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.stepFinished)
-        self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.runNextStep)
+        self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), lambda:QTimer.singleShot(1000, self.runNextStep))
 
     def reset(self):
         self.step = 0
