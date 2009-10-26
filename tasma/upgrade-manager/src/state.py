@@ -43,7 +43,7 @@ class State(QObject):
         except ZeroDivisionError:
             percent = 100
 
-        self.progress.setProgress(percent)
+        self.progressBar.setProgress(percent)
 
     def statusDownloading(self, total, current):
         message = i18n("<qt>Downloading %1 of %2 packages</qt>").arg(current).arg(total)
