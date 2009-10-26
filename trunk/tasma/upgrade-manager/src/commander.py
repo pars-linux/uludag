@@ -45,7 +45,8 @@ class Commander(QObject):
         elif signal == "error":
             print "Error: ", str(data)
         elif signal == "status":
-            print "Status"
+            if data[0] == "downloading":
+                self.emit(PYSIGNAL("statusDownloading(int, int)"), (data[1], data[2],))
         elif signal == "warning":
             print "Warning: ", str(data)
         elif signal == "PolicyKit" and "policy.no" in data:

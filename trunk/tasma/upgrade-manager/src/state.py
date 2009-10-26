@@ -30,9 +30,14 @@ class State(QObject):
         self.connect(self.comar, PYSIGNAL("stepStarted(QString)"), self.stepStarted)
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), self.stepFinished)
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), lambda:QTimer.singleShot(1000, self.runNextStep))
+        self.connect(self.comar, PYSIGNAL("statusDownloading(int, int)"), self.statusDownloading)
 
     def reset(self):
         self.step = 0
+
+    def statusDownloading(self, total, current):
+        message = i18n("<qt>Downloading %1 of %2 packages</qt>").arg(current).arg(total)
+        self.parent.operationStatus.setText(message)
 
     def stepStarted(self, operation):
         # System.Upgrader.{prepare, setRepositories...}
