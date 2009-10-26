@@ -15,10 +15,6 @@
 from PyQt4.QtCore import SIGNAL, Qt
 from PyQt4.QtGui import QDialog, QTreeWidgetItem, QBrush, QColor
 
-# PyKDE
-from PyKDE4.kdeui import KIcon
-from PyKDE4.kdecore import i18n
-
 # UI
 from gui.ui.packages import Ui_PackagesDialog
 
