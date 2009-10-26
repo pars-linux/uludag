@@ -69,6 +69,10 @@ class State(QObject):
             return True
 
     def runNextStep(self):
+
+        if self.step >= len(STEPS):
+            return
+
         if STEPS[self.step] == "download":
             if not self.checkObsoletes():
                 self.parent.cancel()
