@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>547</width>
-            <height>457</height>
+            <height>413</height>
         </rect>
     </property>
     <property name="caption">
@@ -236,7 +236,7 @@
         </widget>
         <widget class="QLayoutWidget" row="5" column="0">
             <property name="name">
-                <cstring>layout1_5</cstring>
+                <cstring>layout1_5_2</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -261,55 +261,6 @@
                         <cstring>step5_label</cstring>
                     </property>
                     <property name="text">
-                        <string>Cleaning up</string>
-                    </property>
-                </widget>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer1_5</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>181</width>
-                            <height>21</height>
-                        </size>
-                    </property>
-                </spacer>
-            </hbox>
-        </widget>
-        <widget class="QLayoutWidget" row="6" column="0">
-            <property name="name">
-                <cstring>layout1_5_2</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>step6_icon</cstring>
-                    </property>
-                    <property name="minimumSize">
-                        <size>
-                            <width>18</width>
-                            <height>0</height>
-                        </size>
-                    </property>
-                    <property name="text">
-                        <string></string>
-                    </property>
-                </widget>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>step6_label</cstring>
-                    </property>
-                    <property name="text">
                         <string>Restarting the computer</string>
                     </property>
                 </widget>
@@ -332,12 +283,12 @@
                 </spacer>
             </hbox>
         </widget>
-        <widget class="QProgressBar" row="7" column="0">
+        <widget class="QProgressBar" row="6" column="0">
             <property name="name">
                 <cstring>progressBar</cstring>
             </property>
         </widget>
-        <widget class="QLabel" row="8" column="0">
+        <widget class="QLabel" row="7" column="0">
             <property name="name">
                 <cstring>operationStatus</cstring>
             </property>
@@ -345,7 +296,7 @@
                 <string></string>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="9" column="0">
+        <widget class="QLayoutWidget" row="8" column="0">
             <property name="name">
                 <cstring>layout8</cstring>
             </property>

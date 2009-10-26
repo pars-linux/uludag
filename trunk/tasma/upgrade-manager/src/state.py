@@ -37,19 +37,30 @@ class State(QObject):
     def reset(self):
         self.step = 0
 
+    def setProgress(self, total, current):
+        try:
+            percent = (total * 100) / current
+        except ZeroDivisionError:
+            percent = 100
+
+        self.progress.setProgress(percent)
+
     def statusDownloading(self, total, current):
         message = i18n("<qt>Downloading %1 of %2 packages</qt>").arg(current).arg(total)
         self.parent.operationStatus.setText(message)
+        self.setProgress(total, current)
 
     def statusInstalling(self, package, total, current):
         message = i18n("<qt>Installing (%1) %2 of %3 packages</qt>").arg(package).arg(current).arg(total)
         if current <= total:
             self.parent.operationStatus.setText(message)
+            self.setProgress(total, current)
 
     def statusConfiguring(self, package, total, current):
         message = i18n("<qt>Configuring (%1) %2 of %3 packages</qt>").arg(package).arg(current).arg(total)
         if current <= total:
             self.parent.operationStatus.setText(message)
+            self.setProgress(total, current)
 
     def stepStarted(self, operation):
         # System.Upgrader.{prepare, setRepositories...}
