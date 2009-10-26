@@ -61,11 +61,15 @@ if __name__ == "__main__":
         options.moddir = cp.get("general", "moddir")
     else:
         options.moddir = "/var/lib/ahenk-ajan/"
+    if not os.path.exists(options.moddir):
+        os.makedirs(options.moddir)
 
     if cp.has_option("general", "policydir"):
         options.policydir = cp.get("general", "policydir")
     else:
         options.policydir = "/var/db/ahenk-ajan/"
+    if not os.path.exists(options.policydir):
+        os.makedirs(options.policydir)
 
     if options.daemon:
         daemon = mainloop.Ajan(options)
