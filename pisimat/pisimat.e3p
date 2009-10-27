@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-3.5.dtd">
+<!-- Project file for project pisimat -->
+<!-- Saved: 2005-09-06, 16:46:55 -->
+<!-- Copyright (C) 2005 ,  -->
+<Project version="3.5">
+  <Description></Description>
+  <Author></Author>
+  <EmaIl></EmaIl>
+  <Sources>
+    <Source>
+      <Name>pisimat.py</Name>
+    </Source>
+    <Source>
+      <Name>browser.py</Name>
+    </Source>
+    <Source>
+      <Name>editor.py</Name>
+    </Source>
+    <Source>
+      <Name>config.py</Name>
+    </Source>
+    <Source>
+      <Name>utils.py</Name>
+    </Source>
+    <Source>
+      <Name>templates.py</Name>
+    </Source>
+  </Sources>
+  <Forms>
+  </Forms>
+  <Translations>
+  </Translations>
+  <Interfaces>
+  </Interfaces>
+  <Others>
+  </Others>
+  <MainScript>
+    <Name>pisimat.py</Name>
+  </MainScript>
+  <Vcs>
+    <VcsType>Subversion</VcsType>
+    <VcsOptions>{'status': [''], 'log': [''], 'global': [''], 'update': [''], 'remove': [''], 'add': [''], 'tag': [''], 'export': [''], 'diff': [''], 'commit': [''], 'checkout': [''], 'history': ['']}</VcsOptions>
+    <VcsOtherData>{'standardLayout': 1}</VcsOtherData>
+  </Vcs>
+</Project>
