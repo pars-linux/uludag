@@ -50,7 +50,7 @@ class Commander(QObject):
             elif data[0] == "installing":
                 self.emit(PYSIGNAL("statusInstalling(QString, int, int)"), (data[1], data[2], data[3], ))
             elif data[0] == "configuring":
-                self.emit(PYSIGNAL("statusConfiguring(QString, int, int)"), (data[1], data[2], data[3], ))
+                self.emit(PYSIGNAL("statusConfiguring()"))
         elif signal == "warning":
             print "Warning: ", str(data)
         elif signal == "PolicyKit" and "policy.no" in data:
