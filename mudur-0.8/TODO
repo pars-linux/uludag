@@ -1,7 +1,0 @@
-muavin:
-    input
-    /etc/hotplug/usb/*.usermap desteği
-
-mudur:
-    nonetwork runlevel
-    /etc/issue yi /etc/issue.lang dan al mesela?
