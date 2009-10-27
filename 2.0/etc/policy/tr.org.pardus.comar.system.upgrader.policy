@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN" "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+
+<policyconfig>
+    <vendor>Pardus</vendor>
+    <vendor_url>http://www.pardus.org.tr</vendor_url>
+    <icon_name>preferences-desktop-default-applications</icon_name>
+
+    <action id="tr.org.pardus.comar.system.upgrader.run">
+        <description>Distribution upgrader operation run</description>
+        <description xml:lang="tr">Dağıtım güncelleme işlemini çalıştır</description>
+        <message>System policy prevents distribution upgrade operation</message>
+        <message xml:lang="tr">Sistem politikası dağıtım güncelleme işlemini engelliyor</message>
+        <defaults>
+            <allow_any>auth_admin_keep_always</allow_any>
+            <allow_active>auth_admin_keep_always</allow_active>
+            <allow_inactive>auth_admin_keep_always</allow_inactive>
+        </defaults>
+    </action>
+
+    <action id="tr.org.pardus.comar.system.upgrader.prepare">
+        <description>Distribution upgrader preparation</description>
+        <description xml:lang="tr">Dağıtım güncelleme hazırlıkları</description>
+        <message>System policy prevents distribution upgrade operation</message>
+        <message xml:lang="tr">Sistem politikası dağıtım güncelleme işlemini engelliyor</message>
+        <defaults>
+            <allow_any>auth_admin_keep_always</allow_any>
+            <allow_active>auth_admin_keep_always</allow_active>
+            <allow_inactive>auth_admin_keep_always</allow_inactive>
+        </defaults>
+    </action>
+
+    <action id="tr.org.pardus.comar.system.upgrader.setrepositories">
+        <description>Distribution upgrader repository setup</description>
+        <description xml:lang="tr">Dağıtım güncelleme depo ayarları</description>
+        <message>System policy prevents distribution upgrade operation</message>
+        <message xml:lang="tr">Sistem politikası dağıtım güncelleme işlemini engelliyor</message>
+        <defaults>
+            <allow_any>auth_admin_keep_always</allow_any>
+            <allow_active>auth_admin_keep_always</allow_active>
+            <allow_inactive>auth_admin_keep_always</allow_inactive>
+        </defaults>
+    </action>
+
+    <action id="tr.org.pardus.comar.system.upgrader.download">
+        <description>Distribution upgrader package downloads</description>
+        <description xml:lang="tr">Dağıtım güncelleme paketlerin indirilmesi</description>
+        <message>System policy prevents distribution upgrade operation</message>
+        <message xml:lang="tr">Sistem politikası dağıtım güncelleme işlemini engelliyor</message>
+        <defaults>
+            <allow_any>auth_admin_keep_always</allow_any>
+            <allow_active>auth_admin_keep_always</allow_active>
+            <allow_inactive>auth_admin_keep_always</allow_inactive>
+        </defaults>
+    </action>
+
+    <action id="tr.org.pardus.comar.system.upgrader.upgrade">
+        <description>Distribution upgrader package upgrades </description>
+        <description xml:lang="tr">Dağıtım güncelleme paketlerin güncellenmesi</description>
+        <message>System policy prevents distribution upgrade operation</message>
+        <message xml:lang="tr">Sistem politikası dağıtım güncelleme işlemini engelliyor</message>
+        <defaults>
+            <allow_any>auth_admin_keep_always</allow_any>
+            <allow_active>auth_admin_keep_always</allow_active>
+            <allow_inactive>auth_admin_keep_always</allow_inactive>
+        </defaults>
+    </action>
+
+    <action id="tr.org.pardus.comar.system.upgrader.cleanup">
+        <description>Distribution upgrader system cleanup</description>
+        <description xml:lang="tr">Dağıtım güncelleme sistem temizliği</description>
+        <message>System policy prevents distribution upgrade operation</message>
+        <message xml:lang="tr">Sistem politikası dağıtım güncelleme işlemini engelliyor</message>
+        <defaults>
+            <allow_any>auth_admin_keep_always</allow_any>
+            <allow_active>auth_admin_keep_always</allow_active>
+            <allow_inactive>auth_admin_keep_always</allow_inactive>
+        </defaults>
+    </action>
+
+</policyconfig>
