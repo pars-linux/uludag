@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-01 12:51+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Oğuz Yarımtepe <oguzy@comu.edu.tr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: views.py:13 templates/index.html:8 templates/base_main.html:15
+msgid "General Knowledge"
+msgstr "Genel Bilgiler"
+
+#: views.py:54 templates/source.html:8 templates/base_main.html:16
+msgid "Source Packages"
+msgstr "Kaynak Paketler"
+
+#: views.py:85 templates/binary.html:8 templates/base_main.html:18
+msgid "Binary Packages"
+msgstr "İkilik Paketler"
+
+#: views.py:143 templates/packagers.html:8 templates/base_main.html:19
+msgid "Packagers"
+msgstr "Paketçiler"
+
+#: views.py:170
+msgid "according to the package count"
+msgstr "paket sayısına göre"
+
+#: views.py:173
+msgid "alphabetical"
+msgstr "alfabetik"
+
+#: views.py:279 templates/search.html:8 templates/base_main.html:20
+msgid "Search"
+msgstr "Arama"
+
+#: views.py:284
+msgid "Search Result"
+msgstr "Arama Sonuçları"
+
+#: templates/search.html:19 templates/packagerdetails.html:15
+#: templates/packagers.html:16 templates/binary.html:16
+#: templates/source.html:16
+msgid "Packager"
+msgstr "Paketçi adı"
+
+#: templates/search.html:20
+msgid "Binary"
+msgstr ""
+
+#: templates/search.html:21
+msgid "Source"
+msgstr "Kaynak paketler"
+
+#: templates/search.html:22
+msgid "Patch"
+msgstr "Yamalar"
+
+#: templates/packagedetails.html:20
+msgid "License"
+msgstr "Lisans"
+
+#: templates/packagedetails.html:23
+msgid "Actions"
+msgstr "Eylemler"
+
+#: templates/packagedetails.html:24
+msgid "Builder files"
+msgstr "İnşa dosyaları"
+
+#: templates/packagedetails.html:25
+msgid "Bug reports"
+msgstr "Hata kayıtları"
+
+#: templates/packagedetails.html:27
+msgid "Binary packages"
+msgstr "İkilik paketler"
+
+#: templates/packagedetails.html:33
+msgid "Patchs"
+msgstr "Yamalar"
+
+#: templates/packagedetails.html:39
+msgid "Release history"
+msgstr "Sürüm bilgisi"
+
+#: templates/packagedetails.html:41
+msgid "Release"
+msgstr "Sürüm"
+
+#: templates/packagedetails.html:41
+msgid "Release date"
+msgstr "Sürüm tarihi"
+
+#: templates/packagedetails.html:41 templates/binary.html:16
+#: templates/source.html:16
+msgid "Version"
+msgstr "Versiyon"
+
+#: templates/packagedetails.html:41
+msgid "Commiter"
+msgstr "Güncelleyen"
+
+#: templates/packagedetails.html:41 templates/binary.html:16
+#: templates/source.html:16
+msgid "Summary"
+msgstr "Özet"
+
+#: templates/packagerdetails.html:18
+msgid "Packages that he/she responsible from"
+msgstr "Sorumlu olduğu paketler"
+
+#: templates/packagerdetails.html:31
+msgid "Packages updates"
+msgstr "Paket güncelleştirmeleri"
+
+#: templates/binarypackagedetails.html:17
+msgid "Installed size"
+msgstr ""
+
+#: templates/binarypackagedetails.html:18
+msgid "Package size"
+msgstr "Paket büyüklüğü"
+
+#: templates/binarypackagedetails.html:20
+msgid "Source package"
+msgstr "Kaynak paketler"
+
+#: templates/binarypackagedetails.html:22
+msgid "Buildtime dependencies"
+msgstr "İnşa bağımlılıkları"
+
+#: templates/binarypackagedetails.html:26
+msgid "Runtime dependencies"
+msgstr "Çalışma zamanı bağımlılıkları"
+
+#: templates/packagers.html:16
+msgid "Package count"
+msgstr "Paket sayısı"
+
+#: templates/binary.html:16 templates/source.html:16
+msgid "Package"
+msgstr "Paket adı"
+
+#: templates/index.html:16
+msgid "Number of source packages"
+msgstr "Kaynak paket sayısı"
+
+#: templates/index.html:17
+msgid "Number of binary packages"
+msgstr "İkilik paket sayısı"
+
+#: templates/index.html:18
+msgid "Number of patchs"
+msgstr "Yama sayısı"
+
+#: templates/index.html:19
+msgid "Number of packagers"
+msgstr "Paketçi sayısı"
+
+#: templates/index.html:23
+msgid "Patched mostly"
+msgstr "En çok yamalanan:"
+
+#: templates/index.html:35
+msgid "Longest action.py file"
+msgstr "En uzun inşa betiği:"
+
+#: templates/search_result.html:8
+msgid "Search Results"
+msgstr "Arama Sonuçları"
+
+#: templates/search_result.html:15
+msgid "Result"
+msgstr "Sonuç"
+
+#: templates/base_main.html:21
+msgid "Feed"
+msgstr "Besleme"

@@ -1,0 +1,45 @@
+{% load i18n %}
+{% extends "base_main.html" %}
+
+{% block title%}{{title}}{% endblock %}
+
+{% block header %}
+
+<h1 align='center'>{% trans "General Knowledge" %}</h1>
+
+{% endblock %}
+
+
+{% block content %} 
+
+<table><tbody>
+<tr><td>{% trans "Number of source packages" %}<td>{{numofsrcs}}
+<tr><td>{% trans "Number of binary packages" %}<td>{{numofbins}}
+<tr><td>{% trans "Number of patchs" %}<td>{{numofpatchs}}
+<tr><td>{% trans "Number of packagers" %}<td>{{numofpkgrs}}
+</tbody></table>
+
+	<div class='statstat'>
+	<h3>{% trans "Patched mostly" %}:</h3><p>
+
+	<table><tbody>
+
+	{% for x in longestpatch %}
+	<tr><td><a href="sources/{{x.0}}">{{x.0}}</a><td>{{x.1}}
+	{% endfor %}
+
+	</tbody></table>
+	</p></div>
+
+	<div class='statstat'>
+	<h3>{% trans "Longest action.py file" %}:</h3><p>
+	
+	<table><tbody>
+	{% for x in  longestaction %}
+	<tr><td><a href="sources/{{x.0}}">{{x.0}}</a><td>{{x.1}}
+	{% endfor %}
+	</tbody></table>
+	</p></div>
+
+{% endblock %}
+
