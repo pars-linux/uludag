@@ -20,6 +20,8 @@ from ui_maindialog import UI_MainDialog
 
 import state
 
+REBOOT_STEP = 5
+
 class MainDialog(UI_MainDialog):
     def __init__(self, parent=None):
         UI_MainDialog.__init__(self, parent)
@@ -48,6 +50,21 @@ class MainDialog(UI_MainDialog):
         self.cancelButton.setEnabled(False)
         self.upgradeButton.setEnabled(True)
         self.resetSteps()
+
+    def reboot(self):
+        self.step_selected(REBOOT_STEP)
+        message = i18n("<qt>Upgrade to Pardus 2009.1 completed. Upgrade-manager will now restart the system.")
+        message += i18n("<br><br>Do you want to continue?</qt>")
+
+        if KMessageBox.Yes == KMessageBox.warningYesNo(self.parent,
+                                                       message,
+                                                       i18n("Warning"),
+                                                       KGuiItem(i18n("Continue"), "ok"),
+                                                       KGuiItem(i18n("Restart Later"), "no"),
+                                                       ):
+            os.system("dbus-send --system --dest=org.freedesktop.Hal --type=method_call --print-reply /org/freedesktop/Hal/devices/computer  org.freedesktop.Hal.Device.SystemPowerManagement.Reboot")
+        else:
+            KApplication.kApplication().quit()
 
     def setFonts(self):
         self.normalFont = QFont()

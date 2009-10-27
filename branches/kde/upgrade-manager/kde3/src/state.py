@@ -87,6 +87,7 @@ class State(QObject):
     def runNextStep(self):
 
         if self.step >= len(STEPS):
+            self.parent.reboot()
             return
 
         if STEPS[self.step] == "download":
