@@ -1,0 +1,272 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>mainForm</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>mainForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>506</width>
+            <height>477</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Disk Manager</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QFrame" row="2" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>frame_detail</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="0" column="0" rowspan="3" colspan="1">
+                    <property name="name">
+                        <cstring>diskIcon</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="scaledContents">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="2">
+                    <property name="name">
+                        <cstring>textLabel3</cstring>
+                    </property>
+                    <property name="text">
+                        <string>File System Type :</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="1">
+                    <property name="name">
+                        <cstring>textLabel2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Mount Point :</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="1" column="1">
+                    <property name="name">
+                        <cstring>line_mountpoint</cstring>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="1" column="2">
+                    <property name="name">
+                        <cstring>combo_fs</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="0">
+                    <property name="name">
+                        <cstring>label_disk</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <bold>1</bold>
+                        </font>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="2" column="1" rowspan="2" colspan="2">
+                    <property name="name">
+                        <cstring>layout5</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel4</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Additional Options :</string>
+                            </property>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout4</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLineEdit">
+                                    <property name="name">
+                                        <cstring>line_opts</cstring>
+                                    </property>
+                                </widget>
+                                <widget class="QPushButton">
+                                    <property name="name">
+                                        <cstring>btn_defaultOpts</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Get Default Options</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                    </vbox>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>layout6</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout5</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>btn_autoFind</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Find Disks Automatically</string>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>check_allPart</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string>Show System Partitions</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QListView">
+                    <column>
+                        <property name="text">
+                            <string>Disks</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Partitions</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <property name="name">
+                        <cstring>list_main</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <bold>1</bold>
+                        </font>
+                    </property>
+                    <property name="hScrollBarMode">
+                        <enum>AlwaysOff</enum>
+                    </property>
+                    <property name="rootIsDecorated">
+                        <bool>true</bool>
+                    </property>
+                    <property name="resizeMode">
+                        <enum>LastColumn</enum>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>layout7</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>label_warn</cstring>
+                    </property>
+                    <property name="text">
+                        <string>To update disk changes the manager must run as root</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <spacer row="3" column="1">
+            <property name="name">
+                <cstring>spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>352</width>
+                    <height>21</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLayoutWidget" row="3" column="2">
+            <property name="name">
+                <cstring>layout4</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>btn_update</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Save</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
