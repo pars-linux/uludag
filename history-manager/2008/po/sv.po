@@ -1,0 +1,268 @@
+# translation of sv.po to Svenska
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: sv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-27 12:27+0300\n"
+"PO-Revision-Date: 2008-09-07 21:36+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"Language-Team: Svenska <sv@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/Progress.py:68 src/history_gui.py:376
+msgid "Progress"
+msgstr "Förlopp"
+
+#: src/Progress.py:71
+msgid "<h4><b>Preparing PISI</b></h4>"
+msgstr "<h4><b>Förbereder PISI</b></h4>"
+
+#: src/Progress.py:72
+msgid "Taking a snapshot of system"
+msgstr "Skapar en avbild av systemet"
+
+#: src/history-manager.py:51
+msgid "History Manager is already running!"
+msgstr "Historikhanteraren körs redan!"
+
+#: src/history-manager.py:59 src/utility.py:54 src/history_gui.py:57
+msgid "History Manager"
+msgstr "Historikhanteraren"
+
+#: src/progress.py:74
+msgid "progressForm"
+msgstr "progressForm"
+
+#: src/Commander.py:18
+msgid "Cannot connect to Comar daemon"
+msgstr "Kan inte ansluta till Comar-demonen"
+
+#: src/utility.py:32
+msgid "History Manager Interface"
+msgstr "Historikhanterarens gränssnitt"
+
+#: src/historygui.py:121
+msgid "formMain"
+msgstr "formMain"
+
+#: src/history_gui.py:59
+msgid "All Operations"
+msgstr "Alla åtgärder"
+
+#: src/history_gui.py:60
+msgid "Snapshots"
+msgstr "Avbilder"
+
+#: src/history_gui.py:61
+msgid "Upgrades"
+msgstr "Uppdateringar"
+
+#: src/history_gui.py:62
+msgid "Removes"
+msgstr "Borttagningar"
+
+#: src/history_gui.py:63
+msgid "Installations"
+msgstr "Installationer"
+
+#: src/history_gui.py:64
+msgid "TakeBacks"
+msgstr "Återställningar"
+
+#: src/history_gui.py:66
+msgid "Take Back Plan"
+msgstr "Återställningsplan"
+
+#: src/history_gui.py:67
+msgid "Operation Details"
+msgstr "Detaljer"
+
+#: src/history_gui.py:70
+msgid "New Snapshot"
+msgstr "Ny avbild"
+
+#: src/history_gui.py:72
+msgid "Date"
+msgstr "Datum"
+
+#: src/history_gui.py:73
+msgid ""
+"Your system will be restored to that date if you click Take Back button."
+"<br>These are the package installation and removals, also configuration "
+"files below (in snapshots) will overwrite your current configuration files."
+msgstr ""
+"Ditt system kommer att återställas till den tidpunkten om du klickar på  'Återställ'."
+"<br>Följande installationer och borttagningar kommer att utföras, konfigurationsfiler (i avbilden) ersätter befintliga konfigurationsfiler."
+
+#: src/history_gui.py:84
+msgid "Restore to This Point"
+msgstr "Återställ till den här tidpunkten"
+
+#: src/history_gui.py:132
+msgid "This will take a New Snapshot of your system"
+msgstr "Det här skapar en ny avbild av ditt system"
+
+#: src/history_gui.py:147
+msgid ""
+"This will restore your system back to : %1 %2\n"
+"If you're unsure, click Cancel and see TakeBack Plan"
+msgstr ""
+"Det här återställer ditt system till: %1 %2\n"
+"Om du är osäker, klicka avbryt och läs återställningsplanen."
+
+#: src/history_gui.py:173
+msgid "Take Back operation completed"
+msgstr "Återställningen är slutförd"
+
+#: src/history_gui.py:175
+msgid "New Snapshot Taken"
+msgstr "Ny avbild skapad"
+
+#: src/history_gui.py:177
+msgid "Operation Cancelled"
+msgstr "Åtgärden avbruten"
+
+#: src/history_gui.py:182
+msgid "Updating User Interface"
+msgstr "Uppdaterar användargränssnittet"
+
+#: src/history_gui.py:184
+msgid "Finished with Errors"
+msgstr "Avslutades med fel"
+
+#: src/history_gui.py:185
+msgid "Operation Finished with Errors"
+msgstr "Åtgärden avslutades med fel"
+
+#: src/history_gui.py:189
+msgid "Finished Succesfully"
+msgstr "Utfördes med lyckat resultat"
+
+#: src/history_gui.py:200
+msgid "Fetching %1"
+msgstr "Hämtar %1"
+
+#: src/history_gui.py:244
+msgid "<b>Access Granted</b><br>"
+msgstr "<b>Åtkomst medgiven</b><br>"
+
+#: src/history_gui.py:247
+msgid "<b>Access Denied</b><br>"
+msgstr "<b>Åtkomst nekad</b><br>"
+
+#: src/history_gui.py:249
+msgid "Operation Started"
+msgstr "Åtgärden påbörjad"
+
+#: src/history_gui.py:251
+msgid "Ordering Packages for Operation"
+msgstr "Förbereder paket för åtgärd"
+
+#: src/history_gui.py:254
+msgid "Removing    : %1"
+msgstr "Tar bort    : %1"
+
+#: src/history_gui.py:259
+msgid "Installing  : %1"
+msgstr "Installerar  : %1"
+
+#: src/history_gui.py:262
+msgid "Extracting  : %1"
+msgstr "Packar upp  : %1"
+
+#: src/history_gui.py:265
+msgid "Configuring  : %1"
+msgstr "Konfigurerar  : %1"
+
+#: src/history_gui.py:269
+msgid "Taking a Snapshot of System "
+msgstr "Skapar en avbild av systemet "
+
+#: src/history_gui.py:271
+msgid "Taking System Back to %1 %2 <br>"
+msgstr "Återställer systemet till %1 %2 <br>"
+
+#: src/history_gui.py:292 src/history_gui.py:293
+msgid "Select an entry to view details"
+msgstr "Välj en post för att visa detaljer"
+
+#: src/history_gui.py:296
+msgid "No: <b>%1</b>"
+msgstr "Nr: <b>%1</b>"
+
+#: src/history_gui.py:297
+msgid "Type: <b>%1</b>"
+msgstr "Typ: <b>%1</b>"
+
+#: src/history_gui.py:309
+msgid "There are %1 packages in this snapshot"
+msgstr "Det finns %1 paket i den här avbilden"
+
+#: src/history_gui.py:324
+msgid "Configuration files in snapshot:"
+msgstr "Konfigurerar filer i avbilden:"
+
+#: src/history_gui.py:331
+msgid "Take Back Plan for %1 operation on %2"
+msgstr "Återställningsplan för %1 den %2"
+
+#: src/history_gui.py:334
+msgid "These package(s) will be <b>installed</b> :"
+msgstr "Följande paket kommer att <b>installeras</b>:"
+
+#: src/history_gui.py:339
+msgid "These package(s) will be <b>removed</b> :"
+msgstr "Följande paket kommer att <b>tas bort</b>:"
+
+#: src/history_gui.py:404
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<b>Förbereder PiSi...</b>"
+
+#: src/history_gui.py:442
+msgid "snapshot"
+msgstr "avbild"
+
+#: src/history_gui.py:446
+msgid "upgrade"
+msgstr "uppdatering"
+
+#: src/history_gui.py:450
+msgid "remove"
+msgstr "borttagning"
+
+#: src/history_gui.py:454
+msgid "install"
+msgstr "installation"
+
+#: src/history_gui.py:458
+msgid "takeback"
+msgstr "återställning"
+
+#: src/ComarIface.py:31
+msgid "Cannot connect to dbus"
+msgstr "Kan inte ansluta till D-Bus"
+
+#: src/ComarIface.py:44
+msgid "D-Bus Error"
+msgstr "D-Bus-fel"
+
+#: src/ComarIface.py:49
+msgid "COMAR Auth Error"
+msgstr "COMAR-Auth-fel"
+
+#: src/ComarIface.py:54
+msgid "COMAR Error"
+msgstr "COMAR-fel"
+
+#: src/ComarIface.py:58
+msgid "You are not authorized for this operation."
+msgstr "Du är inte behörig för den här åtgärden."
+

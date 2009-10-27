@@ -1,0 +1,29 @@
+[Desktop Entry]
+Name=History Manager
+Name[tr]=Geçmiş Yöneticisi
+Name[es]=Administrador de Históricos
+Name[nl]=Geschiedenis beheer
+Name[de]=Verlaufs-Manager
+Name[sv]=Historikhanteraren
+
+GenericName=History Management Interface
+GenericName[tr]=Geçmiş Yönetim Arayüzü
+GenericName[es]=Administrador de Históricos
+GenericName[nl]=Geschiedenis beheer interface
+GenericName[de]=Verlaufs-Manager-Schnittstelle
+GenericName[sv]=Gränssnitt för Historikhantering
+Icon=date
+X-KDE-ModuleType=Library
+X-KDE-Library=history-manager
+X-KDE-FactoryName=history_manager
+X-KDE-RootOnly=true
+Type=Application
+X-Tasma-Fork=true
+Exec=history-manager
+Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
+Comment=History Manager
+Comment[tr]=Geçmiş Yönetim Arayüzü
+Comment[nl]=Geschiedenis beheer
+Comment[de]=Verlaufs-Manager
+Comment[es]=Administrador de Históricos
+Comment[sv]=Historikhanteraren
