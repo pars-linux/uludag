@@ -1,0 +1,16 @@
+<!DOCTYPE ktheme>
+<ktheme version="1">
+    <kwin>
+        <PluginLib value="kwin3_plastik" />
+    </kwin>
+    <kicker>
+        <Transparent value="false" />
+        <SizePercentage value="100" />
+        <Position value="" />
+        <Alignment value="" />
+        <CustomSize value="32" />
+    </kicker>
+    <widget>
+        <widgetStyle value="lipstik" />
+    </widget>
+</ktheme>

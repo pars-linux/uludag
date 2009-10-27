@@ -1,0 +1,4 @@
+2005-02-06 Barış Metin <baris@uludag.org.tr>
+	* Added an option for kaptan to pass wallpaper setup.
+2005-03-07 S.Çağlar Onur <caglar@uludag.org.tr>
+	* Added KConfig option to run kaptan only in first login.
