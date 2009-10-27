@@ -1,5 +1,0 @@
-coolplug
----------
-
-This is a small utility written in C to detect PCI and USB devices and probe the
-needed kernel modules during initramfs.
