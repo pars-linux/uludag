@@ -1,0 +1,123 @@
+# translation of nl.po to Nederlands
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Thijs Hulshof <thijs@fedoraproject.org>, 2006.
+# Rinse de Vries <rinsedevries@kde.nl>, 2006.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-07 21:36+0200\n"
+"PO-Revision-Date: 2006-11-03 18:01+0200\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
+">\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/service-manager.py:55 src/service-manager.py:350 src/mainform.py:97
+msgid "Service Manager"
+msgstr "Dienstmanager"
+
+#: src/service-manager.py:185
+msgid "You are not allowed to do this operation."
+msgstr "U mag deze handeling niet verrichten."
+
+#: src/service-manager.py:185
+msgid "Access Denied"
+msgstr "Toegang geweigerd"
+
+#: src/service-manager.py:187
+msgid "COMAR script execution failed."
+msgstr "Uitvoeren van het COMAR-script is mislukt."
+
+#: src/service-manager.py:187
+msgid "Script Error"
+msgstr "Scriptfout"
+
+#: src/service-manager.py:192
+msgid "Unable to start service."
+msgstr "De dienst kan niet gestart worden."
+
+#: src/service-manager.py:192 src/service-manager.py:195
+msgid "Failed"
+msgstr "Mislukt"
+
+#: src/service-manager.py:195
+msgid "Unable to stop service."
+msgstr "De dienst kan niet gestopt worden."
+
+#: src/service-manager.py:224 src/mainform.py:101
+msgid "Select a service from list."
+msgstr "Kies een dienst van de lijst."
+
+#: src/service-manager.py:232 src/mainform.py:103
+msgid "Start"
+msgstr "Start"
+
+#: src/service-manager.py:237
+#, python-format
+msgid "%s is running."
+msgstr "%s is actief."
+
+#: src/service-manager.py:240
+#, python-format
+msgid "%s is not running."
+msgstr "%s is niet actief."
+
+#: src/service-manager.py:242
+msgid "Execute startup script"
+msgstr "Voer een opstart script uit"
+
+#: src/service-manager.py:243
+msgid "Execuete shutdown script"
+msgstr "Voer een afsluit script uit"
+
+#: src/service-manager.py:307
+msgid ""
+"If you stop this service, you may have problems.\n"
+"Are you sure you want to stop this service?"
+msgstr ""
+"Als u deze dienst stopt, kunt u in de problemen raken.\n"
+"Weet u zeker dat u deze dienst wilt stoppen?"
+
+#: src/service-manager.py:345
+msgid "Service Manager is already running!"
+msgstr "Dienstmanager is reeds gestart!"
+
+#: src/mainform.py:82 src/mainform.py:108
+msgid "1"
+msgstr "1"
+
+#: src/mainform.py:83 src/mainform.py:109
+msgid "Service"
+msgstr "Dienst"
+
+#: src/mainform.py:84 src/mainform.py:110
+msgid "Run on Startup"
+msgstr "Bij opstarten uitvoeren"
+
+#: src/mainform.py:85 src/mainform.py:111
+msgid "Package"
+msgstr ""
+
+#: src/mainform.py:99
+msgid "Run on startup."
+msgstr "Bij opstarten uitvoeren"
+
+#: src/mainform.py:100
+msgid "Don't run on startup."
+msgstr "Niet uitvoeren bij opstarten."
+
+#: src/mainform.py:106
+msgid "&List servers only."
+msgstr "&Lijst van alleen servers."
+
+#: src/mainform.py:107
+msgid "Alt+L"
+msgstr "ALT+L"

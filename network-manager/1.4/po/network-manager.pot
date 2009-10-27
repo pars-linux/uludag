@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-29 16:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: connection.py:33 browser.py:41
+msgid "Name:"
+msgstr ""
+
+#: connection.py:40
+msgid "Device:"
+msgstr ""
+
+#: connection.py:60
+msgid "Scan"
+msgstr ""
+
+#: connection.py:71
+msgid "Authentication"
+msgstr ""
+
+#: connection.py:75
+msgid "Mode:"
+msgstr ""
+
+#: connection.py:86
+msgid "No authentication"
+msgstr ""
+
+#: connection.py:101 connection.py:112
+msgid "Password:"
+msgstr ""
+
+#: connection.py:109
+msgid "User name:"
+msgstr ""
+
+#: connection.py:139
+msgid "Scan results:"
+msgstr ""
+
+#: connection.py:147
+msgid "Scan again"
+msgstr ""
+
+#: connection.py:149
+msgid "Use"
+msgstr ""
+
+#: connection.py:188
+msgid "Network settings"
+msgstr ""
+
+#: connection.py:194
+msgid "Automatic query (DHCP)"
+msgstr ""
+
+#: connection.py:199
+msgid "Manual"
+msgstr ""
+
+#: connection.py:208 browser.py:46
+msgid "Address:"
+msgstr ""
+
+#: connection.py:213 connection.py:226 connection.py:245
+msgid "Custom"
+msgstr ""
+
+#: connection.py:217
+msgid "Net mask:"
+msgstr ""
+
+#: connection.py:222
+msgid "Gateway:"
+msgstr ""
+
+#: connection.py:233 nameconf.py:42
+msgid "Name servers"
+msgstr ""
+
+#: connection.py:243
+msgid "From query"
+msgstr ""
+
+#: connection.py:410
+msgid "Configure network connection"
+msgstr ""
+
+#: network-manager.py:33 network-manager.py:85
+msgid "Network Manager"
+msgstr ""
+
+#: network-manager.py:80
+msgid "Network manager module is already started!"
+msgstr ""
+
+#: comariface.py:330
+msgid "new connection"
+msgstr ""
+
+#: nameconf.py:27 browser.py:348
+msgid "Name Service Settings"
+msgstr ""
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr ""
+
+#: nameconf.py:39
+msgid "Host name:"
+msgstr ""
+
+#: nameconf.py:88
+msgid "Add Name Server"
+msgstr ""
+
+#: nameconf.py:88
+msgid "Name server:"
+msgstr ""
+
+#: browser.py:49 browser.py:138
+msgid "Automatic"
+msgstr ""
+
+#: browser.py:80
+msgid "Turn on/off connection"
+msgstr ""
+
+#: browser.py:93
+msgid "Configure connection"
+msgstr ""
+
+#: browser.py:96
+msgid "Delete connection"
+msgstr ""
+
+#: browser.py:114
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+
+#: browser.py:115
+msgid "Delete connection?"
+msgstr ""
+
+#: browser.py:344
+msgid "New connection"
+msgstr ""
+
+#: browser.py:379
+msgid "Network Connections Help"
+msgstr ""
+
+#: newconn.py:26
+msgid "Create a new connection"
+msgstr ""
+
+#: newconn.py:31
+msgid "Select device:"
+msgstr ""
+
+#: newconn.py:57
+msgid "Create"
+msgstr ""
+
+#: newconn.py:103
+msgid "No suitable device found"
+msgstr ""
+
+#: newconn.py:111
+msgid "Install network packages!"
+msgstr ""
+
+#: newconn.py:112
+msgid "No package with COMAR network scripts are installed yet."
+msgstr ""

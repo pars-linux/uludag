@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the net-kga package.
+# Gürer Özen <gurer@uludag.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: net-kga 0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-05-29 16:40+0300\n"
+"PO-Revision-Date: 2005-12-19 20:02+0200\n"
+"Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
+"Language-Team: tr <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: browser.py:49
+msgid "Name:"
+msgstr "İsim:"
+
+#: browser.py:56 connection.py:206
+msgid "Authentication"
+msgstr "Kimlik doğrulama"
+
+#: browser.py:59 connection.py:297
+msgid "Address:"
+msgstr "Adres:"
+
+#: browser.py:62 connection.py:334
+msgid "Automatic"
+msgstr "Otomatik"
+
+#: browser.py:90
+msgid "Turn on/off connection"
+msgstr "Bağlantıyı aç/kapa"
+
+#: browser.py:103
+msgid "Configure connection"
+msgstr "Bağlantıyı ayarla"
+
+#: browser.py:106
+msgid "Delete connection"
+msgstr "Bağlantıyı sil"
+
+#: browser.py:124
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+"'%s'\n"
+"bağlantısını sileyim mi?"
+
+#: browser.py:125
+msgid "Delete connection?"
+msgstr "Bağlantıyı sil?"
+
+#: browser.py:205
+msgid "No device!"
+msgstr "Aygıt yok!"
+
+#: browser.py:381 network-applet.py:456
+msgid "New connection"
+msgstr "Yeni bağlantı"
+
+#: browser.py:386 nameconf.py:28
+msgid "Name Service Settings"
+msgstr "İsim Servisi Ayarları"
+
+#: browser.py:423
+msgid "Network Connections Help"
+msgstr "Ağ Bağlantıları Yardımı"
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Bilgisayar"
+
+#: nameconf.py:41
+msgid "Host name:"
+msgstr "Makina adı:"
+
+#: nameconf.py:45 connection.py:325
+msgid "Name servers"
+msgstr "İsim sunucuları"
+
+#: nameconf.py:56
+msgid "Up"
+msgstr "Yukarı"
+
+#: nameconf.py:59
+msgid "Down"
+msgstr "Aşağı"
+
+#: nameconf.py:134
+msgid "Add Name Server"
+msgstr "İsim Sunucusu Ekle"
+
+#: nameconf.py:135
+msgid "Name server:"
+msgstr "İsim sunucusu:"
+
+#: connection.py:27
+msgid "Channel"
+msgstr ""
+
+#: connection.py:28
+msgid "Mode"
+msgstr "Mod"
+
+#: connection.py:29
+msgid "Protocol"
+msgstr "Potokol"
+
+#: connection.py:55
+msgid "<hidden>"
+msgstr "<gizli>"
+
+#: connection.py:88
+msgid "Scan results:"
+msgstr "Tarama sonuçları:"
+
+#: connection.py:106
+msgid "Scan again"
+msgstr "Yeniden tara"
+
+#: connection.py:108
+msgid "Use"
+msgstr "Kullan"
+
+#: connection.py:163
+msgid "Connection name:"
+msgstr "Bağlantı adı:"
+
+#: connection.py:170
+msgid "Connection"
+msgstr "Bağlantı"
+
+#: connection.py:176
+msgid "Device:"
+msgstr "Aygıt:"
+
+#: connection.py:181
+msgid "Select"
+msgstr "Aygıt seç"
+
+#: connection.py:195
+msgid "Scan"
+msgstr "Tara"
+
+#: connection.py:212
+msgid "Mode:"
+msgstr "Mod:"
+
+#: connection.py:220
+msgid "No authentication"
+msgstr "Doğrulama yok"
+
+#: connection.py:238 connection.py:249
+msgid "Password:"
+msgstr "Parola:"
+
+#: connection.py:246
+msgid "User name:"
+msgstr "Kullanıcı adı:"
+
+#: connection.py:278
+msgid "Network settings"
+msgstr "Ağ ayarları"
+
+#: connection.py:288
+msgid "Automatic query (DHCP)"
+msgstr "Otomatik ayar (DHCP)"
+
+#: connection.py:293
+msgid "Manual"
+msgstr "Elle ayarla"
+
+#: connection.py:304 connection.py:321 connection.py:336
+msgid "Custom"
+msgstr "Özel"
+
+#: connection.py:309
+msgid "Net mask:"
+msgstr "Ağ maskesi:"
+
+#: connection.py:316
+msgid "Gateway:"
+msgstr "Ağ geçidi:"
+
+#: connection.py:527
+msgid "Configure network connection"
+msgstr "Ağ bağlantısını ayarla"
+
+#: network-manager.py:33 network-manager.py:85
+msgid "Network Manager"
+msgstr "Ağ Yöneticisi"
+
+#: network-manager.py:80
+msgid "Network manager module is already started!"
+msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
+
+#: comariface.py:166
+msgid "Waiting COMAR..."
+msgstr "ÇOMAR Bekleniyor..."
+
+#: comariface.py:167
+msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
+msgstr "ÇOMAR bağlantısı kesildi, yeniden bağlanmayı deniyorum..."
+
+#: comariface.py:186 comariface.py:203 network-applet.py:111
+msgid ""
+"Cannot connect to the COMAR! If it is not running you should start it with "
+"the 'service comar start' command in a root console."
+msgstr ""
+"ÇOMAR bağlantısı sağlanamadı! Eğer çalışmıyorsa bir yetkili kullanıcı "
+"konsolu açıp 'service comar start' komutu ile çalıştırın."
+
+#: comariface.py:303
+msgid "You are not allowed to change network settings."
+msgstr "Ağ ayarlarını değiştirme izniniz yok."
+
+#: comariface.py:380
+msgid "new connection"
+msgstr "yeni bağlantı"
+
+#: newconn.py:26
+msgid "Create a new connection"
+msgstr "Yeni bir bağlantı oluştur"
+
+#: newconn.py:31
+msgid "Select device:"
+msgstr "Aygıt seçin:"
+
+#: newconn.py:58
+msgid "Create"
+msgstr "Oluştur"
+
+#: newconn.py:112
+msgid "No suitable device found"
+msgstr "Uygun bir aygıt bulunamadı"
+
+#: newconn.py:118
+msgid "Install network packages!"
+msgstr "Ağ programlarını kurun!"
+
+#: newconn.py:119
+msgid "No package with COMAR network scripts are installed yet."
+msgstr "ÇOMAR ağ betiği sağlayan hiç bir paket kurulu değil."
+
+#: network-applet.py:293
+msgid "Firewall..."
+msgstr "Güvenlik Duvarı..."
+
+#: network-applet.py:294
+msgid "Edit Connections..."
+msgstr "Bağlantıları Düzenle..."
+
+#: network-applet.py:296
+msgid "Icon Per Device"
+msgstr "Her Aygıtın Kendi Simgesi"
+
+#: network-applet.py:297
+msgid "Single Icon"
+msgstr "Tek Simge"
+
+#: network-applet.py:341
+msgid "Should network-applet start automatically when you login?"
+msgstr "Ağ programcığı açılışta otomatik çalışsın mı?"
+
+#: network-applet.py:491
+msgid "Network Applet"
+msgstr "Ağ Programcığı"

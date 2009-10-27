@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-06-26 13:32+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: user-manager.py:30
+msgid "User Management"
+msgstr ""
+
+#: user-manager.py:76
+msgid "User manager module is already started!"
+msgstr ""
+
+#: user-manager.py:81
+msgid "User Manager"
+msgstr ""
+
+#: browser.py:92
+msgid "Show system user and groups"
+msgstr ""
+
+#: browser.py:101 browser.py:111
+msgid "ID"
+msgstr ""
+
+#: browser.py:103
+msgid "User name"
+msgstr ""
+
+#: browser.py:104
+msgid "Full name"
+msgstr ""
+
+#: browser.py:113
+msgid "Group name"
+msgstr ""
+
+#: browser.py:118
+msgid "Users"
+msgstr ""
+
+#: browser.py:119
+msgid "Groups"
+msgstr ""
+
+#: browser.py:131
+#, python-format
+msgid ""
+"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
+"s<br>ID: %d"
+msgstr ""
+
+#: browser.py:137
+msgid "Delete User"
+msgstr ""
+
+#: browser.py:138
+msgid "Delete user and files"
+msgstr ""
+
+#: browser.py:139
+msgid "Delete user"
+msgstr ""
+
+#: browser.py:148
+#, python-format
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr ""
+
+#: browser.py:154 browser.py:155
+msgid "Delete Group"
+msgstr ""
+
+#: useredit.py:25 groupedit.py:22
+msgid "ID:"
+msgstr ""
+
+#: useredit.py:36 groupedit.py:29
+msgid "Select manually"
+msgstr ""
+
+#: useredit.py:68
+msgid "User name:"
+msgstr ""
+
+#: useredit.py:99
+msgid "Full name:"
+msgstr ""
+
+#: useredit.py:122
+msgid "Home:"
+msgstr ""
+
+#: useredit.py:150
+msgid "Select user's home directory"
+msgstr ""
+
+#: useredit.py:159
+msgid "Password:"
+msgstr ""
+
+#: useredit.py:165
+msgid "Confirm password:"
+msgstr ""
+
+#: useredit.py:194
+msgid "Shell:"
+msgstr ""
+
+#: useredit.py:216
+msgid "Please specify an existing shell command"
+msgstr ""
+
+#: useredit.py:218
+msgid "Specified shell command is not executable"
+msgstr ""
+
+#: useredit.py:260
+msgid "Group"
+msgstr ""
+
+#: useredit.py:261
+msgid "Permission"
+msgstr ""
+
+#: useredit.py:271
+msgid "Main group:"
+msgstr ""
+
+#: useredit.py:365
+msgid "Start with typing this user's full name."
+msgstr ""
+
+#: useredit.py:368
+msgid "You should enter a password for this user."
+msgstr ""
+
+#: useredit.py:373
+msgid "Password must be longer"
+msgstr ""
+
+#: useredit.py:377
+msgid "Dont use your full name or user name as a password"
+msgstr ""
+
+#: useredit.py:380
+msgid "Passwords don't match."
+msgstr ""
+
+#: useredit.py:383
+msgid "You must enter a user ID or use the auto selection."
+msgstr ""
+
+#: useredit.py:386
+msgid "You must enter a user name."
+msgstr ""
+
+#: useredit.py:389
+msgid "This user name is used by another user"
+msgstr ""
+
+#: useredit.py:392
+msgid "You should select at least one group this user belongs to."
+msgstr ""
+
+#: useredit.py:423
+msgid "Edit User's Information"
+msgstr ""
+
+#: useredit.py:425
+msgid "Enter Information For New User"
+msgstr ""
+
+#: useredit.py:427
+msgid "Show all groups"
+msgstr ""
+
+#: useredit.py:504
+msgid "Adding user..."
+msgstr ""
+
+#: useredit.py:512 groupedit.py:178
+#, python-format
+msgid "Operation failed, reason:<br>%s"
+msgstr ""
+
+#: useredit.py:514 groupedit.py:180
+msgid "You are not allowed to do that"
+msgstr ""
+
+#: useredit.py:516 groupedit.py:182
+msgid "Comar script error :("
+msgstr ""
+
+#: useredit.py:539
+msgid "Getting user information..."
+msgstr ""
+
+#: groupedit.py:57
+msgid "Group name:"
+msgstr ""
+
+#: groupedit.py:93
+msgid "Enter a group ID or use auto selection"
+msgstr ""
+
+#: groupedit.py:96
+msgid "Enter a group name"
+msgstr ""
+
+#: groupedit.py:123
+msgid "Enter Information For New Group"
+msgstr ""
+
+#: groupedit.py:170
+msgid "Adding group..."
+msgstr ""

@@ -1,0 +1,120 @@
+# translation of fr.po to French
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Amine Chadly <amine.chadly@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-07 21:36+0200\n"
+"PO-Revision-Date: 2007-03-10 14:17+0200\n"
+"Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/service-manager.py:55 src/service-manager.py:350 src/mainform.py:97
+msgid "Service Manager"
+msgstr "Gestionnaire des Services"
+
+#: src/service-manager.py:185
+msgid "You are not allowed to do this operation."
+msgstr "Vous n'êtes pas autorisé à effectuer cette opération."
+
+#: src/service-manager.py:185
+msgid "Access Denied"
+msgstr "Accès refusé"
+
+#: src/service-manager.py:187
+msgid "COMAR script execution failed."
+msgstr "L'exécution du script COMAR a echoué."
+
+#: src/service-manager.py:187
+msgid "Script Error"
+msgstr "Erreur de script"
+
+#: src/service-manager.py:192
+msgid "Unable to start service."
+msgstr "Impossible de démarrer le service."
+
+#: src/service-manager.py:192 src/service-manager.py:195
+msgid "Failed"
+msgstr "Échec"
+
+#: src/service-manager.py:195
+msgid "Unable to stop service."
+msgstr "Impossible d'arrêter le service."
+
+#: src/service-manager.py:224 src/mainform.py:101
+msgid "Select a service from list."
+msgstr "Sélectionner un service de la liste."
+
+#: src/service-manager.py:232 src/mainform.py:103
+msgid "Start"
+msgstr "Démarrer"
+
+#: src/service-manager.py:237
+#, python-format
+msgid "%s is running."
+msgstr "%s est en cours d'exécution."
+
+#: src/service-manager.py:240
+#, python-format
+msgid "%s is not running."
+msgstr "%s est à l'arrêt."
+
+#: src/service-manager.py:242
+msgid "Execute startup script"
+msgstr "Exécuter le script de démarrage du système"
+
+#: src/service-manager.py:243
+msgid "Execuete shutdown script"
+msgstr "Exécuter le script d'arrêt du système"
+
+#: src/service-manager.py:307
+msgid ""
+"If you stop this service, you may have problems.\n"
+"Are you sure you want to stop this service?"
+msgstr ""
+"L'arrêt de service provoquera d'éventuel problèmes. \n"
+"Êtes vous sûr de vouloir arrêter ce service ?"
+
+#: src/service-manager.py:345
+msgid "Service Manager is already running!"
+msgstr "Le Gestionnaire de Services est déjà en cours d'éxécution !"
+
+#: src/mainform.py:82 src/mainform.py:108
+msgid "1"
+msgstr "1"
+
+#: src/mainform.py:83 src/mainform.py:109
+msgid "Service"
+msgstr "Service"
+
+#: src/mainform.py:84 src/mainform.py:110
+msgid "Run on Startup"
+msgstr "Lancer au Démarrage du sytème"
+
+#: src/mainform.py:85 src/mainform.py:111
+msgid "Package"
+msgstr "Paquet"
+
+#: src/mainform.py:99
+msgid "Run on startup."
+msgstr "Lancer au démarrage du sytème."
+
+#: src/mainform.py:100
+msgid "Don't run on startup."
+msgstr "Ne pas lancer au démarrage du système."
+
+#: src/mainform.py:106
+msgid "&List servers only."
+msgstr "&Lister seulement les serveurs."
+
+#: src/mainform.py:107
+msgid "Alt+L"
+msgstr "Alt+L"
+

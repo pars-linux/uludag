@@ -1,0 +1,81 @@
+# translation of nl.po to
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Thijs Hulshof <thijs@fedoraproject.org>, 2006.
+# Rinse de Vries <rinsedevries@kde.nl>, 2006.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006.
+# Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-30 22:16+0200\n"
+"PO-Revision-Date: 2006-11-30 22:00+0200\n"
+"Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/disk-manager.py:78 src/disk-manager.py:315 src/diskform.py:132
+msgid "Disk Manager"
+msgstr ""
+
+#: src/disk-manager.py:200 src/disk-manager.py:219
+msgid "Completed"
+msgstr ""
+
+#: src/disk-manager.py:200 src/disk-manager.py:219
+msgid "File /etc/fstab updated !"
+msgstr ""
+
+#: src/disk-manager.py:250
+msgid "Mount Point"
+msgstr ""
+
+#: src/disk-manager.py:251
+msgid "File System Type"
+msgstr ""
+
+#: src/disk-manager.py:310
+msgid "Disk Manager is already running!"
+msgstr ""
+
+#: src/diskform.py:92 src/diskform.py:139
+msgid "Disks"
+msgstr ""
+
+#: src/diskform.py:93 src/diskform.py:140
+msgid "Partitions"
+msgstr ""
+
+#: src/diskform.py:133
+msgid "File System Type :"
+msgstr ""
+
+#: src/diskform.py:134
+msgid "Mount Point :"
+msgstr ""
+
+#: src/diskform.py:135
+msgid "Additional Options :"
+msgstr ""
+
+#: src/diskform.py:136
+msgid "Get Default Options"
+msgstr ""
+
+#: src/diskform.py:137
+msgid "Find Disks Automatically"
+msgstr ""
+
+#: src/diskform.py:138
+msgid "Show System Partitions"
+msgstr ""
+
+#: src/diskform.py:141
+msgid "To update disk changes the manager must run as root"
+msgstr ""

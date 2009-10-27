@@ -1,0 +1,123 @@
+# translation of it.po to italiano
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrea Decorte <adecorte@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: it\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-25 14:59+0300\n"
+"PO-Revision-Date: 2007-03-05 10:13+0200\n"
+"Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
+"Language-Team: italiano\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/service-manager.py:30 src/service-manager.py:82
+#: src/service_manager.py:102
+msgid "Service Manager"
+msgstr "Gestore dei servizi"
+
+#: src/service-manager.py:76
+msgid "Service Manager is already started!"
+msgstr "Il gestore dei servizi è già in esecuzione!"
+
+#: src/sm_mainview.py:153
+msgid "You are not allowed to do this operation."
+msgstr "Non hai i permessi necessari per eseguire questa operazione."
+
+#: src/sm_mainview.py:153
+msgid "Access Denied"
+msgstr "Accesso negato"
+
+#: src/sm_mainview.py:157
+msgid "COMAR script execution failed."
+msgstr "Esecuzione dello script COMAR fallita."
+
+#: src/sm_mainview.py:157
+msgid "Script Error"
+msgstr "Errore nello script"
+
+#: src/sm_mainview.py:164
+msgid "Unable to start service"
+msgstr "Impossibile avviare il servizio"
+
+#: src/sm_mainview.py:167
+msgid "Unable to stop service"
+msgstr "Impossibile fermare il servizio"
+
+#: src/sm_mainview.py:195 src/service_manager.py:106
+msgid "Select a service from list."
+msgstr "Scegli un servizio della lista."
+
+#: src/sm_mainview.py:202 src/service_manager.py:108
+msgid "Start"
+msgstr "Avvia"
+
+#: src/sm_mainview.py:208
+#, python-format
+msgid "%s is running."
+msgstr "%s è in esecuzione."
+
+#: src/sm_mainview.py:212
+#, python-format
+msgid "%s is not running."
+msgstr "%s non è in esecuzione."
+
+#: src/sm_mainview.py:270
+msgid ""
+"If you stop this service, you may have problems.\n"
+"Are you sure you want to stop this service?"
+msgstr ""
+"Se fermi questo servizio, potresti riscontrare dei problemi.\n"
+" Sei sicuro di voler fermare questo servizio?"
+
+#: src/sm_mainview.py:274
+msgid ""
+"If you disable this service, you may have problems.\n"
+"Are you sure you want to do this?"
+msgstr ""
+"Se fermi questo servizio, potresti riscontrare dei problemi.\n"
+" Sei sicuro di voler fermare questo servizio?"
+
+#: src/service_manager.py:85 src/service_manager.py:113
+msgid "1"
+msgstr "1"
+
+#: src/service_manager.py:86 src/service_manager.py:114
+msgid "Service"
+msgstr "Servizio"
+
+#: src/service_manager.py:87 src/service_manager.py:115
+msgid "Run on Startup"
+msgstr "Esecuzione all'avvio"
+
+#: src/service_manager.py:88 src/service_manager.py:116
+msgid "Package"
+msgstr "Pacchetto"
+
+#: src/service_manager.py:104
+msgid "Run on startup."
+msgstr "Esegui all'avvio."
+
+#: src/service_manager.py:105
+msgid "Don't run on startup."
+msgstr "Non eseguire all'avvio."
+
+#: src/service_manager.py:111
+msgid "&List servers only."
+msgstr "E&lenca solo i server."
+
+#: src/service_manager.py:112
+msgid "Alt+L"
+msgstr "Alt+L"
+
+#~ msgid "Execute startup script"
+#~ msgstr "Esegui script di avvio"
+
+#~ msgid "Execute shutdown script"
+#~ msgstr "Esegui script di chiusura"

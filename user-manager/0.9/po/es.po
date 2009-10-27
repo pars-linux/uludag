@@ -1,0 +1,273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: user manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-06 12:04+0200\n"
+"PO-Revision-Date: 2006-11-26 18:54-0400\n"
+"Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
+"Language-Team: spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: mainview.py:30 mainview.py:66
+msgid ""
+"Cannot connect to the COMAR! If it is not running you should start it with "
+"the 'service comar start' command in a root console."
+msgstr ""
+
+#: mainview.py:46
+msgid "Waiting COMAR..."
+msgstr ""
+
+#: mainview.py:47
+msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
+msgstr ""
+
+#: user-manager.py:30
+msgid "User Management"
+msgstr "Administración de Usuarios"
+
+#: user-manager.py:76
+msgid "User manager module is already started!"
+msgstr "Módulo de Administración de usuarios ya se está ejecutando !"
+
+#: user-manager.py:81
+msgid "User Manager"
+msgstr "Administrador de Usuarios"
+
+#: groupedit.py:22 useredit.py:25
+msgid "ID:"
+msgstr "ID:"
+
+#: groupedit.py:30 useredit.py:37
+msgid "Select manually"
+msgstr "Seleccion manual"
+
+#: groupedit.py:61
+msgid "Group name:"
+msgstr "Nombre de Grupo:"
+
+#: groupedit.py:97
+msgid "Enter a group ID or use auto selection"
+msgstr "Ingrese ID del grupo o use selección automatica"
+
+#: groupedit.py:100
+msgid "Enter a group name"
+msgstr "Ingrese un nombre de grupo"
+
+#: groupedit.py:127
+msgid "Enter Information For New Group"
+msgstr "Ingrese Información para el grupo nuevo"
+
+#: groupedit.py:175
+msgid "Adding group..."
+msgstr "Agregando grupo..."
+
+#: groupedit.py:185 useredit.py:554 useredit.py:586
+#, python-format
+msgid "Operation failed, reason:<br>%s"
+msgstr "Operación falló, por causa de: <br>%s"
+
+#: groupedit.py:187 useredit.py:556 useredit.py:588
+msgid "You are not allowed to do that"
+msgstr "No tienes permisos para hacer esto"
+
+#: groupedit.py:189 useredit.py:558 useredit.py:590
+msgid "Comar script error :("
+msgstr "Error de script Comar :("
+
+#: browser.py:94
+msgid "Show system user and groups"
+msgstr "Mostrar usuarios y grupos del sistema"
+
+#: browser.py:104 browser.py:114
+msgid "ID"
+msgstr "ID"
+
+#: browser.py:106
+msgid "User name"
+msgstr "Nombre de usuario"
+
+#: browser.py:107
+msgid "Full name"
+msgstr "Nombre completo"
+
+#: browser.py:116
+msgid "Group name"
+msgstr "Nombre de grupo"
+
+#: browser.py:121
+msgid "Users"
+msgstr "Usuarios"
+
+#: browser.py:122
+msgid "Groups"
+msgstr "Grupos"
+
+#: browser.py:131
+msgid "User Manager Help"
+msgstr "Ayuda de Administrador de Usuarios"
+
+#: browser.py:138
+#, python-format
+msgid ""
+"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
+"s<br>ID: %d"
+msgstr ""
+"<big><b>Debo eliminar este usuario ?</b></big><br><br>Nombre: %s<br>Nombre "
+"de usuario: %s<br>ID: %d"
+
+#: browser.py:144
+msgid "Delete User"
+msgstr "Eliminar Usuario"
+
+#: browser.py:145
+msgid "Delete user and files"
+msgstr "Eliminar Usuario y archivos"
+
+#: browser.py:146
+msgid "Delete user"
+msgstr "Eliminar Usuario"
+
+#: browser.py:157
+#, python-format
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr ""
+"<big><b>Debo eliminar este grupo ?</b></big><br><br>Nombre de Grupo: %"
+"s<br>ID: %d"
+
+#: browser.py:163 browser.py:164
+msgid "Delete Group"
+msgstr "Eliminar Grupo"
+
+#: useredit.py:72
+msgid "User name:"
+msgstr "Nombre de usuario:"
+
+#: useredit.py:103
+msgid "Full name:"
+msgstr "Nombre completo:"
+
+#: useredit.py:126
+msgid "Home:"
+msgstr "Carpeta home:"
+
+#: useredit.py:158
+msgid "Select user's home directory"
+msgstr "Seleccione la carpeta home del usuario"
+
+#: useredit.py:167
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: useredit.py:173
+msgid "Confirm password:"
+msgstr "Confirmar contraseña:"
+
+#: useredit.py:202
+msgid "Shell:"
+msgstr "Shell:"
+
+#: useredit.py:224
+msgid "Please specify an existing shell command"
+msgstr "Favor indique un comando shell"
+
+#: useredit.py:226
+msgid "Specified shell command is not executable"
+msgstr "El comando shell indicado no es ejecutable"
+
+#: useredit.py:268
+msgid "Group"
+msgstr "Grupo"
+
+#: useredit.py:269
+msgid "Permission"
+msgstr "Permisos"
+
+#: useredit.py:279
+msgid "Main group:"
+msgstr "Grupo principal:"
+
+#: useredit.py:375
+msgid "Start with typing this user's full name."
+msgstr "Escriba primero el nombre completo de este usuario."
+
+#: useredit.py:378
+msgid "You should enter a password for this user."
+msgstr "Deberías ingresar una contraseña para este usuario."
+
+#: useredit.py:383
+#, fuzzy
+msgid "Password must be longer."
+msgstr "La contraseña debe ser mas larga"
+
+#: useredit.py:387
+#, fuzzy
+msgid "Dont use your full name or user name as a password."
+msgstr "No uses el nombre completo o nombre de usuario para la contraseña"
+
+#: useredit.py:390
+msgid "Passwords don't match."
+msgstr "Las contraseñas no coinciden."
+
+#: useredit.py:393
+msgid "You must enter a user ID or use the auto selection."
+msgstr "Debes ingresar un ID de usuario o usar la selección automatica."
+
+#: useredit.py:398
+msgid "You must enter a user name."
+msgstr "Debes ingresar un nombre de usuario."
+
+#: useredit.py:401
+#, fuzzy
+msgid "This user name is used by another user."
+msgstr "Este nombre de usuario ya está en uso"
+
+#: useredit.py:405
+msgid "User name must not start with a number."
+msgstr ""
+
+#: useredit.py:408
+msgid "You should select at least one group this user belongs to."
+msgstr "Deberías indicar al menos un grupo al cual pertenece este usuario."
+
+#: useredit.py:439
+msgid "Edit User's Information"
+msgstr "Editar Informaciones del Usuario"
+
+#: useredit.py:441
+msgid "Enter Information For New User"
+msgstr "Ingrese Informaciones del Usuario nuevo"
+
+#: useredit.py:443
+msgid "Show all groups"
+msgstr "Mostrar todos los grupos"
+
+#: useredit.py:533
+msgid ""
+"You are removing yourself from the 'wheel' system group, you might not use "
+"your administrator permissions after that."
+msgstr ""
+
+#: useredit.py:534
+msgid "Important Group Change"
+msgstr ""
+
+#: useredit.py:541
+msgid "Changing user information..."
+msgstr "Cambiando informaciones de usuario..."
+
+#: useredit.py:575
+msgid "Adding user..."
+msgstr "Agregando usuario..."
+
+#: useredit.py:615
+msgid "Getting user information..."
+msgstr "Recibiendo información de usuario..."

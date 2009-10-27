@@ -1,0 +1,131 @@
+# translation of es.po to spanish
+# translation of es.po to
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Klemens Häckel <click3d_at_linuxmail_org>, 2007.
+# klemens <click3d at linuxmail org>, 2007.
+# Christian Faure <christian.faurebouvard@laposte.net>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: es\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-26 09:10+0300\n"
+"PO-Revision-Date: 2007-06-30 08:41-0400\n"
+"Last-Translator: klemens <click3d at linuxmail org>\n"
+"Language-Team: spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/service-manager.py:30 src/service-manager.py:82
+#: src/service_manager.py:108
+msgid "Service Manager"
+msgstr "Administrador de Servicios"
+
+#: src/service-manager.py:76
+msgid "Service Manager is already started!"
+msgstr "Administrador de Servicios ya se está ejecutando !"
+
+#: src/sm_mainview.py:161
+msgid "You are not allowed to do this operation."
+msgstr "No está autorizado para esta operación."
+
+#: src/sm_mainview.py:161
+msgid "Access Denied"
+msgstr "Acceso Denegado"
+
+#: src/sm_mainview.py:165
+msgid "COMAR script execution failed."
+msgstr "Ejecución de script COMAR falló."
+
+#: src/sm_mainview.py:165
+msgid "Script Error"
+msgstr "Error de Script"
+
+#: src/sm_mainview.py:171
+msgid "Unable to start service"
+msgstr "No posible iniciar el servicio"
+
+#: src/sm_mainview.py:174
+msgid "Unable to stop service"
+msgstr "No posible detener el servicio"
+
+#: src/sm_mainview.py:178
+msgid "Unable to restart service"
+msgstr "No posible reiniciar el servicio"
+
+#: src/sm_mainview.py:211 src/service_manager.py:112
+msgid "Select a service from list."
+msgstr "Seleccione un servicio de la lista."
+
+#: src/sm_mainview.py:218 src/service_manager.py:114
+#: src/service_manager.py:116
+msgid "Start"
+msgstr "Iniciar"
+
+#: src/sm_mainview.py:220
+msgid "Restart"
+msgstr "Reiniciar"
+
+#: src/sm_mainview.py:226
+#, python-format
+msgid "%s is running."
+msgstr "%s se está ejecutando."
+
+#: src/sm_mainview.py:230
+#, python-format
+msgid "%s is not running."
+msgstr "%s no se está ejecutando."
+
+# "parar" por "detener"
+#: src/sm_mainview.py:295
+msgid ""
+"If you stop this service, you may have problems.\n"
+"Are you sure you want to stop this service?"
+msgstr ""
+"Si detiene este servicio podría llegar a tener problemas.\n"
+"Está seguro que quiere detener este servicio ?"
+
+#: src/sm_mainview.py:299
+msgid ""
+"If you disable this service, you may have problems.\n"
+"Are you sure you want to do this?"
+msgstr ""
+"Si deshabilita este servicio podría llegar a tener problemas.\n"
+"Está seguro que quiere realizar esta operación ?"
+
+#: src/service_manager.py:91 src/service_manager.py:121
+msgid "1"
+msgstr "1"
+
+#: src/service_manager.py:92 src/service_manager.py:122
+msgid "Service"
+msgstr "Servicio"
+
+# Iniciar durante el arranque del sistema
+#: src/service_manager.py:93 src/service_manager.py:123
+msgid "Run on Startup"
+msgstr "Iniciar durante el arranque del sistema"
+
+#: src/service_manager.py:94 src/service_manager.py:124
+msgid "Package"
+msgstr "Paquete"
+
+#: src/service_manager.py:110
+msgid "Run on startup."
+msgstr "Iniciar durante el arranque del sistema."
+
+#: src/service_manager.py:111
+msgid "Don't run on startup."
+msgstr "No iniciar durante el arranque del sistema."
+
+#: src/service_manager.py:119
+msgid "&List servers only."
+msgstr "&Listar solamente servidores."
+
+#: src/service_manager.py:120
+msgid "Alt+L"
+msgstr "Alt+L"
+

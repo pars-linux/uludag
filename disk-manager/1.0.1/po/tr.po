@@ -1,0 +1,82 @@
+# translation of tr.po to
+# Disk Manager Interface
+# Copyright (C) 2006, UEKAE/TÜBİTAK
+# This file is distributed under the same license as the Service-KGA package.
+#
+# Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: tr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-05 10:50+0200\n"
+"PO-Revision-Date: 2006-11-30 22:01+0200\n"
+"Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/disk-manager.py:79 src/disk-manager.py:319 src/diskform.py:132
+msgid "Disk Manager"
+msgstr "Disk Yöneticisi"
+
+#: src/disk-manager.py:99
+msgid "User not in disk group !! Exiting.."
+msgstr "Kullanıcı disk grubunda değil !! Çıkılıyor.."
+
+#: src/disk-manager.py:205 src/disk-manager.py:224
+msgid "Completed"
+msgstr "Tamamlandı"
+
+#: src/disk-manager.py:205 src/disk-manager.py:224
+msgid "File /etc/fstab updated !"
+msgstr "Dosya /etc/fstab güncellendi !"
+
+#: src/disk-manager.py:255
+msgid "Mount Point"
+msgstr "Bağlama Noktası"
+
+#: src/disk-manager.py:256
+msgid "File System Type"
+msgstr "Dosya Sistemi Tipi"
+
+#: src/disk-manager.py:314
+msgid "Disk Manager is already running!"
+msgstr "Disk Yöneticisi zaten çalışıyor!"
+
+#: src/diskform.py:92 src/diskform.py:139
+msgid "Disks"
+msgstr "Diskler "
+
+#: src/diskform.py:93 src/diskform.py:140
+msgid "Partitions"
+msgstr "Disk Bölümleri"
+
+#: src/diskform.py:133
+msgid "File System Type :"
+msgstr "Dosya Sistemi Tipi:"
+
+#: src/diskform.py:134
+msgid "Mount Point :"
+msgstr "Bağlama Noktası :"
+
+#: src/diskform.py:135
+msgid "Additional Options :"
+msgstr "Ek Seçenekler :"
+
+#: src/diskform.py:136
+msgid "Get Default Options"
+msgstr "Öntanımlı Seçenekleri Getir"
+
+#: src/diskform.py:137
+msgid "Find Disks Automatically"
+msgstr "Diskleri Otomatik Bul"
+
+#: src/diskform.py:138
+msgid "Show System Partitions"
+msgstr "Sistem Bölümlerini Göster"
+
+#: src/diskform.py:141
+msgid "To update disk changes the manager must run as root"
+msgstr "Disk değişiklikleri için yönetici girişi yapmalısınız"

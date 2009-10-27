@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Network Configuration
+Name[en]=Network Configuration
+Name[tr]=Ağ Yapılandırması
+Comment=Network Configuration User Interface
+Comment[tr]=Ağ Yapılandırması Arayüzü
+Icon=network
+X-KDE-ModuleType=Library
+X-KDE-Library=network-manager
+X-KDE-FactoryName=network_manager
+X-KDE-RootOnly=false
+Type=Application
+Exec=kcmshell network-manager
+Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-network

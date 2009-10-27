@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-05-26 03:17+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/boot-manager.py:30 src/boot-manager.py:84
+msgid "Bootloader Manager"
+msgstr ""
+
+#: src/boot-manager.py:37
+msgid "Developer and Current Maintainer"
+msgstr ""
+
+#: src/boot-manager.py:38
+msgid "Contributions to Boot.Loader model."
+msgstr ""
+
+#: src/boot-manager.py:79
+msgid "Bootloader Manager is already started!"
+msgstr ""
+
+#: src/mainview.py:35
+msgid "New Entry"
+msgstr ""
+
+#: src/mainview.py:55
+msgid "Remember last booted entry."
+msgstr ""
+
+#: src/mainview.py:97
+msgid "Title:"
+msgstr ""
+
+#: src/mainview.py:106
+msgid "System:"
+msgstr ""
+
+#: src/mainview.py:117
+msgid "Root:"
+msgstr ""
+
+#: src/mainview.py:127
+msgid "Kernel:"
+msgstr ""
+
+#: src/mainview.py:137
+msgid "Kernel Parameters:"
+msgstr ""
+
+#: src/mainview.py:147
+msgid "Initial Ramdisk:"
+msgstr ""
+
+#: src/mainview.py:157
+msgid "Set as default boot entry."
+msgstr ""
+
+#: src/mainview.py:214
+msgid "Are you sure you want to remove this entry?"
+msgstr ""
+
+#: src/mainview.py:214
+msgid "Delete Entry"
+msgstr ""
+
+#: src/mainview.py:346
+msgid "Bootloader configuration changed by another application."
+msgstr ""
+
+#: src/mainview.py:381 src/mainview.py:383
+msgid "Failed"
+msgstr ""
+
+#: src/mainview.py:388
+msgid "You are not allowed to edit boot loader settings."
+msgstr ""
+
+#: src/mainview.py:388
+msgid "Access Denied"
+msgstr ""
+
+#: src/ui_elements.py:90
+msgid "Edit entry"
+msgstr ""
+
+#: src/ui_elements.py:94
+msgid "Delete entry"
+msgstr ""

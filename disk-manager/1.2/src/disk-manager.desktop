@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Disk Manager
+Name[tr]=Disk Yönetim Arayüzü
+Name[de]=Festplatten-Manager
+GenericName=Disk Management Interface
+GenericName[tr]=Disk Yönetim Arayüzü
+GenericName[de]=Festplatten-Manager-Schnittstelle
+Icon=disk_manager
+X-KDE-ModuleType=Library
+X-KDE-Library=disk-manager
+X-KDE-FactoryName=disk_manager
+X-KDE-RootOnly=true
+Type=Application
+Exec=disk-manager
+Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
