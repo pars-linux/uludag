@@ -1,7 +1,0 @@
-- Kurulu paketleri göster dedikten sonra, listedeki paketlerden birinin üzerine tıklandığında, açıklaması geliyor fakat yanındaki checkbox kayboluyor ve paketleri kaldır butonu disable duruma geçiyor. (Qt bug)
-- Kurulan paketlerin gösterildiği pencerede, kurulan uygulmanın desktop dosyasında bin uzantısı %U gibi değişkenler içeriyorsa, uygulama otomatik olarak açılamıyor. 
-- Internete bağlı olmadığında, Stable depo'nun adı değiştirilip test deposu olarak kaydedilmeye çalışıldığında "url open error" veriyor.
-    - Güncellemeleri göster denildiğinde eskiden kayıtlı olan depoyu güncellemeye çalışıyor ve aynı hatayı veriyor.
-    - Bu durum için uygun bir uyarı verilmeli.
-
-- Yanlış bir depo eklenip, depo güncellenmeye çalışıldıktan sora, iptal denildiğinde, iptal edemiyor. Ve daha sonra yeni bir depo ekleneniyor.

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Update Manager
-GenericName=Update Manager
-Comment=An application for distribution updates
-Exec=update-manager
-Icon=security-high
-Type=Application
-Categories=Qt;KDE;System;
