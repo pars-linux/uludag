@@ -56,7 +56,7 @@ class MainDialog(UI_MainDialog):
         message = i18n("<qt>Upgrade to Pardus 2009.1 completed. Upgrade-manager will now restart the system.")
         message += i18n("<br><br>Do you want to continue?</qt>")
 
-        if KMessageBox.Yes == KMessageBox.warningYesNo(self.parent,
+        if KMessageBox.Yes == KMessageBox.warningYesNo(self,
                                                        message,
                                                        i18n("Warning"),
                                                        KGuiItem(i18n("Continue"), "ok"),
