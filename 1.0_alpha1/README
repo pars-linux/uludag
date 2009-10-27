@@ -1,0 +1,43 @@
+
+COMARd
+======
+
+Modüller:
+---------
+* main.c		Ana süreç
+* model.c		Sistem modelini yükleme/indeksleme
+* data.c		Veritabanı (acl, script, apps, model, config)
+* acl.c			Yetki denetimi
+* csl.c			CSL - Python VM yardımcıları
+* job.c			İş yapan süreçler (Register, Execute, Remove script)
+* process.c		Süreç yönetimi ve süreçler arası iletişim
+* ipc.c			Süreçler arası iletişim yardımcıları
+* cfg.c			Komut satırı parametreleri
+* log.c			Hata ve bilgi kayıtları
+* event.c		Olay bildirim sistemi
+* rpc_unix.c	Unix soket üzerinden comar çağrısı modülü
+* iksemel.c		Model dosyasını okumak için dahili minimal XML parser
+
+Kod stili:
+----------
+* K&R
+* Fonksiyon isimleri (module)_(görev) şeklinde
+* Ana süreçte hazırlık işlemleri (module)_init
+* Yeni bir süreç başlatan fonksiyonlar (module)_start [ _(opsiyonel isim)]
+
+RPC:
+----
+"/var/run/comar.socket" adlı UNIX soketinden bağlanılır.
+
+Gelen ve giden cevaplar:
+
+cmd    datasize    id       data
+---  ------------  ---  -----------...
+(1)       (3)      (4)   (datasize) bytes
+
+biçimdedir. Burada cmd, giden komut veya dönen cevap tipi,
+data ise komutun datasize boyutundaki parametreleridir.
+32bitlik id değeri client tarafından belirlenir, ve bu değer
+ile yapılan çağrıdan gelen tüm cevaplarda aynen geri döner.
+
+Komutlar:

@@ -1,8 +1,0 @@
-[encoding: UTF-8]
-gtk/apport-gtk
-[type: gettext/glade]gtk/apport-gtk.ui
-gtk/apport-gtk.desktop.in
-kde/apport-kde
-kde/apport-kde.desktop.in
-cli/apport-cli
-apport/ui.py

@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<comarModel>
+
+
+<group name="System">
+<class name="Power">
+</class>
+<class name="Users">
+<method name="addUser"/>
+</class>
+<class name="Package">
+<method name="postInstall"/>
+<method name="preRemove"/>
+</class>
+</group>
+
+
+<group name="Hardware">
+</group>
+
+
+<group name="Storage">
+</group>
+
+
+<group name="Time">
+<class name="Clock">
+<method name="setDate"/>
+<method name="getDate"/>
+<method name="loadFromHW"/>
+<method name="saveToHW"/>
+<method name="setTimeZone"/>
+<method name="getTimeZone"/>
+<notify name="lala"/>
+</class>
+<class name="Jobs">
+</class>
+</group>
+
+
+<group name="Net">
+<class name="Stack">
+<method name="isOnline"/>
+<method name="goOnline"/>
+<method name="goOffline"/>
+<method name="getNameServers"/>
+<method name="setNameServers"/>
+<method name="useNameServer"/>
+<method name="addHost"/>
+<method name="deleteHost"/>
+</class>
+<class name="Link">
+<method name="getActiveLinks"/>
+<method name="setAddress"/>
+<method name="getInformation"/>
+<method name="getStatus"/>
+<method name="fineTune"/>
+<method name="getStatistics"/>
+<method name="getSpeedInfo"/>
+<method name="setSpeed"/>
+</class>
+<class name="Server">
+</class>
+</group>
+
+
+</comarModel>
