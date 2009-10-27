@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-02 17:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/firewall-config.py:36
+msgid "Pardus Firewall Graphical User Interface"
+msgstr ""
+
+#: src/firewall-config.py:52
+msgid "GUI Design & Usability"
+msgstr ""
+
+#: src/firewall-config.py:53
+msgid "Help with IPTables"
+msgstr ""
+
+#: src/firewall-config.py:54
+msgid "Help with KDE stuff"
+msgstr ""
+
+#: src/firewall-config.py:78 src/firewall.py:166
+msgid "Firewall Configuration"
+msgstr ""
+
+#: src/firewall-config.py:137
+msgid "&Stop Firewall"
+msgstr ""
+
+#: src/firewall-config.py:138
+msgid "<b><font size='+1'>Firewall is running</font></b>"
+msgstr ""
+
+#: src/firewall-config.py:140
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr ""
+
+#: src/firewall-config.py:146
+msgid "&Start Firewall"
+msgstr ""
+
+#: src/firewall-config.py:147
+msgid "<b><font size='+1'>Firewall is not running</font></b>"
+msgstr ""
+
+#: src/firewall-config.py:149
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr ""
+
+#: src/firewall-config.py:276
+msgid "Pardus Firewall Interface is already running!"
+msgstr ""
+
+#: src/firewall.py:167
+msgid "Enter the IP address of the "
+msgstr ""
+
+#: src/firewall.py:169
+msgid "Alt+H"
+msgstr ""
+
+#: src/firewall.py:171
+msgid "Alt+A"
+msgstr ""
+
+#: src/firewall.py:172
+msgid "&Ok"
+msgstr ""
+
+#: src/firewall.py:173
+msgid "Alt+O"
+msgstr ""
+
+#: src/firewall.py:175
+msgid "Alt+C"
+msgstr ""
+
+#: src/firewall.py:177
+msgid "Click here to stop the firewall and allow all incoming connections."
+msgstr ""
+
+#: src/firewall.py:178
+msgid "&Stop"
+msgstr ""
+
+#: src/firewall.py:179
+msgid "Alt+S"
+msgstr ""
+
+#: src/firewall.py:180
+msgid "<b><font size=\"+1\">Firewall is running</font></b>"
+msgstr ""
+
+#: src/firewall.py:182
+msgid "E-mail Services"
+msgstr ""
+
+#: src/firewall.py:183
+msgid "Web Services"
+msgstr ""
+
+#: src/firewall.py:184
+msgid "Remote Login Services"
+msgstr ""
+
+#: src/firewall.py:185
+msgid "Windows File Sharing Services"
+msgstr ""
+
+#: src/firewall.py:186
+msgid "Internet Relay Chat Services"
+msgstr ""
+
+#: src/firewall.py:187
+msgid "File Transfer Services"
+msgstr ""
+
+#: src/firewall.py:188
+msgid "Allow other computers to access following services on this computer:"
+msgstr ""
+
+#: src/firewall.py:189
+msgid "Incoming Connections"
+msgstr ""

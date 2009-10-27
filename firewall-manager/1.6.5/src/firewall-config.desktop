@@ -1,0 +1,26 @@
+[Desktop Entry]
+Name=Firewall Config
+Name[tr]=Güvenlik Duvarı Ayarları
+Name[de]=Firewallkonfiguration
+Name[es]=Configurar Cortafuegos
+Name[pt_BR]=Configuração de Firewall
+GenericName=Firewall Configuration
+GenericName[en]=Firewall Configuration
+GenericName[es]=Configurar Cortafuegos
+GenericName[tr]=Güvenlik Duvarı Ayarları
+GenericName[de]=Firewallkonfiguration
+GenericName[pt_BR]=Configuração de Firewall
+Comment=Firewall Configuration Interface
+Comment[tr]=Güvenlik Duvarı Ayarları
+Comment[de]=Firewallkonfiguration-Schnittstelle
+Comment[es]=Interfaz para configurar el cortafuegos
+Comment[pt_BR]=Interface de Configuração de Firewall
+Icon=firewall_config
+X-KDE-ModuleType=Library
+X-KDE-Library=firewall-config
+X-KDE-FactoryName=firewall_config
+X-KDE-RootOnly=false
+X-Tasma-Fork=true
+Type=Application
+Exec=firewall-config
+Categories=Qt;KDE;System;X-KDE-settings-network;X-KDE-tasma-network;
