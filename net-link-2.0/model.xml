@@ -1,0 +1,143 @@
+<comarModel>
+    <interface name="Network.Link">
+        <method name="linkInfo" access_label="get">
+            <arg name="info" type="{ss}" direction="out"/>
+        </method>
+        <method name="authMethods" access_label="get">
+            <arg name="info" type="a(ss)" direction="out"/>
+        </method>
+        <method name="authParameters" access_label="get">
+            <arg name="info" type="a(sss)" direction="out"/>
+        </method>
+        <method name="setAuthMethod" access_label="set">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="method" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="setAuthParameters" access_label="set">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="key" type="s" direction="in"/>
+            <arg name="value" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="getAuthMethod" access_label="get">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="method" type="s" direction="out"/>
+        </method>
+        <method name="getAuthParameters" access_label="get">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="key" type="{ss}" direction="out"/>
+        </method>
+        <method name="deviceModes" access_label="get">
+            <arg name="info" type="a(ss)" direction="out"/>
+        </method>
+        <method name="remoteName" access_label="get">
+            <arg name="remote" type="s" direction="out"/>
+        </method>
+        <method name="scanRemote" access_label="get">
+            <arg name="device" type="s" direction="in"/>
+            <arg name="remotes" type="a{ss}" direction="out"/>
+        </method>
+        <method name="setRemote" access_label="set">
+            <arg name="remote" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="deviceList" access_label="get">
+            <arg name="devices" type="{ss}" direction="out"/>
+        </method>
+        <method name="connections" access_label="get">
+            <arg name="connections" type="as" direction="out"/>
+        </method>
+        <method name="connectionInfo" access_label="get">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="info" type="{ss}" direction="out"/>
+        </method>
+        <method name="setDevice" access_label="set">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="device" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="setDeviceMode" access_label="set">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="mode" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="deleteConnection" access_label="set">
+            <arg name="name" type="s" direction="in"/>
+        </method>
+        <method name="setAddress" access_label="set">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="mode" type="s" direction="in"/>
+            <arg name="address" type="s" direction="in"/>
+            <arg name="mask" type="s" direction="in"/>
+            <arg name="gateway" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="setNameService" access_label="set">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="namemode" type="s" direction="in"/>
+            <arg name="nameserver" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="setState">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="state" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="getState" access_label="get">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="state" type="s" direction="out"/>
+        </method>
+        <method name="kernelEvent">
+            <arg name="data" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <signal name="connectionChanged">
+            <arg name="operation" type="s"/>
+            <arg name="profile" type="s"/>
+        </signal>
+        <signal name="stateChanged">
+            <arg name="profile" type="s"/>
+            <arg name="state" type="s"/>
+            <arg name="address_or_msg" type="s"/>
+        </signal>
+        <signal name="deviceChanged">
+            <arg name="action" type="s"/>
+            <arg name="type" type="s"/>
+            <arg name="device_id" type="s"/>
+            <arg name="device_name" type="s"/>
+        </signal>
+    </interface>
+    <interface name="Network.Stack">
+      <method name="getNameServers" access_label="get">
+        <arg name="servers" type="as" direction="out"/>
+      </method>
+      <method name="setNameServers" access_label="set">
+        <arg name="nameservers" type="as" direction="in"/>
+        <arg name="searchdomain" type="s" direction="in"/>
+        <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      </method>
+      <method name="registerNameServers" access_label="set">
+        <arg name="ifname" type="s" direction="in"/>
+        <arg name="nameservers" type="as" direction="in"/>
+        <arg name="searchdomain" type="s" direction="in"/>
+        <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      </method>
+      <method name="unregisterNameServers" access_label="set">
+        <arg name="ifname" type="s" direction="in"/>
+        <arg name="nameservers" type="as" direction="in"/>
+        <arg name="searchdomain" type="s" direction="in"/>
+        <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      </method>
+      <method name="flushNameCache" access_label="set">
+        <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      </method>
+      <method name="getHostName" access_label="get">
+        <arg name="hostname" type="s" direction="out"/>
+      </method>
+      <method name="setHostName" access_label="set">
+        <arg name="hostname" type="s" direction="in"/>
+        <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+      </method>
+    </interface>
+</comarModel>

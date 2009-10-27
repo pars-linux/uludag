@@ -1,0 +1,10 @@
+Installing:
+    - Copy Network.Link interface in model.xml into /etc/comar/model.xml
+    - Copy these files to /usr/share/PolicyKit/policy/
+        - policy/tr.org.pardus.comar.network.link.policy
+    - Stop COMAR
+    - Register scripts:
+        # hav register net_tools Network.Link scripts/net-tools.py
+        # hav register wireless_tools Network.Link scripts/wireless-tools.py
+        # hav register ppp Network.Link scripts/ppp.py
+    - Have fun :)
