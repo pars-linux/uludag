@@ -1,6 +1,0 @@
-INSTALL
--------
-To install Display Manager, you only need to type the following commands:
-
-$ cd display-manager
-$ sudo python setup.py install
