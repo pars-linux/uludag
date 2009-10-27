@@ -16,6 +16,8 @@ from qt import *
 from kdeui import *
 from kdecore import *
 
+import dcopext
+
 from ui_maindialog import UI_MainDialog
 
 import state
@@ -25,6 +27,8 @@ REBOOT_STEP = 5
 class MainDialog(UI_MainDialog):
     def __init__(self, parent=None):
         UI_MainDialog.__init__(self, parent)
+        dcop = KApplication.kApplication().dcopClient()
+        self.ksmiface = dcopext.DCOPApp("ksmserver", dcop)
         self.setFonts()
         self.setTitle()
         self.state = state.State(self)
@@ -62,7 +66,7 @@ class MainDialog(UI_MainDialog):
                                                        KGuiItem(i18n("Continue"), "ok"),
                                                        KGuiItem(i18n("Restart Later"), "no"),
                                                        ):
-            os.system("dbus-send --system --dest=org.freedesktop.Hal --type=method_call --print-reply /org/freedesktop/Hal/devices/computer  org.freedesktop.Hal.Device.SystemPowerManagement.Reboot")
+            self.ksmiface.ksmserver.logout(0, 2, -1)
         else:
             KApplication.kApplication().quit()
 
