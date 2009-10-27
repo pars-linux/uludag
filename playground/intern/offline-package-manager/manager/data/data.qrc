@@ -1,7 +1,0 @@
-<RCC>
-  <qresource prefix="data" >
-    <file>package-manager.png</file>
-    <file>pisianime.gif</file>
-    <file>wheel.mng</file>
-  </qresource>
-</RCC>
