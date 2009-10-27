@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-  <Source>
-    <Name>PolicyKit-gnome</Name>
-    <Summary xml:lang="tr">PolicyKit kulanan gtk+ uygulamaları için gerekli GNOME kodlarını ve araçlarını içerir</Summary>
-    <Description xml:lang="tr">PolicyKit, sistem genelindeki bileşenlerin ve masaüstü bileşenlerinin ayarlayabileceği şekilde ilkeler tanımlamak için araçlardan oluşur.</Description>
-  </Source>
-</PISI>
