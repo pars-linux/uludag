@@ -32,7 +32,7 @@ class State(QObject):
         self.connect(self.comar, PYSIGNAL("stepFinished(QString)"), lambda:QTimer.singleShot(1000, self.runNextStep))
         self.connect(self.comar, PYSIGNAL("statusDownloading(int, int)"), self.statusDownloading)
         self.connect(self.comar, PYSIGNAL("statusInstalling(QString, int, int)"), self.statusInstalling)
-        self.connect(self.comar, PYSIGNAL("statusConfiguring(QString, int, int)"), self.statusConfiguring)
+        self.connect(self.comar, PYSIGNAL("statusConfiguring()"), self.statusConfiguring)
 
     def reset(self):
         self.step = 0
@@ -57,11 +57,9 @@ class State(QObject):
             self.parent.operationStatus.setText(message)
             self.setProgress(total, current)
 
-    def statusConfiguring(self, package, total, current):
-        message = i18n("<qt>Configuring (%1) %2 of %3 packages</qt>").arg(package).arg(current).arg(total)
-        if current <= total:
-            self.parent.operationStatus.setText(message)
-            self.setProgress(total, current)
+    def statusConfiguring(self):
+        message = i18n("<qt>Configuring packages. This may take several minutes to finish</qt>")
+        self.parent.operationStatus.setText(message)
 
     def stepStarted(self, operation):
         # System.Upgrader.{prepare, setRepositories...}
@@ -88,8 +86,6 @@ class State(QObject):
 
     def runNextStep(self):
 
-        self.parent.progressBar.setProgress(0)
-
         if self.step >= len(STEPS):
             return
 
@@ -99,6 +95,7 @@ class State(QObject):
                 return
 
         if STEPS[self.step] in ["upgrade", "download"]:
+            self.parent.progressBar.setProgress(0)
             self.parent.operationStatus.setText(i18n("Resolving dependencies..."))
 
         if STEPS[self.step] == "upgrade":
