@@ -1,6 +1,0 @@
-[General]
-widgetStyle=qtcurve
-BrowserApplication[$e]=mozillafirefox.desktop
-
-[Icons]
-Theme=milky
