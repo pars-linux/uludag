@@ -1,0 +1,69 @@
+# Install Pardus-Python modules
+
+svn co http://svn.pardus.org.tr/uludag/branches/pardus-python/
+cd pardus-pardus
+sudo python setup.py install
+
+
+# Install DBus, PolicyKit, ConsoleKit and dependencies
+pisi install http://cekirdek.uludag.org.tr/~bahadir/PK/ConsoleKit-0.2.3-5.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/PolicyKit-0.7-12.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/dbus-1.1.2-22.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/hal-0.5.10-49.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/hal-info-20071212-13.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/kdebase-3.5.8-120.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/liblazy-0.2-2.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/udev-117-41.pisi
+
+
+# Install COMAR-DBus
+
+svn co http://svn.pardus.org.tr/uludag/branches/comar-dbus/comar
+cd comar
+cmake .
+make
+sudo make install
+
+
+# Install DBus Qt3 mainloop module:
+svn co http://svn.pardus.org.tr/uludag/trunk/dbus-pyqt3-mainloop/
+cd dbus-pyqt3-mainloop/src
+cmake .
+make
+sudo make install
+
+
+# Install PolicyKit-gnome dependencies:
+
+pisi ar contrib-2007 http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2
+pisi install libgnomeui gnome-doc-utils
+
+pisi install http://cekirdek.uludag.org.tr/~bahadir/PK/atk-1.20.0-8.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/cairo-1.5.4-13.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/fontconfig-2.5.0-24.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/glib2-2.14.4-17.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/gtk-engines-2.12.2-8.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/gtk2-2.12.3-26.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/libwnck-2.18.2-6.pisi \
+             http://cekirdek.uludag.org.tr/~bahadir/PK/pango-1.18.3-20.pisi
+             http://cekirdek.pardus.org.tr/~bahadir/PK/pixman-0.9.6-2.pisi
+
+# Install PolicyKit-gnome from source, I'm too lazy to package it
+
+wget http://hal.freedesktop.org/releases/PolicyKit-gnome-0.7.tar.bz2
+tar xf PolicyKit-gnome-0.7.tar.bz2
+cd PolicyKit-gnome-0.7
+./configure --prefix=/usr --disable-gtk-doc
+make
+sudo make install
+
+# Register test scripts
+
+svn co http://svn.pardus.org.tr/uludag/branches/comar-dbus/test
+cd test
+sudo ./register.sh
+
+# Get & Run User-Manager
+svn co http://svn.pardus.org.tr/uludag/branches/tasma-dbus/user-manager
+cd user-manager
+./user-manager

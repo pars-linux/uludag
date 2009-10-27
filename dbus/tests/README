@@ -1,0 +1,26 @@
+Requirements
+------------
+
+  Pardus Python utils - uludag/branches/pardus-python
+
+
+Build & Install
+---------------
+
+  cd ..
+  cmake .
+  make
+  sudo make install DESTDIR=/
+  cd test/
+
+
+Register Scripts
+----------------
+
+  sudo ./register.sh
+
+
+View Debug Log
+--------------
+
+  sudo tail -f /var/log/comar-dbus.log
