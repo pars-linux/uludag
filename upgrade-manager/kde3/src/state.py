@@ -39,11 +39,12 @@ class State(QObject):
 
     def setProgress(self, total, current):
         try:
-            percent = (total * 100) / current
+            percent = (current * 100) / total
         except ZeroDivisionError:
             percent = 100
 
-        self.progressBar.setProgress(percent)
+        print percent
+        self.parent.progressBar.setProgress(percent)
 
     def statusDownloading(self, total, current):
         message = i18n("<qt>Downloading %1 of %2 packages</qt>").arg(current).arg(total)
@@ -86,6 +87,8 @@ class State(QObject):
             return True
 
     def runNextStep(self):
+
+        self.parent.progressBar.setProgress(0)
 
         if self.step >= len(STEPS):
             return
