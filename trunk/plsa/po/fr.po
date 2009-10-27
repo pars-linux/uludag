@@ -72,7 +72,7 @@ msgstr "Toutes versions antérieure à la %s"
 
 #: plsa/__init__.py:158 plsa/__init__.py:159
 msgid "Resolution"
-msgstr "Résolutioin"
+msgstr "Résolution"
 
 #: plsa/__init__.py:162
 #, python-format
@@ -80,7 +80,7 @@ msgid ""
 "There are update(s) for %s. You can update them via Package Manager or with "
 "a single command from console:"
 msgstr ""
-"Des/Une mise(s) à jour est disponible pour %s. Vous pouvez la/les mettre à jour "
+"Des mises-à-jour sont disponibles pour %s. Vous pouvez les mettre à jour "
 "avec le Gestionnaire de Paquets ou avec une simple commande dans une console :"
 
 #: plsa/__init__.py:168 plsa/__init__.py:169
@@ -98,7 +98,7 @@ msgstr "LANG"
 
 #: plsa-cli:42
 msgid "open KMail compose dialog"
-msgstr "ouvrir une pop-up de composition dans KMail"
+msgstr "Ouvrir une fenêtre de rédaction de mail de KMail"
 
 #: plsa-cli:54
 #, python-format
@@ -113,4 +113,3 @@ msgstr "Impossible de lire %s."
 #: plsa-cli:67
 msgid "XML file has errors:"
 msgstr "Le fichier XML comporte des erreurs :"
-
