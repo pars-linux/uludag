@@ -1,0 +1,14 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="tr.org.pardus.knazar">
+    <method name="protect_from_harmful_looks">
+    </method>
+    <method name="release_the_protection">
+    </method>
+    <method name="is_protecting">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="send_nazar">
+    </method>
+  </interface>
+</node>

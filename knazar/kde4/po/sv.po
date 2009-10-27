@@ -1,0 +1,119 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: knazar\n"
+"Report-Msgid-Bugs-To: http://bugs.pardus.org.tr\n"
+"POT-Creation-Date: 2008-01-26 15:42+0200\n"
+"PO-Revision-Date: 2009-07-13 15:09+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: knazar.cpp:38
+msgid "About KNazar"
+msgstr "Om KNazar"
+
+#: knazar.cpp:39
+msgid "Protect"
+msgstr "Skydda"
+
+#: knazar.cpp:40
+msgid "Release"
+msgstr "Frigör"
+
+#: knazar.cpp:56 knazar.cpp:70
+msgid "KNazar - No harmful look allowed!"
+msgstr "KNazar - Inga onda ögon tillåtna!"
+
+#: knazar.cpp:66
+msgid "KNazar is starting to protect your Pardus Linux from harmful looks..."
+msgstr "KNazar påbörjar skydd av din Pardus Linux mot onda ögat..."
+
+#: knazar.cpp:78
+msgid "KNazar is stopping to protect your Pardus Linux from harmful looks..."
+msgstr "KNazar avslutar skydd av din Pardus Linux mot onda ögat..."
+
+#: knazar.cpp:84
+msgid "KNazar - You are completely demilitarized..."
+msgstr "KNazar - Du är fullständigt demilitariserad..."
+
+#: knazar.cpp:95
+msgid "Nazar eliminated"
+msgstr "Nazar oskadliggjordes"
+
+#: knazar.cpp:95
+msgid "Nazar Received and eliminated successfuly"
+msgstr "Nazar mottogs och oskadliggjordes med lyckat resultat"
+
+#: knazar.cpp:98
+msgid "Nazar harmed"
+msgstr "Nazar sårade"
+
+#: knazar.cpp:98
+msgid "Nazar Received and it HARMED!"
+msgstr "Nazar mottogs och det SÅRADE!"
+
+#: knazar.cpp:100
+msgid ""
+"KNazar - %1 attacks received so far, %2 are defated and %3 are received..."
+msgstr ""
+"KNazar - %1 attacker mottagna hitintills, %2 besegrades och %3 är mottagna."
+".."
+
+#: main.cpp:30
+msgid "knazar"
+msgstr "knazar"
+
+#: main.cpp:31
+msgid "KDE Nazar Application"
+msgstr "KDE Nazar"
+
+#: main.cpp:33
+msgid "Copyright (c) 2005 - 2008 TUBITAK/UEKAE"
+msgstr "Copyright (c) 2005 - 2008 TUBITAK/UEKAE"
+
+#: main.cpp:34
+msgid "KNazar is a useful part of the Pardus Linux"
+msgstr "KNazar är en användbar del av Pardus Linux"
+
+#: main.cpp:37
+msgid "S. Çağlar Onur"
+msgstr "S. Çağlar Onur"
+
+#: main.cpp:37
+msgid "Author"
+msgstr "Utvecklare"
+
+#: main.cpp:38
+msgid "Uğur Çetin"
+msgstr "Uğur Çetin"
+
+#: main.cpp:38
+msgid "KDE4 Porter"
+msgstr "Anpassning till KDE 4"
+
+#: main.cpp:39
+msgid "Serdar Soytetir"
+msgstr "Serdar Soytetir"
+
+#: main.cpp:39
+msgid "KNazar Icon"
+msgstr "KNazar-ikon"
+
+#: main.cpp:40
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Patrik Karlsson"
+
+#: main.cpp:40
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "patrik@pardus.nu"
+

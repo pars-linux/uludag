@@ -1,0 +1,127 @@
+# translation of fr.po to french
+# This file is put in the public domain.
+#
+# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
+# Klemens Häckel <click3d_at_linuxmail_org>, 2007.
+# Amine Chadly <amine.chadly@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: http://bugs.pardus.org.tr\n"
+"POT-Creation-Date: 2008-01-26 15:42+0200\n"
+"PO-Revision-Date: 2007-03-16 08:43+0200\n"
+"Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
+"Language-Team: french <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: knazar.cpp:38
+msgid "About KNazar"
+msgstr ""
+
+#: knazar.cpp:39
+msgid "Protect"
+msgstr "Protéger"
+
+#: knazar.cpp:40
+msgid "Release"
+msgstr "Version"
+
+#: knazar.cpp:56 knazar.cpp:70
+msgid "KNazar - No harmful look allowed!"
+msgstr "KNazar - Aucun mauvais oeil autorisé !"
+
+#: knazar.cpp:66
+msgid "KNazar is starting to protect your Pardus Linux from harmful looks..."
+msgstr "KNazar commence à protéger votre Pardus Linux du mauvais oeil..."
+
+#: knazar.cpp:78
+msgid "KNazar is stopping to protect your Pardus Linux from harmful looks..."
+msgstr "KNazar arrête de protéger votre Linux Pardus du mauvais oeil..."
+
+#: knazar.cpp:84
+msgid "KNazar - You are completely demilitarized..."
+msgstr "KNazar - Vous êtes complêtement désarmé..."
+
+#: knazar.cpp:95
+msgid "Nazar eliminated"
+msgstr ""
+
+#: knazar.cpp:95
+msgid "Nazar Received and eliminated successfuly"
+msgstr "Nazar Reću et éliminé avec succès"
+
+#: knazar.cpp:98
+msgid "Nazar harmed"
+msgstr ""
+
+#: knazar.cpp:98
+msgid "Nazar Received and it HARMED!"
+msgstr "Nazar l'a Reçu et ça a fait MAL !"
+
+#: knazar.cpp:100
+msgid ""
+"KNazar - %1 attacks received so far, %2 are defated and %3 are received..."
+msgstr ""
+"KNazar - %1 attaques essuyées jusqu'à présent, %2 ont été déjouées et %3 ont "
+"été subies"
+
+#: main.cpp:30
+msgid "knazar"
+msgstr "knazar"
+
+#: main.cpp:31
+msgid "KDE Nazar Application"
+msgstr "Application Nazar KDE"
+
+#: main.cpp:33
+msgid "Copyright (c) 2005 - 2008 TUBITAK/UEKAE"
+msgstr ""
+
+#: main.cpp:34
+#, fuzzy
+msgid "KNazar is a useful part of the Pardus Linux"
+msgstr "KNazar est une partie utile de Pardus Linux"
+
+#: main.cpp:37
+msgid "S. Çağlar Onur"
+msgstr ""
+
+#: main.cpp:37
+msgid "Author"
+msgstr ""
+
+#: main.cpp:38
+msgid "Uğur Çetin"
+msgstr ""
+
+#: main.cpp:38
+msgid "KDE4 Porter"
+msgstr ""
+
+#: main.cpp:39
+msgid "Serdar Soytetir"
+msgstr ""
+
+#: main.cpp:39
+#, fuzzy
+msgid "KNazar Icon"
+msgstr "Application Nazar KDE"
+
+#: main.cpp:40
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: main.cpp:40
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "About"
+#~ msgstr "À propos de "
