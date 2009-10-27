@@ -1,0 +1,23 @@
+[Desktop Entry]
+Name=Add, Update or Remove Programs
+Name[tr]=Program Ekle, Güncelle veya Kaldır
+Name[nl]=Programma's beheren
+Name[es]=Agregar, Actualizar o Remover Programas
+Name[de]=Programme hinzufügen, aktualisieren oder entfernen
+Name[pt_BR]=Adicionar, Atualizar ou Remover Programas
+Name[fr]=Ajout, Mise à jour ou Suppression de Programmes
+Name[it]=Aggiunta, aggiornamento o rimozione di programmi
+Comment=PiSi Package Manager Graphical User Interface
+Comment[en]=PiSi Package Manager Graphical User Interface
+Comment[tr]=PiSi Paket Yöneticisi Kullanıcı Grafik Arayüzü
+Comment[nl]=PiSi pakketbeheer grafische gebruikersinterface
+Comment[es]=Interfaz gráfico de Administrador de Paquetes PiSi
+Comment[de]=Grafische Benutzoberfläche vom PiSi-Paket-Manager
+Comment[pt_BR]=Interface Gráfica do Usuário do Gerenciador de Pacotes PiSi
+Comment[fr]=Interface Graphique du Gestionnaire de Paquets PiSi
+Comment[it]=Interfaccia grafica per il Gestore di pacchetti PiSi
+Icon=package-manager
+Type=Application
+X-Tasma-Fork=true
+Exec=package-manager --show-mainwindow
+Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-system
