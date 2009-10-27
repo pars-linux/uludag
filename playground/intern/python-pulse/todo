@@ -1,7 +1,0 @@
-? tear context_state_callback, define   pa_context_set_subscribe_callback() as a new PyObject func
-? define pa_context_subscribe as a new PyObject func, -maybe- pass pa_subscription_mask_t flags as a parameter, give control to python
-? fix return implementation
-? get rid of "incompatible pointer type" warnings, make gcc happy
-? fix void* userdata issue
-? double check Py_INCREF, Py_DECREF statements
--> cleanup destruct code
