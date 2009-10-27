@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Package Manager
-Name[tr]=Paket Yöneticisi
-Icon=package-manager
-Type=Application
-MimeType=application/x-pisi;
-Exec="package-manager --install %u"

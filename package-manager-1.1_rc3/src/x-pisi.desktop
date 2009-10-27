@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Comment=PiSi File
-Comment[en]=PiSi File
-Comment[tr]=PiSi Dosyası
-MimeType=application/x-pisi
-Patterns=*.pisi
-Type=MimeType
-Icon=package-manager
