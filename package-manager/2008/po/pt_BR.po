@@ -1,0 +1,817 @@
+# translation of pt_BR.po to
+# Translation of pt_BR.po to Brazilian Portuguese
+# Copyright (C) 2007
+# This file is distributed under the same license as the package-manager package.
+#
+# Pedro Leite <pedro.leite@gmail.com>, 2007.
+# Faik Uygur <faik@pardus.org.tr>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: pt_BR\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-07 14:06+0200\n"
+"PO-Revision-Date: 2007-05-13 21:13+0300\n"
+"Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/ProgressDialog.py:127
+msgid "Progress"
+msgstr "Progresso"
+
+#: src/ProgressDialog.py:129
+msgid "Alt+C"
+msgstr ""
+
+#: src/ProgressDialog.py:130
+msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+msgstr ""
+
+#: src/ProgressDialog.py:131
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Preparando PiSi...</h3>"
+
+#: src/ProgressDialog.py:133
+msgid "amsn"
+msgstr ""
+
+#: src/ProgressDialog.py:134
+msgid "Time remaining:"
+msgstr ""
+
+#: src/ProgressDialog.py:135
+#, fuzzy
+msgid "2 / 20 packages installed."
+msgstr "Pacote PiSi para instalar"
+
+#: src/ProgressDialog.py:136
+msgid "01:29"
+msgstr ""
+
+#: src/ProgressDialog.py:137
+#, fuzzy
+msgid "Operation:"
+msgstr "Versão:"
+
+#: src/ProgressDialog.py:138
+msgid "Status:"
+msgstr ""
+
+#: src/Tray.py:38
+msgid "Update"
+msgstr "Atualizar"
+
+#: src/Tray.py:43 src/MainWidget.py:302 src/MainWidget.py:594
+msgid "All"
+msgstr "Todos"
+
+#: src/Tray.py:66
+msgid "There are <b>%1</b> updates available!"
+msgstr "Existem <b>%1</b> atualizações disponíveis!"
+
+#: src/Tray.py:67
+msgid "Updates Available!"
+msgstr ""
+
+#: src/ComarIface.py:38
+msgid "Unable to connect to DBus."
+msgstr ""
+
+#: src/ComarIface.py:38
+#, fuzzy
+msgid "DBus Error"
+msgstr "Erro do PiSi"
+
+#: src/ComarIface.py:52
+#, fuzzy
+msgid "D-Bus Error"
+msgstr "Erro do PiSi"
+
+#: src/ComarIface.py:57
+msgid "COMAR Auth Error"
+msgstr ""
+
+#: src/ComarIface.py:62
+msgid "Network error. Please check your network connections and try again."
+msgstr ""
+
+#: src/ComarIface.py:62 src/ComarIface.py:67
+msgid "COMAR Error"
+msgstr ""
+
+#: src/ComarIface.py:64 src/ComarIface.py:72 src/Commander.py:64
+#, fuzzy
+msgid "You are not authorized for this operation."
+msgstr "Você não tem permissão para realizar esta operação."
+
+#: src/MainWidget.py:74
+msgid "Loading Package List..."
+msgstr "Carregando Lista de Pacotes..."
+
+#: src/MainWidget.py:104
+msgid "Search: "
+msgstr "Pesquisar:"
+
+#: src/MainWidget.py:108
+msgid "Search"
+msgstr "Pesquisar"
+
+#: src/MainWidget.py:112
+msgid "Show basket"
+msgstr "Mostrar cesta"
+
+#: src/MainWidget.py:117 src/MainWidget.py:221
+msgid "Install Package(s)"
+msgstr "Instalar Pacote(s)"
+
+#: src/MainWidget.py:126
+msgid "Components"
+msgstr "Componentes"
+
+#: src/MainWidget.py:180
+msgid ""
+"Package-manager needs to update package database. You need a network "
+"connection to update."
+msgstr ""
+"Gerenciador de pacoptes precisa atualizar o banco de dados. Você precisa de "
+"uma conexão de rede para atualizá-lo."
+
+#: src/MainWidget.py:181
+msgid "Package database is empty"
+msgstr "Banco de dados de pacotes está vazio"
+
+#: src/MainWidget.py:253
+msgid "Remove Package(s)"
+msgstr "Remover Pacote(s)"
+
+#: src/MainWidget.py:270 src/MainWidget.py:672
+msgid "<b>Updating Repository</b>"
+msgstr "<b>Atualizando Repositório</b>"
+
+#: src/MainWidget.py:300
+msgid "Upgrade Package(s)"
+msgstr "Atualizar Pacote(s)"
+
+#: src/MainWidget.py:320 src/MainWidget.py:602
+msgid "Search Results"
+msgstr "Resultados da Pesquisa"
+
+#: src/MainWidget.py:355
+msgid "Currently your basket is empty."
+msgstr "Atualmente sua cesta está vazia."
+
+#: src/MainWidget.py:358 src/MainWidget.py:366
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Atualmente existe(m) <b>%1</b> pacote(s) selecionado(s) com um tamanho total "
+"de <b>%2</b> "
+
+#: src/MainWidget.py:361
+msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
+msgstr "com <b>%3</b> dependências extras com um tamanho total de <b>%4</b> "
+
+#: src/MainWidget.py:363 src/MainWidget.py:371
+msgid "in your basket."
+msgstr "na sua cesta."
+
+#: src/MainWidget.py:369
+msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
+msgstr "com <b>%3</b> dependências reversas com um tamanho total de <b>%4</b> "
+
+#: src/MainWidget.py:400
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+"Pacotes selecionados [%1] estão em conflito um com o outro. Estes pacotes "
+"não podem ser instalados juntos."
+
+#: src/MainWidget.py:401 src/MainWidget.py:411
+msgid "Conflict Error"
+msgstr "Erro de Conflito"
+
+#: src/MainWidget.py:407
+msgid "The following packages conflicts:\n"
+msgstr "Os seguintes pacotes conflitam:\n"
+
+#: src/MainWidget.py:409
+msgid "%1 conflicts with: [%2]\n"
+msgstr "%1 conflita com: [%2]\n"
+
+#: src/MainWidget.py:410
+#, fuzzy
+msgid ""
+"\n"
+"Remove the conflicting packages from the system?"
+msgstr ""
+"\n"
+"Remover os seguintes pacotes conflitantes?"
+
+#: src/MainWidget.py:425 src/MainWidget.py:484 src/MainWidget.py:626
+msgid "<b>Installing Package(s)</b>"
+msgstr "<b>Instalando Pacote(s)</b>"
+
+#: src/MainWidget.py:434
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
+msgstr ""
+"<qt>Você selecionou <b>%1</b> pacote(s) para ser(em) <b>instalado(s)</b>."
+
+#: src/MainWidget.py:437
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>installed</b>."
+msgstr ""
+" Com os pacotes selecionados; <b>%1</b> dependências extras serão também "
+"<b>instaladas</b>."
+
+#: src/MainWidget.py:438
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
+msgstr "<br><br>Um total de <b>%1</b> pacotes serão <b>instalados</b>."
+
+#: src/MainWidget.py:441
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
+msgstr ""
+"<qt>Você selecionou <b>%1</b> pacote(s) para ser(em) <b>atualizado(s)</b>."
+
+#: src/MainWidget.py:444
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>upgraded</b>."
+msgstr ""
+" Com os pacotes selecionados; <b>%1</b> dependências extras serão também  "
+"<b>atualizadas</b>."
+
+#: src/MainWidget.py:445
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
+msgstr "<br><br>Um total de <b>%1</b> pacotes serão <b>atualizados</b>."
+
+#: src/MainWidget.py:448
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
+msgstr "<qt>Você selecionou <b>%1</b> pacote(s) para ser(em) <b>removidos</b>."
+
+#: src/MainWidget.py:451
+msgid ""
+" Selected packages have reverse dependencies. Because the reverse "
+"dependencies of the selected packages needs those packages to work; by "
+"removing the selected packages; <b>%1</b> reverse dependencies are also "
+"going to be <b>removed</b>. Please check your basket and make sure those are "
+"the packages you want to remove. Accidentally removing some reverse "
+"dependencies may break the system stability."
+msgstr ""
+" Pacotes selecionados têm dependências reversas. Porque as dependências "
+"reversas dos pacotes selecionados precisam de tais pacotes para funcionar; "
+"removendo os pacotes selecionados, <b>%1</b> dependências reversas também "
+"serão <b>removidas</b>. Por favor cheque sua cesta e tenha certeza dos "
+"pacotes que deseja remover. Remover algumas dependências reversas "
+"acidentalmente pode quebrar a estabilidade do sistema."
+
+#: src/MainWidget.py:453
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
+msgstr "<br><br>Um total de <b>%1</b> pacotes serão <b>removidos</b>."
+
+#: src/MainWidget.py:455
+msgid "<br>Do you want to continue?</qt>"
+msgstr "<br>Você deseja continuar?</qt>"
+
+#: src/MainWidget.py:476
+msgid "<b>Removing Package(s)</b>"
+msgstr "<b>Removendo Pacote(s)</b>"
+
+#: src/MainWidget.py:493 src/MainWidget.py:628
+msgid "<b>Upgrading Package(s)</b>"
+msgstr "<b>Atualizando Pacote(s)</b>"
+
+#: src/MainWidget.py:586
+msgid "Others"
+msgstr "Outros"
+
+#: src/MainWidget.py:630 src/CommonText.py:15
+msgid "downloading"
+msgstr "baixando"
+
+#: src/MainWidget.py:669 src/Preferences.py:349
+msgid "<b>Applying Repository Changes</b>"
+msgstr "<b>Aplicando Mudanças nos Repositórios</b>"
+
+#: src/MainWidget.py:673
+msgid "Downloading package list of %1"
+msgstr "Baixando lista de pacotes de %1"
+
+#: src/MainWidget.py:689
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: src/package-manager.py:33
+msgid "GUI for PiSi package manager"
+msgstr "Interface gráfica para o gerenciador de pacotes PiSi"
+
+#: src/package-manager.py:39 src/package-manager.py:64
+msgid "Package Manager"
+msgstr "Gerenciador de Pacotes"
+
+#: src/package-manager.py:42
+msgid "Developer and Current Maintainer"
+msgstr "Desenvolvedor e Atual Mantenedor"
+
+#: src/package-manager.py:43
+msgid "Developer"
+msgstr ""
+
+#: src/package-manager.py:44
+msgid "Original Author"
+msgstr "Autor Original"
+
+#: src/package-manager.py:45
+msgid "CSS/JS Meister"
+msgstr "Mestre do CSS/JS"
+
+#: src/package-manager.py:46
+msgid "GUI Design & Usability"
+msgstr "Projeto de GUI & Usabilidade"
+
+#: src/package-manager.py:47 src/package-manager.py:48
+#: src/package-manager.py:49 src/package-manager.py:50
+#: src/package-manager.py:51 src/package-manager.py:52
+#: src/package-manager.py:53 src/package-manager.py:54
+msgid "Authors of PiSi API"
+msgstr "Autores da API do PiSi"
+
+#: src/package-manager.py:117
+msgid "Show Installed Packages"
+msgstr "Mostrar Pacotes Instalados"
+
+#: src/package-manager.py:120
+msgid "Show New Packages"
+msgstr "Mostrar Novos Pacotes"
+
+#: src/package-manager.py:122
+msgid "Show Upgradable Packages"
+msgstr "Mostrar Pacotes Atualizáveis"
+
+#: src/package-manager.py:144 src/HelpDialog.py:29
+msgid "Package Manager Help"
+msgstr "Ajuda do Gerenciador de Pacotes"
+
+#: src/package-manager.py:157
+msgid "Package to install"
+msgstr "Pacote para instalar"
+
+#: src/package-manager.py:158
+msgid "Show main window on startup"
+msgstr "Mostrar janela principal ao iniciar"
+
+#: src/package-manager.py:159
+msgid "Show debug output"
+msgstr ""
+
+#: src/package-manager.py:162
+msgid "Package Manager is already running!"
+msgstr "Gerenciador de Pacotes já está executando!"
+
+#: src/BasketDialog.py:51 src/BasketDialog.py:56
+msgid "Basket"
+msgstr "Cesta"
+
+#: src/BasketDialog.py:64
+msgid "Selected package(s) for removal:"
+msgstr "Pacote(s) selecionado(s) para remoção:"
+
+#: src/BasketDialog.py:65
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr ""
+"Dependências reversas do(s) pacote(s) selecionado(s) que serão também "
+"removidas:"
+
+#: src/BasketDialog.py:67
+msgid "Selected package(s) for install:"
+msgstr "Pacote(s) selecionado(s) para instalação:"
+
+#: src/BasketDialog.py:68
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+"Dependências extras do(s) pacote(s) selecionado(s) que também vão ser "
+"instaladas:"
+
+#: src/BasketDialog.py:70
+msgid "Selected package(s) for upgrade:"
+msgstr "Pacote(s) selecionado(s) para atualização:"
+
+#: src/BasketDialog.py:71
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr ""
+"Dependências extras do(s) pacote(s) selecionado(s) que também vão ser "
+"atualizadas:"
+
+#: src/BasketDialog.py:79
+msgid "Total Size:"
+msgstr "Tamanho Total:"
+
+#: src/BasketDialog.py:86
+msgid "Update Basket"
+msgstr "Atualizar Cesta:"
+
+#: src/BasketDialog.py:166
+msgid "Total Size: <b>%1</b>"
+msgstr "Tamanho Total: <b>%1</b>"
+
+#: src/BasketDialog.py:214 src/BasketDialog.py:216
+msgid "Size: "
+msgstr "Tamanho:"
+
+#: src/CommonText.py:15
+msgid "extracting"
+msgstr "extraindo"
+
+#: src/CommonText.py:15
+msgid "configuring"
+msgstr "configurando"
+
+#: src/CommonText.py:15
+msgid "removing"
+msgstr "removendo"
+
+#: src/CommonText.py:15
+msgid "installing"
+msgstr "instalando"
+
+#: src/Preferences.py:234
+msgid "Add New Repository"
+msgstr "Adicionar Novo Repositório"
+
+#: src/Preferences.py:241
+msgid "Edit Repository"
+msgstr "Editar Repositório"
+
+#: src/Preferences.py:287 src/Preferences.py:303
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Endereço do repositório deve termicar com o sufixo xml ou xml.bz2.<p>Por "
+"favor, tente de novo.</qt>"
+
+#: src/Preferences.py:287 src/Preferences.py:303
+msgid "Pisi Error"
+msgstr "Erro do PiSi"
+
+#: src/Preferences.py:382
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr "Todos os pacotes em cache serão deletados. Você tem certeza?"
+
+#: src/RepoDialog.py:72
+msgid "Repository Dialog"
+msgstr "Diálogo de Repositório"
+
+#: src/RepoDialog.py:73
+msgid "&Ok"
+msgstr "&Ok"
+
+#: src/RepoDialog.py:75
+msgid "Repository &Address"
+msgstr "&Endereço do Repositório"
+
+#: src/RepoDialog.py:76
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr "Endereço do repositório, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+
+#: src/RepoDialog.py:79
+#, fuzzy
+msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+
+#: src/RepoDialog.py:80
+#, fuzzy
+msgid "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+
+#: src/RepoDialog.py:81
+msgid "Repository &Name"
+msgstr "&Nome do Repositório"
+
+#: src/RepoDialog.py:82
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Nome do repositório, e.g <b>pardus-devel</b>"
+
+#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
+#: src/SpecialList.py:101
+msgid "Select all packages in this category"
+msgstr "Selecionar todos os pacotes nesta categoria"
+
+#: src/CustomEventListener.py:38 src/SpecialList.py:103
+msgid "Reverse package selections"
+msgstr "Inverter seleção de pacotes"
+
+#: src/PreferencesDialog.py:179 src/PreferencesDialog.py:378
+msgid "Repository Name"
+msgstr "Nome do Respositório"
+
+#: src/PreferencesDialog.py:180 src/PreferencesDialog.py:379
+msgid "Address"
+msgstr "Endereço"
+
+#: src/PreferencesDialog.py:346
+msgid "Package Manager Settings"
+msgstr "Configurações do Gerenciador de Pacotes"
+
+#: src/PreferencesDialog.py:348
+msgid "F1"
+msgstr "F1"
+
+#: src/PreferencesDialog.py:353
+msgid "&Show only desktop applications"
+msgstr "Mo&strar somente aplicações desktop"
+
+#: src/PreferencesDialog.py:354
+msgid "Alt+S"
+msgstr ""
+
+#: src/PreferencesDialog.py:355
+msgid "If checked, then pisi will only show desktop applications"
+msgstr "Se checado, então o PiSi irá mostrar somente aplicações desktop"
+
+#: src/PreferencesDialog.py:356
+msgid "&Enable system tray icon"
+msgstr "&Habilitar ícone de bandeja do sistema"
+
+#: src/PreferencesDialog.py:357
+#, fuzzy
+msgid "Update check"
+msgstr "Atualizar"
+
+#: src/PreferencesDialog.py:358
+msgid "Check interval:"
+msgstr "Checar intervalo:"
+
+#: src/PreferencesDialog.py:359
+msgid "Enable &periodic update check"
+msgstr "Habilitar &intervalo de checagem de pacotes atualizáveis"
+
+#: src/PreferencesDialog.py:360
+msgid "Alt+P"
+msgstr ""
+
+#: src/PreferencesDialog.py:361
+msgid " min"
+msgstr " min"
+
+#: src/PreferencesDialog.py:362
+msgid "Bandwidth limit"
+msgstr ""
+
+#: src/PreferencesDialog.py:363
+msgid "Use bandwidth limit"
+msgstr ""
+
+#: src/PreferencesDialog.py:365
+msgid "Bandwidth limit:"
+msgstr ""
+
+#: src/PreferencesDialog.py:366
+msgid " kb/s"
+msgstr ""
+
+#: src/PreferencesDialog.py:367
+msgid "&General Settings"
+msgstr "Configurações &Gerais"
+
+#: src/PreferencesDialog.py:368
+msgid "Clear Cache"
+msgstr "Apagar Cache"
+
+#: src/PreferencesDialog.py:369
+msgid "C&lean disk cache now"
+msgstr "&Limpar cache do disco agora"
+
+#: src/PreferencesDialog.py:370
+msgid ""
+"Clearing the disk cache will remove all downloaded software. \n"
+"This will not delete installed software or affect your system stability."
+msgstr ""
+"Apagando a cache do disco removerá todo o software baixado. \n"
+"Isto não irá deletar software instalado ou afetar a estabilidade do seu "
+"sistema."
+
+#: src/PreferencesDialog.py:372
+msgid "Cache usage"
+msgstr "Uso de cache"
+
+#: src/PreferencesDialog.py:373
+msgid "Maximum cache size:"
+msgstr "Tamanho máximo da cache:"
+
+#: src/PreferencesDialog.py:374
+msgid "&Use hard disk cache for downloaded software"
+msgstr "&Usar cache do disco para software baixado"
+
+#: src/PreferencesDialog.py:375
+msgid "If checked, downloaded packages will be hold at the hard disk cache"
+msgstr "Se checado, os pacotes baixados serão armazenados na cache do disco"
+
+#: src/PreferencesDialog.py:376
+msgid "Mb <i>(use 0 for no limit)</i>"
+msgstr "Mb <i>(use 0 para não ter limite)</i>"
+
+#: src/PreferencesDialog.py:377
+msgid "C&ache"
+msgstr "C&ache"
+
+#: src/PreferencesDialog.py:380
+msgid ""
+"You can see current software repositories and corresponding addresses here"
+msgstr ""
+"Você pode ver repositórios de software atuais e seus respectivos endereços "
+"aqui"
+
+#: src/PreferencesDialog.py:381
+msgid "&Add New Repository"
+msgstr "&Adicionar Novo Repositório"
+
+#: src/PreferencesDialog.py:382
+msgid "Click here to add a new software repository"
+msgstr "Clique aqui para adicionar um novo repositório de software"
+
+#: src/PreferencesDialog.py:383
+msgid "&Edit Repository"
+msgstr "&Editar Repositório"
+
+#: src/PreferencesDialog.py:384
+msgid "Click here to modify the name or address of a repository"
+msgstr "Clique aqui para modificar o nome ou endereço de um repositório"
+
+#: src/PreferencesDialog.py:385
+msgid "&Remove Repository"
+msgstr "&Remover Repositório"
+
+#: src/PreferencesDialog.py:386
+msgid "Click here to delete a repository from the list"
+msgstr "Clique aqui para deletar um repositório da lista"
+
+#: src/PreferencesDialog.py:387
+msgid "Move &Up"
+msgstr "Mover A&cima"
+
+#: src/PreferencesDialog.py:388
+msgid "Click here to move the repository one level up"
+msgstr "Clique aqui para mover o repositório um nível acima"
+
+#: src/PreferencesDialog.py:389
+msgid "Move &Down"
+msgstr "Mover A&baixo"
+
+#: src/PreferencesDialog.py:390
+msgid "Click here to move the repository one level down"
+msgstr "Clique aqui para mover o repositório um nível abaixo"
+
+#: src/PreferencesDialog.py:391
+msgid "&Repositories"
+msgstr "&Repositórios"
+
+#: src/PreferencesDialog.py:392 src/PreferencesDialog.py:395
+#: src/PreferencesDialog.py:396
+msgid "Port:"
+msgstr ""
+
+#: src/PreferencesDialog.py:393
+msgid "Use this proxy server for all protocols"
+msgstr ""
+
+#: src/PreferencesDialog.py:394
+msgid "FTP proxy server:"
+msgstr ""
+
+#: src/PreferencesDialog.py:397
+msgid "HTTPS proxy server:"
+msgstr ""
+
+#: src/PreferencesDialog.py:398
+msgid "HTTP proxy server:"
+msgstr ""
+
+#: src/PreferencesDialog.py:400
+msgid "No proxy server"
+msgstr ""
+
+#: src/PreferencesDialog.py:401
+msgid "Use proxy server"
+msgstr ""
+
+#: src/PreferencesDialog.py:402
+msgid "Proxy"
+msgstr ""
+
+#: src/pm-install.py:33
+msgid "PiSi package to install"
+msgstr "Pacote PiSi para instalar"
+
+#: src/pm-install.py:50
+msgid "You have selected a package to install. Do you want to continue?"
+msgstr "Você selecionou um pacote para instalar. Você deseja continuar?"
+
+#: src/pm-install.py:51
+msgid "Install Package"
+msgstr "Instalar Pacote"
+
+#: src/SpecialList.py:168
+msgid "Description: "
+msgstr "Descrição:"
+
+#: src/SpecialList.py:169
+msgid "Version: "
+msgstr "Versão:"
+
+#: src/SpecialList.py:170
+#, fuzzy
+msgid "Repository: "
+msgstr "Nome do Respositório"
+
+#: src/SpecialList.py:171
+msgid "Package Size: "
+msgstr "Tamanho do Pacote:"
+
+#: src/SpecialList.py:172
+msgid "Homepage: "
+msgstr "Homepage:"
+
+#: src/Progress.py:67
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr ""
+
+#: src/Progress.py:100
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<b>Preparando PiSi</b>"
+
+#: src/Progress.py:102
+msgid "<p align='center'>-- / --, -- KB/s</p>"
+msgstr ""
+
+#: src/Progress.py:103
+#, fuzzy
+msgid "-- / --"
+msgstr "-- / --  pacote"
+
+#: src/Progress.py:122
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>Cancelando operação...</b>"
+
+#: src/Progress.py:149 src/Progress.py:153
+msgid "%1 %2"
+msgstr ""
+
+#: src/Progress.py:163
+msgid "installed"
+msgstr "instalado"
+
+#: src/Progress.py:165
+msgid "removed"
+msgstr "removido"
+
+#: src/Progress.py:167
+msgid "upgraded"
+msgstr "atualizado"
+
+#: src/Progress.py:169
+#, fuzzy
+msgid "%1 / %2 package %3"
+msgstr "package %1 / %2 %3"
+
+#: src/Notifier.py:45
+msgid "Show Updates"
+msgstr "Mostrar Atualizações"
+
+#: src/Notifier.py:45
+msgid "Ignore"
+msgstr "Ignorar"
+
+#~ msgid "PiSi Authors"
+#~ msgstr "Autores do PiSi"
+
+#~ msgid "downloaded (total: -- )"
+#~ msgstr "baixados (total: -- )"
+
+#~ msgid "--"
+#~ msgstr "--"
+
+#~ msgid "Now installing <b>amsn</b> package"
+#~ msgstr "Agora instalando o pacote <b>amsn</b>"
+
+#~ msgid "downloaded ( total: %1 )"
+#~ msgstr "baixado ( total: %1 )"
+
+#~ msgid "Now %1 <b>%2</b> package"
+#~ msgstr "Agora %1 pacote <b>%2</b>"
+
+#~ msgid "N\\A"
+#~ msgstr "N\\A"
+
+#~ msgid "Can't connect to Comar daemon"
+#~ msgstr "Não é possível se conectar com o deamon do Comar"

@@ -1,0 +1,8 @@
+Package-Manager
+===============
+
+Package manager is a graphical user interface for Pardus using PiSi package
+management system.
+
+With this interface, end-users can easily install, remove or update packages from
+a repository, disk or an arbitrary address.
