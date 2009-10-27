@@ -1,0 +1,58 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>NetworkWidget</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>NetworkWidget</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>528</width>
+            <height>398</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Network</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QFrame" row="0" column="0">
+            <property name="name">
+                <cstring>networkFrame</cstring>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>busy</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>49</x>
+                        <y>49</y>
+                        <width>401</width>
+                        <height>251</height>
+                    </rect>
+                </property>
+                <property name="backgroundOrigin">
+                    <enum>AncestorOrigin</enum>
+                </property>
+                <property name="textFormat">
+                    <enum>RichText</enum>
+                </property>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

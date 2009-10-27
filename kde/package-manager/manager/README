@@ -1,7 +1,0 @@
-- moved:
-    - *.ui files under ui/
-    - python code uner code/
-    - data files under data/
-
-./setup build will generate source distribution under build/
-./setup install will install to the system

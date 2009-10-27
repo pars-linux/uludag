@@ -1,0 +1,245 @@
+# translation of it.po to Italian
+# This file is put in the public domain.
+#
+# Andrea Decorte <adecorte@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: it\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-01-22 10:46+0200\n"
+"PO-Revision-Date: 2007-03-29 11:50+0200\n"
+"Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
+"Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/packagedlg.ui line 99
+#: rc.cpp:75 ../src/packagedlg.cpp:104
+#, no-c-format
+msgid " hours"
+msgstr " ore"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/mousedlg.ui line 167
+#: rc.cpp:61 ../src/mousedlg.cpp:122
+#, no-c-format
+msgid "&Single-click to open files and folders"
+msgstr "Click &singolo per aprire i file e le cartelle"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 134
+#: rc.cpp:16 ../src/wallpaperdlg.cpp:99
+#, no-c-format
+msgid "&Test Wallpaper"
+msgstr "&Prova sfondo"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/packagedlg.ui line 133
+#: rc.cpp:81 ../src/packagedlg.cpp:106
+#, no-c-format
+msgid ""
+"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. With "
+"package-manager you can easily install new programs and upgrade your system. "
+"But also can work in the system tray and periodically checks new upgrades of "
+"the programs that are installed on your system."
+msgstr ""
+"Il <b>Gestore dei pacchetti</b> è l'interfaccia grafica di <b>PiSi</b>. Con "
+"il gestore di pacchetti puoi facilmente installare nuovi programmi e "
+"aggiornare il tuo sistema. Può funzionare anche dal vassoio di sistema e "
+"verificare periodicamente la presenza di nuovi aggiornamenti dei programmi "
+"installati."
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 38
+#: rc.cpp:41 ../src/welcomedlg.cpp:67
+#, no-c-format
+msgid ""
+"<b>Pardus </b>is a GNU/Linux distribution, targeting at computer literate "
+"users' basic desktop needs; with acquiring the strong ideas, architecture "
+"and code of other distributions; with a custom configuration framework which "
+"has the ability to evolve into an autonomous system; for simplifying the "
+"installation and usage of the computers."
+msgstr ""
+"<b>Pardus</b> è una distribuzione GNU/Linux, destinata alle necessità "
+"basilari di desktop di utenti già pratici di computer, partendo dalle idee, "
+"dall'architettura e dal codice di altre distribuzione, aggiunge un ambiente "
+"di configurazione personalizzato che permette di ottenere un sistema "
+"autonomo, per semplificare l'installazione e l'uso dei computer."
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
+#: rc.cpp:88 ../src/goodbyedlg.cpp:67
+#, no-c-format
+msgid ""
+"<center>You have finished!  Now you can start using <b>Pardus</b></center>"
+msgstr "<center>Hai finito!  Ora puoi iniziare a usare <b>Pardus</b></center>"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
+#: rc.cpp:51 ../src/mousedlg.cpp:118
+#, no-c-format
+msgid "Button Order"
+msgstr "Ordine dei pulsanti"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/packagedlg.ui line 82
+#: rc.cpp:71 ../src/packagedlg.cpp:102
+#, no-c-format
+msgid "Check updates automatically for every"
+msgstr "Controlla automaticamente gli aggiornamenti ogni"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/mousedlg.ui line 156
+#: rc.cpp:58 ../src/mousedlg.cpp:121
+#, no-c-format
+msgid "Click behaviour"
+msgstr "Comportamento al click"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 62
+#: rc.cpp:12 ../src/wallpaperdlg.cpp:97
+#, no-c-format
+msgid "Don't change desktop background!"
+msgstr "Non cambiare lo sfondo del desktop!"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/mousedlg.ui line 178
+#: rc.cpp:64 ../src/mousedlg.cpp:123
+#, no-c-format
+msgid "Dou&ble-click to open files and folders (select icons on first click)"
+msgstr ""
+"D&oppio click per aprire i file e le cartelle (il primo click seleziona "
+"l'icona)"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/styledlg.ui line 27
+#: rc.cpp:22 ../src/styledlg.cpp:95
+#, no-c-format
+msgid ""
+"Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
+"some eye candy styles for you."
+msgstr ""
+"Qui puoi scegliere uno <b>stile</b> per il tuo desktop. <b>Pardus</b> ti "
+"permette già di scegliere degli effetti grafici di sicuro effetto."
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
+#: rc.cpp:6 ../src/wallpaperdlg.cpp:95
+#, no-c-format
+msgid ""
+"Here, you can select a <b>wallpaper</b> for your desktop background. "
+"<b>Pardus</b> provides eye candy wallpapers, you can select one of them, as "
+"you wish."
+msgstr ""
+"Qui puoi scegliere uno <b>sfondo</b> per il tuo desktop. <b>Pardus</b> ti "
+"offre già diversi sfondi carini tra cui scegliere."
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/mousedlg.ui line 27
+#: rc.cpp:48 ../src/mousedlg.cpp:117
+#, no-c-format
+msgid ""
+"If you are left-handed, you may prefer to swap the functions of the left and "
+"right buttons on your pointing device by choosing the 'Left handed' option "
+"below. You can also select default click behaviour."
+msgstr ""
+"Se sei mancino, potresti preferire invertire le funzioni del pulsante "
+"sinistro e destro del tuo dispositivo di puntamento scegliendo l'opzione "
+"\"Mancino\" qua sotto. Puoi anche scegliere il comportamento predefinito al "
+"click."
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/mousedlg.ui line 16
+#: rc.cpp:45 ../src/mousedlg.cpp:116
+#, no-c-format
+msgid "MouseSetupDlg"
+msgstr "MouseSetupDlg"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/packagedlg.ui line 35
+#: rc.cpp:68 ../src/packagedlg.cpp:101
+#, no-c-format
+msgid "Package Manager"
+msgstr "Gestore dei pacchetti"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/mousedlg.ui line 85
+#: rc.cpp:54 ../src/mousedlg.cpp:119
+#, no-c-format
+msgid "Reverse scroll"
+msgstr "Scorrimento al contrario"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/packagedlg.ui line 121
+#: rc.cpp:78 ../src/packagedlg.cpp:105
+#, no-c-format
+msgid "Show in system tray"
+msgstr "Mostra nel vassoio di sistema"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 43
+#: rc.cpp:85 ../src/goodbyedlg.cpp:66
+#, no-c-format
+msgid "Start Pardus Configuration Center (Tasma)"
+msgstr ""
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/styledlg.ui line 16
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/styledlg.ui line 38
+#: rc.cpp:19 rc.cpp:25 ../src/styledlg.cpp:94 ../src/styledlg.cpp:96
+#, no-c-format
+msgid "Style"
+msgstr "Stile"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/styledlg.ui line 62
+#: rc.cpp:31 ../src/styledlg.cpp:98
+#, no-c-format
+msgid "Test Style"
+msgstr "Prova lo stile"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 27
+#: rc.cpp:38 ../src/welcomedlg.cpp:66
+#, no-c-format
+msgid ""
+"This application, called <b>Kaptan Desktop</b>, will help you with your "
+"basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
+"This application will also set some default configuration for a better "
+"desktop :)."
+msgstr ""
+"Questa applicazione, di nome <b>Kaptan Desktop</b>, ti aiuterà ad effettuare "
+"una prima impostazione di base del tuo desktop <b>Pardus</b> in maniera "
+"veloce. Questa applicazione ti farà scegliere anche tra alcune "
+"configurazione predefinite in modo che tu ottenga un desktop migliore :)."
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/styledlg.ui line 54
+#: rc.cpp:28 ../src/styledlg.cpp:97
+#, no-c-format
+msgid "Use enhanced Kickoff style menu"
+msgstr "Utilizza il menu avanzato \"Kickoff\""
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 16
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 38
+#: rc.cpp:3 rc.cpp:9 ../src/wallpaperdlg.cpp:94 ../src/wallpaperdlg.cpp:96
+#, no-c-format
+msgid "Wallpaper"
+msgstr "Sfondo"
+
+#. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 16
+#: rc.cpp:35 ../src/welcomedlg.cpp:65
+#, no-c-format
+msgid "Welcome"
+msgstr "Benvenuto"
+
+#~ msgid "<big>Loading...</big>"
+#~ msgstr "<big>Caricamento in corso...</big>"
+
+#~ msgid "Congratulations"
+#~ msgstr "Congratulazioni"
+
+#~ msgid "Kaptan Desktop"
+#~ msgstr "Kaptan Desktop"
+
+#~ msgid "Left handed"
+#~ msgstr "Mancino"
+
+#~ msgid "Mouse Setup"
+#~ msgstr "Impostazione del mouse"
+
+#~ msgid "Network Setup"
+#~ msgstr "Impostazione della rete"
+
+#~ msgid "Right handed"
+#~ msgstr "Destro"
+
+#~ msgid "Start Tasma"
+#~ msgstr "Avvia Tasma"
+
+#~ msgid "Style Setup"
+#~ msgstr "Impostazione dello stile"
+
+#~ msgid "Wallpaper Setup"
+#~ msgstr "Impostazione dello sfondo"
