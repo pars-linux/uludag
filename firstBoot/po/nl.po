@@ -1,0 +1,714 @@
+# translation of nl.po to Nederlands
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Thijs Hulshof <thijs@fedoraproject.org>, 2006.
+# Rinse de Vries <rinsedevries@kde.nl>, 2006.
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-11-28 09:43+0200\n"
+"PO-Revision-Date: 2008-05-31 15:20+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: yali/gui/Ui/keyboardwidget.py:66 yali/gui/Ui/rootpasswidget.py:127
+#: yali/gui/Ui/setupuserswidget.py:149 yali/gui/Ui/welcomewidget.py:95
+msgid "Form1"
+msgstr "Form1"
+
+#: yali/gui/Ui/keyboardwidget.py:67 yali/gui/Ui/welcomewidget.py:96
+msgid "pix"
+msgstr "pix"
+
+#: yali/gui/Ui/keyboardwidget.py:68
+msgid "Select the keyboard layout of your choice."
+msgstr "Selecteer uw toetenbordindeling."
+
+#: yali/gui/Ui/keyboardwidget.py:69
+msgid "Test selected keyboard:"
+msgstr "Test geselecteerd toetsenbord:"
+
+#: yali/gui/Ui/rootpasswidget.py:130
+msgid "System administrator password:"
+msgstr "Wachtwoord systeembeheerder:"
+
+#: yali/gui/Ui/rootpasswidget.py:131
+msgid "System administrator password (again):"
+msgstr "Wachtwoord systeembeheerder (nogmaals):"
+
+#: yali/gui/Ui/rootpasswidget.py:133
+msgid ""
+"<p align=\"left\">System administrator user (root) handles important system "
+"maintanence tasks. Please give password for this special user and do not "
+"forget this password. Note that you shouldn't write this password elsewhere "
+"for privacy reasons.</p>"
+msgstr ""
+"<p align=\"left\">De systeembeheerder (root) zorgt voor belangrijke "
+"onderhoudstaken op het systeem. Geef een wachtwoord op voor deze speciale "
+"gebruiker, en vergeet het wachtwoord niet! Uit veiligheids overwegingen "
+"wordt het afgeraden het wachtwoord ergens op te schrijven. </p>"
+
+#: yali/gui/Ui/rootpasswidget.py:134
+msgid "Hostname:"
+msgstr "Hostnaam:"
+
+#: yali/gui/Ui/rootpasswidget.py:135
+msgid "pardus"
+msgstr "pardus"
+
+#: yali/gui/Ui/setupuserswidget.py:152
+msgid "New User"
+msgstr "Nieuwe gebruiker:"
+
+#: yali/gui/Ui/setupuserswidget.py:153
+msgid "User Name:"
+msgstr "Gebruikersnaam:"
+
+#: yali/gui/Ui/setupuserswidget.py:154
+msgid "Password (again):"
+msgstr "Wachtwoord (nogmaals):"
+
+#: yali/gui/Ui/setupuserswidget.py:155
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: yali/gui/Ui/setupuserswidget.py:156
+msgid "Real Name:"
+msgstr "Echte naam:"
+
+#: yali/gui/Ui/setupuserswidget.py:157
+msgid "Give administrator privileges to this user"
+msgstr "Geef administror rechten aan deze gebruiker"
+
+#: yali/gui/Ui/setupuserswidget.py:158 yali/gui/ScrUsers.py:188
+msgid "Create User"
+msgstr "Maak gebruiker"
+
+#: yali/gui/Ui/setupuserswidget.py:160
+msgid "Users:"
+msgstr "Gebruikers:"
+
+#: yali/gui/Ui/setupuserswidget.py:161
+msgid "Delete Selected User"
+msgstr "Verwijder geselecteerde gebruiker"
+
+#: yali/gui/Ui/setupuserswidget.py:162
+msgid "Auto Login User :"
+msgstr "Automatisch inloggen gebruiker:"
+
+#: yali/gui/Ui/setupuserswidget.py:164
+msgid "Auto Login Disabled"
+msgstr "Automatisch inloggen uitgeschakeld"
+
+#: yali/gui/Ui/welcomewidget.py:97
+msgid ""
+"All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
+"software have their corresponding licenses. For using Pardus, you agree to "
+"accept them. Do you want to continue?"
+msgstr "Alle software is ontwikkeld door TUBITAK/UEKAE valt onder GNU/GPL. Andere software hebben vergelijkbare licenties. Door Pardus te gebruiken, stemt u toe ze te accepteren. Wilt u doorgaan?"
+
+#: yali/gui/Ui/welcomewidget.py:98
+msgid "Read GPL"
+msgstr "Lees de GPL"
+
+#: yali/gui/Ui/welcomewidget.py:99 yali/gui/runner.py:164
+msgid "Reboot System!"
+msgstr "Herstart systeem!"
+
+#: yali/gui/Ui/welcomewidget.py:101
+msgid "Accept!"
+msgstr "Accepteren!"
+
+#: yali/gui/Ui/welcomewidget.py:102
+msgid "Don't Accept!"
+msgstr "Verwerpen!"
+
+#: yali/gui/debugger.py:25
+msgid "Debug"
+msgstr "Debug"
+
+#: yali/gui/GUIBottom.py:102 yali/gui/GUIBottom.py:152
+msgid "Release Notes"
+msgstr "Uitgavenotities"
+
+#: yali/gui/GUIGPL.py:64
+msgid "Can't open License file!"
+msgstr "Kan het licentiebestand niet openen!"
+
+#: yali/gui/PartEditImpl.py:108
+#, python-format
+msgid "You are going to delete all partitions on device '%s'"
+msgstr "U staat op het punt alle partities te verwijderen op station '%s'"
+
+#: yali/gui/PartEditImpl.py:120
+#, python-format
+msgid "You are going to delete partition '%s' on device '%s'!"
+msgstr "U staat op het punt partitie '%s' te verwijderen op station '%s'!"
+
+#: yali/gui/PartEditImpl.py:167
+msgid "You must select a partition type from the list below."
+msgstr "Selecteer in onderstaande lijst een partitie type."
+
+#: yali/gui/PartEditImpl.py:181 yali/gui/PartEditImpl.py:205
+#, python-format
+msgid "'Install Root' size must be larger than %s MB."
+msgstr "De grootte van de hoofdpartitie dient groter te zijn dan %s MB."
+
+#: yali/gui/PartEditImpl.py:285
+msgid "ntfsresize check failed! Won't proceed action!"
+msgstr "ntfsresize contrôle mislukt! Ga niet verder!"
+
+#: yali/gui/PartListImpl.py:87
+msgid "Can't find a storage device!"
+msgstr "Kan geen opslagapparaat vinden!"
+
+#: yali/gui/PartListImpl.py:111
+#, python-format
+msgid "%0.1f GB free"
+msgstr "%0.1f GB beschikbaar"
+
+#: yali/gui/PartListImpl.py:113
+#, python-format
+msgid "%d MB free"
+msgstr "%d MB beschikbaar"
+
+#: yali/gui/PartListImpl.py:138
+msgid "Extended"
+msgstr "Uitgebreid"
+
+#: yali/gui/PartListImpl.py:166
+#, python-format
+msgid "Partition %d"
+msgstr "Partitie %d"
+
+#: yali/gui/PartListImpl.py:211
+msgid "Delete All Partitions"
+msgstr "Verwijder alle partities"
+
+#: yali/gui/PartListImpl.py:240
+msgid "Delete Selected Partition"
+msgstr "Verwijder geselecteerde partitie"
+
+#: yali/gui/PartListImpl.py:312
+msgid "Can't get partition info from partition request!"
+msgstr "Kan geen partitie informatie krijgen op uw verzoek!"
+
+#: yali/gui/PartListImpl.py:314
+msgid " req.partition() is None. May be a zombie request!"
+msgstr " req.partition() is geen. Mischien een zombie verzoek!"
+
+#: yali/gui/PartListImpl.py:322
+msgid "Formatting!"
+msgstr "Formatteren!"
+
+#: yali/gui/PartListImpl.py:324
+msgid "YES"
+msgstr "JA"
+
+#: yali/gui/runner.py:51
+msgid "License Agreement"
+msgstr "Licentie overeenkomst"
+
+#: yali/gui/runner.py:52
+msgid "Basic setup"
+msgstr "Basisopzet"
+
+#: yali/gui/runner.py:53
+msgid "Bootup the new system"
+msgstr "Opstarten met het nieuwe systeem"
+
+#: yali/gui/runner.py:129
+msgid "Error!"
+msgstr "Fout!"
+
+#: yali/gui/runner.py:159
+msgid "Unhandled error occured!"
+msgstr "Fout opgetreden!"
+
+#: yali/gui/ScrAdmin.py:30
+msgid ""
+"\n"
+"<font size=\"+2\">System administrator password and hostname</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"\n"
+"<p>Please give a password for the system administrator (i.e root) for your\n"
+"system. This password should be unique and private, as it is used to \n"
+"manage your desktop. Choose a password difficult to guess, but easy\n"
+"to remember. \n"
+"</p>\n"
+"<p>\n"
+"The password may include upper and lower case characters, numbers and \n"
+"punctuation marks. Do not use accented characters here.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"And also set the name that the computer will be identified to the network it "
+"belongs. The hostname should be descriptive enough to describe the "
+"computer.  \n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Click Next button to proceed.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Systembeheer wachtwoord en hostnaam</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"\n"
+"<p>Geef een wachtwoord voor de systeembeheerder ('root'), om uw systeem te "
+"onderhouden.\n"
+" Het wachtwoord moet uniek en privé zijn, omdat het gebruikt wordt om uw\n"
+" systeem te beheren. Kies een wachtwoord dat moeilijk te raden is, maar "
+"makkelijk onthouden kan worden.\n"
+"</p>\n"
+"<p>\n"
+"Het wachtwoord mag hoofdletters, kleine letters, cijfers en leestekens "
+"bevatten.\n"
+"Gebruik geen letters met accenten, omdat deze misschien problemen kunnen "
+"veroorzaken.\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Stel ook de naam in waarmee de computer in het netwerk geïdentificeerd kan "
+"worden. De hostnaam zou de computer moeten kunnen beschrijven.  \n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Klik op Volgende om verder te gaan.\n"
+"</p>\n"
+"</font>\n"
+
+#: yali/gui/ScrAdmin.py:92 yali/gui/ScrUsers.py:141
+msgid "<font color=\"#FF6D19\">Caps Lock is on!</font>"
+msgstr "<font color=\"#FF6D19\">Caps Lock staat aan!</font>"
+
+#: yali/gui/ScrAdmin.py:107 yali/gui/ScrUsers.py:165
+msgid "<font color=\"#FF6D19\">Password is too short!</font>"
+msgstr "<font color=\"#FF6D19\">Wachtwoord is te kort!</font>"
+
+#: yali/gui/ScrAdmin.py:117 yali/gui/ScrUsers.py:160
+msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
+msgstr "<font color=\"#FF6D19\">De wachtwoorden komen niet overeen!</font>"
+
+#: yali/gui/ScrAdmin.py:133
+msgid "<font color=\"#FF6D19\">Hostname contains invalid characters!</font>"
+msgstr "<font color=\"#FF6D19\">De hostnaam bevat niet toegestane tekens!</font>"
+
+#: yali/gui/ScrGoodbye.py:35
+msgid ""
+"\n"
+"<font size=\"+2\">Congratulations</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"You have successfully setup your Pardus, a very easy to use desktop system "
+"on\n"
+"your machine. Now you can start playing with your system and stay "
+"productive\n"
+"all the time.\n"
+"</p>\n"
+"<P>\n"
+"Click on the Next button to proceed. One note: You remember your password,\n"
+"don't you?\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Gefeliciteerd</font>\n"
+"\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"U heeft Pardus succesvol geconfigureerd, een eenvoudig te gebruiken desktop "
+"systeem op\n"
+"uw machine. U kunt nu beginnen te spelen met uw nieuwe systeem en productief te"
+"blijven.\n"
+"</p>\n"
+"<P>\n"
+"Klik op de Volgende knop om verder te gaan. Een opmerking: u weet uw wachtwoord toch nog wel?\n"
+"</p>\n"
+"</font>\n"
+
+#: yali/gui/ScrGoodbye.py:60
+msgid ""
+"<b><font size=\"+2\" color=\"#FF6D19\">Rebooting system. Please wait!</"
+"font></b>"
+msgstr ""
+"<b><font size=\"+2\" color=\"#FF6D19\">Herstarten systeem. moment geduld!</"
+"font></b>"
+
+#: yali/gui/ScrGoodbye.py:150
+msgid "Trying to connect COMAR Daemon..."
+msgstr "Proberen verbinding te maken met COMAR deamon..."
+
+#: yali/gui/ScrGoodbye.py:151
+msgid "Setting Hostname..."
+msgstr "Hostnaam instellen..."
+
+#: yali/gui/ScrGoodbye.py:152
+msgid "Setting Root Password..."
+msgstr "Root wachtwoord instellen..."
+
+#: yali/gui/ScrGoodbye.py:153
+msgid "Adding Users..."
+msgstr "Gebruikers toevoegen..."
+
+#: yali/gui/ScrGoodbye.py:154
+msgid "Setting up KdeBase..."
+msgstr "Instellen KdeBase..."
+
+#: yali/gui/ScrKeyboard.py:30
+msgid ""
+"\n"
+"<font size=\"+2\">Keyboard Setup</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Depending on your hardware or choice select a keyboard layout from the "
+"list.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Toetsenbord instellen</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Kies in deze lijst de indeling van uw toetsenbord.\n"
+"</p>\n"
+"</font>\n"
+
+#: yali/gui/ScrUsers.py:32
+msgid ""
+"\n"
+"<font size=\"+2\">User setup</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Other than the system administrator user,\n"
+"you can create a user account for your \n"
+"daily needs, i.e reading your e-mail, surfing\n"
+"on the web and searching for daily recipe\n"
+"offerings. Usual password assignment\n"
+"rules also apply here: This password should \n"
+"be unique and private. Choose a password \n"
+"difficult to guess, but easy to remember. \n"
+"</p>\n"
+"<p>\n"
+"Click Next button to proceed.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Gebruiker instellen</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Naast de systeembeheerder\n"
+"kunt u een gebruiker aanmaken voor\n"
+"dagelijks gebruik, dus voor het lezen van\n"
+"uw e-mail, surfen op internet, tekstverwerking\n"
+", etc. Hierbij gelden dezelfde regels voor\n"
+"het aanmaken van een wachtwoord.\n"
+"Het wachtwoord dient uniek en privé\n"
+"te zijn. Kies een wachtwoord dat moeilijk\n"
+"te raden is, maar eenvoudig te onthouden.\n"
+"</p>\n"
+"<p>\n"
+"Klik op 'Volgende' om verder te gaan.\n"
+"</p>\n"
+"</font>\n"
+
+#: yali/gui/ScrUsers.py:108
+msgid ""
+"<b>\n"
+"<p>You have not defined an administrator!</p>\n"
+"\n"
+"<p>A user without administrative rights cannot complete system maintenance \n"
+"tasks. You are strongly encouraged to define an administrator user.</p>\n"
+"\n"
+"<p>Click \"Cancel\" to define an administrator user (recommended) or \"OK\" "
+"to \n"
+"go to next screen.</p>\n"
+"</b>\n"
+msgstr ""
+"<b>\n"
+"<p>U heeft geen administrator benoemd!</p>\n"
+"\n"
+"<p>Een gebruiker zonder administratieve rechten kan geen systeemonderhoud "
+"doen \n"
+"U wordt ten stelligste aangeraden een administrator te benoemen.</p>\n"
+"\n"
+"<p>Klik \"Annuleer\" om een administrator te benoemen (aangeraden) of \"OK"
+"\" \n"
+"om\n"
+"naar het volgende scherm te gaan.</p>\n"
+"</b>\n"
+
+#: yali/gui/ScrUsers.py:155
+msgid ""
+"<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
+"font>"
+msgstr "<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
+
+#: yali/gui/ScrUsers.py:196
+msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Deze gebruikersnaam bestaat al, Kies een andere!</"
+"font>"
+
+#: yali/gui/ScrUsers.py:200
+msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">De gebruikersnaam bevat niet toegestane tekens.</"
+"font>"
+
+#: yali/gui/ScrUsers.py:204
+msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
+msgstr "<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
+
+#: yali/gui/ScrUsers.py:259
+msgid "Update User"
+msgstr "Update gebruiker"
+
+#: yali/gui/ScrWelcome.py:30
+msgid ""
+"\n"
+"<font size=\"+2\">Welcome!</font>\n"
+"<font size=\"+1\">\n"
+"<p>Welcome to Pardus, your new and practical desktop with a handful \n"
+"of applications tailored to your needs. With Pardus, you can \n"
+"connect to internet, read your e-mails online, work with \n"
+"documents, listen to music and play DVDs. Its advanced yet\n"
+"easy interface will let you be more productive and efficient.\n"
+"</p>\n"
+"<p>\n"
+"This software will setup users in Pardus on your computer.\n"
+"</p>\n"
+"<p>\n"
+"You will note the arrow keys on the\n"
+"bottom of the screen: Use them to advance to next screen.\n"
+"</p>\n"
+"<p>\n"
+"Have a fruitful experience with Pardus!\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Welkom!</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>Welkom bij Pardus, uw nieuwe en praktische desktop met boordevol \n"
+" toepassingen, gemaakt om aan uw behoeften te voldoen. Met Pardus kunt u "
+"met internet verbinden, e-mails online lezen, met documenten werken,\n"
+"naar muziek luisteren en DVD's afspelen.De geavanceerde\n"
+" maar eenvoudige interface laat u productiever en efficiënter werken.\n"
+"</p>\n"
+"<p>\n"
+"Deze software zal gebruikers binnen Pardus instellen op uw computer.\n"
+"</p>\n"
+"<p>\n"
+"Onder aan het scherm staan pijltes,\n"
+"gebruik deze om naar het volgende scherm te gaan.\n"
+"</p>\n"
+"<p>\n"
+"Veel plezier met Pardus!\n"
+"</p>\n"
+"</font>\n"
+
+#: yali/gui/YaliDialog.py:122
+msgid "Warning"
+msgstr "Waarschuwing"
+
+#: yali/gui/YaliDialog.py:146
+msgid ""
+"<b>\n"
+"<p>This action will start installing Pardus on\n"
+"your system formatting the selected partition.</p>\n"
+"</b>\n"
+msgstr ""
+"<b>\n"
+"<p>Deze actie zal de installatie van Pardus\n"
+"starten en zal de geselecteerde partities\n"
+"formatteren.</p>\n"
+"</b>\n"
+
+#: yali/gui/YaliDialog.py:153
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: yali/gui/YaliDialog.py:156
+msgid "O.K. Go Ahead"
+msgstr "O.K. Ga verder"
+
+#: yali/__init__.py:65
+msgid "Backtrace:"
+msgstr "Terugloop:"
+
+#: yali/localedata.py:85 yali/localedata.py:86
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: yali/localedata.py:94 yali/localedata.py:95
+msgid "Arabic"
+msgstr "Arabisch"
+
+#: yali/localedata.py:103 yali/localedata.py:104
+msgid "Belgium"
+msgstr "België"
+
+#: yali/localedata.py:112 yali/localedata.py:113
+msgid "Bulgarian"
+msgstr "Bulgaars"
+
+#: yali/localedata.py:121 yali/localedata.py:122
+msgid "Catalan"
+msgstr "Catalaans"
+
+#: yali/localedata.py:130 yali/localedata.py:131
+msgid "Croatian"
+msgstr "Kroatisch"
+
+#: yali/localedata.py:139 yali/localedata.py:140
+msgid "Czech"
+msgstr "Tsjechisch"
+
+#: yali/localedata.py:148 yali/localedata.py:149
+msgid "Danish"
+msgstr "Deens"
+
+#: yali/localedata.py:157
+msgid "Dutch"
+msgstr "Nederlands"
+
+#: yali/localedata.py:160
+msgid "Dutch (US)"
+msgstr "Nederlands (US)"
+
+#: yali/localedata.py:168 yali/localedata.py:169
+msgid "English"
+msgstr "Engels"
+
+#: yali/localedata.py:177 yali/localedata.py:178
+msgid "Estonian"
+msgstr "Estonisch"
+
+#: yali/localedata.py:186 yali/localedata.py:187
+msgid "Finnish"
+msgstr "Fins"
+
+#: yali/localedata.py:195 yali/localedata.py:196
+msgid "French"
+msgstr "Frans"
+
+#: yali/localedata.py:204 yali/localedata.py:205
+msgid "German"
+msgstr "Duits"
+
+#: yali/localedata.py:213 yali/localedata.py:214
+msgid "Greek"
+msgstr "Grieks"
+
+#: yali/localedata.py:222 yali/localedata.py:223
+msgid "Hungarian"
+msgstr "Hongaars"
+
+#: yali/localedata.py:231 yali/localedata.py:232
+msgid "Icelandic"
+msgstr "IJslands"
+
+#: yali/localedata.py:240 yali/localedata.py:241
+msgid "Italian"
+msgstr "Italiaans"
+
+#: yali/localedata.py:249 yali/localedata.py:250
+msgid "Japanese"
+msgstr "Japans"
+
+#: yali/localedata.py:258 yali/localedata.py:259
+msgid "Macedonian"
+msgstr "Macedonisch"
+
+#: yali/localedata.py:267 yali/localedata.py:268
+msgid "Malayalam"
+msgstr "Malayas"
+
+#: yali/localedata.py:276 yali/localedata.py:277
+msgid "Norwegian"
+msgstr "Noors"
+
+#: yali/localedata.py:285 yali/localedata.py:286
+msgid "Polish"
+msgstr "Pools"
+
+#: yali/localedata.py:294 yali/localedata.py:295
+msgid "Portuguese"
+msgstr "Portugees"
+
+#: yali/localedata.py:303 yali/localedata.py:304
+msgid "Brazilian"
+msgstr "Braziliaans"
+
+#: yali/localedata.py:312 yali/localedata.py:313
+msgid "Russian"
+msgstr "Russisch"
+
+#: yali/localedata.py:321 yali/localedata.py:322
+msgid "Serbian"
+msgstr "Siberisch"
+
+#: yali/localedata.py:330 yali/localedata.py:331
+msgid "Slovak"
+msgstr "Slowaaks"
+
+#: yali/localedata.py:339 yali/localedata.py:340
+msgid "Slovenian"
+msgstr "Sloveens"
+
+#: yali/localedata.py:348 yali/localedata.py:349
+msgid "Spanish"
+msgstr "Spaans"
+
+#: yali/localedata.py:357 yali/localedata.py:358
+msgid "Swedish"
+msgstr "Zweeds"
+
+#: yali/localedata.py:366
+msgid "Turkish"
+msgstr "Turks"
+
+#: yali/localedata.py:367
+msgid "Turkish Q"
+msgstr "Turks Q"
+
+#: yali/localedata.py:368
+msgid "Turkish F"
+msgstr "Turks F"
+
+#: yali/localedata.py:376 yali/localedata.py:377
+msgid "Ukrainian"
+msgstr "Oekraïens"
+
+#: yali/localedata.py:385 yali/localedata.py:386
+msgid "Vietnamese"
+msgstr "Vietnamees"
+
+#: yali/localedata.py:394
+msgid "Welsh"
+msgstr "Wales"
+
+#: yali/localedata.py:395
+msgid "English (GB)"
+msgstr "Engels (GB)"
+
