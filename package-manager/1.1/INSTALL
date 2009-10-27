@@ -1,0 +1,43 @@
+Basic Installation
+==================
+These are generic installation instructions.
+
+This software uses the Python language's distutils system for installation.
+A detailed guide for users and system administrators to using distutils to
+install software can be found here:
+
+    http://docs.python.org/inst/inst.html
+
+The simplest way to install this software is to run the following command as
+the root user:
+
+    python setup.py install
+
+The setup.py script will automatically detect the directories to use for
+documentation, binaries and other software files.
+
+
+Uninstallation
+==============
+During installation setup.py creates list of files and directories that
+were installed in a file called install_log.txt. 
+
+    python setup.py uninstall
+
+
+Installing into an alternate root
+=================================
+For packaging purposes it is often very useful to be able to install all files
+relative not to the usual root directory (/) but into an alternative
+directory.
+
+    python setup.py install --root=/tmp/alternativeroot/
+
+
+Operation Controls
+==================
+--verbose
+    Print more information about what setup.py is doing.
+    
+--help
+    Print a summary of the options to setup.py, and exit.
