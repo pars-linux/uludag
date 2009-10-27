@@ -101,5 +101,8 @@ class State(QObject):
         if STEPS[self.step] in ["upgrade", "download"]:
             self.parent.operationStatus.setText(i18n("Resolving dependencies..."))
 
+        if STEPS[self.step] == "upgrade":
+            self.parent.cancelButton.setText("Cancel (Your system will be UNSTABLE)")
+
         method = getattr(self.comar, STEPS[self.step])
         method()
