@@ -1,0 +1,21 @@
+[Desktop Entry]
+Encoding=UTF-8
+Icon=kcmkwm
+Type=Application
+Exec=kcmshell kwinoptions 
+DocPath=kcontrol/windowmanagement/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=kwinoptions
+X-KDE-FactoryName=kwinoptions
+
+Name=Window Behavior
+Name[tr]=Pencere Davranışı
+
+Comment=Configure the window behavior
+Comment[tr]=Pencere davranışlarını yapılandır
+
+Keywords=focus,placement,window behavior,animation,raise,auto raise,windows,frame,titlebar,doubleclick
+Keywords[tr]=odak,odak davranış biçimi,pencere yerleşimi,pencere davranışı,Yerleşim davranış biçimi,animasyon,kaldır,otomatik kaldır,çerçeve,çift tıkla
+
+Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop

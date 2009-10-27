@@ -1,0 +1,24 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell kwindecoration
+Icon=kcmkwm
+Type=Application
+DocPath=kcontrol/kwindecoration/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=kwindecoration
+X-KDE-FactoryName=kwindecoration
+
+Name=Window Decorations
+Name[tr]=Pencere Dekorasyonları
+Name[nl]=Vensterdecoraties
+
+Comment=Configure the look and feel of window titles
+Comment[tr]=Pencere başlıklarını görünümlerini yapılandır
+Comment[nl]=Hier kunt u het uiterlijk en gedrag van venstertitels instellen
+
+Keywords=kwin,window,manager,border,style,theme,look,feel,layout,button,handle,edge,kwm,decoration
+Keywords[tr]=kwin,pencere,yönetici,kenar,stil,tema,görünüş,doku,yerleşim,düğme,tutamaç,kenar,kwm,dekorasyon
+Keywords[nl]=kwin,window,manager,rand,stijl,theme,thema,look,uiterlijk,gedrag,feel, layout,opmaak,button,knoppen,handle,rand,kwm,decoratie,windowmanager,venster,vensterbeheer
+
+Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel

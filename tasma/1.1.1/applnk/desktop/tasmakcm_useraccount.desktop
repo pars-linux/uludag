@@ -1,0 +1,30 @@
+[Desktop Entry]
+Encoding=UTF-8
+Icon=kdmconfig
+
+X-KDE-ParentApp=tasma
+X-KDE-Library=useraccount
+Type=Application
+Exec=kcmshell kcm_useraccount
+Name=Password & User Account
+Name[tr]=Parola & Kullanıcı Hesabı
+Name[nl]=Wachtwoord en gebruikerbeheer
+Name[es]=Contraseña & Cuenta de Usuario
+Name[de]=Passwort & Benutzerkonto
+Name[pt_BR]=Senha & Conta de Usuário
+
+Keywords=password;email;name;organization;realname;login image;face; echo mode;
+Keywords[tr]=parola,e-posta,isim,gerçek isim,giriş resmi,yüz
+Keywords[nl]=wachtwoord,e-mail,organisatie,naam,login,aanmelden,afbeelding,gezicht,echo,asterisk
+Keywords[es]=contraseña,email,nombre,organización,nombre real,imagen de login,cara,modo de echo
+Keywords[de]=Passwort;E-Mail;name;Organisation;Vollständiger name;Anmeldebild;Oberfläche;Echomodus;
+Keywords[pt_BR]=senha,email,nome,organização,nome real,imagem do login,face,modo eco
+
+Comment=User information such as password, name and email
+Comment[tr]=Parola, isim ve e-posta gibi kullanıcı bilgisi
+Comment[nl]=Gebruikerinformatie zoals wachtwoord, naam en e-mailadres
+Comment[es]=Información de usuario: contraseña, nombre, email, etc.
+Comment[de]=Benutzerinformationen wie Passwort, Name und E-Mail
+Comment[pt_BR]=Informações do usuário: senha, nome, email, etc.
+
+Categories=QT;KDE;X-KDE-settings-security;X-KDE-tasma-useraccount

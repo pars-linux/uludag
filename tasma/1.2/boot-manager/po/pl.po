@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: boot-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-20 11:28+0300\n"
+"PO-Revision-Date: 2006-04-08 12:19+0900\n"
+"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/boot-manager.py:30 src/boot-manager.py:84
+msgid "Boot Manager"
+msgstr "Konfiguracja Menedżera Rozruchowego GRUB"
+
+#: src/boot-manager.py:37
+msgid "Developer and Current Maintainer"
+msgstr "Autor"
+
+#: src/boot-manager.py:38
+msgid "Contributions to Boot.Loader model."
+msgstr "Pomoc w rozwoju"
+
+#: src/boot-manager.py:79
+msgid "Boot Manager is already started!"
+msgstr "Menedżer Rozruchowy już działa!"
+
+#: src/mainview.py:36
+msgid "New Entry"
+msgstr "Nowy Wpis"
+
+#: src/mainview.py:41
+msgid "Unused Kernels"
+msgstr "Nieużywane Kernele"
+
+#: src/mainview.py:61
+msgid "Remember last booted entry."
+msgstr "Pamiętaj ostatni wpis"
+
+#: src/mainview.py:68
+msgid "Timeout:"
+msgstr "Maksymalny czas:"
+
+#: src/mainview.py:124
+msgid "Title:"
+msgstr "Tytuł:"
+
+#: src/mainview.py:132
+msgid "System:"
+msgstr "System:"
+
+#: src/mainview.py:142
+msgid "Root:"
+msgstr "Partycja systemowa:"
+
+#: src/mainview.py:151
+msgid "Kernel:"
+msgstr "Kernel:"
+
+#: src/mainview.py:160
+msgid "Kernel Parameters:"
+msgstr "Parametry Kernela:"
+
+#: src/mainview.py:169
+msgid "Initial Ramdisk:"
+msgstr "Ramdysk (initrd)"
+
+#: src/mainview.py:178
+msgid "Set as default boot entry."
+msgstr "Ustaw jako domyślne."
+
+#: src/mainview.py:247
+msgid "There must be at least one Pardus entry."
+msgstr "Musi być co najmniej jeden wpis Pardusa."
+
+#: src/mainview.py:247 src/mainview.py:545
+msgid "Access Denied"
+msgstr "Odmowa Dostępu"
+
+#: src/mainview.py:249
+msgid "Are you sure you want to remove this entry?"
+msgstr "Czy na pewno chcesz usunąć ten wpis?"
+
+#: src/mainview.py:249
+msgid "Delete Entry"
+msgstr "Skasuj Wpis"
+
+#: src/mainview.py:255
+msgid ""
+"This is a Pardus kernel entry.\n"
+"Do you want to uninstall it from the system?"
+msgstr ""
+"To jest wpis kernela Pardusa.\n"
+"Czy chcesz odinstalować go z systemu?"
+
+#: src/mainview.py:255 src/mainview.py:411
+msgid "Uninstall Kernel"
+msgstr "Usuwanie Kernela"
+
+#: src/mainview.py:345
+msgid ""
+"These kernels are installed in the system but doesn't exist in boot loader "
+"list:"
+msgstr ""
+"Te kernele są zainstalowane w systemie ale nie są wpisane w menedżerze "
+"rozruchu GRUB"
+
+#: src/mainview.py:354
+msgid "Add Boot Entry"
+msgstr "Dodaj Wpis"
+
+#: src/mainview.py:359
+msgid "Uninstall"
+msgstr "Usuń"
+
+#: src/mainview.py:367
+msgid "Ok"
+msgstr "Tak"
+
+#: src/mainview.py:411
+#, fuzzy
+msgid "Do you want to uninstall selected kernel(s) from the system?"
+msgstr "Czy chcesz usunąć tego kernela z systemu?"
+
+#: src/mainview.py:479
+msgid "Bootloader configuration changed by another application."
+msgstr "Konfiguracja menedżera GRUB zmieniona przez inną aplikację."
+
+#: src/mainview.py:533 src/mainview.py:538 src/mainview.py:540
+msgid "Failed"
+msgstr "Niepowodzenie"
+
+#: src/mainview.py:545
+msgid "You are not allowed to edit boot loader settings."
+msgstr "Nie masz uprawnień do edycji ustawień menedżera rozruchowego"
+
+#: src/ui_elements.py:91
+msgid "Edit entry"
+msgstr "Edytuj wpis"
+
+#: src/ui_elements.py:95
+msgid "Delete entry"
+msgstr "Skasuj wpis"
+
+#, fuzzy
+#~ msgid "Uninstall Kernel(s)"
+#~ msgstr "Usuwanie Kernela"
+
+#~ msgid "Unused kernels:"
+#~ msgstr "Nieużywane Kernele"

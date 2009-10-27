@@ -1,0 +1,30 @@
+[Desktop Entry]
+Encoding=UTF-8
+Icon=kcmkicker
+Type=Application
+DocPath=kcontrol/panel/index.html
+Exec=kcmshell panel
+
+X-KDE-ModuleType=Library
+X-KDE-Library=kicker
+X-KDE-ParentApp=tasma
+
+Name=Panels
+Name[tr]=Paneller
+Name[nl]=Panelen
+Name[es]=Paneles
+Name[de]=Leisten
+
+Comment=Configure the arrangement of the panel
+Comment[tr]=Panelin konumunu buradan yapılandırabilirsiniz
+Comment[nl]=U kunt hier de opmaak van het paneel instellen
+Comment[es]=Configuración del panes
+Comment[de]=Platzierung der Leiste konfigurieren
+
+Keywords=kicker,panel,kpanel,taskbar,startbar,launchbar,location,size,auto hide,hide,buttons,animation,background,themes,menu cache,cache,hidden,K-Menu,bookmarks,recent documents,quickbrowser,browser menu,menu,icons,tiles,applets,startup,highlight,handles,zooming icons
+Keywords[tr]=kicker,panel,kpanel,görev çubuğu,başlangıç çubuğu,başlat çubuğu,konum,boyut,Uç birim uygulaması,otomatik gizle,gizle,tuşlar,animasyon,artalan,temalar,menü ön belleği,ön bellek,gizli,K-Menu,yer imleri,en son kullanılan belgeler,hızlı gözatıcı,göz atıcı menüsü,menü,simgeler,karo,programcıklar,Başlangıç,belirt,tutamaçlar,büyüyen simgeler,güvenilen programcıklar,güvenlik düzeyi
+Keywords[nl]=kicker,paneel,kpanel,taakbalk,takenbalk,startbalk,startmenu,applicatie starter,locatie,afmeting,terminaltoepassing,auto hide,automatisch verbergen,verbergen,invouwen,knoppen,animatie,achtergrond,thema's,menu cache,cache,verborgen,K-Menu,bookmarks,bladwijzers,recente documenten,quickbrowser,browser menu,menu,icons,icoon,iconen,pictogrammen,tegels,tiles,applets,opstarten,highlight,accentuering,handles,zoomen,knoppen,handvatten,betrouwbare applets,security level,beveiligingsniveau
+Keywords[es]=kicker,panel,kpanel,barra de tareas,barra de inicio,barra de accesos,ubicación,tamaño,ocultar automaticamente,ocultar,botónes,animación,fondo,temas,cache de menu,cache,oculto,K-Menu,marcadores,documentos recientes,navegador rápido,menu de navegador,menu,iconos,tiles,applets,inicio,highlight,handles,aumentar iconos
+Keywords[de]=Kicker,Leiste,KPanel,Taskleiste,Startleiste,Lage,Grösse,automatisch ausblenden,ausblenden,Tasten,Animation,Hintergrund,Themen,Menü-Cache,ausgeblendet,versteckt,K-Menü,Lesezeichen,zuletzt verwendete Dokumente,Quickbrowser,Browsermenü,Menü,Icons,Kacheln,Applets,Autostart,Highlight,Verwaltungen,Icons zoomen
+
+Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop

@@ -1,0 +1,22 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell keys
+Icon=key_bindings
+Type=Application
+DocPath=kcontrol/keys/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=keys
+X-KDE-Init=keys
+X-KDE-ParentApp=tasma
+
+Name=Keyboard Shortcuts
+Name[tr]=Klavye Kısayolları
+
+Comment=Configuration of keybindings
+Comment[tr]=Tuş bağıntılarının yapılandırılması
+
+Keywords=Keys,Global key bindings,Key scheme,Key bindings,shortcuts,application shortcuts
+Keywords[tr]=tuşlar,Küresel Tuş bağlantıları,Tuş planı,tuş bağlamaları,kısayollar,uygulama kısayolları
+
+Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-peripherals

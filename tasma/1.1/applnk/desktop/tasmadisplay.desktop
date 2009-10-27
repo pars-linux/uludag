@@ -1,0 +1,24 @@
+[Desktop Entry]
+Encoding=UTF-8
+Icon=kscreensaver
+Type=Application
+Exec=kcmshell display
+DocPath=kcontrol/kcmdisplay/index.html
+X-KDE-ModuleType=Library
+X-KDE-Library=display
+X-KDE-FactoryName=display
+X-KDE-ParentApp=tasma
+
+Name=Display
+Name[tr]=Görüntü
+Name[nl]=Beeldscherm
+Name[es]=Monitor
+Name[de]=Anzeige
+
+Comment=Display Settings
+Comment[tr]=Görüntü Ayarları
+Comment[nl]=Beeldscherminstellingen
+Comment[es]=Configuración de Pantalla
+Comment[de]=Anzeigeeinstellungen
+
+Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals

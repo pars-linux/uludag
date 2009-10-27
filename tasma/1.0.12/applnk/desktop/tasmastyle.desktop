@@ -1,0 +1,26 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell style
+Icon=style
+Type=Application
+DocPath=kcontrol/kcmstyle/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=style
+X-KDE-FactoryName=style
+X-KDE-Init=style
+X-KDE-ParentApp=tasma
+
+Name=Style
+Name[tr]=Stil
+Name[nl]=Stijl
+
+Comment=Allows the manipulation of widget behavior and changing the Style for KDE
+Comment[tr]=KDE için Aletlerin davranışlarını ve stili değiştirmeyi sağlar
+Comment[nl]=Hiermee kunt u het gedrag van de widgets aanpassen en de stijl van KDE wijzigen
+
+Keywords=style,styles,look,widget,icons,toolbars,text,highlight,apps,KDE applications
+Keywords[tr]=simgeler,stil,stiller,dekor,dekorlar,tema,temalar,görünüm,parçacık,menü,KDE uygulamaları,araç çubukları,uygulamalar
+Keywords[nl]=stijl,stijlen,look,uiterlijk,widget,icons,iconen,pictogrammen,werkbalken,tekst,highlight,accentuatie,apps,KDE-toepassingen,programma's,KDE-programma's,toepassingen
+
+Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel

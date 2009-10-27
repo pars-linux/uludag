@@ -1,0 +1,25 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+DocPath=kcontrol/desktop/index.html#desktop-number
+Icon=desktop
+Exec=kcmshell desktop
+
+X-KDE-ModuleType=Library
+X-KDE-Library=konq
+X-KDE-FactoryName=ddesktop
+X-KDE-ParentApp=tasma
+
+Name=Multiple Desktops
+Name[tr]=Çoklu Masaüstü
+Name[nl]=Virtuele bureaubladen
+
+Comment=You can configure how many virtual desktops there are.
+Comment[tr]=Kaç görsel masaüstüne sahip olacağınızı buradan yapılandırabilirsiniz.
+Comment[nl]=U kunt hier bepalen hoeveel virtuele bureaubladen u wilt gebruiken.
+
+Keywords=desktop,desktops,number,virtual desktop
+Keywords[tr]=masaüstü,isim,masaüstü sayısı,sanal masaüstü
+Keywords[nl]=desktop,bureaublad,bureaubladen,naam van bureaublad,nummer,bureaubladtelling,virtuele bureaubladen
+
+Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=tasma
+Icon=tasma
+Type=Application
+DocPath=tasma/index.html
+X-KDE-StartupNotify=true
+
+Name=Pardus Configuration Center
+Name[tr]=Pardus Yapılandırma Merkezi
+
+Categories=Qt;KDE;Core

@@ -1,0 +1,1076 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>TvConfigUI</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>TvConfigUI</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>700</width>
+            <height>640</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>TvConfigUI</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTabWidget" row="0" column="0">
+            <property name="name">
+                <cstring>tvTab</cstring>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Tv kartı</string>
+                </attribute>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>cardDesc</cstring>
+                        </property>
+                        <property name="paletteForegroundColor">
+                            <color>
+                                <red>52</red>
+                                <green>44</green>
+                                <blue>140</blue>
+                            </color>
+                        </property>
+                        <property name="text">
+                            <string>Lütfen aşağıdaki listede yer alan tv kartlarından sisteminize uygun olanını seçiniz. Emin değil iseniz otomatik seçeneğinde bırakınız.</string>
+                        </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignVCenter</set>
+                        </property>
+                    </widget>
+                    <widget class="QListBox">
+                        <item>
+                            <property name="text">
+                                <string>Otomatik</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>MIRO PCTV</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Hauppauge (bt848)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>STB, Gateway P/N 6000699 (bt848)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Intel Create and Share PCI/ Smart Video Recorder III</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Diamond DTV2000</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>AVerMedia TVPhone</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>MATRIX-Vision MV-Delta</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Lifeview FlyVideo II (Bt848) LR26 / MAXI TV Video PCI2 LR26</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>IMS/IXmicro TurboTV</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Hauppauge (bt878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>MIRO PCTV pro</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>ADS Technologies Channel Surfer TV (bt848)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>AVerMedia TVCapture 98</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Aimslab Video Highway Xtreme (VHX)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Zoltrix TV-Max</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Prolink Pixelview PlayTV (bt878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Leadtek WinView 601</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>AVEC Intercapture</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Lifeview FlyVideo II EZ /FlyKit LR38 Bt848 (capture only)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>CEI Raffles Card</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Lifeview FlyVideo 98/ Lucky Star Image World ConferenceTV LR50</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Askey CPH050/ Phoebe Tv Master + FM</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Modular Technology MM201/MM202/MM205/MM210/MM215 PCTV, bt878</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Askey CPH05X/06X (bt878) [many vendors]</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Terratec TerraTV+ Version 1.0 (Bt848)/ Terra TValue Version 1.0/ Vobis TV-Boostar</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Hauppauge WinCam newer (bt878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Lifeview FlyVideo 98/ MAXI TV Video PCI2 LR50</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Terratec TerraTV+ Version 1.1 (bt878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Imagenation PXC200</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Lifeview FlyVideo 98 LR50</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Formac iProTV, Formac ProTV I (bt848)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Intel Create and Share PCI/ Smart Video Recorder III</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Terratec TerraTValue Version Bt878</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Leadtek WinFast 2000/ WinFast 2000 XP</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Lifeview FlyVideo 98 LR50 / Chronos Video Shuttle II</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Lifeview FlyVideo 98FM LR50 / Typhoon TView TV/FM Tuner</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Prolink PixelView PlayTV pro</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Askey CPH06X TView99</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Pinnacle PCTV Studio/Rave</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>STB TV PCI FM, Gateway P/N 6000704 (bt878), 3Dfx VoodooTV 100</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>AVerMedia TVPhone 98</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>ProVideo PV951</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Little OnAir TV</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Sigma TVII-FM</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>MATRIX-Vision MV-Delta 2</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Zoltrix Genie TV/FM</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Terratec TV/Radio+</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Askey CPH03x/ Dynalink Magic TView</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>IODATA GV-BCTV3/PCI</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Prolink PV-BT878P+4E / PixelView PlayTV PAK / Lenco MXTV-9578 CP</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Eagle Wireless Capricorn2 (bt878A)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Pinnacle PCTV Studio Pro</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Typhoon TView RDS + FM Stereo / KNC1 TV Station RDS</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Lifeview FlyVideo 2000 /FlyVideo A2/ Lifetec LT 9415 TV [LR90]</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Askey CPH031/ BESTBUY Easy TV</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Lifeview FlyVideo 98FM LR50</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>GrandTec 'Grand Video Capture' (Bt848)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Askey CPH060/ Phoebe TV Master Only (No FM)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Askey CPH03x TV Capturer</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Modular Technology MM100PCTV</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>AG Electronics GMV1</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Askey CPH061/ BESTBUY Easy TV (bt878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>ATI TV-Wonder</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>ATI TV-Wonder VE</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Lifeview FlyVideo 2000S LR90</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Terratec TValueRadio</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>IODATA GV-BCTV4/PCI</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>3Dfx VoodooTV FM (Euro), VoodooTV 200 (USA)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Active Imaging AIMMS</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Prolink Pixelview PV-BT878P+ (Rev.4C,8E)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Lifeview FlyVideo 98EZ (capture only) LR51</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Prolink Pixelview PV-BT878P+9B (PlayTV Pro rev.9B FM+NICAM)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Sensoray 311</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>RemoteVision MX (RV605)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Powercolor MTV878/ MTV878R/ MTV878F</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Canopus WinDVR PCI (COMPAQ Presario 3524JP, 5112JP)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>GrandTec Multi Capture Card (Bt878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Jetway TV/Capture JW-TV878-FBK, Kworld KW-TV878RF</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>DSP Design TCVIDEO</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Hauppauge WinTV PVR</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>IODATA GV-BCTV5/PCI</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Osprey 100/150 (878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Osprey 100/150 (848)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Osprey 101 (848)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Osprey 101/151</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Osprey 101/151 w/ svid</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Osprey 200/201/250/251</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Osprey 200/250</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Osprey 210/220</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Osprey 500</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Osprey 540</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Osprey 2000</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>IDS Eagle</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Pinnacle PCTV Sat</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Formac ProTV II (bt878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>MachTV</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Euresys Picolo</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>ProVideo PV150</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>AD-TVK503</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Hercules Smart TV Stereo</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Pace TV &amp; Radio Card</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>IVC-200</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Grand X-Guard / Trust 814PCI</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Nebula Electronics DigiTV</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>ProVideo PV143</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>PHYTEC VD-009-X1 MiniDIN (bt878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>PHYTEC VD-009-X1 Combi (bt878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>PHYTEC VD-009 MiniDIN (bt878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>PHYTEC VD-009 Combi (bt878)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>IVC-100</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>IVC-120G</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>pcHDTV HD-2000 TV</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Twinhan DST + clones</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Winfast VC100</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Teppro TEV-560/InterVision IV-560</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>SIMUS GVC1100</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>NGS NGSTV+</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>LMLBT4</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Tekram M205 PRO</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Conceptronic CONTVFMi</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Euresys Picolo Tetra</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Spirit TV Tuner</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>AVerMedia AVerTV DVB-T 771</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>AverMedia AverTV DVB-T 761</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>MATRIX Vision Sigma-SQ</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>MATRIX Vision Sigma-SLC</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>APAC Viewcomp 878(AMAX)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>DVICO FusionHDTV DVB-T Lite</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>V-Gear MyVCD</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Super TV Tuner</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Tibet Systems 'Progress DVR' CS16</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Kodicom 4400R (master)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Kodicom 4400R (slave)</string>
+                            </property>
+                        </item>
+                        <property name="name">
+                            <cstring>cardList</cstring>
+                        </property>
+                        <property name="currentItem">
+                            <number>0</number>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Tuner</string>
+                </attribute>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>tunderDesc</cstring>
+                        </property>
+                        <property name="paletteForegroundColor">
+                            <color>
+                                <red>52</red>
+                                <green>44</green>
+                                <blue>140</blue>
+                            </color>
+                        </property>
+                        <property name="text">
+                            <string>Lütfen aşağıdaki listede yer alan tv kartınıza uygun tuner tipini seçiniz. Emin değil iseniz otomatik seçeneğinde bırakınız.</string>
+                        </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignVCenter</set>
+                        </property>
+                    </widget>
+                    <widget class="QListBox">
+                        <item>
+                            <property name="text">
+                                <string>Otomatik</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic PAL (4002 FH5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips PAL_I (FI1246 and compatibles)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips NTSC (FI1236,FM1236 and compatibles)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips (SECAM+PAL_BG) (FI1216MF, FM1216MF, FR1216MF)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>NoTuner</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips PAL_BG (FI1216 and compatibles)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic NTSC (4032 FY5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic PAL_I (4062 FY5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic NTSC (4036 FY5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Alps HSBH1</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Alps TSBE1</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Alps TSBB5</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Alps TSBE5</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Alps TSBC5</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic PAL_BG (4006FH5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Alps TSCH6</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic PAL_DK (4016 FY5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips NTSC_M (MK2)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic PAL_I (4066 FY5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic PAL* auto (4006 FN5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic PAL_BG (4009 FR5) or PAL_I (4069 FR5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic NTSC (4039 FR5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic PAL/SECAM multi (4046 FM5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips PAL_DK (FI1256 and compatibles)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips PAL/SECAM multi (FQ1216ME)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>LG PAL_I+FM (TAPC-I001D)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>LG PAL_I (TAPC-I701D)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>LG NTSC+FM (TPI8NSR01F)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>LG PAL_BG+FM (TPI8PSB01D)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>LG PAL_BG (TPI8PSB11D)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic PAL* auto + FM (4009 FN5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>SHARP NTSC_JP (2U5JF5540)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Samsung PAL TCPM9091PD27</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>MT20xx universal</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic PAL_BG (4106 FH5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic PAL_DK/SECAM_L (4012 FY5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Temic NTSC (4136 FY5)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>LG PAL (newer TAPC series)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips PAL/SECAM multi (FM1216ME MK3)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>LG NTSC (newer TAPC series)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>HITACHI V7-J180AT</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips PAL_MK (FI1216 MK)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips 1236D ATSC/NTSC daul in</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips NTSC MK3 (FM1236MK3 or FM1236/F)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips 4 in 1 (ATI TV Wonder Pro/Conexant)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Microtune 4049 FM5</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Panasonic VP27s/ENGE4324D</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>LG NTSC (TAPE series)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Tenna TNF 8831 BGFF)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Microtune 4042 FI5 ATSC/NTSC dual in</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>TCL 2002N</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips PAL/SECAM_D (FM 1256 I-H3)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Thomson DDT 7610 (ATSC/NTSC)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips FQ1286</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>tda8290+75</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>LG PAL (TAPE series)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips PAL/SECAM multi (FQ1216AME MK4)</string>
+                            </property>
+                        </item>
+                        <item>
+                            <property name="text">
+                                <string>Philips FQ1236A MK4</string>
+                            </property>
+                        </item>
+                        <property name="name">
+                            <cstring>tunerList</cstring>
+                        </property>
+                        <property name="currentItem">
+                            <number>0</number>
+                        </property>
+                        <property name="selectionMode">
+                            <enum>Single</enum>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

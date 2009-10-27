@@ -1,0 +1,25 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell colors
+Icon=colors
+Type=Application
+DocPath=kcontrol/colors/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=colors
+X-KDE-FactoryName=colors
+X-KDE-ParentApp=tasma
+
+Name=Colors
+Name[tr]=Renkler
+Name[nl]=Kleuren
+
+Comment=Color settings
+Comment[tr]=Renk ayarları
+Comment[nl]=Kleuren instellen
+
+Keywords=colors,colours,scheme,contrast,Widget colors,Color Scheme
+Keywords[tr]=renkler,şema,kontrast,Renk Tablosu
+Keywords[nl]=kleuren,kleur,schema,contrast,widgetkleuren,kleurenschema
+
+Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=tasma
+Icon=tasma
+Type=Application
+DocPath=tasma/index.html
+X-KDE-StartupNotify=true
+
+Name=Tasma
+GenericName=Pardus Configuration Center
+GenericName[tr]=Pardus Yapılandırma Merkezi
+
+Categories=Qt;KDE;Core

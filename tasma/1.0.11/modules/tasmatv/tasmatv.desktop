@@ -1,0 +1,17 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell tasmatv
+Icon=tv
+Type=Application
+
+X-KDE-ModuleType=Library
+X-KDE-Library=tasmatv
+X-KDE-RootOnly=true
+X-KDE-ParentApp=tasma
+X-KDE-SubstituteUID=true
+
+Name=Tv Card Configuration
+Name[tr]=Tv Kartı Yapılandırması
+
+Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-sound
+

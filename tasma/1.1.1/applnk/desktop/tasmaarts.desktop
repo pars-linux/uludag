@@ -1,0 +1,34 @@
+[Desktop Entry]
+
+Encoding=UTF-8
+Exec=kcmshell arts
+Icon=arts
+Type=Application
+DocPath=kcontrol/arts/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=arts
+X-KDE-Init=arts
+X-KDE-ParentApp=tasma
+
+Name=Sound System
+Name[tr]=Ses Sistemi
+Name[nl]=Geluidssysteem
+Name[es]=Sonido
+Name[de]=Sound-System
+Name[pt_BR]=Sistema de Som
+
+Comment=Sound System Configuration
+Comment[tr]=Ses Sistemi Yapılandırması
+Comment[nl]=Geluidssysteem instellen
+Comment[es]=Configuración de Sonido
+Comment[de]=Sound-System Konfiguration
+Comment[pt_BR]=Configuração do Sistema de Som
+
+Keywords=aRts,Sound Server,artsd,Audio,Sound,startup,network transparency,transparency,priority,duplex,full duplex,response time,Mixer,Volume,KMix,Mix,login,MIDI,synthesizer,music
+Keywords[tr]=aRts,Ses Sunucu,artsd,Ses,Ses,Başlangıç,ağ geçirgenliği,geçirgenlik,öncelik,dubleks,tam dubleks,karşılık süresi,MIDI,karıştırıcı,Kmix
+Keywords[nl]=aRts,sound server,artsd,audio,sound,geluidsserver,geluid,opstarten,netwerk ,netwerktransparantie,priority,prioriteit,duplex,full duplex,response time,responstijd,volume,KMix,kanalen,login,aanmelden,synthesizer,muziek,mixer,midi,
+Keywords[es]=aRts,servidor de sonido,artsd,audio,inicio,transparencia de red,transparencia,prioridad,duplex,full duplex,tiempo de respuesta,Mezclador,Volumen,KMix,Mix,login,MIDI,sintetizador,musica
+Keywords[de]=aRts,Sound-Server,artsd,Audio,Sound,Autostart,Netzwerk-Durchlässigkeit,Durchlässigkeit,Priorität,duplex,vollduplex,Reaktionszeit,Lautstärkeeinstellung,Lautstärke,KMix,Mix,anmelden,MIDI,Synthesizer,Musik
+Keywords[pt_BR]=aRts,servidor de som,artsd,Áudio,Som,inicialização,transparência da rede,transparência,prioridade,duplex,full duplex,tempo de resposta,Mixer,Volume,KMix,Mix,login,MIDI,sintetizador,música
+Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound
