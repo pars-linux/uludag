@@ -70,6 +70,10 @@ class Fetcher(threading.Thread):
                     file(fn_policy, "w").write(ldif)
                     logging.debug("New policy fetched: %s" % policy[0][1])
                     self.queue_fetcher.put(("policy", policy[0][1]))
+                else:
+                    logging.debug("Policy is not changed.")
+            else:
+                logging.debug("No policy defined.")
             c = 0
             while c < self.options.interval and self.active:
                 c += 0.5
