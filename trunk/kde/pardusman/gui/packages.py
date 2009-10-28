@@ -85,7 +85,8 @@ class PackagesDialog(QDialog, Ui_PackagesDialog):
         self.all_packages = []
 
         # Search widget
-        self.searchPackage.addTreeWidget(self.treePackages)
+        # TODO: add filter()
+        # self.searchPackage.addTreeWidget(self.treePackages)
 
         # Ok/cancel buttons
         self.connect(self.buttonBox, SIGNAL("accepted()"), self.accept)
