@@ -17,12 +17,10 @@ import subprocess
 import tempfile
 
 # Qt
-from PyQt4.QtCore import SIGNAL
 import QTermWidget
 
-# PyKDE
+from PyQt4.QtCore import SIGNAL
 from PyQt4.QtGui import QIcon, QMessageBox, QMainWindow,QFileDialog
-from PyKDE4.kdecore import i18n
 from PyQt4.QtCore import QFile
 
 
@@ -40,6 +38,8 @@ from gui.progress import Progress
 from repotools.packages import Repository, ExIndexBogus, ExPackageCycle, ExPackageMissing
 from repotools.project import Project, ExProjectMissing, ExProjectBogus
 
+import gettext
+_ = lambda x:gettext.ldgettext("pardusman", x)
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, args):
@@ -119,16 +119,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             Open button fires this function.
         """
         if not filename:
-            filename = QFileDialog.getOpenFileName(self, i18n("Select project file"), ".", "*.xml")
+            filename = QFileDialog.getOpenFileName(self, _("Select project file"), ".", "*.xml")
         if filename:
             self.project = Project()
             try:
                 self.project.open(unicode(filename))
             except ExProjectMissing:
-                QMessageBox.error(self, i18n("Project file is missing."))
+                QMessageBox.error(self, _("Project file is missing."))
                 return
             except ExProjectBogus:
-                QMessageBox.error(self, i18n("Project file is corrupt."))
+                QMessageBox.error(self, _("Project file is corrupt."))
                 return
             self.loadProject()
 
@@ -146,7 +146,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
             Save as button fires this function.
         """
-        filename = QFileDialog.getSaveFileName(self, i18n("Save project"), "", "*.xml")
+        filename = QFileDialog.getSaveFileName(self, _("Save project"), "", "*.xml")
         if filename:
             self.project.filename = unicode(filename)
             self.slotSave()
@@ -155,7 +155,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
             Browse repository button fires this function.
         """
-        filename = QFileDialog.getOpenFileName(self, i18n("Select repository index"), ".", "pisi-index.xml*")
+        filename = QFileDialog.getOpenFileName(self, _("Select repository index"), ".", "pisi-index.xml*")
         if filename:
             filename = unicode(filename)
             if filename.startswith("/"):
@@ -166,7 +166,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
             Browse plugin package button fires this function.
         """
-        filename = QFileDialog.getOpenFileName(self, i18n("Select plugin package"), ".", "*.pisi")
+        filename = QFileDialog.getOpenFileName(self, _("Select plugin package"), ".", "*.pisi")
         if filename:
             self.linePluginPackage.setText(filename)
 
@@ -246,13 +246,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             Checks required fields for the project.
         """
         if not len(self.lineTitle.text()):
-            QMessageBox.error(self, i18n("Image title is missing."))
+            QMessageBox.error(self, _("Image title is missing."))
             return False
         if not len(self.lineRepository.text()):
-            QMessageBox.error(self, i18n("Repository URL is missing."))
+            QMessageBox.error(self, _("Repository URL is missing."))
             return False
         if not len(self.lineWorkFolder.text()):
-            QMessageBox.error(self, i18n("Work folder is missing."))
+            QMessageBox.error(self, _("Work folder is missing."))
             return False
         return True
 
@@ -297,26 +297,26 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.repo = self.project.get_repo(self.progress, update_repo=update_repo)
         except ExIndexBogus, e:
             self.progress.finished()
-            QMessageBox.error(self, i18n("Unable to load package index. URL is wrong, or file is corrupt."))
+            QMessageBox.error(self, _("Unable to load package index. URL is wrong, or file is corrupt."))
             return False
         except ExPackageCycle, e:
             self.progress.finished()
             cycle = " > ".join(e.args[0])
-            QMessageBox.error(self, unicode(i18n("Package index has errors. Cyclic dependency found:\n  %s.")) % cycle)
+            QMessageBox.error(self, _("Package index has errors. Cyclic dependency found:\n  %s.") % cycle)
             return False
         except ExPackageMissing, e:
             self.progress.finished()
-            QMessageBox.error(self, unicode(i18n("Package index has errors. '%s' depends on non-existing '%s'.")) % e.args)
+            QMessageBox.error(self, _("Package index has errors. '%s' depends on non-existing '%s'.") % e.args)
             return False
         missing_components, missing_packages = self.project.get_missing()
         if len(missing_components):
-            QMessageBox.information(self, i18n("There are missing components. Removing."))
+            QMessageBox.information(self, _("There are missing components. Removing."))
             for component in missing_components:
                 if component in self.project.selected_components:
                     self.project.selected_components.remove(component)
             return self.updateRepo(update_repo=False)
         if len(missing_packages):
-            QMessageBox.information(self, i18n("There are missing packages. Removing."))
+            QMessageBox.information(self, _("There are missing packages. Removing."))
             for package in missing_packages:
                 if package in self.project.selected_packages:
                     self.project.selected_packages.remove(package)
