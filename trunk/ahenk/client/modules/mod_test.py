@@ -1,9 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-def test():
-    print "This is a test."
+import logging
 
-timers = {
-        test: 10,
-}
+def updatePackages():
+    logging.debug("Updating!")
+
+def timers():
+    return {
+        "updatePackages": (updatePackages, 30),
+    }

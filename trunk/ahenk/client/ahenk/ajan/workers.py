@@ -43,7 +43,7 @@ class Applier(threading.Thread):
                     self.taskmanager.update(filename, self.modmanager.get_timers(filename))
                     logging.debug("Updated module: %s" % filename)
                 files.append(filename)
-        # Remove missing modules
+        # Remove old modules
         for fname in set(self.modmanager.modules.keys()) - set(files):
             self.modmanager.delete(fname)
             self.taskmanager.delete(fname)
