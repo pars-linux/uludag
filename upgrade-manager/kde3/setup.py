@@ -38,7 +38,6 @@ kdedistutils.setup(
 
                         # data
                         ("/usr/kde/3.5/share/apps/upgrade-manager/pics", ["data/arrow.png", "data/check.png"]),
-                        ("/usr/kde/3.5/share/icons/hicolor/128x128/apps", ["data/package-manager.png"]),
 
                         # desktop files
                         ("/usr/kde/3.5/share/applications/kde/", ["data/upgrade-manager.desktop"]),
