@@ -17,10 +17,14 @@ def getText(label):
 
 
 class Task:
-    def __init__(self, interval, callable):
-        self.interval = interval
+    def __init__(self, callable, interval):
         self.callable = callable
+        self.interval = interval
         self.last = time.time()
+
+    def update(self, callable, interval):
+        self.callable = callable
+        self.interval = interval
 
     def is_ready(self):
         if (time.time() - self.last) > self.interval:
@@ -37,16 +41,26 @@ class TaskManager:
         self.tasks = {}
 
     def update(self, filename, timers):
-        self.tasks[filename] = []
-        for callable, interval in timers.iteritems():
-            self.tasks[filename].append(Task(interval, callable))
+        if filename not in self.tasks:
+            self.tasks[filename] = {}
+        tasks = []
+        # Check for new/updated tasks
+        for name, (callable, interval) in timers.iteritems():
+            if name in self.tasks[filename]:
+                self.tasks[filename][name].update(callable, interval)
+            else:
+                self.tasks[filename][name] = Task(callable, interval)
+            tasks.append(name)
+        # Remove old tasks
+        for name in set(self.tasks[filename].keys()) - set(tasks):
+            del self.tasks[filename][name]
 
     def delete(self, filename):
         del self.tasks[filename]
 
     def check(self):
         for filename in self.tasks:
-            for task in self.tasks[filename]:
+            for name, task in self.tasks[filename].iteritems():
                 if task.is_ready():
                     task.run()
 
