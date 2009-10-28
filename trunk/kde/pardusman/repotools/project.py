@@ -240,7 +240,7 @@ class Project:
 
         # Sort the lists
         self.selected_components.sort()
-        self.selected_languages.sort()
+#        self.selected_languages.sort()
         self.selected_packages.sort()
         self.all_packages.sort()
 
