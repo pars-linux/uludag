@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="raw" >
+    <file>pics/go-previous.png</file>
+    <file>pics/go-next.png</file>
+    <file>pics/go-down.png</file>
+    <file>pics/go-up.png</file>
+  </qresource>
+</RCC>
