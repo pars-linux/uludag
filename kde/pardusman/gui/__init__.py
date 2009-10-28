@@ -13,31 +13,22 @@
 
 # Qt
 from PyQt4.QtCore import SIGNAL
-from PyQt4.QtGui import QWidget
-
-# PyKDE
-from PyKDE4.kdeui import KApplication
-from PyKDE4.kdecore import KCmdLineArgs
-
-# About data
-from about import aboutData
+from PyQt4.QtGui import QWidget,QApplication
 
 # Main form
 from gui.main import MainWindow
 
 
 def gui(args):
-    # Set command-line arguments
-    KCmdLineArgs.init(args[:1], aboutData)
 
     # Create applicatin
-    app = KApplication()
+    app = QApplication(args)
 
     # Show main window
     mainWindow = MainWindow(args)
     mainWindow.show()
 
-    app.setTopWidget(mainWindow)
+    app.setActiveWindow(mainWindow)
 
     # Close application if there's no window
     app.connect(app, SIGNAL('lastWindowClosed()'), app.quit)
