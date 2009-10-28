@@ -85,8 +85,7 @@ class PackagesDialog(QDialog, Ui_PackagesDialog):
         self.all_packages = []
 
         # Search widget
-        # TODO: add filter()
-        # self.searchPackage.addTreeWidget(self.treePackages)
+        self.connect(self.searchPackage, SIGNAL("textChanged(const QString &)"), self.slotSearchPackage)
 
         # Ok/cancel buttons
         self.connect(self.buttonBox, SIGNAL("accepted()"), self.accept)
@@ -137,6 +136,14 @@ class PackagesDialog(QDialog, Ui_PackagesDialog):
             if item.isChecked():
                 self.components.append(item.component)
         QDialog.accept(self)
+
+    def slotSearchPackage(self, text):
+        for index in xrange(self.treePackages.topLevelItemCount()):
+            item = self.treePackages.topLevelItem(index)
+            if item.text(0).__contains__(text):
+                item.setHidden(False)
+            else:
+                item.setHidden(True)
 
     def slotComboFilter(self, index):
         """
