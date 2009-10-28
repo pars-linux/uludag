@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>510</width>
+    <width>521</width>
     <height>440</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Pardusman</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="raw.qrc">
+    <normaloff>:/raw/pics/pardusman.png</normaloff>:/raw/pics/pardusman.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3">
@@ -298,12 +302,14 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>510</width>
-     <height>23</height>
+     <width>521</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="raw.qrc"/>
+ </resources>
  <connections/>
 </ui>
