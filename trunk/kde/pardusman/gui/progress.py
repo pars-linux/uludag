@@ -15,27 +15,27 @@
 from PyQt4.QtCore import QEventLoop
 #from PyQt4.QtGui import QDialog
 
-# PyKDE
-from PyKDE4.kdecore import i18n
-from PyKDE4.kdeui import KProgressDialog, KApplication
+from PyQt4.QtGui import QProgressDialog
+from PyQt4.QtCore import QCoreApplication
 
 class Progress:
     def __init__(self, parent):
         self.parent = parent
         self.dialog = None
+        self.application = None
 
     def started(self, title):
-        self.dialog = KProgressDialog(self.parent, "pardusman", title)
-        self.dialog.showCancelButton(False)
+        self.dialog = QProgressDialog(title, "Stop", 0, 0, self.parent)
+        self.dialog.setCancelButton(None)
         self.dialog.show()
-        KApplication.kApplication().processEvents()
+        QCoreApplication.processEvents(QEventLoop.AllEvents)
 
     def progress(self, msg, percent):
         self.dialog.setLabelText(msg)
         # otherwise KProgressDialog automatically closes itself, sigh
         if percent < 100:
-            self.dialog.progressBar().setValue(percent)
-        KApplication.kApplication().processEvents(QEventLoop.AllEvents)
+            self.dialog.setValue(percent)
+        QCoreApplication.processEvents(QEventLoop.AllEvents)
 
     def finished(self):
         if self.dialog:
