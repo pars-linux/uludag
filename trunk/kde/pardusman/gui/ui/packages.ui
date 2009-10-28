@@ -87,14 +87,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="KTreeWidgetSearchLine" name="searchPackage">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="showClearButton" stdset="0">
-            <bool>true</bool>
-           </property>
-          </widget>
+          <widget class="QLineEdit" name="searchPackage"/>
          </item>
          <item>
           <widget class="QComboBox" name="comboFilter">
@@ -196,18 +189,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KTreeWidgetSearchLine</class>
-   <extends>KLineEdit</extends>
-   <header>ktreewidgetsearchline.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
