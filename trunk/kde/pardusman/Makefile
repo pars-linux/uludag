@@ -1,7 +1,8 @@
 all:
-	pykde4uic -o gui/ui/main.py gui/ui/main.ui
-	pykde4uic -o gui/ui/languages.py gui/ui/languages.ui
-	pykde4uic -o gui/ui/packages.py gui/ui/packages.ui
+	pyuic4 -o gui/ui/main.py gui/ui/main.ui
+	pyuic4 -o gui/ui/languages.py gui/ui/rawlanguages.ui
+	pyuic4 -o gui/ui/packages.py gui/ui/packages.ui
+	pyrcc4 -o gui/ui/raw_rc.py gui/ui/raw.qrc
 
 clean:
 	find -name *.pyc | xargs rm -rf
