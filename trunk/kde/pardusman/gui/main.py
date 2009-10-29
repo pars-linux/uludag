@@ -45,7 +45,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, args):
         QMainWindow.__init__(self)
         self.setupUi(self)
-
+        self.title = "Pardusman"
         # Terminal
 
         self.terminal = QTermWidget.QTermWidget()
@@ -125,10 +125,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             try:
                 self.project.open(unicode(filename))
             except ExProjectMissing:
-                QMessageBox.error(self, _("Project file is missing."))
+                QMessageBox.warning(self, self.title, _("Project file is missing."))
                 return
             except ExProjectBogus:
-                QMessageBox.error(self, _("Project file is corrupt."))
+                QMessageBox.warning(self, self.title, _("Project file is corrupt."))
                 return
             self.loadProject()
 
@@ -246,13 +246,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             Checks required fields for the project.
         """
         if not len(self.lineTitle.text()):
-            QMessageBox.error(self, _("Image title is missing."))
+            QMessageBox.warning(self, self.title,  _("Image title is missing."))
             return False
         if not len(self.lineRepository.text()):
-            QMessageBox.error(self, _("Repository URL is missing."))
+            QMessageBox.warning(self, self.title, _("Repository URL is missing."))
             return False
         if not len(self.lineWorkFolder.text()):
-            QMessageBox.error(self, _("Work folder is missing."))
+            QMessageBox.warning(self, self.title,  _("Work folder is missing."))
             return False
         return True
 
@@ -297,16 +297,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.repo = self.project.get_repo(self.progress, update_repo=update_repo)
         except ExIndexBogus, e:
             self.progress.finished()
-            QMessageBox.error(self, _("Unable to load package index. URL is wrong, or file is corrupt."))
+            QMessageBox.warning(self, self.title, _("Unable to load package index. URL is wrong, or file is corrupt."))
             return False
         except ExPackageCycle, e:
             self.progress.finished()
             cycle = " > ".join(e.args[0])
-            QMessageBox.error(self, _("Package index has errors. Cyclic dependency found:\n  %s.") % cycle)
+            QMessageBox.warning(self, self.title, _("Package index has errors. Cyclic dependency found:\n  %s.") % cycle)
             return False
         except ExPackageMissing, e:
             self.progress.finished()
-            QMessageBox.error(self, _("Package index has errors. '%s' depends on non-existing '%s'.") % e.args)
+            QMessageBox.warning(self, self.title, _("Package index has errors. '%s' depends on non-existing '%s'.") % e.args)
             return False
         missing_components, missing_packages = self.project.get_missing()
         if len(missing_components):
