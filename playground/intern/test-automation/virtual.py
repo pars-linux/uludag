@@ -213,7 +213,7 @@ class revdepRebuildAndLddResults:
 
     while(1):
       outSendCommand = self.execute.readline()
-      print outSendCommand + "\n"
+      print outSendCommand
       if(outSendCommand.find(self.virtualName) != -1):
           break
 
