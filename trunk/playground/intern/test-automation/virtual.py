@@ -31,14 +31,15 @@ class revdepRebuildAndLddResults:
     self.machineName = ""
     self.machineNames = []
 
-    if(len(sys.argv) == 6):
+    if(len(sys.argv) == 7):
       self.userPass = sys.argv[3]
       self.rootPass = sys.argv[4]
+      self.vmLang = sys.argv[6]
       self.get_machineNames()
       self.chooseMachine()
       self.virtualName = str(sys.argv[1]) + "@" + str(sys.argv[2])
     else:
-      print "You need  to provide at least 5 arguments to be able to run this script\n Tip: VMUserName VMName VMuserPassword WMrootPassword RealuserName "
+      print "You need  to provide at least 6 arguments to be able to run this script\n Tip: VMUserName VMName VMuserPassword VMrootPassword RealuserName VMlang(turkish or int)"
       exit()
 
     self.repos = []
@@ -193,7 +194,11 @@ class revdepRebuildAndLddResults:
       return
 
     if(mode == "root"):
-        self.execute.expect('.*rola:')
+        if(self.vmLang == "turkish"):
+            self.execute.expect('.*rola:')
+        else:
+            self.execute.expect('.*ssword:')
+
         self.execute.sendline(self.rootPass)
         self.virtualName = str(sys.argv[2])
         return
