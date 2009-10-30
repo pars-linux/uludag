@@ -11,5 +11,5 @@ if [ -d ../$DIRNAME ]; then
 fi
 
 cp -r ../$NAME ../$DIRNAME
-tar czvf $DIRNAME.tar.gz ../$DIRNAME --exclude .svn --exclude `basename $0`
+tar czvf $DIRNAME-corporate2.tar.gz ../$DIRNAME --exclude .svn --exclude `basename $0`
 rm -rf ../$DIRNAME
