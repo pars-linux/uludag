@@ -1,288 +1,223 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
-<context>
+<!DOCTYPE TS>
+<TS>
+  <context>
     <name>About</name>
     <message>
-        <location filename="uiQt.py" line="291"/>
-        <source>Puding is an USB image creator for Pardus Linux.</source>
-        <translation type="unfinished">Puding is een USB-image maker voor Pardus Linux.</translation>
+      <source>Puding is an USB image creator for Pardus Linux.</source>
+      <translation>Puding is een USB-imagemaker voor Pardus Linux.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="292"/>
-        <source>Copyright (c) %s TUBITAK / UEKAE</source>
-        <translation type="unfinished">Copyright (c) %s TUBITAK / UEKAE</translation>
+      <source>Copyright (c) %s TUBITAK / UEKAE</source>
+      <translation>Copyright (c) %s TUBITAK / UEKAE</translation>
     </message>
-</context>
-<context>
+  </context>
+  <context>
     <name>Create</name>
     <message>
-        <location filename="uiQt.py" line="59"/>
-        <source>Select CD Image</source>
-        <translation>Selecteer CD-image</translation>
+      <source>Select CD Image</source>
+      <translation>Selecteer CD-image</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="59"/>
-        <source>Images</source>
-        <translation>Images</translation>
+      <source>Images</source>
+      <translation>Images</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="71"/>
-        <source>Warning</source>
-        <translation>Waarschuwing</translation>
+      <source>Warning</source>
+      <translation>Waarschuwing</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="71"/>
-        <source>You should select a valid directory.</source>
-        <translation>Selecteer een geldige map.</translation>
+      <source>You should select a valid directory.</source>
+      <translation>Selecteer een geldige map.</translation>
     </message>
     <message>
-        <location filename="" line="3089"/>
-        <source>Puding is an USB image creator for Pardus Linux.</source>
-        <translation type="obsolete">Puding is een USB-image maker voor Pardus Linux.</translation>
+      <source>Directory is Invalid</source>
+      <translation>Map is ongeldig</translation>
     </message>
     <message>
-        <location filename="" line="3089"/>
-        <source>Copyright (c) %s TUBITAK / UEKAE</source>
-        <translation type="obsolete">Copyright (c) %s TUBITAK / UEKAE</translation>
+      <source>Please check the USB disk path.</source>
+      <translation>Controleer het pad naar de USB-schijf.</translation>
     </message>
     <message>
-        <location filename="" line="3089"/>
-        <source>About Puding</source>
-        <translation type="obsolete">Info over Puding</translation>
+      <source>CD Image is Invalid</source>
+      <translation>CD-image is ongeldig</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="97"/>
-        <source>Directory is Invalid</source>
-        <translation>Map is ongeldig</translation>
+      <source>Please set an CD image path.</source>
+      <translation>Stel het pad naar het CD-image in.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="97"/>
-        <source>Please check the USB disk path.</source>
-        <translation>Controleer het pad naar de USB-schijf.</translation>
+      <source>Please check the CD image path.</source>
+      <translation>Controleer het pad naar het CD-image.</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="153"/>
-        <source>CD Image is Invalid</source>
-        <translation>CD-image is ongeldig</translation>
+      <source>Verify Checksum</source>
+      <translation>Controlesom verifiëren</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="148"/>
-        <source>Please set an CD image path.</source>
-        <translation>Stel het pad naar het CD-image in.</translation>
+      <source>The checksum of the source is checking now...</source>
+      <translation>De controlesom van de bron wordt nu geverifieerd...</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="153"/>
-        <source>Please check the CD image path.</source>
-        <translation>Controleer het pad naar het CD-image.</translation>
+      <source>Checksum invalid</source>
+      <translation>Controlesom is ongeldig</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="160"/>
-        <source>Verify Checksum</source>
-        <translation>Controlesom verifiëren</translation>
+      <source>Creating Image</source>
+      <translation>Image wordt aangemaakt</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="160"/>
-        <source>The checksum of the source is checking now...</source>
-        <translation>De controlesom van de bron wordt nu geverifieerd...</translation>
+      <source>Creating image...</source>
+      <translation>Image wordt aangemaakt...</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="181"/>
-        <source>Checksum invalid</source>
-        <translation>Controlesom is ongeldig</translation>
+      <source>USB Image is Ready</source>
+      <translation>USB-image is gereed</translation>
     </message>
     <message>
-        <location filename="uiQt.py" line="196"/>
-        <source>Creating Image</source>
-        <translation>Image wordt aangemaakt</translation>
+      <source>Your USB image is ready. Now you can install or run Pardus from USB storage.</source>
+      <translation>De USB-schijf is gereed. U kunt nu Pardus vanaf de USB-schijf installeren of opstarten.</translation>
     </message>
-    <message>
-        <location filename="uiQt.py" line="196"/>
-        <source>Creating image...</source>
-        <translation>Image wordt aangemaakt...</translation>
-    </message>
-    <message>
-        <location filename="uiQt.py" line="210"/>
-        <source>USB Image is Ready</source>
-        <translation>USB-image is gereed</translation>
-    </message>
-    <message>
-        <location filename="uiQt.py" line="210"/>
-        <source>Your USB image is ready. Now you can install or run Pardus from USB storage.</source>
-        <translation>De USB-schijf is gereed. U kunt nu Pardus vanaf de USB-schijf installeren of opstarten.</translation>
-    </message>
-</context>
-<context>
+  </context>
+  <context>
     <name>Dialog</name>
     <message>
-        <location filename="qtConfirmDialog.py" line="104"/>
-        <source>Confirm Informations</source>
-        <translation>Gegevens bevestigen</translation>
+      <source>Confirm Informations</source>
+      <translation>Gegevens bevestigen</translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="111"/>
-        <source>&lt;b&gt;USB Disk Path:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Pad naar USB-schijf:&lt;/b&gt;</translation>
+      <source>&lt;b>USB Disk Path:&lt;/b></source>
+      <translation>&lt;b>Pad naar USB-schijf:&lt;/b></translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="109"/>
-        <source>&lt;b&gt;Release Name:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Uitgavenaam:&lt;/b&gt;</translation>
+      <source>&lt;b>Release Name:&lt;/b></source>
+      <translation>&lt;b>Uitgavenaam:&lt;/b></translation>
     </message>
     <message>
-        <location filename="qtProgressBar.py" line="36"/>
-        <source>Dialog</source>
-        <translation>Dialoog</translation>
+      <source>Dialog</source>
+      <translation>Dialoog</translation>
     </message>
     <message>
-        <location filename="qtSelectDisk.py" line="64"/>
-        <source>Select USB Disk Path</source>
-        <translation>Selecteer pad naar USB-schijf</translation>
+      <source>Select USB Disk Path</source>
+      <translation>Selecteer pad naar USB-schijf</translation>
     </message>
     <message>
-        <location filename="qtSelectDisk.py" line="65"/>
-        <source>Available Disks:</source>
-        <translation>Beschikbare schijven:</translation>
+      <source>Available Disks:</source>
+      <translation>Beschikbare schijven:</translation>
     </message>
     <message>
-        <location filename="qtSelectDisk.py" line="66"/>
-        <source>Or you can set mount disk directly:</source>
-        <translation>Of stel aankoppelpunt rechtstreeks in:</translation>
+      <source>Or you can set mount disk directly:</source>
+      <translation>Of stel aankoppelpunt rechtstreeks in:</translation>
     </message>
     <message>
-        <location filename="qtSelectDisk.py" line="67"/>
-        <source>Browse</source>
-        <translation>Zoeken</translation>
+      <source>Browse</source>
+      <translation>Zoeken</translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="105"/>
-        <source>&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Warning:&lt;/b&gt;&lt;/font&gt; Please double check your path information. If you don&apos;t type the path to the USB stick correctly, you may damage your computer. Would you like to continue?&lt;br /&gt;</source>
-        <translation>&lt;font color=&quot;red&quot;&gt;&lt;b&gt;Waarschuwing:&lt;/b&gt;&lt;/font&gt; Wees er zeker van dat de 
+      <source>&lt;font color=&quot;red&quot;>&lt;b>Warning:&lt;/b>&lt;/font> Please double check your path information. If you don't type the path to the USB stick correctly, you may damage your computer. Would you like to continue?&lt;br /></source>
+      <translation>&lt;font color=&quot;red&quot;>&lt;b>Waarschuwing:&lt;/b>&lt;/font> Wees er zeker van dat de 
 padinformatie juist is. Wanneer het pad naar de USB-stick niet juist is, kan het 
-de computer beschadigen. Doorgaan?&lt;br /&gt; </translation>
+de computer beschadigen. Doorgaan?&lt;br /> </translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="106"/>
-        <source>&lt;b&gt;Image Path:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Pad naar image:&lt;/b&gt;</translation>
+      <source>&lt;b>Image Path:&lt;/b></source>
+      <translation>&lt;b>Pad naar image:&lt;/b></translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="107"/>
-        <source>&lt;b&gt;Capacity:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Capaciteit:&lt;/b&gt;</translation>
+      <source>&lt;b>Capacity:&lt;/b></source>
+      <translation>&lt;b>Capaciteit:&lt;/b></translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="108"/>
-        <source>&lt;b&gt;Available:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Beschikbaar:&lt;/b&gt;</translation>
+      <source>&lt;b>Available:&lt;/b></source>
+      <translation>&lt;b>Beschikbaar:&lt;/b></translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="110"/>
-        <source>&lt;i&gt;&lt;b&gt;USB Disk Informations&lt;/b&gt;&lt;/i&gt;</source>
-        <translation>&lt;i&gt;&lt;b&gt;USB-schijfinformatie&lt;/b&gt;&lt;/i&gt;</translation>
+      <source>&lt;i>&lt;b>USB Disk Informations&lt;/b>&lt;/i></source>
+      <translation>&lt;i>&lt;b>USB-schijfinformatie&lt;/b>&lt;/i></translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="112"/>
-        <source>&lt;i&gt;&lt;b&gt;Source Informations&lt;/b&gt;&lt;/i&gt;</source>
-        <translation>&lt;i&gt;&lt;b&gt;Broninformatie&lt;/b&gt;&lt;/i&gt;</translation>
+      <source>&lt;i>&lt;b>Source Informations&lt;/b>&lt;/i></source>
+      <translation>&lt;i>&lt;b>Broninformatie&lt;/b>&lt;/i></translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="113"/>
-        <source>&lt;b&gt;Used:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Gebruikt:&lt;/b&gt;</translation>
+      <source>&lt;b>Used:&lt;/b></source>
+      <translation>&lt;b>Gebruikt:&lt;/b></translation>
     </message>
     <message>
-        <location filename="qtConfirmDialog.py" line="114"/>
-        <source>&lt;b&gt;Image Size:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Imagegrootte:&lt;/b&gt;</translation>
+      <source>&lt;b>Image Size:&lt;/b></source>
+      <translation>&lt;b>Imagegrootte:&lt;/b></translation>
     </message>
     <message>
-        <location filename="qtAbout.py" line="74"/>
-        <source>About Puding</source>
-        <translation type="unfinished">Info over Puding</translation>
+      <source>About Puding</source>
+      <translation>Info over Puding</translation>
     </message>
     <message>
-        <location filename="qtAbout.py" line="75"/>
-        <source>Written by</source>
-        <translation type="unfinished"></translation>
+      <source>Written by</source>
+      <translation>Geschreven door</translation>
     </message>
     <message>
-        <location filename="qtAbout.py" line="76"/>
-        <source>Translated By</source>
-        <translation type="unfinished"></translation>
+      <source>Translated By</source>
+      <translation>Vertaald door</translation>
     </message>
     <message>
-        <location filename="qtAbout.py" line="77"/>
-        <source>Artwork By</source>
-        <translation type="unfinished"></translation>
+      <source>Artwork By</source>
+      <translation>Grafisch ontwerp door</translation>
     </message>
     <message>
-        <location filename="qtAbout.py" line="78"/>
-        <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+      <source>&amp;OK</source>
+      <translation>&amp;OK</translation>
     </message>
-</context>
-<context>
+  </context>
+  <context>
     <name>MainWindow</name>
     <message>
-        <location filename="qtMain.py" line="106"/>
-        <source>Puding</source>
-        <translation>Puding</translation>
+      <source>Puding</source>
+      <translation>Puding</translation>
     </message>
     <message>
-        <location filename="qtMain.py" line="107"/>
-        <source>Image Path:</source>
-        <translation>Pad naar image:</translation>
+      <source>Image Path:</source>
+      <translation>Pad naar image:</translation>
     </message>
     <message>
-        <location filename="qtMain.py" line="110"/>
-        <source>Browse</source>
-        <translation>Zoeken</translation>
+      <source>Browse</source>
+      <translation>Zoeken</translation>
     </message>
     <message>
-        <location filename="qtMain.py" line="109"/>
-        <source>Disk Path:</source>
-        <translation>Pad naar schijf:</translation>
+      <source>Disk Path:</source>
+      <translation>Pad naar schijf:</translation>
     </message>
     <message>
-        <location filename="qtMain.py" line="111"/>
-        <source>&amp;Create</source>
-        <translation>&amp;Aanmaken</translation>
+      <source>&amp;Create</source>
+      <translation>&amp;Aanmaken</translation>
     </message>
     <message>
-        <location filename="qtMain.py" line="115"/>
-        <source>&amp;Quit</source>
-        <translation>Af&amp;sluiten</translation>
+      <source>&amp;Quit</source>
+      <translation>Af&amp;sluiten</translation>
     </message>
     <message>
-        <location filename="qtMain.py" line="113"/>
-        <source>&amp;File</source>
-        <translation>&amp;Bestand</translation>
+      <source>&amp;File</source>
+      <translation>&amp;Bestand</translation>
     </message>
     <message>
-        <location filename="qtMain.py" line="114"/>
-        <source>&amp;Help</source>
-        <translation>&amp;Help</translation>
+      <source>&amp;Help</source>
+      <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="qtMain.py" line="116"/>
-        <source>About</source>
-        <translation>Info over</translation>
+      <source>About</source>
+      <translation>Info over</translation>
     </message>
-</context>
-<context>
+  </context>
+  <context>
     <name>ProgressIncrementCopy</name>
     <message>
-        <location filename="uiQt.py" line="360"/>
-        <source>Copying %s (%0.2fMB)</source>
-        <translation>Kopiëren %s (%0.2fMB)</translation>
+      <source>Copying %s (%0.2fMB)</source>
+      <translation>Kopiëren van %s (%0.2fMB)</translation>
     </message>
-</context>
-<context>
+  </context>
+  <context>
     <name>SelectDisk</name>
     <message>
-        <location filename="uiQt.py" line="232"/>
-        <source>Choose Mount Disk Path</source>
-        <translation>Aankoppelpunt schijf selecteren</translation>
+      <source>Choose Mount Disk Path</source>
+      <translation>Aankoppelpunt schijf selecteren</translation>
     </message>
-</context>
+  </context>
 </TS>
