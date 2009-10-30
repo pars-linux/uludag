@@ -180,7 +180,7 @@ class revdepRebuildAndLddResults:
       self.revdepOutput = ""
 
     self.execute.sendline(command)
-    print command
+    print command + "\n"
 
     if(mode == "close"):
       while(1):
@@ -203,31 +203,32 @@ class revdepRebuildAndLddResults:
         self.virtualName = str(sys.argv[2])
         return
 
-    self.execute.sendline("uname")
+    self.execute.sendline("checking state ...")
 
     while(1):
       outSendCommand = self.execute.readline()
+      #print outSendCommand + "\n"
       if(outSendCommand.find(self.virtualName) != -1):
           break
-    #sys.stdout.write(outSendCommand)
 
     while(1):
       outSendCommand = self.execute.readline()
+      print outSendCommand + "\n"
       if(outSendCommand.find(self.virtualName) != -1):
           break
 
-      if((outSendCommand.find("uname") == -1) and (outSendCommand.find(self.virtualName) == -1) ):
-          if(mode == "parse"):
+      if((outSendCommand.find("checking state ...") == -1) and (outSendCommand.find(self.virtualName) == -1) ):
+        if(mode == "parse"):
               self.revdepOutput += outSendCommand
-          elif(mode == "ldd"):
-              self.ldd_outfile.write(outSendCommand)
-              sys.stdout.write(outSendCommand)
-              self.execute.readline()  #read the output of uname
-          elif(mode == "pisilr"):
-              print outSendCommand
-              if not "bz2" in outSendCommand and not "contrib" in outSendCommand:
+        elif(mode == "ldd"):
+             self.ldd_outfile.write(outSendCommand)
+             sys.stdout.write(outSendCommand)
+             self.execute.readline()  #read the output of uname
+        elif(mode == "pisilr"):
+             #print outSendCommand + "\n"
+            if not "bz2" in outSendCommand and not "contrib" in outSendCommand:
                 self.pisilrResult = outSendCommand.split(" ")
-                print self.pisilrResult
+                #print self.pisilrResult
 
   def checkKnownHosts(self, what):
     file = open("/home/" + str(sys.argv[5]) + "/.ssh/known_hosts")
@@ -250,11 +251,11 @@ class revdepRebuildAndLddResults:
     self.choice = raw_input()
 
     if(self.choice == "1" or self.choice == "2" or self.choice == "3" or self.choice == "4"):
-      self.sendCommand("pisi ar " + self.repoNames[int(self.choice)-1] + " " + self.repos[int(self.choice)-1] + " -y")
+      self.sendCommand("pisi ar %s %s -y" % ( self.repoNames[int(self.choice)-1], self.repos[int(self.choice)-1]))
     else:
         splitRepos = self.choice.split("/")
         repoName = splitRepos[3]
-        self.sendCommand("pisi ar " + repoName + " " + self.choice + " -y")
+        self.sendCommand("pisi ar %s %s -y" %(repoName, self.choice))
 
   def lddWorks(self,package):
     self.sendCommand("python /home/" + str(sys.argv[1]) + "/ldd.py start " + str(sys.argv[1]) + " " + package)
@@ -267,7 +268,7 @@ class revdepRebuildAndLddResults:
       self.startVm()
       self.connectTo()
       self.sendCommand("su -","root")
-      self.sendCommand("pisi it " + line.strip() + " -y")
+      self.sendCommand("pisi it %s -y" % line.strip())
       self.sendCommand("revdep-rebuild","parse")
       self.lddWorks(line)
       self.sendCommand("exit","close")
@@ -357,7 +358,7 @@ resultObject.connectTo()
 resultObject.connectTo("extreme")
 resultObject.sendCommand("su -", "root")
 resultObject.sendCommand("pisi lr", "pisilr")
-resultObject.sendCommand("pisi rr %s  -y" % resultObject.pisilrResult[0].replace("\x1b[32m", ""))
+resultObject.sendCommand("pisi rr %s  -y" % resultObject.pisilrResult[0].replace("\x1b[32m", "").strip())
 resultObject.sendCommand("pisi rr contrib -y")
 resultObject.repoWorks()
 resultObject.reverseChecker()
