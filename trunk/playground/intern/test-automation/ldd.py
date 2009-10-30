@@ -13,7 +13,7 @@ import os, glob, sys
 class VT: 
   def lddCheck(self, user, package):
     # check if package is executable or library ? 
-    self.ldd_outfile = open("/home/" + user + "/ldd_outfile","w")
+    self.ldd_outfile = open("/home/" + user + "/ldd_outfile","a")
 
     real_package = glob.glob("/var/lib/pisi/package/" + package + "*")[0] + "/"
     real_path = real_package + "files.xml"
