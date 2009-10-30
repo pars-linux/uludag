@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-10-14 14:31+0300\n"
-"PO-Revision-Date: 12/10/09 12:55\n"
+"PO-Revision-Date: 30/10/09 22:30\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,13 +18,12 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../datas/puding.desktop.in.h:1
-#, fuzzy
 msgid "Puding USB image creator"
-msgstr "Puding maakt een USB-image aan voor Pardus Linux."
+msgstr "Puding USB-imagemaker"
 
 #: ../datas/puding.desktop.in.h:2
 msgid "USB image creator"
-msgstr ""
+msgstr "USB-imagemaker"
 
 #: ../src/puding.py:41
 msgid "show program's license info and exit"
@@ -48,8 +47,7 @@ msgstr "Puding maakt een USB-image aan voor Pardus Linux."
 
 #: ../src/puding.py:58
 msgid "You need superuser permissions to run this application."
-msgstr ""
-"Voor het uitvoeren van deze toepassing zijn systeemrechten noodzakelijk."
+msgstr "Voor het uitvoeren van deze toepassing zijn systeemrechten noodzakelijk."
 
 #: ../src/puding.py:76
 msgid "Invalid usage. Example:"
@@ -72,9 +70,8 @@ msgid "USB device not found."
 msgstr "USB-apparaat niet gevonden."
 
 #: ../src/uiCmd.py:127
-#, fuzzy
 msgid "Mounting USB device..."
-msgstr "USB-schijf wordt afgekoppeld..."
+msgstr "USB-schijf wordt aangekoppeld..."
 
 #: ../src/uiCmd.py:131
 msgid "Mounting image..."
@@ -101,36 +98,31 @@ msgstr "Apparaten:"
 
 #: ../src/uiCmd.py:167
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
 #: ../src/uiCmd.py:170
-#, fuzzy
 msgid "Parent"
-msgstr "    Bovenliggende map\t\t:"
+msgstr "Bovenliggend"
 
 #: ../src/uiCmd.py:173
-#, fuzzy
 msgid "Mount Point"
-msgstr "    Aankoppelpunt\t\t:"
+msgstr "Aankoppelpunt"
 
 #: ../src/uiCmd.py:176
 msgid "not mounted"
 msgstr "niet aangekoppeld"
 
 #: ../src/uiCmd.py:180
-#, fuzzy
 msgid "Unmount"
-msgstr "niet aangekoppeld"
+msgstr "Afkoppelen"
 
 #: ../src/uiCmd.py:186
-#, fuzzy
 msgid "File System Version"
-msgstr "    Bestandsysteemversie\t:"
+msgstr "Versie bestandsysteem"
 
 #: ../src/uiCmd.py:189
-#, fuzzy
 msgid "File System Type"
-msgstr "    Bestandsysteemtype\t:"
+msgstr "Type bestandsysteem"
 
 #: ../src/uiCmd.py:193
 msgid "USB devices or partitions have found more than one. Please choose one:"
@@ -143,7 +135,7 @@ msgstr "Geef een nummer op tussen 0 - %d."
 
 #: ../src/uiCmd.py:215
 msgid "There is not enough space left on your USB stick for the image."
-msgstr ""
+msgstr "Er is voor het image op de USB-stick niet voldoende vrije ruimte over."
 
 #: ../src/uiCmd.py:217 ../src/uiCmd.py:284
 msgid "Unmounting image..."
@@ -154,28 +146,25 @@ msgid "USB disk informations:"
 msgstr "USB-schijfinformatie:"
 
 #: ../src/uiCmd.py:223
-#, fuzzy
 msgid "Capacity"
-msgstr "\tCapaciteit\t"
+msgstr "Capaciteit"
 
 #: ../src/uiCmd.py:226
-#, fuzzy
 msgid "Available"
-msgstr "\tBeschikbaar\t"
+msgstr "Beschikbaar"
 
 #: ../src/uiCmd.py:229
-#, fuzzy
 msgid "Used"
-msgstr "\tGebruikt\t\t"
+msgstr "Gebruikt"
 
 #: ../src/uiCmd.py:232
-#, fuzzy
 msgid ""
 "\n"
 "Please double check your path information. If you don't type the path to the "
 "USB stick correctly, you may damage your computer. Would you like to "
 "continue?"
 msgstr ""
+"\n"
 "Wees er zeker van dat de padinformatie juist is. Wanneer het pad naar de USB-"
 "stick niet juist is, kan het de computer beschadigen. Doorgaan?"
 
@@ -208,25 +197,20 @@ msgid "Calculating checksum..."
 msgstr "Controlesom aan het bereken..."
 
 #: ../src/uiCmd.py:255
-#, fuzzy
 msgid "Source Informations:"
-msgstr "USB-schijfinformatie:"
+msgstr "Broninformatie:"
 
 #: ../src/uiCmd.py:256
-#, fuzzy
 msgid "Image Path"
-msgstr ""
-"\n"
-"   Pad naar image: %s"
+msgstr "Pad naar image"
 
 #: ../src/uiCmd.py:258
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: ../src/uiCmd.py:262
-#, fuzzy
 msgid "Download URL"
-msgstr "URL downloaden: %s\n"
+msgstr "Download URL"
 
 #: ../src/uiCmd.py:269
 msgid ""
@@ -257,8 +241,7 @@ msgid "Could not unmounted USB disk."
 msgstr "Kan USB-schijf niet afkoppelen."
 
 #: ../src/uiCmd.py:301
-msgid ""
-"USB disk is ready. Now you can install or run Pardus from your USB disk."
+msgid "USB disk is ready. Now you can install or run Pardus from your USB disk."
 msgstr ""
 "USB-schijf is gereed. U kunt nu Pardus vanaf de USB-schijf installeren of "
 "opstarten."
@@ -267,17 +250,3 @@ msgstr ""
 msgid "Copying"
 msgstr "Bezig met kopiëren"
 
-#~ msgid "         Name: %s"
-#~ msgstr "         Naam: %s"
-
-#~ msgid "       Md5sum: %s"
-#~ msgstr "       Md5sum: %s"
-
-#~ msgid "    Label\t\t:"
-#~ msgstr "    Label\t\t:"
-
-#~ msgid "    Unmount\t\t:"
-#~ msgstr "    Afkoppelen\t\t:"
-
-#~ msgid "    UUID\t\t:"
-#~ msgstr "    UUID\t\t:"
