@@ -2,6 +2,7 @@
 Exec=migration
 Icon=migration
 Type=Application
+Categories=Qt;KDE;System;
 
 Name=Migration Tool
 Name[de]=Migation Tool
