@@ -397,7 +397,7 @@ class Iface(Singleton):
                     for (rev_dep, depinfo) in rev_deps:
                         # add only installed but unsatisfied reverse dependencies
                         if (self.oidb.has_package(rev_dep) and
-                                not depinfo.satisfied_by_installed() and is_upgradable(rev_dep)):
+                                not depinfo.satisfied_by_installed() and self.is_upgradable(rev_dep)):
                             if not depinfo.satisfied_by_repo():
                                 raise Exception(_('Reverse dependency %s of %s cannot be satisfied') % (rev_dep, x))
                             if not rev_dep in G_f.vertices():
