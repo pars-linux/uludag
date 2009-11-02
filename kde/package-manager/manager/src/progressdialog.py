@@ -36,6 +36,7 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
 
     def updateProgress(self, progress):
         self.progressBar.setValue(progress)
+        self.setWindowTitle(i18n("Operation - %%%1", progress))
 
     def updateOperation(self, operation, arg):
         if operation in [i18n("configuring"),  i18n("extracting")]:
