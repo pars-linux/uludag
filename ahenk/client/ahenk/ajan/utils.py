@@ -4,6 +4,7 @@
 import hashlib
 import ldap
 import ldif
+import logging
 import os
 import StringIO
 import time
@@ -79,14 +80,16 @@ class Mod:
             raise Error(_("SyntaxError in mod (%s): %s") %(filename, e))
         self.locals = localSymbols
         self.globals = globalSymbols
+        self.policy = localSymbols["policy"]
 
-    def get_timers(self):
-        timers = self.locals.get("timers", {})
-        if callable(timers):
-            timers = timers()
-        if isinstance(timers, dict):
-            return timers
-        return {}
+    def updateSettings(self, settings={}):
+        self.policy.updateSettings(settings)
+
+    def apply(self):
+        self.policy.apply()
+
+    def getTimers(self):
+        return self.policy.getTimers()
 
 
 class ModManager:
@@ -106,8 +109,16 @@ class ModManager:
             return True
         return False
 
-    def get_timers(self, filename):
-        return self.modules[filename].get_timers()
+    def updateSettings(self, settings={}):
+        for filename, mod in self.modules.iteritems():
+            mod.updateSettings(settings)
+
+    def apply(self):
+        for filename, mod in self.modules.iteritems():
+            mod.apply()
+
+    def getTimers(self, filename):
+        return self.modules[filename].getTimers()
 
 
 class LDAP:
@@ -146,3 +157,28 @@ def getFileHash(f):
     if not os.path.exists(f):
         return ""
     return hashlib.sha1(file(f).read()).hexdigest()
+
+
+class Policy:
+    label = ""
+
+    def __init__(self):
+        self.log = logging.getLogger(self.label)
+        self.settings = {}
+        self.init()
+
+    def init(self):
+        pass
+
+    def settingsUpdated(self):
+        pass
+
+    def updateSettings(self, settings={}):
+        self.settings = settings
+        self.settingsUpdated()
+
+    def getTimers(self):
+        return {}
+
+    def apply(self):
+        pass

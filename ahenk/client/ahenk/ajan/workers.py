@@ -22,17 +22,28 @@ class Applier(threading.Thread):
         while self.active:
             if not self.queue_applier.empty():
                 policy = self.queue_applier.get()
-                # FIXME: Apply policy
                 logging.debug("Applying policy: %s" % policy)
-                # FIXME: Apply policy
+                # Pass settings to modules
+                self.modmanager.updateSettings(policy)
+                # Update timers
+                self.updateTimers()
+                # Apply settings
+                self.modmanager.apply()
             else:
                 # Update modules
-                self.update_modules()
+                self.updateModules()
                 # Run tasks
                 self.taskmanager.check()
             time.sleep(0.5)
 
-    def update_modules(self):
+    def updateTimers(self):
+        for filename in self.taskmanager.tasks:
+            if filename in self.modmanager.modules:
+                self.taskmanager.update(filename, self.modmanager.getTimers(filename))
+            else:
+                self.taskmanager.delete(filename)
+
+    def updateModules(self):
         files = []
         # Check for new/updated modules
         for fname in os.listdir(self.options.moddir):
@@ -40,7 +51,7 @@ class Applier(threading.Thread):
             if fname.startswith("mod_") and fname.endswith(".py"):
                 if self.modmanager.need_update(filename):
                     self.modmanager.update(filename)
-                    self.taskmanager.update(filename, self.modmanager.get_timers(filename))
+                    self.taskmanager.update(filename, self.modmanager.getTimers(filename))
                     logging.debug("Updated module: %s" % filename)
                 files.append(filename)
         # Remove old modules
