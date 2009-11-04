@@ -33,7 +33,7 @@ class Applier(threading.Thread):
                 # Update modules
                 self.updateModules()
                 # Run tasks
-                self.taskmanager.check()
+                self.taskmanager.fire()
             time.sleep(0.5)
 
     def updateTimers(self):
@@ -44,13 +44,15 @@ class Applier(threading.Thread):
                 self.taskmanager.delete(filename)
 
     def updateModules(self):
+        fn_policy = os.path.join(self.options.policydir, "latest_policy")
+        policy = utils.parseLDIF(open(fn_policy))
         files = []
         # Check for new/updated modules
         for fname in os.listdir(self.options.moddir):
             filename = os.path.join(self.options.moddir, fname)
             if fname.startswith("mod_") and fname.endswith(".py"):
-                if self.modmanager.need_update(filename):
-                    self.modmanager.update(filename)
+                if self.modmanager.needUpdate(filename):
+                    self.modmanager.update(filename, policy)
                     self.taskmanager.update(filename, self.modmanager.getTimers(filename))
                     logging.debug("Updated module: %s" % filename)
                 files.append(filename)
@@ -74,7 +76,7 @@ class Fetcher(threading.Thread):
             logging.debug("Checking policy...")
             policy = self.ldap.searchComputer()
             if len(policy):
-                ldif = self.ldap.getLDIF(policy[0])
+                ldif = utils.getLDIF(policy[0])
                 fn_policy = os.path.join(self.options.policydir, "latest_policy")
                 hash = utils.getFileHash(fn_policy)
                 if hash != utils.getStrHash(ldif):
