@@ -29,6 +29,8 @@ if __name__ == "__main__":
 
     options.conffile = os.path.realpath(options.conffile)
 
+    # Read configuration file
+
     cp = ConfigParser.ConfigParser()
     cp.read(options.conffile)
 
@@ -70,6 +72,8 @@ if __name__ == "__main__":
         options.policydir = "/var/db/ahenk-ajan/"
     if not os.path.exists(options.policydir):
         os.makedirs(options.policydir)
+
+    # It's time to enter the main loop
 
     if options.daemon:
         daemon = mainloop.Ajan(options)
