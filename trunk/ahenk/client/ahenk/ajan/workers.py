@@ -9,7 +9,22 @@ import time
 from ahenk.ajan import utils
 
 class Applier(threading.Thread):
+    """
+        Policy applier thread.
+
+        Properties:
+            active: If thread is active and running
+    """
+
     def __init__(self, options, queue_applier, queue_fetcher):
+        """
+            Inits policy applier thread.
+
+            Args:
+                options: Ahenk options
+                queue_applier: Applier queue object
+                queue_fetcher: Fetcher queue object
+        """
         threading.Thread.__init__(self)
         self.active = True
         self.options = options
@@ -19,6 +34,9 @@ class Applier(threading.Thread):
         self.modmanager = utils.ModManager()
 
     def run(self):
+        """
+            Applier thread main loop.
+        """
         while self.active:
             if not self.queue_applier.empty():
                 policy = self.queue_applier.get()
@@ -37,6 +55,9 @@ class Applier(threading.Thread):
             time.sleep(0.5)
 
     def updateTimers(self):
+        """
+            Reads modules and updates their scheduled tasks.
+        """
         for filename in self.taskmanager.tasks:
             if filename in self.modmanager.modules:
                 self.taskmanager.update(filename, self.modmanager.getTimers(filename))
@@ -44,6 +65,9 @@ class Applier(threading.Thread):
                 self.taskmanager.delete(filename)
 
     def updateModules(self):
+        """
+            Checks module directory and loads new/updated modules.
+        """
         fn_policy = os.path.join(self.options.policydir, "latest_policy")
         policy = utils.parseLDIF(open(fn_policy))
         files = []
@@ -64,7 +88,21 @@ class Applier(threading.Thread):
 
 
 class Fetcher(threading.Thread):
+    """
+        Policy fetcher thread.
+
+        Properties:
+            active: If thread is active and running
+    """
+
     def __init__(self, options, queue_fetcher):
+        """
+            Inits policy fetcher thread.
+
+            Args:
+                options: Ahenk options
+                queue_fetcher: Policy fetcher queue
+        """
         threading.Thread.__init__(self)
         self.active = True
         self.options = options
@@ -72,6 +110,9 @@ class Fetcher(threading.Thread):
         self.ldap = utils.LDAP(options.hostname, options.domain)
 
     def run(self):
+        """
+            Fetcher thread main loop.
+        """
         while self.active:
             logging.debug("Checking policy...")
             policy = self.ldap.searchComputer()

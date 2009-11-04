@@ -10,11 +10,21 @@ from ahenk.ajan import daemon
 from ahenk.ajan import workers
 
 class Ajan(daemon.Daemon):
+    """
+        Ahenk-Ajan (agent) daemon class.
+    """
+
     def __init__(self, options):
+        """
+            Inits Ahenk-Ajan (agent) daemon.
+        """
         daemon.Daemon.__init__(self, options.pidfile)
         self.options = options
 
     def run(self):
+        """
+            Agent main method.
+        """
         # Initialize logger
         log_level = logging.INFO
         if self.options.verbose:
