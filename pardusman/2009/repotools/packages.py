@@ -100,6 +100,9 @@ class Package:
         deps = node.getTag('RuntimeDependencies')
         if deps:
             self.depends = map(lambda x: x.firstChild().data(), deps.tags('Dependency'))
+            any_dep = deps.getTag('AnyDependency')
+            if any_dep:
+                self.depends.append(any_dep.getTagData('Dependency'))
         else:
             self.depends = []
         self.revdeps = []
