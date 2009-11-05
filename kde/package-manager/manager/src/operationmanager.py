@@ -43,7 +43,7 @@ class OperationManager(QObject):
         factor = {"B/s":1, "KB/s":1024, "MB/s":1048576, "GB/s":1073741824}
         if symbol == "--/-":
             return "--:--:--"
-        rates = float(rate) * factor[symbol]
+        rates = float(rate) * factor[symbol.strip()]
         total = self.totalSize
         downloaded = self.totalDownloaded + self.curPkgDownloaded
         left = total - downloaded
