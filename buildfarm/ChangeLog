@@ -1,2 +1,3 @@
 2009-11-09  Ozan Çağlayan <ozan_at_pardus.org.tr>
 	* ChangeLog: New file
+	* setup.py: Add setup.py and prepare for 2.0.
