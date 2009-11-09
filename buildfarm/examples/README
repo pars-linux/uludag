@@ -1,1 +1,4 @@
-This is an example repository hierarchy to use with buildfarm for testing purposes.
+- repository/
+  This is an example repository hierarchy to use with buildfarm for testing purposes.
+- pisi.conf.example
+  A basic pisi.conf suitable for buildfarm usage which can be installed under /etc/pisi.
