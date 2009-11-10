@@ -17,12 +17,11 @@ from distutils.core import setup
 
 import buildfarm
 
-# Scripts to install
-
-SCRIPTS = """\
+# Scripts to install under /usr/bin
+SCRIPTS = ["scripts/%s" % s for s in """\
 buildfarm
 buildfarm-report
-""".split()
+""".split()]
 
 # Call distutils.setup
 
