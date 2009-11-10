@@ -13,14 +13,13 @@
 
 # System
 import os
-import subprocess
 import tempfile
 
 # Qt
 import QTermWidget
 
 from PyQt4.QtCore import SIGNAL
-from PyQt4.QtGui import QIcon, QMessageBox, QMainWindow,QFileDialog
+from PyQt4.QtGui import QIcon, QMessageBox, QMainWindow, QFileDialog, QListWidgetItem
 from PyQt4.QtCore import QFile
 
 
@@ -30,6 +29,7 @@ from gui.ui.main import Ui_MainWindow
 # Dialogs
 from gui.languages import LanguagesDialog
 from gui.packages import PackagesDialog
+from gui.packagecollection import PackageCollectionDialog
 
 # Progress Dialog
 from gui.progress import Progress
@@ -40,6 +40,12 @@ from repotools.project import Project, ExProjectMissing, ExProjectBogus
 
 import gettext
 _ = lambda x:gettext.ldgettext("pardusman", x)
+
+class PackageCollectionListItem(QListWidgetItem):
+    def __init__(self, parent, collection):
+        QListWidgetItem.__init__(self, parent)
+        self.collection = collection
+        self.setText(collection.title)
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, args):
@@ -55,6 +61,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.terminalLayout.addWidget(self.terminal)
         self.terminal.show()
 
+        self.collectionFrame.hide()
+
         # Arguments
         self.args = args
 
@@ -63,6 +71,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # Package repository
         self.repo = None
+
+        # Package Selection collections
+        self.collections = None
 
         # Set icons
         self.setIcons()
@@ -80,6 +91,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.connect(self.pushBrowsePluginPackage, SIGNAL("clicked()"), self.slotBrowsePluginPackage)
         self.connect(self.pushBrowseReleaseFiles, SIGNAL("clicked()"), self.slotBrowseReleaseFiles)
 
+        # Change Package Selection
+        self.connect(self.pushAddCollection, SIGNAL("clicked()"),self.slotAddPackageCollection)
+        self.connect(self.pushModifyCollection, SIGNAL("clicked()"),self.slotModifyPackageCollection)
+        self.connect(self.pushRemoveCollection, SIGNAL("clicked()"),self.slotRemovePackageCollection)
+        self.connect(self.comboSize, SIGNAL("currentIndexChanged(int)"), self.slotShowPackageCollection)
+
         # Bottom toolbar
         self.connect(self.pushUpdateRepo, SIGNAL("clicked()"), self.slotUpdateRepo)
         self.connect(self.pushSelectLanguages, SIGNAL("clicked()"), self.slotSelectLanguages)
@@ -92,6 +109,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def initialize(self):
         if len(self.args) == 2:
             self.slotOpen(self.args[1])
+
+    def initializeRepo(self):
+        if not self.repo:
+            if not self.checkProject():
+                return
+            if not self.updateRepo():
+                return
 
     def setIcons(self):
         # Top toolbar
@@ -186,6 +210,43 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if directory:
             self.lineWorkFolder.setText(directory)
 
+    def slotAddPackageCollection(self):
+        if not self.repo:
+            self.initializeRepo()
+
+        dialog = PackageCollectionDialog(self, self.repo)
+        if dialog.exec_():
+            item = PackageCollectionListItem(self.listPackageCollection, dialog.collection)
+
+        self.updateCollection()
+
+    def slotModifyPackageCollection(self):
+        index = self.listPackageCollection.currentRow()
+        item = self.listPackageCollection.item(index)
+        print "self.repo:%s" % self.repo.base_uri
+        print "item.collection"
+        dialog = PackageCollectionDialog(self, self.repo, item.collection)
+        if dialog.exec_():
+            if item.collection.name != dialog.collection.name:
+                item.setText(dialog.collection.name)
+            item.collection = dialog.collection
+
+        self.updateCollection()
+
+    def slotRemovePackageCollection(self):
+        for item in self.listPackageCollection.selectedItems():
+            self.listPackageCollection.takeItem(self.listPackageCollection.row(item))
+
+        self.updateCollection()
+
+    def slotShowPackageCollection(self, index):
+        if self.comboSize.currentIndex() == 1:
+            self.collectionFrame.show()
+            self.pushSelectPackages.hide()
+        else:
+            self.collectionFrame.hide()
+            self.pushSelectPackages.show()
+
     def slotSelectLanguages(self):
         """
             Select language button fires this function.
@@ -204,11 +265,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 return
             if not self.updateRepo():
                 return
+
         dialog = PackagesDialog(self, self.repo, self.project.selected_packages, self.project.selected_components)
+
         if dialog.exec_():
-            self.project.selected_packages = dialog.packages
-            self.project.selected_components = dialog.components
-            self.project.all_packages = dialog.all_packages
+            self.project.package_collections = dialog.collection
 
     def slotUpdateRepo(self):
         """
@@ -241,18 +302,30 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.terminal.sendText("sudo %s\n" % cmd)
         self.terminal.setFocus()
 
+    def updateCollection(self):
+        if not self.project.package_collections:
+            print "cd kurulumu"
+            self.listPackageCollection.clear()
+        elif not self.project.media.__eq__("dvd"):
+            print "dvd kurulum degil clear"
+            self.listPackageCollection.clear()
+        else:
+            self.project.package_collections = []
+            for index in xrange(self.listPackageCollection.count()):
+                self.project.package_collections.append(self.listPackageCollection.item(index).collection)
+
     def checkProject(self):
         """
             Checks required fields for the project.
         """
         if not len(self.lineTitle.text()):
-            QMessageBox.warning(self, self.title,  _("Image title is missing."))
+            QMessageBox.warning(self, self.windowTitle(),  _("Image title is missing."))
             return False
         if not len(self.lineRepository.text()):
-            QMessageBox.warning(self, self.title, _("Repository URL is missing."))
+            QMessageBox.warning(self, self.windowTitle(), _("Repository URL is missing."))
             return False
         if not len(self.lineWorkFolder.text()):
-            QMessageBox.warning(self, self.title,  _("Work folder is missing."))
+            QMessageBox.warning(self, self.windowTitle(),  _("Work folder is missing."))
             return False
         return True
 
@@ -269,6 +342,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.project.type = ["install", "live"][self.comboType.currentIndex()]
         self.project.squashfs_comp_type = ["GZIP", "LZMA"][self.comboCompression.currentIndex()]
         self.project.media = ["cd", "dvd", "usb", "custom"][self.comboSize.currentIndex()]
+        self.updateCollection()
 
     def loadProject(self):
         """
@@ -283,6 +357,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.comboType.setCurrentIndex(["install", "live"].index(self.project.type))
         self.comboCompression.setCurrentIndex(["GZIP", "LZMA"].index(self.project.squashfs_comp_type))
         self.comboSize.setCurrentIndex(["cd", "dvd", "usb", "custom"].index(self.project.media))
+
+        self.listPackageCollection.clear()
+        if self.project.package_collections:
+            print "loadProject package_collections"
+            print "project.media:%s" % self.project.media
+#            itemCount = self.listPackageCollection.count()
+            for collection in self.project.package_collections:
+                PackageCollectionListItem(self.listPackageCollection, collection)
+
+#                if itemCount:
+#                    for index in range(itemCount-1, -1, -1):
+#                        print "for dongusunde...%s" %  index
+#                        if self.listPackageCollection.item(index).collection:
+#                            print "collection list item var"
+#                            if not self.listPackageCollection.item(index).collection.uniqueTag.__eq__(collection.uniqueTag):
+#                                print "self.listPackageCollection.item(index).collection.uniqueTag%s" % self.listPackageCollection.item(index).collection.uniqueTag
+#                                print "collection.uniqueTag%s" % collection.uniqueTag
+#                                PackageCollectionListItem(self.listPackageCollection, collection)
+#                        else:
+#                             print "collection list item yok"
+#                            PackageCollectionListItem(self.listPackageCollection, collection)
+#                else:
+#                    PackageCollectionListItem(self.listPackageCollection, collection)
 
     def updateRepo(self, update_repo=True):
         """
