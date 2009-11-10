@@ -15,6 +15,7 @@ import os
 import piksemel
 
 import packages
+from repotools.selections import PackageCollection, PackageSelection
 
 # no i18n yet
 def _(x):
@@ -180,6 +181,7 @@ class Project:
         self.selected_languages = []
         self.selected_packages = []
         self.all_packages = []
+        self.package_collections = []
         self.missing_packages = []
         self.missing_components = []
 
@@ -218,32 +220,62 @@ class Project:
         if not self.work_dir:
             self.work_dir = ""
 
-        # Fill in the packages
-        package_selection = doc.getTag("PackageSelection")
-        if package_selection:
-            self.repo_uri = package_selection.getAttribute("repo_uri")
-            for tag in package_selection.tags("SelectedComponent"):
-                self.selected_components.append(tag.firstChild().data())
-            for tag in package_selection.tags("SelectedPackage"):
-                self.selected_packages.append(tag.firstChild().data())
-            for tag in package_selection.tags("Package"):
-                self.all_packages.append(tag.firstChild().data())
 
-        lang_selection = doc.getTag("LanguageSelection")
-        if lang_selection:
-            self.default_language = lang_selection.getAttribute("default_language")
-            for tag in lang_selection.tags("Language"):
+        def __packageSelection(node):
+            # Fill in the packages
+            selectedComponents = [ ]
+            selectedPackages = [ ]
+            allPackages = [ ]
+
+            if node:
+                repoURI = node.getAttribute("repo_uri")
+                for tag in node.tags("SelectedComponent"):
+                    selectedComponents.append(tag.firstChild().data())
+                for tag in node.tags("SelectedPackage"):
+                    selectedPackages.append(tag.firstChild().data())
+                for tag in node.tags("Package"):
+                    allPackages.append(tag.firstChild().data())
+                return (repoURI, selectedComponents, selectedPackages, allPackages)
+#                return PackageSelection(repoURI, selectedComponents, selectedPackages, allPackages)
+            return None
+
+        collectionsTag = doc.getTag("PackageCollections")
+        if collectionsTag:
+            for collection in collectionsTag.tags("PackageCollection"):
+                name = collection.getAttribute("name")
+                icon = collection.getAttribute("icon")
+                title = collection.getTagData("Title")
+                description = collection.getTagData("Description")
+                uri, components, packages, allPackages = __packageSelection(collection.getTag("PackageSelection"))
+                packageselection = PackageSelection(uri, components, packages, allPackages)
+                self.package_collections.append(PackageCollection(name, icon, title, description, packageselection))
+                print "secilen paketlerin uzunluğu:%s" % len(packageselection.selectedPackages)
+            # Hack for now.Change After multi repository support
+            self.repo_uri = self.package_collections[0].packageSelection.repoURI
+        else:
+            packageSelectionTag = doc.getTag("PackageSelection")
+            if packageSelectionTag:
+                self.repo_uri, self.selected_component, self.selected_packages, self.all_packages= __packageSelection(packageSelectionTag)
+
+        langselection = doc.getTag("LanguageSelection")
+
+        if langselection:
+            self.default_language = langselection.getAttribute("default_language")
+            for tag in langselection.tags("Language"):
                 self.selected_languages.append(tag.firstChild().data())
 
             if self.default_language not in self.selected_languages:
                 self.selected_languages.append(self.default_language)
 
-        # Sort the lists
-        self.selected_components.sort()
-#        self.selected_languages.sort()
-        self.selected_packages.sort()
-        self.all_packages.sort()
-
+        if collectionsTag:
+            for collection in self.package_collections:
+                collection.packageSelection.selectedComponents.sort()
+                collection.packageSelection.selectedPackages.sort()
+                collection.packageSelection.allPackages.sort()
+        else:
+             self.selected_components.sort()
+             self.selected_packages.sort()
+             self.all_packages.sort()
 
     def save(self, filename=None):
         # Save the data into filename as pardusman project file
@@ -264,7 +296,31 @@ class Project:
         if self.extra_params:
             doc.insertTag("ExtraParameters").insertData(self.extra_params)
 
-        if self.repo_uri:
+        if self.package_collections:
+            collections = doc.insertTag("PackageCollections")
+            for collection in self.package_collections:
+                packageCollection = collections.insertTag("PackageCollection")
+                print "collection.name:%s" % collection.uniqueTag
+                print "collection.icon:%s" % collection.icon
+                print "collection.Title:%s" % collection.title
+                print "collection.Description:%s" % collection.description
+                print "collection.packageSelection.repoURI:%s" % collection.packageSelection.repoURI
+
+                packageCollection.setAttribute("name", collection.uniqueTag)
+                packageCollection.setAttribute("icon", collection.icon)
+                packageCollection.insertTag("Title").insertData(collection.title)
+                packageCollection.insertTag("Description").insertData(collection.description)
+                packageSelection = packageCollection.insertTag("PackageSelection")
+                packageSelection.setAttribute("repo_uri", collection.packageSelection.repoURI)
+                for item in collection.packageSelection.selectedComponents:
+                    packageSelection.insertTag("SelectedComponent").insertData(item)
+
+                for item in collection.packageSelection.selectedPackages:
+                    packageSelection.insertTag("SelectedPackage").insertData(item)
+
+                for item in collection.packageSelection.allPackages:
+                    packageSelection.insertTag("Package").insertData(item)
+        else:
             package_selection = doc.insertTag("PackageSelection")
             package_selection.setAttribute("repo_uri", self.repo_uri)
 
@@ -338,6 +394,8 @@ class Project:
         self.missing_packages = []
         self.missing_components = []
         packages = []
+        self.all_packages = []
+
         def collect(name):
             if name not in repo.packages:
                 if name not in self.missing_packages:
@@ -349,18 +407,40 @@ class Project:
             packages.append(name)
             for dep in p.depends:
                 collect(dep)
-        for component in self.selected_components:
-            if component not in repo.components:
-                if component not in self.missing_components:
-                    self.missing_components.append(component)
-                return
-            for package in repo.components[component]:
+
+        if self.package_collections:
+            for collection in self.package_collections:
+                packages = []
+                for component in collection.packageSelection.selectedComponents:
+                    if component not in repo.components:
+                        if component not in self.missing_components:
+                            self.missing_components.append(component)
+                        return
+                    for package in repo.components[component]:
+                        collect(package)
+
+                for package in collection.packageSelection.selectedPackages:
+                    collect(package)
+
+            packages.sort()
+            collection.packageSelection.allPackages = packages
+            self.all_packages.extend(packages)
+        else:
+            for component in self.selected_components:
+                if component not in repo.components:
+                    if component not in self.missing_components:
+                        self.missing_components.append(component)
+                    return
+                for package in repo.components[component]:
+                    collect(package)
+
+            for package in self.selected_packages:
                 collect(package)
 
-        for package in self.selected_packages:
-            collect(package)
-        packages.sort()
-        self.all_packages = packages
+            packages.sort()
+            self.all_packages = packages
+
+        self.all_packages.sort()
 
     def image_repo_dir(self, clean=False):
         return self._get_dir("image_repo", clean)
