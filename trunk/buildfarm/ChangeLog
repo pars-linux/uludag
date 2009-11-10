@@ -8,6 +8,7 @@
 	updates.
 	* (data/buildfarm.conf): Add INI style configuration file for buildfarm
 	which will be used instead of importing the config module.
+	* (buildfarm/*.py): Port config.py to ConfigParser()
 
 2009-11-09  Ozan Çağlayan <ozan_at_pardus.org.tr>
 	* ChangeLog: New file
