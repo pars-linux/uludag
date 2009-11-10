@@ -12,7 +12,6 @@
 #
 
 import os
-import re
 import sys
 import stat
 import time
@@ -298,13 +297,31 @@ def setup_live_policykit_conf(project):
 
 def copyPisiIndex(project):
     image_dir = project.image_dir()
-    path = os.path.join(image_dir, "usr/share/yali4/data/pisi-index.xml.bz2")
-    repo = os.path.join(project.work_dir, "repo_cache/pisi-index.xml.bz2")
+    if project.package_collections:
+        destination = os.path.join(image_dir, "usr/share/yali4/data")
+        collectionDir = os.path.join(destination, "index")
+        collectionFile = os.path.join(destination, "index/collection.xml")
+        run('mkdir %s' % collectionDir)
+        run('cp -PR "%s" "%s"' % (os.path.join(project.install_repo_dir(), "collection.xml"), collectionDir))
+        run('sha1sum "%s" > "%s"' % (collectionFile, "%s.sha1sum" % collectionFile))
 
-    run('cp -PR "%s" "%s"' % (repo, path))
-    run('sha1sum "%s" > "%s"' % (repo, "%s.sha1sum" % path))
-    print('cp -PR "%s" "%s"' % (repo, path))
-    print('sha1sum "%s" > "%s"' % (repo, "%s.sha1sum" % path))
+        for collection in project.package_collections:
+            source = os.path.join(project.install_repo_dir(), "%s-index.xml.bz2" % collection.uniqueTag)
+            run('cp -PR "%s" "%s"' % (source, collectionDir))
+            run('sha1sum "%s" > "%s"' % (source, "%s.sha1sum" % os.path.join(collectionDir,os.path.basename(source))))
+            run('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
+
+            print('cp -PR "%s" "%s"' % (source, collectionDir))
+            print('sha1sum "%s" > "%s"' % (source, "%s.sha1sum" % os.path.join(collectionDir,os.path.basename(source))))
+            print('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
+    else:
+        path = os.path.join(image_dir, "usr/share/yali4/data/pisi-index.xml.bz2")
+        repo = os.path.join(project.work_dir, "repo_cache/pisi-index.xml.bz2")
+
+        run('cp -PR "%s" "%s"' % (repo, path))
+        run('sha1sum "%s" > "%s"' % (repo, "%s.sha1sum" % path))
+        print('cp -PR "%s" "%s"' % (repo, path))
+        print('sha1sum "%s" > "%s"' % (repo, "%s.sha1sum" % path))
 
 def install_packages(project):
     image_dir = project.image_dir()
@@ -351,6 +368,7 @@ def make_repos(project):
             imagedeps = repo.full_deps("yali4")
         else:
             imagedeps = project.all_packages
+
         repo.make_local_repo(repo_dir, imagedeps)
 
         if project.type == "install":
@@ -358,7 +376,14 @@ def make_repos(project):
             print "Preparing installation repository..."
 
             repo_dir = project.install_repo_dir(clean=True)
-            repo.make_local_repo(repo_dir, project.all_packages)
+            if project.package_collections:
+                for collection in project.package_collections:
+                    repo.make_local_repo(repo_dir, collection.packageSelection.allPackages, collection.uniqueTag)
+                    print "make_collection_index on repo_dir:%s" % repo_dir
+                repo.make_collection_index(repo_dir, project.package_collections)
+            else:
+                repo.make_local_repo(repo_dir, project.all_packages)
+
     except KeyboardInterrupt:
         print "Keyboard Interrupt: make_repo() cancelled."
         sys.exit(1)
@@ -416,7 +441,7 @@ def make_image(project):
     try:
         repo = project.get_repo()
         repo_dir = project.image_repo_dir()
-        image_file = project.image_file()
+#        image_file = project.image_file()
 
         image_dir = project.image_dir()
         run('umount %s/proc' % image_dir, ignore_error=True)
@@ -540,7 +565,7 @@ def make_iso(project):
     try:
         iso_dir = project.iso_dir(clean=True)
         iso_file = project.iso_file(clean=True)
-        image_dir = project.image_dir()
+        #image_dir = project.image_dir()
         image_file = project.image_file()
 
         os.link(image_file, os.path.join(iso_dir, "pardus.img"))
