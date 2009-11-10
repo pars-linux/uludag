@@ -100,6 +100,8 @@ class Package:
         deps = node.getTag('RuntimeDependencies')
         if deps:
             self.depends = map(lambda x: x.firstChild().data(), deps.tags('Dependency'))
+            for anyDeps in deps.tags("AnyDependency"):
+                self.depends.append(anyDeps.getTagData("Dependency"))
         else:
             self.depends = []
         self.revdeps = []
@@ -206,25 +208,49 @@ class Repository:
 
         return doc.toPrettyString()
 
-    def make_local_repo(self, path, package_list):
+    def make_local_repo(self, path, package_list, index_name="pisi"):
         index = 0
         for name in package_list:
             p = self.packages[name]
-            xterm_title("Fetching: %s - %s of %s" % (name, index, len(package_list)))
+            xterm_title("Fetching : %s - %s of %s" % (name, index, len(package_list)))
             con = Console()
             cached = fetch_uri(self.base_uri, self.cache_dir, p.uri, con)
-            os.symlink(cached, os.path.join(path, os.path.basename(cached)))
+#            print "cached:%s" % cached
+#            print "diger:%s" % os.path.join(path, os.path.basename(cached))
+            print "os.symlink(%s, %s)" % (cached, os.path.join(path, os.path.basename(cached)))
+            if not os.path.exists(os.path.join(path, os.path.basename(cached))):
+                os.symlink(cached, os.path.join(path, os.path.basename(cached)))
             index += 1
         index = self.make_index(package_list)
         import bz2
         data = bz2.compress(index)
         import hashlib
-        f = file(os.path.join(path, "pisi-index.xml.bz2"), "w")
+        f = file(os.path.join(path, "%s-index.xml.bz2") % index_name, "w")
         f.write(data)
         f.close()
-        f = file(os.path.join(path, "pisi-index.xml.bz2.sha1sum"), "w")
+        f = file(os.path.join(path, "%s-index.xml.bz2.sha1sum") % index_name, "w")
         s = hashlib.sha1()
         s.update(data)
+        f.write(s.hexdigest())
+        f.close()
+
+    def make_collection_index(self, path, projectCollections):
+        doc = piksemel.newDocument("YALI")
+        for collection in projectCollections:
+            collectionTag = doc.insertTag("Collection")
+            collectionTag.setAttribute("name", collection.uniqueTag)
+            collectionTag.setAttribute("icon", os.path.basename(collection.icon))
+            collectionTag.insertTag("Title").insertData(collection.title)
+            collectionTag.insertTag("Description").insertData(collection.description)
+
+        f = file(os.path.join(path, "collection.xml"), "w")
+        f.write(doc.toPrettyString())
+        f.close()
+
+        import hashlib
+        f = file(os.path.join(path, "collection.xml.sha1sum"), "w")
+        s = hashlib.sha1()
+        s.update(doc.toPrettyString())
         f.write(s.hexdigest())
         f.close()
 
@@ -253,3 +279,5 @@ Total installed size: %d""" % (
             self.size,
             self.inst_size
         )
+
+
