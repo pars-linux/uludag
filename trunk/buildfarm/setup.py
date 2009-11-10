@@ -35,4 +35,5 @@ setup(name="buildfarm",
       license="GPLv2",
       platforms=["Linux"],
       packages=["buildfarm"],
-      scripts=SCRIPTS)
+      scripts=SCRIPTS,
+      data_files=[("/etc/buildfarm", ["data/buildfarm.conf"])])
