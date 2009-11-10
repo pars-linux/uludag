@@ -47,7 +47,7 @@ def get_deltas_not_going_to(path, package):
     # Returns the list of delta packages in 'path' for 'package' going from any
     # build to any build other than 45.
     # return -> ['kernel-41-42-delta.pisi', 'kernel-41-44.delta-pisi', etc]
-    name = get_name(package)
+    name = get_package_name(package)
     target_build = get_build_no(package)
     return list(set(get_delta_packages(path, name)).difference(get_delta_packages(path, name, target_build)))
 

@@ -57,7 +57,7 @@ def buildPackages():
     logger.raw()
 
     for pspec in queue:
-        packagename = utils.getPackageNameFromPath(pspec)
+        packagename = utils.get_package_name_from_path(pspec)
         build_output = open(os.path.join(config.outputDir, "%s.txt" % packagename), "w")
         logger.raw()
         logger.info(
@@ -86,8 +86,8 @@ def buildPackages():
 
                 # Filter debug packages because we don't need to build delta packages
                 # for debug packages
-                newDebugPackages = [p for p in newBinaryPackages if utils.isdebug(p)]
-                oldDebugPackages = [p for p in oldBinaryPackages if utils.isdebug(p)]
+                newDebugPackages = [p for p in newBinaryPackages if utils.is_debug_package(p)]
+                oldDebugPackages = [p for p in oldBinaryPackages if utils.is_debug_package(p)]
 
                 newBinaryPackages = list(set(newBinaryPackages).difference(newDebugPackages))
                 oldBinaryPackages = list(set(oldBinaryPackages).difference(oldDebugPackages))
@@ -165,7 +165,7 @@ def buildPackages():
                     # FIXME: The packages before packagesToInstall[p] are already installed and therefore need to be
                     # uninstalled because p can't be installed.
                     if utils.isdelta(p) and "no attribute 'old_files'" in str(e):
-                        logger.info("*** %s was probably not installed on the system and the delta installation failed." % utils.getName(p))
+                        logger.info("*** %s was probably not installed on the system and the delta installation failed." % utils.get_package_name(p))
                     errmsg = "Error occured for '%s' in INSTALL process: %s" % (os.path.join(config.workDir, p), e)
                     logger.error(errmsg)
                     mailer.error(errmsg, pspec)
@@ -230,11 +230,11 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPacka
         # Say that 'package' is kernel-2.6.25.20-114.45.pisi
         # We can remove delta packages going to any build < 45 from both
         # packages/ and packages-test/ because we no longer need them.
-        for p in utils.getDeltasNotGoingTo(config.binaryPath, package):
+        for p in utils.get_deltas_not_going_to(config.binaryPath, package):
             logger.info("*** Removing stale delta '%s' from '%s'" % (p, config.binaryPath))
             remove(join(config.binaryPath, p))
 
-        for p in utils.getDeltasNotGoingTo(config.testPath, package):
+        for p in utils.get_deltas_not_going_to(config.testPath, package):
             logger.info("*** Removing stale delta '%s' from '%s'" % (p, config.testPath))
             remove(join(config.testPath, p))
 

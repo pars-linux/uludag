@@ -15,15 +15,9 @@ import os
 import glob
 
 import pisi.api
+
 from pisi.operations.delta import create_delta_package
-
-import cli
-import config
-import logger
-
-# utils contains some helper functions like getName(), getBuild(), etc.
-from utils import *
-
+from buildfarm import cli, config, logger, utils
 
 class PisiApi:
 
@@ -90,7 +84,7 @@ class PisiApi:
         blacklisted_packages = []
 
         for p in newBinaryPackages:
-            if not getName(p) in [getName(pa) for pa in oldBinaryPackages]:
+            if not utils.get_package_name(p) in [utils.get_package_name(pa) for pa in oldBinaryPackages]:
                 brandNewBinaryPackages.append(p)
 
         map(newBinaryPackages.remove, brandNewBinaryPackages)
@@ -114,7 +108,7 @@ class PisiApi:
             logger.debug("Current (old,new) tuple is: %s" % str(pl))
 
             # Parse the name of the new package
-            name = getName(os.path.basename(pl[1]))
+            name = utils.get_package_name(os.path.basename(pl[1]))
 
             # globs are supported in blacklist delta e.g. module-*
             if name in config.deltaBlacklist or name.startswith(tuple([d.split("*")[0] \
