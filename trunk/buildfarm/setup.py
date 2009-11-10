@@ -15,8 +15,7 @@ import shutil
 
 from distutils.core import setup
 
-# Adjust the version here
-VERSION = "2.0"
+import buildfarm
 
 # Scripts to install
 
@@ -28,10 +27,13 @@ buildfarm-report
 # Call distutils.setup
 
 setup(name="buildfarm",
-      version=VERSION,
-      description="Pardus buildfarm",
+      version=buildfarm.__version__,
+      description="Pardus Buildfarm",
+      long_description="A buildfarm framework which builds source packages for Pardus",
       author="Ozan Çağlayan",
       author_email="ozan@pardus.org.tr",
       url="http://svn.pardus.org.tr/uludag/trunk/buildfarm",
-      packages=["src"],
+      license="GPLv2",
+      platforms=["Linux"],
+      packages=["buildfarm"],
       scripts=SCRIPTS)
