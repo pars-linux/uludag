@@ -32,7 +32,7 @@ class Ajan(daemon.Daemon):
         log_file = None
         if self.options.daemon:
             log_file = self.options.logging
-        logging.basicConfig(filename=log_file, level=log_level, format="%(asctime)s - %(levelname)s - %(message)s")
+        logging.basicConfig(filename=log_file, level=log_level, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 
         logging.info("Running.")
 

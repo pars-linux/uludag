@@ -1,7 +1,6 @@
-/ ahenk-ajan
-    - Policy fetch support
-         - LDAP
-         ? HTTP
+- Docs
+    - "Big picture" document
+    - Module Writer's Howto
 
 =====
 - Missing
