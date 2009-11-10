@@ -14,37 +14,40 @@
 
 import os
 import glob
+import pisi.api
 
-def getBuild(p):
-    return int(p.rstrip(".pisi").rsplit("-", 3)[3])
+constants = pisi.api.ctx.const
 
-def getName(p):
-    return p.rstrip(".pisi").rsplit("-", 3)[0]
+def get_build_no(p):
+    return int(p.rstrip(constants.package_suffix).rsplit("-", 3)[3])
 
-def getPackageNameFromPath(p):
+def get_package_name(p):
+    return p.rstrip(constants.package_suffix).rsplit("-", 3)[0]
+
+def get_package_name_from_path(p):
     return os.path.basename(os.path.dirname(p))
 
-def isdelta(p):
-    return p.endswith(".delta.pisi")
+def is_delta_package(p):
+    return p.endswith(constants.delta_package_suffix)
 
-def isdebug(p):
-    return "-dbginfo-" in p
+def is_debug_package(p):
+    return constants.debug_name_suffix in p
 
-def getDeltaPackages(path, name, target=None):
+def get_delta_packages(path, name, target=None):
     if target and isinstance(target, int):
         # Return delta packages goint to target
-        pattern = "%s-[0-9]*-%d.delta.pisi" % (name, target)
+        pattern = "%s-[0-9]*-%d%s" % (name, target, constants.delta_package_suffix)
     else:
         # Return all delta packages
-        pattern = "%s-[0-9]*-[0-9]*.delta.pisi" % name
+        pattern = "%s-[0-9]*-[0-9]*%s" % constants.delta_package_suffix
     return glob.glob1(path, pattern)
 
-def getDeltasNotGoingTo(path, package):
+def get_deltas_not_going_to(path, package):
     # e.g. package <- kernel-2.6.25.20-114-45.pisi
     # Returns the list of delta packages in 'path' for 'package' going from any
     # build to any build other than 45.
     # return -> ['kernel-41-42-delta.pisi', 'kernel-41-44.delta-pisi', etc]
-    name = getName(package)
-    targetBuild = getBuild(package)
-    return list(set(getDeltaPackages(path, name)).difference(getDeltaPackages(path, name, targetBuild)))
+    name = get_name(package)
+    target_build = get_build_no(package)
+    return list(set(get_delta_packages(path, name)).difference(get_delta_packages(path, name, target_build)))
 
