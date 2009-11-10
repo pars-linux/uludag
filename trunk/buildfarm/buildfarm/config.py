@@ -23,6 +23,7 @@ class Config(object):
 
     def read(self):
         for s in self.configuration.sections():
+            # FIXME: Handle multiple values separated with ,
             self.__items.update(dict(self.configuration.items(s)))
 
     def __getattr__(self, attr):
