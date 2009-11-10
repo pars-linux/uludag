@@ -6,6 +6,8 @@
 	constant values.
 	* (buildfarm/twit.py): Add new transparent Twitter class to send buildfarm
 	updates.
+	* (data/buildfarm.conf): Add INI style configuration file for buildfarm
+	which will be used instead of importing the config module.
 
 2009-11-09  Ozan Çağlayan <ozan_at_pardus.org.tr>
 	* ChangeLog: New file
