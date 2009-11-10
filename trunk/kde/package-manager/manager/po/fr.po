@@ -54,11 +54,11 @@ msgstr "<b>2 Mo</b>"
 
 #: .tmp/ui_pminstaller.py:46 .tmp/ui_mainwidget.py:58
 msgid "Form"
-msgstr "Formulaire"
+msgstr "Form"
 
 #: .tmp/ui_pminstaller.py:47
 msgid "TextLabel"
-msgstr "Étiquette"
+msgstr "TextLabel"
 
 #: .tmp/ui_pminstaller.py:48
 msgid "Ok"
@@ -655,15 +655,15 @@ msgstr "Alt+C"
 
 #: .tmp/mainwindow.py:88
 msgid "Show Installable Packages"
-msgstr "Montrer les paquets installables"
+msgstr "Afficher les paquets installables"
 
 #: .tmp/mainwindow.py:95
 msgid "Show Installed Packages"
-msgstr "Montrer les paquets installés"
+msgstr "Afficher les paquets installés"
 
 #: .tmp/mainwindow.py:101
 msgid "Show Upgradable Packages"
-msgstr "Montrer les mises à jour disponibles"
+msgstr "Afficher les mises à jour disponibles"
 
 #: .tmp/ui_repodialog.py:51
 msgid "Add New Repository"
