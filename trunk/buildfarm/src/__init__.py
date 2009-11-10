@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005, 2006 TUBITAK/UEKAE
+# Copyright (C) 2005-2009 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -10,6 +10,6 @@
 # Please read the COPYING file.
 
 # Buildfarm version
-__version__ = "0.2"
+__version__ = "2.0"
 
 __all__ = ["config", "dependency", "main", "qmanager", "repomanager"]
