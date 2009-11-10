@@ -22,9 +22,6 @@ import cStringIO
 
 from buildfarm import config, logger, mailer, qmanager, pisiinterface, utils
 
-# FIXME: Rename utils calls with utils.*
-from utils import *
-
 
 def buildPackages():
     qmgr = qmanager.QueueManager()
