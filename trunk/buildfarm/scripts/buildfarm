@@ -20,7 +20,7 @@ import cPickle
 import traceback
 import cStringIO
 
-from buildfarm import config, logger, mailer, qmanager, pisiinterface, utils
+from buildfarm import config, logger, mailer, qmanager, pisiinterface, utils, twit
 
 
 def buildPackages():
@@ -29,6 +29,9 @@ def buildPackages():
     packageList = []
     deltaPackageList = []
     isopackages = {}
+
+    # Create Twitter instance
+    my_twitter = twit.Twitter()
 
     if len(queue) == 0:
         logger.info("Work Queue is empty...")
@@ -60,14 +63,11 @@ def buildPackages():
         packagename = utils.get_package_name_from_path(pspec)
         build_output = open(os.path.join(config.outputDir, "%s.txt" % packagename), "w")
         logger.raw()
-        logger.info(
-            "*** Compiling source %s (%d of %d)" %
-                (
-                    packagename,
-                    int(queue.index(pspec) + 1),
-                    len(queue)
-                )
-            )
+        log_msg = "Compiling %s (%d/%d)" % (packagename, int(queue.index(pspec)+1), len(queue))
+        logger.info("*** %s" % log_msg)
+
+        # Twit if possible
+        my_twitter.update(log_msg)
 
         # This is here because farm captures the build output
         pisi = pisiinterface.PisiApi(stdout = build_output, stderr = build_output, outputDir = config.workDir)

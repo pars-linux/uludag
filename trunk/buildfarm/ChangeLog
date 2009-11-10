@@ -4,6 +4,8 @@
 	* TODO: Update TODO file,
 	* (buildfarm/utils.py): Use pisi.api.ctx.const class instead of hardcoding
 	constant values.
+	* (buildfarm/twit.py): Add new transparent Twitter class to send buildfarm
+	updates.
 
 2009-11-09  Ozan Çağlayan <ozan_at_pardus.org.tr>
 	* ChangeLog: New file
