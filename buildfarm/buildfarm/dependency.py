@@ -17,7 +17,7 @@ import pisi.specfile
 
 from buildfarm logger,config
 
-configuration = config.Config()
+config = config.Config()
 
 class DependencyResolver:
     def __init__(self, pspeclist):
