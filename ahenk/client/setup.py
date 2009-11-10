@@ -72,7 +72,7 @@ setup(
         # Configuration file
         ('/etc', ['etc/ahenk-ajan.conf']),
         # Modules
-        ('/var/lib/ahenk-ajan', ['modules/mod_test.py']),
+        ('/var/lib/ahenk-ajan', ['modules/mod_pisi.py']),
     ],
     cmdclass = {
         'install' : Install

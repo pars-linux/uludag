@@ -190,12 +190,13 @@ class Mod:
         Ahenk module
     """
 
-    def __init__(self, filename):
+    def __init__(self, filename, options):
         """
             Inits ahenk module.
 
             Args:
                 filename: Module filename
+                options: Ahenk options
         """
         self.filename = filename
         self.ctime = os.path.getctime(filename)
@@ -204,12 +205,12 @@ class Mod:
             code = open(filename).read()
             exec compile(code, "error", "exec") in localSymbols, globalSymbols
         except IOError, e:
-            raise Error(_("Unable to read mod (%s): %s") %(filename, e))
+            raise Error(_("Unable to read mod (%s): %s") % (filename, e))
         except SyntaxError, e:
-            raise Error(_("SyntaxError in mod (%s): %s") %(filename, e))
+            raise Error(_("SyntaxError in mod (%s): %s") % (filename, e))
         self.locals = localSymbols
         self.globals = globalSymbols
-        self.policy = localSymbols["policy"]
+        self.policy = localSymbols["policy"](options)
 
     def updateSettings(self, settings={}):
         """
@@ -235,11 +236,15 @@ class ModManager:
         Module manager.
     """
 
-    def __init__(self):
+    def __init__(self, options):
         """
             Inits module manager.
+
+            Args:
+                options: Ahenk options
         """
         self.modules = {}
+        self.options = options
 
     def update(self, filename, settings):
         """
@@ -249,7 +254,7 @@ class ModManager:
                 filename: Module filename
                 settings: Policy settings
         """
-        self.modules[filename] = Mod(filename)
+        self.modules[filename] = Mod(filename, self.options)
         self.modules[filename].updateSettings(settings)
 
     def delete(self, filename):
@@ -357,11 +362,12 @@ class Policy:
 
     label = ""
 
-    def __init__(self):
+    def __init__(self, options):
         """
             Inits Policy class.
         """
         self.log = logging.getLogger(self.label)
+        self.options = options
         self.settings = {}
         self.init()
 
@@ -398,3 +404,15 @@ class Policy:
             Method to be called after a new policy fetched.
         """
         pass
+
+    def runCommand(self, command):
+        """
+            Safe method for running shell commands. Does nothing if dry-run is enabled.
+
+            Args:
+                command: Shell command to execute
+        """
+        if self.options.dryrun:
+            self.log.debug("Running %s" % command)
+        else:
+            os.system(command)

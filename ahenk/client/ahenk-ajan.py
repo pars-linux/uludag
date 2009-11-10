@@ -18,6 +18,8 @@ if __name__ == "__main__":
                       help="Run as a daemon.")
     parser.add_option("-k", "--kill", action="store_true", dest="kill",
                       help="Kill running daemon.")
+    parser.add_option("-n", "--dry-run", action="store_true", dest="dryrun",
+                      help="Do nothing, just tell.")
     parser.add_option("-v", "--verbose", dest="verbose", action="store_true",
                       help="Verbose mode")
 

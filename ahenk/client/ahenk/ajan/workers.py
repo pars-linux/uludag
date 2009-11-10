@@ -31,7 +31,7 @@ class Applier(threading.Thread):
         self.queue_applier = queue_applier
         self.queue_fetcher = queue_fetcher
         self.taskmanager = utils.TaskManager()
-        self.modmanager = utils.ModManager()
+        self.modmanager = utils.ModManager(options)
 
     def run(self):
         """
