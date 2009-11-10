@@ -111,6 +111,8 @@ class PackagesDialog(QDialog, Ui_PackagesDialog):
         for name in self.repo.packages:
             package = self.repo.packages[name]
             item = PackageWidgetItem(self.treePackages, package)
+            if name in self.packages:
+                item.setChecked(True)
 
         # Components
         for name in self.repo.components:
