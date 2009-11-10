@@ -11,13 +11,11 @@
 # Please read the COPYING file.
 #
 
-""" Standart Python Modules """
 import os
 import sys
 import time
 import string
 
-""" BuildFarm Modules """
 from config import logFile
 
 def findCaller():

@@ -17,7 +17,6 @@ import glob
 import pisi.api
 from pisi.operations.delta import create_delta_package
 
-# Buildfarm modules
 import cli
 import config
 import logger

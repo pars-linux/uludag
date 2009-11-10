@@ -10,14 +10,11 @@
 #
 # Please read the COPYING file.
 
-""" Standart Python Modules """
 import os
 import sys
 
-""" PiSi Modules """
 import pisi.specfile
 
-""" BuildFarm Modules """
 import config
 import logger
 

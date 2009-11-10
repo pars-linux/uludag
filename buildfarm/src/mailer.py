@@ -10,7 +10,6 @@
 #
 # Please read the COPYING file.
 
-""" Standart Python Modules """
 import os
 import sys
 import socket
@@ -18,7 +17,6 @@ import smtplib
 
 import pisi.specfile
 
-""" BuildFarm Modules """
 import config
 import logger
 import templates as tmpl

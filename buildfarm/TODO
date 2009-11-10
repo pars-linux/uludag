@@ -4,6 +4,9 @@ Code refactoring
 - Install buildfarm modules into python' sitearch and make them importable
 - Use configuration file instead of config.py which is imported
 - Move standalone scripts under scripts/
+- Use pisi methods if available to avoid redundancy
+- Integrate repomanager into buildfarm executable
+- Grab Pardus version from /etc/pardus-release to be more flexible
 
 Features
 --------

@@ -11,10 +11,8 @@
 # Please read the COPYING file.
 #
 
-""" Standart Python Modules """
 import os
 
-""" BuildFarm Modules """
 import config
 import dependency
 

@@ -9,7 +9,10 @@
 #
 # Please read the COPYING file.
 
-#e-mail message templates for mailer module..
+# E-mail message templates for mailer module..
+
+
+## Error
 
 error_message = """\
 From: Pardus 2009 Buildfarm <%(mailFrom)s>
@@ -99,6 +102,8 @@ Fancy log file:
 --boundary42--
 """
 
+## Info
+
 info_message = """\
 From: Pardus 2009 Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
@@ -114,6 +119,8 @@ This message is sent from Pardus buildfarm. Please do not reply as it is automat
 %(message)s
 Happy hacking!
 """
+
+## Announce
 
 announce_message = """\
 From: Pardus 2009 Buildfarm <%(mailFrom)s>
