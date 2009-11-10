@@ -11,12 +11,13 @@
 # Please read the COPYING file.
 #
 
-import os
 import re
+import os
 import sys
+from string import find
+
 import pisi
 from pisi.db.sourcedb import SourceDB
-from string import find
 
 import config
 import logger
