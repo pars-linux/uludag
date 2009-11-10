@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="raw" >
+    <file>pics/folder-new.png</file>
+    <file>pics/list-add.png</file>
     <file>pics/pardusman.png</file>
     <file>pics/go-previous.png</file>
     <file>pics/go-next.png</file>
