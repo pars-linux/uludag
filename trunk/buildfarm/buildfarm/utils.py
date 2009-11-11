@@ -18,6 +18,10 @@ import pisi.api
 
 constants = pisi.api.ctx.const
 
+def get_pardus_release():
+    if os.path.exists("/etc/pardus-release"):
+        return open("/etc/pardus-release", "r").read().strip()
+
 def get_build_no(p):
     return int(p.rstrip(constants.package_suffix).rsplit("-", 3)[3])
 
