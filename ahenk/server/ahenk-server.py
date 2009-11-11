@@ -26,7 +26,20 @@ rootdn        "cn=%(root_account)s, %(domain)s"
 rootpw        %(password)s
 
 directory     /var/lib/openldap-data
-index         objectClass eq"""
+index         objectClass eq
+
+access to attrs=userpassword
+       by self write
+       by anonymous auth
+       by dn.exact="cn=%(root_account)s, %(domain)s" write
+       by * none
+
+access to *
+       by self write
+       by dn.exact="cn=%(root_account)s, %(domain)s" write
+       by users read
+       by * none
+"""
 
 TEMP_LDIF = """dn: %(domain)s
 objectclass: dcObject
