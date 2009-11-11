@@ -76,7 +76,9 @@ class Applier(threading.Thread):
             filename = os.path.join(self.options.moddir, fname)
             if fname.startswith("mod_") and fname.endswith(".py"):
                 if self.modmanager.needUpdate(filename):
+                    # Update new/updated modules
                     self.modmanager.update(filename, policy)
+                    # Update scheduled tasks
                     self.taskmanager.update(filename, self.modmanager.getTimers(filename))
                     logging.debug("Updated module: %s" % filename)
                 files.append(filename)
@@ -107,15 +109,38 @@ class Fetcher(threading.Thread):
         self.active = True
         self.options = options
         self.queue_fetcher = queue_fetcher
-        self.ldap = utils.LDAP(options.hostname, options.domain)
+        self.connected = False
 
     def run(self):
         """
             Fetcher thread main loop.
         """
+        def _sleep():
+            c = 0
+            while c < self.options.interval and self.active:
+                c += 0.5
+                time.sleep(0.5)
+
         while self.active:
+            # Try to connect to LDAP server
+            if not self.connected:
+                self.ldap = utils.LDAP(self.options.hostname, self.options.domain, self.options.username, self.options.password)
+                if self.ldap.bind():
+                    self.connected = True
+                    logging.debug("Connected to policy server.")
+                else:
+                    logging.error("Unable to connect to policy server.")
+                    _sleep()
+                    continue
+            # Check policy
             logging.debug("Checking policy...")
             policy = self.ldap.searchComputer()
+            if policy == None:
+                logging.debug("Unable to query policy server, will try again.")
+                self.connected = False
+                _sleep()
+                continue
+            # Add to queue if policy is updated
             if len(policy):
                 ldif = utils.getLDIF(policy[0])
                 fn_policy = os.path.join(self.options.policydir, "latest_policy")
@@ -128,7 +153,4 @@ class Fetcher(threading.Thread):
                     logging.debug("Policy is not changed.")
             else:
                 logging.debug("No policy defined.")
-            c = 0
-            while c < self.options.interval and self.active:
-                c += 0.5
-                time.sleep(0.5)
+            _sleep()

@@ -200,6 +200,7 @@ class Mod:
         """
         self.filename = filename
         self.ctime = os.path.getctime(filename)
+        # Compile module
         try:
             localSymbols = globalSymbols = {}
             code = open(filename).read()
@@ -208,6 +209,7 @@ class Mod:
             raise Error(_("Unable to read mod (%s): %s") % (filename, e))
         except SyntaxError, e:
             raise Error(_("SyntaxError in mod (%s): %s") % (filename, e))
+        # Save locals, globals and initiate policy class
         self.locals = localSymbols
         self.globals = globalSymbols
         self.policy = localSymbols["policy"](options)
@@ -322,10 +324,22 @@ class LDAP:
                 password: Password
         """
         self.dc = "dc=" + domain.replace(".", ", dc=")
+        self.username = username
+        self.password = password
         self.connection = ldap.open(hostname)
-        if username:
-            self.cn = "cn=" + username + ", " + self.dc
-            self.connection.simple_bind(self.cn, password)
+
+    def bind(self):
+        """
+            Authenticates to LDAP server and returns result.
+        """
+        if self.username and self.password:
+            try:
+                self.connection.simple_bind(self.username, self.password)
+                return self.connection.whoami_s() != ""
+            except ldap.SERVER_DOWN:
+                return False
+        else:
+            return True
 
     def getAll(self):
         """
@@ -342,7 +356,10 @@ class LDAP:
         """
         if not hostname:
             hostname = os.uname()[1]
-        return self.connection.search_s(self.dc, ldap.SCOPE_SUBTREE, "(&(objectClass=pardusComputer)(cn=%s))" % hostname)
+        try:
+            return self.connection.search_s(self.dc, ldap.SCOPE_SUBTREE, "(&(objectClass=pardusComputer)(cn=%s))" % hostname)
+        except (ldap.SERVER_DOWN, ldap.NO_SUCH_OBJECT) :
+            return None
 
     def close(self):
         """
