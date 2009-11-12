@@ -1,10 +1,15 @@
-- Pages for:
-    - released packages on stable repo
-    - reverted packages (removed from test)
-    - pending packages
-        - mark ACK'ed, NACK'ed and "dependencies not ACK'ed" packages
+== HTML Pages Needed ==
+
+- released packages on stable repo
+- reverted packages (removed from test)
+- pending packages
+- mark ACK'ed, NACK'ed and "dependencies not ACK'ed" packages
+- Better user interface
+
 - Filter, search, sort support
 - Vote system for pending packages (ack/nack)
-- Better user interface
+
+== Implementation Issues ==
+
 - Extension repo support (for contrib)
     - Oh wait, contrib does not have a test repo!?
