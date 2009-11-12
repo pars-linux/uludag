@@ -133,8 +133,13 @@ def updateDB(path_source, full_import, newRelease):
             for dep in RuntimeDependency.objects.filter(package=package):
                 dep.delete()
             for dep in pack.runtimeDependencies():
-                dependency = RuntimeDependency(package=package, name=dep.package, version=toString(dep.version), version_to=toString(dep.versionTo), version_from=toString(dep.versionFrom), release=toInt(dep.release), release_to=toInt(dep.releaseTo), release_from=toInt(dep.releaseFrom))
-                dependency.save()
+                if isinstance(dep, pisi.specfile.AnyDependency):
+                    for any_dep in dep.dependencies:
+                        dependency = RuntimeDependency(package=package, name=any_dep.package, version=toString(any_dep.version), version_to=toString(any_dep.versionTo), version_from=toString(any_dep.versionFrom), release=toInt(any_dep.release), release_to=toInt(any_dep.releaseTo), release_from=toInt(any_dep.releaseFrom))
+                        dependency.save()
+                else:
+                    dependency = RuntimeDependency(package=package, name=dep.package, version=toString(dep.version), version_to=toString(dep.versionTo), version_from=toString(dep.versionFrom), release=toInt(dep.release), release_to=toInt(dep.releaseTo), release_from=toInt(dep.releaseFrom))
+                    dependency.save()
 
         up_count = 0
         for up in pspec.history:
