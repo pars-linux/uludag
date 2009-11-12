@@ -1,3 +1,10 @@
+Requirements
+============
+
+* Django 1.0 and above
+* PySvn module
+0
+
 Install
 =======
 
