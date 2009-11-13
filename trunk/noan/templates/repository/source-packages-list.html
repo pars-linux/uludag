@@ -6,7 +6,7 @@
             <th>Maintainer</th>
             <th>Distribution</th>
         </tr>
-        {% for source in sources.object_list %}
+        {% for source in source_list %}
         <tr>
             <td><a href="{{ source.get_url }}">{{ source.name }}</a></td>
             <td>{{ source.maintained_by.get_full_name }}</td>

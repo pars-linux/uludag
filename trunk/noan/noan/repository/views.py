@@ -11,6 +11,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.template import RequestContext
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
+# we use generic view for listing as it handles pagination easily. so we don't duplicate the code.
+from django.views.generic.list_detail import object_list
 
 #######################
 #                     #
@@ -20,6 +22,7 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from noan.repository.models import Distribution, Package, Source, Binary
 # we have this wrapper to avoid using "context_instance" kwarg in every function.
 from noan.wrappers import render_response
+from noan.settings import SOURCES_PER_PAGE
 
 def repository_index(request):
     distributions = Distribution.objects.all()
@@ -37,25 +40,19 @@ def repository_index(request):
 
 def list_source_packages(request, distName, distRelease):
     distribution = Distribution.objects.get(name=distName, release=distRelease)
-
     sources = Source.objects.filter(distribution=distribution)
 
-    # Pagination
-    paginator = Paginator(sources, 25)
-    try:
-        page = int(request.GET.get('page', '1'))
-    except ValueError:
-        page = 1
-    try:
-        sources = paginator.page(page)
-    except (EmptyPage, InvalidPage):
-        sources = paginator.page(paginator.num_pages)
+    # - generate dict to use in object_list
+    # - in template we access this object by "{% for source in source_list %}"
+    # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
+    object_dict = {
+            'queryset': sources,
+            'paginate_by': SOURCES_PER_PAGE,
+            'template_name': 'repository/source-packages-list.html',
+            'template_object_name': 'source'
+            }
 
-    context = {
-        'sources': sources,
-    }
-    return render_response(request, 'repository/source-packages-list.html', context)
-
+    return object_list(request, **object_dict)
 
 # Details in <Source> section of the package
 def view_source_detail(request, distName, distRelease, sourceName):
