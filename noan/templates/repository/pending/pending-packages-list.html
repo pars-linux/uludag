@@ -6,7 +6,7 @@
             <th>Updated By</th>
             <th>Distribution</th>
         </tr>
-        {% for binary in binaries.object_list %}
+        {% for binary in binary_package_list %}
         <tr class="test_{{ binary.get_result }}">
             <td><a href="{{ binary.get_url }}">{{ binary }}</a></td>
             <td>{{ binary.update.updated_by.get_full_name }}</td>
@@ -17,19 +17,6 @@
 
     <p></p>
 
-    <div class="pagination">
-        <span class="step-links">
-            {% if binaries.has_previous %}
-                <a href="?page={{ binaries.previous_page_number }}">previous</a>
-            {% endif %}
+    {% if is_paginated %} {% paginator %} {% endif %}
 
-            <span class="current">
-                Page {{ binaries.number }} of {{ binaries.paginator.num_pages }}.
-            </span>
-
-            {% if binaries.has_next %}
-                <a href="?page={{ binaries.next_page_number }}">next</a>
-            {% endif %}
-        </span>
-    </div>
 {% endblock %}
