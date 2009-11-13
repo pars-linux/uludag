@@ -4,7 +4,7 @@
     <ul>
         <li><strong>Distribution:</strong> <a href="{{ package.source.distribution.get_url }}">{{ package.source.distribution }}</a></li>
         <li><strong>Source:</strong> <a href="{{ package.source.get_url }}">{{ package.source.name }}</a></li>
-        <li><strong>Maintained By:</strong> <a href="/repository/users/{{ package.source.maintained_by.username }}/">{{ package.source.maintained_by.get_full_name }}</a></li>
+        <li><strong>Maintained By:</strong> <a href="/user/detail/{{ package.source.maintained_by.username }}/">{{ package.source.maintained_by.get_full_name }}</a></li>
     </ul>
 
     <h2>Checklist</h2>
