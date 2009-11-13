@@ -43,7 +43,11 @@ def list_source_packages(request, distName, distRelease):
     return render_to_response('repository/source-packages-list.html', context, context_instance=RequestContext(request))
 
 
-def page_source(request, distName, distRelease, sourceName):
+# Details in <Source> section of the package
+def view_source_detail(request, distName, distRelease, sourceName):
+    """
+        sourceName: <Source> section in pspec.xml
+    """
     distribution = Distribution.objects.get(name=distName, release=distRelease)
     source = Source.objects.get(name=sourceName, distribution=distribution)
 
@@ -52,8 +56,12 @@ def page_source(request, distName, distRelease, sourceName):
     }
     return render_to_response('repository/source.html', context, context_instance=RequestContext(request))
 
-
-def page_package(request, distName, distRelease, sourceName, packageName):
+# Details in <Package> section of the package
+def view_package_detail(request, distName, distRelease, sourceName, packageName):
+    """
+        sourceName: <Source> section in pspec.xml
+        packageName: <Package> section in pspec.xml
+    """
     distribution = Distribution.objects.get(name=distName, release=distRelease)
     source = Source.objects.get(name=sourceName, distribution=distribution)
     package = Package.objects.get(name=packageName, source=source)
@@ -63,13 +71,17 @@ def page_package(request, distName, distRelease, sourceName, packageName):
     }
     return render_to_response('repository/package.html', context, context_instance=RequestContext(request))
 
-
-def page_binary(request, distName, distRelease, sourceName, packageName, binaryNo):
+def view_binary_detail(request, distName, distRelease, sourceName, packageName, binaryNo):
+    """
+        sourceName: <Source> section in pspec.xml
+        packageName: <Package> section in pspec.xml
+    """
     distribution = Distribution.objects.get(name=distName, release=distRelease)
     source = Source.objects.get(name=sourceName, distribution=distribution)
     package = Package.objects.get(name=packageName, source=source)
     binary = Binary.objects.get(no=binaryNo, package=package)
 
+    # FIXME: We also handle sending ACK/NACK info. Maybe it can be done in different view?
     if request.method == "POST" and request.user and request.user.is_authenticated():
         if request.POST['result'] == "unknown":
             TestResult.objects.filter(binary=binary, created_by=request.user).delete()
