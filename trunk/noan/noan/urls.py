@@ -6,6 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Repository
+    # FIXME: Decide what to do with our home-page. Do not redirect it to repository app
     (r'^$', 'django.views.generic.simple.redirect_to', {'url': '/repository/'}),
     (r'^repository/', include('noan.repository.urls')),
 
