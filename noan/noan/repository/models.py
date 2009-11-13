@@ -33,7 +33,7 @@ class Distribution(models.Model):
         return u'%s %s' % (self.name, self.release)
 
     def get_url(self):
-        return '/repository/%s-%s' % (self.name, self.release)
+        return '/repository/%s/%s' % (self.name, self.release)
 
     class Meta:
         verbose_name = _('distribution')
