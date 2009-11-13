@@ -62,6 +62,7 @@ def view_package_detail(request, distName, distRelease, sourceName, packageName)
         sourceName: <Source> section in pspec.xml
         packageName: <Package> section in pspec.xml
     """
+
     distribution = Distribution.objects.get(name=distName, release=distRelease)
     source = Source.objects.get(name=sourceName, distribution=distribution)
     package = Package.objects.get(name=packageName, source=source)
@@ -76,6 +77,7 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
         sourceName: <Source> section in pspec.xml
         packageName: <Package> section in pspec.xml
     """
+
     distribution = Distribution.objects.get(name=distName, release=distRelease)
     source = Source.objects.get(name=sourceName, distribution=distribution)
     package = Package.objects.get(name=packageName, source=source)
@@ -143,32 +145,3 @@ def list_pending_packages(request, distName, distRelease):
     }
     return render_to_response('repository/pending/pending-packages-list.html', context, context_instance=RequestContext(request))
 
-def page_users(request):
-    users = User.objects.all().order_by('first_name', 'last_name')
-
-    # Pagination
-    paginator = Paginator(users, 25)
-    try:
-        page = int(request.GET.get('page', '1'))
-    except ValueError:
-        page = 1
-    try:
-        users = paginator.page(page)
-    except (EmptyPage, InvalidPage):
-        users = paginator.page(paginator.num_pages)
-
-    context = {
-        'developers': users,
-    }
-    return render_to_response('repository/users.html', context, context_instance=RequestContext(request))
-
-
-def page_user(request, userName):
-    developer = User.objects.get(username=userName)
-    pending = Binary.objects.filter(resolution='pending', update__updated_by=developer)
-
-    context = {
-        'developer': developer,
-        'pending': pending,
-    }
-    return render_to_response('repository/user.html', context, context_instance=RequestContext(request))
