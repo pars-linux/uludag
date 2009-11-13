@@ -6,7 +6,7 @@
         </tr>
         {% for dev in developers.object_list %}
         <tr>
-            <td><a href="/repository/users/{{ dev.username }}">{{ dev.get_full_name }}</a></td>
+            <td><a href="/user/detail/{{ dev.username }}">{{ dev.get_full_name }}</a></td>
         </tr>
         {% endfor %}
     </table>
