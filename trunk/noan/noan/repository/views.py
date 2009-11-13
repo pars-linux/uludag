@@ -22,7 +22,7 @@ from django.views.generic.list_detail import object_list
 from noan.repository.models import Distribution, Package, Source, Binary
 # we have this wrapper to avoid using "context_instance" kwarg in every function.
 from noan.wrappers import render_response
-from noan.settings import SOURCES_PER_PAGE
+from noan.settings import SOURCES_PER_PAGE, PENDING_PER_PAGE
 
 def repository_index(request):
     distributions = Distribution.objects.all()
@@ -137,23 +137,16 @@ def page_pending_index(request):
 
 def list_pending_packages(request, distName, distRelease):
     distribution = Distribution.objects.get(name=distName, release=distRelease)
-
     binaries = Binary.objects.filter(resolution='pending', package__source__distribution=distribution)
 
-    #FIXME: We should do it with a template tag, we just duplicate the code!
-    # Pagination
-    paginator = Paginator(binaries, 25)
-    try:
-        page = int(request.GET.get('page', '1'))
-    except ValueError:
-        page = 1
-    try:
-        binaries = paginator.page(page)
-    except (EmptyPage, InvalidPage):
-        binaries = paginator.page(paginator.num_pages)
+    # - generate dict to use in object_list
+    # - in template we access this object by "{% for source in source_list %}"
+    # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
+    object_dict = {
+            'queryset': binaries,
+            'paginate_by': PENDING_PER_PAGE,
+            'template_name': 'repository/source-packages-list.html',
+            'template_object_name': 'binary_package'
+            }
 
-    context = {
-        'binaries': binaries,
-    }
-    return render_response(request, 'repository/pending/pending-packages-list.html', context)
-
+    return object_list(request, **object_dict)
