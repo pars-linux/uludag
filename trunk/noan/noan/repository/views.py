@@ -129,7 +129,7 @@ def page_pending_index(request):
     distributions = Distribution.objects.all()
 
     if len(distributions) == 1:
-        dist = '%s-%s' % (distributions[0].name, distributions[0].release)
+        dist = '%s/%s' % (distributions[0].name, distributions[0].release)
         return HttpResponseRedirect('/repository/pending/%s/' % dist)
 
     context = {
@@ -143,6 +143,7 @@ def list_pending_packages(request, distName, distRelease):
 
     binaries = Binary.objects.filter(resolution='pending', package__source__distribution=distribution)
 
+    #FIXME: We should do it with a template tag, we just duplicate the code!
     # Pagination
     paginator = Paginator(binaries, 25)
     try:
