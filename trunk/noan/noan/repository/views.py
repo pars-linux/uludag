@@ -91,6 +91,12 @@ def page_binary(request, distName, distRelease, sourceName, packageName, binaryN
     return render_to_response('repository/binary.html', context, context_instance=RequestContext(request))
 
 
+##############################
+#                            #
+# Views for pending packages #
+#                            #
+##############################
+
 def page_pending_index(request):
     distributions = Distribution.objects.all()
 
@@ -101,10 +107,10 @@ def page_pending_index(request):
     context = {
         'distributions': distributions,
     }
-    return render_to_response('repository/pending-index.html', context, context_instance=RequestContext(request))
+    return render_to_response('repository/pending/index.html', context, context_instance=RequestContext(request))
 
 
-def page_pending(request, distName, distRelease):
+def list_pending_packages(request, distName, distRelease):
     distribution = Distribution.objects.get(name=distName, release=distRelease)
 
     binaries = Binary.objects.filter(resolution='pending', package__source__distribution=distribution)
@@ -123,8 +129,7 @@ def page_pending(request, distName, distRelease):
     context = {
         'binaries': binaries,
     }
-    return render_to_response('repository/pending.html', context, context_instance=RequestContext(request))
-
+    return render_to_response('repository/pending/list-pending-packages.html', context, context_instance=RequestContext(request))
 
 def page_users(request):
     users = User.objects.all().order_by('first_name', 'last_name')
