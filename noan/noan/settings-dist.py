@@ -77,3 +77,12 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'noan.repository',
 )
+
+##############
+#            #
+# Pagination #
+#            #
+##############
+
+# Source packages per page
+SOURCES_PER_PAGE = 30
