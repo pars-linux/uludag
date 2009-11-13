@@ -1,13 +1,25 @@
-from django.http import HttpResponse, HttpResponseRedirect
-from django.db.models import Q
-from django.shortcuts import render_to_response
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from django.utils import simplejson
-from django.template import RequestContext
-from noan.repository.models import *
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
+##########################
+#                        #
+# Django related imports #
+#                        #
+##########################
+
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.models import User
+from django.template import RequestContext
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
+
+#######################
+#                     #
+# App related imports #
+#                     #
+#######################
+from noan.repository.models import Distribution, Package, Source, Binary
+# we have this wrapper to avoid using "context_instance" kwarg in every function.
+from noan.wrappers import render_response
 
 def repository_index(request):
     distributions = Distribution.objects.all()
@@ -20,7 +32,7 @@ def repository_index(request):
     context = {
         'distributions': distributions,
     }
-    return render_to_response('repository/index.html', context, context_instance=RequestContext(request))
+    return render_response(request, 'repository/index.html', context)
 
 
 def list_source_packages(request, distName, distRelease):
@@ -42,7 +54,7 @@ def list_source_packages(request, distName, distRelease):
     context = {
         'sources': sources,
     }
-    return render_to_response('repository/source-packages-list.html', context, context_instance=RequestContext(request))
+    return render_response(request, 'repository/source-packages-list.html', context)
 
 
 # Details in <Source> section of the package
@@ -56,7 +68,7 @@ def view_source_detail(request, distName, distRelease, sourceName):
     context = {
         'source': source,
     }
-    return render_to_response('repository/source.html', context, context_instance=RequestContext(request))
+    return render_response(request, 'repository/source.html', context)
 
 # Details in <Package> section of the package
 def view_package_detail(request, distName, distRelease, sourceName, packageName):
@@ -72,7 +84,7 @@ def view_package_detail(request, distName, distRelease, sourceName, packageName)
     context = {
         'package': package,
     }
-    return render_to_response('repository/package.html', context, context_instance=RequestContext(request))
+    return render_response(request, 'repository/package.html', context)
 
 def view_binary_detail(request, distName, distRelease, sourceName, packageName, binaryNo):
     """
@@ -104,7 +116,7 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
         'binary': binary,
         'user_result': user_result,
     }
-    return render_to_response('repository/binary.html', context, context_instance=RequestContext(request))
+    return render_response(request, 'repository/binary.html', context)
 
 
 ##############################
@@ -123,7 +135,7 @@ def page_pending_index(request):
     context = {
         'distributions': distributions,
     }
-    return render_to_response('repository/pending/index.html', context, context_instance=RequestContext(request))
+    return render_response(request, 'repository/pending/index.html', context)
 
 
 def list_pending_packages(request, distName, distRelease):
@@ -145,5 +157,5 @@ def list_pending_packages(request, distName, distRelease):
     context = {
         'binaries': binaries,
     }
-    return render_to_response('repository/pending/pending-packages-list.html', context, context_instance=RequestContext(request))
+    return render_response(request, 'repository/pending/pending-packages-list.html', context)
 
