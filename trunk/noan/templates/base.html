@@ -63,6 +63,62 @@
             .package_list .test_yes td {
                 background: #b9ffb8;
             }
+
+            /** PAGINATOR **/
+            .paginator { padding:.5em .75em; font:normal .8em arial; }
+
+            .paginator a {
+                text-decoration: none;
+            }
+
+            .paginator .prev-na,
+            .paginator .next-na {
+                padding:.3em;
+                font:bold .875em arial;
+            }
+
+            .paginator .prev-na,
+            .paginator .next-na {
+                border:1px solid #CCCCCC;
+                background-color:#F9F9F9;
+                color:#AAAAAA;
+                font-weight:normal;
+            }
+
+            .paginator .prev a, .paginator .prev a:visited,
+            .paginator .next a, .paginator .next a:visited {
+                border:1px solid #CCCCCC;
+                background-color:#EEEEEE;
+                color:#6992AE;
+                padding:.3em;
+                font:bold .875em arial;
+            }
+
+            .paginator .page a, .paginator .page a:visited, .paginator .curr {
+                padding:.25em;
+                font:normal .875em verdana;
+                border:1px solid #CCCCCC;
+                background-color:#EEEEEE;
+                color:#6288A2;
+            }
+
+            .paginator .curr { 
+                background-color:#4E6D81;
+                color: #FFFFFF;
+                border:1px solid #CCCCCC;
+                font-weight:bold;
+                font-size:1.2em;
+            }
+
+            .paginator .page a:hover,
+            .paginator .curr a:hover,
+            .paginator .prev a:hover,
+            .paginator .next a:hover {
+                color:#FFFFFF;
+                background-color:#6992AE;
+                border:1px solid #234F32;
+            }
+            .paginator_block { text-align: center; }
         </style>
     </head>
     <body>
