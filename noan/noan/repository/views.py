@@ -12,6 +12,8 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 def repository_index(request):
     distributions = Distribution.objects.all()
 
+    # If there is only one repository, redirect it to that
+    # Or list available distributios
     if len(distributions) == 1:
         return HttpResponseRedirect(distributions[0].get_url())
 
