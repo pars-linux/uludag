@@ -9,7 +9,7 @@ from noan.repository.models import *
 
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
-def page_index(request):
+def repository_index(request):
     distributions = Distribution.objects.all()
 
     if len(distributions) == 1:
@@ -21,7 +21,7 @@ def page_index(request):
     return render_to_response('repository/index.html', context, context_instance=RequestContext(request))
 
 
-def page_sources(request, distName, distRelease):
+def list_source_packages(request, distName, distRelease):
     distribution = Distribution.objects.get(name=distName, release=distRelease)
 
     sources = Source.objects.filter(distribution=distribution)
@@ -40,7 +40,7 @@ def page_sources(request, distName, distRelease):
     context = {
         'sources': sources,
     }
-    return render_to_response('repository/sources.html', context, context_instance=RequestContext(request))
+    return render_to_response('repository/source-packages-list.html', context, context_instance=RequestContext(request))
 
 
 def page_source(request, distName, distRelease, sourceName):
@@ -129,7 +129,7 @@ def list_pending_packages(request, distName, distRelease):
     context = {
         'binaries': binaries,
     }
-    return render_to_response('repository/pending/list-pending-packages.html', context, context_instance=RequestContext(request))
+    return render_to_response('repository/pending/pending-packages-list.html', context, context_instance=RequestContext(request))
 
 def page_users(request):
     users = User.objects.all().order_by('first_name', 'last_name')
