@@ -43,7 +43,6 @@ def list_source_packages(request, distName, distRelease):
     sources = Source.objects.filter(distribution=distribution)
 
     # - generate dict to use in object_list
-    # - in template we access this object by "{% for source in source_list %}"
     # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
     object_dict = {
             'queryset': sources,
@@ -140,7 +139,6 @@ def list_pending_packages(request, distName, distRelease):
     binaries = Binary.objects.filter(resolution='pending', package__source__distribution=distribution)
 
     # - generate dict to use in object_list
-    # - in template we access this object by "{% for source in source_list %}"
     # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
     object_dict = {
             'queryset': binaries,

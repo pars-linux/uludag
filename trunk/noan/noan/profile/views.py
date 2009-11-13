@@ -7,18 +7,19 @@
 
 # FIXME: Remove this line when we make a decision about home page of /user/
 from django.http import HttpResponse
-from django.shortcuts import render_to_response
 from django.contrib.auth.models import User
-#FIXME: Use {% paginate %} template tag for paginating stuff, in that way we just duplicate the code!
-from django.core.paginator import Paginator, InvalidPage, EmptyPage
-#FIXME: Write a wrapper for RequestContext, set a name "render_response" for it
-from django.template import RequestContext
+
+# we use generic view for listing as it handles pagination easily. so we don't duplicate the code.
+from django.views.generic.list_detail import object_list
 
 ###############################
 # Application related imports #
 ###############################
 
 from noan.repository.models import Binary
+from noan.wrappers import render_response
+
+from noan.settings import USERS_PER_PAGE
 
 # Main page of profile page
 def main(request):
@@ -31,22 +32,16 @@ def get_user_list(request):
 
     users = User.objects.all().order_by('first_name', 'last_name')
 
-    # Pagination
-    paginator = Paginator(users, 25)
-    try:
-        page = int(request.GET.get('page', '1'))
-    except ValueError:
-        page = 1
-    try:
-        users = paginator.page(page)
-    except (EmptyPage, InvalidPage):
-        users = paginator.page(paginator.num_pages)
+    # - generate dict to use in object_list
+    # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
+    object_dict = {
+            'queryset': users,
+            'paginate_by': USERS_PER_PAGE,
+            'template_name': 'profile/user-list.html',
+            'template_object_name': 'user'
+            }
 
-    context = {
-        'developers': users,
-    }
-    return render_to_response('profile/user-list.html', context, context_instance=RequestContext(request))
-
+    return object_list(request, **object_dict)
 
 def view_user_detail(request, userName):
     # FIXME: Developers and users/testers should be different

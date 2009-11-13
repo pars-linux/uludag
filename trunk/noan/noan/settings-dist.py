@@ -88,3 +88,4 @@ INSTALLED_APPS = (
 # Source packages per page
 SOURCES_PER_PAGE = 30
 PENDING_PER_PAGE = 30
+USERS_PER_PAGE = 30
