@@ -19,3 +19,8 @@
 - Decide what to do with our home-page. Do not redirect it to repository app
 - We handle ACK/NACK info in package listing page, maybe we can use different view?
 - Developers and testers should be different. Make profile class for users.
+
+- Profile page
+    - Register User with confirmation
+    - Lost password section
+    - Profile editing page
