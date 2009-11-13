@@ -9,6 +9,9 @@ urlpatterns = patterns('',
     (r'^$', 'django.views.generic.simple.redirect_to', {'url': '/repository/'}),
     (r'^repository/', include('noan.repository.urls')),
 
+    # Users
+    (r'^user/', include('noan.profile.urls')),
+
     # Enable the admin interface:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/(.*)', admin.site.root),
