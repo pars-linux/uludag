@@ -19,5 +19,3 @@
 - Decide what to do with our home-page. Do not redirect it to repository app
 - We handle ACK/NACK info in package listing page, maybe we can use different view?
 - Developers and testers should be different. Make profile class for users.
-- Write a wrapper for RequestContext, set a name "render_response" for it
-- Use {% paginate %} template tag for paginating stuff, in that way we just duplicate the code!
