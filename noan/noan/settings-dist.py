@@ -79,13 +79,8 @@ INSTALLED_APPS = (
     'noan.profile',
 )
 
-##############
-#            #
-# Pagination #
-#            #
-##############
-
+# PAGINATION
 # Source packages per page
-SOURCES_PER_PAGE = 30
-PENDING_PER_PAGE = 30
+SOURCE_PACKAGES_PER_PAGE = 30
+PENDING_PACKAGES_PER_PAGE = 30
 USERS_PER_PAGE = 30

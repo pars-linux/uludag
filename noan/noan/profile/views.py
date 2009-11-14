@@ -1,10 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-##########################
-# Django related imports #
-##########################
-
+# DJANGO RELATED IMPORTS
 # FIXME: Remove this line when we make a decision about home page of /user/
 from django.http import HttpResponse
 from django.contrib.auth.models import User
@@ -12,10 +9,7 @@ from django.contrib.auth.models import User
 # we use generic view for listing as it handles pagination easily. so we don't duplicate the code.
 from django.views.generic.list_detail import object_list
 
-###############################
-# Application related imports #
-###############################
-
+# APP RELATED IMPORTS
 from noan.repository.models import Binary
 from noan.wrappers import render_response
 
