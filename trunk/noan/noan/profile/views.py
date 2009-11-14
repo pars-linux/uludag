@@ -54,4 +54,4 @@ def view_user_detail(request, userName):
         'pending': pending,
     }
 
-    return render_to_response('profile/user-detail.html', context, context_instance=RequestContext(request))
+    return render_response(request, 'profile/user-detail.html', context)
