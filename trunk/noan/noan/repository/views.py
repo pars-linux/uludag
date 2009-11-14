@@ -1,12 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-##########################
-#                        #
-# Django related imports #
-#                        #
-##########################
-
+# DJANGO RELATED IMPORTS
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.template import RequestContext
@@ -14,15 +9,11 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 # we use generic view for listing as it handles pagination easily. so we don't duplicate the code.
 from django.views.generic.list_detail import object_list
 
-#######################
-#                     #
-# App related imports #
-#                     #
-#######################
+# APP RELATED IMPORTS
 from noan.repository.models import Distribution, Package, Source, Binary
 # we have this wrapper to avoid using "context_instance" kwarg in every function.
 from noan.wrappers import render_response
-from noan.settings import SOURCES_PER_PAGE, PENDING_PER_PAGE
+from noan.settings import SOURCE_PACKAGES_PER_PAGE, PENDING_PACKAGES_PER_PAGE
 
 def repository_index(request):
     distributions = Distribution.objects.all()
@@ -46,7 +37,7 @@ def list_source_packages(request, distName, distRelease):
     # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
     object_dict = {
             'queryset': sources,
-            'paginate_by': SOURCES_PER_PAGE,
+            'paginate_by': SOURCE_PACKAGES_PER_PAGE,
             'template_name': 'repository/source-packages-list.html',
             'template_object_name': 'source'
             }
@@ -115,12 +106,6 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
     return render_response(request, 'repository/binary.html', context)
 
 
-##############################
-#                            #
-# Views for pending packages #
-#                            #
-##############################
-
 def page_pending_index(request):
     distributions = Distribution.objects.all()
 
@@ -142,7 +127,7 @@ def list_pending_packages(request, distName, distRelease):
     # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
     object_dict = {
             'queryset': binaries,
-            'paginate_by': PENDING_PER_PAGE,
+            'paginate_by': PENDING_PACKAGES_PER_PAGE,
             'template_name': 'repository/source-packages-list.html',
             'template_object_name': 'binary_package'
             }
