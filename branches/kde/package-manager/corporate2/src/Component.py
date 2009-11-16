@@ -14,9 +14,9 @@ class Component:
 
 class ComponentTipper(QToolTip):
     def __init__(self, parent):
-        super(ComponentTipper, self).__init__(parent.componentsList.viewport())
+        super(ComponentTipper, self).__init__(parent.groupsList.viewport())
         self.components = parent.componentDict
-        self.list = parent.componentsList
+        self.list = parent.groupsList
         self.setWakeUpDelay(500)
 
     def maybeTip(self, point):
