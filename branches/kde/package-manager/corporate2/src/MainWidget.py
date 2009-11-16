@@ -196,6 +196,7 @@ class MainApplicationWidget(QWidget):
 
         # set mouse to waiting icon
         Globals.setWaitCursor()
+        PisiIface.setSource(PisiIface.REPO)
 
         try:
             # uncheck buttons, clear search line, empty cache
@@ -234,6 +235,7 @@ class MainApplicationWidget(QWidget):
     # Executed when 'Show Installed Packages' is clicked
     def removeState(self, reset=True):
         Globals.setWaitCursor()
+        PisiIface.setSource(PisiIface.SYSTEM)
 
         try:
             if reset:
@@ -273,6 +275,7 @@ class MainApplicationWidget(QWidget):
 
     def upgradeState(self):
         Globals.setWaitCursor()
+        PisiIface.setSource(PisiIface.REPO)
 
         try:
             # TODO:
