@@ -3,7 +3,7 @@
 
 from qt import *
 
-class Component:
+class Group:
     def __init__(self, name, packages, summary):
         self.name = name
         self.packages = packages
@@ -12,17 +12,17 @@ class Component:
     def remove(self, package):
         self.packages.remove(package)
 
-class ComponentTipper(QToolTip):
+class GroupTipper(QToolTip):
     def __init__(self, parent):
-        super(ComponentTipper, self).__init__(parent.groupsList.viewport())
-        self.components = parent.componentDict
+        super(GroupTipper, self).__init__(parent.groupsList.viewport())
+        self.groups = parent.groupDict
         self.list = parent.groupsList
         self.setWakeUpDelay(500)
 
     def maybeTip(self, point):
         item = self.list.itemAt(point)
         if item:
-            component = self.components[item]
+            group = self.groups[item]
             self.tip(self.list.itemRect(item),
                      u"<b>%s</b> - %s" %
-                     (component.name, component.summary))
+                     (group.name, group.summary))
