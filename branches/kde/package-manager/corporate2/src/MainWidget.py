@@ -31,7 +31,7 @@ import Tray
 import Settings
 import LocaleData
 import HelpDialog
-from Component import *
+from Group import *
 from SpecialList import *
 import Globals
 from Notifier import *
@@ -51,10 +51,10 @@ class MainApplicationWidget(QWidget):
 
         self.progressDialog = Progress.Progress(self)
 
-        # Keys of this dict. are Components Listview's items, and values are component object about the item
-        self.componentDict = {}
+        # Keys of this dict. are Groups Listview's items, and values are group object about the item
+        self.groupDict = {}
 
-        self.lastSelectedComponent = None
+        self.lastSelectedGroup = None
         self.command = None
         self.state = install_state
         self.basket = Basket.Basket()
@@ -73,7 +73,7 @@ class MainApplicationWidget(QWidget):
         item = KListViewItem(self.groupsList)
         item.setText(0,i18n("Loading Package List..."))
         self.groupsList.setSelected(self.groupsList.firstChild(),True)
-        self.tipper = ComponentTipper(self)
+        self.tipper = GroupTipper(self)
 
         self.show()
 
@@ -123,7 +123,7 @@ class MainApplicationWidget(QWidget):
 
         self.groupsList = KListView(self.leftLayout)
         self.groupsList.setFullWidth(True)
-        self.groupsList.addColumn(i18n("Components"))
+        self.groupsList.addColumn(i18n("Groups"))
 
         self.leftLayout.setMargin(2)
         self.rightLayout.setMargin(2)
@@ -136,27 +136,27 @@ class MainApplicationWidget(QWidget):
         self.layout.setColStretch(2,6)
 
     def setupConnections(self):
-        self.connect(self.groupsList,SIGNAL("selectionChanged(QListViewItem *)"),self.refreshComponentList)
+        self.connect(self.groupsList,SIGNAL("selectionChanged(QListViewItem *)"),self.refreshGroupList)
         self.connect(self.clearButton, SIGNAL("clicked()"), self.searchClear)
         self.connect(self.searchAction, SIGNAL("clicked()"), self.searchPackage)
         self.connect(self.searchLine, SIGNAL("returnPressed()"), self.searchPackage)
         self.connect(self.basketAction, SIGNAL("clicked()"),self.showBasket)
         self.connect(self.operateAction, SIGNAL("clicked()"),self.takeAction)
         self.connect(self.specialList, PYSIGNAL("checkboxClicked"), self.packageClicked)
-        self.connect(self.delayTimer, SIGNAL("timeout()"), self.lazyLoadComponentList)
+        self.connect(self.delayTimer, SIGNAL("timeout()"), self.lazyLoadGroupList)
 
     def searchClear(self):
         self.searchLine.clear()
         self.refreshState(False)
 
-    def lazyLoadComponentList(self):
+    def lazyLoadGroupList(self):
 
         try:
             self.parent.tray.updateTrayIcon()
         except PisiIface.RepoError:
             self.updateCheck()
 
-        if self.componentsReady():
+        if self.groupsReady():
             self.installState()
 
             if Globals.packageToInstall:
@@ -170,8 +170,8 @@ class MainApplicationWidget(QWidget):
     def processEvents(self):
         Globals.processEvents()
 
-    def componentsReady(self):
-        if not PisiIface.get_components(): # Repo metadata empty
+    def groupsReady(self):
+        if not PisiIface.get_groups(): # Repo metadata empty
             return False
 
         return True
@@ -215,15 +215,15 @@ class MainApplicationWidget(QWidget):
 
             self.state = install_state
 
-            # prepare components' listview on the left side
-            self.createComponentList(packages)
+            # prepare groups' listview on the left side
+            self.createGroupList(packages)
 
             self.operateAction.setText(i18n("Install Package(s)"))
             self.operateAction.setIconSet(loadIconSet("ok"))
             self.basket.setState(self.state)
 
-            # set last selected component and so, trigger SpecialList to create right side (packages)
-            # (selects first component if it is the first time)
+            # set last selected group and so, trigger SpecialList to create right side (packages)
+            # (selects first group if it is the first time)
             self.setLastSelected()
 
             self.updateStatusBar()
@@ -249,7 +249,7 @@ class MainApplicationWidget(QWidget):
                 return
 
             self.state = remove_state
-            self.createComponentList(packages)
+            self.createGroupList(packages)
             self.operateAction.setText(i18n("Remove Package(s)"))
             self.operateAction.setIconSet(loadIconSet("no"))
             self.basket.setState(self.state)
@@ -296,10 +296,10 @@ class MainApplicationWidget(QWidget):
                 self.repoNotReady()
                 return
 
-            self.createComponentList(upgradables, True)
+            self.createGroupList(upgradables, True)
             self.operateAction.setText(i18n("Upgrade Package(s)"))
             self.operateAction.setIconSet(loadIconSet("reload"))
-            self.lastSelectedComponent = i18n("All")
+            self.lastSelectedGroup = i18n("All")
             self.setLastSelected()
 
             self.basket.setState(self.state)
@@ -311,7 +311,7 @@ class MainApplicationWidget(QWidget):
     def setLastSelected(self):
         item = self.groupsList.firstChild()
 
-        # There may be no item in component list. No more new packages to install for example.
+        # There may be no item in group list. No more new packages to install for example.
         if not item:
             self.clearPackageList()
             return
@@ -320,25 +320,25 @@ class MainApplicationWidget(QWidget):
         if item.text(0) == i18n("Search Results"):
             return item
 
-        for i in self.componentDict.keys():
-            if self.componentDict[i].name == self.lastSelectedComponent:
+        for i in self.groupDict.keys():
+            if self.groupDict[i].name == self.lastSelectedGroup:
                 item = i
                 break
 
         self.groupsList.setSelected(item, True)
         return item
 
-    def refreshComponentList(self, item):
+    def refreshGroupList(self, item):
         Globals.setWaitCursor()
         try:
             # fetch packages including metadata from cache
-            packagesWithMeta = [PisiIface.get_package(package, self.state == remove_state) for package in self.componentDict[item].packages]
+            packagesWithMeta = [PisiIface.get_package(package, self.state == remove_state) for package in self.groupDict[item].packages]
             if self.state == remove_state:
                 self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
             else:
                 self.specialList.createList(packagesWithMeta, selected = self.basket.packages)
-                self.lastSelectedComponent = self.componentDict[item].name
-        # initialization and search state listview items are not components
+                self.lastSelectedGroup = self.groupDict[item].name
+        # initialization and search state listview items are not groups
         except KeyError:
             pass
         finally:
@@ -389,7 +389,7 @@ class MainApplicationWidget(QWidget):
             self.takeAction()
 
         self.updateButtons()
-        self.refreshComponentList(self.setLastSelected())
+        self.refreshGroupList(self.setLastSelected())
         item = self.groupsList.firstChild()
         if item and item.text(0) == i18n("Search Results"):
             self.searchPackage()
@@ -514,17 +514,17 @@ class MainApplicationWidget(QWidget):
         elif self.state == upgrade_state:
             self.upgradeState()
 
-    def updateComponentList(self):
+    def updateGroupList(self):
         item = self.groupsList.currentItem()
-        component = self.componentDict[item]
-        if component.packages:
-            item.setText(0,u"%s (%s)" % (component.name, len(component.packages)))
+        group = self.groupDict[item]
+        if group.packages:
+            item.setText(0,u"%s (%s)" % (group.name, len(group.packages)))
         else:
             self.groupsList.takeItem(item)
             self.groupsList.setSelected(self.groupsList.firstChild(),True)
 
-    #create a component list from given package list
-    def createComponentList(self, packages, allComponent=False):
+    #create a group list from given package list
+    def createGroupList(self, packages, allGroup=False):
         # filter for selecting only apps with gui
         def appGuiFilter(pkg_name):
             if self.state == remove_state:
@@ -535,53 +535,53 @@ class MainApplicationWidget(QWidget):
                 return "app:gui" in package.isA
 
         self.groupsList.clear()
-        self.componentDict.clear()
+        self.groupDict.clear()
 
-        # eliminate components that are not visible to users. This is achieved by a tag in component.xmls
-        componentNames = [cname for cname in PisiIface.get_components() if PisiIface.is_component_visible(cname)]
+        # eliminate groups that are not visible to users. This is achieved by a tag in group.xmls
+        groupNames = [cname for cname in PisiIface.get_groups() if PisiIface.is_group_visible(cname)]
 
         showOnlyGuiApp = self.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp")
 
-        # this list is required to find 'Others' group, that is group of packages not belong to any component
-        componentPackages = []
-        for componentName in componentNames:
-            # just check the component existance
+        # this list is required to find 'Others' group, that is group of packages not belong to any group
+        groupPackages = []
+        for groupName in groupNames:
+            # just check the group existance
             try:
-                component = PisiIface.get_union_component(componentName)
+                group = PisiIface.get_union_group(groupName)
             except Exception:
                 continue
 
-            # get all packages of the component
-            compPkgs = PisiIface.get_union_component_packages(componentName, walk=True)
+            # get all packages of the group
+            compPkgs = PisiIface.get_union_group_packages(groupName, walk=True)
 
-            # find which packages belong to this component
-            component_packages = list(set(packages).intersection(compPkgs))
-            componentPackages += component_packages
+            # find which packages belong to this group
+            group_packages = list(set(packages).intersection(compPkgs))
+            groupPackages += group_packages
 
             if self.state != upgrade_state and showOnlyGuiApp:
-                    component_packages = filter(appGuiFilter, component_packages)
+                    group_packages = filter(appGuiFilter, group_packages)
 
-            if len(component_packages):
-                # create ListView item for component
+            if len(group_packages):
+                # create ListView item for group
                 item = KListViewItem(self.groupsList)
-                if component.localName:
-                    name = component.localName
+                if group.localName:
+                    name = group.localName
                 else:
-                    name = component.name
+                    name = group.name
 
-                if component.icon:
-                    icon = component.icon
+                if group.icon:
+                    icon = group.icon
                 else:
                     icon = "package"
 
-                item.setText(0,u"%s (%s)" % (name, len(component_packages)))
+                item.setText(0,u"%s (%s)" % (name, len(group_packages)))
                 item.setPixmap(0, KGlobal.iconLoader().loadIcon(icon, KIcon.Desktop,KIcon.SizeMedium))
 
-                # create component object that has a list of its own packages and a summary
-                self.componentDict[item] = Component(name, component_packages, component.summary)
+                # create group object that has a list of its own packages and a summary
+                self.groupDict[item] = Group(name, group_packages, group.summary)
 
         # Rest of the packages
-        rest_packages = list(set(packages) - set(componentPackages))
+        rest_packages = list(set(packages) - set(groupPackages))
         if self.state != upgrade_state and showOnlyGuiApp:
             rest_packages = filter(appGuiFilter, rest_packages)
         if rest_packages:
@@ -589,15 +589,15 @@ class MainApplicationWidget(QWidget):
             name = i18n("Others")
             item.setText(0, u"%s (%s)" % (name, len(rest_packages)))
             item.setPixmap(0, KGlobal.iconLoader().loadIcon("package_applications",KIcon.Desktop,KIcon.SizeMedium))
-            self.componentDict[item] = Component(name, rest_packages, name)
+            self.groupDict[item] = Group(name, rest_packages, name)
 
-        # All of the component's packages
-        if allComponent:
+        # All of the group's packages
+        if allGroup:
             item = KListViewItem(self.groupsList)
             name = i18n("All")
             item.setText(0, u"%s (%s)" % (name, len(packages)))
             item.setPixmap(0, KGlobal.iconLoader().loadIcon("package_network",KIcon.Desktop,KIcon.SizeMedium))
-            self.componentDict[item] = Component(name, packages, name)
+            self.groupDict[item] = Group(name, packages, name)
 
     def createSearchResults(self, packages):
         self.groupsList.clear()
