@@ -3,7 +3,7 @@
 
 from qt import QEventLoop
 from kdeui import KCursor
-import PisiIface
+import PmUtils
 from Debug import Debug
 
 # global KApplication reference for setting cursor type
@@ -46,7 +46,7 @@ def processEvents():
         app.processEvents(QEventLoop.ExcludeUserInput)
 
 def humanReadableSize(size, precision=".1"):
-    tpl = PisiIface.humanize(size)
+    tpl = PmUtils.humanReadableSize(size)
     if tpl[0] == 0:
         return "0 B"
 
