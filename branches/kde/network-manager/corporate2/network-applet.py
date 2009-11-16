@@ -16,12 +16,12 @@ from qt import *
 from kdecore import *
 from kdeui import *
 import  dcopext
-import autoswitch
+#import autoswitch
 import pynotify
 
 import dbus
+import comar
 from dbus.mainloop.qt3 import DBusQtMainLoop
-from handler import CallHandler
 
 I18N_NOOP = lambda x: x
 
@@ -123,86 +123,11 @@ class DBusInterface:
         self.nr_empty = 0
         self.winID = 0
 
-        if self.openBus():
-            self.setup()
+        self.link = comar.Link()
+        self.link.setLocale()
+        self.queryLinks()
 
-    def openBus(self):
-        try:
-            self.busSys = dbus.SystemBus()
-            self.busSes = dbus.SessionBus()
-        except dbus.DBusException, exception:
-            self.errorDBus(exception)
-            return False
-        return True
-
-    def callHandler(self, script, model, method, action):
-        ch = CallHandler(script, model, method, action, self.winID, self.busSys, self.busSes)
-        ch.registerError(self.error)
-        ch.registerDBusError(self.errorDBus)
-        ch.registerAuthError(self.errorDBus)
-        return ch
-
-    def call(self, script, model, method, *args):
-        try:
-            obj = self.busSys.get_object("tr.org.pardus.comar", "/package/%s" % script)
-            iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar.%s" % model)
-        except dbus.DBusException, exception:
-            self.errorDBus(exception)
-            return
-        try:
-            func = getattr(iface, method)
-            return func(*args)
-        except dbus.DBusException, exception:
-            self.error(exception)
-
-    def callSys(self, method, *args):
-        try:
-            obj = self.busSys.get_object("tr.org.pardus.comar", "/")
-            iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar")
-        except dbus.DBusException, exception:
-            self.errorDBus(exception)
-        try:
-            func = getattr(iface, method)
-            return func(*args)
-        except dbus.DBusException, exception:
-            self.error(exception)
-
-    def error(self, exception):
-        print exception
-
-    def errorDBus(self, exception):
-        if self.dia:
-            return
-        self.dia = KProgressDialog(None, "lala", i18n("Waiting DBus..."), i18n("Connection to the DBus unexpectedly closed, trying to reconnect..."), True)
-        self.dia.progressBar().setTotalSteps(50)
-        self.dia.progressBar().setTextEnabled(False)
-        self.dia.show()
-        start = time.time()
-        while time.time() < start + 5:
-            if self.openBus():
-                self.dia.close()
-                self.setup()
-                return
-            if self.dia.wasCancelled():
-                break
-            percent = (time.time() - start) * 10
-            self.dia.progressBar().setProgress(percent)
-            qApp.processEvents(100)
-        self.dia.close()
-        KMessageBox.sorry(None, i18n("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
-        sys.exit()
-
-    def setup(self, first_time=True):
-        if first_time:
-            self.queryLinks()
-
-    def handleSignals(self, *args, **kwargs):
-        path = kwargs["path"]
-        signal = kwargs["signal"]
-        if not path.startswith("/package/"):
-            return
-        script = path[9:]
-
+    def handleSignals(self, script, signal, args):
         if signal == "stateChanged":
             profile, state, msg = args
             conn = self.getConn(script, profile)
@@ -213,9 +138,7 @@ class DBusInterface:
         elif signal == "connectionChanged":
             what, profile = args
             if what == "added" or what == "configured":
-                ch = self.callHandler(script, "Net.Link", "connectionInfo", "tr.org.pardus.comar.net.link.get")
-                ch.registerDone(self.handleConnectionInfo, script)
-                ch.call(profile)
+                self.link.Network.Link[script].connectionInfo(profile, async=self.handleConnectionInfo)
             elif what == "deleted":
                 conn = self.getConn(script, profile)
                 if conn:
@@ -227,17 +150,17 @@ class DBusInterface:
                     map(lambda x: x(), self.state_hook)
                     del self.connections[conn.hash]
 
-    def listenSignals(self):
-        self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Net.Link", member_keyword="signal", path_keyword="path")
-
     def queryLinks(self):
-        scripts = self.callSys("listModelApplications", "Net.Link")
+        scripts = list(self.link.Network.Link)
         if scripts:
             for script in scripts:
-                info = self.call(script, "Net.Link", "linkInfo")
+                info = self.link.Network.Link[script].linkInfo()
                 self.links[script] = Link(script, info)
 
-    def handleConnectionInfo(self, script, info):
+    def handleConnectionInfo(self, script, exception, args):
+        if exception:
+            return
+        info = args[0]
         conn = Connection(script, info)
         old_conn = self.getConn(script, conn.name)
         if old_conn:
@@ -269,18 +192,19 @@ class DBusInterface:
             # After all connections' information fetched...
             if self.nr_queried == len(self.links) and self.nr_conns == len(self.connections):
                 self.first_time = False
-                self.listenSignals()
+                self.link.listenSignals("Network.Link", self.handleSignals)
                 # Auto connect?
                 map(lambda x: x(), self.ready_hook)
 
     def queryConnections(self, script):
-        def handler(profiles):
+        def handler(package, exception, args):
+            if exception:
+                return
+            profiles = args[0]
             self.nr_queried += 1
             for profile in profiles:
                 self.nr_conns += 1
-                _ch = self.callHandler(script, "Net.Link", "connectionInfo", "tr.org.pardus.comar.net.link.get")
-                _ch.registerDone(self.handleConnectionInfo, script)
-                _ch.call(profile)
+                self.link.Network.Link[script].connectionInfo(profile, async=self.handleConnectionInfo)
             if not len(profiles):
                 self.nr_empty += 1
                 # if no connections present, start listening for signals now
@@ -288,10 +212,8 @@ class DBusInterface:
                     if self.first_time:
                         self.first_time = False
                         # get signals
-                        self.listenSignals()
-        ch = self.callHandler(script, "Net.Link", "connections", "tr.org.pardus.comar.net.link.get")
-        ch.registerDone(handler)
-        ch.call()
+                        self.link.listenSignals("Network.Link")
+        self.link.Network.Link[script].connections(async=handler)
 
     def getConn(self, script, name):
         hash = Connection.hash(script, name)
@@ -363,16 +285,17 @@ class Applet:
 
     def createNotifier(self,dry=False):
         pynotify.init("network-applet")
-        self.autoSwitch = autoswitch.autoSwitch(comlink, notifier=False)
+        #self.autoSwitch = autoswitch.autoSwitch(comlink, notifier=False)
         if self.showNotifications:
             self.notifier = pynotify.Notification("Network Manager")
             iconPath = KGlobal.iconLoader().iconPath("network", KIcon.Desktop, True)
             pos = self.trays[0].getPos()
             self.notifier.set_hint("x",pos['x'])
             self.notifier.set_hint("y",pos['y'])
-            self.autoSwitch.setNotifier(self.notifier, iconPath)
+            #self.autoSwitch.setNotifier(self.notifier, iconPath)
         if self.autoConnect and not dry:
-            self.autoSwitch.scanAndConnect(force=False)
+            pass
+            #self.autoSwitch.scanAndConnect(force=False)
 
     def fixQuit(self):
         self.config.sync()
@@ -421,7 +344,7 @@ class Applet:
             pos = self.trays[0].getPos()
             self.notifier.set_hint("x",pos['x'])
             self.notifier.set_hint("y",pos['y'])
-        self.autoSwitch.scanAndConnect()
+        #self.autoSwitch.scanAndConnect()
 
     def startManager(self):
         os.system("network-manager")
@@ -444,7 +367,7 @@ class Applet:
     def setNotify(self, id):
         if self.showNotifications:
             self.config.writeEntry("ShowNotifications", False)
-            self.autoSwitch.setNotifier(False)
+            #self.autoSwitch.setNotifier(False)
             self.notifier.close()
         else:
             self.config.writeEntry("ShowNotifications", True)
@@ -628,7 +551,7 @@ class NetTray(KSystemTray):
             self.notifier.clear_actions()
             self.notifier.set_timeout(4500)
             self.notifier.update(str(i18n("Network Manager")),message,icon)
-            self.notifier.show()
+            #self.notifier.show()
 
     def appendConns(self, menu, dev, idx):
         conn_keys = dev.connections.keys()
@@ -689,8 +612,7 @@ class NetTray(KSystemTray):
             state = "down"
         else:
             state = "up"
-        ch = comlink.callHandler(conn.script, "Net.Link", "setState", "tr.org.pardus.comar.net.link.setstate")
-        ch.call(conn.name, state)
+        comlink.link.Network.Link[conn.script].setState(conn.name, state)
         self.popup = None
 
 def main():
