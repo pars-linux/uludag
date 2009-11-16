@@ -1,0 +1,7 @@
+- Renklerin gömülü olması yerine KDE'den alınması özelliği eksik
+- Güncelleme türlerinin (type tagı) GUI'de gösterilmesi
+- Performans iyileştirmeleri (profiling + paket bilgilerinin pakete tıklanınca alınması)
+- Log ve debug desteği
+- Alınan bir exception'da mouse'un mesgul işaretinden normal'e dönmesi ve exception'ın ekranda gösterilmesi
+- Paket ikonu SVG olunca, gösterilemiyor
+- Paket ikonlarının index'e yazılması planı, böylece kurulu olmayan paketlerin de ikonunun gözükmesi
