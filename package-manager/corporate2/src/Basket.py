@@ -49,15 +49,11 @@ class Basket:
         if not pkgs:
             self.extraPackages = []
             return
-
-        if self.state == install_state:
-            allPackages = PisiIface.get_install_order(pkgs)
-        elif self.state == remove_state:
-            allPackages = PisiIface.get_remove_order(pkgs)
-        elif self.state == upgrade_state:
-            allPackages = PisiIface.get_upgrade_order(pkgs)
-
-        self.extraPackages = list(set(allPackages) - set(pkgs))
+        
+        if self.state == remove_state:
+            self.extraPackages = PisiIface.getRequires(pkgs)
+        else:
+            self.extraPackages = PisiIface.getDepends(pkgs)
 
         for package in pkgs:
             self.packagesSize += self.getPackageSize(self.getPackage(package))
@@ -75,7 +71,4 @@ class Basket:
             return package.packageSize
 
     def getPackage(self, package):
-        if self.state == remove_state:
-            return PisiIface.get_installed_package(package)
-        else:
-            return PisiIface.get_repo_package(package)
+        return PisiIface.getPackage(package)
