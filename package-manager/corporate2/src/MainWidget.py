@@ -695,9 +695,6 @@ class MainApplicationWidget(QWidget):
         if command in nop:
             return
 
-        #FIXME: Why do we need to reload pisi module every time. Added for not updating mem cached dbs of pisi
-        PisiIface.reloadPisi()
-
         self.basket.empty()
         self.operateAction.setEnabled(False)
         self.basketAction.setEnabled(False)
