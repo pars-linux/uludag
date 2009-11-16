@@ -258,3 +258,7 @@ class Iface(Singleton):
 
     def parsePackageName(self, name):
         return pisi.util.parse_package_name(name)
+    
+    def inProgress(self):
+        return False
+
