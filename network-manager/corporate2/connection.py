@@ -649,10 +649,11 @@ class Settings(QWidget):
         name = str(self.name.edit.text())
         conn = self.conn
 
-        def saveConnection(set_conn):
-            if set_conn:
-                # create connection / update device
-                comlink.call(self.link.script, "Net.Link", "setConnection", name, self.device_uid)
+        def saveConnection(package, exception, args):
+            if exception:
+                self.parent().setEnabled(True)
+                return
+            comlink.link.Network.Link[self.link.script].setDevice(name, self.device_uid)
             if "net" in self.link.modes:
                 # set address
                 address = str(self.address.text())
@@ -667,7 +668,7 @@ class Settings(QWidget):
                         gateway = ""
                 else:
                     mode = "manual"
-                comlink.call(self.link.script, "Net.Link", "setAddress", name, mode, address, netmask, gateway)
+                comlink.link.Network.Link[self.link.script].setAddress(name, mode, address, netmask, gateway)
                 # set name servers
                 nameserver = ""
                 if self.dns1.isChecked():
@@ -677,29 +678,28 @@ class Settings(QWidget):
                 elif self.dns3.isChecked():
                     namemode = "custom"
                     nameserver = str(self.dns_text.text())
-                comlink.call(self.link.script, "Net.Link", "setNameService", name, namemode, nameserver)
+                comlink.link.Network.Link[self.link.script].setNameService(name, namemode, nameserver)
             if "devicemode" in self.link.modes:
                 selected_device_mode = str(self.selected_device_mode.currentText())
-                comlink.call(self.link.script, "Net.Link", "setConnectionMode", name, selected_device_mode)
+                comlink.link.Network.Link[self.link.script].setDeviceMode(name, selected_device_mode)
             if "remote" in self.link.modes:
                 # set remote address
                 remote = str(self.remote.text())
-                comlink.call(self.link.script, "Net.Link", "setRemote", name, remote, self.apmac)
-                if self.channel != None:
-                    comlink.call(self.link.script, "Net.Link", "setChannel", name, self.channel)
+                comlink.link.Network.Link[self.link.script].setRemote(name, remote)
             if "auth" in self.link.modes:
                 i = self.security_mode_combo.currentItem()
                 if i == 0:
-                    comlink.call(self.link.script, "Net.Link", "setAuthentication", name, "none", "", "", "", "", "", "", "", "", "")
+                    #comlink.call(self.link.script, "Net.Link", "setAuthentication", name, "none", "", "", "", "", "", "", "", "", "")
+                    pas
                 else:
                     mode = self.link.auth_modes[i-1]
                     if mode.type == "pass":
                         pw = unicode(self.auth_passphrase_line.text())
-                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, "", pw, "", "", "", "", "", "", "")
+                        #comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, "", pw, "", "", "", "", "", "", "")
                     elif mode.type == "login":
                         u = unicode(self.auth_user_line.text())
                         pw = unicode(self.auth_passphrase_line.text())
-                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
+                        #comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
                     elif mode.type == "certificate":
                         if mode.id == "802.1x":
                             u = unicode(self.auth_user_line.text())
@@ -707,40 +707,21 @@ class Settings(QWidget):
                             an = unicode(self.auth_anon_id_line.text())
                             au = unicode(self.auth_mode_combo.currentText())
                             p2 = unicode(self.auth_inner_combo.currentText())
-                            comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, au, an, p2,\
-                                str(self.auth_client_cert), str(self.auth_ca_cert), str(self.auth_private_key), str(self.auth_private_key_pass_line.text()))
+                            #comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, au, an, p2, str(self.auth_client_cert), str(self.auth_ca_cert), str(self.auth_private_key), str(self.auth_private_key_pass_line.text()))
                         else:
                             u = unicode(self.auth_user_line.text())
                             pw = unicode(self.auth_passphrase_line.text())
-                            comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
+                            #comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
             # close dialog
             self.parent().setEnabled(True)
             self.cleanup()
             self.parent().parent().close(True)
 
-        def error(exception):
-            self.parent().setEnabled(True)
-
-        def cancel():
-            self.parent().setEnabled(True)
-
         self.parent().setEnabled(False)
         if conn and conn.name != name:
-            ch = comlink.callHandler(self.link.script, "Net.Link", "deleteConnection", "tr.org.pardus.comar.net.link.set")
-            ch.registerDone(saveConnection, True)
-            ch.registerCancel(cancel)
-            ch.registerError(error)
-            ch.registerDBusError(error)
-            ch.registerAuthError(error)
-            ch.call(conn.name)
+            comlink.link.Network.Link[self.link.script].deleteConnection(conn.name, async=saveConnection)
         else:
-            ch = comlink.callHandler(self.link.script, "Net.Link", "setConnection", "tr.org.pardus.comar.net.link.set")
-            ch.registerDone(saveConnection, False)
-            ch.registerCancel(cancel)
-            ch.registerError(error)
-            ch.registerDBusError(error)
-            ch.registerAuthError(error)
-            ch.call(name, self.device_uid)
+            comlink.link.Network.Link[self.link.script].setDevice(name, self.device_uid, async=saveConnection)
 
     def slotDevices(self, script, devices):
         if script != self.link.script:
