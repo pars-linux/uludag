@@ -56,7 +56,7 @@ class Tray(KSystemTray):
     def showPopup(self):
         from sets import Set as set 
 
-        upgrades = PisiIface.get_upgradable_packages()
+        upgrades = PisiIface.getUpdates()
         newUpgrades = set(upgrades) - set(self.lastUpgrades)
         self.lastUpgrades = upgrades
         if not len(upgrades) or not newUpgrades:
