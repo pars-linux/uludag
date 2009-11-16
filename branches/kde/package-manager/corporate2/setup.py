@@ -24,7 +24,7 @@ kdedistutils.setup(
     application_data = [
                         # sources
                         'src/package-manager.py', 
-                        'src/Commander.py',
+                        'src/Group.py',
                         'src/Progress.py',
                         'src/Preferences.py',
                         'src/CommonText.py',
@@ -37,6 +37,8 @@ kdedistutils.setup(
                         'src/Icons.py',
                         'src/LocaleData.py',
                         'src/PmDcop.py',
+                        'src/PmUtils.py',
+                        'src/Pmlogging.py',
                         'src/pm-install.py',
                         'src/CustomEventListener.py',
                         'src/Basket.py',
@@ -45,9 +47,8 @@ kdedistutils.setup(
                         'src/Globals.py',
                         'src/Debug.py',
                         'src/SpecialList.py',
-                        'src/Component.py',
-                        'src/PisiIface.py',
-                        'src/handler.py',
+                        'src/Group.py',
+                        'src/PisiIface.py'
 
                         # ui files
                         'src/ProgressDialog.ui',
