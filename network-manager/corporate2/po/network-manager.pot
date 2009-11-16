@@ -1,0 +1,469 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-06 08:20+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: comariface.py:214
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: comariface.py:216
+msgid ""
+"Network Manager was not able to communicate with your network device. If "
+"it's\n"
+"a wireless interface, make sure that its radio switch is turned on. This is "
+"usually\n"
+"done through a switch or Fn keys in modern notebooks."
+msgstr ""
+
+#: comariface.py:221
+msgid ""
+"The DHCP service was not able to assign an IP address to your network "
+"interface.\n"
+"Make sure that the network you're trying to connect is able to assign IP "
+"addresses\n"
+"through its DHCP service. Otherwise, you have to manually assign an IP "
+"address."
+msgstr ""
+
+#: comariface.py:227
+msgid "Network Manager - Error"
+msgstr ""
+
+#: comariface.py:235 network-applet.py:176
+msgid "Waiting DBus..."
+msgstr ""
+
+#: comariface.py:235 network-applet.py:176
+msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+msgstr ""
+
+#: comariface.py:251 network-applet.py:192
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr ""
+
+#: comariface.py:419
+msgid "new connection"
+msgstr ""
+
+#: newconn.py:26
+msgid "Create a new connection"
+msgstr ""
+
+#: newconn.py:31
+msgid "Select device:"
+msgstr ""
+
+#: newconn.py:58
+msgid "Create"
+msgstr ""
+
+#: newconn.py:112
+msgid "No suitable device found"
+msgstr ""
+
+#: newconn.py:120
+msgid "Install network packages!"
+msgstr ""
+
+#: newconn.py:121
+msgid "No package with COMAR network scripts are installed yet."
+msgstr ""
+
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110 network-applet.py:615 network-applet.py:629
+msgid "Network Manager"
+msgstr ""
+
+#: autoswitch.py:63
+msgid "Scanning..."
+msgstr ""
+
+#: autoswitch.py:84
+#, python-format
+msgid "Profile <b>%s</b> matched."
+msgstr ""
+
+#: autoswitch.py:88
+msgid "There is no matched profile"
+msgstr ""
+
+#: autoswitch.py:90
+msgid "No scan result"
+msgstr ""
+
+#: autoswitch.py:100
+#, python-format
+msgid "Connecting to <b>%s</b> ..."
+msgstr ""
+
+#: browser.py:52
+msgid "Name:"
+msgstr ""
+
+#: browser.py:59 connection.py:269
+msgid "Authentication"
+msgstr ""
+
+#: browser.py:62 connection.py:507
+msgid "Address:"
+msgstr ""
+
+#: browser.py:65 connection.py:548
+msgid "Automatic"
+msgstr ""
+
+#: browser.py:72
+msgid "Mod:"
+msgstr ""
+
+#: browser.py:101
+msgid "Turn on/off connection"
+msgstr ""
+
+#: browser.py:114
+msgid "Configure connection"
+msgstr ""
+
+#: browser.py:117
+msgid "Delete connection"
+msgstr ""
+
+#: browser.py:139
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+
+#: browser.py:140
+msgid "Delete connection?"
+msgstr ""
+
+#: browser.py:228
+msgid "No device!"
+msgstr ""
+
+#: browser.py:407 network-applet.py:661
+msgid "New connection"
+msgstr ""
+
+#: browser.py:412 nameconf.py:28
+msgid "Name Service Settings"
+msgstr ""
+
+#: browser.py:417 network-applet.py:401
+msgid "Connect Automatically"
+msgstr ""
+
+#: browser.py:423
+msgid "Share Connection"
+msgstr ""
+
+#: browser.py:442
+msgid "Try Auto Connect on startup"
+msgstr ""
+
+#: browser.py:499
+msgid "Network Connections Help"
+msgstr ""
+
+#: connection.py:28
+msgid "Channel"
+msgstr ""
+
+#: connection.py:29
+msgid "Mode"
+msgstr ""
+
+#: connection.py:30
+msgid "Protocol"
+msgstr ""
+
+#: connection.py:42
+msgid "No remotes found"
+msgstr ""
+
+#: connection.py:62
+msgid "<hidden>"
+msgstr ""
+
+#: connection.py:100
+msgid "Scan results:"
+msgstr ""
+
+#: connection.py:119
+msgid "Scan again"
+msgstr ""
+
+#: connection.py:122
+msgid "Use"
+msgstr ""
+
+#: connection.py:201
+msgid "Connection name:"
+msgstr ""
+
+#: connection.py:208
+msgid "Connection"
+msgstr ""
+
+#: connection.py:214
+msgid "Device:"
+msgstr ""
+
+#: connection.py:219
+msgid "Select"
+msgstr ""
+
+#: connection.py:237
+msgid "Scan"
+msgstr ""
+
+#: connection.py:277
+msgid "Security:"
+msgstr ""
+
+#: connection.py:280
+msgid "No authentication"
+msgstr ""
+
+#: connection.py:284
+msgid "Authentication:"
+msgstr ""
+
+#: connection.py:290
+msgid "Inner Authentication:"
+msgstr ""
+
+#: connection.py:302
+msgid "Anonymous Identity:"
+msgstr ""
+
+#: connection.py:307
+msgid "User/Identity"
+msgstr ""
+
+#: connection.py:312
+msgid "Password:"
+msgstr ""
+
+#: connection.py:318
+msgid "Client Certificate:"
+msgstr ""
+
+#: connection.py:319 connection.py:325 connection.py:331
+msgid "browse"
+msgstr ""
+
+#: connection.py:324
+msgid "CA Certificate:"
+msgstr ""
+
+#: connection.py:330
+msgid "Private Key File:"
+msgstr ""
+
+#: connection.py:336
+msgid "Private Key Password:"
+msgstr ""
+
+#: connection.py:369 connection.py:375 connection.py:381
+msgid "*|Certificates"
+msgstr ""
+
+#: connection.py:369
+msgid "Select CA Certificate File"
+msgstr ""
+
+#: connection.py:375
+msgid "Select Client Certificate File"
+msgstr ""
+
+#: connection.py:381
+msgid "Select Private Key File"
+msgstr ""
+
+#: connection.py:488
+msgid "Network settings"
+msgstr ""
+
+#: connection.py:498
+msgid "Automatic query (DHCP)"
+msgstr ""
+
+#: connection.py:503
+msgid "Manual"
+msgstr ""
+
+#: connection.py:514 connection.py:535 connection.py:550
+msgid "Custom"
+msgstr ""
+
+#: connection.py:519
+msgid "Net mask:"
+msgstr ""
+
+#: connection.py:530
+msgid "Gateway:"
+msgstr ""
+
+#: connection.py:539 nameconf.py:45
+msgid "Name servers"
+msgstr ""
+
+#: connection.py:819
+msgid "Configure network connection"
+msgstr ""
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr ""
+
+#: nameconf.py:41
+msgid "Host name:"
+msgstr ""
+
+#: nameconf.py:56
+msgid "Up"
+msgstr ""
+
+#: nameconf.py:59
+msgid "Down"
+msgstr ""
+
+#: nameconf.py:171
+msgid "Add Name Server"
+msgstr ""
+
+#: nameconf.py:172
+msgid "Name server:"
+msgstr ""
+
+#: connsharing.py:99
+msgid "Internet Connection Sharing"
+msgstr ""
+
+#: connsharing.py:100
+msgid "Share Internet Connection"
+msgstr ""
+
+#: connsharing.py:102
+msgid "Interface that goes to internet"
+msgstr ""
+
+#: connsharing.py:103
+msgid "Interface that will share connection"
+msgstr ""
+
+#: connsharing.py:119
+msgid "D-Bus Error"
+msgstr ""
+
+#: connsharing.py:123
+msgid "COMAR Error"
+msgstr ""
+
+#: connsharing.py:127
+msgid "Changing States of Interfaces Failed"
+msgstr ""
+
+#: connsharing.py:129
+msgid "DHCP Server Error"
+msgstr ""
+
+#: connsharing.py:156
+msgid ""
+"The interfaces that you have selected must be different to share internet "
+"connection"
+msgstr ""
+
+#: connsharing.py:156
+msgid "Check Selected Interfaces"
+msgstr ""
+
+#: connsharing.py:166
+msgid "The sharing of your connection has been successfully done."
+msgstr ""
+
+#: connsharing.py:166
+msgid "Sharing is OK"
+msgstr ""
+
+#: connsharing.py:267
+msgid "You do not have an ip address for the interface that goes to internet"
+msgstr ""
+
+#: connsharing.py:267
+msgid "IP address not found"
+msgstr ""
+
+#: network-manager.py:83
+msgid "Just try to connect automatically"
+msgstr ""
+
+#: network-manager.py:98
+msgid "Network manager module is already started!"
+msgstr ""
+
+#: network-applet.py:399
+msgid "Firewall..."
+msgstr ""
+
+#: network-applet.py:400
+msgid "Edit Connections..."
+msgstr ""
+
+#: network-applet.py:403
+msgid "Show Notifications"
+msgstr ""
+
+#: network-applet.py:405
+msgid "Icon Per Device"
+msgstr ""
+
+#: network-applet.py:406
+msgid "Single Icon"
+msgstr ""
+
+#: network-applet.py:477
+msgid "Should network-applet start automatically when you login?"
+msgstr ""
+
+#: network-applet.py:592
+msgid "Connecting to <b>%1</b> ..."
+msgstr ""
+
+#: network-applet.py:597
+msgid "Connected to <b>%1</b>"
+msgstr ""
+
+#: network-applet.py:603
+msgid ""
+"Connection failed \n"
+"<b>%1</b>"
+msgstr ""
+
+#: network-applet.py:605
+msgid "You are offline now"
+msgstr ""
+
+#: network-applet.py:699
+msgid "Network Applet"
+msgstr ""
