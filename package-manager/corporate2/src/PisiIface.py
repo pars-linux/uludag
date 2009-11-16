@@ -67,10 +67,6 @@ def parse_package_name(name):
 def read_config(name):
     return pisi.configfile.ConfigurationFile(name)
 
-def is_component_visible(name):
-    cdb = pisi.db.componentdb.ComponentDB()
-    return cdb.get_component(name).visibleTo == 'user'
-
 def reloadPisi():
     for module in sys.modules.keys():
         if module.startswith("pisi."):

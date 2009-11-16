@@ -70,9 +70,9 @@ class MainApplicationWidget(QWidget):
         self.delayTimer.start(500, True)
 
         # inform user for the delay...
-        item = KListViewItem(self.componentsList)
+        item = KListViewItem(self.groupsList)
         item.setText(0,i18n("Loading Package List..."))
-        self.componentsList.setSelected(self.componentsList.firstChild(),True)
+        self.groupsList.setSelected(self.groupsList.firstChild(),True)
         self.tipper = ComponentTipper(self)
 
         self.show()
@@ -121,9 +121,9 @@ class MainApplicationWidget(QWidget):
         # list of packages on the right side
         self.specialList = SpecialList(self.rightLayout)
 
-        self.componentsList = KListView(self.leftLayout)
-        self.componentsList.setFullWidth(True)
-        self.componentsList.addColumn(i18n("Components"))
+        self.groupsList = KListView(self.leftLayout)
+        self.groupsList.setFullWidth(True)
+        self.groupsList.addColumn(i18n("Components"))
 
         self.leftLayout.setMargin(2)
         self.rightLayout.setMargin(2)
@@ -136,7 +136,7 @@ class MainApplicationWidget(QWidget):
         self.layout.setColStretch(2,6)
 
     def setupConnections(self):
-        self.connect(self.componentsList,SIGNAL("selectionChanged(QListViewItem *)"),self.refreshComponentList)
+        self.connect(self.groupsList,SIGNAL("selectionChanged(QListViewItem *)"),self.refreshComponentList)
         self.connect(self.clearButton, SIGNAL("clicked()"), self.searchClear)
         self.connect(self.searchAction, SIGNAL("clicked()"), self.searchPackage)
         self.connect(self.searchLine, SIGNAL("returnPressed()"), self.searchPackage)
@@ -309,7 +309,7 @@ class MainApplicationWidget(QWidget):
             Globals.setNormalCursor()
 
     def setLastSelected(self):
-        item = self.componentsList.firstChild()
+        item = self.groupsList.firstChild()
 
         # There may be no item in component list. No more new packages to install for example.
         if not item:
@@ -325,7 +325,7 @@ class MainApplicationWidget(QWidget):
                 item = i
                 break
 
-        self.componentsList.setSelected(item, True)
+        self.groupsList.setSelected(item, True)
         return item
 
     def refreshComponentList(self, item):
@@ -390,7 +390,7 @@ class MainApplicationWidget(QWidget):
 
         self.updateButtons()
         self.refreshComponentList(self.setLastSelected())
-        item = self.componentsList.firstChild()
+        item = self.groupsList.firstChild()
         if item and item.text(0) == i18n("Search Results"):
             self.searchPackage()
         basketDialog.deleteLater()
@@ -515,13 +515,13 @@ class MainApplicationWidget(QWidget):
             self.upgradeState()
 
     def updateComponentList(self):
-        item = self.componentsList.currentItem()
+        item = self.groupsList.currentItem()
         component = self.componentDict[item]
         if component.packages:
             item.setText(0,u"%s (%s)" % (component.name, len(component.packages)))
         else:
-            self.componentsList.takeItem(item)
-            self.componentsList.setSelected(self.componentsList.firstChild(),True)
+            self.groupsList.takeItem(item)
+            self.groupsList.setSelected(self.groupsList.firstChild(),True)
 
     #create a component list from given package list
     def createComponentList(self, packages, allComponent=False):
@@ -534,7 +534,7 @@ class MainApplicationWidget(QWidget):
                 package = PisiIface.get_repo_package(pkg_name)
                 return "app:gui" in package.isA
 
-        self.componentsList.clear()
+        self.groupsList.clear()
         self.componentDict.clear()
 
         # eliminate components that are not visible to users. This is achieved by a tag in component.xmls
@@ -563,7 +563,7 @@ class MainApplicationWidget(QWidget):
 
             if len(component_packages):
                 # create ListView item for component
-                item = KListViewItem(self.componentsList)
+                item = KListViewItem(self.groupsList)
                 if component.localName:
                     name = component.localName
                 else:
@@ -585,7 +585,7 @@ class MainApplicationWidget(QWidget):
         if self.state != upgrade_state and showOnlyGuiApp:
             rest_packages = filter(appGuiFilter, rest_packages)
         if rest_packages:
-            item = KListViewItem(self.componentsList)
+            item = KListViewItem(self.groupsList)
             name = i18n("Others")
             item.setText(0, u"%s (%s)" % (name, len(rest_packages)))
             item.setPixmap(0, KGlobal.iconLoader().loadIcon("package_applications",KIcon.Desktop,KIcon.SizeMedium))
@@ -593,15 +593,15 @@ class MainApplicationWidget(QWidget):
 
         # All of the component's packages
         if allComponent:
-            item = KListViewItem(self.componentsList)
+            item = KListViewItem(self.groupsList)
             name = i18n("All")
             item.setText(0, u"%s (%s)" % (name, len(packages)))
             item.setPixmap(0, KGlobal.iconLoader().loadIcon("package_network",KIcon.Desktop,KIcon.SizeMedium))
             self.componentDict[item] = Component(name, packages, name)
 
     def createSearchResults(self, packages):
-        self.componentsList.clear()
-        item = KListViewItem(self.componentsList)
+        self.groupsList.clear()
+        item = KListViewItem(self.groupsList)
         item.setText(0,i18n("Search Results"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
         packagesWithMeta = [PisiIface.get_package(package, self.state != install_state) for package in packages]
@@ -609,7 +609,7 @@ class MainApplicationWidget(QWidget):
             self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
         else:
             self.specialList.createList(packagesWithMeta, selected = self.basket.packages)
-        self.componentsList.setSelected(self.componentsList.firstChild(),True)
+        self.groupsList.setSelected(self.groupsList.firstChild(),True)
 
     def displayProgress(self, data):
         operation = data[0]
