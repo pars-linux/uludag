@@ -171,7 +171,7 @@ class MainApplicationWidget(QWidget):
         Globals.processEvents()
 
     def groupsReady(self):
-        if not PisiIface.get_groups(): # Repo metadata empty
+        if not PisiIface.getGroups(): # Repo metadata empty
             return False
 
         return True
@@ -290,7 +290,7 @@ class MainApplicationWidget(QWidget):
             ##
 
             try:
-                upgradables = PisiIface.get_upgradable_packages()
+                upgradables = PisiIface.getUpdates()
             except PisiIface.RepoError:
                 Globals.setNormalCursor()
                 self.repoNotReady()
@@ -332,7 +332,7 @@ class MainApplicationWidget(QWidget):
         Globals.setWaitCursor()
         try:
             # fetch packages including metadata from cache
-            packagesWithMeta = [PisiIface.get_package(package, self.state == remove_state) for package in self.groupDict[item].packages]
+            packagesWithMeta = [PisiIface.getPackage(package) for package in self.groupDict[item].packages]
             if self.state == remove_state:
                 self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
             else:
@@ -527,18 +527,13 @@ class MainApplicationWidget(QWidget):
     def createGroupList(self, packages, allGroup=False):
         # filter for selecting only apps with gui
         def appGuiFilter(pkg_name):
-            if self.state == remove_state:
-                package = PisiIface.get_installed_package(pkg_name)
-                return "app:gui" in package.isA
-            elif self.state == install_state:
-                package = PisiIface.get_repo_package(pkg_name)
-                return "app:gui" in package.isA
+            return "app:gui" in PisiIface.getPackage(pkg_name).isA
 
         self.groupsList.clear()
         self.groupDict.clear()
 
         # eliminate groups that are not visible to users. This is achieved by a tag in group.xmls
-        groupNames = [cname for cname in PisiIface.get_groups() if PisiIface.is_group_visible(cname)]
+        groupNames = PisiIface.getGroups()
 
         showOnlyGuiApp = self.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp")
 
@@ -547,12 +542,12 @@ class MainApplicationWidget(QWidget):
         for groupName in groupNames:
             # just check the group existance
             try:
-                group = PisiIface.get_union_group(groupName)
+                group = PisiIface.getGroup(groupName)
             except Exception:
                 continue
 
             # get all packages of the group
-            compPkgs = PisiIface.get_union_group_packages(groupName, walk=True)
+            compPkgs = PisiIface.getGroupPackages(groupName)
 
             # find which packages belong to this group
             group_packages = list(set(packages).intersection(compPkgs))
@@ -604,7 +599,7 @@ class MainApplicationWidget(QWidget):
         item = KListViewItem(self.groupsList)
         item.setText(0,i18n("Search Results"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
-        packagesWithMeta = [PisiIface.get_package(package, self.state != install_state) for package in packages]
+        packagesWithMeta = [PisiIface.getPackage(package) for package in packages]
         if self.state == remove_state:
             self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
         else:
