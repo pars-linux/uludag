@@ -241,3 +241,7 @@ class Iface(Singleton):
                 return self.idb.search_package(terms)
         except Exception:
             return []
+
+    def parsePackageName(self, name):
+        return pisi.util.parse_package_name(name)
+

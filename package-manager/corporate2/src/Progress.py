@@ -149,7 +149,7 @@ class Progress(ProgressDialog):
         self.setOperationDescription(i18n('%1 %2').arg(package).arg(operation))
 
     def updateDownloadingInfo(self, operation, file):
-        self.packageName = PisiIface.parse_package_name(file)[0]
+        self.packageName = PisiIface.parsePackageName(file)[0]
         self.setOperationDescription(i18n('%1 %2').arg(self.packageName).arg(operation))
         self.updateCompletedInfo()
         self.showOperationDescription()
