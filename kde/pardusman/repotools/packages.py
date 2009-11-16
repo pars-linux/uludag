@@ -257,16 +257,19 @@ class Repository:
     def full_deps(self, package_name):
         deps = set()
         deps.add(package_name)
+
         def collect(name):
             p = self.packages[name]
             for item in p.depends:
                 deps.add(item)
                 collect(item)
+
         collect(package_name)
-        if self.components.has_key("system.base"):
-            for item in self.components["system.base"]:
-                deps.add(item)
-                collect(item)
+       # Not needed deps search for system.base as default at all click!!!
+       # if self.components.has_key("system.base"):
+       #     for item in self.components["system.base"]:
+       #         deps.add(item)
+       #         collect(item)
         return deps
 
     def __str__(self):
