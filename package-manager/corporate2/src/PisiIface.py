@@ -16,7 +16,7 @@ import string
 import comar
 import pisi
 
-from pmlogging import logger
+from PmLogging import logger
 
 class Singleton(object):
     def __new__(type):
