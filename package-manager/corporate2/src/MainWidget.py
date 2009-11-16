@@ -26,7 +26,6 @@ import Basket
 import BasketDialog
 from Icons import *
 import Preferences
-import Commander
 import Tray
 import Settings
 import LocaleData
@@ -55,10 +54,8 @@ class MainApplicationWidget(QWidget):
         self.groupDict = {}
 
         self.lastSelectedGroup = None
-        self.command = None
         self.state = install_state
         self.basket = Basket.Basket()
-        self.command = Commander.Commander(self)
         self.settings = Settings.Settings(Globals.config())
 
         # set up timers
@@ -208,7 +205,7 @@ class MainApplicationWidget(QWidget):
             self.processEvents()
 
             try:
-                packages = self.command.listNewPackages()
+                packages = PisiIface.getPackageList()
             except PisiIface.RepoError:
                 Globals.setNormalCursor()
                 self.repoNotReady()
@@ -244,7 +241,7 @@ class MainApplicationWidget(QWidget):
             self.processEvents()
 
             try:
-                packages = self.command.listPackages()
+                packages = PisiIface.getPackageList()
             except PisiIface.RepoError:
                 Globals.setNormalCursor()
                 self.repoNotReady()
@@ -271,7 +268,7 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.hideStatus(True)
         self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
         self.progressDialog.show()
-        self.command.startUpdate()
+        PisiIface.updateRepositores()
 
     def upgradeState(self):
         Globals.setWaitCursor()
@@ -399,7 +396,7 @@ class MainApplicationWidget(QWidget):
         basketDialog.deleteLater()
 
     def conflictCheckPass(self):
-        (C, D, pkg_conflicts) = self.command.checkConflicts(self.basket.packages + self.basket.extraPackages)
+        (C, D, pkg_conflicts) = PisiIface.getConflicts(self.basket.packages)
 
         conflicts_within = list(D)
         if conflicts_within:
@@ -425,9 +422,9 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.hideStatus(True)
         self.progressDialog.updateProgressBar(100)
 
-        if not self.command.inProgress():
+        if not PisiIface.inProgress():
             self.progressDialog.totalPackages = 1
-            self.command.install([package])
+            PisiIface.installPackage([package])
             self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
             self.progressDialog.show()
             # KWin forces to raise it even though the parent is hidden, QWidget does not.
@@ -478,7 +475,7 @@ class MainApplicationWidget(QWidget):
 
         # remove action
         if self.state == remove_state:
-            self.command.remove(self.basket.packages)
+            PisiIface.removePackages(self.basket.packages)
             self.progressDialog.setCurrentOperation(i18n("<b>Removing Package(s)</b>"))
             self.progressDialog.hideStatus()
 
@@ -489,7 +486,7 @@ class MainApplicationWidget(QWidget):
 
             self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
             self.progressDialog.showStatus()
-            self.command.install(self.basket.packages)
+            PisiIface.installPackages(self.basket.packages)
 
         # upgrade action
         elif self.state == upgrade_state:
@@ -498,7 +495,7 @@ class MainApplicationWidget(QWidget):
 
             self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
             self.progressDialog.showStatus()
-            self.command.updatePackage(self.basket.packages)
+            PisiIface.upgradePackages(self.basket.packages)
 
         if not self.parent.isHidden():
             self.progressDialog.show()
@@ -747,7 +744,7 @@ class MainApplicationWidget(QWidget):
 
     def show(self):
         QWidget.show(self)
-        if self.command and self.command.inProgress():
+        if PisiIface.inProgress():
             self.progressDialog.show()
 
     def trayUpdateCheck(self, repo = None, forced = False):
@@ -759,7 +756,11 @@ class MainApplicationWidget(QWidget):
         self.processEvents()
         self.progressDialog.hideStatus(True)
 
-        self.command.startUpdate(repo, handleErrors=forced)
+
+        if repo:
+            PisiIface.updateRepository(repo)
+        else:
+            PisiIface.updateRepositories()
 
         # update repo command is given by the user
         if forced and not self.parent.isHidden():
