@@ -236,6 +236,17 @@ class Iface(Singleton):
         print self.link.listRunning()
         return False
 
+    def search_in_installed(terms):
+        return pisi.api.search_installed(terms)
+
+    def search_in_repos(terms):
+        installdb = pisi.db.installdb.InstallDB()
+        # search in repos but filter installed ones
+        return filter(lambda x:not installdb.has_package(x), pisi.api.search_package(terms))
+    
+    def search_in_upgradables(terms):
+        return list(set(getUpdates()).intersection(pisi.api.search_package(terms)))
+
     def search(self, terms, packages=None):
         try:
             if self.source == self.REPO:
