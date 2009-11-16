@@ -146,7 +146,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.parent.command.setConfig("general", "ftp_proxy", "None")
 
     def getProxySettings(self):
-        config = PisiIface.read_config("/etc/pisi/pisi.conf")
+        config = PisiIface.getConfig("/etc/pisi/pisi.conf")
         httpProxy = httpProxyPort = ftpProxy = ftpProxyPort = httpsProxy = httpsProxyPort = None
 
         http = config.get("general", "http_proxy")
@@ -173,7 +173,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
                 self.useHttpForAll.setChecked(True)
 
     def getBandwidthSetting(self):
-        config = PisiIface.read_config("/etc/pisi/pisi.conf")
+        config = PisiIface.getConfig("/etc/pisi/pisi.conf")
         bandwidth_limit = config.get("general", "bandwidth_limit")
 
         if bandwidth_limit:
@@ -187,7 +187,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
     # Cache settings are system wide and taken from pisi.conf
     def getCacheSettings(self):
-        config = PisiIface.read_config("/etc/pisi/pisi.conf")
+        config = PisiIface.getConfig("/etc/pisi/pisi.conf")
 
         cache = config.get("general", "package_cache")
         cache_limit = config.get("general", "package_cache_limit")
