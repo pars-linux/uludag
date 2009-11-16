@@ -95,7 +95,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.connect(self.pushAddCollection, SIGNAL("clicked()"),self.slotAddPackageCollection)
         self.connect(self.pushModifyCollection, SIGNAL("clicked()"),self.slotModifyPackageCollection)
         self.connect(self.pushRemoveCollection, SIGNAL("clicked()"),self.slotRemovePackageCollection)
+        self.connect(self.pushSetDefaultCollection, SIGNAL("clicked()"),self.slotSetDefaultCollection)
         self.connect(self.comboSize, SIGNAL("currentIndexChanged(int)"), self.slotShowPackageCollection)
+        self.connect(self.listPackageCollection, SIGNAL("itemClicked(QListWidgetItem *)"),self.slotClickedCollection)
 
         # Bottom toolbar
         self.connect(self.pushUpdateRepo, SIGNAL("clicked()"), self.slotUpdateRepo)
@@ -223,8 +225,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def slotModifyPackageCollection(self):
         index = self.listPackageCollection.currentRow()
         item = self.listPackageCollection.item(index)
-        print "self.repo:%s" % self.repo.base_uri
-        print "item.collection"
+        #print "self.repo:%s" % self.repo.base_uri
+        #print "item.collection"
         dialog = PackageCollectionDialog(self, self.repo, item.collection)
         if dialog.exec_():
             if item.collection.name != dialog.collection.name:
@@ -238,6 +240,35 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.listPackageCollection.takeItem(self.listPackageCollection.row(item))
 
         self.updateCollection()
+
+    def slotClickedCollection(self, item):
+#        if not self.listPackageCollection.count():
+#            self.pushSetDefaultCollection.setEnabled(False)
+#        elif self.listPackageCollection.count() == 1:
+#            self.listPackageCollection.currentRow().collection.setDefault("True")
+#            self.pushSetDefaultCollection.setChecked(False)
+#        else:
+        print "item.collection.name %s is default:%s" % (item.collection.title, item.collection.default)
+
+        if item.collection.default == "True":
+            if not self.pushSetDefaultCollection.isChecked():
+                self.pushSetDefaultCollection.setChecked(True)
+        else:
+            if self.pushSetDefaultCollection.isChecked():
+                self.pushSetDefaultCollection.setChecked(False)
+
+    def slotSetDefaultCollection(self):
+        if not self.listPackageCollection.currentItem().collection.default:
+            self.listPackageCollection.currentItem().collection.setDefault("True")
+            currentIndex = self.listPackageCollection.currentRow()
+            for index in xrange(self.listPackageCollection.count()):
+                if index == currentIndex:
+                    pass
+                else:
+                    self.listPackageCollection.item(index).collection.default = ""
+
+            self.pushSetDefaultCollection.setChecked(True)
+
 
     def slotShowPackageCollection(self, index):
         if self.comboSize.currentIndex() == 1:
@@ -269,7 +300,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dialog = PackagesDialog(self, self.repo, self.project.selected_packages, self.project.selected_components)
 
         if dialog.exec_():
-            self.project.package_collections = dialog.collection
+            self.project.selected_packages = dialog.packages
+            self.project.selected_components = dialog.components
+            self.project.all_packages = dialog.all_packages
 
     def slotUpdateRepo(self):
         """
@@ -362,24 +395,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if self.project.package_collections:
             print "loadProject package_collections"
             print "project.media:%s" % self.project.media
-#            itemCount = self.listPackageCollection.count()
             for collection in self.project.package_collections:
                 PackageCollectionListItem(self.listPackageCollection, collection)
-
-#                if itemCount:
-#                    for index in range(itemCount-1, -1, -1):
-#                        print "for dongusunde...%s" %  index
-#                        if self.listPackageCollection.item(index).collection:
-#                            print "collection list item var"
-#                            if not self.listPackageCollection.item(index).collection.uniqueTag.__eq__(collection.uniqueTag):
-#                                print "self.listPackageCollection.item(index).collection.uniqueTag%s" % self.listPackageCollection.item(index).collection.uniqueTag
-#                                print "collection.uniqueTag%s" % collection.uniqueTag
-#                                PackageCollectionListItem(self.listPackageCollection, collection)
-#                        else:
-#                             print "collection list item yok"
-#                            PackageCollectionListItem(self.listPackageCollection, collection)
-#                else:
-#                    PackageCollectionListItem(self.listPackageCollection, collection)
 
     def updateRepo(self, update_repo=True):
         """
