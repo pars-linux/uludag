@@ -18,6 +18,9 @@ import pisi
 
 from PmLogging import logger
 
+class RepoError:
+    pass
+
 class Singleton(object):
     def __new__(type):
         if not '_the_instance' in type.__dict__:
@@ -244,4 +247,3 @@ class Iface(Singleton):
 
     def parsePackageName(self, name):
         return pisi.util.parse_package_name(name)
-
