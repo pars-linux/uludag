@@ -9,6 +9,7 @@
 # option) any later version. Please read the COPYING file.
 #
 
+import functools
 import sys
 import time
 from qt import *
@@ -86,11 +87,11 @@ class Connection(Hook):
         Hook.__init__(self)
         self.script = script
         self.auth_mode = "none"
-        self.auth_user = None
-        self.auth_pass = None
-        self.auth_anon = None
-        self.auth_auth = None
-        self.auth_inner = None
+        self.auth_username = None
+        self.auth_password = None
+        self.auth_cert_cli = None
+        self.auth_cert_ca = None
+        self.auth_keyfile = None
         self.channel = None
         self.device_mode = "Managed"
         self.parse(data)
@@ -109,8 +110,6 @@ class Connection(Hook):
         self.net_gate = data.get("net_gateway")
         self.dns_mode = data.get("name_mode", "default")
         self.dns_server = data.get("name_server")
-        self.apmac = data.get("apmac", None)
-        self.channel = data.get("channel", None)
         self.device_mode = data.get("device_mode", "Managed")
         state = data.get("state", "unavailable")
         if " " in state:
@@ -121,8 +120,10 @@ class Connection(Hook):
 
 
 class AuthMode:
-    def __init__(self, mode):
-        self.id, self.type, self.name = mode.split(",", 2)
+    def __init__(self, _id, label, paramters):
+        self.id = _id
+        self.name = label
+        self.paramters = paramters
 
 
 class Link:
@@ -137,13 +138,8 @@ class Link:
                 self.name = value
             elif key == "modes":
                 self.modes = value.split(",")
-            elif key == "auth_modes":
-                for mode in value.split(";"):
-                    self.auth_modes.append(AuthMode(mode))
             elif key == "remote_name":
                 self.remote_name = value
-            elif key == "device_modes":
-                self.device_modes = value.split(",")
 
 
 class DBusInterface(Hook):
@@ -169,7 +165,6 @@ class DBusInterface(Hook):
         self.link.setLocale()
         self.queryLinks()
 
-    """
     def error(self, exception):
         if "Access denied" in exception.message:
             message = i18n("You are not authorized for this operation.")
@@ -188,6 +183,7 @@ class DBusInterface(Hook):
         msg = QMessageBox(i18n("Network Manager - Error"), message, QMessageBox.Warning, QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton, self.window, "err", True)
         msg.setTextFormat(Qt.RichText)
         msg.show()
+    """
 
     def errorDBus(self, exception):
         if self.dia:
@@ -243,6 +239,10 @@ class DBusInterface(Hook):
         hash = Connection.hash(script, name)
         return self.connections.get(hash, None)
 
+    def getAuth(self, script, name):
+        method = self.link.Network.Link[script].getAuthMethod(name)
+        return method, self.link.Network.Link[script].getAuthParameters(name)
+
     def queryLinks(self):
         scripts = list(self.link.Network.Link)
         if scripts:
@@ -250,6 +250,8 @@ class DBusInterface(Hook):
                 info = self.link.Network.Link[script].linkInfo()
                 if info:
                     self.links[script] = Link(script, info)
+                for _met, _label in self.link.Network.Link[script].authMethods():
+                    self.links[script].auth_modes.append(AuthMode(_met, _label, self.link.Network.Link[script].authParameters(_met)))
 
     def queryNames(self): 
         def handlerHost(package, exception, args):
@@ -272,55 +274,16 @@ class DBusInterface(Hook):
         if exception:
             return
         info = args[0]
-        """
-        def handler(conn, mode, username, password, channel, auth, anon, inner, clicert, cacert, prikey, prikeypass):
-            conn.got_auth = True
-            conn.auth_mode = mode
-            conn.auth_user = username
-            conn.auth_pass = password
-            conn.channel = channel
-            conn.auth_anon = anon
-            conn.auth_auth = auth
-            conn.auth_inner = inner
-            conn.auth_ca_cert = cacert
-            conn.auth_client_cert = clicert
-            conn.auth_private_key = prikey
-            conn.auth_private_key_pass = prikeypass
-
-            if conn.first_time:
-                conn.first_time = False
-                self.emitNew(conn)
-            else:
-                self.emitConfig(conn)
-        """
-
         modes = self.links[script].modes
         conn = Connection(script, info)
         old_conn = self.getConn(script, conn.name)
         if old_conn:
             old_conn.parse(info)
-            if "auth" in modes:
-                self.emitConfig(old_conn)
-                """
-                ch = self.callHandler(script, "Net.Link", "getAuthentication", "tr.org.pardus.comar.net.link.get")
-                ch.registerDone(handler, old_conn)
-                ch.call(old_conn.name)
-                """
-            else:
-                self.emitConfig(old_conn)
+            self.emitConfig(old_conn)
             return
         self.connections[conn.hash] = conn
-        if "auth" in modes:
-            conn.first_time = False
-            self.emitNew(conn)
-            """
-            ch = self.callHandler(script, "Net.Link", "getAuthentication", "tr.org.pardus.comar.net.link.get")
-            ch.registerDone(handler, conn)
-            ch.call(conn.name)
-            """
-        else:
-            conn.first_time = False
-            self.emitNew(conn)
+        conn.first_time = False
+        self.emitNew(conn)
 
         if self.first_time:
             # After all connections' information fetched...
