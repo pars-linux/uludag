@@ -37,7 +37,6 @@ kdedistutils.setup(
                         'src/Icons.py',
                         'src/LocaleData.py',
                         'src/PmDcop.py',
-                        'src/PmUtils.py',
                         'src/Pmlogging.py',
                         'src/pm-install.py',
                         'src/CustomEventListener.py',
