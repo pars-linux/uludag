@@ -28,14 +28,14 @@ class Config(object):
     def __getattr__(self, attr):
         value = self.__items.get(attr, None)
         if value and value in ("True", "False"):
-            return bool(value)
+            value = bool(value)
         elif "," in value:
-            return value.split(",")
-        else:
-            return value
+            value = value.split(",")
+
+        return value
 
 
 if __name__ == "__main__":
     # Test code
     c = Config()
-    print c.debugsupport
+    print c.deltablacklist
