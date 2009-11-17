@@ -16,6 +16,7 @@ import string
 import comar
 import pisi
 
+from qt import QMutex
 from PmLogging import logger
 
 class RepoError:
@@ -34,6 +35,7 @@ class Iface(Singleton):
     def __init__(self, source=REPO):
         if not self.initialized():
             self.source = source
+            self.com_lock = QMutex()
             self.initComar()
             self.initDB()
 
@@ -76,36 +78,44 @@ class Iface(Singleton):
     def installPackages(self, packages):
         logger.debug("Installing packages: %s" % packages)
         packages = string.join(packages,",")
+        self.com_lock.lock()
         self.link.System.Manager["pisi"].installPackage(packages, async=self.handler, timeout=2**16-1)
 
     def removePackages(self, packages):
         logger.debug("Removing packages: %s" % packages)
         packages = string.join(packages,",")
+        self.com_lock.lock()
         self.link.System.Manager["pisi"].removePackage(packages, async=self.handler, timeout=2**16-1)
 
     def upgradePackages(self, packages):
         logger.debug("Upgrading packages: %s" % packages)
         packages = string.join(packages,",")
+        self.com_lock.lock()
         self.link.System.Manager["pisi"].updatePackage(packages, async=self.handler, timeout=2**16-1)
 
     def updateRepositories(self):
         logger.debug("Updating repositories...")
+        self.com_lock.lock()
         self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler, timeout=2**16-1)
 
     def updateRepository(self, repo):
         logger.debug("Updating %s..." % repo)
+        self.com_lock.lock()
         self.link.System.Manager["pisi"].updateRepository(repo, async=self.handler, timeout=2**16-1)
 
     def clearCache(self, limit):
         logger.debug("Clearing cache with limit: %s" % limit)
+        self.com_lock.lock()
         self.link.System.Manager["pisi"].clearCache("/var/cache/pisi/packages", limit)
 
     def setRepositories(self,  repos):
         logger.debug("Re-setting repositories: %s" % repos)
+        self.com_lock.lock()
         self.link.System.Manager["pisi"].setRepositories(repos)
 
     def setRepoActivities(self, repos):
         logger.debug("Re-setting repo activities: %s" % repos)
+        self.com_lock.lock()
         self.link.System.Manager["pisi"].setRepoActivities(repos)
 
     def __configChanged(self, category, name, value):
@@ -215,6 +225,9 @@ class Iface(Singleton):
         for repo in pisi.api.list_repos(only_active=False):
             repos.append((repo, self.rdb.get_repo_url(repo)))
         return repos
+
+    def getRepositoryUrl(self, repo):
+        return self.rdb.get_repo_url(repo)
 
     def getPackageSize(self, name):
         package = self.getPackage(name)
