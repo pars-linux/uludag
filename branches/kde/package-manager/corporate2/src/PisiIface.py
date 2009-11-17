@@ -236,15 +236,15 @@ class Iface(Singleton):
         print self.link.listRunning()
         return False
 
-    def search_in_installed(terms):
+    def search_in_installed(self, terms):
         return pisi.api.search_installed(terms)
 
-    def search_in_repos(terms):
+    def search_in_repos(self, terms):
         installdb = pisi.db.installdb.InstallDB()
         # search in repos but filter installed ones
         return filter(lambda x:not installdb.has_package(x), pisi.api.search_package(terms))
     
-    def search_in_upgradables(terms):
+    def search_in_upgradables(self, terms):
         return list(set(getUpdates()).intersection(pisi.api.search_package(terms)))
 
     def search(self, terms, packages=None):
