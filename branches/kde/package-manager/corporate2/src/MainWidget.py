@@ -271,7 +271,7 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.hideStatus(True)
         self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
         self.progressDialog.show()
-        self.iface.updateRepositores()
+        self.iface.updateRepositories()
 
     def upgradeState(self):
         Globals.setWaitCursor()
