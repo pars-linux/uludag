@@ -43,7 +43,7 @@ class Commander(QObject):
         self.errHandler()
 
 
-    def handler(self, signal, data):
+    def handler(self, package, signal, data):
         if len(data) > 1:
             args = data[1:]
         else:
