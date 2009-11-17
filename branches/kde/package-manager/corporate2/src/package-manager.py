@@ -22,7 +22,7 @@ import kdedesigner
 
 # Local imports
 import PmDcop
-import PmLogging
+from PmLogging import logger
 import Globals
 from MainWidget import *
 import Settings
