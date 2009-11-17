@@ -1,6 +1,8 @@
 2009-11-17  Fatih Aşıcı  <fatih@pardus.org.tr>
 	* data/DriversDB:
 		Remove nvidia71 driver as it doesn't work with new X servers.
+	* zorg/hwdata.py:
+		Remove names of old nvidia packages.
 
 2009-10-30  Fatih Aşıcı  <fatih@pardus.org.tr>
 	* data/DriversDB:
