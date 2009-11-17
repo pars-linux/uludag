@@ -23,7 +23,7 @@ class Commander(QObject):
         self.parent = parent
         self.iface = PisiIface.Iface()
         self.iface.setHandler(self.handler)
-        self.iface.setExceptionHandler()
+        self.iface.setExceptionHandler(self.exceptionHandler)
 
     def errHandler(self):
         self.iface.com_lock.unlock()
@@ -31,7 +31,7 @@ class Commander(QObject):
         self.parent.resetState()
         self.parent.refreshState()
 
-    def setExceptionHandler(self, exception):
+    def exceptionHandler(self, exception):
         if "urlopen error" in exception.message or "Socket Error" in exception.message:
             KMessageBox.error(None, i18n("Network error. Please check your network connections and try again."), i18n("COMAR Error"))
         elif "Access denied" in exception.message:
