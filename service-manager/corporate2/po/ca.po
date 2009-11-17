@@ -1,0 +1,154 @@
+# Traslation of the Service Manager.po of Pardus to català
+# Catalan Translations of Pardus
+# Copyright (C) 2007 Pardus
+# This file is distributed under the same license as the Pardus package.
+# Jaume Villalba <javs@tinet.cat>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Service Manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-09 16:37+0300\n"
+"PO-Revision-Date: 2007-03-28 01:36+0100\n"
+"Last-Translator: Jaume Villalba <javs@tinet.cat>\n"
+"Language-Team: Català <Pardus-translation-ca@uludag.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/service-manager.py:33 src/service-manager.py:88
+#: src/service_manager.py:123
+msgid "Service Manager"
+msgstr "Gestor de serveis"
+
+#: src/service-manager.py:81
+msgid "Service Manager is already started!"
+msgstr "Ho sent. El gestor de serveis ja està en marxa"
+
+#: src/sm_mainview.py:126
+msgid "Unable to connect to DBus."
+msgstr ""
+
+#: src/sm_mainview.py:126
+msgid "DBus Error"
+msgstr ""
+
+#: src/sm_mainview.py:139
+msgid "You are not authorized for this operation."
+msgstr "No teniu autorització per a efectuar aquesta operació"
+
+#: src/sm_mainview.py:168
+msgid "D-Bus Error"
+msgstr ""
+
+#: src/sm_mainview.py:172
+msgid "COMAR Error"
+msgstr ""
+
+#: src/sm_mainview.py:242 src/service_manager.py:127
+msgid "Select a service from list."
+msgstr "Tria un servei de la llista."
+
+#: src/sm_mainview.py:249
+msgid "Clear Search"
+msgstr ""
+
+#: src/sm_mainview.py:250 src/service_manager.py:129
+#: src/service_manager.py:131
+msgid "Start"
+msgstr "Engega"
+
+#: src/sm_mainview.py:252
+msgid "Restart"
+msgstr "Engega"
+
+#: src/sm_mainview.py:257
+#, python-format
+msgid "%s is running."
+msgstr "%s està en marxa."
+
+#: src/sm_mainview.py:260
+#, python-format
+msgid "%s is not running."
+msgstr "%s no està en marxa."
+
+#: src/sm_mainview.py:334
+msgid ""
+"If you stop this service, you may have problems.\n"
+"Are you sure you want to stop this service?"
+msgstr ""
+"En aturar aquest servei, podeu tenir problemes.\n"
+"Esteu segur/a que el voleu aturar?"
+
+#: src/sm_mainview.py:338
+msgid ""
+"If you disable this service, you may have problems.\n"
+"Are you sure you want to do this?"
+msgstr ""
+"En aturar aquest servei, podeu tenir problemes.\n"
+"Esteu segur/a que el voleu aturar?"
+
+#: src/service_manager.py:86 src/service_manager.py:134
+msgid "1"
+msgstr "1"
+
+#: src/service_manager.py:87 src/service_manager.py:135
+msgid "Service"
+msgstr "Servei"
+
+#: src/service_manager.py:88 src/service_manager.py:136
+msgid "Run on Startup"
+msgstr "Posa en marxa en engegar l'ordinador"
+
+#: src/service_manager.py:89 src/service_manager.py:137
+msgid "Package"
+msgstr "Paquet"
+
+#: src/service_manager.py:125
+msgid "Run on startup."
+msgstr "Posa'l en marxa en engegar l'ordinador"
+
+#: src/service_manager.py:126
+msgid "Don't run on startup."
+msgstr "No el poses en marxa en engegar l'ordinador"
+
+#: src/service_manager.py:139
+msgid "Reset Search"
+msgstr "Engega"
+
+#: src/service_manager.py:140
+msgid "Search:"
+msgstr ""
+
+#: src/service_manager.py:141
+msgid "&List servers only."
+msgstr "&Només servidors de llistat."
+
+#: src/service_manager.py:142
+msgid "Alt+L"
+msgstr "Alt+L"
+
+#~ msgid "Access Denied"
+#~ msgstr "L'accès us ha estat denegat"
+
+#~ msgid "COMAR script execution failed."
+#~ msgstr "Hi ha hagut un error en l'execució de la seqüència COMAR."
+
+#~ msgid "Script Error"
+#~ msgstr "Hi ha hagut un error de seqüència"
+
+#~ msgid "Unable to start service"
+#~ msgstr "No es pot engegar el servei"
+
+#~ msgid "Unable to stop service"
+#~ msgstr "No es pot aturar el servei"
+
+#, fuzzy
+#~ msgid "Unable to restart service"
+#~ msgstr "No es pot engegar el servei"
+
+#~ msgid "Execute startup script"
+#~ msgstr "Posa en marxa la seqüència d'engegada del sistema"
+
+#~ msgid "Execute shutdown script"
+#~ msgstr "Posa en marxa la seqüència d'aturada del sistema"
