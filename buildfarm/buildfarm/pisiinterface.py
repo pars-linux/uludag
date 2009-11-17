@@ -15,13 +15,15 @@ import os
 import glob
 
 import pisi.api
-
 from pisi.operations.delta import create_delta_package
-from buildfarm import cli, config, logger, utils
+
+from buildfarm import cli, logger, utils
+from buildfarm.config import configuration as conf
+
 
 class PisiApi:
 
-    def __init__(self, stdout=None, stderr=None, outputDir = config.workDir):
+    def __init__(self, stdout=None, stderr=None, outputDir = conf.workdir):
         import pisi.config
         self.options = pisi.config.Options()
         self.options.output_dir = outputDir
@@ -33,7 +35,7 @@ class PisiApi:
         self.options.debug = True
         self.options.verbose = True
 
-        self.options.ignore_check = config.ignoreCheck
+        self.options.ignore_check = conf.ignorecheck
 
         self.options.ignore_sandbox = False
 
@@ -59,7 +61,7 @@ class PisiApi:
         foundPackages = None
 
         while not foundPackages and searchedBuild > 0:
-            foundPackages = glob.glob1(config.binaryPath, "%s-[0-9]*-%s.pisi" % (package[0], searchedBuild))
+            foundPackages = glob.glob1(conf.binarypath, "%s-[0-9]*-%s.pisi" % (package[0], searchedBuild))
             if foundPackages:
                 retval = os.path.basename(foundPackages[0])
             else:
@@ -70,7 +72,7 @@ class PisiApi:
     def delta(self, isopackages, oldBinaryPackages, newBinaryPackages):
 
         # If we don't want to generate delta packages, return None
-        if not config.generateDelta:
+        if not conf.generatedelta:
             return
 
         logger.debug("delta() -> oldBinaryPackages: %s" % oldBinaryPackages)
@@ -111,24 +113,24 @@ class PisiApi:
             name = utils.get_package_name(os.path.basename(pl[1]))
 
             # globs are supported in blacklist delta e.g. module-*
-            if name in config.deltaBlacklist or name.startswith(tuple([d.split("*")[0] \
-                                                        for d in config.deltaBlacklist if "*" in d])):
+            if name in conf.deltablacklist or name.startswith(tuple([d.split("*")[0] \
+                                                        for d in conf.deltablacklist if "*" in d])):
                 logger.debug("Skipping %s as it's blacklisted.." % name)
                 blacklisted_packages.append(os.path.basename(pl[1]))
                 continue
 
             # Full path of the new package
-            p = os.path.join(config.workDir, pl[1])
+            p = os.path.join(conf.workdir, pl[1])
 
             # Look for an old build first
             if pl[0]:
                 # Create a delta between the old build and the new one
                 logger.info("Building delta between %s[previous build] and %s." % (pl[0], pl[1]))
-                deltas_to_install.append(create_delta_package(os.path.join(config.binaryPath, pl[0]), p))
+                deltas_to_install.append(create_delta_package(os.path.join(conf.binarypath, pl[0]), p))
 
             if isopackages.has_key(name) and isopackages[name] != pl[0]:
                 # Build delta between ISO build and current build
-                package = os.path.join(config.binaryPath, isopackages[name])
+                package = os.path.join(conf.binarypath, isopackages[name])
                 if os.path.exists(package):
                     logger.info("Building delta between %s[ISO] and %s." % (isopackages[name], pl[1]))
                     delta_packages.append(create_delta_package(package, p))
@@ -139,7 +141,7 @@ class PisiApi:
             if previous and previous != isopackages.get(name):
                 # Found build (older-1)
                 logger.info("Building delta between %s[older build] and %s." % (previous, pl[1]))
-                delta_packages.append(create_delta_package(os.path.join(config.binaryPath, previous), p))
+                delta_packages.append(create_delta_package(os.path.join(conf.binarypath, previous), p))
 
         # Ok for here
         logger.debug("delta() -> deltas_to_install: %s" % deltas_to_install)
@@ -147,14 +149,14 @@ class PisiApi:
         return (deltas_to_install, delta_packages, blacklisted_packages)
 
     def build(self, pspec):
-        pspec = os.path.join(config.localPspecRepo, pspec)
+        pspec = os.path.join(conf.localpspecrepo, pspec)
         if not os.path.exists(pspec):
             logger.error("'%s' does not exist!" % pspec)
             raise ("'%s' does not exist!" % pspec)
 
         logger.info("BUILD called for %s" % pspec)
 
-        if config.sandboxblacklist and pspec in config.sandboxblacklist:
+        if conf.sandboxblacklist and pspec in conf.sandboxblacklist:
             logger.info("Disabling sandbox for %s" % pspec)
             pisi.api.ctx.set_option("ignore_sandbox", True)
 
@@ -176,7 +178,7 @@ class PisiApi:
         # dfn: dict assigning package names to package paths
         dfn = {}
         for p in packages:
-            package = pisi.package.Package(os.path.join(config.workDir, p))
+            package = pisi.package.Package(os.path.join(conf.workdir, p))
             package.read()
             name = str(package.metadata.package.name)
             d_t[name] = package.metadata.package
