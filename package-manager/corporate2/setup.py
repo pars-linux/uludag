@@ -37,7 +37,7 @@ kdedistutils.setup(
                         'src/Icons.py',
                         'src/LocaleData.py',
                         'src/PmDcop.py',
-                        'src/Pmlogging.py',
+                        'src/PmLogging.py',
                         'src/pm-install.py',
                         'src/CustomEventListener.py',
                         'src/Basket.py',
@@ -47,7 +47,7 @@ kdedistutils.setup(
                         'src/Debug.py',
                         'src/SpecialList.py',
                         'src/Group.py',
-                        'src/PisiIface.py'
+                        'src/PisiIface.py',
 
                         # ui files
                         'src/ProgressDialog.ui',
