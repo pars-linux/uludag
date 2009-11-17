@@ -16,7 +16,7 @@ import sys
 import time
 import string
 
-from config import logFile
+from buildfarm.config import configuration as conf
 
 def findCaller():
     if string.lower(__file__[-4:]) in [".pyc", ".pyo"]:
@@ -36,11 +36,11 @@ def findCaller():
 
 
 def __raw(msg):
-    open(logFile, "a").write("\n\n%s\n\n" %(msg))
+    open(conf.logfile, "a").write("\n\n%s\n\n" %(msg))
 
 def __log(level, caller, msg):
     print msg
-    open(logFile, "a").write("%s | %-6.6s | %-16.16s :: %s\n" %(time.asctime(), level, caller, msg))
+    open(conf.logfile, "a").write("%s | %-6.6s | %-16.16s :: %s\n" %(time.asctime(), level, caller, msg))
 
 
 def debug(msg): __log("DEBUG", findCaller(), msg)
