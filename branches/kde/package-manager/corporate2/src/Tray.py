@@ -25,6 +25,7 @@ class Tray(KSystemTray):
     def __init__(self, parent):
         KSystemTray.__init__(self, parent)
         self.parent = parent
+        self.iface = PisiIface.Iface()
         self.icon = self.loadIcon("package-manager")
         self.overlayIcon = self.icon.convertToImage()
         self.setPixmap(self.icon)
@@ -56,7 +57,7 @@ class Tray(KSystemTray):
     def showPopup(self):
         from sets import Set as set 
 
-        upgrades = PisiIface.getUpdates()
+        upgrades = self.iface.getUpdates()
         newUpgrades = set(upgrades) - set(self.lastUpgrades)
         self.lastUpgrades = upgrades
         if not len(upgrades) or not newUpgrades:
@@ -104,7 +105,7 @@ class Tray(KSystemTray):
 
     # stolen from Akregator
     def updateTrayIcon(self):
-        nofUpgrades = len(PisiIface.get_upgradable_packages())
+        nofUpgrades = len(self.iface.getUpdates())
         if not nofUpgrades:
             self.setPixmap(self.icon)
             return
