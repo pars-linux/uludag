@@ -639,7 +639,10 @@ class UserStack(QVBox):
         self.editdict = None
         self.guide.op_start(i18n("Getting user information..."))
 
-        def userInfo(nick, name, gid, homedir, shell, groups):
+        def userInfo(package, exception, args):
+            if exception:
+                return
+            nick, name, gid, homedir, shell, groups = args
             dict = {}
             self.u_id.setText(str(uid))
             dict["uid"] = uid
@@ -658,9 +661,7 @@ class UserStack(QVBox):
             if "wheel" in self.u_groups.text():
                 self.checkBoxAdmin.setChecked(True)
 
-        ch = self.mainwidget.callMethod("userInfo", "tr.org.pardus.comar.user.manager.get")
-        ch.registerDone(userInfo)
-        ch.call(uid)
+        self.mainwidget.link.User.Manager["baselayout"].userInfo(uid, async=userInfo)
 
 class PolicyGroupTab(KTabWidget):
     def __init__(self, parent, stack, mainwidget, uid, edit):
