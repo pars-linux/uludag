@@ -154,13 +154,6 @@
 10029712 fglrx
 10029713 fglrx
 10029714 fglrx
-10920550 nvidia71
-10921092 nvidia71
-10de0020 nvidia71
-10de0028 nvidia71
-10de0029 nvidia71
-10de002c nvidia71
-10de002d nvidia71
 10de0040 nvidia-current
 10de0041 nvidia-current
 10de0042 nvidia-current
@@ -179,7 +172,6 @@
 10de0098 nvidia-current
 10de0099 nvidia-current
 10de009d nvidia-current
-10de00a0 nvidia71
 10de00c0 nvidia-current
 10de00c1 nvidia-current
 10de00c2 nvidia-current
@@ -203,9 +195,6 @@
 10de00fc nvidia173
 10de00fd nvidia173
 10de00fe nvidia173
-10de0100 nvidia71
-10de0101 nvidia71
-10de0103 nvidia71
 10de0110 nvidia96
 10de0111 nvidia96
 10de0112 nvidia96
@@ -225,10 +214,6 @@
 10de014d nvidia-current
 10de014e nvidia-current
 10de014f nvidia-current
-10de0150 nvidia71
-10de0151 nvidia71
-10de0152 nvidia71
-10de0153 nvidia71
 10de0160 nvidia-current
 10de0161 nvidia-current
 10de0162 nvidia-current
@@ -524,12 +509,3 @@
 10de0a74 nvidia-current
 10de0ca8 nvidia-current
 10de0ca9 nvidia-current
-12d20008 nvidia71
-12d20009 nvidia71
-12d20018 nvidia71
-12d20019 nvidia71
-12d20020 nvidia71
-12d20028 nvidia71
-12d20029 nvidia71
-12d2002c nvidia71
-12d200a0 nvidia71
