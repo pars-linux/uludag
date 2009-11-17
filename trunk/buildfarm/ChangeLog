@@ -1,3 +1,10 @@
+2009-11-17  Ozan Çağlayan <ozan_at_pardus.org.tr>
+	* (data/buildfarm.conf): Add sandboxBlacklist option,
+	* (buildfarm/pisiinterface.py): Set ignore_sandbox for blacklisted
+	packages,
+	* (buildfarm/config.py): Handle booleans and comma separated lists in
+	config files,
+
 2009-11-10  Ozan Çağlayan <ozan_at_pardus.org.tr>
 	* (setup.py): Port to distutils,
 	* scripts/: Move standalone scripts under scripts/,

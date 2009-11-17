@@ -154,6 +154,10 @@ class PisiApi:
 
         logger.info("BUILD called for %s" % pspec)
 
+        if config.sandboxblacklist and pspec in config.sandboxblacklist:
+            logger.info("Disabling sandbox for %s" % pspec)
+            pisi.api.ctx.set_option("ignore_sandbox", True)
+
         __newBinaryPackages, __oldBinaryPackages = pisi.api.build(pspec)
 
         logger.info("Created package(s): %s" % (__newBinaryPackages))
