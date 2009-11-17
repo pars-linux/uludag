@@ -35,6 +35,7 @@ kdedistutils.setup(
                         'src/BasketDialog.py',
                         'src/Settings.py',
                         'src/Icons.py',
+                        'src/Commander.py',
                         'src/LocaleData.py',
                         'src/PmDcop.py',
                         'src/PmLogging.py',

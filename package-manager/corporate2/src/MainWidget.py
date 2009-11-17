@@ -27,6 +27,7 @@ import BasketDialog
 from Icons import *
 import Preferences
 import Tray
+import Commander
 import Settings
 import LocaleData
 import HelpDialog
@@ -48,6 +49,7 @@ class MainApplicationWidget(QWidget):
         QWidget.__init__(self, parent)
         self.parent = parent
         self.iface = PisiIface.Iface()
+        self.command = Commander.Commander(self)
 
         self.progressDialog = Progress.Progress(self)
 

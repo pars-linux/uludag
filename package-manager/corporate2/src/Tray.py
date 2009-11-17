@@ -37,7 +37,7 @@ class Tray(KSystemTray):
         self.popupMenu = KPopupMenu(self.contextMenu())
         self.contextMenu().insertItem(i18n("Update"), self.popupMenu)
 
-        for repo in self.parent.mainwidget.command.getRepoList():
+        for repo, url in self.parent.mainwidget.command.getRepoList():
             self.popupMenu.insertItem("%s" % repo)
         self.popupMenu.insertSeparator()
         self.id = self.popupMenu.insertItem(i18n("All"))
