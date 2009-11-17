@@ -193,9 +193,26 @@ class Iface(Singleton):
 
     def getPackage(self, name):
         if self.source == self.REPO:
-            return self.pdb.get_package(name)
+            try:
+                pkg = self.pdb.get_package(name)
+            except Exception, e: # Repo Item not Found
+                # Handle replaced and obsolete packages
+                if self.replaces.has_key(package):
+                    pkg = self.pdb.get_package(self.replaces[package])
+                else:
+                    raise e
+
+            pkg.size = pkg.packageSize
         else:
-            return self.idb.get_package(name)
+            pkg = self.idb.get_package(name)
+            pkg.size = pkg.installedSize
+
+        try:
+            pkg.repo = get_package_repository(package)
+        except Exception, e:
+            pkg.repo = "N/A"
+
+        return pkg
 
     def getDepends(self, packages):
         base = pisi.api.get_base_upgrade_order(packages)
