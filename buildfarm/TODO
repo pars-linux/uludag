@@ -11,6 +11,8 @@ Code refactoring
 Features
 --------
 
++ Support for sandbox blacklist (Done)
+
 - Fork off a dependency checker after each run and send a report to the according
 mailing lists and maintainers about the missing dependencies of packages
 
