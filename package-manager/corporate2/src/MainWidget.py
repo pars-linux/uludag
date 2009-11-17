@@ -47,6 +47,7 @@ class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
         self.parent = parent
+        self.iface = PisiIface.Iface()
 
         self.progressDialog = Progress.Progress(self)
 
@@ -168,7 +169,7 @@ class MainApplicationWidget(QWidget):
         Globals.processEvents()
 
     def groupsReady(self):
-        if not PisiIface.getGroups(): # Repo metadata empty
+        if not self.iface.getGroups(): # Repo metadata empty
             return False
 
         return True
@@ -193,7 +194,7 @@ class MainApplicationWidget(QWidget):
 
         # set mouse to waiting icon
         Globals.setWaitCursor()
-        PisiIface.setSource(PisiIface.REPO)
+        self.iface.setSource(self.iface.REPO)
 
         try:
             # uncheck buttons, clear search line, empty cache
@@ -205,7 +206,7 @@ class MainApplicationWidget(QWidget):
             self.processEvents()
 
             try:
-                packages = PisiIface.getPackageList()
+                packages = self.iface.getPackageList()
             except PisiIface.RepoError:
                 Globals.setNormalCursor()
                 self.repoNotReady()
@@ -232,7 +233,7 @@ class MainApplicationWidget(QWidget):
     # Executed when 'Show Installed Packages' is clicked
     def removeState(self, reset=True):
         Globals.setWaitCursor()
-        PisiIface.setSource(PisiIface.SYSTEM)
+        self.iface.setSource(self.iface.SYSTEM)
 
         try:
             if reset:
@@ -241,7 +242,7 @@ class MainApplicationWidget(QWidget):
             self.processEvents()
 
             try:
-                packages = PisiIface.getPackageList()
+                packages = self.iface.getPackageList()
             except PisiIface.RepoError:
                 Globals.setNormalCursor()
                 self.repoNotReady()
@@ -268,11 +269,11 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.hideStatus(True)
         self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
         self.progressDialog.show()
-        PisiIface.updateRepositores()
+        self.iface.updateRepositores()
 
     def upgradeState(self):
         Globals.setWaitCursor()
-        PisiIface.setSource(PisiIface.REPO)
+        self.iface.setSource(self.iface.REPO)
 
         try:
             # TODO:
@@ -290,7 +291,7 @@ class MainApplicationWidget(QWidget):
             ##
 
             try:
-                upgradables = PisiIface.getUpdates()
+                upgradables = self.iface.getUpdates()
             except PisiIface.RepoError:
                 Globals.setNormalCursor()
                 self.repoNotReady()
@@ -332,7 +333,7 @@ class MainApplicationWidget(QWidget):
         Globals.setWaitCursor()
         try:
             # fetch packages including metadata from cache
-            packagesWithMeta = [PisiIface.getPackage(package) for package in self.groupDict[item].packages]
+            packagesWithMeta = [self.iface.getPackage(package) for package in self.groupDict[item].packages]
             if self.state == remove_state:
                 self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
             else:
@@ -396,7 +397,7 @@ class MainApplicationWidget(QWidget):
         basketDialog.deleteLater()
 
     def conflictCheckPass(self):
-        (C, D, pkg_conflicts) = PisiIface.getConflicts(self.basket.packages)
+        (C, D, pkg_conflicts) = self.iface.getConflicts(self.basket.packages)
 
         conflicts_within = list(D)
         if conflicts_within:
@@ -422,9 +423,9 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.hideStatus(True)
         self.progressDialog.updateProgressBar(100)
 
-        if not PisiIface.inProgress():
+        if not self.iface.inProgress():
             self.progressDialog.totalPackages = 1
-            PisiIface.installPackage([package])
+            self.iface.installPackage([package])
             self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
             self.progressDialog.show()
             # KWin forces to raise it even though the parent is hidden, QWidget does not.
@@ -475,7 +476,7 @@ class MainApplicationWidget(QWidget):
 
         # remove action
         if self.state == remove_state:
-            PisiIface.removePackages(self.basket.packages)
+            self.iface.removePackages(self.basket.packages)
             self.progressDialog.setCurrentOperation(i18n("<b>Removing Package(s)</b>"))
             self.progressDialog.hideStatus()
 
@@ -486,7 +487,7 @@ class MainApplicationWidget(QWidget):
 
             self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
             self.progressDialog.showStatus()
-            PisiIface.installPackages(self.basket.packages)
+            self.iface.installPackages(self.basket.packages)
 
         # upgrade action
         elif self.state == upgrade_state:
@@ -495,7 +496,7 @@ class MainApplicationWidget(QWidget):
 
             self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
             self.progressDialog.showStatus()
-            PisiIface.upgradePackages(self.basket.packages)
+            self.iface.upgradePackages(self.basket.packages)
 
         if not self.parent.isHidden():
             self.progressDialog.show()
@@ -527,13 +528,13 @@ class MainApplicationWidget(QWidget):
     def createGroupList(self, packages, allGroup=False):
         # filter for selecting only apps with gui
         def appGuiFilter(pkg_name):
-            return "app:gui" in PisiIface.getPackage(pkg_name).isA
+            return "app:gui" in self.iface.getPackage(pkg_name).isA
 
         self.groupsList.clear()
         self.groupDict.clear()
 
         # eliminate groups that are not visible to users. This is achieved by a tag in group.xmls
-        groupNames = PisiIface.getGroups()
+        groupNames = self.iface.getGroups()
 
         showOnlyGuiApp = self.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp")
 
@@ -542,12 +543,12 @@ class MainApplicationWidget(QWidget):
         for groupName in groupNames:
             # just check the group existance
             try:
-                group = PisiIface.getGroup(groupName)
+                group = self.iface.getGroup(groupName)
             except Exception:
                 continue
 
             # get all packages of the group
-            compPkgs = PisiIface.getGroupPackages(groupName)
+            compPkgs = self.iface.getGroupPackages(groupName)
 
             # find which packages belong to this group
             group_packages = list(set(packages).intersection(compPkgs))
@@ -599,7 +600,7 @@ class MainApplicationWidget(QWidget):
         item = KListViewItem(self.groupsList)
         item.setText(0,i18n("Search Results"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
-        packagesWithMeta = [PisiIface.getPackage(package) for package in packages]
+        packagesWithMeta = [self.iface.getPackage(package) for package in packages]
         if self.state == remove_state:
             self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
         else:
@@ -728,11 +729,11 @@ class MainApplicationWidget(QWidget):
         terms = query.split()
         if query:
             if self.state == remove_state:
-                result = PisiIface.search_in_installed(terms)
+                result = self.iface.search_in_installed(terms)
             elif self.state == install_state:
-                result = PisiIface.search_in_repos(terms)
+                result = self.iface.search_in_repos(terms)
             elif self.state == upgrade_state:
-                result = PisiIface.search_in_upgradables(terms)
+                result = self.iface.search_in_upgradables(terms)
             self.createSearchResults(result)
         else:
             self.refreshState(reset=False)
@@ -744,7 +745,7 @@ class MainApplicationWidget(QWidget):
 
     def show(self):
         QWidget.show(self)
-        if PisiIface.inProgress():
+        if self.iface.inProgress():
             self.progressDialog.show()
 
     def trayUpdateCheck(self, repo = None, forced = False):
@@ -758,9 +759,9 @@ class MainApplicationWidget(QWidget):
 
 
         if repo:
-            PisiIface.updateRepository(repo)
+            self.iface.updateRepository(repo)
         else:
-            PisiIface.updateRepositories()
+            self.iface.updateRepositories()
 
         # update repo command is given by the user
         if forced and not self.parent.isHidden():
