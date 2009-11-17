@@ -34,6 +34,9 @@ class Config(object):
 
         return value
 
+# Initialize configuration object
+configuration = Config()
+
 
 if __name__ == "__main__":
     # Test code

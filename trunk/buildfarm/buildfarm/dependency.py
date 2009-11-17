@@ -15,15 +15,14 @@ import sys
 
 import pisi.specfile
 
-from buildfarm logger,config
-
-config = config.Config()
+from buildfarm import logger
+from buildfarm.config import configuration as conf
 
 class DependencyResolver:
     def __init__(self, pspeclist):
 
         self.oldwd = os.getcwd()
-        os.chdir(config.localpspecrepo)
+        os.chdir(conf.localpspecrepo)
 
         # work queue and wait queue may contain same pspecs. 
         # be sure that every pspec is unique in the pspeclist.
