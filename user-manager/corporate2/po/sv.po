@@ -1,0 +1,307 @@
+# translation of sv.po to Svenska
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: sv\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-27 02:11+0300\n"
+"PO-Revision-Date: 2008-09-07 15:06+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"Language-Team: Svenska <sv@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: groupedit.py:22 useredit.py:36
+msgid "ID:"
+msgstr "ID:"
+
+#: groupedit.py:30 useredit.py:48
+msgid "Select manually"
+msgstr "Ange manuellt"
+
+#: groupedit.py:61
+msgid "Group name:"
+msgstr "Gruppnamn:"
+
+#: groupedit.py:97
+msgid "Enter a group ID or use auto selection"
+msgstr "Du måste ange ett ID eller låta systemet välja ett."
+
+#: groupedit.py:100
+msgid "Enter a group name"
+msgstr "Ange ett gruppnamn"
+
+#: groupedit.py:129
+msgid "Enter Information For New Group"
+msgstr "Ange uppgifter för den nya gruppen"
+
+#: groupedit.py:168
+msgid "Adding group..."
+msgstr "Lägger till grupp..."
+
+#: browser.py:92
+msgid "Show system user and groups"
+msgstr "Visa systemkonton"
+
+#: browser.py:102 browser.py:112
+msgid "ID"
+msgstr "ID"
+
+#: browser.py:104
+msgid "User name"
+msgstr "Användarnamn"
+
+#: browser.py:105
+msgid "Full name"
+msgstr "Verkligt namn"
+
+#: browser.py:114
+msgid "Group name"
+msgstr "Gruppnamn"
+
+#: browser.py:119
+msgid "Users"
+msgstr "Användare"
+
+#: browser.py:120 useredit.py:682
+msgid "Groups"
+msgstr "Grupper"
+
+#: browser.py:135
+msgid "User Manager Help"
+msgstr "Handbok Användarhanteraren"
+
+#: browser.py:142
+#, python-format
+msgid ""
+"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
+"s<br>ID: %d"
+msgstr ""
+"<big><b>Vill du ta bort den här användaren?</b></big><br><br>Namn: %s<br>Användarnamn: %"
+"s<br>ID: %d"
+
+#: browser.py:148
+msgid "Delete User"
+msgstr "Ta bort användare"
+
+#: browser.py:149
+msgid "Delete user and files"
+msgstr "Ta bort användare och filer"
+
+#: browser.py:150
+msgid "Delete user"
+msgstr "Ta bort användare"
+
+#: browser.py:167
+#, python-format
+msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr "<big><b>Vill du ta bort den här gruppen?</b></big><br><br>Gruppnamn: %s<br>ID: %d"
+
+#: browser.py:173 browser.py:174
+msgid "Delete Group"
+msgstr "Ta bort grupp"
+
+#: um_mainview.py:43
+msgid "Unable to connect to DBus."
+msgstr "Kan inte ansluta till D-Bus."
+
+#: um_mainview.py:43 um_mainview.py:63
+msgid "DBus Error"
+msgstr "D-Bus-fel"
+
+#: um_mainview.py:59 useredit.py:857 useredit.py:913
+msgid "You are not authorized for this operation."
+msgstr "Du saknar behörighet för denna åtgärd."
+
+#: um_mainview.py:67
+msgid "COMAR Error"
+msgstr "COMAR-fel"
+
+#: useredit.py:22
+msgid "User/group operations"
+msgstr "Användar-/gruppåtgärder"
+
+#: useredit.py:23
+msgid "Network settings"
+msgstr "Nätverksinställningar"
+
+#: useredit.py:24
+msgid "Package operations"
+msgstr "Paketåtgärder"
+
+#: useredit.py:25
+msgid "Service operations"
+msgstr "Tjänsteåtgärder"
+
+#: useredit.py:26
+msgid "Date/time operations"
+msgstr "Tid-/datumåtgärder"
+
+#: useredit.py:27
+msgid "Kernel module operations"
+msgstr "Kärnmodulsåtgärder"
+
+#: useredit.py:28
+msgid "Bootloader settings"
+msgstr "Starthanterarens inställningar"
+
+#: useredit.py:29
+msgid "Screen settings"
+msgstr "Skärminställningar"
+
+#: useredit.py:83
+msgid "User name:"
+msgstr "Användarnamn:"
+
+#: useredit.py:114
+msgid "Full name:"
+msgstr "Verkligt namn:"
+
+#: useredit.py:137
+msgid "Home:"
+msgstr "Hemkatalog"
+
+#: useredit.py:169
+msgid "Select user's home directory"
+msgstr "Välj hemkatalog för användare"
+
+#: useredit.py:178
+msgid "Password:"
+msgstr "Lösenord:"
+
+#: useredit.py:184
+msgid "Confirm password:"
+msgstr "Bekräfta lösenord:"
+
+#: useredit.py:212
+msgid "Shell:"
+msgstr "Skal:"
+
+#: useredit.py:234
+msgid "Please specify an existing shell command"
+msgstr "Välj ett befintligt skal"
+
+#: useredit.py:236
+msgid "Specified shell command is not executable"
+msgstr "Angivet skal är inte körbart"
+
+#: useredit.py:263
+msgid "Group"
+msgstr "Sekundära grupper"
+
+#: useredit.py:270
+msgid "Main group:"
+msgstr "Primär grupp:"
+
+#: useredit.py:363
+msgid "Start with typing this user's full name."
+msgstr "Börja med att ange den här användarens verkliga namn."
+
+#: useredit.py:366
+msgid "You should enter a password for this user."
+msgstr "Ange ett lösenord för den här användaren."
+
+#: useredit.py:371
+msgid "Password must be longer."
+msgstr "Lösenordet är för kort!"
+
+#: useredit.py:375
+msgid "Don't use your full name or user name as a password."
+msgstr "Använd inte ditt verkliga namn eller användarnamn som lösenord."
+
+#: useredit.py:378
+msgid "Passwords don't match."
+msgstr "Lösenorden stämmer inte."
+
+#: useredit.py:381
+msgid "You must enter a user ID or use the auto selection."
+msgstr "Du måste ange ett ID eller låta systemet välja ett."
+
+#: useredit.py:386
+msgid "You must enter a user name."
+msgstr "Du måste ange ett användarnamn."
+
+#: useredit.py:389
+msgid "This user name is used by another user."
+msgstr "Det här användarnamnet är upptaget."
+
+#: useredit.py:393
+msgid "User name must not start with a number."
+msgstr "Användarnamn får inte börja med en siffra."
+
+#: useredit.py:396
+msgid "You should select at least one group this user belongs to."
+msgstr "Du bör ange minst en grupp som den här användaren tillhör."
+
+#: useredit.py:429
+msgid "Edit User's Information"
+msgstr "Redigera användaruppgifter"
+
+#: useredit.py:431
+msgid "Enter Information For New User"
+msgstr "Ange uppgifter för den nya användaren"
+
+#: useredit.py:467
+msgid "Give administrator privileges to this user"
+msgstr "Ge användaren administratörsrättighet"
+
+#: useredit.py:543
+msgid ""
+"You are removing yourself from the 'wheel' system group, you might not use "
+"your administrator permissions after that."
+msgstr "Du tar bort dig själv ur systemets 'wheel'-grupp, du kan inte använda dina administratörsprivilegier efter det."
+
+#: useredit.py:544
+msgid "Important Group Change"
+msgstr "Viktig gruppändring"
+
+#: useredit.py:551
+msgid "Changing user information..."
+msgstr "Ändrar användarens uppgifter..."
+
+#: useredit.py:578
+msgid "Adding user..."
+msgstr "Lägger till användare..."
+
+#: useredit.py:641
+msgid "Getting user information..."
+msgstr "Hämtar information om användaren..."
+
+#: useredit.py:675
+msgid "Authorizations"
+msgstr "Behörighet"
+
+#: useredit.py:693
+msgid "Actions"
+msgstr "Åtgärd"
+
+#: useredit.py:704
+msgid "Authorize"
+msgstr "Tillåt"
+
+#: useredit.py:708
+msgid "Block"
+msgstr "Neka"
+
+#: useredit.py:719
+msgid "Do not ask password"
+msgstr "Fråga inte efter lösenord"
+
+#: user-manager.py:33
+msgid "User Management"
+msgstr "Användarhantering"
+
+#: user-manager.py:83
+msgid "User manager module is already started!"
+msgstr "Användarhanteringsmodulen är redan startad!"
+
+#: user-manager.py:88
+msgid "User Manager"
+msgstr "Användarhanteraren"
+
