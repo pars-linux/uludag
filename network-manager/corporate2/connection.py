@@ -239,14 +239,14 @@ class Settings(QWidget):
         grid.addWidget(self.scanBut, 1, 3)
 
         if "remote" in link.modes:
-            if "scan" in link.modes:
+            if "remote_scan" in link.modes:
                 self.scanpop = Scanner(self)
                 comlink.remote_hook.append(self.scanpop.slotRemotes)
                 self.scanBut.setPopup(self.scanpop)
             else:
                 self.scanBut.hide()
 
-            if "devicemode" in link.modes:
+            if "device_mode" in link.modes:
                 for dev_mode in link.device_modes:
                     self.selected_device_mode.insertItem(dev_mode)
             else:
@@ -421,19 +421,19 @@ class Settings(QWidget):
             if sec == 0:
                 self.setAuthVisible(False)
 
-            elif self.link.auth_modes[sec-1].type == "pass":
+            elif len(self.link.auth_modes[sec-1].paramters) == 1:
                 self.setAuthVisible(False)
                 self.auth_passphrase_label.show()
                 self.auth_passphrase_line.show()
 
-            elif self.link.auth_modes[sec-1].type == "login":
+            elif len(self.link.auth_modes[sec-1].paramters) == 2:
                 self.setAuthVisible(False)
                 self.auth_passphrase_line.show()
                 self.auth_passphrase_label.show()
                 self.auth_user_line.show()
                 self.auth_user_label.show()
 
-            elif self.link.auth_modes[sec-1].type == "certificate":
+            elif len(self.link.auth_modes[sec-1].paramters) > 2:
                 self.setAuthVisible(True)
                 self.updateStack(None, auth)
 
@@ -599,20 +599,23 @@ class Settings(QWidget):
                         self.dns_text.setText(conn.dns_server)
             if "auth" in self.link.modes:
                 self.security_mode_combo.setCurrentItem(0)
-                if conn.auth_mode != "none":
+                auth_mode, auth_parameters = comlink.getAuth(self.link.script, conn.name)
+                if auth_mode != "none":
                     i = 1
                     for mode in self.link.auth_modes:
-                        if mode.id == conn.auth_mode:
-                            if mode.type == "pass":
-                                self.auth_passphrase_line.setText(unicode(conn.auth_pass))
+                        if mode.id == auth_mode:
+                            if len(mode.paramters) == 1:
+                                self.auth_passphrase_line.setText(unicode(auth_parameters.get("password", "")))
                                 self.security_mode_combo.setCurrentItem(i)
                                 self.slotSecurityToggle(i)
-                            elif mode.type == "login":
-                                self.auth_user_line.setText(unicode(conn.auth_user))
-                                self.auth_passphrase_line.setText(unicode(conn.auth_pass))
+                            if len(mode.paramters) == 2:
+                                self.auth_user_line.setText(unicode(auth_parameters.get("username", "")))
+                                self.auth_passphrase_line.setText(unicode(auth_parameters.get("password", "")))
                                 self.security_mode_combo.setCurrentItem(i)
                                 self.slotSecurityToggle(i)
-                            elif mode.type == "certificate":
+                            elif len(mode.paramters) > 2:
+                                pass
+                                """
                                 if mode.id == conn.auth_mode:
                                     self.security_mode_combo.setCurrentItem(i)
                                     self.slotSecurityToggle(i)
@@ -633,6 +636,7 @@ class Settings(QWidget):
                                         self.slotAuthToggle(self.auth_dict.keys().index(j))
                                         if j != "TLS":
                                             self.auth_inner_combo.setCurrentItem(self.auth_dict[j].index(conn.auth_inner))
+                                """
                             break
                         i += 1
         else:
@@ -689,29 +693,25 @@ class Settings(QWidget):
             if "auth" in self.link.modes:
                 i = self.security_mode_combo.currentItem()
                 if i == 0:
-                    #comlink.call(self.link.script, "Net.Link", "setAuthentication", name, "none", "", "", "", "", "", "", "", "", "")
-                    pas
+                    comlink.link.Network.Link[self.link.script].setAuthMethod(name, "none")
                 else:
                     mode = self.link.auth_modes[i-1]
-                    if mode.type == "pass":
+                    comlink.link.Network.Link[self.link.script].setAuthMethod(name, mode.id)
+                    if len(mode.paramters)  == 1:
                         pw = unicode(self.auth_passphrase_line.text())
-                        #comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, "", pw, "", "", "", "", "", "", "")
-                    elif mode.type == "login":
+                        comlink.link.Network.Link[self.link.script].setAuthParameters(name, "password", pw)
+                    elif len(mode.paramters)  == 2:
                         u = unicode(self.auth_user_line.text())
                         pw = unicode(self.auth_passphrase_line.text())
-                        #comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
-                    elif mode.type == "certificate":
-                        if mode.id == "802.1x":
-                            u = unicode(self.auth_user_line.text())
-                            pw = unicode(self.auth_passphrase_line.text())
-                            an = unicode(self.auth_anon_id_line.text())
-                            au = unicode(self.auth_mode_combo.currentText())
-                            p2 = unicode(self.auth_inner_combo.currentText())
-                            #comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, au, an, p2, str(self.auth_client_cert), str(self.auth_ca_cert), str(self.auth_private_key), str(self.auth_private_key_pass_line.text()))
-                        else:
-                            u = unicode(self.auth_user_line.text())
-                            pw = unicode(self.auth_passphrase_line.text())
-                            #comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
+                        comlink.link.Network.Link[self.link.script].setAuthParameters(name, "username", u)
+                        comlink.link.Network.Link[self.link.script].setAuthParameters(name, "password", pw)
+                    elif len(mode.paramters) > 2:
+                        u = unicode(self.auth_user_line.text())
+                        pw = unicode(self.auth_passphrase_line.text())
+                        an = unicode(self.auth_anon_id_line.text())
+                        au = unicode(self.auth_mode_combo.currentText())
+                        p2 = unicode(self.auth_inner_combo.currentText())
+                        pass
             # close dialog
             self.parent().setEnabled(True)
             self.cleanup()
