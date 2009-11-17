@@ -26,16 +26,6 @@ drivers = {
     "newport":      "SGI Indy/Indigo2 Newport card",
     "nsc":          "National Semiconductors Geode Processor",
     "nv":           "nVidia Riva 128, RIVA TNT, GeForce, nForce, and QUADRO cards",
-    "nvidia/nvidia-drivers-old":
-                    "nVIDIA legacy drivers for old nVIDIA cards like TNT2",
-    "nvidia/nvidia-drivers":
-                    "nvidia legacy drivers giving optimized 2d/3d performance",
-    "nvidia/nvidia-drivers173":
-                    "nVIDIA drivers for GeForce FX cards",
-    "nvidia/nvidia-drivers177":
-                    "nVIDIA drivers for GeForce 6xxx and newer NVIDIA cards",
-    "nvidia/nvidia-drivers180":
-                    "nVIDIA drivers for GeForce 6xxx and newer NVIDIA cards",
     "openchrome":   "VIA/S3G UniChrome, UniChrome Pro and Chrome9 graphics chipsets",
     "r128":         "ATI Rage128 cards, including Rage Fury, XPERT 128, and XPERT 99",
     "radeon":       "ATI Radeon cards, including Radeon Mobility and FireGL",
@@ -69,7 +59,6 @@ drivers = {
 
 driverPackages = {
         "fglrx":            "xorg-video-fglrx",
-        "nvidia71":         "xorg-video-nvidia71",
         "nvidia96":         "xorg-video-nvidia96",
         "nvidia173":        "xorg-video-nvidia173",
         "nvidia-current":   "xorg-video-nvidia-current"
