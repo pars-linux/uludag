@@ -22,6 +22,7 @@ import kdedesigner
 
 # Local imports
 import PmDcop
+import PmLogging
 import Globals
 from MainWidget import *
 import Settings
@@ -29,6 +30,9 @@ import Settings
 # Workaround the fact that PyKDE provides no I18N_NOOP as KDE
 def I18N_NOOP(str):
     return str
+
+def handleException(exception, value, tb):
+    logger.error("".join(traceback.format_exception(exception, value, tb)))
 
 description = I18N_NOOP("GUI for PiSi package manager")
 version = "1.4.0"
@@ -193,6 +197,8 @@ def main():
             myapp.show()
 
     kapp.setMainWidget(myapp)
+
+    sys.excepthook = handleException
 
     LocaleData.setSystemLocale()
 
