@@ -17,6 +17,7 @@ import PisiIface
 
 class Basket:
     def __init__(self):
+        self.iface = PisiIface.Iface()
         self.state = None
         self.packagesSize = 0
         self.extraPackagesSize = 0
@@ -51,9 +52,9 @@ class Basket:
             return
         
         if self.state == remove_state:
-            self.extraPackages = PisiIface.getRequires(pkgs)
+            self.extraPackages = self.iface.getRequires(pkgs)
         else:
-            self.extraPackages = PisiIface.getDepends(pkgs)
+            self.extraPackages = self.iface.getDepends(pkgs)
 
         for package in pkgs:
             self.packagesSize += self.getPackageSize(self.getPackage(package))
@@ -71,4 +72,4 @@ class Basket:
             return package.packageSize
 
     def getPackage(self, package):
-        return PisiIface.getPackage(package)
+        return self.iface.getPackage(package)

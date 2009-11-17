@@ -24,6 +24,7 @@ class Progress(ProgressDialog):
     def __init__(self, parent=None):
         ProgressDialog.__init__(self)
         self.parent = parent
+        self.iface = PisiIface.Iface()
         animatedPisi = QMovie(locate("data","package-manager/pisianime.gif"))
         self.animeLabel.setMovie(animatedPisi)
         self.forcedClose = False
@@ -149,7 +150,7 @@ class Progress(ProgressDialog):
         self.setOperationDescription(i18n('%1 %2').arg(package).arg(operation))
 
     def updateDownloadingInfo(self, operation, file):
-        self.packageName = PisiIface.parsePackageName(file)[0]
+        self.packageName = self.iface.parsePackageName(file)[0]
         self.setOperationDescription(i18n('%1 %2').arg(self.packageName).arg(operation))
         self.updateCompletedInfo()
         self.showOperationDescription()
