@@ -576,7 +576,7 @@ class MainApplicationWidget(QWidget):
                 item.setPixmap(0, KGlobal.iconLoader().loadIcon(icon, KIcon.Desktop,KIcon.SizeMedium))
 
                 # create group object that has a list of its own packages and a summary
-                self.groupDict[item] = Group(name, group_packages, group.summary)
+                self.groupDict[item] = Group(name, group_packages, "")
 
         # Rest of the packages
         rest_packages = list(set(packages) - set(groupPackages))
