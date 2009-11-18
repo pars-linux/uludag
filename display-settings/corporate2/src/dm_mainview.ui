@@ -30,72 +30,62 @@
                 <attribute name="title">
                     <string>Screens</string>
                 </attribute>
-                <grid>
+                <vbox>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QPushButton" row="1" column="1">
+                    <widget class="QLayoutWidget">
                         <property name="name">
-                            <cstring>buttonIdentifyDisplays</cstring>
+                            <cstring>layout4</cstring>
                         </property>
-                        <property name="text">
-                            <string>Identify Displays</string>
-                        </property>
-                    </widget>
-                    <widget class="QGroupBox" row="2" column="0">
-                        <property name="name">
-                            <cstring>groupBoxScreens</cstring>
-                        </property>
-                        <property name="sizePolicy">
-                            <sizepolicy>
-                                <hsizetype>5</hsizetype>
-                                <vsizetype>7</vsizetype>
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="title">
-                            <string>Primary Screen</string>
-                        </property>
-                        <vbox>
+                        <hbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QLabel">
+                            <widget class="KPushButton">
                                 <property name="name">
-                                    <cstring>textLabelOutput</cstring>
+                                    <cstring>outputsButton</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>Output</string>
+                                    <string>Outputs</string>
                                 </property>
                             </widget>
-                            <widget class="QComboBox">
+                            <widget class="QCheckBox">
                                 <property name="name">
-                                    <cstring>comboBoxOutput</cstring>
-                                </property>
-                                <property name="duplicatesEnabled">
-                                    <bool>false</bool>
-                                </property>
-                            </widget>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>textLabelResolution</cstring>
+                                    <cstring>extendDisplays</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>Resolution</string>
+                                    <string>Extend desktop to all displays</string>
                                 </property>
                             </widget>
-                            <widget class="QComboBox">
+                            <spacer>
                                 <property name="name">
-                                    <cstring>comboBoxResolution</cstring>
+                                    <cstring>spacer8_2</cstring>
                                 </property>
-                                <property name="duplicatesEnabled">
-                                    <bool>false</bool>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>41</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>detectButton</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Detect Outputs</string>
                                 </property>
                             </widget>
-                        </vbox>
+                        </hbox>
                     </widget>
-                    <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="2">
+                    <widget class="QButtonGroup">
                         <property name="name">
                             <cstring>screenGroup</cstring>
                         </property>
@@ -266,109 +256,126 @@
                             </spacer>
                         </vbox>
                     </widget>
-                    <widget class="QGroupBox" row="2" column="1">
+                    <widget class="QGroupBox">
                         <property name="name">
-                            <cstring>groupBoxOptions</cstring>
+                            <cstring>propertiesBox</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
                         </property>
                         <property name="title">
-                            <string>Options</string>
+                            <string>Output Properties</string>
                         </property>
-                        <vbox>
+                        <hbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QCheckBox">
+                            <widget class="QLayoutWidget">
                                 <property name="name">
-                                    <cstring>checkBoxTrueColor</cstring>
+                                    <cstring>layout5</cstring>
                                 </property>
-                                <property name="text">
-                                    <string>True Color</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox">
-                                <property name="name">
-                                    <cstring>checkBoxDualMode</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Dual Screen</string>
-                                </property>
-                            </widget>
-                            <widget class="QButtonGroup">
-                                <property name="name">
-                                    <cstring>buttonGroupDualModes</cstring>
-                                </property>
-                                <property name="lineWidth">
-                                    <number>0</number>
-                                </property>
-                                <property name="title">
-                                    <string></string>
-                                </property>
-                                <hbox>
+                                <vbox>
                                     <property name="name">
                                         <cstring>unnamed</cstring>
                                     </property>
-                                    <property name="margin">
-                                        <number>0</number>
-                                    </property>
-                                    <spacer>
+                                    <widget class="QLabel">
                                         <property name="name">
-                                            <cstring>spacer6</cstring>
+                                            <cstring>textLabelOutput</cstring>
                                         </property>
-                                        <property name="orientation">
-                                            <enum>Horizontal</enum>
+                                        <property name="text">
+                                            <string>Size:</string>
                                         </property>
-                                        <property name="sizeType">
-                                            <enum>Fixed</enum>
-                                        </property>
-                                        <property name="sizeHint">
-                                            <size>
-                                                <width>21</width>
-                                                <height>21</height>
-                                            </size>
-                                        </property>
-                                    </spacer>
-                                    <widget class="QLayoutWidget">
-                                        <property name="name">
-                                            <cstring>layout5</cstring>
-                                        </property>
-                                        <vbox>
-                                            <property name="name">
-                                                <cstring>unnamed</cstring>
-                                            </property>
-                                            <widget class="QRadioButton">
-                                                <property name="name">
-                                                    <cstring>radioBoxCloned</cstring>
-                                                </property>
-                                                <property name="text">
-                                                    <string>Cloned Mode</string>
-                                                </property>
-                                                <property name="checked">
-                                                    <bool>true</bool>
-                                                </property>
-                                            </widget>
-                                            <widget class="QRadioButton">
-                                                <property name="name">
-                                                    <cstring>radioBoxExtended</cstring>
-                                                </property>
-                                                <property name="text">
-                                                    <string>Extended Mode</string>
-                                                </property>
-                                            </widget>
-                                        </vbox>
                                     </widget>
-                                </hbox>
+                                    <widget class="QComboBox">
+                                        <property name="name">
+                                            <cstring>modeList</cstring>
+                                        </property>
+                                        <property name="duplicatesEnabled">
+                                            <bool>false</bool>
+                                        </property>
+                                    </widget>
+                                </vbox>
                             </widget>
-                        </vbox>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout6</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabelResolution</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Refresh Rate:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QComboBox">
+                                        <property name="name">
+                                            <cstring>rateList</cstring>
+                                        </property>
+                                        <property name="duplicatesEnabled">
+                                            <bool>false</bool>
+                                        </property>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout7</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabelOutput_2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Rotation:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QComboBox">
+                                        <item>
+                                            <property name="text">
+                                                <string>No Rotation</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Left (90 degrees)</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Upside-Down (180 degrees)</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Right (270 degrees)</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>rotationList</cstring>
+                                        </property>
+                                        <property name="duplicatesEnabled">
+                                            <bool>false</bool>
+                                        </property>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                        </hbox>
                     </widget>
-                    <widget class="QPushButton" row="1" column="0">
-                        <property name="name">
-                            <cstring>buttonDetectDisplays</cstring>
-                        </property>
-                        <property name="text">
-                            <string>Detect Displays</string>
-                        </property>
-                    </widget>
-                </grid>
+                </vbox>
             </widget>
             <widget class="QWidget">
                 <property name="name">
@@ -406,25 +413,13 @@
                                     <bool>true</bool>
                                 </property>
                             </widget>
-                            <widget class="QLayoutWidget">
+                            <widget class="QLabel">
                                 <property name="name">
-                                    <cstring>layout5</cstring>
+                                    <cstring>textLabel2</cstring>
                                 </property>
-                                <vbox>
-                                    <property name="name">
-                                        <cstring>unnamed</cstring>
-                                    </property>
-                                    <widget class="QLabel">
-                                        <property name="name">
-                                            <cstring>textCardName</cstring>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel">
-                                        <property name="name">
-                                            <cstring>textDriver</cstring>
-                                        </property>
-                                    </widget>
-                                </vbox>
+                                <property name="text">
+                                    <string>Card Info</string>
+                                </property>
                             </widget>
                             <widget class="QPushButton">
                                 <property name="name">
@@ -647,4 +642,7 @@
     </vbox>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kpushbutton.h</includehint>
+</includehints>
 </UI>
