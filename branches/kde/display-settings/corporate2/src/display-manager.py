@@ -30,6 +30,10 @@ import monitordialog
 # Backend
 from backend import Interface
 
+# zorg
+from zorg.hwdata import driverPackages
+from zorg.utils import run
+
 from zorg import hwdata
 from utility import *
 
@@ -227,7 +231,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.iface = Interface()
 
         #self.reset()
-        #self.suggestDriver()
+        self.suggestDriver()
 
     def reset(self):
         import displayconfig
@@ -471,41 +475,50 @@ class MainWidget(dm_mainview.mainWidget):
             writeInfo(self.dconfig.secondaryScr, self.textMonitor2)
 
     def suggestDriver(self):
-        dc = self.dconfig
-        dontShowAgainName = "Driver Suggestion"
-        shouldBeShown, answer = KMessageBox.shouldBeShownYesNo(dontShowAgainName)
-        if not shouldBeShown or not dc._info:
+        config = self.iface.getConfig()
+        dontAskAgainName = "Driver Suggestion"
+        shouldBeShown, answer = KMessageBox.shouldBeShownYesNo(dontAskAgainName)
+        if not shouldBeShown or not config:
             return
 
-        preferredDriver = hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id)[0]
+        preferredDriver = config.preferredDriver(installed=False)
+        if preferredDriver is None or preferredDriver == self.iface.getDriver():
+            return
 
-        if package_sep in preferredDriver:
-            driver, package = preferredDriver.split(package_sep, 1)
-            if package == dc._info.package:
+        isInstalled = preferredDriver == config.preferredDriver()
+
+        if isInstalled:
+            msg = i18n("<qt>To get better performance, you may want to "
+                            "use <b>%1</b> driver provided by hardware vendor. "
+                            "Do you want to use this driver?</p></qt>") \
+                            .arg(preferredDriver)
+            answer = KMessageBox.questionYesNo(self, msg,
+                        QString.null,
+                        KStdGuiItem.yes(),
+                        KStdGuiItem.no(),
+                        dontAskAgainName)
+            if answer == KMessageBox.Yes:
+                self.cardDialog.setDriver(preferredDriver)
+
+        else:
+            package = driverPackages.get(preferredDriver)
+            if package is None:
                 return
+            msg = i18n("<qt>To get better performance, you may want to "
+                            "use <b>%1</b> driver provided by hardware vendor. "
+                            "To use it, you must install <b>%2</b> package and"
+                            " choose <b>%1</b> from video card options.</qt>") \
+                            .arg(preferredDriver, package)
+            startPMButton = KGuiItem(i18n("Start Package Manager"),
+                                            getIconSet("package-manager"))
+            answer = KMessageBox.questionYesNo(self, msg,
+                        QString.null,
+                        startPMButton,
+                        KStdGuiItem.cont(),
+                        dontAskAgainName)
+            if answer == KMessageBox.Yes:
+                run("package-manager", "--show-mainwindow")
 
-            if preferredDriver in hwdata.getAvailableDriverNames():
-                msg = i18n("<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>").arg(driver)
-                answer = KMessageBox.questionYesNo(self, msg,
-                                                    QString.null,
-                                                    KStdGuiItem.yes(),
-                                                    KStdGuiItem.no(),
-                                                    dontShowAgainName)
-
-                if answer == KMessageBox.Yes:
-                    self.dconfig.changeDriver(preferredDriver)
-                    self.getCardInfo()
-            else:
-                msg = i18n("<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%3</b> from video card options.</qt>").arg(driver).arg(package).arg(preferredDriver)
-                buttonStartPM = KGuiItem(i18n("Start Package Manager"), getIconSet("package-manager"))
-                answer = KMessageBox.questionYesNo(self, msg,
-                                                    QString.null,
-                                                    buttonStartPM,
-                                                    KStdGuiItem.cont(),
-                                                    dontShowAgainName)
-
-                if answer == KMessageBox.Yes:
-                    run("package-manager", "--show-mainwindow")
 
     def slotApply(self):
         self.dconfig.true_color = self.checkBoxTrueColor.isChecked()
