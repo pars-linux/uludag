@@ -17,14 +17,14 @@ import smtplib
 
 import pisi.specfile
 
-from buildfarm import config,logger,templates
-config = config.Config()
+from buildfarm import logger, templates
+from buildfarm.config import configuration as conf
 
 try:
     import mailauth
 except ImportError:
     # FIXME: Anddddd problem here
-    if config.sendemail and config.usesmtpauth:
+    if conf.sendemail and conf.usesmtpauth:
         logger.info("*** You have to create a mailauth.py file for defining 'username' and 'password' to use SMTP authentication.")
         sys.exit(1)
 
@@ -41,11 +41,11 @@ def send(message, pspec = "", type = ""):
                        word),
                       message.split(" "))
 
-    if not config.sendemail:
+    if not conf.sendemail:
         logger.info("*** Sending of notification e-mails is turned off.")
         return
 
-    if config.usesmtpauth:
+    if conf.usesmtpauth:
         if globals().has_key('mailauth'):
             if not mailauth.username or not mailauth.password:
                 logger.info("*** You have to define username/password in mailauth.py for sending authenticated e-mails.")
@@ -54,7 +54,7 @@ def send(message, pspec = "", type = ""):
     recipientsName, recipientsEmail = [], []
     if pspec:
         specFile = pisi.specfile.SpecFile()
-        specFile.read(os.path.join(config.localpspecrepo, pspec))
+        specFile.read(os.path.join(conf.localpspecrepo, pspec))
         recipientsName.append(specFile.source.packager.name)
         recipientsEmail.append(specFile.source.packager.email)
 
@@ -63,13 +63,13 @@ def send(message, pspec = "", type = ""):
                  "announce" : templates.announce_message}
 
     packagename = os.path.basename(os.path.dirname(pspec))
-    last_log = "".join(open(config.logfile).readlines()[-20:])
+    last_log = "".join(open(conf.logfile).readlines()[-20:])
     message = templates.get(type) % {'log'          : wrap(last_log),
                                      'recipientName': " ".join(recipientsName),
                                      'mailTo'       : ", ".join(recipientsEmail),
-                                     'ccList'       : ', '.join(config.cclist),
-                                     'mailFrom'     : config.mailfrom,
-                                     'announceAddr' : config.announceaddr,
+                                     'ccList'       : ', '.join(conf.cclist),
+                                     'mailFrom'     : conf.mailfrom,
+                                     'announceAddr' : conf.announceaddr,
                                      'subject'      : pspec or type,
                                      'message'      : wrap(message),
                                      'pspec'        : pspec,
@@ -80,12 +80,12 @@ def send(message, pspec = "", type = ""):
     socket.setdefaulttimeout(10)
 
     try:
-        session = smtplib.SMTP(config.smtpserver)
+        session = smtplib.SMTP(conf.smtpserver)
     except:
-        logger.error("*** Failed sending e-mail: Couldn't open session on %s." % config.smtpserver)
+        logger.error("*** Failed sending e-mail: Couldn't open session on %s." % conf.smtpserver)
         return
 
-    if config.usesmtpauth and mailauth.password:
+    if conf.usesmtpauth and mailauth.password:
         try:
             session.login(mailauth.username, mailauth.password)
         except smtplib.SMTPAuthenticationError:
@@ -94,9 +94,9 @@ def send(message, pspec = "", type = ""):
 
     try:
         if type == "announce":
-            smtpresult = session.sendmail(config.mailfrom, config.announceaddr, message)
+            smtpresult = session.sendmail(conf.mailfrom, conf.announceaddr, message)
         else:
-            smtpresult = session.sendmail(config.mailfrom, recipientsEmail + config.cclist, message)
+            smtpresult = session.sendmail(conf.mailfrom, recipientsEmail + conf.cclist, message)
     except smtplib.SMTPRecipientsRefused:
         logger.error("*** Failed sending e-mail: Recipient refused probably because of a non-authenticated session.")
 

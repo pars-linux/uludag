@@ -22,7 +22,6 @@ from buildfarm.config import configuration as conf
 
 
 class PisiApi:
-
     def __init__(self, stdout=None, stderr=None, outputDir = conf.workdir):
         import pisi.config
         self.options = pisi.config.Options()
