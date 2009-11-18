@@ -35,6 +35,8 @@ distfiles = """
     help/*.css
     help/tr/*.html
     help/en/*.html
+    xcb/*.py
+    xcb/*.xml
 """
 
 def make_dist():
@@ -88,6 +90,8 @@ if "dist" in sys.argv:
     sys.exit(0)
 
 app_data = [
+    'src/backend.py',
+    'src/device.py',
     'src/displayconfig.py',
     'src/display-manager.py',
     'src/dm_mainview.ui',
@@ -95,6 +99,8 @@ app_data = [
     'src/handler.py',
     'src/helpdialog.ui',
     'src/monitordialog.ui',
+    'src/nv.py',
+    'src/randr.py',
     'src/randriface.py',
     'src/utility.py',
     'pics',
