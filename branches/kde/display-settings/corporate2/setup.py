@@ -38,7 +38,7 @@ distfiles = """
 """
 
 def make_dist():
-    distdir = "display-manager-%s" % version
+    distdir = "display-settings-%s" % version
     list = []
     for t in distfiles.split():
         list.extend(glob.glob(t))
@@ -53,8 +53,35 @@ def make_dist():
             if not os.path.exists(dn):
                 os.mkdir(dn)
         shutil.copy(file_, os.path.join(distdir, file_))
-    os.popen("tar -czf %s %s" % ("display-manager-" + version + ".tar.gz", distdir))
+    os.popen("tar -czf %s %s" % ("display-settings-" + version + ".tar.gz", distdir))
     shutil.rmtree(distdir)
+
+def makeDirs(dir):
+    try:
+        os.makedirs(dir)
+    except OSError:
+        pass
+
+class Build(kdedistutils.BuildKDE):
+    def run(self):
+        kdedistutils.BuildKDE.run(self)
+
+        # Clear all
+        #os.system("rm -rf build")
+
+        #makeDirs("build/app")
+        makeDirs("build/lib/xcb")
+
+        # Create xcb binding
+        os.system("python xcb/py_client.py xcb/nvctrl.xml")
+        self.move_file("nvctrl.py", "build/lib/xcb/")
+
+class Install(kdedistutils.InstallKDE):
+    def run(self):
+        kdedistutils.InstallKDE.run(self)
+
+        self.run_command("install_lib")
+
 
 if "dist" in sys.argv:
     make_dist()
@@ -75,16 +102,20 @@ app_data = [
 ]
 
 kdedistutils.setup(
-    name="display-manager",
-    version=version,
-    author="Fatih Aşıcı",
-    author_email="fatih@pardus.org.tr",
-    url="http://www.pardus.org.tr/",
-    min_kde_version = "3.5.0",
-    min_qt_version = "3.3.5",
-    license = "GPL",
-    application_data = app_data,
-    executable_links = [('display-manager','display-manager.py')],
-    i18n = ('po', ['src']),
-    kcontrol_modules = [ ('src/display-manager.desktop','src/display-manager.py')],
+    name                = "display-settings",
+    version             = version,
+    author              = "Fatih Aşıcı",
+    author_email        = "fatih@pardus.org.tr",
+    url                 = "http://www.pardus.org.tr/",
+    min_kde_version     = "3.5.0",
+    min_qt_version      = "3.3.5",
+    license             = "GPL",
+    application_data    = app_data,
+    executable_links    = [('display-manager','display-manager.py')],
+    i18n                = ('po', ['src']),
+    kcontrol_modules    = [ ('src/display-manager.desktop','src/display-manager.py')],
+    cmdclass            = {
+                            'build': Build,
+                            'install': Install,
+                          }
 )

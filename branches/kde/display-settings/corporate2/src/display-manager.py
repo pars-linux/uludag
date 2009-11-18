@@ -21,10 +21,15 @@ from dbus.mainloop.qt3 import DBusQtMainLoop
 from zorg.utils import idsQuery, run
 from zorg.consts import package_sep
 
+# UI
 import helpdialog
 import dm_mainview
 import driverdialog
 import monitordialog
+
+# Backend
+from backend import Interface
+
 from zorg import hwdata
 from utility import *
 
@@ -216,6 +221,10 @@ class MainWidget(dm_mainview.mainWidget):
         #self.connect(self.buttonVideoCard, SIGNAL("clicked()"), self.slotCardSettings)
         #self.connect(self.buttonMonitor1, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(1))
         #self.connect(self.buttonMonitor2, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(2))
+
+
+        # Backend
+        self.iface = Interface()
 
         #self.reset()
         #self.suggestDriver()
