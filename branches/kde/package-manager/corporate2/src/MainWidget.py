@@ -73,7 +73,6 @@ class MainApplicationWidget(QWidget):
         item = KListViewItem(self.groupsList)
         item.setText(0,i18n("Loading Package List..."))
         self.groupsList.setSelected(self.groupsList.firstChild(),True)
-        self.tipper = GroupTipper(self)
 
         self.show()
 
