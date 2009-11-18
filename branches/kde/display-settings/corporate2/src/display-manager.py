@@ -28,16 +28,16 @@ import monitordialog
 from zorg import hwdata
 from utility import *
 
-mod_name = 'Display Manager'
-mod_app = 'display-manager'
-mod_version = '0.5'
+mod_name = 'Display Settings'
+mod_app = 'display-settings'
+mod_version = '0.5.80'
 
 def AboutData():
     return KAboutData(
         mod_app,
         mod_name,
         mod_version,
-        I18N_NOOP('Display Manager'),
+        I18N_NOOP('Display Settings'),
         KAboutData.License_GPL,
         '(C) UEKAE/TÜBİTAK',
         None,
@@ -198,27 +198,27 @@ class MainWidget(dm_mainview.mainWidget):
         # set signals
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
 
-        self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
-        self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.buttonGroupDualModes, SLOT("setEnabled(bool)"))
-        self.connect(self.radioBoxExtended, SIGNAL("toggled(bool)"), self.setDualModeOptions)
+        #self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
+        #self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.buttonGroupDualModes, SLOT("setEnabled(bool)"))
+        #self.connect(self.radioBoxExtended, SIGNAL("toggled(bool)"), self.setDualModeOptions)
 
-        self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedOutput)
-        self.connect(self.comboBoxResolution, SIGNAL("activated(int)"), self.setSelectedMode)
+        #self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedOutput)
+        #self.connect(self.comboBoxResolution, SIGNAL("activated(int)"), self.setSelectedMode)
 
-        self.connect(self.buttonDetectDisplays, SIGNAL("clicked()"), self.detectDisplays)
-        self.connect(self.buttonIdentifyDisplays, SIGNAL("clicked()"), self.identifyDisplays)
+        #self.connect(self.buttonDetectDisplays, SIGNAL("clicked()"), self.detectDisplays)
+        #self.connect(self.buttonIdentifyDisplays, SIGNAL("clicked()"), self.identifyDisplays)
 
-        self.connect(self.buttonCancel, SIGNAL("clicked()"),qApp, SLOT("quit()"))
-        self.connect(self.buttonApply, SIGNAL("clicked()"),self.slotApply)
-        self.connect(self.buttonHelp, SIGNAL("clicked()"),self.slotHelp)
-        self.connect(self.buttonSwap, SIGNAL("clicked()"),self.slotSwap)
+        self.connect(self.buttonCancel, SIGNAL("clicked()"), qApp, SLOT("quit()"))
+        self.connect(self.buttonApply, SIGNAL("clicked()"), self.slotApply)
+        self.connect(self.buttonHelp, SIGNAL("clicked()"), self.slotHelp)
+        self.connect(self.buttonSwap, SIGNAL("clicked()"), self.slotSwap)
 
-        self.connect(self.buttonVideoCard, SIGNAL("clicked()"), self.slotCardSettings)
-        self.connect(self.buttonMonitor1, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(1))
-        self.connect(self.buttonMonitor2, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(2))
+        #self.connect(self.buttonVideoCard, SIGNAL("clicked()"), self.slotCardSettings)
+        #self.connect(self.buttonMonitor1, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(1))
+        #self.connect(self.buttonMonitor2, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(2))
 
-        self.reset()
-        self.suggestDriver()
+        #self.reset()
+        #self.suggestDriver()
 
     def reset(self):
         import displayconfig
@@ -606,7 +606,7 @@ def main():
     KUniqueApplication.addCmdLineOptions()
 
     if not KUniqueApplication.start():
-        print i18n('Display Manager is already started!')
+        print i18n('Display Settings module is already started!')
         return
 
     kapp = KUniqueApplication(True, True, True)
@@ -618,7 +618,7 @@ def main():
     from displayconfig import comlink
     comlink.winID = win.winId()
 
-    win.setCaption(i18n('Display Manager'))
+    win.setCaption(i18n('Display Settings'))
     win.setMinimumSize(400, 300)
     #win.resize(500, 300)
     attachMainWidget(win)
