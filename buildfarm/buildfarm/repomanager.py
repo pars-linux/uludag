@@ -14,13 +14,11 @@
 import re
 import os
 import sys
-from string import find
 
 import pisi
-from pisi.db.sourcedb import SourceDB
 
-import config
-import logger
+from buildfarm import logger
+from buildfarm.config import configuration as conf
 
 Exclude = ["packages", "pisi-index.xml", "README", "TODO", "useful-scripts"]
 
@@ -32,9 +30,9 @@ class RepositoryManager:
 
         def update():
             logger.info("\nUpdating pisi-index* files..")
-            os.system("/usr/bin/svn up %s/pisi-index*" % config.localPspecRepo)
-            logger.info("\nUpdating local pspec repository '%s'" % (config.localPspecRepo))
-            f = os.popen("/usr/bin/svn up %s" % config.localPspecRepo)
+            os.system("/usr/bin/svn up %s/pisi-index*" % conf.localpspecrepo)
+            logger.info("\nUpdating local pspec repository '%s'" % (conf.localpspecrepo))
+            f = os.popen("/usr/bin/svn up %s" % conf.localpspecrepo)
 
             out = [o.split() for o in f.readlines()]
             if f.close():
@@ -59,16 +57,16 @@ class RepositoryManager:
 
     def getCurrentRevision(self):
         # Return the current repository revision
-        return int(re.search("Revision: [0-9]*\n", os.popen("/usr/bin/svn info %s" % config.localPspecRepo).read()).group().split(":")[-1].strip())
+        return int(re.search("Revision: [0-9]*\n", os.popen("/usr/bin/svn info %s" % conf.localpspecrepo).read()).group().split(":")[-1].strip())
 
     def getChanges(self, type="ALL", filter='', exclude=Exclude):
         data = self.keys.get(type)()
         if not len(exclude):
-            return [x for x in data if find(x, filter) > -1]
+            return [x for x in data if x.find(filter) > -1]
         else:
             rval = data
             for i in range(0, len(exclude)):
-                rval = [t for t in [x for x in rval if find(x, filter) > -1] if find(t, exclude[i]) == -1]
+                rval = [t for t in [x for x in rval if x.find(filter) > -1] if t.find(exclude[i]) == -1]
             return rval
 
     def getReverseDependencies(self, pspecList):
@@ -99,7 +97,7 @@ class RepositoryManager:
             return (breaksABI, list(revBuildDeps))
 
         # Create a source db instance
-        sdb = SourceDB()
+        sdb = pisi.db.sourcedb.SourceDB()
 
         # Create a diff output of all the repository
         # This is much more efficient that doing 'svn di' for every changed file.
@@ -130,7 +128,7 @@ class RepositoryManager:
 
             for revdep in set(revdeps):
                 # e.g. (revdep, revdepObject) = ('vlc', <pisi.dependency.Dependency object at 0xa3284cc>)
-                revBuildDeps.add(os.path.join(config.localPspecRepo, sdb.get_spec(sdb.pkgtosrc(revdep)).source.partOf.replace(".", "/") + "/%s/pspec.xml" % revdep))
+                revBuildDeps.add(os.path.join(conf.localpspecrepo, sdb.get_spec(sdb.pkgtosrc(revdep)).source.partOf.replace(".", "/") + "/%s/pspec.xml" % revdep))
 
         return (breaksABI, list(revBuildDeps))
 
@@ -147,7 +145,7 @@ class RepositoryManager:
     def getRemoved(self):
         return [d[1] for d in self.output if d[0] == "D"]
 
-    def getAll(self, filter='', exclude=[]):
+    def getAll(self):
         return self.getModified() + self.getRemoved() + self.getAdded()
 
 
@@ -156,11 +154,11 @@ class RepositoryManager:
 if __name__ == "__main__":
     # Print current workqueue/waitqueue
     print "Current workqueue:\n%s" % ('-'*60)
-    if os.path.exists(os.path.join(config.workDir, "workQueue")):
+    if os.path.exists(os.path.join(conf.workdir, "workQueue")):
         print "\n".join(open("/var/pisi/workQueue", "rb").read().split("\n"))
 
     print "\nCurrent waitqueue:\n%s" % ('-'*60)
-    if os.path.exists(os.path.join(config.workDir, "waitQueue")):
+    if os.path.exists(os.path.join(conf.workdir, "waitQueue")):
         print "\n".join(open("/var/pisi/waitQueue", "rb").read().split("\n"))
 
     # Create RepositoryManager
@@ -199,8 +197,8 @@ if __name__ == "__main__":
 
     if len(updatedPspecFiles + newPspecFiles):
         queue = []
-        if os.path.exists(os.path.join(config.workDir, "workQueue")):
-            queue = open(os.path.join(config.workDir, "workQueue"), "rb").read().strip().split("\n")
+        if os.path.exists(os.path.join(conf.workdir, "workQueue")):
+            queue = open(os.path.join(conf.workdir, "workQueue"), "rb").read().strip().split("\n")
 
         queue.extend(updatedPspecFiles + newPspecFiles + revDepsToBeRecompiled)
-        open(os.path.join(config.workDir, "workQueue"), "wb").write("\n".join([l for l in list(set(queue)) if l])+"\n")
+        open(os.path.join(conf.workdir, "workQueue"), "wb").write("\n".join([l for l in list(set(queue)) if l])+"\n")

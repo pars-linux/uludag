@@ -13,11 +13,8 @@
 
 import os
 
-import config
-import dependency
-
-class QError(Exception):
-    pass
+from buildfarm import dependency
+from buildfarm.config import configuration as conf
 
 class QueueManager:
     def __init__(self):
@@ -45,7 +42,7 @@ class QueueManager:
 
     def __serialize(self, queueName, fileName):
         try:
-            queue = open(os.path.join(config.workDir, fileName), "w")
+            queue = open(os.path.join(conf.workdir, fileName), "w")
         except IOError:
             return
 
@@ -55,7 +52,7 @@ class QueueManager:
 
     def __deserialize(self, queueName, fileName):
         try:
-            queue = open(os.path.join(config.workDir, fileName), "r")
+            queue = open(os.path.join(conf.workdir, fileName), "r")
         except IOError:
             return
 
