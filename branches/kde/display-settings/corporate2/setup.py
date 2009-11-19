@@ -108,7 +108,7 @@ app_data = [
 ]
 
 kdedistutils.setup(
-    name                = "display-settings",
+    name                = "display-manager",
     version             = version,
     author              = "Fatih Aşıcı",
     author_email        = "fatih@pardus.org.tr",
