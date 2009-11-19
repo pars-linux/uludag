@@ -235,8 +235,13 @@ class MainWidget(dm_mainview.mainWidget):
 
         # Disable module if no packages provide backend or
         # no valid configuration is found
-        if not self.checkBackend():
-            parent.setDisabled(True)
+        if self.checkBackend():
+            self.textNotReady.hide()
+        else:
+            self.screenImage1.hide()
+            self.screenImage2.hide()
+            self.buttonSwap.hide()
+            self.setDisabled(True)
 
         self.suggestDriver()
 
@@ -361,6 +366,23 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.outputsButton.setPopup(menu)
 
+    def refreshOutputsView(self):
+        scrLeft = self.screenImage1
+        scrRight = self.screenImage2
+
+        scrLeft.setIconSet(self.iconNormal)
+        scrRight.setIconSet(self.iconNormal)
+
+        scrLeft.setTextLabel(self._left.name)
+
+        if self._right:
+            scrRight.setTextLabel(self._right.name)
+            scrRight.show()
+            self.buttonSwap.show()
+        else:
+            scrRight.hide()
+            self.buttonSwap.hide()
+
     def slotOutputToggled(self, action, name, checked):
         currentOutputsDict = dict((x.name, x) for x in self._outputs)
         output = currentOutputsDict[name]
@@ -381,7 +403,7 @@ class MainWidget(dm_mainview.mainWidget):
             self._right = None
 
         #self.updateMenuStatus()
-        #self.refreshOutputsView()
+        self.refreshOutputsView()
         self.emitConfigChanged()
 
     def reset(self):
@@ -730,7 +752,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.detectOutputs()
         self.populateOutputsMenu()
-        #self.refreshOutputsView()
+        self.refreshOutputsView()
         #self.slotUpdateOutputProperties(self._left)
 
         #self.extendDisplays.setChecked(not self._cloned)
