@@ -61,6 +61,8 @@ class Commander(QObject):
 #            self.parent.showErrorMessage(str(args))
             self.parent.resetState()
             self.parent.refreshState()
+        elif signal == "cancelled":
+            self.parent.finished("System.Manager.cancelled")
         elif signal == "started":
             operation = signal
             self.parent.pisiNotify(operation, args)
