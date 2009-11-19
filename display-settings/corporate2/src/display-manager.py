@@ -346,8 +346,9 @@ class MainWidget(dm_mainview.mainWidget):
 
     def populateOutputsMenu(self):
         menu = QPopupMenu(self)
+        menu.setCheckable(True)
 
-        for output in self._outputs:
+        for i, output in enumerate(self._outputs):
             if output.outputType == Output.UnknownOutput:
                 text = output.name
             else:
@@ -356,15 +357,23 @@ class MainWidget(dm_mainview.mainWidget):
                         "%1 = localized output type, "
                         "%2 = output name (LVDS, VGA, etc.)",
                         "%1 (%2)").arg(output.getTypeString(), output.name)
-            action = QAction(text, QKeySequence(), self)
-            action.setToggleAction(True)
-            if output in (self._left, self._right):
-                action.setOn(True)
-            self.connect(action, SIGNAL("toggled(bool)"),
-                    lambda checked: self.slotOutputToggled(action, output.name, checked))
-            action.addTo(menu)
 
+            menu.insertItem(text, i)
+            if output in (self._left, self._right):
+                menu.setItemChecked(i, True)
+
+        self.connect(menu, SIGNAL("activated(int)"), self.slotOutputToggled)
         self.outputsButton.setPopup(menu)
+
+    def updateMenuStatus(self):
+        menu = self.outputsButton.popup()
+        for i, output in enumerate(self._outputs):
+            if (self._left and self._left.name == output.name) \
+                    or (self._right and self._right.name == output.name):
+
+                menu.setItemChecked(i, True)
+            else:
+                menu.setItemChecked(i, False)
 
     def refreshOutputsView(self):
         scrLeft = self.screenImage1
@@ -383,26 +392,42 @@ class MainWidget(dm_mainview.mainWidget):
             scrRight.hide()
             self.buttonSwap.hide()
 
-    def slotOutputToggled(self, action, name, checked):
-        currentOutputsDict = dict((x.name, x) for x in self._outputs)
-        output = currentOutputsDict[name]
+    def slotOutputToggled(self, id):
+        output = self._outputs[id]
+        menu = self.outputsButton.popup()
+
+        # checked is the new toggle status.
+        checked = not menu.isItemChecked(id)
 
         if checked:
+            # Output activated.
+
+            # If the right output is already selected,
+            # shift left.
             if self._right:
                 self._left = self._right
 
+            # Place the activated output on right.
             self._right = output
+
         elif self._right is None:
-            action.setOn(True)
-            return
+            # All outputs deselected. Reject the toggle.
+            checked = True
+
         elif output.name == self._left.name:
+            # Left output deselected. Shift right output to the left.
             self._left = self._right
             if self._right:
                 self._right = None
+
         else:
+            # Right output is deselected.
             self._right = None
 
-        #self.updateMenuStatus()
+        # Update item for the new toggle status.
+        menu.setItemChecked(id, checked)
+
+        self.updateMenuStatus()
         self.refreshOutputsView()
         self.emitConfigChanged()
 
