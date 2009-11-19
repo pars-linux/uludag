@@ -61,7 +61,8 @@ class Progress(ProgressDialog):
             return "--:--:--"
         rates = float(rate) * factor[symbol.strip()]
         left = total - downloaded
-        self.timeLeft = '%02d:%02d:%02d' % tuple([i for i in time.gmtime(left/rates)[3:6]])
+        if rates:
+            self.timeLeft = '%02d:%02d:%02d' % tuple([i for i in time.gmtime(left/rates)[3:6]])
 
     def updateCompletedInfo(self):
         completed, total = self.getCurrentDownloadedSize()
