@@ -426,7 +426,7 @@ class MainApplicationWidget(QWidget):
 
         if not self.iface.inProgress():
             self.progressDialog.totalPackages = 1
-            self.iface.installPackage([package])
+            self.iface.installPackages([package])
             self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
             self.progressDialog.show()
             # KWin forces to raise it even though the parent is hidden, QWidget does not.
