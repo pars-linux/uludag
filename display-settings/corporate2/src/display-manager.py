@@ -207,8 +207,23 @@ class MainWidget(dm_mainview.mainWidget):
         self.iconWide = getIconSet("monitor_wide", KIcon.User)
         self.iconNormal = getIconSet("monitor", KIcon.User)
 
+        # Backend
+        self.iface = Interface()
+
+        # Disable module if no packages provide backend or
+        # no valid configuration is found
+        if self.checkBackend():
+            self.textNotReady.hide()
+        else:
+            self.screenImage1.hide()
+            self.screenImage2.hide()
+            self.buttonSwap.hide()
+            self.setDisabled(True)
+
+        self.suggestDriver()
+
         # set signals
-        self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
+        self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.slotOutputSelected)
 
         #self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
         #self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.buttonGroupDualModes, SLOT("setEnabled(bool)"))
@@ -229,27 +244,11 @@ class MainWidget(dm_mainview.mainWidget):
         #self.connect(self.buttonMonitor1, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(1))
         #self.connect(self.buttonMonitor2, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(2))
 
-
-        # Backend
-        self.iface = Interface()
-
-        # Disable module if no packages provide backend or
-        # no valid configuration is found
-        if self.checkBackend():
-            self.textNotReady.hide()
-        else:
-            self.screenImage1.hide()
-            self.screenImage2.hide()
-            self.buttonSwap.hide()
-            self.setDisabled(True)
-
-        self.suggestDriver()
-
         self.connect(self.extendDisplays, SIGNAL("toggled(bool)"), self.emitConfigChanged)
-        #self.connect(self.detectButton, SIGNAL("clicked()"), self.slotDetectClicked)
-        #self.connect(self.modeList, SIGNAL("currentIndexChanged()"), self.slotModeSelected)
-        #self.connect(self.rateList, SIGNAL("currentIndexChanged(int)"), self.slotRateSelected)
-        #self.connect(self.rotationList, SIGNAL("currentIndexChanged(int)"), self.slotRotationSelected)
+        self.connect(self.detectButton, SIGNAL("clicked()"), self.slotDetectClicked)
+        self.connect(self.modeList, SIGNAL("activated(int)"), self.slotModeSelected)
+        self.connect(self.rateList, SIGNAL("activated(int)"), self.slotRateSelected)
+        self.connect(self.rotationList, SIGNAL("activated(int)"), self.slotRotationSelected)
 
     def checkBackend(self):
         """
@@ -365,6 +364,20 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(menu, SIGNAL("activated(int)"), self.slotOutputToggled)
         self.outputsButton.setPopup(menu)
 
+    def populateRateList(self):
+        output = self._selectedOutput
+        if output:
+            currentMode = self._modes[output.name]
+
+            self.disconnect(self.rateList, SIGNAL("activated(int)"), self.slotRateSelected)
+            self.rateList.clear()
+            self.rateList.insertItem(i18n("Auto"))
+            if currentMode:
+                self._rateList = self.iface.getRates(output.name, currentMode)
+                rates = map(lambda x: "%s Hz" % x, self._rateList)
+                self.rateList.insertStrList(rates)
+            self.connect(self.rateList, SIGNAL("activated(int)"), self.slotRateSelected)
+
     def updateMenuStatus(self):
         menu = self.outputsButton.popup()
         for i, output in enumerate(self._outputs):
@@ -430,6 +443,87 @@ class MainWidget(dm_mainview.mainWidget):
         self.updateMenuStatus()
         self.refreshOutputsView()
         self.emitConfigChanged()
+
+    def slotDetectClicked(self):
+        self.detectOutputs(onlyConnected=True)
+        self.populateOutputsMenu()
+        self.refreshOutputsView()
+        self.slotUpdateOutputProperties(self._left)
+        self.emitConfigChanged()
+
+    def slotOutputSelected(self, leftSelected):
+        self.slotUpdateOutputProperties(
+                self._left if leftSelected else self._right)
+
+    def slotUpdateOutputProperties(self, output):
+        self._selectedOutput = output
+        title = i18n("Output Properties - %1").arg(output.name)
+        self.propertiesBox.setTitle(title)
+
+        self.disconnect(self.modeList, SIGNAL("activated(int)"), self.slotModeSelected)
+        self.modeList.clear()
+        self.modeList.insertItem(i18n("Auto"))
+        self.modeList.insertStrList(self._modeLists[output.name])
+        self.connect(self.modeList, SIGNAL("activated(int)"), self.slotModeSelected)
+
+        currentMode = self._modes[output.name]
+        if currentMode:
+            index = self.modeList.findText(currentMode)
+            if index > -1:
+                self.modeList.setCurrentItem(index)
+        else:
+            self.modeList.setCurrentItem(0)
+
+        if self.rateList.currentItem() < 0:
+            self.populateRateList()
+
+        currentRate = self._rates[output.name]
+        if currentRate:
+            index = self._rateList.index(currentRate)
+            self.rateList.setCurrentItem(index+1)
+        else:
+            self.rateList.setCurrentItem(0)
+
+        currentRotation = self._rotations[output.name]
+        if currentRotation:
+            opts = ("normal", "left", "inverted", "right")
+            index = opts.index(currentRotation)
+            self.rotationList.setCurrentItem(index)
+        else:
+            self.rotationList.setCurrentItem(0)
+
+    def slotModeSelected(self, index):
+        if index < 0:
+            return
+
+        output = self._selectedOutput
+        if output:
+            currentMode = str(self.modeList.currentText()) if index else ""
+            self._modes[output.name] = currentMode
+            self.populateRateList()
+            self.emitConfigChanged()
+
+    def slotRateSelected(self, index):
+        if index < 0:
+            return
+
+        output = self._selectedOutput
+        if output:
+            currentRate = self._rateList[index-1] if index else ""
+            self._rates[output.name] = currentRate
+
+            self.emitConfigChanged()
+
+    def slotRotationSelected(self, index):
+        if index < 0:
+            return
+
+        output = self._selectedOutput
+        if output:
+            opts = ("normal", "left", "inverted", "right")
+            self._rotations[output.name] = opts[index]
+
+            self.emitConfigChanged()
 
     def reset(self):
         import displayconfig
@@ -778,9 +872,9 @@ class MainWidget(dm_mainview.mainWidget):
         self.detectOutputs()
         self.populateOutputsMenu()
         self.refreshOutputsView()
-        #self.slotUpdateOutputProperties(self._left)
+        self.slotUpdateOutputProperties(self._left)
 
-        #self.extendDisplays.setChecked(not self._cloned)
+        self.extendDisplays.setChecked(not self._cloned)
 
     def save(self):
         if not self.iface.isReady():
