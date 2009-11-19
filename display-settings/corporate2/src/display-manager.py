@@ -474,7 +474,7 @@ class MainWidget(dm_mainview.mainWidget):
         else:
             self.modeList.setCurrentItem(0)
 
-        if self.rateList.currentItem() < 0:
+        if self.rateList.count() == 0:
             self.populateRateList()
 
         currentRate = self._rates[output.name]
