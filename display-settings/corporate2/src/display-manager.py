@@ -339,6 +339,51 @@ class MainWidget(dm_mainview.mainWidget):
             else:
                 self._left = self._outputs[0]
 
+    def populateOutputsMenu(self):
+        menu = QPopupMenu(self)
+
+        for output in self._outputs:
+            if output.outputType == Output.UnknownOutput:
+                text = output.name
+            else:
+                text = i18n(
+                        "Shown in menus, lists, etc. "
+                        "%1 = localized output type, "
+                        "%2 = output name (LVDS, VGA, etc.)",
+                        "%1 (%2)").arg(output.getTypeString(), output.name)
+            action = QAction(text, QKeySequence(), self)
+            action.setToggleAction(True)
+            if output in (self._left, self._right):
+                action.setOn(True)
+            self.connect(action, SIGNAL("toggled(bool)"),
+                    lambda checked: self.slotOutputToggled(action, output.name, checked))
+            action.addTo(menu)
+
+        self.outputsButton.setPopup(menu)
+
+    def slotOutputToggled(self, action, name, checked):
+        currentOutputsDict = dict((x.name, x) for x in self._outputs)
+        output = currentOutputsDict[name]
+
+        if checked:
+            if self._right:
+                self._left = self._right
+
+            self._right = output
+        elif self._right is None:
+            action.setOn(True)
+            return
+        elif output.name == self._left.name:
+            self._left = self._right
+            if self._right:
+                self._right = None
+        else:
+            self._right = None
+
+        #self.updateMenuStatus()
+        #self.refreshOutputsView()
+        self.emitConfigChanged()
+
     def reset(self):
         import displayconfig
         self.dconfig = displayconfig.DisplayConfig()
@@ -684,7 +729,7 @@ class MainWidget(dm_mainview.mainWidget):
             return
 
         self.detectOutputs()
-        #self.populateOutputsMenu()
+        self.populateOutputsMenu()
         #self.refreshOutputsView()
         #self.slotUpdateOutputProperties(self._left)
 
