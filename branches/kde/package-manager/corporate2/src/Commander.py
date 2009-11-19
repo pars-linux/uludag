@@ -14,7 +14,7 @@ import PisiIface
 
 from kdeui import KMessageBox
 from kdecore import i18n
-from qt import QObject, QTimer
+from qt import QObject, QTimer, QString
 import Settings
 
 class Commander(QObject):
