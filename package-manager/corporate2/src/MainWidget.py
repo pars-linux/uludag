@@ -758,9 +758,8 @@ class MainApplicationWidget(QWidget):
         self.processEvents()
         self.progressDialog.hideStatus(True)
 
-
         if repo:
-            self.iface.updateRepository(repo)
+            self.iface.updateRepository(str(repo))
         else:
             self.iface.updateRepositories()
 
