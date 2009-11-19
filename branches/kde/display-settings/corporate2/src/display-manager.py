@@ -457,20 +457,20 @@ class MainWidget(dm_mainview.mainWidget):
 
     def slotUpdateOutputProperties(self, output):
         self._selectedOutput = output
+        modes = self._modeLists[output.name]
         title = i18n("Output Properties - %1").arg(output.name)
         self.propertiesBox.setTitle(title)
 
         self.disconnect(self.modeList, SIGNAL("activated(int)"), self.slotModeSelected)
         self.modeList.clear()
         self.modeList.insertItem(i18n("Auto"))
-        self.modeList.insertStrList(self._modeLists[output.name])
+        self.modeList.insertStrList(modes)
         self.connect(self.modeList, SIGNAL("activated(int)"), self.slotModeSelected)
 
         currentMode = self._modes[output.name]
-        if currentMode:
-            index = self.modeList.findText(currentMode)
-            if index > -1:
-                self.modeList.setCurrentItem(index)
+        if currentMode in modes:
+            index = modes.index(currentMode)
+            self.modeList.setCurrentItem(index)
         else:
             self.modeList.setCurrentItem(0)
 
