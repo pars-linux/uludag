@@ -61,6 +61,9 @@ class Commander(QObject):
 #            self.parent.showErrorMessage(str(args))
             self.parent.resetState()
             self.parent.refreshState()
+        elif signal == "started":
+            operation = signal
+            self.parent.pisiNotify(operation, args)
         elif signal == "status":
             operation = data[0]
             self.parent.pisiNotify(operation, args)
