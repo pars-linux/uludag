@@ -59,7 +59,7 @@ class Progress(ProgressDialog):
         factor = {"B/s":1, "KB/s":1024, "MB/s":1048576, "GB/s":1073741824}
         if symbol == "--/-":
             return "--:--:--"
-        rates = float(rate) * factor[symbol]
+        rates = float(rate) * factor[symbol.strip()]
         left = total - downloaded
         self.timeLeft = '%02d:%02d:%02d' % tuple([i for i in time.gmtime(left/rates)[3:6]])
 
