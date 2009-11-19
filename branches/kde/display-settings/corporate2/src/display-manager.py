@@ -862,8 +862,14 @@ class MainWidget(dm_mainview.mainWidget):
         helpwin.exec_loop()
 
     def slotSwap(self):
-        self.dconfig.primaryScr, self.dconfig.secondaryScr = self.dconfig.secondaryScr, self.dconfig.primaryScr
-        self.updateWidgets()
+        self._left, self._right = self._right, self._left
+
+        self.updateMenuStatus()
+        self.refreshOutputsView()
+        self.emitConfigChanged()
+
+        output = self._left if self.screenImage1.isOn() else self._right
+        self.slotUpdateOutputProperties(output)
 
     def load(self):
         if not self.iface.isReady():
