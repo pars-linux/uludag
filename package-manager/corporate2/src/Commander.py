@@ -133,9 +133,7 @@ class Commander(QObject):
         return self.iface.com_lock.locked()
 
     def clearCache(self, limit):
-        # FIXME: We can not get cache package directory from pisi if 
-        # it is _removed_ (PiSi tries to create new one), so hardcoded.
-        return self.iface.clearCache("/var/cache/pisi/packages", limit)
+        self.iface.clearCache(limit)
 
     def setCache(self, enabled, limit):
         self.iface.setCacheLimit(enabled, limit)
