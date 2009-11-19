@@ -102,14 +102,6 @@ class Commander(QObject):
     def updateAllRepos(self):
         self.iface.updateRepositories()
 
-    def addRepo(self,repoName,repoAddress):
-        raise Exception("Not implemented")
-#        self.iface.addRepo(repoName,repoAddress)
-
-    def removeRepo(self, repoName):
-        raise Exception("Not implemented")
-#       self.iface.removeRepo(repoName)
-
     def setRepositories(self, repos):
         self.iface.setRepositories(repos)
 
