@@ -10,16 +10,19 @@
 #
 # Please read the COPYING file.
 
+from buildfarm.auth import Auth
+
 class Twitter(object):
     def __init__(self):
         self.api = None
+        self.auth = Auth()
         try:
             import twitter
         except ImportError:
             pass
         else:
             # Read the credentials from a safe place
-            self.api = twitter.Api('', '')
+            self.api = twitter.Api(*self.auth.get_credentials('Twitter'))
 
     def update(self, msg):
         if self.api:
