@@ -35,16 +35,16 @@ def handleException(exception, value, tb):
     logger.error("".join(traceback.format_exception(exception, value, tb)))
 
 description = I18N_NOOP("GUI for PiSi package manager")
-version = "1.4.0"
+version = "1.5.0"
 
 def AboutData():
     global version,description
 
     about_data = KAboutData("package-manager", I18N_NOOP("Package Manager"), version, description, KAboutData.License_GPL,
-                            "(C) 2005, 2006, 2007, 2008 UEKAE/TÜBİTAK", None, None)
+                            "(C) 2005, 2006, 2007, 2008, 2009 UEKAE/TÜBİTAK", None, None)
 
-    about_data.addAuthor("Gökçen Eraslan", I18N_NOOP("Developer and Current Maintainer"), "gokcen@pardus.org.tr")
-    about_data.addAuthor("Faik Uygur", I18N_NOOP("Developer"), "faik@pardus.org.tr")
+    about_data.addAuthor("Faik Uygu", I18N_NOOP("Developer and Current Maintainer"), "faik@pardus.org.tr")
+    about_data.addAuthor("Gökçen Eraslan", I18N_NOOP("Developer"), "gokcen@pardus.org.tr")
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Original Author"), "ismail@pardus.org.tr")
     about_data.addAuthor("Gökmen Göksel",I18N_NOOP("CSS/JS Meister"), "gokmen@pardus.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
