@@ -234,8 +234,8 @@ class Iface(Singleton):
         else:
             return self.getRequires(packages)
 
-    def getConfig(self):
-        return pisi.configfile.ConfigurationFile("/etc/pisi/pisi.conf")
+    def getConfig(self, configFile="/etc/pisi/pisi.conf"):
+        return pisi.configfile.ConfigurationFile(configFile)
 
     def getRepositories(self):
         repos = []

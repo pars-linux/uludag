@@ -118,7 +118,7 @@ class Commander(QObject):
         return self.iface.getPackageList()
 
     def getRepoList(self):
-        return self.iface.getRepositories()
+        return map(lambda x:x[0], self.iface.getRepositories())
 
     def getRepoUri(self,repoName):
         return self.iface.getRepositoryUrl(repoName)
