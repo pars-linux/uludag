@@ -30,12 +30,12 @@ import monitordialog
 # Backend
 from backend import Interface
 
-# zorg
-from zorg.hwdata import driverPackages
-from zorg.utils import run
-
-from zorg import hwdata
+from device import Output
 from utility import *
+
+# zorg
+from zorg import hwdata
+from zorg.utils import run
 
 mod_name = 'Display Settings'
 mod_app = 'display-settings'
@@ -275,6 +275,69 @@ class MainWidget(dm_mainview.mainWidget):
             return self.iface.isReady()
 
         return True
+
+    def detectOutputs(self, onlyConnected=False):
+        self.iface.query()
+        config = self.iface.getConfig()
+        self._outputs = self.iface.getOutputs()
+        currentOutputsDict = dict((x.name, x) for x in self._outputs)
+
+        self._left = None
+        self._right = None
+        self._cloned = True
+        self._modeLists = {}
+        self._rateList = []
+        self._modes = {}
+        self._rates = {}
+        self._rotations = {}
+
+        connectedList = []
+
+        for output in self._outputs:
+            output.config = config.outputs.get(output.name)
+            connected = output.connection == Output.Connected
+
+            self._modeLists[output.name] = self.iface.getModes(output.name)
+            if output.config is None:
+                self._modes[output.name] = ""
+                self._rates[output.name] = ""
+                self._rotations[output.name] = "normal"
+            else:
+                self._modes[output.name] = output.config.mode
+                self._rates[output.name] = output.config.refresh_rate
+                self._rotations[output.name] = output.config.rotation
+
+            if connected:
+                connectedList.append(output)
+            elif onlyConnected:
+                continue
+
+            if output.config is None:
+                if connected:
+                    print "Trying to add %s as it is connected and has no config." % output.name
+                    if self._left is None:
+                        self._left = output
+                    elif self._right is None:
+                        self._right = output
+
+            elif output.config.enabled:
+                print "Trying to add %s as it is enabled by config." % output.name
+                if output.config.right_of and \
+                        output.config.right_of in currentOutputsDict:
+                    self._right = output
+                    self._left = currentOutputsDict[output.config.right_of]
+                    self._cloned = False
+
+                elif self._left is None:
+                    self._left = output
+                elif self._right is None:
+                    self._right = output
+
+        if self._left is None:
+            if connectedList:
+                self._left = connectedList[0]
+            else:
+                self._left = self._outputs[0]
 
     def reset(self):
         import displayconfig
@@ -544,7 +607,7 @@ class MainWidget(dm_mainview.mainWidget):
                 self.cardDialog.setDriver(preferredDriver)
 
         else:
-            package = driverPackages.get(preferredDriver)
+            package = hwdata.driverPackages.get(preferredDriver)
             if package is None:
                 return
             msg = i18n("<qt>To get better performance, you may want to "
@@ -620,7 +683,7 @@ class MainWidget(dm_mainview.mainWidget):
         if not self.iface.isReady():
             return
 
-        #self.detectOutputs()
+        self.detectOutputs()
         #self.populateOutputsMenu()
         #self.refreshOutputsView()
         #self.slotUpdateOutputProperties(self._left)
