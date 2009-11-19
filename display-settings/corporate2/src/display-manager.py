@@ -191,6 +191,9 @@ class MainWidget(dm_mainview.mainWidget):
         # hide for now
         self.buttonHelp.hide()
 
+        # "Apply" button will be enabled when config changed
+        self.buttonApply.setDisabled(True)
+
         self.screenNames = { 1: i18n("Primary Screen"), 2: i18n("Secondary Screen") }
 
         # set button icons
@@ -218,7 +221,7 @@ class MainWidget(dm_mainview.mainWidget):
         #self.connect(self.buttonIdentifyDisplays, SIGNAL("clicked()"), self.identifyDisplays)
 
         self.connect(self.buttonCancel, SIGNAL("clicked()"), qApp, SLOT("quit()"))
-        self.connect(self.buttonApply, SIGNAL("clicked()"), self.slotApply)
+        self.connect(self.buttonApply, SIGNAL("clicked()"), self.save)
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.slotHelp)
         self.connect(self.buttonSwap, SIGNAL("clicked()"), self.slotSwap)
 
@@ -230,8 +233,48 @@ class MainWidget(dm_mainview.mainWidget):
         # Backend
         self.iface = Interface()
 
-        #self.reset()
+        # Disable module if no packages provide backend or
+        # no valid configuration is found
+        if not self.checkBackend():
+            parent.setDisabled(True)
+
         self.suggestDriver()
+
+        self.connect(self.extendDisplays, SIGNAL("toggled(bool)"), self.emitConfigChanged)
+        #self.connect(self.detectButton, SIGNAL("clicked()"), self.slotDetectClicked)
+        #self.connect(self.modeList, SIGNAL("currentIndexChanged()"), self.slotModeSelected)
+        #self.connect(self.rateList, SIGNAL("currentIndexChanged(int)"), self.slotRateSelected)
+        #self.connect(self.rotationList, SIGNAL("currentIndexChanged(int)"), self.slotRotationSelected)
+
+    def checkBackend(self):
+        """
+            Check if there are packages that provide required backend.
+        """
+        if not len(self.iface.getPackages()):
+            KMessageBox.error(self, i18n(
+                "There are no packages that provide backend for this "
+                "application.\nPlease be sure that packages are installed "
+                "and configured correctly."))
+            return False
+
+        elif not self.iface.isReady():
+            answer = KMessageBox.questionYesNo(self, i18n(
+                "Cannot find a valid configuration. Display settings won't "
+                "be enabled until you create a new configuration.\n"
+                "Would you like to create a safe configuration now?"))
+            if answer == KMessageBox.Yes:
+                try:
+                    self.iface.safeConfig()
+                    self.iface.readConfig()
+                except dbus.DBusException, exception:
+                    if "Comar.PolicyKit" in exception._dbus_error_name:
+                        KMessageBox.error(self, i18n("Access denied."))
+                    else:
+                        KMessageBox.error(self, str(exception))
+
+            return self.iface.isReady()
+
+        return True
 
     def reset(self):
         import displayconfig
@@ -573,6 +616,59 @@ class MainWidget(dm_mainview.mainWidget):
         self.dconfig.primaryScr, self.dconfig.secondaryScr = self.dconfig.secondaryScr, self.dconfig.primaryScr
         self.updateWidgets()
 
+    def load(self):
+        if not self.iface.isReady():
+            return
+
+        #self.detectOutputs()
+        #self.populateOutputsMenu()
+        #self.refreshOutputsView()
+        #self.slotUpdateOutputProperties(self._left)
+
+        #self.extendDisplays.setChecked(not self._cloned)
+
+    def save(self):
+        if not self.iface.isReady():
+            return
+
+        try:
+            for output in self._outputs:
+                enabled = output in (self._left, self._right)
+                self.iface.setOutput(output.name, enabled, False)
+                if enabled:
+                    self.iface.setMode(output.name,
+                                        self._modes[output.name],
+                                        self._rates[output.name])
+                    self.iface.setRotation(output.name,
+                                        self._rotations[output.name])
+
+            left = self._left.name if self._left else None
+            right = self._right.name if self._right else None
+            cloned = not self.extendDisplays.isChecked()
+            self.iface.setSimpleLayout(left, right, cloned)
+
+            self.iface.sync()
+
+            KMessageBox.information(self,
+                    i18n("You must restart your X session for the "
+                                 "changes to take effect."),
+                    QString.null,
+                    "Screen Configuration Saved")
+
+            self.buttonApply.setDisabled(True)
+
+        except dbus.DBusException, exception:
+            if "Comar.PolicyKit" in exception._dbus_error_name:
+                KMessageBox.error(self, i18n("Access denied."))
+            else:
+                KMessageBox.error(self, str(exception))
+
+            QTimer.singleShot(0, self.emitConfigChanged)
+
+    def emitConfigChanged(self):
+        self.emit(PYSIGNAL("configChanged"), ())
+        self.buttonApply.setEnabled(True)
+
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
     self.mainwidget = MainWidget(self)
@@ -592,18 +688,13 @@ class Module(KCModule):
         self.mainwidget.layout().setMargin(0)
         self.mainwidget.frameDialogButtons.hide()
 
-        if self.mainwidget.dconfig._info:
-            QTimer.singleShot(0, self.changed)
+        self.connect(self.mainwidget, PYSIGNAL("configChanged"), self.changed)
 
     def load(self):
-        if self.mainwidget.dconfig._info:
-            self.mainwidget.reset()
-            QTimer.singleShot(0, self.changed)
+        self.mainwidget.load()
 
     def save(self):
-        if self.mainwidget.dconfig._info:
-            self.mainwidget.slotApply()
-            QTimer.singleShot(0, self.changed)
+        self.mainwidget.save()
 
     def aboutData(self):
         return self.aboutdata
@@ -646,6 +737,9 @@ def main():
     attachMainWidget(win)
     win.setIcon(getIconSet("randr").pixmap(QIconSet.Small, QIconSet.Normal))
     kapp.setMainWidget(win)
+
+    QTimer.singleShot(0, win.mainwidget.load)
+
     sys.exit(win.exec_loop())
 
 
