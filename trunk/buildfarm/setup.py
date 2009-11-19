@@ -36,4 +36,4 @@ setup(name="buildfarm",
       platforms=["Linux"],
       packages=["buildfarm"],
       scripts=SCRIPTS,
-      data_files=[("/etc/buildfarm", ["data/buildfarm.conf"])])
+      data_files=[("/etc/buildfarm", ["data/buildfarm.conf", "data/auth.conf"])])
