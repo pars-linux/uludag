@@ -99,6 +99,7 @@ class Progress(ProgressDialog):
         self.progressBar.setProgress(float(progress))
 
     def reset(self):
+        self.hide()
         self.setCurrentOperation(i18n("<b>Preparing PiSi...</b>"))
         self.timeRemaining.setText("--:--")
         self.completedInfo.setText(i18n("<p align='center'>-- / --, -- KB/s</p>"))
