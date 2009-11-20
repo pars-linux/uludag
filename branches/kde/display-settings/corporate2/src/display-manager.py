@@ -343,6 +343,8 @@ class MainWidget(dm_mainview.mainWidget):
             else:
                 self._left = self._outputs[0]
 
+        self._selectedOutput = self._left
+
     def populateOutputsMenu(self):
         menu = QPopupMenu(self)
         menu.setCheckable(True)
@@ -405,6 +407,9 @@ class MainWidget(dm_mainview.mainWidget):
             scrRight.hide()
             self.buttonSwap.hide()
 
+        if self._selectedOutput not in (self._left, self._right):
+            self._selectedOutput = self._left
+
     def slotOutputToggled(self, id):
         output = self._outputs[id]
         menu = self.outputsButton.popup()
@@ -442,21 +447,23 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.updateMenuStatus()
         self.refreshOutputsView()
+        self.slotUpdateOutputProperties()
         self.emitConfigChanged()
 
     def slotDetectClicked(self):
         self.detectOutputs(onlyConnected=True)
         self.populateOutputsMenu()
         self.refreshOutputsView()
-        self.slotUpdateOutputProperties(self._left)
+        self.slotUpdateOutputProperties()
         self.emitConfigChanged()
 
     def slotOutputSelected(self, leftSelected):
-        self.slotUpdateOutputProperties(
-                self._left if leftSelected else self._right)
-
-    def slotUpdateOutputProperties(self, output):
+        output = self._left if leftSelected else self._right
         self._selectedOutput = output
+        self.slotUpdateOutputProperties()
+
+    def slotUpdateOutputProperties(self):
+        output = self._selectedOutput
         modes = self._modeLists[output.name]
         title = i18n("Output Properties - %1").arg(output.name)
         self.propertiesBox.setTitle(title)
@@ -868,8 +875,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.refreshOutputsView()
         self.emitConfigChanged()
 
-        output = self._left if self.screenImage1.isOn() else self._right
-        self.slotUpdateOutputProperties(output)
+        self._selectedOutput = self._left if self.screenImage1.isOn() else self._right
+        self.slotUpdateOutputProperties()
 
     def load(self):
         if not self.iface.isReady():
@@ -878,7 +885,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.detectOutputs()
         self.populateOutputsMenu()
         self.refreshOutputsView()
-        self.slotUpdateOutputProperties(self._left)
+        self.slotUpdateOutputProperties()
 
         self.extendDisplays.setChecked(not self._cloned)
 
