@@ -469,7 +469,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         currentMode = self._modes[output.name]
         if currentMode in modes:
-            index = modes.index(currentMode)
+            index = modes.index(currentMode) + 1 # +1 for "Auto"
             self.modeList.setCurrentItem(index)
         else:
             self.modeList.setCurrentItem(0)
@@ -478,7 +478,7 @@ class MainWidget(dm_mainview.mainWidget):
             self.populateRateList()
 
         currentRate = self._rates[output.name]
-        if currentRate:
+        if currentRate in self._rateList:
             index = self._rateList.index(currentRate)
             self.rateList.setCurrentItem(index+1)
         else:
