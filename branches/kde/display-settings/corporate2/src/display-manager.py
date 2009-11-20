@@ -870,12 +870,13 @@ class MainWidget(dm_mainview.mainWidget):
     def slotSwap(self):
         self._left, self._right = self._right, self._left
 
-        self.updateMenuStatus()
         self.refreshOutputsView()
         self.emitConfigChanged()
 
-        self._selectedOutput = self._left if self.screenImage1.isOn() else self._right
-        self.slotUpdateOutputProperties()
+        if self.screenImage1.isOn():
+            self.screenImage2.setOn(True)
+        else:
+            self.screenImage1.setOn(True)
 
     def load(self):
         if not self.iface.isReady():
