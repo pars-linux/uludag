@@ -238,10 +238,17 @@ class Repository:
         doc = piksemel.newDocument("YALI")
         for collection in projectCollections:
             collectionTag = doc.insertTag("Collection")
-            collectionTag.setAttribute("name", collection.uniqueTag)
-            collectionTag.setAttribute("icon", os.path.basename(collection.icon))
-            collectionTag.insertTag("Title").insertData(collection.title)
-            collectionTag.insertTag("Description").insertData(collection.description)
+            if collection.default:
+                collectionTag.setAttribute("default", collection.default)
+            collectionTag.insertTag("name").insertData(collection.uniqueTag)
+            collectionTag.insertTag("icon").insertData(os.path.basename(collection.icon))
+            collectionTag.insertTag("title").insertData(collection.title)
+            descriptionTag = collectionTag.insertTag("description")
+            descriptionTag.insertTag("content").insertData(collection.descriptionSelection.description)
+            for languageCode, translation in collection.descriptionSelection.translations.items():
+                translationTag = descriptionTag.insertTag("translation")
+                translationTag.setAttribute("code", languageCode)
+                translationTag.insertData(translation)
 
         f = file(os.path.join(path, "collection.xml"), "w")
         f.write(doc.toPrettyString())
@@ -265,11 +272,12 @@ class Repository:
                 collect(item)
 
         collect(package_name)
+        if package_name =="yali4":
        # Not needed deps search for system.base as default at all click!!!
-       # if self.components.has_key("system.base"):
-       #     for item in self.components["system.base"]:
-       #         deps.add(item)
-       #         collect(item)
+            if self.components.has_key("system.base"):
+                for item in self.components["system.base"]:
+                    deps.add(item)
+                    collect(item)
         return deps
 
     def __str__(self):
