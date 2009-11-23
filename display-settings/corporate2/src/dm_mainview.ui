@@ -434,7 +434,7 @@
                             </widget>
                             <widget class="QLabel">
                                 <property name="name">
-                                    <cstring>textLabel2</cstring>
+                                    <cstring>cardInfoLabel</cstring>
                                 </property>
                                 <property name="text">
                                     <string>Card Info</string>
@@ -442,7 +442,7 @@
                             </widget>
                             <widget class="QPushButton">
                                 <property name="name">
-                                    <cstring>buttonVideoCard</cstring>
+                                    <cstring>configureCardButton</cstring>
                                 </property>
                                 <property name="sizePolicy">
                                     <sizepolicy>
