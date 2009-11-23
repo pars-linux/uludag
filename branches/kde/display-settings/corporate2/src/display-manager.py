@@ -26,6 +26,7 @@ import helpdialog
 import dm_mainview
 import driverdialog
 import monitordialog
+import entryview
 
 # Backend
 from backend import Interface
@@ -203,6 +204,10 @@ class MainWidget(dm_mainview.mainWidget):
         self.pixVideoCard.setPixmap(getIconSet("video_card", KIcon.User).pixmap(QIconSet.Automatic, QIconSet.Normal))
         # use reload icon for now. will be replaced with swap icon later.
         self.buttonSwap.setPixmap( getIconSet("reload", KIcon.Toolbar).pixmap(QIconSet.Automatic, QIconSet.Normal))
+
+        # output list
+        self.outputList = entryview.EntryView(self.devicesPage)
+        self.devicesPage.layout().addWidget(self.outputList)
 
         self.iconWide = getIconSet("monitor_wide", KIcon.User)
         self.iconNormal = getIconSet("monitor", KIcon.User)
@@ -952,6 +957,8 @@ class Module(KCModule):
         self.mainwidget.frameDialogButtons.hide()
 
         self.connect(self.mainwidget, PYSIGNAL("configChanged"), self.changed)
+
+        self.load()
 
     def load(self):
         self.mainwidget.load()

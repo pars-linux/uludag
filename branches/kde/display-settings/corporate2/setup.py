@@ -96,6 +96,7 @@ app_data = [
     'src/display-manager.py',
     'src/dm_mainview.ui',
     'src/driverdialog.ui',
+    'src/entryview.py',
     'src/handler.py',
     'src/helpdialog.ui',
     'src/monitordialog.ui',
