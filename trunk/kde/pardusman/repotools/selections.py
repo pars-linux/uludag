@@ -11,16 +11,28 @@
 # Please read the COPYING file.
 #
 
-class PackageCollection:
-    def __init__(self, uniqueTag, icon, title, description, packageSelection):
+class PackageCollection(object):
+    def __init__(self, uniqueTag=None, icon=None, title=None, description=None, packageSelection=None, languageSelection=None, default=""):
         self.uniqueTag = uniqueTag
         self.icon = icon
         self.title = title
-        self.description = description
+        self.descriptionSelection = description
         self.packageSelection = packageSelection
+        self.default =  default
+        self.languageSelection = languageSelection
 
+    def setDefault(self, default):
+        self.default = default
 
-class PackageSelection:
+class CollectionDescription(object):
+    def __init__(self, description, translations={}):
+        self.description = description
+        self.translations = translations
+
+    def addTranslation(self, code, translation):
+        self.translations[code]=translation
+
+class PackageSelection(object):
     def __init__(self, repoURI, selectedComponents=[], selectedPackages=[], allPackages=[]):
         self.repoURI = repoURI
         self.selectedComponents = selectedComponents
@@ -36,11 +48,8 @@ class PackageSelection:
     def addPackage(self, package):
         self.allPackages.append(package)
 
-class LanguageSelection:
+class LanguageSelection(object):
     def __init__(self, defaultLanguage, languages=[]):
         self.defaultLanguage = defaultLanguage
         self.languages = languages
-
-    def addLanguage(language):
-        self.languages.append(language)
 
