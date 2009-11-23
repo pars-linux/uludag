@@ -415,6 +415,13 @@ class MainWidget(dm_mainview.mainWidget):
         if self._selectedOutput not in (self._left, self._right):
             self._selectedOutput = self._left
 
+    def refreshOutputList(self):
+        self.outputList.clear()
+
+        for index, output in enumerate(self.iface.getOutputs()):
+            self.outputList.add(index, output.name,
+                                output.getTypeString(), output.getIcon())
+
     def slotOutputToggled(self, id):
         output = self._outputs[id]
         menu = self.outputsButton.popup()
@@ -904,7 +911,7 @@ class MainWidget(dm_mainview.mainWidget):
         #    dlg.load()
 
         # Output list
-        #self.refreshOutputList()
+        self.refreshOutputList()
 
     def save(self):
         if not self.iface.isReady():

@@ -38,8 +38,8 @@ class EntryView(QScrollView):
             e.hide()
         self.entries = []
 
-    def add(self, editWidget, index, title, description, pardus, os_data):
-        e = Entry(self.viewport(), editWidget, index, title, description, pardus, os_data)
+    def add(self, index, title, description, icon):
+        e = Entry(self.viewport(), index, title, description, icon)
         self.entries.append(e)
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
@@ -64,28 +64,16 @@ class EntryView(QScrollView):
             self.resizeContents(width, th)
 
 class Entry(QWidget):
-    def __init__(self, parent, editWidget, index, title, description, pardus, os_data):
+    def __init__(self, parent, index, title, description, icon):
         QWidget.__init__(self, parent)
-        self.editWidget = editWidget
-
         self.index = index
         self.title = title
         self.description = description
-        self.pardus = pardus
-        self.os_data = os_data
-
-        if self.pardus:
-            os_type = "pardus"
-        else:
-            os_type = os_data["os_type"]
-
-        if not os.path.exists(locate("data", "boot-manager/%s.png" % os_type)):
-            os_type = "other"
 
         # Set icon for the entry
-        self.icon = QImage(locate("data", "boot-manager/%s.png" % os_type))
-        self.icon.smoothScale(32, 32)
-        self.icon = QPixmap(self.icon)
+        image = icon.convertToImage()
+        image.smoothScale(32, 32)
+        self.icon = QPixmap(image)
 
         self.pushEdit = IconButton(self, "configure")
         QToolTip.add(self.pushEdit, i18n("Edit entry"))
@@ -116,8 +104,6 @@ class Entry(QWidget):
         font = paint.font()
         font.setPointSize(font.pointSize() + 1)
         font.setBold(True)
-        if "default" in self.os_data and self.os_data["default"] != "saved":
-            font.setUnderline(True)
         fm = QFontMetrics(font)
         paint.drawText(6 + self.icon.width() + 6, fm.ascent() + 5, unicode(self.title))
 

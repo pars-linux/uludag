@@ -16,6 +16,8 @@ from kdeui import *
 
 from pardus.strutils import ascii_lower
 
+from utility import getIcon
+
 class Output(object):
     # Connection status
     Connected, \
@@ -67,7 +69,7 @@ class Output(object):
 
     def getIcon(self):
         icons = {
-                Output.LaptopPanel:     "computer-laptop",
-                Output.TVOutput:        "video-television"
+                Output.LaptopPanel:     "laptop",
+                Output.TVOutput:        "tv"
                 }
-        return KIcon(icons.get(self.outputType, "video-display"))
+        return getIcon(icons.get(self.outputType, "video-display"))
