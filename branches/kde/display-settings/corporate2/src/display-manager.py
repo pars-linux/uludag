@@ -894,6 +894,18 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.extendDisplays.setChecked(not self._cloned)
 
+        # Card info
+        info = "<qt>%s<br><i>%s</i></qt>" % (self.iface.cardModel, self.iface.cardVendor)
+        self.cardInfoLabel.setText(info)
+        #self.cardDialog.load()
+
+        # Output dialogs
+        #for dlg in self.outputDialogs.values():
+        #    dlg.load()
+
+        # Output list
+        #self.refreshOutputList()
+
     def save(self):
         if not self.iface.isReady():
             return
