@@ -18,6 +18,9 @@ from kdeui import *
 def I18N_NOOP(str):
     return str
 
+def getIcon(name, group=KIcon.Toolbar):
+    return KGlobal.iconLoader().loadIcon(name, group)
+
 def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
