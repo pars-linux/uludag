@@ -45,6 +45,7 @@ class PackageCollectionListItem(QListWidgetItem):
     def __init__(self, parent, collection):
         QListWidgetItem.__init__(self, parent)
         self.collection = collection
+        print "list item collection.title%s" % collection.title
         self.setText(collection.title)
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -219,6 +220,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dialog = PackageCollectionDialog(self, self.repo)
         if dialog.exec_():
             item = PackageCollectionListItem(self.listPackageCollection, dialog.collection)
+            self.project.package_collections.append(item.collection)
+
+            if self.listPackageCollection.count() == 1:
+                item.collection.setDefault("True")
+
 
         self.updateCollection()
 
@@ -227,10 +233,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         item = self.listPackageCollection.item(index)
         #print "self.repo:%s" % self.repo.base_uri
         #print "item.collection"
+        if not self.repo:
+            self.initializeRepo()
+
         dialog = PackageCollectionDialog(self, self.repo, item.collection)
         if dialog.exec_():
-            if item.collection.name != dialog.collection.name:
-                item.setText(dialog.collection.name)
+            if not item.collection.uniqueTag.__eq__(dialog.collection.uniqueTag):
+                print "item.setText"
+                item.setText(dialog.collection.title)
             item.collection = dialog.collection
 
         self.updateCollection()
@@ -336,10 +346,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.terminal.setFocus()
 
     def updateCollection(self):
-        if not self.project.package_collections:
-            print "cd kurulumu"
-            self.listPackageCollection.clear()
-        elif not self.project.media.__eq__("dvd"):
+        #if not self.project.package_collections:
+        #    print "cd kurulumu"
+        #    self.listPackageCollection.clear()
+        if not self.project.media.__eq__("dvd"):
             print "dvd kurulum degil clear"
             self.listPackageCollection.clear()
         else:
