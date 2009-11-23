@@ -18,8 +18,11 @@ import kdedesigner
 
 import dbus
 from dbus.mainloop.qt3 import DBusQtMainLoop
-from zorg.utils import idsQuery, run
+
+# zorg
+from zorg import hwdata
 from zorg.consts import package_sep
+from zorg.utils import run
 
 # UI
 import helpdialog
@@ -33,10 +36,6 @@ from backend import Interface
 
 from device import Output
 from utility import *
-
-# zorg
-from zorg import hwdata
-from zorg.utils import run
 
 mod_name = 'Display Settings'
 mod_app = 'display-settings'
@@ -756,10 +755,6 @@ def main():
     win = QDialog()
 
     DBusQtMainLoop(set_as_default=True)
-
-    # PolicyKit Agent requires window ID
-    from displayconfig import comlink
-    comlink.winID = win.winId()
 
     win.setCaption(i18n('Display Settings'))
     win.setMinimumSize(400, 300)
