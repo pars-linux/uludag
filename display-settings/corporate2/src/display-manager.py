@@ -201,9 +201,10 @@ class MainWidget(dm_mainview.mainWidget):
         self.buttonCancel.setIconSet(getIconSet("cancel", KIcon.Small))
         self.buttonApply.setIconSet(getIconSet("ok", KIcon.Small))
         self.buttonHelp.setIconSet(getIconSet("help", KIcon.Small))
-        self.pixVideoCard.setPixmap(getIconSet("video_card", KIcon.User).pixmap(QIconSet.Automatic, QIconSet.Normal))
         # use reload icon for now. will be replaced with swap icon later.
-        self.buttonSwap.setPixmap( getIconSet("reload", KIcon.Toolbar).pixmap(QIconSet.Automatic, QIconSet.Normal))
+        self.buttonSwap.setPixmap(getIcon("reload", KIcon.Toolbar))
+
+        self.pixVideoCard.setPixmap(getIcon("video_card", KIcon.User))
 
         # output list
         self.outputList = entryview.EntryView(self.devicesPage)
@@ -230,24 +231,10 @@ class MainWidget(dm_mainview.mainWidget):
         # set signals
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.slotOutputSelected)
 
-        #self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
-        #self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.buttonGroupDualModes, SLOT("setEnabled(bool)"))
-        #self.connect(self.radioBoxExtended, SIGNAL("toggled(bool)"), self.setDualModeOptions)
-
-        #self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedOutput)
-        #self.connect(self.comboBoxResolution, SIGNAL("activated(int)"), self.setSelectedMode)
-
-        #self.connect(self.buttonDetectDisplays, SIGNAL("clicked()"), self.detectDisplays)
-        #self.connect(self.buttonIdentifyDisplays, SIGNAL("clicked()"), self.identifyDisplays)
-
         self.connect(self.buttonCancel, SIGNAL("clicked()"), qApp, SLOT("quit()"))
         self.connect(self.buttonApply, SIGNAL("clicked()"), self.save)
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.slotHelp)
         self.connect(self.buttonSwap, SIGNAL("clicked()"), self.slotSwap)
-
-        #self.connect(self.buttonVideoCard, SIGNAL("clicked()"), self.slotCardSettings)
-        #self.connect(self.buttonMonitor1, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(1))
-        #self.connect(self.buttonMonitor2, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(2))
 
         self.connect(self.extendDisplays, SIGNAL("toggled(bool)"), self.emitConfigChanged)
         self.connect(self.detectButton, SIGNAL("clicked()"), self.slotDetectClicked)
