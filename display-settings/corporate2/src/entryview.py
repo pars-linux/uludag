@@ -79,24 +79,16 @@ class Entry(QWidget):
         QToolTip.add(self.pushEdit, i18n("Edit entry"))
         self.connect(self.pushEdit, SIGNAL("clicked()"), self.slotEdit)
 
-        self.pushDelete = IconButton(self, "cancel")
-        QToolTip.add(self.pushDelete, i18n("Delete entry"))
-        self.connect(self.pushDelete, SIGNAL("clicked()"), self.slotDelete)
-
         self.show()
 
     def slotEdit(self):
         self.editWidget.editEntry(self.os_data)
-
-    def slotDelete(self):
-        self.editWidget.deleteEntry(self.index, self.title)
 
     def paintEvent(self, event):
         paint = QPainter(self)
         col = KGlobalSettings.baseColor()
         paint.fillRect(event.rect(), QBrush(col))
         self.pushEdit.setPaletteBackgroundColor(col)
-        self.pushDelete.setPaletteBackgroundColor(col)
 
         dip = (self.height() - self.icon.height()) / 2
         paint.drawPixmap(6, dip, self.icon)
@@ -116,8 +108,7 @@ class Entry(QWidget):
     def resizeEvent(self, event):
         w = event.size().width()
         h = event.size().height()
-        self.pushEdit.setGeometry(w - self.pushEdit.myWidth - 6 - 6 - self.pushEdit.myWidth - 3, 6, self.pushEdit.myWidth, self.pushEdit.myHeight)
-        self.pushDelete.setGeometry(w - self.pushDelete.myWidth - 6 - 6, 6, self.pushDelete.myWidth, self.pushDelete.myHeight)
+        self.pushEdit.setGeometry(w - self.pushEdit.myWidth - 6 - 3, 6, self.pushEdit.myWidth, self.pushEdit.myHeight)
         return QWidget.resizeEvent(self, event)
 
     def sizeHint(self):
@@ -126,12 +117,12 @@ class Entry(QWidget):
         f.setBold(True)
         fm = QFontMetrics(f)
         rect = fm.boundingRect(unicode(self.title))
-        w = 6 + self.icon.width() + 6 + rect.width() + 30 + self.pushEdit.myWidth + 3 + self.pushDelete.myWidth + 6
+        w = 6 + self.icon.width() + 6 + rect.width() + 30 + self.pushEdit.myWidth + 6
 
         f.setPointSize(f.pointSize() - 2)
         fm2 = self.fontMetrics()
         rect2 = fm2.boundingRect(unicode(self.description))
-        w2 = 6 + self.icon.width() + 6 + rect2.width() + 30 + self.pushEdit.myWidth + 3 + self.pushDelete.myWidth + 6
+        w2 = 6 + self.icon.width() + 6 + rect2.width() + 30 + self.pushEdit.myWidth + 6
 
         w = max(w, w2)
         h = max(fm.height() + 3 + fm2.height(), 32) + 10
