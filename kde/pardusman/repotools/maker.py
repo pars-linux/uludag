@@ -142,8 +142,15 @@ def generate_isolinux_conf(project):
     image_dir = project.image_dir()
     iso_dir = project.iso_dir()
 
-    lang_default = project.default_language
-    lang_all = project.selected_languages
+    # Hack for DVD Collections
+    if not project.package_collections:
+        lang_default = project.default_language
+        lang_all = project.selected_languages
+    else:
+        for collection in project.package_collections:
+            if collection.default:
+                lang_default = collection.languageSelection.defaultLanguage
+                lang_all =  collection.languageSelection.languages
 
     isolinux_tmpl = """
 prompt 1
@@ -295,6 +302,13 @@ def setup_live_policykit_conf(project):
     f.write(policykit_conf_tmpl)
     f.close()
 
+def copyCollectionIcon(project):
+    image_dir = project.image_dir()
+    destination = os.path.join(image_dir, "usr/share/yali4/data")
+    collectionDir = os.path.join(destination, "index")
+    for collection in project.package_collections:
+        run('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
+
 def copyPisiIndex(project):
     image_dir = project.image_dir()
     if project.package_collections:
@@ -314,14 +328,17 @@ def copyPisiIndex(project):
             print('cp -PR "%s" "%s"' % (source, collectionDir))
             print('sha1sum "%s" > "%s"' % (source, "%s.sha1sum" % os.path.join(collectionDir,os.path.basename(source))))
             print('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
-    else:
-        path = os.path.join(image_dir, "usr/share/yali4/data/pisi-index.xml.bz2")
-        repo = os.path.join(project.work_dir, "repo_cache/pisi-index.xml.bz2")
 
-        run('cp -PR "%s" "%s"' % (repo, path))
-        run('sha1sum "%s" > "%s"' % (repo, "%s.sha1sum" % path))
-        print('cp -PR "%s" "%s"' % (repo, path))
-        print('sha1sum "%s" > "%s"' % (repo, "%s.sha1sum" % path))
+        copyCollectionIcon(project)
+
+    # Copy All Collection Packages index as pisi-index.xml.bz2 for dvd and default cd installation
+    path = os.path.join(image_dir, "usr/share/yali4/data/pisi-index.xml.bz2")
+    repo = os.path.join(project.work_dir, "repo_cache/pisi-index.xml.bz2")
+
+    run('cp -PR "%s" "%s"' % (repo, path))
+    run('sha1sum "%s" > "%s"' % (repo, "%s.sha1sum" % path))
+    print('cp -PR "%s" "%s"' % (repo, path))
+    print('sha1sum "%s" > "%s"' % (repo, "%s.sha1sum" % path))
 
 def install_packages(project):
     image_dir = project.image_dir()
@@ -339,8 +356,10 @@ def squash_image(project):
     image_dir = project.image_dir()
     image_file = project.image_file()
 
+    print "squashfs image dir%s" % image_dir
     if not image_dir.endswith("/"):
         image_dir += "/"
+    print "later squashfs image dir%s" % image_dir
     temp = tempfile.NamedTemporaryFile()
     f = file(temp.name, "w")
     f.write("\n".join(get_exclude_list(project)))
@@ -377,9 +396,13 @@ def make_repos(project):
 
             repo_dir = project.install_repo_dir(clean=True)
             if project.package_collections:
+                all_packages = []
                 for collection in project.package_collections:
+                    all_packages.extend(collection.packageSelection.allPackages)
                     repo.make_local_repo(repo_dir, collection.packageSelection.allPackages, collection.uniqueTag)
                     print "make_collection_index on repo_dir:%s" % repo_dir
+                repo.make_local_repo(repo_dir, all_packages)
+
                 repo.make_collection_index(repo_dir, project.package_collections)
             else:
                 repo.make_local_repo(repo_dir, project.all_packages)
