@@ -635,8 +635,8 @@ class MainWidget(dm_mainview.mainWidget):
             self.iface.applyNow()
 
             KMessageBox.information(self,
-                    i18n("You must restart your X session for all "
-                                 "changes to take effect."),
+                    i18n("You must restart your X session for all the "
+                         "changes to take effect."),
                     QString.null,
                     "Screen Configuration Saved")
 
