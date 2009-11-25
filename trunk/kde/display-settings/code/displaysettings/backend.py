@@ -11,6 +11,8 @@
 # Please read the COPYING file.
 #
 
+import subprocess
+
 # Comar
 import comar
 import zorg.config
@@ -174,3 +176,51 @@ class Interface:
     def sync(self):
         self.link.Xorg.Display["zorg"].syncConfigs()
         self.readConfig()
+
+    def applyNow(self):
+        if not isinstance(self.ext, RRInterface):
+            return
+
+        cloned = False
+        for output in self._info.outputs.values():
+            if output.ignored:
+                continue
+
+            if output.right_of or output.below:
+                break
+
+        else:
+            cloned = True
+
+        cmd = ["xrandr"]
+
+        for output in self._info.outputs.values():
+            if output.ignored:
+                continue
+
+            cmd += ["--output", output.name]
+
+            if not output.enabled:
+                cmd.append("--off")
+                continue
+
+            if output.mode:
+                cmd += ["--mode", output.mode]
+            else:
+                cmd.append("--auto")
+
+            if output.refresh_rate:
+                cmd += ["--rate", output.refresh_rate]
+
+            cmd += ["--rotation", output.rotation or "normal"]
+
+            if output.right_of:
+                cmd += ["--right-of", output.right_of]
+
+            if output.below:
+                cmd += ["--below", output.below]
+
+            if cloned:
+                cmd += ["--pos", "0x0"]
+
+        subprocess.call(cmd)
