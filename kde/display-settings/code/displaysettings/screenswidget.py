@@ -353,9 +353,10 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
             self.iface.setSimpleLayout(left, right, cloned)
 
             self.iface.sync()
+            self.iface.applyNow()
 
             kdeui.KMessageBox.information(self,
-                    kdecore.i18n("You must restart your X session for the "
+                    kdecore.i18n("You must restart your X session for all the "
                                  "changes to take effect."),
                     QtCore.QString(),
                     "Screen Configuration Saved")
