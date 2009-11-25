@@ -1,6 +1,7 @@
 Openldap / Ahenk Server Configuration Tool
 ==========================================
 
+- Install openldap-server package
 - Copy ahenk.schema into /etc/openldap/schema/
 - Run ahenk-server.py:
     # ./ahenk-schema.py pardus.org.tr
