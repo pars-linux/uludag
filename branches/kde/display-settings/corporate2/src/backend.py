@@ -181,6 +181,17 @@ class Interface:
         if not isinstance(self.ext, RRInterface):
             return
 
+        cloned = False
+        for output in self._info.outputs.values():
+            if output.ignored:
+                continue
+
+            if output.right_of or output.below:
+                break
+
+        else:
+            cloned = True
+
         cmd = ["xrandr"]
 
         for output in self._info.outputs.values():
@@ -208,5 +219,8 @@ class Interface:
 
             if output.below:
                 cmd += ["--below", output.below]
+
+            if cloned:
+                cmd += ["--pos", "0x0"]
 
         subprocess.call(cmd)
