@@ -48,7 +48,7 @@ dosyasını iletmeyi unutmayınız.
     \item Yukarıdaki testi açılış ekranında "Grafik Ekran (F4)" menüsünden "Yeniden Tanı" seçeneğini seçerek tekrarlayın.
     \item xterm paketinin sisteminizde kurulu olduğundan emin olun ve şu komutu verin:
       \begin{verbatim}
-xinit -- :2
+       xinit -- :2
       \end{verbatim}
       Yeni bir X ekranı içinde bir terminal penceresi açıldığını gözlemleyin. Fare imlecini terminal penceresi üzerine getirip "exit" komutunu vererek çıkabilirsiniz.
     \item Herhangi bir uygulama penceresini taşıyın ve boyutlandırın. Bu işlemlerin hızlı bir şekilde gerçekleştiğini gözlemleyin.
@@ -87,6 +87,15 @@ xinit -- :2
 
 \section{Driver Alt Bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+  \begin{verbatim}
+  vdpau-video
+  xvba-video   
+  \end{verbatim}
+
+  \item xorg-input-evdev paketi kurulumu sonrası:
+
+Kurulumdan sonra klavye ve farnizin sorunsuz çalıştığını gözlemleyin.
   \item virtualbox-guest-utils paketi kurulumu sonrası:
 
 hardware-tr.pdf virtualbox testini gerçekleştirin.
@@ -130,6 +139,7 @@ Ekran kartınızın ne olduğuna dair bilgiye aşağıda bulunan komut ile ulaş
   xorg-video-apm 
   xorg-video-ast
   xorg-video-cirru
+  xorg-video-openchrome
   xorg-video-fbdev (Bu sürücü ekran kartından bağımsızdır ve direk teste tabidir.)
   xorg-video-glint
   xorg-video-i128
@@ -206,6 +216,7 @@ libXft
 libXmu
 libpciaccess
 libvdpau
+libva
 libxkbfile
 xcb-util
   \end{verbatim}
@@ -218,6 +229,17 @@ Bilgisayarınızı yeniden başlatın ve effektlerinizin düzgün çalıştığ�
 
 \section{Misc alt Bileşeni}
 \begin{enumerate}
+\item xinit paketi kurulumu sonrası:
+
+Aşağıdaki komutun sorunsuz çalıştığını gözlemleyin.
+  \begin{verbatim}
+   sudo pisi it xterm
+   xinit -- :2
+  \end{verbatim}
+
+ \item xdm paketi kurulumu sonrası:
+
+Service yöneticisinden xdm servisini tekrar başlatın ve X'in sorunsuz bir şekilde kapanıp açıldığını gözlemleyin.
  \item xorg-app paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.

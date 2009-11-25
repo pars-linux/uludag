@@ -20,6 +20,21 @@
 \begin{verbatim}
  aircrack-ng
 \end{verbatim}
+\item netcat paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırın ve komutun sorunsuz bir şekilde ilgili portu dinlediğini gözlemleyin.
+\begin{verbatim}
+ nc -l 3333 
+\end{verbatim}
+
+\item rrdtool paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+rrdtool create target.rrd --start 1023654125 --step 300 DS:mem:GAUGE:600:0:671744  RRA:AVERAGE:0.5:12:24 RRA:AVERAGE:0.5:288:31 
+rrdtool info target.rrd
+\end{verbatim}
+
 
 \item arptools paketi kurulumu sonrası:
 
@@ -95,6 +110,14 @@ Uygulamayı açın kullanıcısı fazla olan public hublardan birine bağlanmaya
 
 \section{Download alt Bileşeni}
 \begin{enumerate}
+\item wget paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+\end{verbatim}
+
+
 \item aria2 paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun boot.iso'yu sorunsuz bir şekilde indirdiğini gözlemleyin.

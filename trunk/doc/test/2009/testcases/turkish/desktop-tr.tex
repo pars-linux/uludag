@@ -85,11 +85,8 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açılabildiğini gözleml
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir:
 \begin{verbatim}
  iTest
+ shared-mime-info
 \end{verbatim}
-
-\item shared-mime-info paketi kurulumu sonrası:
-
-Firefox, thunderbird, openoffice, kde ikonlarının düzgün çalıştığını gözlemleyin.
 
 \item krename paketi kurulumu sonrası:
 
@@ -121,6 +118,12 @@ Uygulamanın kemenüden gdüzgün bir şekilde çalıştığını gözlemleyin.
  qt-sql-odbc
  qt-sql-postgresql
 \end{verbatim}
+\item gtk-qt-engine paketi kurulumu sonrası
+
+desktop-tr.pdf gtk2-demo testini gerçekleştirin.
+
+gnome-mplayer uygulamasını açın ve görsel olarak sorunsuz açıldığını gözlemleyin.
+
  \item qt paketi kurulumu sonrası
 
 \begin{verbatim}
@@ -244,6 +247,15 @@ Aşağıda bulunan komutu çalıştırın ve klipper'ı başlatın sorunsuz bir 
  \item history-manager paketi kurulumu sonrası:
 
  http://svn.pardus.org.tr/uludag/trunk/doc/test/2009/testguide/turkish/alfabeta/history-manager-tr.pdf  testini gerçekleştiriniz.
+
+\item package-manager paketi kurulumu sonrası:
+
+http://svn.pardus.org.tr/uludag/trunk/doc/test/2009/testguide/turkish/alfabeta/package-manager-tr.pdf  testini gerçekleştiriniz.
+
+\item service-manager paketi kurulumu sonrası:
+
+http://svn.pardus.org.tr/uludag/trunk/doc/test/2009/testguide/turkish/alfabeta/service-manager-tr.pdf  testini gerçekleştiriniz.
+
 \end{enumerate}
 
 \subsection*{Base alt bileşeni}
@@ -255,6 +267,10 @@ Aşağıda bulunan komutu çalıştırın ve klipper'ı başlatın sorunsuz bir 
 kdelibs-devel
 kdelibs-apidox 
 \end{verbatim}
+\item pardus-default-settings paketi kurulumu sonrası:
+
+Pardusun ön tanımlı ayarları olan milky ikon temasının, açılış ekranının, kullanıcı giriş ekranının düzgün bir şekilde açıldığını gözlemleyin.
+
 \item kbd paketi kurulumu sonrası:
 
 Makinenizi yeniden başlatın, klavyenizin dilinin ve fonksiyon tuşlarının düzgün olduğunu gözlemleyiniz. 
@@ -277,7 +293,8 @@ Aşağıda bulunan komutu çalıştırın ve sorunsuz bir şekilde çalıştır�
 
  \item kdelibs paketi kurulumu sonrası:
 \begin{itemize}
- \item multimedia-tr.pdf kaffeine testini gerçekleştirin
+ \item network-tr.pdf choqok testini gerçekleştirin
+
 
  \item kdegraphics paketini kurun: (2008 için kdegraphics4)
 \begin{verbatim}
@@ -362,9 +379,12 @@ Aşağıda bulunan ugulamaların düzgün çalıştığını gözlemleyin.
 
 \subsection*{Addon alt bileşeni}
 \begin{enumerate}
+\item  ksplash-pardus-theme paketi kurulumu sonrası:
+
+Bilgisayarınız açılırken KDE açılış ekranının sorunsuz bir şekilde açıldığını gözlemleyin.
  \item  QtCurve-KDE4 paketi kurulumu sonrası:
 
-Sistem ayarları $\rightarrow$ Görünüm $\rightarrow$ Stil yolunu izleyerek QtCurve stilini seçiniz ve stilin sorunsuz bir şekilde değiştiğini gözlemleyiniz.
+Sistem ayarları $\rightarrow$ Görünüm $\rightarrow$ Biçim yolunu izleyerek QtCurve stilini seçiniz ve stilin sorunsuz bir şekilde değiştiğini gözlemleyiniz.
 \item plasmoid-daisy paketi kurulumu sonrası:
 
 Masaüstüne sağ tıklayıp programcık ekleyi seçin. Daisy'un eklenmiş olduğunu gözlemleyin.

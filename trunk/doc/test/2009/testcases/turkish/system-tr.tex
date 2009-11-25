@@ -20,6 +20,7 @@
 \begin{verbatim}
  pam_krb5
  pam_ldap
+ nss_ldap
 \end{verbatim}
 
 \end{enumerate}
@@ -31,6 +32,7 @@
  gfxboot
  gfxtheme-pardus-install
  syslinux
+ bootchart
 \end{verbatim}
 
 \item gfxtheme-base ve gfxtheme-pardus-boot paketleri kurulumu sonrası.
@@ -76,7 +78,55 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
  libXau
  hdparm
  popt
+ libssh2
+ dbus-glib
 \end{verbatim}
+
+\item diffutils paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/system/base/test-diffutils
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/system/base/test-diffutils2
+ touch test
+ diff3  test-diffutils test-diffutils2 test 
+\end{verbatim}
+
+diff3 
+\item dbus-python paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ ipython
+ import dbus
+\end{verbatim}
+
+
+\item comar paketi kurulumu sonrası:
+
+desktop-tr.pdf service-manager ve package-manager testlerini gerçekleştiriniz.
+\item python-fchksum paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları çalıştırın ve "Test python-fchksum"'ın crc32'sinin alınabildiğini gözlemleyin.
+\begin{verbatim}
+ ipython
+ import binascii
+ binascii.crc32("Test python-fchksum")
+\end{verbatim}
+
+\item flex paketi kurulumu sonrası:
+
+Aşağıdaki komutları çalıştırın ve sorunsuz bir şekilde çalıştıklarını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/system/base/flex-test.l
+ flex flex-test.l
+ gcc lex.yy.c -o flex-test -lfl 
+ ./flex-test
+ stop
+ start
+\end{verbatim}
+
+
 \item sqlite paketi kurulumu sonrası:
 programming-tr.pdf pysqlite testini gerçekleştiriniz.
 
