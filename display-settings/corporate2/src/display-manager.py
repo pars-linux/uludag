@@ -527,48 +527,6 @@ class MainWidget(dm_mainview.mainWidget):
 
             self.emitConfigChanged()
 
-    def setIconbyResolution(self, screenId = None):
-        if not screenId:
-            screenId = self.selectedScreen
-
-        if screenId == 1:
-            screenImage = self.screenImage1
-            pixMonitor = self.pixMonitor1
-            resolution = self.currentModes[self.dconfig.primaryScr]
-        else:
-            screenImage = self.screenImage2
-            pixMonitor = self.pixMonitor2
-            resolution = self.currentModes[self.dconfig.secondaryScr]
-
-        if "x" not in resolution:
-            x, y = 4, 3
-        else:
-            x, y = resolution.split("x")
-
-        if float(x)/float(y) >= 1.6:
-            icon = self.iconWide
-        else:
-            icon = self.iconNormal
-
-        screenImage.setIconSet(icon)
-        pixMonitor.setPixmap(icon.pixmap(QIconSet.Automatic, QIconSet.Normal))
-
-    def getCurrentConf(self):
-        # returns a dict of outputs: resolutions.
-        self.screenModes = self.dconfig.modes
-
-        # returns a list of outputs
-        self.screenOutputs = self.dconfig.outputs
-
-        # returns a dict of current outputs: resolutions
-        self.currentModes = self.dconfig.current_modes
-
-    def setDualModeOptions(self, extended):
-        if extended:
-            self.dconfig.desktop_setup = "horizontal"
-        else:
-            self.dconfig.desktop_setup = "clone"
-
     def suggestDriver(self):
         config = self.iface.getConfig()
         dontAskAgainName = "Driver Suggestion"
