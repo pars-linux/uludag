@@ -48,7 +48,6 @@ Aşağıda bulunan komutaları çalıştırın ve daha sonra uzaktan kumanda dü
 Kmenu'den Ati Graphics Adapter Settings'i açın ve ati kartınızı bulabildiğini ve tanıdığını gözlemleyin.
 \end{enumerate}
 
-
 \section{Firmware alt Bileşeni}
 \begin{enumerate}
  \item Aşağıda bulunan paketler kurulum testine tabidir.
@@ -59,12 +58,15 @@ ql2x00-firmware
 
 \section{Printer alt Bileşeni}
 \begin{enumerate}
- 
 
 \item Aşağıda bulunan paketler kurulum testine tabidir.
 \begin{verbatim}
 gutenprint 
 \end{verbatim}
+\item epson-alc1100 paketi kurulumu sonrası:
+
+Eğer Epson AcuLaser C1100 yazıcınız var ise bu yazıcının tanındığını gözlemleyin.
+
 \item cups paketi kurulumu sonrası:
 
 Eğer bir yazıcınız var işe deneme çıktı almaya çalışın ve sorunsuz bir şekilde alabildiğinizi gözlemleyin.
@@ -91,6 +93,9 @@ pcsc-lite
 
 \section{Info alt Bileşeni}
 \begin{enumerate}
+ \item  hal-info paketi kurulumu sonrası:
+Makinenize bir usbdisk takın ve sistemin uyarı verdiğini gözlemleyin.
+
  \item  x86info paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun x86 mimarisi ile oluşturulmuş cpu'ları listelediğini gözlemleyin.
@@ -144,13 +149,23 @@ Eğer bir tarayıcınız var ise bu paketi test edebilirsiniz!!
 
 \section{Optical alt Bileşeni}
 \begin{enumerate}
+\item cdrdao paketi kurulumu sonrası:
+
+Aşağıdaki bağlantıda bulunan iso'yu DAO modunda DVD ve CD'ye yazdırın. 
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+\end{verbatim}
+
+Bilgisayarınızı CD/DVD sürücünüzden başlatın ve iso'nun düzgün bir şekilde boot ettiğini gözlemleyin.
+
+
  \item cdrtools paketi kurulumu sonrası:
 
 Aşağıda bulunan dosyaları k3b ile bir audio cd olarak yazdırın. Yazdırabildiğinizi gözlemleyin.
  \begin{verbatim}
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/sample.ogg
+  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/sound/sample.ogg
  \end{verbatim}
 
 Daha sonra bu cd'de bulunanların okunabildiğini gözlemleyin.
@@ -199,8 +214,8 @@ Aşağıda bulunan nintendo oyununu uygulama ile açın ve çalıştırın, soru
 
  \item wine ve wine-devel paketleri kurulumu sonrası:
 \begin{verbatim}
-# http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/emulator/Firefox%20Setup%203.5.5.exe
-# wine  egyptianball_setup.exe
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/emulator/Firefox%20Setup%203.5.5.exe
+ wine Firefox\ Setup\ 3.5.5.exe
 \end{verbatim}
 \begin{itemize}
  \item Düzgün bir şekilde firefox'un kurulduğunu ve açıldığını gözlemleyin.
@@ -224,8 +239,14 @@ Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. A
 
 \section{Misc alt Bileşeni}
 \begin{enumerate}
- \item acpi4asus paketi kurulum testine tabidir. 
+ \item Aşağıda bulunan paketler sadecekurulum testine tabidir.
+\begin{verbatim}
+  acpi4asus
+\end{verbatim}
 
+\item fnfx paketi kurulumu sonrası:
+
+Eğer toshiba dizüstü bilgisayarınız var ise LCD parlaklığı, ses ve fan gibi ayarların tuşlar üzerinden yapılmasına olanak tanındığını gözlemleyin.
 \end{enumerate}
 
 \section{Bluetooth alt Bileşeni}
@@ -235,6 +256,12 @@ Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. A
   obexd
   bluez-compat
 \end{verbatim}
+
+ \item obex-data-server paketi kurulumu sonrası: 
+ 
+(Eğer bluetooth aygıtınız var ise bu testi gerçekleştirebilirsiniz.)
+
+Bluetooth aygıtınızı bilgisayarınıza takın ve dosya paylaşımı yapmaya çalışın. Sorunsuz bir şekilde yapılabildiğini gözlemleyin.
  \item bluez paketi kurulumu sonrası: 
  
 (Eğer bluetooth aygıtınız var ise bu testi gerçekleştirebilirsiniz.)
@@ -269,6 +296,20 @@ Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın, ve tara
 
 \section{Disk alt Bileşeni}
 \begin{enumerate}
+\item gparted paketi kurulumu sonrası:
+
+Bir usbdis takın ve gparted uygulamasını Kmenu'den çalıştırın. 
+
+Daha sonra uygulama yardımı ile usbdiske format atın, sorunsuz bir şekilde işlemin gerçekleştiğini gözlemleyin.
+\item fuseiso paketi kurulumu sonrası:
+
+Aşağıdaki komutları çalıştırın ve test dizini altında iso dosyasının açıldığını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+ fuseiso -p boot.iso /test
+ ls test
+\end{verbatim}
+
 \item fuse paketi kurulumu sonrası:
 hardware-tr.pdf fuse-python testini gerçekleştirin.
 

@@ -332,7 +332,6 @@ Sorunsuz bir şekilde cmrt10.pfa dosyasının oluştuğunu gözlemleyin.
 Sorunsuz bir şekilde bu komutların çalıştığını gözlemleyin. 
 \item tellico paketi kurulumu sonrası:
 
-
 \begin{itemize}
  \item Kurulumdan sonra sorunsuz bir şekilde bu uygulamanın açıldığını gözlemleyin.
  \item Edit $\rightarrow$ İnternet araması yolunu izleyin, karşınıza çıkan pencereden bir arama yapın. Arama sonuçlarının sorunsuz bir şekilde listelendiğini gözlemleyin. Listede bulunan verilerden birini seçin ve ekleyin. Sorunsuz bir şekilde eklendiğini gözlemleyin.
@@ -635,6 +634,16 @@ Yukarıda bulunan komutların sorunsuz bir şekilde uygun çıktıları üretti�
 
 \section{ Spellcheck alt bileşeni}
 \begin{enumerate}
+\item hunspell paketi kurulumu sonrası:
+
+\begin{verbatim}
+ # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt
+ # sudo pisi it hunspell-dict-en
+ # hunspell -d en_US -l hunspell-dict-en.txt
+ # hunspell -G -d en_US -l hunspell-dict-en.txt
+\end{verbatim}
+Üçüncü komutun yanlış olan kelimeyi, dördüncü komutun ise düzgün olan kelimeyi bulduğunu gözlemleyin.
+
 \item Aşağıda bulunan paketler aynı şekilde test edilecektir.
 \begin{verbatim}
 aspell
@@ -662,14 +671,7 @@ Aşağıdaki ikinci komutu kullanarak kurmuş olduğunuz sözlüğü listeleyin,
 Enchant komutunun yanlış olan sözcük için düzgün bir alternatif ürettiğini gözlemleyin.
 
 \item enchant paleti kurulumu sonrası:
-\begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt
- # sudo pisi it hunspell-dict-en
- # hunspell -d en_US -l hunspell-dict
- # hunspell -G -d en_US -l hunspell-dict
-\end{verbatim}
-Üçüncü komutun yanlış olan kelimeyi, dördüncü komutun ise düzgün olan kelimeyi bulduğunu gözlemleyin.
-
+office-tr.pdf hunspell testini gerçekleştirin.
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  zpspell

@@ -90,6 +90,21 @@ Yukarıda verilen ikinci komutun, virüsü tespit edebildiğini gözlemleyin.
 \end{enumerate}
 \section{Admin alt bileşeni}
 \begin{enumerate}
+
+\item systemtap paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ stap-report
+\end{verbatim}
+
+\item systemtap-grapher paketi kurulumu sonrası:
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+stapgraph
+\end{verbatim}
+
+
 \item latencytop paketi kurulumu sonrası:
 
 Aşağıda bulunan komutu çalıştırın ve sistemde açık olan uygulamaların işlem zamanlarının sorunsuz bir şekilde listelendiğini gözlemleyin.
@@ -120,6 +135,14 @@ Aşağıda bulunan komutu çalıştırın ve sistemde çalışan tüm uygulamala
 \end{enumerate}
 \section{Shell alt bileşeni}
 \begin{enumerate}
+ \item zsh paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırın ve yeni bir kabuğun açıldığını gözlemleyin.
+ \begin{verbatim}
+  zsh
+  0
+ \end{verbatim}
+
  \item bash-completion paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun hata alınmadan çalıştığını gözlemleyin.
@@ -144,6 +167,28 @@ bash: amsn: command not found
 \end{enumerate}
 \section{Misc alt bileşeni}
 \begin{enumerate}
+
+\item srace paketi kurulumu sonrası: 
+
+Aşağıda bulunan komutununu a2p bin dosyasının sistem çağrılarını, bu çağrılara verilen parametreleri ve dönüş değerlerini gösterdiğini gözlemleyin.
+\begin{verbatim}
+strace /usr/bin/a2p 
+\end{verbatim}
+
+
+
+\item ncdu paketi kurulumu sonrası: 
+
+Aşağıda bulunan komutunun programların disk kullanım alanlarını sorunsuz bir şekilde görüntülediğini gözlemleyin.
+\begin{verbatim}
+ ncdu 
+\end{verbatim}
+
+
+\item puding paketi kurulumu sonrası:
+
+Kmenu'den programın sorunsuz çalıştığını gözlemleyin.
+
 \item pax-utils paketi kurulumu sonrası:
 
 Aşağıda bulunan komutları çalıştırın sorunsuz çalıştıklarını gözlemleyin.

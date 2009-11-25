@@ -53,6 +53,31 @@ Menü $\rightarrow$ digikam $\rightarrow$ import $\rightarrow$ Import from faceb
 
 \section{Sound alt Bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ hydrogen-drumkits
+\end{verbatim}
+\item paman paketi kurulumu sonrası:
+
+Kmenu'den uygulamanın sorunsuz açıldığını gözlemleyin.
+
+\item hydrogen paketi kurulumu sonrası:
+
+Kmenu'den uygulamanın sorunsuz açıldığını gözlemleyin.
+
+\item gnomad2 paketi kurulumu sonrası:
+
+Eğer Creative Zen ve Dell DJ cihazlarından biri bulunmakta ise, bilgisayarınıza bu cihazları taktıktan sonra, Kmenu'den gnomad2 uygulamasını çalıştırın ve sorunsuz bir şekilde çalıştıklarını gözlemleyin.
+
+\item mp3splt paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların mp3 dosyasını split altına böldüğünü gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+ mp3splt -f -t 0.5 -a -d split sample.mp3
+\end{verbatim}
+
+
 \item mixxx paketi kurulumu sonrası:
 
 Kmenüden uygulamanın açılabildiğini gözlemleyin.
@@ -72,6 +97,7 @@ Kmenüden uygulamayı açın ve /usr/share/jamin/examples dosyası altında bulu
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/test_frescobaldi.ly
  \end{verbatim}
 Yukarıda bulunan dosyayı frescobaldi ile açıp, uygulamanın sol tarafında bulunan Lilypond butonuna basın ve sorunsuz bir şekilde pdf dökümanının oluştuğunu gözlemleyin.
+
 \item pulseaudio, pulseaudio-docs, pulseaudio-gconf, pulseaudio-jack paketi kurulumu sonrası:
 \begin{itemize}
  \item multimedia-tr.pdf pavucontrol testini gerçekleştirin.

@@ -96,7 +96,7 @@ git-cvs
 git-emacs
 git-gui
 git-svn
-gitk
+gitweb
 \end{verbatim}
 \item mercurial paketi kurulumu sonrası:
 
@@ -138,7 +138,7 @@ Aşağıdaki komutları çalıştırın. Ve sorunsuz bir şekilde Git deposu olu
 
 test dizininin sorunsuz bir şekilde eklenmiş olduğunu gözlemleyin:
 \begin{verbatim}
-  # svn co http://svn.pardus.org.tr/uludag/trunk/test/2009/testguide/turkish/
+  # svn co http://svn.pardus.org.tr/uludag/trunk/doc/test/2009/testguide/turkish/
   # cd turkish
   # svn mkdir test
   # svn st
@@ -153,6 +153,10 @@ testfile dosyası içerisine bir kaç kelime yazın ve kaydedin. Yapılan deği�
 
 \section{Environment alt bileşeni}
 \begin{enumerate}
+ \item lazarus paketi kurulumu sonrası:
+
+Kmenüden programın sorunsuz açıldığını gözlemleyin.
+
  \item eric paketi kurulumu sonrası:
  
 Aşağıda bulunan dosyayı eric uygulaması ile açın ve Start $\rightarrow$ Run Script yolunu izleyerek çalıştırın. 
@@ -415,6 +419,37 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
 \end{enumerate}
 \subsection{Python alt bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ python-docs
+ gnome-python-docs
+\end{verbatim}
+\item django-tagging paketi kurulumu sonrası:
+\begin{verbatim}
+ mkdir test
+ cd test
+ django-admin.py startproject test-django-tagging
+ cd test-django-tagging
+ ipython
+ import tagging
+\end{verbatim}
+
+
+\item pyorbit paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import ORBit
+\end{verbatim}
+
+\item gnome-python paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import bonobo
+\end{verbatim}
+
+
 \item PyXML paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
@@ -524,7 +559,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 Aşağıda bulunan komutun sorunsuz bir şekilde müzik dosyası etiklerini listelediğini gözlemleyin.
 \begin{verbatim}
 wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3 
-mutagen-inspect linux.mp3
+mutagen-inspect sample.mp3
 \end{verbatim}
 
 
@@ -746,7 +781,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 \item python-memcached paketi kurulumu sonrası:
 
-Apache sunucusunu servis yöneticisinden başlatın.
+memcached sunucusunu servis yöneticisinden başlatın.
 
 Aşağıdaki komutları çalıştırın ve sonucun "True" döndürdüğünü gözlemleyin.
 \begin{verbatim}
@@ -884,6 +919,14 @@ taglib-sharp
 ndesk-dbus
 ndesk-dbus-glib
 \end{verbatim}
+\item boo paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/boo-test.boo
+ booi boo-test.boo
+\end{verbatim}
+
 
  \item gmime, gmime-docs, gmime-sharp paketi kurulumu sonrası:
 
