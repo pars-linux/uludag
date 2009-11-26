@@ -18,6 +18,9 @@
     <property name="sizeGripEnabled">
         <bool>true</bool>
     </property>
+    <property name="modal">
+        <bool>true</bool>
+    </property>
     <vbox>
         <property name="name">
             <cstring>unnamed</cstring>
