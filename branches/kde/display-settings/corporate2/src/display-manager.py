@@ -29,6 +29,7 @@ import dm_mainview
 import monitordialog
 import entryview
 from carddialog import VideoCardDialog
+from outputdialog import OutputDialog
 
 # Backend
 from backend import Interface
@@ -153,6 +154,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.suggestDriver()
 
         self.cardDialog = VideoCardDialog(self, self.iface)
+        self.outputDialogs = {}
 
         # set signals
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.slotOutputSelected)
@@ -336,7 +338,8 @@ class MainWidget(dm_mainview.mainWidget):
 
         for index, output in enumerate(self.iface.getOutputs()):
             self.outputList.add(index, output.name,
-                                output.getTypeString(), output.getIcon())
+                                output.getTypeString(), output.getIcon(),
+                                self.slotOutputEdit)
 
     def slotOutputToggled(self, id):
         output = self._outputs[id]
@@ -520,6 +523,46 @@ class MainWidget(dm_mainview.mainWidget):
         else:
             self.screenImage1.setOn(True)
 
+    def slotOutputEdit(self, index):
+        outputName = self._outputs[index].name
+
+        dlg = self.outputDialogs.get(outputName)
+
+        if dlg is None:
+            dlg = OutputDialog(self, self.iface, outputName)
+            dlg.load()
+            self.outputDialogs[outputName] = dlg
+
+        enableIgnoreButton = True
+        if not dlg.ignored:
+            config = self.iface.getConfig()
+            count = self.outputList.count()
+
+            def isIgnored(name):
+                d = self.outputDialogs.get(name)
+                if d is None:
+                    output = config.outputs.get(name)
+                    if output is None:
+                        return False
+                    else:
+                        return output.ignored
+                else:
+                    return d.ignored
+
+            for i in range(count):
+                item = self.outputList.item(i)
+                outputName = item.title
+                if outputName == dlg.outputName:
+                    continue
+
+                if not isIgnored(outputName):
+                    break
+            else:
+                enableIgnoreButton = False
+
+        dlg.ignoreOutputCheck.setEnabled(enableIgnoreButton)
+        dlg.show()
+
     def load(self):
         if not self.iface.isReady():
             return
@@ -537,8 +580,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.cardDialog.load()
 
         # Output dialogs
-        #for dlg in self.outputDialogs.values():
-        #    dlg.load()
+        for dlg in self.outputDialogs.values():
+            dlg.load()
 
         # Output list
         self.refreshOutputList()
@@ -549,8 +592,8 @@ class MainWidget(dm_mainview.mainWidget):
 
         try:
             self.cardDialog.apply()
-            #for dlg in self.outputDialogs.values():
-            #    dlg.apply()
+            for dlg in self.outputDialogs.values():
+                dlg.apply()
 
             for output in self._outputs:
                 enabled = output in (self._left, self._right)

@@ -38,12 +38,20 @@ class EntryView(QScrollView):
             e.hide()
         self.entries = []
 
-    def add(self, index, title, description, icon):
+    def add(self, index, title, description, icon, slotEdit):
         e = Entry(self.viewport(), index, title, description, icon)
         self.entries.append(e)
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
+
+        self.connect(e, PYSIGNAL("editClicked"), slotEdit)
         return e
+
+    def count(self):
+        return len(self.entries)
+
+    def item(self, item):
+        return self.entries[item]
 
     def resizeEvent(self, event):
         QScrollView.resizeEvent(self, event)
@@ -77,12 +85,12 @@ class Entry(QWidget):
 
         self.pushEdit = IconButton(self, "configure")
         QToolTip.add(self.pushEdit, i18n("Edit entry"))
-        self.connect(self.pushEdit, SIGNAL("clicked()"), self.slotEdit)
+        self.connect(self.pushEdit, SIGNAL("clicked()"), self.emitEditClicked)
 
         self.show()
 
-    def slotEdit(self):
-        self.editWidget.editEntry(self.os_data)
+    def emitEditClicked(self):
+        self.emit(PYSIGNAL("editClicked"), (self.index,))
 
     def paintEvent(self, event):
         paint = QPainter(self)
