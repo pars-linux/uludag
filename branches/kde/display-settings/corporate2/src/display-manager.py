@@ -21,13 +21,11 @@ from dbus.mainloop.qt3 import DBusQtMainLoop
 
 # zorg
 from zorg import hwdata
-from zorg.consts import package_sep
 from zorg.utils import run
 
 # UI
 import helpdialog
 import dm_mainview
-import driverdialog
 import monitordialog
 import entryview
 from carddialog import VideoCardDialog
@@ -112,78 +110,6 @@ class MonitorDialog(monitordialog.monitorDialog):
             self.pushButtonOk.setEnabled(True)
             self.lineEditHorizontal.setText(self.listViewMonitors.currentItem().key(2, 0))
             self.lineEditVertical.setText(self.listViewMonitors.currentItem().key(3, 0))
-
-class DriverItem(KListViewItem):
-    def __init__(self, parent, name, desc):
-        QListViewItem.__init__(self, parent)
-
-        self.name = name
-        self.desc = desc
-        self.setText(0, name)
-        self.setText(1, desc)
-
-class CardDialog(driverdialog.VideoCard):
-    def __init__(self, parent):
-        driverdialog.VideoCard.__init__(self, parent)
-
-        current = None
-        dc = parent.dconfig
-        self.extraDrivers = []
-
-        availableDrivers = hwdata.getAvailableDriverNames()
-        compatibleDrivers = hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id)
-
-        curdrv = dc._info.driver
-        if dc._info.package != "xorg-video":
-            curdrv += package_sep + dc._info.package
-
-        for drv in compatibleDrivers:
-            item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers.get(drv, ""))
-
-            if drv == curdrv:
-                current = item
-
-        for drv in availableDrivers:
-            if not drv in compatibleDrivers:
-                item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers.get(drv, ""))
-                self.extraDrivers.append(item)
-
-                if drv == curdrv:
-                    current = item
-
-        self.showExtraDrivers(False)
-
-        if current:
-            self.listViewVideoCard.setCurrentItem(current)
-
-        self.listViewVideoCard.setFocus()
-
-        self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
-        self.connect(self.pushButtonOk, SIGNAL("clicked()"), self.accept),
-        self.connect(self.checkBoxAllDrivers, SIGNAL("toggled(bool)"), self.showExtraDrivers)
-
-    def showExtraDrivers(self, show):
-        for drv in self.extraDrivers:
-            drv.setVisible(show)
-
-    def accept(self):
-        availableDrivers = hwdata.getAvailableDriverNames()
-        item = self.listViewVideoCard.currentItem()
-
-        if item.name in availableDrivers:
-            QDialog.accept(self)
-        else:
-            if package_sep in item.name:
-                package = item.name.split(package_sep, 1)[1]
-            else:
-                package = "xorg-video"
-
-            msg = i18n("<qt>The driver you selected is not installed on your system. In order to use this driver, you must install <b>%1</b> package.</qt>").arg(package)
-            buttonStartPM = KGuiItem(i18n("Start Package Manager"), getIconSet("package-manager"))
-            answer = KMessageBox.warningYesNo(self, msg, QString.null, buttonStartPM, KStdGuiItem.cancel())
-
-            if answer == KMessageBox.Yes:
-                run("package-manager", "--show-mainwindow")
 
 class MainWidget(dm_mainview.mainWidget):
     def __init__(self, parent):
