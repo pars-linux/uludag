@@ -30,6 +30,7 @@ import dm_mainview
 import driverdialog
 import monitordialog
 import entryview
+from carddialog import VideoCardDialog
 
 # Backend
 from backend import Interface
@@ -225,6 +226,8 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.suggestDriver()
 
+        self.cardDialog = VideoCardDialog(self, self.iface)
+
         # set signals
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.slotOutputSelected)
 
@@ -238,6 +241,9 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.modeList, SIGNAL("activated(int)"), self.slotModeSelected)
         self.connect(self.rateList, SIGNAL("activated(int)"), self.slotRateSelected)
         self.connect(self.rotationList, SIGNAL("activated(int)"), self.slotRotationSelected)
+
+        self.connect(self.cardDialog, PYSIGNAL("configChanged"), self.emitConfigChanged)
+        self.connect(self.configureCardButton, SIGNAL("clicked()"), self.cardDialog.show)
 
     def checkBackend(self):
         """
@@ -602,7 +608,7 @@ class MainWidget(dm_mainview.mainWidget):
         # Card info
         info = "<qt>%s<br><i>%s</i></qt>" % (self.iface.cardModel, self.iface.cardVendor)
         self.cardInfoLabel.setText(info)
-        #self.cardDialog.load()
+        self.cardDialog.load()
 
         # Output dialogs
         #for dlg in self.outputDialogs.values():
@@ -616,6 +622,10 @@ class MainWidget(dm_mainview.mainWidget):
             return
 
         try:
+            self.cardDialog.apply()
+            #for dlg in self.outputDialogs.values():
+            #    dlg.apply()
+
             for output in self._outputs:
                 enabled = output in (self._left, self._right)
                 self.iface.setOutput(output.name, enabled, False)
