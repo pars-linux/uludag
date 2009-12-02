@@ -26,7 +26,6 @@ from zorg.utils import run
 # UI
 import helpdialog
 import dm_mainview
-import monitordialog
 import entryview
 from carddialog import VideoCardDialog
 from outputdialog import OutputDialog
@@ -53,64 +52,6 @@ def AboutData():
         None,
         'bugs@pardus.org.tr'
     )
-
-class MonitorDialog(monitordialog.monitorDialog):
-    def __init__(self, parent):
-        monitordialog.monitorDialog.__init__(self, parent)
-
-        self.groupBoxDetails.hide()
-        self.pushButtonOk.setEnabled(False)
-
-        genericMonitors, vendorMonitors = hwdata.getMonitorInfos()
-
-        crtText = i18n("CRT Monitor")
-        lcdText = i18n("LCD Monitor")
-
-        genericMonitors[crtText] = genericMonitors["Generic CRT Display"]
-        genericMonitors[lcdText] = genericMonitors["Generic LCD Display"]
-        del genericMonitors["Generic CRT Display"]
-        del genericMonitors["Generic LCD Display"]
-
-        vendors = {i18n("Standard Monitors"): genericMonitors, i18n("Vendors"): vendorMonitors}
-
-        # hide listview caption.
-        self.listViewMonitors.header().hide()
-
-        for eachVendor in vendors:
-            root = KListViewItem(self.listViewMonitors, "parent", "parent","parent")
-            root.setText(0, eachVendor)
-            self.listViewMonitors.setOpen(root,False)
-
-            for eachSubVendor in vendors[eachVendor]:
-                item = KListViewItem(root, "parent", "parent","parent")
-                item.setText(0, eachSubVendor)
-                self.listViewMonitors.setOpen(item,False)
-
-                for eachModel in vendors[eachVendor][eachSubVendor]:
-                    subitem = KListViewItem(item, eachModel["model"], eachSubVendor, eachModel["hsync"], eachModel["vref"])
-
-        self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
-        self.connect(self.pushButtonOk,     SIGNAL("clicked()"), self.accept)
-        self.connect(self.listViewMonitors, SIGNAL("selectionChanged()"), self.getSelectedMonitor)
-        self.connect(self.checkBoxPlugPlay, SIGNAL("toggled(bool)"), self.listViewMonitors.setDisabled)
-        self.connect(self.checkBoxPlugPlay, SIGNAL("toggled(bool)"), self.groupBoxDetails.setDisabled)
-        self.connect(self.checkBoxPlugPlay, SIGNAL("toggled(bool)"), self.slotPNP)
-
-    def slotPNP(self, checked):
-        if checked:
-            self.pushButtonOk.setEnabled(True)
-        else:
-            self.getSelectedMonitor()
-
-    def getSelectedMonitor(self):
-        if self.listViewMonitors.currentItem().key(1,0) == "parent":
-            self.groupBoxDetails.hide()
-            self.pushButtonOk.setDisabled(True)
-        else:
-            self.groupBoxDetails.show()
-            self.pushButtonOk.setEnabled(True)
-            self.lineEditHorizontal.setText(self.listViewMonitors.currentItem().key(2, 0))
-            self.lineEditVertical.setText(self.listViewMonitors.currentItem().key(3, 0))
 
 class MainWidget(dm_mainview.mainWidget):
     def __init__(self, parent):
