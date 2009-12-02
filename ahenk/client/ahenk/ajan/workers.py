@@ -69,7 +69,10 @@ class Applier(threading.Thread):
             Checks module directory and loads new/updated modules.
         """
         fn_policy = os.path.join(self.options.policydir, "latest_policy")
-        policy = utils.parseLDIF(open(fn_policy))
+        if os.path.exists(fn_policy):
+            policy = utils.parseLDIF(open(fn_policy))
+        else:
+            policy = {}
         files = []
         # Check for new/updated modules
         for fname in os.listdir(self.options.moddir):
