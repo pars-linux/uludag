@@ -24,11 +24,11 @@ from zorg import hwdata
 from zorg.utils import run
 
 # UI
-import helpdialog
-import dm_mainview
+import ui.videocard
+import ui.help
+import ui.mainview
+import ui.output
 import entryview
-from carddialog import VideoCardDialog
-from outputdialog import OutputDialog
 
 # Backend
 from backend import Interface
@@ -53,9 +53,9 @@ def AboutData():
         'bugs@pardus.org.tr'
     )
 
-class MainWidget(dm_mainview.mainWidget):
+class MainWidget(ui.mainview.mainWidget):
     def __init__(self, parent):
-        dm_mainview.mainWidget.__init__(self, parent)
+        ui.mainview.mainWidget.__init__(self, parent)
 
         # hide for now
         self.buttonHelp.hide()
@@ -94,7 +94,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.suggestDriver()
 
-        self.cardDialog = VideoCardDialog(self, self.iface)
+        self.cardDialog = ui.videocard.VideoCardDialog(self, self.iface)
         self.outputDialogs = {}
 
         # set signals
@@ -452,7 +452,7 @@ class MainWidget(dm_mainview.mainWidget):
 
 
     def slotHelp(self):
-        helpwin = helpdialog.HelpDialog()
+        helpwin = ui.help.HelpDialog()
         helpwin.exec_loop()
 
     def slotSwap(self):
@@ -472,7 +472,7 @@ class MainWidget(dm_mainview.mainWidget):
         dlg = self.outputDialogs.get(outputName)
 
         if dlg is None:
-            dlg = OutputDialog(self, self.iface, outputName)
+            dlg = ui.output.OutputDialog(self, self.iface, outputName)
             dlg.load()
             self.outputDialogs[outputName] = dlg
 
