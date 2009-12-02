@@ -17,14 +17,14 @@ from kdeui import *
 import kdedesigner
 
 # UI
-import videocard
+import ui.videocard
 
-class VideoCardDialog(videocard.VideoCardDialog):
+class VideoCardDialog(ui.videocard.VideoCardDialog):
 
     depths = (16, 24, 30)
 
     def __init__(self, parent, iface):
-        videocard.VideoCardDialog.__init__(self, parent)
+        ui.videocard.VideoCardDialog.__init__(self, parent)
 
         self.iface = iface
 
@@ -57,7 +57,7 @@ class VideoCardDialog(videocard.VideoCardDialog):
         else:
             self.autoDepthButton.setChecked(True)
 
-        videocard.VideoCardDialog.show(self)
+        ui.videocard.VideoCardDialog.show(self)
 
     def accept(self):
         driver = "" if self.autoDriverButton.isChecked() \
@@ -77,10 +77,10 @@ class VideoCardDialog(videocard.VideoCardDialog):
         if self.changeList:
             self.emit(PYSIGNAL("configChanged"), ())
 
-        videocard.VideoCardDialog.accept(self)
+        ui.videocard.VideoCardDialog.accept(self)
 
     def reject(self):
-        videocard.VideoCardDialog.reject(self)
+        ui.videocard.VideoCardDialog.reject(self)
 
     def setDriver(self, driver):
         self.changeList.append("driver")

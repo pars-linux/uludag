@@ -17,8 +17,8 @@ from kdeui import *
 import kdedesigner
 
 # UI
-import output
-#import monitorbrowser
+import ui.output
+#import ui.monitorbrowser
 
 def splitRange(range):
     range = range.replace(" ", "")
@@ -28,9 +28,9 @@ def splitRange(range):
     else:
         return (float(range),)*2
 
-class OutputDialog(output.OutputDialog):
+class OutputDialog(ui.output.OutputDialog):
     def __init__(self, parent, iface, outputName):
-        output.OutputDialog.__init__(self, parent)
+        ui.output.OutputDialog.__init__(self, parent)
 
         self.setCaption(i18n("Settings for Output %1").arg(outputName))
 
@@ -132,7 +132,7 @@ class OutputDialog(output.OutputDialog):
         self.freqBox.setChecked(self.rangeSelected)
         self.ignoreOutputCheck.setChecked(self.ignored)
 
-        output.OutputDialog.show(self)
+        ui.output.OutputDialog.show(self)
 
     def accept(self):
         ignored = self.ignoreOutputCheck.isChecked()
@@ -174,10 +174,10 @@ class OutputDialog(output.OutputDialog):
         if self.changeList:
             self.emitConfigChanged()
 
-        output.OutputDialog.accept(self)
+        ui.output.OutputDialog.accept(self)
 
     def reject(self):
-        output.OutputDialog.reject(self)
+        ui.output.OutputDialog.reject(self)
 
     def apply(self):
         if "ignored" in self.changeList:
