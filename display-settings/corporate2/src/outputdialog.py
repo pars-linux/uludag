@@ -38,7 +38,7 @@ class OutputDialog(output.OutputDialog):
         self.outputName = outputName
         self.emitConfigChanged = parent.emitConfigChanged
 
-        self.connect(self.monitorType, SIGNAL("activated(const QString &)"), self.slotTypeChanged)
+        self.connect(self.monitorType, SIGNAL("activated(int)"), self.slotTypeChanged)
         self.connect(self.browseMonitorsButton, SIGNAL("clicked()"), self.slotBrowseMonitors)
 
         self.lastStdMonitor = None
@@ -47,7 +47,6 @@ class OutputDialog(output.OutputDialog):
     def slotTypeChanged(self, index):
         notCustomMode = index != 2
         self.browseMonitorsButton.setEnabled(notCustomMode)
-        # FIXME not working?
         self.hsyncMin.setDisabled(notCustomMode)
         self.hsyncMax.setDisabled(notCustomMode)
         self.vrefMin.setDisabled(notCustomMode)
@@ -120,12 +119,15 @@ class OutputDialog(output.OutputDialog):
     def show(self):
         if self.vendor.startswith("Generic"):
             self.lastStdMonitor = (self.vendor, self.model, self.hsync, self.vref)
-            self.monitorType.setCurrentItem(0)
+            monitorType = 0
         elif self.vendor.startswith("Custom"):
-            self.monitorType.setCurrentItem(2)
+            monitorType = 2
         else:
             self.lastDBMonitor = (self.vendor, self.model, self.hsync, self.vref)
-            self.monitorType.setCurrentItem(1)
+            monitorType = 1
+
+        self.monitorType.setCurrentItem(monitorType)
+        self.slotTypeChanged(monitorType)
 
         self.freqBox.setChecked(self.rangeSelected)
         self.ignoreOutputCheck.setChecked(self.ignored)
