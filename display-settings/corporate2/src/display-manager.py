@@ -294,14 +294,12 @@ class MainWidget(dm_mainview.mainWidget):
         if output:
             currentMode = self._modes[output.name]
 
-            self.disconnect(self.rateList, SIGNAL("activated(int)"), self.slotRateSelected)
             self.rateList.clear()
             self.rateList.insertItem(i18n("Auto"))
             if currentMode:
                 self._rateList = self.iface.getRates(output.name, currentMode)
                 rates = map(lambda x: "%s Hz" % x, self._rateList)
                 self.rateList.insertStrList(rates)
-            self.connect(self.rateList, SIGNAL("activated(int)"), self.slotRateSelected)
 
     def updateMenuStatus(self):
         menu = self.outputsButton.popup()
@@ -399,18 +397,18 @@ class MainWidget(dm_mainview.mainWidget):
         title = i18n("Output Properties - %1").arg(output.name)
         self.propertiesBox.setTitle(title)
 
-        self.disconnect(self.modeList, SIGNAL("activated(int)"), self.slotModeSelected)
         self.modeList.clear()
         self.modeList.insertItem(i18n("Auto"))
         self.modeList.insertStrList(modes)
-        self.connect(self.modeList, SIGNAL("activated(int)"), self.slotModeSelected)
 
         currentMode = self._modes[output.name]
         if currentMode in modes:
             index = modes.index(currentMode) + 1 # +1 for "Auto"
             self.modeList.setCurrentItem(index)
+            self.slotModeSelected(index)
         else:
             self.modeList.setCurrentItem(0)
+            self.slotModeSelected(0)
 
         self.populateRateList()
 
@@ -418,16 +416,20 @@ class MainWidget(dm_mainview.mainWidget):
         if currentRate in self._rateList:
             index = self._rateList.index(currentRate) + 1 # +1 for "Auto"
             self.rateList.setCurrentItem(index)
+            self.slotRateSelected(index)
         else:
             self.rateList.setCurrentItem(0)
+            self.slotRateSelected(0)
 
         currentRotation = self._rotations[output.name]
         if currentRotation:
             opts = ("normal", "left", "inverted", "right")
             index = opts.index(currentRotation)
             self.rotationList.setCurrentItem(index)
+            self.slotRotationSelected(index)
         else:
             self.rotationList.setCurrentItem(0)
+            self.slotRotationSelected(0)
 
     def slotModeSelected(self, index):
         if index < 0:
