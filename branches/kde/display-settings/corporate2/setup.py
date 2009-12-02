@@ -16,48 +16,7 @@ import shutil
 from distutils.core import Extension
 import kdedistutils
 
-version = '0.5.80'
-
-distfiles = """
-    AUTHORS
-    ChangeLog
-    COPYING
-    README
-    TODO
-    *.py
-    code/*.py
-    code/*.desktop
-    code/displaysettings/*.py
-    ui/__init__.py
-    ui/*.ui
-    po/*.po
-    po/*.pot
-    pics/*.png
-    help/*.css
-    help/tr/*.html
-    help/en/*.html
-    xcb/*.py
-    xcb/*.xml
-"""
-
-def make_dist():
-    distdir = "display-settings-%s" % version
-    list = []
-    for t in distfiles.split():
-        list.extend(glob.glob(t))
-    if os.path.exists(distdir):
-        shutil.rmtree(distdir)
-    os.mkdir(distdir)
-    for file_ in list:
-        cum = distdir[:]
-        for d in os.path.dirname(file_).split('/'):
-            dn = os.path.join(cum, d)
-            cum = dn[:]
-            if not os.path.exists(dn):
-                os.mkdir(dn)
-        shutil.copy(file_, os.path.join(distdir, file_))
-    os.popen("tar -czf %s %s" % ("display-settings-" + version + ".tar.gz", distdir))
-    shutil.rmtree(distdir)
+from code import displaysettings
 
 def makeDirs(dir):
     try:
@@ -86,10 +45,6 @@ class Install(kdedistutils.InstallKDE):
         self.run_command("install_lib")
 
 
-if "dist" in sys.argv:
-    make_dist()
-    sys.exit(0)
-
 app_data = [
     'code/display-manager.py',
     ('displaysettings', ['code/displaysettings']),
@@ -100,7 +55,7 @@ app_data = [
 
 kdedistutils.setup(
     name                = "display-manager",
-    version             = version,
+    version             = displaysettings.versionString(),
     author              = "Fatih Aşıcı",
     author_email        = "fatih@pardus.org.tr",
     url                 = "http://www.pardus.org.tr/",
