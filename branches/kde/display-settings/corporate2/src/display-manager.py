@@ -24,11 +24,11 @@ from zorg import hwdata
 from zorg.utils import run
 
 # UI
-import ui.videocard
+import carddialog
+import outputdialog
+import entryview
 import ui.help
 import ui.mainview
-import ui.output
-import entryview
 
 # Backend
 from backend import Interface
@@ -94,7 +94,7 @@ class MainWidget(ui.mainview.mainWidget):
 
         self.suggestDriver()
 
-        self.cardDialog = ui.videocard.VideoCardDialog(self, self.iface)
+        self.cardDialog = carddialog.VideoCardDialog(self, self.iface)
         self.outputDialogs = {}
 
         # set signals
@@ -472,7 +472,7 @@ class MainWidget(ui.mainview.mainWidget):
         dlg = self.outputDialogs.get(outputName)
 
         if dlg is None:
-            dlg = ui.output.OutputDialog(self, self.iface, outputName)
+            dlg = outputdialog.OutputDialog(self, self.iface, outputName)
             dlg.load()
             self.outputDialogs[outputName] = dlg
 
