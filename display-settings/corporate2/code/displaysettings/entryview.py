@@ -14,7 +14,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-from utility import getIconSet
+from displaysettings.utility import getIconSet
 
 class IconButton(QPushButton):
     def __init__(self, parent, icon_name):

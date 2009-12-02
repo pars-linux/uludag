@@ -5,7 +5,7 @@ import xcb
 from xcb.xproto import *
 import xcb.nvctrl
 
-from device import Output
+from displaysettings.device import Output
 
 try:
     conn = xcb.connect()
