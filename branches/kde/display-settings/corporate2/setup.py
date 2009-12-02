@@ -93,7 +93,7 @@ if "dist" in sys.argv:
 app_data = [
     'code/display-manager.py',
     ('displaysettings', ['code/displaysettings']),
-    'ui',
+    ('displaysettings/ui', ['ui']),
     'pics',
     'help'
 ]

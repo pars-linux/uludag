@@ -18,9 +18,9 @@ import comar
 import zorg.config
 from zorg.utils import idsQuery
 
-from device import Output
-from nv import Interface as NVInterface
-from randr import Interface as RRInterface
+from displaysettings.device import Output
+from displaysettings.nv import Interface as NVInterface
+from displaysettings.randr import Interface as RRInterface
 
 MODES = [
     "2048x1536",

@@ -16,7 +16,7 @@ from kdeui import *
 
 from pardus.strutils import ascii_lower
 
-from utility import getIcon
+from displaysettings.utility import getIcon
 
 class Output(object):
     # Connection status
