@@ -25,10 +25,11 @@ distfiles = """
     README
     TODO
     *.py
-    src/*.ui
-    src/*.png
-    src/*.py
-    src/*.desktop
+    code/*.py
+    code/*.desktop
+    code/displaysettings/*.py
+    ui/__init__.py
+    ui/*.ui
     po/*.po
     po/*.pot
     pics/*.png
@@ -90,18 +91,9 @@ if "dist" in sys.argv:
     sys.exit(0)
 
 app_data = [
-    'src/backend.py',
-    'src/device.py',
-    'src/display-manager.py',
-    'src/dm_mainview.ui',
-    'src/driverdialog.ui',
-    'src/entryview.py',
-    'src/helpdialog.ui',
-    'src/monitordialog.ui',
-    'src/nv.py',
-    'src/randr.py',
-    'src/randriface.py',
-    'src/utility.py',
+    'code/display-manager.py',
+    ('displaysettings', ['code/displaysettings']),
+    'ui',
     'pics',
     'help'
 ]
@@ -116,9 +108,9 @@ kdedistutils.setup(
     min_qt_version      = "3.3.5",
     license             = "GPL",
     application_data    = app_data,
-    executable_links    = [('display-manager','display-manager.py')],
-    i18n                = ('po', ['src']),
-    kcontrol_modules    = [ ('src/display-manager.desktop','src/display-manager.py')],
+    executable_links    = [('display-manager', 'display-manager.py')],
+    i18n                = ('po', ['code']),
+    kcontrol_modules    = [ ('code/display-manager.desktop', 'code/display-manager.py')],
     cmdclass            = {
                             'build': Build,
                             'install': Install,
