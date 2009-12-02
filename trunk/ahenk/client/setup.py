@@ -19,6 +19,7 @@ distfiles = """
     ahenk/ajan/*.py
     modules/*.py
     etc/ahenk-ajan.conf
+    tools/*.py
 """
 
 def make_dist():
@@ -68,7 +69,7 @@ setup(
     ],
     data_files = [
         # Main application
-        ('/sbin', ['ahenk-ajan.py']),
+        ('/sbin', ['ahenk-ajan.py', 'tools/ahenk-authentication.py']),
         # Configuration file
         ('/etc', ['etc/ahenk-ajan.conf']),
         # Modules
