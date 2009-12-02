@@ -156,7 +156,7 @@ class OutputDialog(output.OutputDialog):
 
                 model = str(self.monitorName.text())
 
-                index = self.monitorType.currentIndex()
+                index = self.monitorType.currentItem()
                 if index == 0:
                     self.vendor = "Generic"
                 elif index == 2:
