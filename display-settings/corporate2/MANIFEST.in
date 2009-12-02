@@ -1,0 +1,8 @@
+include *.py
+include AUTHORS COPYING ChangeLog INSTALL TODO
+recursive-include code *.py *.desktop
+recursive-exclude code/displaysettings/ui *
+recursive-include pics *.png
+recursive-include xcb *.py *.xml
+recursive-include ui *.ui
+recursive-include po *.po *.pot

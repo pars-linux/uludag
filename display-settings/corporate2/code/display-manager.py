@@ -19,13 +19,14 @@ import kdedesigner
 import dbus
 from dbus.mainloop.qt3 import DBusQtMainLoop
 
+import displaysettings
 from displaysettings.mainwidget import MainWidget
 from displaysettings.utility import *
 
 
 mod_name = 'Display Settings'
 mod_app = 'display-settings'
-mod_version = '0.5.80'
+mod_version = displaysettings.versionString()
 
 def AboutData():
     return KAboutData(
