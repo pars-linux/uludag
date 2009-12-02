@@ -8,6 +8,7 @@ import ConfigParser
 
 from ahenk.ajan import mainloop
 
+
 if __name__ == "__main__":
 
     # Command line options
@@ -32,9 +33,17 @@ if __name__ == "__main__":
     # Normalize configuration file path
     options.conffile = os.path.realpath(options.conffile)
 
+    if not os.path.exists(options.conffile):
+        print "%s is missing." % options.conffile
+        sys.exit(1)
+
     # Read configuration file
     cp = ConfigParser.ConfigParser()
-    cp.read(options.conffile)
+    try:
+        cp.read(options.conffile)
+    except IOError:
+        print "%s is corrupted." % options.conffile
+        sys.exit(1)
 
     # Host and domain names are mandatory.
     if not cp.has_option("server", "hostname"):
