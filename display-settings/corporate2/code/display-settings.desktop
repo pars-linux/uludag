@@ -1,10 +1,8 @@
 [Desktop Entry]
-Name=Display Manager
-Name[tr]=Görüntü Yöneticisi
-Name[es]=Administrador de Pantallas
-Name[nl]=Beeldschermbeheer
-Name[de]=Anzeige-Manager
-Name[sv]=Bildskärmshanteraren
+Name=Display Settings
+Name[sv]=Bildskärm
+Name[tr]=Ekran Ayarları
+Name[nl]=Beeldscherminstellingen
 GenericName=Display Configuration Tool
 GenericName[tr]=Ekran Yapılandırma Aracı
 GenericName[es]=Herramienta para la Configuración de Pantallas
@@ -12,9 +10,9 @@ GenericName[nl]=Beeldscherm configuratie gereedschap
 GenericName[de]=Anzeigekonfigurationstool
 GenericName[sv]=Bildskärmsanpassningsverktyg
 X-KDE-ModuleType=Library
-X-KDE-Library=display-manager
-X-KDE-FactoryName=display_manager
+X-KDE-Library=display-settings
+X-KDE-FactoryName=display_settings
 Type=Application
 Icon=randr
-Exec=display-manager
+Exec=display-settings
 Categories=QT;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;

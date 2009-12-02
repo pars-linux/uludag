@@ -46,7 +46,7 @@ class Install(kdedistutils.InstallKDE):
 
 
 app_data = [
-    'code/display-manager.py',
+    'code/display-settings.py',
     ('displaysettings', ['code/displaysettings']),
     ('displaysettings/ui', ['ui']),
     'pics',
@@ -54,7 +54,7 @@ app_data = [
 ]
 
 kdedistutils.setup(
-    name                = "display-manager",
+    name                = "display-settings",
     version             = displaysettings.versionString(),
     author              = "Fatih Aşıcı",
     author_email        = "fatih@pardus.org.tr",
@@ -63,9 +63,9 @@ kdedistutils.setup(
     min_qt_version      = "3.3.5",
     license             = "GPL",
     application_data    = app_data,
-    executable_links    = [('display-manager', 'display-manager.py')],
+    executable_links    = [('display-settings', 'display-settings.py')],
     i18n                = ('po', ['code']),
-    kcontrol_modules    = [ ('code/display-manager.desktop', 'code/display-manager.py')],
+    kcontrol_modules    = [ ('code/display-settings.desktop', 'code/display-settings.py')],
     cmdclass            = {
                             'build': Build,
                             'install': Install,
