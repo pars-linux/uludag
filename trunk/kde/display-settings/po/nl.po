@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-15 23:10+0300\n"
+"POT-Creation-Date: 2009-12-03 14:06+0200\n"
 "PO-Revision-Date: 29/07/09 21:15\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
@@ -98,6 +98,42 @@ msgstr "16 Bit"
 msgid "24 Bit"
 msgstr "24 Bit"
 
+#: .tmp/displaysettings/about.py:22
+msgid "Display Configuration Tool"
+msgstr "Beeldbeheer gereedschap"
+
+#: .tmp/displaysettings/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/displaysettings/about.py:32
+msgid "Fatih Aşıcı"
+msgstr "Fatih Aşıcı"
+
+#: .tmp/displaysettings/about.py:32
+msgid "Current Maintainer"
+msgstr "Huidige onderhouder"
+
+#: .tmp/displaysettings/device.py:60
+msgid "Default Output"
+msgstr "Standaard uitgang"
+
+#: .tmp/displaysettings/device.py:61
+msgid "Laptop Panel"
+msgstr "Laptop-paneel"
+
+#: .tmp/displaysettings/device.py:62
+msgid "Analog Output"
+msgstr "Analoge uitgang"
+
+#: .tmp/displaysettings/device.py:63
+msgid "Digital Output"
+msgstr "Digitale uitgang"
+
+#: .tmp/displaysettings/device.py:64
+msgid "TV Output"
+msgstr "TV-uitgang"
+
 #: .tmp/displaysettings/deviceswidget.py:79
 #: .tmp/displaysettings/screenswidget.py:70
 msgid ""
@@ -114,14 +150,14 @@ msgid ""
 "you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
-"Kan geen geldige configuratie vinden. Scherminstellingen kan niet ingeschakeld "
-"worden tenzij er een nieuwe configuratie aanmaakt wordt.\n"
+"Kan geen geldige configuratie vinden. Scherminstellingen kan niet "
+"ingeschakeld worden tenzij er een nieuwe configuratie aanmaakt wordt.\n"
 "Nu een nieuwe configuratie aanmaken?"
 
 #: .tmp/displaysettings/deviceswidget.py:95
 #: .tmp/displaysettings/deviceswidget.py:262
 #: .tmp/displaysettings/screenswidget.py:86
-#: .tmp/displaysettings/screenswidget.py:365
+#: .tmp/displaysettings/screenswidget.py:366
 msgid "Access denied."
 msgstr "Toegang geweigerd."
 
@@ -148,37 +184,8 @@ msgid "Start Package Manager"
 msgstr "Pakketbeheer starten"
 
 #: .tmp/displaysettings/deviceswidget.py:252
-#: .tmp/displaysettings/screenswidget.py:358
 msgid "You must restart your X session for the changes to take effect."
 msgstr "Herstart de X-sessie voor het toepassen van de wijzigingen."
-
-#: .tmp/displaysettings/device.py:60
-msgid "Default Output"
-msgstr "Standaard uitgang"
-
-#: .tmp/displaysettings/device.py:61
-msgid "Laptop Panel"
-msgstr "Laptop-paneel"
-
-#: .tmp/displaysettings/device.py:62
-msgid "Analog Output"
-msgstr "Analoge uitgang"
-
-#: .tmp/displaysettings/device.py:63
-msgid "Digital Output"
-msgstr "Digitale uitgang"
-
-#: .tmp/displaysettings/device.py:64
-msgid "TV Output"
-msgstr "TV-uitgang"
-
-#: .tmp/displaysettings/monitorbrowser.py:41
-msgid "Type:"
-msgstr "Type:"
-
-#: .tmp/displaysettings/monitorbrowser.py:42
-msgid "Monitors:"
-msgstr "Monitor:"
 
 #: .tmp/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
@@ -192,6 +199,14 @@ msgstr "Aangepaste monitor"
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr "<qt><i>Klik knop \"Kiezen..\" om de monitor te selecteren</i></qt>"
 
+#: .tmp/displaysettings/monitorbrowser.py:41
+msgid "Type:"
+msgstr "Type:"
+
+#: .tmp/displaysettings/monitorbrowser.py:42
+msgid "Monitors:"
+msgstr "Monitor:"
+
 #: .tmp/displaysettings/screenswidget.py:189
 #: .tmp/displaysettings/screenswidget.py:264
 msgid "Auto"
@@ -201,33 +216,10 @@ msgstr "Automatisch"
 msgid "Output Properties - %1"
 msgstr "Uitgangeigenschappen - %1"
 
-#: .tmp/displaysettings/about.py:22
-msgid "Display Configuration Tool"
-msgstr "Beeldbeheer gereedschap"
-
-#: .tmp/displaysettings/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/displaysettings/about.py:32
-msgid "Fatih Aşıcı"
-msgstr "Fatih Aşıcı"
-
-#: .tmp/displaysettings/about.py:32
-msgid "Current Maintainer"
-msgstr "Huidige onderhouder"
-
-#: .tmp/ui_monitorbrowser.py:48
-msgid "Browse Monitors"
-msgstr "Monitor bladeren"
-
-#: .tmp/ui_monitorbrowser.py:49
-msgid "Vendors:"
-msgstr "Fabrikant:"
-
-#: .tmp/ui_monitorbrowser.py:50
-msgid "Models:"
-msgstr "Modellen:"
+#: .tmp/displaysettings/screenswidget.py:359
+#, fuzzy
+msgid "You must restart your X session for all the changes to take effect."
+msgstr "Herstart de X-sessie voor het toepassen van de wijzigingen."
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
@@ -339,6 +331,18 @@ msgstr "Afmetingen"
 msgid "Ignore this output"
 msgstr "Deze uitgang negeren"
 
+#: .tmp/ui_monitorbrowser.py:48
+msgid "Browse Monitors"
+msgstr "Monitor bladeren"
+
+#: .tmp/ui_monitorbrowser.py:49
+msgid "Vendors:"
+msgstr "Fabrikant:"
+
+#: .tmp/ui_monitorbrowser.py:50
+msgid "Models:"
+msgstr "Modellen:"
+
 #: .tmp/ui_devices.py:67
 msgid "Video Card:"
 msgstr "Videokaart:"
@@ -354,4 +358,3 @@ msgstr "Instellen..."
 #: .tmp/ui_devices.py:70
 msgid "Outputs:"
 msgstr "Uitgangen:"
-

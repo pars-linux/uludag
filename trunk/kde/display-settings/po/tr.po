@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-15 23:10+0300\n"
+"POT-Creation-Date: 2009-12-03 14:06+0200\n"
 "PO-Revision-Date: 2009-07-10 21:11+0300\n"
 "Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -96,6 +96,42 @@ msgstr "16 Bit"
 msgid "24 Bit"
 msgstr "24 Bit"
 
+#: .tmp/displaysettings/about.py:22
+msgid "Display Configuration Tool"
+msgstr "Ekran Yapılandırma Aracı"
+
+#: .tmp/displaysettings/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/displaysettings/about.py:32
+msgid "Fatih Aşıcı"
+msgstr "Fatih Aşıcı"
+
+#: .tmp/displaysettings/about.py:32
+msgid "Current Maintainer"
+msgstr "Şu Anki Bakıcı"
+
+#: .tmp/displaysettings/device.py:60
+msgid "Default Output"
+msgstr "Öntanımlı Çıkış"
+
+#: .tmp/displaysettings/device.py:61
+msgid "Laptop Panel"
+msgstr "Dizüstü Paneli"
+
+#: .tmp/displaysettings/device.py:62
+msgid "Analog Output"
+msgstr "Analog Çıkış"
+
+#: .tmp/displaysettings/device.py:63
+msgid "Digital Output"
+msgstr "Sayısal Çıkış"
+
+#: .tmp/displaysettings/device.py:64
+msgid "TV Output"
+msgstr "TV Çıkışı"
+
 #: .tmp/displaysettings/deviceswidget.py:79
 #: .tmp/displaysettings/screenswidget.py:70
 msgid ""
@@ -119,7 +155,7 @@ msgstr ""
 #: .tmp/displaysettings/deviceswidget.py:95
 #: .tmp/displaysettings/deviceswidget.py:262
 #: .tmp/displaysettings/screenswidget.py:86
-#: .tmp/displaysettings/screenswidget.py:365
+#: .tmp/displaysettings/screenswidget.py:366
 msgid "Access denied."
 msgstr "Erişim engellendi."
 
@@ -148,38 +184,9 @@ msgid "Start Package Manager"
 msgstr "Paket Yöneticisini Başlat"
 
 #: .tmp/displaysettings/deviceswidget.py:252
-#: .tmp/displaysettings/screenswidget.py:358
 msgid "You must restart your X session for the changes to take effect."
 msgstr ""
 "Değişikliklerin etkin olması için X oturumunuzu yeniden başlatmalısınız."
-
-#: .tmp/displaysettings/device.py:60
-msgid "Default Output"
-msgstr "Öntanımlı Çıkış"
-
-#: .tmp/displaysettings/device.py:61
-msgid "Laptop Panel"
-msgstr "Dizüstü Paneli"
-
-#: .tmp/displaysettings/device.py:62
-msgid "Analog Output"
-msgstr "Analog Çıkış"
-
-#: .tmp/displaysettings/device.py:63
-msgid "Digital Output"
-msgstr "Sayısal Çıkış"
-
-#: .tmp/displaysettings/device.py:64
-msgid "TV Output"
-msgstr "TV Çıkışı"
-
-#: .tmp/displaysettings/monitorbrowser.py:41
-msgid "Type:"
-msgstr "Tür:"
-
-#: .tmp/displaysettings/monitorbrowser.py:42
-msgid "Monitors:"
-msgstr "Monitörler:"
 
 #: .tmp/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
@@ -193,6 +200,14 @@ msgstr "Özel Monitör"
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr "<qt><i>Monitör seçmek için \"Seç...\" düğmesine tıklayın</i></qt>"
 
+#: .tmp/displaysettings/monitorbrowser.py:41
+msgid "Type:"
+msgstr "Tür:"
+
+#: .tmp/displaysettings/monitorbrowser.py:42
+msgid "Monitors:"
+msgstr "Monitörler:"
+
 #: .tmp/displaysettings/screenswidget.py:189
 #: .tmp/displaysettings/screenswidget.py:264
 msgid "Auto"
@@ -202,33 +217,10 @@ msgstr "Otomatik"
 msgid "Output Properties - %1"
 msgstr "Çıkış Özellikleri - %1"
 
-#: .tmp/displaysettings/about.py:22
-msgid "Display Configuration Tool"
-msgstr "Ekran Yapılandırma Aracı"
-
-#: .tmp/displaysettings/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/displaysettings/about.py:32
-msgid "Fatih Aşıcı"
-msgstr "Fatih Aşıcı"
-
-#: .tmp/displaysettings/about.py:32
-msgid "Current Maintainer"
-msgstr "Şu Anki Bakıcı"
-
-#: .tmp/ui_monitorbrowser.py:48
-msgid "Browse Monitors"
-msgstr "Monitörlere Gözat"
-
-#: .tmp/ui_monitorbrowser.py:49
-msgid "Vendors:"
-msgstr "Üreticiler:"
-
-#: .tmp/ui_monitorbrowser.py:50
-msgid "Models:"
-msgstr "Modeller:"
+#: .tmp/displaysettings/screenswidget.py:359
+msgid "You must restart your X session for all the changes to take effect."
+msgstr ""
+"Tüm değişikliklerin etkin olması için X oturumunuzu yeniden başlatmalısınız."
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
@@ -338,6 +330,18 @@ msgstr "Boyutlar"
 #: .tmp/ui_output.py:248
 msgid "Ignore this output"
 msgstr "Bu çıkışı yoksay"
+
+#: .tmp/ui_monitorbrowser.py:48
+msgid "Browse Monitors"
+msgstr "Monitörlere Gözat"
+
+#: .tmp/ui_monitorbrowser.py:49
+msgid "Vendors:"
+msgstr "Üreticiler:"
+
+#: .tmp/ui_monitorbrowser.py:50
+msgid "Models:"
+msgstr "Modeller:"
 
 #: .tmp/ui_devices.py:67
 msgid "Video Card:"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-15 23:10+0300\n"
+"POT-Creation-Date: 2009-12-03 14:06+0200\n"
 "PO-Revision-Date: 2009-10-17 21:28-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -101,6 +101,42 @@ msgstr ""
 msgid "24 Bit"
 msgstr ""
 
+#: .tmp/displaysettings/about.py:22
+msgid "Display Configuration Tool"
+msgstr "Herramienta de Configuración de Monitor"
+
+#: .tmp/displaysettings/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/displaysettings/about.py:32
+msgid "Fatih Aşıcı"
+msgstr ""
+
+#: .tmp/displaysettings/about.py:32
+msgid "Current Maintainer"
+msgstr "Mantenedor actual"
+
+#: .tmp/displaysettings/device.py:60
+msgid "Default Output"
+msgstr "Salida predeterminada"
+
+#: .tmp/displaysettings/device.py:61
+msgid "Laptop Panel"
+msgstr "Monitor de Notebook"
+
+#: .tmp/displaysettings/device.py:62
+msgid "Analog Output"
+msgstr "Salida analógica"
+
+#: .tmp/displaysettings/device.py:63
+msgid "Digital Output"
+msgstr "Salida digital"
+
+#: .tmp/displaysettings/device.py:64
+msgid "TV Output"
+msgstr "Salida TV"
+
 #: .tmp/displaysettings/deviceswidget.py:79
 #: .tmp/displaysettings/screenswidget.py:70
 msgid ""
@@ -125,7 +161,7 @@ msgstr ""
 #: .tmp/displaysettings/deviceswidget.py:95
 #: .tmp/displaysettings/deviceswidget.py:262
 #: .tmp/displaysettings/screenswidget.py:86
-#: .tmp/displaysettings/screenswidget.py:365
+#: .tmp/displaysettings/screenswidget.py:366
 msgid "Access denied."
 msgstr "Acceso denegado."
 
@@ -154,37 +190,8 @@ msgid "Start Package Manager"
 msgstr "Iniciar Administrador de Paquetes"
 
 #: .tmp/displaysettings/deviceswidget.py:252
-#: .tmp/displaysettings/screenswidget.py:358
 msgid "You must restart your X session for the changes to take effect."
 msgstr "Debe reiniciar su sesión gráfica X para que los cambios tengan efecto."
-
-#: .tmp/displaysettings/device.py:60
-msgid "Default Output"
-msgstr "Salida predeterminada"
-
-#: .tmp/displaysettings/device.py:61
-msgid "Laptop Panel"
-msgstr "Monitor de Notebook"
-
-#: .tmp/displaysettings/device.py:62
-msgid "Analog Output"
-msgstr "Salida analógica"
-
-#: .tmp/displaysettings/device.py:63
-msgid "Digital Output"
-msgstr "Salida digital"
-
-#: .tmp/displaysettings/device.py:64
-msgid "TV Output"
-msgstr "Salida TV"
-
-#: .tmp/displaysettings/monitorbrowser.py:41
-msgid "Type:"
-msgstr "Tipo:"
-
-#: .tmp/displaysettings/monitorbrowser.py:42
-msgid "Monitors:"
-msgstr "Monitores:"
 
 #: .tmp/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
@@ -199,6 +206,14 @@ msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr ""
 "<qt><i>Presione el botón \"Elegir...\" para seleccionar un monitor</i></qt>"
 
+#: .tmp/displaysettings/monitorbrowser.py:41
+msgid "Type:"
+msgstr "Tipo:"
+
+#: .tmp/displaysettings/monitorbrowser.py:42
+msgid "Monitors:"
+msgstr "Monitores:"
+
 #: .tmp/displaysettings/screenswidget.py:189
 #: .tmp/displaysettings/screenswidget.py:264
 msgid "Auto"
@@ -208,33 +223,10 @@ msgstr ""
 msgid "Output Properties - %1"
 msgstr "Configuración de salida - %1"
 
-#: .tmp/displaysettings/about.py:22
-msgid "Display Configuration Tool"
-msgstr "Herramienta de Configuración de Monitor"
-
-#: .tmp/displaysettings/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
-
-#: .tmp/displaysettings/about.py:32
-msgid "Fatih Aşıcı"
-msgstr ""
-
-#: .tmp/displaysettings/about.py:32
-msgid "Current Maintainer"
-msgstr "Mantenedor actual"
-
-#: .tmp/ui_monitorbrowser.py:48
-msgid "Browse Monitors"
-msgstr "Listar monitores"
-
-#: .tmp/ui_monitorbrowser.py:49
-msgid "Vendors:"
-msgstr "Fabricante:"
-
-#: .tmp/ui_monitorbrowser.py:50
-msgid "Models:"
-msgstr "Modelos:"
+#: .tmp/displaysettings/screenswidget.py:359
+#, fuzzy
+msgid "You must restart your X session for all the changes to take effect."
+msgstr "Debe reiniciar su sesión gráfica X para que los cambios tengan efecto."
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
@@ -346,6 +338,18 @@ msgstr "Dimensiones"
 msgid "Ignore this output"
 msgstr "Ignorar esta salida"
 
+#: .tmp/ui_monitorbrowser.py:48
+msgid "Browse Monitors"
+msgstr "Listar monitores"
+
+#: .tmp/ui_monitorbrowser.py:49
+msgid "Vendors:"
+msgstr "Fabricante:"
+
+#: .tmp/ui_monitorbrowser.py:50
+msgid "Models:"
+msgstr "Modelos:"
+
 #: .tmp/ui_devices.py:67
 msgid "Video Card:"
 msgstr "Tarjeta gráfica:"
@@ -361,5 +365,3 @@ msgstr "Configurando..."
 #: .tmp/ui_devices.py:70
 msgid "Outputs:"
 msgstr "Salidas:"
-
-

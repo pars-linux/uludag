@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: display-settings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-15 23:10+0300\n"
+"POT-Creation-Date: 2009-12-03 14:06+0200\n"
 "PO-Revision-Date: 2009-08-20 11:29+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <  pardus-translators@pardus.org.tr>\n"
@@ -98,63 +98,21 @@ msgstr "16 bit"
 msgid "24 Bit"
 msgstr "24 bit"
 
-#: .tmp/displaysettings/deviceswidget.py:79
-#: .tmp/displaysettings/screenswidget.py:70
-msgid ""
-"There are no packages that provide backend for this application.\n"
-"Please be sure that packages are installed and configured correctly."
-msgstr ""
-"Der er ikke nogen pakker der kan agere backend for dette program.\n"
-"Kontroller venligst at de nødvendige pakker er installeret og konfigureret "
-"korrekt."
+#: .tmp/displaysettings/about.py:22
+msgid "Display Configuration Tool"
+msgstr "Værktøj til indstilling af skærm"
 
-#: .tmp/displaysettings/deviceswidget.py:86
-#: .tmp/displaysettings/screenswidget.py:77
-msgid ""
-"Cannot find a valid configuration. Display settings won't be enabled until "
-"you create a new configuration.\n"
-"Would you like to create a safe configuration now?"
-msgstr ""
-"Kan ikke finde en gyldig konfiguration. Skærmindstillingerne vil ikke blive "
-"a "
-"nvendt indtil du opretter en ny konfiguration.\n"
-"Vil du oprette en sikker konfiguration nu?"
+#: .tmp/displaysettings/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
-#: .tmp/displaysettings/deviceswidget.py:95
-#: .tmp/displaysettings/deviceswidget.py:262
-#: .tmp/displaysettings/screenswidget.py:86
-#: .tmp/displaysettings/screenswidget.py:365
-msgid "Access denied."
-msgstr "Adgang nægtet."
+#: .tmp/displaysettings/about.py:32
+msgid "Fatih Aşıcı"
+msgstr "Fatih Aşıcı"
 
-#: .tmp/displaysettings/deviceswidget.py:120
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
-"<qt>For at få en bedre ydelse bør du måske benytte <b>%1</b> driveren som er "
-"udgivet af hardware producenten. VIl du anvende denne driver?</p></qt>"
-
-#: .tmp/displaysettings/deviceswidget.py:136
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%1</b> from video card options.</qt>"
-msgstr ""
-"<qt>For at få en bedre ydelse bør du måske benytte <b>%1</b> driveren som er "
-"udgivet af hardware producenten. For at anvende driver, skal du installere <"
-"b>%2</b> pakken og"
-"vælge <b>%1</b> i indstillingerne for graffikkortet.</qt>"
-
-#: .tmp/displaysettings/deviceswidget.py:141
-msgid "Start Package Manager"
-msgstr "Start pakkehåndteringen"
-
-#: .tmp/displaysettings/deviceswidget.py:252
-#: .tmp/displaysettings/screenswidget.py:358
-msgid "You must restart your X session for the changes to take effect."
-msgstr ""
-"Du skal genstarte din X session før at ændringerne bliver taget i brug."
+#: .tmp/displaysettings/about.py:32
+msgid "Current Maintainer"
+msgstr "Nuværende vedligeholder"
 
 #: .tmp/displaysettings/device.py:60
 msgid "Default Output"
@@ -176,13 +134,60 @@ msgstr "Digital udgang"
 msgid "TV Output"
 msgstr "TV-udgang"
 
-#: .tmp/displaysettings/monitorbrowser.py:41
-msgid "Type:"
-msgstr "Type:"
+#: .tmp/displaysettings/deviceswidget.py:79
+#: .tmp/displaysettings/screenswidget.py:70
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"Der er ikke nogen pakker der kan agere backend for dette program.\n"
+"Kontroller venligst at de nødvendige pakker er installeret og konfigureret "
+"korrekt."
 
-#: .tmp/displaysettings/monitorbrowser.py:42
-msgid "Monitors:"
-msgstr "Skærme:"
+#: .tmp/displaysettings/deviceswidget.py:86
+#: .tmp/displaysettings/screenswidget.py:77
+msgid ""
+"Cannot find a valid configuration. Display settings won't be enabled until "
+"you create a new configuration.\n"
+"Would you like to create a safe configuration now?"
+msgstr ""
+"Kan ikke finde en gyldig konfiguration. Skærmindstillingerne vil ikke blive "
+"a nvendt indtil du opretter en ny konfiguration.\n"
+"Vil du oprette en sikker konfiguration nu?"
+
+#: .tmp/displaysettings/deviceswidget.py:95
+#: .tmp/displaysettings/deviceswidget.py:262
+#: .tmp/displaysettings/screenswidget.py:86
+#: .tmp/displaysettings/screenswidget.py:366
+msgid "Access denied."
+msgstr "Adgang nægtet."
+
+#: .tmp/displaysettings/deviceswidget.py:120
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr ""
+"<qt>For at få en bedre ydelse bør du måske benytte <b>%1</b> driveren som er "
+"udgivet af hardware producenten. VIl du anvende denne driver?</p></qt>"
+
+#: .tmp/displaysettings/deviceswidget.py:136
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
+"<b>%1</b> from video card options.</qt>"
+msgstr ""
+"<qt>For at få en bedre ydelse bør du måske benytte <b>%1</b> driveren som er "
+"udgivet af hardware producenten. For at anvende driver, skal du installere "
+"<b>%2</b> pakken ogvælge <b>%1</b> i indstillingerne for graffikkortet.</qt>"
+
+#: .tmp/displaysettings/deviceswidget.py:141
+msgid "Start Package Manager"
+msgstr "Start pakkehåndteringen"
+
+#: .tmp/displaysettings/deviceswidget.py:252
+msgid "You must restart your X session for the changes to take effect."
+msgstr ""
+"Du skal genstarte din X session før at ændringerne bliver taget i brug."
 
 #: .tmp/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
@@ -196,6 +201,14 @@ msgstr "Tilpasset skærm"
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr "<qt><i>Klik på \"vælg...\"-for at vælge en skærm</i></qt>"
 
+#: .tmp/displaysettings/monitorbrowser.py:41
+msgid "Type:"
+msgstr "Type:"
+
+#: .tmp/displaysettings/monitorbrowser.py:42
+msgid "Monitors:"
+msgstr "Skærme:"
+
 #: .tmp/displaysettings/screenswidget.py:189
 #: .tmp/displaysettings/screenswidget.py:264
 msgid "Auto"
@@ -205,33 +218,11 @@ msgstr "Automatisk"
 msgid "Output Properties - %1"
 msgstr "Egenskaber for udgang - %1"
 
-#: .tmp/displaysettings/about.py:22
-msgid "Display Configuration Tool"
-msgstr "Værktøj til indstilling af skærm"
-
-#: .tmp/displaysettings/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/displaysettings/about.py:32
-msgid "Fatih Aşıcı"
-msgstr "Fatih Aşıcı"
-
-#: .tmp/displaysettings/about.py:32
-msgid "Current Maintainer"
-msgstr "Nuværende vedligeholder"
-
-#: .tmp/ui_monitorbrowser.py:48
-msgid "Browse Monitors"
-msgstr "Gennemse skærme"
-
-#: .tmp/ui_monitorbrowser.py:49
-msgid "Vendors:"
-msgstr "Producenter:"
-
-#: .tmp/ui_monitorbrowser.py:50
-msgid "Models:"
-msgstr "Modeller:"
+#: .tmp/displaysettings/screenswidget.py:359
+#, fuzzy
+msgid "You must restart your X session for all the changes to take effect."
+msgstr ""
+"Du skal genstarte din X session før at ændringerne bliver taget i brug."
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
@@ -244,10 +235,8 @@ msgid ""
 "inaccurate value may damage your monitor, especially if it is an old model."
 msgstr ""
 "Hvis det frekvensområde din skærm understøtter af en eller anden grund ikke "
-"bliver detekteret, "
-"kan du specificere det her . Vær dog forsigtig da forkerte værdier kan skade "
-"din skærm, "
-"især hvis skærmen er af ældre dato."
+"bliver detekteret, kan du specificere det her . Vær dog forsigtig da "
+"forkerte værdier kan skade din skærm, især hvis skærmen er af ældre dato."
 
 #: .tmp/ui_output.py:226
 msgid "Specify Ranges"
@@ -303,10 +292,9 @@ msgid ""
 "visual objects might seem larger or smaller than normal. In order to fix "
 "this problem, you can specify your monitor's dimensions here."
 msgstr ""
-"Hvis din skræms dimensioner ikke er blevet detekteret korrekt, "
-"kan skrifttyper og andre visuelle objekter se mindre eller større ud end "
-"normalt. "
-"For at rette problemet, kan du angive din skærms dimensioner her."
+"Hvis din skræms dimensioner ikke er blevet detekteret korrekt, kan "
+"skrifttyper og andre visuelle objekter se mindre eller større ud end "
+"normalt. For at rette problemet, kan du angive din skærms dimensioner her."
 
 #: .tmp/ui_output.py:239
 msgid "Specify Display Size"
@@ -343,6 +331,18 @@ msgstr "Dimensioner"
 #: .tmp/ui_output.py:248
 msgid "Ignore this output"
 msgstr "Ignorer denne udgang"
+
+#: .tmp/ui_monitorbrowser.py:48
+msgid "Browse Monitors"
+msgstr "Gennemse skærme"
+
+#: .tmp/ui_monitorbrowser.py:49
+msgid "Vendors:"
+msgstr "Producenter:"
+
+#: .tmp/ui_monitorbrowser.py:50
+msgid "Models:"
+msgstr "Modeller:"
 
 #: .tmp/ui_devices.py:67
 msgid "Video Card:"
