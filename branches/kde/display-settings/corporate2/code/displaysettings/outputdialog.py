@@ -17,8 +17,8 @@ from kdeui import *
 import kdedesigner
 
 # UI
+from displaysettings.monitorbrowser import MonitorBrowser
 from displaysettings.ui.output import OutputDialog as Ui_OutputDialog
-#import ui.monitorbrowser
 
 def splitRange(range):
     range = range.replace(" ", "")
@@ -72,7 +72,7 @@ class OutputDialog(Ui_OutputDialog):
     def slotBrowseMonitors(self):
         std = self.monitorType.currentItem() == 0
         dlg = MonitorBrowser(self, std)
-        if dlg.exec_() == QDialog.Accepted:
+        if dlg.exec_loop() == QDialog.Accepted:
             self.writeMonitorInfo(dlg.model, dlg.hsync, dlg.vref)
             if std:
                 self.lastStdMonitor = (dlg.vendor, dlg.model, dlg.hsync, dlg.vref)
