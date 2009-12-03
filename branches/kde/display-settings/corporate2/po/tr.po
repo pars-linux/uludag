@@ -1,170 +1,224 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Turkish translations of Display Settings.
+# Copyright (C) 2009
+# This file is distributed under the same license as the display-settings package.
+# Fatih Aşıcı <fatih@pardus.org.tr>, 2009.
 #
-# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-23 22:09+0200\n"
-"PO-Revision-Date: 2009-06-28 13:45+0300\n"
-"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2009-12-03 15:33+0200\n"
+"PO-Revision-Date: 2009-07-10 21:11+0300\n"
+"Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
+"Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/monitordialog.py:86
-msgid "Choose Monitor"
-msgstr "Monitör Seçin"
+#: code/display-settings.py:36 code/display-settings.py:104 ui/mainview.py:184
+msgid "Display Settings"
+msgstr "Ekran Ayarları"
 
-#: src/monitordialog.py:87
-msgid "Plug And Play Monitor"
-msgstr "Tak ve Kullan Monitör"
+#: code/display-settings.py:96
+msgid "Display Settings module is already started!"
+msgstr "Ekran Ayarları modülü zaten açık!"
 
-#: src/monitordialog.py:89 src/driverdialog.py:60
-msgid "Ok"
-msgstr "Tamam"
+#: code/displaysettings/device.py:62
+msgid "Default Output"
+msgstr "Öntanımlı Çıkış"
 
-#: src/monitordialog.py:94
-msgid "Details"
-msgstr "Ayrıntılar"
+#: code/displaysettings/device.py:63
+msgid "Laptop Panel"
+msgstr "Dizüstü Paneli"
 
-#: src/monitordialog.py:95
-msgid "<p>Horizontal Range:</p>"
-msgstr "<p>Yatay Tarama Aralığı:</p>"
+#: code/displaysettings/device.py:64
+msgid "Analog Output"
+msgstr "Analog Çıkış"
 
-#: src/monitordialog.py:96
-msgid "<p>Vertical Range:</p>"
-msgstr "<p>Dikey Tarama Aralığı:</p>"
+#: code/displaysettings/device.py:65
+msgid "Digital Output"
+msgstr "Sayısal Çıkış"
 
-#: src/display-manager.py:40 src/display-manager.py:621 src/dm_mainview.py:248
-msgid "Display Manager"
-msgstr "Görüntü Yöneticisi"
+#: code/displaysettings/device.py:66
+msgid "TV Output"
+msgstr "TV Çıkışı"
 
-#: src/display-manager.py:57
-msgid "CRT Monitor"
-msgstr "CRT Monitör"
+#: code/displaysettings/outputdialog.py:35
+msgid "Settings for Output %1"
+msgstr "%1 Çıkışı için Ayarlar"
 
-#: src/display-manager.py:58
-msgid "LCD Monitor"
-msgstr "LCD Monitör"
+#: code/displaysettings/outputdialog.py:63
+msgid "Custom Monitor"
+msgstr "Özel Monitör"
 
-#: src/display-manager.py:65
-msgid "Standard Monitors"
-msgstr "Standart Monitörler"
+#: code/displaysettings/outputdialog.py:67
+msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
+msgstr "<qt><i>Monitör seçmek için \"Seç...\" düğmesine tıklayın</i></qt>"
 
-#: src/display-manager.py:65
-msgid "Vendors"
-msgstr "Üreticiler"
-
-#: src/display-manager.py:171
+#: code/displaysettings/mainwidget.py:103
 msgid ""
-"<qt>The driver you selected is not installed on your system. In order to use "
-"this driver, you must install <b>%1</b> package.</qt>"
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
 msgstr ""
-"<qt>Seçtiğiniz sürücü sisteminizde kurulu değil. Bu sürücüyü kullanmak için "
-"<b>%1</b> paketini kurmalısınız.</qt>"
+"Bu uygulama için arka uç sağlayan herhangi bir paket bulunamadı.\n"
+"Lütfen paketlerin kurulu ve düzgün yapılandırılmış olduğundan emin olun."
 
-#: src/display-manager.py:172 src/display-manager.py:491
-msgid "Start Package Manager"
-msgstr "Paket Yöneticisini Başlat"
-
-#: src/display-manager.py:185 src/dm_mainview.py:250 src/dm_mainview.py:270
-msgid "Primary Screen"
-msgstr "Birinci Ekran"
-
-#: src/display-manager.py:185 src/dm_mainview.py:272
-msgid "Secondary Screen"
-msgstr "İkinci Ekran"
-
-#: src/display-manager.py:312
+#: code/displaysettings/mainwidget.py:110
 msgid ""
-"This output is already used by other screen.\n"
-"Do you want to swap between them?"
+"Cannot find a valid configuration. Display settings won't be enabled until "
+"you create a new configuration.\n"
+"Would you like to create a safe configuration now?"
 msgstr ""
-"Bu çıkış zaten diğer ekranda kullanılıyor.\n"
-"Çıkışları birbiriyle değiştirmek istiyor musunuz?"
+"Geçerli bir yapılandırma bulunamadı. Ekran ayarları yeni bir yapılandırma "
+"oluşturulmadıkça etkinleştirilmeyecek.\n"
+"Yeni bir güvenli yapılandırma oluşturmak ister misiniz?"
 
-#: src/display-manager.py:447
-msgid "Driver: %1"
-msgstr "Sürücü: %1"
+#: code/displaysettings/mainwidget.py:119
+#: code/displaysettings/mainwidget.py:549
+msgid "Access denied."
+msgstr "Erişim engellendi."
 
-#: src/display-manager.py:450
-msgid "Plug and Play Monitor"
-msgstr "Tak ve Kullan Monitör"
+#: code/displaysettings/mainwidget.py:201
+msgid ""
+"Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
+"(LVDS, VGA, etc.)"
+msgstr ""
 
-#: src/display-manager.py:479
+#: code/displaysettings/mainwidget.py:219
+#: code/displaysettings/mainwidget.py:322
+msgid "Auto"
+msgstr "Otomatik"
+
+#: code/displaysettings/mainwidget.py:318
+msgid "Output Properties - %1"
+msgstr "Çıkış Özellikleri - %1"
+
+#: code/displaysettings/mainwidget.py:402
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
 msgstr ""
-"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</b>"
-" sürücüsünü kullanmak isteyebilirsiniz. Bu sürücüyü kullanmak istiyor "
-"musunuz</qt>"
+"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
+"b> sürücüsünü kullanmak isteyebilirsiniz. Bu sürücüyü kullanmak istiyor "
+"musunuz?</qt>"
 
-#: src/display-manager.py:490
+#: code/displaysettings/mainwidget.py:418
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%3</b> from video card options.</qt>"
+"<b>%1</b> from video card options.</qt>"
 msgstr ""
-"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</b>"
-" sürücüsünü kullanmak isteyebilirsiniz. Kullanmak için <b>%2</b> paketini "
-"kurup daha sonra ekran kartı ayarlarından <b>%3</b> sürücüsünü seçmelisiniz."
+"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
+"b> sürücüsünü kullanmak isteyebilirsiniz. Kullanmak için <b>%2</b> paketini "
+"kurup daha sonra ekran kartı ayarlarından <b>%1</b> sürücüsünü seçmelisiniz."
 "</qt>"
 
-#: src/display-manager.py:609
-msgid "Display Manager is already started!"
-msgstr "Görüntü Yöneticisi zaten çalışıyor!"
+#: code/displaysettings/mainwidget.py:423
+msgid "Start Package Manager"
+msgstr "Paket Yöneticisini Başlat"
 
-#: src/driverdialog.py:43 src/driverdialog.py:64
-msgid "Driver Name"
-msgstr "Sürücü Adı"
+#: code/displaysettings/mainwidget.py:540
+msgid "You must restart your X session for all the changes to take effect."
+msgstr ""
+"Tüm değişikliklerin etkin olması için X oturumunuzu yeniden başlatmalısınız."
 
-#: src/driverdialog.py:44 src/driverdialog.py:65
-msgid "Description"
-msgstr "Açıklama"
+#: code/displaysettings/entryview.py:87
+msgid "Edit entry"
+msgstr "Öğeyi düzenle"
 
-#: src/driverdialog.py:58 src/dm_mainview.py:268
-msgid "Video Card"
-msgstr "Ekran Kartı"
+#: code/displaysettings/monitorbrowser.py:38
+msgid "Type:"
+msgstr "Tür:"
 
-#: src/driverdialog.py:59
-msgid "Show all drivers"
-msgstr "Tüm sürücüleri göster"
+#: code/displaysettings/monitorbrowser.py:39
+msgid "Monitors:"
+msgstr "Monitörler:"
 
-#: src/utility.py:26
-msgid "Default Output"
-msgstr "Öntanımlı Çıkış"
+#: ui/mainview.py:185
+msgid "Outputs"
+msgstr "Çıkışlar"
 
-#: src/utility.py:28
-msgid "Automatic"
-msgstr "Otomatik"
+#: ui/mainview.py:186
+msgid "Extend desktop to all displays"
+msgstr "Masaüstünü tüm ekranlara yay"
 
-#: src/utility.py:31
-msgid "Laptop Panel (%1)"
-msgstr "Dizüstü Paneli (%1)"
+#: ui/mainview.py:187
+msgid "Detect Outputs"
+msgstr "Çıkışları Algıla"
 
-#: src/utility.py:32
-msgid "Analog Output (%1)"
-msgstr "Örneksel Çıkış (%1)"
+#: ui/mainview.py:189
+msgid "Configuration file is not ready."
+msgstr "Yapılandırma dosyası hazır değil."
 
-#: src/utility.py:33
-msgid "Digital Output (%1)"
-msgstr "Sayısal Çıkış (%1)"
+#: ui/mainview.py:191
+msgid "1"
+msgstr "1"
 
-#: src/utility.py:34
-msgid "TV Output (%1)"
-msgstr "TV Çıkışı (%1)"
+#: ui/mainview.py:194
+msgid "2"
+msgstr "2"
 
-#: src/helpdialog.py:55
+#: ui/mainview.py:195
+msgid "Output Properties"
+msgstr "Çıkış Özellikleri"
+
+#: ui/mainview.py:196
+msgid "Size:"
+msgstr "Boyut:"
+
+#: ui/mainview.py:197
+msgid "Refresh Rate:"
+msgstr "Yenileme Oranı:"
+
+#: ui/mainview.py:198
+msgid "Rotation:"
+msgstr "Çevirme:"
+
+#: ui/mainview.py:200
+msgid "No Rotation"
+msgstr "Çevirme Yok"
+
+#: ui/mainview.py:201
+msgid "Left (90 degrees)"
+msgstr "Sola (90 derece)"
+
+#: ui/mainview.py:202
+msgid "Upside-Down (180 degrees)"
+msgstr "Yukarıdan Aşağıya (180 derece)"
+
+#: ui/mainview.py:203
+msgid "Right (270 degrees)"
+msgstr "Sağa (270 derece)"
+
+#: ui/mainview.py:204
+msgid "Screens"
+msgstr "Ekranlar"
+
+#: ui/mainview.py:205
+msgid "<b>Video Card:</b>"
+msgstr "<b>Ekran Kartı:</b>"
+
+#: ui/mainview.py:206
+msgid "Card Info"
+msgstr "Kart Bilgisi"
+
+#: ui/mainview.py:207
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: ui/mainview.py:208
+msgid "<b>Outputs:</b>"
+msgstr "<b>Çıkışlar:</b>"
+
+#: ui/mainview.py:209
+msgid "Devices"
+msgstr "Aygıtlar"
+
+#: ui/help.py:55
 msgid "Display Manager Help"
-msgstr "Görüntü Yöneticisi Yardımı"
+msgstr ""
 
-#: src/helpdialog.py:56
+#: ui/help.py:56
 msgid ""
 "<p>\n"
 "<b><h3>Outputs </h3></b>\n"
@@ -190,139 +244,130 @@ msgid ""
 "\n"
 "</p>"
 msgstr ""
-"<p>\n"
-"<b><h3>Çıkışlar</h3></b>\n"
-"\n"
-"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
-"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
-"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
-"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
-"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
-"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
-"<br><br>\n"
-"<b><h3>Çözünürlük</h3></b>\n"
-"\n"
-"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
-"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
-"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
-"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
-"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
-"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
-"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
-"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
-"dignissim dui lectus et orci.\n"
-"\n"
-"</p>"
 
-#: src/helpdialog.py:67
+#: ui/help.py:67
 msgid "<p><b><h3>Display Manager </h3></b></p>"
-msgstr "<p><b><h3>Görüntü Yöneticisi </h3></b></p>"
-
-#: src/dm_mainview.py:249
-msgid "Identify Displays"
-msgstr "Ekranları Tanımla"
-
-#: src/dm_mainview.py:251
-msgid "Output"
-msgstr "Çıkış"
-
-#: src/dm_mainview.py:252
-msgid "Resolution"
-msgstr "Çözünürlük"
-
-#: src/dm_mainview.py:254
-msgid "Configuration file is not ready."
-msgstr "Yapılandırma dosyası hazır değil."
-
-#: src/dm_mainview.py:256
-msgid "1"
-msgstr "1"
-
-#: src/dm_mainview.py:259
-msgid "2"
-msgstr "2"
-
-#: src/dm_mainview.py:261
-msgid "True Color"
-msgstr "Gerçek Renk"
-
-#: src/dm_mainview.py:262
-msgid "Dual Screen"
-msgstr "Çift Ekran"
-
-#: src/dm_mainview.py:264
-msgid "Cloned Mode"
-msgstr "Klon Modu"
-
-#: src/dm_mainview.py:265
-msgid "Extended Mode"
-msgstr "Uzatılmış Mod"
-
-#: src/dm_mainview.py:266
-msgid "Detect Displays"
-msgstr "Ekranları Algıla"
-
-#: src/dm_mainview.py:267
-msgid "Screens"
-msgstr "Ekranlar"
-
-#: src/dm_mainview.py:269 src/dm_mainview.py:271 src/dm_mainview.py:273
-msgid "Configure..."
-msgstr "Yapılandır..."
-
-#: src/dm_mainview.py:274
-msgid "Devices"
-msgstr "Aygıtlar"
-
-#: src/displayconfig.py:73 src/displayconfig.py:103
-msgid "You are not authorized for this operation."
-msgstr "Bu işlemi yapmaya yetkili değilsiniz."
-
-#: src/displayconfig.py:106
-msgid "COMAR Error"
-msgstr "COMAR Hatası"
-
-#: src/displayconfig.py:111
-msgid "Waiting DBus..."
-msgstr "DBus bekleniyor..."
-
-#: src/displayconfig.py:111
-msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
-"DBus bağlantısı beklenmedik bir şekilde kapandı, yeniden bağlanmayı "
-"deniyor..."
 
-#: src/displayconfig.py:127
+#: ui/videocard.py:101
+msgid "Video Card Configuration"
+msgstr "Ekran Kartı Yapılandırması"
+
+#: ui/videocard.py:102
+msgid "Video Driver"
+msgstr "Video Sürücüsü"
+
+#: ui/videocard.py:103
+msgid "Use the default driver for the detected card"
+msgstr "Algılanan karta ait öntanımlı sürücüyü kullan"
+
+#: ui/videocard.py:104 ui/videocard.py:109
+msgid "Select from the list:"
+msgstr "Listeden seç:"
+
+#: ui/videocard.py:106
+msgid "radeon"
+msgstr "radeon"
+
+#: ui/videocard.py:107
+msgid "Color Depth"
+msgstr "Renk Derinliği"
+
+#: ui/videocard.py:108
+msgid "Determined by the driver"
+msgstr "Sürücü karar versin"
+
+#: ui/videocard.py:111
+msgid "16 Bit"
+msgstr "16 Bit"
+
+#: ui/videocard.py:112
+msgid "24 Bit"
+msgstr "24 Bit"
+
+#: ui/output.py:160
+msgid "Output Configuration"
+msgstr "Çıkış Yapılandırması"
+
+#: ui/output.py:161
 msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
+"If the frequency ranges that your monitor supports are not detected for some "
+"reason, you can specify them here. Be careful with these values, as an "
+"inaccurate value may damage your monitor, especially if it is an old model."
 msgstr ""
-"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa root olarak konsol açıp "
-"'service dbus start' komutunu deneyebilirsiniz."
+"Herhangi bir nedenle monitörünüzün desteklediği frekans aralıkları "
+"algılanamazsa buradan elle belirleyebilirsiniz. Bu değerleri seçerken "
+"dikkatli olun. Özellikle eski model bir monitör ise yanlış bir değer "
+"monitörünüze zarar verebilir."
 
-#: src/displayconfig.py:155
-msgid ""
-"Display manager cannot get configuration information. Configuration file may "
-"be corrupted or modified by another tool. If you want to use display manager "
-"to configure your video hardware, you must create a new configuration file.\n"
-"Would you like to create a new configuration at the next boot?"
-msgstr ""
-"Görüntü yöneticisi yapılandırma bilgisini alamadı. Yapılandırma dosyası "
-"bozulmuş veya başka bir araç ile değiştirilmiş olabilir. Görüntü "
-"aygıtlarınızı görüntü yöneticisi ile yapılandırmak istiyorsanız yeni bir "
-"yapılandırma dosyası oluşturmanız gerekiyor.\n"
-"Bir sonraki açılışta yeni bir yapılandırma dosyası oluşturmak ister misiniz?"
+#: ui/output.py:162
+msgid "Specify Ranges"
+msgstr "Aralıkları Belirle"
 
-#: src/displayconfig.py:388
-msgid ""
-"Configuration has been saved. Some changes may take effect after restarting "
-"your computer."
-msgstr ""
-"Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden "
-"başlatana kadar etkin olmayabilir."
+#: ui/output.py:163
+msgid "Horizontal sync:"
+msgstr "Yatay tarama aralığı:"
 
-#: src/displayconfig.py:391
-msgid "Your hardware will be probed after restarting your computer."
-msgstr ""
-"Donanımınız bilgisayarınız tekrar başlatıldıktan sonra yeniden tanınacak."
+#: ui/output.py:164
+msgid "Monitor 800x600"
+msgstr "Monitor 800x600"
 
+#: ui/output.py:165
+msgid "Choose..."
+msgstr "Seç..."
+
+#: ui/output.py:167
+msgid "Select a standard monitor"
+msgstr "Standart bir monitör seç"
+
+#: ui/output.py:168
+msgid "Select from vendor/model list"
+msgstr "Üretici/model listesinden seç"
+
+#: ui/output.py:169
+msgid "Enter ranges manually"
+msgstr "Değerleri elle gir"
+
+#: ui/output.py:170 ui/output.py:172
+msgid "-"
+msgstr "-"
+
+#: ui/output.py:171
+msgid "kHz"
+msgstr "kHz"
+
+#: ui/output.py:173
+msgid "Hz"
+msgstr "Hz"
+
+#: ui/output.py:174
+msgid "Selection:"
+msgstr "Seçim:"
+
+#: ui/output.py:175
+msgid "Vertical refresh:"
+msgstr "Dikey tarama aralığı:"
+
+#: ui/output.py:176
+msgid "Monitor:"
+msgstr "Monitör:"
+
+#: ui/output.py:177
+msgid "Frequency Ranges"
+msgstr "Frekans Aralıkları"
+
+#: ui/output.py:178
+msgid "Ignore this output"
+msgstr "Bu çıkışı yoksay"
+
+#: ui/monitorbrowser.py:71
+msgid "Browse Monitors"
+msgstr "Monitörlere Gözat"
+
+#: ui/monitorbrowser.py:72
+msgid "Vendors:"
+msgstr "Üreticiler:"
+
+#: ui/monitorbrowser.py:73
+msgid "Models:"
+msgstr "Modeller:"

@@ -1,24 +1,24 @@
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: display-settings\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-03 15:33+0200\n"
-"PO-Revision-Date: 2009-08-19 02:58+0200\n"
-"Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
-"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: code/display-settings.py:36 code/display-settings.py:104 ui/mainview.py:184
 msgid "Display Settings"
-msgstr "Gestionnaire de l'affichage"
+msgstr ""
 
 #: code/display-settings.py:96
 msgid "Display Settings module is already started!"
@@ -26,46 +26,41 @@ msgstr ""
 
 #: code/displaysettings/device.py:62
 msgid "Default Output"
-msgstr "Sortie par défaut"
+msgstr ""
 
 #: code/displaysettings/device.py:63
 msgid "Laptop Panel"
-msgstr "Écran d'ordinateur portable"
+msgstr ""
 
 #: code/displaysettings/device.py:64
 msgid "Analog Output"
-msgstr "Sortie analogique"
+msgstr ""
 
 #: code/displaysettings/device.py:65
 msgid "Digital Output"
-msgstr "Sortie numérique"
+msgstr ""
 
 #: code/displaysettings/device.py:66
 msgid "TV Output"
-msgstr "Sortie TV"
+msgstr ""
 
 #: code/displaysettings/outputdialog.py:35
 msgid "Settings for Output %1"
-msgstr "Paramètres de la sortie %1"
+msgstr ""
 
 #: code/displaysettings/outputdialog.py:63
 msgid "Custom Monitor"
-msgstr "Moniteur personnalisé"
+msgstr ""
 
 #: code/displaysettings/outputdialog.py:67
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr ""
-"<qt><i>Cliquer sur le bouton \"Choisir...\" pour sélectionner un moniteur</"
-"i></qt>"
 
 #: code/displaysettings/mainwidget.py:103
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
-"Cette application n'existe pas en version utilisable dans une console.\n"
-"Merci de vous assurer que les paquets sont correctement installés et "
-"configurés."
 
 #: code/displaysettings/mainwidget.py:110
 msgid ""
@@ -73,15 +68,11 @@ msgid ""
 "you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
-"Impossible de trouver une configuration valide. Le gestionnaire de "
-"l'affichage ne sera pas activé tant que vous n'aurez pas créé une nouvelle "
-"configuration.\n"
-"Voulez-vous essayer de créer une meilleure configuration ?"
 
 #: code/displaysettings/mainwidget.py:119
 #: code/displaysettings/mainwidget.py:549
 msgid "Access denied."
-msgstr "Accès refusé."
+msgstr ""
 
 #: code/displaysettings/mainwidget.py:201
 msgid ""
@@ -92,20 +83,17 @@ msgstr ""
 #: code/displaysettings/mainwidget.py:219
 #: code/displaysettings/mainwidget.py:322
 msgid "Auto"
-msgstr "Auto"
+msgstr ""
 
 #: code/displaysettings/mainwidget.py:318
 msgid "Output Properties - %1"
-msgstr "Propriétés de la sortie - %1"
+msgstr ""
 
 #: code/displaysettings/mainwidget.py:402
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
 msgstr ""
-"<qt>Afin d'obtenir de meilleures performances, vous pourriez être tenté "
-"d'utiliser <b>%1</b> pilote fourni par le fabricant de la carte graphique. "
-"Voulez-vous utiliser ce pilote ?</p></qt>"
 
 #: code/displaysettings/mainwidget.py:418
 msgid ""
@@ -113,21 +101,14 @@ msgid ""
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
 "<b>%1</b> from video card options.</qt>"
 msgstr ""
-"<qt>Afin d'obtenir de meilleures performances, vous pourriez être tenté "
-"d'utiliser <b>%1</b> pilote fourni par le fabricant de la carte graphique. "
-"Pour ce faire, vous devez installer le paquet <b>%2</b> et choisir <b>%1</b> "
-"à partir des options de la carte vidéo.</qt>"
 
 #: code/displaysettings/mainwidget.py:423
 msgid "Start Package Manager"
-msgstr "Lancer le gestionnaire de paquets"
+msgstr ""
 
 #: code/displaysettings/mainwidget.py:540
-#, fuzzy
 msgid "You must restart your X session for all the changes to take effect."
 msgstr ""
-"Vous devez redémarrer votre session X (Menu général -> Quitter -> "
-"Déconnexion) pour que les changements prennent effet."
 
 #: code/displaysettings/entryview.py:87
 msgid "Edit entry"
@@ -135,23 +116,23 @@ msgstr ""
 
 #: code/displaysettings/monitorbrowser.py:38
 msgid "Type:"
-msgstr "Type :"
+msgstr ""
 
 #: code/displaysettings/monitorbrowser.py:39
 msgid "Monitors:"
-msgstr "Moniteurs :"
+msgstr ""
 
 #: ui/mainview.py:185
 msgid "Outputs"
-msgstr "Sorties"
+msgstr ""
 
 #: ui/mainview.py:186
 msgid "Extend desktop to all displays"
-msgstr "Étendre le bureau à l'ensemble des écrans"
+msgstr ""
 
 #: ui/mainview.py:187
 msgid "Detect Outputs"
-msgstr "Détecter les sorties"
+msgstr ""
 
 #: ui/mainview.py:189
 msgid "Configuration file is not ready."
@@ -167,57 +148,55 @@ msgstr ""
 
 #: ui/mainview.py:195
 msgid "Output Properties"
-msgstr "Propriétés des sorties"
+msgstr ""
 
 #: ui/mainview.py:196
 msgid "Size:"
-msgstr "Taille :"
+msgstr ""
 
 #: ui/mainview.py:197
 msgid "Refresh Rate:"
-msgstr "Taux de rafraîchissement :"
+msgstr ""
 
 #: ui/mainview.py:198
 msgid "Rotation:"
-msgstr "Rotation :"
+msgstr ""
 
 #: ui/mainview.py:200
 msgid "No Rotation"
-msgstr "Pas de rotation"
+msgstr ""
 
 #: ui/mainview.py:201
 msgid "Left (90 degrees)"
-msgstr "Gauche (90 degrés)"
+msgstr ""
 
 #: ui/mainview.py:202
 msgid "Upside-Down (180 degrees)"
-msgstr "Sens dessus-dessous (180 degrés)"
+msgstr ""
 
 #: ui/mainview.py:203
 msgid "Right (270 degrees)"
-msgstr "Droite (270 degrés)"
+msgstr ""
 
 #: ui/mainview.py:204
 msgid "Screens"
 msgstr ""
 
 #: ui/mainview.py:205
-#, fuzzy
 msgid "<b>Video Card:</b>"
-msgstr "Carte graphique :"
+msgstr ""
 
 #: ui/mainview.py:206
 msgid "Card Info"
-msgstr "Info carte"
+msgstr ""
 
 #: ui/mainview.py:207
 msgid "Configure..."
-msgstr "Configurer..."
+msgstr ""
 
 #: ui/mainview.py:208
-#, fuzzy
 msgid "<b>Outputs:</b>"
-msgstr "Sorties :"
+msgstr ""
 
 #: ui/mainview.py:209
 msgid "Devices"
@@ -260,20 +239,19 @@ msgstr ""
 
 #: ui/videocard.py:101
 msgid "Video Card Configuration"
-msgstr "Configuration de la carte graphique"
+msgstr ""
 
 #: ui/videocard.py:102
 msgid "Video Driver"
-msgstr "Pilote graphique"
+msgstr ""
 
 #: ui/videocard.py:103
-#, fuzzy
 msgid "Use the default driver for the detected card"
-msgstr "Utiliser le pilote par défaut pour la carte détectée."
+msgstr ""
 
 #: ui/videocard.py:104 ui/videocard.py:109
 msgid "Select from the list:"
-msgstr "Choisir dans la liste :"
+msgstr ""
 
 #: ui/videocard.py:106
 msgid "radeon"
@@ -281,23 +259,23 @@ msgstr ""
 
 #: ui/videocard.py:107
 msgid "Color Depth"
-msgstr "Profondeur des couleurs"
+msgstr ""
 
 #: ui/videocard.py:108
 msgid "Determined by the driver"
-msgstr "Déterminée par le pilote"
+msgstr ""
 
 #: ui/videocard.py:111
 msgid "16 Bit"
-msgstr "16 Bits"
+msgstr ""
 
 #: ui/videocard.py:112
 msgid "24 Bit"
-msgstr "24 Bits"
+msgstr ""
 
 #: ui/output.py:160
 msgid "Output Configuration"
-msgstr "Configuration de la sortie"
+msgstr ""
 
 #: ui/output.py:161
 msgid ""
@@ -305,39 +283,34 @@ msgid ""
 "reason, you can specify them here. Be careful with these values, as an "
 "inaccurate value may damage your monitor, especially if it is an old model."
 msgstr ""
-"Si l'éventail des fréquences que votre moniteur supporte n'est pas détecté "
-"pour une raison ou pour une autre, vous pouvez en spécifier un ici. Soyez "
-"prudent avec ces valeurs, car une valeur inappropriée peut endommager votre "
-"moniteur, surtout s'il est ancien."
 
 #: ui/output.py:162
 msgid "Specify Ranges"
-msgstr "Spécifier l'éventail"
+msgstr ""
 
 #: ui/output.py:163
 msgid "Horizontal sync:"
-msgstr "Synchronisation horizontale :"
+msgstr ""
 
 #: ui/output.py:164
-#, fuzzy
 msgid "Monitor 800x600"
-msgstr "Moniteur :"
+msgstr ""
 
 #: ui/output.py:165
 msgid "Choose..."
-msgstr "Choisir..."
+msgstr ""
 
 #: ui/output.py:167
 msgid "Select a standard monitor"
-msgstr "Choisir un moniteur standard"
+msgstr ""
 
 #: ui/output.py:168
 msgid "Select from vendor/model list"
-msgstr "Choisir à partir de la liste fabricant/modèle"
+msgstr ""
 
 #: ui/output.py:169
 msgid "Enter ranges manually"
-msgstr "Entrer l'éventail manuellement"
+msgstr ""
 
 #: ui/output.py:170 ui/output.py:172
 msgid "-"
@@ -345,91 +318,40 @@ msgstr ""
 
 #: ui/output.py:171
 msgid "kHz"
-msgstr "kHz"
+msgstr ""
 
 #: ui/output.py:173
 msgid "Hz"
-msgstr "Hz"
+msgstr ""
 
 #: ui/output.py:174
 msgid "Selection:"
-msgstr "Sélection :"
+msgstr ""
 
 #: ui/output.py:175
 msgid "Vertical refresh:"
-msgstr "Rafraîchissement vertical :"
+msgstr ""
 
 #: ui/output.py:176
 msgid "Monitor:"
-msgstr "Moniteur :"
+msgstr ""
 
 #: ui/output.py:177
 msgid "Frequency Ranges"
-msgstr "Éventail de fréquences"
+msgstr ""
 
 #: ui/output.py:178
 msgid "Ignore this output"
-msgstr "Ignorer cette sortie"
+msgstr ""
 
 #: ui/monitorbrowser.py:71
 msgid "Browse Monitors"
-msgstr "Rechercher le moniteur"
+msgstr ""
 
 #: ui/monitorbrowser.py:72
 msgid "Vendors:"
-msgstr "Fabricants :"
+msgstr ""
 
 #: ui/monitorbrowser.py:73
 msgid "Models:"
-msgstr "Modèles :"
-
-#~ msgid "Display Configuration Tool"
-#~ msgstr "Outil de configuration de l'affichage"
-
-#~ msgid "(c) 2009 TUBITAK/UEKAE"
-#~ msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#~ msgid "Fatih Aşıcı"
-#~ msgstr "Fatih Aşıcı"
-
-#~ msgid "Current Maintainer"
-#~ msgstr "Mainteneur actuel"
-
-#~ msgid "You must restart your X session for the changes to take effect."
-#~ msgstr ""
-#~ "Vous devez redémarrer votre session X (Menu général -> Quitter -> "
-#~ "Déconnexion) pour que les changements prennent effet."
-
-#~ msgid ""
-#~ "If your monitor's dimensions are not correctly detected, fonts and other "
-#~ "visual objects might seem larger or smaller than normal. In order to fix "
-#~ "this problem, you can specify your monitor's dimensions here."
-#~ msgstr ""
-#~ "Si les dimensions de votre moniteur ne sont pas détectées correctement, "
-#~ "il se peut que les polices et autres objets visuels semblent plus grands "
-#~ "ou plus petits que la normale. Pour remédier à ce problème, vous pouvez "
-#~ "spécifier les dimensions du moniteur ici."
-
-#~ msgid "Specify Display Size"
-#~ msgstr "Spécifier la taille de l'affichage"
-
-#~ msgid "Display size:"
-#~ msgstr "Taille de l'affichage :"
-
-#~ msgid "15.4\" Wide Screen"
-#~ msgstr "Écran large 15.4\""
-
-#~ msgid "Custom"
-#~ msgstr "Personnalisé"
-
-#~ msgid "Width:"
-#~ msgstr "Largeur :"
-
-#~ msgid " mm"
-#~ msgstr " mm"
-
-#~ msgid "Height:"
-#~ msgstr "Hauteur :"
-
-#~ msgid "Dimensions"
-#~ msgstr "Dimensions"
+msgstr ""
