@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>mainWidget</class>
+<class>MainWidget</class>
 <widget class="QWidget">
     <property name="name">
-        <cstring>mainWidget</cstring>
+        <cstring>MainWidget</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Display Manager</string>
+        <string>Display Settings</string>
     </property>
     <vbox>
         <property name="name">

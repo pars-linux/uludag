@@ -23,8 +23,8 @@ from zorg.utils import run
 from displaysettings.carddialog import VideoCardDialog
 from displaysettings.outputdialog import OutputDialog
 from displaysettings.entryview import EntryView
-from displaysettings.ui.help import HelpDialog
-from displaysettings.ui.mainview import mainWidget
+from displaysettings.ui.help import HelpDialog as Ui_HelpDialog
+from displaysettings.ui.mainview import MainWidget as Ui_MainWidget
 
 # Backend
 from displaysettings.backend import Interface
@@ -33,9 +33,9 @@ from displaysettings.device import Output
 from displaysettings.utility import *
 
 
-class MainWidget(mainWidget):
+class MainWidget(Ui_MainWidget):
     def __init__(self, parent):
-        mainWidget.__init__(self, parent)
+        Ui_MainWidget.__init__(self, parent)
 
         # hide for now
         self.buttonHelp.hide()
@@ -432,7 +432,7 @@ class MainWidget(mainWidget):
 
 
     def slotHelp(self):
-        helpwin = HelpDialog()
+        helpwin = Ui_HelpDialog()
         helpwin.exec_loop()
 
     def slotSwap(self):
