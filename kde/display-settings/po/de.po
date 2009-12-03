@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-15 23:10+0300\n"
+"POT-Creation-Date: 2009-12-03 14:06+0200\n"
 "PO-Revision-Date: 2009-07-12 20:02-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <de@li.org>\n"
@@ -99,6 +99,42 @@ msgstr ""
 msgid "24 Bit"
 msgstr ""
 
+#: .tmp/displaysettings/about.py:22
+msgid "Display Configuration Tool"
+msgstr "Bildschirmeinstellungs-Tool"
+
+#: .tmp/displaysettings/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: .tmp/displaysettings/about.py:32
+msgid "Fatih Aşıcı"
+msgstr ""
+
+#: .tmp/displaysettings/about.py:32
+msgid "Current Maintainer"
+msgstr "Aktueller Betreuer"
+
+#: .tmp/displaysettings/device.py:60
+msgid "Default Output"
+msgstr ""
+
+#: .tmp/displaysettings/device.py:61
+msgid "Laptop Panel"
+msgstr "Notebook Bildschirm"
+
+#: .tmp/displaysettings/device.py:62
+msgid "Analog Output"
+msgstr "Analoger Ausgang"
+
+#: .tmp/displaysettings/device.py:63
+msgid "Digital Output"
+msgstr "Digitaler Ausgang"
+
+#: .tmp/displaysettings/device.py:64
+msgid "TV Output"
+msgstr "TV Ausgang"
+
 #: .tmp/displaysettings/deviceswidget.py:79
 #: .tmp/displaysettings/screenswidget.py:70
 msgid ""
@@ -121,7 +157,7 @@ msgstr ""
 #: .tmp/displaysettings/deviceswidget.py:95
 #: .tmp/displaysettings/deviceswidget.py:262
 #: .tmp/displaysettings/screenswidget.py:86
-#: .tmp/displaysettings/screenswidget.py:365
+#: .tmp/displaysettings/screenswidget.py:366
 msgid "Access denied."
 msgstr "Zugriff verweigert."
 
@@ -150,37 +186,8 @@ msgid "Start Package Manager"
 msgstr "Starte Paket Manager"
 
 #: .tmp/displaysettings/deviceswidget.py:252
-#: .tmp/displaysettings/screenswidget.py:358
 msgid "You must restart your X session for the changes to take effect."
 msgstr ""
-
-#: .tmp/displaysettings/device.py:60
-msgid "Default Output"
-msgstr ""
-
-#: .tmp/displaysettings/device.py:61
-msgid "Laptop Panel"
-msgstr "Notebook Bildschirm"
-
-#: .tmp/displaysettings/device.py:62
-msgid "Analog Output"
-msgstr "Analoger Ausgang"
-
-#: .tmp/displaysettings/device.py:63
-msgid "Digital Output"
-msgstr "Digitaler Ausgang"
-
-#: .tmp/displaysettings/device.py:64
-msgid "TV Output"
-msgstr "TV Ausgang"
-
-#: .tmp/displaysettings/monitorbrowser.py:41
-msgid "Type:"
-msgstr "Typ:"
-
-#: .tmp/displaysettings/monitorbrowser.py:42
-msgid "Monitors:"
-msgstr "Monitore:"
 
 #: .tmp/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
@@ -196,6 +203,14 @@ msgstr ""
 "<qt><i>klicken Sie den \"Wählen...\" Button um einen Monitor auszuwählen</"
 "i></qt>"
 
+#: .tmp/displaysettings/monitorbrowser.py:41
+msgid "Type:"
+msgstr "Typ:"
+
+#: .tmp/displaysettings/monitorbrowser.py:42
+msgid "Monitors:"
+msgstr "Monitore:"
+
 #: .tmp/displaysettings/screenswidget.py:189
 #: .tmp/displaysettings/screenswidget.py:264
 msgid "Auto"
@@ -205,33 +220,9 @@ msgstr ""
 msgid "Output Properties - %1"
 msgstr "Konfiguration des Ausgangs - %1"
 
-#: .tmp/displaysettings/about.py:22
-msgid "Display Configuration Tool"
-msgstr "Bildschirmeinstellungs-Tool"
-
-#: .tmp/displaysettings/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
+#: .tmp/displaysettings/screenswidget.py:359
+msgid "You must restart your X session for all the changes to take effect."
 msgstr ""
-
-#: .tmp/displaysettings/about.py:32
-msgid "Fatih Aşıcı"
-msgstr ""
-
-#: .tmp/displaysettings/about.py:32
-msgid "Current Maintainer"
-msgstr "Aktueller Betreuer"
-
-#: .tmp/ui_monitorbrowser.py:48
-msgid "Browse Monitors"
-msgstr "Monitore auflisten"
-
-#: .tmp/ui_monitorbrowser.py:49
-msgid "Vendors:"
-msgstr "Hersteller:"
-
-#: .tmp/ui_monitorbrowser.py:50
-msgid "Models:"
-msgstr "Modelle:"
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
@@ -343,6 +334,18 @@ msgstr "Dimensionen"
 #: .tmp/ui_output.py:248
 msgid "Ignore this output"
 msgstr "Diesen Ausgang ignorieren"
+
+#: .tmp/ui_monitorbrowser.py:48
+msgid "Browse Monitors"
+msgstr "Monitore auflisten"
+
+#: .tmp/ui_monitorbrowser.py:49
+msgid "Vendors:"
+msgstr "Hersteller:"
+
+#: .tmp/ui_monitorbrowser.py:50
+msgid "Models:"
+msgstr "Modelle:"
 
 #: .tmp/ui_devices.py:67
 msgid "Video Card:"
