@@ -1,0 +1,373 @@
+# Turkish translations of Display Settings.
+# Copyright (C) 2009
+# This file is distributed under the same license as the display-settings package.
+# Fatih Aşıcı <fatih@pardus.org.tr>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-03 15:33+0200\n"
+"PO-Revision-Date: 2009-07-10 21:11+0300\n"
+"Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: code/display-settings.py:36 code/display-settings.py:104 ui/mainview.py:184
+msgid "Display Settings"
+msgstr "Ekran Ayarları"
+
+#: code/display-settings.py:96
+msgid "Display Settings module is already started!"
+msgstr "Ekran Ayarları modülü zaten açık!"
+
+#: code/displaysettings/device.py:62
+msgid "Default Output"
+msgstr "Öntanımlı Çıkış"
+
+#: code/displaysettings/device.py:63
+msgid "Laptop Panel"
+msgstr "Dizüstü Paneli"
+
+#: code/displaysettings/device.py:64
+msgid "Analog Output"
+msgstr "Analog Çıkış"
+
+#: code/displaysettings/device.py:65
+msgid "Digital Output"
+msgstr "Sayısal Çıkış"
+
+#: code/displaysettings/device.py:66
+msgid "TV Output"
+msgstr "TV Çıkışı"
+
+#: code/displaysettings/outputdialog.py:35
+msgid "Settings for Output %1"
+msgstr "%1 Çıkışı için Ayarlar"
+
+#: code/displaysettings/outputdialog.py:63
+msgid "Custom Monitor"
+msgstr "Özel Monitör"
+
+#: code/displaysettings/outputdialog.py:67
+msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
+msgstr "<qt><i>Monitör seçmek için \"Seç...\" düğmesine tıklayın</i></qt>"
+
+#: code/displaysettings/mainwidget.py:103
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"Bu uygulama için arka uç sağlayan herhangi bir paket bulunamadı.\n"
+"Lütfen paketlerin kurulu ve düzgün yapılandırılmış olduğundan emin olun."
+
+#: code/displaysettings/mainwidget.py:110
+msgid ""
+"Cannot find a valid configuration. Display settings won't be enabled until "
+"you create a new configuration.\n"
+"Would you like to create a safe configuration now?"
+msgstr ""
+"Geçerli bir yapılandırma bulunamadı. Ekran ayarları yeni bir yapılandırma "
+"oluşturulmadıkça etkinleştirilmeyecek.\n"
+"Yeni bir güvenli yapılandırma oluşturmak ister misiniz?"
+
+#: code/displaysettings/mainwidget.py:119
+#: code/displaysettings/mainwidget.py:549
+msgid "Access denied."
+msgstr "Erişim engellendi."
+
+#: code/displaysettings/mainwidget.py:201
+msgid ""
+"Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
+"(LVDS, VGA, etc.)"
+msgstr ""
+
+#: code/displaysettings/mainwidget.py:219
+#: code/displaysettings/mainwidget.py:322
+msgid "Auto"
+msgstr "Otomatik"
+
+#: code/displaysettings/mainwidget.py:318
+msgid "Output Properties - %1"
+msgstr "Çıkış Özellikleri - %1"
+
+#: code/displaysettings/mainwidget.py:402
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr ""
+"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
+"b> sürücüsünü kullanmak isteyebilirsiniz. Bu sürücüyü kullanmak istiyor "
+"musunuz?</qt>"
+
+#: code/displaysettings/mainwidget.py:418
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
+"<b>%1</b> from video card options.</qt>"
+msgstr ""
+"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
+"b> sürücüsünü kullanmak isteyebilirsiniz. Kullanmak için <b>%2</b> paketini "
+"kurup daha sonra ekran kartı ayarlarından <b>%1</b> sürücüsünü seçmelisiniz."
+"</qt>"
+
+#: code/displaysettings/mainwidget.py:423
+msgid "Start Package Manager"
+msgstr "Paket Yöneticisini Başlat"
+
+#: code/displaysettings/mainwidget.py:540
+msgid "You must restart your X session for all the changes to take effect."
+msgstr ""
+"Tüm değişikliklerin etkin olması için X oturumunuzu yeniden başlatmalısınız."
+
+#: code/displaysettings/entryview.py:87
+msgid "Edit entry"
+msgstr "Öğeyi düzenle"
+
+#: code/displaysettings/monitorbrowser.py:38
+msgid "Type:"
+msgstr "Tür:"
+
+#: code/displaysettings/monitorbrowser.py:39
+msgid "Monitors:"
+msgstr "Monitörler:"
+
+#: ui/mainview.py:185
+msgid "Outputs"
+msgstr "Çıkışlar"
+
+#: ui/mainview.py:186
+msgid "Extend desktop to all displays"
+msgstr "Masaüstünü tüm ekranlara yay"
+
+#: ui/mainview.py:187
+msgid "Detect Outputs"
+msgstr "Çıkışları Algıla"
+
+#: ui/mainview.py:189
+msgid "Configuration file is not ready."
+msgstr "Yapılandırma dosyası hazır değil."
+
+#: ui/mainview.py:191
+msgid "1"
+msgstr "1"
+
+#: ui/mainview.py:194
+msgid "2"
+msgstr "2"
+
+#: ui/mainview.py:195
+msgid "Output Properties"
+msgstr "Çıkış Özellikleri"
+
+#: ui/mainview.py:196
+msgid "Size:"
+msgstr "Boyut:"
+
+#: ui/mainview.py:197
+msgid "Refresh Rate:"
+msgstr "Yenileme Oranı:"
+
+#: ui/mainview.py:198
+msgid "Rotation:"
+msgstr "Çevirme:"
+
+#: ui/mainview.py:200
+msgid "No Rotation"
+msgstr "Çevirme Yok"
+
+#: ui/mainview.py:201
+msgid "Left (90 degrees)"
+msgstr "Sola (90 derece)"
+
+#: ui/mainview.py:202
+msgid "Upside-Down (180 degrees)"
+msgstr "Yukarıdan Aşağıya (180 derece)"
+
+#: ui/mainview.py:203
+msgid "Right (270 degrees)"
+msgstr "Sağa (270 derece)"
+
+#: ui/mainview.py:204
+msgid "Screens"
+msgstr "Ekranlar"
+
+#: ui/mainview.py:205
+msgid "<b>Video Card:</b>"
+msgstr "<b>Ekran Kartı:</b>"
+
+#: ui/mainview.py:206
+msgid "Card Info"
+msgstr "Kart Bilgisi"
+
+#: ui/mainview.py:207
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: ui/mainview.py:208
+msgid "<b>Outputs:</b>"
+msgstr "<b>Çıkışlar:</b>"
+
+#: ui/mainview.py:209
+msgid "Devices"
+msgstr "Aygıtlar"
+
+#: ui/help.py:55
+msgid "Display Manager Help"
+msgstr ""
+
+#: ui/help.py:56
+msgid ""
+"<p>\n"
+"<b><h3>Outputs </h3></b>\n"
+"\n"
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
+"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
+"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
+"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
+"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
+"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
+"<br><br>\n"
+"<b><h3>Resolution </h3></b>\n"
+"\n"
+"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
+"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
+"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
+"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
+"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
+"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
+"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
+"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
+"dignissim dui lectus et orci.\n"
+"\n"
+"</p>"
+msgstr ""
+
+#: ui/help.py:67
+msgid "<p><b><h3>Display Manager </h3></b></p>"
+msgstr ""
+
+#: ui/videocard.py:101
+msgid "Video Card Configuration"
+msgstr "Ekran Kartı Yapılandırması"
+
+#: ui/videocard.py:102
+msgid "Video Driver"
+msgstr "Video Sürücüsü"
+
+#: ui/videocard.py:103
+msgid "Use the default driver for the detected card"
+msgstr "Algılanan karta ait öntanımlı sürücüyü kullan"
+
+#: ui/videocard.py:104 ui/videocard.py:109
+msgid "Select from the list:"
+msgstr "Listeden seç:"
+
+#: ui/videocard.py:106
+msgid "radeon"
+msgstr "radeon"
+
+#: ui/videocard.py:107
+msgid "Color Depth"
+msgstr "Renk Derinliği"
+
+#: ui/videocard.py:108
+msgid "Determined by the driver"
+msgstr "Sürücü karar versin"
+
+#: ui/videocard.py:111
+msgid "16 Bit"
+msgstr "16 Bit"
+
+#: ui/videocard.py:112
+msgid "24 Bit"
+msgstr "24 Bit"
+
+#: ui/output.py:160
+msgid "Output Configuration"
+msgstr "Çıkış Yapılandırması"
+
+#: ui/output.py:161
+msgid ""
+"If the frequency ranges that your monitor supports are not detected for some "
+"reason, you can specify them here. Be careful with these values, as an "
+"inaccurate value may damage your monitor, especially if it is an old model."
+msgstr ""
+"Herhangi bir nedenle monitörünüzün desteklediği frekans aralıkları "
+"algılanamazsa buradan elle belirleyebilirsiniz. Bu değerleri seçerken "
+"dikkatli olun. Özellikle eski model bir monitör ise yanlış bir değer "
+"monitörünüze zarar verebilir."
+
+#: ui/output.py:162
+msgid "Specify Ranges"
+msgstr "Aralıkları Belirle"
+
+#: ui/output.py:163
+msgid "Horizontal sync:"
+msgstr "Yatay tarama aralığı:"
+
+#: ui/output.py:164
+msgid "Monitor 800x600"
+msgstr "Monitor 800x600"
+
+#: ui/output.py:165
+msgid "Choose..."
+msgstr "Seç..."
+
+#: ui/output.py:167
+msgid "Select a standard monitor"
+msgstr "Standart bir monitör seç"
+
+#: ui/output.py:168
+msgid "Select from vendor/model list"
+msgstr "Üretici/model listesinden seç"
+
+#: ui/output.py:169
+msgid "Enter ranges manually"
+msgstr "Değerleri elle gir"
+
+#: ui/output.py:170 ui/output.py:172
+msgid "-"
+msgstr "-"
+
+#: ui/output.py:171
+msgid "kHz"
+msgstr "kHz"
+
+#: ui/output.py:173
+msgid "Hz"
+msgstr "Hz"
+
+#: ui/output.py:174
+msgid "Selection:"
+msgstr "Seçim:"
+
+#: ui/output.py:175
+msgid "Vertical refresh:"
+msgstr "Dikey tarama aralığı:"
+
+#: ui/output.py:176
+msgid "Monitor:"
+msgstr "Monitör:"
+
+#: ui/output.py:177
+msgid "Frequency Ranges"
+msgstr "Frekans Aralıkları"
+
+#: ui/output.py:178
+msgid "Ignore this output"
+msgstr "Bu çıkışı yoksay"
+
+#: ui/monitorbrowser.py:71
+msgid "Browse Monitors"
+msgstr "Monitörlere Gözat"
+
+#: ui/monitorbrowser.py:72
+msgid "Vendors:"
+msgstr "Üreticiler:"
+
+#: ui/monitorbrowser.py:73
+msgid "Models:"
+msgstr "Modeller:"
