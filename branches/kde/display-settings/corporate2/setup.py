@@ -28,10 +28,6 @@ class Build(kdedistutils.BuildKDE):
     def run(self):
         kdedistutils.BuildKDE.run(self)
 
-        # Clear all
-        #os.system("rm -rf build")
-
-        #makeDirs("build/app")
         makeDirs("build/lib/xcb")
 
         # Create xcb binding

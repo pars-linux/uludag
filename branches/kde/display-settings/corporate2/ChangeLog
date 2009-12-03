@@ -1,3 +1,7 @@
+2009-12-03 Fatih Aşıcı <fatih@pardus.org.tr>
+	* New release for KDE3. This is a completely rewritten version
+	which is ported from trunk.
+
 2009-03-28 Fatih Aşıcı <fatih@pardus.org.tr>
 	* src/display-manager.py,
 	  src/displayconfig.py,
