@@ -282,8 +282,8 @@ class Project:
                 collectionDescription = CollectionDescription(description, translations)
 
                 # Reads Selected Packages
-                uri, components, packages, allPackages = __packageSelection(collection.getTag("PackageSelection"))
-                packageselection = PackageSelection(uri, components, packages, allPackages)
+                uri, selectedcomponents, selectedpackages, allPackages = __packageSelection(collection.getTag("PackageSelection"))
+                packageselection = PackageSelection(uri, selectedcomponents, selectedpackages, allPackages)
 
                 # Reads Selected Languages
                 defaultLanguage, selectedLanguages = __languageSelection(collection.getTag("LanguageSelection"))
@@ -477,9 +477,9 @@ class Project:
                 for package in collection.packageSelection.selectedPackages:
                     collect(package)
 
-            packages.sort()
-            collection.packageSelection.allPackages = packages
-            self.all_packages.extend(packages)
+                packages.sort()
+                collection.packageSelection.allPackages = packages
+            #self.all_packages.extend(packages)
         else:
             for component in self.selected_components:
                 if component not in repo.components:
