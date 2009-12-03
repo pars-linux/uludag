@@ -1,0 +1,433 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2009.
+# Peter Lyberth <peterjensen84@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: display-settings\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-03 15:33+0200\n"
+"PO-Revision-Date: 2009-08-20 11:29+0200\n"
+"Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
+"Language-Team: Danish <  pardus-translators@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: code/display-settings.py:36 code/display-settings.py:104 ui/mainview.py:184
+msgid "Display Settings"
+msgstr "Indstillinger for skærm"
+
+#: code/display-settings.py:96
+msgid "Display Settings module is already started!"
+msgstr ""
+
+#: code/displaysettings/device.py:62
+msgid "Default Output"
+msgstr "Standard udgang"
+
+#: code/displaysettings/device.py:63
+msgid "Laptop Panel"
+msgstr "Laptop panel"
+
+#: code/displaysettings/device.py:64
+msgid "Analog Output"
+msgstr "Analog udgang"
+
+#: code/displaysettings/device.py:65
+msgid "Digital Output"
+msgstr "Digital udgang"
+
+#: code/displaysettings/device.py:66
+msgid "TV Output"
+msgstr "TV-udgang"
+
+#: code/displaysettings/outputdialog.py:35
+msgid "Settings for Output %1"
+msgstr "Indstillinger for udgang %1"
+
+#: code/displaysettings/outputdialog.py:63
+msgid "Custom Monitor"
+msgstr "Tilpasset skærm"
+
+#: code/displaysettings/outputdialog.py:67
+msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
+msgstr "<qt><i>Klik på \"vælg...\"-for at vælge en skærm</i></qt>"
+
+#: code/displaysettings/mainwidget.py:103
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"Der er ikke nogen pakker der kan agere backend for dette program.\n"
+"Kontroller venligst at de nødvendige pakker er installeret og konfigureret "
+"korrekt."
+
+#: code/displaysettings/mainwidget.py:110
+msgid ""
+"Cannot find a valid configuration. Display settings won't be enabled until "
+"you create a new configuration.\n"
+"Would you like to create a safe configuration now?"
+msgstr ""
+"Kan ikke finde en gyldig konfiguration. Skærmindstillingerne vil ikke blive "
+"a nvendt indtil du opretter en ny konfiguration.\n"
+"Vil du oprette en sikker konfiguration nu?"
+
+#: code/displaysettings/mainwidget.py:119
+#: code/displaysettings/mainwidget.py:549
+msgid "Access denied."
+msgstr "Adgang nægtet."
+
+#: code/displaysettings/mainwidget.py:201
+msgid ""
+"Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
+"(LVDS, VGA, etc.)"
+msgstr ""
+
+#: code/displaysettings/mainwidget.py:219
+#: code/displaysettings/mainwidget.py:322
+msgid "Auto"
+msgstr "Automatisk"
+
+#: code/displaysettings/mainwidget.py:318
+msgid "Output Properties - %1"
+msgstr "Egenskaber for udgang - %1"
+
+#: code/displaysettings/mainwidget.py:402
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr ""
+"<qt>For at få en bedre ydelse bør du måske benytte <b>%1</b> driveren som er "
+"udgivet af hardware producenten. VIl du anvende denne driver?</p></qt>"
+
+#: code/displaysettings/mainwidget.py:418
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
+"<b>%1</b> from video card options.</qt>"
+msgstr ""
+"<qt>For at få en bedre ydelse bør du måske benytte <b>%1</b> driveren som er "
+"udgivet af hardware producenten. For at anvende driver, skal du installere "
+"<b>%2</b> pakken ogvælge <b>%1</b> i indstillingerne for graffikkortet.</qt>"
+
+#: code/displaysettings/mainwidget.py:423
+msgid "Start Package Manager"
+msgstr "Start pakkehåndteringen"
+
+#: code/displaysettings/mainwidget.py:540
+#, fuzzy
+msgid "You must restart your X session for all the changes to take effect."
+msgstr ""
+"Du skal genstarte din X session før at ændringerne bliver taget i brug."
+
+#: code/displaysettings/entryview.py:87
+msgid "Edit entry"
+msgstr ""
+
+#: code/displaysettings/monitorbrowser.py:38
+msgid "Type:"
+msgstr "Type:"
+
+#: code/displaysettings/monitorbrowser.py:39
+msgid "Monitors:"
+msgstr "Skærme:"
+
+#: ui/mainview.py:185
+msgid "Outputs"
+msgstr "Udgange"
+
+#: ui/mainview.py:186
+msgid "Extend desktop to all displays"
+msgstr "Udvid skrivebordet til alle skærme"
+
+#: ui/mainview.py:187
+msgid "Detect Outputs"
+msgstr "Detektér udgange"
+
+#: ui/mainview.py:189
+msgid "Configuration file is not ready."
+msgstr ""
+
+#: ui/mainview.py:191
+msgid "1"
+msgstr ""
+
+#: ui/mainview.py:194
+msgid "2"
+msgstr ""
+
+#: ui/mainview.py:195
+msgid "Output Properties"
+msgstr "Egenskaber for udgange"
+
+#: ui/mainview.py:196
+msgid "Size:"
+msgstr "Størrelse:"
+
+#: ui/mainview.py:197
+msgid "Refresh Rate:"
+msgstr "Opdaterings frekvens:"
+
+#: ui/mainview.py:198
+msgid "Rotation:"
+msgstr "Rotation:"
+
+#: ui/mainview.py:200
+msgid "No Rotation"
+msgstr "Ingen rotation"
+
+#: ui/mainview.py:201
+msgid "Left (90 degrees)"
+msgstr "Venstre (90 grader)"
+
+#: ui/mainview.py:202
+msgid "Upside-Down (180 degrees)"
+msgstr "På hovedet (180 grader)"
+
+#: ui/mainview.py:203
+msgid "Right (270 degrees)"
+msgstr "Højre (270 grader)"
+
+#: ui/mainview.py:204
+msgid "Screens"
+msgstr ""
+
+#: ui/mainview.py:205
+#, fuzzy
+msgid "<b>Video Card:</b>"
+msgstr "Grafikkort:"
+
+#: ui/mainview.py:206
+msgid "Card Info"
+msgstr "Kort information"
+
+#: ui/mainview.py:207
+msgid "Configure..."
+msgstr "Tilpas..."
+
+#: ui/mainview.py:208
+#, fuzzy
+msgid "<b>Outputs:</b>"
+msgstr "Udgange:"
+
+#: ui/mainview.py:209
+msgid "Devices"
+msgstr ""
+
+#: ui/help.py:55
+msgid "Display Manager Help"
+msgstr ""
+
+#: ui/help.py:56
+msgid ""
+"<p>\n"
+"<b><h3>Outputs </h3></b>\n"
+"\n"
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
+"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
+"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
+"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
+"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
+"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
+"<br><br>\n"
+"<b><h3>Resolution </h3></b>\n"
+"\n"
+"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
+"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
+"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
+"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
+"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
+"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
+"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
+"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
+"dignissim dui lectus et orci.\n"
+"\n"
+"</p>"
+msgstr ""
+
+#: ui/help.py:67
+msgid "<p><b><h3>Display Manager </h3></b></p>"
+msgstr ""
+
+#: ui/videocard.py:101
+msgid "Video Card Configuration"
+msgstr "Konfiguration for graffikkortet"
+
+#: ui/videocard.py:102
+msgid "Video Driver"
+msgstr "Video driver"
+
+#: ui/videocard.py:103
+#, fuzzy
+msgid "Use the default driver for the detected card"
+msgstr "Anvend standard driver for det detekterede kort."
+
+#: ui/videocard.py:104 ui/videocard.py:109
+msgid "Select from the list:"
+msgstr "Vælg fra listen:"
+
+#: ui/videocard.py:106
+msgid "radeon"
+msgstr ""
+
+#: ui/videocard.py:107
+msgid "Color Depth"
+msgstr "Farvedybde"
+
+#: ui/videocard.py:108
+msgid "Determined by the driver"
+msgstr "Bestemt af driveren"
+
+#: ui/videocard.py:111
+msgid "16 Bit"
+msgstr "16 bit"
+
+#: ui/videocard.py:112
+msgid "24 Bit"
+msgstr "24 bit"
+
+#: ui/output.py:160
+msgid "Output Configuration"
+msgstr "Konfiguration af udgange"
+
+#: ui/output.py:161
+msgid ""
+"If the frequency ranges that your monitor supports are not detected for some "
+"reason, you can specify them here. Be careful with these values, as an "
+"inaccurate value may damage your monitor, especially if it is an old model."
+msgstr ""
+"Hvis det frekvensområde din skærm understøtter af en eller anden grund ikke "
+"bliver detekteret, kan du specificere det her . Vær dog forsigtig da "
+"forkerte værdier kan skade din skærm, især hvis skærmen er af ældre dato."
+
+#: ui/output.py:162
+msgid "Specify Ranges"
+msgstr "Angiv  frekvensområde"
+
+#: ui/output.py:163
+msgid "Horizontal sync:"
+msgstr "Horisontal synk:"
+
+#: ui/output.py:164
+#, fuzzy
+msgid "Monitor 800x600"
+msgstr "Skærm:"
+
+#: ui/output.py:165
+msgid "Choose..."
+msgstr "Vælg..."
+
+#: ui/output.py:167
+msgid "Select a standard monitor"
+msgstr "Vælg en standard skærm"
+
+#: ui/output.py:168
+msgid "Select from vendor/model list"
+msgstr "Vælg fra liste af producenter/modeller"
+
+#: ui/output.py:169
+msgid "Enter ranges manually"
+msgstr "Indtast frekvensområde manuelt"
+
+#: ui/output.py:170 ui/output.py:172
+msgid "-"
+msgstr ""
+
+#: ui/output.py:171
+msgid "kHz"
+msgstr "kHz"
+
+#: ui/output.py:173
+msgid "Hz"
+msgstr "Hz"
+
+#: ui/output.py:174
+msgid "Selection:"
+msgstr "Udvalg:"
+
+#: ui/output.py:175
+msgid "Vertical refresh:"
+msgstr "Vertikal opdateringsfrekvens:"
+
+#: ui/output.py:176
+msgid "Monitor:"
+msgstr "Skærm:"
+
+#: ui/output.py:177
+msgid "Frequency Ranges"
+msgstr "Frekvensområder"
+
+#: ui/output.py:178
+msgid "Ignore this output"
+msgstr "Ignorer denne udgang"
+
+#: ui/monitorbrowser.py:71
+msgid "Browse Monitors"
+msgstr "Gennemse skærme"
+
+#: ui/monitorbrowser.py:72
+msgid "Vendors:"
+msgstr "Producenter:"
+
+#: ui/monitorbrowser.py:73
+msgid "Models:"
+msgstr "Modeller:"
+
+#~ msgid "Display Configuration Tool"
+#~ msgstr "Værktøj til indstilling af skærm"
+
+#~ msgid "(c) 2009 TUBITAK/UEKAE"
+#~ msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#~ msgid "Fatih Aşıcı"
+#~ msgstr "Fatih Aşıcı"
+
+#~ msgid "Current Maintainer"
+#~ msgstr "Nuværende vedligeholder"
+
+#~ msgid "You must restart your X session for the changes to take effect."
+#~ msgstr ""
+#~ "Du skal genstarte din X session før at ændringerne bliver taget i brug."
+
+#~ msgid ""
+#~ "If your monitor's dimensions are not correctly detected, fonts and other "
+#~ "visual objects might seem larger or smaller than normal. In order to fix "
+#~ "this problem, you can specify your monitor's dimensions here."
+#~ msgstr ""
+#~ "Hvis din skræms dimensioner ikke er blevet detekteret korrekt, kan "
+#~ "skrifttyper og andre visuelle objekter se mindre eller større ud end "
+#~ "normalt. For at rette problemet, kan du angive din skærms dimensioner her."
+
+#~ msgid "Specify Display Size"
+#~ msgstr "Angiv skærmstørrelse"
+
+#~ msgid "Display size:"
+#~ msgstr "Skærmstørrelse:"
+
+#~ msgid "15.4\" Wide Screen"
+#~ msgstr "15.4\" Wide screen"
+
+#~ msgid "Custom"
+#~ msgstr "Tilpasset"
+
+#~ msgid "Width:"
+#~ msgstr "Bredde:"
+
+#~ msgid " mm"
+#~ msgstr "mm"
+
+#~ msgid "Height:"
+#~ msgstr "Højde:"
+
+#~ msgid "Dimensions"
+#~ msgstr "Dimensioner"
+
+#~ msgid "Cloned displays"
+#~ msgstr "Klonad visning"
+
+#~ msgid " "
+#~ msgstr " "

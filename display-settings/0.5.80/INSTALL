@@ -1,0 +1,6 @@
+INSTALL
+-------
+To install Display Settings module, you only need to type the following commands:
+
+$ cd display-settings
+$ sudo python setup.py install
