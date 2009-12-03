@@ -139,7 +139,7 @@ class Iface(Singleton):
 
     def getPackageList(self):
         if self.source == self.REPO:
-            return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(self.replaces.values()) )
+            return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
         else:
             return pisi.api.list_installed()
 
@@ -147,7 +147,7 @@ class Iface(Singleton):
         lu = set(pisi.api.list_upgradable())
         for replaced in self.replaces.keys():
             lu.remove(replaced)
-            lu.add(self.replaces[replaced])
+            lu |= set(self.replaces[replaced])
         return lu
 
     def getGroup(self, name):
@@ -186,7 +186,8 @@ class Iface(Singleton):
 
     def getDepends(self, packages):
         base = pisi.api.get_base_upgrade_order(packages)
-        if not self.idb.has_package(packages[0]):
+        includes_replaces = set(sum(self.replaces.values(), [])).intersection(packages)
+        if not self.idb.has_package(packages[0]) and not includes_replaces:
             deps = pisi.api.get_install_order(packages)
         else:
             deps = pisi.api.get_upgrade_order(packages)
