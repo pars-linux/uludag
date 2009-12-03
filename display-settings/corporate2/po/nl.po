@@ -1,173 +1,226 @@
-# translation of nl.po to Nederlands
+# translation of nl.po to Nederlansd
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Willem Gielen <w.gielen@gmail.com>, 2008.
-# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
 # Antoon Tolboom <atolboo@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-23 22:09+0200\n"
-"PO-Revision-Date: 07/06/09 13:11\n"
+"POT-Creation-Date: 2009-12-03 15:33+0200\n"
+"PO-Revision-Date: 29/07/09 21:15\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/monitordialog.py:86
-msgid "Choose Monitor"
-msgstr "Kies monitor"
+#: code/display-settings.py:36 code/display-settings.py:104 ui/mainview.py:184
+msgid "Display Settings"
+msgstr "Scherminstellingen"
 
-#: src/monitordialog.py:87
-msgid "Plug And Play Monitor"
-msgstr "Plug en play monitor"
-
-#: src/monitordialog.py:89 src/driverdialog.py:60
-msgid "Ok"
-msgstr "Ok"
-
-#: src/monitordialog.py:94
-msgid "Details"
-msgstr "Details"
-
-#: src/monitordialog.py:95
-msgid "<p>Horizontal Range:</p>"
-msgstr "<p>Horizontaal bereik:</p>"
-
-#: src/monitordialog.py:96
-msgid "<p>Vertical Range:</p>"
-msgstr "<p>Verticaal bereik:</p>"
-
-#: src/display-manager.py:40 src/display-manager.py:621 src/dm_mainview.py:248
-msgid "Display Manager"
-msgstr "Beeldschermbeheer"
-
-#: src/display-manager.py:57
-msgid "CRT Monitor"
-msgstr "CRT monitor"
-
-#: src/display-manager.py:58
-msgid "LCD Monitor"
-msgstr "LCD monitor"
-
-#: src/display-manager.py:65
-msgid "Standard Monitors"
-msgstr "Standaard monitors"
-
-#: src/display-manager.py:65
-msgid "Vendors"
-msgstr "Fabrikanten"
-
-#: src/display-manager.py:171
-msgid ""
-"<qt>The driver you selected is not installed on your system. In order to use "
-"this driver, you must install <b>%1</b> package.</qt>"
+#: code/display-settings.py:96
+msgid "Display Settings module is already started!"
 msgstr ""
-"<qt>De door u geselecteerde driver is niet op uw systeem geïnstalleerd. Om "
-"deze driver te kunnen gebruiken, dient u <b>%1</b> pakket te installeren.</"
-"qt>"
 
-#: src/display-manager.py:172 src/display-manager.py:491
-msgid "Start Package Manager"
-msgstr "Start pakketbeheer"
+#: code/displaysettings/device.py:62
+msgid "Default Output"
+msgstr "Standaard uitgang"
 
-#: src/display-manager.py:185 src/dm_mainview.py:250 src/dm_mainview.py:270
-msgid "Primary Screen"
-msgstr "Eerste scherm"
+#: code/displaysettings/device.py:63
+msgid "Laptop Panel"
+msgstr "Laptop-paneel"
 
-#: src/display-manager.py:185 src/dm_mainview.py:272
-msgid "Secondary Screen"
-msgstr "Tweede scherm"
+#: code/displaysettings/device.py:64
+msgid "Analog Output"
+msgstr "Analoge uitgang"
 
-#: src/display-manager.py:312
+#: code/displaysettings/device.py:65
+msgid "Digital Output"
+msgstr "Digitale uitgang"
+
+#: code/displaysettings/device.py:66
+msgid "TV Output"
+msgstr "TV-uitgang"
+
+#: code/displaysettings/outputdialog.py:35
+msgid "Settings for Output %1"
+msgstr "Instellingen voor uitgang %1"
+
+#: code/displaysettings/outputdialog.py:63
+msgid "Custom Monitor"
+msgstr "Aangepaste monitor"
+
+#: code/displaysettings/outputdialog.py:67
+msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
+msgstr "<qt><i>Klik knop \"Kiezen..\" om de monitor te selecteren</i></qt>"
+
+#: code/displaysettings/mainwidget.py:103
 msgid ""
-"This output is already used by other screen.\n"
-"Do you want to swap between them?"
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
 msgstr ""
-"Deze uitvoer wordt al door een ander scherm gebruikt.\n"
-"Wilt u wisselen tussen beide?"
+"Er zijn geen pakket die backend voor deze applicatie geven.\n"
+"Zorg ervoor dat de pakketten geïnstalleerd en correct geconfigureerd zijn."
 
-#: src/display-manager.py:447
-msgid "Driver: %1"
-msgstr "Driver: %1"
+#: code/displaysettings/mainwidget.py:110
+msgid ""
+"Cannot find a valid configuration. Display settings won't be enabled until "
+"you create a new configuration.\n"
+"Would you like to create a safe configuration now?"
+msgstr ""
+"Kan geen geldige configuratie vinden. Scherminstellingen kan niet "
+"ingeschakeld worden tenzij er een nieuwe configuratie aanmaakt wordt.\n"
+"Nu een nieuwe configuratie aanmaken?"
 
-#: src/display-manager.py:450
-msgid "Plug and Play Monitor"
-msgstr "Plug en play monitor"
+#: code/displaysettings/mainwidget.py:119
+#: code/displaysettings/mainwidget.py:549
+msgid "Access denied."
+msgstr "Toegang geweigerd."
 
-#: src/display-manager.py:479
+#: code/displaysettings/mainwidget.py:201
+msgid ""
+"Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
+"(LVDS, VGA, etc.)"
+msgstr ""
+
+#: code/displaysettings/mainwidget.py:219
+#: code/displaysettings/mainwidget.py:322
+msgid "Auto"
+msgstr "Automatisch"
+
+#: code/displaysettings/mainwidget.py:318
+msgid "Output Properties - %1"
+msgstr "Uitgangeigenschappen - %1"
+
+#: code/displaysettings/mainwidget.py:402
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
 msgstr ""
-"<qt>Om betere prestaties te krijgen, kunt u gebruik maken van de <b>%1</b> "
-"driver geleverd door de hardware fabrikant. Wilt u deze driver gebruiken?</"
-"p></qt>"
+"<qt>Voor betere prestaties, gebruik het stuurprogramma <b>%1</b> , "
+"uitgegeven door de fabrikant. Wilt u dit stuurprogramma gebruiken?</p></qt>"
 
-#: src/display-manager.py:490
+#: code/displaysettings/mainwidget.py:418
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%3</b> from video card options.</qt>"
+"<b>%1</b> from video card options.</qt>"
 msgstr ""
-"<qt>Om betere prestaties te krijgen, kunt u gebruik maken van de <b>%1</b> "
-"driver geleverd door de hardware fabrikant. Om deze te gebruiken, dient u "
-"het pakket <b>%2</b> installeren en kiezen voor <b>%3</b> bij de videokaart "
-"opties.</qt>"
+"<qt>Voor betere prestaties, gebruik het stuurprogramma <b>%1</b> , "
+"uitgegeven door de fabrikant. Om het te gebruiken, installeer het <b>%2</b> "
+"pakket en selecteer <b>%1</b> bij de videokaart opties.</qt>"
 
-#: src/display-manager.py:609
-msgid "Display Manager is already started!"
-msgstr "Beeldschermbeheer is al actief!"
+#: code/displaysettings/mainwidget.py:423
+msgid "Start Package Manager"
+msgstr "Pakketbeheer starten"
 
-#: src/driverdialog.py:43 src/driverdialog.py:64
-msgid "Driver Name"
-msgstr "Driver naam"
+#: code/displaysettings/mainwidget.py:540
+#, fuzzy
+msgid "You must restart your X session for all the changes to take effect."
+msgstr "Herstart de X-sessie voor het toepassen van de wijzigingen."
 
-#: src/driverdialog.py:44 src/driverdialog.py:65
-msgid "Description"
-msgstr "Beschrijving"
+#: code/displaysettings/entryview.py:87
+msgid "Edit entry"
+msgstr ""
 
-#: src/driverdialog.py:58 src/dm_mainview.py:268
-msgid "Video Card"
-msgstr "Videokaart"
+#: code/displaysettings/monitorbrowser.py:38
+msgid "Type:"
+msgstr "Type:"
 
-#: src/driverdialog.py:59
-msgid "Show all drivers"
-msgstr "Toon alle drivers"
+#: code/displaysettings/monitorbrowser.py:39
+msgid "Monitors:"
+msgstr "Monitor:"
 
-#: src/utility.py:26
-msgid "Default Output"
-msgstr "Standaard uitvoer"
+#: ui/mainview.py:185
+msgid "Outputs"
+msgstr "Uitgangen"
 
-#: src/utility.py:28
-msgid "Automatic"
-msgstr "Automatisch"
+#: ui/mainview.py:186
+msgid "Extend desktop to all displays"
+msgstr "Verdeel bureaublad uit over alle schermen"
 
-#: src/utility.py:31
-msgid "Laptop Panel (%1)"
-msgstr "Laptop scherm (%1)"
+#: ui/mainview.py:187
+msgid "Detect Outputs"
+msgstr "Uitgangen detecteren"
 
-#: src/utility.py:32
-msgid "Analog Output (%1)"
-msgstr "Analoge uitvoer (%1)"
+#: ui/mainview.py:189
+msgid "Configuration file is not ready."
+msgstr ""
 
-#: src/utility.py:33
-msgid "Digital Output (%1)"
-msgstr "Digitale uitvoer (%1)"
+#: ui/mainview.py:191
+msgid "1"
+msgstr ""
 
-#: src/utility.py:34
-msgid "TV Output (%1)"
-msgstr "TV uitvoer (%1)"
+#: ui/mainview.py:194
+msgid "2"
+msgstr ""
 
-#: src/helpdialog.py:55
+#: ui/mainview.py:195
+msgid "Output Properties"
+msgstr "Uitgangeigenschappen"
+
+#: ui/mainview.py:196
+msgid "Size:"
+msgstr "Grootte:"
+
+#: ui/mainview.py:197
+msgid "Refresh Rate:"
+msgstr "Verversingfrequentie:"
+
+#: ui/mainview.py:198
+msgid "Rotation:"
+msgstr "Rotatie:"
+
+#: ui/mainview.py:200
+msgid "No Rotation"
+msgstr "Geen rotatie"
+
+#: ui/mainview.py:201
+msgid "Left (90 degrees)"
+msgstr "Links (90 graden)"
+
+#: ui/mainview.py:202
+msgid "Upside-Down (180 degrees)"
+msgstr "Ondersteboven (180 graden)"
+
+#: ui/mainview.py:203
+msgid "Right (270 degrees)"
+msgstr "Rechts (270 graden)"
+
+#: ui/mainview.py:204
+msgid "Screens"
+msgstr ""
+
+#: ui/mainview.py:205
+#, fuzzy
+msgid "<b>Video Card:</b>"
+msgstr "Videokaart:"
+
+#: ui/mainview.py:206
+msgid "Card Info"
+msgstr "Kaartinformatie"
+
+#: ui/mainview.py:207
+msgid "Configure..."
+msgstr "Instellen..."
+
+#: ui/mainview.py:208
+#, fuzzy
+msgid "<b>Outputs:</b>"
+msgstr "Uitgangen:"
+
+#: ui/mainview.py:209
+msgid "Devices"
+msgstr ""
+
+#: ui/help.py:55
 msgid "Display Manager Help"
-msgstr "Beeldschermbeheer help"
+msgstr ""
 
-#: src/helpdialog.py:56
+#: ui/help.py:56
 msgid ""
 "<p>\n"
 "<b><h3>Outputs </h3></b>\n"
@@ -193,138 +246,181 @@ msgid ""
 "\n"
 "</p>"
 msgstr ""
-"<P>\n"
-"<b><h3>Uitvoer</h3></b>\n"
-"\n"
-"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
-"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
-"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
-"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
-"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
-"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
-"<br><br>\n"
-"<b><h3>Resolutie </h3></b>\n"
-"\n"
-"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
-"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
-"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
-"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
-"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
-"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
-"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
-"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
-"dignissim dui lectus et orci.\n"
-"\n"
-"</p>"
 
-#: src/helpdialog.py:67
+#: ui/help.py:67
 msgid "<p><b><h3>Display Manager </h3></b></p>"
-msgstr "<p><b><h3>Beeldschermbeheer </h3></b></p>"
-
-#: src/dm_mainview.py:249
-msgid "Identify Displays"
-msgstr "Identificeer schermen"
-
-#: src/dm_mainview.py:251
-msgid "Output"
-msgstr "Uitvoer"
-
-#: src/dm_mainview.py:252
-msgid "Resolution"
-msgstr "Resolutie"
-
-#: src/dm_mainview.py:254
-msgid "Configuration file is not ready."
-msgstr "Configuratie bestand in niet gereed."
-
-#: src/dm_mainview.py:256
-msgid "1"
-msgstr "1"
-
-#: src/dm_mainview.py:259
-msgid "2"
-msgstr "2"
-
-#: src/dm_mainview.py:261
-msgid "True Color"
-msgstr "Ware kleuren"
-
-#: src/dm_mainview.py:262
-msgid "Dual Screen"
-msgstr "Dubbel scherm"
-
-#: src/dm_mainview.py:264
-msgid "Cloned Mode"
-msgstr "Gekloonde modus"
-
-#: src/dm_mainview.py:265
-msgid "Extended Mode"
-msgstr "Verlengde modus"
-
-#: src/dm_mainview.py:266
-msgid "Detect Displays"
-msgstr "Detecteer schermen"
-
-#: src/dm_mainview.py:267
-msgid "Screens"
-msgstr "Schermen"
-
-#: src/dm_mainview.py:269 src/dm_mainview.py:271 src/dm_mainview.py:273
-msgid "Configure..."
-msgstr "Configureer..."
-
-#: src/dm_mainview.py:274
-msgid "Devices"
-msgstr "Apparaten"
-
-#: src/displayconfig.py:73 src/displayconfig.py:103
-msgid "You are not authorized for this operation."
-msgstr "U bent niet geautoriseerd voor deze handeling."
-
-#: src/displayconfig.py:106
-msgid "COMAR Error"
-msgstr "COMAR fout"
-
-#: src/displayconfig.py:111
-msgid "Waiting DBus..."
-msgstr "Wachten DBus..."
-
-#: src/displayconfig.py:111
-msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
-"Verbinding met de DBus is onverwacht afgesloten, proberen opnieuw te "
-"verbinden..."
 
-#: src/displayconfig.py:127
+#: ui/videocard.py:101
+msgid "Video Card Configuration"
+msgstr "Videokaart instellingen"
+
+#: ui/videocard.py:102
+msgid "Video Driver"
+msgstr "Videostuurprogramma"
+
+#: ui/videocard.py:103
+#, fuzzy
+msgid "Use the default driver for the detected card"
+msgstr "Gebruik het standaard stuurprogramma voor de gedetecteerde kaart."
+
+#: ui/videocard.py:104 ui/videocard.py:109
+msgid "Select from the list:"
+msgstr "Selecteer uit de lijst:"
+
+#: ui/videocard.py:106
+msgid "radeon"
+msgstr ""
+
+#: ui/videocard.py:107
+msgid "Color Depth"
+msgstr "Kleurdiepte"
+
+#: ui/videocard.py:108
+msgid "Determined by the driver"
+msgstr "Bepaald door het stuurprogramma"
+
+#: ui/videocard.py:111
+msgid "16 Bit"
+msgstr "16 Bit"
+
+#: ui/videocard.py:112
+msgid "24 Bit"
+msgstr "24 Bit"
+
+#: ui/output.py:160
+msgid "Output Configuration"
+msgstr "Uitganginstellingen"
+
+#: ui/output.py:161
 msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
+"If the frequency ranges that your monitor supports are not detected for some "
+"reason, you can specify them here. Be careful with these values, as an "
+"inaccurate value may damage your monitor, especially if it is an old model."
 msgstr ""
-"Kan geen verbinding maken met DBus! Als het niet actief is dient u het te "
-"starten met het 'service dbus start' commando in de root console."
+"Indien het frequentiebereik van de monitor om een of andere reden niet "
+"gedetecteerd wordt, kunnen ze hier opgegeven worden. Wees voorzichtig met "
+"deze waarden, daar onjuist getallen je monitor kan beschadigen, en vooral "
+"bij oudere modellen."
 
-#: src/displayconfig.py:155
-msgid ""
-"Display manager cannot get configuration information. Configuration file may "
-"be corrupted or modified by another tool. If you want to use display manager "
-"to configure your video hardware, you must create a new configuration file.\n"
-"Would you like to create a new configuration at the next boot?"
+#: ui/output.py:162
+msgid "Specify Ranges"
+msgstr "Bereik opgeven"
+
+#: ui/output.py:163
+msgid "Horizontal sync:"
+msgstr "Horizontale synchronisatie:"
+
+#: ui/output.py:164
+#, fuzzy
+msgid "Monitor 800x600"
+msgstr "Monitor:"
+
+#: ui/output.py:165
+msgid "Choose..."
+msgstr "Kiezen..."
+
+#: ui/output.py:167
+msgid "Select a standard monitor"
+msgstr "Selecteer een standaard monitor"
+
+#: ui/output.py:168
+msgid "Select from vendor/model list"
+msgstr "Selecteer van fabrikant-/modellijst"
+
+#: ui/output.py:169
+msgid "Enter ranges manually"
+msgstr "Voer het bereik handmatig in"
+
+#: ui/output.py:170 ui/output.py:172
+msgid "-"
 msgstr ""
-"Beeldschermbeheer kan geen informatie over de configuratie verkrijgen. Het "
-"configuratie bestand kan defect zijn of veranderd door een ander "
-"gereedschap. Als i wilt dat het beeldscherm beheer uw video hardware "
-"configureerd, dient u een nieuw configuratie bestand aan te maken.\n"
-"Wilt u een nieuw configuratiebestand aanmaken bij de volgende maal opstarten?"
 
-#: src/displayconfig.py:388
-msgid ""
-"Configuration has been saved. Some changes may take effect after restarting "
-"your computer."
-msgstr ""
-"Configuratie is opgeslagen. Sommige veranderingen zullen pas optreden na "
-"opnieuw opstarten van uw systeem."
+#: ui/output.py:171
+msgid "kHz"
+msgstr "kHz"
 
-#: src/displayconfig.py:391
-msgid "Your hardware will be probed after restarting your computer."
-msgstr "Uw hardware zal geactiveerd worden na herstarten van uw computer."
+#: ui/output.py:173
+msgid "Hz"
+msgstr "Hz"
 
+#: ui/output.py:174
+msgid "Selection:"
+msgstr "Selectie:"
+
+#: ui/output.py:175
+msgid "Vertical refresh:"
+msgstr "Verticale  verversing:"
+
+#: ui/output.py:176
+msgid "Monitor:"
+msgstr "Monitor:"
+
+#: ui/output.py:177
+msgid "Frequency Ranges"
+msgstr "Frequentiebereik"
+
+#: ui/output.py:178
+msgid "Ignore this output"
+msgstr "Deze uitgang negeren"
+
+#: ui/monitorbrowser.py:71
+msgid "Browse Monitors"
+msgstr "Monitor bladeren"
+
+#: ui/monitorbrowser.py:72
+msgid "Vendors:"
+msgstr "Fabrikant:"
+
+#: ui/monitorbrowser.py:73
+msgid "Models:"
+msgstr "Modellen:"
+
+#~ msgid "Display Configuration Tool"
+#~ msgstr "Beeldbeheer gereedschap"
+
+#~ msgid "(c) 2009 TUBITAK/UEKAE"
+#~ msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#~ msgid "Fatih Aşıcı"
+#~ msgstr "Fatih Aşıcı"
+
+#~ msgid "Current Maintainer"
+#~ msgstr "Huidige onderhouder"
+
+#~ msgid "You must restart your X session for the changes to take effect."
+#~ msgstr "Herstart de X-sessie voor het toepassen van de wijzigingen."
+
+#~ msgid ""
+#~ "If your monitor's dimensions are not correctly detected, fonts and other "
+#~ "visual objects might seem larger or smaller than normal. In order to fix "
+#~ "this problem, you can specify your monitor's dimensions here."
+#~ msgstr ""
+#~ "Indien de afmetingen van de monitor niet correct gedetecteerd zijn, "
+#~ "lettertypen en ander zichtbare effecten groter of kleiner lijken dan "
+#~ "normaal. Geef dan de afmetingen van de monitor hier op, om deze problemen "
+#~ "op te lossen."
+
+#~ msgid "Specify Display Size"
+#~ msgstr "Beeldgrootte opgeven"
+
+#~ msgid "Display size:"
+#~ msgstr "Beeldgrootte:"
+
+#~ msgid "15.4\" Wide Screen"
+#~ msgstr "15.4\" Breedbeeld"
+
+#~ msgid "Custom"
+#~ msgstr "Aangepast"
+
+#~ msgid "Width:"
+#~ msgstr "Breedte:"
+
+#~ msgid " mm"
+#~ msgstr " mm"
+
+#~ msgid "Height:"
+#~ msgstr "Hoogte:"
+
+#~ msgid "Dimensions"
+#~ msgstr "Afmetingen"
