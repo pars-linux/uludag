@@ -86,7 +86,7 @@ def maker(op, project_file):
         maker.make_image(project)
     # install-live
     # configure-live
-    if op == "make" or op == "make-live" or op == "pack-live":
+    if op == "make" or op == "pack-live":
         print "squash_image"
         maker.squash_image(project)
     if op == "make" or op == "make-iso":
@@ -103,7 +103,7 @@ def usage(app):
     print "Commands:"
     print "  make-repo  : Make local repos"
     print "  check-repo : Check repo files"
-    print "  make-live  : Install image & make squashfs"
+    print "  make-live  : Install image"
     print "  pack-live  : Make squashfs"
     print "  make-iso   : Make ISO"
     print "  make       : Make all!"
