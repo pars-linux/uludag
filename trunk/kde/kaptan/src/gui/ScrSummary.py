@@ -107,21 +107,24 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.textSummary.setHtml(content)
 
     def killPlasma(self):
-        p = subprocess.Popen(["pidof", "-s", "plasma"], stdout=subprocess.PIPE)
+        p = subprocess.Popen(["pidof", "-s", "plasma-desktop"], stdout=subprocess.PIPE)
         out, err = p.communicate()
         pidOfPlasma = int(out)
+        print "pidofplasma%s" % pidOfPlasma
 
         try:
             os.kill(pidOfPlasma, 15)
-            self.startPlasma()
+            #self.startPlasma()
         except OSError, e:
             print 'WARNING: failed os.kill: %s' % e
             print "Trying SIGKILL"
             os.kill(pidOfPlasma, 9)
+            #self.startPlasma()
+        finally:
             self.startPlasma()
 
     def startPlasma(self):
-        p = subprocess.Popen(["plasma"], stdout=subprocess.PIPE)
+        p = subprocess.Popen(["plasma-desktop"], stdout=subprocess.PIPE)
 
     def execute(self):
         hasChanged = False
