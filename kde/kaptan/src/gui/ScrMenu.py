@@ -32,7 +32,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
 
         # read default menu style first
-        config = KConfig("plasma-appletsrc")
+        config = KConfig("plasma-desktop-appletsrc")
         group = config.group("Containments")
 
         self.menuNames = {}
