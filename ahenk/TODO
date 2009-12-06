@@ -1,4 +1,4 @@
-Policies
+/ Policies
     - Package management
         + Policy schema
         + Ahenk module
@@ -9,6 +9,10 @@ Policies
     - Service management
         - Policy schema
         - Ahenk module
+
+- Agent
+    - Log all command outputs and errors
+    - Write module reports to LDAP
 
 - Docs
     - "Big picture" document
