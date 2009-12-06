@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: display-settings\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-03 14:06+0200\n"
-"PO-Revision-Date: 2009-08-19 02:58+0200\n"
+"PO-Revision-Date: 2009-12-06 15:58+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -224,11 +224,9 @@ msgid "Output Properties - %1"
 msgstr "Propriétés de la sortie - %1"
 
 #: .tmp/displaysettings/screenswidget.py:359
-#, fuzzy
 msgid "You must restart your X session for all the changes to take effect."
 msgstr ""
-"Vous devez redémarrer votre session X (Menu général -> Quitter -> "
-"Déconnexion) pour que les changements prennent effet."
+"Vous devez redémarrer votre session pour que les changements prennent effet."
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
@@ -367,3 +365,4 @@ msgstr "Configurer..."
 #: .tmp/ui_devices.py:70
 msgid "Outputs:"
 msgstr "Sorties :"
+
