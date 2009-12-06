@@ -130,9 +130,9 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
             elif onlyConnected:
                 continue
 
-            if output.config is None:
+            if output.config is None or onlyConnected:
                 if connected:
-                    print "Trying to add %s as it is connected and has no config." % output.name
+                    print "Trying to add %s as it is connected." % output.name
                     if self._left is None:
                         self._left = output
                     elif self._right is None:
