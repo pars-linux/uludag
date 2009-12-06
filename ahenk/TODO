@@ -1,6 +1,19 @@
+Policies
+    - Package management
+        + Policy schema
+        + Ahenk module
+    - User authentication source selection (Unix, LDAP, Active Directory)
+        - Policy schema
+        / Source selection console application
+        - Ahenk module
+    - Service management
+        - Policy schema
+        - Ahenk module
+
 - Docs
     - "Big picture" document
     - Module Writer's Howto
+
 
 =====
 - Missing
