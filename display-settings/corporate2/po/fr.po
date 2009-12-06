@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: display-settings\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-03 15:33+0200\n"
-"PO-Revision-Date: 2009-08-19 02:58+0200\n"
+"PO-Revision-Date: 2009-12-06 16:16+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr "Gestionnaire de l'affichage"
 
 #: code/display-settings.py:96
 msgid "Display Settings module is already started!"
-msgstr ""
+msgstr "Le module de réglage de l'affichage est déjà lancé !"
 
 #: code/displaysettings/device.py:62
 msgid "Default Output"
@@ -88,6 +88,8 @@ msgid ""
 "Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
 "(LVDS, VGA, etc.)"
 msgstr ""
+"Affichés en menus, listes, etc. %1 = type de sortie, %2 = nom de sortie "
+"(LVDS, VGA, etc.)"
 
 #: code/displaysettings/mainwidget.py:219
 #: code/displaysettings/mainwidget.py:322
@@ -114,7 +116,8 @@ msgid ""
 "<b>%1</b> from video card options.</qt>"
 msgstr ""
 "<qt>Afin d'obtenir de meilleures performances, vous pourriez être tenté "
-"d'utiliser <b>%1</b> pilote fourni par le fabricant de la carte graphique. "
+"d'utiliser le pilote <b>%1</b> fourni par le fabricant de la carte graphique."
+" "
 "Pour ce faire, vous devez installer le paquet <b>%2</b> et choisir <b>%1</b> "
 "à partir des options de la carte vidéo.</qt>"
 
@@ -123,15 +126,13 @@ msgid "Start Package Manager"
 msgstr "Lancer le gestionnaire de paquets"
 
 #: code/displaysettings/mainwidget.py:540
-#, fuzzy
 msgid "You must restart your X session for all the changes to take effect."
 msgstr ""
-"Vous devez redémarrer votre session X (Menu général -> Quitter -> "
-"Déconnexion) pour que les changements prennent effet."
+"Vous devez redémarrer votre session pour que les changements prennent effet."
 
 #: code/displaysettings/entryview.py:87
 msgid "Edit entry"
-msgstr ""
+msgstr "Modifier l'entrée"
 
 #: code/displaysettings/monitorbrowser.py:38
 msgid "Type:"
@@ -155,15 +156,15 @@ msgstr "Détecter les sorties"
 
 #: ui/mainview.py:189
 msgid "Configuration file is not ready."
-msgstr ""
+msgstr "Le fichier de configuration n'est pas prêt."
 
 #: ui/mainview.py:191
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ui/mainview.py:194
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ui/mainview.py:195
 msgid "Output Properties"
@@ -199,12 +200,11 @@ msgstr "Droite (270 degrés)"
 
 #: ui/mainview.py:204
 msgid "Screens"
-msgstr ""
+msgstr "Écrans"
 
 #: ui/mainview.py:205
-#, fuzzy
 msgid "<b>Video Card:</b>"
-msgstr "Carte graphique :"
+msgstr "<b>Carte graphique :</b>"
 
 #: ui/mainview.py:206
 msgid "Card Info"
@@ -215,17 +215,16 @@ msgid "Configure..."
 msgstr "Configurer..."
 
 #: ui/mainview.py:208
-#, fuzzy
 msgid "<b>Outputs:</b>"
-msgstr "Sorties :"
+msgstr "<b>Sorties :</b>"
 
 #: ui/mainview.py:209
 msgid "Devices"
-msgstr ""
+msgstr "Périphériques"
 
 #: ui/help.py:55
 msgid "Display Manager Help"
-msgstr ""
+msgstr "Aide sur l'affichage"
 
 #: ui/help.py:56
 msgid ""
@@ -253,10 +252,33 @@ msgid ""
 "\n"
 "</p>"
 msgstr ""
+"<p>\n"
+"<b><h3>Sorties </h3></b>\n"
+"\n"
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
+"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
+"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
+"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
+"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
+"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
+"<br><br>\n"
+"<b><h3>Résolution </h3></b>\n"
+"\n"
+"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
+"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
+"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
+"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
+"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
+"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
+"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
+"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
+"dignissim dui lectus et orci.\n"
+"\n"
+"</p>"
 
 #: ui/help.py:67
 msgid "<p><b><h3>Display Manager </h3></b></p>"
-msgstr ""
+msgstr "<p><b><h3>Gestionnaire de l'affichage </h3></b></p>"
 
 #: ui/videocard.py:101
 msgid "Video Card Configuration"
@@ -267,7 +289,6 @@ msgid "Video Driver"
 msgstr "Pilote graphique"
 
 #: ui/videocard.py:103
-#, fuzzy
 msgid "Use the default driver for the detected card"
 msgstr "Utiliser le pilote par défaut pour la carte détectée."
 
@@ -277,7 +298,7 @@ msgstr "Choisir dans la liste :"
 
 #: ui/videocard.py:106
 msgid "radeon"
-msgstr ""
+msgstr "radeon"
 
 #: ui/videocard.py:107
 msgid "Color Depth"
@@ -319,9 +340,8 @@ msgid "Horizontal sync:"
 msgstr "Synchronisation horizontale :"
 
 #: ui/output.py:164
-#, fuzzy
 msgid "Monitor 800x600"
-msgstr "Moniteur :"
+msgstr "Moniteur 800x600"
 
 #: ui/output.py:165
 msgid "Choose..."
@@ -341,7 +361,7 @@ msgstr "Entrer l'éventail manuellement"
 
 #: ui/output.py:170 ui/output.py:172
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ui/output.py:171
 msgid "kHz"
