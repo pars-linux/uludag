@@ -1,0 +1,145 @@
+# translation of nl.po to Nederlands
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Antoon Tolboom <atolboo@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-01 10:51+0200\n"
+"PO-Revision-Date: 07/12/09 12:29\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/state.py:50
+msgid "<qt>Downloading %1 of %2 packages</qt>"
+msgstr "<qt>Ophalen %1 van %2 pakketten</qt>"
+
+#: src/state.py:55
+msgid "<qt>Installing (%1) %2 of %3 packages</qt>"
+msgstr "<qt>Installeren (%1) %2 van %3 pakketten</qt>"
+
+#: src/state.py:61
+msgid "<qt>Configuring packages. This may take several minutes to finish</qt>"
+msgstr "<qt>Configuratie van pakketten. Dit kan meerdere minuten duren</qt>"
+
+#: src/state.py:76
+msgid ""
+"<qt>Following packages are obsoleted and are not maintained anymore in "
+"Pardus 2009 repositories. These packages are going to be removed from your "
+"system:<br><br> %1"
+msgstr ""
+"<qt>De volgende pakketten zijn overbodig en worden in Pardus 2009 "
+"niet meer ondersteund. Deze pakketten worden van het systeem "
+"verwijderd:<br><br> %1"
+
+#: src/state.py:77 src/maindialog.py:61
+msgid "<br><br>Do you want to continue?</qt>"
+msgstr "<br><br>Wilt u doorgaan?</qt>"
+
+#: src/state.py:100
+msgid "Resolving dependencies..."
+msgstr "Oplossen van afhankelijkheden..."
+
+#: src/comariface.py:37
+msgid "Unable to connect to DBus."
+msgstr "Kan geen verbinding maken met DBus."
+
+#: src/comariface.py:37
+msgid "DBus Error"
+msgstr "DBus-fout"
+
+#: src/comariface.py:51
+msgid "D-Bus Error"
+msgstr "D-Bus fout"
+
+#: src/comariface.py:56
+msgid "COMAR Auth Error"
+msgstr "COMAR-autorisatiefout"
+
+#: src/comariface.py:61
+msgid "Network error. Please check your network connections and try again."
+msgstr "Netwerkfout. Controleer de netwerkverbinding en probeer opnieuw."
+
+#: src/comariface.py:61 src/comariface.py:66
+msgid "COMAR Error"
+msgstr "COMAR-fout"
+
+#: src/comariface.py:63 src/comariface.py:71 src/commander.py:57
+msgid "You are not authorized for this operation."
+msgstr "U bent niet geautoriseerd voor deze handeling."
+
+#: src/main.py:46
+msgid "Upgrade Manager"
+msgstr "Opwaardeerbeheer"
+
+#: src/ui_maindialog.py:128
+msgid "Form1"
+msgstr "Form1"
+
+#: src/ui_maindialog.py:129
+msgid "Upgrading from Pardus to version 2009.1"
+msgstr "Opwaarderen van Pardus naar versie 2009.1"
+
+#: src/ui_maindialog.py:131
+msgid "Preparing to upgrade"
+msgstr "Voorbereiden voor opwaarderen"
+
+#: src/ui_maindialog.py:133
+msgid "Setting up repositories"
+msgstr "Instellen van bronnen"
+
+#: src/ui_maindialog.py:135
+msgid "Downloading new packages"
+msgstr "Ophalen van nieuwe pakketten"
+
+#: src/ui_maindialog.py:137
+msgid "Installing upgrades"
+msgstr "Installeren van opwaarderingen"
+
+#: src/ui_maindialog.py:139
+msgid "Restarting the computer"
+msgstr "Computer herstarten"
+
+#: src/ui_maindialog.py:141
+msgid "Start Upgrading"
+msgstr "Opwaarderen starten"
+
+#: src/maindialog.py:43
+msgid "Upgrading from %1 to version 2009.1"
+msgstr "Opwaarderen van %1 naar versie 2009.1"
+
+#: src/maindialog.py:60
+msgid ""
+"<qt>Upgrade to Pardus 2009.1 completed. Upgrade-manager will now restart the "
+"system."
+msgstr ""
+"<qt>Opwaarderen naar Pardus 2009.1 is voltooid. Opwaardeerbeheer zal nu het "
+"systeem herstarten."
+
+#: src/maindialog.py:67
+msgid "Restart Later"
+msgstr "Later herstarten"
+
+#: src/about.py:23 src/about.py:25
+msgid "Distribution Upgrade Manager"
+msgstr "Distributie opwaardeerbeheer"
+
+#: src/about.py:27
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: src/about.py:34
+msgid "Faik Uygur"
+msgstr "Faik Uygur"
+
+#: src/about.py:34
+msgid "Maintainer"
+msgstr "Onderhouder"
+
