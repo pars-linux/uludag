@@ -50,3 +50,20 @@
     * Ana ekranda güncelleme tipinin seçilebileceği bir filtre (-)
     * KHTML olan paket seçim ekranına güncelleme tipine göre simge veya başka bir uyarı konulması (-)
     * Güvenlik güncellemelerinin system.base'e davranıldığı gibi doğrudan sepete alınması olanağı (-)
+
+* Müdür (Ozan Çağlayan)
+    * needsServiceRestart listesinin açılışta temizlenmesi (-)          [Bahadır Kandemir/Faik Uygur]
+
+* Stil/KDE (Ozan Çağlayan)
+    * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan/Gökhan Özkan]
+    * Paket yöneticisinin eksik notification bağımlılıkları (-)
+    * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (-)
+    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması [Serdar Dalgıç] (-)
+
+* KDE (Gökçen Eraslan)
+    * Qt/KDE -DNDEBUG/disable-debug ile derlenmesinin sağlanması (-)
+    * Managerların üzerinden geçilmesi (-) [Bahadır Kandemir, Mete Alpaslan, Renan Çakırerk]
+
+* KDE (Renan Çakırerk)
+    * Kaptan'ın gözden geçirilmesi (-) [Gökçen Eraslan]
+    * Göç aracının gözden geçirilmesi (-)
