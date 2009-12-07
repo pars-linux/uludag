@@ -35,3 +35,18 @@
 # * PiSi (Faik Uygur)
 #   * needsServiceRestart, needsReboot desteği (/65) [Bahadır Kandemir] <<29/12/2009>>
 
+#################
+# Current tasks #
+#################
+
+* PiSi (Faik Uygur)
+    * needsServiceRestart, needsReboot desteği (-) [Bahadır Kandemir]
+    * groups.xml tango simge teması düzeltmesi (-)
+    * Depo/paket bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (-)
+    * revdepRebuild/replaces düzeltmelerinin test edilmesi (-)
+    * component.xml yok ise 'bilinmeyen' bileşene düşüp uyarı verilmesi (-)
+
+* Paket Yöneticisi (Faik Uygur)
+    * Ana ekranda güncelleme tipinin seçilebileceği bir filtre (-)
+    * KHTML olan paket seçim ekranına güncelleme tipine göre simge veya başka bir uyarı konulması (-)
+    * Güvenlik güncellemelerinin system.base'e davranıldığı gibi doğrudan sepete alınması olanağı (-)
