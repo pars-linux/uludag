@@ -6,19 +6,20 @@
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 # Willem Gielen <w.gielen@gmail.com>, 2006, 2007, 2008, 2009.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
+# Antoon Tolboom <atolboo@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-06 01:10+0300\n"
-"PO-Revision-Date: 2009-05-31 19:04+0200\n"
-"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <nl@li.org>\n"
+"PO-Revision-Date: 07/12/09 15:33\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
 #: yali4/gui/Ui/datetimewidget.py:80 yali4/gui/Ui/goodbyewidget.py:46
@@ -103,23 +104,20 @@ msgid "Automatic"
 msgstr "Automatisch"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Deze optie zal vrije ruimte of in grootte aanpasbare partities pogen te "
 "vinden"
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
-msgstr ""
-"Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
+msgstr "Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
 
 #: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
 "This option will erase your entire disk. All of your data on disk will be "
 "lost !"
-msgstr ""
-"Deze optie zal uw gehele schijf wissen. Alle gegevens zullen verloren gaan!"
+msgstr "Deze optie zal uw gehele schijf wissen. Alle gegevens zullen verloren gaan!"
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
@@ -175,23 +173,23 @@ msgid ""
 "(if you have one installed) to start \n"
 "your newly installed Pardus.</p>"
 msgstr ""
-"<b>Wilt u de bootlader (GRUB) naar het master boot record van uw harde "
+"<b>Wilt u de opstartlader (GRUB) naar het master boot record van uw harde "
 "schijf schrijven?</b>\n"
 "\n"
-"<p>U heeft een bootlader nodig om uw Pardus systeem op te starten.</p>\n"
+"<p>U heeft een opstartlader nodig om uw Pardus systeem op te starten.</p>\n"
 "\n"
-"<p>Indien u geen bootlader installeert of ervoor kiest deze in de root "
+"<p>Indien u geen opstartlader installeert of ervoor kiest deze in de root "
 "partitie te installeren, dan zult u de lader van uw andere besturingssysteem "
 "(indien u deze hebt geïnstalleerd) dienen te configureren om \n"
 "uw nieuw geïnstalleerde Pardus op te starten.</p>"
 
 #: yali4/gui/Ui/bootloaderwidget.py:82 yali4/gui/Ui/rescuegrubwidget.py:83
 msgid "Where do you want to install the bootlader ?"
-msgstr "Waar wilt u de bootlader installeren ?"
+msgstr "Waar wilt u de opstartlader installeren ?"
 
 #: yali4/gui/Ui/bootloaderwidget.py:83 yali4/gui/Ui/rescuegrubwidget.py:84
 msgid "Install to first bootable disk (recommended)"
-msgstr "Installeer op de eerste te booten schijf (aangeraden)"
+msgstr "Installeer op de eerste opstartbare schijf (aangeraden)"
 
 #: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:85
 msgid "Install to Pardus installed partition"
@@ -203,11 +201,11 @@ msgstr "Installeer op onderstaand geselecteerde schijf"
 
 #: yali4/gui/Ui/bootloaderwidget.py:86
 msgid "Select the disk you to install bootloader:"
-msgstr "Selecteer de schijf waarop u de bootlader wilt installeren:"
+msgstr "Selecteer de schijf waarop u de opstartlader wilt installeren:"
 
 #: yali4/gui/Ui/bootloaderwidget.py:87
 msgid "Don't install bootloader"
-msgstr "Bootlader niet installeren"
+msgstr "Opstartlader niet installeren"
 
 #: yali4/gui/Ui/checkcdwidget.py:81
 msgid ""
@@ -444,11 +442,11 @@ msgstr "Grootte aanpassen"
 
 #: yali4/gui/Ui/rescuegrubwidget.py:87
 msgid "Select the disk to install bootloader:"
-msgstr "Selecteer de schijf om bootlader op te installeren:"
+msgstr "Selecteer de schijf om opstartlader op te installeren:"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:102
 msgid "Select user from list to change password:"
-msgstr ""
+msgstr "Selecteer gebruiker uit lijst voor het wijzigen van wachtwoord:"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:103
 #: yali4/gui/Ui/setupuserswidget.py:173
@@ -461,9 +459,8 @@ msgid "Password (again):"
 msgstr "Wachtwoord (nogmaals):"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:105
-#, fuzzy
 msgid "Update Password"
-msgstr "Gebruiker bijwerken"
+msgstr "Wachtwoord bijwerken"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:67
 msgid "Connection Status :"
@@ -498,13 +495,11 @@ msgstr "Selecteer hieronder de partitie waarop Pardus is geïnstalleerd:"
 
 #: yali4/gui/Ui/rescuewidget.py:85
 msgid "Select a proper solution for your problem and click <b>next</b>..."
-msgstr ""
-"Selecteer een oplossing voor uw probleem en klik op <b>vollgende</b>..."
+msgstr "Selecteer een oplossing voor uw probleem en klik op <b>vollgende</b>..."
 
 #: yali4/gui/Ui/rescuewidget.py:86
 msgid "If you have problems with boot, you can reinstall Grub"
-msgstr ""
-"Indien u problemen met opstarten ondervindt, kunt u Grub herinstalleren"
+msgstr "Indien u problemen met opstarten ondervindt, kunt u Grub herinstalleren"
 
 #: yali4/gui/Ui/rescuewidget.py:87
 msgid "If you need to take back your old operations you can use Pisi History"
@@ -548,16 +543,15 @@ msgstr "Hostnaam:"
 
 #: yali4/gui/Ui/setupuserswidget.py:171
 msgid "Real Name:"
-msgstr "Echte naam:"
+msgstr "Volledige naam:"
 
 #: yali4/gui/Ui/setupuserswidget.py:172
 msgid "User Name:"
 msgstr "Gebruikersnaam:"
 
 #: yali4/gui/Ui/setupuserswidget.py:174
-#, fuzzy
 msgid "User ID"
-msgstr "Gebruiker:"
+msgstr "Gebruiker-id"
 
 #: yali4/gui/Ui/setupuserswidget.py:175 yali4/gui/ScrUsers.py:227
 #: yali4/gui/ScrUsers.py:269
@@ -569,9 +563,8 @@ msgid "Give administrator privileges to this user"
 msgstr "Geef beheerdersrechten aan deze gebruiker"
 
 #: yali4/gui/Ui/setupuserswidget.py:177
-#, fuzzy
 msgid "Edit Selected User"
-msgstr "Verwijder geselecteerde gebruiker"
+msgstr "Geselecteerde gebruiker bewerken"
 
 #: yali4/gui/Ui/setupuserswidget.py:178
 msgid "Delete Selected User"
@@ -594,9 +587,8 @@ msgid "Do not ask any password to this user"
 msgstr "Vraag geen wachtwoord aan deze gebruiker"
 
 #: yali4/gui/Ui/setupuserswidget.py:184
-#, fuzzy
 msgid "Add More Users"
-msgstr "Toevoegen gebruikers..."
+msgstr "Meer gebruikers toevoegen"
 
 #: yali4/gui/Ui/summarywidget.py:64 yali4/gui/ScrSummary.py:246
 msgid "Begin Install"
@@ -618,7 +610,7 @@ msgstr "Lees GPL"
 
 #: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:187
 msgid "Reboot System!"
-msgstr "Herstart systeem!"
+msgstr "Systeem herstarten!"
 
 #: yali4/gui/Ui/welcomewidget.py:94
 msgid "Accept!"
@@ -798,7 +790,7 @@ msgstr "Handmatig partitioneren geselecteerd."
 #: yali4/gui/DiskWidgets.py:190
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
-msgstr "De grootte van de 'installatie root' dient groter te zijn dan %s MB."
+msgstr "De grootte van het systeemdeel dient groter te zijn dan %s MB."
 
 #: yali4/gui/DiskWidgets.py:220 yali4/gui/ScrBootloader.py:68
 #: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:73
@@ -841,8 +833,7 @@ msgstr "Er is een verzoek voor hetzelfde partitietype."
 
 #: yali4/gui/DiskWidgets.py:346
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)"
 "s</b>."
@@ -955,7 +946,7 @@ msgstr "(%s) [%s] Grootte : %s - Vrij : %s"
 #: yali4/gui/GUIAdditional.py:181
 #, python-format
 msgid "%s (Boot Disk)"
-msgstr ""
+msgstr "%s (Opstartschijf)"
 
 #: yali4/gui/GUIAdditional.py:241
 #, python-format
@@ -1027,7 +1018,7 @@ msgstr ""
 "\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"U dient een wachtwoord in te stellen voor de \"root\" gebruiker die "
+"U dient een wachtwoord in te stellen voor de \"beheer\" gebruiker die "
 "volledige controle heeft tot het systeem.\n"
 "Uw wachtwoord dient makkelijk te onthouden te zijn (voor u) maar moeilijk om "
 "te raden (voor anderen). \n"
@@ -1079,14 +1070,13 @@ msgstr ""
 
 #: yali4/gui/ScrBootloader.py:37
 msgid "Bootloader Choice"
-msgstr "Bootlader keuze"
+msgstr "Opstartlader keuze"
 
 #: yali4/gui/ScrBootloader.py:38
 msgid "Configure the system boot..."
-msgstr "Configureren systeem herstarten..."
+msgstr "Systeemlader configureren ..."
 
 #: yali4/gui/ScrBootloader.py:40 yali4/gui/ScrRescueGrub.py:35
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Boot loader setup</font>\n"
@@ -1111,22 +1101,22 @@ msgid ""
 "</font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Bootlader instellen</font>\n"
+"<font size=\"+2\">Opstartlader instellen</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2008 maakt gebruik van de bootlader GRUb, om het besturingssysteem "
+"Pardus 2009 maakt gebruik van de opstartlader GRUB, om het besturingssysteem "
 "van uw keuze op te starten.\n"
 "</p>\n"
 "<p>Als u meerdere besturingssysteem op uw computer hebt, kunt u kiezen welk "
 "besturingssysteem\n"
 "u wilt starten met GRUB. Installatie van GRUB aan het begin van de "
-"bootschijf is een te aan te bevelen\n"
-"optie om bootproblemen te vermijden. Als u zeker weet wat u doet,\n"
-"kunt u de bootlader opties aanpassen.\n"
+"opstartschijf is een te aan te bevelen\n"
+"optie om opstartproblemen te vermijden. Als u zeker weet wat u doet,\n"
+"kunt u de opstartlader-opties aanpassen.\n"
 "</p>\n"
 "<p>\n"
-"Lees de Pardus Installatie- en gebruikshandleiding voor\n"
-" meer informatie over de GRUB bootlader \n"
+"Lees de Pardus Installatie- en gebruikhandleiding voor\n"
+" meer informatie over de GRUB-opstartlader \n"
 "</p>\n"
 "</font>\n"
 
@@ -1251,9 +1241,8 @@ msgid "Installing system..."
 msgstr "Installeren systeem..."
 
 #: yali4/gui/ScrInstall.py:61
-#, fuzzy
 msgid "Installing takes approximately 20 minutes depending on your hardware..."
-msgstr "Installeren duurt ongeveer 30 minuten, afhankelijk van uw hardware..."
+msgstr "Installeren duurt ongeveer 20 minuten, afhankelijk van de hardware..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1394,14 +1383,13 @@ msgstr ""
 
 #: yali4/gui/ScrPartitionAuto.py:38
 msgid "Choose Partitioning"
-msgstr "Kies partitioneren"
+msgstr "Partitioneren kiezen"
 
 #: yali4/gui/ScrPartitionAuto.py:39
 msgid "Auto or Manual partitioning..."
 msgstr "Automatisch of handmatig partitioneren..."
 
 #: yali4/gui/ScrPartitionAuto.py:41
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -1429,17 +1417,14 @@ msgstr ""
 "<font size=\"+1\">\n"
 "<p>\n"
 "U kunt Pardus installeren als u ongepartitioneerde, lege schijfruimte hebt\n"
-"van 4GB (10 GB wordt aangeraden) of een ongebruikte-ongepartitioneerde "
-"schijft.\n"
+"van 4GB (10 GB wordt aangeraden) of een ongebruikte-ongepartitioneerde schijft.\n"
 "De geselecteerde schijfruimte of partitie zal voor installatie automatisch\n"
 "geformateerd worden. Daarom wordt het geadviseerd om uw data op te slaan om "
 "problemen in de toekomst te voorkomen.\n"
-"<p>\n"
-"<p>Auto-partitioneren zal automatisch het geselecteerde schijfdeel/partitie "
-"formateren \n"
-"en Pardus 2008 installeren. Indien u wilt, kunt u het partitioneren "
-"handmatig doen of\n"
-"Pardus 2008 een nieuwe installatie partitie laten maken.</P>\n"
+"</p>\n"
+"<p>Auto-partitioneren zal automatisch het geselecteerde schijfdeel/partitie formateren \n"
+"en Pardus 2009 installeren. Indien u wilt, kunt u het partitioneren handmatig doen of\n"
+"Pardus 2009 een nieuwe installatie partitie laten maken.</p>\n"
 "<p>\n"
 "Lees de Pardus Installatie- en gebruikshandleiding voor\n"
 " meer informatie over schijfpartitioneren.\n"
@@ -1451,8 +1436,7 @@ msgstr ""
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
 "installation."
-msgstr ""
-"U heeft niet voldoende schijfruimte (min. %s) om Pardus te installeren."
+msgstr "U heeft niet voldoende schijfruimte (min. %s) om Pardus te installeren."
 
 #: yali4/gui/ScrPartitionManual.py:31
 msgid "Manual Partitioning"
@@ -1512,23 +1496,24 @@ msgid ""
 "All changes that you made will be removed.\n"
 "Do you want to continue ?"
 msgstr ""
+"Alle gemaakte wijzigingen worden verwijderd.\n"
+"Doorgaan ?"
 
 #: yali4/gui/ScrRescueGrub.py:32
 msgid "Rescue Mode for Bootlooader"
-msgstr ""
+msgstr "Herstelmodus voor opstartlader"
 
 #: yali4/gui/ScrRescueGrub.py:33
 msgid "You can fix your bootloader..."
-msgstr ""
+msgstr "De opstartlader kan hersteld worden..."
 
 #: yali4/gui/ScrRescuePassword.py:41
 msgid "Rescue Mode for Password Recovery"
-msgstr ""
+msgstr "Herstelmodus voor wachtwoord"
 
 #: yali4/gui/ScrRescuePassword.py:42
-#, fuzzy
 msgid "You can recover your password ..."
-msgstr "U kunt uw partities gemakkelijk configureren..."
+msgstr "Uw wachtwoord kan hersteld worden..."
 
 #: yali4/gui/ScrRescuePassword.py:44
 msgid ""
@@ -1536,15 +1521,17 @@ msgid ""
 "<font size=\"+2\">Password Recovery</font>\n"
 "<font size=\"+1\"></font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Wachtwoordherstel</font>\n"
+"<font size=\"+1\"></font>\n"
 
 #: yali4/gui/ScrRescuePassword.py:56 yali4/gui/ScrUsers.py:71
 msgid "Caps Lock is on!"
-msgstr ""
+msgstr "Caps Lock is aan!"
 
 #: yali4/gui/ScrRescuePassword.py:61 yali4/gui/ScrRescuePisi.py:54
-#, fuzzy
 msgid "Starting DBUS..."
-msgstr "Formatteren ..."
+msgstr "DBUS starten..."
 
 #: yali4/gui/ScrRescuePassword.py:62 yali4/gui/ScrRescuePisi.py:55
 #: yali4/installer.py:516
@@ -1552,42 +1539,36 @@ msgid "Trying to connect DBUS..."
 msgstr "Proberen te verbinden met DBUS..."
 
 #: yali4/gui/ScrRescuePassword.py:63
-#, fuzzy
 msgid "Getting user list ..."
-msgstr "Instellen hostnaam.."
+msgstr "Gebruikerlijst ophalen..."
 
 #: yali4/gui/ScrRescuePassword.py:96
 msgid "Info"
-msgstr ""
+msgstr "Informatie"
 
 #: yali4/gui/ScrRescuePassword.py:107 yali4/gui/ScrUsers.py:170
-#, fuzzy
 msgid "Don't use your user name or name as a password."
-msgstr ""
-"<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
+msgstr "Gebruikernaam niet als wachtwoord gebruiken."
 
 #: yali4/gui/ScrRescuePassword.py:110 yali4/gui/ScrUsers.py:173
-#, fuzzy
 msgid "Passwords do not match!"
-msgstr "<font color=\"#FF6D19\">Wachtwoorden komen niet overeen!</font>"
+msgstr "Wachtwoorden komen niet overeen!"
 
 #: yali4/gui/ScrRescuePassword.py:113 yali4/gui/ScrUsers.py:176
-#, fuzzy
 msgid "Password is too short!"
-msgstr "<font color=\"#FF6D19\">Wachtwoord is te kort!</font>"
+msgstr "Wachtwoord is te kort!"
 
 #: yali4/gui/ScrRescuePassword.py:146
-#, fuzzy
 msgid "Super User"
-msgstr "Stel gebruikers in"
+msgstr "Systeembeheerder"
 
 #: yali4/gui/ScrRescuePisi.py:40
 msgid "Rescue Mode for Pisi History"
-msgstr ""
+msgstr "Herstelmodus voor Pisi-geschiedenis"
 
 #: yali4/gui/ScrRescuePisi.py:41
 msgid "You can take back your system ..."
-msgstr ""
+msgstr "Het systeem kan teruggezet worden..."
 
 #: yali4/gui/ScrRescuePisi.py:43
 msgid ""
@@ -1595,26 +1576,28 @@ msgid ""
 "<font size=\"+2\">Pisi History</font>\n"
 "<font size=\"+1\"></font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Pisi-geschiedenis</font>\n"
+"<font size=\"+1\"></font>\n"
 
 #: yali4/gui/ScrRescuePisi.py:56
-#, fuzzy
 msgid "Getting history ..."
-msgstr "Instellen hostnaam.."
+msgstr "Geschiedenis ophalen..."
 
 #: yali4/gui/ScrRescuePisi.py:122
 #, python-format
 msgid "Operation %s : %s - %s"
-msgstr ""
+msgstr "Bewerking %s : %s - %s"
 
 #: yali4/gui/ScrRescue.py:30
 msgid "Rescue Mode"
-msgstr ""
+msgstr "Herstelmodus"
 
 #: yali4/gui/ScrRescue.py:31
 msgid ""
 "You can reinstall your Grub or you can take back your system by using Pisi "
 "History..."
-msgstr ""
+msgstr "De opstartlader (Grub) of het systeem kan hersteld worden door Pisi-geschiedenis..."
 
 #: yali4/gui/ScrRescue.py:33
 msgid ""
@@ -1622,33 +1605,31 @@ msgid ""
 "<font size=\"+2\">Rescue Mode</font>\n"
 "<font size=\"+1\"><p>This is a rescue mode help document.</p></font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Herstelmodus</font>\n"
+"<font size=\"+1\"><p>Dit is een helpdocument over herstelmodus.</p></font>\n"
 
 #: yali4/gui/ScrRescue.py:93
-#, fuzzy
 msgid "Mounting selected partition..."
-msgstr "Maak nieuwe partitie ..."
+msgstr "Geselecteerde partitie aankoppelen..."
 
 #: yali4/gui/ScrRescue.py:105
 msgid "Yali couldn't find a suitable partition on your system"
-msgstr ""
+msgstr "Yali kan geen bruikbare partitie op het systeem vinden"
 
 #: yali4/gui/ScrRescue.py:122
-#, fuzzy
 msgid "Please select a partition from list"
-msgstr "Verwijder alle partities"
+msgstr "Selecteer een partitie uit de lijst"
 
 #: yali4/gui/ScrRescueSummary.py:42
-#, fuzzy
 msgid "The last step before rescue"
-msgstr "De laatste stap voor installatie"
+msgstr "De laatste stap voor het herstellen"
 
 #: yali4/gui/ScrRescueSummary.py:43
-#, fuzzy
 msgid "Summary of your rescue operations..."
-msgstr "Samenvatting van uw installatie..."
+msgstr "Samenvatting van de herstelbewerking..."
 
 #: yali4/gui/ScrRescueSummary.py:45
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Rescue Summary</font>\n"
@@ -1660,11 +1641,11 @@ msgid ""
 "</font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Installatie samenvatting</font>\n"
+"<font size=\"+2\">Herstelsamenvatting</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Hier kunt u uw installatieopties bekijken en ze controleren voordat de "
-"installatie start.\n"
+"Bekijk hier de herstelopties bekijken en controleer ze voordat de "
+"herstelbewerkingen gestart worden.\n"
 "</p>\n"
 "</font>\n"
 
@@ -1779,12 +1760,11 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:198
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:213
 msgid "Bootloader Settings"
-msgstr "Bootlader instellingen"
+msgstr "Opstartader-instellingen"
 
 #: yali4/gui/ScrSummary.py:214
 #, python-format
@@ -1833,7 +1813,6 @@ msgid "Create users to use Pardus..."
 msgstr "Maak gebruikers voor Pardus..."
 
 #: yali4/gui/ScrUsers.py:35
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -1860,12 +1839,11 @@ msgstr ""
 "<font size=\"+2\">Gebruiker instellen</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2008 staat toe om meerdere gebruikers dezelfde computer te laten "
+"Pardus 2009 staat toe om meerdere gebruikers dezelfde computer te laten "
 "delen.\n"
 "U kunt beheerdersrechten toestaan aan de gebruikers die u aanmaakt; en u "
 "kunt \n"
 "tevens toestemming geven aan gebruikers om verscheidene handelingen in "
-"TASMA\n"
 "te verrichten.\n"
 "</p>\n"
 "<p>\n"
@@ -1883,28 +1861,20 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrUsers.py:208
-#, fuzzy
 msgid "Username exists, choose another one!"
-msgstr ""
-"<font color=\"#FF6D19\">Deze gebruikersnaam bestaat al, Kies een andere!</"
-"font>"
+msgstr "Gebruikernaam bestaat al, Kies een andere!"
 
 #: yali4/gui/ScrUsers.py:211
-#, fuzzy
 msgid "Username contains invalid characters!"
-msgstr ""
-"<font color=\"#FF6D19\">De gebruikersnaam bevat niet toegestane tekens.</"
-"font>"
+msgstr "Gebruikernaam bevat niet toegestane tekens!"
 
 #: yali4/gui/ScrUsers.py:214
-#, fuzzy
 msgid "Realname contains invalid characters!"
-msgstr ""
-"<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
+msgstr "Volledige naam bevat niet toegestane tekens!"
 
 #: yali4/gui/ScrUsers.py:222
 msgid "User ID used before, choose another one!"
-msgstr ""
+msgstr "Gebruiker-id reeds gebruikt, kies een andere!"
 
 #: yali4/gui/ScrUsers.py:293
 msgid "Update User"
@@ -1919,7 +1889,6 @@ msgid "Welcome to the Pardus installer..."
 msgstr "Welkom bij de Pardus installatie..."
 
 #: yali4/gui/ScrWelcome.py:32
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Welcome !</font>\n"
@@ -1937,12 +1906,12 @@ msgid ""
 msgstr ""
 "\n"
 "<font size=\"+2\">Welkom !</font>\n"
-"<font size=\"+1\"><p>Welkom bij Pardus 2008 met veel makkelijk te gebruiken "
+"<font size=\"+1\"><p>Welkom bij Pardus 2009 met veel makkelijk te gebruiken "
 "software. U kunt werkelijk alles doen dat wilt, inclusief (maar niet beperkt "
 "tot) gebruikmaken van internet, creëren van documenten, spelletjes spelen, "
-"en muziek luisteren met Pardus 2008. </p>\n"
+"en muziek luisteren met Pardus 2009. </p>\n"
 "<p>Deze toepassing zal u, in enkele makkelijke stappen. helpen met de "
-"installatie van Pardus 2008 op uw computer en zal het noodzakelijke doen om "
+"installatie van Pardus 2009 op uw computer en zal het noodzakelijke doen om "
 "uw hardware te identificeren. Wij raden u aan uw gegevens op te slaan voor "
 "we beginnen met de installatie. </p>\n"
 "<p>U kunt het installatieproces beginnen (en de vrije wereld binnenstappen) "
@@ -1981,7 +1950,7 @@ msgstr "Toon hulp"
 
 #: yali4/gui/YaliWindow.py:114
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: yali4/gui/YaliWindow.py:133
 msgid "Hide Help"
@@ -1998,11 +1967,14 @@ msgid ""
 "them.                                 You should restart the machine before "
 "starting the installation process !"
 msgstr ""
+"FSCheck heeft enkele fouten op partitie %s gevonden en ze "
+"hersteld.                                  Herstart de computer om het "
+"installatieproces opnieuw te starten !"
 
 #: yali4/filesystem.py:168
-#, fuzzy, python-format
+#, python-format
 msgid "FSCheck failed on %s"
-msgstr "Controle mislukt"
+msgstr "FSCheck is mislukt op %s"
 
 #: yali4/filesystem.py:380 yali4/filesystem.py:471
 msgid "Partition is not ready for resizing. Check it before installation."
@@ -2011,9 +1983,9 @@ msgstr ""
 "installatie."
 
 #: yali4/filesystem.py:477
-#, fuzzy, python-format
+#, python-format
 msgid "Resize failed on %s "
-msgstr "Controle mislukt"
+msgstr "Grootte van %s aanpassen is mislukt"
 
 #: yali4/__init__.py:62
 msgid "Backtrace:"
@@ -2067,7 +2039,7 @@ msgstr ""
 
 #: yali4/installer.py:224
 msgid "Setting time settings.."
-msgstr "Instellen tijd.."
+msgstr "Tijdinstellingen maken.."
 
 #: yali4/installer.py:251
 msgid "Disk analyze started.."
@@ -2079,47 +2051,47 @@ msgstr "Grootte aanpassen beëindigd ..."
 
 #: yali4/installer.py:377
 msgid "Creating new partition ..."
-msgstr "Maak nieuwe partitie ..."
+msgstr "Nieuwe partitie aanmaken..."
 
 #: yali4/installer.py:396
 msgid "Failed to use partition for automatic installation "
-msgstr ""
+msgstr "Gebruik van partitie voor automatische installatie is mislukt"
 
 #: yali4/installer.py:518
 msgid "Setting Hostname..."
-msgstr "Instellen hostnaam.."
+msgstr "Hostnaam instellen..."
 
 #: yali4/installer.py:519
 msgid "Setting TimeZone..."
-msgstr "Instellen tijdszone..."
+msgstr "Tijdszone instellen..."
 
 #: yali4/installer.py:520
 msgid "Setting Root Password..."
-msgstr "Instellen root wachtwoord..."
+msgstr "Systeembeheerwachtwoord instellen..."
 
 #: yali4/installer.py:521
 msgid "Adding Users..."
-msgstr "Toevoegen gebruikers..."
+msgstr "Gebruikers toevoegen..."
 
 #: yali4/installer.py:522
 msgid "Writing Console Data..."
-msgstr "Schrijven console gegevens..."
+msgstr "Consolegegevens schrijven..."
 
 #: yali4/installer.py:523
 msgid "Migrating X.org Configuration..."
-msgstr "Migreren X.org configuratie..."
+msgstr "X.org-configuratie migreren..."
 
 #: yali4/installer.py:525
 msgid "Copy Pisi index..."
-msgstr "Kopiëer Pisi index..."
+msgstr "Pisi-index.kopiëren..."
 
 #: yali4/installer.py:526
 msgid "Setting misc. package configurations..."
-msgstr "Instellen misc. pakketconfiguraties..."
+msgstr "Verschillende pakketconfiguraties instellen..."
 
 #: yali4/installer.py:527
 msgid "Installing BootLoader..."
-msgstr "Installeren bootlader..."
+msgstr "Opstartlader installeren..."
 
 #: yali4/installer.py:669
 msgid "Retry"
@@ -2322,19 +2294,3 @@ msgstr "als opslagruimte"
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "De thuismap van gebruiker <b>%s</b> wordt klaargemaakt.."
 
-#, fuzzy
-#~ msgid "Taking back Pisi operation..."
-#~ msgstr "Bezig met handelingen na installatie.."
-
-#, fuzzy
-#~ msgid "Running rescue operations.."
-#~ msgstr "Bezig met handelingen na installatie.."
-
-#~ msgid "Device :"
-#~ msgstr "Apparaat:"
-
-#~ msgid "/dev/sda1"
-#~ msgstr "/dev/sda1"
-
-#~ msgid "New User"
-#~ msgstr "Nieuwe gebruiker"
