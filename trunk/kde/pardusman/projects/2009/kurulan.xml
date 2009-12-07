@@ -1,4 +1,4 @@
-<PardusmanProject type="install" media="cd" compression="GZIP">
+<PardusmanProject type="install" media="cd" compression="gzip">
     <Title>Pardus 2009</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/CD-image-version-2009</ReleaseFiles>
