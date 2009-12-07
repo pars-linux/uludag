@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-03 15:33+0200\n"
+"POT-Creation-Date: 2009-12-07 10:25+0200\n"
 "PO-Revision-Date: 2009-07-12 20:02-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: German <de@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: code/display-settings.py:36 code/display-settings.py:104 ui/mainview.py:184
+#: code/display-settings.py:36 code/display-settings.py:104 ui/mainview.py:181
 msgid "Display Settings"
 msgstr "Bildschirm Einstellungen"
 
@@ -59,7 +59,7 @@ msgstr ""
 "<qt><i>klicken Sie den \"Wählen...\" Button um einen Monitor auszuwählen</"
 "i></qt>"
 
-#: code/displaysettings/mainwidget.py:103
+#: code/displaysettings/mainwidget.py:97
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
@@ -69,34 +69,34 @@ msgstr ""
 "Bitte prüfen sie ob alle nötigen Pakete installiert und korrekt konfiguriert "
 "wurden."
 
-#: code/displaysettings/mainwidget.py:110
+#: code/displaysettings/mainwidget.py:104
 msgid ""
 "Cannot find a valid configuration. Display settings won't be enabled until "
 "you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
 
-#: code/displaysettings/mainwidget.py:119
-#: code/displaysettings/mainwidget.py:549
+#: code/displaysettings/mainwidget.py:113
+#: code/displaysettings/mainwidget.py:539
 msgid "Access denied."
 msgstr "Zugriff verweigert."
 
-#: code/displaysettings/mainwidget.py:201
+#: code/displaysettings/mainwidget.py:195
 msgid ""
 "Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
 "(LVDS, VGA, etc.)"
 msgstr ""
 
-#: code/displaysettings/mainwidget.py:219
-#: code/displaysettings/mainwidget.py:322
+#: code/displaysettings/mainwidget.py:213
+#: code/displaysettings/mainwidget.py:316
 msgid "Auto"
 msgstr ""
 
-#: code/displaysettings/mainwidget.py:318
+#: code/displaysettings/mainwidget.py:312
 msgid "Output Properties - %1"
 msgstr "Konfiguration des Ausgangs - %1"
 
-#: code/displaysettings/mainwidget.py:402
+#: code/displaysettings/mainwidget.py:396
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
@@ -105,7 +105,7 @@ msgstr ""
 "verwenden, welcher vom Hardwarehersteller angeboten wird. Wollen Sie diesen "
 "Treiber verwenden?</p></qt>"
 
-#: code/displaysettings/mainwidget.py:418
+#: code/displaysettings/mainwidget.py:412
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
@@ -116,11 +116,11 @@ msgstr ""
 "nutzen, müssen Sie folgende Pakete installieren <b>%2</b> und wählen Sie <b>%"
 "1</b> bei den Grafikkartenoptionen aus.</qt>"
 
-#: code/displaysettings/mainwidget.py:423
+#: code/displaysettings/mainwidget.py:417
 msgid "Start Package Manager"
 msgstr "Starte Paket Manager"
 
-#: code/displaysettings/mainwidget.py:540
+#: code/displaysettings/mainwidget.py:530
 msgid "You must restart your X session for all the changes to take effect."
 msgstr ""
 
@@ -136,121 +136,78 @@ msgstr "Typ:"
 msgid "Monitors:"
 msgstr "Monitore:"
 
-#: ui/mainview.py:185
+#: ui/mainview.py:182
 msgid "Outputs"
 msgstr "Ausgänge"
 
-#: ui/mainview.py:186
+#: ui/mainview.py:183
 msgid "Extend desktop to all displays"
 msgstr ""
 
-#: ui/mainview.py:187
+#: ui/mainview.py:184
 msgid "Detect Outputs"
 msgstr "Ausgänge suchen"
 
-#: ui/mainview.py:189
+#: ui/mainview.py:186
 msgid "Configuration file is not ready."
 msgstr ""
 
-#: ui/mainview.py:191
-msgid "1"
-msgstr ""
-
-#: ui/mainview.py:194
-msgid "2"
-msgstr ""
-
-#: ui/mainview.py:195
+#: ui/mainview.py:190
 msgid "Output Properties"
 msgstr "Output Eigenschaften"
 
-#: ui/mainview.py:196
+#: ui/mainview.py:191
 msgid "Size:"
 msgstr "Größe:"
 
-#: ui/mainview.py:197
+#: ui/mainview.py:192
 msgid "Refresh Rate:"
 msgstr "Wiederholungsrate:"
 
-#: ui/mainview.py:198
+#: ui/mainview.py:193
 msgid "Rotation:"
 msgstr ""
 
-#: ui/mainview.py:200
+#: ui/mainview.py:195
 msgid "No Rotation"
 msgstr "Keine Rotation"
 
-#: ui/mainview.py:201
+#: ui/mainview.py:196
 msgid "Left (90 degrees)"
 msgstr "Links (90 Grad)"
 
-#: ui/mainview.py:202
+#: ui/mainview.py:197
 msgid "Upside-Down (180 degrees)"
 msgstr "Upside-Down (180 Grad)"
 
-#: ui/mainview.py:203
+#: ui/mainview.py:198
 msgid "Right (270 degrees)"
 msgstr "Rechts (270 Grad)"
 
-#: ui/mainview.py:204
+#: ui/mainview.py:199
 msgid "Screens"
 msgstr ""
 
-#: ui/mainview.py:205
+#: ui/mainview.py:200
 #, fuzzy
 msgid "<b>Video Card:</b>"
 msgstr "Grafikkarte:"
 
-#: ui/mainview.py:206
+#: ui/mainview.py:201
 msgid "Card Info"
 msgstr "Grafikkarteninfo"
 
-#: ui/mainview.py:207
+#: ui/mainview.py:202
 msgid "Configure..."
 msgstr "Konfiguriere..."
 
-#: ui/mainview.py:208
+#: ui/mainview.py:203
 #, fuzzy
 msgid "<b>Outputs:</b>"
 msgstr "Ausgänge:"
 
-#: ui/mainview.py:209
+#: ui/mainview.py:204
 msgid "Devices"
-msgstr ""
-
-#: ui/help.py:55
-msgid "Display Manager Help"
-msgstr ""
-
-#: ui/help.py:56
-msgid ""
-"<p>\n"
-"<b><h3>Outputs </h3></b>\n"
-"\n"
-"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
-"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
-"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
-"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
-"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
-"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
-"<br><br>\n"
-"<b><h3>Resolution </h3></b>\n"
-"\n"
-"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
-"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
-"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
-"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
-"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
-"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
-"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
-"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
-"dignissim dui lectus et orci.\n"
-"\n"
-"</p>"
-msgstr ""
-
-#: ui/help.py:67
-msgid "<p><b><h3>Display Manager </h3></b></p>"
 msgstr ""
 
 #: ui/videocard.py:101

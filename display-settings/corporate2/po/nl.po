@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-03 15:33+0200\n"
+"POT-Creation-Date: 2009-12-07 10:25+0200\n"
 "PO-Revision-Date: 06/12/09 22:08\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: code/display-settings.py:36 code/display-settings.py:104 ui/mainview.py:184
+#: code/display-settings.py:36 code/display-settings.py:104 ui/mainview.py:181
 msgid "Display Settings"
 msgstr "Scherminstellingen"
 
@@ -57,7 +57,7 @@ msgstr "Aangepaste monitor"
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr "<qt><i>Klik knop \"Kiezen..\" om de monitor te selecteren</i></qt>"
 
-#: code/displaysettings/mainwidget.py:103
+#: code/displaysettings/mainwidget.py:97
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
@@ -65,7 +65,7 @@ msgstr ""
 "Er zijn geen pakket die backend voor deze applicatie geven.\n"
 "Zorg ervoor dat de pakketten geïnstalleerd en correct geconfigureerd zijn."
 
-#: code/displaysettings/mainwidget.py:110
+#: code/displaysettings/mainwidget.py:104
 msgid ""
 "Cannot find a valid configuration. Display settings won't be enabled until "
 "you create a new configuration.\n"
@@ -75,29 +75,29 @@ msgstr ""
 "ingeschakeld worden tenzij er een nieuwe configuratie aanmaakt wordt.\n"
 "Nu een nieuwe configuratie aanmaken?"
 
-#: code/displaysettings/mainwidget.py:119
-#: code/displaysettings/mainwidget.py:549
+#: code/displaysettings/mainwidget.py:113
+#: code/displaysettings/mainwidget.py:539
 msgid "Access denied."
 msgstr "Toegang geweigerd."
 
-#: code/displaysettings/mainwidget.py:201
+#: code/displaysettings/mainwidget.py:195
 msgid ""
 "Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
 "(LVDS, VGA, etc.)"
 msgstr ""
-"Getoond in menu's, lijsten, enz. %1 = gelokaliseerde uitgangtype, %2 = uitgangnaam "
-"(LVDS, VGA, enz.)"
+"Getoond in menu's, lijsten, enz. %1 = gelokaliseerde uitgangtype, %2 = "
+"uitgangnaam (LVDS, VGA, enz.)"
 
-#: code/displaysettings/mainwidget.py:219
-#: code/displaysettings/mainwidget.py:322
+#: code/displaysettings/mainwidget.py:213
+#: code/displaysettings/mainwidget.py:316
 msgid "Auto"
 msgstr "Automatisch"
 
-#: code/displaysettings/mainwidget.py:318
+#: code/displaysettings/mainwidget.py:312
 msgid "Output Properties - %1"
 msgstr "Uitgangeigenschappen - %1"
 
-#: code/displaysettings/mainwidget.py:402
+#: code/displaysettings/mainwidget.py:396
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
@@ -105,7 +105,7 @@ msgstr ""
 "<qt>Voor betere prestaties, gebruik het stuurprogramma <b>%1</b> , "
 "uitgegeven door de fabrikant. Wilt u dit stuurprogramma gebruiken?</p></qt>"
 
-#: code/displaysettings/mainwidget.py:418
+#: code/displaysettings/mainwidget.py:412
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
@@ -115,11 +115,11 @@ msgstr ""
 "uitgegeven door de fabrikant. Om het te gebruiken, installeer het <b>%2</b> "
 "pakket en selecteer <b>%1</b> bij de videokaart opties.</qt>"
 
-#: code/displaysettings/mainwidget.py:423
+#: code/displaysettings/mainwidget.py:417
 msgid "Start Package Manager"
 msgstr "Pakketbeheer starten"
 
-#: code/displaysettings/mainwidget.py:540
+#: code/displaysettings/mainwidget.py:530
 msgid "You must restart your X session for all the changes to take effect."
 msgstr "Herstart de X-sessie voor het toepassen van alle wijzigingen."
 
@@ -135,143 +135,77 @@ msgstr "Type:"
 msgid "Monitors:"
 msgstr "Monitor:"
 
-#: ui/mainview.py:185
+#: ui/mainview.py:182
 msgid "Outputs"
 msgstr "Uitgangen"
 
-#: ui/mainview.py:186
+#: ui/mainview.py:183
 msgid "Extend desktop to all displays"
 msgstr "Verdeel bureaublad uit over alle schermen"
 
-#: ui/mainview.py:187
+#: ui/mainview.py:184
 msgid "Detect Outputs"
 msgstr "Uitgangen detecteren"
 
-#: ui/mainview.py:189
+#: ui/mainview.py:186
 msgid "Configuration file is not ready."
 msgstr "Configuratiebestand is niet gereed."
 
-#: ui/mainview.py:191
-msgid "1"
-msgstr "1"
-
-#: ui/mainview.py:194
-msgid "2"
-msgstr "2"
-
-#: ui/mainview.py:195
+#: ui/mainview.py:190
 msgid "Output Properties"
 msgstr "Uitgangeigenschappen"
 
-#: ui/mainview.py:196
+#: ui/mainview.py:191
 msgid "Size:"
 msgstr "Grootte:"
 
-#: ui/mainview.py:197
+#: ui/mainview.py:192
 msgid "Refresh Rate:"
 msgstr "Verversingfrequentie:"
 
-#: ui/mainview.py:198
+#: ui/mainview.py:193
 msgid "Rotation:"
 msgstr "Rotatie:"
 
-#: ui/mainview.py:200
+#: ui/mainview.py:195
 msgid "No Rotation"
 msgstr "Geen rotatie"
 
-#: ui/mainview.py:201
+#: ui/mainview.py:196
 msgid "Left (90 degrees)"
 msgstr "Links (90 graden)"
 
-#: ui/mainview.py:202
+#: ui/mainview.py:197
 msgid "Upside-Down (180 degrees)"
 msgstr "Ondersteboven (180 graden)"
 
-#: ui/mainview.py:203
+#: ui/mainview.py:198
 msgid "Right (270 degrees)"
 msgstr "Rechts (270 graden)"
 
-#: ui/mainview.py:204
+#: ui/mainview.py:199
 msgid "Screens"
 msgstr "Schermen"
 
-#: ui/mainview.py:205
+#: ui/mainview.py:200
 msgid "<b>Video Card:</b>"
 msgstr "<b>Videokaart:</b>"
 
-#: ui/mainview.py:206
+#: ui/mainview.py:201
 msgid "Card Info"
 msgstr "Kaartinformatie"
 
-#: ui/mainview.py:207
+#: ui/mainview.py:202
 msgid "Configure..."
 msgstr "Instellen..."
 
-#: ui/mainview.py:208
+#: ui/mainview.py:203
 msgid "<b>Outputs:</b>"
 msgstr "<b>Uitgangen:</b>"
 
-#: ui/mainview.py:209
+#: ui/mainview.py:204
 msgid "Devices"
 msgstr "Apparaten"
-
-#: ui/help.py:55
-msgid "Display Manager Help"
-msgstr "Help beeldschermbeheer"
-
-#: ui/help.py:56
-msgid ""
-"<p>\n"
-"<b><h3>Outputs </h3></b>\n"
-"\n"
-"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
-"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
-"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
-"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
-"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
-"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
-"<br><br>\n"
-"<b><h3>Resolution </h3></b>\n"
-"\n"
-"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
-"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
-"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
-"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
-"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
-"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
-"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
-"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
-"dignissim dui lectus et orci.\n"
-"\n"
-"</p>"
-msgstr ""
-"<p>\n"
-"<b><h3>Uitgangen </h3></b>\n"
-"\n"
-"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
-"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
-"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
-"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
-"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
-"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
-"<br><br>\n"
-"<b><h3>Resolutie </h3></b>\n"
-"\n"
-"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
-"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
-"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
-"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
-"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
-"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
-"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
-"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
-"dignissim dui lectus et orci.\n"
-"\n"
-"</p>"
-
-#: ui/help.py:67
-msgid "<p><b><h3>Display Manager </h3></b></p>"
-msgstr "<p><b><h3>Beeldschermbeheer </h3></b></p>"
 
 #: ui/videocard.py:101
 msgid "Video Card Configuration"
@@ -396,3 +330,5 @@ msgstr "Fabrikant:"
 msgid "Models:"
 msgstr "Modellen:"
 
+#~ msgid "<p><b><h3>Display Manager </h3></b></p>"
+#~ msgstr "<p><b><h3>Beeldschermbeheer </h3></b></p>"
