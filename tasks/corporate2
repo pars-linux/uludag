@@ -9,3 +9,29 @@
 > Pardus Corporate2 Alpha           dd/mm/2010
 > Pardus Corporate2 Preview         dd/12/2009
 
+#####################
+# tasks file format #
+#####################
+
+# * Project (Maintainer)
+#   * TODO item 1 (Status)
+#   * TODO item 2 (Status) [Cooperation]
+#   ..
+#   * TODO item N (Status) [Cooperation] <<DD/MM/YYYY>>
+
+# Status can be:
+#   -       for an unstarted todo item
+#   /PP     for an item for which %PP of the work has been completed
+#   +       for a completed item
+
+# Cooperation can define another person to work with OR to wait for
+# complete a TODO item.
+
+# The date between <<>> is the deadline for the TODO item.
+
+#
+# Example:
+
+# * PiSi (Faik Uygur)
+#   * needsServiceRestart, needsReboot desteği (/65) [Bahadır Kandemir] <<29/12/2009>>
+
