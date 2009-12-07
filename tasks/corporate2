@@ -70,7 +70,29 @@
 
 * YALI (Mete Alpaslan)
     * Senaryo bazlı kurulum (-) [Mete Alpaslan]
+    * grub.conf'a girdilerin UUID tabanlı girilmesi (-) [Bahadır Kandemir]
 
 * sysinfo (Ozan Çağlayan)
     * /etc/fstab'da yer almayan disklerin bağlanamaması sorununa çözüm (-) [Gökçen Eraslan]
     * VGA bilgilerinin doğruluğunun gözden geçirilmesi (-) [Fatih Aşıcı]
+
+* Kernel/Baselayout (Ozan Çağlayan)
+    * 2.6.31/32 çekirdeğe geçilmesi (-)
+    * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (-)
+
+* Boot (Bahadır Kandemir)
+    * root cihazının uuid anahtar kelimesiyle GRUB'a yazılması (-)
+    * boot-manager'ın UUID değişiklikleriyle beraber gözden geçirilmesi (-)
+    * mySQL, pgSQL, ldap, apache sunucu paketlerinin güncellenmesi, bakımının yapılması (-)
+
+* Depo/Paketler (Ozan Çağlayan)
+    * Samba 3.4 geçişi, service.py'lerin ayrılması (-)
+    * expat vb. gibi kitaplıkların dışarıdan kullanılıp kullanılmamasının analizi/gereği (-) [Onur Küçük]
+    * component.xml'lerin temizlenerek sadece isim bırakılması (-)
+    * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (-) [N/A]
+    * evolution paketlenmesi (-) [N/A]
+
+* Yazıcı altyapısı (Ozan Çağlayan)
+    * Otomatik tanımada UDEV tabanlı mimariye geçilmesi (-)
+    * system-config-printer-gtk'nın derlenerek depoya alınması, test edilmesi (-)
+    * foo2zjs-firmware paketine gereksinim duyulduğunda kullanıcının uyarılması (-)
