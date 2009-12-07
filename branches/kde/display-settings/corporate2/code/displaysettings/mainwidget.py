@@ -23,7 +23,6 @@ from zorg.utils import run
 from displaysettings.carddialog import VideoCardDialog
 from displaysettings.outputdialog import OutputDialog
 from displaysettings.entryview import EntryView
-from displaysettings.ui.help import HelpDialog as Ui_HelpDialog
 from displaysettings.ui.mainview import MainWidget as Ui_MainWidget
 
 # Backend
@@ -37,16 +36,12 @@ class MainWidget(Ui_MainWidget):
     def __init__(self, parent):
         Ui_MainWidget.__init__(self, parent)
 
-        # hide for now
-        self.buttonHelp.hide()
-
         # "Apply" button will be enabled when config changed
         self.buttonApply.setDisabled(True)
 
         # set button icons
         self.buttonCancel.setIconSet(getIconSet("cancel", KIcon.Small))
         self.buttonApply.setIconSet(getIconSet("ok", KIcon.Small))
-        self.buttonHelp.setIconSet(getIconSet("help", KIcon.Small))
         # use reload icon for now. will be replaced with swap icon later.
         self.buttonSwap.setPixmap(getIcon("reload", KIcon.Toolbar))
 
@@ -82,7 +77,6 @@ class MainWidget(Ui_MainWidget):
 
         self.connect(self.buttonCancel, SIGNAL("clicked()"), qApp, SLOT("quit()"))
         self.connect(self.buttonApply, SIGNAL("clicked()"), self.save)
-        self.connect(self.buttonHelp, SIGNAL("clicked()"), self.slotHelp)
         self.connect(self.buttonSwap, SIGNAL("clicked()"), self.slotSwap)
 
         self.connect(self.extendDisplays, SIGNAL("toggled(bool)"), self.emitConfigChanged)
@@ -430,10 +424,6 @@ class MainWidget(Ui_MainWidget):
             if answer == KMessageBox.Yes:
                 run("package-manager", "--show-mainwindow")
 
-
-    def slotHelp(self):
-        helpwin = Ui_HelpDialog()
-        helpwin.exec_loop()
 
     def slotSwap(self):
         self._left, self._right = self._right, self._left
