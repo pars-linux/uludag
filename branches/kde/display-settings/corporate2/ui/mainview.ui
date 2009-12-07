@@ -174,9 +174,6 @@
                                         <property name="usesTextLabel">
                                             <bool>true</bool>
                                         </property>
-                                        <property name="textLabel">
-                                            <string>1</string>
-                                        </property>
                                     </widget>
                                     <widget class="QPushButton">
                                         <property name="name">
@@ -213,9 +210,6 @@
                                         </property>
                                         <property name="usesTextLabel">
                                             <bool>true</bool>
-                                        </property>
-                                        <property name="textLabel">
-                                            <string>2</string>
                                         </property>
                                     </widget>
                                     <spacer>
