@@ -21,6 +21,7 @@ from repotools.selections import PackageCollection, PackageSelection, Collection
 def _(x):
     return x
 
+# FIXME: Python version is hardcoded!
 default_live_exclude_list = """
 lib/rcscripts/
 usr/include/
@@ -49,6 +50,7 @@ var/log/pisi.log
 root/.bash_history
 """
 
+# FIXME: Python and Qt versions are hardcoded!
 default_install_exclude_list = """
 lib/rcscripts/
 usr/include/
