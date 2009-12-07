@@ -343,15 +343,16 @@ def copyPisiIndex(project):
 def install_packages(project):
     image_dir = project.image_dir()
     path = os.path.join(image_dir, "var/lib/pisi/package")
-    for name in project.all_packages:
-        flag = True
-        if os.path.exists(path):
-            for avail in os.listdir(path):
-                if avail.startswith(name) and avail[len(name)] == "-":
-                    flag = False
-        if flag:
-            run('pisi --yes-all --ignore-comar --ignore-file-conflicts -D"%s" it %s' % (image_dir, name))
-
+    print "len(project.all_packages:%s" % len(project.all_packages)
+    run('pisi --yes-all --ignore-comar --ignore-file-conflicts -D"%s" it %s ' % (image_dir, " ".join(project.all_packages)))
+    #for name in project.all_packages:
+    #    flag = True
+    #    if os.path.exists(path):
+    #        for avail in os.listdir(path):
+    #            if avail.startswith(name) and avail[len(name)] == "-":
+    #                flag = False
+    #    if flag:
+    #        run('pisi --yes-all --ignore-comar --ignore-file-conflicts -D"%s" it %s ' % (image_dir, name))
 def squash_image(project):
     image_dir = project.image_dir()
     image_file = project.image_file()
@@ -368,8 +369,10 @@ def squash_image(project):
     run('mksquashfs "%s" "%s" -noappend -ef "%s"' % (image_dir, image_file, temp.name))
     # FIXME
     #if project.squashfs_comp_type == 'LZMA':
+    #    xterm_title("Squashfs using LZMA")
     #    run('mksquashfs "%s" "%s" -noappend -ef "%s"' % (image_dir, image_file, temp.name))
     #else:
+    #    xterm_title("Squashfs using GZIP")
     #    run('mksquashfs "%s" "%s" -nolzma -noappend -ef "%s"' % (image_dir, image_file, temp.name))
 
 #
@@ -378,15 +381,17 @@ def squash_image(project):
 
 def make_repos(project):
     print "Preparing image repo..."
-    xterm_title("Preparing image repo")
+    xterm_title("Preparing repo")
 
     try:
         repo = project.get_repo()
         repo_dir = project.image_repo_dir(clean=True)
         if project.type == "install":
             imagedeps = repo.full_deps("yali4")
+            xterm_title("Preparing image repo for installation")
         else:
             imagedeps = project.all_packages
+            xterm_title("Preparing image repo for live")
 
         repo.make_local_repo(repo_dir, imagedeps)
 
