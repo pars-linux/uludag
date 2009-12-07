@@ -146,6 +146,7 @@ default_live_glob_excludes = (
     ( "var/lib/pisi/index", "*" ),
     ( "var/lib/pisi/info", "*" ),
     ( "var/lib/pisi/package", "*" ),
+    ( "var/cache/pisi", "*.cache" ),
 )
 
 
