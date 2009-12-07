@@ -52,10 +52,10 @@
     * Güvenlik güncellemelerinin system.base'e davranıldığı gibi doğrudan sepete alınması olanağı (-)
 
 * Müdür (Ozan Çağlayan)
-    * needsServiceRestart listesinin açılışta temizlenmesi (-)          [Bahadır Kandemir/Faik Uygur]
+    * needsServiceRestart listesinin açılışta temizlenmesi (-)          [Bahadır Kandemir, Faik Uygur]
 
 * Stil/KDE (Ozan Çağlayan)
-    * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan/Gökhan Özkan]
+    * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
     * Paket yöneticisinin eksik notification bağımlılıkları (-)
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (-)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması [Serdar Dalgıç] (-)
@@ -67,3 +67,10 @@
 * KDE (Renan Çakırerk)
     * Kaptan'ın gözden geçirilmesi (-) [Gökçen Eraslan]
     * Göç aracının gözden geçirilmesi (-)
+
+* YALI (Mete Alpaslan)
+    * Senaryo bazlı kurulum (-) [Mete Alpaslan]
+
+* sysinfo (Ozan Çağlayan)
+    * /etc/fstab'da yer almayan disklerin bağlanamaması sorununa çözüm (-) [Gökçen Eraslan]
+    * VGA bilgilerinin doğruluğunun gözden geçirilmesi (-) [Fatih Aşıcı]
