@@ -46,7 +46,6 @@ app_data = [
     ('displaysettings', ['code/displaysettings']),
     ('displaysettings/ui', ['ui']),
     'pics',
-    'help'
 ]
 
 kdedistutils.setup(
