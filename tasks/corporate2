@@ -40,7 +40,7 @@
 #################
 
 * PiSi (Faik Uygur)
-    * needsServiceRestart, needsReboot desteği (-) [Bahadır Kandemir]
+    * needsServiceRestart, needsReboot desteği (+) [Bahadır Kandemir]
     * groups.xml tango simge teması düzeltmesi (+)
     * revdepRebuild/replaces düzeltmelerinin test edilmesi (-)
 
