@@ -4,5 +4,5 @@ recursive-include code *.py *.desktop
 recursive-exclude code/displaysettings/ui *
 recursive-include pics *.png
 recursive-include xcb *.py *.xml
-recursive-include ui *.ui
+recursive-include ui __init__.py *.ui
 recursive-include po *.po *.pot
