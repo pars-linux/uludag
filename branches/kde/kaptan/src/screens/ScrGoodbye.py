@@ -33,9 +33,9 @@ class Widget(GoodbyeWidget, ScreenWidget):
         apply(GoodbyeWidget.__init__, (self,) + args)
 
         if KGlobal.locale().language() == "tr":
-            self.helpUrl = "http://www.pardus.org.tr/yardim.html"
+            self.helpUrl = "http://www.pardus.org.tr/destek"
         else:
-            self.helpUrl = "http://www.pardus.org.tr/eng/contact.html"
+            self.helpUrl = "http://www.pardus.org.tr/eng/support"
 
         self.minimumResolution = 800
 
@@ -54,7 +54,7 @@ class Widget(GoodbyeWidget, ScreenWidget):
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.startHelp)
         self.connect(self.buttonResolution, SIGNAL("clicked()"), self.startDisplayManager)
 
-        self.isAppAvaiable("migration-users", self.groupBoxMigration)
+        #self.isAppAvaiable("migration-users", self.groupBoxMigration)
 
         # if screen width smaller than 
         rect =  QApplication.desktop().screenGeometry()
