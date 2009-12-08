@@ -42,9 +42,11 @@
 * PiSi (Faik Uygur)
     * needsServiceRestart, needsReboot desteği (-) [Bahadır Kandemir]
     * groups.xml tango simge teması düzeltmesi (+)
-    * Depo/paket bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (-) (Serdar Dalgıç)
     * revdepRebuild/replaces düzeltmelerinin test edilmesi (-)
-    * component.xml yok ise 'bilinmeyen' bileşene düşüp uyarı verilmesi (-) (Serdar Dalgıç)
+
+* PiSi (Serdar Dalgıç)
+    * Depo/paket bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (-)
+    * component.xml yok ise 'bilinmeyen' bileşene düşüp uyarı verilmesi (-)
 
 * Paket Yöneticisi (Faik Uygur)
     * Ana ekranda güncelleme tipinin seçilebileceği bir filtre (-)
