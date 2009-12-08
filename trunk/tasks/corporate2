@@ -59,6 +59,7 @@
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
     * Paket yöneticisinin eksik notification bağımlılıkları (-)
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (-)
+    * ses sunucusu ayarlarının TASMA'dan kaldırılması (-)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (-) [Serdar Dalgıç]
     * Simge teması düzeltilecek (-)
     * Fontlar çok kötü gözüküyor (-) [Fatih Aşıcı]
@@ -90,6 +91,7 @@
 
 * Depo/Paketler (Ozan Çağlayan)
     * Samba 3.4 geçişi, service.py'lerin ayrılması (-)
+    * Pulseaudio yardımcı programlarının depoya alınması (-)
     * expat vb. gibi kitaplıkların dışarıdan kullanılıp kullanılmamasının analizi/gereği (-) [Onur Küçük]
     * component.xml'lerin temizlenerek sadece isim bırakılması (-)
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (-) [N/A]
@@ -102,3 +104,4 @@
 
 * X/DRM (Fatih Aşıcı)
     * nouveau sürücüsü sorunları (-)
+    * display-settings exception veriyor (-)
