@@ -41,7 +41,7 @@
 
 * PiSi (Faik Uygur)
     * needsServiceRestart, needsReboot desteği (-) [Bahadır Kandemir]
-    * groups.xml tango simge teması düzeltmesi (-)
+    * groups.xml tango simge teması düzeltmesi (+)
     * Depo/paket bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (-)
     * revdepRebuild/replaces düzeltmelerinin test edilmesi (-)
     * component.xml yok ise 'bilinmeyen' bileşene düşüp uyarı verilmesi (-)
