@@ -96,3 +96,6 @@
     * Otomatik tanımada UDEV tabanlı mimariye geçilmesi (-)
     * system-config-printer-gtk'nın derlenerek depoya alınması, test edilmesi (-)
     * foo2zjs-firmware paketine gereksinim duyulduğunda kullanıcının uyarılması (-)
+
+* X/DRM (Fatih Aşıcı)
+    * nouveau sürücüsü sorunları (-)
