@@ -251,7 +251,7 @@ if __name__ == "__main__":
     copyright   = ki18n("(c) 2009 Pardus")
     text        = ki18n("none")
     homePage    = "www.pardus.org.tr"
-    bugEmail    = "pinar@pardus.org.tr"
+    bugEmail    = "renan@pardus.org.tr"
 
     aboutData   = KAboutData(appName,catalog, programName, version, description,
                                 license, copyright,text, homePage, bugEmail)
