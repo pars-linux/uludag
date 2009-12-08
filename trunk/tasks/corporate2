@@ -59,7 +59,9 @@
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
     * Paket yöneticisinin eksik notification bağımlılıkları (-)
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (-)
-    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması [Serdar Dalgıç] (-)
+    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (-) [Serdar Dalgıç]
+    * Simge teması düzeltilecek (-)
+    * Fontlar çok kötü gözüküyor (-) [Fatih Aşıcı]
 
 * KDE (Gökçen Eraslan)
     * Qt/KDE -DNDEBUG/disable-debug ile derlenmesinin sağlanması (-)
