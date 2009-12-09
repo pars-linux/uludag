@@ -259,7 +259,6 @@
         <SelectedPackage>QtCurve-KDE4</SelectedPackage>
         <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
         <SelectedPackage>PyKDE</SelectedPackage>
-        <SelectedPackage>PolicyKit-kde</SelectedPackage>
         <Package>zorg</Package>
         <Package>zlib</Package>
         <Package>zip</Package>
@@ -833,7 +832,6 @@
         <Package>a52dec</Package>
         <Package>PyQt</Package>
         <Package>PyKDE</Package>
-        <Package>PolicyKit-kde</Package>
         <Package>PolicyKit</Package>
         <Package>DirectFB</Package>
         <Package>ConsoleKit</Package>

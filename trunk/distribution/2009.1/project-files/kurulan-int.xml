@@ -138,7 +138,6 @@
         <SelectedPackage>ipw2200-firmware</SelectedPackage>
         <SelectedPackage>ipw2100-firmware</SelectedPackage>
         <SelectedPackage>rdesktop</SelectedPackage>
-        <SelectedPackage>PolicyKit-kde</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>kaudiocreator</SelectedPackage>
         <SelectedPackage>iwlwifi5150-ucode</SelectedPackage>
@@ -291,7 +290,6 @@
         <Package>ConsoleKit</Package>
         <Package>DirectFB</Package>
         <Package>PolicyKit</Package>
-        <Package>PolicyKit-kde</Package>
         <Package>PyKDE</Package>
         <Package>PyQt</Package>
         <Package>QtCurve-Gtk2</Package>
