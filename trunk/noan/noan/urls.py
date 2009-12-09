@@ -14,8 +14,6 @@ urlpatterns = patterns('',
 
     # Users
     (r'^user/', include('noan.profile.urls')),
-    (r'^accounts/login/$', 'django.views.generic.simple.redirect_to', {'url': "/user/login/"}),
-    (r'^accounts/profile/$', 'django.views.generic.simple.redirect_to', {'url': "/user/profile/"}),
 
     # Enable the admin interface:
     (r'^mudur/doc/', include('django.contrib.admindocs.urls')),
