@@ -20,6 +20,7 @@ import packages
 def _(x):
     return x
 
+# FIXME: Python version is hardcoded!
 default_live_exclude_list = """
 lib/rcscripts/
 usr/include/
@@ -48,6 +49,7 @@ var/log/pisi.log
 root/.bash_history
 """
 
+# FIXME: Python and Qt versions are hardcoded!
 default_install_exclude_list = """
 lib/rcscripts/
 usr/include/
@@ -171,7 +173,7 @@ class Project:
         self.release_files = ""
         self.repo_uri = ""
         self.type = "install"
-        self.squashfs_comp_type = "GZIP"
+        self.squashfs_comp_type = "gzip"
         self.media = "cd"
         self.extra_params = ""
         self.plugin_package = ""
