@@ -56,6 +56,7 @@ Bilgisayarınızı yeniden başlatın ve açılış ekranının düzgün bir şe
  patch
  util-macros
  xorg-proto
+ libtool
 \end{verbatim}
  \item icecream ve icecream scheduler paketleri kurulumu sonrası:
 
@@ -79,7 +80,25 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
  hdparm
  popt
  libssh2
- dbus-glib
+ dbus-glib 
+ libtool-ltdl 
+\end{verbatim}
+\item glibc-zoneinfo paketi kurulumu sonrası:
+Panel'de bulunan takviminizin zaman dilini değiştirin, ve sorunsuz bir şekilde değiştiğini gözlemleyin.
+
+
+\item glibc paketi kurulumu sonrası:
+
+\begin{verbatim}
+ldd /usr/bin/screen 
+\end{verbatim}
+
+\item expat paketi kurulumu sonrası:
+
+Aşağıdaki konutun hiç bir çıktı göndermediğini gözlemleyiniz.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/system/base/test-expat.xml
+ xmlwf -c test-expat.xml
 \end{verbatim}
 
 \item diffutils paketi kurulumu sonrası:
@@ -390,6 +409,164 @@ Servis yöneticisinden omniORB başlatın, aşağıdaki komut ile başlatıldı�
   programming-tr.pdf python-memcached testini gerçekleştirin. 
 \end{enumerate}
 
+\section{Locale alt Bileşeni}
+\begin{enumerate}
+ \item Aşağıda bulunan paketler için:
+
+multimedia-tr.pdf gimp-i18n-<lang> testlerini gerçekleştiriniz. 
+
+Sistem yöneticisinden sistem dilini değiştirin (değiştirdiğiniz dil için ilgili glibc loacale paketini kurduğunuza emin oldun), sisteminizi sisteminizi yeniden başlatın ve CTRL+ALT+F1 tuşuna baın ve sistem konsolunun ilgili dilde açıldığını gözlemleyin.
+
+
+\begin{verbatim}
+    glibc-locales-aa
+    glibc-locales-af
+    glibc-locales-am
+    glibc-locales-an
+    glibc-locales-ar
+    glibc-locales-as
+    glibc-locales-ast
+    glibc-locales-az
+    glibc-locales-be
+    glibc-locales-ber
+    glibc-locales-bg
+    glibc-locales-bn
+    glibc-locales-bo
+    glibc-locales-br
+    glibc-locales-bs
+    glibc-locales-byn
+    glibc-locales-ca
+    glibc-locales-crh
+    glibc-locales-cs
+    glibc-locales-csb
+    glibc-locales-cy
+    glibc-locales-da
+    glibc-locales-de
+    glibc-locales-dz
+    glibc-locales-el
+    glibc-locales-en
+    glibc-locales-es
+    glibc-locales-et
+    glibc-locales-eu
+    glibc-locales-fa
+    glibc-locales-fi
+    glibc-locales-fil
+    glibc-locales-fo
+    glibc-locales-fr
+    glibc-locales-fur
+    glibc-locales-fy
+    glibc-locales-ga
+    glibc-locales-gd
+    glibc-locales-gez
+    glibc-locales-gl
+    glibc-locales-gu
+    glibc-locales-gv
+    glibc-locales-ha
+    glibc-locales-he
+    glibc-locales-hi
+    glibc-locales-hne
+    glibc-locales-hr
+    glibc-locales-hsb
+    glibc-locales-ht
+    glibc-locales-hu
+    glibc-locales-hy
+    glibc-locales-id
+    glibc-locales-ig
+    glibc-locales-ik
+    glibc-locales-is
+    glibc-locales-it
+    glibc-locales-iu
+    glibc-locales-iw
+    glibc-locales-ja
+    glibc-locales-ka
+    glibc-locales-kk
+    glibc-locales-kl
+    glibc-locales-km
+    glibc-locales-kn
+    glibc-locales-ko
+    glibc-locales-ks
+    glibc-locales-ku
+    glibc-locales-kw
+    glibc-locales-ky
+    glibc-locales-lg
+    glibc-locales-li
+    glibc-locales-lo
+    glibc-locales-lt
+    glibc-locales-lv
+    glibc-locales-mai
+    glibc-locales-mg
+    glibc-locales-mi
+    glibc-locales-mk
+    glibc-locales-ml
+    glibc-locales-mn
+    glibc-locales-mr
+    glibc-locales-ms
+    glibc-locales-mt
+    glibc-locales-nb
+    glibc-locales-nds
+    glibc-locales-ne
+    glibc-locales-nl
+    glibc-locales-nn
+    glibc-locales-nr
+    glibc-locales-nso
+    glibc-locales-oc
+    glibc-locales-om
+    glibc-locales-or
+    glibc-locales-pa
+    glibc-locales-pap
+    glibc-locales-pl
+    glibc-locales-pt
+    glibc-locales-ro
+    glibc-locales-ru
+    glibc-locales-rw
+    glibc-locales-sa
+    glibc-locales-sc
+    glibc-locales-sd
+    glibc-locales-se
+    glibc-locales-shs
+    glibc-locales-si
+    glibc-locales-sid
+    glibc-locales-sk
+    glibc-locales-sl
+    glibc-locales-so
+    glibc-locales-sq
+    glibc-locales-sr
+    glibc-locales-ss
+    glibc-locales-st
+    glibc-locales-sv
+    glibc-locales-ta
+    glibc-locales-te
+    glibc-locales-tg
+    glibc-locales-th
+    glibc-locales-ti
+    glibc-locales-tig
+    glibc-locales-tk
+    glibc-locales-tl
+    glibc-locales-tn
+    glibc-locales-ts
+    glibc-locales-tt
+    glibc-locales-ug
+    glibc-locales-uk
+    glibc-locales-ur
+    glibc-locales-uz
+    glibc-locales-ve
+    glibc-locales-vi
+    glibc-locales-wa
+    glibc-locales-wo
+    glibc-locales-xh
+    glibc-locales-yi
+    glibc-locales-yo
+    glibc-locales-zh
+    glibc-locales-zu
+\end{verbatim}
+\end{enumerate}
+
+\section{Doc alt Bileşeni}
+
+Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ glibc-doc
+\end{verbatim}
 
 
 \end{document}
