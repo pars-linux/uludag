@@ -1,0 +1,38 @@
+2009-12-03 Fatih Aşıcı <fatih@pardus.org.tr>
+	* New release for KDE3. This is a completely rewritten version
+	which is ported from trunk.
+
+2009-03-28 Fatih Aşıcı <fatih@pardus.org.tr>
+	* src/display-manager.py,
+	  src/displayconfig.py,
+	  src/randriface.py:
+		RandR support improved to not rely on zorg config.
+
+2009-02-19 Fatih Aşıcı <fatih@pardus.org.tr>
+	* src/hwdata.py:
+		Remove hwdata module which is moved into zorg.
+
+2009-01-23 Fatih Aşıcı <fatih@pardus.org.tr>
+	* src/displayconfig.py:
+		Add 1600x1200 to the resolution list (#9018).
+	* src/utility.py:
+		Add long name for output "auto".
+
+2008-12-30 Fatih Aşıcı <fatih@pardus.org.tr>
+	* src/displayconfig.py:
+		Ignore user's color depth selection if driver is fglrx.
+		It only supports 24 bit.
+	* src/hwdata.py:
+		Add nvidia/nvidia-drivers180.
+		Fix driver descriptions.
+	* src/display-manager.py, setup.py:
+		Bump to 0.3.6.
+
+2008-11-01 Fatih Aşıcı <fatih@pardus.org.tr>
+	* src/hwdata.py:
+		nvidia-drivers-new renamed to nvidia-drivers173.
+		Package for new nvidia cards added (nvidia-drivers177).
+
+2008-09-11 Pınar Yanardağ <pinar@pardus.org.tr>
+	* CHANGELOG, INSTALL, AUTHORS, README:
+		Update README, AUTHORS and add two new files.
