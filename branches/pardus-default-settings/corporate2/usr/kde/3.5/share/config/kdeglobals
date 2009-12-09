@@ -3,4 +3,4 @@ widgetStyle=qtcurve
 BrowserApplication[$e]=mozillafirefox.desktop
 
 [Icons]
-Theme=Tango
+Theme=BCTango
