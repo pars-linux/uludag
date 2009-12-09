@@ -64,6 +64,9 @@
     * ses sunucusu ayarlarının TASMA'dan kaldırılması (-)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (-) [Serdar Dalgıç]
     * Simge teması düzeltilecek (-)
+    * 32-53px arası Tango simgelerinin arkası panelde siyah gözüküyor (-)
+    * Tango simge teması çok eksik, bir çok simge crystal'e düşüyor (-)
+    * QtCurve-KDE3 mapping'i yanlış (-)
     * Fontlar çok kötü gözüküyor (-) [Fatih Aşıcı]
 
 * KDE (Gökçen Eraslan)
