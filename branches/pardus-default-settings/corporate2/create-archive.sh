@@ -10,6 +10,6 @@ if [ -d ../$DIRNAME ]; then
     exit 1
 fi
 
-cp -r ../$NAME ../$DIRNAME
+cp -r . ../$DIRNAME
 tar czvf $DIRNAME-corporate2.tar.gz ../$DIRNAME --exclude .svn --exclude `basename $0`
 rm -rf ../$DIRNAME
