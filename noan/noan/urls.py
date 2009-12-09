@@ -14,13 +14,12 @@ urlpatterns = patterns('',
 
     # Users
     (r'^user/', include('noan.profile.urls')),
+    (r'^accounts/login/$', 'django.views.generic.simple.redirect_to', {'url': "/user/login/"}),
+    (r'^accounts/profile/$', 'django.views.generic.simple.redirect_to', {'url': "/user/profile/"}),
 
     # Enable the admin interface:
-    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    (r'^admin/(.*)', admin.site.root),
+    (r'^mudur/doc/', include('django.contrib.admindocs.urls')),
+    (r'^mudur/(.*)', admin.site.root),
     # Don't handle /media/
     (r'^media/(.*)$', 'django.views.static.serve', {'document_root': '%s/media' % DOCUMENT_ROOT, 'show_indexes': True}),
-
-    # login
-    (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'registration/login.html'}),
 )
