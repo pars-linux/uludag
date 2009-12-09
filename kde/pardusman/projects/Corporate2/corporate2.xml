@@ -1,7 +1,7 @@
 <PardusmanProject type="install" media="cd" compression="gzip">
     <Title>PardusCorporate2-[2009.11.16]</Title>
-    <WorkDir>/tmp/iso</WorkDir>
-    <ReleaseFiles>/tmp/CD-image/CD-image-version-2009</ReleaseFiles>
+    <WorkDir>/tmp/CD-image/iso</WorkDir>
+    <ReleaseFiles>/tmp/CD-image/CD-image-version-Corporate2</ReleaseFiles>
     <PackageSelection repo_uri="http://adres/corporate2-test/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedComponent>hardware.firmware</SelectedComponent>
