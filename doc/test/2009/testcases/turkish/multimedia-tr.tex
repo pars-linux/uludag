@@ -53,42 +53,6 @@ Menü $\rightarrow$ digikam $\rightarrow$ import $\rightarrow$ Import from faceb
 
 \section{Sound alt Bileşeni}
 \begin{enumerate}
-\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
-\begin{verbatim}
- hydrogen-drumkits
-\end{verbatim}
-
-\item timidity paketi kurulumu sonrası:
-
-Servis yöneticisinden timidity servisini başlatın.
-
-Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
-\begin{verbatim}
- wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/test-timidity.mid
- timidity test-timidity.mid
-\end{verbatim}
-
-\item paman paketi kurulumu sonrası:
-
-Kmenu'den uygulamanın sorunsuz açıldığını gözlemleyin.
-
-\item hydrogen paketi kurulumu sonrası:
-
-Kmenu'den uygulamanın sorunsuz açıldığını gözlemleyin.
-
-\item gnomad2 paketi kurulumu sonrası:
-
-Eğer Creative Zen ve Dell DJ cihazlarından biri bulunmakta ise, bilgisayarınıza bu cihazları taktıktan sonra, Kmenu'den gnomad2 uygulamasını çalıştırın ve sorunsuz bir şekilde çalıştıklarını gözlemleyin.
-
-\item mp3splt paketi kurulumu sonrası:
-
-Aşağıda bulunan komutların mp3 dosyasını split altına böldüğünü gözlemleyin.
-\begin{verbatim}
- wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
- mp3splt -f -t 0.5 -a -d split sample.mp3
-\end{verbatim}
-
-
 \item mixxx paketi kurulumu sonrası:
 
 Kmenüden uygulamanın açılabildiğini gözlemleyin.
@@ -108,7 +72,6 @@ Kmenüden uygulamayı açın ve /usr/share/jamin/examples dosyası altında bulu
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/test_frescobaldi.ly
  \end{verbatim}
 Yukarıda bulunan dosyayı frescobaldi ile açıp, uygulamanın sol tarafında bulunan Lilypond butonuna basın ve sorunsuz bir şekilde pdf dökümanının oluştuğunu gözlemleyin.
-
 \item pulseaudio, pulseaudio-docs, pulseaudio-gconf, pulseaudio-jack paketi kurulumu sonrası:
 \begin{itemize}
  \item multimedia-tr.pdf pavucontrol testini gerçekleştirin.
@@ -380,7 +343,6 @@ Lake_dance_XviD.AVI
  \item Aşağıda bulunan paketler kurulum testine tabidir
 \begin{verbatim}
  gimp-data-extras
- gimp-devel
  tachyon
 \end{verbatim}
 \item tesseract paketi kurulumu sonrası:
@@ -440,7 +402,7 @@ Aşağıda bulunan komutların sorunsuz olarak çalıştığını gözlemleyin.
 
 Yerel dili değiştirmek için:
 \begin{verbatim}
-export LC_ALL= <lang_LANG>
+export LC_ALL=<lang_LANG>
 \end{verbatim}
 
 lang\_LANG şeklinde yazılmış olan, pt-BT için pt\_BT, diğer diller için örneğin de\_DE olacaktır.
@@ -526,12 +488,12 @@ Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalışt
    # gwenview test.eps 
   \end{verbatim}
 
- \item gimp kurulumu sonrası:
+ \item gimp ve gimp-devel kurulumu sonrası:
   \begin{verbatim}
-   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
+   http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
   \end{verbatim}
 
- Yukarıda bulunan mng formatı hariç, diğer farklı formattaki dosyaları gimp ile açınız, sorunsuz bir şekilde açıldıklarını gözlemleyiniz.
+ Yukarıda bulunan farklı formattaki dosyaları gimp ile açınız, sorunsuz bir şekilde açıldıklarını gözlemleyiniz.
 \item digikam kurulumu sonrası:
 
   \begin{verbatim}

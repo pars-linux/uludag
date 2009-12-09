@@ -223,7 +223,7 @@ Aşağıda bulunan nintendo oyununu uygulama ile açın ve çalıştırın, soru
 
 \end{enumerate}
 
-\section{Virtalization alt Bileşeni}
+\section{Virtualization alt Bileşeni}
 \begin{enumerate}
  \item libvirt paketi kurulumu sonrası:
 
@@ -234,6 +234,22 @@ Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. A
 \begin{verbatim}
 # wget http://cekirdek.pardus.org.tr/~gokmen/Pardus_Minimal_2009.iso
 \end{verbatim}
+ \item kvm paketi kurulumu sonrası:
+
+/proc/cpuinfo dosyasından hangi işlemciyi kullandığınızı öğrenin.
+
+Aşağıda bulunan komutların sorunsuz çalıştığını ve iso'nun boot edildiğini gözlemleyin. (Aynı anda diğer sannallaştırma uygulamalarının çalışmadığından emin olun.)
+\begin{verbatim}
+ su -
+ modprobe kvm-intel (işlemci intel ise)
+ modprobe kvm-amd  (işlemci amd ise)
+ lsmod | grep kvm 
+ qemu-img create -f raw disk_imajim.img 10G 
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+ qemu-kvm -m 512 -hda disk_imajim.img -cdrom boot.iso -boot d 
+\end{verbatim}
+
+
 
 \end{enumerate}
 
