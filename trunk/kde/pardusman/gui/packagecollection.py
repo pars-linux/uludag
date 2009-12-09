@@ -99,7 +99,7 @@ class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
         QDialog.accept(self)
 
     def slotSelectIcon(self):
-        filename = QFileDialog.getOpenFileName(self, _("Select Collection Icon"), "./projects/icons/", "*.png")
+        filename = QFileDialog.getOpenFileName(self, _("Select Collection Icon"), "./icons/", "*.png")
         if filename:
             if self.collection:
                 self.collection.icon = unicode(filename)
