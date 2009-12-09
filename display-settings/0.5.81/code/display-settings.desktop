@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Display Settings
+Name[sv]=Bildskärm
+Name[tr]=Ekran Ayarları
+Name[nl]=Beeldscherminstellingen
+GenericName=Display Configuration Tool
+GenericName[tr]=Ekran Yapılandırma Aracı
+GenericName[es]=Herramienta para la Configuración de Pantallas
+GenericName[nl]=Beeldscherm configuratie gereedschap
+GenericName[de]=Anzeigekonfigurationstool
+GenericName[sv]=Bildskärmsanpassningsverktyg
+X-KDE-ModuleType=Library
+X-KDE-Library=display-settings
+X-KDE-FactoryName=display_settings
+Type=Application
+Icon=randr
+Exec=display-settings
+Categories=QT;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
