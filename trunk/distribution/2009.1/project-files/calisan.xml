@@ -1,4 +1,4 @@
-<PardusmanProject type="live" media="cd" compression="GZIP">
+<PardusmanProject type="live" media="cd" compression="gzip">
     <Title>Pardus 2009 Calisan</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/CD-image-version-2009</ReleaseFiles>
