@@ -266,7 +266,7 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         self.project.plugin_package = unicode(self.linePluginPackage.text())
         self.project.extra_params = unicode(self.lineParameters.text())
         self.project.type = ["install", "live"][self.comboType.currentIndex()]
-        self.project.squashfs_comp_type = ["GZIP", "LZMA"][self.comboCompression.currentIndex()]
+        self.project.squashfs_comp_type = ["gzip", "lzma"][self.comboCompression.currentIndex()]
         self.project.media = ["cd", "dvd", "usb", "custom"][self.comboSize.currentIndex()]
 
     def loadProject(self):
@@ -280,7 +280,7 @@ class MainWindow(KMainWindow, Ui_MainWindow):
         self.linePluginPackage.setText(unicode(self.project.plugin_package))
         self.lineParameters.setText(unicode(self.project.extra_params))
         self.comboType.setCurrentIndex(["install", "live"].index(self.project.type))
-        self.comboCompression.setCurrentIndex(["GZIP", "LZMA"].index(self.project.squashfs_comp_type))
+        self.comboCompression.setCurrentIndex(["gzip", "lzm"].index(self.project.squashfs_comp_type))
         self.comboSize.setCurrentIndex(["cd", "dvd", "usb", "custom"].index(self.project.media))
 
     def updateRepo(self, update_repo=True):

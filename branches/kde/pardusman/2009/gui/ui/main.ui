@@ -241,12 +241,12 @@
           <widget class="QComboBox" name="comboCompression">
            <item>
             <property name="text">
-             <string>GZIP</string>
+             <string>gzip</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>LZMA</string>
+             <string>lzma</string>
             </property>
            </item>
           </widget>
