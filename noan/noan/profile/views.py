@@ -5,6 +5,7 @@
 # FIXME: Remove this line when we make a decision about home page of /user/
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 # we use generic view for listing as it handles pagination easily. so we don't duplicate the code.
 from django.views.generic.list_detail import object_list
@@ -12,6 +13,7 @@ from django.views.generic.list_detail import object_list
 # APP RELATED IMPORTS
 from noan.repository.models import Binary
 from noan.wrappers import render_response
+from noan.profile.forms import ProfileEditForm
 
 from noan.settings import USERS_PER_PAGE
 
@@ -21,9 +23,25 @@ def main(request):
     return HttpResponse("Main Page")
 
 #  Profile page where developers can change their informations(/user/profile)
+@login_required
 def user_profile(request):
-    #FIXME: Implement profile page
-    return HttpResponse("Profile Page not Impelemnted")
+    # form is posted
+    if request.method == 'POST':
+        print "USER IS: %s" % request.user
+        form = ProfileEditForm(request.POST)
+        if form.is_valid():
+            u = request.user
+            u.first_name = form.cleaned_data["firstname"]
+            u.last_name = form.cleaned_data["lastname"]
+            u.save()
+
+            return render_response(request, "profile/user-profile-edit.html", {"form": form, "profile_updated": True})
+        else:
+            return render_response(request, "profile/user-profile-edit.html", {"form": form})
+
+    else:
+        unbound_form = ProfileEditForm({"firstname": request.user.first_name, "lastname": request.user.last_name})
+        return render_response(request, "profile/user-profile-edit.html", {"form": unbound_form})
 
 # List of the registered developers, (/user/list)
 def get_user_list(request):

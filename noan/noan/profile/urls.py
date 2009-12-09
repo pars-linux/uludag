@@ -13,7 +13,6 @@ urlpatterns = patterns('',
     (r'^list/$', 'noan.profile.views.get_user_list'),
     #FIXME: After logged in, users are redirected to profile page. It has not been implemented yet.
     #FIXME: Now just redirect them to main page.
-    #(r'^profile/$', 'noan.profile.views.user_profile'),
-    (r'^profile/$', 'django.views.generic.simple.redirect_to', {"url": "/"}),
+    (r'^profile/$', 'noan.profile.views.user_profile'),
     (r'^detail/(?P<userName>[\w-]+)/$', 'noan.profile.views.view_user_detail'),
 )

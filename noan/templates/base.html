@@ -14,7 +14,7 @@
                     <li><a href="/repository/">Repository</a></li>
                 </ul>
                 {% if user.is_authenticated %}
-                Logged as <font color="green">{{ user.username }}</font> <a href="/user/logout/">Logout</a>
+                Logged as <font color="green">{{ user.username }}</font> <br /><br /><a href="/user/profile/">Profile</a> <br /> <a href="/user/logout/">Logout</a>
                 {% else %}
                     <a href="/user/login/">Login</a>
                 {% endif %}
