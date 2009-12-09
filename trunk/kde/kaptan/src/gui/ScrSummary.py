@@ -110,7 +110,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         p = subprocess.Popen(["pidof", "-s", "plasma-desktop"], stdout=subprocess.PIPE)
         out, err = p.communicate()
         pidOfPlasma = int(out)
-        print "pidofplasma%s" % pidOfPlasma
 
         try:
             os.kill(pidOfPlasma, 15)
@@ -119,7 +118,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             print 'WARNING: failed os.kill: %s' % e
             print "Trying SIGKILL"
             os.kill(pidOfPlasma, 9)
-            #self.startPlasma()
+
         finally:
             self.startPlasma()
 
