@@ -20,6 +20,12 @@ def main(request):
     #FIXME: Make a decision about how to deal with home-page
     return HttpResponse("Main Page")
 
+#  Profile page where developers can change their informations(/user/profile)
+def user_profile(request):
+    #FIXME: Implement profile page
+    return HttpResponse("Profile Page not Impelemnted")
+
+# List of the registered developers, (/user/list)
 def get_user_list(request):
     # FIXME: Developers and users/testers should be different
     # We should mark developers. Also, fix non-sense template variables such as in this file "developers"
