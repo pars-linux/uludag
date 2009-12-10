@@ -67,8 +67,6 @@ class MainWidget(Ui_MainWidget):
             self.buttonSwap.hide()
             self.setDisabled(True)
 
-        self.suggestDriver()
-
         self.cardDialog = VideoCardDialog(self, self.iface)
         self.outputDialogs = {}
 
@@ -87,6 +85,10 @@ class MainWidget(Ui_MainWidget):
 
         self.connect(self.cardDialog, PYSIGNAL("configChanged"), self.emitConfigChanged)
         self.connect(self.configureCardButton, SIGNAL("clicked()"), self.cardDialog.show)
+
+        self.load()
+
+        QTimer.singleShot(0, self.suggestDriver)
 
     def checkBackend(self):
         """
