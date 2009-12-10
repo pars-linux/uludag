@@ -62,8 +62,6 @@ class Module(KCModule):
 
         self.connect(self.mainwidget, PYSIGNAL("configChanged"), self.changed)
 
-        self.load()
-
     def load(self):
         self.mainwidget.load()
 
