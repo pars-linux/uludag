@@ -30,8 +30,9 @@ def repository_index(request):
 
 
 def list_source_packages(request, distName, distRelease):
-    distribution = Distribution.objects.get(name=distName, release=distRelease)
-    sources = Source.objects.filter(distribution=distribution)
+    sources = Source.objects.filter(distribution__name=distName, distribution__release=distRelease)
+    if not sources.count() > 0:
+        return HttpResponse("Not Found, 404")
 
     # - generate dict to use in object_list
     # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
@@ -49,8 +50,7 @@ def view_source_detail(request, distName, distRelease, sourceName):
     """
         sourceName: <Source> section in pspec.xml
     """
-    distribution = Distribution.objects.get(name=distName, release=distRelease)
-    source = Source.objects.get(name=sourceName, distribution=distribution)
+    source = Source.objects.get(name=sourceName, distribution__name=distName, distribution__release=distRelease)
 
     context = {
         'source': source,
@@ -64,9 +64,7 @@ def view_package_detail(request, distName, distRelease, sourceName, packageName)
         packageName: <Package> section in pspec.xml
     """
 
-    distribution = Distribution.objects.get(name=distName, release=distRelease)
-    source = Source.objects.get(name=sourceName, distribution=distribution)
-    package = Package.objects.get(name=packageName, source=source)
+    package = Package.objects.get(name=packageName, source__name=sourceName, source__distribution__release=distRelease)
 
     context = {
         'package': package,
@@ -78,11 +76,9 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
         sourceName: <Source> section in pspec.xml
         packageName: <Package> section in pspec.xml
     """
+    print "FUCK FUCK!"
 
-    distribution = Distribution.objects.get(name=distName, release=distRelease)
-    source = Source.objects.get(name=sourceName, distribution=distribution)
-    package = Package.objects.get(name=packageName, source=source)
-    binary = Binary.objects.get(no=binaryNo, package=package)
+    binary = Binary.objects.get(no=binaryNo, package__name=packageName, package__source__name=sourceName)
 
     # FIXME: We also handle sending ACK/NACK info. Maybe it can be done in different view?
     if request.method == "POST" and request.user and request.user.is_authenticated():
@@ -120,16 +116,15 @@ def page_pending_index(request):
 
 
 def list_pending_packages(request, distName, distRelease):
-    distribution = Distribution.objects.get(name=distName, release=distRelease)
-    binaries = Binary.objects.filter(resolution='pending', package__source__distribution=distribution)
+    binaries = Binary.objects.filter(resolution='pending', package__source__distribution__name=distName, package__source__distribution__release=distRelease)
 
     # - generate dict to use in object_list
     # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
     object_dict = {
             'queryset': binaries,
             'paginate_by': PENDING_PACKAGES_PER_PAGE,
-            'template_name': 'repository/source-packages-list.html',
-            'template_object_name': 'binary_package'
+            'template_name': 'repository/pending/pending-packages-list.html',
+            'template_object_name': 'binary_package',
             }
 
     return object_list(request, **object_dict)

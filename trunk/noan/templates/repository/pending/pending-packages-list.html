@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
+{% load library %}
+
 {% block content %}
+Pending packages for {{ binary_package_list.0.package.source.distribution }}
+<br /><br />
     <table class="package_list">
         <tr>
             <th>Package</th>
