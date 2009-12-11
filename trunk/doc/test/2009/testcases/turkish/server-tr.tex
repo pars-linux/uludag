@@ -1,3 +1,4 @@
+
 \documentclass[a4paper,10pt]{article}
 \usepackage[turkish]{babel}
 \usepackage[utf8]{inputenc}
@@ -219,6 +220,19 @@ Aşağıda bulunan komutun man sayfasını düzgün açtığından emin olun.
 \section{Diğerleri}
 
 \begin{itemize}
+\item ntp-client paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sistem saatini değiştirdiğini gözlemleyin. 
+\begin{verbatim}
+ntpdate -b "clock.nc.fukuoka-u.ac.jp" 
+\end{verbatim}
+
+\item ntp-server paketi kurulumu sonrası:
+
+Servis yöneticisinden ntp deamon'u başlatın, aşağıda bulunan komut ile servisin başlatılmış olduğunu gözlemleyin.
+\begin{verbatim}
+ service ntp_server status
+\end{verbatim}
 
  \item dhcp paketi kurulumu sonrası:
 

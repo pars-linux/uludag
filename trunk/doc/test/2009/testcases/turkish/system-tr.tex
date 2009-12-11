@@ -86,9 +86,9 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
 \item glibc-zoneinfo paketi kurulumu sonrası:
 Panel'de bulunan takviminizin zaman dilini değiştirin, ve sorunsuz bir şekilde değiştiğini gözlemleyin.
 
-
 \item glibc paketi kurulumu sonrası:
 
+Screen paketini kurun ve aşağıda bulunan komutun, başlı kütüphaneleri listelediğini gözlemleyin.
 \begin{verbatim}
 ldd /usr/bin/screen 
 \end{verbatim}
@@ -210,7 +210,7 @@ Bilgisayarınızı yeniden başlatın ve açılış ekranının sorunsuz bir şe
 
 \item coreutils paketi kurulumu sonrası:
 
-Aşğıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
+Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 \begin{verbatim}
  # date
  # pwd
@@ -415,7 +415,15 @@ Servis yöneticisinden omniORB başlatın, aşağıdaki komut ile başlatıldı�
 
 multimedia-tr.pdf gimp-i18n-<lang> testlerini gerçekleştiriniz. Sadece ilgili dili bulunanları test etmeniz yeterli olacaktır.
 
-Sistem yöneticisinden sistem dilini değiştirin (değiştirdiğiniz dil için ilgili glibc loacale paketini kurduğunuza emin oldun), sisteminizi sisteminizi yeniden başlatın ve CTRL+ALT+F1 tuşuna baın ve sistem konsolunun ilgili dilde açıldığını gözlemleyin.
+(2009 için)Sistem yöneticisinden sistem dilini değiştirin (değiştirdiğiniz dil için ilgili glibc loacale paketini kurduğunuza emin oldun), sisteminizi sisteminizi yeniden başlatın ve CTRL+ALT+F1 tuşuna basın ve sistem konsolunun ilgili dilde açıldığını gözlemleyin.
+
+(2008 için) Aşağıda bulunan dosyada sistem dilini değiştirin ve bilgisayarınızı yeniden başlatın ve CTRL+ALT+F1 tuşuna basın ve sistem konsolunun ilgili dilde açıldığını gözlemleyin.
+\begin{verbatim}
+ su -
+ vi /etc/mudur
+\end{verbatim}
+
+
 
 
 \begin{verbatim}
