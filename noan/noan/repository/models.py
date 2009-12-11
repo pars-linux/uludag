@@ -217,7 +217,7 @@ class Binary(models.Model):
         return u'%s-%s-%s-%s' % (self.package.name, self.update.version_no, self.update.no, self.no)
 
     def get_url(self):
-        return '%s/%s' % (self.package.get_url(), self.no)
+        return '%s-%s' % (self.package.get_url(), self.no)
 
     def get_filename(self):
         return '%s.pisi' % unicode(self)

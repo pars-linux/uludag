@@ -11,9 +11,9 @@ urlpatterns = patterns('',
     (r'^(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/$', 'noan.repository.views.list_source_packages'),
     # Details of <Source> section in pspec.xml
     (r'^(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/(?P<sourceName>[^/]+)/$', 'noan.repository.views.view_source_detail'),
-    # Details of <Package> section in pspec.xml
-    (r'^(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/(?P<sourceName>[^/]+)/(?P<packageName>[^/]+)/$', 'noan.repository.views.view_package_detail'),
     # Binary package (*.pisi) detail
     (r'^(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/(?P<sourceName>[^/]+)/(?P<packageName>[^/]+)-(?P<binaryNo>\d+)/$', 'noan.repository.views.view_binary_detail'),
+    # Details of <Package> section in pspec.xml
+    (r'^(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/(?P<sourceName>[^/]+)/(?P<packageName>[^/]+)/$', 'noan.repository.views.view_package_detail'),
 
 )
