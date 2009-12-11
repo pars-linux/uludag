@@ -64,6 +64,7 @@
     * ses sunucusu ayarlarının TASMA'dan kaldırılması (-)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (-) [Serdar Dalgıç]
     * Simge teması düzeltilecek (+)
+    * TASMA ve PM'de simgelerin bazıları yanlış boyutta çıkıyor (-)
     * 32-53px arası Tango simgelerinin arkası panelde siyah gözüküyor (+)
     * Tango simge teması çok eksik, bir çok simge crystal'e düşüyor (+)
     * Fontlar çok kötü gözüküyor (-) [Fatih Aşıcı]
