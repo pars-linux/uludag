@@ -1,7 +1,7 @@
-<PardusmanProject type="install" media="cd" compression="gzip">
+<PardusmanProject type="install" media="cd" compression="lzma">
     <Title>Pardus 2009</Title>
     <WorkDir>/tmp/iso</WorkDir>
-    <ReleaseFiles>/tmp/pardusman/CD-image-version-2009</ReleaseFiles>
+    <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedComponent>desktop.kde.admin</SelectedComponent>
