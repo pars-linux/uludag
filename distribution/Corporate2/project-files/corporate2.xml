@@ -83,6 +83,7 @@
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
         <SelectedPackage>gwenview-i18n-tr</SelectedPackage>
         <SelectedPackage>gnome-mplayer</SelectedPackage>
+        <SelectedPackage>notification-daemon</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
         <SelectedPackage>flashplugin</SelectedPackage>
