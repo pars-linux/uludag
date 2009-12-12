@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: display-settings\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-07 10:25+0200\n"
-"PO-Revision-Date: 2009-07-15 23:28+0200\n"
+"PO-Revision-Date: 2009-12-12 08:28+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr "Bildskärm"
 
 #: code/display-settings.py:96
 msgid "Display Settings module is already started!"
-msgstr ""
+msgstr "Modulen Bildskärm är redan startad!"
 
 #: code/displaysettings/device.py:62
 msgid "Default Output"
@@ -85,6 +85,8 @@ msgid ""
 "Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
 "(LVDS, VGA, etc.)"
 msgstr ""
+"Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
+"(LVDS, VGA, etc.)"
 
 #: code/displaysettings/mainwidget.py:213
 #: code/displaysettings/mainwidget.py:316
@@ -118,13 +120,12 @@ msgid "Start Package Manager"
 msgstr "Starta Pakethanteraren"
 
 #: code/displaysettings/mainwidget.py:530
-#, fuzzy
 msgid "You must restart your X session for all the changes to take effect."
-msgstr "Du måste starta om X för att ändringarna skall börja gälla."
+msgstr "Du måste starta om X för att alla ändringar skall börja gälla."
 
 #: code/displaysettings/entryview.py:87
 msgid "Edit entry"
-msgstr ""
+msgstr "Redigera post"
 
 #: code/displaysettings/monitorbrowser.py:38
 msgid "Type:"
@@ -148,7 +149,7 @@ msgstr "Upptäck utgångar"
 
 #: ui/mainview.py:186
 msgid "Configuration file is not ready."
-msgstr ""
+msgstr "Inställningsfilen är inte färdig."
 
 #: ui/mainview.py:190
 msgid "Output Properties"
@@ -184,12 +185,11 @@ msgstr "Höger (270 grader)"
 
 #: ui/mainview.py:199
 msgid "Screens"
-msgstr ""
+msgstr "Skärmar"
 
 #: ui/mainview.py:200
-#, fuzzy
 msgid "<b>Video Card:</b>"
-msgstr "Grafikkort:"
+msgstr "<b>Grafikkort:</b>"
 
 #: ui/mainview.py:201
 msgid "Card Info"
@@ -200,13 +200,12 @@ msgid "Configure..."
 msgstr "Anpassa..."
 
 #: ui/mainview.py:203
-#, fuzzy
 msgid "<b>Outputs:</b>"
-msgstr "Utgångar:"
+msgstr "<b>Utgångar:</b>"
 
 #: ui/mainview.py:204
 msgid "Devices"
-msgstr ""
+msgstr "Enheter"
 
 #: ui/videocard.py:101
 msgid "Video Card Configuration"
@@ -217,7 +216,6 @@ msgid "Video Driver"
 msgstr "Drivrutin"
 
 #: ui/videocard.py:103
-#, fuzzy
 msgid "Use the default driver for the detected card"
 msgstr "Använd förvald drifrutin för avkänt grafikkort."
 
@@ -227,7 +225,7 @@ msgstr "Välj ur listan:"
 
 #: ui/videocard.py:106
 msgid "radeon"
-msgstr ""
+msgstr "radeon"
 
 #: ui/videocard.py:107
 msgid "Color Depth"
@@ -268,9 +266,8 @@ msgid "Horizontal sync:"
 msgstr "Horisontal synk:"
 
 #: ui/output.py:164
-#, fuzzy
 msgid "Monitor 800x600"
-msgstr "Bildskärm:"
+msgstr "Bildskärm 800x600"
 
 #: ui/output.py:165
 msgid "Choose..."
@@ -290,7 +287,7 @@ msgstr "Ange omfång manuellt"
 
 #: ui/output.py:170 ui/output.py:172
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ui/output.py:171
 msgid "kHz"
