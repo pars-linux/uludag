@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: display-settings\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-03 14:06+0200\n"
-"PO-Revision-Date: 2009-07-15 23:28+0200\n"
+"PO-Revision-Date: 2009-12-12 08:23+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -217,9 +217,8 @@ msgid "Output Properties - %1"
 msgstr "Utgångsinställningar - %1"
 
 #: .tmp/displaysettings/screenswidget.py:359
-#, fuzzy
 msgid "You must restart your X session for all the changes to take effect."
-msgstr "Du måste starta om X för att ändringarna skall börja gälla."
+msgstr "Du måste starta om X för att alla ändringar skall börja gälla."
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
