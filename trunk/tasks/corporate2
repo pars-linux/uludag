@@ -59,7 +59,7 @@
 
 * Stil/KDE (Ozan Çağlayan)
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
-    * Paket yöneticisinin eksik notification bağımlılıkları (-)
+    * Paket yöneticisinin eksik notification bağımlılıkları (+)
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (-)
     * ses sunucusu ayarlarının TASMA'dan kaldırılması (-)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (-) [Serdar Dalgıç]
@@ -87,7 +87,7 @@
 
 * Kernel/Baselayout (Ozan Çağlayan)
     * 2.6.31/32 çekirdeğe geçilmesi (-)
-    * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (-)
+    * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (+)
 
 * Boot (Bahadır Kandemir)
     * root cihazının uuid anahtar kelimesiyle GRUB'a yazılması (-)
@@ -109,4 +109,4 @@
 
 * X/DRM (Fatih Aşıcı)
     * nouveau sürücüsü sorunları (nouveau için blacklist'e alınacak kartlar) (-)
-    * display-settings exception veriyor (-)
+    * display-settings exception veriyor (+)
