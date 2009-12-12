@@ -91,7 +91,7 @@
         <SelectedPackage>ethtool</SelectedPackage>
         <SelectedPackage>essential</SelectedPackage>
         <SelectedPackage>ed</SelectedPackage>
-        <SelectedPackage>display-manager</SelectedPackage>
+        <SelectedPackage>display-settings</SelectedPackage>
         <SelectedPackage>disk-manager</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>br2684ctl</SelectedPackage>
