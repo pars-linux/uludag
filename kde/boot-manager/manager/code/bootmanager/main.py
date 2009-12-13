@@ -235,7 +235,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.widgetEdit.hideOptions()
 
         if id_ != None:
-            entry = self.entries[int(id_)]
+            entry = None
+            for e in self.entries:
+                if e["index"] == id_:
+                    entry = e
             self.widgetEdit.setId(int(id_))
             self.widgetEdit.setTitle(entry["title"])
             if "root" in entry:
