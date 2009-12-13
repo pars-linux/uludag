@@ -58,15 +58,15 @@
     * needsServiceRestart listesinin açılışta temizlenmesi (-)          [Bahadır Kandemir, Faik Uygur]
 
 * Stil/KDE (Ozan Çağlayan)
-    * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
     * Paket yöneticisinin eksik notification bağımlılıkları (+)
+    * Simge teması düzeltilecek (+)
+    * 32-53px arası Tango simgelerinin arkası panelde siyah gözüküyor (+)
+    * Tango simge teması çok eksik, bir çok simge crystal'e düşüyor (+)
+    * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (-)
     * ses sunucusu ayarlarının TASMA'dan kaldırılması (-)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (-) [Serdar Dalgıç]
-    * Simge teması düzeltilecek (+)
     * TASMA ve PM'de simgelerin bazıları yanlış boyutta çıkıyor (-)
-    * 32-53px arası Tango simgelerinin arkası panelde siyah gözüküyor (+)
-    * Tango simge teması çok eksik, bir çok simge crystal'e düşüyor (+)
     * Fontlar çok kötü gözüküyor (-) [Fatih Aşıcı]
 
 * KDE (Gökçen Eraslan)
@@ -86,8 +86,8 @@
     * VGA bilgilerinin doğruluğunun gözden geçirilmesi (-) [Fatih Aşıcı]
 
 * Kernel/Baselayout (Ozan Çağlayan)
-    * 2.6.31/32 çekirdeğe geçilmesi (-)
     * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (+)
+    * 2.6.31/32 çekirdeğe geçilmesi (-)
 
 * Boot (Bahadır Kandemir)
     * root cihazının uuid anahtar kelimesiyle GRUB'a yazılması (-)
@@ -108,5 +108,5 @@
     * foo2zjs-firmware paketine gereksinim duyulduğunda kullanıcının uyarılması (-)
 
 * X/DRM (Fatih Aşıcı)
-    * nouveau sürücüsü sorunları (nouveau için blacklist'e alınacak kartlar) (-)
     * display-settings exception veriyor (+)
+    * nouveau sürücüsü sorunları (nouveau için blacklist'e alınacak kartlar) (-)
