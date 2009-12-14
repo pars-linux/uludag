@@ -65,7 +65,6 @@
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (-)
     * ses sunucusu ayarlarının TASMA'dan kaldırılması (-)
-    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (-) [Serdar Dalgıç]
     * TASMA ve PM'de simgelerin bazıları yanlış boyutta çıkıyor (-)
     * Fontlar çok kötü gözüküyor (-) [Fatih Aşıcı]
 
@@ -102,10 +101,11 @@
     * component.xml'lerin temizlenerek sadece isim bırakılması (-)
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (-) [N/A]
     * evolution paketlenmesi (-) [N/A]
+    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/50)
 
 * Yazıcı altyapısı (Ozan Çağlayan)
-    * Otomatik tanımada UDEV tabanlı mimariye geçilmesi (-)
-    * system-config-printer-gtk'nın derlenerek depoya alınması, test edilmesi (-)
+    * Otomatik tanımada UDEV tabanlı mimariye geçilmesi (/50)
+    * system-config-printer-gtk'nın derlenerek depoya alınması, test edilmesi (/80)
     * foo2zjs-firmware paketine gereksinim duyulduğunda kullanıcının uyarılması (-)
 
 * X/DRM (Fatih Aşıcı)
