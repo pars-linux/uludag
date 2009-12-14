@@ -45,7 +45,7 @@
     * revdepRebuild/replaces düzeltmelerinin test edilmesi (-)
 
 * PiSi (Serdar Dalgıç)
-    * Depo/paket bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (-)
+    * Depo/paket bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (+)
     * component.xml yok ise 'bilinmeyen' bileşene düşüp uyarı verilmesi (-)
 
 * Paket Yöneticisi (Faik Uygur)
