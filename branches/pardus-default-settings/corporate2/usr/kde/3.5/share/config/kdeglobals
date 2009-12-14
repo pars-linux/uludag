@@ -1,6 +1,9 @@
 [General]
 widgetStyle=qtcurve
-BrowserApplication[$e]=mozillafirefox.desktop
+BrowserApplication=!firefox
+XftAntialias=true
+XftHintStyle=hintfull
+XftSubPixel=rgb
 
 [Icons]
 Theme=BCTango
