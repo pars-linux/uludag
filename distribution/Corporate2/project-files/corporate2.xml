@@ -47,6 +47,7 @@
         <SelectedPackage>xorg-video-apm</SelectedPackage>
         <SelectedPackage>xorg-input-evdev</SelectedPackage>
         <SelectedPackage>xdm</SelectedPackage>
+        <SelectedPackage>xdg-user-dirs</SelectedPackage>
         <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>vim</SelectedPackage>
         <SelectedPackage>user-manager</SelectedPackage>
