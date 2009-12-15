@@ -152,7 +152,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
 
     QString content = t.read();
     content = content.arg( i18n( "My Computer" ) ); // <title>
-    content = content.arg( "file:" + locate( "data", "sysinfo/themes/Corporate2/stil.css" ) );
+    content = content.arg( "file:" + locate( "data", "sysinfo/themes/Corporate2/style.css" ) );
     content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
 
     QString dynamicInfo, staticInfo;
