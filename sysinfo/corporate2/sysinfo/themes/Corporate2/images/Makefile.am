@@ -1,4 +1,3 @@
-about_DATA = background.png iconDisk.png iconHome.png infoBack.png \
-			 logo.png mdSol.png mdArk.png mdSag.png media_r1_c2.png progress.png solTab.png tbArk.png tbSag.png tbSol.png
+about_DATA = background.png infoBack.png logo.png mdSol.png mdArk.png mdSag.png progress.png tbArk.png tbSag.png
 
 aboutdir = $(kde_datadir)/sysinfo/themes/Corporate2/images
