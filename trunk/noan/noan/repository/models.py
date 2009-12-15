@@ -261,6 +261,12 @@ class Binary(models.Model):
                 return label
         return result
 
+    def get_testresult(self):
+        if not self.testresult_set.count():
+            return False
+        else:
+            return self.testresult_set.get()
+
     class Meta:
         verbose_name = _('binary')
         verbose_name_plural = _('binaries')
