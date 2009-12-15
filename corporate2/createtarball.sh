@@ -1,2 +1,2 @@
 #!/bin/bash
-tar czvf ../baselayout.tar.gz ../baselayout --exclude .svn --exclude createtarball.sh
+tar czvf ../baselayout-corporate2-$1.tar.gz ../corporate2 --exclude .svn --exclude createtarball.sh
