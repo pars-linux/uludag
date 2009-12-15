@@ -265,7 +265,7 @@ class Binary(models.Model):
         if not self.testresult_set.count():
             return False
         else:
-            return self.testresult_set.get()
+            return self.testresult_set.get().result
 
     class Meta:
         verbose_name = _('binary')
