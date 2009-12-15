@@ -92,12 +92,13 @@ public:
         GFX_VENDOR,              // Display stuff
         GFX_MODEL,
         GFX_DRIVER,
-        SYSINFO_LAST,
+        GFX_3D,
         PRODUCT,
         MANUFACTURER,
         TYPE,
         BIOSVENDOR,
-        BIOSVERSION
+        BIOSVERSION,
+        SYSINFO_LAST
     };
 
 private:
