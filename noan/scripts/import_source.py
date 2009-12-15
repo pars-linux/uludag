@@ -42,6 +42,7 @@ def toInt(obj):
 def updateDB(path_source, full_import, newRelease):
     from django.contrib.auth.models import User
     from noan.repository.models import Distribution, Source, Package, Binary, Update, BuildDependency, RuntimeDependency
+    from noan.profile.models import Profile
 
     def createUser(email, name):
         user = None
@@ -60,6 +61,10 @@ def updateDB(path_source, full_import, newRelease):
                 user.set_password(username)
                 try:
                     user.save()
+                    p = Profile()
+                    p.user = user
+                    p.title = ''
+                    p.save()
                 except:
                     user = None
                     username += str(count)
