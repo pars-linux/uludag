@@ -74,30 +74,32 @@ public:
      */
     enum
     {
-        MEM_TOTALRAM = 0,
+        MEM_TOTALRAM = 0,       /* Memory information */
         MEM_FREERAM,
         MEM_USAGE,
         MEM_TOTALSWAP,
         MEM_FREESWAP,
         CPU_MODEL,
-        CPU_NOFCORE,            // number of cores
-        CPU_SPEED,              // in MHz
-        OS_SYSNAME,             // man 2 uname
+        CPU_NOFCORE,            /* CPU stuff */
+        CPU_SPEED,
+        OS_SYSNAME,             /* OS Information */
         OS_RELEASE,
         OS_VERSION,
         OS_MACHINE,
-        OS_USER,                // username
-        OS_SYSTEM,              // Pardus version
+        OS_USER,                /* Username */
+        OS_SYSTEM,              /* Pardus release */
         OS_HOSTNAME,
-        GFX_VENDOR,              // Display stuff
+        GFX_VENDOR,             /* Display stuff */
         GFX_MODEL,
         GFX_DRIVER,
         GFX_3D,
-        PRODUCT,
+        PRODUCT,                /* DMI data */
+        CHASSISTYPE,
+        FORMFACTOR,
         MANUFACTURER,
-        TYPE,
         BIOSVENDOR,
         BIOSVERSION,
+        BIOSDATE,
         SYSINFO_LAST
     };
 
