@@ -131,7 +131,7 @@ QString kio_sysinfoProtocol::finishStock()
     return QString ("</table>");
 }
 
-static QString formatStr( QString st ) 
+static QString formatStr( QString st )
 {
     if ( st == "" )
         return i18n("Not Available");
@@ -152,8 +152,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
 
     QString content = t.read();
     content = content.arg( i18n( "My Computer" ) ); // <title>
-    content = content.arg( "file:" + locate( "data", "sysinfo/themes/Corporate2/style.css" ) );
-    content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
+    content = content.arg( "file:" + locate( "data", "sysinfo/themes/Corporate2/style.css" ) ); // style path
 
     QString dynamicInfo, staticInfo;
     QString dummy;
@@ -228,23 +227,19 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
         staticInfo += finishStock();
     }
 
-    // update content
+    // update content..
     content = content.arg( staticInfo );
     staticInfo = "";
 
-    // hw info
-    if (!m_info[TYPE].isNull() || !m_info[MANUFACTURER].isNull() || !m_info[PRODUCT].isNull()
-        || !m_info[BIOSVENDOR].isNull() || !m_info[ BIOSVERSION ].isNull())
-    {
-        staticInfo += "<h2 id=\"hwinfo\">" +i18n( "Hardware Information" ) + "</h2>";
-        staticInfo += "<table style=\"background-image:url('" + icon( "laptop", 48, true) + "');\">";
-        staticInfo += "<tr><td>" + i18n( "Type:" ) + "</td><td>" + m_info[ TYPE ] + "</td></tr>";
-        staticInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[ MANUFACTURER ] + "</td></tr>";
-        staticInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[ PRODUCT ] + "</td></tr>";
-        staticInfo += "<tr><td>" + i18n( "Bios Vendor:" ) + "</td><td>" + m_info[ BIOSVENDOR ] + "</td></tr>";
-        staticInfo += "<tr><td>" + i18n( "Bios Version:" ) + "</td><td>" + m_info[ BIOSVERSION ] + "</td></tr>";
-        staticInfo += "</table>";
-    }
+    staticInfo += startStock(i18n("Machine information"));
+    staticInfo += addToStock("krdc", i18n("System vendor: ") + m_info[MANUFACTURER]);
+    staticInfo += addToStock("krdc", i18n("Product name: ") + m_info[PRODUCT]);
+    staticInfo += addToStock("krdc", i18n("BIOS: ") + m_info[BIOSVENDOR] + " " + m_info[BIOSVERSION] + " " + m_info[BIOSDATE]);
+    staticInfo += finishStock();
+
+    // update content..
+    content = content.arg( staticInfo );
+    staticInfo = "";
 
     // Send the data
     data( QCString( content.utf8() ) );
@@ -668,11 +663,13 @@ bool kio_sysinfoProtocol::fillMediaDevices()
             m_devices.append( di );
     }
 
-    m_info[PRODUCT ] = libhal_device_get_property_string(  m_halContext, "/org/freedesktop/Hal/devices/computer", "smbios.system.product", &error );
-    m_info[MANUFACTURER ] = libhal_device_get_property_string(  m_halContext, "/org/freedesktop/Hal/devices/computer", "smbios.system.manufacturer", &error );
-    m_info[TYPE] = libhal_device_get_property_string( m_halContext, "/org/freedesktop/Hal/devices/computer", "smbios.chassis.type", &error );
-    m_info[BIOSVENDOR] = libhal_device_get_property_string( m_halContext, "/org/freedesktop/Hal/devices/computer", "smbios.bios.vendor", &error );
-    m_info[BIOSVERSION] = libhal_device_get_property_string( m_halContext, "/org/freedesktop/Hal/devices/computer", "smbios.bios.version", &error );
+    m_info[PRODUCT] = libhal_device_get_property_string(  m_halContext, "/org/freedesktop/Hal/devices/computer", "system.board.product", &error );
+    m_info[CHASSISTYPE] = libhal_device_get_property_string(  m_halContext, "/org/freedesktop/Hal/devices/computer", "system.chassis.type", &error );
+    m_info[FORMFACTOR] = libhal_device_get_property_string(  m_halContext, "/org/freedesktop/Hal/devices/computer", "system.formfactor", &error );
+    m_info[MANUFACTURER] = libhal_device_get_property_string(  m_halContext, "/org/freedesktop/Hal/devices/computer", "system.chassis.manufacturer", &error );
+    m_info[BIOSVENDOR] = libhal_device_get_property_string( m_halContext, "/org/freedesktop/Hal/devices/computer", "system.firmware.vendor", &error );
+    m_info[BIOSVERSION] = libhal_device_get_property_string( m_halContext, "/org/freedesktop/Hal/devices/computer", "system.firmware.version", &error );
+    m_info[BIOSDATE] = libhal_device_get_property_string( m_halContext, "/org/freedesktop/Hal/devices/computer", "system.firmware.release_date", &error );
 
     libhal_ctx_free(m_halContext);
 
