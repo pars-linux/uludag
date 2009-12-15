@@ -4,6 +4,7 @@ urlpatterns = patterns('',
     # Pending
     (r'^pending/$', 'noan.repository.views.page_pending_index'),
     (r'^pending/(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/user/$', 'noan.repository.views.list_pending_packages_for_user'),
+    (r'^pending/(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/salt/$', 'noan.repository.views.list_pending_packages_in_txt'),
     (r'^pending/(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/$', 'noan.repository.views.list_pending_packages'),
 
     # Index

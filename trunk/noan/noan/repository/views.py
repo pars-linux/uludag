@@ -132,6 +132,40 @@ def list_pending_packages(request, distName, distRelease):
 
     return object_list(request, **object_dict)
 
+def list_pending_packages_in_txt(request, distName, distRelease):
+    binaries = Binary.objects.filter(resolution='pending', package__source__distribution__name=distName, package__source__distribution__release=distRelease)
+
+    acked_packages = []
+    nacked_packages = []
+    not_tested_packages = []
+
+    for binary in binaries:
+        # if a binary has test a result, we should not list it.
+        testresult = binary.get_testresult()
+        if not testresult:
+            not_tested_packages.append(binary)
+        else:
+            if testresult == "yes":
+                acked_packages.append(binary)
+            else:
+                nacked_packages.append(binary)
+
+    data = "Packages for %s %s\n\n" % (distName, distRelease)
+    data += "ACKed Packages:\n"
+    data += "===============\n"
+    for ack in acked_packages:
+        data += "    %s (%s)\n" % (ack.package.name, ack.update.updated_by.get_full_name())
+    data += "\nNACked Packages:\n"
+    data += "================\n"
+    for nack in nacked_packages:
+        data += "    %s (%s)\n" % (nack.package.name, nack.update.updated_by.get_full_name())
+    data += "\nNot Tested Packages:\n"
+    data += "===================="
+    for not_tested in not_tested_packages:
+        data += "    %s (%s)\n" % (not_tested.package.name, not_tested.update.updated_by.get_full_name())
+
+    return HttpResponse(data)
+
 @login_required
 def list_pending_packages_for_user(request, distName, distRelease):
     binaries = Binary.objects.filter(resolution='pending', package__source__distribution__name=distName, package__source__distribution__release=distRelease, update__updated_by=request.user)
