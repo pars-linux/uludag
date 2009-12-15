@@ -94,11 +94,11 @@
     * mySQL, pgSQL, ldap, apache sunucu paketlerinin güncellenmesi, bakımının yapılması (-)
 
 * Depo/Paketler (Ozan Çağlayan)
-    * autostart dizinlerinin düzenlenmesi (-)
+    * autostart dizinlerinin düzenlenmesi (+)
     * Samba 3.4 geçişi, service.py'lerin ayrılması (-)
     * Pulseaudio yardımcı programlarının depoya alınması (-)
     * expat vb. gibi kitaplıkların dışarıdan kullanılıp kullanılmamasının analizi/gereği (-) [Onur Küçük]
-    * component.xml'lerin temizlenerek sadece isim bırakılması (-)
+    * component.xml'lerin temizlenerek sadece isim bırakılması (/50)
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (-) [N/A]
     * evolution paketlenmesi (-) [N/A]
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/50)
