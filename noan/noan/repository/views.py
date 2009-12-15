@@ -6,11 +6,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.template import RequestContext
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.contrib.auth.decorators import login_required
+
 # we use generic view for listing as it handles pagination easily. so we don't duplicate the code.
 from django.views.generic.list_detail import object_list
 
 # APP RELATED IMPORTS
-from noan.repository.models import Distribution, Package, Source, Binary
+from noan.repository.models import Distribution, Package, Source, Binary, TestResult
 # we have this wrapper to avoid using "context_instance" kwarg in every function.
 from noan.wrappers import render_response
 from noan.settings import SOURCE_PACKAGES_PER_PAGE, PENDING_PACKAGES_PER_PAGE
@@ -76,12 +78,14 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
         sourceName: <Source> section in pspec.xml
         packageName: <Package> section in pspec.xml
     """
-    print "FUCK FUCK!"
-
     binary = Binary.objects.get(no=binaryNo, package__name=packageName, package__source__name=sourceName)
 
     # FIXME: We also handle sending ACK/NACK info. Maybe it can be done in different view?
     if request.method == "POST" and request.user and request.user.is_authenticated():
+        # if this package is not updated by the latest updater, give error:
+        if binary.update.updated_by != request.user:
+            return HttpResponse("Sorry, you can not change another developer's package. Only the developer who changed the package can give ACK.")
+
         if request.POST['result'] == "unknown":
             TestResult.objects.filter(binary=binary, created_by=request.user).delete()
         elif request.POST['result'] in ("yes", "no"):
@@ -114,7 +118,6 @@ def page_pending_index(request):
     }
     return render_response(request, 'repository/pending/index.html', context)
 
-
 def list_pending_packages(request, distName, distRelease):
     binaries = Binary.objects.filter(resolution='pending', package__source__distribution__name=distName, package__source__distribution__release=distRelease)
 
@@ -124,6 +127,21 @@ def list_pending_packages(request, distName, distRelease):
             'queryset': binaries,
             'paginate_by': PENDING_PACKAGES_PER_PAGE,
             'template_name': 'repository/pending/pending-packages-list.html',
+            'template_object_name': 'binary_package',
+            }
+
+    return object_list(request, **object_dict)
+
+@login_required
+def list_pending_packages_for_user(request, distName, distRelease):
+    binaries = Binary.objects.filter(resolution='pending', package__source__distribution__name=distName, package__source__distribution__release=distRelease, update__updated_by=request.user)
+
+    # - generate dict to use in object_list
+    # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
+    object_dict = {
+            'queryset': binaries,
+            'paginate_by': PENDING_PACKAGES_PER_PAGE,
+            'template_name': 'repository/pending/pending-packages-list-for-user.html',
             'template_object_name': 'binary_package',
             }
 
