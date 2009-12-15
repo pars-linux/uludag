@@ -25,6 +25,7 @@
 #include <qfile.h>
 #include <qdir.h>
 #include <qregexp.h>
+#include <qiodevice.h>
 
 #include <stdlib.h>
 #include <math.h>
@@ -223,7 +224,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
         staticInfo += startStock( i18n( "Display" ) );
         staticInfo += addToStock( "krdc", formatStr(m_info[GFX_MODEL]), formatStr(m_info[GFX_VENDOR]) );
         if (!m_info[GFX_DRIVER].isNull())
-            staticInfo += addToStock( "x", i18n( "Driver: " ) + m_info[GFX_DRIVER] );
+            staticInfo += addToStock( "x", i18n( "Driver: " ) + m_info[GFX_3D] );
         staticInfo += finishStock();
     }
 
@@ -368,7 +369,6 @@ int kio_sysinfoProtocol::netInfo() const
     return 0;
 }
 
-#define INFO_XORG "/etc/X11/xorg.conf"
 #include <GL/glx.h>
 
 bool isOpenGlSupported() {
@@ -436,35 +436,30 @@ bool isOpenGlSupported() {
 
 bool kio_sysinfoProtocol::glInfo()
 {
-    QFile file;
-    QString line;
-    int inFold=0;
-    bool openGlSupported = isOpenGlSupported();
-
-    file.setName(INFO_XORG);
-    if (!file.exists() || !file.open(IO_ReadOnly))
+    FILE *fd = popen("glxinfo", "r");
+    if (!fd)
         return false;
 
-    QTextStream stream(&file);
-    while (!stream.atEnd()) {
-        line = stream.readLine();
+    bool openGlSupported = isOpenGlSupported();
+    QTextStream is(fd, IO_ReadOnly);
+
+    while (!is.atEnd()) {
+        QString line = is.readLine();
         line = line.stripWhiteSpace();
-        if (line.startsWith("Section \"Device\"")) inFold = 1;
-        if (line.startsWith("EndSection")) inFold = 0;
-        if (inFold==1){
-            if (line.startsWith("VendorName"))
-                m_info[GFX_VENDOR] = line.replace("VendorName ","").replace("\"","");
-            if (line.startsWith("BoardName"))
-                m_info[GFX_MODEL] = line.replace("BoardName ","").replace("\"","");
-            if (line.startsWith("Driver")){
-                QString driver = line.replace("Driver ","").replace("\"","");
-                if (openGlSupported)
-                    m_info[GFX_DRIVER] = i18n("%1 (3D Support)").arg(driver);
-                else
-                    m_info[GFX_DRIVER] = i18n("%1 (No 3D Support)").arg(driver);
-            }
-        }
+        if (line.startsWith("OpenGL vendor string:"))
+            m_info[GFX_VENDOR] = line.section(":", 1, 1);
+        else if (line.startsWith("OpenGL renderer string:"))
+            m_info[GFX_MODEL] = line.section(":", 1, 1);
+        else if (line.startsWith("OpenGL version string:"))
+            m_info[GFX_DRIVER] = line.section(":", 1, 1);
     }
+
+    if (!openGlSupported or m_info[GFX_MODEL].contains("Software Rasterizer"))
+        m_info[GFX_3D] = i18n("3D Not Supported");
+    else
+        m_info[GFX_3D] = i18n("3D Supported");
+
+    pclose(fd);
     return true;
 }
 
