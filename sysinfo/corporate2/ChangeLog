@@ -1,5 +1,6 @@
 15-12-2009  Ozan Çağlayan <ozan_at_pardus.org.tr>
 	* sysinfo/sysinfo.cpp: Use glxinfo for GFX informations.
+	* sysinfo/: Rename 2008 theme to Corporate2 theme.
 
 20-12-2006  S.Çağlar Onur <caglar _at_ pardus.org.tr>;
     * Suse's hwinfo infrastructure converted to KDE's opengl kcmshell

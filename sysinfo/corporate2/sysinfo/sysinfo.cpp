@@ -116,7 +116,7 @@ QString kio_sysinfoProtocol::addToStock( const QString _icon, const QString text
 QString kio_sysinfoProtocol::addProgress( const QString _icon, const unsigned long long size )
 {
     QString iconpath = icon(_icon, 22, true);
-    QString progress = "file:" + locate( "data", "sysinfo/themes/2008/images/progress.png" );
+    QString progress = "file:" + locate( "data", "sysinfo/themes/Corporate2/images/progress.png" );
     QString templator;
 
     templator += QString ("<tr class=\"progress\">");
@@ -143,7 +143,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     mimeType( "application/x-sysinfo" );
 
     // header
-    QString location = locate( "data", "sysinfo/themes/2008/index.html" );
+    QString location = locate( "data", "sysinfo/themes/Corporate2/index.html" );
     QFile f( location );
     f.open( IO_ReadOnly );
     QTextStream t( &f );
@@ -152,7 +152,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
 
     QString content = t.read();
     content = content.arg( i18n( "My Computer" ) ); // <title>
-    content = content.arg( "file:" + locate( "data", "sysinfo/themes/2008/stil.css" ) );
+    content = content.arg( "file:" + locate( "data", "sysinfo/themes/Corporate2/stil.css" ) );
     content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
 
     QString dynamicInfo, staticInfo;
@@ -232,7 +232,6 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     content = content.arg( staticInfo );
     staticInfo = "";
 
-    /*
     // hw info
     if (!m_info[TYPE].isNull() || !m_info[MANUFACTURER].isNull() || !m_info[PRODUCT].isNull()
         || !m_info[BIOSVENDOR].isNull() || !m_info[ BIOSVERSION ].isNull())
@@ -246,7 +245,6 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
         staticInfo += "<tr><td>" + i18n( "Bios Version:" ) + "</td><td>" + m_info[ BIOSVERSION ] + "</td></tr>";
         staticInfo += "</table>";
     }
-    */
 
     // Send the data
     data( QCString( content.utf8() ) );
@@ -346,7 +344,7 @@ QString kio_sysinfoProtocol::diskInfo()
                                 arg( tooltip+" "+di.deviceNode ).
                                 arg( label ).
                                 arg( sizeStatus ).
-                                arg( locate( "data", "sysinfo/themes/2008/images/progress.png" ) ).
+                                arg( locate( "data", "sysinfo/themes/Corporate2/images/progress.png" ) ).
                                 arg( percent );
         }
     }

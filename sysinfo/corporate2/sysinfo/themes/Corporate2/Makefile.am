@@ -4,4 +4,4 @@ about_DATA = \
 			 index.html \
 			 stil.css
 
-aboutdir = $(kde_datadir)/sysinfo/themes/2008
+aboutdir = $(kde_datadir)/sysinfo/themes/Corporate2
